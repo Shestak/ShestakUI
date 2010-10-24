@@ -21,6 +21,7 @@ if GetLocale() == "frFR" then
 	L_GUI_MISC_MOVE_WATCH_FRAME = "Fenêtre de suivi des quête déplacable"
 	L_GUI_MISC_VEHICLE_MOUSEOVER = "Fenêtre de véhicule en mouseover"
 	L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button" -- Needs review
+	L_GUI_MISC_RAID_TOOLS = "Raid tools" -- Needs review
 	
 	-- Skins options
 	L_GUI_SKINS = "Personalisation d'addon"
@@ -31,14 +32,17 @@ if GetLocale() == "frFR" then
 	L_GUI_COMBATTEXT = "Texte de combat"
 	L_GUI_COMBATTEXT_FONT_SIZE = "Taille du texte"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Utiliser les textes de combat de Blizzard"
+	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)" -- Needs review
 	L_GUI_COMBATTEXT_DAMAGE = "Afficher les dégâts dans une fenêtre dédiée"
 	L_GUI_COMBATTEXT_HEALING = "Afficher les soins dans une fenêtre dédiée"
+	L_GUI_COMBATTEXT_HOTS = "Show periodic healing effects in healing frame" -- Needs review
+	L_GUI_COMBATTEXT_PET_DAMAGE = "Show your pet damage" -- Needs review
+	L_GUI_COMBATTEXT_DOT_DAMAGE = "Show damage from your dots" -- Needs review
 	L_GUI_COMBATTEXT_DAMAGE_COLOR = "Afficher les dégâts en fonction de l'école de magie"
 	L_GUI_COMBATTEXT_CRIT_PREFIX = "Caractère à afficher avant le montant d'un critique"
 	L_GUI_COMBATTEXT_CRIT_POSTFIX = "Caractère à afficher après le montant d'un critique"
 	L_GUI_COMBATTEXT_ICONS = "Afficher l'icone du sort"
 	L_GUI_COMBATTEXT_ICON_SIZE = "Taille de l'icone du sort"
-	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)" -- Needs review
 	L_GUI_COMBATTEXT_TRESHOLD = "Dégâts minimum pour afficher dans la fenêtre de dégats"
 	L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Soins minimum pour afficher dans la fenêtre de dégats"
 	L_GUI_COMBATTEXT_SCROLLABLE = "Autoriser le défilement avec la moulette dans la fenêtre de dégâts/soins"

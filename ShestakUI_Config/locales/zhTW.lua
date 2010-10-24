@@ -21,6 +21,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_MISC_MOVE_WATCH_FRAME = "追蹤框體解鎖" -- Needs review
 	L_GUI_MISC_VEHICLE_MOUSEOVER = "駕駛框體解鎖" -- Needs review
 	L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button" -- Needs review
+	L_GUI_MISC_RAID_TOOLS = "Raid tools" -- Needs review
 	
 	-- Skins options
 	L_GUI_SKINS = "風格化" -- Needs review
@@ -30,15 +31,18 @@ if GetLocale() == "zhTW" then
 	-- Combat text options
 	L_GUI_COMBATTEXT = "戰鬥文字"
 	L_GUI_COMBATTEXT_FONT_SIZE = "字體大小"
-	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "使用暴雪默認傷害/治療模式（模型頂部/玩家頭像）" 
+	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "使用暴雪默認傷害/治療模式（模型頂部/玩家頭像）"
+	L_GUI_COMBATTEXT_DAMAGE_STYLE = "改變模型頂部/玩家頭像的傷害/治療字體"
 	L_GUI_COMBATTEXT_DAMAGE = "獨立顯示傷害輸出"
 	L_GUI_COMBATTEXT_HEALING = "獨立顯示治療輸出"
+	L_GUI_COMBATTEXT_HOTS = "Show periodic healing effects in healing frame" -- Needs review
+	L_GUI_COMBATTEXT_PET_DAMAGE = "Show your pet damage" -- Needs review
+	L_GUI_COMBATTEXT_DOT_DAMAGE = "Show damage from your dots" -- Needs review
 	L_GUI_COMBATTEXT_DAMAGE_COLOR = "以法術系別顏色顯示傷害文字"
 	L_GUI_COMBATTEXT_CRIT_PREFIX = "文本右側致命效果修飾符號"
 	L_GUI_COMBATTEXT_CRIT_POSTFIX = "文本右側致命效果修飾符號"
 	L_GUI_COMBATTEXT_ICONS = "顯示輸出傷害技能圖示"
 	L_GUI_COMBATTEXT_ICON_SIZE = "傷害輸出圖示大小"
-	L_GUI_COMBATTEXT_DAMAGE_STYLE = "改變模型頂部/玩家頭像的傷害/治療字體"
 	L_GUI_COMBATTEXT_TRESHOLD = "傷害輸出信息最小閥值"
 	L_GUI_COMBATTEXT_HEAL_TRESHOLD = "治療承受信息/輸出最小閥值"
 	L_GUI_COMBATTEXT_SCROLLABLE = "允許滑鼠調整滾動區域"

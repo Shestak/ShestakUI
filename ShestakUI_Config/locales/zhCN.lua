@@ -21,6 +21,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_MISC_MOVE_WATCH_FRAME = "Quest Watch frame movable" -- Needs review
 	L_GUI_MISC_VEHICLE_MOUSEOVER = "Vehicle frame on mouseover" -- Needs review
 	L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button" -- Needs review
+	L_GUI_MISC_RAID_TOOLS = "Raid tools" -- Needs review
 	
 	-- Skins options
 	L_GUI_SKINS = "Stylization" -- Needs review
@@ -31,14 +32,17 @@ if GetLocale() == "zhCN" then
 	L_GUI_COMBATTEXT = "战斗文本设置-（需/RL）"
 	L_GUI_COMBATTEXT_FONT_SIZE = "字体大小设置"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "使用暴雪默认伤害/治疗字体"
+	L_GUI_COMBATTEXT_DAMAGE_STYLE = "更改默认的头像上的伤害/治疗字体"
 	L_GUI_COMBATTEXT_DAMAGE = "独立显示输出伤害"
 	L_GUI_COMBATTEXT_HEALING = "独立显示输出治疗"
+	L_GUI_COMBATTEXT_HOTS = "Show periodic healing effects in healing frame" -- Needs review
+	L_GUI_COMBATTEXT_PET_DAMAGE = "Show your pet damage" -- Needs review
+	L_GUI_COMBATTEXT_DOT_DAMAGE = "Show damage from your dots" -- Needs review
 	L_GUI_COMBATTEXT_DAMAGE_COLOR = "伤害字体着色"
 	L_GUI_COMBATTEXT_CRIT_PREFIX = "暴击伤害字体符号修饰（左）"
 	L_GUI_COMBATTEXT_CRIT_POSTFIX = "暴击伤害字体符号修饰（右）"
 	L_GUI_COMBATTEXT_ICONS = "显示伤害输出图标"
 	L_GUI_COMBATTEXT_ICON_SIZE = "伤害输出图标/字体尺寸设置"
-	L_GUI_COMBATTEXT_DAMAGE_STYLE = "更改默认的头像上的伤害/治疗字体"
 	L_GUI_COMBATTEXT_TRESHOLD = "最小化显示伤害框体（建议1000）"
 	L_GUI_COMBATTEXT_HEAL_TRESHOLD = "最小化显示治疗框体（建议1000）"
 	L_GUI_COMBATTEXT_SCROLLABLE = "允许鼠标调整滚动框"

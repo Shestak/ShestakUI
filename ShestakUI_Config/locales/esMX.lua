@@ -21,6 +21,7 @@ if GetLocale() == "esMX" then
 	L_GUI_MISC_MOVE_WATCH_FRAME = "Marco de Seguimiento de Misiones movible"
 	L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encima"
 	L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button"
+	L_GUI_MISC_RAID_TOOLS = "Raid tools" -- Needs review
 	
 	-- Skins options
 	L_GUI_SKINS = "Estilización"
@@ -31,14 +32,17 @@ if GetLocale() == "esMX" then
 	L_GUI_COMBATTEXT = "Texto de Combate"
 	L_GUI_COMBATTEXT_FONT_SIZE = "Tamaño de la fuente"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Usar la salida de daño/curación de Blizzard (sobre la cabeza del monstruo/jugador)"
+	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Cambiar la fuente de daño/sanación por defecto de encima de los monstruos/jugadores (tendrás que reiniciar WoW para ver los cambios)"
 	L_GUI_COMBATTEXT_DAMAGE = "Mostrar daño saliente en su propio marco"
 	L_GUI_COMBATTEXT_HEALING = "Mostrar sanación saliente en su propio marco"
+	L_GUI_COMBATTEXT_HOTS = "Show periodic healing effects in healing frame" -- Needs review
+	L_GUI_COMBATTEXT_PET_DAMAGE = "Show your pet damage" -- Needs review
+	L_GUI_COMBATTEXT_DOT_DAMAGE = "Show damage from your dots" -- Needs review
 	L_GUI_COMBATTEXT_DAMAGE_COLOR = "Mostrar números de daño dependiendo de la escuela de magia"
 	L_GUI_COMBATTEXT_CRIT_PREFIX = "Símbolo que se añadirá antes de un crítico"
 	L_GUI_COMBATTEXT_CRIT_POSTFIX = "Símbolo que se añadirá después de un crítico"
 	L_GUI_COMBATTEXT_ICONS = "Mostrar iconos de daño saliente"
 	L_GUI_COMBATTEXT_ICON_SIZE = "Tamaño de los iconos de los hechizos en el marco de daño saliente, también tiene efecto sobre el tamaño de la fuente de daño"
-	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Cambiar la fuente de daño/sanación por defecto de encima de los monstruos/jugadores (tendrás que reiniciar WoW para ver los cambios)"
 	L_GUI_COMBATTEXT_TRESHOLD = "Daño mínimo que se mostrar en el marco de daño"
 	L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Sanación mínima que se mostrar en los mensajes de sanación entrante/saliente"
 	L_GUI_COMBATTEXT_SCROLLABLE = "Permitir usar la rueda del ratón para desplazar las líneas de los marcos"
