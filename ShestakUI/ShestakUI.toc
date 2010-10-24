@@ -2,8 +2,8 @@
 ## Title: ShestakUI
 ## Notes: A total UI overhaul for World of Warcraft.
 ## Author: Shestak
-## Version: 2.7.3
-## Credits: ALZA, Tekkub, Monolit, Awbee, Industrial, Nightcracker, Kemayo, yleaf, Tukz, v6o, Stuck, Fernir, Eclipse, Elv22
+## Version: 2.7.4
+## Credits: ALZA, Tekkub, Monolit, Awbee, Industrial, Nightcracker, Kemayo, yleaf, Tukz, v6o, Stuck, Fernir, Eclipse, Elv22, Affli
 ## OptionalDeps: ShestakUI_Config
 ## SavedVariables: SavedOptions
 ## SavedVariablesPerCharacter: InstalledUI
