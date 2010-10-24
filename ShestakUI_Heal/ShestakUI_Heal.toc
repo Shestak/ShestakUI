@@ -1,0 +1,9 @@
+## Interface: 40000
+## Title: ShestakUI Heal
+## Notes: Raid Heal layout for ShestakUI.
+## Author: Shestak
+## Credits: Thanks to ALZA for the great help and write some modules
+## X-Category: UnitFrame
+## RequiredDeps: ShestakUI
+
+ShestakUI_Heal.lua

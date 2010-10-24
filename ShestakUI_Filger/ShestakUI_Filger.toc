@@ -1,0 +1,11 @@
+## Interface: 40000
+## Title: ShestakUI Filger
+## Notes: Class timers and icons for ShestakUI.
+## Author: Affli @ RU-Howling Fjord
+## Editor: Shestak
+## Credits: Nils Ruesch
+## RequiredDeps: ShestakUI
+## Website: http://shestak.org
+
+config.lua
+ShestakUI_Filger.lua

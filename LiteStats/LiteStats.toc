@@ -1,0 +1,18 @@
+## Interface: 40000
+## Title: LiteStats
+## Notes: Useful little info texts
+## Author: Jon Crenshaw
+## Version: 40000.2
+## RequiredDeps: ShestakUI
+## SavedVariables: LPSTAT
+
+locale\deDE.lua
+locale\frFR.lua
+locale\esES.lua
+locale\ruRU.lua
+locale\zhTW.lua
+locale\koKR.lua
+locale\zhCN.lua
+
+config.lua
+LiteStats.lua

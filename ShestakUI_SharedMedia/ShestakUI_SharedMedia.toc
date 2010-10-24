@@ -1,0 +1,11 @@
+## Interface: 40000
+## Title: ShestakUI SharedMedia
+## Author: Telroth
+## RequiredDeps: ShestakUI
+## OptionalDeps: LibStub, LibSharedMedia-3.0
+
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibSharedMedia-3.0\LibSharedMedia-3.0.lua
+
+ShestakUI_SharedMedia.lua
