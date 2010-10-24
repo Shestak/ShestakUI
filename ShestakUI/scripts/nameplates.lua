@@ -140,6 +140,8 @@ local threatUpdate = function(self, elapsed)
 			end
 		end
 		
+		self.healthBar:ClearAllPoints()
+		self.healthBar:SetPoint("CENTER", self.healthBar:GetParent(), 0, 25)
 		self.healthBar:SetHeight(SettingsCF["nameplate"].height * UIParent:GetEffectiveScale())
 		self.healthBar:SetWidth(SettingsCF["nameplate"].width * UIParent:GetEffectiveScale())
 		
@@ -185,7 +187,7 @@ local updatePlate = function(self)
 	self.r, self.g, self.b = newr, newg, newb
  
 	self.healthBar:ClearAllPoints()
-	self.healthBar:SetPoint("CENTER", self.healthBar:GetParent(), 0, 3)
+	self.healthBar:SetPoint("CENTER", self.healthBar:GetParent(), 0, 25)
 	self.healthBar:SetHeight(SettingsCF["nameplate"].height * UIParent:GetEffectiveScale())
 	self.healthBar:SetWidth(SettingsCF["nameplate"].width * UIParent:GetEffectiveScale())
 	

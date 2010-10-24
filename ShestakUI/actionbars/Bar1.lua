@@ -99,7 +99,6 @@ bar:SetScript("OnEvent", function(self, event, ...)
 				local t = 0
 				self:SetScript("OnUpdate", function(self, elapsed)
 					t = t + elapsed
-					MainMenuBar:Hide()
 					UIParent_ManageFramePositions()
 					if t > 5 then
 						t = 0

@@ -23,13 +23,6 @@ bottombaranchor:SetBackdropBorderColor(0, 0, 0, 0)
 bottombaranchor.bg:SetVertexColor(0, 0, 0, 0)
 
 ----------------------------------------------------------------------------------------
---	Invisible frame covering ActionBarAnchor
-----------------------------------------------------------------------------------------
-local invbarbg = CreateFrame("Frame", "InvActionBarBackground", UIParent)
-invbarbg:SetSize(bottombaranchor:GetWidth(), bottombaranchor:GetHeight())
-invbarbg:SetPoint("BOTTOM", 0, SettingsDB.Scale(14))
-
-----------------------------------------------------------------------------------------
 --	Right bars panel
 ----------------------------------------------------------------------------------------
 local rightbaranchor = CreateFrame("Frame", "RightActionBarAnchor", UIParent)
