@@ -2,7 +2,7 @@
 ## Title: LiteStats
 ## Notes: Useful little info texts
 ## Author: Jon Crenshaw
-## Version: 40000.2
+## Version: 40000.3
 ## RequiredDeps: ShestakUI
 ## SavedVariables: LPSTAT
 

@@ -279,6 +279,7 @@ local function Local(o)
 	
 	-- Panel options
 	if o == "UIConfigtoppanel" then o = L_GUI_TOP_PANEL end
+	if o == "UIConfigtoppanelenable" then o = L_GUI_TOP_PANEL_ENABLE end
 	if o == "UIConfigtoppanelmouseover" then o = L_GUI_TOP_PANEL_MOUSE end
 	if o == "UIConfigtoppanelheight" then o = L_GUI_TOP_PANEL_HEIGHT end
 	if o == "UIConfigtoppanelwidth" then o = L_GUI_TOP_PANEL_WIDTH end

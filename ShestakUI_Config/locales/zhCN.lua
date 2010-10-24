@@ -248,6 +248,7 @@ if GetLocale() == "zhCN" then
 
 	-- Panel options
 	L_GUI_TOP_PANEL = "顶部面板"
+	L_GUI_TOP_PANEL_ENABLE = "Enable top panel"	-- Needs review
 	L_GUI_TOP_PANEL_MOUSE = "鼠标划过时显示顶部面板"
 	L_GUI_TOP_PANEL_WIDTH = "面板宽度"
 	L_GUI_TOP_PANEL_HEIGHT = "面板高度"

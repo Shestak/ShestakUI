@@ -247,6 +247,7 @@ if GetLocale() == "koKR" then
 	
 	-- Panel options
 	L_GUI_TOP_PANEL = "Top panel"
+	L_GUI_TOP_PANEL_ENABLE = "Enable top panel"	-- Needs review
 	L_GUI_TOP_PANEL_MOUSE = "Top panel on mouseover"
 	L_GUI_TOP_PANEL_WIDTH = "Panel width"
 	L_GUI_TOP_PANEL_HEIGHT = "Panel height"

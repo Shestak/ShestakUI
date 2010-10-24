@@ -247,6 +247,7 @@ if GetLocale() == "deDE" then
 	
 	-- Panel options
 	L_GUI_TOP_PANEL = "Oberes Panel"
+	L_GUI_TOP_PANEL_ENABLE = "Enable top panel"	-- Needs review
 	L_GUI_TOP_PANEL_MOUSE = "Oberes Panel nur bei Mouseover anzeigen"
 	L_GUI_TOP_PANEL_WIDTH = "Breite des Panels"
 	L_GUI_TOP_PANEL_HEIGHT = "Höhe des Panels"

@@ -246,6 +246,10 @@ Filger_Spells = {
 			{ spellID = 60314, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Greatness (darkmoon dark trinket)
 			{ spellID = 60233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Improved Steady Shot
+			{ spellID = 53220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fire!
+			{ spellID = 82926, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",

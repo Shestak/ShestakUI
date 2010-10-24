@@ -247,6 +247,7 @@ if GetLocale() == "esES" then
 	
 	-- Panel options
 	L_GUI_TOP_PANEL = "Activar panel superior"
+	L_GUI_TOP_PANEL_ENABLE = "Enable top panel"	-- Needs review
 	L_GUI_TOP_PANEL_MOUSE = "Panel superior al pasar el ratón"
 	L_GUI_TOP_PANEL_WIDTH = "Anchura del panel"
 	L_GUI_TOP_PANEL_HEIGHT = "Altura del panel"

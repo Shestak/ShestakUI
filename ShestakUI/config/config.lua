@@ -351,6 +351,7 @@ SettingsCF["unitframe"] = {
 --	Panel options
 ----------------------------------------------------------------------------------------
 SettingsCF["toppanel"] = {
+	["enable"] = true,							-- Enable top panel
 	["mouseover"] = true,						-- Top panel on mouseover
 	["height"] = 55,							-- Panel height
 	["width"] = 320,							-- Panel width

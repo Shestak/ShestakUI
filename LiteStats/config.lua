@@ -103,14 +103,14 @@ LPSTAT_CONFIG = {
 	},
 -- Top block
 	Friends = {
-		enabled = true,
+		enabled = SettingsCF["toppanel"].enable,
 		fmt = class"F: ".."%d/%d", -- "F: 3/40"
 		maxfriends = nil, -- Set max friends listed, nil means no limit.
 		anchor_frame = "StatContainer", anchor_to = "center", anchor_from = "left",
 		x_off = 35, y_off = 6, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = 0, tip_y = -6
 	},
 	Guild = {
-		enabled = true,
+		enabled = SettingsCF["toppanel"].enable,
 		fmt = class"G: ".."%d/%d", -- "G: 5/114"
 		maxguild = nil, -- Set max members listed, nil means no limit. Alt-key reveals hidden members.
 		threshold = 1, -- Minimum level displayed (1-80).
@@ -119,7 +119,7 @@ LPSTAT_CONFIG = {
 		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = 0, tip_y = -6
 	},
 	Durability = {
-		enabled = true,
+		enabled = SettingsCF["toppanel"].enable,
 		fmt = class"D: ".."[color]%d|r%%",-- "54%D" -- %% outputs %, [color] inserts durability color code.
 		man = true, -- Hide bliz durability man.
 		gfunds = SettingsCF.stats.guild_repair, -- Change to false to disable guild repairing.
@@ -129,7 +129,7 @@ LPSTAT_CONFIG = {
 		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = 0, tip_y = -6
 	},
 	Stats = {
-		enabled = true,
+		enabled = SettingsCF["toppanel"].enable,
 			-- Available stat tags...
 			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Armor Penetration% [armorpen]	Expertise% [expertise]
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
@@ -143,32 +143,32 @@ LPSTAT_CONFIG = {
 		x_off = 3, y_off = 0,
 	},
 	Bags = {
-		enabled = true,
+		enabled = SettingsCF["toppanel"].enable,
 		fmt = class"B: ".."%d/%d", -- "B: 24/98"
 		anchor_frame = "Friends", anchor_to = "topleft", anchor_from = "bottomleft",
 		x_off = 0, y_off = -5,
 	},
 	-- New block
 	Helm = {
-		enabled = true,
+		enabled = SettingsCF["toppanel"].enable,
 		fmt = class"H: ".."%s", -- "Helm"
 		anchor_frame = "Bags", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Cloak = {
-		enabled = true,
+		enabled = SettingsCF["toppanel"].enable,
 		fmt = class"C: ".."%s", -- "Cloak"
 		anchor_frame = "Helm", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Loot = {
-		enabled = true,
+		enabled = SettingsCF["toppanel"].enable,
 		fmt = class"L: ".."%s", -- "Loot"
 		anchor_frame = "Cloak", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Talents = {
-		enabled = true,
+		enabled = SettingsCF["toppanel"].enable,
 		fmt = class"T: ".."[spec %d/%d/%d] [unspent]", -- "Protection: 15/0/51 +5", [shortname] shortens spec name.
 		iconsize = 15,  -- Size of talent [icon].
 		name_subs = { -- Substitutions for long talent tree names, remove and/or change any/all.

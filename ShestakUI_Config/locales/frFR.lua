@@ -247,6 +247,7 @@ if GetLocale() == "frFR" then
 	
 	-- Panel options
 	L_GUI_TOP_PANEL = "Panneau supérieur"
+	L_GUI_TOP_PANEL_ENABLE = "Enable top panel"	-- Needs review
 	L_GUI_TOP_PANEL_MOUSE = "Panneau supérieur en 'mouseover'"
 	L_GUI_TOP_PANEL_WIDTH = "Largeur du panneau"
 	L_GUI_TOP_PANEL_HEIGHT = "Hauteur du panneau"

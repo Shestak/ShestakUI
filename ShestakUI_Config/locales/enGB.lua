@@ -247,6 +247,7 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	
 	-- Panel options
 	L_GUI_TOP_PANEL = "Top panel"
+	L_GUI_TOP_PANEL_ENABLE = "Enable top panel"
 	L_GUI_TOP_PANEL_MOUSE = "Top panel on mouseover"
 	L_GUI_TOP_PANEL_WIDTH = "Panel width"
 	L_GUI_TOP_PANEL_HEIGHT = "Panel height"

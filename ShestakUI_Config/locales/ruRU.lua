@@ -247,6 +247,7 @@ if GetLocale() == "ruRU" then
 	
 	-- Panel options
 	L_GUI_TOP_PANEL = "Верхняя панель"
+	L_GUI_TOP_PANEL_ENABLE = "Включить верхнюю панель"
 	L_GUI_TOP_PANEL_MOUSE = "Панель по наведению курсора"
 	L_GUI_TOP_PANEL_WIDTH = "Высота панели"
 	L_GUI_TOP_PANEL_HEIGHT = "Ширина панели"

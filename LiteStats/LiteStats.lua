@@ -35,9 +35,8 @@ local select = select
 local max = max
 local gsub = gsub
 
--- Config missing?
+-- Config
 local modules = LPSTAT_CONFIG
-if not modules then return end
 
 local fps = modules.FPS
 local latency = modules.Latency
@@ -107,6 +106,10 @@ ls:SetScript("OnEvent", function(_,event,addon)
 		end
 	end
 end)
+
+-- Config missing?
+if not modules then return end
+
 if modules and ((coords and coords.enabled) or (location and location.enabled)) then
 	ls:RegisterEvent'ZONE_CHANGED_NEW_AREA'
 	ls:SetScript("OnUpdate", function() coordX, coordY = GetPlayerMapPosition(P) end)
