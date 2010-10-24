@@ -219,6 +219,7 @@ if SettingsDB.client == "zhCN" then
 	L_POPUP_INSTALLUI = "该角色首次使用ShestakUI.你必须重新加载UI来配置."
 	L_POPUP_RESETUI = "你确定要重新加载ShestakUI?"
 	L_POPUP_SWITCH_RAID = "多个团队样式被加载,请选择一个样式."
+	L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?" -- Needs review
 	L_POPUP_DISABLEUI = "ShestakUI并不支援此分辨率, 你想要停用ShestakUI吗? (若果您想要尝试其他分辨率, 请按取消)"
 	L_POPUP_SETTINGS_ALL = "应用所有的插件设置? (DBM/DXE, Skada/Recount and MSBT)"
 	L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."  -- Needs review

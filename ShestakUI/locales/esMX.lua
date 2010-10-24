@@ -219,6 +219,7 @@ if SettingsDB.client == "esMX" then
 	L_POPUP_INSTALLUI = "Es la primera vez que usas ShestakUI con este personaje. Usted debe volver a cargar la interfaz de usuario para configurarlo."
 	L_POPUP_RESETUI = "¿Estás seguro de que desea restablecer ShestakUI?"
 	L_POPUP_SWITCH_RAID = "Hay activos 2 estilos para banda, por favor selecciona uno."
+	L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?" -- Needs review
 	L_POPUP_DISABLEUI = "ShestakUI no funciona con esta resolución, ¿Quieres desactivar ShestakUI? (Pulsa cancelar si quieres probar otra resolución)"
 	L_POPUP_SETTINGS_ALL = "¿Aplicar modificaciones para todos los addons? (DBM/DXE, Skada/Recount ó MSBT)"
 	L_POPUP_SETTINGS_DBM = "Necesito cambiar la posición de los elementos del DBM."

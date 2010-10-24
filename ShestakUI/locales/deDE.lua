@@ -219,6 +219,7 @@ if SettingsDB.client == "deDE" then
 	L_POPUP_INSTALLUI = "Dies ist Ihre erste Benutzung von ShestakUI mit diesem Charakter. Um das Interface zu konfigurieren, wird das UI nun neugeladen."
 	L_POPUP_RESETUI = "Sind Sie sich sicher, dass Sie die Einstellungen von ShestakUI zurückgesetzen wollen?"
 	L_POPUP_SWITCH_RAID = "Es sind 2 Raidlayouts aktiviert, bitte wählen Sie eines davon aus."
+	L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?" -- Needs review
 	L_POPUP_DISABLEUI = "ShestakUI funktioniert nicht mit deiner Auflösung, möchtest du ShestakUI ausschalten? (Drücke Abbrechen, falls du eine andere Auflösung testen willst)"
 	L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM/DXE, Skada/Recount and MSBT)"  -- Needs review
 	L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."  -- Needs review

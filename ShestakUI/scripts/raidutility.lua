@@ -57,7 +57,7 @@ local function CreateButton(name, parent, template, width, height, point, relati
 end
 
 -- Create button to toggle the frame
-CreateButton("ShowButton", RaidUtilityPanel, "SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 2.5, SettingsDB.Scale(18), "TOP", UIParent, "TOP", -300, 2, L_RAID_UTIL, nil)
+CreateButton("ShowButton", RaidUtilityPanel, "SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, SettingsDB.Scale(18), "TOP", UIParent, "TOP", -300, 2, L_RAID_UTIL, nil)
 ShowButton:SetAttribute("_onclick", [=[
  if select(5, self:GetPoint()) > 0 then
 	 self:GetParent():ClearAllPoints()

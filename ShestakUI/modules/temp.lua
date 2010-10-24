@@ -9,6 +9,7 @@ BigBrotherOrder = 2
 SkadaOrder = 3
 RecountOrder = 4
 OmenOrder = 5
+DeadlyBossModOrder = 6
 
 
 -- Toggles if the Open/Close button is hidden on mouseout
@@ -36,6 +37,7 @@ if AtlasOrder > 0 then Btns = Btns + 1 end
 if RecountOrder > 0 then Btns = Btns + 1 end
 if OmenOrder > 0 then Btns = Btns + 1 end
 if BigBrotherOrder > 0 then Btns = Btns + 1 end
+if DeadlyBossModOrder > 0 then Btns = Btns + 1 end
 
 
 ----------------------------------------------------------------------------------------
@@ -278,6 +280,29 @@ ToggleButtons:SetScript("OnEvent", function(self, event, addon)
 			end)
 			BigBrotherButton:SetScript("OnMouseDown", function()
 				BigBrother:ToggleBuffWindow()
+			end)
+		end
+	end
+	
+	---- DeadlyBossMod
+	if DeadlyBossModOrder > 0 then
+		local DeadlyBossModButton = CreateFrame("Frame", "DeadlyBossModButton", Menu)
+		CreateButton(DeadlyBossModButton, DeadlyBossModOrder)
+	 
+		if not IsAddOnLoaded("DBM-Core") then
+			DeadlyBossModButton.title:SetTextColor(0.6, 0.6, 0.6)
+			DeadlyBossModButton.title:SetText("Deadly BossMod Disabled")
+		else
+			DeadlyBossModButton.title:SetText("Toggle Deadly BossMod")
+	 
+			DeadlyBossModButton:SetScript("OnEnter", function()
+				DeadlyBossModButton.title:SetTextColor(1, 1, 0.3)
+			end)
+			DeadlyBossModButton:SetScript("OnLeave", function()
+				DeadlyBossModButton.title:SetTextColor(1, 1, 1)
+			end)
+			DeadlyBossModButton:SetScript("OnMouseDown", function()
+				DBM:LoadGUI()
 			end)
 		end
 	end

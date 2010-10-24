@@ -219,6 +219,7 @@ if SettingsDB.client == "koKR" then
 	L_POPUP_INSTALLUI = "First time on ShestakUI with this Character. You must reload UI to configure it."
 	L_POPUP_RESETUI = "Are you sure you want to reset ShestakUI?"
 	L_POPUP_SWITCH_RAID = "2 raid layouts are active, please select a layout."
+	L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?" -- Needs review
 	L_POPUP_DISABLEUI = "ShestakUI doesn't work for this resolution, do you want to disable ShestakUI? (Cancel if you want to try another resolution)"
 	L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM/DXE, Skada/Recount and MSBT)"
 	L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."

@@ -56,8 +56,8 @@ if SettingsDB.name == "Черешок"
 	SettingsCF["misc"].vehicle_mouseover = true
 	SettingsCF["misc"].quest_auto_button = true
 	SettingsCF["misc"].raid_tools = true
-	SettingsCF["combattext"].treshold = 1000
-	SettingsCF["combattext"].heal_treshold = 1000
+	SettingsCF["combattext"].treshold = 500
+	SettingsCF["combattext"].heal_treshold = 500
 	SettingsCF["combattext"].crit_postfix = ""
 	SettingsCF["tooltip"].shift_modifer = true
 	SettingsCF["tooltip"].cursor = true

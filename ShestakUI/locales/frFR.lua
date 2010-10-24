@@ -219,6 +219,7 @@ if SettingsDB.client == "frFR" then
 	L_POPUP_INSTALLUI = "Première utilisation de ShestakUI avec ce personnage. Vous devez recharger l'interface utilisateur pour le configurer."
 	L_POPUP_RESETUI = "Etes-vous sûr de vouloir réinitialiser ShestakUI ?"
 	L_POPUP_SWITCH_RAID = "2 modèles de raid sont activés, merci d'en choisir un."
+	L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?" -- Needs review
 	L_POPUP_DISABLEUI = "ShestakUI ne fonctionne pas avec cette résolution, voulez-vous désactiver ShestakUI ? (Annuler si vous souhaitez essayer une autre résolution)"
 	L_POPUP_SETTINGS_ALL = "Voulez-vous appliquer les modifications pour tout ?(DBM/DXE, Skada/Recount et MSBT)"
 	L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."  -- Needs review
