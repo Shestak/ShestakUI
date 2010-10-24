@@ -90,3 +90,7 @@ if (IsAddOnLoaded("ShestakUI_DPS")) then
 elseif (IsAddOnLoaded("ShestakUI_Heal")) then
 	SettingsCF["unitframe"].arena_on_right = false
 end
+
+if (IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags")) then
+	SettingsCF["bag"].enable = false
+end

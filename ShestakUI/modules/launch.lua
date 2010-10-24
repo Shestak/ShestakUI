@@ -182,15 +182,6 @@ StaticPopupDialogs["SWITCH_RAID"] = {
 	hideOnEscape = false,
 }
 
--- Help translate
-StaticPopupDialogs["HELP_TRANSLATE"] = {
-	text = "Please help us to translate the text settings for ShestakUI GUI. His translation, you can post to http://shestak.org.",
-	button1 = OKAY,
-    timeout = 0,
-    whileDead = 1,
-	hideOnEscape = true,
-}
-
 ----------------------------------------------------------------------------------------
 --	On logon function
 ----------------------------------------------------------------------------------------
@@ -200,9 +191,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 
 	if SettingsDB.getresolution == "800x600"
-	or SettingsDB.getresolution == "1024x768"
-	or SettingsDB.getresolution == "720x576"
-	or SettingsDB.getresolution == "1024x600" then
+	or SettingsDB.getresolution == "720x576" then
 		SetCVar("useUiScale", 0)
 		StaticPopup_Show("DISABLE_UI")
 	else
@@ -227,14 +216,8 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if SettingsCF["general"].welcome_message == true then
 		print("|cffffff00"..L_WELCOME_LINE_1..SettingsDB.version.." "..SettingsDB.client..".|r")
 		print("|cffffff00"..L_WELCOME_LINE_2_1.." |cffffff00"..L_WELCOME_LINE_2_2)
-		--SettingsDB.InfoTextShow(L_WELCOME_LINE_1..SettingsDB.version.." "..SettingsDB.client)
 	end
 end)
 
 SLASH_CONFIGURE1 = "/resetui"
 SlashCmdList.CONFIGURE = function() StaticPopup_Show("RESET_UI") end
-
--- Help translate
-if GetLocale() == "koKR" then
-	StaticPopup_Show("HELP_TRANSLATE")
-end

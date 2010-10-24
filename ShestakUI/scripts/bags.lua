@@ -1,13 +1,6 @@
-﻿if (IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags")) then return end
---[[
-	A featureless, 'pure' version of Stuffing. 
-	This version should work on absolutely everything, 
-	but I've removed pretty much all of the options.
-	
-	All credits of this bags script is by Stuffing and his author Hungtar.
-	Special Thank's to Hungtar to allow me to use his bag mod for Tukui.
---]]
-
+﻿----------------------------------------------------------------------------------------
+--	Based on Stuffing by Hungtar, editor Tukz
+----------------------------------------------------------------------------------------
 if not SettingsCF["bag"].enable == true then return end
 
 local bags_BACKPACK = {0, 1, 2, 3, 4}
@@ -29,7 +22,7 @@ Stuffing:SetScript("OnEvent", function(this, event, ...)
 	Stuffing[event](this, ...)
 end)
 
--- stub for localization.
+-- Stub for localization
 local L = setmetatable({}, {
 	__index = function (t, v)
 		t[v] = v
@@ -110,9 +103,6 @@ end
 local trashParent = CreateFrame("Frame", nil, UIParent)
 local trashButton = {}
 local trashBag = {}
-
--- For the tooltip frame used to scan item tooltips
---local StuffingTT = nil
 
 -- Mostly from carg.bags_Aurora
 local QUEST_ITEM_STRING = nil
@@ -459,22 +449,8 @@ function Stuffing:InitBags()
 	detail:SetText("|cff9999ff" .. SEARCH)
 	editbox:SetAllPoints(detail)
 
-	--[[local gold = f:CreateFontString(nil, "ARTWORK", "GameFontHighlightLarge")
-	gold:SetJustifyH("RIGHT")
-	gold:SetPoint("RIGHT", f.b_close, "LEFT", SettingsDB.Scale(-3), 0)
-
-	f:SetScript("OnEvent", function (self, e)
-		self.gold:SetText(GetMoneyString(GetMoney(), 12))
-	end)
-
-	f:RegisterEvent("PLAYER_MONEY")
-	f:RegisterEvent("PLAYER_LOGIN")
-	f:RegisterEvent("PLAYER_TRADE_MONEY")
-	f:RegisterEvent("TRADE_MONEY_CHANGED")]]
-
 	local OpenEditbox = function(self)
 		self:GetParent().detail:Hide()
-		--self:GetParent().gold:Hide()
 		self:GetParent().editbox:Show()
 		self:GetParent().editbox:HighlightText()
 	end
@@ -491,7 +467,6 @@ function Stuffing:InitBags()
 				self:GetParent().editbox:Hide()
 				self:GetParent().editbox:ClearFocus()
 				self:GetParent().detail:Show()
-				--self:GetParent().gold:Show()
 				Stuffing:SearchReset()
 			end
 		end
@@ -513,7 +488,6 @@ function Stuffing:InitBags()
 	f.editbox = editbox
 	f.detail = detail
 	f.button = button
-	--f.gold = gold
 	self.frame = f
 	f:Hide()
 end
@@ -536,10 +510,8 @@ function Stuffing:Layout(lb)
 		cols = SettingsCF["bag"].bag_columns
 		f = self.frame
 
-		--f.gold:SetText(GetMoneyString(GetMoney(), 12))
 		f.editbox:SetFont(SettingsCF["media"].normal_font, BAGSFONTSIZE+3)
 		f.detail:SetFont(BAGSFONT, BAGSFONTSIZE, BAGSFONTSTYLE)
-		--f.gold:SetFont(BAGSFONT, BAGSFONTSIZE, BAGSFONTSTYLE)
 
 		f.detail:ClearAllPoints()
 		f.detail:SetPoint("TOPLEFT", f, SettingsDB.Scale(12), SettingsDB.Scale(-10))
@@ -582,7 +554,7 @@ function Stuffing:Layout(lb)
 
 			local xoff = 10
 
-			xoff = xoff + (idx * bsize) -- 31)
+			xoff = xoff + (idx * bsize)
 			xoff = xoff + (idx * 4)
 
 			b.frame:ClearAllPoints()
@@ -651,21 +623,10 @@ function Stuffing:Layout(lb)
 				b.frame:SetBackdropColor(0, 0, 0, 0.5) -- we just need border with SetTemplate, not the backdrop. Hopefully this will fix invisible item that some users have.
 				SettingsDB.StyleButton(b.frame, false)
 				
-				
-				-----------------------------
-				local clink = GetContainerItemLink
-				if (clink and b.rarity and b.rarity > 1) then
-					b.frame:SetBackdropBorderColor(GetItemQualityColor(b.rarity))
-				elseif bagType == ST_SPECIAL then
-					b.frame:SetBackdropBorderColor(0.2, 0.2, 0.8)
-					b.frame.lock = true
-				end
-				-----------------------------
-				
 				-- color profession bag slot border ~yellow
 				if bagType == ST_SPECIAL then b.frame:SetBackdropBorderColor(1, 0.9, 0.3) b.frame.lock = true end
 				
-				--self:SlotUpdate(b)
+				self:SlotUpdate(b)
 				
 				local iconTex = _G[b.frame:GetName() .. "IconTexture"]
 				iconTex:SetTexCoord(0.1, 0.9, 0.1, 0.9)

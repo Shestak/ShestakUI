@@ -4,20 +4,6 @@
 local media = SettingsCF["media"]
 
 function SettingsDB.UIScale()
-	-- High resolution whitelist
-	if not (SettingsDB.getresolution == "1680x945"
-		or SettingsDB.getresolution == "2560x1440" 
-		or SettingsDB.getresolution == "1680x1050" 
-		or SettingsDB.getresolution == "1920x1080" 
-		or SettingsDB.getresolution == "1920x1200" 
-		or SettingsDB.getresolution == "1600x900" 
-		or SettingsDB.getresolution == "2048x1152" 
-		or SettingsDB.getresolution == "1776x1000" 
-		or SettingsDB.getresolution == "2560x1600" 
-		or SettingsDB.getresolution == "1600x1200") then
-		SettingsDB.lowversion = true	
-	end
-
 	if SettingsCF["general"].auto_scale == true then
 		SettingsCF["general"].uiscale = min(2, max(.64, 768/string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)")))
 	end
