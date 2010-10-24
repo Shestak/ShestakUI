@@ -12,9 +12,9 @@ w:SetScript("OnEvent", function(self, event, ...)
 	if event == "PLAYER_ENTERING_WORLD" then
 		SetCVar("questPOI", 1)
 		SetCVar("advancedWorldMap",1)
-		--BlackoutWorld:Hide()
-		--BlackoutWorld.Show = SettingsDB.dummy
-		--BlackoutWorld.Hide = SettingsDB.dummy
+		BlackoutWorld:Hide()
+		BlackoutWorld.Show = SettingsDB.dummy
+		BlackoutWorld.Hide = SettingsDB.dummy
 		WORLDMAP_RATIO_MINI = map_scale
 		WORLDMAP_WINDOWED_SIZE = map_scale 
 		WORLDMAP_SETTINGS.size = map_scale 
@@ -88,6 +88,7 @@ function m_MapShrink()
 	WorldMapFrameMiniBorderRight:Hide()
 	WorldMapPOIFrame.ratio = map_scale
 	
+	WorldMapFrameSizeUpButton.Show = SettingsDB.dummy
 	WorldMapFrameSizeUpButton:Hide()
 	
 	WorldMapFrameCloseButton:ClearAllPoints()
@@ -127,7 +128,7 @@ function m_MapShrink()
 	WorldMapTrackQuestText:SetFont(SettingsCF.media.normal_font, 17)
 	
 	WorldMapShowDigSites:SetScale(map_scale)
-		
+	
 	WorldMapFrame_SetOpacity(WORLDMAP_SETTINGS.opacity)
 end
 hooksecurefunc("WorldMap_ToggleSizeDown", m_MapShrink)
