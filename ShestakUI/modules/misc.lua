@@ -1,15 +1,4 @@
 ----------------------------------------------------------------------------------------
---	Battlefield score frame
-----------------------------------------------------------------------------------------
-if WorldStateAlwaysUpFrame then
-	WorldStateAlwaysUpFrame:SetFrameStrata("BACKGROUND")
-	WorldStateAlwaysUpFrame:SetFrameLevel(0)
-	WorldStateAlwaysUpFrame:ClearAllPoints()
-	WorldStateAlwaysUpFrame:SetPoint(unpack(SettingsCF["position"].attempt))
-	WorldStateAlwaysUpFrame.SetPoint = SettingsDB.dummy
-end
-
-----------------------------------------------------------------------------------------
 --	Force readycheck warning 
 ----------------------------------------------------------------------------------------
 local ShowReadyCheckHook = function(self, initiator, timeLeft)
@@ -24,8 +13,7 @@ hooksecurefunc("ShowReadyCheck", ShowReadyCheckHook)
 ----------------------------------------------------------------------------------------
 hooksecurefunc("MerchantItemButton_OnModifiedClick", function(self, button)
     if MerchantFrame.selectedTab == 1 then
-        --if IsAltKeyDown() and button=="RightButton" then
-		if IsAltKeyDown() then
+        if IsAltKeyDown() and button == "RightButton" then
             local id=self:GetID()
             local extracost = select(7, GetMerchantItemInfo(id))
             if not extracost then
@@ -83,43 +71,6 @@ end)
 checkflask:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 
 ----------------------------------------------------------------------------------------
---	Protection from hidden windows auction at the opening of other windows(by Fernir)
-----------------------------------------------------------------------------------------
---[[
-local eventframe = CreateFrame("Frame")
-eventframe:RegisterEvent("ADDON_LOADED")
-eventframe:SetScript("OnEvent", function(self, event, addon)
-    if addon == "Blizzard_AuctionUI" then
-        AuctionFrame:SetMovable(true)
-        AuctionFrame:SetClampedToScreen(true)
-        AuctionFrame:SetScript("OnMouseDown", function(self) self:StartMoving() end)
-        AuctionFrame:SetScript("OnMouseUp", function(self) self:StopMovingOrSizing() end)
-
-        local handleAuctionFrame = function(self)
-            if AuctionFrame:GetAttribute("UIPanelLayout-enabled") then
-                if AuctionFrame:IsVisible() then
-                    AuctionFrame.Hide = function() end
-                    HideUIPanel(AuctionFrame)
-                    AuctionFrame.Hide = nil
-                end
-                AuctionFrame:SetAttribute("UIPanelLayout-enabled", nil)
-            else
-                if AuctionFrame:IsVisible() then
-                    AuctionFrame.IsShown = function() end
-                    ShowUIPanel(AuctionFrame)
-                    AuctionFrame.IsShown = nil
-                end
-            end
-        end
-        hooksecurefunc("AuctionFrame_Show", handleAuctionFrame)
-        hooksecurefunc("AuctionFrame_Hide", handleAuctionFrame)
-      
-      self:UnregisterEvent"ADDON_LOADED"
-      self:SetScript("OnEvent", nil)
-    end
-end)]]
-
-----------------------------------------------------------------------------------------
 --	Spin camera while afk(by Telroth and Eclipse)
 ----------------------------------------------------------------------------------------
 if SettingsCF["misc"].afk_spin_camera == true then
@@ -145,9 +96,6 @@ if SettingsCF["misc"].afk_spin_camera == true then
 
 	function SpinStart()
 		spinning = true
-		--SaveView(4)
-		--ResetView(5)
-		--SetView(5)
 		MoveViewRightStart(0.1)
 		UIParent:Hide()
 	end
@@ -156,7 +104,6 @@ if SettingsCF["misc"].afk_spin_camera == true then
 		if not spinning then return end
 		spinning = nil
 		MoveViewRightStop()
-		--SetView(4)
 		UIParent:Show()
 	end
 end

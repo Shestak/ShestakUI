@@ -1,16 +1,6 @@
 ----------------------------------------------------------------------------------------
 --	Reposition Capture Bar
 ----------------------------------------------------------------------------------------
---[[local function CaptureUpdate()
-	for i = 1, NUM_EXTENDED_UI_FRAMES do
-		local cb = _G["WorldStateCaptureBar"..i]
-		if cb and cb:IsShown() then
-			cb:ClearAllPoints()
-			cb:SetPoint(unpack(SettingsCF.position.capture_bar))
-		end
-	end
-end
-hooksecurefunc("WorldStateAlwaysUpFrame_Update", CaptureUpdate)]]
 local function CaptureUpdate()
 	if NUM_EXTENDED_UI_FRAMES then
 		local captureBar
@@ -29,3 +19,14 @@ local function CaptureUpdate()
 	end
 end
 hooksecurefunc("UIParent_ManageFramePositions", CaptureUpdate)
+
+----------------------------------------------------------------------------------------
+--	Battlefield score frame
+----------------------------------------------------------------------------------------
+if WorldStateAlwaysUpFrame then
+	WorldStateAlwaysUpFrame:SetFrameStrata("BACKGROUND")
+	WorldStateAlwaysUpFrame:SetFrameLevel(0)
+	WorldStateAlwaysUpFrame:ClearAllPoints()
+	WorldStateAlwaysUpFrame:SetPoint(unpack(SettingsCF["position"].attempt))
+	WorldStateAlwaysUpFrame.SetPoint = SettingsDB.dummy
+end

@@ -12,6 +12,8 @@
 	<Script file="locales\zhTW.lua"/>
 	
 	<Script file="config\config.lua"/>
+	<Script file="config\positions.lua"/>
+	<Script file="config\fonts.lua"/>
 	<Script file="config\user_config.lua"/>
 	
 	<Script file="modules\gui.lua"/>
@@ -52,6 +54,7 @@
 	<Script file="modules\kill.lua"/>
 	<Script file="modules\durability.lua"/>
 	<Script file="modules\autobutton.lua"/>
+	<Script file="modules\achievement.lua"/>
 
 	<Script file="scripts\font.lua"/>
 	<Script file="scripts\minimap.lua"/>
