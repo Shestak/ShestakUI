@@ -8,7 +8,7 @@ if SettingsDB.client == "zhCN" then
 	L_TOOLTIP_ACH_STATUS = "你的状态:"
 	L_TOOLTIP_ACH_COMPLETE = "你的状态: 完成 "
 	L_TOOLTIP_ACH_INCOMPLETE = "你的状态: 未完成"
-	L_TOOLTIP_SPELL_ID = "Spell ID:"  -- Needs review
+	L_TOOLTIP_SPELL_ID = "法术ID:"
 	
 	-- Raid Utility
 	L_RAID_UTIL = "团队工具"
@@ -80,22 +80,22 @@ if SettingsDB.client == "zhCN" then
 	
 	-- Bags
 	L_BAG_BANK = "银行"
-	L_BAG_NO_SLOTS = "不能再购买更多的背包字段!"
+	L_BAG_NO_SLOTS = "不能再购买更多的背包栏位!"
 	L_BAG_COSTS = "花费: %.2f 金"
-	L_BAG_BUY_SLOTS = "输入 /bags purchase yes 以购买银行背包字段"
+	L_BAG_BUY_SLOTS = "输入 /bags purchase yes 以购买银行背包栏位"
 	L_BAG_OPEN_BANK = "您需要先造访您的银行"
 	L_BAG_SORT = "将背包或银行内的物品分类及排序"
-	L_BAG_STACK = "将背包或银行内的不完整的物品堆栈重新堆栈"
-	L_BAG_BUY_BANKS_SLOT = "购买银行背包字段. (需要造访银行)"
+	L_BAG_STACK = "将背包或银行内的不完整的物品堆叠重新堆叠"
+	L_BAG_BUY_BANKS_SLOT = "购买银行背包栏位. (需要造访银行)"
 	L_BAG_SORT_MENU = "分类及排序"
 	L_BAG_SORT_SPECIAL = "分类及排序特殊物品"
-	L_BAG_STACK_MENU = "堆栈"
-	L_BAG_STACK_SPECIAL = "堆栈特殊物品"
+	L_BAG_STACK_MENU = "堆叠"
+	L_BAG_STACK_SPECIAL = "堆叠特殊物品"
 	L_BAG_SHOW_BAGS = "显示背包"
 	L_BAG_SORTING_BAGS = "分类及排序完成"
 	L_BAG_NOTHING_SORT = "不需要分类"
 	L_BAG_BAGS_BIDS = "使用背包: "
-	L_BAG_STACK_END = "重新堆栈完成"
+	L_BAG_STACK_END = "重新堆叠完成"
 	L_BAG_RIGHT_CLICK_SEARCH = "点击右键以搜寻物品"
 	
 	-- Grab mail

@@ -141,13 +141,6 @@ local function Shared(self, unit)
 		self.ReadyCheck:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(1))
 	end
 	
-	if not ((self:GetAttribute("unitsuffix") == "target") or (self:GetAttribute("unitsuffix") == "pet")) then
-		self.PhaseIcon = self.Health:CreateTexture(nil, "OVERLAY")
-		self.PhaseIcon:SetSize(SettingsDB.Scale(16), SettingsDB.Scale(16))
-		self.PhaseIcon:SetPoint("BOTTOM", self.Health, "BOTTOM", 0, SettingsDB.Scale(-2))
-		self.PhaseIcon.Override = SettingsDB.Phasing
-	end
-	
 	-- Leader/Assistant/ML icons
 	if db.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target") then
 		-- Leader icon
