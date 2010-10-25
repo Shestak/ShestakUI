@@ -20,8 +20,8 @@ if GetLocale() == "zhTW" then
 	L_GUI_MISC_SPIN_CAMERA = "AFK時旋轉鏡頭"
 	L_GUI_MISC_MOVE_WATCH_FRAME = "追蹤框體解鎖" -- Needs review
 	L_GUI_MISC_VEHICLE_MOUSEOVER = "駕駛框體解鎖" -- Needs review
-	L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button" -- Needs review
-	L_GUI_MISC_RAID_TOOLS = "Raid tools" -- Needs review
+	L_GUI_MISC_QUEST_AUTOBUTTON = "任務/道具自動按鈕"
+	L_GUI_MISC_RAID_TOOLS = "團隊工具"
 	
 	-- Skins options
 	L_GUI_SKINS = "風格化" -- Needs review
@@ -35,9 +35,9 @@ if GetLocale() == "zhTW" then
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "改變模型頂部/玩家頭像的傷害/治療字體"
 	L_GUI_COMBATTEXT_DAMAGE = "獨立顯示傷害輸出"
 	L_GUI_COMBATTEXT_HEALING = "獨立顯示治療輸出"
-	L_GUI_COMBATTEXT_HOTS = "Show periodic healing effects in healing frame" -- Needs review
-	L_GUI_COMBATTEXT_PET_DAMAGE = "Show your pet damage" -- Needs review
-	L_GUI_COMBATTEXT_DOT_DAMAGE = "Show damage from your dots" -- Needs review
+	L_GUI_COMBATTEXT_HOTS = "顯示hot造成的治療"
+	L_GUI_COMBATTEXT_PET_DAMAGE = "顯示寵物傷害輸出"
+	L_GUI_COMBATTEXT_DOT_DAMAGE = "顯示dot造成的傷害"
 	L_GUI_COMBATTEXT_DAMAGE_COLOR = "以法術系別顏色顯示傷害文字"
 	L_GUI_COMBATTEXT_CRIT_PREFIX = "文本右側致命效果修飾符號"
 	L_GUI_COMBATTEXT_CRIT_POSTFIX = "文本右側致命效果修飾符號"
@@ -247,7 +247,7 @@ if GetLocale() == "zhTW" then
 	
 	-- Panel options
 	L_GUI_TOP_PANEL = "頂部面板"
-	L_GUI_TOP_PANEL_ENABLE = "Enable top panel"	-- Needs review
+	L_GUI_TOP_PANEL_ENABLE = "開啟頂部面板"
 	L_GUI_TOP_PANEL_MOUSE = "滑鼠劃過時顯示頂部面板"
 	L_GUI_TOP_PANEL_WIDTH = "面板寬度"
 	L_GUI_TOP_PANEL_HEIGHT = "面板高度"

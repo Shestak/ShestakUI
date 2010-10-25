@@ -30,7 +30,7 @@ Filger_Spells = {
 			-- Survival Instincts
 			{ spellID = 61336, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hyperspeed Accelerators
-			{ spellID = 54999, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Tree of Life
 			{ spellID = 33891, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
@@ -84,7 +84,7 @@ Filger_Spells = {
 			-- Siphoned Power
 			{ spellID = 71636, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hyperspeed Accelerators
-			{ spellID = 54999, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Cultivated Power
 			{ spellID = 71572, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hardened Skin
@@ -351,7 +351,7 @@ Filger_Spells = {
 			-- Heroism
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
-			{ spellID = 54999, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -478,7 +478,7 @@ Filger_Spells = {
 			-- Heroism
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
-			{ spellID = 54999, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -592,7 +592,7 @@ Filger_Spells = {
 			-- Innervate
 			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
-			{ spellID = 54999, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -686,7 +686,7 @@ Filger_Spells = {
 			-- Heroism
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
-			{ spellID = 54999, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -804,7 +804,7 @@ Filger_Spells = {
 			-- Borrowed Time
 			{ spellID = 52795, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hyperspeed Accelerators
-			{ spellID = 54999, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -958,7 +958,7 @@ Filger_Spells = {
 			-- Devious Minds
 			{ spellID = 70840, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hyperspeed Accelerators
-			{ spellID = 54999, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1150,7 +1150,7 @@ Filger_Spells = {
 			-- Heroism
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
-			{ spellID = 54999, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Slice and Dice
 			{ spellID = 5171, size = 37, unitId = "player", caster = "player", filter = "BUFF" },		
 			-- Tricks of the Trade
@@ -1242,7 +1242,7 @@ Filger_Spells = {
 			-- Heroism
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
-			{ spellID = 54999, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",

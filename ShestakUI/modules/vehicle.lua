@@ -13,18 +13,18 @@ end)
 ----------------------------------------------------------------------------------------
 if SettingsCF["misc"].vehicle_mouseover == true then
 	local function VehicleNumSeatIndicator()
-		if VehicleSeatIndicatorButton1 then
-			SettingsDB.numSeat = 1
-		elseif VehicleSeatIndicatorButton2 then
-			SettingsDB.numSeat = 2
-		elseif VehicleSeatIndicatorButton3 then
-			SettingsDB.numseat = 3
-		elseif VehicleSeatIndicatorButton4 then
-			SettingsDB.numSeat = 4
+		if VehicleSeatIndicatorButton6 then
+			SettingsDB.numSeat = 6
 		elseif VehicleSeatIndicatorButton5 then
 			SettingsDB.numSeat = 5
-		elseif VehicleSeatIndicatorButton6 then
-			SettingsDB.numSeat = 6
+		elseif VehicleSeatIndicatorButton4 then
+			SettingsDB.numseat = 4
+		elseif VehicleSeatIndicatorButton3 then
+			SettingsDB.numSeat = 3
+		elseif VehicleSeatIndicatorButton2 then
+			SettingsDB.numSeat = 2
+		elseif VehicleSeatIndicatorButton1 then
+			SettingsDB.numSeat = 1
 		end
 	end
 

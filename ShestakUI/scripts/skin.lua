@@ -204,6 +204,42 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			end
 		end
 		
+		local ButtonsBackground = {
+			"BaudErrorFrameClearButtonLeft",
+			"BaudErrorFrameClearButtonMiddle",
+			"BaudErrorFrameClearButtonRight",
+			"BaudErrorFrameCloseButtonLeft",
+			"BaudErrorFrameCloseButtonMiddle",
+			"BaudErrorFrameCloseButtonRight",
+			"LFDRoleCheckPopupAcceptButtonLeft",
+			"LFDRoleCheckPopupAcceptButtonMiddle",
+			"LFDRoleCheckPopupAcceptButtonRight",
+			"LFDRoleCheckPopupDeclineButtonLeft",
+			"LFDRoleCheckPopupDeclineButtonMiddle",
+			"LFDRoleCheckPopupDeclineButtonRight",
+			"InterfaceOptionsFrameTab1Left",
+			"InterfaceOptionsFrameTab1Middle",
+			"InterfaceOptionsFrameTab1Right",
+			"InterfaceOptionsFrameTab1LeftDisabled",
+			"InterfaceOptionsFrameTab1MiddleDisabled",
+			"InterfaceOptionsFrameTab1RightDisabled",
+			"InterfaceOptionsFrameTab1HighlightTexture",
+			"InterfaceOptionsFrameTab2Left",
+			"InterfaceOptionsFrameTab2Middle",
+			"InterfaceOptionsFrameTab2Right",
+			"InterfaceOptionsFrameTab2LeftDisabled",
+			"InterfaceOptionsFrameTab2MiddleDisabled",
+			"InterfaceOptionsFrameTab2RightDisabled",
+			"InterfaceOptionsFrameTab2HighlightTexture",
+		}
+		
+		for i = 1, getn(ButtonsBackground) do
+			local ButtonsBD = _G[ButtonsBackground[i]]
+			if ButtonsBD then
+				ButtonsBD:SetAlpha(0)
+			end
+		end
+		
 		-- Button position or text
 		_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
 		_G["VideoOptionsFrameDefaults"]:SetPoint("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
@@ -259,28 +295,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["GhostFrame"]:SetPoint("BOTTOM", Minimap, "TOP", 0, SettingsDB.Scale(5))
 		_G["GhostFrameContentsFrameIcon"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		_G["PlayerPowerBarAlt"]:HookScript("OnShow", function(self) self:ClearAllPoints() self:SetPoint("TOP", 0, -12) end)
-		
-		_G["LFDRoleCheckPopupAcceptButtonLeft"]:SetAlpha(0)
-		_G["LFDRoleCheckPopupAcceptButtonMiddle"]:SetAlpha(0)
-		_G["LFDRoleCheckPopupAcceptButtonRight"]:SetAlpha(0)
-		_G["LFDRoleCheckPopupDeclineButtonLeft"]:SetAlpha(0)
-		_G["LFDRoleCheckPopupDeclineButtonMiddle"]:SetAlpha(0)
-		_G["LFDRoleCheckPopupDeclineButtonRight"]:SetAlpha(0)
-		
-		_G["InterfaceOptionsFrameTab1Left"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab1Middle"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab1Right"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab1LeftDisabled"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab1MiddleDisabled"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab1RightDisabled"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab1HighlightTexture"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab2Left"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab2Middle"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab2Right"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab2LeftDisabled"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab2MiddleDisabled"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab2RightDisabled"]:SetAlpha(0)
-		_G["InterfaceOptionsFrameTab2HighlightTexture"]:SetAlpha(0)
 	end
 	
 	-- AtlasLoot Tooltip
@@ -358,10 +372,12 @@ if IsMacClient() then
 	SkinButton(_G["MacOptionsButtonKeybindings"])
 	SkinButton(_G["MacOptionsFrameDefaults"])
 	SkinButton(_G["MacOptionsButtonCompress"])
+	_G["MacOptionsFrameDefaults"]:SetTexture("")
  
 	-- Reposition and resize buttons
 	tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsButtonCompress"]:GetPoint()
 	_G["MacOptionsButtonCompress"]:SetWidth(136)
+	_G["MacOptionsButtonCompress"]:ClearAllPoints()
 	_G["MacOptionsButtonCompress"]:SetPoint(tPoint, tRTo, tRP, tX + 4, tY)
  
 	_G["MacOptionsFrameCancel"]:SetWidth(96)
