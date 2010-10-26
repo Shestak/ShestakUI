@@ -50,6 +50,9 @@ if GetLocale() == "ruRU" then
 	L_GUI_COMBATTEXT_TIME_VISIBLE = "Время(в секундах) до исчезновения текста"
 	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Отключать входящее лечение для Жрецов в шедоуформе"
 	L_GUI_COMBATTEXT_DK_RUNES = "Отображать перезарядку рун Рыцарей Смерти"
+	L_GUI_COMBATTEXT_KILLINGBLOW = "Tells you about your killingblows" -- Needs review
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single message" -- Needs review
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Time in seconds aoe spell will be merged into single message" -- Needs review
 	
 	-- Buffs reminder options
 	L_GUI_REMINDER = "Напоминания"

@@ -32,7 +32,7 @@ local ct={
 	["dotdamage"] = SettingsCF["combattext"].dot_damage,		-- show damage from your dots. someone asked an option to disable lol.
 	["treshold"] = SettingsCF["combattext"].treshold,		-- minimum damage to show in outgoing damage frame
 	["healtreshold"] = SettingsCF["combattext"].heal_treshold,		-- minimum healing to show in incoming/outgoing healing messages.
-	["killingblow"] = true,		-- tells you about your killingblows
+	["killingblow"] = SettingsCF["combattext"].killingblow,		-- tells you about your killingblows
 	
 -- appearence
 	["font"] = SettingsCF["media"].pixel_font,	-- "Fonts\\ARIALN.ttf" is default WoW font.
@@ -46,8 +46,8 @@ local ct={
 -- class modules and goodies
 	["stopvespam"] = SettingsCF["combattext"].stop_ve_spam,		-- automaticly turns off healing spam for priests in shadowform. HIDE THOSE GREEN NUMBERS PLX!
 	["dkrunes"] = SettingsCF["combattext"].dk_runes,		-- show deatchknight rune recharge
-	["mergeaoespam"] = true,	-- merges multiple aoe spam into single message, can be useful for dots too.
-	["mergeaoespamtime"] = 3,	-- time in seconds aoe spell will be merged into single message.
+	["mergeaoespam"] = SettingsCF["combattext"].merge_aoe_spam,	-- merges multiple aoe spam into single message, can be useful for dots too.
+	["mergeaoespamtime"] = SettingsCF["combattext"].merge_aoe_spam_time,	-- time in seconds aoe spell will be merged into single message.
 }
 ---------------------------------------------------------------------------------
 -- outgoing healing filter, hide this spammy shit, plx

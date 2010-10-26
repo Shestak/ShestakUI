@@ -50,6 +50,9 @@ if GetLocale() == "koKR" then
 	L_GUI_COMBATTEXT_TIME_VISIBLE = "Time(seconds) a single message will be visible"
 	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Automaticly turns off healing spam for priests in shadowform"
 	L_GUI_COMBATTEXT_DK_RUNES = "Show deatchknight rune recharge"
+	L_GUI_COMBATTEXT_KILLINGBLOW = "Tells you about your killingblows" -- Needs review
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single message" -- Needs review
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Time in seconds aoe spell will be merged into single message" -- Needs review
 	
 	-- Buffs reminder options
 	L_GUI_REMINDER = "Buffs reminder"

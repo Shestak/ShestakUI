@@ -50,6 +50,9 @@ if GetLocale() == "esMX" then
 	L_GUI_COMBATTEXT_TIME_VISIBLE = "Tiempo (segundos) en que un mensaje es visible"
 	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Ocultar automáticamente el spam de sanación del Sacerdote cuando estás en Forma de las Sombras"
 	L_GUI_COMBATTEXT_DK_RUNES = "Mostrar recarga de runas de los Caballeros de la Muerte"
+	L_GUI_COMBATTEXT_KILLINGBLOW = "Tells you about your killingblows" -- Needs review
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single message" -- Needs review
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Time in seconds aoe spell will be merged into single message" -- Needs review
 	
 	-- Buffs reminder options
 	L_GUI_REMINDER = "Recordatorio de Ventajas"

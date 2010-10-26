@@ -50,6 +50,9 @@ if GetLocale() == "zhCN" then
 	L_GUI_COMBATTEXT_TIME_VISIBLE = "信息保留时间（建议3）"
 	L_GUI_COMBATTEXT_STOP_VE_SPAM = "自动过滤暗牧形态下的垃圾信息"
 	L_GUI_COMBATTEXT_DK_RUNES = "显示死亡骑士符文恢复"
+	L_GUI_COMBATTEXT_KILLINGBLOW = "Tells you about your killingblows" -- Needs review
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single message" -- Needs review
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Time in seconds aoe spell will be merged into single message" -- Needs review
 	
 	-- Buffs reminder options
 	L_GUI_REMINDER = "Buffs提示"
