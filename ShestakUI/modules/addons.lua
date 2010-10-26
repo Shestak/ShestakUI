@@ -35,6 +35,7 @@ loadf:SetFrameStrata("DIALOG")
 tinsert(UISpecialFrames, "aLoadFrame")
 SettingsDB.SkinFadedPanel(loadf)
 loadf:Hide()
+loadf:SetScript("OnHide", function(self) ShowUIPanel(GameMenuFrame) end)
 
 local title = loadf:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 title:SetPoint("TOP", 0, -8)

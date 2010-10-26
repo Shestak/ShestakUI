@@ -65,6 +65,4 @@ if SettingsDB.name == "Черешок"
 	SettingsCF["unitframe"].arena_on_right = false
 	SettingsCF["error"].black = false
 	SettingsCF["error"].white = true
-	SettingsCF["addon"].raid = {"DBM-Core", "LSRaidClient"}
-	SettingsCF["addon"].party = {"alDamageMeter", "DBM-Core"}
 end

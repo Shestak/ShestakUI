@@ -365,7 +365,7 @@ SettingsCF["toppanel"] = {
 ----------------------------------------------------------------------------------------
 SettingsCF["stats"] = {
 	["font_size"] = 8,							-- Stats font size
-	["battleground"] = true,					-- BG Score
+	["battleground"] = false,					-- BG Score
 	["clock"] = true,							-- Clock
 	["latency"] = true,							-- Latency
 	["memory"] = true,							-- Memory

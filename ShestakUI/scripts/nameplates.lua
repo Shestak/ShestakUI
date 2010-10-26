@@ -9,9 +9,9 @@ SetCVar("bloatthreat", 0)
 SetCVar("bloattest", 1)
 SetCVar("bloatnameplates", 0)
 if SettingsCF["nameplate"].overlap == true then
-	SetCVar("spreadnameplates", "0")
+	SetCVar("spreadnameplates", 0)
 else
-	SetCVar("spreadnameplates", "1")
+	SetCVar("spreadnameplates", 1)
 end
  
 local select = select
@@ -226,7 +226,9 @@ local fixCastbar = function(self)
 	self.castbarOverlay:Hide()
 	self:SetHeight(SettingsCF["nameplate"].height * UIParent:GetEffectiveScale())
 	self:ClearAllPoints()
-	self:SetPoint("TOP", self.healthBar, "BOTTOM", 0, -8)
+	--self:SetPoint("TOP", self.healthBar, "BOTTOM", 0, -8)
+	self:SetPoint("TOPLEFT", self.healthBar, "BOTTOMLEFT", 0, -8)
+	self:SetPoint("BOTTOMRIGHT", self.healthBar, "BOTTOMRIGHT", 0, -SettingsCF["nameplate"].height-8)
 end
  
 local colorCastBar = function(self, shielded)
