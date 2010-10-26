@@ -19,8 +19,8 @@ if SettingsDB.client == "ruRU" then
 	
 	-- Flask name
 	L_FLASK_STR = "Настой Севера - Сила"
-	L_FLASK_SPD = "Настой Севера - Сила заклинаний"
-	L_FLASK_AP = "Настой Севера - Сила атаки"
+	L_FLASK_SPD = "Настой Севера - Интеллект"
+	L_FLASK_AP = "Настой Севера - Ловкость"
 	
 	-- UnitFrame
 	L_UF_GHOST = "Призрак"

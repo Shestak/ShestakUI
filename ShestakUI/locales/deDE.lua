@@ -19,8 +19,8 @@ if SettingsDB.client == "deDE" then
 
 	-- Flask name
 	L_FLASK_STR = "Fläschchen des Nordens erhalten - Stärke"
-	L_FLASK_SPD = "Fläschchen des Nordens erhalten - Zaubermacht"
-	L_FLASK_AP = "Fläschchen des Nordens erhalten - Angriffskraft"
+	L_FLASK_SPD = "Fläschchen des Nordens erhalten - Intelligenz"
+	L_FLASK_AP = "Fläschchen des Nordens erhalten - Beweglichkeit"
 	
 	-- UnitFrame
 	L_UF_GHOST = "Geist"

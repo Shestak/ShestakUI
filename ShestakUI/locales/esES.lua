@@ -19,8 +19,8 @@ if SettingsDB.client == "esES" then
 	
 	-- Flask name
 	L_FLASK_STR = "Frasco del Norte - Fuerza"
-	L_FLASK_SPD = "Frasco del Norte - Daño Mágico"
-	L_FLASK_AP = "Frasco del Norte - Poder de Ataque"
+	L_FLASK_SPD = "Frasco del Norte - Intelecto"
+	L_FLASK_AP = "Frasco del Norte - Agilidad"
 	
 	-- UnitFrame
 	L_UF_GHOST = "Fantasma"

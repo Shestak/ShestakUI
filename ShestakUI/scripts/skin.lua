@@ -217,6 +217,12 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"LFDRoleCheckPopupDeclineButtonLeft",
 			"LFDRoleCheckPopupDeclineButtonMiddle",
 			"LFDRoleCheckPopupDeclineButtonRight",
+			"LFDDungeonReadyDialogLeaveQueueButtonLeft",
+			"LFDDungeonReadyDialogLeaveQueueButtonMiddle",
+			"LFDDungeonReadyDialogLeaveQueueButtonRight",
+			"LFDDungeonReadyDialogEnterDungeonButtonLeft",
+			"LFDDungeonReadyDialogEnterDungeonButtonMiddle",
+			"LFDDungeonReadyDialogEnterDungeonButtonRight",
 			"InterfaceOptionsFrameTab1Left",
 			"InterfaceOptionsFrameTab1Middle",
 			"InterfaceOptionsFrameTab1Right",
@@ -295,15 +301,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["GhostFrame"]:SetPoint("BOTTOM", Minimap, "TOP", 0, SettingsDB.Scale(5))
 		_G["GhostFrameContentsFrameIcon"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		_G["PlayerPowerBarAlt"]:HookScript("OnShow", function(self) self:ClearAllPoints() self:SetPoint("TOP", 0, -12) end)
-	end
-	
-	-- AtlasLoot Tooltip
-	if IsAddOnLoaded("AtlasLoot") then
-		SettingsDB.SkinFadedPanel(AtlasLootTooltip)
-		AtlasLootTooltip:HookScript("OnShow", function(self) 
-			self:SetBackdropColor(unpack(SettingsCF.media.overlay_color))
-			self:SetBackdropBorderColor(unpack(SettingsCF.media.border_color))
-		end)
 	end
 	
 	-- DBM-GUI Frame

@@ -19,8 +19,8 @@ if SettingsDB.client == "frFR" then
 
 	-- Flask name
 	L_FLASK_STR = "Flacon du Grand Nord - Force"
-	L_FLASK_SPD = "Flacon du Grand Nord - Puissance des sorts"
-	L_FLASK_AP = "Flacon du Grand Nord - Puissance d'attaque"
+	L_FLASK_SPD = "Flacon du Grand Nord - Intelligence"
+	L_FLASK_AP = "Flacon du Grand Nord - Agilité"
 
 	-- UnitFrame
 	L_UF_GHOST = "Spectre"

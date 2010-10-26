@@ -165,9 +165,6 @@ Minimap:SetMaskTexture(SettingsCF.media.blank)
 -- For others mods with a minimap button, set minimap buttons position in square mode
 function GetMinimapShape() return 'SQUARE' end
 
--- Reskin LFG dropdown
-SettingsDB.SkinFadedPanel(LFDSearchStatus)
-
 ----------------------------------------------------------------------------------------
 --	Hide minimap in combat
 ----------------------------------------------------------------------------------------

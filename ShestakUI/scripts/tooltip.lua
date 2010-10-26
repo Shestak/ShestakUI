@@ -10,6 +10,7 @@ local tooltips = {
 	ShoppingTooltip2,
 	ShoppingTooltip3,
 	WorldMapTooltip,
+	AtlasLootTooltip
 }
 
 for _, tt in pairs(tooltips) do
