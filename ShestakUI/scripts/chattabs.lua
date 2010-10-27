@@ -4,16 +4,17 @@
 if SettingsCF.chat.enable ~= true then return end
 
 local Fane = CreateFrame"Frame"
+local db = SettingsCF["font"]
 
 local updateFS = function(self, inc, flags, ...)
 	local fstring = self:GetFontString()
 
 	if(inc) then
-		fstring:SetFont(SettingsCF["media"].pixel_font, SettingsCF["chat"].tab_font_size, SettingsCF["chat"].tab_font_style)
-		fstring:SetShadowColor(0, 0, 0, 0)
+		fstring:SetFont(db.chat_tabs_font, db.chat_tabs_font_size, db.chat_tabs_font_style);
+		fstring:SetShadowOffset(db.chat_tabs_font_shadow and 1 or 0, db.chat_tabs_font_shadow and -1 or 0)
 	else
-		fstring:SetFont(SettingsCF["media"].pixel_font, SettingsCF["chat"].tab_font_size, SettingsCF["chat"].tab_font_style)
-		fstring:SetShadowColor(0, 0, 0, 0)
+		fstring:SetFont(db.chat_tabs_font, db.chat_tabs_font_size, db.chat_tabs_font_style);
+		fstring:SetShadowOffset(db.chat_tabs_font_shadow and 1 or 0, db.chat_tabs_font_shadow and -1 or 0)
 	end
 
 	if((...)) then

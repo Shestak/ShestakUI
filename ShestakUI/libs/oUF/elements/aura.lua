@@ -28,7 +28,6 @@ end
 local createAuraIcon = function(icons, index)
 	local button = CreateFrame("Button", nil, icons)
 	button:EnableMouse(true)
-	button:RegisterForClicks'RightButtonUp'
 
 	button:SetWidth(icons.size or 16)
 	button:SetHeight(icons.size or 16)
@@ -59,11 +58,6 @@ local createAuraIcon = function(icons, index)
 	button.UpdateTooltip= UpdateTooltip
 	button:SetScript("OnEnter", OnEnter)
 	button:SetScript("OnLeave", OnLeave)
-
-	local unit = icons.__owner.unit
-	if(unit == 'player') then
-		button:SetScript('OnClick', OnClick)
-	end
 
 	table.insert(icons, button)
 

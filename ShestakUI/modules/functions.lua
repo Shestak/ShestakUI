@@ -793,22 +793,7 @@ do
 			end
 		end
 	end
-		
-	SettingsDB.Phasing = function(self, event)
-		local inPhase = UnitInPhase(self.unit)
-		local picon = self.PhaseIcon
-
-		if not UnitIsPlayer(self.unit) then picon:Hide() return end
-		
-		if(inPhase) then
-			picon:Hide()
-			if self.Health.value then self.Health.value:SetAlpha(1) end
-		else
-			picon:Show()
-			if self.Health.value then self.Health.value:SetAlpha(0) end
-		end
-	end
-
+	
 	SettingsDB.UpdateHoly = function(self, event, unit, powerType)
 		if(self.unit ~= unit or (powerType and powerType ~= 'HOLY_POWER')) then return end
 		local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)

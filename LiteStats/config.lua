@@ -4,12 +4,12 @@
 ----------------------------------------------------------------------------------------
 
 LPSTAT_FONT = {
-	font = SettingsCF.media.pixel_font,		-- Path to your font
+	font = SettingsCF.font.stats_font,		-- Path to your font
 	color = {1, 1, 1},						-- {red,green,blue} or "CLASS"
-	size = SettingsCF.stats.font_size,		-- Point font size
+	size = SettingsCF.font.stats_font_size,	-- Point font size
 	alpha = 1,								-- Alpha transparency
 	outline = 3,							-- Thin outline. 0 = no outline.
-	shadow = {alpha=0, x=1, y=-1},			-- Font shadow = 1
+	shadow = {alpha=SettingsCF.font.stats_font_shadow and 1 or 0, x=1, y=-1},			-- Font shadow = 1
 }
 LTIPICONSIZE = 12							-- Icon sizes in info tips
 HIDE_IN_COMBAT = false						-- Enable in-combat hiding for all texts

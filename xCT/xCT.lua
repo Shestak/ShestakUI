@@ -35,10 +35,10 @@ local ct={
 	["killingblow"] = SettingsCF["combattext"].killingblow,		-- tells you about your killingblows
 	
 -- appearence
-	["font"] = SettingsCF["media"].pixel_font,	-- "Fonts\\ARIALN.ttf" is default WoW font.
-	["fontsize"] = SettingsCF["combattext"].font_size,
-	["fontstyle"] = SettingsCF["media"].pixel_font_style,	-- valid options are "OUTLINE", "MONOCHROME", "THICKOUTLINE", "OUTLINE,MONOCHROME", "THICKOUTLINE,MONOCHROME"
-	["damagefont"] = SettingsCF["media"].pixel_font,	 -- "Fonts\\FRIZQT__.ttf" is default WoW damage font
+	["font"] = SettingsCF["font"].combat_text_font,	-- "Fonts\\ARIALN.ttf" is default WoW font.
+	["fontsize"] = SettingsCF["font"].combat_text_font_size,
+	["fontstyle"] = SettingsCF["font"].combat_text_font_style,	-- valid options are "OUTLINE", "MONOCHROME", "THICKOUTLINE", "OUTLINE,MONOCHROME", "THICKOUTLINE,MONOCHROME"
+	["damagefont"] = SettingsCF["font"].combat_text_font,	 -- "Fonts\\FRIZQT__.ttf" is default WoW damage font
 	["timevisible"] = SettingsCF["combattext"].time_visible, 		-- time (seconds) a single message will be visible. 3 is a good value.
 	["scrollable"] = SettingsCF["combattext"].scrollable,		-- allows you to scroll frame lines with mousewheel.
 	["maxlines"] = SettingsCF["combattext"].max_lines,		-- max lines to keep in scrollable mode. more lines=more memory. nom nom nom.
@@ -384,7 +384,8 @@ ct.frames={}
 for i=1,numf do
 	local f=CreateFrame("ScrollingMessageFrame","xCT"..i,UIParent)
 	f:SetFont(ct.font,ct.fontsize,ct.fontstyle)
-	f:SetShadowColor(0,0,0,0)
+	f:SetShadowColor(0,0,0,SettingsCF["font"].combat_text_font_shadow and 1 or 0)
+	f:SetShadowOffset(SettingsCF["font"].combat_text_font_shadow and 1 or 0, SettingsCF["font"].combat_text_font_shadow and -1 or 0)
 	f:SetFading(true)
 	f:SetFadeDuration(0.5)
 	f:SetTimeVisible(ct.timevisible)

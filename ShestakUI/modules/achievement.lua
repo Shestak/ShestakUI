@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------------------------
---	Based on ???
+--	Based on AchievementMover
 ----------------------------------------------------------------------------------------
 local function Reanchor()
 	local one, two, lfg = AchievementAlertFrame1, AchievementAlertFrame2, DungeonCompletionAlertFrame1

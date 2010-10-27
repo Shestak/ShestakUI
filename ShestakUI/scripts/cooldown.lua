@@ -3,6 +3,7 @@
 ----------------------------------------------------------------------------------------
 if IsAddOnLoaded("OmniCC") or IsAddOnLoaded("ncCooldown") then return end
 
+local db = SettingsCF["font"]
 local format = string.format
 local floor = math.floor
 local min = math.min
@@ -53,7 +54,8 @@ local function Timer_Create(self)
 	else
 		local text = self:CreateFontString(nil, "OVERLAY")
 		text:SetPoint("CENTER", SettingsDB.Scale(1), 0)
-		text:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size * 2, SettingsCF["media"].pixel_font_style)
+		text:SetFont(db.cooldown_timers_font, db.cooldown_timers_font_size, db.cooldown_timers_font_style);
+		text:SetShadowOffset(db.cooldown_timers_font_shadow and 1 or 0, db.cooldown_timers_font_shadow and -1 or 0)
         text:SetTextColor(1, 1, 1)
 		self.text = text
 		self:SetScript("OnUpdate", Timer_OnUpdate)

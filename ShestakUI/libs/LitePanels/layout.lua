@@ -116,7 +116,7 @@ lpanels:CreateLayout("Load For All", {
 	border = "SOLID", border_color = "0.37 0.3 0.3",
 	text = {
 			{	string = L_PANELS_AFK, anchor_to = "TOP", y_off = -10,
-				shadow = 0, outline = 3, font = SettingsCF["media"].pixel_font, size = SettingsCF["stats"].font_size,
+				shadow = 0, outline = 3, font = SettingsCF["font"].stats_font, size = SettingsCF["font"].stats_font_size,
 			},
 			{	string = function()
 					if afk_timer then
@@ -125,14 +125,14 @@ lpanels:CreateLayout("Load For All", {
 					return format("%s:%02.f", mins, secs)
 					end
 				end, update = 0.1,
-				shadow = 0, outline = 3, font = SettingsCF["media"].pixel_font, size = SettingsCF["stats"].font_size*2,
+				shadow = 0, outline = 3, font = SettingsCF["font"].stats_font, size = SettingsCF["font"].stats_font_size*2,
 				anchor_to = "CENTER", color = "1 0.1 0.1"
 			},
 			{	string = L_PANELS_AFK_RCLICK, anchor_to = "BOTTOM", y_off = 12,
-				shadow = 0, outline = 3, font = SettingsCF["media"].pixel_font, size = SettingsCF["stats"].font_size, 
+				shadow = 0, outline = 3, font = SettingsCF["font"].stats_font, size = SettingsCF["font"].stats_font_size, 
 			},
 			{	string = L_PANELS_AFK_LCLICK, anchor_to = "BOTTOM", y_off = 3,
-				shadow = 0, outline = 3, font = SettingsCF["media"].pixel_font, size = SettingsCF["stats"].font_size, 
+				shadow = 0, outline = 3, font = SettingsCF["font"].stats_font, size = SettingsCF["font"].stats_font_size, 
 			}
 			},
         OnLoad = function(self)

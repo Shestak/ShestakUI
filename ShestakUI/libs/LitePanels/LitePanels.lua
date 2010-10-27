@@ -242,7 +242,7 @@ function lpanels:MakePanel(f)
 
 			-- texts font
 			if t.font and not strmatch(t.font,"[/\\]") then t.font = self.media..t.font end
-			local flags = t.outline == 1 and "OUTLINE" or t.outline == 2 and "THICKOUTLINE" or t.outline == 3 and SettingsCF.media.pixel_font_style
+			local flags = SettingsCF["font"].stats_font_style
 			if t.mono then flags = (flags and flags..", " or "").."MONOCHROME" end
 			text:SetFont(t.font or d.text.font, t.size or d.text.size, flags)
 			if not text:GetFont() then -- handle invalid font error

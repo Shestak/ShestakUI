@@ -5,25 +5,20 @@ local k = SettingsDB.Kill
 
 local Kill = CreateFrame("Frame")
 Kill:RegisterEvent("ADDON_LOADED")
-Kill:RegisterEvent("PLAYER_ENTERING_WORLD")
+Kill:RegisterEvent("PLAYER_LOGIN")
 Kill:SetScript("OnEvent", function(self, event, addon)
-	if event == "PLAYER_ENTERING_WORLD" then
-		self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-		
+	if event == "PLAYER_LOGIN" then
 		if IsAddOnLoaded("ShestakUI_DPS") or IsAddOnLoaded("ShestakUI_Heal") then
 			InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
 			InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
-			CompactRaidFrameManager:SetScale(0.00001)
-			CompactRaidFrameManager:SetAlpha(0)
-			CompactRaidFrameContainer:SetScale(0.00001)
-			CompactRaidFrameContainer:SetAlpha(0)
-			CompactPartyFrame:SetScale(0.00001)
-			CompactPartyFrame:SetAlpha(0)
+			k(CompactPartyFrame)
+			k(CompactRaidFrameManager)
+			k(CompactRaidFrameContainer)
 		end
 	else
 		if addon ~= "ShestakUI" then return end
 		
-		--k(StreamingIcon)
+		k(StreamingIcon)
 		k(Advanced_UseUIScale)
 		k(Advanced_UIScaleSlider)
 		k(PartyMemberBackground)

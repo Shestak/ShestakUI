@@ -6,7 +6,7 @@ if not SettingsCF["nameplate"].enable == true then return end
 local caelNamePlates = CreateFrame("Frame", nil, UIParent)
 caelNamePlates:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
 SetCVar("bloatthreat", 0)
-SetCVar("bloattest", 1)
+SetCVar("bloattest", 0)
 SetCVar("bloatnameplates", 0)
 if SettingsCF["nameplate"].overlap == true then
 	SetCVar("spreadnameplates", 0)
@@ -141,7 +141,7 @@ local threatUpdate = function(self, elapsed)
 		end
 		
 		self.healthBar:ClearAllPoints()
-		self.healthBar:SetPoint("CENTER", self.healthBar:GetParent(), 0, 25)
+		self.healthBar:SetPoint("CENTER", self.healthBar:GetParent(), 0, 10)
 		self.healthBar:SetHeight(SettingsCF["nameplate"].height * UIParent:GetEffectiveScale())
 		self.healthBar:SetWidth(SettingsCF["nameplate"].width * UIParent:GetEffectiveScale())
 		
@@ -187,7 +187,7 @@ local updatePlate = function(self)
 	self.r, self.g, self.b = newr, newg, newb
  
 	self.healthBar:ClearAllPoints()
-	self.healthBar:SetPoint("CENTER", self.healthBar:GetParent(), 0, 25)
+	self.healthBar:SetPoint("CENTER", self.healthBar:GetParent(), 0, 10)
 	self.healthBar:SetHeight(SettingsCF["nameplate"].height * UIParent:GetEffectiveScale())
 	self.healthBar:SetWidth(SettingsCF["nameplate"].width * UIParent:GetEffectiveScale())
 	
@@ -226,7 +226,6 @@ local fixCastbar = function(self)
 	self.castbarOverlay:Hide()
 	self:SetHeight(SettingsCF["nameplate"].height * UIParent:GetEffectiveScale())
 	self:ClearAllPoints()
-	--self:SetPoint("TOP", self.healthBar, "BOTTOM", 0, -8)
 	self:SetPoint("TOPLEFT", self.healthBar, "BOTTOMLEFT", 0, -8)
 	self:SetPoint("BOTTOMRIGHT", self.healthBar, "BOTTOMRIGHT", 0, -SettingsCF["nameplate"].height-8)
 end

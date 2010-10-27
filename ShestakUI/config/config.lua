@@ -70,7 +70,6 @@ SettingsCF["skins"] = {
 --	Combat text options
 ----------------------------------------------------------------------------------------
 SettingsCF["combattext"] = {
-	["font_size"] = 16,							-- Font size
 	["blizz_head_numbers"] = false,				-- Use blizzard damage/healing output(above mob/player head)
 	["damage_style"] = true,					-- Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)
 	["damage"] = true,							-- Show outgoing damage in it's own frame
@@ -116,7 +115,6 @@ SettingsCF["reminder"] = {
 SettingsCF["cooldown"] = {
 	-- Raid cooldowns
 	["raid_enable"] = true,						-- Enable raid cooldowns
-	["raid_font_size"] = 8,						-- Font size
 	["raid_height"] = 15,						-- Bars height
 	["raid_width"] = 186,						-- Bars width(if show_icon = false, bar width+28)
 	["raid_upwards"] = false,					-- Sort upwards bars
@@ -137,7 +135,6 @@ SettingsCF["cooldown"] = {
 ----------------------------------------------------------------------------------------
 SettingsCF["threat"] = {
 	["enable"] = false,							-- Enable threat meter
-	["font_size"] = 8,							-- Font size
 	["height"] = 12,							-- Bars height
 	["width"] = 217,							-- Bars width
 	["bar_rows"] = 7,							-- Number of bars
@@ -173,8 +170,6 @@ SettingsCF["chat"] = {
 	["background_alpha"] = 0.7,					-- Background alpha
 	["font_size"] = 11,							-- Chat font size
 	["font_style"] = "",						-- Font style("OUTLINE", "OUTLINEMONOCHROME", "THICKOUTLINE" or "")
-	["tab_font_size"] = 8,						-- Chat tab font size
-	["tab_font_style"] = "OUTLINEMONOCHROME",	-- Tab font style("OUTLINE", "OUTLINEMONOCHROME", "THICKOUTLINE" or "")
 	["filter"] = true,							-- Removing some chat spam("Player1" won duel "Player2")
 	["width"] = 350,							-- Chat width
 	["height"] = 112,							-- Chat height
@@ -364,7 +359,6 @@ SettingsCF["toppanel"] = {
 --	Stats options
 ----------------------------------------------------------------------------------------
 SettingsCF["stats"] = {
-	["font_size"] = 8,							-- Stats font size
 	["battleground"] = false,					-- BG Score
 	["clock"] = true,							-- Clock
 	["latency"] = true,							-- Latency

@@ -51,7 +51,6 @@ bar:SetScript("OnEvent", function(self, event, ...)
 		end
 		RegisterStateDriver(self, "visibility", "[pet,novehicleui,nobonusbar:5] show; hide")
 		hooksecurefunc("PetActionBar_Update", SettingsDB.PetBarUpdate)
-		PetActionButton_OnDragStart = SettingsDB.dummy
 	elseif event == "PET_BAR_UPDATE" or event == "UNIT_PET" and arg1 == "player" 
 	or event == "PLAYER_CONTROL_LOST" or event == "PLAYER_CONTROL_GAINED" or event == "PLAYER_FARSIGHT_FOCUS_CHANGED" or event == "UNIT_FLAGS" 
 	or arg1 == "pet" and (event == "UNIT_AURA") then

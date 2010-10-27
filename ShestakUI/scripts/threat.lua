@@ -3,6 +3,7 @@
 ----------------------------------------------------------------------------------------
 if not SettingsCF.threat.enable == true or not SettingsCF.unitframe.enable == true then return end
 
+local db = SettingsCF["font"]
 local threatguid, threatunit, threatlist, threatbars = "", "target", {}, {};
 
 local function comma_value(n)
@@ -126,12 +127,14 @@ local function UpdateThreatBars()
 			bar.backgdrop:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
 			
 			bar.textright = bar:CreateFontString("$parentTextRight", "ARTWORK");
-			bar.textright:SetFont(SettingsCF["media"].pixel_font, SettingsCF["threat"].font_size, SettingsCF["media"].pixel_font_style);
+			bar.textright:SetFont(db.threat_meter_font, db.threat_meter_font_size, db.threat_meter_font_style);
+			bar.textright:SetShadowOffset(db.threat_meter_font_shadow and 1 or 0, db.threat_meter_font_shadow and -1 or 0)
 			bar.textright:SetJustifyH("RIGHT");
 			bar.textright:SetPoint("RIGHT", SettingsDB.Scale(-1), 0);
 			
 			bar.textleft = bar:CreateFontString("$parentTextLeft", "ARTWORK");
-			bar.textleft:SetFont(SettingsCF["media"].pixel_font, SettingsCF["threat"].font_size, SettingsCF["media"].pixel_font_style);
+			bar.textleft:SetFont(db.threat_meter_font, db.threat_meter_font_size, db.threat_meter_font_style);
+			bar.textleft:SetShadowOffset(db.threat_meter_font_shadow and 1 or 0, db.threat_meter_font_shadow and -1 or 0)
 			bar.textleft:SetJustifyH("LEFT");
 			bar.textleft:SetPoint("LEFT", SettingsDB.Scale(2), 0);
 			bar.textleft:SetPoint("RIGHT", bar.textright, "LEFT", SettingsDB.Scale(-1), 0);

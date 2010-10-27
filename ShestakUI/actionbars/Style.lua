@@ -4,7 +4,7 @@
 if not SettingsCF["actionbar"].enable == true then return end
 
 local _G = _G
-local media = SettingsCF["media"]
+local db = SettingsCF["font"]
 local securehandler = CreateFrame("Frame", nil, nil, "SecureHandlerBaseTemplate")
 local replace = string.gsub
 
@@ -29,7 +29,8 @@ function style(self)
  
 	Count:ClearAllPoints()
 	Count:SetPoint("BOTTOMRIGHT", 0, SettingsDB.Scale(2))
-	Count:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style)
+	Count:SetFont(db.action_bars_font, db.action_bars_font_size, db.action_bars_font_style);
+	Count:SetShadowOffset(db.action_bars_font_shadow and 1 or 0, db.action_bars_font_shadow and -1 or 0)
  
 	Btname:SetText("")
 	Btname:Hide()
@@ -52,7 +53,8 @@ function style(self)
  
 	HotKey:ClearAllPoints()
 	HotKey:SetPoint("TOPRIGHT", 0, SettingsDB.Scale(-1))
-	HotKey:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style)
+	HotKey:SetFont(db.action_bars_font, db.action_bars_font_size, db.action_bars_font_style);
+	HotKey:SetShadowOffset(db.action_bars_font_shadow and 1 or 0, db.action_bars_font_shadow and -1 or 0)
 	HotKey:SetWidth(SettingsDB.buttonsize-1)
 	HotKey.ClearAllPoints = SettingsDB.dummy
 	HotKey.SetPoint = SettingsDB.dummy

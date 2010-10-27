@@ -3,6 +3,7 @@
 ----------------------------------------------------------------------------------------
 if not SettingsCF["cooldown"].raid_enable == true then return end
 
+local db = SettingsCF["font"]
 local show = {
 	raid = SettingsCF["cooldown"].raid_show_inraid,
 	party = SettingsCF["cooldown"].raid_show_inparty,
@@ -26,7 +27,8 @@ end
 
 local CreateFS = function(frame, fsize, fstyle)
 	local fstring = frame:CreateFontString(nil, "OVERLAY")
-	fstring:SetFont(SettingsCF["media"].pixel_font, SettingsCF["cooldown"].raid_font_size, SettingsCF["media"].pixel_font_style)
+	fstring:SetFont(db.raid_cooldowns_font, db.raid_cooldowns_font_size, db.raid_cooldowns_font_style)
+	fstring:SetShadowOffset(db.raid_cooldowns_font_shadow and 1 or 0, db.raid_cooldowns_font_shadow and -1 or 0)
 	return fstring
 end
 	
