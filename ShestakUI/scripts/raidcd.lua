@@ -107,7 +107,7 @@ local CreateBar = function()
 	bar.left = CreateFS(bar)
 	bar.left:SetPoint("LEFT", SettingsDB.Scale(3), 0)
 	bar.left:SetJustifyH("LEFT")
-	bar.left:SetSize(SettingsCF["cooldown"].raid_width - 35, SettingsCF["cooldown"].raid_font_size)
+	bar.left:SetSize(SettingsCF["cooldown"].raid_width - 35, db.raid_cooldowns_font_size)
 	
 	bar.right = CreateFS(bar)
 	bar.right:SetPoint("RIGHT", SettingsDB.Scale(-1), 0)

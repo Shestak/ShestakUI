@@ -237,14 +237,16 @@ if SettingsCF["tooltip"].talents == true then
 	-- Constants
 	local TALENTS_PREFIX = TALENTS..":|cffffffff ";
 	local CACHE_SIZE = 25;		-- Change cache size here (Default 25)
-	local MIN_INSPECT_DELAY = 0.2;
-	local MIN_INSPECT_FREQ = 2;
+	local INSPECT_DELAY = 0.2;
+	local INSPECT_FREQ = 2;
 	
 	-- Variables
 	local ttt = CreateFrame("Frame", "TipTacTalents");
 	local cache = {};
 	local current = {};
-	local lastInspectRequest = 0;
+	
+	-- Time of the last inspect reuqest. Init this to zero, just to make sure. This is a global so other addons could use this variable as well
+	lastInspectRequest = 0;
 
 	-- Allow these to be accessed through other addons
 	ttt.cache = cache;
@@ -258,16 +260,16 @@ if SettingsCF["tooltip"].talents == true then
 	local function GatherTalents(isInspect)
 		-- Inspect functions will always use the active spec when not inspecting
 		local group = GetActiveTalentGroup(isInspect);
-		-- Get points per tree, and set "maxTree" to the tree with most points
-		local maxTree, _ = 1;
+		-- Get points per tree, and set "primaryTree" to the tree with most points
+		local primaryTree = 1;
 		for i = 1, 3 do
 			local _, _, _, _, pointsSpent = GetTalentTabInfo(i,isInspect,nil,group);
 			current[i] = pointsSpent;
-			if (current[i] > current[maxTree]) then
-				maxTree = i;
+			if (current[i] > current[primaryTree]) then
+				primaryTree = i;
 			end
 		end
-		local _, tabName = GetTalentTabInfo(maxTree,isInspect,nil,group);
+		local _, tabName = GetTalentTabInfo(primaryTree,isInspect,nil,group);
 		current.tree = tabName;
 		-- Az: Clear Inspect, as we are done using it
 		if (isInspect) then
@@ -275,7 +277,7 @@ if SettingsCF["tooltip"].talents == true then
 		end
 		-- Customise output. Use TipTac setting if it exists, otherwise just use formatting style one.
 		local talentFormat = (1);
-		if (current[maxTree] == 0) then
+		if (current[primaryTree] == 0) then
 			current.format = L_TOOLTIP_NO_TALENT;
 		elseif (talentFormat == 1) then
 			current.format = current.tree.." ("..current[1].."/"..current[2].."/"..current[3]..")";
@@ -339,7 +341,7 @@ if SettingsCF["tooltip"].talents == true then
 				self:RegisterEvent("INSPECT_READY");
 				-- Az: Fix the blizzard inspect copypasta code (Blizzard_InspectUI\InspectPaperDollFrame.lua @ line 23)
 				if (InspectFrame) then
-					InspectFrame.unit = unit;
+					InspectFrame.unit = "player";
 				end
 				NotifyInspect(current.unit);
 			end
@@ -391,7 +393,7 @@ if SettingsCF["tooltip"].talents == true then
 			local isInspectOpen = (InspectFrame and InspectFrame:IsShown()) or (Examiner and Examiner:IsShown());
 			if (CanInspect(unit)) and (not isInspectOpen) then
 				local lastInspectTime = (GetTime() - lastInspectRequest);
-				ttt.nextUpdate = (lastInspectTime > MIN_INSPECT_FREQ) and MIN_INSPECT_DELAY or (MIN_INSPECT_FREQ - lastInspectTime + MIN_INSPECT_DELAY);
+				ttt.nextUpdate = (lastInspectTime > INSPECT_FREQ) and INSPECT_DELAY or (INSPECT_FREQ - lastInspectTime + INSPECT_DELAY);
 				ttt:Show();
 				if (not cacheLoaded) then
 					self:AddLine(TALENTS_PREFIX..L_TOOLTIP_LOADING);
