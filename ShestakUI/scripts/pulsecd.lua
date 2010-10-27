@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------------------------
---	Based on Doom Cooldown Pulse
+--	Based on Doom Cooldown Pulse, editor Affli
 ----------------------------------------------------------------------------------------
 if not SettingsCF["cooldown"].pulse_enable == true then return end
 

@@ -91,7 +91,7 @@
 	<Script file="scripts\raidcd.lua"/>
 	<Script file="scripts\bags.lua"/>
 	<Script file="scripts\raidutility.lua"/>
-	<!--<Script file="scripts\pulsecd.lua"/>-->
+	<Script file="scripts\pulsecd.lua"/>
 	
 	<Script file="datatext\battleground.lua"/>
 

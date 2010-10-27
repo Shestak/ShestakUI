@@ -78,7 +78,7 @@ end
 
 local OnMouseDown = function(self, button)
 	if button == "LeftButton" then
-		SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "PARTY")
+		SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "RAID")
 	elseif button == "RightButton" then
 		StopTimer(self)
 	end
