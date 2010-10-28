@@ -133,8 +133,8 @@ if SettingsDB.client == "zhCN" then
 	L_INVITE_DISABLE = "自动邀请功能已关闭"
 	
 	-- Quest watch
-	L_WATCH_UNLOCK = "WatchFrame unlock." -- Needs review
-	L_WATCH_LOCK = "WatchFrame lock." -- Needs review
+	L_WATCH_UNLOCK = "解锁任务追踪."
+	L_WATCH_LOCK = "锁定任务追踪."
 	
 	-- Bind key
 	L_BIND_COMBAT = "不能再战斗中设置快捷键."
@@ -222,8 +222,8 @@ if SettingsDB.client == "zhCN" then
 	L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?" -- Needs review
 	L_POPUP_DISABLEUI = "ShestakUI并不支援此分辨率, 你想要停用ShestakUI吗? (若果您想要尝试其他分辨率, 请按取消)"
 	L_POPUP_SETTINGS_ALL = "应用所有的插件设置? (DBM/DXE, Skada/Recount and MSBT)"
-	L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."  -- Needs review
-	L_POPUP_SETTINGS_CLIQUE = "Your Clique settings are not setup with ShestakUI, would you like to set them up?"  -- Needs review
+	L_POPUP_SETTINGS_DBM = "需要改变DBM描点及风格化元素."
+	L_POPUP_SETTINGS_CLIQUE = "你的Clique设置没有正确安装,现在应用Clique设置?"  -- Needs review
 	
 	-- Welcome mesage
 	L_WELCOME_LINE_1 = "欢迎使用ShestakUI "

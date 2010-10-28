@@ -104,7 +104,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_TOOLTIP_TITLE = "在提示資訊中顯示目標稱號"
 	L_GUI_TOOLTIP_RANK = "在提示資訊中顯示公會階級"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "在提示資訊中顯示競技場等級"
-	L_GUI_TOOLTIP_SPELL_ID = "Spell ID" -- Needs review
+	L_GUI_TOOLTIP_SPELL_ID = "法術ID"
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "開啟聊天框增強"
@@ -120,11 +120,11 @@ if GetLocale() == "zhTW" then
 	L_GUI_CHAT_BAR = "顯示頻道快捷圖示欄"
 	L_GUI_CHAT_TIMESTAMP = "時間標籤顏色"
 	L_GUI_CHAT_WHISP = "接受密語時聲音提示"
-	L_GUI_CHAT_SKIN_BUBBLE = "Skin Blizzard chat bubbles"  -- Needs review
+	L_GUI_CHAT_SKIN_BUBBLE = "美化默認聊天泡泡"
 	
 	-- Bag options
 	L_GUI_BAGS = "背包"
-	L_GUI_BAGS_ENABLE = "Enable bags"  -- Needs review
+	L_GUI_BAGS_ENABLE = "開啟背包增強"
 	L_GUI_BAGS_BUTTON_SIZE = "空格大小" 
 	L_GUI_BAGS_BUTTON_SPACE = "空格間隔" 
 	L_GUI_BAGS_BANK = "銀行背包每行數目"
@@ -162,7 +162,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_NAMEPLATE_THREAT = "顯示仇恨情況"
 	L_GUI_NAMEPLATE_CLASS_ICON = "在PVP情況下顯示職業圖示"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "顯示名字縮寫"
-	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap"  -- Needs review
+	L_GUI_NAMEPLATE_OVERLAP = "允許單位名條重疊"
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "開啟快捷列"
@@ -266,7 +266,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_STATS_EXPERIENCE = "經驗"
 	L_GUI_STATS_COORDS = "座標"
 	L_GUI_STATS_LOCATION = "位置"
-	L_GUI_STATS_GUILD_REPAIR = "Repair from guild bank" -- Needs review
+	L_GUI_STATS_GUILD_REPAIR = "公會銀行修理"
 	
 	-- Error options
 	L_GUI_ERROR = "錯誤收集"
