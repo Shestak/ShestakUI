@@ -335,7 +335,9 @@ function Stuffing:CreateBagFrame(w)
 	f:SetToplevel(1)
 	f:SetFrameStrata("HIGH")
 	f:SetFrameLevel(5)
-
+	f:SetScript("OnMouseDown", f.StartMoving)
+	f:SetScript("OnMouseUp", f.StopMovingOrSizing)
+	
 	if w == "Bank" then
 		f:SetPoint(unpack(SettingsCF["position"].bank))
 	else
@@ -391,6 +393,7 @@ function Stuffing:InitBags()
 	local f = self:CreateBagFrame("Bags")
 	f:SetScript("OnShow", Stuffing_OnShow)
 	f:SetScript("OnHide", Stuffing_OnHide)
+	f:RegisterForDrag("LeftButton")
 
 	-- Search editbox (tekKonfigAboutPanel.lua)
 	local editbox = CreateFrame("EditBox", nil, f)
