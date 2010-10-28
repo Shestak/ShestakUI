@@ -83,19 +83,19 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 				GameTooltip:Hide()
 			end
 		end
-	GameTooltip:SetScript("OnShow", ShiftShow)
-	local EventShow = function()
-		if arg1 == "LSHIFT" and arg2 == 1 then
-			GameTooltip:Show()
-			GameTooltip:SetBackdropColor(unpack(SettingsCF["media"].overlay_color)) 
-			GameTooltip:SetBackdropBorderColor(unpack(SettingsCF["media"].border_color))
-		elseif arg1 == "LSHIFT" and arg2 == 0 then
-			GameTooltip:Hide()
+		GameTooltip:SetScript("OnShow", ShiftShow)
+		local EventShow = function()
+			if arg1 == "LSHIFT" and arg2 == 1 then
+				GameTooltip:Show()
+				GameTooltip:SetBackdropColor(unpack(SettingsCF["media"].overlay_color)) 
+				GameTooltip:SetBackdropBorderColor(unpack(SettingsCF["media"].border_color))
+			elseif arg1 == "LSHIFT" and arg2 == 0 then
+				GameTooltip:Hide()
+			end
 		end
-	end
-	local sh = CreateFrame("Frame")
-	sh:RegisterEvent("MODIFIER_STATE_CHANGED")
-	sh:SetScript("OnEvent", EventShow)
+		local sh = CreateFrame("Frame")
+		sh:RegisterEvent("MODIFIER_STATE_CHANGED")
+		sh:SetScript("OnEvent", EventShow)
 	else
 		if SettingsCF["tooltip"].cursor == true then
 			hooksecurefunc("GameTooltip_SetDefaultAnchor", function (GameTooltip, parent)
@@ -752,3 +752,22 @@ if SettingsCF["tooltip"].spell_id == true then
 		end
 	end)
 end
+
+----------------------------------------------------------------------------------------
+--	Disable tooltip fading
+----------------------------------------------------------------------------------------
+GameTooltip.FadeOut = function(self)
+	GameTooltip:Hide()
+end
+
+local hasUnit
+local updateFrame = CreateFrame"Frame"
+updateFrame:SetScript("OnUpdate", function(self)
+	local _, unit = GameTooltip:GetUnit()
+	if hasUnit and not unit then
+		GameTooltip:Hide()
+		hasUnit = nil
+	elseif unit then
+		hasUnit = true
+	end
+end)
