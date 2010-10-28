@@ -21,6 +21,7 @@ SettingsCF["position"] = {
 	["threat_meter"] = {"BOTTOMLEFT", "oUF_Target", "TOPLEFT", 0, -123},	-- Threat meter
 	["raid_cooldown"] = {"TOPLEFT", UIParent, "TOPLEFT", 51, -28},			-- Raid cooldowns
 	["enemy_cooldown"] = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, 62},	-- Enemy cooldowns
+	["pulse_cooldown"] = {"CENTER", UIParent, "CENTER", 0, 0},				-- Pulse cooldowns
 	["bg_score"] = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 6},				-- BG stats
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},					-- Bottom bars

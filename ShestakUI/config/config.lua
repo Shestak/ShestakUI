@@ -130,6 +130,7 @@ SettingsCF["cooldown"] = {
 	["enemy_show_inarena"] = true,				-- Show in arena zone
 	-- Cooldowns pulse
 	["pulse_enable"] = false,					-- Show cooldowns pulse
+	["pulse_size"] = 75,						-- Icon size
 }
 
 ----------------------------------------------------------------------------------------

@@ -13,7 +13,7 @@ local defaultsettings = {
     fadeOutTime = 0.7,
     maxAlpha = 1,
     animScale = 1.5,
-    iconSize = 75,
+    iconSize = SettingsCF["cooldown"].pulse_size,
     holdTime = 0,
     petOverlay = {1,1,1},
     ignoredSpells = "",
@@ -165,7 +165,7 @@ function DCP:ADDON_LOADED(addon)
         end
     end
     RefreshLocals()
-    self:SetPoint("CENTER",UIParent,"BOTTOMLEFT",DCP_Saved.x,DCP_Saved.y)
+    self:SetPoint(unpack(SettingsCF["position"].pulse_cooldown))
     self:UnregisterEvent("ADDON_LOADED")
 end
 DCP:RegisterEvent("ADDON_LOADED")
