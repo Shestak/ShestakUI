@@ -23,14 +23,10 @@ end
 
 LFDSearchStatus:SetFrameStrata("TOOLTIP")
 
-----------------------------------------------------------------------------------------
---	Hide PVP text
-----------------------------------------------------------------------------------------
+-- Hide PVP text
 PVP_ENABLED = ""
 
-----------------------------------------------------------------------------------------
---	Statusbar
-----------------------------------------------------------------------------------------
+-- Statusbar
 GameTooltipStatusBar:SetStatusBarTexture(SettingsCF.media.texture)
 GameTooltipStatusBar:SetHeight(4)
 GameTooltipStatusBar:ClearAllPoints()
@@ -51,6 +47,16 @@ local function ShortValue(value)
 		return value
 	end
 end
+
+-- Raid icon
+local ricon = GameTooltip:CreateTexture("GameTooltipRaidIcon", "OVERLAY")
+ricon:SetHeight(18)
+ricon:SetWidth(18)
+ricon:SetPoint("BOTTOM", "GameTooltip", "TOP", 0, 5)
+
+GameTooltip:HookScript("OnHide", function(self)
+	ricon:SetTexture(nil)
+end)
 
 ----------------------------------------------------------------------------------------
 --	Unit tooltip styling
@@ -202,6 +208,13 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 
             self:AddLine(text, r, g, b)
         end
+		
+		if SettingsCF["tooltip"].raid_icon == true then
+			local raidIndex = GetRaidTargetIndex(unit)
+			if raidIndex then
+				ricon:SetTexture("Interface\\TargetingFrame\\UI-RaidTargetingIcon_"..raidIndex)
+			end
+		end
     end
 
     GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)

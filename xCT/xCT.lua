@@ -60,9 +60,11 @@ end
 ---------------------------------------------------------------------------------
 if(ct.mergeaoespam)then
 	ct.aoespam={}
-	ct.aoespam[27285]=true -- Seed of Corruption Explosion
-	ct.aoespam[172]=true -- Corruption
-	ct.aoespam[30108]=true -- Unstable Corruption
+	ct.aoespam[27285]=true	-- Seed of Corruption Explosion
+	ct.aoespam[172]=true	-- Corruption
+	ct.aoespam[30108]=true	-- Unstable Corruption
+	ct.aoespam[8921]=true	-- Moonfire
+	ct.aoespam[5570]=true	-- Insect Swarm
 end
 ---------------------------------------------------------------------------------
 -- class config, overrides general

@@ -10,12 +10,11 @@ if SettingsCF["misc"].quest_auto_button == true then
 		37815,	-- Emerald Drake (Occulus)
 		37859,	-- Amber Essence (Occulus)
 		46029,	-- Mimiron's Core (Ulduar)
-		--34722, -- Frostweave Bandage (Test)
+		38689,	-- Chicken Net (Quest)
 	}
 
 	local EquipedItems = {
 		49278,	-- Goblin Rocket Pack (ICC)
-		--50356, -- Corroded Skeleton Key (Test)
 	}
 	
 	local function AutoButtonHide()
