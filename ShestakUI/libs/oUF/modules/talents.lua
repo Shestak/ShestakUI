@@ -85,7 +85,7 @@ local buffs = { -- Credits: Proditor, Rinu
 	[GetSpellInfo(15473)] = L_PLANNER_PRIEST_3,			-- Shadowform
 	[GetSpellInfo(15286)] = L_PLANNER_PRIEST_3,			-- Vampiric Embrace
 	-- DEATHKNIGHT
-	[GetSpellInfo(49222)] = L_PLANNER_DEATHKNIGHT_3,	-- Bone Shield
+	[GetSpellInfo(49222)] = L_PLANNER_DEATHKNIGHT_1,	-- Bone Shield
 	[GetSpellInfo(49016)] = L_PLANNER_DEATHKNIGHT_1,	-- Hysteria
 	[GetSpellInfo(53138)] = L_PLANNER_DEATHKNIGHT_1,	-- Abomination's Might
 	[GetSpellInfo(55610)] = L_PLANNER_DEATHKNIGHT_2,	-- Improved Icy Talons
