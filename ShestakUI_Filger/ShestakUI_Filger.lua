@@ -8,7 +8,7 @@
 ]]
 
 local f_s = Filger_Settings;
-
+local db = SettingsCF["font"]
 local class = select(2, UnitClass("player"));
 local active, bars = {}, {};
 local MyUnits = {
@@ -92,7 +92,8 @@ function Update(self)
 					bar.count = _G[bar.count:GetName()]
 				else
 					bar.count = bar:CreateFontString("$parentCount", "OVERLAY");
-					bar.count:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size*2, SettingsCF["media"].pixel_font_style);
+					bar.count:SetFont(db.cooldown_timers_font, db.cooldown_timers_font_size, db.cooldown_timers_font_style);
+					bar.count:SetShadowOffset(db.cooldown_timers_font_shadow and 1 or 0, db.cooldown_timers_font_shadow and -1 or 0)
 					bar.count:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(1), SettingsDB.Scale(-1));
 					bar.count:SetJustifyH("CENTER");
 				end
@@ -133,7 +134,8 @@ function Update(self)
 					bar.time = _G[bar.time:GetName()]
 				else			
 					bar.time = bar.statusbar:CreateFontString("$parentTime", "ARTWORK");
-					bar.time:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style);
+					bar.time:SetFont(db.filger_font, db.filger_font_size, db.filger_font_style);
+					bar.time:SetShadowOffset(db.filger_font_shadow and 1 or 0, db.filger_font_shadow and -1 or 0)
 					bar.time:SetPoint("RIGHT", bar.statusbar, SettingsDB.Scale(0), 0);
 				end
 				
@@ -141,7 +143,8 @@ function Update(self)
 					bar.count = _G[bar.count:GetName()]
 				else
 					bar.count = bar:CreateFontString("$parentCount", "ARTWORK");
-					bar.count:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style);
+					bar.count:SetFont(db.filger_font, db.filger_font_size, db.filger_font_style);
+					bar.count:SetShadowOffset(db.filger_font_shadow and 1 or 0, db.filger_font_shadow and -1 or 0)
 					bar.count:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(1), SettingsDB.Scale(1));
 					bar.count:SetJustifyH("CENTER");
 				end
@@ -150,7 +153,8 @@ function Update(self)
 					bar.spellname = _G[bar.spellname:GetName()]
 				else
 					bar.spellname = bar.statusbar:CreateFontString("$parentSpellName", "ARTWORK");
-					bar.spellname:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style);
+					bar.spellname:SetFont(db.filger_font, db.filger_font_size, db.filger_font_style);
+					bar.spellname:SetShadowOffset(db.filger_font_shadow and 1 or 0, db.filger_font_shadow and -1 or 0)
 					bar.spellname:SetPoint("LEFT", bar.statusbar, SettingsDB.Scale(2), 0);
 					bar.spellname:SetPoint("RIGHT", bar.time, "LEFT");
 					bar.spellname:SetJustifyH("LEFT");

@@ -5,6 +5,7 @@ if not SettingsCF.loot.lootframe == true then return end
 
 local _NAME, _NS = ...
 local Butsu = CreateFrame("Button", _NAME)
+local db = SettingsCF["font"]
 local lb = CreateFrame("Button", "ButsuAdv", Butsu, "UIPanelScrollDownButtonTemplate")		
 local LDD = CreateFrame("Frame", "ButsuLDD", Butsu, "UIDropDownMenuTemplate")
 Butsu:Hide()
@@ -101,7 +102,7 @@ function Butsu:LOOT_OPENED(event, autoloot)
 	
 	self:SetWidth(SettingsCF.loot.width)
 	self.title:SetWidth(SettingsCF.loot.width - 45)
-	self.title:SetHeight(SettingsCF.loot.font_size)
+	self.title:SetHeight(db.loot_font_size)
 end
 Butsu:RegisterEvent"LOOT_OPENED"
 
@@ -136,7 +137,8 @@ Butsu:RegisterEvent"UPDATE_MASTER_LOOT_LIST"
 
 do
 	local title = Butsu:CreateFontString(nil, "OVERLAY")
-	title:SetFont(SettingsCF.media.pixel_font, SettingsCF.loot.font_size, SettingsCF.media.pixel_font_style)
+	title:SetFont(db.loot_font, db.loot_font_size, db.loot_font_style);
+	title:SetShadowOffset(db.loot_font_shadow and 1 or 0, db.loot_font_shadow and -1 or 0)
 	title:SetJustifyH("LEFT")
 	title:SetPoint("TOPLEFT", Butsu, "TOPLEFT", SettingsDB.Scale(8), SettingsDB.Scale(-7))
 	Butsu.title = title
@@ -297,14 +299,8 @@ do
 	end
 
 	function _NS.CreateSlot(id)
-		local iconSize = SettingsCF.loot.icon_size
-		local fontSizeItem = SettingsCF.loot.font_size
-		local fontSizeCount = SettingsCF.loot.font_size
-		local fontItem = SettingsCF.media.pixel_font
-		local fontCount = SettingsCF.media.pixel_font
-
 		local frame = CreateFrame("Button", "ButsuSlot"..id, Butsu)
-		frame:SetHeight(math.max(fontSizeItem, iconSize))
+		frame:SetHeight(math.max(db.loot_font_size, SettingsCF.loot.icon_size))
 		frame:SetID(id)
 
 		frame:RegisterForClicks("LeftButtonUp", "RightButtonUp")
@@ -329,8 +325,9 @@ do
 
 		local count = iconFrame:CreateFontString(nil, "OVERLAY")
 		count:SetJustifyH("RIGHT")
-		count:SetPoint("BOTTOMRIGHT", iconFrame, SettingsDB.Scale(1), SettingsDB.Scale(1))
-		count:SetFont(SettingsCF.media.pixel_font, SettingsCF.loot.font_size, SettingsCF.media.pixel_font_style)
+		count:SetPoint("BOTTOMRIGHT", iconFrame, "BOTTOMRIGHT", SettingsDB.Scale(1), SettingsDB.Scale(1))
+		count:SetFont(db.loot_font, db.loot_font_size, db.loot_font_style);
+		count:SetShadowOffset(db.loot_font_shadow and 1 or 0, db.loot_font_shadow and -1 or 0)
 		count:SetText(1)
 		frame.count = count
 
@@ -338,9 +335,10 @@ do
 		name:SetJustifyH("LEFT")
 		name:SetPoint("LEFT", icon, "RIGHT", SettingsDB.Scale(5), 0)
 		name:SetNonSpaceWrap(true)
-		name:SetFont(SettingsCF.media.pixel_font, SettingsCF.loot.font_size, SettingsCF.media.pixel_font_style)
+		name:SetFont(db.loot_font, db.loot_font_size, db.loot_font_style);
+		name:SetShadowOffset(db.loot_font_shadow and 1 or 0, db.loot_font_shadow and -1 or 0)
 		name:SetWidth(SettingsCF.loot.width - SettingsCF.loot.icon_size - 20)
-		name:SetHeight(SettingsCF.loot.font_size)
+		name:SetHeight(db.loot_font_size)
 		frame.name = name
 
 		local drop = frame:CreateTexture(nil, "ARTWORK")
@@ -358,7 +356,6 @@ do
 
 	function Butsu:AnchorSlots()
 		local frameSize = math.max(SettingsCF.loot.icon_size, SettingsCF.loot.icon_size)
-		local iconSize = SettingsCF.loot.icon_size
 		local shownSlots = 0
 
 		local prevShown

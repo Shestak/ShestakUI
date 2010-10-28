@@ -181,7 +181,7 @@ local function SetupChatPosAndFont(self)
 		
 		-- Min. size for chat font
 		if fontSize < 11 then		
-			FCF_SetChatWindowFontSize(nil, chat, SettingsCF.chat.font_size)
+			FCF_SetChatWindowFontSize(nil, chat, 11)
 		else
 			FCF_SetChatWindowFontSize(nil, chat, fontSize)
 		end

@@ -97,7 +97,7 @@ local function InstallUI()
 			FCF_SavePositionAndDimensions(frame)
 			
 			-- Set default font size
-			FCF_SetChatWindowFontSize(nil, frame, SettingsCF.chat.font_size)
+			FCF_SetChatWindowFontSize(nil, frame, 11)
 			
 			-- Rename combat log tab
 			if i == 2 then FCF_SetWindowName(frame, GUILD_BANK_LOG) end

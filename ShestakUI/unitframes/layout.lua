@@ -84,7 +84,7 @@ local function Shared(self, unit)
 		self.Health.bg.multiplier = 0.25
 	end
 	
-	self.Health.value = SettingsDB.SetFontString(self.Health, SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+	self.Health.value = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 	if unit == "player" or unit == "pet" or unit == "focus" then
 		self.Health.value:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
 		self.Health.value:SetJustifyH("RIGHT")
@@ -134,7 +134,7 @@ local function Shared(self, unit)
 	self.Power.bg:SetTexture(SettingsCF["media"].texture)
 	self.Power.bg.multiplier = 0.3
 	
-	self.Power.value = SettingsDB.SetFontString(self.Power, SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+	self.Power.value = SettingsDB.SetFontString(self.Power, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 	if unit == "player" then
 		self.Power.value:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
 		self.Power.value:SetJustifyH("RIGHT")
@@ -155,9 +155,9 @@ local function Shared(self, unit)
 
 	-- Names
 	if unit ~= "player" then
-		self.Info = SettingsDB.SetFontString(self.Health, SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+		self.Info = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 		if unit ~= "arenatarget" then
-			self.Level = SettingsDB.SetFontString(self.Power, SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+			self.Level = SettingsDB.SetFontString(self.Power, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 		end
 		if unit == "target" then
 			self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
@@ -194,7 +194,7 @@ local function Shared(self, unit)
 		self.FlashInfo:SetToplevel(true)
 		self.FlashInfo:SetAllPoints(self.Health)
 
-		self.FlashInfo.ManaLevel = SettingsDB.SetFontString(self.FlashInfo, SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+		self.FlashInfo.ManaLevel = SettingsDB.SetFontString(self.FlashInfo, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 		self.FlashInfo.ManaLevel:SetPoint("CENTER", 0, SettingsDB.Scale(1))
 		
 		-- Combat icon
@@ -298,7 +298,7 @@ local function Shared(self, unit)
 				self.TotemBar[i].FrameBackdrop:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
 				
 				if db.plugins_totem_bar_name == true then
-					self.TotemBar[i].Name = SettingsDB.SetFontString(self.TotemBar[i], SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+					self.TotemBar[i].Name = SettingsDB.SetFontString(self.TotemBar[i], SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 					self.TotemBar[i].Name:SetPoint("CENTER", self.TotemBar[i], "CENTER", 0, 0)
 					self.TotemBar[i].Name:SetTextColor(1, 1, 1)
 				end
@@ -308,7 +308,7 @@ local function Shared(self, unit)
 		-- Druid mana
 		if SettingsDB.class == "DRUID" then
 			CreateFrame("Frame"):SetScript("OnUpdate", function() SettingsDB.UpdateDruidMana(self) end)
-			self.DruidMana = SettingsDB.SetFontString(self.Power, SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+			self.DruidMana = SettingsDB.SetFontString(self.Power, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 			self.DruidMana:SetTextColor(1, 0.49, 0.04)
 			
 			if db.plugins_eclipse_bar == true then
@@ -343,9 +343,8 @@ local function Shared(self, unit)
 				solarBar:SetStatusBarColor(0.80, 0.80, 0.20)
 				eclipseBar.SolarBar = solarBar
 
-				local eclipseBarText = solarBar:CreateFontString(nil, "OVERLAY")
+				local eclipseBarText = SettingsDB.SetFontString(solarBar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 				eclipseBarText:SetPoint("CENTER", eclipseBar, "CENTER")
-				eclipseBarText:SetFont(SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
 				eclipseBar.Text = eclipseBarText
 				
 				--[[local eclipseBarInd = solarBar:CreateFontString(nil, "OVERLAY")
@@ -497,7 +496,7 @@ local function Shared(self, unit)
 			self.Swing.FrameBackdrop:SetPoint("TOPLEFT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
 			self.Swing.FrameBackdrop:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
 			
-			self.Swing.Text = SettingsDB.SetFontString(self.Swing, SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+			self.Swing.Text = SettingsDB.SetFontString(self.Swing, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 			self.Swing.Text:SetPoint("CENTER", 0, 0)
 			self.Swing.Text:SetTextColor(1, 1, 1)
 		end
@@ -629,14 +628,14 @@ local function Shared(self, unit)
 				self:RegisterEvent("UNIT_COMBO_POINTS", SettingsDB.UpdateCPoints)
 			end
 			if db.plugins_talents == true then
-				self.Talents = SettingsDB.SetFontString(self.Power, SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+				self.Talents = SettingsDB.SetFontString(self.Power, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 				self.Talents:SetTextColor(1,0,0)
 				self.Talents:SetPoint("BOTTOM", self.Power, "BOTTOM", 0, SettingsDB.Scale(-1))
 			end
 		end
 
 		if db.plugins_combat_feedback == true then
-			self.CombatFeedbackText = SettingsDB.SetFontString(self.Health, SettingsCF["media"].pixel_font, db.font_size * 2, SettingsCF["media"].pixel_font_style)
+			self.CombatFeedbackText = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size * 2, SettingsCF["font"].unit_frames_font_style)
 			if db.portrait_enable == true then
 				self.CombatFeedbackText:SetPoint("BOTTOM", self.Portrait, "BOTTOM", 0, 0)
 				self.CombatFeedbackText:SetParent(self.Portrait)
@@ -646,7 +645,7 @@ local function Shared(self, unit)
 		end
 
 		if db.icons_pvp == true then
-			self.Status = SettingsDB.SetFontString(self.Health, SettingsCF["media"].pixel_font, db.font_size * 2, SettingsCF["media"].pixel_font_style)
+			self.Status = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size * 2, SettingsCF["font"].unit_frames_font_style)
 			self.Status:SetPoint("CENTER", 0, SettingsDB.Scale(1))
 			self.Status:SetTextColor(0.69, 0.31, 0.31, 0)
 			self:Tag(self.Status, "[pvp]")
@@ -721,7 +720,7 @@ local function Shared(self, unit)
 			self.Castbar.Icon:SetPoint("BOTTOMRIGHT", self.Castbar.Button, SettingsDB.Scale(-2), SettingsDB.Scale(2))
 			self.Castbar.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			
-			self.Castbar.Time = SettingsDB.SetFontString(self.Castbar, SettingsCF["media"].pixel_font, db.font_size * 2, SettingsCF["media"].pixel_font_style)
+			self.Castbar.Time = SettingsDB.SetFontString(self.Castbar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size * 2, SettingsCF["font"].unit_frames_font_style)
 			self.Castbar.Time:SetParent(self.Castbar.Button)
 			self.Castbar.Time:SetPoint("CENTER", self.Castbar.Icon, "CENTER", 0, 0)
 			self.Castbar.Time:SetTextColor(1, 1, 1)
@@ -729,14 +728,14 @@ local function Shared(self, unit)
 		end
 
 		if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
-			self.Castbar.Time = SettingsDB.SetFontString(self.Health, SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+			self.Castbar.Time = SettingsDB.SetFontString(self.Castbar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 			self.Castbar.Time:SetPoint("RIGHT", self.Castbar, "RIGHT", 0, 0)
 			self.Castbar.Time:SetTextColor(1, 1, 1)
 			self.Castbar.Time:SetJustifyH("RIGHT")
 			self.Castbar.CustomTimeText = SettingsDB.CustomCastTimeText
 			self.Castbar.CustomDelayText = SettingsDB.CustomCastDelayText
 
-			self.Castbar.Text = SettingsDB.SetFontString(self.Health, SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+			self.Castbar.Text = SettingsDB.SetFontString(self.Castbar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 			self.Castbar.Text:SetPoint("LEFT", self.Castbar, "LEFT", SettingsDB.Scale(2), 0)
 			self.Castbar.Text:SetPoint("RIGHT", self.Castbar.Time, "LEFT", SettingsDB.Scale(-1), 0)
 			self.Castbar.Text:SetTextColor(1, 1, 1)
@@ -781,8 +780,7 @@ local function Shared(self, unit)
 				self.Castbar.SafeZone:SetTexture(SettingsCF["media"].texture)
 				self.Castbar.SafeZone:SetVertexColor(0.69, 0.31, 0.31, 1)
 
-				self.Castbar.Latency = self.Castbar:CreateFontString(nil, "OVERLAY")
-				self.Castbar.Latency:SetFont(SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+				self.Castbar.Latency = SettingsDB.SetFontString(self.Castbar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 				self.Castbar.Latency:SetTextColor(1, 1, 1)
 				self.Castbar.Latency:SetPoint("RIGHT", self.Castbar, "BOTTOMRIGHT", 0, SettingsDB.Scale(1))
 				self.Castbar.Latency:SetJustifyH("RIGHT")
@@ -821,8 +819,7 @@ local function Shared(self, unit)
 		self.AuraTracker.icon:SetPoint("BOTTOMRIGHT", self.Trinket, SettingsDB.Scale(-2), SettingsDB.Scale(2))
 		self.AuraTracker.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		
-		self.AuraTracker.text = self.AuraTracker:CreateFontString(nil, "OVERLAY")
-		self.AuraTracker.text:SetFont(SettingsCF["media"].pixel_font, db.font_size * 2, SettingsCF["media"].pixel_font_style)
+		self.AuraTracker.text = SettingsDB.SetFontString(self.AuraTracker, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size * 2, SettingsCF["font"].unit_frames_font_style)
 		self.AuraTracker.text:SetPoint("CENTER", self.AuraTracker, 0, 0)
 		self.AuraTracker:SetScript("OnUpdate", SettingsDB.AuraTrackerTime)
 	end
@@ -989,8 +986,7 @@ SlashCmdList.TestUI = function()
 				v.fff:SetPoint("TOPLEFT", v, SettingsDB.Scale(-2), SettingsDB.Scale(2))
 				v.fff:SetPoint("BOTTOMRIGHT", v, SettingsDB.Scale(2), SettingsDB.Scale(-2))
 			
-				v.fffs = v.fff:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-				v.fffs:SetFont(SettingsCF["media"].pixel_font, SettingsCF["unitframe"].font_size, SettingsCF["media"].pixel_font_style)
+				v.fffs = SettingsDB.SetFontString(v.fff, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 				v.fffs:SetShadowOffset(0, 0)
 				v.fffs:SetAllPoints(v.fff)
 				v.fffs:SetText(v:GetName())

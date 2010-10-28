@@ -501,7 +501,7 @@ function CreateUIConfig()
 		frame:SetPoint("TOPLEFT")
 		frame:SetWidth(225)
 	
-		local offset=5
+		local offset = 5
 		for option,value in pairs(SettingsCF[group]) do
 			
 			if type(value) == "boolean" then
@@ -562,78 +562,6 @@ function CreateUIConfig()
 				end
 				
 				offset = offset + 45
-			--[[elseif type(value) == "table" then
-				local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-				local o = "UIConfig"..group..option
-				Local(o)
-				label:SetText(SettingsDB.option)
-				label:SetWidth(280)
-				label:SetHeight(20)
-				label:SetJustifyH("LEFT")
-				label:SetPoint("TOPLEFT", 5, -(offset))
-				
-				colorbuttonname = (label:GetText().."ColorPicker")
-				
-				local colorbutton = CreateFrame("Button", colorbuttonname, frame)
-				colorbutton:SetHeight(20)
-				colorbutton:SetWidth(60)
-				SettingsDB.CreateTemplate(colorbutton)
-				colorbutton:SetBackdropBorderColor(unpack(value))
-				colorbutton:SetPoint("LEFT", label, "RIGHT", 2, 1 * UIParent:GetEffectiveScale())
-				
-				local colortext = colorbutton:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-				colortext:SetText(COLOR)
-				colortext:SetPoint("CENTER")
-				colortext:SetJustifyH("CENTER")
-				
-				local oldvalue = value
-				
-				local function round(number, decimal)
-					return (("%%.%df"):format(decimal)):format(number)
-				end	
-				
-				colorbutton:SetScript("OnMouseDown", function(self) 
-					local button = _G[self:GetName()]
-					local r, g, b, a = button:GetBackdropBorderColor();
-					r, g, b, a = round(r, 2), round(g, 2), round(b, 2), round(a, 2)
-					local originalR, originalG, originalB, originalA = r, g, b, a
-
-					local function ShowColorPicker(r, g, b, a, changedCallback)
-						ColorPickerFrame:SetColorRGB(r,g,b)
-						ColorPickerFrame.hasOpacity = false
-						ColorPickerFrame.previousValues = {originalR, originalG, originalB, originalA}
-						ColorPickerFrame.func, ColorPickerFrame.cancelFunc = changedCallback, changedCallback
-						ColorPickerFrame:Hide()
-						ColorPickerFrame:Show()
-					end
-
-					local function myColorCallback(restore)
-						local newR, newG, newB, newA
-						if restore then
-							-- The user bailed, we extract the old color from the table created by ShowColorPicker
-							newR, newG, newB, newA = unpack(restore)
-							button:SetBackdropBorderColor(newR, newG, newB, newA)
-							value = oldvalue
-							if self == button then
-								SetValue(group, option, (oldvalue)) 
-							end
-						else
-							-- Something changed
-							newA, newR, newG, newB = OpacitySliderFrame:GetValue(), ColorPickerFrame:GetColorRGB();
-							value = { newR, newG, newB, newA }
-							if self == button then
-								SetValue(group, option, (value)) 
-							end
-						button:SetBackdropBorderColor(unpack(value))
-					end
-
-					r, g, b, a = newR, newG, newB, newA
-					end
-					
-					ShowColorPicker(originalR, originalG, originalB, originalA, myColorCallback)
-				end)
-				
-				offset = offset + 25]]
 			end
 		end
 		

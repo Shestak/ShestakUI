@@ -80,11 +80,9 @@ local function Shared(self, unit)
 	end
 	
 	if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
-		self.Health.value = self.Health:CreateFontString(nil, "OVERLAY")
+		self.Health.value = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 		self.Health.value:SetPoint("RIGHT", self.Health, "RIGHT", SettingsDB.Scale(1), 0)
-		self.Health.value:SetFont(SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
 		self.Health.value:SetTextColor(1, 1, 1)
-		self.Health.value:SetShadowOffset(0, 0)
 		
 		self.Health.PostUpdate = SettingsDB.PostUpdateRaidHealth
 	end
@@ -120,15 +118,13 @@ local function Shared(self, unit)
 	end
 	
 	-- Names
-	self.Info = self.Health:CreateFontString(nil, "OVERLAY")
+	self.Info = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.Info:SetPoint("CENTER", self.Health, "CENTER", SettingsDB.Scale(1), 0)
 	else
 		self.Info:SetPoint("LEFT", self.Health, "LEFT", SettingsDB.Scale(3), 0)
 		self.Info:SetJustifyH("LEFT")
 	end
-	self.Info:SetFont(SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
-	self.Info:SetShadowOffset(0, 0)
 	if self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target" then
 		self:Tag(self.Info, "[GetNameColor][NameArena]")
 	else

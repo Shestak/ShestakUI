@@ -59,45 +59,33 @@ SettingsCF["font"] = {
 	["cooldown_timers_font_style"] = "OUTLINEMONOCHROME",
 	["cooldown_timers_font_shadow"] = false,
 	
-	-- Chat font
-	--["chat_font"] = "Interface\\AddOns\\ShestakUI\\media\\font.ttf",
-	--["chat_font_size"] = 11,
-	--["chat_font_style"] = "",
-	--["chat_font_shadow"] = true,
-	
 	-- Loot font
-	--["loot_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
-	--["loot_font_size"] = 8,
-	--["loot_font_style"] = "OUTLINEMONOCHROME",
-	--["loot_font_shadow"] = false,
+	["loot_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
+	["loot_font_size"] = 8,
+	["loot_font_style"] = "OUTLINEMONOCHROME",
+	["loot_font_shadow"] = false,
 	
 	-- Nameplates font
-	--["nameplates_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
-	--["nameplates_font_size"] = 8,
-	--["nameplates_font_style"] = "OUTLINEMONOCHROME",
-	--["nameplates_font_shadow"] = false,
+	["nameplates_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
+	["nameplates_font_size"] = 8,
+	["nameplates_font_style"] = "OUTLINEMONOCHROME",
+	["nameplates_font_shadow"] = false,
 	
 	-- Unit frames font
-	--["unit_frames_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
-	--["unit_frames_font_size"] = 8,
-	--["unit_frames_font_style"] = "OUTLINEMONOCHROME",
-	--["unit_frames_font_shadow"] = false,
+	["unit_frames_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
+	["unit_frames_font_size"] = 8,
+	["unit_frames_font_style"] = "OUTLINEMONOCHROME",
+	["unit_frames_font_shadow"] = false,
 	
 	-- Auras font
-	--["auras_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
-	--["auras_font_size"] = 8,
-	--["auras_font_style"] = "OUTLINEMONOCHROME",
-	--["auras_font_shadow"] = false,
+	["auras_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
+	["auras_font_size"] = 8,
+	["auras_font_style"] = "OUTLINEMONOCHROME",
+	["auras_font_shadow"] = false,
 	
 	-- Filger font
-	--["filger_bars_name_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
-	--["filger_bars_name_font_size"] = 8,
-	--["filger_bars_name_font_style"] = "OUTLINEMONOCHROME",
-	--["filger_bars_name_font_shadow"] = false,
-	
-	-- Stylization font
-	--["stylization_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
-	--["stylization_font_size"] = 8,
-	--["stylization_font_style"] = "OUTLINEMONOCHROME",
-	--["stylization_font_shadow"] = false,
+	["filger_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
+	["filger_font_size"] = 8,
+	["filger_font_style"] = "OUTLINEMONOCHROME",
+	["filger_font_shadow"] = false,
 }

@@ -461,8 +461,7 @@ do
 	SettingsDB.SetFontString = function(parent, fontName, fontHeight, fontStyle)
 		local fs = parent:CreateFontString(nil, "OVERLAY")
 		fs:SetFont(fontName, fontHeight, fontStyle)
-		fs:SetShadowColor(0, 0, 0)
-		fs:SetShadowOffset(0, 0)
+		fs:SetShadowOffset(SettingsCF["font"].unit_frames_font_shadow and 1 or 0, SettingsCF["font"].unit_frames_font_shadow and -1 or 0)
 		return fs
 	end
 
@@ -1036,7 +1035,8 @@ do
 	SettingsDB.PostCreateAura = function(element, button)
 		SettingsDB.CreateTemplate(button)
 		
-		button.remaining = SettingsDB.SetFontString(button, SettingsCF["media"].pixel_font, SettingsCF["aura"].font_size, SettingsCF["media"].pixel_font_style)
+		button.remaining = SettingsDB.SetFontString(button, SettingsCF["font"].auras_font, SettingsCF["font"].auras_font_size, SettingsCF["font"].auras_font_style)
+		button.remaining:SetShadowOffset(SettingsCF["font"].auras_font_shadow and 1 or 0, SettingsCF["font"].auras_font_shadow and -1 or 0)
 		button.remaining:SetPoint("CENTER", button, "CENTER", SettingsDB.Scale(2), SettingsDB.Scale(1))
 		button.remaining:SetTextColor(1, 1, 1)
 		
@@ -1050,7 +1050,8 @@ do
 
 		button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 0, SettingsDB.Scale(1))
 		button.count:SetJustifyH("RIGHT")
-		button.count:SetFont(SettingsCF["media"].pixel_font, SettingsCF["aura"].font_size, SettingsCF["media"].pixel_font_style)
+		button.count:SetFont(SettingsCF["font"].auras_font, SettingsCF["font"].auras_font_size, SettingsCF["font"].auras_font_style)
+		button.count:SetShadowOffset(SettingsCF["font"].auras_font_shadow and 1 or 0, SettingsCF["font"].auras_font_shadow and -1 or 0)
 		button.count:SetTextColor(1, 1, 1)
 
 		if SettingsCF["aura"].show_spiral == true then
@@ -1205,8 +1206,7 @@ do
 					tex:SetVertexColor(0.8, 0.8, 0.8)
 				end
 
-				local count = icon:CreateFontString(nil, "OVERLAY")
-				count:SetFont(SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+				local count = SettingsDB.SetFontString(icon, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 				count:SetPoint("CENTER", unpack(SettingsDB.CountOffsets[spell[2]]))
 				icon.count = count
 

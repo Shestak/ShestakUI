@@ -15,7 +15,8 @@ else
 end
  
 local select = select
- 
+local db = SettingsCF["font"]
+
 local isValidFrame = function(frame)
 	if frame:GetName() then	return end
 	overlayRegion = select(2, frame:GetRegions())
@@ -287,17 +288,18 @@ local createPlate = function(frame)
 	
 	local newNameRegion = frame:CreateFontString()
 	newNameRegion:SetPoint("BOTTOM", healthBar, "TOP", 0, 4)
-	newNameRegion:SetFont(SettingsCF["media"].pixel_font, SettingsCF["nameplate"].font_size * offset, SettingsCF["media"].pixel_font_style)
+	newNameRegion:SetFont(db.nameplates_font, db.nameplates_font_size * offset, db.nameplates_font_style);
+	newNameRegion:SetShadowOffset(db.nameplates_font_shadow and 1 or 0, db.nameplates_font_shadow and -1 or 0)
 	newNameRegion:SetTextColor(1, 1, 1)
 	if SettingsCF["nameplate"].name_abbrev ~= true then
 		newNameRegion:SetWidth(SettingsCF["nameplate"].width * offset)
-		newNameRegion:SetHeight(SettingsCF["nameplate"].font_size * offset)
+		newNameRegion:SetHeight(db.nameplates_font_size * offset)
 	end
 	frame.name = newNameRegion
  
 	frame.level = levelTextRegion
-	levelTextRegion:SetFont(SettingsCF["media"].pixel_font, SettingsCF["nameplate"].font_size * offset, SettingsCF["media"].pixel_font_style)
-	levelTextRegion:SetShadowOffset(0, 0)
+	levelTextRegion:SetFont(db.nameplates_font, db.nameplates_font_size * offset, db.nameplates_font_style);
+	levelTextRegion:SetShadowOffset(db.nameplates_font_shadow and 1 or 0, db.nameplates_font_shadow and -1 or 0)
 	
 	healthBar:SetStatusBarTexture(SettingsCF["media"].texture)
  
@@ -321,7 +323,8 @@ local createPlate = function(frame)
  
 	if SettingsCF["nameplate"].health_value == true then
 		healthBar.percent = healthBar:CreateFontString(nil, "OVERLAY")
-		healthBar.percent:SetFont(SettingsCF["media"].pixel_font, SettingsCF["nameplate"].font_size * offset, SettingsCF["media"].pixel_font_style)
+		healthBar.percent:SetFont(db.nameplates_font, db.nameplates_font_size * offset, db.nameplates_font_style);
+		healthBar.percent:SetShadowOffset(db.nameplates_font_shadow and 1 or 0, db.nameplates_font_shadow and -1 or 0)
 		healthBar.percent:SetPoint("RIGHT", healthBar, "RIGHT", 0, 0)
 		healthBar.percent:SetTextColor(1, 1, 1)
 		healthBar.percent:SetJustifyH("RIGHT")
@@ -339,13 +342,15 @@ local createPlate = function(frame)
 	castBar:RegisterEvent("UNIT_SPELLCAST_NOT_INTERRUPTIBLE")
  
 	castBar.time = castBar:CreateFontString(nil, "ARTWORK")
-	castBar.time:SetFont(SettingsCF["media"].pixel_font, SettingsCF["nameplate"].font_size * offset, SettingsCF["media"].pixel_font_style)
+	castBar.time:SetFont(db.nameplates_font, db.nameplates_font_size * offset, db.nameplates_font_style);
+	castBar.time:SetShadowOffset(db.nameplates_font_shadow and 1 or 0, db.nameplates_font_shadow and -1 or 0)
 	castBar.time:SetPoint("RIGHT", castBar, "RIGHT", 0, 0)
 	castBar.time:SetJustifyH("RIGHT")
  
 	if SettingsCF["nameplate"].show_castbar_name == true then
 		castBar.castName = castBar:CreateFontString(nil, "OVERLAY")
-		castBar.castName:SetFont(SettingsCF["media"].pixel_font, SettingsCF["nameplate"].font_size * offset, SettingsCF["media"].pixel_font_style)
+		castBar.castName:SetFont(db.nameplates_font, db.nameplates_font_size * offset, db.nameplates_font_style);
+		castBar.castName:SetShadowOffset(db.nameplates_font_shadow and 1 or 0, db.nameplates_font_shadow and -1 or 0)
 		castBar.castName:SetHeight(SettingsCF["nameplate"].height)
 		castBar.castName:SetWidth(SettingsCF["nameplate"].width - 27)
 		castBar.castName:SetPoint("LEFT", castBar, "LEFT", 2, 0)

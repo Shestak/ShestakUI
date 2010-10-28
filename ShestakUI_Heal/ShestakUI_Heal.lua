@@ -71,11 +71,9 @@ local function Shared(self, unit)
 	end
 	
 	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and not (self:GetParent():GetName():match"oUF_MainTank"))) then
-		self.Health.value = self.Health:CreateFontString(nil, "OVERLAY")
+		self.Health.value = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 		self.Health.value:SetPoint("CENTER", self.Health, "CENTER", 0, SettingsDB.Scale(-5))
-		self.Health.value:SetFont(SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
 		self.Health.value:SetTextColor(1, 1, 1)
-		self.Health.value:SetShadowOffset(0, 0)
 		
 		self.Health.PostUpdate = SettingsDB.PostUpdateRaidHealth
 
@@ -103,13 +101,12 @@ local function Shared(self, unit)
 	end
 	
 	-- Names
-	self.Info = self.Health:CreateFontString(nil, "OVERLAY")
+	self.Info = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and not (self:GetParent():GetName():match"oUF_MainTank") then
 		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, SettingsDB.Scale(1))
 	else
 		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, SettingsDB.Scale(4))
 	end
-	self.Info:SetFont(SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
 	self:Tag(self.Info, "[GetNameColor][NameShort]")
 	
 	-- Agro border
@@ -237,8 +234,7 @@ local function Shared(self, unit)
 			self.RaidDebuffs.cd:SetReverse()
 		end
 
-		self.RaidDebuffs.count = self.RaidDebuffs:CreateFontString(nil, "OVERLAY")
-		self.RaidDebuffs.count:SetFont(SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
+		self.RaidDebuffs.count = SettingsDB.SetFontString(self.RaidDebuffs, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 		self.RaidDebuffs.count:SetPoint("BOTTOMRIGHT", self.RaidDebuffs, "BOTTOMRIGHT", SettingsDB.Scale(2), 0)
 		self.RaidDebuffs.count:SetTextColor(1, 1, 1)
 	end

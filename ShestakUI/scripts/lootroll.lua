@@ -3,6 +3,7 @@
 ----------------------------------------------------------------------------------------
 if not SettingsCF.loot.rolllootframe == true then return end
 
+local db = SettingsCF["font"]
 local backdrop = ({
 	bgFile = SettingsCF["media"].blank,
 	edgeFile = SettingsCF["media"].blank,
@@ -76,7 +77,8 @@ local function CreateRollButton(parent, ntex, ptex, htex, rolltype, tiptext, ...
 	f:SetScript("OnClick", ClickRoll)
 	f:SetMotionScriptsWhileDisabled(true)
 	local txt = f:CreateFontString(nil, nil)
-	txt:SetFont(SettingsCF.media.pixel_font, SettingsCF.loot.font_size, SettingsCF.media.pixel_font_style)
+	txt:SetFont(db.loot_font, db.loot_font_size, db.loot_font_style);
+	txt:SetShadowOffset(db.loot_font_shadow and 1 or 0, db.loot_font_shadow and -1 or 0)
 	txt:SetPoint("CENTER", 0, rolltype == 2 and 1 or rolltype == 0 and -1.2 or 0)
 	return f, txt
 end
@@ -141,11 +143,13 @@ local function CreateRollFrame()
 
 	local bind = frame:CreateFontString()
 	bind:SetPoint("LEFT", pass, "RIGHT", SettingsDB.Scale(3), SettingsDB.Scale(1))
-	bind:SetFont(SettingsCF.media.pixel_font, SettingsCF.loot.font_size, SettingsCF.media.pixel_font_style)
+	bind:SetFont(db.loot_font, db.loot_font_size, db.loot_font_style);
+	bind:SetShadowOffset(db.loot_font_shadow and 1 or 0, db.loot_font_shadow and -1 or 0)
 	frame.fsbind = bind
 
 	local loot = frame:CreateFontString(nil, "ARTWORK")
-	loot:SetFont(SettingsCF.media.pixel_font, SettingsCF.loot.font_size, SettingsCF.media.pixel_font_style)
+	loot:SetFont(db.loot_font, db.loot_font_size, db.loot_font_style);
+	loot:SetShadowOffset(db.loot_font_shadow and 1 or 0, db.loot_font_shadow and -1 or 0)
 	loot:SetPoint("LEFT", bind, "RIGHT", 0, 0)
 	loot:SetPoint("RIGHT", frame, "RIGHT", SettingsDB.Scale(-5), 0)
 	loot:SetHeight(SettingsDB.Scale(10))
@@ -166,7 +170,8 @@ anchor:SetBackdropColor(unpack(SettingsCF.media.backdrop_color))
 anchor:SetBackdropBorderColor(unpack(SettingsCF.media.border_color))
 
 local label = anchor:CreateFontString(nil, "ARTWORK")
-label:SetFont(SettingsCF.media.pixel_font, SettingsCF.loot.font_size, SettingsCF.media.pixel_font_style)
+label:SetFont(db.loot_font, db.loot_font_size, db.loot_font_style);
+label:SetShadowOffset(db.loot_font_shadow and 1 or 0, db.loot_font_shadow and -1 or 0)
 label:SetPoint("CENTER", anchor, 0, SettingsDB.Scale(1))
 label:SetText("Group loot frame")
 

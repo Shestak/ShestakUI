@@ -3,6 +3,7 @@
 ----------------------------------------------------------------------------------------
 if SettingsCF.aura.player_auras ~= true then return end
 
+local db = SettingsCF["font"]
 local mainhand, _, _, offhand, _, _, hand3 = GetWeaponEnchantInfo()
 local rowbuffs = 16
 
@@ -33,7 +34,8 @@ h:SetFrameLevel(30)
 
 ConsolidatedBuffsCount:SetParent(h)
 ConsolidatedBuffsCount:SetPoint("BOTTOMRIGHT", 0, SettingsDB.Scale(1))
-ConsolidatedBuffsCount:SetFont(SettingsCF["media"].pixel_font, SettingsCF["aura"].font_size, SettingsCF["media"].pixel_font_style)
+ConsolidatedBuffsCount:SetFont(db.auras_font, db.auras_font_size, db.auras_font_style);
+ConsolidatedBuffsCount:SetShadowOffset(db.auras_font_shadow and 1 or 0, db.auras_font_shadow and -1 or 0)
 
 local CBbg = CreateFrame("Frame", nil, ConsolidatedBuffs)
 SettingsDB.CreateTemplate(CBbg)
@@ -52,8 +54,8 @@ for i = 1, 3 do
 	_G["TempEnchant"..i]:SetWidth(SettingsDB.Scale(SettingsCF["aura"].player_buff_size))	
 	_G["TempEnchant"..i.."Duration"]:ClearAllPoints()
 	_G["TempEnchant"..i.."Duration"]:SetPoint("CENTER", SettingsDB.Scale(2), SettingsDB.Scale(1))
-	_G["TempEnchant"..i.."Duration"]:SetFont(SettingsCF["media"].pixel_font, SettingsCF["aura"].font_size, SettingsCF["media"].pixel_font_style)
-	_G["TempEnchant"..i.."Duration"]:SetShadowOffset(0, 0)
+	_G["TempEnchant"..i.."Duration"]:SetFont(db.auras_font, db.auras_font_size, db.auras_font_style);
+	_G["TempEnchant"..i.."Duration"]:SetShadowOffset(db.auras_font_shadow and 1 or 0, db.auras_font_shadow and -1 or 0)
 end
 
 local function StyleBuffs(buttonName, index, debuff)
@@ -72,12 +74,13 @@ local function StyleBuffs(buttonName, index, debuff)
 		
 		duration:ClearAllPoints()
 		duration:SetPoint("CENTER", SettingsDB.Scale(2), SettingsDB.Scale(1))
-		duration:SetFont(SettingsCF["media"].pixel_font, SettingsCF["aura"].font_size, SettingsCF["media"].pixel_font_style)
-		duration:SetShadowOffset(0, 0)
+		duration:SetFont(db.auras_font, db.auras_font_size, db.auras_font_style);
+		duration:SetShadowOffset(db.auras_font_shadow and 1 or 0, db.auras_font_shadow and -1 or 0)
 		
 		count:ClearAllPoints()
 		count:SetPoint("BOTTOMRIGHT", 0, SettingsDB.Scale(1))
-		count:SetFont(SettingsCF["media"].pixel_font, SettingsCF["aura"].font_size, SettingsCF["media"].pixel_font_style)
+		count:SetFont(db.auras_font, db.auras_font_size, db.auras_font_style);
+		count:SetShadowOffset(db.auras_font_shadow and 1 or 0, db.auras_font_shadow and -1 or 0)
 		
 		local panel = CreateFrame("Frame", buttonName..index.."Panel", buff)
 		SettingsDB.CreatePanel(panel, SettingsCF["aura"].player_buff_size, SettingsCF["aura"].player_buff_size, "CENTER", buff, "CENTER", 0, 0)

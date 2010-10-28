@@ -172,8 +172,6 @@ SettingsCF["chat"] = {
 	["enable"] = true,							-- Enable chat
 	["background"] = false,						-- Enable background for chat
 	["background_alpha"] = 0.7,					-- Background alpha
-	["font_size"] = 11,							-- Chat font size
-	["font_style"] = "",						-- Font style("OUTLINE", "OUTLINEMONOCHROME", "THICKOUTLINE" or "")
 	["filter"] = true,							-- Removing some chat spam("Player1" won duel "Player2")
 	["width"] = 350,							-- Chat width
 	["height"] = 112,							-- Chat height
@@ -219,7 +217,6 @@ SettingsCF["map"] = {
 SettingsCF["loot"] = {
 	["lootframe"] = true,						-- Enable loot frame
 	["rolllootframe"] = true,					-- Enable group roll frame
-	["font_size"] = 8,							-- Loot frame font size
 	["icon_size"] = 22,							-- Icon size
 	["width"] = 221,							-- Loot window width
 	["auto_greed"] = true,						-- Push "greed" button when an item roll
@@ -231,7 +228,6 @@ SettingsCF["loot"] = {
 ----------------------------------------------------------------------------------------
 SettingsCF["nameplate"] = {
 	["enable"] = true, 							-- Enable nameplate
-	["font_size"] = 8,							-- Nameplate font size
 	["height"] = 9,								-- Nameplate height
 	["width"] = 120,							-- Nameplate width
 	["combat"] = false,							-- Automatically show nameplate in combat
@@ -272,7 +268,6 @@ SettingsCF["actionbar"] = {
 --	Auras/Buffs/Debuffs
 ----------------------------------------------------------------------------------------
 SettingsCF["aura"] = {
-	["font_size"] = 8,							-- Auras font size
 	["player_buff_size"] = 25,					-- Player buffs size
 	["show_spiral"] = false,					-- Spiral on aura icons
 	["show_timer"] = true,						-- Show cooldown tier on aura icons
@@ -292,7 +287,6 @@ SettingsCF["aura"] = {
 SettingsCF["unitframe"] = {
 	-- Main
 	["enable"] = true,							-- Enable unitframes
-	["font_size"] = 8,							-- Font size
 	["aggro_border"] = true,					-- Aggro border
 	["own_color"] = false,						-- Set your color for health bars
 	["enemy_health_color"] = true,				-- If enable, enemy target color is red
