@@ -108,9 +108,9 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							name:SetPoint("LEFT", frame, "LEFT", SettingsDB.Scale(4), 0)
 							name:SetWidth(165)
 							name:SetHeight(8)
-							name:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style)
+							name:SetFont(SettingsCF["font"].stylization_font, SettingsCF["font"].stylization_font_size, SettingsCF["font"].stylization_font_style)
+							name:SetShadowOffset(SettingsCF["font"].stylization_font_shadow and 1 or 0, SettingsCF["font"].stylization_font_shadow and -1 or 0)
 							name:SetJustifyH("LEFT")
-							name:SetShadowColor(0, 0, 0, 0)
 							name.SetFont = SettingsDB.dummy
 							name.styled = true
 						end
@@ -118,9 +118,9 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						if not timer.styled then	
 							timer:ClearAllPoints()
 							timer:SetPoint("RIGHT", frame, "RIGHT", SettingsDB.Scale(-1), 0)
-							timer:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style)
+							timer:SetFont(SettingsCF["font"].stylization_font, SettingsCF["font"].stylization_font_size, SettingsCF["font"].stylization_font_style)
+							timer:SetShadowOffset(SettingsCF["font"].stylization_font_shadow and 1 or 0, SettingsCF["font"].stylization_font_shadow and -1 or 0)
 							timer:SetJustifyH("RIGHT")
-							timer:SetShadowColor(0, 0, 0, 0)
 							timer.SetFont = SettingsDB.dummy
 							timer.styled = true
 						end
@@ -144,9 +144,9 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 			if not anchor.styled then
 				local header = {anchor:GetRegions()}
 				if header[1]:IsObjectType("FontString") then
-					header[1]:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style)
+					header[1]:SetFont(SettingsCF["font"].stylization_font, SettingsCF["font"].stylization_font_size, SettingsCF["font"].stylization_font_style)
+					header[1]:SetShadowOffset(SettingsCF["font"].stylization_font_shadow and 1 or 0, SettingsCF["font"].stylization_font_shadow and -1 or 0)
 					header[1]:SetTextColor(1, 1, 1, 1)
-					header[1]:SetShadowColor(0, 0, 0, 0)
 					anchor.styled = true	
 				end
 				header = nil
@@ -208,18 +208,18 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				if not name.styled then
 					name:ClearAllPoints()
 					name:SetPoint("LEFT", bar, "LEFT", SettingsDB.Scale(4), 0)
-					name:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style)
+					name:SetFont(SettingsCF["font"].stylization_font, SettingsCF["font"].stylization_font_size, SettingsCF["font"].stylization_font_style)
+					name:SetShadowOffset(SettingsCF["font"].stylization_font_shadow and 1 or 0, SettingsCF["font"].stylization_font_shadow and -1 or 0)
 					name:SetJustifyH("LEFT")
-					name:SetShadowColor(0, 0, 0, 0)
 					name.styled = true
 				end
 				
 				if not timer.styled then
 					timer:ClearAllPoints()
 					timer:SetPoint("RIGHT", bar, "RIGHT", SettingsDB.Scale(-1), 0)
-					timer:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style)
+					timer:SetFont(SettingsCF["font"].stylization_font, SettingsCF["font"].stylization_font_size, SettingsCF["font"].stylization_font_style)
+					timer:SetShadowOffset(SettingsCF["font"].stylization_font_shadow and 1 or 0, SettingsCF["font"].stylization_font_shadow and -1 or 0)
 					timer:SetJustifyH("RIGHT")
-					timer:SetShadowColor(0, 0, 0, 0)
 					timer.styled = true
 				end
 				count = count + 1
@@ -287,8 +287,8 @@ function SettingsDB.UploadDBM()
 	DBT_SavedOptions["DBM"].HugeScale = 1
 	DBT_SavedOptions["DBM"].BarXOffset = 0
 	DBT_SavedOptions["DBM"].BarYOffset = 7
-	DBT_SavedOptions["DBM"].Font = SettingsCF.media.pixel_font
-	DBT_SavedOptions["DBM"].FontSize = 8
+	DBT_SavedOptions["DBM"].Font = SettingsCF.font.stylization_font
+	DBT_SavedOptions["DBM"].FontSize = SettingsCF.font.stylization_font_size
 	DBT_SavedOptions["DBM"].Width = 190
 	DBT_SavedOptions["DBM"].TimerX = 143
 	DBT_SavedOptions["DBM"].TimerPoint = "BOTTOMLEFT"

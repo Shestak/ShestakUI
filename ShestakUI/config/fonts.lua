@@ -88,4 +88,10 @@ SettingsCF["font"] = {
 	["filger_font_size"] = 8,
 	["filger_font_style"] = "OUTLINEMONOCHROME",
 	["filger_font_shadow"] = false,
+	
+	-- Stylization font
+	["stylization_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
+	["stylization_font_size"] = 8,
+	["stylization_font_style"] = "OUTLINEMONOCHROME",
+	["stylization_font_shadow"] = false,
 }

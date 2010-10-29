@@ -9,7 +9,7 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 	if IsAddOnLoaded("PallyPower") then
 		local _G = _G
 		local _, frame, tex, settings
-		local font = SettingsCF.media.pixel_font
+		local font = SettingsCF.font.stylization_font
 		local one = SettingsDB.Scale(1)
 		local two = SettingsDB.Scale(2)
 		local three = SettingsDB.Scale(3)
@@ -47,8 +47,8 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 					local fs = _G[fname..fontstring]
 					if fs then
 						local _, size = fs:GetFont()
-						fs:SetFont(font, SettingsCF["media"].pixel_font_size/settings.buffscale, SettingsCF["media"].pixel_font_style)
-						fs:SetShadowColor(0, 0, 0, 0)
+						fs:SetFont(font, SettingsCF["font"].stylization_font_size/settings.buffscale, SettingsCF["font"].stylization_font_style)
+						fs:SetShadowOffset(SettingsCF["font"].stylization_font_shadow and 1 or 0, SettingsCF["font"].stylization_font_shadow and -1 or 0)
 						if not fname:find("PowerC%d+P%d+$") then
 							if fontstring == "Text" then
 								fs:ClearAllPoints()

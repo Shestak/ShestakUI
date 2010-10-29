@@ -304,8 +304,8 @@ Filger_Spells = {
 			{ spellID = 34026, size = 30, filter = "CD" },
 			-- Feign Death
 			{ spellID = 28728, size = 30, filter = "CD" },
-			-- Freezing Trap
-			{ spellID = 1499, size = 30, filter = "CD" },
+			-- Snake Trap
+			{ spellID = 34600, size = 30, filter = "CD" },
 			-- Wyvern Sting
 			{ spellID = 19386, size = 30, filter = "CD" },
 			-- Scare Beast
