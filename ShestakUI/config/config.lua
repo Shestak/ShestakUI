@@ -300,6 +300,7 @@ SettingsCF["unitframe"] = {
 	["show_arena"] = true,						-- Show arena frames
 	["arena_on_right"] = true,					-- Set true for ShestakUI_DPS
 	-- Raid
+	["show_party"] = true,						-- Show party frames
 	["show_raid"] = true,						-- Show raid frames
 	["vertical_health"] = false,				-- Vertical orientation of health
 	["alpha_health"] = false,					-- Alpha of healthbars when 100%hp

@@ -248,19 +248,21 @@ end
 oUF:RegisterStyle("ShestakHeal", Shared)
 oUF:Factory(function(self)
 	oUF:SetActiveStyle("ShestakHeal")
-	local party = self:SpawnHeader("oUF_Party", nil, "custom [@raid6,exists] hide;show",
-		"showSolo", db.solo_mode,
-		"showPlayer", db.player_in_party, 
-		"showParty", true,
-		"showRaid", true,			
-		"xOffset", 7,
-		"point", "LEFT",
-		"template", "oUF_PartyH"
-	)
-	if db.player_in_party == true then
-		party:SetPoint(pos.party_heal[1], pos.party_heal[2], pos.party_heal[3], pos.party_heal[4], pos.party_heal[5])
-	else
-		party:SetPoint(pos.party_heal[1], pos.party_heal[2], pos.party_heal[3], pos.party_heal[4] + 32, pos.party_heal[5])
+	if db.show_party == true then
+		local party = self:SpawnHeader("oUF_Party", nil, "custom [@raid6,exists] hide;show",
+			"showSolo", db.solo_mode,
+			"showPlayer", db.player_in_party, 
+			"showParty", true,
+			"showRaid", true,			
+			"xOffset", 7,
+			"point", "LEFT",
+			"template", "oUF_PartyH"
+		)
+		if db.player_in_party == true then
+			party:SetPoint(pos.party_heal[1], pos.party_heal[2], pos.party_heal[3], pos.party_heal[4], pos.party_heal[5])
+		else
+			party:SetPoint(pos.party_heal[1], pos.party_heal[2], pos.party_heal[3], pos.party_heal[4] + 32, pos.party_heal[5])
+		end
 	end
 
 	if db.show_raid == true then

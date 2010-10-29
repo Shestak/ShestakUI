@@ -2,7 +2,7 @@
 ## Title: ShestakUI DPS
 ## Notes: Raid DPS layout for ShestakUI.
 ## Author: Shestak
-## Credits: Thanks to ALZA for the great help and write some modules
+## Credits: ALZA, Tukz, Caellian
 ## X-Category: UnitFrame
 ## RequiredDeps: ShestakUI
 

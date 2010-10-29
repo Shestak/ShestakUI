@@ -247,17 +247,19 @@ end
 oUF:RegisterStyle("ShestakDPS", Shared)
 oUF:Factory(function(self)
 	oUF:SetActiveStyle("ShestakDPS")
-	local party = self:SpawnHeader("oUF_PartyDPS", nil, "custom [@raid6,exists] hide;show",
-		"showSolo", db.solo_mode,
-		"showPlayer", db.player_in_party, 
-		"showParty", true,
-		"showRaid", true,	
-		"yOffset", SettingsDB.Scale(28),
-		"point", "BOTTOM",
-		"template", "oUF_PartyV"
-	)
-	party:SetPoint(unpack(SettingsCF["position"].unitframes.party_dps))
-
+	if db.show_party == true then
+		local party = self:SpawnHeader("oUF_PartyDPS", nil, "custom [@raid6,exists] hide;show",
+			"showSolo", db.solo_mode,
+			"showPlayer", db.player_in_party, 
+			"showParty", true,
+			"showRaid", true,	
+			"yOffset", SettingsDB.Scale(28),
+			"point", "BOTTOM",
+			"template", "oUF_PartyV"
+		)
+		party:SetPoint(unpack(SettingsCF["position"].unitframes.party_dps))
+	end
+	
 	if db.show_raid == true then
 		local raid = self:SpawnHeader("oUF_RaidDPS", nil, "custom [@raid6,exists] show;hide",
 			"showRaid", true, 

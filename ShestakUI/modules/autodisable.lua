@@ -33,11 +33,12 @@ end
 ----------------------------------------------------------------------------------------
 --	Auto-overwrite script config is X addon is found
 ----------------------------------------------------------------------------------------
-if (IsAddOnLoaded("Stuf") or IsAddOnLoaded("PitBull4") or IsAddOnLoaded("ShadowedUnitFrames") or IsAddOnLoaded("ag_UnitFrames")) then
+if (IsAddOnLoaded("Stuf") or IsAddOnLoaded("PitBull4") or IsAddOnLoaded("ShadowedUnitFrames")) then
 	SettingsCF["unitframe"].enable = false
 end
 
-if (IsAddOnLoaded("Grid") or IsAddOnLoaded("HealBot") or IsAddOnLoaded("VuhDo") or IsAddOnLoaded("oUF_Freebgrid")) then
+if (IsAddOnLoaded("Grid") or IsAddOnLoaded("Grid2") or IsAddOnLoaded("HealBot") or IsAddOnLoaded("VuhDo") or IsAddOnLoaded("oUF_Freebgrid")) then
+	SettingsCF["unitframe"].show_party = false
 	SettingsCF["unitframe"].show_raid = false
 end
 
@@ -53,7 +54,7 @@ if (IsAddOnLoaded("Mapster")) then
 	SettingsCF["map"].enable = false
 end
 
-if (IsAddOnLoaded("Prat") or IsAddOnLoaded("Chatter")) then
+if (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
 	SettingsCF["chat"].enable = false
 end
 

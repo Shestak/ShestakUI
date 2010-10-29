@@ -632,7 +632,7 @@ do
 		subtitle:SetNonSpaceWrap(true)
 		subtitle:SetWordWrap(true)
 		subtitle:SetJustifyH("LEFT")
-		subtitle:SetText("ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Awbee, Monolit, Sart, Akimba, Antthemage, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, Senryo, v6o, Stuck, Meurtcriss, Homicidal Retribution, Favorit, Leots, Allez, Baine, Ianchan, Aelb, Spacedragon, Sw2rT1, Nanjiqq, Cranan, Seal, Halogen, Mania, Fernir, Affli, Eclipse, Elv22, Sitatunga, Foof, Tohveli, FourOne, Addon Authors, UI Users, Russian Community and Other.")
+		subtitle:SetText("ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, UI Users, Russian Community and Others.")
 	end)
 
 	InterfaceOptions_AddCategory(thxui)

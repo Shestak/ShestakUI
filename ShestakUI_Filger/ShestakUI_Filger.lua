@@ -1,3 +1,4 @@
+if SettingsCF["unitframe"].enable ~= true then return end
 --[[
 	
 	Filger
