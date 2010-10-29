@@ -201,7 +201,7 @@ if GetLocale() == "esMX" then
 	L_GUI_UF_SHOW_BOSS = "Mostrar marco del jefe"
 	L_GUI_UF_SHOW_ARENA = "Mostrar marcos de arena"
 	L_GUI_UF_ARENA_RIGHT = "Marcos de arena en la derecha"
-	L_GUI_UF_SHOW_PARTY = "Show raid frames" -- Needs review
+	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review
 	L_GUI_UF_SHOW_RAID = "Mostrar marcos de banda"
 	L_GUI_UF_VERTICAL_HEALTH = "Orientación vertical de la vida"
 	L_GUI_UF_ALPHA_HEALTH = "Opacidad de las barras de vida cuando están al 100%"

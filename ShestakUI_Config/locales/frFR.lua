@@ -201,7 +201,7 @@ if GetLocale() == "frFR" then
 	L_GUI_UF_SHOW_BOSS = "Afficher les barres du boss"
 	L_GUI_UF_SHOW_ARENA = "Afficher les barres d'arène"
 	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right"
-	L_GUI_UF_SHOW_PARTY = "Show raid frames" -- Needs review
+	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review
 	L_GUI_UF_SHOW_RAID = "Show raid frames"
 	L_GUI_UF_VERTICAL_HEALTH = "Orientation vertical des barres de vie"
 	L_GUI_UF_ALPHA_HEALTH = "Alpha of healthbars when 100%hp"

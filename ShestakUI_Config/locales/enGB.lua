@@ -201,7 +201,7 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	L_GUI_UF_SHOW_BOSS = "Show boss frames"
 	L_GUI_UF_SHOW_ARENA = "Show arena frames"
 	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right"
-	L_GUI_UF_SHOW_PARTY = "Show raid frames"
+	L_GUI_UF_SHOW_PARTY = "Show party frames"
 	L_GUI_UF_SHOW_RAID = "Show raid frames"
 	L_GUI_UF_VERTICAL_HEALTH = "Vertical orientation of health"
 	L_GUI_UF_ALPHA_HEALTH = "Alpha of healthbars when 100%hp"

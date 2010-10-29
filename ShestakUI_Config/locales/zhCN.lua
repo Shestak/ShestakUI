@@ -78,8 +78,8 @@ if GetLocale() == "zhCN" then
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "在任何时候显示敌对技能冷却"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "在战场中显示敌对技能冷却"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "在竞技场中显示敌对技能冷却"
-	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse" -- Needs review
-	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size" -- Needs review
+	L_GUI_COOLDOWN_PULSE_ENABLE = "开启冷却闪烁提示"
+	L_GUI_COOLDOWN_PULSE_SIZE = "冷却闪烁大小"
 	
 	-- Threat options
 	L_GUI_THREAT = "仇恨栏"
@@ -104,7 +104,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_TOOLTIP_RANK = "在提示资讯中显示公会会阶"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "在提示资讯中显示竞技场等级"
 	L_GUI_TOOLTIP_SPELL_ID = "法术ID"
-	L_GUI_TOOLTIP_RAID_ICON = "Raid icon" -- Needs review
+	L_GUI_TOOLTIP_RAID_ICON = "团队图标"
 
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "开启聊天框增强"
@@ -202,7 +202,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_UF_SHOW_BOSS = "显示boss框体"
 	L_GUI_UF_SHOW_ARENA = "显示竞技场框体"
 	L_GUI_UF_ARENA_RIGHT = "在右侧显示竞技场框体"
-	L_GUI_UF_SHOW_PARTY = "Show raid frames" -- Needs review
+	L_GUI_UF_SHOW_PARTY = "显示队伍框体"
 	L_GUI_UF_SHOW_RAID = "显示团队框体"
 	L_GUI_UF_VERTICAL_HEALTH = "垂直显示团队框体生命值"
 	L_GUI_UF_ALPHA_HEALTH = "100%生命值时透明显示生命栏"

@@ -201,7 +201,7 @@ if GetLocale() == "deDE" then
 	L_GUI_UF_SHOW_BOSS = "Zeige eigenes Fenster für Bosse an"
 	L_GUI_UF_SHOW_ARENA = "Zeige Einheitenfenster in der Arena"
 	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right"  -- Needs review
-	L_GUI_UF_SHOW_PARTY = "Show raid frames" -- Needs review
+	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review
 	L_GUI_UF_SHOW_RAID = "Show raid frames"
 	L_GUI_UF_VERTICAL_HEALTH = "Vertikale Orientierung für Lebensbalken"
 	L_GUI_UF_ALPHA_HEALTH = "Alpha of healthbars when 100%hp"  -- Needs review
