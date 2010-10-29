@@ -132,14 +132,14 @@ local function Shared(self, unit)
 	end
 	
 	-- Ready check icons
-	if db.icons_ready_check == true and not (self:GetAttribute("unitsuffix") == "target") then
+	if db.icons_ready_check == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
 		self.ReadyCheck:SetSize(SettingsDB.Scale(12), SettingsDB.Scale(12))
 		self.ReadyCheck:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(1))
 	end
 	
 	-- Leader/Assistant/ML icons
-	if db.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target") then
+	if db.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		-- Leader icon
 		self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
 		self.Leader:SetSize(SettingsDB.Scale(12), SettingsDB.Scale(12))
@@ -157,7 +157,7 @@ local function Shared(self, unit)
 	end
 	
 	-- Debuff highlight
-	if not (self:GetAttribute("unitsuffix") == "target") then
+	if not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		self.DebuffHighlight = self.Health:CreateTexture(nil, "OVERLAY")
 		self.DebuffHighlight:SetAllPoints(self.Health)
 		self.DebuffHighlight:SetTexture(SettingsCF["media"].highlight)
@@ -198,7 +198,7 @@ local function Shared(self, unit)
 	end
 
 	-- Range alpha
-	if db.show_range == true and not (self:GetAttribute("unitsuffix") == "target") then
+	if db.show_range == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		self.Range = {insideAlpha = 1, outsideAlpha = db.range_alpha}
 	end
 	
@@ -210,7 +210,7 @@ local function Shared(self, unit)
 		end
 	end
 
-	if db.plugins_aura_watch == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
+	if db.plugins_aura_watch == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		-- Classbuffs
 		SettingsDB.CreateAuraWatch(self, unit)
 		
@@ -308,11 +308,16 @@ oUF:Factory(function(self)
 		end
 		
 		if db.raid_tanks == true then
+			if db.raid_tanks_tt == true then
+				mt_template = "oUF_MainTankTT"
+			else
+				mt_template = "oUF_MainTank"
+			end
 			local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
 				"showRaid", true,
 				"yOffset", -7,
 				"groupFilter", "MAINTANK",
-				"template", "oUF_MainTank"
+				"template", mt_template
 			)
 			raidtank:SetPoint(unpack(SettingsCF["position"].unitframes.tank))
 		end

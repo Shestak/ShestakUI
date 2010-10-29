@@ -309,6 +309,7 @@ SettingsCF["unitframe"] = {
 	["solo_mode"] = false,						-- Show player frame always
 	["player_in_party"] = true,					-- Show player frame in party
 	["raid_tanks"] = true,						-- Show raid tanks
+	["raid_tanks_tt"] = false,					-- Show raid tanks target target
 	["raid_groups"] = 5,						-- Number of groups in raid(Only for ShestakUI_Heal)
 	["raid_groups_vertical"] = false,			-- Vertical raid groups(Only for ShestakUI_Heal)
 	-- Icons

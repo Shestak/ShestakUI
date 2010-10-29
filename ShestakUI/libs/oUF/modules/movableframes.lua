@@ -365,7 +365,7 @@ do
 		local name = backdrop:CreateFontString(nil, "OVERLAY")
 		name:SetPoint"CENTER"
 		name:SetJustifyH"CENTER"
-		name:SetFont(SettingsCF["media"].pixel_font, SettingsCF["unitframe"].font_size, SettingsCF["media"].pixel_font_style)
+		name:SetFont(SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 		name:SetTextColor(1, 1, 1)
 
 		backdrop.name = name
