@@ -1095,8 +1095,6 @@ Filger_Spells = {
 			{ spellID = 47193, size = 30, filter = "CD" },
 			-- Demon Charge
 			{ spellID = 54785, size = 30, filter = "CD" },
-			-- Ritual of Doom
-			{ spellID = 18540, size = 30, filter = "CD" },
 			-- Soulshatter
 			{ spellID = 29858, size = 30, filter = "CD" },
 			-- Demonic Circle: Teleport
