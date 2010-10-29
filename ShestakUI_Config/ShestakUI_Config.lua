@@ -253,6 +253,7 @@ local function Local(o)
 	if o == "UIConfigunitframesolo_mode" then o = L_GUI_UF_SOLO_MODE end
 	if o == "UIConfigunitframeplayer_in_party" then o = L_GUI_UF_PLAYER_PARTY end
 	if o == "UIConfigunitframeraid_tanks" then o = L_GUI_UF_SHOW_TANK end
+	if o == "UIConfigunitframeraid_tanks_tt" then o = L_GUI_UF_SHOW_TANK_TT end
 	if o == "UIConfigunitframeraid_groups" then o = L_GUI_UF_RAID_GROUP end
 	if o == "UIConfigunitframeraid_groups_vertical" then o = L_GUI_UF_RAID_VERTICAL_GROUP end
 	if o == "UIConfigunitframeicons_pvp" then o = L_GUI_UF_ICONS_PVP end

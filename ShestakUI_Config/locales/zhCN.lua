@@ -211,6 +211,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_UF_SOLO_MODE = "总是显示玩家框体"
 	L_GUI_UF_PLAYER_PARTY = "在小队中显示玩家框体"
 	L_GUI_UF_SHOW_TANK = "显示团队主坦克框体"
+	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
 	L_GUI_UF_RAID_GROUP = "显示小队数目(ShestakUI_Heal风格)"
 	L_GUI_UF_RAID_VERTICAL_GROUP = "竖向显示团队队伍(ShestakUI_Heal风格)"
 	L_GUI_UF_ICONS_PVP = "鼠标划过玩家/目标时显示PVP状态文字"

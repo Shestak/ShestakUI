@@ -210,6 +210,7 @@ if GetLocale() == "esES" then
 	L_GUI_UF_SOLO_MODE = "Mostrar marco del jugador siempre"
 	L_GUI_UF_PLAYER_PARTY = "Mostrar marco del jugador en grupo"
 	L_GUI_UF_SHOW_TANK = "Mostrar tanques de la banda"
+	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
 	L_GUI_UF_RAID_GROUP = "Número de grupos en la banda (Sólo para ShestakUI_Heal)"
 	L_GUI_UF_RAID_VERTICAL_GROUP = "Grupos de la banda en vertical (Sólo para ShestakUI_Heal)"
 	L_GUI_UF_ICONS_PVP = "Texto JcJ (iconos no) al pasar el ratón sobre los marcos del jugador y objetivo"

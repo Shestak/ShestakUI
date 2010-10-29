@@ -210,6 +210,7 @@ if GetLocale() == "deDE" then
 	L_GUI_UF_SOLO_MODE = "Spielerfenster immer Anzeigen"
 	L_GUI_UF_PLAYER_PARTY = "Spielerfenster in der Gruppe anzeigen"
 	L_GUI_UF_SHOW_TANK = "Zeige Raid Tanks an"
+	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
 	L_GUI_UF_RAID_GROUP = "Anzahl der Gruppen im Raid(nur für oUF_ShestakHeal)"
 	L_GUI_UF_RAID_VERTICAL_GROUP = "Vertical raid groups(Only for ShestakUI_Heal)"  -- Needs review
 	L_GUI_UF_ICONS_PVP = "Zeige PVP Text (keine Symbole) bei Mouseover (Spieler+Ziel)"

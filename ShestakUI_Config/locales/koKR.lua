@@ -210,6 +210,7 @@ if GetLocale() == "koKR" then
 	L_GUI_UF_SOLO_MODE = "Show player frame always"
 	L_GUI_UF_PLAYER_PARTY = "Show player frame in party"
 	L_GUI_UF_SHOW_TANK = "Show raid tanks"
+	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target"
 	L_GUI_UF_RAID_GROUP = "Number of groups in raid(Only for ShestakUI_Heal)"
 	L_GUI_UF_RAID_VERTICAL_GROUP = "Vertical raid groups(Only for ShestakUI_Heal)"
 	L_GUI_UF_ICONS_PVP = "Mouseover pvp text(not icons) on player and target frames"

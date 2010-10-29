@@ -20,6 +20,8 @@ end
 
 local RAID_CLASS_COLORS = CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS
 
+local WHITE_HEX = '|cffffffff'
+
 local function Hex(r, g, b)
 	if(type(r) == 'table') then
 		if(r.r) then r, g, b = r.r, r.g, r.b else r, g, b = unpack(r) end
@@ -53,32 +55,45 @@ local guildRankColor = setmetatable({}, {
 	__index = function(t, i)
 		if i then
 			local c = Hex(ColorGradient(i/GUILD_INDEX_MAX, unpack(SMOOTH)))
-            if(c) then
-                t[i] = c
-                return c
-            else
-                t[i] = t[0]
-            end
+			if(c) then
+				t[i] = c
+				return c
+			else
+				t[i] = t[0]
+			end
 		end
 	end
 })
-guildRankColor[0] = '|cffffffff'
+guildRankColor[0] = WHITE_HEX
 
 local diffColor = setmetatable({}, {
 	__index = function(t,i)
 		local c = i and GetQuestDifficultyColor(i)
-        t[i] = c and Hex(c) or t[0]
-        return t[i]
+		t[i] = c and Hex(c) or t[0]
+		return t[i]
 	end
 })
-diffColor[0] = '|cffffffff'
+diffColor[0] = WHITE_HEX
 
 local classColor = setmetatable({}, {
 	__index = function(t,i)
 		local c = i and RAID_CLASS_COLORS[BC[i] or i]
-		if not c then return '|cffffffff' end
-		t[i] = Hex(c)
-		return t[i]
+		if(c) then
+			t[i] = Hex(c)
+			return t[i]
+		else
+			return WHITE_HEX
+		end
+	end
+})
+
+local WHITE = {1,1,1}
+local classColorRaw = setmetatable({}, {
+	__index = function(t, i)
+		local c = i and RAID_CLASS_COLORS[BC[i] or i]
+		if not c then return WHITE end
+		t[i] = c
+		return c
 	end
 })
 
@@ -91,154 +106,155 @@ end
 
 -- WhoList
 hooksecurefunc('WhoList_Update', function()
-    local whoOffset = FauxScrollFrame_GetOffset(WhoListScrollFrame)
+	local whoOffset = FauxScrollFrame_GetOffset(WhoListScrollFrame)
 
-    local playerZone = GetRealZoneText()
-    local playerGuild = GetGuildInfo'player'
-    local playerRace = UnitRace'player'
+	local playerZone = GetRealZoneText()
+	local playerGuild = GetGuildInfo'player'
+	local playerRace = UnitRace'player'
 
-    for i=1, WHOS_TO_DISPLAY, 1 do
-        local index = whoOffset + i
-        local nameText = getglobal('WhoFrameButton'..i..'Name')
-        local levelText = getglobal('WhoFrameButton'..i..'Level')
-        local classText = getglobal('WhoFrameButton'..i..'Class')
-        local variableText = getglobal('WhoFrameButton'..i..'Variable')
+	for i=1, WHOS_TO_DISPLAY, 1 do
+		local index = whoOffset + i
+		local nameText = getglobal('WhoFrameButton'..i..'Name')
+		local levelText = getglobal('WhoFrameButton'..i..'Level')
+		local classText = getglobal('WhoFrameButton'..i..'Class')
+		local variableText = getglobal('WhoFrameButton'..i..'Variable')
 
-        local name, guild, level, race, class, zone, classFileName = GetWhoInfo(index)
-        if(name) then
-            if zone == playerZone then
-                zone = '|cff00ff00' .. zone
-            end
-            if guild == playerGuild then
-                guild = '|cff00ff00' .. guild
-            end
-            if race == playerRace then
-                race = '|cff00ff00' .. race
-            end
-            local columnTable = { zone, guild, race }
+		local name, guild, level, race, class, zone, classFileName = GetWhoInfo(index)
+		if(name) then
+			if zone == playerZone then
+				zone = '|cff00ff00' .. zone
+			end
+			if guild == playerGuild then
+				guild = '|cff00ff00' .. guild
+			end
+			if race == playerRace then
+				race = '|cff00ff00' .. race
+			end
+			local columnTable = { zone, guild, race }
 
-            nameText:SetText(classColor[classFileName] .. name)
-            levelText:SetText(diffColor[level] .. level)
-            variableText:SetText(columnTable[UIDropDownMenu_GetSelectedID(WhoFrameDropDown)])
-        end
-    end
+			local c = classColorRaw[classFileName]
+			nameText:SetTextColor(c.r, c.g, c.b)
+			levelText:SetText(diffColor[level] .. level)
+			variableText:SetText(columnTable[UIDropDownMenu_GetSelectedID(WhoFrameDropDown)])
+		end
+	end
 end)
 
 -- LFRBrowseList
 hooksecurefunc('LFRBrowseFrameListButton_SetData', function(button, index)
-    local name, level, areaName, className, comment, partyMembers, status, class, encountersTotal, encountersComplete, isLeader, isTank, isHealer, isDamage = SearchLFGGetResults(index)
+	local name, level, areaName, className, comment, partyMembers, status, class, encountersTotal, encountersComplete, isLeader, isTank, isHealer, isDamage = SearchLFGGetResults(index)
 
-    if(index and class and name and level and (name~=myName)) then
-        button.name:SetText(classColor[class] .. name)
-        button.class:SetText(classColor[class] .. className)
-        button.level:SetText(diffColor[level] .. level)
-    end
+	if(index and class and name and level and (name~=myName)) then
+		button.name:SetText(classColor[class] .. name)
+		button.class:SetText(classColor[class] .. className)
+		button.level:SetText(diffColor[level] .. level)
+	end
 end)
 
 -- WorldStateScoreList
 hooksecurefunc('WorldStateScoreFrame_Update', function()
-    local inArena = IsActiveBattlefieldArena()
-    local offset = FauxScrollFrame_GetOffset(WorldStateScoreScrollFrame)
+	local inArena = IsActiveBattlefieldArena()
+	local offset = FauxScrollFrame_GetOffset(WorldStateScoreScrollFrame)
 
-    for i = 1, MAX_WORLDSTATE_SCORE_BUTTONS do
-        local index = offset + i
-        local name, killingBlows, honorableKills, deaths, honorGained, faction, rank, race, class, classToken, damageDone, healingDone = GetBattlefieldScore(index)
-        if name then
-            local n, r = strsplit('-', name, 2)
-            n = classColor[class] .. n .. '|r'
+	for i = 1, MAX_WORLDSTATE_SCORE_BUTTONS do
+		local index = offset + i
+		local name, killingBlows, honorableKills, deaths, honorGained, faction, rank, race, class, classToken, damageDone, healingDone = GetBattlefieldScore(index)
+		if name then
+			local n, r = strsplit('-', name, 2)
+			n = classColor[class] .. n .. '|r'
 
-            if (n == myname) and (not r) then
-                n = '> ' .. n .. ' <'
-            end
+			if (n == myname) and (not r) then
+				n = '> ' .. n .. ' <'
+			end
 
-            if r then
-                local color
-                if inArena then
-                    if faction == 1 then
-                        color = '|cffffd100'
-                    else
-                        color = '|cff19ff19'
-                    end
-                else
-                    if faction == 1 then
-                        color = '|cff00adf0'
-                    else
-                        color = '|cffff1919'
-                    end
-                end
-                r = color .. r .. '|r'
-                n = n .. '|cffffffff - |r' .. r
-            end
+			if r then
+				local color
+				if inArena then
+					if faction == 1 then
+						color = '|cffffd100'
+					else
+						color = '|cff19ff19'
+					end
+				else
+					if faction == 1 then
+						color = '|cff00adf0'
+					else
+						color = '|cffff1919'
+					end
+				end
+				r = color .. r .. '|r'
+				n = n .. '|cffffffff - |r' .. r
+			end
 
-            local button = _G['WorldStateScoreButton' .. i]
-            button.name.text:SetText(n)
-        end
-    end
+			local button = _G['WorldStateScoreButton' .. i]
+			button.name.text:SetText(n)
+		end
+	end
 end)
 
 -- GuildList
 local _VIEW = 'playerStatus'
 
 local function viewChanged(view)
-    _VIEW = view
+	_VIEW = view
 end
 
 local function update()
-    if(_VIEW == 'tradeskil') then return end
+	if(_VIEW == 'tradeskil') then return end
 
-    local playerArea = GetRealZoneText()
-    local buttons = GuildRosterContainer.buttons
+	local playerArea = GetRealZoneText()
+	local buttons = GuildRosterContainer.buttons
 
-    for i, button in ipairs(buttons) do
-        if(button:IsShown() and button.online and button.guildIndex) then
-            local name, rank, rankIndex, level, class, zone, note, officernote, online, status, classFileName, achievementPnts, achievementRank, isMobile = GetGuildRosterInfo(button.guildIndex)
-            if(_VIEW == 'playerStatus') then
-                button.string1:SetText(diffColor[level] .. level)
-                if(not isMobile) then
-                    button.string2:SetText(classColor[classFileName] .. name)
-                end
-                if(zone == playerArea) then
-                    button.string3:SetText('|cff00ff00' .. zone)
-                end
-            elseif(_VIEW == 'guildStatus') then
-                button.string1:SetText(classColor[classFileName] .. name)
-                if(rankIndex and rank) then
-                    button.string2:SetText(guildRankColor[rankIndex] .. rank)
-                end
-            elseif(_VIEW == 'achievement') then
-                button.string1:SetText(diffColor[level] .. level)
-                if(classFileName and name) then
-                    button.string2:SetText(classColor[classFileName] .. name)
-                end
-            end
-        end
-    end
+	for i, button in ipairs(buttons) do
+		if(button:IsShown() and button.online and button.guildIndex) then
+			local name, rank, rankIndex, level, class, zone, note, officernote, online, status, classFileName, achievementPnts, achievementRank, isMobile = GetGuildRosterInfo(button.guildIndex)
+			if(_VIEW == 'playerStatus') then
+				button.string1:SetText(diffColor[level] .. level)
+				if(not isMobile) then
+					button.string2:SetText(classColor[classFileName] .. name)
+				end
+				if(zone == playerArea) then
+					button.string3:SetText('|cff00ff00' .. zone)
+				end
+			elseif(_VIEW == 'guildStatus') then
+				button.string1:SetText(classColor[classFileName] .. name)
+				if(rankIndex and rank) then
+					button.string2:SetText(guildRankColor[rankIndex] .. rank)
+				end
+			elseif(_VIEW == 'achievement') then
+				button.string1:SetText(diffColor[level] .. level)
+				if(classFileName and name) then
+					button.string2:SetText(classColor[classFileName] .. name)
+				end
+			end
+		end
+	end
 end
 
 local function tradeupdate()
-    local myZone = GetRealZoneText()
-    for i, button in ipairs(GuildRosterContainer.buttons) do
-        if(button:IsShown() and button.online and button.guildIndex) then
+	local myZone = GetRealZoneText()
+	for i, button in ipairs(GuildRosterContainer.buttons) do
+		if(button:IsShown() and button.online and button.guildIndex) then
 			local skillID, isCollapsed, iconTexture, headerName, numOnline, numPlayers, playerName, class, online, zone, skill, classFileName = GetGuildTradeSkillInfo(button.guildIndex)
-            if(not headerName) then
-                button.string1:SetText(classColor[classFileName] .. playerName)
-                if(zone == myZone) then
-                    button.string2:SetText('|cff00ff00' .. zone)
-                end
-            end
-        end
-    end
+			if(not headerName) then
+				button.string1:SetText(classColor[classFileName] .. playerName)
+				if(zone == myZone) then
+					button.string2:SetText('|cff00ff00' .. zone)
+				end
+			end
+		end
+	end
 end
 
 local loaded = false
 hooksecurefunc('GuildFrame_LoadUI', function()
-    if(loaded) then return end
-    loaded = true
+	if(loaded) then return end
+	loaded = true
 
-    hooksecurefunc('GuildRoster_SetView', viewChanged)
-    hooksecurefunc('GuildRoster_Update', update)
-    hooksecurefunc(GuildRosterContainer, 'update', update)
-    hooksecurefunc('GuildRoster_UpdateTradeSkills', tradeupdate)
+	hooksecurefunc('GuildRoster_SetView', viewChanged)
+	hooksecurefunc('GuildRoster_Update', update)
+	hooksecurefunc(GuildRosterContainer, 'update', update)
+	hooksecurefunc('GuildRoster_UpdateTradeSkills', tradeupdate)
 end)
 
 -- FriendsList
@@ -246,48 +262,46 @@ local WHITE = {r = 1, g = 1, b = 1}
 local FRIENDS_LEVEL_TEMPLATE = FRIENDS_LEVEL_TEMPLATE:gsub('%%d', '%%s')
 FRIENDS_LEVEL_TEMPLATE = FRIENDS_LEVEL_TEMPLATE:gsub('%$d', '%$s') -- '%2$s %1$d-го уровня'
 local function friendsFrame()
-    local scrollFrame = FriendsFrameFriendsScrollFrame
-    local offset = HybridScrollFrame_GetOffset(scrollFrame)
-    local buttons = scrollFrame.buttons
+	local scrollFrame = FriendsFrameFriendsScrollFrame
+	local offset = HybridScrollFrame_GetOffset(scrollFrame)
+	local buttons = scrollFrame.buttons
 
-    local playerArea = GetRealZoneText()
+	local playerArea = GetRealZoneText()
 
-    for i = 1, #buttons do
-        local nameText, infoText
-        button = buttons[i]
-        index = offset + i
-        if(button:IsShown()) then
-            if ( button.buttonType == FRIENDS_BUTTON_TYPE_WOW ) then
-                local name, level, class, area, connected, status, note = GetFriendInfo(button.id)
-                if(connected) then
-                    nameText = classColor[class] .. name.."|r, "..format(FRIENDS_LEVEL_TEMPLATE, diffColor[level] .. level .. '|r', class)
-                    if(areaName == playerArea) then
-                        infoText = format('|cff00ff00%s|r', area)
-                    end
-                end
-            elseif (button.buttonType == FRIENDS_BUTTON_TYPE_BNET) then
-                local presenceID, givenName, surname, toonName, toonID, client, isOnline, lastOnline, isAFK, isDND, messageText, noteText = BNGetFriendInfo(button.id)
-                if(isOnline and client==BNET_CLIENT_WOW) then
-                    local hasFocus, toonName, client, realmName, faction, race, class, guild, zoneName, level, gameText, broadcastText, broadcastTime = BNGetToonInfo(toonID)
-                    if(givenName and surname and toonName and class) then
-                        -- color them all
-                        --if CanCooperateWithToon(toonID) then
-                        nameText = format(BATTLENET_NAME_FORMAT, givenName, surname) ..' '.. FRIENDS_WOW_NAME_COLOR_CODE .. '(' .. classColor[class] .. classColor[class] .. toonName .. FRIENDS_WOW_NAME_COLOR_CODE .. ')'
-                        if(zoneName == playerArea) then
-                            infoText = format('|cff00ff00%s|r', zoneName)
-                        end
-                    end
-                end
-            end
-        end
+	for i = 1, #buttons do
+		local nameText, infoText
+		button = buttons[i]
+		index = offset + i
+		if(button:IsShown()) then
+			if ( button.buttonType == FRIENDS_BUTTON_TYPE_WOW ) then
+				local name, level, class, area, connected, status, note = GetFriendInfo(button.id)
+				if(connected) then
+					nameText = classColor[class] .. name.."|r, "..format(FRIENDS_LEVEL_TEMPLATE, diffColor[level] .. level .. '|r', class)
+					if(areaName == playerArea) then
+						infoText = format('|cff00ff00%s|r', area)
+					end
+				end
+			elseif (button.buttonType == FRIENDS_BUTTON_TYPE_BNET) then
+				local presenceID, givenName, surname, toonName, toonID, client, isOnline, lastOnline, isAFK, isDND, messageText, noteText = BNGetFriendInfo(button.id)
+				if(isOnline and client==BNET_CLIENT_WOW) then
+					local hasFocus, toonName, client, realmName, faction, race, class, guild, zoneName, level, gameText, broadcastText, broadcastTime = BNGetToonInfo(toonID)
+					if(givenName and surname and toonName and class) then
+						nameText = format(BATTLENET_NAME_FORMAT, givenName, surname) ..' '.. FRIENDS_WOW_NAME_COLOR_CODE .. '(' .. classColor[class] .. classColor[class] .. toonName .. FRIENDS_WOW_NAME_COLOR_CODE .. ')'
+						if(zoneName == playerArea) then
+							infoText = format('|cff00ff00%s|r', zoneName)
+						end
+					end
+				end
+			end
+		end
 
-        if(nameText) then
-            button.name:SetText(nameText)
-        end
-        if(infoText) then
-            button.info:SetText(infoText)
-        end
-    end
+		if(nameText) then
+			button.name:SetText(nameText)
+		end
+		if(infoText) then
+			button.info:SetText(infoText)
+		end
+	end
 end
 hooksecurefunc(FriendsFrameFriendsScrollFrame, 'update', friendsFrame)
 hooksecurefunc('FriendsFrame_UpdateFriends', friendsFrame)

@@ -210,6 +210,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_UF_SOLO_MODE = "Отображать рамку игрока всегда"
 	L_GUI_UF_PLAYER_PARTY = "Отображать рамку игрока в группе"
 	L_GUI_UF_SHOW_TANK = "Отображать рамки танков рейда"
+	L_GUI_UF_SHOW_TANK_TT = "Отображать рамки целей цели танков"
 	L_GUI_UF_RAID_GROUP = "Количество групп в рейде(только для *Heal* раскладки)"
 	L_GUI_UF_RAID_VERTICAL_GROUP = "Группы рейда вертикально(только для *Heal* раскладки)"
 	L_GUI_UF_ICONS_PVP = "Отображать PvP статус на рамках игрока и цели по наведению курсора"

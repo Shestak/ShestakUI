@@ -210,6 +210,7 @@ if GetLocale() == "frFR" then
 	L_GUI_UF_SOLO_MODE = "Toujours afficher la barre du joueur"
 	L_GUI_UF_PLAYER_PARTY = "Afficher la barre du joueur en groupe"
 	L_GUI_UF_SHOW_TANK = "Afficher les tanks de raid"
+	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
 	L_GUI_UF_RAID_GROUP = "Nombre de groupe dans le raid (Seulement pour ShestakUI_Heal)"
 	L_GUI_UF_RAID_VERTICAL_GROUP = "Groupe de raid verticaux(Seulement pour ShestakUI_Heal)"
 	L_GUI_UF_ICONS_PVP = "Texte JcJ en Mouseover pour la barre du joueur et celle de la cible"
