@@ -593,6 +593,8 @@ Filger_Spells = {
 			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Elemental mastery
+			{ spellID = 64701, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -609,6 +611,10 @@ Filger_Spells = {
 			{ spellID = 8056, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Flame Shock
 			{ spellID = 8050, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Hex
+			{ spellID = 51514, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Earth grab
+			{ spellID = 64695, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -623,6 +629,8 @@ Filger_Spells = {
 			{ spellID = 51562, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Essence of Life
 			{ spellID = 60062, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Lava flows
+			{ spellID = 65264, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -1603,32 +1611,110 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 253 },
 			
+			-- Hunter
 			-- Aspect of the Pack
 			{ spellID = 13159, size = 51, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Innervate
-			{ spellID = 29166, size = 51, unitId = "target", caster = "all", filter = "BUFF"},
-			-- Spell Reflection
-			{ spellID = 23920, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Aura Mastery
-			{ spellID = 31821, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Ice Block
-			{ spellID = 45438, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Cloak of Shadows
-			{ spellID = 31224, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Divine Shield
-			{ spellID = 642, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Deterrence
 			{ spellID = 19263, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Anti-Magic Shell
-			{ spellID = 48707, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Lichborne
-			{ spellID = 49039, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			
+			--Druid
+			-- Innervate
+			{ spellID = 29166, size = 51, unitId = "target", caster = "all", filter = "BUFF"},
+			-- Barskin
+			{ spellID = 22812, size = 51, unitId = "target", caster = "all", filter = "BUFF"},
+			
+			-- Warrior
+			-- Spell Reflection
+			{ spellID = 23920, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Shield wall
+			{ spellID = 871, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Berserker
+			{ spellID = 18499, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Last stand
+			{ spellID = 12976, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			
+			-- Paladin
+			-- Aura Mastery
+			{ spellID = 31821, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Hand of Freedom
 			{ spellID = 1044, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Hand of Sacrifice
 			{ spellID = 6940, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			
+			-- Hand of protection
+			{ spellID = 1022, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Divine Shield
+			{ spellID = 642, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Divine protection
+			{ spellID = 498, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Divine sacrifice
+			{ spellID = 64205, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Ardent defender
+			{ spellID = 31850, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			
+			-- Mage
+			-- Ice Block
+			{ spellID = 45438, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Invisibility
+			{ spellID = 66, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Evocation
+			{ spellID = 12051, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Improved blink
+			{ spellID = 46989, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+
+			-- Rogue
+			-- Cloak of Shadows
+			{ spellID = 31224, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Evasion
+			{ spellID = 5277, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Cheating death
+			{ spellID = 45182, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			
+			-- Death knight
+			-- Anti-Magic Shell
+			{ spellID = 48707, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Lichborne
+			{ spellID = 49039, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Bone shield
+			{ spellID = 49222, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+
+			-- Shaman
 			-- Grounding Totem Effect
-			{ spellID = 8178, size = 51, unitId = "target", caster = "all", filter = "BUFF" },	
+			{ spellID = 8178, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Stoneclaw totem
+			{ spellID = 55277, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Shamanistic rage
+			{ spellID = 30823, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Earth shield
+			{ spellID = 974, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+
+			-- Priest
+			-- Dispersion
+			{ spellID = 47585, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Pain supression
+			{ spellID = 33206, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			
+			-- Warlock
+			-- Banish
+			{ spellID = 710, size = 51, unitId = "target", caster = "all", filter = "DEBUFF" },
+			-- Soul harvest
+			{ spellID = 79268, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Soulstone
+			{ spellID = 20707, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			
+			-- All
+			-- Warsong flag
+			{ spellID = 23333, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			{ spellID = 23335, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Netherstorm flag
+			{ spellID = 34976, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Seaforium
+			{ spellID = 52418, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Seaforium 2
+			{ spellID = 66271, size = 51, unitId = "target", caster = "all", filter = "DEBUFF" },
+			
+			-- Drink
+			{ spellID = 43183, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 		},
 	},
 }
