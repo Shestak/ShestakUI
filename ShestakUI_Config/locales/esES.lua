@@ -30,7 +30,6 @@ if GetLocale() == "esES" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Texto de Combate"
-	L_GUI_COMBATTEXT_FONT_SIZE = "Tamaño de la fuente"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Usar la salida de daño/curación de Blizzard (sobre la cabeza del monstruo/jugador)"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Cambiar la fuente de daño/sanación por defecto de encima de los monstruos/jugadores (tendrás que reiniciar WoW para ver los cambios)"
 	L_GUI_COMBATTEXT_DAMAGE = "Mostrar daño saliente en su propio marco"
@@ -67,7 +66,6 @@ if GetLocale() == "esES" then
 	-- Raid/Enemy cooldown options
 	L_GUI_COOLDOWN = "Tiempos de reutilización Banda/Enemigo"
 	L_GUI_COOLDOWN_RAID_ENABLE = "Mostrar tiempos de reutilización de la Banda"
-	L_GUI_COOLDOWN_RAID_FONT = "Tamaño de la fuente de los tiempos de reutilización de la Banda"
 	L_GUI_COOLDOWN_RAID_HEIGHT = "Altura de las barras de tiempo de reutilización de la Banda"
 	L_GUI_COOLDOWN_RAID_WIDTH = "Anchura de las barras de tiempo de reutilización de la Banda (Si el icono estб activado, anchura+28)"
 	L_GUI_COOLDOWN_RAID_SORT = "Barras de tiempos de reutilización de la Banda ordenadas hacia arriba"
@@ -80,11 +78,12 @@ if GetLocale() == "esES" then
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Mostrar tiempos de reutilización del enemigo siempre"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "Mostrar tiempos de reutilización del enemigo en zona de CB"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Mostrar tiempos de reutilización del enemigo en zona de Arena"
+	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse" -- Needs review
+	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size" -- Needs review
 	
 	-- Threat options
 	L_GUI_THREAT = "Barras de Amenaza"
 	L_GUI_THREAT_ENABLE = "Activar Barras de Amenaza"
-	L_GUI_THREAT_FONT_SIZE = "Tamaño de la fuente de las barras de amenaza"
 	L_GUI_THREAT_HEIGHT = "Altura de las barras de amenaza"
 	L_GUI_THREAT_WIDTH = "Anchura de las barras de amenaza"
 	L_GUI_THREAT_ROWS = "Número de barras de amenaza"
@@ -105,15 +104,12 @@ if GetLocale() == "esES" then
 	L_GUI_TOOLTIP_RANK = "Rango del jugador en la hermandad en la descripción"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Experiencia JcJ del jugador en Arenas en la descripción"
 	L_GUI_TOOLTIP_SPELL_ID = "Spell ID" -- Needs review
+	L_GUI_TOOLTIP_RAID_ICON = "Raid icon" -- Needs review
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Activar chat"
 	L_GUI_CHAT_BACKGROUND = "Activar fondo del chat"
 	L_GUI_CHAT_BACKGROUND_ALPHA = "Opacidad del fondo del chat"
-	L_GUI_CHAT_FONT_SIZE = "Tamaño de la fuente del chat"
-	L_GUI_CHAT_FONT_STYLE = "Estilo de la fuente"
-	L_GUI_CHAT_TAB_FONT_SIZE = "Tamaño de la fuente de las pestañas"
-	L_GUI_CHAT_TAB_FONT_STYLE = "Estilo de la fuente de las pestañas"
 	L_GUI_CHAT_SPAM = "Eliminar ciertos mensajes de spam(*Jugador1* ha ganado un duelo a *Jugador2*)"
 	L_GUI_CHAT_WIDTH = "Anchura del chat"
 	L_GUI_CHAT_HEIGHT = "Altura del chat"
@@ -144,7 +140,6 @@ if GetLocale() == "esES" then
 	-- Loot options
 	L_GUI_LOOT_ENABLE = "Activar el marco de botín"
 	L_GUI_LOOT_ROLL_ENABLE = "Activar el marco de botín de grupo"
-	L_GUI_LOOT_FONT_SIZE = "Tamaño de la fuente del marco de botín"
 	L_GUI_LOOT_ICON_SIZE = "Tamaño de los iconos"
 	L_GUI_LOOT_WIDTH = "Anchura del marco de botín"
 	L_GUI_LOOT_AUTOGREED = "Activar auto-codicia para objetos verdes cuando eres nivel máx"
@@ -155,7 +150,6 @@ if GetLocale() == "esES" then
 	L_GUI_NAMEPLATE_COMBAT = "Mostrar automáticamente placa de nombre en combate"
 	L_GUI_NAMEPLATE_HEALTH = "Valor de la vida en números"
 	L_GUI_NAMEPLATE_CASTBAR = "Mostrar barra de lanzamiento en la placa de nombre"
-	L_GUI_NAMEPLATE_FONT_SIZE = "Tamaño de la fuente de la placa de nombre"
 	L_GUI_NAMEPLATE_HEIGHT = "Altura de la placa de nombre"
 	L_GUI_NAMEPLATE_WIDTH = "Anchura de la placa de nombre"
 	L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostrar nombre del hechizo en la barra de lanzamiento"
@@ -181,7 +175,6 @@ if GetLocale() == "esES" then
 	L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Activar barra de estancia horizontal"
 	
 	-- Auras/Buffs/Debuffs
-	L_GUI_AURA_FONT_SIZE = "Tamaño de la fuente de las auras"
 	L_GUI_AURA_PLAYER_BUFF_SIZE = "Tamaño de las ventajas del jugador"
 	L_GUI_AURA_SHOW_SPIRAL = "Espiral en los iconos de las auras"
 	L_GUI_AURA_SHOW_TIMER = "Mostrar tiempo de reutilización en los iconos de las auras"
@@ -196,7 +189,6 @@ if GetLocale() == "esES" then
 	
 	-- Unit frame options
 	L_GUI_UF_ENABLE = "Activar marcos de unidades"
-	L_GUI_UF_FONT_SIZE = "Tamaño de la fuente"
 	L_GUI_UF_AGGRO_BORDER = "Borde de aggro"
 	L_GUI_UF_OWN_COLOR = "Color para las barras de vida"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Barra de vida del enemigo objetivo en rojo"
@@ -209,6 +201,7 @@ if GetLocale() == "esES" then
 	L_GUI_UF_SHOW_BOSS = "Mostrar marco del jefe"
 	L_GUI_UF_SHOW_ARENA = "Mostrar marcos de arena"
 	L_GUI_UF_ARENA_RIGHT = "Marcos de arena en la derecha"
+	L_GUI_UF_SHOW_PARTY = "Show raid frames" -- Needs review
 	L_GUI_UF_SHOW_RAID = "Mostrar marcos de banda"
 	L_GUI_UF_VERTICAL_HEALTH = "Orientación vertical de la vida"
 	L_GUI_UF_ALPHA_HEALTH = "Opacidad de las barras de vida cuando están al 100%"
@@ -257,7 +250,6 @@ if GetLocale() == "esES" then
 	
 	-- Stats options
 	L_GUI_STATS = "Estadísticas"
-	L_GUI_STATS_FONT_SIZE = "Tamaño de la fuente de las estadísticas"
 	L_GUI_STATS_BG = "Campo de Batalla"
 	L_GUI_STATS_CLOCK = "Reloj"
 	L_GUI_STATS_LATENCY = "Latencia"

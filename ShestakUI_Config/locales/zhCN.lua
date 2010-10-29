@@ -30,7 +30,6 @@ if GetLocale() == "zhCN" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "战斗文字"
-	L_GUI_COMBATTEXT_FONT_SIZE = "字体大小"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "使用暴雪默认伤害/治疗模式（模型顶部/玩家头像）"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "改变模型顶部/玩家头像的伤害/治疗字体"
 	L_GUI_COMBATTEXT_DAMAGE = "独立显示伤害输出"
@@ -67,7 +66,6 @@ if GetLocale() == "zhCN" then
 	-- Raid/Enemy cooldown options
 	L_GUI_COOLDOWN = "团队/敌对技能冷却"
 	L_GUI_COOLDOWN_RAID_ENABLE = "开启团队技能冷却"
-	L_GUI_COOLDOWN_RAID_FONT = "团队技能冷却文字大小"
 	L_GUI_COOLDOWN_RAID_HEIGHT = "团队技能冷却栏高度"
 	L_GUI_COOLDOWN_RAID_WIDTH = "团队技能冷却栏宽度"
 	L_GUI_COOLDOWN_RAID_SORT = "团队技能冷却栏向上延伸"
@@ -80,11 +78,12 @@ if GetLocale() == "zhCN" then
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "在任何时候显示敌对技能冷却"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "在战场中显示敌对技能冷却"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "在竞技场中显示敌对技能冷却"
+	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse" -- Needs review
+	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size" -- Needs review
 	
 	-- Threat options
 	L_GUI_THREAT = "仇恨栏"
 	L_GUI_THREAT_ENABLE = "开启仇恨栏"
-	L_GUI_THREAT_FONT_SIZE = "仇恨栏字体大小"
 	L_GUI_THREAT_HEIGHT = "仇恨栏高度"
 	L_GUI_THREAT_WIDTH = "仇恨栏宽度"
 	L_GUI_THREAT_ROWS = "仇恨栏数目"
@@ -105,15 +104,12 @@ if GetLocale() == "zhCN" then
 	L_GUI_TOOLTIP_RANK = "在提示资讯中显示公会会阶"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "在提示资讯中显示竞技场等级"
 	L_GUI_TOOLTIP_SPELL_ID = "法术ID"
+	L_GUI_TOOLTIP_RAID_ICON = "Raid icon" -- Needs review
 
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "开启聊天框增强"
 	L_GUI_CHAT_BACKGROUND = "开启聊天框背景"
 	L_GUI_CHAT_BACKGROUND_ALPHA = "聊天背景透明度"
-	L_GUI_CHAT_FONT_SIZE = "聊天框字体大小"
-	L_GUI_CHAT_FONT_STYLE = "字体样式"
-	L_GUI_CHAT_TAB_FONT_SIZE = "标签文字大小"
-	L_GUI_CHAT_TAB_FONT_STYLE = "标签文字样式"
 	L_GUI_CHAT_SPAM = "移除垃圾消息(*玩家1* 战胜*玩家2*)"
 	L_GUI_CHAT_WIDTH = "框体宽度"
 	L_GUI_CHAT_HEIGHT = "框体高度"
@@ -144,7 +140,6 @@ if GetLocale() == "zhCN" then
 	-- Loot options
 	L_GUI_LOOT_ENABLE = "开启拾取增强"
 	L_GUI_LOOT_ROLL_ENABLE = "开启团队拾取框体"
-	L_GUI_LOOT_FONT_SIZE = "拾取框体字体大小"
 	L_GUI_LOOT_ICON_SIZE = "拾取框体图示大小"
 	L_GUI_LOOT_WIDTH = "拾取框体宽度"
 	L_GUI_LOOT_AUTOGREED = "满级后自动贪婪绿色物品"
@@ -156,7 +151,6 @@ if GetLocale() == "zhCN" then
 	L_GUI_NAMEPLATE_COMBAT = "在战斗中自动显示单位名条"
 	L_GUI_NAMEPLATE_HEALTH = "显示百分比生命值"
 	L_GUI_NAMEPLATE_CASTBAR = "显示施法条"
-	L_GUI_NAMEPLATE_FONT_SIZE = "单位名条字体大小"
 	L_GUI_NAMEPLATE_HEIGHT = "单位名条高度"
 	L_GUI_NAMEPLATE_WIDTH = "单位名条宽度"
 	L_GUI_NAMEPLATE_CASTBAR_NAME = "显示施法名称"
@@ -182,7 +176,6 @@ if GetLocale() == "zhCN" then
 	L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "横向显示变身/姿态动作条"
 
 	-- Auras/Buffs/Debuffs
-	L_GUI_AURA_FONT_SIZE = "法术效果图标大小"
 	L_GUI_AURA_PLAYER_BUFF_SIZE = "玩家Buffs图标大小"
 	L_GUI_AURA_SHOW_SPIRAL = "在图示上显示漩涡冷却样式"
 	L_GUI_AURA_SHOW_TIMER = "在图示上显示层数堆叠"
@@ -197,7 +190,6 @@ if GetLocale() == "zhCN" then
 	
 	-- Unit frame options
 	L_GUI_UF_ENABLE = "开启单位框架"
-	L_GUI_UF_FONT_SIZE = "字体大小"
 	L_GUI_UF_AGGRO_BORDER = "仇恨边框"
 	L_GUI_UF_OWN_COLOR = "在预测治疗中显示你的治疗量"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "敌对目标生命条以红色着色"
@@ -210,6 +202,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_UF_SHOW_BOSS = "显示boss框体"
 	L_GUI_UF_SHOW_ARENA = "显示竞技场框体"
 	L_GUI_UF_ARENA_RIGHT = "在右侧显示竞技场框体"
+	L_GUI_UF_SHOW_PARTY = "Show raid frames" -- Needs review
 	L_GUI_UF_SHOW_RAID = "显示团队框体"
 	L_GUI_UF_VERTICAL_HEALTH = "垂直显示团队框体生命值"
 	L_GUI_UF_ALPHA_HEALTH = "100%生命值时透明显示生命栏"
@@ -258,7 +251,6 @@ if GetLocale() == "zhCN" then
 	
 	-- Stats options
 	L_GUI_STATS = "统计面板"
-	L_GUI_STATS_FONT_SIZE = "面板字体大小"
 	L_GUI_STATS_BG = "战场分数"
 	L_GUI_STATS_CLOCK = "时钟"
 	L_GUI_STATS_LATENCY = "延迟"

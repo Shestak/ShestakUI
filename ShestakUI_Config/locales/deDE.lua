@@ -30,7 +30,6 @@ if GetLocale() == "deDE" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Combat Text" -- Needs review
-	L_GUI_COMBATTEXT_FONT_SIZE = "Font size" -- Needs review
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Use blizzard damage/healing output(above mob/player head)" -- Needs review
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)" -- Needs review
 	L_GUI_COMBATTEXT_DAMAGE = "Show outgoing damage in it's own frame" -- Needs review
@@ -67,7 +66,6 @@ if GetLocale() == "deDE" then
 	-- Raid/Enemy cooldown options
 	L_GUI_COOLDOWN = "Abklingzeiten"
 	L_GUI_COOLDOWN_RAID_ENABLE = "Abklingzeiten des Raids aktivieren"
-	L_GUI_COOLDOWN_RAID_FONT = "Schriftgröße für Raidabklingzeit"
 	L_GUI_COOLDOWN_RAID_HEIGHT = "Leistenhöhe für Raidabklingzeiten"
 	L_GUI_COOLDOWN_RAID_WIDTH = "Leistenbreite der Raidabklingzeiten(Wenn das Symbol aktiviert ist, Breite+28)"
 	L_GUI_COOLDOWN_RAID_SORT = "Leisten für Raidabklingzeiten wachsen nach oben"
@@ -80,11 +78,12 @@ if GetLocale() == "deDE" then
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Zeige gegnerische Abklingzeiten überall"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "Zeige gegnerische Abklingzeiten in Schlachtfeldern"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Zeige gegnerische Abklingzeiten in der Arena"
+	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse" -- Needs review
+	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size" -- Needs review
 	
 	-- Threat options
 	L_GUI_THREAT = "Threat bars" -- Needs review
 	L_GUI_THREAT_ENABLE = "Enable threat bars" -- Needs review
-	L_GUI_THREAT_FONT_SIZE = "Threat bars font size" -- Needs review
 	L_GUI_THREAT_HEIGHT = "Threat bars height" -- Needs review
 	L_GUI_THREAT_WIDTH = "Threat bars width" -- Needs review
 	L_GUI_THREAT_ROWS = "Number of threat bars" -- Needs review
@@ -105,15 +104,12 @@ if GetLocale() == "deDE" then
 	L_GUI_TOOLTIP_RANK = "Gildenrank im Tooltip anzeigen"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "PVP-Erfahrung des Spielers im Tooltip anzeigen (Arena)"
 	L_GUI_TOOLTIP_SPELL_ID = "Spell ID" -- Needs review
+	L_GUI_TOOLTIP_RAID_ICON = "Raid icon" -- Needs review
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Enable chat" -- Needs review
 	L_GUI_CHAT_BACKGROUND = "Enable chat background" -- Needs review
 	L_GUI_CHAT_BACKGROUND_ALPHA = "Alpha of chat background" -- Needs review
-	L_GUI_CHAT_FONT_SIZE = "Schriftgröße des Chats"
-	L_GUI_CHAT_FONT_STYLE = "Schriftart"
-	L_GUI_CHAT_TAB_FONT_SIZE = "Schriftgröße der Chattabs"
-	L_GUI_CHAT_TAB_FONT_STYLE = "Schriftart der Tabs"
 	L_GUI_CHAT_SPAM = "Einigen Chatspam entfernen (*Spieler1* hat *Spieler2* im Duell besiegt)"
 	L_GUI_CHAT_WIDTH = "Breite des Chatfensters"
 	L_GUI_CHAT_HEIGHT = "Höhe desChatfensters"
@@ -144,7 +140,6 @@ if GetLocale() == "deDE" then
 	-- Loot options
 	L_GUI_LOOT_ENABLE = "Enable loot frame"  -- Needs review
 	L_GUI_LOOT_ROLL_ENABLE = "Enable group loot frame"  -- Needs review
-	L_GUI_LOOT_FONT_SIZE = "Schriftgröße im Beutefenster"
 	L_GUI_LOOT_ICON_SIZE = "Symbolgröße"
 	L_GUI_LOOT_WIDTH = "Loot frame width"  -- Needs review
 	L_GUI_LOOT_AUTOGREED = "Aktiviere automatisches Würfeln (Gier) für Gegenstände, falls das höchste Level erreicht wurde."
@@ -155,7 +150,6 @@ if GetLocale() == "deDE" then
 	L_GUI_NAMEPLATE_COMBAT = "Namensplaketten automatisch im Kampf anzeigen"
 	L_GUI_NAMEPLATE_HEALTH = "Numerischer Wert der Lebenspunkte"
 	L_GUI_NAMEPLATE_CASTBAR = "Zeige Zauberleiste an der Namensplakette"
-	L_GUI_NAMEPLATE_FONT_SIZE = "Schriftgröße in der Namensplakette"
 	L_GUI_NAMEPLATE_HEIGHT = "Höhe der Namensplakette"
 	L_GUI_NAMEPLATE_WIDTH = "Breite der Namensplakette"
 	L_GUI_NAMEPLATE_CASTBAR_NAME = "Zeige den Namen in der Zauberleiste"
@@ -181,7 +175,6 @@ if GetLocale() == "deDE" then
 	L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Enable horizontal stance bar"  -- Needs review
 	
 	-- Auras/Buffs/Debuffs
-	L_GUI_AURA_FONT_SIZE = "Auras font size"  -- Needs review
 	L_GUI_AURA_PLAYER_BUFF_SIZE = "Player buffs size"  -- Needs review
 	L_GUI_AURA_SHOW_SPIRAL = "Spirale auf Buffsymbolen"
 	L_GUI_AURA_SHOW_TIMER = "Zeige Abklingzeit für Buffs"
@@ -196,7 +189,6 @@ if GetLocale() == "deDE" then
 	
 	-- Unit frame options
 	L_GUI_UF_ENABLE = "Enable unit frames"  -- Needs review
-	L_GUI_UF_FONT_SIZE = "Schriftgröße"
 	L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"
 	L_GUI_UF_OWN_COLOR = "Farbe für die Lebensleiste festlegen"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Enemy target healthbar is red"  -- Needs review
@@ -209,6 +201,7 @@ if GetLocale() == "deDE" then
 	L_GUI_UF_SHOW_BOSS = "Zeige eigenes Fenster für Bosse an"
 	L_GUI_UF_SHOW_ARENA = "Zeige Einheitenfenster in der Arena"
 	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right"  -- Needs review
+	L_GUI_UF_SHOW_PARTY = "Show raid frames" -- Needs review
 	L_GUI_UF_SHOW_RAID = "Show raid frames"
 	L_GUI_UF_VERTICAL_HEALTH = "Vertikale Orientierung für Lebensbalken"
 	L_GUI_UF_ALPHA_HEALTH = "Alpha of healthbars when 100%hp"  -- Needs review
@@ -257,7 +250,6 @@ if GetLocale() == "deDE" then
 	
 	-- Stats options
 	L_GUI_STATS = "Stats"  -- Needs review
-	L_GUI_STATS_FONT_SIZE = "Stats font size"  -- Needs review
 	L_GUI_STATS_BG = "Battleground"  -- Needs review
 	L_GUI_STATS_CLOCK = "Clock"  -- Needs review
 	L_GUI_STATS_LATENCY = "Latency"  -- Needs review

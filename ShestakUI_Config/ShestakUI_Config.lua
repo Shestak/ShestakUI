@@ -104,6 +104,8 @@ local function Local(o)
 	if o == "UIConfigcooldownenemy_show_always" then o = L_GUI_COOLDOWN_ENEMY_EVERYWHERE end
 	if o == "UIConfigcooldownenemy_show_inpvp" then o = L_GUI_COOLDOWN_ENEMY_IN_BG end
 	if o == "UIConfigcooldownenemy_show_inarena" then o = L_GUI_COOLDOWN_ENEMY_IN_ARENA end
+	if o == "UIConfigcooldownpulse_enable" then o = L_GUI_COOLDOWN_PULSE_ENABLE end
+	if o == "UIConfigcooldownpulse_size" then o = L_GUI_COOLDOWN_PULSE_SIZE end
 	
 	-- Threat options
 	if o == "UIConfigthreat" then o = L_GUI_THREAT end
@@ -129,6 +131,7 @@ local function Local(o)
 	if o == "UIConfigtooltiprank" then o = L_GUI_TOOLTIP_RANK end
 	if o == "UIConfigtooltiparena_experience" then o = L_GUI_TOOLTIP_ARENA_EXPERIENCE end
 	if o == "UIConfigtooltipspell_id" then o = L_GUI_TOOLTIP_SPELL_ID end
+	if o == "UIConfigtooltipraid_icon" then o = L_GUI_TOOLTIP_RAID_ICON end
 	
 	-- Chat options
 	if o == "UIConfigchat" then o = SOCIALS end
@@ -241,6 +244,7 @@ local function Local(o)
 	if o == "UIConfigunitframeshow_boss" then o = L_GUI_UF_SHOW_BOSS end
 	if o == "UIConfigunitframeshow_arena" then o = L_GUI_UF_SHOW_ARENA end
 	if o == "UIConfigunitframearena_on_right" then o = L_GUI_UF_ARENA_RIGHT end
+	if o == "UIConfigunitframeshow_party" then o = L_GUI_UF_SHOW_PARTY end
 	if o == "UIConfigunitframeshow_raid" then o = L_GUI_UF_SHOW_RAID end
 	if o == "UIConfigunitframevertical_health" then o = L_GUI_UF_VERTICAL_HEALTH end
 	if o == "UIConfigunitframealpha_health" then o = L_GUI_UF_ALPHA_HEALTH end

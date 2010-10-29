@@ -30,7 +30,6 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Combat Text"
-	L_GUI_COMBATTEXT_FONT_SIZE = "Font size"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Use blizzard damage/healing output(above mob/player head)"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)"
 	L_GUI_COMBATTEXT_DAMAGE = "Show outgoing damage in it's own frame"
@@ -67,7 +66,6 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	-- Raid/Enemy cooldown options
 	L_GUI_COOLDOWN = "Raid/Enemy cooldowns"
 	L_GUI_COOLDOWN_RAID_ENABLE = "Enable raid cooldowns"
-	L_GUI_COOLDOWN_RAID_FONT = "Raid cooldowns font size"
 	L_GUI_COOLDOWN_RAID_HEIGHT = "Raid cooldowns bars height"
 	L_GUI_COOLDOWN_RAID_WIDTH = "Raid cooldowns bars width(If the icon is enabled, width+28)"
 	L_GUI_COOLDOWN_RAID_SORT = "Raid cooldowns sort upwards bars"
@@ -80,11 +78,12 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Show everywhere enemy cooldowns"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "Show enemy cooldowns in bg zone"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Show enemy cooldowns in arena zone"
+	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse"
+	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size"
 	
 	-- Threat options
 	L_GUI_THREAT = "Threat bars"
 	L_GUI_THREAT_ENABLE = "Enable threat bars"
-	L_GUI_THREAT_FONT_SIZE = "Threat bars font size"
 	L_GUI_THREAT_HEIGHT = "Threat bars height"
 	L_GUI_THREAT_WIDTH = "Threat bars width"
 	L_GUI_THREAT_ROWS = "Number of threat bars"
@@ -105,15 +104,12 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	L_GUI_TOOLTIP_RANK = "Player guild-rank in tooltip"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Player PVP experience in arena"
 	L_GUI_TOOLTIP_SPELL_ID = "Spell ID"
+	L_GUI_TOOLTIP_RAID_ICON = "Raid icon"
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Enable chat"
 	L_GUI_CHAT_BACKGROUND = "Enable chat background"
 	L_GUI_CHAT_BACKGROUND_ALPHA = "Alpha of chat background"
-	L_GUI_CHAT_FONT_SIZE = "Chat font size"
-	L_GUI_CHAT_FONT_STYLE = "Font style"
-	L_GUI_CHAT_TAB_FONT_SIZE = "Chat tab font size"
-	L_GUI_CHAT_TAB_FONT_STYLE = "Tab font style"
 	L_GUI_CHAT_SPAM = "Removing some chat spam(*Player1* won duel *Player2*)"
 	L_GUI_CHAT_WIDTH = "Chat width"
 	L_GUI_CHAT_HEIGHT = "Chat height"
@@ -144,7 +140,6 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	-- Loot options
 	L_GUI_LOOT_ENABLE = "Enable loot frame"
 	L_GUI_LOOT_ROLL_ENABLE = "Enable group loot frame"
-	L_GUI_LOOT_FONT_SIZE = "Loot frame font size"
 	L_GUI_LOOT_ICON_SIZE = "Icon size"
 	L_GUI_LOOT_WIDTH = "Loot frame width"
 	L_GUI_LOOT_AUTOGREED = "Enable auto-greed for green item at max level"
@@ -155,7 +150,6 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	L_GUI_NAMEPLATE_COMBAT = "Automatically show nameplates in combat"
 	L_GUI_NAMEPLATE_HEALTH = "Numeral health value"
 	L_GUI_NAMEPLATE_CASTBAR = "Show nameplate castbar"
-	L_GUI_NAMEPLATE_FONT_SIZE = "Nameplates font size"
 	L_GUI_NAMEPLATE_HEIGHT = "Nameplates height"
 	L_GUI_NAMEPLATE_WIDTH = "Nameplates width"
 	L_GUI_NAMEPLATE_CASTBAR_NAME = "Show castbar name"
@@ -181,7 +175,6 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Enable horizontal stance bar"
 	
 	-- Auras/Buffs/Debuffs
-	L_GUI_AURA_FONT_SIZE = "Auras font size"
 	L_GUI_AURA_PLAYER_BUFF_SIZE = "Player buffs size"
 	L_GUI_AURA_SHOW_SPIRAL = "Spiral on aura icons"
 	L_GUI_AURA_SHOW_TIMER = "Show cooldown timer on aura icons"
@@ -196,7 +189,6 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	
 	-- Unit frame options
 	L_GUI_UF_ENABLE = "Enable unit frames"
-	L_GUI_UF_FONT_SIZE = "Font size"
 	L_GUI_UF_AGGRO_BORDER = "Aggro border"
 	L_GUI_UF_OWN_COLOR = "Set your color for health bars"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Enemy target healthbar is red"
@@ -209,6 +201,7 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	L_GUI_UF_SHOW_BOSS = "Show boss frames"
 	L_GUI_UF_SHOW_ARENA = "Show arena frames"
 	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right"
+	L_GUI_UF_SHOW_PARTY = "Show raid frames"
 	L_GUI_UF_SHOW_RAID = "Show raid frames"
 	L_GUI_UF_VERTICAL_HEALTH = "Vertical orientation of health"
 	L_GUI_UF_ALPHA_HEALTH = "Alpha of healthbars when 100%hp"
@@ -257,7 +250,6 @@ if GetLocale() == "enUS" or GetLocale() == "enGB" then
 	
 	-- Stats options
 	L_GUI_STATS = "Stats"
-	L_GUI_STATS_FONT_SIZE = "Stats font size"
 	L_GUI_STATS_BG = "Battleground"
 	L_GUI_STATS_CLOCK = "Clock"
 	L_GUI_STATS_LATENCY = "Latency"

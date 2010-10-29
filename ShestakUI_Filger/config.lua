@@ -1083,8 +1083,6 @@ Filger_Spells = {
 			{ spellID = 698, size = 30, filter = "CD" },
 			-- Shadow Ward
 			{ spellID = 6229, size = 30, filter = "CD" },
-			-- Inferno
-			{ spellID = 1122, size = 30, filter = "CD" },
 			-- Demonic Empowerment
 			{ spellID = 47193, size = 30, filter = "CD" },
 			-- Demon Charge
@@ -1123,6 +1121,8 @@ Filger_Spells = {
 			{ spellID = 79268, size = 30, filter = "CD" },
 			-- Felstorm
 			{ spellID = 89751, size = 30, filter = "CD" },
+			-- Soulburn
+			{ spellID = 74434, size = 30, filter = "CD" },
 		},
 	},
 	["ROGUE"] = {	

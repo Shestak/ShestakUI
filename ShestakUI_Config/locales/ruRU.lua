@@ -30,7 +30,6 @@ if GetLocale() == "ruRU" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Текст боя"
-	L_GUI_COMBATTEXT_FONT_SIZE = "Рамзер шрифта текста боя"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Разблокировать исходящий текст боя Blizzard(над головами)"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Стилизация стандартого текст боя над головами"
 	L_GUI_COMBATTEXT_DAMAGE = "Оторажать исходящий урон в его блоке"
@@ -67,24 +66,24 @@ if GetLocale() == "ruRU" then
 	-- Raid/Enemy cooldown options
 	L_GUI_COOLDOWN = "Перезарядки"
 	L_GUI_COOLDOWN_RAID_ENABLE = "Включить рейдовые перезарядки"
-	L_GUI_COOLDOWN_RAID_FONT = "Размер шрифта рейдовых перезарядок"
 	L_GUI_COOLDOWN_RAID_HEIGHT = "Высота индикаторов рейдовых перезарядок"
 	L_GUI_COOLDOWN_RAID_WIDTH = "Ширина индикаторов рейдовых перезарядок"
 	L_GUI_COOLDOWN_RAID_SORT = "Выровнять индикаторы рейдовых перезарядок по верху"
 	L_GUI_COOLDOWN_RAID_ICONS = "Отображать иконки рейдовых перезарядок"
-	L_GUI_COOLDOWN_RAID_IN_RAID = "Отображать рейдовые перезарядки в raid zone"
-	L_GUI_COOLDOWN_RAID_IN_PARTY = "Отображать рейдовые перезарядки в party zone"
+	L_GUI_COOLDOWN_RAID_IN_RAID = "Отображать рейдовые перезарядки в зонах рейда"
+	L_GUI_COOLDOWN_RAID_IN_PARTY = "Отображать рейдовые перезарядки в зонах группы"
 	L_GUI_COOLDOWN_RAID_IN_ARENA = "Отображать рейдовые перезарядки на арене"
 	L_GUI_COOLDOWN_ENEMY = "Включить вражеские перезарядки"
 	L_GUI_COOLDOWN_ENEMY_SIZE = "Размер иконок вражеских перезарядок"
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Отображать вражеские перезарядки везде"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "Отображать вражеские перезарядки на полях сражений"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Отображать вражеские перезарядки на арене"
+	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse" -- Needs review
+	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size" -- Needs review
 	
 	-- Threat options
 	L_GUI_THREAT = "Список угрозы"
 	L_GUI_THREAT_ENABLE = "Включить список угрозы"
-	L_GUI_THREAT_FONT_SIZE = "Размер шрифта"
 	L_GUI_THREAT_HEIGHT = "Высота полос списка"
 	L_GUI_THREAT_WIDTH = "Ширина полос списка"
 	L_GUI_THREAT_ROWS = "Количество полос"
@@ -105,15 +104,12 @@ if GetLocale() == "ruRU" then
 	L_GUI_TOOLTIP_RANK = "Ранг в гильдии цели в подсказке"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "PvP достижения цели в подсказке"
 	L_GUI_TOOLTIP_SPELL_ID = "Номер заклинания"
+	L_GUI_TOOLTIP_RAID_ICON = "Метка цели рейда"
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Включить чат"
 	L_GUI_CHAT_BACKGROUND = "Включить фон чата"
 	L_GUI_CHAT_BACKGROUND_ALPHA = "Прозрачность фона чата"
-	L_GUI_CHAT_FONT_SIZE = "Размер шрифта в чате"
-	L_GUI_CHAT_FONT_STYLE = "Обводка шрифта в чате"
-	L_GUI_CHAT_TAB_FONT_SIZE = "Размер шрифта закладок чата"
-	L_GUI_CHAT_TAB_FONT_STYLE = "Обводка шрифта закладок"
 	L_GUI_CHAT_SPAM = "Удаление спама в чате(*Игрок1* выиграл дуэль у *Игрока2*)"
 	L_GUI_CHAT_WIDTH = "Ширина чата"
 	L_GUI_CHAT_HEIGHT = "Высота чата"
@@ -144,7 +140,6 @@ if GetLocale() == "ruRU" then
 	-- Loot options
 	L_GUI_LOOT_ENABLE = "Включить окно добычи"
 	L_GUI_LOOT_ROLL_ENABLE = "Включить групповое окно добычи"
-	L_GUI_LOOT_FONT_SIZE = "Размер шрифта"
 	L_GUI_LOOT_ICON_SIZE = "Размер иконки"
 	L_GUI_LOOT_WIDTH = "Ширина окна добычи"
 	L_GUI_LOOT_AUTOGREED = "Автоматически нажимать *не откажусь* для зеленых предметов на 80 уровне"
@@ -155,14 +150,13 @@ if GetLocale() == "ruRU" then
 	L_GUI_NAMEPLATE_COMBAT = "Автоматически показывать индикаторы во время боя"
 	L_GUI_NAMEPLATE_HEALTH = "Цифровое значение здоровья"
 	L_GUI_NAMEPLATE_CASTBAR = "Индикатор заклинания"
-	L_GUI_NAMEPLATE_FONT_SIZE = "Размер шрифта"
 	L_GUI_NAMEPLATE_HEIGHT = "Высота индикатора"
 	L_GUI_NAMEPLATE_WIDTH = "Ширина индикатора"
 	L_GUI_NAMEPLATE_CASTBAR_NAME = "Имя заклинания"
 	L_GUI_NAMEPLATE_THREAT = "Для танка хорошая угроза = зеленый, плохая угроза = красный"
 	L_GUI_NAMEPLATE_CLASS_ICON = "Иконки классов"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Отображать сокращенные имена"
-	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap"
+	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap" -- Needs review
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Включить панели команд"
@@ -181,7 +175,6 @@ if GetLocale() == "ruRU" then
 	L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Переключиться на горизонтальную панель стоек"
 	
 	-- Auras/Buffs/Debuffs
-	L_GUI_AURA_FONT_SIZE = "Размер шрифта таймера аур"
 	L_GUI_AURA_PLAYER_BUFF_SIZE = "Размер положительных эффектов игрока"
 	L_GUI_AURA_SHOW_SPIRAL = "Спираль перезарядки на аурах"
 	L_GUI_AURA_SHOW_TIMER = "Отображать таймер перезарядки аур"
@@ -196,7 +189,6 @@ if GetLocale() == "ruRU" then
 	
 	-- Unit frame options
 	L_GUI_UF_ENABLE = "Включить рамки портретов"
-	L_GUI_UF_FONT_SIZE = "Размер шрифта"
 	L_GUI_UF_AGGRO_BORDER = "Включить отображение угрозы на рамках группы/рейда"
 	L_GUI_UF_OWN_COLOR = "Установить свой цвет для полос рамок"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Окрашивать полосу здоровья врага по враждебности"
@@ -209,6 +201,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_UF_SHOW_BOSS = "Отображать рамки боссов"
 	L_GUI_UF_SHOW_ARENA = "Отображать рамки арены"
 	L_GUI_UF_ARENA_RIGHT = "Рамки арены справа"
+	L_GUI_UF_SHOW_PARTY = "Отображать рамки группы"
 	L_GUI_UF_SHOW_RAID = "Отображать рамки рейда"
 	L_GUI_UF_VERTICAL_HEALTH = "Вертикальное направление полосы здоровья"
 	L_GUI_UF_ALPHA_HEALTH = "Прозрачность полосы здоровья если 100%"
@@ -217,8 +210,8 @@ if GetLocale() == "ruRU" then
 	L_GUI_UF_SOLO_MODE = "Отображать рамку игрока всегда"
 	L_GUI_UF_PLAYER_PARTY = "Отображать рамку игрока в группе"
 	L_GUI_UF_SHOW_TANK = "Отображать рамки танков рейда"
-	L_GUI_UF_RAID_GROUP = "Количество групп в рейде(Только для *Heal* раскладки)"
-	L_GUI_UF_RAID_VERTICAL_GROUP = "Группы рейда вертикально(Только для *Heal* раскладки)"
+	L_GUI_UF_RAID_GROUP = "Количество групп в рейде(только для *Heal* раскладки)"
+	L_GUI_UF_RAID_VERTICAL_GROUP = "Группы рейда вертикально(только для *Heal* раскладки)"
 	L_GUI_UF_ICONS_PVP = "Отображать PvP статус на рамках игрока и цели по наведению курсора"
 	L_GUI_UF_ICONS_LEADER = "Отображать иконки лидера, помощника и ответственного за добычу"
 	L_GUI_UF_ICONS_COMBAT = "Отображать иконку боя на рамке игрока"
@@ -257,7 +250,6 @@ if GetLocale() == "ruRU" then
 	
 	-- Stats options
 	L_GUI_STATS = "Статистика"
-	L_GUI_STATS_FONT_SIZE = "Размер шрифта статистики"
 	L_GUI_STATS_BG = "Поле Сражения"
 	L_GUI_STATS_CLOCK = "Часы"
 	L_GUI_STATS_LATENCY = "Задержка"
@@ -273,5 +265,5 @@ if GetLocale() == "ruRU" then
 	L_GUI_ERROR_HIDE = "Спрятать все ошибки"
 	L_GUI_ERROR_BLACK = "Спрятать ошибки из *черного* списка"
 	L_GUI_ERROR_WHITE = "Показывать ошибки из *белого* списка"
-	L_GUI_ERROR_HIDE_COMBAT = "Спрятать ошибки во время боя(Необходимо выбрать *список*)"
+	L_GUI_ERROR_HIDE_COMBAT = "Спрятать ошибки во время боя(необходимо выбрать *список*)"
 end

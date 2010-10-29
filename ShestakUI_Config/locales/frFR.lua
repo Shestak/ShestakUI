@@ -30,7 +30,6 @@ if GetLocale() == "frFR" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Texte de combat"
-	L_GUI_COMBATTEXT_FONT_SIZE = "Taille du texte"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Utiliser les textes de combat de Blizzard"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)" -- Needs review
 	L_GUI_COMBATTEXT_DAMAGE = "Afficher les dégâts dans une fenêtre dédiée"
@@ -67,7 +66,6 @@ if GetLocale() == "frFR" then
 	-- Raid/Enemy cooldown options
 	L_GUI_COOLDOWN = "CD Raid/Ennemi"
 	L_GUI_COOLDOWN_RAID_ENABLE = "Activer les CD de raid"
-	L_GUI_COOLDOWN_RAID_FONT = "Taille de la police des CD de raid"
 	L_GUI_COOLDOWN_RAID_HEIGHT = "Hauteur de la barre des CD de raid"
 	L_GUI_COOLDOWN_RAID_WIDTH = "Largeur de la barre des CD de raid (+28 si l'icone est activй)"
 	L_GUI_COOLDOWN_RAID_SORT = "Nouvelle barre au dessus"
@@ -80,11 +78,12 @@ if GetLocale() == "frFR" then
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Voir les CD ennemis partout"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "Voir les CD ennemis dans les champs de bataille"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Voir les CD ennemis en arène"
+	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse" -- Needs review
+	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size" -- Needs review
 	
 	-- Threat options
 	L_GUI_THREAT = "Barre de menace"
 	L_GUI_THREAT_ENABLE = "Activer les barres de menace"
-	L_GUI_THREAT_FONT_SIZE = "Taille de police des barres de menace"
 	L_GUI_THREAT_HEIGHT = "Hauteur des barres de menace"
 	L_GUI_THREAT_WIDTH = "Largeur des barres de menace"
 	L_GUI_THREAT_ROWS = "Nombre de barres de menace"
@@ -105,15 +104,12 @@ if GetLocale() == "frFR" then
 	L_GUI_TOOLTIP_RANK = "Afficher le rang de guilde dans le tooltip"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Expérience en arène"
 	L_GUI_TOOLTIP_SPELL_ID = "ID du sort"
+	L_GUI_TOOLTIP_RAID_ICON = "Raid icon" -- Needs review
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Activer le chat"
 	L_GUI_CHAT_BACKGROUND = "Activer l'arrière plan du chat"
 	L_GUI_CHAT_BACKGROUND_ALPHA = "Transparence de l'arrière plan du chat"
-	L_GUI_CHAT_FONT_SIZE = "Taille de police du chat"
-	L_GUI_CHAT_FONT_STYLE = "Style de police"
-	L_GUI_CHAT_TAB_FONT_SIZE = "Taille de police des onglets du chat"
-	L_GUI_CHAT_TAB_FONT_STYLE = "Style de police des onglets"
 	L_GUI_CHAT_SPAM = "Retirer certains spams (ex: joueur1 a battu en duel joueur2)"
 	L_GUI_CHAT_WIDTH = "Largeur du chat"
 	L_GUI_CHAT_HEIGHT = "Hauteur du chat"
@@ -144,7 +140,6 @@ if GetLocale() == "frFR" then
 	-- Loot options
 	L_GUI_LOOT_ENABLE = "Activer la fenêtre de butin"
 	L_GUI_LOOT_ROLL_ENABLE = "Activier la fenêtre de butin de groupe"
-	L_GUI_LOOT_FONT_SIZE = "Taille de la police de la fenêtre de butin"
 	L_GUI_LOOT_ICON_SIZE = "Taille de l'icone"
 	L_GUI_LOOT_WIDTH = "Loot frame width"
 	L_GUI_LOOT_AUTOGREED = "Activer désenchantement automatique pour les objets verts au niveau maximum"
@@ -155,7 +150,6 @@ if GetLocale() == "frFR" then
 	L_GUI_NAMEPLATE_COMBAT = "Afficher automatiquement les barres de nom en combat"
 	L_GUI_NAMEPLATE_HEALTH = "Valeur de points de vie"
 	L_GUI_NAMEPLATE_CASTBAR = "Afficher la barre de sort"
-	L_GUI_NAMEPLATE_FONT_SIZE = "Taille de la police des barres de nom"
 	L_GUI_NAMEPLATE_HEIGHT = "Hauteur des barres de nom"
 	L_GUI_NAMEPLATE_WIDTH = "Largeur des barres de nom"
 	L_GUI_NAMEPLATE_CASTBAR_NAME = "Afficher le nom du sort"
@@ -181,7 +175,6 @@ if GetLocale() == "frFR" then
 	L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Activer la barre de posture horizontale"
 	
 	-- Auras/Buffs/Debuffs
-	L_GUI_AURA_FONT_SIZE = "Taille de police des buffs"
 	L_GUI_AURA_PLAYER_BUFF_SIZE = "Taille des buffs du joueur"
 	L_GUI_AURA_SHOW_SPIRAL = "Spirale sur les icones d'aura"
 	L_GUI_AURA_SHOW_TIMER = "Afficher le cooldown des icones d'aura"
@@ -196,7 +189,6 @@ if GetLocale() == "frFR" then
 	
 	-- Unit frame options
 	L_GUI_UF_ENABLE = "Activer les barres d'unité"
-	L_GUI_UF_FONT_SIZE = "Taille de la police"
 	L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"
 	L_GUI_UF_OWN_COLOR = "Mettre la couleur de classe comme couleur pour la barre de vie"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Si activée, la couleur des cibles ennemi est rouge"
@@ -209,6 +201,7 @@ if GetLocale() == "frFR" then
 	L_GUI_UF_SHOW_BOSS = "Afficher les barres du boss"
 	L_GUI_UF_SHOW_ARENA = "Afficher les barres d'arène"
 	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right"
+	L_GUI_UF_SHOW_PARTY = "Show raid frames" -- Needs review
 	L_GUI_UF_SHOW_RAID = "Show raid frames"
 	L_GUI_UF_VERTICAL_HEALTH = "Orientation vertical des barres de vie"
 	L_GUI_UF_ALPHA_HEALTH = "Alpha of healthbars when 100%hp"
@@ -257,7 +250,6 @@ if GetLocale() == "frFR" then
 	
 	-- Stats options
 	L_GUI_STATS = "Stats"
-	L_GUI_STATS_FONT_SIZE = "Taille de police des stats"
 	L_GUI_STATS_BG = "Champ de bataille"
 	L_GUI_STATS_CLOCK = "Horloge"
 	L_GUI_STATS_LATENCY = "Latence"
