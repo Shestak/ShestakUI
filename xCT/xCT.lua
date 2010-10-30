@@ -53,18 +53,46 @@ local ct={
 -- outgoing healing filter, hide this spammy shit, plx
 if(ct.healing)then
 	ct.healfilter={}
-	ct.healfilter[28176]=true -- Fel Armor
-	ct.healfilter[63106]=true -- Siphon Life
-	ct.healfilter[54181]=true -- Fel Synergy
+	ct.healfilter[28176]=true	-- Fel Armor
+	ct.healfilter[63106]=true	-- Siphon Life
+	ct.healfilter[54181]=true	-- Fel Synergy
 end
 ---------------------------------------------------------------------------------
 if(ct.mergeaoespam)then
 	ct.aoespam={}
+	-- Warlock
 	ct.aoespam[27285]=true	-- Seed of Corruption Explosion
 	ct.aoespam[172]=true	-- Corruption
 	ct.aoespam[30108]=true	-- Unstable Corruption
+	-- Druid
 	ct.aoespam[8921]=true	-- Moonfire
 	ct.aoespam[5570]=true	-- Insect Swarm
+	ct.aoespam[42231]=true	-- Hurricane
+	ct.aoespam[50288]=true	-- Starfall
+	-- Mage
+	ct.aoespam[44461]=true	-- Living Bomb Explosion
+	ct.aoespam[44457]=true	-- Living Bomb Dot
+	ct.aoespam[2120]=true	-- Flamestrike
+	ct.aoespam[12654]=true	-- Ignite
+	ct.aoespam[11366]=true	-- Pyroblast
+	ct.aoespam[31661]=true	-- Dragon's Breath
+	ct.aoespam[42208]=true	-- Blizzard
+	ct.aoespam[122]=true	-- Frost Nova
+	ct.aoespam[1449]=true	-- Arcane Explosion
+	-- Hunter
+	ct.aoespam[2643]=true	-- Multi-Shot
+	-- Warrior
+	ct.aoespam[845]=true	-- Cleave
+	ct.aoespam[46968]=true	-- Shockwave
+	ct.aoespam[6343]=true	-- Thunder Clap
+	ct.aoespam[1680]=true	-- Whirlwind
+	-- Shaman
+	ct.aoespam[421]=true	-- Chain Lightning
+	ct.aoespam[8349]=true	-- Fire Nova
+	-- Paladin
+	ct.aoespam[81297]=true	-- Consecration
+	ct.aoespam[2812]=true	-- Holy Wrath
+	ct.aoespam[53385]=true	-- Divine Storm
 end
 ---------------------------------------------------------------------------------
 -- class config, overrides general
