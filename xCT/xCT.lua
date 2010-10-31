@@ -47,57 +47,86 @@ local ct={
 	["stopvespam"] = SettingsCF["combattext"].stop_ve_spam,		-- automaticly turns off healing spam for priests in shadowform. HIDE THOSE GREEN NUMBERS PLX!
 	["dkrunes"] = SettingsCF["combattext"].dk_runes,		-- show deatchknight rune recharge
 	["mergeaoespam"] = SettingsCF["combattext"].merge_aoe_spam,	-- merges multiple aoe spam into single message, can be useful for dots too.
-	["mergeaoespamtime"] = SettingsCF["combattext"].merge_aoe_spam_time,	-- time in seconds aoe spell will be merged into single message.
+	["mergeaoespamtime"] = SettingsCF["combattext"].merge_aoe_spam_time,	-- time in seconds aoe spell will be merged into single message. minimum is 1.
 }
 ---------------------------------------------------------------------------------
 -- outgoing healing filter, hide this spammy shit, plx
 if(ct.healing)then
 	ct.healfilter={}
-	ct.healfilter[28176]=true	-- Fel Armor
-	ct.healfilter[63106]=true	-- Siphon Life
-	ct.healfilter[54181]=true	-- Fel Synergy
+	-- See class-specific config for filtered spells.
 end
 ---------------------------------------------------------------------------------
 if(ct.mergeaoespam)then
 	ct.aoespam={}
-	-- Warlock
-	ct.aoespam[27285]=true	-- Seed of Corruption Explosion
-	ct.aoespam[172]=true	-- Corruption
-	ct.aoespam[30108]=true	-- Unstable Corruption
-	-- Druid
-	ct.aoespam[8921]=true	-- Moonfire
-	ct.aoespam[5570]=true	-- Insect Swarm
-	ct.aoespam[42231]=true	-- Hurricane
-	ct.aoespam[50288]=true	-- Starfall
-	-- Mage
-	ct.aoespam[44461]=true	-- Living Bomb Explosion
-	ct.aoespam[44457]=true	-- Living Bomb Dot
-	ct.aoespam[2120]=true	-- Flamestrike
-	ct.aoespam[12654]=true	-- Ignite
-	ct.aoespam[11366]=true	-- Pyroblast
-	ct.aoespam[31661]=true	-- Dragon's Breath
-	ct.aoespam[42208]=true	-- Blizzard
-	ct.aoespam[122]=true	-- Frost Nova
-	ct.aoespam[1449]=true	-- Arcane Explosion
-	-- Hunter
-	ct.aoespam[2643]=true	-- Multi-Shot
-	-- Warrior
-	ct.aoespam[845]=true	-- Cleave
-	ct.aoespam[46968]=true	-- Shockwave
-	ct.aoespam[6343]=true	-- Thunder Clap
-	ct.aoespam[1680]=true	-- Whirlwind
-	-- Shaman
-	ct.aoespam[421]=true	-- Chain Lightning
-	ct.aoespam[8349]=true	-- Fire Nova
-	-- Paladin
-	ct.aoespam[81297]=true	-- Consecration
-	ct.aoespam[2812]=true	-- Holy Wrath
-	ct.aoespam[53385]=true	-- Divine Storm
+	-- See class-specific config for merged spells.
 end
 ---------------------------------------------------------------------------------
 -- class config, overrides general
-if ct.myclass == "WARRIOR" then
-	-- do something
+if ct.myclass=="WARLOCK" then
+	if(ct.mergeaoespam)then
+		ct.aoespam[27243]=true	-- Seed of Corruption (DoT)
+		ct.aoespam[27285]=true	-- Seed of Corruption (Explosion)
+		ct.aoespam[172]=true	-- Corruption
+		ct.aoespam[87389]=true	-- Corruption (Soulburn: Seed of Corruption)
+		ct.aoespam[30108]=true	-- Unstable Affliction
+		ct.aoespam[348]=true	-- Immolate
+		ct.aoespam[980]=true	-- Bane of Agony
+		ct.aoespam[85455]=true	-- Bane of Havoc
+		ct.aoespam[85421]=true	-- Burning Embers
+		ct.aoespam[42223]=true	-- Rain of Fire
+		ct.aoespam[5857]=true	-- Hellfire Effect
+		ct.aoespam[50590]=true	-- Immolation Aura
+	end
+	if(ct.healing)then
+		ct.healfilter[28176]=true -- Fel Armor
+		ct.healfilter[63106]=true -- Siphon Life
+		ct.healfilter[54181]=true -- Fel Synergy
+		ct.healfilter[89653]=true -- Drain Life
+		ct.healfilter[79268]=true -- Soul Harvest
+		ct.healfilter[30294]=true -- Soul Leech
+	end
+elseif ct.myclass=="DRUID"then
+	if(ct.mergeaoespam)then
+		ct.aoespam[8921]=true	-- Moonfire
+		ct.aoespam[5570]=true	-- Insect Swarm
+		ct.aoespam[42231]=true	-- Hurricane
+		ct.aoespam[50288]=true	-- Starfall
+	end
+elseif ct.myclass=="PALADIN"then
+	if(ct.mergeaoespam)then
+		ct.aoespam[81297]=true	-- Consecration
+		ct.aoespam[2812]=true	-- Holy Wrath
+		ct.aoespam[53385]=true	-- Divine Storm
+	end
+elseif ct.myclass=="SHAMAN"then
+	if(ct.mergeaoespam)then
+		ct.aoespam[421]=true	-- Chain Lightning
+		ct.aoespam[8349]=true	-- Fire Nova
+		ct.aoespam[77478]=true 	-- Earhquake
+	end
+elseif ct.myclass=="MAGE"then
+	if(ct.mergeaoespam)then
+		ct.aoespam[44461]=true	-- Living Bomb Explosion
+		ct.aoespam[44457]=true	-- Living Bomb Dot
+		ct.aoespam[2120]=true	-- Flamestrike
+		ct.aoespam[12654]=true	-- Ignite
+		ct.aoespam[11366]=true	-- Pyroblast
+		ct.aoespam[31661]=true	-- Dragon's Breath
+		ct.aoespam[42208]=true	-- Blizzard
+		ct.aoespam[122]=true	-- Frost Nova
+		ct.aoespam[1449]=true	-- Arcane Explosion
+	end
+elseif ct.myclass=="WARRIOR"then
+	if(ct.mergeaoespam)then
+		ct.aoespam[845]=true	-- Cleave
+		ct.aoespam[46968]=true	-- Shockwave
+		ct.aoespam[6343]=true	-- Thunder Clap
+		ct.aoespam[1680]=true	-- Whirlwind
+	end
+elseif ct.myclass=="HUNTER"then
+	if(ct.mergeaoespam)then
+		ct.aoespam[2643]=true	-- Multi-Shot
+	end
 end
 ---------------------------------------------------------------------------------
 -- character config, overrides general and class
@@ -763,8 +792,17 @@ if(ct.damage)then
 	if(ct.icons)then
 		ct.blank="Interface\\AddOns\\ShestakUI\\media\\blank"
 	end
-
+	local getcrit=function(critical)
+		local id
+		if critical then
+			id=2
+		end
+		return id
+	end
 	if(ct.mergeaoespam)then
+		if (not ct.mergeaoespamtime or ct.mergeaoespamtime<1) then
+			ct.mergeaoespamtime=1
+		end
 		local pairs=pairs
 		SQ={}
 		for k,v in pairs(ct.aoespam) do
@@ -790,7 +828,7 @@ if(ct.damage)then
 				for k,v in pairs(SQ) do
 					if SQ[k]["queue"]>0 then
 						if SQ[k]["count"]>1 then
-							count=" |cffFFFFFFx"..SQ[k]["count"].."|r"
+							count=" |cffFFFFFF x "..SQ[k]["count"].."|r"
 						else
 							count=""
 						end
@@ -802,12 +840,12 @@ if(ct.damage)then
 			end
 		end)
 	end
-
+	ct.pguid=UnitGUID"player"
 	local dmg=function(self,event,...) 
 		local unpack,select=unpack,select
 		local msg,icon
 		local timestamp, eventType, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags = select(1,...)
-		if(sourceGUID==UnitGUID"player")or(sourceGUID==UnitGUID"pet" and ct.petdamage)then
+		if(sourceGUID==ct.pguid and destGUID~=ct.pguid)or(sourceGUID==UnitGUID"pet" and ct.petdamage)then
 			if(eventType=="SWING_DAMAGE")then
 				local amount,_,_,_,_,_,critical=select(9,...)
 				if(amount>=ct.treshold)then
@@ -874,7 +912,6 @@ if(ct.damage)then
 						SQ[spellId]["count"]=SQ[spellId]["count"]+1
 						return
 					end
-					
 					xCT4:AddMessage(amount.." "..msg,unpack(color))
 				end
 	
@@ -937,11 +974,11 @@ if(ct.healing)then
 						if(ct.icons)then
 							_,_,icon=GetSpellInfo(spellId)
 						end
-               					if (icon) then 
-                					msg=msg..' \124T'..icon..':'..ct.iconsize..':'..ct.iconsize..':0:0:64:64:5:59:5:59\124t'
+               			if (icon) then 
+                			msg=msg..' \124T'..icon..':'..ct.iconsize..':'..ct.iconsize..':0:0:64:64:5:59:5:59\124t'
 						elseif(ct.icons)then
 							msg=msg.." \124T"..ct.blank..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
-                				end 
+                		end 
 						xCT4:AddMessage(msg,unpack(color))
 					end
 				end
