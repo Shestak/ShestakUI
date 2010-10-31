@@ -677,6 +677,16 @@ Filger_Spells = {
 			{ spellID = 421, size = 30, filter = "CD" },
 			-- Wind Shear
 			{ spellID = 57994, size = 30, filter = "CD" },
+			-- Earthbind Totem
+			{ spellID = 2484, size = 30, filter = "CD" },
+			-- Stoneclaw Totem
+			{ spellID = 5730, size = 30, filter = "CD" },
+			-- Feral Spirit
+			{ spellID = 51533, size = 30, filter = "CD" },
+			-- Shamanistic Rage
+			{ spellID = 30823, size = 30, filter = "CD" },
+			-- Stormstrike
+			{ spellID = 17364, size = 30, filter = "CD" },
 		},
 	},
 	["PALADIN"] = {

@@ -147,6 +147,9 @@ end
 --	Kill object function
 ----------------------------------------------------------------------------------------
 function SettingsDB.Kill(object)
+	if object.UnregisterAllEvents then
+		object:UnregisterAllEvents()
+	end
 	object.Show = SettingsDB.dummy
 	object:Hide()
 end
@@ -804,7 +807,7 @@ do
 			end
 		end
 	end
-		
+	
 	SettingsDB.UpdateEclipse = function(self, login)
 		local eb = self.EclipseBar
 		if login then

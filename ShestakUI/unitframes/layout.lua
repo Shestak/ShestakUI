@@ -347,19 +347,6 @@ local function Shared(self, unit)
 				eclipseBarText:SetPoint("CENTER", eclipseBar, "CENTER")
 				eclipseBar.Text = eclipseBarText
 				
-				--[[local eclipseBarInd = solarBar:CreateFontString(nil, "OVERLAY")
-				eclipseBarInd:SetFont(SettingsCF["media"].pixel_font, db.font_size, SettingsCF["media"].pixel_font_style)
-
-				eclipseBar.PostDirectionChange = function(element, unit)
-					if(element.directionIsLunar) then
-						eclipseBarInd:SetPoint("LEFT", eclipseBarText, "RIGHT", 0, 0)
-						eclipseBarInd:SetText("|cff4478BC>>>|r")
-					else
-						eclipseBarInd:SetPoint("RIGHT", eclipseBarText, "LEFT", 0, 0)
-						eclipseBarInd:SetText("|cffE5994C<<<|r")
-					end
-				end]]
-
 				self.EclipseBar = eclipseBar
 			end
 		end
