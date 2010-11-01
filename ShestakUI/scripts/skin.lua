@@ -238,6 +238,12 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"InterfaceOptionsFrameTab2MiddleDisabled",
 			"InterfaceOptionsFrameTab2RightDisabled",
 			"InterfaceOptionsFrameTab2HighlightTexture",
+			"ColorPickerOkayButtonLeft",
+			"ColorPickerOkayButtonMiddle",
+			"ColorPickerOkayButtonRight",
+			"ColorPickerCancelButtonLeft",
+			"ColorPickerCancelButtonMiddle",
+			"ColorPickerCancelButtonRight",
 		}
 		
 		for i = 1, getn(ButtonsBackground) do

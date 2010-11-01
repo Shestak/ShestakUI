@@ -769,6 +769,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Disable tooltip fading
 ----------------------------------------------------------------------------------------
+--[[
 GameTooltip.FadeOut = function(self)
 	GameTooltip:Hide()
 end
@@ -783,4 +784,4 @@ updateFrame:SetScript("OnUpdate", function(self)
 	elseif unit then
 		hasUnit = true
 	end
-end)
+end)]]
