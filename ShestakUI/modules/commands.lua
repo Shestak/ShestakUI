@@ -80,6 +80,7 @@ SlashCmdList["SPEC"] = function()
 end
 SLASH_SPEC1 = "/ss"
 SLASH_SPEC2 = "/spec"
+SLASH_SPEC3 = "/ыы"
 
 ----------------------------------------------------------------------------------------
 --	Fix combatlog after a crash (2.4 and 3.3.2 bug)
