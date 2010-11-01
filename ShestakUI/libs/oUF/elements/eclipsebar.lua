@@ -16,10 +16,6 @@ local UNIT_POWER = function(self, event, unit, powerType)
 	local power = UnitPower(unit, SPELL_POWER_ECLIPSE)
 	local maxPower = UnitPowerMax(unit, SPELL_POWER_ECLIPSE)
 
-	if(eb.Text) then
-		eb.Text:SetFormattedText('%d%%', abs(power / maxPower * 100))
-	end
-	
 	if(eb.LunarBar) then
 		eb.LunarBar:SetMinMaxValues(-maxPower, maxPower)
 		eb.LunarBar:SetValue(power)

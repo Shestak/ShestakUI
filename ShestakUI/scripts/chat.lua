@@ -419,8 +419,8 @@ if SettingsCF.chat.filter == true then
 	ERR_LEARN_ABILITY_S = ""
 	ERR_LEARN_SPELL_S = ""
 	ERR_SPELL_UNLEARNED_S = ""
-	
-	
+	INTERFACE_ACTION_BLOCKED = ""
+
 	ChatFrame1.repeatFilter = true
 	ChatFrame1:SetTimeVisible(10)
 

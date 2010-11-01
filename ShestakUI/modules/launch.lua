@@ -65,7 +65,7 @@ local function InstallUI()
 	end
 	
 	-- Setting chat frames
-	if (SettingsCF.chat.enable == true) and (not IsAddOnLoaded("Prat") or not IsAddOnLoaded("Chatter")) then
+	if (SettingsCF.chat.enable == true) and (not IsAddOnLoaded("Prat-3.0") or not IsAddOnLoaded("Chatter")) then
 		for i = 1, NUM_CHAT_WINDOWS do
 			local frame = _G[format("ChatFrame%s", i)]
 			local chatFrameId = frame:GetID()

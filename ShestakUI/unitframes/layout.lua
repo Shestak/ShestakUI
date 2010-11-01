@@ -342,12 +342,17 @@ local function Shared(self, unit)
 				solarBar:SetStatusBarTexture(SettingsCF["media"].texture)
 				solarBar:SetStatusBarColor(0.80, 0.80, 0.20)
 				eclipseBar.SolarBar = solarBar
-
+				
 				local eclipseBarText = SettingsDB.SetFontString(solarBar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
-				eclipseBarText:SetPoint("CENTER", eclipseBar, "CENTER")
-				eclipseBar.Text = eclipseBarText
+				eclipseBarText:SetPoint("CENTER", eclipseBar, "CENTER", -5, 0)
+				eclipseBar.PostUpdatePower = SettingsDB.EclipseDirection
+				
+				local eclipseBarPers = SettingsDB.SetFontString(solarBar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
+				eclipseBarPers:SetPoint("LEFT", eclipseBarText, "RIGHT", 1, 0)
+				self:Tag(eclipseBarPers, '[pereclipse]%')
 				
 				self.EclipseBar = eclipseBar
+				self.EclipseBar.Text = eclipseBarText
 			end
 		end
 		

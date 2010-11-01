@@ -204,6 +204,12 @@ if SettingsCF["unitframe"].plugins_aura_watch == true then
 				{59665, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
 				{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Intervene
 			},
+			HUNTER = {
+				{34477, "TOPRIGHT", {0.2, 0.2, 1}},				-- Misdirection
+			},
+			WARLOCK = {
+				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone Resurrection
+			},
 			ALL = {
 				{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag
 				{34976, "LEFT", {1, 0, 0}, true}, 				-- Netherstorm Flag

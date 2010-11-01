@@ -987,6 +987,7 @@ local function InBags(x)
 end
 
 function Stuffing:SortBags()
+	if (UnitAffectingCombat("player")) then return end
 	local bs = self.sortBags
 	if #bs < 1 then
 		Print (L_BAG_NOTHING_SORT)

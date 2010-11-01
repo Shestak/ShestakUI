@@ -33,6 +33,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"StaticPopup1",
 			"StaticPopup2",
 			"StaticPopup3",
+			"StaticPopup4",
 			"GameMenuFrame",
 			"InterfaceOptionsFrame",
 			"VideoOptionsFrame",
@@ -369,18 +370,24 @@ if IsMacClient() then
 	SkinButton(_G["MacOptionsButtonKeybindings"])
 	SkinButton(_G["MacOptionsFrameDefaults"])
 	SkinButton(_G["MacOptionsButtonCompress"])
-	_G["MacOptionsFrameDefaults"]:SetTexture("")
+	_G["MacOptionsButtonCompressLeft"]:SetAlpha(0)
+	_G["MacOptionsButtonCompressMiddle"]:SetAlpha(0)
+	_G["MacOptionsButtonCompressRight"]:SetAlpha(0)
+	_G["MacOptionsButtonKeybindingsLeft"]:SetAlpha(0)
+	_G["MacOptionsButtonKeybindingsMiddle"]:SetAlpha(0)
+	_G["MacOptionsButtonKeybindingsRight"]:SetAlpha(0)
  
 	-- Reposition and resize buttons
-	tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsButtonCompress"]:GetPoint()
+	local tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsButtonCompress"]:GetPoint()
 	_G["MacOptionsButtonCompress"]:SetWidth(136)
 	_G["MacOptionsButtonCompress"]:ClearAllPoints()
-	_G["MacOptionsButtonCompress"]:SetPoint(tPoint, tRTo, tRP, tX + 4, tY)
+	_G["MacOptionsButtonCompress"]:SetPoint(tPoint, tRTo, tRP, SettingsDB.Scale(4), tY)
  
 	_G["MacOptionsFrameCancel"]:SetWidth(96)
 	_G["MacOptionsFrameCancel"]:SetHeight(22)
 	tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsFrameCancel"]:GetPoint()
-	_G["MacOptionsFrameCancel"]:SetPoint(tPoint, tRTo, tRP, tX - 2, tY)
+	_G["MacOptionsFrameCancel"]:ClearAllPoints()
+	_G["MacOptionsFrameCancel"]:SetPoint(tPoint, tRTo, tRP, SettingsDB.Scale(-14), tY)
  
 	_G["MacOptionsFrameOkay"]:ClearAllPoints()
 	_G["MacOptionsFrameOkay"]:SetWidth(96)

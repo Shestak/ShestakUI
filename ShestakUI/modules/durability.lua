@@ -12,7 +12,6 @@ local function RYGColorGradient(perc)
 	else                    return           0,       1, 0 end
 end
 
-
 local fontstrings = setmetatable({}, {
 	__index = function(t,i)
 		local gslot = _G["Character"..i.."Slot"]
@@ -26,7 +25,6 @@ local fontstrings = setmetatable({}, {
 		return fstr
 	end,
 })
-
 
 function frame:OnEvent(event, arg1)
 	if event == "ADDON_LOADED" and arg1:lower() ~= "ShestakUI" then
@@ -56,7 +54,6 @@ function frame:OnEvent(event, arg1)
 	local r,g,b = RYGColorGradient(min)
 	dataobj.text = string.format("|cff%02x%02x%02x%d%%", r*255, g*255, b*255, min*100)
 end
-
 
 frame:SetScript("OnEvent", frame.OnEvent)
 frame:RegisterEvent("ADDON_LOADED")
