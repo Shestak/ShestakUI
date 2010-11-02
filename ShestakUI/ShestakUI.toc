@@ -5,7 +5,7 @@
 ## Version: 2.8
 ## Credits: ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne
 ## Thanks: Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, UI Users, Russian Community and Others
-## OptionalDeps: ShestakUI_Config, Stuf, PitBull4, ShadowedUnitFrames, Grid, Grid2, VuhDo, oUF_Freebgrid, TidyPlates, caelNamePlates, dNameplates, Mapster, Prat-3.0, eCastingBar, Quartz, alEnemyCD, TipTac, TipTacTalents, Omen, sThreatMeter2, SkadaThreat, alRaidCD, cargBags
+## OptionalDeps: ShestakUI_Config, Stuf, PitBull4, ShadowedUnitFrames, Grid, Grid2, VuhDo, oUF_Freebgrid, TidyPlates, caelNamePlates, dNameplates, Mapster, Prat-3.0, eCastingBar, Quartz, alEnemyCD, TipTac, TipTacTalents, Omen, sThreatMeter2, SkadaThreat, alRaidCD, cargBags, Postal
 ## SavedVariables: SavedOptions
 ## SavedVariablesPerCharacter: InstalledUI
 ## X-oUF: oUF

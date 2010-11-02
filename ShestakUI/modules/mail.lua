@@ -1,7 +1,7 @@
 ﻿----------------------------------------------------------------------------------------
 --	Grab mail in 1 button(OpenAll by Kemayo)
 ----------------------------------------------------------------------------------------
-if (IsAddOnLoaded("QuickAuctions") or IsAddOnLoaded("OpenAll")) then return end
+if (IsAddOnLoaded("AuctionProfitMaster") or IsAddOnLoaded("OpenAll") or IsAddOnLoaded("Postal")) then return end
 
 local deletedelay, t = 0.5, 0
 local takingOnlyCash = false
