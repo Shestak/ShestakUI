@@ -513,7 +513,7 @@ local function init()
 		info.notCheckable = 1
 		info.text = L_LOOT_RANDOM
 		info.func = GroupLootDropDown_GiveLoot
-		info.icon = "Interface\\Buttons\\UI-GroupLoot-Dice-Up"
+		info.icon = nil
 		UIDropDownMenu_AddButton(info)
 	end
 	for i = 1, 40 do
@@ -526,7 +526,7 @@ local function init()
 			info.notCheckable = 1
 			info.text = L_LOOT_SELF
 			info.func = GroupLootDropDown_GiveLoot
-			info.icon = "Interface\\Buttons\\UI-GroupLoot-Coin-Up"
+			info.icon = nil
 			UIDropDownMenu_AddButton(info)
 		end
 	end

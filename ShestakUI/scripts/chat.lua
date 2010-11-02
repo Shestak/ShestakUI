@@ -186,6 +186,10 @@ local function SetupChatPosAndFont(self)
 			FCF_SetChatWindowFontSize(nil, chat, fontSize)
 		end
 		
+		-- Font and font style for chat
+		chat:SetFont(SettingsCF.font.chat_font, fontSize, SettingsCF.font.chat_font_style)
+		chat:SetShadowOffset(SettingsCF.font.chat_font_shadow and 1 or 0, SettingsCF.font.chat_font_shadow and -1 or 0)
+		
 		-- Force chat position
 		if i == 1 then
 			chat:ClearAllPoints()

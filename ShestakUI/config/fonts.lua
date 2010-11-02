@@ -29,6 +29,11 @@ SettingsCF["font"] = {
 	["combat_text_font_style"] = "OUTLINEMONOCHROME",
 	["combat_text_font_shadow"] = false,
 	
+	-- Chat font
+	["chat_font"] = "Interface\\AddOns\\ShestakUI\\media\\font.ttf",
+	["chat_font_style"] = "",
+	["chat_font_shadow"] = true,
+	
 	-- Chat tabs font
 	["chat_tabs_font"] = "Interface\\AddOns\\ShestakUI\\media\\pixel.ttf",
 	["chat_tabs_font_size"] = 8,
