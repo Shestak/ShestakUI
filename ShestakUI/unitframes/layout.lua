@@ -344,11 +344,11 @@ local function Shared(self, unit)
 				eclipseBar.SolarBar = solarBar
 				
 				local eclipseBarText = SettingsDB.SetFontString(solarBar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
-				eclipseBarText:SetPoint("CENTER", eclipseBar, "CENTER", SettingsDB.Scale(-5), 0)
+				eclipseBarText:SetPoint("CENTER", eclipseBar, "CENTER", SettingsDB.Scale(-6), 0)
 				eclipseBar.PostUpdatePower = SettingsDB.EclipseDirection
 				
 				local eclipseBarPers = SettingsDB.SetFontString(solarBar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
-				eclipseBarPers:SetPoint("LEFT", eclipseBarText, "RIGHT", SettingsDB.Scale(1), 0)
+				eclipseBarPers:SetPoint("LEFT", eclipseBarText, "RIGHT", SettingsDB.Scale(2), 0)
 				self:Tag(eclipseBarPers, '[pereclipse]%')
 				
 				self.EclipseBar = eclipseBar

@@ -69,3 +69,10 @@ if SettingsDB.name == "Черешок"
 	SettingsCF["error"].black = false
 	SettingsCF["error"].white = true
 end
+
+----------------------------------------------------------------------------------------
+--	Per Max Character Level Config (overwrite general, class and name)
+----------------------------------------------------------------------------------------
+if SettingsDB.level ~= MAX_PLAYER_LEVEL then
+	SettingsCF["stats"].experience = true
+end

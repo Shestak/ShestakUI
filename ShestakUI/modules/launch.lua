@@ -10,6 +10,7 @@ local function InstallUI()
 	SetCVar("buffDurations", 1)
 	SetCVar("mapQuestDifficulty", 1)
 	SetCVar("showTutorials", 0)
+	SetCVar("gameTip", "0")
 	SetCVar("showNewbieTips", 0)
 	SetCVar("UberTooltips", 1)
 	SetCVar("showLootSpam", 1)
@@ -103,6 +104,52 @@ local function InstallUI()
 			if i == 2 then FCF_SetWindowName(frame, GUILD_BANK_LOG) end
 		end
 
+		if (SettingsDB.name == "Черешок" 
+			or SettingsDB.name == "Вершок"
+			or SettingsDB.name == "Вещмешок" 
+			or SettingsDB.name == "Гребешок" 
+			or SettingsDB.name == "Кулешок" 
+			or SettingsDB.name == "Лапушок" 
+			or SettingsDB.name == "Обушок" 
+			or SettingsDB.name == "Ремешок"
+			or SettingsDB.name == "Шестак") then
+			FCF_ResetChatWindows()
+			FCF_OpenNewWindow(GUILD)
+			FCF_SetLocked(ChatFrame3, 1)
+			FCF_DockFrame(ChatFrame3)
+			FCF_OpenNewWindow(LOOT)
+			FCF_SetLocked(ChatFrame4, 1)
+			FCF_DockFrame(ChatFrame4)
+			
+			-- Setup main tab
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "LOOT")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "MONEY")
+			
+			-- Setup guild tab
+			ChatFrame_RemoveAllMessageGroups(ChatFrame3)
+			ChatFrame_AddMessageGroup(ChatFrame3, "GUILD")
+			ChatFrame_AddMessageGroup(ChatFrame3, "OFFICER")
+			ChatFrame_AddMessageGroup(ChatFrame3, "WHISPER")
+			ChatFrame_AddMessageGroup(ChatFrame3, "PARTY")
+			ChatFrame_AddMessageGroup(ChatFrame3, "PARTY_LEADER")
+			ChatFrame_AddMessageGroup(ChatFrame3, "RAID")
+			ChatFrame_AddMessageGroup(ChatFrame3, "RAID_LEADER")
+			ChatFrame_AddMessageGroup(ChatFrame3, "RAID_WARNING")
+			ChatFrame_AddMessageGroup(ChatFrame3, "BATTLEGROUND")
+			ChatFrame_AddMessageGroup(ChatFrame3, "BATTLEGROUND_LEADER")
+			ChatFrame_AddMessageGroup(ChatFrame3, "BN_WHISPER")
+			ChatFrame_AddMessageGroup(ChatFrame3, "BN_CONVERSATION")
+			
+			-- Setup loot tab
+			ChatFrame_RemoveAllMessageGroups(ChatFrame4)
+			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_XP_GAIN")
+			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_GUILD_XP_GAIN")
+			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_HONOR_GAIN")
+			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_FACTION_CHANGE")
+			ChatFrame_AddMessageGroup(ChatFrame4, "LOOT")
+			ChatFrame_AddMessageGroup(ChatFrame4, "MONEY")
+		end
+		
 		-- Enable classcolor automatically on login and on each character without doing /configure each time
 		ToggleChatColorNamesByClassGroup(true, "SAY")
 		ToggleChatColorNamesByClassGroup(true, "EMOTE")
