@@ -431,6 +431,10 @@ elseif event=="PLAYER_ENTERING_WORLD"then
 	else
 		LimitLines()
 	end
+
+	if(ct.damage)then
+		ct.pguid=UnitGUID"player"
+	end
 end
 end
 -- change damage font (if desired)
@@ -807,7 +811,7 @@ if(ct.damage)then
 		local pairs=pairs
 		SQ={}
 		for k,v in pairs(ct.aoespam) do
-			SQ[k]={queue = 0, msg = "", color={}, count=0}
+			SQ[k]={queue = 0, msg = "", color={}, count=0, locked=false}
 		end
 		ct.SpamQueue=function(spellId, add)
 			local amount
@@ -827,7 +831,7 @@ if(ct.damage)then
 			if tslu > ct.mergeaoespamtime then
 				tslu=0
 				for k,v in pairs(SQ) do
-					if SQ[k]["queue"]>0 then
+					if SQ[k]["queue"]>0 and not SQ[k]["locked"] then
 						if SQ[k]["count"]>1 then
 							count=" |cffFFFFFF x "..SQ[k]["count"].."|r"
 						else
@@ -841,7 +845,6 @@ if(ct.damage)then
 			end
 		end)
 	end
-	ct.pguid=UnitGUID"player"
 	local dmg=function(self,event,...) 
 		local unpack,select=unpack,select
 		local msg,icon
@@ -907,10 +910,12 @@ if(ct.damage)then
 						msg=" \124T"..ct.blank..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
 					end
 					if ct.mergeaoespam and ct.aoespam[spellId] then
+						SQ[spellId]["locked"]=true
 						SQ[spellId]["queue"]=ct.SpamQueue(spellId, rawamount)
 						SQ[spellId]["msg"]=msg
 						SQ[spellId]["color"]=color
 						SQ[spellId]["count"]=SQ[spellId]["count"]+1
+						SQ[spellId]["locked"]=false
 						return
 					end
 					xCT4:AddMessage(amount.." "..msg,unpack(color))
