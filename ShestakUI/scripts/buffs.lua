@@ -9,11 +9,11 @@ local rowbuffs = 16
 
 local GetFormattedTime = function(s)
 	if s >= 86400 then
-		return format('%dd', floor(s/86400 + 0.5))
+		return format("%dd", floor(s/86400 + 0.5))
 	elseif s >= 3600 then
-		return format('%dh', floor(s/3600 + 0.5))
+		return format("%dh", floor(s/3600 + 0.5))
 	elseif s >= 60 then
-		return format('%dm', floor(s/60 + 0.5))
+		return format("%dm", floor(s/60 + 0.5))
 	end
 	return floor(s + 0.5)
 end
@@ -21,7 +21,7 @@ end
 ConsolidatedBuffs:ClearAllPoints()
 ConsolidatedBuffs:SetPoint(unpack(SettingsCF["position"].player_buffs))
 ConsolidatedBuffs:SetSize(SettingsCF["aura"].player_buff_size, SettingsCF["aura"].player_buff_size)
-ConsolidatedBuffs.SetPoint = nil
+ConsolidatedBuffs.SetPoint = SettingsDB.dummy
 
 ConsolidatedBuffsIcon:SetTexture("Interface\\Icons\\Spell_ChargePositive")
 ConsolidatedBuffsIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

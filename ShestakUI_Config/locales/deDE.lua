@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------------------------
---	Localization for deDE client(Thanks to Baine for the translation)
+--	Localization for deDE client(Thanks to Baine and chubidu for the translation)
 ----------------------------------------------------------------------------------------
 if GetLocale() == "deDE" then
 	L_GUI_BUTTON_RESET = "Standards wiederherstellen"
@@ -17,41 +17,41 @@ if GetLocale() == "deDE" then
 	L_GUI_MISC_AUTORESSURECT = "Automatisch im Schlachtfeld wiederbeleben"
 	L_GUI_MISC_MARKING = "Ziele markieren wenn *Umschalttaste* gedürckt wird"
 	L_GUI_MISC_INVKEYWORD = "Kurzes Schlüsselwort für Einladungen (/ainv)"
-	L_GUI_MISC_SPIN_CAMERA = "Spin camera while afk" -- Needs review
-	L_GUI_MISC_MOVE_WATCH_FRAME = "Quest Watch frame movable" -- Needs review
-	L_GUI_MISC_VEHICLE_MOUSEOVER = "Vehicle frame on mouseover" -- Needs review
+	L_GUI_MISC_SPIN_CAMERA = "Kamera drehen während du afk bist"
+	L_GUI_MISC_MOVE_WATCH_FRAME = "Questbeobachtungsfenster bewegbar"
+	L_GUI_MISC_VEHICLE_MOUSEOVER = "Fahrzeugfenster bei mouseover anzeigen"
 	L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button" -- Needs review
-	L_GUI_MISC_RAID_TOOLS = "Raid tools" -- Needs review
+	L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
 	
 	-- Skins options
-	L_GUI_SKINS = "Stylization" -- Needs review
-	L_GUI_SKINS_DBM = "Enable styling DBM" -- Needs review
-	L_GUI_SKINS_PP = "Enable styling PallyPower" -- Needs review
+	L_GUI_SKINS = "Stilisierung"
+	L_GUI_SKINS_DBM = "DBM Design aktivieren"
+	L_GUI_SKINS_PP = "PallyPower Design aktivieren"
 	
 	-- Combat text options
-	L_GUI_COMBATTEXT = "Combat Text" -- Needs review
-	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Use blizzard damage/healing output(above mob/player head)" -- Needs review
-	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)" -- Needs review
-	L_GUI_COMBATTEXT_DAMAGE = "Show outgoing damage in it's own frame" -- Needs review
-	L_GUI_COMBATTEXT_HEALING = "Show outgoing healing in it's own frame" -- Needs review
-	L_GUI_COMBATTEXT_HOTS = "Show periodic healing effects in healing frame" -- Needs review
-	L_GUI_COMBATTEXT_PET_DAMAGE = "Show your pet damage" -- Needs review
-	L_GUI_COMBATTEXT_DOT_DAMAGE = "Show damage from your dots" -- Needs review
-	L_GUI_COMBATTEXT_DAMAGE_COLOR = "Display damage numbers depending on school of magic" -- Needs review
-	L_GUI_COMBATTEXT_CRIT_PREFIX = "Symbol that will be added before crit" -- Needs review
-	L_GUI_COMBATTEXT_CRIT_POSTFIX = "Symbol that will be added after crit" -- Needs review
-	L_GUI_COMBATTEXT_ICONS = "Show outgoing damage icons" -- Needs review
-	L_GUI_COMBATTEXT_ICON_SIZE = "Icon size of spells in outgoing damage frame, also has effect on dmg font size" -- Needs review
-	L_GUI_COMBATTEXT_TRESHOLD = "Minimum damage to show in damage frame" -- Needs review
-	L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Minimum healing to show in incoming/outgoing healing messages" -- Needs review
-	L_GUI_COMBATTEXT_SCROLLABLE = "Allows you to scroll frame lines with mousewheel" -- Needs review
-	L_GUI_COMBATTEXT_MAX_LINES = "Max lines to keep in scrollable mode(more lines = more memory)" -- Needs review
-	L_GUI_COMBATTEXT_TIME_VISIBLE = "Time(seconds) a single message will be visible" -- Needs review
-	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Automaticly turns off healing spam for priests in shadowform" -- Needs review
-	L_GUI_COMBATTEXT_DK_RUNES = "Show deatchknight rune recharge" -- Needs review
-	L_GUI_COMBATTEXT_KILLINGBLOW = "Tells you about your killingblows" -- Needs review
-	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single message" -- Needs review
-	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Time in seconds aoe spell will be merged into single message" -- Needs review
+	L_GUI_COMBATTEXT = "Kampftext"
+	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Blizzard Schaden-/Heilausgabe benutzen (über Spieler/Kreaturen Kopf)"
+	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Standard Schaden/Heilung Schriftart über Kreaturen/Spieler Köpfen ändern (Neustart von WoW erforderlich um Änderungen zu sehen)"
+	L_GUI_COMBATTEXT_DAMAGE = "Zeige ausgehenden Schaden in einem eigenen Fenster"
+	L_GUI_COMBATTEXT_HEALING = "Zeige ausgehende Heilung in einem eigenen Fenster"
+	L_GUI_COMBATTEXT_HOTS = "Zeige peroidische Heilungseffekte im Heilungsfenster"
+	L_GUI_COMBATTEXT_PET_DAMAGE = "Zeige Begleiterschaden"
+	L_GUI_COMBATTEXT_DOT_DAMAGE = "Zeige Schaden von Schaden über Zeit"
+	L_GUI_COMBATTEXT_DAMAGE_COLOR = "Zeige Schadensnummern in Abhängigkeit von der Art des Zaubers"
+	L_GUI_COMBATTEXT_CRIT_PREFIX = "Symbol vor einem kritischen Treffer"
+	L_GUI_COMBATTEXT_CRIT_POSTFIX = "Symbol hinter einem kritischen Treffer"
+	L_GUI_COMBATTEXT_ICONS = "Zeige Symbole für ausgehenden Schaden"
+	L_GUI_COMBATTEXT_ICON_SIZE = "Symbolgröße der Zauber im Fenster für ausgehenden Schaden. Nimmt auch Einfluss auf die Schriftgröße"
+	L_GUI_COMBATTEXT_TRESHOLD = "Ab welcher Größe soll der Schaden angezeigt werden"
+	L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Ab welche Größe soll ein-/ausgehende Heilung angezeigt werden"
+	L_GUI_COMBATTEXT_SCROLLABLE = "Erlaubt es dir mit dem Mausrad durch die letzten Zeilen zu scrollen"
+	L_GUI_COMBATTEXT_MAX_LINES = "Maximale Zeilen, die behalten werden sollen im Scrollmodus (mehr Zeilen = mehr Speicherverbrauch)"
+	L_GUI_COMBATTEXT_TIME_VISIBLE = "Zeit(Sekunden) wielange eine einzelne Nachricht angezeigt wird"
+	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Heilung von Priestern in Schattenform wird automatisch ausgeschaltet"
+	L_GUI_COMBATTEXT_DK_RUNES = "Zeige Runenaufladung vom Todesritter"
+	L_GUI_COMBATTEXT_KILLINGBLOW = "Teilt dir mit ob du den Todesstoß bei einer Kreatur/einem Spieler hattest"
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Vereint mehrfachen Flächenschaden in eine einzige Nachricht"
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Zeit in Sekunden in der ein Flächenzauber in eine Nachricht vereint wird"
 	
 	-- Buffs reminder options
 	L_GUI_REMINDER = "Erinnerungen für Buffs"
@@ -78,20 +78,20 @@ if GetLocale() == "deDE" then
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Zeige gegnerische Abklingzeiten überall"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "Zeige gegnerische Abklingzeiten in Schlachtfeldern"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Zeige gegnerische Abklingzeiten in der Arena"
-	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse" -- Needs review
-	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size" -- Needs review
+	L_GUI_COOLDOWN_PULSE_ENABLE = "Zeige Abklingzeitimpuls"
+	L_GUI_COOLDOWN_PULSE_SIZE = "Abklingzeitimpuls Symbolgröße"
 	
 	-- Threat options
-	L_GUI_THREAT = "Threat bars" -- Needs review
-	L_GUI_THREAT_ENABLE = "Enable threat bars" -- Needs review
-	L_GUI_THREAT_HEIGHT = "Threat bars height" -- Needs review
-	L_GUI_THREAT_WIDTH = "Threat bars width" -- Needs review
-	L_GUI_THREAT_ROWS = "Number of threat bars" -- Needs review
-	L_GUI_THREAT_TEST_MODE = "Enable test mode for threat bars" -- Needs review
+	L_GUI_THREAT = "Bedrohungsleisten"
+	L_GUI_THREAT_ENABLE = "Aktiviere Bedrohungsleisten"
+	L_GUI_THREAT_HEIGHT = "Höhe der Bedrohungsleisten"
+	L_GUI_THREAT_WIDTH = "Breite der Bedrohungsleisten"
+	L_GUI_THREAT_ROWS = "Anzahl der Bedrohungsleisten"
+	L_GUI_THREAT_TEST_MODE = "Aktiviere Testmodus für Bedrohungsleisten"
 	
 	-- Tooltip options
 	L_GUI_TOOLTIP = "Tooltip"
-	L_GUI_TOOLTIP_ENABLE = "Enable tooltip" -- Needs review
+	L_GUI_TOOLTIP_ENABLE = "Aktiviere Tooltip"
 	L_GUI_TOOLTIP_SHIFT = "Tooltip anzeigen wenn *Umschalttaste* gedrückt wird"
 	L_GUI_TOOLTIP_CURSOR = "Tooltip unter dem Mauszeiger öffnen"
 	L_GUI_TOOLTIP_ICON = "Symbol der Gegenstände im Tooltip anzeigen"
@@ -103,50 +103,50 @@ if GetLocale() == "deDE" then
 	L_GUI_TOOLTIP_TITLE = "Zeige Titel im Tooltip an"
 	L_GUI_TOOLTIP_RANK = "Gildenrank im Tooltip anzeigen"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "PVP-Erfahrung des Spielers im Tooltip anzeigen (Arena)"
-	L_GUI_TOOLTIP_SPELL_ID = "Spell ID" -- Needs review
-	L_GUI_TOOLTIP_RAID_ICON = "Raid icon" -- Needs review
+	L_GUI_TOOLTIP_SPELL_ID = "Zauber ID"
+	L_GUI_TOOLTIP_RAID_ICON = "Raidsymbol"
 	
 	-- Chat options
-	L_GUI_CHAT_ENABLE = "Enable chat" -- Needs review
-	L_GUI_CHAT_BACKGROUND = "Enable chat background" -- Needs review
-	L_GUI_CHAT_BACKGROUND_ALPHA = "Alpha of chat background" -- Needs review
+	L_GUI_CHAT_ENABLE = "Chat aktivieren"
+	L_GUI_CHAT_BACKGROUND = "Chathintergrund aktivieren"
+	L_GUI_CHAT_BACKGROUND_ALPHA = "Transparenz des Hintergrunds"
 	L_GUI_CHAT_SPAM = "Einigen Chatspam entfernen (*Spieler1* hat *Spieler2* im Duell besiegt)"
 	L_GUI_CHAT_WIDTH = "Breite des Chatfensters"
 	L_GUI_CHAT_HEIGHT = "Höhe desChatfensters"
 	L_GUI_CHAT_BAR = "Kleine Leiste um den Chatchannel zu wechseln"
 	L_GUI_CHAT_TIMESTAMP = "Farbe des Zeitstempels"
 	L_GUI_CHAT_WHISP = "Geräusch abspielen wenn eine private Nachricht empfangen wird"
-	L_GUI_CHAT_SKIN_BUBBLE = "Skin Blizzard chat bubbles"  -- Needs review
+	L_GUI_CHAT_SKIN_BUBBLE = "Blizzard Chat Blasen verändern"
 	
 	-- Bag options
 	L_GUI_BAGS = "Taschen"
-	L_GUI_BAGS_ENABLE = "Enable bags"  -- Needs review
-	L_GUI_BAGS_BUTTON_SIZE = "Buttons size"  -- Needs review
-	L_GUI_BAGS_BUTTON_SPACE = "Buttons space"  -- Needs review
+	L_GUI_BAGS_ENABLE = "Taschen aktivieren"
+	L_GUI_BAGS_BUTTON_SIZE = "Buttongröße"
+	L_GUI_BAGS_BUTTON_SPACE = "Buttonabstand"
 	L_GUI_BAGS_BANK = "Anzahl der Spalten in der Bank"
 	L_GUI_BAGS_BAG = "Anzahl der Spalten in der Tasche"
 	
 	-- Minimap options
-	L_GUI_MINIMAP_ENABLE = "Enable minimap"  -- Needs review
+	L_GUI_MINIMAP_ENABLE = "Minimap aktivieren"
 	L_GUI_MINIMAP_ICON = "Aufspüren-Symbol"
 	L_GUI_MINIMAP_SIZE = "Kartengröße"
-	L_GUI_MINIMAP_HIDE_COMBAT = "Hide minimap in combat"  -- Needs review
+	L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
 	
 	-- Map options
-	L_GUI_MAP_ENABLE = "Enable world map"  -- Needs review
+	L_GUI_MAP_ENABLE = "Weltkarte aktivieren"
 	L_GUI_MAP_SCALE = "Skalierung der Weltkarte"
 	L_GUI_MAP_BG_STYLIZATION = "Schlachtfeldkarte Aussehn"
 	
 	-- Loot options
-	L_GUI_LOOT_ENABLE = "Enable loot frame"  -- Needs review
-	L_GUI_LOOT_ROLL_ENABLE = "Enable group loot frame"  -- Needs review
+	L_GUI_LOOT_ENABLE = "Plünderfenster aktivieren"
+	L_GUI_LOOT_ROLL_ENABLE = "Gruppenplünderfenster aktivieren"
 	L_GUI_LOOT_ICON_SIZE = "Symbolgröße"
-	L_GUI_LOOT_WIDTH = "Loot frame width"  -- Needs review
+	L_GUI_LOOT_WIDTH = "Breite des Plünderfensters"
 	L_GUI_LOOT_AUTOGREED = "Aktiviere automatisches Würfeln (Gier) für Gegenstände, falls das höchste Level erreicht wurde."
 	L_GUI_LOOT_AUTODE = "Entzauberung automatisch bestätigen"
 	
 	-- Nameplate options
-	L_GUI_NAMEPLATE_ENABLE = "Enable nameplates"  -- Needs review
+	L_GUI_NAMEPLATE_ENABLE = "Namensplaketten aktivieren"
 	L_GUI_NAMEPLATE_COMBAT = "Namensplaketten automatisch im Kampf anzeigen"
 	L_GUI_NAMEPLATE_HEALTH = "Numerischer Wert der Lebenspunkte"
 	L_GUI_NAMEPLATE_CASTBAR = "Zeige Zauberleiste an der Namensplakette"
@@ -155,43 +155,43 @@ if GetLocale() == "deDE" then
 	L_GUI_NAMEPLATE_CASTBAR_NAME = "Zeige den Namen in der Zauberleiste"
 	L_GUI_NAMEPLATE_THREAT = "Falls Tank und sichere Aggro = grün, keine = rot"
 	L_GUI_NAMEPLATE_CLASS_ICON = "Zeige Klassensymbole an (PVP)"
-	L_GUI_NAMEPLATE_NAME_ABBREV = "Display the abbreviated names"  -- Needs review
-	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap"  -- Needs review
+	L_GUI_NAMEPLATE_NAME_ABBREV = "Namen abgekürzt anzeigen"
+	L_GUI_NAMEPLATE_OVERLAP = "Überlappende Namensplaketten erlauben"
 	
 	-- ActionBar options
-	L_GUI_ACTIONBAR_ENABLE = "Enable action bars"  -- Needs review
+	L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
 	L_GUI_ACTIONBAR_HOTKEY = "Zeige Hotkey-Text an"
 	L_GUI_ACTIONBAR_GRID = "Zeige die leeren Knöpfe der Aktionsleisten an"
 	L_GUI_ACTIONBAR_BUTTON_SIZE = "Knopfgröße"
-	L_GUI_ACTIONBAR_BUTTON_SPACE = "Buttons space"  -- Needs review
-	L_GUI_ACTIONBAR_BOTTOMBARS = "Number of action bars on the bottom (1, 2 or 3)"  -- Needs review
-	L_GUI_ACTIONBAR_RIGHTBARS = "Number of action bars on right (0, 1, 2 or 3)"  -- Needs review
+	L_GUI_ACTIONBAR_BUTTON_SPACE = "Buttonabstand"
+	L_GUI_ACTIONBAR_BOTTOMBARS = "Anzahl der Aktionsleisten an der unteren Seite (1, 2 oder 3)"
+	L_GUI_ACTIONBAR_RIGHTBARS = "Anzahl der Aktionsleisten an der rechten Seite (0, 1, 2, oder 3)"
 	L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Zeige die rechten Leisten nur bei Mouseover"
 	L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Zeige die Begleiterleiste nur bei Mouseover(nur für horizontale Begleiterleiste)"
 	L_GUI_ACTIONBAR_PETBAR_HIDE = "Verstecke Begleiterleiste"
 	L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Aktiviere horizontale Begleiterleiste"
 	L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Zeige Haltungsleiste/Gestaltenleiste/Totems nur bei Mouseover"
 	L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Gestaltenleiste verstecken"
-	L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Enable horizontal stance bar"  -- Needs review
+	L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Horizontale Haltungsleiste aktivieren"
 	
 	-- Auras/Buffs/Debuffs
-	L_GUI_AURA_PLAYER_BUFF_SIZE = "Player buffs size"  -- Needs review
+	L_GUI_AURA_PLAYER_BUFF_SIZE = "Größe der Spielerbuffs"
 	L_GUI_AURA_SHOW_SPIRAL = "Spirale auf Buffsymbolen"
 	L_GUI_AURA_SHOW_TIMER = "Zeige Abklingzeit für Buffs"
 	L_GUI_AURA_PLAYER_AURAS = "Buffs auf dem Spielerfenster"
 	L_GUI_AURA_TARGET_AURAS = "Buffs auf dem Zielfenster"
 	L_GUI_AURA_FOCUS_DEBUFFS = "Debuffs auf dem Fokusfenster"
-	L_GUI_AURA_FOT_DEBUFFS = "DeBuffs on focus target frame"  -- Needs review
+	L_GUI_AURA_FOT_DEBUFFS = "Debuffs auf dem Fokusziel"
 	L_GUI_AURA_PET_DEBUFFS = "Debuffs auf dem Begleiterfenster"
 	L_GUI_AURA_TOT_DEBUFFS = "Debuffs bei Ziel des Ziels anzeigen"
 	L_GUI_AURA_PLAYER_AURA_ONLY = "Nur eigenen Debuffs bei dem Zielfenster anzeigen"
 	L_GUI_AURA_DEBUFF_COLOR_TYPE = "Debuffs nach Art einfärben"
 	
 	-- Unit frame options
-	L_GUI_UF_ENABLE = "Enable unit frames"  -- Needs review
+	L_GUI_UF_ENABLE = "Unitframes aktivieren"
 	L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"
 	L_GUI_UF_OWN_COLOR = "Farbe für die Lebensleiste festlegen"
-	L_GUI_UF_ENEMY_HEALTH_COLOR = "Enemy target healthbar is red"  -- Needs review
+	L_GUI_UF_ENEMY_HEALTH_COLOR = "Lebensleiste eines gegnerischen Ziels ist rot"
 	L_GUI_UF_TOTAL_VALUE = "Zeige Infotext auf Spieler und Ziel mit XXX/Gesamt"
 	L_GUI_UF_DEFICIT_HEALTH = "Fehlendes Leben im Raid"
 	L_GUI_UF_COLOR_VALUE = "Lebens/Mana Werte einfärben"
@@ -200,19 +200,19 @@ if GetLocale() == "deDE" then
 	L_GUI_UF_CASTBAR_LATENCY = "Latenz in Zauberleiste anzeigen"
 	L_GUI_UF_SHOW_BOSS = "Zeige eigenes Fenster für Bosse an"
 	L_GUI_UF_SHOW_ARENA = "Zeige Einheitenfenster in der Arena"
-	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right"  -- Needs review
-	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review
-	L_GUI_UF_SHOW_RAID = "Show raid frames"
+	L_GUI_UF_ARENA_RIGHT = "Arenafenster auf der rechten Seite"
+	L_GUI_UF_SHOW_PARTY = "Zeige Gruppenfenster"
+	L_GUI_UF_SHOW_RAID = "Zeige Raidfenster"
 	L_GUI_UF_VERTICAL_HEALTH = "Vertikale Orientierung für Lebensbalken"
-	L_GUI_UF_ALPHA_HEALTH = "Alpha of healthbars when 100%hp"  -- Needs review
+	L_GUI_UF_ALPHA_HEALTH = "Transparenz der Lebensbalken wenn 100% Leben"
 	L_GUI_UF_SHOW_RANGE = "Raidframes durchsichtig abhängig von der Entfernung"
 	L_GUI_UF_RANGE_ALPHA = "Einheitenfenster zu diesem Maß ausblenden wenn außer Reichweite"
 	L_GUI_UF_SOLO_MODE = "Spielerfenster immer Anzeigen"
 	L_GUI_UF_PLAYER_PARTY = "Spielerfenster in der Gruppe anzeigen"
 	L_GUI_UF_SHOW_TANK = "Zeige Raid Tanks an"
-	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
-	L_GUI_UF_RAID_GROUP = "Anzahl der Gruppen im Raid(nur für oUF_ShestakHeal)"
-	L_GUI_UF_RAID_VERTICAL_GROUP = "Vertical raid groups(Only for ShestakUI_Heal)"  -- Needs review
+	L_GUI_UF_SHOW_TANK_TT = "Zeige Ziel des Raid Tank Ziels (Ziel des Ziels)"
+	L_GUI_UF_RAID_GROUP = "Anzahl der Gruppen im Raid(nur für ShestakUI_Heal)"
+	L_GUI_UF_RAID_VERTICAL_GROUP = "Vertikale Raidgruppen(nur für ShestakUI_Heal)"
 	L_GUI_UF_ICONS_PVP = "Zeige PVP Text (keine Symbole) bei Mouseover (Spieler+Ziel)"
 	L_GUI_UF_ICONS_LEADER = "Anführer/Assistent/Plündermeister-Symbole an den Fenstern anzeigen"
 	L_GUI_UF_ICONS_COMBAT = "Kampfsymbol"
@@ -227,16 +227,16 @@ if GetLocale() == "deDE" then
 	L_GUI_UF_PORTRAIT_WIDTH = "Portraitbreite"
 	L_GUI_UF_PLUGINS_GCD = "Blitz für globalen Cooldown"
 	L_GUI_UF_PLUGINS_SWING = "Swingleiste"
-	L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Enable eclipse bar"  -- Needs review
-	L_GUI_UF_PLUGINS_HOLY_BAR = "Enable holy power bar"  -- Needs review
-	L_GUI_UF_PLUGINS_SHARD_BAR = "Enable shards bar" -- Needs review
+	L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Aktiviere Eclipseleiste"
+	L_GUI_UF_PLUGINS_HOLY_BAR = "Aktivere Heilige Kraft Leiste"
+	L_GUI_UF_PLUGINS_SHARD_BAR = "Aktiviere Splitter Leiste"
 	L_GUI_UF_PLUGINS_RUNE_BAR = "Runenleiste"
 	L_GUI_UF_PLUGINS_TOTEM_BAR = "Totemleiste"
 	L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Totemname"
 	L_GUI_UF_PLUGINS_REPUTATION_BAR = "Rufleiste"
 	L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Erfahrungsleiste"
 	L_GUI_UF_PLUGINS_SMOOTH_BAR = "Weichgezeichnete Leisten"
-	L_GUI_UF_PLUGINS_TALENTS = "Show enemy talent spec" -- Needs review
+	L_GUI_UF_PLUGINS_TALENTS = "Zeige gegnerische Talente"
 	L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"
 	L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff highlight texture + icon"  -- Needs review
 	L_GUI_UF_PLUGINS_AURA_WATCH = "*RAID* Buffüberwachung"
@@ -244,22 +244,22 @@ if GetLocale() == "deDE" then
 	
 	-- Panel options
 	L_GUI_TOP_PANEL = "Oberes Panel"
-	L_GUI_TOP_PANEL_ENABLE = "Enable top panel"	-- Needs review
+	L_GUI_TOP_PANEL_ENABLE = "Aktiviere oberes Panel"
 	L_GUI_TOP_PANEL_MOUSE = "Oberes Panel nur bei Mouseover anzeigen"
 	L_GUI_TOP_PANEL_WIDTH = "Breite des Panels"
 	L_GUI_TOP_PANEL_HEIGHT = "Höhe des Panels"
 	
 	-- Stats options
-	L_GUI_STATS = "Stats"  -- Needs review
-	L_GUI_STATS_BG = "Battleground"  -- Needs review
-	L_GUI_STATS_CLOCK = "Clock"  -- Needs review
-	L_GUI_STATS_LATENCY = "Latency"  -- Needs review
-	L_GUI_STATS_MEMORY = "Memory"  -- Needs review
-	L_GUI_STATS_FPS = "FPS"  -- Needs review
-	L_GUI_STATS_EXPERIENCE = "Experience"  -- Needs review
-	L_GUI_STATS_COORDS = "Coords"  -- Needs review
-	L_GUI_STATS_LOCATION = "Location"  -- Needs review
-	L_GUI_STATS_GUILD_REPAIR = "Repair from guild bank" -- Needs review
+	L_GUI_STATS = "Statistiken"
+	L_GUI_STATS_BG = "Schlachtfeld"
+	L_GUI_STATS_CLOCK = "Uhr"
+	L_GUI_STATS_LATENCY = "Latenz"
+	L_GUI_STATS_MEMORY = "Speicher"
+	L_GUI_STATS_FPS = "BPS"
+	L_GUI_STATS_EXPERIENCE = "Erfahrung"
+	L_GUI_STATS_COORDS = "Koordinaten"
+	L_GUI_STATS_LOCATION = "Ort"
+	L_GUI_STATS_GUILD_REPAIR = "Reparieren mithilfe der Gildenbank"
 	
 	-- Error options
 	L_GUI_ERROR = "Fehler"

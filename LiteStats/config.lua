@@ -119,7 +119,7 @@ LPSTAT_CONFIG = {
 		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = 0, tip_y = -6
 	},
 	Durability = {
-		enabled = SettingsCF["toppanel"].enable,
+		enabled = true,
 		fmt = class"D: ".."[color]%d|r%%",-- "54%D" -- %% outputs %, [color] inserts durability color code.
 		man = true, -- Hide bliz durability man.
 		gfunds = SettingsCF.stats.guild_repair, -- Change to false to disable guild repairing.

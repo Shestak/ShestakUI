@@ -330,6 +330,12 @@ if memory.enabled then
 				end
 				GameTooltip:AddDoubleLine(" ","--------------",1,1,1,0.5,0.5,0.5)
 			end
+			local bandwidth = GetAvailableBandwidth()
+			if bandwidth ~= 0 then
+				GameTooltip:AddDoubleLine(L"Bandwidth"..":",format("%s ".."Mbps",bandwidth),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L"Download"..":",format("%s%%", floor(GetDownloadedPercentage()*100+0.5)),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddLine(" ")
+			end
 			GameTooltip:AddDoubleLine(L"Default UI Memory Usage"..":",formatmem(gcinfo() - self.text.total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			GameTooltip:AddDoubleLine(L"Total Memory Usage"..":",formatmem(collectgarbage'count'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 	        GameTooltip:Show()

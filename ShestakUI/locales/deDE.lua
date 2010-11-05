@@ -8,7 +8,7 @@ if SettingsDB.client == "deDE" then
 	L_TOOLTIP_ACH_STATUS = "Dein Fortschritt:"
 	L_TOOLTIP_ACH_COMPLETE = "Dein Status: Fertig gestellt am "
 	L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
-	L_TOOLTIP_SPELL_ID = "Spell ID:"  -- Needs review
+	L_TOOLTIP_SPELL_ID = "Zauber ID:"
 
 	-- Raid Utility
 	L_RAID_UTIL = "Raid Utility"
@@ -44,9 +44,9 @@ if SettingsDB.client == "deDE" then
 	L_ALOAD_SOLO = "Solo"
 
 	-- ShestakUI_Config
-	L_GUI_MINIMAP_ICON_LM = "Left Click - Enter to GUI"  -- Needs review
-	L_GUI_MINIMAP_ICON_RM = "Right Click - Dropdown menu"  -- Needs review
-	L_GUI_MINIMAP_ICON_SD = "Shift + Drag - Move Button"  -- Needs review
+	L_GUI_MINIMAP_ICON_LM = "Linke Maustaste - GUI öffnen"
+	L_GUI_MINIMAP_ICON_RM = "Rechte Maustaste - Dropdownmenü"
+	L_GUI_MINIMAP_ICON_SD = "Shift + Ziehen - Button bewegen"
 	L_GUI_MINIMAP_ICON_SRM = "Umschalttaste + Rechts Klick - Interface Neuladen"
 	L_GUI_MINIMAP_ICON_SLASH = "Chat-Befehle"
 	L_GUI_MINIMAP_ICON_SPEC = "Spec wechseln"
@@ -211,19 +211,19 @@ if SettingsDB.client == "deDE" then
 	L_INFO_SETTINGS_DBM = "Gebe /settings dbm ein, um DBM Einstellungen zu laden."
 	L_INFO_SETTINGS_MSBT = "Gebe /settings msbt ein, um die MSBT Einstellungen zu laden."
 	L_INFO_SETTINGS_SKADA = "Gebe /settings skada ein, um die Skada Einstellungen zu laden."
-	L_INFO_SETTINGS_RECOUNT = "Type /settings recount, to apply the settings Recount. Then in Recount options select *Default* profile."  -- Needs review
-	L_INFO_SETTINGS_DXE = "Type /settings dxe, to apply the settings DXE. Then in DXE options select *Default* profile."  -- Needs review
+	L_INFO_SETTINGS_RECOUNT = "Gebe /settings recount ein, um die Recount Einstellungen zu laden. Danach in den Recountoptionen das *Default* Profil auswählen."
+	L_INFO_SETTINGS_DXE = "Gebe /settings dxe ein, um die DXE Einstellungen zu laden. Wähle danach das Profil *Default* in den DXE Optionen."
 	L_INFO_SETTINGS_ALL = "Gebe /settings all ein, um die Einstellungen für alle unterstützten AddOns zu laden."
 	
 	-- Popups
 	L_POPUP_INSTALLUI = "Dies ist Ihre erste Benutzung von ShestakUI mit diesem Charakter. Um das Interface zu konfigurieren, wird das UI nun neugeladen."
 	L_POPUP_RESETUI = "Sind Sie sich sicher, dass Sie die Einstellungen von ShestakUI zurückgesetzen wollen?"
 	L_POPUP_SWITCH_RAID = "Es sind 2 Raidlayouts aktiviert, bitte wählen Sie eines davon aus."
-	L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?" -- Needs review
+	L_POPUP_DISBAND_RAID = "Bist du dir sicher, dass du die Gruppe auflösen möchtest?"
 	L_POPUP_DISABLEUI = "ShestakUI funktioniert nicht mit deiner Auflösung, möchtest du ShestakUI ausschalten? (Drücke Abbrechen, falls du eine andere Auflösung testen willst)"
-	L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM/DXE, Skada/Recount and MSBT)"  -- Needs review
-	L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."  -- Needs review
-	L_POPUP_SETTINGS_CLIQUE = "Your Clique settings are not setup with ShestakUI, would you like to set them up?"  -- Needs review
+	L_POPUP_SETTINGS_ALL = "Einstellungen für alle AddOns übernehmen? (DBM/DXE, Skada/Rexount und MSBT)"
+	L_POPUP_SETTINGS_DBM = "Die Position der DBM Elemente muss verändert werden."
+	L_POPUP_SETTINGS_CLIQUE = "Deine Clique Einstellungen sind nicht mit ShestakUI kompatibel. Willst du sie neu einstellen?"
 	
 	-- Welcome mesage
 	L_WELCOME_LINE_1 = "Willkommen bei ShestakUI "

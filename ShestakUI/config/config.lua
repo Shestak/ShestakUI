@@ -297,6 +297,7 @@ SettingsCF["unitframe"] = {
 	["castbar_icon"] = false,					-- Show castbar icons
 	["castbar_latency"] = true,					-- Castbar latency
 	["show_boss"] = true,						-- Show boss frames
+	["boss_on_right"] = false,					-- Set true for ShestakUI_DPS
 	["show_arena"] = true,						-- Show arena frames
 	["arena_on_right"] = true,					-- Set true for ShestakUI_DPS
 	-- Raid

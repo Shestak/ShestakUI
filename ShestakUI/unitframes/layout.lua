@@ -349,7 +349,7 @@ local function Shared(self, unit)
 				
 				local eclipseBarPers = SettingsDB.SetFontString(solarBar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 				eclipseBarPers:SetPoint("LEFT", eclipseBarText, "RIGHT", SettingsDB.Scale(2), 0)
-				self:Tag(eclipseBarPers, '[pereclipse]%')
+				self:Tag(eclipseBarPers, "[pereclipse]%")
 				
 				self.EclipseBar = eclipseBar
 				self.EclipseBar.Text = eclipseBarText
@@ -910,7 +910,11 @@ if db.show_boss == true then
 	for i = 1, MAX_BOSS_FRAMES do
 		boss[i] = oUF:Spawn("boss"..i, "oUF_Boss"..i)
 		if i == 1 then
-			boss[i]:SetPoint(unpack(SettingsCF["position"].unitframes.boss))
+			if db.boss_on_right == true then
+				boss[i]:SetPoint(unpack(SettingsCF["position"].unitframes.boss))
+			else
+				boss[i]:SetPoint("BOTTOMLEFT", pos.boss[2], "LEFT", pos.boss[4] + 38, pos.boss[5])
+			end
 		else
 			boss[i]:SetPoint("BOTTOM", boss[i-1], "TOP", 0, 30)
 		end

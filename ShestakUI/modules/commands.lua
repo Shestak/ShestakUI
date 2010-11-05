@@ -12,6 +12,7 @@ SLASH_RCSLASH2 = "/кс"
 SlashCmdList["TICKET"] = function() ToggleHelpFrame() end
 SLASH_TICKET1 = "/gm"
 SLASH_TICKET2 = "/гм"
+SLASH_TICKET3 = "/пь"
 
 SlashCmdList["DISABLE_ADDON"] = function(s) DisableAddOn(s) end
 SLASH_DISABLE_ADDON1 = "/dis"
@@ -55,6 +56,7 @@ SlashCmdList["GROUPDISBAND"] = function()
 	StaticPopup_Show("DISBAND_RAID")
 end
 SLASH_GROUPDISBAND1 = "/rd"
+SLASH_GROUPDISBAND2 = "/кв"
 
 ----------------------------------------------------------------------------------------
 --	Enable lua error
