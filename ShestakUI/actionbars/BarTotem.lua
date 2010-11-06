@@ -9,11 +9,21 @@ if MultiCastActionBarFrame then
 	MultiCastActionBarFrame:SetScript("OnHide", nil)
 	MultiCastActionBarFrame:SetParent("ShiftBar")
 	MultiCastActionBarFrame:ClearAllPoints()
-	MultiCastActionBarFrame:SetPoint("BOTTOMLEFT", "ShiftBar", "BOTTOMLEFT", 0, -10)
- 
-	hooksecurefunc("MultiCastActionButton_Update",function(actionbutton) if not InCombatLockdown() then actionbutton:SetAllPoints(actionbutton.slotButton) end end)
- 
-	--MultiCastActionBarFrame.SetParent = SettingsDB.dummy
-	--MultiCastActionBarFrame.SetPoint = SettingsDB.dummy
-	--MultiCastRecallSpellButton.SetPoint = SettingsDB.dummy
+	MultiCastActionBarFrame:SetPoint("BOTTOMLEFT", "ShiftBar", "BOTTOMLEFT", -3, -3)
+
+	hooksecurefunc("MultiCastActionButton_Update", function(actionbutton) if not InCombatLockdown() then actionbutton:SetAllPoints(actionbutton.slotButton) end end)
+
+	for i = 1, 12 do
+		if i < 6 then
+			local button = _G["MultiCastSlotButton"..i] or MultiCastRecallSpellButton
+			local prev = _G["MultiCastSlotButton"..(i-1)] or MultiCastSummonSpellButton
+			prev.idx = i - 1
+			button:ClearAllPoints()
+			ActionButton1.SetPoint(button, "LEFT", prev, "RIGHT", SettingsDB.buttonspacing, 0)
+		end
+	end
+
+	MultiCastActionBarFrame.SetParent = SettingsDB.dummy
+	MultiCastActionBarFrame.SetPoint = SettingsDB.dummy
+	MultiCastRecallSpellButton.SetPoint = SettingsDB.dummy -- This causes taint
 end

@@ -2,7 +2,7 @@
 ## Title: xCT
 ## Notes: X Combat Text
 ## Author: Affli @ RU-Howling Fjord
-## Version: 1.6
+## Version: 1.7
 ## RequiredDeps: Blizzard_CombatText, ShestakUI
 
 xCT.lua

@@ -32,13 +32,13 @@ local ct={
 	["dotdamage"] = SettingsCF["combattext"].dot_damage,		-- show damage from your dots. someone asked an option to disable lol.
 	["treshold"] = SettingsCF["combattext"].treshold,		-- minimum damage to show in outgoing damage frame
 	["healtreshold"] = SettingsCF["combattext"].heal_treshold,		-- minimum healing to show in incoming/outgoing healing messages.
-	["killingblow"] = SettingsCF["combattext"].killingblow,		-- tells you about your killingblows
 	
 -- appearence
 	["font"] = SettingsCF["font"].combat_text_font,	-- "Fonts\\ARIALN.ttf" is default WoW font.
 	["fontsize"] = SettingsCF["font"].combat_text_font_size,
 	["fontstyle"] = SettingsCF["font"].combat_text_font_style,	-- valid options are "OUTLINE", "MONOCHROME", "THICKOUTLINE", "OUTLINE,MONOCHROME", "THICKOUTLINE,MONOCHROME"
 	["damagefont"] = SettingsCF["font"].combat_text_font,	 -- "Fonts\\FRIZQT__.ttf" is default WoW damage font
+	["damagefontsize"] = SettingsCF["font"].combat_text_font_size,	-- size of xCT damage font. use "auto" to set it automatically depending on icon size, or use own value, 16 for example. if it's set to number value icons will change size.
 	["timevisible"] = SettingsCF["combattext"].time_visible, 		-- time (seconds) a single message will be visible. 3 is a good value.
 	["scrollable"] = SettingsCF["combattext"].scrollable,		-- allows you to scroll frame lines with mousewheel.
 	["maxlines"] = SettingsCF["combattext"].max_lines,		-- max lines to keep in scrollable mode. more lines=more memory. nom nom nom.
@@ -48,6 +48,7 @@ local ct={
 	["dkrunes"] = SettingsCF["combattext"].dk_runes,		-- show deatchknight rune recharge
 	["mergeaoespam"] = SettingsCF["combattext"].merge_aoe_spam,	-- merges multiple aoe spam into single message, can be useful for dots too.
 	["mergeaoespamtime"] = SettingsCF["combattext"].merge_aoe_spam_time,	-- time in seconds aoe spell will be merged into single message. minimum is 1.
+	["killingblow"] = SettingsCF["combattext"].killingblow,		-- tells you about your killingblows
 }
 ---------------------------------------------------------------------------------
 -- outgoing healing filter, hide this spammy shit, plx
@@ -76,6 +77,8 @@ if ct.myclass=="WARLOCK" then
 		ct.aoespam[42223]=true	-- Rain of Fire
 		ct.aoespam[5857]=true	-- Hellfire Effect
 		ct.aoespam[50590]=true	-- Immolation Aura
+		ct.aoespam[30213]=true	-- Legion Strike (Felguard)
+		ct.aoespam[89753]=true	-- Felstorm (Felguard)
 	end
 	if(ct.healing)then
 		ct.healfilter[28176]=true -- Fel Armor
@@ -486,6 +489,14 @@ for i=1,numf do
 	else
 		f:SetJustifyH"RIGHT"
 		f:SetPoint("CENTER",330,205)
+		local a,_,c=f:GetFont()
+		if (ct.damagefontsize=="auto")then
+			if ct.icons then
+				f:SetFont(a,ct.iconsize/2,c)
+			end
+		elseif (type(ct.damagefontsize)=="number")then
+			f:SetFont(a,ct.damagefontsize,c)
+		end
 	end
 	ct.frames[i] = f
 end
@@ -560,64 +571,67 @@ end
 
 -- awesome configmode and testmode
 local StartConfigmode=function()
-	for i=1,#ct.frames do
-		f=ct.frames[i]
-		f:SetBackdrop({
-			bgFile="Interface/Tooltips/UI-Tooltip-Background",
-			edgeFile="Interface/Tooltips/UI-Tooltip-Border",
-			tile=false,tileSize=0,edgeSize=2,
-			insets={left=0,right=0,top=0,bottom=0}})
-		f:SetBackdropColor(.1,.1,.1,.8)
-		f:SetBackdropBorderColor(.1,.1,.1,.5)
+	if not InCombatLockdown()then
+		for i=1,#ct.frames do
+			f=ct.frames[i]
+			f:SetBackdrop({
+				bgFile="Interface/Tooltips/UI-Tooltip-Background",
+				edgeFile="Interface/Tooltips/UI-Tooltip-Border",
+				tile=false,tileSize=0,edgeSize=2,
+				insets={left=0,right=0,top=0,bottom=0}})
+			f:SetBackdropColor(.1,.1,.1,.8)
+			f:SetBackdropBorderColor(.1,.1,.1,.5)
 
-		f.fs=f:CreateFontString(nil,"OVERLAY")
-		f.fs:SetFont(ct.font,ct.fontsize,ct.fontstyle)
-		f.fs:SetPoint("BOTTOM",f,"TOP",0,0)
-		if(i==1)then
-			f.fs:SetText(DAMAGE.." (drag me)")
-			f.fs:SetTextColor(1,.1,.1,.9)
-		elseif(i==2)then
-			f.fs:SetText(SHOW_COMBAT_HEALING.."(drag me)")
-			f.fs:SetTextColor(.1,1,.1,.9)
-		elseif(i==3)then
-			f.fs:SetText(COMBAT_TEXT_LABEL.."(drag me)")
-			f.fs:SetTextColor(.1,.1,1,.9)
-		else
-			f.fs:SetText(SCORE_DAMAGE_DONE.." / "..SCORE_HEALING_DONE)
-			f.fs:SetTextColor(1,1,0,.9)
+			f.fs=f:CreateFontString(nil,"OVERLAY")
+			f.fs:SetFont(ct.font,ct.fontsize,ct.fontstyle)
+			f.fs:SetPoint("BOTTOM",f,"TOP",0,0)
+			if(i==1)then
+				f.fs:SetText(DAMAGE.." (drag me)")
+				f.fs:SetTextColor(1,.1,.1,.9)
+			elseif(i==2)then
+				f.fs:SetText(SHOW_COMBAT_HEALING.."(drag me)")
+				f.fs:SetTextColor(.1,1,.1,.9)
+			elseif(i==3)then
+				f.fs:SetText(COMBAT_TEXT_LABEL.."(drag me)")
+				f.fs:SetTextColor(.1,.1,1,.9)
+			else
+				f.fs:SetText(SCORE_DAMAGE_DONE.." / "..SCORE_HEALING_DONE)
+				f.fs:SetTextColor(1,1,0,.9)
+			end
+
+			f.t=f:CreateTexture"ARTWORK"
+			f.t:SetPoint("TOPLEFT",f,"TOPLEFT",1,-1)
+			f.t:SetPoint("TOPRIGHT",f,"TOPRIGHT",-1,-19)
+			f.t:SetHeight(20)
+			f.t:SetTexture(.5,.5,.5)
+			f.t:SetAlpha(.3)
+
+			f.d=f:CreateTexture"ARTWORK"
+			f.d:SetHeight(16)
+			f.d:SetWidth(16)
+			f.d:SetPoint("BOTTOMRIGHT",f,"BOTTOMRIGHT",-1,1)
+			f.d:SetTexture(.5,.5,.5)
+			f.d:SetAlpha(.3)
+
+			f.tr=f:CreateTitleRegion()
+			f.tr:SetPoint("TOPLEFT",f,"TOPLEFT",0,0)
+			f.tr:SetPoint("TOPRIGHT",f,"TOPRIGHT",0,0)
+			f.tr:SetHeight(20)
+
+			f:EnableMouse(true)
+			f:RegisterForDrag"LeftButton"
+			f:SetScript("OnDragStart",f.StartSizing)
+			if not(ct.scrollable)then
+			f:SetScript("OnSizeChanged",function(self)
+				self:SetMaxLines(self:GetHeight()/ct.fontsize)
+				self:Clear()
+			end)
+			end
+
+			f:SetScript("OnDragStop",f.StopMovingOrSizing)
+			ct.locked=false
 		end
-
-		f.t=f:CreateTexture"ARTWORK"
-		f.t:SetPoint("TOPLEFT",f,"TOPLEFT",1,-1)
-		f.t:SetPoint("TOPRIGHT",f,"TOPRIGHT",-1,-19)
-		f.t:SetHeight(20)
-		f.t:SetTexture(.5,.5,.5)
-		f.t:SetAlpha(.3)
-
-		f.d=f:CreateTexture"ARTWORK"
-		f.d:SetHeight(16)
-		f.d:SetWidth(16)
-		f.d:SetPoint("BOTTOMRIGHT",f,"BOTTOMRIGHT",-1,1)
-		f.d:SetTexture(.5,.5,.5)
-		f.d:SetAlpha(.3)
-
-		f.tr=f:CreateTitleRegion()
-		f.tr:SetPoint("TOPLEFT",f,"TOPLEFT",0,0)
-		f.tr:SetPoint("TOPRIGHT",f,"TOPRIGHT",0,0)
-		f.tr:SetHeight(20)
-
-		f:EnableMouse(true)
-		f:RegisterForDrag"LeftButton"
-		f:SetScript("OnDragStart",f.StartSizing)
-		if not(ct.scrollable)then
-		f:SetScript("OnSizeChanged",function(self)
-			self:SetMaxLines(self:GetHeight()/ct.fontsize)
-			self:Clear()
-		end)
-		end
-
-		f:SetScript("OnDragStop",f.StopMovingOrSizing)
-		ct.locked=false
+		pr("unlocked.")
 	end
 end
 
@@ -635,7 +649,6 @@ local function EndConfigmode()
 		f:EnableMouse(false)
 		f:SetScript("OnDragStart",nil)
 		f:SetScript("OnDragStop",nil)
-		
 	end
 	ct.locked=true
 	pr("Window positions unsaved, don't forget to reload UI.")
@@ -717,7 +730,7 @@ StaticPopupDialogs["XCT_LOCK"]={
 	text="To save |cffFF0000x|rCT window positions you need to reload your UI.\n Click "..ACCEPT.." to reload UI.\nClick "..CANCEL.." to do it later.",
 	button1=ACCEPT,
 	button2=CANCEL,
-	OnAccept=ReloadUI,
+	OnAccept=function() if not InCombatLockdown() then ReloadUI() else EndConfigmode() end end,
 	OnCancel=EndConfigmode,
 	timeout=0,
 	whileDead=1,
@@ -732,7 +745,6 @@ SlashCmdList["XCT"]=function(input)
 	if(input=="unlock")then
 		if (ct.locked)then
 			StartConfigmode()
-			pr("unlocked.")
 		else
 			pr("already unlocked.")
 		end
@@ -750,7 +762,23 @@ SlashCmdList["XCT"]=function(input)
 			StartTestMode()
 			pr("test mode enabled.")
 		end
-
+	elseif(input=="mypos")then
+		xCT1:ClearAllPoints()
+		xCT1:SetPoint("CENTER",UIParent,"CENTER",-90,-8)
+		xCT1:SetHeight(142)
+		xCT1:SetWidth(128)
+		xCT2:ClearAllPoints()
+		xCT2:SetPoint("CENTER",UIParent,"CENTER",90,-8)
+		xCT2:SetHeight(142)
+		xCT2:SetWidth(128)
+		xCT3:ClearAllPoints()
+		xCT3:SetPoint("TOP",UIParent,"TOP",-2,-34)
+		xCT3:SetHeight(264)
+		xCT3:SetWidth(216)
+		xCT4:ClearAllPoints()
+		xCT4:SetPoint("CENTER",UIParent,"CENTER",444,152)
+		xCT4:SetHeight(172)
+		xCT4:SetWidth(136)
 	else
 		pr("use |cffFF0000/xct unlock|r to move and resize frames.")
 		pr("use |cffFF0000/xct lock|r to lock frames.")
@@ -796,13 +824,6 @@ if(ct.damage)then
 	
 	if(ct.icons)then
 		ct.blank="Interface\\AddOns\\ShestakUI\\media\\blank"
-	end
-	local getcrit=function(critical)
-		local id
-		if critical then
-			id=2
-		end
-		return id
 	end
 	if(ct.mergeaoespam)then
 		if (not ct.mergeaoespamtime or ct.mergeaoespamtime<1) then

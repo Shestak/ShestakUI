@@ -291,3 +291,202 @@ end
 hooksecurefunc("ActionButton_Update", style)
 hooksecurefunc("ActionButton_UpdateHotkeys", updatehotkey)
 hooksecurefunc("ActionButton_UpdateFlyout", styleflyout)
+
+----------------------------------------------------------------------------------------
+--	TotemBar style
+----------------------------------------------------------------------------------------
+if SettingsDB.class ~= "SHAMAN" then return end
+
+SLOT_EMPTY_TCOORDS = {
+	[EARTH_TOTEM_SLOT] = {
+		left = 66 / 128,
+		right = 96 / 128,
+		top = 3 / 256,
+		bottom = 33 / 256,
+	},
+	[FIRE_TOTEM_SLOT] = {
+		left = 67 / 128,
+		right = 97 / 128,
+		top = 100 / 256,
+		bottom = 130 / 256,
+	},
+	[WATER_TOTEM_SLOT] = {
+		left = 39 / 128,
+		right = 69 / 128,
+		top = 209 / 256,
+		bottom = 239 / 256,
+	},
+	[AIR_TOTEM_SLOT] = {
+		left = 66 / 128,
+		right = 96 / 128,
+		top = 36 / 256,
+		bottom = 66 / 256,
+	},
+}
+
+-- Totem Fly Out
+function TotemBarFlyoutFrame(flyout)
+	flyout.top:SetTexture(nil)
+	flyout.middle:SetTexture(nil)
+
+	-- Buttons
+	local last = nil
+	for _, button in ipairs(flyout.buttons) do
+		local name = button:GetName()
+		local icon = _G[name.."Icon"]
+		if icon then
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			icon:SetDrawLayer("ARTWORK")
+			icon:ClearAllPoints()
+			icon:SetPoint("TOPLEFT", button, "TOPLEFT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
+			icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
+		end
+
+		SettingsDB.CreateTemplate(button)
+		SettingsDB.StyleButton(button, false)
+
+		if not InCombatLockdown() then
+			button:SetSize(SettingsDB.buttonsize, SettingsDB.buttonsize)
+			button:ClearAllPoints()
+			button:SetPoint("BOTTOM", last, "TOP", 0, SettingsDB.buttonspacing)
+		end
+
+		if button:IsVisible() then
+			last = button
+		end
+	end
+
+	flyout.buttons[1]:SetPoint("BOTTOM", flyout, "BOTTOM", 0, 0)
+
+	if flyout.type == "slot" then
+		local tcoords = SLOT_EMPTY_TCOORDS[flyout.parent:GetID()]
+		flyout.buttons[1].icon:SetTexCoord(tcoords.left, tcoords.right, tcoords.top, tcoords.bottom)
+	end
+
+	-- Close Button
+	local close = MultiCastFlyoutFrameCloseButton
+	SettingsDB.CreateTemplate(close)
+	SettingsDB.StyleButton(close, false)
+
+	close:GetHighlightTexture():SetPoint("TOPLEFT", close, "TOPLEFT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
+	close:GetHighlightTexture():SetPoint("BOTTOMRIGHT", close, "BOTTOMRIGHT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
+	close:GetNormalTexture():SetTexture(nil)
+	close:ClearAllPoints()
+	close:SetPoint("BOTTOMLEFT", last, "TOPLEFT", 0, SettingsDB.buttonspacing)
+	close:SetPoint("BOTTOMRIGHT", last, "TOPRIGHT", 0, SettingsDB.buttonspacing)
+	close:SetHeight(SettingsDB.buttonspacing * 4)
+
+	flyout:ClearAllPoints()
+	flyout:SetPoint("BOTTOM", flyout.parent, "TOP", 0, SettingsDB.buttonspacing)
+end
+hooksecurefunc("MultiCastFlyoutFrame_ToggleFlyout",function(self) TotemBarFlyoutFrame(self) end)
+
+-- Totem Fly Out Buttons
+function TotemBarFlyoutOpenButton(button, parent)
+	SettingsDB.CreateTemplate(button)
+	SettingsDB.StyleButton(button, false)
+
+	button:GetNormalTexture():SetTexture(nil)
+	button:GetHighlightTexture():SetPoint("TOPLEFT", button, "TOPLEFT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
+	button:GetHighlightTexture():SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
+
+	button:ClearAllPoints()
+	button:SetFrameLevel(parent:GetFrameLevel())
+	button:SetPoint("BOTTOMLEFT", parent, "TOPLEFT", 0, SettingsDB.Scale(-1))
+	button:SetPoint("BOTTOMRIGHT", parent, "TOPRIGHT", 0, SettingsDB.Scale(-1))
+
+	button:SetHeight(SettingsDB.buttonspacing * 4)
+end
+hooksecurefunc("MultiCastFlyoutFrameOpenButton_Show",function(button,_, parent) TotemBarFlyoutOpenButton(button, parent) end)
+
+-- Totem Slot Buttons
+function TotemBarSlotButton(button, index)
+	SettingsDB.CreateTemplate(button)
+	SettingsDB.StyleButton(button, false)
+
+	if _G[button:GetName().."Panel"] then
+		_G[button:GetName().."Panel"]:Hide()
+	end
+
+	button.overlayTex:SetTexture(nil)
+	button.overlayTex:Hide()
+	button:SetNormalTexture("")
+
+	button.background:SetDrawLayer("ARTWORK")
+	button.background:ClearAllPoints()
+	button.background:SetPoint("TOPLEFT", button, "TOPLEFT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
+	button.background:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
+	
+	if not InCombatLockdown() then
+		button:SetSize(SettingsDB.buttonsize, SettingsDB.buttonsize)
+	end
+end
+hooksecurefunc("MultiCastSlotButton_Update", function(self, slot) TotemBarSlotButton(self, slot) end)
+
+function TotemBarActionButton(button, index)
+	local name = button:GetName()
+	local icon = _G[name.."Icon"]
+	local normal = _G[name.."NormalTexture"]
+
+	if icon then
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:SetDrawLayer("ARTWORK")
+		icon:ClearAllPoints()
+		icon:SetPoint("TOPLEFT", button, "TOPLEFT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
+		icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
+	end
+
+	if normal then
+		normal:ClearAllPoints()
+		normal:SetPoint("TOPLEFT")
+		normal:SetPoint("BOTTOMRIGHT")
+	end
+
+	--SettingsDB.CreateTemplate(button)
+	SettingsDB.StyleButton(button, true)
+
+	button.overlayTex:SetTexture(nil)
+	button.overlayTex:Hide()
+	button:SetNormalTexture("")
+
+	if _G[button:GetName().."Panel"] then
+		_G[button:GetName().."Panel"]:Hide()
+	end
+
+	if not InCombatLockdown() then
+		button:SetAllPoints(button.slotButton)
+	end
+
+	--button:SetBackdropColor(0, 0, 0, 0)
+end
+hooksecurefunc("MultiCastActionButton_Update", function(actionButton, actionId, actionIndex, slot) TotemBarActionButton(actionButton, actionIndex) end)
+
+
+-- Summon and Recall Buttons
+function TotemBarSpellButton(button, index)
+	if not button then return end
+
+	local name = button:GetName()
+	local icon = _G[name.."Icon"]
+	if icon then
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:SetDrawLayer("ARTWORK")
+		icon:ClearAllPoints()
+		icon:SetPoint("TOPLEFT", button, "TOPLEFT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
+		icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
+	end
+
+	SettingsDB.CreateTemplate(button)
+	SettingsDB.StyleButton(button, false)
+
+	button:GetNormalTexture():SetTexture(nil)
+
+	if not InCombatLockdown() then
+		button:SetSize(SettingsDB.buttonsize, SettingsDB.buttonsize)
+	end
+
+	_G[name.."Highlight"]:SetTexture(nil)
+	_G[name.."NormalTexture"]:SetTexture(nil)
+end
+hooksecurefunc("MultiCastSummonSpellButton_Update", function(self) TotemBarSpellButton(self, 0) end)
+hooksecurefunc("MultiCastRecallSpellButton_Update", function(self) TotemBarSpellButton(self, 5) end)
