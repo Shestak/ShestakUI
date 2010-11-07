@@ -59,6 +59,31 @@ petbaranchor:SetBackdropBorderColor(0, 0, 0, 0)
 petbaranchor.bg:SetVertexColor(0, 0, 0, 0)
 
 ----------------------------------------------------------------------------------------
+--	Stance bar panel
+----------------------------------------------------------------------------------------
+if not SettingsCF["actionbar"].shapeshift_hide then
+	local shiftanchor = CreateFrame("Frame", "ShapeShiftBarAnchor", UIParent)
+	shiftanchor:RegisterEvent("PLAYER_LOGIN")
+	shiftanchor:RegisterEvent("PLAYER_ENTERING_WORLD")
+	shiftanchor:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
+	shiftanchor:RegisterEvent("UPDATE_SHAPESHIFT_FORM")
+	shiftanchor:SetScript("OnEvent", function(self, event, ...)
+		local forms = GetNumShapeshiftForms()
+		if forms > 0 then
+			if SettingsCF["actionbar"].shapeshift_horizontal ~= true then
+				shiftanchor:SetWidth(SettingsDB.buttonsize)
+				shiftanchor:SetHeight((SettingsDB.buttonsize * forms) + ((SettingsDB.buttonspacing * forms) - 3 ))
+				shiftanchor:SetPoint("TOPLEFT", _G["ShapeshiftButton1"], "TOPLEFT")
+			else
+				shiftanchor:SetWidth((SettingsDB.buttonsize * forms) + ((SettingsDB.buttonspacing * forms) - 3))
+				shiftanchor:SetHeight(SettingsDB.buttonsize)
+				shiftanchor:SetPoint("TOPLEFT", _G["ShapeshiftButton1"], "TOPLEFT")
+			end
+		end
+	end)
+end
+
+----------------------------------------------------------------------------------------
 --	Chat background 
 ----------------------------------------------------------------------------------------
 if SettingsCF["chat"].background == true then

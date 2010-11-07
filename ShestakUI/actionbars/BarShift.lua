@@ -121,6 +121,9 @@ if SettingsCF.actionbar.shapeshift_mouseover == true then
 			b:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
 		end
 	else
+		ShapeShiftBarAnchor:SetAlpha(0)
+		ShapeShiftBarAnchor:SetScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+		ShapeShiftBarAnchor:SetScript("OnLeave", function() ShapeShiftMouseOver(1) end)
 		for i = 1, NUM_SHAPESHIFT_SLOTS do
 			local b = _G["ShapeshiftButton"..i]
 			b:SetAlpha(0)

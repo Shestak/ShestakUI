@@ -247,7 +247,7 @@ oUF:Factory(function(self)
 					self:SetHeight(14)
 				else
 					self:SetWidth(60.2)
-				self:SetHeight(26)
+					self:SetHeight(26)
 				end
 			]]),
 			"showSolo", db.solo_mode,

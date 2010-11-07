@@ -108,6 +108,7 @@ function ShapeShiftMouseOver(alpha)
 			local pb = _G["ShapeshiftButton"..i]
 			pb:SetAlpha(alpha)
 		end
+		ShapeShiftBarAnchor:SetAlpha(alpha)
 	end
 end
 
