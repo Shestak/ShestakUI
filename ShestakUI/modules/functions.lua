@@ -854,7 +854,7 @@ do
 		if unit == "vehicle" then unit = "player" end
 
 		if unit == "player" and db.castbar_latency == true then
-			local latency = GetTime() - Castbar.castSent
+			local latency = GetTime() - (Castbar.castSent or 0)
 			latency = latency > Castbar.max and Castbar.max or latency
 			Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
 			Castbar.SafeZone:SetWidth(Castbar:GetWidth() * latency / Castbar.max)
@@ -915,7 +915,7 @@ do
 		if unit == "vehicle" then unit = "player" end
 
 		if unit == "player" and db.castbar_latency == true then
-			local latency = GetTime() - Castbar.castSent
+			local latency = GetTime() - (Castbar.castSent or 0)
 			latency = latency > Castbar.max and Castbar.max or latency
 			Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
 			Castbar.SafeZone:SetWidth(Castbar:GetWidth() * latency / Castbar.max)

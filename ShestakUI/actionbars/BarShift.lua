@@ -95,10 +95,37 @@ end)
 
 -- Mouseover bar
 if SettingsCF.actionbar.shapeshift_mouseover == true then
-	for i = 1, NUM_SHAPESHIFT_SLOTS do
-		local b = _G["ShapeshiftButton"..i]
-		b:SetAlpha(0)
-		b:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-		b:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
+	if SettingsDB.class == "SHAMAN" then
+		MultiCastSummonSpellButton:SetAlpha(0)
+		MultiCastSummonSpellButton:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+		MultiCastSummonSpellButton:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
+		MultiCastRecallSpellButton:SetAlpha(0)
+		MultiCastRecallSpellButton:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+		MultiCastRecallSpellButton:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
+		MultiCastFlyoutFrameOpenButton:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+		MultiCastFlyoutFrameOpenButton:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
+		MultiCastFlyoutFrame:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+		MultiCastFlyoutFrame:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
+		MultiCastActionBarFrame:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+		MultiCastActionBarFrame:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
+		for i = 1, 12 do
+			local b = _G["MultiCastActionButton"..i]
+			b:SetAlpha(0)
+			b:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+			b:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
+		end
+		for i = 1, 4 do
+			local b = _G["MultiCastSlotButton"..i]
+			b:SetAlpha(0)
+			b:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+			b:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
+		end
+	else
+		for i = 1, NUM_SHAPESHIFT_SLOTS do
+			local b = _G["ShapeshiftButton"..i]
+			b:SetAlpha(0)
+			b:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+			b:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
+		end
 	end
 end

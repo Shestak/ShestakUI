@@ -92,9 +92,22 @@ function RightBarMouseOver(alpha)
 end
 
 function ShapeShiftMouseOver(alpha)
-	for i = 1, NUM_SHAPESHIFT_SLOTS do
-		local pb = _G["ShapeshiftButton"..i]
-		pb:SetAlpha(alpha)
+	if SettingsDB.class == "SHAMAN" then
+		for i = 1, 12 do
+			local pb = _G["MultiCastActionButton"..i]
+			pb:SetAlpha(alpha)
+		end
+		for i = 1, 4 do
+			local pb = _G["MultiCastSlotButton"..i]
+			pb:SetAlpha(alpha)
+		end
+		_G["MultiCastSummonSpellButton"]:SetAlpha(alpha)
+		_G["MultiCastRecallSpellButton"]:SetAlpha(alpha)
+	else
+		for i = 1, NUM_SHAPESHIFT_SLOTS do
+			local pb = _G["ShapeshiftButton"..i]
+			pb:SetAlpha(alpha)
+		end
 	end
 end
 

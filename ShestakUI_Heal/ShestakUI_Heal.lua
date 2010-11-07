@@ -16,15 +16,6 @@ local function Shared(self, unit)
 	-- Menu
 	self.menu = SettingsDB.SpawnMenu
 	
-	-- Width and height
-	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and not (self:GetParent():GetName():match"oUF_MainTank") then
-		self:SetWidth(60.2)
-		self:SetHeight(14)
-	else
-		self:SetWidth(60.2)
-		self:SetHeight(26)
-	end
-	
 	-- Backdrop for every units
 	self.FrameBackdrop = CreateFrame("Frame", nil, self)
 	SettingsDB.CreateTemplate(self.FrameBackdrop)
@@ -250,6 +241,15 @@ oUF:Factory(function(self)
 	oUF:SetActiveStyle("ShestakHeal")
 	if db.show_party == true then
 		local party = self:SpawnHeader("oUF_Party", nil, "custom [@raid6,exists] hide;show",
+			"oUF-initialConfigFunction", ([[
+				if self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target" then
+					self:SetWidth(60.2)
+					self:SetHeight(14)
+				else
+					self:SetWidth(60.2)
+				self:SetHeight(26)
+				end
+			]]),
 			"showSolo", db.solo_mode,
 			"showPlayer", db.player_in_party, 
 			"showParty", true,
@@ -270,6 +270,10 @@ oUF:Factory(function(self)
 			local raid = {}
 			for i = 1, db.raid_groups do 
 				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
+					"oUF-initialConfigFunction", ([[
+						self:SetWidth(60.2)
+						self:SetHeight(26)
+					]]),
 					"showRaid", true,
 					"yOffset", SettingsDB.Scale(-5),
 					"point", "TOPLEFT",
@@ -290,6 +294,10 @@ oUF:Factory(function(self)
 			local raid = {}
 			for i = 1, db.raid_groups do 
 				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
+					"oUF-initialConfigFunction", ([[
+						self:SetWidth(60.2)
+						self:SetHeight(26)
+					]]),
 					"showRaid", true,
 					"groupFilter", tostring(i),
 					"point", "LEFT",
@@ -314,6 +322,10 @@ oUF:Factory(function(self)
 				mt_template = "oUF_MainTank"
 			end
 			local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
+				"oUF-initialConfigFunction", ([[
+					self:SetWidth(60.2)
+					self:SetHeight(26)
+				]]),
 				"showRaid", true,
 				"yOffset", -7,
 				"groupFilter", "MAINTANK",
