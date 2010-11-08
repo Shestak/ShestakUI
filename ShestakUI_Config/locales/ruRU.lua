@@ -156,7 +156,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_NAMEPLATE_THREAT = "Для танка хорошая угроза = зеленый, плохая угроза = красный"
 	L_GUI_NAMEPLATE_CLASS_ICON = "Иконки классов"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Отображать сокращенные имена"
-	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap" -- Needs review
+	L_GUI_NAMEPLATE_OVERLAP = "Наложение индикаторов друг на друга"
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Включить панели команд"
