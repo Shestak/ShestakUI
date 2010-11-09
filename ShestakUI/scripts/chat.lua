@@ -323,7 +323,7 @@ function SettingsDB.ChatCopyButtons()
 	for i = 1, NUM_CHAT_WINDOWS do
 		local cf = _G[format("ChatFrame%d",  i)]
 		local button = CreateFrame("Button", format("ButtonCF%d", i), cf)
-		button:SetPoint("BOTTOMRIGHT", 0, SettingsDB.Scale(1))
+		button:SetPoint("BOTTOMRIGHT", 0, SettingsDB.Scale(2))
 		button:SetHeight(SettingsDB.Scale(20))
 		button:SetWidth(SettingsDB.Scale(20))
 		button:SetAlpha(0)
@@ -333,10 +333,8 @@ function SettingsDB.ChatCopyButtons()
 		local buttontext = button:CreateFontString(nil, "OVERLAY", nil)
 		buttontext:SetFont(SettingsCF.media.pixel_font, SettingsCF.media.pixel_font_size * 2, SettingsCF.media.pixel_font_style)
 		buttontext:SetText("C")
-		buttontext:SetPoint("CENTER")
-		buttontext:SetJustifyH("CENTER")
-		buttontext:SetJustifyV("CENTER")
-			
+		buttontext:SetPoint("CENTER", button, "CENTER", SettingsDB.Scale(1), 0)
+		
 		button:SetScript("OnMouseUp", function(self, btn)
 			if i == 1 and btn == "RightButton" then
 				ToggleFrame(ChatMenu)
