@@ -18,7 +18,7 @@ if SettingsCF["misc"].vehicle_mouseover == true then
 		elseif VehicleSeatIndicatorButton5 then
 			SettingsDB.numSeat = 5
 		elseif VehicleSeatIndicatorButton4 then
-			SettingsDB.numseat = 4
+			SettingsDB.numSeat = 4
 		elseif VehicleSeatIndicatorButton3 then
 			SettingsDB.numSeat = 3
 		elseif VehicleSeatIndicatorButton2 then

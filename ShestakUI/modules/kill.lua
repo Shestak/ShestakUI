@@ -18,7 +18,6 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	else
 		if addon ~= "ShestakUI" then return end
 		
-		k(StreamingIcon)
 		k(Advanced_UseUIScale)
 		k(Advanced_UIScaleSlider)
 		k(PartyMemberBackground)

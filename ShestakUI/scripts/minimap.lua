@@ -37,7 +37,6 @@ MinimapNorthTag:SetTexture(nil)
 MinimapZoneTextButton:Hide()
 
 -- Hide Tracking Button
---MiniMapTracking:Hide()
 MiniMapTrackingBackground:Hide()
 
 -- Hide Game Time
@@ -63,23 +62,47 @@ MiniMapInstanceDifficulty:ClearAllPoints()
 MiniMapInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", SettingsDB.Scale(3), SettingsDB.Scale(2))
 MiniMapInstanceDifficulty:SetScale(0.75)
 
+-- Guild Instance Difficulty icon
 GuildInstanceDifficulty:SetParent(Minimap)
 GuildInstanceDifficulty:ClearAllPoints()
 GuildInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
 GuildInstanceDifficulty:SetScale(0.75)
 
--- Invites Icon
+-- Invites icon
 GameTimeCalendarInvitesTexture:ClearAllPoints()
 GameTimeCalendarInvitesTexture:SetParent(Minimap)
 GameTimeCalendarInvitesTexture:SetPoint("TOPRIGHT")
 
-local function UpdateLFG()
-	MiniMapLFGFrame:ClearAllPoints()
-	MiniMapLFGFrame:SetPoint("TOP", Minimap, "TOP", SettingsDB.Scale(1), SettingsDB.Scale(6))
-	MiniMapLFGFrame:SetHighlightTexture(nil)
-	MiniMapLFGFrameBorder:Hide()
+-- Random Group icon
+MiniMapLFGFrame:ClearAllPoints()
+MiniMapLFGFrame:SetPoint("TOP", Minimap, "TOP", SettingsDB.Scale(1), SettingsDB.Scale(6))
+MiniMapLFGFrame:SetHighlightTexture(nil)
+MiniMapLFGFrameBorder:Hide()
+
+-- Feedback icon
+if FeedbackUIButton then
+	FeedbackUIButton:ClearAllPoints()
+	FeedbackUIButton:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, 0)
+	FeedbackUIButton:SetScale(0.8)
 end
-hooksecurefunc("MiniMapLFG_UpdateIsShown", UpdateLFG)
+
+-- Streaming icon
+if StreamingIcon then
+	StreamingIcon:ClearAllPoints()
+	StreamingIcon:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, 0)
+	StreamingIcon:SetScale(0.8)
+end
+
+-- GhostFrame
+GhostFrameContentsFrame:SetWidth(SettingsDB.Scale(SettingsCF.minimap.size+4))
+GhostFrameContentsFrame:ClearAllPoints()
+GhostFrameContentsFrame:SetPoint("CENTER")
+GhostFrameContentsFrame.SetPoint = SettingsDB.dummy
+GhostFrame:SetFrameStrata("HIGH")
+GhostFrame:SetFrameLevel(10)
+GhostFrame:ClearAllPoints()
+GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, SettingsDB.Scale(5))
+GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 -- Enable mouse scrolling
 Minimap:EnableMouseWheel(true)
@@ -91,9 +114,9 @@ Minimap:SetScript("OnMouseWheel", function(self, d)
 	end
 end)
 
+-- Hide Game Time
 UIMinimap:SetScript("OnEvent", function(self, event, addon)
 	if addon == "Blizzard_TimeManager" then
-		-- Hide Game Time
 		SettingsDB.Kill(TimeManagerClockButton)
 	end
 end)
@@ -204,7 +227,6 @@ MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 MiniMapTrackingIcon:SetHeight(SettingsDB.Scale(16))
 MiniMapTrackingIcon:SetWidth(SettingsDB.Scale(16))
 
-
 local function Minimap_GetTrackType()
 	local track = nil
 	for i = 1, GetNumTrackingTypes() do
@@ -240,7 +262,6 @@ end)
 --	GUI icon on minimap
 ----------------------------------------------------------------------------------------
 if SettingsCF["general"].minimap_icon == true and IsAddOnLoaded("ShestakUI_Config") then
-	local color = RAID_CLASS_COLORS[SettingsDB.class]
 	local menuIcon = CreateFrame("Button", "GUIButton", Minimap)
 	SettingsDB.SkinFadedPanel(menuIcon)
 	menuIcon:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)

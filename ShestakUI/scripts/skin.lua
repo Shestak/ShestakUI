@@ -298,15 +298,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		-- Others
 		_G["ReadyCheckListenerFrame"]:SetAlpha(0)
 		_G["ReadyCheckFrame"]:HookScript("OnShow", function(self) if UnitIsUnit("player", self.initiator) then self:Hide() end end)
-		_G["GhostFrameContentsFrame"]:SetWidth(SettingsDB.Scale(SettingsCF.minimap.size+4))
-		_G["GhostFrameContentsFrame"]:ClearAllPoints()
-		_G["GhostFrameContentsFrame"]:SetPoint("CENTER")
-		_G["GhostFrameContentsFrame"].SetPoint = SettingsDB.dummy
-		_G["GhostFrame"]:SetFrameStrata("HIGH")
-		_G["GhostFrame"]:SetFrameLevel(10)
-		_G["GhostFrame"]:ClearAllPoints()
-		_G["GhostFrame"]:SetPoint("BOTTOM", Minimap, "TOP", 0, SettingsDB.Scale(5))
-		_G["GhostFrameContentsFrameIcon"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		_G["PlayerPowerBarAlt"]:HookScript("OnShow", function(self) self:ClearAllPoints() self:SetPoint("TOP", 0, -12) end)
 	end
 	

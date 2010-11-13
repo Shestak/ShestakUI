@@ -1141,6 +1141,8 @@ Filger_Spells = {
 			{ spellID = 74434, size = 30, filter = "CD" },
 			-- Hand of Gul'dan
 			{ spellID = 71521, size = 30, filter = "CD" },
+			-- Immolation aura
+			{ spellID = 50589, size = 30, filter = "CD" },
 		},
 	},
 	["ROGUE"] = {	
