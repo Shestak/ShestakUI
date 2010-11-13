@@ -168,9 +168,14 @@ local function OnUpdate(player, cursor)
 	else
 		player:SetFormattedText(UnitName("player")..": %.2d,%.2d", 100 * px, 100 * py)
 	end
-
-	player:SetPoint("TOPLEFT", 3, -5)
-	cursor:SetPoint("TOPLEFT", 3, -25)
+	
+	if (IsAddOnLoaded("_NPCScan.Overlay")) then
+		player:SetPoint("TOPLEFT", 3, -45)
+		cursor:SetPoint("TOPLEFT", 3, -65)
+	else
+		player:SetPoint("TOPLEFT", 3, -5)
+		cursor:SetPoint("TOPLEFT", 3, -25)
+	end
 end
 local function UpdateCoords(self, elapsed)
 	self.elapsed = self.elapsed - elapsed
