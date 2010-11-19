@@ -105,6 +105,7 @@ SlashCmdList["HEAL"] = function()
 	ReloadUI()
 end
 SLASH_HEAL1 = "/heal"
+SLASH_HEAL2 = "/руфд"
 
 ----------------------------------------------------------------------------------------
 --	Switch to dps layout
@@ -115,6 +116,7 @@ SlashCmdList["DPS"] = function()
 	ReloadUI()
 end
 SLASH_DPS1 = "/dps"
+SLASH_DPS2 = "/взы"
 
 ----------------------------------------------------------------------------------------
 --	Command to show frame you currently have mouseovered
@@ -155,6 +157,7 @@ SlashCmdList["FRAME"] = function(arg)
 	end
 end
 SLASH_FRAME1 = "/frame"
+SLASH_FRAME2 = "/акфьу"
 
 ----------------------------------------------------------------------------------------
 --	Addons group

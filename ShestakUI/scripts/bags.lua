@@ -333,9 +333,13 @@ function Stuffing:CreateBagFrame(w)
 	f:EnableMouse(1)
 	f:SetMovable(1)
 	f:SetToplevel(1)
-	f:SetFrameStrata("HIGH")
+	f:SetFrameStrata("MEDIUM")
 	f:SetFrameLevel(5)
-	f:SetScript("OnMouseDown", f.StartMoving)
+	f:SetScript("OnMouseDown", function(self, button)
+		if IsShiftKeyDown() and button == "LeftButton" then
+			self:StartMoving() 
+		end
+	end)
 	f:SetScript("OnMouseUp", f.StopMovingOrSizing)
 	
 	if w == "Bank" then
@@ -393,7 +397,6 @@ function Stuffing:InitBags()
 	local f = self:CreateBagFrame("Bags")
 	f:SetScript("OnShow", Stuffing_OnShow)
 	f:SetScript("OnHide", Stuffing_OnHide)
-	f:RegisterForDrag("LeftButton")
 
 	-- Search editbox (tekKonfigAboutPanel.lua)
 	local editbox = CreateFrame("EditBox", nil, f)
@@ -494,7 +497,7 @@ function Stuffing:Layout(lb)
 		f.detail:SetFont(BAGSFONT, BAGSFONTSIZE, BAGSFONTSTYLE)
 
 		f.detail:ClearAllPoints()
-		f.detail:SetPoint("TOPLEFT", f, SettingsDB.Scale(12), SettingsDB.Scale(-10))
+		f.detail:SetPoint("TOPLEFT", f, SettingsDB.Scale(12), SettingsDB.Scale(-8))
 		f.detail:SetPoint("RIGHT", SettingsDB.Scale(-140), 0)
 	end
 

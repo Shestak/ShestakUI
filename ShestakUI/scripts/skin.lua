@@ -51,7 +51,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ColorPickerFrame",
 			"ConsolidatedBuffsTooltip",
 			"LFDRoleCheckPopup",
-			--"VoiceChatTalkers",
 			"ChannelPulloutBackground",			
 			"FriendsTooltip",
 			"LFDDungeonReadyDialog",
