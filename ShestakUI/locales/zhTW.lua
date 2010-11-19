@@ -11,16 +11,10 @@ if SettingsDB.client == "zhTW" then
 	L_TOOLTIP_SPELL_ID = "法術ID:"
 
 	-- Raid Utility
-	L_RAID_UTIL = "團隊助手"
 	L_RAID_UTIL_DISBAND = "解散團隊"
 	
 	-- Zone name
     L_ZONE_WINTERGRASP = "冬握湖"
-	
-	-- Flask name
-	L_FLASK_STR = "獲得北方精鍊藥劑 - 力量"
-	L_FLASK_SPD = "獲得北方精鍊藥劑 - 法術能量"
-	L_FLASK_AP = "獲得北方精鍊藥劑 - 攻擊強度"
 	
 	-- UnitFrame
 	L_UF_GHOST = "靈魂"

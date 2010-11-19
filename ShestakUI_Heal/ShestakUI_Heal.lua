@@ -39,14 +39,14 @@ local function Shared(self, unit)
 	end
 	
 	self.Health.frequentUpdates = true
-	self.Health.colorTapping = true
-	self.Health.colorDisconnected = true
-	self.Health.colorClassPet = false
+
 	if db.own_color == true then
+		self.Health.colorDisconnected = false
 		self.Health.colorReaction = false
 		self.Health.colorClass = false
 		self.Health:SetStatusBarColor(unpack(SettingsCF["media"].uf_color))
 	else
+		self.Health.colorDisconnected = true
 		self.Health.colorReaction = true
 		self.Health.colorClass = true
 	end
@@ -56,7 +56,7 @@ local function Shared(self, unit)
 	self.Health.bg:SetAllPoints(self.Health)
 	self.Health.bg:SetTexture(SettingsCF["media"].texture)
 	if db.own_color == true then
-		self.Health.bg:SetVertexColor(0.1, 0.1, 0.1)	
+		self.Health.bg:SetVertexColor(0.1, 0.1, 0.1)
 	else
 		self.Health.bg.multiplier = 0.25
 	end
@@ -98,6 +98,7 @@ local function Shared(self, unit)
 	else
 		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, SettingsDB.Scale(4))
 	end
+	self.Info.frequentUpdates = 0.2
 	self:Tag(self.Info, "[GetNameColor][NameShort]")
 	
 	-- Agro border
@@ -229,7 +230,7 @@ local function Shared(self, unit)
 		self.RaidDebuffs.count:SetPoint("BOTTOMRIGHT", self.RaidDebuffs, "BOTTOMRIGHT", SettingsDB.Scale(2), 0)
 		self.RaidDebuffs.count:SetTextColor(1, 1, 1)
 	end
-	
+
 	return self
 end
 

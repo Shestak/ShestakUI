@@ -52,25 +52,6 @@ if SettingsCF["misc"].auto_decline_duel == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Check Flask(Flasked North by v6o)
-----------------------------------------------------------------------------------------
-local checkflask = CreateFrame("Frame")
-checkflask:SetScript("OnEvent", function(self, event, ...)
-	local PlayerGUID = UnitGUID("player")
-	local _, CombatEvent, _, _, _, DestGUID, _, _, SpellID = ...
-	if CombatEvent == "SPELL_AURA_APPLIED" and DestGUID == PlayerGUID then
-		if SpellID == 67016 then
-			SettingsDB.InfoTextShow(L_FLASK_SPD)
-		elseif SpellID == 67017 then
-			SettingsDB.InfoTextShow(L_FLASK_AP)
-		elseif SpellID == 67018 then
-			SettingsDB.InfoTextShow(L_FLASK_STR)
-		end
-	end
-end)
-checkflask:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-
-----------------------------------------------------------------------------------------
 --	Spin camera while afk(by Telroth and Eclipse)
 ----------------------------------------------------------------------------------------
 if SettingsCF["misc"].afk_spin_camera == true then
@@ -106,4 +87,27 @@ if SettingsCF["misc"].afk_spin_camera == true then
 		MoveViewRightStop()
 		UIParent:Show()
 	end
+end
+
+----------------------------------------------------------------------------------------
+--	Custom Lag Tolerance(by Elv22)
+----------------------------------------------------------------------------------------
+if SettingsCF["general"].custom_lagtolerance == true then
+	InterfaceOptionsCombatPanelMaxSpellStartRecoveryOffset:Hide()
+	InterfaceOptionsCombatPanelReducedLagTolerance:Hide()
+
+	local customlag = CreateFrame("Frame")
+	local int = 5
+	local LatencyUpdate = function(self, elapsed)
+		int = int - elapsed
+		if int < 0 then
+			if GetCVar("reducedLagTolerance") ~= tostring(1) then SetCVar("reducedLagTolerance", tostring(1)) end
+			if select(3, GetNetStats()) ~= 0 and select(3, GetNetStats()) <= 400 then
+				SetCVar("maxSpellStartRecoveryOffset", tostring(select(3, GetNetStats())))
+			end
+			int = 5
+		end
+	end
+	customlag:SetScript("OnUpdate", LatencyUpdate)
+	LatencyUpdate(customlag, 10)
 end

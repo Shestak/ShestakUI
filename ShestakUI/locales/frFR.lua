@@ -11,16 +11,10 @@ if SettingsDB.client == "frFR" then
 	L_TOOLTIP_SPELL_ID = "ID du sort:"
 	
 	-- Raid Utility
-	L_RAID_UTIL = "Outils de raids"
 	L_RAID_UTIL_DISBAND = "Fin du raid"
 	
 	-- Zone name
     L_ZONE_WINTERGRASP = "Joug-d'hiver"
-
-	-- Flask name
-	L_FLASK_STR = "Flacon du Grand Nord - Force"
-	L_FLASK_SPD = "Flacon du Grand Nord - Intelligence"
-	L_FLASK_AP = "Flacon du Grand Nord - Agilité"
 
 	-- UnitFrame
 	L_UF_GHOST = "Spectre"

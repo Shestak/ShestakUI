@@ -92,6 +92,8 @@ if SettingsCF["reminder"].solo_buffs_enable == true then
 		DEATHKNIGHT = {
 			57330,	-- Horn of Winter
 			31634,	-- Shaman Strength of Earth Totem
+			6673,	-- Battle Shout
+			93435,	-- Roar of Courage
 		},
 		DRUID = {
 			1126,	-- Mark of the Wild

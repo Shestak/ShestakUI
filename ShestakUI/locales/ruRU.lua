@@ -11,16 +11,10 @@ if SettingsDB.client == "ruRU" then
 	L_TOOLTIP_SPELL_ID = "Номер заклинания:"
 	
 	-- Raid Utility
-	L_RAID_UTIL = "Инструменты рейда"
 	L_RAID_UTIL_DISBAND = "Распустить группу"
 	
 	-- Zone name
     L_ZONE_WINTERGRASP = "Озеро Ледяных Оков"
-	
-	-- Flask name
-	L_FLASK_STR = "Настой Севера - Сила"
-	L_FLASK_SPD = "Настой Севера - Интеллект"
-	L_FLASK_AP = "Настой Севера - Ловкость"
 	
 	-- UnitFrame
 	L_UF_GHOST = "Призрак"

@@ -167,9 +167,6 @@ local function Shared(self, unit)
 		elseif unit == "focus" or unit == "pet" then
 			self.Info:SetPoint("LEFT", self.Health, "LEFT", SettingsDB.Scale(2), 0)
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
-			if unit == "pet" then
-				self:RegisterEvent("UNIT_PET", SettingsDB.UpdatePetInfo)
-			end
 		elseif unit == "arenatarget" then
 			self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, 0)
 			self:Tag(self.Info, "[GetNameColor][NameArena]")

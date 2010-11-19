@@ -49,11 +49,11 @@ function SlashCmdList.AUTOINVITE(msg, editbox)
 		print("|cffffff00"..L_INVITE_DISABLE..".")
 	elseif (msg == "") then
 		ainvenabled = true
-		print("|cffffff00"..L_INVITE_ENABLE_T..".")
+		print("|cffffff00"..L_INVITE_ENABLE..ainvkeyword..".")
 		ainvkeyword = SettingsCF["misc"].invite_keyword
 	else
 		ainvenabled = true
-		print("|cffffff00"..L_INVITE_ENABLE .. msg..".")
+		print("|cffffff00"..L_INVITE_ENABLE..msg..".")
 		ainvkeyword = msg
 	end
 end

@@ -155,6 +155,28 @@ function SettingsDB.Kill(object)
 end
 
 ----------------------------------------------------------------------------------------
+--	Number value function
+----------------------------------------------------------------------------------------
+function SettingsDB.Round(number, decimals)
+	if not decimals then decimals = 0 end
+    return (("%%.%df"):format(decimals)):format(number)
+end
+
+function SettingsDB.ShortValue(value)
+	if value >= 1e7 then
+		return ("%.1fm"):format(value / 1e6):gsub("%.?0+([km])$", "%1")
+	elseif value >= 1e6 then
+		return ("%.2fm"):format(value / 1e6):gsub("%.?0+([km])$", "%1")
+	elseif value >= 1e5 then
+		return ("%.0fk"):format(value / 1e3)
+	elseif value >= 1e3 then
+		return ("%.1fk"):format(value / 1e3):gsub("%.?0+([km])$", "%1")
+	else
+		return value
+	end
+end
+
+----------------------------------------------------------------------------------------
 --	Pet and shapeshift bars style function
 ----------------------------------------------------------------------------------------
 function SettingsDB.ShiftBarUpdate()
@@ -361,7 +383,7 @@ local function CheckRole(self, event, unit)
 		local base, posBuff, negBuff = UnitAttackPower("player");
 		local playerap = base + posBuff + negBuff;
 
-		if ((playerap > playerint) or (playeragi > playerint)) and not (UnitBuff("player", GetSpellInfo(24858)) or UnitBuff("player", GetSpellInfo(65139))) then
+		if (((playerap > playerint) or (playeragi > playerint)) and not (UnitBuff("player", GetSpellInfo(24858)) or UnitBuff("player", GetSpellInfo(65139)))) or SettingsDB.class == "ROGUE" or SettingsDB.class == "HUNTER" then
 			SettingsDB.Role = "Melee"
 		else
 			SettingsDB.Role = "Caster"
@@ -468,16 +490,6 @@ do
 		return fs
 	end
 
-	local ShortValue = function(value)
-		if value >= 1e6 then
-			return ("%.1fm"):format(value / 1e6):gsub("%.?0+([km])$", "%1")
-		elseif value >= 1e3 or value <= -1e3 then
-			return ("%.1fk"):format(value / 1e3):gsub("%.?0+([km])$", "%1")
-		else
-			return value
-		end
-	end
-
 	SettingsDB.PostUpdateHealth = function(health, unit, min, max)
 		if (unit and unit:find("arena%dtarget")) then return end
 		if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
@@ -519,9 +531,9 @@ do
 				if unit == "player" and health:GetAttribute("normalUnit") ~= "pet" then
 					if db.show_total_value == true then
 						if db.color_value == true then
-							health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5-|r |cff559655%s|r", ShortValue(min), ShortValue(max))
+							health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5-|r |cff559655%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						else
-							health.value:SetFormattedText("|cffffffff%s|r |cffffffff-|r |cffffffff%s|r", ShortValue(min), ShortValue(max))
+							health.value:SetFormattedText("|cffffffff%s|r |cffffffff-|r |cffffffff%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						end
 					else
 						if db.color_value == true then
@@ -533,15 +545,15 @@ do
 				elseif unit == "target" then
 					if db.show_total_value == true then
 						if db.color_value == true then
-							health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5-|r |cff559655%s|r", ShortValue(min), ShortValue(max))
+							health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5-|r |cff559655%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						else
-							health.value:SetFormattedText("|cffffffff%s|r |cffffffff-|r |cffffffff%s|r", ShortValue(min), ShortValue(max))
+							health.value:SetFormattedText("|cffffffff%s|r |cffffffff-|r |cffffffff%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						end
 					else
 						if db.color_value == true then
-							health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r |cffD7BEA5-|r |cffAF5050%s|r", r * 255, g * 255, b * 255, floor(min / max * 100), ShortValue(min))
+							health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r |cffD7BEA5-|r |cffAF5050%s|r", r * 255, g * 255, b * 255, floor(min / max * 100), SettingsDB.ShortValue(min))
 						else
-							health.value:SetFormattedText("|cffffffff%d%%|r |cffffffff-|r |cffffffff%s|r", floor(min / max * 100), ShortValue(min))
+							health.value:SetFormattedText("|cffffffff%d%%|r |cffffffff-|r |cffffffff%s|r", floor(min / max * 100), SettingsDB.ShortValue(min))
 						end
 					end
 				else
@@ -560,9 +572,9 @@ do
 					end
 				else
 					if db.color_value == true then
-						health.value:SetText("|cff559655"..ShortValue(max).."|r")
+						health.value:SetText("|cff559655"..SettingsDB.ShortValue(max).."|r")
 					else
-						health.value:SetText("|cffffffff"..ShortValue(max).."|r")
+						health.value:SetText("|cffffffff"..SettingsDB.ShortValue(max).."|r")
 					end
 				end
 			end
@@ -585,22 +597,22 @@ do
 				r, g, b = oUF.ColorGradient(min/max, 0.69, 0.31, 0.31, 0.65, 0.63, 0.35, 0.33, 0.59, 0.33)
 				if db.color_value == true then
 					if db.deficit_health == true then
-						health.value:SetText("|cffFFFFFF".."-"..ShortValue(max-min))
+						health.value:SetText("|cffFFFFFF".."-"..SettingsDB.ShortValue(max-min))
 					else
 						health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r", r * 255, g * 255, b * 255, floor(min / max * 100))
 					end
 				else
 					if db.deficit_health == true then
-						health.value:SetText("|cffFFFFFF".."-"..ShortValue(max-min))
+						health.value:SetText("|cffFFFFFF".."-"..SettingsDB.ShortValue(max-min))
 					else
 						health.value:SetFormattedText("|cffffffff%d%%|r", floor(min / max * 100))
 					end
 				end
 			else
 				if db.color_value == true then
-					health.value:SetText("|cff559655"..ShortValue(max).."|r")
+					health.value:SetText("|cff559655"..SettingsDB.ShortValue(max).."|r")
 				else
-					health.value:SetText("|cffffffff"..ShortValue(max).."|r")
+					health.value:SetText("|cffffffff"..SettingsDB.ShortValue(max).."|r")
 				end
 			end
 			if db.alpha_health == true then
@@ -614,14 +626,6 @@ do
 					--self.FrameBackdrop:SetAlpha(1)
 				end
 			end
-		end
-	end
-	
-	SettingsDB.PostUpdatePetColor = function(health, unit, min, max)
-		if not UnitIsPlayer(unit) and UnitIsFriend(unit, "player") and db.own_color ~= true then
-			r, g, b = 75/255,  175/255, 76/255
-			health:SetStatusBarColor(r, g, b)
-			health.bg:SetTexture(0.1, 0.1, 0.1)
 		end
 	end
 
@@ -660,23 +664,23 @@ do
 					if unit == "target" then
 						if db.show_total_value == true then
 							if db.color_value == true then
-								power.value:SetFormattedText("%s |cffD7BEA5-|r %s", ShortValue(max - (max - min)), ShortValue(max))
+								power.value:SetFormattedText("%s |cffD7BEA5-|r %s", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							else
-								power.value:SetFormattedText("|cffffffff%s - %s|r", ShortValue(max - (max - min)), ShortValue(max))
+								power.value:SetFormattedText("|cffffffff%s - %s|r", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							end
 						else
 							if db.color_value == true then
-								power.value:SetFormattedText("%d%% |cffD7BEA5-|r %s", floor(min / max * 100), ShortValue(max - (max - min)))
+								power.value:SetFormattedText("%d%% |cffD7BEA5-|r %s", floor(min / max * 100), SettingsDB.ShortValue(max - (max - min)))
 							else
-								power.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), ShortValue(max - (max - min)))
+								power.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), SettingsDB.ShortValue(max - (max - min)))
 							end
 						end
 					elseif unit == "player" and power:GetAttribute("normalUnit") == "pet" or unit == "pet" then
 						if db.show_total_value == true then
 							if db.color_value == true then
-								power.value:SetFormattedText("%s |cffD7BEA5-|r %s", ShortValue(max - (max - min)), ShortValue(max))
+								power.value:SetFormattedText("%s |cffD7BEA5-|r %s", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							else
-								power.value:SetFormattedText("%s |cffffffff-|r %s", ShortValue(max - (max - min)), ShortValue(max))
+								power.value:SetFormattedText("%s |cffffffff-|r %s", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							end
 						else
 							if db.color_value == true then
@@ -687,16 +691,16 @@ do
 						end
 					elseif (unit and unit:find("arena%d")) then
 						if db.color_value == true then
-							power.value:SetFormattedText("|cffD7BEA5%d%% - %s|r", floor(min / max * 100), ShortValue(max - (max - min)))
+							power.value:SetFormattedText("|cffD7BEA5%d%% - %s|r", floor(min / max * 100), SettingsDB.ShortValue(max - (max - min)))
 						else
-							power.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), ShortValue(max - (max - min)))
+							power.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), SettingsDB.ShortValue(max - (max - min)))
 						end
 					else
 						if db.show_total_value == true then
 							if db.color_value == true then
-								power.value:SetFormattedText("%s |cffD7BEA5-|r %s", ShortValue(max - (max - min)), ShortValue(max))
+								power.value:SetFormattedText("%s |cffD7BEA5-|r %s", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							else
-								power.value:SetFormattedText("|cffffffff%s - %s|r", ShortValue(max - (max - min)), ShortValue(max))
+								power.value:SetFormattedText("|cffffffff%s - %s|r", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							end
 						else
 							if db.color_value == true then
@@ -716,9 +720,9 @@ do
 			else
 				if unit == "pet" or unit == "target" or (unit and unit:find("arena%d")) then
 					if db.color_value == true then
-						power.value:SetText(ShortValue(min))
+						power.value:SetText(SettingsDB.ShortValue(min))
 					else
-						power.value:SetText("|cffffffff"..ShortValue(min).."|r")
+						power.value:SetText("|cffffffff"..SettingsDB.ShortValue(min).."|r")
 					end
 				else
 					if db.color_value == true then
@@ -842,10 +846,6 @@ do
 	SettingsDB.UpdateReputationColor = function(self, event, unit, bar)
 		local name, id = GetWatchedFactionInfo()
 		bar:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
-	end
-
-	SettingsDB.UpdatePetInfo = function(self, event)
-		if self.Info then self.Info:UpdateTag(self.unit) end
 	end
 
 	SettingsDB.PostCastStart = function(Castbar, unit, name, rank, text, castid)

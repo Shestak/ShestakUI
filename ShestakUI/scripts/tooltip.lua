@@ -33,21 +33,6 @@ GameTooltipStatusBar:ClearAllPoints()
 GameTooltipStatusBar:SetPoint("TOPLEFT", GameTooltip, "BOTTOMLEFT", 2, 6)
 GameTooltipStatusBar:SetPoint("TOPRIGHT", GameTooltip, "BOTTOMRIGHT", -2, 6)
 
--- Short-display HP value on StatusBar
-local function ShortValue(value)
-	if value >= 1e7 then
-		return ("%.1fm"):format(value / 1e6):gsub("%.?0+([km])$", "%1")
-	elseif value >= 1e6 then
-		return ("%.2fm"):format(value / 1e6):gsub("%.?0+([km])$", "%1")
-	elseif value >= 1e5 then
-		return ("%.0fk"):format(value / 1e3)
-	elseif value >= 1e3 then
-		return ("%.1fk"):format(value / 1e3):gsub("%.?0+([km])$", "%1")
-	else
-		return value
-	end
-end
-
 -- Raid icon
 local ricon = GameTooltip:CreateTexture("GameTooltipRaidIcon", "OVERLAY")
 ricon:SetHeight(18)
@@ -135,7 +120,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 				self.text:SetShadowOffset(1, -1)
 			end
 			self.text:Show()
-			local hp = ShortValue(min).." / "..ShortValue(max)
+			local hp = SettingsDB.ShortValue(min).." / "..SettingsDB.ShortValue(max)
 			self.text:SetText(hp)
 		end
 		end)

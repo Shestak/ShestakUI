@@ -91,9 +91,11 @@ if ct.myclass=="WARLOCK" then
 elseif ct.myclass=="DRUID"then
 	if(ct.mergeaoespam)then
 		ct.aoespam[8921]=true	-- Moonfire
+		ct.aoespam[93402]=true	-- Sunfire
 		ct.aoespam[5570]=true	-- Insect Swarm
 		ct.aoespam[42231]=true	-- Hurricane
 		ct.aoespam[50288]=true	-- Starfall
+		ct.aoespam[61391]=true	-- Typhoon
 		ct.aoespam[1822]=true	-- Rake
 		ct.aoespam[62078]=true	-- Swipe (Cat Form)
 		ct.aoespam[779]=true	-- Swipe (Bear Form)
@@ -946,7 +948,7 @@ if(ct.damage)then
 						SQ[spellId]["locked"]=false
 						return
 					end
-					xCT4:AddMessage(amount.." "..msg,unpack(color))
+					xCT4:AddMessage(amount..""..msg,unpack(color))
 				end
 	
 			elseif(eventType=="SWING_MISSED")then

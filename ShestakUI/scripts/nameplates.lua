@@ -45,16 +45,6 @@ local function round(num, idp)
   end
   return math.floor(num + 0.5)
 end
- 
-local ShortValue = function(value)
-	if value >= 1e6 then
-		return ("%.1fm"):format(value / 1e6):gsub("%.?0+([km])$", "%1")
-	elseif value >= 1e3 or value <= -1e3 then
-		return ("%.1fk"):format(value / 1e3):gsub("%.?0+([km])$", "%1")
-	else
-		return value
-	end
-end
 
 local function CheckTarget(self)
 	if UnitName("target") == self.oldname:GetText() and self:GetAlpha() == 1 then
@@ -129,7 +119,7 @@ local threatUpdate = function(self, elapsed)
 		local d = math.floor((valueHealth / maxHealth) * 100)
 		
 		if SettingsCF["nameplate"].health_value == true then
-			self.healthBar.percent:SetText(ShortValue(valueHealth).." - "..(string.format("%d%%", math.floor((valueHealth/maxHealth)*100))))
+			self.healthBar.percent:SetText(SettingsDB.ShortValue(valueHealth).." - "..(string.format("%d%%", math.floor((valueHealth/maxHealth)*100))))
 			if isEnemyPlayer then
 				if (d <= 45 and d >= 20) then
 					self.healthBar.percent:SetTextColor(0.65, 0.63, 0.35)

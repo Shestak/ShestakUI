@@ -88,7 +88,7 @@ end
 ----------------------------------------------------------------------------------------
 if SettingsCF["chat"].background == true then
 	local chatbd = CreateFrame("Frame", "ChatBackground", UIParent)
-	SettingsDB.CreateFadedPanel(chatbd, SettingsCF["chat"].width + 3, SettingsCF["chat"].height + 2, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 0)
+	SettingsDB.CreateFadedPanel(chatbd, SettingsCF["chat"].width + 7, SettingsCF["chat"].height + 2, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 0)
 	chatbd:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
 	chatbd:SetBackdropColor(0, 0, 0, SettingsCF["chat"].background_alpha)
 end

@@ -11,16 +11,10 @@ if SettingsDB.client == "enUS" or SettingsDB.client == "enGB" then
 	L_TOOLTIP_SPELL_ID = "Spell ID:"
 
 	-- Raid Utility
-	L_RAID_UTIL = "Raid Utility"
 	L_RAID_UTIL_DISBAND = "Disband Group"
 	
 	-- Zone name
     L_ZONE_WINTERGRASP = "Wintergrasp"
-	
-	-- Flask name
-	L_FLASK_STR = "Gained Flask of the North - Strength"
-	L_FLASK_SPD = "Gained Flask of the North - Intellect"
-	L_FLASK_AP = "Gained Flask of the North - Agility"
 	
 	-- UnitFrame
 	L_UF_GHOST = "Ghost"

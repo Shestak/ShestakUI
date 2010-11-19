@@ -11,16 +11,10 @@ if SettingsDB.client == "deDE" then
 	L_TOOLTIP_SPELL_ID = "Zauber ID:"
 
 	-- Raid Utility
-	L_RAID_UTIL = "Raid Utility"
 	L_RAID_UTIL_DISBAND = "Gruppe auflösen"
 	
 	-- Zone name
     L_ZONE_WINTERGRASP = "Tausendwinter"
-
-	-- Flask name
-	L_FLASK_STR = "Fläschchen des Nordens erhalten - Stärke"
-	L_FLASK_SPD = "Fläschchen des Nordens erhalten - Intelligenz"
-	L_FLASK_AP = "Fläschchen des Nordens erhalten - Beweglichkeit"
 	
 	-- UnitFrame
 	L_UF_GHOST = "Geist"

@@ -332,7 +332,7 @@ if memory.enabled then
 			end
 			local bandwidth = GetAvailableBandwidth()
 			if bandwidth ~= 0 then
-				GameTooltip:AddDoubleLine(L"Bandwidth"..":",format("%s ".."Mbps",bandwidth),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L"Bandwidth"..":",format("%s ".."Mbps",SettingsDB.Round(bandwidth, 2)),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				GameTooltip:AddDoubleLine(L"Download"..":",format("%s%%", floor(GetDownloadedPercentage()*100+0.5)),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				GameTooltip:AddLine(" ")
 			end

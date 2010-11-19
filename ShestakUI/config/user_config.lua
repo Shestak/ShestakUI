@@ -39,9 +39,9 @@ if SettingsDB.name == "Черешок"
 	or SettingsDB.name == "Шестак" then
 	SettingsCF["general"].minimap_icon = false
 	SettingsCF["general"].welcome_message = false
+	SettingsCF["general"].custom_lagtolerance = true
 	SettingsCF["misc"].auto_quest = true
 	SettingsCF["misc"].vehicle_mouseover = true
-	SettingsCF["misc"].quest_auto_button = true
 	SettingsCF["misc"].raid_tools = true
 	SettingsCF["combattext"].treshold = 500
 	SettingsCF["combattext"].heal_treshold = 1000
@@ -56,13 +56,21 @@ if SettingsDB.name == "Черешок"
 	SettingsCF["error"].black = false
 	SettingsCF["error"].white = true
 	SettingsCF["stats"].fps = false
+	if SettingsDB.level ~= MAX_PLAYER_LEVEL then
+		SettingsCF["stats"].experience = true
+	end
+elseif SettingsDB.name == "Добрыйдоктор" then
+	SettingsCF["misc"].raid_tools = true
+	SettingsCF["misc"].invite_keyword = "докрейд"
+	SettingsCF["unitframe"].raid_tanks_tt = true
+	SettingsCF["stats"].guild_repair = false
 end
 
 ----------------------------------------------------------------------------------------
 --	Per Max Character Level Config (overwrite general, class and name)
 ----------------------------------------------------------------------------------------
 if SettingsDB.level ~= MAX_PLAYER_LEVEL then
-	SettingsCF["stats"].experience = true
+
 end
 
 ----------------------------------------------------------------------------------------

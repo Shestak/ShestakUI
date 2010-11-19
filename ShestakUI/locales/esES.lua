@@ -11,16 +11,10 @@ if SettingsDB.client == "esES" then
 	L_TOOLTIP_SPELL_ID = "ID del hechizo:"
 
 	-- Raid Utility
-	L_RAID_UTIL = "Raid Utility" -- Needs review
 	L_RAID_UTIL_DISBAND = "Disband Group" -- Needs review
 	
 	-- Zone name
     L_ZONE_WINTERGRASP = "Conquista del Invierno"
-	
-	-- Flask name
-	L_FLASK_STR = "Frasco del Norte - Fuerza"
-	L_FLASK_SPD = "Frasco del Norte - Intelecto"
-	L_FLASK_AP = "Frasco del Norte - Agilidad"
 	
 	-- UnitFrame
 	L_UF_GHOST = "Fantasma"
