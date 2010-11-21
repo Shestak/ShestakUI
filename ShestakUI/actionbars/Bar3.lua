@@ -5,6 +5,7 @@ if not SettingsCF["actionbar"].enable == true then return end
 ----------------------------------------------------------------------------------------
 local Bar3Holder = CreateFrame("Frame", "Bar3Holder", UIParent)
 Bar3Holder:SetAllPoints(ActionBarAnchor)
+Bar3Holder:SetFrameStrata("LOW")
 MultiBarLeft:SetParent(Bar3Holder)
 
 for i = 1, 12 do

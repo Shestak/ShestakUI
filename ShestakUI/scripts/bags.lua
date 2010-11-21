@@ -375,7 +375,7 @@ function Stuffing:CreateBagFrame(w)
 	-- Create the bags frame
 	local fb = CreateFrame ("Frame", n .. "BagsFrame", f)
 	fb:SetPoint("BOTTOMLEFT", f, "TOPLEFT", 0, SettingsDB.Scale(3))
-	fb:SetFrameStrata("HIGH")
+	fb:SetFrameStrata("MEDIUM")
 	f.bags_frame = fb
 
 	return f
