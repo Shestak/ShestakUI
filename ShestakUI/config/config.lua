@@ -328,7 +328,7 @@ SettingsCF["unitframe"] = {
 	["portrait_classcolor_border"] = true,		-- Enable classcolor border
 	["portrait_height"] = 94,					-- Portrait height
 	["portrait_width"] = 67,					-- Portrait width
-	-- oUF Plugins
+	-- Plugins
 	["plugins_gcd"] = false,					-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar
 	["plugins_eclipse_bar"] = true,				-- Elipse bar

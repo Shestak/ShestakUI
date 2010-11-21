@@ -9,6 +9,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_GENERAL_MULTISAMPLE = "多重採樣保護 (保證1像素邊框)"
 	L_GUI_GENERAL_UISCALE = "UI縮放(當自動縮放關閉時)"
 	L_GUI_GENERAL_WELCOME_MESSAGE = "顯示歡迎信息"
+	L_GUI_GENERAL_LAG_TOLERANCE = "自動更新自訂延遲容許值"
 
 	-- Miscellaneous options
 	L_GUI_MISC_AUTOQUEST = "自動接受任務"
@@ -199,6 +200,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_UF_CASTBAR_ICON = "顯示施法條圖示"
 	L_GUI_UF_CASTBAR_LATENCY = "施法條延遲"
 	L_GUI_UF_SHOW_BOSS = "顯示boss框體"
+	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
 	L_GUI_UF_SHOW_ARENA = "顯示競技場框體"
 	L_GUI_UF_ARENA_RIGHT = "在右側顯示競技場框體"
 	L_GUI_UF_SHOW_PARTY = "顯示隊伍框體"

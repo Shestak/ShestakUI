@@ -9,6 +9,7 @@ if GetLocale() == "frFR" then
 	L_GUI_GENERAL_MULTISAMPLE = "Protection multi échantillonnage (bordure 1px)"
 	L_GUI_GENERAL_UISCALE = "Mettre l'UI а l'échelle (si 'Mise а l'échelle automatique' est désactivée)"
 	L_GUI_GENERAL_WELCOME_MESSAGE = "Message de bienvenue pour le chat"
+	L_GUI_GENERAL_LAG_TOLERANCE = "Ajuste automatiquement la barre de latence Blizzard avec votre propre latence"
 
 	-- Miscellaneous options
 	L_GUI_MISC_AUTOQUEST = "Accepter les quêtes automatiquement"
@@ -199,6 +200,7 @@ if GetLocale() == "frFR" then
 	L_GUI_UF_CASTBAR_ICON = "Voir l'icone de la barre de cast"
 	L_GUI_UF_CASTBAR_LATENCY = "Voir la latence de la barre de cast"
 	L_GUI_UF_SHOW_BOSS = "Afficher les barres du boss"
+	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
 	L_GUI_UF_SHOW_ARENA = "Afficher les barres d'arène"
 	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right"
 	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review

@@ -9,6 +9,7 @@ if GetLocale() == "koKR" then
 	L_GUI_GENERAL_MULTISAMPLE = "Multisample protection (clean 1px border)"
 	L_GUI_GENERAL_UISCALE = "UI Scale (if auto-scale is disabled)"
 	L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
+	L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tolerance option to your latency"
 
 	-- Miscellaneous options
 	L_GUI_MISC_AUTOQUEST = "Auto accept quest"
@@ -199,6 +200,7 @@ if GetLocale() == "koKR" then
 	L_GUI_UF_CASTBAR_ICON = "Show castbar icons"
 	L_GUI_UF_CASTBAR_LATENCY = "Castbar latency"
 	L_GUI_UF_SHOW_BOSS = "Show boss frames"
+	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"
 	L_GUI_UF_SHOW_ARENA = "Show arena frames"
 	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right"
 	L_GUI_UF_SHOW_PARTY = "Show party frames"

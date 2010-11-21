@@ -9,6 +9,7 @@ if GetLocale() == "deDE" then
 	L_GUI_GENERAL_MULTISAMPLE = "Multisample Schutz (Saubere 1px Rahmen)"
 	L_GUI_GENERAL_UISCALE = "UI Skalierung (falls automatische Skalierung deaktiviert)"
 	L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
+	L_GUI_GENERAL_LAG_TOLERANCE = "Automatische Anpassung der Blizzard Custom Lag Toleranz an deine Latenz"
 
 	-- Miscellaneous options
 	L_GUI_MISC_AUTOQUEST = "Quests automatisch annehmen"
@@ -199,6 +200,7 @@ if GetLocale() == "deDE" then
 	L_GUI_UF_CASTBAR_ICON = "Zeige Symbole der Zauberleisten an"
 	L_GUI_UF_CASTBAR_LATENCY = "Latenz in Zauberleiste anzeigen"
 	L_GUI_UF_SHOW_BOSS = "Zeige eigenes Fenster für Bosse an"
+	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
 	L_GUI_UF_SHOW_ARENA = "Zeige Einheitenfenster in der Arena"
 	L_GUI_UF_ARENA_RIGHT = "Arenafenster auf der rechten Seite"
 	L_GUI_UF_SHOW_PARTY = "Zeige Gruppenfenster"

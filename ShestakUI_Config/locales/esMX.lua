@@ -9,6 +9,7 @@ if GetLocale() == "esMX" then
 	L_GUI_GENERAL_MULTISAMPLE = "Protección del Multimuestreo (elimina el borde de 1px)"
 	L_GUI_GENERAL_UISCALE = "Escalado de la UI (si auto escalado está desactivado)"
 	L_GUI_GENERAL_WELCOME_MESSAGE = "Mensaje de bienvenida en el chat"
+	L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tolerance option to your latency"
 
 	-- Miscellaneous options
 	L_GUI_MISC_AUTOQUEST = "Auto aceptar misiones"
@@ -199,6 +200,7 @@ if GetLocale() == "esMX" then
 	L_GUI_UF_CASTBAR_ICON = "Mostrar iconos en las barras de lanzamiento"
 	L_GUI_UF_CASTBAR_LATENCY = "Latencia en la barra de lanzamiento"
 	L_GUI_UF_SHOW_BOSS = "Mostrar marco del jefe"
+	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
 	L_GUI_UF_SHOW_ARENA = "Mostrar marcos de arena"
 	L_GUI_UF_ARENA_RIGHT = "Marcos de arena en la derecha"
 	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review

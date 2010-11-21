@@ -9,6 +9,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_GENERAL_MULTISAMPLE = "1-разр. сглаживание (ровные края шириной 1 пиксель)"
 	L_GUI_GENERAL_UISCALE = "Масштаб интерфейса (если автомасштабирование отключено)"
 	L_GUI_GENERAL_WELCOME_MESSAGE = "Приветственное сообщение в чате"
+	L_GUI_GENERAL_LAG_TOLERANCE = "Автоматическое обновление допустимой задержки"
 
 	-- Miscellaneous options
 	L_GUI_MISC_AUTOQUEST = "Автопринятие заданий"
@@ -47,11 +48,11 @@ if GetLocale() == "ruRU" then
 	L_GUI_COMBATTEXT_SCROLLABLE = "Включить прокручивание текста в блоках колесом мыши"
 	L_GUI_COMBATTEXT_MAX_LINES = "Колличество линий для прокручиваемого блока"
 	L_GUI_COMBATTEXT_TIME_VISIBLE = "Время(в секундах) до исчезновения текста"
-	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Отключать входящее лечение для Жрецов в шедоуформе"
+	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Отключать входящее лечение для Жрецов в Облике Тьмы"
 	L_GUI_COMBATTEXT_DK_RUNES = "Отображать перезарядку рун Рыцарей Смерти"
-	L_GUI_COMBATTEXT_KILLINGBLOW = "Tells you about your killingblows" -- Needs review
-	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single message" -- Needs review
-	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Time in seconds aoe spell will be merged into single message" -- Needs review
+	L_GUI_COMBATTEXT_KILLINGBLOW = "Отображать Победный удар"
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Объединять многократные значения урона и лечения в одно сообщение"
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Время в секундах для объединения многократных значений"
 	
 	-- Buffs reminder options
 	L_GUI_REMINDER = "Напоминания"
@@ -78,8 +79,8 @@ if GetLocale() == "ruRU" then
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Отображать вражеские перезарядки везде"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "Отображать вражеские перезарядки на полях сражений"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Отображать вражеские перезарядки на арене"
-	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse" -- Needs review
-	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size" -- Needs review
+	L_GUI_COOLDOWN_PULSE_ENABLE = "Отображать иконку окончания перезарядки"
+	L_GUI_COOLDOWN_PULSE_SIZE = "Размер иконки окончания перезарядки"
 	
 	-- Threat options
 	L_GUI_THREAT = "Список угрозы"
@@ -199,6 +200,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_UF_CASTBAR_ICON = "Иконка индикатора заклинания"
 	L_GUI_UF_CASTBAR_LATENCY = "Задержка заклинания на индикаторе"
 	L_GUI_UF_SHOW_BOSS = "Отображать рамки боссов"
+	L_GUI_UF_BOSS_RIGHT = "Рамки боссов справа"
 	L_GUI_UF_SHOW_ARENA = "Отображать рамки арены"
 	L_GUI_UF_ARENA_RIGHT = "Рамки арены справа"
 	L_GUI_UF_SHOW_PARTY = "Отображать рамки группы"

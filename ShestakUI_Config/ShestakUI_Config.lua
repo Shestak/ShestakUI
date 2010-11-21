@@ -32,6 +32,7 @@ local function Local(o)
 	if o == "UIConfiggeneraluiscale" then o = L_GUI_GENERAL_UISCALE end
 	if o == "UIConfiggeneralminimap_icon" then o = L_GUI_GENERAL_UIICON end
 	if o == "UIConfiggeneralwelcome_message" then o = L_GUI_GENERAL_WELCOME_MESSAGE end
+	if o == "UIConfiggeneralcustom_lagtolerance" then o = L_GUI_GENERAL_LAG_TOLERANCE end
 	
 	-- Miscellaneous options
 	if o == "UIConfigmisc" then o = OTHER end
@@ -242,6 +243,7 @@ local function Local(o)
 	if o == "UIConfigunitframecastbar_icon" then o = L_GUI_UF_CASTBAR_ICON end
 	if o == "UIConfigunitframecastbar_latency" then o = L_GUI_UF_CASTBAR_LATENCY end
 	if o == "UIConfigunitframeshow_boss" then o = L_GUI_UF_SHOW_BOSS end
+	if o == "UIConfigunitframeboss_on_right" then o = L_GUI_UF_BOSS_RIGHT end
 	if o == "UIConfigunitframeshow_arena" then o = L_GUI_UF_SHOW_ARENA end
 	if o == "UIConfigunitframearena_on_right" then o = L_GUI_UF_ARENA_RIGHT end
 	if o == "UIConfigunitframeshow_party" then o = L_GUI_UF_SHOW_PARTY end
