@@ -5,7 +5,7 @@ if not SettingsCF["skins"].dbm == true then return end
 
 local forcebosshealthclasscolor = false		-- Forces BossHealth to be classcolored. Not recommended.
 local croprwicons = true					-- Crops blizz shitty borders from icons in RaidWarning messages
-local rwiconsize = 15						-- RaidWarning icon size. Works only if croprwicons = true
+local rwiconsize = 12						-- RaidWarning icon size. Works only if croprwicons = true
 local backdrop = {
 	bgFile = SettingsCF["media"].blank,
 	insets = {left = 0, right = 0, top = 0, bottom = 0},
@@ -63,10 +63,10 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						if bar.enlarged then frame:SetWidth(SettingsDB.Scale(bar.owner.options.HugeWidth)) else frame:SetWidth(SettingsDB.Scale(bar.owner.options.Width)) end
 						if bar.enlarged then tbar:SetWidth(SettingsDB.Scale(bar.owner.options.HugeWidth)) else tbar:SetWidth(SettingsDB.Scale(bar.owner.options.Width)) end
 
+						frame:SetScale(1)
 						if not frame.styled then
-							bar.frame:SetScale(1)
 							frame:SetHeight(SettingsDB.Scale(19))
-							SettingsDB.CreateTemplate(bar.frame)
+							SettingsDB.CreateTemplate(frame)
 							frame.styled = true
 						end
 
@@ -89,7 +89,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							icon2:ClearAllPoints()
 							icon2:SetPoint("TOPLEFT", icon2.overlay, SettingsDB.Scale(2), SettingsDB.Scale(-2))
 							icon2:SetPoint("BOTTOMRIGHT", icon2.overlay, SettingsDB.Scale(-2), SettingsDB.Scale(2))
-							icon2.styled=true
+							icon2.styled = true
 						end
 						
 						if not texture.styled then
@@ -194,9 +194,14 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 					progress:SetBackdrop(backdrop)
 					progress:SetBackdropColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 0.15)
 					if forcebosshealthclasscolor then
+						local tslu = 0
 						progress:SetStatusBarColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 1)
-						progress:HookScript("OnUpdate", function(self, v)
-							self:SetStatusBarColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 1)
+						progress:HookScript("OnUpdate", function(self, elapsed)
+							tslu = tslu+ elapsed
+							if tslu > 0.025 then
+								self:SetStatusBarColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 1)
+								tslu = 0
+							end
 						end)
 					end
 					progress.styled = true
@@ -343,8 +348,6 @@ OnLogon:SetScript("OnEvent", function(self, event)
 
 	if IsAddOnLoaded("DBM-Core") then
 		if DBM_SavedOptions.InstalledBars ~= SettingsCF.actionbar.bottombars then
-			--if (DBM_SavedOptions == nil) then DBM_SavedOptions = {} end
-			--if(DBM_SavedOptions) then table.wipe(DBM_SavedOptions) end
 			StaticPopup_Show("SETTINGS_DBM")
 		end
 	end

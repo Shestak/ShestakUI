@@ -47,7 +47,6 @@ if SettingsDB.name == "Черешок"
 	SettingsCF["combattext"].heal_treshold = 1000
 	SettingsCF["combattext"].crit_postfix = ""
 	SettingsCF["combattext"].crit_prefix = ""
-	SettingsCF["combattext"].healing = false
 	SettingsCF["tooltip"].shift_modifer = true
 	SettingsCF["tooltip"].cursor = true
 	SettingsCF["tooltip"].title = true

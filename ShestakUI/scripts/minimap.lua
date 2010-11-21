@@ -126,50 +126,53 @@ end)
 ----------------------------------------------------------------------------------------
 local menuFrame = CreateFrame("Frame", "MinimapRightClickMenu", UIParent, "UIDropDownMenuTemplate")
 local micromenu = {
-    {text = CHARACTER_BUTTON,
-    func = function() ToggleCharacter("PaperDollFrame") self.notCheckable = 1 end, notCheckable = 1},
-    {text = SPELLBOOK_ABILITIES_BUTTON,
-    func = function() ToggleFrame(SpellBookFrame) end, notCheckable = 1},
-    {text = TALENTS_BUTTON,
-	func = function() if not PlayerTalentFrame then LoadAddOn("Blizzard_TalentUI") end PlayerTalentFrame_Toggle() end, notCheckable = 1},
-    {text = ACHIEVEMENT_BUTTON,
-    func = function() ToggleAchievementFrame() end, notCheckable = 1},
-    {text = QUESTLOG_BUTTON,
-    func = function() ToggleFrame(QuestLogFrame) end, notCheckable = 1},
-    {text = SOCIAL_BUTTON,
-    func = function() ToggleFriendsFrame(1) end, notCheckable = 1},
-    {text = PLAYER_V_PLAYER,
-    func = function() ToggleFrame(PVPFrame) end, notCheckable = 1},
-	{text = ACHIEVEMENTS_GUILD_TAB,
-    func = function() if IsInGuild() then if not GuildFrame then LoadAddOn("Blizzard_GuildUI") end GuildFrame_Toggle() end end, notCheckable = 1},
-    {text = LFG_TITLE,
-    func = function() ToggleFrame(LFDParentFrame) end, notCheckable = 1},
-    {text = LOOKING_FOR_RAID,
-    func = function() ToggleFrame(LFRParentFrame) end, notCheckable = 1},
-    {text = HELP_BUTTON,
-    func = function() ToggleHelpFrame() end, notCheckable = 1},
-    {text = L_MINIMAP_CALENDAR,
-    func = function()
-    if not CalendarFrame then LoadAddOn("Blizzard_Calendar") end Calendar_Toggle() end, notCheckable = 1},
+    {text = CHARACTER_BUTTON, notCheckable = 1,
+    func = function() ToggleCharacter("PaperDollFrame") end},
+    {text = SPELLBOOK_ABILITIES_BUTTON, notCheckable = 1,
+    func = function() ToggleFrame(SpellBookFrame) end},
+    {text = TALENTS_BUTTON, notCheckable = 1,
+	func = function() if not PlayerTalentFrame then LoadAddOn("Blizzard_TalentUI") end PlayerTalentFrame_Toggle() end},
+    {text = ACHIEVEMENT_BUTTON, notCheckable = 1,
+    func = function() ToggleAchievementFrame() end},
+    {text = QUESTLOG_BUTTON, notCheckable = 1,
+    func = function() ToggleFrame(QuestLogFrame) end},
+    {text = SOCIAL_BUTTON, notCheckable = 1,
+    func = function() ToggleFriendsFrame(1) end},
+    {text = PLAYER_V_PLAYER, notCheckable = 1,
+    func = function() ToggleFrame(PVPFrame) end},
+	{text = ACHIEVEMENTS_GUILD_TAB, notCheckable = 1,
+    func = function() if IsInGuild() then if not GuildFrame then LoadAddOn("Blizzard_GuildUI") end GuildFrame_Toggle() end end},
+    {text = LFG_TITLE, notCheckable = 1,
+    func = function() ToggleFrame(LFDParentFrame) end},
+    {text = LOOKING_FOR_RAID, notCheckable = 1,
+    func = function() ToggleFrame(LFRParentFrame) end},
+    {text = HELP_BUTTON, notCheckable = 1,
+    func = function() ToggleHelpFrame() end},
+    {text = L_MINIMAP_CALENDAR, notCheckable = 1,
+    func = function() if not CalendarFrame then LoadAddOn("Blizzard_Calendar") end Calendar_Toggle() end},
 }
 
 local addonmenu = {
-	{text = "AtlasLoot",
-    func = function() if IsAddOnLoaded("AtlasLoot") then AtlasLootDefaultFrame:Show() end end, notCheckable = 1},
-	{text = "DBM",
-    func = function() if IsAddOnLoaded("DBM-Core") then DBM:LoadGUI() end end, notCheckable = 1},
-	{text = "DXE",
-    func = function() if IsAddOnLoaded("DXE") then DXE:ToggleConfig() end end, notCheckable = 1},
-	{text = "Skada",
-    func = function() if IsAddOnLoaded("Skada") then Skada:ToggleWindow() end end, notCheckable = 1},
-	{text = "WIM",
-    func = function() if IsAddOnLoaded("WIM") then WIM.ShowAllWindows() end end, notCheckable = 1},
-	{text = "Omen",
-    func = function() if IsAddOnLoaded("Omen") then Omen:Toggle() end end, notCheckable = 1},
-	{text = "Recount",
-    func = function() if IsAddOnLoaded("Recount") then Recount.MainWindow:Show() end end, notCheckable = 1},
-	{text = "TinyDPS",
-    func = function() if IsAddOnLoaded("TinyDPS") then tdpsFrame:Show() end end, notCheckable = 1},
+	{text = "Damage Meters", isTitle = 1, notCheckable = 1, keepShownOnClick = 1 },
+	{text = "Skada", notCheckable = 1,
+    func = function() if IsAddOnLoaded("Skada") then Skada:ToggleWindow() end end},
+	{text = "Recount", notCheckable = 1,
+    func = function() if IsAddOnLoaded("Recount") then ToggleFrame(Recount.MainWindow) Recount.RefreshMainWindow() end end},
+	{text = "TinyDPS", notCheckable = 1,
+    func = function() if IsAddOnLoaded("TinyDPS") then ToggleFrame(tdpsFrame) end end},
+	{text = "Threat Meters", isTitle = 1, notCheckable = 1, keepShownOnClick = 1 },
+	{text = "Omen", notCheckable = 1,
+    func = function() if IsAddOnLoaded("Omen") then ToggleFrame(Omen.Anchor) end end},
+	{text = "Boss addons", isTitle = 1, notCheckable = 1, keepShownOnClick = 1 },
+	{text = "DBM", notCheckable = 1,
+    func = function() if IsAddOnLoaded("DBM-Core") then DBM:LoadGUI() end end},
+	{text = "DXE", notCheckable = 1,
+    func = function() if IsAddOnLoaded("DXE") then DXE:ToggleConfig() end end},
+	{text = "Other addons", isTitle = 1, notCheckable = 1, keepShownOnClick = 1 },
+	{text = "AtlasLoot", notCheckable = 1,
+    func = function() if IsAddOnLoaded("AtlasLoot") then ToggleFrame(AtlasLootDefaultFrame) end end},
+	{text = "WIM", notCheckable = 1,
+    func = function() if IsAddOnLoaded("WIM") then WIM.ShowAllWindows() end end},
 }
 
 Minimap:SetScript("OnMouseUp", function(self, button)
@@ -375,26 +378,28 @@ if SettingsCF["general"].minimap_icon == true and IsAddOnLoaded("ShestakUI_Confi
 	end
 
 	iconMenuDrop = addDrop({
-		{ text = L_GUI_MINIMAP_ICON_SLASH, isTitle = 1, notCheckable = 1, keepShownOnClick = 1 },
-		{ text = L_GUI_MINIMAP_ICON_SPEC, func = function() 
+		{text = L_GUI_MINIMAP_ICON_SLASH, isTitle = 1, notCheckable = 1, keepShownOnClick = 1 },
+		{text = L_GUI_MINIMAP_ICON_SPEC, notCheckable = 1,
+		func = function() 
 			local spec = GetActiveTalentGroup()
 			if spec == 1 then 
 				SetActiveTalentGroup(2) 
 			elseif spec == 2 then 
 				SetActiveTalentGroup(1) 
 			end
-		end },
-		{ text = L_GUI_MINIMAP_ICON_CL, func = function() CombatLogClearEntries() end },
-		{ text = L_GUI_MINIMAP_ICON_DBM, func = function() DBM:DemoMode() end },
-		{ text = L_GUI_MINIMAP_ICON_HEAL, func = function()
+		end},
+		{text = L_GUI_MINIMAP_ICON_CL, notCheckable = 1, func = function() CombatLogClearEntries() end},
+		{text = L_GUI_MINIMAP_ICON_DBM, notCheckable = 1, func = function() DBM:DemoMode() end},
+		{text = L_GUI_MINIMAP_ICON_HEAL, notCheckable = 1, func = function()
 			DisableAddOn("ShestakUI_DPS")
 			EnableAddOn("ShestakUI_Heal")
 			ReloadUI()
-		end },
-		{ text = L_GUI_MINIMAP_ICON_DPS, func = function()
+		end},
+		{text = L_GUI_MINIMAP_ICON_DPS, notCheckable = 1,
+		func = function()
 			DisableAddOn("ShestakUI_Heal")
 			EnableAddOn("ShestakUI_DPS")
 			ReloadUI()
-		end },
+		end},
 	})
 end

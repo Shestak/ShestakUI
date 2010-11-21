@@ -10,6 +10,7 @@ SettingsDB.white_list = {
 	[ERR_QUEST_LOG_FULL] = true,
 	[ERR_ITEM_MAX_COUNT] = true,
 	[ERR_NOT_ENOUGH_MONEY] = true,
+	[SPELL_FAILED_IN_COMBAT_RES_LIMIT_REACHED] = true,
 }
 
 ----------------------------------------------------------------------------------------

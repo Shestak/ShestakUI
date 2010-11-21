@@ -29,9 +29,7 @@ f.bg:SetVertexColor(0, 0, 0, 0)
 f:SetFrameStrata("HIGH")
 
 local r = CreateFrame("Frame", nil, f)
-SettingsDB.CreatePanel(r, SettingsCF["minimap"].size + 4, 20, "BOTTOMLEFT", f, "BOTTOMLEFT", 0, 0)
-r:SetBackdropColor(0, 0, 0, 0.8)
-r.bg:SetVertexColor(0, 0, 0, 0)
+SettingsDB.CreateFadedPanel(r, SettingsCF["minimap"].size + 4, 20, "BOTTOMLEFT", f, "BOTTOMLEFT", 0, 0)
 r:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
 
 local l = r:CreateFontString("TeleportMenuReagentText", "OVERLAY", nil)
@@ -42,9 +40,7 @@ for i, spell in pairs(spells) do
 	local teleport = GetSpellInfo(spell[1])
  
 	local b = CreateFrame("Button", nil, f, "SecureActionButtonTemplate")
-	SettingsDB.CreatePanel(b, SettingsCF["minimap"].size + 4, 20, "BOTTOMLEFT", f, "BOTTOMLEFT", 0, (i * 21))
-	b:SetBackdropColor(0, 0, 0, 0.8)
-	b.bg:SetVertexColor(0, 0, 0, 0)
+	SettingsDB.CreateFadedPanel(b, SettingsCF["minimap"].size + 4, 20, "BOTTOMLEFT", f, "BOTTOMLEFT", 0, (i * 21))
 	b:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
  
 	local l = b:CreateFontString(nil, "OVERLAY", nil)
@@ -62,8 +58,8 @@ f:Hide()
 
 local b = CreateFrame("Button", nil, UIParent)
 b:SetPoint("TOPLEFT", Minimap, "TOPLEFT")
-b:SetWidth(25)
-b:SetHeight(25)
+b:SetWidth(20)
+b:SetHeight(20)
 b:SetScript("OnClick", function(self)
 	if not InCombatLockdown() then
 		if _G["TeleportMenu"]:IsShown() then

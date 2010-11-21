@@ -90,6 +90,12 @@ if ct.myclass=="WARLOCK" then
 	end
 elseif ct.myclass=="DRUID"then
 	if(ct.mergeaoespam)then
+		-- Healer spells
+		ct.aoespam[774]=true	-- Rejuvenation (Normal)
+		ct.aoespam[64801]=true	-- Rejuvenation (First tick)
+		ct.aoespam[48438]=true	-- Wild Growth
+		ct.aoespam[33763]=true	-- Lifebloom
+		-- Damager spells
 		ct.aoespam[8921]=true	-- Moonfire
 		ct.aoespam[93402]=true	-- Sunfire
 		ct.aoespam[5570]=true	-- Insect Swarm
@@ -107,6 +113,25 @@ elseif ct.myclass=="PALADIN"then
 		ct.aoespam[81297]=true	-- Consecration
 		ct.aoespam[2812]=true	-- Holy Wrath
 		ct.aoespam[53385]=true	-- Divine Storm
+	end
+elseif ct.myclass=="PRIEST"then
+	if(ct.mergeaoespam)then
+		-- Healer spells
+		ct.aoespam[47750]=true	-- Penance (Heal Effect)
+		ct.aoespam[139]=true	-- Renew
+		ct.aoespam[596]=true	-- Prayer of Healing
+		ct.aoespam[56161]=true	-- Glyph of Prayer of Healing
+		ct.aoespam[64844]=true	-- Divine Hymn
+		ct.aoespam[32546]=true	-- Binding Heal
+		ct.aoespam[77489]=true	-- Echo of Light
+		ct.aoespam[34861]=true	-- Circle of Healing
+		ct.aoespam[23455]=true	-- Holy Nova (Healing Effect)
+		ct.aoespam[33110]=true	-- Prayer of Mending
+		ct.aoespam[63544]=true	-- Divine Touch
+		-- Damager spells
+		ct.aoespam[47666]=true	-- Penance (Damage Effect)
+		ct.aoespam[15237]=true	-- Holy Nova (Damage Effect)
+		
 	end
 elseif ct.myclass=="SHAMAN"then
 	if(ct.mergeaoespam)then
@@ -639,6 +664,8 @@ local StartConfigmode=function()
 			ct.locked=false
 		end
 		pr("unlocked.")
+	else
+		pr("can't be configured in combat.")
 	end
 end
 
@@ -712,7 +739,6 @@ local function StartTestMode()
 					color={1,1,random(0,1)}
 				end
 				ct.frames[i]:AddMessage(msg,unpack(color))
-				
 			end
 			TimeSinceLastUpdate = 0
 		end
@@ -1000,22 +1026,31 @@ if(ct.healing)then
 						if(ct.stopvespam and ct.shadowform and spellId==15290)then
 							return
 						end
+						local rawamount=amount
 						if (critical) then 
-							msg=ct.critprefix..amount..ct.critpostfix
+							amount=ct.critprefix..amount..ct.critpostfix
 							color={.1,1,.1}
 						else
-							msg=amount
 							color={.1,.75,.1}
-						end 
+						end
 						if(ct.icons)then
 							_,_,icon=GetSpellInfo(spellId)
 						end
                			if (icon) then 
-                			msg=msg..' \124T'..icon..':'..ct.iconsize..':'..ct.iconsize..':0:0:64:64:5:59:5:59\124t'
+                			msg=' \124T'..icon..':'..ct.iconsize..':'..ct.iconsize..':0:0:64:64:5:59:5:59\124t'
 						elseif(ct.icons)then
-							msg=msg.." \124T"..ct.blank..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
-                		end 
-						xCT4:AddMessage(msg,unpack(color))
+							msg=" \124T"..ct.blank..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
+                		end
+						if ct.mergeaoespam and ct.aoespam[spellId] then
+							SQ[spellId]["locked"]=true
+							SQ[spellId]["queue"]=ct.SpamQueue(spellId, rawamount)
+							SQ[spellId]["msg"]=msg
+							SQ[spellId]["color"]=color
+							SQ[spellId]["count"]=SQ[spellId]["count"]+1
+							SQ[spellId]["locked"]=false
+							return
+						end 
+						xCT4:AddMessage(amount..""..msg,unpack(color))
 					end
 				end
 			end

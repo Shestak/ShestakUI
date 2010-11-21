@@ -30,7 +30,7 @@ local L = setmetatable({}, {
 	end
 })
 
-local function Print (x)
+local function Print(x)
 	DEFAULT_CHAT_FRAME:AddMessage("|cffC495DDShestakUI:|r " .. x)
 end
 
@@ -75,6 +75,9 @@ end
 local function Stuffing_Toggle()
 	if Stuffing.frame:IsShown() then
 		Stuffing.frame:Hide()
+		if ContainerFrame1:IsShown() then
+			ToggleKeyRing() 
+		end
 	else
 		Stuffing.frame:Show()
 	end
@@ -363,6 +366,9 @@ function Stuffing:CreateBagFrame(w)
 			return
 		end
 		self:GetParent():Hide()
+		if ContainerFrame1:IsShown() then
+			ToggleKeyRing()
+		end
 	end)
 	f.b_close:RegisterForClicks("AnyUp")
 	
@@ -510,12 +516,11 @@ function Stuffing:Layout(lb)
 		fb:SetClampedToScreen(1)
 		SettingsDB.SkinFadedPanel(fb)
 		
-		local bsize = 30
-		if lb then bsize = 37 end
+		local bsize = SettingsCF["bag"].button_size
 
 		local w = 2 * 10
 		w = w + ((#bs - 1) * bsize)
-		w = w + (10 * (#bs - 2))
+		w = w + ((#bs - 2) * 4)
 
 		fb:SetHeight(SettingsDB.Scale(2 * 10 + bsize))
 		fb:SetWidth(SettingsDB.Scale(w))
@@ -527,8 +532,7 @@ function Stuffing:Layout(lb)
 	local idx = 0
 	for _, v in ipairs(bs) do
 		if (not lb and v <= 3 ) or (lb and v ~= -1) then
-			local bsize = 30
-			if lb then bsize = 37 end
+			local bsize = SettingsCF["bag"].button_size
 			local b = self:BagFrameSlotNew(v, fb)
 			local xoff = 10
 
@@ -537,9 +541,23 @@ function Stuffing:Layout(lb)
 
 			b.frame:ClearAllPoints()
 			b.frame:SetPoint("LEFT", fb, "LEFT", SettingsDB.Scale(xoff), 0)
+			b.frame:SetHeight(bsize)
+			b.frame:SetWidth(bsize)
+			b.frame:SetPushedTexture("")
+			b.frame:SetNormalTexture("")
 			b.frame:Show()
+			SettingsDB.CreateTemplate(b.frame)
+			b.frame:SetBackdropColor(0, 0, 0, 0.5)
+			SettingsDB.StyleButton(b.frame, false)
 
+			local iconTex = _G[b.frame:GetName() .. "IconTexture"]
+			iconTex:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			iconTex:SetPoint("TOPLEFT", b.frame, SettingsDB.Scale(2), SettingsDB.Scale(-2))
+			iconTex:SetPoint("BOTTOMRIGHT", b.frame, SettingsDB.Scale(-2), SettingsDB.Scale(2))
 
+			iconTex:Show()
+			b.iconTex = iconTex
+			
 			idx = idx + 1
 		end
 	end
@@ -595,7 +613,7 @@ function Stuffing:Layout(lb)
 				b.frame:SetNormalTexture("")
 				b.frame:Show()
 				SettingsDB.CreateTemplate(b.frame)
-				b.frame:SetBackdropColor(0, 0, 0, 0.5) -- we just need border with SetTemplate, not the backdrop. Hopefully this will fix invisible item that some users have.
+				b.frame:SetBackdropColor(0, 0, 0, 0.5)
 				SettingsDB.StyleButton(b.frame, false)
 				
 				-- Color profession bag slot border ~yellow
@@ -752,36 +770,46 @@ function Stuffing:PLAYER_ENTERING_WORLD()
 	-- please don't do anything after 1 player_entering_world event.
 	Stuffing:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	
-	-- hooking and setting key ring bag
-	-- this is just a reskin of Blizzard key bag to fit Tukui
-	-- hooking OnShow because sometime key max slot changes.
 	ContainerFrame1:HookScript("OnShow", function(self)
-		local keybackdrop = CreateFrame("Frame", nil, self)
+		local keybackdrop = CreateFrame("Frame", "KeyringFrame", self)
 		keybackdrop:SetPoint("TOPLEFT", SettingsDB.Scale(9), SettingsDB.Scale(-40))
 		keybackdrop:SetPoint("BOTTOMLEFT", 0, 0)
-		keybackdrop:SetSize(SettingsDB.Scale(179),SettingsDB.Scale(215))
-		SettingsDB.CreateTemplate(keybackdrop)
+		keybackdrop:SetSize(SettingsDB.Scale(178),SettingsDB.Scale(138))
+		SettingsDB.SkinFadedPanel(KeyringFrame)
+		
 		ContainerFrame1CloseButton:Hide()
 		ContainerFrame1Portrait:Hide()
+		ContainerFrame1PortraitButton:Hide()
 		ContainerFrame1Name:Hide()
 		ContainerFrame1BackgroundTop:SetAlpha(0)
 		ContainerFrame1BackgroundMiddle1:SetAlpha(0)
 		ContainerFrame1BackgroundMiddle2:SetAlpha(0)
 		ContainerFrame1BackgroundBottom:SetAlpha(0)
+		
 		for i=1, GetKeyRingSize() do
 			local slot = _G["ContainerFrame1Item"..i]
 			local t = _G["ContainerFrame1Item"..i.."IconTexture"]
+			local count = _G["ContainerFrame1Item"..i.."Count"]
+			SettingsDB.Kill(_G["ContainerFrame1Item"..i.."IconQuestTexture"])
+			
 			slot:SetPushedTexture("")
 			slot:SetNormalTexture("")
+			--slot:SetHeight(SettingsDB.Scale(SettingsCF["bag"].button_size))
+			--slot:SetWidth(SettingsDB.Scale(SettingsCF["bag"].button_size))
+			
 			t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			t:SetPoint("TOPLEFT", slot, SettingsDB.Scale(2), SettingsDB.Scale(-2))
 			t:SetPoint("BOTTOMRIGHT", slot, SettingsDB.Scale(-2), SettingsDB.Scale(2))
+			
+			count:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style)
+			count:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(1), SettingsDB.Scale(1))
+			
 			SettingsDB.CreateTemplate(slot)
 			slot:SetBackdropColor(0, 0, 0, 0.5)
 			SettingsDB.StyleButton(slot, false)
 		end
 		self:ClearAllPoints()
-		self:SetPoint("BOTTOMRIGHT", TukuiInfoRight, "TOPRIGHT", SettingsDB.Scale(4), SettingsDB.Scale(5))
+		self:SetPoint("TOPRIGHT", StuffingFrameBags, "TOPLEFT", SettingsDB.Scale(2), SettingsDB.Scale(40))
 	end)
 end
 
@@ -972,7 +1000,7 @@ function Stuffing:SortOnUpdate(e)
 	if (not changed and not blocked) or self.itmax > 250 then
 		self:SetScript("OnUpdate", nil)
 		self.sortList = nil
-		Print (L_BAG_SORTING_BAGS)
+		Print(L_BAG_SORTING_BAGS)
 	end
 end
 
@@ -993,7 +1021,7 @@ function Stuffing:SortBags()
 	if (UnitAffectingCombat("player")) then return end
 	local bs = self.sortBags
 	if #bs < 1 then
-		Print (L_BAG_NOTHING_SORT)
+		Print(L_BAG_NOTHING_SORT)
 		return
 	end
 
@@ -1150,7 +1178,7 @@ function Stuffing:Restack()
 		self:SetScript("OnUpdate", Stuffing.RestackOnUpdate)
 	else
 		self:SetScript("OnUpdate", nil)
-		Print (L_BAG_STACK_END)
+		Print(L_BAG_STACK_END)
 	end
 end
 
@@ -1217,7 +1245,14 @@ function Stuffing.Menu(self, level)
 		if Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
 			Stuffing:Layout(true)
 		end
+	end
+	UIDropDownMenu_AddButton(info, level)
+	
+	wipe(info)
+	info.text = KEYRING
 
+	info.func = function()
+		ToggleKeyRing()
 	end
 	UIDropDownMenu_AddButton(info, level)
 

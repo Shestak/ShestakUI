@@ -39,8 +39,8 @@ f:Hide()
 
 local b = CreateFrame("Button", nil, UIParent)
 b:SetPoint("TOPLEFT", Minimap, "TOPLEFT")
-b:SetWidth(25)
-b:SetHeight(25)
+b:SetWidth(20)
+b:SetHeight(20)
 b:SetScript("OnClick", function(self)
 	if not InCombatLockdown() then
 		if _G["SealMenu"]:IsShown() then
