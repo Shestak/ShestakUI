@@ -814,7 +814,6 @@ if friends.enabled then
 				if online > 0 then
 					GameTooltip:AddLine' '
 					GameTooltip:AddLine("World of Warcraft")
-					-- name, level, class, area, connected, status, note
 					for i = 1, total do
 						name, level, class, zone, connected, status, note = GetFriendInfo(i)
 						if not connected then break end
@@ -833,8 +832,17 @@ if friends.enabled then
 					GameTooltip:AddLine' '
 					GameTooltip:AddLine("Battle.net")
 					for i = 1, BNtotal do
-						presenceID, givenName, surname, toonName, toonID, client, isOnline = BNGetFriendInfo(i)
+						presenceID, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND = BNGetFriendInfo(i)
 						if not isOnline then break end
+						if(isAFK) then
+							status = L_CHAT_AFK
+						else 
+							if(isDND) then
+								status = L_CHAT_DND
+							else
+								status = ""
+							end
+						end
 						if client == "WoW" then
 							local hasFocus, toonName, client, realmName, faction, race, class, guild, zoneName, level= BNGetToonInfo(toonID)
 							for k,v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
@@ -842,6 +850,7 @@ if friends.enabled then
 								for k,v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 							end
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
+							if UnitInParty(name) or UnitInRaid(name) then grouped = "|cffaaaaaa*|r" else grouped = "" end
 							GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r",client,levelc.r*255,levelc.g*255,levelc.b*255,level,classc.r*255,classc.g*255,classc.b*255,toonName,grouped, 255, 0, 0, status),givenName.." "..surname,238,238,238,238,238,238)
 							if self.altdown then
 								if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
