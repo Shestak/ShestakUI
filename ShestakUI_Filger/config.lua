@@ -479,6 +479,26 @@ Filger_Spells = {
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--Hysteria
+			{ spellID = 49016, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Spell Reflection
+			{ spellID = 23920, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Blood Reserve
+			{ spellID = 64568, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Enrage
+			{ spellID = 14202, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Death Wish
+			{ spellID = 12292, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Meat Cleaver
+			{ spellID = 85739, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Executioner
+			{ spellID = 90806, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rude Interruption
+			{ spellID = 86663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Recklesness
+			{ spellID = 1719, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Berserker Rage
+			{ spellID = 18499, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -505,6 +525,8 @@ Filger_Spells = {
 			{ spellID = 99, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Curse of Weakness
 			{ spellID = 702, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
+			-- Mortal Strike
+			{ spellID = 12294, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -529,6 +551,28 @@ Filger_Spells = {
 			{ spellID = 71559, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Thunderstruck
 			{ spellID = 80980, size = 37, unitId = "player", caster = "player", filter = "BUFF" }, 
+			-- Paragon
+			{ spellID = 67708, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Blood Drinker
+			{ spellID = 70855, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Taste for Blood
+			{ spellID = 56638, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rage of the Fallen
+			{ spellID = 71396, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Frostforged Champion
+			{ spellID = 72412, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Whispering Fanged Skull
+			{ spellID = 71401, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Tricks of the Trade
+			{ spellID = 59628, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Tricks of the Trade
+			{ spellID = 71905, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Chaos Bane
+			{ spellID = 73422, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Battle trance
+			{ spellID = 85742, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Incite
+			{ spellID = 86627, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -564,7 +608,11 @@ Filger_Spells = {
 			-- Shield Block
 			{ spellID = 2565, size = 30, filter = "CD" },
 			-- Commanding Shout
-			{ spellID = 469, size = 30, filter = "CD" }, 
+			{ spellID = 469, size = 30, filter = "CD" },
+			-- Raging Blow
+			{ spellID = 85288, size = 30, filter = "CD" },
+			-- Bloodthirst
+			{ spellID = 23881, size = 30, filter = "CD" },
 		},
 	},
 	["SHAMAN"] = {
