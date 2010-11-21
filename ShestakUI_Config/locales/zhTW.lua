@@ -200,7 +200,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_UF_CASTBAR_ICON = "顯示施法條圖示"
 	L_GUI_UF_CASTBAR_LATENCY = "施法條延遲"
 	L_GUI_UF_SHOW_BOSS = "顯示boss框體"
-	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
+	L_GUI_UF_BOSS_RIGHT = "在右側顯示Boss框體"
 	L_GUI_UF_SHOW_ARENA = "顯示競技場框體"
 	L_GUI_UF_ARENA_RIGHT = "在右側顯示競技場框體"
 	L_GUI_UF_SHOW_PARTY = "顯示隊伍框體"

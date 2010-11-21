@@ -9,7 +9,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_GENERAL_MULTISAMPLE = "多重采样保护(保证1像素边框)"
 	L_GUI_GENERAL_UISCALE = "UI缩放(当自动缩放关闭时)"
 	L_GUI_GENERAL_WELCOME_MESSAGE = "显示欢迎信息"
-	L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tolerance option to your latency" -- Needs review
+	L_GUI_GENERAL_LAG_TOLERANCE = "自动更新自定延迟容许值"
 
 	-- Miscellaneous options
 	L_GUI_MISC_AUTOQUEST = "自动接受任务"
@@ -201,7 +201,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_UF_CASTBAR_ICON = "显示施法条图标"
 	L_GUI_UF_CASTBAR_LATENCY = "施法条延迟"
 	L_GUI_UF_SHOW_BOSS = "显示boss框体"
-	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
+	L_GUI_UF_BOSS_RIGHT = "在右侧显示Boss框体"
 	L_GUI_UF_SHOW_ARENA = "显示竞技场框体"
 	L_GUI_UF_ARENA_RIGHT = "在右侧显示竞技场框体"
 	L_GUI_UF_SHOW_PARTY = "显示队伍框体"
