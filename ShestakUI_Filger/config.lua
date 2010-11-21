@@ -479,7 +479,7 @@ Filger_Spells = {
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			--Hysteria
+			-- Hysteria
 			{ spellID = 49016, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Spell Reflection
 			{ spellID = 23920, size = 37, unitId = "player", caster = "player", filter = "BUFF" },

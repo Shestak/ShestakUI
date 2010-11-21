@@ -56,6 +56,32 @@ LPSTAT_CONFIG = {
 		anchor_frame = "Memory", anchor_to = "left", anchor_from = "right",
 		x_off = SettingsCF.stats.memory and 3 or 0, y_off = 0,
 	},
+	Friends = {
+		enabled = SettingsCF.stats.friend,
+		fmt = "%d/%d"..class"f", -- "F: 3/40"
+		maxfriends = nil, -- Set max friends listed, nil means no limit.
+		anchor_frame = "FPS", anchor_to = "left", anchor_from = "right",
+		x_off = SettingsCF.stats.fps and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+	},
+	Guild = {
+		enabled = SettingsCF.stats.guild,
+		fmt = "%d/%d"..class"g", -- "G: 5/114"
+		maxguild = nil, -- Set max members listed, nil means no limit. Alt-key reveals hidden members.
+		threshold = 1, -- Minimum level displayed (1-80).
+		sorting = "class", -- Default roster sorting: name, level, class, zone, rank, note.
+		anchor_frame = "Friends", anchor_to = "left", anchor_from = "right",
+		x_off = SettingsCF.stats.friend and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+	},
+	Durability = {
+		enabled = SettingsCF.stats.durability,
+		fmt = "[color]%d|r%%"..class"d",-- "54%D" -- %% outputs %, [color] inserts durability color code.
+		man = true, -- Hide bliz durability man.
+		gfunds = SettingsCF.stats.guild_repair, -- Change to false to disable guild repairing.
+		ignore_inventory = false, -- Ignore inventory gear when auto-repairing.
+		gear_icons = false, -- Show your gear icons in the tooltip.
+		anchor_frame = "Guild", anchor_to = "left", anchor_from = "right",
+		x_off = SettingsCF.stats.guild and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+	},
 	Experience = {
 		enabled = SettingsCF.stats.experience,
 			-- Experience & Played tags...
@@ -68,7 +94,7 @@ LPSTAT_CONFIG = {
 			--	Quests To Level [questsleft]	Kills To Level [killsleft]
 			--	Total Played [playedtotal]		Level Played [playedlevel]		Session Played [playedsession]
 		xp_normal_fmt = "[cur%]%"..class"XP", -- XP string used when not rested.
-		xp_rested_fmt = "[cur%]%"..class"XP ".."[rest%]%"..class"R", -- XP string used when rested.		
+		xp_rested_fmt = "[cur%]%"..class"XP ".." [rest%]%"..class"R", -- XP string used when rested.		
 		played_fmt = class"Online: ".."|r".."[playedsession]", -- Played time format.
 		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")		
 			-- day = "d", hour = "h", minute = "m", second = "s", -- Customizable time labels. Will localize by default.
@@ -83,8 +109,8 @@ LPSTAT_CONFIG = {
 			["The Wyrmrest Accord"] = "Wyrmrest",
 			["Knights of the Ebon Blade"] = "Ebon Blade",
 		},
-		anchor_frame = "FPS", anchor_to = "left", anchor_from = "right",
-		x_off = SettingsCF.stats.fps and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+		anchor_frame = "Durability", anchor_to = "left", anchor_from = "right",
+		x_off = SettingsCF.stats.durability and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
 	},
 -- Bottomright block
 	Coords = {
@@ -102,34 +128,8 @@ LPSTAT_CONFIG = {
 		x_off = SettingsCF.stats.coords and -3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
 	},
 -- Top block
-	Friends = {
-		enabled = SettingsCF["toppanel"].enable,
-		fmt = class"F: ".."%d/%d", -- "F: 3/40"
-		maxfriends = nil, -- Set max friends listed, nil means no limit.
-		anchor_frame = "StatContainer", anchor_to = "center", anchor_from = "left",
-		x_off = 35, y_off = 6, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = 0, tip_y = -6
-	},
-	Guild = {
-		enabled = SettingsCF["toppanel"].enable,
-		fmt = class"G: ".."%d/%d", -- "G: 5/114"
-		maxguild = nil, -- Set max members listed, nil means no limit. Alt-key reveals hidden members.
-		threshold = 1, -- Minimum level displayed (1-80).
-		sorting = "class", -- Default roster sorting: name, level, class, zone, rank, note.
-		anchor_frame = "Friends", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = 0, tip_y = -6
-	},
-	Durability = {
-		enabled = true,
-		fmt = class"D: ".."[color]%d|r%%",-- "54%D" -- %% outputs %, [color] inserts durability color code.
-		man = true, -- Hide bliz durability man.
-		gfunds = SettingsCF.stats.guild_repair, -- Change to false to disable guild repairing.
-		ignore_inventory = false, -- Ignore inventory gear when auto-repairing.
-		gear_icons = false, -- Show your gear icons in the tooltip.
-		anchor_frame = "Guild", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = 0, tip_y = -6
-	},
 	Stats = {
-		enabled = SettingsCF["toppanel"].enable,
+		enabled = SettingsCF.toppanel.enable,
 			-- Available stat tags...
 			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Armor Penetration% [armorpen]	Expertise% [expertise]
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
@@ -139,36 +139,36 @@ LPSTAT_CONFIG = {
 			--   Avoidance% [avoidance]			MP5 I5SR [manaregen]			Armor Value [armor]				Resilience [resilience]
 		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
 		spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%", -- Spec #2 string
-		anchor_frame = "Durability", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0,
+		anchor_frame = "StatContainer", anchor_to = "center", anchor_from = "center",
+		x_off = -20, y_off = 6,
 	},
 	Bags = {
-		enabled = SettingsCF["toppanel"].enable,
+		enabled = SettingsCF.toppanel.enable,
 		fmt = class"B: ".."%d/%d", -- "B: 24/98"
-		anchor_frame = "Friends", anchor_to = "topleft", anchor_from = "bottomleft",
+		anchor_frame = "Stats", anchor_to = "topleft", anchor_from = "bottomleft",
 		x_off = 0, y_off = -5,
 	},
 	-- New block
 	Helm = {
-		enabled = SettingsCF["toppanel"].enable,
+		enabled = SettingsCF.toppanel.enable,
 		fmt = class"H: ".."%s", -- "Helm"
 		anchor_frame = "Bags", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Cloak = {
-		enabled = SettingsCF["toppanel"].enable,
+		enabled = SettingsCF.toppanel.enable,
 		fmt = class"C: ".."%s", -- "Cloak"
 		anchor_frame = "Helm", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Loot = {
-		enabled = SettingsCF["toppanel"].enable,
+		enabled = SettingsCF.toppanel.enable,
 		fmt = class"L: ".."%s", -- "Loot"
 		anchor_frame = "Cloak", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Talents = {
-		enabled = SettingsCF["toppanel"].enable,
+		enabled = SettingsCF.toppanel.enable,
 		fmt = class"T: ".."[spec %d/%d/%d] [unspent]", -- "Protection: 15/0/51 +5", [shortname] shortens spec name.
 		iconsize = 15,  -- Size of talent [icon].
 		name_subs = { -- Substitutions for long talent tree names, remove and/or change any/all.
@@ -185,7 +185,7 @@ LPSTAT_CONFIG = {
 			["Marksmanship"] = "Marks.",
 			["Beast Mastery"] = "B.M.",
 		},
-		anchor_frame = "Loot", anchor_to = "left", anchor_from = "right",
+		anchor_frame = "Stats", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = 0, tip_y = -6
 	},
 -- MiniMap block

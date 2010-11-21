@@ -354,7 +354,7 @@ SettingsCF["toppanel"] = {
 	["enable"] = true,							-- Enable top panel
 	["mouseover"] = true,						-- Top panel on mouseover
 	["height"] = 55,							-- Panel height
-	["width"] = 320,							-- Panel width
+	["width"] = 250,							-- Panel width
 }
 
 ----------------------------------------------------------------------------------------
@@ -366,6 +366,9 @@ SettingsCF["stats"] = {
 	["latency"] = true,							-- Latency
 	["memory"] = true,							-- Memory
 	["fps"] = true,								-- FPS
+	["friend"] = true,							-- Friends
+	["guild"] = true,							-- Guild
+	["durability"] = true,						-- Durability
 	["experience"] = false,						-- Experience
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
