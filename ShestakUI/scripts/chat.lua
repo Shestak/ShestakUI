@@ -201,6 +201,14 @@ local function SetupChatPosAndFont(self)
 				chat:SetPoint(pos.chat[1], pos.chat[2], pos.chat[3], pos.chat[4], pos.chat[5])
 			end
 			FCF_SavePositionAndDimensions(chat)
+		elseif i == 2 then
+			if SettingsCF["chat"].combatlog == true then
+				FCF_DockFrame(ChatFrame2)
+			else
+				FCF_UnDockFrame(ChatFrame2)
+				chat:ClearAllPoints()
+				chat:SetPoint("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)
+			end
 		end
 	end
 	

@@ -81,17 +81,6 @@ local function InstallUI()
 			if i == 1 then
 				frame:ClearAllPoints()
 				frame:SetPoint(unpack(SettingsCF.position.chat))
-			elseif i == 2 and (SettingsDB.name == "Черешок" 
-				or SettingsDB.name == "Вершок"
-				or SettingsDB.name == "Вещмешок" 
-				or SettingsDB.name == "Гребешок" 
-				or SettingsDB.name == "Кулешок" 
-				or SettingsDB.name == "Лапушок" 
-				or SettingsDB.name == "Обушок" 
-				or SettingsDB.name == "Ремешок"
-				or SettingsDB.name == "Шестак") then
-				frame:ClearAllPoints()
-				frame:SetPoint("TOPRIGHT", 2000, 0)
 			end
 
 			-- Save new default position and dimension

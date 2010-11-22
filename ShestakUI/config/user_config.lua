@@ -51,6 +51,7 @@ if SettingsDB.name == "Черешок"
 	SettingsCF["tooltip"].cursor = true
 	SettingsCF["tooltip"].title = true
 	SettingsCF["tooltip"].talents = true
+	SettingsCF["chat"].combatlog = false
 	SettingsCF["unitframe"].arena_on_right = false
 	SettingsCF["error"].black = false
 	SettingsCF["error"].white = true

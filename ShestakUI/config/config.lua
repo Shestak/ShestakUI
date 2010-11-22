@@ -180,6 +180,7 @@ SettingsCF["chat"] = {
 	["time_color"] = "FFD700",					-- Timestamp coloring(http://www.december.com/html/spec/colorcodes.html)
 	["whisp_sound"] = true,						-- Sound when whisper
 	["bubbles"] = true,							-- Skin Blizzard chat bubbles
+	["combatlog"] = true,						-- Show CombatLog tab(need two reloads when false)
 }
 
 ----------------------------------------------------------------------------------------
