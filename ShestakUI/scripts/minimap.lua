@@ -154,6 +154,8 @@ local micromenu = {
 
 local addonmenu = {
 	{text = "Damage Meters", isTitle = 1, notCheckable = 1, keepShownOnClick = 1 },
+	{text = "alDamageMeter", notCheckable = 1,
+    func = function() if IsAddOnLoaded("alDamageMeter") then ToggleFrame(alDamageMeterFrame) end end},
 	{text = "Skada", notCheckable = 1,
     func = function() if IsAddOnLoaded("Skada") then Skada:ToggleWindow() end end},
 	{text = "Recount", notCheckable = 1,
