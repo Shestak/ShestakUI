@@ -167,6 +167,12 @@ LPSTAT_CONFIG = {
 		anchor_frame = "Cloak", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
+	Nameplates = {
+		enabled = SettingsCF["toppanel"].enable,
+		fmt = class"N: ".."%s", -- "Nameplates"
+		anchor_frame = "Loot", anchor_to = "left", anchor_from = "right",
+		x_off = 3, y_off = 0,
+	},
 	Talents = {
 		enabled = SettingsCF.toppanel.enable,
 		fmt = class"T: ".."[spec %d/%d/%d] [unspent]", -- "Protection: 15/0/51 +5", [shortname] shortens spec name.

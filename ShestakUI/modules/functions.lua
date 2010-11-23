@@ -847,6 +847,10 @@ do
 		local name, id = GetWatchedFactionInfo()
 		bar:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
 	end
+	
+	SettingsDB.UpdatePetInfo = function(self, event)
+		if self.Name then self.Name:UpdateTag(self.unit) end
+	end
 
 	SettingsDB.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 		Castbar.channeling = false
@@ -1152,6 +1156,12 @@ do
 				self.FrameBackdrop:SetBackdropBorderColor(unpack(SettingsCF["media"].border_color))
 			end
 		end 
+	end
+	
+	SettingsDB.updateAllElements = function(frame)
+		for _, v in ipairs(frame.__elements) do
+			v(frame, "UpdateElement", frame.unit)
+		end
 	end
 	
 	SettingsDB.CountOffsets = {

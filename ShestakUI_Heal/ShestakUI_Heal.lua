@@ -98,7 +98,6 @@ local function Shared(self, unit)
 	else
 		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, SettingsDB.Scale(4))
 	end
-	self.Info.frequentUpdates = 0.2
 	self:Tag(self.Info, "[GetNameColor][NameShort]")
 	
 	-- Agro border
@@ -231,6 +230,8 @@ local function Shared(self, unit)
 		self.RaidDebuffs.count:SetTextColor(1, 1, 1)
 	end
 
+	self:RegisterEvent("PARTY_MEMBERS_CHANGED", SettingsDB.updateAllElements)
+	self:RegisterEvent("RAID_ROSTER_UPDATE", SettingsDB.updateAllElements)
 	return self
 end
 

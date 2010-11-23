@@ -150,6 +150,7 @@ elseif ct.myclass=="SHAMAN"then
 		ct.aoespam[8349]=true	-- Fire Nova
 		ct.aoespam[77478]=true 	-- Earhquake
 		ct.aoespam[51490]=true 	-- Thunderstorm
+		ct.aoespam[8187]=true 	-- Magma Totem
 	end
 elseif ct.myclass=="MAGE"then
 	if(ct.mergeaoespam)then

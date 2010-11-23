@@ -93,7 +93,7 @@ if SettingsDB.client == "ruRU" then
 	L_BAG_RIGHT_CLICK_SEARCH = "ПКМ для поиска"
 	
 	-- Grab mail
-	L_MAIL_STOPPED = "Сбор почты преостановлен из-за Ваших заполненных сумок."
+	L_MAIL_STOPPED = "Сбор почты приостановлен из-за заполненных сумок."
 	L_MAIL_COMPLETE = "Сбор почты окончен."
 	L_MAIL_NEED = "Нужен почтовый ящик."
 	L_MAIL_MESSAGES =  "cообщений"

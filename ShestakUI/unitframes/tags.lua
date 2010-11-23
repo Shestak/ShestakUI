@@ -52,22 +52,22 @@ oUF.Tags["NameArena"] = function(unit)
 	local name = UnitName(unit)
 	return SettingsDB.UTF(name, 4, false)
 end
-oUF.TagEvents["NameArena"] = "UNIT_NAME_UPDATE UNIT_HEALTH UNIT_MAXHEALTH UNIT_CONNECTION"
+oUF.TagEvents["NameArena"] = "UNIT_NAME_UPDATE"
 
 oUF.Tags["NameShort"] = function(unit)
 	local name = UnitName(unit)
 	return SettingsDB.UTF(name, 8, false)
 end
-oUF.TagEvents["NameShort"] = "UNIT_NAME_UPDATE UNIT_HEALTH UNIT_MAXHEALTH UNIT_CONNECTION"
+oUF.TagEvents["NameShort"] = "UNIT_NAME_UPDATE"
 
 oUF.Tags["NameMedium"] = function(unit)
 	local name = UnitName(unit)
 	return SettingsDB.UTF(name, 11, true)
 end
-oUF.TagEvents["NameMedium"] = "UNIT_NAME_UPDATE UNIT_HEALTH UNIT_MAXHEALTH UNIT_CONNECTION"
+oUF.TagEvents["NameMedium"] = "UNIT_NAME_UPDATE"
 
 oUF.Tags["NameLong"] = function(unit)
 	local name = UnitName(unit)
 	return SettingsDB.UTF(name, 18, true)
 end
-oUF.TagEvents["NameLong"] = "UNIT_NAME_UPDATE UNIT_HEALTH UNIT_MAXHEALTH UNIT_CONNECTION"
+oUF.TagEvents["NameLong"] = "UNIT_NAME_UPDATE"

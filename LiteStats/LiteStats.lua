@@ -56,6 +56,7 @@ local experience = modules.Experience
 local loot = modules.Loot
 local cloak = modules.Cloak
 local helm = modules.Helm
+local nameplates = modules.Nameplates
 
 -- Locale
 local locale = LSTLOCALE or {}
@@ -1303,6 +1304,31 @@ if cloak.enabled then
 				else
 					ShowCloak(1)
 					self.text:SetText(format(cloak.fmt,"|cff55ff55"..L"ON".."|r"))
+				end
+			end
+		end
+	})
+end
+------------------------------------------
+-- Nameplates
+if nameplates.enabled then
+	Inject("Nameplates", {
+		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN") end,
+		OnEvent = function(self)
+			if GetCVarBool("spreadnameplates") then
+				self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))
+			else
+				self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L"ON".."|r"))
+			end
+		end,
+		OnClick = function(self, button)
+			if button == "RightButton" or button == "LeftButton" then
+				if GetCVarBool("spreadnameplates") then
+					SetCVar("spreadnameplates", 0)
+					self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L"ON".."|r"))
+				else
+					SetCVar("spreadnameplates", 1)
+					self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))
 				end
 			end
 		end

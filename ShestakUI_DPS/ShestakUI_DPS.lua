@@ -119,7 +119,6 @@ local function Shared(self, unit)
 	
 	-- Names
 	self.Info = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
-	self.Info.frequentUpdates = 0.2
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.Info:SetPoint("CENTER", self.Health, "CENTER", SettingsDB.Scale(1), 0)
 	else
@@ -239,6 +238,8 @@ local function Shared(self, unit)
 		end
 	end
 
+	self:RegisterEvent("PARTY_MEMBERS_CHANGED", SettingsDB.updateAllElements)
+	self:RegisterEvent("RAID_ROSTER_UPDATE", SettingsDB.updateAllElements)
 	return self
 end
 

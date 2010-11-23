@@ -302,6 +302,9 @@ local function Local(o)
 	if o == "UIConfigstatslatency" then o = L_GUI_STATS_LATENCY end
 	if o == "UIConfigstatsmemory" then o = L_GUI_STATS_MEMORY end
 	if o == "UIConfigstatsfps" then o = L_GUI_STATS_FPS end
+	if o == "UIConfigstatsfriend" then o = FRIENDS end
+	if o == "UIConfigstatsguild" then o = GUILD end
+	if o == "UIConfigstatsdurability" then o = DURABILITY end
 	if o == "UIConfigstatsexperience" then o = L_GUI_STATS_EXPERIENCE end
 	if o == "UIConfigstatscoords" then o = L_GUI_STATS_COORDS end
 	if o == "UIConfigstatslocation" then o = L_GUI_STATS_LOCATION end
