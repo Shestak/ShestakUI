@@ -41,7 +41,7 @@ end
 -- aCooldowns [spell ID] = time
 if SettingsCF["cooldown"].raid_enable == true then
 	SettingsDB.raid_spells = {
-		[20484] = 1800,	-- Rebirth
+		[20484] = 600,	-- Rebirth
 		[6203] = 1800,	-- Soulstone
 		[6346] = 180,	-- Fear Ward
 		[29166] = 180,	-- Innervate
