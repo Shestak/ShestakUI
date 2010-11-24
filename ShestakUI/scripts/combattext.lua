@@ -62,124 +62,126 @@ end
 -- class config, overrides general
 if ct.myclass=="WARLOCK" then
 	if(ct.mergeaoespam)then
-		ct.aoespam[27243]=true	-- Seed of Corruption (DoT)
-		ct.aoespam[27285]=true	-- Seed of Corruption (Explosion)
-		ct.aoespam[172]=true	-- Corruption
-		ct.aoespam[87389]=true	-- Corruption (Soulburn: Seed of Corruption)
-		ct.aoespam[30108]=true	-- Unstable Affliction
-		ct.aoespam[348]=true	-- Immolate
-		ct.aoespam[980]=true	-- Bane of Agony
-		ct.aoespam[85455]=true	-- Bane of Havoc
-		ct.aoespam[85421]=true	-- Burning Embers
-		ct.aoespam[42223]=true	-- Rain of Fire
-		ct.aoespam[5857]=true	-- Hellfire Effect
-		ct.aoespam[50590]=true	-- Immolation Aura
-		ct.aoespam[30213]=true	-- Legion Strike (Felguard)
-		ct.aoespam[89753]=true	-- Felstorm (Felguard)
-		ct.aoespam[20153]=true	-- Immolation (Infrenal)
+		ct.aoespam[27243]=true		-- Seed of Corruption (DoT)
+		ct.aoespam[27285]=true		-- Seed of Corruption (Explosion)
+		ct.aoespam[172]=true		-- Corruption
+		ct.aoespam[87389]=true		-- Corruption (Soulburn: Seed of Corruption)
+		ct.aoespam[30108]=true		-- Unstable Affliction
+		ct.aoespam[348]=true		-- Immolate
+		ct.aoespam[980]=true		-- Bane of Agony
+		ct.aoespam[85455]=true		-- Bane of Havoc
+		ct.aoespam[85421]=true		-- Burning Embers
+		ct.aoespam[42223]=true		-- Rain of Fire
+		ct.aoespam[5857]=true		-- Hellfire Effect
+		ct.aoespam[50590]=true		-- Immolation Aura
+		ct.aoespam[30213]=true		-- Legion Strike (Felguard)
+		ct.aoespam[89753]=true		-- Felstorm (Felguard)
+		ct.aoespam[20153]=true		-- Immolation (Infrenal)
 	end
 	if(ct.healing)then
-		ct.healfilter[28176]=true -- Fel Armor
-		ct.healfilter[63106]=true -- Siphon Life
-		ct.healfilter[54181]=true -- Fel Synergy
-		ct.healfilter[89653]=true -- Drain Life
-		ct.healfilter[79268]=true -- Soul Harvest
-		ct.healfilter[30294]=true -- Soul Leech
+		ct.healfilter[28176]=true	-- Fel Armor
+		ct.healfilter[63106]=true	-- Siphon Life
+		ct.healfilter[54181]=true	-- Fel Synergy
+		ct.healfilter[89653]=true	-- Drain Life
+		ct.healfilter[79268]=true	-- Soul Harvest
+		ct.healfilter[30294]=true	-- Soul Leech
 	end
 elseif ct.myclass=="DRUID"then
 	if(ct.mergeaoespam)then
 		-- Healer spells
-		ct.aoespam[774]=true	-- Rejuvenation (Normal)
-		ct.aoespam[64801]=true	-- Rejuvenation (First tick)
-		ct.aoespam[48438]=true	-- Wild Growth
-		ct.aoespam[33763]=true	-- Lifebloom
-		ct.aoespam[81269]=true	-- Efflorescence
+		ct.aoespam[774]=true		-- Rejuvenation (Normal)
+		ct.aoespam[64801]=true		-- Rejuvenation (First tick)
+		ct.aoespam[48438]=true		-- Wild Growth
+		ct.aoespam[33763]=true		-- Lifebloom
+		ct.aoespam[81269]=true		-- Efflorescence
 		-- Damager spells
-		ct.aoespam[8921]=true	-- Moonfire
-		ct.aoespam[93402]=true	-- Sunfire
-		ct.aoespam[5570]=true	-- Insect Swarm
-		ct.aoespam[42231]=true	-- Hurricane
-		ct.aoespam[50288]=true	-- Starfall
-		ct.aoespam[61391]=true	-- Typhoon
-		ct.aoespam[1822]=true	-- Rake
-		ct.aoespam[62078]=true	-- Swipe (Cat Form)
-		ct.aoespam[779]=true	-- Swipe (Bear Form)
-		ct.aoespam[33745]=true	-- Lacerate
-		ct.aoespam[1079]=true	-- Rip
+		ct.aoespam[8921]=true		-- Moonfire
+		ct.aoespam[93402]=true		-- Sunfire
+		ct.aoespam[5570]=true		-- Insect Swarm
+		ct.aoespam[42231]=true		-- Hurricane
+		ct.aoespam[50288]=true		-- Starfall
+		ct.aoespam[61391]=true		-- Typhoon
+		ct.aoespam[1822]=true		-- Rake
+		ct.aoespam[62078]=true		-- Swipe (Cat Form)
+		ct.aoespam[779]=true		-- Swipe (Bear Form)
+		ct.aoespam[33745]=true		-- Lacerate
+		ct.aoespam[1079]=true		-- Rip
 	end
 elseif ct.myclass=="PALADIN"then
 	if(ct.mergeaoespam)then
-		ct.aoespam[81297]=true	-- Consecration
-		ct.aoespam[2812]=true	-- Holy Wrath
-		ct.aoespam[53385]=true	-- Divine Storm
+		ct.aoespam[81297]=true		-- Consecration
+		ct.aoespam[2812]=true		-- Holy Wrath
+		ct.aoespam[53385]=true		-- Divine Storm
 	end
 elseif ct.myclass=="PRIEST"then
 	if(ct.mergeaoespam)then
 		-- Healer spells
-		ct.aoespam[47750]=true	-- Penance (Heal Effect)
-		ct.aoespam[139]=true	-- Renew
-		ct.aoespam[596]=true	-- Prayer of Healing
-		ct.aoespam[56161]=true	-- Glyph of Prayer of Healing
-		ct.aoespam[64844]=true	-- Divine Hymn
-		ct.aoespam[32546]=true	-- Binding Heal
-		ct.aoespam[77489]=true	-- Echo of Light
-		ct.aoespam[34861]=true	-- Circle of Healing
-		ct.aoespam[23455]=true	-- Holy Nova (Healing Effect)
-		ct.aoespam[33110]=true	-- Prayer of Mending
-		ct.aoespam[63544]=true	-- Divine Touch
+		ct.aoespam[47750]=true		-- Penance (Heal Effect)
+		ct.aoespam[139]=true		-- Renew
+		ct.aoespam[596]=true		-- Prayer of Healing
+		ct.aoespam[56161]=true		-- Glyph of Prayer of Healing
+		ct.aoespam[64844]=true		-- Divine Hymn
+		ct.aoespam[32546]=true		-- Binding Heal
+		ct.aoespam[77489]=true		-- Echo of Light
+		ct.aoespam[34861]=true		-- Circle of Healing
+		ct.aoespam[23455]=true		-- Holy Nova (Healing Effect)
+		ct.aoespam[33110]=true		-- Prayer of Mending
+		ct.aoespam[63544]=true		-- Divine Touch
 		-- Damager spells
-		ct.aoespam[47666]=true	-- Penance (Damage Effect)
-		ct.aoespam[15237]=true	-- Holy Nova (Damage Effect)
-		ct.aoespam[589]=true	-- Shadow Word: Pain
-		ct.aoespam[34914]=true	-- Vampiric Touch
-		ct.aoespam[2944]=true	-- Devouring Plague
-		ct.aoespam[63675]=true	-- Improved Devouring Plague
-		ct.aoespam[15407]=true	-- Mind Flay
-		ct.aoespam[49821]=true	-- Mind Seer
-		ct.aoespam[87532]=true	-- Shadowy Apparition
+		ct.aoespam[47666]=true		-- Penance (Damage Effect)
+		ct.aoespam[15237]=true		-- Holy Nova (Damage Effect)
+		ct.aoespam[589]=true		-- Shadow Word: Pain
+		ct.aoespam[34914]=true		-- Vampiric Touch
+		ct.aoespam[2944]=true		-- Devouring Plague
+		ct.aoespam[63675]=true		-- Improved Devouring Plague
+		ct.aoespam[15407]=true		-- Mind Flay
+		ct.aoespam[49821]=true		-- Mind Seer
+		ct.aoespam[87532]=true		-- Shadowy Apparition
 	end
 	if(ct.healing)then
-		ct.healfilter[2944]=true-- Devouring Plague (Healing)
+		ct.healfilter[2944]=true	-- Devouring Plague (Healing)
+		ct.healfilter[15290]=true	-- Vampiric Embrace
 	end
 elseif ct.myclass=="SHAMAN"then
 	if(ct.mergeaoespam)then
-		ct.aoespam[421]=true	-- Chain Lightning
-		ct.aoespam[8349]=true	-- Fire Nova
-		ct.aoespam[77478]=true 	-- Earhquake
-		ct.aoespam[51490]=true 	-- Thunderstorm
-		ct.aoespam[8187]=true 	-- Magma Totem
+		ct.aoespam[421]=true		-- Chain Lightning
+		ct.aoespam[8349]=true		-- Fire Nova
+		ct.aoespam[77478]=true		-- Earhquake
+		ct.aoespam[51490]=true		-- Thunderstorm
+		ct.aoespam[8187]=true		-- Magma Totem
 	end
 elseif ct.myclass=="MAGE"then
 	if(ct.mergeaoespam)then
-		ct.aoespam[44461]=true	-- Living Bomb Explosion
-		ct.aoespam[44457]=true	-- Living Bomb Dot
-		ct.aoespam[2120]=true	-- Flamestrike
-		ct.aoespam[12654]=true	-- Ignite
-		ct.aoespam[11366]=true	-- Pyroblast
-		ct.aoespam[31661]=true	-- Dragon's Breath
-		ct.aoespam[42208]=true	-- Blizzard
-		ct.aoespam[122]=true	-- Frost Nova
-		ct.aoespam[1449]=true	-- Arcane Explosion
+		ct.aoespam[44461]=true		-- Living Bomb Explosion
+		ct.aoespam[44457]=true		-- Living Bomb Dot
+		ct.aoespam[2120]=true		-- Flamestrike
+		ct.aoespam[12654]=true		-- Ignite
+		ct.aoespam[11366]=true		-- Pyroblast
+		ct.aoespam[31661]=true		-- Dragon's Breath
+		ct.aoespam[42208]=true		-- Blizzard
+		ct.aoespam[122]=true		-- Frost Nova
+		ct.aoespam[1449]=true		-- Arcane Explosion
 	end
 elseif ct.myclass=="WARRIOR"then
 	if(ct.mergeaoespam)then
-		ct.aoespam[845]=true	-- Cleave
-		ct.aoespam[46968]=true	-- Shockwave
-		ct.aoespam[6343]=true	-- Thunder Clap
-		ct.aoespam[1680]=true	-- Whirlwind
+		ct.aoespam[845]=true		-- Cleave
+		ct.aoespam[46968]=true		-- Shockwave
+		ct.aoespam[6343]=true		-- Thunder Clap
+		ct.aoespam[1680]=true		-- Whirlwind
+		ct.aoespam[94009]=true		-- Rend
 	end
 elseif ct.myclass=="HUNTER"then
 	if(ct.mergeaoespam)then
-		ct.aoespam[2643]=true	-- Multi-Shot
+		ct.aoespam[2643]=true		-- Multi-Shot
 	end
 elseif ct.myclass=="DEATHKNIGHT"then
 	if(ct.mergeaoespam)then
-		ct.aoespam[55095]=true	-- Frost Fever
-		ct.aoespam[55078]=true	-- Blood Plague
-		ct.aoespam[55536]=true	-- Unholy Blight
-		ct.aoespam[48721]=true	-- Blood Boil
-		ct.aoespam[49184]=true	-- Howling Blast
-		ct.aoespam[52212]=true	-- Death and Decay
+		ct.aoespam[55095]=true		-- Frost Fever
+		ct.aoespam[55078]=true		-- Blood Plague
+		ct.aoespam[55536]=true		-- Unholy Blight
+		ct.aoespam[48721]=true		-- Blood Boil
+		ct.aoespam[49184]=true		-- Howling Blast
+		ct.aoespam[52212]=true		-- Death and Decay
 	end
 end
 ---------------------------------------------------------------------------------
@@ -846,12 +848,10 @@ if(ct.stopvespam and ct.myclass=="PRIEST")then
 			if(ct.blizzheadnumbers)then
 				SetCVar('CombatHealing',0)
 			end
-			ct.shadowform=true
 		else
 			if(ct.blizzheadnumbers)then
 				SetCVar('CombatHealing',1)
 			end
-			ct.shadowform=false
 		end
 	end)
 	sp:RegisterEvent("PLAYER_ENTERING_WORLD")	
@@ -1048,9 +1048,6 @@ if(ct.healing)then
 					end
 					if(amount>=ct.healtreshold)then
 						local color={}
-						if(ct.stopvespam and ct.shadowform and spellId==15290)then
-							return
-						end
 						local rawamount=amount
 						if (critical) then 
 							amount=ct.critprefix..amount..ct.critpostfix
