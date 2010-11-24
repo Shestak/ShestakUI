@@ -1,0 +1,12 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="locales\deDE.lua" />
+	<Script file="locales\frFR.lua" />
+	<Script file="locales\esES.lua" />
+	<Script file="locales\ruRU.lua" />
+	<Script file="locales\zhTW.lua" />
+	<Script file="locales\koKR.lua" />
+	<Script file="locales\zhCN.lua" />
+
+	<Script file="config.lua" />
+	<Script file="LiteStats.lua" />
+</Ui>
