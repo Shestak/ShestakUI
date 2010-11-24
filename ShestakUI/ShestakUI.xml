@@ -22,6 +22,7 @@
 	<Include file="libs\oGlow\oGlow.xml"/>
 	<Script file="libs\LitePanels\LitePanels.lua"/>
 	<Script file="libs\LitePanels\layout.lua"/>
+	<Include file="libs\LiteStats\LiteStats.xml"/>
 	
 	<Script file="config\aurawatch.lua"/>
 	<Script file="config\errors.lua"/>
@@ -98,6 +99,8 @@
 	<Include file="unitframes\templates.xml"/>
 	<Script file="unitframes\tags.lua"/>
 	<Script file="unitframes\layout.lua"/>
+	
+	<Script file="scripts\combattext.lua"/>
 	
 	<Script file="class\hunter.lua"/>
 	<Script file="class\paladin.lua"/>
