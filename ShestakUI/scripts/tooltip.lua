@@ -269,10 +269,6 @@ if SettingsCF["tooltip"].talents == true then
 		end
 		local _, tabName = GetTalentTabInfo(primaryTree,isInspect,nil,group);
 		current.tree = tabName;
-		-- Az: Clear Inspect, as we are done using it
-		if (isInspect) then
-			ClearInspectPlayer();
-		end
 		-- Customise output. Use TipTac setting if it exists, otherwise just use formatting style one.
 		local talentFormat = (1);
 		if (current[primaryTree] == 0) then

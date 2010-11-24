@@ -1,6 +1,7 @@
 ----------------------------------------------------------------------------------------
---	Universal Mount macro(by ALZA or maybe by Monolit?)
+--	Universal Mount macro(by Monolit)
 --	/script Mountz ("your_ground_mount","your_flying_mount","your_underwater_mount")
+--	or /script Mountz("your_ground_mount","your_flying_mount")
 ----------------------------------------------------------------------------------------
 function Mountz(groundmount, flyingmount, underwatermount)
 	local num = GetNumCompanions("MOUNT")
@@ -12,12 +13,15 @@ function Mountz(groundmount, flyingmount, underwatermount)
 		VehicleExit()
 		return
 	end
-	local x, y = GetPlayerMapPosition("player")
-	local wgtime = GetWintergraspWaitTime()
-	local zone = GetZoneText()
 	local swimablex = IsSwimming()
-	local flyablex = IsFlyableArea()
-	if IsAltKeyDown() then
+	local v = GetBuildInfo()
+	local flyablex
+	if v == "4.0.3" then -- remove with cata release 
+		flyablex = IsFlyableArea() and ((GetCurrentMapContinent()==4 and UnitLevel("player")>67) or (GetCurrentMapContinent()==3 and UnitLevel("player")>59))
+	else
+		flyablex = IsFlyableArea()
+	end
+	if IsControlKeyDown() then
 		flyablex = not flyablex
 	end
 	if IsShiftKeyDown() then
@@ -37,3 +41,5 @@ function Mountz(groundmount, flyingmount, underwatermount)
 		end
 	end
 end
+
+
