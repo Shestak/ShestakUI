@@ -64,6 +64,7 @@ if ct.myclass=="WARLOCK" then
 	if(ct.mergeaoespam)then
 		ct.aoespam[27243]=true		-- Seed of Corruption (DoT)
 		ct.aoespam[27285]=true		-- Seed of Corruption (Explosion)
+		ct.aoespam[87385]=true		-- Seed of Corruption (Explosion Soulburned)
 		ct.aoespam[172]=true		-- Corruption
 		ct.aoespam[87389]=true		-- Corruption (Soulburn: Seed of Corruption)
 		ct.aoespam[30108]=true		-- Unstable Affliction
@@ -183,6 +184,12 @@ elseif ct.myclass=="DEATHKNIGHT"then
 		ct.aoespam[48721]=true		-- Blood Boil
 		ct.aoespam[49184]=true		-- Howling Blast
 		ct.aoespam[52212]=true		-- Death and Decay
+	end
+elseif ct.myclass=="ROGUE"then
+	if(ct.mergeaoespam)then
+		ct.aoespam[51723]=true		-- Fan of Knives
+		ct.aoespam[2818]=true		-- Deadly Poison
+		ct.aoespam[8680]=true		-- Instant Poison
 	end
 end
 ---------------------------------------------------------------------------------

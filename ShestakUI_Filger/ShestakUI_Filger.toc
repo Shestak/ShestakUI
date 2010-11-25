@@ -8,7 +8,7 @@
 ## Website: http://shestak.org
 ## X-Curse-Packaged-Version: 2.8
 ## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestakui
+## X-Curse-Project-ID: shestak-ui
 
 config.lua
 ShestakUI_Filger.lua
