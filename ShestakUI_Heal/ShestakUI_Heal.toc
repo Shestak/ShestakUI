@@ -5,8 +5,8 @@
 ## Credits: ALZA, Tukz, Caellian
 ## X-Category: UnitFrame
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 2.8
+## X-Curse-Packaged-Version: 2.9
 ## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestak-ui
+## X-Curse-Project-ID: shestakui
 
 ShestakUI_Heal.lua

@@ -35,6 +35,7 @@ local function InstallUI()
 		or SettingsDB.name == "Обушок" 
 		or SettingsDB.name == "Ремешок"
 		or SettingsDB.name == "Шестак" then
+		SetCVar("scriptErrors", 1)
 		SetCVar("ConsolidateBuffs", 1)
 		SetCVar("autoDismountFlying", 1)
 		SetCVar("autoQuestWatch", 0)

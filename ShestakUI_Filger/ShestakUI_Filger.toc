@@ -6,9 +6,9 @@
 ## Credits: Nils Ruesch
 ## RequiredDeps: ShestakUI
 ## Website: http://shestak.org
-## X-Curse-Packaged-Version: 2.8
+## X-Curse-Packaged-Version: 2.9
 ## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestak-ui
+## X-Curse-Project-ID: shestakui
 
 config.lua
 ShestakUI_Filger.lua

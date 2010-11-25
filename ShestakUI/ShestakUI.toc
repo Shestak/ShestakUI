@@ -11,8 +11,8 @@
 ## SavedVariablesPerCharacter: InstalledUI
 ## X-oUF: oUF
 ## Website: http://shestak.org
-## X-Curse-Packaged-Version: 2.8
+## X-Curse-Packaged-Version: 2.9
 ## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestak-ui
+## X-Curse-Project-ID: shestakui
 
 ShestakUI.xml
