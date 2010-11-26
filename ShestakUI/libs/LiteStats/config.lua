@@ -108,6 +108,7 @@ LPSTAT_CONFIG = {
 		--	["An Very Long Rep Name"] = "Shortened",
 			["The Wyrmrest Accord"] = "Wyrmrest",
 			["Knights of the Ebon Blade"] = "Ebon Blade",
+			["Очень добрые люди"] = "ОДЛ",
 		},
 		anchor_frame = "Durability", anchor_to = "left", anchor_from = "right",
 		x_off = SettingsCF.stats.durability and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5

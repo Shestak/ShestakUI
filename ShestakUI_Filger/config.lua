@@ -899,8 +899,8 @@ Filger_Spells = {
 			{ spellID = 81700, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Evangelism
 			{ spellID = 81661, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shadow Orb Power
-			{ spellID = 77486, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Empowered Shadow
+			{ spellID = 95799, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
