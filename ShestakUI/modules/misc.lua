@@ -1,5 +1,13 @@
 ----------------------------------------------------------------------------------------
---	Force readycheck warning 
+--	Alt power bar
+----------------------------------------------------------------------------------------
+PlayerPowerBarAlt:ClearAllPoints()
+PlayerPowerBarAlt:SetPoint("TOP", 0, -32)
+PlayerPowerBarAlt.ClearAllPoints = SettingsDB.dummy
+PlayerPowerBarAlt.SetPoint = SettingsDB.dummy
+
+----------------------------------------------------------------------------------------
+--	Force readycheck warning
 ----------------------------------------------------------------------------------------
 local ShowReadyCheckHook = function(self, initiator, timeLeft)
 	if initiator ~= "player" then
