@@ -2,7 +2,7 @@
 ## Title: ShestakUI
 ## Notes: A total UI overhaul for World of Warcraft.
 ## Author: Shestak
-## Version: 2.9
+## Version: 2.9.1
 ## Credits: ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne
 ## Thanks: Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, UI Users, Russian Community and Others
 ## RequiredDeps: Blizzard_CombatText
@@ -11,7 +11,7 @@
 ## SavedVariablesPerCharacter: InstalledUI
 ## X-oUF: oUF
 ## Website: http://shestak.org
-## X-Curse-Packaged-Version: 2.9
+## X-Curse-Packaged-Version: 2.9.1
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 

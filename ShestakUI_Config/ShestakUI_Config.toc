@@ -7,7 +7,7 @@
 ## RequiredDeps: ShestakUI
 ## SavedVariablesPerCharacter: GUIConfig
 ## Website: http://shestak.org
-## X-Curse-Packaged-Version: 2.9
+## X-Curse-Packaged-Version: 2.9.1
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 
