@@ -60,6 +60,7 @@ if SettingsDB.name == "Черешок"
 elseif SettingsDB.name == "Добрыйдоктор" then
 	SettingsCF["misc"].raid_tools = true
 	SettingsCF["misc"].invite_keyword = "докрейд"
+	SettingsCF["chat"].chat_bar = true
 	SettingsCF["unitframe"].raid_tanks_tt = true
 	SettingsCF["stats"].guild_repair = false
 end

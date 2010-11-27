@@ -95,3 +95,7 @@ end
 if (IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags")) then
 	SettingsCF["bag"].enable = false
 end
+
+if (IsAddOnLoaded("MikScrollingBattleText")) then
+	SettingsCF["combattext"].enable = false
+end

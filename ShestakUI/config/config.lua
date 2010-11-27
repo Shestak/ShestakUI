@@ -71,6 +71,7 @@ SettingsCF["skins"] = {
 --	Combat text options
 ----------------------------------------------------------------------------------------
 SettingsCF["combattext"] = {
+	["enable"] = true,							-- Global enable combat text
 	["blizz_head_numbers"] = false,				-- Use blizzard damage/healing output(above mob/player head)
 	["damage_style"] = true,					-- Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)
 	["damage"] = true,							-- Show outgoing damage in it's own frame
