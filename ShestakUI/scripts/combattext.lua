@@ -6,6 +6,7 @@ if SettingsCF.combattext.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local myname, _ = UnitName("player")
 local db = SettingsCF["combattext"]
+local dbf = SettingsCF["font"]
 
 local ct={
 
@@ -32,11 +33,11 @@ local ct={
 	["treshold"] = db.treshold,						-- minimum damage to show in outgoing damage frame
 	["healtreshold"] = db.heal_treshold,			-- minimum healing to show in incoming/outgoing healing messages.
 -- appearence
-	["font"] = db.combat_text_font,					-- "Fonts\\ARIALN.ttf" is default WoW font.
-	["fontsize"] = db.combat_text_font_size,		-- 
-	["fontstyle"] = db.combat_text_font_style,		-- valid options are "OUTLINE", "MONOCHROME", "THICKOUTLINE", "OUTLINE,MONOCHROME", "THICKOUTLINE,MONOCHROME"
-	["damagefont"] = db.combat_text_font,			-- "Fonts\\FRIZQT__.ttf" is default WoW damage font
-	["damagefontsize"] = db.combat_text_font_size,	-- size of xCT damage font. use "auto" to set it automatically depending on icon size, or use own value, 16 for example. if it's set to number value icons will change size.
+	["font"] = dbf.combat_text_font,					-- "Fonts\\ARIALN.ttf" is default WoW font.
+	["fontsize"] = dbf.combat_text_font_size,		-- 
+	["fontstyle"] = dbf.combat_text_font_style,		-- valid options are "OUTLINE", "MONOCHROME", "THICKOUTLINE", "OUTLINE,MONOCHROME", "THICKOUTLINE,MONOCHROME"
+	["damagefont"] = dbf.combat_text_font,			-- "Fonts\\FRIZQT__.ttf" is default WoW damage font
+	["damagefontsize"] = dbf.combat_text_font_size,	-- size of xCT damage font. use "auto" to set it automatically depending on icon size, or use own value, 16 for example. if it's set to number value icons will change size.
 	["timevisible"] = db.time_visible,				-- time (seconds) a single message will be visible. 3 is a good value.
 	["scrollable"] = db.scrollable,					-- allows you to scroll frame lines with mousewheel.
 	["maxlines"] = db.max_lines,					-- max lines to keep in scrollable mode. more lines=more memory. nom nom nom.
@@ -629,13 +630,13 @@ local StartConfigmode=function()
 			f.fs:SetFont(ct.font,ct.fontsize,ct.fontstyle)
 			f.fs:SetPoint("BOTTOM",f,"TOP",0,0)
 			if(i==1)then
-				f.fs:SetText(DAMAGE.." (drag me)")
+				f.fs:SetText(DAMAGE)
 				f.fs:SetTextColor(1,.1,.1,.9)
 			elseif(i==2)then
-				f.fs:SetText(SHOW_COMBAT_HEALING.."(drag me)")
+				f.fs:SetText(SHOW_COMBAT_HEALING)
 				f.fs:SetTextColor(.1,1,.1,.9)
 			elseif(i==3)then
-				f.fs:SetText(COMBAT_TEXT_LABEL.."(drag me)")
+				f.fs:SetText(COMBAT_TEXT_LABEL)
 				f.fs:SetTextColor(.1,.1,1,.9)
 			else
 				f.fs:SetText(SCORE_DAMAGE_DONE.." / "..SCORE_HEALING_DONE)
@@ -665,10 +666,10 @@ local StartConfigmode=function()
 			f:RegisterForDrag"LeftButton"
 			f:SetScript("OnDragStart",f.StartSizing)
 			if not(ct.scrollable)then
-			f:SetScript("OnSizeChanged",function(self)
-				self:SetMaxLines(self:GetHeight()/ct.fontsize)
-				self:Clear()
-			end)
+				f:SetScript("OnSizeChanged",function(self)
+					self:SetMaxLines(self:GetHeight()/ct.fontsize)
+					self:Clear()
+				end)
 			end
 
 			f:SetScript("OnDragStop",f.StopMovingOrSizing)
@@ -832,6 +833,7 @@ if(ct.stopvespam and ct.myclass=="PRIEST")then
 	sp:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
 end
 
+-- spam merger
 local SQ
 if(ct.mergeaoespam)then
 	if (ct.damage or ct.healing) then
@@ -860,9 +862,9 @@ if(ct.mergeaoespam)then
 			tslu=tslu+elapsed
 			if tslu > 0.5 then
 				tslu=0
-
+				local utime=time()
 				for k,v in pairs(SQ) do
-					if not SQ[k]["locked"] and SQ[k]["queue"]>0 and SQ[k]["utime"]+ct.mergeaoespamtime<=time() then
+					if not SQ[k]["locked"] and SQ[k]["queue"]>0 and SQ[k]["utime"]+ct.mergeaoespamtime<=utime then
 						if SQ[k]["count"]>1 then
 							count=" |cffFFFFFF x "..SQ[k]["count"].."|r"
 						else
@@ -999,6 +1001,8 @@ if(ct.damage)then
 	xCTd:RegisterEvent"COMBAT_LOG_EVENT_UNFILTERED"
 	xCTd:SetScript("OnEvent",dmg)
 end
+
+-- healing
 if(ct.healing)then
 	local unpack,select,time=unpack,select,time
 	local xCTh=CreateFrame"Frame"
