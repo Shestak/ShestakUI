@@ -120,6 +120,10 @@ elseif ct.myclass=="PALADIN"then
 		ct.aoespam[81297]=true		-- Consecration
 		ct.aoespam[2812]=true		-- Holy Wrath
 		ct.aoespam[53385]=true		-- Divine Storm
+		ct.aoespam[31803]=true		-- Censure
+		ct.aoespam[20424]=true		-- Seals of Command
+		ct.aoespam[25742]=true		-- Seal of Righteousness
+		ct.aoespam[71904]=true		-- Chaos Bane (Shadowmourne proc)
 	end
 elseif ct.myclass=="PRIEST"then
 	if(ct.mergeaoespam)then
@@ -177,6 +181,7 @@ elseif ct.myclass=="WARRIOR"then
 		ct.aoespam[6343]=true		-- Thunder Clap
 		ct.aoespam[1680]=true		-- Whirlwind
 		ct.aoespam[94009]=true		-- Rend
+		ct.aoespam[71904]=true		-- Chaos Bane (Shadowmourne proc)
 	end
 elseif ct.myclass=="HUNTER"then
 	if(ct.mergeaoespam)then
@@ -190,6 +195,7 @@ elseif ct.myclass=="DEATHKNIGHT"then
 		ct.aoespam[48721]=true		-- Blood Boil
 		ct.aoespam[49184]=true		-- Howling Blast
 		ct.aoespam[52212]=true		-- Death and Decay
+		ct.aoespam[71904]=true		-- Chaos Bane (Shadowmourne proc)
 	end
 elseif ct.myclass=="ROGUE"then
 	if(ct.mergeaoespam)then

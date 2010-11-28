@@ -230,8 +230,6 @@ local function Shared(self, unit)
 		self.RaidDebuffs.count:SetTextColor(1, 1, 1)
 	end
 
-	self:RegisterEvent("PARTY_MEMBERS_CHANGED", SettingsDB.updateAllElements)
-	self:RegisterEvent("RAID_ROSTER_UPDATE", SettingsDB.updateAllElements)
 	return self
 end
 

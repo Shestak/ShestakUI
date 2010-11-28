@@ -238,8 +238,6 @@ local function Shared(self, unit)
 		end
 	end
 
-	self:RegisterEvent("PARTY_MEMBERS_CHANGED", SettingsDB.updateAllElements)
-	self:RegisterEvent("RAID_ROSTER_UPDATE", SettingsDB.updateAllElements)
 	return self
 end
 
