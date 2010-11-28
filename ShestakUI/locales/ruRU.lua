@@ -219,8 +219,21 @@ if SettingsDB.client == "ruRU" then
 	L_POPUP_SETTINGS_DBM = "Необходимо изменить позиции элементов DBM."
 	L_POPUP_SETTINGS_CLIQUE = "Настройки Clique установлены не корректно для ShestakUI, Вы хотели бы их настроить?"
 	
-	-- Welcome mesage
+	-- Welcome message
 	L_WELCOME_LINE_1 = "Добро пожаловать в ShestakUI "
 	L_WELCOME_LINE_2_1 = "Введите /cfg для входа в настройки интерфейса, или посетите страницу http://shestak.org"
 	L_WELCOME_LINE_2_2 = "для получения дополнительной информации."
+	
+	-- Combat text
+	L_COMBATTEXT_KILLING_BLOW = "Смерт. Удар"
+	L_COMBATTEXT_ALREADY_UNLOCKED = "Текст боя уже разблокирован."
+	L_COMBATTEXT_ALREADY_LOCKED = "Текст боя уже заблокироан."
+	L_COMBATTEXT_TEST_DISABLED = "Тестовый режим текста боя выключен."
+	L_COMBATTEXT_TEST_ENABLED = "Тестовый режим текста боя включен."
+	L_COMBATTEXT_TEST_USE_UNLOCK = "Введите /xct unlock, чтобы передвинуть или изменить размер области текста боя."
+	L_COMBATTEXT_TEST_USE_LOCK = "Введите /xct lock, чтобы заблокировать области текста боя."
+	L_COMBATTEXT_TEST_USE_TEST = "Введите /xct test, чтобы включить тестовый режим текста боя."
+	L_COMBATTEXT_POPUP = "Для сохранения позиций текста боя необходимо перезагрузить интерфейс."
+	L_COMBATTEXT_UNSAVED = "Позиции текста боя не сохранены, не забудьте перезагрузить интерфейс."
+	L_COMBATTEXT_UNLOCKED = "Текст боя разблокирован."
 end

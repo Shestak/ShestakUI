@@ -5,6 +5,7 @@ if SettingsCF.combattext.enable ~= true then return end
 --	Thanks ALZA for making this mod possible. Thanks Tukz for his wonderful style of coding. Thanks Rostok for some fixes and healing code.
 ----------------------------------------------------------------------------------------
 local myname, _ = UnitName("player")
+local db = SettingsCF["combattext"]
 
 local ct={
 
@@ -14,39 +15,42 @@ local ct={
 -- config
 -- use ["option"] = true/false, to set options.
 -- options
--- blizz damage options.
-	["blizzheadnumbers"] = SettingsCF["combattext"].blizz_head_numbers,	-- use blizzard damage/healing output (above mob/player head)
-	["damagestyle"] = SettingsCF["combattext"].damage_style,		-- change default damage/healing font above mobs/player heads. you need to restart WoW to see changes! has no effect if blizzheadnumbers = false
+-- blizz damage options
+	["blizzheadnumbers"] = db.blizz_head_numbers,	-- use blizzard damage/healing output (above mob/player head)
+	["damagestyle"] = db.damage_style,				-- change default damage/healing font above mobs/player heads. you need to restart WoW to see changes! has no effect if blizzheadnumbers = false
 -- xCT outgoing damage/healing options
-	["damage"] = SettingsCF["combattext"].damage,		-- show outgoing damage in it's own frame
-	["healing"] = SettingsCF["combattext"].healing,		-- show outgoing healing in it's own frame
-	["showhots"] = SettingsCF["combattext"].show_hots,		-- show periodic healing effects in xCT healing frame.
-	["damagecolor"] = SettingsCF["combattext"].damage_color,		-- display damage numbers depending on school of magic, see http://www.wowwiki.com/API_COMBAT_LOG_EVENT
-	["critprefix"] = "|cffFF0000"..SettingsCF["combattext"].crit_prefix.."|r",	-- symbol that will be added before amount, if you deal critical strike/heal. leave "" for empty. default is red *
-	["critpostfix"] = "|cffFF0000"..SettingsCF["combattext"].crit_postfix.."|r",	-- postfix symbol, "" for empty.
-	["icons"] = SettingsCF["combattext"].icons,		-- show outgoing damage icons
-	["iconsize"] = SettingsCF["combattext"].icon_size,		-- icon size of spells in outgoing damage frame, also has effect on dmg font size.
-	["petdamage"] = SettingsCF["combattext"].pet_damage,		-- show your pet damage.
-	["dotdamage"] = SettingsCF["combattext"].dot_damage,		-- show damage from your dots. someone asked an option to disable lol.
-	["treshold"] = SettingsCF["combattext"].treshold,		-- minimum damage to show in outgoing damage frame
-	["healtreshold"] = SettingsCF["combattext"].heal_treshold,		-- minimum healing to show in incoming/outgoing healing messages.
-	
+	["damage"] = db.damage,							-- show outgoing damage in it's own frame
+	["healing"] = db.healing,						-- show outgoing healing in it's own frame
+	["showhots"] = db.show_hots,					-- show periodic healing effects in xCT healing frame.
+	["damagecolor"] = db.damage_color,				-- display damage numbers depending on school of magic, see http://www.wowwiki.com/API_COMBAT_LOG_EVENT
+	["critprefix"] = "|cffFF0000"..db.crit_prefix.."|r",	-- symbol that will be added before amount, if you deal critical strike/heal. leave "" for empty. default is red *
+	["critpostfix"] = "|cffFF0000"..db.crit_postfix.."|r",	-- postfix symbol, "" for empty.
+	["icons"] = db.icons,							-- show outgoing damage icons
+	["iconsize"] = db.icon_size,					-- icon size of spells in outgoing damage frame, also has effect on dmg font size.
+	["petdamage"] = db.pet_damage,					-- show your pet damage.
+	["dotdamage"] = db.dot_damage,					-- show damage from your dots. someone asked an option to disable lol.
+	["treshold"] = db.treshold,						-- minimum damage to show in outgoing damage frame
+	["healtreshold"] = db.heal_treshold,			-- minimum healing to show in incoming/outgoing healing messages.
 -- appearence
-	["font"] = SettingsCF["font"].combat_text_font,	-- "Fonts\\ARIALN.ttf" is default WoW font.
-	["fontsize"] = SettingsCF["font"].combat_text_font_size,
-	["fontstyle"] = SettingsCF["font"].combat_text_font_style,	-- valid options are "OUTLINE", "MONOCHROME", "THICKOUTLINE", "OUTLINE,MONOCHROME", "THICKOUTLINE,MONOCHROME"
-	["damagefont"] = SettingsCF["font"].combat_text_font,	 -- "Fonts\\FRIZQT__.ttf" is default WoW damage font
-	["damagefontsize"] = SettingsCF["font"].combat_text_font_size,	-- size of xCT damage font. use "auto" to set it automatically depending on icon size, or use own value, 16 for example. if it's set to number value icons will change size.
-	["timevisible"] = SettingsCF["combattext"].time_visible, 		-- time (seconds) a single message will be visible. 3 is a good value.
-	["scrollable"] = SettingsCF["combattext"].scrollable,		-- allows you to scroll frame lines with mousewheel.
-	["maxlines"] = SettingsCF["combattext"].max_lines,		-- max lines to keep in scrollable mode. more lines=more memory. nom nom nom.
-
+	["font"] = db.combat_text_font,					-- "Fonts\\ARIALN.ttf" is default WoW font.
+	["fontsize"] = db.combat_text_font_size,		-- 
+	["fontstyle"] = db.combat_text_font_style,		-- valid options are "OUTLINE", "MONOCHROME", "THICKOUTLINE", "OUTLINE,MONOCHROME", "THICKOUTLINE,MONOCHROME"
+	["damagefont"] = db.combat_text_font,			-- "Fonts\\FRIZQT__.ttf" is default WoW damage font
+	["damagefontsize"] = db.combat_text_font_size,	-- size of xCT damage font. use "auto" to set it automatically depending on icon size, or use own value, 16 for example. if it's set to number value icons will change size.
+	["timevisible"] = db.time_visible,				-- time (seconds) a single message will be visible. 3 is a good value.
+	["scrollable"] = db.scrollable,					-- allows you to scroll frame lines with mousewheel.
+	["maxlines"] = db.max_lines,					-- max lines to keep in scrollable mode. more lines=more memory. nom nom nom.
+-- justify messages in frames, valid values are "RIGHT" "LEFT" "CENTER"
+	["justify_1"] = "LEFT",							-- incoming damage justify
+	["justify_2"] = "RIGHT",						-- incoming healing justify
+	["justify_3"] = "CENTER",						-- various messages justify
+	["justify_4"] = "RIGHT",						-- outgoing damage/healing justify
 -- class modules and goodies
-	["stopvespam"] = SettingsCF["combattext"].stop_ve_spam,		-- automaticly turns off healing spam for priests in shadowform. HIDE THOSE GREEN NUMBERS PLX!
-	["dkrunes"] = SettingsCF["combattext"].dk_runes,		-- show deatchknight rune recharge
-	["mergeaoespam"] = SettingsCF["combattext"].merge_aoe_spam,	-- merges multiple aoe spam into single message, can be useful for dots too.
-	["mergeaoespamtime"] = SettingsCF["combattext"].merge_aoe_spam_time,	-- time in seconds aoe spell will be merged into single message. minimum is 1.
-	["killingblow"] = SettingsCF["combattext"].killingblow,		-- tells you about your killingblows
+	["stopvespam"] = db.stop_ve_spam,				-- automaticly turns off healing spam for priests in shadowform. HIDE THOSE GREEN NUMBERS PLX!
+	["dkrunes"] = db.dk_runes,						-- show deatchknight rune recharge
+	["mergeaoespam"] = db.merge_aoe_spam,			-- merges multiple aoe spam into single message, can be useful for dots too.
+	["mergeaoespamtime"] = db.merge_aoe_spam_time,	-- time in seconds aoe spell will be merged into single message. minimum is 1.
+	["killingblow"] = db.killingblow,				-- tells you about your killingblows
 }
 ---------------------------------------------------------------------------------
 -- outgoing healing filter, hide this spammy shit, plx
@@ -252,205 +256,191 @@ local function ScrollDirection()
 		ct.frames[i]:SetInsertMode(ct.mode)
 	end
 end
+
 -- partial resists styler
 local part="-%s [%s %s]"
 local r,g,b
 -- the function, handles everything
 local function OnEvent(self,event,subevent,...)
-if(event=="COMBAT_TEXT_UPDATE")then
-	local arg2,arg3 = ...
-	if (SHOW_COMBAT_TEXT=="0")then
-		return
-	else
-	if subevent=="DAMAGE"then
-		xCT1:AddMessage("-"..arg2,.75,.1,.1)
-	elseif subevent=="DAMAGE_CRIT"then
-		xCT1:AddMessage(ct.critprefix.."-"..arg2..ct.critpostfix,1,.1,.1)
-	elseif subevent=="SPELL_DAMAGE"then
-		xCT1:AddMessage("-"..arg2,.75,.3,.85)
-	elseif subevent=="SPELL_DAMAGE_CRIT"then
-		xCT1:AddMessage(ct.critprefix.."-"..arg2..ct.critpostfix,1,.3,.5)
-
-	elseif subevent=="HEAL"then
-		if(arg3>=ct.healtreshold)then
-			xCT2:AddMessage("+"..arg3,.1,.75,.1)
-		end
-	elseif subevent=="HEAL_CRIT"then
-		if(arg3>=ct.healtreshold)then
-			xCT2:AddMessage("+"..ct.critprefix..arg3..ct.critpostfix,.1,1,.1)
-		end
-	elseif subevent=="PERIODIC_HEAL"then
-		if(arg3>=ct.healtreshold)then
-			xCT2:AddMessage("+"..arg3,.1,.5,.1)
-		end
-
-	elseif subevent=="SPELL_CAST"then
-		xCT3:AddMessage(arg2,1,.82,0)
-
-	
-	elseif subevent=="MISS"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(MISS,.5,.5,.5)
-	elseif subevent=="DODGE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(DODGE,.5,.5,.5)
-	elseif subevent=="PARRY"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(PARRY,.5,.5,.5)
-	elseif subevent=="EVADE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(EVADE,.5,.5,.5)
-	elseif subevent=="IMMUNE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(IMMUNE,.5,.5,.5)
-	elseif subevent=="DEFLECT"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(DEFLECT,.5,.5,.5)
-	elseif subevent=="REFLECT"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(REFLECT,.5,.5,.5)
-	elseif subevent=="SPELL_MISS"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(MISS,.5,.5,.5)
-	elseif subevent=="SPELL_DODGE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(DODGE,.5,.5,.5)
-	elseif subevent=="SPELL_PARRY"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(PARRY,.5,.5,.5)
-	elseif subevent=="SPELL_EVADE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(EVADE,.5,.5,.5)
-	elseif subevent=="SPELL_IMMUNE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(IMMUNE,.5,.5,.5)
-	elseif subevent=="SPELL_DEFLECT"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(DEFLECT,.5,.5,.5)
-	elseif subevent=="SPELL_REFLECT"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
-		xCT1:AddMessage(REFLECT,.5,.5,.5)
-
-	elseif subevent=="RESIST"then
-		if(arg3)then
-			if(COMBAT_TEXT_SHOW_RESISTANCES=="1") then
-				xCT1:AddMessage(part:format(arg2,RESIST,arg3),.75,.5,.5)
-			else
-				xCT1:AddMessage(arg2,.75,.1,.1)
-			end
-		elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
-			xCT1:AddMessage(RESIST,.5,.5,.5)
-		end
-	elseif subevent=="BLOCK"then
-		if(arg3)then
-			if(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
-				xCT1:AddMessage(part:format(arg2,BLOCK,arg3),.75,.5,.5)
-			else
-				xCT1:AddMessage(arg2,.75,.1,.1)
-			end
-		elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
-			xCT1:AddMessage(BLOCK,.5,.5,.5)
-		end
-	elseif subevent=="ABSORB"then
-		if(arg3)then
-			if(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
-				xCT1:AddMessage(part:format(arg2,ABSORB,arg3),.75,.5,.5)
-			else
-				xCT1:AddMessage(arg2,.75,.1,.1)
-			end
-		elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
-			xCT1:AddMessage(ABSORB,.5,.5,.5)
-		end
-	elseif subevent=="SPELL_RESIST"then
-		if(arg3)then
-			if(COMBAT_TEXT_SHOW_RESISTANCES=="1") then
-				xCT1:AddMessage(part:format(arg2,RESIST,arg3),.5,.3,.5)
-			else
-				xCT1:AddMessage(arg2,.75,.3,.85)
-			end
-		elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
-			xCT1:AddMessage(RESIST,.5,.5,.5)
-		end
-	elseif subevent=="SPELL_BLOCK"then
-		if (arg3)then
-			if(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
-				xCT1:AddMessage(part:format(arg2,BLOCK,arg3),.5,.3,.5)
-			else
+	if(event=="COMBAT_TEXT_UPDATE")then
+		local arg2,arg3 = ...
+		if (SHOW_COMBAT_TEXT=="0")then
+			return
+		else
+			if subevent=="DAMAGE"then
+				xCT1:AddMessage("-"..arg2,.75,.1,.1)
+			elseif subevent=="DAMAGE_CRIT"then
+				xCT1:AddMessage(ct.critprefix.."-"..arg2..ct.critpostfix,1,.1,.1)
+			elseif subevent=="SPELL_DAMAGE"then
 				xCT1:AddMessage("-"..arg2,.75,.3,.85)
+			elseif subevent=="SPELL_DAMAGE_CRIT"then
+				xCT1:AddMessage(ct.critprefix.."-"..arg2..ct.critpostfix,1,.3,.5)
+			elseif subevent=="HEAL"then
+				if(arg3>=ct.healtreshold)then
+					xCT2:AddMessage("+"..arg3,.1,.75,.1)
+				end
+			elseif subevent=="HEAL_CRIT"then
+				if(arg3>=ct.healtreshold)then
+					xCT2:AddMessage("+"..ct.critprefix..arg3..ct.critpostfix,.1,1,.1)
+				end
+			elseif subevent=="PERIODIC_HEAL"then
+				if(arg3>=ct.healtreshold)then
+					xCT2:AddMessage("+"..arg3,.1,.5,.1)
+				end
+			elseif subevent=="SPELL_CAST"then
+				xCT3:AddMessage(arg2,1,.82,0)
+			elseif subevent=="MISS"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(MISS,.5,.5,.5)
+			elseif subevent=="DODGE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(DODGE,.5,.5,.5)
+			elseif subevent=="PARRY"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(PARRY,.5,.5,.5)
+			elseif subevent=="EVADE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(EVADE,.5,.5,.5)
+			elseif subevent=="IMMUNE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(IMMUNE,.5,.5,.5)
+			elseif subevent=="DEFLECT"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(DEFLECT,.5,.5,.5)
+			elseif subevent=="REFLECT"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(REFLECT,.5,.5,.5)
+			elseif subevent=="SPELL_MISS"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(MISS,.5,.5,.5)
+			elseif subevent=="SPELL_DODGE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(DODGE,.5,.5,.5)
+			elseif subevent=="SPELL_PARRY"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(PARRY,.5,.5,.5)
+			elseif subevent=="SPELL_EVADE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(EVADE,.5,.5,.5)
+			elseif subevent=="SPELL_IMMUNE"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(IMMUNE,.5,.5,.5)
+			elseif subevent=="SPELL_DEFLECT"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(DEFLECT,.5,.5,.5)
+			elseif subevent=="SPELL_REFLECT"and(COMBAT_TEXT_SHOW_DODGE_PARRY_MISS=="1")then
+				xCT1:AddMessage(REFLECT,.5,.5,.5)
+			elseif subevent=="RESIST"then
+				if(arg3)then
+					if(COMBAT_TEXT_SHOW_RESISTANCES=="1") then
+						xCT1:AddMessage(part:format(arg2,RESIST,arg3),.75,.5,.5)
+					else
+						xCT1:AddMessage(arg2,.75,.1,.1)
+					end
+				elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
+					xCT1:AddMessage(RESIST,.5,.5,.5)
+				end
+			elseif subevent=="BLOCK"then
+				if(arg3)then
+					if(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
+						xCT1:AddMessage(part:format(arg2,BLOCK,arg3),.75,.5,.5)
+					else
+						xCT1:AddMessage(arg2,.75,.1,.1)
+					end
+				elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
+					xCT1:AddMessage(BLOCK,.5,.5,.5)
+				end
+			elseif subevent=="ABSORB"then
+				if(arg3)then
+					if(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
+						xCT1:AddMessage(part:format(arg2,ABSORB,arg3),.75,.5,.5)
+					else
+						xCT1:AddMessage(arg2,.75,.1,.1)
+					end
+				elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
+					xCT1:AddMessage(ABSORB,.5,.5,.5)
+				end
+			elseif subevent=="SPELL_RESIST"then
+				if(arg3)then
+					if(COMBAT_TEXT_SHOW_RESISTANCES=="1") then
+						xCT1:AddMessage(part:format(arg2,RESIST,arg3),.5,.3,.5)
+					else
+						xCT1:AddMessage(arg2,.75,.3,.85)
+					end
+				elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
+					xCT1:AddMessage(RESIST,.5,.5,.5)
+				end
+			elseif subevent=="SPELL_BLOCK"then
+				if (arg3)then
+					if(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
+						xCT1:AddMessage(part:format(arg2,BLOCK,arg3),.5,.3,.5)
+					else
+						xCT1:AddMessage("-"..arg2,.75,.3,.85)
+					end
+				elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
+					xCT1:AddMessage(BLOCK,.5,.5,.5)
+				end
+			elseif subevent=="SPELL_ABSORB"then
+				if(arg3)then
+					if(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
+						xCT1:AddMessage(part:format(arg2,ABSORB,arg3),.5,.3,.5)
+					else
+						xCT1:AddMessage(arg2,.75,.3,.85)
+					end
+				elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
+					xCT1:AddMessage(ABSORB,.5,.5,.5)
+				end
+			elseif subevent=="ENERGIZE"and(COMBAT_TEXT_SHOW_ENERGIZE=="1")then
+				if  tonumber(arg2)>0 then
+					if(arg3 and arg3=="MANA" or arg3=="RAGE" or arg3=="FOCUS" or arg3=="ENERGY" or arg3=="RUINIC_POWER" or arg3=="SOUL_SHARDS")then
+						xCT3:AddMessage("+"..arg2.." ".._G[arg3],PowerBarColor[arg3].r,PowerBarColor[arg3].g,PowerBarColor[arg3].b)
+					end
+				end
+			elseif subevent=="PERIODIC_ENERGIZE"and(COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE=="1")then
+				if  tonumber(arg2)>0 then
+					if(arg3 and arg3=="MANA" or arg3=="RAGE" or arg3=="FOCUS" or arg3=="ENERGY" or arg3=="RUINIC_POWER" or arg3=="SOUL_SHARDS")then
+						xCT3:AddMessage("+"..arg2.." ".._G[arg3],PowerBarColor[arg3].r,PowerBarColor[arg3].g,PowerBarColor[arg3].b)
+					end
+				end
+			elseif subevent=="SPELL_AURA_START"and(COMBAT_TEXT_SHOW_AURAS=="1")then
+				xCT3:AddMessage("+"..arg2,1,.5,.5)
+			elseif subevent=="SPELL_AURA_END"and(COMBAT_TEXT_SHOW_AURAS=="1")then
+				xCT3:AddMessage("-"..arg2,.5,.5,.5)
+			elseif subevent=="SPELL_AURA_START_HARMFUL"and(COMBAT_TEXT_SHOW_AURAS=="1")then
+				xCT3:AddMessage("+"..arg2,1,.1,.1)
+			elseif subevent=="SPELL_AURA_END_HARMFUL"and(COMBAT_TEXT_SHOW_AURAS=="1")then
+				xCT3:AddMessage("-"..arg2,.1,1,.1)
+			elseif subevent=="HONOR_GAINED"and(COMBAT_TEXT_SHOW_HONOR_GAINED=="1")then
+				arg2=tonumber(arg2)
+				if(arg2 and abs(arg2)>1) then
+					arg2=floor(arg2)
+					if (arg2>0)then
+						xCT3:AddMessage(HONOR.." +"..arg2,.1,.1,1)
+					end
+				end
+			elseif subevent=="FACTION"and(COMBAT_TEXT_SHOW_REPUTATION=="1")then
+				xCT3:AddMessage(arg2.." +"..arg3,.1,.1,1)
+			elseif subevent=="SPELL_ACTIVE"and(COMBAT_TEXT_SHOW_REACTIVES=="1")then
+				xCT3:AddMessage(arg2,1,.82,0)
 			end
-		elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
-			xCT1:AddMessage(BLOCK,.5,.5,.5)
 		end
-	elseif subevent=="SPELL_ABSORB"then
-		if(arg3)then
-			if(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
-				xCT1:AddMessage(part:format(arg2,ABSORB,arg3),.5,.3,.5)
+	elseif event=="UNIT_HEALTH"and(COMBAT_TEXT_SHOW_LOW_HEALTH_MANA=="1")then
+		if subevent==ct.unit then
+			if(UnitHealth(ct.unit)/UnitHealthMax(ct.unit)<=COMBAT_TEXT_LOW_HEALTH_THRESHOLD)then
+				if (not lowHealth) then
+					xCT3:AddMessage(HEALTH_LOW,1,.1,.1)
+					lowHealth=true
+				end
 			else
-				xCT1:AddMessage(arg2,.75,.3,.85)
-			end
-		elseif(COMBAT_TEXT_SHOW_RESISTANCES=="1")then
-			xCT1:AddMessage(ABSORB,.5,.5,.5)
-		end
-
-	elseif subevent=="ENERGIZE"and(COMBAT_TEXT_SHOW_ENERGIZE=="1")then
-		if  tonumber(arg2)>0 then
-			if(arg3 and arg3=="MANA" or arg3=="RAGE" or arg3=="FOCUS" or arg3=="ENERGY" or arg3=="RUINIC_POWER" or arg3=="SOUL_SHARDS")then
-				xCT3:AddMessage("+"..arg2.." ".._G[arg3],PowerBarColor[arg3].r,PowerBarColor[arg3].g,PowerBarColor[arg3].b)
+				lowHealth=nil
 			end
 		end
-
-	elseif subevent=="PERIODIC_ENERGIZE"and(COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE=="1")then
-		if  tonumber(arg2)>0 then
-			if(arg3 and arg3=="MANA" or arg3=="RAGE" or arg3=="FOCUS" or arg3=="ENERGY" or arg3=="RUINIC_POWER" or arg3=="SOUL_SHARDS")then
-				xCT3:AddMessage("+"..arg2.." ".._G[arg3],PowerBarColor[arg3].r,PowerBarColor[arg3].g,PowerBarColor[arg3].b)
+	elseif event=="UNIT_MANA"and(COMBAT_TEXT_SHOW_LOW_HEALTH_MANA=="1")then
+		if subevent==ct.unit then
+			local _,powerToken=UnitPowerType(ct.unit)
+			if (powerToken=="MANA"and(UnitPower(ct.unit)/UnitPowerMax(ct.unit))<=COMBAT_TEXT_LOW_MANA_THRESHOLD)then
+				if (not lowMana)then
+					xCT3:AddMessage(MANA_LOW,1,.1,.1)
+					lowMana=true
+				end
+			else
+				lowMana=nil
 			end
 		end
-	elseif subevent=="SPELL_AURA_START"and(COMBAT_TEXT_SHOW_AURAS=="1")then
-		xCT3:AddMessage("+"..arg2,1,.5,.5)
-	elseif subevent=="SPELL_AURA_END"and(COMBAT_TEXT_SHOW_AURAS=="1")then
-		xCT3:AddMessage("-"..arg2,.5,.5,.5)
-	elseif subevent=="SPELL_AURA_START_HARMFUL"and(COMBAT_TEXT_SHOW_AURAS=="1")then
-		xCT3:AddMessage("+"..arg2,1,.1,.1)
-	elseif subevent=="SPELL_AURA_END_HARMFUL"and(COMBAT_TEXT_SHOW_AURAS=="1")then
-		xCT3:AddMessage("-"..arg2,.1,1,.1)
-
-	elseif subevent=="HONOR_GAINED"and(COMBAT_TEXT_SHOW_HONOR_GAINED=="1")then
-		arg2=tonumber(arg2)
-		if(arg2 and abs(arg2)>1) then
-			arg2=floor(arg2)
-			if (arg2>0)then
-				xCT3:AddMessage(HONOR.." +"..arg2,.1,.1,1)
-			end
-		end
-
-	elseif subevent=="FACTION"and(COMBAT_TEXT_SHOW_REPUTATION=="1")then
-		xCT3:AddMessage(arg2.." +"..arg3,.1,.1,1)
-
-	elseif subevent=="SPELL_ACTIVE"and(COMBAT_TEXT_SHOW_REACTIVES=="1")then
-		xCT3:AddMessage(arg2,1,.82,0)
-	end
-end
-
-elseif event=="UNIT_HEALTH"and(COMBAT_TEXT_SHOW_LOW_HEALTH_MANA=="1")then
-	if subevent==ct.unit then
-		if(UnitHealth(ct.unit)/UnitHealthMax(ct.unit)<=COMBAT_TEXT_LOW_HEALTH_THRESHOLD)then
-			if (not lowHealth) then
-				xCT3:AddMessage(HEALTH_LOW,1,.1,.1)
-				lowHealth=true
-			end
-		else
-			lowHealth=nil
-		end
-	end
-
-elseif event=="UNIT_MANA"and(COMBAT_TEXT_SHOW_LOW_HEALTH_MANA=="1")then
-	if subevent==ct.unit then
-		local _,powerToken=UnitPowerType(ct.unit)
-		if (powerToken=="MANA"and(UnitPower(ct.unit)/UnitPowerMax(ct.unit))<=COMBAT_TEXT_LOW_MANA_THRESHOLD)then
-			if (not lowMana)then
-				xCT3:AddMessage(MANA_LOW,1,.1,.1)
-				lowMana=true
-			end
-		else
-			lowMana=nil
-		end
-	end
-
-elseif event=="PLAYER_REGEN_ENABLED"and(COMBAT_TEXT_SHOW_COMBAT_STATE=="1")then
-		xCT3:AddMessage("-"..LEAVING_COMBAT,.1,1,.1)
-
-elseif event=="PLAYER_REGEN_DISABLED"and(COMBAT_TEXT_SHOW_COMBAT_STATE=="1")then
-		xCT3:AddMessage("+"..ENTERING_COMBAT,1,.1,.1)
-
-elseif event=="UNIT_COMBO_POINTS"and(COMBAT_TEXT_SHOW_COMBO_POINTS=="1")then
-	if(subevent==ct.unit)then
-		local cp=GetComboPoints(ct.unit,"target")
+	elseif event=="PLAYER_REGEN_ENABLED"and(COMBAT_TEXT_SHOW_COMBAT_STATE=="1")then
+			xCT3:AddMessage("-"..LEAVING_COMBAT,.1,1,.1)
+	elseif event=="PLAYER_REGEN_DISABLED"and(COMBAT_TEXT_SHOW_COMBAT_STATE=="1")then
+			xCT3:AddMessage("+"..ENTERING_COMBAT,1,.1,.1)
+	elseif event=="UNIT_COMBO_POINTS"and(COMBAT_TEXT_SHOW_COMBO_POINTS=="1")then
+		if(subevent==ct.unit)then
+			local cp=GetComboPoints(ct.unit,"target")
 			if(cp>0)then
 				r,g,b=1,.82,.0
 				if (cp==MAX_COMBO_POINTS)then
@@ -458,48 +448,44 @@ elseif event=="UNIT_COMBO_POINTS"and(COMBAT_TEXT_SHOW_COMBO_POINTS=="1")then
 				end
 				xCT3:AddMessage(format(COMBAT_TEXT_COMBO_POINTS,cp),r,g,b)
 			end
-	end
-
-elseif event=="RUNE_POWER_UPDATE"then
-	local arg1,arg2 = subevent,...
-	if(arg2==true)then
-		local rune=GetRuneType(arg1);
-		local msg=COMBAT_TEXT_RUNE[rune];
-		if(rune==1)then 
-			r=.75
-			g=0
-			b=0
-		elseif(rune==2)then
-			r=.75
-			g=1
-			b=0
-		elseif(rune==3)then
-			r=0
-			g=1
-			b=1	
 		end
-		if(rune and rune<4)then
-			xCT3:AddMessage("+"..msg,r,g,b)
+	elseif event=="RUNE_POWER_UPDATE"then
+		local arg1,arg2 = subevent,...
+		if(arg2==true)then
+			local rune=GetRuneType(arg1);
+			local msg=COMBAT_TEXT_RUNE[rune];
+			if(rune==1)then 
+				r=.75
+				g=0
+				b=0
+			elseif(rune==2)then
+				r=.75
+				g=1
+				b=0
+			elseif(rune==3)then
+				r=0
+				g=1
+				b=1	
+			end
+			if(rune and rune<4)then
+				xCT3:AddMessage("+"..msg,r,g,b)
+			end
 		end
-	end
-
-elseif event=="UNIT_ENTERED_VEHICLE"or event=="UNIT_EXITING_VEHICLE"then
-	if(arg1=="player")then
+	elseif event=="UNIT_ENTERED_VEHICLE"or event=="UNIT_EXITING_VEHICLE"then
+		if(arg1=="player")then
+			SetUnit()
+		end
+	elseif event=="PLAYER_ENTERING_WORLD"then
 		SetUnit()
+		if(ct.scrollable)then
+			SetScroll()
+		else
+			LimitLines()
+		end
+		if(ct.damage or ct.healing)then
+			ct.pguid=UnitGUID"player"
+		end
 	end
-
-elseif event=="PLAYER_ENTERING_WORLD"then
-	SetUnit()
-	if(ct.scrollable)then
-		SetScroll()
-	else
-		LimitLines()
-	end
-
-	if(ct.damage)then
-		ct.pguid=UnitGUID"player"
-	end
-end
 end
 
 -- change damage font (if desired)
@@ -522,7 +508,6 @@ for i=1,numf do
 	f:SetSpacing(2)
 	f:SetWidth(128)
 	f:SetHeight(128)
-	f:SetJustifyH"LEFT"
 	f:SetPoint("CENTER",0,0)
 	f:SetMovable(true)
 	f:SetResizable(true)
@@ -531,25 +516,25 @@ for i=1,numf do
 	f:SetClampedToScreen(true)
 	f:SetClampRectInsets(0,0,ct.fontsize,0)
 	if(i==1)then
-		f:SetJustifyH"LEFT"
+		f:SetJustifyH(ct.justify_1)
 		if SettingsCF["unitframe"].enable == true then
 			f:SetPoint("BOTTOMLEFT", "oUF_Player", "TOPLEFT", -3, 45)
 		else
 			f:SetPoint("CENTER",-192,-32)
 		end
 	elseif(i==2)then
-		f:SetJustifyH"RIGHT"
+		f:SetJustifyH(ct.justify_2)
 		if SettingsCF["unitframe"].enable == true then
 			f:SetPoint("BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 5, 45)
 		else
 			f:SetPoint("CENTER",192,-32)
 		end
 	elseif(i==3)then
-		f:SetJustifyH"CENTER"
+		f:SetJustifyH(ct.justify_3)
 		f:SetWidth(256)
 		f:SetPoint("CENTER",0,205)
 	else
-		f:SetJustifyH"RIGHT"
+		f:SetJustifyH(ct.justify_4)
 		f:SetPoint("CENTER",330,205)
 		local a,_,c=f:GetFont()
 		if (ct.damagefontsize=="auto")then
@@ -583,7 +568,7 @@ if(ct.killingblow)then
 	local xCTkb=CreateFrame"Frame"
 	xCTkb:SetScript("OnEvent", function(_, _, _, event, guid, _, _, _, tname)
 		if event == "PARTY_KILL" and guid==UnitGUID("player") then
-			xCT3:AddMessage("Killing Blow: "..tname, 1, 1, 0)
+			xCT3:AddMessage(L_COMBATTEXT_KILLING_BLOW..": "..tname, 1, 1, 0)
 		end
 	end)
 	xCTkb:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
@@ -616,11 +601,7 @@ if not(ct.blizzheadnumbers==true)then
 	SetCVar("CombatHealing",0)
 end
 
-
 -- hook blizz float mode selector. blizz sucks, because changing  cVar combatTextFloatMode doesn't fire CVAR_UPDATE
---	hooksecurefunc("InterfaceOptionsCombatTextPanelFCTDropDown_OnClick",ScrollDirection)
---	--COMBAT_TEXT_SCROLL_ARC="" --may cause unexpected bugs, use with caution!
-
 InterfaceOptionsCombatTextPanelFCTDropDown:Hide() -- sorry, blizz fucking bug with SCM:SetInsertMode()
 
 -- modify blizz ct options title lol
@@ -628,7 +609,7 @@ InterfaceOptionsCombatTextPanelTitle:SetText(COMBAT_TEXT_LABEL.." (powered by |c
 
 -- color printer
 local pr = function(msg)
-    print("|cffFF0000x|rCT:", tostring(msg))
+    print(tostring(msg))
 end
 
 -- awesome configmode and testmode
@@ -693,9 +674,9 @@ local StartConfigmode=function()
 			f:SetScript("OnDragStop",f.StopMovingOrSizing)
 			ct.locked=false
 		end
-		pr("unlocked.")
+		pr("|cffffff00"..L_COMBATTEXT_UNLOCKED.."|r")
 	else
-		pr("can't be configured in combat.")
+		pr("|cffffff00"..ERR_NOT_IN_COMBAT.."|r")
 	end
 end
 
@@ -715,7 +696,7 @@ local function EndConfigmode()
 		f:SetScript("OnDragStop",nil)
 	end
 	ct.locked=true
-	pr("Window positions unsaved, don't forget to reload UI.")
+	pr("|cffffff00"..L_COMBATTEXT_UNSAVED.."|r")
 end
 
 local function StartTestMode()
@@ -738,43 +719,43 @@ local function StartTestMode()
 
 	
 	for i=1,#ct.frames do
-	ct.frames[i]:SetScript("OnUpdate",function(self,elapsed)
-		UpdateInterval=random(65,1000)/250
-		TimeSinceLastUpdate=TimeSinceLastUpdate+elapsed
-		if(TimeSinceLastUpdate>UpdateInterval)then
-			if(i==1)then
-			ct.frames[i]:AddMessage("-"..random(100000),1,random(255)/255,random(255)/255)
-			elseif(i==2)then
-			ct.frames[i]:AddMessage("+"..random(50000),.1,random(128,255)/255,.1)
-			elseif(i==3)then
-			ct.frames[i]:AddMessage(COMBAT_TEXT_LABEL,random(255)/255,random(255)/255,random(255)/255)
-			elseif(i==4)then
-				local msg
-				local icon
-				local color={}
-				msg=random(40000)
-				if(ct.icons)then
-					_,_,icon=GetSpellInfo(msg)
-				end
-				if(icon)then
-					msg=msg.." \124T"..icon..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
-					if(ct.damagecolor)then
-						color=ct.dmgcolor[ct.dmindex[random(#ct.dmindex)]]
-					else
-						color={1,1,0}
+		ct.frames[i]:SetScript("OnUpdate",function(self,elapsed)
+			UpdateInterval=random(65,1000)/250
+			TimeSinceLastUpdate=TimeSinceLastUpdate+elapsed
+			if(TimeSinceLastUpdate>UpdateInterval)then
+				if(i==1)then
+					ct.frames[i]:AddMessage("-"..random(100000),1,random(255)/255,random(255)/255)
+				elseif(i==2)then
+					ct.frames[i]:AddMessage("+"..random(50000),.1,random(128,255)/255,.1)
+				elseif(i==3)then
+					ct.frames[i]:AddMessage(COMBAT_TEXT_LABEL,random(255)/255,random(255)/255,random(255)/255)
+				elseif(i==4)then
+					local msg
+					local icon
+					local color={}
+					msg=random(40000)
+					if(ct.icons)then
+						_,_,icon=GetSpellInfo(msg)
 					end
-				elseif(ct.damagecolor) and not(ct.icons)then
-					color=ct.dmgcolor[ct.dmindex[random(#ct.dmindex)]]
-				elseif not(ct.damagecolor)then
-					color={1,1,random(0,1)}
+					if(icon)then
+						msg=msg.." \124T"..icon..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
+						if(ct.damagecolor)then
+							color=ct.dmgcolor[ct.dmindex[random(#ct.dmindex)]]
+						else
+							color={1,1,0}
+						end
+					elseif(ct.damagecolor) and not(ct.icons)then
+						color=ct.dmgcolor[ct.dmindex[random(#ct.dmindex)]]
+					elseif not(ct.damagecolor)then
+						color={1,1,random(0,1)}
+					end
+					ct.frames[i]:AddMessage(msg,unpack(color))
 				end
-				ct.frames[i]:AddMessage(msg,unpack(color))
+				TimeSinceLastUpdate = 0
 			end
-			TimeSinceLastUpdate = 0
-		end
 		end)		
-	ct.testmode=true
-end
+		ct.testmode=true
+	end
 end
 
 local function EndTestMode()
@@ -786,11 +767,11 @@ local function EndTestMode()
 		ct.dmindex=nil
 	end
 	ct.testmode=false
-	end
+end
 
 -- /xct lock popup dialog
 StaticPopupDialogs["XCT_LOCK"]={
-	text="To save |cffFF0000x|rCT window positions you need to reload your UI.\n Click "..ACCEPT.." to reload UI.\nClick "..CANCEL.." to do it later.",
+	text=L_COMBATTEXT_POPUP,
 	button1=ACCEPT,
 	button2=CANCEL,
 	OnAccept=function() if not InCombatLockdown() then ReloadUI() else EndConfigmode() end end,
@@ -809,43 +790,26 @@ SlashCmdList["XCT"]=function(input)
 		if (ct.locked)then
 			StartConfigmode()
 		else
-			pr("already unlocked.")
+			pr("|cffffff00"..L_COMBATTEXT_ALREADY_UNLOCKED.."|r")
 		end
 	elseif(input=="lock")then
 		if (ct.locked) then
-			pr("already locked.")
+			pr("|cffffff00"..L_COMBATTEXT_ALREADY_LOCKED.."|r")
 		else
 			StaticPopup_Show("XCT_LOCK")
 		end
 	elseif(input=="test")then
 		if (ct.testmode) then
 			EndTestMode()
-			pr("test mode disabled.")
+			pr("|cffffff00"..L_COMBATTEXT_TEST_DISABLED.."|r")
 		else
 			StartTestMode()
-			pr("test mode enabled.")
+			pr("|cffffff00"..L_COMBATTEXT_TEST_ENABLED.."|r")
 		end
-	elseif(input=="mypos")then
-		xCT1:ClearAllPoints()
-		xCT1:SetPoint("CENTER",UIParent,"CENTER",-90,-8)
-		xCT1:SetHeight(142)
-		xCT1:SetWidth(128)
-		xCT2:ClearAllPoints()
-		xCT2:SetPoint("CENTER",UIParent,"CENTER",90,-8)
-		xCT2:SetHeight(142)
-		xCT2:SetWidth(128)
-		xCT3:ClearAllPoints()
-		xCT3:SetPoint("TOP",UIParent,"TOP",-2,-34)
-		xCT3:SetHeight(264)
-		xCT3:SetWidth(216)
-		xCT4:ClearAllPoints()
-		xCT4:SetPoint("CENTER",UIParent,"CENTER",444,152)
-		xCT4:SetHeight(172)
-		xCT4:SetWidth(136)
 	else
-		pr("use |cffFF0000/xct unlock|r to move and resize frames.")
-		pr("use |cffFF0000/xct lock|r to lock frames.")
-		pr("use |cffFF0000/xct test|r to toggle testmode (sample xCT output).")
+		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_UNLOCK.."|r")
+		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_LOCK.."|r")
+		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_TEST.."|r")
 	end
 end
 
@@ -868,38 +832,16 @@ if(ct.stopvespam and ct.myclass=="PRIEST")then
 	sp:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
 end
 
--- damage
 local SQ
-if(ct.damage)then
-	local gflags=bit.bor(
-		COMBATLOG_OBJECT_AFFILIATION_MINE,
- 		COMBATLOG_OBJECT_REACTION_FRIENDLY,
- 		COMBATLOG_OBJECT_CONTROL_PLAYER,
- 		COMBATLOG_OBJECT_TYPE_GUARDIAN
- 	)
-	local xCTd=CreateFrame"Frame"
-	if(ct.damagecolor)then
-		ct.dmgcolor={}
-		ct.dmgcolor[1]={1,1,0} -- physical
-		ct.dmgcolor[2]={1,.9,.5} -- holy
-		ct.dmgcolor[4]={1,.5,0} -- fire
-		ct.dmgcolor[8]={.3,1,.3} -- nature
-		ct.dmgcolor[16]={.5,1,1} -- frost
-		ct.dmgcolor[32]={.5,.5,1} -- shadow
-		ct.dmgcolor[64]={1,.5,1} -- arcane
-	end
-	
-	if(ct.icons)then
-		ct.blank="Interface\\AddOns\\ShestakUI\\media\\blank"
-	end
-	if(ct.mergeaoespam)then
+if(ct.mergeaoespam)then
+	if (ct.damage or ct.healing) then
 		if (not ct.mergeaoespamtime or ct.mergeaoespamtime<1) then
 			ct.mergeaoespamtime=1
 		end
 		local pairs=pairs
 		SQ={}
 		for k,v in pairs(ct.aoespam) do
-			SQ[k]={queue = 0, msg = "", color={}, count=0, locked=false}
+			SQ[k]={queue = 0, msg = "", color={}, count=0, utime=0, locked=false}
 		end
 		ct.SpamQueue=function(spellId, add)
 			local amount
@@ -916,10 +858,11 @@ if(ct.damage)then
 		xCTspam:SetScript("OnUpdate", function(self, elapsed)
 			local count
 			tslu=tslu+elapsed
-			if tslu > ct.mergeaoespamtime then
+			if tslu > 0.5 then
 				tslu=0
+
 				for k,v in pairs(SQ) do
-					if SQ[k]["queue"]>0 and not SQ[k]["locked"] then
+					if not SQ[k]["locked"] and SQ[k]["queue"]>0 and SQ[k]["utime"]+ct.mergeaoespamtime<=time() then
 						if SQ[k]["count"]>1 then
 							count=" |cffFFFFFF x "..SQ[k]["count"].."|r"
 						else
@@ -933,8 +876,31 @@ if(ct.damage)then
 			end
 		end)
 	end
+end
+
+-- damage
+if(ct.damage)then
+	local unpack,select,time=unpack,select,time
+	local gflags=bit.bor(COMBATLOG_OBJECT_AFFILIATION_MINE,
+ 		COMBATLOG_OBJECT_REACTION_FRIENDLY,
+ 		COMBATLOG_OBJECT_CONTROL_PLAYER,
+ 		COMBATLOG_OBJECT_TYPE_GUARDIAN
+ 	)
+	local xCTd=CreateFrame"Frame"
+	if(ct.damagecolor)then
+		ct.dmgcolor={}
+		ct.dmgcolor[1]={1,1,0} -- physical
+		ct.dmgcolor[2]={1,.9,.5} -- holy
+		ct.dmgcolor[4]={1,.5,0} -- fire
+		ct.dmgcolor[8]={.3,1,.3} -- nature
+		ct.dmgcolor[16]={.5,1,1} -- frost
+		ct.dmgcolor[32]={.5,.5,1} -- shadow
+		ct.dmgcolor[64]={1,.5,1} -- arcane
+	end
+	if(ct.icons)then
+		ct.blank="Interface\\AddOns\\ShestakUI\\media\\blank"
+	end
 	local dmg=function(self,event,...) 
-		local unpack,select=unpack,select
 		local msg,icon
 		local timestamp, eventType, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags = select(1,...)
 		if(sourceGUID==ct.pguid and destGUID~=ct.pguid)or(sourceGUID==UnitGUID"pet" and ct.petdamage)or(sourceFlags==gflags)then
@@ -949,11 +915,10 @@ if(ct.damage)then
 						if(sourceGUID==UnitGUID"pet") or (sourceFlags==gflags)then
 							icon=PET_ATTACK_TEXTURE
 						else
-							_,_,icon=GetSpellInfo(6603)
+							icon=GetSpellTexture(6603)
 						end
 						msg=msg.." \124T"..icon..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
 					end
-	
 					xCT4:AddMessage(msg)
 				end
 			elseif(eventType=="RANGE_DAMAGE")then
@@ -964,13 +929,11 @@ if(ct.damage)then
 						msg=ct.critprefix..msg..ct.critpostfix
 					end
 					if(ct.icons)then
-						local _,_,icon=GetSpellInfo(spellId)
+						icon=GetSpellTexture(spellId)
 						msg=msg.." \124T"..icon..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
 					end
-	
 					xCT4:AddMessage(msg)
 				end
-	
 			elseif(eventType=="SPELL_DAMAGE")or(eventType=="SPELL_PERIODIC_DAMAGE" and ct.dotdamage)then
 				local spellId,_,spellSchool,amount,_,_,_,_,_,critical=select(9,...)
 				if(amount>=ct.treshold)then
@@ -979,9 +942,8 @@ if(ct.damage)then
 					if (critical) then
 						amount=ct.critprefix..amount..ct.critpostfix
 					end
-	
 					if(ct.icons)then
-						_,_,icon=GetSpellInfo(spellId)
+						icon=GetSpellTexture(spellId)
 					end
 					if(ct.damagecolor)then
 						if(ct.dmgcolor[spellSchool])then
@@ -1005,34 +967,32 @@ if(ct.damage)then
 						SQ[spellId]["msg"]=msg
 						SQ[spellId]["color"]=color
 						SQ[spellId]["count"]=SQ[spellId]["count"]+1
+						if SQ[spellId]["count"]==1 then
+							SQ[spellId]["utime"]=time()
+						end
 						SQ[spellId]["locked"]=false
 						return
 					end
 					xCT4:AddMessage(amount..""..msg,unpack(color))
 				end
-	
 			elseif(eventType=="SWING_MISSED")then
 				local missType,_=select(9,...)
 				if(ct.icons)then
 					if(sourceGUID==UnitGUID"pet") or (sourceFlags==gflags)then
 						icon=PET_ATTACK_TEXTURE
 					else
-						_,_,icon=GetSpellInfo(6603)
+						icon=GetSpellTexture(6603)
 					end
 					missType=missType.." \124T"..icon..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
 				end
-	
 				xCT4:AddMessage(missType)
-	
 			elseif(eventType=="SPELL_MISSED")or(eventType=="RANGE_MISSED")then
 				local spellId,_,_,missType,_ = select(9,...)
 				if(ct.icons)then
-					_,_,icon=GetSpellInfo(spellId)
+					icon=GetSpellTexture(spellId)
 					missType=missType.." \124T"..icon..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
 				end 
 				xCT4:AddMessage(missType)
-	
-			
 			end
 		end
 	end
@@ -1040,15 +1000,15 @@ if(ct.damage)then
 	xCTd:SetScript("OnEvent",dmg)
 end
 if(ct.healing)then
+	local unpack,select,time=unpack,select,time
 	local xCTh=CreateFrame"Frame"
 	if(ct.icons)then
 		ct.blank="Interface\\AddOns\\ShestakUI\\media\\blank"
 	end
-	local heal=function(self,event,...) 
-		local unpack,select=unpack,select
+	local heal=function(self,event,...) 	
 		local msg,icon
 		local timestamp, eventType, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags = select(1,...)
-		if(sourceGUID==UnitGUID"player")then
+		if(sourceGUID==ct.pguid)then
 			if(eventType=='SPELL_HEAL')or(eventType=='SPELL_PERIODIC_HEAL'and ct.showhots)then
 				if(ct.healing)then
 					local spellId,spellName,spellSchool,amount,overhealing,absorbed,critical = select(9,...)
@@ -1062,10 +1022,10 @@ if(ct.healing)then
 							amount=ct.critprefix..amount..ct.critpostfix
 							color={.1,1,.1}
 						else
-							color={.1,.75,.1}
-						end
+							color={.1,.65,.1}
+						end 
 						if(ct.icons)then
-							_,_,icon=GetSpellInfo(spellId)
+							icon=GetSpellTexture(spellId)
 						else
 							msg=""
 						end
@@ -1080,6 +1040,9 @@ if(ct.healing)then
 							SQ[spellId]["msg"]=msg
 							SQ[spellId]["color"]=color
 							SQ[spellId]["count"]=SQ[spellId]["count"]+1
+							if SQ[spellId]["count"]==1 then
+								SQ[spellId]["utime"]=time()
+							end
 							SQ[spellId]["locked"]=false
 							return
 						end 

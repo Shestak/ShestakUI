@@ -219,8 +219,21 @@ if SettingsDB.client == "frFR" then
 	L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."  -- Needs review
 	L_POPUP_SETTINGS_CLIQUE = "Your Clique settings are not setup with ShestakUI, would you like to set them up?"  -- Needs review
 	
-	-- Welcome mesage
+	-- Welcome message
 	L_WELCOME_LINE_1 = "Welcome to ShestakUI "
 	L_WELCOME_LINE_2_1 = "Tapez /cfg pour configurer l'interface, ou visitez http://shestak.org"
 	L_WELCOME_LINE_2_2 = "plus d'informations"
+	
+	-- Combat text
+	L_COMBATTEXT_KILLING_BLOW = "Killing Blow"  -- Needs review
+	L_COMBATTEXT_ALREADY_UNLOCKED = "Combat text already unlocked."  -- Needs review
+	L_COMBATTEXT_ALREADY_LOCKED = "Combat text already locked."  -- Needs review
+	L_COMBATTEXT_TEST_DISABLED = "Combat text test mode disabled."  -- Needs review
+	L_COMBATTEXT_TEST_ENABLED = "Combat text test mode enabled."  -- Needs review
+	L_COMBATTEXT_TEST_USE_UNLOCK = "Type /xct unlock to move and resize combat text frames."  -- Needs review
+	L_COMBATTEXT_TEST_USE_LOCK = "Type /xct lock to lock combat text frames."  -- Needs review
+	L_COMBATTEXT_TEST_USE_TEST = "Type /xct test to toggle combat text testmode."  -- Needs review
+	L_COMBATTEXT_POPUP = "To save combat text window positions you need to reload your UI."  -- Needs review
+	L_COMBATTEXT_UNSAVED = "Combat text window positions unsaved, don't forget to reload UI."  -- Needs review
+	L_COMBATTEXT_UNLOCKED = "Combat text unlocked."  -- Needs review
 end

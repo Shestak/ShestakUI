@@ -219,8 +219,21 @@ if SettingsDB.client == "koKR" then
 	L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."
 	L_POPUP_SETTINGS_CLIQUE = "Your Clique settings are not setup with ShestakUI, would you like to set them up?"
 	
-	-- Welcome mesage
+	-- Welcome message
 	L_WELCOME_LINE_1 = "Welcome to ShestakUI "
 	L_WELCOME_LINE_2_1 = "Type /cfg to config interface, or visit http://shestak.org"
 	L_WELCOME_LINE_2_2 = "for more informations."
+	
+	-- Combat text
+	L_COMBATTEXT_KILLING_BLOW = "Killing Blow"
+	L_COMBATTEXT_ALREADY_UNLOCKED = "Combat text already unlocked."
+	L_COMBATTEXT_ALREADY_LOCKED = "Combat text already locked."
+	L_COMBATTEXT_TEST_DISABLED = "Combat text test mode disabled."
+	L_COMBATTEXT_TEST_ENABLED = "Combat text test mode enabled."
+	L_COMBATTEXT_TEST_USE_UNLOCK = "Type /xct unlock to move and resize combat text frames."
+	L_COMBATTEXT_TEST_USE_LOCK = "Type /xct lock to lock combat text frames."
+	L_COMBATTEXT_TEST_USE_TEST = "Type /xct test to toggle combat text testmode."
+	L_COMBATTEXT_POPUP = "To save combat text window positions you need to reload your UI."
+	L_COMBATTEXT_UNSAVED = "Combat text window positions unsaved, don't forget to reload UI."
+	L_COMBATTEXT_UNLOCKED = "Combat text unlocked."
 end
