@@ -38,7 +38,11 @@ SettingsDB.black_list = {
 	[ERR_OUT_OF_ENERGY] = true,
 	[ERR_OUT_OF_RAGE] = true,
 	[ERR_OUT_OF_FOCUS] = true,
+	[ERR_OUT_OF_RUNES] = true,
+	[ERR_OUT_OF_RUNIC_POWER] = true,
+	[ERR_OUT_OF_MANA] = true,
+	[ERR_OUT_OF_POWER_DISPLAY] = true,
+	[ERR_BADATTACKPOS] = true,
 	[ERR_INVALID_ATTACK_TARGET] = true,
 	[ERR_NOEMOTEWHILERUNNING] = true,
-	[OUT_OF_ENERGY] = true,
 }

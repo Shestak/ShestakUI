@@ -51,8 +51,6 @@ if SettingsDB.name == "Черешок"
 	SettingsCF["tooltip"].talents = true
 	SettingsCF["chat"].combatlog = false
 	SettingsCF["unitframe"].arena_on_right = false
-	SettingsCF["error"].black = false
-	SettingsCF["error"].white = true
 	SettingsCF["stats"].fps = false
 	if SettingsDB.level ~= MAX_PLAYER_LEVEL then
 		SettingsCF["stats"].experience = true
