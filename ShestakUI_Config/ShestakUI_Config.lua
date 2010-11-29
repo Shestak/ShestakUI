@@ -55,6 +55,7 @@ local function Local(o)
 	
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end
+	if o == "UIConfigcombattextenable" then o = L_GUI_COMBATTEXT_ENABLE end
 	if o == "UIConfigcombattextfont_size" then o = L_GUI_COMBATTEXT_FONT_SIZE end
 	if o == "UIConfigcombattextblizz_head_numbers" then o = L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS end
 	if o == "UIConfigcombattextdamage_style" then o = L_GUI_COMBATTEXT_DAMAGE_STYLE end
@@ -150,6 +151,7 @@ local function Local(o)
 	if o == "UIConfigchattime_color" then o = L_GUI_CHAT_TIMESTAMP end
 	if o == "UIConfigchatwhisp_sound" then o = L_GUI_CHAT_WHISP end
 	if o == "UIConfigchatbubbles" then o = L_GUI_CHAT_SKIN_BUBBLE end
+	if o == "UIConfigchatcombatlog" then o = L_GUI_CHAT_CL_TAB end
 	
 	-- Bag options
 	if o == "UIConfigbag" then o = L_GUI_BAGS end

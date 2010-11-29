@@ -31,6 +31,7 @@ if GetLocale() == "frFR" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Texte de combat"
+	L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text" -- Needs review
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Utiliser les textes de combat de Blizzard"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)" -- Needs review
 	L_GUI_COMBATTEXT_DAMAGE = "Afficher les dégâts dans une fenêtre dédiée"
@@ -118,6 +119,7 @@ if GetLocale() == "frFR" then
 	L_GUI_CHAT_TIMESTAMP = "Coloration du temps"
 	L_GUI_CHAT_WHISP = "Alerte sonore quand murmure"
 	L_GUI_CHAT_SKIN_BUBBLE = "Skin des bulles de discussions"
+	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
 	
 	-- Bag options
 	L_GUI_BAGS = "Sacs"

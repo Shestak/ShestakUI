@@ -31,6 +31,7 @@ if GetLocale() == "zhCN" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "战斗文字"
+	L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text" -- Needs review
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "使用暴雪默认伤害/治疗模式（模型顶部/玩家头像）"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "改变模型顶部/玩家头像的伤害/治疗字体"
 	L_GUI_COMBATTEXT_DAMAGE = "独立显示伤害输出"
@@ -118,6 +119,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_CHAT_TIMESTAMP = "时间标签颜色"
 	L_GUI_CHAT_WHISP = "接受密语时声音提示"
 	L_GUI_CHAT_SKIN_BUBBLE = "美化默认聊天泡泡"
+	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
 
 	-- Bag options
 	L_GUI_BAGS = "背包"

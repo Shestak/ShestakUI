@@ -31,6 +31,7 @@ if GetLocale() == "esES" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Texto de Combate"
+	L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text" -- Needs review
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Usar la salida de daño/curación de Blizzard (sobre la cabeza del monstruo/jugador)"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Cambiar la fuente de daño/sanación por defecto de encima de los monstruos/jugadores (tendrás que reiniciar WoW para ver los cambios)"
 	L_GUI_COMBATTEXT_DAMAGE = "Mostrar daño saliente en su propio marco"
@@ -118,6 +119,7 @@ if GetLocale() == "esES" then
 	L_GUI_CHAT_TIMESTAMP = "Color de la marca de tiempo"
 	L_GUI_CHAT_WHISP = "Sonido cuando te susurran"
 	L_GUI_CHAT_SKIN_BUBBLE = "Skin Blizzard chat bubbles"  -- Needs review
+	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
 	
 	-- Bag options
 	L_GUI_BAGS = "Bolsas"

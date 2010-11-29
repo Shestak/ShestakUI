@@ -31,6 +31,7 @@ if GetLocale() == "deDE" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Kampftext"
+	L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text" -- Needs review
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Blizzard Schaden-/Heilausgabe benutzen (über Spieler/Kreaturen Kopf)"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Standard Schaden/Heilung Schriftart über Kreaturen/Spieler Köpfen ändern (Neustart von WoW erforderlich um Änderungen zu sehen)"
 	L_GUI_COMBATTEXT_DAMAGE = "Zeige ausgehenden Schaden in einem eigenen Fenster"
@@ -118,6 +119,7 @@ if GetLocale() == "deDE" then
 	L_GUI_CHAT_TIMESTAMP = "Farbe des Zeitstempels"
 	L_GUI_CHAT_WHISP = "Geräusch abspielen wenn eine private Nachricht empfangen wird"
 	L_GUI_CHAT_SKIN_BUBBLE = "Blizzard Chat Blasen verändern"
+	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
 	
 	-- Bag options
 	L_GUI_BAGS = "Taschen"

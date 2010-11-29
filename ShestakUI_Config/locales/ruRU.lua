@@ -31,10 +31,11 @@ if GetLocale() == "ruRU" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Текст боя"
+	L_GUI_COMBATTEXT_ENABLE = "Включить текст боя"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Разблокировать исходящий текст боя Blizzard(над головами)"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Стилизация стандартого текст боя над головами"
-	L_GUI_COMBATTEXT_DAMAGE = "Оторажать исходящий урон в его блоке"
-	L_GUI_COMBATTEXT_HEALING = "Оторажать исходящее лечение в его блоке"
+	L_GUI_COMBATTEXT_DAMAGE = "Отображать исходящий урон в его блоке"
+	L_GUI_COMBATTEXT_HEALING = "Отображать исходящее лечение в его блоке"
 	L_GUI_COMBATTEXT_HOTS = "Отображать лечение ваших периодических заклинаний"
 	L_GUI_COMBATTEXT_PET_DAMAGE = "Отображать урон вашего питомца"
 	L_GUI_COMBATTEXT_DOT_DAMAGE = "Отображать урон ваших периодических заклинаний"
@@ -118,6 +119,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_CHAT_TIMESTAMP = "Цвет времени чата"
 	L_GUI_CHAT_WHISP = "Звуковое оповещение во время шепота"
 	L_GUI_CHAT_SKIN_BUBBLE = "Стилизация облачков чата"
+	L_GUI_CHAT_CL_TAB = "Включить закладку журнала боя"
 	
 	-- Bag options
 	L_GUI_BAGS = "Сумки"

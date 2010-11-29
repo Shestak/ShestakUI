@@ -31,6 +31,7 @@ if GetLocale() == "koKR" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Combat Text"
+	L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Use blizzard damage/healing output(above mob/player head)"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)"
 	L_GUI_COMBATTEXT_DAMAGE = "Show outgoing damage in it's own frame"
@@ -118,6 +119,7 @@ if GetLocale() == "koKR" then
 	L_GUI_CHAT_TIMESTAMP = "Timestamp coloring"
 	L_GUI_CHAT_WHISP = "Sound when whisper"
 	L_GUI_CHAT_SKIN_BUBBLE = "Skin Blizzard chat bubbles"
+	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"
 	
 	-- Bag options
 	L_GUI_BAGS = "Bags"
