@@ -1229,6 +1229,11 @@ Filger_Spells = {
 			{ spellID = 51627, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- NE race ability
 			{ spellID = 58984, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+                        -- Shadow dance
+                        { spellID = 51713, size = 47, unitId = "player", caster = "player", filter = "BUFF"},
+                        -- Recuperate
+                        { spellID = 73651, size = 37, unitId = "player", caster = "player", filter = "BUFF"},
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1297,6 +1302,9 @@ Filger_Spells = {
 			{ spellID = 1856, size = 30, filter = "CD" }, 
 			-- NE race ability
 			{ spellID = 58984, size = 30, filter = "CD" },
+                        -- Shadow dance
+                        { spellID = 51713, size = 30, filter = "CD"},
+
 		},
 	},
 	["DEATHKNIGHT"] = {
