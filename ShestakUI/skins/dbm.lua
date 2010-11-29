@@ -294,7 +294,7 @@ function SettingsDB.UploadDBM()
 	DBT_SavedOptions["DBM"].BarYOffset = 7
 	DBT_SavedOptions["DBM"].Font = SettingsCF.font.stylization_font
 	DBT_SavedOptions["DBM"].FontSize = SettingsCF.font.stylization_font_size
-	DBT_SavedOptions["DBM"].Width = 190
+	DBT_SavedOptions["DBM"].Width = 189
 	DBT_SavedOptions["DBM"].TimerX = 143
 	DBT_SavedOptions["DBM"].TimerPoint = "BOTTOMLEFT"
 	DBT_SavedOptions["DBM"].FillUpBars = true
@@ -304,7 +304,7 @@ function SettingsDB.UploadDBM()
 	DBT_SavedOptions["DBM"].IconRight = false
 	DBT_SavedOptions["DBM"].HugeBarXOffset = 0
 	DBT_SavedOptions["DBM"].HugeBarsEnabled = false
-	DBT_SavedOptions["DBM"].HugeWidth = 190
+	DBT_SavedOptions["DBM"].HugeWidth = 189
 	DBT_SavedOptions["DBM"].HugeTimerX = 7
 	DBT_SavedOptions["DBM"].HugeTimerPoint = "CENTER"
 	DBT_SavedOptions["DBM"].HugeBarYOffset = 7

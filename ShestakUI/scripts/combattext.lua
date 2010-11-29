@@ -122,7 +122,14 @@ elseif ct.myclass=="PALADIN"then
 		ct.aoespam[53385]=true		-- Divine Storm
 		ct.aoespam[31803]=true		-- Censure
 		ct.aoespam[20424]=true		-- Seals of Command
+		ct.aoespam[42463]=true		-- Seal of Truth
 		ct.aoespam[25742]=true		-- Seal of Righteousness
+		ct.aoespam[20167]=true		-- Seal of Insight (Heal Effect)
+		ct.aoespam[88263]=true		-- Hammer of the Righteous
+		ct.aoespam[31935]=true		-- Avenger's Shield
+		ct.aoespam[94289]=true		-- Protector of the Innocent
+		ct.aoespam[53652]=true		-- Beacon of Light
+		ct.aoespam[85222]=true		-- Light of Dawn
 		ct.aoespam[71904]=true		-- Chaos Bane (Shadowmourne proc)
 	end
 elseif ct.myclass=="PRIEST"then
