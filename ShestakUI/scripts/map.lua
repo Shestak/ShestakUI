@@ -3,121 +3,76 @@
 ----------------------------------------------------------------------------------------
 if not SettingsCF.map.enable == true then return end
 
--- Mini World Map scale
-local map_scale = SettingsCF.map.scale
+WORLDMAP_WINDOWED_SIZE = SettingsCF.map.scale
+local mapscale = WORLDMAP_WINDOWED_SIZE
 
--- Moving/removing world map elements
-local w = CreateFrame"Frame"
-w:SetScript("OnEvent", function(self, event, ...)
-	if event == "PLAYER_ENTERING_WORLD" then
-		SetCVar("questPOI", 1)
-		SetCVar("advancedWorldMap",1)
-		BlackoutWorld:Hide()
-		BlackoutWorld.Show = SettingsDB.dummy
-		BlackoutWorld.Hide = SettingsDB.dummy
-		WORLDMAP_RATIO_MINI = map_scale
-		WORLDMAP_WINDOWED_SIZE = map_scale 
-		WORLDMAP_SETTINGS.size = map_scale 
-		WorldMapBlobFrame.Show = SettingsDB.dummy
-		WorldMapBlobFrame.Hide = SettingsDB.dummy
-		WorldMapQuestPOI_OnLeave = function()
-			WorldMapTooltip:Hide()
-		end
-		WorldMap_ToggleSizeDown()
-		for i = 1, 40 do
-			local ri = _G["WorldMapRaid"..i]
-			ri:SetWidth(20)
-			ri:SetHeight(20)
-		end
-		if FeedbackUIMapTip then 
-			FeedbackUIMapTip:Hide()
-			FeedbackUIMapTip.Show = SettingsDB.dummy
-		end
-	elseif event == "PLAYER_REGEN_DISABLED" then
-		WorldMapFrameSizeUpButton:Disable()
-		WorldMap_ToggleSizeDown()
-		WorldMapBlobFrame:DrawBlob(WORLDMAP_SETTINGS.selectedQuestId, false)
-		WorldMapBlobFrame:DrawBlob(WORLDMAP_SETTINGS.selectedQuestId, true)
-	elseif event == "PLAYER_REGEN_ENABLED" then
-		WorldMapFrameSizeUpButton:Enable()
-	elseif event == "WORLD_MAP_UPDATE" then
-		if (GetNumDungeonMapLevels() == 0) then
-			WorldMapLevelUpButton:Hide()
-			WorldMapLevelDownButton:Hide()
-		else
-			WorldMapLevelUpButton:Show()
-			WorldMapLevelDownButton:Show()
-			WorldMapLevelUpButton:ClearAllPoints()
-			WorldMapLevelUpButton:SetPoint("TOPLEFT", WorldMapFrameCloseButton, "BOTTOMLEFT", 8, 8)
-			WorldMapLevelUpButton:SetFrameStrata("MEDIUM")
-			WorldMapLevelUpButton:SetFrameLevel(100)
-			WorldMapLevelDownButton:ClearAllPoints()
-			WorldMapLevelDownButton:SetPoint("TOP", WorldMapLevelUpButton, "BOTTOM",0,-2)
-			WorldMapLevelDownButton:SetFrameStrata("MEDIUM")
-			WorldMapLevelDownButton:SetFrameLevel(100)
-			WorldMapLevelDownButton:SetParent("WorldMapFrame")
-			WorldMapLevelUpButton:SetParent("WorldMapFrame")
-		end
-	end
-end)
-w:RegisterEvent("PLAYER_ENTERING_WORLD")
-w:RegisterEvent("WORLD_MAP_UPDATE")
-w:RegisterEvent("PLAYER_REGEN_DISABLED")
-w:RegisterEvent("PLAYER_REGEN_ENABLED")
+local mapbg = CreateFrame("Frame", nil, WorldMapDetailFrame)
+	mapbg:SetBackdrop( { 
+	bgFile = SettingsCF["media"].blank, 
+	edgeFile = SettingsCF["media"].blank, 
+	tile = false, edgeSize = SettingsDB.mult, 
+	insets = { left = -SettingsDB.mult, right = -SettingsDB.mult, top = -SettingsDB.mult, bottom = -SettingsDB.mult }
+})
+
+local addon = CreateFrame("Frame")
+addon:RegisterEvent("PLAYER_ENTERING_WORLD")
+addon:RegisterEvent("PLAYER_REGEN_ENABLED")
+addon:RegisterEvent("PLAYER_REGEN_DISABLED")
+
+local SmallerMap = GetCVarBool("miniWorldMap")
+if SmallerMap == nil then
+	SetCVar("miniWorldMap", 1)
+end
+
+local MoveMap = GetCVarBool("advancedWorldMap")
+if MoveMap == nil then
+	SetCVar("advancedWorldMap", 1)
+end
 
 -- Styling World Map
-function m_MapShrink()
-	local bg = CreateFrame("Frame", nil, WorldMapButton)
-	bg:SetParent("WorldMapDetailFrame")
-	bg:SetFrameStrata("MEDIUM")
-	bg:SetFrameLevel(30)
-	bg:SetScale(1 / map_scale)
-	bg:SetPoint("TOPLEFT", WorldMapButton, SettingsDB.Scale(-2), SettingsDB.Scale(2))
-	bg:SetPoint("BOTTOMRIGHT", WorldMapButton, SettingsDB.Scale(2), SettingsDB.Scale(-2))
-	SettingsDB.CreateTemplate(bg)
-	bg:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
-
+local SmallerMapSkin = function()
+	mapbg:SetBackdropColor(unpack(SettingsCF["media"].backdrop_color))
+	mapbg:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
+	mapbg:SetScale(1 / mapscale)
+	mapbg:SetPoint("TOPLEFT", WorldMapDetailFrame, SettingsDB.Scale(-2), SettingsDB.Scale(2))
+	mapbg:SetPoint("BOTTOMRIGHT", WorldMapDetailFrame, SettingsDB.Scale(2), SettingsDB.Scale(-2))
+	mapbg:SetFrameStrata("MEDIUM")
+	mapbg:SetFrameLevel(20)
+	
+	WorldMapButton:SetAllPoints(WorldMapDetailFrame)
+	WorldMapFrame:SetFrameStrata("MEDIUM")
+	
 	WorldMapDetailFrame:ClearAllPoints()
 	WorldMapDetailFrame:SetPoint(unpack(SettingsCF.position.map))
-	WorldMapFrame.scale = map_scale
-	WorldMapDetailFrame:SetScale(map_scale)
-	WorldMapButton:SetScale(map_scale)
-	WorldMapFrameAreaFrame:SetScale(map_scale)
+	WorldMapDetailFrame:SetFrameStrata("MEDIUM")
+	
 	WorldMapTitleButton:Show()
+	WorldMapTitleButton:SetFrameStrata("MEDIUM")
+	WorldMapTooltip:SetFrameStrata("TOOLTIP")
+	
 	WorldMapFrameMiniBorderLeft:Hide()
 	WorldMapFrameMiniBorderRight:Hide()
-	WorldMapPOIFrame.ratio = map_scale
-	
-	WorldMapFrameSizeUpButton.Show = SettingsDB.dummy
 	WorldMapFrameSizeUpButton:Hide()
 	
 	WorldMapFrameCloseButton:ClearAllPoints()
-	WorldMapFrameCloseButton:SetPoint("TOPRIGHT", WorldMapButton, "TOPRIGHT", 0, 0)
+	WorldMapFrameCloseButton:SetPoint("TOPRIGHT", WorldMapButton, "TOPRIGHT", SettingsDB.Scale(3), SettingsDB.Scale(3))
 	WorldMapFrameCloseButton:SetFrameStrata("HIGH")
 	
 	WorldMapFrameTitle:ClearAllPoints()
-	WorldMapFrameTitle:SetPoint("TOP", WorldMapDetailFrame, 0, -3)
 	WorldMapFrameTitle:SetParent(WorldMapDetailFrame)
+	WorldMapFrameTitle:SetPoint("TOP", WorldMapDetailFrame, 0, SettingsDB.Scale(-3))
 	WorldMapFrameTitle:SetFontObject("GameFontNormal")
 	WorldMapFrameTitle:SetFont(SettingsCF.media.normal_font, 20)
-	
-	WorldMapTitleButton:SetFrameStrata("TOOLTIP")
-	WorldMapTitleButton:ClearAllPoints()
-	WorldMapTitleButton:SetPoint("TOP", WorldMapFrame, "TOP", 0, -18)
-	
-	WorldMapTooltip:SetFrameStrata("TOOLTIP")
-	WorldMapLevelDropDown.Show = SettingsDB.dummy
-	WorldMapLevelDropDown:Hide()
 	
 	WorldMapQuestShowObjectivesText:SetFontObject("GameFontNormal")
 	WorldMapQuestShowObjectivesText:SetFont(SettingsCF.media.normal_font, 17)
 	WorldMapQuestShowObjectivesText:ClearAllPoints()
-	WorldMapQuestShowObjectivesText:SetPoint("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", 0, 4)
+	WorldMapQuestShowObjectivesText:SetPoint("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", 0, SettingsDB.Scale(4))
 	
 	WorldMapQuestShowObjectives:SetParent(WorldMapDetailFrame)
 	WorldMapQuestShowObjectives:ClearAllPoints()
 	WorldMapQuestShowObjectives:SetPoint("RIGHT", WorldMapQuestShowObjectivesText, "LEFT", 0, 0)
-	WorldMapQuestShowObjectives:SetFrameStrata("TOOLTIP")	
+	WorldMapQuestShowObjectives:SetFrameStrata("TOOLTIP")
 	
 	WorldMapTrackQuest:SetParent(WorldMapDetailFrame)
 	WorldMapTrackQuest:ClearAllPoints()
@@ -127,89 +82,116 @@ function m_MapShrink()
 	WorldMapTrackQuestText:SetFontObject("GameFontNormal")
 	WorldMapTrackQuestText:SetFont(SettingsCF.media.normal_font, 17)
 	
-	WorldMapShowDigSites:SetScale(map_scale)
+	WorldMapFrameAreaLabel:SetFontObject("GameFontNormal")
+	WorldMapFrameAreaLabel:SetFont(SettingsCF.media.normal_font, 40)
+	WorldMapFrameAreaLabel:SetTextColor(0.9, 0.83, 0.64)
 	
-	WorldMapFrame_SetOpacity(WORLDMAP_SETTINGS.opacity)
+	WorldMapLevelDropDown:SetAlpha(0)
+	WorldMapLevelDropDown:SetScale(0.00001)
+
+	-- Fix tooltip not hidding after leaving quest # tracker icon
+	hooksecurefunc("WorldMapQuestPOI_OnLeave", function() WorldMapTooltip:Hide() end)
 end
-hooksecurefunc("WorldMap_ToggleSizeDown", m_MapShrink)
+hooksecurefunc("WorldMap_ToggleSizeDown", function() SmallerMapSkin() end)
+
+local OnEvent = function(self, event)
+	if event == "PLAYER_ENTERING_WORLD" then
+		ShowUIPanel(WorldMapFrame)
+		HideUIPanel(WorldMapFrame)
+	elseif event == "PLAYER_REGEN_DISABLED" then
+		WorldMapFrameSizeDownButton:Disable() 
+		WorldMapFrameSizeUpButton:Disable()
+		HideUIPanel(WorldMapFrame)
+		WorldMap_ToggleSizeDown()
+		WatchFrame.showObjectives = nil
+		WorldMapQuestShowObjectives:SetChecked(false)
+		WorldMapQuestShowObjectives:Hide()
+		WorldMapTitleButton:Hide()
+		WorldMapBlobFrame:Hide()
+		WorldMapPOIFrame:Hide()
+
+		WorldMapQuestShowObjectives.Show = SettingsDB.dummy
+		WorldMapTitleButton.Show = SettingsDB.dummy
+		WorldMapBlobFrame.Show = SettingsDB.dummy
+		WorldMapPOIFrame.Show = SettingsDB.dummy       
+
+		WatchFrame_Update()
+	elseif event == "PLAYER_REGEN_ENABLED" then
+		WorldMapFrameSizeDownButton:Enable()
+		WorldMapFrameSizeUpButton:Enable()
+		WorldMapQuestShowObjectives.Show = WorldMapQuestShowObjectives:Show()
+		WorldMapTitleButton.Show = WorldMapTitleButton:Show()
+		WorldMapBlobFrame.Show = WorldMapBlobFrame:Show()
+		WorldMapPOIFrame.Show = WorldMapPOIFrame:Show()
+
+		WorldMapQuestShowObjectives:Show()
+		WorldMapTitleButton:Show()
+
+		WatchFrame.showObjectives = true
+		WorldMapQuestShowObjectives:SetChecked(true)
+
+		WorldMapBlobFrame:Show()
+		WorldMapPOIFrame:Show()
+
+		WatchFrame_Update()
+	end
+end
+addon:SetScript("OnEvent", OnEvent)
 
 ----------------------------------------------------------------------------------------
 --	Creating coords
 ----------------------------------------------------------------------------------------
-local c = CreateFrame("Frame", "Coords", UIParent)
-local player, cursor
-local function gen_string(point, X, Y)
-	local t = WorldMapButton:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-	t:SetPoint(point, WorldMapButton, X, Y)
-	t:SetFont(SettingsCF.media.normal_font, 17)
-	t:SetJustifyH("LEFT")
-	return t
+coords = CreateFrame("Frame", "CoordsFrame", WorldMapFrame)
+coords.PlayerText = WorldMapButton:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+coords.PlayerText:SetFont(SettingsCF.media.normal_font, 17)
+coords.PlayerText:SetJustifyH("LEFT")
+coords.PlayerText:SetText(UnitName("player")..": 0,0")
+if (IsAddOnLoaded("_NPCScan.Overlay")) then
+	coords.PlayerText:SetPoint("TOPLEFT", WorldMapButton, "TOPLEFT", SettingsDB.Scale(3), SettingsDB.Scale(-25))
+else
+	coords.PlayerText:SetPoint("TOPLEFT", WorldMapButton, "TOPLEFT", SettingsDB.Scale(3), SettingsDB.Scale(-3))
 end
-local function Cursor()
-	local left, top = WorldMapDetailFrame:GetLeft() or 0, WorldMapDetailFrame:GetTop() or 0
-	local width, height = WorldMapDetailFrame:GetWidth(), WorldMapDetailFrame:GetHeight()
-	local scale = WorldMapDetailFrame:GetEffectiveScale()
-	local x, y = GetCursorPosition()
-	local cx = (x/scale - left) / width
-	local cy = (top - y/scale) / height
-	if cx < 0 or cx > 1 or cy < 0 or cy > 1 then return end
-	return cx, cy
-end
-local function OnUpdate(player, cursor)
-	local cx, cy = Cursor()
-	local px, py = GetPlayerMapPosition("player")
-	if cx and cy then
-		cursor:SetFormattedText(L_MAP_CURSOR.."%.2d,%.2d", 100 * cx, 100 * cy)
-	else
-		cursor:SetText(L_MAP_CURSOR.."|cffff0000"..L_MAP_BOUNDS.."|r")
-	end
-	if px == 0 or py == 0 then
-		player:SetText("")
-	else
-		player:SetFormattedText(UnitName("player")..": %.2d,%.2d", 100 * px, 100 * py)
-	end
+
+coords.MouseText = WorldMapButton:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+coords.MouseText:SetFont(SettingsCF.media.normal_font, 17)
+coords.MouseText:SetJustifyH("LEFT")
+coords.MouseText:SetPoint("TOPLEFT", coords.PlayerText, "BOTTOMLEFT", 0, SettingsDB.Scale(-3))
+coords.MouseText:SetText(L_MAP_CURSOR..": 0,0")
+
+local int = 0
+coords:SetScript("OnUpdate", function(self, elapsed)
+	int = int + 1
 	
-	if (IsAddOnLoaded("_NPCScan.Overlay")) then
-		player:SetPoint("TOPLEFT", 3, -45)
-		cursor:SetPoint("TOPLEFT", 3, -65)
-	else
-		player:SetPoint("TOPLEFT", 3, -5)
-		cursor:SetPoint("TOPLEFT", 3, -25)
+	if int >= 3 then
+		local inInstance, _ = IsInInstance()
+		local x,y = GetPlayerMapPosition("player")
+		x = math.floor(100 * x)
+		y = math.floor(100 * y)
+		if x ~= 0 and y ~= 0 then
+			self.PlayerText:SetText(UnitName("player")..": "..x..","..y)
+		else
+			self.PlayerText:SetText(UnitName("player")..": ".."|cffff0000"..L_MAP_BOUNDS.."|r")
+		end
+
+		local scale = WorldMapDetailFrame:GetEffectiveScale()
+		local width = WorldMapDetailFrame:GetWidth()
+		local height = WorldMapDetailFrame:GetHeight()
+		local centerX, centerY = WorldMapDetailFrame:GetCenter()
+		local x, y = GetCursorPosition()
+		local adjustedX = (x / scale - (centerX - (width/2))) / width
+		local adjustedY = (centerY + (height/2) - y / scale) / height	
+		
+		if (adjustedX >= 0  and adjustedY >= 0 and adjustedX <= 1 and adjustedY <= 1) then
+			adjustedX = math.floor(100 * adjustedX)
+			adjustedY = math.floor(100 * adjustedY)
+			coords.MouseText:SetText(L_MAP_CURSOR..adjustedX..","..adjustedY)
+		else
+			coords.MouseText:SetText(L_MAP_CURSOR.."|cffff0000"..L_MAP_BOUNDS.."|r")
+		end
+		
+		int = 0
 	end
-end
-local function UpdateCoords(self, elapsed)
-	self.elapsed = self.elapsed - elapsed
-	if self.elapsed <= 0 then
-		self.elapsed = 0.1
-		OnUpdate(player, cursor)
-	end
-end
-local function gen_coords(self)
-	if player or cursor then return end
-	player = gen_string("TOPLEFT", 3, -5)
-	cursor = gen_string("TOPLEFT", 3, -25)
-end
-local function OnLogin(self, event)
-	gen_coords(self)
-	local cond = false
-	if (event == "WORLD_MAP_UPDATE") then 
-		self:SetScript("OnEvent", function() 
-			if not WorldMapFrame:IsVisible() and cond then
-				self.elapsed = nil
-				self:SetScript("OnUpdate", nil)
-				cond = false
-			else
-				self.elapsed = 0.1
-				self:SetScript("OnUpdate", UpdateCoords)
-				cond = true
-			end
-		end)
-	end
-	self:UnregisterEvent("PLAYER_LOGIN")
-end
-c:RegisterEvent("PLAYER_LOGIN") 
-c:RegisterEvent("WORLD_MAP_UPDATE")
-c:SetScript("OnEvent", OnLogin)
+end)
 
 ----------------------------------------------------------------------------------------
 --	BattlefieldMinimap style
