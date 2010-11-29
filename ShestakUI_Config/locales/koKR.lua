@@ -99,6 +99,7 @@ if GetLocale() == "koKR" then
 	L_GUI_TOOLTIP_ICON = "Item icon in tooltip"
 	L_GUI_TOOLTIP_HEALTH = "Numeral health value"
 	L_GUI_TOOLTIP_HIDE = "Hide tooltips for actions bars"
+	L_GUI_TOOLTIP_HIDE_COMBAT = "Hide tooltip in combat"
 	L_GUI_TOOLTIP_TALENTS = "Show tooltip talents"
 	L_GUI_TOOLTIP_ACHIEVEMENTS = "Comparing achievements in tooltip"
 	L_GUI_TOOLTIP_TARGET = "Target player in tooltip"

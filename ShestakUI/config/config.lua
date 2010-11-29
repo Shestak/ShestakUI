@@ -155,7 +155,8 @@ SettingsCF["tooltip"] = {
 	["cursor"] = false,							-- ToolTip under cursor
 	["item_icon"] = false,						-- Item icon in tooltip
 	["health_value"] = false,					-- Numeral health value
-	["hidebuttons"] = false,					-- Hide tooltips for actions bars
+	["hidebuttons"] = false,					-- Hide tooltip for actions bars
+	["hide_combat"] = false,					-- Hide tooltip in combat
 	-- Plugins
 	["talents"] = false,						-- Show tooltip talents
 	["achievements"] = true,					-- Comparing achievements in tooltip

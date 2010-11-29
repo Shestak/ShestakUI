@@ -765,8 +765,6 @@ Filger_Spells = {
 			{ spellID = 853, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Judgement of Light
 			{ spellID = 20271, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Speed of Light
-			{ spellID = 85499, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Conviction
 			{ spellID = 20057, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},

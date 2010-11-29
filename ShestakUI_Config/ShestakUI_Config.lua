@@ -126,6 +126,7 @@ local function Local(o)
 	if o == "UIConfigtooltipitem_icon" then o = L_GUI_TOOLTIP_ICON end
 	if o == "UIConfigtooltiphealth_value" then o = L_GUI_TOOLTIP_HEALTH end
 	if o == "UIConfigtooltiphidebuttons" then o = L_GUI_TOOLTIP_HIDE end
+	if o == "UIConfigtooltiphide_combat" then o = L_GUI_TOOLTIP_HIDE_COMBAT end
 	if o == "UIConfigtooltiptalents" then o = L_GUI_TOOLTIP_TALENTS end
 	if o == "UIConfigtooltipachievements" then o = L_GUI_TOOLTIP_ACHIEVEMENTS end
 	if o == "UIConfigtooltiptarget" then o = L_GUI_TOOLTIP_TARGET end

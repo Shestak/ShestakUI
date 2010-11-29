@@ -99,6 +99,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_TOOLTIP_ICON = "在提示資訊中顯示物品圖示"
 	L_GUI_TOOLTIP_HEALTH = "顯示百分比生命值"
 	L_GUI_TOOLTIP_HIDE = "隱藏動作條的提示提示資訊."
+	L_GUI_TOOLTIP_HIDE_COMBAT = "Hide tooltip in combat" -- Needs review
 	L_GUI_TOOLTIP_TALENTS = "在提示資訊中顯示天賦"
 	L_GUI_TOOLTIP_ACHIEVEMENTS = "在提示資訊中顯示成就比較"
 	L_GUI_TOOLTIP_TARGET = "在提示資訊中顯示目標的目標"

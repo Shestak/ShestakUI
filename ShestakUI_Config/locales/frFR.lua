@@ -99,6 +99,7 @@ if GetLocale() == "frFR" then
 	L_GUI_TOOLTIP_ICON = "Icone de l'objet dans le tooltip"
 	L_GUI_TOOLTIP_HEALTH = "Valeur de point de vie"
 	L_GUI_TOOLTIP_HIDE = "Cacher le tooltip pour les barres d'action"
+	L_GUI_TOOLTIP_HIDE_COMBAT = "Hide tooltip in combat" -- Needs review
 	L_GUI_TOOLTIP_TALENTS = "Afficher les talents dans le tooltip"
 	L_GUI_TOOLTIP_ACHIEVEMENTS = "Afficher Comparer les Hauts Faits dans le tooltip"
 	L_GUI_TOOLTIP_TARGET = "Afficher la cible dans le tooltip"

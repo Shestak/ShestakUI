@@ -99,6 +99,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_TOOLTIP_ICON = "Иконка предмета в подсказке"
 	L_GUI_TOOLTIP_HEALTH = "Цифровое значение здоровья в подсказке"
 	L_GUI_TOOLTIP_HIDE = "Прятать подсказку для кнопок панели действий"
+	L_GUI_TOOLTIP_HIDE_COMBAT = "Прятать подсказку в бою"
 	L_GUI_TOOLTIP_TALENTS = "Дерево талантов цели в подсказке"
 	L_GUI_TOOLTIP_ACHIEVEMENTS = "Сравнение достижений в подсказке с вашими"
 	L_GUI_TOOLTIP_TARGET = "Цель цели в подсказке"

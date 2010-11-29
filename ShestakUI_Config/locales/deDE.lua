@@ -99,6 +99,7 @@ if GetLocale() == "deDE" then
 	L_GUI_TOOLTIP_ICON = "Symbol der Gegenstände im Tooltip anzeigen"
 	L_GUI_TOOLTIP_HEALTH = "Numerischer Wert der Lebenspunkte"
 	L_GUI_TOOLTIP_HIDE = "Tooltips für Aktionsleisten verstecken"
+	L_GUI_TOOLTIP_HIDE_COMBAT = "Hide tooltip in combat" -- Needs review
 	L_GUI_TOOLTIP_TALENTS = "Zeige die Talente im Tooltip an"
 	L_GUI_TOOLTIP_ACHIEVEMENTS = "Verlgeichen von Erfolgen in Tooltips"
 	L_GUI_TOOLTIP_TARGET = "Ziel des Spielers im Tooltip anzeigen"

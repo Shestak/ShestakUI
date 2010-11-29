@@ -99,6 +99,7 @@ if GetLocale() == "esES" then
 	L_GUI_TOOLTIP_ICON = "Icono del objeto en la descripción"
 	L_GUI_TOOLTIP_HEALTH = "Valor de la vida en números"
 	L_GUI_TOOLTIP_HIDE = "Ocultar descripciones de las barras de acción"
+	L_GUI_TOOLTIP_HIDE_COMBAT = "Hide tooltip in combat" -- Needs review
 	L_GUI_TOOLTIP_TALENTS = "Mostrar descripción de los talentos"
 	L_GUI_TOOLTIP_ACHIEVEMENTS = "Comparar logros en la descripción"
 	L_GUI_TOOLTIP_TARGET = "Jugador objetivo en la descripción"

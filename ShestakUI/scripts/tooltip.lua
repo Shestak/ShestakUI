@@ -89,12 +89,20 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		sh:SetScript("OnEvent", EventShow)
 	else
 		if SettingsCF["tooltip"].cursor == true then
-			hooksecurefunc("GameTooltip_SetDefaultAnchor", function (GameTooltip, parent)
-			GameTooltip:SetOwner(parent,"ANCHOR_CURSOR")
+			hooksecurefunc("GameTooltip_SetDefaultAnchor", function(GameTooltip, parent)
+				if InCombatLockdown() and SettingsCF["tooltip"].hide_combat then
+					GameTooltip:Hide()
+				else
+					GameTooltip:SetOwner(parent,"ANCHOR_CURSOR")
+				end
 			end)
 		else
 			hooksecurefunc("GameTooltip_SetDefaultAnchor", function(self)
-			self:SetPoint(unpack(SettingsCF["position"].tooltip))
+				if InCombatLockdown() and SettingsCF["tooltip"].hide_combat then
+					GameTooltip:Hide()
+				else
+					self:SetPoint(unpack(SettingsCF["position"].tooltip))
+				end
 			end)
 		end
 	end
