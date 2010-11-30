@@ -189,6 +189,7 @@ if SettingsDB.client == "esMX" then
 	L_DATATEXT_GRAVEYARDSDEFENDED = "Cementerios Defendidos:"
 	L_DATATEXT_DEMOLISHERSDESTROYED = "Catapultas Destruidas:"
 	L_DATATEXT_GATESDESTROYED = "Puertas Destruidas:"
+	L_DATATEXT_CONTROL = "Wintergrasp under control:"  -- Needs review
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "¡Tu mascota está descontenta!"

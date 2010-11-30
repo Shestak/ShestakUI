@@ -189,6 +189,7 @@ if SettingsDB.client == "deDE" then
 	L_DATATEXT_GRAVEYARDSDEFENDED = "Friedhöfe verteidigt:"
 	L_DATATEXT_DEMOLISHERSDESTROYED = "Verwüster zerstört:"
 	L_DATATEXT_GATESDESTROYED = "Tore zerstört:"
+	L_DATATEXT_CONTROL = "Wintergrasp under control:"  -- Needs review
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "Dein Begleiter ist unzufrieden!"

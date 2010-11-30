@@ -189,6 +189,7 @@ if SettingsDB.client == "enUS" or SettingsDB.client == "enGB" then
 	L_DATATEXT_GRAVEYARDSDEFENDED = "Graveyards Defended:"
 	L_DATATEXT_DEMOLISHERSDESTROYED = "Demolishers Destroyed:"
 	L_DATATEXT_GATESDESTROYED = "Gates Destroyed:"
+	L_DATATEXT_CONTROL = "Wintergrasp under control:"
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "Your pet is unhappy!"

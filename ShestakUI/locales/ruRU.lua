@@ -189,6 +189,7 @@ if SettingsDB.client == "ruRU" then
 	L_DATATEXT_GRAVEYARDSDEFENDED = "Оборона кладбищ:"
 	L_DATATEXT_DEMOLISHERSDESTROYED = "Разрушителей уничтожено:"
 	L_DATATEXT_GATESDESTROYED = "Врат разрушено:"
+	L_DATATEXT_CONTROL = "Озеро Ледяных Оков под контролем:"
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "Ваш питомец несчастлив!"

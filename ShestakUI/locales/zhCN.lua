@@ -189,6 +189,7 @@ if SettingsDB.client == "zhCN" then
 	L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:" 
 	L_DATATEXT_DEMOLISHERSDESTROYED = "石毁车摧毁:" 
 	L_DATATEXT_GATESDESTROYED = "大门摧毁:"
+	L_DATATEXT_CONTROL = "Wintergrasp under control:"  -- Needs review
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "你的宠物感到不高兴!"
