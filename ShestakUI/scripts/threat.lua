@@ -4,6 +4,7 @@
 if not SettingsCF.threat.enable == true or not SettingsCF.unitframe.enable == true then return end
 
 local db = SettingsCF["font"]
+local pos = SettingsCF["position"].threat_meter
 local threatguid, threatunit, threatlist, threatbars = "", "target", {}, {};
 
 local function comma_value(n)
@@ -174,7 +175,11 @@ end
 local function OnEvent(self, event, ...)
 	local unit = ...;
 	if ( event == "ADDON_LOADED" and unit == "ShestakUI" ) then
-		self:SetPoint(unpack(SettingsCF["position"].threat_meter));
+		if SettingsCF["actionbar"].bottombars == 3 then
+			self:SetPoint(pos[1], pos[2], pos[3], pos[4], pos[5]-28);
+		else
+			self:SetPoint(unpack(SettingsCF["position"].threat_meter));
+		end
 		self:SetWidth(SettingsCF["threat"].width);
 		self:SetHeight(SettingsCF["threat"].height);
 		self:UnregisterEvent(event);

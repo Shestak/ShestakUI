@@ -364,7 +364,7 @@ local function Shared(self, unit)
 			bars:SetBackdropColor(0, 0, 0)
 			
 			for i = 1, 3 do					
-				bars[i]=CreateFrame("StatusBar", self:GetName().."_Shard"..i, self)
+				bars[i] = CreateFrame("StatusBar", self:GetName().."_Shard"..i, self)
 				bars[i]:SetHeight(SettingsDB.Scale(7))					
 				bars[i]:SetStatusBarTexture(SettingsCF["media"].texture)
 
@@ -412,17 +412,23 @@ local function Shared(self, unit)
 			self.Vengeance:SetSize(SettingsDB.Scale(217), SettingsDB.Scale(7))
 			self.Vengeance:SetStatusBarTexture(SettingsCF["media"].texture)
 			self.Vengeance:SetStatusBarColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
+			self.Vengeance:SetBackdrop(backdrop)
+			self.Vengeance:SetBackdropColor(0, 0, 0)
 			
 			self.Vengeance.bg = self.Vengeance:CreateTexture(nil, "BORDER")
 			self.Vengeance.bg:SetAllPoints()
 			self.Vengeance.bg:SetTexture(SettingsCF["media"].texture)
-			self.Vengeance.bg.multiplier = 0.25
+			self.Vengeance.bg:SetVertexColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 0.25)
 			
 			self.Vengeance.FrameBackdrop = CreateFrame("Frame", nil, self.Vengeance)
 			SettingsDB.CreateTemplate(self.Vengeance.FrameBackdrop)
 			self.Vengeance.FrameBackdrop:SetFrameStrata("BACKGROUND")
 			self.Vengeance.FrameBackdrop:SetPoint("TOPLEFT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
 			self.Vengeance.FrameBackdrop:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
+			
+			--self.Vengeance.Text = SettingsDB.SetFontString(self.Vengeance, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
+			--self.Vengeance.Text:SetPoint("CENTER", 0, 0)
+			--self.Vengeance.Text:SetTextColor(1, 1, 1)
 		end
 		
 		-- Experience bar

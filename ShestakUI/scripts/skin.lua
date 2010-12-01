@@ -64,6 +64,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"GuildInviteFrame",
 			"ChatConfigFrame",
 			"RolePollPopup",
+			"AddFriendFrame",
 		}
 		
 		local insetskins = {
@@ -201,6 +202,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"LFDRoleCheckPopupAcceptButton",
 			"InterfaceOptionsFrameTab1",
 			"InterfaceOptionsFrameTab2",
+			"AddFriendEntryFrameCancelButton",
+			"AddFriendEntryFrameAcceptButton",
 		}
 		
 		for i = 1, getn(BlizzardButtons) do
