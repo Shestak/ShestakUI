@@ -16,6 +16,13 @@ local function SkinButton(f)
 	f:SetHighlightTexture("")
 	f:SetPushedTexture("")
 	f:SetDisabledTexture("")
+	if _G[f:GetName().."Left"] then _G[f:GetName().."Left"]:SetAlpha(0) end
+	if _G[f:GetName().."Middle"] then _G[f:GetName().."Middle"]:SetAlpha(0) end
+	if _G[f:GetName().."Right"] then _G[f:GetName().."Right"]:SetAlpha(0) end
+	if _G[f:GetName().."LeftDisabled"] then _G[f:GetName().."LeftDisabled"]:SetAlpha(0) end
+	if _G[f:GetName().."MiddleDisabled"] then _G[f:GetName().."MiddleDisabled"]:SetAlpha(0) end
+	if _G[f:GetName().."RightDisabled"] then _G[f:GetName().."RightDisabled"]:SetAlpha(0) end
+	if _G[f:GetName().."HighlightTexture"] then _G[f:GetName().."HighlightTexture"]:SetAlpha(0) end
 	SettingsDB.SkinPanel(f)
 	f:HookScript("OnEnter", SetModifiedBackdrop)
 	f:HookScript("OnLeave", SetOriginalBackdrop)
@@ -135,9 +142,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			local UIMenuButtons = _G["GameMenuButton"..BlizzardMenuButtons[i]]
 			if UIMenuButtons then
 				SkinButton(UIMenuButtons)
-				_G["GameMenuButton"..BlizzardMenuButtons[i].."Left"]:SetAlpha(0)
-				_G["GameMenuButton"..BlizzardMenuButtons[i].."Middle"]:SetAlpha(0)
-				_G["GameMenuButton"..BlizzardMenuButtons[i].."Right"]:SetAlpha(0)
 			end
 		end
 
@@ -195,63 +199,14 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"RolePollPopupAcceptButton",
 			"LFDRoleCheckPopupDeclineButton",
 			"LFDRoleCheckPopupAcceptButton",
+			"InterfaceOptionsFrameTab1",
+			"InterfaceOptionsFrameTab2",
 		}
 		
 		for i = 1, getn(BlizzardButtons) do
 			local UIButtons = _G[BlizzardButtons[i]]
 			if UIButtons then
 				SkinButton(UIButtons)
-			end
-		end
-		
-		local ButtonsBackground = {
-			"BaudErrorFrameClearButtonLeft",
-			"BaudErrorFrameClearButtonMiddle",
-			"BaudErrorFrameClearButtonRight",
-			"BaudErrorFrameCloseButtonLeft",
-			"BaudErrorFrameCloseButtonMiddle",
-			"BaudErrorFrameCloseButtonRight",
-			"RolePollPopupAcceptButtonLeft",
-			"RolePollPopupAcceptButtonMiddle",
-			"RolePollPopupAcceptButtonRight",
-			"LFDRoleCheckPopupAcceptButtonLeft",
-			"LFDRoleCheckPopupAcceptButtonMiddle",
-			"LFDRoleCheckPopupAcceptButtonRight",
-			"LFDRoleCheckPopupDeclineButtonLeft",
-			"LFDRoleCheckPopupDeclineButtonMiddle",
-			"LFDRoleCheckPopupDeclineButtonRight",
-			"LFDDungeonReadyDialogLeaveQueueButtonLeft",
-			"LFDDungeonReadyDialogLeaveQueueButtonMiddle",
-			"LFDDungeonReadyDialogLeaveQueueButtonRight",
-			"LFDDungeonReadyDialogEnterDungeonButtonLeft",
-			"LFDDungeonReadyDialogEnterDungeonButtonMiddle",
-			"LFDDungeonReadyDialogEnterDungeonButtonRight",
-			"InterfaceOptionsFrameTab1Left",
-			"InterfaceOptionsFrameTab1Middle",
-			"InterfaceOptionsFrameTab1Right",
-			"InterfaceOptionsFrameTab1LeftDisabled",
-			"InterfaceOptionsFrameTab1MiddleDisabled",
-			"InterfaceOptionsFrameTab1RightDisabled",
-			"InterfaceOptionsFrameTab1HighlightTexture",
-			"InterfaceOptionsFrameTab2Left",
-			"InterfaceOptionsFrameTab2Middle",
-			"InterfaceOptionsFrameTab2Right",
-			"InterfaceOptionsFrameTab2LeftDisabled",
-			"InterfaceOptionsFrameTab2MiddleDisabled",
-			"InterfaceOptionsFrameTab2RightDisabled",
-			"InterfaceOptionsFrameTab2HighlightTexture",
-			"ColorPickerOkayButtonLeft",
-			"ColorPickerOkayButtonMiddle",
-			"ColorPickerOkayButtonRight",
-			"ColorPickerCancelButtonLeft",
-			"ColorPickerCancelButtonMiddle",
-			"ColorPickerCancelButtonRight",
-		}
-		
-		for i = 1, getn(ButtonsBackground) do
-			local ButtonsBD = _G[ButtonsBackground[i]]
-			if ButtonsBD then
-				ButtonsBD:SetAlpha(0)
 			end
 		end
 		
@@ -306,23 +261,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 	if addon == "DBM-GUI" then
 		SettingsDB.SkinFadedPanel(_G["DBM_GUI_OptionsFrame"])
 		SettingsDB.SkinPanel(_G["DBM_GUI_OptionsFramePanelContainer"])
-		SettingsDB.SkinPanel(_G["DBM_GUI_OptionsFrameTab1"])
-		SettingsDB.SkinPanel(_G["DBM_GUI_OptionsFrameTab2"])
-		
-		_G["DBM_GUI_OptionsFrameTab1Left"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab1Middle"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab1Right"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab1LeftDisabled"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab1MiddleDisabled"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab1RightDisabled"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab1HighlightTexture"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab2Left"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab2Middle"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab2Right"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab2LeftDisabled"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab2MiddleDisabled"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab2RightDisabled"]:SetAlpha(0)
-		_G["DBM_GUI_OptionsFrameTab2HighlightTexture"]:SetAlpha(0)
 
 		_G["DBM_GUI_OptionsFrameTab1"]:ClearAllPoints()
 		_G["DBM_GUI_OptionsFrameTab1"]:SetPoint("TOPLEFT", _G["DBM_GUI_OptionsFrameBossMods"], "TOPLEFT", 10, 27)
@@ -337,6 +275,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		
 		local dbmbskins = {
 			"DBM_GUI_OptionsFrameOkay",
+			"DBM_GUI_OptionsFrameTab1",
+			"DBM_GUI_OptionsFrameTab2",
 		}
 		
 		for i = 1, getn(dbmbskins) do
@@ -368,12 +308,6 @@ if IsMacClient() then
 	SkinButton(_G["MacOptionsButtonKeybindings"])
 	SkinButton(_G["MacOptionsFrameDefaults"])
 	SkinButton(_G["MacOptionsButtonCompress"])
-	_G["MacOptionsButtonCompressLeft"]:SetAlpha(0)
-	_G["MacOptionsButtonCompressMiddle"]:SetAlpha(0)
-	_G["MacOptionsButtonCompressRight"]:SetAlpha(0)
-	_G["MacOptionsButtonKeybindingsLeft"]:SetAlpha(0)
-	_G["MacOptionsButtonKeybindingsMiddle"]:SetAlpha(0)
-	_G["MacOptionsButtonKeybindingsRight"]:SetAlpha(0)
  
 	-- Reposition and resize buttons
 	local tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsButtonCompress"]:GetPoint()
