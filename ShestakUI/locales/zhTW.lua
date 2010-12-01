@@ -226,15 +226,14 @@ if SettingsDB.client == "zhTW" then
 	L_WELCOME_LINE_2_2 = "得到更多信息."
 	
 	-- Combat text
-	L_COMBATTEXT_KILLING_BLOW = "Killing Blow"  -- Needs review
-	L_COMBATTEXT_ALREADY_UNLOCKED = "Combat text already unlocked."  -- Needs review
-	L_COMBATTEXT_ALREADY_LOCKED = "Combat text already locked."  -- Needs review
-	L_COMBATTEXT_TEST_DISABLED = "Combat text test mode disabled."  -- Needs review
-	L_COMBATTEXT_TEST_ENABLED = "Combat text test mode enabled."  -- Needs review
-	L_COMBATTEXT_TEST_USE_UNLOCK = "Type /xct unlock to move and resize combat text frames."  -- Needs review
-	L_COMBATTEXT_TEST_USE_LOCK = "Type /xct lock to lock combat text frames."  -- Needs review
-	L_COMBATTEXT_TEST_USE_TEST = "Type /xct test to toggle combat text testmode."  -- Needs review
-	L_COMBATTEXT_POPUP = "To save combat text window positions you need to reload your UI."  -- Needs review
-	L_COMBATTEXT_UNSAVED = "Combat text window positions unsaved, don't forget to reload UI."  -- Needs review
-	L_COMBATTEXT_UNLOCKED = "Combat text unlocked."  -- Needs review
+	L_COMBATTEXT_KILLING_BLOW = "擊殺信息"
+	L_COMBATTEXT_ALREADY_UNLOCKED = "戰鬥記錄已經解鎖."
+	L_COMBATTEXT_ALREADY_LOCKED = "戰鬥記錄已經鎖定."
+	L_COMBATTEXT_TEST_DISABLED = "戰鬥記錄測試模式關閉."
+	L_COMBATTEXT_TEST_ENABLED = "戰鬥記錄測試模式開啟." 
+	L_COMBATTEXT_TEST_USE_UNLOCK = "輸入/xct unlock解鎖並調整戰鬥記錄大小與位置."
+	L_COMBATTEXT_TEST_USE_LOCK = "輸入/xct lock鎖定戰鬥記錄框體."
+	L_COMBATTEXT_TEST_USE_TEST = "輸入/xct test 切換測試模式."
+	L_COMBATTEXT_POPUP = "保存戰鬥記錄位置需要重載."
+	L_COMBATTEXT_UNLOCKED = "戰鬥記錄解鎖."
 end

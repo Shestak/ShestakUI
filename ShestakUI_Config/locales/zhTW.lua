@@ -31,7 +31,7 @@ if GetLocale() == "zhTW" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "戰鬥文字"
-	L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text" -- Needs review
+	L_GUI_COMBATTEXT_ENABLE = "開啟戰鬥文字"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "使用暴雪默認傷害/治療模式（模型頂部/玩家頭像）"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "改變模型頂部/玩家頭像的傷害/治療字體"
 	L_GUI_COMBATTEXT_DAMAGE = "獨立顯示傷害輸出"
@@ -99,7 +99,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_TOOLTIP_ICON = "在提示資訊中顯示物品圖示"
 	L_GUI_TOOLTIP_HEALTH = "顯示百分比生命值"
 	L_GUI_TOOLTIP_HIDE = "隱藏動作條的提示提示資訊."
-	L_GUI_TOOLTIP_HIDE_COMBAT = "Hide tooltip in combat" -- Needs review
+	L_GUI_TOOLTIP_HIDE_COMBAT = "戰鬥中隱藏提示資訊"
 	L_GUI_TOOLTIP_TALENTS = "在提示資訊中顯示天賦"
 	L_GUI_TOOLTIP_ACHIEVEMENTS = "在提示資訊中顯示成就比較"
 	L_GUI_TOOLTIP_TARGET = "在提示資訊中顯示目標的目標"
@@ -120,7 +120,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_CHAT_TIMESTAMP = "時間標籤顏色"
 	L_GUI_CHAT_WHISP = "接受密語時聲音提示"
 	L_GUI_CHAT_SKIN_BUBBLE = "美化默認聊天泡泡"
-	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
+	L_GUI_CHAT_CL_TAB = "顯示戰鬥記錄標籤"
 	
 	-- Bag options
 	L_GUI_BAGS = "背包"
