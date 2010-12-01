@@ -43,6 +43,7 @@
 	<Script file="modules\talents.lua"/>
 	<Script file="modules\totembar.lua"/>
 	<Script file="modules\trinkets.lua"/>
+	<Script file="modules\vengeance.lua"/>
 
 	<!-- Clique support -->
 	<Button name="oUF_ClickCastUnitTemplate" virtual="true" inherits="SecureActionButtonTemplate,SecureHandlerEnterLeaveTemplate">

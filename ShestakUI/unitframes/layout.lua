@@ -405,6 +405,26 @@ local function Shared(self, unit)
 			end
 		end
 		
+		-- Vengeance bar
+		if db.plugins_vengeance_bar == true then
+			self.Vengeance = CreateFrame("StatusBar", nil, self)
+			self.Vengeance:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, SettingsDB.Scale(7))
+			self.Vengeance:SetSize(SettingsDB.Scale(217), SettingsDB.Scale(7))
+			self.Vengeance:SetStatusBarTexture(SettingsCF["media"].texture)
+			self.Vengeance:SetStatusBarColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
+			
+			self.Vengeance.bg = self.Vengeance:CreateTexture(nil, "BORDER")
+			self.Vengeance.bg:SetAllPoints()
+			self.Vengeance.bg:SetTexture(SettingsCF["media"].texture)
+			self.Vengeance.bg.multiplier = 0.25
+			
+			self.Vengeance.FrameBackdrop = CreateFrame("Frame", nil, self.Vengeance)
+			SettingsDB.CreateTemplate(self.Vengeance.FrameBackdrop)
+			self.Vengeance.FrameBackdrop:SetFrameStrata("BACKGROUND")
+			self.Vengeance.FrameBackdrop:SetPoint("TOPLEFT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
+			self.Vengeance.FrameBackdrop:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
+		end
+		
 		-- Experience bar
 		if SettingsDB.level ~= MAX_PLAYER_LEVEL and db.plugins_experience_bar == true then
 			self.Experience = CreateFrame("StatusBar", self:GetName().."_Experience", self)
