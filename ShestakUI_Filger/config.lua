@@ -527,6 +527,10 @@ Filger_Spells = {
 			{ spellID = 702, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Mortal Strike
 			{ spellID = 12294, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
+			-- Judgements of the Just
+			{ spellID = 68055, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
+			-- Vindication
+			{ spellID = 26017, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
