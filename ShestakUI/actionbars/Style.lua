@@ -468,6 +468,22 @@ function TotemBarSpellButton(button, index)
 
 	local name = button:GetName()
 	local icon = _G[name.."Icon"]
+	local hotkey = _G[name.."HotKey"]
+	
+	hotkey:ClearAllPoints()
+	hotkey:SetPoint("TOPRIGHT", 0, SettingsDB.Scale(-1))
+	hotkey:SetFont(db.action_bars_font, db.action_bars_font_size, db.action_bars_font_style);
+	hotkey:SetShadowOffset(db.action_bars_font_shadow and 1 or 0, db.action_bars_font_shadow and -1 or 0)
+	hotkey:SetWidth(SettingsDB.buttonsize-1)
+	hotkey.ClearAllPoints = SettingsDB.dummy
+	hotkey.SetPoint = SettingsDB.dummy
+ 
+	if not SettingsCF["actionbar"].hotkey == true then
+		hotkey:SetText("")
+		hotkey:Hide()
+		hotkey.Show = SettingsDB.dummy
+	end
+	
 	if icon then
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:SetDrawLayer("ARTWORK")
