@@ -407,28 +407,35 @@ local function Shared(self, unit)
 		
 		-- Vengeance bar
 		if db.plugins_vengeance_bar == true then
-			self.Vengeance = CreateFrame("StatusBar", nil, self)
-			self.Vengeance:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, SettingsDB.Scale(7))
-			self.Vengeance:SetSize(SettingsDB.Scale(217), SettingsDB.Scale(7))
-			self.Vengeance:SetStatusBarTexture(SettingsCF["media"].texture)
-			self.Vengeance:SetStatusBarColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
-			self.Vengeance:SetBackdrop(backdrop)
-			self.Vengeance:SetBackdropColor(0, 0, 0)
+			local vengeanceBar = CreateFrame("Frame", nil, self)
+			vengeanceBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, SettingsDB.Scale(7))
+			vengeanceBar:SetSize(SettingsDB.Scale(217), SettingsDB.Scale(7))
+			vengeanceBar:SetBackdrop(backdrop)
+			vengeanceBar:SetBackdropColor(0, 0, 0)
 			
-			self.Vengeance.bg = self.Vengeance:CreateTexture(nil, "BORDER")
-			self.Vengeance.bg:SetAllPoints()
-			self.Vengeance.bg:SetTexture(SettingsCF["media"].texture)
-			self.Vengeance.bg:SetVertexColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 0.25)
+			vengeanceBar.FrameBackdrop = CreateFrame("Frame", nil, vengeanceBar)
+			SettingsDB.CreateTemplate(vengeanceBar.FrameBackdrop)
+			vengeanceBar.FrameBackdrop:SetFrameStrata("BACKGROUND")
+			vengeanceBar.FrameBackdrop:SetPoint("TOPLEFT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
+			vengeanceBar.FrameBackdrop:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
+
+			local statusBar = CreateFrame("StatusBar", nil, vengeanceBar)
+			statusBar:SetPoint("LEFT", vengeanceBar, "LEFT", 0, 0)
+			statusBar:SetSize(SettingsDB.Scale(217), SettingsDB.Scale(7))
+			statusBar:SetStatusBarTexture(SettingsCF["media"].texture)
+			statusBar:SetStatusBarColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
+			vengeanceBar.Bar = statusBar
 			
-			self.Vengeance.FrameBackdrop = CreateFrame("Frame", nil, self.Vengeance)
-			SettingsDB.CreateTemplate(self.Vengeance.FrameBackdrop)
-			self.Vengeance.FrameBackdrop:SetFrameStrata("BACKGROUND")
-			self.Vengeance.FrameBackdrop:SetPoint("TOPLEFT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
-			self.Vengeance.FrameBackdrop:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
-			
-			--self.Vengeance.Text = SettingsDB.SetFontString(self.Vengeance, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
-			--self.Vengeance.Text:SetPoint("CENTER", 0, 0)
-			--self.Vengeance.Text:SetTextColor(1, 1, 1)
+			statusBar.bg = statusBar:CreateTexture(nil, "BORDER")
+			statusBar.bg:SetAllPoints()
+			statusBar.bg:SetTexture(SettingsCF["media"].texture)
+			statusBar.bg:SetVertexColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 0.25)
+
+			local vengeanceBarText = SettingsDB.SetFontString(statusBar, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
+			vengeanceBarText:SetPoint("CENTER", statusBar, "CENTER", 0, 0)
+			vengeanceBar.Text = vengeanceBarText
+
+			self.VengeanceBar = vengeanceBar
 		end
 		
 		-- Experience bar

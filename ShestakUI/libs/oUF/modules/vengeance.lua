@@ -1,159 +1,100 @@
---[[
-	Project.: oUF_Vengeance
-	File....: oUF_Vengeance.lua
-	Version.: 40000.1
-	Rev Date: 24/11/2010
-	Authors.: Shandrela [EU-Baelgun] <Bloodmoon>
-]]
-
---[[
-	Elements handled:
-	 .Vengeance [frame]
-	 .Vengeance.Text [fontstring]
-		
-	Code Example:
-	 .Vengeance = CreateFrame("StatusBar", nil, self)
-	 .Vengeance:SetWidth(400)
-	 .Vengeance:SetHeight(20)
-	 .Vengeance:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 100)
-	 .Vengeance:SetStatusBarTexture(normTex)
-	 .Vengeance:SetStatusBarColor(1,0,0)
-	 
-	Functions that can be overridden from within a layout:
-	 - :OverrideText(value)
---]]
 if SettingsCF.unitframe.plugins_vengeance_bar ~= true then return end
 
-local _, class = UnitClass("player")
-local vengeance = GetSpellInfo(93098)
+local _, ns = ...
+local oUF = ns.oUF or oUF
+assert(oUF, 'VengeanceBar was unable to locate oUF install')
 
-local tooltip = CreateFrame("GameTooltip", "VengeanceTooltip", UIParent, "GameTooltipTemplate")
-tooltip:SetOwner(UIParent, "ANCHOR_NONE")				
+local VENGEANCE_ID = 76691
+local tooltip = CreateFrame('GameTooltip', 'VengeanceTooltip', UIParent, 'GameTooltipTemplate')
 
-local function getTooltipText(...)
-	local text = ""
-	for i=1,select("#",...) do
-		local rgn = select(i,...)
-		if rgn and rgn:GetObjectType() == "FontString" then
-			text = text .. (rgn:GetText() or "")
+local Update = function(self, event, unit)
+	if(self.unit ~= unit) then return end
+
+	local vb = self.VengeanceBar
+
+	if(vb.PreUpdate) then vb:PreUpdate(unit) end
+
+	-- check unit auras for vengeance
+	local hasAura = false
+	local i = 1
+	repeat
+		local _, _, _, _, _, _, _, _, _, _, spellID = UnitAura(self.unit, i)
+
+		if spellID == VENGEANCE_ID then
+			hasAura = true
+			break
 		end
-	end
-	return text
-end
 
-local function isTank(self, event)
-	local masteryIndex = GetPrimaryTalentTree()
-	local bar = self.Vengeance
-	
-	if masteryIndex then
-		if class == "DRUID" and masteryIndex == 2 then
-			local form = GetShapeshiftFormID()
-			if form and form == BEAR_FORM then
-				bar.isTank = true
-			else
-				bar.isTank = false
-				bar:Hide()
-			end
-		elseif class == "DEATHKNIGHT" and masteryIndex == 1 then
-			bar.isTank = true
-		elseif class == "PALADIN" and masteryIndex == 2 then
-			bar.isTank = true
-		elseif class == "WARRIOR" and masteryIndex == 3 then
-			bar.isTank = true
-		else
-			bar.isTank = false
-			bar:Hide()
-		end
-	else
-		bar.isTank = false
-		bar:Hide()
-	end
-end
+		i = i + 1
+	until not spellID
 
-local function maxChanged(self, event, unit)
-	if not unit == "player" then return end
-	local bar = self.Vengeance
-	
-	bar:SetMinMaxValues(0, floor(UnitHealthMax("player") / 10))
-end
+	if(hasAura) then
+		-- get vengeance stack value
+		tooltip:SetOwner(UIParent, 'ANCHOR_NONE')
+		tooltip:SetUnitAura(self.unit, i, 'HELPFUL')
+		local text = VengeanceTooltipTextLeft2:GetText()
+		tooltip:Hide()
 
-local function valueChanged(self)
-	local bar = self.Vengeance
-	
-	if not bar.isTank then
-		bar:Hide()
-		return
-	end
-	
-	local name = UnitAura("player", vengeance)
-	
-	if name then
-		tooltip:ClearLines()
-		tooltip:SetUnitBuff("player", name)
-		local text = getTooltipText(tooltip:GetRegions())
-		local value = tonumber(string.match(text,"%d+"))
+		local _, maxHealth = self.Health:GetMinMaxValues()
+		vb.Bar:SetMinMaxValues(0, maxHealth / 10)
 		
-		bar:SetValue(value)
-		bar:Show()
-		
-		if bar.Text then
-			if bar.OverrideText then
-				bar:OverrideText(value)
-			else
-				bar:SetText(value)
-			end
+		local textValue = text:match('%d+')
+		if(vb.Text) then
+			vb.Text:SetText(textValue.." / "..maxHealth/100)
 		end
+
+		local value = tonumber(textValue)
+		vb.Bar:SetValue(value and value or 0)
+
+		vb:Show()
 		
 		if self.Debuffs then 
 			self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(19)) 
 		end
 	else
-		bar:Hide()
+		vb:Hide()
 		
 		if self.Debuffs then 
 			self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(5))
 		end
 	end
+
+	if(vb.PostUpdate) then
+		return vb:PostUpdate(unit)
+	end
 end
 
-local function Enable(self, unit)
-	local bar = self.Vengeance
-	
-	if bar and unit == "player" then
-		self:RegisterEvent("UNIT_AURA", valueChanged)
-		self:RegisterEvent("PLAYER_LOGIN", valueChanged)
-		
-		self:RegisterEvent("UNIT_MAXHEALTH", maxChanged)
-		self:RegisterEvent("PLAYER_LOGIN", maxChanged)
-		
-		self:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED", isTank)
-		self:RegisterEvent("PLAYER_TALENT_UPDATE", isTank)
-		
-		if class == "DRUID" then
-			self:RegisterEvent("UPDATE_SHAPESHIFT_FORM", isTank)
+local Path = function(self, ...)
+	return (self.VengeanceBar.Override or Update) (self, ...)
+end
+
+local ForceUpdate = function(element)
+	return Update(element.__owner, 'ForceUpdate', element.__owner.unit)
+end
+
+local Enable = function(self)
+	local vb = self.VengeanceBar
+	if(vb) then
+		vb.__owner = self
+		vb.ForceUpdate = ForceUpdate
+
+		self:RegisterEvent('UNIT_AURA', Path)
+		self:RegisterEvent('UNIT_MAXHEALTH', Path)
+
+		if(vb.Bar and not vb.Bar:GetStatusBarTexture()) then
+			vb.Bar:SetStatusBarTexture[[Interface\TargetingFrame\UI-StatusBar]]
 		end
-		
+
 		return true
 	end
 end
 
-local function Disable(self)
-	local bar = self.Vengeance
-	
-	if bar then
-		self:UnregisterEvent("UNIT_AURA", valueChanged)
-		self:UnregisterEvent("PLAYER_LOGIN", valueChanged)
-		
-		self:UnregisterEvent("UNIT_MAXHEALTH", maxChanged)
-		self:UnregisterEvent("PLAYER_LOGIN", maxChanged)
-		
-		self:UnregisterEvent("ACTIVE_TALENT_GROUP_CHANGED", isTank)
-		self:UnregisterEvent("PLAYER_TALENT_UPDATE", isTank)
-		
-		if class == "DRUID" then
-			self:UnregisterEvent("UPDATE_SHAPESHIFT_FORM", isTank)
-		end
+local Disable = function(self)
+	local vb = self.VengeanceBar
+	if(vb) then
+		self:UnregisterEvent('UNIT_AURA', Path)
+		self:UnregisterEvent('UNIT_MAXHEALTH', Path)
 	end
 end
 
-oUF:AddElement("Vengeance", nil, Enable, Disable)
+oUF:AddElement('VengeanceBar', Path, Enable, Disable)
