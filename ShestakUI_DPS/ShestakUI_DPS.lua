@@ -19,21 +19,6 @@ local function Shared(self, unit)
 	-- Menu
 	self.menu = SettingsDB.SpawnMenu
 	
-	-- Width and height
-	if self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "pet" then
-		self:SetWidth(30)
-		self:SetHeight(27)
-	elseif unit == "raid" then
-		self:SetWidth(104)
-		self:SetHeight(17)
-	elseif unit == "party" then
-		self:SetWidth(140)
-		self:SetHeight(27)
-	else
-		self:SetWidth(108)
-		self:SetHeight(20)
-	end
-	
 	-- Backdrop for every units
 	self.FrameBackdrop = CreateFrame("Frame", nil, self)
 	SettingsDB.CreateTemplate(self.FrameBackdrop)
@@ -249,6 +234,15 @@ oUF:Factory(function(self)
 	oUF:SetActiveStyle("ShestakDPS")
 	if db.show_party == true then
 		local party = self:SpawnHeader("oUF_PartyDPS", nil, "custom [@raid6,exists] hide;show",
+			"oUF-initialConfigFunction", ([[
+				if self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target" then
+					self:SetWidth(30)
+					self:SetHeight(27)
+				else
+					self:SetWidth(140)
+					self:SetHeight(27)
+				end
+			]]),
 			"showSolo", db.solo_mode,
 			"showPlayer", db.player_in_party, 
 			"showParty", true,
@@ -261,25 +255,31 @@ oUF:Factory(function(self)
 	end
 	
 	if db.show_raid == true then
-		local raid = self:SpawnHeader("oUF_RaidDPS", nil, "custom [@raid6,exists] show;hide",
-			"showRaid", true, 
-			"yOffset", SettingsDB.Scale(-7),
-			"point", "TOP",
-			"groupFilter", "1,2,3,4",
-			"groupingOrder", "1,2,3,4",
-			"groupBy", "GROUP"
-		)
-		raid:SetPoint(unpack(SettingsCF["position"].unitframes.raid_dps))
-
-		local raid2 = oUF:SpawnHeader("oUF_RaidDPS2", nil, "custom [@raid21,exists] show;hide",
-			"showRaid", true, 
-			"yOffset", SettingsDB.Scale(-7),
-			"point", "TOP",
-			"groupFilter", "5,6,7,8",
-			"groupingOrder", "5,6,7,8",
-			"groupBy", "GROUP"
-		)
-		raid2:SetPoint("TOPLEFT", "oUF_RaidDPS", "TOPRIGHT", SettingsDB.Scale(7), 0)
+		local raid = {}
+		for i = 1, db.raid_groups do 
+			local raidgroup = self:SpawnHeader("oUF_RaidDPS"..i, nil, "custom [@raid6,exists] show;hide",
+				"oUF-initialConfigFunction", ([[
+					self:SetWidth(104)
+					self:SetHeight(17)
+				]]),
+				"showRaid", true, 
+				"yOffset", SettingsDB.Scale(-7),
+				"point", "TOPLEFT",
+				"groupFilter", tostring(i),
+				"maxColumns", 5,
+				"unitsPerColumn", 1,
+				"columnSpacing", SettingsDB.Scale(7),
+				"columnAnchorPoint", "TOP"
+			)
+			if i == 1 then
+				raidgroup:SetPoint(unpack(SettingsCF["position"].unitframes.raid_dps))
+			elseif i == 5 then
+				raidgroup:SetPoint("TOPLEFT", raid[1], "TOPRIGHT", SettingsDB.Scale(7), 0)
+			else
+				raidgroup:SetPoint("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, SettingsDB.Scale(-7))
+			end
+			raid[i] = raidgroup
+		end
 	end
 end)
 
