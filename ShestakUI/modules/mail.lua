@@ -106,11 +106,11 @@ button:SetScript("OnLeave", function() GameTooltip:Hide() end)
 
 function copper_to_pretty_money(c)
 	if c > 10000 then
-		return ("%d|cffffd700g|r %d|cffc7c7cfs|r %d|cffeda55fc|r"):format(c/10000, (c/100)%100, c%100)
+		return ("%d|cffffd700"..GOLD_AMOUNT_SYMBOL.."|r %d|cffc7c7cf"..SILVER_AMOUNT_SYMBOL.."|r %d|cffeda55f"..COPPER_AMOUNT_SYMBOL.."|r"):format(c/10000, (c/100)%100, c%100)
 	elseif c > 100 then
-		return ("%d|cffc7c7cfs|r %d|cffeda55fc|r"):format((c/100)%100, c%100)
+		return ("%d|cffc7c7cf"..SILVER_AMOUNT_SYMBOL.."|r %d|cffeda55f"..COPPER_AMOUNT_SYMBOL.."|r"):format((c/100)%100, c%100)
 	else
-		return ("%d|cffeda55fc|r"):format(c%100)
+		return ("%d|cffeda55f"..COPPER_AMOUNT_SYMBOL.."|r"):format(c%100)
 	end
 end
 
