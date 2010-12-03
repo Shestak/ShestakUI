@@ -467,8 +467,6 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 
-			-- Blood Reserve
-			{ spellID = 64568, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Last Stand
 			{ spellID = 12975, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shield Wall
