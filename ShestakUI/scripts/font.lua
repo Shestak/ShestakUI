@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------------
+﻿----------------------------------------------------------------------------------------
 --	Based on tekticles
 ----------------------------------------------------------------------------------------
 local UIFonts = CreateFrame("Frame", nil, UIParent)
@@ -22,6 +22,7 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	if addon ~= "ShestakUI" then return end
 	
 	local NORMAL = SettingsCF.media.normal_font
+	local COMBAT = [[Interface\AddOns\ShestakUI\media\blank.ttf]]
 
 	UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 12
 	CHAT_FONT_HEIGHTS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
@@ -29,6 +30,19 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	UNIT_NAME_FONT = NORMAL
 	NAMEPLATE_FONT = NORMAL
 	STANDARD_TEXT_FONT = NORMAL
+	
+	if SettingsDB.name == "Черешок" 
+		or SettingsDB.name == "Вершок"
+		or SettingsDB.name == "Вещмешок" 
+		or SettingsDB.name == "Гребешок" 
+		or SettingsDB.name == "Кулешок" 
+		or SettingsDB.name == "Лапушок" 
+		or SettingsDB.name == "Обушок" 
+		or SettingsDB.name == "Ремешок"
+		or SettingsDB.name == "Шестак" then
+		DAMAGE_TEXT_FONT = COMBAT
+		SetFont(CombatTextFont, COMBAT, 100)
+	end
 
 	-- Base fonts
 	SetFont(AchievementFont_Small, NORMAL, 12)

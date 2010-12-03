@@ -137,6 +137,9 @@ local function InstallUI()
 			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_FACTION_CHANGE")
 			ChatFrame_AddMessageGroup(ChatFrame4, "LOOT")
 			ChatFrame_AddMessageGroup(ChatFrame4, "MONEY")
+			ChatFrame_AddMessageGroup(ChatFrame4, "SKILL")
+			
+			ChangeChatColor("CHANNEL5", 147/255, 112/255, 219/255)
 		end
 		
 		-- Enable classcolor automatically on login and on each character without doing /configure each time
