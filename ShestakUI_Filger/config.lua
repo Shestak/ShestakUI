@@ -567,7 +567,7 @@ Filger_Spells = {
 			{ spellID = 71401, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Tricks of the Trade
 			{ spellID = 59628, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Tricks of the Trade
+			-- Soul Fragment
 			{ spellID = 71905, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Chaos Bane
 			{ spellID = 73422, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1377,6 +1377,39 @@ Filger_Spells = {
 			{ spellID = 47528, size = 30, filter = "CD" },
 		},
 	},
+	--[[["Caster"] = {
+		{
+			Name = "CASTER_T_ICON",
+			Direction = "RIGHT",
+			Interval = 4,
+			Mode = "ICON",
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			-- 
+			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
+		},
+	},
+	["Melee"] = {
+		{
+			Name = "MELEE_T_ICON",
+			Direction = "RIGHT",
+			Interval = 4,
+			Mode = "ICON",
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			-- 
+			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
+		},
+	},
+	["Tank"] = {
+		{
+			Name = "TANK_T_ICON",
+			Direction = "RIGHT",
+			Interval = 4,
+			Mode = "ICON",
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			-- 
+			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
+		},
+	},]]
 	["ALL"] = {
 		{
 			Name = "PVE/PVP_DEBUFF",
@@ -1685,7 +1718,7 @@ Filger_Spells = {
 			-- Deterrence
 			{ spellID = 19263, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 			
-			--Druid
+			-- Druid
 			-- Innervate
 			{ spellID = 29166, size = 51, unitId = "target", caster = "all", filter = "BUFF"},
 			-- Barskin

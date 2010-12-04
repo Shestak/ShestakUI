@@ -204,7 +204,7 @@ end
 
 local function OnEvent(self, event, ...)
 	local unit = ...;
-	if ( ( unit == "target" or unit == "player" ) or event == "PLAYER_TARGET_CHANGED" or event == "PLAYER_ENTERING_WORLD" or event == "SPELL_UPDATE_COOLDOWN" ) then
+	if ( ( unit == "target" or unit == "player" or unit == "pet" or unit == "focus" ) or event == "PLAYER_TARGET_CHANGED" or event == "PLAYER_ENTERING_WORLD" or event == "SPELL_UPDATE_COOLDOWN" ) then
 		local data, name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, slotLink, spn;
 		local id = self.Id;
 		for i=1, #Filger_Spells[class][id], 1 do
@@ -257,6 +257,16 @@ if (Filger_Spells and Filger_Spells["ALL"]) then
 
 	for i = 1, #Filger_Spells["ALL"], 1 do
 		table.insert(Filger_Spells[class], Filger_Spells["ALL"][i])
+	end
+end
+
+if (Filger_Spells and Filger_Spells[SettingsDB.Role]) then
+	if (not Filger_Spells[class]) then
+		Filger_Spells[class] = {}
+	end
+
+	for i = 1, #Filger_Spells[SettingsDB.Role], 1 do
+		table.insert(Filger_Spells[class], Filger_Spells[SettingsDB.Role][i])
 	end
 end
 

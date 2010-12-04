@@ -80,6 +80,8 @@ if ct.myclass=="WARLOCK" then
 		ct.aoespam[85421]=true		-- Burning Embers
 		ct.aoespam[42223]=true		-- Rain of Fire
 		ct.aoespam[5857]=true		-- Hellfire Effect
+		ct.aoespam[47897]=true		-- Shadowflame (Shadow direct damage)
+		ct.aoespam[47960]=true		-- Shadowflame (Fire dot)
 		ct.aoespam[50590]=true		-- Immolation Aura
 		ct.aoespam[30213]=true		-- Legion Strike (Felguard)
 		ct.aoespam[89753]=true		-- Felstorm (Felguard)
