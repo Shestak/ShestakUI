@@ -236,6 +236,7 @@ if GetLocale() == "koKR" then
 	L_GUI_UF_PLUGINS_HOLY_BAR = "Enable holy power bar"
 	L_GUI_UF_PLUGINS_SHARD_BAR = "Enable shards bar"
 	L_GUI_UF_PLUGINS_RUNE_BAR = "Rune bar"
+	L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Enable vengeance bar"
 	L_GUI_UF_PLUGINS_TOTEM_BAR = "Totem bar"
 	L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Totem name"
 	L_GUI_UF_PLUGINS_REPUTATION_BAR = "Reputation bar"

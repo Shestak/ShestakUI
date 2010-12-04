@@ -236,6 +236,7 @@ if GetLocale() == "esMX" then
 	L_GUI_UF_PLUGINS_HOLY_BAR = "Activar barra de poder sagrado"
 	L_GUI_UF_PLUGINS_SHARD_BAR = "Activar barra de fragmentos"
 	L_GUI_UF_PLUGINS_RUNE_BAR = "Activar barra de Runas"
+	L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Enable vengeance bar" -- Needs review
 	L_GUI_UF_PLUGINS_TOTEM_BAR = "Activar barra de totems"
 	L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Nombre de la barra de totems"
 	L_GUI_UF_PLUGINS_REPUTATION_BAR = "Activar barra de reputación"

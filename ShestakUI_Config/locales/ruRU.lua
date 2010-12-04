@@ -236,6 +236,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_UF_PLUGINS_HOLY_BAR = "Включить индикатор святых рун"
 	L_GUI_UF_PLUGINS_SHARD_BAR = "Включить индикатор осколков душ"	
 	L_GUI_UF_PLUGINS_RUNE_BAR = "Включить индикатор рун"
+	L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Включить индикатор отмщения"
 	L_GUI_UF_PLUGINS_TOTEM_BAR = "Включить индикатор тотемов"
 	L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Отображать имена тотемов на индикаторе тотемов"
 	L_GUI_UF_PLUGINS_REPUTATION_BAR = "Включить индикатор репутации"

@@ -236,6 +236,7 @@ if GetLocale() == "deDE" then
 	L_GUI_UF_PLUGINS_HOLY_BAR = "Aktivere Heilige Kraft Leiste"
 	L_GUI_UF_PLUGINS_SHARD_BAR = "Aktiviere Splitter Leiste"
 	L_GUI_UF_PLUGINS_RUNE_BAR = "Runenleiste"
+	L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Enable vengeance bar" -- Needs review
 	L_GUI_UF_PLUGINS_TOTEM_BAR = "Totemleiste"
 	L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Totemname"
 	L_GUI_UF_PLUGINS_REPUTATION_BAR = "Rufleiste"
