@@ -615,6 +615,8 @@ Filger_Spells = {
 			{ spellID = 85288, size = 30, filter = "CD" },
 			-- Bloodthirst
 			{ spellID = 23881, size = 30, filter = "CD" },
+			-- Taunt
+			{ spellID = 355, size = 30, filter = "CD" },
 		},
 	},
 	["SHAMAN"] = {
