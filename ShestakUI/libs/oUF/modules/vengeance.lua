@@ -39,8 +39,10 @@ local Update = function(self, event, unit)
 		vb.Bar:SetMinMaxValues(0, maxHealth / 10)
 		
 		local textValue = text:match('%d+')
+		local maxVengeance = floor(0.1*UnitHealthMax("player"))
+		
 		if(vb.Text) then
-			vb.Text:SetText(textValue.." / "..maxHealth/100)
+			vb.Text:SetText(textValue.." / "..maxVengeance)
 		end
 
 		local value = tonumber(textValue)
