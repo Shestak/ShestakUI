@@ -157,27 +157,27 @@ if SettingsCF["reminder"].raid_buffs_enable == true then
 			53747,	-- Elixir of Spirit
 		},
 		Food = {
-			87637,	-- Crocolisk Au Gratin
-			87584,	-- Beer-Basted Crocolisk
-			87586,	-- Skewered Eel
-			87587,	-- Severed Sagefish Head
-			87588,	-- Delicious Sagefish Tail
-			87594,	-- Lavascale Minestrone
-			87595,	-- Grilled Dragon
-			87597,	-- Baked Rockfish
-			87599,	-- Basilisk Liverdog
-			87601,	-- Mushroom Sauce Mudfish
-			87602,	-- Blackbelly Sushi
-			87544,	-- Hearty Seafood Soup
-			87636,	-- Lavascale Fillet
-			87577,	-- Lurker Lunch
-			87573,	-- Broiled Mountain Trout
-			87572,	-- Lightly Fried Lurker
-			87571,	-- Seasoned Crab
-			87570,	-- Salted Eye
-			87568,	-- Whitecrest Gumbo
-			87567,	-- Pickled Guppy
-			87566,	-- Tender Baked Turtle
+			87635,	-- Crocolisk Au Gratin
+			87545,	-- Beer-Basted Crocolisk
+			87546,	-- Skewered Eel
+			87547,	-- Severed Sagefish Head
+			87548,	-- Delicious Sagefish Tail
+			87549,	-- Lavascale Minestrone
+			87550,	-- Grilled Dragon
+			87551,	-- Baked Rockfish
+			87552,	-- Basilisk Liverdog
+			87554,	-- Mushroom Sauce Mudfish
+			87555,	-- Blackbelly Sushi
+			87556,	-- Hearty Seafood Soup
+			87634,	-- Lavascale Fillet
+			87564,	-- Lurker Lunch
+			87563,	-- Broiled Mountain Trout
+			87562,	-- Lightly Fried Lurker
+			87561,	-- Seasoned Crab
+			87560,	-- Salted Eye
+			87559,	-- Whitecrest Gumbo
+			87558,	-- Pickled Guppy
+			87557,	-- Tender Baked Turtle
 			
 			57325,	-- 80 AP
 			57327,	-- 46 SP
