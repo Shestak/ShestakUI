@@ -395,9 +395,10 @@ if SettingsCF.chat.whisp_sound == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Chat Filter and Repeat spam filter(by Evl)
+--	Chat filters
 ----------------------------------------------------------------------------------------
 if SettingsCF.chat.filter == true then
+	-- Same Blizzard chat crap
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", function(msg) return true end)
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", function(msg) return true end)
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_NOTICE", function(msg) return true end)
@@ -431,6 +432,7 @@ if SettingsCF.chat.filter == true then
 	ERR_SPELL_UNLEARNED_S = ""
 	INTERFACE_ACTION_BLOCKED = ""
 
+	-- Repeat spam filter(by Elv22)
 	ChatFrame1.repeatFilter = true
 	ChatFrame1:SetTimeVisible(10)
 
@@ -452,6 +454,56 @@ if SettingsCF.chat.filter == true then
 
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", repeatMessageFilter)
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", repeatMessageFilter)
+	
+	if SettingsDB.name == "Черешок" 
+		or SettingsDB.name == "Вершок"
+		or SettingsDB.name == "Вещмешок" 
+		or SettingsDB.name == "Гребешок" 
+		or SettingsDB.name == "Кулешок" 
+		or SettingsDB.name == "Лапушок" 
+		or SettingsDB.name == "Обушок" 
+		or SettingsDB.name == "Ремешок"
+		or SettingsDB.name == "Шестак" then
+		-- Trade chat filter(by Elv22)
+		local SpamList = {
+			"золото",
+			"голд",
+			"золотишко",
+			"блестяшки",
+			"монетки",
+			"Блестяшkи",
+			"порталы",
+			"портал",
+			"порты",
+			"порт",
+			"mastercard",
+			"webmoney",
+			"вебмани",
+			"яндекс",
+			"skype",
+			"аттестат",
+		}
+
+		local function TRADE_FILTER(self, event, arg1, arg2)
+			if (SpamList and SpamList[1]) then
+				for i, SpamList in pairs(SpamList) do
+					if arg2 == SettingsDB.name then return end
+					if arg1:lower():match(SpamList) then
+						return true
+					end
+				end
+			end
+		end
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", TRADE_FILTER)
+		
+		-- Mage portals filter(by Affli)
+		local function MAGE_FILTER(self, event, arg1)
+			if arg1:lower():match("портал") or arg1:lower():match("порталы") or arg1:lower():match("порты") or arg1:lower():match("порт") then
+				return true
+			end
+		end
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", MAGE_FILTER)
+	end
 end
 
 ----------------------------------------------------------------------------------------
