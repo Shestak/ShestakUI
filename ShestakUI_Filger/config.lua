@@ -1678,6 +1678,10 @@ Filger_Spells = {
 			-- War Stomp
 			{ spellID = 20549, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
 			
+			-- Other
+			-- Rocket Fuel Leak
+			{ spellID = 94794, size = 51, unitId = "player", caster = "player", filter = "DEBUFF" }, 
+			
 			-- Mark of the Fallen Champion
 			{ spellID = 72293, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Inoculated (Festergut)
