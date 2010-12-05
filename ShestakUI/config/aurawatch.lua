@@ -108,6 +108,15 @@ end
 if SettingsCF["reminder"].raid_buffs_enable == true then
 	SettingsDB.raid_buffs_reminder = {
 		Flask = {
+			79637,	-- Flask of Enhancement
+			92712,	-- Big Cauldron of Battle
+			92649,	-- Cauldron of Battle
+			79469,	-- Flask of Steelskin
+			79470,	-- Flask of the Draconic Mind
+			79471,	-- Flask of the Winds
+			79472,	-- Flask of Titanic Strength
+			94160,	-- Flask of Flowing Water
+			
 			67016,	-- Flask of the North-ING
 			67017,	-- Flask of the North-AGI
 			67018,	-- Flask of the North-STR
@@ -118,6 +127,13 @@ if SettingsCF["reminder"].raid_buffs_enable == true then
 			17627,	-- Flask of Distilled Wisdom
 		},
 		BattleElixir = {
+			79635,	-- Elixir of the Master
+			79632,	-- Elixir of Mighty Speed
+			79481,	-- Elixir of Impossible Accuracy
+			79477,	-- Elixir of the Cobra
+			79474,	-- Elixir of the Naga
+			79468,	-- Ghost Elixir
+			
 			33721,	-- Spellpower Elixir
 			53746,	-- Wrath Elixir
 			28497,	-- Elixir of Mighty Agility
@@ -130,6 +146,9 @@ if SettingsCF["reminder"].raid_buffs_enable == true then
 			53749,	-- Guru's Elixir
 		},
 		GuardianElixir = {
+			79631,	-- Prismatic Elixir
+			79480,	-- Elixir of Deep Earth
+			
 			60343,	-- Elixir of Mighty Defense
 			53751,	-- Elixir of Mighty Fortitude
 			53764,	-- Elixir of Mighty Mageblood
@@ -138,6 +157,28 @@ if SettingsCF["reminder"].raid_buffs_enable == true then
 			53747,	-- Elixir of Spirit
 		},
 		Food = {
+			87637,	-- Crocolisk Au Gratin
+			87584,	-- Beer-Basted Crocolisk
+			87586,	-- Skewered Eel
+			87587,	-- Severed Sagefish Head
+			87588,	-- Delicious Sagefish Tail
+			87594,	-- Lavascale Minestrone
+			87595,	-- Grilled Dragon
+			87597,	-- Baked Rockfish
+			87599,	-- Basilisk Liverdog
+			87601,	-- Mushroom Sauce Mudfish
+			87602,	-- Blackbelly Sushi
+			87544,	-- Hearty Seafood Soup
+			87636,	-- Lavascale Fillet
+			87577,	-- Lurker Lunch
+			87573,	-- Broiled Mountain Trout
+			87572,	-- Lightly Fried Lurker
+			87571,	-- Seasoned Crab
+			87570,	-- Salted Eye
+			87568,	-- Whitecrest Gumbo
+			87567,	-- Pickled Guppy
+			87566,	-- Tender Baked Turtle
+			
 			57325,	-- 80 AP
 			57327,	-- 46 SP
 			57329,	-- 40 CS

@@ -1706,6 +1706,51 @@ Filger_Spells = {
 			{ spellID = 70128, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Necrotic Plague (Arthas - The Lich King)
 			{ spellID = 73912, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			
+			-- Cataclysm
+			-- Throne of Four Winds
+			-- Al'Akir
+			-- Static Shock
+			{ spellID = 87873, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Acid Rain
+			{ spellID = 88301, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Bastion of Twilight
+			-- Cho'gall
+			-- Corruption: Accelerated(25% Corruption)
+			{ spellID = 81836, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Corruption: Sickness (vomit infront of you)
+			{ spellID = 81831, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Corruption: Malformation (75% Corruption)
+			{ spellID = 82125, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Corruption: Absolute (100% Corruption)
+			{ spellID = 82170, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Valiona & Theralion
+			-- Blackout
+			{ spellID = 86788, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Twilight Ascendant Council
+			-- Waterlogged
+			{ spellID = 82762, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Frozen
+			{ spellID = 82772, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Blackwing Descent
+			-- Chimaeron
+			-- Finkle's Mixture
+			{ spellID = 82705, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Magmaw
+			-- Constricting Chains
+			{ spellID = 79589, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Maloriak
+			-- Flash Freeze
+			{ spellID = 77699, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Omnitron Defense System
+			-- Lightning Conductor
+			{ spellID = 79888, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Unstable Shield
+			{ spellID = 79900, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Baradin Hold(PvP)
+			-- Argaloth
+			-- Meteor Slash
+			{ spellID = 88942, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "T_BUFF",
