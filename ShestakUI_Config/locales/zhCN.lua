@@ -237,7 +237,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_UF_PLUGINS_HOLY_BAR = "开启圣光能量栏"
 	L_GUI_UF_PLUGINS_SHARD_BAR = "开启灵魂碎片栏"
 	L_GUI_UF_PLUGINS_RUNE_BAR = "符文条"
-	L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Enable vengeance bar" -- Needs review
+	L_GUI_UF_PLUGINS_VENGEANCE_BAR = "开启仇恨栏"
 	L_GUI_UF_PLUGINS_TOTEM_BAR = "图腾栏"
 	L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "图腾名字"
 	L_GUI_UF_PLUGINS_REPUTATION_BAR = "声望条"

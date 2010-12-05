@@ -144,6 +144,17 @@ function SettingsDB.InfoTextShow(s)
 end
 
 ----------------------------------------------------------------------------------------
+--	Fade in/out functions
+----------------------------------------------------------------------------------------
+function SettingsDB.FadeIn(f)
+	UIFrameFadeIn(f, 0.4, f:GetAlpha(), 1)
+end
+	
+function SettingsDB.FadeOut(f)
+	UIFrameFadeOut(f, 0.8, f:GetAlpha(), 0)
+end
+
+----------------------------------------------------------------------------------------
 --	Kill object function
 ----------------------------------------------------------------------------------------
 function SettingsDB.Kill(object)

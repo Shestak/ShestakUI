@@ -15,7 +15,6 @@ SettingsDB.CreatePanel(f, SettingsCF["minimap"].size + 4, #spells * 20 + 4, "BOT
 f:SetBackdropBorderColor(0, 0, 0, 0)
 f:SetBackdropColor(0, 0, 0, 0)
 f.bg:SetVertexColor(0, 0, 0, 0)
-f:SetFrameStrata("HIGH")
 
 for i, spell in pairs(spells) do
 	local seal = GetSpellInfo(spell[1])
@@ -23,6 +22,7 @@ for i, spell in pairs(spells) do
 	local b = CreateFrame("Button", nil, f, "SecureActionButtonTemplate")
 	SettingsDB.CreateFadedPanel(b, SettingsCF["minimap"].size + 4, 20, "BOTTOMLEFT", f, "BOTTOMLEFT", 0, ((i - 1) * 21))
 	b:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
+	b:SetFrameStrata("HIGH")
  
 	local l = b:CreateFontString(nil, "OVERLAY", nil)
 	l:SetFont(SettingsCF["media"].pixel_font, SettingsCF["media"].pixel_font_size, SettingsCF["media"].pixel_font_style)
@@ -38,9 +38,19 @@ end
 f:Hide()
 
 local b = CreateFrame("Button", nil, UIParent)
+SettingsDB.SkinFadedPanel(b)
+b:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
 b:SetPoint("TOPLEFT", Minimap, "TOPLEFT")
-b:SetWidth(20)
-b:SetHeight(20)
+b:SetWidth(SettingsDB.Scale(20))
+b:SetHeight(SettingsDB.Scale(20))
+b:SetAlpha(0)
+
+local bt = b:CreateTexture(nil, "BORDER")
+bt:SetTexture("Interface\\Icons\\Spell_Holy_RighteousnessAura")
+bt:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+bt:SetPoint("TOPLEFT", b, SettingsDB.Scale(2), SettingsDB.Scale(-2))
+bt:SetPoint("BOTTOMRIGHT", b, SettingsDB.Scale(-2), SettingsDB.Scale(2))
+
 b:SetScript("OnClick", function(self)
 	if not InCombatLockdown() then
 		if _G["SealMenu"]:IsShown() then
@@ -49,6 +59,15 @@ b:SetScript("OnClick", function(self)
 			_G["SealMenu"]:Show()
 		end
 	end
+end)
+
+b:SetScript("OnEnter", function()
+	if InCombatLockdown() then return end
+	SettingsDB.FadeIn(b)
+end)
+
+b:SetScript("OnLeave", function()
+	SettingsDB.FadeOut(b)
 end)
 
 f:RegisterEvent("UNIT_SPELLCAST_SENT")

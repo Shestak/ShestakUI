@@ -56,7 +56,6 @@ local function Local(o)
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end
 	if o == "UIConfigcombattextenable" then o = L_GUI_COMBATTEXT_ENABLE end
-	if o == "UIConfigcombattextfont_size" then o = L_GUI_COMBATTEXT_FONT_SIZE end
 	if o == "UIConfigcombattextblizz_head_numbers" then o = L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS end
 	if o == "UIConfigcombattextdamage_style" then o = L_GUI_COMBATTEXT_DAMAGE_STYLE end
 	if o == "UIConfigcombattextdamage" then o = L_GUI_COMBATTEXT_DAMAGE end
@@ -93,7 +92,6 @@ local function Local(o)
 	-- Raid/Enemy cooldown options
 	if o == "UIConfigcooldown" then o = L_GUI_COOLDOWN end
 	if o == "UIConfigcooldownraid_enable" then o = L_GUI_COOLDOWN_RAID_ENABLE end
-	if o == "UIConfigcooldownraid_font_size" then o = L_GUI_COOLDOWN_RAID_FONT end
 	if o == "UIConfigcooldownraid_height" then o = L_GUI_COOLDOWN_RAID_HEIGHT end
 	if o == "UIConfigcooldownraid_width" then o = L_GUI_COOLDOWN_RAID_WIDTH end
 	if o == "UIConfigcooldownraid_upwards" then o = L_GUI_COOLDOWN_RAID_SORT end
@@ -112,7 +110,6 @@ local function Local(o)
 	-- Threat options
 	if o == "UIConfigthreat" then o = L_GUI_THREAT end
 	if o == "UIConfigthreatenable" then o = L_GUI_THREAT_ENABLE end
-	if o == "UIConfigthreatfont_size" then o = L_GUI_THREAT_FONT_SIZE end
 	if o == "UIConfigthreatheight" then o = L_GUI_THREAT_HEIGHT end
 	if o == "UIConfigthreatwidth" then o = L_GUI_THREAT_WIDTH end
 	if o == "UIConfigthreatbar_rows" then o = L_GUI_THREAT_ROWS end
@@ -141,10 +138,6 @@ local function Local(o)
 	if o == "UIConfigchatenable" then o = L_GUI_CHAT_ENABLE end
 	if o == "UIConfigchatbackground" then o = L_GUI_CHAT_BACKGROUND end
 	if o == "UIConfigchatbackground_alpha" then o = L_GUI_CHAT_BACKGROUND_ALPHA end
-	if o == "UIConfigchatfont_size" then o = L_GUI_CHAT_FONT_SIZE end
-	if o == "UIConfigchatfont_style" then o = L_GUI_CHAT_FONT_STYLE end
-	if o == "UIConfigchattab_font_size" then o = L_GUI_CHAT_TAB_FONT_SIZE end	
-	if o == "UIConfigchattab_font_style" then o = L_GUI_CHAT_TAB_FONT_STYLE end
 	if o == "UIConfigchatfilter" then o = L_GUI_CHAT_SPAM end
 	if o == "UIConfigchatwidth" then o = L_GUI_CHAT_WIDTH end
 	if o == "UIConfigchatheight" then o = L_GUI_CHAT_HEIGHT end
@@ -179,7 +172,6 @@ local function Local(o)
 	if o == "UIConfigloot" then o = LOOT end
 	if o == "UIConfiglootlootframe" then o = L_GUI_LOOT_ENABLE end
 	if o == "UIConfiglootrolllootframe" then o = L_GUI_LOOT_ROLL_ENABLE end
-	if o == "UIConfiglootfont_size" then o = L_GUI_LOOT_FONT_SIZE end
 	if o == "UIConfiglooticon_size" then o = L_GUI_LOOT_ICON_SIZE end
 	if o == "UIConfiglootwidth" then o = L_GUI_LOOT_WIDTH end
 	if o == "UIConfiglootauto_greed" then o = L_GUI_LOOT_AUTOGREED end
@@ -188,7 +180,6 @@ local function Local(o)
 	-- Nameplate options
 	if o == "UIConfignameplate" then o = UNIT_NAMEPLATES end
 	if o == "UIConfignameplateenable" then o = L_GUI_NAMEPLATE_ENABLE end
-	if o == "UIConfignameplatefont_size" then o = L_GUI_NAMEPLATE_FONT_SIZE end
 	if o == "UIConfignameplateheight" then o = L_GUI_NAMEPLATE_HEIGHT end
 	if o == "UIConfignameplatewidth" then o = L_GUI_NAMEPLATE_WIDTH end
 	if o == "UIConfignameplatecombat" then o = L_GUI_NAMEPLATE_COMBAT end
@@ -219,7 +210,6 @@ local function Local(o)
 	
 	-- Auras/Buffs/Debuffs
 	if o == "UIConfigaura" then o = BUFFOPTIONS_LABEL end
-	if o == "UIConfigaurafont_size" then o = L_GUI_AURA_FONT_SIZE end
 	if o == "UIConfigauraplayer_buff_size" then o = L_GUI_AURA_PLAYER_BUFF_SIZE end
 	if o == "UIConfigaurashow_spiral" then o = L_GUI_AURA_SHOW_SPIRAL end
 	if o == "UIConfigaurashow_timer" then o = L_GUI_AURA_SHOW_TIMER end
@@ -235,7 +225,6 @@ local function Local(o)
 	-- Unit frame options
 	if o == "UIConfigunitframe" then o = UNITFRAME_LABEL end
 	if o == "UIConfigunitframeenable" then o = L_GUI_UF_ENABLE end
-	if o == "UIConfigunitframefont_size" then o = L_GUI_UF_FONT_SIZE end
 	if o == "UIConfigunitframeaggro_border" then o = L_GUI_UF_AGGRO_BORDER end
 	if o == "UIConfigunitframeown_color" then o = L_GUI_UF_OWN_COLOR end
 	if o == "UIConfigunitframeenemy_health_color" then o = L_GUI_UF_ENEMY_HEALTH_COLOR end
@@ -300,7 +289,6 @@ local function Local(o)
 	
 	-- Stats options
 	if o == "UIConfigstats" then o = L_GUI_STATS end
-	if o == "UIConfigstatsfont_size" then o = L_GUI_STATS_FONT_SIZE end
 	if o == "UIConfigstatsbattleground" then o = L_GUI_STATS_BG end
 	if o == "UIConfigstatsclock" then o = L_GUI_STATS_CLOCK end
 	if o == "UIConfigstatslatency" then o = L_GUI_STATS_LATENCY end

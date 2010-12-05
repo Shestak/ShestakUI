@@ -216,7 +216,7 @@ trackborder:SetFrameLevel(4)
 trackborder:SetFrameStrata("BACKGROUND")
 trackborder:SetHeight(20)
 trackborder:SetWidth(20)
-trackborder:SetPoint("BOTTOMLEFT", UIMinimap, SettingsDB.Scale(4), SettingsDB.Scale(4))
+trackborder:SetPoint("BOTTOMLEFT", UIMinimap, "BOTTOMLEFT", SettingsDB.Scale(2), SettingsDB.Scale(2))
 if SettingsCF.minimap.tracking_icon then
 	SettingsDB.SkinFadedPanel(trackborder)
 	trackborder:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
@@ -254,13 +254,14 @@ MinimapTrackingText:SetWidth((Minimap:GetWidth() - 5))
 MinimapTrackingText:SetAlpha(0)
 
 Minimap:SetScript("OnEnter", function()
+	if InCombatLockdown() then return end
 	Minimap_GetTrackType()
-	UIFrameFadeIn(MinimapTrackingText, 0.15, MinimapTrackingText:GetAlpha(), 1)
+	SettingsDB.FadeIn(MinimapTrackingText)
 end)
 
 Minimap:SetScript("OnLeave", function()
 	Minimap_GetTrackType()
-	UIFrameFadeOut(MinimapTrackingText, 0.15, MinimapTrackingText:GetAlpha(), 0)
+	SettingsDB.FadeOut(MinimapTrackingText)
 end)
 
 ----------------------------------------------------------------------------------------
