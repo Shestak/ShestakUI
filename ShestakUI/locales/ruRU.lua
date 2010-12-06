@@ -9,6 +9,7 @@ if SettingsDB.client == "ruRU" then
 	L_TOOLTIP_ACH_COMPLETE = "Ваш статус: Получено "
 	L_TOOLTIP_ACH_INCOMPLETE = "Ваш статус: Не завершено"
 	L_TOOLTIP_SPELL_ID = "Номер заклинания:"
+	L_TOOLTIP_ITEM_ID = "Номер предмета:"
 	
 	-- Raid Utility
 	L_RAID_UTIL_DISBAND = "Распустить группу"

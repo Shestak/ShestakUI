@@ -9,6 +9,7 @@ if SettingsDB.client == "deDE" then
 	L_TOOLTIP_ACH_COMPLETE = "Dein Status: Fertig gestellt am "
 	L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
 	L_TOOLTIP_SPELL_ID = "Zauber ID:"
+	L_TOOLTIP_ITEM_ID = "Item ID:" -- Needs review
 
 	-- Raid Utility
 	L_RAID_UTIL_DISBAND = "Gruppe auflösen"

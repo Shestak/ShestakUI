@@ -9,6 +9,7 @@ if SettingsDB.client == "esES" then
 	L_TOOLTIP_ACH_COMPLETE = "Estado: Completado "
 	L_TOOLTIP_ACH_INCOMPLETE = "Estado: Incompleto"
 	L_TOOLTIP_SPELL_ID = "ID del hechizo:"
+	L_TOOLTIP_ITEM_ID = "Item ID:" -- Needs review
 
 	-- Raid Utility
 	L_RAID_UTIL_DISBAND = "Disband Group" -- Needs review

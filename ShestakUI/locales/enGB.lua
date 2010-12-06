@@ -9,6 +9,7 @@ if SettingsDB.client == "enUS" or SettingsDB.client == "enGB" then
 	L_TOOLTIP_ACH_COMPLETE = "Your Status: Completed on "
 	L_TOOLTIP_ACH_INCOMPLETE = "Your Status: Incomplete"
 	L_TOOLTIP_SPELL_ID = "Spell ID:"
+	L_TOOLTIP_ITEM_ID = "Item ID:"
 
 	-- Raid Utility
 	L_RAID_UTIL_DISBAND = "Disband Group"

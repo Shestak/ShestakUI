@@ -9,6 +9,7 @@ if SettingsDB.client == "zhTW" then
 	L_TOOLTIP_ACH_COMPLETE = "你的狀態: 完成 "
 	L_TOOLTIP_ACH_INCOMPLETE = "你的狀態: 未完成"
 	L_TOOLTIP_SPELL_ID = "法術ID:"
+	L_TOOLTIP_ITEM_ID = "Item ID:" -- Needs review
 
 	-- Raid Utility
 	L_RAID_UTIL_DISBAND = "解散團隊"
