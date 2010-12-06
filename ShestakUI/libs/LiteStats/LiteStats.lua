@@ -989,8 +989,8 @@ if stats.enabled then
 		elseif sub == "rangedap" then		
 			local base, pos, neg = UnitRangedAttackPower(P)
 			string, percent = base + neg + pos
-		elseif sub == "armorpen" then
-			string = GetArmorPenetration()
+		elseif sub == "mastery" then
+			string = GetMastery()
 		elseif sub == "expertise" then
 			string = GetExpertisePercent()
 		elseif strmatch(sub,"hit$") then
