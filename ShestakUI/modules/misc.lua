@@ -2,7 +2,7 @@
 --	Alt power bar
 ----------------------------------------------------------------------------------------
 PlayerPowerBarAlt:ClearAllPoints()
-PlayerPowerBarAlt:SetPoint("TOP", 0, -32)
+PlayerPowerBarAlt:SetPoint("TOP", UIParent, "TOP", 0, -32)
 PlayerPowerBarAlt.ClearAllPoints = SettingsDB.dummy
 PlayerPowerBarAlt.SetPoint = SettingsDB.dummy
 
