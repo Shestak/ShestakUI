@@ -283,11 +283,6 @@ local function SetupIcons(self)
 			overlay:SetTexCoord(.296875, .5703125, 0, .515625)
 			overlay:SetVertexColor(1, 0, 0)
 			icon.overlay = overlay
-
-			local count = icon:CreateFontString(nil, "OVERLAY")
-			count:SetFontObject(NumberFontNormal)
-			count:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", -1, 0)
-			icon.count = count
 		end
 
 		if icon.onlyShowMissing == nil then
