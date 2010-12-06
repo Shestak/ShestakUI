@@ -44,25 +44,10 @@ local vehicle = CreateFrame("BUTTON", nil, UIParent, "SecureActionButtonTemplate
 vehicle:SetWidth(SettingsDB.Scale(SettingsDB.buttonsize))
 vehicle:SetHeight(SettingsDB.Scale(SettingsDB.buttonsize))
 vehicle:SetPoint(unpack(SettingsCF["position"].vehicle_bar))
-
-vehicle:RegisterForClicks("AnyUp")
-vehicle:SetScript("OnClick", function() VehicleExit() end)
-
 vehicle:SetNormalTexture("Interface\\AddOns\\ShestakUI\\media\\vehicle")
 vehicle:SetPushedTexture("Interface\\AddOns\\ShestakUI\\media\\vehicle")
 vehicle:SetHighlightTexture("Interface\\AddOns\\ShestakUI\\media\\vehicle")
 SettingsDB.CreateTemplate(vehicle)
-
-vehicle:RegisterEvent("UNIT_ENTERING_VEHICLE")
-vehicle:RegisterEvent("UNIT_ENTERED_VEHICLE")
-vehicle:RegisterEvent("UNIT_EXITING_VEHICLE")
-vehicle:RegisterEvent("UNIT_EXITED_VEHICLE")
-vehicle:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-vehicle:SetScript("OnEvent", function(self, event, arg1)
-	if (((event=="UNIT_ENTERING_VEHICLE") or (event=="UNIT_ENTERED_VEHICLE")) and arg1 == "player") then
-		vehicle:SetAlpha(1)
-	elseif (((event=="UNIT_EXITING_VEHICLE") or (event=="UNIT_EXITED_VEHICLE")) and arg1 == "player") or (event=="ZONE_CHANGED_NEW_AREA" and not UnitHasVehicleUI("player")) then
-		vehicle:SetAlpha(0)
-	end
-end)  
-vehicle:SetAlpha(0)
+vehicle:RegisterForClicks("AnyUp")
+vehicle:SetScript("OnClick", function() VehicleExit() end)
+RegisterStateDriver(vehicle, "visibility", "[target=vehicle,exists] show;hide")
