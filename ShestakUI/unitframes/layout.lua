@@ -465,6 +465,9 @@ local function Shared(self, unit)
 			self.Experience.FrameBackdrop:SetPoint("TOPLEFT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
 			self.Experience.FrameBackdrop:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
 			
+			self.Experience.Rested = CreateFrame("StatusBar", nil, self.Experience)
+			self.Experience.Rested:SetAllPoints(Experience)
+			
 			self.Experience.Tooltip = true
 		end
 		
@@ -476,7 +479,6 @@ local function Shared(self, unit)
 			self.Reputation:SetOrientation("Vertical")
 			self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", SettingsDB.Scale(-32), SettingsDB.Scale(28))
 			self.Reputation:SetStatusBarTexture(SettingsCF["media"].texture)
-			self.Reputation:SetStatusBarColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
 			self.Reputation:SetBackdrop(backdrop)
 			self.Reputation:SetBackdropColor(0, 0, 0)
 			self.Reputation:SetAlpha(0)
@@ -487,7 +489,6 @@ local function Shared(self, unit)
 			self.Reputation.bg = self.Reputation:CreateTexture(nil, "BORDER")
 			self.Reputation.bg:SetAllPoints(self.Reputation)
 			self.Reputation.bg:SetTexture(SettingsCF["media"].texture)
-			self.Reputation.bg:SetVertexColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 0.25)
 
 			self.Reputation.FrameBackdrop = CreateFrame("Frame", nil, self.Reputation)
 			SettingsDB.CreateTemplate(self.Reputation.FrameBackdrop)

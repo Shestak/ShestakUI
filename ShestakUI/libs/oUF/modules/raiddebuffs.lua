@@ -13,7 +13,6 @@ end
 local debuff_data = {}
 addon.DebuffData = debuff_data
 
-
 addon.ShowDispelableDebuff = SettingsCF["unitframe"].plugins_debuffhighlight_icon
 addon.FilterDispellableDebuff = true
 addon.MatchBySpellName = true
