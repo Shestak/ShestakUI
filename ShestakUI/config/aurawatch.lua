@@ -109,8 +109,7 @@ if SettingsCF["reminder"].raid_buffs_enable == true then
 	SettingsDB.raid_buffs_reminder = {
 		Flask = {
 			79637,	-- Flask of Enhancement
-			92712,	-- Big Cauldron of Battle
-			92649,	-- Cauldron of Battle
+			92679,	-- Flask of Battle
 			79469,	-- Flask of Steelskin
 			79470,	-- Flask of the Draconic Mind
 			79471,	-- Flask of the Winds
