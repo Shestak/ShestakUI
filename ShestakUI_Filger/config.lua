@@ -1682,36 +1682,7 @@ Filger_Spells = {
 			-- Rocket Fuel Leak
 			{ spellID = 94794, size = 51, unitId = "player", caster = "player", filter = "DEBUFF" }, 
 			
-			-- Mark of the Fallen Champion
-			{ spellID = 72293, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Inoculated (Festergut)
-			{ spellID = 72103, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Mutated Infection (Rotface)
-			{ spellID = 71224, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Unbound Plague (Professor Putricide)
-			{ spellID = 72856, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Gas Variable (Professor Putricide)
-			{ spellID = 70353, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Ooze Variable (Professor Putricide)
-			{ spellID = 70352, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Pact of the Darkfallen (Bloodqueen Lana'thel)
-			{ spellID = 71340, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Swarming Shadows (Bloodqueen Lana'thel)
-			{ spellID = 71861, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Essence of the Blood Queen (Bloodqueen Lana'thel)
-			{ spellID = 71473, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Frost Bomb (Sindragosa)
-			{ spellID = 71053, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Instability (Sindragosa)
-			{ spellID = 69766, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Unchained Magic (Sindragosa)
-			{ spellID = 69762, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Mystic Buffet (Sindragosa)
-			{ spellID = 70128, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Necrotic Plague (Arthas - The Lich King)
-			{ spellID = 73912, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
-			-- Cataclysm
+
 			-- Throne of Four Winds
 			-- Al'Akir
 			-- Static Shock
