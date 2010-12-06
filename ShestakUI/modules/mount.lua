@@ -14,13 +14,7 @@ function Mountz(groundmount, flyingmount, underwatermount)
 		return
 	end
 	local swimablex = IsSwimming()
-	local v = GetBuildInfo()
-	local flyablex
-	if v == "4.0.3" then -- remove with cata release 
-		flyablex = IsFlyableArea() and ((GetCurrentMapContinent()==4 and UnitLevel("player")>67) or (GetCurrentMapContinent()==3 and UnitLevel("player")>59))
-	else
-		flyablex = IsFlyableArea()
-	end
+	local flyablex = IsFlyableArea()
 	if IsControlKeyDown() then
 		flyablex = not flyablex
 	end
@@ -41,5 +35,3 @@ function Mountz(groundmount, flyingmount, underwatermount)
 		end
 	end
 end
-
-

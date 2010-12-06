@@ -172,7 +172,7 @@ local function UpdateDebuff(self, name, icon, count, debuffType, duration, endTi
 		
 		local c = DispellColor[debuffType] or DispellColor.none
 		f:SetBackdropColor(unpack(SettingsCF["media"].backdrop_color))
-		f:SetBackdropBorderColor(c[1], c[2], c[3])
+		--f:SetBackdropBorderColor(c[1], c[2], c[3])
 		
 		f:Show()
 	else
@@ -180,34 +180,6 @@ local function UpdateDebuff(self, name, icon, count, debuffType, duration, endTi
 	end
 end
 
---[[local function Update(self, event, unit)
-	if unit ~= self.unit then return end
-	local _name, _icon, _count, _dtype, _duration, _endTime
-	local _priority, priority = 0
-	for i = 1, 40 do
-		local name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable, shouldConsolidate, spellId = UnitAura(unit, i, 'HARMFUL')
-		if (not name) then break end
-		
-		if addon.ShowDispelableDebuff and debuffType then
-			if addon.FilterDispellableDebuff then
-				priority = DispellFilter[debuffType] and DispellPriority[debuffType]
-			else
-				priority = DispellPriority[debuffType]
-			end
-			
-			if priority and (priority > _priority) then
-				_priority, _name, _icon, _count, _dtype, _duration, _endTime = priority, name, icon, count, debuffType, duration, expirationTime
-			end
-		end
-		
-		priority = debuff_data[addon.MatchBySpellName and name or spellId]
-		if priority and (priority > _priority) then
-			_priority, _name, _icon, _count, _dtype, _duration, _endTime = priority, name, icon, count, debuffType, duration, expirationTime
-		end
-	end
-	
-	UpdateDebuff(self, _name, _icon, _count, _dtype, _duration, _endTime)
-end]]
 local function Update(self, event, unit)
 	if unit ~= self.unit then return end
 	local _name, _icon, _count, _dtype, _duration, _endTime
@@ -254,7 +226,6 @@ local function Enable(self)
 		self:RegisterEvent('UNIT_AURA', Update)
 		return true
 	end
-	--Need to run these always
 	self:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
 	self:RegisterEvent("CHARACTER_POINTS_CHANGED", CheckSpec)
 end
