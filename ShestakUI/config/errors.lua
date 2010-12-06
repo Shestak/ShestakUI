@@ -11,6 +11,9 @@ SettingsDB.white_list = {
 	[ERR_ITEM_MAX_COUNT] = true,
 	[ERR_NOT_ENOUGH_MONEY] = true,
 	[SPELL_FAILED_IN_COMBAT_RES_LIMIT_REACHED] = true,
+	[ERR_LOOT_MASTER_INV_FULL] = true,
+	[ERR_LOOT_MASTER_OTHER] = true,
+	[ERR_LOOT_MASTER_UNIQUE_ITEM] = true,
 }
 
 ----------------------------------------------------------------------------------------
