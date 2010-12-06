@@ -911,12 +911,12 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
 
-			-- Chakra: Prayer of Healing
+			-- Chakra: Sanctuary
 			{ spellID = 81206, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Chakra: Renew
-			{ spellID = 81207, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Chakra: Heal
+			-- Chakra: Serenity
 			{ spellID = 81208, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Chakra: Chastise
+			{ spellID = 81209, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
