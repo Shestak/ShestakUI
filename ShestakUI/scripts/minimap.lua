@@ -277,6 +277,13 @@ if SettingsCF["general"].minimap_icon == true and IsAddOnLoaded("ShestakUI_Confi
 	menuIcon:RegisterForClicks("AnyUp")
 	menuIcon:RegisterForDrag("LeftButton")
 	menuIcon:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", SettingsDB.Scale(-5), SettingsDB.Scale(-2))
+	
+	local buttontexture = menuIcon:CreateTexture(nil, "BORDER")
+	buttontexture:SetPoint("CENTER")
+	buttontexture:SetTexture("Interface\\CURSOR\\Interact")
+	buttontexture:SetHeight(SettingsDB.Scale(18))
+	buttontexture:SetWidth(SettingsDB.Scale(18))
+	buttontexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	local minimapShapes = {
 		["ROUND"] = {true, true, true, true},

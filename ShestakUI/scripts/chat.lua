@@ -338,11 +338,12 @@ function SettingsDB.ChatCopyButtons()
 		SettingsDB.SkinFadedPanel(button)
 		button:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
 
-		local buttontext = button:CreateFontString(nil, "OVERLAY", nil)
-		buttontext:SetFont(SettingsCF.media.pixel_font, SettingsCF.media.pixel_font_size * 2, SettingsCF.media.pixel_font_style)
-		buttontext:SetText("C")
-		buttontext:SetPoint("CENTER", button, "CENTER", SettingsDB.Scale(1), 0)
-		
+		local buttontexture = button:CreateTexture(nil, "BORDER")
+		buttontexture:SetPoint("CENTER")
+		buttontexture:SetTexture("Interface\\BUTTONS\\UI-GuildButton-PublicNote-Up")
+		buttontexture:SetHeight(SettingsDB.Scale(16))
+		buttontexture:SetWidth(SettingsDB.Scale(16))
+
 		button:SetScript("OnMouseUp", function(self, btn)
 			if i == 1 and btn == "RightButton" then
 				ToggleFrame(ChatMenu)
@@ -350,8 +351,8 @@ function SettingsDB.ChatCopyButtons()
 				Copy(cf)
 			end
 		end)
-		button:SetScript("OnEnter", function() button:SetAlpha(1) end)
-		button:SetScript("OnLeave", function() button:SetAlpha(0) end)
+		button:SetScript("OnEnter", function() SettingsDB.FadeIn(button) end)
+		button:SetScript("OnLeave", function() SettingsDB.FadeOut(button) end)
 	end
 end
 SettingsDB.ChatCopyButtons()
