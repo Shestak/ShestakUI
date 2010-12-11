@@ -647,6 +647,10 @@ Filger_Spells = {
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Elemental mastery
 			{ spellID = 64701, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Spiritwalker's grace
+			{ spellID = 79206, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unleash flame
+			{ spellID = 73683, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -739,6 +743,12 @@ Filger_Spells = {
 			{ spellID = 30823, size = 30, filter = "CD" },
 			-- Stormstrike
 			{ spellID = 17364, size = 30, filter = "CD" },
+			-- Spiritwalker's grace
+			{ spellID = 79206, size = 30, filter = "CD" },
+			-- Healing rain
+			{ spellID = 73920, size = 30, filter = "CD" },
+			-- Unleash weapon
+			{ spellID = 73680, size = 30, filter = "CD" },
 		},
 	},
 	["PALADIN"] = {

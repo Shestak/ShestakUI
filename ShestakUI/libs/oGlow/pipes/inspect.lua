@@ -22,6 +22,10 @@ pollFrame:SetScript('OnUpdate', function(self, elapsed)
 
 	if(time >= 3) then
 		local unit = InspectFrame.unit
+		if(not unit) then
+			self:Hide()
+			table.wipe(_MISSING)
+		end
 		for i, slotName in next, _MISSING do
 			local itemLink = GetInventoryItemLink(unit, i)
 			if(itemLink) then

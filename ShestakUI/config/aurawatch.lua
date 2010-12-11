@@ -115,15 +115,6 @@ if SettingsCF["reminder"].raid_buffs_enable == true then
 			79471,	-- Flask of the Winds
 			79472,	-- Flask of Titanic Strength
 			94160,	-- Flask of Flowing Water
-			
-			67016,	-- Flask of the North-ING
-			67017,	-- Flask of the North-AGI
-			67018,	-- Flask of the North-STR
-			53758,	-- Flask of Stoneblood
-			53755,	-- Flask of the Frost Wyrm
-			54212,	-- Flask of Pure Mojo
-			53760,	-- Flask of Endless Rage
-			17627,	-- Flask of Distilled Wisdom
 		},
 		BattleElixir = {
 			79635,	-- Elixir of the Master
@@ -132,28 +123,10 @@ if SettingsCF["reminder"].raid_buffs_enable == true then
 			79477,	-- Elixir of the Cobra
 			79474,	-- Elixir of the Naga
 			79468,	-- Ghost Elixir
-			
-			33721,	-- Spellpower Elixir
-			53746,	-- Wrath Elixir
-			28497,	-- Elixir of Mighty Agility
-			53748,	-- Elixir of Mighty Strength
-			60346,	-- Elixir of Lightning Speed
-			60344,	-- Elixir of Expertise
-			60341,	-- Elixir of Deadly Strikes
-			60345,	-- Elixir of Armor Piercing
-			60340,	-- Elixir of Accuracy
-			53749,	-- Guru's Elixir
 		},
 		GuardianElixir = {
 			79631,	-- Prismatic Elixir
 			79480,	-- Elixir of Deep Earth
-			
-			60343,	-- Elixir of Mighty Defense
-			53751,	-- Elixir of Mighty Fortitude
-			53764,	-- Elixir of Mighty Mageblood
-			60347,	-- Elixir of Mighty Thoughts
-			53763,	-- Elixir of Protection
-			53747,	-- Elixir of Spirit
 		},
 		Food = {
 			87635,	-- Crocolisk Au Gratin
@@ -177,22 +150,6 @@ if SettingsCF["reminder"].raid_buffs_enable == true then
 			87559,	-- Whitecrest Gumbo
 			87558,	-- Pickled Guppy
 			87557,	-- Tender Baked Turtle
-			
-			57325,	-- 80 AP
-			57327,	-- 46 SP
-			57329,	-- 40 CS
-			57332,	-- 40 Haste
-			57334,	-- 20 MP5
-			57356,	-- 40 EXP
-			57360,	-- 40 Hit
-			57365,	-- 40 Spirit
-			57367,	-- 40 AGI
-			57371,	-- 40 STR
-			59230,	-- 40 DODGE
-			57399,	-- 80AP, 46SP (fish feast)
-			57363,	-- Track Humanoids
-			57373,	-- Track Beasts
-			65247,	-- Pet 40 STR
 		},
 	}
 end
@@ -273,35 +230,55 @@ if SettingsCF["unitframe"].plugins_aura_watch == true then
 		SettingsDB.debuffids = {
 		-- Baradin Hold
 			-- Argaloth
-			
+			88942,	-- Meteor Slash
 		-- Blackrock Mountain: Blackwing Descent
 			-- Magmaw
-			
+			91911,	-- Constricting Chains
+			94679,	-- Parasitic Infection
+			94617,	-- Mangle
 			-- Omintron Defense System
-			
+			79835,	-- Poison Soaked Shell	
+			91433,	-- Lightning Conductor
+			91521,	-- Incineration Security Measure
 			-- Maloriak
-			
+			77699,	-- Flash Freeze
+			77760,	-- Biting Chill
 			-- Atramedes
-			
+			92423,	-- Searing Flame
+			92485,	-- Roaring Flame
+			92407,	-- Sonic Breath
 			-- Chimaeron
-			
+			82881,	-- Break
 			-- Nefarian
 			
 		-- The Bastion of Twilight
 			-- Valiona & Theralion
-			
+			92878,	-- Blackout
+			86840,	-- Devouring Flames
 			-- Halfus Wyrmbreaker
 			
 			-- Twilight Ascendant Council
-			
+			92511,	-- Hydro Lance
+			82762,	-- Waterlogged
+			92505,	-- Frozen
+			92518,	-- Flame Torrent
+			83099,	-- Lightning Rod
+			92075,	-- Gravity Core
+			92488,	-- Gravity Crush
 			-- Cho'gall
+			
 		-- Throne of the Four Winds
 			-- Conclave of Wind
-			
+			--Nezir <Lord of the North Wind>
+			93131,	-- Ice Patch
+			--Anshal <Lord of the West Wind>
+			86206,	-- Soothing Breeze
+			93122,	-- Toxic Spores
+			--Rohash <Lord of the East Wind>
+			93058,	-- Slicing Gale 
 			-- Al'Akir
-			
-		-- Other debuff
-			5782,	-- Fear
+			93260,	-- Ice Storm
+			93295,	-- Lightning Rod
 		}
 		ORD:RegisterDebuffs(SettingsDB.debuffids)
 	end

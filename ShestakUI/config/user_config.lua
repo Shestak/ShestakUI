@@ -52,9 +52,6 @@ if SettingsDB.name == "Черешок"
 	SettingsCF["chat"].combatlog = false
 	SettingsCF["unitframe"].arena_on_right = false
 	SettingsCF["stats"].fps = false
-	if SettingsDB.level ~= MAX_PLAYER_LEVEL then
-		SettingsCF["stats"].experience = true
-	end
 elseif SettingsDB.name == "Добрыйдоктор" then
 	SettingsCF["misc"].raid_tools = true
 	SettingsCF["misc"].invite_keyword = "докрейд"

@@ -432,6 +432,7 @@ if SettingsCF.chat.filter == true then
 	ERR_LEARN_SPELL_S = ""
 	ERR_SPELL_UNLEARNED_S = ""
 	INTERFACE_ACTION_BLOCKED = ""
+	GUILD_REP_WEEKLY_CAPPED = ""
 
 	-- Repeat spam filter(by Elv22)
 	ChatFrame1.repeatFilter = true
