@@ -112,7 +112,7 @@ local _, ns = ...
 local oUF = ns.oUF or _G.oUF
 assert(oUF, "oUF_AuraWatch cannot find an instance of oUF. If your oUF is embedded into a layout, it may not be embedded properly.")
 
-local UnitAura, UnitGUID = UnitAura, UnitGUID
+local UnitBuff, UnitDebuff, UnitGUID = UnitBuff, UnitDebuff, UnitGUID
 local GUIDs = {}
 
 local PLAYER_UNITS = {
@@ -121,7 +121,7 @@ local PLAYER_UNITS = {
 	pet = true,
 }
 
-local SetupGUID
+local setupGUID
 do 
 	local cache = setmetatable({}, {__type = "k"})
 
@@ -129,14 +129,16 @@ do
 	frame:SetScript("OnEvent", function(self, event)
 		for k,t in pairs(GUIDs) do
 			GUIDs[k] = nil
-			wipe(t)
+			for a in pairs(t) do
+				t[a] = nil
+			end
 			cache[t] = true
 		end
 	end)
 	frame:RegisterEvent"PLAYER_REGEN_ENABLED"
 	frame:RegisterEvent"PLAYER_ENTERING_WORLD"
 	
-	function SetupGUID(guid)
+	function setupGUID(guid)
 		local t = next(cache)
 		if t then
 			cache[t] = nil
@@ -147,8 +149,11 @@ do
 	end
 end
 
-local function DefaultResetIcon(watch, icon, count, duration, remaining)
-	if not icon.onlyShowMissing then
+local function resetIcon(icon, frame, count, duration, remaining)
+	if icon.onlyShowMissing then
+		icon:Hide()
+	else
+		icon:Show()
 		if icon.cd then
 			if duration and duration > 0 then
 				icon.cd:SetCooldown(remaining - duration, duration)
@@ -158,102 +163,81 @@ local function DefaultResetIcon(watch, icon, count, duration, remaining)
 			end
 		end
 		if icon.count then
-			icon.count:SetText(count > 1 and count)
+			icon.count:SetText((count > 1 and count))
 		end
 		if icon.overlay then
 			icon.overlay:Hide()
 		end
-		icon:SetAlpha(watch.presentAlpha)
-		icon:Show()
-		if watch.PostResetIcon then watch.PostResetIcon(watch, icon) end
+		icon:SetAlpha(frame.presentAlpha)
 	end
 end
 
-local function ResetIcon(watch, icon, ...)
-	if watch.OverrideResetIcon then
-		watch.OverrideResetIcon(watch, icon, ...)
+local function expireIcon(icon, frame)
+	if icon.onlyShowPresent then
+		icon:Hide()
 	else
-		DefaultResetIcon(watch, icon, ...)
-	end
-end
-
-local function DefaultExpireIcon(watch, icon)
-	if not icon.onlyShowPresent then
-		if icon.cd then 
-			icon.cd:Hide() 
-		end
-		if icon.count then 
-			icon.count:SetText() 
-		end
-		icon:SetAlpha(watch.missingAlpha)
+		if (icon.cd) then icon.cd:Hide() end
+		if (icon.count) then icon.count:SetText() end
+		icon:SetAlpha(frame.missingAlpha)
 		if icon.overlay then
 			icon.overlay:Show()
 		end
 		icon:Show()
-		if watch.PostExpireIcon then watch.PostExpireIcon(watch, icon) end
 	end
 end
 
-local function ExpireIcon(watch, icon, ...)
-	if watch.OverrideExpireIcon then
-		watch.OverrideExpireIcon(watch, icon, ...)
-	else
-		DefaultExpireIcon(watch, icon, ...)
+local found = {}
+local function Update(frame, event, unit)
+	if frame.unit ~= unit then return end
+	local watch = frame.AuraWatch
+	local index, icons = 1, watch.watched
+	local _, name, texture, count, duration, remaining, caster, key, icon, spellid 
+	local filter = "HELPFUL"
+	local guid = UnitGUID(unit)
+	if not guid then return end
+	if not GUIDs[guid] then setupGUID(guid) end
+	
+	for key, icon in pairs(icons) do
+		icon:Hide()
 	end
-end
-
-local Update
-do
-	local found = {}
-	function Update(frame, event, unit)
-		if frame.unit ~= unit then return end
-		local watch = frame.AuraWatch
-		local index, icons = 1, watch.watched
-		local _, name, texture, count, duration, remaining, caster, key, icon, spellid 
-		local filter = "HELPFUL"
-		local guid = UnitGUID(unit)
-		if not GUIDs[guid] then SetupGUID(guid) end
-		
-		for key, icon in pairs(icons) do
-			icon:Hide()
-		end
-		
-		while true do
-			name, _, texture, count, _, duration, remaining, caster, _, _, spellid = UnitAura(unit, index, filter)
-			if not name then 
-				if filter == "HELPFUL" then
-					filter = "HARMFUL"
-					index = 1
-				else
-					break
-				end
+	
+	while true do
+		name, _, texture, count, _, duration, remaining, caster, _, _, spellid = UnitAura(unit, index, filter)
+		if not name then 
+			if filter == "HELPFUL" then
+				filter = "HARMFUL"
+				index = 1
 			else
-				if watch.strictMatching then
-					key = spellid
-				else
-					key = name..texture
-				end
-				icon = icons[key]
-				if icon and (icon.anyUnit or (caster and icon.fromUnits[caster])) then
-					ResetIcon(watch, icon, count, duration, remaining)
-					GUIDs[guid][key] = true
-					found[key] = true
-				end
-				index = index + 1
+				break
 			end
-		end
-		
-		for key in pairs(GUIDs[guid]) do
-			if icons[key] and not found[key] then
-				ExpireIcon(watch, icons[key])
+		else
+			if watch.strictMatching then
+				key = spellID
+			else
+				key = name..texture
 			end
+			icon = icons[key]
+			if icon and (icon.anyUnit or (caster and icon.fromUnits[caster])) then
+				resetIcon(icon, watch, count, duration, remaining)
+				GUIDs[guid][key] = true
+				found[key] = true
+			end
+			index = index + 1
 		end
-		
-		wipe(found)
+	end
+	
+	for key in pairs(GUIDs[guid]) do
+		if icons[key] and not found[key] then
+			expireIcon(icons[key], watch)
+		end
+	end
+	
+	for k in pairs(found) do
+		found[k] = nil
 	end
 end
 
-local function SetupIcons(self)
+local function setupIcons(self)
 
 	local watch = self.AuraWatch
 	local icons = watch.icons
@@ -267,22 +251,32 @@ local function SetupIcons(self)
 		if not name then error("oUF_AuraWatch error: no spell with "..tostring(icon.spellID).." spell ID exists") end
 		icon.name = name
 	
-		if not watch.customIcons then
+		if not icon.cd and not (watch.hideCooldown or icon.hideCooldown) then
 			local cd = CreateFrame("Cooldown", nil, icon)
 			cd:SetAllPoints(icon)
 			icon.cd = cd
+		end
 
+		if not icon.icon then
 			local tex = icon:CreateTexture(nil, "BACKGROUND")
 			tex:SetAllPoints(icon)
 			tex:SetTexture(image)
 			icon.icon = tex
-			
-			local overlay = icon:CreateTexture(nil, "OVERLAY")
-			overlay:SetTexture"Interface\\Buttons\\UI-Debuff-Overlays"
-			overlay:SetAllPoints(icon)
-			overlay:SetTexCoord(.296875, .5703125, 0, .515625)
-			overlay:SetVertexColor(1, 0, 0)
-			icon.overlay = overlay
+			if not icon.overlay then
+				local overlay = icon:CreateTexture(nil, "OVERLAY")
+				overlay:SetTexture"Interface\\Buttons\\UI-Debuff-Overlays"
+				overlay:SetAllPoints(icon)
+				overlay:SetTexCoord(.296875, .5703125, 0, .515625)
+				overlay:SetVertexColor(1, 0, 0)
+				icon.overlay = overlay
+			end
+		end
+
+		if not icon.count and not (watch.hideCount or icon.hideCount) then
+			local count = icon:CreateFontString(nil, "OVERLAY")
+			count:SetFontObject(NumberFontNormal)
+			count:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", -1, 0)
+			icon.count = count
 		end
 
 		if icon.onlyShowMissing == nil then
@@ -308,17 +302,10 @@ local function SetupIcons(self)
 	end
 end
 
-local function ForceUpdate(element)
-	return Update(element.__owner, 'ForceUpdate', element.__owner.unit)
-end
-
 local function Enable(self)
 	if self.AuraWatch then
-		self.AuraWatch.__owner = self
-		self.AuraWatch.ForceUpdate = ForceUpdate
-		
 		self:RegisterEvent("UNIT_AURA", Update)
-		SetupIcons(self)
+		setupIcons(self)
 		return true
 	else
 		return false

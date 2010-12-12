@@ -33,6 +33,10 @@ Filger_Spells = {
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Tree of Life
 			{ spellID = 33891, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Time warp
+			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Ancient Hysteria
+			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -79,14 +83,8 @@ Filger_Spells = {
 			{ spellID = 93400, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Clearcasting
 			{ spellID = 16870, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Essence of Life
-			{ spellID = 60062, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Siphoned Power
-			{ spellID = 71636, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Cultivated Power
-			{ spellID = 71572, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hardened Skin
 			{ spellID = 71586, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
@@ -175,6 +173,10 @@ Filger_Spells = {
 			{ spellID = 2825, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Heroism
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Time warp
+			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Ancient Hysteria
+			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -204,48 +206,22 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
 			
-			-- Ready, Set, Aim... (*MM spec)
+			-- Ready, Set, Aim...
 			{ spellID = 82925, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Lock and Load (*SV spec)
+			-- Lock and Load
 			{ spellID = 56342, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Master Tactician (*SV spec)
+			-- Master Tactician
 			{ spellID = 34837, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Rapid Fire (*all spec)
+			-- Rapid Fire
 			{ spellID = 3045, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Call of the Wild (*ferocity pet use)
+			-- Call of the Wild
 			{ spellID = 53434, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Berserking (*troll racial)
+			-- Berserking
 			{ spellID = 26297, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Blood Fury (*orc racial)
+			-- Blood Fury
 			{ spellID = 20572, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Hyperspeed Acceleration (*engineer use)
+			-- Hyperspeed Acceleration
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Potion of Speed (*)
-			{ spellID = 53908, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Potion of Wild Magic (*)
-			{ spellID = 53909, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Exploit Weakness (2t10 proc)
-			{ spellID = 70728, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stinger (4t10 proc)
-			{ spellID = 71007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Piercing Twilight (halion25 trinket)
-			{ spellID = 75458, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Power of the Taunka (DBW icc25 trinket)
-			{ spellID = 71486, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Aim of the Iron Dwarves (DBW icc25 trinket)
-			{ spellID = 71491, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Agility of the Vrykul (DBW icc25 trinket)
-			{ spellID = 71485, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Icy Rage (icc10 trinket)
-			{ spellID = 71401, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Frostforged Champion (icc reputation ring)
-			{ spellID = 72412, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Mjolnir Runestone (ulduar10hm trinket)
-			{ spellID = 65019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fury of the Five Flights (sartharion25 trinket)
-			{ spellID = 60314, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Greatness (darkmoon dark trinket)
-			{ spellID = 60233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Improved Steady Shot
 			{ spellID = 53220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fire!
@@ -338,10 +314,6 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 			
-			-- Cultivated Power (Muradin's Spyglass)
-			{ spellID = 71572, size = 37, unitId = "player", caster = "player", filter = "BUFF" },   
-			-- Siphoned Power (Phylactery)
-			{ spellID = 71636, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Surging Power
 			{ spellID = 71643, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Innervate
@@ -352,6 +324,10 @@ Filger_Spells = {
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Time warp
+			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Ancient Hysteria
+			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -397,10 +373,6 @@ Filger_Spells = {
 			{ spellID = 12536, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Impact
 			{ spellID = 12358, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Greatness
-			{ spellID = 60234, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Essence of Life
-			{ spellID = 60062, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Arcane Missiles!
 			{ spellID = 79683, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
@@ -497,6 +469,10 @@ Filger_Spells = {
 			{ spellID = 1719, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Berserker Rage
 			{ spellID = 18499, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Time warp
+			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Ancient Hysteria
+			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -543,32 +519,14 @@ Filger_Spells = {
 			{ spellID = 46916, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Sword and Board
 			{ spellID = 50227, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Greatness
-			{ spellID = 60229, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Strength of the Taunka
-			{ spellID = 71561, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Speed of the Vrykul
-			{ spellID = 71560, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Aim of the Iron Dwarves
-			{ spellID = 71559, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Thunderstruck
-			{ spellID = 80980, size = 37, unitId = "player", caster = "player", filter = "BUFF" }, 
-			-- Paragon
-			{ spellID = 67708, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 80980, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Blood Drinker
 			{ spellID = 70855, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Taste for Blood
 			{ spellID = 56638, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Rage of the Fallen
-			{ spellID = 71396, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Frostforged Champion
-			{ spellID = 72412, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Whispering Fanged Skull
-			{ spellID = 71401, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Tricks of the Trade
 			{ spellID = 59628, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Soul Fragment
-			{ spellID = 71905, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Chaos Bane
 			{ spellID = 73422, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Battle trance
@@ -651,6 +609,10 @@ Filger_Spells = {
 			{ spellID = 79206, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Unleash flame
 			{ spellID = 73683, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Time warp
+			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Ancient Hysteria
+			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -683,8 +645,6 @@ Filger_Spells = {
 			{ spellID = 16246, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Tidal Waves
 			{ spellID = 51562, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Essence of Life
-			{ spellID = 60062, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lava flows
 			{ spellID = 65264, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
@@ -767,6 +727,10 @@ Filger_Spells = {
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Time warp
+			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Ancient Hysteria
+			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -797,8 +761,6 @@ Filger_Spells = {
 			{ spellID = 54149, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Divine Plea
 			{ spellID = 54428, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Essence of Life
-			{ spellID = 60062, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Beacon of Light
 			{ spellID = 53563, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Divine Illumination
@@ -883,6 +845,10 @@ Filger_Spells = {
 			{ spellID = 52795, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Time warp
+			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Ancient Hysteria
+			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -895,10 +861,6 @@ Filger_Spells = {
 			{ spellID = 33151, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Serendipity
 			{ spellID = 63730, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Greatness
-			{ spellID = 60234, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Essence of Life
-			{ spellID = 60062, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Energized
             { spellID = 67696, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
             -- Eye of the Broodmother
@@ -1031,14 +993,12 @@ Filger_Spells = {
 			{ spellID = 2825, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Heroism
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Phylactery of the Nameless Lich
-			{ spellID = 71636, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Surge of Power
-			{ spellID = 71644, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Devious Minds
-			{ spellID = 70840, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Time warp
+			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Ancient Hysteria
+			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1069,8 +1029,6 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
 
-			-- Essence of Life
-			{ spellID = 60062, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Molten Core
 			{ spellID = 47383, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Decimation
@@ -1081,10 +1039,6 @@ Filger_Spells = {
 			{ spellID = 34939, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Nether Protection
 			{ spellID = 30301, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Greatness
-			{ spellID = 60235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Greatness
-			{ spellID = 60234, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Nightfall
 			{ spellID = 18095, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Eradication
@@ -1245,6 +1199,10 @@ Filger_Spells = {
 			{ spellID = 51713, size = 37, unitId = "player", caster = "player", filter = "BUFF"},
 			-- Recuperate
 			{ spellID = 73651, size = 37, unitId = "player", caster = "player", filter = "BUFF"},
+			-- Time warp
+			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Ancient Hysteria
+			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1331,6 +1289,10 @@ Filger_Spells = {
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Time warp
+			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Ancient Hysteria
+			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -1355,8 +1317,6 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
 
-			-- Greatness
-			{ spellID = 60229, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Unholy Force
 			{ spellID = 67383, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Unholy Strength
@@ -1443,6 +1403,10 @@ Filger_Spells = {
 			{ spellID = 58617, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Hungering Cold
 			{ spellID = 51209, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Necrotic strike
+			{ spellID = 73975, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Dark simulacrum
+			{ spellID = 77606, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
 			
 			-- Druid
 			-- Skull Bash (Bear Form)
@@ -1683,6 +1647,8 @@ Filger_Spells = {
 			{ spellID = 1715, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Piercing Howl
 			{ spellID = 12323, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Colossus Smash
+			{ spellID = 86346, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
 			
 			-- Racials
 			-- War Stomp
@@ -1755,6 +1721,10 @@ Filger_Spells = {
 			{ spellID = 29166, size = 51, unitId = "target", caster = "all", filter = "BUFF"},
 			-- Barskin
 			{ spellID = 22812, size = 51, unitId = "target", caster = "all", filter = "BUFF"},
+			-- Stampeding roar (Bear Form)
+			{ spellID = 77761, size = 51, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Stampeding roar (Cat Form)
+			{ spellID = 77764, size = 51, unitId = "player", caster = "all", filter = "BUFF" },
 			
 			-- Warrior
 			-- Spell Reflection
@@ -1802,6 +1772,8 @@ Filger_Spells = {
 			{ spellID = 5277, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Cheating death
 			{ spellID = 45182, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Combat readiness
+			{ spellID = 74002, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 			
 			-- Death knight
 			-- Anti-Magic Shell
@@ -1820,6 +1792,8 @@ Filger_Spells = {
 			{ spellID = 30823, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Earth shield
 			{ spellID = 974, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Spiritwalker's grace
+			{ spellID = 79206, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 
 			-- Priest
 			-- Dispersion

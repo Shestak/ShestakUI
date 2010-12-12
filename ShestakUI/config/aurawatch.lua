@@ -230,7 +230,7 @@ if SettingsCF["unitframe"].plugins_aura_watch == true then
 		SettingsDB.debuffids = {
 		-- Baradin Hold
 			-- Argaloth
-			88942,	-- Meteor Slash
+			95173,	-- Consuming Darkness
 		-- Blackrock Mountain: Blackwing Descent
 			-- Magmaw
 			91911,	-- Constricting Chains

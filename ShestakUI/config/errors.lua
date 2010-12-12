@@ -32,6 +32,7 @@ SettingsDB.black_list = {
 	[SPELL_FAILED_NOT_INFRONT] = true,
 	[SPELL_FAILED_NOT_IN_CONTROL] = true,
 	[SPELL_FAILED_MOVING] = true,
+	[SPELL_FAILED_AURA_BOUNCED] = true,
 	[ERR_ATTACK_FLEEING] = true,
 	[ERR_ITEM_COOLDOWN] = true,
 	[ERR_GENERIC_NO_TARGET] = true,

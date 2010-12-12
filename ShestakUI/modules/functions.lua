@@ -514,7 +514,7 @@ do
 			end
 		else
 			local r, g, b	
-			if (db.own_color ~= true and db.enemy_health_color and unit == "target" and UnitIsEnemy(unit, "player")) or (db.own_color ~= true and unit == "target" and not UnitIsPlayer(unit) and UnitIsFriend(unit, "player")) then
+			if (db.own_color ~= true and db.enemy_health_color and unit == "target" and UnitIsEnemy(unit, "player") and UnitIsPlayer(unit)) or (db.own_color ~= true and unit == "target" and not UnitIsPlayer(unit) and UnitIsFriend(unit, "player")) then
 				local c = SettingsDB.oUF_colors.reaction[UnitReaction(unit, "player")]
 				if c then 
 					r, g, b = c[1], c[2], c[3]
