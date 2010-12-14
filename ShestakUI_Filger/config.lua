@@ -609,8 +609,10 @@ Filger_Spells = {
 			{ spellID = 64701, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Spiritwalker's grace
 			{ spellID = 79206, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unleash flame
+			-- Unleash Flame
 			{ spellID = 73683, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unleash Life
+			{ spellID = 73685, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Time warp
 			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Ancient Hysteria
