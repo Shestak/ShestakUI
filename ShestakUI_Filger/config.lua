@@ -226,6 +226,8 @@ Filger_Spells = {
 			{ spellID = 53220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fire!
 			{ spellID = 82926, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mend Pet
+			{ spellID = 136, size = 37, unitId = "pet", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -1203,6 +1205,14 @@ Filger_Spells = {
 			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Ancient Hysteria
 			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Combat Readiness
+			{ spellID = 74001, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Combat Insight
+			{ spellID = 74002, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Vendetta
+			{ spellID = 79140, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Recuperate
+			{ spellID = 73651, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1237,6 +1247,10 @@ Filger_Spells = {
 			{ spellID = 3409, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Wound Poison
 			{ spellID = 13218, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Revealing Strike
+			{ spellID = 84617, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Vendetta
+			{ spellID = 79140, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1273,6 +1287,14 @@ Filger_Spells = {
 			{ spellID = 58984, size = 30, filter = "CD" },
 			-- Shadow dance
 			{ spellID = 51713, size = 30, filter = "CD"},
+			-- Redirect
+			{ spellID = 73981, size = 30, filter = "CD"},
+			-- Combat Readiness
+			{ spellID = 74001, size = 30, filter = "CD"},	
+			-- Vendetta
+			{ spellID = 79140, size = 30, filter = "CD"},
+			-- Feint
+			{ spellID = 1966, size = 30, filter = "CD"},
 		},
 	},
 	["DEATHKNIGHT"] = {
