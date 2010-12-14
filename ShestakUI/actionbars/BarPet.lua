@@ -3,6 +3,9 @@ if not SettingsCF["actionbar"].enable == true then return end
 ----------------------------------------------------------------------------------------
 --	Setup PetActionBar by Tukz
 ----------------------------------------------------------------------------------------
+-- Hide bar
+if SettingsCF.actionbar.petbar_hide then PetActionBarAnchor:Hide() return end
+
 -- Create bar
 local bar = CreateFrame("Frame", "PetHolder", UIParent, "SecureHandlerStateTemplate")
 bar:ClearAllPoints()
@@ -61,11 +64,6 @@ bar:SetScript("OnEvent", function(self, event, ...)
 		SettingsDB.StylePet()
 	end
 end)
-
--- Hide bar
-if SettingsCF.actionbar.petbar_hide then
-
-end
 
 -- Mouseover bar
 if SettingsCF.actionbar.rightbars_mouseover == true and SettingsCF.actionbar.petbar_horizontal == false then

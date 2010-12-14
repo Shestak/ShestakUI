@@ -81,6 +81,7 @@ function RightBarMouseOver(alpha)
 		end
 	end
 	if SettingsCF.actionbar.petbar_horizontal == false then
+		if SettingsCF.actionbar.petbar_hide then return end
 		if PetHolder:IsShown() then
 			for i = 1, NUM_PET_ACTION_SLOTS do
 				local pb = _G["PetActionButton"..i]
