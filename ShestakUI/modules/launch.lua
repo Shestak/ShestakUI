@@ -26,15 +26,7 @@ local function InstallUI()
 	SetCVar("ConsolidateBuffs", 0)
 	SetCVar("scriptErrors", 0)
 	
-	if SettingsDB.name == "Черешок" 
-		or SettingsDB.name == "Вершок"
-		or SettingsDB.name == "Вещмешок" 
-		or SettingsDB.name == "Гребешок" 
-		or SettingsDB.name == "Кулешок" 
-		or SettingsDB.name == "Лапушок" 
-		or SettingsDB.name == "Обушок" 
-		or SettingsDB.name == "Ремешок"
-		or SettingsDB.name == "Шестак" then
+	if SettingsDB.author == true then
 		SetCVar("scriptErrors", 1)
 		SetCVar("ConsolidateBuffs", 1)
 		SetCVar("autoDismountFlying", 1)
@@ -93,15 +85,7 @@ local function InstallUI()
 			if i == 2 then FCF_SetWindowName(frame, GUILD_BANK_LOG) end
 		end
 
-		if (SettingsDB.name == "Черешок" 
-			or SettingsDB.name == "Вершок"
-			or SettingsDB.name == "Вещмешок" 
-			or SettingsDB.name == "Гребешок" 
-			or SettingsDB.name == "Кулешок" 
-			or SettingsDB.name == "Лапушок" 
-			or SettingsDB.name == "Обушок" 
-			or SettingsDB.name == "Ремешок"
-			or SettingsDB.name == "Шестак") then
+		if SettingsDB.author == true then
 			FCF_ResetChatWindows()
 			FCF_OpenNewWindow(GUILD)
 			FCF_SetLocked(ChatFrame3, 1)

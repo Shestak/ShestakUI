@@ -31,15 +31,7 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	NAMEPLATE_FONT = NORMAL
 	STANDARD_TEXT_FONT = NORMAL
 	
-	if SettingsDB.name == "Черешок" 
-		or SettingsDB.name == "Вершок"
-		or SettingsDB.name == "Вещмешок" 
-		or SettingsDB.name == "Гребешок" 
-		or SettingsDB.name == "Кулешок" 
-		or SettingsDB.name == "Лапушок" 
-		or SettingsDB.name == "Обушок" 
-		or SettingsDB.name == "Ремешок"
-		or SettingsDB.name == "Шестак" then
+	if SettingsDB.author == true then
 		DAMAGE_TEXT_FONT = COMBAT
 		SetFont(CombatTextFont, COMBAT, 100)
 	end

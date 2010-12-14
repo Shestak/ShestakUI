@@ -28,31 +28,7 @@ end
 --	Per Character Name Config (overwrite general and class)
 --	Name need to be case sensitive
 ----------------------------------------------------------------------------------------
-if SettingsDB.name == "Черешок" 
-	or SettingsDB.name == "Вершок"
-	or SettingsDB.name == "Вещмешок" 
-	or SettingsDB.name == "Гребешок" 
-	or SettingsDB.name == "Кулешок" 
-	or SettingsDB.name == "Лапушок" 
-	or SettingsDB.name == "Обушок" 
-	or SettingsDB.name == "Ремешок"
-	or SettingsDB.name == "Шестак" then
-	SettingsCF["general"].minimap_icon = false
-	SettingsCF["general"].welcome_message = false
-	SettingsCF["general"].custom_lagtolerance = true
-	SettingsCF["misc"].auto_quest = true
-	SettingsCF["misc"].vehicle_mouseover = true
-	SettingsCF["misc"].raid_tools = true
-	SettingsCF["combattext"].crit_postfix = ""
-	SettingsCF["combattext"].crit_prefix = ""
-	SettingsCF["tooltip"].shift_modifer = true
-	SettingsCF["tooltip"].cursor = true
-	SettingsCF["tooltip"].title = true
-	SettingsCF["tooltip"].talents = true
-	SettingsCF["chat"].combatlog = false
-	SettingsCF["unitframe"].arena_on_right = false
-	SettingsCF["stats"].fps = false
-elseif SettingsDB.name == "Добрыйдоктор" then
+if SettingsDB.name == "Добрыйдоктор" then
 	SettingsCF["misc"].raid_tools = true
 	SettingsCF["misc"].invite_keyword = "докрейд"
 	SettingsCF["chat"].chat_bar = true
@@ -149,4 +125,25 @@ elseif SettingsDB.client == "zhCN" then
 	SettingsCF["media"].pixel_font = "Fonts\\ZYKai_T.ttf"
 	SettingsCF["media"].pixel_font_style = "OUTLINE"
 	SettingsCF["media"].pixel_font_size = 11
+end
+
+----------------------------------------------------------------------------------------
+--	My Config
+----------------------------------------------------------------------------------------
+if SettingsDB.author == true then
+	SettingsCF["general"].minimap_icon = false
+	SettingsCF["general"].welcome_message = false
+	SettingsCF["general"].custom_lagtolerance = true
+	SettingsCF["misc"].auto_quest = true
+	SettingsCF["misc"].vehicle_mouseover = true
+	SettingsCF["misc"].raid_tools = true
+	SettingsCF["combattext"].crit_postfix = ""
+	SettingsCF["combattext"].crit_prefix = ""
+	SettingsCF["tooltip"].shift_modifer = true
+	SettingsCF["tooltip"].cursor = true
+	SettingsCF["tooltip"].title = true
+	SettingsCF["tooltip"].talents = true
+	SettingsCF["chat"].combatlog = false
+	SettingsCF["unitframe"].arena_on_right = false
+	SettingsCF["stats"].fps = false
 end

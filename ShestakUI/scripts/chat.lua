@@ -457,15 +457,7 @@ if SettingsCF.chat.filter == true then
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", repeatMessageFilter)
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", repeatMessageFilter)
 	
-	if SettingsDB.name == "Черешок" 
-		or SettingsDB.name == "Вершок"
-		or SettingsDB.name == "Вещмешок" 
-		or SettingsDB.name == "Гребешок" 
-		or SettingsDB.name == "Кулешок" 
-		or SettingsDB.name == "Лапушок" 
-		or SettingsDB.name == "Обушок" 
-		or SettingsDB.name == "Ремешок"
-		or SettingsDB.name == "Шестак" then
+	if SettingsDB.author == true then
 		-- Trade chat filter(by Elv22)
 		local SpamList = {
 			"золото",
