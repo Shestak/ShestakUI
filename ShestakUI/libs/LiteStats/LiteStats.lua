@@ -586,8 +586,8 @@ if clock.enabled then
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME,':',''),zsub(GameTime_GetGameTime(true),'%s*AM','am','%s*PM','pm'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			GameTooltip:AddLine' '
 			for i = 1, 2 do
-				local _, localizedName, _, _, startTime, _ = GetWorldPVPAreaInfo(i)
-				GameTooltip:AddDoubleLine(localizedName,startTime and fmttime(startTime) or isActive,ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				local _, localizedName, isActive, _, startTime, _ = GetWorldPVPAreaInfo(i)
+				GameTooltip:AddDoubleLine(localizedName,isActive and WINTERGRASP_IN_PROGRESS or fmttime(startTime),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			end
 			
 			local oneraid
