@@ -1,10 +1,16 @@
 if not SettingsCF["unitframe"].enable == true then return end
+if IsAddOnLoaded("ShestakUI_DPS") then return end
 
 local db = SettingsCF["unitframe"]
 local pos = SettingsCF["position"].unitframes
-local floor, format, insert, sort = math.floor, string.format, table.insert, table.sort
+local unit_width = 60.2
+local unit_height = 26
 
 local function Shared(self, unit)
+	local unit = (self:GetParent():GetName():match"oUF_Party") and "party" 
+	or (self:GetParent():GetName():match"oUF_RaidHeal") and "raid"
+	or (self:GetParent():GetName():match"oUF_MainTank") and "tank" or unit
+	
 	-- Set our own colors
 	self.colors = SettingsDB.oUF_colors
 	
@@ -15,6 +21,9 @@ local function Shared(self, unit)
 	
 	-- Menu
 	self.menu = SettingsDB.SpawnMenu
+	
+	-- Update all elements
+	self:HookScript("OnShow", SettingsDB.updateAllElements)
 	
 	-- Backdrop for every units
 	self.FrameBackdrop = CreateFrame("Frame", nil, self)
@@ -27,7 +36,7 @@ local function Shared(self, unit)
 	self.Health = CreateFrame("StatusBar", nil, self)
 	self.Health:SetPoint("TOPLEFT")
 	self.Health:SetPoint("TOPRIGHT")
-	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and not (self:GetParent():GetName():match"oUF_MainTank") then
+	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
 		self.Health:SetHeight(SettingsDB.Scale(14))
 	else
 		self.Health:SetHeight(SettingsDB.Scale(23))
@@ -61,7 +70,7 @@ local function Shared(self, unit)
 		self.Health.bg.multiplier = 0.25
 	end
 	
-	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and not (self:GetParent():GetName():match"oUF_MainTank"))) then
+	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank")) then
 		self.Health.value = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
 		self.Health.value:SetPoint("CENTER", self.Health, "CENTER", 0, SettingsDB.Scale(-5))
 		self.Health.value:SetTextColor(1, 1, 1)
@@ -93,7 +102,7 @@ local function Shared(self, unit)
 	
 	-- Names
 	self.Info = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
-	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and not (self:GetParent():GetName():match"oUF_MainTank") then
+	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
 		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, SettingsDB.Scale(1))
 	else
 		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, SettingsDB.Scale(4))
@@ -164,19 +173,24 @@ local function Shared(self, unit)
 		if db.vertical_health == true then
 			mhpb:SetOrientation("VERTICAL")
 			mhpb:SetPoint("BOTTOM", self.Health:GetStatusBarTexture(), "TOP", 0, 0)
-			mhpb:SetWidth(SettingsDB.Scale(60))
-			mhpb:SetHeight(SettingsDB.Scale(26))		
+			mhpb:SetHeight(SettingsDB.Scale(26))
 		else
 			mhpb:SetPoint("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 			mhpb:SetPoint("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-			mhpb:SetWidth(SettingsDB.Scale(60))
-		end				
+		end
+		mhpb:SetWidth(SettingsDB.Scale(60))
 		mhpb:SetStatusBarTexture(SettingsCF["media"].texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
-		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
-		ohpb:SetPoint("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
+		if db.vertical_health == true then
+			ohpb:SetOrientation("VERTICAL")
+			ohpb:SetPoint("BOTTOM", mhpb:GetStatusBarTexture(), "TOP", 0, 0)
+			ohpb:SetHeight(SettingsDB.Scale(26))	
+		else
+			ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
+			ohpb:SetPoint("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
+		end
 		ohpb:SetWidth(SettingsDB.Scale(60))
 		ohpb:SetStatusBarTexture(SettingsCF["media"].texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.25)
@@ -232,6 +246,7 @@ local function Shared(self, unit)
 
 	self:RegisterEvent("PARTY_MEMBERS_CHANGED", SettingsDB.updateAllElements)
 	self:RegisterEvent("RAID_ROSTER_UPDATE", SettingsDB.updateAllElements)
+	
 	return self
 end
 
@@ -242,29 +257,88 @@ oUF:RegisterStyle("ShestakHeal", Shared)
 oUF:Factory(function(self)
 	oUF:SetActiveStyle("ShestakHeal")
 	if db.show_party == true then
+		-- Party
 		local party = self:SpawnHeader("oUF_Party", nil, "custom [@raid6,exists] hide;show",
-			"oUF-initialConfigFunction", ([[
-				if self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target" then
-					self:SetWidth(60.2)
-					self:SetHeight(14)
-				else
-					self:SetWidth(60.2)
-					self:SetHeight(26)
-				end
-			]]),
+			"oUF-initialConfigFunction", [[
+				local header = self:GetParent()
+				self:SetWidth(header:GetAttribute("initial-width"))
+				self:SetHeight(header:GetAttribute("initial-height"))
+			]],
+			"initial-width", unit_width,
+			"initial-height", unit_height,
 			"showSolo", db.solo_mode,
-			"showPlayer", db.player_in_party, 
+			"showPlayer", db.player_in_party,
 			"showParty", true,
-			"showRaid", true,			
+			"showRaid", true,
 			"xOffset", 7,
-			"point", "LEFT",
-			"template", "oUF_PartyH"
+			"point", "LEFT"
 		)
 		if db.player_in_party == true then
 			party:SetPoint(pos.party_heal[1], pos.party_heal[2], pos.party_heal[3], pos.party_heal[4], pos.party_heal[5])
 		else
 			party:SetPoint(pos.party_heal[1], pos.party_heal[2], pos.party_heal[3], pos.party_heal[4] + 32, pos.party_heal[5])
 		end
+		
+		-- Party targets
+		local partytarget = self:SpawnHeader("oUF_PartyTarget", nil, "custom [@raid6,exists] hide;show",
+			"oUF-initialConfigFunction", [[
+				local header = self:GetParent()
+				self:SetWidth(header:GetAttribute("initial-width"))
+				self:SetHeight(header:GetAttribute("initial-height"))
+				self:SetAttribute("unitsuffix", "target")
+			]],
+			"initial-width", unit_width,
+			"initial-height", unit_height-12,
+			"showSolo", db.solo_mode,
+			"showPlayer", db.player_in_party,
+			"showParty", true,
+			"showRaid", true,
+			"xOffset", 7,
+			"point", "LEFT"
+		)
+		partytarget:SetPoint("TOPLEFT", party, "BOTTOMLEFT", 0, -7)
+		
+		-- Party pets
+		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists] hide;show",
+			"oUF-initialConfigFunction", [[
+				local header = self:GetParent()
+				self:SetWidth(header:GetAttribute("initial-width"))
+				self:SetHeight(header:GetAttribute("initial-height"))
+				self:SetAttribute("useOwnerUnit", "true")
+				self:SetAttribute("unitsuffix", "pet")
+			]],
+			"initial-width", unit_width,
+			"initial-height", unit_height-12,
+			"showSolo", db.solo_mode,
+			"showPlayer", db.player_in_party,
+			"showParty", true,
+			"showRaid", true,
+			"xOffset", 7,
+			"point", "LEFT"
+		)
+
+		local partypetupdate = CreateFrame("Frame")
+		partypetupdate:SetScript("OnEvent", function(...)
+			if InCombatLockdown() then return end
+
+			local lastGroup = 1
+			local numRaidMembers = GetNumRaidMembers()
+			if numRaidMembers > 0 then
+				local playerGroup
+				for member = 1, numRaidMembers do
+					_, _, playerGroup, _, _, _, _, _, _, _, _ = GetRaidRosterInfo(member)
+					lastGroup = math.max(lastGroup, playerGroup)
+				end
+			end
+
+			partypet:SetPoint("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, -28)
+		end)
+		partypetupdate:RegisterEvent("PARTY_MEMBERS_CHANGED")
+		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
+		partypetupdate:RegisterEvent("PLAYER_REGEN_ENABLED")
+		partypetupdate:RegisterEvent("RAID_ROSTER_UPDATE")
+		partypetupdate:RegisterEvent("UNIT_ENTERED_VEHICLE")
+		partypetupdate:RegisterEvent("UNIT_EXITED_VEHICLE")
 	end
 
 	if db.show_raid == true then
@@ -272,10 +346,13 @@ oUF:Factory(function(self)
 			local raid = {}
 			for i = 1, db.raid_groups do 
 				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
-					"oUF-initialConfigFunction", ([[
-						self:SetWidth(60.2)
-						self:SetHeight(26)
-					]]),
+					"oUF-initialConfigFunction", [[
+						local header = self:GetParent()
+						self:SetWidth(header:GetAttribute("initial-width"))
+						self:SetHeight(header:GetAttribute("initial-height"))
+					]],
+					"initial-width", unit_width,
+					"initial-height", unit_height,
 					"showRaid", true,
 					"yOffset", SettingsDB.Scale(-5),
 					"point", "TOPLEFT",
@@ -296,10 +373,13 @@ oUF:Factory(function(self)
 			local raid = {}
 			for i = 1, db.raid_groups do 
 				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
-					"oUF-initialConfigFunction", ([[
-						self:SetWidth(60.2)
-						self:SetHeight(26)
-					]]),
+					"oUF-initialConfigFunction", [[
+						local header = self:GetParent()
+						self:SetWidth(header:GetAttribute("initial-width"))
+						self:SetHeight(header:GetAttribute("initial-height"))
+					]],
+					"initial-width", unit_width,
+					"initial-height", unit_height,
 					"showRaid", true,
 					"groupFilter", tostring(i),
 					"point", "LEFT",
