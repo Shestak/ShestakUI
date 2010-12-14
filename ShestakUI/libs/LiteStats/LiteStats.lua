@@ -585,18 +585,10 @@ if clock.enabled then
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME,':',''),zsub(GameTime_GetLocalTime(true),'%s*AM','am','%s*PM','pm'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME,':',''),zsub(GameTime_GetGameTime(true),'%s*AM','am','%s*PM','pm'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			GameTooltip:AddLine' '
-			GameTooltip:AddDoubleLine(format(PVPBATTLEGROUND_WINTERGRASPTIMER_TOOLTIP,""),GetWintergraspWaitTime() and fmttime(GetWintergraspWaitTime()) or WINTERGRASP_IN_PROGRESS,ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-			local control = QUEUE_TIME_UNAVAILABLE
-			SetMapByID(485)
-			for i = 1, GetNumMapLandmarks() do
-				local index = select(3, GetMapLandmarkInfo(i))
-				if index == 46 then
-					control = "|cff69ccf0"..FACTION_ALLIANCE.."|r"
-				elseif index == 48 then
-					control = "|cffff3333"..FACTION_HORDE.."|r"
-				end
+			for i = 1, 2 do
+				local _, localizedName, _, _, startTime, _ = GetWorldPVPAreaInfo(i)
+				GameTooltip:AddDoubleLine(localizedName,startTime and fmttime(startTime) or isActive,ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			end
-			GameTooltip:AddDoubleLine(L_DATATEXT_CONTROL,control,ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			
 			local oneraid
 			for i = 1, GetNumSavedInstances() do
