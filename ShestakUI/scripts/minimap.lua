@@ -89,7 +89,7 @@ end
 -- Streaming icon
 if StreamingIcon then
 	StreamingIcon:ClearAllPoints()
-	StreamingIcon:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, 0)
+	StreamingIcon:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, SettingsDB.Scale(-10))
 	StreamingIcon:SetScale(0.8)
 end
 
