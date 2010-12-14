@@ -128,7 +128,7 @@ local function Shared(self, unit)
 
 	self.Power.PreUpdate = SettingsDB.PreUpdatePower
 	self.Power.PostUpdate = SettingsDB.PostUpdatePower
-		
+	
 	self.Power.bg = self.Power:CreateTexture(nil, "BORDER")
 	self.Power.bg:SetAllPoints()
 	self.Power.bg:SetTexture(SettingsCF["media"].texture)
@@ -444,7 +444,11 @@ local function Shared(self, unit)
 			self.Experience:SetHeight(SettingsDB.Scale(94))
 			self.Experience:SetWidth(SettingsDB.Scale(7))
 			self.Experience:SetOrientation("Vertical")
-			self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", SettingsDB.Scale(-18), SettingsDB.Scale(28))
+			if db.portrait_enable == true then
+				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", SettingsDB.Scale(-25-db.portrait_width), SettingsDB.Scale(28))
+			else
+				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", SettingsDB.Scale(-18), SettingsDB.Scale(28))
+			end
 			self.Experience:SetStatusBarTexture(SettingsCF["media"].texture)
 			self.Experience:SetStatusBarColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
 			self.Experience:SetBackdrop(backdrop)
