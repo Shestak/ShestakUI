@@ -82,6 +82,15 @@ local SmallerMapSkin = function()
 	WorldMapTrackQuestText:SetFontObject("GameFontNormal")
 	WorldMapTrackQuestText:SetFont(SettingsCF.media.normal_font, 17)
 	
+	WorldMapShowDigSites:SetParent(WorldMapDetailFrame)
+	WorldMapShowDigSites:ClearAllPoints()
+	WorldMapShowDigSites:SetPoint("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
+	WorldMapShowDigSites:SetFrameStrata("TOOLTIP")
+	
+	WorldMapShowDigSitesText:ClearAllPoints()
+	WorldMapShowDigSitesText:SetPoint("LEFT", WorldMapShowDigSites, "RIGHT", 0, 0)
+	WorldMapShowDigSitesText:SetFont(SettingsCF.media.normal_font, 17)
+	
 	WorldMapFrameAreaLabel:SetFontObject("GameFontNormal")
 	WorldMapFrameAreaLabel:SetFont(SettingsCF.media.normal_font, 40)
 	WorldMapFrameAreaLabel:SetTextColor(0.9, 0.83, 0.64)
