@@ -61,8 +61,12 @@ lpanels:CreateLayout("Load For All", {
 	end,
 	OnEvent = function(self)
 		local _,class = UnitClass'target'
-		local color = RAID_CLASS_COLORS[class] or {0.19, 0.58, 0.58}
-		self.bg:SetTexture(color.r, color.g, color.b)
+		local color = RAID_CLASS_COLORS[class]
+		if color then
+			self.bg:SetTexture(color.r, color.g, color.b)
+		else
+			self.bg:SetTexture(unpack(SettingsCF["media"].border_color))
+		end
 	end,
 },
 {   name = "TargetRightBlackBar", parent = "oUF_Target",
@@ -78,11 +82,15 @@ lpanels:CreateLayout("Load For All", {
 	end,
 	OnEvent = function(self)
 		local _,class = UnitClass'target'
-		local color = RAID_CLASS_COLORS[class] or {0.19, 0.58, 0.58}
-		self.bg:SetTexture(color.r, color.g, color.b)
+		local color = RAID_CLASS_COLORS[class]
+		if color then
+			self.bg:SetTexture(color.r, color.g, color.b)
+		else
+			self.bg:SetTexture(unpack(SettingsCF["media"].border_color))
+		end
 	end,
 },
---Target portrait border
+-- Target portrait border
 {   name = "TargetPortraitBlackBar", parent = "oUF_Target_PortraitOverlay",
     anchor_to = "TOPLEFT", x_off = -1, y_off = 1,
     width = SettingsCF["unitframe"].portrait_width + 6, height = SettingsCF["unitframe"].portrait_height + 6,
@@ -96,9 +104,13 @@ lpanels:CreateLayout("Load For All", {
 	end,
 	OnEvent = function(self)
 		local _,class = UnitClass'target'
-		local color = RAID_CLASS_COLORS[class] or {0.19, 0.58, 0.58}
-		if SettingsCF["unitframe"].portrait_classcolor_border then
-			self.bg:SetTexture(color.r, color.g, color.b)
+		local color = RAID_CLASS_COLORS[class]
+		if color then
+			if SettingsCF["unitframe"].portrait_classcolor_border then
+				self.bg:SetTexture(color.r, color.g, color.b)
+			else
+				self.bg:SetTexture(unpack(SettingsCF["media"].border_color))
+			end
 		else
 			self.bg:SetTexture(unpack(SettingsCF["media"].border_color))
 		end
