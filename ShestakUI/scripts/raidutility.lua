@@ -3,7 +3,7 @@
 ----------------------------------------------------------------------------------------
 if SettingsCF["misc"].raid_tools ~= true then return end
 
-local panel_height = ((SettingsDB.Scale(5)*4) + (SettingsDB.Scale(20)*4))
+local panel_height = ((SettingsDB.Scale(5)*5) + (SettingsDB.Scale(20)*5))
 
 -- Create main frame
 local RaidUtilityPanel = CreateFrame("Frame", "RaidUtilityPanel", UIParent)
@@ -63,7 +63,7 @@ ShowButton:SetAttribute("_onclick", [=[
 	 self:GetParent():ClearAllPoints()
 	 self:GetParent():SetPoint("TOP", UIParent, "TOP", -300, 1)
 	 self:ClearAllPoints()
-	 self:SetPoint("TOP", UIParent, "TOP", -300, -100)
+	 self:SetPoint("TOP", UIParent, "TOP", -300, -125)
  else
 	 self:GetParent():ClearAllPoints()
 	 self:GetParent():SetPoint("TOP", UIParent, "TOP", -300, 500)
@@ -80,8 +80,16 @@ DisbandRaidButton:SetScript("OnMouseUp", function(self)
 	end
 end)
 
+-- Convert Party button
+CreateButton("SwitchRaidButton", RaidUtilityPanel, nil, RaidUtilityPanel:GetWidth() * 0.8, SettingsDB.Scale(18), "TOP", DisbandRaidButton, "BOTTOM", 0, SettingsDB.Scale(-5), CONVERT_TO_PARTY, nil)
+DisbandRaidButton:SetScript("OnMouseUp", function(self)
+	if CheckRaidStatus() then
+		ConvertToParty()
+	end
+end)
+
 -- Role Check button
-CreateButton("RoleCheckButton", RaidUtilityPanel, nil, RaidUtilityPanel:GetWidth() * 0.8, SettingsDB.Scale(18), "TOP", DisbandRaidButton, "BOTTOM", 0, SettingsDB.Scale(-5), ROLE_POLL, nil)
+CreateButton("RoleCheckButton", RaidUtilityPanel, nil, RaidUtilityPanel:GetWidth() * 0.8, SettingsDB.Scale(18), "TOP", SwitchRaidButton, "BOTTOM", 0, SettingsDB.Scale(-5), ROLE_POLL, nil)
 RoleCheckButton:SetScript("OnMouseUp", function(self)
 	if CheckRaidStatus() then
 		InitiateRolePoll()
