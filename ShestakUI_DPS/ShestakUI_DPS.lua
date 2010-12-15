@@ -209,14 +209,14 @@ local function Shared(self, unit)
 		local mhpb = CreateFrame("StatusBar", nil, self.Health)
 		mhpb:SetPoint("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		mhpb:SetPoint("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-		mhpb:SetWidth(SettingsDB.Scale(104))		
+		mhpb:SetWidth(unit_width)		
 		mhpb:SetStatusBarTexture(SettingsCF["media"].texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		ohpb:SetPoint("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-		ohpb:SetWidth(SettingsDB.Scale(104))
+		ohpb:SetWidth(unit_width)
 		ohpb:SetStatusBarTexture(SettingsCF["media"].texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.25)
 
@@ -284,10 +284,10 @@ oUF:Factory(function(self)
 			"showPlayer", db.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"xOffset", 7,
-			"point", "LEFT"
+			"yOffset", SettingsDB.Scale(28),
+			"point", "BOTTOM"
 		)
-		partytarget:SetPoint("TOPLEFT", party, "TOPRIGHT", 7, 0)
+		partytarget:SetPoint("TOPLEFT", party, "TOPRIGHT", SettingsDB.Scale(7), 0)
 		
 		-- Party pets
 		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists] hide;show",
@@ -304,7 +304,7 @@ oUF:Factory(function(self)
 			"showPlayer", db.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"xOffset", 7,
+			"xOffset", SettingsDB.Scale(7),
 			"point", "LEFT"
 		)
 
@@ -322,7 +322,7 @@ oUF:Factory(function(self)
 				end
 			end
 
-			partypet:SetPoint("TOPLEFT", party[lastGroup], "TOPRIGHT", 44, 0)
+			partypet:SetPoint("TOPLEFT", party[lastGroup], "TOPRIGHT", SettingsDB.Scale(44), 0)
 		end)
 		partypetupdate:RegisterEvent("PARTY_MEMBERS_CHANGED")
 		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -333,6 +333,7 @@ oUF:Factory(function(self)
 	end
 	
 	if db.show_raid == true then
+		-- Raid
 		local raid = {}
 		for i = 1, db.raid_groups do 
 			local raidgroup = self:SpawnHeader("oUF_RaidDPS"..i, nil, "custom [@raid6,exists] show;hide",

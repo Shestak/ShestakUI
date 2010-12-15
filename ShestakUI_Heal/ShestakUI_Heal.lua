@@ -79,7 +79,7 @@ local function Shared(self, unit)
 
 		-- Power bar
 		self.Power = CreateFrame("StatusBar", nil, self)
-		self.Power:SetHeight(2)
+		self.Power:SetHeight(SettingsDB.Scale(2))
 		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -SettingsDB.mult)
 		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -SettingsDB.mult)
 		self.Power:SetStatusBarTexture(SettingsCF["media"].texture)
@@ -173,12 +173,12 @@ local function Shared(self, unit)
 		if db.vertical_health == true then
 			mhpb:SetOrientation("VERTICAL")
 			mhpb:SetPoint("BOTTOM", self.Health:GetStatusBarTexture(), "TOP", 0, 0)
-			mhpb:SetHeight(SettingsDB.Scale(26))
+			mhpb:SetHeight(unit_height)
 		else
 			mhpb:SetPoint("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 			mhpb:SetPoint("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		end
-		mhpb:SetWidth(SettingsDB.Scale(60))
+		mhpb:SetWidth(unit_width)
 		mhpb:SetStatusBarTexture(SettingsCF["media"].texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
 
@@ -186,12 +186,12 @@ local function Shared(self, unit)
 		if db.vertical_health == true then
 			ohpb:SetOrientation("VERTICAL")
 			ohpb:SetPoint("BOTTOM", mhpb:GetStatusBarTexture(), "TOP", 0, 0)
-			ohpb:SetHeight(SettingsDB.Scale(26))	
+			ohpb:SetHeight(unit_height)	
 		else
 			ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 			ohpb:SetPoint("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		end
-		ohpb:SetWidth(SettingsDB.Scale(60))
+		ohpb:SetWidth(unit_width)
 		ohpb:SetStatusBarTexture(SettingsCF["media"].texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.25)
 
@@ -270,7 +270,7 @@ oUF:Factory(function(self)
 			"showPlayer", db.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"xOffset", 7,
+			"xOffset", SettingsDB.Scale(7),
 			"point", "LEFT"
 		)
 		if db.player_in_party == true then
@@ -293,10 +293,10 @@ oUF:Factory(function(self)
 			"showPlayer", db.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"xOffset", 7,
+			"xOffset", SettingsDB.Scale(7),
 			"point", "LEFT"
 		)
-		partytarget:SetPoint("TOPLEFT", party, "BOTTOMLEFT", 0, -7)
+		partytarget:SetPoint("TOPLEFT", party, "BOTTOMLEFT", 0, SettingsDB.Scale(-7))
 		
 		-- Party pets
 		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists] hide;show",
@@ -313,7 +313,7 @@ oUF:Factory(function(self)
 			"showPlayer", db.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"xOffset", 7,
+			"xOffset", SettingsDB.Scale(7),
 			"point", "LEFT"
 		)
 
@@ -342,7 +342,8 @@ oUF:Factory(function(self)
 	end
 
 	if db.show_raid == true then
-		if db.raid_groups_vertical then	
+		if db.raid_groups_vertical then
+			-- Raid vertical
 			local raid = {}
 			for i = 1, db.raid_groups do 
 				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
@@ -370,6 +371,7 @@ oUF:Factory(function(self)
 				raid[i] = raidgroup
 			end
 		else
+			-- Raid horizontal
 			local raid = {}
 			for i = 1, db.raid_groups do 
 				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
@@ -398,6 +400,7 @@ oUF:Factory(function(self)
 		end
 		
 		if db.raid_tanks == true then
+			-- Tanks
 			if db.raid_tanks_tt == true then
 				mt_template = "oUF_MainTankTT"
 			else
@@ -409,7 +412,7 @@ oUF:Factory(function(self)
 					self:SetHeight(26)
 				]]),
 				"showRaid", true,
-				"yOffset", -7,
+				"yOffset", SettingsDB.Scale(-7),
 				"groupFilter", "MAINTANK",
 				"template", mt_template
 			)
