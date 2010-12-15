@@ -673,13 +673,17 @@ local function Shared(self, unit)
 		end
 
 		if db.icons_pvp == true then
-			self.Status = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size * 2, SettingsCF["font"].unit_frames_font_style)
-			self.Status:SetPoint("CENTER", 0, SettingsDB.Scale(1))
-			self.Status:SetTextColor(0.69, 0.31, 0.31, 0)
-			self:Tag(self.Status, "[pvp]")
-			
-			self:SetScript("OnEnter", function(self) FlashInfo.ManaLevel:Hide() self.Status:SetAlpha(1); UnitFrame_OnEnter(self) end)
-			self:SetScript("OnLeave", function(self) FlashInfo.ManaLevel:Show() self.Status:SetAlpha(0); UnitFrame_OnLeave(self) end)
+			self.Status = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
+			self.Status:SetPoint("CENTER", self.Health, "CENTER", 0, 0)
+			self.Status:SetTextColor(0.69, 0.31, 0.31)
+			self.Status:Hide()
+			self.Status.Override = SettingsDB.dummy
+
+			self.Status.Update = CreateFrame("Frame", nil, self)
+			self.Status.Update:SetScript("OnUpdate", function(self, elapsed) SettingsDB.UpdatePvPStatus(self:GetParent(), elapsed) end)
+
+			self:SetScript("OnEnter", function(self) FlashInfo.ManaLevel:Hide() self.Status:Show() UnitFrame_OnEnter(self) end)
+			self:SetScript("OnLeave", function(self) FlashInfo.ManaLevel:Show() self.Status:Hide() UnitFrame_OnLeave(self) end)
 		end
 	end
 

@@ -7,6 +7,12 @@ function SettingsDB.UIScale()
 	if SettingsCF["general"].auto_scale == true then
 		SettingsCF["general"].uiscale = min(2, max(.64, 768/string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)")))
 	end
+	
+	if tonumber(string.match(GetCVar("gxResolution"), "(%d+)x%d+")) <= 1440 then
+		SettingsDB.low_resolution = true
+	else
+		SettingsDB.low_resolution = false
+	end
 end
 SettingsDB.UIScale()
 
@@ -376,17 +382,18 @@ end
 
 local RoleUpdater = CreateFrame("Frame")
 local function CheckRole(self, event, unit)
+	local tree = GetPrimaryTalentTree()
 	local resilience
 	if GetCombatRating(COMBAT_RATING_RESILIENCE_PLAYER_DAMAGE_TAKEN)*0.02828 > GetDodgeChance() then
 		resilience = true
 	else
 		resilience = false
 	end
-	if ((SettingsDB.class == "PALADIN" and GetPrimaryTalentTree() == 2) or 
-	(SettingsDB.class == "WARRIOR" and GetPrimaryTalentTree() == 3) or 
-	(SettingsDB.class == "DEATHKNIGHT" and GetPrimaryTalentTree() == 1)) and
+	if ((SettingsDB.class == "PALADIN" and tree == 2) or 
+	(SettingsDB.class == "WARRIOR" and tree == 3) or 
+	(SettingsDB.class == "DEATHKNIGHT" and tree == 1)) and
 	resilience == false or
-	(SettingsDB.class == "DRUID" and GetPrimaryTalentTree() == 2 and GetBonusBarOffset() == 3) then
+	(SettingsDB.class == "DRUID" and tree == 2 and GetBonusBarOffset() == 3) then
 		SettingsDB.Role = "Tank"
 	else
 		local playerint = select(2, UnitStat("player", 4))
@@ -394,7 +401,7 @@ local function CheckRole(self, event, unit)
 		local base, posBuff, negBuff = UnitAttackPower("player");
 		local playerap = base + posBuff + negBuff;
 
-		if (((playerap > playerint) or (playeragi > playerint)) and not (UnitBuff("player", GetSpellInfo(24858)) or UnitBuff("player", GetSpellInfo(65139)))) or SettingsDB.class == "ROGUE" or SettingsDB.class == "HUNTER" then
+		if (((playerap > playerint) or (playeragi > playerint)) and not (SettingsDB.class == "SHAMAN" and tree ~= 1 and tree ~= 3) and not (UnitBuff("player", GetSpellInfo(24858)) or UnitBuff("player", GetSpellInfo(65139)))) or SettingsDB.class == "ROGUE" or SettingsDB.class == "HUNTER" then
 			SettingsDB.Role = "Melee"
 		else
 			SettingsDB.Role = "Caster"
@@ -796,6 +803,37 @@ do
 			self.DruidMana:SetAlpha(1)
 		else
 			self.DruidMana:SetAlpha(0)
+		end
+	end
+	
+	function SettingsDB.UpdatePvPStatus(self, elapsed)
+		if(self.elapsed and self.elapsed > 0.2) then
+			local unit = self.unit
+			local time = GetPVPTimer()
+
+			local min = format("%01.f", floor((time / 1000) / 60))
+			local sec = format("%02.f", floor((time / 1000) - min * 60))
+			if(self.Status) then
+				local factionGroup = UnitFactionGroup(unit)
+				if(UnitIsPVPFreeForAll(unit)) then
+					if time ~= 301000 and time ~= -1 then
+						self.Status:SetText(PVP.." ".."["..min..":"..sec.."]")
+					else
+						self.Status:SetText(PVP)
+					end
+				elseif(factionGroup and UnitIsPVP(unit)) then
+					if time ~= 301000 and time ~= -1 then
+						self.Status:SetText(PVP.." ".."["..min..":"..sec.."]")
+					else
+						self.Status:SetText(PVP)
+					end
+				else
+					self.Status:SetText("")
+				end
+			end
+			self.elapsed = 0
+		else
+			self.elapsed = (self.elapsed or 0) + elapsed
 		end
 	end
 
