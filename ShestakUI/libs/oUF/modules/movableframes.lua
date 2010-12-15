@@ -10,8 +10,8 @@ local _DB
 local _LOCK
 
 local _BACKDROP = {
-	bgFile = SettingsCF["media"].blank, 
-	edgeFile = SettingsCF["media"].blank, 
+	bgFile = SettingsCF.media.blank, 
+	edgeFile = SettingsCF.media.blank, 
 	tile = false, tileSize = 0, edgeSize = 1, 
 	insets = {left = -1, right = -1, top = -1, bottom = -1}
 }

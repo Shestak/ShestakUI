@@ -1,4 +1,4 @@
-if SettingsCF.unitframe.enable ~= true or SettingsCF.unitframe.plugins_aura_watch ~= true then return end
+if SettingsCF.unitframe.enable ~= true or SettingsCF.raidframe.plugins_aura_watch ~= true then return end
 -- yleaf (yaroot@gmail.com)
 
 local _, ns = ...
@@ -13,7 +13,7 @@ end
 local debuff_data = {}
 addon.DebuffData = debuff_data
 
-addon.ShowDispelableDebuff = SettingsCF["unitframe"].plugins_debuffhighlight_icon
+addon.ShowDispelableDebuff = SettingsCF.raidframe.plugins_debuffhighlight_icon
 addon.FilterDispellableDebuff = true
 addon.MatchBySpellName = true
 addon.priority = 10

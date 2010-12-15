@@ -19,6 +19,7 @@ local ALLOWED_GROUPS = {
 	["actionbar"] = 1,
 	["aura"] = 1,
 	["unitframe"] = 1,
+	["raidframe"] = 1,
 	["toppanel"] = 1,
 	["error"] = 1,
 	["stats"] = 1,
@@ -190,6 +191,9 @@ local function Local(o)
 	if o == "UIConfignameplateclass_icons" then o = L_GUI_NAMEPLATE_CLASS_ICON end
 	if o == "UIConfignameplatename_abbrev" then o = L_GUI_NAMEPLATE_NAME_ABBREV end
 	if o == "UIConfignameplateoverlap" then o = L_GUI_NAMEPLATE_OVERLAP end
+	if o == "UIConfignameplategood_color" then o = "!!!!!!!!!!!!!" end
+	if o == "UIConfignameplatenear_color" then o = "!!!!!!!!!!!!!" end
+	if o == "UIConfignameplatebad_color" then o = "!!!!!!!!!!!!!" end
 	
 	-- ActionBar options
 	if o == "UIConfigactionbar" then o = ACTIONBARS_LABEL end
@@ -225,39 +229,25 @@ local function Local(o)
 	-- Unit frame options
 	if o == "UIConfigunitframe" then o = UNITFRAME_LABEL end
 	if o == "UIConfigunitframeenable" then o = L_GUI_UF_ENABLE end
-	if o == "UIConfigunitframeaggro_border" then o = L_GUI_UF_AGGRO_BORDER end
 	if o == "UIConfigunitframeown_color" then o = L_GUI_UF_OWN_COLOR end
+	if o == "UIConfigunitframeuf_color" then o = "!!!!!!!!!!!!!" end
 	if o == "UIConfigunitframeenemy_health_color" then o = L_GUI_UF_ENEMY_HEALTH_COLOR end
 	if o == "UIConfigunitframeshow_total_value" then o = L_GUI_UF_TOTAL_VALUE end
-	if o == "UIConfigunitframedeficit_health" then o = L_GUI_UF_DEFICIT_HEALTH end
 	if o == "UIConfigunitframecolor_value" then o = L_GUI_UF_COLOR_VALUE end
 	if o == "UIConfigunitframeunit_castbar" then o = L_GUI_UF_UNIT_CASTBAR end
 	if o == "UIConfigunitframecastbar_icon" then o = L_GUI_UF_CASTBAR_ICON end
 	if o == "UIConfigunitframecastbar_latency" then o = L_GUI_UF_CASTBAR_LATENCY end
+	if o == "UIConfigunitframeshow_pet" then o = "!!!!!!!!!!!!!" end
+	if o == "UIConfigunitframeshow_focus" then o = "!!!!!!!!!!!!!" end
+	if o == "UIConfigunitframeshow_target_target" then o = "!!!!!!!!!!!!!" end
 	if o == "UIConfigunitframeshow_boss" then o = L_GUI_UF_SHOW_BOSS end
 	if o == "UIConfigunitframeboss_on_right" then o = L_GUI_UF_BOSS_RIGHT end
 	if o == "UIConfigunitframeshow_arena" then o = L_GUI_UF_SHOW_ARENA end
 	if o == "UIConfigunitframearena_on_right" then o = L_GUI_UF_ARENA_RIGHT end
-	if o == "UIConfigunitframeshow_party" then o = L_GUI_UF_SHOW_PARTY end
-	if o == "UIConfigunitframeshow_raid" then o = L_GUI_UF_SHOW_RAID end
-	if o == "UIConfigunitframevertical_health" then o = L_GUI_UF_VERTICAL_HEALTH end
-	if o == "UIConfigunitframealpha_health" then o = L_GUI_UF_ALPHA_HEALTH end
-	if o == "UIConfigunitframeshow_range" then o = L_GUI_UF_SHOW_RANGE end
-	if o == "UIConfigunitframerange_alpha" then o = L_GUI_UF_RANGE_ALPHA end
-	if o == "UIConfigunitframesolo_mode" then o = L_GUI_UF_SOLO_MODE end
-	if o == "UIConfigunitframeplayer_in_party" then o = L_GUI_UF_PLAYER_PARTY end
-	if o == "UIConfigunitframeraid_tanks" then o = L_GUI_UF_SHOW_TANK end
-	if o == "UIConfigunitframeraid_tanks_tt" then o = L_GUI_UF_SHOW_TANK_TT end
-	if o == "UIConfigunitframeraid_groups" then o = L_GUI_UF_RAID_GROUP end
-	if o == "UIConfigunitframeraid_groups_vertical" then o = L_GUI_UF_RAID_VERTICAL_GROUP end
 	if o == "UIConfigunitframeicons_pvp" then o = L_GUI_UF_ICONS_PVP end
-	if o == "UIConfigunitframeicons_leader" then o = L_GUI_UF_ICONS_LEADER end
 	if o == "UIConfigunitframeicons_combat" then o = L_GUI_UF_ICONS_COMBAT end
 	if o == "UIConfigunitframeicons_resting" then o = L_GUI_UF_ICONS_RESTING end
-	if o == "UIConfigunitframeicons_lfd_role" then o = L_GUI_UF_ICONS_LFD_ROLE end
-	if o == "UIConfigunitframeicons_raid_mark" then o = L_GUI_UF_ICONS_RAID_MARK end
 	if o == "UIConfigunitframeicons_combo_point" then o = L_GUI_UF_ICONS_COMBO_POINT end
-	if o == "UIConfigunitframeicons_ready_check" then o = L_GUI_UF_ICONS_READY_CHECK end
 	if o == "UIConfigunitframeportrait_enable" then o = L_GUI_UF_PORTRAIT_ENABLE end
 	if o == "UIConfigunitframeportrait_classcolor_border" then o = L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER end
 	if o == "UIConfigunitframeportrait_height" then o = L_GUI_UF_PORTRAIT_HEIGHT end
@@ -276,9 +266,30 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_smooth_bar" then o = L_GUI_UF_PLUGINS_SMOOTH_BAR end
 	if o == "UIConfigunitframeplugins_talents" then o = L_GUI_UF_PLUGINS_TALENTS end
 	if o == "UIConfigunitframeplugins_combat_feedback" then o = L_GUI_UF_PLUGINS_COMBAT_FEEDBACK end
-	if o == "UIConfigunitframeplugins_debuffhighlight_icon" then o = L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON end
-	if o == "UIConfigunitframeplugins_aura_watch" then o = L_GUI_UF_PLUGINS_AURA_WATCH end
-	if o == "UIConfigunitframeplugins_healcomm" then o = L_GUI_UF_PLUGINS_HEALCOMM end
+	
+	-- Raid frame options
+	if o == "UIConfigraidframe" then o = RAID_FRAMES_LABEL end
+	if o == "UIConfigraidframeaggro_border" then o = L_GUI_UF_AGGRO_BORDER end
+	if o == "UIConfigraidframedeficit_health" then o = L_GUI_UF_DEFICIT_HEALTH end
+	if o == "UIConfigraidframeshow_party" then o = L_GUI_UF_SHOW_PARTY end
+	if o == "UIConfigraidframeshow_raid" then o = L_GUI_UF_SHOW_RAID end
+	if o == "UIConfigraidframevertical_health" then o = L_GUI_UF_VERTICAL_HEALTH end
+	if o == "UIConfigraidframealpha_health" then o = L_GUI_UF_ALPHA_HEALTH end
+	if o == "UIConfigraidframeshow_range" then o = L_GUI_UF_SHOW_RANGE end
+	if o == "UIConfigraidframerange_alpha" then o = L_GUI_UF_RANGE_ALPHA end
+	if o == "UIConfigraidframesolo_mode" then o = L_GUI_UF_SOLO_MODE end
+	if o == "UIConfigraidframeplayer_in_party" then o = L_GUI_UF_PLAYER_PARTY end
+	if o == "UIConfigraidframeraid_tanks" then o = L_GUI_UF_SHOW_TANK end
+	if o == "UIConfigraidframeraid_tanks_tt" then o = L_GUI_UF_SHOW_TANK_TT end
+	if o == "UIConfigraidframeraid_groups" then o = L_GUI_UF_RAID_GROUP end
+	if o == "UIConfigraidframeraid_groups_vertical" then o = L_GUI_UF_RAID_VERTICAL_GROUP end
+	if o == "UIConfigraidframeicons_leader" then o = L_GUI_UF_ICONS_LEADER end
+	if o == "UIConfigraidframeicons_lfd_role" then o = L_GUI_UF_ICONS_LFD_ROLE end
+	if o == "UIConfigraidframeicons_raid_mark" then o = L_GUI_UF_ICONS_RAID_MARK end
+	if o == "UIConfigraidframeicons_ready_check" then o = L_GUI_UF_ICONS_READY_CHECK end
+	if o == "UIConfigraidframeplugins_debuffhighlight_icon" then o = L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON end
+	if o == "UIConfigraidframeplugins_aura_watch" then o = L_GUI_UF_PLUGINS_AURA_WATCH end
+	if o == "UIConfigraidframeplugins_healcomm" then o = L_GUI_UF_PLUGINS_HEALCOMM end
 	
 	-- Panel options
 	if o == "UIConfigtoppanel" then o = L_GUI_TOP_PANEL end
@@ -564,6 +575,77 @@ function CreateUIConfig()
 				end
 				
 				offset = offset + 45
+			elseif type(value) == "table" then
+				local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+				local o = "UIConfig"..group..option
+				Local(o)
+				label:SetText(SettingsDB.option)
+				label:SetWidth(390)
+				label:SetHeight(20)
+				label:SetJustifyH("LEFT")
+				label:SetPoint("TOPLEFT", 5, -(offset))
+				
+				colorbuttonname = (label:GetText().."ColorPicker")
+				local colorbutton = CreateFrame("Button", colorbuttonname, frame)
+				colorbutton:SetHeight(20)
+				colorbutton:SetWidth(50)
+				SettingsDB.CreateTemplate(colorbutton)
+				colorbutton:SetBackdropBorderColor(unpack(value))
+				colorbutton:SetPoint("LEFT", label, "RIGHT", 2, 0)
+				local colortext = colorbutton:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+				colortext:SetText(COLOR)
+				colortext:SetPoint("CENTER")
+				colortext:SetJustifyH("CENTER")
+				
+				local oldvalue = value
+				
+				local function round(number, decimal)
+					return (("%%.%df"):format(decimal)):format(number)
+				end	
+				
+				colorbutton:SetScript("OnMouseDown", function(self) 
+					if ColorPickerFrame:IsShown() then return end
+					local newR, newG, newB, newA
+					local fired = 0
+					
+					local r, g, b, a = self:GetBackdropBorderColor();
+					r, g, b, a = round(r, 2), round(g, 2), round(b, 2), round(a, 2)
+					local originalR,originalG,originalB,originalA = r, g, b, a
+					
+					local function ShowColorPicker(r, g, b, a, changedCallback)
+						ColorPickerFrame:SetColorRGB(r, g, b)
+						a = tonumber(a)
+						ColorPickerFrame.hasOpacity = (a ~= nil and a ~= 1)
+						ColorPickerFrame.opacity = a
+						ColorPickerFrame.previousValues = {originalR,originalG,originalB,originalA}
+						ColorPickerFrame.func, ColorPickerFrame.opacityFunc, ColorPickerFrame.cancelFunc = changedCallback, changedCallback, changedCallback;
+						ColorPickerFrame:Hide()
+						ColorPickerFrame:Show()
+					end
+					
+					local function myColorCallback(restore)
+						fired = fired + 1
+						if restore ~= nil then
+							-- The user bailed, we extract the old color from the table created by ShowColorPicker
+							newR, newG, newB, newA = unpack(restore)
+						else
+							-- Something changed
+							newA, newR, newG, newB = OpacitySliderFrame:GetValue(), ColorPickerFrame:GetColorRGB()
+						end
+						
+						-- Kinda a cheesy way to fix setting the value in the wrong place.. oh well
+						if fired > 3 then
+							value = { newR, newG, newB, newA }
+							SetValue(group, option, (value)) 
+							self:SetBackdropBorderColor(newR, newG, newB, newA)
+							fired = 0
+						end
+					end
+					
+					ShowColorPicker(originalR, originalG, originalB, originalA, myColorCallback)
+				end)
+				
+				offset = offset + 25
 			end
 		end
 		

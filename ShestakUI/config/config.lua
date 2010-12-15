@@ -17,7 +17,6 @@ SettingsCF["media"] = {
 	["border_color"] = {0.37, 0.3, 0.3},		-- Color for borders
 	["backdrop_color"] = {0, 0, 0},				-- Color for borders backdrop
 	["overlay_color"] = {0, 0, 0, 0.7},			-- Color for action bars overlay
-	["uf_color"] = {0.4, 0.4, 0.4},				-- Color for UF if ["own_color"] = true
 }
 
 ----------------------------------------------------------------------------------------
@@ -241,6 +240,9 @@ SettingsCF["nameplate"] = {
 	["class_icons"] = false,					-- Icons by class in pvp
 	["name_abbrev"] = true,						-- Display the abbreviated names
 	["overlap"] = true,							-- Allow nameplates to overlap
+	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
+	["near_color"] = {1, 1, 0},					-- Near threat color
+	["bad_color"] = {1, 0, 0},					-- Bad threat color
 }
 
 ----------------------------------------------------------------------------------------
@@ -286,46 +288,33 @@ SettingsCF["aura"] = {
 }
 
 ----------------------------------------------------------------------------------------
---	UnitFrame options
+--	Unit Frames options
 ----------------------------------------------------------------------------------------
 SettingsCF["unitframe"] = {
 	-- Main
-	["enable"] = true,							-- Enable unitframes
-	["aggro_border"] = true,					-- Aggro border
+	["enable"] = true,							-- Enable unit frames
 	["own_color"] = false,						-- Set your color for health bars
+	["uf_color"] = {0.4, 0.4, 0.4},				-- Color for UF if ["own_color"] = true
 	["enemy_health_color"] = true,				-- If enable, enemy target color is red
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
-	["deficit_health"] = false,					-- Raid deficit health
 	["color_value"] = false,					-- Health/mana value is colored
+	-- Cast bars
 	["unit_castbar"] = true,					-- Show castbars
 	["castbar_icon"] = false,					-- Show castbar icons
 	["castbar_latency"] = true,					-- Castbar latency
+	-- Frames
+	["show_pet"] = true,						-- Show pet frame
+	["show_focus"] = true,						-- Show focus frame
+	["show_target_target"] = true,				-- Show target target frame
 	["show_boss"] = true,						-- Show boss frames
 	["boss_on_right"] = true,					-- Set true for ShestakUI_DPS
 	["show_arena"] = true,						-- Show arena frames
 	["arena_on_right"] = true,					-- Set true for ShestakUI_DPS
-	-- Raid
-	["show_party"] = true,						-- Show party frames
-	["show_raid"] = true,						-- Show raid frames
-	["vertical_health"] = false,				-- Vertical orientation of health
-	["alpha_health"] = false,					-- Alpha of healthbars when 100%hp
-	["show_range"] = true,						-- Show range opacity for raidframes
-	["range_alpha"] = 0.5,						-- Alpha of unitframes when unit is out of range
-	["solo_mode"] = false,						-- Show player frame always
-	["player_in_party"] = true,					-- Show player frame in party
-	["raid_tanks"] = true,						-- Show raid tanks
-	["raid_tanks_tt"] = false,					-- Show raid tanks target target
-	["raid_groups"] = 5,						-- Number of groups in raid(Only for ShestakUI_Heal)
-	["raid_groups_vertical"] = false,			-- Vertical raid groups(Only for ShestakUI_Heal)
 	-- Icons
 	["icons_pvp"] = false,						-- Mouseover pvp text(not icons) on player and target frames
-	["icons_leader"] = true,					-- Leader icon, assistant icon, master loot icon on frames
 	["icons_combat"] = true,					-- Combat icon
 	["icons_resting"] = true,					-- Resting icon for low lvl chars
-	["icons_lfd_role"] = false,					-- Party leader icon on frames
-	["icons_raid_mark"] = true,					-- Raid marks
 	["icons_combo_point"] = true,				-- Rogue|Druid combo point icons
-	["icons_ready_check"] = true,				-- Ready check icons
 	-- Portraits
 	["portrait_enable"] = false,				-- Enable player/target portraits
 	["portrait_classcolor_border"] = true,		-- Enable classcolor border
@@ -346,6 +335,34 @@ SettingsCF["unitframe"] = {
 	["plugins_smooth_bar"] = false,				-- Smooth bar
 	["plugins_talents"] = false,				-- Enemy talents spec
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
+}
+
+----------------------------------------------------------------------------------------
+--	Raid Frames options
+----------------------------------------------------------------------------------------
+SettingsCF["raidframe"] = {
+	-- Main
+	["aggro_border"] = true,					-- Aggro border
+	["deficit_health"] = false,					-- Raid deficit health
+	["vertical_health"] = false,				-- Vertical orientation of health
+	["alpha_health"] = false,					-- Alpha of healthbars when 100%hp
+	["show_range"] = true,						-- Show range opacity for raidframes
+	["range_alpha"] = 0.5,						-- Alpha of unitframes when unit is out of range
+	-- Frames
+	["show_party"] = true,						-- Show party frames
+	["show_raid"] = true,						-- Show raid frames
+	["solo_mode"] = true,						-- Show player frame always
+	["player_in_party"] = true,					-- Show player frame in party
+	["raid_tanks"] = true,						-- Show raid tanks
+	["raid_tanks_tt"] = false,					-- Show raid tanks target target
+	["raid_groups"] = 5,						-- Number of groups in raid
+	["raid_groups_vertical"] = false,			-- Vertical raid groups(Only for ShestakUI_Heal)
+	-- Icons
+	["icons_lfd_role"] = false,					-- Party leader icon on frames
+	["icons_raid_mark"] = true,					-- Raid mark icons on frames
+	["icons_ready_check"] = true,				-- Ready check icons on frames
+	["icons_leader"] = true,					-- Leader icon, assistant icon, master loot icon on frames
+	-- Plugins
 	["plugins_debuffhighlight_icon"] = false,	-- Debuff highlight texture + icon
 	["plugins_aura_watch"] = true,				-- *RAID* Auras watch
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame

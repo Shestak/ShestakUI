@@ -8,7 +8,7 @@
 --	Enemy cooldown tracker(icons)
 ----------------------------------------------------------------------------------------
 -- aCooldowns [spell ID] = time
-if SettingsCF["cooldown"].enemy_enable == true then
+if SettingsCF.cooldown.enemy_enable == true then
 	SettingsDB.enemy_spells = {
 		[1766] = 10,	-- Kick
 		[6552] = 10,	-- Pummel
@@ -39,7 +39,7 @@ end
 --	Raid cooldown tracker(bars)
 ----------------------------------------------------------------------------------------
 -- aCooldowns [spell ID] = time
-if SettingsCF["cooldown"].raid_enable == true then
+if SettingsCF.cooldown.raid_enable == true then
 	SettingsDB.raid_spells = {
 		[20484] = 600,	-- Rebirth
 		[6203] = 1800,	-- Soulstone
@@ -53,7 +53,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Player Buff reminder
 ----------------------------------------------------------------------------------------
-if SettingsCF["reminder"].solo_buffs_enable == true then
+if SettingsCF.reminder.solo_buffs_enable == true then
 	SettingsDB.buffs_reminder = {
 		PRIEST = {
 			588,	-- Inner Fire
@@ -105,7 +105,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Raid Buff reminder
 ----------------------------------------------------------------------------------------
-if SettingsCF["reminder"].raid_buffs_enable == true then
+if SettingsCF.reminder.raid_buffs_enable == true then
 	SettingsDB.raid_buffs_reminder = {
 		Flask = {
 			79637,	-- Flask of Enhancement
@@ -158,7 +158,7 @@ end
 --	AuraWatch
 ----------------------------------------------------------------------------------------
 -- Healer Layout {spell ID, position, {r, g, b, a}, anyUnit}
-if SettingsCF["unitframe"].plugins_aura_watch == true then
+if SettingsCF.raidframe.plugins_aura_watch == true then
 	do
 		-- Class buffs
 		SettingsDB.buffids = {
@@ -223,7 +223,7 @@ if SettingsCF["unitframe"].plugins_aura_watch == true then
 
 		if not ORD then return end
 		
-		ORD.ShowDispelableDebuff = SettingsCF["unitframe"].plugins_debuffhighlight_icon
+		ORD.ShowDispelableDebuff = SettingsCF.raidframe.plugins_debuffhighlight_icon
 		ORD.FilterDispellableDebuff = true
 		ORD.MatchBySpellName = false
 		

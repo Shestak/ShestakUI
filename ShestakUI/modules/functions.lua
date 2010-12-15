@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------------
 --	Auto UIScale
 ----------------------------------------------------------------------------------------
-local media = SettingsCF["media"]
+local media = SettingsCF.media
 
 function SettingsDB.UIScale()
-	if SettingsCF["general"].auto_scale == true then
-		SettingsCF["general"].uiscale = min(2, max(.64, 768/string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)")))
+	if SettingsCF.general.auto_scale == true then
+		SettingsCF.general.uiscale = min(2, max(.64, 768/string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)")))
 	end
 	
 	if tonumber(string.match(GetCVar("gxResolution"), "(%d+)x%d+")) <= 1440 then
@@ -17,7 +17,7 @@ end
 SettingsDB.UIScale()
 
 -- Pixel perfect script of custom ui scale
-local mult = 768/string.match(GetCVar("gxResolution"), "%d+x(%d+)")/SettingsCF["general"].uiscale
+local mult = 768/string.match(GetCVar("gxResolution"), "%d+x(%d+)")/SettingsCF.general.uiscale
 local function scale(x)
     return mult*math.floor(x/mult+.5)
 end
@@ -455,7 +455,8 @@ end
 do
 	if not SettingsCF.unitframe.enable == true then return end
 
-	local db = SettingsCF["unitframe"]
+	local db_uf = SettingsCF.unitframe
+	local db_rf = SettingsCF.raidframe
 
 	local SetUpAnimGroup = function(self)
 		self.anim = self:CreateAnimationGroup("Flash")
@@ -490,8 +491,8 @@ do
 		local unit = self.unit:sub(1, -2)
 		local cunit = self.unit:gsub("^%l", string.upper)
 
-		if(cunit == 'Vehicle') then
-			cunit = 'Pet'
+		if(cunit == "Vehicle") then
+			cunit = "Pet"
 		end
 
 		if(unit == "party" or unit == "partypet") then
@@ -504,7 +505,7 @@ do
 	SettingsDB.SetFontString = function(parent, fontName, fontHeight, fontStyle)
 		local fs = parent:CreateFontString(nil, "OVERLAY")
 		fs:SetFont(fontName, fontHeight, fontStyle)
-		fs:SetShadowOffset(SettingsCF["font"].unit_frames_font_shadow and 1 or 0, SettingsCF["font"].unit_frames_font_shadow and -1 or 0)
+		fs:SetShadowOffset(SettingsCF.font.unit_frames_font_shadow and 1 or 0, SettingsCF.font.unit_frames_font_shadow and -1 or 0)
 		return fs
 	end
 
@@ -521,7 +522,7 @@ do
 			end
 		else
 			local r, g, b	
-			if (db.own_color ~= true and db.enemy_health_color and unit == "target" and UnitIsEnemy(unit, "player") and UnitIsPlayer(unit)) or (db.own_color ~= true and unit == "target" and not UnitIsPlayer(unit) and UnitIsFriend(unit, "player")) then
+			if (db_uf.own_color ~= true and db_uf.enemy_health_color and unit == "target" and UnitIsEnemy(unit, "player") and UnitIsPlayer(unit)) or (db_uf.own_color ~= true and unit == "target" and not UnitIsPlayer(unit) and UnitIsFriend(unit, "player")) then
 				local c = SettingsDB.oUF_colors.reaction[UnitReaction(unit, "player")]
 				if c then 
 					r, g, b = c[1], c[2], c[3]
@@ -534,8 +535,8 @@ do
 			if unit == "pet" or unit == "vehicle" then
 				local _, class = UnitClass("player")
 				local r, g, b = unpack(oUF.colors.class[class])
-				if db.own_color == true then
-					health:SetStatusBarColor(unpack(SettingsCF["media"].uf_color))
+				if db_uf.own_color == true then
+					health:SetStatusBarColor(unpack(db_uf.uf_color))
 					health.bg:SetVertexColor(0.1, 0.1, 0.1)
 				else
 					if b then
@@ -547,35 +548,35 @@ do
 				local r, g, b
 				r, g, b = oUF.ColorGradient(min/max, 0.69, 0.31, 0.31, 0.65, 0.63, 0.35, 0.33, 0.59, 0.33)
 				if unit == "player" and health:GetAttribute("normalUnit") ~= "pet" then
-					if db.show_total_value == true then
-						if db.color_value == true then
+					if db_uf.show_total_value == true then
+						if db_uf.color_value == true then
 							health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5-|r |cff559655%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						else
 							health.value:SetFormattedText("|cffffffff%s|r |cffffffff-|r |cffffffff%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						end
 					else
-						if db.color_value == true then
+						if db_uf.color_value == true then
 							health.value:SetFormattedText("|cffAF5050%d|r |cffD7BEA5-|r |cff%02x%02x%02x%d%%|r", min, r * 255, g * 255, b * 255, floor(min / max * 100))
 						else
 							health.value:SetFormattedText("|cffffffff%d|r |cffffffff-|r |cffffffff%d%%|r", min, floor(min / max * 100))
 						end
 					end
 				elseif unit == "target" then
-					if db.show_total_value == true then
-						if db.color_value == true then
+					if db_uf.show_total_value == true then
+						if db_uf.color_value == true then
 							health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5-|r |cff559655%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						else
 							health.value:SetFormattedText("|cffffffff%s|r |cffffffff-|r |cffffffff%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						end
 					else
-						if db.color_value == true then
+						if db_uf.color_value == true then
 							health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r |cffD7BEA5-|r |cffAF5050%s|r", r * 255, g * 255, b * 255, floor(min / max * 100), SettingsDB.ShortValue(min))
 						else
 							health.value:SetFormattedText("|cffffffff%d%%|r |cffffffff-|r |cffffffff%s|r", floor(min / max * 100), SettingsDB.ShortValue(min))
 						end
 					end
 				else
-					if db.color_value == true then
+					if db_uf.color_value == true then
 						health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r", r * 255, g * 255, b * 255, floor(min / max * 100))
 					else
 						health.value:SetFormattedText("|cffffffff%d%%|r", floor(min / max * 100))
@@ -583,13 +584,13 @@ do
 				end
 			else
 				if unit == "player" and unit ~= "pet" then
-					if db.color_value == true then
+					if db_uf.color_value == true then
 						health.value:SetText("|cff559655"..max.."|r")
 					else
 						health.value:SetText("|cffffffff"..max.."|r")
 					end
 				else
-					if db.color_value == true then
+					if db_uf.color_value == true then
 						health.value:SetText("|cff559655"..SettingsDB.ShortValue(max).."|r")
 					else
 						health.value:SetText("|cffffffff"..SettingsDB.ShortValue(max).."|r")
@@ -613,27 +614,27 @@ do
 			if min ~= max then
 				local r, g, b
 				r, g, b = oUF.ColorGradient(min/max, 0.69, 0.31, 0.31, 0.65, 0.63, 0.35, 0.33, 0.59, 0.33)
-				if db.color_value == true then
-					if db.deficit_health == true then
+				if db_uf.color_value == true then
+					if db_rf.deficit_health == true then
 						health.value:SetText("|cffFFFFFF".."-"..SettingsDB.ShortValue(max-min))
 					else
 						health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r", r * 255, g * 255, b * 255, floor(min / max * 100))
 					end
 				else
-					if db.deficit_health == true then
+					if db_rf.deficit_health == true then
 						health.value:SetText("|cffFFFFFF".."-"..SettingsDB.ShortValue(max-min))
 					else
 						health.value:SetFormattedText("|cffffffff%d%%|r", floor(min / max * 100))
 					end
 				end
 			else
-				if db.color_value == true then
+				if db_uf.color_value == true then
 					health.value:SetText("|cff559655"..SettingsDB.ShortValue(max).."|r")
 				else
 					health.value:SetText("|cffffffff"..SettingsDB.ShortValue(max).."|r")
 				end
 			end
-			if db.alpha_health == true then
+			if db_rf.alpha_health == true then
 				if(min / max > 0.95) then 
 					health:SetAlpha(0.6)
 					--self.Power:SetAlpha(0.6)
@@ -680,48 +681,48 @@ do
 			if min ~= max then
 				if pType == 0 then
 					if unit == "target" then
-						if db.show_total_value == true then
-							if db.color_value == true then
+						if db_uf.show_total_value == true then
+							if db_uf.color_value == true then
 								power.value:SetFormattedText("%s |cffD7BEA5-|r %s", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							else
 								power.value:SetFormattedText("|cffffffff%s - %s|r", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							end
 						else
-							if db.color_value == true then
+							if db_uf.color_value == true then
 								power.value:SetFormattedText("%d%% |cffD7BEA5-|r %s", floor(min / max * 100), SettingsDB.ShortValue(max - (max - min)))
 							else
 								power.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), SettingsDB.ShortValue(max - (max - min)))
 							end
 						end
 					elseif unit == "player" and power:GetAttribute("normalUnit") == "pet" or unit == "pet" then
-						if db.show_total_value == true then
-							if db.color_value == true then
+						if db_uf.show_total_value == true then
+							if db_uf.color_value == true then
 								power.value:SetFormattedText("%s |cffD7BEA5-|r %s", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							else
 								power.value:SetFormattedText("%s |cffffffff-|r %s", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							end
 						else
-							if db.color_value == true then
+							if db_uf.color_value == true then
 								power.value:SetFormattedText("%d%%", floor(min / max * 100))
 							else
 								power.value:SetFormattedText("|cffffffff%d%%|r", floor(min / max * 100))
 							end
 						end
 					elseif (unit and unit:find("arena%d")) then
-						if db.color_value == true then
+						if db_uf.color_value == true then
 							power.value:SetFormattedText("|cffD7BEA5%d%% - %s|r", floor(min / max * 100), SettingsDB.ShortValue(max - (max - min)))
 						else
 							power.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), SettingsDB.ShortValue(max - (max - min)))
 						end
 					else
-						if db.show_total_value == true then
-							if db.color_value == true then
+						if db_uf.show_total_value == true then
+							if db_uf.color_value == true then
 								power.value:SetFormattedText("%s |cffD7BEA5-|r %s", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							else
 								power.value:SetFormattedText("|cffffffff%s - %s|r", SettingsDB.ShortValue(max - (max - min)), SettingsDB.ShortValue(max))
 							end
 						else
-							if db.color_value == true then
+							if db_uf.color_value == true then
 								power.value:SetFormattedText("%d |cffD7BEA5-|r %d%%", max - (max - min), floor(min / max * 100))
 							else
 								power.value:SetFormattedText("|cffffffff%d - %d%%|r", max - (max - min), floor(min / max * 100))
@@ -729,7 +730,7 @@ do
 						end
 					end
 				else
-					if db.color_value == true then
+					if db_uf.color_value == true then
 						power.value:SetText(max - (max - min))
 					else
 						power.value:SetText("|cffffffff"..max - (max - min).."|r")
@@ -737,13 +738,13 @@ do
 				end
 			else
 				if unit == "pet" or unit == "target" or (unit and unit:find("arena%d")) then
-					if db.color_value == true then
+					if db_uf.color_value == true then
 						power.value:SetText(SettingsDB.ShortValue(min))
 					else
 						power.value:SetText("|cffffffff"..SettingsDB.ShortValue(min).."|r")
 					end
 				else
-					if db.color_value == true then
+					if db_uf.color_value == true then
 						power.value:SetText(min)
 					else
 						power.value:SetText("|cffffffff"..min.."|r")
@@ -838,7 +839,7 @@ do
 	end
 
 	SettingsDB.UpdateShards = function(self, event, unit, powerType)
-		if(self.unit ~= unit or (powerType and powerType ~= 'SOUL_SHARDS')) then return end
+		if(self.unit ~= unit or (powerType and powerType ~= "SOUL_SHARDS")) then return end
 		local num = UnitPower(unit, SPELL_POWER_SOUL_SHARDS)
 		for i = 1, SHARD_BAR_NUM_SHARDS do
 			if(i <= num) then
@@ -850,7 +851,7 @@ do
 	end
 	
 	SettingsDB.UpdateHoly = function(self, event, unit, powerType)
-		if(self.unit ~= unit or (powerType and powerType ~= 'HOLY_POWER')) then return end
+		if(self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER")) then return end
 		local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)
 		for i = 1, MAX_HOLY_POWER do
 			if(i <= num) then
@@ -907,7 +908,7 @@ do
 
 		if unit == "vehicle" then unit = "player" end
 
-		if unit == "player" and db.castbar_latency == true then
+		if unit == "player" and db_uf.castbar_latency == true then
 			local latency = GetTime() - (Castbar.castSent or 0)
 			latency = latency > Castbar.max and Castbar.max or latency
 			Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
@@ -943,8 +944,8 @@ do
 			if unit == "pet" or unit == "vehicle" then
 				local _, class = UnitClass("player")
 				local r, g, b = unpack(oUF.colors.class[class])
-				if db.own_color == true then
-					Castbar:SetStatusBarColor(unpack(SettingsCF["media"].uf_color))
+				if db_uf.own_color == true then
+					Castbar:SetStatusBarColor(unpack(db_uf.uf_color))
 					Castbar.bg:SetVertexColor(0.1, 0.1, 0.1)
 				else
 					if b then
@@ -953,8 +954,8 @@ do
 					end
 				end
 			else
-				if db.own_color == true then
-					Castbar:SetStatusBarColor(unpack(SettingsCF["media"].uf_color))
+				if db_uf.own_color == true then
+					Castbar:SetStatusBarColor(unpack(db_uf.uf_color))
 					Castbar.bg:SetVertexColor(0.1, 0.1, 0.1)
 				else
 					Castbar:SetStatusBarColor(r, g, b)
@@ -968,7 +969,7 @@ do
 		Castbar.channeling = true
 		if unit == "vehicle" then unit = "player" end
 
-		if unit == "player" and db.castbar_latency == true then
+		if unit == "player" and db_uf.castbar_latency == true then
 			local latency = GetTime() - (Castbar.castSent or 0)
 			latency = latency > Castbar.max and Castbar.max or latency
 			Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
@@ -1004,8 +1005,8 @@ do
 			if unit == "pet" or unit == "vehicle" then
 				local _, class = UnitClass("player")
 				local r, g, b = unpack(oUF.colors.class[class])
-				if db.own_color == true then
-					Castbar:SetStatusBarColor(unpack(SettingsCF["media"].uf_color))
+				if db_uf.own_color == true then
+					Castbar:SetStatusBarColor(unpack(db_uf.uf_color))
 					Castbar.bg:SetVertexColor(0.1, 0.1, 0.1)
 				else
 					if b then
@@ -1014,8 +1015,8 @@ do
 					end
 				end
 			else
-				if db.own_color == true then
-					Castbar:SetStatusBarColor(unpack(SettingsCF["media"].uf_color))
+				if db_uf.own_color == true then
+					Castbar:SetStatusBarColor(unpack(db_uf.uf_color))
 					Castbar.bg:SetVertexColor(0.1, 0.1, 0.1)
 				else
 					Castbar:SetStatusBarColor(r, g, b)
@@ -1088,16 +1089,16 @@ do
 
 	SettingsDB.HideAuraFrame = function(self)
 		if self.unit == "player" then
-			if not SettingsCF["aura"].player_auras then
+			if not SettingsCF.aura.player_auras then
 				BuffFrame:UnregisterEvent("UNIT_AURA")
 				BuffFrame:Hide()
 				TemporaryEnchantFrame:Hide()
 				self.Debuffs:Hide()
 			end
-		elseif self.unit == "pet" and not SettingsCF["aura"].pet_debuffs or self.unit == "focus" and not SettingsCF["aura"].focus_debuffs 
-		or self.unit == "focustarget" and not SettingsCF["aura"].fot_debuffs or self.unit == "targettarget" and not SettingsCF["aura"].tot_debuffs then
+		elseif self.unit == "pet" and not SettingsCF.aura.pet_debuffs or self.unit == "focus" and not SettingsCF.aura.focus_debuffs 
+		or self.unit == "focustarget" and not SettingsCF.aura.fot_debuffs or self.unit == "targettarget" and not SettingsCF.aura.tot_debuffs then
 			self.Debuffs:Hide()
-		elseif self.unit == "target" and not SettingsCF["aura"].target_auras then
+		elseif self.unit == "target" and not SettingsCF.aura.target_auras then
 			self.Auras:Hide()
 		end
 	end
@@ -1105,8 +1106,8 @@ do
 	SettingsDB.PostCreateAura = function(element, button)
 		SettingsDB.CreateTemplate(button)
 		
-		button.remaining = SettingsDB.SetFontString(button, SettingsCF["font"].auras_font, SettingsCF["font"].auras_font_size, SettingsCF["font"].auras_font_style)
-		button.remaining:SetShadowOffset(SettingsCF["font"].auras_font_shadow and 1 or 0, SettingsCF["font"].auras_font_shadow and -1 or 0)
+		button.remaining = SettingsDB.SetFontString(button, SettingsCF.font.auras_font, SettingsCF.font.auras_font_size, SettingsCF.font.auras_font_style)
+		button.remaining:SetShadowOffset(SettingsCF.font.auras_font_shadow and 1 or 0, SettingsCF.font.auras_font_shadow and -1 or 0)
 		button.remaining:SetPoint("CENTER", button, "CENTER", SettingsDB.Scale(2), SettingsDB.Scale(1))
 		button.remaining:SetTextColor(1, 1, 1)
 		
@@ -1120,11 +1121,11 @@ do
 
 		button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 0, SettingsDB.Scale(1))
 		button.count:SetJustifyH("RIGHT")
-		button.count:SetFont(SettingsCF["font"].auras_font, SettingsCF["font"].auras_font_size, SettingsCF["font"].auras_font_style)
-		button.count:SetShadowOffset(SettingsCF["font"].auras_font_shadow and 1 or 0, SettingsCF["font"].auras_font_shadow and -1 or 0)
+		button.count:SetFont(SettingsCF.font.auras_font, SettingsCF.font.auras_font_size, SettingsCF.font.auras_font_style)
+		button.count:SetShadowOffset(SettingsCF.font.auras_font_shadow and 1 or 0, SettingsCF.font.auras_font_shadow and -1 or 0)
 		button.count:SetTextColor(1, 1, 1)
 
-		if SettingsCF["aura"].show_spiral == true then
+		if SettingsCF.aura.show_spiral == true then
 			element.disableCooldown = false
 			button.cd:SetReverse()
 			button.overlayFrame = CreateFrame("Frame", nil, button, nil)
@@ -1151,10 +1152,10 @@ do
 		
 		if icon.debuff then
 			if(not UnitIsFriend("player", unit) and not playerUnits[icon.owner]) then
-				icon:SetBackdropBorderColor(unpack(SettingsCF["media"].border_color))
+				icon:SetBackdropBorderColor(unpack(SettingsCF.media.border_color))
 				icon.icon:SetDesaturated(true)
 			else
-				if SettingsCF["aura"].debuff_color_type == true then
+				if SettingsCF.aura.debuff_color_type == true then
 					local color = DebuffTypeColor[dtype] or DebuffTypeColor.none
 					icon:SetBackdropBorderColor(color.r, color.g, color.b)
 					icon.icon:SetDesaturated(false)
@@ -1166,11 +1167,11 @@ do
 			if (isStealable or ((SettingsDB.class == "MAGE" or SettingsDB.class == "PRIEST" or SettingsDB.class == "SHAMAN") and dtype == "Magic")) and not UnitIsFriend("player", unit) then
 				icon:SetBackdropBorderColor(1, 0.85, 0)
 			else
-				icon:SetBackdropBorderColor(unpack(SettingsCF["media"].border_color))
+				icon:SetBackdropBorderColor(unpack(SettingsCF.media.border_color))
 			end
 		end
 
-		if duration and duration > 0 and SettingsCF["aura"].show_timer == true then
+		if duration and duration > 0 and SettingsCF.aura.show_timer == true then
 			icon.remaining:Show()
 			icon.timeLeft = expirationTime
 			icon:SetScript("OnUpdate", CreateAuraTimer)
@@ -1203,7 +1204,7 @@ do
 			end
 		else
 			if self.FrameBackdrop then
-				self.FrameBackdrop:SetBackdropBorderColor(unpack(SettingsCF["media"].border_color))
+				self.FrameBackdrop:SetBackdropBorderColor(unpack(SettingsCF.media.border_color))
 			end
 		end 
 	end
@@ -1246,7 +1247,7 @@ do
 		auras.icons = {}
 		auras.PostCreateIcon = SettingsDB.CreateAuraWatchIcon
 
-		if (not SettingsCF["aura"].show_timer) then
+		if (not SettingsCF.aura.show_timer) then
 			auras.hideCooldown = true
 		end
 
@@ -1275,14 +1276,14 @@ do
 
 				local tex = icon:CreateTexture(nil, "OVERLAY")
 				tex:SetAllPoints(icon)
-				tex:SetTexture(SettingsCF["media"].blank)
+				tex:SetTexture(SettingsCF.media.blank)
 				if (spell[3]) then
 					tex:SetVertexColor(unpack(spell[3]))
 				else
 					tex:SetVertexColor(0.8, 0.8, 0.8)
 				end
 
-				local count = SettingsDB.SetFontString(icon, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
+				local count = SettingsDB.SetFontString(icon, SettingsCF.font.unit_frames_font, SettingsCF.font.unit_frames_font_size, SettingsCF.font.unit_frames_font_style)
 				count:SetPoint("CENTER", unpack(SettingsDB.CountOffsets[spell[2]]))
 				icon.count = count
 

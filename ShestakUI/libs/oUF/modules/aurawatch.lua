@@ -1,4 +1,4 @@
-if SettingsCF.unitframe.enable ~= true or SettingsCF.unitframe.plugins_aura_watch ~= true then return end
+if SettingsCF.unitframe.enable ~= true or SettingsCF.raidframe.plugins_aura_watch ~= true then return end
 if not oUF then return end
 --[[------------------------------------------------------------------------------------------------------
 oUF_AuraWatch by Astromech

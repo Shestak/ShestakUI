@@ -1,8 +1,15 @@
-if not SettingsCF["unitframe"].enable == true then return end
+----------------------------------------------------------------------------------------
+--	
+----------------------------------------------------------------------------------------
+if not SettingsCF.unitframe.enable == true then return end
 if IsAddOnLoaded("ShestakUI_Heal") then return end
 
-local db = SettingsCF["unitframe"]
-local pos = SettingsCF["position"].unitframes
+local db_uf = SettingsCF.unitframe
+local db_rf = SettingsCF.raidframe
+local db_ff = SettingsCF.font
+local db_pf = SettingsCF.position.unitframes
+
+-- Frame size
 local party_width = 140
 local party_height = 27
 local partytarget_width = 30
@@ -10,6 +17,7 @@ local partytarget_height = 27
 local unit_width = 104
 local unit_height = 17
 
+-- Create layout
 local function Shared(self, unit)
 	local unit = (self:GetParent():GetName():match"oUF_PartyDPS") and "party" 
 	or (self:GetParent():GetName():match"oUF_RaidDPS") and "raid"
@@ -55,10 +63,10 @@ local function Shared(self, unit)
 	self.Health.colorTapping = true
 	self.Health.colorDisconnected = true
 	self.Health.colorClassPet = false
-	if db.own_color == true then
+	if db_uf.own_color == true then
 		self.Health.colorReaction = false
 		self.Health.colorClass = false
-		self.Health:SetStatusBarColor(unpack(SettingsCF["media"].uf_color))
+		self.Health:SetStatusBarColor(unpack(db_uf.uf_color))
 	else
 		self.Health.colorReaction = true
 		self.Health.colorClass = true
@@ -67,15 +75,15 @@ local function Shared(self, unit)
 	-- Health bar background
 	self.Health.bg = self.Health:CreateTexture(nil, "BORDER")
 	self.Health.bg:SetAllPoints(self.Health)
-	self.Health.bg:SetTexture(SettingsCF["media"].texture)
-	if db.own_color == true then
+	self.Health.bg:SetTexture(SettingsCF.media.texture)
+	if db_uf.own_color == true then
 		self.Health.bg:SetVertexColor(0.1, 0.1, 0.1)	
 	else
 		self.Health.bg.multiplier = 0.25
 	end
 	
 	if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
-		self.Health.value = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
+		self.Health.value = SettingsDB.SetFontString(self.Health, db_ff.unit_frames_font, db_ff.unit_frames_font_size, db_ff.unit_frames_font_style)
 		self.Health.value:SetPoint("RIGHT", self.Health, "RIGHT", SettingsDB.Scale(1), 0)
 		self.Health.value:SetTextColor(1, 1, 1)
 		
@@ -94,11 +102,11 @@ local function Shared(self, unit)
 		end
 		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -SettingsDB.mult)
 		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -SettingsDB.mult)
-		self.Power:SetStatusBarTexture(SettingsCF["media"].texture)
+		self.Power:SetStatusBarTexture(SettingsCF.media.texture)
 		
 		self.Power.frequentUpdates = true
 		self.Power.colorDisconnected = true
-		if db.own_color == true then
+		if db_uf.own_color == true then
 			self.Power.colorClass = true
 		else
 			self.Power.colorPower = true
@@ -110,17 +118,17 @@ local function Shared(self, unit)
 		-- Power bar background
 		self.Power.bg = self.Power:CreateTexture(nil, "BORDER")
 		self.Power.bg:SetAllPoints(self.Power)
-		self.Power.bg:SetTexture(SettingsCF["media"].texture)
+		self.Power.bg:SetTexture(SettingsCF.media.texture)
 		self.Power.bg:SetAlpha(1)
 		self.Power.bg.multiplier = 0.3
 		
-		self.Power.value = SettingsDB.SetFontString(self.Power, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
+		self.Power.value = SettingsDB.SetFontString(self.Power, db_ff.unit_frames_font, db_ff.unit_frames_font_size, db_ff.unit_frames_font_style)
 		self.Power.value:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
 		self.Power.value:SetJustifyH("RIGHT")
 	end
 	
 	-- Names
-	self.Info = SettingsDB.SetFontString(self.Health, SettingsCF["font"].unit_frames_font, SettingsCF["font"].unit_frames_font_size, SettingsCF["font"].unit_frames_font_style)
+	self.Info = SettingsDB.SetFontString(self.Health, db_ff.unit_frames_font, db_ff.unit_frames_font_size, db_ff.unit_frames_font_style)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.Info:SetPoint("CENTER", self.Health, "CENTER", SettingsDB.Scale(1), 0)
 	else
@@ -134,14 +142,14 @@ local function Shared(self, unit)
 	end
 	
 	-- LFD role icons
-	if db.icons_lfd_role == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
+	if db_rf.icons_lfd_role == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:SetSize(SettingsDB.Scale(12), SettingsDB.Scale(12))
 		self.LFDRole:SetPoint("TOPRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(5))
 	end
 	
 	-- Leader/Assistant/ML icons
-	if db.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target") then
+	if db_rf.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target") then
 		-- Leader icon
 		self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
 		self.Leader:SetSize(SettingsDB.Scale(12), SettingsDB.Scale(12))
@@ -159,7 +167,7 @@ local function Shared(self, unit)
 	end
 	
 	-- Agro border
-	if db.aggro_border == true then
+	if db_rf.aggro_border == true then
 		table.insert(self.__elements, SettingsDB.UpdateThreat)
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", SettingsDB.UpdateThreat)
 		self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", SettingsDB.UpdateThreat)
@@ -167,14 +175,14 @@ local function Shared(self, unit)
     end
 	
 	-- Raid marks
-	if db.icons_raid_mark == true then
+	if db_rf.icons_raid_mark == true then
 		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
 		self.RaidIcon:SetSize(SettingsDB.Scale(12), SettingsDB.Scale(12))
 		self.RaidIcon:SetPoint("CENTER", self, "TOP")
 	end
 	
 	-- Ready check icons
-	if db.icons_ready_check == true then
+	if db_rf.icons_ready_check == true then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
 		self.ReadyCheck:SetSize(SettingsDB.Scale(12), SettingsDB.Scale(12))
 		self.ReadyCheck:SetPoint("BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-1))
@@ -198,26 +206,26 @@ local function Shared(self, unit)
 	-- Debuff highlight
 	self.DebuffHighlight = self.Health:CreateTexture(nil, "OVERLAY")
 	self.DebuffHighlight:SetAllPoints(self.Health)
-	self.DebuffHighlight:SetTexture(SettingsCF["media"].highlight)
+	self.DebuffHighlight:SetTexture(SettingsCF.media.highlight)
 	self.DebuffHighlight:SetVertexColor(0, 0, 0, 0)
 	self.DebuffHighlight:SetBlendMode("ADD")
 	self.DebuffHighlightAlpha = 1
 	self.DebuffHighlightFilter = true
 	
 	-- Incoming heal text/bar
-	if db.plugins_healcomm == true then
+	if db_rf.plugins_healcomm == true then
 		local mhpb = CreateFrame("StatusBar", nil, self.Health)
 		mhpb:SetPoint("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		mhpb:SetPoint("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		mhpb:SetWidth(unit_width)		
-		mhpb:SetStatusBarTexture(SettingsCF["media"].texture)
+		mhpb:SetStatusBarTexture(SettingsCF.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		ohpb:SetPoint("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		ohpb:SetWidth(unit_width)
-		ohpb:SetStatusBarTexture(SettingsCF["media"].texture)
+		ohpb:SetStatusBarTexture(SettingsCF.media.texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.25)
 
 		self.HealPrediction = {
@@ -228,12 +236,12 @@ local function Shared(self, unit)
 	end
 	
 	-- Range alpha
-	if db.show_range == true and (not (self:GetAttribute("unitsuffix") == "target")) then
-		self.Range = {insideAlpha = 1, outsideAlpha = db.range_alpha}
+	if db_rf.show_range == true and (not (self:GetAttribute("unitsuffix") == "target")) then
+		self.Range = {insideAlpha = 1, outsideAlpha = db_rf.range_alpha}
 	end
 	
 	-- Smooth bars
-	if db.plugins_smooth_bar == true then
+	if db_uf.plugins_smooth_bar == true then
 		self.Health.Smooth = true
 		if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 			self.Power.Smooth = true
@@ -251,7 +259,7 @@ end
 oUF:RegisterStyle("ShestakDPS", Shared)
 oUF:Factory(function(self)
 	oUF:SetActiveStyle("ShestakDPS")
-	if db.show_party == true then
+	if db_rf.show_party == true then
 		-- Party
 		local party = self:SpawnHeader("oUF_PartyDPS", nil, "custom [@raid6,exists] hide;show",
 			"oUF-initialConfigFunction", [[
@@ -261,14 +269,14 @@ oUF:Factory(function(self)
 			]],
 			"initial-width", party_width,
 			"initial-height", party_height,
-			"showSolo", db.solo_mode,
-			"showPlayer", db.player_in_party,
+			"showSolo", db_rf.solo_mode,
+			"showPlayer", db_rf.player_in_party,
 			"showParty", true,
 			"showRaid", true,
 			"yOffset", SettingsDB.Scale(28),
 			"point", "BOTTOM"
 		)
-		party:SetPoint(unpack(SettingsCF["position"].unitframes.party_dps))
+		party:SetPoint(unpack(db_pf.party_dps))
 		
 		-- Party targets
 		local partytarget = self:SpawnHeader("oUF_PartyTargetDPS", nil, "custom [@raid6,exists] hide;show",
@@ -280,8 +288,8 @@ oUF:Factory(function(self)
 			]],
 			"initial-width", partytarget_width,
 			"initial-height", partytarget_height,
-			"showSolo", db.solo_mode,
-			"showPlayer", db.player_in_party,
+			"showSolo", db_rf.solo_mode,
+			"showPlayer", db_rf.player_in_party,
 			"showParty", true,
 			"showRaid", true,
 			"yOffset", SettingsDB.Scale(28),
@@ -300,8 +308,8 @@ oUF:Factory(function(self)
 			]],
 			"initial-width", partytarget_width,
 			"initial-height", partytarget_height,
-			"showSolo", db.solo_mode,
-			"showPlayer", db.player_in_party,
+			"showSolo", db_rf.solo_mode,
+			"showPlayer", db_rf.player_in_party,
 			"showParty", true,
 			"showRaid", true,
 			"xOffset", SettingsDB.Scale(7),
@@ -332,10 +340,10 @@ oUF:Factory(function(self)
 		partypetupdate:RegisterEvent("UNIT_EXITED_VEHICLE")
 	end
 	
-	if db.show_raid == true then
+	if db_rf.show_raid == true then
 		-- Raid
 		local raid = {}
-		for i = 1, db.raid_groups do 
+		for i = 1, db_rf.raid_groups do 
 			local raidgroup = self:SpawnHeader("oUF_RaidDPS"..i, nil, "custom [@raid6,exists] show;hide",
 				"oUF-initialConfigFunction", [[
 					local header = self:GetParent()
@@ -354,7 +362,7 @@ oUF:Factory(function(self)
 				"columnAnchorPoint", "TOP"
 			)
 			if i == 1 then
-				raidgroup:SetPoint(unpack(SettingsCF["position"].unitframes.raid_dps))
+				raidgroup:SetPoint(unpack(db_pf.raid_dps))
 			elseif i == 5 then
 				raidgroup:SetPoint("TOPLEFT", raid[1], "TOPRIGHT", SettingsDB.Scale(7), 0)
 			else

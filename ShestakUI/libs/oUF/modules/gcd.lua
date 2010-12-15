@@ -1,4 +1,4 @@
-if SettingsCF["unitframe"].plugins_gcd ~= true then return end
+if SettingsCF.unitframe.plugins_gcd ~= true then return end
 local _, ns = ...
 local oUF = ns.oUF or oUF
 
