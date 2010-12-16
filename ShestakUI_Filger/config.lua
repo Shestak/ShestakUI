@@ -306,6 +306,8 @@ Filger_Spells = {
 			{ spellID = 23989, size = 30, filter = "CD" },
 			-- Chimera Shot
 			{ spellID = 53209, size = 30, filter = "CD" },
+			-- Spirit Mend
+			{ spellID = 90361, size = 30, filter = "CD" },
 		},
 	},
 	["MAGE"] = {

@@ -401,7 +401,8 @@ local function CheckRole(self, event, unit)
 		local base, posBuff, negBuff = UnitAttackPower("player");
 		local playerap = base + posBuff + negBuff;
 
-		if (((playerap > playerint) or (playeragi > playerint)) and not (SettingsDB.class == "SHAMAN" and tree ~= 1 and tree ~= 3) and not (UnitBuff("player", GetSpellInfo(24858)) or UnitBuff("player", GetSpellInfo(65139)))) or SettingsDB.class == "ROGUE" or SettingsDB.class == "HUNTER" then
+		if (((playerap > playerint) or (playeragi > playerint)) and not (SettingsDB.class == "SHAMAN" and tree ~= 1 and tree ~= 3) and not (UnitBuff("player", GetSpellInfo(24858)) 
+		or UnitBuff("player", GetSpellInfo(65139)))) or SettingsDB.class == "ROGUE" or SettingsDB.class == "HUNTER" or (SettingsDB.class == "SHAMAN" and tree == 2) then
 			SettingsDB.Role = "Melee"
 		else
 			SettingsDB.Role = "Caster"

@@ -153,36 +153,22 @@ MarkerFrame:SetPoint("TOPLEFT", WorldMarkerButton, "BOTTOMRIGHT", SettingsDB.Sca
 MarkerFrame:Hide()
 
 -- Setup Secure Buttons
-CreateMarkerButton("BlueFlare", WORLD_MARKER1, "TOPLEFT", MarkerFrame, "TOPLEFT")
-BlueFlare:SetAttribute("macrotext", [[
-/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton
-/click DropDownList1Button1
-]])
-CreateMarkerButton("GreenFlare", WORLD_MARKER2, "TOPLEFT", BlueFlare, "BOTTOMLEFT")
-GreenFlare:SetAttribute("macrotext", [[
-/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton
-/click DropDownList1Button2
-]])
-CreateMarkerButton("PurpleFlare", WORLD_MARKER3, "TOPLEFT", GreenFlare, "BOTTOMLEFT")
-PurpleFlare:SetAttribute("macrotext", [[
-/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton
-/click DropDownList1Button3
-]])
-CreateMarkerButton("RedFlare", WORLD_MARKER4, "TOPLEFT", PurpleFlare, "BOTTOMLEFT")
-RedFlare:SetAttribute("macrotext", [[
-/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton
-/click DropDownList1Button4
-]])
-CreateMarkerButton("WhiteFlare", WORLD_MARKER5, "TOPLEFT", RedFlare, "BOTTOMLEFT")
-WhiteFlare:SetAttribute("macrotext", [[
-/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton
-/click DropDownList1Button5
-]])
-CreateMarkerButton("ClearFlare", REMOVE_WORLD_MARKERS, "TOPLEFT", WhiteFlare, "BOTTOMLEFT")
-ClearFlare:SetAttribute("macrotext", [[
-/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton
-/click DropDownList1Button6
-]])
+MarkerFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+MarkerFrame:SetScript("OnEvent", function(self, event)
+	CreateMarkerButton("BlueFlare", WORLD_MARKER1, "TOPLEFT", MarkerFrame, "TOPLEFT")
+	BlueFlare:SetAttribute("macrotext", "/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton\n/click DropDownList1Button1")
+	CreateMarkerButton("GreenFlare", WORLD_MARKER2, "TOPLEFT", BlueFlare, "BOTTOMLEFT")
+	GreenFlare:SetAttribute("macrotext", "/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton\n/click DropDownList1Button2")
+	CreateMarkerButton("PurpleFlare", WORLD_MARKER3, "TOPLEFT", GreenFlare, "BOTTOMLEFT")
+	PurpleFlare:SetAttribute("macrotext", "/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton\n/click DropDownList1Button3")
+	CreateMarkerButton("RedFlare", WORLD_MARKER4, "TOPLEFT", PurpleFlare, "BOTTOMLEFT")
+	RedFlare:SetAttribute("macrotext", "/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton\n/click DropDownList1Button4")
+	CreateMarkerButton("WhiteFlare", WORLD_MARKER5, "TOPLEFT", RedFlare, "BOTTOMLEFT")
+	WhiteFlare:SetAttribute("macrotext", "/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton\n/click DropDownList1Button5")
+	CreateMarkerButton("ClearFlare", REMOVE_WORLD_MARKERS, "TOPLEFT", WhiteFlare, "BOTTOMLEFT")
+	ClearFlare:SetAttribute("macrotext", "/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton\n/click DropDownList1Button6")
+	self:UnregisterAllEvents()
+end)
 MarkerFrame:SetHeight(MarkerFrame:GetHeight() + SettingsDB.Scale(4))
 
 local function ToggleRaidUtil(self, event)

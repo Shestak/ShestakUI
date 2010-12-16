@@ -161,9 +161,9 @@ if GetLocale() == "ruRU" then
 	L_GUI_NAMEPLATE_CLASS_ICON = "Иконки классов"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Отображать сокращенные имена"
 	L_GUI_NAMEPLATE_OVERLAP = "Наложение индикаторов друг на друга"
-	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"
-	L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"
-	L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"
+	L_GUI_NAMEPLATE_GOOD_COLOR = "Цвет наименьшей угрозы, зависит от вашей роли"
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Цвет получения/сброса угрозы, зависит от вашей роли"
+	L_GUI_NAMEPLATE_BAD_COLOR = "Цвет наивысшей угрозы, зависит от вашей роли"
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Включить панели команд"
@@ -196,8 +196,8 @@ if GetLocale() == "ruRU" then
 	
 	-- Unit Frames options
 	L_GUI_UF_ENABLE = "Включить рамки портретов"
-	L_GUI_UF_OWN_COLOR = "Установить свой цвет для полос рамок"
-	L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"
+	L_GUI_UF_OWN_COLOR = "Использовать свой цвет для полосок здоровья"
+	L_GUI_UF_UF_COLOR = "Цвет полосок здоровья (если включена соответствующая опция)"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Окрашивать полосу здоровья врага по враждебности"
 	L_GUI_UF_TOTAL_VALUE = "Отображать общее здоровье/энергию"
 	L_GUI_UF_COLOR_VALUE = "Цветное значение здоровья/энергии"
