@@ -589,8 +589,9 @@ function CreateUIConfig()
 				local colorbutton = CreateFrame("Button", colorbuttonname, frame)
 				colorbutton:SetHeight(20)
 				colorbutton:SetWidth(50)
-				SettingsDB.CreateTemplate(colorbutton)
+				SettingsDB.SkinFadedPanel(colorbutton)
 				colorbutton:SetBackdropBorderColor(unpack(value))
+				colorbutton:SetBackdropColor(value[1], value[2], value[3], 0.3)
 				colorbutton:SetPoint("LEFT", label, "RIGHT", 2, 0)
 				local colortext = colorbutton:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
 				colortext:SetText(COLOR)
@@ -638,6 +639,7 @@ function CreateUIConfig()
 							value = { newR, newG, newB, newA }
 							SetValue(group, option, (value)) 
 							self:SetBackdropBorderColor(newR, newG, newB, newA)
+							self:SetBackdropColor(newR, newG, newB, 0.3)
 							fired = 0
 						end
 					end
