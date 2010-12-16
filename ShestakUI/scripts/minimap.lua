@@ -399,7 +399,7 @@ if SettingsCF["general"].minimap_icon == true and IsAddOnLoaded("ShestakUI_Confi
 			end
 		end},
 		{text = L_GUI_MINIMAP_ICON_CL, notCheckable = 1, func = function() CombatLogClearEntries() end},
-		{text = L_GUI_MINIMAP_ICON_DBM, notCheckable = 1, func = function() DBM:DemoMode() end},
+		{text = L_GUI_MINIMAP_ICON_DBM, notCheckable = 1, func = function() if IsAddOnLoaded("DBM-Core") then DBM:DemoMode() end end},
 		{text = L_GUI_MINIMAP_ICON_HEAL, notCheckable = 1, func = function()
 			DisableAddOn("ShestakUI_DPS")
 			EnableAddOn("ShestakUI_Heal")
