@@ -161,9 +161,9 @@ if GetLocale() == "koKR" then
 	L_GUI_NAMEPLATE_CLASS_ICON = "Icons by class in pvp"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Display abbreviated names"
 	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap"
-	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"  -- Needs review
-	L_GUI_NAMEPLATE_NEAR_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
-	L_GUI_NAMEPLATE_BAD_COLOR = "Losing/Gaining threat color"  -- Needs review
+	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"
+	L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Enable action bars"

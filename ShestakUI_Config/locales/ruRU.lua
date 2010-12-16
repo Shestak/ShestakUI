@@ -162,8 +162,8 @@ if GetLocale() == "ruRU" then
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Отображать сокращенные имена"
 	L_GUI_NAMEPLATE_OVERLAP = "Наложение индикаторов друг на друга"
 	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"
-	L_GUI_NAMEPLATE_NEAR_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"
-	L_GUI_NAMEPLATE_BAD_COLOR = "Losing/Gaining threat color"
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"
+	L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Включить панели команд"

@@ -163,8 +163,8 @@ if GetLocale() == "zhCN" then
 	L_GUI_NAMEPLATE_NAME_ABBREV = "显示名字缩写"
 	L_GUI_NAMEPLATE_OVERLAP = "允许单位名条重叠"
 	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"  -- Needs review
-	L_GUI_NAMEPLATE_NEAR_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
-	L_GUI_NAMEPLATE_BAD_COLOR = "Losing/Gaining threat color"  -- Needs review
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"  -- Needs review
+	L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
 
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "开启动作条"

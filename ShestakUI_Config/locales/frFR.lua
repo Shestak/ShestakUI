@@ -162,8 +162,8 @@ if GetLocale() == "frFR" then
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Afficher les noms abrégés"
 	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap"  -- Needs review
 	L_GUI_NAMEPLATE_GOOD_COLOR = "Bonne couleur de menace, dépend de si vous êtes un tank ou dps/heal"
-	L_GUI_NAMEPLATE_NEAR_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
-	L_GUI_NAMEPLATE_BAD_COLOR = "Perte/Gain de couleur de menace"
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
+	L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Activer les barres d'action"

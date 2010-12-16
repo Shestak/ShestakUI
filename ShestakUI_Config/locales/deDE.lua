@@ -162,8 +162,8 @@ if GetLocale() == "deDE" then
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Namen abgekürzt anzeigen"
 	L_GUI_NAMEPLATE_OVERLAP = "Überlappende Namensplaketten erlauben"
 	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"  -- Needs review
-	L_GUI_NAMEPLATE_NEAR_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
-	L_GUI_NAMEPLATE_BAD_COLOR = "Losing/Gaining threat color"  -- Needs review
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"  -- Needs review
+	L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
