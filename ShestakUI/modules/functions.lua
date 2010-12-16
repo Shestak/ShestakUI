@@ -552,13 +552,13 @@ do
 						if db_uf.color_value == true then
 							health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5-|r |cff559655%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						else
-							health.value:SetFormattedText("|cffffffff%s|r |cffffffff-|r |cffffffff%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
+							health.value:SetFormattedText("|cffffffff%s - %s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						end
 					else
 						if db_uf.color_value == true then
 							health.value:SetFormattedText("|cffAF5050%d|r |cffD7BEA5-|r |cff%02x%02x%02x%d%%|r", min, r * 255, g * 255, b * 255, floor(min / max * 100))
 						else
-							health.value:SetFormattedText("|cffffffff%d|r |cffffffff-|r |cffffffff%d%%|r", min, floor(min / max * 100))
+							health.value:SetFormattedText("|cffffffff%d - %d%%|r", min, floor(min / max * 100))
 						end
 					end
 				elseif unit == "target" then
@@ -566,13 +566,13 @@ do
 						if db_uf.color_value == true then
 							health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5-|r |cff559655%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						else
-							health.value:SetFormattedText("|cffffffff%s|r |cffffffff-|r |cffffffff%s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
+							health.value:SetFormattedText("|cffffffff%s - %s|r", SettingsDB.ShortValue(min), SettingsDB.ShortValue(max))
 						end
 					else
 						if db_uf.color_value == true then
 							health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r |cffD7BEA5-|r |cffAF5050%s|r", r * 255, g * 255, b * 255, floor(min / max * 100), SettingsDB.ShortValue(min))
 						else
-							health.value:SetFormattedText("|cffffffff%d%%|r |cffffffff-|r |cffffffff%s|r", floor(min / max * 100), SettingsDB.ShortValue(min))
+							health.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), SettingsDB.ShortValue(min))
 						end
 					end
 				else
@@ -601,6 +601,7 @@ do
 	end
 
 	SettingsDB.PostUpdateRaidHealth = function(health, unit, min, max)
+		local self = health:GetParent()
 		if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
 			health:SetValue(0)
 			if not UnitIsConnected(unit) then
@@ -614,17 +615,25 @@ do
 			if min ~= max then
 				local r, g, b
 				r, g, b = oUF.ColorGradient(min/max, 0.69, 0.31, 0.31, 0.65, 0.63, 0.35, 0.33, 0.59, 0.33)
-				if db_uf.color_value == true then
-					if db_rf.deficit_health == true then
-						health.value:SetText("|cffFFFFFF".."-"..SettingsDB.ShortValue(max-min))
+				if (self:GetParent():GetName():match"oUF_PartyDPS") then
+					if db_uf.color_value == true then
+						health.value:SetFormattedText("|cffAF5050%s|r |cffD7BEA5-|r |cff%02x%02x%02x%d%%|r", SettingsDB.ShortValue(min), r * 255, g * 255, b * 255, floor(min / max * 100))
 					else
-						health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r", r * 255, g * 255, b * 255, floor(min / max * 100))
+						health.value:SetFormattedText("|cffffffff%s - %d%%|r", SettingsDB.ShortValue(min), floor(min / max * 100))
 					end
 				else
-					if db_rf.deficit_health == true then
-						health.value:SetText("|cffFFFFFF".."-"..SettingsDB.ShortValue(max-min))
+					if db_uf.color_value == true then
+						if db_rf.deficit_health == true then
+							health.value:SetText("|cffffffff".."-"..SettingsDB.ShortValue(max-min))
+						else
+							health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r", r * 255, g * 255, b * 255, floor(min / max * 100))
+						end
 					else
-						health.value:SetFormattedText("|cffffffff%d%%|r", floor(min / max * 100))
+						if db_rf.deficit_health == true then
+							health.value:SetText("|cffffffff".."-"..SettingsDB.ShortValue(max-min))
+						else
+							health.value:SetFormattedText("|cffffffff%d%%|r", floor(min / max * 100))
+						end
 					end
 				end
 			else
@@ -714,6 +723,12 @@ do
 						else
 							power.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), SettingsDB.ShortValue(max - (max - min)))
 						end
+					elseif (self:GetParent():GetName():match"oUF_PartyDPS") then
+						if db_uf.color_value == true then
+							power.value:SetFormattedText("%s |cffD7BEA5-|r %d%%", SettingsDB.ShortValue(max - (max - min)), floor(min / max * 100))
+						else
+							power.value:SetFormattedText("|cffffffff%s - %d%%|r", SettingsDB.ShortValue(max - (max - min)), floor(min / max * 100))
+						end
 					else
 						if db_uf.show_total_value == true then
 							if db_uf.color_value == true then
@@ -737,7 +752,7 @@ do
 					end
 				end
 			else
-				if unit == "pet" or unit == "target" or (unit and unit:find("arena%d")) then
+				if unit == "pet" or unit == "target" or (unit and unit:find("arena%d")) or (self:GetParent():GetName():match"oUF_PartyDPS") then
 					if db_uf.color_value == true then
 						power.value:SetText(SettingsDB.ShortValue(min))
 					else

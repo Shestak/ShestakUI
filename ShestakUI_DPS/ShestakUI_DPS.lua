@@ -130,7 +130,7 @@ local function Shared(self, unit)
 	-- Names
 	self.Info = SettingsDB.SetFontString(self.Health, db_ff.unit_frames_font, db_ff.unit_frames_font_size, db_ff.unit_frames_font_style)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
-		self.Info:SetPoint("CENTER", self.Health, "CENTER", SettingsDB.Scale(1), 0)
+		self.Info:SetPoint("CENTER", self.Health, "CENTER", SettingsDB.Scale(2), 0)
 	else
 		self.Info:SetPoint("LEFT", self.Health, "LEFT", SettingsDB.Scale(3), 0)
 		self.Info:SetJustifyH("LEFT")
