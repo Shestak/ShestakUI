@@ -191,9 +191,9 @@ local function Local(o)
 	if o == "UIConfignameplateclass_icons" then o = L_GUI_NAMEPLATE_CLASS_ICON end
 	if o == "UIConfignameplatename_abbrev" then o = L_GUI_NAMEPLATE_NAME_ABBREV end
 	if o == "UIConfignameplateoverlap" then o = L_GUI_NAMEPLATE_OVERLAP end
-	if o == "UIConfignameplategood_color" then o = "!!!!!!!!!!!!!" end
-	if o == "UIConfignameplatenear_color" then o = "!!!!!!!!!!!!!" end
-	if o == "UIConfignameplatebad_color" then o = "!!!!!!!!!!!!!" end
+	if o == "UIConfignameplategood_color" then o = L_GUI_NAMEPLATE_GOOD_COLOR end
+	if o == "UIConfignameplatenear_color" then o = L_GUI_NAMEPLATE_NEAR_COLOR end
+	if o == "UIConfignameplatebad_color" then o = L_GUI_NAMEPLATE_BAD_COLOR end
 	
 	-- ActionBar options
 	if o == "UIConfigactionbar" then o = ACTIONBARS_LABEL end
@@ -226,20 +226,20 @@ local function Local(o)
 	if o == "UIConfigauraplayer_aura_only" then o = L_GUI_AURA_PLAYER_AURA_ONLY end
 	if o == "UIConfigauradebuff_color_type" then o = L_GUI_AURA_DEBUFF_COLOR_TYPE end
 	
-	-- Unit frame options
+	-- Unit Frames options
 	if o == "UIConfigunitframe" then o = UNITFRAME_LABEL end
 	if o == "UIConfigunitframeenable" then o = L_GUI_UF_ENABLE end
 	if o == "UIConfigunitframeown_color" then o = L_GUI_UF_OWN_COLOR end
-	if o == "UIConfigunitframeuf_color" then o = "!!!!!!!!!!!!!" end
+	if o == "UIConfigunitframeuf_color" then o = L_GUI_UF_UF_COLOR end
 	if o == "UIConfigunitframeenemy_health_color" then o = L_GUI_UF_ENEMY_HEALTH_COLOR end
 	if o == "UIConfigunitframeshow_total_value" then o = L_GUI_UF_TOTAL_VALUE end
 	if o == "UIConfigunitframecolor_value" then o = L_GUI_UF_COLOR_VALUE end
 	if o == "UIConfigunitframeunit_castbar" then o = L_GUI_UF_UNIT_CASTBAR end
 	if o == "UIConfigunitframecastbar_icon" then o = L_GUI_UF_CASTBAR_ICON end
 	if o == "UIConfigunitframecastbar_latency" then o = L_GUI_UF_CASTBAR_LATENCY end
-	if o == "UIConfigunitframeshow_pet" then o = "!!!!!!!!!!!!!" end
-	if o == "UIConfigunitframeshow_focus" then o = "!!!!!!!!!!!!!" end
-	if o == "UIConfigunitframeshow_target_target" then o = "!!!!!!!!!!!!!" end
+	if o == "UIConfigunitframeshow_pet" then o = L_GUI_UF_SHOW_PET end
+	if o == "UIConfigunitframeshow_focus" then o = L_GUI_UF_SHOW_FOCUS end
+	if o == "UIConfigunitframeshow_target_target" then o = L_GUI_UF_SHOW_TOT end
 	if o == "UIConfigunitframeshow_boss" then o = L_GUI_UF_SHOW_BOSS end
 	if o == "UIConfigunitframeboss_on_right" then o = L_GUI_UF_BOSS_RIGHT end
 	if o == "UIConfigunitframeshow_arena" then o = L_GUI_UF_SHOW_ARENA end
@@ -267,7 +267,7 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_talents" then o = L_GUI_UF_PLUGINS_TALENTS end
 	if o == "UIConfigunitframeplugins_combat_feedback" then o = L_GUI_UF_PLUGINS_COMBAT_FEEDBACK end
 	
-	-- Raid frame options
+	-- Raid Frames options
 	if o == "UIConfigraidframe" then o = RAID_FRAMES_LABEL end
 	if o == "UIConfigraidframeaggro_border" then o = L_GUI_UF_AGGRO_BORDER end
 	if o == "UIConfigraidframedeficit_health" then o = L_GUI_UF_DEFICIT_HEALTH end

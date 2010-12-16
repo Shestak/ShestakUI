@@ -157,10 +157,13 @@ if GetLocale() == "deDE" then
 	L_GUI_NAMEPLATE_HEIGHT = "Höhe der Namensplakette"
 	L_GUI_NAMEPLATE_WIDTH = "Breite der Namensplakette"
 	L_GUI_NAMEPLATE_CASTBAR_NAME = "Zeige den Namen in der Zauberleiste"
-	L_GUI_NAMEPLATE_THREAT = "Falls Tank und sichere Aggro = grün, keine = rot"
+	L_GUI_NAMEPLATE_THREAT = "Aktiviere Bedrohungsanzeige, ändert sich automatisch je nach deiner Rolle"
 	L_GUI_NAMEPLATE_CLASS_ICON = "Zeige Klassensymbole an (PVP)"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Namen abgekürzt anzeigen"
 	L_GUI_NAMEPLATE_OVERLAP = "Überlappende Namensplaketten erlauben"
+	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"  -- Needs review
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
+	L_GUI_NAMEPLATE_BAD_COLOR = "Losing/Gaining threat color"  -- Needs review
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
@@ -191,41 +194,27 @@ if GetLocale() == "deDE" then
 	L_GUI_AURA_PLAYER_AURA_ONLY = "Nur eigenen Debuffs bei dem Zielfenster anzeigen"
 	L_GUI_AURA_DEBUFF_COLOR_TYPE = "Debuffs nach Art einfärben"
 	
-	-- Unit frame options
+	-- Unit Frames options
 	L_GUI_UF_ENABLE = "Unitframes aktivieren"
-	L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"
 	L_GUI_UF_OWN_COLOR = "Farbe für die Lebensleiste festlegen"
+	L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"  -- Needs review
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Lebensleiste eines gegnerischen Ziels ist rot"
 	L_GUI_UF_TOTAL_VALUE = "Zeige Infotext auf Spieler und Ziel mit XXX/Gesamt"
-	L_GUI_UF_DEFICIT_HEALTH = "Fehlendes Leben im Raid"
 	L_GUI_UF_COLOR_VALUE = "Lebens/Mana Werte einfärben"
 	L_GUI_UF_UNIT_CASTBAR = "Zeige Zauberleisten"
 	L_GUI_UF_CASTBAR_ICON = "Zeige Symbole der Zauberleisten an"
 	L_GUI_UF_CASTBAR_LATENCY = "Latenz in Zauberleiste anzeigen"
+	L_GUI_UF_SHOW_PET = "Show pet frame"  -- Needs review
+	L_GUI_UF_SHOW_FOCUS = "Show focus frame"  -- Needs review
+	L_GUI_UF_SHOW_TOT = "Show target of target frame"  -- Needs review
 	L_GUI_UF_SHOW_BOSS = "Zeige eigenes Fenster für Bosse an"
 	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
 	L_GUI_UF_SHOW_ARENA = "Zeige Einheitenfenster in der Arena"
 	L_GUI_UF_ARENA_RIGHT = "Arenafenster auf der rechten Seite"
-	L_GUI_UF_SHOW_PARTY = "Zeige Gruppenfenster"
-	L_GUI_UF_SHOW_RAID = "Zeige Raidfenster"
-	L_GUI_UF_VERTICAL_HEALTH = "Vertikale Orientierung für Lebensbalken"
-	L_GUI_UF_ALPHA_HEALTH = "Transparenz der Lebensbalken wenn 100% Leben"
-	L_GUI_UF_SHOW_RANGE = "Raidframes durchsichtig abhängig von der Entfernung"
-	L_GUI_UF_RANGE_ALPHA = "Einheitenfenster zu diesem Maß ausblenden wenn außer Reichweite"
-	L_GUI_UF_SOLO_MODE = "Spielerfenster immer Anzeigen"
-	L_GUI_UF_PLAYER_PARTY = "Spielerfenster in der Gruppe anzeigen"
-	L_GUI_UF_SHOW_TANK = "Zeige Raid Tanks an"
-	L_GUI_UF_SHOW_TANK_TT = "Zeige Ziel des Raid Tank Ziels (Ziel des Ziels)"
-	L_GUI_UF_RAID_GROUP = "Anzahl der Gruppen im Raid(nur für ShestakUI_Heal)"
-	L_GUI_UF_RAID_VERTICAL_GROUP = "Vertikale Raidgruppen(nur für ShestakUI_Heal)"
 	L_GUI_UF_ICONS_PVP = "Zeige PVP Text (keine Symbole) bei Mouseover (Spieler+Ziel)"
-	L_GUI_UF_ICONS_LEADER = "Anführer/Assistent/Plündermeister-Symbole an den Fenstern anzeigen"
 	L_GUI_UF_ICONS_COMBAT = "Kampfsymbol"
 	L_GUI_UF_ICONS_RESTING = "Ausruhensymbol für low-lvl Chars"
-	L_GUI_UF_ICONS_LFD_ROLE = "Gruppenanführersymbol an den Fenstern"
-	L_GUI_UF_ICONS_RAID_MARK = "Raidsymbole"
 	L_GUI_UF_ICONS_COMBO_POINT = "Symbole für Schurke|Druide Kombopunkte"
-	L_GUI_UF_ICONS_READY_CHECK = "Bereitschaftschecksymbole"
 	L_GUI_UF_PORTRAIT_ENABLE = "Aktiviere Spieler/Ziel Portraits"
 	L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Aktiviere Rahmen in Klassenfarbe"
 	L_GUI_UF_PORTRAIT_HEIGHT = "Portraithöhe"
@@ -244,6 +233,26 @@ if GetLocale() == "deDE" then
 	L_GUI_UF_PLUGINS_SMOOTH_BAR = "Weichgezeichnete Leisten"
 	L_GUI_UF_PLUGINS_TALENTS = "Zeige gegnerische Talente"
 	L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"
+	
+	-- Raid Frames options
+	L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"
+	L_GUI_UF_DEFICIT_HEALTH = "Fehlendes Leben im Raid"
+	L_GUI_UF_SHOW_PARTY = "Zeige Gruppenfenster"
+	L_GUI_UF_SHOW_RAID = "Zeige Raidfenster"
+	L_GUI_UF_VERTICAL_HEALTH = "Vertikale Orientierung für Lebensbalken"
+	L_GUI_UF_ALPHA_HEALTH = "Transparenz der Lebensbalken wenn 100% Leben"
+	L_GUI_UF_SHOW_RANGE = "Raidframes durchsichtig abhängig von der Entfernung"
+	L_GUI_UF_RANGE_ALPHA = "Einheitenfenster zu diesem Maß ausblenden wenn außer Reichweite"
+	L_GUI_UF_SOLO_MODE = "Spielerfenster immer Anzeigen"
+	L_GUI_UF_PLAYER_PARTY = "Spielerfenster in der Gruppe anzeigen"
+	L_GUI_UF_SHOW_TANK = "Zeige Raid Tanks an"
+	L_GUI_UF_SHOW_TANK_TT = "Zeige Ziel des Raid Tank Ziels (Ziel des Ziels)"
+	L_GUI_UF_RAID_GROUP = "Anzahl der Gruppen im Raid(nur für ShestakUI_Heal)"
+	L_GUI_UF_RAID_VERTICAL_GROUP = "Vertikale Raidgruppen(nur für ShestakUI_Heal)"
+	L_GUI_UF_ICONS_LEADER = "Anführer/Assistent/Plündermeister-Symbole an den Fenstern anzeigen"
+	L_GUI_UF_ICONS_LFD_ROLE = "Gruppenanführersymbol an den Fenstern"
+	L_GUI_UF_ICONS_RAID_MARK = "Raidsymbole"
+	L_GUI_UF_ICONS_READY_CHECK = "Bereitschaftschecksymbole"
 	L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff highlight texture + icon"  -- Needs review
 	L_GUI_UF_PLUGINS_AURA_WATCH = "*RAID* Buffüberwachung"
 	L_GUI_UF_PLUGINS_HEALCOMM = "Leiste für Eingehende Heilung"

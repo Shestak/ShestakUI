@@ -157,10 +157,13 @@ if GetLocale() == "esES" then
 	L_GUI_NAMEPLATE_HEIGHT = "Altura de la placa de nombre"
 	L_GUI_NAMEPLATE_WIDTH = "Anchura de la placa de nombre"
 	L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostrar nombre del hechizo en la barra de lanzamiento"
-	L_GUI_NAMEPLATE_THREAT = "Si el tanque tiene aggro alto = verde, bajo = rojo"
+	L_GUI_NAMEPLATE_THREAT = "Activar visor de amenaza, cambia automáticamente según tu rol"
 	L_GUI_NAMEPLATE_CLASS_ICON = "Iconos de clase en JcJ"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Mostrar los nombres abreviados"
 	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap"  -- Needs review
+	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"  -- Needs review
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
+	L_GUI_NAMEPLATE_BAD_COLOR = "Losing/Gaining threat color"  -- Needs review
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Activar barras de acción"
@@ -191,41 +194,27 @@ if GetLocale() == "esES" then
 	L_GUI_AURA_PLAYER_AURA_ONLY = "Solo tus desventajas en el marco del objetivo"
 	L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color de las desventajas por tipo"
 	
-	-- Unit frame options
+	-- Unit Frames options
 	L_GUI_UF_ENABLE = "Activar marcos de unidades"
-	L_GUI_UF_AGGRO_BORDER = "Borde de aggro"
 	L_GUI_UF_OWN_COLOR = "Color para las barras de vida"
+	L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"  -- Needs review
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Barra de vida del enemigo objetivo en rojo"
 	L_GUI_UF_TOTAL_VALUE = "Mostrar vida restante en jugador y objetivo con XXXX/Total"
-	L_GUI_UF_DEFICIT_HEALTH = "Déficit de vida de la Banda"
 	L_GUI_UF_COLOR_VALUE = "Colorear valor de Vida/Maná"
 	L_GUI_UF_UNIT_CASTBAR = "Mostrar barras de lanzamiento"
 	L_GUI_UF_CASTBAR_ICON = "Mostrar iconos en las barras de lanzamiento"
 	L_GUI_UF_CASTBAR_LATENCY = "Latencia en la barra de lanzamiento"
+	L_GUI_UF_SHOW_PET = "Show pet frame"  -- Needs review
+	L_GUI_UF_SHOW_FOCUS = "Show focus frame"  -- Needs review
+	L_GUI_UF_SHOW_TOT = "Show target of target frame"  -- Needs review
 	L_GUI_UF_SHOW_BOSS = "Mostrar marco del jefe"
 	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
 	L_GUI_UF_SHOW_ARENA = "Mostrar marcos de arena"
 	L_GUI_UF_ARENA_RIGHT = "Marcos de arena en la derecha"
-	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review
-	L_GUI_UF_SHOW_RAID = "Mostrar marcos de banda"
-	L_GUI_UF_VERTICAL_HEALTH = "Orientación vertical de la vida"
-	L_GUI_UF_ALPHA_HEALTH = "Opacidad de las barras de vida cuando están al 100%"
-	L_GUI_UF_SHOW_RANGE = "Mostrar rango de opacidad para los marcos de banda"
-	L_GUI_UF_RANGE_ALPHA = "Opacidad de los marcos de unidades cuando están fuera de rango"
-	L_GUI_UF_SOLO_MODE = "Mostrar marco del jugador siempre"
-	L_GUI_UF_PLAYER_PARTY = "Mostrar marco del jugador en grupo"
-	L_GUI_UF_SHOW_TANK = "Mostrar tanques de la banda"
-	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
-	L_GUI_UF_RAID_GROUP = "Número de grupos en la banda (Sólo para ShestakUI_Heal)"
-	L_GUI_UF_RAID_VERTICAL_GROUP = "Grupos de la banda en vertical (Sólo para ShestakUI_Heal)"
 	L_GUI_UF_ICONS_PVP = "Texto JcJ (iconos no) al pasar el ratón sobre los marcos del jugador y objetivo"
-	L_GUI_UF_ICONS_LEADER = "Iconos de líder, ayudantes y maestro despojador en los marcos"
 	L_GUI_UF_ICONS_COMBAT = "Icono de combate"
 	L_GUI_UF_ICONS_RESTING = "Icono de descansado para pjs con nivel bajo"
-	L_GUI_UF_ICONS_LFD_ROLE = "Iconos de rol en el grupo en los marcos"
-	L_GUI_UF_ICONS_RAID_MARK = "Marcas de banda"
 	L_GUI_UF_ICONS_COMBO_POINT = "Iconos de puntos de combo de Pícaros|Druidas"
-	L_GUI_UF_ICONS_READY_CHECK = "Iconos de comprobación"
 	L_GUI_UF_PORTRAIT_ENABLE = "Activar retratos del jugador/objetivo"
 	L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Borde de color de clase para los retratos"
 	L_GUI_UF_PORTRAIT_HEIGHT = "Altura del retrato"
@@ -244,6 +233,26 @@ if GetLocale() == "esES" then
 	L_GUI_UF_PLUGINS_SMOOTH_BAR = "Activar barra de suavizado"
 	L_GUI_UF_PLUGINS_TALENTS = "Mostrar configuración de los talentos del enemigo"
 	L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texto de combate en el marco del jugador/objetivo"
+	
+	-- Raid Frames options
+	L_GUI_UF_AGGRO_BORDER = "Borde de aggro"
+	L_GUI_UF_DEFICIT_HEALTH = "Déficit de vida de la Banda"
+	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review
+	L_GUI_UF_SHOW_RAID = "Mostrar marcos de banda"
+	L_GUI_UF_VERTICAL_HEALTH = "Orientación vertical de la vida"
+	L_GUI_UF_ALPHA_HEALTH = "Opacidad de las barras de vida cuando están al 100%"
+	L_GUI_UF_SHOW_RANGE = "Mostrar rango de opacidad para los marcos de banda"
+	L_GUI_UF_RANGE_ALPHA = "Opacidad de los marcos de unidades cuando están fuera de rango"
+	L_GUI_UF_SOLO_MODE = "Mostrar marco del jugador siempre"
+	L_GUI_UF_PLAYER_PARTY = "Mostrar marco del jugador en grupo"
+	L_GUI_UF_SHOW_TANK = "Mostrar tanques de la banda"
+	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
+	L_GUI_UF_RAID_GROUP = "Número de grupos en la banda (Sólo para ShestakUI_Heal)"
+	L_GUI_UF_RAID_VERTICAL_GROUP = "Grupos de la banda en vertical (Sólo para ShestakUI_Heal)"
+	L_GUI_UF_ICONS_LEADER = "Iconos de líder, ayudantes y maestro despojador en los marcos"
+	L_GUI_UF_ICONS_LFD_ROLE = "Iconos de rol en el grupo en los marcos"
+	L_GUI_UF_ICONS_RAID_MARK = "Marcas de banda"
+	L_GUI_UF_ICONS_READY_CHECK = "Iconos de comprobación"
 	L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Remarcar textura de desventajas + icono"
 	L_GUI_UF_PLUGINS_AURA_WATCH = "*BANDA* Ver las auras"
 	L_GUI_UF_PLUGINS_HEALCOMM = "Barra de sanación entrante"

@@ -162,6 +162,9 @@ if GetLocale() == "zhCN" then
 	L_GUI_NAMEPLATE_CLASS_ICON = "在PVP情况下显示职业图示"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "显示名字缩写"
 	L_GUI_NAMEPLATE_OVERLAP = "允许单位名条重叠"
+	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"  -- Needs review
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
+	L_GUI_NAMEPLATE_BAD_COLOR = "Losing/Gaining threat color"  -- Needs review
 
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "开启动作条"
@@ -192,41 +195,27 @@ if GetLocale() == "zhCN" then
 	L_GUI_AURA_PLAYER_AURA_ONLY = "在目标框体只显示自己的DeBuffs"
 	L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs着色依照法术类型"
 	
-	-- Unit frame options
+	-- Unit Frames options
 	L_GUI_UF_ENABLE = "开启单位框架"
-	L_GUI_UF_AGGRO_BORDER = "仇恨边框"
 	L_GUI_UF_OWN_COLOR = "在预测治疗中显示你的治疗量"
+	L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"  -- Needs review
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "敌对目标生命条以红色着色"
 	L_GUI_UF_TOTAL_VALUE = "在玩家与目标框体显示详细的文字变化"
-	L_GUI_UF_DEFICIT_HEALTH = "团队生命值亏减模式"
 	L_GUI_UF_COLOR_VALUE = "生命值与魔法值以职业颜色着色"
 	L_GUI_UF_UNIT_CASTBAR = "显示施法条"
 	L_GUI_UF_CASTBAR_ICON = "显示施法条图标"
 	L_GUI_UF_CASTBAR_LATENCY = "施法条延迟"
+	L_GUI_UF_SHOW_PET = "Show pet frame"  -- Needs review
+	L_GUI_UF_SHOW_FOCUS = "Show focus frame"  -- Needs review
+	L_GUI_UF_SHOW_TOT = "Show target of target frame"  -- Needs review
 	L_GUI_UF_SHOW_BOSS = "显示boss框体"
 	L_GUI_UF_BOSS_RIGHT = "在右侧显示Boss框体"
 	L_GUI_UF_SHOW_ARENA = "显示竞技场框体"
 	L_GUI_UF_ARENA_RIGHT = "在右侧显示竞技场框体"
-	L_GUI_UF_SHOW_PARTY = "显示队伍框体"
-	L_GUI_UF_SHOW_RAID = "显示团队框体"
-	L_GUI_UF_VERTICAL_HEALTH = "垂直显示团队框体生命值"
-	L_GUI_UF_ALPHA_HEALTH = "100%生命值时透明显示生命栏"
-	L_GUI_UF_SHOW_RANGE = "在团队框体中距离透明度变化"
-	L_GUI_UF_RANGE_ALPHA = "淡化超出距离的单位框体"
-	L_GUI_UF_SOLO_MODE = "总是显示玩家框体"
-	L_GUI_UF_PLAYER_PARTY = "在小队中显示玩家框体"
-	L_GUI_UF_SHOW_TANK = "显示团队主坦克框体"
-	L_GUI_UF_SHOW_TANK_TT = "显示坦克目标的目标"
-	L_GUI_UF_RAID_GROUP = "显示小队数目(ShestakUI_Heal风格)"
-	L_GUI_UF_RAID_VERTICAL_GROUP = "竖向显示团队队伍(ShestakUI_Heal风格)"
 	L_GUI_UF_ICONS_PVP = "鼠标划过玩家/目标时显示PVP状态文字"
-	L_GUI_UF_ICONS_LEADER = "显示团队队长标识/助手标识/分配者标识"
 	L_GUI_UF_ICONS_COMBAT = "显示战斗标识"
 	L_GUI_UF_ICONS_RESTING = "显示休息标识"
-	L_GUI_UF_ICONS_LFD_ROLE = "显示队长标识"
-	L_GUI_UF_ICONS_RAID_MARK = "显示团队标记"
 	L_GUI_UF_ICONS_COMBO_POINT = "潜行者|德鲁伊连击点图示"
-	L_GUI_UF_ICONS_READY_CHECK = "确认就绪情况图示"
 	L_GUI_UF_PORTRAIT_ENABLE = "开启玩家/目标头像"
 	L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "开启职业颜色边框"
 	L_GUI_UF_PORTRAIT_HEIGHT = "头像高度"
@@ -245,6 +234,26 @@ if GetLocale() == "zhCN" then
 	L_GUI_UF_PLUGINS_SMOOTH_BAR = "平滑条"
 	L_GUI_UF_PLUGINS_TALENTS = "显示敌对玩家天赋"
 	L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "显示玩家/目标的文字战斗信息"
+	
+	-- Raid Frames options
+	L_GUI_UF_AGGRO_BORDER = "仇恨边框"
+	L_GUI_UF_DEFICIT_HEALTH = "团队生命值亏减模式"
+	L_GUI_UF_SHOW_PARTY = "显示队伍框体"
+	L_GUI_UF_SHOW_RAID = "显示团队框体"
+	L_GUI_UF_VERTICAL_HEALTH = "垂直显示团队框体生命值"
+	L_GUI_UF_ALPHA_HEALTH = "100%生命值时透明显示生命栏"
+	L_GUI_UF_SHOW_RANGE = "在团队框体中距离透明度变化"
+	L_GUI_UF_RANGE_ALPHA = "淡化超出距离的单位框体"
+	L_GUI_UF_SOLO_MODE = "总是显示玩家框体"
+	L_GUI_UF_PLAYER_PARTY = "在小队中显示玩家框体"
+	L_GUI_UF_SHOW_TANK = "显示团队主坦克框体"
+	L_GUI_UF_SHOW_TANK_TT = "显示坦克目标的目标"
+	L_GUI_UF_RAID_GROUP = "显示小队数目(ShestakUI_Heal风格)"
+	L_GUI_UF_RAID_VERTICAL_GROUP = "竖向显示团队队伍(ShestakUI_Heal风格)"
+	L_GUI_UF_ICONS_LEADER = "显示团队队长标识/助手标识/分配者标识"
+	L_GUI_UF_ICONS_LFD_ROLE = "显示队长标识"
+	L_GUI_UF_ICONS_RAID_MARK = "显示团队标记"
+	L_GUI_UF_ICONS_READY_CHECK = "确认就绪情况图示"
 	L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff与图示高亮"
 	L_GUI_UF_PLUGINS_AURA_WATCH = "团队法术监视"
 	L_GUI_UF_PLUGINS_HEALCOMM = "即将受到的治疗条"

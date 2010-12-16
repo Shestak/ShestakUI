@@ -351,7 +351,7 @@ SettingsCF["raidframe"] = {
 	-- Frames
 	["show_party"] = true,						-- Show party frames
 	["show_raid"] = true,						-- Show raid frames
-	["solo_mode"] = true,						-- Show player frame always
+	["solo_mode"] = false,						-- Show player frame always
 	["player_in_party"] = true,					-- Show player frame in party
 	["raid_tanks"] = true,						-- Show raid tanks
 	["raid_tanks_tt"] = false,					-- Show raid tanks target target

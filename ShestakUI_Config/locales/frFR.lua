@@ -157,10 +157,13 @@ if GetLocale() == "frFR" then
 	L_GUI_NAMEPLATE_HEIGHT = "Hauteur des barres de nom"
 	L_GUI_NAMEPLATE_WIDTH = "Largeur des barres de nom"
 	L_GUI_NAMEPLATE_CASTBAR_NAME = "Afficher le nom du sort"
-	L_GUI_NAMEPLATE_THREAT = "Afficher la menace (vert = aggro, rouge = OK)"
+	L_GUI_NAMEPLATE_THREAT = "Activer la gestion d'aggro, change automatiquement selon votre role"
 	L_GUI_NAMEPLATE_CLASS_ICON = "Icone de classe en JcJ"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Afficher les noms abrégés"
 	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap"  -- Needs review
+	L_GUI_NAMEPLATE_GOOD_COLOR = "Bonne couleur de menace, dépend de si vous êtes un tank ou dps/heal"
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
+	L_GUI_NAMEPLATE_BAD_COLOR = "Perte/Gain de couleur de menace"
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Activer les barres d'action"
@@ -191,41 +194,27 @@ if GetLocale() == "frFR" then
 	L_GUI_AURA_PLAYER_AURA_ONLY = "Afficher seulement ses propres debuffs sur la cible"
 	L_GUI_AURA_DEBUFF_COLOR_TYPE = "Coleur de debuff par type"
 	
-	-- Unit frame options
+	-- Unit Frames options
 	L_GUI_UF_ENABLE = "Activer les barres d'unité"
-	L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"
 	L_GUI_UF_OWN_COLOR = "Mettre la couleur de classe comme couleur pour la barre de vie"
+	L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"  -- Needs review
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Si activée, la couleur des cibles ennemi est rouge"
 	L_GUI_UF_TOTAL_VALUE = "Afficher la vie des joueur/cible avec XXXX/Total"
-	L_GUI_UF_DEFICIT_HEALTH = "Déficit en vie du raid"
 	L_GUI_UF_COLOR_VALUE = "Valeur de vie/mana colorée"
 	L_GUI_UF_UNIT_CASTBAR = "Voir la barre de cast"
 	L_GUI_UF_CASTBAR_ICON = "Voir l'icone de la barre de cast"
 	L_GUI_UF_CASTBAR_LATENCY = "Voir la latence de la barre de cast"
+	L_GUI_UF_SHOW_PET = "Show pet frame"  -- Needs review
+	L_GUI_UF_SHOW_FOCUS = "Show focus frame"  -- Needs review
+	L_GUI_UF_SHOW_TOT = "Show target of target frame"  -- Needs review
 	L_GUI_UF_SHOW_BOSS = "Afficher les barres du boss"
 	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
 	L_GUI_UF_SHOW_ARENA = "Afficher les barres d'arène"
-	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right"
-	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review
-	L_GUI_UF_SHOW_RAID = "Show raid frames"
-	L_GUI_UF_VERTICAL_HEALTH = "Orientation vertical des barres de vie"
-	L_GUI_UF_ALPHA_HEALTH = "Alpha of healthbars when 100%hp"
-	L_GUI_UF_SHOW_RANGE = "Changer l'opacité par rapport а la portée sur les barres de raid"
-	L_GUI_UF_RANGE_ALPHA = "Alpha de la barre quand hors de portée"
-	L_GUI_UF_SOLO_MODE = "Toujours afficher la barre du joueur"
-	L_GUI_UF_PLAYER_PARTY = "Afficher la barre du joueur en groupe"
-	L_GUI_UF_SHOW_TANK = "Afficher les tanks de raid"
-	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
-	L_GUI_UF_RAID_GROUP = "Nombre de groupe dans le raid (Seulement pour ShestakUI_Heal)"
-	L_GUI_UF_RAID_VERTICAL_GROUP = "Groupe de raid verticaux(Seulement pour ShestakUI_Heal)"
+	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right" -- Needs review
 	L_GUI_UF_ICONS_PVP = "Texte JcJ en Mouseover pour la barre du joueur et celle de la cible"
-	L_GUI_UF_ICONS_LEADER = "Icone du Chef de raid, icone de l'assistant, icone du maоtre du butin"
 	L_GUI_UF_ICONS_COMBAT = "Icone de combat"
 	L_GUI_UF_ICONS_RESTING = "Icone Resting pour les personnage de bas niveau"
-	L_GUI_UF_ICONS_LFD_ROLE = "Icone de chef de raid"
-	L_GUI_UF_ICONS_RAID_MARK = "Signe de raid"
 	L_GUI_UF_ICONS_COMBO_POINT = "Affichage des points de combo pour les Voleurs/druides"
-	L_GUI_UF_ICONS_READY_CHECK = "Icone d'appel"
 	L_GUI_UF_PORTRAIT_ENABLE = "Activer les portraits du joueur et de la cible"
 	L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Activer la bordure aux couleurs de la classe"
 	L_GUI_UF_PORTRAIT_HEIGHT = "Hauteur des portraits"
@@ -244,6 +233,26 @@ if GetLocale() == "frFR" then
 	L_GUI_UF_PLUGINS_SMOOTH_BAR = "Barre lisse"
 	L_GUI_UF_PLUGINS_TALENTS = "Afficher les talent de l'ennemi"
 	L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texte de combat sur les barres du joueur et de la cible"
+	
+	-- Raid Frames options
+	L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"
+	L_GUI_UF_DEFICIT_HEALTH = "Déficit en vie du raid"
+	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review
+	L_GUI_UF_SHOW_RAID = "Show raid frames" -- Needs review
+	L_GUI_UF_VERTICAL_HEALTH = "Orientation vertical des barres de vie"
+	L_GUI_UF_ALPHA_HEALTH = "Alpha of healthbars when 100%hp"
+	L_GUI_UF_SHOW_RANGE = "Changer l'opacité par rapport а la portée sur les barres de raid"
+	L_GUI_UF_RANGE_ALPHA = "Alpha de la barre quand hors de portée"
+	L_GUI_UF_SOLO_MODE = "Toujours afficher la barre du joueur"
+	L_GUI_UF_PLAYER_PARTY = "Afficher la barre du joueur en groupe"
+	L_GUI_UF_SHOW_TANK = "Afficher les tanks de raid"
+	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
+	L_GUI_UF_RAID_GROUP = "Nombre de groupe dans le raid (Seulement pour ShestakUI_Heal)"
+	L_GUI_UF_RAID_VERTICAL_GROUP = "Groupe de raid verticaux(Seulement pour ShestakUI_Heal)"
+	L_GUI_UF_ICONS_LEADER = "Icone du Chef de raid, icone de l'assistant, icone du maоtre du butin"
+	L_GUI_UF_ICONS_LFD_ROLE = "Icone de chef de raid"
+	L_GUI_UF_ICONS_RAID_MARK = "Signe de raid"
+	L_GUI_UF_ICONS_READY_CHECK = "Icone d'appel"
 	L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Mise en évidence des debuffs texture + icone"
 	L_GUI_UF_PLUGINS_AURA_WATCH = "Aura/debuff de raid"
 	L_GUI_UF_PLUGINS_HEALCOMM = "Barre de soin entrant (incoming)"
