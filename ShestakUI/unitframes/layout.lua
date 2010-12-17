@@ -481,7 +481,11 @@ local function Shared(self, unit)
 			self.Reputation:SetHeight(SettingsDB.Scale(94))
 			self.Reputation:SetWidth(SettingsDB.Scale(7))
 			self.Reputation:SetOrientation("Vertical")
-			self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", SettingsDB.Scale(-32), SettingsDB.Scale(28))
+			if db_uf.portrait_enable == true then
+				self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", SettingsDB.Scale(-39-db_uf.portrait_width), SettingsDB.Scale(28))
+			else
+				self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", SettingsDB.Scale(-32), SettingsDB.Scale(28))
+			end
 			self.Reputation:SetStatusBarTexture(SettingsCF.media.texture)
 			self.Reputation:SetBackdrop(backdrop)
 			self.Reputation:SetBackdropColor(0, 0, 0)
