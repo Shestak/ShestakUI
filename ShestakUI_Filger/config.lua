@@ -433,6 +433,10 @@ Filger_Spells = {
 			{ spellID = 2136, size = 30, filter = "CD" },
 			-- Mirror Image
 			{ spellID = 55342, size = 30, filter = "CD" },
+			-- Ring of Frost
+			{ spellID = 82676, size = 30, filter = "CD" },
+			-- Flame Orb
+			{ spellID = 82731, size = 30, filter = "CD" },
 		},
 	},
 	["WARRIOR"] = {
@@ -759,8 +763,6 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
 
-			-- Judgements of the Pure
-			{ spellID = 53671, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Holy Shield
 			{ spellID = 20925, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Infusion of Light
@@ -771,6 +773,12 @@ Filger_Spells = {
 			{ spellID = 53563, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Divine Illumination
 			{ spellID = 31842, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Avenging Wrath
+			{ spellID = 31884, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Zealotry
+			{ spellID = 85696, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Inquisition
+			{ spellID = 84963, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -895,6 +903,8 @@ Filger_Spells = {
 			{ spellID = 81208, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Chakra: Chastise
 			{ spellID = 81209, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Inner Will
+			{ spellID = 73413, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",

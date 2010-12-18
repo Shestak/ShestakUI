@@ -255,6 +255,7 @@ if SettingsCF.raidframe.plugins_aura_watch == true then
 			-- Valiona & Theralion
 			92878,	-- Blackout
 			86840,	-- Devouring Flames
+			95639,	-- Engulfing Magic
 			-- Halfus Wyrmbreaker
 			
 			-- Twilight Ascendant Council
