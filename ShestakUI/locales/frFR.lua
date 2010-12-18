@@ -190,7 +190,7 @@ if SettingsDB.client == "frFR" then
 	L_DATATEXT_GRAVEYARDSDEFENDED = "Cimetières Défendus:"
 	L_DATATEXT_DEMOLISHERSDESTROYED = "Démolisseurs Détruits:"
 	L_DATATEXT_GATESDESTROYED = "Portes Détruites:"
-	L_DATATEXT_CONTROL = "Wintergrasp under control:"  -- Needs review
+	L_DATATEXT_CONTROL = " under control:"  -- Needs review
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "Votre familier n'est pas heureux!"

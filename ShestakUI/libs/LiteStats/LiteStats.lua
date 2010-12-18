@@ -587,7 +587,31 @@ if clock.enabled then
 			GameTooltip:AddLine' '
 			for i = 1, 2 do
 				local _, localizedName, isActive, _, startTime, _ = GetWorldPVPAreaInfo(i)
+				local control = QUEUE_TIME_UNAVAILABLE
 				GameTooltip:AddDoubleLine(localizedName,isActive and WINTERGRASP_IN_PROGRESS or fmttime(startTime),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				if i == 1 then
+					SetMapByID(485)
+					for i = 1, GetNumMapLandmarks() do
+						local index = select(3, GetMapLandmarkInfo(i))
+						if index == 46 then
+							control = "|cff69ccf0"..FACTION_ALLIANCE.."|r"
+						elseif index == 48 then
+							control = "|cffff3333"..FACTION_HORDE.."|r"
+						end
+					end
+					GameTooltip:AddDoubleLine(localizedName..L_DATATEXT_CONTROL,control,ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				elseif i == 2 then
+					SetMapByID(708)
+					for i = 1, GetNumMapLandmarks() do
+						local index = select(3, GetMapLandmarkInfo(i))
+						if index == 46 then
+							control = "|cff69ccf0"..FACTION_ALLIANCE.."|r"
+						elseif index == 48 then
+							control = "|cffff3333"..FACTION_HORDE.."|r"
+						end
+					end
+					GameTooltip:AddDoubleLine(localizedName..L_DATATEXT_CONTROL,control,ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				end
 			end
 			
 			local oneraid

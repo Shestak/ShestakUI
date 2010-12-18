@@ -190,7 +190,7 @@ if SettingsDB.client == "koKR" then
 	L_DATATEXT_GRAVEYARDSDEFENDED = "Graveyards Defended:"
 	L_DATATEXT_DEMOLISHERSDESTROYED = "Demolishers Destroyed:"
 	L_DATATEXT_GATESDESTROYED = "Gates Destroyed:"
-	L_DATATEXT_CONTROL = "Wintergrasp under control:"
+	L_DATATEXT_CONTROL = " under control:"
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "Your pet is unhappy!"
