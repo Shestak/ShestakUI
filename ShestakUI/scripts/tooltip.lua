@@ -771,6 +771,80 @@ if SettingsCF["tooltip"].spell_id == true then
 end
 
 ----------------------------------------------------------------------------------------
+--	Average item level(AiL by havoc74)
+----------------------------------------------------------------------------------------
+if SettingsCF["tooltip"].average_lvl == true then
+	local MINCOLOR = 0.5
+	local COLORINC = 0.2
+	local INCMOD = 0.5
+	local MinIL = 284
+	local MaxIL = 372
+	
+	local slotName = {
+		"HeadSlot",	"NeckSlot",	"ShoulderSlot",	"BackSlot",	"ChestSlot", "WristSlot", 
+		"HandsSlot", "WaistSlot", "LegsSlot", "FeetSlot", "Finger0Slot", "Finger1Slot",
+		"Trinket0Slot",	"Trinket1Slot",	"MainHandSlot",	"SecondaryHandSlot", "RangedSlot", "AmmoSlot"
+	}
+	
+	local function GetAiL(unit)
+		local i, total, slot, itn
+		i = 0
+		total = 0
+		itn = 0
+		local sName, sLink, iRarity, iLevel, iMinLevel, sType, sSubType, iStackCount
+		
+		for i in pairs(slotName) do
+			slot = GetInventoryItemLink(unit, GetInventorySlotInfo(slotName[i]))
+			if (slot ~= nil) then
+				itn = itn + 1
+				sName, sLink, iRarity, iLevel, iMinLevel, sType, sSubType, iStackCount = GetItemInfo(slot)
+				total = total + iLevel
+			end
+		end
+		
+		if (total < 1 or itn < 1) then return end
+		
+		return floor(total / itn)
+	end
+
+	local function GetAiLColor(ail)
+		local r, gb
+		
+		if (ail < MinIL) then
+			r = (ail / MinIL)
+			gb = r
+		else
+			r = MINCOLOR + ((ail / MaxIL) * INCMOD)
+			gb = 1.0 - ((ail / MaxIL) * INCMOD)
+		end
+		
+		if (r < MINCOLOR) then
+			r = MINCOLOR
+			gb = r
+		end
+		
+		return r, gb
+	end
+	
+	local function Setup()
+		GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
+			local ail, r, gb
+			local _, unit = GameTooltip:GetUnit()
+			if (unit and CanInspect(unit)) then
+				NotifyInspect(unit)
+				ail = GetAiL(unit)
+				r, gb = GetAiLColor(ail)
+				ClearInspectPlayer(unit)
+				GameTooltip:AddLine(format("|cfffed100"..STAT_AVERAGE_ITEM_LEVEL..":|r "..ail), r, gb, gb)
+				GameTooltip:Show()
+			end
+		end)
+	end
+	
+	Setup()
+end
+
+----------------------------------------------------------------------------------------
 --	Disable tooltip fading
 ----------------------------------------------------------------------------------------
 --[[

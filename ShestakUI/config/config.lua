@@ -164,6 +164,7 @@ SettingsCF["tooltip"] = {
 	["rank"] = true,							-- Player guild-rank in tooltip
 	["arena_experience"] = false,				-- Player PVP experience in arena
 	["spell_id"] = false,						-- Id number spells
+	["average_lvl"] = false,					-- Average items level
 	["raid_icon"] = false,						-- Raid icon
 }
 
