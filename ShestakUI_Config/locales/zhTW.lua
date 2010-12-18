@@ -161,9 +161,9 @@ if GetLocale() == "zhTW" then
 	L_GUI_NAMEPLATE_CLASS_ICON = "在PVP情況下顯示職業圖示"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "顯示名字縮寫"
 	L_GUI_NAMEPLATE_OVERLAP = "允許單位名條重疊"
-	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"  -- Needs review
-	L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"  -- Needs review
-	L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
+	L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨著色"
+	L_GUI_NAMEPLATE_NEAR_COLOR = "臨近仇恨著色"
+	L_GUI_NAMEPLATE_BAD_COLOR = "危險仇恨著色"
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "開啟快捷列"
@@ -197,16 +197,16 @@ if GetLocale() == "zhTW" then
 	-- Unit Frames options
 	L_GUI_UF_ENABLE = "開啟單位框架"
 	L_GUI_UF_OWN_COLOR = "在預測治療中顯示你的治療量"
-	L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"  -- Needs review
+	L_GUI_UF_UF_COLOR = "治療條職業著色"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "敵對目標生命條以紅色著色"
 	L_GUI_UF_TOTAL_VALUE = "在玩家與目標框體顯示詳細的文字變化"
 	L_GUI_UF_COLOR_VALUE = "生命值與魔法值以職業顏色著色"
 	L_GUI_UF_UNIT_CASTBAR = "顯示施法條"
 	L_GUI_UF_CASTBAR_ICON = "顯示施法條圖示"
 	L_GUI_UF_CASTBAR_LATENCY = "施法條延遲"
-	L_GUI_UF_SHOW_PET = "Show pet frame"  -- Needs review
-	L_GUI_UF_SHOW_FOCUS = "Show focus frame"  -- Needs review
-	L_GUI_UF_SHOW_TOT = "Show target of target frame"  -- Needs review
+	L_GUI_UF_SHOW_PET = "顯示寵物框體"
+	L_GUI_UF_SHOW_FOCUS = "顯示焦點框體"
+	L_GUI_UF_SHOW_TOT = "顯示目標的目標框體"
 	L_GUI_UF_SHOW_BOSS = "顯示boss框體"
 	L_GUI_UF_BOSS_RIGHT = "在右側顯示Boss框體"
 	L_GUI_UF_SHOW_ARENA = "顯示競技場框體"
