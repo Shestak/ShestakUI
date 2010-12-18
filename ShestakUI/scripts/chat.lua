@@ -489,6 +489,7 @@ if SettingsCF.chat.filter == true then
 			end
 		end
 		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", TRADE_FILTER)
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", TRADE_FILTER)
 		
 		-- Mage portals filter(by Affli)
 		local function MAGE_FILTER(self, event, arg1)
