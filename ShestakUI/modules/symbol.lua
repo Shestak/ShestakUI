@@ -3,24 +3,25 @@
 ----------------------------------------------------------------------------------------
 if SettingsCF.misc.shift_marking == true then
 	local menuFrame = CreateFrame("Frame", "MarkingFrame", UIParent, "UIDropDownMenuTemplate")
+	local menuIcon = "Interface\\TargetingFrame\\UI-RaidTargetingIcons"
 	local menuList = {
-		{text = RAID_TARGET_NONE,
+		{text = RAID_TARGET_NONE, notCheckable = 1,
 		func = function() SetRaidTarget("target", 0) end},
-		{text = RAID_TARGET_8,
+		{text = RAID_TARGET_8, notCheckable = 1, icon = menuIcon, tCoordLeft = 0.75, tCoordRight = 1, tCoordTop = 0.25, tCoordBottom = 0.5,
 		func = function() SetRaidTarget("target", 8) end},
-		{text = "|cffff0000"..RAID_TARGET_7.."|r",
+		{text = "|cffff0000"..RAID_TARGET_7.."|r", notCheckable = 1, icon = menuIcon, tCoordLeft = 0.5, tCoordRight = 0.75, tCoordTop = 0.25, tCoordBottom = 0.5,
 		func = function() SetRaidTarget("target", 7) end},
-		{text = "|cff00ffff"..RAID_TARGET_6.."|r",
+		{text = "|cff00ffff"..RAID_TARGET_6.."|r", notCheckable = 1, icon = menuIcon, tCoordLeft = 0.25, tCoordRight = 0.5, tCoordTop = 0.25, tCoordBottom = 0.5,
 		func = function() SetRaidTarget("target", 6) end},
-		{text = "|cffC7C7C7"..RAID_TARGET_5.."|r",
+		{text = "|cffC7C7C7"..RAID_TARGET_5.."|r", notCheckable = 1, icon = menuIcon, tCoordLeft = 0, tCoordRight = 0.25, tCoordTop = 0.25, tCoordBottom = 0.5,
 		func = function() SetRaidTarget("target", 5) end},
-		{text = "|cff00ff00"..RAID_TARGET_4.."|r",
+		{text = "|cff00ff00"..RAID_TARGET_4.."|r", notCheckable = 1, icon = menuIcon, tCoordLeft = 0.75, tCoordRight = 1, tCoordTop = 0, tCoordBottom = 0.25,
 		func = function() SetRaidTarget("target", 4) end},
-		{text = "|cff912CEE"..RAID_TARGET_3.."|r",
+		{text = "|cff912CEE"..RAID_TARGET_3.."|r", notCheckable = 1, icon = menuIcon, tCoordLeft = 0.5, tCoordRight = 0.75, tCoordTop = 0, tCoordBottom = 0.25,
 		func = function() SetRaidTarget("target", 3) end},
-		{text = "|cffFF8000"..RAID_TARGET_2.."|r",
+		{text = "|cffFF8000"..RAID_TARGET_2.."|r", notCheckable = 1, icon = menuIcon, tCoordLeft = 0.25, tCoordRight = 0.5, tCoordTop = 0, tCoordBottom = 0.25,
 		func = function() SetRaidTarget("target", 2) end},
-		{text = "|cffffff00"..RAID_TARGET_1.."|r",
+		{text = "|cffffff00"..RAID_TARGET_1.."|r", notCheckable = 1, icon = menuIcon, tCoordLeft = 0, tCoordRight = 0.25, tCoordTop = 0, tCoordBottom = 0.25,
 		func = function() SetRaidTarget("target", 1) end},
 	}
 
