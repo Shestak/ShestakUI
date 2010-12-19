@@ -849,6 +849,8 @@ Filger_Spells = {
             { spellID = 47585, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
             -- Inner Fire
             { spellID = 588, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Inner Will
+			{ spellID = 73413, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Innervate
 			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Bloodlust
@@ -903,8 +905,6 @@ Filger_Spells = {
 			{ spellID = 81208, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Chakra: Chastise
 			{ spellID = 81209, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Inner Will
-			{ spellID = 73413, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
