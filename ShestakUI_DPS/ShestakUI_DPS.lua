@@ -312,8 +312,8 @@ oUF:Factory(function(self)
 			"showPlayer", db_rf.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"xOffset", SettingsDB.Scale(7),
-			"point", "LEFT"
+			"yOffset", SettingsDB.Scale(28),
+			"point", "BOTTOM"
 		)
 
 		local partypetupdate = CreateFrame("Frame")
@@ -330,7 +330,7 @@ oUF:Factory(function(self)
 				end
 			end
 
-			partypet:SetPoint("TOPLEFT", party[lastGroup], "TOPRIGHT", SettingsDB.Scale(44), 0)
+			partypet:SetPoint("BOTTOMLEFT", party[lastGroup], "BOTTOMRIGHT", SettingsDB.Scale(44), 0)
 		end)
 		partypetupdate:RegisterEvent("PARTY_MEMBERS_CHANGED")
 		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
