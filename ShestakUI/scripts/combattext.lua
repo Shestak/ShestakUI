@@ -112,6 +112,7 @@ elseif ct.myclass=="DRUID"then
 		ct.aoespam[42231]=true		-- Hurricane
 		ct.aoespam[50288]=true		-- Starfall
 		ct.aoespam[61391]=true		-- Typhoon
+		ct.aoespam[78777]=true		-- Wild Mushroom
 		ct.aoespam[1822]=true		-- Rake
 		ct.aoespam[62078]=true		-- Swipe (Cat Form)
 		ct.aoespam[779]=true		-- Swipe (Bear Form)
