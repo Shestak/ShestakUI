@@ -339,7 +339,7 @@ oUF:Factory(function(self)
 				end
 			end
 
-			partypet:SetPoint("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, -28)
+			partypet:SetPoint("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, SettingsDB.Scale(-28))
 		end)
 		partypetupdate:RegisterEvent("PARTY_MEMBERS_CHANGED")
 		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
