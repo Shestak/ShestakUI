@@ -1,14 +1,13 @@
 ## Interface: 40000
 ## Title: ShestakUI Filger
 ## Notes: Class timers and icons for ShestakUI.
-## Author: Affli @ RU-Howling Fjord
-## Editor: Shestak
+## Author: Affli
 ## Credits: Nils Ruesch
 ## RequiredDeps: ShestakUI
-## Website: http://shestak.org
-## X-Curse-Packaged-Version: 2.9.3
+## X-Curse-Packaged-Version: 2.9.5
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
+## Website: http://shestak.org
 
 config.lua
 ShestakUI_Filger.lua

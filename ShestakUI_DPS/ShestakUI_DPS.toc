@@ -2,11 +2,11 @@
 ## Title: ShestakUI DPS
 ## Notes: Raid DPS layout for ShestakUI.
 ## Author: Shestak
-## Credits: ALZA, Tukz, Caellian
-## X-Category: UnitFrame
+## Credits: ALZA, Tukz, Caellian, Elv22
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 2.9.4
+## X-Curse-Packaged-Version: 2.9.5
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
+## Website: http://shestak.org
 
 ShestakUI_DPS.lua

@@ -2,14 +2,13 @@
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI.
 ## Author: Tohveli
-## Editor: Shestak
-## Credits: Tukz, Fernir
+## Credits: Tukz, Fernir, Elv22
 ## RequiredDeps: ShestakUI
 ## SavedVariablesPerCharacter: GUIConfig
-## Website: http://shestak.org
-## X-Curse-Packaged-Version: 2.9.4
+## X-Curse-Packaged-Version: 2.9.5
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
+## Website: http://shestak.org
 
 locales\enGB.lua
 locales\ruRU.lua
