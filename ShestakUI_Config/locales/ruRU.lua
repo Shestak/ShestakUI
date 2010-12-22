@@ -33,7 +33,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_COMBATTEXT = "Текст боя"
 	L_GUI_COMBATTEXT_ENABLE = "Включить текст боя"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Разблокировать исходящий текст боя Blizzard(над головами)"
-	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Стилизация стандартого текст боя над головами"
+	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Стилизация стандартого текст боя над головами(необходимо сделать рестарт WoW)"
 	L_GUI_COMBATTEXT_DAMAGE = "Отображать исходящий урон в его блоке"
 	L_GUI_COMBATTEXT_HEALING = "Отображать исходящее лечение в его блоке"
 	L_GUI_COMBATTEXT_HOTS = "Отображать лечение ваших периодических заклинаний"

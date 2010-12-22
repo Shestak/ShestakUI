@@ -6,6 +6,11 @@ PlayerPowerBarAlt:SetPoint("TOP", UIParent, "TOP", 0, -32)
 PlayerPowerBarAlt.ClearAllPoints = SettingsDB.dummy
 PlayerPowerBarAlt.SetPoint = SettingsDB.dummy
 
+TargetFramePowerBarAlt:ClearAllPoints()
+TargetFramePowerBarAlt:SetPoint("TOP", UIParent, "TOP", 0, -52)
+TargetFramePowerBarAlt.ClearAllPoints = TukuiDB.dummy
+TargetFramePowerBarAlt.SetPoint = TukuiDB.dummy
+
 ----------------------------------------------------------------------------------------
 --	Force readycheck warning
 ----------------------------------------------------------------------------------------
