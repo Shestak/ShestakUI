@@ -117,6 +117,14 @@ if SettingsCF.reminder.raid_buffs_enable == true then
 			94160,	-- Flask of Flowing Water
 		},
 		BattleElixir = {
+			-- Scrolls
+			89343,	-- Scroll of Agility IX
+			89344,	-- Scroll of Protection IX
+			89347,	-- Scroll of Intellect IX
+			89342,	-- Scroll of Spirit IX
+			89345,	-- Scroll of Stamina IX
+			89346,	-- Scroll of Strength IX
+			-- Elixirs
 			79635,	-- Elixir of the Master
 			79632,	-- Elixir of Mighty Speed
 			79481,	-- Elixir of Impossible Accuracy
@@ -257,7 +265,7 @@ if SettingsCF.raidframe.plugins_aura_watch == true then
 			86840,	-- Devouring Flames
 			95639,	-- Engulfing Magic
 			-- Halfus Wyrmbreaker
-			
+			39171,	-- Malevolent Strikes
 			-- Twilight Ascendant Council
 			92511,	-- Hydro Lance
 			82762,	-- Waterlogged
@@ -267,7 +275,8 @@ if SettingsCF.raidframe.plugins_aura_watch == true then
 			92075,	-- Gravity Core
 			92488,	-- Gravity Crush
 			-- Cho'gall
-			
+			86028,	-- Cho's Blast
+			86029,	-- Gall's Blast
 		-- Throne of the Four Winds
 			-- Conclave of Wind
 			--Nezir <Lord of the North Wind>
