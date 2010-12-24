@@ -63,7 +63,7 @@ LSTLOCALE = {
 	["Total Memory Usage"] = "Всего использовано памяти",
 	["Use /junk to configure which items not to sell."] = "Введите /junk что бы настроить какие предметы не продавать.",
 	["Watched currency tab items will reflect onto the tooltip."] = "Показывает отображаемую валюту в подсказке.",
-	["Watch factions from the character faction UI."] = "Смотреть фракций из интерфейса фракция характер.",
+	["Watch factions from the character faction UI."] = "Просмотр фракций из окна репутации.",
 	["When at max level, the tooltip will show time played details for the account."] = "Когда уровень максимальный, подсказка будет показывать время игры персонажей",
 	["When below max level, a tooltip will be displayed with experience details."] = "Когда уровень не максимальный, подсказка будет показывать подробности опыта",
 }

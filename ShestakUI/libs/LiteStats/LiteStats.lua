@@ -246,7 +246,7 @@ function SlashCmdList.LSTATS()
 			L"Right-Click to cycle through experience, time played, and faction watcher.",
 			L"Watch factions from the character faction UI.")
 	end
-	print("|cffBCEE68",format(L"Other options may be configured in %s","|cff66C6FFLiteStats\\config.lua"))
+	print("|cffBCEE68",format(L"Other options may be configured in %s","|cff66C6FFShestakUI\\libs\\LiteStats\\config.lua"))
 end
 
 CreateFrame("Frame", "LSMenus", UIParent, "UIDropDownMenuTemplate")
@@ -757,6 +757,7 @@ if guild.enabled then
 					LoadAddOn("Blizzard_GuildUI") 
 				end
 				GuildFrame_Toggle()
+				GuildFrame_TabClicked(GuildFrameTab2)
 			elseif b == "RightButton" then
 				local s = CURRENT_GUILD_SORTING
 				SortGuildRoster(IsShiftKeyDown() and s or (IsAltKeyDown() and (s == "rank" and "note" or "rank") or s == "class" and "name" or s == "name" and "level" or s == "level" and "zone" or "class"))
