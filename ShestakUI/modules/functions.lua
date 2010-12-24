@@ -309,7 +309,7 @@ function SettingsDB.PetBarUpdate(self, event)
 end
 
 ----------------------------------------------------------------------------------------
---	Style Button function(by Chiril & Karudon)
+--	Style ActionBars/Bags buttons function(by Chiril & Karudon)
 ----------------------------------------------------------------------------------------
 function SettingsDB.StyleButton(b, checked) 
     local name = b:GetName()
@@ -355,6 +355,36 @@ function SettingsDB.StyleButton(b, checked)
 		cooldown:SetPoint("TOPLEFT", button, "TOPLEFT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
 		cooldown:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", SettingsDB.Scale(-2), SettingsDB.Scale(2))
 	end
+end
+
+----------------------------------------------------------------------------------------
+--	Style buttons function
+----------------------------------------------------------------------------------------
+local function SetModifiedBackdrop(self)
+	self:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
+	self.bg:SetVertexColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 0.3)
+end
+
+local function SetOriginalBackdrop(self)
+	self:SetBackdropBorderColor(unpack(SettingsCF.media.border_color))
+	self.bg:SetVertexColor(0.1, 0.1, 0.1, 1)
+end
+
+function SettingsDB.SkinButton(f)
+	f:SetNormalTexture("")
+	f:SetHighlightTexture("")
+	f:SetPushedTexture("")
+	f:SetDisabledTexture("")
+	if _G[f:GetName().."Left"] then _G[f:GetName().."Left"]:SetAlpha(0) end
+	if _G[f:GetName().."Middle"] then _G[f:GetName().."Middle"]:SetAlpha(0) end
+	if _G[f:GetName().."Right"] then _G[f:GetName().."Right"]:SetAlpha(0) end
+	if _G[f:GetName().."LeftDisabled"] then _G[f:GetName().."LeftDisabled"]:SetAlpha(0) end
+	if _G[f:GetName().."MiddleDisabled"] then _G[f:GetName().."MiddleDisabled"]:SetAlpha(0) end
+	if _G[f:GetName().."RightDisabled"] then _G[f:GetName().."RightDisabled"]:SetAlpha(0) end
+	if _G[f:GetName().."HighlightTexture"] then _G[f:GetName().."HighlightTexture"]:SetAlpha(0) end
+	SettingsDB.SkinPanel(f)
+	f:HookScript("OnEnter", SetModifiedBackdrop)
+	f:HookScript("OnLeave", SetOriginalBackdrop)
 end
 
 ----------------------------------------------------------------------------------------

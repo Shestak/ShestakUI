@@ -1,26 +1,6 @@
 ﻿----------------------------------------------------------------------------------------
 --	Based on aLoad
 ----------------------------------------------------------------------------------------
-local function SetModifiedBackdrop(self)
-	self:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
-	self.bg:SetVertexColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 0.3)
-end
-
-local function SetOriginalBackdrop(self)
-	self:SetBackdropBorderColor(unpack(SettingsCF["media"].border_color))
-	self.bg:SetVertexColor(0.1, 0.1, 0.1, 1)
-end
-
-local function SkinButton(f)
-	f:SetNormalTexture("")
-	f:SetHighlightTexture("")
-	f:SetPushedTexture("")
-	f:SetDisabledTexture("")
-	SettingsDB.SkinPanel(f)
-	f:HookScript("OnEnter", SetModifiedBackdrop)
-	f:HookScript("OnLeave", SetOriginalBackdrop)
-end
-
 local loadf = CreateFrame("Frame", "aLoadFrame", UIParent)
 loadf:SetWidth(400)
 loadf:SetHeight(400)
@@ -33,7 +13,6 @@ loadf:SetScript("OnMouseDown", function(self) self:StartMoving() end)
 loadf:SetScript("OnMouseUp", function(self) self:StopMovingOrSizing() end)
 loadf:SetFrameStrata("DIALOG")
 tinsert(UISpecialFrames, "aLoadFrame")
-SettingsDB.SkinFadedPanel(loadf)
 loadf:Hide()
 loadf:SetScript("OnHide", function(self) ShowUIPanel(GameMenuFrame) end)
 
@@ -48,22 +27,20 @@ scrollf:SetPoint("TOPLEFT", loadf, "TOPLEFT", 10, -30)
 scrollf:SetPoint("BOTTOMRIGHT", loadf, "BOTTOMRIGHT", -28, 40)
 scrollf:SetScrollChild(mainf)
 
-local reloadb = CreateFrame("Button", nil, loadf, "UIPanelButtonTemplate")
+local reloadb = CreateFrame("Button", "aLoadReload", loadf, "UIPanelButtonTemplate")
 reloadb:SetWidth(150)
 reloadb:SetHeight(22)
 reloadb:SetPoint("BOTTOM", 0, 10)
 reloadb:SetText(L_ALOAD_RL)
 reloadb:SetScript("OnClick", function() ReloadUI() end)
-SkinButton(reloadb)
 
 local addonf = CreateFrame("Frame", "AddonSets", loadf)
 addonf:SetWidth(400)
 addonf:SetHeight(44)
 addonf:SetPoint("TOP", loadf, "BOTTOM", 0, -5)
 addonf:SetFrameStrata("DIALOG")
-SettingsDB.SkinFadedPanel(addonf)
 
-local addonset1 = CreateFrame("Button", nil, addonf, "UIPanelButtonTemplate")
+local addonset1 = CreateFrame("Button", "AddonSet1", addonf, "UIPanelButtonTemplate")
 addonset1:SetWidth(60)
 addonset1:SetHeight(22)
 addonset1:SetPoint("BOTTOMLEFT", 7, 10)
@@ -86,9 +63,8 @@ addonset1:SetScript("OnClick", function()
 	end
 	ReloadUI()
 end)
-SkinButton(addonset1)
 
-local addonset2 = CreateFrame("Button", nil, addonf, "UIPanelButtonTemplate")
+local addonset2 = CreateFrame("Button", "AddonSet2", addonf, "UIPanelButtonTemplate")
 addonset2:SetWidth(60)
 addonset2:SetHeight(22)
 addonset2:SetPoint("LEFT", addonset1, "RIGHT", 5, 0)
@@ -111,9 +87,8 @@ addonset2:SetScript("OnClick", function()
 	end
 	ReloadUI()
 end)
-SkinButton(addonset2)
 
-local addonset3 = CreateFrame("Button", nil, addonf, "UIPanelButtonTemplate")
+local addonset3 = CreateFrame("Button", "AddonSet3", addonf, "UIPanelButtonTemplate")
 addonset3:SetWidth(60)
 addonset3:SetHeight(22)
 addonset3:SetPoint("LEFT", addonset2, "RIGHT", 5, 0)
@@ -136,9 +111,8 @@ addonset3:SetScript("OnClick", function()
 	end
 	ReloadUI()
 end)
-SkinButton(addonset3)
 
-local addonset4 = CreateFrame("Button", nil, addonf, "UIPanelButtonTemplate")
+local addonset4 = CreateFrame("Button", "AddonSet4", addonf, "UIPanelButtonTemplate")
 addonset4:SetWidth(60)
 addonset4:SetHeight(22)
 addonset4:SetPoint("LEFT", addonset3, "RIGHT", 5, 0)
@@ -161,9 +135,8 @@ addonset4:SetScript("OnClick", function()
 	end
 	ReloadUI()
 end)
-SkinButton(addonset4)
 
-local addonset5 = CreateFrame("Button", nil, addonf, "UIPanelButtonTemplate")
+local addonset5 = CreateFrame("Button", "AddonSet5", addonf, "UIPanelButtonTemplate")
 addonset5:SetWidth(60)
 addonset5:SetHeight(22)
 addonset5:SetPoint("LEFT", addonset4, "RIGHT", 5, 0)
@@ -186,9 +159,8 @@ addonset5:SetScript("OnClick", function()
 	end
 	ReloadUI()
 end)
-SkinButton(addonset5)
 
-local addonset6 = CreateFrame("Button", nil, addonf, "UIPanelButtonTemplate")
+local addonset6 = CreateFrame("Button", "AddonSet6", addonf, "UIPanelButtonTemplate")
 addonset6:SetWidth(60)
 addonset6:SetHeight(22)
 addonset6:SetPoint("LEFT", addonset5, "RIGHT", 5, 0)
@@ -211,7 +183,6 @@ addonset6:SetScript("OnClick", function()
 	end
 	ReloadUI()
 end)
-SkinButton(addonset6)
 
 local closeb = CreateFrame("Button", nil, loadf, "UIPanelCloseButton")
 closeb:SetPoint("TOPRIGHT", loadf, "TOPRIGHT", 2, 0)
@@ -221,7 +192,6 @@ end)
 
 local makeList = function()
 	local self = mainf
-	SettingsDB.SkinFadedPanel(scrollf)
 	self:SetPoint("TOPLEFT")
 	self:SetWidth(scrollf:GetWidth())
 	self:SetHeight(scrollf:GetHeight())

@@ -1,33 +1,6 @@
 ----------------------------------------------------------------------------------------
 --	Reskin Blizzard windows(by Tukz and Co)
 ----------------------------------------------------------------------------------------
-local function SetModifiedBackdrop(self)
-	self:SetBackdropBorderColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b)
-	self.bg:SetVertexColor(SettingsDB.color.r, SettingsDB.color.g, SettingsDB.color.b, 0.3)
-end
-
-local function SetOriginalBackdrop(self)
-	self:SetBackdropBorderColor(unpack(SettingsCF["media"].border_color))
-	self.bg:SetVertexColor(0.1, 0.1, 0.1, 1)
-end
-
-local function SkinButton(f)
-	f:SetNormalTexture("")
-	f:SetHighlightTexture("")
-	f:SetPushedTexture("")
-	f:SetDisabledTexture("")
-	if _G[f:GetName().."Left"] then _G[f:GetName().."Left"]:SetAlpha(0) end
-	if _G[f:GetName().."Middle"] then _G[f:GetName().."Middle"]:SetAlpha(0) end
-	if _G[f:GetName().."Right"] then _G[f:GetName().."Right"]:SetAlpha(0) end
-	if _G[f:GetName().."LeftDisabled"] then _G[f:GetName().."LeftDisabled"]:SetAlpha(0) end
-	if _G[f:GetName().."MiddleDisabled"] then _G[f:GetName().."MiddleDisabled"]:SetAlpha(0) end
-	if _G[f:GetName().."RightDisabled"] then _G[f:GetName().."RightDisabled"]:SetAlpha(0) end
-	if _G[f:GetName().."HighlightTexture"] then _G[f:GetName().."HighlightTexture"]:SetAlpha(0) end
-	SettingsDB.SkinPanel(f)
-	f:HookScript("OnEnter", SetModifiedBackdrop)
-	f:HookScript("OnLeave", SetOriginalBackdrop)
-end
-
 local SkinBlizzUI = CreateFrame("Frame")
 SkinBlizzUI:RegisterEvent("ADDON_LOADED")
 SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
@@ -66,6 +39,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"RolePollPopup",
 			"AddFriendFrame",
 			"ChannelFrameDaughterFrame",
+			"aLoadFrame",
+			"aLoadScroll",
+			"AddonSets",
 		}
 		
 		local insetskins = {
@@ -93,9 +69,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		}
 		
 		-- Reskin popup buttons
-		for i = 1, 3 do
+		for i = 1, 4 do
 			for j = 1, 3 do
-				SkinButton(_G["StaticPopup"..i.."Button"..j])
+				SettingsDB.SkinButton(_G["StaticPopup"..i.."Button"..j])
 			end
 		end
 
@@ -122,31 +98,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			end
 		end
 		
-		-- Reskin all esc/menu buttons
-		local BlizzardMenuButtons = {
-			"Options",
-			"SoundOptions",
-			"UIOptions",
-			"Keybindings",
-			"Macros",
-			"Ratings",
-			"AddOns",
-			"Logout",
-			"Quit",
-			"Continue",
-			"MacOptions",
-			"OptionHouse",
-			"AddonManager",
-			"SettingsGUI",
-		}
-		
-		for i = 1, getn(BlizzardMenuButtons) do
-			local UIMenuButtons = _G["GameMenuButton"..BlizzardMenuButtons[i]]
-			if UIMenuButtons then
-				SkinButton(UIMenuButtons)
-			end
-		end
-
 		-- Hide header textures and move text/buttons
 		local BlizzardHeader = {
 			"GameMenuFrame", 
@@ -174,8 +125,22 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			end
 		end
 		
-		-- Reskin all "normal" buttons
+		-- Reskin buttons
 		local BlizzardButtons = {
+			"GameMenuButtonOptions",
+			"GameMenuButtonSoundOptions",
+			"GameMenuButtonUIOptions",
+			"GameMenuButtonKeybindings",
+			"GameMenuButtonMacros",
+			"GameMenuButtonRatings",
+			"GameMenuButtonAddOns",
+			"GameMenuButtonLogout",
+			"GameMenuButtonQuit",
+			"GameMenuButtonContinue",
+			"GameMenuButtonMacOptions",
+			"GameMenuButtonOptionHouse",
+			"GameMenuButtonAddonManager",
+			"GameMenuButtonSettingsGUI",
 			"VideoOptionsFrameOkay",
 			"VideoOptionsFrameCancel",
 			"VideoOptionsFrameDefaults",
@@ -207,12 +172,19 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"AddFriendEntryFrameAcceptButton",
 			"ChannelFrameDaughterFrameOkayButton",
 			"ChannelFrameDaughterFrameCancelButton",
+			"AddonSet1",
+			"AddonSet2",
+			"AddonSet3",
+			"AddonSet4",
+			"AddonSet5",
+			"AddonSet6",
+			"aLoadReload",
 		}
 		
 		for i = 1, getn(BlizzardButtons) do
 			local UIButtons = _G[BlizzardButtons[i]]
 			if UIButtons then
-				SkinButton(UIButtons)
+				SettingsDB.SkinButton(UIButtons)
 			end
 		end
 		
@@ -263,6 +235,58 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ReadyCheckFrame"]:HookScript("OnShow", function(self) if UnitIsUnit("player", self.initiator) then self:Hide() end end)
 	end
 	
+	-- MAC menu/option panel(by Affli)
+	if IsMacClient() then
+		-- Skin main frame and reposition the header
+		SettingsDB.SkinFadedPanel(MacOptionsFrame)
+		MacOptionsFrameHeader:SetTexture("")
+		MacOptionsFrameHeader:ClearAllPoints()
+		MacOptionsFrameHeader:SetPoint("TOP", MacOptionsFrame, 0, 0)
+	 
+		-- Skin internal frames
+		SettingsDB.SkinPanel(MacOptionsFrameMovieRecording)
+		SettingsDB.SkinPanel(MacOptionsITunesRemote)
+	 
+		-- Skin buttons
+		SettingsDB.SkinButton(_G["MacOptionsFrameCancel"])
+		SettingsDB.SkinButton(_G["MacOptionsFrameOkay"])
+		SettingsDB.SkinButton(_G["MacOptionsButtonKeybindings"])
+		SettingsDB.SkinButton(_G["MacOptionsFrameDefaults"])
+		SettingsDB.SkinButton(_G["MacOptionsButtonCompress"])
+	 
+		-- Reposition and resize buttons
+		local tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsButtonCompress"]:GetPoint()
+		_G["MacOptionsButtonCompress"]:SetWidth(136)
+		_G["MacOptionsButtonCompress"]:ClearAllPoints()
+		_G["MacOptionsButtonCompress"]:SetPoint(tPoint, tRTo, tRP, SettingsDB.Scale(4), tY)
+	 
+		_G["MacOptionsFrameCancel"]:SetWidth(96)
+		_G["MacOptionsFrameCancel"]:SetHeight(22)
+		tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsFrameCancel"]:GetPoint()
+		_G["MacOptionsFrameCancel"]:ClearAllPoints()
+		_G["MacOptionsFrameCancel"]:SetPoint(tPoint, tRTo, tRP, SettingsDB.Scale(-14), tY)
+	 
+		_G["MacOptionsFrameOkay"]:ClearAllPoints()
+		_G["MacOptionsFrameOkay"]:SetWidth(96)
+		_G["MacOptionsFrameOkay"]:SetHeight(22)
+		_G["MacOptionsFrameOkay"]:SetPoint("LEFT", _G["MacOptionsFrameCancel"], -99, 0)
+	 
+		_G["MacOptionsButtonKeybindings"]:ClearAllPoints()
+		_G["MacOptionsButtonKeybindings"]:SetWidth(96)
+		_G["MacOptionsButtonKeybindings"]:SetHeight(22)
+		_G["MacOptionsButtonKeybindings"]:SetPoint("LEFT", _G["MacOptionsFrameOkay"], -99, 0)
+	 
+		_G["MacOptionsFrameDefaults"]:SetWidth(96)
+		_G["MacOptionsFrameDefaults"]:SetHeight(22)
+		
+		_G["MacOptionsButtonCompressLeft"]:SetAlpha(0)
+		_G["MacOptionsButtonCompressMiddle"]:SetAlpha(0)
+		_G["MacOptionsButtonCompressRight"]:SetAlpha(0)
+		_G["MacOptionsButtonKeybindingsLeft"]:SetAlpha(0)
+		_G["MacOptionsButtonKeybindingsMiddle"]:SetAlpha(0)
+		_G["MacOptionsButtonKeybindingsRight"]:SetAlpha(0)
+	end
+
 	-- DBM-GUI Frame
 	if addon == "DBM-GUI" then
 		SettingsDB.SkinFadedPanel(_G["DBM_GUI_OptionsFrame"])
@@ -288,55 +312,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		for i = 1, getn(dbmbskins) do
 			local DBMButtons = _G[dbmbskins[i]]
 			if DBMButtons then
-				SkinButton(DBMButtons)
+				SettingsDB.SkinButton(DBMButtons)
 			end
 		end
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	MAC menu/option panel(by Affli)
-----------------------------------------------------------------------------------------
-if IsMacClient() then
-	-- Skin main frame and reposition the header
-	SettingsDB.SkinFadedPanel(MacOptionsFrame)
-	MacOptionsFrameHeader:SetTexture("")
-	MacOptionsFrameHeader:ClearAllPoints()
-	MacOptionsFrameHeader:SetPoint("TOP", MacOptionsFrame, 0, 0)
- 
-	-- Skin internal frames
-	SettingsDB.SkinPanel(MacOptionsFrameMovieRecording)
-	SettingsDB.SkinPanel(MacOptionsITunesRemote)
- 
-	-- Skin buttons
-	SkinButton(_G["MacOptionsFrameCancel"])
-	SkinButton(_G["MacOptionsFrameOkay"])
-	SkinButton(_G["MacOptionsButtonKeybindings"])
-	SkinButton(_G["MacOptionsFrameDefaults"])
-	SkinButton(_G["MacOptionsButtonCompress"])
- 
-	-- Reposition and resize buttons
-	local tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsButtonCompress"]:GetPoint()
-	_G["MacOptionsButtonCompress"]:SetWidth(136)
-	_G["MacOptionsButtonCompress"]:ClearAllPoints()
-	_G["MacOptionsButtonCompress"]:SetPoint(tPoint, tRTo, tRP, SettingsDB.Scale(4), tY)
- 
-	_G["MacOptionsFrameCancel"]:SetWidth(96)
-	_G["MacOptionsFrameCancel"]:SetHeight(22)
-	tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsFrameCancel"]:GetPoint()
-	_G["MacOptionsFrameCancel"]:ClearAllPoints()
-	_G["MacOptionsFrameCancel"]:SetPoint(tPoint, tRTo, tRP, SettingsDB.Scale(-14), tY)
- 
-	_G["MacOptionsFrameOkay"]:ClearAllPoints()
-	_G["MacOptionsFrameOkay"]:SetWidth(96)
-	_G["MacOptionsFrameOkay"]:SetHeight(22)
-	_G["MacOptionsFrameOkay"]:SetPoint("LEFT", _G["MacOptionsFrameCancel"], -99, 0)
- 
-	_G["MacOptionsButtonKeybindings"]:ClearAllPoints()
-	_G["MacOptionsButtonKeybindings"]:SetWidth(96)
-	_G["MacOptionsButtonKeybindings"]:SetHeight(22)
-	_G["MacOptionsButtonKeybindings"]:SetPoint("LEFT", _G["MacOptionsFrameOkay"], -99, 0)
- 
-	_G["MacOptionsFrameDefaults"]:SetWidth(96)
-	_G["MacOptionsFrameDefaults"]:SetHeight(22)
-end
