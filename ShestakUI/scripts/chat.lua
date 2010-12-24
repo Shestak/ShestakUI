@@ -175,8 +175,6 @@ local function SetupChatPosAndFont(self)
 	for i = 1, NUM_CHAT_WINDOWS do
 		local chat = _G[format("ChatFrame%s", i)]
 		local id = chat:GetID()
-		local name = FCF_GetChatWindowInfo(id)
-		local point = GetChatWindowSavedPosition(id)
 		local _, fontSize = FCF_GetChatWindowInfo(id)
 		
 		-- Min. size for chat font
@@ -247,18 +245,18 @@ hooksecurefunc("FCF_OpenTemporaryWindow", SetupTempChat)
 for i = 1, NUM_CHAT_WINDOWS do
 	local editBox = _G["ChatFrame"..i.."EditBox"]
 	editBox:HookScript("OnTextChanged", function(self)
-	   local text = self:GetText()
-	   if text:len() < 5 then
-		  if text:sub(1, 4) == "/tt " then
-			 local unitname, realm
-			 unitname, realm = UnitName("target")
-			 if unitname then unitname = gsub(unitname, " ", "") end
-			 if unitname and not UnitIsSameServer("player", "target") then
-				unitname = unitname .. "-" .. gsub(realm, " ", "")
-			 end
-			 ChatFrame_SendTell((unitname or SPELL_FAILED_BAD_TARGETS), ChatFrame1)
-		  end
-	   end
+		local text = self:GetText()
+		if text:len() < 5 then
+			if text:sub(1, 4) == "/tt " then
+				local unitname, realm
+				unitname, realm = UnitName("target")
+				if unitname then unitname = gsub(unitname, " ", "") end
+				if unitname and not UnitIsSameServer("player", "target") then
+					unitname = unitname .. "-" .. gsub(realm, " ", "")
+				end
+				ChatFrame_SendTell((unitname or SPELL_FAILED_BAD_TARGETS), ChatFrame1)
+			end
+		end
 	end)
 end
 
