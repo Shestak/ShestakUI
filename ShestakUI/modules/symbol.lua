@@ -5,7 +5,7 @@ if SettingsCF.misc.shift_marking == true then
 	local menuFrame = CreateFrame("Frame", "MarkingFrame", UIParent, "UIDropDownMenuTemplate")
 	local menuIcon = "Interface\\TargetingFrame\\UI-RaidTargetingIcons"
 	local menuList = {
-		{text = RAID_TARGET_NONE, notCheckable = 1,
+		{text = RAID_TARGET_NONE, notCheckable = 1, icon = "Interface\\Buttons\\UI-GroupLoot-Pass-Up",
 		func = function() SetRaidTarget("target", 0) end},
 		{text = RAID_TARGET_8, notCheckable = 1, icon = menuIcon, tCoordLeft = 0.75, tCoordRight = 1, tCoordTop = 0.25, tCoordBottom = 0.5,
 		func = function() SetRaidTarget("target", 8) end},

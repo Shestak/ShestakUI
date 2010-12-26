@@ -192,7 +192,6 @@ local updatePlate = function(self)
 	end
  
 	self.healthBar.hpBackground:SetVertexColor(self.r, self.g, self.b, 0.30)
-	--self.healthBar.hpBackground:SetAlpha(0.9)
  
 	self.castBar:ClearAllPoints()
 	self.castBar:SetPoint("TOP", self.healthBar, "BOTTOM", 0, -8)
@@ -280,8 +279,8 @@ local createPlate = function(frame)
 	
 	local offset = UIParent:GetEffectiveScale()
 	local backdrop = {
-		bgFile = SettingsCF["media"].blank, 
-		edgeFile = SettingsCF["media"].blank, 
+		bgFile = SettingsCF.media.blank, 
+		edgeFile = SettingsCF.media.blank, 
 		tile = false, tileSize = 0, edgeSize = 1 * offset, 
 		insets = { left = -1 * offset, right = -1 * offset, top = -1 * offset, bottom = -1 * offset}
 	}

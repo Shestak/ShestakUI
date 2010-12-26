@@ -432,7 +432,7 @@ if SettingsCF.chat.filter == true then
 	INTERFACE_ACTION_BLOCKED = ""
 	GUILD_REP_WEEKLY_CAPPED = ""
 
-	-- Repeat spam filter(by Elv22)
+	-- Repeat spam filter(by Evl)
 	ChatFrame1.repeatFilter = true
 	ChatFrame1:SetTimeVisible(10)
 
