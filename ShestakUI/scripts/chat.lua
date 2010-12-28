@@ -247,7 +247,7 @@ for i = 1, NUM_CHAT_WINDOWS do
 	editBox:HookScript("OnTextChanged", function(self)
 		local text = self:GetText()
 		if text:len() < 5 then
-			if text:sub(1, 4) == "/tt " then
+			if text:sub(1, 4) == "/tt " or text:sub(1, 4) == "/ее " then
 				local unitname, realm
 				unitname, realm = UnitName("target")
 				if unitname then unitname = gsub(unitname, " ", "") end
@@ -273,10 +273,10 @@ local function CreatCopyFrame()
 	SettingsDB.SkinFadedPanel(frame)
 	frame:SetWidth(SettingsDB.Scale(500))
 	frame:SetHeight(SettingsDB.Scale(300))
-	frame:SetScale(1)
 	frame:SetPoint("CENTER", UIParent, "CENTER", 0, SettingsDB.Scale(100))
-	frame:Hide()
 	frame:SetFrameStrata("DIALOG")
+	tinsert(UISpecialFrames, "CopyFrame")
+	frame:Hide()
 
 	local scrollArea = CreateFrame("ScrollFrame", "CopyScroll", frame, "UIPanelScrollFrameTemplate")
 	scrollArea:SetPoint("TOPLEFT", frame, "TOPLEFT", SettingsDB.Scale(8), SettingsDB.Scale(-30))
