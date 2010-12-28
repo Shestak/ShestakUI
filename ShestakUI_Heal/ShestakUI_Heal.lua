@@ -444,6 +444,7 @@ if IsAddOnLoaded("Clique") then
 		end,
 		timeout = 0,
 		whileDead = 1,
+		hideOnEscape = true,
 	}
 	local CliqueCheck = CreateFrame("Frame")
 	CliqueCheck:RegisterEvent("PLAYER_ENTERING_WORLD")
