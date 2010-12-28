@@ -2,48 +2,42 @@
 --	Based on aLoad
 ----------------------------------------------------------------------------------------
 local loadf = CreateFrame("Frame", "aLoadFrame", UIParent)
-loadf:SetWidth(400)
-loadf:SetHeight(400)
-loadf:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 312)
-loadf:EnableMouse(true)
-loadf:SetMovable(true)
-loadf:SetUserPlaced(true)
-loadf:SetClampedToScreen(true)
-loadf:SetScript("OnMouseDown", function(self) self:StartMoving() end)
-loadf:SetScript("OnMouseUp", function(self) self:StopMovingOrSizing() end)
+loadf:SetWidth(SettingsDB.Scale(400))
+loadf:SetHeight(SettingsDB.Scale(400))
+loadf:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, SettingsDB.Scale(317))
 loadf:SetFrameStrata("DIALOG")
 tinsert(UISpecialFrames, "aLoadFrame")
 loadf:Hide()
 loadf:SetScript("OnHide", function(self) ShowUIPanel(GameMenuFrame) end)
 
 local title = loadf:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-title:SetPoint("TOP", 0, -8)
+title:SetPoint("TOP", 0, SettingsDB.Scale(-8))
 title:SetText(ADDONS)
 
 local scrollf = CreateFrame("ScrollFrame", "aLoadScroll", loadf, "UIPanelScrollFrameTemplate")
-local mainf = CreateFrame("Frame", nil, scrollf)
+local mainf = CreateFrame("Frame", "aLoadMain", scrollf)
 
-scrollf:SetPoint("TOPLEFT", loadf, "TOPLEFT", 10, -30)
-scrollf:SetPoint("BOTTOMRIGHT", loadf, "BOTTOMRIGHT", -28, 40)
+scrollf:SetPoint("TOPLEFT", loadf, "TOPLEFT", SettingsDB.Scale(10), SettingsDB.Scale(-30))
+scrollf:SetPoint("BOTTOMRIGHT", loadf, "BOTTOMRIGHT", SettingsDB.Scale(-28), SettingsDB.Scale(40))
 scrollf:SetScrollChild(mainf)
 
 local reloadb = CreateFrame("Button", "aLoadReload", loadf, "UIPanelButtonTemplate")
-reloadb:SetWidth(150)
-reloadb:SetHeight(22)
-reloadb:SetPoint("BOTTOM", 0, 10)
+reloadb:SetWidth(SettingsDB.Scale(150))
+reloadb:SetHeight(SettingsDB.Scale(22))
+reloadb:SetPoint("BOTTOM", 0, SettingsDB.Scale(10))
 reloadb:SetText(L_ALOAD_RL)
 reloadb:SetScript("OnClick", function() ReloadUI() end)
 
 local addonf = CreateFrame("Frame", "AddonSets", loadf)
-addonf:SetWidth(400)
-addonf:SetHeight(44)
-addonf:SetPoint("TOP", loadf, "BOTTOM", 0, -5)
+addonf:SetWidth(SettingsDB.Scale(400))
+addonf:SetHeight(SettingsDB.Scale(44))
+addonf:SetPoint("TOP", loadf, "BOTTOM", 0, SettingsDB.Scale(-5))
 addonf:SetFrameStrata("DIALOG")
 
 local addonset1 = CreateFrame("Button", "AddonSet1", addonf, "UIPanelButtonTemplate")
-addonset1:SetWidth(60)
-addonset1:SetHeight(22)
-addonset1:SetPoint("BOTTOMLEFT", 7, 10)
+addonset1:SetWidth(SettingsDB.Scale(60))
+addonset1:SetHeight(SettingsDB.Scale(22))
+addonset1:SetPoint("BOTTOMLEFT", SettingsDB.Scale(7), SettingsDB.Scale(10))
 addonset1:SetText(PARTY)
 addonset1:SetScript("OnClick", function()
 	for i in pairs(SettingsCF["addon"].raid) do
@@ -65,9 +59,9 @@ addonset1:SetScript("OnClick", function()
 end)
 
 local addonset2 = CreateFrame("Button", "AddonSet2", addonf, "UIPanelButtonTemplate")
-addonset2:SetWidth(60)
-addonset2:SetHeight(22)
-addonset2:SetPoint("LEFT", addonset1, "RIGHT", 5, 0)
+addonset2:SetWidth(SettingsDB.Scale(60))
+addonset2:SetHeight(SettingsDB.Scale(22))
+addonset2:SetPoint("LEFT", addonset1, "RIGHT", SettingsDB.Scale(5), 0)
 addonset2:SetText(RAID)
 addonset2:SetScript("OnClick", function()
 	for i in pairs(SettingsCF["addon"].raid) do
@@ -89,9 +83,9 @@ addonset2:SetScript("OnClick", function()
 end)
 
 local addonset3 = CreateFrame("Button", "AddonSet3", addonf, "UIPanelButtonTemplate")
-addonset3:SetWidth(60)
-addonset3:SetHeight(22)
-addonset3:SetPoint("LEFT", addonset2, "RIGHT", 5, 0)
+addonset3:SetWidth(SettingsDB.Scale(60))
+addonset3:SetHeight(SettingsDB.Scale(22))
+addonset3:SetPoint("LEFT", addonset2, "RIGHT", SettingsDB.Scale(5), 0)
 addonset3:SetText(QUESTS_LABEL)
 addonset3:SetScript("OnClick", function()
 	for i in pairs(SettingsCF["addon"].raid) do
@@ -113,9 +107,9 @@ addonset3:SetScript("OnClick", function()
 end)
 
 local addonset4 = CreateFrame("Button", "AddonSet4", addonf, "UIPanelButtonTemplate")
-addonset4:SetWidth(60)
-addonset4:SetHeight(22)
-addonset4:SetPoint("LEFT", addonset3, "RIGHT", 5, 0)
+addonset4:SetWidth(SettingsDB.Scale(60))
+addonset4:SetHeight(SettingsDB.Scale(22))
+addonset4:SetPoint("LEFT", addonset3, "RIGHT", SettingsDB.Scale(5), 0)
 addonset4:SetText(L_ALOAD_TRADE)
 addonset4:SetScript("OnClick", function()
 	for i in pairs(SettingsCF["addon"].raid) do
@@ -137,9 +131,9 @@ addonset4:SetScript("OnClick", function()
 end)
 
 local addonset5 = CreateFrame("Button", "AddonSet5", addonf, "UIPanelButtonTemplate")
-addonset5:SetWidth(60)
-addonset5:SetHeight(22)
-addonset5:SetPoint("LEFT", addonset4, "RIGHT", 5, 0)
+addonset5:SetWidth(SettingsDB.Scale(60))
+addonset5:SetHeight(SettingsDB.Scale(22))
+addonset5:SetPoint("LEFT", addonset4, "RIGHT", SettingsDB.Scale(5), 0)
 addonset5:SetText(PVP)
 addonset5:SetScript("OnClick", function()
 	for i in pairs(SettingsCF["addon"].raid) do
@@ -161,9 +155,9 @@ addonset5:SetScript("OnClick", function()
 end)
 
 local addonset6 = CreateFrame("Button", "AddonSet6", addonf, "UIPanelButtonTemplate")
-addonset6:SetWidth(60)
-addonset6:SetHeight(22)
-addonset6:SetPoint("LEFT", addonset5, "RIGHT", 5, 0)
+addonset6:SetWidth(SettingsDB.Scale(60))
+addonset6:SetHeight(SettingsDB.Scale(22))
+addonset6:SetPoint("LEFT", addonset5, "RIGHT", SettingsDB.Scale(5), 0)
 addonset6:SetText(L_ALOAD_SOLO)
 addonset6:SetScript("OnClick", function()
 	for i in pairs(SettingsCF["addon"].raid) do
@@ -185,7 +179,7 @@ addonset6:SetScript("OnClick", function()
 end)
 
 local closeb = CreateFrame("Button", nil, loadf, "UIPanelCloseButton")
-closeb:SetPoint("TOPRIGHT", loadf, "TOPRIGHT", 2, 0)
+closeb:SetPoint("TOPRIGHT", loadf, "TOPRIGHT", SettingsDB.Scale(2), 0)
 closeb:SetScript("OnClick", function()
 	loadf:Hide()
 end)
@@ -196,54 +190,51 @@ local makeList = function()
 	self:SetWidth(scrollf:GetWidth())
 	self:SetHeight(scrollf:GetHeight())
 	self.addons = {}
-	for i=1, GetNumAddOns() do
+	for i = 1, GetNumAddOns() do
 		self.addons[i] = select(1, GetAddOnInfo(i))
 	end
 	table.sort(self.addons)
 
 	local oldb
 
-	for i,v in pairs(self.addons) do
+	for i, v in pairs(self.addons) do
 		local name, title, notes, enabled, loadable, reason, security = GetAddOnInfo(v)
 
 		if name then
 			local bf = _G[v.."_cbf"] or CreateFrame("Button", v.."_cbf", self)
 			if i == 1 then
-				bf:SetPoint("TOPLEFT", self, "TOPLEFT", 2, -2)
-				bf:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", -2, -20)
+				bf:SetPoint("TOPLEFT", self, "TOPLEFT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
+				bf:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", SettingsDB.Scale(-2), SettingsDB.Scale(-20))
 			else
 				bf:SetPoint("TOPLEFT", oldb, "BOTTOMLEFT", 0, 0)
-				bf:SetPoint("BOTTOMRIGHT", oldb, "BOTTOMRIGHT", 0, -20)
+				bf:SetPoint("BOTTOMRIGHT", oldb, "BOTTOMRIGHT", 0, SettingsDB.Scale(-20))
 			end
 			
 			bf:EnableMouse(true)
-			
-			bf:SetBackdrop({
-				bgFile = "Interface\\Buttons\\WHITE8x8",
-			})
+			bf:SetBackdrop({bgFile = SettingsCF.media.blank})
 			bf:SetBackdropColor(0, 0, 0, 0)
 	
 			local maketool = function(self, v)
-				local name, title, notes, enabled, loadable, reason, security = GetAddOnInfo(v)
 				GameTooltip:ClearLines()
 				GameTooltip:SetOwner(self, ANCHOR_TOPRIGHT)
-				
-				local s = title.."|n"
-				if notes then s = "|cffffff00"..s.."|r".."|cffffffff"..notes.."|r|n" end
-				if (GetAddOnDependencies(v)) then
-					s = "|cffff4400Dependencies: "
+				GameTooltip:AddLine(title)
+				if notes then
+					GameTooltip:AddLine(notes, 1, 1, 1)
+				end
+				if GetAddOnDependencies(v) then
+					local s = "|cffff2200"..L_ALOAD_DEP
 					for i = 1, select("#", GetAddOnDependencies(v)) do
 						s = s..select(i, GetAddOnDependencies(v))
-						if (i > 1) then s=s..", " end
+						if i > 1 then s = s..", " end
 					end
 					s = s.."|r"
+					GameTooltip:AddLine(s, _, _, _, 1)
 				end
-				GameTooltip:AddLine(s,_,_,_,1)
 				GameTooltip:Show()
 			end
 			
 			bf:SetScript("OnEnter", function(self)
-				self:SetBackdropColor(0, 1, 0, .25)
+				self:SetBackdropColor(0, 1, 0, 0.25)
 				maketool(self, v)
 			end)
 			
@@ -255,8 +246,8 @@ local makeList = function()
 			oldb = bf
 
 			local cb = _G[v.."_cb"] or CreateFrame("CheckButton", v.."_cb", bf, "OptionsCheckButtonTemplate")
-			cb:SetWidth(16)
-			cb:SetHeight(16)
+			cb:SetWidth(SettingsDB.Scale(16))
+			cb:SetHeight(SettingsDB.Scale(16))
 			cb:SetScript("OnClick", function()
 				local _, _, _, enabled = GetAddOnInfo(name)
 				if enabled then
@@ -266,10 +257,10 @@ local makeList = function()
 				end
 			end)
 			cb:SetChecked(enabled)
-			cb:SetPoint("LEFT", 4, 0)
+			cb:SetPoint("LEFT", SettingsDB.Scale(4), 0)
 
 			cb:SetScript("OnEnter", function()
-				bf:SetBackdropColor(0, 1, 0, .25)
+				bf:SetBackdropColor(0, 1, 0, 0.25)
 				maketool(cb, v)
 			end)
 			
@@ -303,10 +294,10 @@ end
 
 local showb = CreateFrame("Button", "GameMenuButtonAddonManager", GameMenuFrame, "GameMenuButtonTemplate")
 showb:SetText(ADDONS)
-showb:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -1)
+showb:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, SettingsDB.Scale(-1))
 
 GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + showb:GetHeight())
-GameMenuButtonSoundOptions:SetPoint("TOP", showb, "BOTTOM", 0, -1)
+GameMenuButtonSoundOptions:SetPoint("TOP", showb, "BOTTOM", 0, SettingsDB.Scale(-1))
 
 showb:SetScript("OnClick", function()
 	PlaySound("igMainMenuOption")
@@ -317,10 +308,10 @@ end)
 if not IsAddOnLoaded("ShestakUI_Config") then return end
 local guib = CreateFrame("Button", "GameMenuButtonSettingsGUI", GameMenuFrame, "GameMenuButtonTemplate")
 guib:SetText("ShestakUI")
-guib:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -23)
+guib:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, SettingsDB.Scale(-23))
 
 GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + guib:GetHeight())
-GameMenuButtonSoundOptions:SetPoint("TOP", guib, "BOTTOM", 0, -1)
+GameMenuButtonSoundOptions:SetPoint("TOP", guib, "BOTTOM", 0, SettingsDB.Scale(-1))
 
 guib:SetScript("OnClick", function()
 	PlaySound("igMainMenuOption")
