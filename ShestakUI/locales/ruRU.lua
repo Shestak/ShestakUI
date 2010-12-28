@@ -37,6 +37,7 @@ if SettingsDB.client == "ruRU" then
 	L_ALOAD_RL = "Перезагрузить"
 	L_ALOAD_TRADE = "Торговля"
 	L_ALOAD_SOLO = "Соло"
+	L_ALOAD_DEP = "Зависимые ресурсы: "
 	
 	-- ShestakUI_Config
 	L_GUI_MINIMAP_ICON_LM = "ЛКМ - Вызвать настройки"

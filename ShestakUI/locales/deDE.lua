@@ -37,6 +37,7 @@ if SettingsDB.client == "deDE" then
 	L_ALOAD_RL = "Interface Neuladen"
 	L_ALOAD_TRADE = "Handel"
 	L_ALOAD_SOLO = "Solo"
+	L_ALOAD_DEP = "Dependencies: " -- Needs review
 
 	-- ShestakUI_Config
 	L_GUI_MINIMAP_ICON_LM = "Linke Maustaste - GUI öffnen"

@@ -37,6 +37,7 @@ if SettingsDB.client == "enUS" or SettingsDB.client == "enGB" then
 	L_ALOAD_RL = "Reload UI"
 	L_ALOAD_TRADE = "Trade"
 	L_ALOAD_SOLO = "Solo"
+	L_ALOAD_DEP = "Dependencies: "
 	
 	-- ShestakUI_Config
 	L_GUI_MINIMAP_ICON_LM = "Left Click - Enter to GUI"

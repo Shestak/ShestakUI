@@ -37,6 +37,7 @@ if SettingsDB.client == "frFR" then
 	L_ALOAD_RL = "Recharger l'interface"
 	L_ALOAD_TRADE = "Echanger"
 	L_ALOAD_SOLO = "Solo"
+	L_ALOAD_DEP = "Dependencies: " -- Needs review
 	
 	-- ShestakUI_Config
 	L_GUI_MINIMAP_ICON_LM = "Clic gauche - Accéder au GUI"

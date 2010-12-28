@@ -37,6 +37,7 @@ if SettingsDB.client == "esES" then
 	L_ALOAD_RL = "Recargar UI"
 	L_ALOAD_TRADE = "Comercio"
 	L_ALOAD_SOLO = "Solo"
+	L_ALOAD_DEP = "Dependencies: " -- Needs review
 	
 	-- ShestakUI_Config
 	L_GUI_MINIMAP_ICON_LM = "Click izquierdo - Entrar a la GUI"

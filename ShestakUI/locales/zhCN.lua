@@ -37,6 +37,7 @@ if SettingsDB.client == "zhCN" then
 	L_ALOAD_RL = "重新加载UI"
 	L_ALOAD_TRADE = "贸易"
 	L_ALOAD_SOLO = "独自"
+	L_ALOAD_DEP = "Dependencies: " -- Needs review
 	
 	-- ShestakUI_Config
 	L_GUI_MINIMAP_ICON_LM = "左键点击 -- 进入GUI设置"
