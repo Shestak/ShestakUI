@@ -1,6 +1,6 @@
 ## Interface: 40000
 ## Title: ShestakUI Heal
-## Notes: Raid Heal layout for ShestakUI.
+## Notes: Raid layout for ShestakUI
 ## Author: Shestak
 ## Credits: ALZA, Tukz, Caellian, Elv22
 ## RequiredDeps: ShestakUI

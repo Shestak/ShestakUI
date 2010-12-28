@@ -1,6 +1,6 @@
 ## Interface: 40000
 ## Title: ShestakUI Filger
-## Notes: Class timers and icons for ShestakUI.
+## Notes: Class timers for ShestakUI
 ## Author: Affli
 ## Credits: Nils Ruesch
 ## RequiredDeps: ShestakUI

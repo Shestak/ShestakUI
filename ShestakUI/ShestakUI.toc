@@ -1,6 +1,6 @@
 ﻿## Interface: 40000
 ## Title: ShestakUI
-## Notes: A total UI overhaul for World of Warcraft.
+## Notes: A total UI overhaul for World of Warcraft
 ## Author: Shestak
 ## Version: 2.9.5
 ## Credits: ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Havoc74

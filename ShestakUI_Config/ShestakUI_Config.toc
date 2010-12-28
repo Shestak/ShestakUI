@@ -1,6 +1,6 @@
 ## Interface: 40000
 ## Title: ShestakUI Config
-## Notes: In-game configuration for ShestakUI.
+## Notes: In-game configuration for ShestakUI
 ## Author: Tohveli
 ## Credits: Tukz, Fernir, Elv22
 ## RequiredDeps: ShestakUI
