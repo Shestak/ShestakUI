@@ -192,8 +192,10 @@ elseif ct.myclass=="WARRIOR"then
 		ct.aoespam[1680]=true		-- Whirlwind
 		ct.aoespam[94009]=true		-- Rend
 		ct.aoespam[12721]=true		-- Deep Wounds
-		ct.aoespam[23880]=true		-- Bloodthirst
-		ct.aoespam[55694]=true		-- Enraged Regeneration
+	end
+	if(ct.healing)then
+		ct.healfilter[23880]=true	-- Bloodthirst
+		ct.healfilter[55694]=true	-- Enraged Regeneration
 	end
 elseif ct.myclass=="HUNTER"then
 	if(ct.mergeaoespam)then
