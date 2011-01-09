@@ -37,7 +37,7 @@ if SettingsDB.client == "zhTW" then
 	L_ALOAD_RL = "重新加載UI"
 	L_ALOAD_TRADE = "經商"
 	L_ALOAD_SOLO = "獨自"
-	L_ALOAD_DEP = "Dependencies: " -- Needs review
+	L_ALOAD_DEP = "依賴: "
 	
 	-- ShestakUI_Config
 	L_GUI_MINIMAP_ICON_LM = "左鍵點擊 -- 進入GUI設置"
@@ -191,7 +191,7 @@ if SettingsDB.client == "zhTW" then
 	L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:"
 	L_DATATEXT_DEMOLISHERSDESTROYED = "石毀車摧毀:"
 	L_DATATEXT_GATESDESTROYED = "大門摧毀:"
-	L_DATATEXT_CONTROL = "冬握湖控制:"
+	L_DATATEXT_CONTROL = "控制:"
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "你的寵物感到不高興!"
