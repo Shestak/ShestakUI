@@ -9,6 +9,7 @@ local BAGSFONT = SettingsCF["media"].pixel_font
 local BAGSFONTSIZE = SettingsCF["media"].pixel_font_size
 local BAGSFONTSTYLE = SettingsCF["media"].pixel_font_style
 local ST_NORMAL = 1
+local ST_FISHBAG = 2
 local ST_SPECIAL = 3
 local bag_bars = 0
 
@@ -245,14 +246,16 @@ function Stuffing:SlotNew (bag, slot)
 	return ret, true
 end
 
-
 -- From OneBag
 local BAGTYPE_PROFESSION = 0x0008 + 0x0010 + 0x0020 + 0x0040 + 0x0080 + 0x0200 + 0x0400
+local BAGTYPE_FISHING = 32768
 
 function Stuffing:BagType(bag)
 	local bagType = select(2, GetContainerNumFreeSlots(bag))
 
-	if bit.band(bagType, BAGTYPE_PROFESSION) > 0 then
+	if bit.band(bagType, BAGTYPE_FISHING) > 0 then
+		return ST_FISHBAG
+	elseif bit.band(bagType, BAGTYPE_PROFESSION) > 0 then    
 		return ST_SPECIAL
 	end
 
@@ -616,6 +619,8 @@ function Stuffing:Layout(lb)
 				b.frame:SetBackdropColor(0, 0, 0, 0.5)
 				SettingsDB.StyleButton(b.frame, false)
 				
+				-- Color fish bag border slot to red
+				if bagType == ST_FISHBAG then b.frame:SetBackdropBorderColor(1, 0, 0) b.frame.lock = true end
 				-- Color profession bag slot border ~yellow
 				if bagType == ST_SPECIAL then b.frame:SetBackdropBorderColor(1, 0.9, 0.3) b.frame.lock = true end
 				
@@ -1019,6 +1024,33 @@ end
 
 function Stuffing:SortBags()
 	if (UnitAffectingCombat("player")) then return end
+
+	local free
+	local total = 0
+	local bagtypeforfree
+
+	if StuffingFrameBank and StuffingFrameBank:IsShown() then
+		for i = 5, 11 do
+			free, bagtypeforfree = GetContainerNumFreeSlots(i)
+			if bagtypeforfree == 0 then
+				total = free + total
+			end
+		end
+		total = select(1, GetContainerNumFreeSlots(-1)) + total
+	else
+		for i = 0, 4 do
+			free, bagtypeforfree = GetContainerNumFreeSlots(i)
+			if bagtypeforfree == 0 then
+				total = free + total
+			end
+		end
+	end
+
+	if total == 0 then
+		print("|cffff0000"..ERROR_CAPS.." - "..ERR_INV_FULL.."|r")
+		return
+	end
+
 	local bs = self.sortBags
 	if #bs < 1 then
 		Print(L_BAG_NOTHING_SORT)
@@ -1260,6 +1292,7 @@ function Stuffing.Menu(self, level)
 		else
 			key_ring = 1
 		end
+		Stuffing_Toggle()
 		ToggleKeyRing()
 		Stuffing:Layout()
 	end
