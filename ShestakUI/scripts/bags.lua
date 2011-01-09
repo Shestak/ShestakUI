@@ -16,7 +16,7 @@ local bag_bars = 0
 -- Hide bags options in default interface
 InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 
-Stuffing = CreateFrame ("Frame", nil, UIParent)
+Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
 Stuffing:RegisterEvent("PLAYER_ENTERING_WORLD")
 Stuffing:SetScript("OnEvent", function(this, event, ...)
@@ -1292,7 +1292,6 @@ function Stuffing.Menu(self, level)
 		else
 			key_ring = 1
 		end
-		Stuffing_Toggle()
 		ToggleKeyRing()
 		Stuffing:Layout()
 	end

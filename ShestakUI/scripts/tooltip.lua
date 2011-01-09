@@ -786,7 +786,7 @@ if SettingsCF["tooltip"].average_lvl == true then
 			end
 		end
 		
-		if (total < 1 or itn < 1) then return end
+		if (total < 1 or itn < 1) then return 0 end
 		
 		return floor(total / itn)
 	end
@@ -814,14 +814,16 @@ if SettingsCF["tooltip"].average_lvl == true then
 		GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
 			local ail, r, gb
 			local _, unit = GameTooltip:GetUnit()
-			local isInspectOpen = (InspectFrame and InspectFrame:IsShown()) or (Examiner and Examiner:IsShown())
-			if ((unit) and (CanInspect(unit)) and (not isInspectOpen)) then
-				NotifyInspect(unit)
-				ail = GetAiL(unit)
-				r, gb = GetAiLColor(ail)
-				ClearInspectPlayer(unit)
-				GameTooltip:AddLine(format("|cfffed100"..STAT_AVERAGE_ITEM_LEVEL..":|r "..ail), r, gb, gb)
-				GameTooltip:Show()
+			if (unit and CanInspect(unit)) then
+				local isInspectOpen = (InspectFrame and InspectFrame:IsShown()) or (Examiner and Examiner:IsShown())
+				if ((unit) and (CanInspect(unit)) and (not isInspectOpen)) then
+					NotifyInspect(unit)
+					ail = GetAiL(unit)
+					r, gb = GetAiLColor(ail)
+					ClearInspectPlayer(unit)
+					GameTooltip:AddLine(format("|cfffed100"..STAT_AVERAGE_ITEM_LEVEL..":|r "..ail), r, gb, gb)
+					GameTooltip:Show()
+				end
 			end
 		end)
 	end
