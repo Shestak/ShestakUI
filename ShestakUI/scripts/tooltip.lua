@@ -621,19 +621,11 @@ end
 if SettingsCF["tooltip"].arena_experience == true then
 	local isGTTActive = false
 	local GTT = _G["GameTooltip"]
-	-- Settings start 
 	local needStatistic = {
 		370, -- Highest 2 man personal rating
 		595, -- Highest 3 man personal rating
 		596, -- Highest 5 man personal rating
 	}
-	local needAchievements = {
-		1161,  -- 2200 arena rating in 5x5
-		1159,  -- 2200 arena rating in 2x2
-		1160,  -- 2200 arena rating in 3x3
-		2091,  -- gladiator
-	}
-	-- Settings end 
 
 	strGradient = function(val, low, high)
 		local percent, r, g
@@ -652,11 +644,11 @@ if SettingsCF["tooltip"].arena_experience == true then
 		return format("|cff%02x%02x%02x%s|r", r*255, g*255, 0, val) 
 	end 
 
-	local skillf = CreateFrame("frame")
+	local skillf = CreateFrame("Frame")
 	skillf:RegisterEvent("ADDON_LOADED")
-	skillf:SetScript("OnEvent",function(self,event,...)
+	skillf:SetScript("OnEvent", function(self, event, ...)
 		if event == "ADDON_LOADED" then
-			if arg1 == ... then
+			if ... then
 				skillf:UnregisterEvent("ADDON_LOADED")
 				GTT:HookScript("OnTooltipSetUnit", function()
 					if InCombatLockdown() and InCombatLockdown() == 1 then return end
@@ -685,17 +677,9 @@ if SettingsCF["tooltip"].arena_experience == true then
 			
 			isGTTActive = false
 			
-			for indx, Achievement in pairs(needAchievements) do
-				local IDNumber, Name, Points, Completed, Month, Day, Year, Description, Flags, Image, RewardText = GetAchievementInfo(Achievement)
-				if GetAchievementComparisonInfo(Achievement) then
-					GTT:AddLine("|T"..Image..":16:16:0:0:64:64:4:60:4:60|t "..Name)
-					isGTTActive = true
-				end
-			end
-			
-			for indx, Achievement in pairs(needStatistic) do
-				if GetComparisonStatistic(Achievement) ~= "--" then
-					GTT:AddDoubleLine(select(2,GetAchievementInfo(Achievement)), strGradient(tonumber(GetComparisonStatistic(Achievement)), 0, 100))
+			for index, Achievement in pairs(needStatistic) do
+				if tonumber(GetComparisonStatistic(Achievement)) and tonumber(GetComparisonStatistic(Achievement)) > 0 then
+					GTT:AddDoubleLine(select(2, GetAchievementInfo(Achievement)), strGradient(tonumber(GetComparisonStatistic(Achievement)), 0, 100))
 					isGTTActive = true
 				end
 			end
@@ -830,7 +814,8 @@ if SettingsCF["tooltip"].average_lvl == true then
 		GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
 			local ail, r, gb
 			local _, unit = GameTooltip:GetUnit()
-			if (unit and CanInspect(unit)) then
+			local isInspectOpen = (InspectFrame and InspectFrame:IsShown()) or (Examiner and Examiner:IsShown())
+			if ((unit) and (CanInspect(unit)) and (not isInspectOpen)) then
 				NotifyInspect(unit)
 				ail = GetAiL(unit)
 				r, gb = GetAiLColor(ail)
