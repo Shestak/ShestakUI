@@ -287,7 +287,6 @@ makeList()
 
 -- Slash command
 SLASH_ALOAD1 = "/aload"
-SLASH_ALOAD2 = "/al"
 SlashCmdList["ALOAD"] = function (msg)
    loadf:Show()
 end
