@@ -865,6 +865,8 @@ Filger_Spells = {
 			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Ancient Hysteria
 			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Dark Archangel
+			{ spellID = 87153, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -891,6 +893,8 @@ Filger_Spells = {
 			{ spellID = 81661, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Empowered Shadow
 			{ spellID = 95799, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Dark Evangelism
+			{ spellID = 87117, size = 37, unitId = "player", caster = "all", filter = "BUFF" }, 
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -993,6 +997,8 @@ Filger_Spells = {
 			{ spellID = 14751, size = 30, filter = "CD" },
 			-- Desperate Prayer
 			{ spellID = 19236, size = 30, filter = "CD" },
+			-- Leap of Faith
+			{ spellID = 73325, size = 30, filter = "CD" },
 		},
 	},
 	["WARLOCK"] = {
