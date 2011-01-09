@@ -32,6 +32,7 @@ bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 bar:RegisterEvent("KNOWN_CURRENCY_TYPES_UPDATE")
 bar:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
 bar:RegisterEvent("BAG_UPDATE")
+bar:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 bar:SetScript("OnEvent", function(self, event, ...)
 	if event == "PLAYER_LOGIN" then
 		local button
@@ -69,6 +70,8 @@ bar:SetScript("OnEvent", function(self, event, ...)
 				button:SetPoint("LEFT", previous, "RIGHT", SettingsDB.buttonspacing, 0)
 			end
 		end
+	elseif event == "ACTIVE_TALENT_GROUP_CHANGED" then
+		LoadAddOn("Blizzard_GlyphUI")
 	else
 		MainMenuBar_OnEvent(self, event, ...)
 	end
