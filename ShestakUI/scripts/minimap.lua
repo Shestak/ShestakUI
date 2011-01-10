@@ -172,7 +172,7 @@ local addonmenu = {
 		func = function() if IsAddOnLoaded("DXE") then DXE:ToggleConfig() end end},
 	{text = "Other addons", isTitle = 1, notCheckable = 1, keepShownOnClick = 1},
 	{text = "Archy", notCheckable = 1,
-		func = function() if IsAddOnLoaded("Archy") then InterfaceOptionsFrame_OpenToCategory(Archy.optionsFrame) end end},
+		func = function() if IsAddOnLoaded("Archy") then ToggleFrame(ArchyDigSiteFrame) end end},
 	{text = "AtlasLoot", notCheckable = 1,
 		func = function() if IsAddOnLoaded("AtlasLoot") then ToggleFrame(AtlasLootDefaultFrame) end end},
 	{text = "WIM", notCheckable = 1,
