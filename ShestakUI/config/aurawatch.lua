@@ -238,101 +238,79 @@ if SettingsCF.raidframe.plugins_aura_watch == true then
 		SettingsDB.debuffids = {
 		-- Baradin Hold
 			-- Argaloth
-			95173,	-- Consuming Darkness
-			88954,	-- Consuming Darkness
-		-- Blackrock Mountain: Blackwing Descent
+			95173, 88954,	-- Consuming Darkness
+		-- Blackwing Descent
 			-- Magmaw
-			91911,	-- Constricting Chains
-			94679,	-- Parasitic Infection
-			78941,	-- Parasitic Infection
-			94617,	-- Mangle
-			89773,	-- Mangle
-			78199,	-- Sweltering Armor
+			78941, 91913,	-- Parasitic Infection
+			91912, 89773,	-- Mangle
 			-- Omintron Defense System
-			79835,	-- Poison Soaked Shell	
-			91433,	-- Lightning Conductor
-			91521,	-- Incineration Security Measure
-			79888,	-- Lightning Conductor
-			79505,	-- Flamethrower
-			80161,	-- Chemical Cloud
-			79501,	-- Acquiring Target
-			80011,	-- Soaked in Poison
-			80094,	-- Fixate
+			79889, 91438,	-- Lightning Conductor
+			79504, 91535,	-- Flamethrower
+			92035, 79501,	-- Acquiring Target
+			79835, 91501,	-- Poison Soaked Shell		
+			91555, 79629,	-- Power Generator
+			80094,			-- Fixate
 			-- Maloriak
-			77699,	-- Flash Freeze
-			92978,	-- Flash Freeze
-			77760,	-- Biting Chill
-			92976,	-- Biting Chill
-			91829,	-- Fixate
-			92973,	-- Consuming Flames
+			77699, 92978,	-- Flash Freeze
+			92975, 77763,	-- Biting Chill
+			77786, 92971,	-- Consuming Flames
+			92989, 78034,	-- Rend
+			78617,			-- Fixate
 			-- Atramedes
-			92423,	-- Searing Flame
-			92485,	-- Roaring Flame
-			78023,	-- Roaring Flame
-			92407,	-- Sonic Breath
-			78092,	-- Tracking
-			78897,	-- Noisy
+			92421, 77982,	-- Searing Flame
+			78023, 92483,	-- Roaring Flame
+			92407, 78100,	-- Sonic Breath
+			78092,			-- Tracking
 			-- Chimaeron
-			82881,	-- Break
-			89084,	-- Low Health
+			82881,			-- Break
+			89084,			-- Low Health
 			-- Nefarian
-			94128,	-- Tail Lash
-			94075,	-- Magma
+			81114, 94073,	-- Magma
+			94128, 77827,	-- Tail Lash
 		-- The Bastion of Twilight
-			-- Valiona & Theralion
-			92878,	-- Blackout
-			86788,	-- Blackout
-			86840,	-- Devouring Flames
-			95639,	-- Engulfing Magic
-			86622,	-- Engulfing Magic
-			86202,	-- Twilight Shift
 			-- Halfus Wyrmbreaker
-			39171,	-- Malevolent Strikes
-			83908,	-- Malevolent Strikes
+			83710, 86169,	-- Furious Roar
+			-- Valiona & Theralion
+			86505, 92907,	-- Fabulous Flames
+			92872, 86844,	-- Devouring Flames
+			92881, 92880, 92879, 92877, 92876, 86825, 86788,	-- Blackout
+			86622, 86631, 95639, 95640, 95641,					-- Engulfing Magic
+			92892, 92891, 92893, 92894, 93064, 92890, 92889, 86202, 88436,	-- Twilight Shift
+			88518, 86014, 92860, 92861, 92863, 92864, 92865,	-- Twilight Meteorite
 			-- Twilight Ascendant Council
-			92511,	-- Hydro Lance
-			82762,	-- Waterlogged
-			92505,	-- Frozen
-			82772,	-- Frozen
-			92518,	-- Flame Torrent
-			88558,	-- Flame Torrent
-			83099,	-- Lightning Rod
-			92075,	-- Gravity Core
-			92488,	-- Gravity Crush
-			82665,	-- Heart of Ice
-			82660,	-- Burning Blood
-			82285,	-- Elemental Stasis
+			82660,			-- Burning Blood
+			82665,			-- Heart of Ice
+			82762,			-- Waterlogged
+			83099,			-- Lightning Rod
+			92486, 84948,	-- Gravity Crush
+			83500,			-- Swirling Winds
+			83581,			-- Grounded
+			92505, 82772, 92503, 92504,	-- Frozen
 			-- Cho'gall
-			86028,	-- Cho's Blast
-			86029,	-- Gall's Blast
-			93189,	-- Corrupted Blood
-			93133,	-- Debilitating Beam
-			81836,	-- Corruption: Accelerated
-			81831,	-- Corruption: Sickness
-			82125,	-- Corruption: Malformation
-			82170,	-- Corruption: Absolute
+			93187,			-- Corrupted Blood
+			82125,			-- Corruption: Malformation
+			82170,			-- Corruption: Absolute
+			93200, 81831,	-- Corruption: Sickness
+			82411, 93132,	-- Debilitating Beam
+			91317, 93365, 93366, 93367,	-- Worshipping
 		-- Throne of the Four Winds
 			-- Conclave of Wind
-			-- Nezir <Lord of the North Wind>
-			93131,	-- Ice Patch
-			93123,	-- Wind Chill
-			-- Anshal <Lord of the West Wind>
-			86206,	-- Soothing Breeze
-			93122,	-- Toxic Spores
-			93121,	-- Toxic Spores
-			85576,	-- Withering Winds
-			-- Rohash <Lord of the East Wind>
-			93058,	-- Slicing Gale
-			93057,	-- Slicing Gale
-			85573,	-- Deafening Winds
-			86481,	-- Hurricane
+			-- Nezir
+			86111, 93129,	-- Ice Patch
+			-- Anshal
+			93120, 86282,	-- Toxic Spores
+			-- Rohash
+			93056, 86182,	-- Slicing Gale
 			-- Al'Akir
-			93260,	-- Ice Storm
-			93295,	-- Lightning Rod
-			93294,	-- Lightning Rod
-			93281,	-- Acid Rain
-			87873,	-- Static Shock
-			88427,	-- Electrocute
+			87873,			-- Static Shock
+			91020, 93258,	-- Ice Storm
+			87856, 93283,	-- Squall Line
+			88427,			-- Electrocute
+			89666, 89668, 93293,	-- Lightning Rod
+		-- Other
+			5782,			-- Fear
+			84853,			-- Dark Pool
+			91325,			-- Shadow Vortex
 		}
 		ORD:RegisterDebuffs(SettingsDB.debuffids)
 	end
