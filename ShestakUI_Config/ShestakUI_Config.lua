@@ -324,7 +324,7 @@ local function Local(o)
 	SettingsDB.option = o
 end
 
-local NewButton = function(text,parent)
+local NewButton = function(text, parent)
 	local result = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
 	local label = result:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 	label:SetText(text)
@@ -417,19 +417,17 @@ function CreateUIConfig()
 	tinsert(UISpecialFrames, "UIConfig")
 	
 	-- Title
-	local TitleBox = CreateFrame("Frame", "UIConfig", UIConfig)
+	local TitleBox = CreateFrame("Frame", "TitleBox", UIConfig)
 	TitleBox:SetWidth(500)
 	TitleBox:SetHeight(24)
 	TitleBox:SetPoint("TOPLEFT", -10, 42)
-	SettingsDB.SkinFadedPanel(TitleBox)
 	
 	local TitleBoxText = TitleBox:CreateFontString("UIConfigTitle", "OVERLAY", "GameFontNormal")
 	TitleBoxText:SetPoint("CENTER")
 	
-	local UIConfigBG = CreateFrame("Frame", "UIConfig", UIConfig)
+	local UIConfigBG = CreateFrame("Frame", "UIConfigBG", UIConfig)
 	UIConfigBG:SetPoint("TOPLEFT", -10, 10)
 	UIConfigBG:SetPoint("BOTTOMRIGHT", 10, -10)
-	SettingsDB.SkinFadedPanel(UIConfigBG)
 	
 	-- Group selection(left side)
 	local groups = CreateFrame("ScrollFrame", "UIConfigCategoryGroup", UIConfig)
@@ -437,17 +435,15 @@ function CreateUIConfig()
 	groups:SetWidth(150)
 	groups:SetHeight(300)
 
-	local groupsBG = CreateFrame("Frame", "UIConfig", UIConfig)
+	local groupsBG = CreateFrame("Frame", "groupsBG", UIConfig)
 	groupsBG:SetPoint("TOPLEFT", groups, -10, 10)
 	groupsBG:SetPoint("BOTTOMRIGHT", groups, 10, -10)
-	SettingsDB.SkinFadedPanel(groupsBG)
 	
 	-- Title 2
 	local TitleBoxVer = CreateFrame("Frame", "TitleBoxVer", UIConfig)
 	TitleBoxVer:SetWidth(170)
 	TitleBoxVer:SetHeight(24)
 	TitleBoxVer:SetPoint("BOTTOMLEFT", groupsBG, "TOPLEFT", 0, 8)
-	SettingsDB.SkinFadedPanel(TitleBoxVer)
 	
 	local TitleBoxVerText = TitleBoxVer:CreateFontString("UIConfigTitleVer", "OVERLAY", "GameFontNormal")
 	TitleBoxVerText:SetPoint("CENTER")
@@ -658,33 +654,39 @@ function CreateUIConfig()
 		frame:Hide()
 	end
 
-	local reset = NewButton(DEFAULT, UIConfig)
+	local reset = NewButton(DEFAULT, UIConfig, "UIConfigReset")
 	reset:SetWidth(100)
 	reset:SetHeight(20)
 	reset:SetPoint("BOTTOMLEFT", -10, -38)
 	reset:SetScript("OnClick", function(self) GUIConfig = {} ReloadUI() end)
-	SettingsDB.SkinFadedPanel(reset)
 	
 	local close = NewButton(CLOSE, UIConfig)
 	close:SetWidth(100)
 	close:SetHeight(20)
 	close:SetPoint("BOTTOMRIGHT", 10, -38)
 	close:SetScript("OnClick", function(self) PlaySound("igMainMenuOption") UIConfig:Hide() end)
-	SettingsDB.SkinFadedPanel(close)
 	
 	local load = NewButton(APPLY, UIConfig)
 	load:SetHeight(20)
 	load:SetPoint("LEFT", reset, "RIGHT", 15, 0)
 	load:SetPoint("RIGHT", close, "LEFT", -15, 0)
 	load:SetScript("OnClick", function(self) ReloadUI() end)
-	SettingsDB.SkinFadedPanel(load)
 	
 	local totalreset = NewButton(L_GUI_BUTTON_RESET, groupsBG)
 	totalreset:SetHeight(20)
 	totalreset:SetWidth(170)
 	totalreset:SetPoint("TOPLEFT", groupsBG, "BOTTOMLEFT", 0, -8)
 	totalreset:SetScript("OnClick", function(self) StaticPopup_Show("RESET_UI") UIConfig:Hide() GUIConfig = {} end)
-	SettingsDB.SkinFadedPanel(totalreset)
+	
+	local bgskins = {TitleBox, TitleBoxVer, UIConfigBG, groupsBG, reset, close, load, totalreset}
+	for _, sb in pairs(bgskins) do
+		if IsAddOnLoaded("Aurora") then
+			Aurora.CreateBD(sb)
+			Aurora.CreateSD(sb)
+		else
+			SettingsDB.SkinFadedPanel(sb)
+		end
+	end
 	
 	ShowGroup("general")
 end
