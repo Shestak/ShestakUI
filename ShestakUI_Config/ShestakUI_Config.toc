@@ -5,7 +5,7 @@
 ## Credits: Tukz, Fernir, Elv22
 ## RequiredDeps: ShestakUI
 ## SavedVariablesPerCharacter: GUIConfig
-## X-Curse-Packaged-Version: 2.9.5
+## X-Curse-Packaged-Version: 2.9.6
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
