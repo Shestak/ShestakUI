@@ -165,9 +165,6 @@ SLASH_FRAME2 = "/акфьу"
 ----------------------------------------------------------------------------------------
 SlashCmdList.CHANGEADDONS = function(s)
 	if(s and s == "raid") then
-		for i in pairs(SettingsCF.addon.raid) do
-			EnableAddOn(SettingsCF.addon.raid[i])
-		end
 		for i in pairs(SettingsCF.addon.party) do
 			DisableAddOn(SettingsCF.addon.party[i])
 		end
@@ -180,13 +177,13 @@ SlashCmdList.CHANGEADDONS = function(s)
 		for i in pairs(SettingsCF.addon.trade) do
 			DisableAddOn(SettingsCF.addon.trade[i])
 		end
+		for i in pairs(SettingsCF.addon.raid) do
+			EnableAddOn(SettingsCF.addon.raid[i])
+		end
 		ReloadUI()
 	elseif(s and s == "party") then
 		for i in pairs(SettingsCF.addon.raid) do
 			DisableAddOn(SettingsCF.addon.raid[i])
-		end
-		for i in pairs(SettingsCF.addon.party) do
-			EnableAddOn(SettingsCF.addon.party[i])
 		end
 		for i in pairs(SettingsCF.addon.pvp) do
 			DisableAddOn(SettingsCF.addon.pvp[i])
@@ -196,6 +193,9 @@ SlashCmdList.CHANGEADDONS = function(s)
 		end
 		for i in pairs(SettingsCF.addon.trade) do
 			DisableAddOn(SettingsCF.addon.trade[i])
+		end
+		for i in pairs(SettingsCF.addon.party) do
+			EnableAddOn(SettingsCF.addon.party[i])
 		end
 		ReloadUI()
 	elseif(s and s == "pvp") then
@@ -205,14 +205,14 @@ SlashCmdList.CHANGEADDONS = function(s)
 		for i in pairs(SettingsCF.addon.party) do
 			DisableAddOn(SettingsCF.addon.party[i])
 		end
-		for i in pairs(SettingsCF.addon.pvp) do
-			EnableAddOn(SettingsCF.addon.pvp[i])
-		end
 		for i in pairs(SettingsCF.addon.quest) do
 			DisableAddOn(SettingsCF.addon.quest[i])
 		end
 		for i in pairs(SettingsCF.addon.trade) do
 			DisableAddOn(SettingsCF.addon.trade[i])
+		end
+		for i in pairs(SettingsCF.addon.pvp) do
+			EnableAddOn(SettingsCF.addon.pvp[i])
 		end
 		ReloadUI()
 	elseif(s and s == "quest") then
@@ -225,11 +225,11 @@ SlashCmdList.CHANGEADDONS = function(s)
 		for i in pairs(SettingsCF.addon.pvp) do
 			DisableAddOn(SettingsCF.addon.pvp[i])
 		end
-		for i in pairs(SettingsCF.addon.quest) do
-			EnableAddOn(SettingsCF.addon.quest[i])
-		end
 		for i in pairs(SettingsCF.addon.trade) do
 			DisableAddOn(SettingsCF.addon.trade[i])
+		end
+		for i in pairs(SettingsCF.addon.quest) do
+			EnableAddOn(SettingsCF.addon.quest[i])
 		end
 		ReloadUI()
 	elseif(s and s == "trade") then

@@ -43,9 +43,6 @@ addonset1:SetScript("OnClick", function()
 	for i in pairs(SettingsCF["addon"].raid) do
 		DisableAddOn(SettingsCF["addon"].raid[i])
 	end
-	for i in pairs(SettingsCF["addon"].party) do
-		EnableAddOn(SettingsCF["addon"].party[i])
-	end
 	for i in pairs(SettingsCF["addon"].pvp) do
 		DisableAddOn(SettingsCF["addon"].pvp[i])
 	end
@@ -54,6 +51,9 @@ addonset1:SetScript("OnClick", function()
 	end
 	for i in pairs(SettingsCF["addon"].trade) do
 		DisableAddOn(SettingsCF["addon"].trade[i])
+	end
+	for i in pairs(SettingsCF["addon"].party) do
+		EnableAddOn(SettingsCF["addon"].party[i])
 	end
 	ReloadUI()
 end)
@@ -64,9 +64,6 @@ addonset2:SetHeight(SettingsDB.Scale(22))
 addonset2:SetPoint("LEFT", addonset1, "RIGHT", SettingsDB.Scale(5), 0)
 addonset2:SetText(RAID)
 addonset2:SetScript("OnClick", function()
-	for i in pairs(SettingsCF["addon"].raid) do
-		EnableAddOn(SettingsCF["addon"].raid[i])
-	end
 	for i in pairs(SettingsCF["addon"].party) do
 		DisableAddOn(SettingsCF["addon"].party[i])
 	end
@@ -78,6 +75,9 @@ addonset2:SetScript("OnClick", function()
 	end
 	for i in pairs(SettingsCF["addon"].trade) do
 		DisableAddOn(SettingsCF["addon"].trade[i])
+	end
+	for i in pairs(SettingsCF["addon"].raid) do
+		EnableAddOn(SettingsCF["addon"].raid[i])
 	end
 	ReloadUI()
 end)
@@ -97,11 +97,11 @@ addonset3:SetScript("OnClick", function()
 	for i in pairs(SettingsCF["addon"].pvp) do
 		DisableAddOn(SettingsCF["addon"].pvp[i])
 	end
-	for i in pairs(SettingsCF["addon"].quest) do
-		EnableAddOn(SettingsCF["addon"].quest[i])
-	end
 	for i in pairs(SettingsCF["addon"].trade) do
 		DisableAddOn(SettingsCF["addon"].trade[i])
+	end
+	for i in pairs(SettingsCF["addon"].quest) do
+		EnableAddOn(SettingsCF["addon"].quest[i])
 	end
 	ReloadUI()
 end)
@@ -142,14 +142,14 @@ addonset5:SetScript("OnClick", function()
 	for i in pairs(SettingsCF["addon"].party) do
 		DisableAddOn(SettingsCF["addon"].party[i])
 	end
-	for i in pairs(SettingsCF["addon"].pvp) do
-		EnableAddOn(SettingsCF["addon"].pvp[i])
-	end
 	for i in pairs(SettingsCF["addon"].quest) do
 		DisableAddOn(SettingsCF["addon"].quest[i])
 	end
 	for i in pairs(SettingsCF["addon"].trade) do
 		DisableAddOn(SettingsCF["addon"].trade[i])
+	end
+	for i in pairs(SettingsCF["addon"].pvp) do
+		EnableAddOn(SettingsCF["addon"].pvp[i])
 	end
 	ReloadUI()
 end)
