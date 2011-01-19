@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------------------------
---	Localization for deDE client(Thanks to Baine and chubidu for the translation)
+--	Localization for deDE client(Thanks to Baine, chubidu and Vienchen for the translation)
 ----------------------------------------------------------------------------------------
 if SettingsDB.client == "deDE" then
 	-- Tooltip
@@ -9,7 +9,7 @@ if SettingsDB.client == "deDE" then
 	L_TOOLTIP_ACH_COMPLETE = "Dein Status: Fertig gestellt am "
 	L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
 	L_TOOLTIP_SPELL_ID = "Zauber ID:"
-	L_TOOLTIP_ITEM_ID = "Item ID:" -- Needs review
+	L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
 
 	-- Raid Utility
 	L_RAID_UTIL_DISBAND = "Gruppe auflösen"
@@ -37,7 +37,7 @@ if SettingsDB.client == "deDE" then
 	L_ALOAD_RL = "Interface Neuladen"
 	L_ALOAD_TRADE = "Handel"
 	L_ALOAD_SOLO = "Solo"
-	L_ALOAD_DEP = "Dependencies: " -- Needs review
+	L_ALOAD_DEP = "Abhängigkeiten: "
 
 	-- ShestakUI_Config
 	L_GUI_MINIMAP_ICON_LM = "Linke Maustaste - GUI öffnen"
@@ -191,7 +191,7 @@ if SettingsDB.client == "deDE" then
 	L_DATATEXT_GRAVEYARDSDEFENDED = "Friedhöfe verteidigt:"
 	L_DATATEXT_DEMOLISHERSDESTROYED = "Verwüster zerstört:"
 	L_DATATEXT_GATESDESTROYED = "Tore zerstört:"
-	L_DATATEXT_CONTROL = " under control:"  -- Needs review
+	L_DATATEXT_CONTROL = " unter Kontrolle:"
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "Dein Begleiter ist unzufrieden!"
@@ -228,15 +228,15 @@ if SettingsDB.client == "deDE" then
 	L_WELCOME_LINE_2_2 = "für weitere Informationen."
 	
 	-- Combat text
-	L_COMBATTEXT_KILLING_BLOW = "Killing Blow"  -- Needs review
-	L_COMBATTEXT_ALREADY_UNLOCKED = "Combat text already unlocked."  -- Needs review
-	L_COMBATTEXT_ALREADY_LOCKED = "Combat text already locked."  -- Needs review
-	L_COMBATTEXT_TEST_DISABLED = "Combat text test mode disabled."  -- Needs review
-	L_COMBATTEXT_TEST_ENABLED = "Combat text test mode enabled."  -- Needs review
-	L_COMBATTEXT_TEST_USE_UNLOCK = "Type /xct unlock to move and resize combat text frames."  -- Needs review
-	L_COMBATTEXT_TEST_USE_LOCK = "Type /xct lock to lock combat text frames."  -- Needs review
-	L_COMBATTEXT_TEST_USE_TEST = "Type /xct test to toggle combat text testmode."  -- Needs review
-	L_COMBATTEXT_POPUP = "To save combat text window positions you need to reload your UI."  -- Needs review
-	L_COMBATTEXT_UNSAVED = "Combat text window positions unsaved, don't forget to reload UI."  -- Needs review
-	L_COMBATTEXT_UNLOCKED = "Combat text unlocked."  -- Needs review
+	L_COMBATTEXT_KILLING_BLOW = "Todesstoß"
+	L_COMBATTEXT_ALREADY_UNLOCKED = "Kampftext bereits freigegeben."
+	L_COMBATTEXT_ALREADY_LOCKED = "Kampftext bereits gespert."
+	L_COMBATTEXT_TEST_DISABLED = "Kampftext Testmodus deaktiviert."
+	L_COMBATTEXT_TEST_ENABLED = "Kampftext Testmodus aktiviert."
+	L_COMBATTEXT_TEST_USE_UNLOCK = "Gib '/xct' ein um die Kampftext Fenster freizugeben um sie verschieben und verändern zu können."
+	L_COMBATTEXT_TEST_USE_LOCK = "Gib '/xct' ein um den Kampftext Testmodus zu sperren."
+	L_COMBATTEXT_TEST_USE_TEST = "Gib '/xct' ein um den Kampftext Testmodus zu aktivieren."
+	L_COMBATTEXT_POPUP = "Um die Kampftext Fensterpositionen zu sichern muss das Interface neu geladen werden."
+	L_COMBATTEXT_UNSAVED = "Kampftext Fensterpositionen nicht gespeichert, vergiss nicht das Interface neu zu laden."
+	L_COMBATTEXT_UNLOCKED = "Kmpftext freigegeben."
 end

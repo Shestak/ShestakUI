@@ -1,5 +1,5 @@
 ﻿----------------------------------------------------------------------------------------
---	Localization for deDE client(Thanks to Baine and chubidu for the translation)
+--	Localization for deDE client(Thanks to Baine, chubidu and Vienchen for the translation)
 ----------------------------------------------------------------------------------------
 if GetLocale() == "deDE" then
 	L_GUI_BUTTON_RESET = "Standards wiederherstellen"
@@ -21,7 +21,7 @@ if GetLocale() == "deDE" then
 	L_GUI_MISC_SPIN_CAMERA = "Kamera drehen während du afk bist"
 	L_GUI_MISC_MOVE_WATCH_FRAME = "Questbeobachtungsfenster bewegbar"
 	L_GUI_MISC_VEHICLE_MOUSEOVER = "Fahrzeugfenster bei mouseover anzeigen"
-	L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button" -- Needs review
+	L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/Gegenstand auto Taste"
 	L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
 	
 	-- Skins options
@@ -31,7 +31,7 @@ if GetLocale() == "deDE" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Kampftext"
-	L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text" -- Needs review
+	L_GUI_COMBATTEXT_ENABLE = "Kampftext aktivieren"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Blizzard Schaden-/Heilausgabe benutzen (über Spieler/Kreaturen Kopf)"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Standard Schaden/Heilung Schriftart über Kreaturen/Spieler Köpfen ändern (Neustart von WoW erforderlich um Änderungen zu sehen)"
 	L_GUI_COMBATTEXT_DAMAGE = "Zeige ausgehenden Schaden in einem eigenen Fenster"
@@ -99,7 +99,7 @@ if GetLocale() == "deDE" then
 	L_GUI_TOOLTIP_ICON = "Symbol der Gegenstände im Tooltip anzeigen"
 	L_GUI_TOOLTIP_HEALTH = "Numerischer Wert der Lebenspunkte"
 	L_GUI_TOOLTIP_HIDE = "Tooltips für Aktionsleisten verstecken"
-	L_GUI_TOOLTIP_HIDE_COMBAT = "Hide tooltip in combat" -- Needs review
+	L_GUI_TOOLTIP_HIDE_COMBAT = "Verstecke Tooltip im Kampf"
 	L_GUI_TOOLTIP_TALENTS = "Zeige die Talente im Tooltip an"
 	L_GUI_TOOLTIP_ACHIEVEMENTS = "Verlgeichen von Erfolgen in Tooltips"
 	L_GUI_TOOLTIP_TARGET = "Ziel des Spielers im Tooltip anzeigen"
@@ -120,7 +120,7 @@ if GetLocale() == "deDE" then
 	L_GUI_CHAT_TIMESTAMP = "Farbe des Zeitstempels"
 	L_GUI_CHAT_WHISP = "Geräusch abspielen wenn eine private Nachricht empfangen wird"
 	L_GUI_CHAT_SKIN_BUBBLE = "Blizzard Chat Blasen verändern"
-	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
+	L_GUI_CHAT_CL_TAB = "Kampflog Reiter anzeigen"
 	
 	-- Bag options
 	L_GUI_BAGS = "Taschen"
@@ -161,9 +161,9 @@ if GetLocale() == "deDE" then
 	L_GUI_NAMEPLATE_CLASS_ICON = "Zeige Klassensymbole an (PVP)"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Namen abgekürzt anzeigen"
 	L_GUI_NAMEPLATE_OVERLAP = "Überlappende Namensplaketten erlauben"
-	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"  -- Needs review
-	L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"  -- Needs review
-	L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
+	L_GUI_NAMEPLATE_GOOD_COLOR = "Positive Bedrohungsfarbe. Variiert abhängig ob Tank oder dps/heal"
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Verlust oder Zuwachs der Bedrohung farbig kennzeichen"
+	L_GUI_NAMEPLATE_BAD_COLOR = "Negative Bedrohungsfarbe. Variiert abhängig ob Tank oder dps/heal"
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
@@ -197,18 +197,18 @@ if GetLocale() == "deDE" then
 	-- Unit Frames options
 	L_GUI_UF_ENABLE = "Unitframes aktivieren"
 	L_GUI_UF_OWN_COLOR = "Farbe für die Lebensleiste festlegen"
-	L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"  -- Needs review
+	L_GUI_UF_UF_COLOR = "Farbe der Gesundheitsleiste (falls eigene Farbe verwender wird)"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Lebensleiste eines gegnerischen Ziels ist rot"
 	L_GUI_UF_TOTAL_VALUE = "Zeige Infotext auf Spieler und Ziel mit XXX/Gesamt"
 	L_GUI_UF_COLOR_VALUE = "Lebens/Mana Werte einfärben"
 	L_GUI_UF_UNIT_CASTBAR = "Zeige Zauberleisten"
 	L_GUI_UF_CASTBAR_ICON = "Zeige Symbole der Zauberleisten an"
 	L_GUI_UF_CASTBAR_LATENCY = "Latenz in Zauberleiste anzeigen"
-	L_GUI_UF_SHOW_PET = "Show pet frame"  -- Needs review
-	L_GUI_UF_SHOW_FOCUS = "Show focus frame"  -- Needs review
-	L_GUI_UF_SHOW_TOT = "Show target of target frame"  -- Needs review
+	L_GUI_UF_SHOW_PET = "Zeige Begleiterfenster an"
+	L_GUI_UF_SHOW_FOCUS = "Zeige Fokusfenster an"
+	L_GUI_UF_SHOW_TOT = "Zeige 'Ziel des Ziels' Fenster an"
 	L_GUI_UF_SHOW_BOSS = "Zeige eigenes Fenster für Bosse an"
-	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
+	L_GUI_UF_BOSS_RIGHT = "Bossfenster rechts"
 	L_GUI_UF_SHOW_ARENA = "Zeige Einheitenfenster in der Arena"
 	L_GUI_UF_ARENA_RIGHT = "Arenafenster auf der rechten Seite"
 	L_GUI_UF_ICONS_PVP = "Zeige PVP Text (keine Symbole) bei Mouseover (Spieler+Ziel)"
@@ -225,7 +225,7 @@ if GetLocale() == "deDE" then
 	L_GUI_UF_PLUGINS_HOLY_BAR = "Aktivere Heilige Kraft Leiste"
 	L_GUI_UF_PLUGINS_SHARD_BAR = "Aktiviere Splitter Leiste"
 	L_GUI_UF_PLUGINS_RUNE_BAR = "Runenleiste"
-	L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Enable vengeance bar" -- Needs review
+	L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Zeige Rachebar an"
 	L_GUI_UF_PLUGINS_TOTEM_BAR = "Totemleiste"
 	L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Totemname"
 	L_GUI_UF_PLUGINS_REPUTATION_BAR = "Rufleiste"
@@ -253,7 +253,7 @@ if GetLocale() == "deDE" then
 	L_GUI_UF_ICONS_LFD_ROLE = "Gruppenanführersymbol an den Fenstern"
 	L_GUI_UF_ICONS_RAID_MARK = "Raidsymbole"
 	L_GUI_UF_ICONS_READY_CHECK = "Bereitschaftschecksymbole"
-	L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff highlight texture + icon"  -- Needs review
+	L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debufftextur und Symbol hervorheben"
 	L_GUI_UF_PLUGINS_AURA_WATCH = "*RAID* Buffüberwachung"
 	L_GUI_UF_PLUGINS_HEALCOMM = "Leiste für Eingehende Heilung"
 	
