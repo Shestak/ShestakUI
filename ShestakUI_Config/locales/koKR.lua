@@ -123,6 +123,7 @@ if GetLocale() == "koKR" then
 	L_GUI_CHAT_WHISP = "Sound when whisper"
 	L_GUI_CHAT_SKIN_BUBBLE = "Skin Blizzard chat bubbles"
 	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"
+	L_GUI_CHAT_STICKY = "Remember last channel"
 	
 	-- Bag options
 	L_GUI_BAGS = "Bags"

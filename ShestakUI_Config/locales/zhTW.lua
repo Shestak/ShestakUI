@@ -123,6 +123,7 @@ if GetLocale() == "zhTW" then
 	L_GUI_CHAT_WHISP = "接受密語時聲音提示"
 	L_GUI_CHAT_SKIN_BUBBLE = "美化默認聊天泡泡"
 	L_GUI_CHAT_CL_TAB = "顯示戰鬥記錄標籤"
+	L_GUI_CHAT_STICKY = "Remember last channel"  -- Needs review
 	
 	-- Bag options
 	L_GUI_BAGS = "背包"

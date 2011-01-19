@@ -150,6 +150,7 @@ local function Local(o)
 	if o == "UIConfigchatwhisp_sound" then o = L_GUI_CHAT_WHISP end
 	if o == "UIConfigchatbubbles" then o = L_GUI_CHAT_SKIN_BUBBLE end
 	if o == "UIConfigchatcombatlog" then o = L_GUI_CHAT_CL_TAB end
+	if o == "UIConfigchatsticky" then o = L_GUI_CHAT_STICKY end
 	
 	-- Bag options
 	if o == "UIConfigbag" then o = L_GUI_BAGS end

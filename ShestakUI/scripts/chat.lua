@@ -159,16 +159,22 @@ local function SetupChat(self)
 	end
 	
 	-- Remember last channel
-	ChatTypeInfo.SAY.sticky = 1
-	ChatTypeInfo.PARTY.sticky = 1
-	ChatTypeInfo.GUILD.sticky = 1
-	ChatTypeInfo.OFFICER.sticky = 1
-	ChatTypeInfo.RAID.sticky = 1
-	ChatTypeInfo.RAID_WARNING.sticky = 1
-	ChatTypeInfo.BATTLEGROUND.sticky = 1
-	ChatTypeInfo.WHISPER.sticky = 1
-	ChatTypeInfo.BN_WHISPER.sticky = 1
-	ChatTypeInfo.CHANNEL.sticky = 1
+	local var
+	if SettingsCF.chat.sticky == true then
+		var = 1
+	else
+		var = 0
+	end
+	ChatTypeInfo.SAY.sticky = var
+	ChatTypeInfo.PARTY.sticky = var
+	ChatTypeInfo.GUILD.sticky = var
+	ChatTypeInfo.OFFICER.sticky = var
+	ChatTypeInfo.RAID.sticky = var
+	ChatTypeInfo.RAID_WARNING.sticky = var
+	ChatTypeInfo.BATTLEGROUND.sticky = var
+	ChatTypeInfo.WHISPER.sticky = var
+	ChatTypeInfo.BN_WHISPER.sticky = var
+	ChatTypeInfo.CHANNEL.sticky = var
 end
 
 local function SetupChatPosAndFont(self)

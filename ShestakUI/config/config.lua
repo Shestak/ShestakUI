@@ -185,6 +185,7 @@ SettingsCF["chat"] = {
 	["whisp_sound"] = true,						-- Sound when whisper
 	["bubbles"] = true,							-- Skin Blizzard chat bubbles
 	["combatlog"] = true,						-- Show CombatLog tab(need two reloads when false)
+	["sticky"] = true,							-- Remember last channel
 }
 
 ----------------------------------------------------------------------------------------

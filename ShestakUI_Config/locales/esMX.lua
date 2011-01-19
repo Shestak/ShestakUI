@@ -123,6 +123,7 @@ if GetLocale() == "esMX" then
 	L_GUI_CHAT_WHISP = "Sonido cuando te susurran"
 	L_GUI_CHAT_SKIN_BUBBLE = "Skin Blizzard chat bubbles"  -- Needs review
 	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
+	L_GUI_CHAT_STICKY = "Remember last channel"  -- Needs review
 	
 	-- Bag options
 	L_GUI_BAGS = "Bolsas"

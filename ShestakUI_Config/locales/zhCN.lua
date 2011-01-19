@@ -123,6 +123,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_CHAT_WHISP = "接受密语时声音提示"
 	L_GUI_CHAT_SKIN_BUBBLE = "美化默认聊天泡泡"
 	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
+	L_GUI_CHAT_STICKY = "Remember last channel"  -- Needs review
 
 	-- Bag options
 	L_GUI_BAGS = "背包"

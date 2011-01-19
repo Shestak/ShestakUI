@@ -123,6 +123,7 @@ if GetLocale() == "frFR" then
 	L_GUI_CHAT_WHISP = "Alerte sonore quand murmure"
 	L_GUI_CHAT_SKIN_BUBBLE = "Skin des bulles de discussions"
 	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
+	L_GUI_CHAT_STICKY = "Remember last channel"  -- Needs review
 	
 	-- Bag options
 	L_GUI_BAGS = "Sacs"
