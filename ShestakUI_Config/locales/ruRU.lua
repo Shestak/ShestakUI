@@ -7,14 +7,14 @@ if GetLocale() == "ruRU" then
 	L_GUI_GENERAL_UIICON = "Иконка интерфейса у мини-карты"
 	L_GUI_GENERAL_AUTOSCALE = "Автоматически масштабировать интерфейс"
 	L_GUI_GENERAL_MULTISAMPLE = "1-разр. сглаживание (ровные края шириной 1 пиксель)"
-	L_GUI_GENERAL_UISCALE = "Масштаб интерфейса (если автомасштабирование отключено)"
+	L_GUI_GENERAL_UISCALE = "Масштаб интерфейса (если автоматическое масштабирование отключено)"
 	L_GUI_GENERAL_WELCOME_MESSAGE = "Приветственное сообщение в чате"
 	L_GUI_GENERAL_LAG_TOLERANCE = "Автоматическое обновление допустимой задержки"
 
 	-- Miscellaneous options
-	L_GUI_MISC_AUTOQUEST = "Автопринятие заданий"
-	L_GUI_MISC_AUTODUEL = "Автоотмена дуэлей от игроков"
-	L_GUI_MISC_AUTOACCEPT = "Автопринятие приглашений от друзей и гильдии"
+	L_GUI_MISC_AUTOQUEST = "Автоматическое принятие заданий"
+	L_GUI_MISC_AUTODUEL = "Автоматическая отмена дуэлей от игроков"
+	L_GUI_MISC_AUTOACCEPT = "Автоматическое принятие приглашений от друзей и гильдии"
 	L_GUI_MISC_AUTORESSURECT = "Автоматическое воскрешение на Полях Сражений"
 	L_GUI_MISC_MARKING = "Меню с метками при нажатие *shift*"
 	L_GUI_MISC_INVKEYWORD = "Ключевое слово для автоматического приглашения (/ainv)"
@@ -33,7 +33,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_COMBATTEXT = "Текст боя"
 	L_GUI_COMBATTEXT_ENABLE = "Включить текст боя"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Разблокировать исходящий текст боя Blizzard(над головами)"
-	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Стилизация стандартого текст боя над головами(необходимо сделать рестарт WoW)"
+	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Стилизация стандартного текст боя над головами(необходимо сделать рестарт WoW)"
 	L_GUI_COMBATTEXT_DAMAGE = "Отображать исходящий урон в его блоке"
 	L_GUI_COMBATTEXT_HEALING = "Отображать исходящее лечение в его блоке"
 	L_GUI_COMBATTEXT_HOTS = "Отображать лечение ваших периодических заклинаний"
@@ -47,7 +47,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_COMBATTEXT_TRESHOLD = "Минимальное отображаемое значение урона"
 	L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Минимальное отображаемое значение лечения"
 	L_GUI_COMBATTEXT_SCROLLABLE = "Включить прокручивание текста в блоках колесом мыши"
-	L_GUI_COMBATTEXT_MAX_LINES = "Колличество линий для прокручиваемого блока"
+	L_GUI_COMBATTEXT_MAX_LINES = "Количество линий для прокручиваемого блока"
 	L_GUI_COMBATTEXT_TIME_VISIBLE = "Время(в секундах) до исчезновения текста"
 	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Отключать входящее лечение для Жрецов в Облике Тьмы"
 	L_GUI_COMBATTEXT_DK_RUNES = "Отображать перезарядку рун Рыцарей Смерти"
@@ -123,6 +123,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_CHAT_WHISP = "Звуковое оповещение во время шепота"
 	L_GUI_CHAT_SKIN_BUBBLE = "Стилизация облачков чата"
 	L_GUI_CHAT_CL_TAB = "Включить закладку журнала боя"
+	L_GUI_CHAT_STICKY = "Запоминать последний канал чата"
 	
 	-- Bag options
 	L_GUI_BAGS = "Сумки"
@@ -238,7 +239,7 @@ if GetLocale() == "ruRU" then
 	
 	-- Raid Frames options
 	L_GUI_UF_AGGRO_BORDER = "Включить отображение угрозы на рамках группы/рейда"
-	L_GUI_UF_DEFICIT_HEALTH = "Значение здоровя по дефициту для рамок группы/рейда"
+	L_GUI_UF_DEFICIT_HEALTH = "Значение здоровья по дефициту для рамок группы/рейда"
 	L_GUI_UF_SHOW_PARTY = "Отображать рамки группы"
 	L_GUI_UF_SHOW_RAID = "Отображать рамки рейда"
 	L_GUI_UF_VERTICAL_HEALTH = "Вертикальное направление полосы здоровья"
