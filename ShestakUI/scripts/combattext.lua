@@ -33,7 +33,7 @@ local ct={
 	["treshold"] = db.treshold,						-- minimum damage to show in outgoing damage frame
 	["healtreshold"] = db.heal_treshold,			-- minimum healing to show in incoming/outgoing healing messages.
 -- appearence
-	["font"] = dbf.combat_text_font,					-- "Fonts\\ARIALN.ttf" is default WoW font.
+	["font"] = dbf.combat_text_font,				-- "Fonts\\ARIALN.ttf" is default WoW font.
 	["fontsize"] = dbf.combat_text_font_size,		-- 
 	["fontstyle"] = dbf.combat_text_font_style,		-- valid options are "OUTLINE", "MONOCHROME", "THICKOUTLINE", "OUTLINE,MONOCHROME", "THICKOUTLINE,MONOCHROME"
 	["damagefont"] = dbf.combat_text_font,			-- "Fonts\\FRIZQT__.ttf" is default WoW damage font
@@ -51,7 +51,9 @@ local ct={
 	["dkrunes"] = db.dk_runes,						-- show deatchknight rune recharge
 	["mergeaoespam"] = db.merge_aoe_spam,			-- merges multiple aoe spam into single message, can be useful for dots too.
 	["mergeaoespamtime"] = db.merge_aoe_spam_time,	-- time in seconds aoe spell will be merged into single message. minimum is 1.
-	["killingblow"] = db.killingblow,				-- tells you about your killingblows
+	["killingblow"] = db.killingblow,				-- tells you about your killingblows (works only with ["damage"] = true,).
+	["dispel"] = db.dispel,							-- tells you about your dispels (works only with ["damage"] = true,).
+	["interrupt"] = db.interrupt,					-- tells you about your interrupts (works only with ["damage"] = true,).
 }
 ---------------------------------------------------------------------------------
 -- outgoing healing filter, hide this spammy shit, plx
@@ -297,11 +299,23 @@ local function OnEvent(self,event,subevent,...)
 				xCT1:AddMessage(ct.critprefix.."-"..arg2..ct.critpostfix,1,.3,.5)
 			elseif subevent=="HEAL"then
 				if(arg3>=ct.healtreshold)then
-					xCT2:AddMessage("+"..arg3,.1,.75,.1)
+					if(arg2)then
+						if(COMBAT_TEXT_SHOW_FRIENDLY_NAMES=="1")then
+							xCT2:AddMessage(arg2.." +"..arg3,.1,.75,.1)
+						else
+							xCT2:AddMessage("+"..arg3,.1,.75,.1)
+						end
+					end
 				end
 			elseif subevent=="HEAL_CRIT"then
 				if(arg3>=ct.healtreshold)then
-					xCT2:AddMessage("+"..ct.critprefix..arg3..ct.critpostfix,.1,1,.1)
+					if(arg2)then
+						if(COMBAT_TEXT_SHOW_FRIENDLY_NAMES=="1")then
+							xCT2:AddMessage(arg2.." +"..arg3,.1,1,.1)
+						else
+							xCT2:AddMessage("+"..arg3,.1,1,.1)
+						end
+					end
 				end
 			elseif subevent=="PERIODIC_HEAL"then
 				if(arg3>=ct.healtreshold)then
@@ -584,16 +598,6 @@ xCT:RegisterEvent"UNIT_EXITING_VEHICLE"
 xCT:RegisterEvent"PLAYER_ENTERING_WORLD"
 xCT:SetScript("OnEvent",OnEvent)
 
-if(ct.killingblow)then
-	local xCTkb=CreateFrame"Frame"
-	xCTkb:SetScript("OnEvent", function(_, _, _, event, guid, _, _, _, tname)
-		if event == "PARTY_KILL" and guid==UnitGUID("player") then
-			xCT3:AddMessage(L_COMBATTEXT_KILLING_BLOW..": "..tname, 1, 1, 0)
-		end
-	end)
-	xCTkb:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-end
-
 -- turn off blizz ct
 CombatText:UnregisterAllEvents()
 CombatText:SetScript("OnLoad",nil)
@@ -605,9 +609,6 @@ Blizzard_CombatText_AddMessage=CombatText_AddMessage
 function CombatText_AddMessage(message,scrollFunction,r,g,b,displayType,isStaggered)
 	xCT3:AddMessage(message,r,g,b)
 end
-
--- hide some blizz options
-InterfaceOptionsCombatTextPanelFriendlyHealerNames:Hide()
 
 -- force hide blizz damage/healing, if desired
 if not(ct.blizzheadnumbers==true)then
@@ -1014,6 +1015,42 @@ if(ct.damage)then
 					missType=missType.." \124T"..icon..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
 				end 
 				xCT4:AddMessage(missType)
+			elseif(eventType=="SPELL_DISPEL")and ct.dispel then
+				local target,_, _, id, effect, _, etype = select(9,...)
+				local color
+				if(ct.icons)then
+					icon=GetSpellTexture(id)
+				end
+				if (icon) then
+					msg=" \124T"..icon..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
+				elseif(ct.icons)then
+					msg=" \124T"..ct.blank..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
+				else
+					msg=""
+				end
+				if etype=="BUFF"then
+					color={0,1,.5}
+				else
+					color={1,0,.5}
+				end
+				xCT3:AddMessage(ACTION_SPELL_DISPEL..": "..effect..msg,unpack(color))
+			elseif(eventType=="SPELL_INTERRUPT")and ct.interrupt then
+				local target,_, _, id, effect = select(9,...)
+				local color={1,.5,0}
+				if(ct.icons)then
+					icon=GetSpellTexture(id)
+				end
+				if (icon) then
+					msg=" \124T"..icon..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
+				elseif(ct.icons)then
+					msg=" \124T"..ct.blank..":"..ct.iconsize..":"..ct.iconsize..":0:0:64:64:5:59:5:59\124t"
+				else
+					msg=""
+				end
+				xCT3:AddMessage(ACTION_SPELL_INTERRUPT..": "..effect..msg,unpack(color))
+			elseif(eventType=="PARTY_KILL") and ct.killingblow then
+				local tname=select(7,...)
+				xCT3:AddMessage(ACTION_PARTY_KILL..": "..tname, .2, 1, .2)
 			end
 		end
 	end

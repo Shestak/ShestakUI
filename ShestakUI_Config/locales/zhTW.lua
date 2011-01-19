@@ -54,6 +54,8 @@ if GetLocale() == "zhTW" then
 	L_GUI_COMBATTEXT_KILLINGBLOW = "顯示擊殺信息"
 	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "將AOE傷害合併為一條信息"
 	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "AOE傷害合併信息閥值(秒)"
+	L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels" -- Needs review
+	L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts" -- Needs review
 	
 	-- Buffs reminder options
 	L_GUI_REMINDER = "Buffs提示"

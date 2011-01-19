@@ -79,6 +79,8 @@ local function Local(o)
 	if o == "UIConfigcombattextkillingblow" then o = L_GUI_COMBATTEXT_KILLINGBLOW end
 	if o == "UIConfigcombattextmerge_aoe_spam" then o = L_GUI_COMBATTEXT_MERGE_AOE_SPAM end
 	if o == "UIConfigcombattextmerge_aoe_spam_time" then o = L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME end
+	if o == "UIConfigcombattextdispel" then o = L_GUI_COMBATTEXT_DISPEL end
+	if o == "UIConfigcombattextinterrupt" then o = L_GUI_COMBATTEXT_INTERRUPT end
 	
 	-- Buffs reminder options
 	if o == "UIConfigreminder" then o = L_GUI_REMINDER end

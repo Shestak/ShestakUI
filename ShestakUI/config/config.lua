@@ -92,7 +92,9 @@ SettingsCF["combattext"] = {
 	["dk_runes"] = true,						-- Show deatchknight rune recharge
 	["killingblow"] = false,					-- Tells you about your killingblows
 	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
-	["merge_aoe_spam_time"] = 3,				-- Time in seconds aoe spell will be merged into single message
+	["merge_aoe_spam_time"] = 3,				-- Time in seconds aoe spell will be merged into single message(works only with ["damage"] = true,)
+	["dispel"] = true,							-- Tells you about your dispels(works only with ["damage"] = true,)
+	["interrupt"] = true,						-- Tells you about your interrupts(works only with ["damage"] = true,)
 }
 
 ----------------------------------------------------------------------------------------

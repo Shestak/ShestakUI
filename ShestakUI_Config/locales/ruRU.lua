@@ -54,6 +54,8 @@ if GetLocale() == "ruRU" then
 	L_GUI_COMBATTEXT_KILLINGBLOW = "Отображать Победный удар"
 	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Объединять многократные значения урона и лечения в одно сообщение"
 	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Время в секундах для объединения многократных значений"
+	L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels"
+	L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts"
 	
 	-- Buffs reminder options
 	L_GUI_REMINDER = "Напоминания"

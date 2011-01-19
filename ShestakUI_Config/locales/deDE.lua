@@ -54,6 +54,8 @@ if GetLocale() == "deDE" then
 	L_GUI_COMBATTEXT_KILLINGBLOW = "Teilt dir mit ob du den Todesstoß bei einer Kreatur/einem Spieler hattest"
 	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Vereint mehrfachen Flächenschaden in eine einzige Nachricht"
 	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Zeit in Sekunden in der ein Flächenzauber in eine Nachricht vereint wird"
+	L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels" -- Needs review
+	L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts" -- Needs review
 	
 	-- Buffs reminder options
 	L_GUI_REMINDER = "Erinnerungen für Buffs"

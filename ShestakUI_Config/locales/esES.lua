@@ -54,6 +54,8 @@ if GetLocale() == "esES" then
 	L_GUI_COMBATTEXT_KILLINGBLOW = "Tells you about your killingblows" -- Needs review
 	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single message" -- Needs review
 	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Time in seconds aoe spell will be merged into single message" -- Needs review
+	L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels" -- Needs review
+	L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts" -- Needs review
 	
 	-- Buffs reminder options
 	L_GUI_REMINDER = "Recordatorio de Ventajas"
