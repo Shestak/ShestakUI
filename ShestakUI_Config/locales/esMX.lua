@@ -2,14 +2,14 @@
 --	Localization for esMX client(Thanks to eXecrate for the translation)
 ----------------------------------------------------------------------------------------
 if GetLocale() == "esMX" then
-	L_GUI_BUTTON_RESET = "Reset total de la UI"
+	L_GUI_BUTTON_RESET = "Reinicio total de la UI"
 	-- General options
 	L_GUI_GENERAL_UIICON = "Icono de la UI cerca del minimapa"
 	L_GUI_GENERAL_AUTOSCALE = "Auto escalado de la UI"
 	L_GUI_GENERAL_MULTISAMPLE = "Protección del Multimuestreo (elimina el borde de 1px)"
 	L_GUI_GENERAL_UISCALE = "Escalado de la UI (si auto escalado está desactivado)"
 	L_GUI_GENERAL_WELCOME_MESSAGE = "Mensaje de bienvenida en el chat"
-	L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tolerance option to your latency"
+	L_GUI_GENERAL_LAG_TOLERANCE = "Actualizar automaticamente la opción de Tolerancia al Lag Personalizada de Blizzard a tu latencia"
 
 	-- Miscellaneous options
 	L_GUI_MISC_AUTOQUEST = "Auto aceptar misiones"
@@ -21,8 +21,8 @@ if GetLocale() == "esMX" then
 	L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"
 	L_GUI_MISC_MOVE_WATCH_FRAME = "Marco de Seguimiento de Misiones movible"
 	L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encima"
-	L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button"
-	L_GUI_MISC_RAID_TOOLS = "Raid tools" -- Needs review
+	L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
+	L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
 	
 	-- Skins options
 	L_GUI_SKINS = "Estilización"
@@ -31,14 +31,14 @@ if GetLocale() == "esMX" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Texto de Combate"
-	L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text" -- Needs review
+	L_GUI_COMBATTEXT_ENABLE = "Activar Texto de Combate"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Usar la salida de daño/curación de Blizzard (sobre la cabeza del monstruo/jugador)"
 	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Cambiar la fuente de daño/sanación por defecto de encima de los monstruos/jugadores (tendrás que reiniciar WoW para ver los cambios)"
 	L_GUI_COMBATTEXT_DAMAGE = "Mostrar daño saliente en su propio marco"
 	L_GUI_COMBATTEXT_HEALING = "Mostrar sanación saliente en su propio marco"
-	L_GUI_COMBATTEXT_HOTS = "Show periodic healing effects in healing frame" -- Needs review
-	L_GUI_COMBATTEXT_PET_DAMAGE = "Show your pet damage" -- Needs review
-	L_GUI_COMBATTEXT_DOT_DAMAGE = "Show damage from your dots" -- Needs review
+	L_GUI_COMBATTEXT_HOTS = "Mostrar efectos de cura periódicos en el marco de curas"
+	L_GUI_COMBATTEXT_PET_DAMAGE = "Mostrar el daño de tu mascota"
+	L_GUI_COMBATTEXT_DOT_DAMAGE = "Mostrar el daño de tus dots (Daño periodico)"
 	L_GUI_COMBATTEXT_DAMAGE_COLOR = "Mostrar números de daño dependiendo de la escuela de magia"
 	L_GUI_COMBATTEXT_CRIT_PREFIX = "Símbolo que se añadirá antes de un crítico"
 	L_GUI_COMBATTEXT_CRIT_POSTFIX = "Símbolo que se añadirá después de un crítico"
@@ -51,9 +51,9 @@ if GetLocale() == "esMX" then
 	L_GUI_COMBATTEXT_TIME_VISIBLE = "Tiempo (segundos) en que un mensaje es visible"
 	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Ocultar automáticamente el spam de sanación del Sacerdote cuando estás en Forma de las Sombras"
 	L_GUI_COMBATTEXT_DK_RUNES = "Mostrar recarga de runas de los Caballeros de la Muerte"
-	L_GUI_COMBATTEXT_KILLINGBLOW = "Tells you about your killingblows" -- Needs review
-	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single message" -- Needs review
-	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Time in seconds aoe spell will be merged into single message" -- Needs review
+	L_GUI_COMBATTEXT_KILLINGBLOW = "Mostrar tus golpes de gracia"
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unir el spam de daño de area en un solo mensaje"
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Tiempo en segundos que se unirá en un solo mensaje de daño de area"
 	L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels" -- Needs review
 	L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts" -- Needs review
 	
@@ -82,8 +82,8 @@ if GetLocale() == "esMX" then
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Mostrar tiempos de reutilización del enemigo siempre"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "Mostrar tiempos de reutilización del enemigo en zona de CB"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Mostrar tiempos de reutilización del enemigo en zona de Arena"
-	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse" -- Needs review
-	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size" -- Needs review
+	L_GUI_COOLDOWN_PULSE_ENABLE = "Mostrar cuentas atras de tiempos de reutilización"
+	L_GUI_COOLDOWN_PULSE_SIZE = "Tamaño de los icono de las cuentas atras de tiempos de reutilización"
 	
 	-- Threat options
 	L_GUI_THREAT = "Barras de Amenaza"
@@ -101,15 +101,15 @@ if GetLocale() == "esMX" then
 	L_GUI_TOOLTIP_ICON = "Icono del objeto en la descripción"
 	L_GUI_TOOLTIP_HEALTH = "Valor de la vida en números"
 	L_GUI_TOOLTIP_HIDE = "Ocultar descripciones de las barras de acción"
-	L_GUI_TOOLTIP_HIDE_COMBAT = "Hide tooltip in combat" -- Needs review
+	L_GUI_TOOLTIP_HIDE_COMBAT = "Ocultar descripción en combate"
 	L_GUI_TOOLTIP_TALENTS = "Mostrar descripción de los talentos"
 	L_GUI_TOOLTIP_ACHIEVEMENTS = "Comparar logros en la descripción"
 	L_GUI_TOOLTIP_TARGET = "Jugador objetivo en la descripción"
 	L_GUI_TOOLTIP_TITLE = "Título del jugador en la descripción"
 	L_GUI_TOOLTIP_RANK = "Rango del jugador en la hermandad en la descripción"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Experiencia JcJ del jugador en Arenas en la descripción"
-	L_GUI_TOOLTIP_SPELL_ID = "Spell ID" -- Needs review
-	L_GUI_TOOLTIP_RAID_ICON = "Raid icon" -- Needs review
+	L_GUI_TOOLTIP_SPELL_ID = "ID del hechizo"
+	L_GUI_TOOLTIP_RAID_ICON = "Icono de banda"
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Activar chat"
@@ -121,13 +121,13 @@ if GetLocale() == "esMX" then
 	L_GUI_CHAT_BAR = "Pequeña barra de botones para cambiar de canal en el chat"
 	L_GUI_CHAT_TIMESTAMP = "Color de la marca de tiempo"
 	L_GUI_CHAT_WHISP = "Sonido cuando te susurran"
-	L_GUI_CHAT_SKIN_BUBBLE = "Skin Blizzard chat bubbles"  -- Needs review
-	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
+	L_GUI_CHAT_SKIN_BUBBLE = "Estilizar las burbujas de chat"
+	L_GUI_CHAT_CL_TAB = "Mostrar la pestaña del Registro de Combate"
 	L_GUI_CHAT_STICKY = "Remember last channel"  -- Needs review
 	
 	-- Bag options
 	L_GUI_BAGS = "Bolsas"
-	L_GUI_BAGS_ENABLE = "Enable bags"  -- Needs review
+	L_GUI_BAGS_ENABLE = "Activar bolsas"
 	L_GUI_BAGS_BUTTON_SIZE = "Tamaño de los huecos"
 	L_GUI_BAGS_BUTTON_SPACE = "Espacio entre huecos"
 	L_GUI_BAGS_BANK = "Número de columnas en el banco"
@@ -163,10 +163,10 @@ if GetLocale() == "esMX" then
 	L_GUI_NAMEPLATE_THREAT = "Activar visor de amenaza, cambia automáticamente según tu rol"
 	L_GUI_NAMEPLATE_CLASS_ICON = "Iconos de clase en JcJ"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Mostrar los nombres abreviados"
-	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap"  -- Needs review
-	L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"  -- Needs review
-	L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"  -- Needs review
-	L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
+	L_GUI_NAMEPLATE_OVERLAP = "Permitir el solapamiento de las placas de nombre"
+	L_GUI_NAMEPLATE_GOOD_COLOR = "Color de alta amenaza, varía dependiendo si eres tanque o dps/sanador"
+	L_GUI_NAMEPLATE_NEAR_COLOR = "Color de perdiendo/ganando amenaza"
+	L_GUI_NAMEPLATE_BAD_COLOR = "Color de baja amenaza, varía dependiendo si eres tanque o dps/sanador"
 	
 	-- ActionBar options
 	L_GUI_ACTIONBAR_ENABLE = "Activar barras de acción"
@@ -185,33 +185,33 @@ if GetLocale() == "esMX" then
 	L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Activar barra de estancia horizontal"
 	
 	-- Auras/Buffs/Debuffs
-	L_GUI_AURA_PLAYER_BUFF_SIZE = "Tamaño de las ventajas del jugador"
+	L_GUI_AURA_PLAYER_BUFF_SIZE = "Tamaño de las beneficios del jugador"
 	L_GUI_AURA_SHOW_SPIRAL = "Espiral en los iconos de las auras"
 	L_GUI_AURA_SHOW_TIMER = "Mostrar tiempo de reutilización en los iconos de las auras"
 	L_GUI_AURA_PLAYER_AURAS = "Auras en el marco del jugador"
 	L_GUI_AURA_TARGET_AURAS = "Auras en el marco del objetivo"
-	L_GUI_AURA_FOCUS_DEBUFFS = "Desventajas en el marco del foco"
-	L_GUI_AURA_FOT_DEBUFFS = "DeBuffs on focus target frame"  -- Needs review
-	L_GUI_AURA_PET_DEBUFFS = "Desventajas en el marco de la mascota"
-	L_GUI_AURA_TOT_DEBUFFS = "Desventajas en el marco del objetivo del objetivo"
-	L_GUI_AURA_PLAYER_AURA_ONLY = "Solo tus desventajas en el marco del objetivo"
-	L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color de las desventajas por tipo"
+	L_GUI_AURA_FOCUS_DEBUFFS = "Perjuicios en el marco del foco"
+	L_GUI_AURA_FOT_DEBUFFS = "Perjuicios en el marco del objetivo del foco"
+	L_GUI_AURA_PET_DEBUFFS = "Perjuicios en el marco de la mascota"
+	L_GUI_AURA_TOT_DEBUFFS = "Perjuicios en el marco del objetivo del objetivo"
+	L_GUI_AURA_PLAYER_AURA_ONLY = "Solo tus perjuicios en el marco del objetivo"
+	L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color de los perjuicios por tipo"
 	
 	-- Unit Frames options
 	L_GUI_UF_ENABLE = "Activar marcos de unidades"
 	L_GUI_UF_OWN_COLOR = "Color para las barras de vida"
-	L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"  -- Needs review
+	L_GUI_UF_UF_COLOR = "Color de las Barras de vida (si color para las barras de vida está activo)"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Barra de vida del enemigo objetivo en rojo"
 	L_GUI_UF_TOTAL_VALUE = "Mostrar vida restante en jugador y objetivo con XXXX/Total"
 	L_GUI_UF_COLOR_VALUE = "Colorear valor de Vida/Maná"
 	L_GUI_UF_UNIT_CASTBAR = "Mostrar barras de lanzamiento"
 	L_GUI_UF_CASTBAR_ICON = "Mostrar iconos en las barras de lanzamiento"
 	L_GUI_UF_CASTBAR_LATENCY = "Latencia en la barra de lanzamiento"
-	L_GUI_UF_SHOW_PET = "Show pet frame"  -- Needs review
-	L_GUI_UF_SHOW_FOCUS = "Show focus frame"  -- Needs review
-	L_GUI_UF_SHOW_TOT = "Show target of target frame"  -- Needs review
+	L_GUI_UF_SHOW_PET = "Mostrar marco de la mascota"
+	L_GUI_UF_SHOW_FOCUS = "Mostrar marco del foco"
+	L_GUI_UF_SHOW_TOT = "Mostrar marco del objetivo del objetivo"
 	L_GUI_UF_SHOW_BOSS = "Mostrar marco del jefe"
-	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
+	L_GUI_UF_BOSS_RIGHT = "Marco/Marcos del/de los jefe/jefes en la derecha"
 	L_GUI_UF_SHOW_ARENA = "Mostrar marcos de arena"
 	L_GUI_UF_ARENA_RIGHT = "Marcos de arena en la derecha"
 	L_GUI_UF_ICONS_PVP = "Texto JcJ (iconos no) al pasar el ratón sobre los marcos del jugador y objetivo"
@@ -228,7 +228,7 @@ if GetLocale() == "esMX" then
 	L_GUI_UF_PLUGINS_HOLY_BAR = "Activar barra de poder sagrado"
 	L_GUI_UF_PLUGINS_SHARD_BAR = "Activar barra de fragmentos"
 	L_GUI_UF_PLUGINS_RUNE_BAR = "Activar barra de Runas"
-	L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Enable vengeance bar" -- Needs review
+	L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Activar barra de venganza"
 	L_GUI_UF_PLUGINS_TOTEM_BAR = "Activar barra de totems"
 	L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Nombre de la barra de totems"
 	L_GUI_UF_PLUGINS_REPUTATION_BAR = "Activar barra de reputación"
@@ -239,8 +239,8 @@ if GetLocale() == "esMX" then
 	
 	-- Raid Frames options
 	L_GUI_UF_AGGRO_BORDER = "Borde de aggro"
-	L_GUI_UF_DEFICIT_HEALTH = "Déficit de vida de la Banda"
-	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review
+	L_GUI_UF_DEFICIT_HEALTH = "Déficit de vida de la banda"
+	L_GUI_UF_SHOW_PARTY = "Mostrar marcos de grupo en la banda"
 	L_GUI_UF_SHOW_RAID = "Mostrar marcos de banda"
 	L_GUI_UF_VERTICAL_HEALTH = "Orientación vertical de la vida"
 	L_GUI_UF_ALPHA_HEALTH = "Opacidad de las barras de vida cuando están al 100%"
@@ -249,7 +249,7 @@ if GetLocale() == "esMX" then
 	L_GUI_UF_SOLO_MODE = "Mostrar marco del jugador siempre"
 	L_GUI_UF_PLAYER_PARTY = "Mostrar marco del jugador en grupo"
 	L_GUI_UF_SHOW_TANK = "Mostrar tanques de la banda"
-	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
+	L_GUI_UF_SHOW_TANK_TT = "Mostrar el objetivo del objetivo de los tanques de la banda"
 	L_GUI_UF_RAID_GROUP = "Número de grupos en la banda (Sólo para ShestakUI_Heal)"
 	L_GUI_UF_RAID_VERTICAL_GROUP = "Grupos de la banda en vertical (Sólo para ShestakUI_Heal)"
 	L_GUI_UF_ICONS_LEADER = "Iconos de líder, ayudantes y maestro despojador en los marcos"
@@ -261,8 +261,8 @@ if GetLocale() == "esMX" then
 	L_GUI_UF_PLUGINS_HEALCOMM = "Barra de sanación entrante"
 	
 	-- Panel options
-	L_GUI_TOP_PANEL = "Activar panel superior"
-	L_GUI_TOP_PANEL_ENABLE = "Enable top panel"	-- Needs review
+	L_GUI_TOP_PANEL = "Panel superior"
+	L_GUI_TOP_PANEL_ENABLE = "Activar panel superior"
 	L_GUI_TOP_PANEL_MOUSE = "Panel superior al pasar el ratón"
 	L_GUI_TOP_PANEL_WIDTH = "Anchura del panel"
 	L_GUI_TOP_PANEL_HEIGHT = "Altura del panel"
@@ -277,7 +277,7 @@ if GetLocale() == "esMX" then
 	L_GUI_STATS_EXPERIENCE = "Experiencia"
 	L_GUI_STATS_COORDS = "Coordenadas"
 	L_GUI_STATS_LOCATION = "Localización"
-	L_GUI_STATS_GUILD_REPAIR = "Repair from guild bank" -- Needs review
+	L_GUI_STATS_GUILD_REPAIR = "Reparar con dinero de la hermandad"
 	
 	-- Error options
 	L_GUI_ERROR = "Errores"

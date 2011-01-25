@@ -22,7 +22,7 @@ if GetLocale() == "frFR" then
 	L_GUI_MISC_MOVE_WATCH_FRAME = "Fenêtre de suivi des quête déplacable"
 	L_GUI_MISC_VEHICLE_MOUSEOVER = "Fenêtre de véhicule en mouseover"
 	L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button" -- Needs review
-	L_GUI_MISC_RAID_TOOLS = "Raid tools" -- Needs review
+	L_GUI_MISC_RAID_TOOLS = "Outils de raid"
 	
 	-- Skins options
 	L_GUI_SKINS = "Personalisation d'addon"
@@ -31,14 +31,14 @@ if GetLocale() == "frFR" then
 	
 	-- Combat text options
 	L_GUI_COMBATTEXT = "Texte de combat"
-	L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text" -- Needs review
+	L_GUI_COMBATTEXT_ENABLE = "Activer les textes de combat"
 	L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "Utiliser les textes de combat de Blizzard"
-	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)" -- Needs review
+	L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change la police par défaut des dégats/soins au dessus de la tête de la cible (Vous devez redémarrer WoW pour voir le changement)"
 	L_GUI_COMBATTEXT_DAMAGE = "Afficher les dégâts dans une fenêtre dédiée"
 	L_GUI_COMBATTEXT_HEALING = "Afficher les soins dans une fenêtre dédiée"
-	L_GUI_COMBATTEXT_HOTS = "Show periodic healing effects in healing frame" -- Needs review
-	L_GUI_COMBATTEXT_PET_DAMAGE = "Show your pet damage" -- Needs review
-	L_GUI_COMBATTEXT_DOT_DAMAGE = "Show damage from your dots" -- Needs review
+	L_GUI_COMBATTEXT_HOTS = "Afficher les effets des soins périodiques dans la fenêtre de soin"
+	L_GUI_COMBATTEXT_PET_DAMAGE = "Afficher les dégats du familier"
+	L_GUI_COMBATTEXT_DOT_DAMAGE = "Afficher les dégats des dots"
 	L_GUI_COMBATTEXT_DAMAGE_COLOR = "Afficher les dégâts en fonction de l'école de magie"
 	L_GUI_COMBATTEXT_CRIT_PREFIX = "Caractère à afficher avant le montant d'un critique"
 	L_GUI_COMBATTEXT_CRIT_POSTFIX = "Caractère à afficher après le montant d'un critique"
@@ -48,12 +48,12 @@ if GetLocale() == "frFR" then
 	L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Soins minimum pour afficher dans la fenêtre de dégats"
 	L_GUI_COMBATTEXT_SCROLLABLE = "Autoriser le défilement avec la moulette dans la fenêtre de dégâts/soins"
 	L_GUI_COMBATTEXT_MAX_LINES = "Nombre de lignes maximum à conserver si l'option de défilement est activer (plus de ligne = plus de mémoire utilisée)"
-	L_GUI_COMBATTEXT_TIME_VISIBLE = "Time(seconds) a single message will be visible" -- Needs review
-	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Automaticly turns off healing spam for priests in shadowform" -- Needs review
+	L_GUI_COMBATTEXT_TIME_VISIBLE = "Temps en seconde durant lequel un message est affiché"
+	L_GUI_COMBATTEXT_STOP_VE_SPAM = "Désactiver automatiquement le spam de soins pour les prêtre en forme d'ombre"
 	L_GUI_COMBATTEXT_DK_RUNES = "Afficher le recgargement des runes du chevalier de la mort"
-	L_GUI_COMBATTEXT_KILLINGBLOW = "Tells you about your killingblows" -- Needs review
-	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single message" -- Needs review
-	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Time in seconds aoe spell will be merged into single message" -- Needs review
+	L_GUI_COMBATTEXT_KILLINGBLOW = "Afficher les coups fataux"
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Rassembler tous les dégats d'un aoe en un seul message"
+	L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Temps en seconde durant lequel les dégats d'aoe seront fusionnés en un seul message"
 	L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels" -- Needs review
 	L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts" -- Needs review
 	
@@ -82,8 +82,8 @@ if GetLocale() == "frFR" then
 	L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Voir les CD ennemis partout"
 	L_GUI_COOLDOWN_ENEMY_IN_BG = "Voir les CD ennemis dans les champs de bataille"
 	L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Voir les CD ennemis en arène"
-	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse" -- Needs review
-	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size" -- Needs review
+	L_GUI_COOLDOWN_PULSE_ENABLE = "Afficher cooldowns pulse"
+	L_GUI_COOLDOWN_PULSE_SIZE = "Taille des icones de cooldowns pulse"
 	
 	-- Threat options
 	L_GUI_THREAT = "Barre de menace"
@@ -101,7 +101,7 @@ if GetLocale() == "frFR" then
 	L_GUI_TOOLTIP_ICON = "Icone de l'objet dans le tooltip"
 	L_GUI_TOOLTIP_HEALTH = "Valeur de point de vie"
 	L_GUI_TOOLTIP_HIDE = "Cacher le tooltip pour les barres d'action"
-	L_GUI_TOOLTIP_HIDE_COMBAT = "Hide tooltip in combat" -- Needs review
+	L_GUI_TOOLTIP_HIDE_COMBAT = "Cacher les tooltips en combat"
 	L_GUI_TOOLTIP_TALENTS = "Afficher les talents dans le tooltip"
 	L_GUI_TOOLTIP_ACHIEVEMENTS = "Afficher Comparer les Hauts Faits dans le tooltip"
 	L_GUI_TOOLTIP_TARGET = "Afficher la cible dans le tooltip"
@@ -109,7 +109,7 @@ if GetLocale() == "frFR" then
 	L_GUI_TOOLTIP_RANK = "Afficher le rang de guilde dans le tooltip"
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Expérience en arène"
 	L_GUI_TOOLTIP_SPELL_ID = "ID du sort"
-	L_GUI_TOOLTIP_RAID_ICON = "Raid icon" -- Needs review
+	L_GUI_TOOLTIP_RAID_ICON = "Icone de raid"
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Activer le chat"
@@ -122,7 +122,7 @@ if GetLocale() == "frFR" then
 	L_GUI_CHAT_TIMESTAMP = "Coloration du temps"
 	L_GUI_CHAT_WHISP = "Alerte sonore quand murmure"
 	L_GUI_CHAT_SKIN_BUBBLE = "Skin des bulles de discussions"
-	L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
+	L_GUI_CHAT_CL_TAB = "Afficher l'onglet du journal de combat"
 	L_GUI_CHAT_STICKY = "Remember last channel"  -- Needs review
 	
 	-- Bag options
@@ -163,7 +163,7 @@ if GetLocale() == "frFR" then
 	L_GUI_NAMEPLATE_THREAT = "Activer la gestion d'aggro, change automatiquement selon votre role"
 	L_GUI_NAMEPLATE_CLASS_ICON = "Icone de classe en JcJ"
 	L_GUI_NAMEPLATE_NAME_ABBREV = "Afficher les noms abrégés"
-	L_GUI_NAMEPLATE_OVERLAP = "Allow nameplates to overlap"  -- Needs review
+	L_GUI_NAMEPLATE_OVERLAP = "Autoriser le chevauchement des barres de nom"
 	L_GUI_NAMEPLATE_GOOD_COLOR = "Bonne couleur de menace, dépend de si vous êtes un tank ou dps/heal"
 	L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
 	L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
@@ -200,20 +200,20 @@ if GetLocale() == "frFR" then
 	-- Unit Frames options
 	L_GUI_UF_ENABLE = "Activer les barres d'unité"
 	L_GUI_UF_OWN_COLOR = "Mettre la couleur de classe comme couleur pour la barre de vie"
-	L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"  -- Needs review
+	L_GUI_UF_UF_COLOR = "Couleur de la barre de vie"
 	L_GUI_UF_ENEMY_HEALTH_COLOR = "Si activée, la couleur des cibles ennemi est rouge"
 	L_GUI_UF_TOTAL_VALUE = "Afficher la vie des joueur/cible avec XXXX/Total"
 	L_GUI_UF_COLOR_VALUE = "Valeur de vie/mana colorée"
 	L_GUI_UF_UNIT_CASTBAR = "Voir la barre de cast"
 	L_GUI_UF_CASTBAR_ICON = "Voir l'icone de la barre de cast"
 	L_GUI_UF_CASTBAR_LATENCY = "Voir la latence de la barre de cast"
-	L_GUI_UF_SHOW_PET = "Show pet frame"  -- Needs review
-	L_GUI_UF_SHOW_FOCUS = "Show focus frame"  -- Needs review
-	L_GUI_UF_SHOW_TOT = "Show target of target frame"  -- Needs review
+	L_GUI_UF_SHOW_PET = "Afficher la barre du familier"
+	L_GUI_UF_SHOW_FOCUS = "Afficher la barre du focus"
+	L_GUI_UF_SHOW_TOT = "Afficher la barre de la cible de la cible"
 	L_GUI_UF_SHOW_BOSS = "Afficher les barres du boss"
-	L_GUI_UF_BOSS_RIGHT = "Boss frames on the right"  -- Needs review
+	L_GUI_UF_BOSS_RIGHT = "Barres des boss à droite"
 	L_GUI_UF_SHOW_ARENA = "Afficher les barres d'arène"
-	L_GUI_UF_ARENA_RIGHT = "Arena frames on the right" -- Needs review
+	L_GUI_UF_ARENA_RIGHT = "Barres d'arène sur la droite"
 	L_GUI_UF_ICONS_PVP = "Texte JcJ en Mouseover pour la barre du joueur et celle de la cible"
 	L_GUI_UF_ICONS_COMBAT = "Icone de combat"
 	L_GUI_UF_ICONS_RESTING = "Icone Resting pour les personnage de bas niveau"
@@ -240,8 +240,8 @@ if GetLocale() == "frFR" then
 	-- Raid Frames options
 	L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"
 	L_GUI_UF_DEFICIT_HEALTH = "Déficit en vie du raid"
-	L_GUI_UF_SHOW_PARTY = "Show party frames" -- Needs review
-	L_GUI_UF_SHOW_RAID = "Show raid frames" -- Needs review
+	L_GUI_UF_SHOW_PARTY = "Afficher les barres du groupe"
+	L_GUI_UF_SHOW_RAID = "Afficher les barres du raid"
 	L_GUI_UF_VERTICAL_HEALTH = "Orientation vertical des barres de vie"
 	L_GUI_UF_ALPHA_HEALTH = "Alpha of healthbars when 100%hp"
 	L_GUI_UF_SHOW_RANGE = "Changer l'opacité par rapport а la portée sur les barres de raid"
@@ -249,7 +249,7 @@ if GetLocale() == "frFR" then
 	L_GUI_UF_SOLO_MODE = "Toujours afficher la barre du joueur"
 	L_GUI_UF_PLAYER_PARTY = "Afficher la barre du joueur en groupe"
 	L_GUI_UF_SHOW_TANK = "Afficher les tanks de raid"
-	L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target" -- Needs review
+	L_GUI_UF_SHOW_TANK_TT = "Afficher la cible de la cible des tanks"
 	L_GUI_UF_RAID_GROUP = "Nombre de groupe dans le raid (Seulement pour ShestakUI_Heal)"
 	L_GUI_UF_RAID_VERTICAL_GROUP = "Groupe de raid verticaux(Seulement pour ShestakUI_Heal)"
 	L_GUI_UF_ICONS_LEADER = "Icone du Chef de raid, icone de l'assistant, icone du maоtre du butin"
@@ -262,7 +262,7 @@ if GetLocale() == "frFR" then
 	
 	-- Panel options
 	L_GUI_TOP_PANEL = "Panneau supérieur"
-	L_GUI_TOP_PANEL_ENABLE = "Enable top panel"	-- Needs review
+	L_GUI_TOP_PANEL_ENABLE = "Activer le panneau supérieur"
 	L_GUI_TOP_PANEL_MOUSE = "Panneau supérieur en 'mouseover'"
 	L_GUI_TOP_PANEL_WIDTH = "Largeur du panneau"
 	L_GUI_TOP_PANEL_HEIGHT = "Hauteur du panneau"
@@ -277,7 +277,7 @@ if GetLocale() == "frFR" then
 	L_GUI_STATS_EXPERIENCE = "Experience"
 	L_GUI_STATS_COORDS = "Coordonnées"
 	L_GUI_STATS_LOCATION = "Lieu actuel"
-	L_GUI_STATS_GUILD_REPAIR = "Repair from guild bank" -- Needs review
+	L_GUI_STATS_GUILD_REPAIR = "Réparation de guilde"
 	
 	-- Error options
 	L_GUI_ERROR = "Erreurs"

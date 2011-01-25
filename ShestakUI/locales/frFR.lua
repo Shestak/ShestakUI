@@ -8,8 +8,8 @@ if SettingsDB.client == "frFR" then
 	L_TOOLTIP_ACH_STATUS = "Votre statut :"
 	L_TOOLTIP_ACH_COMPLETE = "Votre statut : Oui "
 	L_TOOLTIP_ACH_INCOMPLETE = "Votre statut : Non terminé"
-	L_TOOLTIP_SPELL_ID = "ID du sort:"
-	L_TOOLTIP_ITEM_ID = "Item ID:" -- Needs review
+	L_TOOLTIP_SPELL_ID = "ID du sort :"
+	L_TOOLTIP_ITEM_ID = "ID de l'objet :"
 	
 	-- Raid Utility
 	L_RAID_UTIL_DISBAND = "Fin du raid"
@@ -37,7 +37,7 @@ if SettingsDB.client == "frFR" then
 	L_ALOAD_RL = "Recharger l'interface"
 	L_ALOAD_TRADE = "Echanger"
 	L_ALOAD_SOLO = "Solo"
-	L_ALOAD_DEP = "Dependencies: " -- Needs review
+	L_ALOAD_DEP = "Dépendances: "
 	
 	-- ShestakUI_Config
 	L_GUI_MINIMAP_ICON_LM = "Clic gauche - Accéder au GUI"
@@ -48,7 +48,7 @@ if SettingsDB.client == "frFR" then
 	L_GUI_MINIMAP_ICON_SPEC = "Changer de spécialisation"
 	L_GUI_MINIMAP_ICON_CL = "Réparer le journal de combat"
 	L_GUI_MINIMAP_ICON_DBM = "Lancer le test pour DBM"
-	L_GUI_MINIMAP_ICON_HEAL = "Passer àla configuration heal"
+	L_GUI_MINIMAP_ICON_HEAL = "Passer à la configuration heal"
 	L_GUI_MINIMAP_ICON_DPS = "Passer à la configuration dps"
 	
 	-- Chat
@@ -76,7 +76,7 @@ if SettingsDB.client == "frFR" then
 	
 	-- Bags
 	L_BAG_BANK = "Banque"
-	L_BAG_NO_SLOTS = "Vous ne pouvez pas acheter plus de place!"
+	L_BAG_NO_SLOTS = "Vous ne pouvez pas acheter plus d'emplacement !"
 	L_BAG_COSTS = "Prix: %.2f or"
 	L_BAG_BUY_SLOTS = "Acheter un nouvel emplacement avec /bags"
 	L_BAG_OPEN_BANK = "Vous devez d'abord ouvrir votre banque."
@@ -92,7 +92,7 @@ if SettingsDB.client == "frFR" then
 	L_BAG_NOTHING_SORT = "Rien à trier."
 	L_BAG_BAGS_BIDS = "Emplacements utilisés: "
 	L_BAG_STACK_END = "Empilage terminé."
-	L_BAG_RIGHT_CLICK_SEARCH = "Click-droit pour rechercher"
+	L_BAG_RIGHT_CLICK_SEARCH = "Clic droit pour rechercher"
 	
 	-- Grab mail
 	L_MAIL_STOPPED = "Inventaire plein."
@@ -181,17 +181,17 @@ if SettingsDB.client == "frFR" then
 	L_DATATEXT_ALTERAC = "Vallée d'Alterac"
 	L_DATATEXT_ANCIENTS = "Rivage des Anciens"
 	L_DATATEXT_ISLE = "Île des Conquérants"
-	L_DATATEXT_BASESASSAULTED = "Bases Attaquées:"
-	L_DATATEXT_BASESDEFENDED = "Bases Défendues:"
-	L_DATATEXT_TOWERSASSAULTED = "Towers Assaulted:"
-	L_DATATEXT_TOWERSDEFENDED = "Tours Défendues:"
-	L_DATATEXT_FLAGSCAPTURED = "Drapeaux Capturés:"
-	L_DATATEXT_FLAGSRETURNED = "Drapeaux Récupérés:"
-	L_DATATEXT_GRAVEYARDSASSAULTED = "Cimetières Attaqués:"
-	L_DATATEXT_GRAVEYARDSDEFENDED = "Cimetières Défendus:"
-	L_DATATEXT_DEMOLISHERSDESTROYED = "Démolisseurs Détruits:"
-	L_DATATEXT_GATESDESTROYED = "Portes Détruites:"
-	L_DATATEXT_CONTROL = " under control:"  -- Needs review
+	L_DATATEXT_BASESASSAULTED = "Bases Attaquées :"
+	L_DATATEXT_BASESDEFENDED = "Bases Défendues :"
+	L_DATATEXT_TOWERSASSAULTED = "Tours prises d'assaut :"
+	L_DATATEXT_TOWERSDEFENDED = "Tours Défendues :"
+	L_DATATEXT_FLAGSCAPTURED = "Drapeaux Capturés :"
+	L_DATATEXT_FLAGSRETURNED = "Drapeaux Récupérés :"
+	L_DATATEXT_GRAVEYARDSASSAULTED = "Cimetières Attaqués :"
+	L_DATATEXT_GRAVEYARDSDEFENDED = "Cimetières Défendus :"
+	L_DATATEXT_DEMOLISHERSDESTROYED = "Démolisseurs Détruits :"
+	L_DATATEXT_GATESDESTROYED = "Portes Détruites :"
+	L_DATATEXT_CONTROL = " sous contrôle :"
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "Votre familier n'est pas heureux!"
@@ -216,27 +216,27 @@ if SettingsDB.client == "frFR" then
 	L_POPUP_INSTALLUI = "Première utilisation de ShestakUI avec ce personnage. Vous devez recharger l'interface utilisateur pour le configurer."
 	L_POPUP_RESETUI = "Etes-vous sûr de vouloir réinitialiser ShestakUI ?"
 	L_POPUP_SWITCH_RAID = "2 modèles de raid sont activés, merci d'en choisir un."
-	L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?" -- Needs review
+	L_POPUP_DISBAND_RAID = "Etes-vous sûr de vouloir dissoudre le groupe ?"
 	L_POPUP_DISABLEUI = "ShestakUI ne fonctionne pas avec cette résolution, voulez-vous désactiver ShestakUI ? (Annuler si vous souhaitez essayer une autre résolution)"
 	L_POPUP_SETTINGS_ALL = "Voulez-vous appliquer les modifications pour tout ?(DBM/DXE, Skada/Recount et MSBT)"
-	L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."  -- Needs review
-	L_POPUP_SETTINGS_CLIQUE = "Your Clique settings are not setup with ShestakUI, would you like to set them up?"  -- Needs review
+	L_POPUP_SETTINGS_DBM = "La position des éléments de DBM doit être changée."
+	L_POPUP_SETTINGS_CLIQUE = "Clique n'est pas configuré avec ShestakUI, voulez-vous procéder à la configuration ?"
 	
 	-- Welcome message
-	L_WELCOME_LINE_1 = "Welcome to ShestakUI "
+	L_WELCOME_LINE_1 = "Bienvenue sur ShestakUI "
 	L_WELCOME_LINE_2_1 = "Tapez /cfg pour configurer l'interface, ou visitez http://shestak.org"
 	L_WELCOME_LINE_2_2 = "plus d'informations"
 	
 	-- Combat text
-	L_COMBATTEXT_KILLING_BLOW = "Killing Blow"  -- Needs review
-	L_COMBATTEXT_ALREADY_UNLOCKED = "Combat text already unlocked."  -- Needs review
-	L_COMBATTEXT_ALREADY_LOCKED = "Combat text already locked."  -- Needs review
-	L_COMBATTEXT_TEST_DISABLED = "Combat text test mode disabled."  -- Needs review
-	L_COMBATTEXT_TEST_ENABLED = "Combat text test mode enabled."  -- Needs review
-	L_COMBATTEXT_TEST_USE_UNLOCK = "Type /xct unlock to move and resize combat text frames."  -- Needs review
-	L_COMBATTEXT_TEST_USE_LOCK = "Type /xct lock to lock combat text frames."  -- Needs review
-	L_COMBATTEXT_TEST_USE_TEST = "Type /xct test to toggle combat text testmode."  -- Needs review
-	L_COMBATTEXT_POPUP = "To save combat text window positions you need to reload your UI."  -- Needs review
-	L_COMBATTEXT_UNSAVED = "Combat text window positions unsaved, don't forget to reload UI."  -- Needs review
-	L_COMBATTEXT_UNLOCKED = "Combat text unlocked."  -- Needs review
+	L_COMBATTEXT_KILLING_BLOW = "Coup Fatal"
+	L_COMBATTEXT_ALREADY_UNLOCKED = "Fenêtre des textes de combat déjà déverrouillée."
+	L_COMBATTEXT_ALREADY_LOCKED = "Fenêtre des textes de combat déjà verrouillée."
+	L_COMBATTEXT_TEST_DISABLED = "Mode test de la fenêtre des textes de combat désactivé."
+	L_COMBATTEXT_TEST_ENABLED = "Mode test de la fenêtre des textes de combat activé."
+	L_COMBATTEXT_TEST_USE_UNLOCK = "Tapez /xct unlock pour bouger et redimensionner la fenêtre des textes de combat."
+	L_COMBATTEXT_TEST_USE_LOCK = "Tapez /xct lock pour verrouiller la fenêtre des textes de combat."
+	L_COMBATTEXT_TEST_USE_TEST = "Tapez /xct test pour activer le mode test de la fenêtre des textes de combat."
+	L_COMBATTEXT_POPUP = "Pour sauvegardez vos modifications vous devez recharger l'interface."
+	L_COMBATTEXT_UNSAVED = "Position de la fenêtre des textes de combat non saugardez, n'oubliez pas de recharger l'interface."
+	L_COMBATTEXT_UNLOCKED = "Fenêtre des textes de combat déverrouillée."
 end

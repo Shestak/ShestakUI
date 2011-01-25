@@ -9,10 +9,10 @@ if SettingsDB.client == "esMX" then
 	L_TOOLTIP_ACH_COMPLETE = "Estado: Completado "
 	L_TOOLTIP_ACH_INCOMPLETE = "Estado: Incompleto"
 	L_TOOLTIP_SPELL_ID = "ID del hechizo:"
-	L_TOOLTIP_ITEM_ID = "Item ID:" -- Needs review
+	L_TOOLTIP_ITEM_ID = "ID del objeto:"
 
 	-- Raid Utility
-	L_RAID_UTIL_DISBAND = "Disband Group" -- Needs review
+	L_RAID_UTIL_DISBAND = "Disolver grupo"
 	
 	-- Zone name
     L_ZONE_WINTERGRASP = "Conquista del Invierno"
@@ -37,7 +37,7 @@ if SettingsDB.client == "esMX" then
 	L_ALOAD_RL = "Recargar UI"
 	L_ALOAD_TRADE = "Comercio"
 	L_ALOAD_SOLO = "Solo"
-	L_ALOAD_DEP = "Dependencies: " -- Needs review
+	L_ALOAD_DEP = "Dependencias: "
 	
 	-- ShestakUI_Config
 	L_GUI_MINIMAP_ICON_LM = "Click izquierdo - Entrar a la GUI"
@@ -92,7 +92,7 @@ if SettingsDB.client == "esMX" then
 	L_BAG_NOTHING_SORT = "No hay nada que ordenar."
 	L_BAG_BAGS_BIDS = "Usando las bolsas: "
 	L_BAG_STACK_END = "Se ha acabado de amontonar."
-	L_BAG_RIGHT_CLICK_SEARCH = "Right-click to search"  -- Needs review
+	L_BAG_RIGHT_CLICK_SEARCH = "Click derecho para buscar"
 	
 	-- Grab mail
 	L_MAIL_STOPPED = "Sin espacio, inventario lleno."
@@ -191,7 +191,7 @@ if SettingsDB.client == "esMX" then
 	L_DATATEXT_GRAVEYARDSDEFENDED = "Cementerios Defendidos:"
 	L_DATATEXT_DEMOLISHERSDESTROYED = "Catapultas Destruidas:"
 	L_DATATEXT_GATESDESTROYED = "Puertas Destruidas:"
-	L_DATATEXT_CONTROL = " under control:"  -- Needs review
+	L_DATATEXT_CONTROL = " bajo control:"
 	
 	-- Class script
 	L_CLASS_HUNTER_UNHAPPY = "¡Tu mascota está descontenta!"
@@ -216,7 +216,7 @@ if SettingsDB.client == "esMX" then
 	L_POPUP_INSTALLUI = "Es la primera vez que usas ShestakUI con este personaje. Usted debe volver a cargar la interfaz de usuario para configurarlo."
 	L_POPUP_RESETUI = "¿Estás seguro de que desea restablecer ShestakUI?"
 	L_POPUP_SWITCH_RAID = "Hay activos 2 estilos para banda, por favor selecciona uno."
-	L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?" -- Needs review
+	L_POPUP_DISBAND_RAID = "¿Estás seguro de que quieres disolver el grupo?"
 	L_POPUP_DISABLEUI = "ShestakUI no funciona con esta resolución, ¿Quieres desactivar ShestakUI? (Pulsa cancelar si quieres probar otra resolución)"
 	L_POPUP_SETTINGS_ALL = "¿Aplicar modificaciones para todos los addons? (DBM/DXE, Skada/Recount ó MSBT)"
 	L_POPUP_SETTINGS_DBM = "Necesito cambiar la posición de los elementos del DBM."
@@ -228,15 +228,15 @@ if SettingsDB.client == "esMX" then
 	L_WELCOME_LINE_2_2 = "para más información."
 	
 	-- Combat text
-	L_COMBATTEXT_KILLING_BLOW = "Killing Blow"  -- Needs review
-	L_COMBATTEXT_ALREADY_UNLOCKED = "Combat text already unlocked."  -- Needs review
-	L_COMBATTEXT_ALREADY_LOCKED = "Combat text already locked."  -- Needs review
-	L_COMBATTEXT_TEST_DISABLED = "Combat text test mode disabled."  -- Needs review
-	L_COMBATTEXT_TEST_ENABLED = "Combat text test mode enabled."  -- Needs review
-	L_COMBATTEXT_TEST_USE_UNLOCK = "Type /xct unlock to move and resize combat text frames."  -- Needs review
-	L_COMBATTEXT_TEST_USE_LOCK = "Type /xct lock to lock combat text frames."  -- Needs review
-	L_COMBATTEXT_TEST_USE_TEST = "Type /xct test to toggle combat text testmode."  -- Needs review
-	L_COMBATTEXT_POPUP = "To save combat text window positions you need to reload your UI."  -- Needs review
-	L_COMBATTEXT_UNSAVED = "Combat text window positions unsaved, don't forget to reload UI."  -- Needs review
-	L_COMBATTEXT_UNLOCKED = "Combat text unlocked."  -- Needs review
+	L_COMBATTEXT_KILLING_BLOW = "Golpe de gracia"
+	L_COMBATTEXT_ALREADY_UNLOCKED = "Texto de combate desbloqueado."
+	L_COMBATTEXT_ALREADY_LOCKED = "Texto de combate bloqueado."
+	L_COMBATTEXT_TEST_DISABLED = "Modo Texto de combate deshabilitado."
+	L_COMBATTEXT_TEST_ENABLED = "Modo Texto de combate habilitado."
+	L_COMBATTEXT_TEST_USE_UNLOCK = "Escribe /xct unlock para mover y cambiar el tamaño del marco de texto de combate."
+	L_COMBATTEXT_TEST_USE_LOCK = "Escribe /xct lock para bloquear el marco de texto de combate."
+	L_COMBATTEXT_TEST_USE_TEST = "Escribe /xct test para probar el modo Texto de combate."
+	L_COMBATTEXT_POPUP = "Para guardar la posición de la ventana de texto de combate necesitas recargar tu UI."
+	L_COMBATTEXT_UNSAVED = "La posición de la ventana de texto de combate no está guardada, no olvides recargar la UI."
+	L_COMBATTEXT_UNLOCKED = "Texto de combate desbloqueado."
 end
