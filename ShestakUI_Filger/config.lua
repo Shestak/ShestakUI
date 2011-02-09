@@ -87,6 +87,14 @@ Filger_Spells = {
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hardened Skin
 			{ spellID = 71586, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power torrent
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Volcanic Destruction
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Revelation
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Judgement
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -332,6 +340,14 @@ Filger_Spells = {
 			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Ancient Hysteria
 			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Power torrent
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Volcanic Destruction
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Revelation
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Judgement
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -659,6 +675,14 @@ Filger_Spells = {
 			{ spellID = 51562, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lava flows
 			{ spellID = 65264, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power torrent
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Volcanic Destruction
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Revelation
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Judgement
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -781,6 +805,14 @@ Filger_Spells = {
 			{ spellID = 85696, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Inquisition
 			{ spellID = 84963, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power torrent
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Volcanic Destruction
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Revelation
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Judgement
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -911,6 +943,14 @@ Filger_Spells = {
 			{ spellID = 81208, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Chakra: Chastise
 			{ spellID = 81209, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power torrent
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Volcanic Destruction
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Revelation
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Judgement
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -1068,9 +1108,17 @@ Filger_Spells = {
 			-- Eradication
 			{ spellID = 47195, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Improved Soul Fire
-			{ spellID = 85113, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 85383, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Empowered Imp
 			{ spellID = 47283, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power torrent
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Volcanic Destruction
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Revelation
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart's Judgement
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
