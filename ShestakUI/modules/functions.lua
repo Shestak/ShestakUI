@@ -371,10 +371,18 @@ local function SetOriginalBackdrop(self)
 end
 
 function SettingsDB.SkinButton(f)
-	f:SetNormalTexture("")
-	f:SetHighlightTexture("")
-	f:SetPushedTexture("")
-	f:SetDisabledTexture("")
+	if f.SetNormalTexture then
+		f:SetNormalTexture("")
+	end
+	if f.SetHighlightTexture then
+		f:SetHighlightTexture("")
+	end
+	if f.SetPushedTexture then
+		f:SetPushedTexture("")
+	end
+	if f.SetDisabledTexture then
+		f:SetDisabledTexture("")
+	end
 	if _G[f:GetName().."Left"] then _G[f:GetName().."Left"]:SetAlpha(0) end
 	if _G[f:GetName().."Middle"] then _G[f:GetName().."Middle"]:SetAlpha(0) end
 	if _G[f:GetName().."Right"] then _G[f:GetName().."Right"]:SetAlpha(0) end
