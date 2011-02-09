@@ -175,6 +175,8 @@ local addonmenu = {
 		func = function() if IsAddOnLoaded("Archy") then ToggleFrame(ArchyDigSiteFrame) end end},
 	{text = "AtlasLoot", notCheckable = 1,
 		func = function() if IsAddOnLoaded("AtlasLoot") then ToggleFrame(AtlasLootDefaultFrame) end end},
+	{text = "PhoenixStyle", notCheckable = 1,
+		func = function() if IsAddOnLoaded("PhoenixStyle") then PS_MinimapButton:Click() end end},
 	{text = "WIM", notCheckable = 1,
 		func = function() if IsAddOnLoaded("WIM") then WIM.ShowAllWindows() end end},
 }
