@@ -326,8 +326,6 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 			
-			-- Surging Power
-			{ spellID = 71643, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Innervate
 			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Bloodlust
@@ -336,6 +334,10 @@ Filger_Spells = {
 			{ spellID = 32182, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Nitro Boosts
+			{ spellID = 54861, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Synapse Springs
+			{ spellID = 82174, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Time warp
 			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Ancient Hysteria
@@ -348,6 +350,18 @@ Filger_Spells = {
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Heart's Judgement
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Invisibility
+			{ spellID = 32612, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Icy Veins
+			{ spellID = 12472, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Pyromaniac
+			{ spellID = 83582, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Battle Magic (Tol Barad Trinket)
+			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jeweled Serpent (Jewelcrafting Trinket)
+			{ spellID = 73551, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Hurricane (Enchant)
+			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -404,7 +418,7 @@ Filger_Spells = {
 			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
 			
 			-- Polymorph
-			{ spellID = 118, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
+			{ spellID = 118, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "COOLDOWN",
