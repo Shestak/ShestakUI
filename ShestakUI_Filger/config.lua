@@ -419,6 +419,14 @@ Filger_Spells = {
 			
 			-- Polymorph
 			{ spellID = 118, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
+			-- Repentance
+			{ spellID = 20066, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
+			-- Freezing Trap
+			{ spellID = 3355, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
+			-- Fear
+			{ spellID = 5782, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
+			-- Sap
+			{ spellID = 6770, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -449,8 +457,10 @@ Filger_Spells = {
 			{ spellID = 31661, size = 30, filter = "CD" },
 			-- Cone of Cold
 			{ spellID = 120, size = 30, filter = "CD" },
-			-- Will of the forsaken (undead)
+			-- Will of the forsaken (Undead)
 			{ spellID = 7744, size = 30, filter = "CD" },
+			-- Escape Artist (Gnome Racial)
+			{ spellID = 20589, size = 30, filter = "CD" },
 			-- Cold Snap
 			{ spellID = 11958, size = 30, filter = "CD" },
 			-- Ice Block

@@ -82,7 +82,7 @@ end)
 
 -- Convert Party button
 CreateButton("SwitchRaidButton", RaidUtilityPanel, nil, RaidUtilityPanel:GetWidth() * 0.8, SettingsDB.Scale(18), "TOP", DisbandRaidButton, "BOTTOM", 0, SettingsDB.Scale(-5), CONVERT_TO_PARTY, nil)
-DisbandRaidButton:SetScript("OnMouseUp", function(self)
+SwitchRaidButton:SetScript("OnMouseUp", function(self)
 	if CheckRaidStatus() then
 		ConvertToParty()
 	end

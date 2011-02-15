@@ -510,8 +510,10 @@ if SettingsCF["tooltip"].item_icon == true then
 
 	local function hookSpell(tip)
 		tip:HookScript("OnTooltipSetSpell", function(self, ...)
-			local name, rank, icon = GetSpellInfo(self:GetSpell())
-			AddIcon(self, icon)
+			if self:GetSpell() then
+				local name, rank, icon = GetSpellInfo(self:GetSpell())
+				AddIcon(self, icon)
+			end
 		end)
 	end
 	hookSpell(_G["GameTooltip"])

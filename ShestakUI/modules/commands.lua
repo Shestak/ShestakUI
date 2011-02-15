@@ -60,6 +60,16 @@ SLASH_GROUPDISBAND1 = "/rd"
 SLASH_GROUPDISBAND2 = "/кв"
 
 ----------------------------------------------------------------------------------------
+--	Convert party to raid
+----------------------------------------------------------------------------------------
+SlashCmdList.PARTYTORAID = function()
+	ConvertToRaid()
+end
+SLASH_PARTYTORAID1 = "/toraid"
+SLASH_PARTYTORAID2 = "/рейд"
+SLASH_PARTYTORAID3 = "/htql"
+
+----------------------------------------------------------------------------------------
 --	Enable lua error
 ----------------------------------------------------------------------------------------
 function SlashCmdList.LUAERROR(msg, editbox)
