@@ -379,7 +379,9 @@ Filger_Spells = {
 			-- Living Bomb
 			{ spellID = 44457, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Pyroblast!
-			{ spellID = 92315, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			{ spellID = 92315, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Pyroblast!
+			{ spellID = 11366, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Critical Mass
 			{ spellID = 22959, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Combustion
