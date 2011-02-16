@@ -479,6 +479,8 @@ Filger_Spells = {
 			{ spellID = 82731, size = 30, filter = "CD" },
 			-- Freeze (Elemental)
 			{ spellID = 33395, size = 30, filter = "CD" },
+			-- Combustion
+			{ spellID = 11129, size = 30, filter = "CD" },
 		},
 	},
 	["WARRIOR"] = {
