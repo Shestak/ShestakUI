@@ -362,6 +362,8 @@ Filger_Spells = {
 			{ spellID = 73551, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hurricane (Enchant)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Lightweave (Enchant)
+			{ spellID = 75170, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
