@@ -616,12 +616,12 @@ function CreateUIConfig()
 					local originalR,originalG,originalB,originalA = r, g, b, a
 					
 					local function ShowColorPicker(r, g, b, a, changedCallback)
+						ColorPickerFrame.func, ColorPickerFrame.opacityFunc, ColorPickerFrame.cancelFunc = changedCallback, changedCallback, changedCallback;
 						ColorPickerFrame:SetColorRGB(r, g, b)
 						a = tonumber(a)
 						ColorPickerFrame.hasOpacity = (a ~= nil and a ~= 1)
 						ColorPickerFrame.opacity = a
 						ColorPickerFrame.previousValues = {originalR,originalG,originalB,originalA}
-						ColorPickerFrame.func, ColorPickerFrame.opacityFunc, ColorPickerFrame.cancelFunc = changedCallback, changedCallback, changedCallback;
 						ColorPickerFrame:Hide()
 						ColorPickerFrame:Show()
 					end
@@ -636,14 +636,10 @@ function CreateUIConfig()
 							newA, newR, newG, newB = OpacitySliderFrame:GetValue(), ColorPickerFrame:GetColorRGB()
 						end
 						
-						-- Kinda a cheesy way to fix setting the value in the wrong place.. oh well
-						if fired > 3 then
-							value = { newR, newG, newB, newA }
-							SetValue(group, option, (value)) 
-							self:SetBackdropBorderColor(newR, newG, newB, newA)
-							self:SetBackdropColor(newR, newG, newB, 0.3)
-							fired = 0
-						end
+						value = { newR, newG, newB, newA }
+						SetValue(group, option, (value)) 
+						self:SetBackdropBorderColor(newR, newG, newB, newA)
+						self:SetBackdropColor(newR, newG, newB, 0.3)
 					end
 					
 					ShowColorPicker(originalR, originalG, originalB, originalA, myColorCallback)
