@@ -11,10 +11,6 @@ local buttonsize = 21
 
 -- Init some tables to store backgrounds
 local freebg = {}
-local freeibg = {}
-
--- Init some vars to store methods
-local setpoint, setpoint2, setwidth, setscale
 
 -- Styling functions
 local createbg = function()
@@ -34,27 +30,26 @@ local function freestyle(bar)
 	end
 	
 	-- Reparent and hide icon background
-	local ibg = bar:Get("bigwigs:shestakui:ibg")
+	local ibg = bar:Get("bigwigs:shestakui:bg")
 	if ibg then
 		ibg:ClearAllPoints()
 		ibg:SetParent(UIParent)
 		ibg:Hide()
-		freeibg[#freeibg + 1] = ibg
+		freebg[#freebg + 1] = ibg
 	end
 	
 	-- Replace dummies with original method functions
-	bar.candyBarIconFrame.SetPoint = setpoint
-	bar.candyBarBackground.SetPoint = setpoint2
-	bar.candyBarIconFrame.SetWidth = setwidth
-	bar.SetScale = setscale
+	bar.candyBarBar.SetPoint = bar.candyBarBar.OldSetPoint
+	bar.candyBarIconFrame.SetWidth = bar.candyBarIconFrame.OldSetWidth
+	bar.SetScale = bar.OldSetScale
 end
 
 local applystyle = function(bar)
 	-- General bar settings
 	bar:SetHeight(SettingsDB.Scale(15))
 	bar:SetScale(1)
+	bar.OldSetScale = bar.SetScale
 	bar.SetScale = SettingsDB.dummy
-	setscale = bar.SetScale
 	
 	-- Create or reparent and use bar background
 	local bg = nil
@@ -74,8 +69,8 @@ local applystyle = function(bar)
 	-- Create or reparent and use icon background
 	local ibg = nil
 	if bar.candyBarIconFrame:GetTexture() then
-		if #freeibg > 0 then
-			ibg = table.remove(freeibg)
+		if #freebg > 0 then
+			ibg = table.remove(freebg)
 		else
 			ibg = createbg()
 		end
@@ -85,7 +80,7 @@ local applystyle = function(bar)
 		ibg:SetPoint("BOTTOMRIGHT", bar.candyBarIconFrame, "BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
 		ibg:SetFrameStrata("BACKGROUND")
 		ibg:Show()
-		bar:Set("bigwigs:shestakui:ibg", ibg)
+		bar:Set("bigwigs:shestakui:bg", ibg)
 	end
 	
 	-- Setup timer and bar name fonts and positions
@@ -97,12 +92,12 @@ local applystyle = function(bar)
 	bar.candyBarDuration:SetFont(SettingsCF.font.stylization_font, SettingsCF.font.stylization_font_size, SettingsCF.font.stylization_font_style)
 	bar.candyBarDuration:SetShadowOffset(SettingsCF.font.stylization_font_shadow and 1 or 0, SettingsCF.font.stylization_font_shadow and -1 or 0)
 	bar.candyBarDuration:ClearAllPoints()
-	bar.candyBarDuration:SetPoint("RIGHT", bar, "RIGHT", SettingsDB.Scale(2), 0)
+	bar.candyBarDuration:SetPoint("RIGHT", bar, "RIGHT", SettingsDB.Scale(1), 0)
 	
 	-- Setup bar positions and look
 	bar.candyBarBar:ClearAllPoints()
 	bar.candyBarBar:SetAllPoints(bar)
-	setpoint = bar.candyBarBar.SetPoint
+	bar.candyBarBar.OldSetPoint = bar.candyBarBar.SetPoint
 	bar.candyBarBar.SetPoint = SettingsDB.dummy
 	bar.candyBarBar:SetStatusBarTexture(SettingsCF.media.texture)
 	if barcolor and not bar.data["bigwigs:emphasized"] == true then bar.candyBarBar:SetStatusBarColor(barcolor.r, barcolor.g, barcolor.b, 1) end
@@ -112,7 +107,7 @@ local applystyle = function(bar)
 	bar.candyBarIconFrame:ClearAllPoints()
 	bar.candyBarIconFrame:SetPoint("BOTTOMLEFT", bar, "BOTTOMLEFT", SettingsDB.Scale(-buttonsize - buttonsize/3), 0)
 	bar.candyBarIconFrame:SetSize(SettingsDB.Scale(buttonsize), SettingsDB.Scale(buttonsize))
-	setwidth = bar.candyBarIconFrame.SetWidth
+	bar.candyBarIconFrame.OldSetWidth = bar.candyBarIconFrame.SetWidth
 	bar.candyBarIconFrame.SetWidth = SettingsDB.dummy
 	bar.candyBarIconFrame:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 end
@@ -134,7 +129,9 @@ local function registerStyle()
 		})
 	end
 	if prox and skinrange and BigWigs.pluginCore.modules.Bars.db.profile.barStyle == "ShestakUI" then
-		hooksecurefunc(BigWigs.pluginCore.modules.Proximity, "RestyleWindow", function() SettingsDB.SkinFadedPanel(BigWigsProximityAnchor) end)
+		hooksecurefunc(BigWigs.pluginCore.modules.Proximity, "RestyleWindow", function()
+			SettingsDB.SkinFadedPanel(BigWigsProximityAnchor)
+		end)
 	end
 end
 
@@ -155,7 +152,7 @@ f:SetScript("OnEvent", function(self, event, msg)
 end)
 
 local pr = function(msg)
-    print("|cffC495DDBigWigs|r:", tostring(msg))
+    print(tostring(msg))
 end
 
 SLASH_BWTEST1 = "/bwtest"
@@ -174,8 +171,8 @@ SlashCmdList.BWTEST = function(msg)
 		BigWigs:Test()
 		BigWigs:Test()
 	else
-		pr("use |cffFF0000/bwtest apply|r to apply BigWigs settings.")
-		pr("use |cffFF0000/bwtest test|r to launch BigWigs testmode.")
+		pr("|cffffff00Type /bwtest apply to apply BigWigs settings.|r")
+		pr("|cffffff00Type /bwtest test to launch BigWigs testmode.|r")
 	end
 end
 
@@ -185,7 +182,7 @@ StaticPopupDialogs["BW_TEST"] = {
 	button2 = CANCEL,
 	OnAccept = function()
 		BigWigs.pluginCore.modules.Bars.db.profile.barStyle = "ShestakUI"
-		ReloadUI()
+		if InCombatLockdown() then pr(ERR_NOT_IN_COMBAT) pr("Reload your UI to apply skin.") else ReloadUI() end
 	end,
     timeout = 0,
     whileDead = 1,
