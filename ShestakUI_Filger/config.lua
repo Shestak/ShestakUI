@@ -589,6 +589,8 @@ Filger_Spells = {
 			{ spellID = 85742, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Incite
 			{ spellID = 86627, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Sacred Duty
+			{ spellID = 85433, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "COOLDOWN",
