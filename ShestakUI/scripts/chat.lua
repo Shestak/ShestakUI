@@ -394,7 +394,7 @@ if SettingsCF.chat.whisp_sound == true then
 	SoundSys:RegisterEvent("CHAT_MSG_BN_WHISPER")
 	SoundSys:HookScript("OnEvent", function(self, event, ...)
 		if event == "CHAT_MSG_WHISPER" or "CHAT_MSG_BN_WHISPER" then
-			PlaySoundFile(SettingsCF.media.whisp_sound)
+			PlaySoundFile(SettingsCF.media.whisp_sound, "Master")
 		end
 	end)
 end
