@@ -26,6 +26,7 @@ if GetLocale() == "koKR" then
 	
 	-- Skins options
 	L_GUI_SKINS = "Stylization"
+	L_GUI_SKINS_BW = "Enable styling BigWigs"
 	L_GUI_SKINS_DBM = "Enable styling DBM"
 	L_GUI_SKINS_PP = "Enable styling PallyPower"
 	

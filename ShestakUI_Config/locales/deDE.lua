@@ -26,6 +26,7 @@ if GetLocale() == "deDE" then
 	
 	-- Skins options
 	L_GUI_SKINS = "Stilisierung"
+	L_GUI_SKINS_BW = "BigWigs Design aktivieren"
 	L_GUI_SKINS_DBM = "DBM Design aktivieren"
 	L_GUI_SKINS_PP = "PallyPower Design aktivieren"
 	

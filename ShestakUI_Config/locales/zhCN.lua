@@ -26,6 +26,7 @@ if GetLocale() == "zhCN" then
 	
 	-- Skins options
 	L_GUI_SKINS = "风格化"
+	L_GUI_SKINS_BW = "开启BigWigs样式增强"
 	L_GUI_SKINS_DBM = "开启DBM样式增强"
 	L_GUI_SKINS_PP = "开启PallyPower样式增强"
 	

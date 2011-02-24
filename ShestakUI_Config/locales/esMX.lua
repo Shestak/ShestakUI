@@ -26,6 +26,7 @@ if GetLocale() == "esMX" then
 	
 	-- Skins options
 	L_GUI_SKINS = "Estilización"
+	L_GUI_SKINS_BW = "Activar estilo del BigWigs"
 	L_GUI_SKINS_DBM = "Activar estilo del DBM"
 	L_GUI_SKINS_PP = "Activar estilo del PallyPower"
 	

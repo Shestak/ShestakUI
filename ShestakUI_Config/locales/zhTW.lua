@@ -26,6 +26,7 @@ if GetLocale() == "zhTW" then
 	
 	-- Skins options
 	L_GUI_SKINS = "風格化" -- Needs review
+	L_GUI_SKINS_BW = "開啟BigWigs樣式增強"
 	L_GUI_SKINS_DBM = "開啟DBM樣式增強"
 	L_GUI_SKINS_PP = "開啟PallyPower樣式增強"
 	

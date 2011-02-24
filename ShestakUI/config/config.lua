@@ -62,6 +62,7 @@ SettingsCF["misc"] = {
 --	Skins options
 ----------------------------------------------------------------------------------------
 SettingsCF["skins"] = {
+	["bigwigs"] = true,							-- BigWigs skin
 	["dbm"] = true,								-- DBM skin
 	["pallypower"] = true,						-- PallyPower skin
 }

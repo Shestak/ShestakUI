@@ -51,6 +51,7 @@ local function Local(o)
 	
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
+	if o == "UIConfigskinsbigwigs" then o = L_GUI_SKINS_BW end
 	if o == "UIConfigskinsdbm" then o = L_GUI_SKINS_DBM end
 	if o == "UIConfigskinspallypower" then o = L_GUI_SKINS_PP end
 	

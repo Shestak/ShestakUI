@@ -26,6 +26,7 @@ if GetLocale() == "ruRU" then
 	
 	-- Skins options
 	L_GUI_SKINS = "Стилизация"
+	L_GUI_SKINS_BW = "Включить стилизацию BigWigs"
 	L_GUI_SKINS_DBM = "Включить стилизацию DBM"
 	L_GUI_SKINS_PP = "Включить стилизацию PallyPower"
 	

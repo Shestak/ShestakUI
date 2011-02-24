@@ -26,6 +26,7 @@ if GetLocale() == "frFR" then
 	
 	-- Skins options
 	L_GUI_SKINS = "Personalisation d'addon"
+	L_GUI_SKINS_BW = "Activier la personalisation pour BigWigs"
 	L_GUI_SKINS_DBM = "Activier la personalisation pour DBM"
 	L_GUI_SKINS_PP = "Activer  la personnalisation pour PallyPower"
 	

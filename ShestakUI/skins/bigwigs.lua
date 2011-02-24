@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------------------
 --	BigWigs skin(by Affli)
 ----------------------------------------------------------------------------------------
---if not SettingsCF.skins.bw == true then return end
+if not SettingsCF.skins.bigwigs == true then return end
 
 local classcolor = true			-- Classcolored bars
 local skinrange = true			-- Skin distance window
