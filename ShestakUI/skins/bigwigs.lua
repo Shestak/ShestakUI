@@ -34,7 +34,7 @@ local function freestyle(bar)
 	end
 	
 	-- Reparent and hide icon background
-	local ibg = bar:Get("bigwigs:shestakui:bg")
+	local ibg = bar:Get("bigwigs:shestakui:ibg")
 	if ibg then
 		ibg:ClearAllPoints()
 		ibg:SetParent(UIParent)
@@ -85,7 +85,7 @@ local applystyle = function(bar)
 		ibg:SetPoint("BOTTOMRIGHT", bar.candyBarIconFrame, "BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
 		ibg:SetFrameStrata("BACKGROUND")
 		ibg:Show()
-		bar:Set("bigwigs:shestakui:bg", bg)
+		bar:Set("bigwigs:shestakui:ibg", ibg)
 	end
 	
 	-- Setup timer and bar name fonts and positions
@@ -162,6 +162,7 @@ SLASH_BWTEST1 = "/bwtest"
 SlashCmdList.BWTEST = function(msg)
 	if(msg=="apply") then
 		SlashCmdList["BigWigs"]()
+		HideUIPanel(InterfaceOptionsFrame)
 		StaticPopup_Show("BW_TEST")        
 	elseif(msg=="test") then
 		SlashCmdList["BigWigs"]()
@@ -179,7 +180,7 @@ SlashCmdList.BWTEST = function(msg)
 end
 
 StaticPopupDialogs["BW_TEST"] = {
-	text = "We need to set some BigWigs options to apply Tukui BigWigs skin.\nMost of your settings will remain untouched.",
+	text = "We need to set some BigWigs options to apply ShestakUI BigWigs skin.\nMost of your settings will remain untouched.",
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = function()
