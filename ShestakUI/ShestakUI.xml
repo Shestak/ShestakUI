@@ -106,6 +106,7 @@
 	<Script file="class\paladin.lua"/>
 	<Script file="class\mage.lua"/>
 	
+	<Script file="skins\bigwigs.lua"/>
 	<Script file="skins\dbm.lua"/>
 	<Script file="skins\pallypower.lua"/>
 </Ui>
