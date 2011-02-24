@@ -85,7 +85,7 @@ local applystyle = function(bar)
 		ibg:SetPoint("BOTTOMRIGHT", bar.candyBarIconFrame, "BOTTOMRIGHT", SettingsDB.Scale(2), SettingsDB.Scale(-2))
 		ibg:SetFrameStrata("BACKGROUND")
 		ibg:Show()
-		--ibg:Set("bigwigs:shestakui:ibg", ibg)
+		bar:Set("bigwigs:shestakui:bg", bg)
 	end
 	
 	-- Setup timer and bar name fonts and positions
