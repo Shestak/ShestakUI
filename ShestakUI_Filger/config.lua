@@ -887,8 +887,6 @@ Filger_Spells = {
 			{ spellID = 53385, size = 30, filter = "CD" },
 			-- Hammer of the Righteous
 			{ spellID = 53595, size = 30, filter = "CD" },
-			-- Light of Dawn
-			{ spellID = 85222, size = 30, filter = "CD" },
 		},
 	},
 	["PRIEST"] = {
