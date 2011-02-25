@@ -1068,7 +1068,7 @@ if(ct.healing)then
 	local heal=function(self,event,...) 	
 		local msg,icon
 		local timestamp, eventType, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags = select(1,...)
-		if(sourceGUID==ct.pguid)then
+		if(sourceGUID==ct.pguid)or(sourceFlags==gflags)then
 			if(eventType=='SPELL_HEAL')or(eventType=='SPELL_PERIODIC_HEAL'and ct.showhots)then
 				if(ct.healing)then
 					local spellId,spellName,spellSchool,amount,overhealing,absorbed,critical = select(9,...)
