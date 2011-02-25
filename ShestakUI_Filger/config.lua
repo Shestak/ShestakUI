@@ -95,6 +95,8 @@ Filger_Spells = {
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Heart's Judgement
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Dire Magic (Bell of Enraging Resonance trinket)
+			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -364,6 +366,8 @@ Filger_Spells = {
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lightweave (Enchant)
 			{ spellID = 75170, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Dire Magic (Bell of Enraging Resonance trinket)
+			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -713,6 +717,8 @@ Filger_Spells = {
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Heart's Judgement
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Dire Magic (Bell of Enraging Resonance trinket)
+			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -958,7 +964,11 @@ Filger_Spells = {
 			-- Empowered Shadow
 			{ spellID = 95799, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Dark Evangelism
-			{ spellID = 87117, size = 37, unitId = "player", caster = "all", filter = "BUFF" }, 
+			{ spellID = 87117, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Mind melt
+			{ spellID = 87160, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Mind spike
+			{ spellID = 87178, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -981,6 +991,12 @@ Filger_Spells = {
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Heart's Judgement
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Psychic Horror
+			{ spellID = 64044, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Psychic Scream
+			{ spellID = 8122, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Silence
+			{ spellID = 15487, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -1149,6 +1165,8 @@ Filger_Spells = {
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Heart's Judgement
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Dire Magic (Bell of Enraging Resonance trinket)
+			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
