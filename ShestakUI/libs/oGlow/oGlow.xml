@@ -1,16 +1,16 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="oGlow.lua" />
 
-	<Script file="pipes\char.lua" />
-	<Script file="pipes\inspect.lua" />
-	<Script file="pipes\gbank.lua" />
-	<Script file="pipes\trade.lua" />
-	<Script file="pipes\tradeskill.lua" />
-	<Script file="pipes\merchant.lua" />
-	<Script file="pipes\mail.lua" />
-	<Script file="pipes\char-flyout.lua" />
+	<Script file="Pipes\Char.lua" />
+	<Script file="Pipes\Inspect.lua" />
+	<Script file="Pipes\GBank.lua" />
+	<Script file="Pipes\Trade.lua" />
+	<Script file="Pipes\TradeSkill.lua" />
+	<Script file="Pipes\Merchant.lua" />
+	<Script file="Pipes\Mail.lua" />
+	<Script file="Pipes\Char-Flyout.lua" />
 	
-	<Script file="displays\border.lua" />
+	<Script file="Displays\Border.lua" />
 	
-	<Script file="filters\quality.lua" />
+	<Script file="Filters\Quality.lua" />
 </Ui>
