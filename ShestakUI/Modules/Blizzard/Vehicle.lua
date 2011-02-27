@@ -1,10 +1,23 @@
 ----------------------------------------------------------------------------------------
 --	Move vehicle indicator
 ----------------------------------------------------------------------------------------
+local VehicleAnchor = CreateFrame("Frame", "VehicleAnchor", UIParent)
+VehicleAnchor:SetPoint(unpack(SettingsCF.position.vehicle))
+VehicleAnchor:SetSize(120, 20)
+VehicleAnchor:SetMovable(true)
+VehicleAnchor:SetClampedToScreen(true)
+SettingsDB.SkinFadedPanel(VehicleAnchor)
+VehicleAnchor:SetBackdropBorderColor(1, 0, 0)
+VehicleAnchor:SetAlpha(0)
+VehicleAnchor.text = VehicleAnchor:CreateFontString("VehicleAnchorText", "OVERLAY", nil)
+VehicleAnchor.text:SetFont(SettingsCF.media.pixel_font, SettingsCF.media.pixel_font_size, SettingsCF.media.pixel_font_style)
+VehicleAnchor.text:SetPoint("CENTER")
+VehicleAnchor.text:SetText("Vehicle Anchor")
+
 hooksecurefunc(VehicleSeatIndicator, "SetPoint", function(_, _, parent)
     if (parent == "MinimapCluster") or (parent == _G["MinimapCluster"]) then
 		VehicleSeatIndicator:ClearAllPoints()
-		VehicleSeatIndicator:SetPoint(unpack(SettingsCF["position"].vehicle))
+		VehicleSeatIndicator:SetPoint("BOTTOM", VehicleAnchor, "BOTTOM", 0, 24)
 		VehicleSeatIndicator:SetFrameStrata("LOW")
     end
 end)
@@ -12,7 +25,7 @@ end)
 ----------------------------------------------------------------------------------------
 --	Vehicle indicator on mouseover
 ----------------------------------------------------------------------------------------
-if SettingsCF["misc"].vehicle_mouseover == true then
+if SettingsCF.misc.vehicle_mouseover == true then
 	local function VehicleNumSeatIndicator()
 		if VehicleSeatIndicatorButton6 then
 			SettingsDB.numSeat = 6

@@ -148,6 +148,12 @@ local function InstallUI()
 		ToggleChatColorNamesByClassGroup(true, "CHANNEL4")
 		ToggleChatColorNamesByClassGroup(true, "CHANNEL5")
 	end
+	
+	-- Reset movable stuff into original position
+	for i = 1, getn(MoverFrames) do
+		if MoverFrames[i] then MoverFrames[i]:SetUserPlaced(false) end
+	end
+	
 	InstalledUI = true
 	SavedOptions.SetCVar = true
 

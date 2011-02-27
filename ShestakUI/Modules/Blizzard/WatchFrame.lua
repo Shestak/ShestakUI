@@ -1,47 +1,96 @@
 if SettingsCF.misc.move_watchframe ~= true then return end
 
-local UIWatchFrame = CreateFrame("Frame", nil, UIParent)
+local UIWatchFrame = CreateFrame("Frame", "UIWatchFrame", UIParent)
+UIWatchFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
-UIWatchFrame:RegisterEvent("ADDON_LOADED")
-UIWatchFrame:SetScript("OnEvent", function(self, event, addon)
-	if (addon == "ShestakUI") and (not IsAddOnLoaded("Who Framed Watcher Wabbit") or not IsAddOnLoaded("Fux")) then	
-		self:UnregisterEvent("ADDON_LOADED")
-		
-		local wfbutton = CreateFrame("Button", "WatchFrameButton", WatchFrame)
-		SettingsDB.CreatePanel(wfbutton, 40, 10, "BOTTOM", WatchFrame, "TOP", 0, -8)
-		wfbutton:Hide()
+-- Compatible with Blizzard option
+local wideFrame = GetCVar("watchFrameWidth")
 
-		local wf = WatchFrame
-		local wfmove = false 
+-- Create our moving area
+local WatchFrameAnchor = CreateFrame("Button", "WatchFrameAnchor", UIParent)
+WatchFrameAnchor:SetFrameStrata("HIGH")
+WatchFrameAnchor:SetFrameLevel(20)
+WatchFrameAnchor:SetHeight(20)
+WatchFrameAnchor:SetClampedToScreen(true)
+WatchFrameAnchor:SetMovable(true)
+WatchFrameAnchor:EnableMouse(false)
+SettingsDB.SkinFadedPanel(WatchFrameAnchor)
+WatchFrameAnchor:SetBackdropColor(0, 0, 0, 0)
+WatchFrameAnchor:SetBackdropBorderColor(0, 0, 0, 0)
+WatchFrameAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
+WatchFrameAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)
+WatchFrameAnchor.text = WatchFrameAnchor:CreateFontString("WatchFrameAnchor", "OVERLAY", nil)
+WatchFrameAnchor.text:SetFont(SettingsCF.media.pixel_font, SettingsCF.media.pixel_font_size, SettingsCF.media.pixel_font_style)
+WatchFrameAnchor.text:SetPoint("CENTER")
+WatchFrameAnchor.text:SetText("WatchFrame Anchor")
+WatchFrameAnchor.text:Hide()
 
-		wf:SetMovable(true)
-		wf:SetClampedToScreen(false)
-		wf:ClearAllPoints()
-		wf:SetPoint(unpack(SettingsCF.position.quest))
-		wf:SetHeight(600)
-		wf:SetUserPlaced(true)
-		wf.SetPoint = SettingsDB.dummy
-		wf.ClearAllPoints = SettingsDB.dummy
+-- Set default position according to how many right bars we have
+WatchFrameAnchor:SetPoint(unpack(SettingsCF.position.quest))
 
-		local function WATCHFRAMELOCK()
-			if wfmove == false then
-				wfmove = true
-				print("|cffffff00"..L_WATCH_UNLOCK.."|r")
-				wf:EnableMouse(true);
-				wf:RegisterForDrag("LeftButton");
-				wf:SetScript("OnDragStart", wf.StartMoving);
-				wf:SetScript("OnDragStop", wf.StopMovingOrSizing);
-				wfbutton:Show()
-			elseif wfmove == true then
-				wf:EnableMouse(false);
-				wfmove = false
-				wfbutton:Hide()
-				print("|cffffff00"..L_WATCH_LOCK.."|r")
+-- Width of the watchframe according to our Blizzard cVar
+if wideFrame == "1" then
+	UIWatchFrame:SetWidth(350)
+	WatchFrameAnchor:SetWidth(350)
+else
+	UIWatchFrame:SetWidth(250)
+	WatchFrameAnchor:SetWidth(250)
+end
+
+local screenheight = SettingsDB.getscreenheight
+UIWatchFrame:SetParent(WatchFrameAnchor)
+UIWatchFrame:SetHeight(screenheight / 1.6)
+UIWatchFrame:ClearAllPoints()
+UIWatchFrame:SetPoint("TOP")
+
+local function init()
+	UIWatchFrame:UnregisterEvent("PLAYER_ENTERING_WORLD")
+	UIWatchFrame:RegisterEvent("CVAR_UPDATE")
+	UIWatchFrame:SetScript("OnEvent", function(_, _, cvar, value)
+		if cvar == "WATCH_FRAME_WIDTH_TEXT" then
+			if not WatchFrame.userCollapsed then
+				if value == "1" then
+					UIWatchFrame:SetWidth(350)
+					WatchFrameAnchor:SetWidth(350)
+				else
+					UIWatchFrame:SetWidth(250)
+					WatchFrameAnchor:SetWidth(250)
+				end
 			end
+			wideFrame = value
 		end
+	end)
+end
 
-		SLASH_WATCHFRAMELOCK1 = "/wf"
-		SlashCmdList["WATCHFRAMELOCK"] = WATCHFRAMELOCK
+local function setup()	
+	WatchFrame:SetParent(UIWatchFrame)
+	WatchFrame:SetFrameStrata("MEDIUM")
+	WatchFrame:SetFrameLevel(3)
+	WatchFrame:SetClampedToScreen(false)
+	WatchFrame:ClearAllPoints()
+	WatchFrame.ClearAllPoints = function() end
+	WatchFrame:SetPoint("TOPLEFT", 25, 2)
+	WatchFrame:SetPoint("BOTTOMRIGHT", 0, 0)
+	WatchFrame.SetPoint = SettingsDB.dummy
+end
+
+----------------------------------------------------------------------------------------
+--	Execute setup after we enter world
+----------------------------------------------------------------------------------------
+local f = CreateFrame("Frame")
+f:Hide()
+f.elapsed = 0
+f:SetScript("OnUpdate", function(self, elapsed)
+	f.elapsed = f.elapsed + elapsed
+	if f.elapsed > .5 then
+		setup()
+		f:Hide()
+	end
+end)
+UIWatchFrame:SetScript("OnEvent", function()
+	if not IsAddOnLoaded("Who Framed Watcher Wabbit") or not IsAddOnLoaded("Fux") then 
+		init()
+		f:Show()
 	end
 end)
 

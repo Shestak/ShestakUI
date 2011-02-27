@@ -39,7 +39,6 @@
 	<Script file="Core\Disable.lua"/>
 	<Script file="Core\Commands.lua"/>
 	<Script file="Core\WTF.lua"/>
-	<Script file="Core\Movers.lua"/>
 	
 	<Script file="Modules\Blizzard\WatchFrame.lua"/>
 	<Script file="Modules\Blizzard\Vehicle.lua"/>
@@ -137,4 +136,5 @@
 	<Script file="Modules\UnitFrames\Buffs.lua"/>
 	
 	<Script file="Modules\Blizzard\CombatText.lua"/>
+	<Script file="Core\Movers.lua"/>
 </Ui>
