@@ -1,7 +1,9 @@
 ﻿----------------------------------------------------------------------------------------
 --	Skin FrameStackTooltip(by Elv22)
 ----------------------------------------------------------------------------------------
-GameTooltip:SetScript("OnUpdate", function(self, elapsed)
+local FSTooltip = CreateFrame("Frame", nil, UIParent)
+
+FSTooltip:SetScript("OnUpdate", function(self, elapsed)
 	if (self.elapsed and self.elapsed > 0.1) then
 		if FrameStackTooltip then
 			local noscalemult = SettingsDB.mult * SettingsCF.general.uiscale
