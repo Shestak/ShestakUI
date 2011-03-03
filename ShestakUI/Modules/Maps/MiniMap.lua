@@ -28,6 +28,7 @@ Minimap:SetParent(MinimapAnchor)
 Minimap:ClearAllPoints()
 Minimap:Point("TOPLEFT", 2, -2)
 Minimap:Point("BOTTOMRIGHT", -2, 2)
+Minimap:Size(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
 
 -- Hide Border
 MinimapBorder:Hide()
