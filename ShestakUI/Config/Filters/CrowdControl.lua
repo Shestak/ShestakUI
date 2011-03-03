@@ -27,6 +27,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(61305)] 	= 3,	-- Polymorph black cat
 		[GetSpellInfo(61025)] 	= 3,	-- Polymorph serpent
 		[GetSpellInfo(51514)]	= 3,	-- Hex
+		[GetSpellInfo(710)]		= 3,	-- Banish
 		
 		-- Roots
 		[GetSpellInfo(339)] 	= 3, 	-- Entangling Roots
@@ -77,6 +78,12 @@ T.ArenaControl = function()
 		[GetSpellInfo(18708)]  	= 1,	-- Fel Domination
 		[GetSpellInfo(54428)]	= 1,	-- Divine Plea
 		[GetSpellInfo(31821)]	= 1,	-- Aura mastery
+		
+		-- Turtling abilities
+		[GetSpellInfo(871)]		= 1,	-- Shield Wall
+		[GetSpellInfo(48707)]	= 1,	-- Anti-Magic Shell
+		[GetSpellInfo(31224)]	= 1,	-- Cloak of Shadows
+		[GetSpellInfo(19263)]	= 1,	-- Deterrence
 		
 		-- Immunities
 		[GetSpellInfo(45438)] 	= 2, 	-- Ice Block

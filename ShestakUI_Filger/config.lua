@@ -170,6 +170,8 @@ Filger_Spells = {
 			{ spellID = 467, size = 30, filter = "CD" },
 			-- Tree of Life
 			{ spellID = 33891, size = 30, filter = "CD" },
+			-- Skull Bash - Cat
+			{ spellID = 80965, size = 35, filter = "CD" },
 		},
 	},
 	["HUNTER"] = {
