@@ -500,10 +500,10 @@ function CreateUIConfig()
 		return
 	end
 	
-	local version = tonumber(T.version)
-	if version < 3.0 then
-		print("option update")
-	end
+	--local version = tonumber(T.version)
+	--if version < 3.0 then
+	--	print("Configuration updated")
+	--end
 	
 	-- Main Frame
 	local UIConfig = CreateFrame("Frame", "UIConfig", UIParent)
