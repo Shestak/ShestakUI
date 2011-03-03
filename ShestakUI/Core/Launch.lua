@@ -26,7 +26,7 @@ local function InstallUI()
 	SetCVar("autoLootDefault", 1)
 	SetCVar("RotateMinimap", 0)
 	SetCVar("ConsolidateBuffs", 0)
-	SetCVar("scriptErrors", 0)
+	SetCVar("scriptErrors", 1)
 	
 	if T.author == true then
 		SetCVar("scriptErrors", 1)

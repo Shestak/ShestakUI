@@ -194,7 +194,7 @@ C["chat"] = {
 	["filter"] = true,							-- Removing some chat spam("Player1" won duel "Player2")
 	["width"] = 350,							-- Chat width
 	["height"] = 112,							-- Chat height
-	["chat_bar"] = true,						-- Lite Button Bar for switch chat channel
+	["chat_bar"] = false,						-- Lite Button Bar for switch chat channel
 	["time_color"] = "FFD700",					-- Timestamp coloring(http://www.december.com/html/spec/colorcodes.html)
 	["whisp_sound"] = true,						-- Sound when whisper
 	["bubbles"] = true,							-- Skin Blizzard chat bubbles
@@ -277,7 +277,7 @@ C["actionbar"] = {
 	["bottombars"] = 2,							-- Number of action bars on the bottom
 	-- Right bars
 	["rightbars"] = 3,							-- Number of action bars on right
-	["rightbars_mouseover"] = false,				-- Right bars on mouseover
+	["rightbars_mouseover"] = true,				-- Right bars on mouseover
 	-- Pet bar
 	["petbar_mouseover"] = false,				-- Petbar on mouseover(only for horizontal petbar)
 	["petbar_hide"] = false,					-- Hide pet bar
