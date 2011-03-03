@@ -33,7 +33,6 @@ T.ArenaControl = function()
 		[GetSpellInfo(122)]		= 3,	-- Frost Nova
 		[GetSpellInfo(87194)] 	= 3, 	-- Paralysis (SP)
 		[GetSpellInfo(33395)]	= 3,	-- Freeze
-		[GetSpellInfo(12497)]	= 3,	-- Frostbite
 		[GetSpellInfo(16979)] 	= 3, 	-- Feral Charge
 		[GetSpellInfo(13810)] 	= 1, 	-- Frost Trap
 		[GetSpellInfo(61394)] 	= 1, 	-- Frost Trap Glyph
@@ -52,7 +51,8 @@ T.ArenaControl = function()
 		[GetSpellInfo(20066)] 	= 3, 	-- Repentance
 		[GetSpellInfo(46968)] 	= 3, 	-- Shockwave
 		[GetSpellInfo(49203)] 	= 3,	-- Hungering Cold
-		[GetSpellInfo(91800)]	= 3,	-- Gnaw (dk pet stun)
+		[GetSpellInfo(47481)]	= 3,	-- Gnaw (dk pet stun)
+		[GetSpellInfo(91797)]	= 3,	-- Gnaw (dk pet stun mutant)
 		[GetSpellInfo(24394)] 	= 3,	-- Intimidation
 		
 		-- Silences
@@ -65,13 +65,11 @@ T.ArenaControl = function()
 		-- Disarms
 		[GetSpellInfo(676)] 	= 1, 	-- Disarm
 		[GetSpellInfo(51722)] 	= 1,	-- Dismantle
-		[GetSpellInfo(53359)] 	= 1,	-- Chimera Shot - Scorpid
 		[GetSpellInfo(50541)] 	= 1,	-- Clench - Scorpid	
 
 		-- Buffs
 		[GetSpellInfo(33206)] 	= 1, 	-- Pain Suppression
 		[GetSpellInfo(1022)] 	= 1,	-- Hand of Protection
-		[GetSpellInfo(10278)] 	= 1,	-- Blessing of Protection
 		[GetSpellInfo(1044)] 	= 1, 	-- Hand of Freedom
 		[GetSpellInfo(2825)] 	= 1, 	-- Bloodlust
 		[GetSpellInfo(32182)] 	= 1, 	-- Heroism
@@ -81,7 +79,6 @@ T.ArenaControl = function()
 		[GetSpellInfo(31821)]	= 1,	-- Aura mastery
 		
 		-- Immunities
-		[GetSpellInfo(34471)] 	= 2, 	-- The Beast Within
 		[GetSpellInfo(45438)] 	= 2, 	-- Ice Block
 		[GetSpellInfo(642)] 	= 2,	-- Divine Shield
 	}
