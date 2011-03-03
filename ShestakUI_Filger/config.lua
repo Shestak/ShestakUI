@@ -1768,6 +1768,8 @@ Filger_Spells = {
 			{ spellID = 18118, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Curse of Exhaustion
 			{ spellID = 18223, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Unstable Affliction
+			{ spellID = 31117, size = 51, unitId = "player", caster = "all", filter = "DEBUFF" },
 			
 			-- Warrior
 			-- Throwdown
