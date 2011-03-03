@@ -141,6 +141,35 @@ local function SetChatStyle(frame)
 	_G[chat.."EditBox"]:HookScript("OnEditFocusGained", function(self) self:Show() end)
 	_G[chat.."EditBox"]:HookScript("OnEditFocusLost", function(self) self:Hide() end)
 	
+	-- Create our own texture for edit box
+	if C.chat.background == true then
+		local EditBoxBackground = CreateFrame("Frame", "ChatEditBoxBackground", _G[chat.."EditBox"])
+		EditBoxBackground:CreatePanel("Transparent", 1, 1, "LEFT", _G[chat.."EditBox"], "LEFT", 0, 0)
+		EditBoxBackground:ClearAllPoints()
+		EditBoxBackground:Point("TOPLEFT", _G[chat.."EditBox"], "TOPLEFT", 7, -5)
+		EditBoxBackground:Point("BOTTOMRIGHT", _G[chat.."EditBox"], "BOTTOMRIGHT", -7, 5)
+		EditBoxBackground:SetFrameStrata("LOW")
+		EditBoxBackground:SetFrameLevel(1)
+		
+		local function colorize(r, g, b)
+			EditBoxBackground:SetBackdropBorderColor(r, g, b)
+		end
+		
+		-- Update border color according where we talk
+		hooksecurefunc("ChatEdit_UpdateHeader", function()
+			local type = _G[chat.."EditBox"]:GetAttribute("chatType")
+			if type == "CHANNEL" then
+			local id = GetChannelName(_G[chat.."EditBox"]:GetAttribute("channelTarget"))
+				if id == 0 then
+					colorize(unpack(C.media.border_color))
+				else
+					colorize(ChatTypeInfo[type..id].r, ChatTypeInfo[type..id].g, ChatTypeInfo[type..id].b)
+				end
+			else
+				colorize(ChatTypeInfo[type].r, ChatTypeInfo[type].g, ChatTypeInfo[type].b)
+			end
+		end)
+	end
 	-- Rename combat log tab
 	if _G[chat] == _G["ChatFrame2"] then
 		FCF_SetWindowName(_G[chat], GUILD_BANK_LOG)
