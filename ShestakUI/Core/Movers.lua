@@ -11,6 +11,7 @@ T.MoverFrames = {
 	DCPAnchor,
 	RaidBuffsAnchor,
 	TooltipAnchor,
+	ShiftBar,
 }
 
 -- Used to exec various code if we enable or disable moving
@@ -69,6 +70,14 @@ local function exec(self, enable)
 			ThreatMeterAnchor:SetBackdropColor(0, 0, 0, 0)
 			ThreatMeterAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
 			ThreatMeterAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)			
+		end
+	end
+	
+	if self == ShiftBar then
+		if enable then
+			ShapeShiftAnchor:SetAlpha(1)
+		else
+			ShapeShiftAnchor:SetAlpha(0)
 		end
 	end
 end
