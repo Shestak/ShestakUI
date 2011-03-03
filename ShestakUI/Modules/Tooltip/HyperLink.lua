@@ -7,7 +7,7 @@ if C.chat.enable ~= true or IsAddOnLoaded("tekKompare") then return end
 local orig1, orig2 = {}, {}
 local GameTooltip = GameTooltip
 
-local linktypes = {item = true, enchant = true, spell = true, quest = true, unit = true, talent = true, achievement = true, glyph = true}
+local linktypes = {item = true, enchant = true, spell = true, quest = true, unit = true, talent = true, achievement = true, glyph = true, instancelock = true}
 
 local function OnHyperlinkEnter(frame, link, ...)
 	local linktype = link:match("^([^:]+)")
