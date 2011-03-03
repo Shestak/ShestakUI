@@ -109,14 +109,14 @@ if StreamingIcon then
 end
 
 -- GhostFrame
-GhostFrameContentsFrame:Width(C.minimap.size + 4)
+GhostFrameContentsFrame:Width(C.minimap.size)
 GhostFrameContentsFrame:ClearAllPoints()
-GhostFrameContentsFrame:Point("CENTER")
+GhostFrameContentsFrame:SetPoint("CENTER")
 GhostFrameContentsFrame.SetPoint = T.dummy
 GhostFrame:SetFrameStrata("HIGH")
 GhostFrame:SetFrameLevel(10)
 GhostFrame:ClearAllPoints()
-GhostFrame:Point("BOTTOM", Minimap, "TOP", 0, 5)
+GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 -- LFDSearchStatus
