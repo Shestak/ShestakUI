@@ -1,0 +1,23 @@
+## Interface: 40000
+## Title: ShestakUI Config
+## Notes: In-game configuration for ShestakUI
+## Author: Tohveli
+## Credits: Tukz, Fernir, Elv22
+## RequiredDeps: ShestakUI
+## SavedVariables: GUIConfigAll, GUIConfigSettings
+## SavedVariablesPerCharacter: GUIConfig
+## X-Curse-Packaged-Version: 3.0
+## X-Curse-Project-Name: ShestakUI
+## X-Curse-Project-ID: shestakui
+## Website: http://shestak.org
+
+Locales\English.lua
+Locales\Russian.lua
+Locales\German.lua
+Locales\French.lua
+Locales\Spanish.lua
+Locales\Korean.lua
+Locales\Chinese.lua
+Locales\Taiwan.lua
+
+ShestakUI_Config.lua

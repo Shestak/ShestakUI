@@ -1,0 +1,63 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="Init.lua"/>
+	<Script file="Private.lua"/>
+	<Script file="oUF.lua"/>
+	<Script file="Events.lua"/>
+	<Script file="Factory.lua"/>
+	<Script file="Blizzard.lua"/>
+	<Script file="Colors.lua"/>
+	<Script file="Finalize.lua"/>
+
+	<Script file="Elements\Power.lua"/>
+	<Script file="Elements\Aura.lua"/>
+	<Script file="Elements\Health.lua"/>
+	<Script file="Elements\CPoints.lua"/>
+	<Script file="Elements\RIcons.lua"/>
+	<Script file="Elements\Leader.lua"/>
+	<Script file="Elements\Combat.lua"/>
+	<Script file="Elements\Resting.lua"/>
+	<Script file="Elements\PvP.lua"/>
+	<Script file="Elements\Portraits.lua"/>
+	<Script file="Elements\Range.lua"/>
+	<Script file="Elements\Happiness.lua"/>
+	<Script file="Elements\CastBar.lua"/>
+	<Script file="Elements\Threat.lua"/>
+	<Script file="Elements\Tags.lua"/>
+	<Script file="Elements\MasterLooter.lua"/>
+	<Script file="Elements\Assistant.lua"/>
+	<Script file="Elements\RuneBar.lua"/>
+	<Script file="Elements\LFDRole.lua"/>
+	<Script file="Elements\HealPrediction.lua"/>
+	<Script file="Elements\HolyPower.lua"/>
+	<Script file="Elements\SoulShards.lua"/>
+	<Script file="Elements\PIcon.lua"/>
+	<Script file="Elements\ReadyCheck.lua"/>
+	<Script file="Elements\QIcon.lua"/>
+	<Script file="Elements\EclipseBar.lua"/>
+	<Script file="Elements\AltPowerBar.lua"/>
+	
+	<Script file="Modules\AuraTracker.lua"/>
+	<Script file="Modules\AuraWatch.lua"/>
+	<Script file="Modules\CombatFeedback.lua"/>
+	<Script file="Modules\DebuffHighlight.lua"/>
+	<Script file="Modules\Experience.lua"/>
+	<Script file="Modules\GCD.lua"/>
+	<Script file="Modules\MovableFrames.lua"/>
+	<Script file="Modules\RaidDebuffs.lua"/>
+	<Script file="Modules\Reputation.lua"/>
+	<Script file="Modules\Smooth.lua"/>
+	<Script file="Modules\Swing.lua"/>
+	<Script file="Modules\Talents.lua"/>
+	<Script file="Modules\TotemBar.lua"/>
+	<Script file="Modules\Trinkets.lua"/>
+	<Script file="Modules\Vengeance.lua"/>
+	
+
+	<!-- Clique support -->
+	<Button name="oUF_ClickCastUnitTemplate" virtual="true" inherits="SecureActionButtonTemplate,SecureHandlerEnterLeaveTemplate">
+		<Attributes>
+			<Attribute name="_onenter" type="string" value="local snippet = self:GetAttribute('clickcast_onenter'); if snippet then self:Run(snippet) end"/>
+			<Attribute name="_onleave" type="string" value="local snippet = self:GetAttribute('clickcast_onleave'); if snippet then self:Run(snippet) end"/>
+		</Attributes>
+	</Button>
+</Ui>
