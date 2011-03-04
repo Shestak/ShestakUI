@@ -141,8 +141,13 @@ local StartTimer = function(name, spellId)
 	bar.spell = spell
 	bar:Show()
 	local color = RAID_CLASS_COLORS[select(2, UnitClass(name))]
-	bar:SetStatusBarColor(color.r, color.g, color.b)
-	bar.bg:SetVertexColor(color.r, color.g, color.b, 0.25)
+	if color then
+		bar:SetStatusBarColor(color.r, color.g, color.b)
+		bar.bg:SetVertexColor(color.r, color.g, color.b, 0.25)
+	else
+		bar:SetStatusBarColor(75/255,  175/255, 76/255)
+		bar.bg:SetVertexColor(75/255,  175/255, 76/255, 0.25)
+	end
 	bar:SetScript("OnUpdate", BarUpdate)
 	bar:EnableMouse(true)
 	bar:SetScript("OnEnter", OnEnter)
