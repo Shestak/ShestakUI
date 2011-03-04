@@ -978,16 +978,6 @@ Filger_Spells = {
 			{ spellID = 87117, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Mind melt
 			{ spellID = 87160, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Mind spike
-			{ spellID = 87178, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-		},
-		{
-			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
-			Interval = 3,
-			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
-
 			-- Chakra: Sanctuary
 			{ spellID = 81206, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Chakra: Serenity
@@ -1002,12 +992,22 @@ Filger_Spells = {
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Heart's Judgement
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+		},
+		{
+			Name = "T_DEBUFF_ICON",
+			Direction = "RIGHT",
+			Interval = 3,
+			Mode = "ICON",
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+
 			-- Psychic Horror
 			{ spellID = 64044, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Psychic Scream
 			{ spellID = 8122, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Silence
 			{ spellID = 15487, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Mind spike
+			{ spellID = 87178, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -1955,6 +1955,8 @@ Filger_Spells = {
 			{ spellID = 47585, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Pain supression
 			{ spellID = 33206, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Strength of Soul
+			{ spellID = 96267, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 			
 			-- Warlock
 			-- Banish
