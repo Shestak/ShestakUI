@@ -10,7 +10,7 @@ if C.loot.auto_greed == true then
 		if (name == select(1, GetItemInfo(43102))) then		
 			RollOnLoot(id, 2)
 		end
-		if SettingsDB.level ~= MAX_PLAYER_LEVEL then return end
+		if T.level ~= MAX_PLAYER_LEVEL then return end
 		if(id and select(4, GetLootRollItemInfo(id))==2 and not (select(5, GetLootRollItemInfo(id)))) then
 			if RollOnLoot(id, 3) then
 				RollOnLoot(id, 3)

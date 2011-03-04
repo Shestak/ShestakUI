@@ -39,8 +39,8 @@ elseif T.name == "Бэкстер" or T.name == "Варбой" then
 	C["general"].welcome_message = false
 	C["misc"].raid_tools = true
 	C["misc"].invite_keyword = "inv"
-	C["cooldown"].pulse_enable = true
-	C["threat"].enable = true
+	C["combattext"].killingblow = true
+	C["pulsecooldown"].enable = true
 	C["tooltip"].shift_modifer = true
 	C["tooltip"].cursor = true
 	C["tooltip"].title = true

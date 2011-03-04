@@ -946,6 +946,8 @@ Filger_Spells = {
 			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Dark Archangel
 			{ spellID = 87153, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Strength of Soul
+			{ spellID = 96267, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1028,6 +1030,8 @@ Filger_Spells = {
 			{ spellID = 2944, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Vampiric Touch
             { spellID = 34914, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Grace
+			{ spellID = 77613, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" }
 		},
 		{
 			Name = "PVE/PVP_CC",
