@@ -123,7 +123,9 @@ for i = 1, 5 do
 		if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
 		if i == 2 then
 			ToggleBar[i]:SetAlpha(1)
-			RightBarMouseOver(1)
+			if C.actionbar.rightbars_mouseover == true then
+				RightBarMouseOver(1)
+			end
 		else
 			ToggleBar[i]:FadeIn()
 		end
@@ -132,7 +134,9 @@ for i = 1, 5 do
 	ToggleBar[i]:SetScript("OnLeave", function()
 		if i == 2 then
 			ToggleBar[i]:SetAlpha(0)
-			RightBarMouseOver(0)
+			if C.actionbar.rightbars_mouseover == true then
+				RightBarMouseOver(0)
+			end
 		else
 			ToggleBar[i]:FadeOut()
 		end
