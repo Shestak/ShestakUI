@@ -6,7 +6,7 @@ local T, C, L = unpack(select(2, ...))
 C["position"] = {
 	-- Miscellaneous positions
 	["minimap"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24},		-- Minimap
-	["map"] = {"CENTER", UIParent, "CENTER", 0, 70},						-- Map
+	["map"] = {"BOTTOM", UIParent, "BOTTOM", -120, 320},					-- Map
 	["chat"] = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 24, 23},				-- Chat
 	["bag"]	= {"BOTTOMRIGHT", Minimap, "TOPRIGHT", -1, 8},					-- Bag
 	["bank"] = {"LEFT", UIParent, "LEFT", 23, 150},							-- Bank
