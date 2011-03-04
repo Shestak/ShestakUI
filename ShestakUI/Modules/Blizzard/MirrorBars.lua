@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Based on oMirrorBars
 ----------------------------------------------------------------------------------------
---if not SettingsCF.unitframe.unit_castbar == true or not SettingsCF.unitframe.enable == true then return end
+if not C.unitframe.unit_castbar == true or not C.unitframe.enable == true then return end
 
 local _, settings = ...
 

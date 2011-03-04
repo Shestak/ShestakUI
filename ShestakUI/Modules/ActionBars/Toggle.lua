@@ -84,7 +84,7 @@ for i = 1, 5 do
 		ToggleBar[i]:CreatePanel("Transparent", ActionBarAnchor:GetWidth(), T.buttonsize / 2, "BOTTOM", ActionBarAnchor, "TOP", 0, T.buttonspacing)
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
-			if InCombatLockdown() then return end
+			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
 			if SavedOptionsPerChar.BottomBars == nil then SavedOptionsPerChar.BottomBars = C.actionbar.bottombars end
 			SavedOptionsPerChar.BottomBars = SavedOptionsPerChar.BottomBars + 1
 
@@ -99,7 +99,7 @@ for i = 1, 5 do
 		ToggleBar[i]:CreatePanel("Transparent", RightActionBarAnchor:GetWidth(), T.buttonsize / 1.5, "TOPRIGHT", RightActionBarAnchor, "BOTTOMRIGHT", 0, -T.buttonspacing)
 		
 		ToggleBar[i]:SetScript("OnMouseDown", function()
-			if InCombatLockdown() then return end
+			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
 			if SavedOptionsPerChar.RightBars == nil then SavedOptionsPerChar.RightBars = C.actionbar.rightbars end
 			SavedOptionsPerChar.RightBars = SavedOptionsPerChar.RightBars - 1
 
@@ -120,7 +120,7 @@ for i = 1, 5 do
 	ToggleBar[i]:RegisterEvent("PLAYER_REGEN_ENABLED")
 	
 	ToggleBar[i]:SetScript("OnEnter", function()
-		if InCombatLockdown() then return end
+		if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
 		if i == 2 then
 			ToggleBar[i]:SetAlpha(1)
 			RightBarMouseOver(1)
