@@ -14,60 +14,121 @@ local ToggleBarText = function(i, text, plus, neg)
 end
 
 local MainBars = function()
-	if SavedOptionsPerChar.BottomBars == 1 then
-		ActionBarAnchor:Height(T.buttonsize)
-		ToggleBarText(1, "+ + +", true)
-		Bar2Holder:Hide()
-	elseif SavedOptionsPerChar.BottomBars == 2 then
-		ActionBarAnchor:Height(T.buttonsize * 2 + T.buttonspacing)
-		ToggleBarText(1, "- - -", false, true)
-		Bar2Holder:Show()
+	if C.actionbar.rightbars > 2 then
+		if SavedOptionsPerChar.BottomBars == 1 then
+			ActionBarAnchor:Height(T.buttonsize)
+			ToggleBarText(1, "+ + +", true)
+			Bar2Holder:Hide()
+		elseif SavedOptionsPerChar.BottomBars == 2 then
+			ActionBarAnchor:Height(T.buttonsize * 2 + T.buttonspacing)
+			ToggleBarText(1, "- - -", false, true)
+			Bar2Holder:Show()
+		end
+	elseif C.actionbar.rightbars < 3 then
+		if SavedOptionsPerChar.BottomBars == 1 then
+			ActionBarAnchor:Height(T.buttonsize)
+			ToggleBarText(1, "+ + +", true)
+			Bar2Holder:Hide()
+			Bar5Holder:Hide()
+		elseif SavedOptionsPerChar.BottomBars == 2 then
+			ActionBarAnchor:Height(T.buttonsize * 2 + T.buttonspacing)
+			ToggleBarText(1, "+ + +", true)
+			Bar2Holder:Show()
+			Bar5Holder:Hide()
+		elseif SavedOptionsPerChar.BottomBars == 3 then
+			ActionBarAnchor:Height((T.buttonsize * 3) + (T.buttonspacing * 2))
+			ToggleBarText(1, "- - -", false, true)
+			Bar2Holder:Show()
+			Bar5Holder:Show()
+		end
+	else
 	end
 end
 
 local RightBars = function()
-	if SavedOptionsPerChar.RightBars == 1 then
-		RightActionBarAnchor:Width(T.buttonsize)
-		if not C.actionbar.petbar_horizontal == true then
-			PetActionBarAnchor:ClearAllPoints()
-			PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+	if C.actionbar.rightbars > 2 then
+		if SavedOptionsPerChar.RightBars == 1 then
+			RightActionBarAnchor:Width(T.buttonsize)
+			if not C.actionbar.petbar_horizontal == true then
+				PetActionBarAnchor:ClearAllPoints()
+				PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+			end
+			ToggleBar[2]:Width(T.buttonsize)
+			ToggleBarText(2, "> > >", false, true)
+			Bar3Holder:Hide()
+			Bar4Holder:Hide()
+		elseif SavedOptionsPerChar.RightBars == 2 then
+			RightActionBarAnchor:Width(T.buttonsize * 2 + T.buttonspacing)
+			if not C.actionbar.petbar_horizontal == true then
+				PetActionBarAnchor:ClearAllPoints()
+				PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+			end
+			ToggleBar[2]:Width(T.buttonsize * 2 + T.buttonspacing)
+			ToggleBarText(2, "> > >", false, true)
+			Bar3Holder:Hide()
+			Bar4Holder:Show()
+		elseif SavedOptionsPerChar.RightBars == 3 then
+			RightActionBarAnchor:Width((T.buttonsize * 3) + (T.buttonspacing * 2))
+			if not C.actionbar.petbar_horizontal == true then
+				PetActionBarAnchor:ClearAllPoints()
+				PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+			end
+			ToggleBar[2]:Width((T.buttonsize * 3) + (T.buttonspacing * 2))
+			ToggleBarText(2, "> > >", false, true)
+			Bar3Holder:Show()
+			Bar4Holder:Show()
+			if C.actionbar.rightbars > 2 then
+				Bar5Holder:Show()
+			end
+		elseif SavedOptionsPerChar.RightBars == 0 then
+			if not C.actionbar.petbar_horizontal == true then
+				PetActionBarAnchor:ClearAllPoints()
+				PetActionBarAnchor:Point("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
+			end
+			ToggleBar[2]:Width(T.buttonsize)
+			ToggleBarText(2, "< < <", true)
+			RightActionBarAnchor:Hide()
+			Bar3Holder:Hide()
+			Bar4Holder:Hide()
+			if C.actionbar.rightbars > 2 then
+				Bar5Holder:Hide()
+			end
 		end
-		ToggleBar[2]:Width(T.buttonsize)
-		ToggleBarText(2, "> > >", false, true)
-		Bar3Holder:Hide()
-		Bar4Holder:Hide()
-	elseif SavedOptionsPerChar.RightBars == 2 then
-		RightActionBarAnchor:Width(T.buttonsize * 2 + T.buttonspacing)
-		if not C.actionbar.petbar_horizontal == true then
-			PetActionBarAnchor:ClearAllPoints()
-			PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+	elseif C.actionbar.rightbars < 3 then
+		if SavedOptionsPerChar.RightBars == 1 then
+			RightActionBarAnchor:Width(T.buttonsize)
+			if not C.actionbar.petbar_horizontal == true then
+				PetActionBarAnchor:ClearAllPoints()
+				PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+			end
+			ToggleBar[2]:Width(T.buttonsize)
+			ToggleBarText(2, "> > >", false, true)
+			Bar3Holder:Show()
+			Bar4Holder:Hide()
+		elseif SavedOptionsPerChar.RightBars == 2 then
+			RightActionBarAnchor:Width(T.buttonsize * 2 + T.buttonspacing)
+			if not C.actionbar.petbar_horizontal == true then
+				PetActionBarAnchor:ClearAllPoints()
+				PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+			end
+			ToggleBar[2]:Width(T.buttonsize * 2 + T.buttonspacing)
+			ToggleBarText(2, "> > >", false, true)
+			Bar3Holder:Show()
+			Bar4Holder:Show()
+		elseif SavedOptionsPerChar.RightBars == 0 then
+			if not C.actionbar.petbar_horizontal == true then
+				PetActionBarAnchor:ClearAllPoints()
+				PetActionBarAnchor:Point("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
+			end
+			ToggleBar[2]:Width(T.buttonsize)
+			ToggleBarText(2, "< < <", true)
+			RightActionBarAnchor:Hide()
+			Bar3Holder:Hide()
+			Bar4Holder:Hide()
+			if C.actionbar.rightbars > 2 then
+				Bar5Holder:Hide()
+			end
 		end
-		ToggleBar[2]:Width(T.buttonsize * 2 + T.buttonspacing)
-		ToggleBarText(2, "> > >", false, true)
-		Bar3Holder:Hide()
-		Bar4Holder:Show()
-	elseif SavedOptionsPerChar.RightBars == 3 then
-		RightActionBarAnchor:Width((T.buttonsize * 3) + (T.buttonspacing * 2))
-		if not C.actionbar.petbar_horizontal == true then
-			PetActionBarAnchor:ClearAllPoints()
-			PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
-		end
-		ToggleBar[2]:Width((T.buttonsize * 3) + (T.buttonspacing * 2))
-		ToggleBarText(2, "> > >", false, true)
-		Bar3Holder:Show()
-		Bar4Holder:Show()
-		Bar5Holder:Show()
-	elseif SavedOptionsPerChar.RightBars == 0 then
-		if not C.actionbar.petbar_horizontal == true then
-			PetActionBarAnchor:ClearAllPoints()
-			PetActionBarAnchor:Point("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
-		end
-		ToggleBar[2]:Width(T.buttonsize)
-		ToggleBarText(2, "< < <", true)
-		RightActionBarAnchor:Hide()
-		Bar3Holder:Hide()
-		Bar4Holder:Hide()
-		Bar5Holder:Hide()
 	end
 end
 
@@ -88,8 +149,18 @@ for i = 1, 5 do
 			if SavedOptionsPerChar.BottomBars == nil then SavedOptionsPerChar.BottomBars = C.actionbar.bottombars end
 			SavedOptionsPerChar.BottomBars = SavedOptionsPerChar.BottomBars + 1
 
-			if SavedOptionsPerChar.BottomBars > 2 then
-				SavedOptionsPerChar.BottomBars = 1
+			if C.actionbar.rightbars > 2 then
+				if SavedOptionsPerChar.BottomBars > 2 then
+					SavedOptionsPerChar.BottomBars = 1
+				end
+			elseif C.actionbar.rightbars < 3 then
+				if SavedOptionsPerChar.BottomBars > 3 then
+					SavedOptionsPerChar.BottomBars = 1
+				elseif SavedOptionsPerChar.BottomBars > 2 then
+					SavedOptionsPerChar.BottomBars = 3
+				elseif SavedOptionsPerChar.BottomBars < 1 then
+					SavedOptionsPerChar.BottomBars = 3
+				end
 			end
 			
 			MainBars()
@@ -103,13 +174,22 @@ for i = 1, 5 do
 			if SavedOptionsPerChar.RightBars == nil then SavedOptionsPerChar.RightBars = C.actionbar.rightbars end
 			SavedOptionsPerChar.RightBars = SavedOptionsPerChar.RightBars - 1
 
-			if SavedOptionsPerChar.RightBars > 3 then
-				SavedOptionsPerChar.RightBars = 2
-			elseif SavedOptionsPerChar.RightBars > 2 then
-				SavedOptionsPerChar.RightBars = 1
-			elseif SavedOptionsPerChar.RightBars < 0 then
-				SavedOptionsPerChar.RightBars = 3
+			if C.actionbar.rightbars > 2 then
+				if SavedOptionsPerChar.RightBars > 3 then
+					SavedOptionsPerChar.RightBars = 2
+				elseif SavedOptionsPerChar.RightBars > 2 then
+					SavedOptionsPerChar.RightBars = 1
+				elseif SavedOptionsPerChar.RightBars < 0 then
+					SavedOptionsPerChar.RightBars = 3
+				end
+			elseif C.actionbar.rightbars < 3 then
+				if SavedOptionsPerChar.RightBars > 2 then
+					SavedOptionsPerChar.RightBars = 1
+				elseif SavedOptionsPerChar.RightBars < 0 then
+					SavedOptionsPerChar.RightBars = 2
+				end
 			end
+			
 			RightBars()
 		end)
 		ToggleBar[i]:SetScript("OnEvent", RightBars)	
