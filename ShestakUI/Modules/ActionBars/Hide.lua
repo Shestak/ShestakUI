@@ -68,7 +68,7 @@ function RightBarMouseOver(alpha)
 		end
 	end
 	if C.actionbar.rightbars > 1 then
-		if C.actionbar.bottombars ~= 3 then
+		if C.actionbar.rightbars > 2 then
 			if MultiBarBottomRight:IsShown() then
 				for i = 1, 12 do
 					local pb = _G["MultiBarBottomRightButton"..i]

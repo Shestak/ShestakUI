@@ -33,7 +33,7 @@ if C.actionbar.rightbars < 3 and C.actionbar.bottombars < 3 then
 end
 
 -- Mouseover bar
-if C.actionbar.rightbars_mouseover == true and C.actionbar.bottombars ~= 3 then
+if C.actionbar.rightbars_mouseover == true and C.actionbar.rightbars > 2 then
 	for i = 1, 12 do
 		local b = _G["MultiBarBottomRightButton"..i]
 		b:SetAlpha(0)
