@@ -13,6 +13,7 @@ local Items = {
 	37859,	-- Amber Essence (Occulus)
 	46029,	-- Mimiron's Core (Ulduar)
 	38689,	-- Chicken Net (Quest)
+	--53051,	-- Dense Embersilk Bandage (Test) 
 }
 
 local EquipedItems = {
@@ -55,11 +56,26 @@ local function AutoButtonShow(item)
 	end
 end
 
--- Create our Button
+-- Create anchor
+local AutoButtonAnchor = CreateFrame("Frame", "AutoButtonAnchor", UIParent)
+AutoButtonAnchor:SetFrameStrata("HIGH")
+AutoButtonAnchor:SetFrameLevel(20)
+AutoButtonAnchor:Point("BOTTOMLEFT", Minimap, "TOPLEFT", -2, 27)
+AutoButtonAnchor:Size(40, 40)
+AutoButtonAnchor:SetMovable(true)
+AutoButtonAnchor:SetClampedToScreen(true)
+AutoButtonAnchor:SetTemplate("Transparent")
+AutoButtonAnchor:SetBackdropBorderColor(1, 0, 0)
+AutoButtonAnchor:SetAlpha(0)
+AutoButtonAnchor.text = AutoButtonAnchor:CreateFontString("AutoButtonAnchorText", "OVERLAY", nil)
+AutoButtonAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+AutoButtonAnchor.text:SetPoint("CENTER")
+AutoButtonAnchor.text:SetText("AutoButton Anchor")
+
+-- Create button
 local AutoButton = CreateFrame("Button", "AutoButton", UIParent, "SecureActionButtonTemplate")
-AutoButton:Width(40)
-AutoButton:Height(40)
-AutoButton:Point("BOTTOMLEFT", Minimap, "TOPLEFT", -1, 27)
+AutoButton:Size(40, 40)
+AutoButton:Point("CENTER", AutoButtonAnchor, "CENTER", 0, 0)
 AutoButton:SetTemplate("Default")
 AutoButton:StyleButton()
 AutoButton:SetAttribute("type", "item")
@@ -75,7 +91,7 @@ AutoButton.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 AutoButton.c = AutoButton:CreateFontString(nil, "OVERLAY", f)
 AutoButton.c:SetFont(C.media.pixel_font, C.media.pixel_font_size * 2, C.media.pixel_font_style)
 AutoButton.c:SetTextColor(1, 1, 1, 1)
-AutoButton.c:Point("BOTTOMRIGHT", 0.5, -2)
+AutoButton.c:Point("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", 0.5, 0)
 AutoButton.c:SetJustifyH("CENTER")	
 
 -- Cooldown
