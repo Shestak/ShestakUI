@@ -224,6 +224,7 @@ local function Local(o)
 	if o == "UIConfigactionbarshow_grid" then o = L_GUI_ACTIONBAR_GRID end
 	if o == "UIConfigactionbarbutton_size" then o = L_GUI_ACTIONBAR_BUTTON_SIZE end
 	if o == "UIConfigactionbarbutton_space" then o = L_GUI_ACTIONBAR_BUTTON_SPACE end
+	if o == "UIConfigactionbarsplit_bars" then o = L_GUI_ACTIONBAR_SPLIT_BARS end
 	if o == "UIConfigactionbarbottombars" then o = L_GUI_ACTIONBAR_BOTTOMBARS end
 	if o == "UIConfigactionbarrightbars" then o = L_GUI_ACTIONBAR_RIGHTBARS end
 	if o == "UIConfigactionbarrightbars_mouseover" then o = L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER end

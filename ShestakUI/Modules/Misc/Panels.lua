@@ -41,6 +41,23 @@ rightbaranchor:SetBackdropColor(0, 0, 0, 0)
 rightbaranchor:SetBackdropBorderColor(0, 0, 0, 0)
 
 ----------------------------------------------------------------------------------------
+--	Split bar panels
+----------------------------------------------------------------------------------------
+if C.actionbar.split_bars == true then
+	local SplitBarLeft = CreateFrame("Frame", "SplitBarLeft", UIParent)
+	SplitBarLeft:CreatePanel("Default", (T.buttonsize * 3) + (T.buttonspacing * 2), (T.buttonsize * 2) + T.buttonspacing, "BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -T.buttonspacing, 0)
+	SplitBarLeft:SetFrameStrata("LOW")
+	SplitBarLeft:SetBackdropColor(0, 0, 0, 0)
+	SplitBarLeft:SetBackdropBorderColor(0, 0, 0, 0)
+
+	local SplitBarRight = CreateFrame("Frame", "SplitBarRight", UIParent)
+	SplitBarRight:CreatePanel("Default", (T.buttonsize * 3) + (T.buttonspacing * 2), (T.buttonsize * 2) + T.buttonspacing, "BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", T.buttonspacing, 0)
+	SplitBarRight:SetFrameStrata("LOW")
+	SplitBarRight:SetBackdropColor(0, 0, 0, 0)
+	SplitBarRight:SetBackdropBorderColor(0, 0, 0, 0)
+end
+
+----------------------------------------------------------------------------------------
 --	Pet bar panel
 ----------------------------------------------------------------------------------------
 local petbaranchor = CreateFrame("Frame", "PetActionBarAnchor", UIParent)

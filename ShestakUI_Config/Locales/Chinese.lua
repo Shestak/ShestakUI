@@ -188,6 +188,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_ACTIONBAR_GRID = "显示空的动作条按钮"
 	L_GUI_ACTIONBAR_BUTTON_SIZE = "按钮大小"
 	L_GUI_ACTIONBAR_BUTTON_SPACE = "按钮间隔"
+	L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons" -- Needs review
 	L_GUI_ACTIONBAR_BOTTOMBARS = "底部动作条数目 (1, 2 or 3)"
 	L_GUI_ACTIONBAR_RIGHTBARS = "右侧动作条数目 (0, 1, 2 or 3)"
 	L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "鼠标划过时显示右侧动作条"

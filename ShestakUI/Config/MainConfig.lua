@@ -273,6 +273,7 @@ C["actionbar"] = {
 	["show_grid"] = true,						-- Show empty action bar buttons
 	["button_size"] = 25,						-- Buttons size
 	["button_space"] = 3,						-- Buttons space
+	["split_bars"] = false,						-- Split the fifth bar on two bars on 6 buttons
 	-- Bottom bars
 	["bottombars"] = 2,							-- Number of action bars on the bottom
 	-- Right bars

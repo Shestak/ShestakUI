@@ -187,6 +187,7 @@ if GetLocale() == "koKR" then
 	L_GUI_ACTIONBAR_GRID = "Show empty action bar buttons"
 	L_GUI_ACTIONBAR_BUTTON_SIZE = "Buttons size"
 	L_GUI_ACTIONBAR_BUTTON_SPACE = "Buttons space"
+	L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons"
 	L_GUI_ACTIONBAR_BOTTOMBARS = "Number of action bars on the bottom (1, 2 or 3)"
 	L_GUI_ACTIONBAR_RIGHTBARS = "Number of action bars on right (0, 1, 2 or 3)"
 	L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Right bars on mouseover"

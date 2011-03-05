@@ -187,6 +187,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_ACTIONBAR_GRID = "Отображать пустые кнопки панелей команд"
 	L_GUI_ACTIONBAR_BUTTON_SIZE = "Размер кнопок панелей команд"
 	L_GUI_ACTIONBAR_BUTTON_SPACE = "Расстояние между кнопками"
+	L_GUI_ACTIONBAR_SPLIT_BARS = "Разделить пятую панель на две панели по 6 кнопок"
 	L_GUI_ACTIONBAR_BOTTOMBARS = "Количество нижних панелей (1, 2 или 3)"
 	L_GUI_ACTIONBAR_RIGHTBARS = "Количество правых панелей (0, 1, 2 или 3)"
 	L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Правые панели команд по наведению курсора"

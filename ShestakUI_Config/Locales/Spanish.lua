@@ -187,6 +187,7 @@ if GetLocale() == "esES" or GetLocale() == "esMX" then
 	L_GUI_ACTIONBAR_GRID = "Mostrar botones de la barra de acción vacíos"
 	L_GUI_ACTIONBAR_BUTTON_SIZE = "Tamaño de los botones"
 	L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacio entre botones"
+	L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons" -- Needs review
 	L_GUI_ACTIONBAR_BOTTOMBARS = "Número de barras de acción abajo (1, 2 o 3)"
 	L_GUI_ACTIONBAR_RIGHTBARS = "Número de barras de acción en la derecha (0, 1, 2 o 3)"
 	L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barras de la derecha se muestran al pasar el ratón"

@@ -132,6 +132,29 @@ local RightBars = function()
 	end
 end
 
+local SplitBars = function()
+	if C.actionbar.split_bars == true then
+		if SavedOptionsPerChar.SplitBars == true then
+			ToggleBar[3]:ClearAllPoints()
+			ToggleBar[3]:Point("BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", T.buttonspacing, 0)
+			ToggleBarText(3, "<\n<\n<", false, true)
+			ToggleBar[4]:ClearAllPoints()
+			ToggleBar[4]:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
+			ToggleBarText(4, ">\n>\n>", false, true)
+		elseif SavedOptionsPerChar.SplitBars == false then
+			ToggleBar[3]:ClearAllPoints()
+			ToggleBar[3]:Point("BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", T.buttonspacing, 0)
+			ToggleBarText(3, ">\n>\n>", true)
+			ToggleBar[4]:ClearAllPoints()
+			ToggleBar[4]:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -T.buttonspacing, 0)
+			ToggleBarText(4, "<\n<\n<", true)
+			
+			SplitBarLeft:Hide()
+			SplitBarRight:Hide()
+		end
+	end
+end
+
 for i = 1, 5 do
 	ToggleBar[i] = CreateFrame("Frame", "ToggleBar"..i, ToggleBar)
 	ToggleBar[i]:EnableMouse(true)
@@ -142,7 +165,7 @@ for i = 1, 5 do
 	ToggleBar[i].Text:Point("CENTER", 2, 0)
 	
 	if i == 1 then
-		ToggleBar[i]:CreatePanel("Transparent", ActionBarAnchor:GetWidth(), T.buttonsize / 2, "BOTTOM", ActionBarAnchor, "TOP", 0, T.buttonspacing)
+		ToggleBar[i]:CreatePanel("Transparent", ActionBarAnchor:GetWidth(), T.buttonsize / 1.5, "BOTTOM", ActionBarAnchor, "TOP", 0, T.buttonspacing)
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
@@ -192,9 +215,35 @@ for i = 1, 5 do
 			
 			RightBars()
 		end)
-		ToggleBar[i]:SetScript("OnEvent", RightBars)	
+		ToggleBar[i]:SetScript("OnEvent", RightBars)
+	elseif i == 3 then
+		if C.actionbar.split_bars == true then
+			ToggleBar[i]:CreatePanel("Transparent", T.buttonsize / 1.5, SplitBarRight:GetHeight(), "BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", T.buttonspacing, 0)
+			ToggleBar[i]:SetFrameLevel(SplitBarRight:GetFrameLevel() + 1)
+		end
+	elseif i == 4 then
+		if C.actionbar.split_bars == true then
+			ToggleBar[i]:CreatePanel("Transparent", T.buttonsize / 1.5, SplitBarLeft:GetHeight(), "BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
+			ToggleBar[i]:SetFrameLevel(SplitBarLeft:GetFrameLevel() + 1)
+		end
 	end
 
+	if i == 3 or i == 4 then
+		ToggleBar[i]:SetScript("OnMouseDown", function()
+			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
+			if SavedOptionsPerChar.SplitBars == nil then SavedOptionsPerChar.SplitBars = false end
+			
+			if SavedOptionsPerChar.SplitBars == false then
+				SavedOptionsPerChar.SplitBars = true
+			elseif SavedOptionsPerChar.SplitBars == true then
+				SavedOptionsPerChar.SplitBars = false
+			end
+			SplitBars()
+			print("|cffff0000This option does not work yet.|r")
+		end)
+		ToggleBar[i]:SetScript("OnEvent", SplitBars)
+	end
+	
 	ToggleBar[i]:RegisterEvent("PLAYER_ENTERING_WORLD")
 	ToggleBar[i]:RegisterEvent("PLAYER_REGEN_DISABLED")
 	ToggleBar[i]:RegisterEvent("PLAYER_REGEN_ENABLED")
