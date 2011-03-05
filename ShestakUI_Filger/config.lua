@@ -172,6 +172,15 @@ Filger_Spells = {
 			{ spellID = 33891, size = 30, filter = "CD" },
 			-- Skull Bash - Cat
 			{ spellID = 80965, size = 35, filter = "CD" },
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 	["HUNTER"] = {
@@ -321,6 +330,15 @@ Filger_Spells = {
 			{ spellID = 53209, size = 30, filter = "CD" },
 			-- Spirit Mend
 			{ spellID = 90361, size = 30, filter = "CD" },
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 	["MAGE"] = {
@@ -492,6 +510,15 @@ Filger_Spells = {
 			{ spellID = 33395, size = 30, filter = "CD" },
 			-- Combustion
 			{ spellID = 11129, size = 30, filter = "CD" },
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 	["WARRIOR"] = {
@@ -642,6 +669,15 @@ Filger_Spells = {
 			{ spellID = 23881, size = 30, filter = "CD" },
 			-- Taunt
 			{ spellID = 355, size = 30, filter = "CD" },
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 	["SHAMAN"] = {
@@ -790,6 +826,15 @@ Filger_Spells = {
 			{ spellID = 73920, size = 30, filter = "CD" },
 			-- Unleash weapon
 			{ spellID = 73680, size = 30, filter = "CD" },
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 	["PALADIN"] = {
@@ -904,6 +949,15 @@ Filger_Spells = {
 			{ spellID = 53385, size = 30, filter = "CD" },
 			-- Hammer of the Righteous
 			{ spellID = 53595, size = 30, filter = "CD" },
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 	["PRIEST"] = {
@@ -1100,6 +1154,15 @@ Filger_Spells = {
 			{ spellID = 19236, size = 30, filter = "CD" },
 			-- Leap of Faith
 			{ spellID = 73325, size = 30, filter = "CD" },
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 	["WARLOCK"] = {
@@ -1292,6 +1355,15 @@ Filger_Spells = {
 			{ spellID = 71521, size = 30, filter = "CD" },
 			-- Immolation aura
 			{ spellID = 50589, size = 30, filter = "CD" },
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 	["ROGUE"] = {	
@@ -1426,6 +1498,15 @@ Filger_Spells = {
 			{ spellID = 79140, size = 30, filter = "CD"},
 			-- Feint
 			{ spellID = 1966, size = 30, filter = "CD"},
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 	["DEATHKNIGHT"] = {
@@ -1500,6 +1581,15 @@ Filger_Spells = {
 			{ spellID = 47476, size = 30, filter = "CD" },
 			-- Mind Freeze
 			{ spellID = 47528, size = 30, filter = "CD" },
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 	--[[["Caster"] = {
@@ -1979,23 +2069,6 @@ Filger_Spells = {
 			
 			-- Drink
 			{ spellID = 43183, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
-		},
-		{
-			Name = "P_SLOT_COOLDOWNS",
-			Direction = "RIGHT",
-			Interval = 3,
-			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 62 or 50 },
-
-			-- Gloves
-			{ slotID = 10, size = 30, filter = "CD" },
-			-- Belt
-			{ slotID = 6, size = 30, filter = "CD" },
-			-- Back
-			{ slotID = 15, size = 30, filter = "CD" },
-			-- Trinkets
-			{ slotID = 13, size = 30, filter = "CD" },
-			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
 }
