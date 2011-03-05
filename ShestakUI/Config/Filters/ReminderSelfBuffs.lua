@@ -111,6 +111,7 @@ T.ReminderSelfBuffs = {
 			["spells"] = {
 				52127,	-- Water Shield
 				324,	-- Lightning Shield
+				974,	-- Earth Shield
 			},
 			["combat"] = true,
 			["instance"] = true,
