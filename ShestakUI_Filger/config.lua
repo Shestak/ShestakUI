@@ -107,15 +107,15 @@ Filger_Spells = {
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Lifebloom
-			{ spellID = 33763, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 33763, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Rejuvenation
-			{ spellID = 774, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 774, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Regrowth
-			{ spellID = 8936, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 8936, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Wild Growth
-			{ spellID = 48438, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 48438, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Demoralizing Roar
-			{ spellID = 99, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 99, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -259,17 +259,17 @@ Filger_Spells = {
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Hunter's Mark
-			{ spellID = 1130, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 1130, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Marked for Death
-			{ spellID = 88691, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 88691, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Piercing shots
-			{ spellID = 63468, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 63468, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Serpent Sting
-			{ spellID = 1978, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 1978, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Black Arrow
-			{ spellID = 3674, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 3674, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Explosive Shot
-			{ spellID = 53301, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },	
+			{ spellID = 53301, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },	
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -773,11 +773,11 @@ Filger_Spells = {
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Earth Shield
-			{ spellID = 974, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 974, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Riptide
-			{ spellID = 61295, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 61295, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Ancestral Fortitude
-			{ spellID = 16236, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 16236, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1071,21 +1071,21 @@ Filger_Spells = {
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Renew
-			{ spellID = 139, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 139, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Prayer of Mending
-			{ spellID = 41637, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 41637, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Guardian spirit
-			{ spellID = 47788, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 47788, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Pain suspension
-			{ spellID = 33206, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 33206, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Shadow Word: Pain
-			{ spellID = 589, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 589, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Devouring Plague
-			{ spellID = 2944, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 2944, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Vampiric Touch
-            { spellID = 34914, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+            { spellID = 34914, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Grace
-			{ spellID = 77613, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "BUFF" }
+			{ spellID = 77613, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" }
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1266,37 +1266,37 @@ Filger_Spells = {
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Corruption
-			{ spellID = 172, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 172, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Immolate
-			{ spellID = 348, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 348, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Curse of Agony
-			{ spellID = 980, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 980, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Bane of Doom
-			{ spellID = 603, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 603, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Unstable Affliction
-			{ spellID = 30108, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 30108, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Haunt
-			{ spellID = 48181, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },	
+			{ spellID = 48181, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },	
 			-- Seed of Corruption
-			{ spellID = 27243, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 27243, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Curse of Weakness
-			{ spellID = 702, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 702, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Curse of Tongues
-			{ spellID = 1714, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 1714, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Curse of Exhaustion
-			{ spellID = 18223, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 18223, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Fear
-			{ spellID = 5782, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 5782, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Howl of Terror
-			{ spellID = 5484, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 5484, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Death Coil
-			{ spellID = 6789, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 6789, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Banish
-			{ spellID = 710, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 710, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Enslave Demon
-			{ spellID = 1098, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 1098, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Demon Charge
-			{ spellID = 54785, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 54785, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1550,13 +1550,13 @@ Filger_Spells = {
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Blood Plague
-			{ spellID = 59879, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 59879, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Frost Fever
-			{ spellID = 59921, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 59921, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Unholy Blight
-			{ spellID = 49194, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 49194, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Summon Gargoyle
-			{ spellID = 49206, size = 25, barWidth = 187, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 49206, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",

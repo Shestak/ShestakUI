@@ -925,21 +925,12 @@ end
 oUF:RegisterStyle("Shestak", Shared)
 
 local player = oUF:Spawn("player", "oUF_Player")
+player:Point(unpack(C.position.unitframes.player))
 player:Size(217, 27)
 
 local target = oUF:Spawn("target", "oUF_Target")
+target:Point(unpack(C.position.unitframes.target))
 target:Size(217, 27)
-
-if C.actionbar.bottombars == 1 then
-	player:Point(C.position.unitframes.player[1], C.position.unitframes.player[2], C.position.unitframes.player[3], C.position.unitframes.player[4], C.position.unitframes.player[5] - 28)
-	target:Point(C.position.unitframes.target[1], C.position.unitframes.target[2], C.position.unitframes.target[3], C.position.unitframes.target[4], C.position.unitframes.target[5] - 28)
-elseif C.actionbar.bottombars == 2 then
-	player:Point(unpack(C.position.unitframes.player))
-	target:Point(unpack(C.position.unitframes.target))
-elseif C.actionbar.bottombars == 3 then
-	player:Point(C.position.unitframes.player[1], C.position.unitframes.player[2], C.position.unitframes.player[3], C.position.unitframes.player[4], C.position.unitframes.player[5] + 28)
-	target:Point(C.position.unitframes.target[1], C.position.unitframes.target[2], C.position.unitframes.target[3], C.position.unitframes.target[4], C.position.unitframes.target[5] + 28)
-end
 
 if C.unitframe.show_pet == true then
 	local pet = oUF:Spawn("pet", "oUF_Pet")
