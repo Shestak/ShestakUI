@@ -29,6 +29,7 @@ local spells =  {
 	[GetSpellInfo(10060)] = L_PLANNER_PRIEST_1,			-- Power Infusion
 	[GetSpellInfo(33206)] = L_PLANNER_PRIEST_1,			-- Pain Suppression
 	[GetSpellInfo(34861)] = L_PLANNER_PRIEST_2,			-- Circle of Healing
+	[GetSpellInfo(724)]	= L_PLANNER_PRIEST_2,			-- Lightwell
 	[GetSpellInfo(15487)] = L_PLANNER_PRIEST_3,			-- Silence
 	[GetSpellInfo(34914)] = L_PLANNER_PRIEST_3,			-- Vampiric Touch
 	-- DEATHKNIGHT
