@@ -249,7 +249,7 @@ for i = 1, 5 do
 	ToggleBar[i]:RegisterEvent("PLAYER_REGEN_ENABLED")
 	
 	ToggleBar[i]:SetScript("OnEnter", function()
-		if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
+		if InCombatLockdown() then return end
 		if i == 2 then
 			ToggleBar[i]:SetAlpha(1)
 			if C.actionbar.rightbars_mouseover == true then
