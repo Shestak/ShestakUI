@@ -154,6 +154,8 @@ local function InstallUI()
 	
 	-- Reset saved variables on char
 	SavedOptionsPerChar = {}
+	SavedOptions = {}
+	SavedStats = {}
 	
 	-- Reset movable stuff into original position
 	for i = 1, getn(T.MoverFrames) do

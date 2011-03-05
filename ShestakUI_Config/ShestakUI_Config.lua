@@ -503,7 +503,7 @@ function CreateUIConfig()
 	
 	--local version = tonumber(T.version)
 	--if version < 3.0 then
-	--	print("Configuration updated")
+	--	print("Need configuration update")
 	--end
 	
 	-- Main Frame
