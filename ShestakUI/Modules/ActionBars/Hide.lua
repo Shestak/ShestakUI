@@ -30,8 +30,8 @@ do
 	end
 	elements = nil
 	
-	hooksecurefunc('TalentFrame_LoadUI', function()
-		PlayerTalentFrame:UnregisterEvent('ACTIVE_TALENT_GROUP_CHANGED')
+	hooksecurefunc("TalentFrame_LoadUI", function()
+		PlayerTalentFrame:UnregisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 	end)
 end
 

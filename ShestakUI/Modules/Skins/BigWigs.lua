@@ -198,6 +198,7 @@ StaticPopupDialogs["BW_TEST"] = {
 		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsEmphasizeAnchor_x = 541
 		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsEmphasizeAnchor_y = 493
 		BigWigs.pluginCore.modules.Messages.db.profile.fontSize = 30
+		BigWigs3IconDB.hide = true
 		if C.actionbar.bottombars == 1 then
 			BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_y = 150
 		elseif C.actionbar.bottombars == 2 then
