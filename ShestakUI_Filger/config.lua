@@ -1980,5 +1980,22 @@ Filger_Spells = {
 			-- Drink
 			{ spellID = 43183, size = 51, unitId = "target", caster = "all", filter = "BUFF" },
 		},
+		{
+			Name = "P_SLOT_COOLDOWNS",
+			Direction = "RIGHT",
+			Interval = 3,
+			Mode = "ICON",
+			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 62 or 50 },
+
+			-- Gloves
+			{ slotID = 10, size = 30, filter = "CD" },
+			-- Belt
+			{ slotID = 6, size = 30, filter = "CD" },
+			-- Back
+			{ slotID = 15, size = 30, filter = "CD" },
+			-- Trinkets
+			{ slotID = 13, size = 30, filter = "CD" },
+			{ slotID = 14, size = 30, filter = "CD" },
+		},
 	},
 }

@@ -9,10 +9,10 @@ if C.unitframe.enable ~= true then return end
 	
 ]]
 
-local f_s = Filger_Settings;
+local f_s = Filger_Settings
 local db = C.font
-local class = select(2, UnitClass("player"));
-local active, bars = {}, {};
+local class = select(2, UnitClass("player"))
+local active, bars = {}, {}
 local MyUnits = {
     player = true,
     vehicle = true,
@@ -32,7 +32,7 @@ local function OnUpdate(self, elapsed)
 	if (time < 0 and self.filter == "CD") then
 		local id = self:GetParent().Id;
 		for index, value in ipairs(active[id]) do
-			local spn = GetSpellInfo(value.data.spellID or value.data.slotID)
+			local spn = GetFilgerData(value.data)
 			if (self.spellName == spn) then
 				tremove(active[id], index)
 				break
@@ -168,12 +168,12 @@ function Update(self)
 			tinsert(bars[id], bar)
 		end
 		
-		bar.spellName = GetSpellInfo( value.data.spellID or value.data.slotID )
+		bar.spellName = value.data.displayName
 		
 		bar.icon:SetTexture(value.icon)
 		bar.count:SetText(value.count > 1 and value.count or "")
 		if (self.Mode == "BAR") then
-			bar.spellname:SetText(value.data.displayName or GetSpellInfo( value.data.spellID ))
+			bar.spellname:SetText(value.data.displayName)
 		end
 		if (value.duration > 0) then
 			if (self.Mode == "ICON") then
@@ -209,61 +209,122 @@ end
 local function OnEvent(self, event, ...)
 	local unit = ...
 	if ((unit == "target" or unit == "player" or unit == "pet" or unit == "focus") or event == "PLAYER_TARGET_CHANGED" or event == "PLAYER_ENTERING_WORLD" or event == "SPELL_UPDATE_COOLDOWN" ) then
+		local data, name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, slotLink, spn
 		local id = self.Id
 		for i = 1, #Filger_Spells[class][id], 1 do
-			local data, name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, slotLink, spn
 			data = Filger_Spells[class][id][i]
-			if (data.filter == "BUFF") then
-				spn = GetSpellInfo(data.spellID)
-				name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable = UnitBuff(data.unitId, spn)
-			elseif (data.filter == "DEBUFF") then
-				spn = GetSpellInfo(data.spellID)
-				name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable = UnitDebuff(data.unitId, spn)
-			else
-				if (data.spellID) then
-					spn = GetSpellInfo(data.spellID)
-					start, duration, enabled = GetSpellCooldown(spn)
-					_, _, icon = GetSpellInfo(data.spellID)
-				else
-					slotLink = GetInventoryItemLink("player", data.slotID)
-					if (slotLink) then
-						name, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
-						if (not data.displayName) then
-							data.displayName = name
-						end
-						start, duration, enabled = GetInventoryItemCooldown("player", data.slotID)
-					end
-				end
-				count = 0
-				caster = "all"
-			end
-			if (not data.spellID) then
-				data.spellID = spn
-			end
+			
+			name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, filgerId = GetFilgerData(data)
+			
 			if (not active[id]) then
 				active[id] = {}
 			end
+			
 			for index, value in ipairs(active[id]) do
-				if (data.spellID == value.data.spellID) then
+				if data.filgerId == value.data.filgerId then
 					tremove(active[id], index)
-					break
 				end
 			end
-			if ((name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster])) or ((enabled or 0) > 0 and (duration or 0) > 1.5)) then
-				table.insert(active[id], { data = data, icon = icon, count = count, duration = duration, expirationTime = expirationTime or start })
+			
+			if data.filter == "CD" then
+				if (name and ((enabled or 0) > 0 and (duration or 0) > 1.5)) then
+					table.insert(active[id], { data = data, icon = icon, count = count, duration = duration, expirationTime = expirationTime or start, displayName = spn, filgerId = filgerId })
+				end
+			elseif data.filter == "DEBUFF" or data.filter == "BUFF" then
+				if (name and (duration or 0) > 0 and (data.caster ~= 1 and (caster == data.caster or data.caster == "all" ) or MyUnits[caster] )) then
+					table.insert(active[id], { data = data, icon = icon, count = count, duration = duration, expirationTime = expirationTime or start, displayName = spn, filgerId = filgerId })
+				end
 			end
 		end
 		Update(self)
 	end
 end
 
+function GetFilgerData(data)
+	local name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, slotLink, spn, filgerId
+	
+	if data.spellID then
+		filgerId = data.spellID
+		spn, _, icon = GetSpellInfo( data.spellID )
+		if data.filter == "BUFF" then
+			name, rank, _, count, debuffType, duration, expirationTime, caster, isStealable = UnitBuff(data.unitId, spn)
+		elseif data.filter == "DEBUFF" then
+			name, rank, _, count, debuffType, duration, expirationTime, caster, isStealable = UnitDebuff(data.unitId, spn)
+		elseif data.filter == "CD" then
+			start, duration, enabled = GetSpellCooldown(spn)
+		end
+	elseif data.slotID then
+		filgerId = data.slotID
+		if data.filter == "CD" then
+			slotLink = GetInventoryItemLink("player", data.slotID)
+			
+			if slotLink then
+				spn, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
+				start, duration, enabled = GetInventoryItemCooldown("player", data.slotID)
+			end
+		end
+		count = 0;
+		caster = "all";
+	elseif data.itemID then
+		filgerId = data.itemID
+		if data.filter == "CD" then
+			start, duration, enabled = GetItemCooldown(data.itemID)
+			spn, _, _, _, _, _, _, _, _, icon = GetItemInfo(data.itemID)
+		end
+	end
+	
+	if not count then
+		count = 0
+	end
+	
+	if not duration then
+		duration = 0
+	end
+	
+	if not start then
+		start = 0
+	end
+	
+	if not enabled then
+		enabled = 0
+	end
+	
+	if not data.displayName then
+		data.displayName = spn
+	end
+	
+	if not data.filgerId then
+		data.filgerId = filgerId
+	end
+	
+	return spn, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, filgerId
+end
+
 if (Filger_Spells and Filger_Spells["ALL"]) then
 	if (not Filger_Spells[class]) then
 		Filger_Spells[class] = {}
 	end
-
+	local didMerge
 	for i = 1, #Filger_Spells["ALL"], 1 do
-		table.insert(Filger_Spells[class], Filger_Spells["ALL"][i])
+		didMerge = false
+		for j = 1, #Filger_Spells[class], 1 do
+			local baseTable = Filger_Spells[class][j]
+			local addTable = Filger_Spells["ALL"][i]
+			if baseTable["Name"] and addTable["Name"] and baseTable["Name"] == addTable["Name"] then
+				
+				for k = 1, #addTable, 1 do
+					if addTable[k].spellID or addTable[k].slotID or addTable[k].itemID then
+						table.insert(baseTable, addTable[k])
+					end
+				end
+				
+				didMerge = true
+			end
+		end
+		
+		if not didMerge then
+			table.insert(Filger_Spells[class], Filger_Spells["ALL"][i])
+		end
 	end
 end
 
@@ -305,14 +366,7 @@ if (Filger_Spells and Filger_Spells[class]) then
 				if (not active[i]) then
 					active[i] = {}
 				end
-				if (data.spellID) then
-					_, _, spellIcon = GetSpellInfo(data.spellID)
-				else
-					slotLink = GetInventoryItemLink("player", data.slotID)
-					if (slotLink) then
-						name, _, _, _, _, _, _, _, _, spellIcon = GetItemInfo(slotLink)
-					end
-				end
+				_, _, spellIcon = GetFilgerData(data)
 				table.insert(active[i], { data = data, icon = spellIcon, count = 9, duration = 0, expirationTime = 0 })
 			end
 			Update(frame)
