@@ -455,8 +455,6 @@ local function Shared(self, unit)
 			end
 			self.Experience:SetStatusBarTexture(C.media.texture)
 			self.Experience:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-			self.Experience:SetBackdrop(backdrop)
-			self.Experience:SetBackdropColor(0, 0, 0)
 			self.Experience:SetAlpha(0)
 
 			self.Experience:HookScript("OnEnter", function(self) self:SetAlpha(1) end)
@@ -474,7 +472,11 @@ local function Shared(self, unit)
 			self.Experience.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
 			
 			self.Experience.Rested = CreateFrame("StatusBar", nil, self.Experience)
-			self.Experience.Rested:SetAllPoints(Experience)
+			self.Experience.Rested:SetParent(self.Experience)
+			self.Experience.Rested:SetOrientation("Vertical")
+			self.Experience.Rested:SetAllPoints(self.Experience)
+			self.Experience.Rested:SetStatusBarTexture(C.media.texture)
+			self.Experience.Rested:SetStatusBarColor(0, 0, 1, 0.5)
 			
 			self.Experience.Tooltip = true
 		end
@@ -614,9 +616,9 @@ local function Shared(self, unit)
 			or (T.class == "DRUID" and C.unitframe.plugins_eclipse_bar == true) 
 			or (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
 			or (T.class == "WARLOCK" and C.unitframe.plugins_shard_bar == true) then
-				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
+				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			else
-				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
+				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
 			end
 			
 			self.Debuffs.PostCreateIcon = T.PostCreateAura

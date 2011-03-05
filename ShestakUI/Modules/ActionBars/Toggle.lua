@@ -19,16 +19,10 @@ local MainBars = function()
 			ActionBarAnchor:Height(T.buttonsize)
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Hide()
-			if GUIConfigSettings then
-				GUIConfigSettings.actionbar.bottombars = 1
-			end
 		elseif SavedOptionsPerChar.BottomBars == 2 then
 			ActionBarAnchor:Height(T.buttonsize * 2 + T.buttonspacing)
 			ToggleBarText(1, "- - -", false, true)
 			Bar2Holder:Show()
-			if GUIConfigSettings then
-				GUIConfigSettings.actionbar.bottombars = 2
-			end
 		end
 	elseif C.actionbar.rightbars < 3 then
 		if SavedOptionsPerChar.BottomBars == 1 then
@@ -36,27 +30,19 @@ local MainBars = function()
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Hide()
 			Bar5Holder:Hide()
-			if GUIConfigSettings then
-				GUIConfigSettings.actionbar.bottombars = 1
-			end
 		elseif SavedOptionsPerChar.BottomBars == 2 then
 			ActionBarAnchor:Height(T.buttonsize * 2 + T.buttonspacing)
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Show()
 			Bar5Holder:Hide()
-			if GUIConfigSettings then
-				GUIConfigSettings.actionbar.bottombars = 2
-			end
 		elseif SavedOptionsPerChar.BottomBars == 3 then
 			ActionBarAnchor:Height((T.buttonsize * 3) + (T.buttonspacing * 2))
 			ToggleBarText(1, "- - -", false, true)
 			Bar2Holder:Show()
 			Bar5Holder:Show()
-			if GUIConfigSettings then
-				GUIConfigSettings.actionbar.bottombars = 3
-			end
 		end
 	else
+	
 	end
 end
 

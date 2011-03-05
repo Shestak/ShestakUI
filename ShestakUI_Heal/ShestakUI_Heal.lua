@@ -114,7 +114,7 @@ local function Shared(self, unit)
 	-- Names
 	self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Info:Point("CENTER", self.Health, "CENTER", 0, 1)
+		self.Info:Point("CENTER", self.Health, "CENTER", 0, 0)
 	else
 		self.Info:Point("CENTER", self.Health, "CENTER", 0, 4)
 	end

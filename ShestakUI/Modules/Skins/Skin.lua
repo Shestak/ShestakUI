@@ -44,6 +44,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"aLoadFrame",
 			"aLoadScroll",
 			"AddonSets",
+			"BaudErrorFrame",
+			"BaudErrorFrameListScrollBox",
+			"BaudErrorFrameDetailScrollBox",
 		}
 		
 		local insetskins = {
@@ -78,11 +81,17 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		end
 
 		for i = 1, getn(bgskins) do
-			_G[bgskins[i]]:SetTemplate("Transparent")
+			local frame = _G[bgskins[i]]
+			if frame then
+				_G[bgskins[i]]:SetTemplate("Transparent")
+			end
 		end
 		
 		for i = 1, getn(insetskins) do
-			_G[insetskins[i]]:SetTemplate("Overlay")
+			local frame = _G[insetskins[i]]
+			if frame then
+				_G[insetskins[i]]:SetTemplate("Overlay")
+			end
 		end
 		
 		local ChatMenus = {
@@ -184,9 +193,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		}
 		
 		for i = 1, getn(BlizzardButtons) do
-			local UIButtons = _G[BlizzardButtons[i]]
-			if UIButtons then
-				UIButtons:SkinButton()
+			local buttons = _G[BlizzardButtons[i]]
+			if buttons then
+				buttons:SkinButton()
 			end
 		end
 		
@@ -314,9 +323,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		}
 		
 		for i = 1, getn(dbmbskins) do
-			local DBMButtons = _G[dbmbskins[i]]
-			if DBMButtons then
-				DBMButtons:SkinButton()
+			local buttons = _G[dbmbskins[i]]
+			if buttons then
+				buttons:SkinButton()
 			end
 		end
 	end

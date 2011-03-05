@@ -24,16 +24,8 @@ Stuffing:SetScript("OnEvent", function(this, event, ...)
 	Stuffing[event](this, ...)
 end)
 
--- Stub for localization
-local Loc = setmetatable({}, {
-	__index = function (t, v)
-		t[v] = v
-		return v
-	end
-})
-
 local function Print(x)
-	DEFAULT_CHAT_FRAME:AddMessage("|cffC495DDShestakUI:|r " .. x)
+	DEFAULT_CHAT_FRAME:AddMessage("|cffffff00ShestakUI Bags: " .. x)
 end
 
 local function Stuffing_Sort(args)
@@ -116,7 +108,7 @@ function Stuffing:SlotUpdate(b)
 		CooldownFrame_SetTimer(b.Cooldown, cd_start, cd_finish, cd_enable)
 	end
 
-	if(clink) then
+	if clink then
 		local iType
 		b.name, _, b.rarity, _, _, iType = GetItemInfo(clink)
 		
@@ -155,14 +147,14 @@ function Stuffing:BagSlotUpdate(bag)
 		return
 	end
 
-	for _, v in ipairs (self.buttons) do
+	for _, v in ipairs(self.buttons) do
 		if v.bag == bag then
 			self:SlotUpdate(v)
 		end
 	end
 end
 
-function Stuffing:BagFrameSlotNew (slot, p)
+function Stuffing:BagFrameSlotNew(slot, p)
 	for _, v in ipairs(self.bagframe_buttons) do
 		if v.slot == slot then
 			return v, false
@@ -196,7 +188,7 @@ function Stuffing:BagFrameSlotNew (slot, p)
 	return ret
 end
 
-function Stuffing:SlotNew (bag, slot)
+function Stuffing:SlotNew(bag, slot)
 	for _, v in ipairs(self.buttons) do
 		if v.bag == bag and v.slot == slot then
 			return v, false
@@ -263,7 +255,7 @@ function Stuffing:BagType(bag)
 	return ST_NORMAL
 end
 
-function Stuffing:BagNew (bag, f)
+function Stuffing:BagNew(bag, f)
 	for i, v in pairs(self.bags) do
 		if v:GetID() == bag then
 			v.bagType = self:BagType(bag)
@@ -303,7 +295,7 @@ function Stuffing:SearchUpdate(str)
 
 	for _, b in ipairs(self.buttons) do
 		if b.frame and not b.name then
-			b.frame:SetAlpha(.2)
+			b.frame:SetAlpha(0.2)
 		end
 		if b.name then
 			if not string.find (string.lower(b.name), str, 1, true) then
@@ -377,7 +369,7 @@ function Stuffing:CreateBagFrame(w)
 	f.b_close:RegisterForClicks("AnyUp")
 	
 	-- Create the bags frame
-	local fb = CreateFrame ("Frame", n .. "BagsFrame", f)
+	local fb = CreateFrame("Frame", n .. "BagsFrame", f)
 	fb:Point("BOTTOMLEFT", f, "TOPLEFT", 0, 3)
 	fb:SetFrameStrata("MEDIUM")
 	f.bags_frame = fb
@@ -436,7 +428,7 @@ function Stuffing:InitBags()
 
 	local detail = f:CreateFontString(nil, "ARTWORK", "GameFontHighlightLarge")
 	detail:Point("TOPLEFT", f, 12, -10)
-	detail:Point("RIGHT", -140, -10)
+	detail:Point("RIGHT", f, -140, -10)
 	detail:Height(13)
 	detail:SetShadowColor(0, 0, 0, 0)
 	detail:SetJustifyH("LEFT")
@@ -470,7 +462,7 @@ function Stuffing:InitBags()
 		GameTooltip:Hide()
 	end
 
-	local tooltip_show = function (self)
+	local tooltip_show = function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
 		GameTooltip:ClearLines()
 		GameTooltip:SetText(L_BAG_RIGHT_CLICK_SEARCH)
@@ -508,7 +500,7 @@ function Stuffing:Layout(lb)
 
 		f.detail:ClearAllPoints()
 		f.detail:Point("TOPLEFT", f, 12, -8)
-		f.detail:Point("RIGHT", -140, 0)
+		f.detail:Point("RIGHT", f, -140, 0)
 	end
 
 	f:SetClampedToScreen(1)
@@ -576,7 +568,7 @@ function Stuffing:Layout(lb)
 		end
 	end
 
-	rows = floor (slots / cols)
+	rows = floor(slots / cols)
 	if (slots % cols) ~= 0 then
 		rows = rows + 1
 	end
@@ -683,7 +675,7 @@ function Stuffing:SetBagsForSorting(c)
 			end
 		else
 			if tonumber(s) == nil then
-				Print(string.format(Loc["Error: don't know what \"%s\" means."], s))
+				Print(string.format("Error: don't know what \"%s\" means.", s))
 			end
 
 			table.insert(self.sortBags, tonumber(s))
@@ -774,48 +766,45 @@ function Stuffing:PLAYER_ENTERING_WORLD()
 	-- Please don't do anything after 1 player_entering_world event
 	Stuffing:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	
+	local keybackdrop = CreateFrame("Frame", "KeyringFrame", ContainerFrame1)
+	keybackdrop:Point("TOPLEFT", 9, -40)
+	keybackdrop:Point("BOTTOMLEFT", 0, 0)
+	keybackdrop:Size(178, 138)
+	keybackdrop:SetTemplate("Transparent")
+
+	ContainerFrame1CloseButton:Hide()
+	ContainerFrame1Portrait:Hide()
+	ContainerFrame1Name:Hide()
+	ContainerFrame1BackgroundTop:SetAlpha(0)
+	ContainerFrame1BackgroundMiddle1:SetAlpha(0)
+	ContainerFrame1BackgroundMiddle2:SetAlpha(0)
+	ContainerFrame1BackgroundBottom:SetAlpha(0)
+	
+	for i = 1, GetKeyRingSize() do
+		local slot = _G["ContainerFrame1Item"..i]
+		local t = _G["ContainerFrame1Item"..i.."IconTexture"]
+		_G["ContainerFrame1Item"..i.."IconQuestTexture"]:Kill()
+		
+		slot:SetPushedTexture("")
+		slot:SetNormalTexture("")
+		--slot:Height(C.bag.button_size)
+		--slot:Width(C.bag.button_size)
+		
+		t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		t:Point("TOPLEFT", slot, 2, -2)
+		t:Point("BOTTOMRIGHT", slot, -2, 2)
+		
+		slot:SetTemplate("Transparent", true)
+		slot:StyleButton()
+	end
+	
 	ContainerFrame1:HookScript("OnShow", function(self)
-		local keybackdrop = CreateFrame("Frame", "KeyringFrame", self)
-		keybackdrop:Point("TOPLEFT", 9, -40)
-		keybackdrop:Point("BOTTOMLEFT", 0, 0)
-		keybackdrop:Size(178, 138)
-		keybackdrop:SetTemplate("Transparent")
-		
-		ContainerFrame1CloseButton:Hide()
-		ContainerFrame1Portrait:Hide()
-		ContainerFrame1PortraitButton:Hide()
-		ContainerFrame1Name:Hide()
-		ContainerFrame1BackgroundTop:SetAlpha(0)
-		ContainerFrame1BackgroundMiddle1:SetAlpha(0)
-		ContainerFrame1BackgroundMiddle2:SetAlpha(0)
-		ContainerFrame1BackgroundBottom:SetAlpha(0)
-		
-		for i = 1, GetKeyRingSize() do
-			local slot = _G["ContainerFrame1Item"..i]
-			local t = _G["ContainerFrame1Item"..i.."IconTexture"]
-			local count = _G["ContainerFrame1Item"..i.."Count"]
-			_G["ContainerFrame1Item"..i.."IconQuestTexture"]:Kill()
-			
-			slot:SetPushedTexture("")
-			slot:SetNormalTexture("")
-			--slot:Height(C.bag.button_size)
-			--slot:Width(C.bag.button_size)
-			
-			t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			t:Point("TOPLEFT", slot, 2, -2)
-			t:Point("BOTTOMRIGHT", slot, -2, 2)
-			
-			count:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-			count:Point("BOTTOMRIGHT", 1, 1)
-			
-			slot:SetTemplate("Transparent")
-			slot:StyleButton()
-		end
+		ContainerFrame1:ClearAllPoints()
+		ContainerFrame1:Point("TOPRIGHT", StuffingFrameBags, "TOPLEFT", 2, 40)
+		ContainerFrame1.SetPoint = T.dummy
+		ContainerFrame1.ClearAllPoints = T.dummy
 	end)
-	ContainerFrame1:ClearAllPoints()
-	ContainerFrame1:Point("TOPRIGHT", StuffingFrameBags, "TOPLEFT", 2, 40)
-	ContainerFrame1.ClearAllPoints = T.dummy
-	ContainerFrame1.SetPoint = T.dummy
+	ContainerFrame1:SetParent(StuffingFrameBags)
 end
 
 function Stuffing:PLAYERBANKSLOTS_CHANGED(id)
@@ -955,7 +944,7 @@ function Stuffing:SortOnUpdate(e)
 	end
 
 	-- Go through the list and move stuff if we can
-	for i, v in ipairs (self.sortList) do
+	for i, v in ipairs(self.sortList) do
 		repeat
 			if v.ignore then
 				blocked = true
@@ -1080,7 +1069,7 @@ function Stuffing:SortBags()
 	end
 
 	-- Sort them
-	table.sort (st, function(a, b)
+	table.sort(st, function(a, b)
 		return a.sort > b.sort
 	end)
 
@@ -1089,7 +1078,7 @@ function Stuffing:SortBags()
 	local dbag = bs[st_idx]
 	local dslot = GetContainerNumSlots(dbag)
  
-	for i, v in ipairs (st) do
+	for i, v in ipairs(st) do
 		v.dbag = dbag
 		v.dslot = dslot
 		v.dstSlot = self:SlotNew(dbag, dslot)
@@ -1125,7 +1114,7 @@ function Stuffing:SortBags()
 
 			-- Source is same as destination
 			if (v.sslot == v.dslot) and (v.sbag == v.dbag) then
-				table.remove (st, i)
+				table.remove(st, i)
 				changed = true
 			end
 		end

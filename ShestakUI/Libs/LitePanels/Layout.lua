@@ -124,7 +124,7 @@ lpanels:CreateLayout("Load For All", {
 			{	string = L_PANELS_AFK_LCLICK, anchor_to = "BOTTOM", y_off = 3,
 				shadow = 0, outline = 3, font = C.font.stats_font, size = C.font.stats_font_size, 
 			}
-			},
+		},
         OnLoad = function(self)
             self:RegisterEvent("PLAYER_FLAGS_CHANGED")
             self:Hide()

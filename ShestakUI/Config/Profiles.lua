@@ -57,8 +57,7 @@ elseif T.name == "Бэкстер" or T.name == "Варбой" then
 	C["unitframe"].plugins_talents = true
 	C["raidframe"].raid_tanks_tt = true
 	C["stats"].guild_repair = false
-	C["addon"].pvp = {"ArenaHistorian", "ncSpellalert", "DBM-Core", "DBM-GUI", "DBM-PvP",}
-	C["addon"].party = {"DBM-Core", "DBM-GUI", "DBM-Party-Cataclysm", "Skada", "RaidAchievement", "Fatality",}
+	C["addon"].party = {"LittleWigs", "Skada", "RaidAchievement", "Fatality",}
 	C["addon"].raid = {"BigWigs", "Skada", "Boss_shieldsmonitor", "PhoenixStyle", "RaidAchievement", "Fatality", "RaidSlackCheck",}
 end
 
