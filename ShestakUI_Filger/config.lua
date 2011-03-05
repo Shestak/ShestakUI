@@ -1243,6 +1243,8 @@ Filger_Spells = {
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Dire Magic (Bell of Enraging Resonance trinket)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fel Spark
+			{ spellID = 89937, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
