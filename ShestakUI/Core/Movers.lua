@@ -13,6 +13,7 @@ T.MoverFrames = {
 	TooltipAnchor,
 	ShiftBar,
 	AutoButtonAnchor,
+	RaidCDAnchor,
 }
 
 -- Used to exec various code if we enable or disable moving
@@ -38,12 +39,12 @@ local function exec(self, enable)
 		end
 	end
 	
-	if self == VehicleAnchor or self == AchievementAnchor or self == DCPAnchor or self == TooltipAnchor or self == AutoButtonAnchor then
+	if self == VehicleAnchor or self == AchievementAnchor or self == DCPAnchor or self == TooltipAnchor or self == AutoButtonAnchor or self == RaidCDAnchor then
 		if enable then
 			self:SetAlpha(1)
 		else
 			self:SetAlpha(0)
-		end		
+		end
 	end
 	
 	if self == WatchFrameAnchor then

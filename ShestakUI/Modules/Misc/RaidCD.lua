@@ -17,6 +17,24 @@ local floor = math.floor
 local timer = 0
 local bars = {}
 
+local RaidCDAnchor = CreateFrame("Frame", "RaidCDAnchor", UIParent)
+RaidCDAnchor:Point(unpack(C.position.raid_cooldown))
+if C.raidcooldown.show_icon == true then
+	RaidCDAnchor:Size(C.raidcooldown.width + 32, C.raidcooldown.height + 10)
+else
+	RaidCDAnchor:Size(C.raidcooldown.width + 32, C.raidcooldown.height + 10)
+end
+RaidCDAnchor:SetMovable(true)
+RaidCDAnchor:SetClampedToScreen(true)
+RaidCDAnchor:SetTemplate("Transparent")
+RaidCDAnchor:SetBackdropBorderColor(1, 0, 0)
+RaidCDAnchor:SetFrameStrata("TOOLTIP")
+RaidCDAnchor:SetAlpha(0)
+RaidCDAnchor.text = RaidCDAnchor:CreateFontString("RaidCDAnchorText", "OVERLAY", nil)
+RaidCDAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+RaidCDAnchor.text:SetPoint("CENTER")
+RaidCDAnchor.text:SetText("RaidCD Anchor")
+
 local FormatTime = function(time)
 	if time >= 60 then
 		return sformat("%.2d:%.2d", floor(time / 60), time % 60)
@@ -36,7 +54,7 @@ local UpdatePositions = function()
 	for i = 1, #bars do
 		bars[i]:ClearAllPoints()
 		if i == 1 then
-			bars[i]:Point(unpack(C.position.raid_cooldown))
+			bars[i]:Point("BOTTOMRIGHT", RaidCDAnchor, "BOTTOMRIGHT", -2, 2)
 		else
 			if C.raidcooldown.upwards == true then
 				bars[i]:Point("BOTTOMLEFT", bars[i-1], "TOPLEFT", 0, 13)
@@ -115,7 +133,8 @@ local CreateBar = function()
 		
 	if C.raidcooldown.show_icon == true then
 		bar.icon = CreateFrame("Button", nil, bar)
-		bar.icon:Size(21, 21)
+		bar.icon:Width(bar:GetHeight() + 6)
+		bar.icon:Height(bar.icon:GetWidth())
 		bar.icon:Point("BOTTOMRIGHT", bar, "BOTTOMLEFT", -7, 0)
 	
 		bar.icon.backdrop = CreateFrame("Frame", nil, bar.icon)
