@@ -501,10 +501,9 @@ function CreateUIConfig()
 		return
 	end
 	
-	--local version = tonumber(T.version)
-	--if version < 3.0 then
-	--	print("Need configuration update")
-	--end
+	if T.version < string.format("%s", "3.0.0") then
+		print("|cffff0000Need configuration update.|r")
+	end
 	
 	-- Main Frame
 	local UIConfig = CreateFrame("Frame", "UIConfig", UIParent)
