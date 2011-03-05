@@ -1185,6 +1185,16 @@ Filger_Spells = {
 			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Ancient Hysteria
 			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Demon Soul Succub
+			{ spellID = 79463, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Demon Soul Imp
+			{ spellID = 79459, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Demon Soul Void
+			{ spellID = 79464, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Demon Soul Fel Hunter
+			{ spellID = 79460, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Demon Soul Fel Guard
+			{ spellID = 79462, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1245,6 +1255,8 @@ Filger_Spells = {
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fel Spark
 			{ spellID = 89937, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Demonic Rebirth
+			{ spellID = 88447, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
