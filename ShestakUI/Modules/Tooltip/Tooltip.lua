@@ -139,9 +139,8 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		if unit then
 			min, max = UnitHealth(unit), UnitHealthMax(unit)
 			if not self.text then
-				self.text = self:CreateFontString(nil, "OVERLAY")
+				self.text = self:CreateFontString(nil, "OVERLAY", "Tooltip_Med")
 				self.text:Point("CENTER", GameTooltipStatusBar, 0, 1.5)
-				self.text:SetFont(C.media.normal_font, 11)
 				self.text:SetShadowColor(0, 0, 0, 1)
 				self.text:SetShadowOffset(1, -1)
 			end
@@ -270,7 +269,7 @@ if C.tooltip.rank == true then
 		if UnitIsPlayer(unit) then
 			local guildName, guildRank = GetGuildInfo(unit)
 			if guildName then
-				self:AddLine(RANK..": |cFFFFFFFF"..guildRank.."|r")
+				self:AddLine(RANK..": |cffffffff"..guildRank.."|r")
 			end
 		end
 	end)
@@ -290,23 +289,3 @@ if C.tooltip.hidebuttons == true then
 	hooksecurefunc(GameTooltip, "SetPetAction", CombatHideActionButtonsTooltip)
 	hooksecurefunc(GameTooltip, "SetShapeshift", CombatHideActionButtonsTooltip)
 end
-
-----------------------------------------------------------------------------------------
---	Disable tooltip fading
-----------------------------------------------------------------------------------------
---[[
-GameTooltip.FadeOut = function(self)
-	GameTooltip:Hide()
-end
-
-local hasUnit
-local updateFrame = CreateFrame"Frame"
-updateFrame:SetScript("OnUpdate", function(self)
-	local _, unit = GameTooltip:GetUnit()
-	if hasUnit and not unit then
-		GameTooltip:Hide()
-		hasUnit = nil
-	elseif unit then
-		hasUnit = true
-	end
-end)]]

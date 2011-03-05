@@ -11,9 +11,9 @@ if C.actionbar.shapeshift_horizontal == true then
 	ShiftHolder:Height(T.buttonsize)
 else
 	if (PetActionBarFrame:IsShown() or PetHolder) and C.actionbar.petbar_horizontal ~= true then
-		ShiftHolder:SetPoint("RIGHT", "PetHolder", "LEFT", -T.buttonspacing, (T.buttonsize / 2) + 1)
+		ShiftHolder:Point("RIGHT", "PetHolder", "LEFT", -T.buttonspacing, (T.buttonsize / 2) + 1)
 	else
-		ShiftHolder:SetPoint("RIGHT", "RightActionBarAnchor", "LEFT", -T.buttonspacing, (T.buttonsize / 2) + 1)
+		ShiftHolder:Point("RIGHT", "RightActionBarAnchor", "LEFT", -T.buttonspacing, (T.buttonsize / 2) + 1)
 	end
 	ShiftHolder:Width(T.buttonsize)
 	ShiftHolder:Height((T.buttonsize * 7) + (T.buttonspacing * 6))

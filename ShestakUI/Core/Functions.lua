@@ -12,7 +12,7 @@ InfoFrame:Hide()
 
 local InfoText = InfoFrame:CreateFontString("InfoText", "OVERLAY")
 InfoText:SetFont(C.media.normal_font, 25, "OUTLINE")
-InfoText:SetPoint("CENTER", UIParent, "CENTER", 0, 90)
+InfoText:Point("CENTER", UIParent, "CENTER", 0, 90)
 InfoText:SetTextColor(0.41, 0.8, 0.94)
 
 T.InfoTextShow = function(s)
@@ -635,11 +635,11 @@ T.UpdateDruidMana = function(self)
 
 		if min ~= max then
 			if self.Power.value:GetText() then
-				self.DruidMana:SetPoint("RIGHT", self.Power.value, "LEFT", T.Scale(-1), 0)
+				self.DruidMana:Point("RIGHT", self.Power.value, "LEFT", -1, 0)
 				self.DruidMana:SetFormattedText("%d%%|r |cffD7BEA5-|r", floor(min / max * 100))
 				self.DruidMana:SetJustifyH("RIGHT")
 			else
-				self.DruidMana:SetPoint("LEFT", self.Power, "LEFT", T.Scale(4), T.Scale(1))
+				self.DruidMana:Point("LEFT", self.Power, "LEFT", 4, 1)
 				self.DruidMana:SetFormattedText("%d%%", floor(min / max * 100))
 			end
 		else

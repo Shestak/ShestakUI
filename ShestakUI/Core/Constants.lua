@@ -28,7 +28,6 @@ or T.name == "Кулешок"
 or T.name == "Лапушок" 
 or T.name == "Обушок" 
 or T.name == "Ремешок"
-or T.name == "Шестак"
-or T.name == "Тестеровщик" then
+or T.name == "Шестак" then
 	T.author = true
 end

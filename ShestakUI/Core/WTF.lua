@@ -351,6 +351,7 @@ local UploadSkada = function()
 					{
 						["point"] = "BOTTOMRIGHT",
 						["barmax"] = 7,
+						["barspacing"] = 7,
 						["scale"] = 1,
 						["barfontsize"] = 8,
 						["y"] = 147,
