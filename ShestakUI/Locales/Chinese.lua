@@ -210,6 +210,7 @@ if T.client == "zhCN" then
 	L_POPUP_DISABLEUI = "ShestakUI并不支援此分辨率, 你想要停用ShestakUI吗? (若果您想要尝试其他分辨率, 请按取消)"
 	L_POPUP_SETTINGS_ALL = "应用所有的插件设置? (DBM/DXE, Skada/Recount and MSBT)"
 	L_POPUP_SETTINGS_DBM = "需要改变DBM描点及风格化元素."
+	L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
 	L_POPUP_SETTINGS_CLIQUE = "你的Clique设置没有正确安装,现在应用Clique设置?"  -- Needs review
 	
 	-- Welcome message

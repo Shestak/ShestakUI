@@ -147,11 +147,9 @@ f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(self, event, msg)
 	if event == "ADDON_LOADED" then
 		if msg == "BigWigs_Plugins" then
-			--[[
-			--	BigWigs uses single profile by default, so we should not upload class colors to shared profile. Leaving commented.
-				BigWigs.pluginCore.modules.Bars.db.profile.barStyle="ShestakUI"
-				BigWigs3DB.namespaces.BigWigs_Plugins_Colors.profiles.Default.barColor.BigWigs_Plugins_Colors.default={barcolor.r, barcolor.g, barcolor.b}
-			]]--
+			if BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.InstalledBars ~= C.actionbar.bottombars then
+				StaticPopup_Show("BW_TEST")
+			end
 			BigWigs.pluginCore.modules.Bars.db.profile.barStyle = "ShestakUI"
 			registerStyle()
 			f:UnregisterEvent("ADDON_LOADED")
@@ -185,7 +183,7 @@ SlashCmdList.BWTEST = function(msg)
 end
 
 StaticPopupDialogs["BW_TEST"] = {
-	text = "We need to set some BigWigs options to apply ShestakUI BigWigs skin.\nMost of your settings will remain untouched.",
+	text = L_POPUP_SETTINGS_BW,
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = function()
@@ -194,7 +192,26 @@ StaticPopupDialogs["BW_TEST"] = {
 		BigWigs.pluginCore.modules.Messages.db.profile.font = C.media.normal_font
 		BigWigs.pluginCore.modules.Messages.db.profile.outline = "OUTLINE"
 		BigWigs.pluginCore.modules.Proximity.db.profile.font = C.media.normal_font
-		if InCombatLockdown() then pr(ERR_NOT_IN_COMBAT) pr("Reload your UI to apply skin.") else ReloadUI() end
+		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_width = 186
+		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_x = 48
+		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsEmphasizeAnchor_width = 186
+		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsEmphasizeAnchor_x = 541
+		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsEmphasizeAnchor_y = 493
+		BigWigs.pluginCore.modules.Messages.db.profile.fontSize = 30
+		if C.actionbar.bottombars == 1 then
+			BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_y = 150
+		elseif C.actionbar.bottombars == 2 then
+			BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_y = 177
+		elseif C.actionbar.bottombars == 3 then
+			BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_y = 203
+		end
+		BigWigs.pluginCore.modules.Bars.db.profile.InstalledBars = C.actionbar.bottombars
+		if InCombatLockdown() then
+			pr("|cffffff00"..ERR_NOT_IN_COMBAT.."|r")
+			pr("|cffffff00Reload your UI to apply skin.|r")
+		else
+			ReloadUI()
+		end
 	end,
     timeout = 0,
     whileDead = 1,

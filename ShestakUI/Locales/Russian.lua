@@ -210,6 +210,7 @@ if T.client == "ruRU" then
 	L_POPUP_DISABLEUI = "ShestakUI не работает на этом разрешении, хотите отключить ShestakUI? (Отмена если хотите попробовать другое разрешение)"
 	L_POPUP_SETTINGS_ALL = "Применить настройки для всех модификаций? (DBM/DXE, Skada/Recount и MSBT)"
 	L_POPUP_SETTINGS_DBM = "Необходимо изменить позиции элементов DBM."
+	L_POPUP_SETTINGS_BW = "Необходимо изменить позиции элементов BigWigs."
 	L_POPUP_SETTINGS_CLIQUE = "Настройки Clique установлены не корректно для ShestakUI, Вы хотели бы их настроить?"
 	
 	-- Welcome message

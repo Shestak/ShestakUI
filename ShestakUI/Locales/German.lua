@@ -210,6 +210,7 @@ if T.client == "deDE" then
 	L_POPUP_DISABLEUI = "ShestakUI funktioniert nicht mit deiner Auflösung, möchtest du ShestakUI ausschalten? (Drücke Abbrechen, falls du eine andere Auflösung testen willst)"
 	L_POPUP_SETTINGS_ALL = "Einstellungen für alle AddOns übernehmen? (DBM/DXE, Skada/Rexount und MSBT)"
 	L_POPUP_SETTINGS_DBM = "Die Position der DBM Elemente muss verändert werden."
+	L_POPUP_SETTINGS_BW = "Die Position der BigWigs Elemente muss verändert werden."
 	L_POPUP_SETTINGS_CLIQUE = "Deine Clique Einstellungen sind nicht mit ShestakUI kompatibel. Willst du sie neu einstellen?"
 	
 	-- Welcome message
