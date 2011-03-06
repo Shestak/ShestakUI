@@ -34,6 +34,7 @@
 	<Script file="Config\Filters\BlizzardErrors.lua"/>
 	<Script file="Config\Filters\CrowdControl.lua"/>
 
+	<Script file="Core\Deprecated.lua"/>
 	<Script file="Core\API.lua"/>
 	<Script file="Core\Functions.lua"/>
 	<Script file="Core\Launch.lua"/>
@@ -126,7 +127,7 @@
 	<Script file="Modules\Class\Paladin.lua"/>
 	<Script file="Modules\Class\Mage.lua"/>
 	
-	<Script file="Modules\Skins\Skin.lua"/>
+	<Script file="Modules\Skins\Frames.lua"/>
 	<Script file="Modules\Skins\Bubbles.lua"/>
 	<Script file="Modules\Skins\FrameStack.lua"/>
 	<Script file="Modules\Skins\BigWigs.lua"/>
