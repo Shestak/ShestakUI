@@ -8,6 +8,37 @@ SkinBlizzUI:RegisterEvent("ADDON_LOADED")
 SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") then return end
 	
+	-- Reskin Blizzard DebugTools(by Elv22)
+	if addon == "Blizzard_DebugTools" then
+		ScriptErrorsFrame:SetTemplate("Transparent")
+		EventTraceFrame:SetTemplate("Transparent")
+
+		local texs = {
+			"TopLeft",
+			"TopRight",
+			"Top",
+			"BottomLeft",
+			"BottomRight",
+			"Bottom",
+			"Left",
+			"Right",
+			"TitleBG",
+			"DialogBG",
+		}
+
+		for i = 1, #texs do
+			_G["ScriptErrorsFrame"..texs[i]]:SetTexture(nil)
+			_G["EventTraceFrame"..texs[i]]:SetTexture(nil)
+		end
+
+		for i = 1, ScriptErrorsFrame:GetNumChildren() do
+			local child = select(i, ScriptErrorsFrame:GetChildren())
+			if child:GetObjectType() == "Button" and not child:GetName() then
+				child:SkinButton()
+			end
+		end
+	end
+
 	-- Stuff not in Blizzard load-on-demand
 	if addon == "ShestakUI" then
 		-- Blizzard Frame reskin
@@ -291,13 +322,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 	 
 		_G["MacOptionsFrameDefaults"]:Width(96)
 		_G["MacOptionsFrameDefaults"]:Height(22)
-		
-		_G["MacOptionsButtonCompressLeft"]:SetAlpha(0)
-		_G["MacOptionsButtonCompressMiddle"]:SetAlpha(0)
-		_G["MacOptionsButtonCompressRight"]:SetAlpha(0)
-		_G["MacOptionsButtonKeybindingsLeft"]:SetAlpha(0)
-		_G["MacOptionsButtonKeybindingsMiddle"]:SetAlpha(0)
-		_G["MacOptionsButtonKeybindingsRight"]:SetAlpha(0)
 	end
 
 	-- DBM-GUI Frame

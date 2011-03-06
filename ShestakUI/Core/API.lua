@@ -269,14 +269,16 @@ local function SkinButton(f)
 	if f.SetHighlightTexture then f:SetHighlightTexture("") end
 	if f.SetPushedTexture then f:SetPushedTexture("") end
 	if f.SetDisabledTexture then f:SetDisabledTexture("") end
-	
-	if _G[f:GetName().."Left"] then _G[f:GetName().."Left"]:SetAlpha(0) end
-	if _G[f:GetName().."Middle"] then _G[f:GetName().."Middle"]:SetAlpha(0) end
-	if _G[f:GetName().."Right"] then _G[f:GetName().."Right"]:SetAlpha(0) end
-	if _G[f:GetName().."LeftDisabled"] then _G[f:GetName().."LeftDisabled"]:SetAlpha(0) end
-	if _G[f:GetName().."MiddleDisabled"] then _G[f:GetName().."MiddleDisabled"]:SetAlpha(0) end
-	if _G[f:GetName().."RightDisabled"] then _G[f:GetName().."RightDisabled"]:SetAlpha(0) end
-	if _G[f:GetName().."HighlightTexture"] then _G[f:GetName().."HighlightTexture"]:SetAlpha(0) end
+
+	if f:GetName() then
+		if _G[f:GetName().."Left"] then _G[f:GetName().."Left"]:SetAlpha(0) end
+		if _G[f:GetName().."Middle"] then _G[f:GetName().."Middle"]:SetAlpha(0) end
+		if _G[f:GetName().."Right"] then _G[f:GetName().."Right"]:SetAlpha(0) end
+		if _G[f:GetName().."LeftDisabled"] then _G[f:GetName().."LeftDisabled"]:SetAlpha(0) end
+		if _G[f:GetName().."MiddleDisabled"] then _G[f:GetName().."MiddleDisabled"]:SetAlpha(0) end
+		if _G[f:GetName().."RightDisabled"] then _G[f:GetName().."RightDisabled"]:SetAlpha(0) end
+		if _G[f:GetName().."HighlightTexture"] then _G[f:GetName().."HighlightTexture"]:SetAlpha(0) end
+	end
 	
 	f:SetTemplate("Overlay")
 	f:HookScript("OnEnter", T.SetModifiedBackdrop)
