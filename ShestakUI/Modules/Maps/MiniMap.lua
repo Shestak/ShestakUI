@@ -16,7 +16,6 @@ MinimapAnchor.text = MinimapAnchor:CreateFontString("MinimapAnchorText", "OVERLA
 MinimapAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 MinimapAnchor.text:SetPoint("CENTER")
 
-
 ----------------------------------------------------------------------------------------
 --	Shape, location and scale
 ----------------------------------------------------------------------------------------
@@ -26,8 +25,8 @@ MinimapCluster:Kill()
 -- Parent Minimap into our frame
 Minimap:SetParent(MinimapAnchor)
 Minimap:ClearAllPoints()
-Minimap:Point("TOPLEFT", 2, -2)
-Minimap:Point("BOTTOMRIGHT", -2, 2)
+Minimap:Point("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
+Minimap:Point("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
 Minimap:Size(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
 
 -- Hide Border
@@ -83,7 +82,7 @@ GuildInstanceDifficulty:SetScale(0.75)
 -- Invites icon
 GameTimeCalendarInvitesTexture:ClearAllPoints()
 GameTimeCalendarInvitesTexture:SetParent(Minimap)
-GameTimeCalendarInvitesTexture:Point("TOPRIGHT")
+GameTimeCalendarInvitesTexture:Point("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
 
 -- Random Group icon
 local function UpdateLFG()
