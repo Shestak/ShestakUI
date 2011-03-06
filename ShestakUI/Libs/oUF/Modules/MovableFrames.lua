@@ -334,8 +334,7 @@ do
 		backdrop:SetTemplate("Transparent")
 		backdrop:SetFrameStrata("MEDIUM")
 		backdrop:SetFrameLevel(20)
-		backdrop:Point("TOPLEFT", target, -2, 2)
-		backdrop:Point("BOTTOMRIGHT", target, 2, -2)
+		backdrop:SetAllPoints(target)
 
 		backdrop:EnableMouse(true)
 		backdrop:SetMovable(true)
