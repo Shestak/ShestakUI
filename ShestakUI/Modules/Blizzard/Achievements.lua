@@ -5,7 +5,7 @@
 local AchievementAnchor = CreateFrame("Frame", "AchievementAnchor", UIParent)
 AchievementAnchor:Width(DungeonCompletionAlertFrame1:GetWidth())
 AchievementAnchor:Height(DungeonCompletionAlertFrame1:GetHeight())
-AchievementAnchor:SetPoint("CENTER", UIParent, "CENTER", 0, 170)
+AchievementAnchor:SetPoint(unpack(C.position.achievement))
 AchievementAnchor:SetTemplate("Transparent")
 AchievementAnchor:SetBackdropBorderColor(1, 0, 0)
 AchievementAnchor:SetClampedToScreen(true)

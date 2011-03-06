@@ -11,6 +11,7 @@ C["position"] = {
 	["bag"]	= {"BOTTOMRIGHT", Minimap, "TOPRIGHT", -1, 8},					-- Bag
 	["bank"] = {"LEFT", UIParent, "LEFT", 23, 150},							-- Bank
 	["bn_popup"] = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20},			-- BattleNet popup
+	["achievement"] = {"TOP", UIParent, "TOP", 0, -20},						-- Achievements frame
 	["tooltip"] = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5},				-- Tooltip
 	["ticket"] = {"TOPLEFT", UIParent, "TOPLEFT", 21, -20},					-- GM ticket
 	["attempt"] = {"TOP", UIParent, "TOP", -85, -20},						-- Attempts frame
