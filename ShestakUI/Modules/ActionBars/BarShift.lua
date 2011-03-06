@@ -69,7 +69,7 @@ bar:SetScript("OnEvent", function(self, event, ...)
 			button:SetParent(self)
 			if i == 1 then
 				if C.actionbar.shapeshift_horizontal == true then
-					button:Point("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
+					button:Point("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, T.buttonsize + T.buttonspacing)
 				else
 					button:Point("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
 				end

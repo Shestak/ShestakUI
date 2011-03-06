@@ -11,7 +11,7 @@ if MultiCastActionBarFrame then
 	MultiCastActionBarFrame:SetScript("OnHide", nil)
 	MultiCastActionBarFrame:SetParent("ShiftBar")
 	MultiCastActionBarFrame:ClearAllPoints()
-	MultiCastActionBarFrame:Point("BOTTOMLEFT", "ShiftBar", "BOTTOMLEFT", -3, -3)
+	MultiCastActionBarFrame:Point("BOTTOMLEFT", "ShiftBar", "BOTTOMLEFT", -3, T.buttonsize + T.buttonspacing -3)
 
 	hooksecurefunc("MultiCastActionButton_Update", function(actionbutton) if not InCombatLockdown() then actionbutton:SetAllPoints(actionbutton.slotButton) end end)
 
