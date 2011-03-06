@@ -299,14 +299,14 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["MacOptionsButtonCompress"]:SkinButton()
 	 
 		-- Reposition and resize buttons
-		local tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsButtonCompress"]:GetPoint()
+		local tPoint, tRTo, tRP, tX, tY = _G["MacOptionsButtonCompress"]:GetPoint()
 		_G["MacOptionsButtonCompress"]:Width(136)
 		_G["MacOptionsButtonCompress"]:ClearAllPoints()
 		_G["MacOptionsButtonCompress"]:Point(tPoint, tRTo, tRP, 4, tY)
 	 
 		_G["MacOptionsFrameCancel"]:Width(96)
 		_G["MacOptionsFrameCancel"]:Height(22)
-		tPoint, tRTo, tRP, tX, tY =  _G["MacOptionsFrameCancel"]:GetPoint()
+		tPoint, tRTo, tRP, tX, tY = _G["MacOptionsFrameCancel"]:GetPoint()
 		_G["MacOptionsFrameCancel"]:ClearAllPoints()
 		_G["MacOptionsFrameCancel"]:Point(tPoint, tRTo, tRP, -14, tY)
 	 
