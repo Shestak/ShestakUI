@@ -24,7 +24,7 @@ local MainBars = function()
 			ToggleBarText(1, "- - -", false, true)
 			Bar2Holder:Show()
 		end
-	elseif C.actionbar.rightbars < 3 then
+	elseif C.actionbar.rightbars < 3 and C.actionbar.split_bars ~= true then
 		if SavedOptionsPerChar.BottomBars == 1 then
 			ActionBarAnchor:Height(T.buttonsize)
 			ToggleBarText(1, "+ + +", true)
@@ -40,6 +40,40 @@ local MainBars = function()
 			ToggleBarText(1, "- - -", false, true)
 			Bar2Holder:Show()
 			Bar5Holder:Show()
+		end
+	elseif C.actionbar.rightbars < 3 and C.actionbar.split_bars == true then
+		if SavedOptionsPerChar.BottomBars == 1 then
+			ActionBarAnchor:Height(T.buttonsize)
+			ToggleBarText(1, "+ + +", true)
+			Bar2Holder:Hide()
+			ToggleBar[3]:Height(T.buttonsize)
+			ToggleBar[4]:Height(T.buttonsize)
+			for i = 1, 3 do
+				local b = _G["MultiBarBottomRightButton"..i]
+				b:SetAlpha(0)
+				b:SetScale(0.000001)
+			end
+			for i = 7, 9 do
+				local b = _G["MultiBarBottomRightButton"..i]
+				b:SetAlpha(0)
+				b:SetScale(0.000001)
+			end
+		elseif SavedOptionsPerChar.BottomBars == 2 then
+			ActionBarAnchor:Height(T.buttonsize * 2 + T.buttonspacing)
+			ToggleBarText(1, "- - -", false, true)
+			Bar2Holder:Show()
+			ToggleBar[3]:Height(T.buttonsize * 2 + T.buttonspacing)
+			ToggleBar[4]:Height(T.buttonsize * 2 + T.buttonspacing)
+			for i = 1, 3 do
+				local b = _G["MultiBarBottomRightButton"..i]
+				b:SetAlpha(1)	
+				b:SetScale(1)
+			end
+			for i = 7, 9 do
+				local b = _G["MultiBarBottomRightButton"..i]
+				b:SetAlpha(1)	
+				b:SetScale(1)
+			end
 		end
 	else
 	
@@ -134,22 +168,33 @@ local RightBars = function()
 end
 
 local SplitBars = function()
-	if C.actionbar.split_bars == true then
+	if C.actionbar.split_bars == true and C.actionbar.rightbars < 3 then
 		if SavedOptionsPerChar.SplitBars == true then
 			ToggleBar[3]:ClearAllPoints()
 			ToggleBar[3]:Point("BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", T.buttonspacing, 0)
-			ToggleBarText(3, "<\n<\n<", false, true)
 			ToggleBar[4]:ClearAllPoints()
 			ToggleBar[4]:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
-			ToggleBarText(4, ">\n>\n>", false, true)
+			if SavedOptionsPerChar.BottomBars == 2 then
+				ToggleBarText(3, "<\n<\n<", false, true)
+				ToggleBarText(4, ">\n>\n>", false, true)
+			else
+				ToggleBarText(3, "<\n<", false, true)
+				ToggleBarText(4, ">\n>", false, true)
+			end
+			Bar5Holder:Show()
 		elseif SavedOptionsPerChar.SplitBars == false then
 			ToggleBar[3]:ClearAllPoints()
 			ToggleBar[3]:Point("BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", T.buttonspacing, 0)
-			ToggleBarText(3, ">\n>\n>", true)
 			ToggleBar[4]:ClearAllPoints()
 			ToggleBar[4]:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -T.buttonspacing, 0)
-			ToggleBarText(4, "<\n<\n<", true)
-			
+			if SavedOptionsPerChar.BottomBars == 2 then
+				ToggleBarText(3, ">\n>\n>", true)
+				ToggleBarText(4, "<\n<\n<", true)
+			else
+				ToggleBarText(3, ">\n>", true)
+				ToggleBarText(4, "<\n<", true)
+			end
+			Bar5Holder:Hide()
 			SplitBarLeft:Hide()
 			SplitBarRight:Hide()
 		end
@@ -177,13 +222,17 @@ for i = 1, 5 do
 				if SavedOptionsPerChar.BottomBars > 2 then
 					SavedOptionsPerChar.BottomBars = 1
 				end
-			elseif C.actionbar.rightbars < 3 then
+			elseif C.actionbar.rightbars < 3 and C.actionbar.split_bars ~= true then
 				if SavedOptionsPerChar.BottomBars > 3 then
 					SavedOptionsPerChar.BottomBars = 1
 				elseif SavedOptionsPerChar.BottomBars > 2 then
 					SavedOptionsPerChar.BottomBars = 3
 				elseif SavedOptionsPerChar.BottomBars < 1 then
 					SavedOptionsPerChar.BottomBars = 3
+				end
+			elseif C.actionbar.rightbars < 3 and C.actionbar.split_bars == true then
+				if SavedOptionsPerChar.BottomBars > 2 then
+					SavedOptionsPerChar.BottomBars = 1
 				end
 			end
 			
@@ -219,12 +268,12 @@ for i = 1, 5 do
 		ToggleBar[i]:SetScript("OnEvent", RightBars)
 	elseif i == 3 then
 		if C.actionbar.split_bars == true then
-			ToggleBar[i]:CreatePanel("Transparent", T.buttonsize / 1.5, SplitBarRight:GetHeight(), "BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", T.buttonspacing, 0)
+			ToggleBar[i]:CreatePanel("Transparent", T.buttonsize / 1.5, ActionBarAnchor:GetHeight(), "BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", T.buttonspacing, 0)
 			ToggleBar[i]:SetFrameLevel(SplitBarRight:GetFrameLevel() + 1)
 		end
 	elseif i == 4 then
 		if C.actionbar.split_bars == true then
-			ToggleBar[i]:CreatePanel("Transparent", T.buttonsize / 1.5, SplitBarLeft:GetHeight(), "BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
+			ToggleBar[i]:CreatePanel("Transparent", T.buttonsize / 1.5, ActionBarAnchor:GetHeight(), "BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
 			ToggleBar[i]:SetFrameLevel(SplitBarLeft:GetFrameLevel() + 1)
 		end
 	end
@@ -240,7 +289,6 @@ for i = 1, 5 do
 				SavedOptionsPerChar.SplitBars = false
 			end
 			SplitBars()
-			print("|cffff0000This option does not work yet.|r")
 		end)
 		ToggleBar[i]:SetScript("OnEvent", SplitBars)
 	end
