@@ -14,7 +14,11 @@ bottombaranchor:Width((T.buttonsize * 12) + (T.buttonspacing * 11))
 if C.actionbar.bottombars == 2 then
 	bottombaranchor:SetHeight((T.buttonsize * 2) + T.buttonspacing)
 elseif C.actionbar.bottombars == 3 then
-	bottombaranchor:Height((T.buttonsize * 3) + (T.buttonspacing * 2))
+	if C.actionbar.split_bars == true then
+		bottombaranchor:Height((T.buttonsize * 2) + T.buttonspacing)
+	else
+		bottombaranchor:Height((T.buttonsize * 3) + (T.buttonspacing * 2))
+	end
 else
 	bottombaranchor:Height(T.buttonsize)
 end

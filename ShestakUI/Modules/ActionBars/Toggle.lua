@@ -74,9 +74,7 @@ local MainBars = function()
 				b:SetAlpha(1)	
 				b:SetScale(1)
 			end
-		end
-	else
-	
+		end	
 	end
 end
 
@@ -201,7 +199,7 @@ local SplitBars = function()
 	end
 end
 
-for i = 1, 5 do
+for i = 1, 4 do
 	ToggleBar[i] = CreateFrame("Frame", "ToggleBar"..i, ToggleBar)
 	ToggleBar[i]:EnableMouse(true)
 	ToggleBar[i]:SetAlpha(0)
@@ -212,6 +210,7 @@ for i = 1, 5 do
 	
 	if i == 1 then
 		ToggleBar[i]:CreatePanel("Transparent", ActionBarAnchor:GetWidth(), T.buttonsize / 1.5, "BOTTOM", ActionBarAnchor, "TOP", 0, T.buttonspacing)
+		ToggleBarText(i, "- - -", false, true)
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
@@ -241,6 +240,7 @@ for i = 1, 5 do
 		ToggleBar[i]:SetScript("OnEvent", MainBars)
 	elseif i == 2 then
 		ToggleBar[i]:CreatePanel("Transparent", RightActionBarAnchor:GetWidth(), T.buttonsize / 1.5, "TOPRIGHT", RightActionBarAnchor, "BOTTOMRIGHT", 0, -T.buttonspacing)
+		ToggleBarText(i, "> > >", false, true)
 		
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
@@ -269,11 +269,13 @@ for i = 1, 5 do
 	elseif i == 3 then
 		if C.actionbar.split_bars == true and C.actionbar.rightbars ~= 3 then
 			ToggleBar[i]:CreatePanel("Transparent", T.buttonsize / 1.5, ActionBarAnchor:GetHeight(), "BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", T.buttonspacing, 0)
+			ToggleBarText(i, "<\n<", false, true)
 			ToggleBar[i]:SetFrameLevel(SplitBarRight:GetFrameLevel() + 1)
 		end
 	elseif i == 4 then
 		if C.actionbar.split_bars == true and C.actionbar.rightbars ~= 3 then
 			ToggleBar[i]:CreatePanel("Transparent", T.buttonsize / 1.5, ActionBarAnchor:GetHeight(), "BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
+			ToggleBarText(i, ">\n>", false, true)
 			ToggleBar[i]:SetFrameLevel(SplitBarLeft:GetFrameLevel() + 1)
 		end
 	end
@@ -304,6 +306,9 @@ for i = 1, 5 do
 			if C.actionbar.rightbars_mouseover == true then
 				RightBarMouseOver(1)
 			end
+		elseif i == 3 or i == 4 then
+			ToggleBar[3]:FadeIn()
+			ToggleBar[4]:FadeIn()
 		else
 			ToggleBar[i]:FadeIn()
 		end
@@ -315,6 +320,9 @@ for i = 1, 5 do
 			if C.actionbar.rightbars_mouseover == true then
 				RightBarMouseOver(0)
 			end
+		elseif i == 3 or i == 4 then
+			ToggleBar[3]:FadeOut()
+			ToggleBar[4]:FadeOut()
 		else
 			ToggleBar[i]:FadeOut()
 		end
