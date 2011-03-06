@@ -93,12 +93,6 @@ if (IsAddOnLoaded("TipTacTalents")) then
 	C.tooltip.talents = false
 end
 
-if (IsAddOnLoaded("ShestakUI_DPS")) then
-	C.unitframe.arena_on_right = true
-elseif (IsAddOnLoaded("ShestakUI_Heal")) then
-	C.unitframe.arena_on_right = false
-end
-
 if (IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags")) then
 	C.bag.enable = false
 end
