@@ -58,35 +58,33 @@ end
 function RightBarMouseOver(alpha)
 	RightActionBarAnchor:SetAlpha(alpha)
 	PetActionBarAnchor:SetAlpha(alpha)
-	if C.actionbar.rightbars >= 2 then
-		if MultiBarLeft:IsShown() then
+
+	if MultiBarLeft:IsShown() then
+		for i = 1, 12 do
+			local pb = _G["MultiBarLeftButton"..i]
+			pb:SetAlpha(alpha)
+		end
+		MultiBarLeft:SetAlpha(alpha)
+	end
+
+	if C.actionbar.rightbars > 2 then
+		if MultiBarBottomRight:IsShown() then
 			for i = 1, 12 do
-				local pb = _G["MultiBarLeftButton"..i]
+				local pb = _G["MultiBarBottomRightButton"..i]
 				pb:SetAlpha(alpha)
 			end
-			MultiBarLeft:SetAlpha(alpha)
+			MultiBarBottomRight:SetAlpha(alpha)
 		end
 	end
-	if C.actionbar.rightbars > 1 then
-		if C.actionbar.rightbars > 2 then
-			if MultiBarBottomRight:IsShown() then
-				for i = 1, 12 do
-					local pb = _G["MultiBarBottomRightButton"..i]
-					pb:SetAlpha(alpha)
-				end
-				MultiBarBottomRight:SetAlpha(alpha)
-			end
+
+	if MultiBarRight:IsShown() then
+		for i = 1, 12 do
+			local pb = _G["MultiBarRightButton"..i]
+			pb:SetAlpha(alpha)
 		end
+		MultiBarRight:SetAlpha(alpha)
 	end
-	if C.actionbar.rightbars > 0 then
-		if MultiBarRight:IsShown() then
-			for i = 1, 12 do
-				local pb = _G["MultiBarRightButton"..i]
-				pb:SetAlpha(alpha)
-			end
-			MultiBarRight:SetAlpha(alpha)
-		end
-	end
+
 	if C.actionbar.petbar_horizontal == false then
 		if C.actionbar.petbar_hide then return end
 		if PetHolder:IsShown() then

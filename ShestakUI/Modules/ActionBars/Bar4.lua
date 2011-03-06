@@ -5,7 +5,7 @@ if not C.actionbar.enable == true then return end
 --	Setup MultiBarRight as bar #4 by Tukz
 ----------------------------------------------------------------------------------------
 local Bar4Holder = CreateFrame("Frame", "Bar4Holder", UIParent)
-Bar4Holder:SetAllPoints(ActionBarAnchor)
+Bar4Holder:SetAllPoints(RightActionBarAnchor)
 MultiBarRight:SetParent(Bar4Holder)
 
 for i = 1, 12 do

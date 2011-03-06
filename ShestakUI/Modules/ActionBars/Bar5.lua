@@ -5,7 +5,11 @@ if not C.actionbar.enable == true then return end
 --	Setup MultiBarBottomRight as bar #5 by Tukz
 ----------------------------------------------------------------------------------------
 local Bar5Holder = CreateFrame("Frame", "Bar5Holder", UIParent)
-Bar5Holder:SetAllPoints(ActionBarAnchor)
+if C.actionbar.rightbars < 3 then
+	Bar5Holder:SetAllPoints(ActionBarAnchor)
+else
+	Bar5Holder:SetAllPoints(RightActionBarAnchor)
+end
 MultiBarBottomRight:SetParent(Bar5Holder)
 
 for i = 1, 12 do

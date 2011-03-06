@@ -5,7 +5,7 @@ if not C.actionbar.enable == true then return end
 --	Setup MultiBarLeft as bar #3 by Tukz
 ----------------------------------------------------------------------------------------
 local Bar3Holder = CreateFrame("Frame", "Bar3Holder", UIParent)
-Bar3Holder:SetAllPoints(ActionBarAnchor)
+Bar3Holder:SetAllPoints(RightActionBarAnchor)
 Bar3Holder:SetFrameStrata("LOW")
 MultiBarLeft:SetParent(Bar3Holder)
 
