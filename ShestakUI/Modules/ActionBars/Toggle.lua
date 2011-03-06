@@ -168,7 +168,7 @@ local RightBars = function()
 end
 
 local SplitBars = function()
-	if C.actionbar.split_bars == true and C.actionbar.rightbars < 3 then
+	if C.actionbar.split_bars == true and C.actionbar.rightbars ~= 3 then
 		if SavedOptionsPerChar.SplitBars == true then
 			ToggleBar[3]:ClearAllPoints()
 			ToggleBar[3]:Point("BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", T.buttonspacing, 0)
@@ -267,12 +267,12 @@ for i = 1, 5 do
 		end)
 		ToggleBar[i]:SetScript("OnEvent", RightBars)
 	elseif i == 3 then
-		if C.actionbar.split_bars == true then
+		if C.actionbar.split_bars == true and C.actionbar.rightbars ~= 3 then
 			ToggleBar[i]:CreatePanel("Transparent", T.buttonsize / 1.5, ActionBarAnchor:GetHeight(), "BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", T.buttonspacing, 0)
 			ToggleBar[i]:SetFrameLevel(SplitBarRight:GetFrameLevel() + 1)
 		end
 	elseif i == 4 then
-		if C.actionbar.split_bars == true then
+		if C.actionbar.split_bars == true and C.actionbar.rightbars ~= 3 then
 			ToggleBar[i]:CreatePanel("Transparent", T.buttonsize / 1.5, ActionBarAnchor:GetHeight(), "BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
 			ToggleBar[i]:SetFrameLevel(SplitBarLeft:GetFrameLevel() + 1)
 		end

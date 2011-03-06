@@ -17,7 +17,7 @@ if C.actionbar.bottombars == 3 and C.actionbar.rightbars == 3 then
 end
 
 if C.actionbar.split_bars == true then
-	C.actionbar.bottombars = 2
+	C.actionbar.bottombars = 3
 	C.actionbar.rightbars = 2
 end
 
