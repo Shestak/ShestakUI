@@ -26,43 +26,49 @@ hooksecurefunc("ShowReadyCheck", ShowReadyCheckHook)
 --	ALT+Click to buy a stack
 ----------------------------------------------------------------------------------------
 hooksecurefunc("MerchantItemButton_OnModifiedClick", function(self, button)
-    if MerchantFrame.selectedTab == 1 then
-        if IsAltKeyDown() and button == "RightButton" then
-            local id = self:GetID()
-            local extracost = select(7, GetMerchantItemInfo(id))
-            if not extracost then
-                local stack = select(8, GetItemInfo(self.link))
-                local amount = 1
-                if self.count < stack then
-                    amount = stack / self.count
-                end
-                if self.numInStock ~= -1 and self.numInStock < amount then
-                    amount = self.numInStock
-                end
-                local money = GetMoney()
-                if (self.price * amount) > money then
-                    amount = floor(money / self.price)
-                end
-                if amount > 0 then
-                    BuyMerchantItem(id, amount)
-                end
-            end
-        end
-    end
+	if MerchantFrame.selectedTab == 1 then
+		if IsAltKeyDown() and button == "RightButton" then
+			local id = self:GetID()
+			local quantity = select(4, GetMerchantItemInfo(id))
+			local extracost = select(7, GetMerchantItemInfo(id))
+			if not extracost then
+				local stack
+				if quantity > 1 then
+					stack = quantity * GetMerchantItemMaxStack(id)
+				else
+					stack = GetMerchantItemMaxStack(id)
+				end
+				local amount = 1
+				if self.count < stack then
+					amount = stack / self.count
+				end
+				if self.numInStock ~= -1 and self.numInStock < amount then
+					amount = self.numInStock
+				end
+				local money = GetMoney()
+				if (self.price * amount) > money then
+					amount = floor(money / self.price)
+				end
+				if amount > 0 then
+					BuyMerchantItem(id, amount)
+				end
+			end
+		end
+	end
 end)
 
 ----------------------------------------------------------------------------------------
 --	Auto decline duels
 ----------------------------------------------------------------------------------------
 if C.misc.auto_decline_duel == true then
-    local dd = CreateFrame("Frame")
-    dd:RegisterEvent("DUEL_REQUESTED")
-    dd:SetScript("OnEvent", function(self, event, name)
+	local dd = CreateFrame("Frame")
+	dd:RegisterEvent("DUEL_REQUESTED")
+	dd:SetScript("OnEvent", function(self, event, name)
 		HideUIPanel(StaticPopup1)
 		CancelDuel()
 		T.InfoTextShow(L_INFO_DUEL..name)
 		print(format("|cffffff00"..L_INFO_DUEL..name.."."))
-    end)
+	end)
 end
 
 ----------------------------------------------------------------------------------------
