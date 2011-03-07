@@ -655,13 +655,11 @@ function CreateUIConfig()
 				editbox:SetPoint("TOPLEFT", 5, -(offset + 20))
 				editbox:SetText(value)
 				editbox:SetTemplate("Transparent")
-				--editbox:SetBackdropColor(0, 0, 0, 0.5)
 				
 				local okbutton = CreateFrame("Button", nil, frame)
 				okbutton:SetHeight(editbox:GetHeight())
 				okbutton:SetWidth(editbox:GetHeight() + 5)
 				okbutton:SetTemplate("Transparent")
-				--okbutton:SetBackdropColor(0, 0, 0, 0.5)
 				okbutton:SetPoint("LEFT", editbox, "RIGHT", 2, 0)
 				
 				local oktext = okbutton:CreateFontString(nil, "OVERLAY", "GameFontNormal")

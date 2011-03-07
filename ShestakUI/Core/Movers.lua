@@ -92,25 +92,25 @@ T.moving = function()
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
 	
 	for i = 1, getn(T.MoverFrames) do
-		if T.MoverFrames[i] then		
-			if enable then			
+		if T.MoverFrames[i] then
+			if enable then
 				T.MoverFrames[i]:EnableMouse(true)
 				T.MoverFrames[i]:RegisterForDrag("LeftButton", "RightButton")
-				T.MoverFrames[i]:SetScript("OnDragStart", function(self) 
-					origa1, origf, origa2, origx, origy = T.MoverFrames[i]:GetPoint() 
-					self.moving = true 
-					self:SetUserPlaced(true) 
-					self:StartMoving() 
-				end)			
-				T.MoverFrames[i]:SetScript("OnDragStop", function(self) 
-					self.moving = false 
-					self:StopMovingOrSizing() 
-				end)			
-				exec(T.MoverFrames[i], enable)			
-				if T.MoverFrames[i].text then 
-					T.MoverFrames[i].text:Show() 
+				T.MoverFrames[i]:SetScript("OnDragStart", function(self)
+					origa1, origf, origa2, origx, origy = T.MoverFrames[i]:GetPoint()
+					self.moving = true
+					self:SetUserPlaced(true)
+					self:StartMoving()
+				end)
+				T.MoverFrames[i]:SetScript("OnDragStop", function(self)
+					self.moving = false
+					self:StopMovingOrSizing()
+				end)
+				exec(T.MoverFrames[i], enable)
+				if T.MoverFrames[i].text then
+					T.MoverFrames[i].text:Show()
 				end
-			else			
+			else
 				T.MoverFrames[i]:EnableMouse(false)
 				if T.MoverFrames[i].moving == true then
 					T.MoverFrames[i]:StopMovingOrSizing()
