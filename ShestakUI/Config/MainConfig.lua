@@ -59,7 +59,7 @@ C["misc"] = {
 	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
 	["quest_auto_button"] = false,				-- Quest auto button
 	["raid_tools"] = false,						-- Raid tools
-	["announce_interrupt"] = true,				-- Announce in party/raid when you interrupt
+	["announce_interrupt"] = false,				-- Announce in party/raid when you interrupt
 }
 
 ----------------------------------------------------------------------------------------
