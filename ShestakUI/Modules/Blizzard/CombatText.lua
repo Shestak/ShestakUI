@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.combattext.enable ~= true then return end
+if not C.combattext.enable == true then return end
 
 ----------------------------------------------------------------------------------------
 --	Combat Text(xCT by Affli @ RU-Howling Fjord)
@@ -565,14 +565,14 @@ for i=1,numf do
 	if(i==1)then
 		f:SetJustifyH(ct.justify_1)
 		if C.unitframe.enable == true and _G.oUF_Player then
-			f:SetPoint("BOTTOMLEFT", "oUF_Player", "TOPLEFT", -3, 45)
+			f:SetPoint("BOTTOMLEFT", "oUF_Player", "TOPLEFT", -3, 60)
 		else
 			f:SetPoint("CENTER",-192,-32)
 		end
 	elseif(i==2)then
 		f:SetJustifyH(ct.justify_2)
 		if C.unitframe.enable == true and _G.oUF_Player then
-			f:SetPoint("BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 5, 45)
+			f:SetPoint("BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 5, 60)
 		else
 			f:SetPoint("CENTER",192,-32)
 		end
