@@ -321,6 +321,7 @@ if C.general.minimap_icon == true and IsAddOnLoaded("ShestakUI_Config") then
 	menuIcon:SetMovable(true)
 	menuIcon:RegisterForClicks("AnyUp")
 	menuIcon:RegisterForDrag("LeftButton")
+	menuIcon:SetFrameStrata("HIGH")
 	menuIcon:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -5, -2)
 	
 	local buttontexture = menuIcon:CreateTexture(nil, "BORDER")
@@ -329,56 +330,12 @@ if C.general.minimap_icon == true and IsAddOnLoaded("ShestakUI_Config") then
 	buttontexture:Height(18)
 	buttontexture:Width(18)
 	buttontexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-	local minimapShapes = {
-		["ROUND"] = {true, true, true, true},
-		["SQUARE"] = {false, false, false, false},
-		["CORNER-TOPLEFT"] = {true, false, false, false},
-		["CORNER-TOPRIGHT"] = {false, false, true, false},
-		["CORNER-BOTTOMLEFT"] = {false, true, false, false},
-		["CORNER-BOTTOMRIGHT"] = {false, false, false, true},
-		["SIDE-LEFT"] = {true, true, false, false},
-		["SIDE-RIGHT"] = {false, false, true, true},
-		["SIDE-TOP"] = {true, false, true, false},
-		["SIDE-BOTTOM"] = {false, true, false, true},
-		["TRICORNER-TOPLEFT"] = {true, true, true, false},
-		["TRICORNER-TOPRIGHT"] = {true, false, true, true},
-		["TRICORNER-BOTTOMLEFT"] = {true, true, false, true},
-		["TRICORNER-BOTTOMRIGHT"] = {false, true, true, true},
-	}
-
-	local function onupdate(self)
-		if self.isMoving then
-			local mx, my = Minimap:GetCenter()
-			local px, py = GetCursorPosition()
-			local scale = Minimap:GetEffectiveScale()
-			px, py = px / scale, py / scale
-			
-			local angle = math.rad(math.deg(math.atan2(py - my, px - mx)) % 360)
-				
-			local x, y, q = math.cos(angle), math.sin(angle), 1
-			if x < 0 then q = q + 1 end
-			if y > 0 then q = q + 2 end
-
-			local minimapShape = GetMinimapShape and GetMinimapShape() or "ROUND"
-			local quadTable = minimapShapes[minimapShape]
-			if quadTable[q] then
-				x, y = x * 80, y * 80
-			else
-				local diagRadius = 103.13708498985 --math.sqrt(2*(80)^2)-10
-				x = math.max(-78, math.min(x * diagRadius, 78))
-				y = math.max(-78, math.min(y * diagRadius, 78))
-			end
-			self:ClearAllPoints();
-			self:Point("CENTER", Minimap, "CENTER", x, y)
-		end
-	end
-		
+	
 	menuIcon:SetScript("OnClick", function(self, button)
 		if IsShiftKeyDown() and button == "RightButton" then
 			ReloadUI()
 		else
-			if button == "LeftButton" then
+			if button == "LeftButton" and not IsShiftKeyDown() then
 				PlaySound("igMainMenuOption")
 				HideUIPanel(GameMenuFrame)
 				if not UIConfig or not UIConfig:IsShown() then
@@ -393,18 +350,14 @@ if C.general.minimap_icon == true and IsAddOnLoaded("ShestakUI_Config") then
 		end
 	end)
 
-	menuIcon:SetScript("OnDragStart", function(self)
-		if IsShiftKeyDown() then
-			self.isMoving = true
-			self:SetScript("OnUpdate", function(self) onupdate(self) end)
+	menuIcon:SetScript("OnMouseDown", function(self, button)
+		if IsShiftKeyDown() and button == "LeftButton" then
+			self:StartMoving()
+			GameTooltip:Hide()
 		end
 	end)
-
-	menuIcon:SetScript("OnDragStop", function(self)
-		self.isMoving = nil
-		self:SetScript("OnUpdate", nil)
-		self:SetUserPlaced(true)
-	end)	
+	
+	menuIcon:SetScript("OnMouseUp", menuIcon.StopMovingOrSizing)
 
 	menuIcon:SetScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_LEFT")
