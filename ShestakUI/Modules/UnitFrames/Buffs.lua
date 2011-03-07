@@ -18,8 +18,22 @@ local GetFormattedTime = function(s)
 	return floor(s + 0.5)
 end
 
+local BuffsAnchor = CreateFrame("Frame", "BuffsAnchor", UIParent)
+BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
+BuffsAnchor:Size((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size * 2) + 3)
+BuffsAnchor:SetClampedToScreen(true)
+BuffsAnchor:SetMovable(true)
+BuffsAnchor:SetTemplate("Transparent")
+BuffsAnchor:SetBackdropColor(0, 0, 0, 0)
+BuffsAnchor:SetBackdropBorderColor(0, 0, 0, 0)
+BuffsAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
+BuffsAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)
+BuffsAnchor.text = BuffsAnchor:CreateFontString("BuffsAnchorText", "OVERLAY", nil)
+BuffsAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+BuffsAnchor.text:SetPoint("CENTER")
+	
 ConsolidatedBuffs:ClearAllPoints()
-ConsolidatedBuffs:Point(unpack(C.position.player_buffs))
+ConsolidatedBuffs:Point("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
 ConsolidatedBuffs:Size(C.aura.player_buff_size, C.aura.player_buff_size)
 ConsolidatedBuffs.SetPoint = T.dummy
 
@@ -131,7 +145,7 @@ local function UpdateBuffAnchors()
 				end
 				aboveBuff = buff
 			elseif index == 1 then
-				buff:Point(unpack(C.position.player_buffs))
+				buff:Point("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
 			else
 				if numBuffs == 1 then
 					if (mainhand and offhand and hand3) and not UnitHasVehicleUI("player") then

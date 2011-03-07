@@ -40,15 +40,25 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	end
 end)
 
+-- Vehicle button anchor
+local VehicleButtonAnchor = CreateFrame("Frame", "VehicleButtonAnchor", UIParent)
+VehicleButtonAnchor:Point(unpack(C.position.vehicle_bar))
+VehicleButtonAnchor:Size(T.buttonsize, T.buttonsize)
+VehicleButtonAnchor:SetMovable(true)
+VehicleButtonAnchor:SetClampedToScreen(true)
+VehicleButtonAnchor:SetTemplate("Transparent")
+VehicleButtonAnchor:SetBackdropBorderColor(1, 0, 0)
+VehicleButtonAnchor:SetAlpha(0)
+VehicleButtonAnchor.text = VehicleButtonAnchor:CreateFontString("VehicleButtonAnchorText", "OVERLAY", nil)
+VehicleButtonAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+VehicleButtonAnchor.text:SetPoint("CENTER")
+VehicleButtonAnchor.text:SetText("VehicleButton Anchor")
+
 -- Vehicle button
 local vehicle = CreateFrame("BUTTON", "VehicleButton", UIParent, "SecureActionButtonTemplate")
 vehicle:Width(T.buttonsize)
 vehicle:Height(T.buttonsize)
-if C.actionbar.split_bars == true and C.actionbar.rightbars ~= 3 then
-	vehicle:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
-else
-	vehicle:Point(unpack(C.position.vehicle_bar))
-end
+vehicle:Point("TOPRIGHT", VehicleButtonAnchor, "BOTTOMRIGHT", 0, -T.buttonspacing)
 vehicle:SetNormalTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Vehicle.tga")
 vehicle:SetPushedTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Vehicle.tga")
 vehicle:SetHighlightTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Vehicle.tga")

@@ -14,6 +14,8 @@ T.MoverFrames = {
 	ShiftBar,
 	AutoButtonAnchor,
 	RaidCDAnchor,
+	BuffsAnchor,
+	VehicleButtonAnchor,
 }
 
 -- Used to exec various code if we enable or disable moving
@@ -28,18 +30,19 @@ local function exec(self, enable)
 	end
 	
 	if self == MinimapAnchor then
-		if enable then 
+		if enable then
 			Minimap:Hide()
 			self:SetBackdropBorderColor(1, 0, 0, 1)
 			MinimapAnchor.text:SetText("Minimap Anchor")
-		else 
+		else
 			Minimap:Show()
 			self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 			MinimapAnchor.text:SetText("")
 		end
 	end
 	
-	if self == VehicleAnchor or self == AchievementAnchor or self == DCPAnchor or self == TooltipAnchor or self == AutoButtonAnchor or self == RaidCDAnchor then
+	if self == VehicleAnchor or self == AchievementAnchor or self == DCPAnchor or self == TooltipAnchor 
+		or self == AutoButtonAnchor or self == RaidCDAnchor or self == VehicleButtonAnchor then
 		if enable then
 			self:SetAlpha(1)
 		else
@@ -52,12 +55,28 @@ local function exec(self, enable)
 			WatchFrameAnchor:SetBackdropBorderColor(1, 0, 0, 1)
 			WatchFrameAnchor:SetBackdropColor(unpack(C.media.overlay_color))
 			WatchFrameAnchor.iborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))
-			WatchFrameAnchor.oborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))			
+			WatchFrameAnchor.oborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))	
 		else
 			WatchFrameAnchor:SetBackdropBorderColor(0, 0, 0, 0)
 			WatchFrameAnchor:SetBackdropColor(0, 0, 0, 0)
 			WatchFrameAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
-			WatchFrameAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)			
+			WatchFrameAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)		
+		end
+	end
+	
+	if self == BuffsAnchor then
+		if enable then
+			BuffsAnchor:SetBackdropBorderColor(1, 0, 0, 1)
+			BuffsAnchor:SetBackdropColor(unpack(C.media.overlay_color))
+			BuffsAnchor.iborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))
+			BuffsAnchor.oborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))	
+			BuffsAnchor.text:SetText("Buffs Anchor")
+		else
+			BuffsAnchor:SetBackdropBorderColor(0, 0, 0, 0)
+			BuffsAnchor:SetBackdropColor(0, 0, 0, 0)
+			BuffsAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
+			BuffsAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)
+			BuffsAnchor.text:SetText("")			
 		end
 	end
 	
