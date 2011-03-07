@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if C.chat.enable ~= true then return end
+if not C.chat.enable == true then return end
 
 ----------------------------------------------------------------------------------------
 --	Colors links in Battle.net whispers(RealLinks by p3lim)

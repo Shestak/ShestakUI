@@ -1,8 +1,8 @@
+local T, C, L = unpack(select(2, ...))
+
 ----------------------------------------------------------------------------------------
 --	Reskin Blizzard windows(by Tukz and Co)
 ----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
-
 local SkinBlizzUI = CreateFrame("Frame")
 SkinBlizzUI:RegisterEvent("ADDON_LOADED")
 SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)

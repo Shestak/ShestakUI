@@ -1,9 +1,9 @@
 ﻿local T, C, L = unpack(select(2, ...))
-----------------------------------------------------------------------------------------
---	Raid Utility by Elv22
-----------------------------------------------------------------------------------------
-if C.misc.raid_tools ~= true then return end
+if not C.misc.raid_tools == true then return end
 
+----------------------------------------------------------------------------------------
+--	Raid Utility(by Elv22)
+----------------------------------------------------------------------------------------
 -- Create main frame
 local RaidUtilityPanel = CreateFrame("Frame", "RaidUtilityPanel", UIParent)
 RaidUtilityPanel:CreatePanel("Transparent", 170, 125, "TOP", UIParent, "TOP", -300, 127)

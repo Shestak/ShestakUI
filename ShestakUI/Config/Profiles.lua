@@ -1,4 +1,6 @@
-﻿----------------------------------------------------------------------------------------
+﻿local T, C, L = unpack(select(2, ...))
+
+----------------------------------------------------------------------------------------
 --	ShestakUI personal configuration file
 --	BACKUP THIS FILE BEFORE UPDATING!
 --	ATTENTION: When saving changes to a file encoded file should be in UTF8
@@ -15,7 +17,6 @@
 --		C["position"].bottom_bars = {"BOTTOM", UIParent, "BOTTOM", 2, 8}
 -- end
 ----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Per Class Config (overwrite general)

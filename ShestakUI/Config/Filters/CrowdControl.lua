@@ -1,14 +1,13 @@
+local T, C, L = unpack(select(2, ...))
+if not (C.unitframe.enable == true or C.unitframe.show_arena == true) then return end
+
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
 --	Example : Incinerate Flesh from Lord Jaraxxus -> http://www.wowhead.com/?spell=67049
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
-if not (C.unitframe.enable == true or C.unitframe.show_arena == true) then return end
-
 T.ArenaControl = function()
 	return {
-		-- Spell Name			Priority (higher = more priority)
 		-- Crowd Control
 		[GetSpellInfo(33786)] 	= 3, 	-- Cyclone
 		[GetSpellInfo(2637)] 	= 3,	-- Hibernate

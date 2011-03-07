@@ -1,8 +1,8 @@
-﻿----------------------------------------------------------------------------------------
+﻿local T, C, L = unpack(select(2, ...))
+
+----------------------------------------------------------------------------------------
 --	First Time Launch and On Login file
 ----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
-
 local function InstallUI()
 	-- Don't need to set CVar multiple time
 	SetCVar("screenshotQuality", 8)

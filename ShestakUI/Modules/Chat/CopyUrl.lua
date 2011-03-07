@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.chat.enable ~= true then return end
+if not C.chat.enable == true then return end
 
 local SetItemRef_orig = SetItemRef
 function ReURL_SetItemRef(link, text, button, chatFrame)

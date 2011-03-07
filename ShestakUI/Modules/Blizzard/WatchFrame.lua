@@ -1,5 +1,8 @@
 local T, C, L = unpack(select(2, ...))
 
+----------------------------------------------------------------------------------------
+--	Move WatchFrame by Tukz
+----------------------------------------------------------------------------------------
 local UIWatchFrame = CreateFrame("Frame", "UIWatchFrame", UIParent)
 UIWatchFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 

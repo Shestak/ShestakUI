@@ -1,6 +1,7 @@
 ﻿local T, C, L = unpack(select(2, ...))
+
 ----------------------------------------------------------------------------------------
---	Based on aLoad
+--	Based on aLoad(by Fernir)
 ----------------------------------------------------------------------------------------
 local loadf = CreateFrame("Frame", "aLoadFrame", UIParent)
 loadf:Width(400)

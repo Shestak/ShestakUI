@@ -1,8 +1,9 @@
-﻿----------------------------------------------------------------------------------------
+﻿local T, C, L = unpack(select(2, ...))
+
+----------------------------------------------------------------------------------------
 --	LiteStats configuration file
 --	BACKUP YOUR CHANGES TO THIS FILE BEFORE UPDATING!
 ----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
 LPSTAT_FONT = {
 	font = C.font.stats_font,				-- Path to your font
 	color = {1, 1, 1},						-- {red,green,blue} or "CLASS"

@@ -1,9 +1,9 @@
-----------------------------------------------------------------------------------------
---	BattlefieldMinimap style
-----------------------------------------------------------------------------------------
 local T, C, L = unpack(select(2, ...))
 if not C.map.bg_map_stylization == true then return end
 
+----------------------------------------------------------------------------------------
+--	BattlefieldMinimap style
+----------------------------------------------------------------------------------------
 local bm = CreateFrame("Frame")
 bm:RegisterEvent("ADDON_LOADED")
 bm:SetScript("OnEvent", function(self, event, addon)

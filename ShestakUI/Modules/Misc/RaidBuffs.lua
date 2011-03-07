@@ -1,9 +1,9 @@
-----------------------------------------------------------------------------------------
---	Raid buffs on player(by Elv22)
-----------------------------------------------------------------------------------------
 local T, C, L = unpack(select(2, ...))
 if not C.reminder.raid_buffs_enable == true then return end
 
+----------------------------------------------------------------------------------------
+--	Raid buffs on player(by Elv22)
+----------------------------------------------------------------------------------------
 -- Locals
 local flaskbuffs = T.ReminderRaidBuffs["Flask"]
 local battleelixirbuffs = T.ReminderRaidBuffs["BattleElixir"]

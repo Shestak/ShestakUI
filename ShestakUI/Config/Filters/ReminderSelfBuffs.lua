@@ -1,3 +1,6 @@
+local T, C, L = unpack(select(2, ...))
+if not C.reminder.solo_buffs_enable == true then return end
+
 ----------------------------------------------------------------------------------------
 --[[------------------------------------------------------------------------------------
 	Spell Reminder Arguments
@@ -24,9 +27,6 @@
 	
 	For every group created a new frame is created, it's a lot easier this way.
 ]]-------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
-if not C.reminder.solo_buffs_enable == true then return end
-
 T.ReminderSelfBuffs = {
 	PRIEST = {
 		[1] = {	-- Inner Fire/Will group

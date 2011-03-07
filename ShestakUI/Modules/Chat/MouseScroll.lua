@@ -1,10 +1,10 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if C.chat.enable ~= true then return end
+if not C.chat.enable == true then return end
 
 ----------------------------------------------------------------------------------------
 --	Chat Scroll Module
 ----------------------------------------------------------------------------------------
-local ScrollLines = 1 -- set the jump when a scroll is done
+local ScrollLines = 1
 function FloatingChatFrame_OnMouseScroll(self, delta)
 	if delta < 0 then
 		if IsShiftKeyDown() then

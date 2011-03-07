@@ -1,5 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if not (C.tooltip.enable == true and C.tooltip.achievements == true) then return end
+
 ----------------------------------------------------------------------------------------
 --	Your achievement status in tooltip(Enhanced Achievements by Syzgyn)
 ----------------------------------------------------------------------------------------

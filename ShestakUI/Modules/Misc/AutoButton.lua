@@ -1,9 +1,9 @@
 local T, C, L = unpack(select(2, ...))
-----------------------------------------------------------------------------------------
---	Autobar by Elv22
-----------------------------------------------------------------------------------------
 if not C.misc.quest_auto_button == true then return end
 
+----------------------------------------------------------------------------------------
+--	AutoButton for used items(by Elv22)
+----------------------------------------------------------------------------------------
 local Items = {
 	39213,	-- Massive Seaforium Charge (Strand of the Ancients)
 	47030,	-- Huge Seaforium Bombs (Isle of Conquest)

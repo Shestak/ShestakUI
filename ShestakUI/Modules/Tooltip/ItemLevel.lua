@@ -1,5 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if not (C.tooltip.enable == true and C.tooltip.average_lvl == true) then return end
+
 ----------------------------------------------------------------------------------------
 --	Average item level(AiL by havoc74)
 ----------------------------------------------------------------------------------------

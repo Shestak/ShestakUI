@@ -1,9 +1,9 @@
-----------------------------------------------------------------------------------------
---	Chat Bubbles(by Elv22 or nightcracker)
-----------------------------------------------------------------------------------------
 local T, C, L = unpack(select(2, ...))
 if C.chat.bubbles ~= true or (IsAddOnLoaded("BossEncounter2")) then return end
 
+----------------------------------------------------------------------------------------
+--	Chat Bubbles(by Elv22 or nightcracker)
+----------------------------------------------------------------------------------------
 local chatbubblehook = CreateFrame("Frame", nil, UIParent)
 local noscalemult = T.mult * C.general.uiscale
 local tslu = 0

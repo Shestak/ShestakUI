@@ -1,9 +1,9 @@
 local T, C, L = unpack(select(2, ...))
+if C.misc.announce_interrupt ~= true then return end
+
 ----------------------------------------------------------------------------------------
 --	Announce your interrupts(by Elv22) or enemy drinking(by Duffed)
 ----------------------------------------------------------------------------------------
-if C.misc.announce_interrupt ~= true then return end
-
 local interrupt_announce = CreateFrame("Frame")
 interrupt_announce:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 interrupt_announce:SetScript("OnEvent", function(self, _, _, event, _, sourceName, _, _, destName, _, _, _, _, spellID, spellName)

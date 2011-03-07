@@ -1,9 +1,9 @@
 ﻿local T, C, L = unpack(select(2, ...))
+if not C.raidcooldown.enable == true then return end
+
 ----------------------------------------------------------------------------------------
 --	Raid cooldowns(alRaidCD by Allez)
 ----------------------------------------------------------------------------------------
-if not C.raidcooldown.enable == true then return end
-
 local show = {
 	raid = C.raidcooldown.show_inraid,
 	party = C.raidcooldown.show_inparty,

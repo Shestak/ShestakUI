@@ -1,9 +1,9 @@
-----------------------------------------------------------------------------------------
---	BigWigs skin(by Affli)
-----------------------------------------------------------------------------------------
 local T, C, L = unpack(select(2, ...))
 if not C.skins.bigwigs == true then return end
 
+----------------------------------------------------------------------------------------
+--	BigWigs skin(by Affli)
+----------------------------------------------------------------------------------------
 local classcolor = true			-- Classcolored bars
 local skinrange = true			-- Skin distance window
 local disablescaling = true		-- Disables bar scaling (including emphasized bars)

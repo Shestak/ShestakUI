@@ -1,9 +1,9 @@
-----------------------------------------------------------------------------------------
---	Based on caelNamePlates
-----------------------------------------------------------------------------------------
 local T, C, L = unpack(select(2, ...))
 if not C.nameplate.enable == true then return end
 
+----------------------------------------------------------------------------------------
+--	Based on caelNamePlates(by Caellian)
+----------------------------------------------------------------------------------------
 local caelNamePlates = CreateFrame("Frame", nil, UIParent)
 caelNamePlates:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
 SetCVar("bloatthreat", 0)

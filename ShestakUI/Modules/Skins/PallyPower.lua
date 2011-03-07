@@ -1,9 +1,9 @@
 local T, C, L = unpack(select(2, ...))
+if not C.skins.pallypower == true then return end
+
 ----------------------------------------------------------------------------------------
 --	By MrRuben5
 ----------------------------------------------------------------------------------------
-if not C.skins.pallypower == true then return end
-
 local PPSkin = CreateFrame("Frame")
 PPSkin:RegisterEvent("PLAYER_LOGIN")
 PPSkin:SetScript("OnEvent", function(self, event, addon)

@@ -1,9 +1,9 @@
 ﻿local T, C, L = unpack(select(2, ...))
-----------------------------------------------------------------------------------------
---	Based on Doom Cooldown Pulse, editor Affli
-----------------------------------------------------------------------------------------
 if not C.pulsecooldown.enable == true then return end
 
+----------------------------------------------------------------------------------------
+--	Based on Doom Cooldown Pulse(by Woffle of Dark Iron, editor Affli)
+----------------------------------------------------------------------------------------
 local noscalemult = T.mult * C.general.uiscale
 local fadeInTime, fadeOutTime, maxAlpha, animScale, iconSize, holdTime
 local cooldowns, animating, watching = { }, { }, { }

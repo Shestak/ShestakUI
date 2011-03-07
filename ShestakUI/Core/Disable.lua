@@ -1,8 +1,8 @@
+local T, C, L = unpack(select(2, ...))
+
 ----------------------------------------------------------------------------------------
 --	Prevent users config errors
 ----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
-
 if C.actionbar.rightbars > 3 then
 	C.actionbar.rightbars = 3
 end

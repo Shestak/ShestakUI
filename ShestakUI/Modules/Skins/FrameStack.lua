@@ -1,7 +1,8 @@
-﻿----------------------------------------------------------------------------------------
+﻿local T, C, L = unpack(select(2, ...))
+
+----------------------------------------------------------------------------------------
 --	Skin FrameStackTooltip(by Elv22)
 ----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
 local FSTooltip = CreateFrame("Frame", nil, UIParent)
 
 FSTooltip:SetScript("OnUpdate", function(self, elapsed)

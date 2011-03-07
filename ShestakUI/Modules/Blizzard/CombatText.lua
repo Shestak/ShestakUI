@@ -1,5 +1,6 @@
 local T, C, L = unpack(select(2, ...))
 if C.combattext.enable ~= true then return end
+
 ----------------------------------------------------------------------------------------
 --	Combat Text(xCT by Affli @ RU-Howling Fjord)
 --	All rights reserved.

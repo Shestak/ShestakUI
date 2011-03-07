@@ -1,9 +1,9 @@
 ﻿local T, C, L = unpack(select(2, ...))
+if not C.enemycooldown.enable == true then return end
+
 ----------------------------------------------------------------------------------------
 --	Enemy cooldowns(alEnemyCD by Allez)
 ----------------------------------------------------------------------------------------
-if not C.enemycooldown.enable == true then return end
-
 local show = {
 	none = C.enemycooldown.show_always,
 	pvp = C.enemycooldown.show_inpvp,

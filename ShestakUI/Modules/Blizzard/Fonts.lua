@@ -1,7 +1,8 @@
-﻿----------------------------------------------------------------------------------------
+﻿local T, C, L = unpack(select(2, ...))
+
+----------------------------------------------------------------------------------------
 --	Based on tekticles
 ----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
 local UIFonts = CreateFrame("Frame", nil, UIParent)
 
 local SetFont = function(obj, font, size, style, r, g, b, sr, sg, sb, sox, soy)
@@ -14,7 +15,7 @@ end
 
 UIFonts:RegisterEvent("ADDON_LOADED")
 UIFonts:SetScript("OnEvent", function(self, event, addon)
-	if addon ~= "ShestakUI" then return end
+	if addon ~= "ShestakUI" or addon == "tekticles" then return end
 	
 	local NORMAL = C.media.normal_font
 	local COMBAT = C.media.blank_font

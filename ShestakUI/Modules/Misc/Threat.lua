@@ -1,9 +1,9 @@
 ﻿local T, C, L = unpack(select(2, ...))
-----------------------------------------------------------------------------------------
---	Based on alThreatMeter
-----------------------------------------------------------------------------------------
 if not C.threat.enable == true then return end
 
+----------------------------------------------------------------------------------------
+--	Based on alThreatMeter(by Allez)
+----------------------------------------------------------------------------------------
 local spacing = 7
 
 local ThreatMeterAnchor = CreateFrame("Frame", "ThreatMeterAnchor", UIParent)

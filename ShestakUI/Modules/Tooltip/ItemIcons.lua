@@ -1,5 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if not (C.tooltip.enable == true and C.tooltip.item_icon == true) then return end
+
 ----------------------------------------------------------------------------------------
 --	Adds item icons to tooltips()
 ----------------------------------------------------------------------------------------

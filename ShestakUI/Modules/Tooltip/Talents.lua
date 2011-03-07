@@ -1,5 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if not (C.tooltip.enable == true and C.tooltip.talents == true) then return end
+
 ----------------------------------------------------------------------------------------
 --	Target Talents(TipTacTalents by Aezay)
 ----------------------------------------------------------------------------------------

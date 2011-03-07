@@ -1,8 +1,8 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if C.chat.enable ~= true then return end
+if not C.chat.enable == true then return end
 
 ----------------------------------------------------------------------------------------
---	Setup chat
+--	Style chat frame(by Tukz)
 ----------------------------------------------------------------------------------------
 local UIChat = CreateFrame("Frame")
 local _G = _G

@@ -1,9 +1,9 @@
-----------------------------------------------------------------------------------------
---	Based on tullaRange
-----------------------------------------------------------------------------------------
 local T, C, L = unpack(select(2, ...))
 if not C.actionbar.enable == true then return end
 
+----------------------------------------------------------------------------------------
+--	Based on tullaRange
+----------------------------------------------------------------------------------------
 -- Locals and speed
 local _G = _G
 local UPDATE_DELAY = 0.1
@@ -17,7 +17,8 @@ local IsUsableAction = IsUsableAction
 local HasAction = HasAction
 
 -- Main thing
-local tullaRange = CreateFrame("Frame", "tullaRange", UIParent); tullaRange:Hide()
+local tullaRange = CreateFrame("Frame", "tullaRange", UIParent)
+tullaRange:Hide()
 
 function tullaRange:Load()
 	self:SetScript("OnUpdate", self.OnUpdate)

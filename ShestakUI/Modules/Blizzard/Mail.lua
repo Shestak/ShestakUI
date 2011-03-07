@@ -1,9 +1,9 @@
 ﻿local T, C, L = unpack(select(2, ...))
+if (IsAddOnLoaded("AuctionProfitMaster") or IsAddOnLoaded("OpenAll") or IsAddOnLoaded("Postal")) then return end
+
 ----------------------------------------------------------------------------------------
 --	Grab mail in 1 button(OpenAll by Kemayo)
 ----------------------------------------------------------------------------------------
-if (IsAddOnLoaded("AuctionProfitMaster") or IsAddOnLoaded("OpenAll") or IsAddOnLoaded("Postal")) then return end
-
 local deletedelay, t = 0.5, 0
 local takingOnlyCash = false
 local button, button2, waitForMail, openAll, openAllCash, openMail, lastopened, stopOpening, onEvent, needsToWait, copper_to_pretty_money, total_cash

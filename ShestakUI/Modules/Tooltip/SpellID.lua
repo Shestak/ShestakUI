@@ -1,5 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if not (C.tooltip.enable == true and C.tooltip.spell_id == true) then return end
+
 ----------------------------------------------------------------------------------------
 --	Spell/Item IDs(idTip by silverwind)
 ----------------------------------------------------------------------------------------

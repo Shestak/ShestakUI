@@ -1,9 +1,9 @@
-----------------------------------------------------------------------------------------
---	Self buffs on player(by Tukz and Elv22)
-----------------------------------------------------------------------------------------
 local T, C, L = unpack(select(2, ...))
 if not C.reminder.solo_buffs_enable == true then return end
 
+----------------------------------------------------------------------------------------
+--	Self buffs on player(by Tukz and Elv22)
+----------------------------------------------------------------------------------------
 local tab = T.ReminderSelfBuffs[T.class]
 if not tab then return end
 

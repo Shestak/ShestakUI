@@ -1,9 +1,9 @@
-----------------------------------------------------------------------------------------
---	DBM skin(by Affli)
-----------------------------------------------------------------------------------------
 local T, C, L = unpack(select(2, ...))
 if not C.skins.dbm == true then return end
 
+----------------------------------------------------------------------------------------
+--	DBM skin(by Affli)
+----------------------------------------------------------------------------------------
 local forcebosshealthclasscolor = false		-- Forces BossHealth to be classcolored. Not recommended.
 local croprwicons = true					-- Crops blizz shitty borders from icons in RaidWarning messages
 local rwiconsize = 12						-- RaidWarning icon size. Works only if croprwicons = true

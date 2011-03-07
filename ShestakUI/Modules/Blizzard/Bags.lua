@@ -1,9 +1,9 @@
-﻿----------------------------------------------------------------------------------------
---	Based on Stuffing by Hungtar, editor Tukz
-----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
+﻿local T, C, L = unpack(select(2, ...))
 if not C.bag.enable == true then return end
 
+----------------------------------------------------------------------------------------
+--	Based on Stuffing(by Hungtar, editor Tukz)
+----------------------------------------------------------------------------------------
 local bags_BACKPACK = {0, 1, 2, 3, 4}
 local bags_BANK = {-1, 5, 6, 7, 8, 9, 10, 11}
 local BAGSFONT = C.media.pixel_font

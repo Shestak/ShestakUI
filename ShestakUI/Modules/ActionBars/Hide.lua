@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if not C.actionbar.enable == true then return end
 
 ---------------------------------------------------------------------------
--- Hide all Blizzard stuff that we don't need by Tukz
+--	Hide all Blizzard stuff that we don't need by Tukz
 ---------------------------------------------------------------------------
 
 do

@@ -1,9 +1,10 @@
 local T, C, L = unpack(select(2, ...))
+
 ----------------------------------------------------------------------------------------
 --	Action Bar button size/spacings
 ----------------------------------------------------------------------------------------
-T.buttonsize = T.Scale(C.actionbar.button_size)
-T.buttonspacing = T.Scale(C.actionbar.button_space)
+T.buttonsize = C.actionbar.button_size
+T.buttonspacing = C.actionbar.button_space
 
 ----------------------------------------------------------------------------------------
 --	Bottom bars panel
@@ -12,7 +13,7 @@ local bottombaranchor = CreateFrame("Frame", "ActionBarAnchor", UIParent)
 bottombaranchor:CreatePanel("Default", 1, 1, unpack(C.position.bottom_bars))
 bottombaranchor:Width((T.buttonsize * 12) + (T.buttonspacing * 11))
 if C.actionbar.bottombars == 2 then
-	bottombaranchor:SetHeight((T.buttonsize * 2) + T.buttonspacing)
+	bottombaranchor:Height((T.buttonsize * 2) + T.buttonspacing)
 elseif C.actionbar.bottombars == 3 then
 	if C.actionbar.split_bars == true then
 		bottombaranchor:Height((T.buttonsize * 2) + T.buttonspacing)

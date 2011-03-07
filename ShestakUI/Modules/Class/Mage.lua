@@ -1,9 +1,9 @@
-----------------------------------------------------------------------------------------
---	By Foof and Tohveli
-----------------------------------------------------------------------------------------
 local T, C, L = unpack(select(2, ...))
-if T.class ~= "MAGE" or T.level < 19 then return end
- 
+if not (T.class == "MAGE" and T.level < 19) then return end
+
+----------------------------------------------------------------------------------------
+--	Mage portals menu(by Foof and Tohveli)
+----------------------------------------------------------------------------------------
 local spells = (UnitFactionGroup("player") == "Horde") and {
 		[1] = {3567,11417},		-- Orgrimmar
 		[2] = {3563,11418},		-- Undercity
@@ -25,7 +25,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	};
 
 local f = CreateFrame("Frame", "TeleportMenu", UIParent)
-f:CreatePanel("Default", C.minimap.size, (#spells+1) * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)
+f:CreatePanel("Default", C.minimap.size, (#spells + 1) * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)
 f:SetBackdropBorderColor(0, 0, 0, 0)
 f:SetBackdropColor(0, 0, 0, 0)
 

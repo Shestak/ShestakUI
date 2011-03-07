@@ -1,9 +1,9 @@
-﻿----------------------------------------------------------------------------------------
---	By Tukz
-----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
+﻿local T, C, L = unpack(select(2, ...))
 if not C.actionbar.enable == true then return end
 
+----------------------------------------------------------------------------------------
+--	By Tukz
+----------------------------------------------------------------------------------------
 local _G = _G
 local securehandler = CreateFrame("Frame", nil, nil, "SecureHandlerBaseTemplate")
 local replace = string.gsub

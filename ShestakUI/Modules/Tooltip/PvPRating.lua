@@ -1,5 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if not (C.tooltip.enable == true and C.tooltip.arena_experience == true) then return end
+
 ----------------------------------------------------------------------------------------
 --	Arena function(ArenaExp by Fernir)
 ----------------------------------------------------------------------------------------

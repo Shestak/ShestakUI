@@ -1,8 +1,8 @@
-﻿----------------------------------------------------------------------------------------
+﻿local T, C, L = unpack(select(2, ...))
+
+----------------------------------------------------------------------------------------
 --	Temporary stuff for extras mod build around 2.9 or less to be compatible with 3.0
 ----------------------------------------------------------------------------------------
-local T, C, L = unpack(select(2, ...))
-
 -- Pixel perfect script of custom ui scale
 local mult = 768/string.match(GetCVar("gxResolution"), "%d+x(%d+)")/C.general.uiscale
 local scale = function(x)
