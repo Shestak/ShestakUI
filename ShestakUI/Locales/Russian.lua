@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not T.client == "ruRU" then return end
+if not (T.client == "ruRU") then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for ruRU client

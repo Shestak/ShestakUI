@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not T.client == "zhCN" then return end
+if not (T.client == "zhCN") then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for zhCN client (Thanks to Ianchan, nanjiqq and Mania for the translation)

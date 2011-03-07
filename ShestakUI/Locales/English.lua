@@ -1,5 +1,4 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not (T.client == "enUS" or T.client == "enGB") then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for enUS and enGB client

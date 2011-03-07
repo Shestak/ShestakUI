@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not T.client == "koKR" then return end
+if not (T.client == "koKR") then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for koKR client (Need full translation)
