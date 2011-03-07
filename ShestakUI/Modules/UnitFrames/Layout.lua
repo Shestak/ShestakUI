@@ -1010,7 +1010,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Testmode(by Fernir)
 ----------------------------------------------------------------------------------------
-SlashCmdList.TESTUF = function() 
+SlashCmdList.TESTUF = function()
 	if(oUF) then
 		for i, v in pairs(oUF.units) do
 			if not v.fff then
@@ -1036,3 +1036,18 @@ SlashCmdList.TESTUF = function()
 	end
 end
 SLASH_TESTUF1 = "/testuf"
+
+----------------------------------------------------------------------------------------
+--	Remove SET_FOCUS & CLEAR_FOCUS from menu to prevent errors
+----------------------------------------------------------------------------------------
+do
+	for k, v in pairs(UnitPopupMenus) do
+		for x, y in pairs(UnitPopupMenus[k]) do
+			if y == "SET_FOCUS" then
+				table.remove(UnitPopupMenus[k], x)
+			elseif y == "CLEAR_FOCUS" then
+				table.remove(UnitPopupMenus[k], x)
+			end
+		end
+	end
+end
