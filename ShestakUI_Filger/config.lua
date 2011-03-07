@@ -50,12 +50,6 @@ Filger_Spells = {
 			{ spellID = 5217, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stampeding Roar
 			{ spellID = 77764, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Other
-			-- Hand of Protection
-			{ spellID = 1022, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Innervate
-			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -262,7 +256,6 @@ Filger_Spells = {
 			{ spellID = 3674, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Explosive Shot
 			{ spellID = 53301, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -443,7 +436,6 @@ Filger_Spells = {
 			-- Combustion
 			{ spellID = 83853, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
-		
 		{
 			Name = "P_PROC_ICON",
 			Direction = "RIGHT",
@@ -707,7 +699,6 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 
-			-- Self
 			-- Maelstorm Weapon
 			{ spellID = 53817, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shamanistic rage
@@ -730,12 +721,6 @@ Filger_Spells = {
 			{ spellID = 2645, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Focused Insight
 			{ spellID = 77800, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Other
-			-- Hand of Protection
-			{ spellID = 1022, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Innervate
-			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -994,7 +979,6 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 
-			-- Self
 			-- Power Word: Shield
 			{ spellID = 17, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Renew
@@ -1021,12 +1005,6 @@ Filger_Spells = {
 			{ spellID = 41635, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Pain suspension
 			{ spellID = 33206, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Other
-			-- Hand of Protection
-			{ spellID = 1022, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Innervate
-			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1217,12 +1195,6 @@ Filger_Spells = {
 			{ spellID = 6229, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Soul swap
 			{ spellID = 86211, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Other
-			-- Hand of Protection
-			{ spellID = 1022, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Innervate
-			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1460,10 +1432,6 @@ Filger_Spells = {
 			{ spellID = 74002, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Cheating death
 			{ spellID = 45182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Other
-			-- Hand of Protection
-			{ spellID = 1022, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1706,8 +1674,26 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 213 },
 			
-			-- Trinkets
-
+			-- Trinkets (Temporary place to full making trinkets list)
+			-- Heart of Ignacious (Haste)(Normal)(All)
+			--{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (Haste)(Heroic)(ALl)
+			--{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Essence of the Cyclone (Crit)(Normal)(All)
+			--{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Essence of the Cyclone (Crit)(Heroic)(All)
+			--{ spellID = 92351, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Bell of Enraging Resonance (Spell)(Normal)(Caster)
+			--{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Bell of Enraging Resonance (Spell)(Heroic)(Caster)
+			--{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Volcano (Intellect)(Caster)
+			--{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Tsunami (Spirit)(Caster)
+			--{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Earthquake (Health)(Tank)
+			--{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			
 			-- Potions
 			-- Tol'vir Agility
 			{ spellID = 79633, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1747,6 +1733,12 @@ Filger_Spells = {
 			{ spellID = 68992, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shadowmeld
 			{ spellID = 58984, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			
+			-- Other
+			-- Hand of Protection
+			{ spellID = 1022, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Innervate
+			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
