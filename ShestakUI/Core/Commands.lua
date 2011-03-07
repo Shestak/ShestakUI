@@ -48,8 +48,8 @@ SLASH_ENABLE_ADDON2 = "/enable"
 ----------------------------------------------------------------------------------------
 function DisbandRaidGroup()
 	if InCombatLockdown() then return end
-	SendChatMessage(L_INFO_DISBAND, "RAID" or "PARTY")
 	if UnitInRaid("player") then
+		SendChatMessage(L_INFO_DISBAND, "RAID")
 		for i = 1, GetNumRaidMembers() do
 			local name, _, _, _, _, _, _, online = GetRaidRosterInfo(i)
 			if online and name ~= T.name then
@@ -57,6 +57,7 @@ function DisbandRaidGroup()
 			end
 		end
 	else
+		SendChatMessage(L_INFO_DISBAND, "PARTY")
 		for i = MAX_PARTY_MEMBERS, 1, -1 do
 			if GetPartyMember(i) then
 				UninviteUnit(UnitName("party"..i))

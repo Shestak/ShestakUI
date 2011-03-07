@@ -243,13 +243,13 @@ local function Shared(self, unit)
 			self.Runes = CreateFrame("Frame", nil, self)
 			self.Runes:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.Runes:Height(7)
-			self.Runes:Width(217)
+			self.Runes:SetWidth(212)
 			self.Runes:SetBackdrop(backdrop)
 			self.Runes:SetBackdropColor(0, 0, 0)
 
 			for i = 1, 6 do
 				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_Runes"..i, self)
-				self.Runes[i]:Size((217 / 6 - 0.85), 7)
+				self.Runes[i]:Size(212 / 6, 7)
 				if (i == 1) then
 					self.Runes[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
@@ -276,7 +276,7 @@ local function Shared(self, unit)
 			self.TotemBar.Destroy = true
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self)
-				self.TotemBar[i]:SetSize((214 / 4), 7)
+				self.TotemBar[i]:SetSize(214 / 4, 7)
 				if (i == 1) then
 					self.TotemBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else

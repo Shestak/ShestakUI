@@ -37,7 +37,6 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		end
 		
 		if C.unitframe.enable then
-			PlayerFrame:Kill()
 			InterfaceOptionsFrameCategoriesButton9:SetScale(0.00001)
 			InterfaceOptionsFrameCategoriesButton9:SetAlpha(0)	
 			InterfaceOptionsFrameCategoriesButton10:SetScale(0.00001)
