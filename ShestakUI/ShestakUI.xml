@@ -106,6 +106,7 @@
 	<Script file="Modules\Chat\MouseScroll.lua"/>
 	<Script file="Modules\Chat\Sounds.lua"/>
 	<Script file="Modules\Chat\TellTarget.lua"/>
+	<Script file="Modules\Chat\RealLinks.lua"/>
 	
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
