@@ -29,7 +29,7 @@ if not C.reminder.solo_buffs_enable == true then return end
 
 T.ReminderSelfBuffs = {
 	PRIEST = {
-		[1] = { -- Inner Fire/Will group
+		[1] = {	-- Inner Fire/Will group
 			["spells"] = {
 				588,	-- Inner Fire
 				73413,	-- Inner Will
@@ -40,7 +40,7 @@ T.ReminderSelfBuffs = {
 		},
 	},
 	HUNTER = {
-		[1] = { -- Aspects group
+		[1] = {	-- Aspects group
 			["spells"] = {
 				13165,	-- Aspect of the Hawk
 				20043,	-- Aspect of the Wild
@@ -93,7 +93,7 @@ T.ReminderSelfBuffs = {
 			["role"] = "Tank",
 			["instance"] = true,
 			["reversecheck"] = true,
-			["negate_reversecheck"] = 1, -- Holy paladins use RF sometimes
+			["negate_reversecheck"] = 1,	-- Holy paladins use RF sometimes
 		},
 		[3] = {	-- Auras group
 			["spells"] = {

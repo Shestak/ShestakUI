@@ -418,7 +418,7 @@ C["stats"] = {
 ----------------------------------------------------------------------------------------
 --	Error options
 ----------------------------------------------------------------------------------------
-C["error"] = {							-- http://www.wowwiki.com/WoW_Constants/Errors
+C["error"] = {	-- http://www.wowwiki.com/WoW_Constants/Errors
 	["hide"] = true,							-- Enable hide combat errors
 	["black"] = true,							-- Hide errors from black list
 	["white"] = false,							-- Show errors from white list
@@ -428,7 +428,7 @@ C["error"] = {							-- http://www.wowwiki.com/WoW_Constants/Errors
 ----------------------------------------------------------------------------------------
 --	Addons group
 ----------------------------------------------------------------------------------------
-C["addon"] = {							-- Group AddOns for fast selection
+C["addon"] = {	-- Group AddOns for fast selection
 	raid = {									-- Type /addons raid
 		"DBM-Core",
 		"DXE",
