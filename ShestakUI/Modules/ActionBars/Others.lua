@@ -44,7 +44,11 @@ end)
 local vehicle = CreateFrame("BUTTON", "VehicleButton", UIParent, "SecureActionButtonTemplate")
 vehicle:Width(T.buttonsize)
 vehicle:Height(T.buttonsize)
-vehicle:Point(unpack(C.position.vehicle_bar))
+if C.actionbar.split_bars == true and C.actionbar.rightbars ~= 3 then
+	vehicle:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
+else
+	vehicle:Point(unpack(C.position.vehicle_bar))
+end
 vehicle:SetNormalTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Vehicle.tga")
 vehicle:SetPushedTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Vehicle.tga")
 vehicle:SetHighlightTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Vehicle.tga")

@@ -172,6 +172,8 @@ local SplitBars = function()
 			ToggleBar[3]:Point("BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", T.buttonspacing, 0)
 			ToggleBar[4]:ClearAllPoints()
 			ToggleBar[4]:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
+			VehicleButton:ClearAllPoints()
+			VehicleButton:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
 			if SavedOptionsPerChar.BottomBars == 2 then
 				ToggleBarText(3, "<\n<\n<", false, true)
 				ToggleBarText(4, ">\n>\n>", false, true)
@@ -185,6 +187,8 @@ local SplitBars = function()
 			ToggleBar[3]:Point("BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", T.buttonspacing, 0)
 			ToggleBar[4]:ClearAllPoints()
 			ToggleBar[4]:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -T.buttonspacing, 0)
+			VehicleButton:ClearAllPoints()
+			VehicleButton:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -T.buttonspacing, 0)
 			if SavedOptionsPerChar.BottomBars == 2 then
 				ToggleBarText(3, ">\n>\n>", true)
 				ToggleBarText(4, "<\n<\n<", true)
@@ -309,6 +313,8 @@ for i = 1, 4 do
 		elseif i == 3 or i == 4 then
 			ToggleBar[3]:FadeIn()
 			ToggleBar[4]:FadeIn()
+			VehicleButton:ClearAllPoints()
+			VehicleButton:Point("BOTTOMRIGHT", ToggleBar[4], "BOTTOMLEFT", -T.buttonspacing, 0)
 		else
 			ToggleBar[i]:FadeIn()
 		end
@@ -323,6 +329,12 @@ for i = 1, 4 do
 		elseif i == 3 or i == 4 then
 			ToggleBar[3]:FadeOut()
 			ToggleBar[4]:FadeOut()
+			VehicleButton:ClearAllPoints()
+			if SavedOptionsPerChar.SplitBars == true then
+				VehicleButton:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -T.buttonspacing, 0)
+			else
+				VehicleButton:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -T.buttonspacing, 0)
+			end
 		else
 			ToggleBar[i]:FadeOut()
 		end
