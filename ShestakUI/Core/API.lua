@@ -315,20 +315,20 @@ end
 
 local function addapi(object)
 	local mt = getmetatable(object).__index
-	mt.Size = Size
-	mt.Width = Width
-	mt.Height = Height
-	mt.Point = Point
-	mt.CreateOverlay = CreateOverlay
-	mt.CreateBorder = CreateBorder
-	mt.SetTemplate = SetTemplate
-	mt.CreatePanel = CreatePanel
-	mt.Kill = Kill
-	mt.StyleButton = StyleButton
-	mt.SkinButton = SkinButton
-	mt.FontString = FontString
-	mt.FadeIn = FadeIn
-	mt.FadeOut = FadeOut
+	if not object.Size then mt.Size = Size end
+	if not object.Width then mt.Width = Width end
+	if not object.Height then mt.Height = Height end
+	if not object.Point then mt.Point = Point end
+	if not object.CreateOverlay then mt.CreateOverlay = CreateOverlay end
+	if not object.CreateBorder then mt.CreateBorder = CreateBorder end
+	if not object.SetTemplate then mt.SetTemplate = SetTemplate end
+	if not object.CreatePanel then mt.CreatePanel = CreatePanel end
+	if not object.Kill then mt.Kill = Kill end
+	if not object.StyleButton then mt.StyleButton = StyleButton end
+	if not object.SkinButton then mt.SkinButton = SkinButton end
+	if not object.FontString then mt.FontString = FontString end
+	if not object.FadeIn then mt.FadeIn = FadeIn end
+	if not object.FadeOut then mt.FadeOut = FadeOut end
 end
 
 local handled = {["Frame"] = true}

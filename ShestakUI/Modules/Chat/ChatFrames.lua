@@ -170,6 +170,7 @@ local function SetChatStyle(frame)
 			end
 		end)
 	end
+	
 	-- Rename combat log tab
 	if _G[chat] == _G["ChatFrame2"] then
 		FCF_SetWindowName(_G[chat], GUILD_BANK_LOG)
@@ -179,6 +180,8 @@ local function SetChatStyle(frame)
 		origs[_G[chat]] = _G[chat].AddMessage
 		_G[chat].AddMessage = AddMessage
 	end
+	
+	frame.skinned = true
 end
 
 -- Setup chatframes 1 to 10 on login

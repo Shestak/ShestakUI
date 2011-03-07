@@ -41,7 +41,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 end)
 
 -- Vehicle button
-local vehicle = CreateFrame("BUTTON", nil, UIParent, "SecureActionButtonTemplate")
+local vehicle = CreateFrame("BUTTON", "VehicleButton", UIParent, "SecureActionButtonTemplate")
 vehicle:Width(T.buttonsize)
 vehicle:Height(T.buttonsize)
 vehicle:Point(unpack(C.position.vehicle_bar))
