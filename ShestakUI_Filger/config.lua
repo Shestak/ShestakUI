@@ -235,7 +235,8 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 			
-			
+			-- 
+			{ spellID = , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},]]
 		{
 			Name = "T_DEBUFF_ICON",
@@ -385,8 +386,6 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 			
-			-- Innervate
-			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Power torrent
 			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Volcanic Destruction
@@ -859,16 +858,16 @@ Filger_Spells = {
 		},
 	},
 	["PALADIN"] = {
-		{
+		--[[{
 			Name = "P_BUFF_ICON",
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 
-			-- Innervate
-			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-		},
+			-- 
+			{ spellID = , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+		},]]
 		{
 			Name = "T_DEBUFF_ICON",
 			Direction = "RIGHT",
@@ -1567,7 +1566,8 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 			
-			
+			-- 
+			{ spellID = , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},]]
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -1640,6 +1640,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			
 			-- 
 			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 		},
@@ -1651,6 +1652,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			
 			-- 
 			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 		},
@@ -1662,6 +1664,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			
 			-- 
 			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 		},
