@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not T.class == "HUNTER" then return end
+if not (T.class == "HUNTER") then return end
 
 ----------------------------------------------------------------------------------------
 --	Hunter pet happiness announce(by Tukz)
