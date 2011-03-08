@@ -785,7 +785,13 @@ function CreateUIConfig()
 	totalreset:SetHeight(20)
 	totalreset:SetWidth(170)
 	totalreset:SetPoint("TOPLEFT", groupsBG, "BOTTOMLEFT", 0, -8)
-	totalreset:SetScript("OnClick", function(self) StaticPopup_Show("RESET_UI") UIConfig:Hide() GUIConfig = {} end)
+	totalreset:SetScript("OnClick", function(self)
+		StaticPopup_Show("RESET_UI")
+		UIConfig:Hide()
+		GUIConfig = {}
+		GUIConfigAll = {}
+		GUIConfigSettings = {}
+	end)
 	
 	if GUIConfigAll then
 		local button = CreateFrame("CheckButton", "UIConfigAllCharacters", TitleBox, "InterfaceOptionsCheckButtonTemplate")
