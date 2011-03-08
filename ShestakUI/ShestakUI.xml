@@ -11,7 +11,7 @@
 	<Script file="Locales\Chinese.lua"/>
 	<Script file="Locales\Taiwan.lua"/>
 	
-	<Script file="Config\MainConfig.lua"/>
+	<Script file="Config\Settings.lua"/>
 	<Script file="Config\Positions.lua"/>
 	<Script file="Config\Fonts.lua"/>
 	<Script file="Config\Profiles.lua"/>
@@ -26,14 +26,13 @@
 	<Include file="Libs\LiteStats\LiteStats.xml"/>
 	<Script file="Modules\UnitFrames\Colors.lua"/>
 	
-	<Script file="Config\Filters\RaidAuraWatch.lua"/>
-	<Script file="Config\Filters\EnemyCooldowns.lua"/>
-	<Script file="Config\Filters\ReminderRaidBuffs.lua"/>
-	<Script file="Config\Filters\RaidCooldowns.lua"/>
-	<Script file="Config\Filters\ReminderSelfBuffs.lua"/>
-	<Script file="Config\Filters\BlizzardErrors.lua"/>
+	<Script file="Config\Filters\Cooldowns.lua"/>
 	<Script file="Config\Filters\CrowdControl.lua"/>
-
+	<Script file="Config\Filters\Errors.lua"/>
+	<Script file="Config\Filters\Nameplates.lua"/>
+	<Script file="Config\Filters\RaidAuraWatch.lua"/>
+	<Script file="Config\Filters\Reminders.lua"/>
+	
 	<Script file="Core\Deprecated.lua"/>
 	<Script file="Core\API.lua"/>
 	<Script file="Core\Functions.lua"/>
