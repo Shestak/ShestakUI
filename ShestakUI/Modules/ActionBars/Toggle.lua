@@ -323,7 +323,6 @@ for i = 1, 4 do
 	end)
 
 	ToggleBar[i]:SetScript("OnLeave", function()
-		if InCombatLockdown() then return end
 		if i == 2 then
 			if C.actionbar.rightbars_mouseover == true then
 				ToggleBar[i]:SetAlpha(0)
@@ -332,6 +331,7 @@ for i = 1, 4 do
 				ToggleBar[i]:FadeOut()
 			end
 		elseif i == 3 or i == 4 then
+			if InCombatLockdown() then return end
 			ToggleBar[3]:FadeOut()
 			ToggleBar[4]:FadeOut()
 			VehicleButtonAnchor:ClearAllPoints()
