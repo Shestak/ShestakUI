@@ -323,6 +323,7 @@ for i = 1, 4 do
 	end)
 
 	ToggleBar[i]:SetScript("OnLeave", function()
+		if InCombatLockdown() then return end
 		if i == 2 then
 			if C.actionbar.rightbars_mouseover == true then
 				ToggleBar[i]:SetAlpha(0)
