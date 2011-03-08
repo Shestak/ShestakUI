@@ -33,9 +33,6 @@ local function Shared(self, unit)
 	-- Menu
 	self.menu = T.SpawnMenu
 	
-	-- Update all elements
-	--self:HookScript("OnShow", T.UpdateAllElements)
-	
 	-- Backdrop for every units
 	self.FrameBackdrop = CreateFrame("Frame", nil, self)
 	self.FrameBackdrop:SetTemplate("Default")
@@ -248,16 +245,14 @@ local function Shared(self, unit)
 			self.RaidDebuffs.cd:Point("TOPLEFT", 2, -2)
 			self.RaidDebuffs.cd:Point("BOTTOMRIGHT", -2, 2)
 			self.RaidDebuffs.cd:SetReverse()
-			--self.RaidDebuffs.cd.noOCC = true
+			self.RaidDebuffs.cd.noOCC = true
 		end
 
 		self.RaidDebuffs.count = T.SetFontString(self.RaidDebuffs, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.RaidDebuffs.count:Point("BOTTOMRIGHT", self.RaidDebuffs, "BOTTOMRIGHT", 2, 0)
 		self.RaidDebuffs.count:SetTextColor(1, 1, 1)
 	end
-
-	--self:RegisterEvent("PARTY_MEMBERS_CHANGED", T.UpdateAllElements)
-	--self:RegisterEvent("RAID_ROSTER_UPDATE", T.UpdateAllElements)
+	
 	return self
 end
 

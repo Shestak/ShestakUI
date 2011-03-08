@@ -37,9 +37,6 @@ local function Shared(self, unit)
 	-- Menu
 	self.menu = T.SpawnMenu
 	
-	-- Update all elements
-	--self:HookScript("OnShow", T.UpdateAllElements)
-	
 	-- Backdrop for every units
 	self.FrameBackdrop = CreateFrame("Frame", nil, self)
 	self.FrameBackdrop:SetTemplate("Default")
@@ -250,9 +247,7 @@ local function Shared(self, unit)
 			self.Power.Smooth = true
 		end
 	end
-
-	--self:RegisterEvent("PARTY_MEMBERS_CHANGED", T.UpdateAllElements)
-	--self:RegisterEvent("RAID_ROSTER_UPDATE", T.UpdateAllElements)
+	
 	return self
 end
 

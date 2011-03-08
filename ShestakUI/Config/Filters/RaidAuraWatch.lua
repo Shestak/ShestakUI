@@ -90,61 +90,62 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(91911),	-- Constricting Chains
 			-- Omintron Defense System
 			SpellName(91433),	-- Lightning Conductor
-			79504, 91535,	-- Flamethrower
-			92035, 79501,	-- Acquiring Target
+			SpellName(91535),	-- Flamethrower
+			SpellName(80161),	-- Chemical Cloud
+			SpellName(92035),	-- Acquiring Target
 			SpellName(79835),	-- Poison Soaked Shell		
-			91555, 79629,	-- Power Generator
-			80094,			-- Fixate
+			SpellName(91555),	-- Power Generator
+			SpellName(80094),	-- Fixate
 			SpellName(91521),	-- Incineration Security Measure
 			-- Maloriak
 			SpellName(77699),	-- Flash Freeze
 			SpellName(77760),	-- Biting Chill
-			77786, 92971,	-- Consuming Flames
-			92989, 78034,	-- Rend
-			78617,			-- Fixate
+			SpellName(92971),	-- Consuming Flames
+			SpellName(92989),	-- Rend
+			SpellName(78617),	-- Fixate
 			-- Atramedes
 			SpellName(92423),	-- Searing Flame
 			SpellName(92485),	-- Roaring Flame
 			SpellName(92407),	-- Sonic Breath
-			78092,			-- Tracking
+			SpellName(78092),	-- Tracking
 			-- Chimaeron
 			SpellName(82881),	-- Break
 			SpellName(89084),	-- Low Health
 			-- Nefarian
-			81114, 94073,	-- Magma
-			94128, 77827,	-- Tail Lash
+			SpellName(81114),	-- Magma
+			SpellName(94128),	-- Tail Lash
 			-- Sinestra
 			SpellName(92956),	-- Wrack
 		-- The Bastion of Twilight
 			-- Halfus Wyrmbreaker
-			83710, 86169,	-- Furious Roar
+			SpellName(83710),	-- Furious Roar
 			SpellName(39171),	-- Malevolent Strikes
 			-- Valiona & Theralion
-			86505, 92907,	-- Fabulous Flames
+			SpellName(86505),	-- Fabulous Flames
 			SpellName(86840),	-- Devouring Flames
 			SpellName(92878),	-- Blackout
 			SpellName(95639),	-- Engulfing Magic
-			92892, 92891, 92893, 92894, 93064, 92890, 92889, 86202, 88436,	-- Twilight Shift
-			88518, 86014, 92860, 92861, 92863, 92864, 92865,	-- Twilight Meteorite
+			SpellName(92892),	-- Twilight Shift
+			SpellName(92861),	-- Twilight Meteorite
 			-- Twilight Ascendant Council
-			82660,			-- Burning Blood
-			82665,			-- Heart of Ice
+			SpellName(82660),	-- Burning Blood
+			SpellName(82665),	-- Heart of Ice
 			SpellName(82762),	-- Waterlogged
 			SpellName(83099),	-- Lightning Rod
 			SpellName(92488),	-- Gravity Crush
-			83500,			-- Swirling Winds
-			83581,			-- Grounded
+			SpellName(83500),	-- Swirling Winds
+			SpellName(83581),	-- Grounded
 			SpellName(92505),	-- Frozen
 			SpellName(92511),	-- Hydro Lance
 			SpellName(92518),	-- Flame Torrent
 			SpellName(92075),	-- Gravity Core
 			-- Cho'gall
-			93187,			-- Corrupted Blood
-			82125,			-- Corruption: Malformation
-			82170,			-- Corruption: Absolute
-			93200, 81831,	-- Corruption: Sickness
-			82411, 93132,	-- Debilitating Beam
-			91317, 93365, 93366, 93367,	-- Worshipping
+			SpellName(93187),	-- Corrupted Blood
+			SpellName(82125),	-- Corruption: Malformation
+			SpellName(82170),	-- Corruption: Absolute
+			SpellName(93200),	-- Corruption: Sickness
+			SpellName(82411),	-- Debilitating Beam
+			SpellName(91317),	-- Worshipping
 			SpellName(86028),	-- Cho's Blast
 			SpellName(86029),	-- Gall's Blast
 		-- Throne of the Four Winds
@@ -157,10 +158,10 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Rohash
 			SpellName(93058),	-- Slicing Gale
 			-- Al'Akir
-			87873,			-- Static Shock
+			SpellName(87873),	-- Static Shock
 			SpellName(93260),	-- Ice Storm
-			87856, 93283,	-- Squall Line
-			88427,			-- Electrocute
+			SpellName(87856),	-- Squall Line
+			SpellName(88427),	-- Electrocute
 			SpellName(93295),	-- Lightning Rod
 		-- Other
 			SpellName(67479),	-- Impale
@@ -172,7 +173,7 @@ if C.raidframe.plugins_aura_watch == true then
 		T.ReverseTimer = {
 		-- Sinestra
 			[92956] = true,		-- Wrack
-		},
+		}
 		
 		ORD:RegisterDebuffs(T.debuffids)
 	end
