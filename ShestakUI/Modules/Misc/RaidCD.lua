@@ -193,7 +193,7 @@ local OnEvent = function(self, event, ...)
 	end
 end
 
-local addon = CreateFrame("frame")
+local addon = CreateFrame("Frame")
 addon:SetScript("OnEvent", OnEvent)
 addon:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")

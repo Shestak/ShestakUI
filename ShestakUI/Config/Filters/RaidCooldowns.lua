@@ -13,4 +13,6 @@ T.raid_spells = {
 	[29166] = 180,	-- Innervate
 	[32182] = 300,	-- Heroism
 	[2825] = 300,	-- Bloodlust
+	[80353] = 300,	-- Time Warp
+	[90355] = 300,	-- Ancient Hysteria
 }
