@@ -243,7 +243,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if (SavedOptions == nil) then SavedOptions = {} end
 	if (SavedOptionsPerChar == nil) then SavedOptionsPerChar = {} end
 	
-	if T.getscreenwidth < 1000 then
+	if T.getscreenwidth < 1024 then
 		SetCVar("useUiScale", 0)
 		StaticPopup_Show("DISABLE_UI")
 	else
@@ -251,7 +251,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		if C.general.multisampleprotect == true then
 			SetMultisampleFormat(1)
 		end
-		if C.general.uiscale > 1 then C.general.uiscale = 1 end
+		if C.general.uiscale > 1.28 then C.general.uiscale = 1 end
 		if C.general.uiscale < 0.64 then C.general.uiscale = 0.64 end
 		
 		-- Set our uiscale
