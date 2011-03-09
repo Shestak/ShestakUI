@@ -33,7 +33,7 @@ C["position"] = {
 	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 320},	-- Right bars
 	["pet_horizontal"] = {"BOTTOMRIGHT", UIParent, "BOTTOM", -175, 167},	-- Horizontal pet bar
 	["stance_bar"] = {"BOTTOMRIGHT", UIParent, "BOTTOM", -202, 139},		-- Stance/Shift/Totem bars
-	["vehicle_bar"] = {"BOTTOMRIGHT", "Bar1Holder", "BOTTOMLEFT", -3, 0},	-- Vehicle button
+	["vehicle_bar"] = {"BOTTOMRIGHT", ActionButton1, "TOPLEFT", -3, 3},		-- Vehicle button
 	-- UnitFrame positions
 	["player_buffs"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -21},		-- Player buffs
 	unitframes = {

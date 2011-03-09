@@ -14,6 +14,7 @@ if C.actionbar.rightbars < 3 then
 else
 	Bar5Holder:SetAllPoints(RightActionBarAnchor)
 end
+Bar5Holder:SetFrameStrata("LOW")
 MultiBarBottomRight:SetParent(Bar5Holder)
 
 for i = 1, 12 do

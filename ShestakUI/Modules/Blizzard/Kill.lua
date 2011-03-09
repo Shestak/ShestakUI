@@ -11,7 +11,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		if IsAddOnLoaded("ShestakUI_DPS") or IsAddOnLoaded("ShestakUI_Heal") then
 			InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
 			InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
-			CompactPartyFrame:Kill()
+			SetCVar("useCompactPartyFrames", 0)
 			CompactRaidFrameManager:Kill()
 			CompactRaidFrameContainer:Kill()
 		end

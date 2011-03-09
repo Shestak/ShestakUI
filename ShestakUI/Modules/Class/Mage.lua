@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not (T.class == "MAGE" and T.level < 19) then return end
+if T.class ~= "MAGE" or T.level < 19 then return end
 
 ----------------------------------------------------------------------------------------
 --	Mage portals menu(by Foof and Tohveli)

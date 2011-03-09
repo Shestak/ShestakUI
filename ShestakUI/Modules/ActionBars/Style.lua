@@ -198,6 +198,12 @@ local function SetupFlyoutButton()
 		if _G["SpellFlyoutButton"..i] then
 			style(_G["SpellFlyoutButton"..i])
 			_G["SpellFlyoutButton"..i]:StyleButton(true)
+			if C.actionbar.rightbars_mouseover == true then
+				SpellFlyout:HookScript("OnEnter", function(self) RightBarMouseOver(1) end)
+				SpellFlyout:HookScript("OnLeave", function(self) RightBarMouseOver(0) end)
+				_G["SpellFlyoutButton"..i]:HookScript("OnEnter", function(self) RightBarMouseOver(1) end)
+				_G["SpellFlyoutButton"..i]:HookScript("OnLeave", function(self) RightBarMouseOver(0) end)
+			end
 		end
 	end
 end
