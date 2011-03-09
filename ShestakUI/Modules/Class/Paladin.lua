@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not (T.class == "PALADIN") then return end
+if T.class ~= "PALADIN" or T.level < 3 then return end
 
 ----------------------------------------------------------------------------------------
 --	Paladin seals menu(by Foof and Tohveli)

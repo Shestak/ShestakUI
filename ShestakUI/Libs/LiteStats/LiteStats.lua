@@ -642,7 +642,6 @@ end
 if location.enabled then
 	Inject("Location", { -- height = 13, width = 113, 
 		OnLoad = function(self)
-			MiniMapWorldMapButton:Hide()
 			RegEvents(self,"ZONE_CHANGED ZONE_CHANGED_INDOORS ZONE_CHANGED_NEW_AREA PLAYER_ENTERING_WORLD")
 			-- Territory names and colors.
 			self.sanctuary = {SANCTUARY_TERRITORY, {0.41,0.8,0.94}}
