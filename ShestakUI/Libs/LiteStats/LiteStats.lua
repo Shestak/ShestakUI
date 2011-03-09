@@ -787,12 +787,15 @@ if guild.enabled then
 		end,
 		OnClick = function(self,b)
 			if b == "LeftButton" then
-				if not GuildFrame and IsInGuild() then
-					LoadAddOn("Blizzard_GuildUI") 
+				if IsInGuild() then
+					if not GuildFrame then LoadAddOn("Blizzard_GuildUI") end
+					GuildFrame_Toggle()
+					GuildFrame_TabClicked(GuildFrameTab2)
+				else
+					if not LookingForGuildFrame then LoadAddOn("Blizzard_LookingForGuildUI") end
+					if LookingForGuildFrame then LookingForGuildFrame_Toggle() end
 				end
-				GuildFrame_Toggle()
-				GuildFrame_TabClicked(GuildFrameTab2)
-			elseif b == "RightButton" then
+			elseif b == "RightButton" and IsInGuild() then
 				local s = CURRENT_GUILD_SORTING
 				SortGuildRoster(IsShiftKeyDown() and s or (IsAltKeyDown() and (s == "rank" and "note" or "rank") or s == "class" and "name" or s == "name" and "level" or s == "level" and "zone" or "class"))
 				self:GetScript("OnEnter")(self)

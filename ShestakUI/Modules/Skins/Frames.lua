@@ -78,6 +78,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"BaudErrorFrame",
 			"BaudErrorFrameListScrollBox",
 			"BaudErrorFrameDetailScrollBox",
+			"StackSplitFrame",
 		}
 		
 		local insetskins = {
@@ -221,6 +222,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"AddonSet5",
 			"AddonSet6",
 			"aLoadReload",
+			"StackSplitOkayButton",
+			"StackSplitCancelButton",
 		}
 		
 		for i = 1, getn(BlizzardButtons) do
@@ -277,6 +280,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		-- Others
 		_G["ReadyCheckListenerFrame"]:SetAlpha(0)
 		_G["ReadyCheckFrame"]:HookScript("OnShow", function(self) if UnitIsUnit("player", self.initiator) then self:Hide() end end)
+		_G["StackSplitFrame"]:GetRegions():Hide()
 	end
 	
 	-- MAC menu/option panel(by Affli)

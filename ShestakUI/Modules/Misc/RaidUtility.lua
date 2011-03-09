@@ -92,13 +92,13 @@ end)
 CreateButton("MainTankButton", RaidUtilityPanel, "SecureActionButtonTemplate", (DisbandRaidButton:GetWidth() / 2) - 2, 18, "TOPLEFT", RoleCheckButton, "BOTTOMLEFT", 0, -5, TANK, nil)
 MainTankButton:SetAttribute("type", "maintank")
 MainTankButton:SetAttribute("unit", "target")
-MainTankButton:SetAttribute("action", "set")
+MainTankButton:SetAttribute("action", "toggle")
 
 -- MainAssist Button
 CreateButton("MainAssistButton", RaidUtilityPanel, "SecureActionButtonTemplate", (DisbandRaidButton:GetWidth() / 2) - 2, 18, "TOPRIGHT", RoleCheckButton, "BOTTOMRIGHT", 0, -5, MAINASSIST, nil)
 MainAssistButton:SetAttribute("type", "mainassist")
 MainAssistButton:SetAttribute("unit", "target")
-MainAssistButton:SetAttribute("action", "set")
+MainAssistButton:SetAttribute("action", "toggle")
 
 -- Ready Check button
 CreateButton("ReadyCheckButton", RaidUtilityPanel, nil, RoleCheckButton:GetWidth() * 0.75, 18, "TOPLEFT", MainTankButton, "BOTTOMLEFT", 0, -5, READY_CHECK, nil)

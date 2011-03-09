@@ -125,8 +125,9 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(86840),	-- Devouring Flames
 			SpellName(92878),	-- Blackout
 			SpellName(95639),	-- Engulfing Magic
-			SpellName(92892),	-- Twilight Shift
-			SpellName(92861),	-- Twilight Meteorite
+			SpellName(93051),	-- Twilight Shift
+			SpellName(92886),	-- Twilight Zone
+			SpellName(88518),	-- Twilight Meteorite
 			-- Twilight Ascendant Council
 			SpellName(82660),	-- Burning Blood
 			SpellName(82665),	-- Heart of Ice
