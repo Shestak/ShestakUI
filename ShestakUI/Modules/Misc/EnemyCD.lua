@@ -1,5 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if not C.enemycooldown.enable == true then return end
+if T.patch >= string.format("%s", "4.1.0") then return end
 
 ----------------------------------------------------------------------------------------
 --	Enemy cooldowns(alEnemyCD by Allez)
