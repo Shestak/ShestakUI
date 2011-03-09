@@ -38,7 +38,7 @@ else
 	for group, options in pairs(GUIConfigSettings) do
 		if C[group] then
 			local count = 0
-			for option,value in pairs(options) do
+			for option, value in pairs(options) do
 				if C[group][option] ~= nil then
 					if C[group][option] == value then
 						GUIConfigSettings[group][option] = nil	
