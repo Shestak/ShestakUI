@@ -1,16 +1,9 @@
 local T, C, L = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
---[[
-	
-	Filger
-	Copyright (c) 2009, Nils Ruesch
-	All rights reserved.
-	Modded by Affli@RU-HowlingFjord
-	
-]]
 
-local f_s = Filger_Settings
-local db = C.font
+----------------------------------------------------------------------------------------	
+--	Filger(by Nils Ruesch, editor Affli)
+----------------------------------------------------------------------------------------
 local class = select(2, UnitClass("player"))
 local active, bars = {}, {}
 local MyUnits = {
@@ -30,7 +23,7 @@ local function OnUpdate(self, elapsed)
 		end
 	end
 	if (time < 0 and self.filter == "CD") then
-		local id = self:GetParent().Id;
+		local id = self:GetParent().Id
 		for index, value in ipairs(active[id]) do
 			local spn = GetFilgerData(value.data)
 			if (self.spellName == spn) then
@@ -39,7 +32,7 @@ local function OnUpdate(self, elapsed)
 			end
 		end
 		self:SetScript("OnUpdate", nil)
-		Update(self:GetParent());
+		Update(self:GetParent())
 	end
 end
 
@@ -263,8 +256,8 @@ function GetFilgerData(data)
 				start, duration, enabled = GetInventoryItemCooldown("player", data.slotID)
 			end
 		end
-		count = 0;
-		caster = "all";
+		count = 0
+		caster = "all"
 	elseif data.itemID then
 		filgerId = data.itemID
 		if data.filter == "CD" then
@@ -360,7 +353,7 @@ if (Filger_Spells and Filger_Spells[class]) then
 		frame:Height(Filger_Spells[class][i][1] and Filger_Spells[class][i][1].size or 20)
 		frame:Point(unpack(data.setPoint))
 
-		if (f_s.configmode) then
+		if (Filger_Settings.configmode) then
 			for j = 1, #Filger_Spells[class][i], 1 do
 				data = Filger_Spells[class][i][j]
 				if (not active[i]) then

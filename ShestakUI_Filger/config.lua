@@ -1,4 +1,5 @@
 local T, C, L = unpack(ShestakUI)
+
 Filger_Settings = {
 	configmode = false,
 }
@@ -140,6 +141,7 @@ Filger_Spells = {
 			Direction = "UP",
 			Interval = 3,
 			Mode = "BAR",
+			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Lifebloom
@@ -293,6 +295,7 @@ Filger_Spells = {
 			Direction = "UP",
 			Interval = 3,
 			Mode = "BAR",
+			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Hunter's Mark
@@ -781,6 +784,7 @@ Filger_Spells = {
 			Direction = "UP",
 			Interval = 3,
 			Mode = "BAR",
+			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Earth Shield
@@ -1067,6 +1071,7 @@ Filger_Spells = {
 			Direction = "UP",
 			Interval = 3,
 			Mode = "BAR",
+			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Renew
@@ -1286,6 +1291,7 @@ Filger_Spells = {
 			Direction = "UP",
 			Interval = 3,
 			Mode = "BAR",
+			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Corruption
@@ -1574,6 +1580,7 @@ Filger_Spells = {
 			Direction = "UP",
 			Interval = 3,
 			Mode = "BAR",
+			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
 			
 			-- Blood Plague
