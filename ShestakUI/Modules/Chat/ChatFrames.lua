@@ -141,6 +141,9 @@ local function SetChatStyle(frame)
 	_G[chat.."EditBox"]:HookScript("OnEditFocusGained", function(self) self:Show() end)
 	_G[chat.."EditBox"]:HookScript("OnEditFocusLost", function(self) self:Hide() end)
 	
+	-- Hide edit box every time we click on a tab
+	_G[chat.."Tab"]:HookScript("OnClick", function() _G[chat.."EditBox"]:Hide() end)
+	
 	-- Create our own texture for edit box
 	if C.chat.background == true then
 		local EditBoxBackground = CreateFrame("Frame", "ChatEditBoxBackground", _G[chat.."EditBox"])

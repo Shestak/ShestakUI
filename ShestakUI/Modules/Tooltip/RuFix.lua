@@ -42,7 +42,7 @@ end
 local function UpdateTooltip(self)
 	if (not self:GetItem()) then return end
 	local tname = self:GetName()
-	for i = 1, self:NumLines() do
+	for i = 3, 15 do
 		ttext = _G[tname.."TextLeft"..i]
 		if ttext then ttext:SetText(Translate(ttext:GetText())) end
 		ttext = _G[tname.."TextRight"..i]

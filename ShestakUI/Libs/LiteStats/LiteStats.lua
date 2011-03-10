@@ -571,7 +571,7 @@ end
 ------------------------------------------
 --  Clock
 if clock.enabled then
-	Inject("Clock", { -- height = 11,
+	Inject("Clock", {
 		text = {
 			string = function()
 				return zsub(GameTime_GetTime(true),'%s*AM',clock.AM,'%s*PM',clock.PM,':',clock.colon)
@@ -640,7 +640,7 @@ end
 ------------------------------------------
 --  Location
 if location.enabled then
-	Inject("Location", { -- height = 13, width = 113, 
+	Inject("Location", {
 		OnLoad = function(self)
 			RegEvents(self,"ZONE_CHANGED ZONE_CHANGED_INDOORS ZONE_CHANGED_NEW_AREA PLAYER_ENTERING_WORLD")
 			-- Territory names and colors.
@@ -823,7 +823,7 @@ if guild.enabled then
 						GameTooltip:AddLine(string.format(col..GUILD_EXPERIENCE_DAILY, "|r |cFFFFFFFF"..ShortValueXP(dailyXP), ShortValueXP(maxDailyXP), percentDaily))
 					end
 					
-					if standingID ~= 4 then -- Not Max Rep
+					if standingID ~= 8 then -- Not Max Rep
 						barMax = barMax - barMin
 						barValue = barValue - barMin
 						barMin = 0
