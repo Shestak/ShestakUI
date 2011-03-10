@@ -798,7 +798,7 @@ local function SkinObjects(frame)
 	
 	-- Create Cast Time Text
 	cb.time = cb:CreateFontString(nil, "ARTWORK")
-	cb.time:SetPoint("RIGHT", cb, "LEFT", -1, 0)
+	cb.time:SetPoint("RIGHT", cb, "RIGHT", 3, 0)
 	cb.time:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
 	cb.time:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 	cb.time:SetTextColor(1, 1, 1)
@@ -806,7 +806,7 @@ local function SkinObjects(frame)
 	-- Create Cast Name Text
 	if C.nameplate.show_castbar_name == true then
 		cb.name = cb:CreateFontString(nil, "ARTWORK")
-		cb.name:SetPoint("TOP", cb, "BOTTOM", 0, -3)
+		cb.name:SetPoint("LEFT", cb, "LEFT", 3, 0)
 		cb.name:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
 		cb.name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 		cb.name:SetTextColor(1, 1, 1)
@@ -1062,4 +1062,7 @@ function NamePlates:PLAYER_ENTERING_WORLD()
 	SetCVar("bloatthreat", 0)
 	SetCVar("bloattest", 0)
 	SetCVar("bloatnameplates", 0)
+	if C.nameplate.overlap == true then
+		SetCVar("nameplateMotion", 0)
+	end
 end
