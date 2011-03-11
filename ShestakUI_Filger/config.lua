@@ -426,7 +426,7 @@ Filger_Spells = {
 			-- Slow
 			{ spellID = 31589, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Ignite
-			{ spellID = 11119, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 12654, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Living Bomb
 			{ spellID = 44457, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Pyroblast!
@@ -2285,7 +2285,7 @@ Filger_Spells = {
 			{ spellID = 56626, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Impact
 			{ spellID = 12355, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
-			--Improved Polymorph
+			-- Improved Polymorph
 			{ spellID = 83047, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Deep Freeze
 			{ spellID = 44572, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },

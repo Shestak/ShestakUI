@@ -231,23 +231,24 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 end)
 
 function GameTooltip_UnitColor(unit)
-    local r, g, b
+	if not unit then return end
+	local r, g, b
 
-    if UnitIsPlayer(unit) then
-        local _, class = UnitClass(unit)
-        r, g, b = RAID_CLASS_COLORS[class].r, RAID_CLASS_COLORS[class].g, RAID_CLASS_COLORS[class].b
-    elseif UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit) or UnitIsDead(unit) then
-        r, g, b = 0.6, 0.6, 0.6
-    else
-        local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
+	if UnitIsPlayer(unit) then
+		local _, class = UnitClass(unit)
+		r, g, b = RAID_CLASS_COLORS[class].r, RAID_CLASS_COLORS[class].g, RAID_CLASS_COLORS[class].b
+	elseif UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit) or UnitIsDead(unit) then
+		r, g, b = 0.6, 0.6, 0.6
+	else
+		local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
 		if reaction then
 			r, g, b = reaction[1], reaction[2], reaction[3]
 		else
 			r, g, b = 1, 1, 1
 		end
-    end
+	end
 
-    return r, g, b
+	return r, g, b
 end
 
 ----------------------------------------------------------------------------------------

@@ -171,7 +171,6 @@ local function Shared(self, unit)
 		elseif unit == "focus" or unit == "pet" then
 			self.Info:Point("LEFT", self.Health, "LEFT", 2, 0)
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
-			self:RegisterEvent("UNIT_PET", T.UpdatePetInfo)
 		elseif unit == "arenatarget" then
 			self.Info:Point("CENTER", self.Health, "CENTER", 0, 0)
 			self:Tag(self.Info, "[GetNameColor][NameArena]")
@@ -249,7 +248,7 @@ local function Shared(self, unit)
 
 			for i = 1, 6 do
 				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_Runes"..i, self)
-				self.Runes[i]:Size(212 / 6, 7)
+				self.Runes[i]:SetSize(212 / 6, 7)
 				if (i == 1) then
 					self.Runes[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
@@ -1036,18 +1035,3 @@ SlashCmdList.TESTUF = function()
 	end
 end
 SLASH_TESTUF1 = "/testuf"
-
-----------------------------------------------------------------------------------------
---	Remove SET_FOCUS & CLEAR_FOCUS from menu to prevent errors
-----------------------------------------------------------------------------------------
-do
-	for k, v in pairs(UnitPopupMenus) do
-		for x, y in pairs(UnitPopupMenus[k]) do
-			if y == "SET_FOCUS" then
-				table.remove(UnitPopupMenus[k], x)
-			elseif y == "CLEAR_FOCUS" then
-				table.remove(UnitPopupMenus[k], x)
-			end
-		end
-	end
-end

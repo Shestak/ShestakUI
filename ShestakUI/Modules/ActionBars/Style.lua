@@ -421,8 +421,8 @@ local function StyleTotemActionButton(button, index)
 	hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 	hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 	hotkey:Width(T.buttonsize - 1)
-	hotkey.ClearAllPoints = T.dummy
-	hotkey.SetPoint = T.dummy
+	--hotkey.ClearAllPoints = T.dummy
+	--hotkey.SetPoint = T.dummy
  
 	if not C.actionbar.hotkey == true then
 		hotkey:SetText("")
@@ -465,8 +465,8 @@ local function StyleTotemSpellButton(button, index)
 	hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 	hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 	hotkey:Width(T.buttonsize - 1)
-	hotkey.ClearAllPoints = T.dummy
-	hotkey.SetPoint = T.dummy
+	--hotkey.ClearAllPoints = T.dummy
+	--hotkey.SetPoint = T.dummy
  
 	if not C.actionbar.hotkey == true then
 		hotkey:SetText("")
@@ -486,9 +486,10 @@ local function StyleTotemSpellButton(button, index)
 	if not InCombatLockdown() then
 		button:Size(T.buttonsize, T.buttonsize)
 	end
-	_G[button:GetName().."Highlight"]:SetTexture(nil)
-	_G[button:GetName().."NormalTexture"]:SetTexture(nil)
-	button:StyleButton()
+	
+	_G[name.."Highlight"]:SetTexture(nil)
+	_G[name.."NormalTexture"]:SetTexture(nil)
+	button:StyleButton(true)
 end
 hooksecurefunc("MultiCastSummonSpellButton_Update", function(self) StyleTotemSpellButton(self, 0) end)
 hooksecurefunc("MultiCastRecallSpellButton_Update", function(self) StyleTotemSpellButton(self, 5) end)

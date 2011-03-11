@@ -1064,5 +1064,8 @@ function NamePlates:PLAYER_ENTERING_WORLD()
 	SetCVar("bloatnameplates", 0)
 	if C.nameplate.overlap == true then
 		SetCVar("nameplateMotion", 0)
+		InterfaceOptionsNamesPanelUnitNameplatesMotionDropDown:Kill()
+	else
+		SetCVar("nameplateMotion", 1)
 	end
 end

@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not (C.actionbar.enable == true and T.class == "SHAMAN") or C.actionbar.shapeshift_hide == true then return end
+if C.actionbar.enable ~= true or T.class ~= "SHAMAN" or C.actionbar.shapeshift_hide == true then return end
 
 ----------------------------------------------------------------------------------------
 --	Setup Totem Bar by Tukz

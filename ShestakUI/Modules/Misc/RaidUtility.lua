@@ -139,7 +139,7 @@ end
 -- Marker Holder Frame
 local MarkerFrame = CreateFrame("Frame", "MarkerFrame", WorldMarkerButton)
 MarkerFrame:SetTemplate("Transparent")
-MarkerFrame:Width(RaidUtilityPanel:GetWidth() * 0.6)
+MarkerFrame:Width(RaidUtilityPanel:GetWidth() * 0.8)
 MarkerFrame:Height(RaidUtilityPanel:GetHeight()* 1.2)
 MarkerFrame:Point("TOPLEFT", WorldMarkerButton, "BOTTOMRIGHT", 2, -2)
 MarkerFrame:Hide()
