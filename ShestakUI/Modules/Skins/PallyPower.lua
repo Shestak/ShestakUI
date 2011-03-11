@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.skins.pallypower == true then return end
+if C.skins.pallypower ~= true or T.class ~= "PALADIN" then return end
 
 ----------------------------------------------------------------------------------------
 --	By MrRuben5

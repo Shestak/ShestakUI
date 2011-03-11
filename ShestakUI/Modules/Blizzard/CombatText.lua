@@ -651,13 +651,8 @@ local StartConfigmode=function()
 	if not InCombatLockdown()then
 		for i=1,#ct.frames do
 			f=ct.frames[i]
-			f:SetBackdrop({
-				bgFile="Interface/Tooltips/UI-Tooltip-Background",
-				edgeFile="Interface/Tooltips/UI-Tooltip-Border",
-				tile=false,tileSize=0,edgeSize=2,
-				insets={left=0,right=0,top=0,bottom=0}})
-			f:SetBackdropColor(.1,.1,.1,.8)
-			f:SetBackdropBorderColor(.1,.1,.1,.5)
+			f:SetTemplate("Transparent")
+			f:SetBackdropBorderColor(1,0,0,1)
 
 			f.fs=f:CreateFontString(nil,"OVERLAY")
 			f.fs:SetFont(ct.font,ct.fontsize,ct.fontstyle)
@@ -718,6 +713,8 @@ local function EndConfigmode()
 	for i=1,#ct.frames do
 		f=ct.frames[i]
 		f:SetBackdrop(nil)
+		f.iborder:Hide()
+		f.oborder:Hide()
 		f.fs:Hide()
 		f.fs=nil
 		f.t:Hide()
