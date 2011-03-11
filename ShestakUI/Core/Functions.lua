@@ -389,6 +389,12 @@ T.PostUpdateHealth = function(health, unit, min, max)
 						health.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), T.ShortValue(min))
 					end
 				end
+			elseif (unit and unit:find("boss%d")) then
+				if C.unitframe.color_value == true then
+					health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r |cffD7BEA5-|r |cffAF5050%s|r", r * 255, g * 255, b * 255, floor(min / max * 100), T.ShortValue(min))
+				else
+					health.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), T.ShortValue(min))
+				end
 			else
 				if C.unitframe.color_value == true then
 					health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r", r * 255, g * 255, b * 255, floor(min / max * 100))

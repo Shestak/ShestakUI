@@ -100,6 +100,14 @@ local function Shared(self, unit)
 			self.Health.value:Point("RIGHT", self.Health, "RIGHT", 0, 0)
 			self.Health.value:SetJustifyH("RIGHT")
 		end
+	elseif unit == "boss" then
+		if C.unitframe.boss_on_right == true then
+			self.Health.value:Point("LEFT", self.Health, "LEFT", 2, 0)
+			self.Health.value:SetJustifyH("LEFT")
+		else
+			self.Health.value:Point("RIGHT", self.Health, "RIGHT", 0, 0)
+			self.Health.value:SetJustifyH("RIGHT")
+		end
 	else
 		self.Health.value:Point("LEFT", self.Health, "LEFT", 2, 0)
 		self.Health.value:SetJustifyH("LEFT")
@@ -150,6 +158,14 @@ local function Shared(self, unit)
 			self.Power.value:Point("RIGHT", self.Power, "RIGHT", 0, 0)
 			self.Power.value:SetJustifyH("RIGHT")
 		end
+	elseif unit == "boss" then
+		if C.unitframe.boss_on_right == true then
+			self.Power.value:Point("LEFT", self.Power, "LEFT", 2, 0)
+			self.Power.value:SetJustifyH("LEFT")
+		else
+			self.Power.value:Point("RIGHT", self.Power, "RIGHT", 0, 0)
+			self.Power.value:SetJustifyH("RIGHT")
+		end
 	elseif unit == "pet" then
 		self.Power.value:Hide()
 	else
@@ -176,6 +192,14 @@ local function Shared(self, unit)
 			self:Tag(self.Info, "[GetNameColor][NameArena]")
 		elseif unit == "arena" then
 			if C.unitframe.arena_on_right == true then
+				self.Info:Point("RIGHT", self.Health, "RIGHT", 0, 0)
+				self:Tag(self.Info, "[GetNameColor][NameMedium]")
+			else
+				self.Info:Point("LEFT", self.Health, "LEFT", 2, 0)
+				self:Tag(self.Info, "[GetNameColor][NameMedium]")
+			end
+		elseif unit == "boss" then
+			if C.unitframe.boss_on_right == true then
 				self.Info:Point("RIGHT", self.Health, "RIGHT", 0, 0)
 				self:Tag(self.Info, "[GetNameColor][NameMedium]")
 			else
@@ -630,8 +654,8 @@ local function Shared(self, unit)
 			self.Auras.initialAnchor = "BOTTOMLEFT"
 			self.Auras["growth-x"] = "RIGHT"
 			self.Auras["growth-y"] = "UP"
-			self.Auras.numDebuffs = T.Scale(16)
-			self.Auras.numBuffs = T.Scale(32)
+			self.Auras.numDebuffs = 16
+			self.Auras.numBuffs = 32
 			self.Auras:Height(165)
 			self.Auras:Width(221)
 			self.Auras.spacing = T.Scale(3)
@@ -639,7 +663,7 @@ local function Shared(self, unit)
 			self.Auras.gap = true
 			self.Auras.onlyShowPlayer = C.aura.player_aura_only
 			self.Auras.PostCreateIcon = T.PostCreateAura
-			self.Auras.PostUpdateIcon = T.PostUpdateIcon			
+			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
 			if C.unitframe.icons_combo_point == true then
 				local CPoints = {}
@@ -806,12 +830,20 @@ local function Shared(self, unit)
 				end
 			end
 			
-			if unit == "arena" then
+			if unit == "arena" or unit == "boss" then
 				self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
 				self.Castbar.Button:Height(20)
 				self.Castbar.Button:Width(20)
 				self.Castbar.Button:SetTemplate("Default")
-				self.Castbar.Button:Point("TOPRIGHT", self.Castbar, "TOPLEFT", -5, 2)
+				if unit == "boss" then
+					if C.unitframe.boss_on_right == true then
+						self.Castbar.Button:Point("TOPRIGHT", self.Castbar, "TOPLEFT", -5, 2)
+					else
+						self.Castbar.Button:Point("TOPLEFT", self.Castbar, "TOPRIGHT", 5, 2)
+					end
+				else
+					self.Castbar.Button:Point("TOPRIGHT", self.Castbar, "TOPLEFT", -5, 2)
+				end
 
 				self.Castbar.Icon = self.Castbar.Button:CreateTexture(nil, "ARTWORK")
 				self.Castbar.Icon:Point("TOPLEFT", self.Castbar.Button, 2, -2)
@@ -847,7 +879,6 @@ local function Shared(self, unit)
 		else
 			self.Trinket:Point("TOPLEFT", self, "TOPRIGHT", 5, 2)
 		end
-		--self.Trinket.bg = T.CreateTemplate(self.Trinket)
 		self.Trinket:SetTemplate("Default")
 		self.Trinket.trinketUseAnnounce = true
 		
@@ -867,6 +898,47 @@ local function Shared(self, unit)
 		self.AuraTracker.text = T.SetFontString(self.AuraTracker, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
 		self.AuraTracker.text:Point("CENTER", self.AuraTracker, 0, 0)
 		self.AuraTracker:SetScript("OnUpdate", T.AuraTrackerTime)
+	end
+	
+	if C.unitframe.show_boss and unit == "boss" then
+		self.AltPowerBar = CreateFrame("StatusBar", nil, self.Health)
+		self.AltPowerBar:SetFrameLevel(self.Health:GetFrameLevel() + 1)
+		self.AltPowerBar:Height(4)
+		self.AltPowerBar:SetStatusBarTexture(C.media.texture)
+		self.AltPowerBar:GetStatusBarTexture():SetHorizTile(false)
+		self.AltPowerBar:SetStatusBarColor(1, 0, 0)
+		self.AltPowerBar:SetPoint("LEFT")
+		self.AltPowerBar:SetPoint("RIGHT")
+		self.AltPowerBar:SetPoint("TOP", self.Health, "TOP")	
+		self.AltPowerBar:SetBackdrop({
+			bgFile = C.media.blank, 
+			edgeFile = C.media.blank, 
+			tile = false, tileSize = 0, edgeSize = T.Scale(1), 
+			insets = { left = 0, right = 0, top = 0, bottom = T.Scale(-1)}
+		})
+		self.AltPowerBar:SetBackdropColor(0, 0, 0)
+		
+		self.Auras = CreateFrame("Frame", nil, self)
+		if C.unitframe.boss_on_right == true then
+			self.Auras:Point("RIGHT", self, "LEFT", -5, 0)
+			self.Auras.initialAnchor = "RIGHT"
+			self.Auras["growth-x"] = "LEFT"
+		else
+			self.Auras:Point("LEFT", self, "RIGHT", 5, 0)
+			self.Auras.initialAnchor = "LEFT"
+			self.Auras["growth-x"] = "RIGHT"
+		end
+		self.Auras.numDebuffs = 0
+		self.Auras.numBuffs = 3
+		self.Auras:Height(31)
+		self.Auras:Width(87)
+		self.Auras.spacing = T.Scale(3)
+		self.Auras.size = T.Scale(31)
+		self.Auras.gap = true
+		self.Auras.PostCreateIcon = T.PostCreateAura
+		self.Auras.PostUpdateIcon = T.PostUpdateIcon	
+
+		self:HookScript("OnShow", T.UpdateAllElements)
 	end
 	
 	if C.raidframe.aggro_border == true and unit ~= "arenatarget" then
