@@ -2196,7 +2196,7 @@ Filger_Spells = {
 			
 			-- Hunter
 			-- Aspect of the Pack
-			{ spellID = 13159, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
+			{ spellID = 13159, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Aspect of the Cheetah
 			{ spellID = 5118, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Deterrence
