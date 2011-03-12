@@ -21,6 +21,22 @@ T.InfoTextShow = function(s)
 end
 
 ----------------------------------------------------------------------------------------
+--	Run slash command function
+----------------------------------------------------------------------------------------
+T.RunSlashCmd = function(cmd)
+    local slash, rest = cmd:match("^(%S+)%s*(.-)$")
+    for name, func in pairs(SlashCmdList) do
+        local i, slashCmd = 1
+        repeat
+            slashCmd, i = _G["SLASH_"..name..i], i + 1
+            if slashCmd == slash then
+                return true, func(rest)
+            end
+        until not slashCmd
+    end
+end
+
+----------------------------------------------------------------------------------------
 --	Number value function
 ----------------------------------------------------------------------------------------
 T.Round = function(number, decimals)
