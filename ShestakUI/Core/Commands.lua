@@ -113,9 +113,13 @@ SLASH_LUAERROR2 = "/дгфуккщк"
 ----------------------------------------------------------------------------------------
 --	Spec switching(by Monolit)
 ----------------------------------------------------------------------------------------
-SlashCmdList.SPEC = function() 
-	local spec = GetActiveTalentGroup()
-	if spec == 1 then SetActiveTalentGroup(2) elseif spec == 2 then SetActiveTalentGroup(1) end
+SlashCmdList.SPEC = function()
+	if T.level >= SHOW_TALENT_LEVEL then
+		local spec = GetActiveTalentGroup()
+		if spec == 1 then SetActiveTalentGroup(2) elseif spec == 2 then SetActiveTalentGroup(1) end
+	else
+		print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
+	end
 end
 SLASH_SPEC1 = "/ss"
 SLASH_SPEC2 = "/spec"
