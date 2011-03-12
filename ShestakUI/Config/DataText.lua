@@ -112,6 +112,7 @@ LPSTAT_CONFIG = {
 			["Очень добрые люди"] = "ОДЛ",
 			["Клан Громового Молота"] = "Громовой Молот",
 			["Защитники Тол Барада"] = "Тол Барад",
+			["Гидраксианские Повелители Вод"] = "Повелители Вод",
 		},
 		anchor_frame = "Durability", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.durability and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5

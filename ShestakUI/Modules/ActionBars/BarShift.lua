@@ -18,7 +18,7 @@ else
 	ShiftHolder:Width(T.buttonsize)
 	ShiftHolder:Height((T.buttonsize * 7) + (T.buttonspacing * 6))
 end
-ShiftHolder:SetFrameStrata("HIGH")
+ShiftHolder:SetFrameStrata("MEDIUM")
 ShiftHolder:SetMovable(true)
 ShiftHolder:SetClampedToScreen(true)
 
