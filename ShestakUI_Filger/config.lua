@@ -92,6 +92,8 @@ Filger_Spells = {
 			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bell of Enraging Resonance (Spell)
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fall of Mortality (Spirit)
+			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -468,6 +470,8 @@ Filger_Spells = {
 			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bell of Enraging Resonance (Spell)
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fall of Mortality (Spirit)
+			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -813,6 +817,8 @@ Filger_Spells = {
 			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bell of Enraging Resonance (Spell)
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fall of Mortality (Spirit)
+			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -985,6 +991,8 @@ Filger_Spells = {
 			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bell of Enraging Resonance (Spell)
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fall of Mortality (Spirit)
+			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -1147,6 +1155,8 @@ Filger_Spells = {
 			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bell of Enraging Resonance (Spell)
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fall of Mortality (Spirit)
+			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -1353,6 +1363,8 @@ Filger_Spells = {
 			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bell of Enraging Resonance (Spell)
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fall of Mortality (Spirit)
+			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
