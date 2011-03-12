@@ -20,6 +20,7 @@ local select = select
 local goodR, goodG, goodB = unpack(C.nameplate.good_color)
 local nearR, nearG, nearB = unpack(C.nameplate.near_color)
 local badR, badG, badB = unpack(C.nameplate.bad_color)
+local offset = T.mult * C.general.uiscale
 
 local isValidFrame = function(frame)
 	if frame:GetName() then	return end
@@ -137,8 +138,8 @@ local threatUpdate = function(self, elapsed)
 		
 		self.healthBar:ClearAllPoints()
 		self.healthBar:SetPoint("CENTER", self.healthBar:GetParent(), 0, 10)
-		self.healthBar:SetHeight(C.nameplate.height)
-		self.healthBar:SetWidth(C.nameplate.width)
+		self.healthBar:SetHeight(C.nameplate.height * offset)
+		self.healthBar:SetWidth(C.nameplate.width * offset)
 		
 		if CheckTarget(self) then
 			self.name:SetTextColor(1, 1, 0)
@@ -183,8 +184,8 @@ local updatePlate = function(self)
  
 	self.healthBar:ClearAllPoints()
 	self.healthBar:SetPoint("CENTER", self.healthBar:GetParent(), 0, 10)
-	self.healthBar:SetHeight(C.nameplate.height)
-	self.healthBar:SetWidth(C.nameplate.width)
+	self.healthBar:SetHeight(C.nameplate.height * offset)
+	self.healthBar:SetWidth(C.nameplate.width * offset)
 	
 	if C.nameplate.name_abbrev == true then
 		self.name:SetText(Abbrev(self.oldname:GetText()))
@@ -196,8 +197,8 @@ local updatePlate = function(self)
  
 	self.castBar:ClearAllPoints()
 	self.castBar:SetPoint("TOP", self.healthBar, "BOTTOM", 0, -8)
-	self.castBar:SetHeight(C.nameplate.height)
-	self.castBar:SetWidth(C.nameplate.width)
+	self.castBar:SetHeight(C.nameplate.height * offset)
+	self.castBar:SetWidth(C.nameplate.width * offset)
  
 	self.highlight:ClearAllPoints()
 	self.highlight:SetAllPoints(self.healthBar)
@@ -218,7 +219,7 @@ end
 
 local fixCastbar = function(self)
 	self.castbarOverlay:Hide()
-	self:SetHeight(C.nameplate.height)
+	self:SetHeight(C.nameplate.height * offset)
 	self:ClearAllPoints()
 	self:SetPoint("TOPLEFT", self.healthBar, "BOTTOMLEFT", 0, -8)
 	self:SetPoint("BOTTOMRIGHT", self.healthBar, "BOTTOMRIGHT", 0, -C.nameplate.height-8)
@@ -278,7 +279,6 @@ local createPlate = function(frame)
 	frame.oldname = nameTextRegion
 	nameTextRegion:Hide()
 	
-	local offset = UIParent:GetEffectiveScale()
 	local backdrop = {
 		bgFile = C.media.blank, 
 		edgeFile = C.media.blank, 
@@ -595,7 +595,7 @@ end
 -- Color the castbar depending on if we can interrupt or not
 local function UpdateCastbar(frame)
 	frame:ClearAllPoints()
-	frame:SetSize(C.nameplate.width, C.nameplate.height)
+	frame:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
 	frame:SetPoint("TOP", frame:GetParent().hp, "BOTTOM", 0, -8)
 	frame:GetStatusBarTexture():SetHorizTile(true)
 	if(frame.shield:IsShown()) then
@@ -699,7 +699,7 @@ local function UpdateObjects(frame)
 
 	-- Have to reposition this here so it doesnt resize after being hidden
 	frame.hp:ClearAllPoints()
-	frame.hp:SetSize(C.nameplate.width, C.nameplate.height)	
+	frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)	
 	frame.hp:SetPoint("TOP", frame, "TOP", 0, -15)
 	frame.hp:GetStatusBarTexture():SetHorizTile(true)
 	
