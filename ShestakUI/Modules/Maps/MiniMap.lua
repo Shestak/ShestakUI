@@ -236,6 +236,8 @@ local addonmenu = {
 	{text = "Omen", notCheckable = 1,
 		func = function() if IsAddOnLoaded("Omen") then ToggleFrame(Omen.Anchor) end end},
 	{text = "Boss addons", isTitle = 1, notCheckable = 1, keepShownOnClick = 1},
+	{text = "BigWigs", notCheckable = 1,
+		func = function() if IsAddOnLoaded("BigWigs") then T.RunSlashCmd("/bigwigs") end end},
 	{text = "DBM", notCheckable = 1,
 		func = function() if IsAddOnLoaded("DBM-Core") then DBM:LoadGUI() end end},
 	{text = "DXE", notCheckable = 1,
@@ -425,14 +427,7 @@ if C.general.minimap_icon == true and IsAddOnLoaded("ShestakUI_Config") then
 	iconMenuDrop = addDrop({
 		{text = L_GUI_MINIMAP_ICON_SLASH, isTitle = 1, notCheckable = 1, keepShownOnClick = 1 },
 		{text = L_GUI_MINIMAP_ICON_SPEC, notCheckable = 1,
-		func = function() 
-			local spec = GetActiveTalentGroup()
-			if spec == 1 then 
-				SetActiveTalentGroup(2) 
-			elseif spec == 2 then 
-				SetActiveTalentGroup(1) 
-			end
-		end},
+			func = function() T.RunSlashCmd("/spec") end},
 		{text = L_GUI_MINIMAP_ICON_CL, notCheckable = 1, func = function() CombatLogClearEntries() end},
 		{text = L_GUI_MINIMAP_ICON_DBM, notCheckable = 1, func = function() if IsAddOnLoaded("DBM-Core") then DBM:DemoMode() end end},
 		{text = L_GUI_MINIMAP_ICON_HEAL, notCheckable = 1, func = function()
@@ -441,11 +436,15 @@ if C.general.minimap_icon == true and IsAddOnLoaded("ShestakUI_Config") then
 			ReloadUI()
 		end},
 		{text = L_GUI_MINIMAP_ICON_DPS, notCheckable = 1,
-		func = function()
-			DisableAddOn("ShestakUI_Heal")
-			EnableAddOn("ShestakUI_DPS")
-			ReloadUI()
-		end},
-		{text = "Move same UI elements (/moveui)", notCheckable = 1, func = function() T.moving() end},
+			func = function()
+				DisableAddOn("ShestakUI_Heal")
+				EnableAddOn("ShestakUI_DPS")
+				ReloadUI()
+			end},
+		{text = "Move same UI elements (/moveui)", notCheckable = 1,
+			func = function()
+				T.RunSlashCmd("/moveui")
+				print("|cffffff00Type /moveui to disable this mode.|r")
+			end},
 	})
 end

@@ -106,7 +106,7 @@ end
 local enable = true
 local origa1, origf, origa2, origx, origy
 
-T.moving = function()
+local function moving()
 	-- Don't allow moving while in combat
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
 	
@@ -150,7 +150,7 @@ end
 
 SLASH_MOVING1 = "/moveui"
 SLASH_MOVING2 = "/ьщмугш"
-SlashCmdList.MOVING = T.moving
+SlashCmdList.MOVING = moving
 
 local protection = CreateFrame("Frame")
 protection:RegisterEvent("PLAYER_REGEN_DISABLED")
@@ -158,5 +158,5 @@ protection:SetScript("OnEvent", function(self, event)
 	if enable then return end
 	print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r")
 	enable = false
-	T.moving()
+	moving()
 end)
