@@ -930,8 +930,6 @@ Filger_Spells = {
 			-- Trinkets
 			{ slotID = 13, size = 30, filter = "CD" },
 			{ slotID = 14, size = 30, filter = "CD" },
-			-- Every Man for Himself (Human)
-			{ spellID = 59752, size = 30, filter = "CD" },
 		},
 	},
 	["PALADIN"] = {
@@ -2211,9 +2209,7 @@ Filger_Spells = {
 			{ spellID = 22812, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Nature's grasp 
 			{ spellID = 16689, size = 60, unitId = "target", caster = "all", filter = "BUFF"},
-			-- Stampeding Roar (Bear Form)
-			{ spellID = 77761, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Stampeding Roar (Cat Form)
+			-- Stampeding Roar
 			{ spellID = 77764, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Survival Instincts
 			{ spellID = 61336, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
