@@ -74,8 +74,6 @@ Filger_Spells = {
 			{ spellID = 16870, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Soul Casket (Spell)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stump of Time (Spell)
@@ -96,6 +94,8 @@ Filger_Spells = {
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lightweave (Intellect)
@@ -450,8 +450,6 @@ Filger_Spells = {
 			{ spellID = 79683, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Soul Casket (Spell)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stump of Time (Spell)
@@ -472,6 +470,8 @@ Filger_Spells = {
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lightweave (Intellect)
@@ -522,14 +522,6 @@ Filger_Spells = {
 			
 			-- Polymorph
 			{ spellID = 118, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
-			-- Repentance
-			{ spellID = 20066, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
-			-- Freezing Trap
-			{ spellID = 3355, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
-			-- Fear
-			{ spellID = 5782, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
-			-- Sap
-			{ spellID = 6770, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -803,8 +795,6 @@ Filger_Spells = {
 			{ spellID = 55277, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Soul Casket (Spell)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stump of Time (Spell)
@@ -825,6 +815,8 @@ Filger_Spells = {
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lightweave (Intellect)
@@ -975,8 +967,6 @@ Filger_Spells = {
 			{ spellID = 85433, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Soul Casket (Spell)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stump of Time (Spell)
@@ -997,6 +987,8 @@ Filger_Spells = {
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lightweave (Intellect)
@@ -1137,8 +1129,6 @@ Filger_Spells = {
 			{ spellID = 81209, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Soul Casket (Spell)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stump of Time (Spell)
@@ -1159,6 +1149,8 @@ Filger_Spells = {
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lightweave (Intellect)
@@ -1343,8 +1335,6 @@ Filger_Spells = {
 			{ spellID = 88447, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Soul Casket (Spell)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stump of Time (Spell)
@@ -1365,6 +1355,8 @@ Filger_Spells = {
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lightweave (Intellect)
