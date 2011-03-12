@@ -277,12 +277,8 @@ Filger_Spells = {
 			{ spellID = 3045, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Call of the Wild
 			{ spellID = 53434, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Berserking
-			{ spellID = 26297, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Blood Fury
 			{ spellID = 20572, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Hyperspeed Acceleration
-			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Improved Steady Shot
 			{ spellID = 53220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fire!
