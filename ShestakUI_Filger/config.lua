@@ -248,31 +248,11 @@ Filger_Spells = {
 			{ spellID = , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},]]
 		{
-			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
-			Interval = 3,
-			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
-			
-			-- Hunter's Mark
-			{ spellID = 1130, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
-			-- Marked for Death
-			{ spellID = 88691, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
-			-- Piercing Shots
-			{ spellID = 63468, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Serpent Sting
-			{ spellID = 1978, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Black Arrow
-			{ spellID = 3674, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Explosive Shot
-			{ spellID = 53301, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-		},
-		{
 			Name = "P_PROC_ICON",
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
 			
 			-- Buffs
 			-- Ready, Set, Aim...
@@ -303,6 +283,26 @@ Filger_Spells = {
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Landslide (AP)
 			{ spellID = 74245, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+		},
+		{
+			Name = "T_DEBUFF_ICON",
+			Direction = "RIGHT",
+			Interval = 3,
+			Mode = "ICON",
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			
+			-- Hunter's Mark
+			{ spellID = 1130, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
+			-- Marked for Death
+			{ spellID = 88691, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
+			-- Piercing Shots
+			{ spellID = 63468, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Serpent Sting
+			{ spellID = 1978, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Black Arrow
+			{ spellID = 3674, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Explosive Shot
+			{ spellID = 53301, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
@@ -429,7 +429,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
 			
 			-- Buffs
 			-- Winter's Chill
@@ -482,7 +482,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
 			
 			-- Arcane Blast
 			{ spellID = 36032, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
@@ -639,7 +639,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
 
 			-- Sudden Death
 			{ spellID = 52437, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -667,7 +667,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
 
 			-- Hamstring
 			{ spellID = 1715, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
@@ -952,7 +952,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
 
 			-- Buffs
 			-- Holy Shield
@@ -1007,7 +1007,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
 
 			-- Judgement of Light
 			{ spellID = 20271, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
@@ -1693,7 +1693,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
 
 			-- Unholy Force
 			{ spellID = 67383, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
