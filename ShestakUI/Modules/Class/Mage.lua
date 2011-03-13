@@ -80,6 +80,9 @@ b:SetScript("OnClick", function(self)
 			_G["TeleportMenuReagentText"]:SetText(MINIMAP_TRACKING_VENDOR_REAGENT..": [ "..GetItemCount(17031).." ] | [ "..GetItemCount(17032).." ]")
 			_G["TeleportMenu"]:Show()
 		end
+		if _G["TTMenuAddOnBackground"]:IsShown() then
+			_G["TTMenuAddOnBackground"]:Hide()
+		end
 	end
 end)
 

@@ -291,7 +291,15 @@ OpenMenuBG:EnableMouse(true)
 OpenMenuBG:RegisterForClicks("AnyUp")
 OpenMenuBG:SetFrameLevel(defaultframelevel)
 OpenMenuBG:SetFrameStrata("HIGH")
-OpenMenuBG:SetScript("OnMouseUp", function() ToggleMenu_Toggle() end)
+OpenMenuBG:SetScript("OnMouseUp", function()
+	ToggleMenu_Toggle()
+	if T.class == "MAGE" and _G["TeleportMenu"]:IsShown() then
+		_G["TeleportMenu"]:Hide()
+	end
+	if T.class == "PALADIN" and _G["SealMenu"]:IsShown() then
+		_G["SealMenu"]:Hide()
+	end
+end)
 OpenMenuBG:HookScript("OnEnter", function(self) self:FadeIn() end)
 OpenMenuBG:HookScript("OnLeave", function(self) self:FadeOut() end)
 --updateTextures(OpenMenuBG)
