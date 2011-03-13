@@ -352,7 +352,7 @@ end)
 --	GUI icon on minimap
 ----------------------------------------------------------------------------------------
 if C.general.minimap_icon == true and IsAddOnLoaded("ShestakUI_Config") then
-	local menuIcon = CreateFrame("Button", "GUIButton", Minimap)
+	local menuIcon = CreateFrame("Button", "GUIButton", UIParent)
 	menuIcon:SetTemplate("Transparent")
 	menuIcon:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 	menuIcon:Width(20)
@@ -441,10 +441,6 @@ if C.general.minimap_icon == true and IsAddOnLoaded("ShestakUI_Config") then
 				EnableAddOn("ShestakUI_DPS")
 				ReloadUI()
 			end},
-		{text = "Move same UI elements (/moveui)", notCheckable = 1,
-			func = function()
-				T.RunSlashCmd("/moveui")
-				print("|cffffff00Type /moveui to disable this mode.|r")
-			end},
+		{text = "Move same UI elements (/moveui)", notCheckable = 1, func = function() T.RunSlashCmd("/moveui") end},
 	})
 end

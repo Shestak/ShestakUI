@@ -405,7 +405,11 @@ if durability.enabled then
 		OnEnter = function(self)
 			GameTooltip:SetOwner(self, durability.tip_anchor, durability.tip_x, durability.tip_y)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(DURABILITY,tthead.r,tthead.g,tthead.b)
+			if C.tooltip.average_lvl == true then
+				GameTooltip:AddLine(DURABILITY,tthead.r,tthead.g,tthead.b)
+			else
+				GameTooltip:AddDoubleLine(DURABILITY,format(ITEM_LEVEL,GetAverageItemLevel()),tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
+			end
 			GameTooltip:AddLine' '
 			local nodur, totalcost = true, 0
 			for slot, string in gmatch("1HEAD3SHOULDER5CHEST6WAIST7LEGS8FEET9WRIST10HANDS16MAINHAND17SECONDARYHAND18RANGED","(%d+)([^%d]+)") do
@@ -498,7 +502,7 @@ if gold.enabled then
 			GameTooltip:AddLine(L"Server Gold",ttsubh.r,ttsubh.g,ttsubh.b)
 			local total = 0
 			for char, conf in pairs(SavedStats[realm]) do
-				if conf.Gold and conf.Gold > 1 then
+				if conf.Gold and conf.Gold > 99 then
 					GameTooltip:AddDoubleLine(char, formatgold(1, conf.Gold),1,1,1,1,1,1)
 					total = total + conf.Gold
 				end
@@ -865,7 +869,7 @@ end
 --	Friends
 if friends.enabled then
 	Inject("Friends", {
-		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN FRIENDLIST_UPDATE PARTY_MEMBERS_CHANGED") end,
+		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED PARTY_MEMBERS_CHANGED") end,
 		OnEvent = function(self, event)
 			if event ~= "PARTY_MEMBERS_CHANGED" then
 				local numBNetTotal, numBNetOnline = BNGetNumFriends()
@@ -1167,8 +1171,8 @@ if experience.enabled then
 			or sub == "levelrate" and short(UnitXP(P) / (playedlevel + GetTime() - playedmsg) * 3600,tt)
 	 		or sub == "sessionttl" and (gained ~= 0 and fmttime((UnitXPMax(P) - UnitXP(P)) / (gained / (GetTime() - playedmsg)),t) or L"inf")
 			or sub == "levelttl" and (UnitXP(P) ~= 0 and fmttime((UnitXPMax(P) - UnitXP(P)) / (UnitXP(P) / (playedlevel + GetTime() - playedmsg)),t) or L"inf")
-			or sub == "questsleft" and (lastquest and ceil((UnitXPMax(P) - UnitXP(P)) / lastquest) or "??")
-			or sub == "killsleft" and (lastkill and ceil((UnitXPMax(P) - UnitXP(P)) / lastkill) or "??")
+			or sub == "questsleft" and (lastquest and ceil((UnitXPMax(P) - UnitXP(P)) / tonumber(lastquest)) or "??")
+			or sub == "killsleft" and (lastkill and ceil((UnitXPMax(P) - UnitXP(P)) / tonumber(lastkill)) or "??")
 			-- time played tags
 			or sub == "playedtotal" and fmttime(playedtotal + GetTime() - playedmsg,t)
 			or sub == "playedlevel" and fmttime(playedlevel + GetTime() - playedmsg,t)
@@ -1262,7 +1266,7 @@ if experience.enabled then
 							if name == UnitName(P) and realm == GetRealmName() then
 								conf.Played,player,r,g,b = floor(playedtotal+GetTime()-playedmsg),true,0.5,1,0.5
 							end
-							if conf.Played > 300 or player then -- 1hr threshold displayed
+							if conf.Played > 3600 or player then -- 1hr threshold displayed
 								GameTooltip:AddDoubleLine(format("%s-%s",name,realm), fmttime(conf.Played),r,g,b,1,1,1)
 							end
 							total = total + conf.Played
