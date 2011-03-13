@@ -28,6 +28,7 @@ local f = CreateFrame("Frame", "TeleportMenu", UIParent)
 f:CreatePanel("Default", C.minimap.size, (#spells + 1) * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)
 f:SetBackdropBorderColor(0, 0, 0, 0)
 f:SetBackdropColor(0, 0, 0, 0)
+tinsert(UISpecialFrames, "TeleportMenu")
 
 local r = CreateFrame("Frame", nil, f)
 r:CreatePanel("Transparent", C.minimap.size, 20, "BOTTOMLEFT", f, "BOTTOMLEFT", 0, 0)
