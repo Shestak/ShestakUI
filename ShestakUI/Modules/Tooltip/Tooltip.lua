@@ -67,8 +67,8 @@ end)
 aTooltip = CreateFrame("Frame", "aTooltip", UIParent)
 aTooltip:RegisterEvent("ADDON_LOADED")
 aTooltip:SetScript("OnEvent", function(self, event, addon)
-    if addon == "QuestHelper" then self.QH_found = true end
-    if addon ~= "ShestakUI" then return end
+	if addon == "QuestHelper" then self.QH_found = true end
+	if addon ~= "ShestakUI" then return end
 
 	local function GameTooltipDefault(tooltip, parent)
 		if C.tooltip.cursor == true then
@@ -150,78 +150,78 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		end
 		end)
 	end	
-		
-    local OnTooltipSetUnit = function(self)
-        local lines = self:NumLines()
-        local name, unit = self:GetUnit()
+	
+	local OnTooltipSetUnit = function(self)
+		local lines = self:NumLines()
+		local name, unit = self:GetUnit()
 
-        if not unit then return end
+		if not unit then return end
 
-        local race = UnitRace(unit)
-        local level = UnitLevel(unit)
+		local race = UnitRace(unit)
+		local level = UnitLevel(unit)
 		local levelColor = GetQuestDifficultyColor(level)
 		local classification = UnitClassification(unit)
 		local creatureType = UnitCreatureType(unit)
 
-        if level and level == -1 then
-            if classification == "worldboss" then
-                level = "|cffff0000|r"..BOSS
-            else
-                level = "|cffff0000??|r"
-            end
-        end
-        
+		if level and level == -1 then
+			if classification == "worldboss" then
+				level = "|cffff0000|r"..BOSS
+			else
+				level = "|cffff0000??|r"
+			end
+		end
+		
 		if classification == "rareelite" then classification = " R+"
 		elseif classification == "rare"  then classification = " R"
 		elseif classification == "elite" then classification = "+"
 		else classification = "" end
 		
-        if not C.tooltip.title then _G["GameTooltipTextLeft1"]:SetText(name) end
+		if not C.tooltip.title then _G["GameTooltipTextLeft1"]:SetText(name) end
 
-        if(UnitIsPlayer(unit)) then
-            if(GetGuildInfo(unit)) then
-                _G["GameTooltipTextLeft2"]:SetFormattedText("%s", GetGuildInfo(unit))
+		if(UnitIsPlayer(unit)) then
+			if(GetGuildInfo(unit)) then
+				_G["GameTooltipTextLeft2"]:SetFormattedText("%s", GetGuildInfo(unit))
 				if UnitIsInMyGuild(unit) then
 					_G["GameTooltipTextLeft2"]:SetTextColor(1, 1, 0)
 				else
 					_G["GameTooltipTextLeft2"]:SetTextColor(0, 1, 1)
 				end
-            end
+			end
 
-            local n = GetGuildInfo(unit) and 3 or 2
+			local n = GetGuildInfo(unit) and 3 or 2
 			--  thx TipTac for the fix above with color blind enabled
 			if GetCVar("colorblindMode") == "1" then n = n + 1 end
 			_G["GameTooltipTextLeft"..n]:SetFormattedText("|cff%02x%02x%02x%s|r %s", levelColor.r*255, levelColor.g*255, levelColor.b*255, level, race)
-        else
-            for i = 2, lines do
-                local line = _G["GameTooltipTextLeft"..i]
-                if not line or not line:GetText() then return end -- damn QuestHelper!
-                if (level and line:GetText():find("^"..LEVEL)) or (creatureType and line:GetText():find("^"..creatureType)) then
+		else
+			for i = 2, lines do
+				local line = _G["GameTooltipTextLeft"..i]
+				if not line or not line:GetText() then return end -- damn QuestHelper!
+				if (level and line:GetText():find("^"..LEVEL)) or (creatureType and line:GetText():find("^"..creatureType)) then
 					local r, g, b = GameTooltip_UnitColor(unit)
 					line:SetFormattedText("|cff%02x%02x%02x%s%s|r %s", levelColor.r*255, levelColor.g*255, levelColor.b*255, level, classification, creatureType or "")
 					break
-                end
-            end
-        end
+				end
+			end
+		end
 
-        if C.tooltip.target == true and UnitExists(unit.."target") then
-            local r, g, b = GameTooltip_UnitColor(unit.."target")
-            local text = ""
+		if C.tooltip.target == true and UnitExists(unit.."target") then
+			local r, g, b = GameTooltip_UnitColor(unit.."target")
+			local text = ""
 
-            if UnitIsEnemy("player", unit.."target") then
-                r, g, b = 1, 0, 0
-            elseif not UnitIsFriend("player", unit.."target") then
-                r, g, b = 1, 1, 0
-            end
+			if UnitIsEnemy("player", unit.."target") then
+				r, g, b = 1, 0, 0
+			elseif not UnitIsFriend("player", unit.."target") then
+				r, g, b = 1, 1, 0
+			end
 
-            if UnitName(unit.."target") == UnitName("player") then
-                text = "|cfffed100"..STATUS_TEXT_TARGET..":|r ".."|cffff0000> "..UNIT_YOU.." <|r"
-            else
-                text = "|cfffed100"..STATUS_TEXT_TARGET..":|r "..UnitName(unit.."target")
-            end
+			if UnitName(unit.."target") == UnitName("player") then
+				text = "|cfffed100"..STATUS_TEXT_TARGET..":|r ".."|cffff0000> "..UNIT_YOU.." <|r"
+			else
+				text = "|cfffed100"..STATUS_TEXT_TARGET..":|r "..UnitName(unit.."target")
+			end
 
-            self:AddLine(text, r, g, b)
-        end
+			self:AddLine(text, r, g, b)
+		end
 		
 		if C.tooltip.raid_icon == true then
 			local raidIndex = GetRaidTargetIndex(unit)
@@ -229,9 +229,9 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 				ricon:SetTexture("Interface\\TargetingFrame\\UI-RaidTargetingIcon_"..raidIndex)
 			end
 		end
-    end
+	end
 
-    GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
+	GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
 end)
 
 function GameTooltip_UnitColor(unit)
