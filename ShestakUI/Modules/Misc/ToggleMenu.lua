@@ -174,8 +174,8 @@ end
 
 local MenuBG = CreateFrame("Frame", "TTMenuBackground", UIParent)
 local AddonBG = CreateFrame("Frame", "TTMenuAddOnBackground", UIParent)
-MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOM", Minimap, "TOP", 0, 3)
-AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOM", MenuBG, "BOTTOM", 0, 0)
+MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 3)
+AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", MenuBG, "BOTTOMRIGHT", 0, 0)
 MenuBG:SetFrameLevel(defaultframelevel)
 MenuBG:SetFrameStrata("HIGH")
 --MenuBG:SetBackdropBorderColor(0, 0, 0, 0)
