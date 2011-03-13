@@ -123,6 +123,7 @@ if GetLocale() == "deDE" then
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "PVP-Erfahrung des Spielers im Tooltip anzeigen (Arena)"
 	L_GUI_TOOLTIP_SPELL_ID = "Zauber ID"
 	L_GUI_TOOLTIP_RAID_ICON = "Raidsymbol"
+	L_GUI_TOOLTIP_WHO_TARGETTING = "Zeige an, wer die Eihneit, die in deiner Gruppe/Raid ist, ins Ziel nimmt"
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Chat aktivieren"

@@ -123,6 +123,7 @@ if GetLocale() == "esES" or GetLocale() == "esMX" then
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Experiencia JcJ del jugador en Arenas en la descripción"
 	L_GUI_TOOLTIP_SPELL_ID = "ID del hechizo"
 	L_GUI_TOOLTIP_RAID_ICON = "Icono de banda"
+	L_GUI_TOOLTIP_WHO_TARGETTING = "Muestra quien está marcando la unidad que está en tu grupo/banda"
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Activar chat"

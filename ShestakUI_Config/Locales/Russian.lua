@@ -123,6 +123,7 @@ if GetLocale() == "ruRU" then
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "PvP достижения цели в подсказке"
 	L_GUI_TOOLTIP_SPELL_ID = "Номер заклинания"
 	L_GUI_TOOLTIP_RAID_ICON = "Метка цели рейда"
+	L_GUI_TOOLTIP_WHO_TARGETTING = "Показывать того, кто нацеливается на игрока группы/рейда"
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Включить чат"

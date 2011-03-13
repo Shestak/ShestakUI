@@ -123,6 +123,7 @@ if GetLocale() == "zhCN" then
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "在提示资讯中显示竞技场等级"
 	L_GUI_TOOLTIP_SPELL_ID = "法术ID"
 	L_GUI_TOOLTIP_RAID_ICON = "团队图标"
+	L_GUI_TOOLTIP_WHO_TARGETTING = "Display who is targetting the unit that is in your party/raid" -- Needs review
 
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "开启聊天框增强"

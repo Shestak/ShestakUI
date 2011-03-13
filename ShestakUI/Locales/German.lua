@@ -12,6 +12,7 @@ L_TOOLTIP_ACH_COMPLETE = "Dein Status: Fertig gestellt am "
 L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
 L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
+L_TOOLTIP_WHO_TARGET = "Targeted By" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"

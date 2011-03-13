@@ -123,6 +123,7 @@ if GetLocale() == "koKR" then
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Player PVP experience in arena"
 	L_GUI_TOOLTIP_SPELL_ID = "Spell ID"
 	L_GUI_TOOLTIP_RAID_ICON = "Raid icon"
+	L_GUI_TOOLTIP_WHO_TARGETTING = "Display who is targetting the unit that is in your party/raid"
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Enable chat"

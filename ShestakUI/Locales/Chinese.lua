@@ -12,6 +12,7 @@ L_TOOLTIP_ACH_COMPLETE = "你的状态: 完成 "
 L_TOOLTIP_ACH_INCOMPLETE = "你的状态: 未完成"
 L_TOOLTIP_SPELL_ID = "法术ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
+L_TOOLTIP_WHO_TARGET = "Targeted By" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"

@@ -123,6 +123,7 @@ if GetLocale() == "frFR" then
 	L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Expérience en arène"
 	L_GUI_TOOLTIP_SPELL_ID = "ID du sort"
 	L_GUI_TOOLTIP_RAID_ICON = "Icone de raid"
+	L_GUI_TOOLTIP_WHO_TARGETTING = "Display who is targetting the unit that is in your party/raid" -- Needs review
 	
 	-- Chat options
 	L_GUI_CHAT_ENABLE = "Activer le chat"

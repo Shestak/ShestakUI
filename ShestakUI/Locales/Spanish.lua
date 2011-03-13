@@ -12,6 +12,7 @@ L_TOOLTIP_ACH_COMPLETE = "Estado: Completado "
 L_TOOLTIP_ACH_INCOMPLETE = "Estado: Incompleto"
 L_TOOLTIP_SPELL_ID = "ID del hechizo:"
 L_TOOLTIP_ITEM_ID = "ID del objeto:"
+L_TOOLTIP_WHO_TARGET = "Marcado por"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disolver grupo"

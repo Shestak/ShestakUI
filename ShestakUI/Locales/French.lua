@@ -12,6 +12,7 @@ L_TOOLTIP_ACH_COMPLETE = "Votre statut : Oui "
 L_TOOLTIP_ACH_INCOMPLETE = "Votre statut : Non terminé"
 L_TOOLTIP_SPELL_ID = "ID du sort :"
 L_TOOLTIP_ITEM_ID = "ID de l'objet :"
+L_TOOLTIP_WHO_TARGET = "Targeted By" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Fin du raid"

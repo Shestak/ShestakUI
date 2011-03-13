@@ -183,6 +183,7 @@ C["tooltip"] = {
 	["spell_id"] = false,						-- Id number spells
 	["average_lvl"] = false,					-- Average items level
 	["raid_icon"] = false,						-- Raid icon
+	["who_targetting"] = false,					-- Show who is targetting the unit(in raid or party)
 }
 
 ----------------------------------------------------------------------------------------

@@ -12,6 +12,7 @@ L_TOOLTIP_ACH_COMPLETE = "Ваш статус: Получено "
 L_TOOLTIP_ACH_INCOMPLETE = "Ваш статус: Не завершено"
 L_TOOLTIP_SPELL_ID = "Номер заклинания:"
 L_TOOLTIP_ITEM_ID = "Номер предмета:"
+L_TOOLTIP_WHO_TARGET = "Выбран целью"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"
