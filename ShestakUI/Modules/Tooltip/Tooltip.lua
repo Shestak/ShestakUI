@@ -181,7 +181,11 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
         if(UnitIsPlayer(unit)) then
             if(GetGuildInfo(unit)) then
                 _G["GameTooltipTextLeft2"]:SetFormattedText("%s", GetGuildInfo(unit))
-                _G["GameTooltipTextLeft2"]:SetTextColor(0, 1, 1)
+				if UnitIsInMyGuild(unit) then
+					_G["GameTooltipTextLeft2"]:SetTextColor(1, 1, 0)
+				else
+					_G["GameTooltipTextLeft2"]:SetTextColor(0, 1, 1)
+				end
             end
 
             local n = GetGuildInfo(unit) and 3 or 2
