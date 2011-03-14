@@ -156,7 +156,7 @@ local StartTimer = function(name, spellId)
 	bar.right:SetText(FormatTime(T.raid_spells[spellId]))
 	if C.raidcooldown.show_icon == true then
 		bar.icon:SetNormalTexture(icon)
-		bar.icon:GetNormalTexture():SetTexCoord(0.07, 0.93, 0.07, 0.93)
+		bar.icon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 	bar.spell = spell
 	bar:Show()
@@ -165,8 +165,8 @@ local StartTimer = function(name, spellId)
 		bar:SetStatusBarColor(color.r, color.g, color.b)
 		bar.bg:SetVertexColor(color.r, color.g, color.b, 0.25)
 	else
-		bar:SetStatusBarColor(75/255,  175/255, 76/255)
-		bar.bg:SetVertexColor(75/255,  175/255, 76/255, 0.25)
+		bar:SetStatusBarColor(0.3, 0.7, 0.3)
+		bar.bg:SetVertexColor(0.3, 0.7, 0.3, 0.25)
 	end
 	bar:SetScript("OnUpdate", BarUpdate)
 	bar:EnableMouse(true)

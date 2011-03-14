@@ -73,7 +73,7 @@ local StartTimer = function(sID)
 	local _, _, texture = GetSpellInfo(sID)
 	local icon = CreateIcon()
 	icon.Texture:SetTexture(texture)
-	icon.Texture:SetTexCoord(0.07, 0.93, 0.07, 0.93)
+	icon.Texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	icon.endTime = GetTime() + T.enemy_spells[sID]
 	icon:Show()
 	icon:SetScript("OnUpdate", IconUpdate)

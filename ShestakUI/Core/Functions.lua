@@ -358,7 +358,7 @@ T.PostUpdateHealth = function(health, unit, min, max)
 				r, g, b = c[1], c[2], c[3]
 				health:SetStatusBarColor(r, g, b)
 			else
-				r, g, b = 75/255,  175/255, 76/255
+				r, g, b = 0.3, 0.7, 0.3
 				health:SetStatusBarColor(r, g, b)
 			end	
 		end

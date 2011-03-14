@@ -1,19 +1,6 @@
 local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Alt power bar
-----------------------------------------------------------------------------------------
-PlayerPowerBarAlt:ClearAllPoints()
-PlayerPowerBarAlt:Point("TOP", UIParent, "TOP", 0, -32)
-PlayerPowerBarAlt.ClearAllPoints = T.dummy
-PlayerPowerBarAlt.SetPoint = T.dummy
-
-TargetFramePowerBarAlt:ClearAllPoints()
-TargetFramePowerBarAlt:Point("TOP", UIParent, "TOP", 0, -52)
-TargetFramePowerBarAlt.ClearAllPoints = T.dummy
-TargetFramePowerBarAlt.SetPoint = T.dummy
-
-----------------------------------------------------------------------------------------
 --	Force readycheck warning
 ----------------------------------------------------------------------------------------
 local ShowReadyCheckHook = function(self, initiator, timeLeft)

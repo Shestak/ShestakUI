@@ -8,7 +8,7 @@ local T, C, L = unpack(select(2, ...))
 if C.raidcooldown.enable == true then
 	T.raid_spells = {
 		[20484] = 600,	-- Rebirth
-		[6203] = 1800,	-- Soulstone
+		[6203] = 900,	-- Soulstone
 		[6346] = 180,	-- Fear Ward
 		[29166] = 180,	-- Innervate
 		[32182] = 300,	-- Heroism
