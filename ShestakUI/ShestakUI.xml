@@ -79,6 +79,7 @@
 	<Script file="Modules\Misc\Mounts.lua"/>
 	<Script file="Modules\Misc\Invite.lua"/>
 	<Script file="Modules\Misc\ToggleMenu.lua"/>
+	<Script file="Modules\Misc\AltPowerBar.lua"/>
 
 	<Script file="Modules\ActionBars\Bindings.lua"/>
 	<Script file="Modules\ActionBars\Hide.lua"/>
