@@ -639,14 +639,14 @@ local function Shared(self, unit)
 			self.Debuffs.initialAnchor = "BOTTOMRIGHT"
 			self.Debuffs["growth-y"] = "UP"
 			self.Debuffs["growth-x"] = "LEFT"
-			if (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) 
+			if (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true)
 			or (T.class == "SHAMAN" and C.unitframe.plugins_totem_bar == true)
-			or (T.class == "DRUID" and C.unitframe.plugins_eclipse_bar == true) 
+			or (T.class == "DRUID" and C.unitframe.plugins_eclipse_bar == true)
 			or (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
 			or (T.class == "WARLOCK" and C.unitframe.plugins_shard_bar == true) then
-				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
+				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			else
-				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
+				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
 			end
 			
 			self.Debuffs.PostCreateIcon = T.PostCreateAura
