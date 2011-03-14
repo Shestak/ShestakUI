@@ -23,8 +23,8 @@ PlayerPowerBarAlt:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	
 -- Create the new bar
 local AltPowerBar = CreateFrame("Frame", "UIAltPowerBar", UIParent)
-AltPowerBar:SetWidth(200)
-AltPowerBar:SetHeight(30)
+AltPowerBar:SetWidth(221)
+AltPowerBar:SetHeight(31)
 AltPowerBar:Point("TOP", UIParent, "TOP", 0, -32)
 AltPowerBar:EnableMouse(true)
 AltPowerBar:SetTemplate("Default")
@@ -59,6 +59,20 @@ AltPowerBar:SetScript("OnEvent", function(self)
 	else
 		self:Hide()
 	end
+end)
+
+-- Make moveable
+AltPowerBar:SetMovable(true)
+AltPowerBar:SetUserPlaced(true)
+AltPowerBar:SetFrameStrata("HIGH")
+AltPowerBar:SetScript("OnMouseDown", function()
+	if IsAltKeyDown() or IsShiftKeyDown() then
+		AltPowerBar:ClearAllPoints()
+		AltPowerBar:StartMoving()
+	end
+end)
+AltPowerBar:SetScript("OnMouseUp", function()
+	AltPowerBar:StopMovingOrSizing()
 end)
 
 -- Update Functions
