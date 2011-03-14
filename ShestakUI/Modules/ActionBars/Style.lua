@@ -353,8 +353,8 @@ local function StyleTotemFlyout(flyout)
 	close:Point("BOTTOMLEFT", last, "TOPLEFT", 0, T.buttonspacing)
 	close:Point("BOTTOMRIGHT", last, "TOPRIGHT", 0, T.buttonspacing)
 	close:Height(T.buttonspacing * 4)
-
 	close:SetBackdropBorderColor(last:GetBackdropBorderColor())
+	
 	flyout:ClearAllPoints()
 	flyout:Point("BOTTOM", flyout.parent, "TOP", 0, T.buttonspacing)
 end
@@ -369,9 +369,9 @@ local function StyleTotemOpenButton(button, parent)
 	button:Point("BOTTOMLEFT", parent, "TOPLEFT", 0, -1)
 	button:Point("BOTTOMRIGHT", parent, "TOPRIGHT", 0, -1)
 	if not button.visibleBut then
-		button.visibleBut = CreateFrame("Frame",nil,button)
-		button.visibleBut:Height(8)
-		button.visibleBut:Width(button:GetWidth() + 2)
+		button.visibleBut = CreateFrame("Frame", nil, button)
+		button.visibleBut:Height(T.buttonspacing * 4)
+		button.visibleBut:Width(button:GetWidth())
 		button.visibleBut:SetPoint("CENTER")
 		button.visibleBut.highlight = button.visibleBut:CreateTexture(nil, "HIGHLIGHT")
 		button.visibleBut.highlight:SetTexture([[Interface\Buttons\ButtonHilight-Square]])
@@ -408,7 +408,7 @@ local function StyleTotemSlotButton(button, index)
 	button:SetBackdropBorderColor(unpack(bordercolors[((index-1) % 4) + 1]))
 	button:StyleButton()
 end
-hooksecurefunc("MultiCastSlotButton_Update", function(self, slot) StyleTotemSlotButton(self,tonumber( string.match(self:GetName(),"MultiCastSlotButton(%d)"))) end)
+hooksecurefunc("MultiCastSlotButton_Update", function(self, slot) StyleTotemSlotButton(self,tonumber(string.match(self:GetName(), "MultiCastSlotButton(%d)"))) end)
 
 -- Skin the actual totem buttons
 local function StyleTotemActionButton(button, index)
