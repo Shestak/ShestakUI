@@ -243,6 +243,13 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 			self:SetTemplate("Transparent")
 		end)
 		
+		DBM.InfoFrame:Show()
+		DBM.InfoFrame:Hide()
+
+		DBMInfoFrame:HookScript("OnShow", function(self)
+			self:SetTemplate("Transparent")
+		end)
+		
 		if croprwicons then
 			local replace = string.gsub
 			local old = RaidNotice_AddMessage
