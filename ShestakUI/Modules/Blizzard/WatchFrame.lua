@@ -95,3 +95,75 @@ UIWatchFrame:SetScript("OnEvent", function()
 		f:Show()
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Skin item buttons
+----------------------------------------------------------------------------------------
+hooksecurefunc("SetItemButtonTexture", function(button, texture)
+	if button:GetName():match("WatchFrameItem%d+") and not button.skinned then
+		local icon = _G[button:GetName().."IconTexture"]
+		local border = _G[button:GetName().."NormalTexture"]
+
+		button:Size(T.buttonsize, T.buttonsize)
+		button:SetTemplate("Default")
+
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:SetPoint("TOPLEFT", button, 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+
+		border:ClearAllPoints()
+		border:SetAllPoints()
+		border:SetTexture(nil)
+
+		button:StyleButton(false)
+
+		button.skinned = true
+	end
+end)
+
+----------------------------------------------------------------------------------------
+-- Add quest / achievement internet link
+----------------------------------------------------------------------------------------
+local linkSiteTitle = "Wowhead"
+local linkQuest = "http://www.wowhead.com/quest=%d"
+local linkAchievement = "http://www.wowhead.com/achievement=%d"
+
+_G.StaticPopupDialogs["WATCHFRAME_URL"] = {
+	text = linkSiteTitle .. " link",
+	button1 = OKAY,
+	timeout = 0,
+	whileDead = true,
+	hasEditBox = true,
+	editBoxWidth = 350,
+	OnShow = function(self, ...) self.editBox:SetFocus() end,
+	EditBoxOnEnterPressed = function(self) self:GetParent():Hide() end,
+	EditBoxOnEscapePressed = function(self) self:GetParent():Hide() end,
+}
+
+local tblDropDown = {}
+hooksecurefunc("WatchFrameDropDown_Initialize", function(self)
+	if self.type == "QUEST" then
+		tblDropDown = {
+			text = linkSiteTitle .. " link", notCheckable = true, arg1 = self.index,
+			func = function(_, watchId)
+				local logId = GetQuestIndexForWatch(watchId)
+				local _, _, _, _, _, _, _, _, questId = GetQuestLogTitle(logId)
+				local inputBox = StaticPopup_Show("WATCHFRAME_URL")
+				inputBox.editBox:SetText(linkQuest:format(questId))
+				inputBox.editBox:HighlightText()
+			end
+		}
+		UIDropDownMenu_AddButton(tblDropDown, UIDROPDOWN_MENU_LEVEL)
+	elseif self.type == "ACHIEVEMENT" then
+		tblDropDown = {
+			text = linkSiteTitle .. " link", notCheckable = true, arg1 = self.index,
+			func = function(_, id)
+				local inputBox = StaticPopup_Show("WATCHFRAME_URL")
+				inputBox.editBox:SetText(linkAchievement:format(id))
+				inputBox.editBox:HighlightText()
+			end
+		}
+		UIDropDownMenu_AddButton(tblDropDown, UIDROPDOWN_MENU_LEVEL)
+	end
+end)
+UIDropDownMenu_Initialize(WatchFrameDropDown, WatchFrameDropDown_Initialize, "MENU")
