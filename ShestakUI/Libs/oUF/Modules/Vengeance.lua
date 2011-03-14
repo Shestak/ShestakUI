@@ -51,14 +51,24 @@ local Update = function(self, event, unit)
 
 		vb:Show()
 		
-		if self.Debuffs then 
-			self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) 
+		if self.Debuffs then
+			if (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
+			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) then
+				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 33)
+			else
+				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
+			end
 		end
 	else
 		vb:Hide()
 		
-		if self.Debuffs then 
-			self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
+		if self.Debuffs then
+			if (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
+			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) then
+				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
+			else
+				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
+			end
 		end
 	end
 

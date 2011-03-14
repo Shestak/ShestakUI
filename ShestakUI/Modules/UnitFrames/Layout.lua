@@ -435,7 +435,12 @@ local function Shared(self, unit)
 		-- Vengeance bar
 		if C.unitframe.plugins_vengeance_bar == true then
 			local vengeanceBar = CreateFrame("Frame", nil, self)
-			vengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			if (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
+			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) then
+				vengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
+			else
+				vengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			end
 			vengeanceBar:Size(217, 7)
 			vengeanceBar:SetBackdrop(backdrop)
 			vengeanceBar:SetBackdropColor(0, 0, 0)
