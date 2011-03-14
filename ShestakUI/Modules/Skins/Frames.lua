@@ -281,6 +281,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ReadyCheckListenerFrame"]:SetAlpha(0)
 		_G["ReadyCheckFrame"]:HookScript("OnShow", function(self) if UnitIsUnit("player", self.initiator) then self:Hide() end end)
 		_G["StackSplitFrame"]:GetRegions():Hide()
+		_G["StaticPopup1EditBox"]:SetTemplate("Transparent")
+		_G["StaticPopup1EditBoxLeft"]:SetTexture(nil)
+		_G["StaticPopup1EditBoxMid"]:SetTexture(nil)
+		_G["StaticPopup1EditBoxRight"]:SetTexture(nil)
+		_G["StaticPopup1EditBox"]:Height(20)
 	end
 	
 	-- MAC menu/option panel(by Affli)
