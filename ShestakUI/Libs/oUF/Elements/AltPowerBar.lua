@@ -14,11 +14,11 @@ local UpdatePower = function(self, event, unit, powerType)
 
 	local barType, min = UnitAlternatePowerInfo(unit)
 	local cur = UnitPower(unit, ALTERNATE_POWER_INDEX)
-	local max = UnitPowerMax(self.unit, ALTERNATE_POWER_INDEX)
+	local max = UnitPowerMax(unit, ALTERNATE_POWER_INDEX)
 
 	altpowerbar.barType = barType
-	altpowerbar:SetValue(cur)
 	altpowerbar:SetMinMaxValues(min, max)
+	altpowerbar:SetValue(cur)
 
 	if(altpowerbar.PostUpdate) then
 		return altpowerbar:PostUpdate(min, cur, max)
