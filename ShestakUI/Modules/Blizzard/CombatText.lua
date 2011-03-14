@@ -195,6 +195,10 @@ elseif ct.myclass=="MAGE"then
 		ct.aoespam[42208]=true		-- Blizzard
 		ct.aoespam[122]=true		-- Frost Nova
 		ct.aoespam[1449]=true		-- Arcane Explosion
+		ct.aoespam[92315]=true		-- Pyroblast
+		ct.aoespam[83853]=true		-- Combustion
+		ct.aoespam[11113]=true		-- Blast Wave
+		ct.aoespam[88148]=true		-- Flamestrike void
 	end
 elseif ct.myclass=="WARRIOR"then
 	if(ct.mergeaoespam)then
@@ -1322,6 +1326,10 @@ elseif ct.myclass=="MAGE"then
 		ct.aoespam[42208]=true		-- Blizzard
 		ct.aoespam[122]=true		-- Frost Nova
 		ct.aoespam[1449]=true		-- Arcane Explosion
+		ct.aoespam[92315]=true		-- Pyroblast
+		ct.aoespam[83853]=true		-- Combustion
+		ct.aoespam[11113]=true		-- Blast Wave
+		ct.aoespam[88148]=true		-- Flamestrike void
 	end
 elseif ct.myclass=="WARRIOR"then
 	if(ct.mergeaoespam)then
