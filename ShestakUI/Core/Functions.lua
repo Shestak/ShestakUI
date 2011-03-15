@@ -438,6 +438,8 @@ end
 
 T.PostUpdateRaidHealth = function(health, unit, min, max)
 	local self = health:GetParent()
+	local power = self.Power
+	local border = self.FrameBackdrop
 	if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
 		health:SetValue(0)
 		if not UnitIsConnected(unit) then
@@ -488,12 +490,12 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 		if C.raidframe.alpha_health == true then
 			if(min / max > 0.95) then 
 				health:SetAlpha(0.6)
-				--self.Power:SetAlpha(0.6)
-				--self.FrameBackdrop:SetAlpha(0.6)
+				power:SetAlpha(0.6)
+				border:SetAlpha(0.6)
 			else
 				health:SetAlpha(1)
-				--self.Power:SetAlpha(1)
-				--self.FrameBackdrop:SetAlpha(1)
+				power:SetAlpha(1)
+				border:SetAlpha(1)
 			end
 		end
 	end
