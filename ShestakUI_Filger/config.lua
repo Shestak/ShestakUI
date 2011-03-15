@@ -51,6 +51,8 @@ Filger_Spells = {
 			{ spellID = 5217, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stampeding Roar
 			{ spellID = 77764, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stampede
+			{ spellID = 81017, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -72,6 +74,8 @@ Filger_Spells = {
 			{ spellID = 16886, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Clearcasting
 			{ spellID = 16870, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Predator's Swiftness
+			{ spellID = 69369, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
 			-- Soul Casket (Spell)
@@ -423,6 +427,8 @@ Filger_Spells = {
 			{ spellID = 543, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Improved Blink
 			{ spellID = 46989, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Blazing Speed
+			{ spellID = 31643, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -468,8 +474,6 @@ Filger_Spells = {
 			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bell of Enraging Resonance (Spell)
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fall of Mortality (Spirit)
-			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -514,6 +518,8 @@ Filger_Spells = {
 			{ spellID = 55080, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Cone of Cold
 			{ spellID = 120, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Frostfite Bolt
+			{ spellID = 44614, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1017,6 +1023,7 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
 			
+			-- Self
 			-- Repentance
 			{ spellID = 20066, size = 30, filter = "CD" },
 			-- Hand of Reckoning
@@ -1053,6 +1060,8 @@ Filger_Spells = {
 			{ spellID = 53385, size = 30, filter = "CD" },
 			-- Hammer of the Righteous
 			{ spellID = 53595, size = 30, filter = "CD" },
+			
+			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
 			-- Belt
@@ -1062,6 +1071,8 @@ Filger_Spells = {
 			-- Trinkets
 			{ slotID = 13, size = 30, filter = "CD" },
 			{ slotID = 14, size = 30, filter = "CD" },
+			-- Every Man for Himself (Human)
+			{ spellID = 59752, size = 30, filter = "CD" },
 		},
 	},
 	["PRIEST"] = {
@@ -1359,8 +1370,6 @@ Filger_Spells = {
 			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bell of Enraging Resonance (Spell)
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fall of Mortality (Spirit)
-			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -2243,6 +2252,10 @@ Filger_Spells = {
 			{ spellID = 70940, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Ardent Defender
 			{ spellID = 31850, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Guardian of Ancient Kings
+			{ spellID = 86659, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			{ spellID = 86669, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			{ spellID = 86698, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			
 			-- Mage
 			-- Ice Block
