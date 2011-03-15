@@ -125,8 +125,24 @@ end)
 -- Add quest / achievement internet link
 ----------------------------------------------------------------------------------------
 local linkSiteTitle = "Wowhead"
-local linkQuest = "http://www.wowhead.com/quest=%d"
-local linkAchievement = "http://www.wowhead.com/achievement=%d"
+local linkQuest
+local linkAchievement
+if T.client == "ruRU" then
+	linkQuest = "http://ru.wowhead.com/quest=%d"
+	linkAchievement = "http://ru.wowhead.com/achievement=%d"
+elseif T.client == "frFR" then
+	linkQuest = "http://fr.wowhead.com/quest=%d"
+	linkAchievement = "http://fr.wowhead.com/achievement=%d"
+elseif T.client == "deDE" then
+	linkQuest = "http://de.wowhead.com/quest=%d"
+	linkAchievement = "http://de.wowhead.com/achievement=%d"
+elseif T.client == "esES" or T.client == "esMX" then
+	linkQuest = "http://es.wowhead.com/quest=%d"
+	linkAchievement = "http://es.wowhead.com/achievement=%d"
+else
+	linkQuest = "http://www.wowhead.com/quest=%d"
+	linkAchievement = "http://www.wowhead.com/achievement=%d"
+end
 
 _G.StaticPopupDialogs["WATCHFRAME_URL"] = {
 	text = linkSiteTitle .. " link",
