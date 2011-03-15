@@ -5,6 +5,7 @@
 	<Script file="Events.lua"/>
 	<Script file="Factory.lua"/>
 	<Script file="Blizzard.lua"/>
+	<Script file="Units.lua"/>
 	<Script file="Colors.lua"/>
 	<Script file="Finalize.lua"/>
 
