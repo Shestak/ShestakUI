@@ -108,7 +108,10 @@ end
 --	Bottom panel
 ----------------------------------------------------------------------------------------
 local bottompanel = CreateFrame("Frame", "BottomPanel", UIParent)
-bottompanel:CreatePanel("ClassColor", T.getscreenwidth - 42, 1, "BOTTOM", UIParent, "BOTTOM", 0, 20)
+bottompanel:CreatePanel("ClassColor", 1, 1, "BOTTOM", UIParent, "BOTTOM", 0, 20)
+bottompanel:Point("BOTTOM", UIParent, "BOTTOM", 0, 20)
+bottompanel:Point("LEFT", UIParent, "LEFT", 21, 0)
+bottompanel:Point("RIGHT", UIParent, "RIGHT", -21, 0)
 
 ----------------------------------------------------------------------------------------
 --	Chat background
