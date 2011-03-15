@@ -518,6 +518,8 @@ Filger_Spells = {
 			{ spellID = 55080, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Cone of Cold
 			{ spellID = 120, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Improved Cone of Cold
+			{ spellID = 83302, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Frostfite Bolt
 			{ spellID = 44614, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
@@ -1979,6 +1981,8 @@ Filger_Spells = {
 			{ spellID = 6136, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Cone of Cold
 			{ spellID = 120, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Improved Cone of Cold
+			{ spellID = 83302, size = 37, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Slow
 			{ spellID = 31589, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Ring of Frost
