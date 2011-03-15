@@ -377,10 +377,10 @@ if C.general.minimap_icon == true and IsAddOnLoaded("ShestakUI_Config") then
 			if button == "LeftButton" and not IsShiftKeyDown() then
 				PlaySound("igMainMenuOption")
 				HideUIPanel(GameMenuFrame)
-				if not UIConfig or not UIConfig:IsShown() then
+				if not UIConfigMain or not UIConfigMain:IsShown() then
 					CreateUIConfig()
 				else
-					UIConfig:Hide()
+					UIConfigMain:Hide()
 				end
 			elseif button == "RightButton" then
 				ToggleDropDownMenu(1, nil, iconMenuDrop, self, 0, 15)

@@ -363,6 +363,21 @@ local NewButton = function(text, parent)
 	return result
 end
 
+local NormalButton = function(text, parent)
+	local T, C, L = unpack(ShestakUI)
+	
+	local result = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
+	local label = result:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+	label:SetJustifyH("LEFT")
+	label:SetText(text)
+	result:Width(100)
+	result:Height(23)
+	result:SetFontString(label)
+	result:SkinButton()
+
+	return result
+end
+
 StaticPopupDialogs["PERCHAR"] = {
 	text = L_GUI_PER_CHAR,
 	OnAccept = function() 
@@ -496,9 +511,9 @@ end
 function CreateUIConfig()
 	local T, C, L = unpack(ShestakUI)
 	
-	if UIConfig then
+	if UIConfigMain then
 		ShowGroup("general")
-		UIConfig:Show()
+		UIConfigMain:Show()
 		return
 	end
 	
@@ -507,22 +522,41 @@ function CreateUIConfig()
 	end
 	
 	-- Main Frame
-	local UIConfig = CreateFrame("Frame", "UIConfig", UIParent)
-	UIConfig:SetPoint("BOTTOM", UIParent, "BOTTOM", 90, 350)
-	UIConfig:SetWidth(480)
-	UIConfig:SetHeight(300)
-	UIConfig:SetFrameStrata("DIALOG")
-	UIConfig:SetFrameLevel(20)
-	tinsert(UISpecialFrames, "UIConfig")
+	local UIConfigMain = CreateFrame("Frame", "UIConfigMain", UIParent)
+	UIConfigMain:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 200)
+	UIConfigMain:SetWidth(780)
+	UIConfigMain:SetHeight(520)
+	UIConfigMain:SetTemplate("Transparent")
+	UIConfigMain:SetFrameStrata("DIALOG")
+	UIConfigMain:SetFrameLevel(20)
+	tinsert(UISpecialFrames, "UIConfigMain")
 	
-	-- Title
-	local TitleBox = CreateFrame("Frame", "TitleBox", UIConfig)
-	TitleBox:SetWidth(500)
+	-- Version Title
+	local TitleBoxVer = CreateFrame("Frame", "TitleBoxVer", UIConfigMain)
+	TitleBoxVer:SetWidth(180)
+	TitleBoxVer:SetHeight(24)
+	TitleBoxVer:SetPoint("TOPLEFT", UIConfigMain, "TOPLEFT", 23, -15)
+	
+	local TitleBoxVerText = TitleBoxVer:CreateFontString("UIConfigTitleVer", "OVERLAY", "GameFontNormal")
+	TitleBoxVerText:SetPoint("CENTER")
+	TitleBoxVerText:SetText("ShestakUI "..T.version)
+	
+	-- Main Frame Title
+	local TitleBox = CreateFrame("Frame", "TitleBox", UIConfigMain)
+	TitleBox:SetWidth(540)
 	TitleBox:SetHeight(24)
-	TitleBox:SetPoint("TOPLEFT", -10, 42)
+	TitleBox:SetPoint("TOPLEFT", TitleBoxVer, "TOPRIGHT", 15, 0)
 	
 	local TitleBoxText = TitleBox:CreateFontString("UIConfigTitle", "OVERLAY", "GameFontNormal")
-	TitleBoxText:SetPoint("LEFT", TitleBox, "LEFT", 4, 0)
+	TitleBoxText:SetPoint("LEFT", TitleBox, "LEFT", 15, 0)
+	
+	-- Main Frame
+	local UIConfig = CreateFrame("Frame", "UIConfig", UIConfigMain)
+	UIConfig:SetPoint("TOPLEFT", TitleBox, "BOTTOMLEFT", 10, -15)
+	UIConfig:SetWidth(520)
+	UIConfig:SetHeight(400)
+	UIConfig:SetFrameStrata("DIALOG")
+	UIConfig:SetFrameLevel(20)
 	
 	local UIConfigBG = CreateFrame("Frame", "UIConfigBG", UIConfig)
 	UIConfigBG:SetPoint("TOPLEFT", -10, 10)
@@ -530,23 +564,13 @@ function CreateUIConfig()
 	
 	-- Group selection(left side)
 	local groups = CreateFrame("ScrollFrame", "UIConfigCategoryGroup", UIConfig)
-	groups:SetPoint("TOPLEFT", -180, 0)
-	groups:SetWidth(150)
-	groups:SetHeight(300)
+	groups:SetPoint("TOPLEFT", TitleBoxVer, "BOTTOMLEFT", 10, -15)
+	groups:SetWidth(160)
+	groups:SetHeight(400)
 
 	local groupsBG = CreateFrame("Frame", "groupsBG", UIConfig)
 	groupsBG:SetPoint("TOPLEFT", groups, -10, 10)
 	groupsBG:SetPoint("BOTTOMRIGHT", groups, 10, -10)
-	
-	-- Title 2
-	local TitleBoxVer = CreateFrame("Frame", "TitleBoxVer", UIConfig)
-	TitleBoxVer:SetWidth(170)
-	TitleBoxVer:SetHeight(24)
-	TitleBoxVer:SetPoint("BOTTOMLEFT", groupsBG, "TOPLEFT", 0, 8)
-	
-	local TitleBoxVerText = TitleBoxVer:CreateFontString("UIConfigTitleVer", "OVERLAY", "GameFontNormal")
-	TitleBoxVerText:SetPoint("CENTER")
-	TitleBoxVerText:SetText("ShestakUI "..T.version)
 	
 	local UIConfigCover = CreateFrame("Frame", "UIConfigCover", UIConfig)
 	UIConfigCover:SetPoint("TOPLEFT", UIConfigCategoryGroup, "TOPLEFT")
@@ -559,7 +583,7 @@ function CreateUIConfig()
 	local slider = CreateFrame("Slider", "UIConfigCategorySlider", groups)
 	slider:SetPoint("TOPRIGHT", 0, 0)
 	slider:SetWidth(20)
-	slider:SetHeight(300)
+	slider:SetHeight(400)
 	slider:SetThumbTexture("Interface\\Buttons\\UI-ScrollBar-Knob")
 	slider:SetOrientation("VERTICAL")
 	slider:SetValueStep(20)
@@ -580,7 +604,7 @@ function CreateUIConfig()
 	end
 	child:SetWidth(125)
 	child:SetHeight(offset)
-	slider:SetMinMaxValues(0, (offset == 0 and 1 or offset-12*25))
+	slider:SetMinMaxValues(0, (offset == 0 and 1 or offset-12*35))
 	slider:SetValue(1)
 	groups:SetScrollChild(child)
 	
@@ -601,13 +625,13 @@ function CreateUIConfig()
 	-- Group scroll frame(right side)
 	local group = CreateFrame("ScrollFrame", "UIConfigGroup", UIConfig)
 	group:SetPoint("TOPLEFT", 0, 5)
-	group:SetWidth(480)
-	group:SetHeight(300)
+	group:SetWidth(520)
+	group:SetHeight(400)
 	
 	local slider = CreateFrame("Slider", "UIConfigGroupSlider", group)
 	slider:SetPoint("TOPRIGHT", 0, 0)
 	slider:SetWidth(20)
-	slider:SetHeight(300)
+	slider:SetHeight(400)
 	slider:SetThumbTexture("Interface\\Buttons\\UI-ScrollBar-Knob")
 	slider:SetOrientation("VERTICAL")
 	slider:SetValueStep(20)
@@ -629,10 +653,10 @@ function CreateUIConfig()
 				Local(o)
 				_G["UIConfig"..group..option.."Text"]:SetText(T.option)
 				_G["UIConfig"..group..option.."Text"]:SetFontObject(GameFontHighlight)
-				_G["UIConfig"..group..option.."Text"]:SetWidth(420)
+				_G["UIConfig"..group..option.."Text"]:SetWidth(460)
 				_G["UIConfig"..group..option.."Text"]:SetJustifyH("LEFT")
 				button:SetChecked(value)
-				button:SetScript("OnClick", function(self) SetValue(group,option,(self:GetChecked() and true or false)) end)
+				button:SetScript("OnClick", function(self) SetValue(group, option, (self:GetChecked() and true or false)) end)
 				button:SetPoint("TOPLEFT", 5, -(offset))
 				offset = offset + 25
 			elseif type(value) == "number" or type(value) == "string" then
@@ -640,7 +664,7 @@ function CreateUIConfig()
 				local o = "UIConfig"..group..option
 				Local(o)
 				label:SetText(T.option)
-				label:SetWidth(420)
+				label:SetWidth(460)
 				label:SetHeight(20)
 				label:SetJustifyH("LEFT")
 				label:SetPoint("TOPLEFT", 5, -(offset))
@@ -653,31 +677,31 @@ function CreateUIConfig()
 				editbox:SetMaxLetters(255)
 				editbox:SetTextInsets(3, 0, 0, 0)
 				editbox:SetFontObject(GameFontHighlight)
-				editbox:SetPoint("TOPLEFT", 5, -(offset + 20))
+				editbox:SetPoint("TOPLEFT", 8, -(offset + 20))
 				editbox:SetText(value)
 				editbox:SetTemplate("Transparent")
 				
 				local okbutton = CreateFrame("Button", nil, frame)
 				okbutton:SetHeight(editbox:GetHeight())
-				okbutton:SetWidth(editbox:GetHeight() + 5)
-				okbutton:SetTemplate("Transparent")
+				okbutton:SkinButton()
 				okbutton:SetPoint("LEFT", editbox, "RIGHT", 2, 0)
 				
 				local oktext = okbutton:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 				oktext:SetText(OKAY)
-				oktext:SetPoint("CENTER")
+				oktext:SetPoint("CENTER", okbutton, "CENTER", -1, 0)
+				okbutton:SetWidth(oktext:GetWidth() + 5)
 				okbutton:Hide()
  
 				if type(value) == "number" then
 					editbox:SetScript("OnEscapePressed", function(self) okbutton:Hide() self:ClearFocus() self:SetText(value) end)
 					editbox:SetScript("OnChar", function(self) okbutton:Show() end)
-					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(group,option,tonumber(self:GetText())) end)
-					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(group,option,tonumber(editbox:GetText())) end)
+					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(group, option, tonumber(self:GetText())) end)
+					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(group, option, tonumber(editbox:GetText())) end)
 				else
 					editbox:SetScript("OnEscapePressed", function(self) okbutton:Hide() self:ClearFocus() self:SetText(value) end)
 					editbox:SetScript("OnChar", function(self) okbutton:Show() end)
-					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(group,option,tostring(self:GetText())) end)
-					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(group,option,tostring(editbox:GetText())) end)
+					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(group, option, tostring(self:GetText())) end)
+					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(group, option, tostring(editbox:GetText())) end)
 				end
 				
 				offset = offset + 45
@@ -686,7 +710,7 @@ function CreateUIConfig()
 				local o = "UIConfig"..group..option
 				Local(o)
 				label:SetText(T.option)
-				label:SetWidth(400)
+				label:SetWidth(440)
 				label:SetHeight(20)
 				label:SetJustifyH("LEFT")
 				label:SetPoint("TOPLEFT", 5, -(offset))
@@ -757,10 +781,8 @@ function CreateUIConfig()
 		frame:Hide()
 	end
 
-	local reset = NewButton(DEFAULT, UIConfig, "UIConfigReset")
-	reset:SetWidth(100)
-	reset:SetHeight(20)
-	reset:SetPoint("BOTTOMLEFT", -10, -38)
+	local reset = NormalButton(DEFAULT, UIConfigMain)
+	reset:SetPoint("TOPLEFT", UIConfig, "BOTTOMLEFT", -10, -25)
 	reset:SetScript("OnClick", function(self) 
 		UIConfigCover:Show()
 		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
@@ -770,25 +792,20 @@ function CreateUIConfig()
 		end
 	end)
 	
-	local close = NewButton(CLOSE, UIConfig)
-	close:SetWidth(100)
-	close:SetHeight(20)
-	close:SetPoint("BOTTOMRIGHT", 10, -38)
-	close:SetScript("OnClick", function(self) PlaySound("igMainMenuOption") UIConfig:Hide() end)
+	local close = NormalButton(CLOSE, UIConfigMain)
+	close:SetPoint("TOPRIGHT", UIConfig, "BOTTOMRIGHT", 10, -25)
+	close:SetScript("OnClick", function(self) PlaySound("igMainMenuOption") UIConfigMain:Hide() end)
 	
-	local load = NewButton(APPLY, UIConfig)
-	load:SetHeight(20)
-	load:SetPoint("LEFT", reset, "RIGHT", 15, 0)
-	load:SetPoint("RIGHT", close, "LEFT", -15, 0)
+	local load = NormalButton(APPLY, UIConfigMain)
+	load:SetPoint("RIGHT", close, "LEFT", -4, 0)
 	load:SetScript("OnClick", function(self) ReloadUI() end)
 	
-	local totalreset = NewButton(L_GUI_BUTTON_RESET, groupsBG)
-	totalreset:SetHeight(20)
-	totalreset:SetWidth(170)
-	totalreset:SetPoint("TOPLEFT", groupsBG, "BOTTOMLEFT", 0, -8)
+	local totalreset = NormalButton(L_GUI_BUTTON_RESET, UIConfigMain)
+	totalreset:SetWidth(180)
+	totalreset:SetPoint("TOPLEFT", groupsBG, "BOTTOMLEFT", 0, -15)
 	totalreset:SetScript("OnClick", function(self)
 		StaticPopup_Show("RESET_UI")
-		UIConfig:Hide()
+		UIConfigMain:Hide()
 		GUIConfig = {}
 		GUIConfigAll = {}
 		GUIConfigSettings = {}
@@ -816,7 +833,7 @@ function CreateUIConfig()
 			Aurora.CreateBD(sb)
 			Aurora.CreateSD(sb)
 		else
-			sb:SetTemplate("Transparent")
+			sb:SetTemplate("Overlay")
 		end
 	end
 	
@@ -828,19 +845,19 @@ do
 	SLASH_CONFIG2 = "/cfg"
 	SLASH_CONFIG3 = "/configui"
 	function SlashCmdList.CONFIG(msg, editbox)
-		if not UIConfig or not UIConfig:IsShown() then
+		if not UIConfigMain or not UIConfigMain:IsShown() then
 			PlaySound("igMainMenuOption")
 			CreateUIConfig()
 			HideUIPanel(GameMenuFrame)
 		else
 			PlaySound("igMainMenuOption")
-			UIConfig:Hide()
+			UIConfigMain:Hide()
 		end
 	end
 	
 	SLASH_RESETCONFIG1 = "/resetconfig"
 	function SlashCmdList.RESETCONFIG()
-		if UIConfig and UIConfig:IsShown() then UIConfigCover:Show() end
+		if UIConfigMain and UIConfigMain:IsShown() then UIConfigCover:Show() end
 		
 		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
 			StaticPopup_Show("RESET_PERCHAR")

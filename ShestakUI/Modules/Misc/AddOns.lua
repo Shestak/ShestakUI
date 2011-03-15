@@ -41,150 +41,46 @@ addonset1:Width(60)
 addonset1:Height(22)
 addonset1:Point("BOTTOMLEFT", 7, 10)
 addonset1:SetText(PARTY)
-addonset1:SetScript("OnClick", function()
-	for i in pairs(C.addon.raid) do
-		DisableAddOn(C.addon.raid[i])
-	end
-	for i in pairs(C.addon.pvp) do
-		DisableAddOn(C.addon.pvp[i])
-	end
-	for i in pairs(C.addon.quest) do
-		DisableAddOn(C.addon.quest[i])
-	end
-	for i in pairs(C.addon.trade) do
-		DisableAddOn(C.addon.trade[i])
-	end
-	for i in pairs(C.addon.party) do
-		EnableAddOn(C.addon.party[i])
-	end
-	ReloadUI()
-end)
+addonset1:SetScript("OnClick", function() T.RunSlashCmd("/addons party") end)
 
 local addonset2 = CreateFrame("Button", "AddonSet2", addonf, "UIPanelButtonTemplate")
 addonset2:Width(60)
 addonset2:Height(22)
 addonset2:Point("LEFT", addonset1, "RIGHT", 5, 0)
 addonset2:SetText(RAID)
-addonset2:SetScript("OnClick", function()
-	for i in pairs(C.addon.party) do
-		DisableAddOn(C.addon.party[i])
-	end
-	for i in pairs(C.addon.pvp) do
-		DisableAddOn(C.addon.pvp[i])
-	end
-	for i in pairs(C.addon.quest) do
-		DisableAddOn(C.addon.quest[i])
-	end
-	for i in pairs(C.addon.trade) do
-		DisableAddOn(C.addon.trade[i])
-	end
-	for i in pairs(C.addon.raid) do
-		EnableAddOn(C.addon.raid[i])
-	end
-	ReloadUI()
-end)
+addonset2:SetScript("OnClick", function() T.RunSlashCmd("/addons raid") end)
 
 local addonset3 = CreateFrame("Button", "AddonSet3", addonf, "UIPanelButtonTemplate")
 addonset3:Width(60)
 addonset3:Height(22)
 addonset3:Point("LEFT", addonset2, "RIGHT", 5, 0)
 addonset3:SetText(QUESTS_LABEL)
-addonset3:SetScript("OnClick", function()
-	for i in pairs(C.addon.raid) do
-		DisableAddOn(C.addon.raid[i])
-	end
-	for i in pairs(C.addon.party) do
-		DisableAddOn(C.addon.party[i])
-	end
-	for i in pairs(C.addon.pvp) do
-		DisableAddOn(C.addon.pvp[i])
-	end
-	for i in pairs(C.addon.trade) do
-		DisableAddOn(C.addon.trade[i])
-	end
-	for i in pairs(C.addon.quest) do
-		EnableAddOn(C.addon.quest[i])
-	end
-	ReloadUI()
-end)
+addonset3:SetScript("OnClick", function() T.RunSlashCmd("/addons quest") end)
 
 local addonset4 = CreateFrame("Button", "AddonSet4", addonf, "UIPanelButtonTemplate")
 addonset4:Width(60)
 addonset4:Height(22)
 addonset4:Point("LEFT", addonset3, "RIGHT", 5, 0)
 addonset4:SetText(L_ALOAD_TRADE)
-addonset4:SetScript("OnClick", function()
-	for i in pairs(C.addon.raid) do
-		DisableAddOn(C.addon.raid[i])
-	end
-	for i in pairs(C.addon.party) do
-		DisableAddOn(C.addon.party[i])
-	end
-	for i in pairs(C.addon.pvp) do
-		DisableAddOn(C.addon.pvp[i])
-	end
-	for i in pairs(C.addon.quest) do
-		DisableAddOn(C.addon.quest[i])
-	end
-	for i in pairs(C.addon.trade) do
-		EnableAddOn(C.addon.trade[i])
-	end
-	ReloadUI()
-end)
+addonset4:SetScript("OnClick", function() T.RunSlashCmd("/addons trade") end)
 
 local addonset5 = CreateFrame("Button", "AddonSet5", addonf, "UIPanelButtonTemplate")
 addonset5:Width(60)
 addonset5:Height(22)
 addonset5:Point("LEFT", addonset4, "RIGHT", 5, 0)
 addonset5:SetText(PVP)
-addonset5:SetScript("OnClick", function()
-	for i in pairs(C.addon.raid) do
-		DisableAddOn(C.addon.raid[i])
-	end
-	for i in pairs(C.addon.party) do
-		DisableAddOn(C.addon.party[i])
-	end
-	for i in pairs(C.addon.quest) do
-		DisableAddOn(C.addon.quest[i])
-	end
-	for i in pairs(C.addon.trade) do
-		DisableAddOn(C.addon.trade[i])
-	end
-	for i in pairs(C.addon.pvp) do
-		EnableAddOn(C.addon.pvp[i])
-	end
-	ReloadUI()
-end)
+addonset5:SetScript("OnClick", function() T.RunSlashCmd("/addons pvp") end)
 
 local addonset6 = CreateFrame("Button", "AddonSet6", addonf, "UIPanelButtonTemplate")
 addonset6:Width(60)
 addonset6:Height(22)
 addonset6:Point("LEFT", addonset5, "RIGHT", 5, 0)
 addonset6:SetText(L_ALOAD_SOLO)
-addonset6:SetScript("OnClick", function()
-	for i in pairs(C.addon.raid) do
-		DisableAddOn(C.addon.raid[i])
-	end
-	for i in pairs(C.addon.party) do
-		DisableAddOn(C.addon.party[i])
-	end
-	for i in pairs(C.addon.pvp) do
-		DisableAddOn(C.addon.pvp[i])
-	end
-	for i in pairs(C.addon.quest) do
-		DisableAddOn(C.addon.quest[i])
-	end
-	for i in pairs(C.addon.trade) do
-		DisableAddOn(C.addon.trade[i])
-	end
-	ReloadUI()
-end)
+addonset6:SetScript("OnClick", function() T.RunSlashCmd("/addons solo") end)
 
 local closeb = CreateFrame("Button", nil, loadf, "UIPanelCloseButton")
 closeb:Point("TOPRIGHT", loadf, "TOPRIGHT", 2, 0)
-closeb:SetScript("OnClick", function()
-	loadf:Hide()
-end)
+closeb:SetScript("OnClick", function() loadf:Hide() end)
 
 local makeList = function()
 	local self = mainf
@@ -318,9 +214,9 @@ GameMenuButtonSoundOptions:Point("TOP", guib, "BOTTOM", 0, -1)
 guib:SetScript("OnClick", function()
 	PlaySound("igMainMenuOption")
 	HideUIPanel(GameMenuFrame)
-	if not UIConfig or not UIConfig:IsShown() then
+	if not UIConfigMain or not UIConfigMain:IsShown() then
 		CreateUIConfig()
 	else
-		UIConfig:Hide()
+		UIConfigMain:Hide()
 	end
 end)
