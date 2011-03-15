@@ -23,8 +23,8 @@ PlayerPowerBarAlt:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	
 -- Create the new bar
 local AltPowerBar = CreateFrame("Frame", "UIAltPowerBar", UIParent)
-AltPowerBar:SetWidth(221)
-AltPowerBar:SetHeight(31)
+AltPowerBar:Width(221)
+AltPowerBar:Height(31)
 AltPowerBar:Point("TOP", UIParent, "TOP", 0, -32)
 AltPowerBar:EnableMouse(true)
 AltPowerBar:SetTemplate("Default")

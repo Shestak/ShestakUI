@@ -286,6 +286,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["StaticPopup1EditBoxMid"]:SetTexture(nil)
 		_G["StaticPopup1EditBoxRight"]:SetTexture(nil)
 		_G["StaticPopup1EditBox"]:Height(20)
+		_G["StaticPopup1EditBox"]:SetTextInsets(3, 0, 0, 0)
 	end
 	
 	-- MAC menu/option panel(by Affli)
