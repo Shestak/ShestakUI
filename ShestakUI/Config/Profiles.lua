@@ -47,9 +47,11 @@ elseif T.name == "Бэкстер" or T.name == "Варбой" then
 	C["tooltip"].title = true
 	C["tooltip"].talents = true
 	C["tooltip"].spell_id = true
+	C["tooltip"].average_lvl = true
 	C["chat"].chat_bar = true
 	C["chat"].background = true
 	C["chat"].combatlog = false
+	C["actionbar"].split_bars = true
 	C["actionbar"].rightbars_mouseover = false
 	C["actionbar"].petbar_horizontal = true
 	C["aura"].focus_debuffs = true
@@ -58,7 +60,8 @@ elseif T.name == "Бэкстер" or T.name == "Варбой" then
 	C["unitframe"].plugins_talents = true
 	C["raidframe"].raid_tanks_tt = true
 	C["stats"].guild_repair = false
-	C["addon"].party = {"LittleWigs", "Skada", "RaidAchievement", "Fatality",}
+	C["addon"].pvp = {"Capping",}
+	C["addon"].party = {"BigWigs", "LittleWigs", "Skada", "RaidAchievement", "Fatality",}
 	C["addon"].raid = {"BigWigs", "Skada", "Boss_shieldsmonitor", "PhoenixStyle", "RaidAchievement", "Fatality", "RaidSlackCheck",}
 end
 
