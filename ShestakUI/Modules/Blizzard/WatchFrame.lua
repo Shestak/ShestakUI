@@ -124,7 +124,6 @@ end)
 ----------------------------------------------------------------------------------------
 -- Add quest / achievement internet link
 ----------------------------------------------------------------------------------------
-local linkSiteTitle = "Wowhead"
 local linkQuest
 local linkAchievement
 if T.client == "ruRU" then
@@ -145,7 +144,7 @@ else
 end
 
 _G.StaticPopupDialogs["WATCHFRAME_URL"] = {
-	text = linkSiteTitle .. " link",
+	text = L_WATCH_WOWHEAD_LINK,
 	button1 = OKAY,
 	timeout = 0,
 	whileDead = true,
@@ -160,7 +159,7 @@ local tblDropDown = {}
 hooksecurefunc("WatchFrameDropDown_Initialize", function(self)
 	if self.type == "QUEST" then
 		tblDropDown = {
-			text = linkSiteTitle .. " link", notCheckable = true, arg1 = self.index,
+			text = L_WATCH_WOWHEAD_LINK, notCheckable = true, arg1 = self.index,
 			func = function(_, watchId)
 				local logId = GetQuestIndexForWatch(watchId)
 				local _, _, _, _, _, _, _, _, questId = GetQuestLogTitle(logId)
@@ -172,7 +171,7 @@ hooksecurefunc("WatchFrameDropDown_Initialize", function(self)
 		UIDropDownMenu_AddButton(tblDropDown, UIDROPDOWN_MENU_LEVEL)
 	elseif self.type == "ACHIEVEMENT" then
 		tblDropDown = {
-			text = linkSiteTitle .. " link", notCheckable = true, arg1 = self.index,
+			text = L_WATCH_WOWHEAD_LINK, notCheckable = true, arg1 = self.index,
 			func = function(_, id)
 				local inputBox = StaticPopup_Show("WATCHFRAME_URL")
 				inputBox.editBox:SetText(linkAchievement:format(id))

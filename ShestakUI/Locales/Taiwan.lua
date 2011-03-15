@@ -20,6 +20,18 @@ L_RAID_UTIL_DISBAND = "解散團隊"
 -- Zone name
 L_ZONE_WINTERGRASP = "冬握湖"
 
+-- WatchFrame Wowhead link
+L_WATCH_WOWHEAD_LINK = "Wowhead link" -- Needs review
+
+-- Toogle Menu
+L_TOGGLE_ADDON = "Addon " -- Needs review
+L_TOGGLE_ADDONS = " addons" -- Needs review
+L_TOGGLE_EXPAND = "Expand " -- Needs review
+L_TOGGLE_COLLAPSE = "Collapse " -- Needs review
+L_TOGGLE_RCLICK = "Right click to enable or disable " -- Needs review
+L_TOGGLE_LCLICK = "Left click to toggle window " -- Needs review
+L_TOGGLE_RELOAD = " (needs UI reload)" -- Needs review
+
 -- UnitFrame
 L_UF_GHOST = "靈魂"
 L_UF_DEAD = "死亡"

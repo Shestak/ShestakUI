@@ -20,6 +20,18 @@ L_RAID_UTIL_DISBAND = "Disolver grupo"
 -- Zone name
 L_ZONE_WINTERGRASP = "Conquista del Invierno"
 
+-- WatchFrame Wowhead link
+L_WATCH_WOWHEAD_LINK = "Wowhead link" -- Needs review
+
+-- Toogle Menu
+L_TOGGLE_ADDON = "Addon " -- Needs review
+L_TOGGLE_ADDONS = " addons" -- Needs review
+L_TOGGLE_EXPAND = "Expand " -- Needs review
+L_TOGGLE_COLLAPSE = "Collapse " -- Needs review
+L_TOGGLE_RCLICK = "Right click to enable or disable " -- Needs review
+L_TOGGLE_LCLICK = "Left click to toggle window " -- Needs review
+L_TOGGLE_RELOAD = " (needs UI reload)" -- Needs review
+
 -- UnitFrame
 L_UF_GHOST = "Fantasma"
 L_UF_DEAD = "Muerto"

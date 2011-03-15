@@ -20,6 +20,18 @@ L_RAID_UTIL_DISBAND = "Disband Group"
 -- Zone name
 L_ZONE_WINTERGRASP = "Wintergrasp"
 
+-- WatchFrame Wowhead link
+L_WATCH_WOWHEAD_LINK = "Wowhead link"
+
+-- Toogle Menu
+L_TOGGLE_ADDON = "Addon "
+L_TOGGLE_ADDONS = " addons"
+L_TOGGLE_EXPAND = "Expand "
+L_TOGGLE_COLLAPSE = "Collapse "
+L_TOGGLE_RCLICK = "Right click to enable or disable "
+L_TOGGLE_LCLICK = "Left click to toggle window "
+L_TOGGLE_RELOAD = " (needs UI reload)"
+
 -- UnitFrame
 L_UF_GHOST = "Ghost"
 L_UF_DEAD = "Dead"

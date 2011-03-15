@@ -20,6 +20,19 @@ L_RAID_UTIL_DISBAND = "Распустить группу"
 -- Zone name
 L_ZONE_WINTERGRASP = "Озеро Ледяных Оков"
 
+-- WatchFrame Wowhead link
+L_WATCH_WOWHEAD_LINK = "Ссылка на Wowhead"
+
+-- Toogle Menu
+L_TOGGLE_ADDON = "Модификация "
+L_TOGGLE_ADDONS = " модификации"
+L_TOGGLE_EXPAND = "Показать "
+L_TOGGLE_COLLAPSE = "Скрыть "
+L_TOGGLE_RCLICK = "ПКМ - Включить или выключить "
+L_TOGGLE_LCLICK = "ЛКМ - Показать окно "
+--L_TOGGLE_RELOAD = " (необходимо перезагрузить интерфейс)"
+L_TOGGLE_RELOAD = ""
+
 -- UnitFrame
 L_UF_GHOST = "Призрак"
 L_UF_DEAD = "Мёртв"

@@ -178,10 +178,6 @@ MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", Minimap, "TO
 AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", MenuBG, "BOTTOMRIGHT", 0, 0)
 MenuBG:SetFrameLevel(defaultframelevel)
 MenuBG:SetFrameStrata("HIGH")
---MenuBG:SetBackdropBorderColor(0, 0, 0, 0)
---MenuBG:SetBackdropColor(0, 0, 0, 0)
---AddonBG:SetBackdropBorderColor(0, 0, 0, 0)
---AddonBG:SetBackdropColor(0, 0, 0, 0)
 if not C.togglemenu.showByDefault or C.togglemenu.mergeMenus then
 	MenuBG:Hide()
 end
@@ -210,8 +206,8 @@ function ToggleMenu_Toggle()
 end
 
 -- Add slash command
-SLASH_TUKUITOGGLEMENU1 = "/ttm"
-SlashCmdList.TUKUITOGGLEMENU = ToggleMenu_Toggle
+SLASH_UITOGGLEMENU1 = "/ttm"
+SlashCmdList.UITOGGLEMENU = ToggleMenu_Toggle
 
 local mainmenusize
 local lastMainMenuEntryID
@@ -490,11 +486,11 @@ for i = 1, GetNumAddOns() do
 	end)
 	addonmenuitems[j]:HookScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_LEFT")
-		GameTooltip:AddLine("Addon "..name)
-		GameTooltip:AddLine("Right click to enable or disable (needs UI reload)")            
+		GameTooltip:AddLine(L_TOGGLE_ADDON..name)
+		GameTooltip:AddLine(L_TOGGLE_RCLICK..name..L_TOGGLE_RELOAD)
 		if C.toggleaddons[name] then
 			if IsAddOnLoaded(i) then
-				GameTooltip:AddLine("Left click to toggle addon window")
+				GameTooltip:AddLine(L_TOGGLE_LCLICK..name)
 			end
 		end
 		GameTooltip:Show()
@@ -520,9 +516,9 @@ for i = 1, GetNumAddOns() do
 		expandAddonButton:HookScript("OnEnter", function(self)
 			GameTooltip:SetOwner(self, "ANCHOR_LEFT")
 			if addonInfo[i].collapsed then
-				GameTooltip:AddLine("Expand "..name.." addons")
+				GameTooltip:AddLine(L_TOGGLE_EXPAND..name..L_TOGGLE_ADDONS)
 			else
-				GameTooltip:AddLine("Collapse "..name.." addons")
+				GameTooltip:AddLine(L_TOGGLE_COLLAPSE..name..L_TOGGLE_ADDONS)
 			end
 			GameTooltip:Show()
 		end)
