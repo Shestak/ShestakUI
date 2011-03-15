@@ -373,7 +373,11 @@ local NormalButton = function(text, parent)
 	result:Width(100)
 	result:Height(23)
 	result:SetFontString(label)
-	result:SkinButton()
+	if IsAddOnLoaded("Aurora") then
+		Aurora.Reskin(result)
+	else
+		result:SkinButton()
+	end
 
 	return result
 end
@@ -526,7 +530,12 @@ function CreateUIConfig()
 	UIConfigMain:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 200)
 	UIConfigMain:SetWidth(780)
 	UIConfigMain:SetHeight(520)
-	UIConfigMain:SetTemplate("Transparent")
+	if IsAddOnLoaded("Aurora") then
+		Aurora.CreateBD(UIConfigMain)
+		Aurora.CreateSD(UIConfigMain)
+	else
+		UIConfigMain:SetTemplate("Transparent")
+	end
 	UIConfigMain:SetFrameStrata("DIALOG")
 	UIConfigMain:SetFrameLevel(20)
 	tinsert(UISpecialFrames, "UIConfigMain")
@@ -827,7 +836,7 @@ function CreateUIConfig()
 		end
 	end	
 	
-	local bgskins = {TitleBox, TitleBoxVer, UIConfigBG, groupsBG, reset, close, load, totalreset}
+	local bgskins = {TitleBox, TitleBoxVer, UIConfigBG, groupsBG}
 	for _, sb in pairs(bgskins) do
 		if IsAddOnLoaded("Aurora") then
 			Aurora.CreateBD(sb)
