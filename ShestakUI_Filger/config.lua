@@ -1403,6 +1403,8 @@ Filger_Spells = {
 			{ spellID = 1098, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Dark Intent
 			{ spellID = 85767, size = 37, unitId = "target", caster = "player", filter = "BUFF" },
+			-- Shadowsnare
+			{ spellID = 63311, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			
 			-- Other
 			-- Curse of the Elements (Warlock)
@@ -2099,6 +2101,8 @@ Filger_Spells = {
 			{ spellID = 24259, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Axe Toss (Felguard)
 			{ spellID = 89766, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Shadowsnare
+			{ spellID = 63311, size = 60, unitId = "target", caster = "player", filter = "DEBUFF" },
 			
 			-- Warrior
 			-- Throwdown
@@ -2205,6 +2209,10 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 253 },
 			
+			-- Death Knight
+			-- Icebound Fortitude
+			{ spellID = 48792, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+
 			-- Hunter
 			-- Aspect of the Pack
 			{ spellID = 13159, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
