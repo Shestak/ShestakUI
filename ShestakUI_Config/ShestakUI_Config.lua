@@ -475,7 +475,7 @@ local function ShowGroup(group, button)
 		_G["UIConfigTitle"]:SetText(T.option)
 		local height = _G["UIConfig"..group]:GetHeight()
 		_G["UIConfig"..group]:Show()
-		local scrollamntmax = 305
+		local scrollamntmax = 405
 		local scrollamntmin = scrollamntmax - 10
 		local max = height > scrollamntmax and height-scrollamntmin or 1
 		
