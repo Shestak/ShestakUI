@@ -1091,11 +1091,12 @@ SlashCmdList.TESTUF = function()
 		for i, v in pairs(oUF.units) do
 			if not v.fff then
 				v.fff = CreateFrame("Frame")
-				v.fff:SetTemplate("Default")
+				v.fff:SetTemplate("Transparent")
+				v.fff:SetParent(UIParent)
 				v.fff:SetFrameStrata("MEDIUM")
 				v.fff:SetFrameLevel(20)
-				v.fff:Point("TOPLEFT", v, -2, 2)
-				v.fff:Point("BOTTOMRIGHT", v, 2, -2)
+				v.fff:SetPoint("TOPLEFT", v, -2, 2)
+				v.fff:SetPoint("BOTTOMRIGHT", v, 2, -2)
 			
 				v.fffs = T.SetFontString(v.fff, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 				v.fffs:SetShadowOffset(0, 0)
