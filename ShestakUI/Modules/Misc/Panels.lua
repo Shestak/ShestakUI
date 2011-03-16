@@ -42,7 +42,7 @@ elseif C.actionbar.rightbars == 3 then
 else
 	rightbaranchor:Hide()
 end
-rightbaranchor:SetFrameStrata("LOW")
+rightbaranchor:SetFrameStrata("BACKGROUND")
 rightbaranchor:SetBackdropColor(0, 0, 0, 0)
 rightbaranchor:SetBackdropBorderColor(0, 0, 0, 0)
 

@@ -186,6 +186,8 @@ AddonBG:SetFrameStrata("HIGH")
 if not C.togglemenu.showByDefault or not C.togglemenu.mergeMenus then
 	AddonBG:Hide()
 end
+MenuBG:EnableMouse(true)
+AddonBG:EnableMouse(true)
 tinsert(UISpecialFrames, "TTMenuBackground")
 tinsert(UISpecialFrames, "TTMenuAddOnBackground")
 

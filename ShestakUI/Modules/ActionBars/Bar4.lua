@@ -6,14 +6,13 @@ if not C.actionbar.enable == true then return end
 ----------------------------------------------------------------------------------------
 local Bar4Holder = CreateFrame("Frame", "Bar4Holder", UIParent)
 Bar4Holder:SetAllPoints(RightActionBarAnchor)
-Bar4Holder:SetFrameStrata("LOW")
+Bar4Holder:SetFrameStrata("BACKGROUND")
 MultiBarRight:SetParent(Bar4Holder)
 
 for i = 1, 12 do
 	local b = _G["MultiBarRightButton"..i]
 	local b2 = _G["MultiBarRightButton"..i-1]
 	b:ClearAllPoints()
-	b:SetFrameStrata("LOW")
 	if i == 1 then
 		b:Point("TOPRIGHT", RightActionBarAnchor, "TOPRIGHT", 0, 0)
 	else

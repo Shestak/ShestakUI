@@ -42,7 +42,7 @@ local function Shared(self, unit)
 	-- Backdrop for every units
 	self.FrameBackdrop = CreateFrame("Frame", nil, self)
 	self.FrameBackdrop:SetTemplate("Default")
-	self.FrameBackdrop:SetFrameStrata("BACKGROUND")
+	self.FrameBackdrop:SetFrameStrata("LOW")
 	self.FrameBackdrop:Point("TOPLEFT", -2, 2)
 	self.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
 
@@ -608,7 +608,7 @@ local function Shared(self, unit)
 
 	if unit == "player" or unit == "target" then
 		if C.unitframe.portrait_enable == true then
-			self.Portrait = CreateFrame("PlayerModel", nil, self)
+			self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self)
 			self.Portrait:Height(C.unitframe.portrait_height)
 			self.Portrait:Width(C.unitframe.portrait_width)
 			if unit == "player" then
