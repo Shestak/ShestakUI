@@ -15,6 +15,7 @@
 --		C["addon"].raid = {ADDON1, ADDON2, ADDON3, ETC}
 --		C["position"].tooltip = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5}
 --		C["position"].bottom_bars = {"BOTTOM", UIParent, "BOTTOM", 2, 8}
+--		C["position"].unitframes.tank = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 68}
 -- end
 ----------------------------------------------------------------------------------------
 
@@ -58,11 +59,12 @@ elseif T.name == "Бэкстер" or T.name == "Варбой" then
 	C["unitframe"].icons_pvp = true
 	C["unitframe"].plugins_gcd = true
 	C["unitframe"].plugins_talents = true
-	C["raidframe"].raid_tanks_tt = true
 	C["stats"].guild_repair = false
-	C["addon"].pvp = {"Capping",}
-	C["addon"].party = {"BigWigs", "LittleWigs", "Skada", "RaidAchievement", "Fatality",}
-	C["addon"].raid = {"BigWigs", "Skada", "Boss_shieldsmonitor", "PhoenixStyle", "RaidAchievement", "Fatality", "RaidSlackCheck",}
+	C["addon"].pvp = {"Capping"}
+	C["addon"].party = {"BigWigs", "LittleWigs", "Skada", "RaidAchievement", "Fatality"}
+	C["addon"].raid = {"BigWigs", "Skada", "Boss_shieldsmonitor", "PhoenixStyle", "RaidAchievement", "Fatality", "RaidSlackCheck"}
+	C["position"].threat_meter = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 380, 18}
+	C["position"].unitframes.tank = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 68}
 end
 
 ----------------------------------------------------------------------------------------

@@ -243,8 +243,8 @@ LPSTAT_PROFILES = {
 	},
 	ROGUE = {
 		Stats = {
-			spec1fmt = class"AP: ".."[ap]"..class" ArP: ".."[armorpen]%"..class" Exp: ".."[expertise]%",
-			spec2fmt = class"AP: ".."[ap]"..class" ArP: ".."[armorpen]%"..class" Exp: ".."[expertise]%",
+			spec1fmt = class"AP: ".."[ap]"..class" Exp: ".."[expertise]%"..class" Hit: ".."[meleehit]%",
+			spec2fmt = class"AP: ".."[ap]"..class" Exp: ".."[expertise]%"..class" Hit: ".."[meleehit]%",
 		}
 	},
 	WARRIOR = {
