@@ -886,6 +886,7 @@ local function Shared(self, unit)
 		end
 		self.Trinket:SetTemplate("Default")
 		self.Trinket.trinketUseAnnounce = true
+		self.Trinket.trinketUpAnnounce = true
 		
 		self.AuraTracker = CreateFrame("Frame", nil, self)
 		self.AuraTracker:Width(self.Trinket:GetWidth())
@@ -921,6 +922,10 @@ local function Shared(self, unit)
 			insets = { left = 0, right = 0, top = 0, bottom = T.Scale(-1)}
 		})
 		self.AltPowerBar:SetBackdropColor(0, 0, 0)
+		
+		self.AltPowerBar.text = T.SetFontString(self.AltPowerBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+		self.AltPowerBar.text:Point("CENTER", self.AltPowerBar, "CENTER", 0, 0)
+		self:Tag(self.AltPowerBar.text, "[AltPower]")
 		
 		self.Auras = CreateFrame("Frame", nil, self)
 		if C.unitframe.boss_on_right == true then
