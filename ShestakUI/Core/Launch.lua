@@ -274,6 +274,22 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	end
 end)
 
+----------------------------------------------------------------------------------------
+--	Collect garbage function
+----------------------------------------------------------------------------------------
+local eventcount = 0
+local Garbage = CreateFrame("Frame")
+Garbage:RegisterAllEvents()
+Garbage:SetScript("OnEvent", function(self, event)
+	eventcount = eventcount + 1
+	if InCombatLockdown() then return end
+
+	if eventcount > 3600 then
+		collectgarbage("collect")
+		eventcount = 0
+	end
+end)
+
 SLASH_CONFIGURE1 = "/resetui"
 SlashCmdList.CONFIGURE = function() StaticPopup_Show("RESET_UI") end
 
