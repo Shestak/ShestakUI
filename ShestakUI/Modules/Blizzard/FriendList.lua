@@ -200,8 +200,8 @@ local function update()
 	local buttons = GuildRosterContainer.buttons
 
 	for i, button in ipairs(buttons) do
-		if(button:IsShown() and button.online and button.guildIndex) then
-			local name, rank, rankIndex, level, class, zone, note, officernote, online, status, classFileName, achievementPnts, achievementRank, isMobile = GetGuildRosterInfo(button.guildIndex)
+		local name, rank, rankIndex, level, class, zone, note, officernote, online, status, classFileName, achievementPnts, achievementRank, isMobile = GetGuildRosterInfo(button.guildIndex)
+		if(name and button:IsShown() and button.online and button.guildIndex) then
 			if(_VIEW == 'playerStatus') then
 				button.string1:SetText(diffColor[level] .. level)
 				if(not isMobile) then
