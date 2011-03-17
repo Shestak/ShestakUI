@@ -25,7 +25,7 @@ SlashCmdList.DISABLE_ADDON = function(addon)
 		DisableAddOn(addon)
 		ReloadUI()
 	else
-		print("|cffffff00Addon '"..addon.."' not found.|r")
+		print("|cffffff00"..L_TOGGLE_ADDON.."'"..addon.."' not found.|r")
 	end
 end
 SLASH_DISABLE_ADDON1 = "/dis"
@@ -38,7 +38,7 @@ SlashCmdList.ENABLE_ADDON = function(addon)
 		LoadAddOn(addon)
 		ReloadUI()
 	else
-		print("|cffffff00Addon '"..addon.."' not found.|r")
+		print("|cffffff00"..L_TOGGLE_ADDON.."'"..addon.."' not found.|r")
 	end
 end
 SLASH_ENABLE_ADDON1 = "/en"
