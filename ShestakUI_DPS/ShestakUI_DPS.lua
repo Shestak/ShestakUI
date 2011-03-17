@@ -138,7 +138,11 @@ local function Shared(self, unit)
 	if self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target" then
 		self:Tag(self.Info, "[GetNameColor][NameArena]")
 	else
-		self:Tag(self.Info, "[GetNameColor][NameShort]")
+		if unit == "party" and C.raidframe.icons_lfd_role ~= true then
+			self:Tag(self.Info, "[LFD] [GetNameColor][NameShort]")
+		else
+			self:Tag(self.Info, "[GetNameColor][NameShort]")
+		end
 	end
 	
 	-- LFD role icons
