@@ -200,8 +200,8 @@ local function update()
 	local buttons = GuildRosterContainer.buttons
 
 	for i, button in ipairs(buttons) do
-		local name, rank, rankIndex, level, class, zone, note, officernote, online, status, classFileName, achievementPnts, achievementRank, isMobile = GetGuildRosterInfo(button.guildIndex)
-		if(name and button:IsShown() and button.online and button.guildIndex) then
+		if(button:IsShown() and button.online and button.guildIndex) then
+			local name, rank, rankIndex, level, class, zone, note, officernote, online, status, classFileName, achievementPnts, achievementRank, isMobile = GetGuildRosterInfo(button.guildIndex)
 			if(_VIEW == 'playerStatus') then
 				button.string1:SetText(diffColor[level] .. level)
 				if(not isMobile) then
@@ -231,7 +231,9 @@ local function tradeupdate()
 		if(button:IsShown() and button.online and button.guildIndex) then
 			local skillID, isCollapsed, iconTexture, headerName, numOnline, numPlayers, playerName, class, online, zone, skill, classFileName = GetGuildTradeSkillInfo(button.guildIndex)
 			if(not headerName) then
-				button.string1:SetText(classColor[classFileName] .. playerName)
+				if(playerName) then
+					button.string1:SetText(classColor[classFileName] .. playerName)
+				end
 				if(zone == myZone) then
 					button.string2:SetText('|cff00ff00' .. zone)
 				end

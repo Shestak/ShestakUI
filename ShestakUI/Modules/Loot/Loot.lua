@@ -62,14 +62,18 @@ function Butsu:LOOT_OPENED(event, autoloot)
 				slot.count:Hide()
 			end
 			
-			slot.iconFrame:SetBackdropBorderColor(color.r, color.g, color.b)
-			slot:SetBackdropBorderColor(color.r, color.g, color.b)
-			slot.drop:SetVertexColor(color.r, color.g, color.b)
+			if color then
+				slot.iconFrame:SetBackdropBorderColor(color.r, color.g, color.b)
+				slot:SetBackdropBorderColor(color.r, color.g, color.b)
+				slot.drop:SetVertexColor(color.r, color.g, color.b)
+			end
 			slot.drop:Show()
 
 			slot.quality = quality
 			slot.name:SetText(item)
-			slot.name:SetTextColor(color.r, color.g, color.b)
+			if color then
+				slot.name:SetTextColor(color.r, color.g, color.b)
+			end
 			slot.icon:SetTexture(texture)
 
 			m = math.max(m, quality)
