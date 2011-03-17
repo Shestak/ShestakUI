@@ -76,3 +76,26 @@ oUF.Tags["NameLong"] = function(unit)
 	return T.UTF(name, 18, true)
 end
 oUF.TagEvents["NameLong"] = "UNIT_NAME_UPDATE"
+
+oUF.Tags["LFD"] = function(unit)
+	local role = UnitGroupRolesAssigned(unit)
+	if role == "HEALER" then
+		return "|cff8AFF30H|r"
+	elseif role == "TANK" then
+		return "|cffFFF130T|r"
+	elseif role == "DAMAGER" then
+		return "|cffFF6161D|r"
+	end
+end
+oUF.TagEvents["LFD"] = "PLAYER_ROLES_ASSIGNED PARTY_MEMBERS_CHANGED"
+
+oUF.Tags["AltPower"] = function(unit)
+	local cur = UnitPower(unit, ALTERNATE_POWER_INDEX)
+	local max = UnitPowerMax(unit, ALTERNATE_POWER_INDEX)
+	if (max > 0 and not UnitIsDeadOrGhost(unit)) then
+		return ("%s%%"):format(math.floor(cur/max*100+0.5))
+	else
+		return ""
+	end
+end
+oUF.TagEvents["AltPower"] = "UNIT_POWER"
