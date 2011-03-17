@@ -2208,10 +2208,6 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 253 },
-			
-			-- Death Knight
-			-- Icebound Fortitude
-			{ spellID = 48792, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 
 			-- Hunter
 			-- Aspect of the Pack
@@ -2302,6 +2298,8 @@ Filger_Spells = {
 			{ spellID = 49039, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Bone shield
 			{ spellID = 49222, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Icebound Fortitude
+			{ spellID = 48792, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 
 			-- Shaman
 			-- Grounding Totem Effect
