@@ -701,6 +701,10 @@ local function Shared(self, unit)
 				self.Talents:SetTextColor(1, 0, 0)
 				self.Talents:Point("BOTTOM", self.Power, "BOTTOM", 0, -1)
 			end
+			
+			self.QuestIcon = self.Health:CreateTexture(nil, "OVERLAY")
+			self.QuestIcon:Size(20, 20)
+			self.QuestIcon:Point("RIGHT", self.Info, "LEFT", -10, 0)
 		end
 
 		if C.unitframe.plugins_combat_feedback == true then
