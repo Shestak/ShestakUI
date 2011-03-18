@@ -76,7 +76,9 @@ function Butsu:LOOT_OPENED(event, autoloot)
 			end
 			slot.icon:SetTexture(texture)
 
-			m = math.max(m, quality)
+			if quality then
+				m = math.max(m, quality)
+			end
 
 			slot:Enable()
 			slot:Show()
