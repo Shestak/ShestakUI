@@ -58,16 +58,17 @@ end
 	
 local function Setup()
 	GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
-		local ail, r, gb
+		local ail, r, gb, d
 		local _, unit = GameTooltip:GetUnit()
 		if (unit and CanInspect(unit)) then
 			local isInspectOpen = (InspectFrame and InspectFrame:IsShown()) or (Examiner and Examiner:IsShown())
 			if ((unit) and (CanInspect(unit)) and (not isInspectOpen)) then
 				NotifyInspect(unit)
 				ail = GetAiL(unit)
+				d = GetAiL(unit) - GetAiL("player")
 				r, gb = GetAiLColor(ail)
 				ClearInspectPlayer(unit)
-				GameTooltip:AddLine(format("|cfffed100"..STAT_AVERAGE_ITEM_LEVEL..":|r "..ail), r, gb, gb)
+				GameTooltip:AddLine(format("|cfffed100"..STAT_AVERAGE_ITEM_LEVEL..":|r "..ail).." ("..((d > 0) and "|cff00ff00+" or "|cffff0000")..d.."|r)", r, gb, gb)
 				GameTooltip:Show()
 			end
 		end
