@@ -215,6 +215,10 @@ local function update()
 				if(rankIndex and rank) then
 					button.string2:SetText(guildRankColor[rankIndex] .. rank)
 				end
+			elseif(_VIEW == 'weeklyxp') then
+				button.string1:SetText(diffColor[level] .. level)
+			elseif(_VIEW == 'totalxp') then
+				button.string1:SetText(diffColor[level] .. level)
 			elseif(_VIEW == 'achievement') then
 				button.string1:SetText(diffColor[level] .. level)
 				if(classFileName and name) then

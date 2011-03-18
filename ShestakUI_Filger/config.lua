@@ -243,16 +243,18 @@ Filger_Spells = {
 		},
 	},
 	["HUNTER"] = {
-		--[[{
+		{
 			Name = "P_BUFF_ICON",
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 			
-			-- 
-			{ spellID = , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-		},]]
+			-- Spirit Mend
+			{ spellID = 90361, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Deterrence
+			{ spellID = 19263, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+		},
 		{
 			Name = "P_PROC_ICON",
 			Direction = "RIGHT",
@@ -277,6 +279,10 @@ Filger_Spells = {
 			{ spellID = 82926, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Mend Pet
 			{ spellID = 136, size = 37, unitId = "pet", caster = "player", filter = "BUFF" },
+			-- Cobra Strikes
+			{ spellID = 53257, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Focus Fire
+			{ spellID = 82692, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
 			-- Prestor's Talisman of Machination (Haste)
@@ -364,6 +370,10 @@ Filger_Spells = {
 			{ spellID = 28728, size = 30, filter = "CD" },
 			-- Snake Trap
 			{ spellID = 34600, size = 30, filter = "CD" },
+			-- Explosive Trap
+			{ spellID = 13813, size = 30, filter = "CD" },
+			-- Ice Trap
+			{ spellID = 13809, size = 30, filter = "CD" },
 			-- Wyvern Sting
 			{ spellID = 19386, size = 30, filter = "CD" },
 			-- Scare Beast
