@@ -106,6 +106,12 @@ C["toggleaddons"] = {
 		ToggleFrame(ArchyDigSiteFrame)
 		ToggleFrame(ArchyArtifactFrame)
 	end,
+	["stArchaeologist"] = function()
+		SlashCmdList.STARCHAEOLOGIST()
+		if _G["TTMenuAddOnBackground"]:IsShown() then
+			_G["TTMenuAddOnBackground"]:Hide()
+		end
+	end,
 	["AtlasLoot"] = function()
 		ToggleFrame(AtlasLootDefaultFrame)
 	end,
