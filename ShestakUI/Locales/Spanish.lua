@@ -54,18 +54,6 @@ L_ALOAD_TRADE = "Comercio"
 L_ALOAD_SOLO = "Solo"
 L_ALOAD_DEP = "Dependencias: "
 
--- ShestakUI_Config
-L_GUI_MINIMAP_ICON_LM = "Click izquierdo - Entrar a la GUI"
-L_GUI_MINIMAP_ICON_RM = "Click derecho - Menú adicional"
-L_GUI_MINIMAP_ICON_SD = "Shift + Arrastrar - Mover botón"
-L_GUI_MINIMAP_ICON_SRM = "Shift + Click derecho - Recargar UI"
-L_GUI_MINIMAP_ICON_SLASH = "Barra de comandos"
-L_GUI_MINIMAP_ICON_SPEC = "Cambiar talentos"
-L_GUI_MINIMAP_ICON_CL = "Fijar registro de combate"
-L_GUI_MINIMAP_ICON_DBM = "Modo test de DBM"
-L_GUI_MINIMAP_ICON_HEAL = "Cambiar a interfaz de sanador"
-L_GUI_MINIMAP_ICON_DPS = "Cambiar a interfaz de daño"
-
 -- Chat
 L_CHAT_WHISPER = "De"
 L_CHAT_BN_WHISPER = "De"

@@ -31,7 +31,6 @@ C["general"] = {
 	["auto_scale"] = true,						-- Autoscale
 	["multisampleprotect"] = true,				-- Disable this if you want multisample > 1
 	["uiscale"] = 0.96,							-- Your value(between 0.64 and 1) if "auto_scale" is disable
-	["minimap_icon"] = true,					-- UI icon near minimap
 	["welcome_message"] = true,					-- Enable welcome message in chat
 	["custom_lagtolerance"] = false,			-- Custom lag tollerance to your latency
 	--[[Correct UI Scale for resoluitons:

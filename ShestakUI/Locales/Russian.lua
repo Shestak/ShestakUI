@@ -55,18 +55,6 @@ L_ALOAD_TRADE = "Торговля"
 L_ALOAD_SOLO = "Соло"
 L_ALOAD_DEP = "Зависимые ресурсы: "
 
--- ShestakUI_Config
-L_GUI_MINIMAP_ICON_LM = "ЛКМ - Вызвать настройки"
-L_GUI_MINIMAP_ICON_RM = "ПКМ - Вызвать выпадающее меню"
-L_GUI_MINIMAP_ICON_SD = "Shift + двигать - Переместить иконку"
-L_GUI_MINIMAP_ICON_SRM = "Shift + ПКМ - Перезагрузить интерфейс"
-L_GUI_MINIMAP_ICON_SLASH = "Слеш команды"
-L_GUI_MINIMAP_ICON_SPEC = "Переключить набор талантов"
-L_GUI_MINIMAP_ICON_CL = "Исправить журнал боя"
-L_GUI_MINIMAP_ICON_DBM = "Тестовый режим DBM"
-L_GUI_MINIMAP_ICON_HEAL = "Переключиться на *Heal* раскладку"
-L_GUI_MINIMAP_ICON_DPS = "Переключиться на *DPS* раскладку"
-
 -- Chat
 L_CHAT_WHISPER = "От"
 L_CHAT_BN_WHISPER = "От"

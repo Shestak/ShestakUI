@@ -54,18 +54,6 @@ L_ALOAD_TRADE = "Trade"
 L_ALOAD_SOLO = "Solo"
 L_ALOAD_DEP = "Dependencies: "
 
--- ShestakUI_Config
-L_GUI_MINIMAP_ICON_LM = "Left Click - Enter to GUI"
-L_GUI_MINIMAP_ICON_RM = "Right Click - Dropdown menu"
-L_GUI_MINIMAP_ICON_SD = "Shift + Drag - Move Button"
-L_GUI_MINIMAP_ICON_SRM = "Shift + Right Click - ReloadUI"
-L_GUI_MINIMAP_ICON_SLASH = "Slash commands"
-L_GUI_MINIMAP_ICON_SPEC = "Spec switching"
-L_GUI_MINIMAP_ICON_CL = "Fix combatlog"
-L_GUI_MINIMAP_ICON_DBM = "DBM test mode"
-L_GUI_MINIMAP_ICON_HEAL = "Switch to heal layout"
-L_GUI_MINIMAP_ICON_DPS = "Switch to dps layout"
-
 -- Chat
 L_CHAT_WHISPER = "From"
 L_CHAT_BN_WHISPER = "From"

@@ -54,18 +54,6 @@ L_ALOAD_TRADE = "贸易"
 L_ALOAD_SOLO = "独自"
 L_ALOAD_DEP = "Dependencies: " -- Needs review
 
--- ShestakUI_Config
-L_GUI_MINIMAP_ICON_LM = "左键点击 -- 进入GUI设置"
-L_GUI_MINIMAP_ICON_RM = "右键点击 -- 显示下拉菜单"
-L_GUI_MINIMAP_ICON_SD = "Shift拖动 -- 改变图标位置"
-L_GUI_MINIMAP_ICON_SRM = "Shift+右键点击 -- 重新加载UI"
-L_GUI_MINIMAP_ICON_SLASH = "命令"
-L_GUI_MINIMAP_ICON_SPEC = "切换天赋"
-L_GUI_MINIMAP_ICON_CL = "修正战斗记录"
-L_GUI_MINIMAP_ICON_DBM = "DBM测试模式"
-L_GUI_MINIMAP_ICON_HEAL = "切换到heal_layout样式"
-L_GUI_MINIMAP_ICON_DPS = "切换到dps_layout样式"
-
 -- Chat
 L_CHAT_WHISPER = "From"
 L_CHAT_BN_WHISPER = "From"

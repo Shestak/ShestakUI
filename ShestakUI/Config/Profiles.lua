@@ -162,7 +162,6 @@ end
 --	My Config
 ----------------------------------------------------------------------------------------
 if T.author == true then
-	C["general"].minimap_icon = false
 	C["general"].welcome_message = false
 	C["general"].custom_lagtolerance = true
 	C["misc"].auto_quest = true

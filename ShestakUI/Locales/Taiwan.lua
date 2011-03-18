@@ -54,18 +54,6 @@ L_ALOAD_TRADE = "經商"
 L_ALOAD_SOLO = "獨自"
 L_ALOAD_DEP = "依賴: "
 
--- ShestakUI_Config
-L_GUI_MINIMAP_ICON_LM = "左鍵點擊 -- 進入GUI設置"
-L_GUI_MINIMAP_ICON_RM = "右鍵點擊 -- 顯示下拉菜單"
-L_GUI_MINIMAP_ICON_SD = "Shift拖動 -- 改變圖示位置"
-L_GUI_MINIMAP_ICON_SRM = "Shift+右鍵點擊 -- 重載UI"
-L_GUI_MINIMAP_ICON_SLASH = "命令"
-L_GUI_MINIMAP_ICON_SPEC = "切換天賦"
-L_GUI_MINIMAP_ICON_CL = "修正戰鬥記錄"
-L_GUI_MINIMAP_ICON_DBM = "DBM測試模式"
-L_GUI_MINIMAP_ICON_HEAL = "切換到heal_layout風格"
-L_GUI_MINIMAP_ICON_DPS = "切換到dps_layout風格"
-
 -- Chat
 L_CHAT_WHISPER = "From"
 L_CHAT_BN_WHISPER = "From"
