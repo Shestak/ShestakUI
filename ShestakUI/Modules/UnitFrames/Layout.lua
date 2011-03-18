@@ -1067,7 +1067,7 @@ if C.unitframe.show_arena == true then
 			if C.unitframe.arena_on_right == true then
 				arena[i]:Point(unpack(C.position.unitframes.arena))
 			else
-				arena[i]:Point("BOTTOMLEFT", C.position.unitframes.arena[2], "LEFT", C.position.unitframes.arena[4] + 75, C.position.unitframes.arena[5])
+				arena[i]:Point("BOTTOMLEFT", C.position.unitframes.arena[2], "LEFT", C.position.unitframes.arena[4] + 83, C.position.unitframes.arena[5])
 			end
 		else
 			arena[i]:Point("BOTTOM", arena[i-1], "TOP", 0, 30)

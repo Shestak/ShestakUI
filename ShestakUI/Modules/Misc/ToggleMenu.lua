@@ -11,7 +11,7 @@ C["togglemenu"] = {
 	-- Menus
 	["defaultIsToggleOnly"] = true,			-- Sets the default value for the addon menu (true - toggle-only, false - enhanced version)
 	["dontShowToggleOnlyMenu"] = false,		-- Always show enhanced addon menu
-	["mergeMenus"] = true,					-- Merge main and addon menu
+	["mergeMenus"] = false,					-- Merge main and addon menu
 	["maxMenuEntries"] = 30,				-- Maximum number of menu entries per column (0 - unlimited number)
 	-- Access
 	["showByDefault"] = false,				-- Show the menu by default
@@ -45,6 +45,11 @@ C["togglemainmenu"] = {
 			ToggleFrame(TTMenuBackground)
 		end
 	},
+	{	["text"] = HELP_LABEL,
+		["function"] = function()
+			print("|cffff0000"..HELP_LABEL.." "..NOT_READY_FEMALE..".|r")
+		end
+	},
 	{	["text"] = "Reload UI",
 		["function"] = function()
 			ReloadUI()
@@ -55,17 +60,6 @@ C["togglemainmenu"] = {
 			T.RunSlashCmd("/moveui")
 		end
 	},
-	--[[{	["text"] = "Test UI",
-		["function"] = function()
-			T.RunSlashCmd("/raidcd")
-			T.RunSlashCmd("/enemycd")
-			T.RunSlashCmd("/threat")
-			T.RunSlashCmd("/aldmg")
-			T.RunSlashCmd("/testuf")
-			T.RunSlashCmd("/dbmtest")
-			T.RunSlashCmd("/bwtest test")
-		end
-	},]]
 }
 
 -- Definde toggle functions

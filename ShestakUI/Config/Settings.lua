@@ -58,7 +58,7 @@ C["misc"] = {
 	["afk_spin_camera"] = false,				-- Spin camera while afk
 	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
 	["quest_auto_button"] = false,				-- Quest auto button
-	["raid_tools"] = false,						-- Raid tools
+	["raid_tools"] = true,						-- Raid tools
 	["announce_interrupt"] = false,				-- Announce in party/raid when you interrupt
 }
 

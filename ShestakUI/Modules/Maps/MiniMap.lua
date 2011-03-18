@@ -222,37 +222,6 @@ local micromenu = {
 		func = function() if not CalendarFrame then LoadAddOn("Blizzard_Calendar") end Calendar_Toggle() end},
 }
 
-local addonmenu = {
-	{text = "Damage Meters", isTitle = 1, notCheckable = 1, keepShownOnClick = 1},
-	{text = "alDamageMeter", notCheckable = 1,
-		func = function() if IsAddOnLoaded("alDamageMeter") then ToggleFrame(alDamageMeterFrame) end end},
-	{text = "Skada", notCheckable = 1,
-		func = function() if IsAddOnLoaded("Skada") then Skada:ToggleWindow() end end},
-	{text = "Recount", notCheckable = 1,
-		func = function() if IsAddOnLoaded("Recount") then ToggleFrame(Recount.MainWindow) Recount.RefreshMainWindow() end end},
-	{text = "TinyDPS", notCheckable = 1,
-		func = function() if IsAddOnLoaded("TinyDPS") then ToggleFrame(tdpsFrame) end end},
-	{text = "Threat Meters", isTitle = 1, notCheckable = 1, keepShownOnClick = 1},
-	{text = "Omen", notCheckable = 1,
-		func = function() if IsAddOnLoaded("Omen") then ToggleFrame(Omen.Anchor) end end},
-	{text = "Boss addons", isTitle = 1, notCheckable = 1, keepShownOnClick = 1},
-	{text = "BigWigs", notCheckable = 1,
-		func = function() if IsAddOnLoaded("BigWigs") then T.RunSlashCmd("/bigwigs") end end},
-	{text = "DBM", notCheckable = 1,
-		func = function() if IsAddOnLoaded("DBM-Core") then DBM:LoadGUI() end end},
-	{text = "DXE", notCheckable = 1,
-		func = function() if IsAddOnLoaded("DXE") then DXE:ToggleConfig() end end},
-	{text = "Other addons", isTitle = 1, notCheckable = 1, keepShownOnClick = 1},
-	{text = "Archy", notCheckable = 1,
-		func = function() if IsAddOnLoaded("Archy") then ToggleFrame(ArchyDigSiteFrame) end end},
-	{text = "AtlasLoot", notCheckable = 1,
-		func = function() if IsAddOnLoaded("AtlasLoot") then ToggleFrame(AtlasLootDefaultFrame) end end},
-	{text = "PhoenixStyle", notCheckable = 1,
-		func = function() if IsAddOnLoaded("PhoenixStyle") then PS_MinimapButton:Click() end end},
-	{text = "WIM", notCheckable = 1,
-		func = function() if IsAddOnLoaded("WIM") then WIM.ShowAllWindows() end end},
-}
-
 Minimap:SetScript("OnMouseUp", function(self, button)
 	local position = MinimapAnchor:GetPoint()
 	if button == "RightButton" then
@@ -263,9 +232,9 @@ Minimap:SetScript("OnMouseUp", function(self, button)
 		end
 	elseif button == "MiddleButton" then
 		if position:match("LEFT") then
-			EasyMenu(addonmenu, menuFrame, "cursor", 0, 0, "MENU", 2)
+			ToggleDropDownMenu(1, nil, MiniMapTrackingDropDown, "cursor", 0, 0, "MENU", 2)
 		else
-			EasyMenu(addonmenu, menuFrame, "cursor", -160, 0, "MENU", 2)
+			ToggleDropDownMenu(1, nil, MiniMapTrackingDropDown, "cursor", -160, 0, "MENU", 2)
 		end
 	elseif button == "LeftButton" then
 		Minimap_OnClick(self)
