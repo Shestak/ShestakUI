@@ -141,6 +141,9 @@ C["toggleaddons"] = {
 	["!BaudErrorFrame"] = function()
 		T.RunSlashCmd("/bauderror")
 	end,
+	["RollTracker"] = function()
+		T.RunSlashCmd("/rolltracker")
+	end,
 }
 
 -- Button size
