@@ -64,62 +64,68 @@ local function RefreshLocals()
 	fadeInTime = 0.5
 	fadeOutTime = 0.7
 	maxAlpha = 1
-	animScale = 1.5
+	animScale = C.pulsecooldown.anim_scale
 	iconSize = C.pulsecooldown.size
-	holdTime = 0
+	holdTime = C.pulsecooldown.hold_time
+	
+	for _, v in pairs(T.pulse_ignored_spells) do
+		T.pulse_ignored_spells[v] = true
+	end
 end
 
---------------------------
--- Cooldown / Animation --
---------------------------
+-- Cooldown/Animation
 local elapsed = 0
 local runtimer = 0
 local function OnUpdate(_, update)
 	elapsed = elapsed + update
 	if (elapsed > 0.05) then
-		for i,v in pairs(watching) do
+		for i, v in pairs(watching) do
 			if (GetTime() >= v[1] + 0.5) then
-				local start, duration, enabled, texture, isPet
-				if (v[2] == "spell") then
-					texture = GetSpellTexture(v[3])
-					start, duration, enabled = GetSpellCooldown(v[3])
-				elseif (v[2] == "item") then
-					texture = v[3]
-					start, duration, enabled = GetItemCooldown(i)
-				elseif (v[2] == "pet") then
-					texture = select(3,GetPetActionInfo(v[3]))
-					start, duration, enabled = GetPetActionCooldown(v[3])
-					isPet = true
-				end
-				if (enabled ~= 0) then
-					if (duration and duration > 2.0 and texture) then
-						cooldowns[i] = { start, duration, texture, isPet }
+				if T.pulse_ignored_spells[i] then
+                    watching[i] = nil
+                else
+					local start, duration, enabled, texture, isPet
+					if (v[2] == "spell") then
+						texture = GetSpellTexture(v[3])
+						start, duration, enabled = GetSpellCooldown(v[3])
+					elseif (v[2] == "item") then
+						texture = v[3]
+						start, duration, enabled = GetItemCooldown(i)
+					elseif (v[2] == "pet") then
+						texture = select(3, GetPetActionInfo(v[3]))
+						start, duration, enabled = GetPetActionCooldown(v[3])
+						isPet = true
 					end
-				end
-				if (not (enabled == 0 and v[2] == "spell")) then
-					watching[i] = nil
+					if (enabled ~= 0) then
+						if (duration and duration > 2.0 and texture) then
+							cooldowns[i] = { start, duration, texture, isPet }
+						end
+					end
+					if (not (enabled == 0 and v[2] == "spell")) then
+						watching[i] = nil
+					end
 				end
 			end
 		end
-		for i,v in pairs(cooldowns) do
+		for i, v in pairs(cooldowns) do
 			local remaining = v[2]-(GetTime()-v[1])
 			if (remaining <= 0) then
 				tinsert(animating, {v[3],v[4]})
 				cooldowns[i] = nil
 			end
 		end
-        
+
 		elapsed = 0
 		if (#animating == 0 and tcount(watching) == 0 and tcount(cooldowns) == 0) then
 			DCP:SetScript("OnUpdate", nil)
 			return
 		end
 	end
-    
+	
 	if (#animating > 0) then
 		runtimer = runtimer + update
 		if (runtimer > (fadeInTime + holdTime + fadeOutTime)) then
-			tremove(animating,1)
+			tremove(animating, 1)
 			runtimer = 0
 			DCPT:SetTexture(nil)
 			DCPT:SetVertexColor(1, 1, 1)
@@ -129,7 +135,10 @@ local function OnUpdate(_, update)
 			if (not DCPT:GetTexture()) then
 				DCPT:SetTexture(animating[1][1])
 				if animating[1][2] then
-					DCPT:SetVertexColor(1,1,1)
+					DCPT:SetVertexColor(1, 1, 1)
+				end
+				if C.pulsecooldown.sound == true then
+					PlaySoundFile(C.media.proc_sound, "Master")
 				end
 			end
 			local alpha = maxAlpha
@@ -148,9 +157,7 @@ local function OnUpdate(_, update)
 	end
 end
 
---------------------
--- Event Handlers --
---------------------
+-- Event Handlers
 function DCP:ADDON_LOADED(addon)
 	RefreshLocals()
 	self:Point("CENTER", DCPAnchor, "CENTER", 0, 0)
@@ -158,9 +165,9 @@ function DCP:ADDON_LOADED(addon)
 end
 DCP:RegisterEvent("ADDON_LOADED")
 
-function DCP:UNIT_SPELLCAST_SUCCEEDED(unit,spell,rank)
+function DCP:UNIT_SPELLCAST_SUCCEEDED(unit, spell, rank)
 	if (unit == "player") then
-		watching[spell] = {GetTime(),"spell",spell.."("..rank..")"}
+		watching[spell] = {GetTime(), "spell", spell.."("..rank..")"}
 		if (not self:IsMouseEnabled()) then
 			self:SetScript("OnUpdate", OnUpdate)
 		end
@@ -169,15 +176,15 @@ end
 DCP:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 
 function DCP:COMBAT_LOG_EVENT_UNFILTERED(...)
-	local _,event,_,_,sourceFlags,_,_,_,spellID = ...
+	local _, event, _, _, sourceFlags, _, _, _, spellID = ...
 	if (event == "SPELL_CAST_SUCCESS") then
-		if (bit.band(sourceFlags,COMBATLOG_OBJECT_TYPE_PET) == COMBATLOG_OBJECT_TYPE_PET and bit.band(sourceFlags,COMBATLOG_OBJECT_AFFILIATION_MINE) == COMBATLOG_OBJECT_AFFILIATION_MINE) then
+		if (bit.band(sourceFlags, COMBATLOG_OBJECT_TYPE_PET) == COMBATLOG_OBJECT_TYPE_PET and bit.band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_MINE) == COMBATLOG_OBJECT_AFFILIATION_MINE) then
 			local name = GetSpellInfo(spellID)
 			local index = GetPetActionIndexByName(name)
-			if (index and not select(7,GetPetActionInfo(index))) then
-				watching[name] = {GetTime(),"pet",index}
+			if (index and not select(7, GetPetActionInfo(index))) then
+				watching[name] = {GetTime(), "pet", index}
 			elseif (not index and name) then
-				watching[name] = {GetTime(),"spell",name}
+				watching[name] = {GetTime(), "spell", name}
 			else
 				return
 			end
@@ -204,22 +211,30 @@ hooksecurefunc("UseAction", function(slot)
 	local actionType,itemID = GetActionInfo(slot)
 	if (actionType == "item") then
 		local texture = GetActionTexture(slot)
-		watching[itemID] = {GetTime(),"item",texture}
+		watching[itemID] = {GetTime(), "item", texture}
 	end
 end)
 
 hooksecurefunc("UseInventoryItem", function(slot)
-	local itemID = GetInventoryItemID("player", slot);
+	local itemID = GetInventoryItemID("player", slot)
 	if (itemID) then
 		local texture = GetInventoryItemTexture("player", slot)
-		watching[itemID] = {GetTime(),"item",texture}
+		watching[itemID] = {GetTime(), "item", texture}
 	end
 end)
 
-hooksecurefunc("UseContainerItem", function(bag,slot)
+hooksecurefunc("UseContainerItem", function(bag, slot)
 	local itemID = GetContainerItemID(bag, slot)
 	if (itemID) then
 		local texture = select(10, GetItemInfo(itemID))
-		watching[itemID] = {GetTime(),"item",texture}
+		watching[itemID] = {GetTime(), "item", texture}
 	end
 end)
+
+SlashCmdList.PulseCD = function(msg) 
+	RefreshLocals()
+	tinsert(animating, {"Interface\\Icons\\Inv_Misc_Tournaments_Banner_Human"})
+	DCP:SetScript("OnUpdate", OnUpdate)
+end
+SLASH_PulseCD1 = "/pulsecd"
+SLASH_PulseCD2 = "/згдыусв"

@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+﻿local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
@@ -42,5 +42,11 @@ if C.enemycooldown.enable == true then
 		[16979] = 15,	-- Feral Charge - Bear
 		[49376] = 30,	-- Feral Charge - Cat
 		[85285] = 10,	-- Rebuke
+	}
+end
+
+if C.pulsecooldown.enable == true then
+	T.pulse_ignored_spells = {
+		--"Spell name",	-- Example
 	}
 end

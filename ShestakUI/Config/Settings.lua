@@ -19,6 +19,7 @@ C["media"] = {
 	["highlight"] = [[Interface\AddOns\ShestakUI\Media\Textures\Highlight.tga]],	-- Texture for debuffs highlight  
 	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for wispers
 	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
+	["proc_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Proc.mp3]],			-- Sound for procs
 	["border_color"] = {0.37, 0.3, 0.3},		-- Color for borders
 	["backdrop_color"] = {0, 0, 0},				-- Color for borders backdrop
 	["overlay_color"] = {0, 0, 0, 0.7},			-- Color for action bars overlay
@@ -149,6 +150,9 @@ C["enemycooldown"] = {
 C["pulsecooldown"] = {
 	["enable"] = false,							-- Show cooldowns pulse
 	["size"] = 75,								-- Icon size
+	["sound"] = false,							-- Warning sound notification
+	["anim_scale"] = 1.5,						-- Animation scaling
+	["hold_time"] = 0,							-- Max opacity hold time
 }
 
 ----------------------------------------------------------------------------------------
