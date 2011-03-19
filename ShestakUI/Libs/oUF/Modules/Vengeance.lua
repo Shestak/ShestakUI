@@ -68,7 +68,7 @@ local Update = function(self, event, unit)
 			if (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
 			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
-			elseif (T.class == "WARRIOR" or T.class == "DRUID")
+			elseif (T.class == "WARRIOR" or (T.class == "DRUID" and T.Role == "Tank"))
 			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar ~= true)
 			or (T.class == "PALADIN" and C.unitframe.plugins_holy_bar ~= true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
