@@ -106,6 +106,8 @@ Filger_Spells = {
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lightweave (Intellect)
 			{ spellID = 75170, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heartsong (Spirit)
+			{ spellID = 74224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
