@@ -103,6 +103,8 @@ hooksecurefunc("SetItemButtonTexture", function(button, texture)
 	if button:GetName():match("WatchFrameItem%d+") and not button.skinned then
 		local icon = _G[button:GetName().."IconTexture"]
 		local border = _G[button:GetName().."NormalTexture"]
+		local count = _G[button:GetName().."Count"]
+		local hotkey = _G[button:GetName().."HotKey"]
 
 		button:Size(T.buttonsize, T.buttonsize)
 		button:SetTemplate("Default")
@@ -110,6 +112,14 @@ hooksecurefunc("SetItemButtonTexture", function(button, texture)
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:SetPoint("TOPLEFT", button, 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		
+		count:ClearAllPoints()
+		count:Point("BOTTOMRIGHT", 0, 2)
+		count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		
+		hotkey:SetText("")
+		hotkey:Kill()
 
 		border:ClearAllPoints()
 		border:SetAllPoints()
