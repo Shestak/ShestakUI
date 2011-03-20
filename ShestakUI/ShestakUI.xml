@@ -32,6 +32,7 @@
 	<Script file="Config\Filters\Nameplates.lua"/>
 	<Script file="Config\Filters\RaidAuraWatch.lua"/>
 	<Script file="Config\Filters\Reminders.lua"/>
+	<Script file="Config\Filters\ChatSpam.lua"/>
 	
 	<Script file="Core\Deprecated.lua"/>
 	<Script file="Core\API.lua"/>

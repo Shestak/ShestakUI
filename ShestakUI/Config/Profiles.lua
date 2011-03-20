@@ -174,6 +174,7 @@ if T.author == true then
 	C["tooltip"].title = true
 	C["tooltip"].talents = true
 	C["chat"].combatlog = false
+	C["chat"].spam = true
 	C["unitframe"].arena_on_right = false
 	C["stats"].fps = false
 end

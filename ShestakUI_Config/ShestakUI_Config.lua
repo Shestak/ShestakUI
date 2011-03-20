@@ -164,6 +164,7 @@ local function Local(o)
 	if o == "UIConfigchatbackground" then o = L_GUI_CHAT_BACKGROUND end
 	if o == "UIConfigchatbackground_alpha" then o = L_GUI_CHAT_BACKGROUND_ALPHA end
 	if o == "UIConfigchatfilter" then o = L_GUI_CHAT_SPAM end
+	if o == "UIConfigchatspam" then o = L_GUI_CHAT_GOLD end
 	if o == "UIConfigchatwidth" then o = L_GUI_CHAT_WIDTH end
 	if o == "UIConfigchatheight" then o = L_GUI_CHAT_HEIGHT end
 	if o == "UIConfigchatchat_bar" then o = L_GUI_CHAT_BAR end

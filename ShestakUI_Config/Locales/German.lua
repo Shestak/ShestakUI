@@ -132,7 +132,8 @@ if GetLocale() == "deDE" then
 	L_GUI_CHAT_ENABLE = "Chat aktivieren"
 	L_GUI_CHAT_BACKGROUND = "Chathintergrund aktivieren"
 	L_GUI_CHAT_BACKGROUND_ALPHA = "Transparenz des Hintergrunds"
-	L_GUI_CHAT_SPAM = "Einigen Chatspam entfernen (*Spieler1* hat *Spieler2* im Duell besiegt)"
+	L_GUI_CHAT_SPAM = "Removing some systems spam(*Player1* won duel *Player2*)"  -- Needs review
+	L_GUI_CHAT_GOLD = "Removing some players spam"  -- Needs review
 	L_GUI_CHAT_WIDTH = "Breite des Chatfensters"
 	L_GUI_CHAT_HEIGHT = "Höhe desChatfensters"
 	L_GUI_CHAT_BAR = "Kleine Leiste um den Chatchannel zu wechseln"

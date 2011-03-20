@@ -132,7 +132,8 @@ if GetLocale() == "esES" or GetLocale() == "esMX" then
 	L_GUI_CHAT_ENABLE = "Activar chat"
 	L_GUI_CHAT_BACKGROUND = "Activar fondo del chat"
 	L_GUI_CHAT_BACKGROUND_ALPHA = "Opacidad del fondo del chat"
-	L_GUI_CHAT_SPAM = "Eliminar ciertos mensajes de spam(*Jugador1* ha ganado un duelo a *Jugador2*)"
+	L_GUI_CHAT_SPAM = "Removing some systems spam(*Player1* won duel *Player2*)"  -- Needs review
+	L_GUI_CHAT_GOLD = "Removing some players spam"  -- Needs review
 	L_GUI_CHAT_WIDTH = "Anchura del chat"
 	L_GUI_CHAT_HEIGHT = "Altura del chat"
 	L_GUI_CHAT_BAR = "Pequeña barra de botones para cambiar de canal en el chat"

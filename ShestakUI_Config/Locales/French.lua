@@ -132,7 +132,8 @@ if GetLocale() == "frFR" then
 	L_GUI_CHAT_ENABLE = "Activer le chat"
 	L_GUI_CHAT_BACKGROUND = "Activer l'arrière plan du chat"
 	L_GUI_CHAT_BACKGROUND_ALPHA = "Transparence de l'arrière plan du chat"
-	L_GUI_CHAT_SPAM = "Retirer certains spams (ex: joueur1 a battu en duel joueur2)"
+	L_GUI_CHAT_SPAM = "Removing some systems spam(*Player1* won duel *Player2*)"  -- Needs review
+	L_GUI_CHAT_GOLD = "Removing some players spam"  -- Needs review
 	L_GUI_CHAT_WIDTH = "Largeur du chat"
 	L_GUI_CHAT_HEIGHT = "Hauteur du chat"
 	L_GUI_CHAT_BAR = "Bouton pour changer de canal"

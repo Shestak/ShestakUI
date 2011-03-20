@@ -132,7 +132,8 @@ if GetLocale() == "zhCN" then
 	L_GUI_CHAT_ENABLE = "开启聊天框增强"
 	L_GUI_CHAT_BACKGROUND = "开启聊天框背景"
 	L_GUI_CHAT_BACKGROUND_ALPHA = "聊天背景透明度"
-	L_GUI_CHAT_SPAM = "移除垃圾消息(*玩家1* 战胜*玩家2*)"
+	L_GUI_CHAT_SPAM = "Removing some systems spam(*Player1* won duel *Player2*)"  -- Needs review
+	L_GUI_CHAT_GOLD = "Removing some players spam"  -- Needs review
 	L_GUI_CHAT_WIDTH = "框体宽度"
 	L_GUI_CHAT_HEIGHT = "框体高度"
 	L_GUI_CHAT_BAR = "显示频道快捷图示栏"
