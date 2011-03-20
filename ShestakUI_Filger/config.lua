@@ -518,8 +518,6 @@ Filger_Spells = {
 			{ spellID = 22959, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Combustion
 			{ spellID = 83853, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Impact
-			{ spellID = 12355, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Blast wave
 			{ spellID = 11113, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Freeze (Water Elemental)
@@ -1125,6 +1123,10 @@ Filger_Spells = {
 			{ spellID = 33206, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Power Infusion
 			{ spellID = 10060, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Levitation
+			{ spellID = 1706, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Holy Walk
+			{ spellID = 96219, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1831,6 +1833,8 @@ Filger_Spells = {
 			{ spellID = 79476, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Firelord's Draught
 			{ spellID = 94826, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Speed
+			{ spellID = 23451, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Leeroy Jenkins
 			-- Bloodlust
@@ -1996,7 +2000,7 @@ Filger_Spells = {
 			-- Cone of Cold
 			{ spellID = 120, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Improved Cone of Cold
-			{ spellID = 83302, size = 37, unitId = "player", caster = "all", filter = "DEBUFF" },
+			{ spellID = 83302, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Slow
 			{ spellID = 31589, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Ring of Frost
