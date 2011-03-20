@@ -98,6 +98,9 @@ if GetLocale() == "koKR" then
 	L_GUI_COOLDOWN_PULSE = "Pulse cooldowns"
 	L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse"
 	L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size"
+	L_GUI_COOLDOWN_PULSE_SOUND = "Warning sound notification"
+	L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Animation scaling"
+	L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Max opacity hold time"
 	
 	-- Threat options
 	L_GUI_THREAT = "Threat bars"

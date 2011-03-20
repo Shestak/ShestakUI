@@ -98,6 +98,9 @@ if GetLocale() == "esES" or GetLocale() == "esMX" then
 	L_GUI_COOLDOWN_PULSE = "Pulse cooldowns" -- Needs review
 	L_GUI_COOLDOWN_PULSE_ENABLE = "Mostrar cuentas atras de tiempos de reutilización"
 	L_GUI_COOLDOWN_PULSE_SIZE = "Tamaño de los icono de las cuentas atras de tiempos de reutilización"
+	L_GUI_COOLDOWN_PULSE_SOUND = "Warning sound notification" -- Needs review
+	L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Animation scaling" -- Needs review
+	L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Max opacity hold time" -- Needs review
 	
 	-- Threat options
 	L_GUI_THREAT = "Barras de Amenaza"

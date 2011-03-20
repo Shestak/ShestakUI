@@ -98,6 +98,9 @@ if GetLocale() == "deDE" then
 	L_GUI_COOLDOWN_PULSE = "Pulse cooldowns" -- Needs review
 	L_GUI_COOLDOWN_PULSE_ENABLE = "Zeige Abklingzeitimpuls"
 	L_GUI_COOLDOWN_PULSE_SIZE = "Abklingzeitimpuls Symbolgröße"
+	L_GUI_COOLDOWN_PULSE_SOUND = "Warning sound notification" -- Needs review
+	L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Animation scaling" -- Needs review
+	L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Max opacity hold time" -- Needs review
 	
 	-- Threat options
 	L_GUI_THREAT = "Bedrohungsleisten"

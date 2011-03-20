@@ -127,6 +127,9 @@ local function Local(o)
 	if o == "UIConfigpulsecooldown" then o = L_GUI_COOLDOWN_PULSE end
 	if o == "UIConfigpulsecooldownenable" then o = L_GUI_COOLDOWN_PULSE_ENABLE end
 	if o == "UIConfigpulsecooldownsize" then o = L_GUI_COOLDOWN_PULSE_SIZE end
+	if o == "UIConfigpulsecooldownsound" then o = L_GUI_COOLDOWN_PULSE_SOUND end
+	if o == "UIConfigpulsecooldownanim_scale" then o = L_GUI_COOLDOWN_PULSE_ANIM_SCALE end
+	if o == "UIConfigpulsecooldownhold_time" then o = L_GUI_COOLDOWN_PULSE_HOLD_TIME end
 	
 	-- Threat options
 	if o == "UIConfigthreat" then o = L_GUI_THREAT end
