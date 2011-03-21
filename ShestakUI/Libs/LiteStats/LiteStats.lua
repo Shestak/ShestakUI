@@ -266,7 +266,9 @@ if latency.enabled then
 		OnEnter = function(self)
 			local _, _, latencyHome, latencyWorld = GetNetStats()
 			local latency = format(MAINMENUBAR_LATENCY_LABEL, latencyHome, latencyWorld)
-			GameTooltip:SetOwner(self, latency.tip_anchor, latency.tip_x, latency.tip_y)
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:SetPoint(modules.Latency.tip_anchor, modules.Latency.tip_frame, modules.Latency.tip_x, modules.Latency.tip_y)
 			GameTooltip:ClearLines()
 			GameTooltip:AddLine(latency)
 			GameTooltip:Show()
@@ -295,7 +297,9 @@ if memory.enabled then
 		OnEnter = function(self)
 			collectgarbage()
 			self.hovered = true
-			GameTooltip:SetOwner(self, memory.tip_anchor, memory.tip_x, memory.tip_y)
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:SetPoint(modules.Memory.tip_anchor, modules.Memory.tip_frame, modules.Memory.tip_x, modules.Memory.tip_y)
 			GameTooltip:ClearLines()
 			local lat,r = select(3,GetNetStats()),750
 			GameTooltip:AddDoubleLine(
@@ -403,7 +407,9 @@ if durability.enabled then
 			end
 		end,
 		OnEnter = function(self)
-			GameTooltip:SetOwner(self, durability.tip_anchor, durability.tip_x, durability.tip_y)
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:SetPoint(modules.Durability.tip_anchor, modules.Durability.tip_frame, modules.Durability.tip_x, modules.Durability.tip_y)
 			GameTooltip:ClearLines()
 			if C.tooltip.average_lvl == true then
 				GameTooltip:AddLine(DURABILITY,tthead.r,tthead.g,tthead.b)
@@ -585,7 +591,9 @@ if clock.enabled then
 		OnEvent = function(self) if self.hovered then self:GetScript("OnEnter")(self) end end,
 		OnEnter = function(self)
 			if not self.hovered then RequestRaidInfo() self.hovered = true end			
-			GameTooltip:SetOwner(self, clock.tip_anchor, clock.tip_x, clock.tip_y)
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:Point(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
 			GameTooltip:ClearLines()
 			GameTooltip:AddLine(date'%A, %B %d %Y',tthead.r,tthead.g,tthead.b)
 			GameTooltip:AddLine' '
@@ -682,7 +690,9 @@ if location.enabled then
 		end,
 		OnEnter = function(self)
 			self.hovered, self.init = true, true
-			GameTooltip:SetOwner(self, location.tip_anchor, location.tip_x, location.tip_y)
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:SetPoint(modules.Location.tip_anchor, modules.Location.tip_frame, modules.Location.tip_x, modules.Location.tip_y)
 		end,
 		OnClick = function(self,button)
 			if IsShiftKeyDown() then
@@ -693,7 +703,7 @@ if location.enabled then
 	})
 end
 ------------------------------------------
--- Coordinates
+--	Coordinates
 if coords.enabled then
 	Inject("Coords", {
 		text = { string = Coords },
@@ -814,7 +824,9 @@ if guild.enabled then
 				local col = T.RGBToHex(ttsubh.r, ttsubh.g, ttsubh.b)
 				for i = 0, total do if select(9, GetGuildRosterInfo(i)) then online = online + 1 end end
 				
-				GameTooltip:SetOwner(self, guild.tip_anchor, guild.tip_x, guild.tip_y)
+				GameTooltip:SetOwner(self, "ANCHOR_NONE")
+				GameTooltip:ClearAllPoints()
+				GameTooltip:SetPoint(modules.Guild.tip_anchor, modules.Guild.tip_frame, modules.Guild.tip_x, modules.Guild.tip_y)
 				GameTooltip:ClearLines()
 				GameTooltip:AddDoubleLine(GetGuildInfo(P),format("%s: %d/%d",GUILD_ONLINE_LABEL,online,total),tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
 				if gmotd ~= "" then GameTooltip:AddLine(format("  %s |cffaaaaaa- |cffffffff%s",GUILD_MOTD,gmotd),ttsubh.r,ttsubh.g,ttsubh.b,1) end
@@ -897,7 +909,9 @@ if friends.enabled then
 			local totalonline = online + BNonline
 			local totalfriends = total + BNtotal
 			if online > 0 or BNonline > 0 then
-				GameTooltip:SetOwner(self, modules.Friends.tip_anchor, modules.Friends.tip_x, modules.Friends.tip_y)
+				GameTooltip:SetOwner(self, "ANCHOR_NONE")
+				GameTooltip:ClearAllPoints()
+				GameTooltip:SetPoint(modules.Friends.tip_anchor, modules.Friends.tip_frame, modules.Friends.tip_x, modules.Friends.tip_y)
 				GameTooltip:ClearLines()
 				GameTooltip:AddDoubleLine(FRIENDS_LIST, format("%s: %s/%s",GUILD_ONLINE_LABEL,totalonline,totalfriends),tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
 				GameTooltip:AddLine' '
@@ -1249,7 +1263,9 @@ if experience.enabled then
 		end,
 		OnEnter = function(self)
 			self.hovered = true
-			GameTooltip:SetOwner(self, experience.tip_anchor, experience.tip_x, experience.tip_y)
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:SetPoint(modules.Experience.tip_anchor, modules.Experience.tip_frame, modules.Experience.tip_x, modules.Experience.tip_y)
 			GameTooltip:ClearLines()
 			if conf.ExpMode == "played" then
 				GameTooltip:AddLine(TIME_PLAYED_MSG,tthead.r,tthead.g,tthead.b)
@@ -1297,7 +1313,7 @@ if experience.enabled then
 					_,desc,_,_,_,_,war,_,_,_,_,watched = GetFactionInfo(i)
 					if watched then break end
 				end
-				GameTooltip:AddLine(tags'repname',tthead.r,tthead.g,tthead.b)
+				GameTooltip:AddLine(repname,tthead.r,tthead.g,tthead.b)
 				GameTooltip:AddLine(desc,ttsubh.r,ttsubh.g,ttsubh.b,1)
 				GameTooltip:AddLine' '
 				GameTooltip:AddDoubleLine(format("%s%s",tags'repcolor',tags'standing'),war and format("|cffff5555%s",AT_WAR))

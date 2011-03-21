@@ -260,6 +260,7 @@ L_SLASHCMD_HELP = {
 	"/xct - Description of command.",
 	"/raidcd - Description of command.",
 	"/enemycd - Description of command.",
+	"/pulsecd - Description of command.",
 	"/threat - Description of command.",
 	"/tt - Description of command.",
 	"/invite - Description of command.",

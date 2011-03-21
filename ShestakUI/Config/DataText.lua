@@ -33,14 +33,14 @@ LPSTAT_CONFIG = {
 		enabled = C.stats.clock, -- Local time and the 24 hour clock can be enabled in-game via time manager (right-click)
 		AM = class"A", PM = class"P", colon = class":", -- These values apply to the displayed clock.
 		anchor_frame = "UIParent", anchor_to = "left", anchor_from = "bottomleft",
-		x_off = 20, y_off = 11, tip_anchor = "ANCHOR_TOPLEFT", tip_x = 1, tip_y = 5,
+		x_off = 20, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20,
 		justify_h = "left",
 	},
 	Latency = {
 		enabled = C.stats.latency,
 		fmt = "[color]%d|r"..class"ms", -- "77ms", [color] inserts latency color code.
 	 	anchor_frame = "Clock", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.clock and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+		x_off = C.stats.clock and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Memory = {
 		enabled = C.stats.memory,
@@ -48,7 +48,7 @@ LPSTAT_CONFIG = {
 		fmt_kb = "%.0f"..class"kb", -- "256kb" - only shows if memory is under one megabyte
 		--max_addons = 15, -- Set to nil or comment/delete this line to disable. Holding Alt reveals hidden addons.
 		anchor_frame = "Latency", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.latency and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+		x_off = C.stats.latency and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	FPS = {
 		enabled = C.stats.fps,
@@ -61,7 +61,7 @@ LPSTAT_CONFIG = {
 		fmt = "%d/%d"..class"f", -- "F: 3/40"
 		maxfriends = nil, -- Set max friends listed, nil means no limit.
 		anchor_frame = "FPS", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.fps and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+		x_off = C.stats.fps and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Guild = {
 		enabled = C.stats.guild,
@@ -71,7 +71,7 @@ LPSTAT_CONFIG = {
 		show_xp = true, -- Show guild experience.
 		sorting = "class", -- Default roster sorting: name, level, class, zone, rank, note.
 		anchor_frame = "Friends", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.friend and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+		x_off = C.stats.friend and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Durability = {
 		enabled = C.stats.durability,
@@ -81,7 +81,7 @@ LPSTAT_CONFIG = {
 		ignore_inventory = false, -- Ignore inventory gear when auto-repairing.
 		gear_icons = false, -- Show your gear icons in the tooltip.
 		anchor_frame = "Guild", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.guild and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+		x_off = C.stats.guild and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Experience = {
 		enabled = C.stats.experience,
@@ -113,9 +113,10 @@ LPSTAT_CONFIG = {
 			["Клан Громового Молота"] = "Громовой Молот",
 			["Защитники Тол Барада"] = "Тол Барад",
 			["Гидраксианские Повелители Вод"] = "Повелители Вод",
+			["Комсомольский Авангард"] = "КМ",
 		},
 		anchor_frame = "Durability", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.durability and 3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+		x_off = C.stats.durability and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 -- Bottomright block
 	Coords = {
@@ -130,7 +131,7 @@ LPSTAT_CONFIG = {
 		truncate = 0, -- Max number of letters for location text, set to 0 to disable.
 		coord_fmt = "%d,%d", -- "44,19", to add tenths, use '%.1f' (digit determines decimal)
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
-		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_anchor = "ANCHOR_TOPRIGHT", tip_x = 0, tip_y = 5
+		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
 -- Top block
 	Stats = {
@@ -197,7 +198,7 @@ LPSTAT_CONFIG = {
 			["Beast Mastery"] = "B.M.",
 		},
 		anchor_frame = "Stats", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = 0, tip_y = -6
+		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = -3, tip_y = 13
 	},
 -- MiniMap block
 	Ping = {
@@ -209,10 +210,10 @@ LPSTAT_CONFIG = {
 	},
 -- Bags block
 	Gold = {
-		enabled = true, -- To clear all money data: /script for _,t in pairs(LPSTAT) do if type(t)=='table' then t.Gold = nil end end
+		enabled = true,
 		style = 1, -- Display styles: [1] 55g 21s 11c [2] 8829.4g [3] 823.55.94
 		anchor_frame = "StuffingFrameBags", anchor_to = "right", anchor_from = "topright",
-		x_off = -25, y_off = -13, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = -3, tip_y = 7
+		x_off = -25, y_off = -13, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = -3, tip_y = 17
 	},
 }
 
