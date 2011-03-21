@@ -25,7 +25,7 @@ Stuffing:SetScript("OnEvent", function(this, event, ...)
 end)
 
 local function Print(x)
-	DEFAULT_CHAT_FRAME:AddMessage("|cffffff00ShestakUI Bags: " .. x)
+	DEFAULT_CHAT_FRAME:AddMessage("|cffffff00" .. x)
 end
 
 local function Stuffing_Sort(args)
@@ -726,9 +726,9 @@ local function StuffingSlashCmd(Cmd)
 			Print(L_BAG_OPEN_BANK)
 		end
 	else
-		Print("sort - " .. L_BAG_SORT)
-		Print("stack - " .. L_BAG_STACK)
-		Print("purchase - " .. L_BAG_BUY_BANKS_SLOT)
+		Print("/sort - " .. L_BAG_SORT)
+		Print("/stack - " .. L_BAG_STACK)
+		Print("/purchase - " .. L_BAG_BUY_BANKS_SLOT)
 	end
 end
 
