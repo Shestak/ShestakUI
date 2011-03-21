@@ -25,12 +25,6 @@ DCPAnchor.text:SetText("CooldownPuls\nAnchor")
 
 local DCP = CreateFrame("Frame")
 DCP:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
-
-local DCPT = DCP:CreateTexture(nil, "ARTWORK")
-DCPT:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-DCPT:SetPoint("TOPLEFT", DCP, "TOPLEFT", noscalemult * 2, -noscalemult * 2)
-DCPT:SetPoint("BOTTOMRIGHT", DCP, "BOTTOMRIGHT", -noscalemult * 2, noscalemult * 2)
 DCP:SetBackdrop({
 	bgFile = C.media.blank,
 	edgeFile = C.media.blank,
@@ -39,6 +33,11 @@ DCP:SetBackdrop({
 })
 DCP:SetBackdropBorderColor(unpack(C.media.border_color))
 DCP:SetBackdropColor(unpack(C.media.backdrop_color))
+
+local DCPT = DCP:CreateTexture(nil, "ARTWORK")
+DCPT:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+DCPT:SetPoint("TOPLEFT", DCP, "TOPLEFT", noscalemult * 2, -noscalemult * 2)
+DCPT:SetPoint("BOTTOMRIGHT", DCP, "BOTTOMRIGHT", -noscalemult * 2, noscalemult * 2)
 
 -----------------------
 -- Utility Functions --
@@ -98,7 +97,7 @@ local function OnUpdate(_, update)
 					end
 					if (enabled ~= 0) then
 						if (duration and duration > 2.0 and texture) then
-							cooldowns[i] = { start, duration, texture, isPet }
+							cooldowns[i] = {start, duration, texture, isPet}
 						end
 					end
 					if (not (enabled == 0 and v[2] == "spell")) then
@@ -208,7 +207,7 @@ end
 DCP:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 hooksecurefunc("UseAction", function(slot)
-	local actionType,itemID = GetActionInfo(slot)
+	local actionType, itemID = GetActionInfo(slot)
 	if (actionType == "item") then
 		local texture = GetActionTexture(slot)
 		watching[itemID] = {GetTime(), "item", texture}

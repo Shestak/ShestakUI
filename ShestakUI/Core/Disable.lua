@@ -100,3 +100,7 @@ end
 if (IsAddOnLoaded("MikScrollingBattleText")) then
 	C.combattext.enable = false
 end
+
+if (IsAddOnLoaded("Doom_CooldownPulse")) then
+	C.pulsecooldown.enable = false
+end
