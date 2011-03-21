@@ -230,3 +230,39 @@ L_COMBATTEXT_TEST_USE_TEST = "Type /xct test to toggle combat text testmode."
 L_COMBATTEXT_POPUP = "To save combat text window positions you need to reload your UI."
 L_COMBATTEXT_UNSAVED = "Combat text window positions unsaved, don't forget to reload UI."
 L_COMBATTEXT_UNLOCKED = "Combat text unlocked."
+
+-- Slash commands
+L_SLASHCMD_HELP = {
+	"Available slash commands:",
+	"/rl - Description of command.",
+	"/rc - Description of command.",
+	"/gm - Description of command.",
+	"/dis ADDON_NAME - Description of command.",
+	"/en ADDON_NAME - Description of command.",
+	"/rd - Description of command.",
+	"/toraid - Description of command.",
+	"/luaerror - Description of command.",
+	"/spec - Description of command.",
+	"/clfix - Description of command.",
+	"/heal - Description of command.",
+	"/dps - Description of command.",
+	"/frame - Description of command.",
+	"/addons solo|party|raid|pvp|trade - Description of command.",
+	"/farmmode - Description of command.",
+	"/moveui - Description of command.",
+	"/resetui - Description of command.",
+	"/resetuf - Description of command.",
+	"/resetconfig - Description of command.",
+	"/resetstats - Description of command.",
+	"/settings ADDON_NAME - Description of command.",
+	"/ls - Description of command.",
+	"/bags - Description of command.",
+	"/xct - Description of command.",
+	"/raidcd - Description of command.",
+	"/enemycd - Description of command.",
+	"/threat - Description of command.",
+	"/tt - Description of command.",
+	"/invite - Description of command.",
+	"/testuf - Description of command.",
+	"/cfg - Description of command.",
+}

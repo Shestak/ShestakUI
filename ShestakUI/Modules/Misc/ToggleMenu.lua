@@ -47,7 +47,7 @@ C["togglemainmenu"] = {
 	},
 	{	["text"] = HELP_LABEL,
 		["function"] = function()
-			print("|cffff0000"..HELP_LABEL.." "..NOT_READY_FEMALE..".|r")
+			SlashCmdList.UIHELP()
 		end
 	},
 	{	["text"] = "Reload UI",

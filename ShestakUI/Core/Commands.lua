@@ -17,6 +17,20 @@ SLASH_TICKET2 = "/гм"
 SLASH_TICKET3 = "/пь"
 
 ----------------------------------------------------------------------------------------
+--	Description of the slash commands
+----------------------------------------------------------------------------------------
+local function Print(text)
+	DEFAULT_CHAT_FRAME:AddMessage(("%s"):format(tostring(text)), 1, 1, 0)
+end
+
+SlashCmdList.UIHELP = function()
+	for i, v in ipairs(L_SLASHCMD_HELP) do Print(v) end
+end
+SLASH_UIHELP1 = "/uihelp"
+SLASH_UIHELP2 = "/helpui"
+SLASH_UIHELP3 = "/гшрудз"
+
+----------------------------------------------------------------------------------------
 --	Enable/Disable addons
 ----------------------------------------------------------------------------------------
 SlashCmdList.DISABLE_ADDON = function(addon) 
@@ -104,7 +118,7 @@ SlashCmdList.LUAERROR = function (msg, editbox)
 	elseif (msg == "off") then
 		SetCVar("scriptErrors", 0)
 	else
-		print("/luaerror on - /luaerror off")
+		print("|cffffff00".."/luaerror on - /luaerror off".."|r")
 	end
 end
 SLASH_LUAERROR1 = "/luaerror"
