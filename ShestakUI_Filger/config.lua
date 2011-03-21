@@ -2391,8 +2391,6 @@ Filger_Spells = {
 			{ spellID = 1330, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Silenced - Improved Kick (Rogue)
 			{ spellID = 18425, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
-			-- Unstable Affliction (Warlock) ?
-			{ spellID = 31117, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Spell Lock (Felhunter) (Warlock)
 			{ spellID = 24259, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Silenced (Gag Order) (War)
