@@ -296,7 +296,7 @@ end
 if C.tooltip.rank == true then
 	local GTT = GameTooltip
 	-- HOOK: OnTooltipSetUnit
-	GTT:HookScript("OnTooltipSetUnit",function(self,...)
+	GTT:HookScript("OnTooltipSetUnit", function(self, ...)
 		-- Get the unit
 		local _, unit = self:GetUnit()
 		if not unit then
@@ -445,3 +445,16 @@ hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Proper color for world objects tooltip
+----------------------------------------------------------------------------------------
+local function BackdropFix(self)
+	if (self:GetAnchorType() == "ANCHOR_CURSOR") and (self:IsOwned(UIParent)) and (not self:GetUnit()) then
+		self:SetBackdropColor(unpack(C.media.overlay_color))
+	end
+end
+
+if C.tooltip.cursor ~= true and C.tooltip.shift_modifer ~= true then 
+	GameTooltip:HookScript("OnUpdate", BackdropFix)
+end
