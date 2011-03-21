@@ -362,6 +362,12 @@ do
 
 		backdrop:SetScript("OnDragStart", OnDragStart)
 		backdrop:SetScript("OnDragStop", OnDragStop)
+		backdrop:SetScript("OnEnter", function(self)
+			self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		end)
+		backdrop:SetScript("OnLeave", function(self)
+			self:SetBackdropBorderColor(1, 0, 0)
+		end)
 
 		backdropPool[target] = backdrop
 

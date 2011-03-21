@@ -129,6 +129,20 @@ local function moving()
 				if T.MoverFrames[i].text then
 					T.MoverFrames[i].text:Show()
 				end
+				T.MoverFrames[i]:SetScript("OnEnter", function(self)
+					if self == ShiftBar then
+						ShapeShiftAnchor:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+					else
+						self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+					end
+				end)
+				T.MoverFrames[i]:SetScript("OnLeave", function(self)
+					if self == ShiftBar then
+						ShapeShiftAnchor:SetBackdropBorderColor(1, 0, 0)
+					else
+						self:SetBackdropBorderColor(1, 0, 0)
+					end
+				end)
 			else
 				T.MoverFrames[i]:EnableMouse(false)
 				if T.MoverFrames[i].moving == true then
