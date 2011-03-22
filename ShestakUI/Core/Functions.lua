@@ -534,7 +534,7 @@ T.PostUpdatePower = function(power, unit, min, max)
 		power:SetValue(0)
 	end
 	
-	if unit == "focus" or unit == "focustarget" or unit == "targettarget" then return end
+	if unit == "focus" or unit == "focustarget" or unit == "targettarget" or (self:GetParent():GetName():match"oUF_RaidDPS") then return end
 	
 	if not UnitIsConnected(unit) then
 		power.value:SetText()
