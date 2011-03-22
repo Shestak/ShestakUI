@@ -13,7 +13,7 @@ local wideFrame = GetCVar("watchFrameWidth")
 local WatchFrameAnchor = CreateFrame("Button", "WatchFrameAnchor", UIParent)
 WatchFrameAnchor:SetFrameStrata("HIGH")
 WatchFrameAnchor:SetFrameLevel(20)
-WatchFrameAnchor:Height(T.getscreenheight / 1.6)
+WatchFrameAnchor:Height(150)
 WatchFrameAnchor:SetClampedToScreen(true)
 WatchFrameAnchor:SetMovable(true)
 WatchFrameAnchor:EnableMouse(false)
@@ -28,7 +28,7 @@ WatchFrameAnchor.text:SetPoint("CENTER")
 WatchFrameAnchor.text:SetText("WatchFrame Anchor")
 WatchFrameAnchor.text:Hide()
 
--- Set default position according to how many right bars we have
+-- Set default position
 WatchFrameAnchor:Point(unpack(C.position.quest))
 
 -- Width of the watchframe according to our Blizzard cVar
