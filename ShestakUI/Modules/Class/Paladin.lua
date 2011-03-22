@@ -61,6 +61,9 @@ b:SetScript("OnClick", function(self)
 		if _G["TTMenuAddOnBackground"]:IsShown() then
 			_G["TTMenuAddOnBackground"]:Hide()
 		end
+		if _G["TTMenuBackground"]:IsShown() then
+			_G["TTMenuBackground"]:Hide()
+		end
 	end
 end)
 

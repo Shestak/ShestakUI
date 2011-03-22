@@ -13,8 +13,6 @@ interrupt_announce:SetScript("OnEvent", function(self, _, _, event, _, sourceNam
 		SendChatMessage(INTERRUPTED.." "..destName..": \124cff71d5ff\124Hspell:"..spellID.."\124h["..spellName.."]\124h\124r!", "PARTY", nil, nil)
 	elseif GetNumRaidMembers() > 0 then
 		SendChatMessage(INTERRUPTED.." "..destName..": \124cff71d5ff\124Hspell:"..spellID.."\124h["..spellName.."]\124h\124r!", "RAID", nil, nil)
-	else
-		SendChatMessage(INTERRUPTED.." "..destName..": \124cff71d5ff\124Hspell:"..spellID.."\124h["..spellName.."]\124h\124r!", "SAY", nil, nil)
 	end
 end)
 
@@ -29,8 +27,6 @@ drinking_announce:SetScript("OnEvent", function(self, event, ...)
 			SendChatMessage(UnitName(unit).." is drinking.", "PARTY")
 		elseif GetNumRaidMembers() > 0 then
 			SendChatMessage(UnitName(unit).." is drinking.", "RAID")
-		else
-			SendChatMessage(UnitName(unit).." is drinking.", "SAY")
 		end
 	end
 end)
