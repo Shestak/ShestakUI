@@ -9,9 +9,9 @@ interrupt_announce:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 interrupt_announce:SetScript("OnEvent", function(self, _, _, event, _, sourceName, _, _, destName, _, _, _, _, spellID, spellName)
 	if not (event == "SPELL_INTERRUPT" and sourceName == T.name) then return end
 	
-	if GetNumPartyMembers() > 0 then
+	if GetRealNumPartyMembers() > 0 then
 		SendChatMessage(INTERRUPTED.." "..destName..": \124cff71d5ff\124Hspell:"..spellID.."\124h["..spellName.."]\124h\124r!", "PARTY", nil, nil)
-	elseif GetNumRaidMembers() > 0 then
+	elseif GetRealNumRaidMembers() > 0 then
 		SendChatMessage(INTERRUPTED.." "..destName..": \124cff71d5ff\124Hspell:"..spellID.."\124h["..spellName.."]\124h\124r!", "RAID", nil, nil)
 	end
 end)
@@ -23,9 +23,9 @@ drinking_announce:SetScript("OnEvent", function(self, event, ...)
 	
 	local unit, spellName, spellrank, spelline, spellID = ...
 	if UnitIsEnemy("player", unit) and (spellID == 80167 or spellID == 94468 or spellID == 43183 or spellID == 57073 or spellName == "Trinken") then
-		if GetNumPartyMembers() > 0 then
+		if GetRealNumPartyMembers() > 0 then
 			SendChatMessage(UnitName(unit).." is drinking.", "PARTY")
-		elseif GetNumRaidMembers() > 0 then
+		elseif GetRealNumRaidMembers() > 0 then
 			SendChatMessage(UnitName(unit).." is drinking.", "RAID")
 		end
 	end

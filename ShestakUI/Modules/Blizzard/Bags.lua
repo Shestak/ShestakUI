@@ -767,12 +767,6 @@ end
 function Stuffing:PLAYER_ENTERING_WORLD()
 	-- Please don't do anything after 1 player_entering_world event
 	Stuffing:UnregisterEvent("PLAYER_ENTERING_WORLD")
-	
-	local keybackdrop = CreateFrame("Frame", "KeyringFrame", ContainerFrame1)
-	keybackdrop:Point("TOPLEFT", 9, -40)
-	keybackdrop:Point("BOTTOMLEFT", 0, 0)
-	keybackdrop:Size(178, 138)
-	keybackdrop:SetTemplate("Transparent")
 
 	ContainerFrame1CloseButton:Hide()
 	ContainerFrame1Portrait:Hide()
@@ -785,6 +779,7 @@ function Stuffing:PLAYER_ENTERING_WORLD()
 	for i = 1, GetKeyRingSize() do
 		local slot = _G["ContainerFrame1Item"..i]
 		local t = _G["ContainerFrame1Item"..i.."IconTexture"]
+		local count = _G[slot:GetName().."Count"]
 		_G["ContainerFrame1Item"..i.."IconQuestTexture"]:Kill()
 		
 		slot:SetPushedTexture("")
@@ -798,15 +793,23 @@ function Stuffing:PLAYER_ENTERING_WORLD()
 		
 		slot:SetTemplate("Transparent", true)
 		slot:StyleButton()
+		
+		count:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+		count:Point("BOTTOMRIGHT", 1, 1)
 	end
 	
 	ContainerFrame1:HookScript("OnShow", function(self)
 		ContainerFrame1:ClearAllPoints()
-		ContainerFrame1:Point("TOPRIGHT", StuffingFrameBags, "TOPLEFT", 2, 40)
+		ContainerFrame1:Point("TOPRIGHT", StuffingFrameBags, "TOPLEFT", -1, 37)
 		ContainerFrame1.SetPoint = T.dummy
 		ContainerFrame1.ClearAllPoints = T.dummy
 	end)
 	ContainerFrame1:SetParent(StuffingFrameBags)
+	
+	local keybackdrop = CreateFrame("Frame", "KeyringFrame", ContainerFrame1)
+	keybackdrop:Point("TOPLEFT", 6, -37)
+	keybackdrop:Point("BOTTOMRIGHT", -2, -3)
+	keybackdrop:SetTemplate("Transparent")
 end
 
 function Stuffing:PLAYERBANKSLOTS_CHANGED(id)

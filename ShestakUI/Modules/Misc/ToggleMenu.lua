@@ -95,6 +95,9 @@ C["toggleaddons"] = {
 	["PhoenixStyle"] = function()
 		PS_MinimapButton:Click()
 	end,
+	["RaidAchievement"] = function()
+		RA_MinimapButton:Click()
+	end,
 	-- Other Addons
 	["Archy"] = function()
 		ToggleFrame(ArchyDigSiteFrame)
@@ -104,6 +107,9 @@ C["toggleaddons"] = {
 		SlashCmdList.STARCHAEOLOGIST()
 		if _G["TTMenuAddOnBackground"]:IsShown() then
 			_G["TTMenuAddOnBackground"]:Hide()
+		end
+		if _G["TTMenuBackground"]:IsShown() then
+			_G["TTMenuBackground"]:Hide()
 		end
 	end,
 	["AtlasLoot"] = function()
@@ -492,7 +498,7 @@ for i = 1, GetNumAddOns() do
 	addonmenuitems[j]:HookScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_LEFT")
 		GameTooltip:AddLine(L_TOGGLE_ADDON..name)
-		GameTooltip:AddLine(L_TOGGLE_RCLICK..name..L_TOGGLE_RELOAD)
+		GameTooltip:AddLine(L_TOGGLE_RCLICK..name.."\n"..L_TOGGLE_RELOAD)
 		if C.toggleaddons[name] then
 			if IsAddOnLoaded(i) then
 				GameTooltip:AddLine(L_TOGGLE_LCLICK..name)
