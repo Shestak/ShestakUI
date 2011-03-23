@@ -263,7 +263,7 @@ if C.minimap.hide_combat == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Tracking text and icon
+--	Tracking icon
 ----------------------------------------------------------------------------------------
 local trackborder = CreateFrame("Frame", nil, UIParent)
 trackborder:SetFrameLevel(4)
@@ -284,35 +284,3 @@ MiniMapTrackingButtonBorder:Hide()
 MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 MiniMapTrackingIcon:Height(16)
 MiniMapTrackingIcon:Width(16)
-
-local function Minimap_GetTrackType()
-	local track = nil
-	for i = 1, GetNumTrackingTypes() do
-		local name, _, isActive = GetTrackingInfo(i)
-		if (isActive) then
-			track = isActive
-			MinimapTrackingText:SetText(name)
-		end
-		if (not track) then
-			MinimapTrackingText:SetText(NONE)
-		end
-	end
-end
-
-MinimapTrackingText = Minimap:CreateFontString("$parentTrackingText", "OVERLAY")
-MinimapTrackingText:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-MinimapTrackingText:SetTextColor(T.color.r, T.color.g, T.color.b)
-MinimapTrackingText:Point("CENTER", Minimap, 0, 35)
-MinimapTrackingText:Width(Minimap:GetWidth() - 5)
-MinimapTrackingText:SetAlpha(0)
-
-Minimap:SetScript("OnEnter", function()
-	if InCombatLockdown() then return end
-	Minimap_GetTrackType()
-	MinimapTrackingText:FadeIn()
-end)
-
-Minimap:SetScript("OnLeave", function()
-	Minimap_GetTrackType()
-	MinimapTrackingText:FadeOut()
-end)
