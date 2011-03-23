@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not (T.client == "esES" or T.client == "esMX") then return end
+if T.client ~= "esES" or T.client ~= "esMX" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for esES and esMX client(Thanks to Seal and eXecrate for the translation)
