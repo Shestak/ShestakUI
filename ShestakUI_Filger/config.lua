@@ -2277,8 +2277,6 @@ Filger_Spells = {
 			-- Ardent Defender
 			{ spellID = 31850, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Guardian of Ancient Kings
-			{ spellID = 86659, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			{ spellID = 86669, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			{ spellID = 86698, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			
 			-- Mage
