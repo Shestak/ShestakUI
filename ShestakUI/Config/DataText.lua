@@ -12,7 +12,7 @@ LPSTAT_FONT = {
 	outline = 3,							-- Thin outline. 0 = no outline.
 	shadow = {alpha=C.font.stats_font_shadow and 1 or 0, x=1, y=-1},	-- Font shadow = 1
 }
-LTIPICONSIZE = 12							-- Icon sizes in info tips
+LTIPICONSIZE = 11							-- Icon sizes in info tips
 
 -- Player class coloring function for optional use with fmt strings config.
 -- Example use: fmt = class'G:'.." %d"..class'/'.."%d" (colors 'G:' and '/' and numbers retain the default text color)
@@ -182,7 +182,7 @@ LPSTAT_CONFIG = {
 	Talents = {
 		enabled = C.toppanel.enable,
 		fmt = class"T: ".."[spec %d/%d/%d] [unspent]", -- "Protection: 15/0/51 +5", [shortname] shortens spec name.
-		iconsize = 15,  -- Size of talent [icon].
+		iconsize = 11,  -- Size of talent [icon].
 		name_subs = { -- Substitutions for long talent tree names, remove and/or change any/all.
 			["Protection"] = "Prot.",
 			["Restoration"] = "Resto.",

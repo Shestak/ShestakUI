@@ -424,7 +424,7 @@ if durability.enabled then
 				if dur ~= dmax then
 					local perc = dur ~= 0 and dur/dmax or 0
 					local hex = gradient(perc)
-					GameTooltip:AddDoubleLine(durability.gear_icons and format("|T%s:%d|t %s",GetInventoryItemTexture(P,slot),t_icon,string) or string,format("|cffaaaaaa%s/%s | %s%s%%",dur,dmax,hex,floor(perc*100)),1,1,1)
+					GameTooltip:AddDoubleLine(durability.gear_icons and format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s",GetInventoryItemTexture(P,slot),t_icon,string) or string,format("|cffaaaaaa%s/%s | %s%s%%",dur,dmax,hex,floor(perc*100)),1,1,1)
 					totalcost, nodur = totalcost + select(3,LPDURA:SetInventoryItem(P,slot))
 				end
 			end
@@ -443,13 +443,13 @@ if durability.enabled then
 				conf.AutoRepair = not conf.AutoRepair
 				self:GetScript("OnEnter")(self)
 			elseif GetNumEquipmentSets() > 0 and ((button == "LeftButton" and IsShiftKeyDown()) or button == "MiddleButton") then
-				local menulist = {{ isTitle=true, text=format(gsub(EQUIPMENT_SETS,":",""),"") }}
+				local menulist = {{ isTitle=true, notCheckable = 1, text=format(gsub(EQUIPMENT_SETS,":",""),"") }}
 				if GetNumEquipmentSets() == 0 then
-					tinsert(menulist, {text = NONE, disabled = true})
+					tinsert(menulist, {text = NONE, notCheckable = 1, disabled = true})
 				else
 					for i = 1, GetNumEquipmentSets() do
 						local name, icon = GetEquipmentSetInfo(i)
-						tinsert(menulist, {text = format("|T%s:%s|t %s",icon,t_icon+5,name), func = function() UseEquipmentSet(name) end})
+						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s",icon,t_icon,name), func = function() UseEquipmentSet(name) end})
 					end
 				end
 				EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU")
@@ -524,7 +524,7 @@ if gold.enabled then
 					if currencies == 0 then GameTooltip:AddLine(format("%s %s",PLAYER,CURRENCY),ttsubh.r,ttsubh.g,ttsubh.b) end
 					local r,g,b
 					if count > 0 then r,g,b = 1,1,1 else r,g,b = 0.5,0.5,0.5 end
-					GameTooltip:AddDoubleLine(name, format("%d |T%s:%d|t",count,icon,t_icon),r,g,b,r,g,b)
+					GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t",count,icon,t_icon),r,g,b,r,g,b)
 					currencies = currencies + 1
 				end
 			end
@@ -1024,7 +1024,7 @@ if talents.enabled then
 						
 							self.text:SetText(zsub(talents.fmt,"%[(.-)%]", {
 								name = name[1], shortname = gsub(name[1],".*",talents.name_subs),
-								icon = format("|T%s:%d|t",icon,talents.iconsize),
+								icon = format("|T%s:"..talents.iconsize..":"..talents.iconsize..":0:0:64:64:5:59:5:59:%d|t",icon,talents.iconsize),
 								unspent = self.unspent > 0 and format("|cff55ff55+"..self.unspent) or ''
 							},"%[spec(.-)%]", function(spec)
 								return format(spec == '' and "%d/%d/%d" or gsub(spec,'^ ',''),tal[1][5],tal[2][5],tal[3][5])
@@ -1054,7 +1054,7 @@ if talents.enabled then
 					local tree = tal[4][2]
 					local name, icon, spent = tree and tal[tree][2] or NONE, tree and tal[tree][4] or "Interface\\Icons\\INV_Misc_QuestionMark", format("%d/%d/%d",tal[1][5],tal[2][5],tal[3][5])
 					if tal[5] then r,g,b = 0.3,1,0.3 else r,g,b = 0.5,0.5,0.5 end
-					GameTooltip:AddDoubleLine(format("|T%s:%d|t %s %s",icon,t_icon,gsub(name,".*",talents.name_subs),spent), i==1 and PRIMARY or SECONDARY,1,1,1,r,g,b)
+					GameTooltip:AddDoubleLine(format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s %s",icon,t_icon,gsub(name,".*",talents.name_subs),spent), i==1 and PRIMARY or SECONDARY,1,1,1,r,g,b)
 				end
 				GameTooltip:Show()
 			end
