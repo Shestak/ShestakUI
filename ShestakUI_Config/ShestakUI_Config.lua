@@ -188,6 +188,7 @@ local function Local(o)
 	if o == "UIConfigminimaptracking_icon" then o = L_GUI_MINIMAP_ICON end
 	if o == "UIConfigminimapsize" then o = L_GUI_MINIMAP_SIZE end
 	if o == "UIConfigminimaphide_combat" then o = L_GUI_MINIMAP_HIDE_COMBAT end
+	if o == "UIConfigminimapmerge_menus" then o = L_GUI_MINIMAP_MERGE_MENUS end
 	
 	-- Map options
 	if o == "UIConfigmap" then o = WORLD_MAP end
@@ -293,6 +294,7 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_smooth_bar" then o = L_GUI_UF_PLUGINS_SMOOTH_BAR end
 	if o == "UIConfigunitframeplugins_talents" then o = L_GUI_UF_PLUGINS_TALENTS end
 	if o == "UIConfigunitframeplugins_combat_feedback" then o = L_GUI_UF_PLUGINS_COMBAT_FEEDBACK end
+	if o == "UIConfigunitframeplugins_fader" then o = L_GUI_UF_PLUGINS_FADER end
 	
 	-- Raid Frames options
 	if o == "UIConfigraidframe" then o = RAID_FRAMES_LABEL end
