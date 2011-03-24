@@ -5,13 +5,13 @@
 ----------------------------------------------------------------------------------------
 C["togglemenu"] = {
 	-- Style
-	["buttonwidth"] = 124,					-- Width of menu buttons
+	["buttonwidth"] = C.minimap.size - 6,	-- Width of menu buttons
 	["buttonheight"] = 20,					-- Height of menu buttons
 	["buttonspacing"] = 3,					-- Spacing of menu buttons
 	-- Menus
 	["defaultIsToggleOnly"] = true,			-- Sets the default value for the addon menu (true - toggle-only, false - enhanced version)
 	["dontShowToggleOnlyMenu"] = false,		-- Always show enhanced addon menu
-	["mergeMenus"] = false,					-- Merge main and addon menu
+	["mergeMenus"] = C.minimap.merge_menus,	-- Merge main and addon menu
 	["maxMenuEntries"] = 30,				-- Maximum number of menu entries per column (0 - unlimited number)
 	-- Access
 	["showByDefault"] = false,				-- Show the menu by default

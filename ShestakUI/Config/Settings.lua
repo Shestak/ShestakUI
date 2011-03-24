@@ -227,6 +227,7 @@ C["minimap"] = {
 	["tracking_icon"] = false,					-- Tracking icon
 	["size"] = 130,								-- Minimap size
 	["hide_combat"] = false,					-- Hide minimap in combat
+	["merge_menus"] = true,						-- Merge main and addon buttons in toggle menu
 }
 
 ----------------------------------------------------------------------------------------
