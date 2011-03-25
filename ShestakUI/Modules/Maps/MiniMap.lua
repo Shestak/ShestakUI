@@ -196,7 +196,7 @@ local micromenu = {
 				if not GuildFrame then
 					LoadAddOn("Blizzard_GuildUI")
 				end
-				GuildFrame_Toggle()
+				ToggleGuildFrame()
 				GuildFrame_TabClicked(GuildFrameTab2)
 			else
 				if not LookingForGuildFrame then
