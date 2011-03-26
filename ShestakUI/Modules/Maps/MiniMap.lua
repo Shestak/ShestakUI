@@ -46,9 +46,6 @@ MinimapNorthTag:SetTexture(nil)
 -- Hide Zone Frame
 MinimapZoneTextButton:Hide()
 
--- Hide Tracking Button
-MiniMapTrackingBackground:Hide()
-
 -- Hide Game Time
 GameTimeFrame:Hide()
 
@@ -265,22 +262,23 @@ end
 ----------------------------------------------------------------------------------------
 --	Tracking icon
 ----------------------------------------------------------------------------------------
-local trackborder = CreateFrame("Frame", nil, UIParent)
-trackborder:SetFrameLevel(4)
-trackborder:SetFrameStrata("BACKGROUND")
-trackborder:Height(20)
-trackborder:Width(20)
-trackborder:Point("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
 if C.minimap.tracking_icon then
+	local trackborder = CreateFrame("Frame", nil, UIParent)
+	trackborder:SetFrameLevel(4)
+	trackborder:SetFrameStrata("BACKGROUND")
+	trackborder:Height(20)
+	trackborder:Width(20)
+	trackborder:Point("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
 	trackborder:SetTemplate("ClassColor")
+	
+	MiniMapTrackingBackground:Hide()
+	MiniMapTracking:ClearAllPoints()
+	MiniMapTracking:Point("CENTER", trackborder, 2, -2)
+	MiniMapTrackingButton:SetHighlightTexture(nil)
+	MiniMapTrackingButtonBorder:Hide()
+	MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	MiniMapTrackingIcon:Width(16)
+	MiniMapTrackingIcon:Height(16)
 else
-	MiniMapTrackingButton:SetAlpha(0)
-	MiniMapTrackingIcon:SetAlpha(0)
+	MiniMapTracking:Hide()
 end
-MiniMapTracking:ClearAllPoints()
-MiniMapTracking:Point("CENTER", trackborder, 2, -2)
-MiniMapTrackingButton:SetHighlightTexture(nil)
-MiniMapTrackingButtonBorder:Hide()
-MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-MiniMapTrackingIcon:Height(16)
-MiniMapTrackingIcon:Width(16)
