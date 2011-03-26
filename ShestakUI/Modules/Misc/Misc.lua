@@ -123,7 +123,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Undress button in auction dress-up frame(by Nefarion)
 ----------------------------------------------------------------------------------------
-local strip = CreateFrame("Button", nil, DressUpFrame, "UIPanelButtonTemplate")
+local strip = CreateFrame("Button", "DressUpFrameUndressButton", DressUpFrame, "UIPanelButtonTemplate")
 strip:SetText(L_MISC_UNDRESS)
 strip:SetHeight(22)
 strip:SetWidth(strip:GetTextWidth() + 40)
