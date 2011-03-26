@@ -12,7 +12,6 @@ local function OnEvent(self, event, arg1, arg2)
 	if not group.spells and not group.weapon then return end
 	if not GetActiveTalentGroup() then return end
 	if event == "UNIT_AURA" and arg1 ~= "player" then return end 
-	if event == "COMBAT_LOG_EVENT_UNFILTERED" and arg2 ~= "ENCHANT_APPLIED" and arg2 ~= "ENCHANT_REMOVED" then return end
 	if group.level and UnitLevel("player") < group.level then return end
 	
 	self.icon:SetTexture(nil)
@@ -60,18 +59,19 @@ local function OnEvent(self, event, arg1, arg2)
 		end		
 	else
 		self:UnregisterAllEvents()
-		self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-		self:RegisterEvent("UNIT_AURA")
+		self:RegisterEvent("UNIT_INVENTORY_CHANGED")
 		
 		if hasOffhandWeapon == nil then
 			if hasMainHandEnchant == nil then
 				self.icon:SetTexture(GetInventoryItemTexture("player", 16))
 			end
 		else
+			if hasOffHandEnchant == nil then
+				self.icon:SetTexture(GetInventoryItemTexture("player", 17))
+			end
+			
 			if hasMainHandEnchant == nil then
 				self.icon:SetTexture(GetInventoryItemTexture("player", 16))
-			elseif hasOffHandEnchant == nil then
-				self.icon:SetTexture(GetInventoryItemTexture("player", 17))
 			end
 		end
 		
@@ -122,10 +122,10 @@ local function OnEvent(self, event, arg1, arg2)
 		treepass = true
 	end
 	
-	--Prevent user error
+	-- Prevent user error
 	if reversecheck ~= nil and (role == nil and tree == nil) then reversecheck = nil end
 	
-	--Only time we allow it to play a sound
+	-- Only time we allow it to play a sound
 	if (event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_REGEN_DISABLED") and C.reminder.solo_buffs_sound == true then canplaysound = true end
 	
 	if not group.weapon then
@@ -148,7 +148,7 @@ local function OnEvent(self, event, arg1, arg2)
 			end
 			self:Show()
 			if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end		
-		elseif ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and 
+		elseif ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid"))) and 
 		reversecheck == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
 			if negate_reversecheck and negate_reversecheck == GetPrimaryTalentTree() then self:Hide() return end
 			for _, buff in pairs(group.spells) do
@@ -169,16 +169,18 @@ local function OnEvent(self, event, arg1, arg2)
 			if hasOffhandWeapon == nil then
 				if hasMainHandEnchant == nil then
 					self:Show()
+					self.icon:SetTexture(GetInventoryItemTexture("player", 16))
 					if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end		
 					return
 				end
 			else
-				if hasMainHandEnchant == nil then
+				if hasMainHandEnchant == nil or hasOffHandEnchant == nil then
 					self:Show()
-					if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end	
-					return
-				elseif hasOffHandEnchant == nil then
-					self:Show()
+					if hasMainHandEnchant == nil then
+						self.icon:SetTexture(GetInventoryItemTexture("player", 16))
+					else
+						self.icon:SetTexture(GetInventoryItemTexture("player", 17))
+					end
 					if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end	
 					return
 				end
