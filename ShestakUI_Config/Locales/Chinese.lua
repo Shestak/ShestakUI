@@ -30,6 +30,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框体解锁"
 L_GUI_MISC_QUEST_AUTOBUTTON = "任务/道具自动按钮"
 L_GUI_MISC_RAID_TOOLS = "团队工具"
 L_GUI_MISC_ANNOUNCE_INTERRUPT = "Announce in party/raid when you interrupt" -- Needs review
+L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "风格化"

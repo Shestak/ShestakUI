@@ -61,6 +61,7 @@ C["misc"] = {
 	["quest_auto_button"] = false,				-- Quest auto button
 	["raid_tools"] = true,						-- Raid tools
 	["announce_interrupt"] = false,				-- Announce in party/raid when you interrupt
+	["ach_screens"] = false,					-- Take screenshot when player get achievement
 }
 
 ----------------------------------------------------------------------------------------

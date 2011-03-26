@@ -58,6 +58,7 @@ local function Local(o)
 	if o == "UIConfigmiscquest_auto_button" then o = L_GUI_MISC_QUEST_AUTOBUTTON end
 	if o == "UIConfigmiscraid_tools" then o = L_GUI_MISC_RAID_TOOLS end
 	if o == "UIConfigmiscannounce_interrupt" then o = L_GUI_MISC_ANNOUNCE_INTERRUPT end
+	if o == "UIConfigmiscach_screens" then o = L_GUI_MISC_ACH_SCREENS end
 	
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
@@ -899,7 +900,7 @@ do
 		subtitle:SetNonSpaceWrap(true)
 		subtitle:SetWordWrap(true)
 		subtitle:SetJustifyH("LEFT")
-		subtitle:SetText("ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Havoc74, Duffed, Hydra, Gorlasch, Nefarion, Compost, Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, UI Users, Russian Community and Others.")
+		subtitle:SetText("ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Havoc74, Duffed, Hydra, Gorlasch, Nefarion, Compost, Blamdarot, Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, UI Users, Russian Community and Others.")
 	end)
 
 	InterfaceOptions_AddCategory(thxui)

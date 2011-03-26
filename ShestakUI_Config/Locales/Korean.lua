@@ -4,11 +4,11 @@
 --	Localization for koKR client(Need full translation)
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Total Reset UI"
-L_GUI_SET_SAVED_SETTTINGS = "Set settings Per-Character" -- Needs review
-L_GUI_RESET_CHAR = "Are you sure you want to reset your character's settings for ShestakUI?" -- Needs review
-L_GUI_RESET_ALL = "Are you sure you want to reset all settings for ShestakUI" -- Needs review
-L_GUI_PER_CHAR = "Are you sure you want to change to or from 'Per Char Settings'?" -- Needs review
-L_GUI_MAKE_SELECTION = "You must make a selection before you can continue to config." -- Needs review
+L_GUI_SET_SAVED_SETTTINGS = "Set settings Per-Character"
+L_GUI_RESET_CHAR = "Are you sure you want to reset your character's settings for ShestakUI?"
+L_GUI_RESET_ALL = "Are you sure you want to reset all settings for ShestakUI"
+L_GUI_PER_CHAR = "Are you sure you want to change to or from 'Per Char Settings'?"
+L_GUI_MAKE_SELECTION = "You must make a selection before you can continue to config."
 
 -- General options
 L_GUI_GENERAL_UIICON = "UI icon near minimap"
@@ -29,7 +29,8 @@ L_GUI_MISC_SPIN_CAMERA = "Spin camera while afk"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Vehicle frame on mouseover"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button"
 L_GUI_MISC_RAID_TOOLS = "Raid tools"
-L_GUI_MISC_ANNOUNCE_INTERRUPT = "Announce in party/raid when you interrupt" -- Needs review
+L_GUI_MISC_ANNOUNCE_INTERRUPT = "Announce in party/raid when you interrupt"
+L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement"
 
 -- Skins options
 L_GUI_SKINS = "Stylization"

@@ -30,6 +30,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encim
 L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
 L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
 L_GUI_MISC_ANNOUNCE_INTERRUPT = "Announce in party/raid when you interrupt" -- Needs review
+L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Estilización"

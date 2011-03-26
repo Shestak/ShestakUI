@@ -28,6 +28,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Vehicle frame on mouseover"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button"
 L_GUI_MISC_RAID_TOOLS = "Raid tools"
 L_GUI_MISC_ANNOUNCE_INTERRUPT = "Announce in party/raid when you interrupt"
+L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement"
 
 -- Skins options
 L_GUI_SKINS = "Stylization"
