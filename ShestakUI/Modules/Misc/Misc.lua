@@ -119,3 +119,34 @@ if C.general.custom_lagtolerance == true then
 	customlag:SetScript("OnUpdate", LatencyUpdate)
 	LatencyUpdate(customlag, 10)
 end
+
+----------------------------------------------------------------------------------------
+--	Undress button in auction dress-up frame(by Nefarion)
+----------------------------------------------------------------------------------------
+local strip = CreateFrame("Button", nil, DressUpFrame, "UIPanelButtonTemplate")
+strip:SetText(L_MISC_UNDRESS)
+strip:SetHeight(22)
+strip:SetWidth(strip:GetTextWidth() + 40)
+strip:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT")
+strip:SetScript("OnClick", function(this)
+	this.model:Undress()
+	PlaySound("gsTitleOptionOK")
+end)
+strip.model = DressUpModel
+
+strip:RegisterEvent("AUCTION_HOUSE_SHOW")
+strip:RegisterEvent("AUCTION_HOUSE_CLOSED")
+
+strip:SetScript("OnEvent",function(this)
+	if AuctionFrame:IsVisible() and this.model ~= AuctionDressUpModel then
+		this:SetParent(AuctionDressUpModel)
+		this:ClearAllPoints()
+		this:SetPoint("BOTTOM", AuctionDressUpFrameResetButton, "TOP", 0, 2)
+		this.model = AuctionDressUpModel
+	elseif this.model ~= DressUpModel then
+		this:SetParent(DressUpModel)
+		this:ClearAllPoints()
+		this:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT")
+		this.model = DressUpModel
+	end
+end)

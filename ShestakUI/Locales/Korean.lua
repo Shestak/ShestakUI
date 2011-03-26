@@ -14,6 +14,9 @@ L_TOOLTIP_SPELL_ID = "Spell ID:"
 L_TOOLTIP_ITEM_ID = "Item ID:"
 L_TOOLTIP_WHO_TARGET = "Targeted By"
 
+-- Misc
+L_MISC_UNDRESS = "Undress"
+
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disband Group"
 

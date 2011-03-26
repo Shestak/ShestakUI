@@ -14,6 +14,9 @@ L_TOOLTIP_SPELL_ID = "Номер заклинания:"
 L_TOOLTIP_ITEM_ID = "Номер предмета:"
 L_TOOLTIP_WHO_TARGET = "Выбран целью"
 
+-- Misc
+L_MISC_UNDRESS = "Раздеть"
+
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"
 

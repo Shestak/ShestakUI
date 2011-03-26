@@ -14,6 +14,9 @@ L_TOOLTIP_SPELL_ID = "ID del hechizo:"
 L_TOOLTIP_ITEM_ID = "ID del objeto:"
 L_TOOLTIP_WHO_TARGET = "Marcado por"
 
+-- Misc
+L_MISC_UNDRESS = "Undress" -- Needs review
+
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disolver grupo"
 
