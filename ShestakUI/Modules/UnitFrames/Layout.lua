@@ -1123,14 +1123,15 @@ SlashCmdList.TESTUF = function()
 				v.fffs:SetShadowOffset(0, 0)
 				v.fffs:SetAllPoints(v.fff)
 				v.fffs:SetText(v:GetName())
-			end
-			
-			if v.fff:IsVisible() then 
-				v.fff:Hide()
 			else
-				v.fff:Show()
+				if v.fff:IsShown() then 
+					v.fff:Hide()
+				else
+					v.fff:Show()
+				end
 			end
 		end
 	end
 end
 SLASH_TESTUF1 = "/testuf"
+SLASH_TESTUF2 = "/еуыега"
