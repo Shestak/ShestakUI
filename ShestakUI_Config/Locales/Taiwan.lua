@@ -217,6 +217,7 @@ L_GUI_AURA_PET_DEBUFFS = "在寵物框體顯示DeBuffs"
 L_GUI_AURA_TOT_DEBUFFS = "在目標的目標框體顯示DeBuffs"
 L_GUI_AURA_PLAYER_AURA_ONLY = "在目標框體只顯示自己的DeBuffs"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs著色依照法術類型"
+L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip" -- Needs review
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "開啟單位框架"

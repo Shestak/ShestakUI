@@ -217,6 +217,7 @@ L_GUI_AURA_PET_DEBUFFS = "Отрицательные эффекты питомц
 L_GUI_AURA_TOT_DEBUFFS = "Отрицательные эффекты цели цели"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Только ваши отрицательные эффекты на цели"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Цвет бордюра отрицательных эффектов по их типу"
+L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip" -- Needs review
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Включить рамки портретов"

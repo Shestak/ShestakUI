@@ -215,6 +215,7 @@ L_GUI_AURA_PET_DEBUFFS = "DeBuffs on pet frame"
 L_GUI_AURA_TOT_DEBUFFS = "DeBuffs on targettarget frame"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Only your debuff on target frame"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color debuff by type"
+L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Enable unit frames"

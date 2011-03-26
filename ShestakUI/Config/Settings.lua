@@ -311,6 +311,7 @@ C["aura"] = {
 	["tot_debuffs"] = false,					-- DeBuffs on targettarget frame
 	["player_aura_only"] = false,				-- Only your debuff on target frame
 	["debuff_color_type"] = true,				-- Color debuff by type
+	["cast_by"] = false,						-- Show who cast a buff/debuff in its tooltip
 }
 
 ----------------------------------------------------------------------------------------

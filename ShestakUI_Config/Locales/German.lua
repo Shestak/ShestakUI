@@ -217,6 +217,7 @@ L_GUI_AURA_PET_DEBUFFS = "Debuffs auf dem Begleiterfenster"
 L_GUI_AURA_TOT_DEBUFFS = "Debuffs bei Ziel des Ziels anzeigen"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Nur eigenen Debuffs bei dem Zielfenster anzeigen"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Debuffs nach Art einfärben"
+L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip" -- Needs review
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Unitframes aktivieren"

@@ -140,7 +140,9 @@
 	<Include file="Modules\UnitFrames\Templates.xml"/>
 	<Script file="Modules\UnitFrames\Tags.lua"/>
 	<Script file="Modules\UnitFrames\Layout.lua"/>
-	<Script file="Modules\UnitFrames\Buffs.lua"/>
+	
+	<Script file="Modules\Buffs\Buffs.lua"/>
+	<Script file="Modules\Buffs\CastBy.lua"/>
 	
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Core\Movers.lua"/>

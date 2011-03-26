@@ -217,6 +217,7 @@ L_GUI_AURA_PET_DEBUFFS = "Perjuicios en el marco de la mascota"
 L_GUI_AURA_TOT_DEBUFFS = "Perjuicios en el marco del objetivo del objetivo"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Solo tus perjuicios en el marco del objetivo"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color de los perjuicios por tipo"
+L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip" -- Needs review
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Activar marcos de unidades"
