@@ -105,8 +105,6 @@ SlashCmdList.PARTYTORAID = function()
 	ConvertToRaid()
 end
 SLASH_PARTYTORAID1 = "/toraid"
-SLASH_PARTYTORAID2 = "/рейд"
-SLASH_PARTYTORAID3 = "/htql"
 
 ----------------------------------------------------------------------------------------
 --	Enable lua error
