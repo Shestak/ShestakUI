@@ -98,6 +98,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(80094),	-- Fixate
 			SpellName(91521),	-- Incineration Security Measure
 			-- Maloriak
+			SpellName(92754),	-- Engulfing Darkness
 			SpellName(77699),	-- Flash Freeze
 			SpellName(77760),	-- Biting Chill
 			SpellName(92971),	-- Consuming Flames
