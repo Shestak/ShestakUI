@@ -1329,11 +1329,11 @@ Filger_Spells = {
 			{ spellID = 79460, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Demon Soul Fel Guard
 			{ spellID = 79462, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Dark intent
+			-- Dark Intent
 			{ spellID = 85768, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Shadow ward
+			-- Shadow Ward
 			{ spellID = 6229, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Soul swap
+			-- Soul Swap
 			{ spellID = 86211, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
@@ -1366,6 +1366,8 @@ Filger_Spells = {
 			{ spellID = 89937, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Demonic Rebirth
 			{ spellID = 88447, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Shadow Trance
+			{ spellID = 17941, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
 			-- Soul Casket (Spell)
