@@ -210,6 +210,10 @@ local function Shared(self, unit)
 			self.Info:Point("RIGHT", self.Health, "RIGHT", 0, 0)
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		end
+	elseif unit == "player" and T.class == "DRUID" then
+		self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size*4, C.font.unit_frames_font_style)
+		self.Info:SetPoint("BOTTOM", self.Health, "TOP", 0, -10.5)
+		self:Tag(self.Info, "[WM1][WM2][WM3]")
 	end
 
 	if unit == "player" then

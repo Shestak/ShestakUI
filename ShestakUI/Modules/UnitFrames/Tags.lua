@@ -94,8 +94,21 @@ oUF.Tags["AltPower"] = function(unit)
 	local max = UnitPowerMax(unit, ALTERNATE_POWER_INDEX)
 	if (max > 0 and not UnitIsDeadOrGhost(unit)) then
 		return ("%s%%"):format(math.floor(cur/max*100+0.5))
-	else
-		return ""
+--	else
+--		return ""
 	end
 end
 oUF.TagEvents["AltPower"] = "UNIT_POWER"
+
+if T.class == "DRUID" then
+	for i = 1, 3 do
+		oUF.Tags["WM"..i] = function(unit)
+			_, _, _, dur = GetTotemInfo(i)
+			if dur > 0 then
+				return "|cffFF2222_|r"
+			end
+		end
+		oUF.TagEvents["WM"..i] = "PLAYER_TOTEM_UPDATE"
+		oUF.UnitlessTagEvents.PLAYER_TOTEM_UPDATE = true
+	end
+end
