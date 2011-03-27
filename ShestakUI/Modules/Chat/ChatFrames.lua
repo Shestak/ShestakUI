@@ -17,9 +17,7 @@ local AddMessage = function(self, text, ...)
 	return origs[self](self, text, ...)
 end
 
-----------------------------------------------------------------------------------------
---	Global strings
-----------------------------------------------------------------------------------------
+-- Global strings
 _G.CHAT_BATTLEGROUND_GET = "|Hchannel:Battleground|h["..L_CHAT_BATTLEGROUND.."]|h %s:\32"
 _G.CHAT_BATTLEGROUND_LEADER_GET = "|Hchannel:Battleground|h["..L_CHAT_BATTLEGROUND_LEADER.."]|h %s:\32"
 _G.CHAT_BN_WHISPER_GET = L_CHAT_BN_WHISPER.." %s:\32"
@@ -48,22 +46,13 @@ if T.client == "ruRU" then
 	_G.FACTION_STANDING_INCREASED = "Отношение |3-7(%s) +%d."
 end
 
-----------------------------------------------------------------------------------------
---	Custom timestamps color
-----------------------------------------------------------------------------------------
-do
-	ChatFrame2ButtonFrameBottomButton:RegisterEvent("PLAYER_LOGIN")
-	ChatFrame2ButtonFrameBottomButton:SetScript("OnEvent", function(f)
-		_G.TIMESTAMP_FORMAT_HHMM = "|cff"..C.chat.time_color.."[%I:%M]|r "
-		_G.TIMESTAMP_FORMAT_HHMMSS = "|cff"..C.chat.time_color.."[%I:%M:%S]|r "
-		_G.TIMESTAMP_FORMAT_HHMMSS_24HR = "|cff"..C.chat.time_color.."[%H:%M:%S]|r "
-		_G.TIMESTAMP_FORMAT_HHMMSS_AMPM = "|cff"..C.chat.time_color.."[%I:%M:%S %p]|r "
-		_G.TIMESTAMP_FORMAT_HHMM_24HR = "|cff"..C.chat.time_color.."[%H:%M]|r "
-		_G.TIMESTAMP_FORMAT_HHMM_AMPM = "|cff"..C.chat.time_color.."[%I:%M %p]|r "
-		f:UnregisterEvent("PLAYER_LOGIN")
-		f:SetScript("OnEvent", nil)
-	end)
-end
+-- Custom timestamps color
+_G.TIMESTAMP_FORMAT_HHMM = T.RGBToHex(unpack(C.chat.time_color)).."[%I:%M]|r "
+_G.TIMESTAMP_FORMAT_HHMMSS = T.RGBToHex(unpack(C.chat.time_color)).."[%I:%M:%S]|r "
+_G.TIMESTAMP_FORMAT_HHMMSS_24HR = T.RGBToHex(unpack(C.chat.time_color)).."[%H:%M:%S]|r "
+_G.TIMESTAMP_FORMAT_HHMMSS_AMPM = T.RGBToHex(unpack(C.chat.time_color)).."[%I:%M:%S %p]|r "
+_G.TIMESTAMP_FORMAT_HHMM_24HR = T.RGBToHex(unpack(C.chat.time_color)).."[%H:%M]|r "
+_G.TIMESTAMP_FORMAT_HHMM_AMPM = T.RGBToHex(unpack(C.chat.time_color)).."[%I:%M %p]|r "
 
 -- Hide friends micro button
 FriendsMicroButton:Kill()
