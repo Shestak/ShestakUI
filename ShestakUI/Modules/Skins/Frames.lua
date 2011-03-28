@@ -66,6 +66,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ConsolidatedBuffsTooltip",
 			"LFDRoleCheckPopup",
 			"ChannelPulloutBackground",
+			"ChannelPulloutTab",
 			"FriendsTooltip",
 			"LFDDungeonReadyDialog",
 			"GuildInviteFrame",
@@ -111,6 +112,12 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			for j = 1, 3 do
 				_G["StaticPopup"..i.."Button"..j]:SkinButton()
 			end
+			_G["StaticPopup"..i.."EditBox"]:SetTemplate("Transparent")
+			_G["StaticPopup"..i.."EditBoxLeft"]:SetTexture(nil)
+			_G["StaticPopup"..i.."EditBoxMid"]:SetTexture(nil)
+			_G["StaticPopup"..i.."EditBoxRight"]:SetTexture(nil)
+			_G["StaticPopup"..i.."EditBox"]:Height(20)
+			_G["StaticPopup"..i.."EditBox"]:SetTextInsets(3, 0, 0, 0)
 		end
 
 		for i = 1, getn(bgskins) do
@@ -277,17 +284,19 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ChatConfigFrameDefaultButton"]:Point("TOP", _G["ChatConfigCategoryFrame"], "BOTTOM", 0, -4)
 		_G["ChatConfigFrameOkayButton"]:ClearAllPoints()
 		_G["ChatConfigFrameOkayButton"]:Point("TOPRIGHT", _G["ChatConfigBackgroundFrame"], "BOTTOMRIGHT", 0, -4)
+		_G["ChannelPulloutTabText"]:ClearAllPoints()
+		_G["ChannelPulloutTabText"]:Point("TOP", _G["ChannelPulloutTab"], "TOP", 0, -6)
+		_G["ChannelPulloutTab"]:SetHeight(20)
+		_G["ChannelPullout"]:ClearAllPoints()
+		_G["ChannelPullout"]:Point("TOP", _G["ChannelPulloutTab"], "BOTTOM", 0, -3)
 		
 		-- Others
 		_G["ReadyCheckListenerFrame"]:SetAlpha(0)
 		_G["ReadyCheckFrame"]:HookScript("OnShow", function(self) if UnitIsUnit("player", self.initiator) then self:Hide() end end)
 		_G["StackSplitFrame"]:GetRegions():Hide()
-		_G["StaticPopup1EditBox"]:SetTemplate("Transparent")
-		_G["StaticPopup1EditBoxLeft"]:SetTexture(nil)
-		_G["StaticPopup1EditBoxMid"]:SetTexture(nil)
-		_G["StaticPopup1EditBoxRight"]:SetTexture(nil)
-		_G["StaticPopup1EditBox"]:Height(20)
-		_G["StaticPopup1EditBox"]:SetTextInsets(3, 0, 0, 0)
+		_G["ChannelPulloutTabLeft"]:SetTexture(nil)
+		_G["ChannelPulloutTabMiddle"]:SetTexture(nil)
+		_G["ChannelPulloutTabRight"]:SetTexture(nil)
 	end
 	
 	-- MAC menu/option panel(by Affli)
