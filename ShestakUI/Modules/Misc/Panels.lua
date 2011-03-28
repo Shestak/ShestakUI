@@ -3,8 +3,8 @@ local T, C, L = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Action Bar button size/spacings
 ----------------------------------------------------------------------------------------
-T.buttonsize = C.actionbar.button_size
-T.buttonspacing = C.actionbar.button_space
+T.buttonsize = T.Scale(C.actionbar.button_size)
+T.buttonspacing = T.Scale(C.actionbar.button_space)
 
 ----------------------------------------------------------------------------------------
 --	Bottom bars panel

@@ -24,15 +24,15 @@ for i = 1, 12 do
 	b:ClearAllPoints()
 	if C.actionbar.split_bars == true and C.actionbar.rightbars < 3 then
 		if i == 1 then
-			b:SetPoint("TOPLEFT", SplitBarLeft, "TOPLEFT", 0, 0)
+			b:Point("TOPLEFT", SplitBarLeft, "TOPLEFT", 0, 0)
 		elseif i == 4 then
-			b:SetPoint("BOTTOMLEFT", SplitBarLeft, "BOTTOMLEFT", 0, 0)
+			b:Point("BOTTOMLEFT", SplitBarLeft, "BOTTOMLEFT", 0, 0)
 		elseif i == 7 then
-			b:SetPoint("TOPLEFT", SplitBarRight, "TOPLEFT", 0, 0)
+			b:Point("TOPLEFT", SplitBarRight, "TOPLEFT", 0, 0)
 		elseif i == 10 then
-			b:SetPoint("BOTTOMLEFT", SplitBarRight, "BOTTOMLEFT", 0, 0)
+			b:Point("BOTTOMLEFT", SplitBarRight, "BOTTOMLEFT", 0, 0)
 		else
-			b:SetPoint("LEFT", b2, "RIGHT", T.buttonspacing, 0)
+			b:Point("LEFT", b2, "RIGHT", T.buttonspacing, 0)
 		end
 	else
 		if i == 1 then
