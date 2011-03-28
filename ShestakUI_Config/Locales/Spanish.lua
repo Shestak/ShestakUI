@@ -4,11 +4,11 @@
 --	Localization for esES and esMX client(Thanks to eXecrate for the translation)
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Reinicio total de la UI"
-L_GUI_SET_SAVED_SETTTINGS = "Set settings Per-Character" -- Needs review
-L_GUI_RESET_CHAR = "Are you sure you want to reset your character's settings for ShestakUI?" -- Needs review
-L_GUI_RESET_ALL = "Are you sure you want to reset all settings for ShestakUI" -- Needs review
-L_GUI_PER_CHAR = "Are you sure you want to change to or from 'Per Char Settings'?" -- Needs review
-L_GUI_MAKE_SELECTION = "You must make a selection before you can continue to config." -- Needs review
+L_GUI_SET_SAVED_SETTTINGS = "Cambios aplicables sólo a este PJ"
+L_GUI_RESET_CHAR = "¿Estás seguro de que quieres reiniciar tus preferencias de ShestakUI para este PJ?"
+L_GUI_RESET_ALL = "¿Estás seguro de que quieres reiniciar tus preferencias de ShestakUI para todos los PJs?"
+L_GUI_PER_CHAR = "¿Estás segudo de que quieres cambiar a o desde 'Cambios sólo a este PJ'?"
+L_GUI_MAKE_SELECTION = "Debes hacer una selección antes de continuar la configuración."
 
 -- General options
 L_GUI_GENERAL_UIICON = "Icono de la UI cerca del minimapa"
@@ -29,7 +29,7 @@ L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encima"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
 L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
-L_GUI_MISC_ANNOUNCE_INTERRUPT = "Announce in party/raid when you interrupt" -- Needs review
+L_GUI_MISC_ANNOUNCE_INTERRUPT = "Anunciar en el grupo/banda cuando interrumpes"
 L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement" -- Needs review
 
 -- Skins options
@@ -63,8 +63,8 @@ L_GUI_COMBATTEXT_DK_RUNES = "Mostrar recarga de runas de los Caballeros de la Mu
 L_GUI_COMBATTEXT_KILLINGBLOW = "Mostrar tus golpes de gracia"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unir el spam de daño de area en un solo mensaje"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Tiempo en segundos que se unirá en un solo mensaje de daño de area"
-L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels" -- Needs review
-L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts" -- Needs review
+L_GUI_COMBATTEXT_DISPEL = "Mostrar tus disipaciones"
+L_GUI_COMBATTEXT_INTERRUPT = "Mostrar tus interrupciones"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Recordatorio de Ventajas"
@@ -77,7 +77,7 @@ L_GUI_REMINDER_RAID_SIZE = "Tamaño de los iconos de las ventajas de la Banda"
 L_GUI_REMINDER_RAID_ALPHA = "Icono transparente cuando la ventaja está presente"
 
 -- Raid cooldowns options
-L_GUI_COOLDOWN_RAID = "Raid cooldowns" -- Needs review
+L_GUI_COOLDOWN_RAID = "Tiempos de reutilización de la Banda"
 L_GUI_COOLDOWN_RAID_ENABLE = "Mostrar tiempos de reutilización de la Banda"
 L_GUI_COOLDOWN_RAID_HEIGHT = "Altura de las barras de tiempo de reutilización de la Banda"
 L_GUI_COOLDOWN_RAID_WIDTH = "Anchura de las barras de tiempo de reutilización de la Banda (Si el icono estб activado, anchura+28)"
@@ -88,21 +88,21 @@ L_GUI_COOLDOWN_RAID_IN_PARTY = "Mostrar tiempos de reutilización de la Banda en
 L_GUI_COOLDOWN_RAID_IN_ARENA = "Mostrar tiempos de reutilización de la Banda en zona de Arena"
 
 -- Enemy cooldowns options
-L_GUI_COOLDOWN_ENEMY = "Enemy cooldowns" -- Needs review
+L_GUI_COOLDOWN_ENEMY = "Tiempos de reutilización del enemigo"
 L_GUI_COOLDOWN_ENEMY_ENABLE = "Activar tiempos de reutilización del enemigo"
 L_GUI_COOLDOWN_ENEMY_SIZE = "Tamaño del icono de tiempos de reutilización del enemigo"
-L_GUI_COOLDOWN_ENEMY_DIRECTION = "Enemy cooldowns icon direction (RIGHT|LEFT|UP|DOWN)" -- Needs review
+L_GUI_COOLDOWN_ENEMY_DIRECTION = "Icono de dirección de tiempos de reutilización del enemigo (RIGHT|LEFT|UP|DOWN)"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Mostrar tiempos de reutilización del enemigo siempre"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "Mostrar tiempos de reutilización del enemigo en zona de CB"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Mostrar tiempos de reutilización del enemigo en zona de Arena"
 
 -- Pulse cooldowns options
-L_GUI_COOLDOWN_PULSE = "Pulse cooldowns" -- Needs review
-L_GUI_COOLDOWN_PULSE_ENABLE = "Mostrar cuentas atras de tiempos de reutilización"
+L_GUI_COOLDOWN_PULSE = "Cuenta atrás de tiempos de reutilización"
+L_GUI_COOLDOWN_PULSE_ENABLE = "Mostrar cuentas atrás de tiempos de reutilización"
 L_GUI_COOLDOWN_PULSE_SIZE = "Tamaño de los icono de las cuentas atras de tiempos de reutilización"
-L_GUI_COOLDOWN_PULSE_SOUND = "Warning sound notification" -- Needs review
-L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Animation scaling" -- Needs review
-L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Max opacity hold time" -- Needs review
+L_GUI_COOLDOWN_PULSE_SOUND = "Aviso sonoro"
+L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Escalado animado"
+L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Opacidad máxima del tiempo de espera"
 
 -- Threat options
 L_GUI_THREAT = "Barras de Amenaza"
@@ -134,8 +134,8 @@ L_GUI_TOOLTIP_WHO_TARGETTING = "Muestra quien está marcando la unidad que está
 L_GUI_CHAT_ENABLE = "Activar chat"
 L_GUI_CHAT_BACKGROUND = "Activar fondo del chat"
 L_GUI_CHAT_BACKGROUND_ALPHA = "Opacidad del fondo del chat"
-L_GUI_CHAT_SPAM = "Removing some systems spam(*Player1* won duel *Player2*)"  -- Needs review
-L_GUI_CHAT_GOLD = "Removing some players spam"  -- Needs review
+L_GUI_CHAT_SPAM = "Remover ciertos mensajes de spam (*Jugador1* ha ganado un duelo a *Jugador2*)"
+L_GUI_CHAT_GOLD = "Remover spam del algunos jugadores (Vendedores de oro)"
 L_GUI_CHAT_WIDTH = "Anchura del chat"
 L_GUI_CHAT_HEIGHT = "Altura del chat"
 L_GUI_CHAT_BAR = "Pequeña barra de botones para cambiar de canal en el chat"
@@ -143,7 +143,7 @@ L_GUI_CHAT_TIMESTAMP = "Color de la marca de tiempo"
 L_GUI_CHAT_WHISP = "Sonido cuando te susurran"
 L_GUI_CHAT_SKIN_BUBBLE = "Estilizar las burbujas de chat"
 L_GUI_CHAT_CL_TAB = "Mostrar la pestaña del Registro de Combate"
-L_GUI_CHAT_STICKY = "Remember last channel"  -- Needs review
+L_GUI_CHAT_STICKY = "Recordar último canal"
 
 -- Bag options
 L_GUI_BAGS = "Bolsas"
@@ -195,7 +195,7 @@ L_GUI_ACTIONBAR_HOTKEY = "Mostrar texto los atajos de teclado"
 L_GUI_ACTIONBAR_GRID = "Mostrar botones de la barra de acción vacíos"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Tamaño de los botones"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacio entre botones"
-L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons" -- Needs review
+L_GUI_ACTIONBAR_SPLIT_BARS = "Dividir la quinta barra en dos de 6 botones cada una"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Número de barras de acción abajo (1, 2 o 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Número de barras de acción en la derecha (0, 1, 2 o 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barras de la derecha se muestran al pasar el ratón"
@@ -259,7 +259,7 @@ L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Activar barra de experiencia"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Activar barra de suavizado"
 L_GUI_UF_PLUGINS_TALENTS = "Mostrar configuración de los talentos del enemigo"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texto de combate en el marco del jugador/objetivo"
-L_GUI_UF_PLUGINS_FADER = "Fade unit frames" -- Needs review
+L_GUI_UF_PLUGINS_FADER = "Desvanecer marcos de unidades"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Borde de aggro"

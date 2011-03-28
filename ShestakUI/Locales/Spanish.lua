@@ -24,16 +24,16 @@ L_RAID_UTIL_DISBAND = "Disolver grupo"
 L_ZONE_WINTERGRASP = "Conquista del Invierno"
 
 -- WatchFrame Wowhead link
-L_WATCH_WOWHEAD_LINK = "Wowhead link" -- Needs review
+L_WATCH_WOWHEAD_LINK = "Link de WoWhead"
 
 -- Toogle Menu
-L_TOGGLE_ADDON = "Addon " -- Needs review
-L_TOGGLE_ADDONS = " addons" -- Needs review
-L_TOGGLE_EXPAND = "Expand " -- Needs review
-L_TOGGLE_COLLAPSE = "Collapse " -- Needs review
-L_TOGGLE_RCLICK = "Right click to enable or disable " -- Needs review
-L_TOGGLE_LCLICK = "Left click to toggle window " -- Needs review
-L_TOGGLE_RELOAD = " (needs UI reload)" -- Needs review
+L_TOGGLE_ADDON = "Complemento "
+L_TOGGLE_ADDONS = " complementos"
+L_TOGGLE_EXPAND = "Expandir "
+L_TOGGLE_COLLAPSE = "Colapsar "
+L_TOGGLE_RCLICK = "Click derecho para activar o desactivar "
+L_TOGGLE_LCLICK = "Click izquierdo para cambiar de ventana "
+L_TOGGLE_RELOAD = " (necesita reiniciar la UI)"
 
 -- UnitFrame
 L_UF_GHOST = "Fantasma"
@@ -65,12 +65,12 @@ L_CHAT_DND = "[NM]"
 L_CHAT_GM = "[GM]"
 L_CHAT_GUILD = "H"
 L_CHAT_PARTY = "G"
-L_CHAT_PARTY_LEADER = "GL"
+L_CHAT_PARTY_LEADER = "LG"
 L_CHAT_RAID	= "B"
-L_CHAT_RAID_LEADER = "BL"
-L_CHAT_RAID_WARNING	= "BW"
+L_CHAT_RAID_LEADER = "LB"
+L_CHAT_RAID_WARNING	= "AB"
 L_CHAT_BATTLEGROUND	= "CB"
-L_CHAT_BATTLEGROUND_LEADER = "CBL"
+L_CHAT_BATTLEGROUND_LEADER = "LCB"
 L_CHAT_OFFICER = "O"
 L_CHAT_COME_ONLINE = "se ha conectado."
 L_CHAT_GONE_OFFLINE = "se ha desconectado."
@@ -208,7 +208,7 @@ L_INFO_SETTINGS_ALL = "Escribe /settings all, para aplicar todas las modificacio
 -- Popups
 L_POPUP_INSTALLUI = "Es la primera vez que usas ShestakUI con este personaje. Usted debe volver a cargar la interfaz de usuario para configurarlo."
 L_POPUP_RESETUI = "¿Estás seguro de que desea restablecer ShestakUI?"
-L_POPUP_RESETSTATS = "Are you sure you want to reset statistics for time spent in game and gold." -- Needs review
+L_POPUP_RESETSTATS = "¿Estás seguro de que quieres reiniciar las estadísticas de tiempo empleado en el juego y oro adquirido?"
 L_POPUP_SWITCH_RAID = "Hay activos 2 estilos para banda, por favor selecciona uno."
 L_POPUP_DISBAND_RAID = "¿Estás seguro de que quieres disolver el grupo?"
 L_POPUP_DISABLEUI = "ShestakUI no funciona con esta resolución, ¿Quieres desactivar ShestakUI? (Pulsa cancelar si quieres probar otra resolución)"
