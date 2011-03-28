@@ -17,6 +17,3 @@ ShestakUI = engine -- Allow other addons to use Engine
 	local T, C, L = unpack(ShestakUI)
 ]]
 local T, C, L = unpack(select(2, ...))
-
-SettingsDB = T 
-SettingsCF = C

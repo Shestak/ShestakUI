@@ -34,7 +34,6 @@
 	<Script file="Config\Filters\Reminders.lua"/>
 	<Script file="Config\Filters\ChatSpam.lua"/>
 	
-	<Script file="Core\Deprecated.lua"/>
 	<Script file="Core\API.lua"/>
 	<Script file="Core\Functions.lua"/>
 	<Script file="Core\Launch.lua"/>
