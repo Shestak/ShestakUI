@@ -15,7 +15,7 @@ L_TOOLTIP_ITEM_ID = "ID del objeto:"
 L_TOOLTIP_WHO_TARGET = "Marcado por"
 
 -- Misc
-L_MISC_UNDRESS = "Undress" -- Needs review
+L_MISC_UNDRESS = "Desvestir"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disolver grupo"

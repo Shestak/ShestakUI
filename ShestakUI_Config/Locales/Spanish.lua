@@ -30,7 +30,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encim
 L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
 L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
 L_GUI_MISC_ANNOUNCE_INTERRUPT = "Anunciar en el grupo/banda cuando interrumpes"
-L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement" -- Needs review
+L_GUI_MISC_ACH_SCREENS = "Tomar una captura de pantalla cuando consigas un logro"
 
 -- Skins options
 L_GUI_SKINS = "Estilización"
@@ -218,7 +218,7 @@ L_GUI_AURA_PET_DEBUFFS = "Perjuicios en el marco de la mascota"
 L_GUI_AURA_TOT_DEBUFFS = "Perjuicios en el marco del objetivo del objetivo"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Solo tus perjuicios en el marco del objetivo"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color de los perjuicios por tipo"
-L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip" -- Needs review
+L_GUI_AURA_CAST_BY = "Mostrar quién lanza un beneficio/perjuicio en su descripción"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Activar marcos de unidades"
