@@ -821,9 +821,10 @@ function CreateUIConfig()
 	totalreset:SetPoint("TOPLEFT", groupsBG, "BOTTOMLEFT", 0, -15)
 	totalreset:SetScript("OnClick", function(self)
 		StaticPopup_Show("RESET_UI")
-		UIConfigMain:Hide()
 		GUIConfig = {}
-		GUIConfigAll = {}
+		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
+			GUIConfigAll[myPlayerRealm][myPlayerName] = {}
+		end
 		GUIConfigSettings = {}
 	end)
 	
