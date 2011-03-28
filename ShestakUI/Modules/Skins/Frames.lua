@@ -12,6 +12,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 	if addon == "Blizzard_DebugTools" then
 		ScriptErrorsFrame:SetTemplate("Transparent")
 		EventTraceFrame:SetTemplate("Transparent")
+		_G["EventTraceTooltip"]:HookScript("OnShow", function(self) self:SetTemplate("Transparent") end)
 
 		local texs = {
 			"TopLeft",
@@ -64,7 +65,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ColorPickerFrame",
 			"ConsolidatedBuffsTooltip",
 			"LFDRoleCheckPopup",
-			"ChannelPulloutBackground",			
+			"ChannelPulloutBackground",
 			"FriendsTooltip",
 			"LFDDungeonReadyDialog",
 			"GuildInviteFrame",

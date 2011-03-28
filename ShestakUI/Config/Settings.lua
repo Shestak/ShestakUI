@@ -15,7 +15,6 @@ C["media"] = {
 	["pixel_font_size"] = 8,														-- Pixel font size for those places where it is not specified
 	["blank"] = [[Interface\AddOns\ShestakUI\Media\Textures\White.tga]],			-- Texture for borders
 	["texture"] = [[Interface\AddOns\ShestakUI\Media\Textures\Texture.tga]],		-- Texture for status bars("Texture1", "Texture2" or "Texture3")
-	["glow"] = [[Interface\AddOns\ShestakUI\Media\Textures\Glow.tga]],				-- Texture for frames shadow
 	["highlight"] = [[Interface\AddOns\ShestakUI\Media\Textures\Highlight.tga]],	-- Texture for debuffs highlight  
 	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for wispers
 	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
