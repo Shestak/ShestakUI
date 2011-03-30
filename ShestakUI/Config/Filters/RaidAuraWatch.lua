@@ -97,6 +97,8 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(91555),	-- Power Generator
 			SpellName(80094),	-- Fixate
 			SpellName(91521),	-- Incineration Security Measure
+			SpellName(92048),	-- Shadow Infusion
+			SpellName(92053),	-- Shadow Conductor
 			-- Maloriak
 			SpellName(92754),	-- Engulfing Darkness
 			SpellName(77699),	-- Flash Freeze
@@ -115,8 +117,8 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Nefarian
 			SpellName(81114),	-- Magma
 			SpellName(94128),	-- Tail Lash
-			-- Sinestra
-			SpellName(92956),	-- Wrack
+			SpellName(79339),	-- Explosive Cinders
+			SpellName(79318),	-- Dominion
 		-- The Bastion of Twilight
 			-- Halfus Wyrmbreaker
 			SpellName(83710),	-- Furious Roar
@@ -150,6 +152,8 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(91317),	-- Worshipping
 			SpellName(86028),	-- Cho's Blast
 			SpellName(86029),	-- Gall's Blast
+			-- Sinestra
+			SpellName(92956),	-- Wrack
 		-- Throne of the Four Winds
 			-- Conclave of Wind
 			-- Nezir
@@ -174,7 +178,7 @@ if C.raidframe.plugins_aura_watch == true then
 		
 		T.ReverseTimer = {
 		-- Sinestra
-			[92956] = true,		-- Wrack
+			--[92956] = true,		-- Wrack
 		}
 		
 		ORD:RegisterDebuffs(T.debuffids)
