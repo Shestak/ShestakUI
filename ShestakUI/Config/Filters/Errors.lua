@@ -51,4 +51,5 @@ T.black_list = {
 	[ERR_BADATTACKPOS] = true,
 	[ERR_INVALID_ATTACK_TARGET] = true,
 	[ERR_NOEMOTEWHILERUNNING] = true,
+	[ERR_NOT_EQUIPPABLE] = true,
 }
