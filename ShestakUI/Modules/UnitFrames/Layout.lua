@@ -930,6 +930,7 @@ local function Shared(self, unit)
 			insets = { left = 0, right = 0, top = 0, bottom = T.Scale(-1)}
 		})
 		self.AltPowerBar:SetBackdropColor(0, 0, 0)
+		self.AltPowerBar:SetBackdropBorderColor(0, 0, 0)
 		
 		self.AltPowerBar.text = T.SetFontString(self.AltPowerBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.AltPowerBar.text:Point("CENTER", self.AltPowerBar, "CENTER", 0, 0)
