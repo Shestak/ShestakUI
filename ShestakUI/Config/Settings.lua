@@ -281,6 +281,7 @@ C["actionbar"] = {
 	["button_size"] = 25,						-- Buttons size
 	["button_space"] = 3,						-- Buttons space
 	["split_bars"] = false,						-- Split the fifth bar on two bars on 6 buttons
+	["classcolor_border"] = false,				-- Enable classcolor border
 	-- Bottom bars
 	["bottombars"] = 2,							-- Number of action bars on the bottom
 	-- Right bars
@@ -312,6 +313,7 @@ C["aura"] = {
 	["player_aura_only"] = false,				-- Only your debuff on target frame
 	["debuff_color_type"] = true,				-- Color debuff by type
 	["cast_by"] = false,						-- Show who cast a buff/debuff in its tooltip
+	["classcolor_border"] = false,				-- Enable classcolor border for player buffs
 }
 
 ----------------------------------------------------------------------------------------

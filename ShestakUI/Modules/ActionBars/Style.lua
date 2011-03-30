@@ -42,6 +42,9 @@ local function style(self)
  
 		local panel = CreateFrame("Frame", name.."Panel", self)
 		panel:CreatePanel("Transparent", T.buttonsize, T.buttonsize, "CENTER", self, "CENTER", 0, 0)
+		if C.actionbar.classcolor_border == true then
+			panel:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		end
 		panel:SetFrameStrata(self:GetFrameStrata())
 		panel:SetFrameLevel(self:GetFrameLevel() - 1)
  
@@ -85,6 +88,9 @@ local function stylesmallbutton(normal, button, icon, name, pet)
 		
 		local panel = CreateFrame("Frame", name.."Panel", button)
 		panel:CreatePanel("Transparent", T.buttonsize, T.buttonsize, "CENTER", button, "CENTER", 0, 0)
+		if C.actionbar.classcolor_border == true then
+			panel:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		end
 		panel:SetFrameStrata(button:GetFrameStrata())
 		panel:SetFrameLevel(button:GetFrameLevel() - 1)
 

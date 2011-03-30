@@ -53,6 +53,9 @@ ConsolidatedBuffsCount:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.fo
 
 local CBbg = CreateFrame("Frame", nil, ConsolidatedBuffs)
 CBbg:SetTemplate("Default")
+if C.aura.classcolor_border == true then
+	CBbg:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+end
 CBbg:Point("TOPLEFT", ConsolidatedBuffs, 0, 0)
 CBbg:Point("BOTTOMRIGHT", ConsolidatedBuffs, 0, 0)
 CBbg:SetFrameStrata("BACKGROUND")
@@ -60,6 +63,9 @@ CBbg:SetFrameStrata("BACKGROUND")
 for i = 1, 3 do
 	local f = CreateFrame("Frame", nil, _G["TempEnchant"..i])
 	f:CreatePanel("Default", C.aura.player_buff_size, C.aura.player_buff_size, "CENTER", _G["TempEnchant"..i], "CENTER", 0, 0)
+	if C.aura.classcolor_border == true then
+		f:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	end
 	_G["TempEnchant"..i.."Border"]:Hide()
 	_G["TempEnchant"..i.."Icon"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	_G["TempEnchant"..i.."Icon"]:Point("TOPLEFT", _G["TempEnchant"..i], 2, -2)
@@ -98,6 +104,9 @@ local function StyleBuffs(buttonName, index, debuff)
 		
 		local panel = CreateFrame("Frame", buttonName..index.."Panel", buff)
 		panel:CreatePanel("Default", C.aura.player_buff_size, C.aura.player_buff_size, "CENTER", buff, "CENTER", 0, 0)
+		if C.aura.classcolor_border == true then
+			panel:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		end
 		panel:SetFrameLevel(buff:GetFrameLevel() - 1)
 		panel:SetFrameStrata(buff:GetFrameStrata())
 	end
