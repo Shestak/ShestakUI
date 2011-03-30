@@ -81,6 +81,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"BaudErrorFrameListScrollBox",
 			"BaudErrorFrameDetailScrollBox",
 			"StackSplitFrame",
+			"OpacityFrame",
 		}
 		
 		local insetskins = {
