@@ -127,7 +127,7 @@ function Stuffing:SlotUpdate(b)
 
 			if iType and iType == QUEST_ITEM_STRING then
 				b.qitem = true
-				-- Color quest item red
+				-- Color quest item yellow
 				if not b.frame.lock then b.frame:SetBackdropBorderColor(1, 1, 0) end
 			else
 				b.qitem = nil
@@ -235,7 +235,7 @@ function Stuffing:SlotNew(bag, slot)
 	ret.Cooldown = _G[ret.frame:GetName() .. "Cooldown"]
 	ret.Cooldown:Show()
 
-	self:SlotUpdate (ret)
+	self:SlotUpdate(ret)
 
 	return ret, true
 end
