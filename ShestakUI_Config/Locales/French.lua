@@ -11,7 +11,6 @@ L_GUI_PER_CHAR = "Are you sure you want to change to or from 'Per Char Settings'
 L_GUI_MAKE_SELECTION = "You must make a selection before you can continue to config." -- Needs review
 
 -- General options
-L_GUI_GENERAL_UIICON = "Icone près de la minimap"
 L_GUI_GENERAL_AUTOSCALE = "Mise а l'échelle automatique"
 L_GUI_GENERAL_MULTISAMPLE = "Protection multi échantillonnage (bordure 1px)"
 L_GUI_GENERAL_UISCALE = "Mettre l'UI а l'échelle (si 'Mise а l'échelle automatique' est désactivée)"

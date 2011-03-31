@@ -11,7 +11,6 @@ L_GUI_PER_CHAR = "Are you sure you want to change to or from 'Per Char Settings'
 L_GUI_MAKE_SELECTION = "You must make a selection before you can continue to config." -- Needs review
 
 -- General options
-L_GUI_GENERAL_UIICON = "小地图插件图标"
 L_GUI_GENERAL_AUTOSCALE = "自动UI缩放"
 L_GUI_GENERAL_MULTISAMPLE = "多重采样保护(保证1像素边框)"
 L_GUI_GENERAL_UISCALE = "UI缩放(当自动缩放关闭时)"
@@ -158,7 +157,7 @@ L_GUI_MINIMAP_ENABLE = "开启迷你地图增强"
 L_GUI_MINIMAP_ICON = "追踪类型图示"
 L_GUI_MINIMAP_SIZE = "小地图大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "战斗中隐藏小地图"
-L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu"
+L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu" -- Needs review
 
 -- Map options
 L_GUI_MAP_ENABLE = "开启世界地图增强"

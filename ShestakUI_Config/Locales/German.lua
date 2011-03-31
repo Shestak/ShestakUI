@@ -11,7 +11,6 @@ L_GUI_PER_CHAR = "Are you sure you want to change to or from 'Per Char Settings'
 L_GUI_MAKE_SELECTION = "You must make a selection before you can continue to config." -- Needs review
 
 -- General options
-L_GUI_GENERAL_UIICON = "UI Symbol an der Minimap"
 L_GUI_GENERAL_AUTOSCALE = "Automatisch UI skalieren"
 L_GUI_GENERAL_MULTISAMPLE = "Multisample Schutz (Saubere 1px Rahmen)"
 L_GUI_GENERAL_UISCALE = "UI Skalierung (falls automatische Skalierung deaktiviert)"

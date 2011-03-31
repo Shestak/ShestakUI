@@ -11,7 +11,6 @@ L_GUI_PER_CHAR = "¿Estás segudo de que quieres cambiar a o desde 'Cambios sól
 L_GUI_MAKE_SELECTION = "Debes hacer una selección antes de continuar la configuración."
 
 -- General options
-L_GUI_GENERAL_UIICON = "Icono de la UI cerca del minimapa"
 L_GUI_GENERAL_AUTOSCALE = "Auto escalado de la UI"
 L_GUI_GENERAL_MULTISAMPLE = "Protección del Multimuestreo (elimina el borde de 1px)"
 L_GUI_GENERAL_UISCALE = "Escalado de la UI (si auto escalado está desactivado)"
