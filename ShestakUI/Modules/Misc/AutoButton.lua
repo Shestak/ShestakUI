@@ -4,21 +4,8 @@ if not C.misc.quest_auto_button == true then return end
 ----------------------------------------------------------------------------------------
 --	AutoButton for used items(by Elv22)
 ----------------------------------------------------------------------------------------
-local Items = {
-	39213,	-- Massive Seaforium Charge (Strand of the Ancients)
-	46847,	-- Huge Seaforium Bombs (Isle of Conquest)
-	42986,	-- The RP-GG (Wintergrasp)
-	37860,	-- Ruby Drake (Occulus)
-	37815,	-- Emerald Drake (Occulus)
-	37859,	-- Amber Essence (Occulus)
-	46029,	-- Mimiron's Core (Ulduar)
-	38689,	-- Chicken Net (Quest)
-	--53051,	-- Dense Embersilk Bandage (Test) 
-}
-
-local EquipedItems = {
-	49278,	-- Goblin Rocket Pack (ICC)
-}
+local Items = T.ABItems
+local EquipedItems = T.ABEquipedItems
 	
 local function AutoButtonHide()
 	AutoButton:SetAlpha(0)

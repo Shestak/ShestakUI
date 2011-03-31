@@ -33,6 +33,7 @@
 	<Script file="Config\Filters\RaidAuraWatch.lua"/>
 	<Script file="Config\Filters\Reminders.lua"/>
 	<Script file="Config\Filters\ChatSpam.lua"/>
+	<Script file="Config\Filters\AutoButton.lua"/>
 	
 	<Script file="Core\API.lua"/>
 	<Script file="Core\Functions.lua"/>
