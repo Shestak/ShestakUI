@@ -631,6 +631,8 @@ local function Shared(self, unit)
 			end
 			self.PortraitOverlay:Point("TOPLEFT", -2, 2)
 			self.PortraitOverlay:Point("BOTTOMRIGHT", 2, -2)
+
+			self.Portrait.PostUpdate = T.FixWorgenPortrait
 			table.insert(self.__elements, T.HidePortrait)
 		end
 		

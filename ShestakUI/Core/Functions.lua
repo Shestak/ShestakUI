@@ -1045,7 +1045,14 @@ T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, 
 
 	icon.first = true
 end
-	
+
+T.FixWorgenPortrait = function(self, unit)
+	if select(2, UnitRace(unit)) ~= "Worgen" then return end
+	if UnitSex(unit) ~= 2 then return end
+	self:SetCamera(0)
+	self:SetPortraitZoom(0.999)
+end
+
 T.HidePortrait = function(self, unit)
 	if self.unit == "target" then
 		if not UnitExists(self.unit) or not UnitIsConnected(self.unit) or not UnitIsVisible(self.unit) then
