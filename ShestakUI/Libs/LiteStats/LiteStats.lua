@@ -270,7 +270,7 @@ if latency.enabled then
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(modules.Latency.tip_anchor, modules.Latency.tip_frame, modules.Latency.tip_x, modules.Latency.tip_y)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(latency)
+			GameTooltip:AddLine(latency,tthead.r,tthead.g,tthead.b)
 			GameTooltip:Show()
 		end,
 	})
@@ -1361,7 +1361,15 @@ if loot.enabled then
 					self.text:SetText(format(loot.fmt,"|cff55ff55"..L"ON".."|r"))
 				end
 			end
-		end
+		end,
+		OnEnter = function(self)
+			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
+			GameTooltip:ClearLines()
+			GameTooltip:AddLine(AUTO_LOOT_DEFAULT_TEXT,tthead.r,tthead.g,tthead.b)
+			--GameTooltip:AddLine' '
+			--GameTooltip:AddLine(OPTION_TOOLTIP_AUTO_LOOT_DEFAULT,1,1,1)
+			GameTooltip:Show()
+		end,
 	})
 end
 ------------------------------------------
@@ -1386,7 +1394,15 @@ if helm.enabled then
 					self.text:SetText(format(helm.fmt,"|cff55ff55"..L"ON".."|r"))
 				end
 			end
-		end
+		end,
+		OnEnter = function(self)
+			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
+			GameTooltip:ClearLines()
+			GameTooltip:AddLine(SHOW_HELM,tthead.r,tthead.g,tthead.b)
+			GameTooltip:AddLine' '
+			GameTooltip:AddLine(OPTION_TOOLTIP_SHOW_HELM,1,1,1)
+			GameTooltip:Show()
+		end,
 	})
 end
 ------------------------------------------
@@ -1411,7 +1427,15 @@ if cloak.enabled then
 					self.text:SetText(format(cloak.fmt,"|cff55ff55"..L"ON".."|r"))
 				end
 			end
-		end
+		end,
+		OnEnter = function(self)
+			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
+			GameTooltip:ClearLines()
+			GameTooltip:AddLine(SHOW_CLOAK,tthead.r,tthead.g,tthead.b)
+			GameTooltip:AddLine' '
+			GameTooltip:AddLine(OPTION_TOOLTIP_SHOW_CLOAK,1,1,1)
+			GameTooltip:Show()
+		end,
 	})
 end
 ------------------------------------------
@@ -1436,7 +1460,15 @@ if nameplates.enabled then
 					self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))
 				end
 			end
-		end
+		end,
+		OnEnter = function(self)
+			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
+			GameTooltip:ClearLines()
+			GameTooltip:AddLine(UNIT_NAMEPLATES_ALLOW_OVERLAP,tthead.r,tthead.g,tthead.b)
+			--GameTooltip:AddLine' '
+			--GameTooltip:AddLine(OPTION_TOOLTIP_UNIT_NAMEPLATES_ALLOW_OVERLAP,1,1,1)
+			GameTooltip:Show()
+		end,
 	})
 end
 ------------------------------------------
