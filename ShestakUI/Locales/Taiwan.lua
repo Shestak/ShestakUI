@@ -12,10 +12,10 @@ L_TOOLTIP_ACH_COMPLETE = "你的狀態: 完成 "
 L_TOOLTIP_ACH_INCOMPLETE = "你的狀態: 未完成"
 L_TOOLTIP_SPELL_ID = "法術ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
-L_TOOLTIP_WHO_TARGET = "Targeted By" -- Needs review
+L_TOOLTIP_WHO_TARGET = "以其為目標的"
 
 -- Misc
-L_MISC_UNDRESS = "Undress" -- Needs review
+L_MISC_UNDRESS = "無裝備"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
@@ -24,16 +24,16 @@ L_RAID_UTIL_DISBAND = "解散團隊"
 L_ZONE_WINTERGRASP = "冬握湖"
 
 -- WatchFrame Wowhead link
-L_WATCH_WOWHEAD_LINK = "Wowhead link" -- Needs review
+L_WATCH_WOWHEAD_LINK = "Wowhead鏈接"
 
 -- Toogle Menu
-L_TOGGLE_ADDON = "Addon " -- Needs review
-L_TOGGLE_ADDONS = " addons" -- Needs review
-L_TOGGLE_EXPAND = "Expand " -- Needs review
-L_TOGGLE_COLLAPSE = "Collapse " -- Needs review
-L_TOGGLE_RCLICK = "Right click to enable or disable " -- Needs review
-L_TOGGLE_LCLICK = "Left click to toggle window " -- Needs review
-L_TOGGLE_RELOAD = " (needs UI reload)" -- Needs review
+L_TOGGLE_ADDON = "插件 "
+L_TOGGLE_ADDONS = " 插件系列"
+L_TOGGLE_EXPAND = "展開 "
+L_TOGGLE_COLLAPSE = "折疊 "
+L_TOGGLE_RCLICK = "右鍵點擊以啟用或禁用 "
+L_TOGGLE_LCLICK = "左鍵點擊來顯示/隱藏窗口 "
+L_TOGGLE_RELOAD = " (需要重載插件)"
 
 -- UnitFrame
 L_UF_GHOST = "靈魂"
@@ -55,7 +55,7 @@ L_MINIMAP_CALENDAR = "日曆"
 L_ALOAD_RL = "重新加載UI"
 L_ALOAD_TRADE = "經商"
 L_ALOAD_SOLO = "獨自"
-L_ALOAD_DEP = "依賴: "
+L_ALOAD_DEP = "依賴關係: "
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -208,7 +208,7 @@ L_INFO_SETTINGS_ALL = "鍵入 /settings all, 載入所有UI設定."
 -- Popups
 L_POPUP_INSTALLUI = "該角色首次使用ShestakUI.你必須重新加載UI來配置."
 L_POPUP_RESETUI = "你確定要重新加載ShestakUI?"
-L_POPUP_RESETSTATS = "Are you sure you want to reset statistics for time spent in game and gold." -- Needs review
+L_POPUP_RESETSTATS = "你確定要重置本次遊戲時間和金幣收益統計數據嗎?"
 L_POPUP_SWITCH_RAID = "多個團隊樣式被加載,請選擇一個樣式."
 L_POPUP_DISBAND_RAID = "你確定要解散團隊?"
 L_POPUP_DISABLEUI = "ShestakUI並不支援此解析度, 你想要停用ShestakUI嗎? (若果您想要嘗試其他解析度, 請按取消)"
@@ -223,14 +223,14 @@ L_WELCOME_LINE_2_1 = "輸入/cfg進行UI設置,或者訪問http://shestak.org"
 L_WELCOME_LINE_2_2 = "得到更多信息."
 
 -- Combat text
-L_COMBATTEXT_KILLING_BLOW = "擊殺信息"
-L_COMBATTEXT_ALREADY_UNLOCKED = "戰鬥記錄已經解鎖."
-L_COMBATTEXT_ALREADY_LOCKED = "戰鬥記錄已經鎖定."
-L_COMBATTEXT_TEST_DISABLED = "戰鬥記錄測試模式關閉."
-L_COMBATTEXT_TEST_ENABLED = "戰鬥記錄測試模式開啟." 
-L_COMBATTEXT_TEST_USE_UNLOCK = "輸入/xct unlock解鎖並調整戰鬥記錄大小與位置."
-L_COMBATTEXT_TEST_USE_LOCK = "輸入/xct lock鎖定戰鬥記錄框體."
-L_COMBATTEXT_TEST_USE_TEST = "輸入/xct test 切換測試模式."
-L_COMBATTEXT_POPUP = "保存戰鬥記錄位置需要重載."
-L_COMBATTEXT_UNSAVED = "Combat text window positions unsaved, don't forget to reload UI." -- Needs review
-L_COMBATTEXT_UNLOCKED = "戰鬥記錄解鎖."
+L_COMBATTEXT_KILLING_BLOW = "最後一擊"
+L_COMBATTEXT_ALREADY_UNLOCKED = "戰鬥信息已經解鎖."
+L_COMBATTEXT_ALREADY_LOCKED = "戰鬥信息已經鎖定."
+L_COMBATTEXT_TEST_DISABLED = "戰鬥信息測試模式已禁用."
+L_COMBATTEXT_TEST_ENABLED = "戰鬥信息測試模式已啟用."
+L_COMBATTEXT_TEST_USE_UNLOCK = "輸入 /xct unlock 來移動或調整戰鬥信息框架大小."
+L_COMBATTEXT_TEST_USE_LOCK = "輸入 /xct lock 來鎖定戰鬥信息框架."
+L_COMBATTEXT_TEST_USE_TEST = "輸入 /xct test 來啟用或禁用戰鬥信息測試模式."
+L_COMBATTEXT_POPUP = "要保存戰鬥信息窗口的位置你需要重新載入插件."
+L_COMBATTEXT_UNSAVED = "戰鬥信息窗口位置尚未保存,不要忘記重新載入插件."
+L_COMBATTEXT_UNLOCKED = "戰鬥信息已解鎖."

@@ -4,11 +4,11 @@
 --	Localization for zhCN client(Thanks to Mania for the translation)
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "重载插件"
-L_GUI_SET_SAVED_SETTTINGS = "Set settings Per-Character" -- Needs review
-L_GUI_RESET_CHAR = "Are you sure you want to reset your character's settings for ShestakUI?" -- Needs review
-L_GUI_RESET_ALL = "Are you sure you want to reset all settings for ShestakUI" -- Needs review
-L_GUI_PER_CHAR = "Are you sure you want to change to or from 'Per Char Settings'?" -- Needs review
-L_GUI_MAKE_SELECTION = "You must make a selection before you can continue to config." -- Needs review
+L_GUI_SET_SAVED_SETTTINGS = "为每个角色分别保存设定"
+L_GUI_RESET_CHAR = "你确定要重置你所有角色的ShestakUI设定?"
+L_GUI_RESET_ALL = "你确定要重置全部ShestakUI设定?"
+L_GUI_PER_CHAR = "你确定要设定为或者取消设定'每个角色单独设定'模式?"
+L_GUI_MAKE_SELECTION = "在你继续调整设定前必须选选择一个选项."
 
 -- General options
 L_GUI_GENERAL_AUTOSCALE = "自动UI缩放"
@@ -28,8 +28,8 @@ L_GUI_MISC_SPIN_CAMERA = "afk时旋转镜头"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框体解锁"
 L_GUI_MISC_QUEST_AUTOBUTTON = "任务/道具自动按钮"
 L_GUI_MISC_RAID_TOOLS = "团队工具"
-L_GUI_MISC_ANNOUNCE_INTERRUPT = "Announce in party/raid when you interrupt" -- Needs review
-L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement" -- Needs review
+L_GUI_MISC_ANNOUNCE_INTERRUPT = "当你成功打断的时候在队伍/团队中进行通告"
+L_GUI_MISC_ACH_SCREENS = "当你获得成就的时候自动截屏"
 
 -- Skins options
 L_GUI_SKINS = "风格化"
@@ -39,7 +39,7 @@ L_GUI_SKINS_PP = "开启PallyPower样式增强"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "战斗文字"
-L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text" -- Needs review
+L_GUI_COMBATTEXT_ENABLE = "启用战斗信息"
 L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "使用暴雪默认伤害/治疗模式（模型顶部/玩家头像）"
 L_GUI_COMBATTEXT_DAMAGE_STYLE = "改变模型顶部/玩家头像的伤害/治疗字体"
 L_GUI_COMBATTEXT_DAMAGE = "独立显示伤害输出"
@@ -62,8 +62,8 @@ L_GUI_COMBATTEXT_DK_RUNES = "显示死亡骑士符文恢复"
 L_GUI_COMBATTEXT_KILLINGBLOW = "显示击杀信息"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "将AOE伤害合并为一条信息"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "AOE伤害合并信息阀值(秒)"
-L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels" -- Needs review
-L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts" -- Needs review
+L_GUI_COMBATTEXT_DISPEL = "当你驱散成功的时候提示"
+L_GUI_COMBATTEXT_INTERRUPT = "当你打断成功的时候提示"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buffs提示"
@@ -76,7 +76,7 @@ L_GUI_REMINDER_RAID_SIZE = "团队buffs图示大小"
 L_GUI_REMINDER_RAID_ALPHA = "当buffs存在时透明显示图示"
 
 -- Raid cooldowns options
-L_GUI_COOLDOWN_RAID = "Raid cooldowns" -- Needs review
+L_GUI_COOLDOWN_RAID = "团队冷却"
 L_GUI_COOLDOWN_RAID_ENABLE = "开启团队技能冷却"
 L_GUI_COOLDOWN_RAID_HEIGHT = "团队技能冷却栏高度"
 L_GUI_COOLDOWN_RAID_WIDTH = "团队技能冷却栏宽度"
@@ -87,21 +87,21 @@ L_GUI_COOLDOWN_RAID_IN_PARTY = "在队伍中显示团队技能冷却"
 L_GUI_COOLDOWN_RAID_IN_ARENA = "在竞技场中显示团队技能冷却"
 
 -- Enemy cooldowns options
-L_GUI_COOLDOWN_ENEMY = "Enemy cooldowns" -- Needs review
+L_GUI_COOLDOWN_ENEMY = "敌对冷却"
 L_GUI_COOLDOWN_ENEMY_ENABLE = "敌对技能冷却"
 L_GUI_COOLDOWN_ENEMY_SIZE = "敌对技能冷却图示大小"
-L_GUI_COOLDOWN_ENEMY_DIRECTION = "Enemy cooldowns icon direction (RIGHT|LEFT|UP|DOWN)" -- Needs review
+L_GUI_COOLDOWN_ENEMY_DIRECTION = "敌对冷却图标的方向 (RIGHT|LEFT|UP|DOWN)"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "在任何时候显示敌对技能冷却"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "在战场中显示敌对技能冷却"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "在竞技场中显示敌对技能冷却"
 
 -- Pulse cooldowns options
-L_GUI_COOLDOWN_PULSE = "Pulse cooldowns" -- Needs review
+L_GUI_COOLDOWN_PULSE = "技能冷却闪烁"
 L_GUI_COOLDOWN_PULSE_ENABLE = "开启冷却闪烁提示"
 L_GUI_COOLDOWN_PULSE_SIZE = "冷却闪烁大小"
-L_GUI_COOLDOWN_PULSE_SOUND = "Warning sound notification" -- Needs review
-L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Animation scaling" -- Needs review
-L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Max opacity hold time" -- Needs review
+L_GUI_COOLDOWN_PULSE_SOUND = "播放声音提醒"
+L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "动画缩放"
+L_GUI_COOLDOWN_PULSE_HOLD_TIME = "不透明状态持续时间"
 
 -- Threat options
 L_GUI_THREAT = "仇恨栏"
@@ -118,7 +118,7 @@ L_GUI_TOOLTIP_CURSOR = "提示资讯跟随鼠标"
 L_GUI_TOOLTIP_ICON = "在提示资讯中显示物品图示"
 L_GUI_TOOLTIP_HEALTH = "显示百分比生命值"
 L_GUI_TOOLTIP_HIDE = "隐藏动作条的提示提示资讯."
-L_GUI_TOOLTIP_HIDE_COMBAT = "Hide tooltip in combat" -- Needs review
+L_GUI_TOOLTIP_HIDE_COMBAT = "战斗中隐藏鼠标提示"
 L_GUI_TOOLTIP_TALENTS = "在提示资讯中显示天赋"
 L_GUI_TOOLTIP_ACHIEVEMENTS = "在提示资讯中显示成就比较"
 L_GUI_TOOLTIP_TARGET = "在提示资讯中显示目标的目标"
@@ -127,22 +127,22 @@ L_GUI_TOOLTIP_RANK = "在提示资讯中显示公会会阶"
 L_GUI_TOOLTIP_ARENA_EXPERIENCE = "在提示资讯中显示竞技场等级"
 L_GUI_TOOLTIP_SPELL_ID = "法术ID"
 L_GUI_TOOLTIP_RAID_ICON = "团队图标"
-L_GUI_TOOLTIP_WHO_TARGETTING = "Display who is targetting the unit that is in your party/raid" -- Needs review
+L_GUI_TOOLTIP_WHO_TARGETTING = "当你在队伍/团队中时显示谁以目标为目标的提示"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "开启聊天框增强"
 L_GUI_CHAT_BACKGROUND = "开启聊天框背景"
 L_GUI_CHAT_BACKGROUND_ALPHA = "聊天背景透明度"
-L_GUI_CHAT_SPAM = "Removing some systems spam(*Player1* won duel *Player2*)"  -- Needs review
-L_GUI_CHAT_GOLD = "Removing some players spam"  -- Needs review
+L_GUI_CHAT_SPAM = "屏蔽无用系统信息(*玩家1* 在决斗中战胜了 *玩家2*)"
+L_GUI_CHAT_GOLD = "屏蔽某些玩家的垃圾信息"
 L_GUI_CHAT_WIDTH = "框体宽度"
 L_GUI_CHAT_HEIGHT = "框体高度"
 L_GUI_CHAT_BAR = "显示频道快捷图示栏"
 L_GUI_CHAT_TIMESTAMP = "时间标签颜色"
 L_GUI_CHAT_WHISP = "接受密语时声音提示"
 L_GUI_CHAT_SKIN_BUBBLE = "美化默认聊天泡泡"
-L_GUI_CHAT_CL_TAB = "Show Combat Log tab"  -- Needs review
-L_GUI_CHAT_STICKY = "Remember last channel"  -- Needs review
+L_GUI_CHAT_CL_TAB = "显示战斗记录标签"
+L_GUI_CHAT_STICKY = "记住上一次使用的频道"
 
 -- Bag options
 L_GUI_BAGS = "背包"
@@ -184,9 +184,9 @@ L_GUI_NAMEPLATE_THREAT = "显示仇恨情况"
 L_GUI_NAMEPLATE_CLASS_ICON = "在PVP情况下显示职业图示"
 L_GUI_NAMEPLATE_NAME_ABBREV = "显示名字缩写"
 L_GUI_NAMEPLATE_OVERLAP = "允许单位名条重叠"
-L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank or dps/heal"  -- Needs review
-L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"  -- Needs review
-L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"  -- Needs review
+L_GUI_NAMEPLATE_GOOD_COLOR = "依据你的队伍角色(坦克,输出/治疗)分别显示同样的安全威胁颜色"
+L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color" -- Needs review
+L_GUI_NAMEPLATE_BAD_COLOR = "依据你的队伍角色(坦克,输出/治疗)显示的危险胁颜色"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "开启动作条"
@@ -194,7 +194,7 @@ L_GUI_ACTIONBAR_HOTKEY = "显示动作条文字"
 L_GUI_ACTIONBAR_GRID = "显示空的动作条按钮"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "按钮大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "按钮间隔"
-L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons" -- Needs review
+L_GUI_ACTIONBAR_SPLIT_BARS = "把第五动作条分成两个有六个位置的小动作条"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部动作条数目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右侧动作条数目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "鼠标划过时显示右侧动作条"
@@ -217,21 +217,21 @@ L_GUI_AURA_PET_DEBUFFS = "在宠物框体显示DeBuffs"
 L_GUI_AURA_TOT_DEBUFFS = "在目标的目标框体显示DeBuffs"
 L_GUI_AURA_PLAYER_AURA_ONLY = "在目标框体只显示自己的DeBuffs"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs着色依照法术类型"
-L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip" -- Needs review
+L_GUI_AURA_CAST_BY = "在鼠标提示中显示是谁施放了这个 增益/減益"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "开启单位框架"
 L_GUI_UF_OWN_COLOR = "在预测治疗中显示你的治疗量"
-L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"  -- Needs review
+L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)" -- Needs review
 L_GUI_UF_ENEMY_HEALTH_COLOR = "敌对目标生命条以红色着色"
 L_GUI_UF_TOTAL_VALUE = "在玩家与目标框体显示详细的文字变化"
 L_GUI_UF_COLOR_VALUE = "生命值与魔法值以职业颜色着色"
 L_GUI_UF_UNIT_CASTBAR = "显示施法条"
 L_GUI_UF_CASTBAR_ICON = "显示施法条图标"
 L_GUI_UF_CASTBAR_LATENCY = "施法条延迟"
-L_GUI_UF_SHOW_PET = "Show pet frame"  -- Needs review
-L_GUI_UF_SHOW_FOCUS = "Show focus frame"  -- Needs review
-L_GUI_UF_SHOW_TOT = "Show target of target frame"  -- Needs review
+L_GUI_UF_SHOW_PET = "显示宠物框架"
+L_GUI_UF_SHOW_FOCUS = "显示焦点框架"
+L_GUI_UF_SHOW_TOT = "显示目标的目标框架"
 L_GUI_UF_SHOW_BOSS = "显示boss框体"
 L_GUI_UF_BOSS_RIGHT = "在右侧显示Boss框体"
 L_GUI_UF_SHOW_ARENA = "显示竞技场框体"

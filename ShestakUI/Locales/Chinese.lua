@@ -12,10 +12,10 @@ L_TOOLTIP_ACH_COMPLETE = "你的状态: 完成 "
 L_TOOLTIP_ACH_INCOMPLETE = "你的状态: 未完成"
 L_TOOLTIP_SPELL_ID = "法术ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
-L_TOOLTIP_WHO_TARGET = "Targeted By" -- Needs review
+L_TOOLTIP_WHO_TARGET = "以其为目标的"
 
 -- Misc
-L_MISC_UNDRESS = "Undress" -- Needs review
+L_MISC_UNDRESS = "无装备"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"
@@ -24,16 +24,16 @@ L_RAID_UTIL_DISBAND = "解散团队"
 L_ZONE_WINTERGRASP = "冬握湖"
 
 -- WatchFrame Wowhead link
-L_WATCH_WOWHEAD_LINK = "Wowhead link" -- Needs review
+L_WATCH_WOWHEAD_LINK = "Wowhead链接"
 
 -- Toogle Menu
-L_TOGGLE_ADDON = "Addon " -- Needs review
-L_TOGGLE_ADDONS = " addons" -- Needs review
-L_TOGGLE_EXPAND = "Expand " -- Needs review
-L_TOGGLE_COLLAPSE = "Collapse " -- Needs review
-L_TOGGLE_RCLICK = "Right click to enable or disable " -- Needs review
-L_TOGGLE_LCLICK = "Left click to toggle window " -- Needs review
-L_TOGGLE_RELOAD = " (needs UI reload)" -- Needs review
+L_TOGGLE_ADDON = "插件 "
+L_TOGGLE_ADDONS = " 插件系列"
+L_TOGGLE_EXPAND = "展开 "
+L_TOGGLE_COLLAPSE = "折叠 "
+L_TOGGLE_RCLICK = "右键点击以启用或禁用 "
+L_TOGGLE_LCLICK = "左键点击来显示/隐藏窗口 "
+L_TOGGLE_RELOAD = " (需要重载插件)"
 
 -- UnitFrame
 L_UF_GHOST = "灵魂"
@@ -55,7 +55,7 @@ L_MINIMAP_CALENDAR = "日历"
 L_ALOAD_RL = "重新加载UI"
 L_ALOAD_TRADE = "贸易"
 L_ALOAD_SOLO = "独自"
-L_ALOAD_DEP = "Dependencies: " -- Needs review
+L_ALOAD_DEP = "依赖关系: "
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -208,14 +208,14 @@ L_INFO_SETTINGS_ALL = "键入 /settings all, 载入所有UI设定."
 -- Popups
 L_POPUP_INSTALLUI = "该角色首次使用ShestakUI.你必须重新加载UI来配置."
 L_POPUP_RESETUI = "你确定要重新加载ShestakUI?"
-L_POPUP_RESETSTATS = "Are you sure you want to reset statistics for time spent in game and gold." -- Needs review
+L_POPUP_RESETSTATS = "你确定要重置本次游戏时间和金币收益统计数据吗?"
 L_POPUP_SWITCH_RAID = "多个团队样式被加载,请选择一个样式."
 L_POPUP_DISBAND_RAID = "你确定要解散团队?"
 L_POPUP_DISABLEUI = "ShestakUI并不支援此分辨率, 你想要停用ShestakUI吗? (若果您想要尝试其他分辨率, 请按取消)"
 L_POPUP_SETTINGS_ALL = "应用所有的插件设置? (DBM/DXE, Skada/Recount and MSBT)"
 L_POPUP_SETTINGS_DBM = "需要改变DBM描点及风格化元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
-L_POPUP_SETTINGS_CLIQUE = "你的Clique设置没有正确安装,现在应用Clique设置?" -- Needs review
+L_POPUP_SETTINGS_CLIQUE = "你的Clique设置没有正确安装,现在应用Clique设置?"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "欢迎使用ShestakUI "
@@ -223,14 +223,14 @@ L_WELCOME_LINE_2_1 = "输入/cfg进行插件设置,或者访问http://shestak.or
 L_WELCOME_LINE_2_2 = "得到更多信息."
 
 -- Combat text
-L_COMBATTEXT_KILLING_BLOW = "Killing Blow" -- Needs review
-L_COMBATTEXT_ALREADY_UNLOCKED = "Combat text already unlocked." -- Needs review
-L_COMBATTEXT_ALREADY_LOCKED = "Combat text already locked." -- Needs review
-L_COMBATTEXT_TEST_DISABLED = "Combat text test mode disabled." -- Needs review
-L_COMBATTEXT_TEST_ENABLED = "Combat text test mode enabled." -- Needs review
-L_COMBATTEXT_TEST_USE_UNLOCK = "Type /xct unlock to move and resize combat text frames." -- Needs review
-L_COMBATTEXT_TEST_USE_LOCK = "Type /xct lock to lock combat text frames." -- Needs review
-L_COMBATTEXT_TEST_USE_TEST = "Type /xct test to toggle combat text testmode." -- Needs review
-L_COMBATTEXT_POPUP = "To save combat text window positions you need to reload your UI." -- Needs review
-L_COMBATTEXT_UNSAVED = "Combat text window positions unsaved, don't forget to reload UI." -- Needs review
-L_COMBATTEXT_UNLOCKED = "Combat text unlocked." -- Needs review
+L_COMBATTEXT_KILLING_BLOW = "最后一击"
+L_COMBATTEXT_ALREADY_UNLOCKED = "战斗信息已经解锁."
+L_COMBATTEXT_ALREADY_LOCKED = "战斗信息已经锁定."
+L_COMBATTEXT_TEST_DISABLED = "战斗信息测试模式已禁用."
+L_COMBATTEXT_TEST_ENABLED = "战斗信息测试模式已启用."
+L_COMBATTEXT_TEST_USE_UNLOCK = "输入 /xct unlock 来移动或调整战斗信息框架大小."
+L_COMBATTEXT_TEST_USE_LOCK = "输入 /xct lock 来锁定战斗信息框架."
+L_COMBATTEXT_TEST_USE_TEST = "输入 /xct test 来启用或禁用战斗信息测试模式."
+L_COMBATTEXT_POPUP = "要保存战斗信息窗口的位置你需要重新载入插件."
+L_COMBATTEXT_UNSAVED = "战斗信息窗口位置尚未保存,不要忘记重新载入插件."
+L_COMBATTEXT_UNLOCKED = "战斗信息已解锁."
