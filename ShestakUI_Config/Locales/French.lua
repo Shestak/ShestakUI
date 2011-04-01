@@ -195,6 +195,7 @@ L_GUI_ACTIONBAR_GRID = "Afficher les boutons vides"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Taille des boutons"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacement des boutons"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons" -- Needs review
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Enable classcolor border for buttons" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Nombre de barres d'action en bas (1, 2 ou 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Nombre de barres d'action à droite (0, 1, 2 ou 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barres de droite en 'mouseover'"
@@ -218,6 +219,7 @@ L_GUI_AURA_TOT_DEBUFFS = "Afficher les debuffs de la cible de la cible"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Afficher seulement ses propres debuffs sur la cible"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Coleur de debuff par type"
 L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip" -- Needs review
+L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs" -- Needs review
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Activer les barres d'unité"

@@ -231,6 +231,7 @@ local function Local(o)
 	if o == "UIConfigactionbarbutton_size" then o = L_GUI_ACTIONBAR_BUTTON_SIZE end
 	if o == "UIConfigactionbarbutton_space" then o = L_GUI_ACTIONBAR_BUTTON_SPACE end
 	if o == "UIConfigactionbarsplit_bars" then o = L_GUI_ACTIONBAR_SPLIT_BARS end
+	if o == "UIConfigactionbarclasscolor_border" then o = L_GUI_ACTIONBAR_CLASSCOLOR_BORDER end
 	if o == "UIConfigactionbarbottombars" then o = L_GUI_ACTIONBAR_BOTTOMBARS end
 	if o == "UIConfigactionbarrightbars" then o = L_GUI_ACTIONBAR_RIGHTBARS end
 	if o == "UIConfigactionbarrightbars_mouseover" then o = L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER end
@@ -255,6 +256,7 @@ local function Local(o)
 	if o == "UIConfigauraplayer_aura_only" then o = L_GUI_AURA_PLAYER_AURA_ONLY end
 	if o == "UIConfigauradebuff_color_type" then o = L_GUI_AURA_DEBUFF_COLOR_TYPE end
 	if o == "UIConfigauracast_by" then o = L_GUI_AURA_CAST_BY end
+	if o == "UIConfigauraclasscolor_border" then o = L_GUI_AURA_CLASSCOLOR_BORDER end
 	
 	-- Unit Frames options
 	if o == "UIConfigunitframe" then o = UNITFRAME_LABEL end

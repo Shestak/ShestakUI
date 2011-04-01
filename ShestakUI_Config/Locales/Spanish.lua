@@ -195,6 +195,7 @@ L_GUI_ACTIONBAR_GRID = "Mostrar botones de la barra de acción vacíos"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Tamaño de los botones"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacio entre botones"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Dividir la quinta barra en dos de 6 botones cada una"
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Enable classcolor border for buttons" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Número de barras de acción abajo (1, 2 o 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Número de barras de acción en la derecha (0, 1, 2 o 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barras de la derecha se muestran al pasar el ratón"
@@ -218,6 +219,7 @@ L_GUI_AURA_TOT_DEBUFFS = "Perjuicios en el marco del objetivo del objetivo"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Solo tus perjuicios en el marco del objetivo"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color de los perjuicios por tipo"
 L_GUI_AURA_CAST_BY = "Mostrar quién lanza un beneficio/perjuicio en su descripción"
+L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs" -- Needs review
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Activar marcos de unidades"

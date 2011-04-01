@@ -195,6 +195,7 @@ L_GUI_ACTIONBAR_GRID = "顯示空的快捷列按鈕"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "按鈕大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "按鈕間隔"
 L_GUI_ACTIONBAR_SPLIT_BARS = "把第五動作條分成兩個有六個位置的小動作條"
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Enable classcolor border for buttons" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "滑鼠劃過顯示右側快捷列"
@@ -218,6 +219,7 @@ L_GUI_AURA_TOT_DEBUFFS = "在目標的目標框體顯示DeBuffs"
 L_GUI_AURA_PLAYER_AURA_ONLY = "在目標框體只顯示自己的DeBuffs"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs著色依照法術類型"
 L_GUI_AURA_CAST_BY = "在滑鼠提示中顯示是誰施放了這個 增益/減益"
+L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs" -- Needs review
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "開啟單位框架"
