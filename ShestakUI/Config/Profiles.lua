@@ -166,13 +166,15 @@ if T.author == true then
 	C["general"].custom_lagtolerance = true
 	C["misc"].auto_quest = true
 	C["misc"].vehicle_mouseover = true
-	C["misc"].raid_tools = true
+	C["misc"].ach_screens = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
 	C["tooltip"].shift_modifer = true
 	C["tooltip"].cursor = true
 	C["tooltip"].title = true
 	C["tooltip"].talents = true
+	C["tooltip"].average_lvl = true
+	C["tooltip"].who_targetting = true
 	C["chat"].combatlog = false
 	C["chat"].spam = true
 	C["unitframe"].arena_on_right = false
