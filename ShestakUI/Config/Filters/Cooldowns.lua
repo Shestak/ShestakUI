@@ -34,14 +34,31 @@ if C.enemycooldown.enable == true then
 		[16190] = 180,	-- Mana Tide Totem
 		[51514] = 45,	-- Hex
 		[15487] = 45,	-- Silence
-		[2094] = 180,	-- Blind
+		[2094] = 120,	-- Blind
 		[72] = 12,		-- Shield Bash
 		[33206] = 180,	-- Pain Suppression
 		[34490] = 20,	-- Silencing Shot
 		[1499] = 30,	-- Freezing Trap
 		[16979] = 15,	-- Feral Charge - Bear
 		[49376] = 30,	-- Feral Charge - Cat
-		[85285] = 10,	-- Rebuke
+		[96231] = 10,	-- Rebuke
+		[44572] = 30,	-- Deep Freeze
+		[31224] = 90,	-- Cloak of Shadows
+		[47585] = 75,	-- Dispersion
+		[46924] = 75,	-- Bladestorm
+		[48707] = 45,	-- Anti-Magic Shell
+		[19503] = 30,	-- Scatter Shot
+		[51722] = 60,	-- Dismantle
+		[676] = 60,		-- Disarm
+		[1856] = 120,	-- Vanish
+		[22812] = 60,	-- Barkskin
+		[80965] = 10,	-- Skull Bash
+		[78675] = 60,	-- Solar Bream
+		[6789] = 90,	-- Death Coil
+		[64044] = 90,	-- Psychic Horror
+		[20066] = 60,	-- Repentance
+		[45438] = 240,	-- Ice Block
+		[8143] = 60,	-- Tremor Totem
 	}
 end
 
