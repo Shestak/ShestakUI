@@ -449,7 +449,7 @@ if durability.enabled then
 				else
 					for i = 1, GetNumEquipmentSets() do
 						local name, icon = GetEquipmentSetInfo(i)
-						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s",icon,t_icon,name), func = function() UseEquipmentSet(name) end})
+						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s",icon,t_icon,name), notCheckable = 1, func = function() UseEquipmentSet(name) end})
 					end
 				end
 				EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU")
@@ -1366,8 +1366,8 @@ if loot.enabled then
 			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
 			GameTooltip:ClearLines()
 			GameTooltip:AddLine(AUTO_LOOT_DEFAULT_TEXT,tthead.r,tthead.g,tthead.b)
-			--GameTooltip:AddLine' '
-			--GameTooltip:AddLine(OPTION_TOOLTIP_AUTO_LOOT_DEFAULT,1,1,1)
+			GameTooltip:AddLine' '
+			GameTooltip:AddLine(OPTION_TOOLTIP_AUTO_LOOT_DEFAULT,1,1,1,1)
 			GameTooltip:Show()
 		end,
 	})
@@ -1465,8 +1465,8 @@ if nameplates.enabled then
 			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
 			GameTooltip:ClearLines()
 			GameTooltip:AddLine(UNIT_NAMEPLATES_ALLOW_OVERLAP,tthead.r,tthead.g,tthead.b)
-			--GameTooltip:AddLine' '
-			--GameTooltip:AddLine(OPTION_TOOLTIP_UNIT_NAMEPLATES_ALLOW_OVERLAP,1,1,1)
+			GameTooltip:AddLine' '
+			GameTooltip:AddLine(OPTION_TOOLTIP_UNIT_NAMEPLATES_ALLOW_OVERLAP,1,1,1,1)
 			GameTooltip:Show()
 		end,
 	})
