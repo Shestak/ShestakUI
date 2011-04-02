@@ -169,10 +169,6 @@ local function InstallUI()
 	ReloadUI()
 end
 
-local function CVar()
-
-end
-
 local function DisableUI()
 	DisableAddOn("ShestakUI")
 	ReloadUI()
