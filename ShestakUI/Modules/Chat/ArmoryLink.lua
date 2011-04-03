@@ -39,9 +39,9 @@ StaticPopupDialogs.LINK_COPY_DIALOG = {
 hooksecurefunc("UnitPopup_OnClick", function(self)
 	local dropdownFrame = UIDROPDOWNMENU_INIT_MENU
 	local name = string.lower(dropdownFrame.name)
-	local inputBox = StaticPopup_Show("LINK_COPY_DIALOG")
 
 	if name and self.value == "ARMORYLINK" then
+		local inputBox = StaticPopup_Show("LINK_COPY_DIALOG")
 		if realmLocal == "us" then
 			linkurl = "http://us.battle.net/wow/"..link.."/character/"..realmName.."/"..name.."/advanced"
 			inputBox.editBox:SetText(linkurl)
