@@ -4,7 +4,7 @@
 ## Author: Affli
 ## Credits: Nils Ruesch
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 3.0.5
+## X-Curse-Packaged-Version: 3.0.6
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
