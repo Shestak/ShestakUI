@@ -196,6 +196,7 @@ L_GUI_ACTIONBAR_BUTTON_SIZE = "Taille des boutons"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacement des boutons"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons" -- Needs review
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Enable classcolor border for buttons" -- Needs review
+L_GUI_ACTIONBAR_TOGGLE_MODE = "Enable toggle mode" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Nombre de barres d'action en bas (1, 2 ou 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Nombre de barres d'action à droite (0, 1, 2 ou 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barres de droite en 'mouseover'"

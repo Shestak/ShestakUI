@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.actionbar.enable == true then return end
+if C.actionbar.enable ~= true or C.actionbar.toggle_mode ~= true then return end
 
 local ToggleBar = CreateFrame("Frame", "ToggleActionbar", UIParent)
 

@@ -196,6 +196,7 @@ L_GUI_ACTIONBAR_BUTTON_SIZE = "按鈕大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "按鈕間隔"
 L_GUI_ACTIONBAR_SPLIT_BARS = "把第五動作條分成兩個有六個位置的小動作條"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Enable classcolor border for buttons" -- Needs review
+L_GUI_ACTIONBAR_TOGGLE_MODE = "Enable toggle mode" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "滑鼠劃過顯示右側快捷列"
