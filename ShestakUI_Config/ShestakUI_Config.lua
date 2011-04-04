@@ -893,18 +893,43 @@ do
 
 	thxui.name = "ShestakUI"
 	thxui:SetScript("OnShow", function(self)
+		local T, C, L = unpack(ShestakUI)
 		local title = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title:SetPoint("TOPLEFT", 16, -16)
-		title:SetText("Special Thanks and Credits to:")
+		title:SetText("Info:")
 
-		local subtitle = self:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-		subtitle:SetHeight(150)
+		local subtitle = self:CreateFontString(nil, "ARTWORK")
+		subtitle:SetFont(C.media.normal_font, 12)
+		subtitle:SetWidth(380)
 		subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
-		subtitle:SetPoint("RIGHT", self, -32, 0)
-		subtitle:SetNonSpaceWrap(true)
-		subtitle:SetWordWrap(true)
 		subtitle:SetJustifyH("LEFT")
-		subtitle:SetText("ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Havoc74, Duffed, Hydra, Gorlasch, Nefarion, Compost, Blamdarot, Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, UI Users, Russian Community and Others.")
+		subtitle:SetText("UI Site: http//shestak.org\nGitHub: https://github.com/Shestak/ShestakUI\nCurse: http://wow.curseforge.com/addons/shestakui/\nWoWInterface: http://www.wowinterface.com/downloads/info19033-ShestakUI.html\nChange Log: https://github.com/Shestak/ShestakUI/commits/master/")
+
+		local title2 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+		title2:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -16)
+		title2:SetText("Credits:")
+
+		local subtitle2 = self:CreateFontString(nil, "ARTWORK")
+		subtitle2:SetFont(C.media.normal_font, 12)
+		subtitle2:SetWidth(380)
+		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
+		subtitle2:SetJustifyH("LEFT")
+		subtitle2:SetText("ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Havoc74, Duffed, Hydra, Gorlasch, Nefarion, Compost, Blamdarot.")
+
+		local title3 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+		title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)
+		title3:SetText("Thanks:")
+
+		local subtitle3 = self:CreateFontString(nil, "ARTWORK")
+		subtitle3:SetFont(C.media.normal_font, 12)
+		subtitle3:SetWidth(380)
+		subtitle3:SetPoint("TOPLEFT", title3, "BOTTOMLEFT", 0, -8)
+		subtitle3:SetJustifyH("LEFT")
+		subtitle3:SetText("Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, UI Users, Russian Community and Others.")
+
+		local version = self:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+		version:SetPoint("BOTTOMRIGHT", -16, 16)
+		version:SetText("Version: "..T.version)
 	end)
 
 	InterfaceOptions_AddCategory(thxui)
