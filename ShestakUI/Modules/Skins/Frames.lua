@@ -277,9 +277,16 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ReadyCheckFrameText"]:ClearAllPoints()
 		_G["ReadyCheckFrameText"]:Point("TOP", 0, -12)
 		_G["InterfaceOptionsFrameTab1"]:ClearAllPoints()
-		_G["InterfaceOptionsFrameTab1"]:Point("TOPLEFT", _G["InterfaceOptionsFrameCategories"], "TOPLEFT", 5, 27)
+		_G["InterfaceOptionsFrameTab1"]:Point("TOPLEFT", _G["InterfaceOptionsFrameCategories"], "TOPLEFT", 0, 27)
+		_G["InterfaceOptionsFrameTab1"]:Width(60)
+		_G["InterfaceOptionsFrameTab1"].SetWidth = T.dummy
 		_G["InterfaceOptionsFrameTab2"]:ClearAllPoints()
-		_G["InterfaceOptionsFrameTab2"]:Point("TOPLEFT", _G["InterfaceOptionsFrameTab1"], "TOPRIGHT", 6, 0)
+		_G["InterfaceOptionsFrameTab2"]:Point("TOPLEFT", _G["InterfaceOptionsFrameTab1"], "TOPRIGHT", 3, 0)
+		_G["InterfaceOptionsFrameTab2"]:Width(112)
+		_G["InterfaceOptionsFrameTab2"].SetWidth = T.dummy
+		_G["InterfaceOptionsFrameTab1TabSpacer"]:Kill()
+		_G["InterfaceOptionsFrameTab2TabSpacer1"]:Kill()
+		_G["InterfaceOptionsFrameTab2TabSpacer2"]:Kill()
 		_G["ChatConfigFrameDefaultButton"]:Width(125)
 		_G["ChatConfigFrameDefaultButton"]:ClearAllPoints()
 		_G["ChatConfigFrameDefaultButton"]:Point("TOP", _G["ChatConfigCategoryFrame"], "BOTTOM", 0, -4)
@@ -300,6 +307,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ChannelPulloutTabRight"]:SetTexture(nil)
 	end
 	
+	if addon == "Blizzard_GuildUI" then
+		_G["GuildFrameTab1"]:ClearAllPoints()
+		_G["GuildFrameTab1"]:Point("TOPLEFT", _G["GuildFrame"], "BOTTOMLEFT", -4, 2)
+	end
+
 	-- MAC menu/option panel(by Affli)
 	if IsMacClient() then
 		-- Skin main frame and reposition the header
