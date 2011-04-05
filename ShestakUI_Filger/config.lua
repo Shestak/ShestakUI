@@ -794,6 +794,8 @@ Filger_Spells = {
 			{ spellID = 2645, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Focused Insight
 			{ spellID = 77800, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Nature Guardian
+			{ spellID = 31616, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
