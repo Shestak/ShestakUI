@@ -203,7 +203,20 @@ local SplitBars = function()
 	end
 end
 
-for i = 1, 4 do
+local LockCheck = function(i)
+	if SavedOptionsPerChar.BarsLocked == true then
+		ToggleBar[i].Text:SetText("U")
+		ToggleBar[i].Text:SetTextColor(0.3, 0.3, 0.9)
+	elseif SavedOptionsPerChar.BarsLocked == false then
+		ToggleBar[i].Text:SetText("L")
+		ToggleBar[i].Text:SetTextColor(0.9, 0.3, 0.3)
+	else
+		ToggleBar[i].Text:SetText("L")
+		ToggleBar[i].Text:SetTextColor(0.9, 0.3, 0.3)
+	end
+end
+
+for i = 1, 5 do
 	ToggleBar[i] = CreateFrame("Frame", "ToggleBar"..i, ToggleBar)
 	ToggleBar[i]:EnableMouse(true)
 	ToggleBar[i]:SetAlpha(0)
@@ -282,13 +295,31 @@ for i = 1, 4 do
 			ToggleBarText(i, ">\n>", false, true)
 			ToggleBar[i]:SetFrameLevel(SplitBarLeft:GetFrameLevel() + 1)
 		end
+	elseif i == 5 then
+		ToggleBar[i]:CreatePanel("Transparent", 20, 20, "TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
+		ToggleBar[i]:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		ToggleBar[i]:SetFrameStrata("HIGH")
+
+		ToggleBar[i]:SetScript("OnMouseDown", function()
+			if InCombatLockdown() then return end
+			if SavedOptionsPerChar.BarsLocked == nil then SavedOptionsPerChar.BarsLocked = C.actionbar.toggle_mode end
+
+			if SavedOptionsPerChar.BarsLocked == true then
+				SavedOptionsPerChar.BarsLocked = false
+			elseif SavedOptionsPerChar.BarsLocked == false then
+				SavedOptionsPerChar.BarsLocked = true
+			end
+
+			LockCheck(i)
+		end)
+		ToggleBar[i]:SetScript("OnEvent", function() LockCheck(i) end)
 	end
 
 	if i == 3 or i == 4 then
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
 			if SavedOptionsPerChar.SplitBars == nil then SavedOptionsPerChar.SplitBars = false end
-			
+
 			if SavedOptionsPerChar.SplitBars == false then
 				SavedOptionsPerChar.SplitBars = true
 			elseif SavedOptionsPerChar.SplitBars == true then
@@ -342,6 +373,18 @@ for i = 1, 4 do
 			end
 		else
 			ToggleBar[i]:FadeOut()
+		end
+	end)
+
+	ToggleBar[i]:SetScript("OnUpdate", function()
+		if SavedOptionsPerChar.BarsLocked == true then
+			for i = 1, 4 do
+				ToggleBar[i]:EnableMouse(false)
+			end
+		elseif SavedOptionsPerChar.BarsLocked == false then
+			for i = 1, 4 do
+				ToggleBar[i]:EnableMouse(true)
+			end
 		end
 	end)
 end
