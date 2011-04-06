@@ -76,8 +76,8 @@ local function SetChatStyle(frame)
 	
 	-- Move the chat edit box
 	_G[chat.."EditBox"]:ClearAllPoints()
-	_G[chat.."EditBox"]:Point("BOTTOMLEFT", ChatFrame1, "TOPLEFT", -10, 20)
-	_G[chat.."EditBox"]:Point("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 11, 20)
+	_G[chat.."EditBox"]:Point("BOTTOMLEFT", ChatFrame1, "TOPLEFT", -10, 23)
+	_G[chat.."EditBox"]:Point("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 11, 23)
 	
 	-- Hide textures
 	for j = 1, #CHAT_FRAME_TEXTURES do
