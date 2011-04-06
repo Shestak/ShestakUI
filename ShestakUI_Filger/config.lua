@@ -623,28 +623,20 @@ Filger_Spells = {
 			{ spellID = 12975, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shield Wall
 			{ spellID = 871, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Hysteria
+			-- Unholy Frenzy
 			{ spellID = 49016, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Spell Reflection
 			{ spellID = 23920, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Blood Reserve
 			{ spellID = 64568, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Enrage
-			{ spellID = 14202, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Death Wish
-			{ spellID = 12292, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Meat Cleaver
-			{ spellID = 85739, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Executioner
-			{ spellID = 90806, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Rude Interruption
-			{ spellID = 86663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Recklesness
-			{ spellID = 1719, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Berserker Rage
 			{ spellID = 18499, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Slaughter
 			{ spellID = 84586, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Victorious
+			{ spellID = 32216, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Enraged Regeneration
+			{ spellID = 55694, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -655,7 +647,7 @@ Filger_Spells = {
 
 			-- Sudden Death
 			{ spellID = 52437, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Slam!
+			-- Bloodsurge
 			{ spellID = 46916, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Sword and Board
 			{ spellID = 50227, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -673,6 +665,18 @@ Filger_Spells = {
 			{ spellID = 85742, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Incite
 			{ spellID = 86627, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Enrage
+			{ spellID = 14202, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Meat Cleaver
+			{ spellID = 85739, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Executioner
+			{ spellID = 90806, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rude Interruption
+			{ spellID = 86663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Death Wish
+			{ spellID = 12292, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Recklesness
+			{ spellID = 1719, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -749,6 +753,8 @@ Filger_Spells = {
 			{ spellID = 23881, size = 30, filter = "CD" },
 			-- Taunt
 			{ spellID = 355, size = 30, filter = "CD" },
+			-- Berserker Rage
+			{ spellID = 18499, size = 30, filter = "CD" },
 			
 			-- Other
 			-- Gloves
