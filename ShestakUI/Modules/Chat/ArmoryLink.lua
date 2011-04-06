@@ -38,7 +38,7 @@ StaticPopupDialogs.LINK_COPY_DIALOG = {
 -- Dropdown menu link
 hooksecurefunc("UnitPopup_OnClick", function(self)
 	local dropdownFrame = UIDROPDOWNMENU_INIT_MENU
-	local name = string.lower(dropdownFrame.name)
+	local name = dropdownFrame.name
 
 	if name and self.value == "ARMORYLINK" then
 		local inputBox = StaticPopup_Show("LINK_COPY_DIALOG")
