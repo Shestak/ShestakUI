@@ -51,6 +51,7 @@ if T.class=="WARLOCK" then
 	end
 	if(C.combattext.healing)then
 		ct.healfilter[28176]=true	-- Fel Armor
+		ct.healfilter[96379]=true	-- Fel Armor
 		ct.healfilter[63106]=true	-- Siphon Life
 		ct.healfilter[54181]=true	-- Fel Synergy
 		ct.healfilter[89653]=true	-- Drain Life
