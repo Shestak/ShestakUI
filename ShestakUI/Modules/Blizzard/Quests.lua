@@ -25,132 +25,119 @@ hooksecurefunc("QuestLog_Update", questlevel)
 QuestLogScrollFrameScrollBar:HookScript("OnValueChanged", questlevel)
 
 ----------------------------------------------------------------------------------------
---	Quest automation(idQuestAutomation by Industrial)
+--	Quest automation(Monomyth by p3lim)
 ----------------------------------------------------------------------------------------
 if not C.misc.auto_quest == true then return end
 
 local addon = CreateFrame("Frame")
-addon.completed_quests = {}
-addon.incomplete_quests = {}
+addon:SetScript("OnEvent", function(self, event, ...) self[event](...) end)
 
-function addon:canAutomate ()
-	if IsShiftKeyDown() then
-		return false
-	else
-		return true
+local COMPLETE = [[Interface\GossipFrame\ActiveQuestIcon]]
+
+function addon:Register(event, func)
+	self:RegisterEvent(event)
+	self[event] = function(...)
+		if(IsShiftKeyDown()) then
+			if(event == "QUEST_DETAIL") then
+				QuestFrame_OnEvent(nil, event)
+			end
+		else
+			func(...)
+		end
 	end
 end
 
-function addon:strip_text (text)
-	if not text then return end
-	text = text:gsub("|c%x%x%x%x%x%x%x%x(.-)|r","%1")
-	text = text:gsub("%[.*%]%s*","")
-	text = text:gsub("(.+) %(.+%)", "%1")
-	text = text:trim()
-	return text
-end
+addon:Register("QUEST_GREETING", function()
+	for index = 1, MAX_NUM_QUESTS do
+		local button = _G["QuestTitleButton" .. index]
 
-function addon:QUEST_PROGRESS ()
-	if not self:canAutomate() then return end
-	if IsQuestCompletable() then
+		if(button and button:IsVisible()) then
+			if(button.isActive == 1 and _G["QuestTitleButton" .. index .. "QuestIcon"]:GetTexture() == COMPLETE) then
+				return button:Click()
+			elseif(button.isActive == 0) then
+				return button:Click()
+			end
+		end
+	end
+end)
+
+addon:Register("GOSSIP_SHOW", function()
+	for index = 1, NUMGOSSIPBUTTONS do
+		local button = _G["GossipTitleButton" .. index]
+
+		if(button and button:IsVisible()) then
+			if(button.type == "Active" and _G["GossipTitleButton" .. index .. "GossipIcon"]:GetTexture() == COMPLETE) then
+				return button:Click()
+			elseif(button.type == "Available") then
+				return button:Click()
+			end
+		end
+	end
+end)
+
+QuestFrame:UnregisterEvent("QUEST_DETAIL")
+addon:Register("QUEST_DETAIL", function()
+	if(QuestGetAutoAccept()) then
+		CloseQuest()
+	else
+		QuestFrame_OnEvent(nil, "QUEST_DETAIL")
+		AcceptQuest()
+	end
+end)
+
+addon:Register("QUEST_ACCEPT_CONFIRM", AcceptQuest)
+
+addon:Register("QUEST_PROGRESS", function()
+	if(IsQuestCompletable()) then
 		CompleteQuest()
 	end
-end
+end)
 
-function addon:QUEST_LOG_UPDATE ()
-	if not self:canAutomate() then return end
-	local start_entry = GetQuestLogSelection()
-	local num_entries = GetNumQuestLogEntries()
-	local title
-	local is_complete
-	local no_objectives
-
-	self.completed_quests = {}
-	self.incomplete_quests = {}
-
-	if num_entries > 0 then
-		for i = 1, num_entries do
-			SelectQuestLogEntry(i)
-			title, _, _, _, _, _, is_complete = GetQuestLogTitle(i)
-			no_objectives = GetNumQuestLeaderBoards(i) == 0
-			if title then
-				if is_complete or no_objectives then
-					self.completed_quests[title] = true
-				else
-					self.incomplete_quests[title] = true
-				end
-			end
-		end
-	end
-	SelectQuestLogEntry(start_entry)
-end
-
-function addon:GOSSIP_SHOW ()
-	if not self:canAutomate() then return end
-
-	local button
-	local text
-
-	for i = 1, 32 do
-		button = _G["GossipTitleButton" .. i]
-		if button:IsVisible() then
-			text = self:strip_text(button:GetText())
-			ABCDE={button:GetText(), text}
-			if button.type == "Available" then
-				button:Click()
-			elseif button.type == "Active" then
-				if self.completed_quests[text] then
-					button:Click()
-				end
-			end
-		end
-	end
-end
-
-function addon:QUEST_GREETING (...)
-	if not self:canAutomate() then return end
-
-	local button
-	local text
-
-	for i = 1, 32 do
-		button = _G["QuestTitleButton" .. i]
-		if button:IsVisible() then
-			text = self:strip_text(button:GetText())
-			if self.completed_quests[text] then
-				button:Click()
-			elseif not self.incomplete_quests[text] then
-				button:Click()
-			end
-		end
-	end
-end
-
-function addon:QUEST_DETAIL ()
-	if not self:canAutomate() then return end
-	AcceptQuest()
-end
-
-function addon:QUEST_COMPLETE (event)
-	if not self:canAutomate() then return end
-	if GetNumQuestChoices() <= 1 then
+addon:Register("QUEST_COMPLETE", function()
+	if(GetNumQuestChoices() <= 1) then
 		GetQuestReward(QuestFrameRewardPanel.itemChoice)
+	elseif(GetNumQuestChoices() > 1) then
+		local bestValue, bestIndex = 0
+
+		for index = 1, GetNumQuestChoices() do
+			local link = GetQuestItemLink("choice", index)
+			if(not link) then
+				-- Item is not located in the cache yet, let it request it
+				-- from the server and run this again after its received
+				return
+			end
+
+			local _, _, _, _, _, _, _, _, _, _, value = GetItemInfo(link)
+			if(value > bestValue) then
+				bestValue, bestIndex = value, index
+			end
+		end
+
+		_G["QuestInfoItem" .. bestIndex]:Click()
 	end
-end
+end)
 
-function addon.onevent (self, event, ...)
-	if self[event] then
-		self[event](self, ...)
+addon:Register("QUEST_AUTOCOMPLETE", function()
+	for index = 1, GetNumAutoQuestPopUps() do
+		local quest, type = GetAutoQuestPopUp(index)
+
+		if(type == "COMPLETE") then
+			-- The quest may not be considered complete by the server
+			-- We should check then queue and try again when it is
+			ShowQuestComplete(GetQuestLogIndexByID(quest))
+		end
 	end
-end
+end)
 
-addon:SetScript("OnEvent", addon.onevent)
-addon:RegisterEvent("GOSSIP_SHOW")
-addon:RegisterEvent("QUEST_COMPLETE")
-addon:RegisterEvent("QUEST_DETAIL")
-addon:RegisterEvent("QUEST_FINISHED")
-addon:RegisterEvent("QUEST_GREETING")
-addon:RegisterEvent("QUEST_LOG_UPDATE")
-addon:RegisterEvent("QUEST_PROGRESS")
+addon:Register("BAG_UPDATE", function(bag)
+	if(bag < 0) then return end
 
-_G.idQuestAutomation = addon
+	for slot = 1, GetContainerNumSlots(bag) do
+		local _, id, active = GetContainerItemQuestInfo(bag, slot)
+		if(id and not active) then
+			-- We should check if the item is cached yet
+			-- The negative result of this is a disconnect
+			UseContainerItem(bag, slot)
+		end
+	end
+end)
