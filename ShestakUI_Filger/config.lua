@@ -1883,6 +1883,8 @@ Filger_Spells = {
 			{ spellID = 1022, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Innervate
 			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Lifeblood
+			{ spellID = 74497, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
