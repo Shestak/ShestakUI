@@ -644,7 +644,6 @@ local function Shared(self, unit)
 			self.PortraitOverlay:Point("BOTTOMRIGHT", 2 + T.mult, -2)
 
 			self.Portrait.PostUpdate = T.FixWorgenPortrait
-			table.insert(self.__elements, T.HidePortrait)
 		end
 		
 		if unit == "player" then

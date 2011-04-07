@@ -1053,16 +1053,6 @@ T.FixWorgenPortrait = function(self, unit)
 	self:SetPortraitZoom(0.999)
 end
 
-T.HidePortrait = function(self, unit)
-	if self.unit == "target" then
-		if not UnitExists(self.unit) or not UnitIsConnected(self.unit) or not UnitIsVisible(self.unit) then
-			self.Portrait:SetAlpha(0)
-		else
-			self.Portrait:SetAlpha(1)
-		end
-	end
-end
-
 T.UpdateThreat = function(self, event, unit)
 	if self.unit ~= unit then return end
 	local threat = UnitThreatSituation(self.unit)
