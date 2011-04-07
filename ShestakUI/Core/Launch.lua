@@ -271,11 +271,6 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		print("|cffffff00"..L_WELCOME_LINE_1..T.version.." "..T.client..".|r")
 		print("|cffffff00"..L_WELCOME_LINE_2_1.." |cffffff00"..L_WELCOME_LINE_2_2)
 	end
-	
-	-- Help in translation
-	if T.client == "frFR" or T.client == "deDE" then
-		print("|cffff0000Need translation for a few phrases of your language. For more information, visit http://shestak.org/forum/showthread.php?t=356 |cffff0000.|r")
-	end
 end)
 
 ----------------------------------------------------------------------------------------
