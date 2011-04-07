@@ -233,6 +233,15 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"aLoadReload",
 			"StackSplitOkayButton",
 			"StackSplitCancelButton",
+			"CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton",
+			"DisbandRaidButton",
+			"SwitchRaidButton",
+			"MainTankButton",
+			"MainAssistButton",
+			"RoleCheckButton",
+			"ReadyCheckButton",
+			"ShowButton",
+			"CloseButton"
 		}
 		
 		for i = 1, getn(BlizzardButtons) do
