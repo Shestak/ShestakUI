@@ -68,7 +68,11 @@ local function Setup()
 				d = GetAiL(unit) - GetAiL("player")
 				r, gb = GetAiLColor(ail)
 				ClearInspectPlayer(unit)
-				GameTooltip:AddLine(format("|cfffed100"..STAT_AVERAGE_ITEM_LEVEL..":|r "..ail).." ("..((d > 0) and "|cff00ff00+" or "|cffff0000")..d.."|r)", r, gb, gb)
+				if unit == "player" then
+					GameTooltip:AddLine(format("|cfffed100"..STAT_AVERAGE_ITEM_LEVEL..":|r "..ail), r, gb, gb)
+				else
+					GameTooltip:AddLine(format("|cfffed100"..STAT_AVERAGE_ITEM_LEVEL..":|r "..ail).." ("..((d > 0) and "|cff00ff00+" or "|cffff0000")..d.."|r)", r, gb, gb)
+				end
 				GameTooltip:Show()
 			end
 		end
