@@ -145,7 +145,7 @@ LPSTAT_CONFIG = {
 			--   Avoidance% [avoidance]			MP5 I5SR [manaregen]			Armor Value [armor]				Resilience [resilience]
 		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
 		spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%", -- Spec #2 string
-		anchor_frame = "StatContainer", anchor_to = "center", anchor_from = "center",
+		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
 		x_off = -20, y_off = 6,
 	},
 	Bags = {

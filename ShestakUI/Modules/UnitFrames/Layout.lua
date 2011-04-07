@@ -621,16 +621,27 @@ local function Shared(self, unit)
 				self.Portrait:Point(unpack(C.position.unitframes.target_portrait))
 			end
 
-			self.PortraitOverlay = CreateFrame("StatusBar", self:GetName().."_PortraitOverlay", self.Portrait)
+			self.PortraitOverlay = CreateFrame("Frame", self:GetName().."_PortraitOverlay", self.Portrait)
 			self.PortraitOverlay:SetFrameLevel(self.PortraitOverlay:GetFrameLevel() - 1)
-			if unit == "player" then
-				self.PortraitOverlay:SetTemplate("Default")
-				if C.unitframe.portrait_classcolor_border == true then
+			self.PortraitOverlay:SetTemplate("Transparent")
+			if C.unitframe.portrait_classcolor_border == true then
+				if unit == "player" then
 					self.PortraitOverlay:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+				elseif unit == "target" then
+					self.PortraitOverlay:RegisterEvent("PLAYER_TARGET_CHANGED")
+					self.PortraitOverlay:SetScript("OnEvent", function(self)
+						local _, class = UnitClass("target")
+						local color = RAID_CLASS_COLORS[class]
+						if color then
+							self:SetBackdropBorderColor(color.r, color.g, color.b)
+						else
+							self:SetBackdropBorderColor(unpack(C.media.border_color))
+						end
+					end)
 				end
 			end
-			self.PortraitOverlay:Point("TOPLEFT", -2, 2)
-			self.PortraitOverlay:Point("BOTTOMRIGHT", 2, -2)
+			self.PortraitOverlay:Point("TOPLEFT", -2 + T.mult, 2)
+			self.PortraitOverlay:Point("BOTTOMRIGHT", 2 + T.mult, -2)
 
 			self.Portrait.PostUpdate = T.FixWorgenPortrait
 			table.insert(self.__elements, T.HidePortrait)
@@ -1142,3 +1153,41 @@ SlashCmdList.TESTUF = function()
 end
 SLASH_TESTUF1 = "/testuf"
 SLASH_TESTUF2 = "/еуыега"
+
+----------------------------------------------------------------------------------------
+--	Player line
+----------------------------------------------------------------------------------------
+local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", UIParent)
+HorizontalPlayerLine:CreatePanel("ClassColor", 228, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -5, -5)
+
+local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", UIParent)
+VerticalPlayerLine:CreatePanel("ClassColor", 1, 98, "RIGHT", HorizontalPlayerLine, "LEFT", 0, 13)
+
+----------------------------------------------------------------------------------------
+--	Target line
+----------------------------------------------------------------------------------------
+local HorizontalTargetLine = CreateFrame("Frame", "HorizontalTargetLine", oUF_Target)
+HorizontalTargetLine:CreatePanel("ClassColor", 228, 1, "TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 5, -5)
+HorizontalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
+HorizontalTargetLine:SetScript("OnEvent", function(self)
+	local _, class = UnitClass("target")
+	local color = RAID_CLASS_COLORS[class]
+	if color then
+		self:SetBackdropBorderColor(color.r, color.g, color.b)
+	else
+		self:SetBackdropBorderColor(unpack(C.media.border_color))
+	end
+end)
+
+local VerticalTargetLine = CreateFrame("Frame", "VerticalTargetLine", oUF_Target)
+VerticalTargetLine:CreatePanel("ClassColor", 1, 98, "LEFT", HorizontalTargetLine, "RIGHT", 0, 13)
+VerticalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
+VerticalTargetLine:SetScript("OnEvent", function(self)
+	local _, class = UnitClass("target")
+	local color = RAID_CLASS_COLORS[class]
+	if color then
+		self:SetBackdropBorderColor(color.r, color.g, color.b)
+	else
+		self:SetBackdropBorderColor(unpack(C.media.border_color))
+	end
+end)

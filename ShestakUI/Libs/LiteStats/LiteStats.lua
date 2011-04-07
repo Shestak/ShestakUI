@@ -985,7 +985,17 @@ if bags.enabled then
 			end
 			self.text:SetText(format(bags.fmt, free, total))
 		end,
-		OnClick = function() OpenAllBags() end
+		OnClick = function() OpenAllBags() end,
+		OnEnter = function()
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(1)
+			end
+		end,
+		OnLeave = function()
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(0)
+			end
+		end,
 	})
 end
 ------------------------------------------
@@ -1057,9 +1067,17 @@ if talents.enabled then
 					GameTooltip:AddDoubleLine(format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s %s",icon,t_icon,gsub(name,".*",talents.name_subs),spent), i==1 and PRIMARY or SECONDARY,1,1,1,r,g,b)
 				end
 				GameTooltip:Show()
+				if C.toppanel.mouseover == true then
+					TopPanel:SetAlpha(1)
+				end
 			end
 		end,
-		OnLeave = function(self) self.hovered = false end,
+		OnLeave = function(self)
+			self.hovered = false
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(0)
+			end
+		end,
 		OnClick = function(_,b)
 			if b == "RightButton" and GetNumTalentGroups() > 1 then
 				SetActiveTalentGroup(3 - GetActiveTalentGroup())
@@ -1369,6 +1387,14 @@ if loot.enabled then
 			GameTooltip:AddLine' '
 			GameTooltip:AddLine(OPTION_TOOLTIP_AUTO_LOOT_DEFAULT,1,1,1,1)
 			GameTooltip:Show()
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(1)
+			end
+		end,
+		OnLeave = function()
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(0)
+			end
 		end,
 	})
 end
@@ -1402,6 +1428,14 @@ if helm.enabled then
 			GameTooltip:AddLine' '
 			GameTooltip:AddLine(OPTION_TOOLTIP_SHOW_HELM,1,1,1)
 			GameTooltip:Show()
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(1)
+			end
+		end,
+		OnLeave = function()
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(0)
+			end
 		end,
 	})
 end
@@ -1435,6 +1469,14 @@ if cloak.enabled then
 			GameTooltip:AddLine' '
 			GameTooltip:AddLine(OPTION_TOOLTIP_SHOW_CLOAK,1,1,1)
 			GameTooltip:Show()
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(1)
+			end
+		end,
+		OnLeave = function()
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(0)
+			end
 		end,
 	})
 end
@@ -1468,6 +1510,14 @@ if nameplates.enabled then
 			GameTooltip:AddLine' '
 			GameTooltip:AddLine(OPTION_TOOLTIP_UNIT_NAMEPLATES_ALLOW_OVERLAP,1,1,1,1)
 			GameTooltip:Show()
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(1)
+			end
+		end,
+		OnLeave = function()
+			if C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(0)
+			end
 		end,
 	})
 end

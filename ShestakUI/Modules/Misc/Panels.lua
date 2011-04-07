@@ -129,3 +129,82 @@ else
 	local leftpanel = CreateFrame("Frame", "LeftPanel", UIParent)
 	leftpanel:CreatePanel("ClassColor", 1, C.chat.height, "BOTTOMLEFT", bottompanel, "LEFT", 0, 0)
 end
+
+----------------------------------------------------------------------------------------
+--	Top panel
+----------------------------------------------------------------------------------------
+if C.toppanel.enable ~= true then return end
+
+local toppanel = CreateFrame("Frame", "TopPanel", UIParent)
+toppanel:Point("TOP", UIParent, "TOP", 0, -20)
+toppanel:Size(C.toppanel.width, C.toppanel.height / 2)
+if C.toppanel.mouseover == true then
+	toppanel:SetAlpha(0)
+	toppanel:SetScript("OnEnter", function()
+		if InCombatLockdown() then return end
+		toppanel:SetAlpha(1)
+	end)
+	toppanel:SetScript("OnLeave", function()
+		toppanel:SetAlpha(0)
+	end)
+end
+
+toppanel.bgl = toppanel:CreateTexture(nil, "BORDER")
+toppanel.bgl:Point("RIGHT", toppanel, "CENTER", 0, 0)
+toppanel.bgl:Size(C.toppanel.width / 2, C.toppanel.height / 2)
+toppanel.bgl:SetTexture(C.media.blank)
+toppanel.bgl:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 0, T.color.r, T.color.g, T.color.b, 0.1)
+
+toppanel.bgr = toppanel:CreateTexture(nil, "BORDER")
+toppanel.bgr:Point("LEFT", toppanel, "CENTER", 0, 0)
+toppanel.bgr:Size(C.toppanel.width / 2, C.toppanel.height / 2)
+toppanel.bgr:SetTexture(C.media.blank)
+toppanel.bgr:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 0.1, T.color.r, T.color.g, T.color.b, 0)
+
+toppanel.tbl = toppanel:CreateTexture(nil, "ARTWORK")
+toppanel.tbl:Point("RIGHT", toppanel, "TOP", 0, 0)
+toppanel.tbl:Size(C.toppanel.width / 2, 3)
+toppanel.tbl:SetTexture(C.media.blank)
+toppanel.tbl:SetGradientAlpha("HORIZONTAL", 0, 0, 0, 0, 0, 0, 0, 1)
+
+toppanel.tcl = toppanel:CreateTexture(nil, "OVERLAY")
+toppanel.tcl:Point("RIGHT", toppanel, "TOP", 0, 0)
+toppanel.tcl:Size(C.toppanel.width / 2, 1)
+toppanel.tcl:SetTexture(C.media.blank)
+toppanel.tcl:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 0, T.color.r, T.color.g, T.color.b, 1)
+
+toppanel.tbr = toppanel:CreateTexture(nil, "ARTWORK")
+toppanel.tbr:Point("LEFT", toppanel, "TOP", 0, 0)
+toppanel.tbr:Size(C.toppanel.width / 2, 3)
+toppanel.tbr:SetTexture(C.media.blank)
+toppanel.tbr:SetGradientAlpha("HORIZONTAL", 0, 0, 0, 1, 0, 0, 0, 0)
+
+toppanel.tcr = toppanel:CreateTexture(nil, "OVERLAY")
+toppanel.tcr:Point("LEFT", toppanel, "TOP", 0, 0)
+toppanel.tcr:Size(C.toppanel.width / 2, 1)
+toppanel.tcr:SetTexture(C.media.blank)
+toppanel.tcr:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 1, T.color.r, T.color.g, T.color.b, 0)
+
+toppanel.bbl = toppanel:CreateTexture(nil, "ARTWORK")
+toppanel.bbl:Point("RIGHT", toppanel, "BOTTOM", 0, 0)
+toppanel.bbl:Size(C.toppanel.width / 2, 3)
+toppanel.bbl:SetTexture(C.media.blank)
+toppanel.bbl:SetGradientAlpha("HORIZONTAL", 0, 0, 0, 0, 0, 0, 0, 1)
+
+toppanel.bcl = toppanel:CreateTexture(nil, "OVERLAY")
+toppanel.bcl:Point("RIGHT", toppanel, "BOTTOM", 0, 0)
+toppanel.bcl:Size(C.toppanel.width / 2, 1)
+toppanel.bcl:SetTexture(C.media.blank)
+toppanel.bcl:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 0, T.color.r, T.color.g, T.color.b, 1)
+
+toppanel.bbr = toppanel:CreateTexture(nil, "ARTWORK")
+toppanel.bbr:Point("LEFT", toppanel, "BOTTOM", 0, 0)
+toppanel.bbr:Size(C.toppanel.width / 2, 3)
+toppanel.bbr:SetTexture(C.media.blank)
+toppanel.bbr:SetGradientAlpha("HORIZONTAL", 0, 0, 0, 1, 0, 0, 0, 0)
+
+toppanel.bcr = toppanel:CreateTexture(nil, "OVERLAY")
+toppanel.bcr:Point("LEFT", toppanel, "BOTTOM", 0, 0)
+toppanel.bcr:Size(C.toppanel.width / 2, 1)
+toppanel.bcr:SetTexture(C.media.blank)
+toppanel.bcr:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 1, T.color.r, T.color.g, T.color.b, 0)
