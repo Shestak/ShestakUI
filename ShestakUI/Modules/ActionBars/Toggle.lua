@@ -299,6 +299,7 @@ for i = 1, 5 do
 		ToggleBar[i]:CreatePanel("Transparent", 20, 20, "TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
 		ToggleBar[i]:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 		ToggleBar[i]:SetFrameStrata("HIGH")
+		ToggleBar[i].Text:Point("CENTER", 1, 0)
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then return end
