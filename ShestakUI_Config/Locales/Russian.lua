@@ -290,8 +290,8 @@ L_GUI_UF_PLUGINS_HEALCOMM = "Отображать поступающее леч�
 L_GUI_TOP_PANEL = "Верхняя панель"
 L_GUI_TOP_PANEL_ENABLE = "Включить верхнюю панель"
 L_GUI_TOP_PANEL_MOUSE = "Панель по наведению курсора"
-L_GUI_TOP_PANEL_WIDTH = "Высота панели"
-L_GUI_TOP_PANEL_HEIGHT = "Ширина панели"
+L_GUI_TOP_PANEL_WIDTH = "Ширина панели"
+L_GUI_TOP_PANEL_HEIGHT = "Высота панели"
 
 -- Stats options
 L_GUI_STATS = "Статистика"
