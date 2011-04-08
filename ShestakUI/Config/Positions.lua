@@ -28,6 +28,7 @@ C["position"] = {
 	["bg_score"] = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 6},				-- BG stats
 	["self_buffs"] = {"CENTER", UIParent, "CENTER", 0, 190},				-- Self buff reminder
 	["raid_buffs"] = {"BOTTOMLEFT", Minimap, "TOPLEFT", -1, 5},				-- Raid buff reminder
+	["top_panel"] = {"TOP", UIParent, "TOP", 0, -20},						-- Top panel
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},					-- Bottom bars
 	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 320},	-- Right bars
