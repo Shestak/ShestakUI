@@ -59,7 +59,11 @@ end)
 CreateButton("SwitchRaidButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", DisbandRaidButton, "BOTTOM", 0, -5, CONVERT_TO_PARTY, nil)
 SwitchRaidButton:SetScript("OnMouseUp", function(self)
 	if CheckRaidStatus() then
-		ConvertToParty()
+		if UnitInRaid("player") then
+			ConvertToParty()
+		elseif UnitInParty("player") then
+			ConvertToRaid()
+		end
 	end
 end)
 
