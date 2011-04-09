@@ -76,9 +76,7 @@ local function setup()
 	WatchFrame.SetPoint = T.dummy
 end
 
-----------------------------------------------------------------------------------------
---	Execute setup after we enter world
-----------------------------------------------------------------------------------------
+-- Execute setup after we enter world
 local f = CreateFrame("Frame")
 f:Hide()
 f.elapsed = 0
@@ -132,7 +130,7 @@ hooksecurefunc("SetItemButtonTexture", function(button, texture)
 end)
 
 ----------------------------------------------------------------------------------------
--- Add quest / achievement internet link
+--	Add quest/achievement wowhead link
 ----------------------------------------------------------------------------------------
 local linkQuest
 local linkAchievement
@@ -192,3 +190,20 @@ hooksecurefunc("WatchFrameDropDown_Initialize", function(self)
 	end
 end)
 UIDropDownMenu_Initialize(WatchFrameDropDown, WatchFrameDropDown_Initialize, "MENU")
+
+----------------------------------------------------------------------------------------
+--	CTRL+Click to abandon a quest
+----------------------------------------------------------------------------------------
+hooksecurefunc("QuestLogTitleButton_OnClick", function(self, button)
+	local questIndex = self:GetID()
+	local questName = self:GetText()
+	if IsModifiedClick() then
+		if self.isHeader then return end
+		if IsControlKeyDown() then
+			QuestLog_SetSelection(questIndex)
+			AbandonQuest()
+			QuestLog_Update()
+			QuestLog_SetSelection(questIndex)
+		end
+	end
+end)
