@@ -144,7 +144,11 @@ local function Shared(self, unit)
 	self.Power.bg = self.Power:CreateTexture(nil, "BORDER")
 	self.Power.bg:SetAllPoints()
 	self.Power.bg:SetTexture(C.media.texture)
-	self.Power.bg.multiplier = 0.3
+	if C.unitframe.own_color == true and unit == "pet" then
+		self.Power.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
+	else
+		self.Power.bg.multiplier = 0.3
+	end
 	
 	self.Power.value = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 	if unit == "player" then
