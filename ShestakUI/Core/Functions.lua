@@ -375,7 +375,11 @@ T.PostUpdateHealth = function(health, unit, min, max)
 			end
 		end
 		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
-			local r, g, b = health:GetStatusBarColor()
+			if C.unitframe.own_color == true then
+				r, g, b = C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3]
+			else
+				r, g, b = health:GetStatusBarColor()
+			end
 			local newr, newg, newb = oUF.ColorGradient(min / max, 1, 0, 0, 1, 1, 0, r, g, b)
 
 			health:SetStatusBarColor(newr, newg, newb)
@@ -385,7 +389,6 @@ T.PostUpdateHealth = function(health, unit, min, max)
 			end
 		end
 		if min ~= max then
-			local r, g, b
 			r, g, b = oUF.ColorGradient(min / max, 0.69, 0.31, 0.31, 0.65, 0.63, 0.35, 0.33, 0.59, 0.33)
 			if unit == "player" and health:GetAttribute("normalUnit") ~= "pet" then
 				if C.unitframe.show_total_value == true then
@@ -460,6 +463,7 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 			health.value:SetText("|cffD7BEA5"..L_UF_GHOST.."|r")
 		end
 	else
+		local r, g, b
 		if not UnitIsPlayer(unit) and UnitIsFriend(unit, "player") and C.unitframe.own_color ~= true then
 			local c = T.oUF_colors.reaction[5]
 			local r, g, b = c[1], c[2], c[3]
@@ -467,7 +471,11 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 			health.bg:SetTexture(0.1, 0.1, 0.1)
 		end
 		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
-			local r, g, b = health:GetStatusBarColor()
+			if C.unitframe.own_color == true then
+				r, g, b = C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3]
+			else
+				r, g, b = health:GetStatusBarColor()
+			end
 			local newr, newg, newb = oUF.ColorGradient(min / max, 1, 0, 0, 1, 1, 0, r, g, b)
 
 			health:SetStatusBarColor(newr, newg, newb)
@@ -477,7 +485,6 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 			end
 		end
 		if min ~= max then
-			local r, g, b
 			r, g, b = oUF.ColorGradient(min / max, 0.69, 0.31, 0.31, 0.65, 0.63, 0.35, 0.33, 0.59, 0.33)
 			if (self:GetParent():GetName():match"oUF_PartyDPS") then
 				if C.unitframe.color_value == true then
