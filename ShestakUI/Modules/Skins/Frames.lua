@@ -44,10 +44,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 	if addon == "ShestakUI" then
 		-- Blizzard Frame reskin
 		local bgskins = {
-			"StaticPopup1",
-			"StaticPopup2",
-			"StaticPopup3",
-			"StaticPopup4",
 			"GameMenuFrame",
 			"InterfaceOptionsFrame",
 			"VideoOptionsFrame",
@@ -83,6 +79,13 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"StackSplitFrame",
 			"OpacityFrame",
 		}
+
+		for i = 1, getn(bgskins) do
+			local frame = _G[bgskins[i]]
+			if frame then
+				_G[bgskins[i]]:SetTemplate("Transparent")
+			end
+		end
 		
 		local insetskins = {
 			"InterfaceOptionsFramePanelContainer",
@@ -108,11 +111,19 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ChatConfigChatSettingsLeft",
 		}
 		
-		-- Reskin popup buttons
+		for i = 1, getn(insetskins) do
+			local frame = _G[insetskins[i]]
+			if frame then
+				_G[insetskins[i]]:SetTemplate("Overlay")
+			end
+		end
+
+		-- Reskin popup
 		for i = 1, 4 do
 			for j = 1, 3 do
 				_G["StaticPopup"..i.."Button"..j]:SkinButton()
 			end
+			_G["StaticPopup"..i]:SetTemplate("Transparent")
 			_G["StaticPopup"..i.."EditBox"]:SetTemplate("Transparent")
 			_G["StaticPopup"..i.."EditBoxLeft"]:SetTexture(nil)
 			_G["StaticPopup"..i.."EditBoxMid"]:SetTexture(nil)
@@ -120,21 +131,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			_G["StaticPopup"..i.."EditBox"]:Height(20)
 			_G["StaticPopup"..i.."EditBox"]:SetTextInsets(3, 0, 0, 0)
 		end
-
-		for i = 1, getn(bgskins) do
-			local frame = _G[bgskins[i]]
-			if frame then
-				_G[bgskins[i]]:SetTemplate("Transparent")
-			end
-		end
 		
-		for i = 1, getn(insetskins) do
-			local frame = _G[insetskins[i]]
-			if frame then
-				_G[insetskins[i]]:SetTemplate("Overlay")
-			end
-		end
-		
+		-- Reskin menu
 		local ChatMenus = {
 			"ChatMenu",
 			"EmoteMenu",

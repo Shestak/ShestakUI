@@ -91,7 +91,6 @@ local makeList = function()
 	for i = 1, GetNumAddOns() do
 		self.addons[i] = select(1, GetAddOnInfo(i))
 	end
-	table.sort(self.addons)
 
 	local oldb
 
