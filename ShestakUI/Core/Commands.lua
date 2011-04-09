@@ -102,9 +102,32 @@ SLASH_GROUPDISBAND2 = "/кв"
 --	Convert party to raid
 ----------------------------------------------------------------------------------------
 SlashCmdList.PARTYTORAID = function()
-	ConvertToRaid()
+	if GetNumPartyMembers() > 0 or GetNumRaidMembers() > 0 then
+		if UnitInRaid("player") and IsRaidLeader() then
+			ConvertToParty()
+		elseif UnitInParty("player") and IsPartyLeader() then
+			ConvertToRaid()
+		end
+	end
 end
 SLASH_PARTYTORAID1 = "/toraid"
+SLASH_PARTYTORAID2 = "/toparty"
+SLASH_PARTYTORAID3 = "/convert"
+SLASH_PARTYTORAID4 = "/сщтмуке"
+
+----------------------------------------------------------------------------------------
+--	Instance teleport
+----------------------------------------------------------------------------------------
+SlashCmdList.INSTTELEPORT = function()
+	local inInstance, _ = IsInInstance()
+	if inInstance then
+		LFGTeleport(true)
+	else
+		LFGTeleport()
+	end
+end
+SLASH_INSTTELEPORT1 = "/teleport"
+SLASH_INSTTELEPORT2 = "/еудузщке"
 
 ----------------------------------------------------------------------------------------
 --	Enable lua error
