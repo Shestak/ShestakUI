@@ -118,7 +118,7 @@ L_GUI_TOOLTIP_CURSOR = "提示資訊跟隨滑鼠"
 L_GUI_TOOLTIP_ICON = "在提示資訊中顯示物品圖示"
 L_GUI_TOOLTIP_HEALTH = "顯示百分比生命值"
 L_GUI_TOOLTIP_HIDE = "隱藏動作條的提示提示資訊."
-L_GUI_TOOLTIP_HIDE_COMBAT = "戰鬥中隱藏鼠標提示"
+L_GUI_TOOLTIP_HIDE_COMBAT = "戰鬥中隱藏滑鼠提示"
 L_GUI_TOOLTIP_TALENTS = "在提示資訊中顯示天賦"
 L_GUI_TOOLTIP_ACHIEVEMENTS = "在提示資訊中顯示成就比較"
 L_GUI_TOOLTIP_TARGET = "在提示資訊中顯示目標的目標"
@@ -157,7 +157,7 @@ L_GUI_MINIMAP_ENABLE = "開啟迷你地圖增強"
 L_GUI_MINIMAP_ICON = "追蹤類型圖示"
 L_GUI_MINIMAP_SIZE = "迷你地圖大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "戰鬥中隱藏迷你地圖"
-L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu" -- Needs review
+L_GUI_MINIMAP_MERGE_MENUS = "在小地圖上側菜單中整合主要功能和插件按鈕(禁用更簡潔一點)"
 
 -- Map options
 L_GUI_MAP_ENABLE = "開啟世界地圖增強"
@@ -195,8 +195,8 @@ L_GUI_ACTIONBAR_GRID = "顯示空的快捷列按鈕"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "按鈕大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "按鈕間隔"
 L_GUI_ACTIONBAR_SPLIT_BARS = "把第五動作條分成兩個有六個位置的小動作條"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Enable classcolor border for buttons" -- Needs review
-L_GUI_ACTIONBAR_TOGGLE_MODE = "Enable toggle mode" -- Needs review
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "為自己的動作條按鈕邊框也開啟職業邊框染色"
+L_GUI_ACTIONBAR_TOGGLE_MODE = "開啟動作條自由折疊功能(可隨時調節動作條顯示數目)"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "滑鼠劃過顯示右側快捷列"
@@ -220,7 +220,7 @@ L_GUI_AURA_TOT_DEBUFFS = "在目標的目標框體顯示DeBuffs"
 L_GUI_AURA_PLAYER_AURA_ONLY = "在目標框體只顯示自己的DeBuffs"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs著色依照法術類型"
 L_GUI_AURA_CAST_BY = "在滑鼠提示中顯示是誰施放了這個 增益/減益"
-L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs" -- Needs review
+L_GUI_AURA_CLASSCOLOR_BORDER = "為自己的BUFF圖標邊框也開啟職業邊框染色"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "開啟單位框架"
@@ -261,7 +261,7 @@ L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "經驗條"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "平滑條"
 L_GUI_UF_PLUGINS_TALENTS = "開啟顯示敵對玩家天賦"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "顯示玩家/目標的文字戰鬥信息"
-L_GUI_UF_PLUGINS_FADER = "Fade unit frames" -- Needs review
+L_GUI_UF_PLUGINS_FADER = "無必要時隱藏玩家框體"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "仇恨邊框"
