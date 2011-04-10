@@ -229,6 +229,7 @@ L_GUI_UF_UF_COLOR = "Color de las Barras de vida (si color para las barras de vi
 L_GUI_UF_ENEMY_HEALTH_COLOR = "Barra de vida del enemigo objetivo en rojo"
 L_GUI_UF_TOTAL_VALUE = "Mostrar vida restante en jugador y objetivo con XXXX/Total"
 L_GUI_UF_COLOR_VALUE = "Colorear valor de Vida/Maná"
+L_GUI_UF_BAR_COLOR_VALUE = "Health bar color by current health remaining" -- Needs review
 L_GUI_UF_UNIT_CASTBAR = "Mostrar barras de lanzamiento"
 L_GUI_UF_CASTBAR_ICON = "Mostrar iconos en las barras de lanzamiento"
 L_GUI_UF_CASTBAR_LATENCY = "Latencia en la barra de lanzamiento"

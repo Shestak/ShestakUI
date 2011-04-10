@@ -229,6 +229,7 @@ L_GUI_UF_UF_COLOR = "治療條職業著色"
 L_GUI_UF_ENEMY_HEALTH_COLOR = "敵對目標生命條以紅色著色"
 L_GUI_UF_TOTAL_VALUE = "在玩家與目標框體顯示詳細的文字變化"
 L_GUI_UF_COLOR_VALUE = "生命值與魔法值以職業顏色著色"
+L_GUI_UF_BAR_COLOR_VALUE = "Health bar color by current health remaining" -- Needs review
 L_GUI_UF_UNIT_CASTBAR = "顯示施法條"
 L_GUI_UF_CASTBAR_ICON = "顯示施法條圖示"
 L_GUI_UF_CASTBAR_LATENCY = "施法條延遲"

@@ -267,6 +267,7 @@ local function Local(o)
 	if o == "UIConfigunitframeenemy_health_color" then o = L_GUI_UF_ENEMY_HEALTH_COLOR end
 	if o == "UIConfigunitframeshow_total_value" then o = L_GUI_UF_TOTAL_VALUE end
 	if o == "UIConfigunitframecolor_value" then o = L_GUI_UF_COLOR_VALUE end
+	if o == "UIConfigunitframebar_color_value" then o = L_GUI_UF_BAR_COLOR_VALUE end
 	if o == "UIConfigunitframeunit_castbar" then o = L_GUI_UF_UNIT_CASTBAR end
 	if o == "UIConfigunitframecastbar_icon" then o = L_GUI_UF_CASTBAR_ICON end
 	if o == "UIConfigunitframecastbar_latency" then o = L_GUI_UF_CASTBAR_LATENCY end

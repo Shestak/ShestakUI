@@ -229,6 +229,7 @@ L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)" -- Needs re
 L_GUI_UF_ENEMY_HEALTH_COLOR = "敌对目标生命条以红色着色"
 L_GUI_UF_TOTAL_VALUE = "在玩家与目标框体显示详细的文字变化"
 L_GUI_UF_COLOR_VALUE = "生命值与魔法值以职业颜色着色"
+L_GUI_UF_BAR_COLOR_VALUE = "Health bar color by current health remaining" -- Needs review
 L_GUI_UF_UNIT_CASTBAR = "显示施法条"
 L_GUI_UF_CASTBAR_ICON = "显示施法条图标"
 L_GUI_UF_CASTBAR_LATENCY = "施法条延迟"

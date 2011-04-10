@@ -229,6 +229,7 @@ L_GUI_UF_UF_COLOR = "Farbe der Gesundheitsleiste (falls eigene Farbe verwender w
 L_GUI_UF_ENEMY_HEALTH_COLOR = "Lebensleiste eines gegnerischen Ziels ist rot"
 L_GUI_UF_TOTAL_VALUE = "Zeige Infotext auf Spieler und Ziel mit XXX/Gesamt"
 L_GUI_UF_COLOR_VALUE = "Lebens/Mana Werte einfärben"
+L_GUI_UF_BAR_COLOR_VALUE = "Health bar color by current health remaining" -- Needs review
 L_GUI_UF_UNIT_CASTBAR = "Zeige Zauberleisten"
 L_GUI_UF_CASTBAR_ICON = "Zeige Symbole der Zauberleisten an"
 L_GUI_UF_CASTBAR_LATENCY = "Latenz in Zauberleiste anzeigen"

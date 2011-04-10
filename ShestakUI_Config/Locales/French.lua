@@ -229,6 +229,7 @@ L_GUI_UF_UF_COLOR = "Couleur de la barre de vie"
 L_GUI_UF_ENEMY_HEALTH_COLOR = "Si activée, la couleur des cibles ennemi est rouge"
 L_GUI_UF_TOTAL_VALUE = "Afficher la vie des joueur/cible avec XXXX/Total"
 L_GUI_UF_COLOR_VALUE = "Valeur de vie/mana colorée"
+L_GUI_UF_BAR_COLOR_VALUE = "Health bar color by current health remaining" -- Needs review
 L_GUI_UF_UNIT_CASTBAR = "Voir la barre de cast"
 L_GUI_UF_CASTBAR_ICON = "Voir l'icone de la barre de cast"
 L_GUI_UF_CASTBAR_LATENCY = "Voir la latence de la barre de cast"
