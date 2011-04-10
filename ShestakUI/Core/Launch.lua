@@ -102,6 +102,7 @@ local function InstallUI()
 			
 			-- Setup main tab
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "LOOT")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "CURRENCY")
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "MONEY")
 			
 			-- Setup guild tab
@@ -126,6 +127,7 @@ local function InstallUI()
 			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_HONOR_GAIN")
 			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_FACTION_CHANGE")
 			ChatFrame_AddMessageGroup(ChatFrame4, "LOOT")
+			ChatFrame_AddMessageGroup(ChatFrame4, "CURRENCY")
 			ChatFrame_AddMessageGroup(ChatFrame4, "MONEY")
 			ChatFrame_AddMessageGroup(ChatFrame4, "SKILL")
 			
@@ -250,7 +252,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		if C.general.multisampleprotect == true then
 			SetMultisampleFormat(1)
 		end
-		if C.general.uiscale > 1.28 then C.general.uiscale = 1 end
+		if C.general.uiscale > 1.28 then C.general.uiscale = 1.28 end
 		if C.general.uiscale < 0.64 then C.general.uiscale = 0.64 end
 		
 		-- Set our uiscale
