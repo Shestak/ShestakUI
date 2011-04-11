@@ -234,3 +234,107 @@ L_COMBATTEXT_TEST_USE_TEST = "输入 /xct test 来启用或禁用战斗信息测
 L_COMBATTEXT_POPUP = "要保存战斗信息窗口的位置你需要重新载入插件."
 L_COMBATTEXT_UNSAVED = "战斗信息窗口位置尚未保存,不要忘记重新载入插件."
 L_COMBATTEXT_UNLOCKED = "战斗信息已解锁."
+
+-- LiteStats
+L_STATS_ACC_PLAYED = "帐号启用总时间"
+L_STATS_ADDED_JUNK = "增加自动出售例外名单"
+L_STATS_REMOVE_EXCEPTION = "新增/移除例外名单"
+L_STATS_ALT = "ALT键"
+L_STATS_AUTO_REPAIR = "自动修装"
+L_STATS_AUTO_SELL = "自动出售灰色物品"
+L_STATS_BANDWIDTH = "Bandwidth:" -- Needs review
+L_STATS_DOWNLOAD = "Download:" -- Needs review
+L_STATS_CLEARED_JUNK = "清除自动出售例外名单列表"
+L_STATS_CLEAR_EXCEPTIONS = "清除例外名单列表"
+L_STATS_WORLD_MAP = "点击开启世界地图"
+L_STATS_CURRENT_XP = "目前/升级所需经验值"
+L_STATS_MEMORY_USAGE = "内建插件资源耗用:"
+L_STATS_GARBAGE_COLLECTED = "垃圾资源清除"
+L_STATS_CHANGE_SORTING = "(公会)右键更改排列方式,SHIFT+右键反转排列方式"
+L_STATS_HIDDEN = "隐藏"
+L_STATS_VIEW_NOTES = "按住ALT键检视公会成员会阶.注记.干部注记"
+L_STATS_HR = "小时"
+L_STATS_INF = "无限"
+L_STATS_ALREADY_EXCEPTIONS = "物品已在例外名单列表"
+L_STATS_NOT_JUNK = "非自动出售物品"
+L_STATS_ITEMLINK = "物品链结"
+L_STATS_JUNK_EXCEPTIONS = "自动出售例外名单"
+L_STATS_JUNK_LIST = "自动出售列表"
+L_STATS_JUNK_PROFIT = "自动出售所得金额"
+L_STATS_KILLS = "K" -- Needs review
+L_STATS_OPEN_CALENDAR = "左键开启行事历"
+L_STATS_OPEN_CHARACTER = "左键开启人物栏"
+L_STATS_OPEN_CURRENCY = "Left-Click opens currency tab." -- Needs review
+L_STATS_OPEN_TALENT = "左键开启天赋视窗"
+L_STATS_XP_RATE = "当前等级经验值百分比"
+L_STATS_IGNORED_ITEMS = "列出目前忽略物品"
+L_STATS_TOGGLE_TIME = "当地/服务器及24小时制可显示于时间管理器"
+L_STATS_LOCATION = "位置/座标"
+L_STATS_MEMORY = "内存"
+L_STATS_ON = "启用"
+L_STATS_OTHER_OPTIONS = "其它选项可能配置在%s"
+L_STATS_PLAYED_LEVEL = "当前等级总上线时间"
+L_STATS_PLAYED_SESSION = "此次上线时段耗费时间"
+L_STATS_PLAYED_TOTAL = "总上线时间"
+L_STATS_QUEST = "Q" -- Needs review
+L_STATS_QUESTS_TO = "任务/杀怪得到经验值%s"
+L_STATS_REMAINING_XP = "升级尚需经验值"
+L_STATS_REMOVED_JUNK = "移除自动出售例外名单"
+L_STATS_RESTED_XP = "休息奖励经验值"
+L_STATS_RC_COLLECTS_GARBAGE = "右键点击清除插件垃圾资源"
+L_STATS_RC_TIME_MANAGER = "右键开启时间管理器"
+L_STATS_RC_EXPERIENCE = "右键切换显示经验值.上线时间.角色资讯"
+L_STATS_RC_AUTO_REPAIRING = "右键显示自动修装"
+L_STATS_RC_AUTO_SELLING = "右键开启自动出售"
+L_STATS_RC_TALENT = "右键切换天赋"
+L_STATS_SERVER_GOLD = "帐号总现金"
+L_STATS_SESSION_GAIN = "此次上线时段所得/损失现金"
+L_STATS_SESSION_XP = "此次上线时段所得经验值"
+L_STATS_INSERTS_COORDS = "SHIFT+点击地名或座标可在对话视窗发布你所在座标"
+L_STATS_EQUIPMENT_CHANGER = "左键或中键开启装备管理员"
+L_STATS_SORTING_BY = "依...排列"
+L_STATS_TIPS = "提示:"
+L_STATS_TOTAL = "总计"
+L_STATS_TOTAL_MEMORY_USAGE = "全部资源耗用:"
+L_STATS_NOT_TO_SELL = "输入/junk设定自动出售例外名单"
+L_STATS_WATCH_CURRENCY = "Watched currency tab items will reflect onto the tooltip." -- Needs review
+L_STATS_WATCH_FACTIONS = "从角色人物介面观看资讯"
+L_STATS_TOOLTIP_TIME_PLAYED = "达到最高等级后,提示将显示角色上线时间纪录"
+L_STATS_TOOLTIP_EXPERIENCE = "未达最高等级时,提示将显示经验值讯息"
+
+-- Slash commands
+L_SLASHCMD_HELP = {
+	"Available slash commands:",
+	"/rl - Description is not ready.",
+	"/rc - Description is not ready.",
+	"/gm - Description is not ready.",
+	"/dis ADDON_NAME - Description is not ready.",
+	"/en ADDON_NAME - Description is not ready.",
+	"/rd - Description is not ready.",
+	"/toraid - Description is not ready.",
+	"/luaerror - Description is not ready.",
+	"/spec - Description is not ready.",
+	"/clfix - Description is not ready.",
+	"/heal - Description is not ready.",
+	"/dps - Description is not ready.",
+	"/frame - Description is not ready.",
+	"/addons solo|party|raid|pvp|trade - Description is not ready.",
+	"/farmmode - Description is not ready.",
+	"/moveui - Description is not ready.",
+	"/resetui - Description is not ready.",
+	"/resetuf - Description is not ready.",
+	"/resetconfig - Description is not ready.",
+	"/resetstats - Description is not ready.",
+	"/settings ADDON_NAME - Description is not ready.",
+	"/ls - Description is not ready.",
+	"/bags - Description is not ready.",
+	"/xct - Description is not ready.",
+	"/raidcd - Description is not ready.",
+	"/enemycd - Description is not ready.",
+	"/pulsecd - Description is not ready.",
+	"/threat - Description is not ready.",
+	"/tt - Description is not ready.",
+	"/invite - Description is not ready.",
+	"/testuf - Description is not ready.",
+	"/cfg - Description is not ready.",
+}

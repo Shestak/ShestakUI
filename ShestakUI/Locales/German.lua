@@ -234,3 +234,107 @@ L_COMBATTEXT_TEST_USE_TEST = "Gib '/xct' ein um den Kampftext Testmodus zu aktiv
 L_COMBATTEXT_POPUP = "Um die Kampftext Fensterpositionen zu sichern muss das Interface neu geladen werden."
 L_COMBATTEXT_UNSAVED = "Kampftext Fensterpositionen nicht gespeichert, vergiss nicht das Interface neu zu laden."
 L_COMBATTEXT_UNLOCKED = "Kmpftext freigegeben."
+
+-- LiteStats
+L_STATS_ACC_PLAYED = "Gesamtspielzeit"
+L_STATS_ADDED_JUNK = "Junk-Ausnahme hinzugefügt"
+L_STATS_REMOVE_EXCEPTION = "Ausnahme hinzufügen/entfernen."
+L_STATS_ALT = "ALT"
+L_STATS_AUTO_REPAIR = "Automatisch reparieren"
+L_STATS_AUTO_SELL = "Junk automatisch verkaufen"
+L_STATS_BANDWIDTH = "Bandbreite:"
+L_STATS_DOWNLOAD = "Download:" -- Needs review
+L_STATS_CLEARED_JUNK = "Junk-Ausnahmeliste gelöscht."
+L_STATS_CLEAR_EXCEPTIONS = "Ausnahmenliste löschen."
+L_STATS_WORLD_MAP = "Klicken, zum Öffnen der World-Map."
+L_STATS_CURRENT_XP = "Aktuell/Max XP"
+L_STATS_MEMORY_USAGE = "Standard UI Speicherausnutzung:"
+L_STATS_GARBAGE_COLLECTED = "Abfall zusammengefasst"
+L_STATS_CHANGE_SORTING = "(Gilde) Rechts-Klick, zum Ändern der Sortierung und Umschalt-Rechts-Klick zum Umkehren der Reihenfolge."
+L_STATS_HIDDEN = "Versteckt"
+L_STATS_VIEW_NOTES = "Halte die ALT-Taste gedrückt, zum Anzeigen der Ränge, Notizen und Offizier Notizen."
+L_STATS_HR = "std"
+L_STATS_INF = "unend"
+L_STATS_ALREADY_EXCEPTIONS = "ist bereits in der Ausnahmeliste."
+L_STATS_NOT_JUNK = "ist kein Junk."
+L_STATS_ITEMLINK = "itemlink"
+L_STATS_JUNK_EXCEPTIONS = "Junk-Ausnahmen"
+L_STATS_JUNK_LIST = "Junk-Liste"
+L_STATS_JUNK_PROFIT = "Junk-Gewinn"
+L_STATS_KILLS = "G"
+L_STATS_OPEN_CALENDAR = "Links-Klick, zum Öffnen des Kalenders (/cal)."
+L_STATS_OPEN_CHARACTER = "Links-Klick, zum Öffnen des Charakterfensters."
+L_STATS_OPEN_CURRENCY = "Links-Klick, zum Öffnen des Abzeichen-Fensters."
+L_STATS_OPEN_TALENT = "Links-Klick, zum Öffnen des Talentfensters."
+L_STATS_XP_RATE = "Level XP-Rate"
+L_STATS_IGNORED_ITEMS = "Zeige die aktuell ignorierten Gegenstände."
+L_STATS_TOGGLE_TIME = "Lokal/Realm & 24-Stunden-Modus können in den Einstellungen der Uhr gewechselt werden."
+L_STATS_LOCATION = "Standort/Koordinaten"
+L_STATS_MEMORY = "Speicher"
+L_STATS_ON = "AN"
+L_STATS_OTHER_OPTIONS = "Weitere Einstellungen können in %s konfiguriert werden"
+L_STATS_PLAYED_LEVEL = "Auf diesem Level gespielt"
+L_STATS_PLAYED_SESSION = "Diese Sitzung gespielt"
+L_STATS_PLAYED_TOTAL = "Gesamt gespielt"
+L_STATS_QUEST = "Q" -- Needs review
+L_STATS_QUESTS_TO = "Quests/Getötet bis %s"
+L_STATS_REMAINING_XP = "Verbleibende XP"
+L_STATS_REMOVED_JUNK = "Junk-Ausnahme entfernt"
+L_STATS_RESTED_XP = "Erholte XP"
+L_STATS_RC_COLLECTS_GARBAGE = "Rechts-Klick sammelt Lua-Abfall."
+L_STATS_RC_TIME_MANAGER = "Rechts-Klick, um die Einstellungen der Uhr anzuzeigen."
+L_STATS_RC_EXPERIENCE = "Rechts-Klick, zum Wechseln zwischen Erfahrung, gespielte Zeit und Fraktionsüberwachung."
+L_STATS_RC_AUTO_REPAIRING = "Rechts-Klick, zum Ein- oder Ausschalten des automatischen Reparieren."
+L_STATS_RC_AUTO_SELLING = "Rechts-Klick, zum Ein- oder Ausschalten des automatischen Verkaufen."
+L_STATS_RC_TALENT = "Rechts-Klick, zum Wechseln Deiner Talentspezialisierung."
+L_STATS_SERVER_GOLD = "Server Gold"
+L_STATS_SESSION_GAIN = "Sitzung - Gewinn/Verlust"
+L_STATS_SESSION_XP = "Sitzung - XP Rate"
+L_STATS_INSERTS_COORDS = "Umschalt-Klick auf das Standort/Koordination Modul, zum Einfügen Deiner aktuellen Koordinaten in den Chat."
+L_STATS_EQUIPMENT_CHANGER = "Umschalt-Klick oder Mittel-Klick für den Ausrüstungsmanager."
+L_STATS_SORTING_BY = "Sortieren nach"
+L_STATS_TIPS = "Tipps:"
+L_STATS_TOTAL = "Gesamt"
+L_STATS_TOTAL_MEMORY_USAGE = "Gesamte Speicherausnutzung:"
+L_STATS_NOT_TO_SELL = "Verwende /junk zum Konfigurieren der Gegenstände, die nicht verkauft werden sollen."
+L_STATS_WATCH_CURRENCY = "Bereits gesehene Gegenstände aus dem Abzeichen-Fenster werden im Tooltip angezeigt."
+L_STATS_WATCH_FACTIONS = "Überwache Fraktionen aus dem Ruffenster."
+L_STATS_TOOLTIP_TIME_PLAYED = "Wenn das max. Level erreicht ist, wird das Tooltip die gespielte Zeit für den Account anzeigen."
+L_STATS_TOOLTIP_EXPERIENCE = "Wenn unter dem max. Level, wird ein Tooltip mit weiteren Details angezeigt."
+
+-- Slash commands
+L_SLASHCMD_HELP = {
+	"Available slash commands:",
+	"/rl - Description is not ready.",
+	"/rc - Description is not ready.",
+	"/gm - Description is not ready.",
+	"/dis ADDON_NAME - Description is not ready.",
+	"/en ADDON_NAME - Description is not ready.",
+	"/rd - Description is not ready.",
+	"/toraid - Description is not ready.",
+	"/luaerror - Description is not ready.",
+	"/spec - Description is not ready.",
+	"/clfix - Description is not ready.",
+	"/heal - Description is not ready.",
+	"/dps - Description is not ready.",
+	"/frame - Description is not ready.",
+	"/addons solo|party|raid|pvp|trade - Description is not ready.",
+	"/farmmode - Description is not ready.",
+	"/moveui - Description is not ready.",
+	"/resetui - Description is not ready.",
+	"/resetuf - Description is not ready.",
+	"/resetconfig - Description is not ready.",
+	"/resetstats - Description is not ready.",
+	"/settings ADDON_NAME - Description is not ready.",
+	"/ls - Description is not ready.",
+	"/bags - Description is not ready.",
+	"/xct - Description is not ready.",
+	"/raidcd - Description is not ready.",
+	"/enemycd - Description is not ready.",
+	"/pulsecd - Description is not ready.",
+	"/threat - Description is not ready.",
+	"/tt - Description is not ready.",
+	"/invite - Description is not ready.",
+	"/testuf - Description is not ready.",
+	"/cfg - Description is not ready.",
+}

@@ -234,3 +234,107 @@ L_COMBATTEXT_TEST_USE_TEST = "Type /xct test to toggle combat text testmode."
 L_COMBATTEXT_POPUP = "To save combat text window positions you need to reload your UI."
 L_COMBATTEXT_UNSAVED = "Combat text window positions unsaved, don't forget to reload UI."
 L_COMBATTEXT_UNLOCKED = "Combat text unlocked."
+
+-- LiteStats
+L_STATS_ACC_PLAYED = "플레이한 시간의 산출 "
+L_STATS_ADDED_JUNK = "잡동사니 제외 목록에 추가"
+L_STATS_REMOVE_EXCEPTION = "잡동사니를 제외 목록에 추가/제거합니다."
+L_STATS_ALT = "ALT"
+L_STATS_AUTO_REPAIR = "자동수리"
+L_STATS_AUTO_SELL = "잡동사니 자동 판매"
+L_STATS_BANDWIDTH = "Bandwidth:"
+L_STATS_DOWNLOAD = "Download:"
+L_STATS_CLEARED_JUNK = "잡동사니 제외 목록을 삭제합니다."
+L_STATS_CLEAR_EXCEPTIONS = "제외 목록 삭제"
+L_STATS_WORLD_MAP = "세계지도를 열려면 클릭하십시오."
+L_STATS_CURRENT_XP = "현재/최대 XP"
+L_STATS_MEMORY_USAGE = "기본 UI 메모리 사용량:"
+L_STATS_GARBAGE_COLLECTED = "메모리 찌꺼기 모음"
+L_STATS_CHANGE_SORTING = "(길드)정돈 방식을 변경하려면 우-클릭, 순서를 뒤바꾸려면 shift-우-클릭하십시오."
+L_STATS_HIDDEN = "숨김"
+L_STATS_VIEW_NOTES = "레벨, 주의 사항, 관리자 주의 사항을 보려면 alt 키를 누르십시오."
+L_STATS_HR = "시"
+L_STATS_INF = "무한"
+L_STATS_ALREADY_EXCEPTIONS = "|1은;는; 이미 제외 목록에 있습니다."
+L_STATS_NOT_JUNK = "|1은;는; 잡동사니가 아닙니다."
+L_STATS_ITEMLINK = "아이템 링크"
+L_STATS_JUNK_EXCEPTIONS = "잡동사니 제외"
+L_STATS_JUNK_LIST = "잡동사니 목록"
+L_STATS_JUNK_PROFIT = "잡동사니 수익"
+L_STATS_KILLS = "죽"
+L_STATS_OPEN_CALENDAR = "좌-클릭으로 달력을 엽니다(/cal)."
+L_STATS_OPEN_CHARACTER = "좌-클릭으로 캐릭터 탭을 엽니다."
+L_STATS_OPEN_CURRENCY = "좌-클릭으로 화폐 탭을 엽니다."
+L_STATS_OPEN_TALENT = "좌-클릭으로 특성 UI 틀을 엽니다."
+L_STATS_XP_RATE = "레벨 XP율"
+L_STATS_IGNORED_ITEMS = "현재무시된 아이템을 목록화합니다. "
+L_STATS_TOGGLE_TIME = "시간 관리 틀에서 지역/서버 & 24시간제를 전환시킬 수 있습니다. "
+L_STATS_LOCATION = "위치/좌표"
+L_STATS_MEMORY = "메모리"
+L_STATS_ON = "켜기"
+L_STATS_OTHER_OPTIONS = "다른 옵션은 %s에서 설정할 수 있습니다."
+L_STATS_PLAYED_LEVEL = "이 레벨에서의 플레이 시간"
+L_STATS_PLAYED_SESSION = "이 접속의 플레이 시간"
+L_STATS_PLAYED_TOTAL = "총 플레이 시간"
+L_STATS_QUEST = "퀘"
+L_STATS_QUESTS_TO = "퀘스트/죽임을 %s|1으로;로;"
+L_STATS_REMAINING_XP = "남은 XP"
+L_STATS_REMOVED_JUNK = "잡동사니 제외 목록 제거"
+L_STATS_RESTED_XP = "휴식 XP"
+L_STATS_RC_COLLECTS_GARBAGE = "우-클릭으로 Lua 메모리 찌꺼기를 모읍니다."
+L_STATS_RC_TIME_MANAGER = "우-클릭으로 시간 관리 틀을 엽니다."
+L_STATS_RC_EXPERIENCE = "경험치, 플레이한 시간, 진영 감시를 순환하려면 우-클릭하십시오."
+L_STATS_RC_AUTO_REPAIRING = "우-클릭으로 자동 수리 기능을 전환합니다."
+L_STATS_RC_AUTO_SELLING = "우-클릭으로 자동 판매 기능을 전환합니다."
+L_STATS_RC_TALENT = "우-클릭으로 당신의 특성 전문화를 전환합니다."
+L_STATS_SERVER_GOLD = "서버 소지금"
+L_STATS_SESSION_GAIN = "접속 득/실"
+L_STATS_SESSION_XP = "접속 XP율"
+L_STATS_INSERTS_COORDS = "위치 혹은 좌표 모듈의 Shift-클릭으로 현재 좌표를 대화창에 삽입합니다. "
+L_STATS_EQUIPMENT_CHANGER = "장비 세트 교체를 위해서는 Shift-클릭 혹은 가운데-클릭하십시오. "
+L_STATS_SORTING_BY = "다음에 의해 정돈"
+L_STATS_TIPS = "팁:"
+L_STATS_TOTAL = "합계"
+L_STATS_TOTAL_MEMORY_USAGE = "총 메모리 사용량:"
+L_STATS_NOT_TO_SELL = "어떠한 아이템을 판매하지 않을지 설정하려면 /junk를 사용하십시오."
+L_STATS_WATCH_CURRENCY = "감시한 화폐 탭 아이템은 툴팁에 반영될 것입니다."
+L_STATS_WATCH_FACTIONS = "캐릭터 진영 UI에서 진영을 감시합니다. "
+L_STATS_TOOLTIP_TIME_PLAYED = "최대 레벨인 경우에 툴팁은 산출을 위한 상세한 플레이 시간을 보여줄 것입니다."
+L_STATS_TOOLTIP_EXPERIENCE = "최대 레벨 밑인 경우에 툴립은 경험치를 상세하게 표시할 것입니다."
+
+-- Slash commands
+L_SLASHCMD_HELP = {
+	"Available slash commands:",
+	"/rl - Description is not ready.",
+	"/rc - Description is not ready.",
+	"/gm - Description is not ready.",
+	"/dis ADDON_NAME - Description is not ready.",
+	"/en ADDON_NAME - Description is not ready.",
+	"/rd - Description is not ready.",
+	"/toraid - Description is not ready.",
+	"/luaerror - Description is not ready.",
+	"/spec - Description is not ready.",
+	"/clfix - Description is not ready.",
+	"/heal - Description is not ready.",
+	"/dps - Description is not ready.",
+	"/frame - Description is not ready.",
+	"/addons solo|party|raid|pvp|trade - Description is not ready.",
+	"/farmmode - Description is not ready.",
+	"/moveui - Description is not ready.",
+	"/resetui - Description is not ready.",
+	"/resetuf - Description is not ready.",
+	"/resetconfig - Description is not ready.",
+	"/resetstats - Description is not ready.",
+	"/settings ADDON_NAME - Description is not ready.",
+	"/ls - Description is not ready.",
+	"/bags - Description is not ready.",
+	"/xct - Description is not ready.",
+	"/raidcd - Description is not ready.",
+	"/enemycd - Description is not ready.",
+	"/pulsecd - Description is not ready.",
+	"/threat - Description is not ready.",
+	"/tt - Description is not ready.",
+	"/invite - Description is not ready.",
+	"/testuf - Description is not ready.",
+	"/cfg - Description is not ready.",
+}

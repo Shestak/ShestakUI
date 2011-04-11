@@ -234,3 +234,107 @@ L_COMBATTEXT_TEST_USE_TEST = "Escribe /xct test para probar el modo Texto de com
 L_COMBATTEXT_POPUP = "Para guardar la posición de la ventana de texto de combate necesitas recargar tu UI."
 L_COMBATTEXT_UNSAVED = "La posición de la ventana de texto de combate no está guardada, no olvides recargar la UI."
 L_COMBATTEXT_UNLOCKED = "Texto de combate desbloqueado."
+
+-- LiteStats
+L_STATS_ACC_PLAYED = "Jugado"
+L_STATS_ADDED_JUNK = "Added junk exception" -- Needs review
+L_STATS_REMOVE_EXCEPTION = "Añadir/borrar excepción"
+L_STATS_ALT = "ALT"
+L_STATS_AUTO_REPAIR = "Reparación auto."
+L_STATS_AUTO_SELL = "AutoSell junk" -- Needs review
+L_STATS_BANDWIDTH = "Ancho de banda:"
+L_STATS_DOWNLOAD = "Descarga:"
+L_STATS_CLEARED_JUNK = "Cleared junk exceptions list." -- Needs review
+L_STATS_CLEAR_EXCEPTIONS = "Clear exceptions list." -- Needs review
+L_STATS_WORLD_MAP = "Clicking opens world map." -- Needs review
+L_STATS_CURRENT_XP = "Current/Max XP" -- Needs review
+L_STATS_MEMORY_USAGE = "Default UI Memory Usage:" -- Needs review
+L_STATS_GARBAGE_COLLECTED = "Basura recogida"
+L_STATS_CHANGE_SORTING = "(Guild) Right-Click to change the sorting, shift-right-click to reverse order." -- Needs review
+L_STATS_HIDDEN = "Oculto"
+L_STATS_VIEW_NOTES = "Hold alt key to view ranks, notes and officer notes." -- Needs review
+L_STATS_HR = "hr" -- Needs review
+L_STATS_INF = "inf" -- Needs review
+L_STATS_ALREADY_EXCEPTIONS = "is already in exceptions list." -- Needs review
+L_STATS_NOT_JUNK = "is not junk." -- Needs review
+L_STATS_ITEMLINK = "itemlink" -- Needs review
+L_STATS_JUNK_EXCEPTIONS = "Junk exceptions" -- Needs review
+L_STATS_JUNK_LIST = "Junk List" -- Needs review
+L_STATS_JUNK_PROFIT = "Junk profit" -- Needs review
+L_STATS_KILLS = "K" -- Needs review
+L_STATS_OPEN_CALENDAR = "Left-Click opens calendar (/cal)." -- Needs review
+L_STATS_OPEN_CHARACTER = "Left-Click opens character tab." -- Needs review
+L_STATS_OPEN_CURRENCY = "Left-Click opens currency tab." -- Needs review
+L_STATS_OPEN_TALENT = "Left-Click opens the talent UI frame." -- Needs review
+L_STATS_XP_RATE = "Level XP rate" -- Needs review
+L_STATS_IGNORED_ITEMS = "List currently ignored items." -- Needs review
+L_STATS_TOGGLE_TIME = "Local/realm & 24hr time can be toggled from the time manager." -- Needs review
+L_STATS_LOCATION = "Situación/Coordenadas"
+L_STATS_MEMORY = "Memoria"
+L_STATS_ON = "ON" -- Needs review
+L_STATS_OTHER_OPTIONS = "Otras opciones se pueden configurar en %s"
+L_STATS_PLAYED_LEVEL = "Jugado este nivel"
+L_STATS_PLAYED_SESSION = "Jugado esta sesión"
+L_STATS_PLAYED_TOTAL = "Total jugado"
+L_STATS_QUEST = "Q" -- Needs review
+L_STATS_QUESTS_TO = "Misiones/Muertes para %s"
+L_STATS_REMAINING_XP = "Remaining XP" -- Needs review
+L_STATS_REMOVED_JUNK = "Removed junk exception" -- Needs review
+L_STATS_RESTED_XP = "Rested XP" -- Needs review
+L_STATS_RC_COLLECTS_GARBAGE = "Right-Click collects Lua garbage." -- Needs review
+L_STATS_RC_TIME_MANAGER = "Right-Click opens time manager frame." -- Needs review
+L_STATS_RC_EXPERIENCE = "Clic derecho para alternar experiencia, tiempo jugado y facciones."
+L_STATS_RC_AUTO_REPAIRING = "Right-Click toggles AutoRepairing." -- Needs review
+L_STATS_RC_AUTO_SELLING = "Right-Click toggles AutoSelling." -- Needs review
+L_STATS_RC_TALENT = "Right-Click toggles your talent specialization." -- Needs review
+L_STATS_SERVER_GOLD = "Server Gold" -- Needs review
+L_STATS_SESSION_GAIN = "Sesion ganado/perdido"
+L_STATS_SESSION_XP = "Session XP rate" -- Needs review
+L_STATS_INSERTS_COORDS = "Shift-Clicking location or coords module inserts your coords into chat." -- Needs review
+L_STATS_EQUIPMENT_CHANGER = "Shift-Click or Middle-Click for equipment set changer." -- Needs review
+L_STATS_SORTING_BY = "Ordenado por"
+L_STATS_TIPS = "tips:" -- Needs review
+L_STATS_TOTAL = "Total"
+L_STATS_TOTAL_MEMORY_USAGE = "Uso total de la memoria:"
+L_STATS_NOT_TO_SELL = "Use /junk to configure which items not to sell." -- Needs review
+L_STATS_WATCH_CURRENCY = "Watched currency tab items will reflect onto the tooltip." -- Needs review
+L_STATS_WATCH_FACTIONS = "Mirar facciones desde la herramienta de facciones."
+L_STATS_TOOLTIP_TIME_PLAYED = "When at max level, the tooltip will show time played details for the account." -- Needs review
+L_STATS_TOOLTIP_EXPERIENCE = "When below max level, a tooltip will be displayed with experience details." -- Needs review
+
+-- Slash commands
+L_SLASHCMD_HELP = {
+	"Available slash commands:",
+	"/rl - Description is not ready.",
+	"/rc - Description is not ready.",
+	"/gm - Description is not ready.",
+	"/dis ADDON_NAME - Description is not ready.",
+	"/en ADDON_NAME - Description is not ready.",
+	"/rd - Description is not ready.",
+	"/toraid - Description is not ready.",
+	"/luaerror - Description is not ready.",
+	"/spec - Description is not ready.",
+	"/clfix - Description is not ready.",
+	"/heal - Description is not ready.",
+	"/dps - Description is not ready.",
+	"/frame - Description is not ready.",
+	"/addons solo|party|raid|pvp|trade - Description is not ready.",
+	"/farmmode - Description is not ready.",
+	"/moveui - Description is not ready.",
+	"/resetui - Description is not ready.",
+	"/resetuf - Description is not ready.",
+	"/resetconfig - Description is not ready.",
+	"/resetstats - Description is not ready.",
+	"/settings ADDON_NAME - Description is not ready.",
+	"/ls - Description is not ready.",
+	"/bags - Description is not ready.",
+	"/xct - Description is not ready.",
+	"/raidcd - Description is not ready.",
+	"/enemycd - Description is not ready.",
+	"/pulsecd - Description is not ready.",
+	"/threat - Description is not ready.",
+	"/tt - Description is not ready.",
+	"/invite - Description is not ready.",
+	"/testuf - Description is not ready.",
+	"/cfg - Description is not ready.",
+}

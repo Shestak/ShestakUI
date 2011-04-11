@@ -1,12 +1,9 @@
-﻿-- LiteStats / Katae @ WoWI
--------------------------------------------------------------------------------------------
--- * Configure the modules in config.lua, if you need more control, edit the core modules.
--- * AutoSell and AutoRepair can be toggled on/off by right-clicking the text display.
--- * Junk exceptions for AutoSelling can be configured by the /junk command.
--------------------------------------------------------------------------------------------
--- Please attain permission AND give credit before distributing any segments of this addon.
-local T, C, L = unpack(select(2, ...))
-local P = "player" -- Because I'm tired of typing it.
+﻿local T, C, L = unpack(select(2, ...))
+
+----------------------------------------------------------------------------------------
+--	Based on LiteStats(by Katae)
+----------------------------------------------------------------------------------------
+local P = "player"
 local realm, char, class, layout = GetRealmName(), UnitName(P), select(2, UnitClass(P)), {}
 
 -- Tooltip text colors
@@ -57,10 +54,6 @@ local cloak = modules.Cloak
 local helm = modules.Helm
 local nameplates = modules.Nameplates
 
--- Locale
-local locale = LSTLOCALE or {}
-local function L(str) return locale[str] or str end
-
 -- Lazy Events Reg
 local function RegEvents(f,l) for _,e in ipairs{strsplit(" ",l)} do f:RegisterEvent(e) end end
 
@@ -70,25 +63,10 @@ local ls, coordX, coordY, conf, Coords = CreateFrame'frame', 0, 0, {}
 RegEvents(ls,"ADDON_LOADED PLAYER_REGEN_DISABLED PLAYER_REGEN_ENABLED")
 ls:SetScript("OnEvent", function(_,event,addon)
 	if event == "ADDON_LOADED" and addon == "ShestakUI" then
-		if not modules then
-			-- Missing config, print an error message.
-			print(format("|cffFFFFFFLite|cff44CCFFStats|cffFFFFFF: "..L"Copy %s to %s and restart.","|cffFF9912config_default.lua|r","|cffFF9912config.lua|r"))
-			return
-		end
 		if not SavedStats then SavedStats = {} end
 		if not SavedStats[realm] then SavedStats[realm] = {} end
 		if not SavedStats[realm][char] then SavedStats[realm][char] = {} end
 		conf = SavedStats[realm][char]
-		
-		-- Migrating older saved vars, pre-0.9.8
-		for charstr,config in pairs(SavedStats) do
-			if strmatch(charstr," %- ") then
-				local char, realm = strmatch(charstr,"(.-) %- (.*)")
-				if not SavedStats[realm] then SavedStats[realm] = {} end
-				conf = config
-				SavedStats[charstr] = nil
-			end
-		end	
 		
 		-- true/false defaults for autosell and autorepair
 		if conf.AutoSell == nil then conf.AutoSell = true end
@@ -200,44 +178,25 @@ local function slprint(...)
 	for i = 2, #t do print(l,t[i]) end
 end
 function SlashCmdList.LSTATS()
-	print("|cffffffffLite|cff66C6FFStats|cffffffff "..L"tips"..":")
+	print("|cffffffffLite|cff66C6FFStats|cffffffff "..L_STATS_TIPS)
 	if memory.enabled then
-		slprint(L"Memory",
-			L"Right-Click collects Lua garbage.")
+		slprint(L_STATS_MEMORY,L_STATS_RC_COLLECTS_GARBAGE)
 	end if gold.enabled then
-		slprint(strtrim(gsub(MONEY,"%%d","")),
-			L"Left-Click opens currency tab.",
-			L"Right-Click toggles AutoSelling.",
-			L"Use /junk to configure which items not to sell.",
-			L"Watched currency tab items will reflect onto the tooltip.")
+		slprint(strtrim(gsub(MONEY,"%%d","")),L_STATS_OPEN_CURRENCY,L_STATS_RC_AUTO_SELLING,L_STATS_NOT_TO_SELL,L_STATS_WATCH_CURRENCY)
 	end if durability.enabled then
-		slprint(DURABILITY,
-			L"Left-Click opens character tab.",
-			L"Right-Click toggles AutoRepairing.",
-			L"Shift-Click or Middle-Click for equipment set changer.")
+		slprint(DURABILITY,L_STATS_OPEN_CHARACTER,L_STATS_RC_AUTO_REPAIRING,L_STATS_EQUIPMENT_CHANGER)
 	end if location.enabled or coords.enabled then
-		slprint(L"Location/Coords",
-			L"Clicking opens world map.",
-			L"Shift-Clicking location or coords module inserts your coords into chat.")
+		slprint(L_STATS_LOCATION,L_STATS_WORLD_MAP,L_STATS_INSERTS_COORDS)
 	end if clock.enabled then
-		slprint(TIMEMANAGER_TITLE,
-			L"Left-Click opens calendar (/cal).",
-			L"Right-Click opens time manager frame.",
-			L"Local/realm & 24hr time can be toggled from the time manager.")
+		slprint(TIMEMANAGER_TITLE,L_STATS_OPEN_CALENDAR,L_STATS_RC_TIME_MANAGER,L_STATS_TOGGLE_TIME)
 	end if friends.enabled or guild.enabled then
-		slprint(format("%s/%s",FRIENDS,GUILD),
-			L"Hold alt key to view ranks, notes and officer notes.",
-			L"(Guild) Right-Click to change the sorting, shift-right-click to reverse order.")
+		slprint(format("%s/%s",FRIENDS,GUILD),L_STATS_VIEW_NOTES,L_STATS_CHANGE_SORTING)
 	end if talents.enabled then
-		slprint(TALENTS,
-			L"Left-Click opens the talent UI frame.",
-			L"Right-Click toggles your dual specs.")
+		slprint(TALENTS,L_STATS_OPEN_TALENT,L_STATS_RC_TALENT)
 	end if experience.enabled then
-		slprint(format("%s/%s/%s",COMBAT_XP_GAIN,TIME_PLAYED_MSG,FACTION),
-			L"Right-Click to cycle through experience, time played, and faction watcher.",
-			L"Watch factions from the character faction UI.")
+		slprint(format("%s/%s/%s",COMBAT_XP_GAIN,TIME_PLAYED_MSG,FACTION),L_STATS_RC_EXPERIENCE,L_STATS_WATCH_FACTIONS)
 	end
-	print("|cffBCEE68",format(L"Other options may be configured in %s","|cff66C6FFShestakUI\\Config\\DataText.lua"))
+	print("|cffBCEE68",format(L_STATS_OTHER_OPTIONS,"|cff66C6FFShestakUI\\Config\\DataText.lua"))
 end
 
 CreateFrame("Frame", "LSMenus", UIParent, "UIDropDownMenuTemplate")
@@ -334,18 +293,18 @@ if memory.enabled then
 				end
 				if exmem > 0 and not IsAltKeyDown() then
 					local more = #memoryt - memory.max_addons
-					GameTooltip:AddDoubleLine(format("%d %s (%s)",more,L"Hidden",L"ALT"),formatmem(exmem),ttsubh.r,ttsubh.g,ttsubh.b,ttsubh.r,ttsubh.g,ttsubh.b)
+					GameTooltip:AddDoubleLine(format("%d %s (%s)",more,L_STATS_HIDDEN,L_STATS_ALT),formatmem(exmem),ttsubh.r,ttsubh.g,ttsubh.b,ttsubh.r,ttsubh.g,ttsubh.b)
 				end
 				GameTooltip:AddDoubleLine(" ","--------------",1,1,1,0.5,0.5,0.5)
 			end
 			local bandwidth = GetAvailableBandwidth()
 			if bandwidth ~= 0 then
-				GameTooltip:AddDoubleLine(L"Bandwidth"..":",format("%s ".."Mbps",T.Round(bandwidth, 2)),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L"Download"..":",format("%s%%", floor(GetDownloadedPercentage()*100+0.5)),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_BANDWIDTH,format("%s ".."Mbps",T.Round(bandwidth, 2)),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_DOWNLOAD,format("%s%%", floor(GetDownloadedPercentage()*100+0.5)),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				GameTooltip:AddLine(" ")
 			end
-			GameTooltip:AddDoubleLine(L"Default UI Memory Usage"..":",formatmem(gcinfo() - self.text.total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-			GameTooltip:AddDoubleLine(L"Total Memory Usage"..":",formatmem(collectgarbage'count'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+			GameTooltip:AddDoubleLine(L_STATS_MEMORY_USAGE,formatmem(gcinfo() - self.text.total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+			GameTooltip:AddDoubleLine(L_STATS_TOTAL_MEMORY_USAGE,formatmem(collectgarbage'count'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 	        GameTooltip:Show()
 		end,
 		--OnUpdate = AltUpdate,
@@ -356,7 +315,7 @@ if memory.enabled then
 				local before = gcinfo()
 				collectgarbage()
 				UpdateMemUse()
-				print(format("|cff66C6FF%s:|r %s",L"Garbage collected",formatmem(before - gcinfo())))
+				print(format("|cff66C6FF%s:|r %s",L_STATS_GARBAGE_COLLECTED,formatmem(before - gcinfo())))
 				self.timer, self.text.elapsed = nil, 5
 				self:GetScript("OnEnter")(self)
 			end
@@ -435,7 +394,7 @@ if durability.enabled then
 				GameTooltip:AddDoubleLine(REPAIR_COST, formatgold(1, totalcost),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)	
 			end
 			GameTooltip:AddLine' '
-			GameTooltip:AddDoubleLine(" ",L"AutoRepair"..": "..(conf.AutoRepair and "|cff55ff55"..L"ON" or "|cffff5555"..strupper(OFF)),1,1,1,ttsubh.r,ttsubh.g,ttsubh.b)
+			GameTooltip:AddDoubleLine(" ",L_STATS_AUTO_REPAIR..": "..(conf.AutoRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)),1,1,1,ttsubh.r,ttsubh.g,ttsubh.b)
 			GameTooltip:Show()
 		end,
 		OnClick = function(self, button)
@@ -486,7 +445,7 @@ if gold.enabled then
 							end
 						end
 					end end
-					if profit > 0 then print(format("|cff66C6FF%s: |cffFFFFFF%s",L"Junk profit",formatgold(1, profit))) end
+					if profit > 0 then print(format("|cff66C6FF%s: |cffFFFFFF%s",L_STATS_JUNK_PROFIT,formatgold(1, profit))) end
 				end
 				return
 			end
@@ -502,10 +461,10 @@ if gold.enabled then
 			if self.started ~= curgold then
 				local gained = curgold > self.started
 				local color = gained and "|cff55ff55" or "|cffff5555"
-				GameTooltip:AddDoubleLine(L"Session Gain/Loss", format("%s$|r %s %s$|r",color,formatgold(1, abs(self.started - curgold)),color),1,1,1,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_SESSION_GAIN, format("%s$|r %s %s$|r",color,formatgold(1, abs(self.started - curgold)),color),1,1,1,1,1,1)
 				GameTooltip:AddLine' '
 			end
-			GameTooltip:AddLine(L"Server Gold",ttsubh.r,ttsubh.g,ttsubh.b)
+			GameTooltip:AddLine(L_STATS_SERVER_GOLD,ttsubh.r,ttsubh.g,ttsubh.b)
 			local total = 0
 			for char, conf in pairs(SavedStats[realm]) do
 				if conf.Gold and conf.Gold > 99 then
@@ -514,7 +473,7 @@ if gold.enabled then
 				end
 			end
 			GameTooltip:AddDoubleLine(" ","-----------------",1,1,1,0.5,0.5,0.5)
-			GameTooltip:AddDoubleLine(L"Total", formatgold(1, total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+			GameTooltip:AddDoubleLine(L_STATS_TOTAL, formatgold(1, total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			GameTooltip:AddLine' '
 			
 			local currencies = 0
@@ -529,7 +488,7 @@ if gold.enabled then
 				end
 			end
 			if currencies > 0 then GameTooltip:AddLine' ' end
-			GameTooltip:AddDoubleLine(" ",L"AutoSell junk"..": "..(conf.AutoSell and "|cff55ff55"..L"ON" or "|cffff5555"..strupper(OFF)),1,1,1,ttsubh.r,ttsubh.g,ttsubh.b)
+			GameTooltip:AddDoubleLine(" ",L_STATS_AUTO_SELL..": "..(conf.AutoSell and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)),1,1,1,ttsubh.r,ttsubh.g,ttsubh.b)
 			GameTooltip:Show()
 		end,
 		OnClick = function(self, button)
@@ -545,14 +504,14 @@ if gold.enabled then
 	function SlashCmdList.KJUNK(s) 
 		local action = strsplit(" ",s)
 		if action == "list" then
-			print(format("|cff66C6FF%s:|r %s",L"Junk exceptions",(#SavedStats.JunkIgnore == 0 and NONE or "")))
+			print(format("|cff66C6FF%s:|r %s",L_STATS_JUNK_EXCEPTIONS,(#SavedStats.JunkIgnore == 0 and NONE or "")))
 			for i, id in pairs(SavedStats.JunkIgnore) do
 				local link = select(2, GetItemInfo(id))
 				print("- ["..i.."]",link)
 			end
 		elseif action == "clear" then
 			SavedStats.JunkIgnore = {}
-			print("|cff66C6FF"..L"Cleared junk exceptions list.")
+			print("|cff66C6FF"..L_STATS_CLEARED_JUNK)
 		elseif action == "add" or strfind(action,"^del") or strfind(action,"^rem") then
 			for id in s:gmatch("|Hitem:(%d-):") do
 				local link = select(2, GetItemInfo(id))
@@ -560,21 +519,21 @@ if gold.enabled then
 					if select(3, GetItemInfo(id)) == 0 then
 						if not tContains(SavedStats.JunkIgnore,id) then
 							tinsert(SavedStats.JunkIgnore,id)
-							print(format("|cff66C6FF%s:|r %s",L"Added junk exception",link))
+							print(format("|cff66C6FF%s:|r %s",L_STATS_ADDED_JUNK,link))
 						else
-							print(format("%s |cff66C6FF%s",link,L"is already in exceptions list."))
+							print(format("%s |cff66C6FF%s",link,L_STATS_ALREADY_EXCEPTIONS))
 						end
-					else print(format("|cff66C6FF",link,L"is not junk.")) end
+					else print(format("|cff66C6FF",link,L_STATS_NOT_JUNK)) end
 				elseif strfind(action,"^del") or strfind(action,"^rem") then
 					tDeleteItem(SavedStats.JunkIgnore,id)
-					print(format("|cff66C6FF%s:|r %s",L"Removed junk exception",link))
+					print(format("|cff66C6FF%s:|r %s",L_STATS_REMOVED_JUNK,link))
 				end
 			end
 		else
-			print("|cffffffffLite|cff66C6FFStats|r:",L"Junk List")
-			print(format("/junk <add||rem(ove)> [%s] - %s",L"itemlink",L"Add/remove exception."))
-			print("/junk list -",L"List currently ignored items.")
-			print("/junk clear -",L"Clear exceptions list.")
+			print("|cffffffffLite|cff66C6FFStats|r: "..L_STATS_JUNK_LIST)
+			print(format("/junk <add||rem(ove)> [%s] - %s",L_STATS_ITEMLINK,L_STATS_REMOVE_EXCEPTION))
+			print("/junk list - "..L_STATS_IGNORED_ITEMS)
+			print("/junk clear - "..L_STATS_CLEAR_EXCEPTIONS)
 		end
 	end
 end
@@ -851,7 +810,7 @@ if guild.enabled then
 					GameTooltip:AddLine' '
 					for i = 1, total do
 						if guild.maxguild and i > guild.maxguild then
-							if online > 2 then GameTooltip:AddLine(format("%d %s (%s)",online - guild.maxguild,L"Hidden",L"ALT"),ttsubh.r,ttsubh.g,ttsubh.b) end
+							if online > 2 then GameTooltip:AddLine(format("%d %s (%s)",online - guild.maxguild,L_STATS_HIDDEN,L_STATS_ALT),ttsubh.r,ttsubh.g,ttsubh.b) end
 							break
 						end
 						name, rank, _, level, _, zone, note, officernote, connected, status, class = GetGuildRosterInfo(i)
@@ -869,7 +828,7 @@ if guild.enabled then
 						end
 					end
 					GameTooltip:AddLine' '
-					GameTooltip:AddDoubleLine(" ",format("%s %s",L"Sorting by",CURRENT_GUILD_SORTING),1,1,1,ttsubh.r,ttsubh.g,ttsubh.b)
+					GameTooltip:AddDoubleLine(" ",format("%s %s",L_STATS_SORTING_BY,CURRENT_GUILD_SORTING),1,1,1,ttsubh.r,ttsubh.g,ttsubh.b)
 				end
 				
 				GameTooltip:Show()
@@ -1201,8 +1160,8 @@ if experience.enabled then
 			or sub == "sessiongained" and short(gained,tt)
 			or sub == "sessionrate" and short(gained / (GetTime() - playedmsg) * 3600,tt)
 			or sub == "levelrate" and short(UnitXP(P) / (playedlevel + GetTime() - playedmsg) * 3600,tt)
-	 		or sub == "sessionttl" and (gained ~= 0 and fmttime((UnitXPMax(P) - UnitXP(P)) / (gained / (GetTime() - playedmsg)),t) or L"inf")
-			or sub == "levelttl" and (UnitXP(P) ~= 0 and fmttime((UnitXPMax(P) - UnitXP(P)) / (UnitXP(P) / (playedlevel + GetTime() - playedmsg)),t) or L"inf")
+	 		or sub == "sessionttl" and (gained ~= 0 and fmttime((UnitXPMax(P) - UnitXP(P)) / (gained / (GetTime() - playedmsg)),t) or L_STATS_INF)
+			or sub == "levelttl" and (UnitXP(P) ~= 0 and fmttime((UnitXPMax(P) - UnitXP(P)) / (UnitXP(P) / (playedlevel + GetTime() - playedmsg)),t) or L_STATS_INF)
 			or sub == "questsleft" and (lastquest and ceil((UnitXPMax(P) - UnitXP(P)) / tonumber(lastquest)) or "??")
 			or sub == "killsleft" and (lastkill and ceil((UnitXPMax(P) - UnitXP(P)) / tonumber(lastkill)) or "??")
 			-- time played tags
@@ -1288,10 +1247,10 @@ if experience.enabled then
 			if conf.ExpMode == "played" then
 				GameTooltip:AddLine(TIME_PLAYED_MSG,tthead.r,tthead.g,tthead.b)
 				GameTooltip:AddLine' '
-				GameTooltip:AddDoubleLine(L"Played this session",tags("playedsession",1),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L"Played this level",tags("playedlevel",1),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_SESSION,tags("playedsession",1),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_LEVEL,tags("playedlevel",1),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				GameTooltip:AddLine' '
-				GameTooltip:AddLine(L"Account Played",ttsubh.r,ttsubh.g,ttsubh.b)				
+				GameTooltip:AddLine(L_STATS_ACC_PLAYED,ttsubh.r,ttsubh.g,ttsubh.b)				
 				local total = 0
 				for realm, t in pairs(SavedStats) do
 					for name, conf in pairs(t) do
@@ -1308,23 +1267,23 @@ if experience.enabled then
 					end
 				end				
 				GameTooltip:AddDoubleLine(" ","------------------",1,1,1,0.5,0.5,0.5)
-				GameTooltip:AddDoubleLine(L"Total",fmttime(total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_TOTAL,fmttime(total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			elseif conf.ExpMode == "xp" then
 				GameTooltip:AddDoubleLine(COMBAT_XP_GAIN,format(LEVEL_GAINED,UnitLevel(P)),tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
 				GameTooltip:AddLine' '
-				GameTooltip:AddDoubleLine(L"Current/Max XP",format("%s/%s (%s%%)",tags'curxp',tags'totalxp',tags'cur%'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L"Remaining XP",format("%s (%s%%)",tags'remainingxp',tags'remaining%'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_CURRENT_XP,format("%s/%s (%s%%)",tags'curxp',tags'totalxp',tags'cur%'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_REMAINING_XP,format("%s (%s%%)",tags'remainingxp',tags'remaining%'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				if GetXPExhaustion() and GetXPExhaustion() ~= 0 then
-					GameTooltip:AddDoubleLine(L"Rested XP",format("%s (%s%%)",tags'restxp',tags'rest%'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+					GameTooltip:AddDoubleLine(L_STATS_RESTED_XP,format("%s (%s%%)",tags'restxp',tags'rest%'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				end
 				GameTooltip:AddLine' '				
-				GameTooltip:AddDoubleLine(L"Session XP rate",format("%s/%s (%s)",tags'sessionrate',L"hr",tags'sessionttl'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L"Level XP rate",format("%s/%s (%s)",tags'levelrate',L"hr",tags'levelttl'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(format(L"Quests/Kills to %s",UnitLevel(P)+1), format("%s:%s %s:%s",L"Q",tags'questsleft',L"K",tags'killsleft'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_SESSION_XP,format("%s/%s (%s)",tags'sessionrate',L_STATS_HR,tags'sessionttl'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_XP_RATE,format("%s/%s (%s)",tags'levelrate',L_STATS_HR,tags'levelttl'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(format(L_STATS_QUESTS_TO,UnitLevel(P)+1), format("%s:%s %s:%s",L_STATS_QUEST,tags'questsleft',L_STATS_KILLS,tags'killsleft'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				GameTooltip:AddLine' '
-				GameTooltip:AddDoubleLine(L"Played this session",tags'playedsession',ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L"Played this level",tags'playedlevel',ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L"Played total",tags'playedtotal',ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_SESSION,tags'playedsession',ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_LEVEL,tags'playedlevel',ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_TOTAL,tags'playedtotal',ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			elseif conf.ExpMode == "rep" then
 				local desc, war, watched
 				for i = 1, GetNumFactions() do
@@ -1364,7 +1323,7 @@ if loot.enabled then
 		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN") end,
 		OnEvent = function(self)
 			if GetCVarBool("AutoLootDefault") then
-				self.text:SetText(format(loot.fmt,"|cff55ff55"..L"ON".."|r"))
+				self.text:SetText(format(loot.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
 			else
 				self.text:SetText(format(loot.fmt,"|cffff5555"..strupper(OFF).."|r"))
 			end
@@ -1376,7 +1335,7 @@ if loot.enabled then
 					self.text:SetText(format(loot.fmt,"|cffff5555"..strupper(OFF).."|r"))
 				else
 					SetCVar("AutoLootDefault", 1)
-					self.text:SetText(format(loot.fmt,"|cff55ff55"..L"ON".."|r"))
+					self.text:SetText(format(loot.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
 		end,
@@ -1405,7 +1364,7 @@ if helm.enabled then
 		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN") end,
 		OnEvent = function(self)
 			if ShowingHelm() then
-				self.text:SetText(format(helm.fmt,"|cff55ff55"..L"ON".."|r"))
+				self.text:SetText(format(helm.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
 			else
 				self.text:SetText(format(helm.fmt,"|cffff5555"..strupper(OFF).."|r"))
 			end
@@ -1417,7 +1376,7 @@ if helm.enabled then
 					self.text:SetText(format(helm.fmt,"|cffff5555"..strupper(OFF).."|r"))					
 				else
 					ShowHelm(1)
-					self.text:SetText(format(helm.fmt,"|cff55ff55"..L"ON".."|r"))
+					self.text:SetText(format(helm.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
 		end,
@@ -1446,7 +1405,7 @@ if cloak.enabled then
 		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN") end,
 		OnEvent = function(self)
 			if ShowingCloak() then
-				self.text:SetText(format(cloak.fmt,"|cff55ff55"..L"ON".."|r"))
+				self.text:SetText(format(cloak.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
 			else
 				self.text:SetText(format(cloak.fmt,"|cffff5555"..strupper(OFF).."|r"))
 			end
@@ -1458,7 +1417,7 @@ if cloak.enabled then
 					self.text:SetText(format(cloak.fmt,"|cffff5555"..strupper(OFF).."|r"))
 				else
 					ShowCloak(1)
-					self.text:SetText(format(cloak.fmt,"|cff55ff55"..L"ON".."|r"))
+					self.text:SetText(format(cloak.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
 		end,
@@ -1489,14 +1448,14 @@ if nameplates.enabled then
 			if GetCVarBool("spreadnameplates") then
 				self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))
 			else
-				self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L"ON".."|r"))
+				self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
 			end
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if GetCVarBool("spreadnameplates") then
 					SetCVar("spreadnameplates", 0)
-					self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L"ON".."|r"))
+					self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
 				else
 					SetCVar("spreadnameplates", 1)
 					self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))

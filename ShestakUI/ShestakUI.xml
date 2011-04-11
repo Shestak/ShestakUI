@@ -23,7 +23,7 @@
 	<Script file="Libs\LitePanels\LitePanels.lua"/>
 	<Script file="Libs\LitePanels\Layout.lua"/>
 	<Script file="Config\DataText.lua"/>
-	<Include file="Libs\LiteStats\LiteStats.xml"/>
+	<Script file="Libs\LiteStats\LiteStats.lua"/>
 	<Script file="Modules\UnitFrames\Colors.lua"/>
 	
 	<Script file="Config\Filters\Cooldowns.lua"/>

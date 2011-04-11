@@ -234,3 +234,107 @@ L_COMBATTEXT_TEST_USE_TEST = "Tapez /xct test pour activer le mode test de la fe
 L_COMBATTEXT_POPUP = "Pour sauvegardez vos modifications vous devez recharger l'interface."
 L_COMBATTEXT_UNSAVED = "Position de la fenêtre des textes de combat non saugardez, n'oubliez pas de recharger l'interface."
 L_COMBATTEXT_UNLOCKED = "Fenêtre des textes de combat déverrouillée."
+
+-- LiteStats
+L_STATS_ACC_PLAYED = "Temps de jeu total"
+L_STATS_ADDED_JUNK = "Exception de l'objet ajouté"
+L_STATS_REMOVE_EXCEPTION = "Ajouter / supprimer exception."
+L_STATS_ALT = "ALT"
+L_STATS_AUTO_REPAIR = "Réparation auto"
+L_STATS_AUTO_SELL = "Vente automatique d'objet "
+L_STATS_BANDWIDTH = "Bande passante:"
+L_STATS_DOWNLOAD = "Téléchargement:"
+L_STATS_CLEARED_JUNK = "Liste d'exceptions d'objet effacée."
+L_STATS_CLEAR_EXCEPTIONS = "Effacer la liste d'exceptions."
+L_STATS_WORLD_MAP = "Clic ouvre la carte du monde."
+L_STATS_CURRENT_XP = "Actuel/Max XP"
+L_STATS_MEMORY_USAGE = "Défaut Usage de la Mémoire UI:"
+L_STATS_GARBAGE_COLLECTED = "Déchets ramassés"
+L_STATS_CHANGE_SORTING = "(Guilde) clic-droit pour changer le tri, shift-clic droit pour inverser l'ordre."
+L_STATS_HIDDEN = "Caché"
+L_STATS_VIEW_NOTES = "touche alt pour afficher les rangs, des notes et des notes d'officer"
+L_STATS_HR = "Par heure"
+L_STATS_INF = "infini"
+L_STATS_ALREADY_EXCEPTIONS = "est déjà dans la liste d'exceptions."
+L_STATS_NOT_JUNK = "n'est pas un déchets"
+L_STATS_ITEMLINK = "élément Lien"
+L_STATS_JUNK_EXCEPTIONS = "Exceptions de camelote"
+L_STATS_JUNK_LIST = "Liste de camelote"
+L_STATS_JUNK_PROFIT = "Camelote profit"
+L_STATS_KILLS = "Tuer"
+L_STATS_OPEN_CALENDAR = "Clic-gauche ouvre le calendrier (/ cal)."
+L_STATS_OPEN_CHARACTER = "Clic-gauche ouvre l'onglet caractère."
+L_STATS_OPEN_CURRENCY = "Clic-gauche ouvre l'onglet monnaie."
+L_STATS_OPEN_TALENT = "Clic-gauche ouvre le cadre de talent."
+L_STATS_XP_RATE = "Niveau taux de votre XP"
+L_STATS_IGNORED_ITEMS = "Liste des articles pour l'instant ignoré."
+L_STATS_TOGGLE_TIME = "Local/Royaume & mode 24 heures le temps peut être changé, dans la gestion des fenêtres de temps."
+L_STATS_LOCATION = "Position/Coords"
+L_STATS_MEMORY = "Mémoire"
+L_STATS_ON = "ON"
+L_STATS_OTHER_OPTIONS = "D'autres options peut être configuré dans"
+L_STATS_PLAYED_LEVEL = "Joué à ce niveau"
+L_STATS_PLAYED_SESSION = "Joué cette session"
+L_STATS_PLAYED_TOTAL = "Joué au total"
+L_STATS_QUEST = "Quête"
+L_STATS_QUESTS_TO = "Quêtes/Tuer à %s"
+L_STATS_REMAINING_XP = "Restants XP"
+L_STATS_REMOVED_JUNK = "Exception de camelote enlevée"
+L_STATS_RESTED_XP = "Repos XP"
+L_STATS_RC_COLLECTS_GARBAGE = "Cliquez-droit sur Lua recueille les déchets."
+L_STATS_RC_TIME_MANAGER = "Clic droit pour ouvrir la fenêtre de gestion du temps."
+L_STATS_RC_EXPERIENCE = "Clic droit pour faire défiler l'expérience, le temps a joué, et la faction à observer."
+L_STATS_RC_AUTO_REPAIRING = "Clic droit permet de basculer en réparation auto."
+L_STATS_RC_AUTO_SELLING = "clic droit permet de basculer en Autovente"
+L_STATS_RC_TALENT = "Clic droit permet de basculer votre spécialisation."
+L_STATS_SERVER_GOLD = "Serveur d'or"
+L_STATS_SESSION_GAIN = "Session Gain / perte"
+L_STATS_SESSION_XP = "XP session taux"
+L_STATS_INSERTS_COORDS = "Maj-clic sur l'emplacement ou coords insère le module de vos coords au chat"
+L_STATS_EQUIPMENT_CHANGER = "Maj-clic ou clic-milieu sur le gestionnaire équipement."
+L_STATS_SORTING_BY = "Tri par"
+L_STATS_TIPS = "Conseils:"
+L_STATS_TOTAL = "Total"
+L_STATS_TOTAL_MEMORY_USAGE = "Utilisation de la mémoire totale:"
+L_STATS_NOT_TO_SELL = "Utilise/inutile pour configurer les éléments à ne pas vendre."
+L_STATS_WATCH_CURRENCY = "Consulté onglet monnaie articles se reflétera dans l'info bulle."
+L_STATS_WATCH_FACTIONS = "Superviser les factions de l'onglet de Réputation."
+L_STATS_TOOLTIP_TIME_PLAYED = "Quand au niveau max, une bulle d'aide sera affiché montrera le temps a joué est des détails pour le compte."
+L_STATS_TOOLTIP_EXPERIENCE = "Quand au-dessous du niveau max, une bulle d'aide sera affiché avec les détails d'expérience."
+
+-- Slash commands
+L_SLASHCMD_HELP = {
+	"Available slash commands:",
+	"/rl - Description is not ready.",
+	"/rc - Description is not ready.",
+	"/gm - Description is not ready.",
+	"/dis ADDON_NAME - Description is not ready.",
+	"/en ADDON_NAME - Description is not ready.",
+	"/rd - Description is not ready.",
+	"/toraid - Description is not ready.",
+	"/luaerror - Description is not ready.",
+	"/spec - Description is not ready.",
+	"/clfix - Description is not ready.",
+	"/heal - Description is not ready.",
+	"/dps - Description is not ready.",
+	"/frame - Description is not ready.",
+	"/addons solo|party|raid|pvp|trade - Description is not ready.",
+	"/farmmode - Description is not ready.",
+	"/moveui - Description is not ready.",
+	"/resetui - Description is not ready.",
+	"/resetuf - Description is not ready.",
+	"/resetconfig - Description is not ready.",
+	"/resetstats - Description is not ready.",
+	"/settings ADDON_NAME - Description is not ready.",
+	"/ls - Description is not ready.",
+	"/bags - Description is not ready.",
+	"/xct - Description is not ready.",
+	"/raidcd - Description is not ready.",
+	"/enemycd - Description is not ready.",
+	"/pulsecd - Description is not ready.",
+	"/threat - Description is not ready.",
+	"/tt - Description is not ready.",
+	"/invite - Description is not ready.",
+	"/testuf - Description is not ready.",
+	"/cfg - Description is not ready.",
+}

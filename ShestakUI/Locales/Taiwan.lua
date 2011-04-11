@@ -234,3 +234,107 @@ L_COMBATTEXT_TEST_USE_TEST = "輸入 /xct test 來啟用或禁用戰鬥信息測
 L_COMBATTEXT_POPUP = "要保存戰鬥信息窗口的位置你需要重新載入插件."
 L_COMBATTEXT_UNSAVED = "戰鬥信息窗口位置尚未保存,不要忘記重新載入插件."
 L_COMBATTEXT_UNLOCKED = "戰鬥信息已解鎖."
+
+-- LiteStats
+L_STATS_ACC_PLAYED = "帳號啟用總時間"
+L_STATS_ADDED_JUNK = "增加自動販售例外名單"
+L_STATS_REMOVE_EXCEPTION = "新增/移除 例外名單"
+L_STATS_ALT = "ALT鍵"
+L_STATS_AUTO_REPAIR = "自動修裝"
+L_STATS_AUTO_SELL = "自動販售灰色物品"
+L_STATS_BANDWIDTH = "寬頻:"
+L_STATS_DOWNLOAD = "下載:"
+L_STATS_CLEARED_JUNK = "清除自動販售例外名單列表"
+L_STATS_CLEAR_EXCEPTIONS = "清除例外名單列表"
+L_STATS_WORLD_MAP = "點擊開啟世界地圖"
+L_STATS_CURRENT_XP = "目前/升級所需 經驗值"
+L_STATS_MEMORY_USAGE = "内建插件資源耗用:"
+L_STATS_GARBAGE_COLLECTED = "垃圾資源清除"
+L_STATS_CHANGE_SORTING = "(公會)右鍵更改排列方式,SHIFT+右鍵反轉排列方式"
+L_STATS_HIDDEN = "隱藏"
+L_STATS_VIEW_NOTES = "按住ALT鍵檢視公會成員階級.註記.幹部註記"
+L_STATS_HR = "小时"
+L_STATS_INF = "无限"
+L_STATS_ALREADY_EXCEPTIONS = "物品已在例外名單列表"
+L_STATS_NOT_JUNK = "非自動販售物品"
+L_STATS_ITEMLINK = "物品鏈結"
+L_STATS_JUNK_EXCEPTIONS = "自動販售例外名單"
+L_STATS_JUNK_LIST = "自動販售列表"
+L_STATS_JUNK_PROFIT = "自動販售所得金額"
+L_STATS_KILLS = "K"
+L_STATS_OPEN_CALENDAR = "左鍵開啟行事曆"
+L_STATS_OPEN_CHARACTER = "左鍵開啟人物欄"
+L_STATS_OPEN_CURRENCY = "左鍵開啟貨幣欄"
+L_STATS_OPEN_TALENT = "左鍵開啟天賦視窗"
+L_STATS_XP_RATE = "當前等級經驗值趴數"
+L_STATS_IGNORED_ITEMS = "列出目前忽略物品"
+L_STATS_TOGGLE_TIME = "當地/伺服器 及24小時制可顯示於時間管理器"
+L_STATS_LOCATION = "位置/座標"
+L_STATS_MEMORY = "記憶體"
+L_STATS_ON = "啟用"
+L_STATS_OTHER_OPTIONS = "其它選項可能配置在 %s"
+L_STATS_PLAYED_LEVEL = "當前等級總上線時間"
+L_STATS_PLAYED_SESSION = "此次上線時段耗費時間"
+L_STATS_PLAYED_TOTAL = "總上線時間"
+L_STATS_QUEST = "任務"
+L_STATS_QUESTS_TO = "任務/殺怪 得到經驗值 %s"
+L_STATS_REMAINING_XP = "升級尚需經驗值"
+L_STATS_REMOVED_JUNK = "移除自動販售例外名單"
+L_STATS_RESTED_XP = "休息獎勵經驗值"
+L_STATS_RC_COLLECTS_GARBAGE = "右鍵點擊清除插件垃圾資源"
+L_STATS_RC_TIME_MANAGER = "右鍵開啟時間管理器"
+L_STATS_RC_EXPERIENCE = "右鍵切換顯示經驗值.上線時間.角色資訊"
+L_STATS_RC_AUTO_REPAIRING = "右鍵顯示自動修裝"
+L_STATS_RC_AUTO_SELLING = "右鍵開啟自動販售"
+L_STATS_RC_TALENT = "右鍵切換天賦"
+L_STATS_SERVER_GOLD = "帳號總現金"
+L_STATS_SESSION_GAIN = "此次上線時段 所得/損失 現金"
+L_STATS_SESSION_XP = "此次上線時段所得經驗值"
+L_STATS_INSERTS_COORDS = "SHIFT+點擊 地名或座標可在對話視窗發佈你所在座標"
+L_STATS_EQUIPMENT_CHANGER = "左鍵或中鍵開啟裝備管理員"
+L_STATS_SORTING_BY = "依...排列"
+L_STATS_TIPS = "提示:"
+L_STATS_TOTAL = "總計"
+L_STATS_TOTAL_MEMORY_USAGE = "全部資源耗用:"
+L_STATS_NOT_TO_SELL = "輸入/junk設定自動販售例外名單"
+L_STATS_WATCH_CURRENCY = "從tooltip中顯示貨幣"
+L_STATS_WATCH_FACTIONS = "從角色人物介面觀看資訊"
+L_STATS_TOOLTIP_TIME_PLAYED = "達到最高等級後,提示將顯示角色上線時間紀錄"
+L_STATS_TOOLTIP_EXPERIENCE = "未達最高等級時,提示將顯示經驗值訊息"
+
+-- Slash commands
+L_SLASHCMD_HELP = {
+	"Available slash commands:",
+	"/rl - Description is not ready.",
+	"/rc - Description is not ready.",
+	"/gm - Description is not ready.",
+	"/dis ADDON_NAME - Description is not ready.",
+	"/en ADDON_NAME - Description is not ready.",
+	"/rd - Description is not ready.",
+	"/toraid - Description is not ready.",
+	"/luaerror - Description is not ready.",
+	"/spec - Description is not ready.",
+	"/clfix - Description is not ready.",
+	"/heal - Description is not ready.",
+	"/dps - Description is not ready.",
+	"/frame - Description is not ready.",
+	"/addons solo|party|raid|pvp|trade - Description is not ready.",
+	"/farmmode - Description is not ready.",
+	"/moveui - Description is not ready.",
+	"/resetui - Description is not ready.",
+	"/resetuf - Description is not ready.",
+	"/resetconfig - Description is not ready.",
+	"/resetstats - Description is not ready.",
+	"/settings ADDON_NAME - Description is not ready.",
+	"/ls - Description is not ready.",
+	"/bags - Description is not ready.",
+	"/xct - Description is not ready.",
+	"/raidcd - Description is not ready.",
+	"/enemycd - Description is not ready.",
+	"/pulsecd - Description is not ready.",
+	"/threat - Description is not ready.",
+	"/tt - Description is not ready.",
+	"/invite - Description is not ready.",
+	"/testuf - Description is not ready.",
+	"/cfg - Description is not ready.",
+}
