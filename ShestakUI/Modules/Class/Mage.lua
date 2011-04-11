@@ -34,7 +34,7 @@ local r = CreateFrame("Frame", nil, f)
 r:CreatePanel("Transparent", C.minimap.size, 20, "BOTTOMLEFT", f, "BOTTOMLEFT", 0, 0)
 r:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 
-local l = r:CreateFontString("TeleportMenuReagentText", "OVERLAY", nil)
+local l = r:CreateFontString("TeleportMenuReagentText", "OVERLAY")
 l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 l:SetPoint("CENTER", r, "CENTER")
 
@@ -46,7 +46,7 @@ for i, spell in pairs(spells) do
 	b:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 	b:SetFrameStrata("HIGH")
  
-	local l = b:CreateFontString(nil, "OVERLAY", nil)
+	local l = b:CreateFontString(nil, "OVERLAY")
 	l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	l:SetText(string.sub(teleport, string.find(teleport,":") + 1))
 	b:SetFontString(l)

@@ -12,7 +12,7 @@ AchievementAnchor:SetBackdropBorderColor(1, 0, 0)
 AchievementAnchor:SetClampedToScreen(true)
 AchievementAnchor:SetMovable(true)
 AchievementAnchor:SetAlpha(0)
-AchievementAnchor.text = AchievementAnchor:CreateFontString("AchievementAnchorText", "OVERLAY", nil)
+AchievementAnchor.text = AchievementAnchor:CreateFontString("AchievementAnchorText", "OVERLAY")
 AchievementAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 AchievementAnchor.text:SetPoint("CENTER")
 AchievementAnchor.text:SetText("Achievements Anchor")
@@ -29,17 +29,17 @@ function T.AchievementMove(self, event, ...)
 				if previousFrame and previousFrame:IsShown() then
 					aFrame:SetPoint("TOP", previousFrame, "BOTTOM", 0, -10)
 				else
-					aFrame:SetPoint("TOP", AchievementAnchor, "BOTTOM")
+					aFrame:SetPoint("TOP", AchievementAnchor, "TOP")
 				end
 			else
 				if previousFrame and previousFrame:IsShown() then
 					aFrame:SetPoint("BOTTOM", previousFrame, "TOP", 0, 10)
 				else
-					aFrame:SetPoint("BOTTOM", AchievementAnchor, "TOP")	
-				end			
+					aFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+				end
 			end
 			previousFrame = aFrame
-		end		
+		end
 	end
 end
 hooksecurefunc("AchievementAlertFrame_FixAnchors", T.AchievementMove)
@@ -57,7 +57,7 @@ hooksecurefunc("DungeonCompletionAlertFrame_FixAnchors", function()
 			return
 		end
 		
-		DungeonCompletionAlertFrame1:ClearAllPoints()	
+		DungeonCompletionAlertFrame1:ClearAllPoints()
 		if pos == "TOP" then
 			DungeonCompletionAlertFrame1:SetPoint("TOP", AchievementAnchor, "BOTTOM")
 		else
@@ -66,15 +66,25 @@ hooksecurefunc("DungeonCompletionAlertFrame_FixAnchors", function()
 	end
 end)
 
+local initialize = false
 function T.PostAchievementMove(frame)
 	local point = select(1, frame:GetPoint())
+
+	if ( not AchievementFrame ) and initialize == true then
+		AchievementFrame_LoadUI()
+	end
 
 	if string.find(point, "TOP") or point == "CENTER" or point == "LEFT" or point == "RIGHT" then
 		pos = "TOP"
 	else
 		pos = "BOTTOM"
 	end
+	
+	if initialize == true then
+		AchievementAlertFrame_ShowAlert(50)
+	end
 	T.AchievementMove()
+	initialize = true
 end
 
 local frame = CreateFrame("Frame")

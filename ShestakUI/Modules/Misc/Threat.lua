@@ -18,7 +18,7 @@ ThreatMeterAnchor:SetBackdropColor(0, 0, 0, 0)
 ThreatMeterAnchor:SetBackdropBorderColor(0, 0, 0, 0)
 ThreatMeterAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
 ThreatMeterAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)
-ThreatMeterAnchor.text = ThreatMeterAnchor:CreateFontString("ThreatMeterAnchorText", "OVERLAY", nil)
+ThreatMeterAnchor.text = ThreatMeterAnchor:CreateFontString("ThreatMeterAnchorText", "OVERLAY")
 ThreatMeterAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 ThreatMeterAnchor.text:SetPoint("CENTER")
 ThreatMeterAnchor.text:SetText("ThreatMeter Anchor")
@@ -33,7 +33,7 @@ local targeted = false
 RAID_CLASS_COLORS["PET"] = {r = 0, g = 0.7, b = 0,}
 
 local CreateFS = function(frame, fsize, fstyle)
-	local fstring = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
+	local fstring = frame:CreateFontString(nil, "OVERLAY")
 	fstring:SetFont(C.font.threat_meter_font, C.font.threat_meter_font_size, C.font.threat_meter_font_style)
 	fstring:SetShadowOffset(C.font.threat_meter_font_shadow and 1 or 0, C.font.threat_meter_font_shadow and -1 or 0)
 	return fstring

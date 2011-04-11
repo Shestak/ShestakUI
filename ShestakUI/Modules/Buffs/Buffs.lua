@@ -28,7 +28,7 @@ BuffsAnchor:SetBackdropColor(0, 0, 0, 0)
 BuffsAnchor:SetBackdropBorderColor(0, 0, 0, 0)
 BuffsAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
 BuffsAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)
-BuffsAnchor.text = BuffsAnchor:CreateFontString("BuffsAnchorText", "OVERLAY", nil)
+BuffsAnchor.text = BuffsAnchor:CreateFontString("BuffsAnchorText", "OVERLAY")
 BuffsAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 BuffsAnchor.text:SetPoint("CENTER")
 	

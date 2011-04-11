@@ -25,7 +25,7 @@ for i, spell in pairs(spells) do
 	b:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 	b:SetFrameStrata("HIGH")
  
-	local l = b:CreateFontString(nil, "OVERLAY", nil)
+	local l = b:CreateFontString(nil, "OVERLAY")
 	l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	l:SetText(seal)
 	b:SetFontString(l)

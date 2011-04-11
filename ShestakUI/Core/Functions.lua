@@ -1074,10 +1074,9 @@ T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, 
 end
 
 T.FixWorgenPortrait = function(self, unit)
-	if select(2, UnitRace(unit)) ~= "Worgen" then return end
-	if UnitSex(unit) ~= 2 then return end
-	self:SetCamera(0)
-	self:SetPortraitZoom(0.999)
+	if self:GetModel() and self:GetModel().find and self:GetModel():find("worgenmale") then
+		self:SetCamera(1)
+	end
 end
 
 T.UpdateThreat = function(self, event, unit)

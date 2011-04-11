@@ -241,7 +241,7 @@ local function styleflyout(self)
 		arrowDistance = 2
 	end
 	
-	if self:GetParent():GetParent():GetName() == "SpellBookSpellIconsFrame" then return end
+	if self:GetParent() and self:GetParent():GetParent() and self:GetParent():GetParent():GetName() == "SpellBookSpellIconsFrame" then return end
 	
 	if self:GetAttribute("flyoutDirection") ~= nil then
 		local point, _, _, _, _ = self:GetParent():GetParent():GetPoint()
