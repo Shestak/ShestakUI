@@ -43,11 +43,9 @@
 	<Script file="Core\WTF.lua"/>
 	<Script file="Core\Temp.lua"/>
 
-	<Script file="Modules\Blizzard\WatchFrame.lua"/>
 	<Script file="Modules\Blizzard\Vehicle.lua"/>
 	<Script file="Modules\Blizzard\CaptureBar.lua"/>
 	<Script file="Modules\Blizzard\MirrorBars.lua"/>
-	<Script file="Modules\Blizzard\Quests.lua"/>
 	<Script file="Modules\Blizzard\Symbols.lua"/>
 	<Script file="Modules\Blizzard\Errors.lua"/>
 	<Script file="Modules\Blizzard\Achievements.lua"/>
@@ -59,6 +57,11 @@
 	<Script file="Modules\Blizzard\Fonts.lua"/>
 	<Script file="Modules\Blizzard\Bags.lua"/>
 	<Script file="Modules\Blizzard\Nameplates.lua"/>
+
+	<Script file="Modules\Quests\AutoAccept.lua"/>
+	<Script file="Modules\Quests\QuestLevel.lua"/>
+	<Script file="Modules\Quests\WatchFrame.lua"/>
+	<Script file="Modules\Quests\WowheadLink.lua"/>
 
 	<Script file="Modules\Maps\BattlefieldMap.lua"/>
 	<Script file="Modules\Maps\MiniMap.lua"/>
