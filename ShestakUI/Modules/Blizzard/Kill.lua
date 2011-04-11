@@ -8,7 +8,7 @@ Kill:RegisterEvent("ADDON_LOADED")
 Kill:RegisterEvent("PLAYER_LOGIN")
 Kill:SetScript("OnEvent", function(self, event, addon)
 	if event == "PLAYER_LOGIN" then
-		if IsAddOnLoaded("ShestakUI_DPS") or IsAddOnLoaded("ShestakUI_Heal") then
+		if C.unitframe.enable and (IsAddOnLoaded("ShestakUI_DPS") or IsAddOnLoaded("ShestakUI_Heal")) then
 			InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
 			InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
 			SetCVar("useCompactPartyFrames", 0)
@@ -26,9 +26,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		
 		Advanced_UseUIScale:Kill()
 		Advanced_UIScaleSlider:Kill()
-		PartyMemberBackground:Kill()
 		TutorialFrameAlertButton:Kill()
-		InterfaceOptionsUnitFramePanelPartyBackground:Kill()
 		
 		if C.chat.enable then
 			SetCVar("WholeChatWindowClickable", 0)
@@ -50,13 +48,15 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 			InterfaceOptionsBuffsPanelCastableBuffs:Kill()
 			InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
 			InterfaceOptionsBuffsPanelBuffDurations:Kill()
-		end
-		
-		if C.unitframe.show_arena then
-			SetCVar("showArenaEnemyFrames", 0)
-			InterfaceOptionsUnitFramePanelArenaEnemyFrames:Kill()
-			InterfaceOptionsUnitFramePanelArenaEnemyCastBar:Kill()
-			InterfaceOptionsUnitFramePanelArenaEnemyPets:Kill()
+			InterfaceOptionsUnitFramePanelPartyBackground:Kill()
+			PartyMemberBackground:Kill()
+
+			if C.unitframe.show_arena then
+				SetCVar("showArenaEnemyFrames", 0)
+				InterfaceOptionsUnitFramePanelArenaEnemyFrames:Kill()
+				InterfaceOptionsUnitFramePanelArenaEnemyCastBar:Kill()
+				InterfaceOptionsUnitFramePanelArenaEnemyPets:Kill()
+			end
 		end
 		
 		if C.actionbar.enable then

@@ -873,7 +873,6 @@ if friends.enabled then
 				GameTooltip:SetPoint(modules.Friends.tip_anchor, modules.Friends.tip_frame, modules.Friends.tip_x, modules.Friends.tip_y)
 				GameTooltip:ClearLines()
 				GameTooltip:AddDoubleLine(FRIENDS_LIST, format("%s: %s/%s",GUILD_ONLINE_LABEL,totalonline,totalfriends),tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
-				GameTooltip:AddLine' '
 				if online > 0 then
 					GameTooltip:AddLine' '
 					GameTooltip:AddLine(CHARACTER_FRIEND)

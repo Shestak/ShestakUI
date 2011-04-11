@@ -232,32 +232,6 @@ local function styleflyout(self)
 			break
 		end
 	end
-	
-	-- Change arrow direction depending on what bar the button is on
-	local arrowDistance
-	if ((SpellFlyout and SpellFlyout:IsShown() and SpellFlyout:GetParent() == self) or GetMouseFocus() == self) then
-		arrowDistance = 5
-	else
-		arrowDistance = 2
-	end
-	
-	if self:GetParent() and self:GetParent():GetParent() and self:GetParent():GetParent():GetName() == "SpellBookSpellIconsFrame" then return end
-	
-	if self:GetAttribute("flyoutDirection") ~= nil then
-		local point, _, _, _, _ = self:GetParent():GetParent():GetPoint()
-		
-		if strfind(point, "BOTTOM") then
-			self.FlyoutArrow:ClearAllPoints()
-			self.FlyoutArrow:Point("TOP", self, "TOP", 0, arrowDistance)
-			SetClampedTextureRotation(self.FlyoutArrow, 0)
-			if not InCombatLockdown() then self:SetAttribute("flyoutDirection", "UP") end
-		else
-			self.FlyoutArrow:ClearAllPoints()
-			self.FlyoutArrow:Point("LEFT", self, "LEFT", -arrowDistance, 0)
-			SetClampedTextureRotation(self.FlyoutArrow, 270)
-			if not InCombatLockdown() then self:SetAttribute("flyoutDirection", "LEFT") end
-		end
-	end
 end
 
 do
@@ -377,7 +351,7 @@ local function StyleTotemOpenButton(button, parent)
 	if not button.visibleBut then
 		button.visibleBut = CreateFrame("Frame", nil, button)
 		button.visibleBut:Height(T.buttonspacing * 4)
-		button.visibleBut:Width(button:GetWidth())
+		button.visibleBut:Width(button:GetWidth() - T.buttonspacing)
 		button.visibleBut:SetPoint("CENTER")
 		button.visibleBut.highlight = button.visibleBut:CreateTexture(nil, "HIGHLIGHT")
 		button.visibleBut.highlight:SetTexture([[Interface\Buttons\ButtonHilight-Square]])
@@ -427,8 +401,6 @@ local function StyleTotemActionButton(button, index)
 	hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 	hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 	hotkey:Width(T.buttonsize - 1)
-	--hotkey.ClearAllPoints = T.dummy
-	--hotkey.SetPoint = T.dummy
  
 	if not C.actionbar.hotkey == true then
 		hotkey:SetText("")
@@ -471,8 +443,6 @@ local function StyleTotemSpellButton(button, index)
 	hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 	hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 	hotkey:Width(T.buttonsize - 1)
-	--hotkey.ClearAllPoints = T.dummy
-	--hotkey.SetPoint = T.dummy
  
 	if not C.actionbar.hotkey == true then
 		hotkey:SetText("")
