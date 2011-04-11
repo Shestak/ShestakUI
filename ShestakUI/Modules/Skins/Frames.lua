@@ -109,6 +109,12 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ChatConfigBackgroundFrame",
 			"ChatConfigChatSettingsClassColorLegend",
 			"ChatConfigChatSettingsLeft",
+			"ChatConfigChannelSettingsLeft",
+			"ChatConfigChannelSettingsClassColorLegend",
+			"ChatConfigOtherSettingsCombat",
+			"ChatConfigOtherSettingsSystem",
+			"ChatConfigOtherSettingsCreature",
+			"ChatConfigOtherSettingsPVP",
 		}
 		
 		for i = 1, getn(insetskins) do
@@ -239,7 +245,10 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"RoleCheckButton",
 			"ReadyCheckButton",
 			"ShowButton",
-			"CloseButton"
+			"CloseButton",
+			"InterfaceOptionsHelpPanelResetTutorials",
+			"InterfaceOptionsUnitFramePanelResetPartyPosition",
+			"InterfaceOptionsRaidFramePanelResetPosition",
 		}
 		
 		for i = 1, getn(BlizzardButtons) do
