@@ -138,13 +138,15 @@ local threatUpdate = function(self, elapsed)
 		
 		self.healthBar:ClearAllPoints()
 		self.healthBar:SetPoint("CENTER", self.healthBar:GetParent(), 0, 10)
-		self.healthBar:SetHeight(C.nameplate.height * offset)
-		self.healthBar:SetWidth(C.nameplate.width * offset)
 		
 		if CheckTarget(self) then
 			self.name:SetTextColor(1, 1, 0)
+			self.healthBar:SetHeight((C.nameplate.height + C.nameplate.ad_height) * offset)
+			self.healthBar:SetWidth((C.nameplate.width + C.nameplate.ad_width) * offset)
 		else
 			self.name:SetTextColor(1, 1, 1)
+			self.healthBar:SetHeight(C.nameplate.height * offset)
+			self.healthBar:SetWidth(C.nameplate.width * offset)
 		end
 		self.elapsed = 0
 	end
