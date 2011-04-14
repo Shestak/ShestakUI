@@ -8,7 +8,8 @@ if C.misc.quest_auto_button ~= true then return end
 ----------------------------------------------------------------------------------------
 T.ABItems = {
 	39213,	-- Massive Seaforium Charge (Strand of the Ancients)
-	46847,	-- Huge Seaforium Bombs (Isle of Conquest)
+	46847,	-- Seaforium Bombs (Isle of Conquest)
+	47030,	-- Huge Seaforium Bombs (Isle of Conquest)
 	42986,	-- The RP-GG (Wintergrasp)
 	37860,	-- Ruby Drake (Occulus)
 	37815,	-- Emerald Drake (Occulus)
