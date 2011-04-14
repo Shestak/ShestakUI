@@ -677,6 +677,8 @@ Filger_Spells = {
 			{ spellID = 12292, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Recklesness
 			{ spellID = 1719, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Inner Rage
+			{ spellID = 1134, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -755,6 +757,8 @@ Filger_Spells = {
 			{ spellID = 355, size = 30, filter = "CD" },
 			-- Berserker Rage
 			{ spellID = 18499, size = 30, filter = "CD" },
+			-- Inner Rage
+			{ spellID = 1134, size = 30, filter = "CD" },
 			
 			-- Other
 			-- Gloves
