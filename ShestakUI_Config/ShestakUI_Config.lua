@@ -211,6 +211,8 @@ local function Local(o)
 	if o == "UIConfignameplateenable" then o = L_GUI_NAMEPLATE_ENABLE end
 	if o == "UIConfignameplateheight" then o = L_GUI_NAMEPLATE_HEIGHT end
 	if o == "UIConfignameplatewidth" then o = L_GUI_NAMEPLATE_WIDTH end
+	if o == "UIConfignameplatead_height" then o = L_GUI_NAMEPLATE_AD_HEIGHT end
+	if o == "UIConfignameplatead_width" then o = L_GUI_NAMEPLATE_AD_WIDTH end
 	if o == "UIConfignameplatecombat" then o = L_GUI_NAMEPLATE_COMBAT end
 	if o == "UIConfignameplatehealth_value" then o = L_GUI_NAMEPLATE_HEALTH end
 	if o == "UIConfignameplateshow_castbar" then o = L_GUI_NAMEPLATE_CASTBAR end
