@@ -39,7 +39,6 @@ if T.name == "Добрыйдоктор" then
 	C["stats"].guild_repair = false
 elseif T.name == "Бэкстер" or T.name == "Варбой" then
 	C["general"].welcome_message = false
-	C["misc"].raid_tools = true
 	C["misc"].invite_keyword = "inv"
 	C["combattext"].killingblow = true
 	C["pulsecooldown"].enable = true
@@ -65,6 +64,38 @@ elseif T.name == "Бэкстер" or T.name == "Варбой" then
 	C["addon"].raid = {"BigWigs", "Skada", "Boss_shieldsmonitor", "PhoenixStyle", "RaidAchievement", "Fatality", "RaidSlackCheck"}
 	C["position"].threat_meter = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 380, 18}
 	C["position"].unitframes.tank = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 68}
+elseif T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.name == "Пратифный" or T.name == "Рукалицо"
+	or T.name == "Трольпаладин" or T.name == "Чаккерс" or T.name == "Релика" or T.name == "Тинейд" then
+	C["media"].texture = "Interface\\AddOns\\Media_texture\\TextureTuk.tga"
+	C["general"].welcome_message = false
+	C["general"].custom_lagtolerance = true
+	C["misc"].auto_quest = true
+	C["misc"].shift_marking = false
+	C["misc"].raid_tools = false
+	C["misc"].ach_screens = true
+	C["combattext"].crit_prefix = ""
+	C["combattext"].crit_postfix = ""
+	C["combattext"].merge_aoe_spam_time = 1
+	C["raidcooldown"].enable = false
+	C["tooltip"].item_icon = true
+	C["tooltip"].title = true
+	C["tooltip"].raid_icon = true
+	C["tooltip"].who_targetting = true
+	C["tooltip"].hide_combat = true
+	C["chat"].combatlog = false
+	C["loot"].auto_greed = true
+	C["nameplate"].combat = true
+	C["nameplate"].name_abbrev = false
+	C["actionbar"].show_grid = false
+	C["actionbar"].petbar_mouseover = true
+	C["unitframe"].castbar_latency = false
+	C["unitframe"].enemy_health_color = false
+	C["raidframe"].icons_lfd_role = true
+	C["raidframe"].plugins_healcomm = false
+	C["threat"].enable = false
+	if T.name == "Трольпаладин" or T.name == "Рукалицо"	or T.name == "Чаккерс" then
+		C["actionbar"].bottombars = 3
+	end
 end
 
 ----------------------------------------------------------------------------------------
