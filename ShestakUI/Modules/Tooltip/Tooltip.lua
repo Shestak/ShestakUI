@@ -139,7 +139,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 	else
 		if C.tooltip.cursor == true then
 			hooksecurefunc("GameTooltip_SetDefaultAnchor", function(GameTooltip, parent)
-				if InCombatLockdown() and C.tooltip.hide_combat then
+				if InCombatLockdown() and C.tooltip.hide_combat and not IsShiftKeyDown() then
 					GameTooltip:Hide()
 				else
 					GameTooltip:SetOwner(parent,"ANCHOR_CURSOR")
@@ -147,7 +147,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			end)
 		else
 			hooksecurefunc("GameTooltip_SetDefaultAnchor", function(self)
-				if InCombatLockdown() and C.tooltip.hide_combat then
+				if InCombatLockdown() and C.tooltip.hide_combat and not IsShiftKeyDown() then
 					GameTooltip:Hide()
 				else
 					self:Point("BOTTOMRIGHT", TooltipAnchor, "BOTTOMRIGHT", 0, 0)
