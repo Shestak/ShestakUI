@@ -759,6 +759,8 @@ Filger_Spells = {
 			{ spellID = 18499, size = 30, filter = "CD" },
 			-- Inner Rage
 			{ spellID = 1134, size = 30, filter = "CD" },
+			-- Heroic Leap
+			{ spellID = 6544, size = 30, filter = "CD" },
 			
 			-- Other
 			-- Gloves

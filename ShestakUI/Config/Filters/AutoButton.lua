@@ -16,6 +16,7 @@ T.ABItems = {
 	37859,	-- Amber Essence (Occulus)
 	46029,	-- Mimiron's Core (Ulduar)
 	38689,	-- Chicken Net (Quest)
+	63351,	-- Tahret Dynasty Mallet (Quest)
 }
 
 T.ABEquipedItems = {
