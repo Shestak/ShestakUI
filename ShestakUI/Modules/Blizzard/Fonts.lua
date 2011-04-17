@@ -3,8 +3,6 @@
 ----------------------------------------------------------------------------------------
 --	Based on tekticles
 ----------------------------------------------------------------------------------------
-local UIFonts = CreateFrame("Frame", nil, UIParent)
-
 local SetFont = function(obj, font, size, style, r, g, b, sr, sg, sb, sox, soy)
 	obj:SetFont(font, size, style)
 	if sr and sg and sb then obj:SetShadowColor(sr, sg, sb) end
@@ -13,6 +11,7 @@ local SetFont = function(obj, font, size, style, r, g, b, sr, sg, sb, sox, soy)
 	elseif r then obj:SetAlpha(r) end
 end
 
+local UIFonts = CreateFrame("Frame", nil, UIParent)
 UIFonts:RegisterEvent("ADDON_LOADED")
 UIFonts:SetScript("OnEvent", function(self, event, addon)
 	if addon ~= "ShestakUI" or addon == "tekticles" then return end
@@ -83,9 +82,4 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	SetFont(ErrorFont, NORMAL, 16, nil, 60)
 	SetFont(QuestFontNormalSmall, NORMAL, 13, nil, nil, nil, nil, 0.54, 0.4, 0.1)
 	SetFont(WorldMapTextFont, NORMAL, 31, "THICKOUTLINE", 40, nil, nil, 0, 0, 0, 1, -1)
-
-	SetFont = nil
-	self:SetScript("OnEvent", nil)
-	self:UnregisterAllEvents()
-	self = nil
 end)
