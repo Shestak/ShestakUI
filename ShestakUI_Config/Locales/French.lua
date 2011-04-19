@@ -4,11 +4,11 @@
 --	Localization for frFR client(Thanks to Cranan for the translation)
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Réinitialisation totale de l'UI"
-L_GUI_SET_SAVED_SETTTINGS = "Set settings Per-Character" -- Needs review
-L_GUI_RESET_CHAR = "Are you sure you want to reset your character's settings for ShestakUI?" -- Needs review
-L_GUI_RESET_ALL = "Are you sure you want to reset all settings for ShestakUI" -- Needs review
-L_GUI_PER_CHAR = "Are you sure you want to change to or from 'Per Char Settings'?" -- Needs review
-L_GUI_MAKE_SELECTION = "You must make a selection before you can continue to config." -- Needs review
+L_GUI_SET_SAVED_SETTTINGS = "Sauvegarder la configuration par personnage"
+L_GUI_RESET_CHAR = "Réinitialiser les paramètres de votre personnage sur ShestakUI ?"
+L_GUI_RESET_ALL = "Réinitialiser tous les paramètres de ShestakUI ?"
+L_GUI_PER_CHAR = "Modifier la configuration du personnage ?"
+L_GUI_MAKE_SELECTION = "Choisir une configuration avant de continuer."
 
 -- General options
 L_GUI_GENERAL_AUTOSCALE = "Mise а l'échelle automatique"
@@ -26,10 +26,10 @@ L_GUI_MISC_MARKING = "Marque la cible quand vous appuyez sur MAJ"
 L_GUI_MISC_INVKEYWORD = "Mot clé pour inviter (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Faire tourner la caméra quand absent"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Fenêtre de véhicule en mouseover"
-L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button" -- Needs review
+L_GUI_MISC_QUEST_AUTOBUTTON = "Accepte les quêtes automatiquement"
 L_GUI_MISC_RAID_TOOLS = "Outils de raid"
-L_GUI_MISC_ANNOUNCE_INTERRUPT = "Announce in party/raid when you interrupt" -- Needs review
-L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement" -- Needs review
+L_GUI_MISC_ANNOUNCE_INTERRUPT = "Annonce /gr, /raid si vous interronpez un sort"
+L_GUI_MISC_ACH_SCREENS = "Prend un screenshot quand un evenement est accomplie"
 
 -- Skins options
 L_GUI_SKINS = "Personalisation d'addon"
@@ -62,8 +62,8 @@ L_GUI_COMBATTEXT_DK_RUNES = "Afficher le recgargement des runes du chevalier de 
 L_GUI_COMBATTEXT_KILLINGBLOW = "Afficher les coups fataux"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Rassembler tous les dégats d'un aoe en un seul message"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Temps en seconde durant lequel les dégats d'aoe seront fusionnés en un seul message"
-L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels" -- Needs review
-L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts" -- Needs review
+L_GUI_COMBATTEXT_DISPEL = "Informe si vous ete dispel"
+L_GUI_COMBATTEXT_INTERRUPT = "Informe si vous ete interrompu"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Contrôle des buffs"
@@ -76,7 +76,7 @@ L_GUI_REMINDER_RAID_SIZE = "Taille de l'icone pour les buffs de raid"
 L_GUI_REMINDER_RAID_ALPHA = "Icone transparente quand le buff de raid est présent"
 
 -- Raid cooldowns options
-L_GUI_COOLDOWN_RAID = "Raid cooldowns" -- Needs review
+L_GUI_COOLDOWN_RAID = "Temps de recharge du raid"
 L_GUI_COOLDOWN_RAID_ENABLE = "Activer les CD de raid"
 L_GUI_COOLDOWN_RAID_HEIGHT = "Hauteur de la barre des CD de raid"
 L_GUI_COOLDOWN_RAID_WIDTH = "Largeur de la barre des CD de raid (+28 si l'icone est activй)"
@@ -87,21 +87,21 @@ L_GUI_COOLDOWN_RAID_IN_PARTY = "Voir les CD alliés en groupe"
 L_GUI_COOLDOWN_RAID_IN_ARENA = "Voir les CD alliés en arène"
 
 -- Enemy cooldowns options
-L_GUI_COOLDOWN_ENEMY = "Enemy cooldowns" -- Needs review
+L_GUI_COOLDOWN_ENEMY = "Temps de recharge des ennemis"
 L_GUI_COOLDOWN_ENEMY_ENABLE = "Activier les CD ennemis"
 L_GUI_COOLDOWN_ENEMY_SIZE = "Taille de l'icone des CD ennemis"
-L_GUI_COOLDOWN_ENEMY_DIRECTION = "Enemy cooldowns icon direction (RIGHT|LEFT|UP|DOWN)" -- Needs review
+L_GUI_COOLDOWN_ENEMY_DIRECTION = "Icone directionnelle du temps de recharge ennemis (RIGHT|LEFT|UP|DOWN)"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Voir les CD ennemis partout"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "Voir les CD ennemis dans les champs de bataille"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Voir les CD ennemis en arène"
 
 -- Pulse cooldowns options
-L_GUI_COOLDOWN_PULSE = "Pulse cooldowns" -- Needs review
+L_GUI_COOLDOWN_PULSE = "Temps de recharge de Pulse"
 L_GUI_COOLDOWN_PULSE_ENABLE = "Afficher cooldowns pulse"
 L_GUI_COOLDOWN_PULSE_SIZE = "Taille des icones de cooldowns pulse"
-L_GUI_COOLDOWN_PULSE_SOUND = "Warning sound notification" -- Needs review
-L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Animation scaling" -- Needs review
-L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Max opacity hold time" -- Needs review
+L_GUI_COOLDOWN_PULSE_SOUND = "Avertissement des modifications"
+L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Mise à niveau des animations"
+L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Max opacity hold time"
 
 -- Threat options
 L_GUI_THREAT = "Barre de menace"
@@ -133,8 +133,8 @@ L_GUI_TOOLTIP_WHO_TARGETTING = "Display who is targetting the unit that is in yo
 L_GUI_CHAT_ENABLE = "Activer le chat"
 L_GUI_CHAT_BACKGROUND = "Activer l'arrière plan du chat"
 L_GUI_CHAT_BACKGROUND_ALPHA = "Transparence de l'arrière plan du chat"
-L_GUI_CHAT_SPAM = "Removing some systems spam(*Player1* won duel *Player2*)"  -- Needs review
-L_GUI_CHAT_GOLD = "Removing some players spam"  -- Needs review
+L_GUI_CHAT_SPAM = "Supprime certain spam(Player1 gagme contre Player2)"
+L_GUI_CHAT_GOLD = "Supprime tous les spams joueur"
 L_GUI_CHAT_WIDTH = "Largeur du chat"
 L_GUI_CHAT_HEIGHT = "Hauteur du chat"
 L_GUI_CHAT_BAR = "Bouton pour changer de canal"
@@ -142,7 +142,7 @@ L_GUI_CHAT_TIMESTAMP = "Coloration du temps"
 L_GUI_CHAT_WHISP = "Alerte sonore quand murmure"
 L_GUI_CHAT_SKIN_BUBBLE = "Skin des bulles de discussions"
 L_GUI_CHAT_CL_TAB = "Afficher l'onglet du journal de combat"
-L_GUI_CHAT_STICKY = "Remember last channel"  -- Needs review
+L_GUI_CHAT_STICKY = "Revient sur le dernier canal"
 
 -- Bag options
 L_GUI_BAGS = "Sacs"
@@ -196,7 +196,7 @@ L_GUI_ACTIONBAR_HOTKEY = "Afficher le texte des macros"
 L_GUI_ACTIONBAR_GRID = "Afficher les boutons vides"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Taille des boutons"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacement des boutons"
-L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons" -- Needs review
+L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Enable classcolor border for buttons" -- Needs review
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Enable toggle mode" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Nombre de barres d'action en bas (1, 2 ou 3)"
@@ -221,7 +221,7 @@ L_GUI_AURA_PET_DEBUFFS = "Afficher les debuffs du pet"
 L_GUI_AURA_TOT_DEBUFFS = "Afficher les debuffs de la cible de la cible"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Afficher seulement ses propres debuffs sur la cible"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Coleur de debuff par type"
-L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip" -- Needs review
+L_GUI_AURA_CAST_BY = "Voir qui a jeté un buff / debuff sur son tooltip"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs" -- Needs review
 
 -- Unit Frames options
@@ -256,7 +256,7 @@ L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Activer la barre d'eclipse"
 L_GUI_UF_PLUGINS_HOLY_BAR = "Activer la barre de puissance sacrée"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Activier la barre de fragment d'âme"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Barre de rune"
-L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Enable vengeance bar" -- Needs review
+L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Active la barre de menace"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Barre de totem"
 L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Nom des totems"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Barre de réputation"
@@ -264,7 +264,7 @@ L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Barre d'expérience"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Barre lisse"
 L_GUI_UF_PLUGINS_TALENTS = "Afficher les talent de l'ennemi"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texte de combat sur les barres du joueur et de la cible"
-L_GUI_UF_PLUGINS_FADER = "Fade unit frames" -- Needs review
+L_GUI_UF_PLUGINS_FADER = "Barres de unités"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"

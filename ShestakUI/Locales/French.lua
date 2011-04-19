@@ -12,10 +12,10 @@ L_TOOLTIP_ACH_COMPLETE = "Votre statut : Oui "
 L_TOOLTIP_ACH_INCOMPLETE = "Votre statut : Non terminé"
 L_TOOLTIP_SPELL_ID = "ID du sort :"
 L_TOOLTIP_ITEM_ID = "ID de l'objet :"
-L_TOOLTIP_WHO_TARGET = "Targeted By" -- Needs review
+L_TOOLTIP_WHO_TARGET = "Qui on cible"
 
 -- Misc
-L_MISC_UNDRESS = "Undress" -- Needs review
+L_MISC_UNDRESS = "Undress"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Fin du raid"
@@ -24,16 +24,16 @@ L_RAID_UTIL_DISBAND = "Fin du raid"
 L_ZONE_WINTERGRASP = "Joug-d'hiver"
 
 -- WatchFrame Wowhead link
-L_WATCH_WOWHEAD_LINK = "Wowhead link" -- Needs review
+L_WATCH_WOWHEAD_LINK = "Lien wowhead"
 
 -- Toogle Menu
-L_TOGGLE_ADDON = "Addon " -- Needs review
-L_TOGGLE_ADDONS = " addons" -- Needs review
-L_TOGGLE_EXPAND = "Expand " -- Needs review
-L_TOGGLE_COLLAPSE = "Collapse " -- Needs review
-L_TOGGLE_RCLICK = "Right click to enable or disable " -- Needs review
-L_TOGGLE_LCLICK = "Left click to toggle window " -- Needs review
-L_TOGGLE_RELOAD = " (needs UI reload)" -- Needs review
+L_TOGGLE_ADDON = "Addon "
+L_TOGGLE_ADDONS = " addons"
+L_TOGGLE_EXPAND = "Permet de ajouter des barres "
+L_TOGGLE_COLLAPSE = "Permet de reduire les barres "
+L_TOGGLE_RCLICK = "Faites un clic droit pour activer ou désactiver "
+L_TOGGLE_LCLICK = "Clic gauche pour basculer la fenêtre "
+L_TOGGLE_RELOAD = " (recharger votre UI)"
 
 -- UnitFrame
 L_UF_GHOST = "Spectre"
@@ -208,7 +208,7 @@ L_INFO_SETTINGS_ALL = "Taper /settings all, pour tout configurer automatiquement
 -- Popups
 L_POPUP_INSTALLUI = "Première utilisation de ShestakUI avec ce personnage. Vous devez recharger l'interface utilisateur pour le configurer."
 L_POPUP_RESETUI = "Etes-vous sûr de vouloir réinitialiser ShestakUI ?"
-L_POPUP_RESETSTATS = "Are you sure you want to reset statistics for time spent in game and gold." -- Needs review
+L_POPUP_RESETSTATS = "Réinitialiser les statistiques pour le temps passé dans le jeu ?"
 L_POPUP_SWITCH_RAID = "2 modèles de raid sont activés, merci d'en choisir un."
 L_POPUP_DISBAND_RAID = "Etes-vous sûr de vouloir dissoudre le groupe ?"
 L_POPUP_DISABLEUI = "ShestakUI ne fonctionne pas avec cette résolution, voulez-vous désactiver ShestakUI ? (Annuler si vous souhaitez essayer une autre résolution)"
