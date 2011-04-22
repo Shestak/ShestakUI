@@ -5,9 +5,8 @@ if not C.misc.ach_screens == true then return end
 --	Take screenshots of Achievements(Based on Achievement Screenshotter by Blamdarot)
 ----------------------------------------------------------------------------------------
 local function TakeScreen(delay, func, ...)
-
-local waitTable = {}
-local waitFrame = CreateFrame("Frame", "WaitFrame", UIParent)
+	local waitTable = {}
+	local waitFrame = CreateFrame("Frame", "WaitFrame", UIParent)
 	waitFrame:SetScript("onUpdate", function (self, elapse)
 		local count = #waitTable
 		local i = 1

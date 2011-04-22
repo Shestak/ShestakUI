@@ -181,7 +181,7 @@ local buttonNames = {
 	"PetActionButton",
 	"MultiCastActionButton"
 }
-for _, name in ipairs( buttonNames ) do
+for _, name in ipairs(buttonNames) do
 	for index = 1, 12 do
 		local buttonName = name .. tostring(index)
 		local button = _G[buttonName]
