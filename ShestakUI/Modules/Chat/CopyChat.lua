@@ -68,7 +68,7 @@ end
 
 function T.ChatCopyButtons()
 	for i = 1, NUM_CHAT_WINDOWS do
-		local cf = _G[format("ChatFrame%d",  i)]
+		local cf = _G[format("ChatFrame%d", i)]
 		local button = CreateFrame("Button", format("ButtonCF%d", i), cf)
 		button:Point("BOTTOMRIGHT", 0, 1)
 		button:Height(20)

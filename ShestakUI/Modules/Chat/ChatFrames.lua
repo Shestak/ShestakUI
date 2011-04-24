@@ -143,7 +143,7 @@ local function SetChatStyle(frame)
 		hooksecurefunc("ChatEdit_UpdateHeader", function()
 			local type = _G[chat.."EditBox"]:GetAttribute("chatType")
 			if type == "CHANNEL" then
-			local id = GetChannelName(_G[chat.."EditBox"]:GetAttribute("channelTarget"))
+				local id = GetChannelName(_G[chat.."EditBox"]:GetAttribute("channelTarget"))
 				if id == 0 then
 					colorize(unpack(C.media.border_color))
 				else
