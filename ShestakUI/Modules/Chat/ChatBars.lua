@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not (C.chat.enable == true and C.chat.chat_bar == true) then return end
+if C.chat.enable ~= true or C.chat.chat_bar ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	ChatBar(FavChatBar by Favorit)
@@ -9,42 +9,42 @@ cbar:SetScript("OnEvent", function(self, event, ...) self[event](self, event, ..
 cbar:RegisterEvent("ADDON_LOADED")
 
 function cbar:SW(button)
-	if(button == "RightButton") then
-		ChatFrame_OpenChat("/w ", SELECTED_DOCK_FRAME);		
+	if button == "RightButton" then
+		ChatFrame_OpenChat("/w ", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/s ", SELECTED_DOCK_FRAME);	
+		ChatFrame_OpenChat("/s ", SELECTED_DOCK_FRAME)
 	end
 end
 
 function cbar:GO(button)
-	if(button == "RightButton") then
-		ChatFrame_OpenChat("/o ", SELECTED_DOCK_FRAME);		
+	if button == "RightButton" then
+		ChatFrame_OpenChat("/o ", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/g ", SELECTED_DOCK_FRAME);	
+		ChatFrame_OpenChat("/g ", SELECTED_DOCK_FRAME)
 	end
 end
 
 function cbar:RP(button)
-	if(button == "RightButton") then
-		ChatFrame_OpenChat("/raid ", SELECTED_DOCK_FRAME);		
+	if button == "RightButton" then
+		ChatFrame_OpenChat("/raid ", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/p ", SELECTED_DOCK_FRAME);	
+		ChatFrame_OpenChat("/p ", SELECTED_DOCK_FRAME)
 	end
 end
 
 function cbar:GT(button)
-	if(button == "RightButton") then
-		ChatFrame_OpenChat("/2 ", SELECTED_DOCK_FRAME);		
+	if button == "RightButton" then
+		ChatFrame_OpenChat("/2 ", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/1 ", SELECTED_DOCK_FRAME);	
+		ChatFrame_OpenChat("/1 ", SELECTED_DOCK_FRAME)
 	end
 end
 
 function cbar:YG(button)
-	if(button == "RightButton") then
-		ChatFrame_OpenChat("/y ", SELECTED_DOCK_FRAME);		
+	if button == "RightButton" then
+		ChatFrame_OpenChat("/y ", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/3 ", SELECTED_DOCK_FRAME);	
+		ChatFrame_OpenChat("/3 ", SELECTED_DOCK_FRAME)
 	end
 end
 
@@ -55,9 +55,9 @@ function cbar:Style()
 	sw = CreateFrame("Button", "sw", favchat)
 	sw:ClearAllPoints()
 	sw:SetParent(favchat)
-	sw:Point("BOTTOMLEFT", UIParent, "BOTTOMLEFT", 3, C.chat.background and C.chat.height + 12 or C.chat.height + 4)
-	sw:Width(14)
-	sw:Height(14)
+	sw:Point("BOTTOMLEFT", UIParent, "BOTTOMLEFT", 2, C.chat.background and C.chat.height + 13 or C.chat.height + 5)
+	sw:Width(16)
+	sw:Height(16)
 	sw:SetTemplate()
 	sw:SetBackdropBorderColor(0.7, 0.33, 0.82, 1)
 	sw:RegisterForClicks("AnyUp")
@@ -71,9 +71,9 @@ function cbar:Style()
 	go = CreateFrame("Button", "go", favchat)
 	go:ClearAllPoints()
 	go:SetParent(favchat)
-	go:Point("TOP", sw, "BOTTOM", 0, C.chat.background and -11 or -10)
-	go:Width(14)
-	go:Height(14)
+	go:Point("TOP", sw, "BOTTOM", 0, C.chat.background and -9 or -8)
+	go:Width(16)
+	go:Height(16)
 	go:SetTemplate()
 	go:SetBackdropBorderColor(0, 0.54, 0, 1)
 	go:RegisterForClicks("AnyUp")
@@ -87,9 +87,9 @@ function cbar:Style()
 	rp = CreateFrame("Button", "rp", favchat)
 	rp:ClearAllPoints()
 	rp:SetParent(favchat)
-	rp:Point("TOP", go, "BOTTOM", 0, C.chat.background and -11 or -10)
-	rp:Width(14)
-	rp:Height(14)
+	rp:Point("TOP", go, "BOTTOM", 0, C.chat.background and -9 or -8)
+	rp:Width(16)
+	rp:Height(16)
 	rp:SetTemplate()
 	rp:SetBackdropBorderColor(0.8, 0.4, 0.1, 1)
 	rp:RegisterForClicks("AnyUp")
@@ -103,9 +103,9 @@ function cbar:Style()
 	gt = CreateFrame("Button", "gt", favchat)
 	gt:ClearAllPoints()
 	gt:SetParent(favchat)
-	gt:Point("TOP", rp, "BOTTOM", 0, C.chat.background and -11 or -10)
-	gt:Width(14)
-	gt:Height(14)
+	gt:Point("TOP", rp, "BOTTOM", 0, C.chat.background and -9 or -8)
+	gt:Width(16)
+	gt:Height(16)
 	gt:SetTemplate()
 	gt:SetBackdropBorderColor(0.7, 0.7, 0, 1)
 	gt:RegisterForClicks("AnyUp")
@@ -119,9 +119,9 @@ function cbar:Style()
 	yg = CreateFrame("Button", "yg", favchat)
 	yg:ClearAllPoints()
 	yg:SetParent(favchat)
-	yg:Point("TOP", gt, "BOTTOM", 0, C.chat.background and -11 or -10)
-	yg:Width(14)
-	yg:Height(14)
+	yg:Point("TOP", gt, "BOTTOM", 0, C.chat.background and -9 or -8)
+	yg:Width(16)
+	yg:Height(16)
 	yg:SetTemplate()
 	yg:SetBackdropBorderColor(0.7, 0.13, 0.13, 1)
 	yg:RegisterForClicks("AnyUp")
