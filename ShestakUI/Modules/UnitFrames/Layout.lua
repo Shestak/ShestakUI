@@ -1160,10 +1160,10 @@ SLASH_TESTUF2 = "/еуыега"
 ----------------------------------------------------------------------------------------
 --	Player line
 ----------------------------------------------------------------------------------------
-local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", UIParent)
+local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", oUF_Player)
 HorizontalPlayerLine:CreatePanel("ClassColor", 228, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -5, -5)
 
-local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", UIParent)
+local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", oUF_Player)
 VerticalPlayerLine:CreatePanel("ClassColor", 1, 98, "RIGHT", HorizontalPlayerLine, "LEFT", 0, 13)
 
 ----------------------------------------------------------------------------------------
