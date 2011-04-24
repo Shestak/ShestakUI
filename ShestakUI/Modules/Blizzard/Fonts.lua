@@ -84,3 +84,23 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	SetFont(QuestFontNormalSmall, NORMAL, 13, nil, nil, nil, nil, 0.54, 0.4, 0.1)
 	SetFont(WorldMapTextFont, NORMAL, 31, "THICKOUTLINE", 40, nil, nil, 0, 0, 0, 1, -1)
 end)
+
+-- Registering fonts in LibSharedMedia
+local LSM = LibStub and LibStub:GetLibrary("LibSharedMedia-3.0", true)
+local LOCALE_MASK = 0
+if GetLocale() == "koKR" then
+	LOCALE_MASK = 1
+elseif GetLocale() == "ruRU" then
+	LOCALE_MASK = 2
+elseif GetLocale() == "zhCN" then
+	LOCALE_MASK = 4
+elseif GetLocale() == "zhTW" then
+	LOCALE_MASK = 8
+else
+	LOCALE_MASK = 128
+end
+
+if LSM then
+	LSM:Register(LSM.MediaType.FONT, "Calibri", C.media.normal_font, LOCALE_MASK)
+	LSM:Register(LSM.MediaType.FONT, "Hooge", C.media.pixel_font, LOCALE_MASK)
+end
