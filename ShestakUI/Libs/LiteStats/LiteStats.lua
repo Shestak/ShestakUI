@@ -944,7 +944,17 @@ if bags.enabled then
 			self.text:SetText(format(bags.fmt, free, total))
 		end,
 		OnClick = function() OpenAllBags() end,
-		OnEnter = function()
+		OnEnter = function(self)
+			local free, total = 0, 0
+			for i = 0, NUM_BAG_SLOTS do
+				free, total = free + GetContainerNumFreeSlots(i), total + GetContainerNumSlots(i)
+			end
+			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
+			GameTooltip:ClearLines()
+			GameTooltip:AddLine(BACKPACK_TOOLTIP.." ("..GetBindingKey("TOGGLEBACKPACK")..")",tthead.r,tthead.g,tthead.b)
+			GameTooltip:AddLine' '
+			GameTooltip:AddLine(format(NUM_FREE_SLOTS, free, total),1,1,1)
+			GameTooltip:Show()
 			if C.toppanel.mouseover == true then
 				TopPanel:SetAlpha(1)
 			end
