@@ -200,6 +200,11 @@ if T.author == true then
 	C["misc"].ach_screens = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
+	C["combattext"].heal_treshold = 500
+	C["combattext"].stop_ve_spam = true
+	C["combattext"].dk_runes = false
+	C["combattext"].dispel = false
+	C["combattext"].interrupt = false
 	C["tooltip"].shift_modifer = true
 	C["tooltip"].cursor = true
 	C["tooltip"].title = true
@@ -208,6 +213,9 @@ if T.author == true then
 	C["tooltip"].who_targetting = true
 	C["chat"].combatlog = false
 	C["chat"].spam = true
+	C["actionbar"].toggle_mode = false
 	C["unitframe"].arena_on_right = false
+	C["unitframe"].plugins_fader = true
 	C["stats"].fps = false
+	C["stats"].guild_repair = false
 end

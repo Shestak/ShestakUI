@@ -83,6 +83,21 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	SetFont(ErrorFont, NORMAL, 16, nil, 60)
 	SetFont(QuestFontNormalSmall, NORMAL, 13, nil, nil, nil, nil, 0.54, 0.4, 0.1)
 	SetFont(WorldMapTextFont, NORMAL, 31, "THICKOUTLINE", 40, nil, nil, 0, 0, 0, 1, -1)
+
+	-- Channel list
+	for i = 1, MAX_CHANNEL_BUTTONS do
+		local f = _G["ChannelButton"..i.."Text"]
+		f:SetFontObject(GameFontNormalSmallLeft)
+	end
+
+	-- Player title
+	if T.patch < string.format("%s", "4.1.0") then
+		local function FixTitleFont() for _, butt in pairs(PlayerTitlePickerScrollFrame.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end end
+		hooksecurefunc("PlayerTitleFrame_UpdateTitles", FixTitleFont)
+		FixTitleFont()
+	else
+		for _, butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
+	end
 end)
 
 -- Registering fonts in LibSharedMedia
