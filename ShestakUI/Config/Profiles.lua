@@ -83,11 +83,9 @@ elseif T.name == "Чаккноррис" or T.name == "Нупачимучка" or
 	C["tooltip"].who_targetting = true
 	C["tooltip"].hide_combat = true
 	C["chat"].combatlog = false
-	C["loot"].auto_greed = true
 	C["nameplate"].combat = true
 	C["nameplate"].name_abbrev = false
 	C["actionbar"].show_grid = false
-	C["actionbar"].petbar_mouseover = true
 	C["unitframe"].castbar_latency = false
 	C["unitframe"].enemy_health_color = false
 	C["raidframe"].icons_lfd_role = true
