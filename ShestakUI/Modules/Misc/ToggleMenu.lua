@@ -150,6 +150,9 @@ C["toggleaddons"] = {
 	["RollTracker"] = function()
 		T.RunSlashCmd("/rolltracker")
 	end,
+	["CoolLine"] = function()
+		T.RunSlashCmd("/coolline")
+	end,
 }
 
 -- Button size
