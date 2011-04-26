@@ -266,7 +266,6 @@ C["nameplate"] = {
 	["enhance_threat"] = true,					-- If tank good aggro = green, bad = red
 	["class_icons"] = false,					-- Icons by class in pvp
 	["name_abbrev"] = true,						-- Display the abbreviated names
-	["overlap"] = true,							-- Allow nameplates to overlap
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
 	["near_color"] = {1, 1, 0},					-- Near threat color
 	["bad_color"] = {1, 0, 0},					-- Bad threat color

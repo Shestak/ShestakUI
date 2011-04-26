@@ -194,11 +194,7 @@ showb:SetText(ADDONS)
 showb:Point("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -1)
 
 GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + showb:GetHeight())
-if T.patch < string.format("%s", "4.1.0") then
-	GameMenuButtonSoundOptions:Point("TOP", showb, "BOTTOM", 0, -1)
-else
-	GameMenuButtonUIOptions:Point("TOP", showb, "BOTTOM", 0, -1)
-end
+GameMenuButtonUIOptions:Point("TOP", showb, "BOTTOM", 0, -1)
 
 showb:SetScript("OnClick", function()
 	PlaySound("igMainMenuOption")
@@ -212,11 +208,7 @@ guib:SetText("ShestakUI")
 guib:Point("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -23)
 
 GameMenuFrame:Height(GameMenuFrame:GetHeight() + guib:GetHeight())
-if T.patch < string.format("%s", "4.1.0") then
-	GameMenuButtonSoundOptions:Point("TOP", guib, "BOTTOM", 0, -1)
-else
-	GameMenuButtonUIOptions:Point("TOP", guib, "BOTTOM", 0, -1)
-end
+GameMenuButtonUIOptions:Point("TOP", guib, "BOTTOM", 0, -1)
 
 guib:SetScript("OnClick", function()
 	PlaySound("igMainMenuOption")

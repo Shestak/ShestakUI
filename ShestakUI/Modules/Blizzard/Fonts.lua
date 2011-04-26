@@ -91,13 +91,7 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	-- Player title
-	if T.patch < string.format("%s", "4.1.0") then
-		local function FixTitleFont() for _, butt in pairs(PlayerTitlePickerScrollFrame.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end end
-		hooksecurefunc("PlayerTitleFrame_UpdateTitles", FixTitleFont)
-		FixTitleFont()
-	else
-		for _, butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
-	end
+	for _, butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
 end)
 
 -- Registering fonts in LibSharedMedia

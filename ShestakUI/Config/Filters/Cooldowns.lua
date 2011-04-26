@@ -35,7 +35,6 @@ if C.enemycooldown.enable == true then
 		[51514] = 45,	-- Hex
 		[15487] = 45,	-- Silence
 		[2094] = 120,	-- Blind
-		[72] = 12,		-- Shield Bash
 		[33206] = 180,	-- Pain Suppression
 		[34490] = 20,	-- Silencing Shot
 		[1499] = 30,	-- Freezing Trap

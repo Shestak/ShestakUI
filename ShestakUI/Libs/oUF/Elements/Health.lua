@@ -4,7 +4,7 @@ local oUF = ns.oUF
 oUF.colors.health = {49/255, 207/255, 37/255}
 
 local Update = function(self, event, unit, powerType)
-	if(self.unit ~= unit or (event == 'UNIT_POWER' and powerType ~= 'HAPPINESS')) then return end
+	if(self.unit ~= unit or event == 'UNIT_POWER') then return end
 	local health = self.Health
 
 	if(health.PreUpdate) then health:PreUpdate(unit) end
@@ -26,8 +26,6 @@ local Update = function(self, event, unit, powerType)
 		t = self.colors.tapped
 	elseif(health.colorDisconnected and not UnitIsConnected(unit)) then
 		t = self.colors.disconnected
-	elseif(health.colorHappiness and UnitIsUnit(unit, "pet") and GetPetHappiness()) then
-		t = self.colors.happiness[GetPetHappiness()]
 	elseif(health.colorClass and UnitIsPlayer(unit)) or
 		(health.colorClassNPC and not UnitIsPlayer(unit)) or
 		(health.colorClassPet and UnitPlayerControlled(unit) and not UnitIsPlayer(unit)) then

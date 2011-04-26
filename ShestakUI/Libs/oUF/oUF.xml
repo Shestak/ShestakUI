@@ -20,7 +20,6 @@
 	<Script file="Elements\PvP.lua"/>
 	<Script file="Elements\Portraits.lua"/>
 	<Script file="Elements\Range.lua"/>
-	<Script file="Elements\Happiness.lua"/>
 	<Script file="Elements\CastBar.lua"/>
 	<Script file="Elements\Threat.lua"/>
 	<Script file="Elements\Tags.lua"/>

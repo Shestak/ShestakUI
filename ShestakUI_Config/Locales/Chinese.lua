@@ -185,7 +185,6 @@ L_GUI_NAMEPLATE_CASTBAR_NAME = "显示施法名称"
 L_GUI_NAMEPLATE_THREAT = "显示仇恨情况"
 L_GUI_NAMEPLATE_CLASS_ICON = "在PVP情况下显示职业图示"
 L_GUI_NAMEPLATE_NAME_ABBREV = "显示名字缩写"
-L_GUI_NAMEPLATE_OVERLAP = "允许单位名条重叠"
 L_GUI_NAMEPLATE_GOOD_COLOR = "依据你的队伍角色(坦克,输出/治疗)分别显示同样的安全威胁颜色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color" -- Needs review
 L_GUI_NAMEPLATE_BAD_COLOR = "依据你的队伍角色(坦克,输出/治疗)显示的危险胁颜色"

@@ -185,7 +185,6 @@ L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostrar nombre del hechizo en la barra de lanzam
 L_GUI_NAMEPLATE_THREAT = "Activar visor de amenaza, cambia automáticamente según tu rol"
 L_GUI_NAMEPLATE_CLASS_ICON = "Iconos de clase en JcJ"
 L_GUI_NAMEPLATE_NAME_ABBREV = "Mostrar los nombres abreviados"
-L_GUI_NAMEPLATE_OVERLAP = "Permitir el solapamiento de las placas de nombre"
 L_GUI_NAMEPLATE_GOOD_COLOR = "Color de alta amenaza, varía dependiendo si eres tanque o dps/sanador"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Color de perdiendo/ganando amenaza"
 L_GUI_NAMEPLATE_BAD_COLOR = "Color de baja amenaza, varía dependiendo si eres tanque o dps/sanador"

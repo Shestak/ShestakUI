@@ -220,7 +220,6 @@ local function Local(o)
 	if o == "UIConfignameplateenhance_threat" then o = L_GUI_NAMEPLATE_THREAT end
 	if o == "UIConfignameplateclass_icons" then o = L_GUI_NAMEPLATE_CLASS_ICON end
 	if o == "UIConfignameplatename_abbrev" then o = L_GUI_NAMEPLATE_NAME_ABBREV end
-	if o == "UIConfignameplateoverlap" then o = L_GUI_NAMEPLATE_OVERLAP end
 	if o == "UIConfignameplategood_color" then o = L_GUI_NAMEPLATE_GOOD_COLOR end
 	if o == "UIConfignameplatenear_color" then o = L_GUI_NAMEPLATE_NEAR_COLOR end
 	if o == "UIConfignameplatebad_color" then o = L_GUI_NAMEPLATE_BAD_COLOR end

@@ -737,8 +737,6 @@ Filger_Spells = {
 			{ spellID = 7384, size = 30, filter = "CD" },
 			-- Pummel
 			{ spellID = 6552, size = 30, filter = "CD" },
-			-- Shield Bash
-			{ spellID = 72, size = 30, filter = "CD" },
 			-- Charge
 			{ spellID = 100, size = 30, filter = "CD" },
 			-- Intercept
