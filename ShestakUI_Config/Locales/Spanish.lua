@@ -245,6 +245,7 @@ L_GUI_UF_ICONS_PVP = "Texto JcJ (iconos no) al pasar el ratón sobre los marcos 
 L_GUI_UF_ICONS_COMBAT = "Icono de combate"
 L_GUI_UF_ICONS_RESTING = "Icono de descansado para pjs con nivel bajo"
 L_GUI_UF_ICONS_COMBO_POINT = "Iconos de puntos de combo de Pícaros|Druidas"
+L_GUI_UF_ICONS_COMBO_POINT_NEW = "New style for combo points" -- Needs review
 L_GUI_UF_PORTRAIT_ENABLE = "Activar retratos del jugador/objetivo"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Borde de color de clase para los retratos"
 L_GUI_UF_PORTRAIT_HEIGHT = "Altura del retrato"

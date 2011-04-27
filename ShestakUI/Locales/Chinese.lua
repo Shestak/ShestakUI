@@ -16,6 +16,7 @@ L_TOOLTIP_WHO_TARGET = "以其为目标的"
 
 -- Misc
 L_MISC_UNDRESS = "无装备"
+L_MISC_DRINKING = " is drinking." -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"

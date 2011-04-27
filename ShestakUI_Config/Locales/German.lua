@@ -245,6 +245,7 @@ L_GUI_UF_ICONS_PVP = "Zeige PVP Text (keine Symbole) bei Mouseover (Spieler+Ziel
 L_GUI_UF_ICONS_COMBAT = "Kampfsymbol"
 L_GUI_UF_ICONS_RESTING = "Ausruhensymbol für low-lvl Chars"
 L_GUI_UF_ICONS_COMBO_POINT = "Symbole für Schurke|Druide Kombopunkte"
+L_GUI_UF_ICONS_COMBO_POINT_NEW = "New style for combo points" -- Needs review
 L_GUI_UF_PORTRAIT_ENABLE = "Aktiviere Spieler/Ziel Portraits"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Aktiviere Rahmen in Klassenfarbe"
 L_GUI_UF_PORTRAIT_HEIGHT = "Portraithöhe"

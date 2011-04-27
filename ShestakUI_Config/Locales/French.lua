@@ -245,6 +245,7 @@ L_GUI_UF_ICONS_PVP = "Texte JcJ en Mouseover pour la barre du joueur et celle de
 L_GUI_UF_ICONS_COMBAT = "Icone de combat"
 L_GUI_UF_ICONS_RESTING = "Icone Resting pour les personnage de bas niveau"
 L_GUI_UF_ICONS_COMBO_POINT = "Affichage des points de combo pour les Voleurs/druides"
+L_GUI_UF_ICONS_COMBO_POINT_NEW = "New style for combo points" -- Needs review
 L_GUI_UF_PORTRAIT_ENABLE = "Activer les portraits du joueur et de la cible"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Activer la bordure aux couleurs de la classe"
 L_GUI_UF_PORTRAIT_HEIGHT = "Hauteur des portraits"

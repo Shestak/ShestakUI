@@ -245,6 +245,7 @@ L_GUI_UF_ICONS_PVP = "滑鼠劃過玩家/目標顯示PVP狀態文字"
 L_GUI_UF_ICONS_COMBAT = "顯示戰鬥標識"
 L_GUI_UF_ICONS_RESTING = "顯示休息標識"
 L_GUI_UF_ICONS_COMBO_POINT = "盜賊|德魯伊連擊點圖示"
+L_GUI_UF_ICONS_COMBO_POINT_NEW = "New style for combo points" -- Needs review
 L_GUI_UF_PORTRAIT_ENABLE = "開啟玩家/目標頭像"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "開啟職業顏色邊框"
 L_GUI_UF_PORTRAIT_HEIGHT = "頭像高度"

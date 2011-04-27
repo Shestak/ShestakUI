@@ -245,6 +245,7 @@ L_GUI_UF_ICONS_PVP = "Отображать PvP статус на рамках и
 L_GUI_UF_ICONS_COMBAT = "Отображать иконку боя на рамке игрока"
 L_GUI_UF_ICONS_RESTING = "Отображать иконку отдыха на рамке игрока"
 L_GUI_UF_ICONS_COMBO_POINT = "Включить индикатор серии приемов"
+L_GUI_UF_ICONS_COMBO_POINT_NEW = "Новый вид индикатора серий приемов"
 L_GUI_UF_PORTRAIT_ENABLE = "Отображать портреты игрока и цели"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Окрашивать бордюр портретов по цвету класса"
 L_GUI_UF_PORTRAIT_HEIGHT = "Высота портретов"

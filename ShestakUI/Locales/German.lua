@@ -16,6 +16,7 @@ L_TOOLTIP_WHO_TARGET = "Targeted By" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "Undress" -- Needs review
+L_MISC_DRINKING = " is drinking." -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"

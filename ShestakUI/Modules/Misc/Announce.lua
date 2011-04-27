@@ -13,6 +13,8 @@ interrupt_announce:SetScript("OnEvent", function(self, _, _, event, _, _, source
 		SendChatMessage(INTERRUPTED.." "..destName..": \124cff71d5ff\124Hspell:"..spellID.."\124h["..spellName.."]\124h\124r!", "PARTY", nil, nil)
 	elseif GetRealNumRaidMembers() > 0 then
 		SendChatMessage(INTERRUPTED.." "..destName..": \124cff71d5ff\124Hspell:"..spellID.."\124h["..spellName.."]\124h\124r!", "RAID", nil, nil)
+	else
+		SendChatMessage(INTERRUPTED.." "..destName..": \124cff71d5ff\124Hspell:"..spellID.."\124h["..spellName.."]\124h\124r!", "SAY", nil, nil)
 	end
 end)
 
@@ -24,9 +26,11 @@ drinking_announce:SetScript("OnEvent", function(self, event, ...)
 	local unit, spellName, spellrank, spelline, spellID = ...
 	if UnitIsEnemy("player", unit) and (spellID == 80167 or spellID == 94468 or spellID == 43183 or spellID == 57073 or spellName == "Trinken") then
 		if GetRealNumPartyMembers() > 0 then
-			SendChatMessage(UnitName(unit).." is drinking.", "PARTY")
+			SendChatMessage(UnitName(unit)..L_MISC_DRINKING, "PARTY")
 		elseif GetRealNumRaidMembers() > 0 then
-			SendChatMessage(UnitName(unit).." is drinking.", "RAID")
+			SendChatMessage(UnitName(unit)..L_MISC_DRINKING, "RAID")
+		else
+			SendChatMessage(UnitName(unit)..L_MISC_DRINKING, "SAY")
 		end
 	end
 end)

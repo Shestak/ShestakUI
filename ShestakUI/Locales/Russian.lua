@@ -16,6 +16,7 @@ L_TOOLTIP_WHO_TARGET = "Выбран целью"
 
 -- Misc
 L_MISC_UNDRESS = "Раздеть"
+L_MISC_DRINKING = " пьёт."
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"

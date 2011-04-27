@@ -13,6 +13,7 @@ L_TOOLTIP_WHO_TARGET = "Targeted By"
 
 -- Misc
 L_MISC_UNDRESS = "Undress"
+L_MISC_DRINKING = " is drinking."
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disband Group"
