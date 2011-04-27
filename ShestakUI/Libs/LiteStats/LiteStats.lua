@@ -951,7 +951,11 @@ if bags.enabled then
 			end
 			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(BACKPACK_TOOLTIP.." ("..GetBindingKey("TOGGLEBACKPACK")..")",tthead.r,tthead.g,tthead.b)
+			if GetBindingKey("TOGGLEBACKPACK") then
+				GameTooltip:AddLine(BACKPACK_TOOLTIP.." ("..GetBindingKey("TOGGLEBACKPACK")..")",tthead.r,tthead.g,tthead.b)
+			else
+				GameTooltip:AddLine(BACKPACK_TOOLTIP,tthead.r,tthead.g,tthead.b)
+			end
 			GameTooltip:AddLine' '
 			GameTooltip:AddLine(format(NUM_FREE_SLOTS, free, total),1,1,1)
 			GameTooltip:Show()
@@ -1454,20 +1458,20 @@ if nameplates.enabled then
 	Inject("Nameplates", {
 		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN") end,
 		OnEvent = function(self)
-			if GetCVarBool("spreadnameplates") then
-				self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))
-			else
+			if GetCVar("nameplateMotion") == "0" then
 				self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
+			else
+				self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))
 			end
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
-				if GetCVarBool("spreadnameplates") then
-					SetCVar("spreadnameplates", 0)
-					self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
-				else
-					SetCVar("spreadnameplates", 1)
+				if GetCVar("nameplateMotion") == "0" then
+					SetCVar("nameplateMotion", "1")
 					self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))
+				else
+					SetCVar("nameplateMotion", "0")
+					self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
 		end,

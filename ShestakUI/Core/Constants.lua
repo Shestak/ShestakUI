@@ -30,6 +30,7 @@ or T.name == "Обушок"
 or T.name == "Ремешок"
 or T.name == "Шестак"
 or T.name == "Торгашок"
-or T.name == "Дефляция" then
+or T.name == "Дефляция"
+or T.name == "Аазмантус" then
 	T.author = true
 end
