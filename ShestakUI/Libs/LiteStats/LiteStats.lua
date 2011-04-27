@@ -724,7 +724,7 @@ if guild.enabled then
 					local online, total = 0, GetNumGuildMembers(true)
 					for i = 0, total do if select(9, GetGuildRosterInfo(i)) then online = online + 1 end end
 					return format(guild.fmt, online, total)
-				else return format("%s %s",NO,GUILD) end
+				else return LOOKINGFORGUILD end
 			end, update = 5
 		},
 		OnLoad = function(self)
