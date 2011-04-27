@@ -2,7 +2,7 @@
 if not (C.tooltip.enable == true and C.tooltip.item_icon == true) then return end
 
 ----------------------------------------------------------------------------------------
---	Adds item icons to tooltips()
+--	Adds item icons to tooltips(Tipachu by Tuller)
 ----------------------------------------------------------------------------------------
 local function AddIcon(self, icon)
 	if icon then

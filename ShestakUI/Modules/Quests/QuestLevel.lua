@@ -25,7 +25,7 @@ hooksecurefunc("QuestLog_Update", questlevel)
 QuestLogScrollFrameScrollBar:HookScript("OnValueChanged", questlevel)
 
 ----------------------------------------------------------------------------------------
---	CTRL+Click to abandon a quest or ALT+Click to share a quest(by Suicidalkatt)
+--	CTRL+Click to abandon a quest or ALT+Click to share a quest(by Suicidal Katt)
 ----------------------------------------------------------------------------------------
 hooksecurefunc("QuestLogTitleButton_OnClick", function(self, button)
 	local questIndex = self:GetID()
