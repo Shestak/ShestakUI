@@ -184,7 +184,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		-- Reskin buttons
 		local BlizzardButtons = {
 			"GameMenuButtonOptions",
-			"GameMenuButtonSoundOptions",
+			"GameMenuButtonHelp",
 			"GameMenuButtonUIOptions",
 			"GameMenuButtonKeybindings",
 			"GameMenuButtonMacros",
