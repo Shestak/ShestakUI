@@ -795,7 +795,43 @@ T.UpdateReputationColor = function(self, event, unit, bar)
 	bar:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
 	bar.bg:SetVertexColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b, 0.25)
 end
+
+T.UpdateComboPoint = function(self, event, unit)
+	if unit == "pet" then return end
 	
+	local cpoints = self.CPoints
+	local cp
+	if (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) then
+		cp = GetComboPoints("vehicle", "target")
+	else
+		cp = GetComboPoints("player", "target")
+	end
+
+	for i = 1, MAX_COMBO_POINTS do
+		if i <= cp then
+			cpoints[i]:SetAlpha(1)
+		else
+			cpoints[i]:SetAlpha(0.2)
+		end
+	end
+
+	if cpoints[1]:GetAlpha() == 1 then
+		for i = 1, MAX_COMBO_POINTS do
+			cpoints[i]:Show()
+		end
+	else
+		for i = 1, MAX_COMBO_POINTS do
+			cpoints[i]:Hide()
+		end
+	end
+
+	if cpoints[1]:IsShown() then
+		if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+	else
+		if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
+	end
+end
+
 T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 	Castbar.channeling = false
 

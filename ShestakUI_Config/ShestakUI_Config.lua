@@ -283,6 +283,7 @@ local function Local(o)
 	if o == "UIConfigunitframeicons_combat" then o = L_GUI_UF_ICONS_COMBAT end
 	if o == "UIConfigunitframeicons_resting" then o = L_GUI_UF_ICONS_RESTING end
 	if o == "UIConfigunitframeicons_combo_point" then o = L_GUI_UF_ICONS_COMBO_POINT end
+	if o == "UIConfigunitframeicons_combo_point_new" then o = L_GUI_UF_ICONS_COMBO_POINT_NEW end
 	if o == "UIConfigunitframeportrait_enable" then o = L_GUI_UF_PORTRAIT_ENABLE end
 	if o == "UIConfigunitframeportrait_classcolor_border" then o = L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER end
 	if o == "UIConfigunitframeportrait_height" then o = L_GUI_UF_PORTRAIT_HEIGHT end

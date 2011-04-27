@@ -691,30 +691,63 @@ local function Shared(self, unit)
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
 			if C.unitframe.icons_combo_point == true then
-				local CPoints = {}
-				CPoints.unit = PlayerFrame.unit
-				for i = 1, 5 do
-					CPoints[i] = CreateFrame("StatusBar", nil, self)
-					CPoints[i]:Height(6)
-					CPoints[i]:Width(7)
-					CPoints[i]:SetStatusBarTexture(C.media.blank)
-					if i == 1 then
-						CPoints[i]:Point("BOTTOMRIGHT", self, "BOTTOMLEFT", -7, 0)
-						CPoints[i]:SetStatusBarColor(0.9, 0.1, 0.1)
-					else
-						CPoints[i]:Point("BOTTOM", CPoints[i-1], "TOP", 0, 7)
+				if C.unitframe.icons_combo_point_new == true then
+					self.CPoints = CreateFrame("Frame", nil, self)
+					self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					self.CPoints:SetWidth(217)
+					self.CPoints:SetHeight(7)
+
+					for i = 1, 5 do
+						self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_Combo"..i, self.CPoints)
+						self.CPoints[i]:SetWidth((217 - 4) / 5)
+						self.CPoints[i]:SetHeight(7)
+						self.CPoints[i]:SetStatusBarTexture(C.media.texture)
+						if i == 1 then
+							self.CPoints[i]:SetPoint("LEFT", self.CPoints)
+						else
+							self.CPoints[i]:SetPoint("LEFT", self.CPoints[i-1], "RIGHT", 1, 0)
+						end
 					end
-					CPoints[i].overlay = CreateFrame("Frame", nil, CPoints[i])
-					CPoints[i].overlay:SetTemplate("Default")
-					CPoints[i].overlay:SetFrameStrata("BACKGROUND")
-					CPoints[i].overlay:Point("TOPLEFT", -2, 2)
-					CPoints[i].overlay:Point("BOTTOMRIGHT", 2, -2)
+
+					self.CPoints[1]:SetStatusBarColor(0.9, 0.1, 0.1)
+					self.CPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
+					self.CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
+					self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
+					self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
+
+					self.CPoints.FrameBackdrop = CreateFrame("Frame", nil, self.CPoints[1])
+					self.CPoints.FrameBackdrop:SetTemplate("Default")
+					self.CPoints.FrameBackdrop:SetFrameStrata("BACKGROUND")
+					self.CPoints.FrameBackdrop:Point("TOPLEFT", self.CPoints, -2, 2)
+					self.CPoints.FrameBackdrop:Point("BOTTOMRIGHT", self.CPoints, 2, -2)
+
+					self.CPoints.Override = T.UpdateComboPoint
+				else
+					local CPoints = {}
+					CPoints.unit = PlayerFrame.unit
+					for i = 1, 5 do
+						CPoints[i] = CreateFrame("StatusBar", nil, self)
+						CPoints[i]:Height(6)
+						CPoints[i]:Width(7)
+						CPoints[i]:SetStatusBarTexture(C.media.blank)
+						if i == 1 then
+							CPoints[i]:Point("BOTTOMRIGHT", self, "BOTTOMLEFT", -7, 0)
+							CPoints[i]:SetStatusBarColor(0.9, 0.1, 0.1)
+						else
+							CPoints[i]:Point("BOTTOM", CPoints[i-1], "TOP", 0, 7)
+						end
+						CPoints[i].overlay = CreateFrame("Frame", nil, CPoints[i])
+						CPoints[i].overlay:SetTemplate("Default")
+						CPoints[i].overlay:SetFrameStrata("BACKGROUND")
+						CPoints[i].overlay:Point("TOPLEFT", -2, 2)
+						CPoints[i].overlay:Point("BOTTOMRIGHT", 2, -2)
+					end
+					CPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
+					CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
+					CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
+					CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
+					self.CPoints = CPoints
 				end
-				CPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
-				CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
-				CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
-				CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
-				self.CPoints = CPoints
 			end
 			if C.unitframe.plugins_talents == true then
 				self.Talents = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)

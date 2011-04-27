@@ -213,7 +213,7 @@ if T.author == true then
 	C["chat"].spam = true
 	C["actionbar"].toggle_mode = false
 	C["unitframe"].arena_on_right = false
-	C["unitframe"].plugins_fader = true
+	C["unitframe"].icons_combo_point_new = true
 	C["stats"].fps = false
 	C["stats"].guild_repair = false
 end
