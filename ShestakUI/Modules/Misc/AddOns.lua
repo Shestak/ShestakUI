@@ -194,7 +194,11 @@ showb:SetText(ADDONS)
 showb:Point("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -1)
 
 GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + showb:GetHeight())
-GameMenuButtonUIOptions:Point("TOP", showb, "BOTTOM", 0, -1)
+if IsMacClient() then
+	GameMenuButtonMacOptions:Point("TOP", showb, "BOTTOM", 0, -1)
+else
+	GameMenuButtonUIOptions:Point("TOP", showb, "BOTTOM", 0, -1)
+end
 
 showb:SetScript("OnClick", function()
 	PlaySound("igMainMenuOption")
@@ -208,7 +212,11 @@ guib:SetText("ShestakUI")
 guib:Point("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -23)
 
 GameMenuFrame:Height(GameMenuFrame:GetHeight() + guib:GetHeight())
-GameMenuButtonUIOptions:Point("TOP", guib, "BOTTOM", 0, -1)
+if IsMacClient() then
+	GameMenuButtonMacOptions:Point("TOP", guib, "BOTTOM", 0, -1)
+else
+	GameMenuButtonUIOptions:Point("TOP", guib, "BOTTOM", 0, -1)
+end
 
 guib:SetScript("OnClick", function()
 	PlaySound("igMainMenuOption")
