@@ -265,10 +265,11 @@ C["nameplate"] = {
 	["show_castbar_name"] = false,				-- Show castbar name
 	["enhance_threat"] = true,					-- If tank good aggro = green, bad = red
 	["class_icons"] = false,					-- Icons by class in pvp
-	["name_abbrev"] = true,						-- Display the abbreviated names
+	["name_abbrev"] = false,					-- Display the abbreviated names
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
 	["near_color"] = {1, 1, 0},					-- Near threat color
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
+	["track_auras"] = true,						-- Show debuffs
 }
 
 ----------------------------------------------------------------------------------------
