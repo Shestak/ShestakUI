@@ -188,6 +188,7 @@ L_GUI_NAMEPLATE_NAME_ABBREV = "Отображать сокращенные им�
 L_GUI_NAMEPLATE_GOOD_COLOR = "Цвет наименьшей угрозы, зависит от вашей роли"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Цвет получения/сброса угрозы, зависит от вашей роли"
 L_GUI_NAMEPLATE_BAD_COLOR = "Цвет наивысшей угрозы, зависит от вашей роли"
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned off)"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Включить панели команд"

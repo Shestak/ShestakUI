@@ -188,6 +188,7 @@ L_GUI_NAMEPLATE_NAME_ABBREV = "Afficher les noms abrégés"
 L_GUI_NAMEPLATE_GOOD_COLOR = "Bonne couleur de menace, dépend de si vous êtes un tank ou dps/heal"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
 L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned off)" -- Needs review
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Activer les barres d'action"

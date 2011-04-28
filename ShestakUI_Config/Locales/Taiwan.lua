@@ -188,6 +188,7 @@ L_GUI_NAMEPLATE_NAME_ABBREV = "顯示名字縮寫"
 L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨著色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "臨近仇恨著色"
 L_GUI_NAMEPLATE_BAD_COLOR = "危險仇恨著色"
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned off)" -- Needs review
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "開啟快捷列"

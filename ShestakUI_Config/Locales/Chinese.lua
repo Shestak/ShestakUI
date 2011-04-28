@@ -188,6 +188,7 @@ L_GUI_NAMEPLATE_NAME_ABBREV = "显示名字缩写"
 L_GUI_NAMEPLATE_GOOD_COLOR = "依据你的队伍角色(坦克,输出/治疗)分别显示同样的安全威胁颜色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color" -- Needs review
 L_GUI_NAMEPLATE_BAD_COLOR = "依据你的队伍角色(坦克,输出/治疗)显示的危险胁颜色"
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned off)" -- Needs review
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "开启动作条"

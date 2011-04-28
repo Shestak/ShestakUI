@@ -269,7 +269,7 @@ C["nameplate"] = {
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
 	["near_color"] = {1, 1, 0},					-- Near threat color
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
-	["track_auras"] = true,						-- Show debuffs
+	["track_auras"] = false,					-- Show debuffs
 }
 
 ----------------------------------------------------------------------------------------
