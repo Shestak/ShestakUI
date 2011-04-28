@@ -1,4 +1,5 @@
 local T, C, L = unpack(select(2, ...))
+if T.author ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Collapse WatchFrame during boss encounters(oWatchFrameToggler by Haste)
