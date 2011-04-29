@@ -27,9 +27,9 @@ T.DebuffWhiteList = {
 	[SpellName(1079)] = true,	-- Rip
 	-- Hunter
 	[SpellName(3355)] = true,	-- Freezing Trap Effect
-	[SpellName(1513)] = true,	-- scare beast
-	[SpellName(19503)] = true,	-- scatter shot
-	[SpellName(34490)] = true,	-- silence shot
+	[SpellName(1513)] = true,	-- Scare Beast
+	[SpellName(19503)] = true,	-- Scatter Shot
+	[SpellName(34490)] = true,	-- Silencing Shot
 	-- Mage
 	[SpellName(31661)] = true,	-- Dragon's Breath
 	[SpellName(61305)] = true,	-- Polymorph

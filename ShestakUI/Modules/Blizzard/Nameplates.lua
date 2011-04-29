@@ -163,7 +163,7 @@ local function OnAura(frame, unit)
 		local name, _, _, _, _, duration, _, caster, _, _, spellid = UnitAura(frame.unit, index, "HARMFUL")
 
 		if C.nameplate.track_auras == true then
-			if T.DebuffWhiteList[name] then match = true end
+			if T.DebuffWhiteList[name] and caster == "player" then match = true end
 		end
 
 		if duration and match == true then
