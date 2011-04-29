@@ -943,7 +943,7 @@ if bags.enabled then
 			end
 			self.text:SetText(format(bags.fmt, free, total))
 		end,
-		OnClick = function() OpenAllBags() end,
+		OnClick = function() ToggleAllBags() end,
 		OnEnter = function(self)
 			local free, total = 0, 0
 			for i = 0, NUM_BAG_SLOTS do
