@@ -17,6 +17,14 @@ T.DebuffWhiteList = {
 	[SpellName(339)] = true,	-- Entangling Roots
 	[SpellName(80964)] = true,	-- Skull Bash
 	[SpellName(78675)] = true,	-- Solar Beam
+	[SpellName(8921)] = true,	-- Moonfire
+	[SpellName(5570)] = true,	-- Insect Swarm
+	[SpellName(93402)] = true,	-- Sunfire
+	[SpellName(58180)] = true,	-- Infected Wounds
+	[SpellName(33878)] = true,	-- Mangle
+	[SpellName(33745)] = true,	-- Lacerate
+	[SpellName(1822)] = true,	-- Rake
+	[SpellName(1079)] = true,	-- Rip
 	-- Hunter
 	[SpellName(3355)] = true,	-- Freezing Trap Effect
 	[SpellName(1513)] = true,	-- scare beast
@@ -57,11 +65,23 @@ T.DebuffWhiteList = {
 	[SpellName(6358)] = true,	-- Seduction
 	[SpellName(30283)] = true,	-- Shadowfury
 	[SpellName(89605)] = true,	-- Aura of Foreboding
+	[SpellName(603)] = true,	-- Bane of Doom
+	[SpellName(980)] = true,	-- Bane of Agony
+	[SpellName(172)] = true,	-- Corruption
+	[SpellName(17800)] = true,	-- Shadow and Flame
+	[SpellName(48181)] = true,	-- Haunt
+	[SpellName(30108)] = true,	-- Unstable Affliction
+	[SpellName(348)] = true,	-- Immolate
+	[SpellName(86000)] = true,	-- Curse of Gul'dan
 	-- Warrior
 	[SpellName(20511)] = true,	-- Intimidating Shout
 	-- Racial
 	[SpellName(25046)] = true,	-- Arcane Torrent
 	[SpellName(20549)] = true,	-- War Stomp
+	-- Test
+	[SpellName(2818)] = true,
+	[SpellName(5760)] = true,
+	[SpellName(51585)] = true,
 }
 
 T.PlateBlacklist = {
