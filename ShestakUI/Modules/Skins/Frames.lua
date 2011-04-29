@@ -47,7 +47,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"GameMenuFrame",
 			"InterfaceOptionsFrame",
 			"VideoOptionsFrame",
-			"AudioOptionsFrame",
 			"LFDDungeonReadyStatus",
 			"BNToastFrame",
 			"TicketStatusFrameButton",
@@ -94,8 +93,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"InterfaceOptionsFrameTab1",
 			"InterfaceOptionsFrameTab2",
 			"VideoOptionsFrameCategoryFrame",
-			"VideoOptionsFramePanelContainer",			
-			"AudioOptionsFrameCategoryFrame",
+			"VideoOptionsFramePanelContainer",
 			"AudioOptionsSoundPanel",
 			"AudioOptionsSoundPanelPlayback",
 			"AudioOptionsSoundPanelHardware",
@@ -156,9 +154,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		
 		-- Hide header textures and move text/buttons
 		local BlizzardHeader = {
-			"GameMenuFrame", 
-			"InterfaceOptionsFrame", 
-			"AudioOptionsFrame", 
+			"GameMenuFrame",
+			"InterfaceOptionsFrame",
 			"VideoOptionsFrame",
 			"ColorPickerFrame",
 			"ChatConfigFrame",
@@ -201,9 +198,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"VideoOptionsFrameCancel",
 			"VideoOptionsFrameDefaults",
 			"VideoOptionsFrameApply",
-			"AudioOptionsFrameOkay",
-			"AudioOptionsFrameCancel",
-			"AudioOptionsFrameDefaults",
 			"InterfaceOptionsFrameDefaults",
 			"InterfaceOptionsFrameOkay",
 			"InterfaceOptionsFrameCancel",
@@ -261,18 +255,12 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		-- Button position or text
 		_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
 		_G["VideoOptionsFrameDefaults"]:Point("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
-		_G["VideoOptionsFrameApply"]:ClearAllPoints()
-		_G["VideoOptionsFrameApply"]:Point("TOPRIGHT", _G["VideoOptionsFramePanelContainer"], "BOTTOMRIGHT", 0, -14)
 		_G["VideoOptionsFrameCancel"]:ClearAllPoints()
-		_G["VideoOptionsFrameCancel"]:Point("RIGHT", _G["VideoOptionsFrameApply"], "LEFT", -4, 0)
+		_G["VideoOptionsFrameCancel"]:Point("TOPRIGHT", _G["VideoOptionsFramePanelContainer"], "BOTTOMRIGHT", 0, -14)
 		_G["VideoOptionsFrameOkay"]:ClearAllPoints()
 		_G["VideoOptionsFrameOkay"]:Point("RIGHT", _G["VideoOptionsFrameCancel"], "LEFT", -4, 0)
-		_G["AudioOptionsFrameDefaults"]:ClearAllPoints()
-		_G["AudioOptionsFrameDefaults"]:Point("TOPLEFT", _G["AudioOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
-		_G["AudioOptionsFrameCancel"]:ClearAllPoints()
-		_G["AudioOptionsFrameCancel"]:Point("TOPRIGHT", _G["AudioOptionsFramePanelContainer"], "BOTTOMRIGHT", 0, -14)
-		_G["AudioOptionsFrameOkay"]:ClearAllPoints()
-		_G["AudioOptionsFrameOkay"]:Point("RIGHT", _G["AudioOptionsFrameCancel"], "LEFT", -4, 0)
+		_G["VideoOptionsFrameApply"]:ClearAllPoints()
+		_G["VideoOptionsFrameApply"]:Point("RIGHT", _G["VideoOptionsFrameOkay"], "LEFT", -4, 0)
 		_G["InterfaceOptionsFrameDefaults"]:ClearAllPoints()
 		_G["InterfaceOptionsFrameDefaults"]:Point("TOPLEFT", _G["InterfaceOptionsFrameCategories"], "BOTTOMLEFT", 0, -14)
 		_G["InterfaceOptionsFrameCancel"]:ClearAllPoints()

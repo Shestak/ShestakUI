@@ -442,7 +442,7 @@ local function SkinObjects(frame)
 
 	-- Reposition and Resize RaidIcon
 	raidicon:ClearAllPoints()
-	raidicon:SetPoint("BOTTOM", hp, "TOP", 0, 16)
+	raidicon:SetPoint("BOTTOM", hp, "TOP", 0, C.nameplate.track_auras == true and 38 or 16)
 	raidicon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)
 	frame.raidicon = raidicon
 	
