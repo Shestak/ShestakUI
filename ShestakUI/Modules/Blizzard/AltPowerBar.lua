@@ -1,26 +1,13 @@
 local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Old code for alt power bar
-----------------------------------------------------------------------------------------
---[[PlayerPowerBarAlt:ClearAllPoints()
-PlayerPowerBarAlt:Point("TOP", UIParent, "TOP", 0, -32)
-PlayerPowerBarAlt.ClearAllPoints = T.dummy
-PlayerPowerBarAlt.SetPoint = T.dummy
-
-TargetFramePowerBarAlt:ClearAllPoints()
-TargetFramePowerBarAlt:Point("TOP", UIParent, "TOP", 0, -52)
-TargetFramePowerBarAlt.ClearAllPoints = T.dummy
-TargetFramePowerBarAlt.SetPoint = T.dummy]]
-
-----------------------------------------------------------------------------------------
---	New code for alt power bar
+--	Skin AltPowerBar(by Tukz)
 ----------------------------------------------------------------------------------------
 -- Get rid of old Alt Power Bar
 PlayerPowerBarAlt:UnregisterEvent("UNIT_POWER_BAR_SHOW")
 PlayerPowerBarAlt:UnregisterEvent("UNIT_POWER_BAR_HIDE")
 PlayerPowerBarAlt:UnregisterEvent("PLAYER_ENTERING_WORLD")
-	
+
 -- Create the new bar
 local AltPowerBar = CreateFrame("Frame", "UIAltPowerBar", UIParent)
 AltPowerBar:Width(221)
@@ -80,7 +67,7 @@ local TimeSinceLastUpdate = 1
 AltPowerBarStatus:SetScript("OnUpdate", function(self, elapsed)
 	if not AltPowerBar:IsShown() then return end
 	TimeSinceLastUpdate = TimeSinceLastUpdate + elapsed
-	
+
 	if (TimeSinceLastUpdate >= 1) then
 		self:SetMinMaxValues(0, UnitPowerMax("player", ALTERNATE_POWER_INDEX))
 		local power = UnitPower("player", ALTERNATE_POWER_INDEX)

@@ -57,6 +57,8 @@
 	<Script file="Modules\Blizzard\Fonts.lua"/>
 	<Script file="Modules\Blizzard\Bags.lua"/>
 	<Script file="Modules\Blizzard\Nameplates.lua"/>
+	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
+	<Script file="Modules\Blizzard\TimerTracker.lua"/>
 
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoCollapse.lua"/>
@@ -84,7 +86,6 @@
 	<Script file="Modules\Misc\Mounts.lua"/>
 	<Script file="Modules\Misc\Invite.lua"/>
 	<Script file="Modules\Misc\ToggleMenu.lua"/>
-	<Script file="Modules\Misc\AltPowerBar.lua"/>
 	<Script file="Modules\Misc\AchScreens.lua"/>
 
 	<Script file="Modules\ActionBars\Bindings.lua"/>
