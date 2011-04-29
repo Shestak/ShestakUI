@@ -78,10 +78,6 @@ T.DebuffWhiteList = {
 	-- Racial
 	[SpellName(25046)] = true,	-- Arcane Torrent
 	[SpellName(20549)] = true,	-- War Stomp
-	-- Test
-	[SpellName(2818)] = true,
-	[SpellName(5760)] = true,
-	[SpellName(51585)] = true,
 }
 
 T.PlateBlacklist = {
