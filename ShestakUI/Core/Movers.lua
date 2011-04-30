@@ -1,7 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
 T.MoverFrames = {
-	GMFrameAnchor,
 	MinimapAnchor,
 	VehicleAnchor,
 	WatchFrameAnchor,
@@ -22,7 +21,7 @@ T.MoverFrames = {
 -- Used to exec various code if we enable or disable moving
 local function exec(self, enable)
 
-	if self == GMFrameAnchor or self == LootRollAnchor or self == RaidBuffsAnchor then
+	if self == LootRollAnchor or self == RaidBuffsAnchor then
 		if enable then
 			self:Show()
 		else

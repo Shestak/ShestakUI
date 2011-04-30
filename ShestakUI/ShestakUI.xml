@@ -49,7 +49,6 @@
 	<Script file="Modules\Blizzard\Symbols.lua"/>
 	<Script file="Modules\Blizzard\Errors.lua"/>
 	<Script file="Modules\Blizzard\Achievements.lua"/>
-	<Script file="Modules\Blizzard\Ticket.lua"/>
 	<Script file="Modules\Blizzard\Kill.lua"/>
 	<Script file="Modules\Blizzard\Durability.lua"/>
 	<Script file="Modules\Blizzard\Mail.lua"/>

@@ -1089,7 +1089,7 @@ T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, 
 			end
 		end
 	else
-		if (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN") and dtype == "Magic")) and not UnitIsFriend("player", unit) then
+		if (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and dtype == "Magic")) and not UnitIsFriend("player", unit) then
 			icon:SetBackdropBorderColor(1, 0.85, 0)
 		else
 			icon:SetBackdropBorderColor(unpack(C.media.border_color))

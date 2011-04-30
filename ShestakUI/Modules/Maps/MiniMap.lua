@@ -103,6 +103,13 @@ if StreamingIcon then
 	StreamingIcon:SetScale(0.8)
 end
 
+-- Ticket icon
+if HelpOpenTicketButton then
+	HelpOpenTicketButton:ClearAllPoints()
+	HelpOpenTicketButton:Point("BOTTOM", Minimap, "BOTTOM", 0, -10)
+	HelpOpenTicketButton:SetHighlightTexture(nil)
+end
+
 -- GhostFrame
 GhostFrameContentsFrame:Width(C.minimap.size)
 GhostFrameContentsFrame:ClearAllPoints()

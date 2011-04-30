@@ -256,7 +256,7 @@ local function addMainMenuButtons(menuItems, menuName, menuBackground)
 
 			Text = menuItems[index]:CreateFontString(nil, "OVERLAY")
 			Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-			Text:SetPoint("CENTER", menuItems[index], 0, 0) 
+			Text:SetPoint("CENTER", menuItems[index], 0, 0)
 			Text:SetText(value.text)
         
 			local hideItem = (C.togglemenu.mergeMenus and (value.text == ADDONS))
