@@ -287,7 +287,8 @@ L_GUI_UF_ICONS_LFD_ROLE = "Party role icon on frames"
 L_GUI_UF_ICONS_RAID_MARK = "Raid marks"
 L_GUI_UF_ICONS_READY_CHECK = "Ready check icons"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff highlight texture + icon"
-L_GUI_UF_PLUGINS_AURA_WATCH = "*RAID* Auras watch"
+L_GUI_UF_PLUGINS_AURA_WATCH = "Raid debuff icons"
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons"
 L_GUI_UF_PLUGINS_HEALCOMM = "Show incoming heal on frame"
 
 -- Panel options

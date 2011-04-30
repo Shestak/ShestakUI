@@ -288,6 +288,7 @@ L_GUI_UF_ICONS_RAID_MARK = "Signe de raid"
 L_GUI_UF_ICONS_READY_CHECK = "Icone d'appel"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Mise en évidence des debuffs texture + icone"
 L_GUI_UF_PLUGINS_AURA_WATCH = "Aura/debuff de raid"
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons" -- Needs review
 L_GUI_UF_PLUGINS_HEALCOMM = "Barre de soin entrant (incoming)"
 
 -- Panel options

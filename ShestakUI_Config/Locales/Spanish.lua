@@ -288,6 +288,7 @@ L_GUI_UF_ICONS_RAID_MARK = "Marcas de banda"
 L_GUI_UF_ICONS_READY_CHECK = "Iconos de comprobación"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Remarcar textura de desventajas + icono"
 L_GUI_UF_PLUGINS_AURA_WATCH = "*BANDA* Ver las auras"
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons" -- Needs review
 L_GUI_UF_PLUGINS_HEALCOMM = "Barra de sanación entrante"
 
 -- Panel options

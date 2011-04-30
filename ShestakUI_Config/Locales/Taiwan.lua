@@ -288,6 +288,7 @@ L_GUI_UF_ICONS_RAID_MARK = "顯示團隊標記"
 L_GUI_UF_ICONS_READY_CHECK = "確認就緒情況圖示"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff與圖示高亮"
 L_GUI_UF_PLUGINS_AURA_WATCH = "團隊法術監視"
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons" -- Needs review
 L_GUI_UF_PLUGINS_HEALCOMM = "即將受到的治療條"
 
 -- Panel options

@@ -288,6 +288,7 @@ L_GUI_UF_ICONS_RAID_MARK = "Raidsymbole"
 L_GUI_UF_ICONS_READY_CHECK = "Bereitschaftschecksymbole"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debufftextur und Symbol hervorheben"
 L_GUI_UF_PLUGINS_AURA_WATCH = "*RAID* Buffüberwachung"
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons" -- Needs review
 L_GUI_UF_PLUGINS_HEALCOMM = "Leiste für Eingehende Heilung"
 
 -- Panel options

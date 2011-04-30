@@ -288,6 +288,7 @@ L_GUI_UF_ICONS_RAID_MARK = "Отображать иконки меток на р
 L_GUI_UF_ICONS_READY_CHECK = "Отображать иконки готовности на рамках группы и рейда"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Иконка + текстура снимаемых отрицательных эффектов"
 L_GUI_UF_PLUGINS_AURA_WATCH = "Отображать отрицательные эффекты на рамках группы/рейда"
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Таймер на отрицательных эффектах группы/рейда"
 L_GUI_UF_PLUGINS_HEALCOMM = "Отображать поступающее лечение на рамках группы/рейда"
 
 -- Panel options

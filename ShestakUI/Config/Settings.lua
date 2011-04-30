@@ -399,7 +399,8 @@ C["raidframe"] = {
 	["icons_leader"] = true,					-- Leader icon, assistant icon, master loot icon on frames
 	-- Plugins
 	["plugins_debuffhighlight_icon"] = false,	-- Debuff highlight texture + icon
-	["plugins_aura_watch"] = true,				-- *RAID* Auras watch
+	["plugins_aura_watch"] = true,				-- Raid debuff icons
+	["plugins_aura_watch_timer"] = false,		-- Timer on raid debuff icons
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
 }
 
