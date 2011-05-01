@@ -570,6 +570,12 @@ local function ShowHealth(frame, ...)
 	elseif (frame.hasClass ~= true and frame.isFriendly ~= true) and C.nameplate.enhance_threat == true then
 		SetVirtualBorder(frame.hp, unpack(C.media.border_color))
 	end
+
+	if UnitName("target") and frame:GetAlpha() == 1 then
+		frame.hp:SetSize((C.nameplate.width + C.nameplate.ad_width) * noscalemult, (C.nameplate.height + C.nameplate.ad_height) * noscalemult)
+	else
+		frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
+	end
 end
 
 -- Scan all visible nameplate for a known unit

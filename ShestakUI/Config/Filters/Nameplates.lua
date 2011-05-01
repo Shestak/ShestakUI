@@ -101,8 +101,11 @@ T.PlateBlacklist = {
 
 	-- Army of the Dead
 	["Army of the Dead Ghoul"] = true,
+	["Вурдалак из войска мертвых"] = true,
 
 	-- Hunter Trap
 	["Venomous Snake"] = true,
+	["Ядовитая змея"] = true,
 	["Viper"] = true,
+	["Гадюка"] = true,
 }

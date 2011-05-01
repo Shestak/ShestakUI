@@ -1,10 +1,9 @@
 ----------------------------------------------------------------------------------------
 --	Based on tekability
 ----------------------------------------------------------------------------------------
-local SLOTIDS, FONTSIZE = {}, 13
+local SLOTIDS, FONTSIZE = {}, 12
 for _, slot in pairs({"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands", "MainHand", "SecondaryHand", "Ranged"}) do SLOTIDS[slot] = GetInventorySlotInfo(slot .. "Slot") end
 local frame = CreateFrame("Frame", nil, CharacterFrame)
-local dataobj = {}
 
 local function RYGColorGradient(perc)
 	local relperc = perc*2 % 1
@@ -61,7 +60,6 @@ function frame:OnEvent(event, arg1)
 	end
 
 	local r, g, b = RYGColorGradient(min)
-	dataobj.text = string.format("|cff%02x%02x%02x%d%%", r*255, g*255, b*255, min*100)
 end
 
 frame:SetScript("OnEvent", frame.OnEvent)
