@@ -216,7 +216,6 @@ L_POPUP_DISABLEUI = "ShestakUI doesn't work for this resolution, do you want to 
 L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM/DXE, Skada/Recount and MSBT)"
 L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."
 L_POPUP_SETTINGS_BW = "Need to change the position of elements BigWigs."
-L_POPUP_SETTINGS_CLIQUE = "Your Clique settings are not setup with ShestakUI, would you like to set them up?"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Welcome to ShestakUI "

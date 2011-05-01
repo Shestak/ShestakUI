@@ -1467,7 +1467,7 @@ if nameplates.enabled then
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if GetCVar("nameplateMotion") == "0" then
-					SetCVar("nameplateMotion", "1")
+					SetCVar("nameplateMotion", "2")
 					self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))
 				else
 					SetCVar("nameplateMotion", "0")

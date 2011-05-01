@@ -216,7 +216,6 @@ L_POPUP_DISABLEUI = "ShestakUI並不支援此解析度, 你想要停用ShestakUI
 L_POPUP_SETTINGS_ALL = "應用所有的UI設置? (DBM/DXE, Skada/Recount and MSBT)"
 L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素。"
 L_POPUP_SETTINGS_BW = "需要改變BigWigs描點及風格化元素。"
-L_POPUP_SETTINGS_CLIQUE = "你的Clique設置沒有正確安裝，現在應用Clique設置?"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "歡迎使用ShestakUI "

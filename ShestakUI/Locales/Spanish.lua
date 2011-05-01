@@ -216,7 +216,6 @@ L_POPUP_DISABLEUI = "ShestakUI no funciona con esta resolución, ¿Quieres desac
 L_POPUP_SETTINGS_ALL = "¿Aplicar modificaciones para todos los addons? (DBM/DXE, Skada/Recount o MSBT)"
 L_POPUP_SETTINGS_DBM = "Necesito cambiar la posición de los elementos del DBM."
 L_POPUP_SETTINGS_BW = "Necesito cambiar la posición de los elementos del BigWigs."
-L_POPUP_SETTINGS_CLIQUE = "Tus preferencias para Cloque no concuerdan con Shestak UI, ¿Quieres actualizarlas?"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Bienvenido a ShestakUI "

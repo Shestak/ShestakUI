@@ -1,8 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
-local noop = T.dummy
 local floor = math.floor
-local class = T.class
 local texture = C.media.blank
 local backdropr, backdropg, backdropb, backdropa, borderr, borderg, borderb = 0, 0, 0, 1, 0, 0, 0
 
@@ -98,7 +96,7 @@ end
 
 local function GetTemplate(t)
 	if t == "ClassColor" then
-		local c = T.oUF_colors.class[class]
+		local c = T.oUF_colors.class[T.class]
 		borderr, borderg, borderb = c[1], c[2], c[3]
 		backdropr, backdropg, backdropb = unpack(C.media.backdrop_color)
 	else
@@ -162,6 +160,32 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	f:SetBackdropBorderColor(borderr, borderg, borderb)
 end
 
+local function CreateBackdrop(f, t, tex)
+	if not t then t = "Default" end
+
+	local b = CreateFrame("Frame", nil, f)
+	b:Point("TOPLEFT", -2, 2)
+	b:Point("BOTTOMRIGHT", 2, -2)
+	b:SetTemplate(t, tex)
+
+	if f:GetFrameLevel() - 1 >= 0 then
+		b:SetFrameLevel(f:GetFrameLevel() - 1)
+	else
+		b:SetFrameLevel(0)
+	end
+
+	f.backdrop = b
+end
+
+local function StripTextures(object)
+	for i = 1, object:GetNumRegions() do
+		local region = select(i, object:GetRegions())
+		if region:GetObjectType() == "Texture" then
+			region:SetTexture(nil)
+		end
+	end
+end
+
 ----------------------------------------------------------------------------------------
 --	Kill object function
 ----------------------------------------------------------------------------------------
@@ -169,7 +193,7 @@ local function Kill(object)
 	if object.UnregisterAllEvents then
 		object:UnregisterAllEvents()
 	end
-	object.Show = noop
+	object.Show = T.dummy
 	object:Hide()
 end
 
@@ -295,6 +319,8 @@ local function addapi(object)
 	if not object.CreateBorder then mt.CreateBorder = CreateBorder end
 	if not object.SetTemplate then mt.SetTemplate = SetTemplate end
 	if not object.CreatePanel then mt.CreatePanel = CreatePanel end
+	if not object.CreateBackdrop then mt.CreateBackdrop = CreateBackdrop end
+	if not object.StripTextures then mt.StripTextures = StripTextures end
 	if not object.Kill then mt.Kill = Kill end
 	if not object.StyleButton then mt.StyleButton = StyleButton end
 	if not object.SkinButton then mt.SkinButton = SkinButton end

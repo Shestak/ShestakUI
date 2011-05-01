@@ -30,7 +30,7 @@ local function Shared(self, unit)
 	self.colors = T.oUF_colors
 	
 	-- Register click
-	self:RegisterForClicks("AnyDown")
+	self:RegisterForClicks("AnyUp")
 	self:SetScript("OnEnter", UnitFrame_OnEnter)
 	self:SetScript("OnLeave", UnitFrame_OnLeave)
 	
@@ -374,29 +374,3 @@ oUF:Factory(function(self)
 		end
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	Force a Clique option if not set(by Elv22)
-----------------------------------------------------------------------------------------
-if IsAddOnLoaded("Clique") then
-	local CliquePath = CliqueDB3["char"][T.name.." - "..GetRealmName()]["downclick"]	
-	StaticPopupDialogs["SETUP_CLIQUE"] = {
-		text = L_POPUP_SETTINGS_CLIQUE,
-		button1 = ACCEPT,
-		button2 = CANCEL,
-		OnAccept = function() 
-			CliqueDB3["char"][T.name.." - "..GetRealmName()]["downclick"] = true 
-			ReloadUI() 
-		end,
-		timeout = 0,
-		whileDead = 1,
-		hideOnEscape = true,
-	}
-	local CliqueCheck = CreateFrame("Frame")
-	CliqueCheck:RegisterEvent("PLAYER_ENTERING_WORLD")
-	CliqueCheck:SetScript("OnEvent", function()
-		if CliquePath ~= true then
-			StaticPopup_Show("SETUP_CLIQUE")
-		end
-	end)
-end
