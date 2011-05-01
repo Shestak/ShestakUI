@@ -7,6 +7,7 @@ if not C.actionbar.enable == true then return end
 local bar = CreateFrame("Frame", "Bar1Holder", ActionBarAnchor, "SecureHandlerStateTemplate")
 bar:ClearAllPoints()
 bar:SetAllPoints(ActionBarAnchor)
+bar:SetFrameStrata("BACKGROUND")
 
 local Page = {
 	["DRUID"] = "[bonusbar:1,nostealth] 7; [bonusbar:1,stealth] 8; [bonusbar:2] 8; [bonusbar:3] 9; [bonusbar:4] 10;",

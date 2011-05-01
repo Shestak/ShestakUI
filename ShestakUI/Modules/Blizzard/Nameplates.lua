@@ -573,8 +573,12 @@ local function ShowHealth(frame, ...)
 
 	if UnitName("target") and frame:GetAlpha() == 1 then
 		frame.hp:SetSize((C.nameplate.width + C.nameplate.ad_width) * noscalemult, (C.nameplate.height + C.nameplate.ad_height) * noscalemult)
+		frame.cb:SetSize((C.nameplate.width + C.nameplate.ad_width) * noscalemult, (C.nameplate.height + C.nameplate.ad_height) * noscalemult)
+		frame.cb.icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2) + 8)
 	else
 		frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
+		frame.cb:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
+		frame.cb.icon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)
 	end
 end
 
