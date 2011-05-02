@@ -10,7 +10,7 @@ T.buttonspacing = T.Scale(C.actionbar.button_space)
 --	Bottom bars panel
 ----------------------------------------------------------------------------------------
 local bottombaranchor = CreateFrame("Frame", "ActionBarAnchor", UIParent)
-bottombaranchor:CreatePanel("Default", 1, 1, unpack(C.position.bottom_bars))
+bottombaranchor:CreatePanel("Invisible", 1, 1, unpack(C.position.bottom_bars))
 bottombaranchor:Width((T.buttonsize * 12) + (T.buttonspacing * 11))
 if C.actionbar.bottombars == 2 then
 	bottombaranchor:Height((T.buttonsize * 2) + T.buttonspacing)
@@ -24,14 +24,12 @@ else
 	bottombaranchor:Height(T.buttonsize)
 end
 bottombaranchor:SetFrameStrata("LOW")
-bottombaranchor:SetBackdropColor(0, 0, 0, 0)
-bottombaranchor:SetBackdropBorderColor(0, 0, 0, 0)
 
 ----------------------------------------------------------------------------------------
 --	Right bars panel
 ----------------------------------------------------------------------------------------
 local rightbaranchor = CreateFrame("Frame", "RightActionBarAnchor", UIParent)
-rightbaranchor:CreatePanel("Default", 1, 1, unpack(C.position.right_bars))
+rightbaranchor:CreatePanel("Invisible", 1, 1, unpack(C.position.right_bars))
 rightbaranchor:Height((T.buttonsize * 12) + (T.buttonspacing * 11))
 if C.actionbar.rightbars == 1 then
 	rightbaranchor:Width(T.buttonsize)
@@ -43,24 +41,18 @@ else
 	rightbaranchor:Hide()
 end
 rightbaranchor:SetFrameStrata("BACKGROUND")
-rightbaranchor:SetBackdropColor(0, 0, 0, 0)
-rightbaranchor:SetBackdropBorderColor(0, 0, 0, 0)
 
 ----------------------------------------------------------------------------------------
 --	Split bar panels
 ----------------------------------------------------------------------------------------
 if C.actionbar.split_bars == true then
 	local SplitBarLeft = CreateFrame("Frame", "SplitBarLeft", UIParent)
-	SplitBarLeft:CreatePanel("Default", (T.buttonsize * 3) + (T.buttonspacing * 2), (T.buttonsize * 2) + T.buttonspacing, "BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -T.buttonspacing, 0)
+	SplitBarLeft:CreatePanel("Invisible", (T.buttonsize * 3) + (T.buttonspacing * 2), (T.buttonsize * 2) + T.buttonspacing, "BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -T.buttonspacing, 0)
 	SplitBarLeft:SetFrameStrata("LOW")
-	SplitBarLeft:SetBackdropColor(0, 0, 0, 0)
-	SplitBarLeft:SetBackdropBorderColor(0, 0, 0, 0)
 
 	local SplitBarRight = CreateFrame("Frame", "SplitBarRight", UIParent)
-	SplitBarRight:CreatePanel("Default", (T.buttonsize * 3) + (T.buttonspacing * 2), (T.buttonsize * 2) + T.buttonspacing, "BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", T.buttonspacing, 0)
+	SplitBarRight:CreatePanel("Invisible", (T.buttonsize * 3) + (T.buttonspacing * 2), (T.buttonsize * 2) + T.buttonspacing, "BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", T.buttonspacing, 0)
 	SplitBarRight:SetFrameStrata("LOW")
-	SplitBarRight:SetBackdropColor(0, 0, 0, 0)
-	SplitBarRight:SetBackdropBorderColor(0, 0, 0, 0)
 end
 
 ----------------------------------------------------------------------------------------
@@ -69,15 +61,13 @@ end
 local petbaranchor = CreateFrame("Frame", "PetActionBarAnchor", UIParent)
 if C.actionbar.rightbars > 0 then
 	if C.actionbar.petbar_horizontal == true then
-		petbaranchor:CreatePanel("Default", (T.buttonsize * 10) + (T.buttonspacing * 9), (T.buttonsize + T.buttonspacing), unpack(C.position.pet_horizontal))
+		petbaranchor:CreatePanel("Invisible", (T.buttonsize * 10) + (T.buttonspacing * 9), (T.buttonsize + T.buttonspacing), unpack(C.position.pet_horizontal))
 	else
-		petbaranchor:CreatePanel("Default", (T.buttonsize + T.buttonspacing), (T.buttonsize * 10) + (T.buttonspacing * 9), "RIGHT", rightbaranchor, "LEFT", 0, 0)
+		petbaranchor:CreatePanel("Invisible", (T.buttonsize + T.buttonspacing), (T.buttonsize * 10) + (T.buttonspacing * 9), "RIGHT", rightbaranchor, "LEFT", 0, 0)
 	end
 else
-	petbaranchor:CreatePanel("Default", (T.buttonsize + T.buttonspacing), (T.buttonsize * 10) + (T.buttonspacing * 9), unpack(C.position.right_bars))
+	petbaranchor:CreatePanel("Invisible", (T.buttonsize + T.buttonspacing), (T.buttonsize * 10) + (T.buttonspacing * 9), unpack(C.position.right_bars))
 end
-petbaranchor:SetBackdropColor(0, 0, 0, 0)
-petbaranchor:SetBackdropBorderColor(0, 0, 0, 0)
 
 ----------------------------------------------------------------------------------------
 --	Stance bar panel

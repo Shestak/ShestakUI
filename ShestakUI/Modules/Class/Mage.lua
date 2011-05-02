@@ -25,9 +25,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	};
 
 local f = CreateFrame("Frame", "TeleportMenu", UIParent)
-f:CreatePanel("Default", C.minimap.size, (#spells + 1) * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)
-f:SetBackdropBorderColor(0, 0, 0, 0)
-f:SetBackdropColor(0, 0, 0, 0)
+f:CreatePanel("Invisible", C.minimap.size, (#spells + 1) * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)
 tinsert(UISpecialFrames, "TeleportMenu")
 
 local r = CreateFrame("Frame", nil, f)

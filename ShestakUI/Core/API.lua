@@ -2,7 +2,7 @@
 
 local floor = math.floor
 local texture = C.media.blank
-local backdropr, backdropg, backdropb, backdropa, borderr, borderg, borderb = 0, 0, 0, 1, 0, 0, 0
+local backdropr, backdropg, backdropb, backdropa, borderr, borderg, borderb, bordera = 0, 0, 0, 1, 0, 0, 0, 1
 
 ----------------------------------------------------------------------------------------
 --	Pixel perfect script of custom ui Scale
@@ -97,11 +97,11 @@ end
 local function GetTemplate(t)
 	if t == "ClassColor" then
 		local c = T.oUF_colors.class[T.class]
-		borderr, borderg, borderb = c[1], c[2], c[3]
-		backdropr, backdropg, backdropb = unpack(C.media.backdrop_color)
+		borderr, borderg, borderb, bordera = c[1], c[2], c[3], c[4]
+		backdropr, backdropg, backdropb, backdropa = unpack(C.media.backdrop_color)
 	else
-		borderr, borderg, borderb = unpack(C.media.border_color)
-		backdropr, backdropg, backdropb = unpack(C.media.backdrop_color)
+		borderr, borderg, borderb, bordera = unpack(C.media.border_color)
+		backdropr, backdropg, backdropb, backdropa = unpack(C.media.backdrop_color)
 	end
 end
 
@@ -128,7 +128,7 @@ local function SetTemplate(f, t, tex)
 	end
 	
 	f:SetBackdropColor(backdropr, backdropg, backdropb, backdropa)
-	f:SetBackdropBorderColor(borderr, borderg, borderb)
+	f:SetBackdropBorderColor(borderr, borderg, borderb, bordera)
 end
 
 local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
@@ -152,12 +152,15 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	elseif t == "Overlay" then
 		backdropa = 1
 		f:CreateOverlay()
+	elseif t == "Invisible" then
+		backdropa = 0
+		bordera = 0
 	else
 		backdropa = 1
 	end
 	
 	f:SetBackdropColor(backdropr, backdropg, backdropb, backdropa)
-	f:SetBackdropBorderColor(borderr, borderg, borderb)
+	f:SetBackdropBorderColor(borderr, borderg, borderb, bordera)
 end
 
 local function CreateBackdrop(f, t, tex)

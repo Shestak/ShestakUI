@@ -16,16 +16,12 @@ local AB = 461
 
 -- Info panel
 local ileft = CreateFrame("Frame", "InfoLeft", UIParent)
-ileft:CreatePanel("Default", 300, C.font.stats_font_size, unpack(C.position.bg_score))
-ileft:SetBackdropBorderColor(0, 0, 0, 0)
-ileft:SetBackdropColor(0, 0, 0, 0)
+ileft:CreatePanel("Invisible", 300, C.font.stats_font_size, unpack(C.position.bg_score))
 ileft:SetFrameLevel(2)
 ileft:SetFrameStrata("BACKGROUND")
 
 local bgframe = CreateFrame("Frame", "InfoBattleGround", UIParent)
-bgframe:CreatePanel("Default", 1, 1, "TOPLEFT", UIParent, "BOTTOMLEFT", 0, 0)
-bgframe:SetBackdropBorderColor(0, 0, 0, 0)
-bgframe:SetBackdropColor(0, 0, 0, 0)
+bgframe:CreatePanel("Invisible", 1, 1, "TOPLEFT", UIParent, "BOTTOMLEFT", 0, 0)
 bgframe:SetAllPoints(ileft)
 bgframe:SetFrameStrata("LOW")
 bgframe:SetFrameLevel(0)

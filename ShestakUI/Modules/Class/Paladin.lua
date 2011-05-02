@@ -12,9 +12,7 @@ local spells = {
 }
 
 local f = CreateFrame("Frame", "SealMenu", UIParent)
-f:CreatePanel("Default", C.minimap.size, #spells * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)
-f:SetBackdropBorderColor(0, 0, 0, 0)
-f:SetBackdropColor(0, 0, 0, 0)
+f:CreatePanel("Invisible", C.minimap.size, #spells * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)
 tinsert(UISpecialFrames, "SealMenu")
 
 for i, spell in pairs(spells) do
