@@ -132,7 +132,6 @@
 	
 	<Script file="Modules\DataText\Battleground.lua"/>
 	
-	<Script file="Modules\Class\Hunter.lua"/>
 	<Script file="Modules\Class\Paladin.lua"/>
 	<Script file="Modules\Class\Mage.lua"/>
 	

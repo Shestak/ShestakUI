@@ -28,10 +28,9 @@ local function InstallUI()
 	SetCVar("ConsolidateBuffs", 0)
 	SetCVar("autoQuestWatch", 0)
 	SetCVar("autoQuestProgress", 1)
-	SetCVar("scriptErrors", 0)
+	SetCVar("scriptErrors", 1)
 	
 	if T.author == true then
-		SetCVar("scriptErrors", 1)
 		SetCVar("showToastWindow", 0)
 		SetCVar("cameraSmoothStyle", "1")
 		SetCVar("displaySpellActivationOverlays", 0)

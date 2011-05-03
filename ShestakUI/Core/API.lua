@@ -180,11 +180,15 @@ local function CreateBackdrop(f, t, tex)
 	f.backdrop = b
 end
 
-local function StripTextures(object)
+local function StripTextures(object, kill)
 	for i = 1, object:GetNumRegions() do
 		local region = select(i, object:GetRegions())
 		if region:GetObjectType() == "Texture" then
-			region:SetTexture(nil)
+			if kill then
+				region:Kill()
+			else
+				region:SetTexture(nil)
+			end
 		end
 	end
 end
