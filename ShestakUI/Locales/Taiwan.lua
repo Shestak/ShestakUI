@@ -16,7 +16,7 @@ L_TOOLTIP_WHO_TARGET = "以其為目標的"
 
 -- Misc
 L_MISC_UNDRESS = "無裝備"
-L_MISC_DRINKING = " is drinking." -- Needs review
+L_MISC_DRINKING = " 吃喝中"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
@@ -187,11 +187,6 @@ L_DATATEXT_DEMOLISHERSDESTROYED = "石毀車摧毀:"
 L_DATATEXT_GATESDESTROYED = "大門摧毀:"
 L_DATATEXT_CONTROL = "控制:"
 
--- Class script
-L_CLASS_HUNTER_UNHAPPY = "你的寵物感到不高興!"
-L_CLASS_HUNTER_CONTENT = "你的寵物感到滿足!"
-L_CLASS_HUNTER_HAPPY = "你的寵物感到高興!"
-
 -- Info text
 L_INFO_ERRORS = "目前沒有錯誤."
 L_INFO_INVITE = "接受邀請自: "
@@ -312,6 +307,7 @@ L_SLASHCMD_HELP = {
 	"/en ADDON_NAME - Description is not ready.",
 	"/rd - Description is not ready.",
 	"/toraid - Description is not ready.",
+	"/teleport - Description is not ready.",
 	"/luaerror - Description is not ready.",
 	"/spec - Description is not ready.",
 	"/clfix - Description is not ready.",
@@ -334,7 +330,7 @@ L_SLASHCMD_HELP = {
 	"/pulsecd - Description is not ready.",
 	"/threat - Description is not ready.",
 	"/tt - Description is not ready.",
-	"/invite - Description is not ready.",
+	"/ainv - Description is not ready.",
 	"/testuf - Description is not ready.",
 	"/cfg - Description is not ready.",
 }

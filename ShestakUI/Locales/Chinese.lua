@@ -187,11 +187,6 @@ L_DATATEXT_DEMOLISHERSDESTROYED = "石毁车摧毁:"
 L_DATATEXT_GATESDESTROYED = "大门摧毁:"
 L_DATATEXT_CONTROL = " under control:" -- Needs review
 
--- Class script
-L_CLASS_HUNTER_UNHAPPY = "你的宠物感到不高兴!"
-L_CLASS_HUNTER_CONTENT = "你的宠物感到满足!"
-L_CLASS_HUNTER_HAPPY = "你的宠物感到高兴!"
-
 -- Info text
 L_INFO_ERRORS = "目前没有错误."
 L_INFO_INVITE = "接受邀请: "
@@ -312,6 +307,7 @@ L_SLASHCMD_HELP = {
 	"/en ADDON_NAME - Description is not ready.",
 	"/rd - Description is not ready.",
 	"/toraid - Description is not ready.",
+	"/teleport - Description is not ready.",
 	"/luaerror - Description is not ready.",
 	"/spec - Description is not ready.",
 	"/clfix - Description is not ready.",
@@ -334,7 +330,7 @@ L_SLASHCMD_HELP = {
 	"/pulsecd - Description is not ready.",
 	"/threat - Description is not ready.",
 	"/tt - Description is not ready.",
-	"/invite - Description is not ready.",
+	"/ainv - Description is not ready.",
 	"/testuf - Description is not ready.",
 	"/cfg - Description is not ready.",
 }

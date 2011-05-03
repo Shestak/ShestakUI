@@ -187,11 +187,6 @@ L_DATATEXT_DEMOLISHERSDESTROYED = "Verwüster zerstört:"
 L_DATATEXT_GATESDESTROYED = "Tore zerstört:"
 L_DATATEXT_CONTROL = " unter Kontrolle:"
 
--- Class script
-L_CLASS_HUNTER_UNHAPPY = "Dein Begleiter ist unzufrieden!"
-L_CLASS_HUNTER_CONTENT = "Dein Begleiter ist zufrieden!"
-L_CLASS_HUNTER_HAPPY = "Dein Begleiter ist glücklich!"
-
 -- Info text
 L_INFO_ERRORS = "Noch keine Fehler."
 L_INFO_INVITE = "Gruppeneinladung akzeptiert von: "
@@ -312,6 +307,7 @@ L_SLASHCMD_HELP = {
 	"/en ADDON_NAME - Description is not ready.",
 	"/rd - Description is not ready.",
 	"/toraid - Description is not ready.",
+	"/teleport - Description is not ready.",
 	"/luaerror - Description is not ready.",
 	"/spec - Description is not ready.",
 	"/clfix - Description is not ready.",

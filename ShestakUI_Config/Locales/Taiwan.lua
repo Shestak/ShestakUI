@@ -179,8 +179,8 @@ L_GUI_NAMEPLATE_HEALTH = "顯示百分比生命值"
 L_GUI_NAMEPLATE_CASTBAR = "顯示施法條"
 L_GUI_NAMEPLATE_HEIGHT = "單位名條高度"
 L_GUI_NAMEPLATE_WIDTH = "單位名條寬度"
-L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height for selected nameplate" -- Needs review
-L_GUI_NAMEPLATE_AD_WIDTH = "Additional width for selected nameplate" -- Needs review
+L_GUI_NAMEPLATE_AD_HEIGHT = "選擇的單位名條額外高度"
+L_GUI_NAMEPLATE_AD_WIDTH = "選擇的單位名條額外寬度"
 L_GUI_NAMEPLATE_CASTBAR_NAME = "顯示施法名稱"
 L_GUI_NAMEPLATE_THREAT = "顯示仇恨情況"
 L_GUI_NAMEPLATE_CLASS_ICON = "在PVP情況下顯示職業圖示"
@@ -188,7 +188,7 @@ L_GUI_NAMEPLATE_NAME_ABBREV = "顯示名字縮寫"
 L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨著色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "臨近仇恨著色"
 L_GUI_NAMEPLATE_BAD_COLOR = "危險仇恨著色"
-L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned off)" -- Needs review
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "顯示debuffs(需要關閉名稱縮寫)"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "開啟快捷列"
@@ -231,7 +231,7 @@ L_GUI_UF_UF_COLOR = "治療條職業著色"
 L_GUI_UF_ENEMY_HEALTH_COLOR = "敵對目標生命條以紅色著色"
 L_GUI_UF_TOTAL_VALUE = "在玩家與目標框體顯示詳細的文字變化"
 L_GUI_UF_COLOR_VALUE = "生命值與魔法值以職業顏色著色"
-L_GUI_UF_BAR_COLOR_VALUE = "Health bar color by current health remaining" -- Needs review
+L_GUI_UF_BAR_COLOR_VALUE = "生命值以現在剩餘生命著色"
 L_GUI_UF_UNIT_CASTBAR = "顯示施法條"
 L_GUI_UF_CASTBAR_ICON = "顯示施法條圖示"
 L_GUI_UF_CASTBAR_LATENCY = "施法條延遲"
@@ -246,7 +246,7 @@ L_GUI_UF_ICONS_PVP = "滑鼠劃過玩家/目標顯示PVP狀態文字"
 L_GUI_UF_ICONS_COMBAT = "顯示戰鬥標識"
 L_GUI_UF_ICONS_RESTING = "顯示休息標識"
 L_GUI_UF_ICONS_COMBO_POINT = "盜賊|德魯伊連擊點圖示"
-L_GUI_UF_ICONS_COMBO_POINT_NEW = "New style for combo points" -- Needs review
+L_GUI_UF_ICONS_COMBO_POINT_NEW = "啟用新樣式連擊點"
 L_GUI_UF_PORTRAIT_ENABLE = "開啟玩家/目標頭像"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "開啟職業顏色邊框"
 L_GUI_UF_PORTRAIT_HEIGHT = "頭像高度"
@@ -288,7 +288,7 @@ L_GUI_UF_ICONS_RAID_MARK = "顯示團隊標記"
 L_GUI_UF_ICONS_READY_CHECK = "確認就緒情況圖示"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff與圖示高亮"
 L_GUI_UF_PLUGINS_AURA_WATCH = "團隊法術監視"
-L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons" -- Needs review
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "顯示團隊減益時間"
 L_GUI_UF_PLUGINS_HEALCOMM = "即將受到的治療條"
 
 -- Panel options
