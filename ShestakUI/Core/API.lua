@@ -267,11 +267,12 @@ T.SetOriginalBackdrop = function(self)
 	end
 end
 
-local function SkinButton(f)
+local function SkinButton(f, strip)
 	if f.SetNormalTexture then f:SetNormalTexture("") end
 	if f.SetHighlightTexture then f:SetHighlightTexture("") end
 	if f.SetPushedTexture then f:SetPushedTexture("") end
 	if f.SetDisabledTexture then f:SetDisabledTexture("") end
+	if strip then f:StripTextures() end
 
 	if f:GetName() then
 		if _G[f:GetName().."Left"] then _G[f:GetName().."Left"]:SetAlpha(0) end

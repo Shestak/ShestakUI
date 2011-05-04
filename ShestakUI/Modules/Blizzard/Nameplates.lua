@@ -252,6 +252,10 @@ local function Colorize(frame)
 		if RAID_CLASS_COLORS[class].r == r and RAID_CLASS_COLORS[class].g == g and RAID_CLASS_COLORS[class].b == b then
 			frame.hasClass = true
 			frame.isFriendly = false
+			if C.nameplate.class_icons == true then
+				local texcoord = CLASS_BUTTONS[class]
+				frame.class:SetTexCoord(texcoord[1], texcoord[2], texcoord[3], texcoord[4])
+			end
 			frame.hp:SetStatusBarColor(unpack(T.oUF_colors.class[class]))
 			return
 		end
@@ -316,7 +320,11 @@ local function UpdateObjects(frame)
 	-- Setup level text
 	local level, elite, mylevel = tonumber(frame.hp.oldlevel:GetText()), frame.hp.elite:IsShown(), UnitLevel("player")
 	frame.hp.level:ClearAllPoints()
-	frame.hp.level:SetPoint("RIGHT", frame.hp, "LEFT", -2, 0)
+	if C.nameplate.class_icons == true then
+		frame.hp.level:SetPoint("RIGHT", frame.hp.name, "LEFT", -2, 0)
+	else
+		frame.hp.level:SetPoint("RIGHT", frame.hp, "LEFT", -2, 0)
+	end
 	frame.hp.level:SetTextColor(frame.hp.oldlevel:GetTextColor())
 	if frame.hp.boss:IsShown() then
 		frame.hp.level:SetText("??")
@@ -418,6 +426,16 @@ local function SkinObjects(frame)
 		cb.name:SetTextColor(1, 1, 1)
 	end
 	
+	-- Create Class Icon
+	if C.nameplate.class_icons == true then
+		local cIconTex = hp:CreateTexture(nil, "OVERLAY")
+		cIconTex:SetPoint("TOPRIGHT", hp, "TOPLEFT", -8, 0)
+		cIconTex:SetTexture("Interface\\WorldStateFrame\\Icons-Classes")
+		cIconTex:SetSize((C.nameplate.height * 2) + 11, (C.nameplate.height * 2) + 11)
+		frame.class = cIconTex
+		--CreateVirtualFrame(hp, frame.class)
+	end
+
 	-- Create CastBar Icon
 	cbicon:ClearAllPoints()
 	cbicon:SetPoint("TOPLEFT", hp, "TOPRIGHT", 8, 0)
