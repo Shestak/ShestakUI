@@ -546,6 +546,26 @@ function Stuffing:Layout(lb)
 			b.frame:SetTemplate("Transparent")
 			b.frame:StyleButton()
 
+			local btns = self.buttons
+			b.frame:HookScript("OnEnter", function(self)
+				local bag
+				if lb then bag = v else bag = v + 1 end
+
+				for ind, val in ipairs(btns) do
+					if val.bag == bag then
+						val.frame:SetAlpha(1)
+					else
+						val.frame:SetAlpha(0.2)
+					end
+				end
+			end)
+
+			b.frame:HookScript("OnLeave", function(self)
+				for _, btn in ipairs(btns) do
+					btn.frame:SetAlpha(1)
+				end
+			end)
+
 			local iconTex = _G[b.frame:GetName() .. "IconTexture"]
 			iconTex:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			iconTex:Point("TOPLEFT", b.frame, 2, -2)
