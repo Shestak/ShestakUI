@@ -276,7 +276,9 @@ do
 
 	local OnLeave = function(self)
 		local color = ITEM_QUALITY_COLORS[self.quality]
-		self.drop:SetVertexColor(color.r, color.g, color.b)
+		if color then
+			self.drop:SetVertexColor(color.r, color.g, color.b)
+		end
 		
 		GameTooltip:Hide()
 		ResetCursor()
