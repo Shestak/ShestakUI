@@ -16,7 +16,7 @@ L_TOOLTIP_WHO_TARGET = "Qui on cible"
 
 -- Misc
 L_MISC_UNDRESS = "Undress"
-L_MISC_DRINKING = " is drinking." -- Needs review
+L_MISC_DRINKING = " est entrain de boire."
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Fin du raid"

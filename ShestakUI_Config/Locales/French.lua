@@ -127,7 +127,7 @@ L_GUI_TOOLTIP_RANK = "Afficher le rang de guilde dans le tooltip"
 L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Expérience en arène"
 L_GUI_TOOLTIP_SPELL_ID = "ID du sort"
 L_GUI_TOOLTIP_RAID_ICON = "Icone de raid"
-L_GUI_TOOLTIP_WHO_TARGETTING = "Display who is targetting the unit that is in your party/raid" -- Needs review
+L_GUI_TOOLTIP_WHO_TARGETTING = "Affiche qui cible actuellement l'unité qui est dans votre groupe/raid"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activer le chat"
@@ -179,8 +179,8 @@ L_GUI_NAMEPLATE_HEALTH = "Valeur de points de vie"
 L_GUI_NAMEPLATE_CASTBAR = "Afficher la barre de sort"
 L_GUI_NAMEPLATE_HEIGHT = "Hauteur des barres de nom"
 L_GUI_NAMEPLATE_WIDTH = "Largeur des barres de nom"
-L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height for selected nameplate" -- Needs review
-L_GUI_NAMEPLATE_AD_WIDTH = "Additional width for selected nameplate" -- Needs review
+L_GUI_NAMEPLATE_AD_HEIGHT = "Hauteur additionnelle pour la barre de vie sélectionnée"
+L_GUI_NAMEPLATE_AD_WIDTH = "Largeur additionnelle pour la barre de vie sélectionnée"
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Afficher le nom du sort"
 L_GUI_NAMEPLATE_THREAT = "Activer la gestion d'aggro, change automatiquement selon votre role"
 L_GUI_NAMEPLATE_CLASS_ICON = "Icone de classe en JcJ"
@@ -188,7 +188,7 @@ L_GUI_NAMEPLATE_NAME_ABBREV = "Afficher les noms abrégés"
 L_GUI_NAMEPLATE_GOOD_COLOR = "Bonne couleur de menace, dépend de si vous êtes un tank ou dps/heal"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
 L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
-L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned off)" -- Needs review
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Affiche les débuffs (Les noms abbrégés doivent être désactivés)"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Activer les barres d'action"
@@ -197,8 +197,8 @@ L_GUI_ACTIONBAR_GRID = "Afficher les boutons vides"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Taille des boutons"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacement des boutons"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Enable classcolor border for buttons" -- Needs review
-L_GUI_ACTIONBAR_TOGGLE_MODE = "Enable toggle mode" -- Needs review
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordure de boutons"
+L_GUI_ACTIONBAR_TOGGLE_MODE = "Active le mode pour bloquer les combinaisons des barres d'action"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Nombre de barres d'action en bas (1, 2 ou 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Nombre de barres d'action à droite (0, 1, 2 ou 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barres de droite en 'mouseover'"
@@ -222,7 +222,7 @@ L_GUI_AURA_TOT_DEBUFFS = "Afficher les debuffs de la cible de la cible"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Afficher seulement ses propres debuffs sur la cible"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Coleur de debuff par type"
 L_GUI_AURA_CAST_BY = "Voir qui a jeté un buff / debuff sur son tooltip"
-L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs" -- Needs review
+L_GUI_AURA_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordure de vos buffs"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Activer les barres d'unité"
@@ -231,7 +231,7 @@ L_GUI_UF_UF_COLOR = "Couleur de la barre de vie"
 L_GUI_UF_ENEMY_HEALTH_COLOR = "Si activée, la couleur des cibles ennemi est rouge"
 L_GUI_UF_TOTAL_VALUE = "Afficher la vie des joueur/cible avec XXXX/Total"
 L_GUI_UF_COLOR_VALUE = "Valeur de vie/mana colorée"
-L_GUI_UF_BAR_COLOR_VALUE = "Health bar color by current health remaining" -- Needs review
+L_GUI_UF_BAR_COLOR_VALUE = "Couleur de barre de vie en fonction des points de vie"
 L_GUI_UF_UNIT_CASTBAR = "Voir la barre de cast"
 L_GUI_UF_CASTBAR_ICON = "Voir l'icone de la barre de cast"
 L_GUI_UF_CASTBAR_LATENCY = "Voir la latence de la barre de cast"
@@ -246,7 +246,7 @@ L_GUI_UF_ICONS_PVP = "Texte JcJ en Mouseover pour la barre du joueur et celle de
 L_GUI_UF_ICONS_COMBAT = "Icone de combat"
 L_GUI_UF_ICONS_RESTING = "Icone Resting pour les personnage de bas niveau"
 L_GUI_UF_ICONS_COMBO_POINT = "Affichage des points de combo pour les Voleurs/druides"
-L_GUI_UF_ICONS_COMBO_POINT_NEW = "New style for combo points" -- Needs review
+L_GUI_UF_ICONS_COMBO_POINT_NEW = "Nouveau style/présentation pour les points de combos"
 L_GUI_UF_PORTRAIT_ENABLE = "Activer les portraits du joueur et de la cible"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Activer la bordure aux couleurs de la classe"
 L_GUI_UF_PORTRAIT_HEIGHT = "Hauteur des portraits"
@@ -288,7 +288,7 @@ L_GUI_UF_ICONS_RAID_MARK = "Signe de raid"
 L_GUI_UF_ICONS_READY_CHECK = "Icone d'appel"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Mise en évidence des debuffs texture + icone"
 L_GUI_UF_PLUGINS_AURA_WATCH = "Aura/debuff de raid"
-L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons" -- Needs review
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Durée sur les icônes de débuff du raid"
 L_GUI_UF_PLUGINS_HEALCOMM = "Barre de soin entrant (incoming)"
 
 -- Panel options
