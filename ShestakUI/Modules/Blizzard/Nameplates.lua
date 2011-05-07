@@ -254,6 +254,7 @@ local function Colorize(frame)
 			frame.isFriendly = false
 			if C.nameplate.class_icons == true then
 				local texcoord = CLASS_BUTTONS[class]
+				frame.class.Glow:Show()
 				frame.class:SetTexCoord(texcoord[1], texcoord[2], texcoord[3], texcoord[4])
 			end
 			frame.hp:SetStatusBarColor(unpack(T.oUF_colors.class[class]))
@@ -264,20 +265,34 @@ local function Colorize(frame)
 	if g + b == 0 then	-- Hostile
 		r, g, b = unpack(T.oUF_colors.reaction[1])
 		frame.isFriendly = false
+		texcoord = {0.5, 0.75, 0.5, 0.75}
 	elseif r + b == 0 then	-- Friendly npc
 		r, g, b = unpack(T.oUF_colors.power["MANA"])
 		frame.isFriendly = true
+		texcoord = {0.5, 0.75, 0.5, 0.75}
 	elseif r + g > 1.95 then	-- Neutral
 		r, g, b = unpack(T.oUF_colors.reaction[4])
 		frame.isFriendly = false
+		texcoord = {0.5, 0.75, 0.5, 0.75}
 	elseif r + g == 0 then	-- Friendly player
 		r, g, b = unpack(T.oUF_colors.reaction[5])
 		frame.isFriendly = true
+		texcoord = {0.5, 0.75, 0.5, 0.75}
 	else	-- Enemy player
 		frame.isFriendly = false
+		texcoord = {0.5, 0.75, 0.5, 0.75}
 	end
 	frame.hasClass = false
 	
+	if C.nameplate.class_icons == true then
+		if frame.hasClass == true then
+			frame.class.Glow:Show()
+		else
+			frame.class.Glow:Hide()
+		end
+		frame.class:SetTexCoord(texcoord[1], texcoord[2], texcoord[3], texcoord[4])
+	end
+
 	frame.hp:SetStatusBarColor(r, g, b)
 end
 
@@ -320,7 +335,7 @@ local function UpdateObjects(frame)
 	-- Setup level text
 	local level, elite, mylevel = tonumber(frame.hp.oldlevel:GetText()), frame.hp.elite:IsShown(), UnitLevel("player")
 	frame.hp.level:ClearAllPoints()
-	if C.nameplate.class_icons == true then
+	if C.nameplate.class_icons == true and frame.hasClass == true then
 		frame.hp.level:SetPoint("RIGHT", frame.hp.name, "LEFT", -2, 0)
 	else
 		frame.hp.level:SetPoint("RIGHT", frame.hp, "LEFT", -2, 0)
@@ -429,11 +444,18 @@ local function SkinObjects(frame)
 	-- Create Class Icon
 	if C.nameplate.class_icons == true then
 		local cIconTex = hp:CreateTexture(nil, "OVERLAY")
-		cIconTex:SetPoint("TOPRIGHT", hp, "TOPLEFT", -8, 0)
+		cIconTex:SetPoint("TOPRIGHT", hp, "TOPLEFT", -8, 2)
 		cIconTex:SetTexture("Interface\\WorldStateFrame\\Icons-Classes")
 		cIconTex:SetSize((C.nameplate.height * 2) + 11, (C.nameplate.height * 2) + 11)
 		frame.class = cIconTex
-		--CreateVirtualFrame(hp, frame.class)
+
+		frame.class.Glow = CreateFrame("Frame", nil, frame)
+		frame.class.Glow:SetTemplate("Transparent")
+		frame.class.Glow:SetScale(noscalemult)
+		frame.class.Glow:SetPoint("TOPLEFT", frame.class, "TOPLEFT", 0, 0)
+		frame.class.Glow:SetPoint("BOTTOMRIGHT", frame.class, "BOTTOMRIGHT", 0, 0)
+		frame.class.Glow:SetFrameLevel(hp:GetFrameLevel() -1 > 0 and hp:GetFrameLevel() -1 or 0)
+		frame.class.Glow:Hide()
 	end
 
 	-- Create CastBar Icon
