@@ -444,7 +444,7 @@ local function SkinObjects(frame)
 	-- Create Class Icon
 	if C.nameplate.class_icons == true then
 		local cIconTex = hp:CreateTexture(nil, "OVERLAY")
-		cIconTex:SetPoint("TOPRIGHT", hp, "TOPLEFT", -8, 2)
+		cIconTex:SetPoint("TOPRIGHT", hp, "TOPLEFT", -4, 2)
 		cIconTex:SetTexture("Interface\\WorldStateFrame\\Icons-Classes")
 		cIconTex:SetSize((C.nameplate.height * 2) + 11, (C.nameplate.height * 2) + 11)
 		frame.class = cIconTex

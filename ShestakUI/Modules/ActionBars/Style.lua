@@ -351,7 +351,7 @@ local function StyleTotemOpenButton(button, parent)
 	if not button.visibleBut then
 		button.visibleBut = CreateFrame("Frame", nil, button)
 		button.visibleBut:Height(T.buttonspacing * 4)
-		button.visibleBut:Width(button:GetWidth() - T.buttonspacing)
+		button.visibleBut:Width(button:GetWidth())
 		button.visibleBut:SetPoint("CENTER")
 		button.visibleBut.highlight = button.visibleBut:CreateTexture(nil, "HIGHLIGHT")
 		button.visibleBut.highlight:SetTexture([[Interface\Buttons\ButtonHilight-Square]])
