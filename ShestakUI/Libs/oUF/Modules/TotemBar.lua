@@ -32,10 +32,10 @@ local delay = 0.01
 
 -- In the order, fire, earth, water, air
 local colors = {
-	[1] = {0.752,0.172,0.02},
-	[2] = {0.741,0.580,0.04},		
-	[3] = {0,0.443,0.631},
-	[4] = {0.6,1,0.945},	
+	[1] = {0.58, 0.23, 0.10},
+	[2] = {0.23, 0.45, 0.13},
+	[3] = {0.19, 0.48, 0.60},
+	[4] = {0.42, 0.18, 0.74},
 }
 
 local GetTotemInfo, SetValue, GetTime = GetTotemInfo, SetValue, GetTime

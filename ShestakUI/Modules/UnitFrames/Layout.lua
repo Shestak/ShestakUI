@@ -307,15 +307,19 @@ local function Shared(self, unit)
 			self.TotemBar.Destroy = true
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self)
-				self.TotemBar[i]:SetSize(214 / 4, 7)
-				if (i == 1) then
+				self.TotemBar[i]:SetSize((i == 1 and 210 or 214) / 4, 7)
+				local fixpos
+				if i == 2 then
 					self.TotemBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				elseif i == 1 then
+					self.TotemBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 55, 7)
 				else
-					self.TotemBar[i]:Point("TOPLEFT", self.TotemBar[i-1], "TOPRIGHT", 1, 0)
+					fixpos = i
+					if i == 3 then fixpos = i-1 end
+					self.TotemBar[i]:Point("TOPLEFT", self.TotemBar[fixpos-1], "TOPRIGHT", 1, 0)
 				end
 				self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
 				self.TotemBar[i]:SetMinMaxValues(0, 1)
-
 				self.TotemBar[i]:SetBackdrop(backdrop)
 				self.TotemBar[i]:SetBackdropColor(0, 0, 0)
 
