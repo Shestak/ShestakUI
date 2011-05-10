@@ -14,17 +14,10 @@ local EOTS = 482
 local TBFG = 736
 local AB = 461
 
--- Info panel
-local ileft = CreateFrame("Frame", "InfoLeft", UIParent)
-ileft:CreatePanel("Invisible", 300, C.font.stats_font_size, unpack(C.position.bg_score))
-ileft:SetFrameLevel(2)
-ileft:SetFrameStrata("BACKGROUND")
+local classcolor = ("|cff%.2x%.2x%.2x"):format(T.color.r * 255, T.color.g * 255, T.color.b * 255)
 
 local bgframe = CreateFrame("Frame", "InfoBattleGround", UIParent)
-bgframe:CreatePanel("Invisible", 1, 1, "TOPLEFT", UIParent, "BOTTOMLEFT", 0, 0)
-bgframe:SetAllPoints(ileft)
-bgframe:SetFrameStrata("LOW")
-bgframe:SetFrameLevel(0)
+bgframe:CreatePanel("Invisible", 300, C.font.stats_font_size, unpack(C.position.bg_score))
 bgframe:EnableMouse(true)
 bgframe:SetScript("OnEnter", function(self)
 	local numScores = GetNumBattlefieldScores()
@@ -33,7 +26,6 @@ bgframe:SetScript("OnEnter", function(self)
 		if name then
 			if name == UnitName("player") then
 				local curmapid = GetCurrentMapAreaID()
-				local classcolor = ("|cff%.2x%.2x%.2x"):format(T.color.r * 255, T.color.g * 255, T.color.b * 255)
 				SetMapToCurrentZone()
 				GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT", 0, T.Scale(4))
 				GameTooltip:ClearLines()
@@ -103,15 +95,15 @@ local function Update(self, t)
 		for i = 1, numScores do
 			local name, killingBlows, honorableKills, deaths, honorGained, faction, race, class, classToken, damageDone, healingDone, bgRating, ratingChange = GetBattlefieldScore(i)
 			if healingDone > damageDone then
-				dmgtxt = (SHOW_COMBAT_HEALING.." : "..healingDone)
+				dmgtxt = (classcolor..SHOW_COMBAT_HEALING.." :|r "..healingDone)
 			else
-				dmgtxt = (COMBATLOG_HIGHLIGHT_DAMAGE.." : "..damageDone)
+				dmgtxt = (classcolor..COMBATLOG_HIGHLIGHT_DAMAGE.." :|r "..damageDone)
 			end
 			if name then
 				if name == T.name then
-					Text2:SetText(COMBAT_HONOR_GAIN.." : "..format("%d", honorGained))
+					Text2:SetText(classcolor..COMBAT_HONOR_GAIN.." :|r "..format("%d", honorGained))
 					Text1:SetText(dmgtxt)
-					Text3:SetText(KILLING_BLOWS.." : "..killingBlows)
+					Text3:SetText(classcolor..KILLING_BLOWS.." :|r "..killingBlows)
 				end   
 			end
 		end 
