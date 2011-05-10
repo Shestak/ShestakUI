@@ -85,10 +85,10 @@ function Update(self)
 				if (bar.count) then
 					bar.count = _G[bar.count:GetName()]
 				else
-					bar.count = bar:CreateFontString("$parentCount", "OVERLAY")
+					bar.count = bar.cooldown:CreateFontString("$parentCount", "OVERLAY")
 					bar.count:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
 					bar.count:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
-					bar.count:Point("BOTTOMRIGHT", 1, -1)
+					bar.count:Point("BOTTOMRIGHT", 3, -4)
 					bar.count:SetJustifyH("CENTER")
 				end
 			else
