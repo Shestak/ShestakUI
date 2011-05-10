@@ -2274,6 +2274,8 @@ Filger_Spells = {
 			{ spellID = 18499, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Last stand
 			{ spellID = 12976, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Bladestorm
+			{ spellID = 46924, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			
 			-- Paladin
 			-- Aura Mastery
