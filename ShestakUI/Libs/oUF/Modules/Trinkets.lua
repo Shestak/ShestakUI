@@ -29,9 +29,9 @@ end
 
 local GetTrinketIcon = function(unit)
 	if UnitFactionGroup(unit) == "Horde" then
-		return UnitLevel(unit) == 80 and "Interface\\Icons\\INV_Jewelry_Necklace_38" or "Interface\\Icons\\INV_Jewelry_TrinketPVP_02"
+		return UnitLevel(unit) == 85 and "Interface\\Icons\\INV_Jewelry_Necklace_38" or "Interface\\Icons\\INV_Jewelry_TrinketPVP_02"
 	else
-		return UnitLevel(unit) == 80 and "Interface\\Icons\\INV_Jewelry_Necklace_37" or "Interface\\Icons\\INV_Jewelry_TrinketPVP_01"
+		return UnitLevel(unit) == 85 and "Interface\\Icons\\INV_Jewelry_Necklace_37" or "Interface\\Icons\\INV_Jewelry_TrinketPVP_01"
 	end
 end
 
@@ -68,7 +68,7 @@ local Update = function(self, event, ...)
 			end
 			-- WotF
 			if spellID == 7744 then
-				TrinketUsed(sourceGUID, 45)
+				TrinketUsed(sourceGUID, 30)
 			end
 		end
 	elseif event == "ARENA_OPPONENT_UPDATE" then
