@@ -1119,10 +1119,10 @@ Filger_Spells = {
 			{ spellID = 6346, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Borrowed Time
 			{ spellID = 59887, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-            -- Inner Fire
-            { spellID = 588, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Inner Fire
+			--{ spellID = 588, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Inner Will
-			{ spellID = 73413, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 73413, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Archangel
 			{ spellID = 81700, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Dark Archangel
@@ -2262,6 +2262,8 @@ Filger_Spells = {
 			{ spellID = 61336, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Frenzied Regeneration
 			{ spellID = 22842, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Tree of life
+			{ spellID = 33891, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			
 			-- Warrior
 			-- Spell Reflection
