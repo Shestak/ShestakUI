@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.skins.pallypower ~= true or T.class ~= "PALADIN" then return end
 
 ----------------------------------------------------------------------------------------
---	By MrRuben5
+--	PallyPower skin(by MrRuben5)
 ----------------------------------------------------------------------------------------
 local PPSkin = CreateFrame("Frame")
 PPSkin:RegisterEvent("PLAYER_LOGIN")
@@ -34,7 +34,7 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 			for _, frame in pairs(needSkinning) do
 				frame:SetBackdrop({
 					bgFile = C.media.blank,
-					insets = { left = two, right = two, top = two, bottom = two }
+					insets = {left = two, right = two, top = two, bottom = two}
 				})
 				if not frame.bg then
 					frame.bg = CreateFrame("Frame", nil, frame)
@@ -95,7 +95,7 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 						icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 						icon:SetTexture(oldicon:GetTexture())
 						-- ? :)
-						oldicon.SetTexture = function(tex,texstring)
+						oldicon.SetTexture = function(tex, texstring)
 							icon:SetTexture(texstring)
 							-- Hide the border/bg if icon:SetTexture() is sued to hide the icon
 							if not texstring then
@@ -105,7 +105,7 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 							end
 						end
 						oldicon.SetVertexColor = function(self, ...)
-						icon:SetVertexColor(...)
+							icon:SetVertexColor(...)
 						end
 					end
 				end			

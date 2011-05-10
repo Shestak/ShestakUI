@@ -284,7 +284,7 @@ Garbage:SetScript("OnEvent", function(self, event)
 	eventcount = eventcount + 1
 	if InCombatLockdown() then return end
 
-	if eventcount > 3600 then
+	if eventcount > 6000 then
 		collectgarbage("collect")
 		eventcount = 0
 	end
