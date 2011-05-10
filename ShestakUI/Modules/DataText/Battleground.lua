@@ -63,6 +63,15 @@ bgframe:SetScript("OnEnter", function(self)
 	end
 end) 
 bgframe:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
+bgframe:SetScript("OnMouseUp", function(self)
+	if MiniMapBattlefieldFrame.status == "active" then
+		if IsShiftKeyDown() then
+			ToggleBattlefieldMinimap()
+		else
+			ToggleWorldStateScoreFrame()
+		end
+	end
+end)
 
 local Stat = CreateFrame("Frame")
 Stat:EnableMouse(true)
