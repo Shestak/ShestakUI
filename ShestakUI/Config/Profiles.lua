@@ -202,6 +202,7 @@ if T.author == true then
 	C["misc"].auto_quest = true
 	C["misc"].vehicle_mouseover = true
 	C["misc"].ach_screens = true
+	C["misc"].quest_auto_button = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
 	C["combattext"].heal_treshold = 500
@@ -222,4 +223,8 @@ if T.author == true then
 	C["unitframe"].icons_combo_point_new = true
 	C["stats"].fps = false
 	C["stats"].guild_repair = false
+	C["stats"].battleground = true
+	if T.realm == "Дракономор" then
+		C["unitframe"].icons_pvp  = true
+	end
 end
