@@ -50,6 +50,7 @@ if T.class=="WARLOCK" then
 	end
 	if(C.combattext.healing)then
 		ct.healfilter[28176]=true	-- Fel Armor
+		ct.healfilter[96379]=true	-- Fel Armor
 		ct.healfilter[63106]=true	-- Siphon Life
 		ct.healfilter[54181]=true	-- Fel Synergy
 		ct.healfilter[89653]=true	-- Drain Life
@@ -155,6 +156,8 @@ elseif T.class=="MAGE"then
 		ct.aoespam[83853]=true		-- Combustion
 		ct.aoespam[11113]=true		-- Blast Wave
 		ct.aoespam[88148]=true		-- Flamestrike void
+		ct.aoespam[84721]=true		-- Frostfire Orb
+		ct.aoespam[82739]=true		-- Flame Orb
 	end
 elseif T.class=="WARRIOR"then
 	if(C.combattext.merge_aoe_spam)then
@@ -888,6 +891,7 @@ if(C.combattext.damage)then
 	if(C.combattext.icons)then
 		ct.blank="Interface\\AddOns\\ShestakUI\\Media\\Textures\\Blank.tga"
 	end
+	local misstypes={ABSORB=ABSORB,BLOCK=BLOCK,DODGE=DODGE,EVADE=EVADE,IMMUNE=IMMUNE,MISS=MISS,PARRY=PARRY,REFLECT=REFLECT,RESIST=RESIST}
 	local dmg=function(self,event,...) 
 		local msg,icon
 		local timestamp, eventType, hideCaster, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags = select(1,...)
@@ -971,14 +975,18 @@ if(C.combattext.damage)then
 					else
 						icon=GetSpellTexture(6603)
 					end
-					missType=missType.." \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+					missType=misstypes[missType].." \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+				else
+					missType=misstypes[missType]
 				end
 				xCT4:AddMessage(missType)
 			elseif(eventType=="SPELL_MISSED")or(eventType=="RANGE_MISSED")then
 				local spellId,_,_,missType,_ = select(10,...)
 				if(C.combattext.icons)then
 					icon=GetSpellTexture(spellId)
-					missType=missType.." \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+					missType=misstypes[missType].." \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+				else
+					missType=misstypes[missType]
 				end 
 				xCT4:AddMessage(missType)
 			elseif(eventType=="SPELL_DISPEL")and C.combattext.dispel then
