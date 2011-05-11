@@ -2207,6 +2207,10 @@ Filger_Spells = {
 			{ spellID = 83500, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Magnetic Pull (Twilight Ascendant Council)
 			{ spellID = 83587, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Gravity Core (Twilight Ascendant Council)
+			{ spellID = 92075, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Static Overload (Twilight Ascendant Council)
+			{ spellID = 92067, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Corruption: Accelerated (Cho'gall)
 			{ spellID = 81836, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Corruption: Malformation (Cho'gall)
