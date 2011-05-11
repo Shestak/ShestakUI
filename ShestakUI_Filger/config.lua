@@ -596,6 +596,8 @@ Filger_Spells = {
 			{ spellID = 33395, size = 30, filter = "CD" },
 			-- Combustion
 			{ spellID = 11129, size = 30, filter = "CD" },
+			-- Mana Shield
+			{ spellID = 1463, size = 30, filter = "CD" },
 			
 			-- Other
 			-- Gloves
