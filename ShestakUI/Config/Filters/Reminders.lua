@@ -134,6 +134,13 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 			},
+			[2] = { -- Buffs group
+				["spells"] = {
+					85768,	-- Dark Intent
+				},
+				["instance"] = true,
+				["level"] = 83,
+			},
 		},
 		PALADIN = {
 			[1] = {	-- Seals group
