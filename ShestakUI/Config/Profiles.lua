@@ -80,6 +80,8 @@ elseif T.name == "Чаккноррис" or T.name == "Нупачимучка" or
 	C["misc"].shift_marking = false
 	C["misc"].raid_tools = false
 	C["misc"].ach_screens = true
+	C["misc"].auto_accept_invite = true
+	C["misc"].announce_interrupt = true
 	C["combattext"].crit_prefix = ""
 	C["combattext"].crit_postfix = ""
 	C["combattext"].merge_aoe_spam_time = 1
