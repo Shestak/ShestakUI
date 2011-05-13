@@ -127,7 +127,7 @@ local strip = CreateFrame("Button", "DressUpFrameUndressButton", DressUpFrame, "
 strip:SetText(L_MISC_UNDRESS)
 strip:SetHeight(22)
 strip:SetWidth(strip:GetTextWidth() + 40)
-strip:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT")
+strip:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
 strip:SetScript("OnClick", function(this)
 	this.model:Undress()
 	PlaySound("gsTitleOptionOK")
@@ -141,12 +141,12 @@ strip:SetScript("OnEvent",function(this)
 	if AuctionFrame:IsVisible() and this.model ~= AuctionDressUpModel then
 		this:SetParent(AuctionDressUpModel)
 		this:ClearAllPoints()
-		this:SetPoint("BOTTOM", AuctionDressUpFrameResetButton, "TOP", 0, 2)
+		this:SetPoint("BOTTOM", AuctionDressUpFrameResetButton, "TOP", 0, 3)
 		this.model = AuctionDressUpModel
 	elseif this.model ~= DressUpModel then
 		this:SetParent(DressUpModel)
 		this:ClearAllPoints()
-		this:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT")
+		this:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
 		this.model = DressUpModel
 	end
 end)
