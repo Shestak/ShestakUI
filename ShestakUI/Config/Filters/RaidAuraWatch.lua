@@ -175,6 +175,56 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(5782),	-- Fear
 			SpellName(84853),	-- Dark Pool
 			SpellName(91325),	-- Shadow Vortex
+			-- Death Knight
+			--[[SpellName(51209),	-- Hungering Cold
+			SpellName(47476),	-- Strangulate
+			-- Druid
+			SpellName(33786),	-- Cyclone
+			SpellName(2637),	-- Hibernate
+			SpellName(339),		-- Entangling Roots
+			SpellName(80964),	-- Skull Bash
+			SpellName(78675),	-- Solar Beam
+			-- Hunter
+			SpellName(3355),	-- Freezing Trap Effect
+			SpellName(1513),	-- Scare Beast
+			SpellName(19503),	-- Scatter Shot
+			SpellName(34490),	-- Silence Shot
+			-- Mage
+			SpellName(31661),	-- Dragon's Breath
+			SpellName(61305),	-- Polymorph
+			SpellName(18469),	-- Improved Counterspell
+			SpellName(122),		-- Frost Nova
+			SpellName(55080),	-- Shattered Barrier
+			-- Paladin
+			SpellName(20066),	-- Repentance
+			SpellName(10326),	-- Turn Evil
+			SpellName(853),		-- Hammer of Justice
+			-- Priest
+			SpellName(605),		-- Mind Control
+			SpellName(64044),	-- Psychic Horror
+			SpellName(8122),	-- Psychic Scream
+			SpellName(9484),	-- Shackle Undead
+			SpellName(15487),	-- Silence
+			-- Rogue
+			SpellName(2094),	-- Blind
+			SpellName(1776),	-- Gouge
+			SpellName(6770),	-- Sap
+			SpellName(18425),	-- Improved Kick
+			-- Shaman
+			SpellName(51514),	-- Hex
+			SpellName(3600),	-- Earthbind
+			SpellName(8056),	-- Frost Shock
+			SpellName(63685),	-- Freeze
+			SpellName(39796),	-- Stoneclaw Stun
+			-- Warlock
+			SpellName(710),		-- Banish
+			SpellName(6789),	-- Death Coil
+			SpellName(5484),	-- Howl of Terror
+			SpellName(6358),	-- Seduction
+			SpellName(30283),	-- Shadowfury
+			SpellName(89605),	-- Aura of Foreboding
+			-- Warrior
+			SpellName(20511),	-- Intimidating Shout]]
 		}
 		
 		T.ReverseTimer = {
