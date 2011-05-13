@@ -367,3 +367,11 @@ SlashCmdList.FARMMODE = function(msg, editbox)
 end
 SLASH_FARMMODE1 = "/farmmode"
 SLASH_FARMMODE2 = "/афкььщву"
+
+----------------------------------------------------------------------------------------
+--	Frame Stack on Cyrillic
+----------------------------------------------------------------------------------------
+SlashCmdList.FSTACK = function()
+	T.RunSlashCmd("/fstack")
+end
+SLASH_FSTACK1 = "/аыефсл"
