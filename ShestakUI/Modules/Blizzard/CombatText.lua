@@ -891,7 +891,7 @@ if(C.combattext.damage)then
 	if(C.combattext.icons)then
 		ct.blank="Interface\\AddOns\\ShestakUI\\Media\\Textures\\Blank.tga"
 	end
-	local misstypes={ABSORB=ABSORB,BLOCK=BLOCK,DODGE=DODGE,EVADE=EVADE,IMMUNE=IMMUNE,MISS=MISS,PARRY=PARRY,REFLECT=REFLECT,RESIST=RESIST}
+	local misstypes={ABSORB=ABSORB,BLOCK=BLOCK,DODGE=DODGE,EVADE=EVADE,IMMUNE=IMMUNE,MISS=MISS,PARRY=PARRY,REFLECT=REFLECT,RESIST=RESIST,DEFLECT=DEFLECT}
 	local dmg=function(self,event,...) 
 		local msg,icon
 		local timestamp, eventType, hideCaster, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags = select(1,...)
