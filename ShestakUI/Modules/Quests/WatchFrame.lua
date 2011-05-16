@@ -128,3 +128,32 @@ hooksecurefunc("SetItemButtonTexture", function(button, texture)
 		button.skinned = true
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Difficulty color for watchframe lines
+----------------------------------------------------------------------------------------
+hooksecurefunc("WatchFrame_Update", function()
+	for i = 1, GetNumQuestWatches() do
+		local title, level, questTag, suggestedGroup, isHeader, isCollapsed, isComplete, isDaily, questID, startEvent = GetQuestLogTitle(GetQuestIndexForWatch(i))
+		local col = GetQuestDifficultyColor(level)
+
+		for j = 1, #WATCHFRAME_QUESTLINES do
+			if WATCHFRAME_QUESTLINES[j].text:GetText() == title then
+				WATCHFRAME_QUESTLINES[j].text:SetTextColor(col.r, col.g, col.b)
+				WATCHFRAME_QUESTLINES[j].col = col
+			end
+		end
+	end
+end)
+
+hooksecurefunc("WatchFrameLinkButtonTemplate_Highlight", function(self, onEnter)
+	for i = self.startLine, self.lastLine do
+		if self.lines[i].col then
+			if onEnter then
+				self.lines[i].text:SetTextColor(1, 0.8, 0)
+			else
+				self.lines[i].text:SetTextColor(self.lines[i].col.r, self.lines[i].col.g, self.lines[i].col.b)
+			end
+		end
+	end
+end)
