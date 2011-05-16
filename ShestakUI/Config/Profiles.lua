@@ -72,7 +72,7 @@ elseif T.name == "Бэкстер" or T.name == "Варбой" or T.name == "Бе
 	C["position"].threat_meter = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 380, 18}
 	C["position"].unitframes.tank = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 68}
 elseif T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.name == "Пратифный" or T.name == "Рукалицо"
-	or T.name == "Трольпаладин" or T.name == "Чаккерс" or T.name == "Релика" or T.name == "Тинейд" then
+	or T.name == "Трольпаладин" or T.name == "Чаккерс" or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупаяшколота" then
 	C["media"].texture = "Interface\\AddOns\\Media_texture\\TextureTuk.tga"
 	C["general"].welcome_message = false
 	C["general"].custom_lagtolerance = true
