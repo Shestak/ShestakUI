@@ -117,3 +117,19 @@ addon:Register("BAG_UPDATE", function(bag)
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Auto select gossip
+----------------------------------------------------------------------------------------
+local autoSelectGossipFrame = CreateFrame("Frame")
+autoSelectGossipFrame:RegisterEvent("GOSSIP_SHOW")
+
+function autoSelectGossipFrame:OnEvent(event, arg1)
+	if event == "GOSSIP_SHOW" then
+		if not IsModifierKeyDown() and GetNumGossipOptions() == 1 and GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
+			SelectGossipOption(1)
+		end
+	end
+end
+
+autoSelectGossipFrame:SetScript("OnEvent", autoSelectGossipFrame.OnEvent)
