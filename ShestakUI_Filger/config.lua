@@ -441,6 +441,10 @@ Filger_Spells = {
 			{ spellID = 46989, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Blazing Speed
 			{ spellID = 31643, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Arcane Power
+			{ spellID = 12042, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Improved Mana Gem
+			{ spellID = 83098, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
