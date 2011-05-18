@@ -284,7 +284,17 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ChannelPulloutTab"]:SetHeight(20)
 		_G["ChannelPullout"]:ClearAllPoints()
 		_G["ChannelPullout"]:Point("TOP", _G["ChannelPulloutTab"], "BOTTOM", 0, -3)
-		
+
+		-- Frame level
+		_G["AudioOptionsSoundPanel"]:SetFrameLevel(1)
+		_G["AudioOptionsVoicePanel"]:SetFrameLevel(1)
+		_G["AudioOptionsSoundPanelPlayback"]:SetFrameLevel(2)
+		_G["AudioOptionsSoundPanelHardware"]:SetFrameLevel(2)
+		_G["AudioOptionsSoundPanelVolume"]:SetFrameLevel(2)
+		_G["AudioOptionsVoicePanelTalking"]:SetFrameLevel(2)
+		_G["AudioOptionsVoicePanelBinding"]:SetFrameLevel(2)
+		_G["AudioOptionsVoicePanelListening"]:SetFrameLevel(2)
+
 		-- Others
 		_G["ReadyCheckListenerFrame"]:SetAlpha(0)
 		_G["ReadyCheckFrame"]:HookScript("OnShow", function(self) if UnitIsUnit("player", self.initiator) then self:Hide() end end)
