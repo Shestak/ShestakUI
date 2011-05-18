@@ -226,7 +226,7 @@ local micromenu = {
 }
 
 if T.PTRVersion() then
-	tinsert(micromenu, {text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()  end})
+	tinsert(micromenu, {text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function() ToggleFrame(EncounterJournal) end})
 end
 
 Minimap:SetScript("OnMouseUp", function(self, button)
