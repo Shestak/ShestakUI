@@ -218,6 +218,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ReadyCheckButton",
 			"ShowButton",
 			"CloseButton",
+			"RaidControlButton",
 			"InterfaceOptionsHelpPanelResetTutorials",
 			"InterfaceOptionsUnitFramePanelResetPartyPosition",
 			"InterfaceOptionsRaidFramePanelResetPosition",

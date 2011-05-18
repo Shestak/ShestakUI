@@ -6,7 +6,7 @@ if not C.misc.raid_tools == true then return end
 ----------------------------------------------------------------------------------------
 -- Create main frame
 local RaidUtilityPanel = CreateFrame("Frame", "RaidUtilityPanel", UIParent)
-RaidUtilityPanel:CreatePanel("Transparent", 170, 125, "TOP", UIParent, "TOP", -300, 1)
+RaidUtilityPanel:CreatePanel("Transparent", 170, 145, "TOP", UIParent, "TOP", -300, 1)
 RaidUtilityPanel.toggled = false
 
 -- Check if We are Raid Leader or Raid Officer
@@ -114,6 +114,12 @@ CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateRolePoll:Point("BOTTOMRI
 local MarkTexture = CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:CreateTexture(nil, "OVERLAY")
 MarkTexture:SetTexture("Interface\\RaidFrame\\Raid-WorldPing")
 MarkTexture:Point("CENTER", 0, -1)
+
+--Raid Control Panel
+CreateButton("RaidControlButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RoleCheckButton:GetWidth(), 18, "TOPLEFT", ReadyCheckButton, "BOTTOMLEFT", 0, -5, RAID_CONTROL, nil)
+RaidControlButton:SetScript("OnMouseUp", function(self)
+	ToggleFriendsFrame(4)
+end)
 
 local function ToggleRaidUtil(self, event)
 	if InCombatLockdown() then
