@@ -7,38 +7,6 @@ local SkinBlizzUI = CreateFrame("Frame")
 SkinBlizzUI:RegisterEvent("ADDON_LOADED")
 SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") then return end
-	
-	-- Reskin Blizzard DebugTools(by Elv22)
-	if addon == "Blizzard_DebugTools" then
-		ScriptErrorsFrame:SetTemplate("Transparent")
-		EventTraceFrame:SetTemplate("Transparent")
-		_G["EventTraceTooltip"]:HookScript("OnShow", function(self) self:SetTemplate("Transparent") end)
-
-		local texs = {
-			"TopLeft",
-			"TopRight",
-			"Top",
-			"BottomLeft",
-			"BottomRight",
-			"Bottom",
-			"Left",
-			"Right",
-			"TitleBG",
-			"DialogBG",
-		}
-
-		for i = 1, #texs do
-			_G["ScriptErrorsFrame"..texs[i]]:SetTexture(nil)
-			_G["EventTraceFrame"..texs[i]]:SetTexture(nil)
-		end
-
-		for i = 1, ScriptErrorsFrame:GetNumChildren() do
-			local child = select(i, ScriptErrorsFrame:GetChildren())
-			if child:GetObjectType() == "Button" and not child:GetName() then
-				child:SkinButton()
-			end
-		end
-	end
 
 	-- Stuff not in Blizzard load-on-demand
 	if addon == "ShestakUI" then
@@ -113,6 +81,16 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ChatConfigOtherSettingsSystem",
 			"ChatConfigOtherSettingsCreature",
 			"ChatConfigOtherSettingsPVP",
+			"ChatConfigCombatSettingsFilters",
+			"CombatConfigMessageSourcesDoneBy",
+			"CombatConfigMessageSourcesDoneTo",
+			"CombatConfigColorsUnitColors",
+			"CombatConfigColorsHighlighting",
+			"CombatConfigColorsColorizeUnitName",
+			"CombatConfigColorsColorizeSpellNames",
+			"CombatConfigColorsColorizeDamageNumber",
+			"CombatConfigColorsColorizeDamageSchool",
+			"CombatConfigColorsColorizeEntireLine"
 		}
 		
 		for i = 1, getn(insetskins) do
@@ -243,6 +221,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"InterfaceOptionsHelpPanelResetTutorials",
 			"InterfaceOptionsUnitFramePanelResetPartyPosition",
 			"InterfaceOptionsRaidFramePanelResetPosition",
+			"CombatLogDefaultButton",
+			"ChatConfigCombatSettingsFiltersCopyFilterButton",
+			"ChatConfigCombatSettingsFiltersAddFilterButton",
+			"ChatConfigCombatSettingsFiltersDeleteButton",
+			"CombatConfigSettingsSaveButton",
 		}
 		
 		for i = 1, getn(BlizzardButtons) do
