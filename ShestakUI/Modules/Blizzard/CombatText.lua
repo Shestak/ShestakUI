@@ -1028,8 +1028,15 @@ if(C.combattext.damage)then
 			end
 		end
 	end
-	xCTd:RegisterEvent"COMBAT_LOG_EVENT_UNFILTERED"
-	xCTd:SetScript("OnEvent",dmg)
+	local dmg_proxy = function(self, event, timestamp, eventType, hideCaster, srcGUID, srcName, srcFlags, srcFlags2, destGUID, destName, destFlags, destFlags2, ...)
+		dmg(self, event, timestamp, eventType, hideCaster, srcGUID, srcName, srcFlags, destGUID, destName, destFlags, ...)
+	end
+	xCTd:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+	if T.PTRVersion() then
+		xCTd:SetScript("OnEvent",dmg_proxy)
+	else
+		xCTd:SetScript("OnEvent",dmg)
+	end
 end
 
 -- healing
@@ -1086,6 +1093,13 @@ if(C.combattext.healing)then
 			end
 		end
 	end
-	xCTh:RegisterEvent"COMBAT_LOG_EVENT_UNFILTERED"
-	xCTh:SetScript("OnEvent",heal)
+	local heal_proxy = function(self, event, timestamp, eventType, hideCaster, srcGUID, srcName, srcFlags, srcFlags2, destGUID, destName, destFlags, destFlags2, ...)
+		heal(self, event, timestamp, eventType, hideCaster, srcGUID, srcName, srcFlags, destGUID, destName, destFlags, ...)
+	end
+	xCTh:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+	if T.PTRVersion() then
+		xCTh:SetScript("OnEvent",heal_proxy)
+	else
+		xCTh:SetScript("OnEvent",heal)
+	end
 end
