@@ -182,7 +182,7 @@ local OnEvent = function(self, event, ...)
 		if band(sourceFlags, filter) == 0 then return end
 		if eventType == "SPELL_RESURRECT" or eventType == "SPELL_CAST_SUCCESS" then
 			local spellId = select(10, ...)
-			if T.raid_spells[spellId]then
+			if T.raid_spells[spellId] and show[select(2, IsInInstance())] then
 				StartTimer(sourceName, spellId)
 			end
 		end
