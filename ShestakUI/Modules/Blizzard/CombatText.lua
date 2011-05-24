@@ -159,6 +159,8 @@ elseif T.class=="MAGE"then
 		ct.aoespam[88148]=true		-- Flamestrike void
 		ct.aoespam[84721]=true		-- Frostfire Orb
 		ct.aoespam[82739]=true		-- Flame Orb
+		ct.aoespam[83619]=true		-- Fire Power
+		ct.aoespam[120]=true		-- Cone of Cold
 	end
 elseif T.class=="WARRIOR"then
 	if(C.combattext.merge_aoe_spam)then
