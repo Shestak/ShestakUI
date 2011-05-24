@@ -131,6 +131,7 @@ elseif T.class=="PRIEST"then
 elseif T.class=="SHAMAN"then
 	if(C.combattext.merge_aoe_spam)then
 		ct.aoespam[421]=true		-- Chain Lightning
+		ct.aoespam[45297]=true		-- Chain Lightning (Mastery proc)
 		ct.aoespam[8349]=true		-- Fire Nova
 		ct.aoespam[77478]=true		-- Earhquake
 		ct.aoespam[51490]=true		-- Thunderstorm
@@ -175,7 +176,7 @@ elseif T.class=="WARRIOR"then
 elseif T.class=="HUNTER"then
 	if(C.combattext.merge_aoe_spam)then
 		ct.aoespam[2643]=true		-- Multi-Shot
-		ct.aoespam[83077]=true		-- instant part of Serpent Sting
+		ct.aoespam[83077]=true		-- Instant part of Serpent Sting
 		ct.aoespam[88466]=true		-- Serpent Sting#1
 		ct.aoespam[1978]=true		-- Serpent Sting#2
 		ct.aoespam[13812]=true		-- Explosive Trap  
@@ -189,6 +190,20 @@ elseif T.class=="DEATHKNIGHT"then
 		ct.aoespam[49184]=true		-- Howling Blast
 		ct.aoespam[52212]=true		-- Death and Decay
 		ct.aoespam[47541]=true		-- Death Coil
+		ct.aoespam[55050]=true		-- Heart Strike
+		-- merging mh/oh strikes(by Bozo)
+		ct.aoespam[49020]=true		-- Obliterate MH
+		ct.aoespam[66198]=49020		-- Obliterate OH
+		ct.aoespam[49998]=true		-- Death Strike MH
+		ct.aoespam[66188]=49998		-- Death Strike OH
+		ct.aoespam[45462]=true		-- Plague Strike MH
+		ct.aoespam[66216]=45462		-- Plague Strike OH
+		ct.aoespam[49143]=true		-- Frost Strike MH
+		ct.aoespam[66196]=49143		-- Frost Strike OH
+		ct.aoespam[56815]=true		-- Rune Strike MH
+		ct.aoespam[66217]=56815		-- Rune Strike OH
+		ct.aoespam[45902]=true		-- Blood Strike MH
+		ct.aoespam[66215]=45902		-- Blood Strike OH
 	end
 elseif T.class=="ROGUE"then
 	if(C.combattext.merge_aoe_spam)then
@@ -864,7 +879,7 @@ if(C.combattext.merge_aoe_spam)then
 						else
 							count=""
 						end
-						xCT4:AddMessage(SQ[k]["queue"]..SQ[k]["msg"]..count, unpack(SQ[k]["color"]))
+						xCT4:AddMessage(SQ[k]["queue"]..count..SQ[k]["msg"], unpack(SQ[k]["color"]))
 						SQ[k]["queue"]=0
 						SQ[k]["count"]=0
 					end
