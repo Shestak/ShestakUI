@@ -541,7 +541,12 @@ for i=1,numf do
 		f:SetPoint("CENTER",0,205)
 	else
 		f:SetJustifyH(ct.justify_4)
-		f:SetPoint("CENTER",330,205)
+		f:SetWidth(200)
+		if C.unitframe.enable == true and _G.oUF_Target then
+			f:SetPoint("BOTTOMRIGHT", "oUF_Target", "TOPRIGHT", 2, 278)
+		else
+			f:SetPoint("CENTER",330,205)
+		end
 		local a,_,c=f:GetFont()
 		if (C.font.combat_text_font_size=="auto")then
 			if C.combattext.icons then
@@ -1059,6 +1064,9 @@ if(C.combattext.healing)then
 					if(amount>=C.combattext.heal_treshold)then
 						local color={}
 						local rawamount=amount
+						if C.combattext.show_overhealing and abs(overhealing) > 0 then
+							amount = math.floor(amount-overhealing).." ["..floor(overhealing).."]"
+						end
 						if (critical) then 
 							amount="|cffFF0000"..C.combattext.crit_prefix.."|r"..amount.."|cffFF0000"..C.combattext.crit_postfix.."|r"
 							color={.1,1,.1}

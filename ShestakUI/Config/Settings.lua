@@ -82,6 +82,7 @@ C["combattext"] = {
 	["damage"] = true,							-- Show outgoing damage in it's own frame
 	["healing"] = true,							-- Show outgoing healing in it's own frame
 	["show_hots"] = true,						-- Show periodic healing effects in healing frame
+	["show_overhealing"] = true,				-- Show outgoing overhealing
 	["pet_damage"] = true,						-- Show your pet damage
 	["dot_damage"] = true,						-- Show damage from your dots
 	["damage_color"] = true,					-- Display damage numbers depending on school of magic
