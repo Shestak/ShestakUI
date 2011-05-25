@@ -218,14 +218,20 @@ if T.author == true then
 	C["tooltip"].talents = true
 	C["tooltip"].average_lvl = true
 	C["tooltip"].who_targetting = true
+	C["tooltip"].raid_icon = true
 	C["chat"].combatlog = false
 	C["chat"].spam = true
+	C["nameplate"].class_icons = true
+	C["nameplate"].track_auras = true
 	C["actionbar"].toggle_mode = false
 	C["unitframe"].arena_on_right = false
 	C["unitframe"].icons_combo_point_new = true
 	C["stats"].fps = false
 	C["stats"].guild_repair = false
 	C["stats"].battleground = true
+	if T.level == MAX_PLAYER_LEVEL then
+		C["stats"].experience = false
+	end
 	if T.realm == "Дракономор" then
 		C["unitframe"].icons_pvp  = true
 	end

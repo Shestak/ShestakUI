@@ -55,7 +55,7 @@ local function style(self)
  
 	HotKey:ClearAllPoints()
 	HotKey:Point("TOPRIGHT", 0, 0)
-	HotKey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style);
+	HotKey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 	HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 	HotKey:Width(T.buttonsize - 1)
 	HotKey.ClearAllPoints = T.dummy
