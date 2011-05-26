@@ -45,6 +45,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"BaudErrorFrameDetailScrollBox",
 			"StackSplitFrame",
 			"OpacityFrame",
+			"GeneralDockManagerOverflowButtonList"
 		}
 
 		for i = 1, getn(bgskins) do
@@ -295,6 +296,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["AudioOptionsVoicePanelTalking"]:SetFrameLevel(2)
 		_G["AudioOptionsVoicePanelBinding"]:SetFrameLevel(2)
 		_G["AudioOptionsVoicePanelListening"]:SetFrameLevel(2)
+		_G["GeneralDockManagerOverflowButtonList"]:SetFrameStrata("HIGH")
 
 		-- Others
 		_G["ReadyCheckListenerFrame"]:SetAlpha(0)
