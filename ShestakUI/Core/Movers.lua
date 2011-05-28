@@ -22,6 +22,7 @@ T.MoverFrames = {
 	PetActionBarAnchor,
 	ShiftBar,
 	VehicleButtonAnchor,
+	ChatBar,
 	--oUF_Player_Castbar,
 	--oUF_Target_Castbar,
 	--oUF_Player_Portrait,
