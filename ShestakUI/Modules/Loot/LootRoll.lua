@@ -165,20 +165,8 @@ local function CreateRollFrame()
 end
 
 local LootRollAnchor = CreateFrame("Frame", "LootRollAnchor", UIParent)
-LootRollAnchor:SetFrameStrata("HIGH")
-LootRollAnchor:SetFrameLevel(20)
 LootRollAnchor:Width(300)
 LootRollAnchor:Height(20)
-LootRollAnchor:SetTemplate("Transparent")
-LootRollAnchor:SetBackdropBorderColor(1, 0, 0)
-LootRollAnchor.text = LootRollAnchor:CreateFontString("LootRollAnchorText", "ARTWORK")
-LootRollAnchor.text:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style);
-LootRollAnchor.text:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
-LootRollAnchor.text:Point("CENTER", LootRollAnchor, 0, 0)
-LootRollAnchor.text:SetText("GroupRoll Anchor")
-LootRollAnchor:SetClampedToScreen(true)
-LootRollAnchor:SetMovable(true)
-LootRollAnchor:Hide()
 
 local frames = {}
 

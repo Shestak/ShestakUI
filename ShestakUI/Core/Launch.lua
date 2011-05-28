@@ -163,14 +163,10 @@ local function InstallUI()
 	end
 	
 	-- Reset saved variables on char
-	SavedOptionsPerChar = {}
 	SavedOptions = {}
-	
-	-- Reset movable stuff into original position
-	for i = 1, getn(T.MoverFrames) do
-		if T.MoverFrames[i] then T.MoverFrames[i]:SetUserPlaced(false) end
-	end
-	
+	SavedPositions = {}
+	SavedOptionsPerChar = {}
+
 	SavedOptionsPerChar.Install = true
 
 	ReloadUI()
@@ -247,6 +243,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 
 	-- Create empty CVar if they doesn't exist
 	if (SavedOptions == nil) then SavedOptions = {} end
+	if (SavedPositions == nil) then SavedPositions = {} end
 	if (SavedOptionsPerChar == nil) then SavedOptionsPerChar = {} end
 	
 	if T.getscreenwidth < 1024 then

@@ -29,18 +29,7 @@ end
 
 local anchor = CreateFrame("Frame", "TooltipAnchor", UIParent)
 anchor:SetSize(200, 40)
-anchor:SetFrameStrata("TOOLTIP")
-anchor:SetFrameLevel(20)
-anchor:SetClampedToScreen(true)
-anchor:SetAlpha(0)
 anchor:SetPoint(unpack(C.position.tooltip))
-anchor:SetTemplate("Transparent")
-anchor:SetBackdropBorderColor(1, 0, 0, 1)
-anchor:SetMovable(true)
-anchor.text = anchor:CreateFontString("TooltipAnchorText", "OVERLAY")
-anchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-anchor.text:SetPoint("CENTER")
-anchor.text:SetText("Tooltip Anchor")
 
 LFDSearchStatus:SetFrameStrata("TOOLTIP")
 

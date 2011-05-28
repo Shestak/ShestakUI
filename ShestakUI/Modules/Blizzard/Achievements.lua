@@ -7,15 +7,6 @@ local AchievementAnchor = CreateFrame("Frame", "AchievementAnchor", UIParent)
 AchievementAnchor:Width(DungeonCompletionAlertFrame1:GetWidth())
 AchievementAnchor:Height(DungeonCompletionAlertFrame1:GetHeight())
 AchievementAnchor:SetPoint(unpack(C.position.achievement))
-AchievementAnchor:SetTemplate("Transparent")
-AchievementAnchor:SetBackdropBorderColor(1, 0, 0)
-AchievementAnchor:SetClampedToScreen(true)
-AchievementAnchor:SetMovable(true)
-AchievementAnchor:SetAlpha(0)
-AchievementAnchor.text = AchievementAnchor:CreateFontString("AchievementAnchorText", "OVERLAY")
-AchievementAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-AchievementAnchor.text:SetPoint("CENTER")
-AchievementAnchor.text:SetText("Achievements Anchor")
 
 local pos = "TOP"
 

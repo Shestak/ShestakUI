@@ -239,21 +239,9 @@ end
 
 -- Create Anchor
 local RaidBuffsAnchor = CreateFrame("Button", "RaidBuffsAnchor", UIParent)
-RaidBuffsAnchor:SetFrameStrata("TOOLTIP")
-RaidBuffsAnchor:SetFrameLevel(20)
 RaidBuffsAnchor:Width((C.reminder.raid_buffs_size * 8) + 9)
 RaidBuffsAnchor:Height(C.reminder.raid_buffs_size + 4)
-RaidBuffsAnchor:SetClampedToScreen(true)
-RaidBuffsAnchor:SetMovable(true)
-RaidBuffsAnchor:SetTemplate("Transparent")
-RaidBuffsAnchor:SetBackdropBorderColor(1, 0, 0, 1)
 RaidBuffsAnchor:Point(unpack(C.position.raid_buffs))
-RaidBuffsAnchor.text = RaidBuffsAnchor:CreateFontString("RaidBuffsAnchorText", "OVERLAY")
-RaidBuffsAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-RaidBuffsAnchor.text:SetPoint("CENTER")
-RaidBuffsAnchor.text:SetText("RaidBuffs Anchor")
-RaidBuffsAnchor.text:SetParent(RaidBuffsAnchor)
-RaidBuffsAnchor:Hide()
 
 -- Create Main bar
 local raidbuff_reminder = CreateFrame("Frame", "RaidBuffReminder", UIParent)

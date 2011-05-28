@@ -11,22 +11,7 @@ local wideFrame = GetCVar("watchFrameWidth")
 
 -- Create our moving area
 local WatchFrameAnchor = CreateFrame("Button", "WatchFrameAnchor", UIParent)
-WatchFrameAnchor:SetFrameStrata("HIGH")
-WatchFrameAnchor:SetFrameLevel(20)
 WatchFrameAnchor:Height(150)
-WatchFrameAnchor:SetClampedToScreen(true)
-WatchFrameAnchor:SetMovable(true)
-WatchFrameAnchor:EnableMouse(false)
-WatchFrameAnchor:SetTemplate("Transparent")
-WatchFrameAnchor:SetBackdropColor(0, 0, 0, 0)
-WatchFrameAnchor:SetBackdropBorderColor(0, 0, 0, 0)
-WatchFrameAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
-WatchFrameAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)
-WatchFrameAnchor.text = WatchFrameAnchor:CreateFontString("WatchFrameAnchorText", "OVERLAY")
-WatchFrameAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-WatchFrameAnchor.text:SetPoint("CENTER")
-WatchFrameAnchor.text:SetText("WatchFrame Anchor")
-WatchFrameAnchor.text:Hide()
 
 -- Set default position
 WatchFrameAnchor:Point(unpack(C.position.quest))

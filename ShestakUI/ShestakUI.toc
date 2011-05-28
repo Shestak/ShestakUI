@@ -7,7 +7,7 @@
 ## Thanks: Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, UI Users, Russian Community and Others
 ## OptionalDeps: ShestakUI_Config, Blizzard_CombatText, Stuf, PitBull4, ShadowedUnitFrames, Grid, Grid2, VuhDo, oUF_Freebgrid, TidyPlates, caelNamePlates, dNameplates, Mapster, Prat-3.0, eCastingBar, Quartz, alEnemyCD, TipTac, TipTacTalents, Omen, sThreatMeter2, alRaidCD, cargBags, Postal, AtlasLoot
 ## SavedVariables: SavedOptions, SavedStats
-## SavedVariablesPerCharacter: SavedOptionsPerChar
+## SavedVariablesPerCharacter: SavedOptionsPerChar, SavedPositions
 ## X-oUF: oUFShestakUI
 ## X-Curse-Packaged-Version: 3.1.3
 ## X-Curse-Project-Name: ShestakUI

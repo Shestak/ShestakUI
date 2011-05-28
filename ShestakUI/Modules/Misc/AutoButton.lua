@@ -45,19 +45,8 @@ end
 
 -- Create anchor
 local AutoButtonAnchor = CreateFrame("Frame", "AutoButtonAnchor", UIParent)
-AutoButtonAnchor:SetFrameStrata("HIGH")
-AutoButtonAnchor:SetFrameLevel(20)
 AutoButtonAnchor:Point("BOTTOMLEFT", Minimap, "TOPLEFT", -2, 27)
 AutoButtonAnchor:Size(40, 40)
-AutoButtonAnchor:SetMovable(true)
-AutoButtonAnchor:SetClampedToScreen(true)
-AutoButtonAnchor:SetTemplate("Transparent")
-AutoButtonAnchor:SetBackdropBorderColor(1, 0, 0)
-AutoButtonAnchor:SetAlpha(0)
-AutoButtonAnchor.text = AutoButtonAnchor:CreateFontString("AutoButtonAnchorText", "OVERLAY")
-AutoButtonAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-AutoButtonAnchor.text:SetPoint("CENTER")
-AutoButtonAnchor.text:SetText("AutoButton Anchor")
 
 -- Create button
 local AutoButton = CreateFrame("Button", "AutoButton", UIParent, "SecureActionButtonTemplate")

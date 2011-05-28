@@ -7,23 +7,8 @@ if not C.threat.enable == true then return end
 local spacing = 7
 
 local ThreatMeterAnchor = CreateFrame("Frame", "ThreatMeterAnchor", UIParent)
-ThreatMeterAnchor:SetFrameStrata("HIGH")
-ThreatMeterAnchor:SetFrameLevel(20)
 ThreatMeterAnchor:Size(C.threat.width + 4, (C.threat.height * C.threat.bar_rows) + (spacing * (C.threat.bar_rows - 1)) + 4)
 ThreatMeterAnchor:Point(unpack(C.position.threat_meter))
-ThreatMeterAnchor:SetClampedToScreen(true)
-ThreatMeterAnchor:SetMovable(true)
-ThreatMeterAnchor:SetTemplate("Transparent")
-ThreatMeterAnchor:SetBackdropColor(0, 0, 0, 0)
-ThreatMeterAnchor:SetBackdropBorderColor(0, 0, 0, 0)
-ThreatMeterAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
-ThreatMeterAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)
-ThreatMeterAnchor.text = ThreatMeterAnchor:CreateFontString("ThreatMeterAnchorText", "OVERLAY")
-ThreatMeterAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-ThreatMeterAnchor.text:SetPoint("CENTER")
-ThreatMeterAnchor.text:SetText("ThreatMeter Anchor")
-ThreatMeterAnchor.text:SetParent(ThreatMeterAnchor)
-ThreatMeterAnchor.text:Hide()
 
 local bar, tList, barList = {}, {}, {}
 local max = math.max

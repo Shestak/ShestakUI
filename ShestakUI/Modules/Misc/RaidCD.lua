@@ -24,16 +24,6 @@ if C.raidcooldown.show_icon == true then
 else
 	RaidCDAnchor:Size(C.raidcooldown.width + 32, C.raidcooldown.height + 10)
 end
-RaidCDAnchor:SetMovable(true)
-RaidCDAnchor:SetClampedToScreen(true)
-RaidCDAnchor:SetTemplate("Transparent")
-RaidCDAnchor:SetBackdropBorderColor(1, 0, 0)
-RaidCDAnchor:SetFrameStrata("TOOLTIP")
-RaidCDAnchor:SetAlpha(0)
-RaidCDAnchor.text = RaidCDAnchor:CreateFontString("RaidCDAnchorText", "OVERLAY")
-RaidCDAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-RaidCDAnchor.text:SetPoint("CENTER")
-RaidCDAnchor.text:SetText("RaidCD Anchor")
 
 local FormatTime = function(time)
 	if time >= 60 then

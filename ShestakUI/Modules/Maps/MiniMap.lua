@@ -5,15 +5,9 @@ if not C.minimap.enable == true then return end
 --	Minimap border
 ----------------------------------------------------------------------------------------
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
-MinimapAnchor:CreatePanel("Transparent", C.minimap.size, C.minimap.size, "CENTER", UIParent, "CENTER", 0, 0)
-MinimapAnchor:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+MinimapAnchor:CreatePanel("ClassColor", C.minimap.size, C.minimap.size, "CENTER", UIParent, "CENTER", 0, 0)
 MinimapAnchor:RegisterEvent("ADDON_LOADED")
 MinimapAnchor:Point(unpack(C.position.minimap))
-MinimapAnchor:SetClampedToScreen(true)
-MinimapAnchor:SetMovable(true)
-MinimapAnchor.text = MinimapAnchor:CreateFontString("MinimapAnchorText", "OVERLAY")
-MinimapAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-MinimapAnchor.text:SetPoint("CENTER")
 
 ----------------------------------------------------------------------------------------
 --	Shape, location and scale

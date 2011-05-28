@@ -18,21 +18,10 @@ else
 	ShiftHolder:Width(T.buttonsize)
 	ShiftHolder:Height((T.buttonsize * 7) + (T.buttonspacing * 6))
 end
-ShiftHolder:SetFrameStrata("MEDIUM")
-ShiftHolder:SetMovable(true)
-ShiftHolder:SetClampedToScreen(true)
 
 -- Shapeshift command to move totem or shapeshift in-game
 local ShapeShiftAnchor = CreateFrame("Frame", "ShapeShiftAnchor", UIParent)
 ShapeShiftAnchor:SetAllPoints(ShiftHolder)
-ShapeShiftAnchor:SetTemplate("Transparent")
-ShapeShiftAnchor:SetFrameStrata("HIGH")
-ShapeShiftAnchor:SetBackdropBorderColor(1, 0, 0)
-ShapeShiftAnchor:SetAlpha(0)
-ShapeShiftAnchor.text = ShapeShiftAnchor:CreateFontString("ShapeShiftAnchorText", "OVERLAY")
-ShapeShiftAnchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-ShapeShiftAnchor.text:SetPoint("CENTER")
-ShapeShiftAnchor.text:SetText("Shapeshift Anchor")
 
 -- Hide bar
 if C.actionbar.shapeshift_hide then ShiftHolder:Hide() return end
@@ -69,7 +58,7 @@ bar:SetScript("OnEvent", function(self, event, ...)
 			button:SetParent(self)
 			if i == 1 then
 				if C.actionbar.shapeshift_horizontal == true then
-					button:Point("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, T.buttonsize + T.buttonspacing)
+					button:Point("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
 				else
 					button:Point("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
 				end

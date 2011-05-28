@@ -127,19 +127,8 @@ if C.toppanel.enable ~= true then return end
 
 -- Create anchor
 local toppanelanchor = CreateFrame("Frame", "TopPanelAnchor", UIParent)
-toppanelanchor:SetFrameStrata("HIGH")
-toppanelanchor:SetFrameLevel(20)
 toppanelanchor:Point(unpack(C.position.top_panel))
 toppanelanchor:Size(C.toppanel.width, C.toppanel.height / 2)
-toppanelanchor:SetMovable(true)
-toppanelanchor:SetClampedToScreen(true)
-toppanelanchor:SetTemplate("Transparent")
-toppanelanchor:SetBackdropBorderColor(1, 0, 0)
-toppanelanchor:SetAlpha(0)
-toppanelanchor.text = toppanelanchor:CreateFontString("TopPanelAnchorText", "OVERLAY")
-toppanelanchor.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-toppanelanchor.text:SetPoint("CENTER")
-toppanelanchor.text:SetText("TopPanel Anchor")
 
 local toppanel = CreateFrame("Frame", "TopPanel", UIParent)
 toppanel:Point("CENTER", toppanelanchor, "CENTER", 0, 0)

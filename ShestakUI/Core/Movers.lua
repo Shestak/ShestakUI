@@ -1,176 +1,131 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
 T.MoverFrames = {
-	MinimapAnchor,
 	VehicleAnchor,
 	WatchFrameAnchor,
-	ThreatMeterAnchor,
 	AchievementAnchor,
-	LootRollAnchor,
-	DCPAnchor,
-	RaidBuffsAnchor,
-	TooltipAnchor,
-	ShiftBar,
-	AutoButtonAnchor,
-	RaidCDAnchor,
-	BuffsAnchor,
-	VehicleButtonAnchor,
+	MinimapAnchor,
 	TopPanelAnchor,
+	BuffsAnchor,
+	RaidCDAnchor,
+	ThreatMeterAnchor,
+	LootRollAnchor,
+	RaidBuffsAnchor,
+	DCPAnchor,
+	AutoButtonAnchor,
+	TooltipAnchor,
+	ActionBarAnchor,
+	RightActionBarAnchor,
+	--SplitBarLeft,
+	--SplitBarRight,
+	--PetActionBarAnchor,
+	ShiftBar,
+	VehicleButtonAnchor,
+	--oUF_Player_Castbar,
+	--oUF_Target_Castbar,
 }
 
--- Used to exec various code if we enable or disable moving
-local function exec(self, enable)
+local moving = false
+local movers = {}
 
-	if self == LootRollAnchor or self == RaidBuffsAnchor then
-		if enable then
-			self:Show()
-		else
-			self:Hide()
-		end
-	end
+local SetPosition = function(mover)
+	local ap, _, rp, x, y = mover:GetPoint()
+	SavedPositions[mover.frame:GetName()] = {ap, "UIParent", rp, x, y}
+end
+
+local OnDragStart = function(self)
+	self:StartMoving()
+	self.frame:ClearAllPoints()
+	self.frame:SetAllPoints(self)
+end
+
+local OnDragStop = function(self)
+	self:StopMovingOrSizing()
+	SetPosition(self)
+end
+
+local CreateMover = function(frame)
+	local mover = CreateFrame("Frame", nil, UIParent)
+	mover:SetTemplate("Transparent")
+	mover:SetBackdropBorderColor(1, 0, 0)
+	mover:SetAllPoints(frame)
+	mover:SetFrameStrata("TOOLTIP")
+	mover:EnableMouse(true)
+	mover:SetMovable(true)
+	mover:SetClampedToScreen(true)
+	mover:RegisterForDrag("LeftButton")
+	mover:SetScript("OnDragStart", OnDragStart)
+	mover:SetScript("OnDragStop", OnDragStop)
+	mover:SetScript("OnEnter", function(self) self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b) end)
+	mover:SetScript("OnLeave", function(self) self:SetBackdropBorderColor(1, 0, 0) end)
+	mover.frame = frame
 	
-	if self == MinimapAnchor then
-		if enable then
-			Minimap:Hide()
-			self:SetBackdropBorderColor(1, 0, 0, 1)
-			MinimapAnchor.text:SetText("Minimap Anchor")
-		else
-			Minimap:Show()
-			self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-			MinimapAnchor.text:SetText("")
-		end
-	end
-	
-	if self == VehicleAnchor or self == AchievementAnchor or self == DCPAnchor or self == TooltipAnchor 
-		or self == AutoButtonAnchor or self == RaidCDAnchor or self == VehicleButtonAnchor or self == TopPanelAnchor then
-		if enable then
-			self:SetAlpha(1)
-		else
-			self:SetAlpha(0)
-		end
-	end
-	
-	if self == WatchFrameAnchor then
-		if enable then
-			WatchFrameAnchor:SetBackdropBorderColor(1, 0, 0, 1)
-			WatchFrameAnchor:SetBackdropColor(unpack(C.media.overlay_color))
-			WatchFrameAnchor.iborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))
-			WatchFrameAnchor.oborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))	
-		else
-			WatchFrameAnchor:SetBackdropBorderColor(0, 0, 0, 0)
-			WatchFrameAnchor:SetBackdropColor(0, 0, 0, 0)
-			WatchFrameAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
-			WatchFrameAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)		
-		end
-	end
-	
-	if self == BuffsAnchor then
-		if enable then
-			BuffsAnchor:SetBackdropBorderColor(1, 0, 0, 1)
-			BuffsAnchor:SetBackdropColor(unpack(C.media.overlay_color))
-			BuffsAnchor.iborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))
-			BuffsAnchor.oborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))	
-			BuffsAnchor.text:SetText("Buffs Anchor")
-		else
-			BuffsAnchor:SetBackdropBorderColor(0, 0, 0, 0)
-			BuffsAnchor:SetBackdropColor(0, 0, 0, 0)
-			BuffsAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
-			BuffsAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)
-			BuffsAnchor.text:SetText("")			
-		end
-	end
-	
-	if self == ThreatMeterAnchor then
-		if enable then
-			ThreatMeterAnchor:SetBackdropBorderColor(1, 0, 0, 1)
-			ThreatMeterAnchor:SetBackdropColor(unpack(C.media.overlay_color))
-			ThreatMeterAnchor.iborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))
-			ThreatMeterAnchor.oborder:SetBackdropBorderColor(unpack(C.media.backdrop_color))			
-		else
-			ThreatMeterAnchor:SetBackdropBorderColor(0, 0, 0, 0)
-			ThreatMeterAnchor:SetBackdropColor(0, 0, 0, 0)
-			ThreatMeterAnchor.iborder:SetBackdropBorderColor(0, 0, 0, 0)
-			ThreatMeterAnchor.oborder:SetBackdropBorderColor(0, 0, 0, 0)			
-		end
-	end
-	
-	if self == ShiftBar then
-		if enable then
-			ShapeShiftAnchor:SetAlpha(1)
-		else
-			ShapeShiftAnchor:SetAlpha(0)
-		end
+	mover.name = mover:CreateFontString(nil, "OVERLAY")
+	mover.name:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+	mover.name:SetPoint("CENTER")
+	mover.name:SetTextColor(1, 1, 1)
+	mover.name:SetText(frame:GetName())
+	movers[frame:GetName()] = mover
+end
+
+local GetMover = function(frame)
+	if movers[frame:GetName()] then
+		return movers[frame:GetName()]
+	else
+		return CreateMover(frame)
 	end
 end
 
-local enable = true
-local origa1, origf, origa2, origx, origy
-
-local function moving()
-	-- Don't allow moving while in combat
+local InitMove = function(msg)
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
-	
-	for i = 1, getn(T.MoverFrames) do
-		if T.MoverFrames[i] then
-			if enable then
-				T.MoverFrames[i]:EnableMouse(true)
-				T.MoverFrames[i]:RegisterForDrag("LeftButton", "RightButton")
-				T.MoverFrames[i]:SetScript("OnDragStart", function(self)
-					origa1, origf, origa2, origx, origy = T.MoverFrames[i]:GetPoint()
-					self.moving = true
-					self:SetUserPlaced(true)
-					self:StartMoving()
-				end)
-				T.MoverFrames[i]:SetScript("OnDragStop", function(self)
-					self.moving = false
-					self:StopMovingOrSizing()
-				end)
-				exec(T.MoverFrames[i], enable)
-				if T.MoverFrames[i].text then
-					T.MoverFrames[i].text:Show()
-				end
-				T.MoverFrames[i]:SetScript("OnEnter", function(self)
-					if self == ShiftBar then
-						ShapeShiftAnchor:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-					else
-						self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-					end
-				end)
-				T.MoverFrames[i]:SetScript("OnLeave", function(self)
-					if self == ShiftBar then
-						ShapeShiftAnchor:SetBackdropBorderColor(1, 0, 0)
-					else
-						self:SetBackdropBorderColor(1, 0, 0)
-					end
-				end)
-			else
-				T.MoverFrames[i]:EnableMouse(false)
-				if T.MoverFrames[i].moving == true then
-					T.MoverFrames[i]:StopMovingOrSizing()
-					T.MoverFrames[i]:ClearAllPoints()
-					T.MoverFrames[i]:SetPoint(origa1, origf, origa2, origx, origy)
-				end
-				exec(T.MoverFrames[i], enable)
-				if T.MoverFrames[i].text then T.MoverFrames[i].text:Hide() end
-				T.MoverFrames[i].moving = false
-			end
-		end
+	if msg and msg == "reset" then
+		SavedPositions = {}
+		--SavedOptionsPerChar.Install = true
+		ReloadUI()
+		return
 	end
-	
+	if not moving then
+		for i, v in pairs(T.MoverFrames) do
+			local mover = GetMover(v)
+			if mover then mover:Show() end
+		end
+		moving = true
+	else
+		for i, v in pairs(movers) do
+			v:Hide()
+		end
+		moving = false
+	end
 	if T.MoveUnitFrames then T.MoveUnitFrames() end
-	
-	if enable then enable = false else enable = true end
 end
 
+local RestoreUI = function(self)
+	if InCombatLockdown() then
+		if not self.shedule then self.shedule = CreateFrame("Frame", nil, self) end
+		self.shedule:RegisterEvent("PLAYER_REGEN_ENABLED")
+		self.shedule:SetScript("OnEvent", function(self)
+			RestoreUI(self:GetParent())
+			self:UnregisterEvent("PLAYER_REGEN_ENABLED")
+			self:SetScript("OnEvent", nil)
+		end)
+		return
+	end
+	for frame_name, point in pairs(SavedPositions) do
+		if _G[frame_name] then
+			_G[frame_name]:ClearAllPoints()
+			_G[frame_name]:SetPoint(unpack(point))
+		end
+	end
+end
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function(self, event)
+	self:UnregisterEvent(event)
+	RestoreUI(self)
+end)
+
+SlashCmdList.MOVING = InitMove
 SLASH_MOVING1 = "/moveui"
 SLASH_MOVING2 = "/ьщмугш"
-SlashCmdList.MOVING = moving
-
-local protection = CreateFrame("Frame")
-protection:RegisterEvent("PLAYER_REGEN_DISABLED")
-protection:SetScript("OnEvent", function(self, event)
-	if enable then return end
-	print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r")
-	enable = false
-	moving()
-end)
+SLASH_MOVING3 = "/ui"
