@@ -1,5 +1,8 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
+----------------------------------------------------------------------------------------
+--	Movement function(by Allez)
+----------------------------------------------------------------------------------------
 T.MoverFrames = {
 	VehicleAnchor,
 	WatchFrameAnchor,
@@ -16,13 +19,13 @@ T.MoverFrames = {
 	TooltipAnchor,
 	ActionBarAnchor,
 	RightActionBarAnchor,
-	--SplitBarLeft,
-	--SplitBarRight,
-	--PetActionBarAnchor,
+	PetActionBarAnchor,
 	ShiftBar,
 	VehicleButtonAnchor,
 	--oUF_Player_Castbar,
 	--oUF_Target_Castbar,
+	--oUF_Player_Portrait,
+	--oUF_Target_Portrait,
 }
 
 local moving = false
@@ -80,7 +83,7 @@ local InitMove = function(msg)
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
 	if msg and msg == "reset" then
 		SavedPositions = {}
-		--SavedOptionsPerChar.Install = true
+		SavedOptionsPerChar.UFPos = {}
 		ReloadUI()
 		return
 	end
