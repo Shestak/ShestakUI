@@ -198,7 +198,6 @@ L_INFO_SETTINGS_DBM = "Taper /settings dbm, pour configurer DBM automatiquement.
 L_INFO_SETTINGS_MSBT = "Taper /settings msbt, pour configurer msbt automatiquement."
 L_INFO_SETTINGS_SKADA = "Taper /settings skada, pour configurer skada automatiquement."
 L_INFO_SETTINGS_RECOUNT = "Taper /settings recount, pour configurer Recount automatiquement. Puis dans les options de Recount, sélectionnez le profil *Default*."
-L_INFO_SETTINGS_DXE = "Taper /settings dxe, pour configurer DXE automatiquement. Puis dans les options de DXE, sélectionnez le profil *Default*."
 L_INFO_SETTINGS_ALL = "Taper /settings all, pour tout configurer automatiquement."
 
 -- Popups
@@ -208,7 +207,7 @@ L_POPUP_RESETSTATS = "Réinitialiser les statistiques pour le temps passé dans 
 L_POPUP_SWITCH_RAID = "2 modèles de raid sont activés, merci d'en choisir un."
 L_POPUP_DISBAND_RAID = "Etes-vous sûr de vouloir dissoudre le groupe ?"
 L_POPUP_DISABLEUI = "ShestakUI ne fonctionne pas avec cette résolution, voulez-vous désactiver ShestakUI ? (Annuler si vous souhaitez essayer une autre résolution)"
-L_POPUP_SETTINGS_ALL = "Voulez-vous appliquer les modifications pour tout ?(DBM/DXE, Skada/Recount et MSBT)"
+L_POPUP_SETTINGS_ALL = "Voulez-vous appliquer les modifications pour tout ?(DBM, Skada/Recount et MSBT)"
 L_POPUP_SETTINGS_DBM = "La position des éléments de DBM doit être changée."
 L_POPUP_SETTINGS_BW = "La position des éléments de BigWigs doit être changée."
 

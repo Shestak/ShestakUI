@@ -198,7 +198,6 @@ L_INFO_SETTINGS_DBM = "Escribe /settings dbm, para aplicar las preferencias del 
 L_INFO_SETTINGS_MSBT = "Escribe /settings msbt, para aplicar las preferencias del MSBT."
 L_INFO_SETTINGS_SKADA = "Escribe /settings skada, para aplicar las preferencias del Skada."
 L_INFO_SETTINGS_RECOUNT = "Escribe /settings recount, para aplicar las preferencias del Recount. Luego en las opciones de Recount selecciona el perfil *Por defecto*."
-L_INFO_SETTINGS_DXE = "Escribe /settings dxe, para aplicar las preferencias del DXE. Luego en las opciones de DXE selecciona el perfil *Por defecto*."
 L_INFO_SETTINGS_ALL = "Escribe /settings all, para aplicar todas las modificaciones."
 
 -- Popups
@@ -208,7 +207,7 @@ L_POPUP_RESETSTATS = "¿Estás seguro de que quieres reiniciar las estadísticas
 L_POPUP_SWITCH_RAID = "Hay activos 2 estilos para banda, por favor selecciona uno."
 L_POPUP_DISBAND_RAID = "¿Estás seguro de que quieres disolver el grupo?"
 L_POPUP_DISABLEUI = "ShestakUI no funciona con esta resolución, ¿Quieres desactivar ShestakUI? (Pulsa cancelar si quieres probar otra resolución)"
-L_POPUP_SETTINGS_ALL = "¿Aplicar modificaciones para todos los addons? (DBM/DXE, Skada/Recount o MSBT)"
+L_POPUP_SETTINGS_ALL = "¿Aplicar modificaciones para todos los addons? (DBM, Skada/Recount o MSBT)"
 L_POPUP_SETTINGS_DBM = "Necesito cambiar la posición de los elementos del DBM."
 L_POPUP_SETTINGS_BW = "Necesito cambiar la posición de los elementos del BigWigs."
 
