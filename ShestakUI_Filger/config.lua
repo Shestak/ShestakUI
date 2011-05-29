@@ -231,6 +231,8 @@ Filger_Spells = {
 			{ spellID = 33891, size = 30, filter = "CD" },
 			-- Skull Bash - Cat
 			{ spellID = 80965, size = 30, filter = "CD" },
+			-- Tiger's Fury
+			{ spellID = 5217, size = 30, filter = "CD" },
 			
 			-- Other
 			-- Gloves
