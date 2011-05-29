@@ -434,56 +434,6 @@ local UploadRecount = function()
 	}
 end
 
-----------------------------------------------------------------------------------------
---	DXE settings
-----------------------------------------------------------------------------------------
-local UploadDXE = function()
-	if(DXEDB) then table.wipe(DXEDB) end
-	if(DXEIconDB) then table.wipe(DXEIconDB) end
-	DXEDB = {
-		["profiles"] = {
-			["Default"] = {
-				["Positions"] = {
-					["DXEPane"] = {
-						["yOfs"] = -20,
-						["xOfs"] = 20,
-						["point"] = "TOPLEFT",
-						["relativePoint"] = "TOPLEFT",
-					},
-					["DXEAlertsTopStackAnchor"] = {
-						["point"] = "BOTTOMLEFT",
-						["relativePoint"] = "BOTTOMLEFT",
-						["yOfs"] = 185,
-						["xOfs"] = 21,
-					},
-					["DXEArrowsAnchor2"] = {
-						["yOfs"] = -34,
-						["xOfs"] = -111,
-					},
-					["DXEAlertsCenterStackAnchor"] = {
-						["yOfs"] = 25,
-						["xOfs"] = 3,
-					},
-					["DXEArrowsAnchor1"] = {
-						["yOfs"] = -34,
-						["xOfs"] = -4,
-					},
-					["DXEArrowsAnchor3"] = {
-						["yOfs"] = -34,
-						["xOfs"] = 98,
-					},
-				},
-				["Pane"] = {
-					["Show"] = false,
-				},
-			},
-		},
-	}
-	DXEIconDB = {
-		["hide"] = true,
-	}
-end
-
 StaticPopupDialogs["SETTINGS_ALL"] = {
 	text = L_POPUP_SETTINGS_ALL,
 	button1 = ACCEPT,
@@ -493,7 +443,6 @@ StaticPopupDialogs["SETTINGS_ALL"] = {
 		if IsAddOnLoaded("MikScrollingBattleText") then UploadMSBT() end
 		if IsAddOnLoaded("Skada") then UploadSkada() end
 		if IsAddOnLoaded("Recount") then UploadRecount() end
-		if IsAddOnLoaded("DXE") then UploadDXE() end
 		ReloadUI() 
 	end,
     timeout = 0,
@@ -534,13 +483,6 @@ SlashCmdList.SETTINGS = function(msg)
 		else
 			pr("|cffffff00Recount is not installed.|r")
 		end
-	elseif(msg == "dxe") then
-		if IsAddOnLoaded("DXE") then
-			UploadDXE()
-			ReloadUI()
-		else
-			pr("|cffffff00DXE is not installed.|r")
-		end
 	elseif(msg == "all") then
 		StaticPopup_Show("SETTINGS_ALL")
 	else
@@ -548,7 +490,6 @@ SlashCmdList.SETTINGS = function(msg)
 		pr("|cffffff00"..L_INFO_SETTINGS_MSBT.."|r")
 		pr("|cffffff00"..L_INFO_SETTINGS_SKADA.."|r")
 		pr("|cffffff00"..L_INFO_SETTINGS_RECOUNT.."|r")
-		pr("|cffffff00"..L_INFO_SETTINGS_DXE.."|r")
 		pr("|cffffff00"..L_INFO_SETTINGS_ALL.."|r")
 	end
 end

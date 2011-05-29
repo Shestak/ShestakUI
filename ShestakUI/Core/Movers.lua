@@ -69,6 +69,7 @@ local CreateMover = function(frame)
 	mover.name:SetPoint("CENTER")
 	mover.name:SetTextColor(1, 1, 1)
 	mover.name:SetText(frame:GetName())
+	mover.name:SetWidth(frame:GetWidth() - 4)
 	movers[frame:GetName()] = mover
 end
 

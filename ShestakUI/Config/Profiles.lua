@@ -207,7 +207,6 @@ if T.author == true then
 	C["misc"].quest_auto_button = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
-	C["combattext"].heal_treshold = 500
 	C["combattext"].stop_ve_spam = true
 	C["combattext"].dk_runes = false
 	C["combattext"].dispel = false
@@ -231,6 +230,7 @@ if T.author == true then
 	C["stats"].battleground = true
 	if T.level == MAX_PLAYER_LEVEL then
 		C["stats"].experience = false
+		C["combattext"].heal_treshold = 500
 	end
 	if T.realm == "Дракономор" then
 		C["unitframe"].icons_pvp  = true
