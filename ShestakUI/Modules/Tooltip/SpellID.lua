@@ -9,9 +9,9 @@ select, UnitBuff, UnitDebuff, UnitAura, tonumber, strfind, hooksecurefunc
 
 local function addLine(self, id, isItem)
 	if isItem then
-		self:AddDoubleLine(L_TOOLTIP_ITEM_ID, id)
+		self:AddLine("|cffffffff"..L_TOOLTIP_ITEM_ID.." "..id)
 	else
-		self:AddDoubleLine(L_TOOLTIP_SPELL_ID, id)
+		self:AddLine("|cffffffff"..L_TOOLTIP_SPELL_ID.." "..id)
 	end
 	self:Show()
 end
