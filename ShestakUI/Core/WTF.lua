@@ -379,61 +379,6 @@ local UploadSkada = function()
 	}
 end
 
-----------------------------------------------------------------------------------------
---	Recount settings
-----------------------------------------------------------------------------------------
-local UploadRecount = function()
-	if(RecountDB) then table.wipe(RecountDB) end
-	RecountDB = {
-		["profiles"] = {
-			["Default"] = {
-				["GraphWindowY"] = 0,
-				["MainWindow"] = {
-					["Position"] = {
-						["y"] = -305,
-						["x"] = 284,
-						["w"] = 221,
-						["h"] = 178,
-					},
-					["RowSpacing"] = 7,
-					["Buttons"] = {
-						["FileButton"] = false,
-						["ReportButton"] = false,
-					},
-					["BarText"] = {
-						["NumFormat"] = 3,
-					},
-				},
-				["Colors"] = {
-					["Window"] = {
-						["Background"] = {
-							["a"] = 0,
-						},
-						["Title"] = {
-							["a"] = 0,
-						},
-					},
-					["Bar"] = {
-						["Bar Text"] = {
-							["a"] = 1,
-						},
-						["Total Bar"] = {
-							["a"] = 1,
-						},
-					},
-				},
-				["DetailWindowY"] = 0,
-				["DetailWindowX"] = 0,
-				["CurDataSet"] = "OverallData",
-				["BarTexture"] = "Flat",
-				["GraphWindowX"] = 0,
-				["MainWindowWidth"] = 221,
-				["MainWindowHeight"] = 178,
-			},
-		},
-	}
-end
-
 StaticPopupDialogs["SETTINGS_ALL"] = {
 	text = L_POPUP_SETTINGS_ALL,
 	button1 = ACCEPT,
@@ -442,7 +387,6 @@ StaticPopupDialogs["SETTINGS_ALL"] = {
 		if IsAddOnLoaded("DBM-Core") then T.UploadDBM() end
 		if IsAddOnLoaded("MikScrollingBattleText") then UploadMSBT() end
 		if IsAddOnLoaded("Skada") then UploadSkada() end
-		if IsAddOnLoaded("Recount") then UploadRecount() end
 		ReloadUI() 
 	end,
     timeout = 0,
@@ -476,20 +420,12 @@ SlashCmdList.SETTINGS = function(msg)
 		else
 			pr("|cffffff00Skada is not installed.|r")
 		end
-	elseif(msg == "recount") then
-		if IsAddOnLoaded("Recount") then
-			UploadRecount()
-			ReloadUI()
-		else
-			pr("|cffffff00Recount is not installed.|r")
-		end
 	elseif(msg == "all") then
 		StaticPopup_Show("SETTINGS_ALL")
 	else
 		pr("|cffffff00"..L_INFO_SETTINGS_DBM.."|r")
 		pr("|cffffff00"..L_INFO_SETTINGS_MSBT.."|r")
 		pr("|cffffff00"..L_INFO_SETTINGS_SKADA.."|r")
-		pr("|cffffff00"..L_INFO_SETTINGS_RECOUNT.."|r")
 		pr("|cffffff00"..L_INFO_SETTINGS_ALL.."|r")
 	end
 end

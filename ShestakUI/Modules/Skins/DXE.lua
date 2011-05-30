@@ -120,6 +120,26 @@ DXE:LayoutHealthWatchers()
 DXE.Alerts:RefreshBars()
 DXE.Pane.border:Kill()
 
+-- Hook bar
+local DXE_Skin = CreateFrame("Frame")
+DXE_Skin:RegisterEvent("PLAYER_ENTERING_WORLD")
+DXE_Skin:SetScript("OnEvent", function(self, event)
+	if event == "PLAYER_ENTERING_WORLD" then
+		self:UnregisterEvent(event)
+		self = nil
+
+		-- DXE doesn't like the pane timer font to listen for some reason
+		DXE.Pane.timer.left:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		DXE.Pane.timer.left:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		DXE.Pane.timer.right:SetFont(C.font.stylization_font, C.font.stylization_font_size * 1.8, C.font.stylization_font_style)
+		DXE.Pane.timer.right:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+
+		for i = 1, #movers do
+			_G[movers[i]]:SetTemplate("Transparent")
+		end
+	end
+end)
+
 -- Force some default profile options
 if not DXEDB then DXEDB = {} end
 if not DXEDB["profiles"] then DXEDB["profiles"] = {} end
@@ -150,6 +170,11 @@ DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["TitleFontSize"] = C.font.styl
 DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["BarSpacing"] = 3
 DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["HealthFontSize"] = C.font.stylization_font_size
 
+DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["point"] = "BOTTOMLEFT"
+DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["relativePoint"] = "BOTTOMLEFT"
+DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["yOfs"] = 185
+DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["xOfs"] = 21
+
 DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningScale"] = 1
 DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopScale"] = 1
 DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterScale"] = 1
@@ -171,28 +196,3 @@ DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopTextWidth"
 DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterTextWidth"] = 130
 DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningTextWidth"] = 180
 DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopGrowth"] = "UP"
-
-DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["point"] = "BOTTOMLEFT"
-DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["relativePoint"] = "BOTTOMLEFT"
-DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["yOfs"] = 185
-DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["xOfs"] = 21
-
--- Hook bar
-local DXE_Skin = CreateFrame("Frame")
-DXE_Skin:RegisterEvent("PLAYER_ENTERING_WORLD")
-DXE_Skin:SetScript("OnEvent", function(self, event)
-	if event == "PLAYER_ENTERING_WORLD" then
-		self:UnregisterEvent(event)
-		self = nil
-
-		-- DXE doesn't like the pane timer font to listen for some reason
-		DXE.Pane.timer.left:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
-		DXE.Pane.timer.left:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
-		DXE.Pane.timer.right:SetFont(C.font.stylization_font, C.font.stylization_font_size * 1.8, C.font.stylization_font_style)
-		DXE.Pane.timer.right:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
-
-		for i = 1, #movers do
-			_G[movers[i]]:SetTemplate("Transparent")
-		end
-	end
-end)
