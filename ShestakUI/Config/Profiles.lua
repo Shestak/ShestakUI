@@ -92,16 +92,21 @@ elseif T.name == "Чаккноррис" or T.name == "Нупачимучка" or
 	C["tooltip"].raid_icon = true
 	C["tooltip"].who_targetting = true
 	C["tooltip"].hide_combat = true
+	C["tooltip"].item_count = true
 	C["chat"].combatlog = false
 	C["nameplate"].combat = true
-	C["actionbar"].show_grid = false
 	C["unitframe"].castbar_latency = false
 	C["unitframe"].enemy_health_color = false
 	C["raidframe"].icons_lfd_role = true
-	C["raidframe"].plugins_healcomm = false
 	C["threat"].enable = false
 	if T.name == "Трольпаладин" or T.name == "Рукалицо"	or T.name == "Чаккерс" then
 		C["actionbar"].bottombars = 3
+	end
+	if T.name ~= "Релика" then
+		C["raidframe"].plugins_healcomm = false
+	end
+	if T.name == "Чаккноррис" then
+		C["actionbar"].show_grid = false
 	end
 end
 
