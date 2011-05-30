@@ -143,6 +143,7 @@
 	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>
 	<Script file="Modules\Skins\KLE.lua"/>
+	<Script file="Modules\Skins\Recount.lua"/>
 	
 	<Include file="Modules\UnitFrames\Templates.xml"/>
 	<Script file="Modules\UnitFrames\Tags.lua"/>

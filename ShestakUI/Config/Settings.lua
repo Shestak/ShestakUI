@@ -72,6 +72,7 @@ C["skins"] = {
 	["dxe"] = true,								-- DXE skin
 	["kle"] = true,								-- KLE skin
 	["pallypower"] = true,						-- PallyPower skin
+	["recount"] = true,							-- Recount skin
 }
 
 ----------------------------------------------------------------------------------------
