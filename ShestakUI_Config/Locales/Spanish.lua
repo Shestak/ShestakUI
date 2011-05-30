@@ -224,6 +224,7 @@ L_GUI_AURA_FOCUS_DEBUFFS = "Perjuicios en el marco del foco"
 L_GUI_AURA_FOT_DEBUFFS = "Perjuicios en el marco del objetivo del foco"
 L_GUI_AURA_PET_DEBUFFS = "Perjuicios en el marco de la mascota"
 L_GUI_AURA_TOT_DEBUFFS = "Perjuicios en el marco del objetivo del objetivo"
+L_GUI_AURA_BOSS_BUFFS = "Buffs on boss frame" -- Needs review
 L_GUI_AURA_PLAYER_AURA_ONLY = "Solo tus perjuicios en el marco del objetivo"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color de los perjuicios por tipo"
 L_GUI_AURA_CAST_BY = "Mostrar quién lanza un beneficio/perjuicio en su descripción"

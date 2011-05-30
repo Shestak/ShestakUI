@@ -318,6 +318,7 @@ C["aura"] = {
 	["fot_debuffs"] = false,					-- DeBuffs on focustarget frame
 	["pet_debuffs"] = false,					-- DeBuffs on pet frame
 	["tot_debuffs"] = false,					-- DeBuffs on targettarget frame
+	["boss_buffs"] = true,						-- Buffs on boss frame
 	["player_aura_only"] = false,				-- Only your debuff on target frame
 	["debuff_color_type"] = true,				-- Color debuff by type
 	["cast_by"] = false,						-- Show who cast a buff/debuff in its tooltip

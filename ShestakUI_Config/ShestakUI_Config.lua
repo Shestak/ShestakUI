@@ -261,6 +261,7 @@ local function Local(o)
 	if o == "UIConfigaurafot_debuffs" then o = L_GUI_AURA_FOT_DEBUFFS end
 	if o == "UIConfigaurapet_debuffs" then o = L_GUI_AURA_PET_DEBUFFS end
 	if o == "UIConfigauratot_debuffs" then o = L_GUI_AURA_TOT_DEBUFFS end
+	if o == "UIConfigauraboss_buffs" then o = L_GUI_AURA_BOSS_BUFFS end
 	if o == "UIConfigauraplayer_aura_only" then o = L_GUI_AURA_PLAYER_AURA_ONLY end
 	if o == "UIConfigauradebuff_color_type" then o = L_GUI_AURA_DEBUFF_COLOR_TYPE end
 	if o == "UIConfigauracast_by" then o = L_GUI_AURA_CAST_BY end

@@ -224,6 +224,7 @@ L_GUI_AURA_FOCUS_DEBUFFS = "Afficher les debuffs du focus"
 L_GUI_AURA_FOT_DEBUFFS = "Afficher les debuffs de la cible du focus"
 L_GUI_AURA_PET_DEBUFFS = "Afficher les debuffs du pet"
 L_GUI_AURA_TOT_DEBUFFS = "Afficher les debuffs de la cible de la cible"
+L_GUI_AURA_BOSS_BUFFS = "Buffs on boss frame" -- Needs review
 L_GUI_AURA_PLAYER_AURA_ONLY = "Afficher seulement ses propres debuffs sur la cible"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Coleur de debuff par type"
 L_GUI_AURA_CAST_BY = "Voir qui a jeté un buff / debuff sur son tooltip"

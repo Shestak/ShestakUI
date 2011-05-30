@@ -224,6 +224,7 @@ L_GUI_AURA_FOCUS_DEBUFFS = "在焦点目标框体显示DeBuffs"
 L_GUI_AURA_FOT_DEBUFFS = "在焦点目标的目标框体显示Debuffs"
 L_GUI_AURA_PET_DEBUFFS = "在宠物框体显示DeBuffs"
 L_GUI_AURA_TOT_DEBUFFS = "在目标的目标框体显示DeBuffs"
+L_GUI_AURA_BOSS_BUFFS = "Buffs on boss frame" -- Needs review
 L_GUI_AURA_PLAYER_AURA_ONLY = "在目标框体只显示自己的DeBuffs"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs着色依照法术类型"
 L_GUI_AURA_CAST_BY = "在鼠标提示中显示是谁施放了这个 增益/減益"
