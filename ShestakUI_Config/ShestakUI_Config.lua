@@ -64,7 +64,10 @@ local function Local(o)
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
 	if o == "UIConfigskinsbigwigs" then o = L_GUI_SKINS_BW end
 	if o == "UIConfigskinsdbm" then o = L_GUI_SKINS_DBM end
+	if o == "UIConfigskinsdxe" then o = L_GUI_SKINS_DXE end
+	if o == "UIConfigskinskle" then o = L_GUI_SKINS_KLE end
 	if o == "UIConfigskinspallypower" then o = L_GUI_SKINS_PP end
+	if o == "UIConfigskinsrecount" then o = L_GUI_SKINS_RECOUNT end
 	
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end
@@ -74,6 +77,7 @@ local function Local(o)
 	if o == "UIConfigcombattextdamage" then o = L_GUI_COMBATTEXT_DAMAGE end
 	if o == "UIConfigcombattexthealing" then o = L_GUI_COMBATTEXT_HEALING end
 	if o == "UIConfigcombattextshow_hots" then o = L_GUI_COMBATTEXT_HOTS end
+	if o == "UIConfigcombattextshow_overhealing" then o = L_GUI_COMBATTEXT_OVERHEALING end
 	if o == "UIConfigcombattextpet_damage" then o = L_GUI_COMBATTEXT_PET_DAMAGE end
 	if o == "UIConfigcombattextdot_damage" then o = L_GUI_COMBATTEXT_DOT_DAMAGE end
 	if o == "UIConfigcombattextdamage_color" then o = L_GUI_COMBATTEXT_DAMAGE_COLOR end
@@ -158,6 +162,7 @@ local function Local(o)
 	if o == "UIConfigtooltipaverage_lvl" then o = STAT_AVERAGE_ITEM_LEVEL end
 	if o == "UIConfigtooltipraid_icon" then o = L_GUI_TOOLTIP_RAID_ICON end
 	if o == "UIConfigtooltipwho_targetting" then o = L_GUI_TOOLTIP_WHO_TARGETTING end
+	if o == "UIConfigtooltipitem_count" then o = L_GUI_TOOLTIP_ITEM_COUNT end
 	
 	-- Chat options
 	if o == "UIConfigchat" then o = SOCIALS end

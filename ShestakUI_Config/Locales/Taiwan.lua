@@ -35,7 +35,10 @@ L_GUI_MISC_ACH_SCREENS = "當你獲得成就的時候自動截屏"
 L_GUI_SKINS = "風格化"
 L_GUI_SKINS_BW = "開啟BigWigs樣式增強"
 L_GUI_SKINS_DBM = "開啟DBM樣式增強"
+L_GUI_SKINS_DXE = "開啟DXE樣式增強"
+L_GUI_SKINS_KLE = "開啟KLE樣式增強"
 L_GUI_SKINS_PP = "開啟PallyPower樣式增強"
+L_GUI_SKINS_RECOUNT = "開啟Recount樣式增強"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"
@@ -45,6 +48,7 @@ L_GUI_COMBATTEXT_DAMAGE_STYLE = "改變模型頂部/玩家頭像的傷害/治療
 L_GUI_COMBATTEXT_DAMAGE = "獨立顯示傷害輸出"
 L_GUI_COMBATTEXT_HEALING = "獨立顯示治療輸出"
 L_GUI_COMBATTEXT_HOTS = "顯示hot造成的治療"
+L_GUI_COMBATTEXT_OVERHEALING = "Show outgoing overhealing" -- Needs review
 L_GUI_COMBATTEXT_PET_DAMAGE = "顯示寵物傷害輸出"
 L_GUI_COMBATTEXT_DOT_DAMAGE = "顯示dot造成的傷害"
 L_GUI_COMBATTEXT_DAMAGE_COLOR = "以法術系別顏色顯示傷害文字"
@@ -128,6 +132,7 @@ L_GUI_TOOLTIP_ARENA_EXPERIENCE = "在提示資訊中顯示競技場等級"
 L_GUI_TOOLTIP_SPELL_ID = "法術ID"
 L_GUI_TOOLTIP_RAID_ICON = "團隊圖示"
 L_GUI_TOOLTIP_WHO_TARGETTING = "當你在隊伍/團隊中時顯示誰以目標為目標的提示"
+L_GUI_TOOLTIP_ITEM_COUNT = "Item count" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "開啟聊天框增強"

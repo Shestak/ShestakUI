@@ -35,7 +35,10 @@ L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement" -- Needs 
 L_GUI_SKINS = "Stilisierung"
 L_GUI_SKINS_BW = "BigWigs Design aktivieren"
 L_GUI_SKINS_DBM = "DBM Design aktivieren"
+L_GUI_SKINS_DXE = "DXE Design aktivieren"
+L_GUI_SKINS_KLE = "KLE Design aktivieren"
 L_GUI_SKINS_PP = "PallyPower Design aktivieren"
+L_GUI_SKINS_RECOUNT = "Recount Design aktivieren"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Kampftext"
@@ -45,6 +48,7 @@ L_GUI_COMBATTEXT_DAMAGE_STYLE = "Standard Schaden/Heilung Schriftart über Kreat
 L_GUI_COMBATTEXT_DAMAGE = "Zeige ausgehenden Schaden in einem eigenen Fenster"
 L_GUI_COMBATTEXT_HEALING = "Zeige ausgehende Heilung in einem eigenen Fenster"
 L_GUI_COMBATTEXT_HOTS = "Zeige peroidische Heilungseffekte im Heilungsfenster"
+L_GUI_COMBATTEXT_OVERHEALING = "Show outgoing overhealing" -- Needs review
 L_GUI_COMBATTEXT_PET_DAMAGE = "Zeige Begleiterschaden"
 L_GUI_COMBATTEXT_DOT_DAMAGE = "Zeige Schaden von Schaden über Zeit"
 L_GUI_COMBATTEXT_DAMAGE_COLOR = "Zeige Schadensnummern in Abhängigkeit von der Art des Zaubers"
@@ -128,6 +132,7 @@ L_GUI_TOOLTIP_ARENA_EXPERIENCE = "PVP-Erfahrung des Spielers im Tooltip anzeigen
 L_GUI_TOOLTIP_SPELL_ID = "Zauber ID"
 L_GUI_TOOLTIP_RAID_ICON = "Raidsymbol"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Zeige an, wer die Eihneit, die in deiner Gruppe/Raid ist, ins Ziel nimmt"
+L_GUI_TOOLTIP_ITEM_COUNT = "Item count" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Chat aktivieren"

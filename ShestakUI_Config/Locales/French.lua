@@ -35,7 +35,10 @@ L_GUI_MISC_ACH_SCREENS = "Prend un screenshot quand un evenement est accomplie"
 L_GUI_SKINS = "Personalisation d'addon"
 L_GUI_SKINS_BW = "Activier la personalisation pour BigWigs"
 L_GUI_SKINS_DBM = "Activier la personalisation pour DBM"
-L_GUI_SKINS_PP = "Activer  la personnalisation pour PallyPower"
+L_GUI_SKINS_DXE = "Activier la personalisation pour DXE"
+L_GUI_SKINS_KLE = "Activier la personalisation pour KLE"
+L_GUI_SKINS_PP = "Activer la personnalisation pour PallyPower"
+L_GUI_SKINS_RECOUNT = "Activier la personalisation pour Recount"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"
@@ -45,6 +48,7 @@ L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change la police par défaut des dégats/soins 
 L_GUI_COMBATTEXT_DAMAGE = "Afficher les dégâts dans une fenêtre dédiée"
 L_GUI_COMBATTEXT_HEALING = "Afficher les soins dans une fenêtre dédiée"
 L_GUI_COMBATTEXT_HOTS = "Afficher les effets des soins périodiques dans la fenêtre de soin"
+L_GUI_COMBATTEXT_OVERHEALING = "Show outgoing overhealing" -- Needs review
 L_GUI_COMBATTEXT_PET_DAMAGE = "Afficher les dégats du familier"
 L_GUI_COMBATTEXT_DOT_DAMAGE = "Afficher les dégats des dots"
 L_GUI_COMBATTEXT_DAMAGE_COLOR = "Afficher les dégâts en fonction de l'école de magie"
@@ -128,6 +132,7 @@ L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Expérience en arène"
 L_GUI_TOOLTIP_SPELL_ID = "ID du sort"
 L_GUI_TOOLTIP_RAID_ICON = "Icone de raid"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Affiche qui cible actuellement l'unité qui est dans votre groupe/raid"
+L_GUI_TOOLTIP_ITEM_COUNT = "Item count" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activer le chat"

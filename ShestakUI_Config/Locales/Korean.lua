@@ -35,7 +35,10 @@ L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement"
 L_GUI_SKINS = "Stylization"
 L_GUI_SKINS_BW = "Enable styling BigWigs"
 L_GUI_SKINS_DBM = "Enable styling DBM"
+L_GUI_SKINS_DXE = "Enable styling DXE"
+L_GUI_SKINS_KLE = "Enable styling KLE"
 L_GUI_SKINS_PP = "Enable styling PallyPower"
+L_GUI_SKINS_RECOUNT = "Enable styling Recount"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"
@@ -45,6 +48,7 @@ L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change default damage/healing font above mobs/p
 L_GUI_COMBATTEXT_DAMAGE = "Show outgoing damage in it's own frame"
 L_GUI_COMBATTEXT_HEALING = "Show outgoing healing in it's own frame"
 L_GUI_COMBATTEXT_HOTS = "Show periodic healing effects in healing frame"
+L_GUI_COMBATTEXT_OVERHEALING = "Show outgoing overhealing"
 L_GUI_COMBATTEXT_PET_DAMAGE = "Show your pet damage"
 L_GUI_COMBATTEXT_DOT_DAMAGE = "Show damage from your dots"
 L_GUI_COMBATTEXT_DAMAGE_COLOR = "Display damage numbers depending on school of magic"
@@ -128,6 +132,7 @@ L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Player PVP experience in arena"
 L_GUI_TOOLTIP_SPELL_ID = "Spell ID"
 L_GUI_TOOLTIP_RAID_ICON = "Raid icon"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Display who is targetting the unit that is in your party/raid"
+L_GUI_TOOLTIP_ITEM_COUNT = "Item count"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Enable chat"

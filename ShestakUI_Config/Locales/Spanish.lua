@@ -35,7 +35,10 @@ L_GUI_MISC_ACH_SCREENS = "Tomar una captura de pantalla cuando consigas un logro
 L_GUI_SKINS = "Estilización"
 L_GUI_SKINS_BW = "Activar estilo del BigWigs"
 L_GUI_SKINS_DBM = "Activar estilo del DBM"
+L_GUI_SKINS_DXE = "Activar estilo del DXE"
+L_GUI_SKINS_KLE = "Activar estilo del KLE"
 L_GUI_SKINS_PP = "Activar estilo del PallyPower"
+L_GUI_SKINS_RECOUNT = "Activar estilo del Recount"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texto de Combate"
@@ -45,6 +48,7 @@ L_GUI_COMBATTEXT_DAMAGE_STYLE = "Cambiar la fuente de daño/sanación por defect
 L_GUI_COMBATTEXT_DAMAGE = "Mostrar daño saliente en su propio marco"
 L_GUI_COMBATTEXT_HEALING = "Mostrar sanación saliente en su propio marco"
 L_GUI_COMBATTEXT_HOTS = "Mostrar efectos de cura periódicos en el marco de curas"
+L_GUI_COMBATTEXT_OVERHEALING = "Show outgoing overhealing" -- Needs review
 L_GUI_COMBATTEXT_PET_DAMAGE = "Mostrar el daño de tu mascota"
 L_GUI_COMBATTEXT_DOT_DAMAGE = "Mostrar el daño de tus dots (Daño periodico)"
 L_GUI_COMBATTEXT_DAMAGE_COLOR = "Mostrar números de daño dependiendo de la escuela de magia"
@@ -128,6 +132,7 @@ L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Experiencia JcJ del jugador en Arenas en la de
 L_GUI_TOOLTIP_SPELL_ID = "ID del hechizo"
 L_GUI_TOOLTIP_RAID_ICON = "Icono de banda"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Muestra quien está marcando la unidad que está en tu grupo/banda"
+L_GUI_TOOLTIP_ITEM_COUNT = "Item count" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activar chat"
