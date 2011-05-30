@@ -201,6 +201,14 @@ do
 		'arena',
 	}
 
+	local rewrite = {
+		mt = 'maintank',
+		mtt = 'maintanktarget',
+
+		ma = 'mainassist',
+		mat = 'mainassisttarget',
+	}
+
 	local validName = function(smartName)
 		-- Not really a valid name, but we'll accept it for simplicities sake.
 		if(tonumber(smartName)) then
@@ -208,8 +216,11 @@ do
 		end
 
 		if(type(smartName) == 'string') then
-			if(smartName == 'mt') then
-				return 'maintank'
+			-- strip away trailing s from pets, but don't touch boss/focus.
+			smartName = smartName:gsub('([^us])s$', '%1')
+
+			if(rewrite[smartName]) then
+				return rewrite[smartName]
 			end
 
 			for _, v in next, validNames do
@@ -254,7 +265,13 @@ do
 		end
 
 		-- Here comes the substitute train!
-		local n = name:gsub('(%l)(%u)', '%1_%2'):gsub('([%l%u])(%d)', '%1_%2_'):lower()
+		local n = name
+			:gsub('ToT', 'targettarget')
+			:gsub('(%l)(%u)', '%1_%2')
+			:gsub('([%l%u])(%d)', '%1_%2_')
+			:gsub('Main_', 'Main')
+			:lower()
+
 		n = guessName(string.split('_', n))
 		if(n) then
 			nameCache[name] = n
@@ -331,10 +348,12 @@ do
 		backdrop:SetParent(UIParent)
 		backdrop:Hide()
 		
-		backdrop:SetTemplate("Transparent")
 		backdrop:SetFrameStrata("MEDIUM")
 		backdrop:SetFrameLevel(20)
 		backdrop:SetAllPoints(target)
+		backdrop:CreateBackdrop("Transparent")
+		backdrop.backdrop:Point("TOPLEFT", -2, 2)
+		backdrop.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 		backdrop:EnableMouse(true)
 		backdrop:SetMovable(true)
@@ -343,30 +362,49 @@ do
 		backdrop:SetScript("OnShow", OnShow)
 
 		local name = backdrop:CreateFontString(nil, "OVERLAY")
-		name:SetPoint"CENTER"
-		name:SetJustifyH"CENTER"
 		name:SetFont(C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		name:SetTextColor(1, 1, 1)
+		name:SetAllPoints(target)
 
 		backdrop.name = name
 		backdrop.obj = obj
 		backdrop.header = isHeader
 
-		backdrop:SetBackdropBorderColor(1, 0, 0)
+		backdrop.backdrop:SetBackdropBorderColor(1, 0, 0)
 		
-		-- Work around the fact that headers with no units displayed are 0 in height.
-		if(isHeader and math.floor(isHeader:GetHeight()) == 0) then
-			local height = isHeader:GetChildren():GetHeight()
-			isHeader:SetHeight(height)
+		-- We have to define a minHeight on the header if it doesn't have one. The
+		-- reason for this is that the header frame will have an height of 0.1 when
+		-- it doesn't have any frames visible.
+		if(
+			isHeader and
+			(
+				not isHeader:GetAttribute'minHeight' and math.floor(isHeader:GetHeight()) == 0 or
+				not isHeader:GetAttribute'minWidth' and math.floor(isHeader:GetWidth()) == 0
+			)
+		) then
+			isHeader:SetHeight(obj:GetHeight())
+			isHeader:SetWidth(obj:GetWidth())
+
+			if(not isHeader:GetAttribute'minHeight') then
+				isHeader.dirtyMinHeight = true
+				isHeader:SetAttribute('minHeight', obj:GetHeight())
+			end
+
+			if(not isHeader:GetAttribute'minWidth') then
+				isHeader.dirtyMinWidth = true
+				isHeader:SetAttribute('minWidth', obj:GetWidth())
+			end
+		elseif(isHeader) then
+			backdrop.baseWidth, backdrop.baseHeight = isHeader:GetSize()
 		end
 
 		backdrop:SetScript("OnDragStart", OnDragStart)
 		backdrop:SetScript("OnDragStop", OnDragStop)
 		backdrop:SetScript("OnEnter", function(self)
-			self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			self.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 		end)
 		backdrop:SetScript("OnLeave", function(self)
-			self:SetBackdropBorderColor(1, 0, 0)
+			self.backdrop:SetBackdropBorderColor(1, 0, 0)
 		end)
 
 		backdropPool[target] = backdrop
