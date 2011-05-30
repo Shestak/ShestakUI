@@ -141,6 +141,8 @@
 	<Script file="Modules\Skins\BigWigs.lua"/>
 	<Script file="Modules\Skins\DBM.lua"/>
 	<Script file="Modules\Skins\PallyPower.lua"/>
+	<Script file="Modules\Skins\DXE.lua"/>
+	<Script file="Modules\Skins\KLE.lua"/>
 	
 	<Include file="Modules\UnitFrames\Templates.xml"/>
 	<Script file="Modules\UnitFrames\Tags.lua"/>

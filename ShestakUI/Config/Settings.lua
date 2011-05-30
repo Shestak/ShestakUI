@@ -69,6 +69,8 @@ C["misc"] = {
 C["skins"] = {
 	["bigwigs"] = true,							-- BigWigs skin
 	["dbm"] = true,								-- DBM skin
+	["dxe"] = true,								-- DXE skin
+	["kle"] = true,								-- KLE skin
 	["pallypower"] = true,						-- PallyPower skin
 }
 

@@ -27,6 +27,8 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		Advanced_UseUIScale:Kill()
 		Advanced_UIScaleSlider:Kill()
 		TutorialFrameAlertButton:Kill()
+		HelpOpenTicketButtonTutorial:Kill()
+		PlayerTalentFrameLearnButtonTutorialArrow:Kill()
 		
 		if C.chat.enable then
 			SetCVar("WholeChatWindowClickable", 0)
