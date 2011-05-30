@@ -67,12 +67,12 @@ C["misc"] = {
 --	Skins options
 ----------------------------------------------------------------------------------------
 C["skins"] = {
-	["bigwigs"] = true,							-- BigWigs skin
-	["dbm"] = true,								-- DBM skin
-	["dxe"] = true,								-- DXE skin
-	["kle"] = true,								-- KLE skin
-	["pallypower"] = true,						-- PallyPower skin
-	["recount"] = true,							-- Recount skin
+	["bigwigs"] = false,						-- BigWigs skin
+	["dbm"] = false,							-- DBM skin
+	["dxe"] = false,							-- DXE skin
+	["kle"] = false,							-- KLE skin
+	["pallypower"] = false,						-- PallyPower skin
+	["recount"] = false,						-- Recount skin
 }
 
 ----------------------------------------------------------------------------------------
