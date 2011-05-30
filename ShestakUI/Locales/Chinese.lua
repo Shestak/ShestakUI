@@ -13,6 +13,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "你的状态: 未完成"
 L_TOOLTIP_SPELL_ID = "法术ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
 L_TOOLTIP_WHO_TARGET = "以其为目标的"
+L_TOOLTIP_ITEM_COUNT = "Item count: " -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "无装备"
@@ -197,7 +198,6 @@ L_INFO_ADDON_SETS2 = "你可以通过编辑`scripts`文件夹的wtf.lua 进行�
 L_INFO_SETTINGS_DBM = "键入 /settings dbm, 载入 DBM 的设定."
 L_INFO_SETTINGS_MSBT = "键入 /settings msbt, 载入 MSBT 的设定."
 L_INFO_SETTINGS_SKADA = "键入 /settings skada, 载入 Skada 的设定."
-L_INFO_SETTINGS_RECOUNT = "键入 /settings recount, 载入 Reount 的设定."
 L_INFO_SETTINGS_ALL = "键入 /settings all, 载入所有UI设定."
 
 -- Popups
@@ -207,7 +207,7 @@ L_POPUP_RESETSTATS = "你确定要重置本次游戏时间和金币收益统计�
 L_POPUP_SWITCH_RAID = "多个团队样式被加载,请选择一个样式."
 L_POPUP_DISBAND_RAID = "你确定要解散团队?"
 L_POPUP_DISABLEUI = "ShestakUI并不支援此分辨率, 你想要停用ShestakUI吗? (若果您想要尝试其他分辨率, 请按取消)"
-L_POPUP_SETTINGS_ALL = "应用所有的插件设置? (DBM, Skada/Recount and MSBT)"
+L_POPUP_SETTINGS_ALL = "应用所有的插件设置? (DBM, Skada and MSBT)"
 L_POPUP_SETTINGS_DBM = "需要改变DBM描点及风格化元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
 

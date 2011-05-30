@@ -191,6 +191,7 @@ C["tooltip"] = {
 	["average_lvl"] = false,					-- Average items level
 	["raid_icon"] = false,						-- Raid icon
 	["who_targetting"] = false,					-- Show who is targetting the unit(in raid or party)
+	["item_count"] = false,						-- Item count in tooltip
 }
 
 ----------------------------------------------------------------------------------------

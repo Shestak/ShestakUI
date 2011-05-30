@@ -10,6 +10,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "Your Status: Incomplete"
 L_TOOLTIP_SPELL_ID = "Spell ID:"
 L_TOOLTIP_ITEM_ID = "Item ID:"
 L_TOOLTIP_WHO_TARGET = "Targeted By"
+L_TOOLTIP_ITEM_COUNT = "Item count:"
 
 -- Misc
 L_MISC_UNDRESS = "Undress"
@@ -194,7 +195,6 @@ L_INFO_ADDON_SETS2 = "You can add, delete or change lists of modifications, modi
 L_INFO_SETTINGS_DBM = "Type /settings dbm, to apply the settings DBM."
 L_INFO_SETTINGS_MSBT = "Type /settings msbt, to apply the settings MSBT."
 L_INFO_SETTINGS_SKADA = "Type /settings skada, to apply the settings Skada."
-L_INFO_SETTINGS_RECOUNT = "Type /settings recount, to apply the settings Recount. Then in Recount options select *Default* profile."
 L_INFO_SETTINGS_ALL = "Type /settings all, to apply the settings for all modifications."
 
 -- Popups
@@ -204,7 +204,7 @@ L_POPUP_RESETSTATS = "Are you sure you want to reset statistics for time spent i
 L_POPUP_SWITCH_RAID = "2 raid layouts are active, please select a layout."
 L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?"
 L_POPUP_DISABLEUI = "ShestakUI doesn't work for this resolution, do you want to disable ShestakUI? (Cancel if you want to try another resolution)"
-L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM, Skada/Recount and MSBT)"
+L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM, Skada and MSBT)"
 L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."
 L_POPUP_SETTINGS_BW = "Need to change the position of elements BigWigs."
 

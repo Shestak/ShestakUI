@@ -13,6 +13,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "Ваш статус: Не завершено"
 L_TOOLTIP_SPELL_ID = "Номер заклинания:"
 L_TOOLTIP_ITEM_ID = "Номер предмета:"
 L_TOOLTIP_WHO_TARGET = "Выбран целью"
+L_TOOLTIP_ITEM_COUNT = "Количество предмета:"
 
 -- Misc
 L_MISC_UNDRESS = "Раздеть"
@@ -197,7 +198,6 @@ L_INFO_ADDON_SETS2 = "Вы можете добавить, удалить или 
 L_INFO_SETTINGS_DBM = "Введите /settings dbm, чтобы применить настройки DBM."
 L_INFO_SETTINGS_MSBT = "Введите /settings msbt, чтобы применить настройки MSBT."
 L_INFO_SETTINGS_SKADA = "Введите /settings skada, чтобы применить настройки Skada."
-L_INFO_SETTINGS_RECOUNT = "Введите /settings recount, чтобы применить настройки Recount. После этого в настройках Recount выберите профиль *Default*."
 L_INFO_SETTINGS_ALL = "Введите /settings all, чтобы применить настройки для всех модификаций."
 
 -- Popups

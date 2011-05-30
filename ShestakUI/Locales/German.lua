@@ -13,6 +13,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
 L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
 L_TOOLTIP_WHO_TARGET = "Targeted By" -- Needs review
+L_TOOLTIP_ITEM_COUNT = "Item count:" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "Undress" -- Needs review
@@ -197,7 +198,6 @@ L_INFO_ADDON_SETS2 = "Du kannst Sets hinzufügen, löschen oder verändern, inde
 L_INFO_SETTINGS_DBM = "Gebe /settings dbm ein, um DBM Einstellungen zu laden."
 L_INFO_SETTINGS_MSBT = "Gebe /settings msbt ein, um die MSBT Einstellungen zu laden."
 L_INFO_SETTINGS_SKADA = "Gebe /settings skada ein, um die Skada Einstellungen zu laden."
-L_INFO_SETTINGS_RECOUNT = "Gebe /settings recount ein, um die Recount Einstellungen zu laden. Danach in den Recountoptionen das *Default* Profil auswählen."
 L_INFO_SETTINGS_ALL = "Gebe /settings all ein, um die Einstellungen für alle unterstützten AddOns zu laden."
 
 -- Popups
@@ -207,7 +207,7 @@ L_POPUP_RESETSTATS = "Are you sure you want to reset statistics for time spent i
 L_POPUP_SWITCH_RAID = "Es sind 2 Raidlayouts aktiviert, bitte wählen Sie eines davon aus."
 L_POPUP_DISBAND_RAID = "Bist du dir sicher, dass du die Gruppe auflösen möchtest?"
 L_POPUP_DISABLEUI = "ShestakUI funktioniert nicht mit deiner Auflösung, möchtest du ShestakUI ausschalten? (Drücke Abbrechen, falls du eine andere Auflösung testen willst)"
-L_POPUP_SETTINGS_ALL = "Einstellungen für alle AddOns übernehmen? (DBM, Skada/Rexount und MSBT)"
+L_POPUP_SETTINGS_ALL = "Einstellungen für alle AddOns übernehmen? (DBM, Skada und MSBT)"
 L_POPUP_SETTINGS_DBM = "Die Position der DBM Elemente muss verändert werden."
 L_POPUP_SETTINGS_BW = "Die Position der BigWigs Elemente muss verändert werden."
 
