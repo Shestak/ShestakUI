@@ -118,20 +118,20 @@ function Stuffing:SlotUpdate(b)
 			b.frame:SetBackdropBorderColor(GetItemQualityColor(b.rarity))
 		end
 
-			if QUEST_ITEM_STRING == nil then
-				-- GetItemInfo returns a localized item type
-				-- this is to figure out what that string is
-				local t = {GetAuctionItemClasses()}
-				QUEST_ITEM_STRING = t[#t]	-- #t == 12
-			end
+		if QUEST_ITEM_STRING == nil then
+			-- GetItemInfo returns a localized item type
+			-- this is to figure out what that string is
+			local t = {GetAuctionItemClasses()}
+			QUEST_ITEM_STRING = t[#t]	-- #t == 12
+		end
 
-			if iType and iType == QUEST_ITEM_STRING then
-				b.qitem = true
-				-- Color quest item yellow
-				if not b.frame.lock then b.frame:SetBackdropBorderColor(1, 1, 0) end
-			else
-				b.qitem = nil
-			end
+		if iType and iType == QUEST_ITEM_STRING then
+			b.qitem = true
+			-- Color quest item yellow
+			if not b.frame.lock then b.frame:SetBackdropBorderColor(1, 1, 0) end
+		else
+			b.qitem = nil
+		end
 	else
 		b.name, b.rarity, b.qitem = nil, nil, nil
 	end
