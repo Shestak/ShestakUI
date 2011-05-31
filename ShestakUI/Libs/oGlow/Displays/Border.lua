@@ -1,4 +1,5 @@
 -- local variables.
+local T, C, L = unpack(select(2, ...))
 local argcheck = oGlow.argcheck
 
 local colorTable = setmetatable(
@@ -20,20 +21,36 @@ local colorTable = setmetatable(
 local createBorder = function(self, point)
 	local bc = self.oGlowBorder
 	if(not bc) then
-		if(not self:IsObjectType'Frame') then
-			bc = self:GetParent():CreateTexture(nil, 'OVERLAY')
+		if IsAddOnLoaded("ShestakUI_Extra") and C.extra_skins.blizzard_frames == true then
+			if(not self:IsObjectType'Frame') then
+				bc = CreateFrame("Frame", nil, self:GetParent())
+			else
+				bc = CreateFrame("Frame", nil, self)
+			end
+
+			bc:SetBackdrop({
+				edgeFile = C.media.blank,
+				edgeSize = 1,
+			})
+
+			bc:SetPoint("TOPLEFT", point or self, 0, 0)
+			bc:SetPoint("BOTTOMRIGHT", point or self, 0, 0)
 		else
-			bc = self:CreateTexture(nil, "OVERLAY")
+			if(not self:IsObjectType'Frame') then
+				bc = self:GetParent():CreateTexture(nil, 'OVERLAY')
+			else
+				bc = self:CreateTexture(nil, "OVERLAY")
+			end
+
+			bc:SetTexture"Interface\\Buttons\\UI-ActionButton-Border"
+			bc:SetBlendMode"ADD"
+			bc:SetAlpha(.8)
+
+			bc:SetWidth(70)
+			bc:SetHeight(70)
+
+			bc:SetPoint("CENTER", point or self)
 		end
-
-		bc:SetTexture"Interface\\Buttons\\UI-ActionButton-Border"
-		bc:SetBlendMode"ADD"
-		bc:SetAlpha(.8)
-
-		bc:SetWidth(70)
-		bc:SetHeight(70)
-
-		bc:SetPoint("CENTER", point or self)
 		self.oGlowBorder = bc
 	end
 
@@ -46,7 +63,11 @@ local borderDisplay = function(frame, color)
 		local rgb = colorTable[color]
 
 		if(rgb) then
-			bc:SetVertexColor(rgb[1], rgb[2], rgb[3])
+			if IsAddOnLoaded("ShestakUI_Extra") and C.extra_skins.blizzard_frames == true then
+				bc:SetBackdropBorderColor(rgb[1], rgb[2], rgb[3])
+			else
+				bc:SetVertexColor(rgb[1], rgb[2], rgb[3])
+			end
 			bc:Show()
 		end
 
