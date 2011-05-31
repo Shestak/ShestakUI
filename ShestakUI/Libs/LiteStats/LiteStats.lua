@@ -1054,7 +1054,17 @@ if talents.enabled then
 			if b == "RightButton" and GetNumTalentGroups() > 1 then
 				SetActiveTalentGroup(3 - GetActiveTalentGroup())
 			elseif b == "LeftButton" then
-				ToggleTalentFrame()
+				if not PlayerTalentFrame then
+					LoadAddOn("Blizzard_TalentUI")
+				end
+				if not GlyphFrame then
+					LoadAddOn("Blizzard_GlyphUI")
+				end
+				if T.level >= SHOW_TALENT_LEVEL then
+					PlayerTalentFrame_Toggle()
+				else
+					print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
+				end
 			end
 		end
 	})
