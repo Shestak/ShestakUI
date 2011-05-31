@@ -1,21 +1,19 @@
 local T, C, L = unpack(select(2, ...))
+if not C.misc.auto_quest == true then return end
 
 ----------------------------------------------------------------------------------------
 --	Quest automation(Monomyth by p3lim)
 ----------------------------------------------------------------------------------------
-if not C.misc.auto_quest == true then return end
+local Monomyth = CreateFrame("Frame")
+Monomyth:SetScript("OnEvent", function(self, event, ...) self[event](...) end)
 
-local addon = CreateFrame("Frame")
-addon:SetScript("OnEvent", function(self, event, ...) self[event](...) end)
-
-local CURRENT
 local COMPLETE = [[Interface\GossipFrame\ActiveQuestIcon]]
 
-function addon:Register(event, func)
+function Monomyth:Register(event, func)
 	self:RegisterEvent(event)
 	self[event] = function(...)
-		if(IsShiftKeyDown()) then
-			if(event == "QUEST_DETAIL") then
+		if IsShiftKeyDown() then
+			if event == "QUEST_DETAIL" then
 				QuestFrame_OnEvent(nil, event)
 			end
 		else
@@ -24,87 +22,95 @@ function addon:Register(event, func)
 	end
 end
 
-addon:Register("QUEST_GREETING", function()
-	for index = 1, MAX_NUM_QUESTS do
-		local button = _G["QuestTitleButton" .. index]
-
-		if(button and button:IsVisible()) then
-			if(button.isActive == 1 and _G["QuestTitleButton" .. index .. "QuestIcon"]:GetTexture() == COMPLETE) then
-				return button:Click()
-			elseif(button.isActive == 0) then
-				return button:Click()
+Monomyth:Register("QUEST_GREETING", function()
+	local active = GetNumActiveQuests()
+	if active > 0 then
+		for index = 1, active do
+			local _, complete = GetActiveTitle(index)
+			if complete then
+				SelectActiveQuest(index)
 			end
+		end
+	end
+
+	local available = GetNumAvailableQuests()
+	if available > 0 then
+		for index = 1, available do
+			SelectAvailableQuest(index)
 		end
 	end
 end)
 
-addon:Register("GOSSIP_SHOW", function()
-	for index = 1, NUMGOSSIPBUTTONS do
-		local button = _G["GossipTitleButton" .. index]
-
-		if(button and button:IsVisible()) then
-			if(button.type == "Active" and _G["GossipTitleButton" .. index .. "GossipIcon"]:GetTexture() == COMPLETE) then
-				return button:Click()
-			elseif(button.type == "Available") then
-				return button:Click()
+Monomyth:Register("GOSSIP_SHOW", function()
+	local active = GetNumGossipActiveQuests()
+	if active > 0 then
+		for index = 1, select("#", GetGossipActiveQuests()), 4 do
+			if select(index + 3, GetGossipActiveQuests()) then
+				SelectGossipActiveQuest(index)
 			end
+		end
+	end
+
+	local available = GetNumGossipAvailableQuests()
+	if available > 0 then
+		for index = 1, available do
+			SelectGossipAvailableQuest(index)
+		end
+	end
+
+	if available == 0 and active == 0 and GetNumGossipOptions() == 1 then
+		local _, type = GetGossipOptions()
+		if type == "gossip" then
+			return SelectGossipOption(1)
 		end
 	end
 end)
 
 QuestFrame:UnregisterEvent("QUEST_DETAIL")
-addon:Register("QUEST_DETAIL", function()
-	if(QuestGetAutoAccept()) then
+Monomyth:Register("QUEST_DETAIL", function()
+	if QuestGetAutoAccept() then
 		CloseQuest()
 	else
 		QuestFrame_OnEvent(nil, "QUEST_DETAIL")
 		AcceptQuest()
-
-		if(GetQuestID() == CURRENT) then
-			addon:RegisterEvent("BAG_UPDATE")
-		end
 	end
 end)
 
-addon:Register("QUEST_ACCEPT_CONFIRM", AcceptQuest)
+Monomyth:Register("QUEST_ACCEPT_CONFIRM", AcceptQuest)
 
-addon:Register("QUEST_PROGRESS", function()
-	if(IsQuestCompletable()) then
+Monomyth:Register("QUEST_PROGRESS", function()
+	if IsQuestCompletable() then
 		CompleteQuest()
 	end
 end)
 
-addon:Register("QUEST_COMPLETE", function()
-	if(GetNumQuestChoices() <= 1) then
+Monomyth:Register("QUEST_COMPLETE", function()
+	if GetNumQuestChoices() <= 1 then
 		GetQuestReward(QuestFrameRewardPanel.itemChoice)
-	elseif(GetNumQuestChoices() > 1) then
+	elseif GetNumQuestChoices() > 1 then
 		local bestValue, bestIndex = 0
 
 		for index = 1, GetNumQuestChoices() do
 			local link = GetQuestItemLink("choice", index)
-			if(not link) then
-				-- Item is not located in the cache yet, let it request it
-				-- from the server and run this again after its received
-				return
-			end
+			if not link then return	end
 
 			local _, _, _, _, _, _, _, _, _, _, value = GetItemInfo(link)
-			if(value > bestValue) then
+			if value > bestValue then
 				bestValue, bestIndex = value, index
 			end
 		end
 
-		if(bestIndex) then
+		if bestIndex then
 			_G["QuestInfoItem" .. bestIndex]:Click()
 		end
 	end
 end)
 
-addon:Register("QUEST_AUTOCOMPLETE", function()
+Monomyth:Register("QUEST_AUTOCOMPLETE", function()
 	for index = 1, GetNumAutoQuestPopUps() do
 		local quest, type = GetAutoQuestPopUp(index)
 
-		if(type == "COMPLETE") then
+		if type == "COMPLETE" then
 			-- The quest may not be considered complete by the server
 			-- We should check then queue and try again when it is
 			ShowQuestComplete(GetQuestLogIndexByID(quest))
@@ -112,31 +118,15 @@ addon:Register("QUEST_AUTOCOMPLETE", function()
 	end
 end)
 
-addon:Register("BAG_UPDATE", function(bag)
-	if(bag < 0) then return end
+Monomyth:Register("BAG_UPDATE", function(bag)
+	if bag < 0 then return end
 
 	for slot = 1, GetContainerNumSlots(bag) do
 		local _, id, active = GetContainerItemQuestInfo(bag, slot)
-		if(id and not active) then
-			CURRENT = id
+		if id and not active then
+			-- We should check if the item is cached yet
+			-- The negative result of this is a disconnect
 			UseContainerItem(bag, slot)
-			addon:UnregisterEvent("BAG_UPDATE")
 		end
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	Auto select gossip
-----------------------------------------------------------------------------------------
-local autoSelectGossipFrame = CreateFrame("Frame")
-autoSelectGossipFrame:RegisterEvent("GOSSIP_SHOW")
-
-function autoSelectGossipFrame:OnEvent(event, arg1)
-	if event == "GOSSIP_SHOW" then
-		if not IsModifierKeyDown() and GetNumGossipOptions() == 1 and GetNumGossipAvailableQuests() == 0 and GetNumGossipActiveQuests() == 0 then
-			SelectGossipOption(1)
-		end
-	end
-end
-
-autoSelectGossipFrame:SetScript("OnEvent", autoSelectGossipFrame.OnEvent)
