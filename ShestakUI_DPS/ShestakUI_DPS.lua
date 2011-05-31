@@ -221,14 +221,20 @@ local function Shared(self, unit)
 		local mhpb = CreateFrame("StatusBar", nil, self.Health)
 		mhpb:Point("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		mhpb:Point("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-		mhpb:Width(unit_width)		
+		if unit == "party" then
+			mhpb:Width(party_width)
+		elseif unit == "raid" then
+			mhpb:Width(unit_width)
+		else
+			mhpb:Width(partytarget_width)
+		end
 		mhpb:SetStatusBarTexture(C.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		ohpb:Point("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		ohpb:Point("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-		ohpb:Width(unit_width)
+		ohpb:Width(mhpb:GetWidth())
 		ohpb:SetStatusBarTexture(C.media.texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.25)
 

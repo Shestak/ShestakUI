@@ -1013,21 +1013,24 @@ local function Shared(self, unit)
 
 		self:HookScript("OnShow", T.UpdateAllElements)
 	end
-	
+
+	-- Agro border
 	if C.raidframe.aggro_border == true and unit ~= "arenatarget" then
 		table.insert(self.__elements, T.UpdateThreat)
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateThreat)
 		self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", T.UpdateThreat)
 		self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", T.UpdateThreat)
 	end
-	
+
+	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self:CreateTexture(nil, "OVERLAY")
 		self.RaidIcon:SetParent(self.Health)
 		self.RaidIcon:Size((unit == "player" or unit == "target") and 15 or 12, (unit == "player" or unit == "target") and 15 or 12)
 		self.RaidIcon:Point("TOP", self.Health, 0, 0)
 	end
-	
+
+	-- Debuff highlight
 	if unit ~= "arenatarget" then
 		self.DebuffHighlight = self.Health:CreateTexture(nil, "OVERLAY")
 		self.DebuffHighlight:SetAllPoints(self.Health)
@@ -1037,12 +1040,19 @@ local function Shared(self, unit)
 		self.DebuffHighlightAlpha = 1
 		self.DebuffHighlightFilter = true
 	end
-	
+
+	-- Incoming heal text/bar
 	if C.raidframe.plugins_healcomm == true then
 		local mhpb = CreateFrame("StatusBar", nil, self.Health)
 		mhpb:Point("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		mhpb:Point("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-		mhpb:Width(217)
+		if unit == "player" or unit == "target" then
+			mhpb:Width(217)
+		elseif unit == "pet" or unit == "focus" or unit == "focustarget" or unit == "targettarget" then
+			mhpb:Width(105)
+		else
+			mhpb:Width(150)
+		end
 		mhpb:SetStatusBarTexture(C.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
 		mhpb:SetMinMaxValues(0, 1)
@@ -1050,7 +1060,7 @@ local function Shared(self, unit)
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		ohpb:Point("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		ohpb:Point("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-		ohpb:Width(217)
+		ohpb:Width(mhpb:GetWidth())
 		ohpb:SetStatusBarTexture(C.media.texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.25)
 
