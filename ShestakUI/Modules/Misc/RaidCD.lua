@@ -94,6 +94,7 @@ end
 
 local CreateBar = function()
 	local bar = CreateFrame("Statusbar", nil, UIParent)
+	bar:SetFrameStrata("HIGH")
 	if C.raidcooldown.show_icon == true then
 		bar:Size(C.raidcooldown.width, C.raidcooldown.height)
 	else
@@ -115,12 +116,12 @@ local CreateBar = function()
 	bar.left = CreateFS(bar)
 	bar.left:Point("LEFT", 2, 0)
 	bar.left:SetJustifyH("LEFT")
-	bar.left:Size(C.raidcooldown.width - 35, C.font.raid_cooldowns_font_size)
+	bar.left:Size(C.raidcooldown.width - 30, C.font.raid_cooldowns_font_size)
 	
 	bar.right = CreateFS(bar)
 	bar.right:Point("RIGHT", 1, 0)
 	bar.right:SetJustifyH("RIGHT")
-		
+
 	if C.raidcooldown.show_icon == true then
 		bar.icon = CreateFrame("Button", nil, bar)
 		bar.icon:Width(bar:GetHeight() + 6)
@@ -170,7 +171,7 @@ local OnEvent = function(self, event, ...)
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
 		local timestamp, eventType, hideCaster, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags = ...
 		if band(sourceFlags, filter) == 0 then return end
-		if eventType == "SPELL_RESURRECT" or eventType == "SPELL_CAST_SUCCESS" then
+		if eventType == "SPELL_RESURRECT" or eventType == "SPELL_CAST_SUCCESS" or eventType == "SPELL_AURA_APPLIED" then
 			local spellId = select(10, ...)
 			if T.raid_spells[spellId] and show[select(2, IsInInstance())] then
 				StartTimer(sourceName, spellId)
@@ -190,7 +191,7 @@ addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 
 SlashCmdList.RaidCD = function(msg)
 	StartTimer(UnitName("player"), 20484)	-- Rebirth
-	StartTimer(UnitName("player"), 6203)	-- Soulstone
+	StartTimer(UnitName("player"), 20707)	-- Soulstone
 	StartTimer(UnitName("player"), 6346)	-- Fear Ward
 	StartTimer(UnitName("player"), 29166)	-- Innervate
 	StartTimer(UnitName("player"), 32182)	-- Heroism

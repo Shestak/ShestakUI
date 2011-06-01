@@ -1783,6 +1783,7 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
 
+			-- Self
 			-- Summon Gargoyle
 			{ spellID = 49206, size = 30, filter = "CD" },
 			-- Gnaw
@@ -1791,6 +1792,8 @@ Filger_Spells = {
 			{ spellID = 47476, size = 30, filter = "CD" },
 			-- Mind Freeze
 			{ spellID = 47528, size = 30, filter = "CD" },
+
+			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
 			-- Belt
