@@ -9,7 +9,7 @@ end
 -- Nameplates use these
 T.DebuffWhiteList = {
 	-- Death Knight
-	[SpellName(51209)] = true,	-- Hungering cold
+	[SpellName(49203)] = true,	-- Hungering Cold
 	[SpellName(47476)] = true,	-- Atrangulate
 	-- Druid
 	[SpellName(33786)] = true,	-- Cyclone

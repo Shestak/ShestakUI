@@ -1922,7 +1922,7 @@ Filger_Spells = {
 			-- Glyph of Heart Strike
 			{ spellID = 58617, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Hungering Cold
-			{ spellID = 51209, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			{ spellID = 49203, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Necrotic strike
 			{ spellID = 73975, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Dark simulacrum
@@ -2487,7 +2487,7 @@ Filger_Spells = {
 			
 			-- CC
 			-- Hungering Cold
-			{ spellID = 51209, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
+			{ spellID = 49203, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Hibernate
 			{ spellID = 2637, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Freezing Trap Effect
