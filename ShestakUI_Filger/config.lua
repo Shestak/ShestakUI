@@ -1918,6 +1918,8 @@ Filger_Spells = {
 			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Lifeblood
 			{ spellID = 74497, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Lightwell
+			{ spellID = 7001, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
