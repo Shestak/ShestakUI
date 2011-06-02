@@ -37,15 +37,13 @@ if T.name == "Добрыйдоктор" then
 	C["chat"].chat_bar = true
 	C["raidframe"].raid_tanks_tt = true
 	C["stats"].guild_repair = false
-elseif T.name == "Бэкстер" or T.name == "Варбой" or T.name == "Бекстап" then
+elseif T.name == "Бэкстер" or T.name == "Варбой" or T.name == "Бекстап" or T.name == "Жахаюшопздц" then
 	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].ach_screens = true
 	C["misc"].announce_interrupt = true
 	C["combattext"].killingblow = true
 	C["pulsecooldown"].enable = true
-	C["tooltip"].shift_modifer = true
-	C["tooltip"].cursor = true
 	C["tooltip"].title = true
 	C["tooltip"].talents = true
 	C["tooltip"].spell_id = true
@@ -69,8 +67,6 @@ elseif T.name == "Бэкстер" or T.name == "Варбой" or T.name == "Бе
 	C["addon"].pvp = {"Capping"}
 	C["addon"].party = {"BigWigs", "LittleWigs", "Skada", "RaidAchievement", "Fatality"}
 	C["addon"].raid = {"BigWigs", "Skada", "Boss_shieldsmonitor", "PhoenixStyle", "RaidAchievement", "Fatality", "RaidSlackCheck"}
-	C["position"].threat_meter = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 380, 18}
-	C["position"].unitframes.tank = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 68}
 elseif T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.name == "Пратифный" or T.name == "Рукалицо"
 	or T.name == "Трольпаладин" or T.name == "Чаккерс" or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупаяшколота" then
 	C["media"].texture = "Interface\\AddOns\\Media_texture\\TextureTuk.tga"
