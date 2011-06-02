@@ -79,6 +79,7 @@ elseif T.name == "Чаккноррис" or T.name == "Нупачимучка" or
 	C["misc"].auto_accept_invite = true
 	C["misc"].announce_interrupt = true
 	C["skins"].dbm = true
+	C["skins"].recount = true
 	C["combattext"].crit_prefix = ""
 	C["combattext"].crit_postfix = ""
 	C["combattext"].merge_aoe_spam_time = 1
