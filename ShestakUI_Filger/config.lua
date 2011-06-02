@@ -458,22 +458,22 @@ Filger_Spells = {
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
 			
 			-- Buffs
-			-- Winter's Chill
-			{ spellID = 28593, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Fingers of Frost
 			{ spellID = 44544, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fireball!
+			-- Brain Freeze
 			{ spellID = 57761, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hot Streak
 			{ spellID = 44445, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Clearcasting
 			{ spellID = 12536, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Impact
-			{ spellID = 12358, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 64343, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Arcane Missiles!
 			{ spellID = 79683, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Invocation
 			{ spellID = 87098, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Incanter's Absorption
+			{ spellID = 44413, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
 			-- Soul Casket (Spell)
@@ -522,13 +522,13 @@ Filger_Spells = {
 			{ spellID = 44457, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Pyroblast!
 			{ spellID = 92315, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Pyroblast!
+			-- Pyroblast
 			{ spellID = 11366, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Critical Mass
 			{ spellID = 22959, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Combustion
 			{ spellID = 83853, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Blast wave
+			-- Blast Wave
 			{ spellID = 11113, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Freeze (Water Elemental)
 			{ spellID = 33395, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
@@ -540,7 +540,7 @@ Filger_Spells = {
 			{ spellID = 120, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Improved Cone of Cold
 			{ spellID = 83302, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Frostfite Bolt
+			-- Frostfire Bolt
 			{ spellID = 44614, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
@@ -1896,6 +1896,8 @@ Filger_Spells = {
 			{ spellID = 54861, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Parachute
 			{ spellID = 55001, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Grounded Plasma Shield
+			{ spellID = 82627, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Racial
 			-- Berserking
@@ -2199,7 +2201,11 @@ Filger_Spells = {
 			
 			-- Other
 			-- Rocket Fuel Leak
-			{ spellID = 94794, size = 60, unitId = "player", caster = "player", filter = "DEBUFF" }, 
+			{ spellID = 94794, size = 60, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Reversed Shield
+			{ spellID = 82406, size = 60, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Plasma Misfire!
+			{ spellID = 94549, size = 60, unitId = "player", caster = "player", filter = "DEBUFF" },
 			
 			-- Baradin Hold(PvP)
 			-- Meteor Slash/Meteorschlag (Argaloth)
