@@ -466,8 +466,6 @@ Filger_Spells = {
 			{ spellID = 57761, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Hot Streak
 			{ spellID = 44445, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Missile Barrage
-			{ spellID = 54486, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Clearcasting
 			{ spellID = 12536, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Impact
