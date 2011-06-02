@@ -496,7 +496,7 @@ function Stuffing:Layout(lb)
 		cols = C.bag.bag_columns
 		f = self.frame
 
-		f.editbox:SetFont(C.media.normal_font, BAGSFONTSIZE+3)
+		f.editbox:SetFont(C.media.normal_font, BAGSFONTSIZE + 3)
 		f.detail:SetFont(BAGSFONT, BAGSFONTSIZE, BAGSFONTSTYLE)
 
 		f.detail:ClearAllPoints()
@@ -727,7 +727,6 @@ local function StuffingSlashCmd(Cmd)
 	elseif cmd == "test" then
 		Stuffing:SetBagsForSorting(args)
 	elseif cmd == "purchase" then
-		-- XXX
 		if Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
 			local cnt, full = GetNumBankSlots()
 			if full then
@@ -746,9 +745,9 @@ local function StuffingSlashCmd(Cmd)
 			Print(L_BAG_OPEN_BANK)
 		end
 	else
-		Print("/sort - " .. L_BAG_SORT)
-		Print("/stack - " .. L_BAG_STACK)
-		Print("/purchase - " .. L_BAG_BUY_BANKS_SLOT)
+		Print("/bags sort - " .. L_BAG_SORT)
+		Print("/bags stack - " .. L_BAG_STACK)
+		Print("/bags purchase - " .. L_BAG_BUY_BANKS_SLOT)
 	end
 end
 
