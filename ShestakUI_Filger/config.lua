@@ -98,6 +98,8 @@ Filger_Spells = {
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Shard of Woe (Haste)
+			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -472,6 +474,8 @@ Filger_Spells = {
 			{ spellID = 12358, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Arcane Missiles!
 			{ spellID = 79683, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Invocation
+			{ spellID = 87098, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
 			-- Soul Casket (Spell)
@@ -492,6 +496,8 @@ Filger_Spells = {
 			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bell of Enraging Resonance (Spell)
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Shard of Woe (Haste)
+			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -604,6 +610,8 @@ Filger_Spells = {
 			{ spellID = 11129, size = 30, filter = "CD" },
 			-- Mana Shield
 			{ spellID = 1463, size = 30, filter = "CD" },
+			-- Invisibility
+			{ spellID = 66, size = 30, filter = "CD" },
 			
 			-- Other
 			-- Gloves
@@ -855,6 +863,8 @@ Filger_Spells = {
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Shard of Woe (Haste)
+			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -1027,6 +1037,8 @@ Filger_Spells = {
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Shard of Woe (Haste)
+			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -1200,6 +1212,8 @@ Filger_Spells = {
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Shard of Woe (Haste)
+			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -1408,6 +1422,8 @@ Filger_Spells = {
 			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bell of Enraging Resonance (Spell)
 			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Shard of Woe (Haste)
+			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Enchants
 			-- Power Torrent (Intellect)
@@ -2230,6 +2246,10 @@ Filger_Spells = {
 			{ spellID = 82170, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Corruption: Sickness (Cho'gall)
 			{ spellID = 93200, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Fiery Barrier (Sinestra)
+			{ spellID = 87231, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Essence of the Red (Sinestra)
+			{ spellID = 87946, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
 			
 			-- Blackwing Descent
 			-- Constricting Chains (Magmaw)
@@ -2248,6 +2268,10 @@ Filger_Spells = {
 			{ spellID = 82705, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Shadow Conductor (Nefarian)
 			{ spellID = 92053, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Stolen Power (Nefarian)
+			{ spellID = 80627, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Explosive Cinders (Nefarian)
+			{ spellID = 79339, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Unstable Shield (Omnotron Defense System)
 			{ spellID = 79900, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 		},
