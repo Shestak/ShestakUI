@@ -328,8 +328,8 @@ Stuffing_DDMenu.HideMenu = function()
 end
 
 function Stuffing:CreateBagFrame(w)
-	local n = "StuffingFrame"  .. w
-	local f = CreateFrame ("Frame", n, UIParent)
+	local n = "StuffingFrame" .. w
+	local f = CreateFrame("Frame", n, UIParent)
 	f:EnableMouse(1)
 	f:SetMovable(1)
 	f:SetToplevel(1)

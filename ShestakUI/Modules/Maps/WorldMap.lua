@@ -11,7 +11,7 @@ local mapbg = CreateFrame("Frame", nil, WorldMapDetailFrame)
 mapbg:SetTemplate("ClassColor")
 
 -- Create move button for map
-local movebutton = CreateFrame ("Frame", nil, WorldMapFrameSizeUpButton)
+local movebutton = CreateFrame("Frame", nil, WorldMapFrameSizeUpButton)
 movebutton:Height(32)
 movebutton:Width(32)
 movebutton:Point("TOP", WorldMapFrameSizeUpButton, "BOTTOM", -1, 4)
