@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not (C.chat.enable == true or C.chat.spam == true) then return end
+if C.chat.enable ~= true or C.chat.spam ~= true then return end
 
 T.ChatSpamList = {
 	"золото",
@@ -22,4 +22,6 @@ T.ChatSpamList = {
 	"скаип",
 	"аттестат",
 	"анус",
+	"visа",
+	"qiwi",
 }
