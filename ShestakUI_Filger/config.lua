@@ -1754,10 +1754,12 @@ Filger_Spells = {
 			{ spellID = 67117, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Dancing Rune Weapon
 			{ spellID = 49028, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Killing machine 
+			-- Killing Machine
 			{ spellID = 51124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Freezing fog 
+			-- Freezing Fog
 			{ spellID = 59052, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Crimson Scourge
+			{ spellID = 81141, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
