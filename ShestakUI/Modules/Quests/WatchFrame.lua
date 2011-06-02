@@ -10,7 +10,7 @@ UIWatchFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 local wideFrame = GetCVar("watchFrameWidth")
 
 -- Create our moving area
-local WatchFrameAnchor = CreateFrame("Button", "WatchFrameAnchor", UIParent)
+local WatchFrameAnchor = CreateFrame("Frame", "WatchFrameAnchor", UIParent)
 WatchFrameAnchor:Height(150)
 
 -- Set default position
