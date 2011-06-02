@@ -2244,6 +2244,32 @@ Filger_Spells = {
 			{ spellID = 92075, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Static Overload (Twilight Ascendant Council)
 			{ spellID = 92067, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Waterlogged (Ascendant Council)
+			{ spellID = 82762, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Frozen (Ascendant Council)
+			{ spellID = 92503, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Burning Blood (Ascendant Council)
+			{ spellID = 82660, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Flame Imbued (Ascendant Council)
+			{ spellID = 82663, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Heart of Ice (Ascendant Council)
+			{ spellID = 82665, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Frost Imbued (Ascendant Council)
+			{ spellID = 82666, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Gravity Core (Ascendant Council)
+			{ spellID = 92075, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Static Overload (Ascendant Council)
+			{ spellID = 92067, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Swirling Winds (Ascendant Council)
+			{ spellID = 83500, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Grounded (Ascendant Council)
+			{ spellID = 83581, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Magnetic Pull (Ascendant Council)
+			{ spellID = 83587, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Frost Beacon (Ascendant Council)
+			{ spellID = 92307, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Lightning Rod (Ascendant Council)
+			{ spellID = 83099, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Corruption: Accelerated (Cho'gall)
 			{ spellID = 81836, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Corruption: Malformation (Cho'gall)
