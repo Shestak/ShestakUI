@@ -1900,16 +1900,18 @@ Filger_Spells = {
 			{ spellID = 82627, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Racial
-			-- Berserking
+			-- Berserking (Troll)
 			{ spellID = 26297, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stoneform
+			-- Stoneform (Dwarf)
 			{ spellID = 65116, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Blood Fury
 			{ spellID = 33697, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkflight
+			-- Darkflight (Worgen)
 			{ spellID = 68992, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shadowmeld
+			-- Shadowmeld (Night Elf)
 			{ spellID = 58984, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gift of the Naaru (Draenei)
+			{ spellID = 28880, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			
 			-- Other
 			-- Hand of Protection
@@ -2228,22 +2230,6 @@ Filger_Spells = {
 			{ spellID = 92879, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Engulfing Magic (Valiona & Theralion)
 			{ spellID = 86631, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Waterlogged (Twilight Ascendant Council)
-			{ spellID = 82762, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Burning Blood (Twilight Ascendant Council)
-			{ spellID = 82662, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Heart of Ice (Twilight Ascendant Council)
-			{ spellID = 82667, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Frozen (Twilight Ascendant Council)
-			{ spellID = 92503, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Swirling Winds (Twilight Ascendant Council)
-			{ spellID = 83500, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Magnetic Pull (Twilight Ascendant Council)
-			{ spellID = 83587, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Gravity Core (Twilight Ascendant Council)
-			{ spellID = 92075, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Static Overload (Twilight Ascendant Council)
-			{ spellID = 92067, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Waterlogged (Ascendant Council)
 			{ spellID = 82762, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Frozen (Ascendant Council)
