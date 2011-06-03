@@ -408,8 +408,6 @@ Filger_Spells = {
 			{ spellID = 19577, size = 30, filter = "CD" },
 			-- Rapid Fire
 			{ spellID = 3045, size = 30, filter = "CD" },
-			-- Blood Fury
-			{ spellID = 20572, size =30, filter = "CD" },
 			-- Readiness
 			{ spellID = 23989, size = 30, filter = "CD" },
 			-- Chimera Shot
@@ -1233,8 +1231,6 @@ Filger_Spells = {
 			-- Trinkets
 			{ slotID = 13, size = 30, filter = "CD" },
 			{ slotID = 14, size = 30, filter = "CD" },
-			-- Every Man for Himself (Human)
-			{ spellID = 59752, size = 30, filter = "CD" },
 		},
 	},
 	["PRIEST"] = {
