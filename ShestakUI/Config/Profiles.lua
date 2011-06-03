@@ -31,13 +31,7 @@ end
 --	Per Character Name Config (overwrite general and class)
 --	Name need to be case sensitive
 ----------------------------------------------------------------------------------------
-if T.name == "Добрыйдоктор" then
-	C["misc"].raid_tools = true
-	C["misc"].invite_keyword = "докрейд"
-	C["chat"].chat_bar = true
-	C["raidframe"].raid_tanks_tt = true
-	C["stats"].guild_repair = false
-elseif T.name == "Бэкстер" or T.name == "Варбой" or T.name == "Бекстап" or T.name == "Жахаюшопздц" then
+if T.name == "Бэкстер" or T.name == "Варбой" or T.name == "Бекстап" or T.name == "Жахаюшопздц" then
 	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].ach_screens = true

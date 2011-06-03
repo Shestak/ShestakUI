@@ -109,7 +109,6 @@ LPSTAT_CONFIG = {
 		--	["An Very Long Rep Name"] = "Shortened",
 			["The Wyrmrest Accord"] = "Wyrmrest",
 			["Knights of the Ebon Blade"] = "Ebon Blade",
-			["Очень добрые люди"] = "ОДЛ",
 			["Клан Громового Молота"] = "Громовой Молот",
 			["Защитники Тол Барада"] = "Тол Барад",
 			["Гидраксианские Повелители Вод"] = "Повелители Вод",
