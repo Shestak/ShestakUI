@@ -193,6 +193,7 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
 			
+			-- Self
 			-- Wild Growth
 			{ spellID = 48438, size = 30, filter = "CD" },
 			-- Swiftmend
@@ -236,6 +237,16 @@ Filger_Spells = {
 			-- Tiger's Fury
 			{ spellID = 5217, size = 30, filter = "CD" },
 			
+			-- Racials
+			-- Shadowmeld (Night Elf)
+			{ spellID = 58984, size = 30, filter = "CD" },
+			-- Darkflight (Worgen)
+			{ spellID = 68992, size = 30, filter = "CD" },
+			-- War Stomp (Tauren)
+			{ spellID = 20549, size = 30, filter = "CD" },
+			-- Berserking (Troll)
+			{ spellID = 26297, size = 30, filter = "CD" },
+
 			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
@@ -360,6 +371,7 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
 			
+			-- Self
 			-- Explosive Shot
 			{ spellID = 53301, size = 30, filter = "CD" },
 			-- Aimed Shot
@@ -405,6 +417,34 @@ Filger_Spells = {
 			-- Spirit Mend
 			{ spellID = 90361, size = 30, filter = "CD" },
 			
+			-- Racials
+			-- Every Man for Himself (Human)
+			{ spellID = 59752, size = 30, filter = "CD" },
+			-- Stoneform (Dwarf)
+			{ spellID = 20594, size = 30, filter = "CD" },
+			-- Shadowmeld (Night Elf)
+			{ spellID = 58984, size = 30, filter = "CD" },
+			-- Gift of the Naaru (Draenei)
+			{ spellID = 28880, size = 30, filter = "CD" },
+			-- Darkflight (Worgen)
+			{ spellID = 68992, size = 30, filter = "CD" },
+			-- Blood Fury (Orc)
+			{ spellID = 20572, size = 30, filter = "CD" },
+			-- Will of the Forsaken (Forsaken)
+			{ spellID = 7744, size = 30, filter = "CD" },
+			-- Cannibalize (Forsaken)
+			{ spellID = 20577, size = 30, filter = "CD" },
+			-- War Stomp (Tauren)
+			{ spellID = 20549, size = 30, filter = "CD" },
+			-- Berserking (Troll)
+			{ spellID = 26297, size = 30, filter = "CD" },
+			-- Arcane Torrent (Blood Elf)
+			{ spellID = 69179, size = 30, filter = "CD" },
+			-- Rocket Barrage (Goblin)
+			{ spellID = 69041, size = 30, filter = "CD" },
+			-- Rocket Jump (Goblin)
+			{ spellID = 69070, size = 30, filter = "CD" },
+
 			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
@@ -560,6 +600,7 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
 
+			-- Self
 			-- Blink
 			{ spellID = 1953, size = 30, filter = "CD" },
 			-- Frost Nova
@@ -611,6 +652,34 @@ Filger_Spells = {
 			-- Invisibility
 			{ spellID = 66, size = 30, filter = "CD" },
 			
+			-- Racials
+			-- Every Man for Himself (Human)
+			{ spellID = 59752, size = 30, filter = "CD" },
+			-- Stoneform (Dwarf)
+			{ spellID = 20594, size = 30, filter = "CD" },
+			-- Shadowmeld (Night Elf)
+			{ spellID = 58984, size = 30, filter = "CD" },
+			-- Escape Artist (Gnome)
+			{ spellID = 20589, size = 30, filter = "CD" },
+			-- Gift of the Naaru (Draenei)
+			{ spellID = 28880, size = 30, filter = "CD" },
+			-- Darkflight (Worgen)
+			{ spellID = 68992, size = 30, filter = "CD" },
+			-- Blood Fury (Orc)
+			{ spellID = 20572, size = 30, filter = "CD" },
+			-- Will of the Forsaken (Forsaken)
+			{ spellID = 7744, size = 30, filter = "CD" },
+			-- Cannibalize (Forsaken)
+			{ spellID = 20577, size = 30, filter = "CD" },
+			-- Berserking (Troll)
+			{ spellID = 26297, size = 30, filter = "CD" },
+			-- Arcane Torrent (Blood Elf)
+			{ spellID = 69179, size = 30, filter = "CD" },
+			-- Rocket Barrage (Goblin)
+			{ spellID = 69041, size = 30, filter = "CD" },
+			-- Rocket Jump (Goblin)
+			{ spellID = 69070, size = 30, filter = "CD" },
+
 			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
@@ -621,8 +690,6 @@ Filger_Spells = {
 			-- Trinkets
 			{ slotID = 13, size = 30, filter = "CD" },
 			{ slotID = 14, size = 30, filter = "CD" },
-			-- Every Man for Himself (Human)
-			{ spellID = 59752, size = 30, filter = "CD" },
 		},
 	},
 	["WARRIOR"] = {
@@ -735,6 +802,7 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
 			
+			-- Self
 			-- Intervene
 			{ spellID = 3411, size = 30, filter = "CD" },
 			-- Shield Slam
@@ -774,6 +842,36 @@ Filger_Spells = {
 			-- Heroic Leap
 			{ spellID = 6544, size = 30, filter = "CD" },
 			
+			-- Racials
+			-- Every Man for Himself (Human)
+			{ spellID = 59752, size = 30, filter = "CD" },
+			-- Stoneform (Dwarf)
+			{ spellID = 20594, size = 30, filter = "CD" },
+			-- Shadowmeld (Night Elf)
+			{ spellID = 58984, size = 30, filter = "CD" },
+			-- Escape Artist (Gnome)
+			{ spellID = 20589, size = 30, filter = "CD" },
+			-- Gift of the Naaru (Draenei)
+			{ spellID = 28880, size = 30, filter = "CD" },
+			-- Darkflight (Worgen)
+			{ spellID = 68992, size = 30, filter = "CD" },
+			-- Blood Fury (Orc)
+			{ spellID = 20572, size = 30, filter = "CD" },
+			-- Will of the Forsaken (Forsaken)
+			{ spellID = 7744, size = 30, filter = "CD" },
+			-- Cannibalize (Forsaken)
+			{ spellID = 20577, size = 30, filter = "CD" },
+			-- War Stomp (Tauren)
+			{ spellID = 20549, size = 30, filter = "CD" },
+			-- Berserking (Troll)
+			{ spellID = 26297, size = 30, filter = "CD" },
+			-- Arcane Torrent (Blood Elf)
+			{ spellID = 69179, size = 30, filter = "CD" },
+			-- Rocket Barrage (Goblin)
+			{ spellID = 69041, size = 30, filter = "CD" },
+			-- Rocket Jump (Goblin)
+			{ spellID = 69070, size = 30, filter = "CD" },
+
 			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
@@ -784,8 +882,6 @@ Filger_Spells = {
 			-- Trinkets
 			{ slotID = 13, size = 30, filter = "CD" },
 			{ slotID = 14, size = 30, filter = "CD" },
-			-- Every Man for Himself (Human)
-			{ spellID = 59752, size = 30, filter = "CD" },
 		},
 	},
 	["SHAMAN"] = {
@@ -964,6 +1060,22 @@ Filger_Spells = {
 			-- Unleash weapon
 			{ spellID = 73680, size = 30, filter = "CD" },
 			
+			-- Racials
+			-- Stoneform (Dwarf)
+			{ spellID = 20594, size = 30, filter = "CD" },
+			-- Gift of the Naaru (Draenei)
+			{ spellID = 28880, size = 30, filter = "CD" },
+			-- Blood Fury (Orc)
+			{ spellID = 20572, size = 30, filter = "CD" },
+			-- War Stomp (Tauren)
+			{ spellID = 20549, size = 30, filter = "CD" },
+			-- Berserking (Troll)
+			{ spellID = 26297, size = 30, filter = "CD" },
+			-- Rocket Barrage (Goblin)
+			{ spellID = 69041, size = 30, filter = "CD" },
+			-- Rocket Jump (Goblin)
+			{ spellID = 69070, size = 30, filter = "CD" },
+
 			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
@@ -1103,6 +1215,18 @@ Filger_Spells = {
 			-- Hammer of the Righteous
 			{ spellID = 53595, size = 30, filter = "CD" },
 			
+			-- Racials
+			-- Every Man for Himself (Human)
+			{ spellID = 59752, size = 30, filter = "CD" },
+			-- Stoneform (Dwarf)
+			{ spellID = 20594, size = 30, filter = "CD" },
+			-- Gift of the Naaru (Draenei)
+			{ spellID = 28880, size = 30, filter = "CD" },
+			-- War Stomp (Tauren)
+			{ spellID = 20549, size = 30, filter = "CD" },
+			-- Arcane Torrent (Blood Elf)
+			{ spellID = 69179, size = 30, filter = "CD" },
+
 			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
@@ -1326,6 +1450,34 @@ Filger_Spells = {
 			-- Leap of Faith
 			{ spellID = 73325, size = 30, filter = "CD" },
 			
+			-- Racials
+			-- Every Man for Himself (Human)
+			{ spellID = 59752, size = 30, filter = "CD" },
+			-- Stoneform (Dwarf)
+			{ spellID = 20594, size = 30, filter = "CD" },
+			-- Shadowmeld (Night Elf)
+			{ spellID = 58984, size = 30, filter = "CD" },
+			-- Escape Artist (Gnome)
+			{ spellID = 20589, size = 30, filter = "CD" },
+			-- Gift of the Naaru (Draenei)
+			{ spellID = 28880, size = 30, filter = "CD" },
+			-- Darkflight (Worgen)
+			{ spellID = 68992, size = 30, filter = "CD" },
+			-- Will of the Forsaken (Forsaken)
+			{ spellID = 7744, size = 30, filter = "CD" },
+			-- Cannibalize (Forsaken)
+			{ spellID = 20577, size = 30, filter = "CD" },
+			-- War Stomp (Tauren)
+			{ spellID = 20549, size = 30, filter = "CD" },
+			-- Berserking (Troll)
+			{ spellID = 26297, size = 30, filter = "CD" },
+			-- Arcane Torrent (Blood Elf)
+			{ spellID = 69179, size = 30, filter = "CD" },
+			-- Rocket Barrage (Goblin)
+			{ spellID = 69041, size = 30, filter = "CD" },
+			-- Rocket Jump (Goblin)
+			{ spellID = 69070, size = 30, filter = "CD" },
+
 			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
@@ -1336,8 +1488,6 @@ Filger_Spells = {
 			-- Trinkets
 			{ slotID = 13, size = 30, filter = "CD" },
 			{ slotID = 14, size = 30, filter = "CD" },
-			-- Every Man for Himself (Human)
-			{ spellID = 59752, size = 30, filter = "CD" },
 		},
 	},
 	["WARLOCK"] = {
@@ -1560,6 +1710,30 @@ Filger_Spells = {
 			-- Immolation Aura
 			{ spellID = 50589, size = 30, filter = "CD" },
 			
+			-- Racials
+			-- Every Man for Himself (Human)
+			{ spellID = 59752, size = 30, filter = "CD" },
+			-- Stoneform (Dwarf)
+			{ spellID = 20594, size = 30, filter = "CD" },
+			-- Escape Artist (Gnome)
+			{ spellID = 20589, size = 30, filter = "CD" },
+			-- Darkflight (Worgen)
+			{ spellID = 68992, size = 30, filter = "CD" },
+			-- Blood Fury (Orc)
+			{ spellID = 20572, size = 30, filter = "CD" },
+			-- Will of the Forsaken (Forsaken)
+			{ spellID = 7744, size = 30, filter = "CD" },
+			-- Cannibalize (Forsaken)
+			{ spellID = 20577, size = 30, filter = "CD" },
+			-- Berserking (Troll)
+			{ spellID = 26297, size = 30, filter = "CD" },
+			-- Arcane Torrent (Blood Elf)
+			{ spellID = 69179, size = 30, filter = "CD" },
+			-- Rocket Barrage (Goblin)
+			{ spellID = 69041, size = 30, filter = "CD" },
+			-- Rocket Jump (Goblin)
+			{ spellID = 69070, size = 30, filter = "CD" },
+
 			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
@@ -1570,12 +1744,6 @@ Filger_Spells = {
 			-- Trinkets
 			{ slotID = 13, size = 30, filter = "CD" },
 			{ slotID = 14, size = 30, filter = "CD" },
-			-- Every Man for Himself (Human)
-			{ spellID = 59752, size = 30, filter = "CD" },
-			-- Cannibalize
-			{ spellID = 20577, size = 30, filter = "CD" },
-			-- Will of the Forsaken
-			{ spellID = 7744, size = 30, filter = "CD" },
 		},
 	},
 	["ROGUE"] = {	
@@ -1726,6 +1894,32 @@ Filger_Spells = {
 			-- Sprint
 			{ spellID = 2983, size = 30, filter = "CD"},
 			
+			-- Racials
+			-- Every Man for Himself (Human)
+			{ spellID = 59752, size = 30, filter = "CD" },
+			-- Stoneform (Dwarf)
+			{ spellID = 20594, size = 30, filter = "CD" },
+			-- Shadowmeld (Night Elf)
+			{ spellID = 58984, size = 30, filter = "CD" },
+			-- Escape Artist (Gnome)
+			{ spellID = 20589, size = 30, filter = "CD" },
+			-- Darkflight (Worgen)
+			{ spellID = 68992, size = 30, filter = "CD" },
+			-- Blood Fury (Orc)
+			{ spellID = 20572, size = 30, filter = "CD" },
+			-- Will of the Forsaken (Forsaken)
+			{ spellID = 7744, size = 30, filter = "CD" },
+			-- Cannibalize (Forsaken)
+			{ spellID = 20577, size = 30, filter = "CD" },
+			-- Berserking (Troll)
+			{ spellID = 26297, size = 30, filter = "CD" },
+			-- Arcane Torrent (Blood Elf)
+			{ spellID = 69179, size = 30, filter = "CD" },
+			-- Rocket Barrage (Goblin)
+			{ spellID = 69041, size = 30, filter = "CD" },
+			-- Rocket Jump (Goblin)
+			{ spellID = 69070, size = 30, filter = "CD" },
+
 			-- Other
 			-- Gloves
 			{ slotID = 10, size = 30, filter = "CD" },
@@ -1736,8 +1930,6 @@ Filger_Spells = {
 			-- Trinkets
 			{ slotID = 13, size = 30, filter = "CD" },
 			{ slotID = 14, size = 30, filter = "CD" },
-			-- Every Man for Himself (Human)
-			{ spellID = 59752, size = 30, filter = "CD" }
 		},
 	},
 	["DEATHKNIGHT"] = {
@@ -1808,6 +2000,36 @@ Filger_Spells = {
 			{ spellID = 47476, size = 30, filter = "CD" },
 			-- Mind Freeze
 			{ spellID = 47528, size = 30, filter = "CD" },
+
+			-- Racials
+			-- Every Man for Himself (Human)
+			{ spellID = 59752, size = 30, filter = "CD" },
+			-- Stoneform (Dwarf)
+			{ spellID = 20594, size = 30, filter = "CD" },
+			-- Shadowmeld (Night Elf)
+			{ spellID = 58984, size = 30, filter = "CD" },
+			-- Escape Artist (Gnome)
+			{ spellID = 20589, size = 30, filter = "CD" },
+			-- Gift of the Naaru (Draenei)
+			{ spellID = 28880, size = 30, filter = "CD" },
+			-- Darkflight (Worgen)
+			{ spellID = 68992, size = 30, filter = "CD" },
+			-- Blood Fury (Orc)
+			{ spellID = 20572, size = 30, filter = "CD" },
+			-- Will of the Forsaken (Forsaken)
+			{ spellID = 7744, size = 30, filter = "CD" },
+			-- Cannibalize (Forsaken)
+			{ spellID = 20577, size = 30, filter = "CD" },
+			-- War Stomp (Tauren)
+			{ spellID = 20549, size = 30, filter = "CD" },
+			-- Berserking (Troll)
+			{ spellID = 26297, size = 30, filter = "CD" },
+			-- Arcane Torrent (Blood Elf)
+			{ spellID = 69179, size = 30, filter = "CD" },
+			-- Rocket Barrage (Goblin)
+			{ spellID = 69041, size = 30, filter = "CD" },
+			-- Rocket Jump (Goblin)
+			{ spellID = 69070, size = 30, filter = "CD" },
 
 			-- Other
 			-- Gloves
@@ -1904,8 +2126,8 @@ Filger_Spells = {
 			{ spellID = 26297, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stoneform (Dwarf)
 			{ spellID = 65116, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Blood Fury
-			{ spellID = 33697, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Blood Fury (Orc)
+			{ spellID = 20572, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Darkflight (Worgen)
 			{ spellID = 68992, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shadowmeld (Night Elf)
