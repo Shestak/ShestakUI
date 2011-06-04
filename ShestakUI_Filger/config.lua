@@ -1302,8 +1302,6 @@ Filger_Spells = {
 			{ spellID = 96267, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Prayer of Mending
 			{ spellID = 41635, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Power Infusion
-			{ spellID = 10060, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Holy Walk
 			{ spellID = 96219, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
@@ -1397,7 +1395,7 @@ Filger_Spells = {
 			{ spellID = 41635, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Guardian spirit
 			{ spellID = 47788, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
-			-- Pain suspension
+			-- Pain Suppression
 			{ spellID = 33206, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Grace
 			{ spellID = 77613, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
