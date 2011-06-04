@@ -17,6 +17,7 @@ T.ABItems = {
 	46029,	-- Mimiron's Core (Ulduar)
 	38689,	-- Chicken Net (Quest)
 	63351,	-- Tahret Dynasty Mallet (Quest)
+	52507,	-- Stardust No.2 (Quest)
 }
 
 T.ABEquipedItems = {
