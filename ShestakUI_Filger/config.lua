@@ -1187,7 +1187,7 @@ Filger_Spells = {
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
 
 			-- Forbearance
-			{ spellID = 25771, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			{ spellID = 25771, size = 37, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Censure
 			{ spellID = 31803, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Seal of Justice
