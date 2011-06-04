@@ -14,6 +14,28 @@ local ST_FISHBAG = 2
 local ST_SPECIAL = 3
 local bag_bars = 0
 
+StaticPopupDialogs["BUY_BANK_SLOT"] = {
+	text = CONFIRM_BUY_BANK_SLOT,
+	button1 = YES,
+	button2 = NO,
+	OnAccept = function(self)
+		PurchaseSlot()
+	end,
+	OnShow = function(self)
+		MoneyFrame_Update(self.moneyFrame, GetBankSlotCost())
+	end,
+	hasMoneyFrame = 1,
+	timeout = 0,
+	hideOnEscape = 1,
+}
+
+StaticPopupDialogs["CANNOT_BUY_BANK_SLOT"] = {
+	text = L_BAG_NO_SLOTS,
+	button1 = ACCEPT,
+	timeout = 0,
+	whileDead = 1,
+}
+
 -- Hide bags options in default interface
 InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 
@@ -348,6 +370,27 @@ function Stuffing:CreateBagFrame(w)
 		f:Point(C.position.bag[1], C.position.bag[2], C.position.bag[3], C.position.bag[4]+3, C.position.bag[5]-3)
 	end
 	
+	-- Buy button
+	if w == "Bank" then
+		f.b_purchase = CreateFrame("Button", "Stuffing_PurchaseButton"..w, f)
+		f.b_purchase:Size(80, 20)
+		f.b_purchase:Point("TOPLEFT", 10, -4)
+		f.b_purchase:RegisterForClicks("AnyUp")
+		f.b_purchase:SkinButton()
+		f.b_purchase:SetScript("OnClick", function(self, btn)
+			local _, full = GetNumBankSlots()
+			if not full then
+				StaticPopup_Show("BUY_BANK_SLOT")
+			else
+				StaticPopup_Show("CANNOT_BUY_BANK_SLOT")
+			end
+		end)
+		f.b_purchase:FontString("text", BAGSFONT, BAGSFONTSIZE, BAGSFONTSTYLE)
+		f.b_purchase.text:SetPoint("CENTER")
+		f.b_purchase.text:SetText(BANKSLOTPURCHASE)
+		f.b_purchase:SetFontString(f.b_purchase.text)
+	end
+
 	-- Close button
 	f.b_close = CreateFrame("Button", "Stuffing_CloseButton" .. w, f, "UIPanelCloseButton")
 	f.b_close:Width(25)
