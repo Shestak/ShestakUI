@@ -473,8 +473,6 @@ Filger_Spells = {
 			{ spellID = 1463, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Ice Barrier
 			{ spellID = 11426, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Slow Fall
-			{ spellID = 130, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Ice Block
 			{ spellID = 45438, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Mage Ward
@@ -1083,16 +1081,43 @@ Filger_Spells = {
 		},
 	},
 	["PALADIN"] = {
-		--[[{
+		{
 			Name = "P_BUFF_ICON",
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 
-			-- 
-			{ spellID = , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-		},]]
+			-- Self
+			-- Divine Shield
+			{ spellID = 642, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Judgements of the Pure
+			{ spellID = 53671, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Inquisition
+			{ spellID = 84963, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Guardian of Ancient Kings
+			{ spellID = 86698, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Avenging Wrath
+			{ spellID = 31884, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Divine Plea
+			{ spellID = 54428, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Divine Favor
+			{ spellID = 31842, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Holy Radiance
+			{ spellID = 82327, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Speed of Light
+			{ spellID = 85497, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Divine Protection
+			{ spellID = 498, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Argent Defender
+			{ spellID = 31850, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Zealotry
+			{ spellID = 85696, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Other
+			-- Radiant (T11 Holy)
+			{ spellID = 90311, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+		},
 		{
 			Name = "P_PROC_ICON",
 			Direction = "RIGHT",
@@ -1101,24 +1126,26 @@ Filger_Spells = {
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
 
 			-- Buffs
-			-- Holy Shield
-			{ spellID = 20925, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Infusion of Light
 			{ spellID = 54149, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Divine Plea
-			{ spellID = 54428, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Beacon of Light
-			{ spellID = 53563, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Divine Illumination
-			{ spellID = 31842, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Avenging Wrath
-			{ spellID = 31884, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Zealotry
-			{ spellID = 85696, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Inquisition
-			{ spellID = 84963, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Denounce (4.1)
+			{ spellID = 85509, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Daybreak
+			{ spellID = 88819, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Grand Crusader
+			{ spellID = 85416, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Sacred Duty
 			{ spellID = 85433, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- The Art of War
+			{ spellID = 59578, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Divine Purpose
+			{ spellID = 90174, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Long Arm of the Law
+			{ spellID = 87173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Sacred Shield
+			{ spellID = 96263, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Guardian of Ancient Kings Ret PROC
+			{ spellID = 86700, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
 			-- Soul Casket (Spell)
@@ -1159,10 +1186,14 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
 
-			-- Judgement of Light
-			{ spellID = 20271, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Conviction
-			{ spellID = 20057, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Forbearance
+			{ spellID = 25771, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Censure
+			{ spellID = 31803, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Seal of Justice
+			{ spellID = 20170, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Denounce (4.2)
+			--{ spellID = 85509, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -1172,42 +1203,48 @@ Filger_Spells = {
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
 			
 			-- Self
-			-- Repentance
-			{ spellID = 20066, size = 30, filter = "CD" },
-			-- Hand of Reckoning
-			{ spellID = 62124, size = 30, filter = "CD" },
-			-- Hand of Freedom
-			{ spellID = 1044, size = 30, filter = "CD" },
-			-- Judgement of Light
-			{ spellID = 20271, size = 30, filter = "CD" },
-			-- Righteous Defense
-			{ spellID = 31789, size = 30, filter = "CD" },
-			-- Exorcism
-			{ spellID = 879, size = 30, filter = "CD" },
+			-- Rebuke
+			{ spellID = 96231, size = 30, filter = "CD" },
 			-- Hammer of Justice
 			{ spellID = 853, size = 30, filter = "CD" },
-			-- Consecration
-			{ spellID = 26573, size = 30, filter = "CD" },
-			-- Hammer of Wrath
-			{ spellID = 24275, size = 30, filter = "CD" },
-			-- Holy Shock
-			{ spellID = 20473, size = 30, filter = "CD" },
+			-- Repentance
+			{ spellID = 20066, size = 30, filter = "CD" },
+			-- Judgement
+			{ spellID = 20271, size = 30, filter = "CD" },
+			-- Hand of Freedom
+			{ spellID = 1044, size = 30, filter = "CD" },
 			-- Avenger's Shield
 			{ spellID = 31935, size = 30, filter = "CD" },
-			-- Divine Plea
-			{ spellID = 54428, size = 30, filter = "CD" },
 			-- Holy Wrath
 			{ spellID = 2812, size = 30, filter = "CD" },
+			-- Word of Glory
+			{ spellID = 85673, size = 30, filter = "CD" },
+			-- Consecration
+			{ spellID = 26573, size = 30, filter = "CD" },
+			-- Holy Radiance
+			{ spellID = 82327, size = 30, filter = "CD" },
+			-- Divine Protection
+			{ spellID = 498, size = 30, filter = "CD" },
+			-- Avenging Wrath
+			{ spellID = 31884, size = 30, filter = "CD" },
+			-- Divine Plea
+			{ spellID = 54428, size = 30, filter = "CD" },
+			-- Hand of Sacrifice
+			{ spellID = 6940, size = 30, filter = "CD" },
+			-- Hand of Salvation
+			{ spellID = 1038, size = 30, filter = "CD" },
 			-- Aura Mastery
 			{ spellID = 31821, size = 30, filter = "CD" },
-			-- Crusader Strike
-			{ spellID = 35395, size = 30, filter = "CD" },
 			-- Divine Favor
 			{ spellID = 31842, size = 30, filter = "CD" },
-			-- Divine Storm
-			{ spellID = 53385, size = 30, filter = "CD" },
-			-- Hammer of the Righteous
-			{ spellID = 53595, size = 30, filter = "CD" },
+			-- Zealotry
+			{ spellID = 85696, size = 30, filter = "CD" },
+			-- Ardent Defender
+			{ spellID = 31850, size = 30, filter = "CD" },
+			-- Hand of Protection
+			{ spellID = 1022, size = 30, filter = "CD" },
+			-- Guardian of Ancient Kings
+			{ spellID = 86150, size = 30, filter = "CD" },
 			
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -1265,12 +1302,8 @@ Filger_Spells = {
 			{ spellID = 96267, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Prayer of Mending
 			{ spellID = 41635, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Pain Suspension
-			{ spellID = 33206, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Power Infusion
 			{ spellID = 10060, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Levitation
-			{ spellID = 1706, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Holy Walk
 			{ spellID = 96219, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
@@ -2128,14 +2161,34 @@ Filger_Spells = {
 			{ spellID = 28880, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			
 			-- Other
-			-- Hand of Protection
-			{ spellID = 1022, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Innervate
-			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Lifeblood
 			{ spellID = 74497, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lightwell
 			{ spellID = 7001, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Hand of Protection
+			{ spellID = 1022, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Hand of Freedom
+			{ spellID = 1044, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Hand of Salvation
+			{ spellID = 1038, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Hand of Sacrifice
+			{ spellID = 6940, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Pain Suppression
+			{ spellID = 33206, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Guardian Spirit
+			{ spellID = 47788, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Power Infusion
+			{ spellID = 10060, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Innervate
+			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Unholy Frenzy
+			{ spellID = 49016, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Tricks of the Trade
+			{ spellID = 57933, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Slow Fall
+			{ spellID = 130, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Levitate
+			{ spellID = 1706, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
