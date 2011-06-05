@@ -194,8 +194,8 @@ coords.PlayerText = WorldMapButton:CreateFontString(nil, "ARTWORK", "GameFontNor
 coords.PlayerText:SetFont(C.media.normal_font, 17)
 coords.PlayerText:SetJustifyH("LEFT")
 coords.PlayerText:SetText(UnitName("player")..": 0,0")
-if (IsAddOnLoaded("_NPCScan")) then
-	coords.PlayerText:Point("TOPLEFT", WorldMapButton, "TOPLEFT", 3, -25)
+if (IsAddOnLoaded("_NPCScan.Overlay")) then
+	coords.PlayerText:Point("TOPLEFT", WorldMapButton, "TOPLEFT", 3, -50)
 else
 	coords.PlayerText:Point("TOPLEFT", WorldMapButton, "TOPLEFT", 3, -3)
 end
