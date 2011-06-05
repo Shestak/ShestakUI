@@ -31,7 +31,7 @@ end
 --	Per Character Name Config (overwrite general and class)
 --	Name need to be case sensitive
 ----------------------------------------------------------------------------------------
-if T.name == "Бэкстер" or T.name == "Варбой" or T.name == "Бекстап" or T.name == "Жахаюшопздц" then
+if T.name == "Бэкстер" or T.name == "Варбой" or T.name == "Бекстап" or T.name == "Акомару" then
 	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].ach_screens = true
