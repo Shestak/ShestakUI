@@ -228,6 +228,10 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ChatConfigCombatSettingsFiltersAddFilterButton",
 			"ChatConfigCombatSettingsFiltersDeleteButton",
 			"CombatConfigSettingsSaveButton",
+			"ChatConfigFrameCancelButton",
+			"RecordLoopbackSoundButton",
+			"PlayLoopbackSoundButton",
+			"AudioOptionsVoicePanelChatMode1KeyBindingButton",
 		}
 		
 		for i = 1, getn(BlizzardButtons) do
@@ -286,6 +290,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ChannelPulloutTab"]:SetHeight(20)
 		_G["ChannelPullout"]:ClearAllPoints()
 		_G["ChannelPullout"]:Point("TOP", _G["ChannelPulloutTab"], "BOTTOM", 0, -3)
+		_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:ClearAllPoints()
+		_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:Point("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
 
 		-- Frame level
 		_G["AudioOptionsSoundPanel"]:SetFrameLevel(1)
@@ -297,6 +303,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["AudioOptionsVoicePanelBinding"]:SetFrameLevel(2)
 		_G["AudioOptionsVoicePanelListening"]:SetFrameLevel(2)
 		_G["GeneralDockManagerOverflowButtonList"]:SetFrameStrata("HIGH")
+
 
 		-- Others
 		_G["ReadyCheckListenerFrame"]:SetAlpha(0)
