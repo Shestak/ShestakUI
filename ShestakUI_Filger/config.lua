@@ -520,10 +520,6 @@ Filger_Spells = {
 			{ spellID = 73551, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Darkmoon Card: Volcano (Intellect)
 			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit)
-			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit)
-			{ spellID = 92329, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Heart of Ignacious (Spell)
 			{ spellID = 92325, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Heart of Ignacious (Haste)

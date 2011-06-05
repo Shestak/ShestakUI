@@ -936,7 +936,7 @@ do
 		subtitle3:SetWidth(380)
 		subtitle3:SetPoint("TOPLEFT", title3, "BOTTOMLEFT", 0, -8)
 		subtitle3:SetJustifyH("LEFT")
-		subtitle3:SetText("Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, UI Users, Russian Community and Others.")
+		subtitle3:SetText("Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, PterOs, UI Users, Russian Community and Others.")
 
 		local version = self:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 		version:SetPoint("BOTTOMRIGHT", -16, 16)
