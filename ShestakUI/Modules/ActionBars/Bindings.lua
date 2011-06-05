@@ -39,8 +39,8 @@ SlashCmdList.MOUSEOVERBIND = function()
 
 		bind:SetScript("OnEvent", function(self) self:Deactivate(false) end)
 		bind:SetScript("OnLeave", function(self) self:HideFrame() end)
-		bind:SetScript("OnKeyUp", function(self, key) self:Listener(key) end)
-		bind:SetScript("OnMouseUp", function(self, key) self:Listener(key) end)
+		bind:SetScript("OnKeyDown", function(self, key) self:Listener(key) end)
+		bind:SetScript("OnMouseDown", function(self, key) self:Listener(key) end)
 		bind:SetScript("OnMouseWheel", function(self, delta) if delta>0 then self:Listener("MOUSEWHEELUP") else self:Listener("MOUSEWHEELDOWN") end end)
 
 		function bind:Update(b, spellmacro)
@@ -79,7 +79,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 			elseif spellmacro == "MACRO" then
 				self.button.id = self.button:GetID()
 				
-				if floor(0.5+select(2,MacroFrameTab1Text:GetTextColor())*10)/10==0.8 then self.button.id = self.button.id + 36 end
+				if floor(0.5 + select(2, MacroFrameTab1Text:GetTextColor()) * 10) / 10 == 0.8 then self.button.id = self.button.id + 36 end
 				
 				self.button.name = GetMacroInfo(self.button.id)
 				
@@ -152,11 +152,11 @@ SlashCmdList.MOUSEOVERBIND = function()
 				
 				GameTooltip:AddLine("Trigger")
 				GameTooltip:Show()
+				bind.button.bindings = {GetBindingKey(bind.button.bindstring)}
 				GameTooltip:SetScript("OnHide", function(self)
 					self:SetOwner(bind, "ANCHOR_NONE")
 					self:SetPoint("BOTTOM", bind, "TOP", 0, 1)
 					self:AddLine(bind.button.name, 1, 1, 1)
-					bind.button.bindings = {GetBindingKey(bind.button.bindstring)}
 					if #bind.button.bindings == 0 then
 						self:AddLine(L_BIND_NO_SET, 0.6, 0.6, 0.6)
 					else
@@ -172,6 +172,17 @@ SlashCmdList.MOUSEOVERBIND = function()
 		end
 
 		function bind:Listener(key)
+			if GetBindingByKey(key) == "SCREENSHOT" then
+				RunBinding("SCREENSHOT")
+				return
+			end
+			if #self.button.bindings > 0 then
+				for i = 1, #self.button.bindings do
+					SetBinding(self.button.bindings[i])
+				end
+				self:Update(self.button, self.spellmacro)
+				if self.spellmacro ~= "MACRO" then GameTooltip:Hide() end
+			end
 			if key == "ESCAPE" or key == "RightButton" then
 				for i = 1, #self.button.bindings do
 					SetBinding(self.button.bindings[i])
@@ -182,15 +193,8 @@ SlashCmdList.MOUSEOVERBIND = function()
 				return
 			end
 			
-			if key == "LSHIFT"
-			or key == "RSHIFT"
-			or key == "LCTRL"
-			or key == "RCTRL"
-			or key == "LALT"
-			or key == "RALT"
-			or key == "UNKNOWN"
-			or key == "LeftButton"
-			then return end
+			if key == "LSHIFT" or key == "RSHIFT" or key == "LCTRL"	or key == "RCTRL" or key == "LALT"
+			or key == "RALT" or key == "UNKNOWN" or key == "LeftButton"	then return end
 			
 			if key == "MiddleButton" then key = "BUTTON3" end
 			if key == "Button4" then key = "BUTTON4" end
@@ -293,6 +297,20 @@ SlashCmdList.MOUSEOVERBIND = function()
 	if not bind.enabled then
 		bind:Activate()
 		StaticPopup_Show("KEYBIND_MODE")
+		local stance = ShapeshiftButton1:GetScript("OnClick")
+		local pet = PetActionButton1:GetScript("OnClick")
+		local button = SecureActionButton_OnClick
+		local focus = GetMouseFocus()
+		if focus.IsProtected and focus.GetObjectType and focus.GetScript and focus:GetObjectType() == "CheckButton" and focus:IsProtected() then
+			local script = focus:GetScript("OnClick")
+			if script == button then
+				bind:Update(focus)
+			elseif script == stance then
+				bind:Update(focus, "STANCE")
+			elseif script == pet then
+				bind:Update(focus, "PET")
+			end
+		end
 	end
 end
 
