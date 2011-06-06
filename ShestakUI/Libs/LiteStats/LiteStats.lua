@@ -546,7 +546,7 @@ if clock.enabled then
 				return zsub(GameTime_GetTime(true),'%s*AM',clock.AM,'%s*PM',clock.PM,':',clock.colon)
 			end
 		},
-		OnLoad = function(self) RequestRaidInfo() self:RegisterEvent'UPDATE_INSTANCE_INFO' end,
+		OnLoad = function(self) RequestRaidInfo() RegEvents(self,"UPDATE_INSTANCE_INFO") end,
 		OnEvent = function(self) if self.hovered then self:GetScript("OnEnter")(self) end end,
 		OnEnter = function(self)
 			if not self.hovered then RequestRaidInfo() self.hovered = true end			

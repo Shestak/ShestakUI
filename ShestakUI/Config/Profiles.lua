@@ -116,7 +116,6 @@ if T.author == true then
 	C["general"].custom_lagtolerance = true
 	C["misc"].auto_quest = true
 	C["misc"].vehicle_mouseover = true
-	C["misc"].ach_screens = true
 	C["misc"].quest_auto_button = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
@@ -142,6 +141,7 @@ if T.author == true then
 	C["stats"].guild_repair = false
 	C["stats"].battleground = true
 	if T.level == MAX_PLAYER_LEVEL then
+		C["misc"].ach_screens = true
 		C["stats"].experience = false
 		C["combattext"].heal_treshold = 500
 	end

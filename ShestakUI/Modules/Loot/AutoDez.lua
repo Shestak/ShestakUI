@@ -1,7 +1,7 @@
 local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Auto greed on green items(by Tekkub) and NeedTheOrb(By Myrilandell of Lothar)
+--	Auto greed on green items(by Tekkub) and NeedTheOrb(by Myrilandell of Lothar)
 ----------------------------------------------------------------------------------------
 if C.loot.auto_greed == true then
 	local autogreed = CreateFrame("Frame")
