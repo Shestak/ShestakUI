@@ -29,6 +29,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		TutorialFrameAlertButton:Kill()
 		HelpOpenTicketButtonTutorial:Kill()
 		PlayerTalentFrameLearnButtonTutorialArrow:Kill()
+		TalentMicroButtonAlert:Kill()
 		
 		if C.chat.enable then
 			SetCVar("WholeChatWindowClickable", 0)
