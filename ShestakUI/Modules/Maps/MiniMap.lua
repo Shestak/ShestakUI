@@ -104,6 +104,7 @@ HelpOpenTicketButton:Point("BOTTOM", Minimap, "BOTTOM", 0, -5)
 HelpOpenTicketButton:SetHighlightTexture(nil)
 
 -- GhostFrame
+GhostFrameContentsFrame:SetTemplate("Overlay")
 GhostFrameContentsFrame:Width(C.minimap.size)
 GhostFrameContentsFrame:ClearAllPoints()
 GhostFrameContentsFrame:SetPoint("CENTER")

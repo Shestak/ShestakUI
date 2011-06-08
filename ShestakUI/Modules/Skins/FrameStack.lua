@@ -1,7 +1,7 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Skin FrameStackTooltip(by Elv22)
+--	FrameStackTooltip skin(by Elv22)
 ----------------------------------------------------------------------------------------
 local FSTooltip = CreateFrame("Frame", nil, UIParent)
 

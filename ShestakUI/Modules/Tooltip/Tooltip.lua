@@ -14,6 +14,8 @@ local tooltips = {
 	WorldMapCompareTooltip1,
 	WorldMapCompareTooltip2,
 	WorldMapCompareTooltip3,
+	FriendsTooltip,
+	ConsolidatedBuffsTooltip,
 	AtlasLootTooltip,
 	QuestHelperTooltip,
 	QuestGuru_QuestWatchTooltip
