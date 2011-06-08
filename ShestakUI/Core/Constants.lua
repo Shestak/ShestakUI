@@ -7,14 +7,9 @@ T.dummy = function() return end
 T.name = select(1, UnitName("player"))
 T.class = select(2, UnitClass("player"))
 T.client = GetLocale() 
-T.resolution = GetCurrentResolution()
-T.getscreenresolution = select(T.resolution, GetScreenResolutions())
 T.getscreenheight = tonumber(string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)"))
 T.getscreenwidth = tonumber(string.match(({GetScreenResolutions()})[GetCurrentResolution()], "(%d+)x+%d"))
 T.version = GetAddOnMetadata("ShestakUI", "Version")
-T.release = GetAddOnMetadata("ShestakUI", "X-Release")
-T.versionnumber = tonumber(T.version)
-T.combat = UnitAffectingCombat("player")
 T.patch = select(4, GetBuildInfo())
 T.realm = GetRealmName()
 T.level = UnitLevel("player")
@@ -36,8 +31,6 @@ or T.name == "Лапушок"
 or T.name == "Обушок" 
 or T.name == "Ремешок"
 or T.name == "Шестак"
-or T.name == "Торгашок"
-or T.name == "Дефляция"
-or T.name == "Аазмантус" then
+or T.name == "Торгашок" then
 	T.author = true
 end
