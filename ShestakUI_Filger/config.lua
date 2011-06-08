@@ -78,36 +78,92 @@ Filger_Spells = {
 			{ spellID = 69369, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Soul Casket (Spell)
+			-- General
+			-- Battlemaster Trinket (Health) (Use)
+			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Tank
+			-- Bedrock Talisman (Dodge) (PROC)
+			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Earthquake (Health) (Use)
+			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance) (Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Symbiotic Worm (Mastery) (Proc)
+			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Vial of Stolen Memories (Dodge) (Use)
+			{ spellID = 92213, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Agility DPS
+			-- Essence of the Cyclone (Crit) (Proc)
+			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fluid Death (Agility) (Proc)
+			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Prestor's Talisman of Machination (Haste) (Proc)
+			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unsolvable Riddle (Agility) (Use)
+			{ spellID = 92123, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unheeded Warning (Weapon Damage) (Proc)
+			{ spellID = 92108, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Conquest (Agility) (Use)
+			{ spellID = 92226, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Conquest (Agility) (Proc)
+			{ spellID = 92220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
+			-- Soul Casket (SP) (Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (Spell)
-			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jeweled Serpent (Spell)
-			{ spellID = 73551, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect)
-			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit)
-			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit)
-			{ spellID = 92329, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Spell)
-			{ spellID = 92325, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste)
-			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Bell of Enraging Resonance (Spell)
-			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fall of Mortality (Spirit)
-			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste)
+			-- Shard of Woe (Haste) (Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Enchants
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Dominance (SP) (Use)
+			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster DPS
+			-- Bell of Enraging Resonance (SP) (Proc)
+			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Volcano (Intellect) (Proc)
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (SP) (Proc)
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (Haste) (Use)
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stump of Time (SP) (Proc)
+			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Theralion's Mirror (Mastery) (Proc)
+			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster Heal
+			-- Core of Ripeness (Spirit) (Use)
+			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Tsunami (Spirit) (Proc)
+			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fall of Mortality (Spirit) (Proc)
+			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jar of Ancient Remedies (Spirit) (Proc)
+			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jar of Ancient Remedies (Debuff)
+			--{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Mandala of Stirring Patterns (Intellect) (Proc)
+			{ spellID = 91192, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Enchants (Proc)
+			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Tank
+			-- Windwalk (Dodge and Movement)
+			{ spellID = 74243, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical General
+			-- Swordguard Embroidery (AP)
+			{ spellID = 75176, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Melee
+			-- Landslide (AP)
+			{ spellID = 74245, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
 			-- Lightweave (Intellect)
 			{ spellID = 75170, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster Heal
+			-- Darkglow (Spirit)
+			{ spellID = 75173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Heartsong (Spirit)
 			{ spellID = 74224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
@@ -302,14 +358,35 @@ Filger_Spells = {
 			{ spellID = 82692, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Prestor's Talisman of Machination (Haste)
-			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fluid Death (Agility)
-			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Essence of the Cyclone (Crit)
+			-- General
+			-- Battlemaster Trinket (Health) (Use)
+			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Agility DPS
+			-- Essence of the Cyclone (Crit) (Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Landslide (AP)
-			{ spellID = 74245, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fluid Death (Agility) (Proc)
+			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Prestor's Talisman of Machination (Haste) (Proc)
+			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unsolvable Riddle (Agility) (Use)
+			{ spellID = 92123, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unheeded Warning (Weapon Damage) (Proc)
+			{ spellID = 92108, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Conquest (Agility) (Use)
+			{ spellID = 92226, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Conquest (Agility) (Proc)
+			{ spellID = 92220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Enchants (Proc)
+			-- General
+			-- Hurricane (Haste)
+			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical General
+			-- Swordguard Embroidery (AP)
+			{ spellID = 75176, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Ranged
+			-- X-Ray Targeting (RAP)
+			{ spellID = 95712, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -512,30 +589,41 @@ Filger_Spells = {
 			{ spellID = 44413, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Soul Casket (Spell)
+			-- General
+			-- Battlemaster Trinket (Health) (Use)
+			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
+			-- Soul Casket (SP) (Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (Spell)
-			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jeweled Serpent (Spell)
-			{ spellID = 73551, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect)
-			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Spell)
-			{ spellID = 92325, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste)
-			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Bell of Enraging Resonance (Spell)
-			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste)
+			-- Shard of Woe (Haste) (Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Enchants
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Dominance (SP) (Use)
+			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster DPS
+			-- Bell of Enraging Resonance (SP) (Proc)
+			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Volcano (Intellect) (Proc)
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (SP) (Proc)
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (Haste) (Use)
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stump of Time (SP) (Proc)
+			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Theralion's Mirror (Mastery) (Proc)
+			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Enchants (Proc)
+			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
 			-- Lightweave (Intellect)
 			{ spellID = 75170, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -748,6 +836,53 @@ Filger_Spells = {
 			{ spellID = 1719, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Inner Rage
 			{ spellID = 1134, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Trinkets
+			-- General
+			-- Battlemaster Trinket (Health) (Use)
+			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Tank
+			-- Bedrock Talisman (Dodge) (Proc)
+			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Earthquake (Health) (Use)
+			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance) (Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Symbiotic Worm (Mastery) (Proc)
+			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Vial of Stolen Memories (Dodge) (Use)
+			{ spellID = 92213, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Strength DPS
+			-- Crushing Weight (Haste) (Proc)
+			{ spellID = 91821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fury of Angerforge (Raw Fury) (Proc)
+			{ spellID = 91832, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fury of Angerforge (Strength) (Use)
+			{ spellID = 91836, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Rage (Strength) (Proc)
+			{ spellID = 91816, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Impatience of Youth (Strength) (Use)
+			{ spellID = 91828, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- License to Slay (Strength) (Proc)
+			{ spellID = 91810, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Victory (Strength) (Use)
+			{ spellID = 92224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Victory (Strength) (Proc)
+			{ spellID = 92216, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Enchants (Proc)
+			-- General
+			-- Hurricane (Haste)
+			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Tank
+			-- Windwalk (Dodge and Movement)
+			{ spellID = 74243, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical General
+			-- Swordguard Embroidery (AP)
+			{ spellID = 75176, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Melee
+			-- Landslide (AP)
+			{ spellID = 74245, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -925,36 +1060,80 @@ Filger_Spells = {
 			{ spellID = 55277, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Soul Casket (Spell)
+			-- General
+			-- Battlemaster Trinket (Health) (Use)
+			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Agility DPS
+			-- Essence of the Cyclone (Crit) (Proc)
+			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fluid Death (Agility) (Proc)
+			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Prestor's Talisman of Machination (Haste) (Proc)
+			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unsolvable Riddle (Agility) (Use)
+			{ spellID = 92123, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unheeded Warning (Weapon Damage) (Proc)
+			{ spellID = 92108, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Conquest (Agility) (Use)
+			{ spellID = 92226, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Conquest (Agility) (Proc)
+			{ spellID = 92220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
+			-- Soul Casket (SP) (Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (Spell)
-			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jeweled Serpent (Spell)
-			{ spellID = 73551, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect)
-			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit)
-			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit)
-			{ spellID = 92329, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Spell)
-			{ spellID = 92325, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste)
-			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Bell of Enraging Resonance (Spell)
-			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fall of Mortality (Spirit)
-			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste)
+			-- Shard of Woe (Haste) (Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Enchants
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Dominance (SP) (Use)
+			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster DPS
+			-- Bell of Enraging Resonance (SP) (Proc)
+			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Volcano (Intellect) (Proc)
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (SP) (Proc)
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (Haste) (Use)
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stump of Time (SP) (Proc)
+			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Theralion's Mirror (Mastery) (Proc)
+			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster Heal
+			-- Core of Ripeness (Spirit) (Use)
+			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Tsunami (Spirit) (Proc)
+			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fall of Mortality (Spirit) (Proc)
+			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jar of Ancient Remedies (Spirit) (Proc)
+			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jar of Ancient Remedies (Debuff)
+			--{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Mandala of Stirring Patterns (Intellect) (Proc)
+			{ spellID = 91192, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Enchants (Proc)
+			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical General
+			-- Swordguard Embroidery (AP)
+			{ spellID = 75176, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Melee
+			-- Landslide (AP)
+			{ spellID = 74245, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
 			-- Lightweave (Intellect)
 			{ spellID = 75170, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster Heal
+			-- Darkglow (Spirit)
+			{ spellID = 75173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heartsong (Spirit)
+			{ spellID = 74224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1144,36 +1323,83 @@ Filger_Spells = {
 			{ spellID = 86700, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Soul Casket (Spell)
+			-- General
+			-- Battlemaster Trinket (Health) (Use)
+			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Tank
+			-- Bedrock Talisman (Dodge) (Proc)
+			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Earthquake (Health) (Use)
+			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance) (Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Symbiotic Worm (Mastery) (Proc)
+			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Vial of Stolen Memories (Dodge) (Use)
+			{ spellID = 92213, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Strength DPS
+			-- Crushing Weight (Haste) (Proc)
+			{ spellID = 91821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fury of Angerforge (Raw Fury) (Proc)
+			{ spellID = 91832, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fury of Angerforge (Strength) (Use)
+			{ spellID = 91836, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Rage (Strength) (Proc)
+			{ spellID = 91816, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Impatience of Youth (Strength) (Use)
+			{ spellID = 91828, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- License to Slay (Strength) (Proc)
+			{ spellID = 91810, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Victory (Strength) (Use)
+			{ spellID = 92224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Victory (Strength) (Proc)
+			{ spellID = 92216, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
+			-- Soul Casket (SP) (Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (Spell)
-			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jeweled Serpent (Spell)
-			{ spellID = 73551, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect)
-			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit)
-			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit)
-			{ spellID = 92329, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Spell)
-			{ spellID = 92325, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste)
-			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Bell of Enraging Resonance (Spell)
-			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fall of Mortality (Spirit)
-			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste)
+			-- Shard of Woe (Haste) (Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Enchants
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Dominance (SP) (Use)
+			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster Heal
+			-- Core of Ripeness (Spirit) (Use)
+			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Tsunami (Spirit) (Proc)
+			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fall of Mortality (Spirit) (Proc)
+			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jar of Ancient Remedies (Spirit) (Proc)
+			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jar of Ancient Remedies (Debuff)
+			--{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Mandala of Stirring Patterns (Intellect) (Proc)
+			{ spellID = 91192, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Enchants (Proc)
+			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Tank
+			-- Windwalk (Dodge and Movement)
+			{ spellID = 74243, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical General
+			-- Swordguard Embroidery (AP)
+			{ spellID = 75176, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Melee
+			-- Landslide (AP)
+			{ spellID = 74245, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
 			-- Lightweave (Intellect)
 			{ spellID = 75170, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster Heal
+			-- Darkglow (Spirit)
+			{ spellID = 75173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heartsong (Spirit)
+			{ spellID = 74224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1333,36 +1559,59 @@ Filger_Spells = {
 			{ spellID = 81209, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Soul Casket (Spell)
+			-- General
+			-- Battlemaster Trinket (Health) (Use)
+			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
+			-- Soul Casket (SP) (Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (Spell)
-			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jeweled Serpent (Spell)
-			{ spellID = 73551, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect)
-			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit)
-			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit)
-			{ spellID = 92329, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Spell)
-			{ spellID = 92325, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste)
-			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Bell of Enraging Resonance (Spell)
-			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fall of Mortality (Spirit)
-			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste)
+			-- Shard of Woe (Haste) (Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Enchants
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Dominance (SP) (Use)
+			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster DPS
+			-- Bell of Enraging Resonance (SP) (Proc)
+			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Volcano (Intellect) (Proc)
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (SP) (Proc)
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (Haste) (Use)
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stump of Time (SP) (Proc)
+			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Theralion's Mirror (Mastery) (Proc)
+			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster Heal
+			-- Core of Ripeness (Spirit) (Use)
+			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Tsunami (Spirit) (Proc)
+			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fall of Mortality (Spirit) (Proc)
+			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jar of Ancient Remedies (Spirit) (Proc)
+			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jar of Ancient Remedies (Debuff)
+			--{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Mandala of Stirring Patterns (Intellect) (Proc)
+			{ spellID = 91192, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Enchants (Proc)
+			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
 			-- Lightweave (Intellect)
 			{ spellID = 75170, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster Heal
+			-- Darkglow (Spirit)
+			{ spellID = 75173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heartsong (Spirit)
+			{ spellID = 74224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Indulgence of the Penitent (T11)
 			{ spellID = 89913, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1571,34 +1820,41 @@ Filger_Spells = {
 			{ spellID = 17941, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Soul Casket (Spell)
+			-- General
+			-- Battlemaster Trinket (Health) (Use)
+			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
+			-- Soul Casket (SP) (Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (Spell)
-			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jeweled Serpent (Spell)
-			{ spellID = 73551, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect)
-			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit)
-			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit)
-			{ spellID = 92329, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Spell)
-			{ spellID = 92325, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste)
-			{ spellID = 92328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Bell of Enraging Resonance (Spell)
-			{ spellID = 92318, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste)
+			-- Shard of Woe (Haste) (Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Enchants
-			-- Power Torrent (Intellect)
-			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Dominance (SP) (Use)
+			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster DPS
+			-- Bell of Enraging Resonance (SP) (Proc)
+			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Volcano (Intellect) (Proc)
+			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (SP) (Proc)
+			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Ignacious (Haste) (Use)
+			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stump of Time (SP) (Proc)
+			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Theralion's Mirror (Mastery) (Proc)
+			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Enchants (Proc)
+			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
 			-- Lightweave (Intellect)
 			{ spellID = 75170, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Power Torrent (Intellect)
+			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1817,12 +2073,33 @@ Filger_Spells = {
 			{ spellID = 74002, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
-			-- Prestor's Talisman of Machination (Haste)
-			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fluid Death (Agility)
-			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Essence of the Cyclone (Crit)
+			-- General
+			-- Battlemaster Trinket (Health) (Use)
+			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Agility DPS
+			-- Essence of the Cyclone (Crit) (Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fluid Death (Agility) (Proc)
+			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Prestor's Talisman of Machination (Haste) (Proc)
+			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unsolvable Riddle (Agility) (Use)
+			{ spellID = 92123, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unheeded Warning (Weapon Damage) (Proc)
+			{ spellID = 92108, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Conquest (Agility) (Use)
+			{ spellID = 92226, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Conquest (Agility) (Proc)
+			{ spellID = 92220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Enchants (Proc)
+			-- General
+			-- Hurricane (Haste)
+			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical General
+			-- Swordguard Embroidery (AP)
+			{ spellID = 75176, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Melee
 			-- Landslide (AP)
 			{ spellID = 74245, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
@@ -1969,6 +2246,7 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
 
+			-- Buffs
 			-- Unholy Force
 			{ spellID = 67383, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Unholy Strength
@@ -1985,6 +2263,53 @@ Filger_Spells = {
 			{ spellID = 59052, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Crimson Scourge
 			{ spellID = 81141, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Trinkets
+			-- General
+			-- Battlemaster Trinket (Health) (Use)
+			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Tank
+			-- Bedrock Talisman (Dodge) (Proc)
+			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Earthquake (Health) (Use)
+			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance) (Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Symbiotic Worm (Mastery) (Proc)
+			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Vial of Stolen Memories (Dodge) (Use)
+			{ spellID = 92213, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Strength DPS
+			-- Crushing Weight (Haste) (Proc)
+			{ spellID = 91821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fury of Angerforge (Raw Fury) (Proc)
+			{ spellID = 91832, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fury of Angerforge (Strength) (Use)
+			{ spellID = 91836, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Heart of Rage (Strength) (Proc)
+			{ spellID = 91816, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Impatience of Youth (Strength) (Use)
+			{ spellID = 91828, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- License to Slay (Strength) (Proc)
+			{ spellID = 91810, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Badge of Victory (Strength) (Use)
+			{ spellID = 92224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Gladiator's Insignia of Victory (Strength) (Proc)
+			{ spellID = 92216, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Enchants (Proc)
+			-- General
+			-- Hurricane (Haste)
+			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Tank
+			-- Windwalk (Dodge and Movement)
+			{ spellID = 74243, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical General
+			-- Swordguard Embroidery (AP)
+			{ spellID = 75176, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Physical Melee
+			-- Landslide (AP)
+			{ spellID = 74245, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
