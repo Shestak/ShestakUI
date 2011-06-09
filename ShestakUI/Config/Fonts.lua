@@ -101,6 +101,12 @@ C["font"] = {
 	["stylization_font_size"] = 8,
 	["stylization_font_style"] = "OUTLINEMONOCHROME",
 	["stylization_font_shadow"] = false,
+
+	-- Bags font
+	["bags_font"] = "Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf",
+	["bags_font_size"] = 8,
+	["bags_font_style"] = "OUTLINEMONOCHROME",
+	["bags_font_shadow"] = false,
 }
 
 ----------------------------------------------------------------------------------------
@@ -180,6 +186,11 @@ if T.client == "zhTW" then
 	C["font"].stylization_font_size = 12
 	C["font"].stylization_font_style = ""
 	C["font"].stylization_font_shadow = true
+
+	C["font"].bags_font = "Fonts\\bLEI00D.ttf"
+	C["font"].bags_font_size = 11
+	C["font"].bags_font_style = "OUTLINE"
+	C["font"].bags_font_shadow = true
 elseif T.client == "zhCN" then
 	C["media"].normal_font = "Fonts\\ZYKai_T.ttf"
 	C["media"].pixel_font = "Fonts\\ZYKai_T.ttf"

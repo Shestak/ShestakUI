@@ -6,9 +6,6 @@ if not C.bag.enable == true then return end
 ----------------------------------------------------------------------------------------
 local bags_BACKPACK = {0, 1, 2, 3, 4}
 local bags_BANK = {-1, 5, 6, 7, 8, 9, 10, 11}
-local BAGSFONT = C.media.pixel_font
-local BAGSFONTSIZE = C.media.pixel_font_size
-local BAGSFONTSTYLE = C.media.pixel_font_style
 local ST_NORMAL = 1
 local ST_FISHBAG = 2
 local ST_SPECIAL = 3
@@ -385,7 +382,7 @@ function Stuffing:CreateBagFrame(w)
 				StaticPopup_Show("CANNOT_BUY_BANK_SLOT")
 			end
 		end)
-		f.b_purchase:FontString("text", BAGSFONT, BAGSFONTSIZE, BAGSFONTSTYLE)
+		f.b_purchase:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		f.b_purchase.text:SetPoint("CENTER")
 		f.b_purchase.text:SetText(BANKSLOTPURCHASE)
 		f.b_purchase:SetFontString(f.b_purchase.text)
@@ -539,8 +536,9 @@ function Stuffing:Layout(lb)
 		cols = C.bag.bag_columns
 		f = self.frame
 
-		f.editbox:SetFont(C.media.normal_font, BAGSFONTSIZE + 3)
-		f.detail:SetFont(BAGSFONT, BAGSFONTSIZE, BAGSFONTSTYLE)
+		f.editbox:SetFont(C.media.normal_font, C.font.bags_font_size + 3)
+		f.detail:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+		f.detail:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
 
 		f.detail:ClearAllPoints()
 		f.detail:Point("TOPLEFT", f, 12, -8)
@@ -687,7 +685,8 @@ function Stuffing:Layout(lb)
 				iconTex:Point("BOTTOMRIGHT", b.frame, -2, 2)
 				
 				local ButCount = _G[b.frame:GetName().."Count"]
-				ButCount:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+				ButCount:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+				ButCount:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
 				ButCount:Point("BOTTOMRIGHT", 1, 1)
 
 				iconTex:Show()
@@ -847,8 +846,6 @@ function Stuffing:PLAYER_ENTERING_WORLD()
 		
 		slot:SetPushedTexture("")
 		slot:SetNormalTexture("")
-		--slot:Height(C.bag.button_size)
-		--slot:Width(C.bag.button_size)
 		
 		t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		t:Point("TOPLEFT", slot, 2, -2)
@@ -856,8 +853,9 @@ function Stuffing:PLAYER_ENTERING_WORLD()
 		
 		slot:SetTemplate("Transparent", true)
 		slot:StyleButton()
-		
-		count:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+
+		count:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+		count:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
 		count:Point("BOTTOMRIGHT", 1, 1)
 	end
 	
