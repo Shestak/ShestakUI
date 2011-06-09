@@ -45,9 +45,10 @@ GameTimeFrame:Hide()
 
 -- Hide Mail Button
 MiniMapMailFrame:ClearAllPoints()
-MiniMapMailFrame:Point("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 6, -8)
+MiniMapMailFrame:Point("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
 MiniMapMailBorder:Hide()
 MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
+MiniMapMailIcon:Size(16, 16)
 
 -- Move battleground icon
 MiniMapBattlefieldFrame:ClearAllPoints()
