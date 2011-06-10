@@ -33,7 +33,7 @@ reloadb:SetScript("OnClick", function() ReloadUI() end)
 local addonf = CreateFrame("Frame", "AddonSets", loadf)
 addonf:Width(400)
 addonf:Height(44)
-addonf:Point("TOP", loadf, "BOTTOM", 0, -5)
+addonf:Point("TOP", loadf, "BOTTOM", 0, -3)
 addonf:SetFrameStrata("DIALOG")
 
 local addonset1 = CreateFrame("Button", "AddonSet1", addonf, "UIPanelButtonTemplate")
@@ -78,7 +78,7 @@ addonset6:Point("LEFT", addonset5, "RIGHT", 5, 0)
 addonset6:SetText(L_ALOAD_SOLO)
 addonset6:SetScript("OnClick", function() T.RunSlashCmd("/addons solo") end)
 
-local closeb = CreateFrame("Button", nil, loadf, "UIPanelCloseButton")
+local closeb = CreateFrame("Button", "aLoadCloseButton", loadf, "UIPanelCloseButton")
 closeb:Point("TOPRIGHT", loadf, "TOPRIGHT", 2, 0)
 closeb:SetScript("OnClick", function() loadf:Hide() end)
 
