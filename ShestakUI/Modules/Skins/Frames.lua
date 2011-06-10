@@ -36,7 +36,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"AddFriendFrame",
 			"ChannelFrameDaughterFrame",
 			"aLoadFrame",
-			"aLoadScroll",
 			"AddonSets",
 			"BaudErrorFrame",
 			"BaudErrorFrameListScrollBox",
@@ -88,7 +87,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"CombatConfigColorsColorizeSpellNames",
 			"CombatConfigColorsColorizeDamageNumber",
 			"CombatConfigColorsColorizeDamageSchool",
-			"CombatConfigColorsColorizeEntireLine"
+			"CombatConfigColorsColorizeEntireLine",
+			"aLoadScroll",
 		}
 		
 		for i = 1, getn(insetskins) do
