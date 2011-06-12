@@ -650,8 +650,6 @@ local function Shared(self, unit)
 			end
 			self.PortraitOverlay:Point("TOPLEFT", -2 + T.mult, 2)
 			self.PortraitOverlay:Point("BOTTOMRIGHT", 2 + T.mult, -2)
-
-			self.Portrait.PostUpdate = T.FixWorgenPortrait
 		end
 		
 		if unit == "player" then

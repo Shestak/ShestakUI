@@ -1142,12 +1142,6 @@ T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, 
 	icon.first = true
 end
 
-T.FixWorgenPortrait = function(self, unit)
-	if self:GetModel() and self:GetModel().find and self:GetModel():find("worgenmale") then
-		self:SetCamera(1)
-	end
-end
-
 T.UpdateThreat = function(self, event, unit)
 	if self.unit ~= unit then return end
 	local threat = UnitThreatSituation(self.unit)
