@@ -33,4 +33,5 @@ T.ChatSpamList = {
 	"visа",
 	"qiwi",
 	"к/г",
+	"Ісq",
 }

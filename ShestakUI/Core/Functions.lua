@@ -561,16 +561,6 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 	end
 end
 
-T.PostUpdatePetColor = function(health, unit, min, max)
-	if not UnitIsPlayer(unit) and UnitIsFriend(unit, "player") and C.unitframe.own_color ~= true then
-		local c = T.oUF_colors.reaction[5]
-		local r, g, b = c[1], c[2], c[3]
-
-		if health then health:SetStatusBarColor(r, g, b) end
-		if health.bg then health.bg:SetTexture(0.1, 0.1, 0.1) end
-	end
-end
-
 T.PreUpdatePower = function(power, unit)
 	local _, pType = UnitPowerType(unit)
 	
@@ -1066,7 +1056,8 @@ T.PostCreateAura = function(element, button)
 	
 	button.remaining = T.SetFontString(button, C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 	button.remaining:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
-	button.remaining:Point("CENTER", button, "CENTER", 2, 1)
+	button.remaining:Point("CENTER", button, "CENTER", 1, 1)
+	button.remaining:SetJustifyH("CENTER")
 	button.remaining:SetTextColor(1, 1, 1)
 
 	button.cd.noOCC = true				-- hide OmniCC CDs
