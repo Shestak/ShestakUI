@@ -311,11 +311,7 @@ local function UpdateObjects(frame)
 	-- Match values
 	frame.hp:SetMinMaxValues(frame.healthOriginal:GetMinMaxValues())
 	frame.hp:SetValue(frame.healthOriginal:GetValue())
-	frame.healthOriginal:SetScript("OnValueChanged", function()
-		frame.hp:SetMinMaxValues(frame.healthOriginal:GetMinMaxValues())
-		frame.hp:SetValue(frame.healthOriginal:GetValue())
-	end)
-	
+
 	-- Colorize Plate
 	Colorize(frame)
 	frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor = frame.hp:GetStatusBarColor()
@@ -593,7 +589,11 @@ local function ShowHealth(frame, ...)
 	local minHealth, maxHealth = frame.healthOriginal:GetMinMaxValues()
 	local valueHealth = frame.healthOriginal:GetValue()
 	local d = (valueHealth / maxHealth) * 100
-	
+
+	-- Match values
+	frame.hp:SetValue(valueHealth - 1)
+	frame.hp:SetValue(valueHealth)
+
 	if C.nameplate.health_value == true then
 		frame.hp.value:SetText(T.ShortValue(valueHealth).." - "..(string.format("%d%%", math.floor((valueHealth / maxHealth) * 100))))
 	end
