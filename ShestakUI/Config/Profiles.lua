@@ -31,37 +31,7 @@ end
 --	Per Character Name Config (overwrite general and class)
 --	Name need to be case sensitive
 ----------------------------------------------------------------------------------------
-if T.name == "Бэкстер" or T.name == "Варбой" or T.name == "Бекстап" or T.name == "Акомару" then
-	C["general"].welcome_message = false
-	C["misc"].invite_keyword = "inv"
-	C["misc"].ach_screens = true
-	C["misc"].announce_interrupt = true
-	C["combattext"].killingblow = true
-	C["pulsecooldown"].enable = true
-	C["tooltip"].title = true
-	C["tooltip"].talents = true
-	C["tooltip"].spell_id = true
-	C["tooltip"].average_lvl = true
-	C["chat"].chat_bar = true
-	C["chat"].spam = true
-	C["chat"].background = true
-	C["chat"].combatlog = false
-	C["actionbar"].split_bars = true
-	C["actionbar"].rightbars_mouseover = false
-	C["actionbar"].petbar_horizontal = true
-	C["aura"].focus_debuffs = true
-	C["aura"].cast_by = true
-	C["unitframe"].icons_pvp = true
-	C["unitframe"].plugins_gcd = true
-	C["unitframe"].plugins_talents = true
-	C["unitframe"].boss_on_right = false
-	C["unitframe"].plugins_experience_bar = true
-	C["unitframe"].icons_combo_point_new = true
-	C["stats"].battlegeound = true
-	C["addon"].pvp = {"Capping"}
-	C["addon"].party = {"BigWigs", "LittleWigs", "Skada", "RaidAchievement", "Fatality"}
-	C["addon"].raid = {"BigWigs", "Skada", "Boss_shieldsmonitor", "PhoenixStyle", "RaidAchievement", "Fatality", "RaidSlackCheck"}
-elseif T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.name == "Пратифный" or T.name == "Рукалицо"
+if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.name == "Пратифный" or T.name == "Рукалицо"
 	or T.name == "Трольпаладин" or T.name == "Чаккерс" or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупаяшколота" then
 	C["media"].texture = "Interface\\AddOns\\Media_texture\\TextureTuk.tga"
 	C["general"].welcome_message = false
