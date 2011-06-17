@@ -110,8 +110,6 @@ GhostFrameContentsFrame:Width(C.minimap.size)
 GhostFrameContentsFrame:ClearAllPoints()
 GhostFrameContentsFrame:SetPoint("CENTER")
 GhostFrameContentsFrame.SetPoint = T.dummy
-GhostFrame:SetFrameStrata("HIGH")
-GhostFrame:SetFrameLevel(10)
 GhostFrame:ClearAllPoints()
 GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
