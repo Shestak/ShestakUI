@@ -122,13 +122,13 @@ if C.reminder.solo_buffs_enable == true then
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
-			},		
+			},
 		},
 		WARLOCK = {
 			[1] = {	-- Armors group
 				["spells"] = {
 					28176,	-- Fel Armor
-					687,	-- Demon Armor		
+					687,	-- Demon Armor
 				},
 				["combat"] = true,
 				["instance"] = true,

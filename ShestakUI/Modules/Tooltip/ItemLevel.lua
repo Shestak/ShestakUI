@@ -9,13 +9,13 @@ local COLORINC = 0.2
 local INCMOD = 0.5
 local MinIL = 284
 local MaxIL = 372
-	
+
 local slotName = {
 	"HeadSlot",	"NeckSlot",	"ShoulderSlot",	"BackSlot",	"ChestSlot", "WristSlot", 
 	"HandsSlot", "WaistSlot", "LegsSlot", "FeetSlot", "Finger0Slot", "Finger1Slot",
 	"Trinket0Slot",	"Trinket1Slot",	"MainHandSlot",	"SecondaryHandSlot", "RangedSlot", "AmmoSlot"
 }
-	
+
 local function GetAiL(unit)
 	local i, total, slot, itn
 	i = 0
@@ -55,7 +55,7 @@ local function GetAiLColor(ail)
 	
 	return r, gb
 end
-	
+
 local function Setup()
 	GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
 		local ail, r, gb, d

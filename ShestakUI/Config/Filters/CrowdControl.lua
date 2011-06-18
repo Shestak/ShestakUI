@@ -58,7 +58,7 @@ T.ArenaControl = function()
 		-- Silences
 		[GetSpellInfo(18469)] 	= 1,	-- Improved Counterspell
 		[GetSpellInfo(15487)] 	= 1, 	-- Silence
-		[GetSpellInfo(34490)] 	= 1, 	-- Silencing Shot	
+		[GetSpellInfo(34490)] 	= 1, 	-- Silencing Shot
 		[GetSpellInfo(18425)]	= 1,	-- Improved Kick
 		[GetSpellInfo(47476)]	= 1,	-- Strangulate
 		

@@ -270,7 +270,7 @@ local function CreateButton(name, relativeTo, firstbutton)
 	button.FrameBackdrop:SetTemplate("Default")
 	button.FrameBackdrop:Point("TOPLEFT", -2, 2)
 	button.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
-	button.FrameBackdrop:SetFrameLevel(button:GetFrameLevel() - 1)	
+	button.FrameBackdrop:SetFrameLevel(button:GetFrameLevel() - 1)
 	
 	button.t = button:CreateTexture(name..".t", "OVERLAY")
 	button.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)

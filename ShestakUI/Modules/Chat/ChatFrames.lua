@@ -76,7 +76,7 @@ local function SetChatStyle(frame)
 		_G[chat..CHAT_FRAME_TEXTURES[j]]:SetTexture(nil)
 	end
 
-	-- Removes Default ChatFrame Tabs texture				
+	-- Removes Default ChatFrame Tabs texture
 	_G[format("ChatFrame%sTabLeft", id)]:Kill()
 	_G[format("ChatFrame%sTabMiddle", id)]:Kill()
 	_G[format("ChatFrame%sTabRight", id)]:Kill()
@@ -176,7 +176,7 @@ local function SetChatStyle(frame)
 end
 
 -- Setup chatframes 1 to 10 on login
-local function SetupChat(self)	
+local function SetupChat(self)
 	for i = 1, NUM_CHAT_WINDOWS do
 		local frame = _G[format("ChatFrame%s", i)]
 		SetChatStyle(frame)
@@ -208,7 +208,7 @@ local function SetupChatPosAndFont(self)
 		local _, fontSize = FCF_GetChatWindowInfo(id)
 		
 		-- Min. size for chat font
-		if fontSize < 11 then		
+		if fontSize < 11 then
 			FCF_SetChatWindowFontSize(nil, chat, 11)
 		else
 			FCF_SetChatWindowFontSize(nil, chat, fontSize)

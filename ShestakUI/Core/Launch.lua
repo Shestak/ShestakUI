@@ -184,10 +184,10 @@ StaticPopupDialogs["INSTALL_UI"] = {
 	text = L_POPUP_INSTALLUI,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-    OnAccept = InstallUI,
+	OnAccept = InstallUI,
 	OnCancel = function() SavedOptionsPerChar.Install = false end,
-    timeout = 0,
-    whileDead = 1,
+	timeout = 0,
+	whileDead = 1,
 	hideOnEscape = false,
 }
 
@@ -205,10 +205,10 @@ StaticPopupDialogs["RESET_UI"] = {
 	text = L_POPUP_RESETUI,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-    OnAccept = InstallUI,
+	OnAccept = InstallUI,
 	OnCancel = function() SavedOptionsPerChar.Install = true end,
-    timeout = 0,
-    whileDead = 1,
+	timeout = 0,
+	whileDead = 1,
 	hideOnEscape = true,
 }
 
@@ -216,9 +216,9 @@ StaticPopupDialogs["RESET_STATS"] = {
 	text = L_POPUP_RESETSTATS,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-    OnAccept = function() SavedStats = {} ReloadUI() end,
-    timeout = 0,
-    whileDead = 1,
+	OnAccept = function() SavedStats = {} ReloadUI() end,
+	timeout = 0,
+	whileDead = 1,
 	hideOnEscape = true,
 }
 
@@ -261,14 +261,14 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		SetCVar("uiScale", C.general.uiscale)
 		
 		-- Install default if we never ran ShestakUI on this character
-		if not SavedOptionsPerChar.Install then			
+		if not SavedOptionsPerChar.Install then
 			StaticPopup_Show("INSTALL_UI")
 		end
 	end
 	
 	if IsAddOnLoaded("ShestakUI_DPS") and IsAddOnLoaded("ShestakUI_Heal") then
 		StaticPopup_Show("SWITCH_RAID")
-	end	
+	end
 	
 	-- Welcome message
 	if C.general.welcome_message == true then

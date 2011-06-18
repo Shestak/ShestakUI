@@ -16,24 +16,24 @@ InfoText:Point("CENTER", UIParent, "CENTER", 0, 90)
 InfoText:SetTextColor(0.41, 0.8, 0.94)
 
 T.InfoTextShow = function(s)
-    InfoText:SetText(s)
-    FadingFrame_Show(InfoFrame)
+	InfoText:SetText(s)
+	FadingFrame_Show(InfoFrame)
 end
 
 ----------------------------------------------------------------------------------------
 --	Run slash command function
 ----------------------------------------------------------------------------------------
 T.RunSlashCmd = function(cmd)
-    local slash, rest = cmd:match("^(%S+)%s*(.-)$")
-    for name, func in pairs(SlashCmdList) do
-        local i, slashCmd = 1
-        repeat
-            slashCmd, i = _G["SLASH_"..name..i], i + 1
-            if slashCmd == slash then
-                return true, func(rest)
-            end
-        until not slashCmd
-    end
+	local slash, rest = cmd:match("^(%S+)%s*(.-)$")
+	for name, func in pairs(SlashCmdList) do
+		local i, slashCmd = 1
+		repeat
+		slashCmd, i = _G["SLASH_"..name..i], i + 1
+		if slashCmd == slash then
+			return true, func(rest)
+		end
+		until not slashCmd
+	end
 end
 
 ----------------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ end
 ----------------------------------------------------------------------------------------
 T.Round = function(number, decimals)
 	if not decimals then decimals = 0 end
-    return (("%%.%df"):format(decimals)):format(number)
+	return (("%%.%df"):format(decimals)):format(number)
 end
 
 T.ShortValue = function(value)
@@ -154,7 +154,7 @@ T.PetBarUpdate = function(self, event)
 		if name then
 			if not C.actionbar.show_grid then
 				petActionButton:SetAlpha(1)
-			end			
+			end
 		else
 			if not C.actionbar.show_grid then
 				petActionButton:SetAlpha(0)
@@ -232,7 +232,7 @@ local function CheckRole(self, event, unit)
 			T.Role = "Caster"
 		end
 	end
-end	
+end
 RoleUpdater:RegisterEvent("PLAYER_ENTERING_WORLD")
 RoleUpdater:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 RoleUpdater:RegisterEvent("PLAYER_TALENT_UPDATE")
@@ -294,11 +294,11 @@ function T.Delay(delay, func, ...)
 				local f = tremove(waitRecord,1)
 				local p = tremove(waitRecord,1)
 				if(d>elapse) then
-				  tinsert(waitTable,i,{d-elapse,f,p})
-				  i = i + 1
+					tinsert(waitTable,i,{d-elapse,f,p})
+					i = i + 1
 				else
-				  count = count - 1
-				  f(unpack(p))
+					count = count - 1
+					f(unpack(p))
 				end
 			end
 		end)
@@ -384,7 +384,7 @@ T.PostUpdateHealth = function(health, unit, min, max)
 			health.value:SetText("|cffD7BEA5"..L_UF_GHOST.."|r")
 		end
 	else
-		local r, g, b	
+		local r, g, b
 		if (C.unitframe.own_color ~= true and C.unitframe.enemy_health_color and unit == "target" and UnitIsEnemy(unit, "player") and UnitIsPlayer(unit)) or (C.unitframe.own_color ~= true and unit == "target" and not UnitIsPlayer(unit) and UnitIsFriend(unit, "player")) then
 			local c = T.oUF_colors.reaction[UnitReaction(unit, "player")]
 			if c then 
@@ -393,7 +393,7 @@ T.PostUpdateHealth = function(health, unit, min, max)
 			else
 				r, g, b = 0.3, 0.7, 0.3
 				health:SetStatusBarColor(r, g, b)
-			end	
+			end
 		end
 		if unit == "pet" or unit == "vehicle" then
 			local _, class = UnitClass("player")
@@ -787,7 +787,7 @@ T.UpdateHoly = function(self, event, unit, powerType)
 		end
 	end
 end
-	
+
 T.EclipseDirection = function(self)
 	if ( GetEclipseDirection() == "sun" ) then
 		self.Text:SetText("|cff4478BC>>|r")
@@ -797,7 +797,7 @@ T.EclipseDirection = function(self)
 		self.Text:SetText("")
 	end
 end
-	
+
 T.UpdateEclipse = function(self, login)
 	local eb = self.EclipseBar
 	local txt = self.EclipseBar.Text
@@ -949,7 +949,7 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 	if Castbar.interrupt and UnitCanAttack("player", unit) then
 		Castbar:SetStatusBarColor(1, 0, 0)
 		Castbar.bg:SetVertexColor(1, 0, 0, 0.25)
-	else		
+	else
 		if unit == "pet" or unit == "vehicle" then
 			local _, class = UnitClass("player")
 			local r, g, b = unpack(oUF.colors.class[class])
@@ -1050,7 +1050,7 @@ T.HideAuraFrame = function(self)
 		self.Auras:Hide()
 	end
 end
-	
+
 T.PostCreateAura = function(element, button)
 	button:SetTemplate("Default")
 	
@@ -1147,7 +1147,7 @@ T.UpdateThreat = function(self, event, unit)
 		end
 	end 
 end
-	
+
 T.CountOffsets = {
 	TOPLEFT = {9, 0},
 	TOPRIGHT = {-8, 0},

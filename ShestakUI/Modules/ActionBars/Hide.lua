@@ -91,7 +91,7 @@ function RightBarMouseOver(alpha)
 			for i = 1, NUM_PET_ACTION_SLOTS do
 				local pb = _G["PetActionButton"..i]
 				pb:SetAlpha(alpha)
-			end	
+			end
 			PetHolder:SetAlpha(alpha)
 		end
 	end

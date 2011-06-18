@@ -116,7 +116,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							name.styled = true
 						end
 						
-						if not timer.styled then	
+						if not timer.styled then
 							timer:ClearAllPoints()
 							timer:Point("RIGHT", frame, "RIGHT", -1, 0)
 							timer:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
@@ -148,7 +148,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 					header[1]:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 					header[1]:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 					header[1]:SetTextColor(1, 1, 1, 1)
-					anchor.styled = true	
+					anchor.styled = true
 				end
 				header = nil
 			end
@@ -347,10 +347,10 @@ StaticPopupDialogs["SETTINGS_DBM"] = {
 	text = L_POPUP_SETTINGS_DBM,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-    OnAccept = function() T.UploadDBM() ReloadUI() end,
-    timeout = 0,
-    whileDead = 1,
-    hideOnEscape = true,
+	OnAccept = function() T.UploadDBM() ReloadUI() end,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = true,
 }
 
 ----------------------------------------------------------------------------------------

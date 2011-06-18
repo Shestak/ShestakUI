@@ -72,8 +72,8 @@ local function OnUpdate(_, update)
 		for i, v in pairs(watching) do
 			if (GetTime() >= v[1] + 0.5) then
 				if T.pulse_ignored_spells[i] then
-                    watching[i] = nil
-                else
+					watching[i] = nil
+				else
 					local start, duration, enabled, texture, isPet
 					if (v[2] == "spell") then
 						texture = GetSpellTexture(v[3])

@@ -72,6 +72,6 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		
 		if C.nameplate.enable == true and C.nameplate.enhance_threat == true then
 			InterfaceOptionsDisplayPanelAggroWarningDisplay:Kill()
-		end	
+		end
 	end
 end)

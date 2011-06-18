@@ -122,7 +122,7 @@ local function UpdateLFGTooltip()
 		LFDSearchStatus:Point("BOTTOMRIGHT", MiniMapLFGFrame, "BOTTOMLEFT", 0, 0)
 	elseif position:match("BOTTOM") then
 		LFDSearchStatus:Point("BOTTOMLEFT", MiniMapLFGFrame, "BOTTOMRIGHT", 4, 0)
-	elseif position:match("LEFT") then		
+	elseif position:match("LEFT") then
 		LFDSearchStatus:Point("TOPLEFT", MiniMapLFGFrame, "TOPRIGHT", 4, 0)
 	else
 		LFDSearchStatus:Point("TOPRIGHT", MiniMapLFGFrame, "TOPLEFT", 0, 0)	

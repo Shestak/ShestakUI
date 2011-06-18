@@ -410,7 +410,7 @@ StaticPopupDialogs["PERCHAR"] = {
 			GUIConfigAll[myPlayerRealm][myPlayerName] = true
 		else 
 			GUIConfigAll[myPlayerRealm][myPlayerName] = false
-		end 	
+		end
 		ReloadUI() 
 	end,
 	OnCancel = function() 
@@ -419,7 +419,7 @@ StaticPopupDialogs["PERCHAR"] = {
 			UIConfigAllCharacters:SetChecked(false)
 		else 
 			UIConfigAllCharacters:SetChecked(true)
-		end 		
+		end
 	end,
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -463,12 +463,12 @@ local function SetValue(group, option, value)
 	end
 	
 	if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
-		if not GUIConfig then GUIConfig = {} end	
+		if not GUIConfig then GUIConfig = {} end
 		if not GUIConfig[group] then GUIConfig[group] = {} end
 		GUIConfig[group][option] = value
 	else
 		if mergesettings == true then
-			if not GUIConfig then GUIConfig = {} end	
+			if not GUIConfig then GUIConfig = {} end
 			if not GUIConfig[group] then GUIConfig[group] = {} end
 			GUIConfig[group][option] = value
 		end
@@ -519,8 +519,8 @@ local function ShowGroup(group, button)
 						x = _G["UIConfigGroupSlider"]:GetValue()
 						_G["UIConfigGroupSlider"]:SetValue(x + 10)
 					elseif delta == 1 then
-						x = _G["UIConfigGroupSlider"]:GetValue()			
-						_G["UIConfigGroupSlider"]:SetValue(x - 30)	
+						x = _G["UIConfigGroupSlider"]:GetValue()
+						_G["UIConfigGroupSlider"]:SetValue(x - 30)
 					end
 				end
 			end)
@@ -608,7 +608,7 @@ function CreateUIConfig()
 	UIConfigCover:SetFrameLevel(UIConfig:GetFrameLevel() + 20)
 	UIConfigCover:EnableMouse(true)
 	UIConfigCover:SetScript("OnMouseDown", function(self) print(L_GUI_MAKE_SELECTION) end)
-	UIConfigCover:Hide()	
+	UIConfigCover:Hide()
 	
 	local slider = CreateFrame("Slider", "UIConfigCategorySlider", groups)
 	slider:SetPoint("TOPRIGHT", 0, 0)
@@ -646,8 +646,8 @@ function CreateUIConfig()
 				x = _G["UIConfigCategorySlider"]:GetValue()
 				_G["UIConfigCategorySlider"]:SetValue(x + 10)
 			elseif delta == 1 then
-				x = _G["UIConfigCategorySlider"]:GetValue()			
-				_G["UIConfigCategorySlider"]:SetValue(x - 20)	
+				x = _G["UIConfigCategorySlider"]:GetValue()
+				_G["UIConfigCategorySlider"]:SetValue(x - 20)
 			end
 		end
 	end)
@@ -762,7 +762,7 @@ function CreateUIConfig()
 				
 				local function round(number, decimal)
 					return (("%%.%df"):format(decimal)):format(number)
-				end	
+				end
 				
 				colorbutton:SetScript("OnMouseDown", function(self) 
 					if ColorPickerFrame:IsShown() then return end
@@ -845,7 +845,7 @@ function CreateUIConfig()
 	if GUIConfigAll then
 		local button = CreateFrame("CheckButton", "UIConfigAllCharacters", TitleBox, "InterfaceOptionsCheckButtonTemplate")
 		button:SetScript("OnClick", function(self) StaticPopup_Show("PERCHAR") UIConfigCover:Show() end)
-		button:SetPoint("RIGHT", TitleBox, "RIGHT", -3, 0)	
+		button:SetPoint("RIGHT", TitleBox, "RIGHT", -3, 0)
 		
 		local label = UIConfigAllCharacters:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 		label:SetText(L_GUI_SET_SAVED_SETTTINGS)
@@ -894,7 +894,7 @@ do
 			StaticPopup_Show("RESET_PERCHAR")
 		else
 			StaticPopup_Show("RESET_ALL")
-		end	
+		end
 	end
 end
 

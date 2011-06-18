@@ -367,10 +367,10 @@ hooksecurefunc("MultiCastFlyoutFrameOpenButton_Show", function(button, _, parent
 
 -- Color for borders
 local bordercolors = {
-	{0.23, 0.45, 0.13},   -- Earth
-	{0.58, 0.23, 0.10},   -- Fire
-	{0.19, 0.48, 0.60},   -- Water
-	{0.42, 0.18, 0.74},   -- Air
+	{0.23, 0.45, 0.13},		-- Earth
+	{0.58, 0.23, 0.10},		-- Fire
+	{0.19, 0.48, 0.60},		-- Water
+	{0.42, 0.18, 0.74},		-- Air
 }
 
 -- Totem Slot Buttons

@@ -427,7 +427,7 @@ Filger_Spells = {
 			-- Black Arrow
 			{ spellID = 3674, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Explosive Shot
-			{ spellID = 53301, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },	
+			{ spellID = 53301, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},]]
 		{
 			Name = "PVE/PVP_CC",
@@ -1649,7 +1649,7 @@ Filger_Spells = {
 			-- Devouring Plague
 			{ spellID = 2944, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Vampiric Touch
-            { spellID = 34914, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 34914, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1693,16 +1693,16 @@ Filger_Spells = {
 			{ spellID = 14914, size = 30, filter = "CD" },
 			-- Shadow Word: Death
 			{ spellID = 32379, size = 30, filter = "CD" },
-            -- Hymn of Hope
-            { spellID = 64901, size = 30, filter = "CD" },
-            -- Divine Hymn
-            { spellID = 64843, size = 30, filter = "CD" },
-            -- Shadowfiend
-            { spellID = 34433, size = 30, filter = "CD" },
-            -- Dispersion
-            { spellID = 47585, size = 30, filter = "CD" },
+			-- Hymn of Hope
+			{ spellID = 64901, size = 30, filter = "CD" },
+			-- Divine Hymn
+			{ spellID = 64843, size = 30, filter = "CD" },
+			-- Shadowfiend
+			{ spellID = 34433, size = 30, filter = "CD" },
+			-- Dispersion
+			{ spellID = 47585, size = 30, filter = "CD" },
 			-- Psychic Horror
-            { spellID = 64044, size = 30, filter = "CD" },
+			{ spellID = 64044, size = 30, filter = "CD" },
 			-- Holy Word: Chastise
 			{ spellID = 88625, size = 30, filter = "CD" },
 			-- Power Word: Barrier
@@ -2021,7 +2021,7 @@ Filger_Spells = {
 			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
-	["ROGUE"] = {	
+	["ROGUE"] = {
 		{	
 			Name = "P_BUFF_ICON",
 			Direction = "LEFT",
@@ -2135,7 +2135,7 @@ Filger_Spells = {
 			-- Deadly Poison
 			{ spellID = 2818, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Mind-numbing Poison
-			{ spellID = 5760, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },		
+			{ spellID = 5760, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Crippling Poison
 			{ spellID = 3409, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Wound Poison

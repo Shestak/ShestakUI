@@ -66,12 +66,12 @@ local MainBars = function()
 			ToggleBar[4]:Height(T.buttonsize * 2 + T.buttonspacing)
 			for i = 1, 3 do
 				local b = _G["MultiBarBottomRightButton"..i]
-				b:SetAlpha(1)	
+				b:SetAlpha(1)
 				b:SetScale(1)
 			end
 			for i = 7, 9 do
 				local b = _G["MultiBarBottomRightButton"..i]
-				b:SetAlpha(1)	
+				b:SetAlpha(1)
 				b:SetScale(1)
 			end
 		end	

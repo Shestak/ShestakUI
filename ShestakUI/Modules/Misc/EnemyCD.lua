@@ -84,7 +84,7 @@ end
 local OnEvent = function(self, event, ...)
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
 		local timestamp, eventType, hideCaster, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags, spellID, spellName = ...
-		if eventType == "SPELL_CAST_SUCCESS" and band(sourceFlags, COMBATLOG_OBJECT_REACTION_HOSTILE) == COMBATLOG_OBJECT_REACTION_HOSTILE then			
+		if eventType == "SPELL_CAST_SUCCESS" and band(sourceFlags, COMBATLOG_OBJECT_REACTION_HOSTILE) == COMBATLOG_OBJECT_REACTION_HOSTILE then
 			if sourceName ~= UnitName("player") then
 				if T.enemy_spells[spellID] and show[select(2, IsInInstance())] then
 					StartTimer(spellID)
@@ -97,7 +97,7 @@ local OnEvent = function(self, event, ...)
 		end
 	end
 end
-	
+
 local addon = CreateFrame("Frame")
 addon:SetScript("OnEvent", OnEvent)
 addon:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")

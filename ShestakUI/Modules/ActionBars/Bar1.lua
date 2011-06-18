@@ -41,7 +41,7 @@ bar:SetScript("OnEvent", function(self, event, ...)
 		for i = 1, NUM_ACTIONBAR_BUTTONS do
 			button = _G["ActionButton"..i]
 			self:SetFrameRef("ActionButton"..i, button)
-		end	
+		end
 
 		self:Execute([[
 			buttons = table.new()

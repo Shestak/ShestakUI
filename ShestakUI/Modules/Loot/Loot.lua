@@ -7,7 +7,7 @@ if not C.loot.lootframe == true then return end
 local _NAME, _NS = ...
 local Butsu = CreateFrame("Button", _NAME)
 local db = C.font
-local lb = CreateFrame("Button", "ButsuAdv", Butsu, "UIPanelScrollDownButtonTemplate")		
+local lb = CreateFrame("Button", "ButsuAdv", Butsu, "UIPanelScrollDownButtonTemplate")
 local LDD = CreateFrame("Frame", "ButsuLDD", Butsu, "UIDropDownMenuTemplate")
 Butsu:Hide()
 
@@ -184,68 +184,68 @@ Butsu:SetToplevel(true)
 --	Announce loot(lcLoot by RustamIrzaev)
 ----------------------------------------------------------------------------------------
 local function OnLinkClick(self)
-    ToggleDropDownMenu(1, nil, LDD, lb, 0, 0)
+	ToggleDropDownMenu(1, nil, LDD, lb, 0, 0)
 end
 
 local function LDD_OnClick(self)
-    local val = self.value
+	local val = self.value
 	Announce(val)
 end
 
 function Announce(chn)
-    local nums = GetNumLootItems()
-    if(nums == 0) then return end
-    if UnitIsPlayer("target") or not UnitExists("target") then -- Chests are hard to identify!
+	local nums = GetNumLootItems()
+	if(nums == 0) then return end
+	if UnitIsPlayer("target") or not UnitExists("target") then -- Chests are hard to identify!
 		SendChatMessage(L_LOOT_CHEST..":", chn)
 	else
 		SendChatMessage(L_LOOT_MONSTER.."'"..UnitName("target").."':", chn)
 	end
-    for i = 1, GetNumLootItems() do
-        if(LootSlotIsItem(i)) then
-            local link = GetLootSlotLink(i)
-            local messlink = "- %s"
-            SendChatMessage(format(messlink, link), chn)
-        end
-    end
+	for i = 1, GetNumLootItems() do
+		if(LootSlotIsItem(i)) then
+			local link = GetLootSlotLink(i)
+			local messlink = "- %s"
+			SendChatMessage(format(messlink, link), chn)
+		end
+	end
 end
 
 local function LDD_Initialize()  
-    local info = {}
-    
-    info.text = L_LOOT_ANNOUNCE
-    info.notCheckable = true
-    info.isTitle = true
-    UIDropDownMenu_AddButton(info)
-    
-    info = {}
-    info.text = L_LOOT_TO_RAID
-    info.value = "raid"
-    info.notCheckable = 1
-    info.func = LDD_OnClick
-    UIDropDownMenu_AddButton(info)
-    
-    info = {}
-    info.text = L_LOOT_TO_GUILD
-    info.value = "guild"
-    info.notCheckable = 1
-    info.func = LDD_OnClick
-    UIDropDownMenu_AddButton(info)
-	
-	info = {}
-    info.text = L_LOOT_TO_PARTY
-    info.value = "party"
-    info.notCheckable = 1
-    info.func = LDD_OnClick
-    UIDropDownMenu_AddButton(info)
+	local info = {}
 
-    info = {}
-    info.text = L_LOOT_TO_SAY
-    info.value = "say"
-    info.notCheckable = 1
-    info.func = LDD_OnClick
-    UIDropDownMenu_AddButton(info)
-    
-    info = nil
+	info.text = L_LOOT_ANNOUNCE
+	info.notCheckable = true
+	info.isTitle = true
+	UIDropDownMenu_AddButton(info)
+
+	info = {}
+	info.text = L_LOOT_TO_RAID
+	info.value = "raid"
+	info.notCheckable = 1
+	info.func = LDD_OnClick
+	UIDropDownMenu_AddButton(info)
+
+	info = {}
+	info.text = L_LOOT_TO_GUILD
+	info.value = "guild"
+	info.notCheckable = 1
+	info.func = LDD_OnClick
+	UIDropDownMenu_AddButton(info)
+
+	info = {}
+	info.text = L_LOOT_TO_PARTY
+	info.value = "party"
+	info.notCheckable = 1
+	info.func = LDD_OnClick
+	UIDropDownMenu_AddButton(info)
+
+	info = {}
+	info.text = L_LOOT_TO_SAY
+	info.value = "say"
+	info.notCheckable = 1
+	info.func = LDD_OnClick
+	UIDropDownMenu_AddButton(info)
+
+	info = nil
 end
 
 lb:Width(15)
@@ -462,7 +462,7 @@ local function init()
 			if candidate then
 				local cname, class = CandidateUnitClass(candidate)
 				classesInRaid[class] = cname
-			end		
+			end
 		end
 
 		for k, v in pairs(classesInRaid) do

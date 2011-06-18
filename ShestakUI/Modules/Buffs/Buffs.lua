@@ -61,7 +61,7 @@ for i = 1, 3 do
 	_G["TempEnchant"..i.."Icon"]:Point("TOPLEFT", _G["TempEnchant"..i], 2, -2)
 	_G["TempEnchant"..i.."Icon"]:Point("BOTTOMRIGHT", _G["TempEnchant"..i], -2, 2)
 	_G["TempEnchant"..i]:Height(C.aura.player_buff_size)
-	_G["TempEnchant"..i]:Width(C.aura.player_buff_size)	
+	_G["TempEnchant"..i]:Width(C.aura.player_buff_size)
 	_G["TempEnchant"..i.."Duration"]:ClearAllPoints()
 	_G["TempEnchant"..i.."Duration"]:Point("CENTER", 2, 1)
 	_G["TempEnchant"..i.."Duration"]:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
@@ -161,7 +161,7 @@ local function UpdateBuffAnchors()
 				end
 			end
 			previousBuff = buff
-		end		
+		end
 	end
 end
 

@@ -263,7 +263,7 @@ function lpanels:MakePanel(f)
 			if (not t.shadow and not t.outline) or (t.shadow and t.shadow ~= 0) then 
 				if not t.shadow then t.shadow = d.text.shadow end
 				if is(t.shadow,'number') then t.shadow = {x=t.shadow,y=-t.shadow,alpha=d.text.shadow.alpha} end
-				if is(t.shadow,'table') then			
+				if is(t.shadow,'table') then
 					local sh_r, sh_g, sh_b = setcolor(t.shadow.color or d.text.shadow.color)
 					text:SetShadowOffset(t.shadow.x or d.text.shadow.x, t.shadow.y or d.text.shadow.y)
 					text:SetShadowColor(sh_r,sh_g,sh_b,t.shadow.alpha or d.text.shadow.alpha)
@@ -364,7 +364,7 @@ function lpanels.OnEvent(self, event)
 		end end
 		-- run addon
 		lpanels:Init()
-		lpanels = lpanels:Exit()	
+		lpanels = lpanels:Exit()
 	elseif event == "ADDON_LOADED" and deps then
 		for frame, addon in pairs(deps) do
 			if IsAddOnLoaded(addon) then _G[frame]:Show() frame = nil end
@@ -373,7 +373,7 @@ function lpanels.OnEvent(self, event)
 end
 
 function lpanels.CreateFrame(_, frame)
-	if not hidden[frame] then return end	
+	if not hidden[frame] then return end
 	for i, child in ipairs(hidden[frame]) do
 		local panel = _G[child]
 		if not panel.anchor_frame or _G[panel.anchor_frame] then

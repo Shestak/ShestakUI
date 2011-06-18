@@ -8,7 +8,7 @@ local myPlayerName  = UnitName("player")
 
 if not IsAddOnLoaded("ShestakUI_Config") then return end
 
-if not GUIConfigAll then GUIConfigAll = {} end		
+if not GUIConfigAll then GUIConfigAll = {} end
 if (GUIConfigAll[myPlayerRealm] == nil) then GUIConfigAll[myPlayerRealm] = {} end
 if (GUIConfigAll[myPlayerRealm][myPlayerName] == nil) then GUIConfigAll[myPlayerRealm][myPlayerName] = false end
 
@@ -22,7 +22,7 @@ if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
 			for option, value in pairs(options) do
 				if C[group][option] ~= nil then
 					if C[group][option] == value then
-						GUIConfig[group][option] = nil	
+						GUIConfig[group][option] = nil
 					else
 						count = count + 1
 						C[group][option] = value
@@ -41,7 +41,7 @@ else
 			for option, value in pairs(options) do
 				if C[group][option] ~= nil then
 					if C[group][option] == value then
-						GUIConfigSettings[group][option] = nil	
+						GUIConfigSettings[group][option] = nil
 					else
 						count = count + 1
 						C[group][option] = value

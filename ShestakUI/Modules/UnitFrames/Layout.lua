@@ -121,7 +121,7 @@ local function Shared(self, unit)
 		self.Power:Height(0)
 	else
 		self.Power:Height(2)
-	end		
+	end
 	self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
 	self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
 	self.Power:SetStatusBarTexture(C.media.texture)
@@ -434,7 +434,7 @@ local function Shared(self, unit)
 			bars.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
 			
 			if T.class == "WARLOCK" then
-				bars.Override = T.UpdateShards				
+				bars.Override = T.UpdateShards
 				self.SoulShards = bars
 			elseif T.class == "PALADIN" then
 				bars.Override = T.UpdateHoly
@@ -971,7 +971,7 @@ local function Shared(self, unit)
 		self.AltPowerBar:SetStatusBarColor(1, 0, 0)
 		self.AltPowerBar:SetPoint("LEFT")
 		self.AltPowerBar:SetPoint("RIGHT")
-		self.AltPowerBar:SetPoint("TOP", self.Health, "TOP")	
+		self.AltPowerBar:SetPoint("TOP", self.Health, "TOP")
 		self.AltPowerBar:SetBackdrop({
 			bgFile = C.media.blank, 
 			edgeFile = C.media.blank, 
@@ -1067,7 +1067,7 @@ local function Shared(self, unit)
 		}
 	end
 	
-	-- Fader	
+	-- Fader
 	if C.unitframe.plugins_fader == true then
 		if unit ~= "arena" or unit ~= "arenatarget" or unit ~= "boss" then
 			self.Fader = {

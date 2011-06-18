@@ -130,7 +130,7 @@ function Update(self)
 				
 				if (bar.time)then
 					bar.time = _G[bar.time:GetName()]
-				else			
+				else
 					bar.time = bar.statusbar:CreateFontString("$parentTime", "ARTWORK")
 					bar.time:SetFont(C.font.filger_font, C.font.filger_font_size, C.font.filger_font_style)
 					bar.time:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)

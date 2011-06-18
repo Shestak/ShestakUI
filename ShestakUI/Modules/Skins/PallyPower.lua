@@ -18,7 +18,7 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 		local thirty = 30
 		local forty = 40
 		local sixty = 60
-		local hundred = 100		
+		local hundred = 100
 		
 		self.db = LibStub("AceDB-3.0"):New("PallyPowerDB", PallyPower.defaults, "Default")
 		settings = self.db.profile
@@ -108,7 +108,7 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 							icon:SetVertexColor(...)
 						end
 					end
-				end			
+				end
 			end
 		end
 

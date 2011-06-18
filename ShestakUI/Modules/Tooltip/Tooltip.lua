@@ -174,7 +174,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			self.text:SetText(hp)
 		end
 		end)
-	end	
+	end
 	
 	local OnTooltipSetUnit = function(self)
 		local lines = self:NumLines()

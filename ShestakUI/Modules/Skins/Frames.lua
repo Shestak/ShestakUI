@@ -138,7 +138,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		}
 		
 		for i = 1, getn(BlizzardHeader) do
-			local title = _G[BlizzardHeader[i].."Header"]			
+			local title = _G[BlizzardHeader[i].."Header"]
 			if title then
 				title:SetTexture("")
 				title:ClearAllPoints()
@@ -300,7 +300,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["AudioOptionsVoicePanelBinding"]:SetFrameLevel(2)
 		_G["AudioOptionsVoicePanelListening"]:SetFrameLevel(2)
 		_G["GeneralDockManagerOverflowButtonList"]:SetFrameStrata("HIGH")
-
 
 		-- Others
 		_G["ReadyCheckListenerFrame"]:SetAlpha(0)

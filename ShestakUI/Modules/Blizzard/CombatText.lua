@@ -255,7 +255,7 @@ local function SetScroll()
 		end)
 	end
 end
-	
+
 -- msg flow direction
 local function ScrollDirection()
 	if (COMBAT_TEXT_FLOAT_MODE=="2") then
@@ -765,7 +765,7 @@ local function StartTestMode()
 				end
 				TimeSinceLastUpdate = 0
 			end
-		end)		
+		end)
 		ct.testmode=true
 	end
 end
@@ -1068,7 +1068,7 @@ if(C.combattext.healing)then
 	if(C.combattext.icons)then
 		ct.blank="Interface\\AddOns\\ShestakUI\\Media\\Textures\\Blank.tga"
 	end
-	local heal=function(self,event,...) 	
+	local heal=function(self,event,...)
 		local msg,icon
 		local timestamp, eventType, hideCaster, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags = select(1,...)
 		if(sourceGUID==ct.pguid)or(sourceFlags==gflags)then

@@ -495,8 +495,8 @@ if gold.enabled then
 			if button == "LeftButton" then
 				ToggleCharacter'TokenFrame'
 			elseif button == "RightButton" then
-				conf.AutoSell = not conf.AutoSell				
-				self:GetScript("OnEnter")(self)				
+				conf.AutoSell = not conf.AutoSell
+				self:GetScript("OnEnter")(self)
 			end
 		end
 	})
@@ -549,7 +549,7 @@ if clock.enabled then
 		OnLoad = function(self) RequestRaidInfo() RegEvents(self,"UPDATE_INSTANCE_INFO") end,
 		OnEvent = function(self) if self.hovered then self:GetScript("OnEnter")(self) end end,
 		OnEnter = function(self)
-			if not self.hovered then RequestRaidInfo() self.hovered = true end			
+			if not self.hovered then RequestRaidInfo() self.hovered = true end
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
 			GameTooltip:Point(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
@@ -639,7 +639,7 @@ if location.enabled then
 					GameTooltip:AddLine(format("%s |cffffffff(%s)",self.zone,Coords()),tthead.r,tthead.g,tthead.b,1,1,1)
 					if self.pvp[1] and not IsInInstance() then
 						local r,g,b = unpack(self[self.pvp[1]][2])
-						if self.subzone and self.subzone ~= self.zone then GameTooltip:AddLine(self.subzone,r,g,b) end				
+						if self.subzone and self.subzone ~= self.zone then GameTooltip:AddLine(self.subzone,r,g,b) end
 						GameTooltip:AddLine(format(self[self.pvp[1]][1],self.pvp[3] or ""),r,g,b)
 					end
 					GameTooltip:Show()
@@ -1077,7 +1077,7 @@ if stats.enabled then
 		if sub == "ap" then
 			local base, pos, neg = UnitAttackPower(P)
 			string, percent = base + neg + pos
-		elseif sub == "rangedap" then		
+		elseif sub == "rangedap" then
 			local base, pos, neg = UnitRangedAttackPower(P)
 			string, percent = base + neg + pos
 		elseif sub == "mastery" then
@@ -1240,7 +1240,7 @@ if experience.enabled then
 				playedmsg = GetTime()
 			elseif (event == "UPDATE_FACTION" or event == "PLAYER_LOGIN") and conf.ExpMode == "rep" then
 				local standing
-				repname, standing, minrep, maxrep, currep = GetWatchedFactionInfo()				
+				repname, standing, minrep, maxrep, currep = GetWatchedFactionInfo()
 				if not repname then repname = NONE end
 				local color = {}
 				if standing == 0 then
@@ -1273,7 +1273,7 @@ if experience.enabled then
 				GameTooltip:AddDoubleLine(L_STATS_PLAYED_SESSION,tags("playedsession",1),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				GameTooltip:AddDoubleLine(L_STATS_PLAYED_LEVEL,tags("playedlevel",1),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				GameTooltip:AddLine' '
-				GameTooltip:AddLine(L_STATS_ACC_PLAYED,ttsubh.r,ttsubh.g,ttsubh.b)				
+				GameTooltip:AddLine(L_STATS_ACC_PLAYED,ttsubh.r,ttsubh.g,ttsubh.b)
 				local total = 0
 				for realm, t in pairs(SavedStats) do
 					for name, conf in pairs(t) do
@@ -1288,7 +1288,7 @@ if experience.enabled then
 							total = total + conf.Played
 						end
 					end
-				end				
+				end
 				GameTooltip:AddDoubleLine(" ","------------------",1,1,1,0.5,0.5,0.5)
 				GameTooltip:AddDoubleLine(L_STATS_TOTAL,fmttime(total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 			elseif conf.ExpMode == "xp" then
@@ -1299,7 +1299,7 @@ if experience.enabled then
 				if GetXPExhaustion() and GetXPExhaustion() ~= 0 then
 					GameTooltip:AddDoubleLine(L_STATS_RESTED_XP,format("%s (%s%%)",tags'restxp',tags'rest%'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				end
-				GameTooltip:AddLine' '				
+				GameTooltip:AddLine' '
 				GameTooltip:AddDoubleLine(L_STATS_SESSION_XP,format("%s/%s (%s)",tags'sessionrate',L_STATS_HR,tags'sessionttl'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				GameTooltip:AddDoubleLine(L_STATS_XP_RATE,format("%s/%s (%s)",tags'levelrate',L_STATS_HR,tags'levelttl'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
 				GameTooltip:AddDoubleLine(format(L_STATS_QUESTS_TO,UnitLevel(P)+1), format("%s:%s %s:%s",L_STATS_QUEST,tags'questsleft',L_STATS_KILLS,tags'killsleft'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
@@ -1396,7 +1396,7 @@ if helm.enabled then
 			if button == "RightButton" or button == "LeftButton" then
 				if ShowingHelm() then 
 					ShowHelm(0)
-					self.text:SetText(format(helm.fmt,"|cffff5555"..strupper(OFF).."|r"))					
+					self.text:SetText(format(helm.fmt,"|cffff5555"..strupper(OFF).."|r"))
 				else
 					ShowHelm(1)
 					self.text:SetText(format(helm.fmt,"|cff55ff55"..L_STATS_ON.."|r"))

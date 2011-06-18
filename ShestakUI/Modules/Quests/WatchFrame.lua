@@ -49,7 +49,7 @@ local function init()
 	end)
 end
 
-local function setup()	
+local function setup()
 	WatchFrame:SetParent(UIWatchFrame)
 	WatchFrame:SetFrameStrata("MEDIUM")
 	WatchFrame:SetFrameLevel(3)

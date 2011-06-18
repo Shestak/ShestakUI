@@ -56,7 +56,7 @@ bgframe:SetScript("OnEnter", function(self)
 				elseif curmapid == SOTA then
 					GameTooltip:AddDoubleLine(L_DATATEXT_DEMOLISHERSDESTROYED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 					GameTooltip:AddDoubleLine(L_DATATEXT_GATESDESTROYED, GetBattlefieldStatData(i, 2), 1, 1, 1)
-				end					
+				end
 				GameTooltip:Show()
 			end
 		end

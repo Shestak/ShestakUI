@@ -76,8 +76,8 @@ if C.raidframe.plugins_aura_watch == true then
 		ORD.MatchBySpellName = true
 		
 		local function SpellName(id)
-			local name, _, _, _, _, _, _, _, _ = GetSpellInfo(id) 	
-			return name	
+			local name, _, _, _, _, _, _, _, _ = GetSpellInfo(id)
+			return name
 		end
 		
 		T.debuffids = {
@@ -94,7 +94,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(91535),	-- Flamethrower
 			SpellName(80161),	-- Chemical Cloud
 			SpellName(92035),	-- Acquiring Target
-			SpellName(79835),	-- Poison Soaked Shell		
+			SpellName(79835),	-- Poison Soaked Shell
 			SpellName(91555),	-- Power Generator
 			SpellName(80094),	-- Fixate
 			SpellName(91521),	-- Incineration Security Measure

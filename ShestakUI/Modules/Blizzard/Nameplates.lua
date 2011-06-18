@@ -14,7 +14,7 @@ if C.nameplate.track_auras == true then
 	NamePlates:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 end
 
-local Abbrev = function(name)	
+local Abbrev = function(name)
 	local newname = (string.len(name) > 18) and string.gsub(name, "%s?(.[\128-\191]*)%S+%s", "%1. ") or name
 	return T.UTF(newname, 18, false)
 end
@@ -59,29 +59,29 @@ local function CreateVirtualFrame(parent, point)
 	parent.bordertop:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult * 2, noscalemult * 2)
 	parent.bordertop:SetPoint("TOPRIGHT", point, "TOPRIGHT", noscalemult * 2, noscalemult * 2)
 	parent.bordertop:SetHeight(noscalemult)
-	parent.bordertop:SetTexture(unpack(C.media.border_color))	
+	parent.bordertop:SetTexture(unpack(C.media.border_color))
 	parent.bordertop:SetDrawLayer("BORDER", -7)
 	
 	parent.borderbottom = parent:CreateTexture(nil, "BORDER")
 	parent.borderbottom:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", -noscalemult * 2, -noscalemult * 2)
 	parent.borderbottom:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", noscalemult * 2, -noscalemult * 2)
 	parent.borderbottom:SetHeight(noscalemult)
-	parent.borderbottom:SetTexture(unpack(C.media.border_color))	
+	parent.borderbottom:SetTexture(unpack(C.media.border_color))
 	parent.borderbottom:SetDrawLayer("BORDER", -7)
 	
 	parent.borderleft = parent:CreateTexture(nil, "BORDER")
 	parent.borderleft:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult * 2, noscalemult * 2)
 	parent.borderleft:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", noscalemult * 2, -noscalemult * 2)
 	parent.borderleft:SetWidth(noscalemult)
-	parent.borderleft:SetTexture(unpack(C.media.border_color))	
+	parent.borderleft:SetTexture(unpack(C.media.border_color))
 	parent.borderleft:SetDrawLayer("BORDER", -7)
 	
 	parent.borderright = parent:CreateTexture(nil, "BORDER")
 	parent.borderright:SetPoint("TOPRIGHT", point, "TOPRIGHT", noscalemult * 2, noscalemult * 2)
 	parent.borderright:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", -noscalemult * 2, -noscalemult * 2)
 	parent.borderright:SetWidth(noscalemult)
-	parent.borderright:SetTexture(unpack(C.media.border_color))	
-	parent.borderright:SetDrawLayer("BORDER", -7)	
+	parent.borderright:SetTexture(unpack(C.media.border_color))
+	parent.borderright:SetDrawLayer("BORDER", -7)
 end
 
 local function SetVirtualBorder(parent, r, g, b)
@@ -109,7 +109,7 @@ local function CreateAuraIcon(parent)
 	button.bg2 = button:CreateTexture(nil, "ARTWORK")
 	button.bg2:SetTexture(unpack(C.media.backdrop_color))
 	button.bg2:SetPoint("TOPLEFT", button, "TOPLEFT", noscalemult * 2, -noscalemult * 2)
-	button.bg2:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -noscalemult * 2, noscalemult * 2)	
+	button.bg2:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -noscalemult * 2, noscalemult * 2)
 
 	button.icon = button:CreateTexture(nil, "OVERLAY")
 	button.icon:SetPoint("TOPLEFT", button, "TOPLEFT", noscalemult * 3, -noscalemult * 3)
@@ -187,7 +187,7 @@ local function UpdateCastbar(frame)
 	if frame.shield:IsShown() then
 		frame:SetStatusBarColor(0.78, 0.25, 0.25, 1)
 	end
-end	
+end
 
 -- Determine whether or not the cast is Channelled or a Regular cast so we can grab the proper Cast Name
 local function UpdateCastText(frame, curValue)

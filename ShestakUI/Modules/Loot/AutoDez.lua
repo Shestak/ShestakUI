@@ -8,7 +8,7 @@ if C.loot.auto_greed == true then
 	autogreed:RegisterEvent("START_LOOT_ROLL")
 	autogreed:SetScript("OnEvent", function(self, event, id)
 		local name = select(2, GetLootRollItemInfo(id))
-		if (name == select(1, GetItemInfo(43102))) then		
+		if (name == select(1, GetItemInfo(43102))) then
 			RollOnLoot(id, 2)
 		end
 		if T.level ~= MAX_PLAYER_LEVEL then return end

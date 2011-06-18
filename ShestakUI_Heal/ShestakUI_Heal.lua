@@ -118,7 +118,7 @@ local function Shared(self, unit)
 	self:Tag(self.Info, "[GetNameColor][NameShort]")
 	
 	-- Agro border
-    if C.raidframe.aggro_border == true then
+	if C.raidframe.aggro_border == true then
 		table.insert(self.__elements, T.UpdateThreat)
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateThreat)
 		self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", T.UpdateThreat)
@@ -194,7 +194,7 @@ local function Shared(self, unit)
 		if C.raidframe.vertical_health == true then
 			ohpb:SetOrientation("VERTICAL")
 			ohpb:Point("BOTTOM", mhpb:GetStatusBarTexture(), "TOP", 0, 0)
-			ohpb:Height(unit_height)	
+			ohpb:Height(unit_height)
 		else
 			ohpb:Point("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 			ohpb:Point("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
@@ -214,7 +214,7 @@ local function Shared(self, unit)
 	if C.raidframe.show_range == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		self.Range = {insideAlpha = 1, outsideAlpha = C.raidframe.range_alpha}
 	end
-	
+
 	-- Smooth bars
 	if C.unitframe.plugins_smooth_bar == true then
 		self.Health.Smooth = true
@@ -239,7 +239,7 @@ local function Shared(self, unit)
 		self.RaidDebuffs.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		self.RaidDebuffs.icon:Point("TOPLEFT", 2, -2)
 		self.RaidDebuffs.icon:Point("BOTTOMRIGHT", -2, 2)
-			
+		
 		if C.aura.show_spiral == true then
 			self.RaidDebuffs.cd = CreateFrame("Cooldown", nil, self.RaidDebuffs)
 			self.RaidDebuffs.cd:Point("TOPLEFT", 2, -2)

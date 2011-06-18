@@ -25,7 +25,7 @@ function Mountz(groundmount, flyingmount, underwatermount)
 	end
 	if IsShiftKeyDown() then
 		vjswim = not vjswim
-    end
+	end
 	for i = 1, num, 1 do
 		local _, info, id = GetCompanionInfo("MOUNT", i)
 		if flyingmount and info == flyingmount and flyablex then

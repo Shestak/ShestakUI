@@ -36,7 +36,7 @@ T.oUF_colors = setmetatable({
 		[5] = {0.33, 0.59, 0.33}, -- Friendly
 		[6] = {0.33, 0.59, 0.33}, -- Honored
 		[7] = {0.33, 0.59, 0.33}, -- Revered
-		[8] = {0.33, 0.59, 0.33}, -- Exalted	
+		[8] = {0.33, 0.59, 0.33}, -- Exalted
 	}, {__index = oUF.colors.reaction}),
 }, {__index = oUF.colors})
 

@@ -34,7 +34,7 @@ local function OnEvent(self, event, arg1, arg2)
 			if (usable or nomana) then
 				self.icon:SetTexture(select(3, GetSpellInfo(buff)))
 				break
-			end			
+			end
 		end
 		
 		if (not self.icon:GetTexture() and event == "PLAYER_LOGIN") then
@@ -56,7 +56,7 @@ local function OnEvent(self, event, arg1, arg2)
 			if group.role and group.role == true then
 				self:RegisterEvent("UNIT_INVENTORY_CHANGED")
 			end
-		end		
+		end
 	else
 		self:UnregisterAllEvents()
 		self:RegisterEvent("UNIT_INVENTORY_CHANGED")
@@ -94,7 +94,7 @@ local function OnEvent(self, event, arg1, arg2)
 	local combat = group.combat
 	local personal = group.personal
 	local instance = group.instance
-	local pvp = group.pvp	
+	local pvp = group.pvp
 	local reversecheck = group.reversecheck
 	local negate_reversecheck = group.negate_reversecheck
 	local canplaysound = false
@@ -116,7 +116,7 @@ local function OnEvent(self, event, arg1, arg2)
 		if tree == GetPrimaryTalentTree() then
 			treepass = true
 		else
-			treepass = false	
+			treepass = false
 		end
 	else
 		treepass = true
@@ -147,7 +147,7 @@ local function OnEvent(self, event, arg1, arg2)
 				end
 			end
 			self:Show()
-			if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end		
+			if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
 		elseif ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid"))) and 
 		reversecheck == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
 			if negate_reversecheck and negate_reversecheck == GetPrimaryTalentTree() then self:Hide() return end
@@ -158,8 +158,8 @@ local function OnEvent(self, event, arg1, arg2)
 					self:Show()
 					if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
 					return
-				end			
-			end			
+				end
+			end
 		else
 			self:Hide()
 		end
@@ -170,7 +170,7 @@ local function OnEvent(self, event, arg1, arg2)
 				if hasMainHandEnchant == nil then
 					self:Show()
 					self.icon:SetTexture(GetInventoryItemTexture("player", 16))
-					if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end		
+					if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
 					return
 				end
 			else
@@ -186,11 +186,11 @@ local function OnEvent(self, event, arg1, arg2)
 				end
 			end
 			self:Hide()
-			return	
+			return
 		else
 			self:Hide()
 			return
-		end	
+		end
 	end
 end
 

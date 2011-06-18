@@ -6,7 +6,7 @@ if not C.misc.quest_auto_button == true then return end
 ----------------------------------------------------------------------------------------
 local Items = T.ABItems
 local EquipedItems = T.ABEquipedItems
-	
+
 local function AutoButtonHide()
 	AutoButton:SetAlpha(0)
 	if not InCombatLockdown() then
@@ -60,7 +60,7 @@ AutoButtonHide()
 -- Texture for our button
 AutoButton.t = AutoButton:CreateTexture(nil, "OVERLAY", nil)
 AutoButton.t:Point("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
-AutoButton.t:Point("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)	
+AutoButton.t:Point("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
 AutoButton.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 -- Count text for our button
@@ -73,7 +73,7 @@ AutoButton.c:SetJustifyH("CENTER")
 -- Cooldown
 AutoButton.Cooldown = CreateFrame("Cooldown", nil, AutoButton)
 AutoButton.Cooldown:Point("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
-AutoButton.Cooldown:Point("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)	
+AutoButton.Cooldown:Point("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
 
 local Scanner = CreateFrame("Frame")
 Scanner:RegisterEvent("BAG_UPDATE")
@@ -97,7 +97,7 @@ Scanner:SetScript("OnEvent", function()
 					-- Get the count if there is one
 					if count and count ~= 1 then
 						AutoButton.c:SetText(count)
-					else	
+					else
 						AutoButton.c:SetText("")
 					end
 					
