@@ -170,6 +170,23 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(87856),	-- Squall Line
 			SpellName(88427),	-- Electrocute
 			SpellName(93295),	-- Lightning Rod
+		-- Firelands
+			-- Beth'tilac
+			SpellName(99506),	-- Widows Kiss
+			--Alysrazor
+			SpellName(101296),	-- Fiero Blast
+			SpellName(100723),	-- Gushing Wound
+			--Shannox
+			SpellName(99837),	-- Crystal Prison
+			SpellName(99937),	-- Jagged Tear
+			-- Baleroc
+			SpellName(99403),	-- Tormented
+			-- Lord Rhyolith
+
+			-- Majordomo Staghelm
+
+			-- Ragnaros
+
 		-- Other
 			SpellName(67479),	-- Impale
 			SpellName(5782),	-- Fear
