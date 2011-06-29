@@ -184,9 +184,11 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Lord Rhyolith
 
 			-- Majordomo Staghelm
-
+			SpellName(98450),	-- Searing Seeds
 			-- Ragnaros
 
+			-- Trash
+			SpellName(99532),	-- Melt Armor
 		-- Other
 			SpellName(67479),	-- Impale
 			SpellName(5782),	-- Fear
