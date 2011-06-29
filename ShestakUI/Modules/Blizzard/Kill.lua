@@ -13,6 +13,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 			InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
 			SetCVar("useCompactPartyFrames", 0)
 			CompactRaidFrameManager:Kill()
+			CompactRaidFrameContainer:UnregisterAllEvents()
 			CompactRaidFrameContainer:Kill()
 		end
 	else
