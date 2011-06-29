@@ -906,7 +906,7 @@ if friends.enabled then
 							end
 						end
 						if client == "WoW" then
-							local hasFocus, toonName, client, realmName, faction, race, class, guild, zoneName, level= BNGetToonInfo(toonID)
+							local hasFocus, toonName, client, realmName, faction, _, race, class, guild, zoneName, level= BNGetToonInfo(toonID)
 							for k,v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 							if GetLocale() ~= "enUS" then -- feminine class localization (unsure if it's really needed)
 								for k,v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
