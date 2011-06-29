@@ -83,7 +83,8 @@ end
 
 local OnEvent = function(self, event, ...)
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
-		local timestamp, eventType, hideCaster, sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags, spellID, spellName = ...
+		local _, eventType, _, _, sourceName, sourceFlags, _, _, _, _, _, spellID, _ = ...
+
 		if eventType == "SPELL_CAST_SUCCESS" and band(sourceFlags, COMBATLOG_OBJECT_REACTION_HOSTILE) == COMBATLOG_OBJECT_REACTION_HOSTILE then
 			if sourceName ~= UnitName("player") then
 				if T.enemy_spells[spellID] and show[select(2, IsInInstance())] then
