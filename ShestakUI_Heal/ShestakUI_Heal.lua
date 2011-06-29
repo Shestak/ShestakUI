@@ -163,7 +163,12 @@ local function Shared(self, unit)
 		self.MasterLooter:Size(12, 12)
 		self.MasterLooter:Point("TOPRIGHT", self.Health, 3, 8)
 	end
-	
+
+	-- Resurrect icon
+	self.ResurrectIcon = self.Health:CreateTexture(nil, "OVERLAY")
+	self.ResurrectIcon:Size(30, 25)
+	self.ResurrectIcon:Point("CENTER", self.Health, "CENTER", 0, -5)
+
 	-- Debuff highlight
 	if not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		self.DebuffHighlight = self.Health:CreateTexture(nil, "OVERLAY")
