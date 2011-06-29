@@ -217,11 +217,9 @@ local micromenu = {
 		func = function() ToggleHelpFrame() end},
 	{text = L_MINIMAP_CALENDAR, notCheckable = 1,
 		func = function() if not CalendarFrame then LoadAddOn("Blizzard_Calendar") end Calendar_Toggle() end},
+	{text = ENCOUNTER_JOURNAL, notCheckable = 1,
+		func = function() ToggleFrame(EncounterJournal) end}
 }
-
-if T.PTRVersion() then
-	tinsert(micromenu, {text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function() ToggleFrame(EncounterJournal) end})
-end
 
 Minimap:SetScript("OnMouseUp", function(self, button)
 	local position = MinimapAnchor:GetPoint()

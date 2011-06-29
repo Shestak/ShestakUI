@@ -38,7 +38,6 @@ InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 
 Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
-Stuffing:RegisterEvent("PLAYER_ENTERING_WORLD")
 Stuffing:SetScript("OnEvent", function(this, event, ...)
 	Stuffing[event](this, ...)
 end)
@@ -89,19 +88,12 @@ end
 local function Stuffing_Toggle()
 	if Stuffing.frame:IsShown() then
 		Stuffing.frame:Hide()
-		if ContainerFrame1:IsShown() then
-			ToggleKeyRing() 
-		end
 	else
 		Stuffing.frame:Show()
 	end
 end
 
 local function Stuffing_ToggleBag(id)
-	if id == -2 then
-		ToggleKeyRing()
-		return
-	end
 	Stuffing_Toggle()
 end
 
@@ -403,9 +395,6 @@ function Stuffing:CreateBagFrame(w)
 			return
 		end
 		self:GetParent():Hide()
-		if ContainerFrame1:IsShown() then
-			ToggleKeyRing()
-		end
 	end)
 	f.b_close:RegisterForClicks("AnyUp")
 	
@@ -823,54 +812,6 @@ function Stuffing:ADDON_LOADED(addon)
 	CloseBackpack = Stuffing_Close
 
 	BankFrame:UnregisterAllEvents()
-end
-
-function Stuffing:PLAYER_ENTERING_WORLD()
-	if T.PTRVersion() then return end
-	-- Please don't do anything after 1 player_entering_world event
-	Stuffing:UnregisterEvent("PLAYER_ENTERING_WORLD")
-
-	ContainerFrame1CloseButton:Hide()
-	ContainerFrame1Portrait:Hide()
-	ContainerFrame1Name:Hide()
-	ContainerFrame1BackgroundTop:SetAlpha(0)
-	ContainerFrame1BackgroundMiddle1:SetAlpha(0)
-	ContainerFrame1BackgroundMiddle2:SetAlpha(0)
-	ContainerFrame1BackgroundBottom:SetAlpha(0)
-	
-	for i = 1, GetKeyRingSize() do
-		local slot = _G["ContainerFrame1Item"..i]
-		local t = _G["ContainerFrame1Item"..i.."IconTexture"]
-		local count = _G[slot:GetName().."Count"]
-		_G["ContainerFrame1Item"..i.."IconQuestTexture"]:Kill()
-		
-		slot:SetPushedTexture("")
-		slot:SetNormalTexture("")
-		
-		t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		t:Point("TOPLEFT", slot, 2, -2)
-		t:Point("BOTTOMRIGHT", slot, -2, 2)
-		
-		slot:SetTemplate("Transparent", true)
-		slot:StyleButton()
-
-		count:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
-		count:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
-		count:Point("BOTTOMRIGHT", 1, 1)
-	end
-	
-	ContainerFrame1:HookScript("OnShow", function(self)
-		ContainerFrame1:ClearAllPoints()
-		ContainerFrame1:Point("TOPRIGHT", StuffingFrameBags, "TOPLEFT", -1, 37)
-		ContainerFrame1.SetPoint = T.dummy
-		ContainerFrame1.ClearAllPoints = T.dummy
-	end)
-	ContainerFrame1:SetParent(StuffingFrameBags)
-	
-	local keybackdrop = CreateFrame("Frame", "KeyringFrame", ContainerFrame1)
-	keybackdrop:Point("TOPLEFT", 6, -37)
-	keybackdrop:Point("BOTTOMRIGHT", -2, -3)
-	keybackdrop:SetTemplate("Transparent")
 end
 
 function Stuffing:PLAYERBANKSLOTS_CHANGED(id)
@@ -1334,25 +1275,6 @@ function Stuffing.Menu(self, level)
 		end
 	end
 	UIDropDownMenu_AddButton(info, level)
-	
-	if not T.PTRVersion() then
-		wipe(info)
-		info.text = KEYRING
-		info.checked = function()
-			return key_ring == 1
-		end
-
-		info.func = function()
-			if key_ring == 1 then
-				key_ring = 0
-			else
-				key_ring = 1
-			end
-			ToggleKeyRing()
-			Stuffing:Layout()
-		end
-		UIDropDownMenu_AddButton(info, level)
-	end
 
 	wipe(info)
 	info.disabled = nil
