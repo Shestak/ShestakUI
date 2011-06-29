@@ -18,10 +18,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"LFDDungeonReadyStatus",
 			"BNToastFrame",
 			"TicketStatusFrameButton",
-			"DropDownList1MenuBackdrop",
-			"DropDownList2MenuBackdrop",
-			"DropDownList1Backdrop",
-			"DropDownList2Backdrop",
 			"LFDSearchStatus",
 			"AutoCompleteBox",
 			"ReadyCheckFrame",
@@ -112,6 +108,14 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			_G["StaticPopup"..i.."EditBox"]:SetTextInsets(3, 0, 0, 0)
 		end
 		
+		-- Reskin Dropdown menu
+		hooksecurefunc("UIDropDownMenu_InitializeHelper", function(frame)
+			for i = 1, UIDROPDOWNMENU_MAXLEVELS do
+				_G["DropDownList"..i.."Backdrop"]:SetTemplate("Transparent", true)
+				_G["DropDownList"..i.."MenuBackdrop"]:SetTemplate("Transparent", true)
+			end
+		end)
+
 		-- Reskin menu
 		local ChatMenus = {
 			"ChatMenu",
