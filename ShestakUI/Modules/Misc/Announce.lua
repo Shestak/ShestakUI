@@ -6,8 +6,9 @@ if C.misc.announce_interrupt ~= true then return end
 ----------------------------------------------------------------------------------------
 local interrupt_announce = CreateFrame("Frame")
 interrupt_announce:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-interrupt_announce:SetScript("OnEvent", function(self, _, _, event, _, _, sourceName, _, _, destName, _, _, _, _, spellID, spellName)
-	if not (event == "SPELL_INTERRUPT" and sourceName == T.name) then return end
+interrupt_announce:SetScript("OnEvent", function(self, _, ...)
+	local _, event, _, sourceGUID, _, _, _, _, destName, _, _, _, _, _, spellID, spellName = ...
+	if not (event == "SPELL_INTERRUPT" and sourceGUID == UnitGUID("player")) then return end
 	
 	if GetRealNumRaidMembers() > 0 then
 		SendChatMessage(INTERRUPTED.." "..destName..": \124cff71d5ff\124Hspell:"..spellID.."\124h["..spellName.."]\124h\124r!", "RAID", nil, nil)

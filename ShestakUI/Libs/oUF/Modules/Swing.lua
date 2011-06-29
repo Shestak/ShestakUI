@@ -64,7 +64,8 @@ do
 	end
 end
 
-local function Melee(self, _, _, event, _, GUID, _, _, _, tarGUID, _, missType, spellName)
+local function Melee(self, _, _, event, _, GUID, _, _, _, tarGUID, _, _, _, missType, spellName)
+
 	local bar = self.Swing
 	
 	if UnitGUID(self.unit) == tarGUID then
