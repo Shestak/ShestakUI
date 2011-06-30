@@ -894,7 +894,7 @@ if friends.enabled then
 					GameTooltip:AddLine' '
 					GameTooltip:AddLine(BATTLENET_OPTIONS_LABEL)
 					for i = 1, BNtotal do
-						presenceID, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND = BNGetFriendInfo(i)
+						_, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND, _, _, _, _ = BNGetFriendInfo(i)
 						if not isOnline then break end
 						if(isAFK) then
 							status = L_CHAT_AFK
@@ -906,7 +906,7 @@ if friends.enabled then
 							end
 						end
 						if client == "WoW" then
-							local hasFocus, toonName, client, realmName, faction, _, race, class, guild, zoneName, level= BNGetToonInfo(toonID)
+							local _, toonName, client, realmName, _, _, _, class, _, zoneName, level, _ = BNGetToonInfo(toonID)
 							for k,v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 							if GetLocale() ~= "enUS" then -- feminine class localization (unsure if it's really needed)
 								for k,v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end

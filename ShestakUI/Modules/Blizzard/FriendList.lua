@@ -187,10 +187,11 @@ hooksecurefunc('WorldStateScoreFrame_Update', function()
 end)
 
 -- GuildList
-local _VIEW = 'playerStatus'
+local _VIEW_DEFAULT = 'playerStatus'
+local _VIEW = _VIEW_DEFAULT
 
 local function viewChanged(view)
-	_VIEW = view
+	_VIEW = view or _VIEW_DEFAULT
 end
 
 local function update()
@@ -202,28 +203,31 @@ local function update()
 	for i, button in ipairs(buttons) do
 		if(button:IsShown() and button.online and button.guildIndex) then
 			local name, rank, rankIndex, level, class, zone, note, officernote, online, status, classFileName, achievementPnts, achievementRank, isMobile = GetGuildRosterInfo(button.guildIndex)
+			local displayedName = classColor[classFileName] .. name
+
+			if(isMobile) then
+				name = ChatFrame_GetMobileEmbeddedTexture(73/255, 177/255, 73/255) .. name
+			end
+
 			if(_VIEW == 'playerStatus') then
 				button.string1:SetText(diffColor[level] .. level)
-				if(not isMobile) then
-					button.string2:SetText(classColor[classFileName] .. name)
-				end
+				button.string2:SetText(displayedName)
 				if(zone == playerArea) then
 					button.string3:SetText('|cff00ff00' .. zone)
 				end
 			elseif(_VIEW == 'guildStatus') then
-				button.string1:SetText(classColor[classFileName] .. name)
+				button.string1:SetText(displayedName)
 				if(rankIndex and rank) then
 					button.string2:SetText(guildRankColor[rankIndex] .. rank)
 				end
-			elseif(_VIEW == 'weeklyxp') then
-				button.string1:SetText(diffColor[level] .. level)
-			elseif(_VIEW == 'totalxp') then
-				button.string1:SetText(diffColor[level] .. level)
 			elseif(_VIEW == 'achievement') then
 				button.string1:SetText(diffColor[level] .. level)
 				if(classFileName and name) then
-					button.string2:SetText(classColor[classFileName] .. name)
+					button.string2:SetText(displayedName)
 				end
+			elseif(_VIEW == 'weeklyxp' or _VIEW == 'totalxp') then
+				button.string1:SetText(diffColor[level] .. level)
+				button.string2:SetText(displayedName)
 			end
 		end
 	end
@@ -233,7 +237,7 @@ local function tradeupdate()
 	local myZone = GetRealZoneText()
 	for i, button in ipairs(GuildRosterContainer.buttons) do
 		if(button:IsShown() and button.online and button.guildIndex) then
-			local skillID, isCollapsed, iconTexture, headerName, numOnline, numPlayers, playerName, class, online, zone, skill, classFileName = GetGuildTradeSkillInfo(button.guildIndex)
+			local skillID, isCollapsed, iconTexture, headerName, numOnline, numVisible, numPlayers, playerName, class, online, zone, skill, classFileName, isMobile = GetGuildTradeSkillInfo(button.guildIndex)
 			if(not headerName) then
 				if(playerName) then
 					button.string1:SetText(classColor[classFileName] .. playerName)
@@ -282,9 +286,9 @@ local function friendsFrame()
 					end
 				end
 			elseif (button.buttonType == FRIENDS_BUTTON_TYPE_BNET) then
-				local presenceID, givenName, surname, toonName, toonID, client, isOnline, lastOnline, isAFK, isDND, messageText, noteText = BNGetFriendInfo(button.id)
+				local presenceID, givenName, surname, toonName, toonID, client, isOnline, lastOnline, isAFK, isDND, broadcastText, noteText, isFriend, broadcastTime = BNGetFriendInfo(i)
 				if(isOnline and client==BNET_CLIENT_WOW) then
-					local hasFocus, toonName, client, realmName, faction, _, race, class, guild, zoneName, level, gameText, broadcastText, broadcastTime = BNGetToonInfo(toonID)
+					local hasFocus, toonName, client, realmName, realmID, faction, race, class, guild, zoneName, level, gameText = BNGetToonInfo(toonID)
 					if(givenName and surname and toonName and class) then
 						nameText = format(BATTLENET_NAME_FORMAT, givenName, surname) ..' '.. FRIENDS_WOW_NAME_COLOR_CODE .. '(' .. classColor[class] .. classColor[class] .. toonName .. FRIENDS_WOW_NAME_COLOR_CODE .. ')'
 						if(zoneName == playerArea) then
