@@ -204,7 +204,11 @@ local function SetupFlyoutButton()
 		if _G["SpellFlyoutButton"..i] then
 			style(_G["SpellFlyoutButton"..i])
 			_G["SpellFlyoutButton"..i]:StyleButton(true)
-			_G["SpellFlyoutButton"..i]:SetFrameLevel(_G["SpellFlyoutButton"..i]:GetParent():GetFrameLevel() + 5)
+
+			if _G["SpellFlyoutButton"..i]:GetChecked() then
+				_G["SpellFlyoutButton"..i]:SetChecked(nil)
+			end
+
 			if C.actionbar.rightbars_mouseover == true then
 				SpellFlyout:HookScript("OnEnter", function(self) RightBarMouseOver(1) end)
 				SpellFlyout:HookScript("OnLeave", function(self) RightBarMouseOver(0) end)

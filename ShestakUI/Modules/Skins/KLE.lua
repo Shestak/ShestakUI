@@ -90,8 +90,6 @@ KLE.Alerts.RefreshBars = function(self)
 	while _G["KLEAlertBar"..i] do
 		local bar = _G["KLEAlertBar"..i]
 		bar:SetScale(1)
-		bar:SetAlpha(1)
-		bar.SetAlpha = T.dummy
 		bar.SetScale = T.dummy
 		SkinKLEBar(bar)
 		i = i + 1
