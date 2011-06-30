@@ -166,7 +166,7 @@ local function Shared(self, unit)
 
 	-- Resurrect icon
 	self.ResurrectIcon = self.Health:CreateTexture(nil, "OVERLAY")
-	self.ResurrectIcon:Size(30, 25)
+	self.ResurrectIcon:Size(12, 12)
 	self.ResurrectIcon:Point("CENTER", self.Health, "CENTER", 0, -5)
 
 	-- Debuff highlight
