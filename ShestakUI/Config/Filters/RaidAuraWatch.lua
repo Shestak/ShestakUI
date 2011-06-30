@@ -173,20 +173,30 @@ if C.raidframe.plugins_aura_watch == true then
 		-- Firelands
 			-- Beth'tilac
 			SpellName(99506),	-- Widows Kiss
-			--Alysrazor
-			SpellName(101296),	-- Fiero Blast
+			SpellName(97202),	-- Fiery Web Spin
+			SpellName(49026),	-- Fixate
+			SpellName(97079),	-- Seeping Venom
+			-- Lord Rhyolith
+
+			-- Alysrazor
+			SpellName(101296),	-- Fieroblast
 			SpellName(100723),	-- Gushing Wound
-			--Shannox
+			SpellName(99389),	-- Imprinted
+			SpellName(101729),	-- Blazing Claw
+			-- Shannox
 			SpellName(99837),	-- Crystal Prison
 			SpellName(99937),	-- Jagged Tear
 			-- Baleroc
-			SpellName(99403),	-- Tormented
-			-- Lord Rhyolith
-
+			SpellName(99403),	-- Torment
+			SpellName(99252),	-- Blaze of Glory
+			SpellName(99516),	-- Countdown
 			-- Majordomo Staghelm
 			SpellName(98450),	-- Searing Seeds
 			-- Ragnaros
 			SpellName(99399),	-- Burning Wound
+			SpellName(100293),	-- Lava Wave
+			SpellName(98313),	-- Magma Blast
+			SpellName(100675),	-- Dreadflame
 			-- Trash
 			SpellName(99532),	-- Melt Armor
 		-- Other
