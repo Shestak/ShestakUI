@@ -814,8 +814,6 @@ Filger_Spells = {
 			{ spellID = 70855, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Taste for Blood
 			{ spellID = 56638, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Tricks of the Trade
-			{ spellID = 59628, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Chaos Bane
 			{ spellID = 73422, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Battle trance
@@ -2042,8 +2040,6 @@ Filger_Spells = {
 			{ spellID = 58426, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Slice and Dice
 			{ spellID = 5171, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Tricks of the Trade
-			{ spellID = 57934, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shadow dance
 			{ spellID = 51713, size = 37, unitId = "player", caster = "player", filter = "BUFF"},
 			-- Recuperate
