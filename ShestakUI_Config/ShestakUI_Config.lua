@@ -142,6 +142,7 @@ local function Local(o)
 	if o == "UIConfigthreatheight" then o = L_GUI_THREAT_HEIGHT end
 	if o == "UIConfigthreatwidth" then o = L_GUI_THREAT_WIDTH end
 	if o == "UIConfigthreatbar_rows" then o = L_GUI_THREAT_ROWS end
+	if o == "UIConfigthreathide_solo" then o = L_GUI_THREAT_HIDE_SOLO end
 	
 	-- Tooltip options
 	if o == "UIConfigtooltip" then o = L_GUI_TOOLTIP end

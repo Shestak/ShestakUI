@@ -113,6 +113,7 @@ L_GUI_THREAT_ENABLE = "Aktiviere Bedrohungsleisten"
 L_GUI_THREAT_HEIGHT = "Höhe der Bedrohungsleisten"
 L_GUI_THREAT_WIDTH = "Breite der Bedrohungsleisten"
 L_GUI_THREAT_ROWS = "Anzahl der Bedrohungsleisten"
+L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid" -- Needs review
 
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"

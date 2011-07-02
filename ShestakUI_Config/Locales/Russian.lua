@@ -113,6 +113,7 @@ L_GUI_THREAT_ENABLE = "Включить список угрозы"
 L_GUI_THREAT_HEIGHT = "Высота полос списка"
 L_GUI_THREAT_WIDTH = "Ширина полос списка"
 L_GUI_THREAT_ROWS = "Количество полос"
+L_GUI_THREAT_HIDE_SOLO = "Отображать только в группе/рейде"
 
 -- Tooltip options
 L_GUI_TOOLTIP = "Подсказки"

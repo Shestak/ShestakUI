@@ -113,6 +113,7 @@ L_GUI_THREAT_ENABLE = "Enable threat bars"
 L_GUI_THREAT_HEIGHT = "Threat bars height"
 L_GUI_THREAT_WIDTH = "Threat bars width"
 L_GUI_THREAT_ROWS = "Number of threat bars"
+L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid"
 
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"

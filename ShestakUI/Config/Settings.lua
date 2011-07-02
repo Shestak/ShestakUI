@@ -167,6 +167,7 @@ C["threat"] = {
 	["height"] = 12,							-- Bars height
 	["width"] = 217,							-- Bars width
 	["bar_rows"] = 7,							-- Number of bars
+	["hide_solo"] = false,						-- Show only in party/raid
 }
 
 ----------------------------------------------------------------------------------------

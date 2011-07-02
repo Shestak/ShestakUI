@@ -139,10 +139,14 @@ end
 
 local OnEvent = function(self, event, ...)
 	if event == "PLAYER_TARGET_CHANGED" or event == "UNIT_THREAT_LIST_UPDATE" then
-		if UnitExists("target") and not UnitIsDead("target") and not UnitIsPlayer("target") and UnitCanAttack("player", "target") then
-			targeted = true
-		else
+		if C.threat.hide_solo == true and (GetNumRaidMembers() + GetNumPartyMembers() == 0) then
 			targeted = false
+		else
+			if UnitExists("target") and not UnitIsDead("target") and not UnitIsPlayer("target") and UnitCanAttack("player", "target") then
+				targeted = true
+			else
+				targeted = false
+			end
 		end
 	end
 	if event == "PLAYER_TARGET_CHANGED" or event == "PLAYER_REGEN_ENABLED" then

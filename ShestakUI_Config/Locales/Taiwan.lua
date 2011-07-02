@@ -113,6 +113,7 @@ L_GUI_THREAT_ENABLE = "開啟仇恨欄"
 L_GUI_THREAT_HEIGHT = "仇恨欄高度"
 L_GUI_THREAT_WIDTH = "仇恨欄寬度"
 L_GUI_THREAT_ROWS = "仇恨欄數目"
+L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid" -- Needs review
 
 -- Tooltip options
 L_GUI_TOOLTIP = "提示資訊"

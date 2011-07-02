@@ -93,6 +93,7 @@ if T.author == true then
 	C["combattext"].dk_runes = false
 	C["combattext"].dispel = false
 	C["combattext"].interrupt = false
+	C["threat"].hide_solo = true
 	C["tooltip"].shift_modifer = true
 	C["tooltip"].cursor = true
 	C["tooltip"].title = true
