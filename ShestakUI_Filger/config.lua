@@ -2874,6 +2874,24 @@ Filger_Spells = {
 			{ spellID = 79339, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Unstable Shield (Omnotron Defense System)
 			{ spellID = 79900, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+
+			-- Firelands
+			-- Widows Kiss (Beth'tilac)
+			{ spellID = 99506, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Blazing Power (Alysrazor)
+			{ spellID = 99461, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Alysra's Razor (Alysrazor)
+			{ spellID = 100029, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Jagged Tear (Shannox)
+			{ spellID = 99937, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Torment (Baleroc)
+			{ spellID = 100230, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Tormented (Baleroc)
+			{ spellID = 99403, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Searing Seeds (Majordomo Staghelm)
+			{ spellID = 98450, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Burning Orb (Majordomo Staghelm)
+			{ spellID = 100209, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "T_BUFF",
