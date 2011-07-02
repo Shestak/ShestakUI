@@ -14,13 +14,6 @@ T.patch = select(4, GetBuildInfo())
 T.realm = GetRealmName()
 T.level = UnitLevel("player")
 T.color = RAID_CLASS_COLORS[T.class]
-T.PTRVersion = function()
-	if T.patch >= 40200 then
-		return true
-	else
-		return false
-	end
-end
 
 if T.name == "Черешок" 
 or T.name == "Вершок"
