@@ -100,9 +100,6 @@ local function OnEvent(self, event, arg1, arg2)
 	local canplaysound = false
 	local rolepass = false
 	local treepass = false
-	local combatpass = false
-	local instancepass = false
-	local pvppass = false
 	local inInstance, instanceType = IsInInstance()
 	
 	if role ~= nil then
@@ -124,36 +121,6 @@ local function OnEvent(self, event, arg1, arg2)
 	else
 		treepass = true
 	end
-	
-	if combat then
-		if UnitAffectingCombat("player") then
-			combatpass = true
-		else
-			combatpass = false
-		end
-	else
-		combatpass = true
-	end
-
-	if instance then
-		if (instanceType == "party" or instanceType == "raid") then
-			instancepass = true
-		else
-			instancepass = false
-		end
-	else
-		instancepass = true
-	end
-
-	if pvp then
-		if (instanceType == "arena" or instanceType == "pvp") then
-			pvppass = true
-		else
-			pvppass = false
-		end
-	else
-		pvppass = true
-	end
 
 	-- Prevent user error
 	if reversecheck ~= nil and (role == nil and tree == nil) then reversecheck = nil end
@@ -162,8 +129,8 @@ local function OnEvent(self, event, arg1, arg2)
 	if (event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_REGEN_DISABLED") and C.reminder.solo_buffs_sound == true then canplaysound = true end
 	
 	if not group.weapon then
-		if (not combat and not instance and not pvp) or ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and 
-		treepass == true and rolepass == true and combatpass == true and (instancepass == true or pvppass == true) and not (UnitInVehicle("player") and self.icon:GetTexture()) then
+		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and 
+		treepass == true and rolepass == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
 			for _, buff in pairs(group.spells) do
 				local name = GetSpellInfo(buff)
 				local _, _, icon, _, _, _, _, unitCaster, _, _, _ = UnitBuff("player", name)
@@ -197,8 +164,8 @@ local function OnEvent(self, event, arg1, arg2)
 			self:Hide()
 		end
 	else
-		if (not combat and not instance and not pvp) or ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and 
-		treepass == true and rolepass == true and combatpass == true and (instancepass == true or pvppass == true) and not (UnitInVehicle("player") and self.icon:GetTexture()) then
+		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and 
+		treepass == true and rolepass == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
 			if hasOffhandWeapon == nil then
 				if hasMainHandEnchant == nil then
 					self:Show()
