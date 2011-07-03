@@ -48,7 +48,7 @@ L_GUI_COMBATTEXT_DAMAGE_STYLE = "Change la police par défaut des dégats/soins 
 L_GUI_COMBATTEXT_DAMAGE = "Afficher les dégâts dans une fenêtre dédiée"
 L_GUI_COMBATTEXT_HEALING = "Afficher les soins dans une fenêtre dédiée"
 L_GUI_COMBATTEXT_HOTS = "Afficher les effets des soins périodiques dans la fenêtre de soin"
-L_GUI_COMBATTEXT_OVERHEALING = "Show outgoing overhealing" -- Needs review
+L_GUI_COMBATTEXT_OVERHEALING = "Afficher les excès de soins sortants"
 L_GUI_COMBATTEXT_PET_DAMAGE = "Afficher les dégats du familier"
 L_GUI_COMBATTEXT_DOT_DAMAGE = "Afficher les dégats des dots"
 L_GUI_COMBATTEXT_DAMAGE_COLOR = "Afficher les dégâts en fonction de l'école de magie"
@@ -113,7 +113,7 @@ L_GUI_THREAT_ENABLE = "Activer les barres de menace"
 L_GUI_THREAT_HEIGHT = "Hauteur des barres de menace"
 L_GUI_THREAT_WIDTH = "Largeur des barres de menace"
 L_GUI_THREAT_ROWS = "Nombre de barres de menace"
-L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid" -- Needs review
+L_GUI_THREAT_HIDE_SOLO = "Afficher la menace seulement en groupe/raid"
 
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"
@@ -133,7 +133,7 @@ L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Expérience en arène"
 L_GUI_TOOLTIP_SPELL_ID = "ID du sort"
 L_GUI_TOOLTIP_RAID_ICON = "Icone de raid"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Affiche qui cible actuellement l'unité qui est dans votre groupe/raid"
-L_GUI_TOOLTIP_ITEM_COUNT = "Item count" -- Needs review
+L_GUI_TOOLTIP_ITEM_COUNT = "Afficher le nombre d'objets possédés"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activer le chat"
@@ -225,7 +225,7 @@ L_GUI_AURA_FOCUS_DEBUFFS = "Afficher les debuffs du focus"
 L_GUI_AURA_FOT_DEBUFFS = "Afficher les debuffs de la cible du focus"
 L_GUI_AURA_PET_DEBUFFS = "Afficher les debuffs du pet"
 L_GUI_AURA_TOT_DEBUFFS = "Afficher les debuffs de la cible de la cible"
-L_GUI_AURA_BOSS_BUFFS = "Buffs on boss frame" -- Needs review
+L_GUI_AURA_BOSS_BUFFS = "Afficher les améliorations sur le cadre du Boss"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Afficher seulement ses propres debuffs sur la cible"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Coleur de debuff par type"
 L_GUI_AURA_CAST_BY = "Voir qui a jeté un buff / debuff sur son tooltip"

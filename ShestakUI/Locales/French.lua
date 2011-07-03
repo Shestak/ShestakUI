@@ -13,7 +13,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "Votre statut : Non terminé"
 L_TOOLTIP_SPELL_ID = "ID du sort :"
 L_TOOLTIP_ITEM_ID = "ID de l'objet :"
 L_TOOLTIP_WHO_TARGET = "Qui on cible"
-L_TOOLTIP_ITEM_COUNT = "Item count:" -- Needs review
+L_TOOLTIP_ITEM_COUNT = "Objets possédés :"
 
 -- Misc
 L_MISC_UNDRESS = "Undress"
