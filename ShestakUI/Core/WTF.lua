@@ -383,49 +383,61 @@ StaticPopupDialogs["SETTINGS_ALL"] = {
 	text = L_POPUP_SETTINGS_ALL,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-    OnAccept = function()
+	OnAccept = function()
 		if IsAddOnLoaded("DBM-Core") then T.UploadDBM() end
+		if IsAddOnLoaded("DXE") then T.UploadDXE() end
+		if IsAddOnLoaded("KLE") then T.UploadKLE() end
 		if IsAddOnLoaded("MikScrollingBattleText") then UploadMSBT() end
 		if IsAddOnLoaded("Skada") then UploadSkada() end
 		ReloadUI() 
 	end,
-    timeout = 0,
-    whileDead = 1,
-    hideOnEscape = true,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = true,
 }
-
-local pr = function(msg)
-    print(tostring(msg))
-end
 
 SLASH_SETTINGS1 = "/settings"
 SlashCmdList.SETTINGS = function(msg)
-    if(msg == "dbm") then
+	if msg == "dbm" then
 		if IsAddOnLoaded("DBM-Core") then
 			StaticPopup_Show("SETTINGS_DBM")
 		else
-			pr("|cffffff00DBM is not installed.|r")
+			print("|cffffff00DBM is not installed.|r")
 		end
-	elseif(msg == "msbt") then
+	elseif msg == "dxe" then
+		if IsAddOnLoaded("DXE") then
+			StaticPopup_Show("SETTINGS_DXE")
+		else
+			print("|cffffff00DXE is not installed.|r")
+		end
+	elseif msg == "kle" then
+		if IsAddOnLoaded("KLE") then
+			StaticPopup_Show("SETTINGS_KLE")
+		else
+			print("|cffffff00KLE is not installed.|r")
+		end
+	elseif msg == "msbt" then
 		if IsAddOnLoaded("MikScrollingBattleText") then
 			UploadMSBT()
 			ReloadUI()
 		else
-			pr("|cffffff00MSBT is not installed.|r")
+			print("|cffffff00MSBT is not installed.|r")
 		end
-	elseif(msg == "skada") then
+	elseif msg == "skada" then
 		if IsAddOnLoaded("Skada") then
 			UploadSkada()
 			ReloadUI()
 		else
-			pr("|cffffff00Skada is not installed.|r")
+			print("|cffffff00Skada is not installed.|r")
 		end
-	elseif(msg == "all") then
+	elseif msg == "all" then
 		StaticPopup_Show("SETTINGS_ALL")
 	else
-		pr("|cffffff00"..L_INFO_SETTINGS_DBM.."|r")
-		pr("|cffffff00"..L_INFO_SETTINGS_MSBT.."|r")
-		pr("|cffffff00"..L_INFO_SETTINGS_SKADA.."|r")
-		pr("|cffffff00"..L_INFO_SETTINGS_ALL.."|r")
+		print("|cffffff00"..L_INFO_SETTINGS_DBM.."|r")
+		print("|cffffff00"..L_INFO_SETTINGS_DXE.."|r")
+		print("|cffffff00"..L_INFO_SETTINGS_KLE.."|r")
+		print("|cffffff00"..L_INFO_SETTINGS_MSBT.."|r")
+		print("|cffffff00"..L_INFO_SETTINGS_SKADA.."|r")
+		print("|cffffff00"..L_INFO_SETTINGS_ALL.."|r")
 	end
 end

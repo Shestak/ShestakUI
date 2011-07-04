@@ -120,62 +120,90 @@ KLE:LayoutHealthWatchers()
 KLE.Alerts:RefreshBars()
 KLE.Pane.border:Kill()
 
--- Force some default profile options
-if not KLEDB then KLEDB = {} end
-if not KLEDB["profiles"] then KLEDB["profiles"] = {} end
-if not KLEDB["profiles"][T.name.." - "..GetRealmName()] then KLEDB["profiles"][T.name.." - "..T.realm] = {} end
-if not KLEDB["profiles"][T.name.." - "..GetRealmName()]["Pane"] then KLEDB["profiles"][T.name.." - "..T.realm]["Pane"] = {} end
-if not KLEDB["profiles"][T.name.." - "..GetRealmName()]["Globals"] then KLEDB["profiles"][T.name.." - "..T.realm]["Globals"] = {} end
-if not KLEDB["profiles"][T.name.." - "..GetRealmName()]["Proximity"] then KLEDB["profiles"][T.name.." - "..T.realm]["Proximity"] = {} end
-if not KLEDB["profiles"][T.name.." - "..GetRealmName()]["PairProximity"] then KLEDB["profiles"][T.name.." - "..T.realm]["PairProximity"] = {} end
-if not KLEDB["profiles"][T.name.." - "..GetRealmName()]["AlternatePower"] then KLEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"] = {} end
-if not KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..GetRealmName()] then KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm] = {} end
+----------------------------------------------------------------------------------------
+--	KLE settings
+----------------------------------------------------------------------------------------
+function T.UploadDXE()
+	-- Force some default profile options
+	if not KLEDB then KLEDB = {} end
+	if not KLEDB["profiles"] then KLEDB["profiles"] = {} end
+	if not KLEDB["profiles"][T.name.." - "..GetRealmName()] then KLEDB["profiles"][T.name.." - "..T.realm] = {} end
+	if not KLEDB["profiles"][T.name.." - "..GetRealmName()]["Pane"] then KLEDB["profiles"][T.name.." - "..T.realm]["Pane"] = {} end
+	if not KLEDB["profiles"][T.name.." - "..GetRealmName()]["Globals"] then KLEDB["profiles"][T.name.." - "..T.realm]["Globals"] = {} end
+	if not KLEDB["profiles"][T.name.." - "..GetRealmName()]["Proximity"] then KLEDB["profiles"][T.name.." - "..T.realm]["Proximity"] = {} end
+	if not KLEDB["profiles"][T.name.." - "..GetRealmName()]["PairProximity"] then KLEDB["profiles"][T.name.." - "..T.realm]["PairProximity"] = {} end
+	if not KLEDB["profiles"][T.name.." - "..GetRealmName()]["AlternatePower"] then KLEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"] = {} end
+	if not KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..GetRealmName()] then KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm] = {} end
 
-KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BackgroundTexture"] = "Smooth"
-KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BarTexture"] = "Smooth"
-KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["Border"] = "None"
-KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["Font"] = "Hooge"
-KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["TimerFont"] = "Hooge"
+	KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BackgroundTexture"] = "Smooth"
+	KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BarTexture"] = "Smooth"
+	KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["Border"] = "None"
+	KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["Font"] = "Hooge"
+	KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["TimerFont"] = "Hooge"
 
-KLEDB["profiles"][T.name.." - "..T.realm]["Proximity"]["NameFontSize"] = C.font.stylization_font_size
-KLEDB["profiles"][T.name.." - "..T.realm]["Proximity"]["TimeFontSize"] = C.font.stylization_font_size
+	KLEDB["profiles"][T.name.." - "..T.realm]["Proximity"]["NameFontSize"] = C.font.stylization_font_size
+	KLEDB["profiles"][T.name.." - "..T.realm]["Proximity"]["TimeFontSize"] = C.font.stylization_font_size
 
-KLEDB["profiles"][T.name.." - "..T.realm]["PairProximity"]["TimeFontSize"] = C.font.stylization_font_size
-KLEDB["profiles"][T.name.." - "..T.realm]["PairProximity"]["NameFontSize"] = C.font.stylization_font_size
+	KLEDB["profiles"][T.name.." - "..T.realm]["PairProximity"]["TimeFontSize"] = C.font.stylization_font_size
+	KLEDB["profiles"][T.name.." - "..T.realm]["PairProximity"]["NameFontSize"] = C.font.stylization_font_size
 
-KLEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"]["NameFontSize"] = C.font.stylization_font_size
-KLEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"]["TimeFontSize"] = C.font.stylization_font_size
+	KLEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"]["NameFontSize"] = C.font.stylization_font_size
+	KLEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"]["TimeFontSize"] = C.font.stylization_font_size
 
-KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["TitleFontSize"] = C.font.stylization_font_size
-KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["BarSpacing"] = 3
-KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["HealthFontSize"] = C.font.stylization_font_size
+	KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["TitleFontSize"] = C.font.stylization_font_size
+	KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["BarSpacing"] = 3
+	KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["HealthFontSize"] = C.font.stylization_font_size
 
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningScale"] = 1
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopScale"] = 1
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterScale"] = 1
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarFontSize"] = C.font.stylization_font_size
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerDecimalFontSize"] = C.font.stylization_font_size
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerSecondsFontSize"] = C.font.stylization_font_size * 2
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["ScaleTimerWithBarHeight"] = false
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["SetIconToBarHeight"] = false
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconSize"] = 25
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconXOffset"] = 3
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconYOffset"] = 3
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerXOffset"] = 5
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarSpacing"] = 9
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarHeight"] = 19
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopBarWidth"] = 189
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterBarWidth"] = 189
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningBarWidth"] = 189
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopTextWidth"] = 130
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterTextWidth"] = 130
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningTextWidth"] = 180
-KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopGrowth"] = "UP"
+	KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["point"] = "BOTTOMLEFT"
+	KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["relativePoint"] = "BOTTOMLEFT"
+	KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["xOfs"] = 21
+	if C.actionbar.bottombars == 1 then
+		KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["yOfs"] = 157
+	elseif C.actionbar.bottombars == 2 then
+		KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["yOfs"] = 185
+	elseif C.actionbar.bottombars == 3 then
+		KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["yOfs"] = 213
+	end
 
-KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["point"] = "BOTTOMLEFT"
-KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["relativePoint"] = "BOTTOMLEFT"
-KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["yOfs"] = 185
-KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["xOfs"] = 21
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningScale"] = 1
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopScale"] = 1
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterScale"] = 1
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarFontSize"] = C.font.stylization_font_size
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerDecimalFontSize"] = C.font.stylization_font_size
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerSecondsFontSize"] = C.font.stylization_font_size * 2
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["ScaleTimerWithBarHeight"] = false
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["SetIconToBarHeight"] = false
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconSize"] = 25
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconXOffset"] = 3
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconYOffset"] = 3
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerXOffset"] = 5
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarSpacing"] = 9
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarHeight"] = 19
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopBarWidth"] = 189
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterBarWidth"] = 189
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningBarWidth"] = 189
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopTextWidth"] = 130
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterTextWidth"] = 130
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningTextWidth"] = 180
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopGrowth"] = "UP"
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopAlpha"] = 1
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterAlpha"] = 1
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningAlpha"] = 1
+
+	KLEIconDB["hide"] = true
+
+	KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["InstalledBars"] = C.actionbar.bottombars
+end
+
+StaticPopupDialogs["SETTINGS_KLE"] = {
+	text = L_POPUP_SETTINGS_KLE,
+	button1 = ACCEPT,
+	button2 = CANCEL,
+	OnAccept = function() T.UploadKLE() ReloadUI() end,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = true,
+}
 
 -- Hook bar
 local KLE_Skin = CreateFrame("Frame")
@@ -192,7 +220,13 @@ KLE_Skin:SetScript("OnEvent", function(self, event)
 		KLE.Pane.timer.right:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 
 		for i = 1, #movers do
-			_G[movers[i]]:SetTemplate("Transparent")
+			if _G[movers[i]] then
+				_G[movers[i]]:SetTemplate("Transparent")
+			end
+		end
+
+		if KLEDB["profiles"][T.name.." - "..T.realm]["Globals"]["InstalledBars"] ~= C.actionbar.bottombars then
+			StaticPopup_Show("SETTINGS_KLE")
 		end
 	end
 end)

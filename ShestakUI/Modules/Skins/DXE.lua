@@ -118,6 +118,91 @@ DXE:LayoutHealthWatchers()
 DXE.Alerts:RefreshBars()
 DXE.Pane.border:Kill()
 
+----------------------------------------------------------------------------------------
+--	DXE settings
+----------------------------------------------------------------------------------------
+function T.UploadDXE()
+	-- Force some default profile options
+	if not DXEDB then DXEDB = {} end
+	if not DXEDB["profiles"] then DXEDB["profiles"] = {} end
+	if not DXEDB["profiles"][T.name.." - "..GetRealmName()] then DXEDB["profiles"][T.name.." - "..T.realm] = {} end
+	if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["Pane"] then DXEDB["profiles"][T.name.." - "..T.realm]["Pane"] = {} end
+	if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["Globals"] then DXEDB["profiles"][T.name.." - "..T.realm]["Globals"] = {} end
+	if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["Proximity"] then DXEDB["profiles"][T.name.." - "..T.realm]["Proximity"] = {} end
+	if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["PairProximity"] then DXEDB["profiles"][T.name.." - "..T.realm]["PairProximity"] = {} end
+	if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["AlternatePower"] then DXEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"] = {} end
+	if not DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..GetRealmName()] then DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm] = {} end
+
+	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BackgroundTexture"] = "Smooth"
+	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BarTexture"] = "Smooth"
+	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["Border"] = "None"
+	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["Font"] = "Hooge"
+	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["TimerFont"] = "Hooge"
+
+	DXEDB["profiles"][T.name.." - "..T.realm]["Proximity"]["NameFontSize"] = C.font.stylization_font_size
+	DXEDB["profiles"][T.name.." - "..T.realm]["Proximity"]["TimeFontSize"] = C.font.stylization_font_size
+
+	DXEDB["profiles"][T.name.." - "..T.realm]["PairProximity"]["TimeFontSize"] = C.font.stylization_font_size
+	DXEDB["profiles"][T.name.." - "..T.realm]["PairProximity"]["NameFontSize"] = C.font.stylization_font_size
+
+	DXEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"]["NameFontSize"] = C.font.stylization_font_size
+	DXEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"]["TimeFontSize"] = C.font.stylization_font_size
+
+	DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["TitleFontSize"] = C.font.stylization_font_size
+	DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["BarSpacing"] = 3
+	DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["HealthFontSize"] = C.font.stylization_font_size
+
+	DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["point"] = "BOTTOMLEFT"
+	DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["relativePoint"] = "BOTTOMLEFT"
+	DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["xOfs"] = 21
+	if C.actionbar.bottombars == 1 then
+		DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["yOfs"] = 157
+	elseif C.actionbar.bottombars == 2 then
+		DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["yOfs"] = 185
+	elseif C.actionbar.bottombars == 3 then
+		DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["yOfs"] = 213
+	end
+
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningScale"] = 1
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopScale"] = 1
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterScale"] = 1
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarFontSize"] = C.font.stylization_font_size
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerDecimalFontSize"] = C.font.stylization_font_size
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerSecondsFontSize"] = C.font.stylization_font_size * 2
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["ScaleTimerWithBarHeight"] = false
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["SetIconToBarHeight"] = false
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconSize"] = 25
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconXOffset"] = 3
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconYOffset"] = 3
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerXOffset"] = 5
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarSpacing"] = 9
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarHeight"] = 19
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopBarWidth"] = 189
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterBarWidth"] = 189
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningBarWidth"] = 189
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopTextWidth"] = 130
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterTextWidth"] = 130
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningTextWidth"] = 180
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopGrowth"] = "UP"
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopAlpha"] = 1
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterAlpha"] = 1
+	DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningAlpha"] = 1
+
+	DXEIconDB["hide"] = true
+
+	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["InstalledBars"] = C.actionbar.bottombars
+end
+
+StaticPopupDialogs["SETTINGS_DXE"] = {
+	text = L_POPUP_SETTINGS_DXE,
+	button1 = ACCEPT,
+	button2 = CANCEL,
+	OnAccept = function() T.UploadDXE() ReloadUI() end,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = true,
+}
+
 -- Hook bar
 local DXE_Skin = CreateFrame("Frame")
 DXE_Skin:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -137,62 +222,9 @@ DXE_Skin:SetScript("OnEvent", function(self, event)
 				_G[movers[i]]:SetTemplate("Transparent")
 			end
 		end
+
+		if DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["InstalledBars"] ~= C.actionbar.bottombars then
+			StaticPopup_Show("SETTINGS_DXE")
+		end
 	end
 end)
-
--- Force some default profile options
-if not DXEDB then DXEDB = {} end
-if not DXEDB["profiles"] then DXEDB["profiles"] = {} end
-if not DXEDB["profiles"][T.name.." - "..GetRealmName()] then DXEDB["profiles"][T.name.." - "..T.realm] = {} end
-if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["Pane"] then DXEDB["profiles"][T.name.." - "..T.realm]["Pane"] = {} end
-if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["Globals"] then DXEDB["profiles"][T.name.." - "..T.realm]["Globals"] = {} end
-if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["Proximity"] then DXEDB["profiles"][T.name.." - "..T.realm]["Proximity"] = {} end
-if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["PairProximity"] then DXEDB["profiles"][T.name.." - "..T.realm]["PairProximity"] = {} end
-if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["AlternatePower"] then DXEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"] = {} end
-if not DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..GetRealmName()] then DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm] = {} end
-
-DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BackgroundTexture"] = "Smooth"
-DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BarTexture"] = "Smooth"
-DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["Border"] = "None"
-DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["Font"] = "Hooge"
-DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["TimerFont"] = "Hooge"
-
-DXEDB["profiles"][T.name.." - "..T.realm]["Proximity"]["NameFontSize"] = C.font.stylization_font_size
-DXEDB["profiles"][T.name.." - "..T.realm]["Proximity"]["TimeFontSize"] = C.font.stylization_font_size
-
-DXEDB["profiles"][T.name.." - "..T.realm]["PairProximity"]["TimeFontSize"] = C.font.stylization_font_size
-DXEDB["profiles"][T.name.." - "..T.realm]["PairProximity"]["NameFontSize"] = C.font.stylization_font_size
-
-DXEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"]["NameFontSize"] = C.font.stylization_font_size
-DXEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"]["TimeFontSize"] = C.font.stylization_font_size
-
-DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["TitleFontSize"] = C.font.stylization_font_size
-DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["BarSpacing"] = 3
-DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["HealthFontSize"] = C.font.stylization_font_size
-
-DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["point"] = "BOTTOMLEFT"
-DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["relativePoint"] = "BOTTOMLEFT"
-DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["yOfs"] = 185
-DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["xOfs"] = 21
-
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningScale"] = 1
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopScale"] = 1
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterScale"] = 1
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarFontSize"] = C.font.stylization_font_size
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerDecimalFontSize"] = C.font.stylization_font_size
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerSecondsFontSize"] = C.font.stylization_font_size * 2
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["ScaleTimerWithBarHeight"] = false
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["SetIconToBarHeight"] = false
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconSize"] = 25
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconXOffset"] = 3
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconYOffset"] = 3
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerXOffset"] = 5
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarSpacing"] = 9
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarHeight"] = 19
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopBarWidth"] = 189
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterBarWidth"] = 189
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningBarWidth"] = 189
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopTextWidth"] = 130
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["CenterTextWidth"] = 130
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["WarningTextWidth"] = 180
-DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopGrowth"] = "UP"
