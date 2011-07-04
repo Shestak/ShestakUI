@@ -7,8 +7,6 @@ if not C.misc.auto_quest == true then return end
 local Monomyth = CreateFrame("Frame")
 Monomyth:SetScript("OnEvent", function(self, event, ...) self[event](...) end)
 
-local COMPLETE = [[Interface\GossipFrame\ActiveQuestIcon]]
-
 function Monomyth:Register(event, func)
 	self:RegisterEvent(event)
 	self[event] = function(...)
@@ -41,11 +39,15 @@ Monomyth:Register("QUEST_GREETING", function()
 	end
 end)
 
+local function IsQuestCompleted(index)
+	return not not select(index * 4, GetGossipActiveQuests())
+end
+
 Monomyth:Register("GOSSIP_SHOW", function()
 	local active = GetNumGossipActiveQuests()
 	if active > 0 then
-		for index = 1, select("#", GetGossipActiveQuests()), 4 do
-			if select(index + 3, GetGossipActiveQuests()) then
+		for index = 1, active do
+			if IsQuestCompleted(index) then
 				SelectGossipActiveQuest(index)
 			end
 		end
@@ -61,7 +63,7 @@ Monomyth:Register("GOSSIP_SHOW", function()
 	if available == 0 and active == 0 and GetNumGossipOptions() == 1 then
 		local _, type = GetGossipOptions()
 		if type == "gossip" then
-			return SelectGossipOption(1)
+			SelectGossipOption(1)
 		end
 	end
 end)

@@ -133,7 +133,9 @@ DXE_Skin:SetScript("OnEvent", function(self, event)
 		DXE.Pane.timer.right:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 
 		for i = 1, #movers do
-			_G[movers[i]]:SetTemplate("Transparent")
+			if _G[movers[i]] then
+				_G[movers[i]]:SetTemplate("Transparent")
+			end
 		end
 	end
 end)
