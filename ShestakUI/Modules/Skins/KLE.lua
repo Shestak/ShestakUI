@@ -79,6 +79,10 @@ KLE.LayoutHealthWatchers = function(self)
 			hw:SetTemplate("Transparent")
 			hw.border:Kill()
 			hw.healthbar:SetStatusBarTexture(C.media.texture)
+			hw.title:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+			hw.title:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+			hw.health:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+			hw.health:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 		end
 	end
 end
@@ -93,8 +97,10 @@ KLE.Alerts.RefreshBars = function(self)
 		local bar = _G["KLEAlertBar"..i]
 		bar:SetScale(1)
 		bar.SetScale = T.dummy
-		--bar.statusbar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-		--bar.statusbar.SetStatusBarColor = T.dummy
+		bar.statusbar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+		bar.statusbar.SetStatusBarColor = T.dummy
+		bar.text:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		bar.text:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 		SkinKLEBar(bar)
 		i = i + 1
 	end
@@ -183,6 +189,7 @@ function T.UploadDXE()
 	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconXOffset"] = 3
 	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["IconYOffset"] = 3
 	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TimerXOffset"] = 5
+	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TextXOffset"] = 3
 	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarSpacing"] = 9
 	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["BarHeight"] = 19
 	KLEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm]["TopBarWidth"] = 189
