@@ -155,6 +155,8 @@ function T.UploadDXE()
 	KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["TitleFontSize"] = C.font.stylization_font_size
 	KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["BarSpacing"] = 3
 	KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["HealthFontSize"] = C.font.stylization_font_size
+	KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["NeutralColor"] = {T.color.r, T.color.g, T.color.b}
+	KLEDB["profiles"][T.name.." - "..T.realm]["Pane"]["LostColor"] = {T.color.r, T.color.g, T.color.b}
 
 	KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["point"] = "BOTTOMLEFT"
 	KLEDB["profiles"][T.name.." - "..T.realm]["Positions"]["KLEAlertsTopStackAnchor"]["relativePoint"] = "BOTTOMLEFT"

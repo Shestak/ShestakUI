@@ -153,6 +153,8 @@ function T.UploadDXE()
 	DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["TitleFontSize"] = C.font.stylization_font_size
 	DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["BarSpacing"] = 3
 	DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["HealthFontSize"] = C.font.stylization_font_size
+	DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["NeutralColor"] = {T.color.r, T.color.g, T.color.b}
+	DXEDB["profiles"][T.name.." - "..T.realm]["Pane"]["LostColor"] = {T.color.r, T.color.g, T.color.b}
 
 	DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["point"] = "BOTTOMLEFT"
 	DXEDB["profiles"][T.name.." - "..T.realm]["Positions"]["DXEAlertsTopStackAnchor"]["relativePoint"] = "BOTTOMLEFT"
