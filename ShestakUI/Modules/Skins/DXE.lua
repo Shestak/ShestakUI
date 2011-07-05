@@ -91,6 +91,8 @@ DXE.Alerts.RefreshBars = function(self)
 		local bar = _G["DXEAlertBar"..i]
 		bar:SetScale(1)
 		bar.SetScale = T.dummy
+		--bar.statusbar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+		--bar.statusbar.SetStatusBarColor = T.dummy
 		SkinDXEBar(bar)
 		i = i + 1
 	end

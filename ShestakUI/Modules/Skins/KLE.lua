@@ -93,6 +93,8 @@ KLE.Alerts.RefreshBars = function(self)
 		local bar = _G["KLEAlertBar"..i]
 		bar:SetScale(1)
 		bar.SetScale = T.dummy
+		--bar.statusbar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+		--bar.statusbar.SetStatusBarColor = T.dummy
 		SkinKLEBar(bar)
 		i = i + 1
 	end
