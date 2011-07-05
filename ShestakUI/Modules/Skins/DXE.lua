@@ -60,6 +60,8 @@ DXE.CreateWindow_ = DXE.CreateWindow
 DXE.CreateWindow = function(self, name, width, height)
 	local win = self:CreateWindow_(name, width, height)
 	win:SetTemplate("Transparent")
+	win.titletext:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+	win.titletext:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 	return win
 end
 
@@ -216,6 +218,18 @@ DXE_Skin:SetScript("OnEvent", function(self, event)
 		DXE.Pane.timer.left:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 		DXE.Pane.timer.right:SetFont(C.font.stylization_font, C.font.stylization_font_size * 1.8, C.font.stylization_font_style)
 		DXE.Pane.timer.right:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		DXEArrow1.label:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		DXEArrow1.label:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		DXEArrow2.label:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		DXEArrow2.label:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		DXEArrow3.label:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		DXEArrow3.label:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		DXEArrow1.label2:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		DXEArrow1.label2:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		DXEArrow2.label2:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		DXEArrow2.label2:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		DXEArrow3.label2:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		DXEArrow3.label2:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 
 		for i = 1, #movers do
 			if _G[movers[i]] then

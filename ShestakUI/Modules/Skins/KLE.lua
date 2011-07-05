@@ -62,6 +62,8 @@ KLE.CreateWindow_ = KLE.CreateWindow
 KLE.CreateWindow = function(self, name, width, height)
 	local win = self:CreateWindow_(name, width, height)
 	win:SetTemplate("Transparent")
+	win.titletext:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+	win.titletext:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 	return win
 end
 
@@ -218,6 +220,18 @@ KLE_Skin:SetScript("OnEvent", function(self, event)
 		KLE.Pane.timer.left:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 		KLE.Pane.timer.right:SetFont(C.font.stylization_font, C.font.stylization_font_size * 1.8, C.font.stylization_font_style)
 		KLE.Pane.timer.right:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		KLEArrow1.label:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		KLEArrow1.label:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		KLEArrow2.label:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		KLEArrow2.label:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		KLEArrow3.label:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		KLEArrow3.label:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		KLEArrow1.label2:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		KLEArrow1.label2:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		KLEArrow2.label2:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		KLEArrow2.label2:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		KLEArrow3.label2:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		KLEArrow3.label2:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 
 		for i = 1, #movers do
 			if _G[movers[i]] then
