@@ -2338,6 +2338,20 @@ Filger_Spells = {
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
 
 			-- Self
+			-- Death Grip
+			{ spellID = 49576, size = 30, filter = "CD" },
+			-- Anti-Magic Shell
+			{ spellID = 48707, size = 30, filter = "CD" },
+			-- Blood Tap
+			{ spellID = 45529, size = 30, filter = "CD" },
+			-- Death Pact
+			{ spellID = 48743, size = 30, filter = "CD" },
+			-- Icebound Fortitude
+			{ spellID = 48792, size = 30, filter = "CD" },
+			-- Death and Decay
+			{ spellID = 43265, size = 30, filter = "CD" },
+			-- Raise Dead
+			{ spellID = 46584, size = 30, filter = "CD" },
 			-- Summon Gargoyle
 			{ spellID = 49206, size = 30, filter = "CD" },
 			-- Gnaw
