@@ -28,8 +28,13 @@ L_GUI_MISC_SPIN_CAMERA = "Прокручивать камеру во время 
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Индикатор транспорта по наведению курсора"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Кнопка квестовых(список) предметов около мини-карты"
 L_GUI_MISC_RAID_TOOLS = "Инструменты рейда"
-L_GUI_MISC_ANNOUNCE_INTERRUPT = "Сообщать в чат о вашем прерывание заклинания"
 L_GUI_MISC_ACH_SCREENS = "Автоматическое сохранение скриншота во время получения достижений"
+
+-- Announcements options
+L_GUI_ANNOUNCEMENTS = "Анонсы"
+L_GUI_ANNOUNCEMENTS_DRINKING = "Сообщать в чат когда враг начинает пить"
+L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Сообщать в чат о вашем прерывание заклинания"
+L_GUI_ANNOUNCEMENTS_SPELLS = "Сообщать в чат когда вы произнесли заклинание"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

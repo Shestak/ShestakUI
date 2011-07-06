@@ -28,8 +28,13 @@ L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encima"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
 L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
-L_GUI_MISC_ANNOUNCE_INTERRUPT = "Anunciar en el grupo/banda cuando interrumpes"
 L_GUI_MISC_ACH_SCREENS = "Tomar una captura de pantalla cuando consigas un logro"
+
+-- Announcements options
+L_GUI_ANNOUNCEMENTS = "Announcements" -- Needs review
+L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in party/raid when enemy is drinking" -- Needs review
+L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Anunciar en el grupo/banda cuando interrumpes"
+L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Estilización"

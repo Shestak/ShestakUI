@@ -1,7 +1,7 @@
 ﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="Core\Init.lua"/>
 	<Script file="Core\Constants.lua"/>
-	
+
 	<Script file="Locales\English.lua"/>
 	<Script file="Locales\Russian.lua"/>
 	<Script file="Locales\German.lua"/>
@@ -10,14 +10,14 @@
 	<Script file="Locales\Korean.lua"/>
 	<Script file="Locales\Chinese.lua"/>
 	<Script file="Locales\Taiwan.lua"/>
-	
+
 	<Script file="Config\Settings.lua"/>
 	<Script file="Config\Positions.lua"/>
 	<Script file="Config\Fonts.lua"/>
 	<Script file="Config\Profiles.lua"/>
-	
+
 	<Script file="Core\GUI.lua"/>
-	
+
 	<Include file="Libs\oUF\oUF.xml"/>
 	<Include file="Libs\oGlow\oGlow.xml"/>
 	<Script file="Libs\LitePanels\LitePanels.lua"/>
@@ -25,7 +25,7 @@
 	<Script file="Config\DataText.lua"/>
 	<Script file="Libs\LiteStats\LiteStats.lua"/>
 	<Script file="Modules\UnitFrames\Colors.lua"/>
-	
+
 	<Script file="Config\Filters\Cooldowns.lua"/>
 	<Script file="Config\Filters\CrowdControl.lua"/>
 	<Script file="Config\Filters\Errors.lua"/>
@@ -34,7 +34,7 @@
 	<Script file="Config\Filters\Reminders.lua"/>
 	<Script file="Config\Filters\ChatSpam.lua"/>
 	<Script file="Config\Filters\AutoButton.lua"/>
-	
+
 	<Script file="Core\API.lua"/>
 	<Script file="Core\Functions.lua"/>
 	<Script file="Core\Launch.lua"/>
@@ -68,17 +68,13 @@
 	<Script file="Modules\Maps\BattlefieldMap.lua"/>
 	<Script file="Modules\Maps\MiniMap.lua"/>
 	<Script file="Modules\Maps\WorldMap.lua"/>
-	
+
 	<Script file="Modules\Misc\Panels.lua"/>
 	<Script file="Modules\Misc\AutoButton.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
 	<Script file="Modules\Misc\SelfBuffs.lua"/>
 	<Script file="Modules\Misc\RaidBuffs.lua"/>
-	<Script file="Modules\Misc\EnemyCD.lua"/>
-	<Script file="Modules\Misc\RaidCD.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>
-	<Script file="Modules\Misc\PulseCD.lua"/>
-	<Script file="Modules\Misc\Announce.lua"/>
 	<Script file="Modules\Misc\AddOns.lua"/>
 	<Script file="Modules\Misc\AutoRelease.lua"/>
 	<Script file="Modules\Misc\Misc.lua"/>
@@ -86,6 +82,14 @@
 	<Script file="Modules\Misc\Invite.lua"/>
 	<Script file="Modules\Misc\ToggleMenu.lua"/>
 	<Script file="Modules\Misc\AchScreens.lua"/>
+
+	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
+	<Script file="Modules\Cooldowns\PulseCD.lua"/>
+	<Script file="Modules\Cooldowns\RaidCD.lua"/>
+
+	<Script file="Modules\Announcements\Drinking.lua"/>
+	<Script file="Modules\Announcements\Interrupts.lua"/>
+	<Script file="Modules\Announcements\Spells.lua"/>
 
 	<Script file="Modules\ActionBars\Bindings.lua"/>
 	<Script file="Modules\ActionBars\Hide.lua"/>
@@ -115,7 +119,7 @@
 	<Script file="Modules\Chat\TellTarget.lua"/>
 	<Script file="Modules\Chat\RealLinks.lua"/>
 	<Script file="Modules\Chat\ArmoryLink.lua"/>
-	
+
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
 	<Script file="Modules\Tooltip\Achievement.lua"/>
@@ -126,16 +130,16 @@
 	<Script file="Modules\Tooltip\RuFix.lua"/>
 	<Script file="Modules\Tooltip\SpellID.lua"/>
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
-	
+
 	<Script file="Modules\Loot\AutoDez.lua"/>
 	<Script file="Modules\Loot\Loot.lua"/>
 	<Script file="Modules\Loot\LootRoll.lua"/>
-	
+
 	<Script file="Modules\DataText\Battleground.lua"/>
-	
+
 	<Script file="Modules\Class\Paladin.lua"/>
 	<Script file="Modules\Class\Mage.lua"/>
-	
+
 	<Script file="Modules\Skins\Frames.lua"/>
 	<Script file="Modules\Skins\Bubbles.lua"/>
 	<Script file="Modules\Skins\FrameStack.lua"/>
@@ -145,14 +149,14 @@
 	<Script file="Modules\Skins\DXE.lua"/>
 	<Script file="Modules\Skins\KLE.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
-	
+
 	<Include file="Modules\UnitFrames\Templates.xml"/>
 	<Script file="Modules\UnitFrames\Tags.lua"/>
 	<Script file="Modules\UnitFrames\Layout.lua"/>
-	
+
 	<Script file="Modules\Buffs\Buffs.lua"/>
 	<Script file="Modules\Buffs\CastBy.lua"/>
-	
+
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Core\Movers.lua"/>
 </Ui>

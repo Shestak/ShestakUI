@@ -28,8 +28,13 @@ L_GUI_MISC_SPIN_CAMERA = "Kamera drehen während du afk bist"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Fahrzeugfenster bei mouseover anzeigen"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/Gegenstand auto Taste"
 L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
-L_GUI_MISC_ANNOUNCE_INTERRUPT = "Announce in party/raid when you interrupt" -- Needs review
 L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement" -- Needs review
+
+-- Announcements options
+L_GUI_ANNOUNCEMENTS = "Announcements" -- Needs review
+L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in party/raid when enemy is drinking" -- Needs review
+L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Announce in party/raid when you interrupt"
+L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Stilisierung"

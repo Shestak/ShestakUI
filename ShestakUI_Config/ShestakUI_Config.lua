@@ -7,6 +7,7 @@ local myPlayerName  = UnitName("player")
 local ALLOWED_GROUPS = {
 	["general"] = 1,
 	["misc"] = 1,
+	["announcements"] = 1,
 	["skins"] = 1,
 	["combattext"] = 1,
 	["reminder"] = 1,
@@ -57,8 +58,13 @@ local function Local(o)
 	if o == "UIConfigmiscvehicle_mouseover" then o = L_GUI_MISC_VEHICLE_MOUSEOVER end
 	if o == "UIConfigmiscquest_auto_button" then o = L_GUI_MISC_QUEST_AUTOBUTTON end
 	if o == "UIConfigmiscraid_tools" then o = L_GUI_MISC_RAID_TOOLS end
-	if o == "UIConfigmiscannounce_interrupt" then o = L_GUI_MISC_ANNOUNCE_INTERRUPT end
 	if o == "UIConfigmiscach_screens" then o = L_GUI_MISC_ACH_SCREENS end
+	
+	-- Announcements options
+	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end
+	if o == "UIConfigannouncementsdrinking" then o = L_GUI_ANNOUNCEMENTS_DRINKING end
+	if o == "UIConfigannouncementsinterrupts" then o = L_GUI_ANNOUNCEMENTS_INTERRUPTS end
+	if o == "UIConfigannouncementsspells" then o = L_GUI_ANNOUNCEMENTS_SPELLS end
 	
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end

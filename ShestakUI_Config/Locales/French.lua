@@ -28,8 +28,13 @@ L_GUI_MISC_SPIN_CAMERA = "Faire tourner la caméra quand absent"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Fenêtre de véhicule en mouseover"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Accepte les quêtes automatiquement"
 L_GUI_MISC_RAID_TOOLS = "Outils de raid"
-L_GUI_MISC_ANNOUNCE_INTERRUPT = "Annonce /gr, /raid si vous interronpez un sort"
 L_GUI_MISC_ACH_SCREENS = "Prend un screenshot quand un evenement est accomplie"
+
+-- Announcements options
+L_GUI_ANNOUNCEMENTS = "Announcements" -- Needs review
+L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in party/raid when enemy is drinking" -- Needs review
+L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annonce /gr, /raid si vous interronpez un sort"
+L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Personalisation d'addon"

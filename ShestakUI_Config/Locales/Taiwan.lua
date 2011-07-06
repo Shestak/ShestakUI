@@ -28,8 +28,13 @@ L_GUI_MISC_SPIN_CAMERA = "AFK時旋轉鏡頭"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "駕駛框體解鎖"
 L_GUI_MISC_QUEST_AUTOBUTTON = "任務/道具自動按鈕"
 L_GUI_MISC_RAID_TOOLS = "團隊工具"
-L_GUI_MISC_ANNOUNCE_INTERRUPT = "當你成功打斷的時候在隊伍/團隊中進行通告"
 L_GUI_MISC_ACH_SCREENS = "當你獲得成就的時候自動截屏"
+
+-- Announcements options
+L_GUI_ANNOUNCEMENTS = "Announcements" -- Needs review
+L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in party/raid when enemy is drinking" -- Needs review
+L_GUI_ANNOUNCEMENTS_INTERRUPTS = "當你成功打斷的時候在隊伍/團隊中進行通告"
+L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "風格化"
