@@ -521,8 +521,6 @@ Filger_Spells = {
 			{ spellID = 26297, size = 30, filter = "CD" },
 			-- Arcane Torrent (Blood Elf)
 			{ spellID = 69179, size = 30, filter = "CD" },
-			-- Rocket Barrage (Goblin)
-			{ spellID = 69041, size = 30, filter = "CD" },
 			-- Rocket Jump (Goblin)
 			{ spellID = 69070, size = 30, filter = "CD" },
 
@@ -757,8 +755,6 @@ Filger_Spells = {
 			{ spellID = 26297, size = 30, filter = "CD" },
 			-- Arcane Torrent (Blood Elf)
 			{ spellID = 69179, size = 30, filter = "CD" },
-			-- Rocket Barrage (Goblin)
-			{ spellID = 69041, size = 30, filter = "CD" },
 			-- Rocket Jump (Goblin)
 			{ spellID = 69070, size = 30, filter = "CD" },
 
@@ -994,8 +990,6 @@ Filger_Spells = {
 			{ spellID = 26297, size = 30, filter = "CD" },
 			-- Arcane Torrent (Blood Elf)
 			{ spellID = 69179, size = 30, filter = "CD" },
-			-- Rocket Barrage (Goblin)
-			{ spellID = 69041, size = 30, filter = "CD" },
 			-- Rocket Jump (Goblin)
 			{ spellID = 69070, size = 30, filter = "CD" },
 
@@ -1242,8 +1236,6 @@ Filger_Spells = {
 			{ spellID = 20549, size = 30, filter = "CD" },
 			-- Berserking (Troll)
 			{ spellID = 26297, size = 30, filter = "CD" },
-			-- Rocket Barrage (Goblin)
-			{ spellID = 69041, size = 30, filter = "CD" },
 			-- Rocket Jump (Goblin)
 			{ spellID = 69070, size = 30, filter = "CD" },
 
@@ -1745,8 +1737,6 @@ Filger_Spells = {
 			{ spellID = 26297, size = 30, filter = "CD" },
 			-- Arcane Torrent (Blood Elf)
 			{ spellID = 69179, size = 30, filter = "CD" },
-			-- Rocket Barrage (Goblin)
-			{ spellID = 69041, size = 30, filter = "CD" },
 			-- Rocket Jump (Goblin)
 			{ spellID = 69070, size = 30, filter = "CD" },
 
@@ -2008,8 +1998,6 @@ Filger_Spells = {
 			{ spellID = 26297, size = 30, filter = "CD" },
 			-- Arcane Torrent (Blood Elf)
 			{ spellID = 69179, size = 30, filter = "CD" },
-			-- Rocket Barrage (Goblin)
-			{ spellID = 69041, size = 30, filter = "CD" },
 			-- Rocket Jump (Goblin)
 			{ spellID = 69070, size = 30, filter = "CD" },
 
@@ -2213,8 +2201,6 @@ Filger_Spells = {
 			{ spellID = 26297, size = 30, filter = "CD" },
 			-- Arcane Torrent (Blood Elf)
 			{ spellID = 69179, size = 30, filter = "CD" },
-			-- Rocket Barrage (Goblin)
-			{ spellID = 69041, size = 30, filter = "CD" },
 			-- Rocket Jump (Goblin)
 			{ spellID = 69070, size = 30, filter = "CD" },
 
@@ -2402,8 +2388,6 @@ Filger_Spells = {
 			{ spellID = 26297, size = 30, filter = "CD" },
 			-- Arcane Torrent (Blood Elf)
 			{ spellID = 69179, size = 30, filter = "CD" },
-			-- Rocket Barrage (Goblin)
-			{ spellID = 69041, size = 30, filter = "CD" },
 			-- Rocket Jump (Goblin)
 			{ spellID = 69070, size = 30, filter = "CD" },
 
