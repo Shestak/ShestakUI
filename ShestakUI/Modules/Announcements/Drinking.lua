@@ -11,12 +11,6 @@ drinking_announce:SetScript("OnEvent", function(self, event, ...)
 
 	local unit, _, _, _, spellID = ...
 	if UnitIsEnemy("player", unit) and (spellID == 80167 or spellID == 94468 or spellID == 43183 or spellID == 57073) then
-		if GetRealNumRaidMembers() > 0 then
-			SendChatMessage(UnitName(unit)..L_MISC_DRINKING, "RAID")
-		elseif GetRealNumPartyMembers() > 0 and not UnitInRaid("player") then
-			SendChatMessage(UnitName(unit)..L_MISC_DRINKING, "PARTY")
-		else
-			SendChatMessage(UnitName(unit)..L_MISC_DRINKING, "SAY")
-		end
+		SendChatMessage(UnitName(unit)..L_MISC_DRINKING, "PARTY")
 	end
 end)
