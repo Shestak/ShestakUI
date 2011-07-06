@@ -32,7 +32,7 @@ L_GUI_MISC_ACH_SCREENS = "Prend un screenshot quand un evenement est accomplie"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Announcements" -- Needs review
-L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in party/raid when enemy is drinking" -- Needs review
+L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in chat when arena enemy is drinking" -- Needs review
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annonce /gr, /raid si vous interronpez un sort"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell" -- Needs review
 

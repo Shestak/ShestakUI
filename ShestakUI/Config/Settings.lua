@@ -67,7 +67,7 @@ C["misc"] = {
 --	Announcements options
 ----------------------------------------------------------------------------------------
 C["announcements"] = {
-	["drinking"] = false,						-- Announce in party/raid when enemy is drinking
+	["drinking"] = false,						-- Announce in chat when arena enemy is drinking
 	["interrupts"] = false,						-- Announce in party/raid when you interrupt
 	["spells"] = false,							-- Announce in party/raid when you cast same spell
 }

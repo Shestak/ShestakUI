@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.announcements.drinking ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Announce enemy drinking(by Duffed)
+--	Announce enemy drinking in arena(by Duffed)
 ----------------------------------------------------------------------------------------
 local drinking_announce = CreateFrame("Frame")
 drinking_announce:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")

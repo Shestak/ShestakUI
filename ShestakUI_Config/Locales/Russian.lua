@@ -32,7 +32,7 @@ L_GUI_MISC_ACH_SCREENS = "Автоматическое сохранение ск
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Анонсы"
-L_GUI_ANNOUNCEMENTS_DRINKING = "Сообщать в чат когда враг начинает пить"
+L_GUI_ANNOUNCEMENTS_DRINKING = "Сообщать в чат когда враг начинает пить на арене"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Сообщать в чат о вашем прерывание заклинания"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Сообщать в чат когда вы произнесли заклинание"
 

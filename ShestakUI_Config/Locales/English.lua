@@ -30,7 +30,7 @@ L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Announcements"
-L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in party/raid when enemy is drinking"
+L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in chat when arena enemy is drinking"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Announce in party/raid when you interrupt"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell"
 
