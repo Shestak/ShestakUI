@@ -1948,7 +1948,7 @@ Filger_Spells = {
 			{ spellID = 6229, size = 30, filter = "CD" },
 			-- Demonic Empowerment
 			{ spellID = 47193, size = 30, filter = "CD" },
-			-- Demon Charge
+			-- Demon Leap
 			{ spellID = 54785, size = 30, filter = "CD" },
 			-- Soulshatter
 			{ spellID = 29858, size = 30, filter = "CD" },
