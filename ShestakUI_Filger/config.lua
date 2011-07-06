@@ -489,8 +489,14 @@ Filger_Spells = {
 			{ spellID = 23989, size = 30, filter = "CD" },
 			-- Chimera Shot
 			{ spellID = 53209, size = 30, filter = "CD" },
-			-- Spirit Mend
+			-- Spirit Mend (exotic)
 			{ spellID = 90361, size = 30, filter = "CD" },
+			-- Web
+			{ spellID = 4167, size = 30, filter = "CD" },
+			-- Venom Web spray (exotic)
+			{ spellID = 54706, size = 30, filter = "CD" },
+			-- Web Wrap (exotic)
+			{ spellID = 4167, size = 30, filter = "CD" },
 			
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2340,6 +2346,22 @@ Filger_Spells = {
 			{ spellID = 47476, size = 30, filter = "CD" },
 			-- Mind Freeze
 			{ spellID = 47528, size = 30, filter = "CD" },
+			-- Rune Tap
+			{ spellID = 48982, size = 30, filter = "CD" },
+			-- Vampiric Blood
+			{ spellID = 55233, size = 30, filter = "CD" },
+			-- Lichborne
+			{ spellID = 49039, size = 30, filter = "CD" },
+			-- Dancing Rune Weapon
+			{ spellID = 49028, size = 30, filter = "CD" },
+			-- Pillar of Frost
+			{ spellID = 51271, size = 30, filter = "CD" },
+			-- Hungering Cold
+			{ spellID = 49203, size = 30, filter = "CD" },
+			-- Unholy Frenzy
+			{ spellID = 49016, size = 30, filter = "CD" },
+			-- Anti-Magic Zone
+			{ spellID = 51052, size = 30, filter = "CD" },
 
 			-- Racials
 			-- Every Man for Himself (Human)
