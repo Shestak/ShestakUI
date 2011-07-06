@@ -94,19 +94,19 @@ local SmallerMapSkin = function()
 	WorldMapQuestShowObjectives:SetParent(WorldMapDetailFrame)
 	WorldMapQuestShowObjectives:ClearAllPoints()
 	WorldMapQuestShowObjectives:Point("RIGHT", WorldMapQuestShowObjectivesText, "LEFT", 0, 0)
-	WorldMapQuestShowObjectives:SetFrameStrata("TOOLTIP")
+	WorldMapQuestShowObjectives:SetFrameStrata("HIGH")
 	
 	WorldMapTrackQuest:SetParent(WorldMapDetailFrame)
 	WorldMapTrackQuest:ClearAllPoints()
 	WorldMapTrackQuest:Point("BOTTOMLEFT", WorldMapButton, "BOTTOMLEFT", 0, 0)
-	WorldMapTrackQuest:SetFrameStrata("TOOLTIP")
+	WorldMapTrackQuest:SetFrameStrata("HIGH")
 
 	WorldMapTrackQuestText:SetFont(C.media.normal_font, 17)
 	
 	WorldMapShowDigSites:SetParent(WorldMapDetailFrame)
 	WorldMapShowDigSites:ClearAllPoints()
 	WorldMapShowDigSites:Point("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
-	WorldMapShowDigSites:SetFrameStrata("TOOLTIP")
+	WorldMapShowDigSites:SetFrameStrata("HIGH")
 	
 	WorldMapShowDigSitesText:ClearAllPoints()
 	WorldMapShowDigSitesText:Point("LEFT", WorldMapShowDigSites, "RIGHT", 0, 0)

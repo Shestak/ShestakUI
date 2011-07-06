@@ -344,7 +344,7 @@ function Stuffing:CreateBagFrame(w)
 	f:EnableMouse(1)
 	f:SetMovable(1)
 	f:SetToplevel(1)
-	f:SetFrameStrata("MEDIUM")
+	f:SetFrameStrata("DIALOG")
 	f:SetFrameLevel(5)
 	f:SetScript("OnMouseDown", function(self, button)
 		if IsShiftKeyDown() and button == "LeftButton" then
