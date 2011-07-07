@@ -42,6 +42,7 @@ L_GUI_SKINS_BW = "Activier la personalisation pour BigWigs"
 L_GUI_SKINS_DBM = "Activier la personalisation pour DBM"
 L_GUI_SKINS_DXE = "Activier la personalisation pour DXE"
 L_GUI_SKINS_KLE = "Activier la personalisation pour KLE"
+L_GUI_SKINS_OMEN = "Activier la personalisation pour Omen"
 L_GUI_SKINS_PP = "Activer la personnalisation pour PallyPower"
 L_GUI_SKINS_RECOUNT = "Activier la personalisation pour Recount"
 

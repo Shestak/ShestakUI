@@ -42,6 +42,7 @@ L_GUI_SKINS_BW = "開啟BigWigs樣式增強"
 L_GUI_SKINS_DBM = "開啟DBM樣式增強"
 L_GUI_SKINS_DXE = "開啟DXE樣式增強"
 L_GUI_SKINS_KLE = "開啟KLE樣式增強"
+L_GUI_SKINS_OMEN = "開啟Omen樣式增強"
 L_GUI_SKINS_PP = "開啟PallyPower樣式增強"
 L_GUI_SKINS_RECOUNT = "開啟Recount樣式增強"
 

@@ -42,6 +42,7 @@ L_GUI_SKINS_BW = "Activar estilo del BigWigs"
 L_GUI_SKINS_DBM = "Activar estilo del DBM"
 L_GUI_SKINS_DXE = "Activar estilo del DXE"
 L_GUI_SKINS_KLE = "Activar estilo del KLE"
+L_GUI_SKINS_OMEN = "Activar estilo del Omen"
 L_GUI_SKINS_PP = "Activar estilo del PallyPower"
 L_GUI_SKINS_RECOUNT = "Activar estilo del Recount"
 

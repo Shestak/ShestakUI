@@ -140,14 +140,15 @@
 	<Script file="Modules\Class\Paladin.lua"/>
 	<Script file="Modules\Class\Mage.lua"/>
 
-	<Script file="Modules\Skins\Frames.lua"/>
-	<Script file="Modules\Skins\Bubbles.lua"/>
-	<Script file="Modules\Skins\FrameStack.lua"/>
 	<Script file="Modules\Skins\BigWigs.lua"/>
+	<Script file="Modules\Skins\Bubbles.lua"/>
 	<Script file="Modules\Skins\DBM.lua"/>
-	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>
+	<Script file="Modules\Skins\Frames.lua"/>
+	<Script file="Modules\Skins\FrameStack.lua"/>
 	<Script file="Modules\Skins\KLE.lua"/>
+	<Script file="Modules\Skins\Omen.lua"/>
+	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
 
 	<Include file="Modules\UnitFrames\Templates.xml"/>
