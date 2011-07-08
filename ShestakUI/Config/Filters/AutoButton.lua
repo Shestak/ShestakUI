@@ -15,9 +15,10 @@ T.ABItems = {
 	37815,	-- Emerald Drake (Occulus)
 	37859,	-- Amber Essence (Occulus)
 	46029,	-- Mimiron's Core (Ulduar)
-	38689,	-- Chicken Net (Quest)
-	63351,	-- Tahret Dynasty Mallet (Quest)
-	52507,	-- Stardust No.2 (Quest)
+	38689,	-- Chicken Net (Daily Quest)
+	63351,	-- Tahret Dynasty Mallet (Daily Quest)
+	52507,	-- Stardust No.2 (Daily Quest)
+	69240,	-- Enchanted Salve (Daily Quest)
 }
 
 T.ABEquipedItems = {
