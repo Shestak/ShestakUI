@@ -11,7 +11,7 @@ local type = type
 
 -- Function to rename channel and other stuff
 local AddMessage = function(self, text, ...)
-	if(type(text) == "string") then
+	if type(text) == "string" then
 		text = text:gsub("|h%[(%d+)%. .-%]|h", "|h[%1]|h")
 	end
 	return origs[self](self, text, ...)
