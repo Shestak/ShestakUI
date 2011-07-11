@@ -187,7 +187,8 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(99837),	-- Crystal Prison
 			SpellName(99937),	-- Jagged Tear
 			-- Baleroc
-			SpellName(99403),	-- Torment
+			SpellName(99403),	-- Tormented
+			SpellName(99256),	-- Torment
 			SpellName(99252),	-- Blaze of Glory
 			SpellName(99516),	-- Countdown
 			-- Majordomo Staghelm
