@@ -12,12 +12,12 @@ L_TOOLTIP_ACH_COMPLETE = "Dein Status: Fertig gestellt am "
 L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
 L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
-L_TOOLTIP_WHO_TARGET = "Targeted By" -- Needs review
-L_TOOLTIP_ITEM_COUNT = "Item count:" -- Needs review
+L_TOOLTIP_WHO_TARGET = "Anvisiert von"
+L_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe:"
 
 -- Misc
-L_MISC_UNDRESS = "Undress" -- Needs review
-L_MISC_DRINKING = " is drinking." -- Needs review
+L_MISC_UNDRESS = "Ausziehen"
+L_MISC_DRINKING = " trinkt."
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"
@@ -26,16 +26,16 @@ L_RAID_UTIL_DISBAND = "Gruppe auflösen"
 L_ZONE_WINTERGRASP = "Tausendwinter"
 
 -- WatchFrame Wowhead link
-L_WATCH_WOWHEAD_LINK = "Wowhead link" -- Needs review
+L_WATCH_WOWHEAD_LINK = "Wowhead Link"
 
 -- Toogle Menu
-L_TOGGLE_ADDON = "Addon " -- Needs review
-L_TOGGLE_ADDONS = " addons" -- Needs review
-L_TOGGLE_EXPAND = "Expand " -- Needs review
-L_TOGGLE_COLLAPSE = "Collapse " -- Needs review
-L_TOGGLE_RCLICK = "Right click to enable or disable " -- Needs review
-L_TOGGLE_LCLICK = "Left click to toggle window " -- Needs review
-L_TOGGLE_RELOAD = " (needs UI reload)" -- Needs review
+L_TOGGLE_ADDON = "Erweiterung "
+L_TOGGLE_ADDONS = " Erweiterungen"
+L_TOGGLE_EXPAND = "erweitern "
+L_TOGGLE_COLLAPSE = "schließen "
+L_TOGGLE_RCLICK = "Rechtsklick zum Aktivieren oder Deaktiveren "
+L_TOGGLE_LCLICK = "Links klicken um Fenster aktiv zu halten "
+L_TOGGLE_RELOAD = " (benötigt UI neustart)"
 
 -- UnitFrame
 L_UF_GHOST = "Geist"
@@ -205,7 +205,7 @@ L_INFO_SETTINGS_ALL = "Gebe /settings all ein, um die Einstellungen für alle un
 -- Popups
 L_POPUP_INSTALLUI = "Dies ist Ihre erste Benutzung von ShestakUI mit diesem Charakter. Um das Interface zu konfigurieren, wird das UI nun neugeladen."
 L_POPUP_RESETUI = "Sind Sie sich sicher, dass Sie die Einstellungen von ShestakUI zurückgesetzen wollen?"
-L_POPUP_RESETSTATS = "Are you sure you want to reset statistics for time spent in game and gold."  -- Needs review
+L_POPUP_RESETSTATS = "Bist du sicher das du die Gold und verbrachte Zeit Statistik zurücksetzen möchtest?"
 L_POPUP_SWITCH_RAID = "Es sind 2 Raidlayouts aktiviert, bitte wählen Sie eines davon aus."
 L_POPUP_DISBAND_RAID = "Bist du dir sicher, dass du die Gruppe auflösen möchtest?"
 L_POPUP_DISABLEUI = "ShestakUI funktioniert nicht mit deiner Auflösung, möchtest du ShestakUI ausschalten? (Drücke Abbrechen, falls du eine andere Auflösung testen willst)"
@@ -241,7 +241,7 @@ L_STATS_ALT = "ALT"
 L_STATS_AUTO_REPAIR = "Automatisch reparieren"
 L_STATS_AUTO_SELL = "Junk automatisch verkaufen"
 L_STATS_BANDWIDTH = "Bandbreite:"
-L_STATS_DOWNLOAD = "Download:" -- Needs review
+L_STATS_DOWNLOAD = "Download:"
 L_STATS_CLEARED_JUNK = "Junk-Ausnahmeliste gelöscht."
 L_STATS_CLEAR_EXCEPTIONS = "Ausnahmenliste löschen."
 L_STATS_WORLD_MAP = "Klicken, zum Öffnen der World-Map."
@@ -274,7 +274,7 @@ L_STATS_OTHER_OPTIONS = "Weitere Einstellungen können in %s konfiguriert werden
 L_STATS_PLAYED_LEVEL = "Auf diesem Level gespielt"
 L_STATS_PLAYED_SESSION = "Diese Sitzung gespielt"
 L_STATS_PLAYED_TOTAL = "Gesamt gespielt"
-L_STATS_QUEST = "Q" -- Needs review
+L_STATS_QUEST = "Q"
 L_STATS_QUESTS_TO = "Quests/Getötet bis %s"
 L_STATS_REMAINING_XP = "Verbleibende XP"
 L_STATS_REMOVED_JUNK = "Junk-Ausnahme entfernt"
