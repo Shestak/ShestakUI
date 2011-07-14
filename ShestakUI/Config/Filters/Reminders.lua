@@ -204,6 +204,7 @@ if C.reminder.solo_buffs_enable == true then
 					90364,	-- Qiraji Fortitude
 					72590,	-- Drums of Fortitude
 					21562,	-- Fortitude
+					6673,	-- Battle Shout
 				},
 				["combat"] = true,
 				["role"] = "Tank",
@@ -216,6 +217,7 @@ if C.reminder.solo_buffs_enable == true then
 					8076,	-- Strength of Earth
 					57330,	-- Horn of Winter
 					93435,	-- Roar of Courage(hunter pet)
+					469,	-- Commanding Shout
 				},
 				["combat"] = true,
 				["role"] = "Melee",
