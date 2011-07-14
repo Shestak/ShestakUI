@@ -11,17 +11,17 @@ misdir_announce:SetScript("OnEvent", function(self, _, ...)
 
 	if event == "SPELL_CAST_SUCCESS" then
 		if spellID == 34477 or spellID == 19801 or spellID == 57934 then
-			--if sourceName == T.name and destName then
-			if sourceName and destName then
+			if sourceName == T.name and destName then
+			--if sourceName and destName then
 				if GetRealNumRaidMembers() > 0 then
-					--SendChatMessage(GetSpellLink(spellID).." -> "..destName, "RAID")
-					SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "RAID")
+					SendChatMessage(GetSpellLink(spellID).." -> "..destName, "RAID")
+					--SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "RAID")
 				elseif GetRealNumPartyMembers() > 0 and not UnitInRaid("player") then
-					--SendChatMessage(GetSpellLink(spellID).." -> "..destName, "PARTY")
-					SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "PARTY")
+					SendChatMessage(GetSpellLink(spellID).." -> "..destName, "PARTY")
+					--SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "PARTY")
 				else
-					--SendChatMessage(GetSpellLink(spellID).." -> "..destName, "SAY")
-					SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "SAY")
+					SendChatMessage(GetSpellLink(spellID).." -> "..destName, "SAY")
+					--SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "SAY")
 				end
 			end
 		end
