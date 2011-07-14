@@ -34,10 +34,13 @@ T.ChatSpamList = {
 	"анальное",
 	"visа",
 	"qiwi",
+	"Qiwі",
 	"к/г",
 	"Ісq",
+	"ІCQ",
 	"аsя",
 	"asя",
 	"овощевик.рф",
 	"nigmаz.сom",
+	"mywowgоld.ru",
 }
