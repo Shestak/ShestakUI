@@ -5,47 +5,26 @@ local texture = C.media.blank
 local backdropr, backdropg, backdropb, backdropa, borderr, borderg, borderb, bordera = 0, 0, 0, 1, 0, 0, 0, 1
 
 ----------------------------------------------------------------------------------------
---	Pixel perfect script of custom ui Scale
+--	Pixel perfect size/width/height functions
 ----------------------------------------------------------------------------------------
-T.UIScale = function()
-	if T.getscreenwidth <= 1440 then
-		T.low_resolution = true
-	else
-		T.low_resolution = false
-	end
-
-	if C.general.auto_scale == true then
-		C.general.uiscale = min(2, max(0.64, 768/string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)")))
-	end
-end
-T.UIScale()
-
-local mult = 768/string.match(GetCVar("gxResolution"), "%d+x(%d+)")/C.general.uiscale
-local Scale = function(x)
-    return mult*math.floor(x/mult+0.5)
-end
-
-T.Scale = function(x) return Scale(x) end
-T.mult = mult
-
 local function Size(frame, width, height)
-	frame:SetSize(Scale(width), Scale(height or width))
+	frame:SetSize(T.Scale(width), T.Scale(height or width))
 end
 
 local function Width(frame, width)
-	frame:SetWidth(Scale(width))
+	frame:SetWidth(T.Scale(width))
 end
 
 local function Height(frame, height)
-	frame:SetHeight(Scale(height))
+	frame:SetHeight(T.Scale(height))
 end
 
 local function Point(obj, arg1, arg2, arg3, arg4, arg5)
-	if type(arg1)=="number" then arg1 = Scale(arg1) end
-	if type(arg2)=="number" then arg2 = Scale(arg2) end
-	if type(arg3)=="number" then arg3 = Scale(arg3) end
-	if type(arg4)=="number" then arg4 = Scale(arg4) end
-	if type(arg5)=="number" then arg5 = Scale(arg5) end
+	if type(arg1)=="number" then arg1 = T.Scale(arg1) end
+	if type(arg2)=="number" then arg2 = T.Scale(arg2) end
+	if type(arg3)=="number" then arg3 = T.Scale(arg3) end
+	if type(arg4)=="number" then arg4 = T.Scale(arg4) end
+	if type(arg5)=="number" then arg5 = T.Scale(arg5) end
 
 	obj:SetPoint(arg1, arg2, arg3, arg4, arg5)
 end
@@ -55,7 +34,7 @@ end
 ----------------------------------------------------------------------------------------
 local function CreateOverlay(f)
 	if f.overlay then return end
-	
+
 	local overlay = f:CreateTexture(f:GetName() and f:GetName().."Overlay" or nil, "BORDER", f)
 	overlay:ClearAllPoints()
 	overlay:Point("TOPLEFT", 2, -2)
@@ -69,25 +48,25 @@ local function CreateBorder(f, i, o)
 	if i then
 		if f.iborder then return end
 		local border = CreateFrame("Frame", f:GetName() and f:GetName().."InnerBorder" or nil, f)
-		border:Point("TOPLEFT", mult, -mult)
-		border:Point("BOTTOMRIGHT", -mult, mult)
+		border:Point("TOPLEFT", T.mult, -T.mult)
+		border:Point("BOTTOMRIGHT", -T.mult, T.mult)
 		border:SetBackdrop({
-			edgeFile = C.media.blank, edgeSize = mult, 
-			insets = {left = mult, right = mult, top = mult, bottom = mult}
+			edgeFile = C.media.blank, edgeSize = T.mult,
+			insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult}
 		})
 		border:SetBackdropBorderColor(unpack(C.media.backdrop_color))
 		f.iborder = border
 	end
-	
+
 	if o then
 		if f.oborder then return end
 		local border = CreateFrame("Frame", f:GetName() and f:GetName().."OuterBorder" or nil, f)
-		border:Point("TOPLEFT", -mult, mult)
-		border:Point("BOTTOMRIGHT", mult, -mult)
+		border:Point("TOPLEFT", -T.mult, T.mult)
+		border:Point("BOTTOMRIGHT", T.mult, -T.mult)
 		border:SetFrameLevel(f:GetFrameLevel() + 1)
 		border:SetBackdrop({
-			edgeFile = C.media.blank, edgeSize = mult, 
-			insets = {left = mult, right = mult, top = mult, bottom = mult}
+			edgeFile = C.media.blank, edgeSize = T.mult,
+			insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult}
 		})
 		border:SetBackdropBorderColor(unpack(C.media.backdrop_color))
 		f.oborder = border
@@ -107,16 +86,16 @@ end
 
 local function SetTemplate(f, t, tex)
 	if tex then texture = C.media.texture else texture = C.media.blank end
-	
+
 	GetTemplate(t)
-	
+
 	f:SetBackdrop({
-		bgFile = C.media.blank, 
-		edgeFile = C.media.blank, 
-		tile = false, tileSize = 0, edgeSize = mult, 
-		insets = {left = -mult, right = -mult, top = -mult, bottom = -mult}
+		bgFile = C.media.blank,
+		edgeFile = C.media.blank,
+		tile = false, tileSize = 0, edgeSize = T.mult,
+		insets = {left = -T.mult, right = -T.mult, top = -T.mult, bottom = -T.mult}
 	})
-	
+
 	if t == "Transparent" then
 		backdropa = 0.7
 		f:CreateBorder(true, true)
@@ -126,7 +105,7 @@ local function SetTemplate(f, t, tex)
 	else
 		backdropa = 1
 	end
-	
+
 	f:SetBackdropColor(backdropr, backdropg, backdropb, backdropa)
 	f:SetBackdropBorderColor(borderr, borderg, borderb, bordera)
 end
@@ -140,12 +119,12 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	f:SetFrameStrata("BACKGROUND")
 	f:Point(a1, p, a2, x, y)
 	f:SetBackdrop({
-		bgFile = C.media.blank, 
-		edgeFile = C.media.blank, 
-		tile = false, tileSize = 0, edgeSize = mult, 
-		insets = {left = -mult, right = -mult, top = -mult, bottom = -mult}
+		bgFile = C.media.blank,
+		edgeFile = C.media.blank,
+		tile = false, tileSize = 0, edgeSize = T.mult,
+		insets = {left = -T.mult, right = -T.mult, top = -T.mult, bottom = -T.mult}
 	})
-	
+
 	if t == "Transparent" then
 		backdropa = 0.7
 		f:CreateBorder(true, true)
@@ -158,7 +137,7 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	else
 		backdropa = 1
 	end
-	
+
 	f:SetBackdropColor(backdropr, backdropg, backdropb, backdropa)
 	f:SetBackdropBorderColor(borderr, borderg, borderb, bordera)
 end
@@ -219,7 +198,7 @@ local function StyleButton(b, c)
 	local flash = _G[name.."Flash"]
 	local normaltexture = _G[name.."NormalTexture"]
 	local icontexture = _G[name.."IconTexture"]
-	
+
 	local hover = b:CreateTexture("Frame", nil, self)
 	hover:SetTexture(1, 1, 1, 0.3)
 	hover:Size(button:GetWidth(), button:GetHeight())
@@ -242,7 +221,7 @@ local function StyleButton(b, c)
 		checked:Point("BOTTOMRIGHT", button, -2, 2)
 		button:SetCheckedTexture(checked)
 	end
-	
+
 	if cooldown then
 		cooldown:ClearAllPoints()
 		cooldown:Point("TOPLEFT", button, 2, -2)
@@ -283,7 +262,7 @@ local function SkinButton(f, strip)
 		if _G[f:GetName().."RightDisabled"] then _G[f:GetName().."RightDisabled"]:SetAlpha(0) end
 		if _G[f:GetName().."HighlightTexture"] then _G[f:GetName().."HighlightTexture"]:SetAlpha(0) end
 	end
-	
+
 	f:SetTemplate("Overlay")
 	f:HookScript("OnEnter", T.SetModifiedBackdrop)
 	f:HookScript("OnLeave", T.SetOriginalBackdrop)
@@ -296,13 +275,13 @@ local function FontString(parent, name, fontName, fontHeight, fontStyle)
 	local fs = parent:CreateFontString(nil, "OVERLAY")
 	fs:SetFont(fontName, fontHeight, fontStyle)
 	fs:SetJustifyH("LEFT")
-	
+
 	if not name then
 		parent.text = fs
 	else
 		parent[name] = fs
 	end
-	
+
 	return fs
 end
 
@@ -312,7 +291,7 @@ end
 local function FadeIn(f)
 	UIFrameFadeIn(f, 0.4, f:GetAlpha(), 1)
 end
-	
+
 local function FadeOut(f)
 	UIFrameFadeOut(f, 0.8, f:GetAlpha(), 0)
 end
