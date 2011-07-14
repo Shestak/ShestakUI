@@ -157,7 +157,7 @@ hooksecurefunc('WorldStateScoreFrame_Update', function()
 			local n, r = strsplit('-', name, 2)
 			n = classColor[class] .. n .. '|r'
 
-			if (n == myname) and (not r) then
+			if (n == myName) and (not r) then
 				n = '> ' .. n .. ' <'
 			end
 
