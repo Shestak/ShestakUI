@@ -1,7 +1,7 @@
 ﻿if GetLocale() ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for frFR client(Thanks to Cranan for the translation)
+--	Localization for frFR client(Thanks to Cranan and Puree for the translation)
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Réinitialisation totale de l'UI"
 L_GUI_SET_SAVED_SETTTINGS = "Sauvegarder la configuration par personnage"
@@ -31,10 +31,10 @@ L_GUI_MISC_RAID_TOOLS = "Outils de raid"
 L_GUI_MISC_ACH_SCREENS = "Prend un screenshot quand un evenement est accomplie"
 
 -- Announcements options
-L_GUI_ANNOUNCEMENTS = "Announcements" -- Needs review
-L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in chat when arena enemy is drinking" -- Needs review
+L_GUI_ANNOUNCEMENTS = "Annonces"
+L_GUI_ANNOUNCEMENTS_DRINKING = "Annonce dans la fenêtre de discussion quand un joueur ennemi est entrain de boire"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annonce /gr, /raid si vous interronpez un sort"
-L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell" -- Needs review
+L_GUI_ANNOUNCEMENTS_SPELLS = "Annonce dans la fenêtre groupe/raid quand vous lancez certains sorts"
 
 -- Skins options
 L_GUI_SKINS = "Personalisation d'addon"
