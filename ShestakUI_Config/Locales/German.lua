@@ -31,10 +31,10 @@ L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
 L_GUI_MISC_ACH_SCREENS = "Speicher einen Screenshot wenn ein Achivment errungen wird."
 
 -- Announcements options
-L_GUI_ANNOUNCEMENTS = "Announcements" -- Needs review
-L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in chat when arena enemy is drinking" -- Needs review
-L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Sage deine Unterbrechungen im Raid oder Schlachtzugschat an."
-L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell" -- Needs review
+L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
+L_GUI_ANNOUNCEMENTS_DRINKING = "Sage im Chat an wenn ein Arenagegener trinkt"
+L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Sage deine Unterbrechungen im Raid oder Schlachtzugschat an"
+L_GUI_ANNOUNCEMENTS_SPELLS = "Sage im Raid / Schachtzugschat an, wenn du den selben Zauber castest"
 
 -- Skins options
 L_GUI_SKINS = "Stilisierung"
