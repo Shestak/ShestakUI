@@ -384,9 +384,9 @@ StaticPopupDialogs["SETTINGS_ALL"] = {
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = function()
-		if IsAddOnLoaded("DBM-Core") then T.UploadDBM() end
-		if IsAddOnLoaded("DXE") then T.UploadDXE() end
-		if IsAddOnLoaded("KLE") then T.UploadKLE() end
+		if IsAddOnLoaded("DBM-Core") and C.skins.dbm then T.UploadDBM() end
+		if IsAddOnLoaded("DXE") and C.skins.dxe then T.UploadDXE() end
+		if IsAddOnLoaded("KLE") and C.skins.kle then T.UploadKLE() end
 		if IsAddOnLoaded("MikScrollingBattleText") then UploadMSBT() end
 		if IsAddOnLoaded("Skada") then UploadSkada() end
 		ReloadUI() 
@@ -400,19 +400,31 @@ SLASH_SETTINGS1 = "/settings"
 SlashCmdList.SETTINGS = function(msg)
 	if msg == "dbm" then
 		if IsAddOnLoaded("DBM-Core") then
-			StaticPopup_Show("SETTINGS_DBM")
+			if C.skins.dbm == true then
+				StaticPopup_Show("SETTINGS_DBM")
+			else
+				print("|cffffff00Stylization for DBM is disabled.|r")
+			end
 		else
 			print("|cffffff00DBM is not installed.|r")
 		end
 	elseif msg == "dxe" then
 		if IsAddOnLoaded("DXE") then
-			StaticPopup_Show("SETTINGS_DXE")
+			if C.skins.dxe == true then
+				StaticPopup_Show("SETTINGS_DXE")
+			else
+				print("|cffffff00Stylization for DXE is disabled.|r")
+			end
 		else
 			print("|cffffff00DXE is not installed.|r")
 		end
 	elseif msg == "kle" then
 		if IsAddOnLoaded("KLE") then
-			StaticPopup_Show("SETTINGS_KLE")
+			if C.skins.kle == true then
+				StaticPopup_Show("SETTINGS_KLE")
+			else
+				print("|cffffff00Stylization for KLE is disabled.|r")
+			end
 		else
 			print("|cffffff00KLE is not installed.|r")
 		end
