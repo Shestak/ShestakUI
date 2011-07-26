@@ -123,6 +123,14 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 			},
+			[2] = {	-- Intellect group
+				["spells"] = {
+					61316,	-- Dalaran Brilliance
+					1459,	-- Arcane Brilliance
+				},
+				["combat"] = true,
+				["instance"] = true,
+			},
 		},
 		WARLOCK = {
 			[1] = {	-- Armors group
