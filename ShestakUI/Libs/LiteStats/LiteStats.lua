@@ -1228,9 +1228,11 @@ if experience.enabled then
 				local msg = ...
 				if msg:find(mobxp) then
 					_, lastkill = strmatch(msg,mobxp)
+					lastkill = strmatch(lastkill,"%d+")
 					gained = gained + lastkill
 				elseif msg:find(questxp) then
 					lastquest = strmatch(msg,questxp)
+					lastquest = strmatch(lastquest,"%d+")
 					gained = gained + lastquest
 				end
 			elseif event == "PLAYER_LEVEL_UP" then
