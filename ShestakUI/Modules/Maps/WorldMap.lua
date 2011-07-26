@@ -240,3 +240,61 @@ coords:SetScript("OnUpdate", function(self, elapsed)
 		int = 0
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Hide boss buttons on worlmap(Hide Boss Buttons by nebula)
+----------------------------------------------------------------------------------------
+local button = CreateFrame("CheckButton", "WorldMapFrameShowBossButtons", WorldMapFrame, "OptionsCheckButtonTemplate")
+button:SetSize(19, 19)
+button:SetFrameStrata("HIGH")
+_G[button:GetName().."Text"]:SetFont(C.media.normal_font, 14)
+_G[button:GetName().."Text"]:SetText("Hide Bosses")
+
+local function setAnchor(self)
+	self:ClearAllPoints()
+	local arch = select(3, GetProfessions())
+	if arch then
+		self:SetPoint("BOTTOM", WorldMapShowDigSites, "TOP", 0, 0)
+	else
+		self:SetPoint("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
+	end
+end
+
+local function checkHideShow(self)
+	if EJ_GetMapEncounter(1) then
+		self:Show()
+	else
+		self:Hide()
+	end
+end
+
+button:SetScript("OnShow", checkHideShow)
+
+button:SetScript("OnClick", function(self, button)
+	if self:GetChecked() then
+		PlaySound("igMainMenuOptionCheckBoxOn")
+		SavedOptionsPerChar.ShowMapBoss = true
+		WorldMapBossButtonFrame:Hide()
+	else
+		PlaySound("igMainMenuOptionCheckBoxOff")
+		SavedOptionsPerChar.ShowMapBoss = nil
+		WorldMapBossButtonFrame:Show()
+	end
+end)
+
+button:SetScript("OnEvent", function(self, event)
+	if event == "WORLD_MAP_UPDATE" then
+		checkHideShow(self)
+	elseif event == "SKILL_LINES_CHANGED" then
+		setAnchor(self)
+	elseif event == "PLAYER_LOGIN" then
+		self:SetChecked(SavedOptionsPerChar.ShowMapBoss)
+		setAnchor(self)
+		if SavedOptionsPerChar.ShowMapBoss then
+			WorldMapBossButtonFrame:Hide()
+		end
+	end
+end)
+button:RegisterEvent("WORLD_MAP_UPDATE")
+button:RegisterEvent("SKILL_LINES_CHANGED")
+button:RegisterEvent("PLAYER_LOGIN")
