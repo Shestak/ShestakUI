@@ -49,6 +49,7 @@ L_UF_WOTF_USED = "WotF задействован: "
 -- Map
 L_MAP_CURSOR = "Курсор: "
 L_MAP_BOUNDS = "Вне карты!"
+L_MAP_HIDE_BOSSES = "Скрыть Боссов"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Календарь"
@@ -68,10 +69,10 @@ L_CHAT_GM = "[GM]"
 L_CHAT_GUILD = "Г"
 L_CHAT_PARTY = "Гр"
 L_CHAT_PARTY_LEADER = "Лгр"
-L_CHAT_RAID	= "Р"
+L_CHAT_RAID = "Р"
 L_CHAT_RAID_LEADER = "ЛР"
-L_CHAT_RAID_WARNING	= "ОР"
-L_CHAT_BATTLEGROUND	= "ПБ"
+L_CHAT_RAID_WARNING = "ОР"
+L_CHAT_BATTLEGROUND = "ПБ"
 L_CHAT_BATTLEGROUND_LEADER = "ЛПБ"
 L_CHAT_OFFICER = "О"
 L_CHAT_COME_ONLINE = "входит в игровой мир."
@@ -201,6 +202,9 @@ L_INFO_SETTINGS_KLE = "Введите /settings kle, чтобы применит
 L_INFO_SETTINGS_MSBT = "Введите /settings msbt, чтобы применить настройки MSBT."
 L_INFO_SETTINGS_SKADA = "Введите /settings skada, чтобы применить настройки Skada."
 L_INFO_SETTINGS_ALL = "Введите /settings all, чтобы применить настройки для всех модификаций."
+L_INFO_NOT_INSTALLED = " не установлен."
+L_INFO_SKIN_DISABLED1 = "Стилизация для "
+L_INFO_SKIN_DISABLED2 = " выключена."
 
 -- Popups
 L_POPUP_INSTALLUI = "Это первый запуск ShestakUI для этого персонажа. Необходимо перезагрузить интерфейс для его настройки."
@@ -310,7 +314,7 @@ L_SLASHCMD_HELP = {
 	"/en ADDON_NAME - Включение эддона.",
 	"/rd - Расформировать группу/рейд.",
 	"/toraid - Конвертация в группу/рейд.",
-	"/teleport - Описание не готово.",
+	"/teleport - Телепортация из подземелья.",
 	"/luaerror - Включение/выключение lua ошибок.",
 	"/spec - Переключение набора талантов.",
 	"/clfix - Исправляет журнал боя.",

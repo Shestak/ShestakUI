@@ -4,8 +4,8 @@
 --	MSBT settings
 ----------------------------------------------------------------------------------------
 local UploadMSBT = function()
-	if(MSBTProfiles_SavedVars) then table.wipe(MSBTProfiles_SavedVars) end
-	if(MSBT_SavedMedia) then table.wipe(MSBT_SavedMedia) end
+	if MSBTProfiles_SavedVars then table.wipe(MSBTProfiles_SavedVars) end
+	if MSBT_SavedMedia then table.wipe(MSBT_SavedMedia) end
 	MSBTProfiles_SavedVars = {
 		["profiles"] = {
 			["Default"] = {
@@ -340,7 +340,7 @@ end
 --	Skada settings
 ----------------------------------------------------------------------------------------
 local UploadSkada = function()
-	if(SkadaDB) then table.wipe(SkadaDB) end
+	if SkadaDB then table.wipe(SkadaDB) end
 	SkadaDB = {
 		["profiles"] = {
 			["Default"] = {
@@ -403,44 +403,44 @@ SlashCmdList.SETTINGS = function(msg)
 			if C.skins.dbm == true then
 				StaticPopup_Show("SETTINGS_DBM")
 			else
-				print("|cffffff00Stylization for DBM is disabled.|r")
+				print("|cffffff00"..L_INFO_SKIN_DISABLED1.."DBM"..L_INFO_SKIN_DISABLED2.."|r")
 			end
 		else
-			print("|cffffff00DBM is not installed.|r")
+			print("|cffffff00DBM"..L_INFO_NOT_INSTALLED.."|r")
 		end
 	elseif msg == "dxe" then
 		if IsAddOnLoaded("DXE") then
 			if C.skins.dxe == true then
 				StaticPopup_Show("SETTINGS_DXE")
 			else
-				print("|cffffff00Stylization for DXE is disabled.|r")
+				print("|cffffff00"..L_INFO_SKIN_DISABLED1.."DXE"..L_INFO_SKIN_DISABLED2.."|r")
 			end
 		else
-			print("|cffffff00DXE is not installed.|r")
+			print("|cffffff00DXE"..L_INFO_NOT_INSTALLED.."|r")
 		end
 	elseif msg == "kle" then
 		if IsAddOnLoaded("KLE") then
 			if C.skins.kle == true then
 				StaticPopup_Show("SETTINGS_KLE")
 			else
-				print("|cffffff00Stylization for KLE is disabled.|r")
+				print("|cffffff00"..L_INFO_SKIN_DISABLED1.."KLE"..L_INFO_SKIN_DISABLED2.."|r")
 			end
 		else
-			print("|cffffff00KLE is not installed.|r")
+			print("|cffffff00KLE"..L_INFO_NOT_INSTALLED.."|r")
 		end
 	elseif msg == "msbt" then
 		if IsAddOnLoaded("MikScrollingBattleText") then
 			UploadMSBT()
 			ReloadUI()
 		else
-			print("|cffffff00MSBT is not installed.|r")
+			print("|cffffff00MSBT"..L_INFO_NOT_INSTALLED.."|r")
 		end
 	elseif msg == "skada" then
 		if IsAddOnLoaded("Skada") then
 			UploadSkada()
 			ReloadUI()
 		else
-			print("|cffffff00Skada is not installed.|r")
+			print("|cffffff00Skada"..L_INFO_NOT_INSTALLED.."|r")
 		end
 	elseif msg == "all" then
 		StaticPopup_Show("SETTINGS_ALL")

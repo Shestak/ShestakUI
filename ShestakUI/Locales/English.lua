@@ -46,6 +46,7 @@ L_UF_WOTF_USED = "WotF used: "
 -- Map
 L_MAP_CURSOR = "Cursor: "
 L_MAP_BOUNDS = "Out of bounds!"
+L_MAP_HIDE_BOSSES = "Hide Bosses"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendar"
@@ -198,6 +199,9 @@ L_INFO_SETTINGS_KLE = "Type /settings kle, to apply the settings KLE."
 L_INFO_SETTINGS_MSBT = "Type /settings msbt, to apply the settings MSBT."
 L_INFO_SETTINGS_SKADA = "Type /settings skada, to apply the settings Skada."
 L_INFO_SETTINGS_ALL = "Type /settings all, to apply the settings for all modifications."
+L_INFO_NOT_INSTALLED = " is not installed."
+L_INFO_SKIN_DISABLED1 = "Stylization for "
+L_INFO_SKIN_DISABLED2 = " is disabled."
 
 -- Popups
 L_POPUP_INSTALLUI = "First time on ShestakUI with this Character. You must reload UI to configure it."

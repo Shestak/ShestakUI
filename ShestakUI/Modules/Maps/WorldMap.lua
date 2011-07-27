@@ -248,7 +248,7 @@ local button = CreateFrame("CheckButton", "WorldMapFrameShowBossButtons", WorldM
 button:SetSize(19, 19)
 button:SetFrameStrata("HIGH")
 _G[button:GetName().."Text"]:SetFont(C.media.normal_font, 14)
-_G[button:GetName().."Text"]:SetText("Hide Bosses")
+_G[button:GetName().."Text"]:SetText(L_MAP_HIDE_BOSSES)
 
 local function setAnchor(self)
 	self:ClearAllPoints()

@@ -49,6 +49,7 @@ L_UF_WOTF_USED = "被遗忘者的意志使用: "
 -- Map
 L_MAP_CURSOR = "指针: "
 L_MAP_BOUNDS = "超出范围!"
+L_MAP_HIDE_BOSSES = "Hide Bosses" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日历"
@@ -201,6 +202,9 @@ L_INFO_SETTINGS_KLE = "键入 /settings kle, 载入 KLE 的设定."
 L_INFO_SETTINGS_MSBT = "键入 /settings msbt, 载入 MSBT 的设定."
 L_INFO_SETTINGS_SKADA = "键入 /settings skada, 载入 Skada 的设定."
 L_INFO_SETTINGS_ALL = "键入 /settings all, 载入所有UI设定."
+L_INFO_NOT_INSTALLED = " is not installed." -- Needs review
+L_INFO_SKIN_DISABLED1 = "Stylization for " -- Needs review
+L_INFO_SKIN_DISABLED2 = " is disabled." -- Needs review
 
 -- Popups
 L_POPUP_INSTALLUI = "该角色首次使用ShestakUI.你必须重新加载UI来配置."
