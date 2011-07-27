@@ -6,7 +6,6 @@ if not C.combattext.enable == true then return end
 ----------------------------------------------------------------------------------------
 -- Justify messages in frames
 local ct = {
-
 	["justify_1"] = "LEFT",			-- Incoming damage justify
 	["justify_2"] = "RIGHT",		-- Incoming healing justify
 	["justify_3"] = "CENTER",		-- Various messages justify
@@ -499,10 +498,6 @@ local function OnEvent(self, event, subevent, ...)
 		if C.combattext.damage or C.combattext.healing then
 			ct.pguid = UnitGUID("player")
 		end
-	elseif event == "CHAT_MSG_LOOT" then
-		ChatMsgLoot_Handler(subevent)
-	elseif event == "CHAT_MSG_MONEY" then
-		ChatMsgMoney_Handler(subevent)
 	end
 end
 
@@ -585,7 +580,7 @@ end
 xCT:RegisterEvent("UNIT_ENTERED_VEHICLE")
 xCT:RegisterEvent("UNIT_EXITING_VEHICLE")
 xCT:RegisterEvent("PLAYER_ENTERING_WORLD")
-xCT:SetScript("OnEvent",OnEvent)
+xCT:SetScript("OnEvent", OnEvent)
 
 -- Turn off Blizzard CT
 CombatText:UnregisterAllEvents()
@@ -830,7 +825,7 @@ if C.combattext.stop_ve_spam and T.class == "PRIEST" then
 			end
 		end
 	end)
-	sp:RegisterEvent("PLAYER_ENTERING_WORLD")	
+	sp:RegisterEvent("PLAYER_ENTERING_WORLD")
 	sp:RegisterEvent("UPDATE_SHAPESHIFT_FORM")
 	sp:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
 end
@@ -1021,6 +1016,20 @@ if C.combattext.damage then
 					color = {1, 0, 0.5}
 				end
 				xCT3:AddMessage(ACTION_SPELL_DISPEL..": "..effect..msg, unpack(color))
+			elseif eventType == "SPELL_STOLEN" and C.combattext.dispel then
+				local target, _, _, id, effect = select(12, ...)
+				local color = {1, 0.5, 0}
+				if C.combattext.icons then
+					icon = GetSpellTexture(id)
+				end
+				if icon then
+					msg = " \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+				elseif C.combattext.icons then
+					msg = " \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+				else
+					msg = ""
+				end
+				xCT3:AddMessage(ACTION_SPELL_STOLEN..": "..effect..msg, unpack(color))
 			elseif eventType == "SPELL_INTERRUPT" and C.combattext.interrupt then
 				local target, _, _, id, effect = select(12, ...)
 				local color = {1, 0.5, 0}
