@@ -205,6 +205,7 @@ SlashCmdList.FRAME = function(arg)
 	else
 		arg = GetMouseFocus()
 	end
+	if arg ~= nil then FRAME = arg end
 	if arg ~= nil and arg:GetName() ~= nil then
 		local point, relativeTo, relativePoint, xOfs, yOfs = arg:GetPoint()
 		ChatFrame1:AddMessage("|cffCC0000~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
