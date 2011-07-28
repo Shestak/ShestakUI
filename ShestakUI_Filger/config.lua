@@ -449,6 +449,8 @@ Filger_Spells = {
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
 			
 			-- Self
+			-- Silencing Shot
+			{ spellID = 34490, size = 30, filter = "CD" },
 			-- Explosive Shot
 			{ spellID = 53301, size = 30, filter = "CD" },
 			-- Aimed Shot
@@ -964,6 +966,10 @@ Filger_Spells = {
 			{ spellID = 1134, size = 30, filter = "CD" },
 			-- Heroic Leap
 			{ spellID = 6544, size = 30, filter = "CD" },
+			-- Enraged Regeneration
+			{ spellID = 55694, size = 30, filter = "CD" },
+			-- Rallying Cry
+			{ spellID = 97462, size = 30, filter = "CD" },
 			
 			-- Racials
 			-- Every Man for Himself (Human)
