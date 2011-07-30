@@ -2908,6 +2908,8 @@ Filger_Spells = {
 			{ spellID = 99461, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Alysra's Razor (Alysrazor)
 			{ spellID = 100029, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Wings of Flame (Alysrazor)
+			{ spellID = 98619, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Jagged Tear (Shannox)
 			{ spellID = 99937, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Torment (Baleroc)
