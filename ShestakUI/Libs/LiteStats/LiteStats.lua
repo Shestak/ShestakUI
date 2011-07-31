@@ -1118,7 +1118,7 @@ if stats.enabled then
 			local base, add = UnitDefense(P)
 			string, percent = base + add
 		elseif sub == "avoidance" then
-			string = GetDodgeChance() + GetParryChance() + GetBlockChance()
+			string = GetDodgeChance() + GetParryChance() + GetBlockChance() + 5
 		elseif sub == "manaregen" then
 			local _,class = UnitClass(P)
 			local I5SR = true -- oo5sr/i5sr swapping NYI
