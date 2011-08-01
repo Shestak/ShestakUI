@@ -218,3 +218,9 @@ button:SetScript("OnEvent", function(self)
 		texture:SetTexCoord(0.2, 0.8, 0.2, 0.8)
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Misclicks for same popup
+----------------------------------------------------------------------------------------
+StaticPopupDialogs.PARTY_INVITE.hideOnEscape = 0
+StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = 0
