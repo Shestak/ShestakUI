@@ -20,11 +20,11 @@ local function Height(frame, height)
 end
 
 local function Point(obj, arg1, arg2, arg3, arg4, arg5)
-	if type(arg1)=="number" then arg1 = T.Scale(arg1) end
-	if type(arg2)=="number" then arg2 = T.Scale(arg2) end
-	if type(arg3)=="number" then arg3 = T.Scale(arg3) end
-	if type(arg4)=="number" then arg4 = T.Scale(arg4) end
-	if type(arg5)=="number" then arg5 = T.Scale(arg5) end
+	if type(arg1) == "number" then arg1 = T.Scale(arg1) end
+	if type(arg2) == "number" then arg2 = T.Scale(arg2) end
+	if type(arg3) == "number" then arg3 = T.Scale(arg3) end
+	if type(arg4) == "number" then arg4 = T.Scale(arg4) end
+	if type(arg5) == "number" then arg5 = T.Scale(arg5) end
 
 	obj:SetPoint(arg1, arg2, arg3, arg4, arg5)
 end
