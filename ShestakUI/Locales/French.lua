@@ -2,7 +2,7 @@
 if T.client ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for frFR client (Thanks to Cranan for the translation)
+--	Localization for frFR client (Thanks to Cranan and Puree for the translation)
 ----------------------------------------------------------------------------------------
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Aucun talent"
@@ -49,7 +49,7 @@ L_UF_WOTF_USED = "Volonté des Réprouvés utilisé : "
 -- Map
 L_MAP_CURSOR = "Curseur : "
 L_MAP_BOUNDS = "L'extérieur de la carte !"
-L_MAP_HIDE_BOSSES = "Hide Bosses" -- Needs review
+L_MAP_HIDE_BOSSES = "Cacher les Boss"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendrier"
@@ -202,9 +202,9 @@ L_INFO_SETTINGS_KLE = "Taper /settings kle, pour configurer KLE automatiquement.
 L_INFO_SETTINGS_MSBT = "Taper /settings msbt, pour configurer msbt automatiquement."
 L_INFO_SETTINGS_SKADA = "Taper /settings skada, pour configurer skada automatiquement."
 L_INFO_SETTINGS_ALL = "Taper /settings all, pour tout configurer automatiquement."
-L_INFO_NOT_INSTALLED = " is not installed." -- Needs review
-L_INFO_SKIN_DISABLED1 = "Stylization for " -- Needs review
-L_INFO_SKIN_DISABLED2 = " is disabled." -- Needs review
+L_INFO_NOT_INSTALLED = " n'est pas installé."
+L_INFO_SKIN_DISABLED1 = "Personnalisation pour "
+L_INFO_SKIN_DISABLED2 = " est désactivé."
 
 -- Popups
 L_POPUP_INSTALLUI = "Première utilisation de ShestakUI avec ce personnage. Vous devez recharger l'interface utilisateur pour le configurer."
