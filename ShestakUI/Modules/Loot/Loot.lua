@@ -6,7 +6,6 @@ if not C.loot.lootframe == true then return end
 ----------------------------------------------------------------------------------------
 local _NAME, _NS = ...
 local Butsu = CreateFrame("Button", _NAME)
-local db = C.font
 local lb = CreateFrame("Button", "ButsuAdv", Butsu, "UIPanelScrollDownButtonTemplate")
 local LDD = CreateFrame("Frame", "ButsuLDD", Butsu, "UIDropDownMenuTemplate")
 Butsu:Hide()
@@ -18,21 +17,21 @@ end)
 function Butsu:LOOT_OPENED(event, autoloot)
 	self:Show()
 	lb:Show()
-	
-	if(not self:IsShown()) then
+
+	if not self:IsShown() then
 		CloseLoot(not autoLoot)
 	end
 
-	if(IsFishingLoot()) then
+	if IsFishingLoot() then
 		self.title:SetText(L_LOOT_FISH)
-	elseif(not UnitIsFriend("player", "target") and UnitIsDead"target") then
-		self.title:SetText(UnitName"target")
+	elseif not UnitIsFriend("player", "target") and UnitIsDead("target") then
+		self.title:SetText(UnitName("target"))
 	else
 		self.title:SetText(LOOT)
 	end
 
 	-- Blizzard uses strings here
-	if(GetCVar("lootUnderMouse") == "1") then
+	if GetCVar("lootUnderMouse") == "1" then
 		local x, y = GetCursorPosition()
 		x = x / self:GetEffectiveScale()
 		y = y / self:GetEffectiveScale()
@@ -45,43 +44,45 @@ function Butsu:LOOT_OPENED(event, autoloot)
 
 	local m = 0
 	local items = GetNumLootItems()
-	if(items > 0) then
-		for i=1, items do
+	if items > 0 then
+		for i = 1, items do
 			local slot = _NS.slots[i] or _NS.CreateSlot(i)
 			local texture, item, quantity, quality, locked = GetLootSlotInfo(i)
-			local color = ITEM_QUALITY_COLORS[quality]
+			if texture then
+				local color = ITEM_QUALITY_COLORS[quality]
 
-			if(LootSlotIsCoin(i)) then
-				item = item:gsub("\n", ", ")
-			end
+				if LootSlotIsCoin(i) then
+					item = item:gsub("\n", ", ")
+				end
 
-			if quantity and (quantity > 1) then
-				slot.count:SetText(quantity)
-				slot.count:Show()
-			else
-				slot.count:Hide()
-			end
-			
-			if color then
-				slot.iconFrame:SetBackdropBorderColor(color.r, color.g, color.b)
-				slot:SetBackdropBorderColor(color.r, color.g, color.b)
-				slot.drop:SetVertexColor(color.r, color.g, color.b)
-			end
-			slot.drop:Show()
+				if quantity and quantity > 1 then
+					slot.count:SetText(quantity)
+					slot.count:Show()
+				else
+					slot.count:Hide()
+				end
 
-			slot.quality = quality
-			slot.name:SetText(item)
-			if color then
-				slot.name:SetTextColor(color.r, color.g, color.b)
-			end
-			slot.icon:SetTexture(texture)
+				if color then
+					slot.iconFrame:SetBackdropBorderColor(color.r, color.g, color.b)
+					slot:SetBackdropBorderColor(color.r, color.g, color.b)
+					slot.drop:SetVertexColor(color.r, color.g, color.b)
+				end
+				slot.drop:Show()
 
-			if quality then
-				m = math.max(m, quality)
-			end
+				slot.quality = quality
+				slot.name:SetText(item)
+				if color then
+					slot.name:SetTextColor(color.r, color.g, color.b)
+				end
+				slot.icon:SetTexture(texture)
 
-			slot:Enable()
-			slot:Show()
+				if quality then
+					m = math.max(m, quality)
+				end
+
+				slot:Enable()
+				slot:Show()
+			end
 		end
 	else
 		local slot = _NS.slots[1] or _NS.CreateSlot(1)
@@ -100,29 +101,29 @@ function Butsu:LOOT_OPENED(event, autoloot)
 
 	local color = ITEM_QUALITY_COLORS[m]
 	self:SetBackdropBorderColor(color.r, color.g, color.b, 0.8)
-	
+
 	local close = CreateFrame("Button", nil, Butsu, "UIPanelCloseButton")
 	close:Width(25)
 	close:Height(25)
 	close:Point("TOPRIGHT", 0, 1)
 	close:SetScript("OnClick", function(self) self:GetParent():Hide() end)
-	
+
 	self:Width(C.loot.width)
 	self.title:Width(C.loot.width - 45)
 	self.title:Height(C.font.loot_font_size)
 end
-Butsu:RegisterEvent"LOOT_OPENED"
+Butsu:RegisterEvent("LOOT_OPENED")
 
 function Butsu:LOOT_SLOT_CLEARED(event, slot)
-	if(not self:IsShown()) then return end
+	if not self:IsShown() then return end
 
 	_NS.slots[slot]:Hide()
 	self:AnchorSlots()
 end
-Butsu:RegisterEvent"LOOT_SLOT_CLEARED"
+Butsu:RegisterEvent("LOOT_SLOT_CLEARED")
 
 function Butsu:LOOT_CLOSED()
-	StaticPopup_Hide"LOOT_BIND"
+	StaticPopup_Hide("LOOT_BIND")
 	self:Hide()
 	lb:Hide()
 
@@ -130,21 +131,21 @@ function Butsu:LOOT_CLOSED()
 		v:Hide()
 	end
 end
-Butsu:RegisterEvent"LOOT_CLOSED"
+Butsu:RegisterEvent("LOOT_CLOSED")
 
 function Butsu:OPEN_MASTER_LOOT_LIST()
 	ToggleDropDownMenu(1, nil, GroupLootDropDown, LootFrame.selectedLootButton, 0, 0)
 end
-Butsu:RegisterEvent"OPEN_MASTER_LOOT_LIST"
+Butsu:RegisterEvent("OPEN_MASTER_LOOT_LIST")
 
 function Butsu:UPDATE_MASTER_LOOT_LIST()
 	UIDropDownMenu_Refresh(GroupLootDropDown)
 end
-Butsu:RegisterEvent"UPDATE_MASTER_LOOT_LIST"
+Butsu:RegisterEvent("UPDATE_MASTER_LOOT_LIST")
 
 do
 	local title = Butsu:CreateFontString(nil, "OVERLAY")
-	title:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style);
+	title:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 	title:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
 	title:SetJustifyH("LEFT")
 	title:Point("TOPLEFT", Butsu, "TOPLEFT", 8, -7)
@@ -152,7 +153,7 @@ do
 end
 
 Butsu:SetScript("OnMouseDown", function(self)
-	if(IsAltKeyDown()) then
+	if IsAltKeyDown() then
 		self:StartMoving()
 	end
 end)
@@ -162,7 +163,7 @@ Butsu:SetScript("OnMouseUp", function(self)
 end)
 
 Butsu:SetScript("OnHide", function(self)
-	StaticPopup_Hide"CONFIRM_LOOT_DISTRIBUTION"
+	StaticPopup_Hide("CONFIRM_LOOT_DISTRIBUTION")
 	CloseLoot()
 end)
 
@@ -194,14 +195,14 @@ end
 
 function Announce(chn)
 	local nums = GetNumLootItems()
-	if(nums == 0) then return end
+	if nums == 0 then return end
 	if UnitIsPlayer("target") or not UnitExists("target") then -- Chests are hard to identify!
 		SendChatMessage(L_LOOT_CHEST..":", chn)
 	else
 		SendChatMessage(L_LOOT_MONSTER.."'"..UnitName("target").."':", chn)
 	end
 	for i = 1, GetNumLootItems() do
-		if(LootSlotIsItem(i)) then
+		if LootSlotIsItem(i) then
 			local link = GetLootSlotLink(i)
 			local messlink = "- %s"
 			SendChatMessage(format(messlink, link), chn)
@@ -264,7 +265,7 @@ do
 
 	local OnEnter = function(self)
 		local slot = self:GetID()
-		if(LootSlotIsItem(slot)) then
+		if LootSlotIsItem(slot) then
 			GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
 			GameTooltip:SetLootItem(slot)
 			CursorUpdate(self)
@@ -285,10 +286,10 @@ do
 	end
 
 	local OnClick = function(self)
-		if(IsModifiedClick()) then
+		if IsModifiedClick() then
 			HandleModifiedItemClick(GetLootSlotLink(self:GetID()))
 		else
-			StaticPopup_Hide"CONFIRM_LOOT_DISTRIBUTION"
+			StaticPopup_Hide("CONFIRM_LOOT_DISTRIBUTION")
 
 			LootFrame.selectedLootButton = self
 			LootFrame.selectedSlot = self:GetID()
@@ -300,7 +301,7 @@ do
 	end
 
 	local OnUpdate = function(self)
-		if(GameTooltip:IsOwned(self)) then
+		if GameTooltip:IsOwned(self) then
 			GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
 			GameTooltip:SetLootItem(self:GetID())
 			CursorOnUpdate(self)
@@ -335,7 +336,7 @@ do
 		local count = iconFrame:CreateFontString(nil, "OVERLAY")
 		count:SetJustifyH("RIGHT")
 		count:Point("BOTTOMRIGHT", iconFrame, "BOTTOMRIGHT", 1, 1)
-		count:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style);
+		count:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 		count:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
 		count:SetText(1)
 		frame.count = count
@@ -344,7 +345,7 @@ do
 		name:SetJustifyH("LEFT")
 		name:Point("LEFT", icon, "RIGHT", 5, 0)
 		name:SetNonSpaceWrap(true)
-		name:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style);
+		name:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 		name:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
 		name:Width(C.loot.width - C.loot.icon_size - 20)
 		name:Height(C.font.loot_font_size)
@@ -358,7 +359,7 @@ do
 		frame.drop = drop
 
 		frame:SetTemplate("Default")
-		
+
 		slots[id] = frame
 		return frame
 	end
@@ -370,11 +371,11 @@ do
 		local prevShown
 		for i = 1, #slots do
 			local frame = slots[i]
-			if(frame:IsShown()) then
+			if frame:IsShown() then
 				frame:ClearAllPoints()
 				frame:Point("LEFT", 8, 0)
 				frame:Point("RIGHT", -8, 0)
-				if(not prevShown) then
+				if not prevShown then
 					frame:Point("TOPLEFT", self, 8, -25)
 				else
 					frame:Point("TOP", prevShown, "BOTTOM", 0, -3)
@@ -403,10 +404,10 @@ local hexColors = {}
 for k, v in pairs(RAID_CLASS_COLORS) do
 	hexColors[k] = string.format("|cff%02x%02x%02x", v.r * 255, v.g * 255, v.b * 255)
 end
-hexColors["UNKNOWN"] = string.format("|cff%02x%02x%02x", 0.6*255, 0.6*255, 0.6*255)
+hexColors["UNKNOWN"] = string.format("|cff%02x%02x%02x", 0.6 * 255, 0.6 * 255, 0.6 * 255)
 
 local playerName = UnitName("player")
-local unknownColor = { r = .6, g = .6, b = .6 }
+local unknownColor = {r = 0.6, g = 0.6, b = 0.6}
 local classesInRaid = {}
 local randoms = {}
 local function CandidateUnitClass(candidate)
@@ -420,7 +421,7 @@ end
 local function init()
 	local candidate, color
 	local info = UIDropDownMenu_CreateInfo()
-	
+
 	if UIDROPDOWNMENU_MENU_LEVEL == 2 then
 		-- raid class menu
 		for i = 1, 40 do
@@ -436,7 +437,7 @@ local function init()
 					info.notCheckable = 1
 					info.disabled = nil
 					info.func = GroupLootDropDown_GiveLoot
-					UIDropDownMenu_AddButton(info,UIDROPDOWNMENU_MENU_LEVEL)
+					UIDropDownMenu_AddButton(info, UIDROPDOWNMENU_MENU_LEVEL)
 				end
 			end
 		end
@@ -450,10 +451,9 @@ local function init()
 	info.disabled = nil
 	info.notClickable = nil
 	UIDropDownMenu_AddButton(info)
-	
-	if ( GetNumRaidMembers() > 0 ) then
-		-- In a raid
 
+	if GetNumRaidMembers() > 0 then
+		-- In a raid
 		for k, v in pairs(classesInRaid) do
 			classesInRaid[k] = nil
 		end
@@ -479,12 +479,12 @@ local function init()
 		end
 	else
 		-- In a party
-		for i=1, MAX_PARTY_MEMBERS+1, 1 do
+		for i = 1, MAX_PARTY_MEMBERS + 1, 1 do
 			candidate = GetMasterLootCandidate(i)
 			if candidate then
 				-- Add candidate button
 				info.text = candidate -- coloredNames[candidate]
-				info.colorCode = hexColors[select(2,CandidateUnitClass(candidate))] or hexColors["UNKOWN"]
+				info.colorCode = hexColors[select(2, CandidateUnitClass(candidate))] or hexColors["UNKOWN"]
 				info.textHeight = 12
 				info.value = i
 				info.notCheckable = 1
@@ -518,7 +518,7 @@ local function init()
 	for i = 1, 40 do
 		candidate = GetMasterLootCandidate(i)
 		if candidate and candidate == playerName then
-			info.colorCode = hexColors[select(2,CandidateUnitClass(candidate))] or hexColors["UNKOWN"]
+			info.colorCode = hexColors[select(2, CandidateUnitClass(candidate))] or hexColors["UNKOWN"]
 			info.isTitle = nil
 			info.textHeight = 12
 			info.value = i
