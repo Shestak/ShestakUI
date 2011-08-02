@@ -31,10 +31,10 @@ L_GUI_MISC_RAID_TOOLS = "團隊工具"
 L_GUI_MISC_ACH_SCREENS = "當你獲得成就的時候自動截屏"
 
 -- Announcements options
-L_GUI_ANNOUNCEMENTS = "通告提醒" -- Needs review
-L_GUI_ANNOUNCEMENTS_DRINKING = "當敵人在進食敵人在進食在聊天窗口進行通告" -- Needs review
+L_GUI_ANNOUNCEMENTS = "通告提醒"
+L_GUI_ANNOUNCEMENTS_DRINKING = "當敵人在進食敵人在進食在聊天窗口進行通告"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "當你成功打斷的時候在隊伍/團隊中進行通告"
-L_GUI_ANNOUNCEMENTS_SPELLS = "當你使用相同法術的時候在隊伍/團隊中進行通告" -- Needs review
+L_GUI_ANNOUNCEMENTS_SPELLS = "當你使用相同法術的時候在隊伍/團隊中進行通告"
 
 -- Skins options
 L_GUI_SKINS = "風格化"
@@ -54,7 +54,7 @@ L_GUI_COMBATTEXT_DAMAGE_STYLE = "改變模型頂部/玩家頭像的傷害/治療
 L_GUI_COMBATTEXT_DAMAGE = "獨立顯示傷害輸出"
 L_GUI_COMBATTEXT_HEALING = "獨立顯示治療輸出"
 L_GUI_COMBATTEXT_HOTS = "顯示hot造成的治療"
-L_GUI_COMBATTEXT_OVERHEALING = "顯示過量治療輸出" -- Needs review
+L_GUI_COMBATTEXT_OVERHEALING = "顯示過量治療輸出"
 L_GUI_COMBATTEXT_PET_DAMAGE = "顯示寵物傷害輸出"
 L_GUI_COMBATTEXT_DOT_DAMAGE = "顯示dot造成的傷害"
 L_GUI_COMBATTEXT_DAMAGE_COLOR = "以法術系別顏色顯示傷害文字"
@@ -119,7 +119,7 @@ L_GUI_THREAT_ENABLE = "開啟仇恨欄"
 L_GUI_THREAT_HEIGHT = "仇恨欄高度"
 L_GUI_THREAT_WIDTH = "仇恨欄寬度"
 L_GUI_THREAT_ROWS = "仇恨欄數目"
-L_GUI_THREAT_HIDE_SOLO = "僅在隊伍/團隊中使用" -- Needs review
+L_GUI_THREAT_HIDE_SOLO = "僅在隊伍/團隊中使用"
 
 -- Tooltip options
 L_GUI_TOOLTIP = "提示資訊"
@@ -139,7 +139,7 @@ L_GUI_TOOLTIP_ARENA_EXPERIENCE = "在提示資訊中顯示競技場等級"
 L_GUI_TOOLTIP_SPELL_ID = "法術ID"
 L_GUI_TOOLTIP_RAID_ICON = "團隊圖示"
 L_GUI_TOOLTIP_WHO_TARGETTING = "當你在隊伍/團隊中時顯示誰以目標為目標的提示"
-L_GUI_TOOLTIP_ITEM_COUNT = "物品數量" -- Needs review
+L_GUI_TOOLTIP_ITEM_COUNT = "物品數量"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "開啟聊天框增強"
@@ -231,7 +231,7 @@ L_GUI_AURA_FOCUS_DEBUFFS = "在焦點目標框體顯示DeBuffs"
 L_GUI_AURA_FOT_DEBUFFS = "在焦點目標的目標框體顯示DeBuffs"
 L_GUI_AURA_PET_DEBUFFS = "在寵物框體顯示DeBuffs"
 L_GUI_AURA_TOT_DEBUFFS = "在目標的目標框體顯示DeBuffs"
-L_GUI_AURA_BOSS_BUFFS = "在BOSS框體顯示Buff" -- Needs review
+L_GUI_AURA_BOSS_BUFFS = "在BOSS框體顯示Buff"
 L_GUI_AURA_PLAYER_AURA_ONLY = "在目標框體只顯示自己的DeBuffs"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs著色依照法術類型"
 L_GUI_AURA_CAST_BY = "在滑鼠提示中顯示是誰施放了這個 增益/減益"
