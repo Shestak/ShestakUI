@@ -1,7 +1,7 @@
 ﻿if GetLocale() ~= "zhTW" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for zhTW client(Thanks to Mania for the translation)
+--	Localization for zhTW client(Thanks to Mania and tat2dawn for the translation)
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "重載UI"
 L_GUI_SET_SAVED_SETTTINGS = "為每個角色分別保存設定"

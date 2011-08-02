@@ -2,7 +2,7 @@
 if T.client ~= "zhTW" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for zhTW client(Thanks to Ianchan, Aelb, nanjiqq, Spacedragon and Mania for the translation)
+--	Localization for zhTW client(Thanks to Ianchan, Aelb, nanjiqq, Spacedragon, Mania and tat2dawn for the translation)
 ----------------------------------------------------------------------------------------
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "沒有天賦"

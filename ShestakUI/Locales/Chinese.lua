@@ -2,7 +2,7 @@
 if T.client ~= "zhCN" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for zhCN client (Thanks to Ianchan, nanjiqq and Mania for the translation)
+--	Localization for zhCN client (Thanks to Ianchan, nanjiqq, Mania and tat2dawn for the translation)
 ----------------------------------------------------------------------------------------
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "没有天赋"
