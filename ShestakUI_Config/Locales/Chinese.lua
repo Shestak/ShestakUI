@@ -31,10 +31,10 @@ L_GUI_MISC_RAID_TOOLS = "团队工具"
 L_GUI_MISC_ACH_SCREENS = "当你获得成就的时候自动截屏"
 
 -- Announcements options
-L_GUI_ANNOUNCEMENTS = "Announcements" -- Needs review
-L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in chat when arena enemy is drinking" -- Needs review
+L_GUI_ANNOUNCEMENTS = "通告预警"
+L_GUI_ANNOUNCEMENTS_DRINKING = "当敌人在进食喝水的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "当你成功打断的时候在队伍/团队中进行通告"
-L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell" -- Needs review
+L_GUI_ANNOUNCEMENTS_SPELLS = "当有人与你使用同一法术的时候在队伍/团队中进行通告"
 
 -- Skins options
 L_GUI_SKINS = "风格化"
@@ -54,7 +54,7 @@ L_GUI_COMBATTEXT_DAMAGE_STYLE = "改变模型顶部/玩家头像的伤害/治疗
 L_GUI_COMBATTEXT_DAMAGE = "独立显示伤害输出"
 L_GUI_COMBATTEXT_HEALING = "独立显示治疗输出"
 L_GUI_COMBATTEXT_HOTS = "显示hot造成的治疗"
-L_GUI_COMBATTEXT_OVERHEALING = "Show outgoing overhealing" -- Needs review
+L_GUI_COMBATTEXT_OVERHEALING = "显示过量治疗输出"
 L_GUI_COMBATTEXT_PET_DAMAGE = "显示宠物伤害输出"
 L_GUI_COMBATTEXT_DOT_DAMAGE = "显示dot造成的伤害"
 L_GUI_COMBATTEXT_DAMAGE_COLOR = "以法术系别颜色显示伤害文字"
@@ -119,7 +119,7 @@ L_GUI_THREAT_ENABLE = "开启仇恨栏"
 L_GUI_THREAT_HEIGHT = "仇恨栏高度"
 L_GUI_THREAT_WIDTH = "仇恨栏宽度"
 L_GUI_THREAT_ROWS = "仇恨栏数目"
-L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid" -- Needs review
+L_GUI_THREAT_HIDE_SOLO = "只在队伍或团队中开启"
 
 -- Tooltip options
 L_GUI_TOOLTIP = "提示资讯"
@@ -139,7 +139,7 @@ L_GUI_TOOLTIP_ARENA_EXPERIENCE = "在提示资讯中显示竞技场等级"
 L_GUI_TOOLTIP_SPELL_ID = "法术ID"
 L_GUI_TOOLTIP_RAID_ICON = "团队图标"
 L_GUI_TOOLTIP_WHO_TARGETTING = "当你在队伍/团队中时显示谁以目标为目标的提示"
-L_GUI_TOOLTIP_ITEM_COUNT = "Item count" -- Needs review
+L_GUI_TOOLTIP_ITEM_COUNT = "叠堆数量"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "开启聊天框增强"
@@ -169,7 +169,7 @@ L_GUI_MINIMAP_ENABLE = "开启迷你地图增强"
 L_GUI_MINIMAP_ICON = "追踪类型图示"
 L_GUI_MINIMAP_SIZE = "小地图大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "战斗中隐藏小地图"
-L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu" -- Needs review
+L_GUI_MINIMAP_MERGE_MENUS = "将小地图上依附的插件按钮整合到菜单中"
 
 -- Map options
 L_GUI_MAP_ENABLE = "开启世界地图增强"
@@ -191,16 +191,16 @@ L_GUI_NAMEPLATE_HEALTH = "显示百分比生命值"
 L_GUI_NAMEPLATE_CASTBAR = "显示施法条"
 L_GUI_NAMEPLATE_HEIGHT = "单位名条高度"
 L_GUI_NAMEPLATE_WIDTH = "单位名条宽度"
-L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height for selected nameplate" -- Needs review
-L_GUI_NAMEPLATE_AD_WIDTH = "Additional width for selected nameplate" -- Needs review
+L_GUI_NAMEPLATE_AD_HEIGHT = "在选定目标的时候,增加名条的高度"
+L_GUI_NAMEPLATE_AD_WIDTH = "在选定目标的时候,增加名条的宽度"
 L_GUI_NAMEPLATE_CASTBAR_NAME = "显示施法名称"
 L_GUI_NAMEPLATE_THREAT = "显示仇恨情况"
 L_GUI_NAMEPLATE_CLASS_ICON = "在PVP情况下显示职业图示"
 L_GUI_NAMEPLATE_NAME_ABBREV = "显示名字缩写"
 L_GUI_NAMEPLATE_GOOD_COLOR = "依据你的队伍角色(坦克,输出/治疗)分别显示同样的安全威胁颜色"
-L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color" -- Needs review
-L_GUI_NAMEPLATE_BAD_COLOR = "依据你的队伍角色(坦克,输出/治疗)显示的危险胁颜色"
-L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned off)" -- Needs review
+L_GUI_NAMEPLATE_NEAR_COLOR = "显示增加和减少的威胁颜色"
+L_GUI_NAMEPLATE_BAD_COLOR = "依据你的队伍角色(坦克,输出/治疗)显示的威胁颜色"
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "显示Debuff (必须关闭名字缩写)"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "开启动作条"
@@ -209,8 +209,8 @@ L_GUI_ACTIONBAR_GRID = "显示空的动作条按钮"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "按钮大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "按钮间隔"
 L_GUI_ACTIONBAR_SPLIT_BARS = "把第五动作条分成两个有六个位置的小动作条"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Enable classcolor border for buttons" -- Needs review
-L_GUI_ACTIONBAR_TOGGLE_MODE = "Enable toggle mode" -- Needs review
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "给所有的按钮使用职业颜色边框"
+L_GUI_ACTIONBAR_TOGGLE_MODE = "开启动作条切换按钮"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部动作条数目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右侧动作条数目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "鼠标划过时显示右侧动作条"
@@ -231,20 +231,20 @@ L_GUI_AURA_FOCUS_DEBUFFS = "在焦点目标框体显示DeBuffs"
 L_GUI_AURA_FOT_DEBUFFS = "在焦点目标的目标框体显示Debuffs"
 L_GUI_AURA_PET_DEBUFFS = "在宠物框体显示DeBuffs"
 L_GUI_AURA_TOT_DEBUFFS = "在目标的目标框体显示DeBuffs"
-L_GUI_AURA_BOSS_BUFFS = "Buffs on boss frame" -- Needs review
+L_GUI_AURA_BOSS_BUFFS = "在BOSS框体显示Buffs"
 L_GUI_AURA_PLAYER_AURA_ONLY = "在目标框体只显示自己的DeBuffs"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs着色依照法术类型"
 L_GUI_AURA_CAST_BY = "在鼠标提示中显示是谁施放了这个 增益/減益"
-L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs" -- Needs review
+L_GUI_AURA_CLASSCOLOR_BORDER = "给玩家自身BUFF图标使用职业颜色边框"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "开启单位框架"
 L_GUI_UF_OWN_COLOR = "在预测治疗中显示你的治疗量"
-L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)" -- Needs review
+L_GUI_UF_UF_COLOR = "血量条的颜色 (如果已使用自定义颜色)"
 L_GUI_UF_ENEMY_HEALTH_COLOR = "敌对目标生命条以红色着色"
 L_GUI_UF_TOTAL_VALUE = "在玩家与目标框体显示详细的文字变化"
 L_GUI_UF_COLOR_VALUE = "生命值与魔法值以职业颜色着色"
-L_GUI_UF_BAR_COLOR_VALUE = "Health bar color by current health remaining" -- Needs review
+L_GUI_UF_BAR_COLOR_VALUE = "血量条的颜色以目前剩余血量着色"
 L_GUI_UF_UNIT_CASTBAR = "显示施法条"
 L_GUI_UF_CASTBAR_ICON = "显示施法条图标"
 L_GUI_UF_CASTBAR_LATENCY = "施法条延迟"
@@ -259,7 +259,7 @@ L_GUI_UF_ICONS_PVP = "鼠标划过玩家/目标时显示PVP状态文字"
 L_GUI_UF_ICONS_COMBAT = "显示战斗标识"
 L_GUI_UF_ICONS_RESTING = "显示休息标识"
 L_GUI_UF_ICONS_COMBO_POINT = "潜行者|德鲁伊连击点图示"
-L_GUI_UF_ICONS_COMBO_POINT_NEW = "New style for combo points" -- Needs review
+L_GUI_UF_ICONS_COMBO_POINT_NEW = "为连击点数使用新样式"
 L_GUI_UF_PORTRAIT_ENABLE = "开启玩家/目标头像"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "开启职业颜色边框"
 L_GUI_UF_PORTRAIT_HEIGHT = "头像高度"
@@ -278,7 +278,7 @@ L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "经验条"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "平滑条"
 L_GUI_UF_PLUGINS_TALENTS = "显示敌对玩家天赋"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "显示玩家/目标的文字战斗信息"
-L_GUI_UF_PLUGINS_FADER = "Fade unit frames" -- Needs review
+L_GUI_UF_PLUGINS_FADER = "头像框体渐隐"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "仇恨边框"
@@ -301,7 +301,7 @@ L_GUI_UF_ICONS_RAID_MARK = "显示团队标记"
 L_GUI_UF_ICONS_READY_CHECK = "确认就绪情况图示"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff与图示高亮"
 L_GUI_UF_PLUGINS_AURA_WATCH = "团队法术监视"
-L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons" -- Needs review
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "在团队Debuff图标上显示时间"
 L_GUI_UF_PLUGINS_HEALCOMM = "即将受到的治疗条"
 
 -- Panel options
