@@ -13,7 +13,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "你的狀態: 未完成"
 L_TOOLTIP_SPELL_ID = "法術ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
 L_TOOLTIP_WHO_TARGET = "以其為目標的"
-L_TOOLTIP_ITEM_COUNT = "Item count:" -- Needs review
+L_TOOLTIP_ITEM_COUNT = "物品數量:" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "無裝備"
@@ -49,7 +49,7 @@ L_UF_WOTF_USED = "亡靈意志已使用: "
 -- Map
 L_MAP_CURSOR = "鼠標: "
 L_MAP_BOUNDS = "超出範圍!"
-L_MAP_HIDE_BOSSES = "Hide Bosses" -- Needs review
+L_MAP_HIDE_BOSSES = "隱藏BOSS頭像" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日曆"
@@ -202,9 +202,9 @@ L_INFO_SETTINGS_KLE = "鍵入 /settings kle, 載入 KLE 的設定."
 L_INFO_SETTINGS_MSBT = "鍵入 /settings msbt, 載入 MSBT 的設定."
 L_INFO_SETTINGS_SKADA = "鍵入 /settings skada, 載入 Skada 的設定."
 L_INFO_SETTINGS_ALL = "鍵入 /settings all, 載入所有UI設定."
-L_INFO_NOT_INSTALLED = " is not installed." -- Needs review
-L_INFO_SKIN_DISABLED1 = "Stylization for " -- Needs review
-L_INFO_SKIN_DISABLED2 = " is disabled." -- Needs review
+L_INFO_NOT_INSTALLED = " 沒有安裝." -- Needs review
+L_INFO_SKIN_DISABLED1 = "風格化 " -- Needs review
+L_INFO_SKIN_DISABLED2 = " 已禁用." -- Needs review
 
 -- Popups
 L_POPUP_INSTALLUI = "該角色首次使用ShestakUI.你必須重新加載UI來配置."
@@ -307,37 +307,37 @@ L_STATS_TOOLTIP_EXPERIENCE = "未達最高等級時,提示將顯示經驗值訊�
 -- Slash commands
 L_SLASHCMD_HELP = {
 	"Available slash commands:",
-	"/rl - Description is not ready.",
+	"/rl - 重載介面.",
 	"/rc - Description is not ready.",
-	"/gm - Description is not ready.",
-	"/dis ADDON_NAME - Description is not ready.",
-	"/en ADDON_NAME - Description is not ready.",
-	"/rd - Description is not ready.",
+	"/gm - 打開GM面板.",
+	"/dis ADDON_NAME - 禁用 插件名.",
+	"/en ADDON_NAME - 開啟 插件名.",
+	"/rd - 解散隊伍.",
 	"/toraid - Description is not ready.",
 	"/teleport - Description is not ready.",
-	"/luaerror - Description is not ready.",
-	"/spec - Description is not ready.",
-	"/clfix - Description is not ready.",
-	"/heal - Description is not ready.",
-	"/dps - Description is not ready.",
-	"/frame - Description is not ready.",
-	"/addons solo|party|raid|pvp|trade - Description is not ready.",
-	"/farmmode - Description is not ready.",
-	"/moveui - Description is not ready.",
-	"/resetui - Description is not ready.",
-	"/resetuf - Description is not ready.",
-	"/resetconfig - Description is not ready.",
-	"/resetstats - Description is not ready.",
-	"/settings ADDON_NAME - Description is not ready.",
-	"/ls - Description is not ready.",
-	"/bags - Description is not ready.",
-	"/xct - Description is not ready.",
-	"/raidcd - Description is not ready.",
-	"/enemycd - Description is not ready.",
-	"/pulsecd - Description is not ready.",
-	"/threat - Description is not ready.",
-	"/tt - Description is not ready.",
-	"/ainv - Description is not ready.",
-	"/testuf - Description is not ready.",
-	"/cfg - Description is not ready.",
+	"/luaerror - lua錯誤.",
+	"/spec - 切換天賦.",
+	"/clfix - 戰鬥記錄修復.",
+	"/heal - 載入治療模式介面.",
+	"/dps - 載入傷害輸出模式介面.",
+	"/frame - 在聊天窗口輸出框架名稱.",
+	"/addons solo|party|raid|pvp|trade - 載入插件給 單獨|隊伍|團隊|玩家對玩家|交易.",
+	"/farmmode - 打開/關閉 小地圖採集模式.",
+	"/moveui - 解鎖/鎖定 介面內所有移動的框體.",
+	"/resetui - 重置介面設置到初始狀態.",
+	"/resetuf - 重置頭像面板到初始狀態.",
+	"/resetconfig - 重置已修改的設置.",
+	"/resetstats - 重置人物屬性狀態面板.",
+	"/settings ADDON_NAME - 設置 插件_名.",
+	"/ls - 載入設置.",
+	"/bags - 背包選項.",
+	"/xct - 戰鬥信息選項.",
+	"/raidcd - 團隊技能冷卻監視條選項.",
+	"/enemycd - 敵對技能冷卻監視選項.",
+	"/pulsecd - 冷卻提醒選項.",
+	"/threat - 仇恨條選項.",
+	"/tt - 密語當前所選定的目標.",
+	"/ainv - 打開/關閉 自動接受公會+好友 組隊邀請.",
+	"/testuf - 測試頭像框體位置.",
+	"/cfg - 打開介面設置面板.",
 }
