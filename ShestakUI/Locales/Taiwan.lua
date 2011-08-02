@@ -13,7 +13,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "你的狀態: 未完成"
 L_TOOLTIP_SPELL_ID = "法術ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
 L_TOOLTIP_WHO_TARGET = "以其為目標的"
-L_TOOLTIP_ITEM_COUNT = "物品數量:" -- Needs review
+L_TOOLTIP_ITEM_COUNT = "物品數量:"
 
 -- Misc
 L_MISC_UNDRESS = "無裝備"
@@ -49,7 +49,7 @@ L_UF_WOTF_USED = "亡靈意志已使用: "
 -- Map
 L_MAP_CURSOR = "鼠標: "
 L_MAP_BOUNDS = "超出範圍!"
-L_MAP_HIDE_BOSSES = "隱藏BOSS頭像" -- Needs review
+L_MAP_HIDE_BOSSES = "隱藏BOSS頭像"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日曆"
@@ -202,9 +202,9 @@ L_INFO_SETTINGS_KLE = "鍵入 /settings kle, 載入 KLE 的設定."
 L_INFO_SETTINGS_MSBT = "鍵入 /settings msbt, 載入 MSBT 的設定."
 L_INFO_SETTINGS_SKADA = "鍵入 /settings skada, 載入 Skada 的設定."
 L_INFO_SETTINGS_ALL = "鍵入 /settings all, 載入所有UI設定."
-L_INFO_NOT_INSTALLED = " 沒有安裝." -- Needs review
-L_INFO_SKIN_DISABLED1 = "風格化 " -- Needs review
-L_INFO_SKIN_DISABLED2 = " 已禁用." -- Needs review
+L_INFO_NOT_INSTALLED = " 沒有安裝."
+L_INFO_SKIN_DISABLED1 = "風格化 "
+L_INFO_SKIN_DISABLED2 = " 已禁用."
 
 -- Popups
 L_POPUP_INSTALLUI = "該角色首次使用ShestakUI.你必須重新加載UI來配置."
