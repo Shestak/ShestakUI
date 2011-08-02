@@ -76,6 +76,8 @@ Filger_Spells = {
 			{ spellID = 16870, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Predator's Swiftness
 			{ spellID = 69369, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Pulverize
+			{ spellID = 80313, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			
 			-- Trinkets
 			-- General
