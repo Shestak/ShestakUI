@@ -6,7 +6,9 @@
 local FSTooltip = CreateFrame("Frame", nil, UIParent)
 
 FSTooltip:SetScript("OnUpdate", function(self, elapsed)
-	if (self.elapsed and self.elapsed > 0.1) then
+	if IsAddOnLoaded("Aurora") then return end
+
+	if self.elapsed and self.elapsed > 0.1 then
 		if FrameStackTooltip then
 			local noscalemult = T.mult * C.general.uiscale
 			FrameStackTooltip:SetBackdrop({
