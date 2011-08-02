@@ -1,7 +1,7 @@
 ﻿if GetLocale() ~= "zhCN" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for zhCN client(Thanks to Mania for the translation)
+--	Localization for zhCN client(Thanks to Mania and tat2dawn for the translation)
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "重载插件"
 L_GUI_SET_SAVED_SETTTINGS = "为每个角色分别保存设定"
