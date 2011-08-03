@@ -1,19 +1,9 @@
---[[
-
-	Elements handled:
-	 .Reputation [statusbar]
-	 .Reputation.Text [fontstring] (optional)
-
-	Booleans:
-	 - Tooltip
-
-	Functions that can be overridden from within a layout:
-	 - PostUpdate(self, event, unit, bar, min, max, value, name, id)
-	 - OverrideText(bar, min, max, value, name, id)
-
---]]
 local T, C, L = unpack(select(2, ...))
 if C.unitframe.enable ~= true or C.unitframe.plugins_reputation_bar ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Based on oUF_Reputation(by p3lim)
+----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF or oUF
 

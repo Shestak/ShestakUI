@@ -1,5 +1,9 @@
 local T, C, L = unpack(select(2, ...))
 if C.unitframe.enable ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Based on oUF_MovableFrames(by Haste)
+----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF or oUF
 

@@ -1,5 +1,9 @@
 local T, C, L = unpack(select(2, ...))
 if C.unitframe.enable ~= true or C.unitframe.plugins_combat_feedback ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Based on oUF_CombatFeedback(by Ammo)
+----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF or oUF
 

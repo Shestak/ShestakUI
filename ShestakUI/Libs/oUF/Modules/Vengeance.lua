@@ -1,5 +1,9 @@
 local T, C, L = unpack(select(2, ...))
 if C.unitframe.enable ~= true or C.unitframe.plugins_vengeance_bar ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Based on oUF_VengeanceBar(by Evilpaul)
+----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF or oUF
 

@@ -1,19 +1,9 @@
---[[
-
-	Elements handled:
-	 .Experience [statusbar]
-	 .Experience.Rested [statusbar] (optional, must be parented to Experience)
-	 .Experience.Text [fontstring] (optional)
-
-	Booleans:
-	 - noTooltip
-
-	Functions that can be overridden from within a layout:
-	 - PostUpdate(element unit, min, max)
-
---]]
 local T, C, L = unpack(select(2, ...))
 if C.unitframe.enable ~= true or C.unitframe.plugins_experience_bar ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Based on oUF_Experience(by p3lim)
+----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF or oUF
 

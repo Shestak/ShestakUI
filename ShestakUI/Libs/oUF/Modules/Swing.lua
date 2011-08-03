@@ -1,26 +1,9 @@
---[[
-	Project.: oUF_Swing
-	File....: oUF_Swing.lua
-	Version.: 30300.4
-	Rev Date: 08/30/2010
-	Authors.: p3lim, Thalyra
-]] 
-
---[[
-	Elements handled:
-	 .Swing [statusbar]
-	 .Swing.Text [fontstring]
-
-	Shared:
-	 - disableMelee [boolean]
-	 - disableRanged [boolean]
-	 - disableOoc [boolean] (Autohide on leaving Combat)
-
-	Functions that can be overridden from within a layout:
-	 - :OverrideText(elapsed)
---]]
 local T, C, L = unpack(select(2, ...))
 if C.unitframe.enable ~= true or C.unitframe.plugins_swing ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Based on oUF_Swing(by p3lim and Thalyra)
+----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF or oUF
 

@@ -1,116 +1,14 @@
 local T, C, L = unpack(select(2, ...))
 if C.unitframe.enable ~= true or C.raidframe.plugins_aura_watch ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Based on oUF_AuraWatch(by Astromech)
+----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF or oUF
 
 if not oUF then return end
---[[------------------------------------------------------------------------------------------------------
-oUF_AuraWatch by Astromech
-Please leave comments, suggestions, and bug reports on this addon's WoWInterface page
 
-To setup, create a table named AuraWatch in your unit frame. There are several options
-you can specify, as explained below.
-	
-	icons 
-		Mandatory!
-		A table of frames to be used as icons. oUF_Aurawatch does not position
-		these frames, so you must do so yourself. Each icon needs a spellID entry,
-		which is the spell ID of the aura to watch. Table should be set up
-		such that values are icon frames, but the keys can be anything.
-		
-		Note each icon can have several options set as well. See below.
-	strictMatching
-		Default: false
-		If true, AuraWatch will only show an icon if the specific aura
-		with the specified spell id is on the unit. If false, AuraWatch
-		will show the icon if any aura with the same name and icon texture
-		is on the unit. Strict matching can be undesireable because most
-		ranks of an aura have different spell ids.
-	missingAlpha
-		Default 0.75
-		The alpha value for icons of auras which have faded from the unit.
-	presentAlpha
-		Default 1
-		The alpha value for icons or auras present on the unit.
-	onlyShowMissing
-		Default false
-		If this is true, oUF_AW will hide icons if they are present on the unit.
-	onlyShowPresent
-		Default false
-		If this is true, oUF_AW will hide icons if they have expired from the unit.
-	hideCooldown
-		Default false
-		If this is true, oUF_AW will not create a cooldown frame
-	hideCount
-		Default false
-		If this is true, oUF_AW will not create a count fontstring
-	fromUnits
-		Default {["player"] = true, ["pet"] = true, ["vehicle"] = true}
-		A table of units from which auras can originate. Have the units be the keys
-		and "true" be the values.
-	anyUnit
-		Default false
-		Set to true for oUF_AW to to show an aura no matter what unit it 
-		originates from. This will override any fromUnits setting.
-	PostCreateIcon
-		Default nil
-		A function to call when an icon is created to modify it, such as adding
-		a border or repositioning the count fontstring. Leave as nil to ignore.
-		The arguements are: AuraWatch table, icon, auraSpellID, auraName, unitFrame
-
-Below are options set on a per icon basis. Set these as fields in the icon frames.
-
-The following settings can be overridden from the AuraWatch table on a per-aura basis:
-	onlyShowMissing
-	onlyShowPresent
-	hideCooldown
-	hideCount
-	fromUnits
-	anyUnit
-		
-The following settings are unique to icons:
-	
-	spellID
-		Mandatory!
-		The spell id of the aura, as explained above.
-	icon
-		Default aura texture
-		A texture value for this icon.
-	overlay
-		Default Blizzard aura overlay
-		An overlay for the icon. This is not created if a custom icon texture is created.
-	count
-		Default A fontstring
-		An fontstring to show the stack count of an aura.
-	
-Here is an example of how to set oUF_AW up:
-
-	local createAuraWatch = function(self, unit)
-		local auras = {}
-		
-		-- A table of spellIDs to create icons for
-		-- To find spellIDs, look up a spell on www.wowhead.com and look at the URL
-		-- http://www.wowhead.com/?spell=SPELL_ID
-		local spellIDs = { ... }
-		
-		auras.presentAlpha = 1
-		auras.missingAlpha = .7
-		auras.PostCreateIcon = myCustomIconSkinnerFunction
-		-- Set any other AuraWatch settings
-		auras.icons = {}
-		for i, sid in pairs(spellIDs) do
-			local icon = CreateFrame("Frame", nil, auras)
-			icon.spellID = sid
-			-- set the dimensions and positions
-			icon:SetWidth(24)
-			icon:SetHeight(24)
-			icon:SetPoint("BOTTOM", self, "BOTTOM", 0, 28 * i)
-			auras.icons[sid] = icon
-			-- Set any other AuraWatch icon settings
-		end
-		self.AuraWatch = auras
-	end
------------------------------------------------------------------------------------------------------------]]
 local UnitBuff, UnitDebuff, UnitGUID = UnitBuff, UnitDebuff, UnitGUID
 local GUIDs = {}
 

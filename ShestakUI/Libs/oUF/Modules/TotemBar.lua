@@ -1,26 +1,9 @@
---[[
-	Documentation:
-	
-		Element handled:
-			.TotemBar (must be a table with statusbar inside)
-		
-		.TotemBar only:
-			.delay : The interval for updates (Default: 0.1)
-			.colors : The colors for the statusbar, depending on the totem
-			.Name : The totem name
-			.Destroy (boolean): Enables/Disable the totem destruction on right click
-			
-			NOT YET IMPLEMENTED
-			.Icon (boolean): If true an icon will be added to the left or right of the bar
-			.IconSize : If the Icon is enabled then changed the IconSize (default: 8)
-			.IconJustify : any anchor like "TOPLEFT", "BOTTOMRIGHT", "TOP", etc
-			
-		.TotemBar.bg only:
-			.multiplier : Sets the multiplier for the text or the background (can be two differents multipliers)
-
---]]
 local T, C, L = unpack(select(2, ...))
 if C.unitframe.plugins_totem_bar ~= true and T.class ~= "SHAMAN" then return end
+
+----------------------------------------------------------------------------------------
+--	Based on oUF_TotemBar(by Soeters)
+----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF or oUF
 

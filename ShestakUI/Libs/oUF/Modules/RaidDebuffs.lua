@@ -1,6 +1,9 @@
--- yleaf (yaroot@gmail.com)
 local T, C, L = unpack(select(2, ...))
 if C.unitframe.enable ~= true or C.raidframe.plugins_aura_watch ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Based on oUF_RaidDebuffs(by Yleaf)
+----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF or oUF
 

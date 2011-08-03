@@ -1,6 +1,9 @@
--- Adds fading to oUF(by Slakah)
 local T, C, L = unpack(select(2, ...))
 if C.unitframe.enable ~= true or C.unitframe.plugins_fader ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Based on oUF_Fader(by Slakah)
+----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF or oUF
 
