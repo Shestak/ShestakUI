@@ -236,22 +236,9 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 		hooksecurefunc(DBM.BossHealth, "Show", SkinBossTitle)
 		hooksecurefunc(DBM.BossHealth, "AddBoss", SkinBoss)
 
-		--[[DBM.RangeCheck:Show()
-		DBM.RangeCheck:Hide()
-
-		DBMRangeCheck:HookScript("OnShow", function(self)
-			self:SetTemplate("Transparent")
-		end)
-		
-		DBM.InfoFrame:Show()
-		DBM.InfoFrame:Hide()
-
-		DBMInfoFrame:HookScript("OnShow", function(self)
-			self:SetTemplate("Transparent")
-		end)]]
-		
 		hooksecurefunc(DBM.RangeCheck, "Show", function()
 			DBMRangeCheck:SetTemplate("Transparent")
+			DBMRangeCheckRadar:SetTemplate("Transparent")
 		end)
 
 		hooksecurefunc(DBM.InfoFrame, "Show", function()
