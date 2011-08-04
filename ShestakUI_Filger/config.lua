@@ -90,8 +90,6 @@ Filger_Spells = {
 			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Darkmoon Card: Earthquake (Health, Use)
 			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Mirror of Broken Images (Resistance, Use)
-			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Symbiotic Worm (Mastery, Proc)
 			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Vial of Stolen Memories (Dodge, Use)
@@ -906,8 +904,6 @@ Filger_Spells = {
 			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Darkmoon Card: Earthquake (Health, Use)
 			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Mirror of Broken Images (Resistance, Use)
-			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Symbiotic Worm (Mastery, Proc)
 			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Vial of Stolen Memories (Dodge, Use)
@@ -1435,8 +1431,6 @@ Filger_Spells = {
 			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Darkmoon Card: Earthquake (Health, Use)
 			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Mirror of Broken Images (Resistance, Use)
-			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Symbiotic Worm (Mastery, Proc)
 			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Vial of Stolen Memories (Dodge, Use)
@@ -2432,8 +2426,6 @@ Filger_Spells = {
 			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Darkmoon Card: Earthquake (Health, Use)
 			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Mirror of Broken Images (Resistance, Use)
-			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Symbiotic Worm (Mastery, Proc)
 			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Vial of Stolen Memories (Dodge, Use)
