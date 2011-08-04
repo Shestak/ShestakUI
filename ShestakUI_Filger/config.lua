@@ -78,74 +78,106 @@ Filger_Spells = {
 			{ spellID = 69369, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Pulverize
 			{ spellID = 80313, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
+
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health) (Use)
+			-- Battlemaster Trinket (Health, Use)
 			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Tank
-			-- Bedrock Talisman (Dodge) (PROC)
-			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Earthquake (Health) (Use)
-			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Mirror of Broken Images (Resistance) (Use)
+			-- Mirror of Broken Images (Resistance, Use)
 			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Symbiotic Worm (Mastery) (Proc)
+			-- Tank
+			-- Bedrock Talisman (Dodge, Proc)
+			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Earthquake (Health, Use)
+			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance, Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Symbiotic Worm (Mastery, Proc)
 			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Vial of Stolen Memories (Dodge) (Use)
+			-- Vial of Stolen Memories (Dodge, Use)
 			{ spellID = 92213, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moonwell Phial (Dodge, Use)
+			{ spellID = 101156, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Spidersilk Spindle (Absorb, Proc)
+			{ spellID = 96945, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stay of Execution (Absorb, Use)
+			{ spellID = 96988, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stay of Execution (Drawback)
+			{ spellID = 96993, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
 			-- Physical Agility DPS
-			-- Essence of the Cyclone (Crit) (Proc)
+			-- Essence of the Cyclone (Crit, Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fluid Death (Agility) (Proc)
+			-- Fluid Death (Agility, Proc)
 			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Prestor's Talisman of Machination (Haste) (Proc)
+			-- Prestor's Talisman of Machination (Haste, Proc)
 			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unsolvable Riddle (Agility) (Use)
+			-- Unsolvable Riddle (Agility, Use)
 			{ spellID = 92123, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unheeded Warning (Weapon Damage) (Proc)
+			-- Unheeded Warning (Weapon Damage, Proc)
 			{ spellID = 92108, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Conquest (Agility) (Use)
+			-- Gladiator's Badge of Conquest (Agility, Use)
 			{ spellID = 92226, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Conquest (Agility) (Proc)
+			-- Gladiator's Insignia of Conquest (Agility, Proc)
 			{ spellID = 92220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Ricket's Magnetic Fireball (Crit, Use)
+			{ spellID = 101515, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Ancient Petrified Seed (Agility, Use)
+			{ spellID = 97009, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- The Hungerer (Haste, Proc)
+			{ spellID = 96911, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Matrix Restabilizer (Highest Stat, Proc)
+			{ spellID = 96979 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
-			-- Soul Casket (SP) (Use)
+			-- Soul Casket (Spell Power, Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste) (Use)
+			-- Shard of Woe (Haste, Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Dominance (SP) (Use)
+			-- Gladiator's Badge of Dominance (Spell Power, Use)
 			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			-- Gladiator's Insignia of Dominance (Spell Power, Proc)
 			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moonwell Chalice (Mastery, Use)
+			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rune of Zeth (Intellect, Use)
+			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
-			-- Bell of Enraging Resonance (SP) (Proc)
+			-- Bell of Enraging Resonance (Spell Power, Proc)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect) (Proc)
+			-- Darkmoon Card: Volcano (Intellect, Proc)
 			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (SP) (Proc)
+			-- Heart of Ignacious (Spell Power, Proc)
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste) (Use)
+			-- Heart of Ignacious (Haste, Use)
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (SP) (Proc)
+			-- Stump of Time (Spell Power, Proc)
 			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Theralion's Mirror (Mastery) (Proc)
+			-- Theralion's Mirror (Mastery, Proc)
 			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Necromantic Focus (Mastery, Proc)
+			{ spellID = 96962, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
+			{ spellID = 96890, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster Heal
-			-- Core of Ripeness (Spirit) (Use)
+			-- Core of Ripeness (Spirit, Use)
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit) (Proc)
+			-- Darkmoon Card: Tsunami (Spirit, Proc)
 			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fall of Mortality (Spirit) (Proc)
+			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit) (Proc)
+			-- Jar of Ancient Remedies (Spirit, Proc)
 			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Debuff)
-			--{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
-			-- Mandala of Stirring Patterns (Intellect) (Proc)
+			{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Mandala of Stirring Patterns (Intellect, Proc)
 			{ spellID = 91192, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fiery Quintessence (Intellect, Use)
+			{ spellID = 97008, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jaws of Defeat (Manacost, Use)
+			{ spellID = 96908, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jaws of Defeat (Manacost, Proc)
+			{ spellID = 96907, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
-			-- Enchants (Proc)
+			-- Enchants
 			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -218,7 +250,7 @@ Filger_Spells = {
 			Mode = "BAR",
 			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
-			
+
 			-- Lifebloom
 			{ spellID = 33763, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Rejuvenation
@@ -236,7 +268,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
-			
+
 			-- Entangling Roots
 			{ spellID = 339, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
 			-- Cyclone
@@ -250,7 +282,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
-			
+
 			-- Self
 			-- Wild Growth
 			{ spellID = 48438, size = 30, filter = "CD" },
@@ -294,7 +326,7 @@ Filger_Spells = {
 			{ spellID = 80965, size = 30, filter = "CD" },
 			-- Tiger's Fury
 			{ spellID = 5217, size = 30, filter = "CD" },
-			
+
 			-- Racials
 			-- Shadowmeld (Night Elf)
 			{ spellID = 58984, size = 30, filter = "CD" },
@@ -324,7 +356,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
-			
+
 			-- Spirit Mend
 			{ spellID = 90361, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Deterrence
@@ -336,7 +368,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
-			
+
 			-- Buffs
 			-- Ready, Set, Aim...
 			{ spellID = 82925, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -358,28 +390,38 @@ Filger_Spells = {
 			{ spellID = 53257, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Focus Fire
 			{ spellID = 82692, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
+
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health) (Use)
+			-- Battlemaster Trinket (Health, Use)
 			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance, Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Physical Agility DPS
-			-- Essence of the Cyclone (Crit) (Proc)
+			-- Essence of the Cyclone (Crit, Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fluid Death (Agility) (Proc)
+			-- Fluid Death (Agility, Proc)
 			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Prestor's Talisman of Machination (Haste) (Proc)
+			-- Prestor's Talisman of Machination (Haste, Proc)
 			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unsolvable Riddle (Agility) (Use)
+			-- Unsolvable Riddle (Agility, Use)
 			{ spellID = 92123, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unheeded Warning (Weapon Damage) (Proc)
+			-- Unheeded Warning (Weapon Damage, Proc)
 			{ spellID = 92108, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Conquest (Agility) (Use)
+			-- Gladiator's Badge of Conquest (Agility, Use)
 			{ spellID = 92226, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Conquest (Agility) (Proc)
+			-- Gladiator's Insignia of Conquest (Agility, Proc)
 			{ spellID = 92220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Ricket's Magnetic Fireball (Crit, Use)
+			{ spellID = 101515, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Ancient Petrified Seed (Agility, Use)
+			{ spellID = 97009, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- The Hungerer (Haste, Proc)
+			{ spellID = 96911, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Matrix Restabilizer (Highest Stat, Proc)
+			{ spellID = 96979 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
-			-- Enchants (Proc)
+			-- Enchants
 			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -389,6 +431,8 @@ Filger_Spells = {
 			-- Physical Ranged
 			-- X-Ray Targeting (RAP)
 			{ spellID = 95712, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Flintlocke's Woodchucker (Agility)
+			{ spellID = 99621, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -396,7 +440,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
-			
+
 			-- Hunter's Mark
 			{ spellID = 1130, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Marked for Death
@@ -417,7 +461,7 @@ Filger_Spells = {
 			Mode = "BAR",
 			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
-			
+
 			-- Hunter's Mark
 			{ spellID = 1130, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Marked for Death
@@ -437,7 +481,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
-			
+
 			-- Wyvern Sting
 			{ spellID = 19386, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
 			-- Silencing Shot
@@ -449,7 +493,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
-			
+
 			-- Self
 			-- Silencing Shot
 			{ spellID = 34490, size = 30, filter = "CD" },
@@ -501,7 +545,7 @@ Filger_Spells = {
 			{ spellID = 54706, size = 30, filter = "CD" },
 			-- Web Wrap (exotic)
 			{ spellID = 4167, size = 30, filter = "CD" },
-			
+
 			-- Racials
 			-- Every Man for Himself (Human)
 			{ spellID = 59752, size = 30, filter = "CD" },
@@ -547,7 +591,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
-			
+
 			-- Invisibility
 			{ spellID = 32612, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Icy Veins
@@ -577,7 +621,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
-			
+
 			-- Buffs
 			-- Fingers of Frost
 			{ spellID = 44544, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -595,35 +639,45 @@ Filger_Spells = {
 			{ spellID = 87098, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Incanter's Absorption
 			{ spellID = 44413, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
+
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health) (Use)
+			-- Battlemaster Trinket (Health, Use)
 			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance, Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
-			-- Soul Casket (SP) (Use)
+			-- Soul Casket (Spell Power, Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste) (Use)
+			-- Shard of Woe (Haste, Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Dominance (SP) (Use)
+			-- Gladiator's Badge of Dominance (Spell Power, Use)
 			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			-- Gladiator's Insignia of Dominance (Spell Power, Proc)
 			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moonwell Chalice (Mastery, Use)
+			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rune of Zeth (Intellect, Use)
+			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
-			-- Bell of Enraging Resonance (SP) (Proc)
+			-- Bell of Enraging Resonance (Spell Power, Proc)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect) (Proc)
+			-- Darkmoon Card: Volcano (Intellect, Proc)
 			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (SP) (Proc)
+			-- Heart of Ignacious (Spell Power, Proc)
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste) (Use)
+			-- Heart of Ignacious (Haste, Use)
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (SP) (Proc)
+			-- Stump of Time (Spell Power, Proc)
 			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Theralion's Mirror (Mastery) (Proc)
+			-- Theralion's Mirror (Mastery, Proc)
 			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Necromantic Focus (Mastery, Proc)
+			{ spellID = 96962, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
+			{ spellID = 96890, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
-			-- Enchants (Proc)
+			-- Enchants
 			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -639,7 +693,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
-			
+
 			-- Arcane Blast
 			{ spellID = 36032, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
 			-- Slow
@@ -735,7 +789,7 @@ Filger_Spells = {
 			{ spellID = 1463, size = 30, filter = "CD" },
 			-- Invisibility
 			{ spellID = 66, size = 30, filter = "CD" },
-			
+
 			-- Racials
 			-- Every Man for Himself (Human)
 			{ spellID = 59752, size = 30, filter = "CD" },
@@ -843,38 +897,58 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health) (Use)
+			-- Battlemaster Trinket (Health, Use)
 			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Tank
-			-- Bedrock Talisman (Dodge) (Proc)
-			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Earthquake (Health) (Use)
-			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Mirror of Broken Images (Resistance) (Use)
+			-- Mirror of Broken Images (Resistance, Use)
 			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Symbiotic Worm (Mastery) (Proc)
+			-- Tank
+			-- Bedrock Talisman (Dodge, Proc)
+			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Earthquake (Health, Use)
+			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance, Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Symbiotic Worm (Mastery, Proc)
 			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Vial of Stolen Memories (Dodge) (Use)
+			-- Vial of Stolen Memories (Dodge, Use)
 			{ spellID = 92213, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moonwell Phial (Dodge, Use)
+			{ spellID = 101156, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Spidersilk Spindle (Absorb, Proc)
+			{ spellID = 96945, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stay of Execution (Absorb, Use)
+			{ spellID = 96988, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stay of Execution (Drawback)
+			{ spellID = 96993, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
 			-- Physical Strength DPS
-			-- Crushing Weight (Haste) (Proc)
+			-- Crushing Weight (Haste, Proc)
 			{ spellID = 91821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fury of Angerforge (Raw Fury) (Proc)
+			-- Fury of Angerforge (Raw Fury, Proc)
 			{ spellID = 91832, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fury of Angerforge (Strength) (Use)
+			-- Fury of Angerforge (Strength, Use)
 			{ spellID = 91836, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Rage (Strength) (Proc)
+			-- Heart of Rage (Strength, Proc)
 			{ spellID = 91816, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Impatience of Youth (Strength) (Use)
+			-- Impatience of Youth (Strength, Use)
 			{ spellID = 91828, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- License to Slay (Strength) (Proc)
+			-- License to Slay (Strength, Proc)
 			{ spellID = 91810, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Victory (Strength) (Use)
+			-- Gladiator's Badge of Victory (Strength, Use)
 			{ spellID = 92224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Victory (Strength) (Proc)
+			-- Gladiator's Insignia of Victory (Strength, Proc)
 			{ spellID = 92216, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Dwyer's Caber (Crit, Use)
+			{ spellID = 100322, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Apparatus of Khaz'goroth (Titanic Power, Proc)
+			{ spellID = 96923, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Apparatus of Khaz'goroth (Highest Stat, Use)
+			{ spellID = 96929, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Essence of the Eternal Flame (Strength, Use)
+			{ spellID = 97010, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Vessel of Acceleration (Crit, Proc)
+			{ spellID = 96980, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
-			-- Enchants (Proc)
+			-- Enchants
 			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -928,7 +1002,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
-			
+
 			-- Self
 			-- Intervene
 			{ spellID = 3411, size = 30, filter = "CD" },
@@ -972,7 +1046,7 @@ Filger_Spells = {
 			{ spellID = 55694, size = 30, filter = "CD" },
 			-- Rallying Cry
 			{ spellID = 97462, size = 30, filter = "CD" },
-			
+
 			-- Racials
 			-- Every Man for Himself (Human)
 			{ spellID = 59752, size = 30, filter = "CD" },
@@ -1064,63 +1138,87 @@ Filger_Spells = {
 			{ spellID = 8178, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Stoneclaw Totem
 			{ spellID = 55277, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
+
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health) (Use)
+			-- Battlemaster Trinket (Health, Use)
 			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance, Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Physical Agility DPS
-			-- Essence of the Cyclone (Crit) (Proc)
+			-- Essence of the Cyclone (Crit, Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fluid Death (Agility) (Proc)
+			-- Fluid Death (Agility, Proc)
 			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Prestor's Talisman of Machination (Haste) (Proc)
+			-- Prestor's Talisman of Machination (Haste, Proc)
 			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unsolvable Riddle (Agility) (Use)
+			-- Unsolvable Riddle (Agility, Use)
 			{ spellID = 92123, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unheeded Warning (Weapon Damage) (Proc)
+			-- Unheeded Warning (Weapon Damage, Proc)
 			{ spellID = 92108, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Conquest (Agility) (Use)
+			-- Gladiator's Badge of Conquest (Agility, Use)
 			{ spellID = 92226, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Conquest (Agility) (Proc)
+			-- Gladiator's Insignia of Conquest (Agility, Proc)
 			{ spellID = 92220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Ricket's Magnetic Fireball (Crit, Use)
+			{ spellID = 101515, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Ancient Petrified Seed (Agility, Use)
+			{ spellID = 97009, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- The Hungerer (Haste, Proc)
+			{ spellID = 96911, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Matrix Restabilizer (Highest Stat, Proc)
+			{ spellID = 96979 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
-			-- Soul Casket (SP) (Use)
+			-- Soul Casket (Spell Power, Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste) (Use)
+			-- Shard of Woe (Haste, Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Dominance (SP) (Use)
+			-- Gladiator's Badge of Dominance (Spell Power, Use)
 			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			-- Gladiator's Insignia of Dominance (Spell Power, Proc)
 			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moonwell Chalice (Mastery, Use)
+			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rune of Zeth (Intellect, Use)
+			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
-			-- Bell of Enraging Resonance (SP) (Proc)
+			-- Bell of Enraging Resonance (Spell Power, Proc)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect) (Proc)
+			-- Darkmoon Card: Volcano (Intellect, Proc)
 			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (SP) (Proc)
+			-- Heart of Ignacious (Spell Power, Proc)
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste) (Use)
+			-- Heart of Ignacious (Haste, Use)
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (SP) (Proc)
+			-- Stump of Time (Spell Power, Proc)
 			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Theralion's Mirror (Mastery) (Proc)
+			-- Theralion's Mirror (Mastery, Proc)
 			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Necromantic Focus (Mastery, Proc)
+			{ spellID = 96962, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
+			{ spellID = 96890, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster Heal
-			-- Core of Ripeness (Spirit) (Use)
+			-- Core of Ripeness (Spirit, Use)
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit) (Proc)
+			-- Darkmoon Card: Tsunami (Spirit, Proc)
 			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fall of Mortality (Spirit) (Proc)
+			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit) (Proc)
+			-- Jar of Ancient Remedies (Spirit, Proc)
 			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Debuff)
-			--{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
-			-- Mandala of Stirring Patterns (Intellect) (Proc)
+			{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Mandala of Stirring Patterns (Intellect, Proc)
 			{ spellID = 91192, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fiery Quintessence (Intellect, Use)
+			{ spellID = 97008, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jaws of Defeat (Manacost, Use)
+			{ spellID = 96908, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jaws of Defeat (Manacost, Proc)
+			{ spellID = 96907, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
-			-- Enchants (Proc)
+			-- Enchants
 			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1170,7 +1268,7 @@ Filger_Spells = {
 			Mode = "BAR",
 			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
-			
+
 			-- Earth Shield
 			{ spellID = 974, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Riptide
@@ -1186,7 +1284,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
-			
+
 			-- Hex
 			{ spellID = 51514, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
 			-- Bind elemental 
@@ -1198,7 +1296,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
-			
+
 			-- Self
 			-- Earth Shock
 			{ spellID = 8042, size = 30, filter = "CD" },
@@ -1232,7 +1330,7 @@ Filger_Spells = {
 			{ spellID = 73920, size = 30, filter = "CD" },
 			-- Unleash weapon
 			{ spellID = 73680, size = 30, filter = "CD" },
-			
+
 			-- Racials
 			-- Stoneform (Dwarf)
 			{ spellID = 20594, size = 30, filter = "CD" },
@@ -1325,63 +1423,93 @@ Filger_Spells = {
 			{ spellID = 96263, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Guardian of Ancient Kings Ret PROC
 			{ spellID = 86700, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
+
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health) (Use)
+			-- Battlemaster Trinket (Health, Use)
 			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Tank
-			-- Bedrock Talisman (Dodge) (Proc)
-			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Earthquake (Health) (Use)
-			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Mirror of Broken Images (Resistance) (Use)
+			-- Mirror of Broken Images (Resistance, Use)
 			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Symbiotic Worm (Mastery) (Proc)
+			-- Tank
+			-- Bedrock Talisman (Dodge, Proc)
+			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Earthquake (Health, Use)
+			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance, Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Symbiotic Worm (Mastery, Proc)
 			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Vial of Stolen Memories (Dodge) (Use)
+			-- Vial of Stolen Memories (Dodge, Use)
 			{ spellID = 92213, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moonwell Phial (Dodge, Use)
+			{ spellID = 101156, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Spidersilk Spindle (Absorb, Proc)
+			{ spellID = 96945, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stay of Execution (Absorb, Use)
+			{ spellID = 96988, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stay of Execution (Drawback)
+			{ spellID = 96993, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
 			-- Physical Strength DPS
-			-- Crushing Weight (Haste) (Proc)
+			-- Crushing Weight (Haste, Proc)
 			{ spellID = 91821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fury of Angerforge (Raw Fury) (Proc)
+			-- Fury of Angerforge (Raw Fury, Proc)
 			{ spellID = 91832, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fury of Angerforge (Strength) (Use)
+			-- Fury of Angerforge (Strength, Use)
 			{ spellID = 91836, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Rage (Strength) (Proc)
+			-- Heart of Rage (Strength, Proc)
 			{ spellID = 91816, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Impatience of Youth (Strength) (Use)
+			-- Impatience of Youth (Strength, Use)
 			{ spellID = 91828, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- License to Slay (Strength) (Proc)
+			-- License to Slay (Strength, Proc)
 			{ spellID = 91810, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Victory (Strength) (Use)
+			-- Gladiator's Badge of Victory (Strength, Use)
 			{ spellID = 92224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Victory (Strength) (Proc)
+			-- Gladiator's Insignia of Victory (Strength, Proc)
 			{ spellID = 92216, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Dwyer's Caber (Crit, Use)
+			{ spellID = 100322, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Apparatus of Khaz'goroth (Titanic Power, Proc)
+			{ spellID = 96923, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Apparatus of Khaz'goroth (Highest Stat, Use)
+			{ spellID = 96929, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Essence of the Eternal Flame (Strength, Use)
+			{ spellID = 97010, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Vessel of Acceleration (Crit, Proc)
+			{ spellID = 96980, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
-			-- Soul Casket (SP) (Use)
+			-- Soul Casket (Spell Power, Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste) (Use)
+			-- Shard of Woe (Haste, Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Dominance (SP) (Use)
+			-- Gladiator's Badge of Dominance (Spell Power, Use)
 			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			-- Gladiator's Insignia of Dominance (Spell Power, Proc)
 			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moonwell Chalice (Mastery, Use)
+			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rune of Zeth (Intellect, Use)
+			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster Heal
-			-- Core of Ripeness (Spirit) (Use)
+			-- Core of Ripeness (Spirit, Use)
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit) (Proc)
+			-- Darkmoon Card: Tsunami (Spirit, Proc)
 			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fall of Mortality (Spirit) (Proc)
+			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit) (Proc)
+			-- Jar of Ancient Remedies (Spirit, Proc)
 			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Debuff)
-			--{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
-			-- Mandala of Stirring Patterns (Intellect) (Proc)
+			{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Mandala of Stirring Patterns (Intellect, Proc)
 			{ spellID = 91192, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fiery Quintessence (Intellect, Use)
+			{ spellID = 97008, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jaws of Defeat (Manacost, Use)
+			{ spellID = 96908, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jaws of Defeat (Manacost, Proc)
+			{ spellID = 96907, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
-			-- Enchants (Proc)
+			-- Enchants
 			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1427,7 +1555,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
-			
+
 			-- Self
 			-- Rebuke
 			{ spellID = 96231, size = 30, filter = "CD" },
@@ -1471,7 +1599,7 @@ Filger_Spells = {
 			{ spellID = 1022, size = 30, filter = "CD" },
 			-- Guardian of Ancient Kings
 			{ spellID = 86150, size = 30, filter = "CD" },
-			
+
 			-- Racials
 			-- Every Man for Himself (Human)
 			{ spellID = 59752, size = 30, filter = "CD" },
@@ -1561,48 +1689,64 @@ Filger_Spells = {
 			{ spellID = 81208, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Chakra: Chastise
 			{ spellID = 81209, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
+
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health) (Use)
+			-- Battlemaster Trinket (Health, Use)
 			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance, Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
-			-- Soul Casket (SP) (Use)
+			-- Soul Casket (Spell Power, Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste) (Use)
+			-- Shard of Woe (Haste, Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Dominance (SP) (Use)
+			-- Gladiator's Badge of Dominance (Spell Power, Use)
 			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			-- Gladiator's Insignia of Dominance (Spell Power, Proc)
 			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moonwell Chalice (Mastery, Use)
+			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rune of Zeth (Intellect, Use)
+			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
-			-- Bell of Enraging Resonance (SP) (Proc)
+			-- Bell of Enraging Resonance (Spell Power, Proc)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect) (Proc)
+			-- Darkmoon Card: Volcano (Intellect, Proc)
 			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (SP) (Proc)
+			-- Heart of Ignacious (Spell Power, Proc)
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste) (Use)
+			-- Heart of Ignacious (Haste, Use)
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (SP) (Proc)
+			-- Stump of Time (Spell Power, Proc)
 			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Theralion's Mirror (Mastery) (Proc)
+			-- Theralion's Mirror (Mastery, Proc)
 			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Necromantic Focus (Mastery, Proc)
+			{ spellID = 96962, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
+			{ spellID = 96890, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster Heal
-			-- Core of Ripeness (Spirit) (Use)
+			-- Core of Ripeness (Spirit, Use)
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit) (Proc)
+			-- Darkmoon Card: Tsunami (Spirit, Proc)
 			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fall of Mortality (Spirit) (Proc)
+			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit) (Proc)
+			-- Jar of Ancient Remedies (Spirit, Proc)
 			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Debuff)
-			--{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
-			-- Mandala of Stirring Patterns (Intellect) (Proc)
+			{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Mandala of Stirring Patterns (Intellect, Proc)
 			{ spellID = 91192, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fiery Quintessence (Intellect, Use)
+			{ spellID = 97008, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jaws of Defeat (Manacost, Use)
+			{ spellID = 96908, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Jaws of Defeat (Manacost, Proc)
+			{ spellID = 96907, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
-			-- Enchants (Proc)
+			-- Enchants
 			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1616,9 +1760,6 @@ Filger_Spells = {
 			{ spellID = 75173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Heartsong (Spirit)
 			{ spellID = 74224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
-			-- Indulgence of the Penitent (T11)
-			{ spellID = 89913, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1637,7 +1778,7 @@ Filger_Spells = {
 			Mode = "BAR",
 			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
-			
+
 			-- Renew
 			{ spellID = 139, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Prayer of Mending
@@ -1661,7 +1802,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
-			
+
 			-- Shackle undead
 			{ spellID = 9484, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
 			-- Psychic Scream
@@ -1673,7 +1814,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
-			
+
 			-- Self
 			-- Penance
 			{ spellID = 47540, size = 30, filter = "CD" },
@@ -1721,7 +1862,7 @@ Filger_Spells = {
 			{ spellID = 19236, size = 30, filter = "CD" },
 			-- Leap of Faith
 			{ spellID = 73325, size = 30, filter = "CD" },
-			
+
 			-- Racials
 			-- Every Man for Himself (Human)
 			{ spellID = 59752, size = 30, filter = "CD" },
@@ -1820,35 +1961,45 @@ Filger_Spells = {
 			{ spellID = 88447, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shadow Trance
 			{ spellID = 17941, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
+
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health) (Use)
+			-- Battlemaster Trinket (Health, Use)
 			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance, Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
-			-- Soul Casket (SP) (Use)
+			-- Soul Casket (Spell Power, Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Shard of Woe (Haste) (Use)
+			-- Shard of Woe (Haste, Use)
 			{ spellID = 91173, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Dominance (SP) (Use)
+			-- Gladiator's Badge of Dominance (Spell Power, Use)
 			{ spellID = 92225, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Dominance (SP) (Proc)
+			-- Gladiator's Insignia of Dominance (Spell Power, Proc)
 			{ spellID = 92218, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moonwell Chalice (Mastery, Use)
+			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rune of Zeth (Intellect, Use)
+			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
-			-- Bell of Enraging Resonance (SP) (Proc)
+			-- Bell of Enraging Resonance (Spell Power, Proc)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Volcano (Intellect) (Proc)
+			-- Darkmoon Card: Volcano (Intellect, Proc)
 			{ spellID = 89091, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (SP) (Proc)
+			-- Heart of Ignacious (Spell Power, Proc)
 			{ spellID = 91027, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Ignacious (Haste) (Use)
+			-- Heart of Ignacious (Haste, Use)
 			{ spellID = 91041, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stump of Time (SP) (Proc)
+			-- Stump of Time (Spell Power, Proc)
 			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Theralion's Mirror (Mastery) (Proc)
+			-- Theralion's Mirror (Mastery, Proc)
 			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Necromantic Focus (Mastery, Proc)
+			{ spellID = 96962, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
+			{ spellID = 96890, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
-			-- Enchants (Proc)
+			-- Enchants
 			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1882,7 +2033,7 @@ Filger_Spells = {
 			{ spellID = 85767, size = 37, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Shadowsnare
 			{ spellID = 63311, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			
+
 			-- Other
 			-- Curse of the Elements (Warlock)
 			{ spellID = 1490, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
@@ -1902,7 +2053,7 @@ Filger_Spells = {
 			Mode = "BAR",
 			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
-			
+
 			-- Corruption
 			{ spellID = 172, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Immolate
@@ -1924,7 +2075,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
-			
+
 			-- Fear
 			{ spellID = 5782, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
 			-- Banish
@@ -1936,7 +2087,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
-			
+
 			-- Self
 			-- Conflagrate
 			{ spellID = 17962, size = 30, filter = "CD" },
@@ -1986,7 +2137,7 @@ Filger_Spells = {
 			{ spellID = 71521, size = 30, filter = "CD" },
 			-- Immolation Aura
 			{ spellID = 50589, size = 30, filter = "CD" },
-			
+
 			-- Racials
 			-- Every Man for Himself (Human)
 			{ spellID = 59752, size = 30, filter = "CD" },
@@ -2028,7 +2179,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
-			
+
 			-- Self
 			-- Sprint
 			{ spellID = 2983, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -2069,28 +2220,38 @@ Filger_Spells = {
 			{ spellID = 74001, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Combat Insight
 			{ spellID = 74002, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
+
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health) (Use)
+			-- Battlemaster Trinket (Health, Use)
 			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance, Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Physical Agility DPS
-			-- Essence of the Cyclone (Crit) (Proc)
+			-- Essence of the Cyclone (Crit, Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fluid Death (Agility) (Proc)
+			-- Fluid Death (Agility, Proc)
 			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Prestor's Talisman of Machination (Haste) (Proc)
+			-- Prestor's Talisman of Machination (Haste, Proc)
 			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unsolvable Riddle (Agility) (Use)
+			-- Unsolvable Riddle (Agility, Use)
 			{ spellID = 92123, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unheeded Warning (Weapon Damage) (Proc)
+			-- Unheeded Warning (Weapon Damage, Proc)
 			{ spellID = 92108, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Conquest (Agility) (Use)
+			-- Gladiator's Badge of Conquest (Agility, Use)
 			{ spellID = 92226, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Conquest (Agility) (Proc)
+			-- Gladiator's Insignia of Conquest (Agility, Proc)
 			{ spellID = 92220, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Ricket's Magnetic Fireball (Crit, Use)
+			{ spellID = 101515, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Ancient Petrified Seed (Agility, Use)
+			{ spellID = 97009, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- The Hungerer (Haste, Proc)
+			{ spellID = 96911, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Matrix Restabilizer (Highest Stat, Proc)
+			{ spellID = 96979 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
-			-- Enchants (Proc)
+			-- Enchants
 			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -2107,7 +2268,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
-			
+
 			-- Rupture
 			{ spellID = 1943, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Garrote
@@ -2145,7 +2306,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
-			
+
 			-- Blind
 			{ spellID = 2094, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
 			-- Sap
@@ -2157,7 +2318,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
-			
+
 			-- Self
 			-- Kick
 			{ spellID = 1766, size = 30, filter = "CD" },
@@ -2187,7 +2348,7 @@ Filger_Spells = {
 			{ spellID = 14183, size = 30, filter = "CD"},
 			-- Sprint
 			{ spellID = 2983, size = 30, filter = "CD"},
-			
+
 			-- Racials
 			-- Every Man for Himself (Human)
 			{ spellID = 59752, size = 30, filter = "CD" },
@@ -2231,7 +2392,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
-			
+
 			-- 
 			{ spellID = , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},]]
@@ -2262,38 +2423,58 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health) (Use)
+			-- Battlemaster Trinket (Health, Use)
 			{ spellID = 92223, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Tank
-			-- Bedrock Talisman (Dodge) (Proc)
-			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Earthquake (Health) (Use)
-			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Mirror of Broken Images (Resistance) (Use)
+			-- Mirror of Broken Images (Resistance, Use)
 			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Symbiotic Worm (Mastery) (Proc)
+			-- Tank
+			-- Bedrock Talisman (Dodge, Proc)
+			{ spellID = 92233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Darkmoon Card: Earthquake (Health, Use)
+			{ spellID = 89181, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Mirror of Broken Images (Resistance, Use)
+			{ spellID = 92222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Symbiotic Worm (Mastery, Proc)
 			{ spellID = 92235, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Vial of Stolen Memories (Dodge) (Use)
+			-- Vial of Stolen Memories (Dodge, Use)
 			{ spellID = 92213, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moonwell Phial (Dodge, Use)
+			{ spellID = 101156, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Spidersilk Spindle (Absorb, Proc)
+			{ spellID = 96945, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stay of Execution (Absorb, Use)
+			{ spellID = 96988, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Stay of Execution (Drawback)
+			{ spellID = 96993, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
 			-- Physical Strength DPS
-			-- Crushing Weight (Haste) (Proc)
+			-- Crushing Weight (Haste, Proc)
 			{ spellID = 91821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fury of Angerforge (Raw Fury) (Proc)
+			-- Fury of Angerforge (Raw Fury, Proc)
 			{ spellID = 91832, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fury of Angerforge (Strength) (Use)
+			-- Fury of Angerforge (Strength, Use)
 			{ spellID = 91836, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Heart of Rage (Strength) (Proc)
+			-- Heart of Rage (Strength, Proc)
 			{ spellID = 91816, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Impatience of Youth (Strength) (Use)
+			-- Impatience of Youth (Strength, Use)
 			{ spellID = 91828, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- License to Slay (Strength) (Proc)
+			-- License to Slay (Strength, Proc)
 			{ spellID = 91810, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Badge of Victory (Strength) (Use)
+			-- Gladiator's Badge of Victory (Strength, Use)
 			{ spellID = 92224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Gladiator's Insignia of Victory (Strength) (Proc)
+			-- Gladiator's Insignia of Victory (Strength, Proc)
 			{ spellID = 92216, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Dwyer's Caber (Crit, Use)
+			{ spellID = 100322, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Apparatus of Khaz'goroth (Titanic Power, Proc)
+			{ spellID = 96923, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Apparatus of Khaz'goroth (Highest Stat, Use)
+			{ spellID = 96929, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Essence of the Eternal Flame (Strength, Use)
+			{ spellID = 97010, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Vessel of Acceleration (Crit, Proc)
+			{ spellID = 96980, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
-			-- Enchants (Proc)
+			-- Enchants
 			-- General
 			-- Hurricane (Haste)
 			{ spellID = 74221, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -2314,7 +2495,7 @@ Filger_Spells = {
 			Mode = "BAR",
 			IconSide = "LEFT",
 			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
-			
+
 			-- Blood Plague
 			{ spellID = 59879, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Frost Fever
@@ -2418,7 +2599,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
-			
+
 			-- 
 			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 		},
@@ -2430,7 +2611,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
-			
+
 			-- 
 			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 		},
@@ -2442,7 +2623,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
-			
+
 			-- 
 			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 		},
@@ -2454,7 +2635,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 213 },
-			
+
 			-- Potions
 			-- Tol'vir Agility
 			{ spellID = 79633, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -2476,7 +2657,7 @@ Filger_Spells = {
 			{ spellID = 80353, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Ancient Hysteria
 			{ spellID = 90355, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			
+
 			-- Enchants
 			-- Hyperspeed Accelerators
 			{ spellID = 54758, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -2488,7 +2669,7 @@ Filger_Spells = {
 			{ spellID = 55001, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Grounded Plasma Shield
 			{ spellID = 82627, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			
+
 			-- Racial
 			-- Berserking (Troll)
 			{ spellID = 26297, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -2502,7 +2683,7 @@ Filger_Spells = {
 			{ spellID = 58984, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Gift of the Naaru (Draenei)
 			{ spellID = 28880, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			
+
 			-- Other
 			-- Lifeblood
 			{ spellID = 74497, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -2539,7 +2720,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 253 },
-			
+
 			-- Death Knight
 			-- Gnaw (Pet)
 			{ spellID = 47481, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2559,7 +2740,7 @@ Filger_Spells = {
 			{ spellID = 73975, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Dark simulacrum
 			{ spellID = 77606, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Druid
 			-- Skull Bash (Bear Form)
 			{ spellID = 80964, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2585,7 +2766,7 @@ Filger_Spells = {
 			{ spellID = 45334, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Infected Wounds
 			{ spellID = 58179, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Hunter
 			-- Aspect of the Pack
 			{ spellID = 13159, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
@@ -2670,7 +2851,7 @@ Filger_Spells = {
 			{ spellID = 11113, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Cauterize
 			{ spellID = 87023, size = 60, unitId = "player", caster = "player", filter = "DEBUFF" },
-			
+
 			-- Paladin
 			-- Repentance
 			{ spellID = 20066, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2682,7 +2863,7 @@ Filger_Spells = {
 			{ spellID = 853, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Seal of Justice proc
 			{ spellID = 20170, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Priest
 			-- Psychic Horror
 			{ spellID = 64044, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2700,7 +2881,7 @@ Filger_Spells = {
 			{ spellID = 87194, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Shackle Undead
 			{ spellID = 9484, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Rogue
 			-- Dismantle
 			{ spellID = 51722, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2730,7 +2911,7 @@ Filger_Spells = {
 			{ spellID = 3409, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Mind-numbing Poison
 			{ spellID = 5760, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Shaman
 			-- Hex
 			{ spellID = 51514, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2748,7 +2929,7 @@ Filger_Spells = {
 			{ spellID = 58861, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Earthquake
 			{ spellID = 77505, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Warlock
 			-- Aura of Foreboding
 			{ spellID = 93975, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2778,7 +2959,7 @@ Filger_Spells = {
 			{ spellID = 89766, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Shadowsnare
 			{ spellID = 63311, size = 60, unitId = "target", caster = "player", filter = "DEBUFF" },
-			
+
 			-- Warrior
 			-- Throwdown
 			{ spellID = 85388, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2806,13 +2987,13 @@ Filger_Spells = {
 			{ spellID = 12323, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Colossus Smash
 			{ spellID = 86346, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Racials
 			-- War Stomp
 			{ spellID = 20549, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Arcane Torrent
 			{ spellID = 28730, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Other
 			-- Rocket Fuel Leak
 			{ spellID = 94794, size = 60, unitId = "player", caster = "player", filter = "DEBUFF" },
@@ -2820,11 +3001,11 @@ Filger_Spells = {
 			{ spellID = 82406, size = 60, unitId = "player", caster = "player", filter = "DEBUFF" },
 			-- Plasma Misfire!
 			{ spellID = 94549, size = 60, unitId = "player", caster = "player", filter = "DEBUFF" },
-			
+
 			-- Baradin Hold(PvP)
 			-- Meteor Slash/Meteorschlag (Argaloth)
 			{ spellID = 88942, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Throne of Four Winds
 			-- Wind Chill (Conclave of Wind)
 			{ spellID = 93123, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2834,7 +3015,7 @@ Filger_Spells = {
 			{ spellID = 87873, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Acid Rain (Al'Akir)
 			{ spellID = 93279, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Bastion of Twilight
 			-- Blackout (Valiona & Theralion)
 			{ spellID = 92879, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2878,7 +3059,7 @@ Filger_Spells = {
 			{ spellID = 87231, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Essence of the Red (Sinestra)
 			{ spellID = 87946, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
-			
+
 			-- Blackwing Descent
 			-- Constricting Chains (Magmaw)
 			{ spellID = 91911, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2937,7 +3118,7 @@ Filger_Spells = {
 			{ spellID = 5118, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Deterrence
 			{ spellID = 19263, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			
+
 			-- Druid
 			-- Innervate
 			{ spellID = 29166, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
@@ -2953,7 +3134,7 @@ Filger_Spells = {
 			{ spellID = 22842, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Tree of life
 			{ spellID = 33891, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			
+
 			-- Warrior
 			-- Spell Reflection
 			{ spellID = 23920, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
@@ -2965,7 +3146,7 @@ Filger_Spells = {
 			{ spellID = 12976, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Bladestorm
 			{ spellID = 46924, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			
+
 			-- Paladin
 			-- Aura Mastery
 			{ spellID = 31821, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
@@ -2987,7 +3168,7 @@ Filger_Spells = {
 			{ spellID = 31850, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Guardian of Ancient Kings
 			{ spellID = 86698, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			
+
 			-- Mage
 			-- Ice Block
 			{ spellID = 45438, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
@@ -3013,7 +3194,7 @@ Filger_Spells = {
 			{ spellID = 74002, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Combat Readiness
 			{ spellID = 74001, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			
+
 			-- Death knight
 			-- Anti-Magic Shell
 			{ spellID = 48707, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
@@ -3037,7 +3218,7 @@ Filger_Spells = {
 			{ spellID = 79206, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Mana Tide
 			{ spellID = 16191, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			
+
 			-- Priest
 			-- Dispersion
 			{ spellID = 47585, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
@@ -3049,13 +3230,13 @@ Filger_Spells = {
 			{ spellID = 47788, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Fear Ward
 			{ spellID = 6346, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			
+
 			-- Warlock
 			-- Soul harvest
 			{ spellID = 79268, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Soulstone
 			{ spellID = 20707, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			
+
 			-- All
 			-- Warsong flag
 			{ spellID = 23333, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
@@ -3066,10 +3247,10 @@ Filger_Spells = {
 			{ spellID = 52418, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Seaforium 2
 			{ spellID = 66271, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Drink
 			{ spellID = 80167, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			
+
 			-- Control block
 			-- Immune
 			-- Cyclone
@@ -3078,7 +3259,7 @@ Filger_Spells = {
 			{ spellID = 710, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Mind Control
 			{ spellID = 605, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Silence
 			-- Strangulate (DK)
 			{ spellID = 47476, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
@@ -3104,7 +3285,7 @@ Filger_Spells = {
 			{ spellID = 18498, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Arcane torrent (BE) (Racial)
 			{ spellID = 28730, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
-			
+
 			-- Stun
 			-- Gnaw (Pet)
 			{ spellID = 47481, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
@@ -3158,7 +3339,7 @@ Filger_Spells = {
 			{ spellID = 46968, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- War Stomp (Tauren)
 			{ spellID = 20549, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
-			
+
 			-- CC
 			-- Hungering Cold
 			{ spellID = 49203, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
