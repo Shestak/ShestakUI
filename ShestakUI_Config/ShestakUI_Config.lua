@@ -242,6 +242,7 @@ local function Local(o)
 	if o == "UIConfigactionbar" then o = ACTIONBARS_LABEL end
 	if o == "UIConfigactionbarenable" then o = L_GUI_ACTIONBAR_ENABLE end
 	if o == "UIConfigactionbarhotkey" then o = L_GUI_ACTIONBAR_HOTKEY end
+	if o == "UIConfigactionbarmacro" then o = L_GUI_ACTIONBAR_MACRO end
 	if o == "UIConfigactionbarshow_grid" then o = L_GUI_ACTIONBAR_GRID end
 	if o == "UIConfigactionbarbutton_size" then o = L_GUI_ACTIONBAR_BUTTON_SIZE end
 	if o == "UIConfigactionbarbutton_space" then o = L_GUI_ACTIONBAR_BUTTON_SPACE end

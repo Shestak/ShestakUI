@@ -205,6 +205,7 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "顯示debuffs(需要關閉名稱縮寫)"
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "開啟快捷列"
 L_GUI_ACTIONBAR_HOTKEY = "顯示熱鍵文字"
+L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons" -- Needs review
 L_GUI_ACTIONBAR_GRID = "顯示空的快捷列按鈕"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "按鈕大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "按鈕間隔"

@@ -294,7 +294,8 @@ C["nameplate"] = {
 C["actionbar"] = {
 	-- Main
 	["enable"] = true,							-- Enable actionbars
-	["hotkey"] = true,							-- Show text on you hotkey
+	["hotkey"] = true,							-- Show hotkey on buttons
+	["macro"] = false,							-- Show macro name on buttons
 	["show_grid"] = true,						-- Show empty action bar buttons
 	["button_size"] = 25,						-- Buttons size
 	["button_space"] = 3,						-- Buttons space

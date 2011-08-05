@@ -363,7 +363,6 @@ local UploadSkada = function()
 							["texture"] = "Blizzard",
 						},
 						["barheight"] = 12,
-						["spark"] = false,
 						["enabletitle"] = false,
 						["barwidth"] = 217,
 						["bartexture"] = "Blizzard",

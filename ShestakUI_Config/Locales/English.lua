@@ -203,6 +203,7 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned o
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Enable action bars"
 L_GUI_ACTIONBAR_HOTKEY = "Show hotkey on buttons"
+L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons"
 L_GUI_ACTIONBAR_GRID = "Show empty action bar buttons"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Buttons size"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Buttons space"

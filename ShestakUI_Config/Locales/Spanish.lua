@@ -205,6 +205,7 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned o
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Activar barras de acción"
 L_GUI_ACTIONBAR_HOTKEY = "Mostrar texto los atajos de teclado"
+L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons" -- Needs review
 L_GUI_ACTIONBAR_GRID = "Mostrar botones de la barra de acción vacíos"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Tamaño de los botones"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacio entre botones"

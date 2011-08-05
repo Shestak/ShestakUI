@@ -205,6 +205,7 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Zeige Schwächungszauber (Abgekürzte Namen müs
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
 L_GUI_ACTIONBAR_HOTKEY = "Zeige Hotkey-Text an"
+L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons" -- Needs review
 L_GUI_ACTIONBAR_GRID = "Zeige die leeren Knöpfe der Aktionsleisten an"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Knopfgröße"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Buttonabstand"

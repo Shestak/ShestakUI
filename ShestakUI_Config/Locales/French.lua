@@ -205,6 +205,7 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Affiche les débuffs (Les noms abbrégés doiven
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Activer les barres d'action"
 L_GUI_ACTIONBAR_HOTKEY = "Afficher le texte des macros"
+L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons" -- Needs review
 L_GUI_ACTIONBAR_GRID = "Afficher les boutons vides"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Taille des boutons"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacement des boutons"

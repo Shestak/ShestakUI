@@ -20,26 +20,45 @@ local function style(self)
 	local Border = _G[name.."Border"]
 	local Btname = _G[name.."Name"]
 	local normal = _G[name.."NormalTexture"]
- 
+
 	Flash:SetTexture("")
 	Button:SetNormalTexture("")
- 
+
 	Border:Hide()
 	Border = T.dummy
- 
+
 	Count:ClearAllPoints()
 	Count:Point("BOTTOMRIGHT", 0, 2)
 	Count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 	Count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
- 
-	Btname:SetText("")
-	Btname:Kill()
- 
+
+	if C.actionbar.macro == true then
+		Btname:ClearAllPoints()
+		Btname:Point("BOTTOM", 0, 0)
+		Btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		Btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		--Btname:Width(T.buttonsize - 1)
+	else
+		Btname:Kill()
+	end
+
+	if C.actionbar.hotkey == true then
+		HotKey:ClearAllPoints()
+		HotKey:Point("TOPRIGHT", 0, 0)
+		HotKey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		HotKey:Width(T.buttonsize - 1)
+		HotKey.ClearAllPoints = T.dummy
+		HotKey.SetPoint = T.dummy
+	else
+		HotKey:Kill()
+	end
+
 	if not _G[name.."Panel"] then
 		if self:GetHeight() ~= T.buttonsize and not InCombatLockdown() then
 			self:Size(T.buttonsize, T.buttonsize)
 		end
- 
+
 		local panel = CreateFrame("Frame", name.."Panel", self)
 		panel:CreatePanel("Transparent", T.buttonsize, T.buttonsize, "CENTER", self, "CENTER", 0, 0)
 		if C.actionbar.classcolor_border == true then
@@ -52,20 +71,7 @@ local function style(self)
 		Icon:Point("TOPLEFT", Button, 2, -2)
 		Icon:Point("BOTTOMRIGHT", Button, -2, 2)
 	end
- 
-	HotKey:ClearAllPoints()
-	HotKey:Point("TOPRIGHT", 0, 0)
-	HotKey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-	HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-	HotKey:Width(T.buttonsize - 1)
-	HotKey.ClearAllPoints = T.dummy
-	HotKey.SetPoint = T.dummy
- 
-	if not C.actionbar.hotkey == true then
-		HotKey:SetText("")
-		HotKey:Kill()
-	end
- 
+
 	if normal then
 		normal:ClearAllPoints()
 		normal:Point("TOPLEFT")
@@ -77,15 +83,15 @@ local function stylesmallbutton(normal, button, icon, name, pet)
 	local Flash	= _G[name.."Flash"]
 	button:SetNormalTexture("")
 	button.SetNormalTexture = T.dummy
-	
+
 	Flash:SetTexture(0.8, 0.8, 0.8, 0.5)
 	Flash:Point("TOPLEFT", button, 2, -2)
 	Flash:Point("BOTTOMRIGHT", button, -2, 2)
-	
+
 	if not _G[name.."Panel"] then
 		button:SetWidth(T.buttonsize)
 		button:SetHeight(T.buttonsize)
-		
+
 		local panel = CreateFrame("Frame", name.."Panel", button)
 		panel:CreatePanel("Transparent", T.buttonsize, T.buttonsize, "CENTER", button, "CENTER", 0, 0)
 		if C.actionbar.classcolor_border == true then
@@ -98,14 +104,14 @@ local function stylesmallbutton(normal, button, icon, name, pet)
 		icon:ClearAllPoints()
 		icon:Point("TOPLEFT", button, 2, -2)
 		icon:Point("BOTTOMRIGHT", button, -2, 2)
-		
+
 		if pet then
 			local autocast = _G[name.."AutoCastable"]
 			autocast:Width((T.buttonsize * 2) - 10)
 			autocast:Height((T.buttonsize * 2) - 10)
 			autocast:ClearAllPoints()
 			autocast:Point("CENTER", button, 0, 0)
-			
+
 			local shine = _G[name.."Shine"]
 			shine:Width(T.buttonsize)
 			shine:Height(T.buttonsize)
@@ -115,7 +121,7 @@ local function stylesmallbutton(normal, button, icon, name, pet)
 			cooldown:Height(T.buttonsize - 2)
 		end
 	end
-	
+
 	if normal then
 		normal:ClearAllPoints()
 		normal:Point("TOPLEFT")
@@ -146,7 +152,7 @@ end
 local function updatehotkey(self, actionButtonType)
 	local hotkey = _G[self:GetName() .. "HotKey"]
 	local text = hotkey:GetText()
-	
+
 	text = replace(text, "(s%-)", "S")
 	text = replace(text, "(a%-)", "A")
 	text = replace(text, "(c%-)", "C")
@@ -162,7 +168,7 @@ local function updatehotkey(self, actionButtonType)
 	text = replace(text, KEY_MOUSEWHEELDOWN, "MWD")
 	text = replace(text, KEY_MOUSEWHEELUP, "MWU")
 	text = replace(text, KEY_DELETE, "Del")
-	
+
 	if hotkey:GetText() == _G["RANGE_INDICATOR"] then
 		hotkey:SetText("")
 	else
@@ -186,11 +192,11 @@ for _, name in ipairs(buttonNames) do
 		local buttonName = name .. tostring(index)
 		local button = _G[buttonName]
 		local cooldown = _G[buttonName .. "Cooldown"]
- 
+
 		if (button == nil or cooldown == nil) then
 			break
 		end
-		
+
 		cooldown:ClearAllPoints()
 		cooldown:Point("TOPLEFT", button, "TOPLEFT", 2, -2)
 		cooldown:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
@@ -224,11 +230,11 @@ SpellFlyout:HookScript("OnShow", SetupFlyoutButton)
 local function styleflyout(self)
 	self.FlyoutBorder:SetAlpha(0)
 	self.FlyoutBorderShadow:SetAlpha(0)
-	
+
 	SpellFlyoutHorizontalBackground:SetAlpha(0)
 	SpellFlyoutVerticalBackground:SetAlpha(0)
 	SpellFlyoutBackgroundEnd:SetAlpha(0)
-	
+
 	for i = 1, GetNumFlyouts() do
 		local x = GetFlyoutID(i)
 		local _, _, numSlots, isKnown = GetFlyoutInfo(x)
@@ -255,7 +261,9 @@ do
 end
 
 hooksecurefunc("ActionButton_Update", style)
-hooksecurefunc("ActionButton_UpdateHotkeys", updatehotkey)
+if C.actionbar.hotkey == true then
+	hooksecurefunc("ActionButton_UpdateHotkeys", updatehotkey)
+end
 hooksecurefunc("ActionButton_UpdateFlyout", styleflyout)
 
 ----------------------------------------------------------------------------------------
@@ -339,7 +347,7 @@ local function StyleTotemFlyout(flyout)
 	close:Point("BOTTOMRIGHT", last, "TOPRIGHT", 0, T.buttonspacing)
 	close:Height(T.buttonspacing * 4)
 	close:SetBackdropBorderColor(last:GetBackdropBorderColor())
-	
+
 	flyout:ClearAllPoints()
 	flyout:Point("BOTTOM", flyout.parent, "TOP", 0, T.buttonspacing)
 end
@@ -385,11 +393,11 @@ local function StyleTotemSlotButton(button, index)
 	button.background:ClearAllPoints()
 	button.background:Point("TOPLEFT", button, "TOPLEFT", 2, -2)
 	button.background:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
-	
+
 	if not InCombatLockdown() then
 		button:Size(T.buttonsize, T.buttonsize)
 	end
-	
+
 	button:SetBackdropBorderColor(unpack(bordercolors[((index-1) % 4) + 1]))
 	button:StyleButton()
 end
@@ -401,14 +409,13 @@ local function StyleTotemActionButton(button, index)
 	local icon = select(1, button:GetRegions())
 	local hotkey = _G[name.."HotKey"]
 
-	hotkey:ClearAllPoints()
-	hotkey:Point("TOPRIGHT", 0, 0)
-	hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-	hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-	hotkey:Width(T.buttonsize - 1)
- 
-	if not C.actionbar.hotkey == true then
-		hotkey:SetText("")
+	if C.actionbar.hotkey == true then
+		hotkey:ClearAllPoints()
+		hotkey:Point("TOPRIGHT", 0, 0)
+		hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		hotkey:Width(T.buttonsize - 1)
+	else
 		hotkey:Kill()
 	end
 
@@ -423,13 +430,13 @@ local function StyleTotemActionButton(button, index)
 	button.overlayTex:SetTexture(nil)
 	button.overlayTex:Hide()
 	button:GetNormalTexture():SetTexCoord(0, 0, 0, 0)
-	
+
 	if not InCombatLockdown() and button.slotButton then
 		button:ClearAllPoints()
 		button:SetAllPoints(button.slotButton)
 		button:SetFrameLevel(button.slotButton:GetFrameLevel() + 1)
 	end
-	
+
 	button:SetBackdropBorderColor(unpack(bordercolors[((index-1) % 4) + 1]))
 	button:SetBackdropColor(0, 0, 0, 0)
 	button:StyleButton(true)
@@ -443,31 +450,30 @@ local function StyleTotemSpellButton(button, index)
 	local icon = select(1, button:GetRegions())
 	local hotkey = _G[name.."HotKey"]
 
-	hotkey:ClearAllPoints()
-	hotkey:Point("TOPRIGHT", 0, 0)
-	hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-	hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-	hotkey:Width(T.buttonsize - 1)
- 
-	if not C.actionbar.hotkey == true then
-		hotkey:SetText("")
+	if C.actionbar.hotkey == true then
+		hotkey:ClearAllPoints()
+		hotkey:Point("TOPRIGHT", 0, 0)
+		hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		hotkey:Width(T.buttonsize - 1)
+	else
 		hotkey:Kill()
 	end
-	
+
 	if icon then
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:SetDrawLayer("ARTWORK")
 		icon:Point("TOPLEFT", button, "TOPLEFT", 2, -2)
 		icon:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
 	end
-	
+
 	button:SetTemplate("Default")
 	button:GetNormalTexture():SetTexture(nil)
-	
+
 	if not InCombatLockdown() then
 		button:Size(T.buttonsize, T.buttonsize)
 	end
-	
+
 	_G[name.."Highlight"]:SetTexture(nil)
 	_G[name.."NormalTexture"]:SetTexture(nil)
 	button:StyleButton(true)

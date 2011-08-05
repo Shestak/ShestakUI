@@ -205,6 +205,7 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Отображать отрицательные 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Включить панели команд"
 L_GUI_ACTIONBAR_HOTKEY = "Отображать назначения клавиш"
+L_GUI_ACTIONBAR_MACRO = "Отображать имена макросов"
 L_GUI_ACTIONBAR_GRID = "Отображать пустые кнопки панелей команд"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Размер кнопок панелей команд"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Расстояние между кнопками"

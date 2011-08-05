@@ -205,6 +205,7 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "显示Debuff (必须关闭名字缩写)"
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "开启动作条"
 L_GUI_ACTIONBAR_HOTKEY = "显示动作条文字"
+L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons" -- Needs review
 L_GUI_ACTIONBAR_GRID = "显示空的动作条按钮"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "按钮大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "按钮间隔"
