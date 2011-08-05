@@ -229,7 +229,7 @@ end
 
 local locale = GetLocale()
 local rollpairs = locale == "deDE" and {
-	["(.*) passt automatisch bei (.+), weil [ersi]+ den Gegenstand nicht benutzen kann.$"]  = "pass",
+	["(.*) passt automatisch bei (.+), weil [ersie]+ den Gegenstand nicht benutzen kann.$"]  = "pass",
 	["(.*) würfelt nicht für: (.+|r)$"] = "pass",
 	["(.*) hat für (.+) 'Gier' ausgewählt"] = "greed",
 	["(.*) hat für (.+) 'Bedarf' ausgewählt"] = "need",
