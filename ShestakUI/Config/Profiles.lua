@@ -58,6 +58,7 @@ if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.n
 	C["tooltip"].item_count = true
 	C["chat"].combatlog = false
 	C["nameplate"].combat = true
+	C["aura"].focus_debuffs = true
 	C["unitframe"].castbar_latency = false
 	C["unitframe"].enemy_health_color = false
 	C["raidframe"].icons_lfd_role = true
