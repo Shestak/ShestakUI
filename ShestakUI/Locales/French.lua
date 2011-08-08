@@ -16,7 +16,7 @@ L_TOOLTIP_WHO_TARGET = "Qui on cible"
 L_TOOLTIP_ITEM_COUNT = "Objets possédés :"
 
 -- Misc
-L_MISC_UNDRESS = "Undress"
+L_MISC_UNDRESS = "Déshabillé"
 L_MISC_DRINKING = " est entrain de boire."
 
 -- Raid Utility
@@ -129,7 +129,7 @@ L_PANELS_AFK_RCLICK = "Clic droit pour cacher."
 L_PANELS_AFK_LCLICK = "Clic gauche pour revenir."
 
 -- Cooldowns
-L_COOLDOWNS = "Accusation : "
+L_COOLDOWNS = "Temps de recharge : "
 
 -- Autoinvite
 L_INVITE_ENABLE = "Invitation automatique activée : "
