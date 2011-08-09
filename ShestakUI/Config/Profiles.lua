@@ -44,6 +44,7 @@ if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.n
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
 	C["announcements"].spells = true
+	C["announcements"].spells_from_all = true
 	C["skins"].dbm = true
 	C["skins"].recount = true
 	C["combattext"].crit_prefix = ""
