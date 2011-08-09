@@ -49,7 +49,7 @@ L_UF_WOTF_USED = "WdV benutzt: "
 -- Map
 L_MAP_CURSOR = "Mauszeiger: "
 L_MAP_BOUNDS = "Außerhalb der Begrenzung!"
-L_MAP_HIDE_BOSSES = "Hide Bosses" -- Needs review
+L_MAP_HIDE_BOSSES = "Verstecke Bosse"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Kalender"
@@ -202,9 +202,9 @@ L_INFO_SETTINGS_KLE = "Gebe /settings kle ein, um KLE Einstellungen zu laden."
 L_INFO_SETTINGS_MSBT = "Gebe /settings msbt ein, um die MSBT Einstellungen zu laden."
 L_INFO_SETTINGS_SKADA = "Gebe /settings skada ein, um die Skada Einstellungen zu laden."
 L_INFO_SETTINGS_ALL = "Gebe /settings all ein, um die Einstellungen für alle unterstützten AddOns zu laden."
-L_INFO_NOT_INSTALLED = " is not installed." -- Needs review
-L_INFO_SKIN_DISABLED1 = "Stylization for " -- Needs review
-L_INFO_SKIN_DISABLED2 = " is disabled." -- Needs review
+L_INFO_NOT_INSTALLED = " ist nicht installiert."
+L_INFO_SKIN_DISABLED1 = "Stilisierung für "
+L_INFO_SKIN_DISABLED2 = " ist ausgeschaltet."
 
 -- Popups
 L_POPUP_INSTALLUI = "Dies ist Ihre erste Benutzung von ShestakUI mit diesem Charakter. Um das Interface zu konfigurieren, wird das UI nun neugeladen."
