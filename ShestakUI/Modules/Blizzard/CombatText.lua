@@ -134,7 +134,7 @@ elseif T.class == "SHAMAN" then
 	end
 	if C.combattext.healing then
 		ct.aoespam[73921] = true	-- Healing Rain
-		ct.aoespam[5394] = true		-- Healing Stream Totem
+		ct.aoespam[52042] = true	-- Healing Stream Totem
 		ct.aoespam[1064] = true		-- Chain Heal
 	end
 elseif T.class == "MAGE" then
