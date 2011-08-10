@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.raidframe.plugins_aura_watch ~= true then ret
 --	Based on oUF_AuraWatch(by Astromech)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local UnitBuff, UnitDebuff, UnitGUID = UnitBuff, UnitDebuff, UnitGUID
 local GUIDs = {}

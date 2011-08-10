@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_combat_feedback ~= true the
 --	Based on oUF_CombatFeedback(by Ammo)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local damage_format = "-%d"
 local heal_format = "+%d"

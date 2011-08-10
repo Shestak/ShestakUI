@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true then return end
 --	Based on oUF_MovableFrames(by Haste)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local _DB
 local _LOCK

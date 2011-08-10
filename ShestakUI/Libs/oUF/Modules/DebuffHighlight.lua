@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true then return end
 --	Based on oUF_DebuffHighlight(by Ammo)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local playerClass = select(2,UnitClass("player"))
 local CanDispel = {

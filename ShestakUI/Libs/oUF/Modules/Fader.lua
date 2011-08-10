@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_fader ~= true then return e
 --	Based on oUF_Fader(by Slakah)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local strmatch, gmatch = string.match, string.gmatch
 local objects, addon = {}, CreateFrame("Frame")

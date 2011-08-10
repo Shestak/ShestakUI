@@ -1,13 +1,11 @@
 local T, C, L = unpack(select(2, ...))
-if C.unitframe.plugins_totem_bar ~= true and T.class ~= "SHAMAN" then return end
+if C.unitframe.enable ~= true or C.unitframe.plugins_totem_bar ~= true or T.class ~= "SHAMAN" then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on oUF_TotemBar(by Soeters)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local _, pClass = UnitClass("player")
 local total = 0

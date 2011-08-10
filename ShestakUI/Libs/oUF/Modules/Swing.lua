@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_swing ~= true then return e
 --	Based on oUF_Swing(by p3lim and Thalyra)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local OnDurationUpdate
 do

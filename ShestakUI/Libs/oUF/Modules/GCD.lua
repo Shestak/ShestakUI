@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_gcd ~= true then return end
 --	Based on oUF_GCD(by ALZA)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local starttime, duration, usingspell, spellid
 local GetTime = GetTime

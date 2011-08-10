@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_vengeance_bar ~= true then 
 --	Based on oUF_VengeanceBar(by Evilpaul)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local VENGEANCE_ID = 76691
 local tooltip = CreateFrame('GameTooltip', 'VengeanceTooltip', UIParent, 'GameTooltipTemplate')

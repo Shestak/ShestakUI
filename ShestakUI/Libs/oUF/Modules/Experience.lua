@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_experience_bar ~= true then
 --	Based on oUF_Experience(by p3lim)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local hunterPlayer = select(2, UnitClass('player')) == 'HUNTER'
 

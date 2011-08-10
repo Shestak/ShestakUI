@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_reputation_bar ~= true then
 --	Based on oUF_Reputation(by p3lim)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local function tooltip(self)
 	local name, id, min, max, value = GetWatchedFactionInfo()

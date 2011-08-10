@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_talents ~= true then return
 --	Based on oUF_Talents(by Fernir)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local spells =  {
 	-- WARRIOR

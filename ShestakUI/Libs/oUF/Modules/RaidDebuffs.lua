@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.raidframe.plugins_aura_watch ~= true then ret
 --	Based on oUF_RaidDebuffs(by Yleaf)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local addon = {}
 ns.oUF_RaidDebuffs = addon

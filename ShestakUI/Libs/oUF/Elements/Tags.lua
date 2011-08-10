@@ -263,6 +263,14 @@ local tagStrings = {
 			return math.abs(UnitPower('player', SPELL_POWER_ECLIPSE)/m*100)
 		end
 	end]],
+
+	['curmana'] = [[function(unit)
+		return UnitPower(unit, SPELL_POWER_MANA)
+	end]],
+
+	['maxmana'] = [[function(unit)
+		return UnitPowerMax(unit, SPELL_POWER_MANA)
+	end]],
 }
 
 local tags = setmetatable(
@@ -337,6 +345,8 @@ local tagEvents = {
 	["offline"]             = "UNIT_HEALTH UNIT_CONNECTION",
 	["status"]              = "UNIT_HEALTH PLAYER_UPDATE_RESTING UNIT_CONNECTION",
 	["pereclipse"]          = 'UNIT_POWER',
+	['curmana']             = 'UNIT_POWER UNIT_MAXPOWER',
+	['maxmana']             = 'UNIT_POWER UNIT_MAXPOWER',
 }
 
 local unitlessEvents = {

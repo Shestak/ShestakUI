@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true then return end
 --	Based on oUF_Trinkets(by Allez)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local arenaFrame = {}
 local arenaGUID  = {}

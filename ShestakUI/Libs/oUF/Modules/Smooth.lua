@@ -5,9 +5,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_smooth_bar ~= true then ret
 --	Based on oUF_Smooth(by Xuerian)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF or oUF
-
-if not oUF then return end
+local oUF = ns.oUF
 
 local smoothing = {}
 local function Smooth(self, value)
