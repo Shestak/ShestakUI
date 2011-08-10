@@ -35,6 +35,7 @@ L_GUI_ANNOUNCEMENTS = "Анонсы"
 L_GUI_ANNOUNCEMENTS_DRINKING = "Сообщать в чат когда враг начинает пить на арене"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Сообщать в чат о вашем прерывание заклинания"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Сообщать в чат когда вы произнесли заклинание"
+L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

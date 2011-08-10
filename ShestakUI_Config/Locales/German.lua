@@ -35,6 +35,7 @@ L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
 L_GUI_ANNOUNCEMENTS_DRINKING = "Sage im Chat an wenn ein Arenagegener trinkt"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Sage deine Unterbrechungen im Raid oder Schlachtzugschat an"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Sage im Raid / Schachtzugschat an, wenn du den selben Zauber castest"
+L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Stilisierung"

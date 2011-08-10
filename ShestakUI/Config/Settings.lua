@@ -70,7 +70,7 @@ C["announcements"] = {
 	["drinking"] = false,						-- Announce in chat when arena enemy is drinking
 	["interrupts"] = false,						-- Announce in party/raid when you interrupt
 	["spells"] = false,							-- Announce in party/raid when you cast same spell
-	["spells_from_all"] = false,				-- Announce in party/raid when members cast same spell
+	["spells_from_all"] = false,				-- Check spells cast from all members
 }
 
 ----------------------------------------------------------------------------------------

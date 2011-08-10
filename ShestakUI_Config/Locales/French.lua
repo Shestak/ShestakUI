@@ -35,6 +35,7 @@ L_GUI_ANNOUNCEMENTS = "Annonces"
 L_GUI_ANNOUNCEMENTS_DRINKING = "Annonce dans la fenêtre de discussion quand un joueur ennemi est entrain de boire"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annonce /gr, /raid si vous interronpez un sort"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Annonce dans la fenêtre groupe/raid quand vous lancez certains sorts"
+L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Personalisation d'addon"

@@ -35,6 +35,7 @@ L_GUI_ANNOUNCEMENTS = "通告预警"
 L_GUI_ANNOUNCEMENTS_DRINKING = "当敌人在进食喝水的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "当你成功打断的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS = "当有人与你使用同一法术的时候在队伍/团队中进行通告"
+L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "风格化"
