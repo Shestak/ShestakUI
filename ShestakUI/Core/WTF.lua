@@ -344,35 +344,26 @@ local UploadSkada = function()
 	SkadaDB = {
 		["profiles"] = {
 			["Default"] = {
-				["modules"] = {
-					["notankwarnings"] = true,
-				},
-				["hidepvp"] = true,
 				["windows"] = {
 					{
-						["point"] = "BOTTOMRIGHT",
-						["barmax"] = 7,
-						["barspacing"] = 7,
-						["scale"] = 1,
-						["barfontsize"] = 8,
-						["y"] = 147,
-						["x"] = -247,
-						["title"] = {
-							["fontsize"] = 8,
-							["borderthickness"] = 0,
-							["texture"] = "Blizzard",
-						},
-						["barheight"] = 12,
-						["enabletitle"] = false,
+						["barslocked"] = true,
 						["barwidth"] = 217,
-						["bartexture"] = "Blizzard",
-					}, -- [1]
+						["barheight"] = 12,
+						["barspacing"] = 7,
+						["background"] = {
+							["color"] = {
+								["a"] = 0,
+							},
+							["height"] = 132,
+						},
+						["point"] = "BOTTOMRIGHT",
+						["x"] = -247,
+						["y"] = 8,
+					},
 				},
-				["tooltippos"] = "topleft",
 				["icon"] = {
 					["hide"] = true,
 				},
-				["showranks"] = false,
 			},
 		},
 	}
