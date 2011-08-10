@@ -59,18 +59,18 @@ local function SetChatStyle(frame)
 
 	-- ? :)
 	_G[chat]:SetClampRectInsets(0, 0, 0, 0)
-	
+
 	-- Removes crap from the bottom of the chatbox so it can go to the bottom of the screen
 	_G[chat]:SetClampedToScreen(false)
 
 	-- Stop the chat chat from fading out
 	_G[chat]:SetFading(false)
-	
+
 	-- Move the chat edit box
 	_G[chat.."EditBox"]:ClearAllPoints()
 	_G[chat.."EditBox"]:Point("BOTTOMLEFT", ChatFrame1, "TOPLEFT", -10, 23)
 	_G[chat.."EditBox"]:Point("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 11, 23)
-	
+
 	-- Hide textures
 	for j = 1, #CHAT_FRAME_TEXTURES do
 		_G[chat..CHAT_FRAME_TEXTURES[j]]:SetTexture(nil)
@@ -84,7 +84,7 @@ local function SetChatStyle(frame)
 	_G[format("ChatFrame%sTabSelectedLeft", id)]:Kill()
 	_G[format("ChatFrame%sTabSelectedMiddle", id)]:Kill()
 	_G[format("ChatFrame%sTabSelectedRight", id)]:Kill()
-	
+
 	_G[format("ChatFrame%sTabHighlightLeft", id)]:Kill()
 	_G[format("ChatFrame%sTabHighlightMiddle", id)]:Kill()
 	_G[format("ChatFrame%sTabHighlightRight", id)]:Kill()
@@ -114,17 +114,17 @@ local function SetChatStyle(frame)
 
 	-- Disable alt key usage
 	_G[chat.."EditBox"]:SetAltArrowKeyMode(false)
-	
+
 	-- Hide editbox on login
 	_G[chat.."EditBox"]:Hide()
-	
+
 	-- Script to hide editbox instead of fading editbox to 0.35 alpha via IM Style
 	_G[chat.."EditBox"]:HookScript("OnEditFocusGained", function(self) self:Show() end)
 	_G[chat.."EditBox"]:HookScript("OnEditFocusLost", function(self) self:Hide() end)
-	
+
 	-- Hide edit box every time we click on a tab
 	_G[chat.."Tab"]:HookScript("OnClick", function() _G[chat.."EditBox"]:Hide() end)
-	
+
 	-- Create our own texture for edit box
 	if C.chat.background == true then
 		local EditBoxBackground = CreateFrame("Frame", "ChatEditBoxBackground", _G[chat.."EditBox"])
@@ -134,11 +134,11 @@ local function SetChatStyle(frame)
 		EditBoxBackground:Point("BOTTOMRIGHT", _G[chat.."EditBox"], "BOTTOMRIGHT", -7, 5)
 		EditBoxBackground:SetFrameStrata("LOW")
 		EditBoxBackground:SetFrameLevel(1)
-		
+
 		local function colorize(r, g, b)
 			EditBoxBackground:SetBackdropBorderColor(r, g, b)
 		end
-		
+
 		-- Update border color according where we talk
 		hooksecurefunc("ChatEdit_UpdateHeader", function()
 			local type = _G[chat.."EditBox"]:GetAttribute("chatType")
@@ -154,12 +154,12 @@ local function SetChatStyle(frame)
 			end
 		end)
 	end
-	
+
 	-- Rename combat log tab
 	if _G[chat] == _G["ChatFrame2"] then
 		FCF_SetWindowName(_G[chat], GUILD_BANK_LOG)
 	end
-	
+
 	if _G[chat] ~= _G["ChatFrame2"] then
 		origs[_G[chat]] = _G[chat].AddMessage
 		_G[chat].AddMessage = AddMessage
@@ -171,7 +171,7 @@ local function SetChatStyle(frame)
 		_G.TIMESTAMP_FORMAT_HHMM_24HR = T.RGBToHex(unpack(C.chat.time_color)).."[%H:%M]|r "
 		_G.TIMESTAMP_FORMAT_HHMM_AMPM = T.RGBToHex(unpack(C.chat.time_color)).."[%I:%M %p]|r "
 	end
-	
+
 	frame.skinned = true
 end
 
@@ -181,7 +181,7 @@ local function SetupChat(self)
 		local frame = _G[format("ChatFrame%s", i)]
 		SetChatStyle(frame)
 	end
-	
+
 	-- Remember last channel
 	local var
 	if C.chat.sticky == true then
@@ -206,18 +206,18 @@ local function SetupChatPosAndFont(self)
 		local chat = _G[format("ChatFrame%s", i)]
 		local id = chat:GetID()
 		local _, fontSize = FCF_GetChatWindowInfo(id)
-		
+
 		-- Min. size for chat font
 		if fontSize < 11 then
 			FCF_SetChatWindowFontSize(nil, chat, 11)
 		else
 			FCF_SetChatWindowFontSize(nil, chat, fontSize)
 		end
-		
+
 		-- Font and font style for chat
 		chat:SetFont(C.font.chat_font, fontSize, C.font.chat_font_style)
 		chat:SetShadowOffset(C.font.chat_font_shadow and 1 or 0, C.font.chat_font_shadow and -1 or 0)
-		
+
 		-- Force chat position
 		if i == 1 then
 			chat:ClearAllPoints()
@@ -238,7 +238,7 @@ local function SetupChatPosAndFont(self)
 			end
 		end
 	end
-	
+
 	-- Reposition battle.net popup over chat #1
 	BNToastFrame:HookScript("OnShow", function(self)
 		self:ClearAllPoints()
