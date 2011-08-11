@@ -35,7 +35,7 @@ L_GUI_ANNOUNCEMENTS = "通告预警"
 L_GUI_ANNOUNCEMENTS_DRINKING = "当敌人在进食喝水的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "当你成功打断的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS = "当有人与你使用同一法术的时候在队伍/团队中进行通告"
-L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members" -- Needs review
+L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "检视所有队员的施法"
 
 -- Skins options
 L_GUI_SKINS = "风格化"
@@ -206,7 +206,7 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "显示Debuff (必须关闭名字缩写)"
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "开启动作条"
 L_GUI_ACTIONBAR_HOTKEY = "显示动作条文字"
-L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons" -- Needs review
+L_GUI_ACTIONBAR_MACRO = "在动作条显示宏名称"
 L_GUI_ACTIONBAR_GRID = "显示空的动作条按钮"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "按钮大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "按钮间隔"
