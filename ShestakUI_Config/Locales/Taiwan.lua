@@ -35,7 +35,7 @@ L_GUI_ANNOUNCEMENTS = "通告提醒"
 L_GUI_ANNOUNCEMENTS_DRINKING = "當敵人在進食敵人在進食在聊天窗口進行通告"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "當你成功打斷的時候在隊伍/團隊中進行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS = "當你使用相同法術的時候在隊伍/團隊中進行通告"
-L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members" -- Needs review
+L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "檢視所有隊員的法術"
 
 -- Skins options
 L_GUI_SKINS = "風格化"
@@ -140,7 +140,7 @@ L_GUI_TOOLTIP_ARENA_EXPERIENCE = "在提示資訊中顯示競技場等級"
 L_GUI_TOOLTIP_SPELL_ID = "法術ID"
 L_GUI_TOOLTIP_RAID_ICON = "團隊圖示"
 L_GUI_TOOLTIP_WHO_TARGETTING = "當你在隊伍/團隊中時顯示誰以目標為目標的提示"
-L_GUI_TOOLTIP_ITEM_COUNT = "物品數量"
+L_GUI_TOOLTIP_ITEM_COUNT = "叠堆數量"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "開啟聊天框增強"
@@ -206,7 +206,7 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "顯示debuffs(需要關閉名稱縮寫)"
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "開啟快捷列"
 L_GUI_ACTIONBAR_HOTKEY = "顯示熱鍵文字"
-L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons" -- Needs review
+L_GUI_ACTIONBAR_MACRO = "顯示巨集名字"
 L_GUI_ACTIONBAR_GRID = "顯示空的快捷列按鈕"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "按鈕大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "按鈕間隔"
