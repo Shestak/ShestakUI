@@ -33,9 +33,9 @@ L_GUI_MISC_ACH_SCREENS = "Prend un screenshot quand un evenement est accomplie"
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
 L_GUI_ANNOUNCEMENTS_DRINKING = "Annonce dans la fenêtre de discussion quand un joueur ennemi est entrain de boire"
-L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annonce /gr, /raid si vous interronpez un sort"
+L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annonce /gr, /raid si vous interrompez un sort"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Annonce dans la fenêtre groupe/raid quand vous lancez certains sorts"
-L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members" -- Needs review
+L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Afficher les sorts lancés par tous les membres"
 
 -- Skins options
 L_GUI_SKINS = "Personalisation d'addon"
@@ -206,7 +206,7 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Affiche les débuffs (Les noms abbrégés doiven
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Activer les barres d'action"
 L_GUI_ACTIONBAR_HOTKEY = "Afficher le texte des macros"
-L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons" -- Needs review
+L_GUI_ACTIONBAR_MACRO = "Afficher le nom des macros sur les touches"
 L_GUI_ACTIONBAR_GRID = "Afficher les boutons vides"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Taille des boutons"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacement des boutons"
