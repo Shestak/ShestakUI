@@ -39,6 +39,7 @@ InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
 Stuffing:SetScript("OnEvent", function(this, event, ...)
+	if IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") then return end
 	Stuffing[event](this, ...)
 end)
 
