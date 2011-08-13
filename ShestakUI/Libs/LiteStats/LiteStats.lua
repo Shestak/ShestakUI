@@ -218,8 +218,9 @@ if latency.enabled then
 	Inject("Latency", {
 		text = {
 			string = function()
-				local lat,r = select(3,GetNetStats()),750
-				return format(gsub(latency.fmt,"%[color%]",(gradient(1-lat/r))),lat)
+				local _,_,home,world = GetNetStats()
+				local lat = math.max(home, world)
+				return format(gsub(latency.fmt,"%[color%]",(gradient(1-lat/750))),lat)
 			end
 		},
 		OnEnter = function(self)
