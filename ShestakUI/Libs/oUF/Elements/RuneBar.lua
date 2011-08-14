@@ -8,10 +8,10 @@ local parent, ns = ...
 local oUF = ns.oUF
 
 oUF.colors.runes = {
-	{1, 0, 0};
-	{0, .5, 0};
-	{0, 1, 1};
-	{.9, .1, 1};
+	{1, 0, 0},
+	{0, .5, 0},
+	{0, 1, 1},
+	{.9, .1, 1},
 }
 
 local runemap = { 1, 2, 5, 6, 3, 4 }
