@@ -1,15 +1,16 @@
 local T, C, L = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
-----------------------------------------------------------------------------------------	
+----------------------------------------------------------------------------------------
 --	Filger(by Nils Ruesch, editor Affli)
 ----------------------------------------------------------------------------------------
+SpellActivationOverlayFrame:SetFrameStrata("BACKGROUND")
 local class = select(2, UnitClass("player"))
 local active, bars = {}, {}
 local MyUnits = {
-    player = true,
-    vehicle = true,
-    pet = true,
+	player = true,
+	vehicle = true,
+	pet = true,
 }
 
 local function OnUpdate(self, elapsed)
