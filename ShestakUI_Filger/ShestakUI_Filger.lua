@@ -171,6 +171,7 @@ function Update(self)
 		if (value.duration > 0) then
 			if (self.Mode == "ICON") then
 				CooldownFrame_SetTimer(bar.cooldown, value.data.filter == "CD" and value.expirationTime or (value.expirationTime - value.duration), value.duration, 1)
+				bar.count:SetParent(bar.cooldown)
 				if (value.data.filter == "CD") then
 					bar.expirationTime = value.expirationTime
 					bar.duration = value.duration
@@ -187,6 +188,7 @@ function Update(self)
 		else
 			if (self.Mode == "ICON") then
 				bar.cooldown:Hide()
+				bar.count:SetParent(bar)
 			else
 				bar.statusbar:SetMinMaxValues(0, 1)
 				bar.statusbar:SetValue(1)
