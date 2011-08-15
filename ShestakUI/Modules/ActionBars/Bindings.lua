@@ -137,7 +137,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 					self.button.bindstring = "CLICK "..self.button.name..":LeftButton"
 				else
 					local modact = 1+(self.button.action-1)%12
-					if self.button.action < 25 or self.button.action > 72 then
+					if self.button.action < 13 or self.button.action > 72 then
 						self.button.bindstring = "ACTIONBUTTON"..modact
 					elseif self.button.action < 73 and self.button.action > 60 then
 						self.button.bindstring = "MULTIACTIONBAR1BUTTON"..modact
@@ -147,6 +147,8 @@ SlashCmdList.MOUSEOVERBIND = function()
 						self.button.bindstring = "MULTIACTIONBAR4BUTTON"..modact
 					elseif self.button.action < 37 and self.button.action > 24 then
 						self.button.bindstring = "MULTIACTIONBAR3BUTTON"..modact
+					elseif self.button.action < 25 and self.button.action > 12 then
+						self.button.bindstring = "CLICK "..self.button.name..":LeftButton"
 					end
 				end
 				
@@ -251,6 +253,8 @@ SlashCmdList.MOUSEOVERBIND = function()
 		local stance = ShapeshiftButton1:GetScript("OnClick")
 		local pet = PetActionButton1:GetScript("OnClick")
 		local button = SecureActionButton_OnClick
+		local summon = MultiCastSummonSpellButton:GetScript("OnClick")
+		local recall = MultiCastRecallSpellButton:GetScript("OnClick")
 
 		local function register(val)
 			if val.IsProtected and val.GetObjectType and val.GetScript and val:GetObjectType() == "CheckButton" and val:IsProtected() then
@@ -261,6 +265,10 @@ SlashCmdList.MOUSEOVERBIND = function()
 					val:HookScript("OnEnter", function(self) bind:Update(self, "STANCE") end)
 				elseif script == pet then
 					val:HookScript("OnEnter", function(self) bind:Update(self, "PET") end)
+				elseif script == summon then
+					val:HookScript("OnEnter", function(self) bind:Update(self, "MULTICASTSUMMONSPELL") end)
+				elseif script == recall then
+					val:HookScript("OnEnter", function(self) bind:Update(self, "MULTICASTRECALL") end)
 				end
 			end
 		end
