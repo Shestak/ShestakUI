@@ -14,7 +14,7 @@ misdir_announce:SetScript("OnEvent", function(self, _, ...)
 	if C.announcements.spells_from_all == true then
 		if not (sourceGUID and destName) then return end
 
-		if spellID == 34477 or spellID == 19801 or spellID == 57934 or spellID == 355 then
+		if spellID == 34477 or spellID == 19801 or spellID == 57934 or spellID == 355 or spellID == 20484 then
 			if GetRealNumRaidMembers() > 0 then
 				SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "RAID")
 			elseif GetRealNumPartyMembers() > 0 and not UnitInRaid("player") then
@@ -26,7 +26,7 @@ misdir_announce:SetScript("OnEvent", function(self, _, ...)
 	else
 		if not (sourceGUID == UnitGUID("player") and destName) then return end
 
-		if spellID == 34477 or spellID == 19801 or spellID == 57934 or spellID == 355 then
+		if spellID == 34477 or spellID == 19801 or spellID == 57934 or spellID == 355 or spellID == 20484 then
 			if GetRealNumRaidMembers() > 0 then
 				SendChatMessage(GetSpellLink(spellID).." -> "..destName, "RAID")
 			elseif GetRealNumPartyMembers() > 0 and not UnitInRaid("player") then
