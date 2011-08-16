@@ -306,16 +306,16 @@ L_STATS_TOOLTIP_EXPERIENCE = "未達最高等級時,提示將顯示經驗值訊�
 
 -- Slash commands
 L_SLASHCMD_HELP = {
-	"Available slash commands:",
+	"可用的斜杠命令:",
 	"/rl - 重載介面.",
-	"/rc - Description is not ready.",
+	"/rc - 提出準備就緒的確認.",
 	"/gm - 打開GM面板.",
 	"/dis ADDON_NAME - 禁用 插件名.",
 	"/en ADDON_NAME - 開啟 插件名.",
 	"/rd - 解散隊伍.",
-	"/toraid - Description is not ready.",
-	"/teleport - Description is not ready.",
-	"/luaerror - lua錯誤.",
+	"/toraid - 轉換為團隊或隊伍.",
+	"/teleport - 傳出隨機副本的命令.",
+	"/luaerror - 打開/關閉 插件報錯的彈出窗口.",
 	"/spec - 切換天賦.",
 	"/clfix - 戰鬥記錄修復.",
 	"/heal - 載入治療模式介面.",
