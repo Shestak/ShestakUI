@@ -355,10 +355,15 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
 
+			-- Self
 			-- Spirit Mend
 			{ spellID = 90361, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Deterrence
 			{ spellID = 19263, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Other
+			-- Burning Adrenaline (T12 x4)
+			{ spellID = 99060, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
