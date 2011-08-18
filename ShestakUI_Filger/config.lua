@@ -2,6 +2,15 @@ local T, C, L = unpack(ShestakUI)
 
 Filger_Settings = {
 	configmode = false,
+	player_buff_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173},	-- "P_BUFF_ICON"
+	player_proc_icon = {"BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173},	-- "P_PROC_ICON"
+	special_proc_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 213},	-- "SPECIAL_P_BUFF_ICON"
+	target_debuff_icon = {"BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213},	-- "T_DEBUFF_ICON"
+	target_buff_icon = {"BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 253},	-- "T_BUFF"
+	pve_debuff = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 253},			-- "PVE/PVP_DEBUFF"
+	pve_cc = {"TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44},				-- "PVE/PVP_CC"
+	cooldown = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17},	-- "COOLDOWN"
+	target_bar = {"BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41},	-- "T_DE/BUFF_BAR"
 }
 
 Filger_Spells = {
@@ -11,7 +20,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
+			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Lifebloom
 			{ spellID = 33763, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -59,7 +68,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
 			-- Eclipse (Lunar)
@@ -204,7 +213,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Moonfire
 			{ spellID = 8921, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
@@ -247,7 +256,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			IconSide = "LEFT",
-			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
+			setPoint = {unpack(Filger_Settings.target_bar)},
 
 			-- Lifebloom
 			{ spellID = 33763, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
@@ -265,7 +274,7 @@ Filger_Spells = {
 			Direction = "DOWN",
 			Interval = 3,
 			Mode = "BAR",
-			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
+			setPoint = {unpack(Filger_Settings.pve_cc)},
 
 			-- Entangling Roots
 			{ spellID = 339, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
@@ -279,7 +288,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
+			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
 			-- Wild Growth
@@ -353,7 +362,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
+			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Self
 			-- Spirit Mend
@@ -370,7 +379,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
 			-- Ready, Set, Aim...
@@ -442,7 +451,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Hunter's Mark
 			{ spellID = 1130, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
@@ -463,7 +472,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			IconSide = "LEFT",
-			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
+			setPoint = {unpack(Filger_Settings.target_bar)},
 
 			-- Hunter's Mark
 			{ spellID = 1130, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
@@ -483,7 +492,7 @@ Filger_Spells = {
 			Direction = "DOWN",
 			Interval = 3,
 			Mode = "BAR",
-			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
+			setPoint = {unpack(Filger_Settings.pve_cc)},
 
 			-- Wyvern Sting
 			{ spellID = 19386, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
@@ -495,7 +504,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
+			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
 			-- Silencing Shot
@@ -593,7 +602,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
+			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Invisibility
 			{ spellID = 32612, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -623,7 +632,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
 			-- Fingers of Frost
@@ -695,7 +704,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Arcane Blast
 			{ spellID = 36032, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
@@ -733,7 +742,7 @@ Filger_Spells = {
 			Direction = "DOWN",
 			Interval = 3,
 			Mode = "BAR",
-			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
+			setPoint = {unpack(Filger_Settings.pve_cc)},
 			
 			-- Polymorph
 			{ spellID = 118, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
@@ -743,7 +752,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
+			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
 			-- Blink
@@ -837,7 +846,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
+			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Last Stand
 			{ spellID = 12975, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -863,7 +872,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Sudden Death
 			{ spellID = 52437, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -968,7 +977,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Hamstring
 			{ spellID = 1715, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
@@ -1002,7 +1011,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
+			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
 			-- Intervene
@@ -1094,7 +1103,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
+			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Maelstorm Weapon
 			{ spellID = 53817, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1126,7 +1135,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
 			-- Clearcasting
@@ -1245,7 +1254,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Storm Strike
 			{ spellID = 17364, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
@@ -1268,7 +1277,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			IconSide = "LEFT",
-			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
+			setPoint = {unpack(Filger_Settings.target_bar)},
 
 			-- Earth Shield
 			{ spellID = 974, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
@@ -1284,7 +1293,7 @@ Filger_Spells = {
 			Direction = "DOWN",
 			Interval = 3,
 			Mode = "BAR",
-			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
+			setPoint = {unpack(Filger_Settings.pve_cc)},
 
 			-- Hex
 			{ spellID = 51514, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
@@ -1296,7 +1305,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
+			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
 			-- Earth Shock
@@ -1364,7 +1373,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
+			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Self
 			-- Divine Shield
@@ -1401,7 +1410,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
 			-- Infusion of Light
@@ -1537,7 +1546,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Forbearance
 			{ spellID = 25771, size = 37, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -1553,7 +1562,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
+			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
 			-- Rebuke
@@ -1629,7 +1638,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
+			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Power Word: Shield
 			{ spellID = 17, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
@@ -1663,7 +1672,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
 			-- Surge of Light
@@ -1765,7 +1774,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Sin and Punishment
 			{ spellID = 87099, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
@@ -1776,7 +1785,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			IconSide = "LEFT",
-			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
+			setPoint = {unpack(Filger_Settings.target_bar)},
 
 			-- Renew
 			{ spellID = 139, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "BUFF" },
@@ -1800,7 +1809,7 @@ Filger_Spells = {
 			Direction = "DOWN",
 			Interval = 3,
 			Mode = "BAR",
-			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
+			setPoint = {unpack(Filger_Settings.pve_cc)},
 
 			-- Shackle undead
 			{ spellID = 9484, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
@@ -1812,7 +1821,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
+			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
 			-- Penance
@@ -1906,7 +1915,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
+			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Self
 			-- Burning Soul
@@ -1933,7 +1942,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
 			-- Molten Core
@@ -2013,7 +2022,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Self
 			-- Shadow Embrace
@@ -2051,7 +2060,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			IconSide = "LEFT",
-			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
+			setPoint = {unpack(Filger_Settings.target_bar)},
 
 			-- Corruption
 			{ spellID = 172, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
@@ -2073,7 +2082,7 @@ Filger_Spells = {
 			Direction = "DOWN",
 			Interval = 3,
 			Mode = "BAR",
-			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
+			setPoint = {unpack(Filger_Settings.pve_cc)},
 
 			-- Fear
 			{ spellID = 5782, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
@@ -2085,7 +2094,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
+			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
 			-- Conflagrate
@@ -2177,7 +2186,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
+			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Self
 			-- Sprint
@@ -2212,7 +2221,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
 			-- Combat Readiness
@@ -2266,7 +2275,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Rupture
 			{ spellID = 1943, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
@@ -2304,7 +2313,7 @@ Filger_Spells = {
 			Direction = "DOWN",
 			Interval = 3,
 			Mode = "BAR",
-			setPoint = { "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44 },
+			setPoint = {unpack(Filger_Settings.pve_cc)},
 
 			-- Blind
 			{ spellID = 2094, size = 25, barWidth = 191, unitId = "focus", caster = "player", filter = "DEBUFF" },
@@ -2316,7 +2325,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
+			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
 			-- Kick
@@ -2390,7 +2399,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173 },
+			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- 
 			{ spellID = , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -2400,7 +2409,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173 },
+			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
 			-- Unholy Force
@@ -2491,7 +2500,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			IconSide = "LEFT",
-			setPoint = { "BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41 },
+			setPoint = {unpack(Filger_Settings.target_bar)},
 
 			-- Blood Plague
 			{ spellID = 59879, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
@@ -2507,7 +2516,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17 },
+			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
 			-- Death Grip
@@ -2595,7 +2604,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- 
 			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
@@ -2607,7 +2616,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- 
 			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
@@ -2619,7 +2628,7 @@ Filger_Spells = {
 			Direction = "RIGHT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 213 },
+			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- 
 			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
@@ -2631,7 +2640,7 @@ Filger_Spells = {
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 213 },
+			setPoint = {unpack(Filger_Settings.special_proc_icon)},
 
 			-- Potions
 			-- Tol'vir Agility
@@ -2716,7 +2725,7 @@ Filger_Spells = {
 			Direction = "UP",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 253 },
+			setPoint = {unpack(Filger_Settings.pve_debuff)},
 
 			-- Death Knight
 			-- Gnaw (Pet)
@@ -3106,7 +3115,7 @@ Filger_Spells = {
 			Direction = "UP",
 			Interval = 3,
 			Mode = "ICON",
-			setPoint = { "BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 253 },
+			setPoint = {unpack(Filger_Settings.target_buff_icon)},
 
 			-- Hunter
 			-- Aspect of the Pack
