@@ -64,7 +64,7 @@ if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.n
 	C["unitframe"].enemy_health_color = false
 	C["raidframe"].icons_lfd_role = true
 	C["threat"].enable = false
-	if T.name == "Трольпаладин" or T.name == "Рукалицо"	or T.name == "Чаккерс" then
+	if T.name == "Трольпаладин" or T.name == "Рукалицо" or T.name == "Чаккерс" then
 		C["actionbar"].bottombars = 3
 	end
 	if T.name ~= "Релика" then

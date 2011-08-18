@@ -5,21 +5,31 @@
 ----------------------------------------------------------------------------------------
 if C.misc.auto_accept_invite == true then
 	local IsFriend = function(name)
-		for i = 1, GetNumFriends() do if(GetFriendInfo(i) == name) then return true end end
-		if(IsInGuild()) then for i = 1, GetNumGuildMembers() do if(GetGuildRosterInfo(i) == name) then return true end end end
+		for i = 1, GetNumFriends() do
+			if GetFriendInfo(i) == name then
+				return true
+			end
+		end
+		if IsInGuild() then
+			for i = 1, GetNumGuildMembers() do
+				if GetGuildRosterInfo(i) == name then
+					return true
+				end
+			end
+		end
 	end
 
 	local ai = CreateFrame("Frame")
 	ai:RegisterEvent("PARTY_INVITE_REQUEST")
 	ai:SetScript("OnEvent", function(frame, event, name)
 		if MiniMapLFGFrame:IsShown() then return end
-		if(IsFriend(name)) then
+		if IsFriend(name) then
 			T.InfoTextShow(L_INFO_INVITE..name)
 			print(format("|cffffff00"..L_INFO_INVITE..name.."."))
 			AcceptGroup()
 			for i = 1, 4 do
 				local frame = _G["StaticPopup"..i]
-				if(frame:IsVisible() and frame.which == "PARTY_INVITE") then
+				if frame:IsVisible() and frame.which == "PARTY_INVITE" then
 					frame.inviteAccepted = 1
 					StaticPopup_Hide("PARTY_INVITE")
 					return
@@ -46,10 +56,10 @@ autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2)
 end)
 
 SlashCmdList.AUTOINVITE = function(msg, editbox)
-	if (msg == "off") then
+	if msg == "off" then
 		ainvenabled = false
 		print("|cffffff00"..L_INVITE_DISABLE..".")
-	elseif (msg == "") then
+	elseif msg == "" then
 		ainvenabled = true
 		print("|cffffff00"..L_INVITE_ENABLE..ainvkeyword..".")
 		ainvkeyword = C.misc.invite_keyword
