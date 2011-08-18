@@ -55,6 +55,7 @@ T.DebuffWhiteList = {
 	[SpellName(51514)] = true,	-- Hex
 	[SpellName(3600)] = true,	-- Earthbind
 	[SpellName(8056)] = true,	-- Frost Shock
+	[SpellName(8050)] = true,	-- Flame Shock
 	[SpellName(63685)] = true,	-- Freeze
 	[SpellName(39796)] = true,	-- Stoneclaw Stun
 	-- Warlock

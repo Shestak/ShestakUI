@@ -55,33 +55,33 @@ local SmallerMapSkin = function()
 	mapbg:Point("BOTTOMRIGHT", WorldMapDetailFrame, 2, -2)
 	mapbg:SetFrameStrata("MEDIUM")
 	mapbg:SetFrameLevel(20)
-	
+
 	WorldMapButton:SetAllPoints(WorldMapDetailFrame)
 	WorldMapFrame:SetFrameStrata("MEDIUM")
 	WorldMapFrame:SetClampedToScreen(true)
 	WorldMapFrame:ClearAllPoints()
 	WorldMapFrame:SetPoint(unpack(C.position.map))
-	
+
 	WorldMapDetailFrame:SetFrameStrata("MEDIUM")
-	
+
 	WorldMapTitleButton:Show()
 	WorldMapTitleButton:SetFrameStrata("MEDIUM")
 	WorldMapTooltip:SetFrameStrata("TOOLTIP")
-	
+
 	WorldMapFrameMiniBorderLeft:Hide()
 	WorldMapFrameMiniBorderRight:Hide()
-	
+
 	WorldMapFrameSizeUpButton:ClearAllPoints()
 	WorldMapFrameSizeUpButton:Point("TOPRIGHT", WorldMapButton, "TOPRIGHT", 3, -18)
 	WorldMapFrameSizeUpButton:SetFrameStrata("HIGH")
 	WorldMapFrameSizeUpButton:SetFrameLevel(18)
-	
+
 	WorldMapFrameCloseButton:ClearAllPoints()
 	WorldMapFrameCloseButton:Point("TOPRIGHT", WorldMapButton, "TOPRIGHT", 3, 3)
 	WorldMapFrameCloseButton:SetFrameStrata("HIGH")
-	
+
 	WorldMapFrameSizeDownButton:Point("TOPRIGHT", WorldMapFrameMiniBorderRight, "TOPRIGHT", -66, 7)
-	
+
 	WorldMapFrameTitle:ClearAllPoints()
 	WorldMapFrameTitle:SetParent(WorldMapDetailFrame)
 	WorldMapFrameTitle:Point("TOP", WorldMapDetailFrame, 0, -3)
@@ -90,32 +90,32 @@ local SmallerMapSkin = function()
 	WorldMapQuestShowObjectivesText:SetFont(C.media.normal_font, 17)
 	WorldMapQuestShowObjectivesText:ClearAllPoints()
 	WorldMapQuestShowObjectivesText:Point("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", 0, 4)
-	
+
 	WorldMapQuestShowObjectives:SetParent(WorldMapDetailFrame)
 	WorldMapQuestShowObjectives:ClearAllPoints()
 	WorldMapQuestShowObjectives:Point("RIGHT", WorldMapQuestShowObjectivesText, "LEFT", 0, 0)
 	WorldMapQuestShowObjectives:SetFrameStrata("HIGH")
-	
+
 	WorldMapTrackQuest:SetParent(WorldMapDetailFrame)
 	WorldMapTrackQuest:ClearAllPoints()
 	WorldMapTrackQuest:Point("BOTTOMLEFT", WorldMapButton, "BOTTOMLEFT", 0, 0)
 	WorldMapTrackQuest:SetFrameStrata("HIGH")
 
 	WorldMapTrackQuestText:SetFont(C.media.normal_font, 17)
-	
+
 	WorldMapShowDigSites:SetParent(WorldMapDetailFrame)
 	WorldMapShowDigSites:ClearAllPoints()
 	WorldMapShowDigSites:Point("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
 	WorldMapShowDigSites:SetFrameStrata("HIGH")
-	
+
 	WorldMapShowDigSitesText:ClearAllPoints()
 	WorldMapShowDigSitesText:Point("LEFT", WorldMapShowDigSites, "RIGHT", 0, 0)
 	WorldMapShowDigSitesText:SetFont(C.media.normal_font, 17)
-	
+
 	WorldMapFrameAreaLabel:SetFontObject("GameFontNormal")
 	WorldMapFrameAreaLabel:SetFont(C.media.normal_font, 40)
 	WorldMapFrameAreaLabel:SetTextColor(0.9, 0.83, 0.64)
-	
+
 	WorldMapLevelDropDown:SetAlpha(0)
 	WorldMapLevelDropDown:SetScale(0.00001)
 
@@ -127,21 +127,21 @@ hooksecurefunc("WorldMap_ToggleSizeDown", function() SmallerMapSkin() end)
 local BiggerMapSkin = function()
 	WorldMapLevelDropDown:SetAlpha(1)
 	WorldMapLevelDropDown:SetScale(1)
-	
+
 	WorldMapQuestShowObjectivesText:SetFont(C.media.normal_font, 11)
 	WorldMapQuestShowObjectivesText:ClearAllPoints()
 	WorldMapQuestShowObjectivesText:Point("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", 0, 4)
-	
+
 	WorldMapQuestShowObjectives:SetParent(WorldMapDetailFrame)
 	WorldMapQuestShowObjectives:ClearAllPoints()
 	WorldMapQuestShowObjectives:Point("RIGHT", WorldMapQuestShowObjectivesText, "LEFT", 0, 0)
 	WorldMapQuestShowObjectives:SetFrameStrata("TOOLTIP")
-	
+
 	WorldMapShowDigSites:SetParent(WorldMapDetailFrame)
 	WorldMapShowDigSites:ClearAllPoints()
 	WorldMapShowDigSites:Point("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
 	WorldMapShowDigSites:SetFrameStrata("TOOLTIP")
-	
+
 	WorldMapShowDigSitesText:ClearAllPoints()
 	WorldMapShowDigSitesText:Point("LEFT", WorldMapShowDigSites, "RIGHT", 0, 0)
 	WorldMapShowDigSitesText:SetFont(C.media.normal_font, 17)
@@ -209,7 +209,7 @@ coords.MouseText:SetText(L_MAP_CURSOR..": 0,0")
 local int = 0
 coords:SetScript("OnUpdate", function(self, elapsed)
 	int = int + 1
-	
+
 	if int >= 3 then
 		local inInstance, _ = IsInInstance()
 		local x,y = GetPlayerMapPosition("player")
@@ -228,7 +228,7 @@ coords:SetScript("OnUpdate", function(self, elapsed)
 		local x, y = GetCursorPosition()
 		local adjustedX = (x / scale - (centerX - (width/2))) / width
 		local adjustedY = (centerY + (height/2) - y / scale) / height
-		
+
 		if (adjustedX >= 0 and adjustedY >= 0 and adjustedX <= 1 and adjustedY <= 1) then
 			adjustedX = math.floor(100 * adjustedX)
 			adjustedY = math.floor(100 * adjustedY)
@@ -236,7 +236,7 @@ coords:SetScript("OnUpdate", function(self, elapsed)
 		else
 			coords.MouseText:SetText(L_MAP_CURSOR.."|cffff0000"..L_MAP_BOUNDS.."|r")
 		end
-		
+
 		int = 0
 	end
 end)
