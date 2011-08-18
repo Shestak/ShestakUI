@@ -1,5 +1,3 @@
-local T, C, L = unpack(select(2, ...))
-
 local parent, ns = ...
 local oUF = ns.oUF
 

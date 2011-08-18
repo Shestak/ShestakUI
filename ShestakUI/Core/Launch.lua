@@ -29,7 +29,7 @@ local function InstallUI()
 	SetCVar("autoQuestWatch", 0)
 	SetCVar("autoQuestProgress", 1)
 	SetCVar("scriptErrors", 1)
-	
+
 	if T.author == true then
 		SetCVar("taintLog", 1)
 		SetCVar("Sound_EnableErrorSpeech", 0)
@@ -66,19 +66,19 @@ local function InstallUI()
 		SetCVar("nameplateShowEnemyGuardians", 0)
 		SetCVar("nameplateShowEnemyTotems", 0)
 	end
-	
+
 	-- Setting chat frames
 	if (C.chat.enable == true) and (not IsAddOnLoaded("Prat-3.0") or not IsAddOnLoaded("Chatter")) then
 		for i = 1, NUM_CHAT_WINDOWS do
 			local frame = _G[format("ChatFrame%s", i)]
 			local chatFrameId = frame:GetID()
 			local chatName = FCF_GetChatWindowInfo(chatFrameId)
-			
+
 			frame:Size(C.chat.width, C.chat.height)
-			
+
 			-- Default width and height of chats
 			SetChatWindowSavedDimensions(chatFrameId, T.Scale(C.chat.width), T.Scale(C.chat.height))
-			
+
 			-- Move general chat to bottom left
 			if i == 1 then
 				frame:ClearAllPoints()
@@ -87,10 +87,10 @@ local function InstallUI()
 
 			-- Save new default position and dimension
 			FCF_SavePositionAndDimensions(frame)
-			
+
 			-- Set default font size
 			FCF_SetChatWindowFontSize(nil, frame, 11)
-			
+
 			-- Rename general and combat log tabs
 			if i == 1 then FCF_SetWindowName(frame, GENERAL) end
 			if i == 2 then FCF_SetWindowName(frame, GUILD_BANK_LOG) end
@@ -104,12 +104,12 @@ local function InstallUI()
 			FCF_OpenNewWindow(LOOT)
 			FCF_SetLocked(ChatFrame4, 1)
 			FCF_DockFrame(ChatFrame4)
-			
+
 			-- Setup main tab
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "LOOT")
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "CURRENCY")
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "MONEY")
-			
+
 			-- Setup guild tab
 			ChatFrame_RemoveAllMessageGroups(ChatFrame3)
 			ChatFrame_AddMessageGroup(ChatFrame3, "GUILD")
@@ -124,7 +124,7 @@ local function InstallUI()
 			ChatFrame_AddMessageGroup(ChatFrame3, "BATTLEGROUND_LEADER")
 			ChatFrame_AddMessageGroup(ChatFrame3, "BN_WHISPER")
 			ChatFrame_AddMessageGroup(ChatFrame3, "BN_CONVERSATION")
-			
+
 			-- Setup loot tab
 			ChatFrame_RemoveAllMessageGroups(ChatFrame4)
 			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_XP_GAIN")
@@ -138,7 +138,7 @@ local function InstallUI()
 			
 			ChangeChatColor("CHANNEL6", 147/255, 112/255, 219/255)
 		end
-		
+
 		-- Enable classcolor automatically on login and on each character without doing /configure each time
 		ToggleChatColorNamesByClassGroup(true, "SAY")
 		ToggleChatColorNamesByClassGroup(true, "EMOTE")
@@ -161,7 +161,7 @@ local function InstallUI()
 		ToggleChatColorNamesByClassGroup(true, "CHANNEL4")
 		ToggleChatColorNamesByClassGroup(true, "CHANNEL5")
 	end
-	
+
 	-- Reset saved variables on char
 	SavedOptions = {}
 	SavedPositions = {}
@@ -247,10 +247,10 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 
 	-- Create empty CVar if they doesn't exist
-	if (SavedOptions == nil) then SavedOptions = {} end
-	if (SavedPositions == nil) then SavedPositions = {} end
-	if (SavedOptionsPerChar == nil) then SavedOptionsPerChar = {} end
-	
+	if SavedOptions == nil then SavedOptions = {} end
+	if SavedPositions == nil then SavedPositions = {} end
+	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
+
 	if T.getscreenwidth < 1024 then
 		SetCVar("useUiScale", 0)
 		StaticPopup_Show("DISABLE_UI")
@@ -261,7 +261,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		end
 		if C.general.uiscale > 1.28 then C.general.uiscale = 1.28 end
 		if C.general.uiscale < 0.64 then C.general.uiscale = 0.64 end
-		
+
 		-- Set our uiscale
 		SetCVar("uiScale", C.general.uiscale)
 		
@@ -270,11 +270,11 @@ OnLogon:SetScript("OnEvent", function(self, event)
 			StaticPopup_Show("INSTALL_UI")
 		end
 	end
-	
+
 	if IsAddOnLoaded("ShestakUI_DPS") and IsAddOnLoaded("ShestakUI_Heal") then
 		StaticPopup_Show("SWITCH_RAID")
 	end
-	
+
 	-- Welcome message
 	if C.general.welcome_message == true then
 		print("|cffffff00"..L_WELCOME_LINE_1..T.version.." "..T.client..", "..T.name..".|r")

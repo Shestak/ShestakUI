@@ -277,7 +277,7 @@ button:SetScript("OnClick", function(self, button)
 		WorldMapBossButtonFrame:Hide()
 	else
 		PlaySound("igMainMenuOptionCheckBoxOff")
-		SavedOptionsPerChar.ShowMapBoss = nil
+		SavedOptionsPerChar.ShowMapBoss = false
 		WorldMapBossButtonFrame:Show()
 	end
 end)
@@ -288,6 +288,7 @@ button:SetScript("OnEvent", function(self, event)
 	elseif event == "SKILL_LINES_CHANGED" then
 		setAnchor(self)
 	elseif event == "PLAYER_LOGIN" then
+		if SavedOptionsPerChar.ShowMapBoss == nil then SavedOptionsPerChar.ShowMapBoss = false end
 		self:SetChecked(SavedOptionsPerChar.ShowMapBoss)
 		setAnchor(self)
 		if SavedOptionsPerChar.ShowMapBoss then
