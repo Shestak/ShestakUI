@@ -189,6 +189,7 @@ StaticPopupDialogs["INSTALL_UI"] = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
+	preferredIndex = 3,
 }
 
 StaticPopupDialogs["DISABLE_UI"] = {
@@ -199,6 +200,7 @@ StaticPopupDialogs["DISABLE_UI"] = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
+	preferredIndex = 3,
 }
 
 StaticPopupDialogs["RESET_UI"] = {
@@ -210,6 +212,7 @@ StaticPopupDialogs["RESET_UI"] = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
+	preferredIndex = 3,
 }
 
 StaticPopupDialogs["RESET_STATS"] = {
@@ -220,6 +223,7 @@ StaticPopupDialogs["RESET_STATS"] = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
+	preferredIndex = 3,
 }
 
 StaticPopupDialogs["SWITCH_RAID"] = {
@@ -231,6 +235,7 @@ StaticPopupDialogs["SWITCH_RAID"] = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
+	preferredIndex = 3,
 }
 
 ----------------------------------------------------------------------------------------

@@ -24,6 +24,7 @@ StaticPopupDialogs["BUY_BANK_SLOT"] = {
 	hasMoneyFrame = 1,
 	timeout = 0,
 	hideOnEscape = 1,
+	preferredIndex = 3,
 }
 
 StaticPopupDialogs["CANNOT_BUY_BANK_SLOT"] = {
@@ -31,6 +32,7 @@ StaticPopupDialogs["CANNOT_BUY_BANK_SLOT"] = {
 	button1 = ACCEPT,
 	timeout = 0,
 	whileDead = 1,
+	preferredIndex = 3,
 }
 
 -- Hide bags options in default interface

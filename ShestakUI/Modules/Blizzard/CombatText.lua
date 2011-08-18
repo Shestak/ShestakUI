@@ -778,6 +778,7 @@ StaticPopupDialogs["XCT_LOCK"] = {
 	whileDead = 1,
 	hideOnEscape = true,
 	showAlert = true,
+	preferredIndex = 3,
 }
 
 -- Slash commands

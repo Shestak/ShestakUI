@@ -60,7 +60,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							tbar:SetBackdrop(backdrop)
 							tbar:SetBackdropColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB, 0.15)
 						end
-						
+
 						if bar.enlarged then frame:Width(bar.owner.options.HugeWidth) else frame:Width(bar.owner.options.Width) end
 						if bar.enlarged then tbar:Width(bar.owner.options.HugeWidth) else tbar:Width(bar.owner.options.Width) end
 
@@ -76,7 +76,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							spark:SetTexture(nil)
 							spark.killed = true
 						end
-			
+
 						if not icon1.styled then
 							icon1:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 							icon1:ClearAllPoints()
@@ -84,7 +84,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							icon1:Point("BOTTOMRIGHT", icon1.overlay, -2, 2)
 							icon1.styled = true
 						end
-						
+
 						if not icon2.styled then
 							icon2:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 							icon2:ClearAllPoints()
@@ -92,12 +92,12 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							icon2:Point("BOTTOMRIGHT", icon2.overlay, -2, 2)
 							icon2.styled = true
 						end
-						
+
 						if not texture.styled then
 							texture:SetTexture(C.media.texture)
 							texture.styled = true
 						end
-						
+
 						if not tbar.styled then
 							tbar:Point("TOPLEFT", frame, "TOPLEFT", 2, -2)
 							tbar:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
@@ -115,7 +115,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							name.SetFont = T.dummy
 							name.styled = true
 						end
-						
+
 						if not timer.styled then
 							timer:ClearAllPoints()
 							timer:Point("RIGHT", frame, "RIGHT", -1, 0)
@@ -125,7 +125,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							timer.SetFont = T.dummy
 							timer.styled = true
 						end
-						
+
 						if bar.owner.options.IconLeft then icon1:Show() icon1.overlay:Show() else icon1:Hide() icon1.overlay:Hide() end
 						if bar.owner.options.IconRight then icon2:Show() icon2.overlay:Show() else icon2:Hide() icon2.overlay:Hide() end
 						tbar:SetAlpha(1)
@@ -154,7 +154,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 			end
 			anchor = nil
 		end
-		
+
 		local SkinBoss = function()
 			local count = 1
 			while (_G[format("DBM_BossHealth_Bar_%d", count)]) do
@@ -188,8 +188,8 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 					bar:SetTemplate("Default")
 					background:SetNormalTexture(nil)
 					bar.styled = true
-				end	
-				
+				end
+
 				if not progress.styled then
 					progress:SetStatusBarTexture(C.media.texture)
 					progress:SetBackdrop(backdrop)
@@ -219,7 +219,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 					name:SetJustifyH("LEFT")
 					name.styled = true
 				end
-				
+
 				if not timer.styled then
 					timer:ClearAllPoints()
 					timer:Point("RIGHT", bar, "RIGHT", -1, 0)
@@ -231,7 +231,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				count = count + 1
 			end
 		end
-		
+
 		hooksecurefunc(DBT, "CreateBar", SkinBars)
 		hooksecurefunc(DBM.BossHealth, "Show", SkinBossTitle)
 		hooksecurefunc(DBM.BossHealth, "AddBoss", SkinBoss)
@@ -310,7 +310,7 @@ function T.UploadDBM()
 	DBT_SavedOptions["DBM"].HugeTimerX = 7
 	DBT_SavedOptions["DBM"].HugeTimerPoint = "CENTER"
 	DBT_SavedOptions["DBM"].HugeBarYOffset = 7
-	
+
 	if C.actionbar.bottombars == 1 then
 		DBM_SavedOptions.HPFrameY = 126
 		DBM_SavedOptions.RangeFrameY = 101
@@ -338,6 +338,7 @@ StaticPopupDialogs["SETTINGS_DBM"] = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
+	preferredIndex = 3,
 }
 
 ----------------------------------------------------------------------------------------

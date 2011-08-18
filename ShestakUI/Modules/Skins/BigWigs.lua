@@ -30,7 +30,7 @@ local function freestyle(bar)
 		bg:Hide()
 		freebg[#freebg + 1] = bg
 	end
-	
+
 	-- Reparent and hide icon background
 	local ibg = bar:Get("bigwigs:shestakui:bg")
 	if ibg then
@@ -39,7 +39,7 @@ local function freestyle(bar)
 		ibg:Hide()
 		freebg[#freebg + 1] = ibg
 	end
-	
+
 	-- Replace dummies with original method functions
 	bar.candyBarBar.SetPoint = bar.candyBarBar.OldSetPoint
 	bar.candyBarIconFrame.SetWidth = bar.candyBarIconFrame.OldSetWidth
@@ -56,7 +56,7 @@ local applystyle = function(bar)
 		bar.OldSetScale = bar.SetScale
 		bar.SetScale = T.dummy
 	end
-	
+
 	-- Create or reparent and use bar background
 	local bg = nil
 	if #freebg > 0 then
@@ -71,7 +71,7 @@ local applystyle = function(bar)
 	bg:SetFrameStrata("BACKGROUND")
 	bg:Show()
 	bar:Set("bigwigs:shestakui:bg", bg)
-	
+
 	-- Create or reparent and use icon background
 	local ibg = nil
 	if bar.candyBarIconFrame:GetTexture() then
@@ -88,20 +88,20 @@ local applystyle = function(bar)
 		ibg:Show()
 		bar:Set("bigwigs:shestakui:bg", ibg)
 	end
-	
+
 	-- Setup timer and bar name fonts and positions
 	bar.candyBarLabel:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 	bar.candyBarLabel:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 	bar.candyBarLabel:SetJustifyH("LEFT")
 	bar.candyBarLabel:ClearAllPoints()
 	bar.candyBarLabel:Point("LEFT", bar, "LEFT", 2, 0)
-	
+
 	bar.candyBarDuration:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 	bar.candyBarDuration:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 	bar.candyBarDuration:SetJustifyH("RIGHT")
 	bar.candyBarDuration:ClearAllPoints()
 	bar.candyBarDuration:Point("RIGHT", bar, "RIGHT", 1, 0)
-	
+
 	-- Setup bar positions and look
 	bar.candyBarBar:ClearAllPoints()
 	bar.candyBarBar:SetAllPoints(bar)
@@ -158,7 +158,7 @@ f:SetScript("OnEvent", function(self, event, msg)
 end)
 
 local pr = function(msg)
-    print(tostring(msg))
+	print(tostring(msg))
 end
 
 SLASH_BWTEST1 = "/bwtest"
@@ -214,7 +214,8 @@ StaticPopupDialogs["BW_TEST"] = {
 			ReloadUI()
 		end
 	end,
-    timeout = 0,
-    whileDead = 1,
-    hideOnEscape = true,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = true,
+	preferredIndex = 3,
 }

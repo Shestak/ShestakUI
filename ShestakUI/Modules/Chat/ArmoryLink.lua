@@ -33,6 +33,7 @@ StaticPopupDialogs.LINK_COPY_DIALOG = {
 	OnShow = function(self, ...) self.editBox:SetFocus() end,
 	EditBoxOnEnterPressed = function(self) self:GetParent():Hide() end,
 	EditBoxOnEscapePressed = function(self) self:GetParent():Hide() end,
+	preferredIndex = 3,
 }
 
 -- Dropdown menu link

@@ -32,6 +32,7 @@ _G.StaticPopupDialogs["WATCHFRAME_URL"] = {
 	OnShow = function(self, ...) self.editBox:SetFocus() end,
 	EditBoxOnEnterPressed = function(self) self:GetParent():Hide() end,
 	EditBoxOnEscapePressed = function(self) self:GetParent():Hide() end,
+	preferredIndex = 3,
 }
 
 local tblDropDown = {}

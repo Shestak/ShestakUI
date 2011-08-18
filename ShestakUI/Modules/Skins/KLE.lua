@@ -216,6 +216,7 @@ StaticPopupDialogs["SETTINGS_KLE"] = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
+	preferredIndex = 3,
 }
 
 -- Hook bar

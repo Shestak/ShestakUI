@@ -384,6 +384,7 @@ StaticPopupDialogs["SETTINGS_ALL"] = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
+	preferredIndex = 3,
 }
 
 SLASH_SETTINGS1 = "/settings"

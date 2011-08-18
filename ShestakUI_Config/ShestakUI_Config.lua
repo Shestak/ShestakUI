@@ -45,7 +45,7 @@ local function Local(o)
 	if o == "UIConfiggeneraluiscale" then o = L_GUI_GENERAL_UISCALE end
 	if o == "UIConfiggeneralwelcome_message" then o = L_GUI_GENERAL_WELCOME_MESSAGE end
 	if o == "UIConfiggeneralcustom_lagtolerance" then o = L_GUI_GENERAL_LAG_TOLERANCE end
-	
+
 	-- Miscellaneous options
 	if o == "UIConfigmisc" then o = OTHER end
 	if o == "UIConfigmiscauto_quest" then o = L_GUI_MISC_AUTOQUEST end
@@ -59,14 +59,14 @@ local function Local(o)
 	if o == "UIConfigmiscquest_auto_button" then o = L_GUI_MISC_QUEST_AUTOBUTTON end
 	if o == "UIConfigmiscraid_tools" then o = L_GUI_MISC_RAID_TOOLS end
 	if o == "UIConfigmiscach_screens" then o = L_GUI_MISC_ACH_SCREENS end
-	
+
 	-- Announcements options
 	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end
 	if o == "UIConfigannouncementsdrinking" then o = L_GUI_ANNOUNCEMENTS_DRINKING end
 	if o == "UIConfigannouncementsinterrupts" then o = L_GUI_ANNOUNCEMENTS_INTERRUPTS end
 	if o == "UIConfigannouncementsspells" then o = L_GUI_ANNOUNCEMENTS_SPELLS end
 	if o == "UIConfigannouncementsspells_from_all" then o = L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL end
-	
+
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
 	if o == "UIConfigskinsbigwigs" then o = L_GUI_SKINS_BW end
@@ -76,7 +76,7 @@ local function Local(o)
 	if o == "UIConfigskinsomen" then o = L_GUI_SKINS_OMEN end
 	if o == "UIConfigskinspallypower" then o = L_GUI_SKINS_PP end
 	if o == "UIConfigskinsrecount" then o = L_GUI_SKINS_RECOUNT end
-	
+
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end
 	if o == "UIConfigcombattextenable" then o = L_GUI_COMBATTEXT_ENABLE end
@@ -105,7 +105,7 @@ local function Local(o)
 	if o == "UIConfigcombattextmerge_aoe_spam_time" then o = L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME end
 	if o == "UIConfigcombattextdispel" then o = L_GUI_COMBATTEXT_DISPEL end
 	if o == "UIConfigcombattextinterrupt" then o = L_GUI_COMBATTEXT_INTERRUPT end
-	
+
 	-- Buffs reminder options
 	if o == "UIConfigreminder" then o = L_GUI_REMINDER end
 	if o == "UIConfigremindersolo_buffs_enable" then o = L_GUI_REMINDER_SOLO_ENABLE end
@@ -115,7 +115,7 @@ local function Local(o)
 	if o == "UIConfigreminderraid_buffs_always" then o = L_GUI_REMINDER_RAID_ALWAYS end
 	if o == "UIConfigreminderraid_buffs_size" then o = L_GUI_REMINDER_RAID_SIZE end
 	if o == "UIConfigreminderraid_buffs_alpha" then o = L_GUI_REMINDER_RAID_ALPHA end
-	
+
 	-- Raid cooldowns options
 	if o == "UIConfigraidcooldown" then o = L_GUI_COOLDOWN_RAID end
 	if o == "UIConfigraidcooldownenable" then o = L_GUI_COOLDOWN_RAID_ENABLE end
@@ -126,7 +126,7 @@ local function Local(o)
 	if o == "UIConfigraidcooldownshow_inraid" then o = L_GUI_COOLDOWN_RAID_IN_RAID end
 	if o == "UIConfigraidcooldownshow_inparty" then o = L_GUI_COOLDOWN_RAID_IN_PARTY end
 	if o == "UIConfigraidcooldownshow_inarena" then o = L_GUI_COOLDOWN_RAID_IN_ARENA end
-	
+
 	-- Enemy cooldowns options
 	if o == "UIConfigenemycooldown" then o = L_GUI_COOLDOWN_ENEMY end
 	if o == "UIConfigenemycooldownenable" then o = L_GUI_COOLDOWN_ENEMY_ENABLE end
@@ -135,7 +135,7 @@ local function Local(o)
 	if o == "UIConfigenemycooldownshow_always" then o = L_GUI_COOLDOWN_ENEMY_EVERYWHERE end
 	if o == "UIConfigenemycooldownshow_inpvp" then o = L_GUI_COOLDOWN_ENEMY_IN_BG end
 	if o == "UIConfigenemycooldownshow_inarena" then o = L_GUI_COOLDOWN_ENEMY_IN_ARENA end
-	
+
 	-- Pulse cooldown options
 	if o == "UIConfigpulsecooldown" then o = L_GUI_COOLDOWN_PULSE end
 	if o == "UIConfigpulsecooldownenable" then o = L_GUI_COOLDOWN_PULSE_ENABLE end
@@ -143,7 +143,7 @@ local function Local(o)
 	if o == "UIConfigpulsecooldownsound" then o = L_GUI_COOLDOWN_PULSE_SOUND end
 	if o == "UIConfigpulsecooldownanim_scale" then o = L_GUI_COOLDOWN_PULSE_ANIM_SCALE end
 	if o == "UIConfigpulsecooldownhold_time" then o = L_GUI_COOLDOWN_PULSE_HOLD_TIME end
-	
+
 	-- Threat options
 	if o == "UIConfigthreat" then o = L_GUI_THREAT end
 	if o == "UIConfigthreatenable" then o = L_GUI_THREAT_ENABLE end
@@ -151,7 +151,7 @@ local function Local(o)
 	if o == "UIConfigthreatwidth" then o = L_GUI_THREAT_WIDTH end
 	if o == "UIConfigthreatbar_rows" then o = L_GUI_THREAT_ROWS end
 	if o == "UIConfigthreathide_solo" then o = L_GUI_THREAT_HIDE_SOLO end
-	
+
 	-- Tooltip options
 	if o == "UIConfigtooltip" then o = L_GUI_TOOLTIP end
 	if o == "UIConfigtooltipenable" then o = L_GUI_TOOLTIP_ENABLE end
@@ -172,7 +172,7 @@ local function Local(o)
 	if o == "UIConfigtooltipraid_icon" then o = L_GUI_TOOLTIP_RAID_ICON end
 	if o == "UIConfigtooltipwho_targetting" then o = L_GUI_TOOLTIP_WHO_TARGETTING end
 	if o == "UIConfigtooltipitem_count" then o = L_GUI_TOOLTIP_ITEM_COUNT end
-	
+
 	-- Chat options
 	if o == "UIConfigchat" then o = SOCIALS end
 	if o == "UIConfigchatenable" then o = L_GUI_CHAT_ENABLE end
@@ -188,7 +188,7 @@ local function Local(o)
 	if o == "UIConfigchatbubbles" then o = L_GUI_CHAT_SKIN_BUBBLE end
 	if o == "UIConfigchatcombatlog" then o = L_GUI_CHAT_CL_TAB end
 	if o == "UIConfigchatsticky" then o = L_GUI_CHAT_STICKY end
-	
+
 	-- Bag options
 	if o == "UIConfigbag" then o = L_GUI_BAGS end
 	if o == "UIConfigbagenable" then o = L_GUI_BAGS_ENABLE end
@@ -196,7 +196,7 @@ local function Local(o)
 	if o == "UIConfigbagbutton_space" then o = L_GUI_BAGS_BUTTON_SPACE end
 	if o == "UIConfigbagbank_columns" then o = L_GUI_BAGS_BANK end
 	if o == "UIConfigbagbag_columns" then o = L_GUI_BAGS_BAG end
-	
+
 	-- Minimap options
 	if o == "UIConfigminimap" then o = MINIMAP_LABEL end
 	if o == "UIConfigminimapenable" then o = L_GUI_MINIMAP_ENABLE end
@@ -204,13 +204,13 @@ local function Local(o)
 	if o == "UIConfigminimapsize" then o = L_GUI_MINIMAP_SIZE end
 	if o == "UIConfigminimaphide_combat" then o = L_GUI_MINIMAP_HIDE_COMBAT end
 	if o == "UIConfigminimapmerge_menus" then o = L_GUI_MINIMAP_MERGE_MENUS end
-	
+
 	-- Map options
 	if o == "UIConfigmap" then o = WORLD_MAP end
 	if o == "UIConfigmapenable" then o = L_GUI_MAP_ENABLE end
 	if o == "UIConfigmapscale" then o = L_GUI_MAP_SCALE end
 	if o == "UIConfigmapbg_map_stylization" then o = L_GUI_MAP_BG_STYLIZATION end
-	
+
 	-- Loot options
 	if o == "UIConfigloot" then o = LOOT end
 	if o == "UIConfiglootlootframe" then o = L_GUI_LOOT_ENABLE end
@@ -219,7 +219,7 @@ local function Local(o)
 	if o == "UIConfiglootwidth" then o = L_GUI_LOOT_WIDTH end
 	if o == "UIConfiglootauto_greed" then o = L_GUI_LOOT_AUTOGREED end
 	if o == "UIConfiglootauto_confirm_de" then o = L_GUI_LOOT_AUTODE end
-	
+
 	-- Nameplate options
 	if o == "UIConfignameplate" then o = UNIT_NAMEPLATES end
 	if o == "UIConfignameplateenable" then o = L_GUI_NAMEPLATE_ENABLE end
@@ -238,7 +238,7 @@ local function Local(o)
 	if o == "UIConfignameplatenear_color" then o = L_GUI_NAMEPLATE_NEAR_COLOR end
 	if o == "UIConfignameplatebad_color" then o = L_GUI_NAMEPLATE_BAD_COLOR end
 	if o == "UIConfignameplatetrack_auras" then o = L_GUI_NAMEPLATE_SHOW_DEBUFFS end
-	
+
 	-- ActionBar options
 	if o == "UIConfigactionbar" then o = ACTIONBARS_LABEL end
 	if o == "UIConfigactionbarenable" then o = L_GUI_ACTIONBAR_ENABLE end
@@ -259,7 +259,7 @@ local function Local(o)
 	if o == "UIConfigactionbarshapeshift_mouseover" then o = L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER end
 	if o == "UIConfigactionbarshapeshift_hide" then o = L_GUI_ACTIONBAR_SHAPESHIFT_HIDE end
 	if o == "UIConfigactionbarshapeshift_horizontal" then o = L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL end
-	
+
 	-- Auras/Buffs/Debuffs
 	if o == "UIConfigaura" then o = BUFFOPTIONS_LABEL end
 	if o == "UIConfigauraplayer_buff_size" then o = L_GUI_AURA_PLAYER_BUFF_SIZE end
@@ -276,7 +276,7 @@ local function Local(o)
 	if o == "UIConfigauradebuff_color_type" then o = L_GUI_AURA_DEBUFF_COLOR_TYPE end
 	if o == "UIConfigauracast_by" then o = L_GUI_AURA_CAST_BY end
 	if o == "UIConfigauraclasscolor_border" then o = L_GUI_AURA_CLASSCOLOR_BORDER end
-	
+
 	-- Unit Frames options
 	if o == "UIConfigunitframe" then o = UNITFRAME_LABEL end
 	if o == "UIConfigunitframeenable" then o = L_GUI_UF_ENABLE end
@@ -320,7 +320,7 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_talents" then o = L_GUI_UF_PLUGINS_TALENTS end
 	if o == "UIConfigunitframeplugins_combat_feedback" then o = L_GUI_UF_PLUGINS_COMBAT_FEEDBACK end
 	if o == "UIConfigunitframeplugins_fader" then o = L_GUI_UF_PLUGINS_FADER end
-	
+
 	-- Raid Frames options
 	if o == "UIConfigraidframe" then o = RAID_FRAMES_LABEL end
 	if o == "UIConfigraidframeaggro_border" then o = L_GUI_UF_AGGRO_BORDER end
@@ -345,14 +345,14 @@ local function Local(o)
 	if o == "UIConfigraidframeplugins_aura_watch" then o = L_GUI_UF_PLUGINS_AURA_WATCH end
 	if o == "UIConfigraidframeplugins_aura_watch_timer" then o = L_GUI_UF_PLUGINS_AURA_WATCH_TIMER end
 	if o == "UIConfigraidframeplugins_healcomm" then o = L_GUI_UF_PLUGINS_HEALCOMM end
-	
+
 	-- Panel options
 	if o == "UIConfigtoppanel" then o = L_GUI_TOP_PANEL end
 	if o == "UIConfigtoppanelenable" then o = L_GUI_TOP_PANEL_ENABLE end
 	if o == "UIConfigtoppanelmouseover" then o = L_GUI_TOP_PANEL_MOUSE end
 	if o == "UIConfigtoppanelheight" then o = L_GUI_TOP_PANEL_HEIGHT end
 	if o == "UIConfigtoppanelwidth" then o = L_GUI_TOP_PANEL_WIDTH end
-	
+
 	-- Stats options
 	if o == "UIConfigstats" then o = L_GUI_STATS end
 	if o == "UIConfigstatsbattleground" then o = L_GUI_STATS_BG end
@@ -367,7 +367,7 @@ local function Local(o)
 	if o == "UIConfigstatscoords" then o = L_GUI_STATS_COORDS end
 	if o == "UIConfigstatslocation" then o = L_GUI_STATS_LOCATION end
 	if o == "UIConfigstatsguild_repair" then o = L_GUI_STATS_GUILD_REPAIR end
-	
+
 	-- Error options
 	if o == "UIConfigerror" then o = L_GUI_ERROR end
 	if o == "UIConfigerrorhide" then o = L_GUI_ERROR_HIDE end
@@ -380,7 +380,7 @@ end
 
 local NewButton = function(text, parent)
 	local T, C, L = unpack(ShestakUI)
-	
+
 	local result = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
 	local label = result:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 	label:SetText(text)
@@ -396,7 +396,7 @@ end
 
 local NormalButton = function(text, parent)
 	local T, C, L = unpack(ShestakUI)
-	
+
 	local result = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
 	local label = result:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 	label:SetJustifyH("LEFT")
@@ -435,6 +435,7 @@ StaticPopupDialogs["PERCHAR"] = {
 	button2 = CANCEL,
 	timeout = 0,
 	whileDead = 1,
+	preferredIndex = 3,
 }
 
 StaticPopupDialogs["RESET_PERCHAR"] = {
@@ -448,6 +449,7 @@ StaticPopupDialogs["RESET_PERCHAR"] = {
 	button2 = CANCEL,
 	timeout = 0,
 	whileDead = 1,
+	preferredIndex = 3,
 }
 
 StaticPopupDialogs["RESET_ALL"] = {
@@ -462,6 +464,7 @@ StaticPopupDialogs["RESET_ALL"] = {
 	button2 = CANCEL,
 	timeout = 0,
 	whileDead = 1,
+	preferredIndex = 3,
 }
 
 local function SetValue(group, option, value)
@@ -831,15 +834,15 @@ function CreateUIConfig()
 			StaticPopup_Show("RESET_ALL")
 		end
 	end)
-	
+
 	local close = NormalButton(CLOSE, UIConfigMain)
 	close:SetPoint("TOPRIGHT", UIConfig, "BOTTOMRIGHT", 10, -25)
 	close:SetScript("OnClick", function(self) PlaySound("igMainMenuOption") UIConfigMain:Hide() end)
-	
+
 	local load = NormalButton(APPLY, UIConfigMain)
 	load:SetPoint("RIGHT", close, "LEFT", -4, 0)
 	load:SetScript("OnClick", function(self) ReloadUI() end)
-	
+
 	local totalreset = NormalButton(L_GUI_BUTTON_RESET, UIConfigMain)
 	totalreset:SetWidth(180)
 	totalreset:SetPoint("TOPLEFT", groupsBG, "BOTTOMLEFT", 0, -15)
@@ -851,23 +854,23 @@ function CreateUIConfig()
 		end
 		GUIConfigSettings = {}
 	end)
-	
+
 	if GUIConfigAll then
 		local button = CreateFrame("CheckButton", "UIConfigAllCharacters", TitleBox, "InterfaceOptionsCheckButtonTemplate")
 		button:SetScript("OnClick", function(self) StaticPopup_Show("PERCHAR") UIConfigCover:Show() end)
 		button:SetPoint("RIGHT", TitleBox, "RIGHT", -3, 0)
-		
+
 		local label = UIConfigAllCharacters:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 		label:SetText(L_GUI_SET_SAVED_SETTTINGS)
 		label:SetPoint("RIGHT", button, "LEFT")
-		
+
 		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
 			button:SetChecked(true)
 		else
 			button:SetChecked(false)
 		end
-	end	
-	
+	end
+
 	local bgskins = {TitleBox, TitleBoxVer, UIConfigBG, groupsBG}
 	for _, sb in pairs(bgskins) do
 		if IsAddOnLoaded("Aurora") then
@@ -877,7 +880,7 @@ function CreateUIConfig()
 			sb:SetTemplate("Overlay")
 		end
 	end
-	
+
 	ShowGroup("general")
 end
 
@@ -895,11 +898,11 @@ do
 			UIConfigMain:Hide()
 		end
 	end
-	
+
 	SLASH_RESETCONFIG1 = "/resetconfig"
 	function SlashCmdList.RESETCONFIG()
 		if UIConfigMain and UIConfigMain:IsShown() then UIConfigCover:Show() end
-		
+
 		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
 			StaticPopup_Show("RESET_PERCHAR")
 		else
