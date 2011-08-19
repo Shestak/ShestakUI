@@ -41,7 +41,6 @@ if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.n
 	C["misc"].raid_tools = false
 	C["misc"].ach_screens = true
 	C["misc"].auto_accept_invite = true
-	C["misc"].profession_tabs = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
 	C["announcements"].spells = true
@@ -93,7 +92,6 @@ if T.author == true then
 	C["misc"].auto_quest = true
 	C["misc"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
-	C["misc"].profession_tabs = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
 	C["combattext"].stop_ve_spam = true
