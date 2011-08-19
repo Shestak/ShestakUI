@@ -313,10 +313,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ChannelPulloutTabLeft"]:SetTexture(nil)
 		_G["ChannelPulloutTabMiddle"]:SetTexture(nil)
 		_G["ChannelPulloutTabRight"]:SetTexture(nil)
-		if C.skins.blizzard_frames == true
+		if C.skins.blizzard_frames == true then
 			T.SkinCloseButton(StaticPopup1CloseButton, nil, "-")
 			T.SkinCloseButton(RolePollPopupCloseButton)
 			T.SkinCloseButton(ItemRefCloseButton)
+			T.SkinCloseButton(aLoadCloseButton)
 		end
 	end
 
