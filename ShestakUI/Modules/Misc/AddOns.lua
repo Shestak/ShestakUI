@@ -116,7 +116,7 @@ local makeList = function()
 				GameTooltip:SetOwner(self, ANCHOR_TOPRIGHT)
 				GameTooltip:AddLine(title)
 				if notes then
-					GameTooltip:AddLine(notes, 1, 1, 1)
+					GameTooltip:AddLine(notes, 1, 1, 1, 1)
 				end
 				if GetAddOnDependencies(v) then
 					local s = "|cffff2200"..L_ALOAD_DEP
