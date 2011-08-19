@@ -62,7 +62,7 @@ T.RGBToHex = function(r, g, b)
 	r = r <= 1 and r >= 0 and r or 0
 	g = g <= 1 and g >= 0 and g or 0
 	b = b <= 1 and b >= 0 and b or 0
-	return string.format("|cff%02x%02x%02x", r*255, g*255, b*255)
+	return string.format("|cff%02x%02x%02x", r * 255, g * 255, b * 255)
 end
 
 ----------------------------------------------------------------------------------------
@@ -79,17 +79,17 @@ T.ShiftBarUpdate = function()
 		if i <= numForms then
 			texture, name, isActive, isCastable = GetShapeshiftFormInfo(i)
 			icon:SetTexture(texture)
-			
+
 			cooldown = _G["ShapeshiftButton"..i.."Cooldown"]
 			if texture then
 				cooldown:SetAlpha(1)
 			else
 				cooldown:SetAlpha(0)
 			end
-			
+
 			start, duration, enable = GetShapeshiftFormCooldown(i)
 			CooldownFrame_SetTimer(cooldown, start, duration, enable)
-			
+
 			if isActive then
 				ShapeshiftBarFrame.lastSelected = button:GetID()
 				button:SetChecked(1)
@@ -115,7 +115,7 @@ T.PetBarUpdate = function(self, event)
 		petAutoCastableTexture = _G[buttonName.."AutoCastable"]
 		petAutoCastShine = _G[buttonName.."Shine"]
 		local name, subtext, texture, isToken, isActive, autoCastAllowed, autoCastEnabled = GetPetActionInfo(i)
-		
+
 		if not isToken then
 			petActionIcon:SetTexture(texture)
 			petActionButton.tooltipName = name
@@ -123,10 +123,10 @@ T.PetBarUpdate = function(self, event)
 			petActionIcon:SetTexture(_G[texture])
 			petActionButton.tooltipName = _G[name]
 		end
-		
+
 		petActionButton.isToken = isToken
 		petActionButton.tooltipSubtext = subtext
-		
+
 		if isActive and name ~= "PET_ACTION_FOLLOW" then
 			petActionButton:SetChecked(1)
 			if IsPetAttackAction(i) then
@@ -138,19 +138,19 @@ T.PetBarUpdate = function(self, event)
 				PetActionButton_StopFlash(petActionButton)
 			end
 		end
-		
+
 		if autoCastAllowed then
 			petAutoCastableTexture:Show()
 		else
 			petAutoCastableTexture:Hide()
 		end
-		
+
 		if autoCastEnabled then
 			AutoCastShine_AutoCastStart(petAutoCastShine)
 		else
 			AutoCastShine_AutoCastStop(petAutoCastShine)
 		end
-		
+
 		if name then
 			if not C.actionbar.show_grid then
 				petActionButton:SetAlpha(1)
@@ -160,7 +160,7 @@ T.PetBarUpdate = function(self, event)
 				petActionButton:SetAlpha(0)
 			end
 		end
-		
+
 		if texture then
 			if GetPetActionSlotUsable(i) then
 				SetDesaturation(petActionIcon, nil)
@@ -171,7 +171,7 @@ T.PetBarUpdate = function(self, event)
 		else
 			petActionIcon:Hide()
 		end
-		
+
 		if not PetHasActionBar() and texture and name ~= "PET_ACTION_FOLLOW" then
 			PetActionButton_StopFlash(petActionButton)
 			SetDesaturation(petActionIcon, 1)
@@ -191,8 +191,8 @@ T.CheckForKnownTalent = function(spellid)
 		local num_talents = GetNumTalents(t)
 		for i = 1, num_talents do
 			local name_talent, _, _, _, current_rank = GetTalentInfo(t,i)
-			if name_talent and (name_talent == wanted_name) then
-				if current_rank and (current_rank > 0) then
+			if name_talent and name_talent == wanted_name then
+				if current_rank and current_rank > 0 then
 					return true
 				else
 					return false
@@ -248,25 +248,25 @@ CheckRole()
 T.UTF = function(string, i, dots)
 	if not string then return end
 	local bytes = string:len()
-	if (bytes <= i) then
+	if bytes <= i then
 		return string
 	else
 		local len, pos = 0, 1
-		while(pos <= bytes) do
+		while (pos <= bytes) do
 			len = len + 1
 			local c = string:byte(pos)
-			if (c > 0 and c <= 127) then
+			if c > 0 and c <= 127 then
 				pos = pos + 1
-			elseif (c >= 192 and c <= 223) then
+			elseif c >= 192 and c <= 223 then
 				pos = pos + 2
-			elseif (c >= 224 and c <= 239) then
+			elseif c >= 224 and c <= 239 then
 				pos = pos + 3
-			elseif (c >= 240 and c <= 247) then
+			elseif c >= 240 and c <= 247 then
 				pos = pos + 4
 			end
-			if (len == i) then break end
+			if len == i then break end
 		end
-		if (len == i and pos <= bytes) then
+		if len == i and pos <= bytes then
 			return string:sub(1, pos - 1)..(dots and "..." or "")
 		else
 			return string
@@ -280,21 +280,21 @@ end
 local waitTable = {}
 local waitFrame
 function T.Delay(delay, func, ...)
-	if(type(delay)~="number" or type(func)~="function") then
+	if type(delay) ~= "number" or type(func) ~= "function" then
 		return false
 	end
-	if(waitFrame == nil) then
+	if waitFrame == nil then
 		waitFrame = CreateFrame("Frame", "WaitFrame", UIParent)
 		waitFrame:SetScript("onUpdate", function(self, elapse)
 			local count = #waitTable
 			local i = 1
-			while(i<=count) do
-				local waitRecord = tremove(waitTable,i)
-				local d = tremove(waitRecord,1)
-				local f = tremove(waitRecord,1)
-				local p = tremove(waitRecord,1)
-				if(d>elapse) then
-					tinsert(waitTable,i,{d-elapse,f,p})
+			while (i <= count) do
+				local waitRecord = tremove(waitTable, i)
+				local d = tremove(waitRecord, 1)
+				local f = tremove(waitRecord, 1)
+				local p = tremove(waitRecord, 1)
+				if d > elapse then
+					tinsert(waitTable, i, {d-elapse, f, p})
 					i = i + 1
 				else
 					count = count - 1
@@ -303,7 +303,7 @@ function T.Delay(delay, func, ...)
 			end
 		end)
 	end
-	tinsert(waitTable,{delay,func,{...}})
+	tinsert(waitTable, {delay, func, {...}})
 	return true
 end
 
@@ -312,7 +312,6 @@ end
 ----------------------------------------------------------------------------------------
 local ADDON_NAME, ns = ...
 local oUF = ns.oUF or oUF
-assert(oUF, "ShestakUI was unable to locate oUF install.")
 
 T.UpdateAllElements = function(frame)
 	for _, v in ipairs(frame.__elements) do
@@ -355,7 +354,7 @@ T.SpawnMenu = function(self)
 
 	if _G[unit.."FrameDropDown"] then
 		ToggleDropDownMenu(1, nil, _G[unit.."FrameDropDown"], "cursor")
-	elseif (self.unit:match("party")) then
+	elseif self.unit:match("party") then
 		ToggleDropDownMenu(1, nil, _G["PartyMemberFrame"..self.id.."DropDown"], "cursor")
 	else
 		FriendsDropDown.unit = self.unit
@@ -373,7 +372,7 @@ T.SetFontString = function(parent, fontName, fontHeight, fontStyle)
 end
 
 T.PostUpdateHealth = function(health, unit, min, max)
-	if (unit and unit:find("arena%dtarget")) then return end
+	if unit and unit:find("arena%dtarget") then return end
 	if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
 		health:SetValue(0)
 		if not UnitIsConnected(unit) then
@@ -451,7 +450,7 @@ T.PostUpdateHealth = function(health, unit, min, max)
 						health.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), T.ShortValue(min))
 					end
 				end
-			elseif (unit and unit:find("boss%d")) then
+			elseif unit and unit:find("boss%d") then
 				if C.unitframe.color_value == true then
 					health.value:SetFormattedText("|cff%02x%02x%02x%d%%|r |cffD7BEA5-|r |cffAF5050%s|r", r * 255, g * 255, b * 255, floor(min / max * 100), T.ShortValue(min))
 				else
@@ -519,7 +518,7 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 		end
 		if min ~= max then
 			r, g, b = oUF.ColorGradient(min / max, 0.69, 0.31, 0.31, 0.65, 0.63, 0.35, 0.33, 0.59, 0.33)
-			if (self:GetParent():GetName():match"oUF_PartyDPS") then
+			if self:GetParent():GetName():match"oUF_PartyDPS" then
 				if C.unitframe.color_value == true then
 					health.value:SetFormattedText("|cffAF5050%s|r |cffD7BEA5-|r |cff%02x%02x%02x%d%%|r", T.ShortValue(min), r * 255, g * 255, b * 255, floor(min / max * 100))
 				else
@@ -548,7 +547,7 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 			end
 		end
 		if C.raidframe.alpha_health == true then
-			if(min / max > 0.95) then 
+			if (min / max > 0.95) then
 				health:SetAlpha(0.6)
 				power:SetAlpha(0.6)
 				border:SetAlpha(0.6)
@@ -563,7 +562,7 @@ end
 
 T.PreUpdatePower = function(power, unit)
 	local _, pType = UnitPowerType(unit)
-	
+
 	local color = T.oUF_colors.power[pType]
 	if color then
 		power:SetStatusBarColor(color[1], color[2], color[3])
@@ -571,7 +570,7 @@ T.PreUpdatePower = function(power, unit)
 end
 
 T.PostUpdatePower = function(power, unit, min, max)
-	if (unit and unit:find("arena%dtarget")) then return end
+	if unit and unit:find("arena%dtarget") then return end
 	local self = power:GetParent()
 	local pType, pToken = UnitPowerType(unit)
 	local color = T.oUF_colors.power[pToken]
@@ -583,9 +582,9 @@ T.PostUpdatePower = function(power, unit, min, max)
 	if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
 		power:SetValue(0)
 	end
-	
+
 	if unit == "focus" or unit == "focustarget" or unit == "targettarget" or (self:GetParent():GetName():match"oUF_RaidDPS") then return end
-	
+
 	if not UnitIsConnected(unit) then
 		power.value:SetText()
 	elseif UnitIsDead(unit) or UnitIsGhost(unit) then
@@ -607,7 +606,7 @@ T.PostUpdatePower = function(power, unit, min, max)
 							power.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), T.ShortValue(max - (max - min)))
 						end
 					end
-				elseif unit == "player" and power:GetAttribute("normalUnit") == "pet" or unit == "pet" then
+				elseif (unit == "player" and power:GetAttribute("normalUnit") == "pet") or unit == "pet" then
 					if C.unitframe.show_total_value == true then
 						if C.unitframe.color_value == true then
 							power.value:SetFormattedText("%s |cffD7BEA5-|r %s", T.ShortValue(max - (max - min)), T.ShortValue(max))
@@ -621,13 +620,13 @@ T.PostUpdatePower = function(power, unit, min, max)
 							power.value:SetFormattedText("|cffffffff%d%%|r", floor(min / max * 100))
 						end
 					end
-				elseif (unit and unit:find("arena%d")) then
+				elseif unit and unit:find("arena%d") then
 					if C.unitframe.color_value == true then
 						power.value:SetFormattedText("|cffD7BEA5%d%% - %s|r", floor(min / max * 100), T.ShortValue(max - (max - min)))
 					else
 						power.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), T.ShortValue(max - (max - min)))
 					end
-				elseif (self:GetParent():GetName():match"oUF_PartyDPS") then
+				elseif self:GetParent():GetName():match"oUF_PartyDPS" then
 					if C.unitframe.color_value == true then
 						power.value:SetFormattedText("%s |cffD7BEA5-|r %d%%", T.ShortValue(max - (max - min)), floor(min / max * 100))
 					else
@@ -725,23 +724,23 @@ T.UpdateDruidMana = function(self)
 		self.DruidMana:SetAlpha(0)
 	end
 end
-	
-T.UpdatePvPStatus =	function(self, elapsed)
-	if(self.elapsed and self.elapsed > 0.2) then
+
+T.UpdatePvPStatus = function(self, elapsed)
+	if self.elapsed and self.elapsed > 0.2 then
 		local unit = self.unit
 		local time = GetPVPTimer()
 
 		local min = format("%01.f", floor((time / 1000) / 60))
 		local sec = format("%02.f", floor((time / 1000) - min * 60))
-		if(self.Status) then
+		if self.Status then
 			local factionGroup = UnitFactionGroup(unit)
-			if(UnitIsPVPFreeForAll(unit)) then
+			if UnitIsPVPFreeForAll(unit) then
 				if time ~= 301000 and time ~= -1 then
 					self.Status:SetText(PVP.." ".."["..min..":"..sec.."]")
 				else
 					self.Status:SetText(PVP)
 				end
-			elseif(factionGroup and UnitIsPVP(unit)) then
+			elseif factionGroup and UnitIsPVP(unit) then
 				if time ~= 301000 and time ~= -1 then
 					self.Status:SetText(PVP.." ".."["..min..":"..sec.."]")
 				else
@@ -758,10 +757,10 @@ T.UpdatePvPStatus =	function(self, elapsed)
 end
 
 T.UpdateShards = function(self, event, unit, powerType)
-	if(self.unit ~= unit or (powerType and powerType ~= "SOUL_SHARDS")) then return end
+	if self.unit ~= unit or (powerType and powerType ~= "SOUL_SHARDS") then return end
 	local num = UnitPower(unit, SPELL_POWER_SOUL_SHARDS)
 	for i = 1, SHARD_BAR_NUM_SHARDS do
-		if(i <= num) then
+		if i <= num then
 			self.SoulShards[i]:SetAlpha(1)
 		else
 			self.SoulShards[i]:SetAlpha(0.2)
@@ -777,10 +776,10 @@ T.Phasing = function(self, event)
 end
 
 T.UpdateHoly = function(self, event, unit, powerType)
-	if(self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER")) then return end
+	if self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER") then return end
 	local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)
 	for i = 1, MAX_HOLY_POWER do
-		if(i <= num) then
+		if i <= num then
 			self.HolyPower[i]:SetAlpha(1)
 		else
 			self.HolyPower[i]:SetAlpha(0.2)
@@ -789,9 +788,9 @@ T.UpdateHoly = function(self, event, unit, powerType)
 end
 
 T.EclipseDirection = function(self)
-	if ( GetEclipseDirection() == "sun" ) then
+	if GetEclipseDirection() == "sun" then
 		self.Text:SetText("|cff4478BC>>|r")
-	elseif ( GetEclipseDirection() == "moon" ) then
+	elseif GetEclipseDirection() == "moon" then
 		self.Text:SetText("|cffE5994C<<|r")
 	else
 		self.Text:SetText("")
@@ -801,9 +800,11 @@ end
 T.UpdateEclipse = function(self, login)
 	local eb = self.EclipseBar
 	local txt = self.EclipseBar.Text
+
 	if login then
 		eb:SetScript("OnUpdate", nil)
 	end
+
 	if eb:IsShown() then
 		txt:Show()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", T.Scale(2), T.Scale(19)) end
@@ -821,10 +822,10 @@ end
 
 T.UpdateComboPoint = function(self, event, unit)
 	if unit == "pet" then return end
-	
+
 	local cpoints = self.CPoints
 	local cp
-	if (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) then
+	if UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") then
 		cp = GetComboPoints("vehicle", "target")
 	else
 		cp = GetComboPoints("player", "target")
@@ -857,7 +858,6 @@ end
 
 T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 	Castbar.channeling = false
-
 	if unit == "vehicle" then unit = "player" end
 
 	if unit == "player" and C.unitframe.castbar_latency == true then
@@ -871,7 +871,7 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 	end
 
 	local r, g, b, color
-	if(UnitIsPlayer(unit)) then
+	if UnitIsPlayer(unit) then
 		local _, class = UnitClass(unit)
 		color = oUF.colors.class[class]
 	else
@@ -930,7 +930,7 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 	end
 
 	local r, g, b, color
-	if(UnitIsPlayer(unit)) then
+	if UnitIsPlayer(unit) then
 		local _, class = UnitClass(unit)
 		color = oUF.colors.class[class]
 	else
@@ -1053,15 +1053,15 @@ end
 
 T.PostCreateAura = function(element, button)
 	button:SetTemplate("Default")
-	
+
 	button.remaining = T.SetFontString(button, C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 	button.remaining:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 	button.remaining:Point("CENTER", button, "CENTER", 1, 1)
 	button.remaining:SetJustifyH("CENTER")
 	button.remaining:SetTextColor(1, 1, 1)
 
-	button.cd.noOCC = true				-- hide OmniCC CDs
-	button.cd.noCooldownCount = true	-- hide CDC CDs
+	button.cd.noOCC = true
+	button.cd.noCooldownCount = true
 
 	button.icon:Point("TOPLEFT", 2, -2)
 	button.icon:Point("BOTTOMRIGHT", -2, 2)
@@ -1100,7 +1100,7 @@ T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, 
 	}
 
 	if icon.debuff then
-		if(not UnitIsFriend("player", unit) and not playerUnits[icon.owner]) then
+		if not UnitIsFriend("player", unit) and not playerUnits[icon.owner] then
 			icon:SetBackdropBorderColor(unpack(C.media.border_color))
 			icon.icon:SetDesaturated(true)
 		else
@@ -1165,7 +1165,7 @@ T.CreateAuraWatchIcon = function(self, icon)
 	icon.icon:Point("BOTTOMRIGHT", icon, -1, 1)
 	icon.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	icon.icon:SetDrawLayer("ARTWORK")
-	if (icon.cd) then
+	if icon.cd then
 		icon.cd:SetReverse()
 	end
 	icon.overlay:SetTexture()
@@ -1180,25 +1180,25 @@ T.CreateAuraWatch = function(self, unit)
 	auras.icons = {}
 	auras.PostCreateIcon = T.CreateAuraWatchIcon
 
-	if (not C.aura.show_timer) then
+	if not C.aura.show_timer then
 		auras.hideCooldown = true
 	end
 
 	local buffs = {}
 
-	if (T.buffids["ALL"]) then
+	if T.buffids["ALL"] then
 		for key, value in pairs(T.buffids["ALL"]) do
 			tinsert(buffs, value)
 		end
 	end
 
-	if (T.buffids[T.class]) then
+	if T.buffids[T.class] then
 		for key, value in pairs(T.buffids[T.class]) do
 			tinsert(buffs, value)
 		end
 	end
 
-	if (buffs) then
+	if buffs then
 		for key, spell in pairs(buffs) do
 			local icon = CreateFrame("Frame", nil, auras)
 			icon.spellID = spell[1]
@@ -1210,7 +1210,7 @@ T.CreateAuraWatch = function(self, unit)
 			local tex = icon:CreateTexture(nil, "OVERLAY")
 			tex:SetAllPoints(icon)
 			tex:SetTexture(C.media.blank)
-			if (spell[3]) then
+			if spell[3] then
 				tex:SetVertexColor(unpack(spell[3]))
 			else
 				tex:SetVertexColor(0.8, 0.8, 0.8)

@@ -15,7 +15,7 @@ local MyUnits = {
 
 local function OnUpdate(self, elapsed)
 	local time = self.filter == "CD" and (self.expirationTime + self.duration - GetTime()) or (self.expirationTime - GetTime())
-	if (self:GetParent().Mode == "BAR") then
+	if self:GetParent().Mode == "BAR" then
 		self.statusbar:SetValue(time)
 		if time <= 60 then
 			self.time:SetFormattedText("%.1f", time)
@@ -27,7 +27,7 @@ local function OnUpdate(self, elapsed)
 		local id = self:GetParent().Id
 		for index, value in ipairs(active[id]) do
 			local spn = GetFilgerData(value.data)
-			if (self.spellName == spn) then
+			if self.spellName == spn then
 				tremove(active[id], index)
 				break
 			end
@@ -39,7 +39,7 @@ end
 
 function Update(self)
 	local id = self.Id
-	if (not bars[id]) then
+	if not bars[id] then
 		bars[id] = {}
 	end
 	for index, value in ipairs(bars[id]) do
@@ -48,28 +48,28 @@ function Update(self)
 	local bar
 	for index, value in ipairs(active[id]) do
 		bar = bars[id][index]
-		if (not bar) then
+		if not bar then
 			bar = CreateFrame("Frame", "FilgerAnchor"..id.."Frame"..index, self)
 			bar:Width(value.data.size)
 			bar:Height(value.data.size)
 			bar:SetScale(1)
 			bar:SetTemplate("Default")
 
-			if (index == 1) then
+			if index == 1 then
 				bar:Point(unpack(self.setPoint))
 			else
-				if (self.Direction == "UP") then
+				if self.Direction == "UP" then
 					bar:Point("BOTTOM", bars[id][index-1], "TOP", 0, self.Interval)
-				elseif (self.Direction == "RIGHT") then
+				elseif self.Direction == "RIGHT" then
 					bar:Point("LEFT", bars[id][index-1], "RIGHT", self.Mode == "ICON" and self.Interval or value.data.barWidth + self.Interval, 0)
-				elseif (self.Direction == "LEFT") then
+				elseif self.Direction == "LEFT" then
 					bar:Point("RIGHT", bars[id][index-1], "LEFT", self.Mode == "ICON" and -self.Interval or -(value.data.barWidth + self.Interval), 0)
 				else
 					bar:Point("TOP", bars[id][index-1], "BOTTOM", 0, -self.Interval)
 				end
 			end
 
-			if (bar.icon) then
+			if bar.icon then
 				bar.icon = _G[bar.icon:GetName()]
 			else
 				bar.icon = bar:CreateTexture("$parentIcon", "ARTWORK")
@@ -77,13 +77,13 @@ function Update(self)
 				bar.icon:Point("BOTTOMRIGHT", -2, 2)
 				bar.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			end
-			
-			if (self.Mode == "ICON") then
+
+			if self.Mode == "ICON" then
 				bar.cooldown = CreateFrame("Cooldown", "$parentCD", bar, "CooldownFrameTemplate")
 				bar.cooldown:SetAllPoints(bar.icon)
 				bar.cooldown:SetReverse()
-				
-				if (bar.count) then
+
+				if bar.count then
 					bar.count = _G[bar.count:GetName()]
 				else
 					bar.count = bar.cooldown:CreateFontString("$parentCount", "OVERLAY")
@@ -93,7 +93,7 @@ function Update(self)
 					bar.count:SetJustifyH("CENTER")
 				end
 			else
-				if (bar.statusbar) then
+				if bar.statusbar then
 					bar.statusbar = _G[bar.statusbar:GetName()]
 				else
 					bar.statusbar = CreateFrame("StatusBar", "$parentStatusBar", bar)
@@ -101,16 +101,16 @@ function Update(self)
 					bar.statusbar:Height(value.data.size - 10)
 					bar.statusbar:SetStatusBarTexture(C.media.texture)
 					bar.statusbar:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1)
-					if ( self.IconSide == "LEFT" ) then
+					if self.IconSide == "LEFT" then
 						bar.statusbar:Point("BOTTOMLEFT", bar, "BOTTOMRIGHT", 5, 2)
-					elseif ( self.IconSide == "RIGHT" ) then
+					elseif self.IconSide == "RIGHT" then
 						bar.statusbar:Point("BOTTOMRIGHT", bar, "BOTTOMLEFT", -5, 2)
 					end
 				end
 				bar.statusbar:SetMinMaxValues(0, 1)
 				bar.statusbar:SetValue(0)
-				
-				if (bar.bg)then
+
+				if bar.bg then
 					bar.bg = _G[bar.bg:GetName()]
 				else
 					bar.bg = CreateFrame("Frame", "$parentBG", bar.statusbar)
@@ -119,8 +119,8 @@ function Update(self)
 					bar.bg:SetFrameStrata("BACKGROUND")
 					bar.bg:SetTemplate("Default")
 				end
-				
-				if (bar.background)then
+
+				if bar.background then
 					bar.background = _G[bar.background:GetName()]
 				else
 					bar.background = bar.statusbar:CreateTexture(nil, "BACKGROUND")
@@ -128,8 +128,8 @@ function Update(self)
 					bar.background:SetTexture(C.media.texture)
 					bar.background:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
 				end
-				
-				if (bar.time)then
+
+				if bar.time then
 					bar.time = _G[bar.time:GetName()]
 				else
 					bar.time = bar.statusbar:CreateFontString("$parentTime", "ARTWORK")
@@ -137,8 +137,8 @@ function Update(self)
 					bar.time:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
 					bar.time:Point("RIGHT", bar.statusbar, 0, 0)
 				end
-				
-				if (bar.count) then
+
+				if bar.count then
 					bar.count = _G[bar.count:GetName()]
 				else
 					bar.count = bar:CreateFontString("$parentCount", "ARTWORK")
@@ -147,8 +147,8 @@ function Update(self)
 					bar.count:Point("BOTTOMRIGHT", 1, 1)
 					bar.count:SetJustifyH("CENTER")
 				end
-				
-				if (bar.spellname)then
+
+				if bar.spellname then
 					bar.spellname = _G[bar.spellname:GetName()]
 				else
 					bar.spellname = bar.statusbar:CreateFontString("$parentSpellName", "ARTWORK")
@@ -161,19 +161,19 @@ function Update(self)
 			end
 			tinsert(bars[id], bar)
 		end
-		
+
 		bar.spellName = value.data.displayName
-		
+
 		bar.icon:SetTexture(value.icon)
 		bar.count:SetText(value.count > 1 and value.count or "")
-		if (self.Mode == "BAR") then
+		if self.Mode == "BAR" then
 			bar.spellname:SetText(value.data.displayName)
 		end
-		if (value.duration > 0) then
-			if (self.Mode == "ICON") then
+		if value.duration > 0 then
+			if self.Mode == "ICON" then
 				CooldownFrame_SetTimer(bar.cooldown, value.data.filter == "CD" and value.expirationTime or (value.expirationTime - value.duration), value.duration, 1)
 				bar.count:SetParent(bar.cooldown)
-				if (value.data.filter == "CD") then
+				if value.data.filter == "CD" then
 					bar.expirationTime = value.expirationTime
 					bar.duration = value.duration
 					bar.filter = value.data.filter
@@ -187,7 +187,7 @@ function Update(self)
 				bar:SetScript("OnUpdate", OnUpdate)
 			end
 		else
-			if (self.Mode == "ICON") then
+			if self.Mode == "ICON" then
 				bar.cooldown:Hide()
 				bar.count:SetParent(bar)
 			else
@@ -197,7 +197,7 @@ function Update(self)
 				bar:SetScript("OnUpdate", nil)
 			end
 		end
-		
+
 		bar:Show()
 	end
 end
@@ -209,19 +209,19 @@ local function OnEvent(self, event, ...)
 		local id = self.Id
 		for i = 1, #Filger_Spells[class][id], 1 do
 			data = Filger_Spells[class][id][i]
-			
+
 			name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, filgerId = GetFilgerData(data)
-			
-			if (not active[id]) then
+
+			if not active[id] then
 				active[id] = {}
 			end
-			
+
 			for index, value in ipairs(active[id]) do
 				if data.filgerId == value.data.filgerId then
 					tremove(active[id], index)
 				end
 			end
-			
+
 			if data.filter == "CD" then
 				if (name and ((enabled or 0) > 0 and (duration or 0) > 1.5)) then
 					table.insert(active[id], { data = data, icon = icon, count = count, duration = duration, expirationTime = expirationTime or start, displayName = spn, filgerId = filgerId })
@@ -246,7 +246,7 @@ end
 
 function GetFilgerData(data)
 	local name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, slotLink, spn, filgerId
-	
+
 	if data.spellID then
 		filgerId = data.spellID
 		spn, _, icon = GetSpellInfo(data.spellID)
@@ -264,7 +264,7 @@ function GetFilgerData(data)
 		filgerId = data.slotID
 		if data.filter == "CD" then
 			slotLink = GetInventoryItemLink("player", data.slotID)
-			
+
 			if slotLink then
 				spn, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
 				start, duration, enabled = GetInventoryItemCooldown("player", data.slotID)
@@ -279,36 +279,36 @@ function GetFilgerData(data)
 			spn, _, _, _, _, _, _, _, _, icon = GetItemInfo(data.itemID)
 		end
 	end
-	
+
 	if not count then
 		count = 0
 	end
-	
+
 	if not duration then
 		duration = 0
 	end
-	
+
 	if not start then
 		start = 0
 	end
-	
+
 	if not enabled then
 		enabled = 0
 	end
-	
+
 	if not data.displayName then
 		data.displayName = spn
 	end
-	
+
 	if not data.filgerId then
 		data.filgerId = filgerId
 	end
-	
+
 	return spn, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, filgerId
 end
 
-if (Filger_Spells and Filger_Spells["ALL"]) then
-	if (not Filger_Spells[class]) then
+if Filger_Spells and Filger_Spells["ALL"] then
+	if not Filger_Spells[class] then
 		Filger_Spells[class] = {}
 	end
 	local didMerge
@@ -318,43 +318,32 @@ if (Filger_Spells and Filger_Spells["ALL"]) then
 			local baseTable = Filger_Spells[class][j]
 			local addTable = Filger_Spells["ALL"][i]
 			if baseTable["Name"] and addTable["Name"] and baseTable["Name"] == addTable["Name"] then
-				
 				for k = 1, #addTable, 1 do
 					if addTable[k].spellID or addTable[k].slotID or addTable[k].itemID then
 						table.insert(baseTable, addTable[k])
 					end
 				end
-				
+
 				didMerge = true
 			end
 		end
-		
+
 		if not didMerge then
 			table.insert(Filger_Spells[class], Filger_Spells["ALL"][i])
 		end
 	end
 end
 
-if (Filger_Spells and Filger_Spells[T.Role]) then
-	if (not Filger_Spells[class]) then
-		Filger_Spells[class] = {}
-	end
-
-	for i = 1, #Filger_Spells[T.Role], 1 do
-		table.insert(Filger_Spells[class], Filger_Spells[T.Role][i])
-	end
-end
-
-if (Filger_Spells and Filger_Spells[class]) then
+if Filger_Spells and Filger_Spells[class] then
 	for index in pairs(Filger_Spells) do
-		if (index ~= class) then
+		if index ~= class then
 			Filger_Spells[index] = nil
 		end
 	end
 	local data, frame
 	for i = 1, #Filger_Spells[class], 1 do
 		data = Filger_Spells[class][i]
-		
+
 		frame = CreateFrame("Frame", "FilgerAnchor"..i, UIParent)
 		frame.Id = i
 		frame.Name = data.Name
@@ -367,20 +356,20 @@ if (Filger_Spells and Filger_Spells[class]) then
 		frame:Height(Filger_Spells[class][i][1] and Filger_Spells[class][i][1].size or 20)
 		frame:Point(unpack(data.setPoint))
 
-		if (Filger_Settings.configmode) then
+		if Filger_Settings.configmode then
 			for j = 1, #Filger_Spells[class][i], 1 do
 				data = Filger_Spells[class][i][j]
-				if (not active[i]) then
+				if not active[i] then
 					active[i] = {}
 				end
 				_, _, spellIcon = GetFilgerData(data)
-				table.insert(active[i], { data = data, icon = spellIcon, count = 9, duration = 0, expirationTime = 0 })
+				table.insert(active[i], {data = data, icon = spellIcon, count = 9, duration = 0, expirationTime = 0})
 			end
 			Update(frame)
 		else
 			for j = 1, #Filger_Spells[class][i], 1 do
 				data = Filger_Spells[class][i][j]
-				if (data.filter == "CD") then
+				if data.filter == "CD" then
 					frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 					break
 				end

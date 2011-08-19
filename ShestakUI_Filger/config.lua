@@ -9,7 +9,7 @@ Filger_Settings = {
 	target_buff_icon = {"BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 253},	-- "T_BUFF"
 	pve_debuff = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 253},			-- "PVE/PVP_DEBUFF"
 	pve_cc = {"TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -44},				-- "PVE/PVP_CC"
-	cooldown = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 63, C.unitframe.plugins_swing == true and 29 or 17},	-- "COOLDOWN"
+	cooldown = {"BOTTOMLEFT", "oUF_Target_Castbar", "TOPLEFT", -2, 5},		-- "COOLDOWN"
 	target_bar = {"BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41},	-- "T_DE/BUFF_BAR"
 }
 
@@ -2598,42 +2598,6 @@ Filger_Spells = {
 			{ slotID = 14, size = 30, filter = "CD" },
 		},
 	},
-	--[[["Caster"] = {
-		{
-			Name = "CASTER_ICON",
-			Direction = "RIGHT",
-			Interval = 3,
-			Mode = "ICON",
-			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
-
-			-- 
-			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
-		},
-	},
-	["Melee"] = {
-		{
-			Name = "MELEE_ICON",
-			Direction = "RIGHT",
-			Interval = 3,
-			Mode = "ICON",
-			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
-
-			-- 
-			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
-		},
-	},
-	["Tank"] = {
-		{
-			Name = "TANK_ICON",
-			Direction = "RIGHT",
-			Interval = 3,
-			Mode = "ICON",
-			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
-
-			-- 
-			{ spellID = , size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
-		},
-	},]]
 	["ALL"] = {
 		{
 			Name = "SPECIAL_P_BUFF_ICON",
