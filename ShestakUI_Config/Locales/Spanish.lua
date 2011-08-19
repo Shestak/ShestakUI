@@ -29,6 +29,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encim
 L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
 L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
 L_GUI_MISC_ACH_SCREENS = "Tomar una captura de pantalla cuando consigas un logro"
+L_GUI_MISC_PROFESSION_TABS = "Professions tabs on tradeskill and trade frames" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Announcements" -- Needs review
@@ -39,6 +40,8 @@ L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members" -- Ne
 
 -- Skins options
 L_GUI_SKINS = "Estilización"
+L_GUI_SKINS_BLIZZARD = "Enable styling Blizzard frames" -- Needs review
+L_GUI_SKINS_MINIMAP_BUTTONS = "Enable styling addons icons on minimap" -- Needs review
 L_GUI_SKINS_BW = "Activar estilo del BigWigs"
 L_GUI_SKINS_DBM = "Activar estilo del DBM"
 L_GUI_SKINS_DXE = "Activar estilo del DXE"
@@ -213,6 +216,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacio entre botones"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Dividir la quinta barra en dos de 6 botones cada una"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Activar borde por color de clase para los botones"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Activar modo cambiar"
+L_GUI_ACTIONBAR_LIGHT_MACRO = "Light macro button when proc spell" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Número de barras de acción abajo (1, 2 o 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Número de barras de acción en la derecha (0, 1, 2 o 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barras de la derecha se muestran al pasar el ratón"
