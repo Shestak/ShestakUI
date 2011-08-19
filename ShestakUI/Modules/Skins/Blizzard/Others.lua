@@ -47,7 +47,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 				_G[bgskins[i]]:SetTemplate("Transparent")
 			end
 		end
-		
+
 		local insetskins = {
 			"InterfaceOptionsFramePanelContainer",
 			"InterfaceOptionsFrameAddOns",
@@ -86,7 +86,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"CombatConfigColorsColorizeEntireLine",
 			"aLoadScroll",
 		}
-		
+
 		for i = 1, getn(insetskins) do
 			local frame = _G[insetskins[i]]
 			if frame then
@@ -107,7 +107,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			_G["StaticPopup"..i.."EditBox"]:Height(20)
 			_G["StaticPopup"..i.."EditBox"]:SetTextInsets(3, 0, 0, 0)
 		end
-		
+
 		-- Reskin Dropdown menu
 		hooksecurefunc("UIDropDownMenu_InitializeHelper", function(frame)
 			for i = 1, UIDROPDOWNMENU_MAXLEVELS do
@@ -123,7 +123,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"LanguageMenu",
 			"VoiceMacroMenu",
 		}
-		
+
 		for i = 1, getn(ChatMenus) do
 			if _G[ChatMenus[i]] == _G["ChatMenu"] then
 				_G[ChatMenus[i]]:HookScript("OnShow", function(self) self:SetTemplate("Transparent") self:ClearAllPoints() self:Point("BOTTOMRIGHT", ChatFrame1, "BOTTOMRIGHT", 0, 30) end)
@@ -131,7 +131,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 				_G[ChatMenus[i]]:HookScript("OnShow", function(self) self:SetTemplate("Transparent") end)
 			end
 		end
-		
+
 		-- Hide header textures and move text/buttons
 		local BlizzardHeader = {
 			"GameMenuFrame",
@@ -140,7 +140,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ColorPickerFrame",
 			"ChatConfigFrame",
 		}
-		
+
 		for i = 1, getn(BlizzardHeader) do
 			local title = _G[BlizzardHeader[i].."Header"]
 			if title then
@@ -157,7 +157,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 				end
 			end
 		end
-		
+
 		-- Reskin buttons
 		local BlizzardButtons = {
 			"GameMenuButtonOptions",
@@ -234,14 +234,14 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"PlayLoopbackSoundButton",
 			"AudioOptionsVoicePanelChatMode1KeyBindingButton",
 		}
-		
+
 		for i = 1, getn(BlizzardButtons) do
 			local buttons = _G[BlizzardButtons[i]]
 			if buttons then
 				buttons:SkinButton()
 			end
 		end
-		
+
 		-- Button position or text
 		_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
 		_G["VideoOptionsFrameDefaults"]:Point("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
@@ -313,8 +313,13 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ChannelPulloutTabLeft"]:SetTexture(nil)
 		_G["ChannelPulloutTabMiddle"]:SetTexture(nil)
 		_G["ChannelPulloutTabRight"]:SetTexture(nil)
+		if C.skins.blizzard_frames == true
+			T.SkinCloseButton(StaticPopup1CloseButton, nil, "-")
+			T.SkinCloseButton(RolePollPopupCloseButton)
+			T.SkinCloseButton(ItemRefCloseButton)
+		end
 	end
-	
+
 	if addon == "Blizzard_GuildUI" then
 		_G["GuildFrameTab1"]:ClearAllPoints()
 		_G["GuildFrameTab1"]:Point("TOPLEFT", _G["GuildFrame"], "BOTTOMLEFT", -4, 2)
@@ -327,40 +332,40 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		MacOptionsFrameHeader:SetTexture("")
 		MacOptionsFrameHeader:ClearAllPoints()
 		MacOptionsFrameHeader:Point("TOP", MacOptionsFrame, 0, 0)
-	 
+
 		-- Skin internal frames
 		MacOptionsFrameMovieRecording:SetTemplate("Overlay")
 		MacOptionsITunesRemote:SetTemplate("Overlay")
-	 
+
 		-- Skin buttons
 		_G["MacOptionsFrameCancel"]:SkinButton()
 		_G["MacOptionsFrameOkay"]:SkinButton()
 		_G["MacOptionsButtonKeybindings"]:SkinButton()
 		_G["MacOptionsFrameDefaults"]:SkinButton()
 		_G["MacOptionsButtonCompress"]:SkinButton()
-	 
+
 		-- Reposition and resize buttons
 		local tPoint, tRTo, tRP, tX, tY = _G["MacOptionsButtonCompress"]:GetPoint()
 		_G["MacOptionsButtonCompress"]:Width(136)
 		_G["MacOptionsButtonCompress"]:ClearAllPoints()
 		_G["MacOptionsButtonCompress"]:Point(tPoint, tRTo, tRP, 4, tY)
-	 
+
 		_G["MacOptionsFrameCancel"]:Width(96)
 		_G["MacOptionsFrameCancel"]:Height(22)
 		tPoint, tRTo, tRP, tX, tY = _G["MacOptionsFrameCancel"]:GetPoint()
 		_G["MacOptionsFrameCancel"]:ClearAllPoints()
 		_G["MacOptionsFrameCancel"]:Point(tPoint, tRTo, tRP, -14, tY)
-	 
+
 		_G["MacOptionsFrameOkay"]:ClearAllPoints()
 		_G["MacOptionsFrameOkay"]:Width(96)
 		_G["MacOptionsFrameOkay"]:Height(22)
 		_G["MacOptionsFrameOkay"]:Point("LEFT", _G["MacOptionsFrameCancel"], -99, 0)
-	 
+
 		_G["MacOptionsButtonKeybindings"]:ClearAllPoints()
 		_G["MacOptionsButtonKeybindings"]:Width(96)
 		_G["MacOptionsButtonKeybindings"]:Height(22)
 		_G["MacOptionsButtonKeybindings"]:Point("LEFT", _G["MacOptionsFrameOkay"], -99, 0)
-	 
+
 		_G["MacOptionsFrameDefaults"]:Width(96)
 		_G["MacOptionsFrameDefaults"]:Height(22)
 	end
@@ -374,19 +379,19 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["DBM_GUI_OptionsFrameTab1"]:Point("TOPLEFT", _G["DBM_GUI_OptionsFrameBossMods"], "TOPLEFT", 10, 27)
 		_G["DBM_GUI_OptionsFrameTab2"]:ClearAllPoints()
 		_G["DBM_GUI_OptionsFrameTab2"]:Point("TOPLEFT", _G["DBM_GUI_OptionsFrameTab1"], "TOPRIGHT", 6, 0)
-		
+
 		_G["DBM_GUI_OptionsFrameBossMods"]:HookScript("OnShow", function(self) self:SetTemplate("Overlay") end)
 		_G["DBM_GUI_OptionsFrameDBMOptions"]:HookScript("OnShow", function(self) self:SetTemplate("Overlay") end)
 		_G["DBM_GUI_OptionsFrameHeader"]:SetTexture("")
 		_G["DBM_GUI_OptionsFrameHeader"]:ClearAllPoints()
 		_G["DBM_GUI_OptionsFrameHeader"]:Point("TOP", DBM_GUI_OptionsFrame, 0, 7)
-		
+
 		local dbmbskins = {
 			"DBM_GUI_OptionsFrameOkay",
 			"DBM_GUI_OptionsFrameTab1",
 			"DBM_GUI_OptionsFrameTab2",
 		}
-		
+
 		for i = 1, getn(dbmbskins) do
 			local buttons = _G[dbmbskins[i]]
 			if buttons then
