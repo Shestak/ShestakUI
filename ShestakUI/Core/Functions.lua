@@ -432,6 +432,7 @@ function T.SkinDropDownBox(frame, width)
 	T.SkinNextPrevButton(button, true)
 
 	frame:CreateBackdrop("Overlay")
+	frame:SetFrameLevel(frame:GetFrameLevel() + 2)
 	frame.backdrop:Point("TOPLEFT", 20, -2)
 	frame.backdrop:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
 end
@@ -439,6 +440,7 @@ end
 function T.SkinCheckBox(frame)
 	frame:StripTextures()
 	frame:CreateBackdrop("Overlay")
+	frame:SetFrameLevel(frame:GetFrameLevel() + 2)
 	frame.backdrop:Point("TOPLEFT", 4, -4)
 	frame.backdrop:Point("BOTTOMRIGHT", -4, 4)
 
