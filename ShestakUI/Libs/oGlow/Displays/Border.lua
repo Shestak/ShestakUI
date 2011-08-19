@@ -21,7 +21,7 @@ local colorTable = setmetatable(
 local createBorder = function(self, point)
 	local bc = self.oGlowBorder
 	if(not bc) then
-		if IsAddOnLoaded("ShestakUI_Extra") and C.extra_skins.blizzard_frames == true then
+		if C.skins.blizzard_frames == true then
 			if(not self:IsObjectType'Frame') then
 				bc = CreateFrame("Frame", nil, self:GetParent())
 			else
@@ -63,7 +63,7 @@ local borderDisplay = function(frame, color)
 		local rgb = colorTable[color]
 
 		if(rgb) then
-			if IsAddOnLoaded("ShestakUI_Extra") and C.extra_skins.blizzard_frames == true then
+			if C.skins.blizzard_frames == true then
 				bc:SetBackdropBorderColor(rgb[1], rgb[2], rgb[3])
 			else
 				bc:SetVertexColor(rgb[1], rgb[2], rgb[3])

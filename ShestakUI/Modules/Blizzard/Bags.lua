@@ -385,9 +385,12 @@ function Stuffing:CreateBagFrame(w)
 
 	-- Close button
 	f.b_close = CreateFrame("Button", "Stuffing_CloseButton" .. w, f, "UIPanelCloseButton")
-	f.b_close:Width(25)
-	f.b_close:Height(25)
-	f.b_close:Point("TOPRIGHT", -3, -1)
+	if C.skins.blizzard_frames == true then
+		T.SkinCloseButton(f.b_close)
+	else
+		f.b_close:Size(25, 25)
+		f.b_close:Point("TOPRIGHT", -3, -1)
+	end
 	f.b_close:SetScript("OnClick", function(self, btn)
 		if self:GetParent():GetName() == "StuffingFrameBags" and btn == "RightButton" then
 			if Stuffing_DDMenu.initialize ~= Stuffing.Menu then

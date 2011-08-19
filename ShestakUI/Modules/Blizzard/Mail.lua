@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if (IsAddOnLoaded("AuctionProfitMaster") or IsAddOnLoaded("OpenAll") or IsAddOnLoaded("Postal")) then return end
+if IsAddOnLoaded("AuctionProfitMaster") or IsAddOnLoaded("OpenAll") or IsAddOnLoaded("Postal") then return end
 
 ----------------------------------------------------------------------------------------
 --	Grab mail in 1 button(OpenAll by Kemayo)
