@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(ShestakUI)
-if C.extra_bar.light_macro ~= true then return end
+if C.actionbar.light_macro ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Light macro button when proc spell(LightMyMacro by Adirelle)

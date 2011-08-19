@@ -1,5 +1,5 @@
 local T, C, L = unpack(ShestakUI)
-if C.extra_general.profession_tabs ~= true then return end
+if C.misc.profession_tabs ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Professions tabs on tradeskill frame(ProfessionTabs by Beoko)
