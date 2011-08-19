@@ -106,11 +106,11 @@ local makeList = function()
 				bf:Point("TOPLEFT", oldb, "BOTTOMLEFT", 0, 0)
 				bf:Point("BOTTOMRIGHT", oldb, "BOTTOMRIGHT", 0, -20)
 			end
-			
+
 			bf:EnableMouse(true)
 			bf:SetBackdrop({bgFile = C.media.blank})
 			bf:SetBackdropColor(0, 0, 0, 0)
-	
+
 			local maketool = function(self, v)
 				GameTooltip:ClearLines()
 				GameTooltip:SetOwner(self, ANCHOR_TOPRIGHT)
@@ -129,12 +129,12 @@ local makeList = function()
 				end
 				GameTooltip:Show()
 			end
-			
+
 			bf:SetScript("OnEnter", function(self)
 				self:SetBackdropColor(0, 1, 0, 0.25)
 				maketool(self, v)
 			end)
-			
+
 			bf:SetScript("OnLeave", function(self)
 				self:SetBackdropColor(0, 0, 0, 0)
 				GameTooltip:Hide()
@@ -160,19 +160,19 @@ local makeList = function()
 				bf:SetBackdropColor(0, 1, 0, 0.25)
 				maketool(cb, v)
 			end)
-			
+
 			cb:SetScript("OnLeave", function()
 				bf:SetBackdropColor(0, 0, 0, 0)
 				GameTooltip:Hide()
 			end)
-			
+
 			local fs = _G[v.."_fs"] or bf:CreateFontString(v.."_fs", "OVERLAY", "GameFontNormal")
 			fs:SetText(title)
 
 			fs:SetJustifyH("LEFT")
 			fs:SetPoint("TOPLEFT", cb, "TOPRIGHT", 0, 0)
 			fs:SetPoint("BOTTOMRIGHT", bf, "BOTTOMRIGHT", 0, 0)
-			
+
 			bf:SetScript("OnClick", function(self)
 				cb:Click()
 			end)

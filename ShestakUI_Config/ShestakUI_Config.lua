@@ -474,7 +474,7 @@ local function SetValue(group, option, value)
 	else
 		mergesettings = false
 	end
-	
+
 	if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
 		if not GUIConfig then GUIConfig = {} end
 		if not GUIConfig[group] then GUIConfig[group] = {} end
@@ -485,7 +485,7 @@ local function SetValue(group, option, value)
 			if not GUIConfig[group] then GUIConfig[group] = {} end
 			GUIConfig[group][option] = value
 		end
-		
+
 		if not GUIConfigSettings then GUIConfigSettings = {} end
 		if not GUIConfigSettings[group] then GUIConfigSettings[group] = {} end
 		GUIConfigSettings[group][option] = value
@@ -496,11 +496,11 @@ local VISIBLE_GROUP = nil
 local lastbutton = nil
 local function ShowGroup(group, button)
 	local T, C, L = unpack(ShestakUI)
-	
-	if (lastbutton) then
+
+	if lastbutton then
 		lastbutton:SetText(lastbutton:GetText().sub(lastbutton:GetText(), 11, -3))
 	end
-	if (VISIBLE_GROUP) then
+	if VISIBLE_GROUP then
 		_G["UIConfig"..VISIBLE_GROUP]:Hide()
 	end
 	if _G["UIConfig"..group] then
@@ -512,7 +512,7 @@ local function ShowGroup(group, button)
 		local scrollamntmax = 405
 		local scrollamntmin = scrollamntmax - 10
 		local max = height > scrollamntmax and height-scrollamntmin or 1
-		
+
 		if max == 1 then
 			_G["UIConfigGroupSlider"]:SetValue(1)
 			_G["UIConfigGroupSlider"]:Hide()
@@ -522,7 +522,7 @@ local function ShowGroup(group, button)
 			_G["UIConfigGroupSlider"]:SetValue(1)
 		end
 		_G["UIConfigGroup"]:SetScrollChild(_G["UIConfig"..group])
-		
+
 		local x
 		if UIConfigGroupSlider:IsShown() then 
 			_G["UIConfigGroup"]:EnableMouseWheel(true)
@@ -540,7 +540,7 @@ local function ShowGroup(group, button)
 		else
 			_G["UIConfigGroup"]:EnableMouseWheel(false)
 		end
-		
+
 		VISIBLE_GROUP = group
 		lastbutton = button
 	end
@@ -548,17 +548,13 @@ end
 
 function CreateUIConfig()
 	local T, C, L = unpack(ShestakUI)
-	
+
 	if UIConfigMain then
 		ShowGroup("general")
 		UIConfigMain:Show()
 		return
 	end
-	
-	if T.version < string.format("%s", "3.0.0") then
-		print("|cffff0000Need configuration update.|r")
-	end
-	
+
 	-- Main Frame
 	local UIConfigMain = CreateFrame("Frame", "UIConfigMain", UIParent)
 	UIConfigMain:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 200)
@@ -573,26 +569,26 @@ function CreateUIConfig()
 	UIConfigMain:SetFrameStrata("DIALOG")
 	UIConfigMain:SetFrameLevel(20)
 	tinsert(UISpecialFrames, "UIConfigMain")
-	
+
 	-- Version Title
 	local TitleBoxVer = CreateFrame("Frame", "TitleBoxVer", UIConfigMain)
 	TitleBoxVer:SetWidth(180)
 	TitleBoxVer:SetHeight(24)
 	TitleBoxVer:SetPoint("TOPLEFT", UIConfigMain, "TOPLEFT", 23, -15)
-	
+
 	local TitleBoxVerText = TitleBoxVer:CreateFontString("UIConfigTitleVer", "OVERLAY", "GameFontNormal")
 	TitleBoxVerText:SetPoint("CENTER")
 	TitleBoxVerText:SetText("ShestakUI "..T.version)
-	
+
 	-- Main Frame Title
 	local TitleBox = CreateFrame("Frame", "TitleBox", UIConfigMain)
 	TitleBox:SetWidth(540)
 	TitleBox:SetHeight(24)
 	TitleBox:SetPoint("TOPLEFT", TitleBoxVer, "TOPRIGHT", 15, 0)
-	
+
 	local TitleBoxText = TitleBox:CreateFontString("UIConfigTitle", "OVERLAY", "GameFontNormal")
 	TitleBoxText:SetPoint("LEFT", TitleBox, "LEFT", 15, 0)
-	
+
 	-- Main Frame
 	local UIConfig = CreateFrame("Frame", "UIConfig", UIConfigMain)
 	UIConfig:SetPoint("TOPLEFT", TitleBox, "BOTTOMLEFT", 10, -15)
@@ -600,11 +596,11 @@ function CreateUIConfig()
 	UIConfig:SetHeight(400)
 	UIConfig:SetFrameStrata("DIALOG")
 	UIConfig:SetFrameLevel(20)
-	
+
 	local UIConfigBG = CreateFrame("Frame", "UIConfigBG", UIConfig)
 	UIConfigBG:SetPoint("TOPLEFT", -10, 10)
 	UIConfigBG:SetPoint("BOTTOMRIGHT", 10, -10)
-	
+
 	-- Group selection(left side)
 	local groups = CreateFrame("ScrollFrame", "UIConfigCategoryGroup", UIConfig)
 	groups:SetPoint("TOPLEFT", TitleBoxVer, "BOTTOMLEFT", 10, -15)
@@ -614,7 +610,7 @@ function CreateUIConfig()
 	local groupsBG = CreateFrame("Frame", "groupsBG", UIConfig)
 	groupsBG:SetPoint("TOPLEFT", groups, -10, 10)
 	groupsBG:SetPoint("BOTTOMRIGHT", groups, 10, -10)
-	
+
 	local UIConfigCover = CreateFrame("Frame", "UIConfigCover", UIConfig)
 	UIConfigCover:SetPoint("TOPLEFT", UIConfigCategoryGroup, "TOPLEFT")
 	UIConfigCover:SetPoint("BOTTOMRIGHT", UIConfig, "BOTTOMRIGHT")
@@ -622,7 +618,7 @@ function CreateUIConfig()
 	UIConfigCover:EnableMouse(true)
 	UIConfigCover:SetScript("OnMouseDown", function(self) print(L_GUI_MAKE_SELECTION) end)
 	UIConfigCover:Hide()
-	
+
 	local slider = CreateFrame("Slider", "UIConfigCategorySlider", groups)
 	slider:SetPoint("TOPRIGHT", 0, 0)
 	slider:SetWidth(20)
@@ -631,7 +627,7 @@ function CreateUIConfig()
 	slider:SetOrientation("VERTICAL")
 	slider:SetValueStep(20)
 	slider:SetScript("OnValueChanged", function(self,value) groups:SetVerticalScroll(value) end)
-	
+
 	local child = CreateFrame("Frame", nil, groups)
 	child:SetPoint("TOPLEFT")
 	local offset = 5
@@ -650,7 +646,7 @@ function CreateUIConfig()
 	slider:SetMinMaxValues(0, (offset == 0 and 1 or offset - 12 * 32))
 	slider:SetValue(1)
 	groups:SetScrollChild(child)
-	
+
 	local x
 	_G["UIConfigCategoryGroup"]:EnableMouseWheel(true)
 	_G["UIConfigCategoryGroup"]:SetScript("OnMouseWheel", function(self, delta)
@@ -664,13 +660,13 @@ function CreateUIConfig()
 			end
 		end
 	end)
-	
+
 	-- Group scroll frame(right side)
 	local group = CreateFrame("ScrollFrame", "UIConfigGroup", UIConfig)
 	group:SetPoint("TOPLEFT", 0, 5)
 	group:SetWidth(520)
 	group:SetHeight(400)
-	
+
 	local slider = CreateFrame("Slider", "UIConfigGroupSlider", group)
 	slider:SetPoint("TOPRIGHT", 0, 0)
 	slider:SetWidth(20)
@@ -679,17 +675,17 @@ function CreateUIConfig()
 	slider:SetOrientation("VERTICAL")
 	slider:SetValueStep(20)
 	slider:SetScript("OnValueChanged", function(self,value) group:SetVerticalScroll(value) end)
-	
+
 	for group in pairs(ALLOWED_GROUPS) do
 		local frame = CreateFrame("Frame", "UIConfig"..group, UIConfigGroup)
 		frame:SetPoint("TOPLEFT")
 		frame:SetWidth(225)
-	
+
 		local offset = 5
-		
+
 		if type(C[group]) ~= "table" then error(group.." GroupName not found in config table.") return end
 		for option, value in pairs(C[group]) do
-			
+
 			if type(value) == "boolean" then
 				local button = CreateFrame("CheckButton", "UIConfig"..group..option, frame, "InterfaceOptionsCheckButtonTemplate")
 				local o = "UIConfig"..group..option
@@ -711,7 +707,7 @@ function CreateUIConfig()
 				label:SetHeight(20)
 				label:SetJustifyH("LEFT")
 				label:SetPoint("TOPLEFT", 5, -(offset))
-				
+
 				local editbox = CreateFrame("EditBox", nil, frame)
 				editbox:SetAutoFocus(false)
 				editbox:SetMultiLine(false)
@@ -723,12 +719,12 @@ function CreateUIConfig()
 				editbox:SetPoint("TOPLEFT", 8, -(offset + 20))
 				editbox:SetText(value)
 				editbox:SetTemplate("Transparent")
-				
+
 				local okbutton = CreateFrame("Button", nil, frame)
 				okbutton:SetHeight(editbox:GetHeight())
 				okbutton:SkinButton()
 				okbutton:SetPoint("LEFT", editbox, "RIGHT", 2, 0)
-				
+
 				local oktext = okbutton:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 				oktext:SetText(OKAY)
 				oktext:SetPoint("CENTER", okbutton, "CENTER", -1, 0)
@@ -746,7 +742,7 @@ function CreateUIConfig()
 					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(group, option, tostring(self:GetText())) end)
 					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(group, option, tostring(editbox:GetText())) end)
 				end
-				
+
 				offset = offset + 45
 			elseif type(value) == "table" and not TableFilter[option] then
 				local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
@@ -757,7 +753,7 @@ function CreateUIConfig()
 				label:SetHeight(20)
 				label:SetJustifyH("LEFT")
 				label:SetPoint("TOPLEFT", 5, -(offset))
-				
+
 				colorbuttonname = (label:GetText().."ColorPicker")
 				local colorbutton = CreateFrame("Button", colorbuttonname, frame)
 				colorbutton:SetHeight(20)
@@ -770,22 +766,22 @@ function CreateUIConfig()
 				colortext:SetPoint("CENTER")
 				colortext:SetJustifyH("CENTER")
 				colorbutton:SetWidth(colortext:GetWidth() + 5)
-				
+
 				local oldvalue = value
-				
+
 				local function round(number, decimal)
 					return (("%%.%df"):format(decimal)):format(number)
 				end
-				
+
 				colorbutton:SetScript("OnMouseDown", function(self) 
 					if ColorPickerFrame:IsShown() then return end
 					local newR, newG, newB, newA
 					local fired = 0
-					
+
 					local r, g, b, a = self:GetBackdropBorderColor();
 					r, g, b, a = round(r, 2), round(g, 2), round(b, 2), round(a, 2)
 					local originalR,originalG,originalB,originalA = r, g, b, a
-					
+
 					local function ShowColorPicker(r, g, b, a, changedCallback)
 						ColorPickerFrame.func, ColorPickerFrame.opacityFunc, ColorPickerFrame.cancelFunc = changedCallback, changedCallback, changedCallback;
 						ColorPickerFrame:SetColorRGB(r, g, b)
@@ -796,7 +792,7 @@ function CreateUIConfig()
 						ColorPickerFrame:Hide()
 						ColorPickerFrame:Show()
 					end
-					
+
 					local function myColorCallback(restore)
 						fired = fired + 1
 						if restore ~= nil then
@@ -806,20 +802,20 @@ function CreateUIConfig()
 							-- Something changed
 							newA, newR, newG, newB = OpacitySliderFrame:GetValue(), ColorPickerFrame:GetColorRGB()
 						end
-						
+
 						value = { newR, newG, newB, newA }
 						SetValue(group, option, (value)) 
 						self:SetBackdropBorderColor(newR, newG, newB, newA)
 						self:SetBackdropColor(newR, newG, newB, 0.3)
 					end
-					
+
 					ShowColorPicker(originalR, originalG, originalB, originalA, myColorCallback)
 				end)
-				
+
 				offset = offset + 25
 			end
 		end
-		
+
 		frame:SetHeight(offset)
 		frame:Hide()
 	end
