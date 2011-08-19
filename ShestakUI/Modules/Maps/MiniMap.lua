@@ -128,6 +128,7 @@ local function UpdateLFGTooltip()
 		LFDSearchStatus:Point("TOPRIGHT", MiniMapLFGFrame, "TOPLEFT", 0, 0)	
 	end
 end
+LFDSearchStatus:HookScript("OnShow", UpdateLFGTooltip)
 
 -- Enable mouse scrolling
 Minimap:EnableMouseWheel(true)
@@ -143,9 +144,7 @@ end)
 MinimapAnchor:RegisterEvent("PLAYER_LOGIN")
 MinimapAnchor:RegisterEvent("ADDON_LOADED")
 MinimapAnchor:SetScript("OnEvent", function(self, event, addon)
-	if event == "PLAYER_LOGIN" then
-		UpdateLFGTooltip()
-	elseif addon == "Blizzard_TimeManager" then
+	if addon == "Blizzard_TimeManager" then
 		TimeManagerClockButton:Kill()
 	end
 end)

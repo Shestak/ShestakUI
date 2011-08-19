@@ -258,11 +258,11 @@ local function addMainMenuButtons(menuItems, menuName, menuBackground)
 			Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 			Text:SetPoint("CENTER", menuItems[index], 0, 0)
 			Text:SetText(value.text)
-        
+
 			local hideItem = (C.togglemenu.mergeMenus and (value.text == ADDONS))
 			InsertButton(menuItems, index, hideItem)
 			updateTextures(menuItems[index])
-			totalmainmenusize = index            
+			totalmainmenusize = index
 		end
 	end
 end
@@ -350,7 +350,7 @@ if not addonInfo then
 	addonInfo = {{}}
 	for i = 1, GetNumAddOns() do
 		name, title, _, enabled, _, _, _ = GetAddOnInfo(i)
-		if(name and enabled) then
+		if name and enabled then
 			addonInfo[i] = {["enabled"] = true,  ["is_main"] = false, collapsed = true, ["parent"] = i}
 		else
 			addonInfo[i] = {["enabled"] = false, ["is_main"] = false, collapsed = true, ["parent"] = i}
@@ -391,7 +391,7 @@ end
 local function addonEnableToggle(self, i)
 	local was_enabled = addonInfo[i].enabled
 	for j = 1, GetNumAddOns() do
-		if ((addonInfo[j].parent == i and addonInfo[i].collapsed) or (i == j and not addonInfo[addonInfo[i].parent].collapsed)) then
+		if (addonInfo[j].parent == i and addonInfo[i].collapsed) or (i == j and not addonInfo[addonInfo[i].parent].collapsed) then
 			if was_enabled then
 				DisableAddOn(j)
 			else
@@ -417,8 +417,8 @@ local function refreshAddOnMenu()
 	menusize = mainmenusize
 	for i = 1, GetNumAddOns() do
 		local name, _, _, _, _, _, _ = GetAddOnInfo(i)
-		if (addonInfo[i].is_main or (addonInfo[i].parent == i) or not addonInfo[addonInfo[i].parent].collapsed) then
-			if (not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i))) then
+		if addonInfo[i].is_main or (addonInfo[i].parent == i) or not addonInfo[addonInfo[i].parent].collapsed then
+			if not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i)) then
 				menusize = menusize + 1
 			end
 		end
@@ -435,8 +435,8 @@ local function refreshAddOnMenu()
 	for i = 1, GetNumAddOns() do
 		j = totalmainmenusize + i
 		local name, _, _, _, _, _, _ = GetAddOnInfo(i)
-		addonmenuitems[j]:Hide()        
-		if (addonInfo[i].is_main or (addonInfo[i].parent == i) or not addonInfo[addonInfo[i].parent].collapsed) then
+		addonmenuitems[j]:Hide()
+		if addonInfo[i].is_main or addonInfo[i].parent == i or not addonInfo[addonInfo[i].parent].collapsed then
 			if (not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i))) then
 				addonmenuitems[j]:ClearAllPoints()
 				if menusize % menuheight == 0 then
@@ -488,7 +488,7 @@ for i = 1, GetNumAddOns() do
 	addonmenuitems[j]:SetFrameLevel(defaultframelevel + 1)
 	addonmenuitems[j]:SetFrameStrata("HIGH")
 	updateTextures(addonmenuitems[j], true)
-    
+
 	addonmenuitems[j]:SetChecked(not addonInfo[i].enabled)
 	addonmenuitems[j]:SetScript("OnMouseUp", function(self, btn)
 		if btn == "RightButton" then
@@ -496,15 +496,15 @@ for i = 1, GetNumAddOns() do
 		else
 			addonFrameToggle(self, i)
 			self:SetChecked(not self:GetChecked())
-		end                
+		end
 	end)
 	addonmenuitems[j]:HookScript("OnEnter", function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_LEFT")
 		GameTooltip:AddLine(L_TOGGLE_ADDON..name)
-		GameTooltip:AddLine(L_TOGGLE_RCLICK..name.."\n"..L_TOGGLE_RELOAD)
+		GameTooltip:AddLine("|cffffffff"..L_TOGGLE_RCLICK..name.."\n"..L_TOGGLE_RELOAD)
 		if C.toggleaddons[name] then
 			if IsAddOnLoaded(i) then
-				GameTooltip:AddLine(L_TOGGLE_LCLICK..name)
+				GameTooltip:AddLine("|cffffffff"..L_TOGGLE_LCLICK..name)
 			end
 		end
 		GameTooltip:Show()
@@ -526,7 +526,7 @@ for i = 1, GetNumAddOns() do
 		expandAddonButton:EnableMouse(true)
 		expandAddonButton:RegisterForClicks("AnyUp")
 		updateTextures(expandAddonButton)
-        
+
 		expandAddonButton:HookScript("OnEnter", function(self)
 			GameTooltip:SetOwner(self, "ANCHOR_LEFT")
 			if addonInfo[i].collapsed then

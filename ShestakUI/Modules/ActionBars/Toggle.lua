@@ -74,7 +74,7 @@ local MainBars = function()
 				b:SetAlpha(1)
 				b:SetScale(1)
 			end
-		end	
+		end
 	end
 end
 
@@ -220,11 +220,11 @@ for i = 1, 5 do
 	ToggleBar[i] = CreateFrame("Frame", "ToggleBar"..i, ToggleBar)
 	ToggleBar[i]:EnableMouse(true)
 	ToggleBar[i]:SetAlpha(0)
-	
+
 	ToggleBar[i].Text = ToggleBar[i]:CreateFontString(nil, "OVERLAY")
 	ToggleBar[i].Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	ToggleBar[i].Text:Point("CENTER", 2, 0)
-	
+
 	if i == 1 then
 		ToggleBar[i]:CreatePanel("Transparent", ActionBarAnchor:GetWidth(), T.buttonsize / 1.5, "BOTTOM", ActionBarAnchor, "TOP", 0, T.buttonspacing)
 		ToggleBarText(i, "- - -", false, true)
@@ -258,7 +258,7 @@ for i = 1, 5 do
 	elseif i == 2 then
 		ToggleBar[i]:CreatePanel("Transparent", RightActionBarAnchor:GetWidth(), T.buttonsize / 1.5, "TOPRIGHT", RightActionBarAnchor, "BOTTOMRIGHT", 0, -T.buttonspacing)
 		ToggleBarText(i, "> > >", false, true)
-		
+
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
 			if SavedOptionsPerChar.RightBars == nil then SavedOptionsPerChar.RightBars = C.actionbar.rightbars end
@@ -279,7 +279,7 @@ for i = 1, 5 do
 					SavedOptionsPerChar.RightBars = 2
 				end
 			end
-			
+
 			RightBars()
 		end)
 		ToggleBar[i]:SetScript("OnEvent", RightBars)
@@ -330,11 +330,11 @@ for i = 1, 5 do
 		end)
 		ToggleBar[i]:SetScript("OnEvent", SplitBars)
 	end
-	
+
 	ToggleBar[i]:RegisterEvent("PLAYER_ENTERING_WORLD")
 	ToggleBar[i]:RegisterEvent("PLAYER_REGEN_DISABLED")
 	ToggleBar[i]:RegisterEvent("PLAYER_REGEN_ENABLED")
-	
+
 	ToggleBar[i]:SetScript("OnEnter", function()
 		if InCombatLockdown() then return end
 		if i == 2 then

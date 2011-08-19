@@ -96,6 +96,10 @@ local makeList = function()
 
 	for i, v in pairs(self.addons) do
 		local name, title, notes, enabled, loadable, reason, security = GetAddOnInfo(v)
+		local version = GetAddOnMetadata(v, "Version")
+		if not version then
+			version = GetAddOnMetadata(v, "X-Curse-Packaged-Version") or ""
+		end
 
 		if name then
 			local bf = _G[v.."_cbf"] or CreateFrame("Button", v.."_cbf", self)
@@ -114,7 +118,7 @@ local makeList = function()
 			local maketool = function(self, v)
 				GameTooltip:ClearLines()
 				GameTooltip:SetOwner(self, ANCHOR_TOPRIGHT)
-				GameTooltip:AddLine(title)
+				GameTooltip:AddLine(title.." "..version)
 				if notes then
 					GameTooltip:AddLine(notes, 1, 1, 1, 1)
 				end
