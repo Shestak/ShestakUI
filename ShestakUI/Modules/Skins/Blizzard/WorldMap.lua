@@ -5,7 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	WorldMap skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	if C.map.enable == true and IsAddOnLoaded("Mapster") then return end
+	if C.map.enable == true or IsAddOnLoaded("Mapster") then return end
 
 	WorldMapFrame:CreateBackdrop("Transparent")
 	WorldMapDetailFrame.backdrop = CreateFrame("Frame", nil, WorldMapFrame)

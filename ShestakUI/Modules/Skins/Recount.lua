@@ -29,23 +29,23 @@ Recount.UpdateBarTextures = function(self)
 		v.StatusBar:SetStatusBarTexture(C.media.texture)
 		v.StatusBar:GetStatusBarTexture():SetHorizTile(false)
 		v.StatusBar:GetStatusBarTexture():SetVertTile(false)
-		
+
 		v.background = v.StatusBar:CreateTexture("$parentBackground", "BACKGROUND")
 		v.background:SetAllPoints(v.StatusBar)
 		v.background:SetTexture(C.media.texture)
 		v.background:SetVertexColor(0.15, 0.15, 0.15, 0.75)
-		
+
 		v.overlay = CreateFrame("Frame", nil, v.StatusBar)
 		v.overlay:SetTemplate("Default")
 		v.overlay:SetFrameStrata("BACKGROUND")
 		v.overlay:SetPoint("TOPLEFT", -2, 2)
 		v.overlay:SetPoint("BOTTOMRIGHT", 2, -2)
-		
+
 		v.LeftText:ClearAllPoints()
 		v.LeftText:SetPoint("LEFT", v.StatusBar, "LEFT", 2, 0)
 		v.LeftText:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		v.LeftText:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
-		
+
 		v.RightText:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		v.RightText:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 	end
@@ -94,8 +94,6 @@ if not RecountDB["profiles"][T.name.." - "..GetRealmName()]["MainWindow"] then R
 
 RecountDB["profiles"][T.name.." - "..T.realm]["Locked"] = true
 RecountDB["profiles"][T.name.." - "..T.realm]["Scaling"] = 1
-RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Buttons"]["ReportButton"] = false
-RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Buttons"]["FileButton"] = false
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["RowHeight"] = 12
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["RowSpacing"] = 7
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["ShowScrollbar"] = false
