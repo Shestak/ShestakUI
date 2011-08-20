@@ -358,7 +358,7 @@ local UploadSkada = function()
 						},
 						["point"] = "BOTTOMRIGHT",
 						["x"] = -247,
-						["y"] = 8,
+						["y"] = 1,
 					},
 				},
 				["icon"] = {
