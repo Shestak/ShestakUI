@@ -46,7 +46,8 @@ if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.n
 	C["announcements"].spells = true
 	C["announcements"].spells_from_all = true
 	C["skins"].dbm = true
-	C["skins"].recount = true
+	C["skins"].blizzard_frames = true
+	C["skins"].minimap_buttons = true
 	C["combattext"].crit_prefix = ""
 	C["combattext"].crit_postfix = ""
 	C["combattext"].merge_aoe_spam_time = 1
@@ -92,6 +93,8 @@ if T.author == true then
 	C["misc"].auto_quest = true
 	C["misc"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
+	C["skins"].blizzard_frames = true
+	C["skins"].minimap_buttons = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
 	C["combattext"].stop_ve_spam = true
