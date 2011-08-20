@@ -29,7 +29,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框体解锁"
 L_GUI_MISC_QUEST_AUTOBUTTON = "任务/道具自动按钮"
 L_GUI_MISC_RAID_TOOLS = "团队工具"
 L_GUI_MISC_ACH_SCREENS = "当你获得成就的时候自动截屏"
-L_GUI_MISC_PROFESSION_TABS = "Professions tabs on tradeskill and trade frames" -- Needs review
+L_GUI_MISC_PROFESSION_TABS = "在商业技能和交易窗口显示专业技能按钮"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
@@ -40,8 +40,8 @@ L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "检视所有队员的施法"
 
 -- Skins options
 L_GUI_SKINS = "风格化"
-L_GUI_SKINS_BLIZZARD = "Enable styling Blizzard frames" -- Needs review
-L_GUI_SKINS_MINIMAP_BUTTONS = "Enable styling addons icons on minimap" -- Needs review
+L_GUI_SKINS_BLIZZARD = "开启暴雪默认框架边框美化"
+L_GUI_SKINS_MINIMAP_BUTTONS = "开启小地图图标美化"
 L_GUI_SKINS_BW = "开启BigWigs样式增强"
 L_GUI_SKINS_DBM = "开启DBM样式增强"
 L_GUI_SKINS_DXE = "开启DXE样式增强"
@@ -216,7 +216,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "按钮间隔"
 L_GUI_ACTIONBAR_SPLIT_BARS = "把第五动作条分成两个有六个位置的小动作条"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "给所有的按钮使用职业颜色边框"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "开启动作条切换按钮"
-L_GUI_ACTIONBAR_LIGHT_MACRO = "Light macro button when proc spell" -- Needs review
+L_GUI_ACTIONBAR_LIGHT_MACRO = "当天赋技能触发时,闪动宏按钮"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部动作条数目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右侧动作条数目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "鼠标划过时显示右侧动作条"
