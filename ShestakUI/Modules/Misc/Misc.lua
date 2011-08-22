@@ -15,7 +15,7 @@ hooksecurefunc("ShowReadyCheck", ShowReadyCheckHook)
 ----------------------------------------------------------------------------------------
 hooksecurefunc("MerchantItemButton_OnModifiedClick", function(self, button)
 	if MerchantFrame.selectedTab == 1 then
-		if IsAltKeyDown() and button == "RightButton" then
+		if IsAltKeyDown() then
 			local id = self:GetID()
 			local quantity = select(4, GetMerchantItemInfo(id))
 			local extracost = select(7, GetMerchantItemInfo(id))
@@ -45,6 +45,20 @@ hooksecurefunc("MerchantItemButton_OnModifiedClick", function(self, button)
 	end
 end)
 
+local function IsMerchantButtonOver()
+	return GetMouseFocus():GetName() and GetMouseFocus():GetName():find("MerchantItem%d")
+end
+
+GameTooltip:HookScript("OnTooltipSetItem", function(self)
+	if MerchantFrame:IsShown() and IsMerchantButtonOver() then
+		for i = 2, GameTooltip:NumLines() do
+			if _G["GameTooltipTextLeft"..i]:GetText():find(ITEM_VENDOR_STACK_BUY) then
+				GameTooltip:AddLine("|cff00ff00<"..L_MISC_BUY_STACK..">|r")
+			end
+		end
+	end
+end)
+
 ----------------------------------------------------------------------------------------
 --	Auto decline duels
 ----------------------------------------------------------------------------------------
@@ -66,7 +80,7 @@ if C.misc.afk_spin_camera == true then
 	local SpinCam = CreateFrame("Frame")
 
 	local OnEvent = function(self, event, unit)
-		if (event == "PLAYER_FLAGS_CHANGED") then
+		if event == "PLAYER_FLAGS_CHANGED" then
 			if unit == "player" then
 				if UnitIsAFK(unit) then
 					SpinStart()
@@ -74,7 +88,7 @@ if C.misc.afk_spin_camera == true then
 					SpinStop()
 				end
 			end
-		elseif (event == "PLAYER_LEAVING_WORLD") then
+		elseif event == "PLAYER_LEAVING_WORLD" then
 			SpinStop()
 		end
 	end

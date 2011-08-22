@@ -18,6 +18,7 @@ L_TOOLTIP_ITEM_COUNT = "Objets possédés :"
 -- Misc
 L_MISC_UNDRESS = "Déshabillé"
 L_MISC_DRINKING = " est entrain de boire."
+L_MISC_BUY_STACK = "Alt-Click to buy a stack" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Fin du raid"

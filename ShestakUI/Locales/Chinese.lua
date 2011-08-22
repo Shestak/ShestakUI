@@ -18,6 +18,7 @@ L_TOOLTIP_ITEM_COUNT = "物品数量: "
 -- Misc
 L_MISC_UNDRESS = "无装备"
 L_MISC_DRINKING = " 开始进食."
+L_MISC_BUY_STACK = "Alt-Click to buy a stack" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"

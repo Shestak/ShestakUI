@@ -18,6 +18,7 @@ L_TOOLTIP_ITEM_COUNT = "Item count:" -- Needs review
 -- Misc
 L_MISC_UNDRESS = "Desvestir"
 L_MISC_DRINKING = " is drinking." -- Needs review
+L_MISC_BUY_STACK = "Alt-Click to buy a stack" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disolver grupo"

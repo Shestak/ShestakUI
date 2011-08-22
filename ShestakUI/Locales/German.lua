@@ -18,6 +18,7 @@ L_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe:"
 -- Misc
 L_MISC_UNDRESS = "Ausziehen"
 L_MISC_DRINKING = " trinkt."
+L_MISC_BUY_STACK = "Alt-Click to buy a stack" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"

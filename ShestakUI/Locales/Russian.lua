@@ -18,6 +18,7 @@ L_TOOLTIP_ITEM_COUNT = "Количество предмета:"
 -- Misc
 L_MISC_UNDRESS = "Раздеть"
 L_MISC_DRINKING = " пьёт."
+L_MISC_BUY_STACK = "Зажмите Alt и щелкните мышью, чтобы купить связку"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"
