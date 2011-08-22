@@ -86,7 +86,7 @@ elseif T.class == "PALADIN" then
 		ct.aoespam[31803] = true	-- Censure
 		ct.aoespam[20424] = true	-- Seals of Command
 		ct.aoespam[42463] = true	-- Seal of Truth
-		ct.aoespam[25742] = true	-- Seal of Righteousness
+		ct.aoespam[101423] = true	-- Seal of Righteousness
 		ct.aoespam[20167] = true	-- Seal of Insight (Heal Effect)
 		ct.aoespam[88263] = true	-- Hammer of the Righteous
 		ct.aoespam[31935] = true	-- Avenger's Shield
