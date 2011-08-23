@@ -43,7 +43,7 @@ end
 
 local function GetPetActionIndexByName(name)
 	for i = 1, NUM_PET_ACTION_SLOTS, 1 do
-		if (GetPetActionInfo(i) == name) then
+		if GetPetActionInfo(i) == name then
 			return i
 		end
 	end
@@ -57,7 +57,7 @@ local function RefreshLocals()
 	animScale = C.pulsecooldown.anim_scale
 	iconSize = C.pulsecooldown.size
 	holdTime = C.pulsecooldown.hold_time
-	
+
 	for _, v in pairs(T.pulse_ignored_spells) do
 		T.pulse_ignored_spells[v] = true
 	end
@@ -68,30 +68,30 @@ local elapsed = 0
 local runtimer = 0
 local function OnUpdate(_, update)
 	elapsed = elapsed + update
-	if (elapsed > 0.05) then
+	if elapsed > 0.05 then
 		for i, v in pairs(watching) do
-			if (GetTime() >= v[1] + 0.5) then
+			if GetTime() >= v[1] + 0.5 then
 				if T.pulse_ignored_spells[i] then
 					watching[i] = nil
 				else
 					local start, duration, enabled, texture, isPet
-					if (v[2] == "spell") then
+					if v[2] == "spell" then
 						texture = GetSpellTexture(v[3])
 						start, duration, enabled = GetSpellCooldown(v[3])
-					elseif (v[2] == "item") then
+					elseif v[2] == "item" then
 						texture = v[3]
 						start, duration, enabled = GetItemCooldown(i)
-					elseif (v[2] == "pet") then
+					elseif v[2] == "pet" then
 						texture = select(3, GetPetActionInfo(v[3]))
 						start, duration, enabled = GetPetActionCooldown(v[3])
 						isPet = true
 					end
-					if (enabled ~= 0) then
-						if (duration and duration > 2.0 and texture) then
+					if enabled ~= 0 then
+						if duration and duration > 2.0 and texture then
 							cooldowns[i] = {start, duration, texture, isPet}
 						end
 					end
-					if (not (enabled == 0 and v[2] == "spell")) then
+					if not (enabled == 0 and v[2] == "spell") then
 						watching[i] = nil
 					end
 				end
@@ -99,22 +99,22 @@ local function OnUpdate(_, update)
 		end
 		for i, v in pairs(cooldowns) do
 			local remaining = v[2]-(GetTime()-v[1])
-			if (remaining <= 0) then
+			if remaining <= 0 then
 				tinsert(animating, {v[3],v[4]})
 				cooldowns[i] = nil
 			end
 		end
 
 		elapsed = 0
-		if (#animating == 0 and tcount(watching) == 0 and tcount(cooldowns) == 0) then
+		if #animating == 0 and tcount(watching) == 0 and tcount(cooldowns) == 0 then
 			DCP:SetScript("OnUpdate", nil)
 			return
 		end
 	end
 	
-	if (#animating > 0) then
+	if #animating > 0 then
 		runtimer = runtimer + update
-		if (runtimer > (fadeInTime + holdTime + fadeOutTime)) then
+		if runtimer > (fadeInTime + holdTime + fadeOutTime) then
 			tremove(animating, 1)
 			runtimer = 0
 			DCPT:SetTexture(nil)
@@ -122,7 +122,7 @@ local function OnUpdate(_, update)
 			DCP:SetBackdropBorderColor(0, 0, 0, 0)
 			DCP:SetBackdropColor(0, 0, 0, 0)
 		else
-			if (not DCPT:GetTexture()) then
+			if not DCPT:GetTexture() then
 				DCPT:SetTexture(animating[1][1])
 				if animating[1][2] then
 					DCPT:SetVertexColor(1, 1, 1)
@@ -132,13 +132,13 @@ local function OnUpdate(_, update)
 				end
 			end
 			local alpha = maxAlpha
-			if (runtimer < fadeInTime) then
+			if runtimer < fadeInTime then
 				alpha = maxAlpha * (runtimer / fadeInTime)
-			elseif (runtimer >= fadeInTime + holdTime) then
-				alpha = maxAlpha - ( maxAlpha * ((runtimer - holdTime - fadeInTime) / fadeOutTime))
+			elseif runtimer >= fadeInTime + holdTime then
+				alpha = maxAlpha - (maxAlpha * ((runtimer - holdTime - fadeInTime) / fadeOutTime))
 			end
 			DCP:SetAlpha(alpha)
-			local scale = iconSize+(iconSize*((animScale-1)*(runtimer/(fadeInTime+holdTime+fadeOutTime))))
+			local scale = iconSize + (iconSize * ((animScale - 1) * (runtimer / (fadeInTime + holdTime + fadeOutTime))))
 			DCP:SetWidth(scale)
 			DCP:SetHeight(scale)
 			DCP:SetBackdropBorderColor(unpack(C.media.border_color))
@@ -156,9 +156,9 @@ end
 DCP:RegisterEvent("ADDON_LOADED")
 
 function DCP:UNIT_SPELLCAST_SUCCEEDED(unit, spell, rank)
-	if (unit == "player") then
+	if unit == "player" then
 		watching[spell] = {GetTime(), "spell", spell.."("..rank..")"}
-		if (not self:IsMouseEnabled()) then
+		if not self:IsMouseEnabled() then
 			self:SetScript("OnUpdate", OnUpdate)
 		end
 	end
@@ -167,18 +167,18 @@ DCP:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 
 function DCP:COMBAT_LOG_EVENT_UNFILTERED(...)
 	local _, eventType, _, _, _, sourceFlags, _, _, _, spellID = ...
-	if (eventType == "SPELL_CAST_SUCCESS") then
+	if eventType == "SPELL_CAST_SUCCESS" then
 		if (bit.band(sourceFlags, COMBATLOG_OBJECT_TYPE_PET) == COMBATLOG_OBJECT_TYPE_PET and bit.band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_MINE) == COMBATLOG_OBJECT_AFFILIATION_MINE) then
 			local name = GetSpellInfo(spellID)
 			local index = GetPetActionIndexByName(name)
-			if (index and not select(8, GetPetActionInfo(index))) then
+			if index and not select(8, GetPetActionInfo(index)) then
 				watching[name] = {GetTime(), "pet", index}
-			elseif (not index and name) then
+			elseif not index and name then
 				watching[name] = {GetTime(), "spell", name}
 			else
 				return
 			end
-			if (not self:IsMouseEnabled()) then
+			if not self:IsMouseEnabled() then
 				self:SetScript("OnUpdate", OnUpdate)
 			end
 		end
@@ -189,7 +189,7 @@ PetActionButton1:HookScript("OnHide", function() DCP:UnregisterEvent("COMBAT_LOG
 
 function DCP:PLAYER_ENTERING_WORLD()
 	local inInstance, instanceType = IsInInstance()
-	if (inInstance and instanceType == "arena") then
+	if inInstance and instanceType == "arena" then
 		self:SetScript("OnUpdate", nil)
 		wipe(cooldowns)
 		wipe(watching)
@@ -199,7 +199,7 @@ DCP:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 hooksecurefunc("UseAction", function(slot)
 	local actionType, itemID = GetActionInfo(slot)
-	if (actionType == "item") then
+	if actionType == "item" then
 		local texture = GetActionTexture(slot)
 		watching[itemID] = {GetTime(), "item", texture}
 	end
@@ -207,7 +207,7 @@ end)
 
 hooksecurefunc("UseInventoryItem", function(slot)
 	local itemID = GetInventoryItemID("player", slot)
-	if (itemID) then
+	if itemID then
 		local texture = GetInventoryItemTexture("player", slot)
 		watching[itemID] = {GetTime(), "item", texture}
 	end
@@ -215,7 +215,7 @@ end)
 
 hooksecurefunc("UseContainerItem", function(bag, slot)
 	local itemID = GetContainerItemID(bag, slot)
-	if (itemID) then
+	if itemID then
 		local texture = select(10, GetItemInfo(itemID))
 		watching[itemID] = {GetTime(), "item", texture}
 	end
@@ -226,5 +226,6 @@ SlashCmdList.PulseCD = function(msg)
 	tinsert(animating, {"Interface\\Icons\\Inv_Misc_Tournaments_Banner_Human"})
 	DCP:SetScript("OnUpdate", OnUpdate)
 end
+
 SLASH_PulseCD1 = "/pulsecd"
 SLASH_PulseCD2 = "/згдыусв"

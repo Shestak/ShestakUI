@@ -47,7 +47,7 @@ hooksecurefunc("DungeonCompletionAlertFrame_FixAnchors", function()
 			end
 			return
 		end
-		
+
 		DungeonCompletionAlertFrame1:ClearAllPoints()
 		if pos == "TOP" then
 			DungeonCompletionAlertFrame1:SetPoint("TOP", AchievementAnchor, "BOTTOM")
@@ -61,7 +61,7 @@ local initialize = false
 function T.PostAchievementMove(frame)
 	local point = select(1, frame:GetPoint())
 
-	if ( not AchievementFrame ) and initialize == true then
+	if not AchievementFrame and initialize == true then
 		AchievementFrame_LoadUI()
 	end
 
@@ -70,7 +70,7 @@ function T.PostAchievementMove(frame)
 	else
 		pos = "BOTTOM"
 	end
-	
+
 	if initialize == true then
 		AchievementAlertFrame_ShowAlert(50)
 	end

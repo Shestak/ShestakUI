@@ -23,23 +23,23 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 				hooksecurefunc("AchievementFrameCategories_DisplayButton", function(button) button.showTooltipFunc = nil end)
 			end
 		end
-		
+
 		if addon ~= "ShestakUI" then return end
-		
+
 		Advanced_UseUIScale:Kill()
 		Advanced_UIScaleSlider:Kill()
 		TutorialFrameAlertButton:Kill()
 		HelpOpenTicketButtonTutorial:Kill()
 		PlayerTalentFrameLearnButtonTutorialArrow:Kill()
 		TalentMicroButtonAlert:Kill()
-		
+
 		if C.chat.enable then
 			SetCVar("WholeChatWindowClickable", 0)
 			SetCVar("ConversationMode", "inline")
 			InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
 			InterfaceOptionsSocialPanelConversationMode:Kill()
 		end
-		
+
 		if C.unitframe.enable then
 			PlayerFrame:Kill()
 			if T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar ~= true then
@@ -63,7 +63,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 				InterfaceOptionsUnitFramePanelArenaEnemyPets:Kill()
 			end
 		end
-		
+
 		if C.actionbar.enable then
 			InterfaceOptionsActionBarsPanelBottomLeft:Kill()
 			InterfaceOptionsActionBarsPanelBottomRight:Kill()
@@ -71,7 +71,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 			InterfaceOptionsActionBarsPanelRightTwo:Kill()
 			InterfaceOptionsActionBarsPanelAlwaysShowActionBars:Kill()
 		end
-		
+
 		if C.nameplate.enable == true and C.nameplate.enhance_threat == true then
 			InterfaceOptionsDisplayPanelAggroWarningDisplay:Kill()
 		end

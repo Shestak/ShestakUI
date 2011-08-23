@@ -39,7 +39,7 @@ local CreateFS = function(frame, fsize, fstyle)
 	fstring:SetShadowOffset(C.font.raid_cooldowns_font_shadow and 1 or 0, C.font.raid_cooldowns_font_shadow and -1 or 0)
 	return fstring
 end
-	
+
 local UpdatePositions = function()
 	for i = 1, #bars do
 		bars[i]:ClearAllPoints()
@@ -108,22 +108,22 @@ local CreateBar = function()
 	end
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetMinMaxValues(0, 100)
-	
+
 	bar.backdrop = CreateFrame("Frame", nil, bar)
 	bar.backdrop:Point("TOPLEFT", -2, 2)
 	bar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	bar.backdrop:SetTemplate("Default")
 	bar.backdrop:SetFrameStrata("BACKGROUND")
-	
+
 	bar.bg = bar:CreateTexture(nil, "BACKGROUND")
 	bar.bg:SetAllPoints(bar)
 	bar.bg:SetTexture(C.media.texture)
-	
+
 	bar.left = CreateFS(bar)
 	bar.left:Point("LEFT", 2, 0)
 	bar.left:SetJustifyH("LEFT")
 	bar.left:Size(C.raidcooldown.width - 30, C.font.raid_cooldowns_font_size)
-	
+
 	bar.right = CreateFS(bar)
 	bar.right:Point("RIGHT", 1, 0)
 	bar.right:SetJustifyH("RIGHT")
@@ -133,7 +133,7 @@ local CreateBar = function()
 		bar.icon:Width(bar:GetHeight() + 6)
 		bar.icon:Height(bar.icon:GetWidth())
 		bar.icon:Point("BOTTOMRIGHT", bar, "BOTTOMLEFT", -7, 0)
-	
+
 		bar.icon.backdrop = CreateFrame("Frame", nil, bar.icon)
 		bar.icon.backdrop:Point("TOPLEFT", -2, 2)
 		bar.icon.backdrop:Point("BOTTOMRIGHT", 2, -2)

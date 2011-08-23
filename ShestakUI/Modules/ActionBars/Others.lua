@@ -28,11 +28,11 @@ OnLogon:SetScript("OnEvent", function(self, event)
 			button = _G[format("MultiBarBottomRightButton%d", i)]
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button)
-			
+
 			button = _G[format("MultiBarLeftButton%d", i)]
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button)
-			
+
 			button = _G[format("MultiBarBottomLeftButton%d", i)]
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button)

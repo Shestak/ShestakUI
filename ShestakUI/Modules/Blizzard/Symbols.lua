@@ -28,10 +28,10 @@ local menuList = {
 }
 
 WorldFrame:HookScript("OnMouseDown", function(self, button)
-	if (button == "LeftButton" and IsShiftKeyDown() and UnitExists("mouseover")) then
-		local inParty = (GetNumPartyMembers() > 0)
-		local inRaid = (GetNumRaidMembers() > 0)
-		if (inRaid and (IsRaidLeader() or IsRaidOfficer()) or (inParty and not inRaid)) then
+	if button == "LeftButton" and IsShiftKeyDown() and UnitExists("mouseover") then
+		local inParty = GetNumPartyMembers() > 0
+		local inRaid = GetNumRaidMembers() > 0
+		if inRaid and (IsRaidLeader() or IsRaidOfficer()) or (inParty and not inRaid) then
 			EasyMenu(menuList, menuFrame, "cursor", 0, 0, "MENU", 1)
 		end
 	end

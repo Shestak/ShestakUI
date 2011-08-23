@@ -12,17 +12,16 @@ addon:RegisterEvent("PLAYER_REGEN_ENABLED")
 
 local BossExists = function()
 	for i = 1, MAX_BOSS_FRAMES do
-		if (UnitExists("boss" .. i)) then return true
-		end
+		if UnitExists("boss" .. i) then return true end
 	end
 end
 
 addon:SetScript("OnEvent", function(self, event)
-	if (BossExists()) then
-		if (not WatchFrame.collapsed) then
+	if BossExists() then
+		if not WatchFrame.collapsed then
 			WatchFrame_CollapseExpandButton_OnClick(WatchFrame_CollapseExpandButton)
 		end
-	elseif (WatchFrame.collapsed and not InCombatLockdown()) then
+	elseif WatchFrame.collapsed and not InCombatLockdown() then
 		WatchFrame_CollapseExpandButton_OnClick(WatchFrame_CollapseExpandButton)
 	end
 end)

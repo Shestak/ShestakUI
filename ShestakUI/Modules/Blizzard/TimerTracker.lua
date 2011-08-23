@@ -16,7 +16,7 @@ local function SkinIt(bar)
 
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetStatusBarColor(0.7, 0, 0)
-	
+
 	bar.bg = bar:CreateTexture(nil, "BACKGROUND")
 	bar.bg:SetAllPoints(bar)
 	bar.bg:SetTexture(C.media.texture)

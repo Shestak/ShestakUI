@@ -5,24 +5,24 @@ if T.class ~= "MAGE" or T.level < 19 then return end
 --	Mage portals menu(by Foof and Tohveli)
 ----------------------------------------------------------------------------------------
 local spells = (UnitFactionGroup("player") == "Horde") and {
-		[1] = {3567,11417},		-- Orgrimmar
-		[2] = {3563,11418},		-- Undercity
-		[3] = {3566,11420},		-- Thunder Bluff
-		[4] = {32272,32267},	-- Silvermoon
-		[5] = {49358,49361},	-- Stonard
-		[6] = {35715,35717},	-- Shattrath
-		[7] = {53140,53142},	-- Dalaran
-		[8] = {88344,88346},	-- Tol Barad
-	} or { -- ALLIANCE
-		[1] = {3561,10059},		-- Stormwind
-		[2] = {3562,11416},		-- Ironforge
-		[3] = {3565,11419},		-- Darnassus
-		[4] = {32271,32266},	-- Exodar
-		[5] = {49359,49360},	-- Theramore
-		[6] = {33690,33691},	-- Shattrath
-		[7] = {53140,53142},	-- Dalaran
-		[8] = {88342,88345},	-- Tol Barad
-	};
+	[1] = {3567,11417},		-- Orgrimmar
+	[2] = {3563,11418},		-- Undercity
+	[3] = {3566,11420},		-- Thunder Bluff
+	[4] = {32272,32267},	-- Silvermoon
+	[5] = {49358,49361},	-- Stonard
+	[6] = {35715,35717},	-- Shattrath
+	[7] = {53140,53142},	-- Dalaran
+	[8] = {88344,88346},	-- Tol Barad
+} or { -- ALLIANCE
+	[1] = {3561,10059},		-- Stormwind
+	[2] = {3562,11416},		-- Ironforge
+	[3] = {3565,11419},		-- Darnassus
+	[4] = {32271,32266},	-- Exodar
+	[5] = {49359,49360},	-- Theramore
+	[6] = {33690,33691},	-- Shattrath
+	[7] = {53140,53142},	-- Dalaran
+	[8] = {88342,88345},	-- Tol Barad
+}
 
 local f = CreateFrame("Frame", "TeleportMenu", UIParent)
 f:CreatePanel("Invisible", C.minimap.size, (#spells + 1) * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)

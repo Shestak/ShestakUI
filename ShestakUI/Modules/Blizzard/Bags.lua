@@ -112,12 +112,12 @@ function Stuffing:SlotUpdate(b)
 	if not StuffingFrameBags:IsShown() then return end -- don't do any slot update if bags are not show
 	local texture, count, locked = GetContainerItemInfo(b.bag, b.slot)
 	local clink = GetContainerItemLink(b.bag, b.slot)
-	
+
 	-- Set all slot color to default ShestakUI on update
 	if not b.frame.lock then
 		b.frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
-	
+
 	if b.Cooldown then
 		local cd_start, cd_finish, cd_enable = GetContainerItemCooldown(b.bag, b.slot)
 		CooldownFrame_SetTimer(b.Cooldown, cd_start, cd_finish, cd_enable)
@@ -126,7 +126,7 @@ function Stuffing:SlotUpdate(b)
 	if clink then
 		local iType
 		b.name, _, b.rarity, _, _, iType = GetItemInfo(clink)
-		
+
 		-- Color slot according to item quality
 		if not b.frame.lock and b.rarity and b.rarity > 1 then
 			b.frame:SetBackdropBorderColor(GetItemQualityColor(b.rarity))
@@ -149,7 +149,7 @@ function Stuffing:SlotUpdate(b)
 	else
 		b.name, b.rarity, b.qitem = nil, nil, nil
 	end
-	
+
 	SetItemButtonTexture(b.frame, texture)
 	SetItemButtonCount(b.frame, count)
 	SetItemButtonDesaturated(b.frame, locked, 0.5, 0.5, 0.5)
@@ -297,7 +297,7 @@ function Stuffing:BagNew(bag, f)
 			return ret
 		end
 	end
-	
+
 	ret = CreateFrame("Frame", "StuffingBag" .. bag, f)
 	ret.bagType = self:BagType(bag)
 
@@ -355,13 +355,13 @@ function Stuffing:CreateBagFrame(w)
 		end
 	end)
 	f:SetScript("OnMouseUp", f.StopMovingOrSizing)
-	
+
 	if w == "Bank" then
 		f:Point(unpack(C.position.bank))
 	else
 		f:Point(C.position.bag[1], C.position.bag[2], C.position.bag[3], C.position.bag[4]+3, C.position.bag[5]-3)
 	end
-	
+
 	-- Buy button
 	if w == "Bank" then
 		f.b_purchase = CreateFrame("Button", "Stuffing_PurchaseButton"..w, f)
@@ -403,7 +403,7 @@ function Stuffing:CreateBagFrame(w)
 		self:GetParent():Hide()
 	end)
 	f.b_close:RegisterForClicks("AnyUp")
-	
+
 	-- Create the bags frame
 	local fb = CreateFrame("Frame", n .. "BagsFrame", f)
 	fb:Point("BOTTOMLEFT", f, "TOPLEFT", 0, 3)
@@ -666,19 +666,19 @@ function Stuffing:Layout(lb)
 				b.frame:Show()
 				b.frame:SetTemplate("Transparent")
 				b.frame:StyleButton()
-				
+
 				-- Color fish bag border slot to red
 				if bagType == ST_FISHBAG then b.frame:SetBackdropBorderColor(1, 0, 0) b.frame.lock = true end
 				-- Color profession bag slot border ~yellow
 				if bagType == ST_SPECIAL then b.frame:SetBackdropBorderColor(1, 0.9, 0.3) b.frame.lock = true end
-				
+
 				self:SlotUpdate(b)
-				
+
 				local iconTex = _G[b.frame:GetName() .. "IconTexture"]
 				iconTex:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				iconTex:Point("TOPLEFT", b.frame, 2, -2)
 				iconTex:Point("BOTTOMRIGHT", b.frame, -2, 2)
-				
+
 				local ButCount = _G[b.frame:GetName().."Count"]
 				ButCount:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 				ButCount:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
@@ -686,7 +686,7 @@ function Stuffing:Layout(lb)
 
 				iconTex:Show()
 				b.iconTex = iconTex
-				
+
 				idx = idx + 1
 			end
 		end
@@ -1236,7 +1236,7 @@ function Stuffing.Menu(self, level)
 		Stuffing_Sort("d")
 	end
 	UIDropDownMenu_AddButton(info, level)
-	
+
 	wipe(info)
 	info.text = L_BAG_SORT_SPECIAL
 	info.notCheckable = 1
@@ -1253,7 +1253,7 @@ function Stuffing.Menu(self, level)
 		Stuffing:Restack()
 	end
 	UIDropDownMenu_AddButton(info, level)
-	
+
 	wipe(info)
 	info.text = L_BAG_STACK_SPECIAL
 	info.notCheckable = 1

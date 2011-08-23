@@ -21,7 +21,7 @@ local function hookSetHyperlink(tooltip, refString)
 	local achievementID, numCriteria, GUID, name, completed, quantity, reqQuantity, month, day, year
 	local output = {[0] = {}, [1] = {}}
 	if select(3, string.find(refString, "(%a-):")) ~= "achievement" then return end
-	
+
 	achievementID = select(3, string.find(refString, ":(%d+):"))
 	numCriteria = GetAchievementNumCriteria(achievementID)
 	GUID = select(3, string.find(refString, ":%d+:(.-):"))
@@ -30,13 +30,13 @@ local function hookSetHyperlink(tooltip, refString)
 		tooltip:Show()
 		return 
 	end
-	
+
 	tooltip:AddLine(" ")
 	_, _, _, completed, month, day, year = GetAchievementInfo(achievementID)
 
 	if completed then
 		if year < 10 then year = "0" .. year end
-		
+
 		tooltip:AddLine(L_TOOLTIP_ACH_COMPLETE .. month .. "/" .. day .. "/" .. year, 0, 1, 0)
 	elseif numCriteria == 0 then
 		tooltip:AddLine(L_TOOLTIP_ACH_INCOMPLETE)

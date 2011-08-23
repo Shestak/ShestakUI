@@ -21,7 +21,7 @@ end
 local BuffsAnchor = CreateFrame("Frame", "BuffsAnchor", UIParent)
 BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
 BuffsAnchor:Size((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size * 2) + 3)
-	
+
 ConsolidatedBuffs:ClearAllPoints()
 ConsolidatedBuffs:Point("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
 ConsolidatedBuffs:Size(C.aura.player_buff_size, C.aura.player_buff_size)
@@ -78,20 +78,20 @@ local function StyleBuffs(buttonName, index, debuff)
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:Point("TOPLEFT", buff, 2, -2)
 		icon:Point("BOTTOMRIGHT", buff, -2, 2)
-		
+
 		buff:Height(C.aura.player_buff_size)
 		buff:Width(C.aura.player_buff_size)
-		
+
 		duration:ClearAllPoints()
 		duration:Point("CENTER", 2, 1)
 		duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 		duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
-		
+
 		count:ClearAllPoints()
 		count:Point("BOTTOMRIGHT", 0, 1)
 		count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 		count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
-		
+
 		local panel = CreateFrame("Frame", buttonName..index.."Panel", buff)
 		panel:CreatePanel("Default", C.aura.player_buff_size, C.aura.player_buff_size, "CENTER", buff, "CENTER", 0, 0)
 		if C.aura.classcolor_border == true then
@@ -131,13 +131,13 @@ local function UpdateBuffAnchors()
 	for index = 1, BUFF_ACTUAL_DISPLAY do
 		StyleBuffs(buttonName, index, false)
 		local buff = _G[buttonName..index]
-		
-		if not buff.consolidated then	
+
+		if not buff.consolidated then
 			numBuffs = numBuffs + 1
 			index = numBuffs + slack
 			buff:ClearAllPoints()
-			if ( (index > 1) and (mod(index, rowbuffs) == 1) ) then
- 				if ( index == rowbuffs + 1 ) then
+			if (index > 1) and (mod(index, rowbuffs) == 1) then
+				if index == rowbuffs + 1 then
 					buff:Point("TOP", ConsolidatedBuffs, "BOTTOM", 0, -3)
 				else
 					buff:Point("TOP", aboveBuff, "BOTTOM", 0, -3)
@@ -173,7 +173,7 @@ end
 local z = 0.79
 local function UpdateConsolidatedBuffsAnchors()
 	ConsolidatedBuffsTooltip:Width(min(BuffFrame.numConsolidated * C.aura.player_buff_size * z + 18, 4 * C.aura.player_buff_size * z + 18))
-    ConsolidatedBuffsTooltip:Height(floor((BuffFrame.numConsolidated + 3) / 4 ) * C.aura.player_buff_size * z + CONSOLIDATED_BUFF_ROW_HEIGHT * z)
+	ConsolidatedBuffsTooltip:Height(floor((BuffFrame.numConsolidated + 3) / 4 ) * C.aura.player_buff_size * z + CONSOLIDATED_BUFF_ROW_HEIGHT * z)
 end
 
 hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)

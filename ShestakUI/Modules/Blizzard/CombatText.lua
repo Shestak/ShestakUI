@@ -611,7 +611,7 @@ InterfaceOptionsCombatTextPanelFCTDropDown:Hide()
 
 -- Color printer
 local pr = function(msg)
-    print(tostring(msg))
+	print(tostring(msg))
 end
 
 -- Configmode and testmode
@@ -702,7 +702,7 @@ local function StartTestMode()
 	-- Init random number generator
 	local random = math.random
 	random(time()); random(); random(time())
-	
+
 	local TimeSinceLastUpdate = 0
 	local UpdateInterval
 	if C.combattext.damage_color then
@@ -715,7 +715,7 @@ local function StartTestMode()
 		ct.dmindex[6] = 32
 		ct.dmindex[7] = 64
 	end
-	
+
 	for i = 1, #ct.frames do
 		ct.frames[i]:SetScript("OnUpdate", function(self, elapsed)
 			UpdateInterval = random(65, 1000) / 250

@@ -15,7 +15,7 @@ local UIFonts = CreateFrame("Frame", nil, UIParent)
 UIFonts:RegisterEvent("ADDON_LOADED")
 UIFonts:SetScript("OnEvent", function(self, event, addon)
 	if addon ~= "ShestakUI" or addon == "tekticles" then return end
-	
+
 	local NORMAL = C.media.normal_font
 	local COMBAT = C.media.blank_font
 
@@ -25,7 +25,7 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	UNIT_NAME_FONT = NORMAL
 	NAMEPLATE_FONT = NORMAL
 	STANDARD_TEXT_FONT = NORMAL
-	
+
 	if T.author == true then
 		DAMAGE_TEXT_FONT = COMBAT
 		SetFont(CombatTextFont, COMBAT, 100)
@@ -77,7 +77,7 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	SetFont(SubZoneTextString, NORMAL, 25, "OUTLINE")
 	SetFont(PVPInfoTextString, NORMAL, 22, "THINOUTLINE")
 	SetFont(PVPArenaTextString, NORMAL, 22, "THINOUTLINE")
-	
+
 	-- Derived fonts
 	SetFont(BossEmoteNormalHuge, NORMAL, 27, "THICKOUTLINE")
 	SetFont(ErrorFont, NORMAL, 16, nil, 60)

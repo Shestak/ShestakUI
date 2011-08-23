@@ -253,7 +253,7 @@ do
 		_G["MultiBarLeftButton"..i]:StyleButton(true)
 		_G["MultiBarRightButton"..i]:StyleButton(true)
 	end
-	 
+
 	for i = 1, 10 do
 		_G["ShapeshiftButton"..i]:StyleButton(true)
 		_G["PetActionButton"..i]:StyleButton(true)	

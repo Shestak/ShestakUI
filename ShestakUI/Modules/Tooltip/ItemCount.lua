@@ -23,7 +23,7 @@ end)
 local f = CreateFrame("Frame")
 f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(_, _, name)
-	if name ~= "ShestakUI_Extra" then return end
+	if name ~= "ShestakUI" then return end
 	f:UnregisterEvent("ADDON_LOADED")
 	f:SetScript("OnEvent", nil)
 	UIItemTooltip = UIItemTooltip or {count = true}

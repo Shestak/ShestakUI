@@ -90,17 +90,17 @@ Scanner:SetScript("OnEvent", function()
 					local itemName, _, _, _, _, _, _, _, _, _, _ = GetItemInfo(itemID) 
 					local count = GetItemCount(itemID)
 					local itemIcon = GetItemIcon(itemID)
-					
+
 					-- Set our texture to the item found in bags
 					AutoButton.t:SetTexture(itemIcon)
-					
+
 					-- Get the count if there is one
 					if count and count ~= 1 then
 						AutoButton.c:SetText(count)
 					else
 						AutoButton.c:SetText("")
 					end
-					
+
 					AutoButton:SetScript("OnUpdate", function(self, elapsed)
 						local cd_start, cd_finish, cd_enable = GetContainerItemCooldown(b, s)
 						CooldownFrame_SetTimer(AutoButton.Cooldown, cd_start, cd_finish, cd_enable)
@@ -110,7 +110,7 @@ Scanner:SetScript("OnEvent", function()
 			end
 		end
 	end
-	
+
 	-- Scan inventory for Equipment matches
 	for w = 1, 19 do
 		for e, EquipedItems in pairs(EquipedItems) do

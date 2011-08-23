@@ -1,17 +1,15 @@
-local ADDON_NAME, ns = ...
-local oUF = oUFShestakUI or oUF
-assert(oUF, "ShestakUI was unable to locate oUF install.")
-
-ns._Objects = {}
-ns._Headers = {}
-
 local T, C, L = unpack(ShestakUI)
-if not C.unitframe.enable == true then return end
-if IsAddOnLoaded("ShestakUI_Heal") then return end
+if C.unitframe.enable ~= true or IsAddOnLoaded("ShestakUI_Heal") then return end
 
 ----------------------------------------------------------------------------------------
 --	
 ----------------------------------------------------------------------------------------
+local _, ns = ...
+local oUF = oUFShestakUI
+
+ns._Objects = {}
+ns._Headers = {}
+
 -- Frame size
 local party_width = 140
 local party_height = 27
@@ -22,28 +20,28 @@ local unit_height = 17
 
 -- Create layout
 local function Shared(self, unit)
-	local unit = (self:GetParent():GetName():match"oUF_PartyDPS") and "party" 
+	local unit = (self:GetParent():GetName():match"oUF_PartyDPS") and "party"
 	or (self:GetParent():GetName():match"oUF_RaidDPS") and "raid"
 	or (self:GetParent():GetName():match"oUF_MainTank") and "tank" or unit
-	
+
 	-- Set our own colors
 	self.colors = T.oUF_colors
-	
+
 	-- Register click
 	self:RegisterForClicks("AnyUp")
 	self:SetScript("OnEnter", UnitFrame_OnEnter)
 	self:SetScript("OnLeave", UnitFrame_OnLeave)
-	
+
 	-- Menu
 	self.menu = T.SpawnMenu
-	
+
 	-- Backdrop for every units
 	self.FrameBackdrop = CreateFrame("Frame", nil, self)
 	self.FrameBackdrop:SetTemplate("Default")
 	self.FrameBackdrop:SetFrameStrata("BACKGROUND")
 	self.FrameBackdrop:Point("TOPLEFT", -2, 2)
 	self.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
-	
+
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", nil, self)
 	self.Health:Point("TOPLEFT", self, "TOPLEFT", 0, 0)
@@ -71,7 +69,7 @@ local function Shared(self, unit)
 		self.Health.colorReaction = true
 		self.Health.colorClass = true
 	end
-	
+
 	-- Health bar background
 	self.Health.bg = self.Health:CreateTexture(nil, "BORDER")
 	self.Health.bg:SetAllPoints(self.Health)
@@ -81,7 +79,7 @@ local function Shared(self, unit)
 	else
 		self.Health.bg.multiplier = 0.25
 	end
-	
+
 	if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.Health.value:Point("RIGHT", self.Health, "RIGHT", 1, 0)
@@ -89,7 +87,7 @@ local function Shared(self, unit)
 		
 		self.Health.PostUpdate = T.PostUpdateRaidHealth
 	end
-	
+
 	if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		-- Power bar
 		self.Power = CreateFrame("StatusBar", nil, self)
@@ -103,7 +101,7 @@ local function Shared(self, unit)
 		self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
 		self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
 		self.Power:SetStatusBarTexture(C.media.texture)
-		
+
 		self.Power.frequentUpdates = true
 		self.Power.colorDisconnected = true
 		if C.unitframe.own_color == true then
@@ -111,22 +109,22 @@ local function Shared(self, unit)
 		else
 			self.Power.colorPower = true
 		end
-		
+
 		self.Power.PreUpdate = T.PreUpdatePower
 		self.Power.PostUpdate = T.PostUpdatePower
-	
+
 		-- Power bar background
 		self.Power.bg = self.Power:CreateTexture(nil, "BORDER")
 		self.Power.bg:SetAllPoints(self.Power)
 		self.Power.bg:SetTexture(C.media.texture)
 		self.Power.bg:SetAlpha(1)
 		self.Power.bg.multiplier = 0.3
-		
+
 		self.Power.value = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.Power.value:Point("RIGHT", self.Power, "RIGHT", 0, 0)
 		self.Power.value:SetJustifyH("RIGHT")
 	end
-	
+
 	-- Names
 	self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
@@ -144,54 +142,54 @@ local function Shared(self, unit)
 			self:Tag(self.Info, "[GetNameColor][NameShort]")
 		end
 	end
-	
+
 	-- LFD role icons
 	if C.raidframe.icons_lfd_role == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:Size(12, 12)
 		self.LFDRole:Point("TOPRIGHT", self.Health, 2, 5)
 	end
-	
+
 	-- Leader/Assistant/ML icons
 	if C.raidframe.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target") then
 		-- Leader icon
 		self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
 		self.Leader:Size(12, 12)
 		self.Leader:Point("TOPLEFT", self.Health, -3, 8)
-	
+
 		-- Assistant icon
 		self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
 		self.Assistant:Size(12, 12)
 		self.Assistant:Point("TOPLEFT", self.Health, -3, 8)
-		
+
 		-- Master looter
 		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
 		self.MasterLooter:Size(12, 12)
 		self.MasterLooter:Point("TOPRIGHT", self.Health, 3, 8)
 	end
-	
+
 	-- Agro border
 	if C.raidframe.aggro_border == true then
 		table.insert(self.__elements, T.UpdateThreat)
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateThreat)
 		self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", T.UpdateThreat)
 		self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", T.UpdateThreat)
-    end
-	
+	end
+
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
 		self.RaidIcon:Size(12, 12)
 		self.RaidIcon:Point("CENTER", self.Health, "TOP")
 	end
-	
+
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
 		self.ReadyCheck:Size(12, 12)
 		self.ReadyCheck:Point("BOTTOMRIGHT", self.Health, 2, -1)
 	end
-	
+
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then
 		self.Debuffs = CreateFrame("Frame", nil, self)
 		self.Debuffs:Point("TOPLEFT", self, "BOTTOMLEFT", -2, -5)
@@ -206,7 +204,7 @@ local function Shared(self, unit)
 		self.Debuffs.PostCreateIcon = T.PostCreateAura
 		self.Debuffs.PostUpdateIcon = T.PostUpdateIcon
 	end
-	
+
 	-- Debuff highlight
 	self.DebuffHighlight = self.Health:CreateTexture(nil, "OVERLAY")
 	self.DebuffHighlight:SetAllPoints(self.Health)
@@ -215,7 +213,7 @@ local function Shared(self, unit)
 	self.DebuffHighlight:SetBlendMode("ADD")
 	self.DebuffHighlightAlpha = 1
 	self.DebuffHighlightFilter = true
-	
+
 	-- Incoming heal text/bar
 	if C.raidframe.plugins_healcomm == true then
 		local mhpb = CreateFrame("StatusBar", nil, self.Health)
@@ -244,12 +242,12 @@ local function Shared(self, unit)
 			maxOverflow = 1,
 		}
 	end
-	
+
 	-- Range alpha
 	if C.raidframe.show_range == true and (not (self:GetAttribute("unitsuffix") == "target")) then
 		self.Range = {insideAlpha = 1, outsideAlpha = C.raidframe.range_alpha}
 	end
-	
+
 	-- Smooth bars
 	if C.unitframe.plugins_smooth_bar == true then
 		self.Health.Smooth = true
@@ -257,7 +255,7 @@ local function Shared(self, unit)
 			self.Power.Smooth = true
 		end
 	end
-	
+
 	return self
 end
 
@@ -285,7 +283,7 @@ oUF:Factory(function(self)
 			"point", "BOTTOM"
 		)
 		party:Point(unpack(C.position.unitframes.party_dps))
-		
+
 		-- Party targets
 		local partytarget = self:SpawnHeader("oUF_PartyTargetDPS", nil, "custom [@raid6,exists] hide;show",
 			"oUF-initialConfigFunction", [[
@@ -304,7 +302,7 @@ oUF:Factory(function(self)
 			"point", "BOTTOM"
 		)
 		partytarget:Point("TOPLEFT", party, "TOPRIGHT", 7, 0)
-		
+
 		-- Party pets
 		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists] hide;show",
 			"oUF-initialConfigFunction", [[
@@ -347,7 +345,7 @@ oUF:Factory(function(self)
 		partypetupdate:RegisterEvent("UNIT_ENTERED_VEHICLE")
 		partypetupdate:RegisterEvent("UNIT_EXITED_VEHICLE")
 	end
-	
+
 	if C.raidframe.show_raid == true then
 		-- Raid
 		local raid = {}

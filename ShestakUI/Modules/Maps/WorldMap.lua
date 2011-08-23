@@ -194,7 +194,7 @@ coords.PlayerText = WorldMapButton:CreateFontString(nil, "ARTWORK", "GameFontNor
 coords.PlayerText:SetFont(C.media.normal_font, 17)
 coords.PlayerText:SetJustifyH("LEFT")
 coords.PlayerText:SetText(UnitName("player")..": 0,0")
-if (IsAddOnLoaded("_NPCScan.Overlay")) then
+if IsAddOnLoaded("_NPCScan.Overlay") then
 	coords.PlayerText:Point("TOPLEFT", WorldMapButton, "TOPLEFT", 3, -50)
 else
 	coords.PlayerText:Point("TOPLEFT", WorldMapButton, "TOPLEFT", 3, -3)
@@ -229,7 +229,7 @@ coords:SetScript("OnUpdate", function(self, elapsed)
 		local adjustedX = (x / scale - (centerX - (width/2))) / width
 		local adjustedY = (centerY + (height/2) - y / scale) / height
 
-		if (adjustedX >= 0 and adjustedY >= 0 and adjustedX <= 1 and adjustedY <= 1) then
+		if adjustedX >= 0 and adjustedY >= 0 and adjustedX <= 1 and adjustedY <= 1 then
 			adjustedX = math.floor(100 * adjustedX)
 			adjustedY = math.floor(100 * adjustedY)
 			coords.MouseText:SetText(L_MAP_CURSOR..adjustedX..","..adjustedY)

@@ -126,7 +126,7 @@ local function ToggleRaidUtil(self, event)
 		self:RegisterEvent("PLAYER_REGEN_ENABLED")
 		return
 	end
-	
+
 	if CheckRaidStatus() then
 		if RaidUtilityPanel.toggled == true then
 			ShowButton:Hide()
@@ -139,7 +139,7 @@ local function ToggleRaidUtil(self, event)
 		ShowButton:Hide()
 		RaidUtilityPanel:Hide()
 	end
-	
+
 	if event == "PLAYER_REGEN_ENABLED" then
 		self:UnregisterEvent("PLAYER_REGEN_ENABLED")
 	end

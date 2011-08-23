@@ -8,7 +8,7 @@ local function questlevel()
 	local numButtons = #buttons
 	local scrollOffset = HybridScrollFrame_GetOffset(QuestLogScrollFrame)
 	local numEntries, numQuests = GetNumQuestLogEntries()
-	
+
 	for i = 1, numButtons do
 		local questIndex = i + scrollOffset
 		local questLogTitle = buttons[i]

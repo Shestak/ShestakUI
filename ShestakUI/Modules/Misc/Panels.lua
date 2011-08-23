@@ -110,7 +110,7 @@ if C.chat.background == true then
 	chatbd:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 5, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 2)
 	chatbd:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 	chatbd:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
-	
+
 	local chattabs = CreateFrame("Frame", "ChatTabsPanel", UIParent)
 	chattabs:CreatePanel("Transparent", chatbd:GetWidth(), 20, "BOTTOM", chatbd, "TOP", 0, 3)
 	chattabs:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)

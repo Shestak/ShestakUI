@@ -68,7 +68,7 @@ AltPowerBarStatus:SetScript("OnUpdate", function(self, elapsed)
 	if not AltPowerBar:IsShown() then return end
 	TimeSinceLastUpdate = TimeSinceLastUpdate + elapsed
 
-	if (TimeSinceLastUpdate >= 1) then
+	if TimeSinceLastUpdate >= 1 then
 		self:SetMinMaxValues(0, UnitPowerMax("player", ALTERNATE_POWER_INDEX))
 		local power = UnitPower("player", ALTERNATE_POWER_INDEX)
 		local mpower = UnitPowerMax("player", ALTERNATE_POWER_INDEX)

@@ -13,7 +13,7 @@ local function OnEvent(self, event, arg1, arg2)
 	if not GetActiveTalentGroup() then return end
 	if event == "UNIT_AURA" and arg1 ~= "player" then return end 
 	if group.level and UnitLevel("player") < group.level then return end
-	
+
 	self.icon:SetTexture(nil)
 	self:Hide()
 	if group.negate_spells then
@@ -24,7 +24,7 @@ local function OnEvent(self, event, arg1, arg2)
 			end
 		end
 	end
-	
+
 	local hasOffhandWeapon = OffhandHasWeapon()
 	local hasMainHandEnchant, _, _, hasOffHandEnchant, _, _ = GetWeaponEnchantInfo()
 	if not group.weapon then
@@ -36,7 +36,7 @@ local function OnEvent(self, event, arg1, arg2)
 				break
 			end
 		end
-		
+
 		if (not self.icon:GetTexture() and event == "PLAYER_LOGIN") then
 			self:UnregisterAllEvents()
 			self:RegisterEvent("LEARNED_SPELL_IN_TAB")
@@ -60,7 +60,7 @@ local function OnEvent(self, event, arg1, arg2)
 	else
 		self:UnregisterAllEvents()
 		self:RegisterEvent("UNIT_INVENTORY_CHANGED")
-		
+
 		if hasOffhandWeapon == nil then
 			if hasMainHandEnchant == nil then
 				self.icon:SetTexture(GetInventoryItemTexture("player", 16))
@@ -74,21 +74,21 @@ local function OnEvent(self, event, arg1, arg2)
 				self.icon:SetTexture(GetInventoryItemTexture("player", 16))
 			end
 		end
-		
+
 		if group.combat and group.combat == true then
 			self:RegisterEvent("PLAYER_REGEN_ENABLED")
 			self:RegisterEvent("PLAYER_REGEN_DISABLED")
 		end
-		
+
 		if (group.instance and group.instance == true) or (group.pvp and group.pvp == true) then
 			self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 		end
-		
+
 		if group.role and group.role == true then
 			self:RegisterEvent("UNIT_INVENTORY_CHANGED")
 		end
 	end
-	
+
 	local role = group.role
 	local tree = group.tree
 	local combat = group.combat
@@ -101,7 +101,7 @@ local function OnEvent(self, event, arg1, arg2)
 	local rolepass = false
 	local treepass = false
 	local inInstance, instanceType = IsInInstance()
-	
+
 	if role ~= nil then
 		if role == T.Role then
 			rolepass = true
@@ -111,7 +111,7 @@ local function OnEvent(self, event, arg1, arg2)
 	else
 		rolepass = true
 	end
-	
+
 	if tree ~= nil then
 		if tree == GetPrimaryTalentTree() then
 			treepass = true
@@ -124,10 +124,10 @@ local function OnEvent(self, event, arg1, arg2)
 
 	-- Prevent user error
 	if reversecheck ~= nil and (role == nil and tree == nil) then reversecheck = nil end
-	
+
 	-- Only time we allow it to play a sound
 	if (event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_REGEN_DISABLED") and C.reminder.solo_buffs_sound == true then canplaysound = true end
-	
+
 	if not group.weapon then
 		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and 
 		treepass == true and rolepass == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then

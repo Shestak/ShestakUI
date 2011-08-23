@@ -1,9 +1,11 @@
-local ADDON_NAME, ns = ...
-local oUF = ns.oUF or oUF
-assert(oUF, "ShestakUI was unable to locate oUF install.")
-
 local T, C, L = unpack(select(2, ...))
-if not C.unitframe.enable == true then return end
+if C.unitframe.enable ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Tags
+----------------------------------------------------------------------------------------
+local _, ns = ...
+local oUF = ns.oUF
 
 oUF.Tags["Threat"] = function(unit)
 	local tanking, status, percent = UnitDetailedThreatSituation("player", "target")
@@ -16,17 +18,17 @@ oUF.TagEvents["Threat"] = "UNIT_THREAT_LIST_UPDATE"
 oUF.Tags["DiffColor"]  = function(unit)
 	local r, g, b
 	local level = UnitLevel(unit)
-	if (level < 1) then
+	if level < 1 then
 		r, g, b = 0.69, 0.31, 0.31
 	else
 		local DiffColor = UnitLevel("target") - UnitLevel("player")
-		if (DiffColor >= 5) then
+		if DiffColor >= 5 then
 			r, g, b = 0.69, 0.31, 0.31
-		elseif (DiffColor >= 3) then
+		elseif DiffColor >= 3 then
 			r, g, b = 0.71, 0.43, 0.27
-		elseif (DiffColor >= -2) then
+		elseif DiffColor >= -2 then
 			r, g, b = 0.84, 0.75, 0.65
-		elseif (-DiffColor <= GetQuestGreenRange()) then
+		elseif -DiffColor <= GetQuestGreenRange() then
 			r, g, b = 0.33, 0.59, 0.33
 		else
 			r, g, b = 0.55, 0.57, 0.61
@@ -89,10 +91,8 @@ oUF.TagEvents["LFD"] = "PLAYER_ROLES_ASSIGNED PARTY_MEMBERS_CHANGED"
 oUF.Tags["AltPower"] = function(unit)
 	local cur = UnitPower(unit, ALTERNATE_POWER_INDEX)
 	local max = UnitPowerMax(unit, ALTERNATE_POWER_INDEX)
-	if (max > 0 and not UnitIsDeadOrGhost(unit)) then
-		return ("%s%%"):format(math.floor(cur/max*100+0.5))
---	else
---		return ""
+	if max > 0 and not UnitIsDeadOrGhost(unit) then
+		return ("%s%%"):format(math.floor(cur / max * 100 + 0.5))
 	end
 end
 oUF.TagEvents["AltPower"] = "UNIT_POWER"

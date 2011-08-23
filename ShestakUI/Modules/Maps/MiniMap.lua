@@ -271,7 +271,7 @@ if C.minimap.tracking_icon then
 	trackborder:Width(20)
 	trackborder:Point("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
 	trackborder:SetTemplate("ClassColor")
-	
+
 	MiniMapTrackingBackground:Hide()
 	MiniMapTracking:ClearAllPoints()
 	MiniMapTracking:Point("CENTER", trackborder, 2, -2)

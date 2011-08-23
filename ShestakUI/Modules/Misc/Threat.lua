@@ -65,25 +65,25 @@ local CreateBar = function()
 	bar:Size(C.threat.width, C.threat.height)
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetMinMaxValues(0, 100)
-	
+
 	bar.backdrop = CreateFrame("Frame", nil, bar)
 	bar.backdrop:Point("TOPLEFT", -2, 2)
 	bar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	bar.backdrop:SetTemplate("Default")
 	bar.backdrop:SetFrameStrata("BACKGROUND")
-	
+
 	bar.bg = bar:CreateTexture(nil, "BACKGROUND")
 	bar.bg:SetAllPoints(bar)
 	bar.bg:SetTexture(C.media.texture)
-	
+
 	bar.left = CreateFS(bar)
 	bar.left:Point("LEFT", 2, 0)
 	bar.left:SetJustifyH("LEFT")
-	
+
 	bar.right = CreateFS(bar)
 	bar.right:Point("RIGHT", 1, 0)
 	bar.right:SetJustifyH("RIGHT")
-	
+
 	bar:Hide()
 	return bar
 end

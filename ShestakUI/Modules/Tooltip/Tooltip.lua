@@ -65,17 +65,17 @@ end
 
 local function AddTargetedBy()
 	local numParty, numRaid = GetNumPartyMembers(), GetNumRaidMembers()
-	if (numParty > 0 or numRaid > 0) then
+	if numParty > 0 or numRaid > 0 then
 		for i = 1, (numRaid > 0 and numRaid or numParty) do
 			local unit = (numRaid > 0 and "raid"..i or "party"..i)
-			if (UnitIsUnit(unit.."target",token)) and (not UnitIsUnit(unit,"player")) then
+			if UnitIsUnit(unit.."target", token) and not UnitIsUnit(unit, "player") then
 				local _, class = UnitClass(unit)
 				targetedList[#targetedList + 1] = ClassColors[class]
 				targetedList[#targetedList + 1] = UnitName(unit)
 				targetedList[#targetedList + 1] = "|r, "
 			end
 		end
-		if (#targetedList > 0) then
+		if #targetedList > 0 then
 			targetedList[#targetedList] = nil
 			GameTooltip:AddLine(" ", nil, nil, nil, 1)
 			local line = _G["GameTooltipTextLeft"..GameTooltip:NumLines()]
@@ -106,7 +106,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		end
 	end
 	hooksecurefunc("GameTooltip_SetDefaultAnchor", GameTooltipDefault)
-	
+
 	if C.tooltip.shift_modifer == true then
 		local ShiftShow = function()
 			if IsShiftKeyDown() then
@@ -175,7 +175,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		end
 		end)
 	end
-	
+
 	local OnTooltipSetUnit = function(self)
 		local lines = self:NumLines()
 		local name, unit = self:GetUnit()
@@ -195,16 +195,16 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 				level = "|cffff0000??|r"
 			end
 		end
-		
+
 		if classification == "rareelite" then classification = " R+"
 		elseif classification == "rare"  then classification = " R"
 		elseif classification == "elite" then classification = "+"
 		else classification = "" end
-		
+
 		if not C.tooltip.title then _G["GameTooltipTextLeft1"]:SetText(name) end
 
-		if(UnitIsPlayer(unit)) then
-			if(GetGuildInfo(unit)) then
+		if UnitIsPlayer(unit) then
+			if GetGuildInfo(unit) then
 				_G["GameTooltipTextLeft2"]:SetFormattedText("%s", GetGuildInfo(unit))
 				if UnitIsInMyGuild(unit) then
 					_G["GameTooltipTextLeft2"]:SetTextColor(1, 1, 0)
@@ -247,14 +247,14 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 
 			self:AddLine(text, r, g, b)
 		end
-		
+
 		if C.tooltip.raid_icon == true then
 			local raidIndex = GetRaidTargetIndex(unit)
 			if raidIndex then
 				ricon:SetTexture("Interface\\TargetingFrame\\UI-RaidTargetingIcon_"..raidIndex)
 			end
 		end
-		
+
 		if C.tooltip.who_targetting == true then
 			token = unit AddTargetedBy()
 		end
@@ -372,7 +372,7 @@ hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 	-- See if we should slide the tooltip
 	if self:GetAnchorType() and self:GetAnchorType() ~= "ANCHOR_PRESERVE" then
 		local totalWidth = 0
-		
+
 		if item1 then
 			totalWidth = totalWidth + shoppingTooltip1:GetWidth()
 		end
@@ -383,9 +383,9 @@ hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 			totalWidth = totalWidth + shoppingTooltip3:GetWidth()
 		end
 
-		if (side == "left") and (totalWidth > leftPos) then
+		if side == "left" and totalWidth > leftPos then
 			self:SetAnchorType(self:GetAnchorType(), totalWidth - leftPos, 0)
-		elseif (side == "right") and (rightPos + totalWidth) > GetScreenWidth() then
+		elseif side == "right" and (rightPos + totalWidth) > GetScreenWidth() then
 			self:SetAnchorType(self:GetAnchorType(), -((rightPos + totalWidth) - GetScreenWidth()), 0)
 		end
 	end
@@ -444,7 +444,7 @@ end)
 --	Proper color for world objects tooltip
 ----------------------------------------------------------------------------------------
 local function BackdropFix(self)
-	if (self:GetAnchorType() == "ANCHOR_CURSOR") and (self:IsOwned(UIParent)) and (not self:GetUnit()) then
+	if self:GetAnchorType() == "ANCHOR_CURSOR" and self:IsOwned(UIParent) and not self:GetUnit() then
 		self:SetBackdropColor(unpack(C.media.overlay_color))
 	end
 end

@@ -40,7 +40,7 @@ local function Translate(text)
 end
 
 local function UpdateTooltip(self)
-	if (not self:GetItem()) then return end
+	if not self:GetItem() then return end
 	local tname = self:GetName()
 	for i = 3, 15 do
 		ttext = _G[tname.."TextLeft"..i]

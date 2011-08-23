@@ -1,12 +1,11 @@
-local ADDON_NAME, ns = ...
-local oUF = ns.oUF or oUF
-assert(oUF, "ShestakUI was unable to locate oUF install.")
-
 local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Colors
 ----------------------------------------------------------------------------------------
+local _, ns = ...
+local oUF = ns.oUF
+
 T.oUF_colors = setmetatable({
 	tapped = {0.55, 0.57, 0.61},
 	disconnected = {0.84, 0.75, 0.65},

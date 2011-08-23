@@ -112,7 +112,7 @@ local function CreateRollFrame()
 	buttonborder:Point("CENTER", button, "CENTER")
 	buttonborder:SetBackdrop(backdrop)
 	buttonborder:SetBackdropColor(1, 1, 1, 0)
-	
+
 	local buttonborder2 = CreateFrame("Frame", nil, button)
 	buttonborder2:Width(24)
 	buttonborder2:Height(24)

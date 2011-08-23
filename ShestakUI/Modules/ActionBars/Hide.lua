@@ -12,7 +12,7 @@ do
 	VehicleMenuBar:EnableMouse(false)
 	PetActionBarFrame:EnableMouse(false)
 	ShapeshiftBarFrame:EnableMouse(false)
-	
+
 	local elements = {
 		MainMenuBar, MainMenuBarArtFrame, BonusActionBarFrame, VehicleMenuBar,
 		PossessBarFrame, PetActionBarFrame, ShapeshiftBarFrame,
@@ -22,14 +22,14 @@ do
 		if element:GetObjectType() == "Frame" then
 			element:UnregisterAllEvents()
 		end
-		
+
 		if element ~= MainMenuBar then
 			element:Hide()
 		end
 		element:SetAlpha(0)
 	end
 	elements = nil
-	
+
 	hooksecurefunc("TalentFrame_LoadUI", function()
 		PlayerTalentFrame:UnregisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 	end)

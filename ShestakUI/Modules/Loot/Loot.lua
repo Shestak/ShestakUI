@@ -496,7 +496,7 @@ local function init()
 			end
 		end
 	end
-	
+
 	for k, v in pairs(randoms) do randoms[k] = nil end
 	for i = 1, 40 do
 		candidate = GetMasterLootCandidate(i)

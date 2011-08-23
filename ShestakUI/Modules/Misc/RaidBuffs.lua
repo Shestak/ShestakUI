@@ -45,7 +45,7 @@ local function SetCasterOnlyBuffs()
 		19740,	-- Blessing of Might
 	}
 end
-	
+
 -- Setup everyone else's buffs
 local function SetBuffs()
 	Spell3Buff = {	-- Total Stats
@@ -77,7 +77,7 @@ end
 
 -- We need to check if you have two differant elixirs if your not flasked, before we say your not flasked
 local function CheckElixir(unit)
-	if (battleelixirbuffs and battleelixirbuffs[1]) then
+	if battleelixirbuffs and battleelixirbuffs[1] then
 		for i, battleelixirbuffs in pairs(battleelixirbuffs) do
 			local spellname = select(1, GetSpellInfo(battleelixirbuffs))
 			if UnitAura("player", spellname) then
@@ -89,8 +89,8 @@ local function CheckElixir(unit)
 			end
 		end
 	end
-	
-	if (guardianelixirbuffs and guardianelixirbuffs[1]) then
+
+	if guardianelixirbuffs and guardianelixirbuffs[1] then
 		for i, guardianelixirbuffs in pairs(guardianelixirbuffs) do
 			local spellname = select(1, GetSpellInfo(guardianelixirbuffs))
 			if UnitAura("player", spellname) then
@@ -103,8 +103,8 @@ local function CheckElixir(unit)
 				guardianelixired = false
 			end
 		end
-	end	
-	
+	end
+
 	if guardianelixired == true and battleelixired == true then
 		FlaskFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 		flasked = true
@@ -117,9 +117,7 @@ end
 
 -- Main Script
 local function OnAuraChange(self, event, arg1, unit)
-	if (event == "UNIT_AURA" and arg1 ~= "player") then 
-		return
-	end
+	if event == "UNIT_AURA" and arg1 ~= "player" then return end
 
 	-- If We're a caster we may want to see differant buffs
 	if T.Role == "Caster" then 
@@ -127,9 +125,9 @@ local function OnAuraChange(self, event, arg1, unit)
 	else
 		SetBuffs()
 	end
-	
+
 	-- Start checking buffs to see if we can find a match from the list
-	if (flaskbuffs and flaskbuffs[1]) then
+	if flaskbuffs and flaskbuffs[1] then
 		FlaskFrame.t:SetTexture(select(3, GetSpellInfo(flaskbuffs[1])))
 		for i, flaskbuffs in pairs(flaskbuffs) do
 			local spellname = select(1, GetSpellInfo(flaskbuffs))
@@ -143,8 +141,8 @@ local function OnAuraChange(self, event, arg1, unit)
 			end
 		end
 	end
-	
-	if (foodbuffs and foodbuffs[1]) then
+
+	if foodbuffs and foodbuffs[1] then
 		FoodFrame.t:SetTexture(select(3, GetSpellInfo(foodbuffs[1])))
 		for i, foodbuffs in pairs(foodbuffs) do
 			local spellname = select(1, GetSpellInfo(foodbuffs))
@@ -159,7 +157,7 @@ local function OnAuraChange(self, event, arg1, unit)
 			end
 		end
 	end
-	
+
 	for i, Spell3Buff in pairs(Spell3Buff) do
 		local spellname = select(1, GetSpellInfo(Spell3Buff))
 		if UnitAura("player", spellname) then
@@ -173,7 +171,7 @@ local function OnAuraChange(self, event, arg1, unit)
 			spell3 = false
 		end
 	end
-	
+
 	for i, Spell4Buff in pairs(Spell4Buff) do
 		local spellname = select(1, GetSpellInfo(Spell4Buff))
 		if UnitAura("player", spellname) then
@@ -187,7 +185,7 @@ local function OnAuraChange(self, event, arg1, unit)
 			spell4 = false
 		end
 	end
-	
+
 	for i, Spell5Buff in pairs(Spell5Buff) do
 		local spellname = select(1, GetSpellInfo(Spell5Buff))
 		if UnitAura("player", spellname) then
@@ -201,7 +199,7 @@ local function OnAuraChange(self, event, arg1, unit)
 			spell5 = false
 		end
 	end
-	
+
 	for i, Spell6Buff in pairs(Spell6Buff) do
 		local spellname = select(1, GetSpellInfo(Spell6Buff))
 		if UnitAura("player", spellname) then
@@ -265,13 +263,13 @@ local function CreateButton(name, relativeTo, firstbutton)
 	end
 	button:SetFrameLevel(RaidBuffReminder:GetFrameLevel() + 2)
 	button:SetBackdropBorderColor(0, 0, 0, 0)
-	
+
 	button.FrameBackdrop = CreateFrame("Frame", nil, button)
 	button.FrameBackdrop:SetTemplate("Default")
 	button.FrameBackdrop:Point("TOPLEFT", -2, 2)
 	button.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
 	button.FrameBackdrop:SetFrameLevel(button:GetFrameLevel() - 1)
-	
+
 	button.t = button:CreateTexture(name..".t", "OVERLAY")
 	button.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	button.t:SetAllPoints(button)

@@ -15,7 +15,7 @@ local function TakeScreen(delay, func, ...)
 			local d = tremove(waitRecord, 1)
 			local f = tremove(waitRecord, 1)
 			local p = tremove(waitRecord, 1)
-			if (d > elapse) then
+			if d > elapse then
 				tinsert(waitTable, i, {d-elapse, f, p})
 				i = i + 1
 			else

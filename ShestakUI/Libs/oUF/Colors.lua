@@ -16,25 +16,8 @@ local colors = {
 	reaction = {},
 }
 
--- We do this because people edit the vars directly, and changing the default
--- globals makes SPICE FLOW!
-if(IsAddOnLoaded'!ClassColors' and CUSTOM_CLASS_COLORS) then
-	local updateColors = function()
-		for eclass, color in next, CUSTOM_CLASS_COLORS do
-			colors.class[eclass] = {color.r, color.g, color.b}
-		end
-
-		for _, obj in next, oUF.objects do
-			obj:UpdateAllElements("CUSTOM_CLASS_COLORS")
-		end
-	end
-
-	updateColors()
-	CUSTOM_CLASS_COLORS:RegisterCallback(updateColors)
-else
-	for eclass, color in next, RAID_CLASS_COLORS do
-		colors.class[eclass] = {color.r, color.g, color.b}
-	end
+for eclass, color in next, RAID_CLASS_COLORS do
+	colors.class[eclass] = {color.r, color.g, color.b}
 end
 
 for eclass, color in next, FACTION_BAR_COLORS do

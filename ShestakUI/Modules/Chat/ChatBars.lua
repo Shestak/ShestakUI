@@ -63,7 +63,7 @@ function cbar:Style()
 	swtex:SetVertexColor(0.8, 0.8, 0.8, 1)
 	swtex:Point("TOPLEFT", sw, "TOPLEFT", 2, -2)
 	swtex:Point("BOTTOMRIGHT", sw, "BOTTOMRIGHT", -2, 2)
-	
+
 	go = CreateFrame("Button", "go", ChatBar)
 	go:Point("TOP", sw, "BOTTOM", 0, C.chat.background and -10 or -9)
 	go:Width(16)
@@ -77,7 +77,7 @@ function cbar:Style()
 	gotex:SetVertexColor(0, 0.8, 0, 1)
 	gotex:Point("TOPLEFT", go, "TOPLEFT", 2, -2)
 	gotex:Point("BOTTOMRIGHT", go, "BOTTOMRIGHT", -2, 2)
-	
+
 	rp = CreateFrame("Button", "rp", ChatBar)
 	rp:Point("TOP", go, "BOTTOM", 0, C.chat.background and -9 or -8)
 	rp:Width(16)

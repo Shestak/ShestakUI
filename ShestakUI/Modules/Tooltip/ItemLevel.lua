@@ -22,37 +22,37 @@ local function GetAiL(unit)
 	total = 0
 	itn = 0
 	local sName, sLink, iRarity, iLevel, iMinLevel, sType, sSubType, iStackCount
-	
+
 	for i in pairs(slotName) do
 		slot = GetInventoryItemLink(unit, GetInventorySlotInfo(slotName[i]))
-		if (slot ~= nil) then
+		if slot ~= nil then
 			itn = itn + 1
 			sName, sLink, iRarity, iLevel, iMinLevel, sType, sSubType, iStackCount = GetItemInfo(slot)
 			total = total + iLevel
 		end
 	end
-	
-	if (total < 1 or itn < 1) then return 0 end
-	
+
+	if total < 1 or itn < 1 then return 0 end
+
 	return floor(total / itn)
 end
 
 local function GetAiLColor(ail)
 	local r, gb
-	
-	if (ail < MinIL) then
+
+	if ail < MinIL then
 		r = (ail / MinIL)
 		gb = r
 	else
 		r = MINCOLOR + ((ail / MaxIL) * INCMOD)
 		gb = 1.0 - ((ail / MaxIL) * INCMOD)
 	end
-	
-	if (r < MINCOLOR) then
+
+	if r < MINCOLOR then
 		r = MINCOLOR
 		gb = r
 	end
-	
+
 	return r, gb
 end
 
@@ -60,9 +60,9 @@ local function Setup()
 	GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
 		local ail, r, gb, d
 		local _, unit = GameTooltip:GetUnit()
-		if (unit and CanInspect(unit)) then
+		if unit and CanInspect(unit) then
 			local isInspectOpen = (InspectFrame and InspectFrame:IsShown()) or (Examiner and Examiner:IsShown())
-			if ((unit) and (CanInspect(unit)) and (not isInspectOpen)) then
+			if unit and CanInspect(unit) and not isInspectOpen then
 				NotifyInspect(unit)
 				ail = GetAiL(unit)
 				d = GetAiL(unit) - GetAiL("player")

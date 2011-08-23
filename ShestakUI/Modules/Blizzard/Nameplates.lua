@@ -47,7 +47,7 @@ end
 -- Create a fake backdrop frame using textures
 local function CreateVirtualFrame(parent, point)
 	if point == nil then point = parent end
-	
+
 	if point.backdrop then return end
 	parent.backdrop = parent:CreateTexture(nil, "BORDER")
 	parent.backdrop:SetDrawLayer("BORDER", -8)
@@ -61,21 +61,21 @@ local function CreateVirtualFrame(parent, point)
 	parent.bordertop:SetHeight(noscalemult)
 	parent.bordertop:SetTexture(unpack(C.media.border_color))
 	parent.bordertop:SetDrawLayer("BORDER", -7)
-	
+
 	parent.borderbottom = parent:CreateTexture(nil, "BORDER")
 	parent.borderbottom:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", -noscalemult * 2, -noscalemult * 2)
 	parent.borderbottom:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", noscalemult * 2, -noscalemult * 2)
 	parent.borderbottom:SetHeight(noscalemult)
 	parent.borderbottom:SetTexture(unpack(C.media.border_color))
 	parent.borderbottom:SetDrawLayer("BORDER", -7)
-	
+
 	parent.borderleft = parent:CreateTexture(nil, "BORDER")
 	parent.borderleft:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult * 2, noscalemult * 2)
 	parent.borderleft:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", noscalemult * 2, -noscalemult * 2)
 	parent.borderleft:SetWidth(noscalemult)
 	parent.borderleft:SetTexture(unpack(C.media.border_color))
 	parent.borderleft:SetDrawLayer("BORDER", -7)
-	
+
 	parent.borderright = parent:CreateTexture(nil, "BORDER")
 	parent.borderright:SetPoint("TOPRIGHT", point, "TOPRIGHT", noscalemult * 2, noscalemult * 2)
 	parent.borderright:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", -noscalemult * 2, -noscalemult * 2)
@@ -192,14 +192,14 @@ end
 -- Determine whether or not the cast is Channelled or a Regular cast so we can grab the proper Cast Name
 local function UpdateCastText(frame, curValue)
 	local minValue, maxValue = frame:GetMinMaxValues()
-	
+
 	if UnitChannelInfo("target") then
 		frame.time:SetFormattedText("%.1f ", curValue)
 		if C.nameplate.show_castbar_name == true then
 			frame.name:SetText(select(1, (UnitChannelInfo("target"))))
 		end
 	end
-	
+
 	if UnitCastingInfo("target") then
 		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
 		if C.nameplate.show_castbar_name == true then
@@ -246,7 +246,7 @@ end
 -- Color Nameplate
 local function Colorize(frame)
 	local r, g, b = frame.healthOriginal:GetStatusBarColor()
-	
+
 	for class, color in pairs(RAID_CLASS_COLORS) do
 		local r, g, b = floor(r * 100 + 0.5) / 100, floor(g * 100 + 0.5) / 100, floor(b * 100 + 0.5) / 100
 		if RAID_CLASS_COLORS[class].r == r and RAID_CLASS_COLORS[class].g == g and RAID_CLASS_COLORS[class].b == b then
@@ -261,7 +261,7 @@ local function Colorize(frame)
 			return
 		end
 	end
-	
+
 	if g + b == 0 then	-- Hostile
 		r, g, b = unpack(T.oUF_colors.reaction[1])
 		frame.isFriendly = false
@@ -283,7 +283,7 @@ local function Colorize(frame)
 		texcoord = {0.5, 0.75, 0.5, 0.75}
 	end
 	frame.hasClass = false
-	
+
 	if C.nameplate.class_icons == true then
 		if frame.hasClass == true then
 			frame.class.Glow:Show()
@@ -299,7 +299,7 @@ end
 -- HealthBar OnShow, use this to set variables for the nameplate
 local function UpdateObjects(frame)
 	local frame = frame:GetParent()
-	
+
 	local r, g, b = frame.hp:GetStatusBarColor()
 
 	-- Have to reposition this here so it doesnt resize after being hidden
@@ -320,14 +320,14 @@ local function UpdateObjects(frame)
 	if C.nameplate.enhance_threat == true then
 		frame.hp.name:SetTextColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
 	end
-	
+
 	-- Set the name text
 	if C.nameplate.name_abbrev == true and C.nameplate.track_auras ~= true then
 		frame.hp.name:SetText(Abbrev(frame.hp.oldname:GetText()))
 	else
 		frame.hp.name:SetText(frame.hp.oldname:GetText())
 	end
-	
+
 	-- Setup level text
 	local level, elite, mylevel = tonumber(frame.hp.oldlevel:GetText()), frame.hp.elite:IsShown(), UnitLevel("player")
 	frame.hp.level:ClearAllPoints()
@@ -347,7 +347,7 @@ local function UpdateObjects(frame)
 		frame.hp.level:SetText(level..(elite and "+" or ""))
 		frame.hp.level:Show()
 	end
-	
+
 	frame.overlay:ClearAllPoints()
 	frame.overlay:SetAllPoints(frame.hp)
 
@@ -379,7 +379,7 @@ local function SkinObjects(frame)
 	hp:SetFrameStrata(oldhp:GetFrameStrata())
 	hp:SetStatusBarTexture(C.media.texture)
 	CreateVirtualFrame(hp)
-	
+
 	-- Create Level
 	hp.level = hp:CreateFontString(nil, "OVERLAY")
 	hp.level:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
@@ -388,7 +388,7 @@ local function SkinObjects(frame)
 	hp.oldlevel = oldlevel
 	hp.boss = bossicon
 	hp.elite = elite
-	
+
 	-- Create Health Text
 	if C.nameplate.health_value == true then
 		hp.value = hp:CreateFontString(nil, "OVERLAY")	
@@ -397,7 +397,7 @@ local function SkinObjects(frame)
 		hp.value:SetPoint("RIGHT", hp, "RIGHT", 0, 0)
 		hp.value:SetTextColor(1, 1, 1)
 	end
-	
+
 	-- Create Name Text
 	hp.name = hp:CreateFontString(nil, "OVERLAY")
 	hp.name:SetPoint("BOTTOMLEFT", hp, "TOPLEFT", -3, 4)
@@ -412,15 +412,15 @@ local function SkinObjects(frame)
 	
 	hp:HookScript("OnShow", UpdateObjects)
 	frame.hp = hp
-	
+
 	-- Create Cast Bar
 	cb:SetStatusBarTexture(C.media.texture)
 	CreateVirtualFrame(cb)
-	
+
 	cb.cbbg = cb:CreateTexture(nil, "BORDER")
 	cb.cbbg:SetAllPoints(cb)
 	cb.cbbg:SetTexture(0.75, 0.75, 0.25, 0.15)
-	
+
 	-- Create Cast Time Text
 	cb.time = cb:CreateFontString(nil, "ARTWORK")
 	cb.time:SetPoint("RIGHT", cb, "RIGHT", 3, 0)
@@ -436,7 +436,7 @@ local function SkinObjects(frame)
 		cb.name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 		cb.name:SetTextColor(1, 1, 1)
 	end
-	
+
 	-- Create Class Icon
 	if C.nameplate.class_icons == true then
 		local cIconTex = hp:CreateTexture(nil, "OVERLAY")
@@ -462,7 +462,7 @@ local function SkinObjects(frame)
 	cbicon:SetDrawLayer("OVERLAY")
 	cb.icon = cbicon
 	CreateVirtualFrame(cb, cb.icon)
-	
+
 	cb.shield = cbshield
 	cbshield:ClearAllPoints()
 	cbshield:SetPoint("TOP", cb, "BOTTOM")
@@ -470,7 +470,7 @@ local function SkinObjects(frame)
 	cb:HookScript("OnSizeChanged", OnSizeChanged)
 	cb:HookScript("OnValueChanged", OnValueChanged)	
 	frame.cb = cb
-	
+
 	-- Highlight
 	overlay:SetTexture(1, 1, 1, 0.15)
 	overlay:SetAllPoints(hp)
@@ -481,7 +481,7 @@ local function SkinObjects(frame)
 	raidicon:SetPoint("BOTTOM", hp, "TOP", 0, C.nameplate.track_auras == true and 38 or 16)
 	raidicon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)
 	frame.raidicon = raidicon
-	
+
 	-- Hide Old Stuff
 	QueueObject(frame, oldhp)
 	QueueObject(frame, oldlevel)
@@ -492,10 +492,10 @@ local function SkinObjects(frame)
 	QueueObject(frame, oldname)
 	QueueObject(frame, bossicon)
 	QueueObject(frame, elite)
-	
+
 	UpdateObjects(hp)
 	UpdateCastbar(cb)
-	
+
 	frame:HookScript("OnHide", OnHide)
 	frames[frame] = true
 end
@@ -506,7 +506,7 @@ local transitionR, transitionG, transitionB = unpack(C.nameplate.near_color)
 local function UpdateThreat(frame, elapsed)
 	frame.hp:Show()
 	if frame.hasClass == true then return end
-	
+
 	if C.nameplate.enhance_threat ~= true then
 		if frame.region:IsShown() then
 			local _, val = frame.region:GetVertexColor()
@@ -634,7 +634,7 @@ local function CheckUnit_Guid(frame, ...)
 		OnAura(frame, "mouseover")
 	else
 		frame.unit = nil
-	end	
+	end
 end
 
 -- Attempt to match a nameplate with a GUID from the combat log
@@ -665,7 +665,7 @@ local function HookFrames(...)
 	for index = 1, select("#", ...) do
 		local frame = select(index, ...)
 		local region = frame:GetRegions()
-		
+
 		if (not frames[frame] and (frame:GetName() and frame:GetName():find("NamePlate%d")) and region and region:GetObjectType() == "Texture" and region:GetTexture() == [[Interface\TargetingFrame\UI-TargetingFrame-Flash]]) then
 			SkinObjects(frame)
 			frame.region = region
@@ -687,7 +687,7 @@ CreateFrame("Frame"):SetScript("OnUpdate", function(self, elapsed)
 	else
 		self.elapsed = (self.elapsed or 0) + elapsed
 	end
-	
+
 	ForEachPlate(ShowHealth)
 	ForEachPlate(CheckBlacklist)
 	ForEachPlate(HideDrunkenText)
@@ -708,7 +708,7 @@ end
 if C.nameplate.combat == true then
 	NamePlates:RegisterEvent("PLAYER_REGEN_ENABLED")
 	NamePlates:RegisterEvent("PLAYER_REGEN_DISABLED")
-	
+
 	function NamePlates:PLAYER_REGEN_ENABLED()
 		SetCVar("nameplateShowEnemies", 0)
 	end
@@ -727,11 +727,11 @@ function NamePlates:PLAYER_ENTERING_WORLD()
 			SetCVar("nameplateShowEnemies", 0)
 		end
 	end
-	
+
 	if C.nameplate.enable == true and C.nameplate.enhance_threat == true then
 		SetCVar("threatWarning", 3)
 	end
-	
+
 	SetCVar("bloatthreat", 0)
 	SetCVar("bloattest", 0)
 	SetCVar("bloatnameplates", 0)

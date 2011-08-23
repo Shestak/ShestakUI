@@ -8,7 +8,7 @@ VehicleAnchor:Point(unpack(C.position.vehicle))
 VehicleAnchor:Size(VehicleSeatIndicator:GetWidth(), VehicleSeatIndicator:GetHeight())
 
 hooksecurefunc(VehicleSeatIndicator, "SetPoint", function(_, _, parent)
-    if (parent == "MinimapCluster") or (parent == _G["MinimapCluster"]) then
+	if parent == "MinimapCluster" or parent == _G["MinimapCluster"] then
 		VehicleSeatIndicator:ClearAllPoints()
 		VehicleSeatIndicator:Point("BOTTOM", VehicleAnchor, "BOTTOM", 0, 24)
 		VehicleSeatIndicator:SetFrameStrata("LOW")
@@ -46,9 +46,9 @@ if C.misc.vehicle_mouseover == true then
 		if VehicleSeatIndicator:IsShown() then
 			VehicleSeatIndicator:SetAlpha(0)
 			VehicleSeatIndicator:EnableMouse(true)
-			
+
 			VehicleNumSeatIndicator()
-			
+
 			VehicleSeatIndicator:HookScript("OnEnter", function() VehicleSeatIndicator:SetAlpha(1) vehmousebutton(1) end)
 			VehicleSeatIndicator:HookScript("OnLeave", function() VehicleSeatIndicator:SetAlpha(0) vehmousebutton(0) end)
 

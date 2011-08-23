@@ -6,30 +6,30 @@ if not C.chat.enable == true then return end
 ----------------------------------------------------------------------------------------
 local function GetLinkColor(data)
 	local type, id, arg1 = string.match(data, "(%w+):(%d+):(%d+)")
-	if(type == "item") then
+	if type == "item" then
 		local _, _, quality = GetItemInfo(id)
-		if(quality) then
+		if quality then
 			local _, _, _, hex = GetItemQualityColor(quality)
 			return hex
 		else
 			return "|cffffffff"
 		end
-	elseif(type == "quest") then
+	elseif type == "quest" then
 		local color = GetQuestDifficultyColor(arg1)
 		return format("|cff%02x%02x%02x", color.r * 255, color.g * 255, color.b * 255)
-	elseif(type == "spell") then
+	elseif type == "spell" then
 		return "|cff71d5ff"
-	elseif(type == "achievement") then
+	elseif type == "achievement" then
 		return "|cffffff00"
-	elseif(type == "trade" or type == "enchant") then
+	elseif type == "trade" or type == "enchant" then
 		return "|cffffd000"
-	elseif(type == "instancelock") then
+	elseif type == "instancelock" then
 		return "|cffff8000"
-	elseif(type == "glyph") then
+	elseif type == "glyph" then
 		return "|cff66bbff"
-	elseif(type == "talent") then
+	elseif type == "talent" then
 		return "|cff4e96f7"
-	elseif(type == "levelup") then
+	elseif type == "levelup" then
 		return "|cffFF4E00"
 	else
 		return "|cffffff00"
@@ -38,7 +38,7 @@ end
 
 local function AddLinkColors(self, event, msg, ...)
 	local data = string.match(msg, "|H(.-)|h(.-)|h")
-	if(data) then
+	if data then
 		return false, msg:gsub("|H(.-)|h(.-)|h", GetLinkColor(data) .. "|H%1|h%2|h|r"), ...
 	else
 		return false, msg, ...
