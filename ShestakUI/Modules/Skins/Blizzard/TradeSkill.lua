@@ -90,6 +90,9 @@ local function LoadSkin()
 	TradeSkillGuildFrameContainer:StripTextures()
 	TradeSkillGuildFrameContainer:SetTemplate("Overlay")
 	T.SkinCloseButton(TradeSkillGuildFrameCloseButton)
+	if Auctionator_Search then
+		Auctionator_Search:SkinButton(true)
+	end
 end
 
 T.SkinFuncs["Blizzard_TradeSkillUI"] = LoadSkin
