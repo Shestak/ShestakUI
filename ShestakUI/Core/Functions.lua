@@ -515,8 +515,8 @@ end)
 ----------------------------------------------------------------------------------------
 --	Unit frames functions
 ----------------------------------------------------------------------------------------
-local ADDON_NAME, ns = ...
-local oUF = ns.oUF or oUF
+local _, ns = ...
+local oUF = ns.oUF
 
 T.UpdateAllElements = function(frame)
 	for _, v in ipairs(frame.__elements) do
