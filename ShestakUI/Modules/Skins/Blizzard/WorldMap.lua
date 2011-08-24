@@ -116,9 +116,7 @@ local function LoadSkin()
 			WorldMapFrame:SetScale(1)
 			WorldMapFrameSizeDownButton:Show()
 			WorldMapFrame:SetFrameLevel(10)
-		else
-			WorldMapFrameSizeDownButton:Disable()
-			WorldMapFrameSizeUpButton:Disable()
+			WorldMapFrame:SetFrameStrata("HIGH")
 		end
 
 		WorldMapFrameAreaLabel:SetFont(C.media.normal_font, 50)
@@ -138,12 +136,51 @@ local function LoadSkin()
 	hooksecurefunc("WorldMap_ToggleSizeUp", FixSkin)
 
 	WorldMapFrame:RegisterEvent("PLAYER_LOGIN")
+	WorldMapFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
+	WorldMapFrame:RegisterEvent("PLAYER_REGEN_DISABLED")
 	WorldMapFrame:HookScript("OnEvent", function(self, event)
+		local miniWorldMap = GetCVarBool("miniWorldMap")
+		local quest = WorldMapQuestShowObjectives:GetChecked()
+
 		if event == "PLAYER_LOGIN" then
-			if not GetCVarBool("miniWorldMap") then
+			if not miniWorldMap then
 				ToggleFrame(WorldMapFrame)
 				ToggleFrame(WorldMapFrame)
 			end
+		elseif event == "PLAYER_REGEN_DISABLED" then
+			WorldMapFrameSizeDownButton:Disable()
+			WorldMapFrameSizeUpButton:Disable()
+
+			if quest then
+				if WorldMapFrame:IsShown() then
+					HideUIPanel(WorldMapFrame)
+				end
+
+				if not miniWorldMap then
+					WorldMapFrame_SetFullMapView()
+				end
+
+				WorldMapBlobFrame.Show = T.dummy
+
+				WatchFrame_Update()
+			end
+			WorldMapQuestShowObjectives:Hide()
+		elseif event == "PLAYER_REGEN_ENABLED" then
+			WorldMapFrameSizeDownButton:Enable()
+			WorldMapFrameSizeUpButton:Enable()
+
+			if quest then
+				WorldMapBlobFrame.Show = WorldMapBlobFrame:Show()
+
+				if not miniWorldMap then
+					WorldMapFrame_SetQuestMapView()
+				end
+
+				WorldMapBlobFrame:Show()
+
+				WatchFrame_Update()
+			end
+			WorldMapQuestShowObjectives:Show()
 		end
 	end)
 
@@ -163,14 +200,6 @@ local function LoadSkin()
 	local int = 0
 
 	WorldMapFrame:HookScript("OnUpdate", function(self, elapsed)
-		if InCombatLockdown() then
-			WorldMapFrameSizeDownButton:Disable()
-			WorldMapFrameSizeUpButton:Disable()
-		else
-			WorldMapFrameSizeDownButton:Enable()
-			WorldMapFrameSizeUpButton:Enable()
-		end
-
 		if WORLDMAP_SETTINGS.size == WORLDMAP_FULLMAP_SIZE then
 			WorldMapFrameSizeUpButton:Hide()
 			WorldMapFrameSizeDownButton:Show()
