@@ -11,7 +11,6 @@ Omen.UpdateBarTextureSettings_ = Omen.UpdateBarTextureSettings
 Omen.UpdateBarTextureSettings = function(self)
 	for i, v in ipairs(self.Bars) do
 		v.texture:SetTexture(C.media.texture)
-		--v:SetTemplate("Transparent")
 		v:CreateBackdrop("Transparent")
 		v.backdrop:Point("TOPLEFT", -2, 2)
 		v.backdrop:Point("BOTTOMRIGHT", 2, -2)
@@ -52,7 +51,6 @@ Omen.UpdateBackdrop = function(self)
 	Omen.db.profile.Background.EdgeSize = 1
 	Omen.db.profile.Background.BarInset = 2
 	self:UpdateBackdrop_()
-	--self.BarList:SetTemplate("Transparent")
 	self.Title:SetTemplate("Transparent")
 	self.BarList:SetPoint("TOPLEFT", self.Title, "BOTTOMLEFT", 0, -3)
 end
