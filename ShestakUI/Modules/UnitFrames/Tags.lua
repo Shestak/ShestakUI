@@ -109,3 +109,15 @@ if T.class == "DRUID" then
 		oUF.UnitlessTagEvents.PLAYER_TOTEM_UPDATE = true
 	end
 end
+
+oUF.Tags["IncHeal"] = function(u)
+	local incheal = UnitGetIncomingHeals(u) or 0
+	local player = UnitGetIncomingHeals(u, "player") or 0
+
+	incheal = incheal - player
+
+	if incheal > 0 then
+		return "|cff00FF00+"..T.ShortValue(incheal).."|r"
+	end
+end
+oUF.TagEvents["IncHeal"] = "UNIT_HEAL_PREDICTION"
