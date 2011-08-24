@@ -216,6 +216,8 @@ local micromenu = {
 		func = function() ToggleHelpFrame() end},
 	{text = L_MINIMAP_CALENDAR, notCheckable = 1,
 		func = function() if not CalendarFrame then LoadAddOn("Blizzard_Calendar") end Calendar_Toggle() end},
+	{text = BATTLEFIELD_MINIMAP, notCheckable = true,
+		func = function() ToggleBattlefieldMinimap() end},
 	{text = ENCOUNTER_JOURNAL, notCheckable = 1,
 		func = function() ToggleFrame(EncounterJournal) end}
 }
