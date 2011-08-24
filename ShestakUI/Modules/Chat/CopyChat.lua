@@ -21,7 +21,6 @@ local function CreatCopyFrame()
 
 	local scrollArea = CreateFrame("ScrollFrame", "CopyScroll", frame, "UIPanelScrollFrameTemplate")
 	scrollArea:Point("TOPLEFT", frame, "TOPLEFT", 8, -30)
-	scrollArea:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -30, 8)
 
 	editBox = CreateFrame("EditBox", "CopyBox", frame)
 	editBox:SetMultiLine(true)
@@ -36,7 +35,13 @@ local function CreatCopyFrame()
 	scrollArea:SetScrollChild(editBox)
 
 	local close = CreateFrame("Button", "CopyCloseButton", frame, "UIPanelCloseButton")
-	close:SetPoint("TOPRIGHT", frame, "TOPRIGHT")
+	if C.skins.blizzard_frames == true then
+		T.SkinCloseButton(close)
+		scrollArea:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -27, 8)
+	else
+		close:SetPoint("TOPRIGHT", frame, "TOPRIGHT")
+		scrollArea:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -30, 8)
+	end
 
 	isf = true
 end
