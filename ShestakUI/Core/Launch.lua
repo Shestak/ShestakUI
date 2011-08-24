@@ -199,6 +199,7 @@ StaticPopupDialogs["DISABLE_UI"] = {
 	OnAccept = DisableUI,
 	timeout = 0,
 	whileDead = 1,
+	showAlert = true,
 	hideOnEscape = true,
 	preferredIndex = 3,
 }
@@ -211,6 +212,7 @@ StaticPopupDialogs["RESET_UI"] = {
 	OnCancel = function() SavedOptionsPerChar.Install = true end,
 	timeout = 0,
 	whileDead = 1,
+	showAlert = true,
 	hideOnEscape = true,
 	preferredIndex = 3,
 }
@@ -222,6 +224,7 @@ StaticPopupDialogs["RESET_STATS"] = {
 	OnAccept = function() SavedStats = {} ReloadUI() end,
 	timeout = 0,
 	whileDead = 1,
+	showAlert = true,
 	hideOnEscape = true,
 	preferredIndex = 3,
 }
