@@ -102,10 +102,16 @@ function Butsu:LOOT_OPENED(event, autoloot)
 	local color = ITEM_QUALITY_COLORS[m]
 	self:SetBackdropBorderColor(color.r, color.g, color.b, 0.8)
 
-	local close = CreateFrame("Button", nil, Butsu, "UIPanelCloseButton")
-	close:Width(25)
-	close:Height(25)
-	close:Point("TOPRIGHT", 0, 1)
+	local close = CreateFrame("Button", "LootCloseButton", Butsu, "UIPanelCloseButton")
+	if C.skins.blizzard_frames == true then
+		T.SkinCloseButton(close)
+		close:Width(14)
+		close:Height(14)
+	else
+		close:Width(25)
+		close:Height(25)
+		close:Point("TOPRIGHT", 0, 1)
+	end
 	close:SetScript("OnClick", function(self) self:GetParent():Hide() end)
 
 	self:Width(C.loot.width)
@@ -249,8 +255,14 @@ local function LDD_Initialize()
 	info = nil
 end
 
-lb:Width(15)
-lb:Height(13)
+if C.skins.blizzard_frames == true then
+	T.SkinCloseButton(lb, LootCloseButton, "-")
+	lb:Width(14)
+	lb:Height(14)
+else
+	lb:Width(15)
+	lb:Height(13)
+end
 lb:ClearAllPoints()
 lb:Point("BOTTOMRIGHT", Butsu, "TOPRIGHT", -21, -18)
 lb:SetFrameStrata("TOOLTIP")
