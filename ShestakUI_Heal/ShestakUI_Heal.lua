@@ -211,6 +211,10 @@ local function Shared(self, unit)
 			otherBar = ohpb,
 			maxOverflow = 1,
 		}
+
+		--self.IncHeal = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+		--self.IncHeal:Point("CENTER", self.Health, "TOP", 0, 0)
+		--self:Tag(self.IncHeal, "[IncHeal]")
 	end
 
 	-- Range alpha
