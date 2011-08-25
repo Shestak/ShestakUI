@@ -27,6 +27,7 @@
 	<Script file="Libs\LiteStats\LiteStats.lua"/>
 	<Script file="Modules\UnitFrames\Colors.lua"/>
 
+	<Script file="Config\Filters\AnnounceSpells.lua"/>
 	<Script file="Config\Filters\Cooldowns.lua"/>
 	<Script file="Config\Filters\CrowdControl.lua"/>
 	<Script file="Config\Filters\Errors.lua"/>
