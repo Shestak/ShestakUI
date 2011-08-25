@@ -42,6 +42,7 @@ L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Afficher les sorts lancés par tous les m
 L_GUI_SKINS = "Personalisation d'addon"
 L_GUI_SKINS_BLIZZARD = "Enable styling Blizzard frames" -- Needs review
 L_GUI_SKINS_MINIMAP_BUTTONS = "Enable styling addons icons on minimap" -- Needs review
+L_GUI_SKINS_CLCR = "Activier la personalisation pour CLCRet"
 L_GUI_SKINS_BW = "Activier la personalisation pour BigWigs"
 L_GUI_SKINS_DBM = "Activier la personalisation pour DBM"
 L_GUI_SKINS_DXE = "Activier la personalisation pour DXE"

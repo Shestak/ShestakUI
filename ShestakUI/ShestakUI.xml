@@ -148,6 +148,7 @@
 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
 	<Script file="Modules\Skins\ACE3.lua"/>
 	<Script file="Modules\Skins\BigWigs.lua"/>
+	<Script file="Modules\Skins\CLCRet.lua"/>
 	<Script file="Modules\Skins\Clique.lua"/>
 	<Script file="Modules\Skins\DBM.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>

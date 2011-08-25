@@ -79,6 +79,7 @@ C["announcements"] = {
 C["skins"] = {
 	["blizzard_frames"] = false,				-- Blizzard frames skin
 	["minimap_buttons"] = false,				-- Skin addons icons on minimap
+	["clcret"] = false,							-- CLCRet skin
 	["bigwigs"] = false,						-- BigWigs skin
 	["dbm"] = false,							-- DBM skin
 	["dxe"] = false,							-- DXE skin

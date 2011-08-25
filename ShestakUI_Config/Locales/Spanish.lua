@@ -42,6 +42,7 @@ L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members" -- Ne
 L_GUI_SKINS = "Estilización"
 L_GUI_SKINS_BLIZZARD = "Enable styling Blizzard frames" -- Needs review
 L_GUI_SKINS_MINIMAP_BUTTONS = "Enable styling addons icons on minimap" -- Needs review
+L_GUI_SKINS_CLCR = "Activar estilo del CLCRet"
 L_GUI_SKINS_BW = "Activar estilo del BigWigs"
 L_GUI_SKINS_DBM = "Activar estilo del DBM"
 L_GUI_SKINS_DXE = "Activar estilo del DXE"
