@@ -10,7 +10,7 @@ misdir_announce:SetScript("OnEvent", function(self, _, ...)
 	local _, event, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID = ...
 	local inInstance, instanceType = IsInInstance()
 	local spells = T.AnnounceSpells
-	if not (event == "SPELL_CAST_SUCCESS" and (inInstance and (instanceType == "raid" or instanceType == "party"))) then return end
+	if not ((event == "SPELL_CAST_SUCCESS" or event == "SPELL_RESURRECT") and (inInstance and (instanceType == "raid" or instanceType == "party"))) then return end
 
 	if C.announcements.spells_from_all == true then
 		if not (destName and sourceName) then return end
