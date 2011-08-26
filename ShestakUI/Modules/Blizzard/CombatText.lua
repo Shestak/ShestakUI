@@ -514,8 +514,6 @@ for i = 1, numf do
 	f:SetFont(C.font.combat_text_font, C.font.combat_text_font_size, C.font.combat_text_font_style)
 	f:SetShadowColor(0, 0, 0, C.font.combat_text_font_shadow and 1 or 0)
 	f:SetShadowOffset(C.font.combat_text_font_shadow and 1 or 0, C.font.combat_text_font_shadow and -1 or 0)
-	f:SetFading(true)
-	f:SetFadeDuration(0.5)
 	f:SetTimeVisible(C.combattext.time_visible)
 	f:SetMaxLines(C.combattext.max_lines)
 	f:SetSpacing(2)
