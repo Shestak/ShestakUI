@@ -1,60 +1,43 @@
 local T, C, L = unpack(select(2, ...))
-if not C.unitframe.unit_castbar == true or not C.unitframe.enable == true then return end
+if C.unitframe.unit_castbar ~= true or C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on oMirrorBars(by Haste)
 ----------------------------------------------------------------------------------------
-local _, settings = ...
-
-local _DEFAULTS = {
-	width = 281,
-	height = 16,
-	texture = C.media.texture,
-
-	position = {
-		["BREATH"] = "TOP#UIParent#TOP#0#-96";
-		["EXHAUSTION"] = "TOP#UIParent#TOP#0#-116";
-		["FEIGNDEATH"] = "TOP#UIParent#TOP#0#-142";
-	};
-
-	colors = {
-		EXHAUSTION = {1, 0.9, 0};
-		BREATH = {0.31, 0.45, 0.63};
-		DEATH = {1, 0.7, 0};
-		FEIGNDEATH = {1, 0.7, 0};
-	};
+local position = {
+	["BREATH"] = "TOP#UIParent#TOP#0#-96";
+	["EXHAUSTION"] = "TOP#UIParent#TOP#0#-116";
+	["FEIGNDEATH"] = "TOP#UIParent#TOP#0#-142";
 }
 
-do
-	settings = setmetatable(settings, {__index = _DEFAULTS})
-	for k,v in next, settings do
-		if(type(v) == "table") then
-			settings[k] = setmetatable(settings[k], {__index = _DEFAULTS[k]})
-		end
-	end
-end
+local colors = {
+	EXHAUSTION = {1, 0.9, 0};
+	BREATH = {0.31, 0.45, 0.63};
+	DEATH = {1, 0.7, 0};
+	FEIGNDEATH = {1, 0.7, 0};
+}
 
 local Spawn, PauseAll
 do
 	local barPool = {}
 
 	local loadPosition = function(self)
-		local pos = settings.position[self.type]
+		local pos = position[self.type]
 		local p1, frame, p2, x, y = strsplit("#", pos)
 
 		return self:Point(p1, frame, p2, x, y)
 	end
 
 	local OnUpdate = function(self, elapsed)
-		if(self.paused) then return end
+		if self.paused then return end
 
 		self:SetValue(GetMirrorTimerProgress(self.type) / 1e3)
 	end
 
 	local Start = function(self, value, maxvalue, scale, paused, text)
-		if(paused > 0) then
+		if paused > 0 then
 			self.paused = 1
-		elseif(self.paused) then
+		elseif self.paused then
 			self.paused = nil
 		end
 
@@ -63,22 +46,22 @@ do
 		self:SetMinMaxValues(0, maxvalue / 1e3)
 		self:SetValue(value / 1e3)
 
-		if(not self:IsShown()) then self:Show() end
+		if not self:IsShown() then self:Show() end
 	end
 
 	function Spawn(type)
-		if(barPool[type]) then return barPool[type] end
+		if barPool[type] then return barPool[type] end
 		local frame = CreateFrame("StatusBar", nil, UIParent)
 
 		frame:SetScript("OnUpdate", OnUpdate)
 
-		local r, g, b = unpack(settings.colors[type])
+		local r, g, b = unpack(colors[type])
 
 		local bg = frame:CreateTexture(nil, "BACKGROUND")
 		bg:SetAllPoints(frame)
-		bg:SetTexture(settings.texture)
-		bg:SetVertexColor(r * 0.5, g * 0.5, b * 0.5)
-		
+		bg:SetTexture(C.media.texture)
+		bg:SetVertexColor(r * 0.3, g * 0.3, b * 0.3)
+
 		local border = CreateFrame("Frame", nil, frame)
 		border:Point("TOPLEFT", frame, -2, 2)
 		border:Point("BOTTOMRIGHT", frame, 2, -2)
@@ -96,9 +79,9 @@ do
 		text:Point("TOP", frame, 0, 1)
 		text:Point("BOTTOM", frame)
 
-		frame:Size(settings.width, settings.height)
+		frame:Size(281, 16)
 
-		frame:SetStatusBarTexture(settings.texture)
+		frame:SetStatusBarTexture(C.media.texture)
 		frame:SetStatusBarColor(r, g, b)
 
 		frame.type = type
@@ -126,7 +109,7 @@ frame:SetScript("OnEvent", function(self, event, ...)
 end)
 
 function frame:ADDON_LOADED(addon)
-	if(addon == "ShestakUI") then
+	if addon == "ShestakUI" then
 		UIParent:UnregisterEvent("MIRROR_TIMER_START")
 
 		self:UnregisterEvent("ADDON_LOADED")
@@ -136,9 +119,9 @@ end
 frame:RegisterEvent("ADDON_LOADED")
 
 function frame:PLAYER_ENTERING_WORLD()
-	for i=1, MIRRORTIMER_NUMTIMERS do
+	for i = 1, MIRRORTIMER_NUMTIMERS do
 		local type, value, maxvalue, scale, paused, text = GetMirrorTimerInfo(i)
-		if(type ~= "UNKNOWN") then
+		if type ~= "UNKNOWN" then
 			Spawn(type):Start(value, maxvalue, scale, paused, text)
 		end
 	end
