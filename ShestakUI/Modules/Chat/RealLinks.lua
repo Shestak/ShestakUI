@@ -10,7 +10,7 @@ local function GetLinkColor(data)
 		local _, _, quality = GetItemInfo(id)
 		if quality then
 			local _, _, _, hex = GetItemQualityColor(quality)
-			return hex
+			return "|c"..hex
 		else
 			return "|cffffffff"
 		end
