@@ -316,6 +316,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		if C.skins.blizzard_frames == true then
 			T.SkinCloseButton(StaticPopup1CloseButton, nil, "-")
 			T.SkinCloseButton(LFDDungeonReadyStatusCloseButton, nil, "-")
+			T.SkinCloseButton(ChannelPulloutCloseButton)
 			T.SkinCloseButton(RolePollPopupCloseButton)
 			T.SkinCloseButton(ItemRefCloseButton)
 			T.SkinCloseButton(aLoadCloseButton)

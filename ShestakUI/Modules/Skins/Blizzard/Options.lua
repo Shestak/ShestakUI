@@ -5,7 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	Options skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	local checkbox = {
+	local checkboxes = {
 		"Advanced_MaxFPSCheckBox",
 		"Advanced_MaxFPSBKCheckBox",
 		"AudioOptionsSoundPanelEnableSound",
@@ -28,10 +28,10 @@ local function LoadSkin()
 		"NetworkOptionsPanelUseIPv6",
 	}
 
-	for i = 1, getn(checkbox) do
-		local button = _G[checkbox[i]]
-		if button then
-			T.SkinCheckBox(button)
+	for i = 1, getn(checkboxes) do
+		local checkbox = _G[checkboxes[i]]
+		if checkbox then
+			T.SkinCheckBox(checkbox)
 		end
 	end
 

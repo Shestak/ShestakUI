@@ -5,7 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	Interface skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	local checkbox = {
+	local checkboxes = {
 		-- Controls
 		"ControlsPanelStickyTargeting",
 		"ControlsPanelAutoDismount",
@@ -37,7 +37,7 @@ local function LoadSkin()
 		"DisplayPanelCinematicSubtitles",
 		"DisplayPanelRotateMinimap",
 		"DisplayPanelScreenEdgeFlash",
-		--Objectives
+		-- Objectives
 		"ObjectivesPanelAutoQuestTracking",
 		"ObjectivesPanelAutoQuestProgress",
 		"ObjectivesPanelMapQuestDifficulty",
@@ -51,7 +51,7 @@ local function LoadSkin()
 		"SocialPanelChatHoverDelay",
 		"SocialPanelGuildMemberAlert",
 		"SocialPanelChatMouseScroll",
-		-- Action bars
+		-- ActionBars
 		"ActionBarsPanelLockActionBars",
 		"ActionBarsPanelSecureAbilityToggle",
 		-- Names
@@ -97,6 +97,21 @@ local function LoadSkin()
 		"CombatTextPanelHonorGains",
 		"CombatTextPanelAuras",
 		"CombatTextPanelAutoSelfCast",
+		-- StatusText
+		"StatusTextPanelPlayer",
+		"StatusTextPanelPet",
+		"StatusTextPanelParty",
+		"StatusTextPanelTarget",
+		"StatusTextPanelAlternateResource",
+		"StatusTextPanelPercentages",
+		"StatusTextPanelXP",
+		-- UnitFrame
+		"UnitFramePanelPartyBackground",
+		"UnitFramePanelPartyPets",
+		"UnitFramePanelArenaEnemyFrames",
+		"UnitFramePanelArenaEnemyCastBar",
+		"UnitFramePanelArenaEnemyPets",
+		"UnitFramePanelFullSizeFocusFrame",
 		-- Buffs
 		"BuffsPanelBuffDurations",
 		"BuffsPanelDispellableDebuffs",
@@ -130,14 +145,48 @@ local function LoadSkin()
 		"HelpPanelMovePad",
 	}
 
-	for i = 1, getn(checkbox) do
-		local button = _G["InterfaceOptions"..checkbox[i]]
-		if button then
-			T.SkinCheckBox(button)
+	for i = 1, getn(checkboxes) do
+		local checkbox = _G["InterfaceOptions"..checkboxes[i]]
+		if checkbox then
+			T.SkinCheckBox(checkbox)
 		end
 	end
 
-	local dropdown ={
+	local checkboxes2 = {
+		"AutoActivate2Players",
+		"AutoActivate3Players",
+		"AutoActivate5Players",
+		"AutoActivate10Players",
+		"AutoActivate15Players",
+		"AutoActivate25Players",
+		"AutoActivate40Players",
+		"AutoActivateSpec1",
+		"AutoActivateSpec2",
+		"AutoActivatePvE",
+		"AutoActivatePvP",
+		"KeepGroupsTogether",
+		"HorizontalGroups",
+		"DisplayIncomingHeals",
+		"DisplayPowerBar",
+		"DisplayAggroHighlight",
+		"UseClassColors",
+		"DisplayPets",
+		"DisplayMainTankAndAssist",
+		"DisplayBorder",
+		"ShowDebuffs",
+		"DisplayOnlyDispellableDebuffs",
+	}
+
+	for i = 1, getn(checkboxes2) do
+		local checkbox = _G["CompactUnitFrameProfilesGeneralOptionsFrame"..checkboxes2[i]]
+		if checkbox then
+			T.SkinCheckBox(checkbox)
+		end
+	end
+
+	T.SkinCheckBox(CompactUnitFrameProfilesRaidStylePartyFrames)
+
+	local dropdown = {
 		"ControlsPanelAutoLootKeyDropDown",
 		"CombatPanelTOTDropDown",
 		"CombatPanelFocusCastKeyDropDown",
@@ -161,6 +210,22 @@ local function LoadSkin()
 		local frame = _G["InterfaceOptions"..dropdown[i]]
 		if frame then
 			T.SkinDropDownBox(frame)
+		end
+	end
+
+	T.SkinDropDownBox(CompactUnitFrameProfilesGeneralOptionsFrameHealthTextDropdown)
+	T.SkinDropDownBox(CompactUnitFrameProfilesProfileSelector)
+
+	local buttons = {
+		"CompactUnitFrameProfilesGeneralOptionsFrameResetPositionButton",
+		"CompactUnitFrameProfilesDeleteButton",
+		"CompactUnitFrameProfilesSaveButton",
+	}
+
+	for i = 1, getn(buttons) do
+		local button = _G[buttons[i]]
+		if button then
+			button:SkinButton()
 		end
 	end
 end
