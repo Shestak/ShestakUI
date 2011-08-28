@@ -138,7 +138,7 @@ C["toggleaddons"] = {
 	["PugLax"] = function()
 		T.RunSlashCmd("/puglax")
 	end,
-	["EPGP"] = function()
+	["epgp"] = function()
 		EPGP:ToggleUI()
 	end,
 	["WIM"] = function()

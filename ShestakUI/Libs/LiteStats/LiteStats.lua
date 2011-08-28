@@ -821,8 +821,14 @@ if guild.enabled then
 							grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
 							if self.altdown then
 								GameTooltip:AddDoubleLine(format("%s%s |cff999999- |cffffffff%s",grouped,name,rank),zone,classc.r,classc.g,classc.b,zone_r,zone_g,zone_b)
-								if note ~= "" then GameTooltip:AddLine('  "'..note..'"',ttsubh.r,ttsubh.g,ttsubh.b,1) end
-								if officernote ~= "" then GameTooltip:AddLine("  o: "..officernote,0.3,1,0.3,1) end
+								if note ~= "" then GameTooltip:AddLine("   "..NOTE_COLON.." "..note,ttsubh.r,ttsubh.g,ttsubh.b,1) end
+								if officernote ~= "" and EPGP then
+									local ep, gp = EPGP:GetEPGP(name)
+									officernote = "   EP: "..ep.."  GP: "..gp.."  PR: "..string.format("%.3f",ep/gp)
+								elseif officernote ~= "" then
+									officernote = "   O."..NOTE_COLON.." "..officernote
+								end
+								if officernote ~= "" then GameTooltip:AddLine(officernote,0.3,1,0.3,1) end
 							else
 								GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s",levelc.r*255,levelc.g*255,levelc.b*255,level,name,(status~="" and " "..status or ""),grouped),zone,classc.r,classc.g,classc.b,zone_r,zone_g,zone_b)
 							end
