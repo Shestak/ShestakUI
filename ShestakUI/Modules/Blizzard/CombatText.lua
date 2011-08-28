@@ -131,6 +131,7 @@ elseif T.class == "SHAMAN" then
 		ct.aoespam[77478] = true	-- Earhquake
 		ct.aoespam[51490] = true	-- Thunderstorm
 		ct.aoespam[8187] = true		-- Magma Totem
+		ct.aoespam[8050] = true		-- Flame Shock
 	end
 	if C.combattext.healing then
 		ct.aoespam[73921] = true	-- Healing Rain
