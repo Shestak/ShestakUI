@@ -177,12 +177,14 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(49026),	-- Fixate
 			SpellName(97079),	-- Seeping Venom
 			-- Lord Rhyolith
-
+			SpellName(98492),	-- Eruption
 			-- Alysrazor
 			SpellName(101296),	-- Fieroblast
 			SpellName(100723),	-- Gushing Wound
 			SpellName(99389),	-- Imprinted
 			SpellName(101729),	-- Blazing Claw
+			SpellName(100640),	-- Harsh Winds
+			SpellName(100555),	-- Smouldering Roots
 			-- Shannox
 			SpellName(99837),	-- Crystal Prison
 			SpellName(99937),	-- Jagged Tear
@@ -198,6 +200,9 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(100293),	-- Lava Wave
 			SpellName(98313),	-- Magma Blast
 			SpellName(100675),	-- Dreadflame
+			SpellName(99145),	-- Blazing Heat
+			SpellName(100249),	-- Combustion
+			SpellName(99613),	-- Molten Blast
 			-- Trash
 			SpellName(99532),	-- Melt Armor
 		-- Other
