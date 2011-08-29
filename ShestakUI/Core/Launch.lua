@@ -267,7 +267,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 
 		-- Set our uiscale
 		SetCVar("uiScale", C.general.uiscale)
-		
+
 		-- Install default if we never ran ShestakUI on this character
 		if not SavedOptionsPerChar.Install then
 			StaticPopup_Show("INSTALL_UI")

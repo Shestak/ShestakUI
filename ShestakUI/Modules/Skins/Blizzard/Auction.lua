@@ -47,7 +47,7 @@ local function LoadSkin()
 	AuctionProgressFrameCancelButton:Size(28, 28)
 	AuctionProgressFrameCancelButton:Point("LEFT", AuctionProgressBar, "RIGHT", 8, 0)
 
-	AuctionProgressBarIcon:SetTexCoord(0.67, 0.37, 0.61, 0.26)
+	AuctionProgressBarIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	local backdrop = CreateFrame("Frame", nil, AuctionProgressBarIcon:GetParent())
 	backdrop:Point("TOPLEFT", AuctionProgressBarIcon, "TOPLEFT", -2, 2)
@@ -375,6 +375,14 @@ local function LoadSkin()
 		"Atr_Buy_Confirm_Frame",
 		"Atr_CheckActives_Frame",
 		"Atr_Hilite1",
+		"Atr_BasicOptionsFrame",
+		"Atr_TooltipsOptionsFrame",
+		"Atr_UCConfigFrame",
+		"Atr_StackingOptionsFrame",
+		"Atr_ShpList_Options_Frame",
+		"AuctionatorResetsFrame",
+		"Atr_ScanningOptionsFrame",
+		"AuctionatorDescriptionFrame",
 	}
 
 	for i = 1, getn(frames) do
@@ -384,9 +392,12 @@ local function LoadSkin()
 		end
 	end
 
-	Atr_FullScanResults:SetTemplate("Transparent")
+	Atr_Mask:ClearAllPoints()
+	Atr_Mask:Point("TOPLEFT", AuctionFrame, "TOPLEFT", 0, 0)
+	Atr_Mask:Point("BOTTOMRIGHT", AuctionFrame, "BOTTOMRIGHT", 0, 0)
+
 	Atr_Adv_Search_Dialog:SetTemplate("Transparent")
-	Atr_FullScanFrame:SetTemplate("Transparent")
+	Atr_FullScanFrame:SetTemplate("Overlay")
 	Atr_Buy_Confirm_Frame:SetTemplate("Default")
 	Atr_CheckActives_Frame:SetTemplate("Default")
 	Atr_Error_Frame:SetTemplate("Transparent")
@@ -432,8 +443,26 @@ local function LoadSkin()
 
 	Atr_RecommendItem_Tex:SetTemplate("Default")
 	Atr_RecommendItem_Tex:StyleButton()
+	Atr_RecommendItem_Tex:SetScript("OnUpdate", function()
+		if Atr_RecommendItem_Tex:GetNormalTexture() then
+			Atr_RecommendItem_Tex:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			Atr_RecommendItem_Tex:GetNormalTexture():ClearAllPoints()
+			Atr_RecommendItem_Tex:GetNormalTexture():Point("TOPLEFT", 2, -2)
+			Atr_RecommendItem_Tex:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+		end
+	end)
+
 	Atr_SellControls_Tex:SetTemplate("Default")
 	Atr_SellControls_Tex:StyleButton()
+
+	Atr_SellControls_Tex:SetScript("OnUpdate", function()
+		if Atr_SellControls_Tex:GetNormalTexture() then
+			Atr_SellControls_Tex:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			Atr_SellControls_Tex:GetNormalTexture():ClearAllPoints()
+			Atr_SellControls_Tex:GetNormalTexture():Point("TOPLEFT", 2, -2)
+			Atr_SellControls_Tex:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_AuctionUI"] = LoadSkin
