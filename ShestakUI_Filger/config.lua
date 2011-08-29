@@ -1554,8 +1554,8 @@ Filger_Spells = {
 			{ spellID = 31803, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Seal of Justice
 			{ spellID = 20170, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Denounce (4.2)
-			--{ spellID = 85509, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Denounce
+			{ spellID = 85509, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -1607,6 +1607,8 @@ Filger_Spells = {
 			{ spellID = 1022, size = 30, filter = "CD" },
 			-- Guardian of Ancient Kings
 			{ spellID = 86150, size = 30, filter = "CD" },
+			-- Holy Shield
+			{ spellID = 20925, size = 30, filter = "CD" },
 
 			-- Racials
 			-- Every Man for Himself (Human)
