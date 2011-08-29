@@ -93,10 +93,8 @@ if T.author == true then
 	C["misc"].auto_quest = true
 	C["misc"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
-	C["announcements"].interrupts = true
 	C["announcements"].spells = true
 	C["skins"].blizzard_frames = true
-	C["skins"].minimap_buttons = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
 	C["combattext"].stop_ve_spam = true
@@ -113,7 +111,6 @@ if T.author == true then
 	C["tooltip"].raid_icon = true
 	C["chat"].combatlog = false
 	C["chat"].spam = true
-	C["nameplate"].class_icons = true
 	C["nameplate"].track_auras = true
 	C["actionbar"].toggle_mode = false
 	C["actionbar"].light_macro = true
