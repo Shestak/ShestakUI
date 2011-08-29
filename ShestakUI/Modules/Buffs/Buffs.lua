@@ -56,6 +56,10 @@ for i = 1, 3 do
 	if C.aura.classcolor_border == true then
 		f:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 	end
+	_G["TempEnchant2"]:ClearAllPoints()
+	_G["TempEnchant2"]:Point("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
+	_G["TempEnchant3"]:ClearAllPoints()
+	_G["TempEnchant3"]:Point("RIGHT", _G["TempEnchant2"], "LEFT", -3, 0)
 	_G["TempEnchant"..i.."Border"]:Hide()
 	_G["TempEnchant"..i.."Icon"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	_G["TempEnchant"..i.."Icon"]:Point("TOPLEFT", _G["TempEnchant"..i], 2, -2)
