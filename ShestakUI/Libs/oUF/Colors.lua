@@ -10,8 +10,8 @@ local colors = {
 		1, 1, 0,
 		0, 1, 0
 	},
-	disconnected = {.6, .6, .6},
-	tapped = {.6,.6,.6},
+	disconnected = {0.6, 0.6, 0.6},
+	tapped = {0.6, 0.6, 0.6},
 	class = {},
 	reaction = {},
 }

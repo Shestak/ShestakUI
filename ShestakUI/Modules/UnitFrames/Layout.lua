@@ -280,7 +280,7 @@ local function Shared(self, unit)
 			for i = 1, 6 do
 				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_Runes"..i, self)
 				self.Runes[i]:SetSize(212 / 6, 7)
-				if (i == 1) then
+				if i == 1 then
 					self.Runes[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
 					self.Runes[i]:Point("TOPLEFT", self.Runes[i-1], "TOPRIGHT", 1, 0)

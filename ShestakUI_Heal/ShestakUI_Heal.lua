@@ -164,6 +164,8 @@ local function Shared(self, unit)
 
 	-- Resurrect icon
 	self.ResurrectIcon = self.Health:CreateTexture(nil, "OVERLAY")
+	--self.ResurrectIcon:SetTexture("Interface\\Icons\\Spell_Holy_Resurrection")
+	--self.ResurrectIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	self.ResurrectIcon:Size(13, 13)
 	self.ResurrectIcon:Point("BOTTOMRIGHT", self.Health, 2, -7)
 
