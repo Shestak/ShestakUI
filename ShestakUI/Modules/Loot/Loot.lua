@@ -102,18 +102,6 @@ function Butsu:LOOT_OPENED(event, autoloot)
 	local color = ITEM_QUALITY_COLORS[m]
 	self:SetBackdropBorderColor(color.r, color.g, color.b, 0.8)
 
-	local close = CreateFrame("Button", "LootCloseButton", Butsu, "UIPanelCloseButton")
-	if C.skins.blizzard_frames == true then
-		T.SkinCloseButton(close)
-		close:Width(14)
-		close:Height(14)
-	else
-		close:Width(25)
-		close:Height(25)
-		close:Point("TOPRIGHT", 0, 1)
-	end
-	close:SetScript("OnClick", function(self) self:GetParent():Hide() end)
-
 	self:Width(C.loot.width)
 	self.title:Width(C.loot.width - 45)
 	self.title:Height(C.font.loot_font_size)
@@ -186,6 +174,18 @@ Butsu:SetClampRectInsets(0, 0, 14, 0)
 Butsu:SetHitRectInsets(0, 0, -14, 0)
 Butsu:SetFrameStrata("HIGH")
 Butsu:SetToplevel(true)
+
+local close = CreateFrame("Button", "LootCloseButton", Butsu, "UIPanelCloseButton")
+if C.skins.blizzard_frames == true then
+	T.SkinCloseButton(close)
+	close:Width(14)
+	close:Height(14)
+else
+	close:Width(25)
+	close:Height(25)
+	close:Point("TOPRIGHT", 0, 1)
+end
+close:SetScript("OnClick", function() CloseLoot() end)
 
 ----------------------------------------------------------------------------------------
 --	Announce loot(lcLoot by RustamIrzaev)
