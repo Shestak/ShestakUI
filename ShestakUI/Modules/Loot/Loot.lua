@@ -163,15 +163,11 @@ end)
 
 Butsu:SetMovable(true)
 Butsu:RegisterForClicks("anyup")
-
 Butsu:SetParent(UIParent)
 Butsu:SetUserPlaced(true)
 Butsu:Point(unpack(C.position.loot))
 Butsu:SetTemplate("Transparent")
-
 Butsu:SetClampedToScreen(true)
-Butsu:SetClampRectInsets(0, 0, 14, 0)
-Butsu:SetHitRectInsets(0, 0, -14, 0)
 Butsu:SetFrameStrata("HIGH")
 Butsu:SetToplevel(true)
 
