@@ -59,6 +59,7 @@ local SmallerMapSkin = function()
 	WorldMapButton:SetAllPoints(WorldMapDetailFrame)
 	WorldMapFrame:SetFrameStrata("MEDIUM")
 	WorldMapFrame:SetClampedToScreen(true)
+	WorldMapFrame:SetClampRectInsets(12, 227, -31, -134)
 	WorldMapFrame:ClearAllPoints()
 	WorldMapFrame:SetPoint(unpack(C.position.map))
 
