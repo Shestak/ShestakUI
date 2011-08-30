@@ -31,6 +31,10 @@ local function LoadSkin()
 	T.SkinCheckBox(WorldMapQuestShowObjectives)
 	T.SkinCheckBox(WorldMapShowDigSites)
 
+	T.SkinScrollBar(WorldMapQuestScrollFrameScrollBar)
+	T.SkinScrollBar(WorldMapQuestDetailScrollFrameScrollBar)
+	T.SkinScrollBar(WorldMapQuestRewardScrollFrameScrollBar)
+
 	-- MiniMap
 	local function SmallSkin()
 		WorldMapLevelDropDown:ClearAllPoints()
@@ -79,15 +83,19 @@ local function LoadSkin()
 		WorldMapFrame.backdrop:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 69)
 		WorldMapFrame.backdrop:Point("BOTTOMRIGHT", WorldMapDetailFrame, "BOTTOMRIGHT", 334, -234)
 
+		WorldMapQuestDetailScrollFrame:Width(WorldMapQuestDetailScrollFrame:GetWidth() + 30)
+		WorldMapQuestDetailScrollFrame:ClearAllPoints()
+		WorldMapQuestDetailScrollFrame:Point("TOPLEFT", WorldMapDetailFrame.backdrop, "BOTTOMLEFT", 0, -5)
+
 		if not WorldMapQuestDetailScrollFrame.backdrop then
 			WorldMapQuestDetailScrollFrame:CreateBackdrop("Overlay")
-			WorldMapQuestDetailScrollFrame.backdrop:Point("TOPLEFT", -22, 2)
-			WorldMapQuestDetailScrollFrame.backdrop:Point("BOTTOMRIGHT", 23, -4)
+			WorldMapQuestDetailScrollFrame.backdrop:Point("TOPLEFT", 0, 2)
+			WorldMapQuestDetailScrollFrame.backdrop:Point("BOTTOMRIGHT", 23, -5)
 		end
 
 		if not WorldMapQuestRewardScrollFrame.backdrop then
 			WorldMapQuestRewardScrollFrame:CreateBackdrop("Overlay")
-			WorldMapQuestRewardScrollFrame.backdrop:Point("BOTTOMRIGHT", 22, -4)
+			WorldMapQuestRewardScrollFrame.backdrop:Point("BOTTOMRIGHT", 14, -5)
 		end
 
 		if not WorldMapQuestScrollFrame.backdrop then
