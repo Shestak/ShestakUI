@@ -5,7 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	Bank/Container skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	if C.bag.enable == true or (IsAddOnLoaded("cargBags") or IsAddOnLoaded("cargBags_Nivaya")) then return end
+	if C.bag.enable == true or (IsAddOnLoaded("cargBags") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("Bagnon")) then return end
 	-- Container Frame
 	for i = 1, NUM_CONTAINER_FRAMES do
 		local frame = _G["ContainerFrame"..i]
