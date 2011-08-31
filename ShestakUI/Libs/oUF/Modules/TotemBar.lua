@@ -20,8 +20,8 @@ local colors = {
 }
 
 local GetTotemInfo, SetValue, GetTime = GetTotemInfo, SetValue, GetTime
-	
-local Abbrev = function(name)	
+
+local Abbrev = function(name)
 	local newname = (string.len(name) > 11) and string.gsub(name, "%s?(.[\128-\191]*)%S+%s", "%1. ") or name
 	return T.UTF(newname, 11, false)
 end
@@ -53,10 +53,10 @@ end
 local function UpdateSlot(self, slot)
 	local totem = self.TotemBar
 	local haveTotem, name, startTime, duration, totemIcon = GetTotemInfo(slot)
-	
+
 	totem[slot]:SetStatusBarColor(unpack(totem.colors[slot]))
 	totem[slot]:SetValue(0)
-	
+
 	-- Multipliers
 	if (totem[slot].bg.multiplier) then
 		local mu = totem[slot].bg.multiplier
@@ -64,19 +64,19 @@ local function UpdateSlot(self, slot)
 		r, g, b = r*mu, g*mu, b*mu
 		totem[slot].bg:SetVertexColor(r, g, b) 
 	end
-	
+
 	totem[slot].ID = slot
-	
+
 	-- If we have a totem then set his value 
-	if(haveTotem) then
+	if haveTotem then
 		
 		if totem[slot].Name then
 			totem[slot].Name:SetText(Abbrev(name))
-		end					
-		if(duration >= 0) then	
-			totem[slot]:SetValue(1 - ((GetTime() - startTime) / duration))	
+		end
+		if duration >= 0 then
+			totem[slot]:SetValue(1 - ((GetTime() - startTime) / duration))
 			-- Status bar update
-			totem[slot]:SetScript("OnUpdate",function(self,elapsed)
+			totem[slot]:SetScript("OnUpdate", function(self, elapsed)
 					total = total + elapsed
 					if total >= delay then
 						total = 0
@@ -87,10 +87,10 @@ local function UpdateSlot(self, slot)
 								self:SetValue(1 - ((GetTime() - startTime) / duration))
 							end
 					end
-				end)					
+				end)
 		else
 			-- There's no need to update because it doesn't have any duration
-			totem[slot]:SetScript("OnUpdate",nil)
+			totem[slot]:SetScript("OnUpdate", nil)
 			totem[slot]:SetValue(0)
 		end 
 	else
@@ -110,7 +110,7 @@ local function Update(self, unit)
 	end
 end
 
-local function Event(self,event,...)
+local function Event(self, event, ...)
 	if event == "PLAYER_TOTEM_UPDATE" then
 		UpdateSlot(self, ...)
 	end
@@ -118,26 +118,26 @@ end
 
 local function Enable(self, unit)
 	local totem = self.TotemBar
-	
-	if(totem) then
-		self:RegisterEvent("PLAYER_TOTEM_UPDATE" ,Event)
+
+	if totem then
+		self:RegisterEvent("PLAYER_TOTEM_UPDATE", Event)
 		totem.colors = setmetatable(totem.colors or {}, {__index = colors})
 		delay = totem.delay or delay
 		if totem.Destroy then
 			InitDestroy(self)
-		end		
-		TotemFrame:UnregisterAllEvents()		
+		end
+		TotemFrame:UnregisterAllEvents()
 		return true
-	end	
+	end
 end
 
 local function Disable(self,unit)
 	local totem = self.TotemBar
-	if(totem) then
+	if totem then
 		self:UnregisterEvent("PLAYER_TOTEM_UPDATE", Event)
-		
+
 		TotemFrame:Show()
 	end
 end
 
-oUF:AddElement("TotemBar",Update,Enable,Disable)
+oUF:AddElement("TotemBar", Update, Enable, Disable)

@@ -9,9 +9,8 @@ local oUF = ns.oUF
 
 local strmatch, gmatch = string.match, string.gmatch
 local objects, addon = {}, CreateFrame("Frame")
--------------------
---Built-in events--
--------------------
+
+-- Events
 local events = setmetatable({
 	Combat = "PLAYER_REGEN_ENABLED:PLAYER_REGEN_DISABLED",
 	PlayerTarget = "PLAYER_TARGET_CHANGED",
@@ -38,9 +37,7 @@ local events = setmetatable({
 	return events[cond]
 end})
 
-------------------------
---Built-in Conditions--
-------------------------
+-- Conditions
 local conditions = setmetatable({
 	PlayerHostileTarget = function() return UnitCanAttack("player", "target") end,
 	UnitHostileTarget = function(obj, unit) return unit and UnitCanAttack(unit, unit.."target") end,
@@ -74,9 +71,6 @@ local conditions = setmetatable({
 	return t[k]
 end})
 
--------------------------------
---Make your own Condition--
--------------------------------
 function addon:RegisterCondition(name, func, event)
 	assert(type(name) == "string", format("Bad argument #1 to \"RegisterCondition\" (string expected, got %s)", type(name)))
 	assert(type(func) == "function", format("Bad argument #2 to \"RegisterCondition\" (function expected, got %s)", type(func)))
@@ -86,9 +80,7 @@ function addon:RegisterCondition(name, func, event)
 	events[name] = event
 end
 
-------------------------------
---Update the Alpha or obj--
-------------------------------
+-- Update the Alpha or obj
 local function UpdateAlpha(obj)
 	local alpha
 	for priority, tbl in ipairs(obj.Fader) do
@@ -101,13 +93,13 @@ local function UpdateAlpha(obj)
 			break
 		end
 	end
-	
+
 	alpha = alpha or obj.NormalAlpha
 	if obj.Range then
 		obj.inRangeAlpha = alpha
 		obj.outsideRangeAlpha = alpha * obj.outsideRangeAlphaPerc
 	end
-	
+
 	obj:SetAlpha(alpha)
 	obj:SetScript("OnEnter", function(self) self:SetAlpha(1) UnitFrame_OnEnter(obj) end)
 	obj:SetScript("OnLeave", function(self) self:SetAlpha(alpha) UnitFrame_OnLeave(obj) end)
@@ -136,7 +128,7 @@ oUF:RegisterInitCallback(
 					end
 				end
 			end
-			
+
 			obj.NormalAlpha = obj.NormalAlpha or obj:GetAlpha()
 			obj.outsideRangeAlphaPerc = obj.outsideRangeAlphaPerc or obj.outsideRangeAlpha
 			UpdateAlpha(obj)

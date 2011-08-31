@@ -34,13 +34,13 @@ end
 for i, frame in ipairs(oUF.objects) do hook(frame) end
 oUF:RegisterInitCallback(hook)
 
-local f, min, max = CreateFrame('Frame'), math.min, math.max
-f:SetScript('OnUpdate', function()
+local f, min, max = CreateFrame("Frame"), math.min, math.max
+f:SetScript("OnUpdate", function()
 	local rate = GetFramerate()
 	local limit = 30/rate
 	for bar, value in pairs(smoothing) do
 		local cur = bar:GetValue()
-		local new = cur + min((value-cur)/3, max(value-cur, limit))
+		local new = cur + min((value - cur) / 3, max(value - cur, limit))
 		if new ~= new then
 			-- Mad hax to prevent QNAN.
 			new = value

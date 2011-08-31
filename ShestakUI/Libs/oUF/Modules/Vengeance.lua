@@ -8,14 +8,14 @@ local _, ns = ...
 local oUF = ns.oUF
 
 local VENGEANCE_ID = 76691
-local tooltip = CreateFrame('GameTooltip', 'VengeanceTooltip', UIParent, 'GameTooltipTemplate')
+local tooltip = CreateFrame("GameTooltip", "VengeanceTooltip", UIParent, "GameTooltipTemplate")
 
 local Update = function(self, event, unit)
-	if(self.unit ~= unit) then return end
+	if self.unit ~= unit then return end
 
 	local vb = self.VengeanceBar
 
-	if(vb.PreUpdate) then vb:PreUpdate(unit) end
+	if vb.PreUpdate then vb:PreUpdate(unit) end
 
 	-- check unit auras for vengeance
 	local hasAura = false
@@ -31,20 +31,20 @@ local Update = function(self, event, unit)
 		i = i + 1
 	until not spellID
 
-	if(hasAura) then
+	if hasAura then
 		-- get vengeance stack value
-		tooltip:SetOwner(UIParent, 'ANCHOR_NONE')
-		tooltip:SetUnitAura(self.unit, i, 'HELPFUL')
+		tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+		tooltip:SetUnitAura(self.unit, i, "HELPFUL")
 		local text = VengeanceTooltipTextLeft2:GetText()
 		tooltip:Hide()
 
 		local _, maxHealth = self.Health:GetMinMaxValues()
 		vb.Bar:SetMinMaxValues(0, maxHealth / 10)
-		
-		local textValue = text:match('%d+')
-		local maxValue = floor(0.1*UnitHealthMax("player"))
-		
-		if(vb.Text) then
+
+		local textValue = text:match("%d+")
+		local maxValue = floor(0.1 * UnitHealthMax("player"))
+
+		if vb.Text then
 			vb.Text:SetText(textValue.." / "..maxValue)
 		end
 
@@ -52,7 +52,7 @@ local Update = function(self, event, unit)
 		vb.Bar:SetValue(value and value or 0)
 
 		vb:Show()
-		
+
 		if self.Debuffs then
 			if (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
 			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) then
@@ -65,7 +65,7 @@ local Update = function(self, event, unit)
 		end
 	else
 		vb:Hide()
-		
+
 		if self.Debuffs then
 			if (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
 			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) then
@@ -78,7 +78,7 @@ local Update = function(self, event, unit)
 		end
 	end
 
-	if(vb.PostUpdate) then
+	if vb.PostUpdate then
 		return vb:PostUpdate(unit)
 	end
 end
@@ -88,19 +88,19 @@ local Path = function(self, ...)
 end
 
 local ForceUpdate = function(element)
-	return Update(element.__owner, 'ForceUpdate', element.__owner.unit)
+	return Update(element.__owner, "ForceUpdate", element.__owner.unit)
 end
 
 local Enable = function(self)
 	local vb = self.VengeanceBar
-	if(vb) then
+	if vb then
 		vb.__owner = self
 		vb.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('UNIT_AURA', Path)
-		self:RegisterEvent('UNIT_MAXHEALTH', Path)
+		self:RegisterEvent("UNIT_AURA", Path)
+		self:RegisterEvent("UNIT_MAXHEALTH", Path)
 
-		if(vb.Bar and not vb.Bar:GetStatusBarTexture()) then
+		if vb.Bar and not vb.Bar:GetStatusBarTexture() then
 			vb.Bar:SetStatusBarTexture[[Interface\TargetingFrame\UI-StatusBar]]
 		end
 
@@ -110,10 +110,10 @@ end
 
 local Disable = function(self)
 	local vb = self.VengeanceBar
-	if(vb) then
-		self:UnregisterEvent('UNIT_AURA', Path)
-		self:UnregisterEvent('UNIT_MAXHEALTH', Path)
+	if vb then
+		self:UnregisterEvent("UNIT_AURA", Path)
+		self:UnregisterEvent("UNIT_MAXHEALTH", Path)
 	end
 end
 
-oUF:AddElement('VengeanceBar', Path, Enable, Disable)
+oUF:AddElement("VengeanceBar", Path, Enable, Disable)

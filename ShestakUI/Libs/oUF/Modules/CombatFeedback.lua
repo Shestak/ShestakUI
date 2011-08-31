@@ -15,8 +15,8 @@ local feedback = {}
 local originalHeight = {}
 local color 
 local colors = {
-	STANDARD		= { 1, 1, 1 }, -- color for everything not in the list below
-	-- damage colors
+	STANDARD		= { 1, 1, 1 },
+	-- Damage
 	IMMUNE			= { 1, 1, 1 },
 	DAMAGE			= { 1, 0, 0 },
 	CRUSHING		= { 1, 0, 0 },
@@ -26,10 +26,10 @@ local colors = {
 	BLOCK			= { 1, 1, 1 },
 	RESIST			= { 1, 1, 1 },
 	MISS			= { 1, 1, 1 },
-	-- heal colors
+	-- Heal
 	HEAL			= { 0, 1, 0 },
 	CRITHEAL		= { 0, 1, 0 },
-	-- energize colors
+	-- Energize
 	ENERGIZE		= { 0.41, 0.8, 0.94 },
 	CRITENERGIZE	= { 0.41, 0.8, 0.94 },
 }
@@ -46,19 +46,19 @@ local function createUpdateFrame()
 		for object, startTime in pairs(feedback) do
 			local maxalpha = object.CombatFeedbackText.maxAlpha
 			local elapsedTime = GetTime() - startTime
-			if ( elapsedTime < COMBATFEEDBACK_FADEINTIME ) then
-				local alpha = maxalpha*(elapsedTime / COMBATFEEDBACK_FADEINTIME)
+			if elapsedTime < COMBATFEEDBACK_FADEINTIME then
+				local alpha = maxalpha * (elapsedTime / COMBATFEEDBACK_FADEINTIME)
 				object.CombatFeedbackText:SetAlpha(alpha)
-			elseif ( elapsedTime < (COMBATFEEDBACK_FADEINTIME + COMBATFEEDBACK_HOLDTIME) ) then
+			elseif elapsedTime < (COMBATFEEDBACK_FADEINTIME + COMBATFEEDBACK_HOLDTIME) then
 				object.CombatFeedbackText:SetAlpha(maxalpha)
-			elseif ( elapsedTime < (COMBATFEEDBACK_FADEINTIME + COMBATFEEDBACK_HOLDTIME + COMBATFEEDBACK_FADEOUTTIME) ) then
-				local alpha = maxalpha - maxalpha*((elapsedTime - COMBATFEEDBACK_HOLDTIME - COMBATFEEDBACK_FADEINTIME) / COMBATFEEDBACK_FADEOUTTIME)
+			elseif elapsedTime < (COMBATFEEDBACK_FADEINTIME + COMBATFEEDBACK_HOLDTIME + COMBATFEEDBACK_FADEOUTTIME) then
+				local alpha = maxalpha - maxalpha * ((elapsedTime - COMBATFEEDBACK_HOLDTIME - COMBATFEEDBACK_FADEINTIME) / COMBATFEEDBACK_FADEOUTTIME)
 				object.CombatFeedbackText:SetAlpha(alpha)
 			else
 				object.CombatFeedbackText:Hide()
 				feedback[object] = nil
 			end
-		end		
+		end
 	end)
 end
 
@@ -68,7 +68,7 @@ local function combat(self, event, unit, eventType, flags, amount, dtype)
 	local FeedbackText = self.CombatFeedbackText
 	local fColors = FeedbackText.colors
 	local font, fontHeight, fontFlags = FeedbackText:GetFont()
-	fontHeight = FeedbackText.origHeight -- always start at original height
+	fontHeight = FeedbackText.origHeight
 	local text, arg
 	color = fColors and fColors.STANDARD or colors.STANDARD
 	if eventType == "IMMUNE" and not FeedbackText.ignoreImmune then
@@ -139,13 +139,13 @@ local function combat(self, event, unit, eventType, flags, amount, dtype)
 		FeedbackText:SetAlpha(0)
 		FeedbackText:Show()
 		feedback[self] = GetTime()
-		updateFrame:Show() -- start our onupdate
+		updateFrame:Show()
 	end
 end
 
 local function addCombat(object)
 	if not object.CombatFeedbackText then return end
-	-- store the original starting height
+
 	local font, fontHeight, fontFlags = object.CombatFeedbackText:GetFont()
 	object.CombatFeedbackText.origHeight = fontHeight
 	object.CombatFeedbackText.maxAlpha = object.CombatFeedbackText.maxAlpha or maxAlpha

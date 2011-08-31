@@ -7,10 +7,10 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_experience_bar ~= true then
 local _, ns = ...
 local oUF = ns.oUF
 
-local hunterPlayer = select(2, UnitClass('player')) == 'HUNTER'
+local hunterPlayer = select(2, UnitClass("player")) == "HUNTER"
 
 local function GetXP(unit)
-	if(unit == 'pet') then
+	if unit == "pet" then
 		return GetPetExperience()
 	else
 		return UnitXP(unit), UnitXPMax(unit)
@@ -21,13 +21,13 @@ local function SetTooltip(self)
 	local unit = self:GetParent().unit
 	local min, max = GetXP(unit)
 
-	local bars = unit == 'pet' and 6 or 20
+	local bars = unit == "pet" and 6 or 20
 
-	GameTooltip:SetOwner(self, 'ANCHOR_BOTTOM', 0, -5)
+	GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -5)
 	GameTooltip:AddLine(string.format(XP..": %d / %d (%d%% - %d/%d)", min, max, min/max * 100, bars - (bars * (max - min) / max), bars))
 	GameTooltip:AddLine(string.format(LEVEL_ABBR..": %d (%d%% - %d/%d)", max - min, (max - min) / max * 100, 1 + bars * (max - min) / max, bars))
 
-	if(self.rested) then
+	if self.rested then
 		GameTooltip:AddLine(string.format("|cff0090ff"..TUTORIAL_TITLE26..": +%d (%d%%)", self.rested, self.rested / max * 100))
 	end
 
@@ -35,19 +35,19 @@ local function SetTooltip(self)
 end
 
 local function Update(self, event, owner)
-	if(event == 'UNIT_PET' and owner ~= 'player') then return end
+	if event == "UNIT_PET" and owner ~= "player" then return end
 
 	local experience = self.Experience
 	-- Conditional hiding
-	if(self.unit == 'player') then
-		if(UnitLevel('player') == MAX_PLAYER_LEVEL) then
+	if self.unit == "player" then
+		if UnitLevel("player") == MAX_PLAYER_LEVEL then
 			return experience:Hide()
 		end
-	elseif(self.unit == 'pet') then
+	elseif self.unit == "pet" then
 		local _, hunterPet = HasPetUI()
-		if(not self.disallowVehicleSwap and UnitHasVehicleUI('player')) then
+		if not self.disallowVehicleSwap and UnitHasVehicleUI("player") then
 			return experience:Hide()
-		elseif(not hunterPet or (UnitLevel('pet') == UnitLevel('player'))) then
+		elseif not hunterPet or (UnitLevel("pet") == UnitLevel("player")) then
 			return experience:Hide()
 		end
 	else
@@ -60,13 +60,13 @@ local function Update(self, event, owner)
 	experience:SetValue(min)
 	experience:Show()
 
-	if(experience.Text) then
-		experience.Text:SetFormattedText('%d / %d', min, max)
+	if experience.Text then
+		experience.Text:SetFormattedText("%d / %d", min, max)
 	end
 
-	if(experience.Rested) then
+	if experience.Rested then
 		local rested = GetXPExhaustion()
-		if(unit == 'player' and rested and rested > 0) then
+		if unit == "player" and rested and rested > 0 then
 			experience.Rested:SetMinMaxValues(0, max)
 			experience.Rested:SetValue(math.min(min + rested, max))
 			experience.rested = rested
@@ -77,36 +77,36 @@ local function Update(self, event, owner)
 		end
 	end
 
-	if(experience.PostUpdate) then
+	if experience.PostUpdate then
 		return experience:PostUpdate(unit, min, max)
 	end
 end
 
 local function Enable(self, unit)
 	local experience = self.Experience
-	if(experience) then
+	if experience then
 		local Update = experience.Update or Update
 
-		self:RegisterEvent('PLAYER_XP_UPDATE', Update)
-		self:RegisterEvent('PLAYER_LEVEL_UP', Update)
-		self:RegisterEvent('UNIT_PET', Update)
+		self:RegisterEvent("PLAYER_XP_UPDATE", Update)
+		self:RegisterEvent("PLAYER_LEVEL_UP", Update)
+		self:RegisterEvent("UNIT_PET", Update)
 
-		if(experience.Rested) then
-			self:RegisterEvent('UPDATE_EXHAUSTION', Update)
+		if experience.Rested then
+			self:RegisterEvent("UPDATE_EXHAUSTION", Update)
 			experience.Rested:SetFrameLevel(1)
 		end
 
-		if(hunterPlayer) then
-			self:RegisterEvent('UNIT_PET_EXPERIENCE', Update)
+		if hunterPlayer then
+			self:RegisterEvent("UNIT_PET_EXPERIENCE", Update)
 		end
 
-		if(not experience.noTooltip) then
+		if not experience.noTooltip then
 			experience:EnableMouse()
-			experience:HookScript('OnLeave', GameTooltip_Hide)
-			experience:HookScript('OnEnter', SetTooltip)
+			experience:HookScript("OnLeave", GameTooltip_Hide)
+			experience:HookScript("OnEnter", SetTooltip)
 		end
 
-		if(not experience:GetStatusBarTexture()) then
+		if not experience:GetStatusBarTexture() then
 			experience:SetStatusBarTexture([=[Interface\TargetingFrame\UI-StatusBar]=])
 		end
 
@@ -116,21 +116,21 @@ end
 
 local function Disable(self)
 	local experience = self.Experience
-	if(experience) then
+	if experience then
 		local Update = experience.Update or Update
 
-		self:UnregisterEvent('PLAYER_XP_UPDATE', Update)
-		self:UnregisterEvent('PLAYER_LEVEL_UP', Update)
-		self:UnregisterEvent('UNIT_PET', Update)
+		self:UnregisterEvent("PLAYER_XP_UPDATE", Update)
+		self:UnregisterEvent("PLAYER_LEVEL_UP", Update)
+		self:UnregisterEvent("UNIT_PET", Update)
 
-		if(experience.Rested) then
-			self:UnregisterEvent('UPDATE_EXHAUSTION', Update)
+		if experience.Rested then
+			self:UnregisterEvent("UPDATE_EXHAUSTION", Update)
 		end
 
-		if(hunterPlayer) then
-			self:UnregisterEvent('UNIT_PET_EXPERIENCE', Update)
+		if hunterPlayer then
+			self:UnregisterEvent("UNIT_PET_EXPERIENCE", Update)
 		end
 	end
 end
 
-oUF:AddElement('Experience', Update, Enable, Disable)
+oUF:AddElement("Experience", Update, Enable, Disable)

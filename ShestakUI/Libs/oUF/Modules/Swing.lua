@@ -13,9 +13,9 @@ do
 	local slamelapsed = 0
 	local slam = GetSpellInfo(1464)
 	function OnDurationUpdate(self, elapsed)
-	
+
 		local spell = UnitCastingInfo("player")
-		
+
 		if slam == spell then
 			slamelapsed = slamelapsed + elapsed
 		else
@@ -25,14 +25,14 @@ do
 				self:SetMinMaxValues(self.min, self.max)
 				slamelapsed = 0
 			end
-			
+
 			swingelapsed = GetTime()
 			if swingelapsed > self.max then
 				self:Hide()
 				self:SetScript("OnUpdate", nil)
 			else
 				self:SetValue(self.min + (swingelapsed - self.min))
-				
+
 				if self.Text then
 					if self.OverrideText then
 						self:OverrideText(swingelapsed)
@@ -46,34 +46,33 @@ do
 end
 
 local function Melee(self, _, _, event, _, GUID, _, _, _, tarGUID, _, _, _, missType, spellName)
-
 	local bar = self.Swing
-	
+
 	if UnitGUID(self.unit) == tarGUID then
-	
+
 		if string.find(event, "MISSED") then
 			if missType == "PARRY" then
 				bar.max = bar.min + ((bar.max - bar.min) * 0.6)
 				bar:SetMinMaxValues(bar.min, bar.max)
 			end
 		end
-		
+
 	elseif UnitGUID(self.unit) == GUID  then
-		
+
 		local swordprocc = false
 		if event == "SPELL_EXTRA_ATTACKS" and (spellName == GetSpellInfo(12815) or spellName == GetSpellInfo(13964)) then
 			swordprocc = true
 		end
 
 		if not string.find(event, "SWING") then return end
-		
+
 		if swordprocc == true then
 			swordprocc = false
 		else
 			bar.min = GetTime()
 			bar.max = bar.min + UnitAttackSpeed(self.unit)
 			local itemId = GetInventoryItemID("player", 17)
-			
+
 			if itemId ~= nil then
 				local _, _, _, _, _, itemType = GetItemInfo(itemId)
 				local _, _, _, _, _, weaponType = GetItemInfo(25)
@@ -91,7 +90,6 @@ local function Melee(self, _, _, event, _, GUID, _, _, _, tarGUID, _, _, _, miss
 				bar:SetScript("OnUpdate", OnDurationUpdate)
 			end
 		end
-		
 	end
 end
 
@@ -115,19 +113,19 @@ end
 local function Enable(self, unit)
 	local bar = self.Swing
 	if bar and unit == "player" then
-		
+
 		if not bar.disableRanged then
 			self:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED", Ranged)
 		end
-		
+
 		if not bar.disableMelee then
 			self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED", Melee)
 		end
-		
+
 		if not bar.disableOoc then
 			self:RegisterEvent("PLAYER_REGEN_ENABLED", Ooc)
 		end
-		
+
 		bar:Hide()
 		if not bar:GetStatusBarTexture() and not swing:GetTexture() then
 			bar:SetStatusBarTexture([=[Interface\TargetingFrame\UI-StatusBar]=])

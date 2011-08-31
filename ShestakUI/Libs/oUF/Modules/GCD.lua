@@ -11,23 +11,23 @@ local starttime, duration, usingspell, spellid
 local GetTime = GetTime
 
 local spells = {
-    ["DEATHKNIGHT"] = 45902,
-    ["DRUID"] = 1126,
-    ["HUNTER"] = 1978,
-    ["MAGE"] = 133,
-    ["PALADIN"] = 635,
-    ["PRIEST"] = 21562,
-    ["ROGUE"] = 1752,
-    ["SHAMAN"] = 331,
-    ["WARRIOR"] = 7386,
-    ["WARLOCK"] = 686,
+	["DEATHKNIGHT"] = 45902,
+	["DRUID"] = 1126,
+	["HUNTER"] = 1978,
+	["MAGE"] = 133,
+	["PALADIN"] = 635,
+	["PRIEST"] = 21562,
+	["ROGUE"] = 1752,
+	["SHAMAN"] = 331,
+	["WARRIOR"] = 7386,
+	["WARLOCK"] = 686,
 }
 
 local _, class = UnitClass("player")
 local spell = GetSpellInfo(spells[class])
 
 local Enable = function(self)
-	if(not self.GCD) then return end
+	if not self.GCD then return end
 	local bar = self.GCD
 	local width = bar:GetWidth()
 	bar:Hide()
@@ -43,7 +43,7 @@ local Enable = function(self)
 		bar.spark:ClearAllPoints()
 		local elapsed = GetTime() - starttime
 		local perc = elapsed / duration
-		if(perc>1) then
+		if perc > 1 then
 			return bar:Hide()
 		else
 			bar.spark:SetPoint("CENTER", bar, "LEFT", width * perc, 0)
@@ -53,34 +53,34 @@ local Enable = function(self)
 	local function OnHide()
 		bar:SetScript("OnUpdate", nil)
 		usingspell = nil
-    end
+	end
 
 	local function OnShow()
 		bar:SetScript("OnUpdate", OnUpdateSpark)
-    end
+	end
 
 	local function UpdateGCD()
-		if(spellid) then
+		if spellid then
 			local start, dur = GetSpellCooldown(spellid, "spell")
-			if(dur and dur>0 and dur<=2) then
+			if dur and dur > 0 and dur <= 2 then
 				usingspell = 1
 				starttime = start
 				duration = dur
 				bar:Show()
 				return
-			elseif(usingspell==1 and dur==0) then
+			elseif usingspell == 1 and dur == 0 then
 				bar:Hide()
 			end
 		else
 			for tab = 2, 4 do
 				local _, _, offset, numSpells = GetSpellTabInfo(tab)
-				for i = (1+offset), (offset+numSpells) do
+				for i = (1 + offset), (offset+numSpells) do
 					local tempspell = GetSpellBookItemName(i, "spell")
-					if(tempspell == spell) then
+					if tempspell == spell then
 						spellid = i
-                    end
-                end
-            end
+					end
+				end
+			end
 		end
 	end
 

@@ -64,7 +64,7 @@ local Update = function(self, event, ...)
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
 		local _, eventType, _, sourceGUID, _, _, _, _, _, _, _, spellID = ...
 		if eventType == "SPELL_CAST_SUCCESS" then
-			-- enemy trinket usage
+			-- Enemy trinket
 			if spellID == 59752 or spellID == 42292 then
 				TrinketUsed(sourceGUID, 120)
 			end
@@ -100,11 +100,6 @@ frame:RegisterEvent("ARENA_OPPONENT_UPDATE")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", Update)
 
-oUF.Tags['[trinket]'] = function(unit)
-	if usedTrinkets[UnitGUID(unit)] or not UnitIsPlayer(unit) then return end
-	return string.format("|T%s:20:20:0:0|t", GetTrinketIcon(unit))
-end
-
 local Enable = function(self)
 	if self.Trinket then
 		self.Trinket.cooldownFrame = CreateFrame("Cooldown", nil, self.Trinket)
@@ -123,4 +118,4 @@ local Disable = function(self)
 	end
 end
  
-oUF:AddElement('Trinket', function() return end, Enable, Disable)
+oUF:AddElement("Trinket", function() return end, Enable, Disable)

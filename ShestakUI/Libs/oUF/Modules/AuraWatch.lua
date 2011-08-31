@@ -71,8 +71,8 @@ local function expireIcon(icon, frame)
 	if icon.onlyShowPresent then
 		icon:Hide()
 	else
-		if (icon.cd) then icon.cd:Hide() end
-		if (icon.count) then icon.count:SetText() end
+		if icon.cd then icon.cd:Hide() end
+		if icon.count then icon.count:SetText() end
 		icon:SetAlpha(frame.missingAlpha)
 		if icon.overlay then
 			icon.overlay:Show()
@@ -91,11 +91,11 @@ local function Update(frame, event, unit)
 	local guid = UnitGUID(unit)
 	if not guid then return end
 	if not GUIDs[guid] then setupGUID(guid) end
-	
+
 	for key, icon in pairs(icons) do
 		icon:Hide()
 	end
-	
+
 	while true do
 		name, _, texture, count, _, duration, remaining, caster, _, _, spellid = UnitAura(unit, index, filter)
 		if not name then 
@@ -120,32 +120,31 @@ local function Update(frame, event, unit)
 			index = index + 1
 		end
 	end
-	
+
 	for key in pairs(GUIDs[guid]) do
 		if icons[key] and not found[key] then
 			expireIcon(icons[key], watch)
 		end
 	end
-	
+
 	for k in pairs(found) do
 		found[k] = nil
 	end
 end
 
 local function setupIcons(self)
-
 	local watch = self.AuraWatch
 	local icons = watch.icons
 	watch.watched = {}
 	if not watch.missingAlpha then watch.missingAlpha = 0.75 end
 	if not watch.presentAlpha then watch.presentAlpha = 1 end
-	
+
 	for _,icon in pairs(icons) do
-	
+
 		local name, _, image = GetSpellInfo(icon.spellID)
 		if not name then error("oUF_AuraWatch error: no spell with "..tostring(icon.spellID).." spell ID exists") end
 		icon.name = name
-	
+
 		if not icon.cd and not (watch.hideCooldown or icon.hideCooldown) then
 			local cd = CreateFrame("Cooldown", nil, icon)
 			cd:SetAllPoints(icon)
@@ -159,9 +158,9 @@ local function setupIcons(self)
 			icon.icon = tex
 			if not icon.overlay then
 				local overlay = icon:CreateTexture(nil, "OVERLAY")
-				overlay:SetTexture"Interface\\Buttons\\UI-Debuff-Overlays"
+				overlay:SetTexture("Interface\\Buttons\\UI-Debuff-Overlays")
 				overlay:SetAllPoints(icon)
-				overlay:SetTexCoord(.296875, .5703125, 0, .515625)
+				overlay:SetTexCoord(0.296875, 0.5703125, 0, 0.515625)
 				overlay:SetVertexColor(1, 0, 0)
 				icon.overlay = overlay
 			end
@@ -186,7 +185,7 @@ local function setupIcons(self)
 		if icon.anyUnit == nil then
 			icon.anyUnit = watch.anyUnit
 		end
-		
+
 		if watch.strictMatching then
 			watch.watched[icon.spellID] = icon
 		else
@@ -210,7 +209,7 @@ end
 local function Disable(self)
 	if self.AuraWatch then
 		self:UnregisterEvent("UNIT_AURA", Update)
-		for _,icon in pairs(self.AuraWatch.icons) do
+		for _, icon in pairs(self.AuraWatch.icons) do
 			icon:Hide()
 		end
 	end

@@ -8,7 +8,6 @@ local _, ns = ...
 local oUF = ns.oUF
 
 local function Update(object, event, unit)
-
 	if object.unit ~= unit  then return end
 
 	local auraList = T.ArenaControl()
@@ -19,40 +18,40 @@ local function Update(object, event, unit)
 	-- Buffs
 	while ( true ) do
 		local name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable = UnitAura(unit, index, "HELPFUL")
-		if ( not name ) then break end
+		if not name then break end
 		
-		if ( auraList[name] and auraList[name] >= priority ) then
+		if auraList[name] and auraList[name] >= priority then
 			priority = auraList[name]
 			auraName = name
 			auraIcon = icon
 			auraExpTime = expirationTime
 		end
-		
-		index = index+1
+
+		index = index + 1
 	end
-	
+
 	index = 1
-	
+
 	-- Debuffs 
 	while ( true ) do
 		local name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable = UnitAura(unit, index, "HARMFUL")
-		if ( not name ) then break end
-		
-		if ( auraList[name] and auraList[name] >= priority ) then
+		if not name then break end
+
+		if auraList[name] and auraList[name] >= priority then
 			priority = auraList[name]
 			auraName = name
 			auraIcon = icon
 			auraExpTime = expirationTime
 		end
-		
-		index = index+1	
+
+		index = index + 1
 	end
-	
-	if ( auraName ) then -- If an aura is found, display it and set the time left!
+
+	if auraName then -- If an aura is found, display it and set the time left!
 		object.AuraTracker.icon:SetTexture(auraIcon)
-		object.AuraTracker.timeleft = (auraExpTime-GetTime())
+		object.AuraTracker.timeleft = (auraExpTime - GetTime())
 		object.AuraTracker.active = true
-	elseif ( not auraName ) then -- No aura found and one is shown? Kill it since it's no longer active!
+	elseif not auraName then -- No aura found and one is shown? Kill it since it's no longer active!
 		object.AuraTracker.icon:SetTexture("")
 		object.AuraTracker.text:SetText("")
 		object.AuraTracker.active = false
@@ -75,4 +74,4 @@ local function Disable(object)
 	end
 end
 
-oUF:AddElement('AuraTracker', Update, Enable, Disable)
+oUF:AddElement("AuraTracker", Update, Enable, Disable)
