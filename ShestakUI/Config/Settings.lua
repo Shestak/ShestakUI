@@ -33,16 +33,6 @@ C["general"] = {
 	["multisampleprotect"] = true,				-- Disable this if you want multisample > 1
 	["welcome_message"] = true,					-- Enable welcome message in chat
 	["custom_lagtolerance"] = false,			-- Custom lag tollerance to your latency
-	--[[Correct UI Scale for resoluitons:
-		y-resolution | scale
-		768          | 1
-		800          | 0.96
-		900          | 0.8533333333333333
-		1024         | 0.75
-		1050         | 0.7314285714285714
-		1080         | 0.7111111111111111
-		1200         | 0.64
-	]]
 }
 
 ----------------------------------------------------------------------------------------
@@ -498,6 +488,7 @@ C["addon"] = {	-- Group AddOns for fast selection
 	},
 	trade = {									-- Type /addons trade
 		"Auctionator",
+		"AuctionLite",
 		"!Swatter",
 		"Auc-Advanced",
 		"Auc-Filter-Basic",
