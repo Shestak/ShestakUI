@@ -159,13 +159,9 @@ local function LoadSkin()
 			WorldMapFrameSizeDownButton:Disable()
 			WorldMapFrameSizeUpButton:Disable()
 
-			if quest then
+			if quest and miniWorldMap then
 				if WorldMapFrame:IsShown() then
 					HideUIPanel(WorldMapFrame)
-				end
-
-				if not miniWorldMap then
-					WorldMapFrame_SetFullMapView()
 				end
 
 				WorldMapBlobFrame.Show = T.dummy
@@ -177,12 +173,8 @@ local function LoadSkin()
 			WorldMapFrameSizeDownButton:Enable()
 			WorldMapFrameSizeUpButton:Enable()
 
-			if quest then
+			if quest and miniWorldMap then
 				WorldMapBlobFrame.Show = WorldMapBlobFrame:Show()
-
-				if not miniWorldMap then
-					WorldMapFrame_SetQuestMapView()
-				end
 
 				WorldMapBlobFrame:Show()
 

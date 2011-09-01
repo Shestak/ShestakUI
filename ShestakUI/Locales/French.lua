@@ -18,7 +18,7 @@ L_TOOLTIP_ITEM_COUNT = "Objets possédés :"
 -- Misc
 L_MISC_UNDRESS = "Déshabillé"
 L_MISC_DRINKING = " est entrain de boire."
-L_MISC_BUY_STACK = "Alt-Click to buy a stack" -- Needs review
+L_MISC_BUY_STACK = "Alt-Click pour acheter une pile d'objet"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Fin du raid"
@@ -32,8 +32,8 @@ L_WATCH_WOWHEAD_LINK = "Lien wowhead"
 -- Toogle Menu
 L_TOGGLE_ADDON = "Addon "
 L_TOGGLE_ADDONS = " addons"
-L_TOGGLE_EXPAND = "Permet de ajouter des barres "
-L_TOGGLE_COLLAPSE = "Permet de reduire les barres "
+L_TOGGLE_EXPAND = "Permet d'ajouter des barres "
+L_TOGGLE_COLLAPSE = "Permet de réduire les barres "
 L_TOGGLE_RCLICK = "Faites un clic droit pour activer ou désactiver "
 L_TOGGLE_LCLICK = "Clic gauche pour basculer la fenêtre "
 L_TOGGLE_RELOAD = " (recharger votre UI)"

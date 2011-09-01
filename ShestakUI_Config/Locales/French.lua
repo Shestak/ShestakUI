@@ -29,7 +29,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Fenêtre de véhicule en mouseover"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Accepte les quêtes automatiquement"
 L_GUI_MISC_RAID_TOOLS = "Outils de raid"
 L_GUI_MISC_ACH_SCREENS = "Prend un screenshot quand un evenement est accomplie"
-L_GUI_MISC_PROFESSION_TABS = "Professions tabs on tradeskill and trade frames" -- Needs review
+L_GUI_MISC_PROFESSION_TABS = "Onglet des professions sur les fenêtres de métiers et de craft"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
@@ -40,16 +40,16 @@ L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Afficher les sorts lancés par tous les m
 
 -- Skins options
 L_GUI_SKINS = "Personalisation d'addon"
-L_GUI_SKINS_BLIZZARD = "Enable styling Blizzard frames" -- Needs review
-L_GUI_SKINS_MINIMAP_BUTTONS = "Enable styling addons icons on minimap" -- Needs review
-L_GUI_SKINS_CLCR = "Activier la personalisation pour CLCRet"
-L_GUI_SKINS_BW = "Activier la personalisation pour BigWigs"
-L_GUI_SKINS_DBM = "Activier la personalisation pour DBM"
-L_GUI_SKINS_DXE = "Activier la personalisation pour DXE"
-L_GUI_SKINS_KLE = "Activier la personalisation pour KLE"
-L_GUI_SKINS_OMEN = "Activier la personalisation pour Omen"
-L_GUI_SKINS_PP = "Activer la personnalisation pour PallyPower"
-L_GUI_SKINS_RECOUNT = "Activier la personalisation pour Recount"
+L_GUI_SKINS_BLIZZARD = "Activer la personnalisation des fenêtres Blizzard"
+L_GUI_SKINS_MINIMAP_BUTTONS = "Activer la personnalisation des icônes de la minimap"
+L_GUI_SKINS_CLCR = "Activer la personalisation pour CLCRet"
+L_GUI_SKINS_BW = "Activer la personalisation pour BigWigs"
+L_GUI_SKINS_DBM = "Activer la personalisation pour DBM"
+L_GUI_SKINS_DXE = "Activer la personalisation pour DXE"
+L_GUI_SKINS_KLE = "Activer la personalisation pour KLE"
+L_GUI_SKINS_OMEN = "Activer la personalisation pour Omen"
+L_GUI_SKINS_PP = "Activer la personalisation pour PallyPower"
+L_GUI_SKINS_RECOUNT = "Activer la personalisation pour Recount"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"
@@ -323,9 +323,9 @@ L_GUI_STATS = "Stats"
 L_GUI_STATS_BG = "Champ de bataille"
 L_GUI_STATS_CLOCK = "Horloge"
 L_GUI_STATS_LATENCY = "Latence"
-L_GUI_STATS_MEMORY = "Memoire"
+L_GUI_STATS_MEMORY = "Mémoire"
 L_GUI_STATS_FPS = "FPS"
-L_GUI_STATS_EXPERIENCE = "Experience"
+L_GUI_STATS_EXPERIENCE = "Expérience"
 L_GUI_STATS_COORDS = "Coordonnées"
 L_GUI_STATS_LOCATION = "Lieu actuel"
 L_GUI_STATS_GUILD_REPAIR = "Réparation de guilde"
