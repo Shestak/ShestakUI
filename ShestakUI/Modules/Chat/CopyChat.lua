@@ -60,8 +60,15 @@ local function GetLines(...)
 end
 
 local function Copy(cf)
+	local _, size = cf:GetFont()
+	FCF_SetChatWindowFontSize(cf, cf, 0.01)
 	local lineCt = GetLines(cf:GetRegions())
 	local text = table.concat(lines, "\n", 1, lineCt)
+	if size < 11 then
+		FCF_SetChatWindowFontSize(cf, cf, 11)
+	else
+		FCF_SetChatWindowFontSize(cf, cf, size)
+	end
 	if not isf then CreatCopyFrame() end
 	if frame:IsShown() then frame:Hide() return end
 	frame:Show()
