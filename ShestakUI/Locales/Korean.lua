@@ -70,10 +70,10 @@ L_CHAT_GM = "[GM]"
 L_CHAT_GUILD = "G"
 L_CHAT_PARTY = "P"
 L_CHAT_PARTY_LEADER = "PL"
-L_CHAT_RAID	= "R"
+L_CHAT_RAID = "R"
 L_CHAT_RAID_LEADER = "RL"
-L_CHAT_RAID_WARNING	= "RW"
-L_CHAT_BATTLEGROUND	= "BG"
+L_CHAT_RAID_WARNING = "RW"
+L_CHAT_BATTLEGROUND = "BG"
 L_CHAT_BATTLEGROUND_LEADER = "BGL"
 L_CHAT_OFFICER = "O"
 L_CHAT_COME_ONLINE = "has come online."
@@ -83,7 +83,7 @@ L_CHAT_GONE_OFFLINE_COLOR = "is now |cffff0000offline|r !"
 
 -- Errors frame
 L_ERRORFRAME_L = "Click to view errors."
-	
+
 -- Bags
 L_BAG_BANK = "Bank"
 L_BAG_NO_SLOTS = "소지품이 가득 찼습니다."
