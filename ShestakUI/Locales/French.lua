@@ -2,7 +2,7 @@
 if T.client ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for frFR client (Thanks to Cranan and Puree for the translation)
+--	Localization for frFR client(Thanks to Cranan and Puree for the translation)
 ----------------------------------------------------------------------------------------
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Aucun talent"

@@ -29,19 +29,19 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Fahrzeugfenster bei mouseover anzeigen"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/Gegenstand auto Taste"
 L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
 L_GUI_MISC_ACH_SCREENS = "Speicher einen Screenshot wenn ein Achivment errungen wird."
-L_GUI_MISC_PROFESSION_TABS = "Professions tabs on tradeskill and trade frames" -- Needs review
+L_GUI_MISC_PROFESSION_TABS = "Berufereiter an Handelsfähigkeiten und Handelsfenstern anzeigen"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
 L_GUI_ANNOUNCEMENTS_DRINKING = "Sage im Chat an wenn ein Arenagegener trinkt"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Sage deine Unterbrechungen im Raid oder Schlachtzugschat an"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Sage im Raid / Schachtzugschat an, wenn du den selben Zauber castest"
-L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members" -- Needs review
+L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Prüfe Zauber von allen Spielern"
 
 -- Skins options
 L_GUI_SKINS = "Stilisierung"
-L_GUI_SKINS_BLIZZARD = "Enable styling Blizzard frames" -- Needs review
-L_GUI_SKINS_MINIMAP_BUTTONS = "Enable styling addons icons on minimap" -- Needs review
+L_GUI_SKINS_BLIZZARD = "Aktiviere Styles für Blizzardfenster"
+L_GUI_SKINS_MINIMAP_BUTTONS = "Aktiviere styling Addonincons an der Minimap"
 L_GUI_SKINS_CLCR = "CLCRet Design aktivieren"
 L_GUI_SKINS_BW = "BigWigs Design aktivieren"
 L_GUI_SKINS_DBM = "DBM Design aktivieren"
@@ -210,14 +210,14 @@ L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Zeige Schwächungszauber (Abgekürzte Namen müs
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
 L_GUI_ACTIONBAR_HOTKEY = "Zeige Hotkey-Text an"
-L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons" -- Needs review
+L_GUI_ACTIONBAR_MACRO = "Zeige Makronamen auf den Buttons"
 L_GUI_ACTIONBAR_GRID = "Zeige die leeren Knöpfe der Aktionsleisten an"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Knopfgröße"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Buttonabstand"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Splitte die Fünfte Aktionsleiste im zwei 6 Knöpfe Leisten"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Aktionsleisten"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Aktiviere 'toggle mode'"
-L_GUI_ACTIONBAR_LIGHT_MACRO = "Light macro button when proc spell" -- Needs review
+L_GUI_ACTIONBAR_LIGHT_MACRO = "Hebe Makrobuttons bei Zauberproc hervor"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Anzahl der Aktionsleisten an der unteren Seite (1, 2 oder 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Anzahl der Aktionsleisten an der rechten Seite (0, 1, 2, oder 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Zeige die rechten Leisten nur bei Mouseover"

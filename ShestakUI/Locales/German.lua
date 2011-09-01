@@ -2,7 +2,7 @@
 if T.client ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for deDE client (Thanks to Baine, chubidu and Vienchen for the translation)
+--	Localization for deDE client(Thanks to Baine, chubidu and Vienchen for the translation)
 ----------------------------------------------------------------------------------------
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
@@ -18,7 +18,7 @@ L_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe:"
 -- Misc
 L_MISC_UNDRESS = "Ausziehen"
 L_MISC_DRINKING = " trinkt."
-L_MISC_BUY_STACK = "Alt-Click to buy a stack" -- Needs review
+L_MISC_BUY_STACK = "Alt-Klick um einen Stapel zu kaufen"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"

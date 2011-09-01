@@ -2,7 +2,7 @@
 if T.client ~= "koKR" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for koKR client (Need full translation)
+--	Localization for koKR client(Need full translation)
 ----------------------------------------------------------------------------------------
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "No Talents"
