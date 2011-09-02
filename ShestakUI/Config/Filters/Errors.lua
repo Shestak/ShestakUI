@@ -41,6 +41,7 @@ T.black_list = {
 	[ERR_ABILITY_COOLDOWN] = true,
 	[ERR_NO_ATTACK_TARGET] = true,
 	[ERR_SPELL_COOLDOWN] = true,
+	[ERR_OUT_OF_HOLY_POWER] = true,
 	[ERR_OUT_OF_ENERGY] = true,
 	[ERR_OUT_OF_RAGE] = true,
 	[ERR_OUT_OF_FOCUS] = true,
