@@ -65,6 +65,7 @@ local function InstallUI()
 		SetCVar("nameplateShowEnemyPets", 0)
 		SetCVar("nameplateShowEnemyGuardians", 0)
 		SetCVar("nameplateShowEnemyTotems", 0)
+		SetCVar("shadowMode", 0)
 	end
 
 	-- Setting chat frames
