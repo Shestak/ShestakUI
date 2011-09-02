@@ -410,7 +410,8 @@ local NormalButton = function(text, parent)
 	result:Height(23)
 	result:SetFontString(label)
 	if IsAddOnLoaded("Aurora") then
-		Aurora.Reskin(result)
+		local F = unpack(Aurora)
+		F.Reskin(result)
 	else
 		result:SkinButton()
 	end
@@ -566,8 +567,9 @@ function CreateUIConfig()
 	UIConfigMain:SetWidth(780)
 	UIConfigMain:SetHeight(520)
 	if IsAddOnLoaded("Aurora") then
-		Aurora.CreateBD(UIConfigMain)
-		Aurora.CreateSD(UIConfigMain)
+		local F = unpack(Aurora)
+		F.CreateBD(UIConfigMain)
+		F.CreateSD(UIConfigMain)
 	else
 		UIConfigMain:SetTemplate("Transparent")
 	end
@@ -693,6 +695,10 @@ function CreateUIConfig()
 
 			if type(value) == "boolean" then
 				local button = CreateFrame("CheckButton", "UIConfig"..group..option, frame, "InterfaceOptionsCheckButtonTemplate")
+				if IsAddOnLoaded("Aurora") then
+					local F = unpack(Aurora)
+					F.ReskinCheck(button)
+				end
 				local o = "UIConfig"..group..option
 				Local(o)
 				_G["UIConfig"..group..option.."Text"]:SetText(T.option)
@@ -860,6 +866,10 @@ function CreateUIConfig()
 		local button = CreateFrame("CheckButton", "UIConfigAllCharacters", TitleBox, "InterfaceOptionsCheckButtonTemplate")
 		button:SetScript("OnClick", function(self) StaticPopup_Show("PERCHAR") UIConfigCover:Show() end)
 		button:SetPoint("RIGHT", TitleBox, "RIGHT", -3, 0)
+		if IsAddOnLoaded("Aurora") then
+			local F = unpack(Aurora)
+			F.ReskinCheck(button)
+		end
 
 		local label = UIConfigAllCharacters:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 		label:SetText(L_GUI_SET_SAVED_SETTTINGS)
@@ -875,8 +885,9 @@ function CreateUIConfig()
 	local bgskins = {TitleBox, TitleBoxVer, UIConfigBG, groupsBG}
 	for _, sb in pairs(bgskins) do
 		if IsAddOnLoaded("Aurora") then
-			Aurora.CreateBD(sb)
-			Aurora.CreateSD(sb)
+			local F = unpack(Aurora)
+			F.CreateBD(sb)
+			F.CreateSD(sb)
 		else
 			sb:SetTemplate("Overlay")
 		end
