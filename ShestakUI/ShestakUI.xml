@@ -86,6 +86,7 @@
 	<Script file="Modules\Misc\ToggleMenu.lua"/>
 	<Script file="Modules\Misc\AchScreens.lua"/>
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
+	<Script file="Modules\Misc\OneClickBuyOut.lua"/>
 
 	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
 	<Script file="Modules\Cooldowns\PulseCD.lua"/>

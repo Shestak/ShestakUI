@@ -19,6 +19,8 @@ L_TOOLTIP_ITEM_COUNT = "Objets possédés :"
 L_MISC_UNDRESS = "Déshabillé"
 L_MISC_DRINKING = " est entrain de boire."
 L_MISC_BUY_STACK = "Alt-Click pour acheter une pile d'objet"
+L_MISC_ONECLICK_BUYOUT = "Shift-Click pour acheter l'objet sélectionné sans confirmation"
+L_MISC_ONECLICK_BID = "Shift-Click pour enchérir sur l'objet sélectionné sans confirmation"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Fin du raid"

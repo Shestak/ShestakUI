@@ -16,6 +16,8 @@ L_TOOLTIP_ITEM_COUNT = "Item count:"
 L_MISC_UNDRESS = "Undress"
 L_MISC_DRINKING = " is drinking."
 L_MISC_BUY_STACK = "Alt-Click to buy a stack"
+L_MISC_ONECLICK_BUYOUT = "Shift-Click to buyout the selected item without confirmation"
+L_MISC_ONECLICK_BID = "Shift-Click to bid on the selected item without confirmation"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disband Group"

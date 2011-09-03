@@ -19,6 +19,8 @@ L_TOOLTIP_ITEM_COUNT = "Количество предмета:"
 L_MISC_UNDRESS = "Раздеть"
 L_MISC_DRINKING = " пьёт."
 L_MISC_BUY_STACK = "Зажмите Alt и щелкните мышью, чтобы купить связку"
+L_MISC_ONECLICK_BUYOUT = "Зажмите Shift и щелкните мышью, что бы выкупить выбранный предмет без подтверждения"
+L_MISC_ONECLICK_BID = "Зажмите Shift и щелкните мышью, что бы сделать ставку на выбранном предмете без подтверждения"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"

@@ -19,6 +19,8 @@ L_TOOLTIP_ITEM_COUNT = "物品数量: "
 L_MISC_UNDRESS = "无装备"
 L_MISC_DRINKING = " 开始进食."
 L_MISC_BUY_STACK = "Alt-右键点击购买一叠"
+L_MISC_ONECLICK_BUYOUT = "Shift-左键,不弹出确认框体直接购买"
+L_MISC_ONECLICK_BID = "Shift-左鍵,不弹出确认框体直接竞标"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"
