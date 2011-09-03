@@ -69,6 +69,9 @@ local function LoadSkin()
 			T.SkinDropDownBox(frame, 165)
 		end
 	end
+
+	_G["AudioOptionsVoicePanelPushToTalkSound"]:ClearAllPoints()
+	_G["AudioOptionsVoicePanelPushToTalkSound"]:Point("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", -1, -1)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
