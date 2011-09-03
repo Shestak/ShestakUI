@@ -80,7 +80,7 @@ local function AddTargetedBy()
 			GameTooltip:AddLine(" ", nil, nil, nil, 1)
 			local line = _G["GameTooltipTextLeft"..GameTooltip:NumLines()]
 			if not line then return end
-			line:SetFormattedText(L_TOOLTIP_WHO_TARGET.." (|cffffffff%d|r): %s",(#targetedList + 1) / 3, table.concat(targetedList))
+			line:SetFormattedText(L_TOOLTIP_WHO_TARGET.." (|cffffffff%d|r): %s", (#targetedList + 1) / 3, table.concat(targetedList))
 			wipe(targetedList)
 		end
 	end
@@ -152,27 +152,23 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 
 	if C.tooltip.health_value == true then
 		GameTooltipStatusBar:SetScript("OnValueChanged", function(self, value)
-		if not value then
-			return
-		end
-		local min, max = self:GetMinMaxValues()
-		if (value < min) or (value > max) then
-			return
-		end
-		self:SetStatusBarColor(0, 1, 0)
-		local unit  = select(2, GameTooltip:GetUnit())
-		if unit then
-			min, max = UnitHealth(unit), UnitHealthMax(unit)
-			if not self.text then
-				self.text = self:CreateFontString(nil, "OVERLAY", "Tooltip_Med")
-				self.text:Point("CENTER", GameTooltipStatusBar, 0, 1.5)
-				self.text:SetShadowColor(0, 0, 0, 1)
-				self.text:SetShadowOffset(1, -1)
+			if not value then return end
+			local min, max = self:GetMinMaxValues()
+			if (value < min) or (value > max) then return end
+			self:SetStatusBarColor(0, 1, 0)
+			local unit  = select(2, GameTooltip:GetUnit())
+			if unit then
+				min, max = UnitHealth(unit), UnitHealthMax(unit)
+				if not self.text then
+					self.text = self:CreateFontString(nil, "OVERLAY", "Tooltip_Med")
+					self.text:Point("CENTER", GameTooltipStatusBar, 0, 1.5)
+					self.text:SetShadowColor(0, 0, 0, 1)
+					self.text:SetShadowOffset(1, -1)
+				end
+				self.text:Show()
+				local hp = T.ShortValue(min).." / "..T.ShortValue(max)
+				self.text:SetText(hp)
 			end
-			self.text:Show()
-			local hp = T.ShortValue(min).." / "..T.ShortValue(max)
-			self.text:SetText(hp)
-		end
 		end)
 	end
 
@@ -216,14 +212,14 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			local n = GetGuildInfo(unit) and 3 or 2
 			--  thx TipTac for the fix above with color blind enabled
 			if GetCVar("colorblindMode") == "1" then n = n + 1 end
-			_G["GameTooltipTextLeft"..n]:SetFormattedText("|cff%02x%02x%02x%s|r %s", levelColor.r*255, levelColor.g*255, levelColor.b*255, level, race)
+			_G["GameTooltipTextLeft"..n]:SetFormattedText("|cff%02x%02x%02x%s|r %s", levelColor.r * 255, levelColor.g * 255, levelColor.b * 255, level, race)
 		else
 			for i = 2, lines do
 				local line = _G["GameTooltipTextLeft"..i]
 				if not line or not line:GetText() then return end -- damn QuestHelper!
 				if (level and line:GetText():find("^"..LEVEL)) or (creatureType and line:GetText():find("^"..creatureType)) then
 					local r, g, b = GameTooltip_UnitColor(unit)
-					line:SetFormattedText("|cff%02x%02x%02x%s%s|r %s", levelColor.r*255, levelColor.g*255, levelColor.b*255, level, classification, creatureType or "")
+					line:SetFormattedText("|cff%02x%02x%02x%s%s|r %s", levelColor.r * 255, levelColor.g * 255, levelColor.b * 255, level, classification, creatureType or "")
 					break
 				end
 			end

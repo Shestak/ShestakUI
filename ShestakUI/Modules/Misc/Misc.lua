@@ -151,7 +151,7 @@ strip.model = DressUpModel
 strip:RegisterEvent("AUCTION_HOUSE_SHOW")
 strip:RegisterEvent("AUCTION_HOUSE_CLOSED")
 
-strip:SetScript("OnEvent",function(this)
+strip:SetScript("OnEvent", function(this)
 	if AuctionFrame:IsVisible() and this.model ~= AuctionDressUpModel then
 		this:SetParent(AuctionDressUpModel)
 		this:ClearAllPoints()

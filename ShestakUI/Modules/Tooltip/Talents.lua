@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not (C.tooltip.enable == true and C.tooltip.talents == true) then return end
+if C.tooltip.enable ~= true or C.tooltip.talents ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Target Talents(TipTacTalents by Aezay)
@@ -55,7 +55,7 @@ local function GatherTalents(isInspect)
 	elseif gtt:GetUnit() then
 		for i = 2, gtt:NumLines() do
 			if (_G["GameTooltipTextLeft"..i]:GetText() or ""):match("^"..TALENTS_PREFIX) then
-				_G["GameTooltipTextLeft"..i]:SetFormattedText("%s%s",TALENTS_PREFIX,current.format)
+				_G["GameTooltipTextLeft"..i]:SetFormattedText("%s%s", TALENTS_PREFIX, current.format)
 				if not gtt.fadeOut then
 					gtt:Show()
 				end
@@ -104,7 +104,7 @@ ttt:SetScript("OnUpdate", function(self, elapsed)
 			if InspectFrame then
 				InspectFrame.unit = "player"
 			end
-			NotifyInspect(current.unit);
+			NotifyInspect(current.unit)
 		end
 	end
 end)

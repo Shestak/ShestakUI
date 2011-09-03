@@ -15,17 +15,8 @@ T.realm = GetRealmName()
 T.level = UnitLevel("player")
 T.color = RAID_CLASS_COLORS[T.class]
 
-if T.name == "Черешок" 
-or T.name == "Вершок"
-or T.name == "Вещмешок" 
-or T.name == "Гребешок" 
-or T.name == "Кулешок" 
-or T.name == "Лапушок" 
-or T.name == "Обушок" 
-or T.name == "Ремешок"
-or T.name == "Шестак"
-or T.name == "Торгашок"
-or T.name == "Аазмантус"
-or T.name == "Дефляция" then
+if T.name == "Черешок" or T.name == "Вершок" or T.name == "Вещмешок" or T.name == "Гребешок" or T.name == "Кулешок"
+or T.name == "Лапушок" or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Шестак" or T.name == "Торгашок"
+or T.name == "Аазмантус" or T.name == "Дефляция" then
 	T.author = true
 end

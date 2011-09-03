@@ -190,7 +190,7 @@ T.CheckForKnownTalent = function(spellid)
 	for t = 1, num_tabs do
 		local num_talents = GetNumTalents(t)
 		for i = 1, num_talents do
-			local name_talent, _, _, _, current_rank = GetTalentInfo(t,i)
+			local name_talent, _, _, _, current_rank = GetTalentInfo(t, i)
 			if name_talent and name_talent == wanted_name then
 				if current_rank and current_rank > 0 then
 					return true
@@ -752,7 +752,7 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 			end
 		end
 		if C.raidframe.alpha_health == true then
-			if (min / max > 0.95) then
+			if min / max > 0.95 then
 				health:SetAlpha(0.6)
 				power:SetAlpha(0.6)
 				border:SetAlpha(0.6)
@@ -901,7 +901,7 @@ T.UpdateDruidMana = function(self)
 	if num ~= 0 then
 		local min = UnitPower("player", 0)
 		local max = UnitPowerMax("player", 0)
-			
+
 		local percMana = min / max * 100
 		if percMana <= 20 then
 			self.FlashInfo.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
@@ -1012,10 +1012,10 @@ T.UpdateEclipse = function(self, login)
 
 	if eb:IsShown() then
 		txt:Show()
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", T.Scale(2), T.Scale(19)) end
+		if self.Debuffs then self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 	else
 		txt:Hide()
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", T.Scale(2), T.Scale(5)) end
+		if self.Debuffs then self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 	end
 end
 

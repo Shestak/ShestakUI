@@ -1,26 +1,19 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not (C.tooltip.enable == true and C.tooltip.average_lvl == true) then return end
+if C.tooltip.enable ~= true or C.tooltip.average_lvl ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Average item level(AiL by havoc74)
 ----------------------------------------------------------------------------------------
-local MINCOLOR = 0.5
-local COLORINC = 0.2
-local INCMOD = 0.5
-local MinIL = 284
-local MaxIL = 372
+local MINCOLOR, COLORINC, INCMOD, MinIL, MaxIL = 0.5, 0.2, 0.5, 284, 372
 
 local slotName = {
-	"HeadSlot",	"NeckSlot",	"ShoulderSlot",	"BackSlot",	"ChestSlot", "WristSlot", 
+	"HeadSlot", "NeckSlot", "ShoulderSlot", "BackSlot", "ChestSlot", "WristSlot",
 	"HandsSlot", "WaistSlot", "LegsSlot", "FeetSlot", "Finger0Slot", "Finger1Slot",
-	"Trinket0Slot",	"Trinket1Slot",	"MainHandSlot",	"SecondaryHandSlot", "RangedSlot", "AmmoSlot"
+	"Trinket0Slot", "Trinket1Slot", "MainHandSlot", "SecondaryHandSlot", "RangedSlot", "AmmoSlot"
 }
 
 local function GetAiL(unit)
-	local i, total, slot, itn
-	i = 0
-	total = 0
-	itn = 0
+	local i, total, slot, itn = 0, 0, nil, 0
 	local sName, sLink, iRarity, iLevel, iMinLevel, sType, sSubType, iStackCount
 
 	for i in pairs(slotName) do
@@ -45,7 +38,7 @@ local function GetAiLColor(ail)
 		gb = r
 	else
 		r = MINCOLOR + ((ail / MaxIL) * INCMOD)
-		gb = 1.0 - ((ail / MaxIL) * INCMOD)
+		gb = 1 - ((ail / MaxIL) * INCMOD)
 	end
 
 	if r < MINCOLOR then

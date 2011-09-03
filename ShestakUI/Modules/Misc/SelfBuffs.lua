@@ -48,11 +48,11 @@ local function OnEvent(self, event, arg1, arg2)
 				self:RegisterEvent("PLAYER_REGEN_ENABLED")
 				self:RegisterEvent("PLAYER_REGEN_DISABLED")
 			end
-			
+
 			if (group.instance and group.instance == true) or (group.pvp and group.pvp == true) then
 				self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 			end
-			
+
 			if group.role and group.role == true then
 				self:RegisterEvent("UNIT_INVENTORY_CHANGED")
 			end
@@ -69,7 +69,7 @@ local function OnEvent(self, event, arg1, arg2)
 			if hasOffHandEnchant == nil then
 				self.icon:SetTexture(GetInventoryItemTexture("player", 17))
 			end
-			
+
 			if hasMainHandEnchant == nil then
 				self.icon:SetTexture(GetInventoryItemTexture("player", 16))
 			end

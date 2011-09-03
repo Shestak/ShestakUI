@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not (C.tooltip.enable == true and C.tooltip.spell_id == true) then return end
+if C.tooltip.enable ~= true or C.tooltip.spell_id ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Spell/Item IDs(idTip by silverwind)
@@ -16,17 +16,17 @@ local function addLine(self, id, isItem)
 	self:Show()
 end
 
-hooksecurefunc(GameTooltip, "SetUnitBuff", function(self,...)
+hooksecurefunc(GameTooltip, "SetUnitBuff", function(self, ...)
 	local id = select(11, UnitBuff(...))
 	if id then addLine(self, id) end
 end)
 
-hooksecurefunc(GameTooltip, "SetUnitDebuff", function(self,...)
+hooksecurefunc(GameTooltip, "SetUnitDebuff", function(self, ...)
 	local id = select(11, UnitDebuff(...))
 	if id then addLine(self, id) end
 end)
 
-hooksecurefunc(GameTooltip, "SetUnitAura", function(self,...)
+hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
 	local id = select(11, UnitAura(...))
 	if id then addLine(self, id) end
 end)
@@ -35,7 +35,7 @@ GameTooltip:HookScript("OnTooltipSetSpell", function(self)
 	local id = select(3, self:GetSpell())
 	if id then addLine(self, id) end
 end)
-	
+
 hooksecurefunc("SetItemRef", function(link, ...)
 	local id = tonumber(link:match("spell:(%d+)"))
 	if id then addLine(ItemRefTooltip, id) end

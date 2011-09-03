@@ -115,7 +115,7 @@ local MarkTexture = CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMar
 MarkTexture:SetTexture("Interface\\RaidFrame\\Raid-WorldPing")
 MarkTexture:Point("CENTER", 0, -1)
 
---Raid Control Panel
+-- Raid Control Panel
 CreateButton("RaidControlButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RoleCheckButton:GetWidth(), 18, "TOPLEFT", ReadyCheckButton, "BOTTOMLEFT", 0, -5, RAID_CONTROL, nil)
 RaidControlButton:SetScript("OnMouseUp", function(self)
 	ToggleFriendsFrame(4)
