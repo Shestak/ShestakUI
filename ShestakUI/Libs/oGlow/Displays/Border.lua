@@ -33,8 +33,8 @@ local createBorder = function(self, point)
 				edgeSize = 1,
 			})
 
-			bc:SetPoint("TOPLEFT", point or self, 0, 0)
-			bc:SetPoint("BOTTOMRIGHT", point or self, 0, 0)
+			bc:SetPoint("TOPLEFT", 0, 0)
+			bc:SetPoint("BOTTOMRIGHT", 0, 0)
 		else
 			if(not self:IsObjectType'Frame') then
 				bc = self:GetParent():CreateTexture(nil, 'OVERLAY')
@@ -65,6 +65,9 @@ local borderDisplay = function(frame, color)
 		if(rgb) then
 			if C.skins.blizzard_frames == true then
 				bc:SetBackdropBorderColor(rgb[1], rgb[2], rgb[3])
+				if bc.backdrop then
+					bc.backdrop:SetBackdropBorderColor(rgb[1], rgb[2], rgb[3])
+				end
 			else
 				bc:SetVertexColor(rgb[1], rgb[2], rgb[3])
 			end
