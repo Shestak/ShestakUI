@@ -375,34 +375,4 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["MacOptionsFrameDefaults"]:Width(96)
 		_G["MacOptionsFrameDefaults"]:Height(22)
 	end
-
-	-- DBM-GUI Frame
-	if addon == "DBM-GUI" then
-		_G["DBM_GUI_OptionsFrame"]:SetTemplate("Transparent")
-		_G["DBM_GUI_OptionsFramePanelContainer"]:SetTemplate("Overlay")
-
-		_G["DBM_GUI_OptionsFrameTab1"]:ClearAllPoints()
-		_G["DBM_GUI_OptionsFrameTab1"]:Point("TOPLEFT", _G["DBM_GUI_OptionsFrameBossMods"], "TOPLEFT", 10, 27)
-		_G["DBM_GUI_OptionsFrameTab2"]:ClearAllPoints()
-		_G["DBM_GUI_OptionsFrameTab2"]:Point("TOPLEFT", _G["DBM_GUI_OptionsFrameTab1"], "TOPRIGHT", 6, 0)
-
-		_G["DBM_GUI_OptionsFrameBossMods"]:HookScript("OnShow", function(self) self:SetTemplate("Overlay") end)
-		_G["DBM_GUI_OptionsFrameDBMOptions"]:HookScript("OnShow", function(self) self:SetTemplate("Overlay") end)
-		_G["DBM_GUI_OptionsFrameHeader"]:SetTexture("")
-		_G["DBM_GUI_OptionsFrameHeader"]:ClearAllPoints()
-		_G["DBM_GUI_OptionsFrameHeader"]:Point("TOP", DBM_GUI_OptionsFrame, 0, 7)
-
-		local dbmbskins = {
-			"DBM_GUI_OptionsFrameOkay",
-			"DBM_GUI_OptionsFrameTab1",
-			"DBM_GUI_OptionsFrameTab2",
-		}
-
-		for i = 1, getn(dbmbskins) do
-			local buttons = _G[dbmbskins[i]]
-			if buttons then
-				buttons:SkinButton()
-			end
-		end
-	end
 end)
