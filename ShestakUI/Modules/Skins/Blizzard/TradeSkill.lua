@@ -64,20 +64,27 @@ local function LoadSkin()
 				icon.backdrop = CreateFrame("Frame", nil, button)
 				icon.backdrop:SetFrameLevel(button:GetFrameLevel() - 1)
 				icon.backdrop:SetTemplate("Default")
-				icon.backdrop:Point("TOPLEFT", icon, "TOPLEFT", -2, 2)
-				icon.backdrop:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+				icon.backdrop:Point("TOPLEFT", button, "TOPLEFT", 1, -1)
+				icon.backdrop:Point("BOTTOMRIGHT", button, "BOTTOMLEFT", 42, 1)
 			end
 			icon:SetParent(icon.backdrop)
+			icon:Point("TOPLEFT", icon.backdrop, "TOPLEFT", 2, -2)
+			icon:Point("BOTTOMRIGHT", icon.backdrop, "BOTTOMRIGHT", -2, 2)
 			count:SetParent(icon.backdrop)
 			count:SetFont(C.media.normal_font, 12, "OUTLINE")
+			count:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 			count:SetDrawLayer("OVERLAY")
 
-			if i > 2 and once == false then
+			--[[if i > 2 and once == false then
 				local point, anchoredto, point2, x, y = button:GetPoint()
 				button:ClearAllPoints()
-				button:Point(point, anchoredto, point2, x, y - 3)
+				if i == 5 then
+					button:Point(point, anchoredto, point2, x, y - 10)
+				else
+					button:Point(point, anchoredto, point2, x, y - 3)
+				end
 				once = true
-			end
+			end]]
 
 			_G["TradeSkillReagent"..i.."NameFrame"]:Kill()
 		end

@@ -11,8 +11,8 @@
 	<Script file="Pipes\Merchant.lua" />
 	<Script file="Pipes\Mail.lua" />
 	<Script file="Pipes\CharFlyout.lua" />
-	
+
 	<Script file="Displays\Border.lua" />
-	
+
 	<Script file="Filters\Quality.lua" />
 </Ui>
