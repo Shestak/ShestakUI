@@ -30,7 +30,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						local name = _G[frame:GetName().."BarName"]
 						local timer = _G[frame:GetName().."BarTimer"]
 
-						if (icon1.overlay) then
+						if icon1.overlay then
 							icon1.overlay = _G[icon1.overlay:GetName()]
 						else
 							icon1.overlay = CreateFrame("Frame", "$parentIcon1Overlay", tbar)
@@ -41,7 +41,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							icon1.overlay:SetTemplate("Transparent")
 						end
 
-						if (icon2.overlay) then
+						if icon2.overlay then
 							icon2.overlay = _G[icon2.overlay:GetName()]
 						else
 							icon2.overlay = CreateFrame("Frame", "$parentIcon2Overlay", tbar)
@@ -166,7 +166,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				local timer = _G[bar:GetName().."BarTimer"]
 				local prev = _G[format("DBM_BossHealth_Bar_%d", count-1)]
 
-				if (count == 1) then
+				if count == 1 then
 					local _, anch, _ , _, _ = bar:GetPoint()
 					bar:ClearAllPoints()
 					if DBM_SavedOptions.HealthFrameGrowUp then
