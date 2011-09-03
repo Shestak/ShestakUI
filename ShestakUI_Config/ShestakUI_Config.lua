@@ -869,6 +869,8 @@ function CreateUIConfig()
 		if IsAddOnLoaded("Aurora") then
 			local F = unpack(Aurora)
 			F.ReskinCheck(button)
+		else
+			T.SkinCheckBox(button)
 		end
 
 		local label = UIConfigAllCharacters:CreateFontString(nil, "OVERLAY", "GameFontNormal")

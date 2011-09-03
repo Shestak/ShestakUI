@@ -377,3 +377,4 @@ SlashCmdList.FSTACK = function()
 	T.RunSlashCmd("/fstack")
 end
 SLASH_FSTACK1 = "/аыефсл"
+SLASH_FSTACK2 = "/fs"
