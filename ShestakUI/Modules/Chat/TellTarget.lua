@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.chat.enable == true then return end
+if C.chat.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Tell Target
@@ -23,8 +23,6 @@ for i = 1, NUM_CHAT_WINDOWS do
 end
 
 -- Slash command for macro's
-SLASH_TELLTARGET1 = "/tt"
-SLASH_TELLTARGET2 = "/telltarget"
 SlashCmdList.TELLTARGET = function(msg)
 	local unitname, realm
 	unitname, realm = UnitName("target")
@@ -35,3 +33,7 @@ SlashCmdList.TELLTARGET = function(msg)
 	end
 	SendChatMessage(msg, "WHISPER", nil, unitname)
 end
+
+SLASH_TELLTARGET1 = "/tt"
+SLASH_TELLTARGET2 = "/telltarget"
+SLASH_TELLTARGET3 = "/ее"

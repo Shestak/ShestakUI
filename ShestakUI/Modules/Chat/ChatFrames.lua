@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.chat.enable == true then return end
+if C.chat.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Style chat frame(by Tukz)
@@ -245,8 +245,7 @@ end
 
 UIChat:RegisterEvent("ADDON_LOADED")
 UIChat:RegisterEvent("PLAYER_ENTERING_WORLD")
-UIChat:SetScript("OnEvent", function(self, event, ...)
-	local addon = ...
+UIChat:SetScript("OnEvent", function(self, event, addon)
 	if event == "ADDON_LOADED" then
 		if addon == "Blizzard_CombatLog" then
 			self:UnregisterEvent("ADDON_LOADED")

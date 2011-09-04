@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.chat.enable == true then return end
+if C.chat.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on Fane(by Haste)
@@ -56,7 +56,6 @@ local faneifyTab = function(frame, sel)
 	if not frame.Fane then
 		frame:HookScript("OnEnter", OnEnter)
 		frame:HookScript("OnLeave", OnLeave)
-
 		frame:SetAlpha(1)
 
 		if i ~= 2 then

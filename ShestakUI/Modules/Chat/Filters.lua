@@ -70,7 +70,7 @@ if C.chat.spam == true then
 	-- Gold/portals spam filter
 	local SpamList = T.ChatSpamList
 	local function TRADE_FILTER(self, event, arg1, arg2)
-		if (SpamList and SpamList[1]) then
+		if SpamList and SpamList[1] then
 			for i, SpamList in pairs(SpamList) do
 				if arg2 == T.name then return end
 				if arg1:lower():match(SpamList) then

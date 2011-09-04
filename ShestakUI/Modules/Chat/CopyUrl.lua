@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.chat.enable == true then return end
+if C.chat.enable ~= true then return end
 
 local SetItemRef_orig = SetItemRef
 function ReURL_SetItemRef(link, text, button, chatFrame)
@@ -25,11 +25,11 @@ function ReURL_AddLinkSyntax(chatstring)
 			extraspace = true
 			chatstring = " "..chatstring
 		end
-		chatstring = gsub (chatstring, " www%.([_A-Za-z0-9-]+)%.(%S+)%s?", ReURL_Link("www.%1.%2"))
-		chatstring = gsub (chatstring, " (%a+)://(%S+)%s?", ReURL_Link("%1://%2"))
-		chatstring = gsub (chatstring, " ([_A-Za-z0-9-%.]+)@([_A-Za-z0-9-]+)(%.+)([_A-Za-z0-9-%.]+)%s?", ReURL_Link("%1@%2%3%4"))
-		chatstring = gsub (chatstring, " (%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?):(%d%d?%d?%d?%d?)%s?", ReURL_Link("%1.%2.%3.%4:%5"))
-		chatstring = gsub (chatstring, " (%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?)%s?", ReURL_Link("%1.%2.%3.%4"))
+		chatstring = gsub(chatstring, " www%.([_A-Za-z0-9-]+)%.(%S+)%s?", ReURL_Link("www.%1.%2"))
+		chatstring = gsub(chatstring, " (%a+)://(%S+)%s?", ReURL_Link("%1://%2"))
+		chatstring = gsub(chatstring, " ([_A-Za-z0-9-%.]+)@([_A-Za-z0-9-]+)(%.+)([_A-Za-z0-9-%.]+)%s?", ReURL_Link("%1@%2%3%4"))
+		chatstring = gsub(chatstring, " (%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?):(%d%d?%d?%d?%d?)%s?", ReURL_Link("%1.%2.%3.%4:%5"))
+		chatstring = gsub(chatstring, " (%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?)%.(%d%d?%d?)%s?", ReURL_Link("%1.%2.%3.%4"))
 		if extraspace then
 			chatstring = strsub(chatstring, 2)
 		end
@@ -37,24 +37,8 @@ function ReURL_AddLinkSyntax(chatstring)
 	return chatstring
 end
 
-REURL_COLOR = "00FF00"
-ReURL_Brackets = true
-ReUR_CustomColor = true
-
 function ReURL_Link(url)
-	if ReUR_CustomColor then
-		if ReURL_Brackets then
-			url = " |cff"..REURL_COLOR.."|Hurl:"..url.."|h["..url.."]|h|r "
-		else
-			url = " |cff"..REURL_COLOR.."|Hurl:"..url.."|h"..url.."|h|r "
-		end
-	else
-		if ReURL_Brackets then
-			url = " |Hurl:"..url.."|h["..url.."]|h "
-		else
-			url = " |Hurl:"..url.."|h"..url.."|h "
-		end
-	end
+	url = " |cff00FF00|Hurl:"..url.."|h["..url.."]|h|r "
 	return url
 end
 

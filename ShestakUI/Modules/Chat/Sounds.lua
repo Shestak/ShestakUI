@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not (C.chat.enable == true and C.chat.whisp_sound == true) then return end
+if C.chat.enable ~= true or C.chat.whisp_sound ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Play sound files system(by Tukz)

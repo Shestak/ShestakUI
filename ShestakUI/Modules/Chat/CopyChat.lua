@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.chat.enable == true then return end
+if C.chat.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Copy Chat
@@ -48,7 +48,6 @@ local function CreatCopyFrame()
 end
 
 local function GetLines(...)
-	-- Grab all those lines
 	local ct = 1
 	for i = select("#", ...), 1, -1 do
 		local region = select(i, ...)
