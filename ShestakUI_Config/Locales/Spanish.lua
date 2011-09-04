@@ -29,19 +29,19 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encim
 L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
 L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
 L_GUI_MISC_ACH_SCREENS = "Tomar una captura de pantalla cuando consigas un logro"
-L_GUI_MISC_PROFESSION_TABS = "Professions tabs on tradeskill and trade frames" -- Needs review
+L_GUI_MISC_PROFESSION_TABS = "Pestanas de profesiones de artesania y marcos de comercio"
 
 -- Announcements options
-L_GUI_ANNOUNCEMENTS = "Announcements" -- Needs review
-L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in chat when arena enemy is drinking" -- Needs review
+L_GUI_ANNOUNCEMENTS = "Anuncios"
+L_GUI_ANNOUNCEMENTS_DRINKING = "Anunciar en el chat cuando un enemigo en la arena beba"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Anunciar en el grupo/banda cuando interrumpes"
-L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell" -- Needs review
-L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members" -- Needs review
+L_GUI_ANNOUNCEMENTS_SPELLS = "Anunciar en grupo/banda cuando lanzas el mismo hechizo que otro"
+L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Comprueba los lanzamientos de hechizo de todos los miembros"
 
 -- Skins options
 L_GUI_SKINS = "Estilización"
-L_GUI_SKINS_BLIZZARD = "Enable styling Blizzard frames" -- Needs review
-L_GUI_SKINS_MINIMAP_BUTTONS = "Enable styling addons icons on minimap" -- Needs review
+L_GUI_SKINS_BLIZZARD = "Activar estilizado de marcos de Blizzard"
+L_GUI_SKINS_MINIMAP_BUTTONS = "Activar estilizado de los iconos de los addons en el minimapa"
 L_GUI_SKINS_CLCR = "Activar estilo del CLCRet"
 L_GUI_SKINS_BW = "Activar estilo del BigWigs"
 L_GUI_SKINS_DBM = "Activar estilo del DBM"
@@ -59,7 +59,7 @@ L_GUI_COMBATTEXT_DAMAGE_STYLE = "Cambiar la fuente de daño/sanación por defect
 L_GUI_COMBATTEXT_DAMAGE = "Mostrar daño saliente en su propio marco"
 L_GUI_COMBATTEXT_HEALING = "Mostrar sanación saliente en su propio marco"
 L_GUI_COMBATTEXT_HOTS = "Mostrar efectos de cura periódicos en el marco de curas"
-L_GUI_COMBATTEXT_OVERHEALING = "Show outgoing overhealing" -- Needs review
+L_GUI_COMBATTEXT_OVERHEALING = "Mostrar la sobrecuracion saliente"
 L_GUI_COMBATTEXT_PET_DAMAGE = "Mostrar el daño de tu mascota"
 L_GUI_COMBATTEXT_DOT_DAMAGE = "Mostrar el daño de tus dots (Daño periodico)"
 L_GUI_COMBATTEXT_DAMAGE_COLOR = "Mostrar números de daño dependiendo de la escuela de magia"
@@ -124,7 +124,7 @@ L_GUI_THREAT_ENABLE = "Activar Barras de Amenaza"
 L_GUI_THREAT_HEIGHT = "Altura de las barras de amenaza"
 L_GUI_THREAT_WIDTH = "Anchura de las barras de amenaza"
 L_GUI_THREAT_ROWS = "Número de barras de amenaza"
-L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid" -- Needs review
+L_GUI_THREAT_HIDE_SOLO = "Mostrar solo en grupo/raid"
 
 -- Tooltip options
 L_GUI_TOOLTIP = "Descripciones"
@@ -144,7 +144,7 @@ L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Experiencia JcJ del jugador en Arenas en la de
 L_GUI_TOOLTIP_SPELL_ID = "ID del hechizo"
 L_GUI_TOOLTIP_RAID_ICON = "Icono de banda"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Muestra quien está marcando la unidad que está en tu grupo/banda"
-L_GUI_TOOLTIP_ITEM_COUNT = "Item count" -- Needs review
+L_GUI_TOOLTIP_ITEM_COUNT = "Contador del objeto"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activar chat"
@@ -196,8 +196,8 @@ L_GUI_NAMEPLATE_HEALTH = "Valor de la vida en números"
 L_GUI_NAMEPLATE_CASTBAR = "Mostrar barra de lanzamiento en la placa de nombre"
 L_GUI_NAMEPLATE_HEIGHT = "Altura de la placa de nombre"
 L_GUI_NAMEPLATE_WIDTH = "Anchura de la placa de nombre"
-L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height for selected nameplate" -- Needs review
-L_GUI_NAMEPLATE_AD_WIDTH = "Additional width for selected nameplate" -- Needs review
+L_GUI_NAMEPLATE_AD_HEIGHT = "Altura adicional para la placa de nombre seleccionada"
+L_GUI_NAMEPLATE_AD_WIDTH = "Anchura adicional para la placa de nombre seleccionada"
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostrar nombre del hechizo en la barra de lanzamiento"
 L_GUI_NAMEPLATE_THREAT = "Activar visor de amenaza, cambia automáticamente según tu rol"
 L_GUI_NAMEPLATE_CLASS_ICON = "Iconos de clase en JcJ"
@@ -205,19 +205,19 @@ L_GUI_NAMEPLATE_NAME_ABBREV = "Mostrar los nombres abreviados"
 L_GUI_NAMEPLATE_GOOD_COLOR = "Color de alta amenaza, varía dependiendo si eres tanque o dps/sanador"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Color de perdiendo/ganando amenaza"
 L_GUI_NAMEPLATE_BAD_COLOR = "Color de baja amenaza, varía dependiendo si eres tanque o dps/sanador"
-L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned off)" -- Needs review
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Mostrar perjuicios (Nombres abreviados debe ser desactivado)"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Activar barras de acción"
 L_GUI_ACTIONBAR_HOTKEY = "Mostrar texto los atajos de teclado"
-L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons" -- Needs review
+L_GUI_ACTIONBAR_MACRO = "Mostrar nombre de la macro en los botones"
 L_GUI_ACTIONBAR_GRID = "Mostrar botones de la barra de acción vacíos"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Tamaño de los botones"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacio entre botones"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Dividir la quinta barra en dos de 6 botones cada una"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Activar borde por color de clase para los botones"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Activar modo cambiar"
-L_GUI_ACTIONBAR_LIGHT_MACRO = "Light macro button when proc spell" -- Needs review
+L_GUI_ACTIONBAR_LIGHT_MACRO = "Iluminar el boton de la macro cuando sea un hechizo de activacion"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Número de barras de acción abajo (1, 2 o 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Número de barras de acción en la derecha (0, 1, 2 o 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barras de la derecha se muestran al pasar el ratón"
@@ -238,7 +238,7 @@ L_GUI_AURA_FOCUS_DEBUFFS = "Perjuicios en el marco del foco"
 L_GUI_AURA_FOT_DEBUFFS = "Perjuicios en el marco del objetivo del foco"
 L_GUI_AURA_PET_DEBUFFS = "Perjuicios en el marco de la mascota"
 L_GUI_AURA_TOT_DEBUFFS = "Perjuicios en el marco del objetivo del objetivo"
-L_GUI_AURA_BOSS_BUFFS = "Buffs on boss frame" -- Needs review
+L_GUI_AURA_BOSS_BUFFS = "Beneficios en el marco del jefe"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Solo tus perjuicios en el marco del objetivo"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color de los perjuicios por tipo"
 L_GUI_AURA_CAST_BY = "Mostrar quién lanza un beneficio/perjuicio en su descripción"
@@ -266,7 +266,7 @@ L_GUI_UF_ICONS_PVP = "Texto JcJ (iconos no) al pasar el ratón sobre los marcos 
 L_GUI_UF_ICONS_COMBAT = "Icono de combate"
 L_GUI_UF_ICONS_RESTING = "Icono de descansado para pjs con nivel bajo"
 L_GUI_UF_ICONS_COMBO_POINT = "Iconos de puntos de combo de Pícaros|Druidas"
-L_GUI_UF_ICONS_COMBO_POINT_NEW = "New style for combo points" -- Needs review
+L_GUI_UF_ICONS_COMBO_POINT_NEW = "Nuevo estilo para los puntos de combo"
 L_GUI_UF_PORTRAIT_ENABLE = "Activar retratos del jugador/objetivo"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Borde de color de clase para los retratos"
 L_GUI_UF_PORTRAIT_HEIGHT = "Altura del retrato"
@@ -308,7 +308,7 @@ L_GUI_UF_ICONS_RAID_MARK = "Marcas de banda"
 L_GUI_UF_ICONS_READY_CHECK = "Iconos de comprobación"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Remarcar textura de desventajas + icono"
 L_GUI_UF_PLUGINS_AURA_WATCH = "*BANDA* Ver las auras"
-L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons" -- Needs review
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Temporizador en los iconos de perjuicios de la banda"
 L_GUI_UF_PLUGINS_HEALCOMM = "Barra de sanación entrante"
 
 -- Panel options
