@@ -1065,7 +1065,7 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 	Castbar.channeling = false
 	if unit == "vehicle" then unit = "player" end
 
-	if unit == "player" and C.unitframe.castbar_latency == true then
+	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
 		local latency = GetTime() - (Castbar.castSent or 0)
 		latency = latency > Castbar.max and Castbar.max or latency
 		Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
@@ -1124,7 +1124,7 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 	Castbar.channeling = true
 	if unit == "vehicle" then unit = "player" end
 
-	if unit == "player" and C.unitframe.castbar_latency == true then
+	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
 		local latency = GetTime() - (Castbar.castSent or 0)
 		latency = latency > Castbar.max and Castbar.max or latency
 		Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
