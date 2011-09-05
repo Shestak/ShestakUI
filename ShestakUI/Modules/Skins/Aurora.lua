@@ -34,9 +34,6 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 		"aLoadFrame",
 		"AddonSets",
 		"BaudErrorFrame",
-		"aLoadScroll",
-		"BaudErrorFrameListScrollBox",
-		"BaudErrorFrameDetailScrollBox",
 	}
 
 	for i = 1, getn(frames) do
@@ -44,6 +41,19 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 		if frame then
 			F.CreateBD(frame)
 			F.CreateSD(frame)
+		end
+	end
+
+	local bd = {
+		"aLoadScroll",
+		"BaudErrorFrameListScrollBox",
+		"BaudErrorFrameDetailScrollBox",
+	}
+
+	for i = 1, getn(bd) do
+		local frame = _G[bd[i]]
+		if frame then
+			F.CreateBD(frame)
 		end
 	end
 

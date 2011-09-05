@@ -147,8 +147,15 @@ local makeList = function()
 			oldb = bf
 
 			local cb = _G[v.."_cb"] or CreateFrame("CheckButton", v.."_cb", bf, "OptionsCheckButtonTemplate")
-			cb:Width(16)
-			cb:Height(16)
+			if IsAddOnLoaded("Aurora") then
+				local F = unpack(Aurora)
+				F.ReskinCheck(cb)
+				cb:Width(22)
+				cb:Height(22)
+			else
+				cb:Width(16)
+				cb:Height(16)
+			end
 			cb:SetScript("OnClick", function()
 				local _, _, _, enabled = GetAddOnInfo(name)
 				if enabled then

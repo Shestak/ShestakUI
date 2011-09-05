@@ -729,7 +729,12 @@ function CreateUIConfig()
 				editbox:SetFontObject(GameFontHighlight)
 				editbox:SetPoint("TOPLEFT", 8, -(offset + 20))
 				editbox:SetText(value)
-				editbox:SetTemplate("Overlay")
+				if IsAddOnLoaded("Aurora") then
+					local F = unpack(Aurora)
+					F.CreateBD(editbox)
+				else
+					editbox:SetTemplate("Overlay")
+				end
 
 				local okbutton = CreateFrame("Button", nil, frame)
 				okbutton:SetHeight(editbox:GetHeight())
@@ -889,7 +894,6 @@ function CreateUIConfig()
 		if IsAddOnLoaded("Aurora") then
 			local F = unpack(Aurora)
 			F.CreateBD(sb)
-			F.CreateSD(sb)
 		else
 			sb:SetTemplate("Overlay")
 		end

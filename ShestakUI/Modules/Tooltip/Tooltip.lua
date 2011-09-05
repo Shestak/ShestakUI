@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.tooltip.enable == true then return end
+if C.tooltip.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on aTooltip(by ALZA)

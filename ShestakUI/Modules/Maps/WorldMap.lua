@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.map.enable == true then return end
+if C.map.enable ~= true or IsAddOnLoaded("Aurora") then return end
 
 ----------------------------------------------------------------------------------------
 --	WorldMap style(m_Map by Monolit)

@@ -76,6 +76,8 @@ local function LoadSkin()
 
 	T.SkinEditBox(CalendarCreateEventInviteEdit)
 	T.SkinEditBox(CalendarCreateEventTitleEdit)
+	CalendarCreateEventTitleEdit.backdrop:Point("TOPLEFT", -3, 1)
+	CalendarCreateEventTitleEdit.backdrop:Point("BOTTOMRIGHT", -3, -1)
 	T.SkinDropDownBox(CalendarCreateEventTypeDropDown, 120)
 
 	CalendarCreateEventDescriptionContainer:StripTextures()

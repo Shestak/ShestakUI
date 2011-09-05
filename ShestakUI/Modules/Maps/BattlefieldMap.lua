@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.map.bg_map_stylization ~= true or IsAddOnLoaded("Capping") then return end
+if C.map.bg_map_stylization ~= true or IsAddOnLoaded("Capping") or IsAddOnLoaded("Aurora") then return end
 
 ----------------------------------------------------------------------------------------
 --	BattlefieldMinimap style
