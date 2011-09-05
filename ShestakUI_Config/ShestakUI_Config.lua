@@ -729,7 +729,7 @@ function CreateUIConfig()
 				editbox:SetFontObject(GameFontHighlight)
 				editbox:SetPoint("TOPLEFT", 8, -(offset + 20))
 				editbox:SetText(value)
-				editbox:SetTemplate("Transparent")
+				editbox:SetTemplate("Overlay")
 
 				local okbutton = CreateFrame("Button", nil, frame)
 				okbutton:SetHeight(editbox:GetHeight())

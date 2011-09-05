@@ -100,12 +100,15 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 				_G["StaticPopup"..i.."Button"..j]:SkinButton()
 			end
 			_G["StaticPopup"..i]:SetTemplate("Transparent")
-			_G["StaticPopup"..i.."EditBox"]:SetTemplate("Transparent")
-			_G["StaticPopup"..i.."EditBoxLeft"]:SetTexture(nil)
-			_G["StaticPopup"..i.."EditBoxMid"]:SetTexture(nil)
-			_G["StaticPopup"..i.."EditBoxRight"]:SetTexture(nil)
-			_G["StaticPopup"..i.."EditBox"]:Height(20)
-			_G["StaticPopup"..i.."EditBox"]:SetTextInsets(3, 0, 0, 0)
+			T.SkinEditBox(_G["StaticPopup"..i.."EditBox"])
+			T.SkinEditBox(_G["StaticPopup"..i.."MoneyInputFrameGold"])
+			T.SkinEditBox(_G["StaticPopup"..i.."MoneyInputFrameSilver"])
+			T.SkinEditBox(_G["StaticPopup"..i.."MoneyInputFrameCopper"])
+			_G["StaticPopup"..i.."EditBox"].backdrop:Point("TOPLEFT", -3, -6)
+			_G["StaticPopup"..i.."EditBox"].backdrop:Point("BOTTOMRIGHT", -3, 6)
+			_G["StaticPopup"..i.."MoneyInputFrameGold"].backdrop:Point("TOPLEFT", -3, 0)
+			_G["StaticPopup"..i.."MoneyInputFrameSilver"].backdrop:Point("TOPLEFT", -3, 0)
+			_G["StaticPopup"..i.."MoneyInputFrameCopper"].backdrop:Point("TOPLEFT", -3, 0)
 		end
 
 		-- Reskin Dropdown menu
