@@ -25,7 +25,7 @@ local function LoadSkin()
 	KeyBindingFrame.backdrop:Point("TOPLEFT", 0, 0)
 	KeyBindingFrame.backdrop:Point("BOTTOMRIGHT", -40, 10)
 
-	for i = 1, KEY_BINDINGS_DISPLAYED  do
+	for i = 1, KEY_BINDINGS_DISPLAYED do
 		local button1 = _G["KeyBindingFrameBinding"..i.."Key1Button"]
 		local button2 = _G["KeyBindingFrameBinding"..i.."Key2Button"]
 		button1:StripTextures(true)

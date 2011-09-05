@@ -110,7 +110,7 @@ L_BAG_RIGHT_CLICK_SEARCH = "點擊右鍵以搜尋物品"
 L_MAIL_STOPPED = "無法拾取, 背囊已滿."
 L_MAIL_COMPLETE = "完成."
 L_MAIL_NEED = "需要一個信箱."
-L_MAIL_MESSAGES =  "新郵件"
+L_MAIL_MESSAGES = "新郵件"
 
 -- Loot
 L_LOOT_RANDOM = "隨機玩家"

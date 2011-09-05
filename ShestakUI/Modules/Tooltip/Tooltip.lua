@@ -158,7 +158,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			local min, max = self:GetMinMaxValues()
 			if (value < min) or (value > max) then return end
 			self:SetStatusBarColor(0, 1, 0)
-			local unit  = select(2, GameTooltip:GetUnit())
+			local unit = select(2, GameTooltip:GetUnit())
 			if unit then
 				min, max = UnitHealth(unit), UnitHealthMax(unit)
 				if not self.text then
@@ -195,7 +195,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		end
 
 		if classification == "rareelite" then classification = " R+"
-		elseif classification == "rare"  then classification = " R"
+		elseif classification == "rare" then classification = " R"
 		elseif classification == "elite" then classification = "+"
 		else classification = "" end
 
@@ -212,7 +212,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			end
 
 			local n = GetGuildInfo(unit) and 3 or 2
-			--  thx TipTac for the fix above with color blind enabled
+			-- thx TipTac for the fix above with color blind enabled
 			if GetCVar("colorblindMode") == "1" then n = n + 1 end
 			_G["GameTooltipTextLeft"..n]:SetFormattedText("|cff%02x%02x%02x%s|r %s", levelColor.r * 255, levelColor.g * 255, levelColor.b * 255, level, race)
 		else

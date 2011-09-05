@@ -15,7 +15,7 @@ oUF.Tags["Threat"] = function(unit)
 end
 oUF.TagEvents["Threat"] = "UNIT_THREAT_LIST_UPDATE"
 
-oUF.Tags["DiffColor"]  = function(unit)
+oUF.Tags["DiffColor"] = function(unit)
 	local r, g, b
 	local level = UnitLevel(unit)
 	if level < 1 then

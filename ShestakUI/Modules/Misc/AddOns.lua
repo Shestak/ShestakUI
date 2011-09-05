@@ -197,7 +197,7 @@ makeList()
 SLASH_ALOAD1 = "/aload"
 SLASH_ALOAD2 = "/фдщфв"
 SlashCmdList.ALOAD = function(msg)
-   loadf:Show()
+	loadf:Show()
 end
 
 local showb = CreateFrame("Button", "GameMenuButtonAddonManager", GameMenuFrame, "GameMenuButtonTemplate")

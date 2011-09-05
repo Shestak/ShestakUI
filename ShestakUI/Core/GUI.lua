@@ -4,7 +4,7 @@ local T, C, L = unpack(select(2, ...))
 --	This Module loads new user settings if ShestakUI_Config is loaded
 ----------------------------------------------------------------------------------------
 local myPlayerRealm = GetCVar("realmName")
-local myPlayerName  = UnitName("player")
+local myPlayerName = UnitName("player")
 
 if not IsAddOnLoaded("ShestakUI_Config") then return end
 

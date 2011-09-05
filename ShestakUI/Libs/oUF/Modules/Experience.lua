@@ -106,8 +106,8 @@ local function Enable(self, unit)
 			experience:HookScript("OnEnter", SetTooltip)
 		end
 
-		if not experience:GetStatusBarTexture() then
-			experience:SetStatusBarTexture([=[Interface\TargetingFrame\UI-StatusBar]=])
+		if experience:IsObjectType("StatusBar") and not experience:GetStatusBarTexture() then
+			experience:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
 		end
 
 		return true

@@ -7,7 +7,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_talents ~= true then return
 local _, ns = ...
 local oUF = ns.oUF
 
-local spells =  {
+local spells = {
 	-- WARRIOR
 	[GetSpellInfo(12294)] = L_PLANNER_WARRIOR_1,		-- Mortal Strike
 	[GetSpellInfo(46924)] = L_PLANNER_WARRIOR_1,		-- Bladestorm

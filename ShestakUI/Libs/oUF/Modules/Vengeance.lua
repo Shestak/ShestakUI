@@ -17,7 +17,6 @@ local Update = function(self, event, unit)
 
 	if vb.PreUpdate then vb:PreUpdate(unit) end
 
-	-- check unit auras for vengeance
 	local hasAura = false
 	local i = 1
 	repeat
@@ -32,7 +31,6 @@ local Update = function(self, event, unit)
 	until not spellID
 
 	if hasAura then
-		-- get vengeance stack value
 		tooltip:SetOwner(UIParent, "ANCHOR_NONE")
 		tooltip:SetUnitAura(self.unit, i, "HELPFUL")
 		local text = VengeanceTooltipTextLeft2:GetText()
@@ -100,7 +98,7 @@ local Enable = function(self)
 		self:RegisterEvent("UNIT_AURA", Path)
 		self:RegisterEvent("UNIT_MAXHEALTH", Path)
 
-		if vb.Bar and not vb.Bar:GetStatusBarTexture() then
+		if vb.Bar:IsObjectType("StatusBar") and not vb.Bar:GetStatusBarTexture() then
 			vb.Bar:SetStatusBarTexture[[Interface\TargetingFrame\UI-StatusBar]]
 		end
 

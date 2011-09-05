@@ -7,7 +7,7 @@ local frame = CreateFrame("Frame", nil, CharacterFrame)
 
 local function RYGColorGradient(perc)
 	local relperc = perc*2 % 1
-	if perc <= 0 then       
+	if perc <= 0 then
 		return 1, 0, 0
 	elseif perc < 0.5 then
 		return 1, relperc, 0

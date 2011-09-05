@@ -110,7 +110,7 @@ L_BAG_RIGHT_CLICK_SEARCH = "Rechtsklick um zu suchen"
 L_MAIL_STOPPED = "Angehalten, Inventar ist voll."
 L_MAIL_COMPLETE = "Alles Fertig."
 L_MAIL_NEED = "Benötige einen Briefkasten."
-L_MAIL_MESSAGES =  "nachrichten"
+L_MAIL_MESSAGES = "nachrichten"
 
 -- Loot
 L_LOOT_RANDOM = "Zufälliger Spieler"

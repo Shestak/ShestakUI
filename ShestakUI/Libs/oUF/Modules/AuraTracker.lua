@@ -8,7 +8,7 @@ local _, ns = ...
 local oUF = ns.oUF
 
 local function Update(object, event, unit)
-	if object.unit ~= unit  then return end
+	if object.unit ~= unit then return end
 
 	local auraList = T.ArenaControl()
 	local priority = 0

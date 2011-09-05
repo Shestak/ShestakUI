@@ -2,7 +2,7 @@
 --	GUI for ShestakUI(by Fernir, Tukz and Tohveli)
 ----------------------------------------------------------------------------------------
 local myPlayerRealm = GetCVar("realmName")
-local myPlayerName  = UnitName("player")
+local myPlayerName = UnitName("player")
 
 local ALLOWED_GROUPS = {
 	["general"] = 1,

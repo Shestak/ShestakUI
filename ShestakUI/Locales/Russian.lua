@@ -110,7 +110,7 @@ L_BAG_RIGHT_CLICK_SEARCH = "ПКМ для поиска"
 L_MAIL_STOPPED = "Сбор почты приостановлен из-за заполненных сумок."
 L_MAIL_COMPLETE = "Сбор почты окончен."
 L_MAIL_NEED = "Нужен почтовый ящик."
-L_MAIL_MESSAGES =  "сообщений"
+L_MAIL_MESSAGES = "сообщений"
 
 -- Loot
 L_LOOT_RANDOM = "Случайному игроку"

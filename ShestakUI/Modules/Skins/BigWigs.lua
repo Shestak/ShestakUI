@@ -166,7 +166,7 @@ SlashCmdList.BWTEST = function(msg)
 	if(msg=="apply") then
 		SlashCmdList["BigWigs"]()
 		HideUIPanel(InterfaceOptionsFrame)
-		StaticPopup_Show("BW_TEST")        
+		StaticPopup_Show("BW_TEST")
 	elseif(msg=="test") then
 		SlashCmdList["BigWigs"]()
 		BigWigs.pluginCore.modules.Proximity.Test(BigWigs.pluginCore.modules.Proximity)

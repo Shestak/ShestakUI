@@ -63,7 +63,7 @@ local function CheckSpec(self, event, levels)
 end
 
 local function Update(object, event, unit)
-	if object.unit ~= unit  then return end
+	if object.unit ~= unit then return end
 	local debuffType, texture = GetDebuffType(unit, object.DebuffHighlightFilter)
 	if debuffType then
 		local color = DebuffTypeColor[debuffType] 

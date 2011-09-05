@@ -229,19 +229,19 @@ end
 
 local locale = GetLocale()
 local rollpairs = locale == "deDE" and {
-	["(.*) passt automatisch bei (.+), weil [ersie]+ den Gegenstand nicht benutzen kann.$"]  = "pass",
+	["(.*) passt automatisch bei (.+), weil [ersie]+ den Gegenstand nicht benutzen kann.$"] = "pass",
 	["(.*) würfelt nicht für: (.+|r)$"] = "pass",
 	["(.*) hat für (.+) 'Gier' ausgewählt"] = "greed",
 	["(.*) hat für (.+) 'Bedarf' ausgewählt"] = "need",
-	["(.*) hat für '(.+)' Entzauberung gewählt."]  = "disenchant",
+	["(.*) hat für '(.+)' Entzauberung gewählt."] = "disenchant",
 } or locale == "frFR" and {
-	["(.*) a passé pour : (.+) parce qu'((il)|(elle)) ne peut pas ramasser cette objet.$"]  = "pass",
-	["(.*) a passé pour : (.+)"]  = "pass",
+	["(.*) a passé pour : (.+) parce qu'((il)|(elle)) ne peut pas ramasser cette objet.$"] = "pass",
+	["(.*) a passé pour : (.+)"] = "pass",
 	["(.*) a choisi Cupidité pour : (.+)"] = "greed",
-	["(.*) a choisi Besoin pour : (.+)"]  = "need",
-	["(.*) a choisi Désenchantement pour : (.+)"]  = "disenchant",
+	["(.*) a choisi Besoin pour : (.+)"] = "need",
+	["(.*) a choisi Désenchantement pour : (.+)"] = "disenchant",
 } or locale == "zhTW" and {
-	["(.*)自動放棄:(.+)，因為"]  = "pass",
+	["(.*)自動放棄:(.+)，因為"] = "pass",
 	["(.*)放棄了:(.+)"] = "pass",
 	["(.*)選擇了貪婪優先:(.+)"] = "greed",
 	["(.*)選擇了需求優先:(.+)"] = "need",
@@ -255,7 +255,7 @@ local rollpairs = locale == "deDE" and {
 } or locale == "ruRU" and {
 	["(.*) автоматически передает предмет (.+), поскольку не может его забрать"] = "pass",
 	["(.*) пропускает розыгрыш предмета \"(.+)\", поскольку не может его забрать"] = "pass",
-	["(.*) отказывается от предмета (.+)%."]  = "pass",
+	["(.*) отказывается от предмета (.+)%."] = "pass",
 	["Разыгрывается: (.+)%. (.*): \"Не откажусь\""] = "greed",
 	["Разыгрывается: (.+)%. (.*): \"Мне это нужно\""] = "need",
 	["Разыгрывается: (.+)%. (.*): \"Распылить\""] = "disenchant",
@@ -267,16 +267,16 @@ local rollpairs = locale == "deDE" and {
 	["(.+)님이 마력 추출을 선택했습니다: (.+)"] = "disenchant",
 } or {
 	["^(.*) automatically passed on: (.+) because s?he cannot loot that item.$"] = "pass",
-	["^(.*) passed on: (.+|r)$"]  = "pass",
+	["^(.*) passed on: (.+|r)$"] = "pass",
 	["(.*) has selected Greed for: (.+)"] = "greed",
-	["(.*) has selected Need for: (.+)"]  = "need",
-	["(.*) has selected Disenchant for: (.+)"]  = "disenchant",
+	["(.*) has selected Need for: (.+)"] = "need",
+	["(.*) has selected Disenchant for: (.+)"] = "disenchant",
 }
 
 local function ParseRollChoice(msg)
 	for i,v in pairs(rollpairs) do
 		local _, _, playername, itemname = string.find(msg, i)
-		if locale == "ruRU" and (v == "greed" or v == "need" or v == "disenchant")  then 
+		if locale == "ruRU" and (v == "greed" or v == "need" or v == "disenchant") then 
 			local temp = playername
 			playername = itemname
 			itemname = temp

@@ -14,7 +14,7 @@ hooksecurefunc("ActionButton_HideOverlayGlow", function(button)
 	end
 end)
 
-hooksecurefunc("ActionButton_OnEvent",  function(button, event, id)
+hooksecurefunc("ActionButton_OnEvent", function(button, event, id)
 	if event == "SPELL_ACTIVATION_OVERLAY_GLOW_SHOW" or event == "SPELL_ACTIVATION_OVERLAY_GLOW_HIDE" then
 		local spell, actionType, actionParam = GetSpellInfo(id), GetActionInfo(button.action)
 		local show = event == "SPELL_ACTIVATION_OVERLAY_GLOW_SHOW"

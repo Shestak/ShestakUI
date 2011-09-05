@@ -212,7 +212,7 @@ function Announce(chn)
 	end
 end
 
-local function LDD_Initialize()  
+local function LDD_Initialize()
 	local info = {}
 
 	info.text = L_LOOT_ANNOUNCE

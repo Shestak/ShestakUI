@@ -8,7 +8,7 @@ local _, ns = ...
 local oUF = ns.oUF
 
 local arenaFrame = {}
-local arenaGUID  = {}
+local arenaGUID = {}
 local usedTrinkets = {}
 local trinketFrame = {}
  
@@ -88,7 +88,7 @@ local Update = function(self, event, ...)
 		for k, v in pairs(arenaFrame) do
 			CooldownFrame_SetTimer(v.Trinket.cooldownFrame, 1, 1, 1)
 		end
-		arenaGUID  = {}
+		arenaGUID = {}
 		usedTrinkets = {}
 		trinketFrame = {}
 	end

@@ -263,7 +263,7 @@ function Stuffing:BagType(bag)
 
 	if bit.band(bagType, BAGTYPE_FISHING) > 0 then
 		return ST_FISHBAG
-	elseif bit.band(bagType, BAGTYPE_PROFESSION) > 0 then    
+	elseif bit.band(bagType, BAGTYPE_PROFESSION) > 0 then
 		return ST_SPECIAL
 	end
 
@@ -927,7 +927,7 @@ function Stuffing:SortOnUpdate(e)
 	self.elapsed = 0
 	self.itmax = self.itmax + 1
 
-	local changed, blocked  = false, false
+	local changed, blocked = false, false
 
 	if self.sortList == nil or next(self.sortList, nil) == nil then
 		-- Wait for all item locks to be released

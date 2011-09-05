@@ -125,6 +125,6 @@ if T.author == true then
 		C["combattext"].heal_treshold = 500
 	end
 	if T.realm == "Дракономор" then
-		C["unitframe"].icons_pvp  = true
+		C["unitframe"].icons_pvp = true
 	end
 end

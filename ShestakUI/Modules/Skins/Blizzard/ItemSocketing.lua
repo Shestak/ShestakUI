@@ -12,7 +12,7 @@ local function LoadSkin()
 	ItemSocketingScrollFrame:StripTextures()
 	ItemSocketingScrollFrame:CreateBackdrop("Overlay")
 
-	for i = 1, MAX_NUM_SOCKETS  do
+	for i = 1, MAX_NUM_SOCKETS do
 		local button = _G["ItemSocketingSocket"..i]
 		local button_bracket = _G["ItemSocketingSocket"..i.."BracketFrame"]
 		local button_bg = _G["ItemSocketingSocket"..i.."Background"]

@@ -59,7 +59,7 @@ local getPoint = function(obj, anchor)
 
 		return string.format(
 			'%s\031%s\031%d\031%d',
-			point, 'UIParent', round(x * UIS / OS),  round(y * UIS / OS)
+			point, 'UIParent', round(x * UIS / OS), round(y * UIS / OS)
 		)
 	else
 		local point, parent, _, x, y = anchor:GetPoint()
@@ -71,7 +71,7 @@ local getPoint = function(obj, anchor)
 	end
 end
 
-local getObjectInformation  = function(obj)
+local getObjectInformation = function(obj)
 	-- This won't be set if we're dealing with oUF <1.3.22. Due to this we're just
 	-- setting it to Unknown. It will only break if the user has multiple layouts
 	-- spawning the same unit or change between layouts.

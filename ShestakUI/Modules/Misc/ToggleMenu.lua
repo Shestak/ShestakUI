@@ -351,7 +351,7 @@ if not addonInfo then
 	for i = 1, GetNumAddOns() do
 		name, title, _, enabled, _, _, _ = GetAddOnInfo(i)
 		if name and enabled then
-			addonInfo[i] = {["enabled"] = true,  ["is_main"] = false, collapsed = true, ["parent"] = i}
+			addonInfo[i] = {["enabled"] = true, ["is_main"] = false, collapsed = true, ["parent"] = i}
 		else
 			addonInfo[i] = {["enabled"] = false, ["is_main"] = false, collapsed = true, ["parent"] = i}
 		end

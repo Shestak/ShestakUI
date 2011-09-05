@@ -11,7 +11,7 @@ EMPTY_SOCKET_YELLOW = "|cffffff40"..EMPTY_SOCKET_YELLOW.."|r"
 EMPTY_SOCKET_BLUE = "|cff6060ff"..EMPTY_SOCKET_BLUE.."|r"
 
 if T.client ~= "ruRU" then return end
-local replace =  {
+local replace = {
 	["красного цвета"] = "|cffFF4040красного цвета|r",
 	["синего цвета"] = "|cff6060ffсинего цвета|r",
 	["желтого цвета"] = "|cffffff40желтого цвета|r",

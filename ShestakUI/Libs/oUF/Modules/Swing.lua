@@ -49,16 +49,13 @@ local function Melee(self, _, _, event, _, GUID, _, _, _, tarGUID, _, _, _, miss
 	local bar = self.Swing
 
 	if UnitGUID(self.unit) == tarGUID then
-
 		if string.find(event, "MISSED") then
 			if missType == "PARRY" then
 				bar.max = bar.min + ((bar.max - bar.min) * 0.6)
 				bar:SetMinMaxValues(bar.min, bar.max)
 			end
 		end
-
-	elseif UnitGUID(self.unit) == GUID  then
-
+	elseif UnitGUID(self.unit) == GUID then
 		local swordprocc = false
 		if event == "SPELL_EXTRA_ATTACKS" and (spellName == GetSpellInfo(12815) or spellName == GetSpellInfo(13964)) then
 			swordprocc = true
@@ -127,8 +124,8 @@ local function Enable(self, unit)
 		end
 
 		bar:Hide()
-		if not bar:GetStatusBarTexture() and not swing:GetTexture() then
-			bar:SetStatusBarTexture([=[Interface\TargetingFrame\UI-StatusBar]=])
+		if bar:IsObjectType("StatusBar") and not bar:GetStatusBarTexture() then
+			bar:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
 		end
 
 		return true
