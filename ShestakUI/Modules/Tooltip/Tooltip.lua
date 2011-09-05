@@ -22,11 +22,13 @@ local tooltips = {
 }
 
 for _, tt in pairs(tooltips) do
-	tt:SetTemplate("Transparent")
-	tt:HookScript("OnShow", function(self)
-		self:SetBackdropColor(unpack(C.media.overlay_color))
-		self:SetBackdropBorderColor(unpack(C.media.border_color))
-	end)
+	if not IsAddOnLoaded("Aurora") then
+		tt:SetTemplate("Transparent")
+		tt:HookScript("OnShow", function(self)
+			self:SetBackdropColor(unpack(C.media.overlay_color))
+			self:SetBackdropBorderColor(unpack(C.media.border_color))
+		end)
+	end
 end
 
 local anchor = CreateFrame("Frame", "TooltipAnchor", UIParent)
