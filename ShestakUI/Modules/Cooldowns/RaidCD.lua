@@ -175,12 +175,23 @@ end
 
 local OnEvent = function(self, event, ...)
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
-		local _, eventType, _, _, sourceName, sourceFlags, _, _, _, _, _ = ...
+		local _, eventType, _, _, sourceName, sourceFlags = ...
 
 		if band(sourceFlags, filter) == 0 then return end
-		if eventType == "SPELL_RESURRECT" or eventType == "SPELL_CAST_SUCCESS" then
-			local spellId = select(12, ...)
-			if T.raid_spells[spellId] and show[select(2, IsInInstance())] then
+		local spellId = select(12, ...)
+
+		if T.raid_spells[spellId] and show[select(2, IsInInstance())] then
+			if eventType == "SPELL_RESURRECT" and not spellId == 61999 then
+				if spellId == 95750 then spellId = 6203 end
+				StartTimer(sourceName, spellId)
+			elseif eventType == "SPELL_AURA_APPLIED" then
+				if spellId == 20707 then
+					local _, class = UnitClass(sourceName)
+					if class == "WARLOCK" then
+						StartTimer(sourceName, spellId)
+					end
+				end
+			elseif eventType == "SPELL_CAST_SUCCESS" then
 				StartTimer(sourceName, spellId)
 			end
 		end
