@@ -4,7 +4,7 @@
 ## Author: Shestak
 ## Credits: ALZA, Tukz, Caellian, Elv22
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 3.2.5
+## X-Curse-Packaged-Version: 3.2.6
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
