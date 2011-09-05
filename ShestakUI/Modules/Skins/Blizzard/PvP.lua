@@ -87,6 +87,7 @@ local function LoadSkin()
 	PVPBannerFrameEditBox.backdrop:Point("TOPLEFT", PVPBannerFrameEditBox, "TOPLEFT" , -5, -5)
 	PVPBannerFrameEditBox.backdrop:Point("BOTTOMRIGHT", PVPBannerFrameEditBox, "BOTTOMRIGHT", 5, 5)
 	PVPHonorFrameInfoScrollFrameChildFrameDescription:SetTextColor(1, 1, 1)
+	PVPHonorFrameInfoScrollFrameChildFrameDescription:SetFont(C.media.normal_font, 14)
 	PVPHonorFrameInfoScrollFrameChildFrameRewardsInfo.description:SetTextColor(1, 1, 1)
 	PVPTeamManagementFrameInvalidTeamFrame:CreateBackdrop("Overlay")
 	PVPTeamManagementFrameInvalidTeamFrame:SetFrameLevel(PVPTeamManagementFrameInvalidTeamFrame:GetFrameLevel() + 1)
@@ -142,6 +143,7 @@ local function LoadSkin()
 	WarGameStartButton:Point("LEFT", PVPFrameLeftButton, "RIGHT", 2, 0)
 
 	WarGamesFrameDescription:SetTextColor(1, 1, 1)
+	WarGamesFrameDescription:SetFont(C.media.normal_font, 14)
 
 	-- Cancel Button FFSlocal
 	local f = PVPBannerFrameCancelButton
