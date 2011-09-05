@@ -48,7 +48,8 @@ local function LoadSkin()
 		_G["QuestInfoItem"..i.."IconTexture"]:SetDrawLayer("OVERLAY")
 		_G["QuestInfoItem"..i.."IconTexture"]:Point("TOPLEFT", 2, -2)
 		_G["QuestInfoItem"..i.."IconTexture"]:Size(_G["QuestInfoItem"..i.."IconTexture"]:GetWidth() - 2, _G["QuestInfoItem"..i.."IconTexture"]:GetHeight() - 2)
-		_G["QuestInfoItem"..i]:SetTemplate("Default")
+		_G["QuestInfoItem"..i]:SetTemplate("Overlay")
+		_G["QuestInfoItem"..i.."Name"]:SetDrawLayer("OVERLAY")
 		_G["QuestInfoItem"..i.."Count"]:SetDrawLayer("OVERLAY")
 	end
 

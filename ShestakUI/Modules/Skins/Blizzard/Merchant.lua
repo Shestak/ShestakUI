@@ -5,20 +5,16 @@ if C.skins.blizzard_frames ~= true then return end
 --	Merchant skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	local frames = {
-		"MerchantBuyBackItem",
-		"MerchantFrame",
-	}
-
 	-- Main frames
-	for i = 1, #frames do
-		_G[frames[i]]:StripTextures(true)
-		_G[frames[i]]:CreateBackdrop("Transparent")
-	end
-	MerchantBuyBackItem.backdrop:Point("TOPLEFT", -6, 6)
-	MerchantBuyBackItem.backdrop:Point("BOTTOMRIGHT", 6, -6)
+	MerchantFrame:StripTextures(true)
+	MerchantFrame:CreateBackdrop("Transparent")
 	MerchantFrame.backdrop:Point("TOPLEFT", 6, -12)
 	MerchantFrame.backdrop:Point("BOTTOMRIGHT", 0, 60)
+
+	MerchantBuyBackItem:StripTextures(true)
+	MerchantBuyBackItem:CreateBackdrop("Overlay")
+	MerchantBuyBackItem.backdrop:Point("TOPLEFT", -6, 6)
+	MerchantBuyBackItem.backdrop:Point("BOTTOMRIGHT", 6, -6)
 
 	-- Skin tabs
 	for i= 1, 2 do
