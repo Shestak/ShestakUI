@@ -10,7 +10,6 @@ T.AnnounceSpells = {
 	34477,	-- Misdirection
 	19801,	-- Tranquilizing Shot
 	57934,	-- Tricks of the Trade
-	355,	-- Taunt
 	20484,	-- Rebirth
 	633,	-- Lay on Hands
 }
