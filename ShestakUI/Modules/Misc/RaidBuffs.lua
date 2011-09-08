@@ -257,22 +257,16 @@ raidbuff_reminder:SetScript("OnEvent", OnAuraChange)
 local function CreateButton(name, relativeTo, firstbutton)
 	local button = CreateFrame("Frame", name, RaidBuffReminder)
 	if firstbutton == true then
-		button:CreatePanel("Default", C.reminder.raid_buffs_size, C.reminder.raid_buffs_size, "BOTTOMLEFT", relativeTo, "BOTTOMLEFT", 2, 2)
+		button:CreatePanel("Default", C.reminder.raid_buffs_size, C.reminder.raid_buffs_size, "BOTTOMLEFT", relativeTo, "BOTTOMLEFT", 0, 0)
 	else
-		button:CreatePanel("Default", C.reminder.raid_buffs_size, C.reminder.raid_buffs_size, "LEFT", relativeTo, "RIGHT", 7, 0)
+		button:CreatePanel("Default", C.reminder.raid_buffs_size, C.reminder.raid_buffs_size, "LEFT", relativeTo, "RIGHT", 3, 0)
 	end
 	button:SetFrameLevel(RaidBuffReminder:GetFrameLevel() + 2)
-	button:SetBackdropBorderColor(0, 0, 0, 0)
-
-	button.FrameBackdrop = CreateFrame("Frame", nil, button)
-	button.FrameBackdrop:SetTemplate("Default")
-	button.FrameBackdrop:Point("TOPLEFT", -2, 2)
-	button.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
-	button.FrameBackdrop:SetFrameLevel(button:GetFrameLevel() - 1)
 
 	button.t = button:CreateTexture(name..".t", "OVERLAY")
 	button.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	button.t:SetAllPoints(button)
+	button.t:Point("TOPLEFT", 2, -2)
+	button.t:Point("BOTTOMRIGHT", -2, 2)
 end
 
 -- Create Buttons

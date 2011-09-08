@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.minimap.enable == true then return end
+if C.minimap.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Minimap border
