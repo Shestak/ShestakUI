@@ -369,6 +369,8 @@ SlashCmdList.FARMMODE = function(msg, editbox)
 end
 SLASH_FARMMODE1 = "/farmmode"
 SLASH_FARMMODE2 = "/афкььщву"
+SLASH_FARMMODE3 = "/fm"
+SLASH_FARMMODE4 = "/аь"
 
 ----------------------------------------------------------------------------------------
 --	Frame Stack on Cyrillic
