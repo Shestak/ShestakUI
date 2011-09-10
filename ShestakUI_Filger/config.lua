@@ -2618,7 +2618,7 @@ Filger_Spells = {
 			-- Firelord's Draught
 			{ spellID = 94826, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Speed
-			{ spellID = 23451, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 23451, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 
 			-- Leeroy Jenkins
 			-- Bloodlust
