@@ -2,14 +2,14 @@
 --	LitePanels 1.5
 ----------------------------------------------------------------------------------------
 local T, C, L = unpack(select(2, ...))
-local lp, hidden, deps = CreateFrame('Frame','lp_C'), {}, {} lp:Hide()
+local lp, hidden, deps = CreateFrame('Frame', 'lp_C'), {}, {} lp:Hide()
 
 lpanels = {
 	profile = {}, temp = {},
 	cinfo = {
-		n = strlower(UnitName'player'),
-		r = strlower(gsub(GetRealmName()," ","")),
-		c = strlower(select(2,UnitClass'player'))
+		n = strlower(UnitName("player")),
+		r = strlower(gsub(GetRealmName(), " ", "")),
+		c = strlower(select(2, UnitClass("player")))
 	},
 	defaults = {
 		parent = "UIParent", strata = "BACKGROUND",

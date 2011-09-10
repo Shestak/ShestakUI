@@ -136,7 +136,7 @@ local function LoadSkin()
 	for i = 1, HelpFrameGM_Response:GetNumChildren() do
 		local child = select(i, HelpFrameGM_Response:GetChildren())
 		if child and child:GetObjectType() == "Frame" and not child:GetName() then
-			child:SetTemplate("Default")
+			child:SetTemplate("Overlay")
 		end
 	end
 end

@@ -7,8 +7,8 @@ local P = "player"
 local realm, char, class, layout = GetRealmName(), UnitName(P), select(2, UnitClass(P)), {}
 
 -- Tooltip text colors
-local tthead = {r=0.40, g=0.78, b=1.00} -- Headers
-local ttsubh = {r=0.75, g=0.90, b=1.00} -- Subheaders
+local tthead = {r = 0.40, g = 0.78, b = 1}	-- Headers
+local ttsubh = {r = 0.75, g = 0.90, b = 1}	-- Subheaders
 
 -- Strata/Level for text objects
 local strata, level = "DIALOG", 10
@@ -33,7 +33,6 @@ local gsub = gsub
 
 -- Config
 local modules = LPSTAT_CONFIG
-
 local fps = modules.FPS
 local latency = modules.Latency
 local memory = modules.Memory
@@ -54,14 +53,14 @@ local cloak = modules.Cloak
 local helm = modules.Helm
 local nameplates = modules.Nameplates
 
--- Lazy Events Reg
-local function RegEvents(f,l) for _,e in ipairs{strsplit(" ",l)} do f:RegisterEvent(e) end end
+-- Events Reg
+local function RegEvents(f, l) for _, e in ipairs{strsplit(" ", l)} do f:RegisterEvent(e) end end
 
 ------------------------------------------
 -- Saved Vars Init / Coords
-local ls, coordX, coordY, conf, Coords = CreateFrame'frame', 0, 0, {}
+local ls, coordX, coordY, conf, Coords = CreateFrame("Frame"), 0, 0, {}
 RegEvents(ls,"ADDON_LOADED PLAYER_REGEN_DISABLED PLAYER_REGEN_ENABLED")
-ls:SetScript("OnEvent", function(_,event,addon)
+ls:SetScript("OnEvent", function(_, event, addon)
 	if event == "ADDON_LOADED" and addon == "ShestakUI" then
 		if not SavedStats then SavedStats = {} end
 		if not SavedStats[realm] then SavedStats[realm] = {} end
@@ -81,64 +80,64 @@ end)
 if not modules then return end
 
 if modules and ((coords and coords.enabled) or (location and location.enabled)) then
-	ls:RegisterEvent'ZONE_CHANGED_NEW_AREA'
+	ls:RegisterEvent('ZONE_CHANGED_NEW_AREA')
 	ls:SetScript("OnUpdate", function() coordX, coordY = GetPlayerMapPosition(P) end)
 	WorldMapFrame:HookScript("OnHide", SetMapToCurrentZone)
-	function Coords() return format(coords and coords.fmt or "%d,%d", coordX*100, coordY*100) end
+	function Coords() return format(coords and coords.fmt or "%d,%d", coordX * 100, coordY * 100) end
 end
 
 -- Set profile
-if profiles then for _,p in ipairs{class,format("%s - %s",char,realm)} do
-	if profiles[p] then for k,v in pairs(profiles[p]) do
-		for _k,_v in pairs(v) do modules[k][_k] = _v end
+if profiles then for _, p in ipairs{class,format("%s - %s", char, realm)} do
+	if profiles[p] then for k, v in pairs(profiles[p]) do
+		for _k, _v in pairs(v) do modules[k][_k] = _v end
 	end end
 end profiles = nil end
 
 
 ------------------------------------------
-local function zsub(s,...) local t={...} for i=1,#t,2 do s=gsub(s,t[i],t[i+1]) end return s end
+local function zsub(s, ...) local t = {...} for i = 1, #t, 2 do s = gsub(s, t[i], t[i + 1]) end return s end
 
 local function formatgold(style, amount)
 	local gold, silver, copper = floor(amount * 0.0001), floor(mod(amount * 0.01, 100)), floor(mod(amount, 100))
 	if style == 1 then
 		return (gold > 0 and format("%s|cffffd700%s|r ",gold,GOLD_AMOUNT_SYMBOL) or "")
 			.. (silver > 0 and format("%s|cffc7c7cf%s|r ",silver,SILVER_AMOUNT_SYMBOL) or "")
-			.. ((copper > 0 or (gold == 0 and silver == 0)) and format("%s|cffeda55f%s|r",copper,COPPER_AMOUNT_SYMBOL) or "")
+			.. ((copper > 0 or (gold == 0 and silver == 0)) and format("%s|cffeda55f%s|r", copper,COPPER_AMOUNT_SYMBOL) or "")
 	elseif style == 2 or not style then	
 		return format("%.1f|cffffd700%s|r", amount * 0.0001, GOLD_AMOUNT_SYMBOL)
 	elseif style == 3 then
 		return format("|cffffd700%s|r.|cffc7c7cf%s|r.|cffeda55f%s|r", gold, silver, copper)
 	elseif style == 4 then
-		return (gold > 0 and format(GOLD_AMOUNT_TEXTURE,gold,12,12) or "") .. (silver > 0 and format(SILVER_AMOUNT_TEXTURE,silver,12,12) or "")
-		 	.. ((copper > 0 or (gold == 0 and silver == 0)) and format(COPPER_AMOUNT_TEXTURE,copper,12,12) or "") .. " "
+		return (gold > 0 and format(GOLD_AMOUNT_TEXTURE, gold, 12, 12) or "") .. (silver > 0 and format(SILVER_AMOUNT_TEXTURE, silver, 12, 12) or "")
+			.. ((copper > 0 or (gold == 0 and silver == 0)) and format(COPPER_AMOUNT_TEXTURE, copper, 12, 12) or "") .. " "
 	end
 end
 
-local function abbr(t,s) return t[s] or zsub(_G[strupper(s).."_ONELETTER_ABBR"],"%%d","","^%s*","") end
-local function fmttime(sec,t)
+local function abbr(t, s) return t[s] or zsub(_G[strupper(s).."_ONELETTER_ABBR"], "%%d", "", "^%s*", "") end
+local function fmttime(sec, t)
 	local t = t or {}
-	local d,h,m,s = ChatFrame_TimeBreakDown(floor(sec))
-	local string = zsub(format(" %dd %dh %dm "..((d==0 and h==0) and "%ds" or ""),d,h,m,s)," 0[dhms]"," ","%s+"," ")
-	string = strtrim(gsub(string,"([dhms])",{d=abbr(t,"day"),h=abbr(t,"hour"),m=abbr(t,"minute"),s=abbr(t,"second")})," ")
-	return strmatch(string,"^%s*$") and "0"..abbr(t,"second") or string
+	local d, h, m, s = ChatFrame_TimeBreakDown(floor(sec))
+	local string = zsub(format(" %dd %dh %dm "..((d == 0 and h == 0) and "%ds" or ""), d, h, m, s), " 0[dhms]", " ", "%s+", " ")
+	string = strtrim(gsub(string, "([dhms])", {d = abbr(t, "day"), h = abbr(t, "hour"), m = abbr(t, "minute"), s = abbr(t, "second")}), " ")
+	return strmatch(string, "^%s*$") and "0"..abbr(t, "second") or string
 end
 
 function gradient(perc)
 	perc = perc > 1 and 1 or perc < 0 and 0 or perc -- Stay between 0-1
 	local seg, relperc = math.modf(perc*2)
-	local r1,g1,b1,r2,g2,b2 = select(seg*3+1,1,0,0,1,1,0,0,1,0,0,0,0) -- R -> Y -> G
-	local r,g,b = r1+(r2-r1)*relperc,g1+(g2-g1)*relperc,b1+(b2-b1)*relperc
-	return format("|cff%02x%02x%02x",r*255,g*255,b*255),r,g,b
+	local r1, g1, b1, r2, g2, b2 = select(seg * 3 + 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0) -- R -> Y -> G
+	local r, g, b = r1 + (r2 - r1) * relperc, g1 + (g2 - g1) * relperc, b1 + (b2 - b1) * relperc
+	return format("|cff%02x%02x%02x", r * 255, g * 255, b * 255), r, g, b
 end
 
 local function HideTT(self) GameTooltip:Hide() self.hovered = false end
 
-local pxpx = {height=1, width=1}
+local pxpx = {height = 1, width = 1}
 local function Inject(name, stat)
 	if not name then return end
 	if not stat then stat = pxpx end
-	
-	local m = modules[name]	
+
+	local m = modules[name]
 	for k,v in pairs{ -- retrieving config variables from LPSTAT_CONFIG
 		--name = name, anchor_frame = m.anchor_frame,
 		name = name, parent = m.anchor_frame,
@@ -148,7 +147,7 @@ local function Inject(name, stat)
 		strata = strata, level = level
 	} do if not stat[k] then stat[k] = v end end
 	if not stat.text then stat.text = {} end
-	
+
 	-- retrieve font variables and insert them into text table
 	for k,v in pairs(font) do
 		if not stat.text[k] then
@@ -156,7 +155,7 @@ local function Inject(name, stat)
 		end
 	end
 
-	if stat.OnEnter then if stat.OnLeave then hooksecurefunc(stat,"OnLeave",HideTT) else stat.OnLeave = HideTT end end
+	if stat.OnEnter then if stat.OnLeave then hooksecurefunc(stat, "OnLeave", HideTT) else stat.OnLeave = HideTT end end
 	tinsert(layout, stat)
 end
 
@@ -174,35 +173,43 @@ end
 SLASH_LSTATS1, SLASH_LSTATS2, SLASH_LSTATS3 = "/ls", "/lstats", "/litestats"
 local function slprint(...)
 	local m, l = "|cffbcee68", "|cffff9912 -|r"
-	local t = {...} print(m,t[1])
-	for i = 2, #t do print(l,t[i]) end
+	local t = {...} print(m, t[1])
+	for i = 2, #t do print(l, t[i]) end
 end
 function SlashCmdList.LSTATS()
 	print("|cffffffffLite|cff66C6FFStats|cffffffff "..L_STATS_TIPS)
 	if memory.enabled then
-		slprint(L_STATS_MEMORY,L_STATS_RC_COLLECTS_GARBAGE)
-	end if gold.enabled then
-		slprint(strtrim(gsub(MONEY,"%%d","")),L_STATS_OPEN_CURRENCY,L_STATS_RC_AUTO_SELLING,L_STATS_NOT_TO_SELL,L_STATS_WATCH_CURRENCY)
-	end if durability.enabled then
-		slprint(DURABILITY,L_STATS_OPEN_CHARACTER,L_STATS_RC_AUTO_REPAIRING,L_STATS_EQUIPMENT_CHANGER)
-	end if location.enabled or coords.enabled then
-		slprint(L_STATS_LOCATION,L_STATS_WORLD_MAP,L_STATS_INSERTS_COORDS)
-	end if clock.enabled then
-		slprint(TIMEMANAGER_TITLE,L_STATS_OPEN_CALENDAR,L_STATS_RC_TIME_MANAGER,L_STATS_TOGGLE_TIME)
-	end if friends.enabled or guild.enabled then
-		slprint(format("%s/%s",FRIENDS,GUILD),L_STATS_VIEW_NOTES,L_STATS_CHANGE_SORTING)
-	end if talents.enabled then
-		slprint(TALENTS,L_STATS_OPEN_TALENT,L_STATS_RC_TALENT)
-	end if experience.enabled then
-		slprint(format("%s/%s/%s",COMBAT_XP_GAIN,TIME_PLAYED_MSG,FACTION),L_STATS_RC_EXPERIENCE,L_STATS_WATCH_FACTIONS)
+		slprint(L_STATS_MEMORY, L_STATS_RC_COLLECTS_GARBAGE)
 	end
-	print("|cffBCEE68",format(L_STATS_OTHER_OPTIONS,"|cff66C6FFShestakUI\\Config\\DataText.lua"))
+	if gold.enabled then
+		slprint(strtrim(gsub(MONEY, "%%d", "")), L_STATS_OPEN_CURRENCY, L_STATS_RC_AUTO_SELLING, L_STATS_NOT_TO_SELL, L_STATS_WATCH_CURRENCY)
+	end
+	if durability.enabled then
+		slprint(DURABILITY, L_STATS_OPEN_CHARACTER, L_STATS_RC_AUTO_REPAIRING, L_STATS_EQUIPMENT_CHANGER)
+	end
+	if location.enabled or coords.enabled then
+		slprint(L_STATS_LOCATION, L_STATS_WORLD_MAP, L_STATS_INSERTS_COORDS)
+	end
+	if clock.enabled then
+		slprint(TIMEMANAGER_TITLE, L_STATS_OPEN_CALENDAR, L_STATS_RC_TIME_MANAGER, L_STATS_TOGGLE_TIME)
+	end
+	if friends.enabled or guild.enabled then
+		slprint(format("%s/%s", FRIENDS,GUILD), L_STATS_VIEW_NOTES, L_STATS_CHANGE_SORTING)
+	end
+	if talents.enabled then
+		slprint(TALENTS, L_STATS_OPEN_TALENT, L_STATS_RC_TALENT)
+	end
+	if experience.enabled then
+		slprint(format("%s/%s/%s", COMBAT_XP_GAIN,TIME_PLAYED_MSG,FACTION), L_STATS_RC_EXPERIENCE, L_STATS_WATCH_FACTIONS)
+	end
+	print("|cffBCEE68", format(L_STATS_OTHER_OPTIONS, "|cff66C6FFShestakUI\\Config\\DataText.lua"))
 end
 
 CreateFrame("Frame", "LSMenus", UIParent, "UIDropDownMenuTemplate")
 
-------------------------------------------
---  FPS
+----------------------------------------------------------------------------------------
+--	FPS
+----------------------------------------------------------------------------------------
 if fps.enabled then
 	Inject("FPS", {
 		text = { 
@@ -212,15 +219,17 @@ if fps.enabled then
 		},
 	})
 end
-------------------------------------------
---  Latency
+
+----------------------------------------------------------------------------------------
+--	Latency
+----------------------------------------------------------------------------------------
 if latency.enabled then
 	Inject("Latency", {
 		text = {
 			string = function()
-				local _,_,home,world = GetNetStats()
+				local _, _, home, world = GetNetStats()
 				local lat = math.max(home, world)
-				return format(gsub(latency.fmt,"%[color%]",(gradient(1-lat/750))),lat)
+				return format(gsub(latency.fmt, "%[color%]", (gradient(1 - lat / 750))),lat)
 			end
 		},
 		OnEnter = function(self)
@@ -230,17 +239,19 @@ if latency.enabled then
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(modules.Latency.tip_anchor, modules.Latency.tip_frame, modules.Latency.tip_x, modules.Latency.tip_y)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(latency,tthead.r,tthead.g,tthead.b)
+			GameTooltip:AddLine(latency, tthead.r, tthead.g, tthead.b)
 			GameTooltip:Show()
 		end,
 	})
 end
-------------------------------------------
---  Memory
+
+----------------------------------------------------------------------------------------
+--	Memory
+----------------------------------------------------------------------------------------
 if memory.enabled then
-	local function sortdesc(a, b) return a[2] > b[2] end	
+	local function sortdesc(a, b) return a[2] > b[2] end
 	local function formatmem(val,dec)
-		return format(format("%%.%df %s",dec or 1,val > 1024 and "MB" or "KB"),val/(val > 1024 and 1024 or 1))
+		return format(format("%%.%df %s", dec or 1, val > 1024 and "MB" or "KB"), val / (val > 1024 and 1024 or 1))
 	end
 	local memoryt = {}
 	Inject("Memory", {
@@ -261,12 +272,11 @@ if memory.enabled then
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(modules.Memory.tip_anchor, modules.Memory.tip_frame, modules.Memory.tip_x, modules.Memory.tip_y)
 			GameTooltip:ClearLines()
-			local lat,r = select(3,GetNetStats()),750
+			local lat, r = select(3, GetNetStats()), 750
 			GameTooltip:AddDoubleLine(
-				format("|cffffffff%s|r %s, %s%s|r %s",floor(GetFramerate()),FPS_ABBR,gradient(1-lat/r),lat,MILLISECONDS_ABBR),
-				format("%s: |cffffffff%s",ADDONS,formatmem(self.text.total)),
-				tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
-			GameTooltip:AddLine' '
+				format("|cffffffff%s|r %s, %s%s|r %s", floor(GetFramerate()), FPS_ABBR, gradient(1 - lat / r), lat,MILLISECONDS_ABBR),
+				format("%s: |cffffffff%s", ADDONS, formatmem(self.text.total)), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g,tthead.b)
+			GameTooltip:AddLine(" ")
 			if memory.max_addons ~= 0 or IsAltKeyDown() then
 				if not self.timer or self.timer + 5 < time() then
 					self.timer = time()
@@ -274,7 +284,7 @@ if memory.enabled then
 					for i = 1, #memoryt do memoryt[i] = nil end
 					for i = 1, GetNumAddOns() do
 						local addon, name = GetAddOnInfo(i)
-						if IsAddOnLoaded(i) then tinsert(memoryt,{name or addon, GetAddOnMemoryUsage(i)}) end
+						if IsAddOnLoaded(i) then tinsert(memoryt, {name or addon, GetAddOnMemoryUsage(i)}) end
 					end
 					table.sort(memoryt, sortdesc)
 				end
@@ -289,24 +299,24 @@ if memory.enabled then
 							or t[2] <= 2560 and {1,0.75} -- 1mb - 2.5mb
 							or t[2] <= 5120 and {1,0.5} -- 2.5mb - 5mb
 							or {1,0.1} -- 5mb +
-						GameTooltip:AddDoubleLine(t[1],formatmem(t[2]),1,1,1,color[1],color[2],0)
+						GameTooltip:AddDoubleLine(t[1], formatmem(t[2]), 1, 1, 1, color[1], color[2], 0)
 					end
 				end
 				if exmem > 0 and not IsAltKeyDown() then
 					local more = #memoryt - memory.max_addons
-					GameTooltip:AddDoubleLine(format("%d %s (%s)",more,L_STATS_HIDDEN,L_STATS_ALT),formatmem(exmem),ttsubh.r,ttsubh.g,ttsubh.b,ttsubh.r,ttsubh.g,ttsubh.b)
+					GameTooltip:AddDoubleLine(format("%d %s (%s)", more, L_STATS_HIDDEN, L_STATS_ALT), formatmem(exmem), ttsubh.r, ttsubh.g, ttsubh.b, ttsubh.r, ttsubh.g, ttsubh.b)
 				end
-				GameTooltip:AddDoubleLine(" ","--------------",1,1,1,0.5,0.5,0.5)
+				GameTooltip:AddDoubleLine(" ", "--------------", 1, 1, 1, 0.5, 0.5, 0.5)
 			end
 			local bandwidth = GetAvailableBandwidth()
 			if bandwidth ~= 0 then
-				GameTooltip:AddDoubleLine(L_STATS_BANDWIDTH,format("%s ".."Mbps",T.Round(bandwidth, 2)),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L_STATS_DOWNLOAD,format("%s%%", floor(GetDownloadedPercentage()*100+0.5)),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(L_STATS_BANDWIDTH, format("%s ".."Mbps",T.Round(bandwidth, 2)), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_DOWNLOAD, format("%s%%", floor(GetDownloadedPercentage() * 100 + 0.5)), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				GameTooltip:AddLine(" ")
 			end
-			GameTooltip:AddDoubleLine(L_STATS_MEMORY_USAGE,formatmem(gcinfo() - self.text.total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-			GameTooltip:AddDoubleLine(L_STATS_TOTAL_MEMORY_USAGE,formatmem(collectgarbage'count'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-	        GameTooltip:Show()
+			GameTooltip:AddDoubleLine(L_STATS_MEMORY_USAGE,formatmem(gcinfo() - self.text.total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddDoubleLine(L_STATS_TOTAL_MEMORY_USAGE,formatmem(collectgarbage'count'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:Show()
 		end,
 		--OnUpdate = AltUpdate,
 		OnLeave = function(self) self.hovered = false end,
@@ -316,42 +326,44 @@ if memory.enabled then
 				local before = gcinfo()
 				collectgarbage()
 				UpdateMemUse()
-				print(format("|cff66C6FF%s:|r %s",L_STATS_GARBAGE_COLLECTED,formatmem(before - gcinfo())))
+				print(format("|cff66C6FF%s:|r %s", L_STATS_GARBAGE_COLLECTED,formatmem(before - gcinfo())))
 				self.timer, self.text.elapsed = nil, 5
 				self:GetScript("OnEnter")(self)
 			end
 		end
 	})
 end
-------------------------------------------
---  Durability
+
+----------------------------------------------------------------------------------------
+--	Durability
+----------------------------------------------------------------------------------------
 if durability.enabled then
 	Inject("Durability", {
 		OnLoad = function(self)
 			CreateFrame("GameTooltip", "LPDURA")
 			LPDURA:SetOwner(WorldFrame,"ANCHOR_NONE")
 			if durability.man then DurabilityFrame.Show = DurabilityFrame.Hide end
-			RegEvents(self,"UPDATE_INVENTORY_DURABILITY MERCHANT_SHOW PLAYER_LOGIN")
+			RegEvents(self, "UPDATE_INVENTORY_DURABILITY MERCHANT_SHOW PLAYER_LOGIN")
 		end,
 		OnEvent = function(self, event, ...)
 			if event == "UPDATE_INVENTORY_DURABILITY" or event == "PLAYER_LOGIN" then
 				local dmin = 100
 				for id = 1, 18 do
-			        local dur, dmax = GetInventoryItemDurability(id)
-					if dur ~= dmax then dmin = floor(min(dmin,dur/dmax*100)) end
+					local dur, dmax = GetInventoryItemDurability(id)
+					if dur ~= dmax then dmin = floor(min(dmin, dur / dmax * 100)) end
 				end
-				self.text:SetText(format(gsub(durability.fmt,"%[color%]",(gradient(dmin/100))), dmin))
+				self.text:SetText(format(gsub(durability.fmt,"%[color%]", (gradient(dmin / 100))), dmin))
 			elseif event == "MERCHANT_SHOW" and not IsAltKeyDown() then
 				if conf.AutoRepair and CanMerchantRepair() then
-			        local cost, total = GetRepairAllCost(), 0
-			        if cost > 0 then
+					local cost, total = GetRepairAllCost(), 0
+					if cost > 0 then
 						if durability.gfunds and CanGuildBankRepair() then RepairAllItems(1) total = cost end
 						if GetRepairAllCost() > 0 then
 							if not durability.ignore_inventory and GetRepairAllCost() <= GetMoney() then
 								total = GetRepairAllCost(); RepairAllItems()
 							else
 								for id = 1, 18 do
-									local cost = select(3,LPDURA:SetInventoryItem(P,id))
+									local cost = select(3, LPDURA:SetInventoryItem(P, id))
 									if cost ~= 0 and cost <= GetMoney() then
 										if not InRepairMode() then ShowRepairCursor() end
 										PickupInventoryItem(id)
@@ -361,9 +373,9 @@ if durability.enabled then
 							end
 							HideRepairCursor()
 						end
-						if total > 0 then print(format("|cff66C6FF%s |cffFFFFFF%s",REPAIR_COST,formatgold(1, total))) end
+						if total > 0 then print(format("|cff66C6FF%s |cffFFFFFF%s", REPAIR_COST, formatgold(1, total))) end
 					end
-			    end
+				end
 			end
 		end,
 		OnEnter = function(self)
@@ -372,11 +384,11 @@ if durability.enabled then
 			GameTooltip:SetPoint(modules.Durability.tip_anchor, modules.Durability.tip_frame, modules.Durability.tip_x, modules.Durability.tip_y)
 			GameTooltip:ClearLines()
 			if C.tooltip.average_lvl == true then
-				GameTooltip:AddLine(DURABILITY,tthead.r,tthead.g,tthead.b)
+				GameTooltip:AddLine(DURABILITY, tthead.r, tthead.g, tthead.b)
 			else
-				GameTooltip:AddDoubleLine(DURABILITY,format(ITEM_LEVEL,GetAverageItemLevel()),tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
+				GameTooltip:AddDoubleLine(DURABILITY, format(ITEM_LEVEL, GetAverageItemLevel()), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 			end
-			GameTooltip:AddLine' '
+			GameTooltip:AddLine(" ")
 			local nodur, totalcost = true, 0
 			for slot, string in gmatch("1HEAD3SHOULDER5CHEST6WAIST7LEGS8FEET9WRIST10HANDS16MAINHAND17SECONDARYHAND18RANGED","(%d+)([^%d]+)") do
 				local dur, dmax = GetInventoryItemDurability(slot)
@@ -384,18 +396,18 @@ if durability.enabled then
 				if dur ~= dmax then
 					local perc = dur ~= 0 and dur/dmax or 0
 					local hex = gradient(perc)
-					GameTooltip:AddDoubleLine(durability.gear_icons and format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s",GetInventoryItemTexture(P,slot),t_icon,string) or string,format("|cffaaaaaa%s/%s | %s%s%%",dur,dmax,hex,floor(perc*100)),1,1,1)
-					totalcost, nodur = totalcost + select(3,LPDURA:SetInventoryItem(P,slot))
+					GameTooltip:AddDoubleLine(durability.gear_icons and format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", GetInventoryItemTexture(P, slot), t_icon, string) or string,format("|cffaaaaaa%s/%s | %s%s%%", dur, dmax, hex, floor(perc * 100)), 1, 1, 1)
+					totalcost, nodur = totalcost + select(3, LPDURA:SetInventoryItem(P, slot))
 				end
 			end
 			if nodur then
-				GameTooltip:AddLine("100%",0.1,1,0.1)
+				GameTooltip:AddLine("100%", 0.1, 1, 0.1)
 			else
-				GameTooltip:AddDoubleLine(" ","--------------",1,1,1,0.5,0.5,0.5)
-				GameTooltip:AddDoubleLine(REPAIR_COST, formatgold(1, totalcost),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)	
+				GameTooltip:AddDoubleLine(" ", "--------------", 1, 1, 1, 0.5, 0.5, 0.5)
+				GameTooltip:AddDoubleLine(REPAIR_COST, formatgold(1, totalcost), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			end
-			GameTooltip:AddLine' '
-			GameTooltip:AddDoubleLine(" ",L_STATS_AUTO_REPAIR..": "..(conf.AutoRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)),1,1,1,ttsubh.r,ttsubh.g,ttsubh.b)
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddDoubleLine(" ", L_STATS_AUTO_REPAIR..": "..(conf.AutoRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
 			GameTooltip:Show()
 		end,
 		OnClick = function(self, button)
@@ -403,29 +415,31 @@ if durability.enabled then
 				conf.AutoRepair = not conf.AutoRepair
 				self:GetScript("OnEnter")(self)
 			elseif GetNumEquipmentSets() > 0 and ((button == "LeftButton" and IsShiftKeyDown()) or button == "MiddleButton") then
-				local menulist = {{ isTitle=true, notCheckable = 1, text=format(gsub(EQUIPMENT_SETS,":",""),"") }}
+				local menulist = {{isTitle = true, notCheckable = 1, text = format(gsub(EQUIPMENT_SETS, ":", ""), "")}}
 				if GetNumEquipmentSets() == 0 then
 					tinsert(menulist, {text = NONE, notCheckable = 1, disabled = true})
 				else
 					for i = 1, GetNumEquipmentSets() do
 						local name, icon = GetEquipmentSetInfo(i)
-						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s",icon,t_icon,name), notCheckable = 1, func = function() UseEquipmentSet(name) end})
+						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon,name), notCheckable = 1, func = function() UseEquipmentSet(name) end})
 					end
 				end
 				EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU")
 			elseif button == "LeftButton" then
-				ToggleCharacter'PaperDollFrame'
+				ToggleCharacter("PaperDollFrame")
 			end
 		end
 	})
 end
-------------------------------------------
---  Gold
+
+----------------------------------------------------------------------------------------
+--	Gold
+----------------------------------------------------------------------------------------
 if gold.enabled then
 	Inject("Gold", {
 		OnLoad = function(self)
 			self.started = GetMoney()
-			RegEvents(self,"PLAYER_LOGIN PLAYER_MONEY MERCHANT_SHOW")
+			RegEvents(self, "PLAYER_LOGIN PLAYER_MONEY MERCHANT_SHOW")
 			if not SavedStats.JunkIgnore then SavedStats.JunkIgnore = {} end
 		end,
 		OnEvent = function(self, event)
@@ -436,7 +450,7 @@ if gold.enabled then
 					for bag = 0, NUM_BAG_SLOTS do for slot = 0, GetContainerNumSlots(bag) do
 						local link = GetContainerItemLink(bag, slot)
 						if link then
-							local itemstring, ignore = strmatch(link,"|Hitem:(%d-):"), false
+							local itemstring, ignore = strmatch(link, "|Hitem:(%d-):"), false
 							for _, exception in pairs(SavedStats.JunkIgnore) do
 								if exception == itemstring then ignore = true; break end
 							end
@@ -446,7 +460,7 @@ if gold.enabled then
 							end
 						end
 					end end
-					if profit > 0 then print(format("|cff66C6FF%s: |cffFFFFFF%s",L_STATS_JUNK_PROFIT,formatgold(1, profit))) end
+					if profit > 0 then print(format("|cff66C6FF%s: |cffFFFFFF%s", L_STATS_JUNK_PROFIT, formatgold(1, profit))) end
 				end
 				return
 			end
@@ -457,44 +471,44 @@ if gold.enabled then
 			conf.Gold = curgold
 			GameTooltip:SetOwner(self, gold.tip_anchor, gold.tip_x, gold.tip_y)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(CURRENCY,tthead.r,tthead.g,tthead.b)
-			GameTooltip:AddLine' '
+			GameTooltip:AddLine(CURRENCY, tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(" ")
 			if self.started ~= curgold then
 				local gained = curgold > self.started
 				local color = gained and "|cff55ff55" or "|cffff5555"
-				GameTooltip:AddDoubleLine(L_STATS_SESSION_GAIN, format("%s$|r %s %s$|r",color,formatgold(1, abs(self.started - curgold)),color),1,1,1,1,1,1)
-				GameTooltip:AddLine' '
+				GameTooltip:AddDoubleLine(L_STATS_SESSION_GAIN, format("%s$|r %s %s$|r", color, formatgold(1, abs(self.started - curgold)), color), 1, 1, 1, 1, 1, 1)
+				GameTooltip:AddLine(" ")
 			end
-			GameTooltip:AddLine(L_STATS_SERVER_GOLD,ttsubh.r,ttsubh.g,ttsubh.b)
+			GameTooltip:AddLine(L_STATS_SERVER_GOLD, ttsubh.r, ttsubh.g, ttsubh.b)
 			local total = 0
 			for char, conf in pairs(SavedStats[realm]) do
 				if conf.Gold and conf.Gold > 99 then
-					GameTooltip:AddDoubleLine(char, formatgold(1, conf.Gold),1,1,1,1,1,1)
+					GameTooltip:AddDoubleLine(char, formatgold(1, conf.Gold), 1, 1, 1, 1, 1, 1)
 					total = total + conf.Gold
 				end
 			end
-			GameTooltip:AddDoubleLine(" ","-----------------",1,1,1,0.5,0.5,0.5)
-			GameTooltip:AddDoubleLine(L_STATS_TOTAL, formatgold(1, total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-			GameTooltip:AddLine' '
+			GameTooltip:AddDoubleLine(" ", "-----------------", 1, 1, 1, 0.5, 0.5, 0.5)
+			GameTooltip:AddDoubleLine(L_STATS_TOTAL, formatgold(1, total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddLine(" ")
 			
 			local currencies = 0
 			for i = 1, GetCurrencyListSize() do
-				local name,_,_,_,watched,count,icon = GetCurrencyListInfo(i)
+				local name, _, _, _, watched, count, icon = GetCurrencyListInfo(i)
 				if watched then
-					if currencies == 0 then GameTooltip:AddLine(format("%s %s",PLAYER,CURRENCY),ttsubh.r,ttsubh.g,ttsubh.b) end
-					local r,g,b
-					if count > 0 then r,g,b = 1,1,1 else r,g,b = 0.5,0.5,0.5 end
-					GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t",count,icon,t_icon),r,g,b,r,g,b)
+					if currencies == 0 then GameTooltip:AddLine(format("%s %s", PLAYER,CURRENCY), ttsubh.r, ttsubh.g, ttsubh.b) end
+					local r, g, b
+					if count > 0 then r, g, b = 1, 1, 1 else r, g, b = 0.5, 0.5, 0.5 end
+					GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", count, icon, t_icon), r, g, b, r, g, b)
 					currencies = currencies + 1
 				end
 			end
-			if currencies > 0 then GameTooltip:AddLine' ' end
-			GameTooltip:AddDoubleLine(" ",L_STATS_AUTO_SELL..": "..(conf.AutoSell and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)),1,1,1,ttsubh.r,ttsubh.g,ttsubh.b)
+			if currencies > 0 then GameTooltip:AddLine(" ") end
+			GameTooltip:AddDoubleLine(" ", L_STATS_AUTO_SELL..": "..(conf.AutoSell and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
 			GameTooltip:Show()
 		end,
 		OnClick = function(self, button)
 			if button == "LeftButton" then
-				ToggleCharacter'TokenFrame'
+				ToggleCharacter("TokenFrame")
 			elseif button == "RightButton" then
 				conf.AutoSell = not conf.AutoSell
 				self:GetScript("OnEnter")(self)
@@ -503,51 +517,53 @@ if gold.enabled then
 	})
 	SLASH_KJUNK1 = "/junk"
 	function SlashCmdList.KJUNK(s) 
-		local action = strsplit(" ",s)
+		local action = strsplit(" ", s)
 		if action == "list" then
-			print(format("|cff66C6FF%s:|r %s",L_STATS_JUNK_EXCEPTIONS,(#SavedStats.JunkIgnore == 0 and NONE or "")))
+			print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_EXCEPTIONS, (#SavedStats.JunkIgnore == 0 and NONE or "")))
 			for i, id in pairs(SavedStats.JunkIgnore) do
 				local link = select(2, GetItemInfo(id))
-				print("- ["..i.."]",link)
+				print("- ["..i.."]", link)
 			end
 		elseif action == "clear" then
 			SavedStats.JunkIgnore = {}
 			print("|cff66C6FF"..L_STATS_CLEARED_JUNK)
-		elseif action == "add" or strfind(action,"^del") or strfind(action,"^rem") then
+		elseif action == "add" or strfind(action, "^del") or strfind(action, "^rem") then
 			for id in s:gmatch("|Hitem:(%d-):") do
 				local link = select(2, GetItemInfo(id))
 				if action == "add" then
 					if select(3, GetItemInfo(id)) == 0 then
 						if not tContains(SavedStats.JunkIgnore,id) then
-							tinsert(SavedStats.JunkIgnore,id)
-							print(format("|cff66C6FF%s:|r %s",L_STATS_ADDED_JUNK,link))
+							tinsert(SavedStats.JunkIgnore, id)
+							print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, link))
 						else
-							print(format("%s |cff66C6FF%s",link,L_STATS_ALREADY_EXCEPTIONS))
+							print(format("%s |cff66C6FF%s", link, L_STATS_ALREADY_EXCEPTIONS))
 						end
-					else print(format("|cff66C6FF",link,L_STATS_NOT_JUNK)) end
-				elseif strfind(action,"^del") or strfind(action,"^rem") then
+					else print(format("|cff66C6FF", link, L_STATS_NOT_JUNK)) end
+				elseif strfind(action, "^del") or strfind(action, "^rem") then
 					tDeleteItem(SavedStats.JunkIgnore,id)
-					print(format("|cff66C6FF%s:|r %s",L_STATS_REMOVED_JUNK,link))
+					print(format("|cff66C6FF%s:|r %s", L_STATS_REMOVED_JUNK, link))
 				end
 			end
 		else
 			print("|cffffffffLite|cff66C6FFStats|r: "..L_STATS_JUNK_LIST)
-			print(format("/junk <add||rem(ove)> [%s] - %s",L_STATS_ITEMLINK,L_STATS_REMOVE_EXCEPTION))
+			print(format("/junk <add||rem(ove)> [%s] - %s", L_STATS_ITEMLINK, L_STATS_REMOVE_EXCEPTION))
 			print("/junk list - "..L_STATS_IGNORED_ITEMS)
 			print("/junk clear - "..L_STATS_CLEAR_EXCEPTIONS)
 		end
 	end
 end
-------------------------------------------
---  Clock
+
+----------------------------------------------------------------------------------------
+--	Clock
+----------------------------------------------------------------------------------------
 if clock.enabled then
 	Inject("Clock", {
 		text = {
 			string = function()
-				return zsub(GameTime_GetTime(true),'%s*AM',clock.AM,'%s*PM',clock.PM,':',clock.colon)
+				return zsub(GameTime_GetTime(true), '%s*AM', clock.AM, '%s*PM', clock.PM, ':', clock.colon)
 			end
 		},
-		OnLoad = function(self) RequestRaidInfo() RegEvents(self,"UPDATE_INSTANCE_INFO") end,
+		OnLoad = function(self) RequestRaidInfo() RegEvents(self, "UPDATE_INSTANCE_INFO") end,
 		OnEvent = function(self) if self.hovered then self:GetScript("OnEnter")(self) end end,
 		OnEnter = function(self)
 			if not self.hovered then RequestRaidInfo() self.hovered = true end
@@ -555,15 +571,15 @@ if clock.enabled then
 			GameTooltip:ClearAllPoints()
 			GameTooltip:Point(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(date'%A, %B %d %Y',tthead.r,tthead.g,tthead.b)
-			GameTooltip:AddLine' '
-			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME,':',''),zsub(GameTime_GetLocalTime(true),'%s*AM','am','%s*PM','pm'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME,':',''),zsub(GameTime_GetGameTime(true),'%s*AM','am','%s*PM','pm'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-			GameTooltip:AddLine' '
+			GameTooltip:AddLine(date'%A, %B %d %Y', tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME, ':', ''), zsub(GameTime_GetLocalTime(true), '%s*AM', 'am', '%s*PM', 'pm'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME, ':', ''), zsub(GameTime_GetGameTime(true), '%s*AM', 'am', '%s*PM', 'pm'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddLine(" ")
 			for i = 1, 2 do
 				local _, localizedName, isActive, _, startTime, _ = GetWorldPVPAreaInfo(i)
 				local control = QUEUE_TIME_UNAVAILABLE
-				GameTooltip:AddDoubleLine(localizedName,isActive and WINTERGRASP_IN_PROGRESS or fmttime(startTime),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(localizedName, isActive and WINTERGRASP_IN_PROGRESS or fmttime(startTime), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				if i == 1 then
 					SetMapByID(485)
 					for i = 1, GetNumMapLandmarks() do
@@ -574,7 +590,7 @@ if clock.enabled then
 							control = "|cffff3333"..FACTION_HORDE.."|r"
 						end
 					end
-					GameTooltip:AddDoubleLine(localizedName..L_DATATEXT_CONTROL,control,ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+					GameTooltip:AddDoubleLine(localizedName..L_DATATEXT_CONTROL, control, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				elseif i == 2 then
 					SetMapByID(708)
 					for i = 1, GetNumMapLandmarks() do
@@ -585,63 +601,64 @@ if clock.enabled then
 							control = "|cffff3333"..FACTION_HORDE.."|r"
 						end
 					end
-					GameTooltip:AddDoubleLine(localizedName..L_DATATEXT_CONTROL,control,ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+					GameTooltip:AddDoubleLine(localizedName..L_DATATEXT_CONTROL, control, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				end
 			end
 			
 			local oneraid
 			for i = 1, GetNumSavedInstances() do
-				local name,_,reset,difficulty,locked,extended,_,isRaid,maxPlayers = GetSavedInstanceInfo(i)
+				local name, _, reset, difficulty, locked, extended, _, isRaid, maxPlayers = GetSavedInstanceInfo(i)
 				if isRaid and (locked or extended) then
-					local tr,tg,tb,diff
+					local tr, tg, tb, diff
 					if not oneraid then
-						GameTooltip:AddLine' '
-						GameTooltip:AddLine(RAID_INFO,ttsubh.r,ttsubh.g,ttsubh.b)
+						GameTooltip:AddLine(" ")
+						GameTooltip:AddLine(RAID_INFO, ttsubh.r, ttsubh.g, ttsubh.b)
 						oneraid = true
 					end
-					if extended then tr,tg,tb = 0.3,1,0.3 else tr,tg,tb = 1,1,1 end
+					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
 					if difficulty == 3 or difficulty == 4 then diff = "H" else diff = "N" end
-					GameTooltip:AddDoubleLine(format("%s |cffaaaaaa(%s%s)",name,maxPlayers,diff),fmttime(reset),1,1,1,tr,tg,tb)
+					GameTooltip:AddDoubleLine(format("%s |cffaaaaaa(%s%s)", name, maxPlayers, diff), fmttime(reset), 1, 1, 1, tr, tg, tb)
 				end
 			end
 			GameTooltip:Show()
 		end,
-		OnClick = function(_,b) (b == "RightButton" and ToggleTimeManager or ToggleCalendar)() end
+		OnClick = function(_, b) (b == "RightButton" and ToggleTimeManager or ToggleCalendar)() end
 	})
 end
-------------------------------------------
---  Location
+
+----------------------------------------------------------------------------------------
+--	Location
+----------------------------------------------------------------------------------------
 if location.enabled then
 	Inject("Location", {
 		OnLoad = function(self)
-			RegEvents(self,"ZONE_CHANGED ZONE_CHANGED_INDOORS ZONE_CHANGED_NEW_AREA PLAYER_ENTERING_WORLD")
-			-- Territory names and colors.
-			self.sanctuary = {SANCTUARY_TERRITORY, {0.41,0.8,0.94}}
-			self.arena = {FREE_FOR_ALL_TERRITORY, {1,0.1,0.1}}
-			self.friendly = {FACTION_CONTROLLED_TERRITORY, {0.1,1,0.1}}
-			self.hostile = {FACTION_CONTROLLED_TERRITORY, {1,0.1,0.1}}
-			self.contested = {CONTESTED_TERRITORY, {1,0.7,0}}
-			self.combat = {COMBAT_ZONE, {1,0.1,0.1}}
-			self.neutral = {format(FACTION_CONTROLLED_TERRITORY,FACTION_STANDING_LABEL4), {1,0.93,0.76}}
+			RegEvents(self, "ZONE_CHANGED ZONE_CHANGED_INDOORS ZONE_CHANGED_NEW_AREA PLAYER_ENTERING_WORLD")
+			self.sanctuary = {SANCTUARY_TERRITORY, {0.41, 0.8, 0.94}}
+			self.arena = {FREE_FOR_ALL_TERRITORY, {1, 0.1, 0.1}}
+			self.friendly = {FACTION_CONTROLLED_TERRITORY, {0.1, 1, 0.1}}
+			self.hostile = {FACTION_CONTROLLED_TERRITORY, {1, 0.1, 0.1}}
+			self.contested = {CONTESTED_TERRITORY, {1, 0.7, 0}}
+			self.combat = {COMBAT_ZONE, {1, 0.1, 0.1}}
+			self.neutral = {format(FACTION_CONTROLLED_TERRITORY, FACTION_STANDING_LABEL4), {1, 0.93, 0.76}}
 		end,
 		OnEvent = function(self)
 			self.subzone, self.zone, self.pvp = GetSubZoneText(), GetZoneText(), {GetZonePVPInfo()}
 			if not self.pvp[1] then self.pvp[1] = "neutral" end
 			local label = (self.subzone ~= "" and location.subzone) and self.subzone or self.zone
 			local r,g,b = unpack(self.pvp[1] and (self[self.pvp[1]][2] or self.other) or self.other)
-			self.text:SetText(location.truncate == 0 and label or strtrim(strsub(label,1,location.truncate)))
-			self.text:SetTextColor(r,g,b,font.alpha)
+			self.text:SetText(location.truncate == 0 and label or strtrim(strsub(label, 1, location.truncate)))
+			self.text:SetTextColor(r, g, b, font.alpha)
 		end,
 		OnUpdate = function(self,u)
 			if self.hovered then
 				self.elapsed = self.elapsed + u
 				if self.elapsed > 1 or self.init then
 					GameTooltip:ClearLines()
-					GameTooltip:AddLine(format("%s |cffffffff(%s)",self.zone,Coords()),tthead.r,tthead.g,tthead.b,1,1,1)
+					GameTooltip:AddLine(format("%s |cffffffff(%s)", self.zone, Coords()), tthead.r, tthead.g, tthead.b, 1, 1, 1)
 					if self.pvp[1] and not IsInInstance() then
-						local r,g,b = unpack(self[self.pvp[1]][2])
-						if self.subzone and self.subzone ~= self.zone then GameTooltip:AddLine(self.subzone,r,g,b) end
-						GameTooltip:AddLine(format(self[self.pvp[1]][1],self.pvp[3] or ""),r,g,b)
+						local r, g, b = unpack(self[self.pvp[1]][2])
+						if self.subzone and self.subzone ~= self.zone then GameTooltip:AddLine(self.subzone, r, g, b) end
+						GameTooltip:AddLine(format(self[self.pvp[1]][1], self.pvp[3] or ""), r, g, b)
 					end
 					GameTooltip:Show()
 					self.elapsed, self.init = 0, false
@@ -657,46 +674,52 @@ if location.enabled then
 		OnClick = function(self,button)
 			if IsShiftKeyDown() then
 				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
-				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)",self.zone,Coords()))
+				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", self.zone, Coords()))
 			else ToggleFrame(WorldMapFrame) end
 		end
 	})
 end
-------------------------------------------
+
+----------------------------------------------------------------------------------------
 --	Coordinates
+----------------------------------------------------------------------------------------
 if coords.enabled then
 	Inject("Coords", {
-		text = { string = Coords },
-		OnClick = function(_,button)
+		text = {string = Coords},
+		OnClick = function(_, button)
 			if button == "LeftButton" then
 				ToggleFrame(WorldMapFrame)
 			else
 				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
-				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)",GetZoneText(),Coords()))
+				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", GetZoneText(), Coords()))
 			end
 		end
 	})
 end
-------------------------------------------
---  Ping
+
+----------------------------------------------------------------------------------------
+--	Ping
+----------------------------------------------------------------------------------------
 if ping.enabled then
 	Inject("Ping", {
-		OnLoad = function(self) self:RegisterEvent'MINIMAP_PING' end,
+		OnLoad = function(self) self:RegisterEvent('MINIMAP_PING') end,
 		OnEvent = function(self, event, unit)
 			if unit == P and ping.hide_self then return end
 			if (unit == P and self.timer and time() - self.timer > 1) or not self.timer or unit ~= P then
-				local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2,UnitClass(unit))]
+				local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(unit))]
 				self.text:SetText(format(ping.fmt, UnitName(unit)))
-				self.text:SetTextColor(class.r,class.g,class.b,1)
+				self.text:SetTextColor(class.r, class.g, class.b, 1)
 	 			if UIFrameIsFading(self) then UIFrameFlashRemoveFrame(self) end
-				UIFrameFlash(self,0.2,2.8,8,false,0,5)
+				UIFrameFlash(self, 0.2, 2.8, 8, false, 0, 5)
 				self.timer = time()
 			end
 		end
 	})
 end
-------------------------------------------
+
+----------------------------------------------------------------------------------------
 --	Guild
+----------------------------------------------------------------------------------------
 if guild.enabled then
 	local guildXP = {}
 	local function UpdateGuildXP()
@@ -704,7 +727,7 @@ if guild.enabled then
 		local nextLevelXP = currentXP + remainingXP
 		local percentTotal = tostring(math.ceil((currentXP / nextLevelXP) * 100))
 		local percentDaily = tostring(math.ceil((dailyXP / maxDailyXP) * 100))
-		
+
 		guildXP[0] = { currentXP, nextLevelXP, percentTotal }
 		guildXP[1] = { dailyXP, maxDailyXP, percentDaily }
 	end
@@ -733,9 +756,9 @@ if guild.enabled then
 			UpdateGuildXP()
 			SortGuildRoster(guild.sorting == "note" and "rank" or "note")
 			SortGuildRoster(guild.sorting)
-			self:RegisterEvent'PARTY_MEMBERS_CHANGED'
-			self:RegisterEvent'GUILD_XP_UPDATE'
-			self:RegisterEvent'GUILD_ROSTER_UPDATE'
+			self:RegisterEvent('PARTY_MEMBERS_CHANGED')
+			self:RegisterEvent('GUILD_XP_UPDATE')
+			self:RegisterEvent('GUILD_ROSTER_UPDATE')
 		end,
 		OnEvent = function(self, event)
 			if self.hovered then
@@ -745,7 +768,7 @@ if guild.enabled then
 				UpdateGuildXP()
 			end
 		end,
-		OnUpdate = function(self,u)
+		OnUpdate = function(self, u)
 			if not GuildFrame then LoadAddOn("Blizzard_GuildUI") UpdateGuildXP() end
 			if u == "GUILD_XP_UPDATE" then UpdateGuildXP() end
 			if IsInGuild() then
@@ -758,7 +781,7 @@ if guild.enabled then
 				end
 			end
 		end,
-		OnClick = function(self,b)
+		OnClick = function(self, b)
 			if b == "LeftButton" then
 				if IsInGuild() then
 					if not GuildFrame then LoadAddOn("Blizzard_GuildUI") end
@@ -788,9 +811,9 @@ if guild.enabled then
 				GameTooltip:ClearAllPoints()
 				GameTooltip:SetPoint(modules.Guild.tip_anchor, modules.Guild.tip_frame, modules.Guild.tip_x, modules.Guild.tip_y)
 				GameTooltip:ClearLines()
-				GameTooltip:AddDoubleLine(GetGuildInfo(P),format("%s: %d/%d",GUILD_ONLINE_LABEL,online,total),tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
-				if gmotd ~= "" then GameTooltip:AddLine(format("  %s |cffaaaaaa- |cffffffff%s",GUILD_MOTD,gmotd),ttsubh.r,ttsubh.g,ttsubh.b,1) end
-				GameTooltip:AddLine' '
+				GameTooltip:AddDoubleLine(GetGuildInfo(P),format("%s: %d/%d", GUILD_ONLINE_LABEL, online, total), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
+				if gmotd ~= "" then GameTooltip:AddLine(format("  %s |cffaaaaaa- |cffffffff%s", GUILD_MOTD, gmotd), ttsubh.r, ttsubh.g, ttsubh.b, 1) end
+				GameTooltip:AddLine(" ")
 				if guild.show_xp then
 					if GetGuildLevel() ~= 25 then
 						local currentXP, nextLevelXP, percentTotal = unpack(guildXP[0])
@@ -803,15 +826,15 @@ if guild.enabled then
 						barMax = barMax - barMin
 						barValue = barValue - barMin
 						barMin = 0
-						GameTooltip:AddLine(string.format("%s:|r |cFFFFFFFF%s/%s (%s%%)",col..COMBAT_FACTION_CHANGE, ShortValueXP(barValue), ShortValueXP(barMax), math.ceil((barValue / barMax) * 100)))
+						GameTooltip:AddLine(string.format("%s:|r |cFFFFFFFF%s/%s (%s%%)", col..COMBAT_FACTION_CHANGE, ShortValueXP(barValue), ShortValueXP(barMax), math.ceil((barValue / barMax) * 100)))
 					end
 				end
 				
 				if guild.maxguild ~= 0 and online >= 1 then
-					GameTooltip:AddLine' '
+					GameTooltip:AddLine(" ")
 					for i = 1, total do
 						if guild.maxguild and i > guild.maxguild then
-							if online > 2 then GameTooltip:AddLine(format("%d %s (%s)",online - guild.maxguild,L_STATS_HIDDEN,L_STATS_ALT),ttsubh.r,ttsubh.g,ttsubh.b) end
+							if online > 2 then GameTooltip:AddLine(format("%d %s (%s)", online - guild.maxguild, L_STATS_HIDDEN, L_STATS_ALT), ttsubh.r, ttsubh.g, ttsubh.b) end
 							break
 						end
 						name, rank, _, level, _, zone, note, officernote, connected, status, class = GetGuildRosterInfo(i)
@@ -820,34 +843,35 @@ if guild.enabled then
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
 							grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
 							if self.altdown then
-								GameTooltip:AddDoubleLine(format("%s%s |cff999999- |cffffffff%s",grouped,name,rank),zone,classc.r,classc.g,classc.b,zone_r,zone_g,zone_b)
-								if note ~= "" then GameTooltip:AddLine("   "..NOTE_COLON.." "..note,ttsubh.r,ttsubh.g,ttsubh.b,1) end
+								GameTooltip:AddDoubleLine(format("%s%s |cff999999- |cffffffff%s", grouped, name, rank), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
+								if note ~= "" then GameTooltip:AddLine("   "..NOTE_COLON.." "..note, ttsubh.r, ttsubh.g, ttsubh.b, 1) end
 								if officernote ~= "" and EPGP then
 									local ep, gp = EPGP:GetEPGP(name)
-									officernote = "   EP: "..ep.."  GP: "..gp.."  PR: "..string.format("%.3f",ep/gp)
+									officernote = "   EP: "..ep.."  GP: "..gp.."  PR: "..string.format("%.3f", ep / gp)
 								elseif officernote ~= "" then
 									officernote = "   O."..NOTE_COLON.." "..officernote
 								end
-								if officernote ~= "" then GameTooltip:AddLine(officernote,0.3,1,0.3,1) end
+								if officernote ~= "" then GameTooltip:AddLine(officernote, 0.3, 1, 0.3, 1) end
 							else
-								GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s",levelc.r*255,levelc.g*255,levelc.b*255,level,name,(status~="" and " "..status or ""),grouped),zone,classc.r,classc.g,classc.b,zone_r,zone_g,zone_b)
+								GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, level, name, (status ~= "" and " "..status or ""), grouped), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
 							end
 						end
 					end
-					GameTooltip:AddLine' '
-					GameTooltip:AddDoubleLine(" ",format("%s %s",L_STATS_SORTING_BY,CURRENT_GUILD_SORTING),1,1,1,ttsubh.r,ttsubh.g,ttsubh.b)
+					GameTooltip:AddLine(" ")
+					GameTooltip:AddDoubleLine(" ",format("%s %s", L_STATS_SORTING_BY, CURRENT_GUILD_SORTING), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
 				end
-				
 				GameTooltip:Show()
 			end
 		end
 	})
 end
-------------------------------------------
+
+----------------------------------------------------------------------------------------
 --	Friends
+----------------------------------------------------------------------------------------
 if friends.enabled then
 	Inject("Friends", {
-		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED PARTY_MEMBERS_CHANGED") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED PARTY_MEMBERS_CHANGED") end,
 		OnEvent = function(self, event)
 			if event ~= "PARTY_MEMBERS_CHANGED" then
 				local numBNetTotal, numBNetOnline = BNGetNumFriends()
@@ -860,7 +884,7 @@ if friends.enabled then
 			if self.hovered then self:GetScript("OnEnter")(self) end
 		end,
 		OnUpdate = AltUpdate,
-		OnClick = function(_,b) (b=="RightButton" and ToggleIgnorePanel or ToggleFriendsPanel)() end,
+		OnClick = function(_, b) (b == "RightButton" and ToggleIgnorePanel or ToggleFriendsPanel)() end,
 		OnEnter = function(self)
 			ShowFriends()
 			self.hovered = true
@@ -879,34 +903,34 @@ if friends.enabled then
 				GameTooltip:ClearAllPoints()
 				GameTooltip:SetPoint(modules.Friends.tip_anchor, modules.Friends.tip_frame, modules.Friends.tip_x, modules.Friends.tip_y)
 				GameTooltip:ClearLines()
-				GameTooltip:AddDoubleLine(FRIENDS_LIST, format("%s: %s/%s",GUILD_ONLINE_LABEL,totalonline,totalfriends),tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
+				GameTooltip:AddDoubleLine(FRIENDS_LIST, format("%s: %s/%s", GUILD_ONLINE_LABEL, totalonline, totalfriends), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 				if online > 0 then
-					GameTooltip:AddLine' '
+					GameTooltip:AddLine(" ")
 					GameTooltip:AddLine(CHARACTER_FRIEND)
 					for i = 1, total do
 						local name, level, class, zone, connected, status, note = GetFriendInfo(i)
 						if not connected then break end
 						if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
-						for k,v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+						for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 						if GetLocale() ~= "enUS" then -- feminine class localization (unsure if it's really needed)
-							for k,v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
+							for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 						end
 						classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
 						grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
-						GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s",levelc.r*255,levelc.g*255,levelc.b*255,level,name,grouped," "..status),zone,classc.r,classc.g,classc.b,zone_r,zone_g,zone_b)
-						if self.altdown and note then GameTooltip:AddLine("  "..note,ttsubh.r,ttsubh.g,ttsubh.b,1) end
+						GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, level, name, grouped, " "..status), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
+						if self.altdown and note then GameTooltip:AddLine("  "..note, ttsubh.r, ttsubh.g, ttsubh.b, 1) end
 					end
 				end
 				if BNonline > 0 then
-					GameTooltip:AddLine' '
+					GameTooltip:AddLine(" ")
 					GameTooltip:AddLine(BATTLENET_OPTIONS_LABEL)
 					for i = 1, BNtotal do
 						_, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND, _, _, _, _ = BNGetFriendInfo(i)
 						if not isOnline then break end
-						if(isAFK) then
+						if isAFK then
 							status = L_CHAT_AFK
 						else 
-							if(isDND) then
+							if isDND then
 								status = L_CHAT_DND
 							else
 								status = ""
@@ -914,13 +938,13 @@ if friends.enabled then
 						end
 						if client == "WoW" then
 							local _, toonName, client, realmName, _, _, _, class, _, zoneName, level, _ = BNGetToonInfo(toonID)
-							for k,v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+							for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 							if GetLocale() ~= "enUS" then -- feminine class localization (unsure if it's really needed)
-								for k,v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
+								for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 							end
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
 							if UnitInParty(toonName) or UnitInRaid(toonName) then grouped = "|cffaaaaaa*|r" else grouped = "" end
-							GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r",client,levelc.r*255,levelc.g*255,levelc.b*255,level,classc.r*255,classc.g*255,classc.b*255,toonName,grouped, 255, 0, 0, status),givenName.." "..surname,238,238,238,238,238,238)
+							GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), givenName.." "..surname, 238, 238, 238, 238, 238, 238)
 							if self.altdown then
 								if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
 								if GetRealmName() == realmName then realm_r, realm_g, realm_b = 0.3, 1.0, 0.3 else realm_r, realm_g, realm_b = 0.65, 0.65, 0.65 end
@@ -938,11 +962,13 @@ if friends.enabled then
 		end
 	})
 end
-------------------------------------------
+
+----------------------------------------------------------------------------------------
 --	Bags
+----------------------------------------------------------------------------------------
 if bags.enabled then
 	Inject("Bags", {
-		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN BAG_UPDATE") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN BAG_UPDATE") end,
 		OnEvent = function(self)
 			local free, total = 0, 0
 			for i = 0, NUM_BAG_SLOTS do
@@ -956,15 +982,15 @@ if bags.enabled then
 			for i = 0, NUM_BAG_SLOTS do
 				free, total = free + GetContainerNumFreeSlots(i), total + GetContainerNumSlots(i)
 			end
-			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
+			GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, 26)
 			GameTooltip:ClearLines()
 			if GetBindingKey("TOGGLEBACKPACK") then
-				GameTooltip:AddLine(BACKPACK_TOOLTIP.." ("..GetBindingKey("TOGGLEBACKPACK")..")",tthead.r,tthead.g,tthead.b)
+				GameTooltip:AddLine(BACKPACK_TOOLTIP.." ("..GetBindingKey("TOGGLEBACKPACK")..")", tthead.r, tthead.g, tthead.b)
 			else
-				GameTooltip:AddLine(BACKPACK_TOOLTIP,tthead.r,tthead.g,tthead.b)
+				GameTooltip:AddLine(BACKPACK_TOOLTIP, tthead.r, tthead.g, tthead.b)
 			end
-			GameTooltip:AddLine' '
-			GameTooltip:AddLine(format(NUM_FREE_SLOTS, free, total),1,1,1)
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(format(NUM_FREE_SLOTS, free, total), 1, 1, 1)
 			GameTooltip:Show()
 			if C.toppanel.mouseover == true then
 				TopPanel:SetAlpha(1)
@@ -977,24 +1003,26 @@ if bags.enabled then
 		end,
 	})
 end
-------------------------------------------
---  Talents
+
+----------------------------------------------------------------------------------------
+--	Talents
+----------------------------------------------------------------------------------------
 if talents.enabled then
 	Inject("Talents", {
 		OnLoad = function(self)
-			RegEvents(self,"PLAYER_LOGIN PLAYER_TALENT_UPDATE CHARACTER_POINTS_CHANGED PLAYER_ENTERING_WORLD PLAYER_LEAVING_WORLD")
+			RegEvents(self, "PLAYER_LOGIN PLAYER_TALENT_UPDATE CHARACTER_POINTS_CHANGED PLAYER_ENTERING_WORLD PLAYER_LEAVING_WORLD")
 		end,
 		OnEvent = function(self, event, ...)
 			if event == "PLAYER_ENTERING_WORLD" then
-				self:RegisterEvent'PLAYER_TALENT_UPDATE'
+				self:RegisterEvent('PLAYER_TALENT_UPDATE')
 			elseif event == "PLAYER_LEAVING_WORLD" then
-				self:UnregisterEvent'PLAYER_TALENT_UPDATE'
+				self:UnregisterEvent('PLAYER_TALENT_UPDATE')
 			elseif event == "UNIT_SPELLCAST_START" then
 				local unit, spell = ...
 				if unit == P and (spell == GetSpellInfo(63645) or spell == GetSpellInfo(63644)) then timer = GetTime() end
 			else
 				if UnitLevel(P) < 10 then
-					self.text:SetText(format("%s %s",NO,TALENTS))
+					self.text:SetText(format("%s %s", NO, TALENTS))
 				elseif GetNumTalentTabs() == 3 then
 					self.talents = {}
 					self.unspent = GetUnspentTalentPoints(false, false, GetActiveTalentGroup())
@@ -1002,22 +1030,22 @@ if talents.enabled then
 						tinsert(self.talents, {})
 						local tal, pts, icon, name = self.talents[i], -1
 						for tree = 1, GetNumTalentTabs() do
-							tinsert(tal, {GetTalentTabInfo(tree,nil,nil,i)})
+							tinsert(tal, {GetTalentTabInfo(tree, nil, nil, i)})
 							if tal[tree][5] ~= 0 and tal[tree][5] > pts then
 								name, icon, pts = {tal[tree][1],tree}, tal[tree][4], tal[tree][5]
 							end
 						end
-						if not name then name, icon = {format("%s %s",NO,TALENTS)}, "Interface\\Icons\\INV_Misc_QuestionMark" end
+						if not name then name, icon = {format("%s %s", NO, TALENTS)}, "Interface\\Icons\\INV_Misc_QuestionMark" end
 						tinsert(tal, name)
 						if i == GetActiveTalentGroup() then
 						
 							self.text:SetText(zsub(talents.fmt,"%[(.-)%]", {
 								name = name[1], shortname = gsub(name[1],".*",talents.name_subs),
-								icon = format("|T%s:"..talents.iconsize..":"..talents.iconsize..":0:0:64:64:5:59:5:59:%d|t",icon,talents.iconsize),
+								icon = format("|T%s:"..talents.iconsize..":"..talents.iconsize..":0:0:64:64:5:59:5:59:%d|t", icon, talents.iconsize),
 								unspent = self.unspent > 0 and format("|cff55ff55+"..self.unspent) or ''
 							},"%[spec(.-)%]", function(spec)
-								return format(spec == '' and "%d/%d/%d" or gsub(spec,'^ ',''),tal[1][5],tal[2][5],tal[3][5])
-							end,' $',''))
+								return format(spec == '' and "%d/%d/%d" or gsub(spec, '^ ', ''), tal[1][5], tal[2][5], tal[3][5])
+							end, ' $', ''))
 							tinsert(tal, 1)
 						end
 					end
@@ -1036,14 +1064,14 @@ if talents.enabled then
 			if UnitLevel(P) >= 10 then
 				GameTooltip:SetOwner(self, talents.tip_anchor, talents.tip_x, talents.tip_y)
 				GameTooltip:ClearLines()
-				GameTooltip:AddDoubleLine(TALENTS,self.unspent > 0 and format("%d %s",self.unspent,UNUSED) or '',tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
-				GameTooltip:AddLine' '
+				GameTooltip:AddDoubleLine(TALENTS,self.unspent > 0 and format("%d %s",self.unspent,UNUSED) or '', tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddLine(" ")
 				for i = 1, GetNumTalentGroups() do
 					local tal = self.talents[i]
 					local tree = tal[4][2]
 					local name, icon, spent = tree and tal[tree][2] or NONE, tree and tal[tree][4] or "Interface\\Icons\\INV_Misc_QuestionMark", format("%d/%d/%d",tal[1][5],tal[2][5],tal[3][5])
-					if tal[5] then r,g,b = 0.3,1,0.3 else r,g,b = 0.5,0.5,0.5 end
-					GameTooltip:AddDoubleLine(format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s %s",icon,t_icon,gsub(name,".*",talents.name_subs),spent), i==1 and PRIMARY or SECONDARY,1,1,1,r,g,b)
+					if tal[5] then r,g,b = 0.3, 1, 0.3 else r,g,b = 0.5, 0.5, 0.5 end
+					GameTooltip:AddDoubleLine(format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s %s", icon, t_icon, gsub(name, ".*", talents.name_subs), spent), i == 1 and PRIMARY or SECONDARY, 1, 1, 1, r, g, b)
 				end
 				GameTooltip:Show()
 				if C.toppanel.mouseover == true then
@@ -1076,8 +1104,10 @@ if talents.enabled then
 		end
 	})
 end
-------------------------------------------
+
+----------------------------------------------------------------------------------------
 --	Character Stats
+----------------------------------------------------------------------------------------
 if stats.enabled then
 	local function tags(sub)
 		local percent, string = true
@@ -1091,12 +1121,12 @@ if stats.enabled then
 			string = GetMastery()
 		elseif sub == "expertise" then
 			string = GetExpertisePercent()
-		elseif strmatch(sub,"hit$") then
-			local var = _G["CR_HIT_"..(strupper(strmatch(sub,"(%w-)hit$")) or "")]
-			string, percent = var and GetCombatRatingBonus(var) or format("[%s]",sub), var
-		elseif strmatch(sub,"haste$") then
-			local var = _G["CR_HASTE_"..(strupper(strmatch(sub,"(%w-)haste$")) or "")]
-			string, percent = var and GetCombatRatingBonus(var) or format("[%s]",sub), var
+		elseif strmatch(sub, "hit$") then
+			local var = _G["CR_HIT_"..(strupper(strmatch(sub, "(%w-)hit$")) or "")]
+			string, percent = var and GetCombatRatingBonus(var) or format("[%s]", sub), var
+		elseif strmatch(sub, "haste$") then
+			local var = _G["CR_HASTE_"..(strupper(strmatch(sub, "(%w-)haste$")) or "")]
+			string, percent = var and GetCombatRatingBonus(var) or format("[%s]", sub), var
 		elseif sub == "resilience" then
 			string, percent = max(GetCombatRating(CR_CRIT_TAKEN_MELEE), GetCombatRating(CR_CRIT_TAKEN_RANGED), GetCombatRating(CR_CRIT_TAKEN_SPELL))
 		elseif sub == "meleecrit" then
@@ -1127,7 +1157,7 @@ if stats.enabled then
 		elseif sub == "avoidance" then
 			string = GetDodgeChance() + GetParryChance() + GetBlockChance() + 5
 		elseif sub == "manaregen" then
-			local _,class = UnitClass(P)
+			local _, class = UnitClass(P)
 			local I5SR = true -- oo5sr/i5sr swapping NYI
 			if class == "ROGUE" or class == "WARRIOR" or class == "DEATHKNIGHT" then
 				string, percent = "??"
@@ -1136,42 +1166,44 @@ if stats.enabled then
 				string, percent = floor((I5SR and cast or base) * 5)
 			end
 		elseif sub == "armor" then
-			local _,eff = UnitArmor(P)
+			local _, eff = UnitArmor(P)
 			string, percent = eff
 		else
-			string, percent = format("[%s]",sub)
+			string, percent = format("[%s]", sub)
 		end
 		if not percent then return string end
 		return format("%.1f", string)
 	end
 	Inject("Stats", {
 		OnLoad = function(self)
-			RegEvents(self,"PLAYER_LOGIN UNIT_STATS UNIT_DAMAGE UNIT_RANGEDDAMAGE PLAYER_DAMAGE_DONE_MODS UNIT_ATTACK_SPEED UNIT_ATTACK_POWER UNIT_RANGED_ATTACK_POWER")
+			RegEvents(self, "PLAYER_LOGIN UNIT_STATS UNIT_DAMAGE UNIT_RANGEDDAMAGE PLAYER_DAMAGE_DONE_MODS UNIT_ATTACK_SPEED UNIT_ATTACK_POWER UNIT_RANGED_ATTACK_POWER")
 		end,
 		OnEvent = function(self) self.fired = true end,
 		OnUpdate = function(self, u)
 			self.elapsed = self.elapsed + u
 			if self.fired and self.elapsed > 2.5 then
-				self.text:SetText(gsub(stats[format("spec%dfmt",GetActiveTalentGroup())], "%[(%w-)%]", tags))
+				self.text:SetText(gsub(stats[format("spec%dfmt", GetActiveTalentGroup())], "%[(%w-)%]", tags))
 				self.elapsed, self.fired = 0, false
 			end
 		end
 	})
 end
-------------------------------------------
+
+----------------------------------------------------------------------------------------
 --	Experience/Played/Rep
+----------------------------------------------------------------------------------------
 if experience.enabled then
 	local logintime, playedtotal, playedlevel, playedmsg, gained, lastkill, lastquest = GetTime(), 0, 0, 0, 0
 	local repname, repcolor, standingname, currep, minrep, maxrep, reppercent
-	local mobxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON,"%%[sd]","(.*)")
-	local questxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED,"%%[sd]","(.*)")
-	local function short(num,tt)
+	local mobxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON, "%%[sd]", "(.*)")
+	local questxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED, "%%[sd]", "(.*)")
+	local function short(num, tt)
 		if short or tt then
 			num = tonumber(num)
 			if num >= 1000000 then
-				return gsub(format("%.1f%s", num/1000000, experience.million or 'm'),"%.0","")
+				return gsub(format("%.1f%s", num/1000000, experience.million or 'm'), "%.0", "")
 			elseif num >= 1000 then
-				return gsub(format("%.1f%s", num/1000, experience.thousand or 'k'),"%.0","")
+				return gsub(format("%.1f%s", num/1000, experience.thousand or 'k'), "%.0", "")
 			end
 		end
 		return floor(tonumber(num))
@@ -1181,31 +1213,31 @@ if experience.enabled then
 			-- exp tags
 		return sub == "level" and UnitLevel(P)
 			or sub == "curxp" and short(UnitXP(P),tt)
-			or sub == "remainingxp" and short(UnitXPMax(P) - UnitXP(P),tt)
-			or sub == "totalxp" and short(UnitXPMax(P),tt)
+			or sub == "remainingxp" and short(UnitXPMax(P) - UnitXP(P), tt)
+			or sub == "totalxp" and short(UnitXPMax(P), tt)
 			or sub == "cur%" and floor(UnitXP(P) / UnitXPMax(P) * 100)
 			or sub == "remaining%" and 100 - floor(UnitXP(P) / UnitXPMax(P) * 100)
 			or sub == "restxp" and short(GetXPExhaustion() or 0,tt)
 			or sub == "rest%" and min(150, floor((GetXPExhaustion() or 0) / UnitXPMax(P) * 100))
 			or sub == "sessiongained" and short(gained,tt)
-			or sub == "sessionrate" and short(gained / (GetTime() - playedmsg) * 3600,tt)
-			or sub == "levelrate" and short(UnitXP(P) / (playedlevel + GetTime() - playedmsg) * 3600,tt)
-	 		or sub == "sessionttl" and (gained ~= 0 and fmttime((UnitXPMax(P) - UnitXP(P)) / (gained / (GetTime() - playedmsg)),t) or L_STATS_INF)
-			or sub == "levelttl" and (UnitXP(P) ~= 0 and fmttime((UnitXPMax(P) - UnitXP(P)) / (UnitXP(P) / (playedlevel + GetTime() - playedmsg)),t) or L_STATS_INF)
+			or sub == "sessionrate" and short(gained / (GetTime() - playedmsg) * 3600, tt)
+			or sub == "levelrate" and short(UnitXP(P) / (playedlevel + GetTime() - playedmsg) * 3600, tt)
+			or sub == "sessionttl" and (gained ~= 0 and fmttime((UnitXPMax(P) - UnitXP(P)) / (gained / (GetTime() - playedmsg)), t) or L_STATS_INF)
+			or sub == "levelttl" and (UnitXP(P) ~= 0 and fmttime((UnitXPMax(P) - UnitXP(P)) / (UnitXP(P) / (playedlevel + GetTime() - playedmsg)), t) or L_STATS_INF)
 			or sub == "questsleft" and (lastquest and ceil((UnitXPMax(P) - UnitXP(P)) / tonumber(lastquest)) or "??")
 			or sub == "killsleft" and (lastkill and ceil((UnitXPMax(P) - UnitXP(P)) / tonumber(lastkill)) or "??")
 			-- time played tags
-			or sub == "playedtotal" and fmttime(playedtotal + GetTime() - playedmsg,t)
-			or sub == "playedlevel" and fmttime(playedlevel + GetTime() - playedmsg,t)
+			or sub == "playedtotal" and fmttime(playedtotal + GetTime() - playedmsg, t)
+			or sub == "playedlevel" and fmttime(playedlevel + GetTime() - playedmsg, t)
 			or sub == "playedsession" and fmttime(GetTime() - logintime,t)
 			-- rep tags
 			or sub == "repname" and (t.faction_subs[repname] or repname)
 			or sub == "repcolor" and "|cff"..repcolor
 			or sub == "standing" and standingname
-			or sub == "currep" and abs(currep-minrep)
-			or sub == "repleft" and abs(maxrep-currep)
-			or sub == "maxrep" and abs(maxrep-minrep)
-			or sub == "rep%" and floor(abs(currep-minrep) / abs(maxrep-minrep) * 100)
+			or sub == "currep" and abs(currep - minrep)
+			or sub == "repleft" and abs(maxrep - currep)
+			or sub == "maxrep" and abs(maxrep - minrep)
+			or sub == "rep%" and floor(abs(currep - minrep) / abs(maxrep - minrep) * 100)
 			or format("[%s]",sub)
 	end
 	Inject("Experience", {
@@ -1214,15 +1246,15 @@ if experience.enabled then
 				if conf.ExpMode == "rep" then
 					return self:GetText()
 				elseif conf.ExpMode == "played" then
-					return gsub(experience.played_fmt,"%[([%w%%]-)%]",tags)
+					return gsub(experience.played_fmt, "%[([%w%%]-)%]", tags)
 				elseif conf.ExpMode == "xp" then
-					return gsub(experience[format("xp_%s_fmt",(GetXPExhaustion() or 0) > 0 and "rested" or "normal")],"%[([%w%%]-)%]",tags) or " "
+					return gsub(experience[format("xp_%s_fmt", (GetXPExhaustion() or 0) > 0 and "rested" or "normal")], "%[([%w%%]-)%]", tags) or " "
 				end
 			end
 		},
 		OnLoad = function(self)
-			RegEvents(self,"TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP")
-			-- Filter first time played message.
+			RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP")
+			-- Filter first time played message
 			local ofunc = ChatFrame_DisplayTimePlayed
 			function ChatFrame_DisplayTimePlayed() ChatFrame_DisplayTimePlayed = ofunc end
 			RequestTimePlayed()
@@ -1234,12 +1266,12 @@ if experience.enabled then
 			if event == "CHAT_MSG_COMBAT_XP_GAIN" then
 				local msg = ...
 				if msg:find(mobxp) then
-					_, lastkill = strmatch(msg,mobxp)
-					lastkill = strmatch(lastkill,"%d+")
+					_, lastkill = strmatch(msg, mobxp)
+					lastkill = strmatch(lastkill, "%d+")
 					gained = gained + lastkill
 				elseif msg:find(questxp) then
-					lastquest = strmatch(msg,questxp)
-					lastquest = strmatch(lastquest,"%d+")
+					lastquest = strmatch(msg, questxp)
+					lastquest = strmatch(lastquest, "%d+")
 					gained = gained + lastquest
 				end
 			elseif event == "PLAYER_LEVEL_UP" then
@@ -1263,8 +1295,8 @@ if experience.enabled then
 				end
 				standingname = _G[format("FACTION_STANDING_LABEL%s%s",standing,UnitSex(P) == 3 and "_FEMALE" or "")]
 				if not standingname then standingname = UNKNOWN end
-				repcolor = format("%02x%02x%02x", min(color.r*255+40,255), min(color.g*255+40,255), min(color.b*255+40,255))
-				self.text:SetText(gsub(experience.faction_fmt,"%[([%w%%]-)%]",tags))
+				repcolor = format("%02x%02x%02x", min(color.r * 255 + 40, 255), min(color.g * 255 + 40, 255), min(color.b * 255 + 40, 255))
+				self.text:SetText(gsub(experience.faction_fmt, "%[([%w%%]-)%]", tags))
 			end
 			if event == "PLAYER_LOGOUT" or event == "TIME_PLAYED_MSG" then
 				conf.Played = floor(playedtotal + GetTime() - playedmsg)
@@ -1277,56 +1309,56 @@ if experience.enabled then
 			GameTooltip:SetPoint(modules.Experience.tip_anchor, modules.Experience.tip_frame, modules.Experience.tip_x, modules.Experience.tip_y)
 			GameTooltip:ClearLines()
 			if conf.ExpMode == "played" then
-				GameTooltip:AddLine(TIME_PLAYED_MSG,tthead.r,tthead.g,tthead.b)
-				GameTooltip:AddLine' '
-				GameTooltip:AddDoubleLine(L_STATS_PLAYED_SESSION,tags("playedsession",1),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L_STATS_PLAYED_LEVEL,tags("playedlevel",1),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddLine' '
-				GameTooltip:AddLine(L_STATS_ACC_PLAYED,ttsubh.r,ttsubh.g,ttsubh.b)
+				GameTooltip:AddLine(TIME_PLAYED_MSG, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_SESSION, tags("playedsession", 1), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_LEVEL, tags("playedlevel", 1), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine(L_STATS_ACC_PLAYED, ttsubh.r, ttsubh.g, ttsubh.b)
 				local total = 0
 				for realm, t in pairs(SavedStats) do
 					for name, conf in pairs(t) do
 						if conf.Played then
-							local r,g,b,player = 1,1,1
+							local r, g, b, player = 1, 1, 1
 							if name == UnitName(P) and realm == GetRealmName() then
-								conf.Played,player,r,g,b = floor(playedtotal+GetTime()-playedmsg),true,0.5,1,0.5
+								conf.Played, player, r, g, b = floor(playedtotal + GetTime() - playedmsg), true, 0.5, 1, 0.5
 							end
 							if conf.Played > 3600 or player then -- 1hr threshold displayed
-								GameTooltip:AddDoubleLine(format("%s-%s",name,realm), fmttime(conf.Played),r,g,b,1,1,1)
+								GameTooltip:AddDoubleLine(format("%s-%s", name, realm), fmttime(conf.Played), r, g, b, 1, 1, 1)
 							end
 							total = total + conf.Played
 						end
 					end
 				end
-				GameTooltip:AddDoubleLine(" ","------------------",1,1,1,0.5,0.5,0.5)
-				GameTooltip:AddDoubleLine(L_STATS_TOTAL,fmttime(total),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(" ", "------------------", 1, 1, 1, 0.5, 0.5, 0.5)
+				GameTooltip:AddDoubleLine(L_STATS_TOTAL, fmttime(total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			elseif conf.ExpMode == "xp" then
-				GameTooltip:AddDoubleLine(COMBAT_XP_GAIN,format(LEVEL_GAINED,UnitLevel(P)),tthead.r,tthead.g,tthead.b,tthead.r,tthead.g,tthead.b)
-				GameTooltip:AddLine' '
-				GameTooltip:AddDoubleLine(L_STATS_CURRENT_XP,format("%s/%s (%s%%)",tags'curxp',tags'totalxp',tags'cur%'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L_STATS_REMAINING_XP,format("%s (%s%%)",tags'remainingxp',tags'remaining%'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddDoubleLine(COMBAT_XP_GAIN, format(LEVEL_GAINED, UnitLevel(P)), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddDoubleLine(L_STATS_CURRENT_XP, format("%s/%s (%s%%)", tags'curxp', tags'totalxp', tags'cur%'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_REMAINING_XP, format("%s (%s%%)", tags'remainingxp', tags'remaining%'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				if GetXPExhaustion() and GetXPExhaustion() ~= 0 then
-					GameTooltip:AddDoubleLine(L_STATS_RESTED_XP,format("%s (%s%%)",tags'restxp',tags'rest%'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+					GameTooltip:AddDoubleLine(L_STATS_RESTED_XP, format("%s (%s%%)", tags'restxp', tags'rest%'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				end
-				GameTooltip:AddLine' '
-				GameTooltip:AddDoubleLine(L_STATS_SESSION_XP,format("%s/%s (%s)",tags'sessionrate',L_STATS_HR,tags'sessionttl'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L_STATS_XP_RATE,format("%s/%s (%s)",tags'levelrate',L_STATS_HR,tags'levelttl'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(format(L_STATS_QUESTS_TO,UnitLevel(P)+1), format("%s:%s %s:%s",L_STATS_QUEST,tags'questsleft',L_STATS_KILLS,tags'killsleft'),ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddLine' '
-				GameTooltip:AddDoubleLine(L_STATS_PLAYED_SESSION,tags'playedsession',ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L_STATS_PLAYED_LEVEL,tags'playedlevel',ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
-				GameTooltip:AddDoubleLine(L_STATS_PLAYED_TOTAL,tags'playedtotal',ttsubh.r,ttsubh.g,ttsubh.b,1,1,1)
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddDoubleLine(L_STATS_SESSION_XP, format("%s/%s (%s)", tags'sessionrate', L_STATS_HR, tags'sessionttl'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_XP_RATE, format("%s/%s (%s)", tags'levelrate', L_STATS_HR, tags'levelttl'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(format(L_STATS_QUESTS_TO, UnitLevel(P) + 1), format("%s:%s %s:%s", L_STATS_QUEST, tags'questsleft', L_STATS_KILLS, tags'killsleft'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_SESSION, tags'playedsession', ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_LEVEL, tags'playedlevel', ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_TOTAL, tags'playedtotal', ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			elseif conf.ExpMode == "rep" then
 				local desc, war, watched
 				for i = 1, GetNumFactions() do
-					_,desc,_,_,_,_,war,_,_,_,_,watched = GetFactionInfo(i)
+					_, desc, _, _, _, _, war, _, _, _, _, watched = GetFactionInfo(i)
 					if watched then break end
 				end
-				GameTooltip:AddLine(repname,tthead.r,tthead.g,tthead.b)
-				GameTooltip:AddLine(desc,ttsubh.r,ttsubh.g,ttsubh.b,1)
-				GameTooltip:AddLine' '
-				GameTooltip:AddDoubleLine(format("%s%s",tags'repcolor',tags'standing'),war and format("|cffff5555%s",AT_WAR))
-				GameTooltip:AddDoubleLine(format("%s%% | %s/%s",tags'rep%',tags'currep',tags'maxrep'),-tags'repleft',ttsubh.r,ttsubh.g,ttsubh.b,1,0.33,0.33)
+				GameTooltip:AddLine(repname, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddLine(desc, ttsubh.r, ttsubh.g, ttsubh.b, 1)
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddDoubleLine(format("%s%s", tags'repcolor', tags'standing'), war and format("|cffff5555%s", AT_WAR))
+				GameTooltip:AddDoubleLine(format("%s%% | %s/%s", tags'rep%', tags'currep', tags'maxrep'), -tags'repleft', ttsubh.r, ttsubh.g, ttsubh.b, 1, 0.33, 0.33)
 			end
 			GameTooltip:Show()
 		end,
@@ -1339,7 +1371,7 @@ if experience.enabled then
 				if conf.ExpMode == "rep" then
 					self:GetScript("OnEvent")(self,"UPDATE_FACTION")
 				else
-					self:GetScript("OnUpdate")(self,5)
+					self:GetScript("OnUpdate")(self, 5)
 				end
 				self:GetScript("OnEnter")(self)
 			elseif button == "LeftButton" and conf.ExpMode == "rep" then
@@ -1348,35 +1380,37 @@ if experience.enabled then
 		end
 	})
 end
-------------------------------------------
---  Loot
+
+----------------------------------------------------------------------------------------
+--	Loot
+----------------------------------------------------------------------------------------
 if loot.enabled then
 	Inject("Loot", {
-		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN") end,
 		OnEvent = function(self)
 			if GetCVarBool("AutoLootDefault") then
-				self.text:SetText(format(loot.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
+				self.text:SetText(format(loot.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 			else
-				self.text:SetText(format(loot.fmt,"|cffff5555"..strupper(OFF).."|r"))
+				self.text:SetText(format(loot.fmt, "|cffff5555"..strupper(OFF).."|r"))
 			end
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if GetCVarBool("AutoLootDefault") then
 					SetCVar("AutoLootDefault", 0)
-					self.text:SetText(format(loot.fmt,"|cffff5555"..strupper(OFF).."|r"))
+					self.text:SetText(format(loot.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else
 					SetCVar("AutoLootDefault", 1)
-					self.text:SetText(format(loot.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
+					self.text:SetText(format(loot.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
 		end,
 		OnEnter = function(self)
-			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
+			GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, 26)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(AUTO_LOOT_DEFAULT_TEXT,tthead.r,tthead.g,tthead.b)
-			GameTooltip:AddLine' '
-			GameTooltip:AddLine(OPTION_TOOLTIP_AUTO_LOOT_DEFAULT,1,1,1,1)
+			GameTooltip:AddLine(AUTO_LOOT_DEFAULT_TEXT, tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(OPTION_TOOLTIP_AUTO_LOOT_DEFAULT, 1, 1, 1, 1)
 			GameTooltip:Show()
 			if C.toppanel.mouseover == true then
 				TopPanel:SetAlpha(1)
@@ -1389,35 +1423,37 @@ if loot.enabled then
 		end,
 	})
 end
-------------------------------------------
--- Helm
+
+----------------------------------------------------------------------------------------
+--	Helm
+----------------------------------------------------------------------------------------
 if helm.enabled then
 	Inject("Helm", {
-		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN") end,
 		OnEvent = function(self)
 			if ShowingHelm() then
-				self.text:SetText(format(helm.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
+				self.text:SetText(format(helm.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 			else
-				self.text:SetText(format(helm.fmt,"|cffff5555"..strupper(OFF).."|r"))
+				self.text:SetText(format(helm.fmt, "|cffff5555"..strupper(OFF).."|r"))
 			end
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if ShowingHelm() then 
 					ShowHelm(0)
-					self.text:SetText(format(helm.fmt,"|cffff5555"..strupper(OFF).."|r"))
+					self.text:SetText(format(helm.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else
 					ShowHelm(1)
-					self.text:SetText(format(helm.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
+					self.text:SetText(format(helm.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
 		end,
 		OnEnter = function(self)
-			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
+			GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, 26)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(SHOW_HELM,tthead.r,tthead.g,tthead.b)
-			GameTooltip:AddLine' '
-			GameTooltip:AddLine(OPTION_TOOLTIP_SHOW_HELM,1,1,1)
+			GameTooltip:AddLine(SHOW_HELM, tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(OPTION_TOOLTIP_SHOW_HELM, 1, 1, 1)
 			GameTooltip:Show()
 			if C.toppanel.mouseover == true then
 				TopPanel:SetAlpha(1)
@@ -1430,35 +1466,37 @@ if helm.enabled then
 		end,
 	})
 end
-------------------------------------------
---  Cloak
+
+----------------------------------------------------------------------------------------
+--	Cloak
+----------------------------------------------------------------------------------------
 if cloak.enabled then
 	Inject("Cloak", {
-		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN") end,
 		OnEvent = function(self)
 			if ShowingCloak() then
-				self.text:SetText(format(cloak.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
+				self.text:SetText(format(cloak.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 			else
-				self.text:SetText(format(cloak.fmt,"|cffff5555"..strupper(OFF).."|r"))
+				self.text:SetText(format(cloak.fmt, "|cffff5555"..strupper(OFF).."|r"))
 			end
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if ShowingCloak() then 
 					ShowCloak(0)
-					self.text:SetText(format(cloak.fmt,"|cffff5555"..strupper(OFF).."|r"))
+					self.text:SetText(format(cloak.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else
 					ShowCloak(1)
-					self.text:SetText(format(cloak.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
+					self.text:SetText(format(cloak.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
 		end,
 		OnEnter = function(self)
-			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
+			GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, 26)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(SHOW_CLOAK,tthead.r,tthead.g,tthead.b)
-			GameTooltip:AddLine' '
-			GameTooltip:AddLine(OPTION_TOOLTIP_SHOW_CLOAK,1,1,1)
+			GameTooltip:AddLine(SHOW_CLOAK, tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(OPTION_TOOLTIP_SHOW_CLOAK, 1, 1, 1)
 			GameTooltip:Show()
 			if C.toppanel.mouseover == true then
 				TopPanel:SetAlpha(1)
@@ -1471,35 +1509,37 @@ if cloak.enabled then
 		end,
 	})
 end
-------------------------------------------
--- Nameplates
+
+----------------------------------------------------------------------------------------
+--	Nameplates
+----------------------------------------------------------------------------------------
 if nameplates.enabled then
 	Inject("Nameplates", {
-		OnLoad = function(self) RegEvents(self,"PLAYER_LOGIN") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN") end,
 		OnEvent = function(self)
 			if GetCVar("nameplateMotion") == "0" then
-				self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
+				self.text:SetText(format(nameplates.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 			else
-				self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))
+				self.text:SetText(format(nameplates.fmt, "|cffff5555"..strupper(OFF).."|r"))
 			end
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if GetCVar("nameplateMotion") == "0" then
 					SetCVar("nameplateMotion", "2")
-					self.text:SetText(format(nameplates.fmt,"|cffff5555"..strupper(OFF).."|r"))
+					self.text:SetText(format(nameplates.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else
 					SetCVar("nameplateMotion", "0")
-					self.text:SetText(format(nameplates.fmt,"|cff55ff55"..L_STATS_ON.."|r"))
+					self.text:SetText(format(nameplates.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
 		end,
 		OnEnter = function(self)
-			GameTooltip:SetOwner(self,"ANCHOR_BOTTOMLEFT",-3,26)
+			GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, 26)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(UNIT_NAMEPLATES_ALLOW_OVERLAP,tthead.r,tthead.g,tthead.b)
-			GameTooltip:AddLine' '
-			GameTooltip:AddLine(OPTION_TOOLTIP_UNIT_NAMEPLATES_ALLOW_OVERLAP,1,1,1,1)
+			GameTooltip:AddLine(UNIT_NAMEPLATES_ALLOW_OVERLAP, tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(OPTION_TOOLTIP_UNIT_NAMEPLATES_ALLOW_OVERLAP, 1, 1, 1, 1)
 			GameTooltip:Show()
 			if C.toppanel.mouseover == true then
 				TopPanel:SetAlpha(1)
@@ -1512,8 +1552,10 @@ if nameplates.enabled then
 		end,
 	})
 end
-------------------------------------------
--- Applying modules
+
+----------------------------------------------------------------------------------------
+--	Applying modules
+----------------------------------------------------------------------------------------
 lpanels:CreateLayout("LiteStats", layout)
 lpanels:ApplyLayout(nil, "LiteStats")
 
