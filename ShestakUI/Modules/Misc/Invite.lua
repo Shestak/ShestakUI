@@ -10,6 +10,12 @@ if C.misc.auto_accept_invite == true then
 				return true
 			end
 		end
+		for i = 1, select(2, BNGetNumFriends()) do
+			local _, _, _, toonName, _, client = BNGetFriendInfo(i)
+			if client == "WoW" and toonName == name then
+				return true
+			end
+		end
 		if IsInGuild() then
 			for i = 1, GetNumGuildMembers() do
 				if GetGuildRosterInfo(i) == name then
@@ -23,6 +29,7 @@ if C.misc.auto_accept_invite == true then
 	ai:RegisterEvent("PARTY_INVITE_REQUEST")
 	ai:SetScript("OnEvent", function(frame, event, name)
 		if MiniMapLFGFrame:IsShown() then return end
+		if GetNumPartyMembers() > 0 or GetNumRaidMembers() > 0 then return end
 		if IsFriend(name) then
 			T.InfoTextShow(L_INFO_INVITE..name)
 			print(format("|cffffff00"..L_INFO_INVITE..name.."."))
