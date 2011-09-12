@@ -472,7 +472,7 @@ end
 function T.SkinCloseButton(f, point, text)
 	f:StripTextures()
 	f:SetTemplate("Overlay")
-	f:Size(18, 18)
+	f:Size(18)
 
 	if not text then text = "x" end
 	if not f.text then

@@ -50,7 +50,7 @@ local function LoadSkin()
 	GlyphFrameClearInfoFrame:CreateBackdrop("Default", true)
 	GlyphFrameClearInfoFrame.backdrop:SetAllPoints()
 	GlyphFrameClearInfoFrame:StyleButton()
-	GlyphFrameClearInfoFrame:Size(25, 25)
+	GlyphFrameClearInfoFrame:Size(25)
 
 	GlyphFrame.levelOverlay1:SetParent(GlyphFrameSparkleFrame)
 	GlyphFrame.levelOverlayText1:SetParent(GlyphFrameSparkleFrame)

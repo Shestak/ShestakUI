@@ -388,7 +388,7 @@ function Stuffing:CreateBagFrame(w)
 	if C.skins.blizzard_frames == true then
 		T.SkinCloseButton(f.b_close)
 	else
-		f.b_close:Size(25, 25)
+		f.b_close:Size(25)
 		f.b_close:Point("TOPRIGHT", -3, -1)
 	end
 	f.b_close:SetScript("OnClick", function(self, btn)

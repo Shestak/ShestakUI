@@ -358,12 +358,12 @@ SLASH_CHANGEADDONS1 = "/addons"
 local farm = false
 SlashCmdList.FARMMODE = function(msg, editbox)
 	if farm == false then
-		MinimapAnchor:Size(C.minimap.size * 1.65, C.minimap.size * 1.65)
-		Minimap:Size(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
+		MinimapAnchor:Size(C.minimap.size * 1.65)
+		Minimap:Size(MinimapAnchor:GetWidth())
 		farm = true
 	else
-		MinimapAnchor:Size(C.minimap.size, C.minimap.size)
-		Minimap:Size(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
+		MinimapAnchor:Size(C.minimap.size)
+		Minimap:Size(MinimapAnchor:GetWidth())
 		farm = false
 	end
 end

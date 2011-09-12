@@ -114,7 +114,7 @@ local applystyle = function(bar)
 	-- Setup icon positions and other things
 	bar.candyBarIconFrame:ClearAllPoints()
 	bar.candyBarIconFrame:Point("BOTTOMLEFT", bar, "BOTTOMLEFT", -buttonsize - buttonsize/3, 0)
-	bar.candyBarIconFrame:Size(buttonsize, buttonsize)
+	bar.candyBarIconFrame:Size(buttonsize)
 	bar.candyBarIconFrame.OldSetWidth = bar.candyBarIconFrame.SetWidth
 	bar.candyBarIconFrame.SetWidth = T.dummy
 	bar.candyBarIconFrame:SetTexCoord(0.1, 0.9, 0.1, 0.9)

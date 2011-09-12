@@ -20,7 +20,7 @@ Minimap:SetParent(MinimapAnchor)
 Minimap:ClearAllPoints()
 Minimap:Point("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
 Minimap:Point("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
-Minimap:Size(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
+Minimap:Size(MinimapAnchor:GetWidth())
 
 -- Hide Border
 MinimapBorder:Hide()
@@ -48,7 +48,7 @@ MiniMapMailFrame:ClearAllPoints()
 MiniMapMailFrame:Point("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
 MiniMapMailBorder:Hide()
 MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
-MiniMapMailIcon:Size(16, 16)
+MiniMapMailIcon:Size(16)
 
 -- Move battleground icon
 MiniMapBattlefieldFrame:ClearAllPoints()

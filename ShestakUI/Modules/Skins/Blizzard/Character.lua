@@ -147,7 +147,7 @@ local function LoadSkin()
 			-- Making all icons the same size and position because otherwise BlizzardUI tries to attach itself to itself when it refreshes
 			object.icon:SetPoint("LEFT", object, "LEFT", 4, 0)
 			object.icon.SetPoint = T.dummy
-			object.icon:Size(36, 36)
+			object.icon:Size(36)
 			object.icon.SetSize = T.dummy
 		end
 		GearManagerDialogPopup:StripTextures()
@@ -299,7 +299,7 @@ local function LoadSkin()
 	local xtex = PetPaperDollPetInfo:GetRegions()
 	xtex:SetTexCoord(0.12, 0.63, 0.15, 0.55)
 	PetPaperDollPetInfo:CreateBackdrop("Default")
-	PetPaperDollPetInfo:Size(24, 24)
+	PetPaperDollPetInfo:Size(24)
 
 	CharacterFrame:SetTemplate("Transparent")
 	CharacterFrame:SetFrameStrata("DIALOG")

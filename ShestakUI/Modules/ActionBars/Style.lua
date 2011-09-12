@@ -56,7 +56,7 @@ local function style(self)
 
 	if not _G[name.."Panel"] then
 		if self:GetHeight() ~= T.buttonsize and not InCombatLockdown() then
-			self:Size(T.buttonsize, T.buttonsize)
+			self:Size(T.buttonsize)
 		end
 
 		local panel = CreateFrame("Frame", name.."Panel", self)
@@ -317,7 +317,7 @@ local function StyleTotemFlyout(flyout)
 			icon:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
 		end
 		if not InCombatLockdown() then
-			button:Size(T.buttonsize, T.buttonsize)
+			button:Size(T.buttonsize)
 			button:ClearAllPoints()
 			button:Point("BOTTOM", last, "TOP", 0, T.buttonspacing)
 		end
@@ -395,7 +395,7 @@ local function StyleTotemSlotButton(button, index)
 	button.background:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
 
 	if not InCombatLockdown() then
-		button:Size(T.buttonsize, T.buttonsize)
+		button:Size(T.buttonsize)
 	end
 
 	button:SetBackdropBorderColor(unpack(bordercolors[((index-1) % 4) + 1]))
@@ -471,7 +471,7 @@ local function StyleTotemSpellButton(button, index)
 	button:GetNormalTexture():SetTexture(nil)
 
 	if not InCombatLockdown() then
-		button:Size(T.buttonsize, T.buttonsize)
+		button:Size(T.buttonsize)
 	end
 
 	_G[name.."Highlight"]:SetTexture(nil)

@@ -36,7 +36,7 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 			PetActionBarAnchor:SetParent(PetHolder)
 			PetActionBarAnchor:SetFrameStrata("BACKGROUND")
 			PetActionBarAnchor:SetFrameLevel(1)
-			button:Size(T.buttonsize, T.buttonsize)
+			button:Size(T.buttonsize)
 			if i == 1 then
 				if C.actionbar.petbar_horizontal == true then
 					button:Point("BOTTOMLEFT", 0, 0)

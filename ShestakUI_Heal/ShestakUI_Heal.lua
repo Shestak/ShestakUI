@@ -126,21 +126,21 @@ local function Shared(self, unit)
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
-		self.RaidIcon:Size(12, 12)
+		self.RaidIcon:Size(12)
 		self.RaidIcon:Point("BOTTOMLEFT", self.Health, -2, -5)
 	end
 
 	-- LFD role icons
 	if C.raidframe.icons_lfd_role == true and not (self:GetAttribute("unitsuffix") == "target") then 
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
-		self.LFDRole:Size(12, 12)
+		self.LFDRole:Size(12)
 		self.LFDRole:Point("TOP", self.Health, 0, 8)
 	end
 
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
-		self.ReadyCheck:Size(12, 12)
+		self.ReadyCheck:Size(12)
 		self.ReadyCheck:Point("BOTTOMRIGHT", self.Health, 2, 1)
 	end
 
@@ -148,17 +148,17 @@ local function Shared(self, unit)
 	if C.raidframe.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		-- Leader icon
 		self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Leader:Size(12, 12)
+		self.Leader:Size(12)
 		self.Leader:Point("TOPLEFT", self.Health, -3, 8)
 
 		-- Assistant icon
 		self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Assistant:Size(12, 12)
+		self.Assistant:Size(12)
 		self.Assistant:Point("TOPLEFT", self.Health, -3, 8)
 
 		-- Master looter icon
 		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
-		self.MasterLooter:Size(12, 12)
+		self.MasterLooter:Size(12)
 		self.MasterLooter:Point("TOPRIGHT", self.Health, 3, 8)
 	end
 
@@ -166,7 +166,7 @@ local function Shared(self, unit)
 	self.ResurrectIcon = self.Health:CreateTexture(nil, "OVERLAY")
 	--self.ResurrectIcon:SetTexture("Interface\\Icons\\Spell_Holy_Resurrection")
 	--self.ResurrectIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	self.ResurrectIcon:Size(13, 13)
+	self.ResurrectIcon:Size(13)
 	self.ResurrectIcon:Point("BOTTOMRIGHT", self.Health, 2, -7)
 
 	-- Debuff highlight

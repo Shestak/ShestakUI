@@ -44,7 +44,7 @@ local function LoadSkin()
 	AuctionProgressFrameCancelButton:GetNormalTexture():Point("TOPLEFT", 2, -2)
 	AuctionProgressFrameCancelButton:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
 	AuctionProgressFrameCancelButton:GetNormalTexture():SetTexCoord(0.67, 0.37, 0.61, 0.26)
-	AuctionProgressFrameCancelButton:Size(28, 28)
+	AuctionProgressFrameCancelButton:Size(28)
 	AuctionProgressFrameCancelButton:Point("LEFT", AuctionProgressBar, "RIGHT", 8, 0)
 
 	AuctionProgressBarIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

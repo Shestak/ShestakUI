@@ -232,14 +232,14 @@ local function Shared(self, unit)
 		-- Combat icon
 		if C.unitframe.icons_combat == true then
 			self.Combat = self.Health:CreateTexture(nil, "OVERLAY")
-			self.Combat:Size(18, 18)
+			self.Combat:Size(18)
 			self.Combat:Point("TOPRIGHT", 4, 8)
 		end
 
 		-- Resting icon
 		if C.unitframe.icons_resting == true and T.level ~= MAX_PLAYER_LEVEL then
 			self.Resting = self.Power:CreateTexture(nil, "OVERLAY")
-			self.Resting:Size(18, 18)
+			self.Resting:Size(18)
 			self.Resting:Point("BOTTOMLEFT", -8, -8)
 		end
 
@@ -247,24 +247,24 @@ local function Shared(self, unit)
 		if C.raidframe.icons_leader == true then
 			-- Leader icon
 			self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
-			self.Leader:Size(14, 14)
+			self.Leader:Size(14)
 			self.Leader:Point("TOPLEFT", -3, 9)
 
 			-- Assistant icon
 			self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
-			self.Assistant:Size(12, 12)
+			self.Assistant:Size(12)
 			self.Assistant:Point("TOPLEFT", -3, 8)
 
 			-- Master looter icon
 			self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
-			self.MasterLooter:Size(12, 12)
+			self.MasterLooter:Size(12)
 			self.MasterLooter:Point("TOPRIGHT", 3, 8)
 		end
 
 		-- LFD role icons
 		if C.raidframe.icons_lfd_role == true then 
 			self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
-			self.LFDRole:Size(12, 12)
+			self.LFDRole:Size(12)
 			self.LFDRole:Point("TOPLEFT", 10, 8)
 		end
 
@@ -755,7 +755,7 @@ local function Shared(self, unit)
 			end
 
 			self.QuestIcon = self.Health:CreateTexture(nil, "OVERLAY")
-			self.QuestIcon:Size(20, 20)
+			self.QuestIcon:Size(20)
 			self.QuestIcon:Point("RIGHT", self.Info, "LEFT", -10, 0)
 		end
 

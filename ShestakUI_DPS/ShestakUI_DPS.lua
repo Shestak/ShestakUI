@@ -146,7 +146,7 @@ local function Shared(self, unit)
 	-- LFD role icons
 	if C.raidframe.icons_lfd_role == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
-		self.LFDRole:Size(12, 12)
+		self.LFDRole:Size(12)
 		self.LFDRole:Point("TOPRIGHT", self.Health, 2, 5)
 	end
 
@@ -154,17 +154,17 @@ local function Shared(self, unit)
 	if C.raidframe.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target") then
 		-- Leader icon
 		self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Leader:Size(12, 12)
+		self.Leader:Size(12)
 		self.Leader:Point("TOPLEFT", self.Health, -3, 8)
 
 		-- Assistant icon
 		self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Assistant:Size(12, 12)
+		self.Assistant:Size(12)
 		self.Assistant:Point("TOPLEFT", self.Health, -3, 8)
 
 		-- Master looter
 		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
-		self.MasterLooter:Size(12, 12)
+		self.MasterLooter:Size(12)
 		self.MasterLooter:Point("TOPRIGHT", self.Health, 3, 8)
 	end
 
@@ -179,14 +179,14 @@ local function Shared(self, unit)
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
-		self.RaidIcon:Size(12, 12)
+		self.RaidIcon:Size(12)
 		self.RaidIcon:Point("CENTER", self.Health, "TOP")
 	end
 
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
-		self.ReadyCheck:Size(12, 12)
+		self.ReadyCheck:Size(12)
 		self.ReadyCheck:Point("BOTTOMRIGHT", self.Health, 2, -1)
 	end
 

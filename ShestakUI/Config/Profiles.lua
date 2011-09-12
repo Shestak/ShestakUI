@@ -91,6 +91,7 @@ if T.author == true then
 	C["general"].welcome_message = false
 	C["general"].custom_lagtolerance = true
 	C["misc"].auto_quest = true
+	C["misc"].auto_accept_invite = true
 	C["misc"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
 	C["announcements"].spells = true
