@@ -103,6 +103,7 @@ local function LoadSkin()
 	end
 
 	T.SkinEditBox(AddFriendNameEditBox)
+	AddFriendNameEditBox:Height(AddFriendNameEditBox:GetHeight() - 5)
 	AddFriendFrame:SetTemplate("Transparent")
 	FriendsFriendsFrame:SetTemplate("Transparent")
 	FriendsFriendsNoteFrame:SetTemplate("Overlay")

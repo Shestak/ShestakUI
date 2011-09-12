@@ -76,7 +76,7 @@ if C.raidframe.plugins_aura_watch == true then
 		ORD.MatchBySpellName = true
 		
 		local function SpellName(id)
-			local name, _, _, _, _, _, _, _, _ = GetSpellInfo(id)
+			local name = select(1, GetSpellInfo(id))
 			return name
 		end
 		

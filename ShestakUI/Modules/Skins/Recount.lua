@@ -12,6 +12,7 @@ local function SkinFrame(frame)
 		frame.bgMain:SetTemplate("Transparent")
 	end
 	if frame == Recount.MainWindow then
+		frame.Title:SetPoint("TOPLEFT", frame, "TOPLEFT", 3, -15)
 		frame.Title:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		frame.Title:SetShadowColor(0, 0, 0, C.font.stylization_font_shadow and 1 or 0)
 	end
@@ -19,8 +20,23 @@ local function SkinFrame(frame)
 	frame.bgMain:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT")
 	frame.bgMain:SetPoint("TOP", frame, "TOP", 0, -7)
 	frame.bgMain:SetFrameLevel(frame:GetFrameLevel())
-	frame.CloseButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -1, -9)
+	frame.CloseButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 3, -9)
 	frame:SetBackdrop(nil)
+end
+
+local function SkinButton(frame, text)
+	if frame.SetNormalTexture then frame:SetNormalTexture("") end
+	if frame.SetHighlightTexture then frame:SetHighlightTexture("") end
+	if frame.SetPushedTexture then frame:SetPushedTexture("") end
+
+	if not frame.text then
+		frame:FontString("text", C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		frame.text:SetPoint("CENTER")
+		frame.text:SetText(text)
+	end
+
+	frame:HookScript("OnEnter", function(self) self.text:SetTextColor(T.color.r, T.color.g, T.color.b) end)
+	frame:HookScript("OnLeave", function(self) self.text:SetTextColor(1, 1, 1) end)
 end
 
 -- Override bar textures
@@ -85,6 +101,19 @@ if _G["Recount_Realtime_Upstream Traffic_UP_TRAFFIC"] then SkinFrame(_G["Recount
 
 -- Update Textures
 Recount:UpdateBarTextures()
+Recount.MainWindow.ConfigButton:HookScript("OnClick", function(self) Recount:UpdateBarTextures() end)
+
+-- Reskin Dropdown
+Recount.MainWindow.FileButton:HookScript("OnClick", function(self) if LibDropdownFrame0 then LibDropdownFrame0:SetTemplate("Transparent") end end)
+
+-- Reskin Buttons
+SkinButton(Recount.MainWindow.CloseButton, "X")
+SkinButton(Recount.MainWindow.RightButton, ">")
+SkinButton(Recount.MainWindow.LeftButton, "<")
+SkinButton(Recount.MainWindow.ResetButton, "R")
+SkinButton(Recount.MainWindow.FileButton, "F")
+SkinButton(Recount.MainWindow.ConfigButton, "C")
+SkinButton(Recount.MainWindow.ReportButton, "S")
 
 -- Force some default profile options
 if not RecountDB then RecountDB = {} end
@@ -101,7 +130,9 @@ RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["HideTotalBar"] = tr
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Position"]["x"] = 284
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Position"]["y"] = -305
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Position"]["w"] = 221
-RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Position"]["h"] = 178
+--RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Position"]["h"] = 158
+RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["BarText"]["NumFormat"] = 3
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindowWidth"] = 221
-RecountDB["profiles"][T.name.." - "..T.realm]["MainWindowHeight"] = 178
+--RecountDB["profiles"][T.name.." - "..T.realm]["MainWindowHeight"] = 158
 RecountDB["profiles"][T.name.." - "..T.realm]["ClampToScreen"] = true
+RecountDB["profiles"][T.name.." - "..T.realm]["Font"] = "Calibri"
