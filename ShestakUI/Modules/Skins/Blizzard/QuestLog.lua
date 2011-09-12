@@ -33,11 +33,6 @@ local function LoadSkin()
 	for _, button in pairs(buttons) do
 		_G[button]:SkinButton()
 	end
-	QuestLogFrameAbandonButton:ClearAllPoints()
-	QuestLogFrameAbandonButton:Point("BOTTOMLEFT", QuestLogFrame.backdrop, "BOTTOMLEFT", 4, 4)
-	QuestLogFramePushQuestButton:Point("LEFT", QuestLogFrameAbandonButton, "RIGHT", 3, 0)
-	QuestLogFramePushQuestButton:Point("RIGHT", QuestLogFrameTrackButton, "LEFT", -3, 0)
-	QuestLogFrameCancelButton:Point("BOTTOMRIGHT", QuestLogFrame.backdrop, "BOTTOMRIGHT", -4, 4)
 
 	for i = 1, MAX_NUM_ITEMS do
 		_G["QuestInfoItem"..i]:StripTextures()
@@ -139,6 +134,11 @@ local function LoadSkin()
 	QuestLogFrame:HookScript("OnShow", function()
 		QuestLogScrollFrame:Height(QuestLogScrollFrame:GetHeight() - 3)
 		QuestLogDetailScrollFrame:Height(QuestLogDetailScrollFrame:GetHeight() - 3)
+		QuestLogFrameAbandonButton:ClearAllPoints()
+		QuestLogFrameAbandonButton:Point("BOTTOMLEFT", QuestLogFrame.backdrop, "BOTTOMLEFT", 4, 4)
+		QuestLogFramePushQuestButton:Point("LEFT", QuestLogFrameAbandonButton, "RIGHT", 3, 0)
+		QuestLogFramePushQuestButton:Point("RIGHT", QuestLogFrameTrackButton, "LEFT", -3, 0)
+		QuestLogFrameCancelButton:Point("BOTTOMRIGHT", QuestLogFrame.backdrop, "BOTTOMRIGHT", -4, 4)
 	end)
 end
 

@@ -64,6 +64,14 @@ local function LoadSkin()
 		QuestNPCModel:ClearAllPoints()
 		QuestNPCModel:SetPoint("TOPLEFT", parentFrame, "TOPRIGHT", x + 10, y + 48)
 	end)
+
+	QuestLogDetailFrame:HookScript("OnShow", function()
+		QuestLogFrameAbandonButton:ClearAllPoints()
+		QuestLogFrameAbandonButton:Point("BOTTOMLEFT", QuestLogDetailFrame.backdrop, "BOTTOMLEFT", 4, 4)
+		QuestLogFramePushQuestButton:Point("LEFT", QuestLogFrameAbandonButton, "RIGHT", 3, 0)
+		QuestLogFramePushQuestButton:Point("RIGHT", QuestLogFrameTrackButton, "LEFT", -3, 0)
+		QuestLogFrameTrackButton:Point("BOTTOMRIGHT", QuestLogDetailFrame.backdrop, "BOTTOMRIGHT", -4, 4)
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
