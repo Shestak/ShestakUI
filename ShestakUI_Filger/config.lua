@@ -3166,6 +3166,8 @@ Filger_Spells = {
 			{ spellID = 74002, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Combat Readiness
 			{ spellID = 74001, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Shadow Dance
+			{ spellID = 51713, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 
 			-- Death knight
 			-- Anti-Magic Shell
