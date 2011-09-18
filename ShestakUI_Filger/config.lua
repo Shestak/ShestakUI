@@ -3178,6 +3178,8 @@ Filger_Spells = {
 			{ spellID = 49222, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Icebound Fortitude
 			{ spellID = 48792, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Pillar of Frost
+			{ spellID = 51271, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 
 			-- Shaman
 			-- Grounding Totem Effect
