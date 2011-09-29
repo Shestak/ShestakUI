@@ -74,4 +74,8 @@ local function LoadSkin()
 	EncounterJournalEncounterFrameInfoLootTab:GetHighlightTexture():SetTexture(nil)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+if T.PTRVersion() then
+	T.SkinFuncs["Blizzard_EncounterJournal"] = LoadSkin
+else
+	tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+end

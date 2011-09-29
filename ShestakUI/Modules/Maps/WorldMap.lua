@@ -44,7 +44,7 @@ if SmallerMap == nil then
 end
 
 local MoveMap = GetCVarBool("advancedWorldMap")
-if MoveMap == nil then
+if MoveMap == nil and not T.PTRVersion() then
 	SetCVar("advancedWorldMap", 1)
 end
 

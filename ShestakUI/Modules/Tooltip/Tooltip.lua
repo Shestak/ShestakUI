@@ -35,8 +35,6 @@ local anchor = CreateFrame("Frame", "TooltipAnchor", UIParent)
 anchor:SetSize(200, 40)
 anchor:SetPoint(unpack(C.position.tooltip))
 
-LFDSearchStatus:SetFrameStrata("TOOLTIP")
-
 -- Hide PVP text
 PVP_ENABLED = ""
 

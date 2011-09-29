@@ -115,20 +115,27 @@ GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 -- LFDSearchStatus
+local PTRFrame
+if T.PTRVersion() then
+	PTRFrame = LFGSearchStatus
+else
+	PTRFrame = LFDSearchStatus
+end
 local function UpdateLFGTooltip()
 	local position = MinimapAnchor:GetPoint()
-	LFDSearchStatus:ClearAllPoints()
+	PTRFrame:ClearAllPoints()
 	if position:match("BOTTOMRIGHT") then
-		LFDSearchStatus:Point("BOTTOMRIGHT", MiniMapLFGFrame, "BOTTOMLEFT", 0, 0)
+		PTRFrame:Point("BOTTOMRIGHT", MiniMapLFGFrame, "BOTTOMLEFT", 0, 0)
 	elseif position:match("BOTTOM") then
-		LFDSearchStatus:Point("BOTTOMLEFT", MiniMapLFGFrame, "BOTTOMRIGHT", 4, 0)
+		PTRFrame:Point("BOTTOMLEFT", MiniMapLFGFrame, "BOTTOMRIGHT", 4, 0)
 	elseif position:match("LEFT") then
-		LFDSearchStatus:Point("TOPLEFT", MiniMapLFGFrame, "TOPRIGHT", 4, 0)
+		PTRFrame:Point("TOPLEFT", MiniMapLFGFrame, "TOPRIGHT", 4, 0)
 	else
-		LFDSearchStatus:Point("TOPRIGHT", MiniMapLFGFrame, "TOPLEFT", 0, 0)	
+		PTRFrame:Point("TOPRIGHT", MiniMapLFGFrame, "TOPLEFT", 0, 0)
 	end
 end
-LFDSearchStatus:HookScript("OnShow", UpdateLFGTooltip)
+PTRFrame:HookScript("OnShow", UpdateLFGTooltip)
+PTRFrame:SetFrameStrata("TOOLTIP")
 
 -- Enable mouse scrolling
 Minimap:EnableMouseWheel(true)
@@ -211,7 +218,7 @@ local micromenu = {
 			end
 		end},
 	{text = LOOKING_FOR_RAID, notCheckable = 1,
-		func = function() ToggleFrame(LFRParentFrame) end},
+		func = function() if T.PTRVersion() then ToggleFriendsFrame(4) else ToggleFrame(LFRParentFrame) end end},
 	{text = HELP_BUTTON, notCheckable = 1,
 		func = function() ToggleHelpFrame() end},
 	{text = L_MINIMAP_CALENDAR, notCheckable = 1,
@@ -219,7 +226,7 @@ local micromenu = {
 	{text = BATTLEFIELD_MINIMAP, notCheckable = true,
 		func = function() ToggleBattlefieldMinimap() end},
 	{text = ENCOUNTER_JOURNAL, notCheckable = 1,
-		func = function() ToggleFrame(EncounterJournal) end}
+		func = function() if not IsAddOnLoaded("Blizzard_EncounterJournal") and T.PTRVersion() then LoadAddOn("Blizzard_EncounterJournal") end ToggleFrame(EncounterJournal) end},
 }
 
 Minimap:SetScript("OnMouseUp", function(self, button)

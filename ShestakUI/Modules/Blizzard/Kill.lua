@@ -46,10 +46,12 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 				RuneFrame:Kill()
 			end
 			InterfaceOptionsFrameCategoriesButton9:SetScale(0.00001)
-			InterfaceOptionsFrameCategoriesButton9:SetAlpha(0)	
+			InterfaceOptionsFrameCategoriesButton9:SetAlpha(0)
 			InterfaceOptionsFrameCategoriesButton10:SetScale(0.00001)
 			InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
-			InterfaceOptionsBuffsPanelShowCastableDebuffs:Kill()
+			if not T.PTRVersion() then
+				InterfaceOptionsBuffsPanelShowCastableDebuffs:Kill()
+			end
 			InterfaceOptionsBuffsPanelCastableBuffs:Kill()
 			InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
 			InterfaceOptionsBuffsPanelBuffDurations:Kill()

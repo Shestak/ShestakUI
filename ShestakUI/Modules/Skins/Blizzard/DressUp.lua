@@ -14,9 +14,11 @@ local function LoadSkin()
 	DressUpFrameCancelButton:SkinButton()
 	DressUpFrameUndressButton:SkinButton()
 	T.SkinCloseButton(DressUpFrameCloseButton, DressUpFrame.backdrop)
-	T.SkinRotateButton(DressUpModelRotateLeftButton)
-	T.SkinRotateButton(DressUpModelRotateRightButton)
-	DressUpModelRotateRightButton:Point("TOPLEFT", DressUpModelRotateLeftButton, "TOPRIGHT", 2, 0)
+	if not T.PTRVersion() then
+		T.SkinRotateButton(DressUpModelRotateLeftButton)
+		T.SkinRotateButton(DressUpModelRotateRightButton)
+		DressUpModelRotateRightButton:Point("TOPLEFT", DressUpModelRotateLeftButton, "TOPRIGHT", 2, 0)
+	end
 	DressUpFrameCancelButton:Point("BOTTOMRIGHT", DressUpFrame.backdrop, "BOTTOMRIGHT", -4, 4)
 	DressUpFrameResetButton:Point("RIGHT", DressUpFrameCancelButton, "LEFT", -2, 0)
 end

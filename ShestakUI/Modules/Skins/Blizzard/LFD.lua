@@ -12,11 +12,16 @@ local function LoadSkin()
 		"LFDQueueFrameRandom",
 		"LFDQueueFrameRandomScrollFrame",
 		"LFDQueueFrameCapBar",
-		"LFDDungeonReadyDialog",
 		"LFDQueueFrameRandomScrollFrameScrollBar",
 		"LFDQueueFrameNoLFDWhileLFR",
 		"LFDQueueFrameSpecificListScrollFrame",
 	}
+
+	if T.PTRVersion() then
+		tinsert(StripAllTextures, "LFGDungeonReadyDialog")
+	else
+		tinsert(StripAllTextures, "LFDDungeonReadyDialog")
+	end
 
 	local KillTextures = {
 		"LFDQueueFrameBackground",
@@ -25,8 +30,15 @@ local function LoadSkin()
 		"LFDQueueFrameRoleButtonTankBackground",
 		"LFDQueueFrameRoleButtonHealerBackground",
 		"LFDQueueFrameRoleButtonDPSBackground",
-		"LFDDungeonReadyDialogBackground",
 	}
+
+	if T.PTRVersion() then
+		LFGDungeonReadyDialogBackground:Kill()
+		LFGDungeonReadyDialogEnterDungeonButton:SkinButton()
+		LFGDungeonReadyDialogLeaveQueueButton:SkinButton()
+	else
+		tinsert(KillTextures, "LFDDungeonReadyDialogBackground")
+	end
 
 	local buttons = {
 		"LFDQueueFrameFindGroupButton",
@@ -133,7 +145,6 @@ local function LoadSkin()
 	LFDParentFrame.backdrop:Point("TOPLEFT", LFDParentFrame, "TOPLEFT")
 	LFDParentFrame.backdrop:Point("BOTTOMRIGHT", LFDParentFrame, "BOTTOMRIGHT", 0, 4)
 	T.SkinCloseButton(LFDParentFrameCloseButton, LFDParentFrame)
-	T.SkinCloseButton(LFDDungeonReadyDialogCloseButton, LFDDungeonReadyDialog, "-")
 	T.SkinDropDownBox(LFDQueueFrameTypeDropDown, 300)
 	LFDQueueFrameTypeDropDown:Point("RIGHT", -10, 0)
 	LFDQueueFrameCapBar:CreateBackdrop("Transparent")
@@ -144,7 +155,13 @@ local function LoadSkin()
 	LFDQueueFrameCapBarCap2:SetTexture(C.media.texture)
 	T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
 	RolePollPopup:SetTemplate("Transparent")
-	LFDDungeonReadyDialog:SetTemplate("Transparent")
+	if not T.PTRVersion() then
+		LFDDungeonReadyDialog:SetTemplate("Transparent")
+		T.SkinCloseButton(LFDDungeonReadyDialogCloseButton, LFDDungeonReadyDialog, "-")
+	else
+		LFGDungeonReadyDialog:SetTemplate("Transparent")
+		T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
+	end
 	LFDQueueFrameFindGroupButton:Point("BOTTOMLEFT", LFDParentFrame.backdrop, "BOTTOMLEFT", 4, 4)
 	LFDQueueFrameCancelButton:Point("BOTTOMRIGHT", LFDParentFrame.backdrop, "BOTTOMRIGHT", -6, 4)
 	LFDQueueFrameRandomScrollFrame:Height(LFDQueueFrameRandomScrollFrame:GetHeight() + 10)

@@ -1,3 +1,5 @@
+local T, C, L = unpack(select(2, ...))
+if T.PTRVersion() then return end
 local hook
 
 local getID = function(loc)

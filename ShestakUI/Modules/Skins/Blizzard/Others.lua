@@ -15,10 +15,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"GameMenuFrame",
 			"InterfaceOptionsFrame",
 			"VideoOptionsFrame",
-			"LFDDungeonReadyStatus",
 			"BNToastFrame",
 			"TicketStatusFrameButton",
-			"LFDSearchStatus",
 			"AutoCompleteBox",
 			"ReadyCheckFrame",
 			"ColorPickerFrame",
@@ -36,8 +34,15 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"BaudErrorFrame",
 			"StackSplitFrame",
 			"OpacityFrame",
-			"GeneralDockManagerOverflowButtonList"
+			"GeneralDockManagerOverflowButtonList",
 		}
+
+		if not T.PTRVersion() then
+			tinsert(bgskins, "LFDDungeonReadyStatus")
+			tinsert(bgskins, "LFDSearchStatus")
+		else
+			tinsert(bgskins, "LFGSearchStatus")
+		end
 
 		for i = 1, getn(bgskins) do
 			local frame = _G[bgskins[i]]
@@ -192,8 +197,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"BaudErrorFrameCloseButton",
 			"GuildInviteFrameJoinButton",
 			"GuildInviteFrameDeclineButton",
-			"LFDDungeonReadyDialogLeaveQueueButton",
-			"LFDDungeonReadyDialogEnterDungeonButton",
 			"ChatConfigFrameDefaultButton",
 			"ChatConfigFrameOkayButton",
 			"RolePollPopupAcceptButton",
@@ -237,6 +240,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"PlayLoopbackSoundButton",
 			"AudioOptionsVoicePanelChatMode1KeyBindingButton",
 		}
+
+		if not T.PTRVersion() then
+			tinsert(BlizzardButtons, "LFDDungeonReadyDialogEnterDungeonButton")
+			tinsert(BlizzardButtons, "LFDDungeonReadyDialogLeaveQueueButton")
+		end
 
 		for i = 1, getn(BlizzardButtons) do
 			local buttons = _G[BlizzardButtons[i]]
@@ -321,7 +329,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 				self:StripTextures(true)
 				T.SkinCloseButton(StaticPopup1CloseButton, nil, "-")
 			end)
-			T.SkinCloseButton(LFDDungeonReadyStatusCloseButton, nil, "-")
+			if not T.PTRVersion() then
+				T.SkinCloseButton(LFDDungeonReadyStatusCloseButton, nil, "-")
+			else
+				T.SkinCloseButton(LFGDungeonReadyStatusCloseButton, nil, "-")
+			end
 			T.SkinCloseButton(ChannelPulloutCloseButton)
 			T.SkinCloseButton(RolePollPopupCloseButton)
 			T.SkinCloseButton(ItemRefCloseButton)

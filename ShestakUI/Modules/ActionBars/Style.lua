@@ -21,25 +21,33 @@ local function style(self)
 	local Btname = _G[name.."Name"]
 	local normal = _G[name.."NormalTexture"]
 
+	if T.PTRVersion() and _G[name.."FloatingBG"] then
+		_G[name.."FloatingBG"]:Kill()
+	end
+
 	Flash:SetTexture("")
 	Button:SetNormalTexture("")
 
-	Border:Hide()
-	Border = T.dummy
+	if Border then
+		Border:Hide()
+		Border = T.dummy
+	end
 
 	Count:ClearAllPoints()
 	Count:Point("BOTTOMRIGHT", 0, 2)
 	Count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 	Count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 
-	if C.actionbar.macro == true then
-		Btname:ClearAllPoints()
-		Btname:Point("BOTTOM", 0, 0)
-		Btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-		Btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-		--Btname:Width(T.buttonsize - 1)
-	else
-		Btname:Kill()
+	if Btname then
+		if C.actionbar.macro == true then
+			Btname:ClearAllPoints()
+			Btname:Point("BOTTOM", 0, 0)
+			Btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+			Btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+			--Btname:Width(T.buttonsize - 1)
+		else
+			Btname:Kill()
+		end
 	end
 
 	if C.actionbar.hotkey == true then
@@ -228,8 +236,10 @@ SpellFlyout:HookScript("OnShow", SetupFlyoutButton)
 
 -- Hide the Mouseover texture and attempt to find the ammount of buttons to be skinned
 local function styleflyout(self)
-	self.FlyoutBorder:SetAlpha(0)
-	self.FlyoutBorderShadow:SetAlpha(0)
+	if not T.PTRVersion() then
+		self.FlyoutBorder:SetAlpha(0)
+		self.FlyoutBorderShadow:SetAlpha(0)
+	end
 
 	SpellFlyoutHorizontalBackground:SetAlpha(0)
 	SpellFlyoutVerticalBackground:SetAlpha(0)

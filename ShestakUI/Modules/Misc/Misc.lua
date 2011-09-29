@@ -151,32 +151,52 @@ strip.model = DressUpModel
 strip:RegisterEvent("AUCTION_HOUSE_SHOW")
 strip:RegisterEvent("AUCTION_HOUSE_CLOSED")
 
-strip:SetScript("OnEvent", function(this)
-	if AuctionFrame:IsVisible() and this.model ~= AuctionDressUpModel then
-		this:SetParent(AuctionDressUpModel)
-		this:ClearAllPoints()
-		this:SetPoint("BOTTOM", AuctionDressUpFrameResetButton, "TOP", 0, 3)
-		this.model = AuctionDressUpModel
-	elseif this.model ~= DressUpModel then
-		this:SetParent(DressUpModel)
-		this:ClearAllPoints()
-		this:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
-		this.model = DressUpModel
-	end
-end)
+if not T.PTRVersion() then
+	strip:SetScript("OnEvent", function(this)
+		if AuctionFrame:IsVisible() and this.model ~= AuctionDressUpModel then
+			this:SetParent(AuctionDressUpModel)
+			this:ClearAllPoints()
+			this:SetPoint("BOTTOM", AuctionDressUpFrameResetButton, "TOP", 0, 3)
+			this.model = AuctionDressUpModel
+		elseif this.model ~= DressUpModel then
+			this:SetParent(DressUpModel)
+			this:ClearAllPoints()
+			this:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
+			this.model = DressUpModel
+		end
+	end)
+else
+	strip:SetScript("OnEvent", function(this)
+		if AuctionFrame:IsVisible() and this.model ~= SideDressUpModel then
+			this:SetParent(SideDressUpModel)
+			this:ClearAllPoints()
+			this:SetPoint("BOTTOM", SideDressUpModelResetButton, "TOP", 0, 3)
+			this.model = SideDressUpModel
+		elseif this.model ~= DressUpModel then
+			this:SetParent(DressUpModel)
+			this:ClearAllPoints()
+			this:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
+			this.model = DressUpModel
+		end
+	end)
+end
 
+
+--SideDressUpModelResetButton
 ----------------------------------------------------------------------------------------
 --	GuildTab in FriendsFrame
 ----------------------------------------------------------------------------------------
-local n = FriendsFrame.numTabs + 1
-local gtframe = CreateFrame("Button", "FriendsFrameTab"..n, FriendsFrame, "FriendsFrameTabTemplate")
-gtframe:SetID(n)
-gtframe:SetText(GUILD)
-gtframe:SetPoint("LEFT", getglobal("FriendsFrameTab"..n-1), "RIGHT", -15, 0)
-gtframe:RegisterForClicks("AnyUp")
-gtframe:SetScript("OnClick", function() ToggleGuildFrame() end)
-PanelTemplates_SetNumTabs(FriendsFrame, n)
-PanelTemplates_EnableTab(FriendsFrame, n)
+if not T.PTRVersion() then
+	local n = FriendsFrame.numTabs + 1
+	local gtframe = CreateFrame("Button", "FriendsFrameTab"..n, FriendsFrame, "FriendsFrameTabTemplate")
+	gtframe:SetID(n)
+	gtframe:SetText(GUILD)
+	gtframe:SetPoint("LEFT", getglobal("FriendsFrameTab"..n-1), "RIGHT", -15, 0)
+	gtframe:RegisterForClicks("AnyUp")
+	gtframe:SetScript("OnClick", function() ToggleGuildFrame() end)
+	PanelTemplates_SetNumTabs(FriendsFrame, n)
+	PanelTemplates_EnableTab(FriendsFrame, n)
+end
 
 ----------------------------------------------------------------------------------------
 --	Switch layout mouseover button on minimap

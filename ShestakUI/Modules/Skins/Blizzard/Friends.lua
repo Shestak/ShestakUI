@@ -30,11 +30,6 @@ local function LoadSkin()
 	}
 
 	local KillTextures = {
-		"FriendsFrameTopLeft",
-		"FriendsFrameTopRight",
-		"FriendsFrameBottomLeft",
-		"FriendsFrameBottomRight",
-		"ChannelFrameVerticalBar",
 		"FriendsFrameBroadcastInputLeft",
 		"FriendsFrameBroadcastInputRight",
 		"FriendsFrameBroadcastInputMiddle",
@@ -45,6 +40,23 @@ local function LoadSkin()
 		"ChannelFrameDaughterFrameChannelPasswordRight",
 		"ChannelFrameDaughterFrameChannelPasswordMiddle",
 	}
+
+	if T.PTRVersion() then
+		FriendsFrameInset:StripTextures()
+		WhoFrameListInset:StripTextures()
+		WhoFrameEditBoxInset:StripTextures()
+		ChannelFrameRightInset:StripTextures()
+		ChannelFrameLeftInset:StripTextures()
+		LFRQueueFrameListInset:StripTextures()
+		LFRQueueFrameRoleInset:StripTextures()
+		LFRQueueFrameCommentInset:StripTextures()
+	else
+		FriendsFrameTopLeft:Kill()
+		FriendsFrameTopRight:Kill()
+		FriendsFrameBottomLeft:Kill()
+		FriendsFrameBottomRight:Kill()
+		ChannelFrameVerticalBar:Kill()
+	end
 
 	local buttons = {
 		"FriendsFrameAddFriendButton",
@@ -80,19 +92,21 @@ local function LoadSkin()
 
 	FriendsFrame:StripTextures(true)
 
-	-- Reposition buttons
-	WhoFrameWhoButton:Point("RIGHT", WhoFrameAddFriendButton, "LEFT", -2, 0)
-	WhoFrameAddFriendButton:Point("RIGHT", WhoFrameGroupInviteButton, "LEFT", -2, 0)
-	WhoFrameGroupInviteButton:Point("BOTTOMRIGHT", WhoFrame, "BOTTOMRIGHT", -44, 82)
+	if not T.PTRVersion() then
+		-- Reposition buttons
+		WhoFrameWhoButton:Point("RIGHT", WhoFrameAddFriendButton, "LEFT", -2, 0)
+		WhoFrameAddFriendButton:Point("RIGHT", WhoFrameGroupInviteButton, "LEFT", -2, 0)
+		WhoFrameGroupInviteButton:Point("BOTTOMRIGHT", WhoFrame, "BOTTOMRIGHT", -44, 82)
 
-	-- Resize Buttons
-	WhoFrameWhoButton:Size(WhoFrameWhoButton:GetWidth() - 4, WhoFrameWhoButton:GetHeight())
-	WhoFrameAddFriendButton:Size(WhoFrameAddFriendButton:GetWidth() - 4, WhoFrameAddFriendButton:GetHeight())
-	WhoFrameGroupInviteButton:Size(WhoFrameGroupInviteButton:GetWidth() - 4, WhoFrameGroupInviteButton:GetHeight())
-	T.SkinEditBox(WhoFrameEditBox)
-	WhoFrameEditBox:Height(WhoFrameEditBox:GetHeight() - 15)
-	WhoFrameEditBox:Point("BOTTOM", WhoFrame, "BOTTOM", -10, 108)
-	WhoFrameEditBox:Width(WhoFrameEditBox:GetWidth() + 17)
+		-- Resize Buttons
+		WhoFrameWhoButton:Size(WhoFrameWhoButton:GetWidth() - 4, WhoFrameWhoButton:GetHeight())
+		WhoFrameAddFriendButton:Size(WhoFrameAddFriendButton:GetWidth() - 4, WhoFrameAddFriendButton:GetHeight())
+		WhoFrameGroupInviteButton:Size(WhoFrameGroupInviteButton:GetWidth() - 4, WhoFrameGroupInviteButton:GetHeight())
+		T.SkinEditBox(WhoFrameEditBox)
+		WhoFrameEditBox:Height(WhoFrameEditBox:GetHeight() - 15)
+		WhoFrameEditBox:Point("BOTTOM", WhoFrame, "BOTTOM", -10, 108)
+		WhoFrameEditBox:Width(WhoFrameEditBox:GetWidth() + 17)
+	end
 
 	for _, texture in pairs(KillTextures) do
 		_G[texture]:Kill()
@@ -133,9 +147,15 @@ local function LoadSkin()
 	hooksecurefunc("FriendsFrame_OnEvent", UpdateWhoSkins)
 
 	ChannelFrameDaughterFrame:CreateBackdrop("Transparent")
-	FriendsFrame:CreateBackdrop("Transparent")
-	FriendsFrame.backdrop:Point("TOPLEFT", FriendsFrame, "TOPLEFT", 16, -12)
-	FriendsFrame.backdrop:Point("BOTTOMRIGHT", FriendsFrame, "BOTTOMRIGHT", -30, 76)
+	if T.PTRVersion() then
+		FriendsFrame:CreateBackdrop("Transparent")
+		FriendsFrame.backdrop:Point("TOPLEFT", FriendsFrame, "TOPLEFT", 0, -0)
+		FriendsFrame.backdrop:Point("BOTTOMRIGHT", FriendsFrame, "BOTTOMRIGHT", 0, 0)
+	else
+		FriendsFrame:CreateBackdrop("Transparent")
+		FriendsFrame.backdrop:Point("TOPLEFT", FriendsFrame, "TOPLEFT", 16, -12)
+		FriendsFrame.backdrop:Point("BOTTOMRIGHT", FriendsFrame, "BOTTOMRIGHT", -30, 76)
+	end
 	T.SkinCloseButton(ChannelFrameDaughterFrameDetailCloseButton, ChannelFrameDaughterFrame)
 	T.SkinCloseButton(FriendsFrameCloseButton, FriendsFrame.backdrop)
 	T.SkinDropDownBox(WhoFrameDropDown, 150)
