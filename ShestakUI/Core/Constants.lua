@@ -25,6 +25,7 @@ T.PTRVersion = function()
 end
 
 if T.name == "Черешок" or T.name == "Вершок" or T.name == "Вещмешок" or T.name == "Гребешок" or T.name == "Кулешок"
-or T.name == "Лапушок" or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Шестак" or T.name == "Торгашок" then
+or T.name == "Лапушок" or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Шестак" or T.name == "Торгашок"
+or T.name == "Shestak" then
 	T.author = true
 end
