@@ -22,6 +22,9 @@ local function LoadSkin()
 	T.SkinDropDownBox(WorldMapZoneMinimapDropDown)
 	T.SkinDropDownBox(WorldMapContinentDropDown)
 	T.SkinDropDownBox(WorldMapZoneDropDown)
+	if T.PTRVersion() then
+		T.SkinDropDownBox(WorldMapShowDropDown)
+	end
 	WorldMapZoomOutButton:SkinButton()
 	WorldMapZoomOutButton:Point("LEFT", WorldMapZoneDropDown, "RIGHT", 0, 4)
 	WorldMapLevelUpButton:Point("TOPLEFT", WorldMapLevelDropDown, "TOPRIGHT", -2, 8)

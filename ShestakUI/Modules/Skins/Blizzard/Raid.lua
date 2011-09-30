@@ -6,10 +6,13 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local buttons = {
-		"RaidFrameRaidBrowserButton",
 		"RaidFrameRaidInfoButton",
 		"RaidFrameReadyCheckButton",
 	}
+
+	if not T.PTRVersion() then
+		tinsert(buttons, "RaidFrameRaidBrowserButton")
+	end
 
 	for i = 1, #buttons do
 		_G[buttons[i]]:SkinButton()

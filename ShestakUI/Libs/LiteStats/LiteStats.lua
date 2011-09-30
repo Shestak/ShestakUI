@@ -726,12 +726,14 @@ if guild.enabled then
 		local currentXP, remainingXP, dailyXP, maxDailyXP = UnitGetGuildXP("player")
 		local nextLevelXP = currentXP + remainingXP
 		local percentTotal
+		local percentDaily
 		if currentXP > 0 then
 			percentTotal = tostring(math.ceil((currentXP / nextLevelXP) * 100))
+			percentDaily = tostring(math.ceil((dailyXP / maxDailyXP) * 100))
 		else
 			percentTotal = 0
+			percentDaily = 0
 		end
-		local percentDaily = tostring(math.ceil((dailyXP / maxDailyXP) * 100))
 
 		guildXP[0] = { currentXP, nextLevelXP, percentTotal }
 		guildXP[1] = { dailyXP, maxDailyXP, percentDaily }

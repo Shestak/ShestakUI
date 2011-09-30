@@ -90,7 +90,22 @@ local function LoadSkin()
 	if T.PTRVersion() then
 		for i = 1, 2 do
 			local tab = _G["LFRParentFrameSideTab"..i]
-			-- soon
+			if tab then
+				local icon = tab:GetNormalTexture():GetTexture()
+
+				tab:StripTextures()
+				tab:SetNormalTexture(icon)
+				tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				tab:GetNormalTexture():ClearAllPoints()
+
+				tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
+				tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+
+				tab:CreateBackdrop("Default")
+				tab.backdrop:SetAllPoints()
+				tab:StyleButton(true)
+			end
+			LFRParentFrameSideTab1:Point("TOPLEFT", FriendsFrame, "TOPRIGHT", 1, 0)
 		end
 	end
 end

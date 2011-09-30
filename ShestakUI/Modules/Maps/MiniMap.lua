@@ -217,6 +217,16 @@ local micromenu = {
 				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
 			end
 		end},
+	{text = RAID, notCheckable = true,
+		func = function()
+			if T.PTRVersion() then
+				if T.level >= SHOW_LFD_LEVEL then
+					ToggleRaidFrame()
+				else
+					print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
+				end
+			end
+		end},
 	{text = LOOKING_FOR_RAID, notCheckable = 1,
 		func = function() if T.PTRVersion() then ToggleFriendsFrame(4) else ToggleFrame(LFRParentFrame) end end},
 	{text = HELP_BUTTON, notCheckable = 1,

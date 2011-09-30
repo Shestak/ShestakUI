@@ -151,6 +151,8 @@ local function LoadSkin()
 		FriendsFrame:CreateBackdrop("Transparent")
 		FriendsFrame.backdrop:Point("TOPLEFT", FriendsFrame, "TOPLEFT", 0, -0)
 		FriendsFrame.backdrop:Point("BOTTOMRIGHT", FriendsFrame, "BOTTOMRIGHT", 0, 0)
+		WhoListScrollFrame:ClearAllPoints()
+		WhoListScrollFrame:SetPoint("TOPRIGHT", WhoFrameListInset, -25, 0)
 	else
 		FriendsFrame:CreateBackdrop("Transparent")
 		FriendsFrame.backdrop:Point("TOPLEFT", FriendsFrame, "TOPLEFT", 16, -12)
