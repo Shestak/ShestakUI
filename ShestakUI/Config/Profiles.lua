@@ -116,7 +116,6 @@ if T.author == true then
 	C["actionbar"].toggle_mode = false
 	C["actionbar"].light_macro = true
 	C["unitframe"].arena_on_right = false
-	C["unitframe"].icons_combo_point_new = true
 	C["stats"].fps = false
 	C["stats"].guild_repair = false
 	C["stats"].battleground = true
