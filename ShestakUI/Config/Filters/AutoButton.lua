@@ -19,6 +19,7 @@ T.ABItems = {
 	63351,	-- Tahret Dynasty Mallet (Daily Quest)
 	52507,	-- Stardust No.2 (Daily Quest)
 	69240,	-- Enchanted Salve (Daily Quest)
+	69235,	-- Fang of the Wolf (Daily Quest)
 }
 
 T.ABEquipedItems = {
