@@ -685,7 +685,6 @@ local function Shared(self, unit)
 			self.Auras.spacing = T.Scale(3)
 			self.Auras.size = T.Scale(25)
 			self.Auras.gap = true
-			self.Auras.onlyShowPlayer = C.aura.player_aura_only
 			self.Auras.PostCreateIcon = T.PostCreateAura
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
