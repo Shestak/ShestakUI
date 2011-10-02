@@ -28,7 +28,7 @@ local function Update(self, event, unit, powertype)
 	if(druidmana.colorClass) then
 		t = self.colors.class['DRUID']
 	elseif(druidmana.colorSmooth) then
-		r, g, b = self.ColorGradient(min / max, unpack(druidmana.smoothGradient or self.colors.smooth))
+		r, g, b = self.ColorGradient(min, max, unpack(druidmana.smoothGradient or self.colors.smooth))
 	elseif(druidmana.colorPower) then
 		t = self.colors.power['MANA']
 	end

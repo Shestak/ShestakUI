@@ -25,11 +25,13 @@ for eclass, color in next, FACTION_BAR_COLORS do
 end
 
 -- http://www.wowwiki.com/ColorGradient
-local inf = math.huge
-local ColorGradient = function(perc, ...)
-	-- Translate divison by zeros into 0, so we don't blow select.
-	-- We check perc against itself because we rely on the fact that NaN can't equal NaN.
-	if(perc ~= perc or perc == inf) then perc = 0 end
+local ColorGradient = function(a, b, ...)
+	local perc
+	if(b == 0) then
+		perc = 0
+	else
+		perc = a / b
+	end
 
 	if perc >= 1 then
 		local r, g, b = select(select('#', ...) - 2, ...)
