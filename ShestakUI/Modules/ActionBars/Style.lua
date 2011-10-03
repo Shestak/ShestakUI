@@ -239,6 +239,13 @@ local function styleflyout(self)
 	if not T.PTRVersion() then
 		self.FlyoutBorder:SetAlpha(0)
 		self.FlyoutBorderShadow:SetAlpha(0)
+	else
+		if self.FlyoutBorder then
+			self.FlyoutBorder:SetAlpha(0)
+		end
+		if self.FlyoutBorderShadow then
+			self.FlyoutBorderShadow:SetAlpha(0)
+		end
 	end
 
 	SpellFlyoutHorizontalBackground:SetAlpha(0)
