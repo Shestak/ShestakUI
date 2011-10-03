@@ -195,9 +195,8 @@ SlashCmdList.MOUSEOVERBIND = function()
 				return
 			end
 
-			if key == "LSHIFT" or key == "RSHIFT" or key == "LCTRL"	or key == "RCTRL" or key == "LALT"
-			or key == "RALT" or key == "UNKNOWN" or key == "LeftButton"	then return end
-
+			if key == "LSHIFT" or key == "RSHIFT" or key == "LCTRL" or key == "RCTRL" or key == "LALT"
+			or key == "RALT" or key == "UNKNOWN" or key == "LeftButton" then return end
 			if key == "MiddleButton" then key = "BUTTON3" end
 			if key == "Button4" then key = "BUTTON4" end
 			if key == "Button5" then key = "BUTTON5" end
@@ -215,15 +214,18 @@ SlashCmdList.MOUSEOVERBIND = function()
 			self:Update(self.button, self.spellmacro)
 			if self.spellmacro ~= "MACRO" then GameTooltip:Hide() end
 		end
+
 		function bind:HideFrame()
 			self:ClearAllPoints()
 			self:Hide()
 			GameTooltip:Hide()
 		end
+
 		function bind:Activate()
 			self.enabled = true
 			self:RegisterEvent("PLAYER_REGEN_DISABLED")
 		end
+
 		function bind:Deactivate(save)
 			if save then
 				SaveBindings(2)
