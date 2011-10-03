@@ -53,7 +53,7 @@ if IsAddOnLoaded("TidyPlates") or IsAddOnLoaded("Aloft") or IsAddOnLoaded("dName
 	C.nameplate.enable = false
 end
 
-if IsAddOnLoaded("Dominos") or IsAddOnLoaded("Bartender4") then
+if IsAddOnLoaded("Dominos") or IsAddOnLoaded("Bartender4") or IsAddOnLoaded("RazerNaga") then
 	C.actionbar.enable = false
 end
 
