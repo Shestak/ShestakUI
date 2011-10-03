@@ -24,6 +24,7 @@
 	<Script file="Help.lua"/>
 	<Script file="Inspect.lua"/>
 	<Script file="Interface.lua"/>
+	<Script file="ItemAlteration.lua"/>
 	<Script file="ItemSocketing.lua"/>
 	<Script file="ItemText.lua"/>
 	<Script file="Journal.lua"/>
@@ -51,6 +52,7 @@
 	<Script file="TradeSkill.lua"/>
 	<Script file="Trainer.lua"/>
 	<Script file="Tutorial.lua"/>
+	<Script file="VoidStorage.lua"/>
 	<Script file="WorldMap.lua"/>
 	<Script file="WorldState.lua"/>
 </Ui>
