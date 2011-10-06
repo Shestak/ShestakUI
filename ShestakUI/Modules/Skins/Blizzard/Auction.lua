@@ -395,6 +395,7 @@ local function LoadSkin()
 		"AuctionatorResetsFrame",
 		"Atr_ScanningOptionsFrame",
 		"AuctionatorDescriptionFrame",
+		"Atr_LUA_Error",
 	}
 
 	for i = 1, getn(frames) do
@@ -413,6 +414,7 @@ local function LoadSkin()
 	Atr_Buy_Confirm_Frame:SetTemplate("Default")
 	Atr_CheckActives_Frame:SetTemplate("Default")
 	Atr_Error_Frame:SetTemplate("Transparent")
+	Atr_LUA_Error:SetTemplate("Transparent")
 
 	Atr_HeadingsBar:CreateBackdrop("Overlay")
 	Atr_HeadingsBar.backdrop:Point("TOPLEFT", 0, -25)
@@ -475,6 +477,15 @@ local function LoadSkin()
 			Atr_SellControls_Tex:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
 		end
 	end)
+
+	T.SkinCloseButton(Atr_LUA_ErrorClose)
+
+	for i = 1, Atr_LUA_Error:GetNumChildren() do
+		local child = select(i, Atr_LUA_Error:GetChildren())
+		if child:GetObjectType() == "Button" and child:GetText() then
+			child:SkinButton()
+		end
+	end
 end
 
 T.SkinFuncs["Blizzard_AuctionUI"] = LoadSkin
