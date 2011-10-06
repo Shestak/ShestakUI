@@ -15,9 +15,7 @@ T.realm = GetRealmName()
 T.level = UnitLevel("player")
 T.color = RAID_CLASS_COLORS[T.class]
 T.PTRVersion = function()
-	--if T.patch >= 40300 then
-	local _, version = GetBuildInfo()
-	if tonumber(version) >= 14732 then
+	if T.patch >= 40300 then
 		return true
 	else
 		return false
