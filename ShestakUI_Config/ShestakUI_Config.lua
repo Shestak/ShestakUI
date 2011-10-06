@@ -935,6 +935,7 @@ do
 
 	thxui.name = "ShestakUI"
 	thxui:SetScript("OnShow", function(self)
+		if self.show then return end
 		local T, C, L = unpack(ShestakUI)
 		local title = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title:SetPoint("TOPLEFT", 16, -16)
@@ -942,10 +943,10 @@ do
 
 		local subtitle = self:CreateFontString(nil, "ARTWORK")
 		subtitle:SetFont(C.media.normal_font, 12)
-		subtitle:SetWidth(380)
+		subtitle:SetWidth(500)
 		subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
 		subtitle:SetJustifyH("LEFT")
-		subtitle:SetText("UI Site: http//shestak.org\nGitHub: https://github.com/Shestak/ShestakUI\nCurse: http://wow.curseforge.com/addons/shestakui/\nWoWInterface: http://www.wowinterface.com/downloads/info19033-ShestakUI.html\nChange Log: https://github.com/Shestak/ShestakUI/commits/master/")
+		subtitle:SetText("UI Site: |cff298F00http//shestak.org|r\nGitHub: |cff298F00https://github.com/Shestak/ShestakUI|r\nCurse: |cff298F00http://wow.curseforge.com/addons/shestakui/|r\nWoWInterface: |cff298F00http://www.wowinterface.com/downloads/info19033-ShestakUI.html|r\nChange Log: |cff298F00https://github.com/Shestak/ShestakUI/commits/master/|r")
 
 		local title2 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title2:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -16)
@@ -953,7 +954,7 @@ do
 
 		local subtitle2 = self:CreateFontString(nil, "ARTWORK")
 		subtitle2:SetFont(C.media.normal_font, 12)
-		subtitle2:SetWidth(380)
+		subtitle2:SetWidth(500)
 		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
 		subtitle2:SetJustifyH("LEFT")
 		subtitle2:SetText("ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Havoc74, Duffed, Hydra, Gorlasch, Nefarion, Compost, Blamdarot, Suicidal Katt, Tuller, Rostok, Nebula, Thizzelle, Astromech, Ammo, Slakah, Xuerian, Thalyra, Soeters, Evilpaul.")
@@ -964,7 +965,7 @@ do
 
 		local subtitle3 = self:CreateFontString(nil, "ARTWORK")
 		subtitle3:SetFont(C.media.normal_font, 12)
-		subtitle3:SetWidth(380)
+		subtitle3:SetWidth(500)
 		subtitle3:SetPoint("TOPLEFT", title3, "BOTTOMLEFT", 0, -8)
 		subtitle3:SetJustifyH("LEFT")
 		subtitle3:SetText("Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, PterOs, tat2dawn, UI Users, Russian Community and Others.")
@@ -972,6 +973,8 @@ do
 		local version = self:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 		version:SetPoint("BOTTOMRIGHT", -16, 16)
 		version:SetText("Version: "..T.version)
+
+		self.show = true
 	end)
 
 	InterfaceOptions_AddCategory(thxui)
