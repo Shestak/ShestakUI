@@ -35,28 +35,41 @@ local function LoadSkin()
 			EncounterJournalEncounterFrameInfo.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
 		end
 
-		EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
-		EncounterJournalEncounterFrameInfoBossTab:Point("LEFT", EncounterJournalEncounterFrameInfoEncounterTile, "RIGHT", -10, 4)
-		EncounterJournalEncounterFrameInfoLootTab:ClearAllPoints()
-		EncounterJournalEncounterFrameInfoLootTab:Point("LEFT", EncounterJournalEncounterFrameInfoBossTab, "RIGHT", -24, 0)
-
-		EncounterJournalEncounterFrameInfoBossTab:SetFrameStrata("HIGH")
-		EncounterJournalEncounterFrameInfoLootTab:SetFrameStrata("HIGH")
-
-		EncounterJournalEncounterFrameInfoBossTab:SetScale(0.75)
-		EncounterJournalEncounterFrameInfoLootTab:SetScale(0.75)
-
-		EncounterJournalEncounterFrameInfoLootScrollFrameFilter:SetScript("OnShow", function()
-			EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
-			EncounterJournalEncounterFrameInfoBossTab:Point("LEFT", EncounterJournalEncounterFrameInfoLootScrollFrameFilter, "RIGHT", 0, 0)
-			EncounterJournalEncounterFrameInfoEncounterTile:Hide()
-		end)
-
-		EncounterJournalEncounterFrameInfoLootScrollFrameFilter:SetScript("OnHide", function()
+		if not T.PTRVersion() then
 			EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
 			EncounterJournalEncounterFrameInfoBossTab:Point("LEFT", EncounterJournalEncounterFrameInfoEncounterTile, "RIGHT", -10, 4)
-			EncounterJournalEncounterFrameInfoEncounterTile:Show()
-		end)
+			EncounterJournalEncounterFrameInfoLootTab:ClearAllPoints()
+			EncounterJournalEncounterFrameInfoLootTab:Point("LEFT", EncounterJournalEncounterFrameInfoBossTab, "RIGHT", -24, 0)
+
+			EncounterJournalEncounterFrameInfoBossTab:SetFrameStrata("HIGH")
+			EncounterJournalEncounterFrameInfoLootTab:SetFrameStrata("HIGH")
+
+			EncounterJournalEncounterFrameInfoBossTab:SetScale(0.75)
+			EncounterJournalEncounterFrameInfoLootTab:SetScale(0.75)
+
+			EncounterJournalEncounterFrameInfoLootScrollFrameFilter:SetScript("OnShow", function()
+				EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
+				EncounterJournalEncounterFrameInfoBossTab:Point("LEFT", EncounterJournalEncounterFrameInfoLootScrollFrameFilter, "RIGHT", 0, 0)
+				EncounterJournalEncounterFrameInfoEncounterTile:Hide()
+			end)
+
+			EncounterJournalEncounterFrameInfoLootScrollFrameFilter:SetScript("OnHide", function()
+				EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
+				EncounterJournalEncounterFrameInfoBossTab:Point("LEFT", EncounterJournalEncounterFrameInfoEncounterTile, "RIGHT", -10, 4)
+				EncounterJournalEncounterFrameInfoEncounterTile:Show()
+			end)
+		else
+			EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
+			EncounterJournalEncounterFrameInfoBossTab:Point("RIGHT", EncounterJournalEncounterFrameInfoResetButton, "LEFT", 10, 0)
+			EncounterJournalEncounterFrameInfoLootTab:ClearAllPoints()
+			EncounterJournalEncounterFrameInfoLootTab:Point("RIGHT", EncounterJournalEncounterFrameInfoBossTab, "LEFT", 20, 0)
+
+			EncounterJournalEncounterFrameInfoBossTab:SetFrameStrata("HIGH")
+			EncounterJournalEncounterFrameInfoLootTab:SetFrameStrata("HIGH")
+
+			EncounterJournalEncounterFrameInfoBossTab:SetScale(0.70)
+			EncounterJournalEncounterFrameInfoLootTab:SetScale(0.70)
+		end
 	end)
 
 	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
