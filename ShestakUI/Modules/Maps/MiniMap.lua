@@ -161,83 +161,102 @@ end)
 ----------------------------------------------------------------------------------------
 local menuFrame = CreateFrame("Frame", "MinimapRightClickMenu", UIParent, "UIDropDownMenuTemplate")
 local micromenu = {
-	{text = CHARACTER_BUTTON, notCheckable = 1,
-		func = function() ToggleCharacter("PaperDollFrame") end},
-	{text = SPELLBOOK_ABILITIES_BUTTON, notCheckable = 1,
-		func = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end ToggleFrame(SpellBookFrame) end},
-	{text = TALENTS_BUTTON, notCheckable = 1,
-		func = function()
-			if not PlayerTalentFrame then
-				LoadAddOn("Blizzard_TalentUI")
+	{text = CHARACTER_BUTTON, notCheckable = 1, func = function()
+		ToggleCharacter("PaperDollFrame")
+	end},
+	{text = SPELLBOOK_ABILITIES_BUTTON, notCheckable = 1, func = function()
+		if InCombatLockdown() then
+			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
+		end
+		ToggleFrame(SpellBookFrame)
+	end},
+	{text = TALENTS_BUTTON, notCheckable = 1, func = function()
+		if not PlayerTalentFrame then
+			LoadAddOn("Blizzard_TalentUI")
+		end
+		if not GlyphFrame then
+			LoadAddOn("Blizzard_GlyphUI")
+		end
+		if T.level >= SHOW_TALENT_LEVEL then
+			PlayerTalentFrame_Toggle()
+		else
+			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
+		end
+	end},
+	{text = ACHIEVEMENT_BUTTON, notCheckable = 1, func = function()
+		ToggleAchievementFrame()
+	end},
+	{text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
+		ToggleFrame(QuestLogFrame)
+	end},
+	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
+		ToggleFriendsFrame(1)
+	end},
+	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
+		if T.level >= SHOW_PVP_LEVEL then
+			ToggleFrame(PVPFrame)
+		else
+			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
+		end
+	end},
+	{text = ACHIEVEMENTS_GUILD_TAB, notCheckable = 1, func = function()
+		if IsInGuild() then
+			if not GuildFrame then
+				LoadAddOn("Blizzard_GuildUI")
 			end
-			if not GlyphFrame then
-				LoadAddOn("Blizzard_GlyphUI")
+			ToggleGuildFrame()
+			GuildFrame_TabClicked(GuildFrameTab2)
+		else
+			if not LookingForGuildFrame then
+				LoadAddOn("Blizzard_LookingForGuildUI")
 			end
-			if T.level >= SHOW_TALENT_LEVEL then
-				PlayerTalentFrame_Toggle()
-			else
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
-			end
-		end},
-	{text = ACHIEVEMENT_BUTTON, notCheckable = 1,
-		func = function() ToggleAchievementFrame() end},
-	{text = QUESTLOG_BUTTON, notCheckable = 1,
-		func = function() ToggleFrame(QuestLogFrame) end},
-	{text = SOCIAL_BUTTON, notCheckable = 1,
-		func = function() ToggleFriendsFrame(1) end},
-	{text = PLAYER_V_PLAYER, notCheckable = 1,
-		func = function()
-			if T.level >= SHOW_PVP_LEVEL then
-				ToggleFrame(PVPFrame)
-			else
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
-			end
-		end},
-	{text = ACHIEVEMENTS_GUILD_TAB, notCheckable = 1,
-		func = function()
-			if IsInGuild() then
-				if not GuildFrame then
-					LoadAddOn("Blizzard_GuildUI")
-				end
-				ToggleGuildFrame()
-				GuildFrame_TabClicked(GuildFrameTab2)
-			else
-				if not LookingForGuildFrame then
-					LoadAddOn("Blizzard_LookingForGuildUI")
-				end
-				if not LookingForGuildFrame then return end
-				LookingForGuildFrame_Toggle()
-			end
-		end},
-	{text = LFG_TITLE, notCheckable = 1,
-		func = function()
-			if T.level >= SHOW_LFD_LEVEL then
-				ToggleFrame(LFDParentFrame)
-			else
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
-			end
-		end},
-	{text = RAID, notCheckable = true,
-		func = function()
-			if T.PTRVersion() then
-				if T.level >= SHOW_LFD_LEVEL then
-					ToggleRaidFrame()
-				else
-					print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
-				end
-			end
-		end},
-	{text = LOOKING_FOR_RAID, notCheckable = 1,
-		func = function() if T.PTRVersion() then ToggleFriendsFrame(4) else ToggleFrame(LFRParentFrame) end end},
-	{text = HELP_BUTTON, notCheckable = 1,
-		func = function() ToggleHelpFrame() end},
-	{text = L_MINIMAP_CALENDAR, notCheckable = 1,
-		func = function() if not CalendarFrame then LoadAddOn("Blizzard_Calendar") end Calendar_Toggle() end},
-	{text = BATTLEFIELD_MINIMAP, notCheckable = true,
-		func = function() ToggleBattlefieldMinimap() end},
-	{text = ENCOUNTER_JOURNAL, notCheckable = 1,
-		func = function() if not IsAddOnLoaded("Blizzard_EncounterJournal") and T.PTRVersion() then LoadAddOn("Blizzard_EncounterJournal") end ToggleFrame(EncounterJournal) end},
+			if not LookingForGuildFrame then return end
+			LookingForGuildFrame_Toggle()
+		end
+	end},
+	{text = LFG_TITLE, notCheckable = 1, func = function()
+		if T.level >= SHOW_LFD_LEVEL then
+			ToggleFrame(LFDParentFrame)
+		else
+			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
+		end
+	end},
+	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
+		if T.PTRVersion() then
+			ToggleFriendsFrame(4)
+		else
+			ToggleFrame(LFRParentFrame)
+		end
+	end},
+	{text = HELP_BUTTON, notCheckable = 1, func = function()
+		ToggleHelpFrame()
+	end},
+	{text = L_MINIMAP_CALENDAR, notCheckable = 1, func = function()
+		if not CalendarFrame then
+			LoadAddOn("Blizzard_Calendar")
+		end
+		Calendar_Toggle()
+	end},
+	{text = BATTLEFIELD_MINIMAP, notCheckable = true, func = function()
+		ToggleBattlefieldMinimap()
+	end},
+	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
+		if not IsAddOnLoaded("Blizzard_EncounterJournal") and T.PTRVersion() then
+			LoadAddOn("Blizzard_EncounterJournal")
+		end
+		ToggleFrame(EncounterJournal)
+	end},
 }
+
+if T.PTRVersion() then
+	tinsert(micromenu, {text = RAID, notCheckable = true, func = function()
+		if T.level >= SHOW_LFD_LEVEL then
+			ToggleRaidFrame()
+		else
+			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
+		end
+	end})
+end
 
 Minimap:SetScript("OnMouseUp", function(self, button)
 	local position = MinimapAnchor:GetPoint()
