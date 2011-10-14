@@ -253,4 +253,10 @@ LPSTAT_PROFILES = {
 			spec2fmt = class"AP: ".."[ap]"..class" Crit: ".."[meleecrit]%"..class" Hit: ".."[meleehit]%",
 		}
 	},
+	DEATHKNIGHT = {
+		Stats = {
+			spec1fmt = class"Mastery: ".."[mastery]"..class" Armor: ".."[armor]"..class" Avoid: ".."[avoidance]%",
+			spec2fmt = class"Mastery: ".."[mastery]"..class" Hit: ".."[meleehit]%"..class" Haste: ".."[meleehaste]%",
+		}
+	},
 }
