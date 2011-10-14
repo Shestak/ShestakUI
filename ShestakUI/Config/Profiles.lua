@@ -9,7 +9,7 @@
 ----------------------------------------------------------------------------------------
 -- if T.name == "MegaChar" then
 --		C["chat"].width = 100500
--- 		C["tooltip"].cursor = false
+--		C["tooltip"].cursor = false
 --		C["unitframe"].plugins_totem_bar = false
 --		C["addon"].pvp = {ADDON1, ADDON2, ADDON3, ETC}
 --		C["addon"].raid = {ADDON1, ADDON2, ADDON3, ETC}
@@ -30,6 +30,65 @@ end
 ----------------------------------------------------------------------------------------
 --	Per Character Name Config (overwrite general and class)
 --	Name need to be case sensitive
+----------------------------------------------------------------------------------------
+if T.name == "CharacterName" then
+
+end
+
+----------------------------------------------------------------------------------------
+--	Per Max Character Level Config (overwrite general, class and name)
+----------------------------------------------------------------------------------------
+if T.level ~= MAX_PLAYER_LEVEL then
+
+end
+
+----------------------------------------------------------------------------------------
+--	Shestak Config
+----------------------------------------------------------------------------------------
+if T.author == true then
+	C["general"].welcome_message = false
+	C["general"].custom_lagtolerance = true
+	C["misc"].auto_quest = true
+	C["misc"].auto_accept_invite = true
+	C["misc"].vehicle_mouseover = true
+	C["misc"].quest_auto_button = true
+	C["announcements"].spells = true
+	C["skins"].blizzard_frames = true
+	C["combattext"].crit_postfix = ""
+	C["combattext"].crit_prefix = ""
+	C["combattext"].stop_ve_spam = true
+	C["combattext"].dk_runes = false
+	C["combattext"].dispel = false
+	C["combattext"].interrupt = false
+	C["threat"].hide_solo = true
+	C["tooltip"].shift_modifer = true
+	C["tooltip"].cursor = true
+	C["tooltip"].title = true
+	C["tooltip"].talents = true
+	C["tooltip"].average_lvl = true
+	C["tooltip"].who_targetting = true
+	C["tooltip"].raid_icon = true
+	C["chat"].combatlog = false
+	C["chat"].spam = true
+	C["nameplate"].track_auras = true
+	C["actionbar"].toggle_mode = false
+	C["actionbar"].light_macro = true
+	C["unitframe"].arena_on_right = false
+	C["stats"].fps = false
+	C["stats"].guild_repair = false
+	C["stats"].battleground = true
+	if T.level == MAX_PLAYER_LEVEL then
+		C["misc"].ach_screens = true
+		C["stats"].experience = false
+		C["combattext"].heal_treshold = 500
+	end
+	if T.realm == "Дракономор" then
+		C["unitframe"].icons_pvp = true
+	end
+end
+
+----------------------------------------------------------------------------------------
+--	Sw2rT1 Config
 ----------------------------------------------------------------------------------------
 if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.name == "Пратифный" or T.name == "Рукалицо"
 	or T.name == "Трольпаладин" or T.name == "Чаккерс" or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупаяшколота" then
@@ -78,53 +137,42 @@ if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.n
 end
 
 ----------------------------------------------------------------------------------------
---	Per Max Character Level Config (overwrite general, class and name)
+--	Oz@Runetotem Config
 ----------------------------------------------------------------------------------------
-if T.level ~= MAX_PLAYER_LEVEL then
-
-end
-
-----------------------------------------------------------------------------------------
---	My Config
-----------------------------------------------------------------------------------------
-if T.author == true then
-	C["general"].welcome_message = false
-	C["general"].custom_lagtolerance = true
-	C["misc"].auto_quest = true
-	C["misc"].auto_accept_invite = true
-	C["misc"].vehicle_mouseover = true
-	C["misc"].quest_auto_button = true
-	C["announcements"].spells = true
+if T.name == "Oz" and T.realm == "Runetotem" then
+	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 400, 24}
+	C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -85}
+	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
+	C["misc"].auto_decline_duel = false
+	C["misc"].auto_resurrection = false
+	C["misc"].ach_screens = true
 	C["skins"].blizzard_frames = true
-	C["combattext"].crit_postfix = ""
-	C["combattext"].crit_prefix = ""
-	C["combattext"].stop_ve_spam = true
+	C["skins"].dbm = true
+	C["combattext"].scrollable = true
 	C["combattext"].dk_runes = false
-	C["combattext"].dispel = false
-	C["combattext"].interrupt = false
-	C["threat"].hide_solo = true
-	C["tooltip"].shift_modifer = true
-	C["tooltip"].cursor = true
-	C["tooltip"].title = true
+	C["combattext"].killingblow = true
+	C["enemycooldown"].show_always = true
+	C["tooltip"].item_icon = true
 	C["tooltip"].talents = true
+	C["tooltip"].title = true
 	C["tooltip"].average_lvl = true
-	C["tooltip"].who_targetting = true
 	C["tooltip"].raid_icon = true
-	C["chat"].combatlog = false
-	C["chat"].spam = true
-	C["nameplate"].track_auras = true
-	C["actionbar"].toggle_mode = false
-	C["actionbar"].light_macro = true
-	C["unitframe"].arena_on_right = false
-	C["stats"].fps = false
-	C["stats"].guild_repair = false
+	C["tooltip"].who_targetting = true
+	C["chat"].filter = false
+	C["loot"].auto_greed = false
+	C["nameplate"].show_castbar_name = true
+	C["nameplate"].class_icons = true
+	C["actionbar"].hotkey = false
+	C["actionbar"].bottombars = 1
+	C["actionbar"].rightbars = 3
+	C["aura"].focus_debuffs = true
+	C["aura"].cast_by = true
+	C["unitframe"].castbar_icon = true
+	C["unitframe"].castbar_latency = false
+	C["unitframe"].plugins_rune_bar = false
+	C["unitframe"].plugins_smooth_bar = true
+	C["unitframe"].plugins_talents = true
+	C["raidframe"].icons_lfd_role = true
 	C["stats"].battleground = true
-	if T.level == MAX_PLAYER_LEVEL then
-		C["misc"].ach_screens = true
-		C["stats"].experience = false
-		C["combattext"].heal_treshold = 500
-	end
-	if T.realm == "Дракономор" then
-		C["unitframe"].icons_pvp = true
-	end
+	C["stats"].guild_repair = false
 end
