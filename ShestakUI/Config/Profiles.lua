@@ -142,6 +142,7 @@ end
 if T.name == "Oz" and T.realm == "Runetotem" then
 	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 400, 24}
 	C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -85}
+	C["position"].threat_meter = {"BOTTOM", UIParent, "BOTTOM", 0, 107}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
 	C["misc"].auto_decline_duel = false
 	C["misc"].auto_resurrection = false
@@ -172,6 +173,7 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["unitframe"].plugins_rune_bar = false
 	C["unitframe"].plugins_smooth_bar = true
 	C["unitframe"].plugins_talents = true
+	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].icons_lfd_role = true
 	C["stats"].battleground = true
 	C["stats"].guild_repair = false
