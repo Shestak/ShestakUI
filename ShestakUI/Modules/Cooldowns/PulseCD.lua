@@ -30,9 +30,7 @@ DCPT:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 DCPT:SetPoint("TOPLEFT", DCP, "TOPLEFT", noscalemult * 2, -noscalemult * 2)
 DCPT:SetPoint("BOTTOMRIGHT", DCP, "BOTTOMRIGHT", -noscalemult * 2, noscalemult * 2)
 
------------------------
--- Utility Functions --
------------------------
+-- Utility Functions
 local function tcount(tab)
 	local n = 0
 	for _ in pairs(tab) do
@@ -111,7 +109,7 @@ local function OnUpdate(_, update)
 			return
 		end
 	end
-	
+
 	if #animating > 0 then
 		runtimer = runtimer + update
 		if runtimer > (fadeInTime + holdTime + fadeOutTime) then
