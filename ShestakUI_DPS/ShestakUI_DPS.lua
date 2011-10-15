@@ -46,8 +46,10 @@ local function Shared(self, unit)
 	self.Health = CreateFrame("StatusBar", nil, self)
 	self.Health:Point("TOPLEFT", self, "TOPLEFT", 0, 0)
 	self.Health:Point("TOPRIGHT", self, "TOPRIGHT", 0, 0)
-	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
+	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
 		self.Health:Height(27)
+	elseif unit == "tank" then
+		self.Health:Height(23)
 	elseif unit == "raid" then
 		self.Health:Height(15)
 	elseif unit == "party" then
@@ -80,15 +82,17 @@ local function Shared(self, unit)
 		self.Health.bg.multiplier = 0.25
 	end
 
-	if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
+	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank")) then
 		self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-		self.Health.value:Point("RIGHT", self.Health, "RIGHT", 1, 0)
+		if unit == "tank" then
+			self.Health.value:Point("CENTER", self.Health, "CENTER", 0, -5)
+		else
+			self.Health.value:Point("RIGHT", self.Health, "RIGHT", 1, 0)
+		end
 		self.Health.value:SetTextColor(1, 1, 1)
-		
-		self.Health.PostUpdate = T.PostUpdateRaidHealth
-	end
 
-	if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
+		self.Health.PostUpdate = T.PostUpdateRaidHealth
+
 		-- Power bar
 		self.Power = CreateFrame("StatusBar", nil, self)
 		if unit == "raid" then
@@ -121,19 +125,23 @@ local function Shared(self, unit)
 		self.Power.bg.multiplier = 0.3
 
 		self.Power.value = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-		self.Power.value:Point("RIGHT", self.Power, "RIGHT", 0, 0)
-		self.Power.value:SetJustifyH("RIGHT")
+		if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
+			self.Power.value:Point("RIGHT", self.Power, "RIGHT", 0, 0)
+			self.Power.value:SetJustifyH("RIGHT")
+		end
 	end
 
 	-- Names
 	self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
+	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
 		self.Info:Point("CENTER", self.Health, "CENTER", 2, 0)
+	elseif unit == "tank" then
+		self.Info:Point("CENTER", self.Health, "CENTER", 0, 4)
 	else
 		self.Info:Point("LEFT", self.Health, "LEFT", 3, 0)
 		self.Info:SetJustifyH("LEFT")
 	end
-	if self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target" then
+	if self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank") then
 		self:Tag(self.Info, "[GetNameColor][NameArena]")
 	else
 		if unit == "party" and C.raidframe.icons_lfd_role ~= true then
@@ -376,5 +384,25 @@ oUF:Factory(function(self)
 			end
 			raid[i] = raidgroup
 		end
+	end
+
+	if C.raidframe.raid_tanks == true then
+		-- Tanks
+		if C.raidframe.raid_tanks_tt == true then
+			mt_template = "oUF_MainTankTT"
+		else
+			mt_template = "oUF_MainTank"
+		end
+		local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
+			"oUF-initialConfigFunction", ([[
+				self:SetWidth(60.2)
+				self:SetHeight(26)
+			]]),
+			"showRaid", true,
+			"yOffset", T.Scale(-7),
+			"groupFilter", "MAINTANK",
+			"template", mt_template
+		)
+		raidtank:Point(unpack(C.position.unitframes.tank))
 	end
 end)
