@@ -114,6 +114,14 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			_G["StaticPopup"..i.."MoneyInputFrameGold"].backdrop:Point("TOPLEFT", -3, 0)
 			_G["StaticPopup"..i.."MoneyInputFrameSilver"].backdrop:Point("TOPLEFT", -3, 0)
 			_G["StaticPopup"..i.."MoneyInputFrameCopper"].backdrop:Point("TOPLEFT", -3, 0)
+			_G["StaticPopup"..i.."ItemFrameNameFrame"]:Kill()
+			_G["StaticPopup"..i.."ItemFrame"]:GetNormalTexture():Kill()
+			_G["StaticPopup"..i.."ItemFrame"]:SetTemplate("Default")
+			_G["StaticPopup"..i.."ItemFrame"]:StyleButton()
+			_G["StaticPopup"..i.."ItemFrameIconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			_G["StaticPopup"..i.."ItemFrameIconTexture"]:ClearAllPoints()
+			_G["StaticPopup"..i.."ItemFrameIconTexture"]:Point("TOPLEFT", 2, -2)
+			_G["StaticPopup"..i.."ItemFrameIconTexture"]:Point("BOTTOMRIGHT", -2, 2)
 		end
 
 		-- Reskin Dropdown menu
