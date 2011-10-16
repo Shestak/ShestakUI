@@ -137,8 +137,6 @@ local function InstallUI()
 			ChatFrame_AddMessageGroup(ChatFrame4, "CURRENCY")
 			ChatFrame_AddMessageGroup(ChatFrame4, "MONEY")
 			ChatFrame_AddMessageGroup(ChatFrame4, "SKILL")
-			
-			ChangeChatColor("CHANNEL6", 147/255, 112/255, 219/255)
 		end
 
 		-- Enable classcolor automatically on login and on each character without doing /configure each time
