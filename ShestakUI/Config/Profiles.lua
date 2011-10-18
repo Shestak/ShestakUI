@@ -144,6 +144,9 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -85}
 	C["position"].threat_meter = {"BOTTOM", UIParent, "BOTTOM", 0, 107}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
+	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", -283, 243}
+	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 243}
+	C["general"].welcome_message = false
 	C["misc"].auto_decline_duel = false
 	C["misc"].auto_resurrection = false
 	C["misc"].ach_screens = true
@@ -167,6 +170,7 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["actionbar"].bottombars = 1
 	C["actionbar"].rightbars = 3
 	C["aura"].focus_debuffs = true
+	C["aura"].tot_debuffs = true
 	C["aura"].cast_by = true
 	C["unitframe"].castbar_icon = true
 	C["unitframe"].castbar_latency = false
