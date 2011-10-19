@@ -226,7 +226,7 @@ Filger_Spells = {
 			-- Fungal Growth
 			{ spellID = 81281, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Faerie Fire
-			{ spellID = 770, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
+			{ spellID = 770, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Entangling Roots
 			{ spellID = 339, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Hibernate
