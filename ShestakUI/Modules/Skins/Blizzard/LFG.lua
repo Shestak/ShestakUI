@@ -20,6 +20,18 @@ local function LoadSkin()
 		T.SkinCheckBox(_G[v])
 	end
 
+	-- Backdrops
+	local backdrop = {
+		"LookingForGuildInterestFrame",
+		"LookingForGuildAvailabilityFrame",
+		"LookingForGuildRolesFrame",
+		"LookingForGuildCommentFrame",
+	}
+
+	for _, v in pairs(backdrop) do
+		_G[v]:StripTextures()
+	end
+
 	T.SkinCheckBox(LookingForGuildTankButton.checkButton)
 	T.SkinCheckBox(LookingForGuildHealerButton.checkButton)
 	T.SkinCheckBox(LookingForGuildDamagerButton.checkButton)

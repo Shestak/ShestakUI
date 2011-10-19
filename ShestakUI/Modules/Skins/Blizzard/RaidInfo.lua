@@ -14,7 +14,10 @@ local function LoadSkin()
 
 	if T.PTRVersion() then
 		tinsert(StripAllTextures, "RaidParentFrame")
+		tinsert(StripAllTextures, "RaidParentFrameInset")
+		tinsert(StripAllTextures, "RaidFinderQueueFrame")
 		tinsert(StripAllTextures, "RaidFinderFrameRoleInset")
+		tinsert(StripAllTextures, "RaidFinderQueueFrameScrollFrame")
 	end
 
 	local KillTextures = {
@@ -23,10 +26,6 @@ local function LoadSkin()
 		"RaidInfoScrollFrameScrollBarBottom",
 		"RaidInfoScrollFrameScrollBarMiddle",
 	}
-
-	if T.PTRVersion() then
-		tinsert(KillTextures, "RaidParentFrameInset")
-	end
 
 	local buttons = {
 		"RaidFrameConvertToRaidButton",
