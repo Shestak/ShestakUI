@@ -3329,6 +3329,8 @@ Filger_Spells = {
 			{ spellID = 118, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Dragon's Breath
 			{ spellID = 31661, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
+			-- Bad Manner (Monkey)
+			{ spellID = 90337, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Repentance
 			{ spellID = 20066, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Psychic Scream
