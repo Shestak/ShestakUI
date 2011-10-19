@@ -852,8 +852,6 @@ Filger_Spells = {
 			{ spellID = 12975, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shield Wall
 			{ spellID = 871, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unholy Frenzy
-			{ spellID = 49016, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Spell Reflection
 			{ spellID = 23920, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Blood Reserve
