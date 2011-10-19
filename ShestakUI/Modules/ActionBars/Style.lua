@@ -10,7 +10,7 @@ local replace = string.gsub
 
 local function style(self)
 	local name = self:GetName()
-	if name:match("MultiCast") then return end
+	if name:match("MultiCast") or name:match("ExtraActionButton") then return end
 	local action = self.action
 	local Button = self
 	local Icon = _G[name.."Icon"]
