@@ -2686,8 +2686,6 @@ Filger_Spells = {
 			{ spellID = 45524, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Desecration
 			{ spellID = 55741, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Glyph of Heart Strike
-			{ spellID = 58617, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Hungering Cold
 			{ spellID = 49203, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Necrotic strike
