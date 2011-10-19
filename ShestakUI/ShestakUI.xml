@@ -61,6 +61,7 @@
 	<Script file="Modules\Blizzard\Nameplates.lua"/>
 	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
+	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
 
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoCollapse.lua"/>

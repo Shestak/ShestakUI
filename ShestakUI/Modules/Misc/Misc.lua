@@ -181,8 +181,6 @@ else
 	end)
 end
 
-
---SideDressUpModelResetButton
 ----------------------------------------------------------------------------------------
 --	GuildTab in FriendsFrame
 ----------------------------------------------------------------------------------------
@@ -259,3 +257,13 @@ end)
 StaticPopupDialogs.PARTY_INVITE.hideOnEscape = 0
 StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = 0
 StaticPopupDialogs.CONFIRM_BATTLEFIELD_ENTRY.button2 = nil
+
+----------------------------------------------------------------------------------------
+-- Fix SearchLFGLeave() taint
+----------------------------------------------------------------------------------------
+local TaintFix = CreateFrame("Frame")
+TaintFix:SetScript("OnUpdate", function(self, elapsed)
+	if LFRBrowseFrame.timeToClear then
+		LFRBrowseFrame.timeToClear = nil
+	end
+end)
