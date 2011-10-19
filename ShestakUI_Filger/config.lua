@@ -941,8 +941,6 @@ Filger_Spells = {
 			{ spellID = 91816, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Impatience of Youth (Strength, Use)
 			{ spellID = 91828, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- License to Slay (Strength, Proc)
-			{ spellID = 91810, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Gladiator's Badge of Victory (Strength, Use)
 			{ spellID = 92224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Gladiator's Insignia of Victory (Strength, Proc)
@@ -1400,6 +1398,8 @@ Filger_Spells = {
 			{ spellID = 31850, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Zealotry
 			{ spellID = 85696, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Holy Shield
+			{ spellID = 20925, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Other
 			-- Radiant (T11 Holy)
@@ -1415,8 +1415,6 @@ Filger_Spells = {
 			-- Buffs
 			-- Infusion of Light
 			{ spellID = 54149, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Denounce (4.1)
-			{ spellID = 85509, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Daybreak
 			{ spellID = 88819, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Grand Crusader
@@ -1468,8 +1466,6 @@ Filger_Spells = {
 			{ spellID = 91816, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Impatience of Youth (Strength, Use)
 			{ spellID = 91828, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- License to Slay (Strength, Proc)
-			{ spellID = 91810, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Gladiator's Badge of Victory (Strength, Use)
 			{ spellID = 92224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Gladiator's Insignia of Victory (Strength, Proc)
@@ -1556,6 +1552,8 @@ Filger_Spells = {
 			{ spellID = 20170, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Denounce
 			{ spellID = 85509, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Dazed - Avenger's Shield
+			{ spellID = 63529, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -2465,8 +2463,6 @@ Filger_Spells = {
 			{ spellID = 91816, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Impatience of Youth (Strength, Use)
 			{ spellID = 91828, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- License to Slay (Strength, Proc)
-			{ spellID = 91810, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Gladiator's Badge of Victory (Strength, Use)
 			{ spellID = 92224, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Gladiator's Insignia of Victory (Strength, Proc)
@@ -2773,6 +2769,8 @@ Filger_Spells = {
 			{ spellID = 50245, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Venom Web Spray (Silithid)
 			{ spellID = 54706, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Bad Manner (Monkey)
+			{ spellID = 90337, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Web (Spider)
 			{ spellID = 4167, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Froststorm Breath (Chimera)
