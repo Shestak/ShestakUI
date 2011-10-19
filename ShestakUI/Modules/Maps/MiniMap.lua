@@ -249,7 +249,7 @@ local micromenu = {
 }
 
 if T.PTRVersion() then
-	tinsert(micromenu, {text = RAID, notCheckable = true, func = function()
+	tinsert(micromenu, {text = RAID_FINDER, notCheckable = true, func = function()
 		if T.level >= SHOW_LFD_LEVEL then
 			ToggleRaidFrame()
 		else
