@@ -2599,8 +2599,6 @@ Filger_Spells = {
 			{ spellID = 79634, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Volcanic Power
 			{ spellID = 79476, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Firelord's Draught
-			{ spellID = 94826, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Speed
 			{ spellID = 23451, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 
