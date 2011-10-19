@@ -167,8 +167,6 @@ Filger_Spells = {
 			-- Caster Heal
 			-- Core of Ripeness (Spirit, Use)
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit, Proc)
-			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Spirit, Proc)
@@ -1205,8 +1203,6 @@ Filger_Spells = {
 			-- Caster Heal
 			-- Core of Ripeness (Spirit, Use)
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit, Proc)
-			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Spirit, Proc)
@@ -1492,8 +1488,6 @@ Filger_Spells = {
 			-- Caster Heal
 			-- Core of Ripeness (Spirit, Use)
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit, Proc)
-			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Spirit, Proc)
@@ -1733,8 +1727,6 @@ Filger_Spells = {
 			-- Caster Heal
 			-- Core of Ripeness (Spirit, Use)
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Darkmoon Card: Tsunami (Spirit, Proc)
-			{ spellID = 89182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Spirit, Proc)
