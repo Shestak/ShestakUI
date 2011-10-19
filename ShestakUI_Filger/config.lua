@@ -877,7 +877,7 @@ Filger_Spells = {
 			-- Sudden Death
 			{ spellID = 52437, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bloodsurge
-			{ spellID = 46916, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			{ spellID = 46916, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Sword and Board
 			{ spellID = 50227, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Thunderstruck
@@ -996,7 +996,7 @@ Filger_Spells = {
 			-- Curse of Weakness
 			{ spellID = 702, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Mortal Strike
-			{ spellID = 12294, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
+			{ spellID = 12294, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Judgements of the Just
 			{ spellID = 68055, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Vindication
@@ -1111,8 +1111,6 @@ Filger_Spells = {
 			{ spellID = 324, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Water Shield
 			{ spellID = 52127, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Earth Shield
-			{ spellID = 974, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Elemental mastery
 			{ spellID = 64701, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Spiritwalker's grace
