@@ -2912,7 +2912,7 @@ Filger_Spells = {
 			-- Axe Toss (Felguard)
 			{ spellID = 89766, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Shadowsnare
-			{ spellID = 63311, size = 60, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 63311, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Warrior
 			-- Throwdown
@@ -2931,8 +2931,6 @@ Filger_Spells = {
 			{ spellID = 20253, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Shockwave
 			{ spellID = 46968, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Glyph of Hamstring
-			{ spellID = 58373, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Improved Hamstring
 			{ spellID = 23694, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Hamstring
@@ -3088,6 +3086,8 @@ Filger_Spells = {
 			{ spellID = 22842, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Tree of life
 			{ spellID = 33891, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Berserk
+			{ spellID = 50334, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 
 			-- Warrior
 			-- Spell Reflection
@@ -3146,8 +3146,6 @@ Filger_Spells = {
 			{ spellID = 45182, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Combat Insight
 			{ spellID = 74002, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Combat Readiness
-			{ spellID = 74001, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Shadow Dance
 			{ spellID = 51713, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 

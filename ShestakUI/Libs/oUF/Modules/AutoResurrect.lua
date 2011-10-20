@@ -16,9 +16,8 @@ local classList = {
 	},
 
 	["WARLOCK"] = {
-		combat = GetSpellInfo(20707),	-- Soulstone
 		combat = GetSpellInfo(6203),	-- Soulstone
-		ooc = GetSpellInfo(6203),	-- Soulstone
+		ooc = GetSpellInfo(6203),		-- Soulstone
 	},
 
 	["DRUID"] = {
@@ -44,7 +43,7 @@ local function macroBody(class)
 	local combatspell = classList[class].combat
 	local oocspell = classList[class].ooc
 
-	body = "#showtooltip\n/tar [nodead,@mouseover]\n/stopmacro [nodead,@mouseover]\n"
+	body = "#showtooltip\n/tar [@mouseover]\n/stopmacro [nodead,@mouseover]\n"
 	if combatspell then
 		body = body.."/cast [combat,help,dead,@mouseover] "..combatspell.."; "
 
@@ -58,6 +57,8 @@ local function macroBody(class)
 	elseif oocspell then
 		body = body.."/cast [help,dead,@mouseover] "..oocspell.."; "
 	end
+
+	body = body.."\n/targetlasttarget [combat]"
 end
 
 local function updateMacro()
@@ -88,10 +89,8 @@ local Enable = function(self)
 end
 
 local Disable = function(self)
-	if not IsAddOnLoaded("Clique") then
-		self:SetAttribute("type1", nil)
-		self:SetAttribute("macrotext1", nil)
-	end
+	self:SetAttribute("type1", nil)
+	self:SetAttribute("macrotext1", nil)
 end
 
 oUF:AddElement("AutoResurrect", nil, Enable, Disable)

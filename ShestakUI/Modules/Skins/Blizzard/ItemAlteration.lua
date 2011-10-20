@@ -37,16 +37,18 @@ local function LoadSkin()
 		local icon = _G["TransmogrifyFrame"..slot.."SlotIconTexture"]
 		local slot = _G["TransmogrifyFrame"..slot.."Slot"]
 
-		slot:StripTextures()
-		slot:StyleButton(false)
-		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
-		slot:CreateBackdrop("Default")
-		slot.backdrop:SetAllPoints()
+		if slot then
+			slot:StripTextures()
+			slot:StyleButton(false)
+			slot:SetFrameLevel(slot:GetFrameLevel() + 2)
+			slot:CreateBackdrop("Default")
+			slot.backdrop:SetAllPoints()
 
-		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			icon:ClearAllPoints()
+			icon:Point("TOPLEFT", 2, -2)
+			icon:Point("BOTTOMRIGHT", -2, 2)
+		end
 	end
 end
 
