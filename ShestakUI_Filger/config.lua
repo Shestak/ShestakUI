@@ -2692,6 +2692,8 @@ Filger_Spells = {
 			{ spellID = 73975, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Dark simulacrum
 			{ spellID = 77606, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Chilblains
+			{ spellID = 50435, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Druid
 			-- Skull Bash (Bear Form)
@@ -2718,12 +2720,16 @@ Filger_Spells = {
 			{ spellID = 45334, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Infected Wounds
 			{ spellID = 58179, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Typhoon
+			{ spellID = 61391, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Hunter
 			-- Aspect of the Pack
 			{ spellID = 13159, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Freezing Trap Effect
 			{ spellID = 3355, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Glyph of Freezing Trap
+			{ spellID = 61394, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Scare Beast
 			{ spellID = 1513, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Scatter Shot
@@ -2758,7 +2764,7 @@ Filger_Spells = {
 			-- Web (Spider)
 			{ spellID = 4167, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Froststorm Breath (Chimera)
-			{ spellID = 92380, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			{ spellID = 54644, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Swoop (Moth)
 			{ spellID = 53148, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Ankle Crack (Crocolisk)
@@ -2805,6 +2811,10 @@ Filger_Spells = {
 			{ spellID = 11113, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Cauterize
 			{ spellID = 87023, size = 60, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Frostbolt
+			{ spellID = 116, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Frostfire Bolt
+			{ spellID = 44614, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Paladin
 			-- Repentance
@@ -2883,6 +2893,8 @@ Filger_Spells = {
 			{ spellID = 58861, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Earthquake
 			{ spellID = 77505, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Frostbrand Attack
+			{ spellID = 8034, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Warlock
 			-- Aura of Foreboding
