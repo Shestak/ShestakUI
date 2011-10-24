@@ -3116,24 +3116,24 @@ Filger_Spells = {
 			{ spellID = 46924, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 
 			-- Paladin
-			-- Aura Mastery
-			{ spellID = 31821, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Hand of Freedom
-			{ spellID = 1044, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Hand of Sacrifice
-			{ spellID = 6940, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Hand of protection
-			{ spellID = 1022, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Divine Shield
 			{ spellID = 642, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Divine Protection
-			{ spellID = 498, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Divine Guardian
-			{ spellID = 70940, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Hand of Protection
+			{ spellID = 1022, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Hand of Sacrifice
+			{ spellID = 6940, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Hand of Freedom
+			{ spellID = 1044, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Aura Mastery
+			{ spellID = 31821, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Ardent Defender
 			{ spellID = 31850, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Divine Protection
+			{ spellID = 498, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Guardian of Ancient Kings
 			{ spellID = 86698, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			-- Divine Guardian
+			{ spellID = 70940, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 
 			-- Mage
 			-- Ice Block
