@@ -58,8 +58,6 @@ Filger_Spells = {
 			{ spellID = 22842, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Tiger's Fury
 			{ spellID = 5217, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Stampeding Roar
-			{ spellID = 77764, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stampede
 			{ spellID = 81017, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
@@ -1136,8 +1134,6 @@ Filger_Spells = {
 			{ spellID = 51562, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lava flows
 			{ spellID = 65264, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Grounding Totem
-			{ spellID = 8178, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Stoneclaw Totem
 			{ spellID = 55277, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
@@ -2663,6 +2659,14 @@ Filger_Spells = {
 			{ spellID = 130, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Levitate
 			{ spellID = 1706, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Rallying Cry
+			{ spellID = 97462, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Divine Guardian
+			{ spellID = 70940, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Stampeding Roar
+			{ spellID = 77764, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Grounding Totem
+			{ spellID = 8178, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
@@ -3124,8 +3128,6 @@ Filger_Spells = {
 			{ spellID = 642, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Divine Protection
 			{ spellID = 498, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
-			-- Divine Sacrifice
-			{ spellID = 64205, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Divine Guardian
 			{ spellID = 70940, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Ardent Defender
