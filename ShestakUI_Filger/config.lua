@@ -1392,6 +1392,8 @@ Filger_Spells = {
 			{ spellID = 85696, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Holy Shield
 			{ spellID = 20925, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Aura Mastery
+			{ spellID = 31821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Other
 			-- Radiant (T11 Holy)
@@ -2400,14 +2402,8 @@ Filger_Spells = {
 			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
-			-- Unholy Force
-			{ spellID = 67383, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Unholy Strength
 			{ spellID = 53365, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Pyrite Infusion
-			{ spellID = 65014, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Unholy Might
-			{ spellID = 67117, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Dancing Rune Weapon
 			{ spellID = 49028, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Killing Machine
@@ -2827,6 +2823,8 @@ Filger_Spells = {
 			{ spellID = 853, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Seal of Justice proc
 			{ spellID = 20170, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Denounce
+			{ spellID = 85509, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Priest
 			-- Psychic Horror
