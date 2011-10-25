@@ -381,9 +381,7 @@ Filger_Spells = {
 			-- Ready, Set, Aim...
 			{ spellID = 82925, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Lock and Load
-			{ spellID = 56342, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Master Tactician
-			{ spellID = 34837, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 56453, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Rapid Fire
 			{ spellID = 3045, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Call of the Wild
@@ -2380,16 +2378,29 @@ Filger_Spells = {
 		},
 	},
 	["DEATHKNIGHT"] = {
-		--[[{
+		{
 			Name = "P_BUFF_ICON",
 			Direction = "LEFT",
 			Interval = 3,
 			Mode = "ICON",
 			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- 
-			{ spellID = , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-		},]]
+			-- Self
+			-- Bone Shield
+			{ spellID = 49222, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Vampiric Blood
+			{ spellID = 55233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Icebound Fortitude
+			{ spellID =48792 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },    
+			-- Anti-Magic Shell
+			{ spellID = 48707, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Dancing Rune Weapon
+			{ spellID = 49028, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Lichborne
+			{ spellID = 49039, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Pillar of Frost
+			{ spellID = 51271, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+		},
 		{
 			Name = "P_PROC_ICON",
 			Direction = "RIGHT",
@@ -2398,16 +2409,16 @@ Filger_Spells = {
 			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
-			-- Unholy Strength
-			{ spellID = 53365, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Dancing Rune Weapon
-			{ spellID = 49028, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Killing Machine
-			{ spellID = 51124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Freezing Fog
 			{ spellID = 59052, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Killing Machine
+			{ spellID = 51124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Sudden Doom
+			{ spellID = 81340, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Crimson Scourge
 			{ spellID = 81141, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Unholy Strength
+			{ spellID = 53365, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Trinkets
 			-- General
