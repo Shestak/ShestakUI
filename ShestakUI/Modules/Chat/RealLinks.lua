@@ -5,7 +5,7 @@ if C.chat.enable ~= true then return end
 --	Colors links in Battle.net whispers(RealLinks by p3lim)
 ----------------------------------------------------------------------------------------
 local function GetLinkColor(data)
-	local type, id, arg1 = string.match(data, "(%w+):(%d+):(%d+)")
+	local type, id, arg1 = string.match(data, "(%w+):(%d+)")
 	if type == "item" then
 		local _, _, quality = GetItemInfo(id)
 		if quality then
@@ -15,7 +15,8 @@ local function GetLinkColor(data)
 			return "|cffffffff"
 		end
 	elseif type == "quest" then
-		local color = GetQuestDifficultyColor(arg1)
+		local _, _, level = string.match(data, "(%w+):(%d+):(%d+)")
+		local color = GetQuestDifficultyColor(level)
 		return format("|cff%02x%02x%02x", color.r * 255, color.g * 255, color.b * 255)
 	elseif type == "spell" then
 		return "|cff71d5ff"
@@ -39,7 +40,8 @@ end
 local function AddLinkColors(self, event, msg, ...)
 	local data = string.match(msg, "|H(.-)|h(.-)|h")
 	if data then
-		return false, msg:gsub("|H(.-)|h(.-)|h", GetLinkColor(data) .. "|H%1|h%2|h|r"), ...
+		local newmsg = string.gsub(msg, "|H(.-)|h(.-)|h", GetLinkColor(data) .. "|H%1|h%2|h|r")
+		return false, newmsg, ...
 	else
 		return false, msg, ...
 	end
