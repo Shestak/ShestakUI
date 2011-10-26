@@ -30,10 +30,13 @@ local function LoadSkin()
 	local buttons = {
 		"RaidFrameConvertToRaidButton",
 		"RaidFrameRaidInfoButton",
-		"RaidFrameNotInRaidRaidBrowserButton",
 		"RaidInfoExtendButton",
 		"RaidInfoCancelButton",
 	}
+
+	if not T.PTRVersion() then
+		tinsert(buttons, "RaidFrameNotInRaidRaidBrowserButton")
+	end
 
 	for _, object in pairs(StripAllTextures) do
 		_G[object]:StripTextures()
@@ -63,7 +66,7 @@ local function LoadSkin()
 		RaidFinderFrameFindRaidButton:SkinButton(true)
 		RaidFinderFrameCancelButton:SkinButton(true)
 
-		for i = 1, 2 do
+		for i = 1, 3 do
 			T.SkinTab(_G["RaidParentFrameTab"..i])
 		end
 
