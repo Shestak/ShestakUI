@@ -223,7 +223,7 @@ local micromenu = {
 	end},
 	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
 		if T.PTRVersion() then
-			ToggleFriendsFrame(4)
+			ToggleRaidFrame(3)
 		else
 			ToggleFrame(LFRParentFrame)
 		end
@@ -251,7 +251,7 @@ local micromenu = {
 if T.PTRVersion() then
 	tinsert(micromenu, {text = RAID_FINDER, notCheckable = true, func = function()
 		if T.level >= SHOW_LFD_LEVEL then
-			ToggleRaidFrame()
+			ToggleRaidFrame(1)
 		else
 			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
 		end

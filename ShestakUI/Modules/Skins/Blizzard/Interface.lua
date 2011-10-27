@@ -145,6 +145,10 @@ local function LoadSkin()
 		"HelpPanelMovePad",
 	}
 
+	if T.PTRVersion() then
+		tinsert(checkboxes, "BuffsPanelShowAllEnemyDebuffs")
+	end
+
 	for i = 1, getn(checkboxes) do
 		local checkbox = _G["InterfaceOptions"..checkboxes[i]]
 		if checkbox then
