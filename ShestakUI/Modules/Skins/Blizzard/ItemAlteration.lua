@@ -5,9 +5,9 @@ if C.skins.blizzard_frames ~= true or not T.PTRVersion() then return end
 --	ItemAlterationUI skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	TransmogrifyFrame:StripTextures()
-	TransmogrifyFrame:SetTemplate("Transparent")
-	TransmogrifyModelFrame:SetFrameLevel(TransmogrifyFrame:GetFrameLevel() + 2)
+	TransmogrifyArtFrame:StripTextures()
+	TransmogrifyArtFrame:SetTemplate("Transparent")
+	TransmogrifyModelFrame:SetFrameLevel(TransmogrifyArtFrame:GetFrameLevel() + 2)
 
 	local KillTextures = {
 		"TransmogrifyModelFrameLines",
@@ -28,7 +28,7 @@ local function LoadSkin()
 
 	TransmogrifyApplyButton:SkinButton(true)
 	TransmogrifyApplyButton:Point("BOTTOMRIGHT", TransmogrifyFrame, "BOTTOMRIGHT", -4, 4)
-	T.SkinCloseButton(TransmogrifyFrameCloseButton)
+	T.SkinCloseButton(TransmogrifyArtFrameCloseButton)
 
 	local slots = {"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet",
 	"Wrist", "Hands", "Back", "MainHand", "SecondaryHand", "Ranged"}
