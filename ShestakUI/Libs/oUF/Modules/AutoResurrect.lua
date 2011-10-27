@@ -4,7 +4,7 @@ if C.unitframe.enable ~= true or T.class == "ROGUE" or T.class == "WARRIOR" or T
 ----------------------------------------------------------------------------------------
 --	Based on FreebAutoRez(by Freebaser)
 ----------------------------------------------------------------------------------------
-local parent, ns = ...
+local _, ns = ...
 local oUF = ns.oUF
 
 local classList = {
@@ -49,7 +49,8 @@ local function macroBody(class, unit)
 		end
 
 		if T.class == "WARLOCK" then
-			body = body.."\n/cast Create Soulstone\n "
+			local spellname = select(1, GetSpellInfo(693))
+			body = body.."\n/cast "..spellname.."\n "
 		end
 	elseif oocspell then
 		body = body.."/cast [help,dead,@mouseover] "..oocspell.."; "
@@ -70,7 +71,7 @@ local Enable = function(self)
 			self:SetScript("PreClick", function(self, button)
 				local unit = self.unit or "mouseover"
 				self:SetAttribute("macrotext1", macroBody(class, unit))
-			end
+			end)
 		end
 	end
 end
