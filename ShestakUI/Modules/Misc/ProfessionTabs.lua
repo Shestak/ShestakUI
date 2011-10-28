@@ -1,10 +1,9 @@
-local T, C, L = unpack(ShestakUI)
+local T, C, L = unpack(select(2, ...))
 if C.misc.profession_tabs ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Professions tabs on tradeskill frame(ProfessionTabs by Beoko)
 ----------------------------------------------------------------------------------------
-
 local ProfessionTabs = CreateFrame("Frame", "ProfessionTabs")
 ProfessionTabs:SetScript("OnEvent", function(self, Event, ...) self[Event](self, Event, ...) end)
 ProfessionTabs:RegisterEvent("TRADE_SKILL_SHOW")
@@ -109,7 +108,7 @@ function ProfessionTabs:UpdateTabs(Table)
 			if not Combat then Tab:Show() end
 			Tab:SetChecked(IsCurrentSpell(Tab.SpellName))
 		end
-	end	
+	end
 end
 
 function ProfessionTabs:EventHandler(Table, Parent)

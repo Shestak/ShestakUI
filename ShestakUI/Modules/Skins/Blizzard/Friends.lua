@@ -94,8 +94,8 @@ local function LoadSkin()
 
 	if not T.PTRVersion() then
 		-- Reposition buttons
-		WhoFrameWhoButton:Point("RIGHT", WhoFrameAddFriendButton, "LEFT", -2, 0)
-		WhoFrameAddFriendButton:Point("RIGHT", WhoFrameGroupInviteButton, "LEFT", -2, 0)
+		WhoFrameWhoButton:Point("RIGHT", WhoFrameAddFriendButton, "LEFT", -3, 0)
+		WhoFrameAddFriendButton:Point("RIGHT", WhoFrameGroupInviteButton, "LEFT", -3, 0)
 		WhoFrameGroupInviteButton:Point("BOTTOMRIGHT", WhoFrame, "BOTTOMRIGHT", -44, 82)
 
 		-- Resize Buttons
@@ -106,6 +106,20 @@ local function LoadSkin()
 		WhoFrameEditBox:Height(WhoFrameEditBox:GetHeight() - 15)
 		WhoFrameEditBox:Point("BOTTOM", WhoFrame, "BOTTOM", -10, 108)
 		WhoFrameEditBox:Width(WhoFrameEditBox:GetWidth() + 17)
+	else
+		-- Reposition buttons
+		WhoFrameWhoButton:Point("RIGHT", WhoFrameAddFriendButton, "LEFT", -3, 0)
+		WhoFrameAddFriendButton:Point("RIGHT", WhoFrameGroupInviteButton, "LEFT", -3, 0)
+		WhoFrameGroupInviteButton:Point("BOTTOMRIGHT", WhoFrame, "BOTTOMRIGHT", -4, 4)
+
+		-- Resize Buttons
+		WhoFrameWhoButton:Size(WhoFrameWhoButton:GetWidth() + 7, WhoFrameWhoButton:GetHeight())
+		WhoFrameAddFriendButton:Size(WhoFrameAddFriendButton:GetWidth() - 4, WhoFrameAddFriendButton:GetHeight())
+		WhoFrameGroupInviteButton:Size(WhoFrameGroupInviteButton:GetWidth() - 4, WhoFrameGroupInviteButton:GetHeight())
+		T.SkinEditBox(WhoFrameEditBox)
+		WhoFrameEditBox:Height(WhoFrameEditBox:GetHeight() - 15)
+		WhoFrameEditBox:Width(WhoFrameEditBox:GetWidth() + 30)
+		WhoFrameEditBox:Point("BOTTOM", WhoFrame, "BOTTOM", 0, 31)
 	end
 
 	for _, texture in pairs(KillTextures) do
@@ -153,6 +167,22 @@ local function LoadSkin()
 		FriendsFrame.backdrop:Point("BOTTOMRIGHT", FriendsFrame, "BOTTOMRIGHT", 0, 0)
 		WhoListScrollFrame:ClearAllPoints()
 		WhoListScrollFrame:SetPoint("TOPRIGHT", WhoFrameListInset, -25, 0)
+
+		ScrollOfResurrectionFrame:StripTextures()
+		ScrollOfResurrectionFrameNoteFrame:StripTextures()
+		ScrollOfResurrectionFrame:SetTemplate("Transparent")
+		ScrollOfResurrectionFrameNoteFrame:SetTemplate("Overlay")
+		ScrollOfResurrectionFrameAcceptButton:SkinButton()
+		ScrollOfResurrectionFrameCancelButton:SkinButton()
+		T.SkinEditBox(ScrollOfResurrectionFrameTargetEditBox)
+		ScrollOfResurrectionFrameTargetEditBox:Height(ScrollOfResurrectionFrameTargetEditBox:GetHeight() - 5)
+
+		FriendsTabHeaderSoRButton:SkinButton()
+		FriendsTabHeaderSoRButton:StyleButton()
+		FriendsTabHeaderSoRButton.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		FriendsTabHeaderSoRButton.icon:ClearAllPoints()
+		FriendsTabHeaderSoRButton.icon:Point("TOPLEFT", 2, -2)
+		FriendsTabHeaderSoRButton.icon:Point("BOTTOMRIGHT", -2, 2)
 	else
 		FriendsFrame:CreateBackdrop("Transparent")
 		FriendsFrame.backdrop:Point("TOPLEFT", FriendsFrame, "TOPLEFT", 16, -12)
