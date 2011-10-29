@@ -237,13 +237,13 @@ end
 
 -- Create Anchor
 local RaidBuffsAnchor = CreateFrame("Button", "RaidBuffsAnchor", UIParent)
-RaidBuffsAnchor:Width((C.reminder.raid_buffs_size * 8) + 9)
-RaidBuffsAnchor:Height(C.reminder.raid_buffs_size + 4)
+RaidBuffsAnchor:Width((C.reminder.raid_buffs_size * 6) + 15)
+RaidBuffsAnchor:Height(C.reminder.raid_buffs_size)
 RaidBuffsAnchor:Point(unpack(C.position.raid_buffs))
 
 -- Create Main bar
 local raidbuff_reminder = CreateFrame("Frame", "RaidBuffReminder", UIParent)
-raidbuff_reminder:CreatePanel("Invisible", (C.reminder.raid_buffs_size * 6) + 15, C.reminder.raid_buffs_size + 4, "TOPLEFT", RaidBuffsAnchor, "TOPLEFT", 0, 0)
+raidbuff_reminder:CreatePanel("Invisible", (C.reminder.raid_buffs_size * 6) + 15, C.reminder.raid_buffs_size + 4, "TOPLEFT", RaidBuffsAnchor, "TOPLEFT", 0, 4)
 raidbuff_reminder:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 raidbuff_reminder:RegisterEvent("UNIT_INVENTORY_CHANGED")
 raidbuff_reminder:RegisterEvent("UNIT_AURA")
