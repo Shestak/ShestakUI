@@ -112,8 +112,6 @@ Filger_Spells = {
 			-- Physical Agility DPS
 			-- Essence of the Cyclone (Crit, Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fluid Death (Agility, Proc)
-			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Prestor's Talisman of Machination (Haste, Proc)
 			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Unsolvable Riddle (Agility, Use)
@@ -158,8 +156,6 @@ Filger_Spells = {
 			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Theralion's Mirror (Mastery, Proc)
 			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Necromantic Focus (Mastery, Proc)
-			{ spellID = 96962, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
 			{ spellID = 96890, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster Heal
@@ -167,8 +163,6 @@ Filger_Spells = {
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit, Proc)
-			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Debuff)
 			{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
 			-- Mandala of Stirring Patterns (Intellect, Proc)
@@ -406,8 +400,6 @@ Filger_Spells = {
 			-- Physical Agility DPS
 			-- Essence of the Cyclone (Crit, Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fluid Death (Agility, Proc)
-			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Prestor's Talisman of Machination (Haste, Proc)
 			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Unsolvable Riddle (Agility, Use)
@@ -678,8 +670,6 @@ Filger_Spells = {
 			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Theralion's Mirror (Mastery, Proc)
 			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Necromantic Focus (Mastery, Proc)
-			{ spellID = 96962, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
 			{ spellID = 96890, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
@@ -945,8 +935,6 @@ Filger_Spells = {
 			{ spellID = 96929, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Essence of the Eternal Flame (Strength, Use)
 			{ spellID = 97010, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Vessel of Acceleration (Crit, Proc)
-			{ spellID = 96980, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -1144,8 +1132,6 @@ Filger_Spells = {
 			-- Physical Agility DPS
 			-- Essence of the Cyclone (Crit, Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fluid Death (Agility, Proc)
-			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Prestor's Talisman of Machination (Haste, Proc)
 			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Unsolvable Riddle (Agility, Use)
@@ -1190,8 +1176,6 @@ Filger_Spells = {
 			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Theralion's Mirror (Mastery, Proc)
 			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Necromantic Focus (Mastery, Proc)
-			{ spellID = 96962, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
 			{ spellID = 96890, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster Heal
@@ -1199,8 +1183,6 @@ Filger_Spells = {
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit, Proc)
-			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Debuff)
 			{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
 			-- Mandala of Stirring Patterns (Intellect, Proc)
@@ -1466,8 +1448,6 @@ Filger_Spells = {
 			{ spellID = 96929, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Essence of the Eternal Flame (Strength, Use)
 			{ spellID = 97010, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Vessel of Acceleration (Crit, Proc)
-			{ spellID = 96980, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
 			-- Soul Casket (Spell Power, Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1486,8 +1466,6 @@ Filger_Spells = {
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit, Proc)
-			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Debuff)
 			{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
 			-- Mandala of Stirring Patterns (Intellect, Proc)
@@ -1716,8 +1694,6 @@ Filger_Spells = {
 			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Theralion's Mirror (Mastery, Proc)
 			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Necromantic Focus (Mastery, Proc)
-			{ spellID = 96962, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
 			{ spellID = 96890, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster Heal
@@ -1725,8 +1701,6 @@ Filger_Spells = {
 			{ spellID = 91155, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Fall of Mortality (Spirit, Proc)
 			{ spellID = 91184, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Jar of Ancient Remedies (Spirit, Proc)
-			{ spellID = 91320, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jar of Ancient Remedies (Debuff)
 			{ spellID = 91322, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
 			-- Mandala of Stirring Patterns (Intellect, Proc)
@@ -1986,8 +1960,6 @@ Filger_Spells = {
 			{ spellID = 91047, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Theralion's Mirror (Mastery, Proc)
 			{ spellID = 91024, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Necromantic Focus (Mastery, Proc)
-			{ spellID = 96962, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
 			{ spellID = 96890, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
@@ -2222,8 +2194,6 @@ Filger_Spells = {
 			-- Physical Agility DPS
 			-- Essence of the Cyclone (Crit, Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Fluid Death (Agility, Proc)
-			{ spellID = 92104, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Prestor's Talisman of Machination (Haste, Proc)
 			{ spellID = 92124, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Unsolvable Riddle (Agility, Use)
@@ -2466,8 +2436,6 @@ Filger_Spells = {
 			{ spellID = 96929, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Essence of the Eternal Flame (Strength, Use)
 			{ spellID = 97010, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Vessel of Acceleration (Crit, Proc)
-			{ spellID = 96980, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
