@@ -2876,6 +2876,8 @@ Filger_Spells = {
 			{ spellID = 77505, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Frostbrand Attack
 			{ spellID = 8034, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Thunderstorm
+			{ spellID = 100955, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Warlock
 			-- Aura of Foreboding
