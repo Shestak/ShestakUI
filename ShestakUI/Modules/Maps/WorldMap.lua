@@ -245,6 +245,7 @@ end)
 ----------------------------------------------------------------------------------------
 --	Hide boss buttons on worlmap(Hide Boss Buttons by nebula)
 ----------------------------------------------------------------------------------------
+if T.PTRVersion() then return end
 local button = CreateFrame("CheckButton", "WorldMapFrameShowBossButtons", WorldMapFrame, "OptionsCheckButtonTemplate")
 button:SetSize(19, 19)
 button:SetFrameStrata("HIGH")
