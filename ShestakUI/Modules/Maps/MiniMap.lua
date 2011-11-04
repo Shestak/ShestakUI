@@ -82,7 +82,11 @@ local function UpdateLFG()
 	MiniMapLFGFrame:SetHighlightTexture(nil)
 	MiniMapLFGFrameBorder:Hide()
 end
-hooksecurefunc("MiniMapLFG_UpdateIsShown", UpdateLFG)
+if T.PTRVersion() then
+	hooksecurefunc("MiniMapLFG_Update", UpdateLFG)
+else
+	hooksecurefunc("MiniMapLFG_UpdateIsShown", UpdateLFG)
+end
 
 -- Feedback icon
 if FeedbackUIButton then
