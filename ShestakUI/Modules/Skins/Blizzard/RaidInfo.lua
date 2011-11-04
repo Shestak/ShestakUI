@@ -12,16 +12,6 @@ local function LoadSkin()
 		"RaidInfoIDLabel",
 	}
 
-	if T.PTRVersion() then
-		tinsert(StripAllTextures, "RaidParentFrame")
-		tinsert(StripAllTextures, "RaidParentFrameInset")
-		tinsert(StripAllTextures, "RaidFinderQueueFrame")
-		tinsert(StripAllTextures, "RaidFinderFrameRoleInset")
-		tinsert(StripAllTextures, "RaidFinderQueueFrameScrollFrame")
-		tinsert(StripAllTextures, "RaidFinderQueueFrameIneligibleFrame")
-		tinsert(StripAllTextures, "RaidFinderQueueFrameCooldownFrame")
-	end
-
 	local KillTextures = {
 		"RaidInfoScrollFrameScrollBarBG",
 		"RaidInfoScrollFrameScrollBarTop",
@@ -36,10 +26,18 @@ local function LoadSkin()
 		"RaidInfoCancelButton",
 	}
 
-	if not T.PTRVersion() then
-		tinsert(buttons, "RaidFrameNotInRaidRaidBrowserButton")
-	else
+	if T.PTRVersion() then
+		tinsert(StripAllTextures, "RaidParentFrame")
+		tinsert(StripAllTextures, "RaidParentFrameInset")
+		tinsert(StripAllTextures, "RaidFinderQueueFrame")
+		tinsert(StripAllTextures, "RaidFinderFrameRoleInset")
+		tinsert(StripAllTextures, "RaidFinderQueueFrameScrollFrame")
+		tinsert(StripAllTextures, "RaidFinderQueueFrameIneligibleFrame")
+		tinsert(StripAllTextures, "RaidFinderQueueFrameCooldownFrame")
+		tinsert(KillTextures, "RaidFinderQueueFrameBackground")
 		tinsert(buttons, "RaidFinderQueueFrameIneligibleFrameLeaveQueueButton")
+	else
+		tinsert(buttons, "RaidFrameNotInRaidRaidBrowserButton")
 	end
 
 	for _, object in pairs(StripAllTextures) do
