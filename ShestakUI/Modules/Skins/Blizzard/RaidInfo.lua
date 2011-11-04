@@ -18,6 +18,7 @@ local function LoadSkin()
 		tinsert(StripAllTextures, "RaidFinderQueueFrame")
 		tinsert(StripAllTextures, "RaidFinderFrameRoleInset")
 		tinsert(StripAllTextures, "RaidFinderQueueFrameScrollFrame")
+		tinsert(StripAllTextures, "RaidFinderQueueFrameIneligibleFrame")
 	end
 
 	local KillTextures = {
