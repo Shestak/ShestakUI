@@ -1,5 +1,4 @@
 local T, C, L = unpack(select(2, ...))
-if T.PTRVersion() then return end
 local hook
 
 local getID = function(loc)
@@ -15,15 +14,25 @@ end
 
 local pipe = function(self)
 	local location, id = self.location
-	if location and location < PDFITEMFLYOUT_FIRST_SPECIAL_LOCATION then
-		id = getID(location)
+	if T.PTRVersion() then
+		if location and location < EQUIPMENTFLYOUT_FIRST_SPECIAL_LOCATION then
+			id = getID(location)
+		end
+	else
+		if location and location < PDFITEMFLYOUT_FIRST_SPECIAL_LOCATION then
+			id = getID(location)
+		end
 	end
 
 	return oGlow:CallFilters("char-flyout", self, id)
 end
 
 local update = function(self)
-	local buttons = PaperDollFrameItemFlyout.buttons
+	if T.PTRVersion() then
+		local buttons = EquipmentFlyoutFrameButtons.buttons
+	else
+		local buttons = PaperDollFrameItemFlyout.buttons
+	end
 	for _, button in next, buttons do
 		pipe(button)
 	end
@@ -31,13 +40,22 @@ end
 
 local enable = function(self)
 	if not hook then
-		hooksecurefunc("PaperDollFrameItemFlyout_DisplayButton", pipe)
+		if T.PTRVersion() then
+			hooksecurefunc("EquipmentFlyout_DisplayButton", pipe)
+		else
+			hooksecurefunc("PaperDollFrameItemFlyout_DisplayButton", pipe)
+		end
+
 		hook = true
 	end
 end
 
 local disable = function(self)
-	local buttons = PaperDollFrameItemFlyout.buttons
+	if T.PTRVersion() then
+		local buttons = EquipmentFlyoutFrameButtons.buttons
+	else
+		local buttons = PaperDollFrameItemFlyout.buttons
+	end
 	for _, button in next, buttons do
 		self:CallFilters("char-flyout", button)
 	end
