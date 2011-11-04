@@ -19,6 +19,7 @@ local function LoadSkin()
 		tinsert(StripAllTextures, "RaidFinderFrameRoleInset")
 		tinsert(StripAllTextures, "RaidFinderQueueFrameScrollFrame")
 		tinsert(StripAllTextures, "RaidFinderQueueFrameIneligibleFrame")
+		tinsert(StripAllTextures, "RaidFinderQueueFrameCooldownFrame")
 	end
 
 	local KillTextures = {
@@ -37,6 +38,8 @@ local function LoadSkin()
 
 	if not T.PTRVersion() then
 		tinsert(buttons, "RaidFrameNotInRaidRaidBrowserButton")
+	else
+		tinsert(buttons, "RaidFinderQueueFrameIneligibleFrameLeaveQueueButton")
 	end
 
 	for _, object in pairs(StripAllTextures) do
@@ -60,6 +63,12 @@ local function LoadSkin()
 		RaidParentFrame:CreateBackdrop("Transparent")
 		RaidParentFrame.backdrop:Point("TOPLEFT", RaidParentFrame, "TOPLEFT")
 		RaidParentFrame.backdrop:Point("BOTTOMRIGHT", RaidParentFrame, "BOTTOMRIGHT")
+		RaidFinderQueueFrameIneligibleFrame:CreateBackdrop("Overlay")
+		RaidFinderQueueFrameIneligibleFrame.backdrop:Point("TOPLEFT", 2, 0)
+		RaidFinderQueueFrameIneligibleFrame.backdrop:Point("BOTTOMRIGHT", 0, 1)
+		RaidFinderQueueFrameCooldownFrame:CreateBackdrop("Overlay")
+		RaidFinderQueueFrameCooldownFrame.backdrop:Point("TOPLEFT", 2, 0)
+		RaidFinderQueueFrameCooldownFrame.backdrop:Point("BOTTOMRIGHT", 0, 1)
 		T.SkinCloseButton(RaidParentFrameCloseButton)
 		T.SkinDropDownBox(RaidFinderQueueFrameSelectionDropDown, 300)
 		RaidFinderQueueFrameSelectionDropDown:Point("RIGHT", -10, 0)

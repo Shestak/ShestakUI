@@ -15,6 +15,7 @@ local function LoadSkin()
 		"LFDQueueFrameRandomScrollFrameScrollBar",
 		"LFDQueueFrameNoLFDWhileLFR",
 		"LFDQueueFrameSpecificListScrollFrame",
+		"LFDQueueFrameCooldownFrame",
 	}
 
 	if T.PTRVersion() then
@@ -139,6 +140,9 @@ local function LoadSkin()
 	LFDQueueFrameNoLFDWhileLFR:CreateBackdrop("Overlay")
 	LFDQueueFrameNoLFDWhileLFR.backdrop:Point("TOPLEFT", 2, 5)
 	LFDQueueFrameNoLFDWhileLFR.backdrop:Point("BOTTOMRIGHT", 0, 6)
+	LFDQueueFrameCooldownFrame:CreateBackdrop("Overlay")
+	LFDQueueFrameCooldownFrame.backdrop:Point("TOPLEFT", 2, 4)
+	LFDQueueFrameCooldownFrame.backdrop:Point("BOTTOMRIGHT", 0, 6)
 	LFDQueueFrameSpecific:Point("TOPLEFT", -5, 0)
 	LFDQueueFrameSpecific:Point("BOTTOMRIGHT", 0, 10)
 	LFDParentFrame:CreateBackdrop("Transparent")
