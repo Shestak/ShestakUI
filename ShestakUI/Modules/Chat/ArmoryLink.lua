@@ -56,6 +56,7 @@ hooksecurefunc("UnitPopup_OnClick", function(self)
 			return
 		else
 			DEFAULT_CHAT_FRAME:AddMessage("|cFFFFFF00Unsupported realm location.|r")
+			StaticPopup_Hide("LINK_COPY_DIALOG")
 			return
 		end
 	end
