@@ -10,6 +10,7 @@
 	<Script file="Locales\Korean.lua"/>
 	<Script file="Locales\Chinese.lua"/>
 	<Script file="Locales\Taiwan.lua"/>
+	<Script file="Locales\Portuguese.lua"/>
 
 	<Script file="Config\Settings.lua"/>
 	<Script file="Config\Positions.lua"/>

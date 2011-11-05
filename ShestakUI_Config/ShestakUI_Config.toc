@@ -20,5 +20,6 @@ Locales\Spanish.lua
 Locales\Korean.lua
 Locales\Chinese.lua
 Locales\Taiwan.lua
+Locales\Portuguese.lua
 
 ShestakUI_Config.lua

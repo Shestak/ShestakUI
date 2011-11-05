@@ -380,3 +380,4 @@ SlashCmdList.FSTACK = function()
 end
 SLASH_FSTACK1 = "/аыефсл"
 SLASH_FSTACK2 = "/fs"
+SLASH_FSTACK2 = "/аы"
