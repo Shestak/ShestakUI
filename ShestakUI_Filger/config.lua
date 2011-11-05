@@ -2137,7 +2137,7 @@ Filger_Spells = {
 		},
 	},
 	["ROGUE"] = {
-		{	
+		{
 			Name = "P_BUFF_ICON",
 			Direction = "LEFT",
 			Interval = 3,
@@ -2171,6 +2171,14 @@ Filger_Spells = {
 			{ spellID = 1856, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Cheating death
 			{ spellID = 45182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Blade Flurry
+			{ spellID = 13877 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Shallow Insight
+			{ spellID = 84745 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Moderate Insight
+			{ spellID = 84746 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Deep Insight
+			{ spellID = 84747 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2223,6 +2231,14 @@ Filger_Spells = {
 			-- Physical Melee
 			-- Landslide (AP)
 			{ spellID = 74245, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Other
+			-- Future on Fire (T12 x4)
+			{ spellID = 99186, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fiery Devastation (T12 x4)
+			{ spellID = 99187, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Master of Flames (T12 x4)
+			{ spellID = 99188 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
