@@ -293,9 +293,8 @@ local Garbage = CreateFrame("Frame")
 Garbage:RegisterAllEvents()
 Garbage:SetScript("OnEvent", function(self, event)
 	eventcount = eventcount + 1
-	if InCombatLockdown() then return end
 
-	if eventcount > 6000 then
+	if (InCombatLockdown() and eventcount > 25000) or eventcount > 10000 then
 		collectgarbage("collect")
 		eventcount = 0
 	end
