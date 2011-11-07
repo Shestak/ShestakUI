@@ -96,7 +96,7 @@ local function Timer_Create(self)
 	return timer
 end
 
-hooksecurefunc(getmetatable(ActionButton1Cooldown).__index, "SetCooldown", function(self, start, duration)
+local function Timer_Start(self, start, duration)
 	if self.noOCC then return end
 	if start > 0 and duration > 2 then
 		local timer = self.timer or Timer_Create(self)
@@ -111,4 +111,61 @@ hooksecurefunc(getmetatable(ActionButton1Cooldown).__index, "SetCooldown", funct
 			Timer_Stop(timer)
 		end
 	end
+end
+
+hooksecurefunc(getmetatable(ActionButton1Cooldown).__index, "SetCooldown", Timer_Start)
+
+if not T.PTRVersion() then return end
+local active = {}
+local hooked = {}
+
+local function cooldown_OnShow(self)
+	active[self] = true
+end
+
+local function cooldown_OnHide(self)
+	active[self] = nil
+end
+
+local function cooldown_ShouldUpdateTimer(self, start, duration)
+	local timer = self.timer
+	if not timer then
+		return true
+	end
+	return timer.start ~= start
+end
+
+local function cooldown_Update(self)
+	local button = self:GetParent()
+	local start, duration, enable = GetActionCooldown(button.action)
+
+	if cooldown_ShouldUpdateTimer(self, start, duration) then
+		Timer_Start(self, start, duration)
+	end
+end
+
+local EventWatcher = CreateFrame("Frame")
+EventWatcher:Hide()
+EventWatcher:SetScript("OnEvent", function(self, event)
+	for cooldown in pairs(active) do
+		cooldown_Update(cooldown)
+	end
 end)
+EventWatcher:RegisterEvent("ACTIONBAR_UPDATE_COOLDOWN")
+
+local function actionButton_Register(frame)
+	local cooldown = frame.cooldown
+	if not hooked[cooldown] then
+		cooldown:HookScript("OnShow", cooldown_OnShow)
+		cooldown:HookScript("OnHide", cooldown_OnHide)
+		hooked[cooldown] = true
+	end
+end
+
+if _G["ActionBarButtonEventsFrame"].frames then
+	for i, frame in pairs(_G["ActionBarButtonEventsFrame"].frames) do
+		actionButton_Register(frame)
+	end
+end
+
+hooksecurefunc("ActionBarButtonEventsFrame_RegisterFrame", actionButton_Register)
