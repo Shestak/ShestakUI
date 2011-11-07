@@ -54,6 +54,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(47481)] = 3,	-- Gnaw (dk pet stun)
 		[GetSpellInfo(91797)] = 3,	-- Gnaw (dk pet stun mutant)
 		[GetSpellInfo(24394)] = 3,	-- Intimidation
+		[GetSpellInfo(82691)] = 3,	-- Ring of Frost
 
 		-- Silences
 		[GetSpellInfo(18469)] = 1,	-- Improved Counterspell
