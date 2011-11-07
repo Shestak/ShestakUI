@@ -261,7 +261,7 @@ else
 end
 lb:ClearAllPoints()
 lb:Point("BOTTOMRIGHT", Butsu, "TOPRIGHT", -21, -18)
-lb:SetFrameStrata("TOOLTIP")
+lb:SetFrameStrata("DIALOG")
 lb:RegisterForClicks("RightButtonUp", "LeftButtonUp")
 lb:SetScript("OnClick", OnLinkClick)
 lb:Hide()
