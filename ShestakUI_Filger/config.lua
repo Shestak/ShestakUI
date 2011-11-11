@@ -1024,8 +1024,6 @@ Filger_Spells = {
 			{ spellID = 469, size = 30, filter = "CD" },
 			-- Raging Blow
 			{ spellID = 85288, size = 30, filter = "CD" },
-			-- Bloodthirst
-			{ spellID = 23881, size = 30, filter = "CD" },
 			-- Taunt
 			{ spellID = 355, size = 30, filter = "CD" },
 			-- Berserker Rage
@@ -1571,8 +1569,6 @@ Filger_Spells = {
 			{ spellID = 31850, size = 30, filter = "CD" },
 			-- Hand of Protection
 			{ spellID = 1022, size = 30, filter = "CD" },
-			-- Guardian of Ancient Kings
-			{ spellID = 86150, size = 30, filter = "CD" },
 			-- Holy Shield
 			{ spellID = 20925, size = 30, filter = "CD" },
 
@@ -3070,6 +3066,10 @@ Filger_Spells = {
 			{ spellID = 98450, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Burning Orb (Majordomo Staghelm)
 			{ spellID = 100209, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Burning Wound (Ragnaros)
+			{ spellID = 101240, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Blazing Heat (Ragnaros)
+			{ spellID = 100460, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "T_BUFF",
@@ -3186,7 +3186,7 @@ Filger_Spells = {
 			-- Spiritwalker's Grace
 			{ spellID = 79206, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 			-- Mana Tide
-			{ spellID = 16191, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
+			--{ spellID = 16191, size = 60, unitId = "target", caster = "all", filter = "BUFF" },
 
 			-- Priest
 			-- Dispersion
