@@ -63,23 +63,23 @@ if C.raidframe.plugins_aura_watch == true then
 			},
 		}
 	end
-	
+
 	-- Raid debuffs
 	do
 		local _, ns = ...
 		local ORD = ns.oUF_RaidDebuffs or oUF_RaidDebuffs
 
 		if not ORD then return end
-		
+
 		ORD.ShowDispelableDebuff = C.raidframe.plugins_debuffhighlight_icon
 		ORD.FilterDispellableDebuff = true
 		ORD.MatchBySpellName = true
-		
+
 		local function SpellName(id)
 			local name = select(1, GetSpellInfo(id))
 			return name
 		end
-		
+
 		T.debuffids = {
 		-- Baradin Hold
 			-- Argaloth
@@ -210,6 +210,33 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(5782),	-- Fear
 			SpellName(84853),	-- Dark Pool
 			SpellName(91325),	-- Shadow Vortex
+		-- Dragon Soul
+			-- Morchok
+			SpellName(103541),	-- Safe
+			SpellName(103536),	-- Warning
+			SpellName(103534),	-- Danger
+			SpellName(108570),	-- Black Blood of the Earth
+			-- Warlord Zon'ozz
+			SpellName(103434),	-- Disrupting Shadows
+			-- Yor'sahj the Unsleeping
+			SpellName(105171),	-- Deep Corruption
+			-- Hagara the Stormbinder
+			SpellName(105465),	-- Lighting Storm
+			SpellName(104451),	-- Ice Tomb
+			SpellName(109325),	-- Frostflake
+			SpellName(105289),	-- Shattered Ice
+			SpellName(105285),	-- Target
+			-- Ultraxion
+			SpellName(110079),	-- Fading Light
+			SpellName(109075),	-- Fading Light
+			-- Warmaster Blackhorn
+			
+			-- Spine of Deathwing
+			SpellName(105479),	-- Searing Plasma
+			SpellName(105490),	-- Fiery Grip
+			-- Madness of Deathwing
+			
+		-- PvP
 			-- Death Knight
 			--[[SpellName(51209),	-- Hungering Cold
 			SpellName(47476),	-- Strangulate
@@ -261,7 +288,7 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Warrior
 			SpellName(20511),	-- Intimidating Shout]]
 		}
-		
+
 		T.ReverseTimer = {
 		-- Sinestra
 			[92956] = true,		-- Wrack
@@ -269,7 +296,7 @@ if C.raidframe.plugins_aura_watch == true then
 			[92955] = true,		-- Wrack
 			[89421] = true,		-- Wrack
 		}
-		
+
 		ORD:RegisterDebuffs(T.debuffids)
 	end
 end
