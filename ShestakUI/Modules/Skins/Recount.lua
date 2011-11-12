@@ -10,17 +10,19 @@ local function SkinFrame(frame)
 	frame.bgMain = CreateFrame("Frame", nil, frame)
 	if frame ~= Recount.MainWindow then
 		frame.bgMain:SetTemplate("Transparent")
+		T.SkinCloseButton(frame.CloseButton)
+		frame.CloseButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -11)
 	end
 	if frame == Recount.MainWindow then
 		frame.Title:SetPoint("TOPLEFT", frame, "TOPLEFT", 3, -15)
 		frame.Title:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		frame.Title:SetShadowColor(0, 0, 0, C.font.stylization_font_shadow and 1 or 0)
+		frame.CloseButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 3, -9)
 	end
 	frame.bgMain:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT")
 	frame.bgMain:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT")
 	frame.bgMain:SetPoint("TOP", frame, "TOP", 0, -7)
 	frame.bgMain:SetFrameLevel(frame:GetFrameLevel())
-	frame.CloseButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 3, -9)
 	frame:SetBackdrop(nil)
 end
 
@@ -81,6 +83,22 @@ Recount.CreateFrame = function(self, Name, Title, Height, Width, ShowFunc, HideF
 	local frame = self:CreateFrame_(Name, Title, Height, Width, ShowFunc, HideFunc)
 	SkinFrame(frame)
 	return frame
+end
+
+-- Skin some others frame, not available outside Recount
+Recount.AddWindow_ = Recount.AddWindow
+Recount.AddWindow = function(self, frame)
+	Recount:AddWindow_(frame)
+
+	if frame.YesButton then
+		frame:SetTemplate("Transparent")
+		frame.YesButton:SkinButton()
+		frame.NoButton:SkinButton()
+	end
+
+	if frame.ReportButton then
+		frame.ReportButton:SkinButton()
+	end
 end
 
 -- Skin existing frames
