@@ -9,4 +9,5 @@ if C.loot.auto_greed ~= true then return end
 T.NeedLoot = {
 	33865,	-- Amani Hex Stick
 	68729,	-- Elementium Lockbox
+	52078,	-- Chaos Orb
 }
