@@ -251,7 +251,7 @@ function GetFilgerData(data)
 		filgerId = data.spellID
 		spn, _, icon = GetSpellInfo(data.spellID)
 		if not spn then
-			print("|cffff0000WARNING: spellID "..data.spellID.." no longer exists!|r")
+			print("|cffff0000WARNING: spellID "..data.spellID.." no longer exists! Report this to Shestak.|r")
 		end
 		if data.filter == "BUFF" then
 			name, rank, _, count, debuffType, duration, expirationTime, caster, isStealable = UnitBuff(data.unitId, spn)
