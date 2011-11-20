@@ -65,7 +65,6 @@
 	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
 
 	<Script file="Modules\Quests\AutoAccept.lua"/>
-	<Script file="Modules\Quests\AutoCollapse.lua"/>
 	<Script file="Modules\Quests\QuestLevel.lua"/>
 	<Script file="Modules\Quests\WatchFrame.lua"/>
 	<Script file="Modules\Quests\WowheadLink.lua"/>
