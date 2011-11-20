@@ -120,6 +120,13 @@ local SmallerMapSkin = function()
 	WorldMapLevelDropDown:SetAlpha(0)
 	WorldMapLevelDropDown:SetScale(0.00001)
 
+	if T.PTRVersion() then
+		WorldMapShowDropDown:SetScale(0.85)
+		WorldMapShowDropDown:ClearAllPoints()
+		WorldMapShowDropDown:Point("TOPRIGHT", WorldMapButton, "TOPRIGHT", -15, -3)
+		WorldMapShowDropDown:SetFrameStrata("HIGH")
+	end
+
 	-- Fix tooltip not hidding after leaving quest # tracker icon
 	hooksecurefunc("WorldMapQuestPOI_OnLeave", function() WorldMapTooltip:Hide() end)
 end
