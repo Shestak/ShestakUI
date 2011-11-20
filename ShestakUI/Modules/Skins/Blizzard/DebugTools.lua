@@ -5,6 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	DebugTools skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
+	ScriptErrorsFrame:SetParent(UIParent)
 	ScriptErrorsFrame:SetTemplate("Transparent")
 	EventTraceFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(ScriptErrorsFrameClose)

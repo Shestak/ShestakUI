@@ -96,6 +96,9 @@ local function InstallUI()
 			-- Rename general and combat log tabs
 			if i == 1 then FCF_SetWindowName(frame, GENERAL) end
 			if i == 2 then FCF_SetWindowName(frame, GUILD_BANK_LOG) end
+
+			-- Lock them if unlocked
+			if not frame.isLocked then FCF_SetLocked(frame, 1) end
 		end
 
 		if T.author == true then
