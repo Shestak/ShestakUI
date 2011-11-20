@@ -42,6 +42,8 @@ local function LoadSkin()
 	}
 
 	if T.PTRVersion() then
+		IgnoreListFrame:StripTextures()
+		PendingListFrame:StripTextures()
 		FriendsFrameInset:StripTextures()
 		WhoFrameListInset:StripTextures()
 		WhoFrameEditBoxInset:StripTextures()

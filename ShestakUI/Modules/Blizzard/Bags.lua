@@ -109,7 +109,8 @@ local trashBag = {}
 local QUEST_ITEM_STRING = nil
 
 function Stuffing:SlotUpdate(b)
-	if not StuffingFrameBags:IsShown() then return end -- don't do any slot update if bags are not show
+	-- Don't do any slot update if bags are not show
+	--if not StuffingFrameBags:IsShown() then return end
 	local texture, count, locked = GetContainerItemInfo(b.bag, b.slot)
 	local clink = GetContainerItemLink(b.bag, b.slot)
 
@@ -153,7 +154,7 @@ function Stuffing:SlotUpdate(b)
 	SetItemButtonTexture(b.frame, texture)
 	SetItemButtonCount(b.frame, count)
 	SetItemButtonDesaturated(b.frame, locked, 0.5, 0.5, 0.5)
-	
+
 	b.frame:Show()
 end
 

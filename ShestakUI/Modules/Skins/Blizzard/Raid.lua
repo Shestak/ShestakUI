@@ -43,6 +43,10 @@ local function LoadSkin()
 			_G["RaidGroup"..i.."Slot"..j]:SetTemplate("Transparent")
 		end
 	end
+
+	if T.PTRVersion() then
+		T.SkinCheckBox(RaidFrameAllAssistCheckButton)
+	end
 end
 
 T.SkinFuncs["Blizzard_RaidUI"] = LoadSkin

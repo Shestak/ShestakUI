@@ -51,6 +51,10 @@ local function LoadSkin()
 		WorldMapFrameSizeUpButton:ClearAllPoints()
 		WorldMapFrameSizeUpButton:Point("TOPRIGHT", WorldMapFrameCloseButton, "TOPLEFT", -4, 0)
 		WorldMapFrameSizeUpButton:Point("BOTTOMRIGHT", WorldMapFrameCloseButton, "BOTTOMLEFT", -4, 0)
+
+		if T.PTRVersion() then
+			WorldMapShowDropDown:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", 2, -5)
+		end
 	end
 
 	-- LargeMap
@@ -71,6 +75,10 @@ local function LoadSkin()
 		WorldMapFrameSizeDownButton:ClearAllPoints()
 		WorldMapFrameSizeDownButton:Point("TOPRIGHT", WorldMapFrameCloseButton, "TOPLEFT", -4, 0)
 		WorldMapFrameSizeDownButton:Point("BOTTOMRIGHT", WorldMapFrameCloseButton, "BOTTOMLEFT", -4, 0)
+
+		if T.PTRVersion() then
+			WorldMapShowDropDown:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", -2, -3)
+		end
 	end
 
 	local function QuestSkin()
