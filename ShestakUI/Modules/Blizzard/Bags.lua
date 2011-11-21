@@ -1091,29 +1091,29 @@ function Stuffing:SortBags()
 	local st_idx = #bs
 	local dbag = bs[st_idx]
 	local dslot = GetContainerNumSlots(dbag)
- 
+
 	for i, v in ipairs(st) do
 		v.dbag = dbag
 		v.dslot = dslot
 		v.dstSlot = self:SlotNew(dbag, dslot)
- 
+
 		dslot = dslot - 1
- 
+
 		if dslot == 0 then
 			while true do
 				st_idx = st_idx - 1
- 
+
 				if st_idx < 0 then
 					break
 				end
- 
+
 				dbag = bs[st_idx]
- 
+
 				if Stuffing:BagType(dbag) == ST_NORMAL or Stuffing:BagType(dbag) == ST_SPECIAL or dbag < 1 then
 					break
 				end
 			end
- 
+
 			dslot = GetContainerNumSlots(dbag)
 		end
 	end

@@ -3278,8 +3278,6 @@ Filger_Spells = {
 			{ spellID = 83047, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Deep Freeze
 			{ spellID = 44572, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
-			-- Ring of frost
-			{ spellID = 82691, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Hammer of Justice
 			{ spellID = 853, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Psychic Horror
@@ -3322,6 +3320,8 @@ Filger_Spells = {
 			{ spellID = 19503, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Polymorph
 			{ spellID = 118, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
+			-- Ring of frost
+			{ spellID = 82691, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Dragon's Breath
 			{ spellID = 31661, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Bad Manner (Monkey)
