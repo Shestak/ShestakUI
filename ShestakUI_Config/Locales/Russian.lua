@@ -22,6 +22,7 @@ L_GUI_MISC_AUTOQUEST = "Автоматическое принятие задан
 L_GUI_MISC_AUTODUEL = "Автоматическая отмена дуэлей от игроков"
 L_GUI_MISC_AUTOACCEPT = "Автоматическое принятие приглашений от друзей и гильдии"
 L_GUI_MISC_AUTORESSURECT = "Автоматическое воскрешение на Полях Сражений"
+L_GUI_MISC_AUTOBUYREAGENTS = "Автоматическая покупка реагентов"
 L_GUI_MISC_MARKING = "Меню с метками при нажатие *shift*"
 L_GUI_MISC_INVKEYWORD = "Ключевое слово для автоматического приглашения (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Прокручивать камеру во время афк"

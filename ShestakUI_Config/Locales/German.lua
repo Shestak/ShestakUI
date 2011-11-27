@@ -22,6 +22,7 @@ L_GUI_MISC_AUTOQUEST = "Quests automatisch annehmen"
 L_GUI_MISC_AUTODUEL = "Duell automatisch ablehnen"
 L_GUI_MISC_AUTOACCEPT = "Einladungen automatisch annehmen"
 L_GUI_MISC_AUTORESSURECT = "Automatisch im Schlachtfeld wiederbeleben"
+L_GUI_MISC_AUTOBUYREAGENTS = "Auto buy reagents" -- Needs review
 L_GUI_MISC_MARKING = "Ziele markieren wenn *Umschalttaste* gedürckt wird"
 L_GUI_MISC_INVKEYWORD = "Kurzes Schlüsselwort für Einladungen (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Kamera drehen während du afk bist"

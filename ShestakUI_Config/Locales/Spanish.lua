@@ -22,6 +22,7 @@ L_GUI_MISC_AUTOQUEST = "Auto aceptar misiones"
 L_GUI_MISC_AUTODUEL = "Auto rechazar duelos"
 L_GUI_MISC_AUTOACCEPT = "Auto aceptar invitaciones"
 L_GUI_MISC_AUTORESSURECT = "Auto resurrección en los Campos de Batalla"
+L_GUI_MISC_AUTOBUYREAGENTS = "Auto buy reagents" -- Needs review
 L_GUI_MISC_MARKING = "Marca el objetivo cuando pulsas *shift*"
 L_GUI_MISC_INVKEYWORD = "Acrónimo para invitaciones (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"

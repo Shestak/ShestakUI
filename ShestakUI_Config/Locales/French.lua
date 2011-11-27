@@ -22,6 +22,7 @@ L_GUI_MISC_AUTOQUEST = "Accepter les quêtes automatiquement"
 L_GUI_MISC_AUTODUEL = "Décliner les duels automatiquement"
 L_GUI_MISC_AUTOACCEPT = "Accepter automatiquement les invitations"
 L_GUI_MISC_AUTORESSURECT = "Autorésurrection en champ de bataille"
+L_GUI_MISC_AUTOBUYREAGENTS = "Auto buy reagents" -- Needs review
 L_GUI_MISC_MARKING = "Marque la cible quand vous appuyez sur MAJ"
 L_GUI_MISC_INVKEYWORD = "Mot clé pour inviter (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Faire tourner la caméra quand absent"

@@ -22,6 +22,7 @@ L_GUI_MISC_AUTOQUEST = "自動接受任務"
 L_GUI_MISC_AUTODUEL = "自動取消决鬥"
 L_GUI_MISC_AUTOACCEPT = "自動接受組隊邀請"
 L_GUI_MISC_AUTORESSURECT = "在戰場中自動釋放靈魂"
+L_GUI_MISC_AUTOBUYREAGENTS = "Auto buy reagents" -- Needs review
 L_GUI_MISC_MARKING = "點擊shift顯示團隊標記圖示菜單"
 L_GUI_MISC_INVKEYWORD = "自動邀請關鍵字 (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "AFK時旋轉鏡頭"

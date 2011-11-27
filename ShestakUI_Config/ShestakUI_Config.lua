@@ -52,6 +52,7 @@ local function Local(o)
 	if o == "UIConfigmiscauto_decline_duel" then o = L_GUI_MISC_AUTODUEL end
 	if o == "UIConfigmiscauto_accept_invite" then o = L_GUI_MISC_AUTOACCEPT end
 	if o == "UIConfigmiscauto_resurrection" then o = L_GUI_MISC_AUTORESSURECT end
+	if o == "UIConfigmiscauto_buy_reagents" then o = L_GUI_MISC_AUTOBUYREAGENTS end
 	if o == "UIConfigmiscshift_marking" then o = L_GUI_MISC_MARKING end
 	if o == "UIConfigmiscinvite_keyword" then o = L_GUI_MISC_INVKEYWORD end
 	if o == "UIConfigmiscafk_spin_camera" then o = L_GUI_MISC_SPIN_CAMERA end

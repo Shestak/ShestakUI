@@ -38,6 +38,7 @@
 	<Script file="Config\Filters\Reminders.lua"/>
 	<Script file="Config\Filters\ChatSpam.lua"/>
 	<Script file="Config\Filters\AutoButton.lua"/>
+	<Script file="Config\Filters\BuyReagents.lua"/>
 
 	<Script file="Core\API.lua"/>
 	<Script file="Core\Functions.lua"/>
@@ -89,6 +90,7 @@
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
 	<Script file="Modules\Misc\OneClickBuyOut.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
+	<Script file="Modules\Misc\AutoBuy.lua"/>
 
 	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
 	<Script file="Modules\Cooldowns\PulseCD.lua"/>
