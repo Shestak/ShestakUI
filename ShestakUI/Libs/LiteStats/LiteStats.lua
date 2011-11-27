@@ -353,7 +353,7 @@ if durability.enabled then
 					if dur ~= dmax then dmin = floor(min(dmin, dur / dmax * 100)) end
 				end
 				self.text:SetText(format(gsub(durability.fmt,"%[color%]", (gradient(dmin / 100))), dmin))
-			elseif event == "MERCHANT_SHOW" and not IsAltKeyDown() then
+			elseif event == "MERCHANT_SHOW" and not (IsAltKeyDown() or IsShiftKeyDown()) then
 				if conf.AutoRepair and CanMerchantRepair() then
 					local cost, total = GetRepairAllCost(), 0
 					if cost > 0 then
@@ -445,7 +445,7 @@ if gold.enabled then
 		OnEvent = function(self, event)
 			conf.Gold = GetMoney()
 			if event == "MERCHANT_SHOW" then
-				if conf.AutoSell and not IsAltKeyDown() then
+				if conf.AutoSell and not (IsAltKeyDown() or IsShiftKeyDown()) then
 					local profit = 0
 					for bag = 0, NUM_BAG_SLOTS do for slot = 0, GetContainerNumSlots(bag) do
 						local link = GetContainerItemLink(bag, slot)
