@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example : Incinerate Flesh from Lord Jaraxxus -> http://www.wowhead.com/?spell=67049
+--	Example : Incinerate Flesh from Lord Jaraxxus -> http://www.wowhead.com/spell=67049
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 if C.reminder.raid_buffs_enable == true then
