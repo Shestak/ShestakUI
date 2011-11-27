@@ -1,8 +1,8 @@
-local T, C, L = unpack(select(2, ...))
+п»їlocal T, C, L = unpack(select(2, ...))
 if C.misc.auto_buy_reagents ~= true and T.level ~= MAX_PLAYER_LEVEL then return end
 
 ----------------------------------------------------------------------------------------
---	Auto buy reagents(Квилайт, кредитсы не забывай в коде оставлять/прописывать ;))
+--	Auto buy reagents(РљРІРёР»Р°Р№С‚, РєСЂРµРґРёС‚СЃС‹ РЅРµ Р·Р°Р±С‹РІР°Р№ РІ РєРѕРґРµ РѕСЃС‚Р°РІР»СЏС‚СЊ/РїСЂРѕРїРёСЃС‹РІР°С‚СЊ ;))
 ----------------------------------------------------------------------------------------
 local reagents = T.AutoBuy
 local ItemIDPattern = "item:(%d+)"
@@ -67,8 +67,6 @@ local function BuyReagents(reagents)
 
 				if quantity > 0 then
 					BuyMerchantItem(MerchantIDIndex, quantity)
-					--print("You buy "..ItemLink.." for "..FormatGold(subtotal)..".")
-					--print("Вы купили "..ItemLink.." за "..FormatGold(subtotal)..".")
 					print("|cff66C6FF"..ITEM_PURCHASED_COLON.." "..ItemLink.." - "..FormatGold(subtotal)..".")
 				end
 			end
