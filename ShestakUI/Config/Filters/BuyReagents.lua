@@ -17,5 +17,6 @@ T.AutoBuy = {
 		[2892] = 40,	-- Deadly Poison
 		[3775] = 40,	-- Crippling Poison
 		[5237] = 40,	-- Mind-Numbing Poison
+		[10918] = 20,	-- Wound Poison
 	},
 }
