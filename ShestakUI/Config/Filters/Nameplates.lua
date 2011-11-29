@@ -2,12 +2,12 @@
 if C.nameplate.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	The best way to add or delete item is to go at www.wowhead.com, search for a item.
---	Example : Huge Seaforium Bombs from Isle of Conquest -> http://www.wowhead.com/item=67049
+--	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
+--	Example: Hungering Cold -> http://www.wowhead.com/spell=49203
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 local function SpellName(id)
-	local name, _, _, _, _, _, _, _, _ = GetSpellInfo(id)
+	local name = select(1, GetSpellInfo(id))
 	return name
 end
 

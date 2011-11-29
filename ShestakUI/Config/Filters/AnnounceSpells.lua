@@ -2,8 +2,8 @@
 if C.announcements.spells ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	The best way to add or delete item is to go at www.wowhead.com, search for a item.
---	Example : Huge Seaforium Bombs from Isle of Conquest -> http://www.wowhead.com/spell=67049
+--	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
+--	Example: Misdirection -> http://www.wowhead.com/spell=34477
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 T.AnnounceSpells = {
