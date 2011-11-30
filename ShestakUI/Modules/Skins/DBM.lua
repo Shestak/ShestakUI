@@ -6,7 +6,7 @@ if not C.skins.dbm == true then return end
 ----------------------------------------------------------------------------------------
 local forcebosshealthclasscolor = false		-- Forces BossHealth to be classcolored. Not recommended.
 local croprwicons = true					-- Crops blizz shitty borders from icons in RaidWarning messages
-local rwiconsize = 12						-- RaidWarning icon size. Works only if croprwicons = true
+local rwiconsize = 13						-- RaidWarning icon size. Works only if croprwicons = true
 local backdrop = {
 	bgFile = C.media.blank,
 	insets = {left = 0, right = 0, top = 0, bottom = 0},
