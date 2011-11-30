@@ -684,8 +684,8 @@ Filger_Spells = {
 			{ spellID = 74241, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Item Sets
-			-- Time Lord's Regalia (Haste, Proc) 4.3
-			--{ spellID = 105785, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Time Lord's Regalia (Haste, Proc)
+			{ spellID = 105785, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
