@@ -109,6 +109,8 @@ SlashCmdList.PARTYTORAID = function()
 		elseif UnitInParty("player") and IsPartyLeader() then
 			ConvertToRaid()
 		end
+	else
+		print("|cffffff00"..ERR_NOT_IN_GROUP.."|r")
 	end
 end
 SLASH_PARTYTORAID1 = "/toraid"
@@ -356,7 +358,7 @@ SLASH_CHANGEADDONS1 = "/addons"
 --	Farm mode for minimap(by Elv22)
 ----------------------------------------------------------------------------------------
 local farm = false
-SlashCmdList.FARMMODE = function(msg, editbox)
+SlashCmdList.FARMMODE = function()
 	if farm == false then
 		MinimapAnchor:Size(C.minimap.size * 1.65)
 		Minimap:Size(MinimapAnchor:GetWidth())
