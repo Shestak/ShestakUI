@@ -7,16 +7,14 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	if C.bag.enable == true or (IsAddOnLoaded("cargBags") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("Bagnon")) then return end
 	-- Container Frame
-	if T.PTRVersion() then
-		BagItemSearchBox:StripTextures()
-		BagItemSearchBox:CreateBackdrop("Overlay")
-		BagItemSearchBox.backdrop:Point("TOPLEFT", 10, -2)
-		BagItemSearchBox.backdrop:Point("BOTTOMRIGHT", -2, 2)
-		BankItemSearchBox:StripTextures()
-		BankItemSearchBox:CreateBackdrop("Overlay")
-		BankItemSearchBox.backdrop:Point("TOPLEFT", 10, -2)
-		BankItemSearchBox.backdrop:Point("BOTTOMRIGHT", -2, 2)
-	end
+	BagItemSearchBox:StripTextures()
+	BagItemSearchBox:CreateBackdrop("Overlay")
+	BagItemSearchBox.backdrop:Point("TOPLEFT", 10, -2)
+	BagItemSearchBox.backdrop:Point("BOTTOMRIGHT", -2, 2)
+	BankItemSearchBox:StripTextures()
+	BankItemSearchBox:CreateBackdrop("Overlay")
+	BankItemSearchBox.backdrop:Point("TOPLEFT", 10, -2)
+	BankItemSearchBox.backdrop:Point("BOTTOMRIGHT", -2, 2)
 
 	for i = 1, NUM_CONTAINER_FRAMES do
 		local frame = _G["ContainerFrame"..i]

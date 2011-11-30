@@ -15,11 +15,6 @@ local function LoadSkin()
 	}
 
 	LFRParentFrame:StripTextures()
-	if not T.PTRVersion() then
-		LFRParentFrame:CreateBackdrop("Transparent")
-		LFRParentFrame.backdrop:Point("TOPLEFT", 16, -12)
-		LFRParentFrame.backdrop:Point("BOTTOMRIGHT", -1, 0)
-	end
 	LFRQueueFrameNoLFRWhileLFD:StripTextures()
 	LFRQueueFrameNoLFRWhileLFD:CreateBackdrop("Overlay")
 	LFRQueueFrameNoLFRWhileLFD.backdrop:Point("TOPLEFT", 4, 0)
@@ -31,13 +26,8 @@ local function LoadSkin()
 		_G[buttons[i]]:SkinButton()
 	end
 
-	if not T.PTRVersion() then
-		LFRQueueFrameFindGroupButton:Point("BOTTOMLEFT", LFRParentFrame.backdrop, "BOTTOMLEFT", 9, 7)
-		LFRQueueFrameAcceptCommentButton:Point("BOTTOMRIGHT", LFRParentFrame.backdrop, "BOTTOMRIGHT", -9, 7)
-	else
-		LFRQueueFrameFindGroupButton:Point("BOTTOMLEFT", LFRParentFrame, "BOTTOMLEFT", 9, 4)
-		LFRQueueFrameAcceptCommentButton:Point("BOTTOMRIGHT", LFRParentFrame, "BOTTOMRIGHT", -9, 4)
-	end
+	LFRQueueFrameFindGroupButton:Point("BOTTOMLEFT", LFRParentFrame, "BOTTOMLEFT", 9, 4)
+	LFRQueueFrameAcceptCommentButton:Point("BOTTOMRIGHT", LFRParentFrame, "BOTTOMRIGHT", -9, 4)
 
 	-- Close button
 	for i = 1, LFRParentFrame:GetNumChildren() do
@@ -50,23 +40,12 @@ local function LoadSkin()
 	T.SkinTab(LFRParentFrameTab1)
 	T.SkinTab(LFRParentFrameTab2)
 
-	-- Reposition tabs
-	if not T.PTRVersion() then
-		LFRParentFrameTab1:ClearAllPoints()
-		LFRParentFrameTab1:SetPoint("TOPLEFT", LFRParentFrame.backdrop, "BOTTOMLEFT", 0, 2)
-	end
-
 	T.SkinDropDownBox(LFRBrowseFrameRaidDropDown)
 	LFRQueueFrameSpecificListScrollFrame:StripTextures()
 
 	LFRQueueFrameCommentTextButton:CreateBackdrop("Overlay")
-	if not T.PTRVersion() then
-		LFRQueueFrameCommentTextButton.backdrop:Point("TOPLEFT", -6, 2)
-		LFRQueueFrameCommentTextButton.backdrop:Point("BOTTOMRIGHT", 1, 0)
-	else
-		LFRQueueFrameCommentTextButton.backdrop:Point("TOPLEFT", -4, 2)
-		LFRQueueFrameCommentTextButton.backdrop:Point("BOTTOMRIGHT", 3, 2)
-	end
+	LFRQueueFrameCommentTextButton.backdrop:Point("TOPLEFT", -4, 2)
+	LFRQueueFrameCommentTextButton.backdrop:Point("BOTTOMRIGHT", 3, 2)
 
 	for i = 1, 7 do
 		local button = "LFRBrowseFrameColumnHeader"..i
@@ -87,26 +66,24 @@ local function LoadSkin()
 	LFRQueueFrameRoleButtonHealer:GetChildren():SetFrameLevel(LFRQueueFrameRoleButtonHealer:GetChildren():GetFrameLevel() + 2)
 	LFRQueueFrameRoleButtonDPS:GetChildren():SetFrameLevel(LFRQueueFrameRoleButtonDPS:GetChildren():GetFrameLevel() + 2)
 
-	if T.PTRVersion() then
-		for i = 1, 2 do
-			local tab = _G["LFRParentFrameSideTab"..i]
-			if tab then
-				local icon = tab:GetNormalTexture():GetTexture()
+	for i = 1, 2 do
+		local tab = _G["LFRParentFrameSideTab"..i]
+		if tab then
+			local icon = tab:GetNormalTexture():GetTexture()
 
-				tab:StripTextures()
-				tab:SetNormalTexture(icon)
-				tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				tab:GetNormalTexture():ClearAllPoints()
+			tab:StripTextures()
+			tab:SetNormalTexture(icon)
+			tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			tab:GetNormalTexture():ClearAllPoints()
 
-				tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
-				tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+			tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
+			tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
 
-				tab:CreateBackdrop("Default")
-				tab.backdrop:SetAllPoints()
-				tab:StyleButton(true)
-			end
-			LFRParentFrameSideTab1:Point("TOPLEFT", FriendsFrame, "TOPRIGHT", 1, 0)
+			tab:CreateBackdrop("Default")
+			tab.backdrop:SetAllPoints()
+			tab:StyleButton(true)
 		end
+		LFRParentFrameSideTab1:Point("TOPLEFT", FriendsFrame, "TOPRIGHT", 1, 0)
 	end
 end
 

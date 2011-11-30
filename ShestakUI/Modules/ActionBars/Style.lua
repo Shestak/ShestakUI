@@ -21,7 +21,7 @@ local function style(self)
 	local Btname = _G[name.."Name"]
 	local normal = _G[name.."NormalTexture"]
 
-	if T.PTRVersion() and _G[name.."FloatingBG"] then
+	if _G[name.."FloatingBG"] then
 		_G[name.."FloatingBG"]:Kill()
 	end
 
@@ -236,16 +236,11 @@ SpellFlyout:HookScript("OnShow", SetupFlyoutButton)
 
 -- Hide the Mouseover texture and attempt to find the ammount of buttons to be skinned
 local function styleflyout(self)
-	if not T.PTRVersion() then
+	if self.FlyoutBorder then
 		self.FlyoutBorder:SetAlpha(0)
+	end
+	if self.FlyoutBorderShadow then
 		self.FlyoutBorderShadow:SetAlpha(0)
-	else
-		if self.FlyoutBorder then
-			self.FlyoutBorder:SetAlpha(0)
-		end
-		if self.FlyoutBorderShadow then
-			self.FlyoutBorderShadow:SetAlpha(0)
-		end
 	end
 
 	SpellFlyoutHorizontalBackground:SetAlpha(0)

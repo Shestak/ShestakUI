@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.skins.blizzard_frames ~= true or not T.PTRVersion() then return end
+if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	ItemAlterationUI skin

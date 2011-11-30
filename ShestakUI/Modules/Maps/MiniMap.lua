@@ -82,11 +82,7 @@ local function UpdateLFG()
 	MiniMapLFGFrame:SetHighlightTexture(nil)
 	MiniMapLFGFrameBorder:Hide()
 end
-if T.PTRVersion() then
-	hooksecurefunc("MiniMapLFG_Update", UpdateLFG)
-else
-	hooksecurefunc("MiniMapLFG_UpdateIsShown", UpdateLFG)
-end
+hooksecurefunc("MiniMapLFG_Update", UpdateLFG)
 
 -- Feedback icon
 if FeedbackUIButton then
@@ -119,27 +115,21 @@ GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 -- LFDSearchStatus
-local PTRFrame
-if T.PTRVersion() then
-	PTRFrame = LFGSearchStatus
-else
-	PTRFrame = LFDSearchStatus
-end
 local function UpdateLFGTooltip()
 	local position = MinimapAnchor:GetPoint()
-	PTRFrame:ClearAllPoints()
+	LFGSearchStatus:ClearAllPoints()
 	if position:match("BOTTOMRIGHT") then
-		PTRFrame:Point("BOTTOMRIGHT", MiniMapLFGFrame, "BOTTOMLEFT", 0, 0)
+		LFGSearchStatus:Point("BOTTOMRIGHT", MiniMapLFGFrame, "BOTTOMLEFT", 0, 0)
 	elseif position:match("BOTTOM") then
-		PTRFrame:Point("BOTTOMLEFT", MiniMapLFGFrame, "BOTTOMRIGHT", 4, 0)
+		LFGSearchStatus:Point("BOTTOMLEFT", MiniMapLFGFrame, "BOTTOMRIGHT", 4, 0)
 	elseif position:match("LEFT") then
-		PTRFrame:Point("TOPLEFT", MiniMapLFGFrame, "TOPRIGHT", 4, 0)
+		LFGSearchStatus:Point("TOPLEFT", MiniMapLFGFrame, "TOPRIGHT", 4, 0)
 	else
-		PTRFrame:Point("TOPRIGHT", MiniMapLFGFrame, "TOPLEFT", 0, 0)
+		LFGSearchStatus:Point("TOPRIGHT", MiniMapLFGFrame, "TOPLEFT", 0, 0)
 	end
 end
-PTRFrame:HookScript("OnShow", UpdateLFGTooltip)
-PTRFrame:SetFrameStrata("TOOLTIP")
+LFGSearchStatus:HookScript("OnShow", UpdateLFGTooltip)
+LFGSearchStatus:SetFrameStrata("TOOLTIP")
 
 -- Enable mouse scrolling
 Minimap:EnableMouseWheel(true)
@@ -225,12 +215,15 @@ local micromenu = {
 			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
 		end
 	end},
-	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
-		if T.PTRVersion() then
-			ToggleRaidFrame(3)
+	{text = RAID_FINDER, notCheckable = true, func = function()
+		if T.level >= SHOW_LFD_LEVEL then
+			ToggleRaidFrame(1)
 		else
-			ToggleFrame(LFRParentFrame)
+			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
 		end
+	end},
+	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
+		ToggleRaidFrame(3)
 	end},
 	{text = HELP_BUTTON, notCheckable = 1, func = function()
 		ToggleHelpFrame()
@@ -245,22 +238,12 @@ local micromenu = {
 		ToggleBattlefieldMinimap()
 	end},
 	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
-		if not IsAddOnLoaded("Blizzard_EncounterJournal") and T.PTRVersion() then
+		if not IsAddOnLoaded("Blizzard_EncounterJournal") then
 			LoadAddOn("Blizzard_EncounterJournal")
 		end
 		ToggleFrame(EncounterJournal)
 	end},
 }
-
-if T.PTRVersion() then
-	tinsert(micromenu, {text = RAID_FINDER, notCheckable = true, func = function()
-		if T.level >= SHOW_LFD_LEVEL then
-			ToggleRaidFrame(1)
-		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
-		end
-	end})
-end
 
 Minimap:SetScript("OnMouseUp", function(self, button)
 	local position = MinimapAnchor:GetPoint()

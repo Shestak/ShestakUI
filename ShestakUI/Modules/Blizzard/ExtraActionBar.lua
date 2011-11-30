@@ -1,5 +1,4 @@
 local T, C, L = unpack(select(2, ...))
-if not T.PTRVersion() then return end
 
 ------------------------------------------------------------------------------------------
 --	Make ExtraActionBarFrame movable

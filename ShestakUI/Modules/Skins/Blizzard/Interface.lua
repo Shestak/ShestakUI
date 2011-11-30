@@ -118,6 +118,7 @@ local function LoadSkin()
 		"BuffsPanelCastableBuffs",
 		"BuffsPanelShowCastableDebuffs",
 		"BuffsPanelConsolidateBuffs",
+		"BuffsPanelShowAllEnemyDebuffs",
 		-- Battlenet
 		"BattlenetPanelConversations",
 		"BattlenetPanelOnlineFriends",
@@ -144,10 +145,6 @@ local function LoadSkin()
 		"HelpPanelColorblindMode",
 		"HelpPanelMovePad",
 	}
-
-	if T.PTRVersion() then
-		tinsert(checkboxes, "BuffsPanelShowAllEnemyDebuffs")
-	end
 
 	for i = 1, getn(checkboxes) do
 		local checkbox = _G["InterfaceOptions"..checkboxes[i]]

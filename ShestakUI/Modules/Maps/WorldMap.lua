@@ -43,11 +43,6 @@ if SmallerMap == nil then
 	SetCVar("miniWorldMap", 1)
 end
 
-local MoveMap = GetCVarBool("advancedWorldMap")
-if MoveMap == nil and not T.PTRVersion() then
-	SetCVar("advancedWorldMap", 1)
-end
-
 -- Styling World Map
 local SmallerMapSkin = function()
 	mapbg:SetScale(1 / mapscale)
@@ -120,12 +115,10 @@ local SmallerMapSkin = function()
 	WorldMapLevelDropDown:SetAlpha(0)
 	WorldMapLevelDropDown:SetScale(0.00001)
 
-	if T.PTRVersion() then
-		WorldMapShowDropDown:SetScale(0.85)
-		WorldMapShowDropDown:ClearAllPoints()
-		WorldMapShowDropDown:Point("TOPRIGHT", WorldMapButton, "TOPRIGHT", -15, -3)
-		WorldMapShowDropDown:SetFrameStrata("HIGH")
-	end
+	WorldMapShowDropDown:SetScale(0.85)
+	WorldMapShowDropDown:ClearAllPoints()
+	WorldMapShowDropDown:Point("TOPRIGHT", WorldMapButton, "TOPRIGHT", -15, -3)
+	WorldMapShowDropDown:SetFrameStrata("HIGH")
 
 	-- Fix tooltip not hidding after leaving quest # tracker icon
 	hooksecurefunc("WorldMapQuestPOI_OnLeave", function() WorldMapTooltip:Hide() end)
@@ -248,64 +241,3 @@ coords:SetScript("OnUpdate", function(self, elapsed)
 		int = 0
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	Hide boss buttons on worlmap(Hide Boss Buttons by nebula)
-----------------------------------------------------------------------------------------
-if T.PTRVersion() then return end
-local button = CreateFrame("CheckButton", "WorldMapFrameShowBossButtons", WorldMapFrame, "OptionsCheckButtonTemplate")
-button:SetSize(19, 19)
-button:SetFrameStrata("HIGH")
-_G[button:GetName().."Text"]:SetFont(C.media.normal_font, 14)
-_G[button:GetName().."Text"]:SetText(L_MAP_HIDE_BOSSES)
-
-local function setAnchor(self)
-	self:ClearAllPoints()
-	local arch = select(3, GetProfessions())
-	if arch then
-		self:SetPoint("BOTTOM", WorldMapShowDigSites, "TOP", 0, 0)
-	else
-		self:SetPoint("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
-	end
-end
-
-local function checkHideShow(self)
-	if EJ_GetMapEncounter(1) then
-		self:Show()
-	else
-		self:Hide()
-	end
-end
-
-button:SetScript("OnShow", checkHideShow)
-
-button:SetScript("OnClick", function(self, button)
-	if self:GetChecked() then
-		PlaySound("igMainMenuOptionCheckBoxOn")
-		SavedOptionsPerChar.ShowMapBoss = true
-		WorldMapBossButtonFrame:Hide()
-	else
-		PlaySound("igMainMenuOptionCheckBoxOff")
-		SavedOptionsPerChar.ShowMapBoss = false
-		WorldMapBossButtonFrame:Show()
-	end
-end)
-
-button:SetScript("OnEvent", function(self, event)
-	if event == "WORLD_MAP_UPDATE" then
-		checkHideShow(self)
-	elseif event == "SKILL_LINES_CHANGED" then
-		setAnchor(self)
-	elseif event == "PLAYER_LOGIN" then
-		if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
-		if SavedOptionsPerChar.ShowMapBoss == nil then SavedOptionsPerChar.ShowMapBoss = false end
-		self:SetChecked(SavedOptionsPerChar.ShowMapBoss)
-		setAnchor(self)
-		if SavedOptionsPerChar.ShowMapBoss then
-			WorldMapBossButtonFrame:Hide()
-		end
-	end
-end)
-button:RegisterEvent("WORLD_MAP_UPDATE")
-button:RegisterEvent("SKILL_LINES_CHANGED")
-button:RegisterEvent("PLAYER_LOGIN")

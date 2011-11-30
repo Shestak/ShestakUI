@@ -84,9 +84,6 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	SetFont(QuestFontNormalSmall, NORMAL, 13, nil, nil, nil, nil, 0.54, 0.4, 0.1)
 	SetFont(WorldMapTextFont, NORMAL, 31, "THICKOUTLINE", 40, nil, nil, 0, 0, 0, 1, -1)
 	SetFont(HelpFrameKnowledgebaseNavBarHomeButtonText, NORMAL, 13, nil, nil, nil, nil, 0, 0, 0, 1, -1)
-	if not T.PTRVersion() then
-		SetFont(EncounterJournalNavBarHomeButtonText, NORMAL, 13, nil, nil, nil, nil, 0, 0, 0, 1, -1)
-	end
 
 	-- Channel list
 	for i = 1, MAX_CHANNEL_BUTTONS do

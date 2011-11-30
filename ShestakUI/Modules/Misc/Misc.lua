@@ -151,35 +151,19 @@ strip.model = DressUpModel
 strip:RegisterEvent("AUCTION_HOUSE_SHOW")
 strip:RegisterEvent("AUCTION_HOUSE_CLOSED")
 
-if not T.PTRVersion() then
-	strip:SetScript("OnEvent", function(this)
-		if AuctionFrame:IsVisible() and this.model ~= AuctionDressUpModel then
-			this:SetParent(AuctionDressUpModel)
-			this:ClearAllPoints()
-			this:SetPoint("BOTTOM", AuctionDressUpFrameResetButton, "TOP", 0, 3)
-			this.model = AuctionDressUpModel
-		elseif this.model ~= DressUpModel then
-			this:SetParent(DressUpModel)
-			this:ClearAllPoints()
-			this:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
-			this.model = DressUpModel
-		end
-	end)
-else
-	strip:SetScript("OnEvent", function(this)
-		if AuctionFrame:IsVisible() and this.model ~= SideDressUpModel then
-			this:SetParent(SideDressUpModel)
-			this:ClearAllPoints()
-			this:SetPoint("BOTTOM", SideDressUpModelResetButton, "TOP", 0, 3)
-			this.model = SideDressUpModel
-		elseif this.model ~= DressUpModel then
-			this:SetParent(DressUpModel)
-			this:ClearAllPoints()
-			this:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
-			this.model = DressUpModel
-		end
-	end)
-end
+strip:SetScript("OnEvent", function(this)
+	if AuctionFrame:IsVisible() and this.model ~= SideDressUpModel then
+		this:SetParent(SideDressUpModel)
+		this:ClearAllPoints()
+		this:SetPoint("BOTTOM", SideDressUpModelResetButton, "TOP", 0, 3)
+		this.model = SideDressUpModel
+	elseif this.model ~= DressUpModel then
+		this:SetParent(DressUpModel)
+		this:ClearAllPoints()
+		this:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
+		this.model = DressUpModel
+	end
+end)
 
 ----------------------------------------------------------------------------------------
 --	GuildTab in FriendsFrame

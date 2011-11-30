@@ -8,19 +8,10 @@ local function LoadSkin()
 	ReforgingFrame:StripTextures()
 	ReforgingFrame:SetTemplate("Transparent")
 
-	if not T.PTRVersion() then
-		ReforgingFrameTopInset:StripTextures()
-		ReforgingFrameInset:StripTextures()
-		ReforgingFrameBottomInset:StripTextures()
-		T.SkinDropDownBox(ReforgingFrameFilterOldStat, 180)
-		T.SkinDropDownBox(ReforgingFrameFilterNewStat, 180)
-	else
-		ReforgingFrameButtonFrame:StripTextures()
-		ReforgingFrameReforgeButton:ClearAllPoints()
-		ReforgingFrameReforgeButton:Point("LEFT", ReforgingFrameRestoreButton, "RIGHT", 2, 0)
-		ReforgingFrameReforgeButton:Point("BOTTOMRIGHT", -3, 3)
-	end
-
+	ReforgingFrameButtonFrame:StripTextures()
+	ReforgingFrameReforgeButton:ClearAllPoints()
+	ReforgingFrameReforgeButton:Point("LEFT", ReforgingFrameRestoreButton, "RIGHT", 2, 0)
+	ReforgingFrameReforgeButton:Point("BOTTOMRIGHT", -3, 3)
 	ReforgingFrameRestoreButton:SkinButton(true)
 	ReforgingFrameReforgeButton:SkinButton(true)
 

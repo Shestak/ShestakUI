@@ -31,12 +31,10 @@ local function LoadSkin()
 	GuildBankFrame.inset:Point("TOPLEFT", 30, -65)
 	GuildBankFrame.inset:Point("BOTTOMRIGHT", -20, 63)
 
-	if T.PTRVersion() then
-		GuildItemSearchBox:StripTextures()
-		GuildItemSearchBox:CreateBackdrop("Overlay")
-		GuildItemSearchBox.backdrop:Point("TOPLEFT", 10, -2)
-		GuildItemSearchBox.backdrop:Point("BOTTOMRIGHT", -5, 2)
-	end
+	GuildItemSearchBox:StripTextures()
+	GuildItemSearchBox:CreateBackdrop("Overlay")
+	GuildItemSearchBox.backdrop:Point("TOPLEFT", 10, -2)
+	GuildItemSearchBox.backdrop:Point("BOTTOMRIGHT", -5, 2)
 
 	for i = 1, NUM_GUILDBANK_COLUMNS do
 		_G["GuildBankColumn"..i]:StripTextures()

@@ -10,10 +10,6 @@ local function LoadSkin()
 		"RaidFrameReadyCheckButton",
 	}
 
-	if not T.PTRVersion() then
-		tinsert(buttons, "RaidFrameRaidBrowserButton")
-	end
-
 	for i = 1, #buttons do
 		_G[buttons[i]]:SkinButton()
 	end
@@ -44,9 +40,7 @@ local function LoadSkin()
 		end
 	end
 
-	if T.PTRVersion() then
-		T.SkinCheckBox(RaidFrameAllAssistCheckButton)
-	end
+	T.SkinCheckBox(RaidFrameAllAssistCheckButton)
 end
 
 T.SkinFuncs["Blizzard_RaidUI"] = LoadSkin

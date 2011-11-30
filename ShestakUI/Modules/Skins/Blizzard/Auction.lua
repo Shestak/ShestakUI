@@ -22,29 +22,15 @@ local function LoadSkin()
 	T.SkinCheckBox(ShowOnPlayerCheckButton)
 
 	-- Dress Up Frame
-	if not T.PTRVersion() then
-		AuctionDressUpFrame:StripTextures()
-		AuctionDressUpFrame:SetTemplate("Transparent")
-		AuctionDressUpFrame:Point("TOPLEFT", AuctionFrame, "TOPRIGHT", 3, 0)
-		AuctionDressUpFrameResetButton:SkinButton()
-		AuctionDressUpFrameCloseButton:StripTextures()
-		T.SkinCloseButton(AuctionDressUpFrameCloseButton, AuctionDressUpFrame)
+	SideDressUpFrame:StripTextures()
+	SideDressUpFrame:SetTemplate("Transparent")
+	SideDressUpModelResetButton:SkinButton()
+	T.SkinCloseButton(SideDressUpModelCloseButton, SideDressUpFrame)
 
-		T.SkinRotateButton(AuctionDressUpModelRotateLeftButton)
-		T.SkinRotateButton(AuctionDressUpModelRotateRightButton)
-		AuctionDressUpModelRotateLeftButton:Point("TOPLEFT", AuctionDressUpFrame, 4, -4)
-		AuctionDressUpModelRotateRightButton:Point("TOPLEFT", AuctionDressUpModelRotateLeftButton, "TOPRIGHT", 4, 0)
-	else
-		SideDressUpFrame:StripTextures()
-		SideDressUpFrame:SetTemplate("Transparent")
-		SideDressUpModelResetButton:SkinButton()
-		T.SkinCloseButton(SideDressUpModelCloseButton, SideDressUpFrame)
-
-		SideDressUpFrame:HookScript("OnShow", function()
-			SideDressUpFrame:ClearAllPoints()
-			SideDressUpFrame:Point("TOPLEFT", AuctionFrame, "TOPRIGHT", 3, 0)
-		end)
-	end
+	SideDressUpFrame:HookScript("OnShow", function()
+		SideDressUpFrame:ClearAllPoints()
+		SideDressUpFrame:Point("TOPLEFT", AuctionFrame, "TOPRIGHT", 3, 0)
+	end)
 
 	-- Progress Frame
 	AuctionProgressFrame:StripTextures()

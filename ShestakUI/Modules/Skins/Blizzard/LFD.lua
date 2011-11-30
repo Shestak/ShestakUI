@@ -16,13 +16,8 @@ local function LoadSkin()
 		"LFDQueueFrameNoLFDWhileLFR",
 		"LFDQueueFrameSpecificListScrollFrame",
 		"LFDQueueFrameCooldownFrame",
+		"LFGDungeonReadyDialog",
 	}
-
-	if T.PTRVersion() then
-		tinsert(StripAllTextures, "LFGDungeonReadyDialog")
-	else
-		tinsert(StripAllTextures, "LFDDungeonReadyDialog")
-	end
 
 	local KillTextures = {
 		"LFDQueueFrameBackground",
@@ -31,15 +26,8 @@ local function LoadSkin()
 		"LFDQueueFrameRoleButtonTankBackground",
 		"LFDQueueFrameRoleButtonHealerBackground",
 		"LFDQueueFrameRoleButtonDPSBackground",
+		"LFGDungeonReadyDialogBackground",
 	}
-
-	if T.PTRVersion() then
-		LFGDungeonReadyDialogBackground:Kill()
-		LFGDungeonReadyDialogEnterDungeonButton:SkinButton()
-		LFGDungeonReadyDialogLeaveQueueButton:SkinButton()
-	else
-		tinsert(KillTextures, "LFDDungeonReadyDialogBackground")
-	end
 
 	local buttons = {
 		"LFDQueueFrameFindGroupButton",
@@ -47,6 +35,8 @@ local function LoadSkin()
 		"LFDQueueFramePartyBackfillBackfillButton",
 		"LFDQueueFramePartyBackfillNoBackfillButton",
 		"LFDQueueFrameNoLFDWhileLFRLeaveQueueButton",
+		"LFGDungeonReadyDialogEnterDungeonButton",
+		"LFGDungeonReadyDialogLeaveQueueButton",
 	}
 
 	local checkButtons = {
@@ -159,13 +149,8 @@ local function LoadSkin()
 	LFDQueueFrameCapBarCap2:SetTexture(C.media.texture)
 	T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
 	RolePollPopup:SetTemplate("Transparent")
-	if not T.PTRVersion() then
-		LFDDungeonReadyDialog:SetTemplate("Transparent")
-		T.SkinCloseButton(LFDDungeonReadyDialogCloseButton, LFDDungeonReadyDialog, "-")
-	else
-		LFGDungeonReadyDialog:SetTemplate("Transparent")
-		T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
-	end
+	LFGDungeonReadyDialog:SetTemplate("Transparent")
+	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
 	LFDQueueFrameFindGroupButton:Point("BOTTOMLEFT", LFDParentFrame.backdrop, "BOTTOMLEFT", 4, 4)
 	LFDQueueFrameCancelButton:Point("BOTTOMRIGHT", LFDParentFrame.backdrop, "BOTTOMRIGHT", -6, 4)
 	LFDQueueFrameRandomScrollFrame:Height(LFDQueueFrameRandomScrollFrame:GetHeight() + 10)

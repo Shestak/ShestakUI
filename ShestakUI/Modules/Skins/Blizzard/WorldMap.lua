@@ -22,9 +22,8 @@ local function LoadSkin()
 	T.SkinDropDownBox(WorldMapZoneMinimapDropDown)
 	T.SkinDropDownBox(WorldMapContinentDropDown)
 	T.SkinDropDownBox(WorldMapZoneDropDown)
-	if T.PTRVersion() then
-		T.SkinDropDownBox(WorldMapShowDropDown)
-	end
+	T.SkinDropDownBox(WorldMapShowDropDown)
+
 	WorldMapZoomOutButton:SkinButton()
 	WorldMapZoomOutButton:Point("LEFT", WorldMapZoneDropDown, "RIGHT", 0, 4)
 	WorldMapLevelUpButton:Point("TOPLEFT", WorldMapLevelDropDown, "TOPRIGHT", -2, 8)
@@ -52,9 +51,7 @@ local function LoadSkin()
 		WorldMapFrameSizeUpButton:Point("TOPRIGHT", WorldMapFrameCloseButton, "TOPLEFT", -4, 0)
 		WorldMapFrameSizeUpButton:Point("BOTTOMRIGHT", WorldMapFrameCloseButton, "BOTTOMLEFT", -4, 0)
 
-		if T.PTRVersion() then
-			WorldMapShowDropDown:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", 2, -5)
-		end
+		WorldMapShowDropDown:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", 2, -5)
 	end
 
 	-- LargeMap
@@ -76,9 +73,7 @@ local function LoadSkin()
 		WorldMapFrameSizeDownButton:Point("TOPRIGHT", WorldMapFrameCloseButton, "TOPLEFT", -4, 0)
 		WorldMapFrameSizeDownButton:Point("BOTTOMRIGHT", WorldMapFrameCloseButton, "BOTTOMLEFT", -4, 0)
 
-		if T.PTRVersion() then
-			WorldMapShowDropDown:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", -2, -3)
-		end
+		WorldMapShowDropDown:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", -2, -3)
 	end
 
 	local function QuestSkin()

@@ -115,7 +115,6 @@ end
 
 hooksecurefunc(getmetatable(ActionButton1Cooldown).__index, "SetCooldown", Timer_Start)
 
-if not T.PTRVersion() then return end
 local active = {}
 local hooked = {}
 

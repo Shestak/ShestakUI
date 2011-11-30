@@ -30,11 +30,7 @@ LoadOCBO:SetScript("OnEvent", function(self, event, addon)
 				f:HookScript("OnClick", function(self, button)
 					if button == "RightButton" and IsShiftKeyDown() then
 						index = self:GetID() + FauxScrollFrame_GetOffset(BrowseScrollFrame)
-						if not T.PTRVersion() then
-							name, _, _, _, _, _, startingBid, minIncrement, buyoutPrice, bidAmount = GetAuctionItemInfo("list", index)
-						else
-							name, _, _, _, _, _, _, startingBid, minIncrement, buyoutPrice, bidAmount = GetAuctionItemInfo("list", index)
-						end
+						name, _, _, _, _, _, _, startingBid, minIncrement, buyoutPrice, bidAmount = GetAuctionItemInfo("list", index)
 						if name then
 							DoBid(index, startingBid, minIncrement, buyoutPrice, bidAmount)
 						end

@@ -35,41 +35,16 @@ local function LoadSkin()
 			EncounterJournalEncounterFrameInfo.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
 		end
 
-		if not T.PTRVersion() then
-			EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
-			EncounterJournalEncounterFrameInfoBossTab:Point("LEFT", EncounterJournalEncounterFrameInfoEncounterTile, "RIGHT", -10, 4)
-			EncounterJournalEncounterFrameInfoLootTab:ClearAllPoints()
-			EncounterJournalEncounterFrameInfoLootTab:Point("LEFT", EncounterJournalEncounterFrameInfoBossTab, "RIGHT", -24, 0)
+		EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
+		EncounterJournalEncounterFrameInfoBossTab:Point("RIGHT", EncounterJournalEncounterFrameInfoResetButton, "LEFT", 10, 0)
+		EncounterJournalEncounterFrameInfoLootTab:ClearAllPoints()
+		EncounterJournalEncounterFrameInfoLootTab:Point("RIGHT", EncounterJournalEncounterFrameInfoBossTab, "LEFT", 20, 0)
 
-			EncounterJournalEncounterFrameInfoBossTab:SetFrameStrata("HIGH")
-			EncounterJournalEncounterFrameInfoLootTab:SetFrameStrata("HIGH")
+		EncounterJournalEncounterFrameInfoBossTab:SetFrameStrata("HIGH")
+		EncounterJournalEncounterFrameInfoLootTab:SetFrameStrata("HIGH")
 
-			EncounterJournalEncounterFrameInfoBossTab:SetScale(0.75)
-			EncounterJournalEncounterFrameInfoLootTab:SetScale(0.75)
-
-			EncounterJournalEncounterFrameInfoLootScrollFrameFilter:SetScript("OnShow", function()
-				EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
-				EncounterJournalEncounterFrameInfoBossTab:Point("LEFT", EncounterJournalEncounterFrameInfoLootScrollFrameFilter, "RIGHT", 0, 0)
-				EncounterJournalEncounterFrameInfoEncounterTile:Hide()
-			end)
-
-			EncounterJournalEncounterFrameInfoLootScrollFrameFilter:SetScript("OnHide", function()
-				EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
-				EncounterJournalEncounterFrameInfoBossTab:Point("LEFT", EncounterJournalEncounterFrameInfoEncounterTile, "RIGHT", -10, 4)
-				EncounterJournalEncounterFrameInfoEncounterTile:Show()
-			end)
-		else
-			EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
-			EncounterJournalEncounterFrameInfoBossTab:Point("RIGHT", EncounterJournalEncounterFrameInfoResetButton, "LEFT", 10, 0)
-			EncounterJournalEncounterFrameInfoLootTab:ClearAllPoints()
-			EncounterJournalEncounterFrameInfoLootTab:Point("RIGHT", EncounterJournalEncounterFrameInfoBossTab, "LEFT", 20, 0)
-
-			EncounterJournalEncounterFrameInfoBossTab:SetFrameStrata("HIGH")
-			EncounterJournalEncounterFrameInfoLootTab:SetFrameStrata("HIGH")
-
-			EncounterJournalEncounterFrameInfoBossTab:SetScale(0.70)
-			EncounterJournalEncounterFrameInfoLootTab:SetScale(0.70)
-		end
+		EncounterJournalEncounterFrameInfoBossTab:SetScale(0.70)
+		EncounterJournalEncounterFrameInfoLootTab:SetScale(0.70)
 	end)
 
 	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
@@ -87,8 +62,4 @@ local function LoadSkin()
 	EncounterJournalEncounterFrameInfoLootTab:GetHighlightTexture():SetTexture(nil)
 end
 
-if T.PTRVersion() then
-	T.SkinFuncs["Blizzard_EncounterJournal"] = LoadSkin
-else
-	tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
-end
+T.SkinFuncs["Blizzard_EncounterJournal"] = LoadSkin
