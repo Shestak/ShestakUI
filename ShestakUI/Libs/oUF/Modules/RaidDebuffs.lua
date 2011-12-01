@@ -45,7 +45,7 @@ local DispellColor = {
 	["Curse"]	= {0.6, 0, 1},
 	["Disease"]	= {0.6, 0.4, 0},
 	["Poison"]	= {0, 0.6, 0},
-	["none"] = {unpack(C.media.border_color)},
+	["none"]	= {unpack(C.media.border_color)},
 }
 
 local DispellPriority = {
@@ -90,25 +90,25 @@ local function CheckSpec(self, event, levels)
 
 	-- Check for certain talents to see if we can dispel magic or not
 	if select(2, UnitClass("player")) == "PALADIN" then
-		-- Check to see if we have the 'Sacred Cleansing' talent.
+		-- Check to see if we have the 'Sacred Cleansing' talent
 		if T.CheckForKnownTalent(53551) then
 			DispellFilter.Magic = true
 		else
-			DispellFilter.Magic = false	
+			DispellFilter.Magic = false
 		end
 	elseif select(2, UnitClass("player")) == "SHAMAN" then
-		-- Check to see if we have the 'Improved Cleanse Spirit' talent.
+		-- Check to see if we have the 'Improved Cleanse Spirit' talent
 		if T.CheckForKnownTalent(77130) then
 			DispellFilter.Magic = true
 		else
-			DispellFilter.Magic = false	
+			DispellFilter.Magic = false
 		end
 	elseif select(2, UnitClass("player")) == "DRUID" then
-		-- Check to see if we have the 'Nature's Cure' talent.
+		-- Check to see if we have the 'Nature's Cure' talent
 		if T.CheckForKnownTalent(88423) then
 			DispellFilter.Magic = true
 		else
-			DispellFilter.Magic = false	
+			DispellFilter.Magic = false
 		end
 	end
 end

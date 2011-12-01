@@ -2486,7 +2486,7 @@ Filger_Spells = {
 			-- Vampiric Blood
 			{ spellID = 55233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Icebound Fortitude
-			{ spellID =48792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },    
+			{ spellID = 48792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Anti-Magic Shell
 			{ spellID = 48707, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Dancing Rune Weapon
