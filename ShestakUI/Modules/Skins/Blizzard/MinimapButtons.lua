@@ -36,6 +36,7 @@ local function SkinButton(f)
 				region:Point("TOPLEFT", f, "TOPLEFT", 2, -2)
 				region:Point("BOTTOMRIGHT", f, "BOTTOMRIGHT", -2, 2)
 				region:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				region:SetDrawLayer("ARTWORK")
 			end
 		end
 	end
