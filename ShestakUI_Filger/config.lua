@@ -1,4 +1,5 @@
 local T, C, L = unpack(ShestakUI)
+if C.unitframe.enable ~= true then return end
 
 Filger_Settings = {
 	configmode = false,
@@ -3201,7 +3202,7 @@ Filger_Spells = {
 			-- Disrupting Shadows (Zon'ozz)
 			{ spellID = 103434, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Fading Light (Ultraxion)
-			{ spellID = 109075, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
+			{ spellID = 109075, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "T_BUFF",
