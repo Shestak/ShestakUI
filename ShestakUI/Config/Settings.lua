@@ -405,7 +405,7 @@ C["raidframe"] = {
 	["raid_tanks"] = true,						-- Show raid tanks
 	["raid_tanks_tt"] = false,					-- Show raid tanks target target
 	["raid_groups"] = 5,						-- Number of groups in raid
-	["raid_groups_vertical"] = false,			-- Vertical raid groups(Only for ShestakUI_Heal)
+	["raid_groups_vertical"] = false,			-- Vertical raid groups(only for ShestakUI_Heal)
 	-- Icons
 	["icons_lfd_role"] = false,					-- Party leader icon on frames
 	["icons_raid_mark"] = true,					-- Raid mark icons on frames
@@ -416,6 +416,7 @@ C["raidframe"] = {
 	["plugins_aura_watch"] = true,				-- Raid debuff icons
 	["plugins_aura_watch_timer"] = false,		-- Timer on raid debuff icons
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
+	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on left click when the unit is dead(does not work with Clique enabled)
 }
 
 ----------------------------------------------------------------------------------------

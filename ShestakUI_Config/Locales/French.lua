@@ -311,6 +311,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Mise en évidence des debuffs texture +
 L_GUI_UF_PLUGINS_AURA_WATCH = "Aura/debuff de raid"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Durée sur les icônes de débuff du raid"
 L_GUI_UF_PLUGINS_HEALCOMM = "Barre de soin entrant (incoming)"
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on left click when the unit is dead (does not work with Clique enabled)" -- Needs review
 
 -- Panel options
 L_GUI_TOP_PANEL = "Panneau supérieur"

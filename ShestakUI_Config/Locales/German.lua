@@ -311,6 +311,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debufftextur und Symbol hervorheben"
 L_GUI_UF_PLUGINS_AURA_WATCH = "*RAID* Buffüberwachung"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer auf Schlachtzugsdebuff Icons"
 L_GUI_UF_PLUGINS_HEALCOMM = "Leiste für Eingehende Heilung"
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on left click when the unit is dead (does not work with Clique enabled)" -- Needs review
 
 -- Panel options
 L_GUI_TOP_PANEL = "Oberes Panel"

@@ -351,6 +351,7 @@ local function Local(o)
 	if o == "UIConfigraidframeplugins_aura_watch" then o = L_GUI_UF_PLUGINS_AURA_WATCH end
 	if o == "UIConfigraidframeplugins_aura_watch_timer" then o = L_GUI_UF_PLUGINS_AURA_WATCH_TIMER end
 	if o == "UIConfigraidframeplugins_healcomm" then o = L_GUI_UF_PLUGINS_HEALCOMM end
+	if o == "UIConfigraidframeplugins_auto_resurrection" then o = L_GUI_UF_PLUGINS_AUTO_RESURRECTION end
 
 	-- Panel options
 	if o == "UIConfigtoppanel" then o = L_GUI_TOP_PANEL end
