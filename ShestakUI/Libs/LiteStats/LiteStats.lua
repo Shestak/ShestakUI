@@ -469,7 +469,9 @@ if gold.enabled then
 		OnEnter = function(self)
 			local curgold = GetMoney()
 			conf.Gold = curgold
-			GameTooltip:SetOwner(self, gold.tip_anchor, gold.tip_x, gold.tip_y)
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:Point(gold.tip_anchor, gold.tip_frame, gold.tip_x, gold.tip_y)
 			GameTooltip:ClearLines()
 			GameTooltip:AddLine(CURRENCY, tthead.r, tthead.g, tthead.b)
 			GameTooltip:AddLine(" ")
