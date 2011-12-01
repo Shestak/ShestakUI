@@ -215,6 +215,7 @@ local function LoadSkin()
 	end
 
 	T.SkinDropDownBox(CompactUnitFrameProfilesGeneralOptionsFrameHealthTextDropdown)
+	T.SkinDropDownBox(CompactUnitFrameProfilesGeneralOptionsFrameSortByDropdown)
 	T.SkinDropDownBox(CompactUnitFrameProfilesProfileSelector)
 
 	local buttons = {

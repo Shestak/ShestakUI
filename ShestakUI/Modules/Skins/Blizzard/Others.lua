@@ -23,7 +23,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"LFDRoleCheckPopup",
 			"ChannelPulloutBackground",
 			"ChannelPulloutTab",
-			"LFDDungeonReadyDialog",
+			"LFGDungeonReadyDialog",
 			"GuildInviteFrame",
 			"ChatConfigFrame",
 			"RolePollPopup",
