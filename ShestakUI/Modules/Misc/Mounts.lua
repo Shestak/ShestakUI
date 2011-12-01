@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------------
 --	Universal Mount macro(by Monolit)
---	/script Mountz ("your_ground_mount","your_flying_mount")
+--	/script Mountz("your_ground_mount","your_flying_mount")
 ----------------------------------------------------------------------------------------
 function Mountz(groundmount, flyingmount, underwatermount)
 	local flyablex, swimablex, vjswim
@@ -14,7 +14,7 @@ function Mountz(groundmount, flyingmount, underwatermount)
 		return
 	end
 	for i = 1, 40 do
-		local n, _, _, _, _, _, _, _, _, _, sid = UnitBuff("player", i)
+		local sid = select(11, UnitBuff("player", i))
 		if sid == 73701 or sid == 76377 then
 			vjswim = true
 		end

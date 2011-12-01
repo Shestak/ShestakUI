@@ -189,15 +189,7 @@ end
 local function StyleButton(b, c) 
 	local name = b:GetName()
 	local button = _G[name]
-	local icon = _G[name.."Icon"]
-	local count = _G[name.."Count"]
-	local border = _G[name.."Border"]
-	local hotkey = _G[name.."HotKey"]
 	local cooldown = _G[name.."Cooldown"]
-	local nametext = _G[name.."Name"]
-	local flash = _G[name.."Flash"]
-	local normaltexture = _G[name.."NormalTexture"]
-	local icontexture = _G[name.."IconTexture"]
 
 	local hover = b:CreateTexture("Frame", nil, self)
 	hover:SetTexture(1, 1, 1, 0.3)

@@ -1,7 +1,7 @@
 local T, C, L = unpack(select(2, ...))
 
 ------------------------------------------------------------------------------------------
---	Make ExtraActionBarFrame movable
+--	Make ExtraActionBarFrame movable(use macro /click ExtraActionButton1)
 ------------------------------------------------------------------------------------------
 ExtraActionBarFrame:SetParent(UIParent)
 ExtraActionBarFrame:ClearAllPoints()
