@@ -12,54 +12,56 @@ local function style(self)
 	local name = self:GetName()
 	if name:match("MultiCast") or name:match("ExtraActionButton") then return end
 	local action = self.action
-	local Button = self
-	local Icon = _G[name.."Icon"]
-	local Count = _G[name.."Count"]
-	local Flash = _G[name.."Flash"]
-	local HotKey = _G[name.."HotKey"]
-	local Border = _G[name.."Border"]
-	local Btname = _G[name.."Name"]
+	local button = self
+	local icon = _G[name.."Icon"]
+	local count = _G[name.."Count"]
+	local flash = _G[name.."Flash"]
+	local hotkey = _G[name.."HotKey"]
+	local border = _G[name.."Border"]
+	local btname = _G[name.."Name"]
 	local normal = _G[name.."NormalTexture"]
+	local float = _G[name.."FloatingBG"]
 
-	if _G[name.."FloatingBG"] then
-		_G[name.."FloatingBG"]:Kill()
+	flash:SetTexture("")
+	button:SetNormalTexture("")
+
+	if float then
+		float:Hide()
+		float = T.dummy
 	end
 
-	Flash:SetTexture("")
-	Button:SetNormalTexture("")
-
-	if Border then
-		Border:Hide()
-		Border = T.dummy
+	if border then
+		border:Hide()
+		border = T.dummy
 	end
 
-	Count:ClearAllPoints()
-	Count:Point("BOTTOMRIGHT", 0, 2)
-	Count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-	Count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+	count:ClearAllPoints()
+	count:Point("BOTTOMRIGHT", 0, 2)
+	count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+	count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 
-	if Btname then
+	if btname then
 		if C.actionbar.macro == true then
-			Btname:ClearAllPoints()
-			Btname:Point("BOTTOM", 0, 0)
-			Btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-			Btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-			--Btname:Width(T.buttonsize - 1)
+			btname:ClearAllPoints()
+			btname:Point("BOTTOM", 0, 0)
+			btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+			btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+			--btname:Width(T.buttonsize - 1)
 		else
-			Btname:Kill()
+			btname:Kill()
 		end
 	end
 
 	if C.actionbar.hotkey == true then
-		HotKey:ClearAllPoints()
-		HotKey:Point("TOPRIGHT", 0, 0)
-		HotKey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-		HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-		HotKey:Width(T.buttonsize - 1)
-		HotKey.ClearAllPoints = T.dummy
-		HotKey.SetPoint = T.dummy
+		hotkey:ClearAllPoints()
+		hotkey:Point("TOPRIGHT", 0, 0)
+		hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		hotkey:Width(T.buttonsize - 1)
+		hotkey.ClearAllPoints = T.dummy
+		hotkey.SetPoint = T.dummy
 	else
-		HotKey:Kill()
+		hotkey:Kill()
 	end
 
 	if not _G[name.."Panel"] then
@@ -75,9 +77,9 @@ local function style(self)
 		panel:SetFrameStrata(self:GetFrameStrata())
 		panel:SetFrameLevel(self:GetFrameLevel() - 1)
  
-		Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		Icon:Point("TOPLEFT", Button, 2, -2)
-		Icon:Point("BOTTOMRIGHT", Button, -2, 2)
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:Point("TOPLEFT", button, 2, -2)
+		icon:Point("BOTTOMRIGHT", button, -2, 2)
 	end
 
 	if normal then
@@ -88,13 +90,13 @@ local function style(self)
 end
 
 local function stylesmallbutton(normal, button, icon, name, pet)
-	local Flash	= _G[name.."Flash"]
+	local flash = _G[name.."Flash"]
 	button:SetNormalTexture("")
 	button.SetNormalTexture = T.dummy
 
-	Flash:SetTexture(0.8, 0.8, 0.8, 0.5)
-	Flash:Point("TOPLEFT", button, 2, -2)
-	Flash:Point("BOTTOMRIGHT", button, -2, 2)
+	flash:SetTexture(0.8, 0.8, 0.8, 0.5)
+	flash:Point("TOPLEFT", button, 2, -2)
+	flash:Point("BOTTOMRIGHT", button, -2, 2)
 
 	if not _G[name.."Panel"] then
 		button:SetWidth(T.buttonsize)
@@ -158,7 +160,7 @@ function T.StylePet()
 end
 
 local function updatehotkey(self, actionButtonType)
-	local hotkey = _G[self:GetName() .. "HotKey"]
+	local hotkey = _G[self:GetName().."HotKey"]
 	local text = hotkey:GetText()
 
 	text = replace(text, "(s%-)", "S")
@@ -197,9 +199,9 @@ local buttonNames = {
 }
 for _, name in ipairs(buttonNames) do
 	for index = 1, 12 do
-		local buttonName = name .. tostring(index)
+		local buttonName = name..tostring(index)
 		local button = _G[buttonName]
-		local cooldown = _G[buttonName .. "Cooldown"]
+		local cooldown = _G[buttonName.."Cooldown"]
 
 		if (button == nil or cooldown == nil) then
 			break
@@ -268,7 +270,7 @@ do
 
 	for i = 1, 10 do
 		_G["ShapeshiftButton"..i]:StyleButton(true)
-		_G["PetActionButton"..i]:StyleButton(true)	
+		_G["PetActionButton"..i]:StyleButton(true)
 	end
 end
 
@@ -363,7 +365,7 @@ local function StyleTotemFlyout(flyout)
 	flyout:ClearAllPoints()
 	flyout:Point("BOTTOM", flyout.parent, "TOP", 0, T.buttonspacing)
 end
-hooksecurefunc("MultiCastFlyoutFrame_ToggleFlyout",function(self) StyleTotemFlyout(self) end)
+hooksecurefunc("MultiCastFlyoutFrame_ToggleFlyout", function(self) StyleTotemFlyout(self) end)
 
 -- Totem Fly Out Buttons
 local function StyleTotemOpenButton(button, parent)
@@ -413,7 +415,7 @@ local function StyleTotemSlotButton(button, index)
 	button:SetBackdropBorderColor(unpack(bordercolors[((index-1) % 4) + 1]))
 	button:StyleButton()
 end
-hooksecurefunc("MultiCastSlotButton_Update", function(self, slot) StyleTotemSlotButton(self,tonumber(string.match(self:GetName(), "MultiCastSlotButton(%d)"))) end)
+hooksecurefunc("MultiCastSlotButton_Update", function(self, slot) StyleTotemSlotButton(self, tonumber(string.match(self:GetName(), "MultiCastSlotButton(%d)"))) end)
 
 -- Skin the actual totem buttons
 local function StyleTotemActionButton(button, index)
