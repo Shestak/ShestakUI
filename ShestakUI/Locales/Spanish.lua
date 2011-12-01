@@ -52,7 +52,6 @@ L_UF_WOTF_USED = "WotF usado: "
 -- Map
 L_MAP_CURSOR = "Cursor: "
 L_MAP_BOUNDS = "Fuera de los limites!"
-L_MAP_HIDE_BOSSES = "Ocultar Jefes"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendario"

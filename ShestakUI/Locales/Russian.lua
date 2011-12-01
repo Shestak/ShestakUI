@@ -52,7 +52,6 @@ L_UF_WOTF_USED = "WotF задействован: "
 -- Map
 L_MAP_CURSOR = "Курсор: "
 L_MAP_BOUNDS = "Вне карты!"
-L_MAP_HIDE_BOSSES = "Скрыть Боссов"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Календарь"

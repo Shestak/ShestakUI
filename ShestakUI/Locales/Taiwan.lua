@@ -52,7 +52,6 @@ L_UF_WOTF_USED = "亡靈意志已使用: "
 -- Map
 L_MAP_CURSOR = "鼠標: "
 L_MAP_BOUNDS = "超出範圍!"
-L_MAP_HIDE_BOSSES = "隱藏BOSS頭像"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日曆"

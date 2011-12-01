@@ -52,7 +52,6 @@ L_UF_WOTF_USED = "WdV benutzt: "
 -- Map
 L_MAP_CURSOR = "Mauszeiger: "
 L_MAP_BOUNDS = "Außerhalb der Begrenzung!"
-L_MAP_HIDE_BOSSES = "Verstecke Bosse"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Kalender"

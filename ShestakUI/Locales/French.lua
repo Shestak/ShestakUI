@@ -52,7 +52,6 @@ L_UF_WOTF_USED = "Volonté des Réprouvés utilisé : "
 -- Map
 L_MAP_CURSOR = "Curseur : "
 L_MAP_BOUNDS = "L'extérieur de la carte !"
-L_MAP_HIDE_BOSSES = "Cacher les Boss"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendrier"
