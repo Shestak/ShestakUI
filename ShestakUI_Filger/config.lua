@@ -109,6 +109,14 @@ Filger_Spells = {
 			{ spellID = 96988, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stay of Execution (Drawback)
 			{ spellID = 96993, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Soulshifter Vortex (Mastery, Proc)
+			{ spellID = 109776, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Indomitable Pride (Absorb, Proc)
+			{ spellID = 109786, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fire of the Deep (Dodge, Use)
+			{ spellID = 109779, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Veil of Lies (Dodge, Proc)
+			{ spellID = 102667, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Physical Agility DPS
 			-- Essence of the Cyclone (Crit, Proc)
 			{ spellID = 92126, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -129,7 +137,13 @@ Filger_Spells = {
 			-- The Hungerer (Haste, Proc)
 			{ spellID = 96911, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Matrix Restabilizer (Highest Stat, Proc)
-			{ spellID = 96979 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 96979, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Kiroptyric Sigil (Agility, Use)
+			{ spellID = 109715, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Starcatcher Compass (Haste, Proc)
+			{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Arrow of Time (Haste, Proc)
+			{ spellID = 102659, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
 			-- Soul Casket (Spell Power, Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -143,6 +157,12 @@ Filger_Spells = {
 			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Rune of Zeth (Intellect, Use)
 			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Bottled Wishes (Spell Power, Use)
+			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Insignia of the Corrupted Mind (Haste, Proc)
+			{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Foul Gift of the Demon Lord (Mastery, Proc)
+			{ spellID = 102663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
 			-- Bell of Enraging Resonance (Spell Power, Proc)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -173,6 +193,10 @@ Filger_Spells = {
 			{ spellID = 96908, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jaws of Defeat (Manacost, Proc)
 			{ spellID = 96907, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Reflection of the Light (Spell Power, Use)
+			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Seal of the Seven Signs (Haste, Proc)
+			{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -417,7 +441,13 @@ Filger_Spells = {
 			-- The Hungerer (Haste, Proc)
 			{ spellID = 96911, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Matrix Restabilizer (Highest Stat, Proc)
-			{ spellID = 96979 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 96979, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Kiroptyric Sigil (Agility, Use)
+			{ spellID = 109715, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Starcatcher Compass (Haste, Proc)
+			{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Arrow of Time (Haste, Proc)
+			{ spellID = 102659, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -657,6 +687,12 @@ Filger_Spells = {
 			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Rune of Zeth (Intellect, Use)
 			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Bottled Wishes (Spell Power, Use)
+			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Insignia of the Corrupted Mind (Haste, Proc)
+			{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Foul Gift of the Demon Lord (Mastery, Proc)
+			{ spellID = 102663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
 			-- Bell of Enraging Resonance (Spell Power, Proc)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -916,6 +952,14 @@ Filger_Spells = {
 			{ spellID = 96988, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stay of Execution (Drawback)
 			{ spellID = 96993, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Soulshifter Vortex (Mastery, Proc)
+			{ spellID = 109776, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Indomitable Pride (Absorb, Proc)
+			{ spellID = 109786, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fire of the Deep (Dodge, Use)
+			{ spellID = 109779, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Veil of Lies (Dodge, Proc)
+			{ spellID = 102667, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Physical Strength DPS
 			-- Crushing Weight (Haste, Proc)
 			{ spellID = 91821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -939,6 +983,14 @@ Filger_Spells = {
 			{ spellID = 96929, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Essence of the Eternal Flame (Strength, Use)
 			{ spellID = 97010, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rotting Skull (Strength, Use)
+			{ spellID = 109747, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Creche of the Final Dragon (Crit, Proc)
+			{ spellID = 109744, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rosary of Light (Crit, Proc)
+			{ spellID = 102660, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Varo'then's Brooch (Mastery, Proc)
+			{ spellID = 102664, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -1151,7 +1203,13 @@ Filger_Spells = {
 			-- The Hungerer (Haste, Proc)
 			{ spellID = 96911, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Matrix Restabilizer (Highest Stat, Proc)
-			{ spellID = 96979 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 96979, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Kiroptyric Sigil (Agility, Use)
+			{ spellID = 109715, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Starcatcher Compass (Haste, Proc)
+			{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Arrow of Time (Haste, Proc)
+			{ spellID = 102659, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
 			-- Soul Casket (Spell Power, Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1165,6 +1223,12 @@ Filger_Spells = {
 			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Rune of Zeth (Intellect, Use)
 			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Bottled Wishes (Spell Power, Use)
+			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Insignia of the Corrupted Mind (Haste, Proc)
+			{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Foul Gift of the Demon Lord (Mastery, Proc)
+			{ spellID = 102663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
 			-- Bell of Enraging Resonance (Spell Power, Proc)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1195,6 +1259,10 @@ Filger_Spells = {
 			{ spellID = 96908, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jaws of Defeat (Manacost, Proc)
 			{ spellID = 96907, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Reflection of the Light (Spell Power, Use)
+			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Seal of the Seven Signs (Haste, Proc)
+			{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -1425,6 +1493,14 @@ Filger_Spells = {
 			{ spellID = 96988, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stay of Execution (Drawback)
 			{ spellID = 96993, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Soulshifter Vortex (Mastery, Proc)
+			{ spellID = 109776, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Indomitable Pride (Absorb, Proc)
+			{ spellID = 109786, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fire of the Deep (Dodge, Use)
+			{ spellID = 109779, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Veil of Lies (Dodge, Proc)
+			{ spellID = 102667, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Physical Strength DPS
 			-- Crushing Weight (Haste, Proc)
 			{ spellID = 91821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1448,6 +1524,14 @@ Filger_Spells = {
 			{ spellID = 96929, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Essence of the Eternal Flame (Strength, Use)
 			{ spellID = 97010, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rotting Skull (Strength, Use)
+			{ spellID = 109747, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Creche of the Final Dragon (Crit, Proc)
+			{ spellID = 109744, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rosary of Light (Crit, Proc)
+			{ spellID = 102660, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Varo'then's Brooch (Mastery, Proc)
+			{ spellID = 102664, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
 			-- Soul Casket (Spell Power, Use)
 			{ spellID = 91019, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1476,6 +1560,10 @@ Filger_Spells = {
 			{ spellID = 96908, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jaws of Defeat (Manacost, Proc)
 			{ spellID = 96907, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Reflection of the Light (Spell Power, Use)
+			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Seal of the Seven Signs (Haste, Proc)
+			{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -1679,6 +1767,12 @@ Filger_Spells = {
 			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Rune of Zeth (Intellect, Use)
 			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Bottled Wishes (Spell Power, Use)
+			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Insignia of the Corrupted Mind (Haste, Proc)
+			{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Foul Gift of the Demon Lord (Mastery, Proc)
+			{ spellID = 102663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
 			-- Bell of Enraging Resonance (Spell Power, Proc)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -1709,6 +1803,10 @@ Filger_Spells = {
 			{ spellID = 96908, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Jaws of Defeat (Manacost, Proc)
 			{ spellID = 96907, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Reflection of the Light (Spell Power, Use)
+			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Seal of the Seven Signs (Haste, Proc)
+			{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -1945,6 +2043,12 @@ Filger_Spells = {
 			{ spellID = 100403, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Rune of Zeth (Intellect, Use)
 			{ spellID = 97007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Bottled Wishes (Spell Power, Use)
+			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Insignia of the Corrupted Mind (Haste, Proc)
+			{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Foul Gift of the Demon Lord (Mastery, Proc)
+			{ spellID = 102663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
 			-- Bell of Enraging Resonance (Spell Power, Proc)
 			{ spellID = 91007, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -2170,13 +2274,13 @@ Filger_Spells = {
 			-- Cheating death
 			{ spellID = 45182, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Blade Flurry
-			{ spellID = 13877 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 13877, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shallow Insight
-			{ spellID = 84745 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 84745, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Moderate Insight
-			{ spellID = 84746 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 84746, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Deep Insight
-			{ spellID = 84747 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 84747, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2217,7 +2321,13 @@ Filger_Spells = {
 			-- The Hungerer (Haste, Proc)
 			{ spellID = 96911, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Matrix Restabilizer (Highest Stat, Proc)
-			{ spellID = 96979 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 96979, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Kiroptyric Sigil (Agility, Use)
+			{ spellID = 109715, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Starcatcher Compass (Haste, Proc)
+			{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Arrow of Time (Haste, Proc)
+			{ spellID = 102659, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -2236,7 +2346,7 @@ Filger_Spells = {
 			-- Fiery Devastation (T12 x4)
 			{ spellID = 99187, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Master of Flames (T12 x4)
-			{ spellID = 99188 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 99188, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2375,7 +2485,7 @@ Filger_Spells = {
 			-- Vampiric Blood
 			{ spellID = 55233, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Icebound Fortitude
-			{ spellID =48792 , size = 37, unitId = "player", caster = "player", filter = "BUFF" },    
+			{ spellID =48792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },    
 			-- Anti-Magic Shell
 			{ spellID = 48707, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Dancing Rune Weapon
@@ -2427,6 +2537,14 @@ Filger_Spells = {
 			{ spellID = 96988, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stay of Execution (Drawback)
 			{ spellID = 96993, size = 37, unitId = "player", caster = "player", filter = "DEBUFF" },
+			-- Soulshifter Vortex (Mastery, Proc)
+			{ spellID = 109776, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Indomitable Pride (Absorb, Proc)
+			{ spellID = 109786, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Fire of the Deep (Dodge, Use)
+			{ spellID = 109779, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Veil of Lies (Dodge, Proc)
+			{ spellID = 102667, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Physical Strength DPS
 			-- Crushing Weight (Haste, Proc)
 			{ spellID = 91821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
@@ -2450,6 +2568,14 @@ Filger_Spells = {
 			{ spellID = 96929, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Essence of the Eternal Flame (Strength, Use)
 			{ spellID = 97010, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rotting Skull (Strength, Use)
+			{ spellID = 109747, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Creche of the Final Dragon (Crit, Proc)
+			{ spellID = 109744, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Rosary of Light (Crit, Proc)
+			{ spellID = 102660, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Varo'then's Brooch (Mastery, Proc)
+			{ spellID = 102664, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
