@@ -1358,8 +1358,6 @@ Filger_Spells = {
 			{ spellID = 54428, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Divine Favor
 			{ spellID = 31842, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Holy Radiance
-			{ spellID = 82327, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Speed of Light
 			{ spellID = 85497, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Divine Protection
@@ -1374,8 +1372,8 @@ Filger_Spells = {
 			{ spellID = 31821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Other
-			-- Radiant (T11 Holy)
-			{ spellID = 90311, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Saint's Vigor (T13 Holy 2P Bonus)
+			{ spellID = 105742, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -3062,6 +3060,8 @@ Filger_Spells = {
 			{ spellID = 100230, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Tormented (Baleroc)
 			{ spellID = 99403, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Vital Flame (Baleroc)
+			{ spellID = 99263, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Searing Seeds (Majordomo Staghelm)
 			{ spellID = 98450, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Burning Orb (Majordomo Staghelm)
@@ -3070,6 +3070,12 @@ Filger_Spells = {
 			{ spellID = 101240, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Blazing Heat (Ragnaros)
 			{ spellID = 100460, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+
+			-- Dragon Soul
+			-- Disrupting Shadows (Zon'ozz)
+			{ spellID = 103434, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
+			-- Fading Light (Ultraxion)
+			{ spellID = 109075, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "T_BUFF",
