@@ -104,7 +104,7 @@ C["combattext"] = {
 	["max_lines"] = 15,							-- Max lines to keep in scrollable mode(more lines = more memory)
 	["time_visible"] = 3,						-- Time(seconds) a single message will be visible
 	["stop_ve_spam"] = false,					-- Automaticly turns off healing spam for priests in shadowform
-	["dk_runes"] = true,						-- Show deatchknight rune recharge
+	["dk_runes"] = true,						-- Show deathknight rune recharge
 	["killingblow"] = false,					-- Tells you about your killingblows
 	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
 	["merge_aoe_spam_time"] = 3,				-- Time in seconds aoe spell will be merged into single message(works only with ["damage"] = true)
