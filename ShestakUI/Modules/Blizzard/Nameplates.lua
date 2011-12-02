@@ -133,7 +133,7 @@ local function UpdateAuraIcon(button, unit, index, filter)
 	local name, _, icon, count, debuffType, duration, expirationTime, _, _, _, spellID = UnitAura(unit, index, filter)
 
 	button.icon:SetTexture(icon)
-	button.cd:SetCooldown(expirationTime-duration,duration)
+	button.cd:SetCooldown(expirationTime - duration, duration)
 	button.expirationTime = expirationTime
 	button.duration = duration
 	button.spellID = spellID
