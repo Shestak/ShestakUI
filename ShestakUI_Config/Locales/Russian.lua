@@ -311,7 +311,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Иконка + текстура сни�
 L_GUI_UF_PLUGINS_AURA_WATCH = "Отображать отрицательные эффекты на рамках группы/рейда"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Таймер на отрицательных эффектах группы/рейда"
 L_GUI_UF_PLUGINS_HEALCOMM = "Отображать поступающее лечение на рамках группы/рейда"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on left click when the unit is dead (does not work with Clique enabled)"
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Автоматическое воскрешение средней кнопкой мыши (не работает с Clique)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Верхняя панель"

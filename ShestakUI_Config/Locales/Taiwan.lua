@@ -311,7 +311,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff與圖示高亮"
 L_GUI_UF_PLUGINS_AURA_WATCH = "團隊法術監視"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "顯示團隊減益時間"
 L_GUI_UF_PLUGINS_HEALCOMM = "即將受到的治療條"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on left click when the unit is dead (does not work with Clique enabled)" -- Needs review
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle click when the unit is dead (does not work with Clique enabled)" -- Needs review
 
 -- Panel options
 L_GUI_TOP_PANEL = "頂部面板"

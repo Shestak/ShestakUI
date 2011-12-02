@@ -311,7 +311,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Remarcar textura de desventajas + icono
 L_GUI_UF_PLUGINS_AURA_WATCH = "*BANDA* Ver las auras"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Temporizador en los iconos de perjuicios de la banda"
 L_GUI_UF_PLUGINS_HEALCOMM = "Barra de sanación entrante"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on left click when the unit is dead (does not work with Clique enabled)" -- Needs review
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle click when the unit is dead (does not work with Clique enabled)" -- Needs review
 
 -- Panel options
 L_GUI_TOP_PANEL = "Panel superior"

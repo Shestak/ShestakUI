@@ -311,7 +311,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff highlight texture + icon"
 L_GUI_UF_PLUGINS_AURA_WATCH = "Raid debuff icons"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons"
 L_GUI_UF_PLUGINS_HEALCOMM = "Show incoming heal on frame"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on left click when the unit is dead (does not work with Clique enabled)"
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle click when the unit is dead (does not work with Clique enabled)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Top panel"
