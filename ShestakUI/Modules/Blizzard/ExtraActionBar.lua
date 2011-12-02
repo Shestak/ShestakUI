@@ -5,7 +5,7 @@ local T, C, L = unpack(select(2, ...))
 ------------------------------------------------------------------------------------------
 ExtraActionBarFrame:SetParent(UIParent)
 ExtraActionBarFrame:ClearAllPoints()
-ExtraActionBarFrame:SetPoint("BOTTOM", 0, 270)
+ExtraActionBarFrame:SetPoint("BOTTOM", 0, 350)
 ExtraActionBarFrame:SetMovable(true)
 ExtraActionBarFrame:SetUserPlaced(true)
 ExtraActionBarFrame:SetFrameStrata("HIGH")
