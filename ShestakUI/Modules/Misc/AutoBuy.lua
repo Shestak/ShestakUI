@@ -67,7 +67,9 @@ local function BuyReagents(reagents)
 
 				if quantity > 0 then
 					BuyMerchantItem(MerchantIDIndex, quantity)
-					print("|cff66C6FF"..ITEM_PURCHASED_COLON.." "..ItemLink.." - "..FormatGold(subtotal)..".")
+					if ItemLink then
+						print("|cff66C6FF"..ITEM_PURCHASED_COLON.." "..ItemLink.." - "..FormatGold(subtotal)..".")
+					end
 				end
 			end
 		end
