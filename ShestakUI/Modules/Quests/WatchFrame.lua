@@ -118,14 +118,20 @@ end)
 --	Difficulty color for watchframe lines
 ----------------------------------------------------------------------------------------
 hooksecurefunc("WatchFrame_Update", function()
-	for i = 1, GetNumQuestWatches() do
-		local title, level, questTag, suggestedGroup, isHeader, isCollapsed, isComplete, isDaily, questID, startEvent = GetQuestLogTitle(GetQuestIndexForWatch(i))
-		local col = GetQuestDifficultyColor(level)
+	local questIndex
+	local numQuestWatches = GetNumQuestWatches()
 
-		for j = 1, #WATCHFRAME_QUESTLINES do
-			if WATCHFRAME_QUESTLINES[j].text:GetText() == title then
-				WATCHFRAME_QUESTLINES[j].text:SetTextColor(col.r, col.g, col.b)
-				WATCHFRAME_QUESTLINES[j].col = col
+	for i = 1, numQuestWatches do
+		questIndex = GetQuestIndexForWatch(i)
+		if questIndex then
+			local title, level, questTag, suggestedGroup, isHeader, isCollapsed, isComplete, isDaily, questID, startEvent = GetQuestLogTitle(questIndex)
+			local col = GetQuestDifficultyColor(level)
+
+			for j = 1, #WATCHFRAME_QUESTLINES do
+				if WATCHFRAME_QUESTLINES[j].text:GetText() == title then
+					WATCHFRAME_QUESTLINES[j].text:SetTextColor(col.r, col.g, col.b)
+					WATCHFRAME_QUESTLINES[j].col = col
+				end
 			end
 		end
 	end
