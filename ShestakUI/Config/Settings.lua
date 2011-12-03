@@ -74,7 +74,6 @@ C["skins"] = {
 	["bigwigs"] = false,						-- BigWigs skin
 	["dbm"] = false,							-- DBM skin
 	["dxe"] = false,							-- DXE skin
-	["kle"] = false,							-- KLE skin
 	["omen"] = false,							-- Omen skin
 	["pallypower"] = false,						-- PallyPower skin
 	["recount"] = false,						-- Recount skin

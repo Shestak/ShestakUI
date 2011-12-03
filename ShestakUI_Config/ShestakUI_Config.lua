@@ -77,7 +77,6 @@ local function Local(o)
 	if o == "UIConfigskinsbigwigs" then o = L_GUI_SKINS_BW end
 	if o == "UIConfigskinsdbm" then o = L_GUI_SKINS_DBM end
 	if o == "UIConfigskinsdxe" then o = L_GUI_SKINS_DXE end
-	if o == "UIConfigskinskle" then o = L_GUI_SKINS_KLE end
 	if o == "UIConfigskinsomen" then o = L_GUI_SKINS_OMEN end
 	if o == "UIConfigskinspallypower" then o = L_GUI_SKINS_PP end
 	if o == "UIConfigskinsrecount" then o = L_GUI_SKINS_RECOUNT end
