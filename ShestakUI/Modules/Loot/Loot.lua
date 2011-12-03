@@ -168,8 +168,9 @@ Butsu:SetUserPlaced(true)
 Butsu:Point(unpack(C.position.loot))
 Butsu:SetTemplate("Transparent")
 Butsu:SetClampedToScreen(true)
-Butsu:SetFrameStrata("HIGH")
+Butsu:SetFrameStrata("DIALOG")
 Butsu:SetToplevel(true)
+Butsu:SetFrameLevel(10)
 
 local close = CreateFrame("Button", "LootCloseButton", Butsu, "UIPanelCloseButton")
 if C.skins.blizzard_frames == true then
