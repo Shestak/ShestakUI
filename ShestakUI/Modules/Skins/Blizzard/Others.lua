@@ -41,7 +41,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		for i = 1, getn(bgskins) do
 			local frame = _G[bgskins[i]]
 			if frame then
-				_G[bgskins[i]]:SetTemplate("Transparent")
+				frame:SetTemplate("Transparent")
 			end
 		end
 
@@ -89,7 +89,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		for i = 1, getn(insetskins) do
 			local frame = _G[insetskins[i]]
 			if frame then
-				_G[insetskins[i]]:SetTemplate("Overlay")
+				frame:SetTemplate("Overlay")
 			end
 		end
 
@@ -116,6 +116,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			_G["StaticPopup"..i.."ItemFrameIconTexture"]:ClearAllPoints()
 			_G["StaticPopup"..i.."ItemFrameIconTexture"]:Point("TOPLEFT", 2, -2)
 			_G["StaticPopup"..i.."ItemFrameIconTexture"]:Point("BOTTOMRIGHT", -2, 2)
+			_G["StaticPopup"..i.."CloseButton"]:SetNormalTexture("")
+			_G["StaticPopup"..i.."CloseButton"].SetNormalTexture = T.dummy
+			_G["StaticPopup"..i.."CloseButton"]:SetPushedTexture("")
+			_G["StaticPopup"..i.."CloseButton"].SetPushedTexture = T.dummy
+			T.SkinCloseButton(_G["StaticPopup"..i.."CloseButton"])
 		end
 
 		-- Reskin Dropdown menu
