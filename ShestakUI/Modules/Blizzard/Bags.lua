@@ -387,7 +387,8 @@ function Stuffing:CreateBagFrame(w)
 	-- Close button
 	f.b_close = CreateFrame("Button", "Stuffing_CloseButton" .. w, f, "UIPanelCloseButton")
 	if C.skins.blizzard_frames == true then
-		T.SkinCloseButton(f.b_close)
+		T.SkinCloseButton(f.b_close, nil, nil, true)
+		f.b_close:Size(15)
 	else
 		f.b_close:Size(25)
 		f.b_close:Point("TOPRIGHT", -3, -1)

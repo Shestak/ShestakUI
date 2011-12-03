@@ -174,7 +174,7 @@ Butsu:SetFrameLevel(10)
 
 local close = CreateFrame("Button", "LootCloseButton", Butsu, "UIPanelCloseButton")
 if C.skins.blizzard_frames == true then
-	T.SkinCloseButton(close)
+	T.SkinCloseButton(close, nil, nil, true)
 	close:Width(14)
 	close:Height(14)
 else
@@ -253,7 +253,7 @@ local function LDD_Initialize()
 end
 
 if C.skins.blizzard_frames == true then
-	T.SkinCloseButton(lb, LootCloseButton, "-")
+	T.SkinCloseButton(lb, LootCloseButton, "-", true)
 	lb:Width(14)
 	lb:Height(14)
 else

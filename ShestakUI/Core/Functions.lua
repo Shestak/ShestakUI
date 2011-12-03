@@ -476,15 +476,20 @@ function T.SkinCheckBox(frame)
 	frame.SetHighlightTexture = T.dummy
 end
 
-function T.SkinCloseButton(f, point, text)
+function T.SkinCloseButton(f, point, text, pixel)
 	f:StripTextures()
 	f:SetTemplate("Overlay")
 	f:Size(18)
 
 	if not text then text = "x" end
 	if not f.text then
-		f.text = f:FontString(nil, C.media.normal_font, 17)
-		f.text:SetPoint("CENTER", 0, 1)
+		if pixel then
+			f.text = f:FontString(nil, C.media.pixel_font, 8)
+			f.text:SetPoint("CENTER", 0, 0)
+		else
+			f.text = f:FontString(nil, C.media.normal_font, 17)
+			f.text:SetPoint("CENTER", 0, 1)
+		end
 		f.text:SetText(text)
 	end
 
