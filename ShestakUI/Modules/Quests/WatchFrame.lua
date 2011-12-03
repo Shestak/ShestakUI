@@ -149,3 +149,17 @@ hooksecurefunc("WatchFrameLinkButtonTemplate_Highlight", function(self, onEnter)
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Skin WatchFrameCollapseExpandButton
+----------------------------------------------------------------------------------------
+if C.skins.blizzard_frames == true then
+	T.SkinCloseButton(WatchFrameCollapseExpandButton, nil, "-")
+	WatchFrameCollapseExpandButton:HookScript("OnClick", function(self)
+		if WatchFrame.collapsed then
+			self.text:SetText("+")
+		else
+			self.text:SetText("-")
+		end
+	end)
+end
