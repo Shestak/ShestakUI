@@ -64,7 +64,7 @@ function Butsu:LOOT_OPENED(event, autoloot)
 
 				if color then
 					slot.iconFrame:SetBackdropBorderColor(color.r, color.g, color.b)
-					slot:SetBackdropBorderColor(color.r, color.g, color.b)
+					slot.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
 					slot.drop:SetVertexColor(color.r, color.g, color.b)
 				end
 				slot.drop:Show()
@@ -90,7 +90,7 @@ function Butsu:LOOT_OPENED(event, autoloot)
 
 		slot.name:SetText(EMPTY)
 		slot.name:SetTextColor(color.r, color.g, color.b)
-		slot.icon:SetTexture[[Interface\Icons\INV_Misc_Herb_AncientLichen]]
+		slot.icon:SetTexture("Interface\\Icons\\INV_Misc_Herb_AncientLichen")
 
 		slot.count:Hide()
 		slot.drop:Hide()
@@ -364,7 +364,7 @@ do
 
 		local name = frame:CreateFontString(nil, "OVERLAY")
 		name:SetJustifyH("LEFT")
-		name:Point("LEFT", icon, "RIGHT", 5, 0)
+		name:Point("LEFT", icon, "RIGHT", 10, 0)
 		name:SetNonSpaceWrap(true)
 		name:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 		name:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
@@ -374,12 +374,14 @@ do
 
 		local drop = frame:CreateTexture(nil, "ARTWORK")
 		drop:SetTexture(C.media.blank)
-		drop:Point("TOPLEFT", 2, -2)
+		drop:Point("TOPLEFT", C.loot.icon_size + 5, -2)
 		drop:Point("BOTTOMRIGHT", -2, 2)
 		drop:SetAlpha(0.5)
 		frame.drop = drop
 
-		frame:SetTemplate("Default")
+		frame:CreateBackdrop("Default")
+		frame.backdrop:Point("TOPLEFT", C.loot.icon_size + 3, 0)
+		frame.backdrop:SetPoint("BOTTOMRIGHT")
 
 		slots[id] = frame
 		return frame
@@ -444,12 +446,13 @@ local function init()
 	local info = UIDropDownMenu_CreateInfo()
 
 	if UIDROPDOWNMENU_MENU_LEVEL == 2 then
-		-- raid class menu
+		-- Raid class menu
 		for i = 1, 40 do
 			candidate = GetMasterLootCandidate(i)
 			if candidate then
 				local class = select(2, CandidateUnitClass(candidate))
-				if class == UIDROPDOWNMENU_MENU_VALUE then -- we check for not class adding everyone that left the raid to every menu to prevent not being able to loot to them
+				-- Check for not class
+				if class == UIDROPDOWNMENU_MENU_VALUE then
 					-- Add candidate button
 					info.text = candidate -- coloredNames[candidate]
 					info.colorCode = hexColors[class] or hexColors["UNKOWN"]
