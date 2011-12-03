@@ -17,6 +17,7 @@ local function LoadSkin()
 		"LFDQueueFrameSpecificListScrollFrame",
 		"LFDQueueFrameCooldownFrame",
 		"LFGDungeonReadyDialog",
+		"LFGDungeonReadyStatus",
 	}
 
 	local KillTextures = {

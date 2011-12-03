@@ -16,6 +16,10 @@ SLASH_TICKET1 = "/gm"
 SLASH_TICKET2 = "/гм"
 SLASH_TICKET3 = "/пь"
 
+SlashCmdList.JOURNAL = function() ToggleEncounterJournal() end
+SLASH_JOURNAL1 = "/ej"
+SLASH_JOURNAL2 = "/уо"
+
 ----------------------------------------------------------------------------------------
 --	Description of the slash commands
 ----------------------------------------------------------------------------------------

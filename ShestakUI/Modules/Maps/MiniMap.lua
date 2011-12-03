@@ -84,6 +84,10 @@ local function UpdateLFG()
 end
 hooksecurefunc("MiniMapLFG_Update", UpdateLFG)
 
+-- Default LFG icon
+MiniMapLFGFrameGroupSize:Hide()
+LFG_EYE_TEXTURES.raid = LFG_EYE_TEXTURES.default
+
 -- Feedback icon
 if FeedbackUIButton then
 	FeedbackUIButton:ClearAllPoints()

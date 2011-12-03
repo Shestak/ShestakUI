@@ -19,8 +19,7 @@ movebutton:SetBackdrop({bgFile = "Interface\\AddOns\\ShestakUI\\Media\\Textures\
 movebutton:EnableMouse(true)
 
 movebutton:SetScript("OnMouseDown", function()
-	local maplock = GetCVar("advancedWorldMap")
-	if maplock ~= "1" or InCombatLockdown() then return end
+	if InCombatLockdown() then return end
 	WorldMapScreenAnchor:ClearAllPoints()
 	WorldMapFrame:ClearAllPoints()
 	WorldMapFrame:StartMoving()
@@ -28,8 +27,7 @@ movebutton:SetScript("OnMouseDown", function()
 end)
 
 movebutton:SetScript("OnMouseUp", function()
-	local maplock = GetCVar("advancedWorldMap")
-	if maplock ~= "1" or InCombatLockdown() then return end
+	if InCombatLockdown() then return end
 	WorldMapFrame:StopMovingOrSizing()
 	WorldMapScreenAnchor:StartMoving()
 	WorldMapScreenAnchor:StopMovingOrSizing()

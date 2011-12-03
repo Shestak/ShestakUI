@@ -249,3 +249,14 @@ TaintFix:SetScript("OnUpdate", function(self, elapsed)
 		LFRBrowseFrame.timeToClear = nil
 	end
 end)
+
+----------------------------------------------------------------------------------------
+-- Fix profanityFilter(by p3lim) Temporarily, until Blizzard fix it.
+----------------------------------------------------------------------------------------
+local pFilter = CreateFrame("Frame")
+pFilter:RegisterEvent("CVAR_UPDATE")
+pFilter:RegisterEvent("PLAYER_ENTERING_WORLD")
+pFilter:SetScript("OnEvent", function(self, event, cvar)
+	SetCVar("profanityFilter", 0)
+end)
+InterfaceOptionsSocialPanelProfanityFilter:Kill()
