@@ -297,7 +297,6 @@ C["actionbar"] = {
 	["split_bars"] = false,						-- Split the fifth bar on two bars on 6 buttons
 	["classcolor_border"] = false,				-- Enable classcolor border
 	["toggle_mode"] = true,						-- Enable toggle mode
-	["light_macro"] = false,					-- Light macro button when proc spell
 	-- Bottom bars
 	["bottombars"] = 2,							-- Number of action bars on the bottom
 	-- Right bars

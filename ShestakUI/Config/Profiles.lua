@@ -72,7 +72,6 @@ if T.author == true then
 	C["chat"].spam = true
 	C["nameplate"].track_auras = true
 	C["actionbar"].toggle_mode = false
-	C["actionbar"].light_macro = true
 	C["unitframe"].arena_on_right = false
 	C["stats"].fps = false
 	C["stats"].guild_repair = false
@@ -119,7 +118,6 @@ if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.n
 	C["tooltip"].item_count = true
 	C["chat"].combatlog = false
 	C["nameplate"].combat = true
-	C["actionbar"].light_macro = true
 	C["aura"].focus_debuffs = true
 	C["unitframe"].castbar_latency = false
 	C["unitframe"].enemy_health_color = false
