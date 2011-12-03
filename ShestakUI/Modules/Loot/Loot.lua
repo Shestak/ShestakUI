@@ -264,7 +264,19 @@ lb:ClearAllPoints()
 lb:Point("BOTTOMRIGHT", Butsu, "TOPRIGHT", -21, -18)
 lb:SetFrameStrata("DIALOG")
 lb:RegisterForClicks("RightButtonUp", "LeftButtonUp")
-lb:SetScript("OnClick", OnLinkClick)
+lb:SetScript("OnClick", function(self, button)
+	if button == "RightButton" then
+		OnLinkClick()
+	else
+		if GetRealNumRaidMembers() > 0 then
+			Announce("RAID")
+		elseif GetRealNumPartyMembers() > 0 and not UnitInRaid("player") then
+			Announce("PARTY")
+		else
+			Announce("SAY")
+		end
+	end
+end)
 lb:Hide()
 UIDropDownMenu_Initialize(LDD, LDD_Initialize, "MENU")
 
