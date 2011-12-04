@@ -19,8 +19,8 @@ C["media"] = {
 	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for wispers
 	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
 	["proc_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Proc.mp3]],			-- Sound for procs
-	["border_color"] = {0.37, 0.3, 0.3},		-- Color for borders
-	["backdrop_color"] = {0, 0, 0},				-- Color for borders backdrop
+	["border_color"] = {0.37, 0.3, 0.3, 1},		-- Color for borders
+	["backdrop_color"] = {0, 0, 0, 1},			-- Color for borders backdrop
 	["overlay_color"] = {0, 0, 0, 0.7},			-- Color for action bars overlay
 }
 

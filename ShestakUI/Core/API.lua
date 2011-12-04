@@ -2,7 +2,8 @@
 
 local floor = math.floor
 local texture = C.media.blank
-local backdropr, backdropg, backdropb, backdropa, borderr, borderg, borderb, bordera = 0, 0, 0, 1, 0, 0, 0, 1
+local backdropr, backdropg, backdropb, backdropa = unpack(C.media.backdrop_color)
+local borderr, borderg, borderb, bordera = unpack(C.media.border_color)
 
 ----------------------------------------------------------------------------------------
 --	Pixel perfect size/width/height functions
@@ -97,13 +98,13 @@ local function SetTemplate(f, t, tex)
 	})
 
 	if t == "Transparent" then
-		backdropa = 0.7
+		backdropa = C.media.overlay_color[4]
 		f:CreateBorder(true, true)
 	elseif t == "Overlay" then
 		backdropa = 1
 		f:CreateOverlay()
 	else
-		backdropa = 1
+		backdropa = C.media.backdrop_color[4]
 	end
 
 	f:SetBackdropColor(backdropr, backdropg, backdropb, backdropa)
@@ -126,7 +127,7 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	})
 
 	if t == "Transparent" then
-		backdropa = 0.7
+		backdropa = C.media.overlay_color[4]
 		f:CreateBorder(true, true)
 	elseif t == "Overlay" then
 		backdropa = 1
@@ -135,7 +136,7 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 		backdropa = 0
 		bordera = 0
 	else
-		backdropa = 1
+		backdropa = C.media.backdrop_color[4]
 	end
 
 	f:SetBackdropColor(backdropr, backdropg, backdropb, backdropa)
