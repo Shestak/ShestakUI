@@ -26,7 +26,7 @@ local function GetLinkColor(data)
 		return "|cffffd000"
 	elseif type == "instancelock" then
 		return "|cffff8000"
-	elseif type == "glyph" then
+	elseif type == "glyph" or type == "journal" then
 		return "|cff66bbff"
 	elseif type == "talent" then
 		return "|cff4e96f7"
