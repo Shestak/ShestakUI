@@ -11,7 +11,7 @@ T.UIScale = function()
 	end
 
 	if C.general.auto_scale == true then
-		C.general.uiscale = min(2, max(0.64, 768 / string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)")))
+		C.general.uiscale = min(2, max(0.64, 768 / string.match(GetCVar("gxResolution"), "%d+x(%d+)")))
 	end
 end
 T.UIScale()
