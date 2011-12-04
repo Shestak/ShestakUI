@@ -200,7 +200,6 @@ L_INFO_ADDON_SETS1 = "Введите /addons <solo/party/raid/pvp/trade/quest>, 
 L_INFO_ADDON_SETS2 = "Вы можете добавить, удалить или изменить списки модификаций, изменив файл wtf.lua в папке modules."
 L_INFO_SETTINGS_DBM = "Введите /settings dbm, чтобы применить настройки DBM."
 L_INFO_SETTINGS_DXE = "Введите /settings dxe, чтобы применить настройки DXE."
-L_INFO_SETTINGS_KLE = "Введите /settings kle, чтобы применить настройки KLE."
 L_INFO_SETTINGS_MSBT = "Введите /settings msbt, чтобы применить настройки MSBT."
 L_INFO_SETTINGS_SKADA = "Введите /settings skada, чтобы применить настройки Skada."
 L_INFO_SETTINGS_ALL = "Введите /settings all, чтобы применить настройки для всех модификаций."
@@ -215,10 +214,9 @@ L_POPUP_RESETSTATS = "Вы уверены, что хотите сбросить 
 L_POPUP_SWITCH_RAID = "Обе рейдовые раскладки активны, пожалуйста, выберите одну."
 L_POPUP_DISBAND_RAID = "Вы уверены, что хотите распустить группу?"
 L_POPUP_DISABLEUI = "ShestakUI не работает на этом разрешении, хотите отключить ShestakUI? (Отмена если хотите попробовать другое разрешение)"
-L_POPUP_SETTINGS_ALL = "Применить настройки для всех модификаций? (DBM/DXE/KLE, Skada/Recount и MSBT)"
+L_POPUP_SETTINGS_ALL = "Применить настройки для всех модификаций? (DBM/DXE, Skada и MSBT)"
 L_POPUP_SETTINGS_DBM = "Необходимо изменить позиции элементов DBM."
 L_POPUP_SETTINGS_DXE = "Необходимо изменить позиции элементов DXE."
-L_POPUP_SETTINGS_KLE = "Необходимо изменить позиции элементов KLE."
 L_POPUP_SETTINGS_BW = "Необходимо изменить позиции элементов BigWigs."
 
 -- Welcome message

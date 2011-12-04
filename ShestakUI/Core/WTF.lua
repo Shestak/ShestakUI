@@ -376,7 +376,6 @@ StaticPopupDialogs["SETTINGS_ALL"] = {
 	OnAccept = function()
 		if IsAddOnLoaded("DBM-Core") and C.skins.dbm then T.UploadDBM() end
 		if IsAddOnLoaded("DXE") and C.skins.dxe then T.UploadDXE() end
-		if IsAddOnLoaded("KLE") and C.skins.kle then T.UploadKLE() end
 		if IsAddOnLoaded("MikScrollingBattleText") then UploadMSBT() end
 		if IsAddOnLoaded("Skada") then UploadSkada() end
 		ReloadUI() 
@@ -409,16 +408,6 @@ SlashCmdList.SETTINGS = function(msg)
 		else
 			print("|cffffff00DXE"..L_INFO_NOT_INSTALLED.."|r")
 		end
-	elseif msg == "kle" then
-		if IsAddOnLoaded("KLE") then
-			if C.skins.kle == true then
-				StaticPopup_Show("SETTINGS_KLE")
-			else
-				print("|cffffff00"..L_INFO_SKIN_DISABLED1.."KLE"..L_INFO_SKIN_DISABLED2.."|r")
-			end
-		else
-			print("|cffffff00KLE"..L_INFO_NOT_INSTALLED.."|r")
-		end
 	elseif msg == "msbt" then
 		if IsAddOnLoaded("MikScrollingBattleText") then
 			UploadMSBT()
@@ -438,7 +427,6 @@ SlashCmdList.SETTINGS = function(msg)
 	else
 		print("|cffffff00"..L_INFO_SETTINGS_DBM.."|r")
 		print("|cffffff00"..L_INFO_SETTINGS_DXE.."|r")
-		print("|cffffff00"..L_INFO_SETTINGS_KLE.."|r")
 		print("|cffffff00"..L_INFO_SETTINGS_MSBT.."|r")
 		print("|cffffff00"..L_INFO_SETTINGS_SKADA.."|r")
 		print("|cffffff00"..L_INFO_SETTINGS_ALL.."|r")

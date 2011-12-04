@@ -200,7 +200,6 @@ L_INFO_ADDON_SETS1 = "鍵入 /addons <solo/party/raid/pvp/trade/quest>, 載入�
 L_INFO_ADDON_SETS2 = "你可以通過編輯`scripts`資料夾的wtf.lua 以添加,刪除或改變設置."
 L_INFO_SETTINGS_DBM = "鍵入 /settings dbm, 載入 DBM 的設定."
 L_INFO_SETTINGS_DXE = "鍵入 /settings dxe, 載入 DXE 的設定."
-L_INFO_SETTINGS_KLE = "鍵入 /settings kle, 載入 KLE 的設定."
 L_INFO_SETTINGS_MSBT = "鍵入 /settings msbt, 載入 MSBT 的設定."
 L_INFO_SETTINGS_SKADA = "鍵入 /settings skada, 載入 Skada 的設定."
 L_INFO_SETTINGS_ALL = "鍵入 /settings all, 載入所有UI設定."
@@ -215,10 +214,9 @@ L_POPUP_RESETSTATS = "你確定要重置本次遊戲時間和金幣收益統計�
 L_POPUP_SWITCH_RAID = "多個團隊樣式被加載,請選擇一個樣式."
 L_POPUP_DISBAND_RAID = "你確定要解散團隊?"
 L_POPUP_DISABLEUI = "ShestakUI並不支援此解析度, 你想要停用ShestakUI嗎? (若果您想要嘗試其他解析度, 請按取消)"
-L_POPUP_SETTINGS_ALL = "應用所有的UI設置? (DBM/DXE/KLE, Skada and MSBT)"
+L_POPUP_SETTINGS_ALL = "應用所有的UI設置? (DBM/DXE, Skada and MSBT)"
 L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素。"
 L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素。"
-L_POPUP_SETTINGS_KLE = "需要改變KLE描點及風格化元素。"
 L_POPUP_SETTINGS_BW = "需要改變BigWigs描點及風格化元素。"
 
 -- Welcome message

@@ -200,7 +200,6 @@ L_INFO_ADDON_SETS1 = "Escribe /addons <solitario/grupo/banda/pvp/comercio/mision
 L_INFO_ADDON_SETS2 = "Puedes añadir, borrar o cambiar la lista de las modificaciones, modificando wtf.lua en la carpeta `scripts`."
 L_INFO_SETTINGS_DBM = "Escribe /settings dbm, para aplicar las preferencias del DBM."
 L_INFO_SETTINGS_DXE = "Escribe /settings dxe, para aplicar las preferencias del DXE."
-L_INFO_SETTINGS_KLE = "Escribe /settings kle, para aplicar las preferencias del KLE."
 L_INFO_SETTINGS_MSBT = "Escribe /settings msbt, para aplicar las preferencias del MSBT."
 L_INFO_SETTINGS_SKADA = "Escribe /settings skada, para aplicar las preferencias del Skada."
 L_INFO_SETTINGS_ALL = "Escribe /settings all, para aplicar todas las modificaciones."
@@ -215,10 +214,9 @@ L_POPUP_RESETSTATS = "¿Estás seguro de que quieres reiniciar las estadísticas
 L_POPUP_SWITCH_RAID = "Hay activos 2 estilos para banda, por favor selecciona uno."
 L_POPUP_DISBAND_RAID = "¿Estás seguro de que quieres disolver el grupo?"
 L_POPUP_DISABLEUI = "ShestakUI no funciona con esta resolución, ¿Quieres desactivar ShestakUI? (Pulsa cancelar si quieres probar otra resolución)"
-L_POPUP_SETTINGS_ALL = "¿Aplicar modificaciones para todos los addons? (DBM/DXE/KLE, Skada o MSBT)"
+L_POPUP_SETTINGS_ALL = "¿Aplicar modificaciones para todos los addons? (DBM/DXE, Skada o MSBT)"
 L_POPUP_SETTINGS_DBM = "Necesito cambiar la posición de los elementos del DBM."
 L_POPUP_SETTINGS_DXE = "Necesito cambiar la posición de los elementos del DXE."
-L_POPUP_SETTINGS_KLE = "Necesito cambiar la posición de los elementos del KLE."
 L_POPUP_SETTINGS_BW = "Necesito cambiar la posición de los elementos del BigWigs."
 
 -- Welcome message
