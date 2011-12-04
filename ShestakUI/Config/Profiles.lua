@@ -101,8 +101,6 @@ if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.n
 	C["misc"].auto_accept_invite = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
-	C["announcements"].spells = true
-	C["announcements"].spells_from_all = true
 	C["skins"].dbm = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
@@ -123,9 +121,6 @@ if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.n
 	C["unitframe"].enemy_health_color = false
 	C["raidframe"].icons_lfd_role = true
 	C["threat"].enable = false
-	if T.name == "Трольпаладин" or T.name == "Рукалицо" or T.name == "Чаккерс" then
-		C["actionbar"].bottombars = 3
-	end
 	if T.name ~= "Релика" then
 		C["raidframe"].plugins_healcomm = false
 	end
