@@ -74,6 +74,7 @@ local function Local(o)
 	if o == "UIConfigskinsblizzard_frames" then o = L_GUI_SKINS_BLIZZARD end
 	if o == "UIConfigskinsminimap_buttons" then o = L_GUI_SKINS_MINIMAP_BUTTONS end
 	if o == "UIConfigskinsclcret" then o = L_GUI_SKINS_CLCR end
+	if o == "UIConfigskinscombustion_helper" then o = L_GUI_SKINS_COMBUSTION_HELPER end
 	if o == "UIConfigskinsbigwigs" then o = L_GUI_SKINS_BW end
 	if o == "UIConfigskinsdbm" then o = L_GUI_SKINS_DBM end
 	if o == "UIConfigskinsdxe" then o = L_GUI_SKINS_DXE end

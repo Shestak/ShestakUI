@@ -156,6 +156,7 @@
 	<Script file="Modules\Skins\BigWigs.lua"/>
 	<Script file="Modules\Skins\CLCRet.lua"/>
 	<Script file="Modules\Skins\Clique.lua"/>
+	<Script file="Modules\Skins\CombustionHelper.lua"/>
 	<Script file="Modules\Skins\DBM.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>
 	<Script file="Modules\Skins\Omen.lua"/>
