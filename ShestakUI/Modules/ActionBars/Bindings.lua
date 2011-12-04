@@ -327,6 +327,8 @@ end
 
 SLASH_MOUSEOVERBIND1 = "/bindkey"
 SLASH_MOUSEOVERBIND2 = "/hoverbind"
+SLASH_MOUSEOVERBIND3 = "/bk"
+SLASH_MOUSEOVERBIND4 = "/kb"
 if not IsAddOnLoaded("HealBot") then
-	SLASH_MOUSEOVERBIND3 = "/hb"
+	SLASH_MOUSEOVERBIND5 = "/hb"
 end
