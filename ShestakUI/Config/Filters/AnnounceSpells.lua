@@ -10,6 +10,8 @@ T.AnnounceSpells = {
 	34477,	-- Misdirection
 	19801,	-- Tranquilizing Shot
 	57934,	-- Tricks of the Trade
-	20484,	-- Rebirth
 	633,	-- Lay on Hands
+	20484,	-- Rebirth
+	6199,	-- Raise Ally
+	20707,	-- Soulstone Resurrection
 }

@@ -95,4 +95,9 @@ T.PlateBlacklist = {
 	["Ядовитая змея"] = true,
 	["Viper"] = true,
 	["Гадюка"] = true,
+	-- Raid
+	["Liquid Obsidian"] = true,
+	["Жидкий обсидиан"] = true,
+	["Lava Parasites"] = true,
+	["Лавовый паразит"] = true,
 }
