@@ -81,7 +81,6 @@ local buffs = { -- Credits: Proditor, Rinu
 	[GetSpellInfo(29801)] = L_PLANNER_WARRIOR_2,		-- Rampage
 	[GetSpellInfo(50227)] = L_PLANNER_WARRIOR_3,		-- Sword and Board
 	-- PALADIN
-	[GetSpellInfo(85126)] = L_PLANNER_PALADIN_3,		-- Seals of Command
 	--[GetSpellInfo(31836)] = L_PLANNER_PALADIN_1,		-- Light's Grace
 	-- ROGUE
 	[GetSpellInfo(36554)] = L_PLANNER_ROGUE_3,			-- Shadowstep

@@ -156,7 +156,6 @@ if C.reminder.solo_buffs_enable == true then
 				["spells"] = {
 					31801,	-- Seal of Truth
 					20154,	-- Seal of Righteousness
-					85126,	-- Seal of Command
 					20164,	-- Seal of Justice
 					20165,	-- Seal of Insight
 				},
