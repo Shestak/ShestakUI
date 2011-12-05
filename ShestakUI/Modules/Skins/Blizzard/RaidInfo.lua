@@ -16,7 +16,7 @@ local function LoadSkin()
 		"RaidFinderFrameRoleInset",
 		"RaidFinderQueueFrameScrollFrame",
 		"RaidFinderQueueFrameIneligibleFrame",
-		"RaidFinderQueueFrameCooldownFrame",
+		"RaidFinderQueueFrameCooldownFrame"
 	}
 
 	local KillTextures = {
@@ -24,7 +24,7 @@ local function LoadSkin()
 		"RaidInfoScrollFrameScrollBarTop",
 		"RaidInfoScrollFrameScrollBarBottom",
 		"RaidInfoScrollFrameScrollBarMiddle",
-		"RaidFinderQueueFrameBackground",
+		"RaidFinderQueueFrameBackground"
 	}
 
 	local buttons = {
@@ -32,7 +32,7 @@ local function LoadSkin()
 		"RaidFrameRaidInfoButton",
 		"RaidInfoExtendButton",
 		"RaidInfoCancelButton",
-		"RaidFinderQueueFrameIneligibleFrameLeaveQueueButton",
+		"RaidFinderQueueFrameIneligibleFrameLeaveQueueButton"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -76,7 +76,7 @@ local function LoadSkin()
 		"RaidFinderQueueFrameRoleButtonTank",
 		"RaidFinderQueueFrameRoleButtonHealer",
 		"RaidFinderQueueFrameRoleButtonDPS",
-		"RaidFinderQueueFrameRoleButtonLeader",
+		"RaidFinderQueueFrameRoleButtonLeader"
 	}
 
 	for _, object in pairs(checkButtons) do

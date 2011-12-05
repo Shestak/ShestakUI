@@ -62,7 +62,7 @@ local function LoadSkin()
 	local StripAllTextures = {
 		"GlyphFrameScrollFrame",
 		"GlyphFrameSideInset",
-		"GlyphFrameScrollFrameScrollChild",
+		"GlyphFrameScrollFrameScrollChild"
 	}
 
 	for _, object in pairs(StripAllTextures) do

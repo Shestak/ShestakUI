@@ -7,7 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	local buttons = {
 		"RaidFrameRaidInfoButton",
-		"RaidFrameReadyCheckButton",
+		"RaidFrameReadyCheckButton"
 	}
 
 	for i = 1, #buttons do
@@ -22,7 +22,7 @@ local function LoadSkin()
 		"RaidGroup5",
 		"RaidGroup6",
 		"RaidGroup7",
-		"RaidGroup8",
+		"RaidGroup8"
 	}
 
 	for _, object in pairs(StripAllTextures) do

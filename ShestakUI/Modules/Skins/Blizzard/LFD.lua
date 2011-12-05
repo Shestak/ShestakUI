@@ -18,7 +18,7 @@ local function LoadSkin()
 		"LFDQueueFrameCooldownFrame",
 		"LFGDungeonReadyDialog",
 		"LFGDungeonReadyStatus",
-		"LFGInvitePopup",
+		"LFGInvitePopup"
 	}
 
 	local KillTextures = {
@@ -28,7 +28,7 @@ local function LoadSkin()
 		"LFDQueueFrameRoleButtonTankBackground",
 		"LFDQueueFrameRoleButtonHealerBackground",
 		"LFDQueueFrameRoleButtonDPSBackground",
-		"LFGDungeonReadyDialogBackground",
+		"LFGDungeonReadyDialogBackground"
 	}
 
 	local buttons = {
@@ -40,14 +40,14 @@ local function LoadSkin()
 		"LFGDungeonReadyDialogEnterDungeonButton",
 		"LFGDungeonReadyDialogLeaveQueueButton",
 		"LFGInvitePopupAcceptButton",
-		"LFGInvitePopupDeclineButton",
+		"LFGInvitePopupDeclineButton"
 	}
 
 	local checkButtons = {
 		"LFDQueueFrameRoleButtonTank",
 		"LFDQueueFrameRoleButtonHealer",
 		"LFDQueueFrameRoleButtonDPS",
-		"LFDQueueFrameRoleButtonLeader",
+		"LFDQueueFrameRoleButtonLeader"
 	}
 
 	for _, object in pairs(checkButtons) do

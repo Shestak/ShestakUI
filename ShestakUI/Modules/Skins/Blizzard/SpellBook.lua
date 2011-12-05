@@ -10,12 +10,12 @@ local function LoadSkin()
 		"SpellBookFrameInset",
 		"SpellBookSpellIconsFrame",
 		"SpellBookSideTabsFrame",
-		"SpellBookPageNavigationFrame",
+		"SpellBookPageNavigationFrame"
 	}
 
 	local KillTextures = {
 		"SpellBookPage1",
-		"SpellBookPage2",
+		"SpellBookPage2"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -137,7 +137,7 @@ local function LoadSkin()
 		"SecondaryProfession3SpellButtonLeft",
 		"SecondaryProfession3SpellButtonRight",
 		"SecondaryProfession4SpellButtonLeft",
-		"SecondaryProfession4SpellButtonRight",
+		"SecondaryProfession4SpellButtonRight"
 	}
 
 	local professionheaders = {
@@ -146,7 +146,7 @@ local function LoadSkin()
 		"SecondaryProfession1",
 		"SecondaryProfession2",
 		"SecondaryProfession3",
-		"SecondaryProfession4",
+		"SecondaryProfession4"
 	}
 
 	for _, header in pairs(professionheaders) do
@@ -186,7 +186,7 @@ local function LoadSkin()
 		"SecondaryProfession1StatusBar",
 		"SecondaryProfession2StatusBar",
 		"SecondaryProfession3StatusBar",
-		"SecondaryProfession4StatusBar",
+		"SecondaryProfession4StatusBar"
 	}
 
 	for _, statusbar in pairs(professionstatusbars) do

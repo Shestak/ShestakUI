@@ -25,7 +25,7 @@ local function LoadSkin()
 		"AudioOptionsVoicePanelEnableMicrophone",
 		"AudioOptionsVoicePanelPushToTalkSound",
 		"NetworkOptionsPanelOptimizeSpeed",
-		"NetworkOptionsPanelUseIPv6",
+		"NetworkOptionsPanelUseIPv6"
 	}
 
 	for i = 1, getn(checkboxes) do
@@ -60,7 +60,7 @@ local function LoadSkin()
 		"AudioOptionsSoundPanelSoundChannelsDropDown",
 		"AudioOptionsVoicePanelInputDeviceDropDown",
 		"AudioOptionsVoicePanelChatModeDropDown",
-		"AudioOptionsVoicePanelOutputDeviceDropDown",
+		"AudioOptionsVoicePanelOutputDeviceDropDown"
 	}
 
 	for i = 1, getn(dropdown) do

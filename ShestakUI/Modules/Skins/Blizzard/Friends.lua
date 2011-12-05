@@ -36,7 +36,7 @@ local function LoadSkin()
 		"ChannelFrameLeftInset",
 		"LFRQueueFrameListInset",
 		"LFRQueueFrameRoleInset",
-		"LFRQueueFrameCommentInset",
+		"LFRQueueFrameCommentInset"
 	}
 
 	local KillTextures = {
@@ -48,7 +48,7 @@ local function LoadSkin()
 		"ChannelFrameDaughterFrameChannelNameMiddle",
 		"ChannelFrameDaughterFrameChannelPasswordLeft",
 		"ChannelFrameDaughterFrameChannelPasswordRight",
-		"ChannelFrameDaughterFrameChannelPasswordMiddle",
+		"ChannelFrameDaughterFrameChannelPasswordMiddle"
 	}
 
 	local buttons = {
@@ -76,7 +76,7 @@ local function LoadSkin()
 		"FriendsFriendsCloseButton",
 		"FriendsFriendsSendRequestButton",
 		"BNConversationInviteDialogCancelButton",
-		"BNConversationInviteDialogInviteButton",
+		"BNConversationInviteDialogInviteButton"
 	}
 
 	for _, button in pairs(buttons) do

@@ -36,7 +36,7 @@ local function LoadSkin()
 		"GuildInfoFrameApplicantsContainer",
 		"GuildInfoFrameApplicants",
 		"GuildNewsBossModel",
-		"GuildNewsBossModelTextFrame",
+		"GuildNewsBossModelTextFrame"
 	}
 
 	GuildRewardsFrameVisitText:ClearAllPoints()
@@ -62,7 +62,7 @@ local function LoadSkin()
 		"GuildTextEditFrameAcceptButton",
 		"GuildRecruitmentInviteButton",
 		"GuildRecruitmentMessageButton",
-		"GuildRecruitmentDeclineButton",
+		"GuildRecruitmentDeclineButton"
 	}
 
 	for i, button in pairs(buttons) do
@@ -82,7 +82,7 @@ local function LoadSkin()
 		"Weekdays",
 		"Weekends",
 		"LevelAny",
-		"LevelMax",
+		"LevelMax"
 	}
 
 	for _, frame in pairs(checkbuttons) do

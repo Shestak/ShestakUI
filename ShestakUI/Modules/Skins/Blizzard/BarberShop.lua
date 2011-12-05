@@ -8,7 +8,7 @@ local function LoadSkin()
 	local buttons = {
 		"BarberShopFrameOkayButton",
 		"BarberShopFrameCancelButton",
-		"BarberShopFrameResetButton",
+		"BarberShopFrameResetButton"
 	}
 	BarberShopFrameOkayButton:Point("RIGHT", BarberShopFrameSelector4, "BOTTOM", 2, -50)
 

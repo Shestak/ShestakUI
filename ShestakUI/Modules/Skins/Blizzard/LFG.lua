@@ -12,7 +12,7 @@ local function LoadSkin()
 		"LookingForGuildRPButton",
 		"LookingForGuildRaidButton",
 		"LookingForGuildQuestButton",
-		"LookingForGuildDungeonButton",
+		"LookingForGuildDungeonButton"
 	}
 
 	-- Checkboxes
@@ -25,7 +25,7 @@ local function LoadSkin()
 		"LookingForGuildInterestFrame",
 		"LookingForGuildAvailabilityFrame",
 		"LookingForGuildRolesFrame",
-		"LookingForGuildCommentFrame",
+		"LookingForGuildCommentFrame"
 	}
 
 	for _, v in pairs(backdrop) do

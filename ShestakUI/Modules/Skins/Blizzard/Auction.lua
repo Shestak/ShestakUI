@@ -77,7 +77,7 @@ local function LoadSkin()
 		"AuctionsCloseButton",
 		"BrowseResetButton",
 		"AuctionsStackSizeMaxButton",
-		"AuctionsNumStacksMaxButton",
+		"AuctionsNumStacksMaxButton"
 	}
 
 	for _, button in pairs(buttons) do
@@ -124,7 +124,7 @@ local function LoadSkin()
 		"AuctionsQualitySort",
 		"AuctionsDurationSort",
 		"AuctionsHighBidderSort",
-		"AuctionsBidSort",
+		"AuctionsBidSort"
 	}
 
 	for _, sorttab in pairs(sorttabs) do
@@ -316,7 +316,7 @@ local function LoadSkin()
 		"Atr_Buy_Confirm_OKBut",
 		"Atr_Buy_Confirm_CancelBut",
 		"Atr_MngSListsButton",
-		"Auctionator_Search",
+		"Auctionator_Search"
 	}
 
 	for i = 1, getn(buttons) do
@@ -329,7 +329,7 @@ local function LoadSkin()
 	local dropdown = {
 		"Atr_DropDown1",
 		"Atr_Duration",
-		"Atr_DropDownSL",
+		"Atr_DropDownSL"
 	}
 
 	for i = 1, getn(dropdown) do
@@ -353,7 +353,7 @@ local function LoadSkin()
 		"Atr_AS_Minlevel",
 		"Atr_AS_Maxlevel",
 		"Atr_AS_MinItemlevel",
-		"Atr_AS_MaxItemlevel",
+		"Atr_AS_MaxItemlevel"
 	}
 
 	for i = 1, getn(editbox) do
@@ -381,7 +381,7 @@ local function LoadSkin()
 		"AuctionatorResetsFrame",
 		"Atr_ScanningOptionsFrame",
 		"AuctionatorDescriptionFrame",
-		"Atr_LUA_Error",
+		"Atr_LUA_Error"
 	}
 
 	for i = 1, getn(frames) do

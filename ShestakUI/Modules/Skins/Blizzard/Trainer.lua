@@ -9,11 +9,11 @@ local function LoadSkin()
 		"ClassTrainerFrame",
 		"ClassTrainerScrollFrameScrollChild",
 		"ClassTrainerFrameSkillStepButton",
-		"ClassTrainerFrameBottomInset",
+		"ClassTrainerFrameBottomInset"
 	}
 
 	local buttons = {
-		"ClassTrainerTrainButton",
+		"ClassTrainerTrainButton"
 	}
 
 	local KillTextures = {
@@ -22,7 +22,7 @@ local function LoadSkin()
 		"ClassTrainerScrollFrameScrollBarBG",
 		"ClassTrainerScrollFrameScrollBarTop",
 		"ClassTrainerScrollFrameScrollBarBottom",
-		"ClassTrainerScrollFrameScrollBarMiddle",
+		"ClassTrainerScrollFrameScrollBarMiddle"
 	}
 
 	for i = 1, 8 do

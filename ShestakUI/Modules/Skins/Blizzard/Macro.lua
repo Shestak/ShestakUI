@@ -15,7 +15,7 @@ local function LoadSkin()
 		"MacroPopupOkayButton",
 		"MacroPopupCancelButton",
 		"MacroSaveButton",
-		"MacroCancelButton",
+		"MacroCancelButton"
 	}
 
 	for i = 1, #buttons do

@@ -176,7 +176,7 @@ local function LoadSkin()
 		"CalendarViewEventAcceptButton",
 		"CalendarViewEventTentativeButton",
 		"CalendarViewEventRemoveButton",
-		"CalendarViewEventDeclineButton",
+		"CalendarViewEventDeclineButton"
 	}
 
 	for _, button in pairs(buttons) do

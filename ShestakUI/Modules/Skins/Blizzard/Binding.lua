@@ -9,7 +9,7 @@ local function LoadSkin()
 		"KeyBindingFrameDefaultButton",
 		"KeyBindingFrameUnbindButton",
 		"KeyBindingFrameOkayButton",
-		"KeyBindingFrameCancelButton",
+		"KeyBindingFrameCancelButton"
 	}
 
 	for _, v in pairs(buttons) do

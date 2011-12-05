@@ -9,7 +9,7 @@ local function LoadSkin()
 		"HelpFrameLeftInset",
 		"HelpFrameMainInset",
 		"HelpFrameKnowledgebase",
-		"HelpFrameKnowledgebaseErrorFrame",
+		"HelpFrameKnowledgebaseErrorFrame"
 	}
 
 	local buttons = {
@@ -28,7 +28,7 @@ local function LoadSkin()
 		"HelpFrameCharacterStuckStuck",
 		"GMChatOpenLog",
 		"HelpFrameTicketSubmit",
-		"HelpFrameTicketCancel",
+		"HelpFrameTicketCancel"
 	}
 
 	-- Main frames

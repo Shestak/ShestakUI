@@ -16,7 +16,7 @@ local function LoadSkin()
 		"TransmogrifyFrameButtonFrameButtonBottomBorder",
 		"TransmogrifyFrameButtonFrameMoneyLeft",
 		"TransmogrifyFrameButtonFrameMoneyRight",
-		"TransmogrifyFrameButtonFrameMoneyMiddle",
+		"TransmogrifyFrameButtonFrameMoneyMiddle"
 	}
 
 	for _, texture in pairs(KillTextures) do

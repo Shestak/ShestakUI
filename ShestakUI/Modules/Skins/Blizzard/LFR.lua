@@ -11,7 +11,7 @@ local function LoadSkin()
 		"LFRBrowseFrameSendMessageButton",
 		"LFRBrowseFrameInviteButton",
 		"LFRBrowseFrameRefreshButton",
-		"LFRQueueFrameNoLFRWhileLFDLeaveQueueButton",
+		"LFRQueueFrameNoLFRWhileLFDLeaveQueueButton"
 	}
 
 	LFRParentFrame:StripTextures()

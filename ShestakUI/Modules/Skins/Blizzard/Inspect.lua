@@ -47,7 +47,7 @@ local function LoadSkin()
 		"Trinket1Slot",
 		"MainHandSlot",
 		"SecondaryHandSlot",
-		"RangedSlot",
+		"RangedSlot"
 	}
 
 	for _, slot in pairs(slots) do

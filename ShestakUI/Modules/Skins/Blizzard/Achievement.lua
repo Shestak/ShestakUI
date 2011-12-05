@@ -17,7 +17,7 @@ local function LoadSkin()
 		"AchievementFrameComparison",
 		"AchievementFrameComparisonHeader",
 		"AchievementFrameComparisonSummaryPlayer",
-		"AchievementFrameComparisonSummaryFriend",
+		"AchievementFrameComparisonSummaryFriend"
 	}
 
 	for _, frame in pairs(frames) do

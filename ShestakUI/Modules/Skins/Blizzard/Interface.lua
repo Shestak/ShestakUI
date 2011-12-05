@@ -143,7 +143,7 @@ local function LoadSkin()
 		"HelpPanelBeginnerTooltips",
 		"HelpPanelShowLuaErrors",
 		"HelpPanelColorblindMode",
-		"HelpPanelMovePad",
+		"HelpPanelMovePad"
 	}
 
 	for i = 1, getn(checkboxes) do
@@ -175,7 +175,7 @@ local function LoadSkin()
 		"DisplayMainTankAndAssist",
 		"DisplayBorder",
 		"ShowDebuffs",
-		"DisplayOnlyDispellableDebuffs",
+		"DisplayOnlyDispellableDebuffs"
 	}
 
 	for i = 1, getn(checkboxes2) do
@@ -204,7 +204,7 @@ local function LoadSkin()
 		"CombatTextPanelFCTDropDown",
 		"CameraPanelStyleDropDown",
 		"MousePanelClickMoveStyleDropDown",
-		"LanguagesPanelLocaleDropDown",
+		"LanguagesPanelLocaleDropDown"
 	}
 
 	for i = 1, getn(dropdown) do
@@ -221,7 +221,7 @@ local function LoadSkin()
 	local buttons = {
 		"CompactUnitFrameProfilesGeneralOptionsFrameResetPositionButton",
 		"CompactUnitFrameProfilesDeleteButton",
-		"CompactUnitFrameProfilesSaveButton",
+		"CompactUnitFrameProfilesSaveButton"
 	}
 
 	for i = 1, getn(buttons) do

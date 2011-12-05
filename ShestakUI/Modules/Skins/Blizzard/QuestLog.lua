@@ -26,7 +26,7 @@ local function LoadSkin()
 		"QuestLogFramePushQuestButton",
 		"QuestLogFrameTrackButton",
 		"QuestLogFrameCancelButton",
-		"QuestLogFrameCompleteButton",
+		"QuestLogFrameCompleteButton"
 	}
 
 	QuestLogFrameCompleteButton:StripTextures()

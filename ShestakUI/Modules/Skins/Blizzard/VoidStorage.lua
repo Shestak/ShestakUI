@@ -12,7 +12,7 @@ local function LoadSkin()
 		"VoidStorageCostFrame",
 		"VoidStorageStorageFrame",
 		"VoidStoragePurchaseFrame",
-		"VoidItemSearchBox",
+		"VoidItemSearchBox"
 	}
 
 	for _, object in pairs(StripAllTextures) do

@@ -21,7 +21,7 @@ local function LoadSkin()
 		"Left",
 		"Right",
 		"TitleBG",
-		"DialogBG",
+		"DialogBG"
 	}
 
 	for i = 1, #texs do

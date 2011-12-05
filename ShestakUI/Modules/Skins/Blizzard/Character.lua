@@ -26,7 +26,7 @@ local function LoadSkin()
 		"Trinket1Slot",
 		"MainHandSlot",
 		"SecondaryHandSlot",
-		"RangedSlot",
+		"RangedSlot"
 	}
 
 	for _, slot in pairs(slots) do
@@ -52,7 +52,7 @@ local function LoadSkin()
 		"CharacterStatsPane",
 		"CharacterFrameInsetRight",
 		"PaperDollSidebarTabs",
-		"PaperDollEquipmentManagerPane",
+		"PaperDollEquipmentManagerPane"
 	}
 
 	CharacterFrameExpandButton:Size(CharacterFrameExpandButton:GetWidth() - 7, CharacterFrameExpandButton:GetHeight() - 7)

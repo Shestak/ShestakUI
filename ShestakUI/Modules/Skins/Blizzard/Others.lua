@@ -35,7 +35,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"StackSplitFrame",
 			"OpacityFrame",
 			"GeneralDockManagerOverflowButtonList",
-			"LFGSearchStatus",
+			"LFGSearchStatus"
 		}
 
 		for i = 1, getn(bgskins) do
@@ -83,7 +83,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"CombatConfigColorsColorizeEntireLine",
 			"aLoadScroll",
 			"BaudErrorFrameListScrollBox",
-			"BaudErrorFrameDetailScrollBox",
+			"BaudErrorFrameDetailScrollBox"
 		}
 
 		for i = 1, getn(insetskins) do
@@ -136,7 +136,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ChatMenu",
 			"EmoteMenu",
 			"LanguageMenu",
-			"VoiceMacroMenu",
+			"VoiceMacroMenu"
 		}
 
 		for i = 1, getn(ChatMenus) do
@@ -153,7 +153,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"InterfaceOptionsFrame",
 			"VideoOptionsFrame",
 			"ColorPickerFrame",
-			"ChatConfigFrame",
+			"ChatConfigFrame"
 		}
 
 		for i = 1, getn(BlizzardHeader) do
@@ -245,7 +245,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ChatConfigFrameCancelButton",
 			"RecordLoopbackSoundButton",
 			"PlayLoopbackSoundButton",
-			"AudioOptionsVoicePanelChatMode1KeyBindingButton",
+			"AudioOptionsVoicePanelChatMode1KeyBindingButton"
 		}
 
 		for i = 1, getn(BlizzardButtons) do

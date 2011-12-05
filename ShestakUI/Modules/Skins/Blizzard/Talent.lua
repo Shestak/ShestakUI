@@ -8,7 +8,7 @@ local function LoadSkin()
 	-- Player Talents
 	local buttons = {
 		"PlayerTalentFrameToggleSummariesButton",
-		"PlayerTalentFrameActivateButton",
+		"PlayerTalentFrameActivateButton"
 	}
 	PlayerTalentFrameToggleSummariesButton:Point("BOTTOM", PlayerTalentFrame, "BOTTOM", 0, 5)
 
@@ -24,7 +24,7 @@ local function LoadSkin()
 		"PlayerTalentFramePanel1HeaderIcon",
 		"PlayerTalentFramePanel2HeaderIcon",
 		"PlayerTalentFramePanel3HeaderIcon",
-		"PlayerTalentFramePetTalents",
+		"PlayerTalentFramePetTalents"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -63,7 +63,7 @@ local function LoadSkin()
 		"PlayerTalentFramePanel2SummaryRoleIcon",
 		"PlayerTalentFramePanel3SummaryRoleIcon",
 		"PlayerTalentFramePetShadowOverlay",
-		"PlayerTalentFrameHeaderHelpBox",
+		"PlayerTalentFrameHeaderHelpBox"
 	}
 
 	for _, texture in pairs(KillTextures) do

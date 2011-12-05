@@ -11,7 +11,7 @@ local function LoadSkin()
 		"PVPColorPickerButton1",
 		"PVPColorPickerButton2",
 		"PVPColorPickerButton3",
-		"PVPBannerFrameAcceptButton",
+		"PVPBannerFrameAcceptButton"
 	}
 
 	for i = 1, #buttons do
@@ -42,7 +42,7 @@ local function LoadSkin()
 		"PVPBannerFrameEditBoxLeft",
 		"PVPBannerFrameEditBoxRight",
 		"PVPBannerFrameEditBoxMiddle",
-		"PVPBannerFrameCancelButton_LeftSeparator",
+		"PVPBannerFrameCancelButton_LeftSeparator"
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -61,7 +61,7 @@ local function LoadSkin()
 		"PVPBannerFrame",
 		"PVPBannerFrameCustomization1",
 		"PVPBannerFrameCustomization2",
-		"PVPBannerFrameCustomizationFrame",
+		"PVPBannerFrameCustomizationFrame"
 	}
 
 	for _, object in pairs(StripAllTextures) do

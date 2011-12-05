@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local StripAllTextures = {
-		"GossipFrameGreetingPanel",
+		"GossipFrameGreetingPanel"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -14,7 +14,7 @@ local function LoadSkin()
 	end
 
 	local KillTextures = {
-		"GossipFramePortrait",
+		"GossipFramePortrait"
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -22,7 +22,7 @@ local function LoadSkin()
 	end
 
 	local buttons = {
-		"GossipFrameGreetingGoodbyeButton",
+		"GossipFrameGreetingGoodbyeButton"
 	}
 
 	for i = 1, #buttons do
