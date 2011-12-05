@@ -104,6 +104,7 @@ if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.n
 	C["skins"].dbm = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
+	C["skins"].combustion_helper = true
 	C["combattext"].crit_prefix = ""
 	C["combattext"].crit_postfix = ""
 	C["combattext"].merge_aoe_spam_time = 1
