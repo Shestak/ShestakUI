@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if C.misc.auto_buy_reagents ~= true and T.level ~= MAX_PLAYER_LEVEL then return end
+if C.misc.auto_buy_reagents ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Auto buy reagents(Квилайт, кредитсы не забывай в коде оставлять/прописывать ;))
@@ -81,7 +81,7 @@ end
 local f = CreateFrame("Frame")
 f:RegisterEvent("MERCHANT_SHOW")
 f:SetScript("OnEvent", function(self, event, unit)
-	if event == "MERCHANT_SHOW" and reagents[T.class] and not (IsAltKeyDown() or IsShiftKeyDown()) then
+	if event == "MERCHANT_SHOW" and reagents[T.class] and T.level == MAX_PLAYER_LEVEL and not (IsAltKeyDown() or IsShiftKeyDown()) then
 		BuyReagents(reagents[T.class])
 	end
 end)
