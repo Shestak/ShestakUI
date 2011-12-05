@@ -18,6 +18,7 @@ local function LoadSkin()
 		"LFDQueueFrameCooldownFrame",
 		"LFGDungeonReadyDialog",
 		"LFGDungeonReadyStatus",
+		"LFGInvitePopup",
 	}
 
 	local KillTextures = {
@@ -38,6 +39,8 @@ local function LoadSkin()
 		"LFDQueueFrameNoLFDWhileLFRLeaveQueueButton",
 		"LFGDungeonReadyDialogEnterDungeonButton",
 		"LFGDungeonReadyDialogLeaveQueueButton",
+		"LFGInvitePopupAcceptButton",
+		"LFGInvitePopupDeclineButton",
 	}
 
 	local checkButtons = {
