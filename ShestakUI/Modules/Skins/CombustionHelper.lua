@@ -6,6 +6,7 @@ if C.skins.combustion_helper ~= true or T.class ~= "MAGE" then return end
 ----------------------------------------------------------------------------------------
 local CBHSkin = CreateFrame("Frame")
 CBHSkin:RegisterEvent("PLAYER_LOGIN")
+CBHSkin:RegisterEvent("PLAYER_TALENT_UPDATE")
 CBHSkin:SetScript("OnEvent", function(self, event, addon)
 	if not IsAddOnLoaded("CombustionHelper") then return end
 
