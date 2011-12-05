@@ -1634,8 +1634,6 @@ Filger_Spells = {
 			{ spellID = 85673, size = 30, filter = "CD" },
 			-- Consecration
 			{ spellID = 26573, size = 30, filter = "CD" },
-			-- Holy Radiance
-			{ spellID = 82327, size = 30, filter = "CD" },
 			-- Divine Protection
 			{ spellID = 498, size = 30, filter = "CD" },
 			-- Avenging Wrath
@@ -1895,18 +1893,10 @@ Filger_Spells = {
 			{ spellID = 33076, size = 30, filter = "CD" },
 			-- Silence
 			{ spellID = 15487, size = 30, filter = "CD" },
-			-- Power Word: Shield
-			{ spellID = 17, size = 30, filter = "CD" },
 			-- Holy Fire
 			{ spellID = 14914, size = 30, filter = "CD" },
 			-- Shadow Word: Death
 			{ spellID = 32379, size = 30, filter = "CD" },
-			-- Hymn of Hope
-			{ spellID = 64901, size = 30, filter = "CD" },
-			-- Divine Hymn
-			{ spellID = 64843, size = 30, filter = "CD" },
-			-- Shadowfiend
-			{ spellID = 34433, size = 30, filter = "CD" },
 			-- Dispersion
 			{ spellID = 47585, size = 30, filter = "CD" },
 			-- Psychic Horror
