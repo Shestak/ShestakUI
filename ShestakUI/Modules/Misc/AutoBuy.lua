@@ -54,7 +54,7 @@ local function BuyReagents(reagents)
 				subtotal = price * (quantity / stack)
 
 				if subtotal > GetMoney() then
-					print("|cffffff00"..ERR_NOT_ENOUGH_MONEY..".|r")
+					print("|cffffff00"..ERR_NOT_ENOUGH_MONEY.."|r")
 					return
 				end
 
