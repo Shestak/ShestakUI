@@ -92,6 +92,7 @@
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\AutoBuy.lua"/>
 	<Script file="Modules\Misc\DungeonTabs.lua"/>
+	<Script file="Modules\Misc\AutoChefsHat.lua"/>
 
 	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
 	<Script file="Modules\Cooldowns\PulseCD.lua"/>
