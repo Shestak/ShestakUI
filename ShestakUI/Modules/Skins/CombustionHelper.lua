@@ -35,7 +35,7 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 	if combusettingstable.combubartimers == true then
 		combusettingstable.combubarwidth = 55
 
-		for _, label in ipairs({LBLabel, IgniteLabel, PyroLabel, FFBLabel, LBTextFrameLabel, IgnTextFrameLabel, PyroTextFrameLabel, FFBTextFrameLabel, CritTypeFrameLabel, CritTextFrameLabel, StatusTextFrameLabel, LBtrack1, LBtrack2, LBtrack3, LBtrack1Timer, LBtrack2Timer, LBtrack3Timer}) do
+		for _, label in ipairs({LBLabel, IgniteLabel, PyroLabel, FFBLabel, LBTextFrameLabel, IgnTextFrameLabel, PyroTextFrameLabel, FFBTextFrameLabel, CritTypeFrameLabel, CritTextFrameLabel, StatusTextFrameLabel, LBtrack1, LBtrack2, LBtrack3, LBtrack4, LBtrack5, LBtrack1Timer, LBtrack2Timer, LBtrack3Timer, LBtrack4Timer, LBtrack5Timer}) do
 			label:SetFont(C.font.stylization_font, C.font.stylization_font_size / combusettingstable.combuscale, C.font.stylization_font_style)
 			label:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 		end
@@ -44,7 +44,7 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 			label:SetWidth(combusettingstable.combubarwidth + 10)
 		end
 
-		for _, label in ipairs({LBtrack1Timer, LBtrack2Timer, LBtrack3Timer}) do
+		for _, label in ipairs({LBtrack1Timer, LBtrack2Timer, LBtrack3Timer, LBtrack4Timer, LBtrack5Timer}) do
 			label:SetWidth(combusettingstable.combubarwidth - 15)
 		end
 
@@ -60,7 +60,7 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 			label:SetWidth(CombustionFrame:GetWidth() - 12)
 		end
 
-		for _, bar in ipairs({LBtrack1Bar, LBtrack2Bar, LBtrack3Bar}) do
+		for _, bar in ipairs({LBtrack1Bar, LBtrack2Bar, LBtrack3Bar, LBtrack4Bar, LBtrack5Bar}) do
 			bar:SetHeight(C.font.stylization_font_size)
 			bar:SetWidth(LBtrackFrame:GetWidth() - 15)
 		end
@@ -71,7 +71,7 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 		CombustionFrame:SetHeight(77)
 		LBtrackFrame:SetWidth(132)
 
-		for _, label in ipairs({LBLabel, IgniteLabel, PyroLabel, FFBLabel, LBTextFrameLabel, IgnTextFrameLabel, PyroTextFrameLabel, FFBTextFrameLabel, StatusTextFrameLabel, LBtrack1, LBtrack2, LBtrack3, LBtrack1Timer, LBtrack2Timer, LBtrack3Timer}) do
+		for _, label in ipairs({LBLabel, IgniteLabel, PyroLabel, FFBLabel, LBTextFrameLabel, IgnTextFrameLabel, PyroTextFrameLabel, FFBTextFrameLabel, StatusTextFrameLabel, LBtrack1, LBtrack2, LBtrack3, LBtrack4, LBtrack5, LBtrack1Timer, LBtrack2Timer, LBtrack3Timer, LBtrack4Timer, LBtrack5Timer}) do
 			label:SetTextHeight(C.font.stylization_font_size + 5)
 			label:SetHeight(C.font.stylization_font_size + 5)
 			label:SetFont(C.font.stylization_font, C.font.stylization_font_size / combusettingstable.combuscale, C.font.stylization_font_style)
@@ -82,7 +82,7 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 			label:SetWidth(85)
 		end
 
-		for _, label in ipairs({LBtrack1Timer, LBtrack2Timer, LBtrack3Timer}) do
+		for _, label in ipairs({LBtrack1Timer, LBtrack2Timer, LBtrack3Timer, LBtrack4Timer, LBtrack5Timer}) do
 			label:SetWidth(62)
 		end
 
@@ -99,7 +99,7 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 			bar:SetWidth(118)
 		end
 
-		for _, bar in ipairs({LBtrack1Bar, LBtrack2Bar, LBtrack3Bar}) do
+		for _, bar in ipairs({LBtrack1Bar, LBtrack2Bar, LBtrack3Bar, LBtrack4Bar, LBtrack5Bar}) do
 			bar:SetHeight(C.font.stylization_font_size)
 			bar:SetWidth(LBtrackFrame:GetWidth() - 15)
 		end
