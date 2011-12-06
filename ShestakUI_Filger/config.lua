@@ -3227,7 +3227,7 @@ Filger_Spells = {
 			-- Fading Light (Ultraxion)
 			{ spellID = 109075, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Shrapnel (Madness of Deathwing)
-			{ spellID = 106794, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
+			{ spellID = 106794, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "T_BUFF",
