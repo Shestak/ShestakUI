@@ -87,6 +87,14 @@ Filger_Spells = {
 			-- Pulverize
 			{ spellID = 80313, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
+			-- Weapons
+			-- Physical Agility
+			-- Kiril, Fury of Beasts (Agility, Proc)
+			{ spellID = 108011, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Caster General
+			-- Ti'tahk, the Steps of Time (Haste, Proc)
+			{ spellID = 107804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
 			-- Trinkets
 			-- General
 			-- Battlemaster Trinket (Health, Use)
@@ -416,6 +424,11 @@ Filger_Spells = {
 			-- Focus Fire
 			{ spellID = 82692, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
+			-- Weapons
+			-- Physical Agility
+			-- Kiril, Fury of Beasts (Agility, Proc)
+			{ spellID = 108011, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
 			-- Trinkets
 			-- General
 			-- Battlemaster Trinket (Health, Use)
@@ -668,6 +681,11 @@ Filger_Spells = {
 			{ spellID = 87098, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Incanter's Absorption
 			{ spellID = 44413, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Weapons
+			-- Caster General
+			-- Ti'tahk, the Steps of Time (Haste, Proc)
+			{ spellID = 107804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Trinkets
 			-- General
@@ -1177,6 +1195,11 @@ Filger_Spells = {
 			{ spellID = 65264, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Stoneclaw Totem
 			{ spellID = 55277, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Weapons
+			-- Caster General
+			-- Ti'tahk, the Steps of Time (Haste, Proc)
+			{ spellID = 107804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Trinkets
 			-- General
@@ -1747,6 +1770,11 @@ Filger_Spells = {
 			-- Chakra: Chastise
 			{ spellID = 81209, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
+			-- Weapons
+			-- Caster General
+			-- Ti'tahk, the Steps of Time (Haste, Proc)
+			{ spellID = 107804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
 			-- Trinkets
 			-- General
 			-- Battlemaster Trinket (Health, Use)
@@ -2014,6 +2042,11 @@ Filger_Spells = {
 			{ spellID = 88447, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shadow Trance
 			{ spellID = 17941, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+
+			-- Weapons
+			-- Caster General
+			-- Ti'tahk, the Steps of Time (Haste, Proc)
+			{ spellID = 107804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Trinkets
 			-- General
@@ -3189,6 +3222,8 @@ Filger_Spells = {
 			{ spellID = 100460, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Dragon Soul
+			-- Shrapnel (Madness of Deathwing)
+			{ spellID = 106794, size = 60, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Disrupting Shadows (Zon'ozz)
 			{ spellID = 103434, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Fading Light (Ultraxion)
