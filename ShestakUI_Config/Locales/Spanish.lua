@@ -22,7 +22,7 @@ L_GUI_MISC_AUTOQUEST = "Auto aceptar misiones"
 L_GUI_MISC_AUTODUEL = "Auto rechazar duelos"
 L_GUI_MISC_AUTOACCEPT = "Auto aceptar invitaciones"
 L_GUI_MISC_AUTORESSURECT = "Auto resurrección en los Campos de Batalla"
-L_GUI_MISC_AUTOBUYREAGENTS = "Auto buy reagents" -- Needs review
+L_GUI_MISC_AUTOBUYREAGENTS = "Auto comprar componentes"
 L_GUI_MISC_MARKING = "Marca el objetivo cuando pulsas *shift*"
 L_GUI_MISC_INVKEYWORD = "Acrónimo para invitaciones (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"
@@ -310,7 +310,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Remarcar textura de desventajas + icono
 L_GUI_UF_PLUGINS_AURA_WATCH = "*BANDA* Ver las auras"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Temporizador en los iconos de perjuicios de la banda"
 L_GUI_UF_PLUGINS_HEALCOMM = "Barra de sanación entrante"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle click when the unit is dead (does not work with Clique enabled)" -- Needs review
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto lanzar resurreción con click central cuando la unidad este muerta (no funciona cuando Clique está activado)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Panel superior"
