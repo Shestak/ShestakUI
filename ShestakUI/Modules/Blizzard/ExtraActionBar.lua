@@ -40,5 +40,4 @@ icon:Point("BOTTOMRIGHT", button, -2, 2)
 icon:SetDrawLayer("ARTWORK")
 
 button:StyleButton(true)
-
 button:SetTemplate("Default")

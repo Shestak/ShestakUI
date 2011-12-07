@@ -5,13 +5,11 @@ if not C.actionbar.enable == true then return end
 --	By Tukz
 ----------------------------------------------------------------------------------------
 local _G = _G
-local securehandler = CreateFrame("Frame", nil, nil, "SecureHandlerBaseTemplate")
 local replace = string.gsub
 
-local function style(self)
+local function StyleNormalButton(self)
 	local name = self:GetName()
 	if name:match("MultiCast") or name:match("ExtraActionButton") then return end
-	local action = self.action
 	local button = self
 	local icon = _G[name.."Icon"]
 	local count = _G[name.."Count"]
@@ -89,7 +87,7 @@ local function style(self)
 	end
 end
 
-local function stylesmallbutton(normal, button, icon, name, pet)
+local function StyleSmallButton(normal, button, icon, name, pet)
 	local flash = _G[name.."Flash"]
 	button:SetNormalTexture("")
 	button.SetNormalTexture = T.dummy
@@ -145,7 +143,7 @@ function T.StyleShift()
 		local button = _G[name]
 		local icon = _G[name.."Icon"]
 		local normal = _G[name.."NormalTexture"]
-		stylesmallbutton(normal, button, icon, name)
+		StyleSmallButton(normal, button, icon, name)
 	end
 end
 
@@ -155,11 +153,11 @@ function T.StylePet()
 		local button = _G[name]
 		local icon = _G[name.."Icon"]
 		local normal = _G[name.."NormalTexture2"]
-		stylesmallbutton(normal, button, icon, name, true)
+		StyleSmallButton(normal, button, icon, name, true)
 	end
 end
 
-local function updatehotkey(self, actionButtonType)
+local function UpdateHotkey(self, actionButtonType)
 	local hotkey = _G[self:GetName().."HotKey"]
 	local text = hotkey:GetText()
 
@@ -218,7 +216,7 @@ local function SetupFlyoutButton()
 	for i = 1, buttons do
 		-- Prevent error if you don't have max ammount of buttons
 		if _G["SpellFlyoutButton"..i] then
-			style(_G["SpellFlyoutButton"..i])
+			StyleNormalButton(_G["SpellFlyoutButton"..i])
 			_G["SpellFlyoutButton"..i]:StyleButton(true)
 
 			if _G["SpellFlyoutButton"..i]:GetChecked() then
@@ -237,7 +235,7 @@ end
 SpellFlyout:HookScript("OnShow", SetupFlyoutButton)
 
 -- Hide the Mouseover texture and attempt to find the ammount of buttons to be skinned
-local function styleflyout(self)
+local function StyleFlyoutButton(self)
 	if self.FlyoutBorder then
 		self.FlyoutBorder:SetAlpha(0)
 	end
@@ -274,11 +272,11 @@ do
 	end
 end
 
-hooksecurefunc("ActionButton_Update", style)
+hooksecurefunc("ActionButton_Update", StyleNormalButton)
+hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
 if C.actionbar.hotkey == true then
-	hooksecurefunc("ActionButton_UpdateHotkeys", updatehotkey)
+	hooksecurefunc("ActionButton_UpdateHotkeys", UpdateHotkey)
 end
-hooksecurefunc("ActionButton_UpdateFlyout", styleflyout)
 
 ----------------------------------------------------------------------------------------
 --	TotemBar style
