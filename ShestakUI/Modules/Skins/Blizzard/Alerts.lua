@@ -72,6 +72,7 @@ local function LoadSkin()
 				_G["DungeonCompletionAlertFrame"..i.."Shine"]:Kill()
 				_G["DungeonCompletionAlertFrame"..i.."GlowFrame"]:Kill()
 				_G["DungeonCompletionAlertFrame"..i.."GlowFrame"].glow:Kill()
+				_G["DungeonCompletionAlertFrame"..i].raidArt:Kill()
 
 				-- Icon
 				_G["DungeonCompletionAlertFrame"..i.."DungeonTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
