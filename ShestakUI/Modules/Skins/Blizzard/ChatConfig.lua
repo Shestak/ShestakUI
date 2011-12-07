@@ -58,14 +58,172 @@ local function LoadSkin()
 		local button = _G[buttons[i]]
 		if button then
 			button:SkinButton()
+			button:ClearAllPoints()
 		end
 	end
 
+	local checkboxes = {
+		"CombatConfigColorsHighlightingLine",
+		"CombatConfigColorsHighlightingAbility",
+		"CombatConfigColorsHighlightingDamage",
+		"CombatConfigColorsHighlightingSchool",
+		"CombatConfigColorsColorizeUnitNameCheck",
+		"CombatConfigColorsColorizeSpellNamesCheck",
+		"CombatConfigColorsColorizeSpellNamesSchoolColoring",
+		"CombatConfigColorsColorizeDamageNumberCheck",
+		"CombatConfigColorsColorizeDamageNumberSchoolColoring",
+		"CombatConfigColorsColorizeDamageSchoolCheck",
+		"CombatConfigColorsColorizeEntireLineCheck",
+		"CombatConfigFormattingShowTimeStamp",
+		"CombatConfigFormattingShowBraces",
+		"CombatConfigFormattingUnitNames",
+		"CombatConfigFormattingSpellNames",
+		"CombatConfigFormattingItemNames",
+		"CombatConfigFormattingFullText",
+		"CombatConfigSettingsShowQuickButton",
+		"CombatConfigSettingsSolo",
+		"CombatConfigSettingsParty",
+		"CombatConfigSettingsRaid"
+	}
+
+	for i = 1, getn(checkboxes) do
+		local checkbox = _G[checkboxes[i]]
+		T.SkinCheckBox(_G[checkboxes[i]])
+	end
+
+	ChatConfigChannelSettingsLeft:SetScript("OnShow", function(self)
+		for i = 1, #ChatConfigChannelSettingsLeft.checkBoxTable do
+			_G["ChatConfigChannelSettingsLeftCheckBox"..i]:StripTextures()
+			_G["ChatConfigChannelSettingsLeftCheckBox"..i]:SetHeight(ChatConfigOtherSettingsCombatCheckBox1:GetHeight())
+			T.SkinCheckBox(_G["ChatConfigChannelSettingsLeftCheckBox"..i.."Check"])
+			T.SkinCheckBox(_G["ChatConfigChannelSettingsLeftCheckBox"..i.."ColorClasses"])
+			_G["ChatConfigChannelSettingsLeftCheckBox"..i.."ColorClasses"]:SetHeight(ChatConfigChatSettingsLeftCheckBox1Check:GetHeight())
+		end
+	end)
+
+	CreateChatChannelList(self, GetChannelList())
+	ChatConfig_CreateCheckboxes(ChatConfigChannelSettingsLeft, CHAT_CONFIG_CHANNEL_LIST, "ChatConfigCheckBoxWithSwatchAndClassColorTemplate", CHANNELS)
+	ChatConfig_UpdateCheckboxes(ChatConfigChannelSettingsLeft)
+
+	ChatConfigBackgroundFrame:SetScript("OnShow", function(self)
+		for i = 1, #CHAT_CONFIG_CHAT_LEFT do
+			_G["ChatConfigChatSettingsLeftCheckBox"..i]:StripTextures()
+			_G["ChatConfigChatSettingsLeftCheckBox"..i]:CreateBackdrop("Overlay")
+			_G["ChatConfigChatSettingsLeftCheckBox"..i].backdrop:Point("TOPLEFT", 3, -1)
+			_G["ChatConfigChatSettingsLeftCheckBox"..i].backdrop:Point("BOTTOMRIGHT", -3, 1)
+			_G["ChatConfigChatSettingsLeftCheckBox"..i].backdrop:SetFrameLevel(4)
+			_G["ChatConfigChatSettingsLeftCheckBox"..i]:SetHeight(ChatConfigOtherSettingsCombatCheckBox1:GetHeight())
+			T.SkinCheckBox(_G["ChatConfigChatSettingsLeftCheckBox"..i.."Check"])
+			T.SkinCheckBox(_G["ChatConfigChatSettingsLeftCheckBox"..i.."ColorClasses"])
+			_G["ChatConfigChatSettingsLeftCheckBox"..i.."ColorClasses"]:SetHeight(ChatConfigChatSettingsLeftCheckBox1Check:GetHeight())
+		end
+
+		for i = 1, #CHAT_CONFIG_OTHER_COMBAT do
+			_G["ChatConfigOtherSettingsCombatCheckBox"..i]:StripTextures()
+			_G["ChatConfigOtherSettingsCombatCheckBox"..i]:CreateBackdrop("Overlay")
+			_G["ChatConfigOtherSettingsCombatCheckBox"..i].backdrop:Point("TOPLEFT", 3, -1)
+			_G["ChatConfigOtherSettingsCombatCheckBox"..i].backdrop:Point("BOTTOMRIGHT", -3, 1)
+			_G["ChatConfigOtherSettingsCombatCheckBox"..i].backdrop:SetFrameLevel(4)
+			T.SkinCheckBox(_G["ChatConfigOtherSettingsCombatCheckBox"..i.."Check"])
+		end
+
+		for i = 1, #CHAT_CONFIG_OTHER_PVP do
+			_G["ChatConfigOtherSettingsPVPCheckBox"..i]:StripTextures()
+			_G["ChatConfigOtherSettingsPVPCheckBox"..i]:CreateBackdrop("Overlay")
+			_G["ChatConfigOtherSettingsPVPCheckBox"..i].backdrop:Point("TOPLEFT", 3, -1)
+			_G["ChatConfigOtherSettingsPVPCheckBox"..i].backdrop:Point("BOTTOMRIGHT", -3, 1)
+			_G["ChatConfigOtherSettingsPVPCheckBox"..i].backdrop:SetFrameLevel(4)
+			T.SkinCheckBox(_G["ChatConfigOtherSettingsPVPCheckBox"..i.."Check"])
+		end
+
+		for i = 1, #CHAT_CONFIG_OTHER_SYSTEM do
+			_G["ChatConfigOtherSettingsSystemCheckBox"..i]:StripTextures()
+			_G["ChatConfigOtherSettingsSystemCheckBox"..i]:CreateBackdrop("Overlay")
+			_G["ChatConfigOtherSettingsSystemCheckBox"..i].backdrop:Point("TOPLEFT", 3, -1)
+			_G["ChatConfigOtherSettingsSystemCheckBox"..i].backdrop:Point("BOTTOMRIGHT", -3, 1)
+			_G["ChatConfigOtherSettingsSystemCheckBox"..i].backdrop:SetFrameLevel(4)
+			T.SkinCheckBox(_G["ChatConfigOtherSettingsSystemCheckBox"..i.."Check"])
+		end
+
+		for i = 1, #CHAT_CONFIG_CHAT_CREATURE_LEFT do
+			_G["ChatConfigOtherSettingsCreatureCheckBox"..i]:StripTextures()
+			_G["ChatConfigOtherSettingsCreatureCheckBox"..i]:CreateBackdrop("Overlay")
+			_G["ChatConfigOtherSettingsCreatureCheckBox"..i].backdrop:Point("TOPLEFT", 3, -1)
+			_G["ChatConfigOtherSettingsCreatureCheckBox"..i].backdrop:Point("BOTTOMRIGHT", -3, 1)
+			_G["ChatConfigOtherSettingsCreatureCheckBox"..i].backdrop:SetFrameLevel(4)
+			T.SkinCheckBox(_G["ChatConfigOtherSettingsCreatureCheckBox"..i.."Check"])
+		end
+
+		for i = 1,#COMBAT_CONFIG_MESSAGESOURCES_BY do
+			_G["CombatConfigMessageSourcesDoneByCheckBox"..i]:StripTextures()
+			_G["CombatConfigMessageSourcesDoneByCheckBox"..i]:CreateBackdrop("Overlay")
+			_G["CombatConfigMessageSourcesDoneByCheckBox"..i].backdrop:Point("TOPLEFT", 3, -1)
+			_G["CombatConfigMessageSourcesDoneByCheckBox"..i].backdrop:Point("BOTTOMRIGHT", -3, 1)
+			_G["CombatConfigMessageSourcesDoneByCheckBox"..i].backdrop:SetFrameLevel(5)
+			T.SkinCheckBox(_G["CombatConfigMessageSourcesDoneByCheckBox"..i.."Check"])
+		end
+
+		for i = 1, #COMBAT_CONFIG_MESSAGESOURCES_TO do
+			_G["CombatConfigMessageSourcesDoneToCheckBox"..i]:StripTextures()
+			_G["CombatConfigMessageSourcesDoneToCheckBox"..i]:CreateBackdrop("Overlay")
+			_G["CombatConfigMessageSourcesDoneToCheckBox"..i].backdrop:Point("TOPLEFT", 3, -1)
+			_G["CombatConfigMessageSourcesDoneToCheckBox"..i].backdrop:Point("BOTTOMRIGHT", -3, 1)
+			_G["CombatConfigMessageSourcesDoneToCheckBox"..i].backdrop:SetFrameLevel(5)
+			T.SkinCheckBox(_G["CombatConfigMessageSourcesDoneToCheckBox"..i.."Check"])
+		end
+
+		for i = 1, #COMBAT_CONFIG_UNIT_COLORS do
+			_G["CombatConfigColorsUnitColorsSwatch"..i]:StripTextures()
+		end
+
+		for i = 1, 4 do
+			for j = 1, 4 do
+				if _G["CombatConfigMessageTypesLeftCheckBox"..i] and _G["CombatConfigMessageTypesLeftCheckBox"..i.."_"..j] then
+					T.SkinCheckBox(_G["CombatConfigMessageTypesLeftCheckBox"..i])
+					T.SkinCheckBox(_G["CombatConfigMessageTypesLeftCheckBox"..i.."_"..j])
+				end
+			end
+			for j = 1, 10 do
+				if _G["CombatConfigMessageTypesRightCheckBox"..i] and _G["CombatConfigMessageTypesRightCheckBox"..i.."_"..j] then
+					T.SkinCheckBox(_G["CombatConfigMessageTypesRightCheckBox"..i])
+					T.SkinCheckBox(_G["CombatConfigMessageTypesRightCheckBox"..i.."_"..j])
+				end
+			end
+			T.SkinCheckBox(_G["CombatConfigMessageTypesMiscCheckBox"..i])
+		end
+	end)
+
+	for i = 1, #COMBAT_CONFIG_TABS do
+		local tab = _G["CombatConfigTab"..i]
+		if tab then
+			tab:SkinButton()
+			tab:SetHeight(tab:GetHeight() - 9)
+			tab:ClearAllPoints()
+			if i == 1 then
+				tab:SetPoint("BOTTOMLEFT", _G["ChatConfigBackgroundFrame"], "TOPLEFT", 0, 1)
+			else
+				tab:Point("LEFT", _G["CombatConfigTab"..i-1], "RIGHT", 1, 0)
+			end
+			_G["CombatConfigTab"..i.."Text"]:SetPoint("BOTTOM", 0, 7)
+		end
+	end
+
+	T.SkinEditBox(_G["CombatConfigSettingsNameEditBox"])
+	_G["CombatConfigSettingsNameEditBox"]:Height(_G["CombatConfigSettingsNameEditBox"]:GetHeight() - 2)
+	T.SkinNextPrevButton(_G["ChatConfigMoveFilterUpButton"], true)
+	T.SkinNextPrevButton(_G["ChatConfigMoveFilterDownButton"], true)
 	_G["ChatConfigFrameDefaultButton"]:Width(125)
-	_G["ChatConfigFrameDefaultButton"]:ClearAllPoints()
+	_G["CombatLogDefaultButton"]:Width(125)
+
+	_G["ChatConfigMoveFilterUpButton"]:Point("TOPLEFT", _G["ChatConfigCombatSettingsFilters"], "BOTTOMLEFT", 0, -1)
+	_G["ChatConfigMoveFilterDownButton"]:Point("TOPLEFT", _G["ChatConfigMoveFilterUpButton"], "TOPRIGHT", 1, 0)
 	_G["ChatConfigFrameDefaultButton"]:Point("TOP", _G["ChatConfigCategoryFrame"], "BOTTOM", 0, -4)
-	_G["ChatConfigFrameOkayButton"]:ClearAllPoints()
 	_G["ChatConfigFrameOkayButton"]:Point("TOPRIGHT", _G["ChatConfigBackgroundFrame"], "BOTTOMRIGHT", 0, -4)
+	_G["CombatLogDefaultButton"]:Point("TOPLEFT", _G["ChatConfigCategoryFrame"], "BOTTOMLEFT", 0, -4)
+	_G["CombatConfigSettingsSaveButton"]:Point("TOPLEFT", _G["CombatConfigSettingsNameEditBox"], "TOPRIGHT", 5, 2)
+	_G["ChatConfigCombatSettingsFiltersDeleteButton"]:Point("TOPRIGHT", _G["ChatConfigCombatSettingsFilters"], "BOTTOMRIGHT", 0, -1)
+	_G["ChatConfigCombatSettingsFiltersCopyFilterButton"]:Point("RIGHT", _G["ChatConfigCombatSettingsFiltersDeleteButton"], "LEFT", -1, 0)
+	_G["ChatConfigCombatSettingsFiltersAddFilterButton"]:Point("RIGHT", _G["ChatConfigCombatSettingsFiltersCopyFilterButton"], "LEFT", -1, 0)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
