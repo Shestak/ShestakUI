@@ -11,6 +11,21 @@ end
 hooksecurefunc("ShowReadyCheck", ShowReadyCheckHook)
 
 ----------------------------------------------------------------------------------------
+--	Force other warning
+----------------------------------------------------------------------------------------
+local ForceWarning = CreateFrame("Frame")
+ForceWarning:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
+ForceWarning:RegisterEvent("LFG_PROPOSAL_SHOW")
+ForceWarning:RegisterEvent("PARTY_INVITE_REQUEST")
+ForceWarning:SetScript("OnEvent", function(self, event)
+	if event == "UPDATE_BATTLEFIELD_STATUS" and StaticPopup_Visible("CONFIRM_BATTLEFIELD_ENTRY") then
+		PlaySound("ReadyCheck", "Master")
+	elseif event == "LFG_PROPOSAL_SHOW" or event == "PARTY_INVITE_REQUEST" then
+		PlaySound("ReadyCheck", "Master")
+	end
+end)
+
+----------------------------------------------------------------------------------------
 --	ALT+Click to buy a stack
 ----------------------------------------------------------------------------------------
 hooksecurefunc("MerchantItemButton_OnModifiedClick", function(self, button)
@@ -258,4 +273,5 @@ pFilter:RegisterEvent("CVAR_UPDATE")
 pFilter:RegisterEvent("PLAYER_ENTERING_WORLD")
 pFilter:SetScript("OnEvent", function(self, event, cvar)
 	SetCVar("profanityFilter", 0)
+	BNSetMatureLanguageFilter(false)
 end)
