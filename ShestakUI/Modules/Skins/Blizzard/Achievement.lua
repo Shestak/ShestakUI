@@ -333,7 +333,7 @@ local function LoadSkin()
 		local numCriteria = GetAchievementNumCriteria(id)
 		local textStrings, metas = 0, 0
 		for i = 1, numCriteria do
-			local criteriaString, criteriaType, completed, quantity, reqQuantity, charName, flags, assetID, quantityString = GetAchievementCriteriaInfo(id, i)
+			local _, criteriaType, completed, _, _, _, _, assetID = GetAchievementCriteriaInfo(id, i)
 
 			if criteriaType == CRITERIA_TYPE_ACHIEVEMENT and assetID then
 				metas = metas + 1
