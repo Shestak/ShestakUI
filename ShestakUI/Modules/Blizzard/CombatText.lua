@@ -93,6 +93,7 @@ elseif T.class == "PALADIN" then
 		ct.aoespam[94289] = true	-- Protector of the Innocent
 		ct.aoespam[53652] = true	-- Beacon of Light
 		ct.aoespam[85222] = true	-- Light of Dawn
+		ct.aoespam[82327] = true	-- Holy Radiance
 	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
