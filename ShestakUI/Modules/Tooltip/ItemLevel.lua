@@ -4,7 +4,7 @@ if C.tooltip.enable ~= true or C.tooltip.average_lvl ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Average item level(AiL by havoc74)
 ----------------------------------------------------------------------------------------
-local MINCOLOR, COLORINC, INCMOD, MinIL, MaxIL = 0.5, 0.2, 0.5, 284, 372
+local MINCOLOR, COLORINC, INCMOD, MinIL, MaxIL = 0.5, 0.2, 0.5, 288, 397
 
 local slotName = {
 	"HeadSlot", "NeckSlot", "ShoulderSlot", "BackSlot", "ChestSlot", "WristSlot",
