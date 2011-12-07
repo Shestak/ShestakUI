@@ -16,7 +16,7 @@ if C.raidframe.plugins_aura_watch == true then
 				{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},		-- Power Word: Shield
 				{10060, "RIGHT", {0.89, 0.1, 0.1}},				-- Power Infusion
 				{33206, "LEFT", {0.89, 0.1, 0.1}, true},		-- Pain Suppress
-				{47788, "LEFT", {0.86, 0.52, 0}, true},			-- Hand of Freedom
+				{47788, "LEFT", {0.86, 0.52, 0}, true},			-- Guardian Spirit
 			},
 			DRUID = {
 				{774, "TOPRIGHT", {0.8, 0.4, 0.8}},				-- Rejuvenation
@@ -29,6 +29,7 @@ if C.raidframe.plugins_aura_watch == true then
 				{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},		-- Hand of Protection
 				{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},	-- Hand of Freedom
 				{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},	-- Hand of Salvation
+				{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},	-- Hand of Sacrifice
 			},
 			SHAMAN = {
 				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Riptide 
@@ -227,8 +228,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(105285),	-- Target
 			SpellName(107061),	-- Ice Lance
 			-- Ultraxion
-			SpellName(110080),	-- Fading Light
-			SpellName(110070),	-- Fading Light
+			SpellName(105925),	-- Fading Light
 			-- Warmaster Blackhorn
 			SpellName(108043),	-- Devastate
 			SpellName(108046),	-- Shockwave
