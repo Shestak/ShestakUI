@@ -63,9 +63,9 @@ hooksecurefunc("GuildChallengeAlertFrame_FixAnchors", function()
 		if dFrame and dFrame:IsShown() then
 			GuildChallengeAlertFrame:ClearAllPoints()
 			if pos == "TOP" then
-				GuildChallengeAlertFrame:SetPoint("TOP", bFrame, "BOTTOM", 0, -10)
+				GuildChallengeAlertFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, -10)
 			else
-				GuildChallengeAlertFrame:SetPoint("BOTTOM", bFrame, "TOP", 0, 10)
+				GuildChallengeAlertFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, 10)
 			end
 			return
 		end
