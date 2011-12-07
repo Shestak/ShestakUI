@@ -256,7 +256,7 @@ StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = 0
 StaticPopupDialogs.CONFIRM_BATTLEFIELD_ENTRY.button2 = nil
 
 ----------------------------------------------------------------------------------------
--- Fix SearchLFGLeave() taint
+--	Fix SearchLFGLeave() taint
 ----------------------------------------------------------------------------------------
 local TaintFix = CreateFrame("Frame")
 TaintFix:SetScript("OnUpdate", function(self, elapsed)
@@ -266,7 +266,7 @@ TaintFix:SetScript("OnUpdate", function(self, elapsed)
 end)
 
 ----------------------------------------------------------------------------------------
--- Fix profanityFilter(by p3lim) Temporarily, until Blizzard fix it.
+--	Fix profanityFilter(by p3lim)(temporarily, until Blizzard fix it)
 ----------------------------------------------------------------------------------------
 local pFilter = CreateFrame("Frame")
 pFilter:RegisterEvent("CVAR_UPDATE")
@@ -275,3 +275,14 @@ pFilter:SetScript("OnEvent", function(self, event, cvar)
 	SetCVar("profanityFilter", 0)
 	BNSetMatureLanguageFilter(false)
 end)
+
+----------------------------------------------------------------------------------------
+--	Auto SetFilter for AchievementUI
+----------------------------------------------------------------------------------------
+--[[local AchFilter = CreateFrame("Frame")
+AchFilter:RegisterEvent("ADDON_LOADED")
+AchFilter:SetScript("OnEvent", function(self, event, addon)
+	if addon == "Blizzard_AchievementUI" then
+		AchievementFrame_SetFilter(3)
+	end
+end)]]

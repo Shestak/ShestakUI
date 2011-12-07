@@ -183,6 +183,7 @@ local micromenu = {
 	end},
 	{text = ACHIEVEMENT_BUTTON, notCheckable = 1, func = function()
 		ToggleAchievementFrame()
+		--AchievementFrame_SetFilter(3)
 	end},
 	{text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
 		ToggleFrame(QuestLogFrame)
