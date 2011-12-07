@@ -57,6 +57,28 @@ hooksecurefunc("DungeonCompletionAlertFrame_FixAnchors", function()
 	end
 end)
 
+hooksecurefunc("GuildChallengeAlertFrame_FixAnchors", function()
+	for i = MAX_ACHIEVEMENT_ALERTS, 1, -1 do
+		local dFrame = _G["DungeonCompletionAlertFrame1"]
+		if dFrame and dFrame:IsShown() then
+			GuildChallengeAlertFrame:ClearAllPoints()
+			if pos == "TOP" then
+				GuildChallengeAlertFrame:SetPoint("TOP", bFrame, "BOTTOM", 0, -10)
+			else
+				GuildChallengeAlertFrame:SetPoint("BOTTOM", bFrame, "TOP", 0, 10)
+			end
+			return
+		end
+
+		GuildChallengeAlertFrame:ClearAllPoints()
+		if pos == "TOP" then
+			GuildChallengeAlertFrame:SetPoint("TOP", AchievementAnchor, "BOTTOM")
+		else
+			GuildChallengeAlertFrame:SetPoint("BOTTOM", AchievementAnchor, "TOP")
+		end
+	end
+end)
+
 local initialize = false
 function T.PostAchievementMove(frame)
 	local point = select(1, frame:GetPoint())

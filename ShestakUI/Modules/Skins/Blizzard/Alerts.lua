@@ -89,6 +89,47 @@ local function LoadSkin()
 		end
 	end
 	hooksecurefunc("DungeonCompletionAlertFrame_FixAnchors", SkinDungeonPopUp)
+
+	function SkinChallengePopUp()
+		local frame = _G["GuildChallengeAlertFrame"]
+
+		if frame then
+			frame:SetAlpha(1)
+			frame.SetAlpha = T.dummy
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", -2, -6)
+				frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 6)
+			end
+
+			-- Background
+			local region = select(2, frame:GetRegions())
+			if region:GetObjectType() == "Texture" then
+				if region:GetTexture() == "Interface\\GuildFrame\\GuildChallenges" then
+					region:Kill()
+				end
+			end
+
+			_G["GuildChallengeAlertFrameGlow"]:Kill()
+			_G["GuildChallengeAlertFrameShine"]:Kill()
+			_G["GuildChallengeAlertFrameEmblemBorder"]:Kill()
+			_G["GuildChallengeAlertFrameEmblemBackground"]:Kill()
+
+			-- Icon
+			_G["GuildChallengeAlertFrameEmblemIcon"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			_G["GuildChallengeAlertFrameEmblemIcon"]:ClearAllPoints()
+			_G["GuildChallengeAlertFrameEmblemIcon"]:Point("LEFT", frame, 7, 0)
+
+			if not _G["GuildChallengeAlertFrameEmblemIcon"].b then
+				_G["GuildChallengeAlertFrameEmblemIcon"].b = CreateFrame("Frame", nil, _G["GuildChallengeAlertFrame"])
+				_G["GuildChallengeAlertFrameEmblemIcon"].b:SetFrameLevel(0)
+				_G["GuildChallengeAlertFrameEmblemIcon"].b:SetTemplate("Default")
+				_G["GuildChallengeAlertFrameEmblemIcon"].b:Point("TOPLEFT", _G["GuildChallengeAlertFrameEmblemIcon"], "TOPLEFT", -2, 2)
+				_G["GuildChallengeAlertFrameEmblemIcon"].b:Point("BOTTOMRIGHT", _G["GuildChallengeAlertFrameEmblemIcon"], "BOTTOMRIGHT", 2, -2)
+			end
+		end
+	end
+	hooksecurefunc("GuildChallengeAlertFrame_FixAnchors", SkinChallengePopUp)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
