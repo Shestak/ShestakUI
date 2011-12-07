@@ -9,6 +9,7 @@
 	<Script file="Bubbles.lua"/>
 	<Script file="Calendar.lua"/>
 	<Script file="Character.lua"/>
+	<Script file="ChatConfig.lua"/>
 	<Script file="Container.lua"/>
 	<Script file="DebugTools.lua"/>
 	<Script file="DressUp.lua"/>
@@ -31,10 +32,12 @@
 	<Script file="LFD.lua"/>
 	<Script file="LFG.lua"/>
 	<Script file="LFR.lua"/>
+	<Script file="MacClient.lua"/>
 	<Script file="Macro.lua"/>
 	<Script file="Mail.lua"/>
 	<Script file="Merchant.lua"/>
 	<Script file="MinimapButtons.lua"/>
+	<Script file="MissingLoot.lua"/>
 	<Script file="Options.lua"/>
 	<Script file="Petition.lua"/>
 	<Script file="PvP.lua"/>

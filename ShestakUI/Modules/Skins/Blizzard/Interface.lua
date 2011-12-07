@@ -5,6 +5,46 @@ if C.skins.blizzard_frames ~= true then return end
 --	Interface skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
+	InterfaceOptionsFrame:StripTextures()
+	InterfaceOptionsFrame:SetTemplate("Transparent")
+
+	InterfaceOptionsFrameHeader:SetTexture(nil)
+	InterfaceOptionsFrameHeader:ClearAllPoints()
+	InterfaceOptionsFrameHeader:Point("TOP", InterfaceOptionsFrame, 0, 0)
+
+	local frames = {
+		"InterfaceOptionsFramePanelContainer",
+		"InterfaceOptionsFrameAddOns",
+		"InterfaceOptionsFrameCategories",
+		"InterfaceOptionsFrameTab1",
+		"InterfaceOptionsFrameTab2"
+	}
+
+	for i = 1, getn(frames) do
+		local frame = _G[frames[i]]
+		if frame then
+			frame:SetTemplate("Overlay")
+		end
+	end
+
+	local buttons = {
+		"InterfaceOptionsFrameDefaults",
+		"InterfaceOptionsFrameOkay",
+		"InterfaceOptionsFrameCancel",
+		"InterfaceOptionsFrameTab1",
+		"InterfaceOptionsFrameTab2",
+		"InterfaceOptionsHelpPanelResetTutorials",
+		"InterfaceOptionsUnitFramePanelResetPartyPosition",
+		"InterfaceOptionsRaidFramePanelResetPosition"
+	}
+
+	for i = 1, getn(buttons) do
+		local button = _G[buttons[i]]
+		if button then
+			button:SkinButton()
+		end
+	end
+
 	local checkboxes = {
 		-- Controls
 		"ControlsPanelStickyTargeting",
@@ -14,6 +54,7 @@ local function LoadSkin()
 		"ControlsPanelBlockGuildInvites",
 		"ControlsPanelLootAtMouse",
 		"ControlsPanelAutoLootCorpse",
+		"ControlsPanelInteractOnLeftClick",
 		-- Combat
 		"CombatPanelAutoSelfCast",
 		"CombatPanelAttackOnAssist",
@@ -230,6 +271,25 @@ local function LoadSkin()
 			button:SkinButton()
 		end
 	end
+
+	_G["InterfaceOptionsFrameDefaults"]:ClearAllPoints()
+	_G["InterfaceOptionsFrameDefaults"]:Point("TOPLEFT", _G["InterfaceOptionsFrameCategories"], "BOTTOMLEFT", 0, -14)
+	_G["InterfaceOptionsFrameCancel"]:ClearAllPoints()
+	_G["InterfaceOptionsFrameCancel"]:Point("TOPRIGHT", _G["InterfaceOptionsFramePanelContainer"], "BOTTOMRIGHT", 0, -14)
+	_G["InterfaceOptionsFrameOkay"]:ClearAllPoints()
+	_G["InterfaceOptionsFrameOkay"]:Point("RIGHT", _G["InterfaceOptionsFrameCancel"], "LEFT", -4, 0)
+	_G["ColorPickerOkayButton"]:ClearAllPoints()
+	_G["InterfaceOptionsFrameTab1"]:ClearAllPoints()
+	_G["InterfaceOptionsFrameTab1"]:Point("TOPLEFT", _G["InterfaceOptionsFrameCategories"], "TOPLEFT", 0, 27)
+	_G["InterfaceOptionsFrameTab1"]:Width(60)
+	_G["InterfaceOptionsFrameTab1"].SetWidth = T.dummy
+	_G["InterfaceOptionsFrameTab2"]:ClearAllPoints()
+	_G["InterfaceOptionsFrameTab2"]:Point("TOPLEFT", _G["InterfaceOptionsFrameTab1"], "TOPRIGHT", 3, 0)
+	_G["InterfaceOptionsFrameTab2"]:Width(112)
+	_G["InterfaceOptionsFrameTab2"].SetWidth = T.dummy
+	_G["InterfaceOptionsFrameTab1TabSpacer"]:Kill()
+	_G["InterfaceOptionsFrameTab2TabSpacer1"]:Kill()
+	_G["InterfaceOptionsFrameTab2TabSpacer2"]:Kill()
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
