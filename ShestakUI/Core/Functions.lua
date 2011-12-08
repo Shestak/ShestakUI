@@ -898,12 +898,12 @@ end
 local UpdateManaLevelDelay = 0
 T.UpdateManaLevel = function(self, elapsed)
 	UpdateManaLevelDelay = UpdateManaLevelDelay + elapsed
-	if self.parent.unit ~= "player" or UpdateManaLevelDelay < 0.2 or UnitIsDeadOrGhost("player") or UnitPowerType("player") ~= 0 then return end
+	if self.parent.unit ~= "player" or UpdateManaLevelDelay < 0.2 or UnitPowerType("player") ~= 0 then return end
 	UpdateManaLevelDelay = 0
 
 	local percMana = UnitMana("player") / UnitManaMax("player") * 100
 
-	if percMana <= 20 then
+	if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 		self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
 		Flash(self, 0.3)
 	else
