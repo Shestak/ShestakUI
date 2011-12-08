@@ -68,7 +68,17 @@ end
 
 local function SkinTab(f, t)
 	f:Show()
-	if C.skins.blizzard_frames == true then
+	if IsAddOnLoaded("Aurora") then
+		f:StripTextures()
+		f:SetNormalTexture(t)
+		f:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		local F, C = unpack(Aurora)
+		f:SetCheckedTexture(C.media.checked)
+		F.CreateBG(f)
+		F.CreateSD(f, 5, 0, 0, 0, 1, 1)
+		f:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+		f:GetHighlightTexture():SetAllPoints(f:GetNormalTexture())
+	elseif C.skins.blizzard_frames == true then
 		f:StripTextures()
 		f:SetNormalTexture(t)
 		f:GetNormalTexture():ClearAllPoints()
@@ -99,7 +109,9 @@ local function CreateTabs(fr, frtype)
 	-- LFD tab
 	frametabs["lfd"] = CreateFrame("CheckButton", "LFDSideTab", fr, "SpellBookSkillLineTabTemplate")
 	SkinTab(frametabs["lfd"], "Interface\\LFGFrame\\UI-LFG-PORTRAIT")
-	if C.skins.blizzard_frames == true then
+	if IsAddOnLoaded("Aurora") then
+		frametabs["lfd"]:SetPoint("TOPLEFT", fr, "TOPRIGHT", 11, -35)
+	elseif C.skins.blizzard_frames == true then
 		frametabs["lfd"]:SetPoint("TOPLEFT", fr, "TOPRIGHT", 1, 0)
 	else
 		frametabs["lfd"]:SetPoint("TOPLEFT", fr, "TOPRIGHT", 0, -30)

@@ -78,7 +78,19 @@ function ProfessionTabs:CreateTab(Table, Parent)
 	Tab:SetScript("OnEnter", Tab_OnEnter)
 	Tab:SetScript("OnLeave", Tab_OnLeave)
 
-	if C.skins.blizzard_frames == true then
+	if IsAddOnLoaded("Aurora") then
+		Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", (Parent == ATSWFrame or Parent == TradeFrame) and -19 or 11, (Parent == TradeFrame and -47 or -35) + -48 * #Table)
+
+		Tab:StripTextures()
+		Tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		local F, C = unpack(Aurora)
+		Tab:SetCheckedTexture(C.media.checked)
+		Tab:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+		Tab:GetHighlightTexture():SetAllPoints(Tab:GetNormalTexture())
+		F.CreateBG(Tab)
+		F.CreateSD(Tab, 5, 0, 0, 0, 1, 1)
+	elseif C.skins.blizzard_frames == true then
 		Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", (Parent == ATSWFrame or Parent == TradeFrame) and -19 or 1, (Parent == TradeFrame and -12 or 0) + -44 * #Table)
 
 		Tab:StripTextures()
