@@ -541,8 +541,6 @@ Filger_Spells = {
 			{ spellID = 34490, size = 30, filter = "CD" },
 			-- Explosive Shot
 			{ spellID = 53301, size = 30, filter = "CD" },
-			-- Aimed Shot
-			{ spellID = 19434, size = 30, filter = "CD" },
 			-- Kill Shot
 			{ spellID = 53351, size = 30, filter = "CD" },
 			-- Disengage
@@ -1172,8 +1170,6 @@ Filger_Spells = {
 			{ spellID = 73683, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Unleash Life
 			{ spellID = 73685, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Wolf
-			{ spellID = 2645, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Focused Insight
 			{ spellID = 77800, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Nature Guardian
@@ -1378,8 +1374,6 @@ Filger_Spells = {
 			{ spellID = 51505, size = 30, filter = "CD" },
 			-- Lava Lash
 			{ spellID = 60103, size = 30, filter = "CD" },
-			-- Chain Lightning
-			{ spellID = 421, size = 30, filter = "CD" },
 			-- Wind Shear
 			{ spellID = 57994, size = 30, filter = "CD" },
 			-- Earthbind Totem
