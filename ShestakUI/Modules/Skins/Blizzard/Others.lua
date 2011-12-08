@@ -209,6 +209,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ChannelPullout"]:Point("TOP", _G["ChannelPulloutTab"], "BOTTOM", 0, -3)
 
 		-- Others
+		for i = 1, 10 do
+			select(i, GuildInviteFrame:GetRegions()):Hide()
+		end
 		_G["GeneralDockManagerOverflowButtonList"]:SetFrameStrata("HIGH")
 		_G["ReadyCheckListenerFrame"]:SetAlpha(0)
 		_G["ReadyCheckFrame"]:HookScript("OnShow", function(self) if UnitIsUnit("player", self.initiator) then self:Hide() end end)
