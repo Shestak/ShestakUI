@@ -24,7 +24,8 @@ local function LoadSkin()
 		"RaidInfoScrollFrameScrollBarTop",
 		"RaidInfoScrollFrameScrollBarBottom",
 		"RaidInfoScrollFrameScrollBarMiddle",
-		"RaidFinderQueueFrameBackground"
+		"RaidFinderQueueFrameBackground",
+		"RaidFinderFrameRoleBackground"
 	}
 
 	local buttons = {
