@@ -221,7 +221,7 @@ local function CheckRole(self, event, unit)
 		T.Role = "Tank"
 	else
 		local playerint = select(2, UnitStat("player", 4))
-		local playeragi	= select(2, UnitStat("player", 2))
+		local playeragi = select(2, UnitStat("player", 2))
 		local base, posBuff, negBuff = UnitAttackPower("player")
 		local playerap = base + posBuff + negBuff
 
