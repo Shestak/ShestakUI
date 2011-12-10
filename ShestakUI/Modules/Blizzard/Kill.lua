@@ -52,6 +52,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 			InterfaceOptionsBuffsPanelCastableBuffs:Kill()
 			InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
 			InterfaceOptionsBuffsPanelBuffDurations:Kill()
+			InterfaceOptionsBuffsPanelShowAllEnemyDebuffs:Kill()
 			InterfaceOptionsUnitFramePanelPartyBackground:Kill()
 			PartyMemberBackground:Kill()
 
