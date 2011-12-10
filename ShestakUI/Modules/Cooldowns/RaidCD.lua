@@ -184,6 +184,8 @@ local OnEvent = function(self, event, ...)
 			if eventType == "SPELL_RESURRECT" and not spellId == 61999 then
 				if spellId == 95750 then spellId = 6203 end
 				StartTimer(sourceName, spellId)
+			elseif eventType == "SPELL_RESURRECT" and spellId == 20484 then
+				StartTimer(sourceName, spellId)
 			elseif eventType == "SPELL_AURA_APPLIED" then
 				if spellId == 20707 then
 					local _, class = UnitClass(sourceName)
