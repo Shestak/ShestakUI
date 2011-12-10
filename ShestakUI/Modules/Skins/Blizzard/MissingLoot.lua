@@ -7,29 +7,30 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	_G["MissingLootFrame"]:SetTemplate("Transparent")
 	_G["MissingLootFrameCorner"]:Kill()
-	_G["MissingLootFrameItem1NameFrame"]:Kill()
 
 	T.SkinCloseButton(_G["MissingLootFramePassButton"])
 
-	--[[_G["MissingLootFrameItem1"]:StyleButton()
-	_G["MissingLootFrameItem1"]:SetTemplate("Default")
-	_G["MissingLootFrameItem1NameFrame"]:Kill()
-	_G["MissingLootFrameItem1IconQuestTexture"]:Kill()]]
+	local function SkinButton()
+		local number = GetNumMissingLootItems()
+		for i = 1, number do
+			local slot = _G["MissingLootFrameItem"..i]
+			local icon = slot.icon
 
-	--[[local numItems = GetNumMissingLootItems()
+			if not slot.isSkinned then
+				slot:StripTextures()
+				slot:SetTemplate("Default")
+				slot:StyleButton()
 
-	for index = 1, numItems do
-		local itemButton = _G["MissingLootFrameItem"..i]
+				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				icon:ClearAllPoints()
+				icon:Point("TOPLEFT", 2, -2)
+				icon:Point("BOTTOMRIGHT", -2, 2)
 
-		itemButton.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		itemButton.icon:ClearAllPoints()
-		itemButton.icon:Point("TOPLEFT", 2, -2)
-		itemButton.icon:Point("BOTTOMRIGHT", -2, 2)
-
-		itemButton:StyleButton()
-		itemButton:SetTemplate("Default")
-		_G["MissingLootFrameItem"..i.."NameFrame"]:Kill()
-	end]]
+				slot.isSkinned = true
+			end
+		end
+	end
+	hooksecurefunc("MissingLootFrame_Show", SkinButton)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
