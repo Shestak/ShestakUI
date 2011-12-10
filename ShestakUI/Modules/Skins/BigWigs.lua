@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.skins.bigwigs == true then return end
+if C.skins.bigwigs ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	BigWigs skin(by Affli)
@@ -32,7 +32,7 @@ local function freestyle(bar)
 	end
 
 	-- Reparent and hide icon background
-	local ibg = bar:Get("bigwigs:shestakui:bg")
+	local ibg = bar:Get("bigwigs:shestakui:ibg")
 	if ibg then
 		ibg:ClearAllPoints()
 		ibg:SetParent(UIParent)
@@ -46,6 +46,30 @@ local function freestyle(bar)
 	if disablescaling then 
 		bar.SetScale = bar.OldSetScale
 	end
+
+	--Reset Positions
+	--Icon
+	bar.candyBarIconFrame:ClearAllPoints()
+	bar.candyBarIconFrame:SetPoint("TOPLEFT")
+	bar.candyBarIconFrame:SetPoint("BOTTOMLEFT")
+	bar.candyBarIconFrame:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+	-- Status Bar
+	bar.candyBarBar:ClearAllPoints()
+	bar.candyBarBar:SetPoint("TOPRIGHT")
+	bar.candyBarBar:SetPoint("BOTTOMRIGHT")
+
+	-- BG
+	bar.candyBarBackground:SetAllPoints()
+
+	-- Duration
+	bar.candyBarDuration:ClearAllPoints()
+	bar.candyBarDuration:SetPoint("RIGHT", bar.candyBarBar, "RIGHT", -2, 0)
+
+	-- Name
+	bar.candyBarLabel:ClearAllPoints()
+	bar.candyBarLabel:SetPoint("LEFT", bar.candyBarBar, "LEFT", 2, 0)
+	bar.candyBarLabel:SetPoint("RIGHT", bar.candyBarBar, "RIGHT", -2, 0)
 end
 
 local applystyle = function(bar)
@@ -86,7 +110,7 @@ local applystyle = function(bar)
 		ibg:Point("BOTTOMRIGHT", bar.candyBarIconFrame, "BOTTOMRIGHT", 2, -2)
 		ibg:SetFrameStrata("BACKGROUND")
 		ibg:Show()
-		bar:Set("bigwigs:shestakui:bg", ibg)
+		bar:Set("bigwigs:shestakui:ibg", ibg)
 	end
 
 	-- Setup timer and bar name fonts and positions
@@ -144,9 +168,9 @@ local function registerStyle()
 end
 
 f:RegisterEvent("ADDON_LOADED")
-f:SetScript("OnEvent", function(self, event, msg)
+f:SetScript("OnEvent", function(self, event, addon)
 	if event == "ADDON_LOADED" then
-		if msg == "BigWigs_Plugins" then
+		if addon == "BigWigs_Plugins" then
 			if BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.InstalledBars ~= C.actionbar.bottombars then
 				StaticPopup_Show("BW_TEST")
 			end
@@ -163,11 +187,11 @@ end
 
 SLASH_BWTEST1 = "/bwtest"
 SlashCmdList.BWTEST = function(msg)
-	if(msg=="apply") then
+	if msg == "apply" then
 		SlashCmdList["BigWigs"]()
 		HideUIPanel(InterfaceOptionsFrame)
 		StaticPopup_Show("BW_TEST")
-	elseif(msg=="test") then
+	elseif msg == "test" then
 		SlashCmdList["BigWigs"]()
 		BigWigs.pluginCore.modules.Proximity.Test(BigWigs.pluginCore.modules.Proximity)
 		HideUIPanel(InterfaceOptionsFrame)
