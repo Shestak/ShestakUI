@@ -33,12 +33,16 @@ local function LoadSkin()
 	local slots = {"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet",
 	"Wrist", "Hands", "Back", "MainHand", "SecondaryHand", "Ranged"}
 
-	for _, slot in pairs(slots) do
-		local icon = _G["TransmogrifyFrame"..slot.."SlotIconTexture"]
-		local slot = _G["TransmogrifyFrame"..slot.."Slot"]
+	for i = 1, #slots do
+		local slot = _G["TransmogrifyFrame"..slots[i].."Slot"]
+		local icon = _G["TransmogrifyFrame"..slots[i].."SlotIconTexture"]
+		local border = _G["TransmogrifyFrame"..slots[i].."SlotBorder"]
+		local grabber = _G["TransmogrifyFrame"..slots[i].."SlotGrabber"]
 
 		if slot then
-			slot:StripTextures()
+			border:Kill()
+			grabber:Kill()
+
 			slot:StyleButton(false)
 			slot:SetFrameLevel(slot:GetFrameLevel() + 2)
 			slot:CreateBackdrop("Default")
