@@ -5,6 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	LookingForGuildUI skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
+	-- Checkboxes
 	local checkbox = {
 		"LookingForGuildPvPButton",
 		"LookingForGuildWeekendsButton",
@@ -15,7 +16,6 @@ local function LoadSkin()
 		"LookingForGuildDungeonButton"
 	}
 
-	-- Checkboxes
 	for _, v in pairs(checkbox) do
 		T.SkinCheckBox(_G[v])
 	end
