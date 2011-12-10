@@ -382,8 +382,8 @@ SLASH_FARMMODE4 = "/аь"
 --	Frame Stack on Cyrillic
 ----------------------------------------------------------------------------------------
 SlashCmdList.FSTACK = function()
-	T.RunSlashCmd("/fstack")
+	SlashCmdList.FRAMESTACK()
 end
 SLASH_FSTACK1 = "/аыефсл"
 SLASH_FSTACK2 = "/fs"
-SLASH_FSTACK2 = "/аы"
+SLASH_FSTACK3 = "/аы"
