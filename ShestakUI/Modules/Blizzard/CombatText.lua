@@ -556,7 +556,7 @@ for i = 1, numf do
 			f:SetPoint("CENTER", 330, 205)
 		end
 		local a, _, c = f:GetFont()
-		if C.font.combat_text_font_size=="auto" then
+		if C.font.combat_text_font_size == "auto" then
 			if C.combattext.icons then
 				f:SetFont(a, C.combattext.icon_size / 2, c)
 			end
@@ -594,21 +594,6 @@ Blizzard_CombatText_AddMessage = CombatText_AddMessage
 function CombatText_AddMessage(message, scrollFunction, r, g, b, displayType, isStaggered)
 	xCT3:AddMessage(message, r, g, b)
 end
-
--- Force hide Blizzard damage/healing
-if not C.combattext.blizz_head_numbers then
-	InterfaceOptionsCombatTextPanelTargetDamage:Hide()
-	InterfaceOptionsCombatTextPanelPeriodicDamage:Hide()
-	InterfaceOptionsCombatTextPanelPetDamage:Hide()
-	InterfaceOptionsCombatTextPanelHealing:Hide()
-	SetCVar("CombatLogPeriodicSpells", 0)
-	SetCVar("PetMeleeDamage", 0)
-	SetCVar("CombatDamage", 0)
-	SetCVar("CombatHealing", 0)
-end
-
--- Hook Blizzard float mode selector
-InterfaceOptionsCombatTextPanelFCTDropDown:Hide()
 
 -- Color printer
 local pr = function(msg)
