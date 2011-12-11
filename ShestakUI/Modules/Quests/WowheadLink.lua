@@ -22,7 +22,7 @@ else
 	linkAchievement = "http://www.wowhead.com/achievement=%d"
 end
 
-_G.StaticPopupDialogs["WATCHFRAME_URL"] = {
+StaticPopupDialogs["WATCHFRAME_URL"] = {
 	text = L_WATCH_WOWHEAD_LINK,
 	button1 = OKAY,
 	timeout = 0,
@@ -62,3 +62,17 @@ hooksecurefunc("WatchFrameDropDown_Initialize", function(self)
 	end
 end)
 UIDropDownMenu_Initialize(WatchFrameDropDown, WatchFrameDropDown_Initialize, "MENU")
+
+local LoDA = CreateFrame("Frame")
+LoDA:RegisterEvent("ADDON_LOADED")
+LoDA:SetScript("OnEvent", function(self, event, addon)
+	if addon == "Blizzard_AchievementUI" then
+		hooksecurefunc("AchievementButton_OnClick", function(self)
+			if self.id and IsControlKeyDown() then
+				local inputBox = StaticPopup_Show("WATCHFRAME_URL")
+				inputBox.editBox:SetText(linkAchievement:format(self.id))
+				inputBox.editBox:HighlightText()
+			end
+		end)
+	end
+end)
