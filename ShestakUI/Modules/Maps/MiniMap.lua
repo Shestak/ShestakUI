@@ -75,18 +75,16 @@ GameTimeCalendarInvitesTexture:ClearAllPoints()
 GameTimeCalendarInvitesTexture:SetParent(Minimap)
 GameTimeCalendarInvitesTexture:Point("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
 
--- Random Group icon
-local function UpdateLFG()
-	MiniMapLFGFrame:ClearAllPoints()
-	MiniMapLFGFrame:Point("TOP", Minimap, "TOP", 1, 6)
-	MiniMapLFGFrame:SetHighlightTexture(nil)
-	MiniMapLFGFrameBorder:Hide()
-end
-hooksecurefunc("MiniMapLFG_Update", UpdateLFG)
+-- LFG/LFR icon
+MiniMapLFGFrame:ClearAllPoints()
+MiniMapLFGFrame:Point("TOP", Minimap, "TOP", 1, 6)
+MiniMapLFGFrame:SetHighlightTexture(nil)
+MiniMapLFGFrameBorder:Hide()
 
 -- Default LFG icon
 MiniMapLFGFrameGroupSize:Hide()
 LFG_EYE_TEXTURES.raid = LFG_EYE_TEXTURES.default
+LFG_EYE_TEXTURES.unknown = LFG_EYE_TEXTURES.default
 
 -- Feedback icon
 if FeedbackUIButton then
