@@ -5,7 +5,6 @@ if C.misc.auto_buy_reagents ~= true then return end
 --	Auto buy reagents(Квилайт, кредитсы не забывай в коде оставлять/прописывать ;))
 ----------------------------------------------------------------------------------------
 local reagents = T.AutoBuy
-local ItemIDPattern = "item:(%d+)"
 
 local function FormatGold(amount)
 	local gold, silver, copper = floor(amount * 0.0001), floor(mod(amount * 0.01, 100)), floor(mod(amount, 100))
@@ -22,7 +21,7 @@ local function CheckReagents(CheckID, RequiredAmount)
 	for bag = 0, NUM_BAG_FRAMES do
 		for slot = 1, GetContainerNumSlots(bag) do
 			ItemLink = GetContainerItemLink(bag, slot)
-			if ItemLink and CheckID == tonumber(select(3, string.find(ItemLink, ItemIDPattern))) then
+			if ItemLink and CheckID == tonumber(select(3, string.find(ItemLink, "item:(%d+)"))) then
 				stack = select(2, GetContainerItemInfo(bag, slot))
 				total = total + stack
 			end
@@ -39,7 +38,7 @@ local function BuyReagents(reagents)
 		ItemLink = GetMerchantItemLink(MerchantIDIndex)
 
 		if ItemLink then
-			ItemID = tonumber(select(3, string.find(ItemLink, ItemIDPattern)))
+			ItemID = tonumber(select(3, string.find(ItemLink, "item:(%d+)")))
 		end
 
 		if ItemID and reagents[ItemID] then
@@ -80,7 +79,7 @@ end
 
 local f = CreateFrame("Frame")
 f:RegisterEvent("MERCHANT_SHOW")
-f:SetScript("OnEvent", function(self, event, unit)
+f:SetScript("OnEvent", function(self, event)
 	if event == "MERCHANT_SHOW" and reagents[T.class] and T.level == MAX_PLAYER_LEVEL and not (IsAltKeyDown() or IsShiftKeyDown()) then
 		BuyReagents(reagents[T.class])
 	end
