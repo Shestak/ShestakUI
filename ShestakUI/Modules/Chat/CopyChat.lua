@@ -93,7 +93,7 @@ function T.ChatCopyButtons()
 		buttontexture:Width(16)
 
 		button:SetScript("OnMouseUp", function(self, btn)
-			if i == 1 and btn == "RightButton" then
+			if btn == "RightButton" then
 				ToggleFrame(ChatMenu)
 			else
 				Copy(cf)
