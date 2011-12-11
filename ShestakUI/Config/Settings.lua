@@ -162,6 +162,7 @@ C["pulsecooldown"] = {
 	["sound"] = false,							-- Warning sound notification
 	["anim_scale"] = 1.5,						-- Animation scaling
 	["hold_time"] = 0,							-- Max opacity hold time
+	["threshold"] = 3,							-- 
 }
 
 ----------------------------------------------------------------------------------------

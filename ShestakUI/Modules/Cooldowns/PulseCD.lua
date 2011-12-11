@@ -68,7 +68,7 @@ local function OnUpdate(_, update)
 	elapsed = elapsed + update
 	if elapsed > 0.05 then
 		for i, v in pairs(watching) do
-			if GetTime() >= v[1] + 0.5 then
+			if GetTime() >= v[1] + 0.5 + C.pulsecooldown.threshold then
 				if T.pulse_ignored_spells[i] then
 					watching[i] = nil
 				else
