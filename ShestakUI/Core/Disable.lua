@@ -93,7 +93,7 @@ if IsAddOnLoaded("TipTacTalents") then
 	C.tooltip.talents = false
 end
 
-if IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") then
+if IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") then
 	C.bag.enable = false
 end
 

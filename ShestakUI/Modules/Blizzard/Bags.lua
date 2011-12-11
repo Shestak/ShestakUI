@@ -41,7 +41,7 @@ InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
 Stuffing:SetScript("OnEvent", function(this, event, ...)
-	if IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") then return end
+	if IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") then return end
 	Stuffing[event](this, ...)
 end)
 
@@ -262,9 +262,9 @@ local BAGTYPE_FISHING = 32768
 function Stuffing:BagType(bag)
 	local bagType = select(2, GetContainerNumFreeSlots(bag))
 
-	if bit.band(bagType, BAGTYPE_FISHING) > 0 then
+	if bagType and bit.band(bagType, BAGTYPE_FISHING) > 0 then
 		return ST_FISHBAG
-	elseif bit.band(bagType, BAGTYPE_PROFESSION) > 0 then
+	elseif bagType and bit.band(bagType, BAGTYPE_PROFESSION) > 0 then
 		return ST_SPECIAL
 	end
 
