@@ -360,7 +360,7 @@ function T.UploadDBM()
 	DBM_SavedOptions.InstalledBars = C.actionbar.bottombars
 end
 
-StaticPopupDialogs["SETTINGS_DBM"] = {
+StaticPopupDialogs.SETTINGS_DBM = {
 	text = L_POPUP_SETTINGS_DBM,
 	button1 = ACCEPT,
 	button2 = CANCEL,

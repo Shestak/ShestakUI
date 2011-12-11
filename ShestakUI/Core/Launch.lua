@@ -185,7 +185,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Popups
 ----------------------------------------------------------------------------------------
-StaticPopupDialogs["INSTALL_UI"] = {
+StaticPopupDialogs.INSTALL_UI = {
 	text = L_POPUP_INSTALLUI,
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -197,7 +197,7 @@ StaticPopupDialogs["INSTALL_UI"] = {
 	preferredIndex = 3,
 }
 
-StaticPopupDialogs["DISABLE_UI"] = {
+StaticPopupDialogs.DISABLE_UI = {
 	text = L_POPUP_DISABLEUI,
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -209,7 +209,7 @@ StaticPopupDialogs["DISABLE_UI"] = {
 	preferredIndex = 3,
 }
 
-StaticPopupDialogs["RESET_UI"] = {
+StaticPopupDialogs.RESET_UI = {
 	text = L_POPUP_RESETUI,
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -222,7 +222,7 @@ StaticPopupDialogs["RESET_UI"] = {
 	preferredIndex = 3,
 }
 
-StaticPopupDialogs["RESET_STATS"] = {
+StaticPopupDialogs.RESET_STATS = {
 	text = L_POPUP_RESETSTATS,
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -234,7 +234,7 @@ StaticPopupDialogs["RESET_STATS"] = {
 	preferredIndex = 3,
 }
 
-StaticPopupDialogs["SWITCH_RAID"] = {
+StaticPopupDialogs.SWITCH_RAID = {
 	text = L_POPUP_SWITCH_RAID,
 	button1 = DAMAGER,
 	button2 = HEALER,

@@ -185,28 +185,7 @@ local pr = function(msg)
 	print(tostring(msg))
 end
 
-SLASH_BWTEST1 = "/bwtest"
-SlashCmdList.BWTEST = function(msg)
-	if msg == "apply" then
-		SlashCmdList["BigWigs"]()
-		HideUIPanel(InterfaceOptionsFrame)
-		StaticPopup_Show("BW_TEST")
-	elseif msg == "test" then
-		SlashCmdList["BigWigs"]()
-		BigWigs.pluginCore.modules.Proximity.Test(BigWigs.pluginCore.modules.Proximity)
-		HideUIPanel(InterfaceOptionsFrame)
-		BigWigs:Test()
-		BigWigs:Test()
-		BigWigs:Test()
-		BigWigs:Test()
-		BigWigs:Test()
-	else
-		pr("|cffffff00Type /bwtest apply to apply BigWigs settings.|r")
-		pr("|cffffff00Type /bwtest test to launch BigWigs testmode.|r")
-	end
-end
-
-StaticPopupDialogs["BW_TEST"] = {
+StaticPopupDialogs.BW_TEST = {
 	text = L_POPUP_SETTINGS_BW,
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -243,3 +222,25 @@ StaticPopupDialogs["BW_TEST"] = {
 	hideOnEscape = true,
 	preferredIndex = 3,
 }
+
+SlashCmdList.BWTEST = function(msg)
+	if msg == "apply" then
+		SlashCmdList["BigWigs"]()
+		HideUIPanel(InterfaceOptionsFrame)
+		StaticPopup_Show("BW_TEST")
+	elseif msg == "test" then
+		SlashCmdList["BigWigs"]()
+		BigWigs.pluginCore.modules.Proximity.Test(BigWigs.pluginCore.modules.Proximity)
+		HideUIPanel(InterfaceOptionsFrame)
+		BigWigs:Test()
+		BigWigs:Test()
+		BigWigs:Test()
+		BigWigs:Test()
+		BigWigs:Test()
+	else
+		pr("|cffffff00Type /bwtest apply to apply BigWigs settings.|r")
+		pr("|cffffff00Type /bwtest test to launch BigWigs testmode.|r")
+	end
+end
+SLASH_BWTEST1 = "/bwtest"
+SLASH_BWTEST2 = "/טצוףûו"

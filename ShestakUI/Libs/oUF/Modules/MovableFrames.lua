@@ -415,7 +415,7 @@ do
 	end
 end
 
-StaticPopupDialogs["RESET_UF"] = {
+StaticPopupDialogs.RESET_UF = {
 	text = L_POPUP_RESETUI,
 	button1 = ACCEPT,
 	button2 = CANCEL,

@@ -22,7 +22,7 @@ else
 	linkAchievement = "http://www.wowhead.com/achievement=%d"
 end
 
-StaticPopupDialogs["WATCHFRAME_URL"] = {
+StaticPopupDialogs.WATCHFRAME_URL = {
 	text = L_WATCH_WOWHEAD_LINK,
 	button1 = OKAY,
 	timeout = 0,

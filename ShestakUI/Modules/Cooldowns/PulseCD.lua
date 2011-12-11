@@ -224,6 +224,5 @@ SlashCmdList.PulseCD = function(msg)
 	tinsert(animating, {"Interface\\Icons\\Inv_Misc_Tournaments_Banner_Human"})
 	DCP:SetScript("OnUpdate", OnUpdate)
 end
-
 SLASH_PulseCD1 = "/pulsecd"
 SLASH_PulseCD2 = "/згдыусв"

@@ -420,7 +420,7 @@ local NormalButton = function(text, parent)
 	return result
 end
 
-StaticPopupDialogs["PERCHAR"] = {
+StaticPopupDialogs.PERCHAR = {
 	text = L_GUI_PER_CHAR,
 	OnAccept = function() 
 		if UIConfigAllCharacters:GetChecked() then 
@@ -445,7 +445,7 @@ StaticPopupDialogs["PERCHAR"] = {
 	preferredIndex = 3,
 }
 
-StaticPopupDialogs["RESET_PERCHAR"] = {
+StaticPopupDialogs.RESET_PERCHAR = {
 	text = L_GUI_RESET_CHAR,
 	OnAccept = function() 
 		GUIConfig = GUIConfigSettings
@@ -459,7 +459,7 @@ StaticPopupDialogs["RESET_PERCHAR"] = {
 	preferredIndex = 3,
 }
 
-StaticPopupDialogs["RESET_ALL"] = {
+StaticPopupDialogs.RESET_ALL = {
 	text = L_GUI_RESET_ALL,
 	OnAccept = function() 
 		GUIConfigSettings = nil
@@ -904,9 +904,6 @@ function CreateUIConfig()
 end
 
 do
-	SLASH_CONFIG1 = "/config"
-	SLASH_CONFIG2 = "/cfg"
-	SLASH_CONFIG3 = "/configui"
 	function SlashCmdList.CONFIG(msg, editbox)
 		if not UIConfigMain or not UIConfigMain:IsShown() then
 			PlaySound("igMainMenuOption")
@@ -917,8 +914,10 @@ do
 			UIConfigMain:Hide()
 		end
 	end
+	SLASH_CONFIG1 = "/config"
+	SLASH_CONFIG2 = "/cfg"
+	SLASH_CONFIG3 = "/configui"
 
-	SLASH_RESETCONFIG1 = "/resetconfig"
 	function SlashCmdList.RESETCONFIG()
 		if UIConfigMain and UIConfigMain:IsShown() then UIConfigCover:Show() end
 
@@ -928,6 +927,7 @@ do
 			StaticPopup_Show("RESET_ALL")
 		end
 	end
+	SLASH_RESETCONFIG1 = "/resetconfig"
 end
 
 do

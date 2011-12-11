@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+﻿local T, C, L = unpack(select(2, ...))
 if not C.combattext.enable == true then return end
 
 ----------------------------------------------------------------------------------------
@@ -754,7 +754,7 @@ local function EndTestMode()
 end
 
 -- Popup dialog
-StaticPopupDialogs["XCT_LOCK"] = {
+StaticPopupDialogs.XCT_LOCK = {
 	text = L_COMBATTEXT_POPUP,
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -768,8 +768,7 @@ StaticPopupDialogs["XCT_LOCK"] = {
 }
 
 -- Slash commands
-SLASH_XCT1 = "/xct"
-SlashCmdList["XCT"] = function(input)
+SlashCmdList.XCT = function(input)
 	input = string.lower(input)
 	if input == "unlock" then
 		if ct.locked then
@@ -797,6 +796,8 @@ SlashCmdList["XCT"] = function(input)
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_TEST.."|r")
 	end
 end
+SLASH_XCT1 = "/xct"
+SLASH_XCT2 = "/чсе"
 
 -- Shadow priest helper
 if C.combattext.stop_ve_spam and T.class == "PRIEST" then

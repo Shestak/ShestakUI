@@ -11,7 +11,7 @@ local ST_FISHBAG = 2
 local ST_SPECIAL = 3
 local bag_bars = 0
 
-StaticPopupDialogs["BUY_BANK_SLOT"] = {
+StaticPopupDialogs.BUY_BANK_SLOT = {
 	text = CONFIRM_BUY_BANK_SLOT,
 	button1 = YES,
 	button2 = NO,
@@ -27,7 +27,7 @@ StaticPopupDialogs["BUY_BANK_SLOT"] = {
 	preferredIndex = 3,
 }
 
-StaticPopupDialogs["CANNOT_BUY_BANK_SLOT"] = {
+StaticPopupDialogs.CANNOT_BUY_BANK_SLOT = {
 	text = L_BAG_NO_SLOTS,
 	button1 = ACCEPT,
 	timeout = 0,
@@ -804,8 +804,9 @@ function Stuffing:ADDON_LOADED(addon)
 
 	self:RegisterEvent("BAG_CLOSED")
 
-	SlashCmdList["STUFFING"] = StuffingSlashCmd
+	SlashCmdList.STUFFING = StuffingSlashCmd
 	SLASH_STUFFING1 = "/bags"
+	SLASH_STUFFING2 = "/ифпы"
 
 	self:InitBags()
 	

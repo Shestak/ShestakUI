@@ -206,7 +206,7 @@ function T.UploadDXE()
 	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["InstalledBars"] = C.actionbar.bottombars
 end
 
-StaticPopupDialogs["SETTINGS_DXE"] = {
+StaticPopupDialogs.SETTINGS_DXE = {
 	text = L_POPUP_SETTINGS_DXE,
 	button1 = ACCEPT,
 	button2 = CANCEL,

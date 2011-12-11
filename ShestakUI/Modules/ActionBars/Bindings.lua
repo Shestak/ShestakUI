@@ -240,7 +240,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 			StaticPopup_Hide("KEYBIND_MODE")
 		end
 
-		StaticPopupDialogs["KEYBIND_MODE"] = {
+		StaticPopupDialogs.KEYBIND_MODE = {
 			text = L_BIND_INSTRUCT,
 			button1 = APPLY,
 			button2 = CANCEL,

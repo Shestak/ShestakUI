@@ -369,7 +369,7 @@ local UploadSkada = function()
 	}
 end
 
-StaticPopupDialogs["SETTINGS_ALL"] = {
+StaticPopupDialogs.SETTINGS_ALL = {
 	text = L_POPUP_SETTINGS_ALL,
 	button1 = ACCEPT,
 	button2 = CANCEL,
@@ -386,7 +386,6 @@ StaticPopupDialogs["SETTINGS_ALL"] = {
 	preferredIndex = 3,
 }
 
-SLASH_SETTINGS1 = "/settings"
 SlashCmdList.SETTINGS = function(msg)
 	if msg == "dbm" then
 		if IsAddOnLoaded("DBM-Core") then
@@ -432,3 +431,4 @@ SlashCmdList.SETTINGS = function(msg)
 		print("|cffffff00"..L_INFO_SETTINGS_ALL.."|r")
 	end
 end
+SLASH_SETTINGS1 = "/settings"
