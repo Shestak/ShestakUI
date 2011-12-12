@@ -23,10 +23,10 @@ T.MoverFrames = {
 	ShiftBar,
 	VehicleButtonAnchor,
 	ChatBar,
-	--oUF_Player_Castbar,
-	--oUF_Target_Castbar,
-	--oUF_Player_Portrait,
-	--oUF_Target_Portrait,
+	oUF_Player_Castbar,
+	oUF_Target_Castbar,
+	oUF_Player_Portrait,
+	oUF_Target_Portrait,
 }
 
 local moving = false
@@ -83,7 +83,7 @@ end
 
 local InitMove = function(msg)
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
-	if msg and msg == "reset" then
+	if msg and (msg == "reset" or msg == "куыуе") then
 		SavedPositions = {}
 		SavedOptionsPerChar.UFPos = {}
 		ReloadUI()
@@ -134,3 +134,4 @@ SlashCmdList.MOVING = InitMove
 SLASH_MOVING1 = "/moveui"
 SLASH_MOVING2 = "/ьщмугш"
 SLASH_MOVING3 = "/ui"
+SLASH_MOVING4 = "/гш"
