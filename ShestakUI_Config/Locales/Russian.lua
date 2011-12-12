@@ -118,6 +118,7 @@ L_GUI_COOLDOWN_PULSE_SIZE = "Размер иконки окончания пер
 L_GUI_COOLDOWN_PULSE_SOUND = "Включить звуковое предупреждение"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Масштаб анимации иконки"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Время(в секундах) до исчезновения иконки"
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimal threshold time"
 
 -- Threat options
 L_GUI_THREAT = "Список угрозы"

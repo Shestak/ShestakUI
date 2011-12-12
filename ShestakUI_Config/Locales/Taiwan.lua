@@ -118,6 +118,7 @@ L_GUI_COOLDOWN_PULSE_SIZE = "冷卻閃爍提示大小"
 L_GUI_COOLDOWN_PULSE_SOUND = "播放聲音提醒"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "動畫縮放"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "不透明狀態持續時間"
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimal threshold time" -- Needs review
 
 -- Threat options
 L_GUI_THREAT = "仇恨欄"

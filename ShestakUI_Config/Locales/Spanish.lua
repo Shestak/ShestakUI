@@ -118,6 +118,7 @@ L_GUI_COOLDOWN_PULSE_SIZE = "Tamaño de los icono de las cuentas atras de tiempo
 L_GUI_COOLDOWN_PULSE_SOUND = "Aviso sonoro"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Escalado animado"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Opacidad máxima del tiempo de espera"
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimal threshold time" -- Needs review
 
 -- Threat options
 L_GUI_THREAT = "Barras de Amenaza"

@@ -118,6 +118,7 @@ L_GUI_COOLDOWN_PULSE_SIZE = "Taille des icones de cooldowns pulse"
 L_GUI_COOLDOWN_PULSE_SOUND = "Avertissement des modifications"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Mise à niveau des animations"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Max opacity hold time"
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimal threshold time" -- Needs review
 
 -- Threat options
 L_GUI_THREAT = "Barre de menace"

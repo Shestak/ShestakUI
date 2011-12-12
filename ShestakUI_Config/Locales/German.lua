@@ -118,6 +118,7 @@ L_GUI_COOLDOWN_PULSE_SIZE = "Abklingzeitimpuls Symbolgröße"
 L_GUI_COOLDOWN_PULSE_SOUND = "Akustische Warnungen"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Animationen Skalieren"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Maximale Zeit in der die Anzeige aktiv ist"
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimal threshold time" -- Needs review
 
 -- Threat options
 L_GUI_THREAT = "Bedrohungsleisten"
