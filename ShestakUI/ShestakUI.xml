@@ -94,10 +94,6 @@
 	<Script file="Modules\Misc\DungeonTabs.lua"/>
 	<Script file="Modules\Misc\AutoChefsHat.lua"/>
 
-	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
-	<Script file="Modules\Cooldowns\PulseCD.lua"/>
-	<Script file="Modules\Cooldowns\RaidCD.lua"/>
-
 	<Script file="Modules\Announcements\Drinking.lua"/>
 	<Script file="Modules\Announcements\Interrupts.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>
@@ -117,6 +113,14 @@
 	<Script file="Modules\ActionBars\Range.lua"/>
 	<Script file="Modules\ActionBars\Others.lua"/>
 	<Script file="Modules\ActionBars\Cooldowns.lua"/>
+
+	<Include file="Modules\UnitFrames\Templates.xml"/>
+	<Script file="Modules\UnitFrames\Tags.lua"/>
+	<Script file="Modules\UnitFrames\Layout.lua"/>
+
+	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
+	<Script file="Modules\Cooldowns\PulseCD.lua"/>
+	<Script file="Modules\Cooldowns\RaidCD.lua"/>
 
 	<Script file="Modules\Chat\ChatFrames.lua"/>
 	<Script file="Modules\Chat\ChatTabs.lua"/>
@@ -163,10 +167,6 @@
 	<Script file="Modules\Skins\Omen.lua"/>
 	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
-
-	<Include file="Modules\UnitFrames\Templates.xml"/>
-	<Script file="Modules\UnitFrames\Tags.lua"/>
-	<Script file="Modules\UnitFrames\Layout.lua"/>
 
 	<Script file="Modules\Buffs\Buffs.lua"/>
 	<Script file="Modules\Buffs\CastBy.lua"/>

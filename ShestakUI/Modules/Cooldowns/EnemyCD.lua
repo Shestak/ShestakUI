@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.enemycooldown.enable == true then return end
+if C.enemycooldown.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Enemy cooldowns(alEnemyCD by Allez)
@@ -14,15 +14,27 @@ local icons = {}
 local band = bit.band
 local pos = C.position.enemy_cooldown
 
+local EnemyCDAnchor = CreateFrame("Frame", "EnemyCDAnchor", UIParent)
+if C.unitframe.enable ~= true then
+	EnemyCDAnchor:Point("CENTER", UIParent, "CENTER", 0, 0)
+else
+	if C.unitframe.plugins_swing == true then
+		EnemyCDAnchor:Point(unpack(C.position.enemy_cooldown))
+	else
+		EnemyCDAnchor:Point(pos[1], pos[2], pos[3], pos[4], pos[5] - 12)
+	end
+end
+if direction == "UP" or direction == "DOWN" then
+	EnemyCDAnchor:Size(C.enemycooldown.size, (C.enemycooldown.size * 5) + 12)
+else
+	EnemyCDAnchor:Size((C.enemycooldown.size * 5) + 12, C.enemycooldown.size)
+end
+
 local UpdatePositions = function()
 	for i = 1, #icons do
 		icons[i]:ClearAllPoints()
 		if i == 1 then
-			if C.unitframe.plugins_swing == true then
-				icons[i]:Point(unpack(C.position.enemy_cooldown))
-			else
-				icons[i]:Point(pos[1], pos[2], pos[3], pos[4], pos[5] - 12)
-			end
+			icons[i]:Point("BOTTOMLEFT", EnemyCDAnchor, "BOTTOMLEFT", 0, 0)
 		else
 			if direction == "UP" then
 				icons[i]:Point("BOTTOM", icons[i-1], "TOP", 0, 3)
@@ -55,8 +67,7 @@ end
 
 local CreateIcon = function()
 	local icon = CreateFrame("Frame", nil, UIParent)
-	icon:Width(C.enemycooldown.size)
-	icon:Height(C.enemycooldown.size)
+	icon:Size(C.enemycooldown.size)
 	icon:SetTemplate("Default")
 	icon.Cooldown = CreateFrame("Cooldown", nil, icon)
 	icon.Cooldown:Point("TOPLEFT", 2, -2)
