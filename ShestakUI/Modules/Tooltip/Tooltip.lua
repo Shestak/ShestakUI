@@ -111,17 +111,19 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		local ShiftShow = function()
 			if IsShiftKeyDown() then
 				GameTooltip:Show()
-				GameTooltip:SetBackdropColor(unpack(C.media.overlay_color)) 
+				GameTooltip:SetBackdropColor(unpack(C.media.overlay_color))
 				GameTooltip:SetBackdropBorderColor(unpack(C.media.border_color))
 			else
-				GameTooltip:Hide()
+				if not HoverBind.enabled then
+					GameTooltip:Hide()
+				end
 			end
 		end
 		GameTooltip:SetScript("OnShow", ShiftShow)
 		local EventShow = function()
 			if arg1 == "LSHIFT" and arg2 == 1 then
 				GameTooltip:Show()
-				GameTooltip:SetBackdropColor(unpack(C.media.overlay_color)) 
+				GameTooltip:SetBackdropColor(unpack(C.media.overlay_color))
 				GameTooltip:SetBackdropBorderColor(unpack(C.media.border_color))
 			elseif arg1 == "LSHIFT" and arg2 == 0 then
 				GameTooltip:Hide()

@@ -17,8 +17,9 @@ SlashCmdList.MOUSEOVERBIND = function()
 		bind:EnableKeyboard(true)
 		bind:EnableMouseWheel(true)
 		bind.texture = bind:CreateTexture()
-		bind.texture:SetAllPoints(bind)
-		bind.texture:SetTexture(0, 0, 0, 0.25)
+		bind.texture:SetPoint("TOPLEFT", bind, 2, -2)
+		bind.texture:SetPoint("BOTTOMRIGHT", bind, -2, 2)
+		bind.texture:SetTexture(1, 1, 1, 0.3)
 		bind:Hide()
 
 		local elapsed = 0
@@ -28,20 +29,23 @@ SlashCmdList.MOUSEOVERBIND = function()
 			if (not self.comparing and IsModifiedClick("COMPAREITEMS")) then
 				GameTooltip_ShowCompareItem(self)
 				self.comparing = true
-			elseif ( self.comparing and not IsModifiedClick("COMPAREITEMS")) then
+			elseif (self.comparing and not IsModifiedClick("COMPAREITEMS")) then
 				for _, frame in pairs(self.shoppingTooltips) do
 					frame:Hide()
 				end
 				self.comparing = false
 			end
 		end)
+		GameTooltip:SetBackdropColor(unpack(C.media.overlay_color))
+		GameTooltip:SetBackdropBorderColor(unpack(C.media.border_color))
+
 		hooksecurefunc(GameTooltip, "Hide", function(self) for _, tt in pairs(self.shoppingTooltips) do tt:Hide() end end)
 
 		bind:SetScript("OnEvent", function(self) self:Deactivate(false) end)
 		bind:SetScript("OnLeave", function(self) self:HideFrame() end)
 		bind:SetScript("OnKeyDown", function(self, key) self:Listener(key) end)
 		bind:SetScript("OnMouseDown", function(self, key) self:Listener(key) end)
-		bind:SetScript("OnMouseWheel", function(self, delta) if delta>0 then self:Listener("MOUSEWHEELUP") else self:Listener("MOUSEWHEELDOWN") end end)
+		bind:SetScript("OnMouseWheel", function(self, delta) if delta > 0 then self:Listener("MOUSEWHEELUP") else self:Listener("MOUSEWHEELDOWN") end end)
 
 		function bind:Update(b, spellmacro)
 			if not self.enabled or InCombatLockdown() then return end
