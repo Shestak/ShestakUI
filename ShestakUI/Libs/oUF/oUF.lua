@@ -214,6 +214,7 @@ local initObject = function(unit, style, styleFunc, header, ...)
 		if(not (suffix == 'target' or objectUnit and objectUnit:match'target')) then
 			object:RegisterEvent('UNIT_ENTERED_VEHICLE', updateActiveUnit)
 			object:RegisterEvent('UNIT_EXITED_VEHICLE', updateActiveUnit)
+			object:RegisterEvent('PLAYER_ENTERING_WORLD', updateActiveUnit)
 
 			-- We don't need to register UNIT_PET for the player unit. We rigester it
 			-- mainly because UNIT_EXITED_VEHICLE and UNIT_ENTERED_VEHICLE doesn't always
