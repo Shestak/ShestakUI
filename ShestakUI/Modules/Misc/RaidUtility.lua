@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.misc.raid_tools == true then return end
+if C.misc.raid_tools ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Raid Utility(by Elv22)
@@ -20,7 +20,7 @@ local function CheckRaidStatus()
 end
 
 -- Function to create buttons in this module
-local function CreateButton(name, parent, template, width, height, point, relativeto, point2, xOfs, yOfs, text, texture)
+local function CreateButton(name, parent, template, width, height, point, relativeto, point2, xOfs, yOfs, text)
 	local b = CreateFrame("Button", name, parent, template)
 	b:Width(width)
 	b:Height(height)
@@ -36,19 +36,19 @@ local function CreateButton(name, parent, template, width, height, point, relati
 end
 
 -- Show button
-CreateButton("ShowButton", UIParent, "UIMenuButtonStretchTemplate, SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, 18, "TOP", UIParent, "TOP", -300, 2, RAID_CONTROL, nil)
+CreateButton("ShowButton", UIParent, "UIMenuButtonStretchTemplate, SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, 18, "TOP", UIParent, "TOP", -300, 2, RAID_CONTROL)
 ShowButton:SetFrameRef("RaidUtilityPanel", RaidUtilityPanel)
 ShowButton:SetAttribute("_onclick", [=[self:Hide(); self:GetFrameRef("RaidUtilityPanel"):Show();]=])
 ShowButton:SetScript("OnMouseUp", function(self) RaidUtilityPanel.toggled = true end)
 
 -- Close button
-CreateButton("CloseButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate, SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, 18, "TOP", RaidUtilityPanel, "BOTTOM", 0, -1, CLOSE, nil)
+CreateButton("CloseButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate, SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, 18, "TOP", RaidUtilityPanel, "BOTTOM", 0, -1, CLOSE)
 CloseButton:SetFrameRef("ShowButton", ShowButton)
 CloseButton:SetAttribute("_onclick", [=[self:GetParent():Hide(); self:GetFrameRef("ShowButton"):Show();]=])
 CloseButton:SetScript("OnMouseUp", function(self) RaidUtilityPanel.toggled = false end)
 
 -- Disband Raid button
-CreateButton("DisbandRaidButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", RaidUtilityPanel, "TOP", 0, -5, L_RAID_UTIL_DISBAND, nil)
+CreateButton("DisbandRaidButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", RaidUtilityPanel, "TOP", 0, -5, L_RAID_UTIL_DISBAND)
 DisbandRaidButton:SetScript("OnMouseUp", function(self)
 	if CheckRaidStatus() then
 		StaticPopup_Show("DISBAND_RAID")
@@ -56,7 +56,7 @@ DisbandRaidButton:SetScript("OnMouseUp", function(self)
 end)
 
 -- Convert Party button
-CreateButton("SwitchRaidButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", DisbandRaidButton, "BOTTOM", 0, -5, CONVERT_TO_PARTY, nil)
+CreateButton("SwitchRaidButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", DisbandRaidButton, "BOTTOM", 0, -5, CONVERT_TO_PARTY)
 SwitchRaidButton:SetScript("OnMouseUp", function(self)
 	if CheckRaidStatus() then
 		if UnitInRaid("player") then
@@ -68,7 +68,7 @@ SwitchRaidButton:SetScript("OnMouseUp", function(self)
 end)
 
 -- Role Check button
-CreateButton("RoleCheckButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", SwitchRaidButton, "BOTTOM", 0, -5, ROLE_POLL, nil)
+CreateButton("RoleCheckButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", SwitchRaidButton, "BOTTOM", 0, -5, ROLE_POLL)
 RoleCheckButton:SetScript("OnMouseUp", function(self)
 	if CheckRaidStatus() then
 		InitiateRolePoll()
@@ -76,19 +76,19 @@ RoleCheckButton:SetScript("OnMouseUp", function(self)
 end)
 
 -- MainTank button
-CreateButton("MainTankButton", RaidUtilityPanel, "SecureActionButtonTemplate, UIMenuButtonStretchTemplate", (DisbandRaidButton:GetWidth() / 2) - 2, 18, "TOPLEFT", RoleCheckButton, "BOTTOMLEFT", 0, -5, TANK, nil)
+CreateButton("MainTankButton", RaidUtilityPanel, "SecureActionButtonTemplate, UIMenuButtonStretchTemplate", (DisbandRaidButton:GetWidth() / 2) - 2, 18, "TOPLEFT", RoleCheckButton, "BOTTOMLEFT", 0, -5, TANK)
 MainTankButton:SetAttribute("type", "maintank")
 MainTankButton:SetAttribute("unit", "target")
 MainTankButton:SetAttribute("action", "toggle")
 
 -- MainAssist button
-CreateButton("MainAssistButton", RaidUtilityPanel, "SecureActionButtonTemplate, UIMenuButtonStretchTemplate", (DisbandRaidButton:GetWidth() / 2) - 2, 18, "TOPRIGHT", RoleCheckButton, "BOTTOMRIGHT", 0, -5, MAINASSIST, nil)
+CreateButton("MainAssistButton", RaidUtilityPanel, "SecureActionButtonTemplate, UIMenuButtonStretchTemplate", (DisbandRaidButton:GetWidth() / 2) - 2, 18, "TOPRIGHT", RoleCheckButton, "BOTTOMRIGHT", 0, -5, MAINASSIST)
 MainAssistButton:SetAttribute("type", "mainassist")
 MainAssistButton:SetAttribute("unit", "target")
 MainAssistButton:SetAttribute("action", "toggle")
 
 -- Ready Check button
-CreateButton("ReadyCheckButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RoleCheckButton:GetWidth() * 0.75, 18, "TOPLEFT", MainTankButton, "BOTTOMLEFT", 0, -5, READY_CHECK, nil)
+CreateButton("ReadyCheckButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RoleCheckButton:GetWidth() * 0.75, 18, "TOPLEFT", MainTankButton, "BOTTOMLEFT", 0, -5, READY_CHECK)
 ReadyCheckButton:SetScript("OnMouseUp", function(self)
 	if CheckRaidStatus() then
 		DoReadyCheck()
@@ -116,7 +116,7 @@ MarkTexture:SetTexture("Interface\\RaidFrame\\Raid-WorldPing")
 MarkTexture:Point("CENTER", 0, -1)
 
 -- Raid Control Panel
-CreateButton("RaidControlButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RoleCheckButton:GetWidth(), 18, "TOPLEFT", ReadyCheckButton, "BOTTOMLEFT", 0, -5, RAID_CONTROL, nil)
+CreateButton("RaidControlButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RoleCheckButton:GetWidth(), 18, "TOPLEFT", ReadyCheckButton, "BOTTOMLEFT", 0, -5, RAID_CONTROL)
 RaidControlButton:SetScript("OnMouseUp", function(self)
 	ToggleFriendsFrame(4)
 end)
