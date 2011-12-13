@@ -797,11 +797,9 @@ function Stuffing:ADDON_LOADED(addon)
 
 	self:RegisterEvent("BAG_UPDATE")
 	self:RegisterEvent("ITEM_LOCK_CHANGED")
-
 	self:RegisterEvent("BANKFRAME_OPENED")
 	self:RegisterEvent("BANKFRAME_CLOSED")
 	self:RegisterEvent("PLAYERBANKSLOTS_CHANGED")
-
 	self:RegisterEvent("BAG_CLOSED")
 
 	SlashCmdList.STUFFING = StuffingSlashCmd
@@ -809,7 +807,7 @@ function Stuffing:ADDON_LOADED(addon)
 	SLASH_STUFFING2 = "/ифпы"
 
 	self:InitBags()
-	
+
 	tinsert(UISpecialFrames, "StuffingFrameBags")
 
 	ToggleBackpack = Stuffing_Toggle
@@ -1133,7 +1131,6 @@ function Stuffing:SortBags()
 		-- XXX why doesn't this remove all x->x moves in one pass?
 
 		for i, v in ipairs (st) do
-
 			-- Source is same as destination
 			if (v.sslot == v.dslot) and (v.sbag == v.dbag) then
 				table.remove(st, i)
