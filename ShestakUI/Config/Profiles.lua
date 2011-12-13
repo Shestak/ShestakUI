@@ -206,7 +206,7 @@ end
 --	ILF7 Config
 ----------------------------------------------------------------------------------------
 if T.name == "Мейнстрим" and T.realm == "Азурегос" then
-	C["media"].pixel_font = [[Interface\AddOns\ShestakUI\Media\Fonts\Archangelsk.ttf]]
+	C["media"].pixel_font = "Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Archangelsk.ttf"
 	C["media"].pixel_font_style = "OUTLINE"
 	C["media"].pixel_font_size = 14
 	C["misc"].auto_decline_duel = false
@@ -280,7 +280,6 @@ if T.name == "Мейнстрим" and T.realm == "Азурегос" then
 	C["raidframe"].plugins_auto_resurrection = true
 	C["toppanel"].height = 100
 	C["stats"].battleground = true
-	C["error"].hide = false
 	C["error"].black = false
 	C["error"].white = true
 	C["font"].stats_font_size = 14
