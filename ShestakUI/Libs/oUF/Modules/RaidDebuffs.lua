@@ -48,6 +48,10 @@ local DispellColor = {
 	["none"]	= {unpack(C.media.border_color)},
 }
 
+if C.aura.debuff_color_type == true then
+	DispellColor.none = {1, 0, 0}
+end
+
 local DispellPriority = {
 	["Magic"]	= 4,
 	["Curse"]	= 3,
@@ -183,7 +187,9 @@ local function UpdateDebuff(self, name, icon, count, debuffType, duration, endTi
 
 		local c = DispellColor[debuffType] or DispellColor.none
 		f:SetBackdropColor(unpack(C.media.backdrop_color))
-		--f:SetBackdropBorderColor(c[1], c[2], c[3])
+		if C.aura.debuff_color_type == true then
+			f:SetBackdropBorderColor(c[1], c[2], c[3])
+		end
 
 		f:Show()
 	else
