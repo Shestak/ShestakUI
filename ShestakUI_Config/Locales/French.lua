@@ -22,7 +22,7 @@ L_GUI_MISC_AUTOQUEST = "Accepter les quêtes automatiquement"
 L_GUI_MISC_AUTODUEL = "Décliner les duels automatiquement"
 L_GUI_MISC_AUTOACCEPT = "Accepter automatiquement les invitations"
 L_GUI_MISC_AUTORESSURECT = "Autorésurrection en champ de bataille"
-L_GUI_MISC_AUTOBUYREAGENTS = "Auto buy reagents" -- Needs review
+L_GUI_MISC_AUTOBUYREAGENTS = "Achat automatique de composants"
 L_GUI_MISC_MARKING = "Marque la cible quand vous appuyez sur MAJ"
 L_GUI_MISC_INVKEYWORD = "Mot clé pour inviter (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Faire tourner la caméra quand absent"
@@ -118,7 +118,7 @@ L_GUI_COOLDOWN_PULSE_SIZE = "Taille des icones de cooldowns pulse"
 L_GUI_COOLDOWN_PULSE_SOUND = "Avertissement des modifications"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Mise à niveau des animations"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Max opacity hold time"
-L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimal threshold time" -- Needs review
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "Temps minimum de déclenchement"
 
 -- Threat options
 L_GUI_THREAT = "Barre de menace"
@@ -311,7 +311,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Mise en évidence des debuffs texture +
 L_GUI_UF_PLUGINS_AURA_WATCH = "Aura/debuff de raid"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Durée sur les icônes de débuff du raid"
 L_GUI_UF_PLUGINS_HEALCOMM = "Barre de soin entrant (incoming)"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle click when the unit is dead (does not work with Clique enabled)" -- Needs review
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Lance automatiquement le sort de résurrection de masse avec un clic central souris sur une cible morte (ne fonctionne pas avec Clique activé)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Panneau supérieur"
