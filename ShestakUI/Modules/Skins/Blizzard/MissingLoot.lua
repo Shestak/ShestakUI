@@ -25,6 +25,7 @@ local function LoadSkin()
 				icon:ClearAllPoints()
 				icon:Point("TOPLEFT", 2, -2)
 				icon:Point("BOTTOMRIGHT", -2, 2)
+				icon:SetDrawLayer("ARTWORK")
 
 				slot.isSkinned = true
 			end

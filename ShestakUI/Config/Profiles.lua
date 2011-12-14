@@ -73,6 +73,7 @@ if T.author == true then
 	C["nameplate"].track_auras = true
 	C["actionbar"].toggle_mode = false
 	C["unitframe"].arena_on_right = false
+	C["unitframe"].plugins_vengeance_bar = false
 	C["stats"].fps = false
 	C["stats"].guild_repair = false
 	C["stats"].battleground = true
