@@ -191,6 +191,10 @@ local function UpdateDebuff(self, name, icon, count, debuffType, duration, endTi
 	end
 end
 
+local blackList = {
+	[105171] = true,	-- Deep Corruption
+}
+
 local function Update(self, event, unit)
 	if unit ~= self.unit then return end
 	local _name, _icon, _count, _dtype, _duration, _endTime, _spellId
@@ -213,7 +217,7 @@ local function Update(self, event, unit)
 		end
 
 		priority = debuff_data[addon.MatchBySpellName and name or spellId]
-		if priority and (priority > _priority) then
+		if priority and not blackList[spellId] and (priority > _priority) then
 			_priority, _name, _icon, _count, _dtype, _duration, _endTime, _spellId = priority, name, icon, count, debuffType, duration, expirationTime, spellId
 		end
 	end

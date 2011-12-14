@@ -220,7 +220,7 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Warlord Zon'ozz
 			SpellName(103434),	-- Disrupting Shadows
 			-- Yor'sahj the Unsleeping
-			SpellName(105171),	-- Deep Corruption
+			SpellName(103628),	-- Deep Corruption
 			-- Hagara the Stormbinder
 			SpellName(104451),	-- Ice Tomb
 			SpellName(109325),	-- Frostflake
