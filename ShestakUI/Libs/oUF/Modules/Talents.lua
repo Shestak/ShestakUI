@@ -15,8 +15,8 @@ local spells = {
 	[GetSpellInfo(12809)] = L_PLANNER_WARRIOR_3,		-- Concussion Blow
 	[GetSpellInfo(20243)] = L_PLANNER_WARRIOR_3,		-- Devastate
 	-- PALADIN
-	[GetSpellInfo(31935)] = L_PLANNER_PALADIN_2,		-- Avenger's Shield
 	[GetSpellInfo(20473)] = L_PLANNER_PALADIN_1,		-- Holy Shock
+	[GetSpellInfo(31935)] = L_PLANNER_PALADIN_2,		-- Avenger's Shield
 	[GetSpellInfo(35395)] = L_PLANNER_PALADIN_3,		-- Crusader Strike
 	[GetSpellInfo(53385)] = L_PLANNER_PALADIN_3,		-- Divine Storm
 	[GetSpellInfo(20066)] = L_PLANNER_PALADIN_3,		-- Repentance
@@ -31,7 +31,7 @@ local spells = {
 	[GetSpellInfo(10060)] = L_PLANNER_PRIEST_1,			-- Power Infusion
 	[GetSpellInfo(33206)] = L_PLANNER_PRIEST_1,			-- Pain Suppression
 	[GetSpellInfo(34861)] = L_PLANNER_PRIEST_2,			-- Circle of Healing
-	[GetSpellInfo(724)]	= L_PLANNER_PRIEST_2,			-- Lightwell
+	[GetSpellInfo(724)] = L_PLANNER_PRIEST_2,			-- Lightwell
 	[GetSpellInfo(15487)] = L_PLANNER_PRIEST_3,			-- Silence
 	[GetSpellInfo(34914)] = L_PLANNER_PRIEST_3,			-- Vampiric Touch
 	-- DEATHKNIGHT
@@ -86,8 +86,8 @@ local buffs = { -- Credits: Proditor, Rinu
 	[GetSpellInfo(36554)] = L_PLANNER_ROGUE_3,			-- Shadowstep
 	[GetSpellInfo(31223)] = L_PLANNER_ROGUE_3,			-- Master of Subtlety
 	-- PRIEST
-	[GetSpellInfo(47788)] = L_PLANNER_PRIEST_2,			-- Guardian Spirit
 	[GetSpellInfo(52797)] = L_PLANNER_PRIEST_1,			-- Borrowed Time
+	[GetSpellInfo(47788)] = L_PLANNER_PRIEST_2,			-- Guardian Spirit
 	[GetSpellInfo(15473)] = L_PLANNER_PRIEST_3,			-- Shadowform
 	[GetSpellInfo(15286)] = L_PLANNER_PRIEST_3,			-- Vampiric Embrace
 	-- DEATHKNIGHT
@@ -96,24 +96,24 @@ local buffs = { -- Credits: Proditor, Rinu
 	[GetSpellInfo(53138)] = L_PLANNER_DEATHKNIGHT_1,	-- Abomination's Might
 	[GetSpellInfo(55610)] = L_PLANNER_DEATHKNIGHT_2,	-- Improved Icy Talons
 	-- MAGE
-	[GetSpellInfo(11426)] = L_PLANNER_MAGE_3,			-- Ice Barrier
-	[GetSpellInfo(11129)] = L_PLANNER_MAGE_2,			-- Combustion
 	[GetSpellInfo(82930)] = L_PLANNER_MAGE_1,			-- Arcane Tactics
+	[GetSpellInfo(11129)] = L_PLANNER_MAGE_2,			-- Combustion
+	[GetSpellInfo(11426)] = L_PLANNER_MAGE_3,			-- Ice Barrier
 	-- WARLOCK
 	[GetSpellInfo(30301)] = L_PLANNER_WARLOCK_3,		-- Nether Protection
 	-- SHAMAN
-	[GetSpellInfo(77746)] = L_PLANNER_SHAMAN_1,			-- Totem of Wrath
-	[GetSpellInfo(974)] = L_PLANNER_SHAMAN_3,			-- Earth Shield
 	[GetSpellInfo(51470)] = L_PLANNER_SHAMAN_1,			-- Elemental Oath
+	[GetSpellInfo(77746)] = L_PLANNER_SHAMAN_1,			-- Totem of Wrath
 	[GetSpellInfo(30808)] = L_PLANNER_SHAMAN_2,			-- Unleashed Rage
+	[GetSpellInfo(974)] = L_PLANNER_SHAMAN_3,			-- Earth Shield
 	-- HUNTER
 	[GetSpellInfo(20895)] = L_PLANNER_HUNTER_1,			-- Spirit Bond
 	[GetSpellInfo(19506)] = L_PLANNER_HUNTER_2,			-- Trueshot Aura
 	-- DRUID
-	[GetSpellInfo(17007)] = L_PLANNER_DRUID_2,			-- Leader of the Pack
-	[GetSpellInfo(33891)] = L_PLANNER_DRUID_3,			-- Tree of Life
 	[GetSpellInfo(24907)] = L_PLANNER_DRUID_1,			-- Moonkin Aura
 	[GetSpellInfo(24858)] = L_PLANNER_DRUID_1,			-- Moonkin Form
+	[GetSpellInfo(17007)] = L_PLANNER_DRUID_2,			-- Leader of the Pack
+	[GetSpellInfo(33891)] = L_PLANNER_DRUID_3,			-- Tree of Life
 	[GetSpellInfo(48438)] = L_PLANNER_DRUID_3,			-- Wild Growth
 }
 
@@ -121,7 +121,7 @@ local function Update(object, event, unit)
 	if object.unit ~= unit or unit == "player" or unit:find("pet") then return end
 	object.Talents:SetText("")
 	for index = 1, 40 do
-		local name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable = UnitAura(unit, index, "HELPFUL")
+		local name, _, _, _, _, _, _, unitCaster = UnitAura(unit, index, "HELPFUL")
 		if name ~= nil and unitCaster == unit then
 			if buffs[name] then
 				object.Talents:SetText(buffs[name])

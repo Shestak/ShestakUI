@@ -747,6 +747,7 @@ local function Shared(self, unit)
 					self.CPoints = CPoints
 				end
 			end
+
 			if C.unitframe.plugins_talents == true then
 				self.Talents = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 				self.Talents:SetTextColor(1, 0, 0)
@@ -959,6 +960,18 @@ local function Shared(self, unit)
 		self.AuraTracker.text = T.SetFontString(self.AuraTracker, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
 		self.AuraTracker.text:Point("CENTER", self.AuraTracker, 0, 0)
 		self.AuraTracker:SetScript("OnUpdate", T.AuraTrackerTime)
+
+		if C.unitframe.plugins_talents == true then
+			self.Talents = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.Talents:SetTextColor(1, 0, 0)
+			if C.unitframe.arena_on_right == true then
+				self.Talents:Point("RIGHT", self.Power, "RIGHT", 0, 0)
+				self.Talents:SetJustifyH("LEFT")
+			else
+				self.Talents:Point("LEFT", self.Power, "LEFT", 2, 0)
+				self.Talents:SetJustifyH("RIGHT")
+			end
+		end
 	end
 
 	if C.unitframe.show_boss and unit == "boss" then
