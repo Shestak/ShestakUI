@@ -45,7 +45,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Shestak Config
 ----------------------------------------------------------------------------------------
-if T.author == true then
+if T.author == true and T.realm == "Страж Смерти" then
 	C["general"].welcome_message = false
 	C["general"].custom_lagtolerance = true
 	C["misc"].auto_quest = true
@@ -81,9 +81,6 @@ if T.author == true then
 		C["misc"].ach_screens = true
 		C["stats"].experience = false
 		C["combattext"].heal_treshold = 500
-	end
-	if T.realm == "Дракономор" then
-		C["unitframe"].icons_pvp = true
 	end
 end
 
