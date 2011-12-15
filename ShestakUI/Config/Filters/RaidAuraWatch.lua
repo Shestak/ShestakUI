@@ -85,6 +85,11 @@ if C.raidframe.plugins_aura_watch == true then
 		-- Baradin Hold
 			-- Argaloth
 			SpellName(95173),	-- Consuming Darkness
+			-- Occu'thar
+			SpellName(96913),	-- Searing Shadows
+			-- Alizabal
+			SpellName(104936),	-- Skewer
+			SpellName(105067),	-- Seething Hate
 		-- Blackwing Descent
 			-- Magmaw
 			SpellName(94679),	-- Parasitic Infection
@@ -178,7 +183,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(49026),	-- Fixate
 			SpellName(97079),	-- Seeping Venom
 			-- Lord Rhyolith
-			SpellName(98492),	-- Eruption
+			--SpellName(98492),	-- Eruption
 			-- Alysrazor
 			SpellName(101296),	-- Fieroblast
 			SpellName(100723),	-- Gushing Wound
@@ -196,6 +201,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(99516),	-- Countdown
 			-- Majordomo Staghelm
 			SpellName(98450),	-- Searing Seeds
+			SpellName(100210),	-- Burning Orb
 			-- Ragnaros
 			SpellName(99399),	-- Burning Wound
 			SpellName(100293),	-- Lava Wave
