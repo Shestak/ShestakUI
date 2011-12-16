@@ -985,13 +985,6 @@ T.UpdateShards = function(self, event, unit, powerType)
 	end
 end
 
-T.Phasing = function(self, event)
-	local inPhase = UnitInPhase(self.unit)
-	local picon = self.PhaseIcon
-
-	if not UnitIsPlayer(self.unit) then picon:Hide() return end
-end
-
 T.UpdateHoly = function(self, event, unit, powerType)
 	if self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER") then return end
 	local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)

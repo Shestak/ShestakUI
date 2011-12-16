@@ -30,7 +30,6 @@
 	<Script file="Elements\HealPrediction.lua"/>
 	<Script file="Elements\HolyPower.lua"/>
 	<Script file="Elements\SoulShards.lua"/>
-	<Script file="Elements\PIcon.lua"/>
 	<Script file="Elements\ReadyCheck.lua"/>
 	<Script file="Elements\QIcon.lua"/>
 	<Script file="Elements\EclipseBar.lua"/>
