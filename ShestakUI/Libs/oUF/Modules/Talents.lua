@@ -10,65 +10,44 @@ local oUF = ns.oUF
 local spells = {
 	-- WARRIOR
 	[GetSpellInfo(12294)] = L_PLANNER_WARRIOR_1,		-- Mortal Strike
-	[GetSpellInfo(46924)] = L_PLANNER_WARRIOR_1,		-- Bladestorm
 	[GetSpellInfo(23881)] = L_PLANNER_WARRIOR_2,		-- Bloodthirst
-	[GetSpellInfo(12809)] = L_PLANNER_WARRIOR_3,		-- Concussion Blow
-	[GetSpellInfo(20243)] = L_PLANNER_WARRIOR_3,		-- Devastate
+	[GetSpellInfo(23922)] = L_PLANNER_WARRIOR_3,		-- Shield Slam
 	-- PALADIN
 	[GetSpellInfo(20473)] = L_PLANNER_PALADIN_1,		-- Holy Shock
 	[GetSpellInfo(31935)] = L_PLANNER_PALADIN_2,		-- Avenger's Shield
-	[GetSpellInfo(35395)] = L_PLANNER_PALADIN_3,		-- Crusader Strike
-	[GetSpellInfo(53385)] = L_PLANNER_PALADIN_3,		-- Divine Storm
-	[GetSpellInfo(20066)] = L_PLANNER_PALADIN_3,		-- Repentance
+	[GetSpellInfo(85256)] = L_PLANNER_PALADIN_3,		-- Templar's Verdict
 	-- ROGUE
 	[GetSpellInfo(1329)] = L_PLANNER_ROGUE_1,			-- Mutilate
-	[GetSpellInfo(51690)] = L_PLANNER_ROGUE_2,			-- Killing Spree
-	[GetSpellInfo(13877)] = L_PLANNER_ROGUE_2,			-- Blade Flurry
-	[GetSpellInfo(13750)] = L_PLANNER_ROGUE_2,			-- Adrenaline Rush
+	[GetSpellInfo(84617)] = L_PLANNER_ROGUE_2,			-- Revealing Strike
 	[GetSpellInfo(16511)] = L_PLANNER_ROGUE_3,			-- Hemorrhage
 	-- PRIEST
 	[GetSpellInfo(47540)] = L_PLANNER_PRIEST_1,			-- Penance
-	[GetSpellInfo(10060)] = L_PLANNER_PRIEST_1,			-- Power Infusion
-	[GetSpellInfo(33206)] = L_PLANNER_PRIEST_1,			-- Pain Suppression
 	[GetSpellInfo(34861)] = L_PLANNER_PRIEST_2,			-- Circle of Healing
-	[GetSpellInfo(724)] = L_PLANNER_PRIEST_2,			-- Lightwell
-	[GetSpellInfo(15487)] = L_PLANNER_PRIEST_3,			-- Silence
-	[GetSpellInfo(34914)] = L_PLANNER_PRIEST_3,			-- Vampiric Touch
+	[GetSpellInfo(88684)] = L_PLANNER_PRIEST_2,		    -- Holy Word: Serenity
+	[GetSpellInfo(15407)] = L_PLANNER_PRIEST_3,			-- Mind Flay
 	-- DEATHKNIGHT
 	[GetSpellInfo(55050)] = L_PLANNER_DEATHKNIGHT_1,	-- Heart Strike
-	[GetSpellInfo(49203)] = L_PLANNER_DEATHKNIGHT_2,	-- Hungering Cold
 	[GetSpellInfo(49143)] = L_PLANNER_DEATHKNIGHT_2,	-- Frost Strike
-	[GetSpellInfo(49184)] = L_PLANNER_DEATHKNIGHT_2,	-- Howling Blast
 	[GetSpellInfo(55090)] = L_PLANNER_DEATHKNIGHT_3,	-- Scourge Strike
 	-- MAGE
 	[GetSpellInfo(44425)] = L_PLANNER_MAGE_1,			-- Arcane Barrage
-	[GetSpellInfo(44457)] = L_PLANNER_MAGE_2,			-- Living Bomb
-	[GetSpellInfo(31661)] = L_PLANNER_MAGE_2,			-- Dragon's Breath
-	[GetSpellInfo(11113)] = L_PLANNER_MAGE_2,			-- Blast Wave
+	[GetSpellInfo(11366)] = L_PLANNER_MAGE_2,			-- Pyroblast
 	[GetSpellInfo(44572)] = L_PLANNER_MAGE_3,			-- Deep Freeze
 	-- WARLOCK
-	[GetSpellInfo(48181)] = L_PLANNER_WARLOCK_1,		-- Haunt
 	[GetSpellInfo(30108)] = L_PLANNER_WARLOCK_1,		-- Unstable Affliction
-	[GetSpellInfo(59672)] = L_PLANNER_WARLOCK_2,		-- Metamorphosis
+	[GetSpellInfo(71521)] = L_PLANNER_WARLOCK_2,		-- Hand of Gul'dan
+	[GetSpellInfo(17962)] = L_PLANNER_WARLOCK_3,		-- Conflagrate
 	[GetSpellInfo(50796)] = L_PLANNER_WARLOCK_3,		-- Chaos Bolt
-	[GetSpellInfo(30283)] = L_PLANNER_WARLOCK_3,		-- Shadowfury
 	-- SHAMAN
 	[GetSpellInfo(51490)] = L_PLANNER_SHAMAN_1,			-- Thunderstorm
-	[GetSpellInfo(16166)] = L_PLANNER_SHAMAN_1,			-- Elemental Mastery
-	[GetSpellInfo(51533)] = L_PLANNER_SHAMAN_2,			-- Feral Spirit
-	[GetSpellInfo(30823)] = L_PLANNER_SHAMAN_2,			-- Shamanistic Rage
-	[GetSpellInfo(17364)] = L_PLANNER_SHAMAN_2,			-- Stormstrike
+	[GetSpellInfo(60103)] = L_PLANNER_SHAMAN_2,			-- Lava Lash
 	[GetSpellInfo(61295)] = L_PLANNER_SHAMAN_3,			-- Riptide
-	[GetSpellInfo(51886)] = L_PLANNER_SHAMAN_3,			-- Cleanse Spirit
 	-- HUNTER
 	[GetSpellInfo(19577)] = L_PLANNER_HUNTER_1,			-- Intimidation
-	[GetSpellInfo(34490)] = L_PLANNER_HUNTER_2,			-- Silencing Shot
-	[GetSpellInfo(53209)] = L_PLANNER_HUNTER_2,			-- Chimera Shot
+	[GetSpellInfo(19434)] = L_PLANNER_HUNTER_2,			-- Aimed Shot
 	[GetSpellInfo(53301)] = L_PLANNER_HUNTER_3,			-- Explosive Shot
-	[GetSpellInfo(19386)] = L_PLANNER_HUNTER_3,			-- Wyvern Sting
 	-- DRUID
-	[GetSpellInfo(48505)] = L_PLANNER_DRUID_1,			-- Starfall
-	[GetSpellInfo(50516)] = L_PLANNER_DRUID_1,			-- Typhoon
+	[GetSpellInfo(78674)] = L_PLANNER_DRUID_1,			-- Starsurge
 	[GetSpellInfo(33876)] = L_PLANNER_DRUID_2,			-- Mangle (Cat)
 	[GetSpellInfo(33878)] = L_PLANNER_DRUID_2,			-- Mangle (Bear)
 	[GetSpellInfo(18562)] = L_PLANNER_DRUID_3,			-- Swiftmend
@@ -76,49 +55,50 @@ local spells = {
 
 local buffs = { -- Credits: Proditor, Rinu
 	-- WARRIOR
-	[GetSpellInfo(56638)] = L_PLANNER_WARRIOR_1,		-- Taste for Blood
-	[GetSpellInfo(64976)] = L_PLANNER_WARRIOR_1,		-- Juggernaut
+	[GetSpellInfo(60503)] = L_PLANNER_WARRIOR_1,		-- Taste for Blood
 	[GetSpellInfo(29801)] = L_PLANNER_WARRIOR_2,		-- Rampage
 	[GetSpellInfo(50227)] = L_PLANNER_WARRIOR_3,		-- Sword and Board
 	-- PALADIN
-	--[GetSpellInfo(31836)] = L_PLANNER_PALADIN_1,		-- Light's Grace
+	[GetSpellInfo(20053)] = L_PLANNER_PALADIN_1,		-- Conviction
+	[GetSpellInfo(20178)] = L_PLANNER_PALADIN_2,		-- Reckoning
+	[GetSpellInfo(89906)] = L_PLANNER_PALADIN_3,		-- Judgements of the Bold
 	-- ROGUE
-	[GetSpellInfo(36554)] = L_PLANNER_ROGUE_3,			-- Shadowstep
-	[GetSpellInfo(31223)] = L_PLANNER_ROGUE_3,			-- Master of Subtlety
+	[GetSpellInfo(58426)] = L_PLANNER_ROGUE_1,			-- Overkill
+	[GetSpellInfo(13877)] = L_PLANNER_ROGUE_2,			-- Blade Flurry
+	[GetSpellInfo(51698)] = L_PLANNER_ROGUE_3,			-- Honor Among Thieves
 	-- PRIEST
-	[GetSpellInfo(52797)] = L_PLANNER_PRIEST_1,			-- Borrowed Time
-	[GetSpellInfo(47788)] = L_PLANNER_PRIEST_2,			-- Guardian Spirit
+	[GetSpellInfo(47930)] = L_PLANNER_PRIEST_1,			-- Grace
+	[GetSpellInfo(59889)] = L_PLANNER_PRIEST_1,			-- Borrowed Time
+	[GetSpellInfo(63735)] = L_PLANNER_PRIEST_2,			-- Serendipity
 	[GetSpellInfo(15473)] = L_PLANNER_PRIEST_3,			-- Shadowform
-	[GetSpellInfo(15286)] = L_PLANNER_PRIEST_3,			-- Vampiric Embrace
 	-- DEATHKNIGHT
 	[GetSpellInfo(49222)] = L_PLANNER_DEATHKNIGHT_1,	-- Bone Shield
-	[GetSpellInfo(49016)] = L_PLANNER_DEATHKNIGHT_1,	-- Hysteria
 	[GetSpellInfo(53138)] = L_PLANNER_DEATHKNIGHT_1,	-- Abomination's Might
 	[GetSpellInfo(55610)] = L_PLANNER_DEATHKNIGHT_2,	-- Improved Icy Talons
+	[GetSpellInfo(81340)] = L_PLANNER_DEATHKNIGHT_3,	-- Sudden Doom
 	-- MAGE
 	[GetSpellInfo(82930)] = L_PLANNER_MAGE_1,			-- Arcane Tactics
-	[GetSpellInfo(11129)] = L_PLANNER_MAGE_2,			-- Combustion
+	[GetSpellInfo(48108)] = L_PLANNER_MAGE_2,			-- Hot Streak
 	[GetSpellInfo(11426)] = L_PLANNER_MAGE_3,			-- Ice Barrier
 	-- WARLOCK
+	[GetSpellInfo(53646)] = L_PLANNER_WARLOCK_2,		-- Demonic Pact
 	[GetSpellInfo(30301)] = L_PLANNER_WARLOCK_3,		-- Nether Protection
 	-- SHAMAN
-	[GetSpellInfo(51470)] = L_PLANNER_SHAMAN_1,			-- Elemental Oath
-	[GetSpellInfo(77746)] = L_PLANNER_SHAMAN_1,			-- Totem of Wrath
+	[GetSpellInfo(51466)] = L_PLANNER_SHAMAN_1,			-- Elemental Oath
 	[GetSpellInfo(30808)] = L_PLANNER_SHAMAN_2,			-- Unleashed Rage
 	[GetSpellInfo(974)] = L_PLANNER_SHAMAN_3,			-- Earth Shield
 	-- HUNTER
-	[GetSpellInfo(20895)] = L_PLANNER_HUNTER_1,			-- Spirit Bond
+	[GetSpellInfo(75447)] = L_PLANNER_HUNTER_1,			-- Ferocious Inspiration
 	[GetSpellInfo(19506)] = L_PLANNER_HUNTER_2,			-- Trueshot Aura
+	[GetSpellInfo(53290)] = L_PLANNER_HUNTER_3,			-- Hunting Party
 	-- DRUID
-	[GetSpellInfo(24907)] = L_PLANNER_DRUID_1,			-- Moonkin Aura
 	[GetSpellInfo(24858)] = L_PLANNER_DRUID_1,			-- Moonkin Form
 	[GetSpellInfo(17007)] = L_PLANNER_DRUID_2,			-- Leader of the Pack
-	[GetSpellInfo(33891)] = L_PLANNER_DRUID_3,			-- Tree of Life
 	[GetSpellInfo(48438)] = L_PLANNER_DRUID_3,			-- Wild Growth
 }
 
 local function Update(object, event, unit)
-	if object.unit ~= unit or unit == "player" or unit:find("pet") then return end
+	if object.unit ~= unit or unit == "player" or unit:find("pet") or UnitIsFriend("player", unit) then return end
 	object.Talents:SetText("")
 	for index = 1, 40 do
 		local name, _, _, _, _, _, _, unitCaster = UnitAura(unit, index, "HELPFUL")
