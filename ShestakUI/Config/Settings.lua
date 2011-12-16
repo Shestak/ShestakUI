@@ -375,6 +375,7 @@ C["unitframe"] = {
 	["plugins_holy_bar"] = true,				-- Holy bar
 	["plugins_shard_bar"] = true,				-- Shard bar
 	["plugins_rune_bar"] = true,				-- Rune bar
+	["plugins_necro_strike"] = false,			-- Necrotic Strike bar
 	["plugins_vengeance_bar"] = true,			-- Vengeance bar
 	["plugins_totem_bar"] = true,				-- Totem bar
 	["plugins_totem_bar_name"] = false,			-- Totem name

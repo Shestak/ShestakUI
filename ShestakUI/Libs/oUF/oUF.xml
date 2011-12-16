@@ -54,6 +54,7 @@
 	<Script file="Modules\TotemBar.lua"/>
 	<Script file="Modules\Trinkets.lua"/>
 	<Script file="Modules\Vengeance.lua"/>
+	<Script file="Modules\NecroticStrike.lua"/>
 
 	<!-- Clique support -->
 	<Button name="oUF_ClickCastUnitTemplate" virtual="true" inherits="SecureUnitButtonTemplate,SecureHandlerEnterLeaveTemplate">

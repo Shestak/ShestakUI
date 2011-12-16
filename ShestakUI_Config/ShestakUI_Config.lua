@@ -317,6 +317,7 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_holy_bar" then o = L_GUI_UF_PLUGINS_HOLY_BAR end
 	if o == "UIConfigunitframeplugins_shard_bar" then o = L_GUI_UF_PLUGINS_SHARD_BAR end
 	if o == "UIConfigunitframeplugins_rune_bar" then o = L_GUI_UF_PLUGINS_RUNE_BAR end
+	if o == "UIConfigunitframeplugins_necro_strike" then o = L_GUI_UF_PLUGINS_NECRO_STRIKE end
 	if o == "UIConfigunitframeplugins_vengeance_bar" then o = L_GUI_UF_PLUGINS_VENGEANCE_BAR end
 	if o == "UIConfigunitframeplugins_totem_bar" then o = L_GUI_UF_PLUGINS_TOTEM_BAR end
 	if o == "UIConfigunitframeplugins_totem_bar_name" then o = L_GUI_UF_PLUGINS_TOTEM_BAR_NAME end

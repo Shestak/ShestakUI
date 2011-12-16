@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.unitframe.enable ~= true or C.unitframe.plugins_necro_strike ~= true then return end
+if C.unitframe.enable ~= true or C.unitframe.plugins_necro_strike ~= true or T.class ~= "DEATHKNIGHT" then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on oUF_NecroStrike(by pvtschlag)
@@ -21,7 +21,8 @@ local function GetNecroticAbsorb(unit)
 			end
 			NecroticStrikeTooltip:ClearLines()
 			NecroticStrikeTooltip:SetUnitDebuff(unit, i)
-			return tonumber(string.match(_G[NecroticStrikeTooltip:GetName() .. "TextLeft2"]:GetText(), ".* (%d+%s?) .*"))
+			--return tonumber(string.match(_G[NecroticStrikeTooltip:GetName() .. "TextLeft2"]:GetText(), ".* (%d+%s?) .*"))
+			return tonumber(string.match(_G[NecroticStrikeTooltip:GetName() .. "TextLeft2"]:GetText(), "%d+"))
 		end
 		i = i + 1
 	end

@@ -278,6 +278,7 @@ L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Activar barra de eclipse"
 L_GUI_UF_PLUGINS_HOLY_BAR = "Activar barra de poder sagrado"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Activar barra de fragmentos"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Activar barra de Runas"
+L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar" -- Needs review
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Activar barra de venganza"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Activar barra de totems"
 L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Nombre de la barra de totems"

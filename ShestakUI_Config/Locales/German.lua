@@ -278,6 +278,7 @@ L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Aktiviere Eclipseleiste"
 L_GUI_UF_PLUGINS_HOLY_BAR = "Aktivere Heilige Kraft Leiste"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Aktiviere Splitter Leiste"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Runenleiste"
+L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar" -- Needs review
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Zeige Rachebar an"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Totemleiste"
 L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Totemname"
