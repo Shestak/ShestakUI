@@ -45,7 +45,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Shestak Config
 ----------------------------------------------------------------------------------------
-if T.author == true and T.realm == "Страж Смерти" then
+if T.author == true then
 	C["general"].welcome_message = false
 	C["general"].custom_lagtolerance = true
 	C["misc"].auto_quest = true
@@ -210,7 +210,6 @@ if T.name == "Мейнстрим" and T.realm == "Азурегос" then
 	C["misc"].auto_decline_duel = false
 	C["misc"].auto_accept_invite = true
 	C["misc"].invite_keyword = "инвайт"
-	C["misc"].ach_screens = false
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["combattext"].icon_size = 25
@@ -265,17 +264,13 @@ if T.name == "Мейнстрим" and T.realm == "Азурегос" then
 	C["unitframe"].bar_color_value = true
 	C["unitframe"].castbar_icon = true
 	C["unitframe"].portrait_enable = true
-	C["unitframe"].plugins_swing = true
-	C["unitframe"].plugins_totem_bar_name = true
 	C["unitframe"].plugins_reputation_bar = true
-	C["unitframe"].plugins_experience_bar = true
 	C["unitframe"].plugins_talents = true
 	C["unitframe"].plugins_combat_feedback = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].icons_lfd_role = true
 	C["raidframe"].plugins_debuffhighlight_icon = true
 	C["raidframe"].plugins_aura_watch_timer = true
-	C["raidframe"].plugins_auto_resurrection = true
 	C["toppanel"].height = 100
 	C["stats"].battleground = true
 	C["error"].black = false

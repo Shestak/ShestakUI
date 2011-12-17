@@ -6,7 +6,10 @@ if C.misc.raid_tools ~= true then return end
 ----------------------------------------------------------------------------------------
 -- Create main frame
 local RaidUtilityPanel = CreateFrame("Frame", "RaidUtilityPanel", UIParent)
-RaidUtilityPanel:CreatePanel("Transparent", 170, 145, "TOP", UIParent, "TOP", -300, 1)
+RaidUtilityPanel:CreatePanel("Transparent", 170, 145, unpack(C.position.raid_utility))
+if GetCVarBool("watchFrameWidth") then
+	RaidUtilityPanel:Point(C.position.raid_utility[1], C.position.raid_utility[2], C.position.raid_utility[3], C.position.raid_utility[4] + 100, C.position.raid_utility[5])
+end
 RaidUtilityPanel.toggled = false
 
 -- Check if We are Raid Leader or Raid Officer
@@ -36,7 +39,7 @@ local function CreateButton(name, parent, template, width, height, point, relati
 end
 
 -- Show button
-CreateButton("ShowButton", UIParent, "UIMenuButtonStretchTemplate, SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, 18, "TOP", UIParent, "TOP", -300, 2, RAID_CONTROL)
+CreateButton("ShowButton", UIParent, "UIMenuButtonStretchTemplate, SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, 18, "TOP", RaidUtilityPanel, "TOP", 0, 0, RAID_CONTROL)
 ShowButton:SetFrameRef("RaidUtilityPanel", RaidUtilityPanel)
 ShowButton:SetAttribute("_onclick", [=[self:Hide(); self:GetFrameRef("RaidUtilityPanel"):Show();]=])
 ShowButton:SetScript("OnMouseUp", function(self) RaidUtilityPanel.toggled = true end)
@@ -49,31 +52,21 @@ CloseButton:SetScript("OnMouseUp", function(self) RaidUtilityPanel.toggled = fal
 
 -- Disband Raid button
 CreateButton("DisbandRaidButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", RaidUtilityPanel, "TOP", 0, -5, L_RAID_UTIL_DISBAND)
-DisbandRaidButton:SetScript("OnMouseUp", function(self)
-	if CheckRaidStatus() then
-		StaticPopup_Show("DISBAND_RAID")
-	end
-end)
+DisbandRaidButton:SetScript("OnMouseUp", function(self) StaticPopup_Show("DISBAND_RAID") end)
 
 -- Convert Party button
 CreateButton("SwitchRaidButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", DisbandRaidButton, "BOTTOM", 0, -5, CONVERT_TO_PARTY)
 SwitchRaidButton:SetScript("OnMouseUp", function(self)
-	if CheckRaidStatus() then
-		if UnitInRaid("player") then
-			ConvertToParty()
-		elseif UnitInParty("player") then
-			ConvertToRaid()
-		end
+	if UnitInRaid("player") then
+		ConvertToParty()
+	elseif UnitInParty("player") then
+		ConvertToRaid()
 	end
 end)
 
 -- Role Check button
 CreateButton("RoleCheckButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", SwitchRaidButton, "BOTTOM", 0, -5, ROLE_POLL)
-RoleCheckButton:SetScript("OnMouseUp", function(self)
-	if CheckRaidStatus() then
-		InitiateRolePoll()
-	end
-end)
+RoleCheckButton:SetScript("OnMouseUp", function(self) InitiateRolePoll() end)
 
 -- MainTank button
 CreateButton("MainTankButton", RaidUtilityPanel, "SecureActionButtonTemplate, UIMenuButtonStretchTemplate", (DisbandRaidButton:GetWidth() / 2) - 2, 18, "TOPLEFT", RoleCheckButton, "BOTTOMLEFT", 0, -5, TANK)
@@ -89,11 +82,7 @@ MainAssistButton:SetAttribute("action", "toggle")
 
 -- Ready Check button
 CreateButton("ReadyCheckButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate", RoleCheckButton:GetWidth() * 0.75, 18, "TOPLEFT", MainTankButton, "BOTTOMLEFT", 0, -5, READY_CHECK)
-ReadyCheckButton:SetScript("OnMouseUp", function(self)
-	if CheckRaidStatus() then
-		DoReadyCheck()
-	end
-end)
+ReadyCheckButton:SetScript("OnMouseUp", function(self) DoReadyCheck() end)
 
 -- World Marker button
 CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:ClearAllPoints()
