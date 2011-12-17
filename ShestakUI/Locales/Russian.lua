@@ -326,7 +326,7 @@ L_SLASHCMD_HELP = {
 	"/moveui - Перемещение элементов интерфейса.",
 	"/resetui - Сброс общих настроек на стандартные.",
 	"/resetuf - Сброс позиций юнит фреймов.",
-	"/resetconfig - Сброс настроек ShstakUI_config.",
+	"/resetconfig - Сброс настроек ShestakUI_Config.",
 	"/resetstats - Сброс статистики золота и проведенного времени.",
 	"/settings ADDON_NAME - Описание не готово.",
 	"/ls, /litestats - Описание не готово.",
