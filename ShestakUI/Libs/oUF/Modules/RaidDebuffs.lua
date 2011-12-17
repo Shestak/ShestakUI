@@ -199,6 +199,7 @@ end
 
 local blackList = {
 	[105171] = true,	-- Deep Corruption
+	[106368] = true,	-- Twilight Shift
 }
 
 local function Update(self, event, unit)
