@@ -57,7 +57,7 @@ C["togglemainmenu"] = {
 	},
 	{	["text"] = "Move UI",
 		["function"] = function()
-			T.RunSlashCmd("/moveui")
+			SlashCmdList.MOVING()
 		end
 	},
 }
@@ -145,7 +145,7 @@ C["toggleaddons"] = {
 		WIM.ShowAllWindows()
 	end,
 	["!BaudErrorFrame"] = function()
-		T.RunSlashCmd("/bauderror")
+		SlashCmdList.BaudErrorFrame()
 	end,
 	["RollTracker"] = function()
 		T.RunSlashCmd("/rolltracker")
