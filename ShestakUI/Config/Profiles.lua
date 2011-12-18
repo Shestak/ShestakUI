@@ -279,10 +279,8 @@ or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азу�
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].raid_groups = 8
 	C["toppanel"].height = 120
-	C["error"].hide = false
 	C["error"].black = false
 	C["error"].white = true
-	C["error"].hide = true
 	C["font"].stats_font = C.media.pixel_font
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 14
