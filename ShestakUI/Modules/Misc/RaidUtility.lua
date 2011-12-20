@@ -42,7 +42,19 @@ end
 CreateButton("ShowButton", UIParent, "UIMenuButtonStretchTemplate, SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, 18, "TOP", RaidUtilityPanel, "TOP", 0, 0, RAID_CONTROL)
 ShowButton:SetFrameRef("RaidUtilityPanel", RaidUtilityPanel)
 ShowButton:SetAttribute("_onclick", [=[self:Hide(); self:GetFrameRef("RaidUtilityPanel"):Show();]=])
-ShowButton:SetScript("OnMouseUp", function(self) RaidUtilityPanel.toggled = true end)
+ShowButton:SetScript("OnMouseUp", function(self, button)
+	if button == "RightButton" then
+		if CheckRaidStatus() then
+			DoReadyCheck()
+		end
+	elseif button == "MiddleButton" then
+		if CheckRaidStatus() then
+			InitiateRolePoll()
+		end
+	elseif button == "LeftButton" then
+		RaidUtilityPanel.toggled = true
+	end
+end)
 
 -- Close button
 CreateButton("CloseButton", RaidUtilityPanel, "UIMenuButtonStretchTemplate, SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, 18, "TOP", RaidUtilityPanel, "BOTTOM", 0, -1, CLOSE)
