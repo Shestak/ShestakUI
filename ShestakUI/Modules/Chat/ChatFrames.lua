@@ -12,7 +12,10 @@ local type = type
 -- Function to rename channel and other stuff
 local AddMessage = function(self, text, ...)
 	if type(text) == "string" then
+		local _, size = self:GetFont()
+		size = math.floor(size + 5)
 		text = text:gsub("|h%[(%d+)%. .-%]|h", "|h[%1]|h")
+		text = text:gsub("(|T[^:]+:)(%d+:*%d*)", ("%%1%d:%1$d"):format(size))
 	end
 	return origs[self](self, text, ...)
 end
