@@ -87,8 +87,9 @@ end
 ----------------------------------------------------------------------------------------
 --	Sw2rT1 Config
 ----------------------------------------------------------------------------------------
-if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.name == "Пратифный" or T.name == "Рукалицо"
-	or T.name == "Трольпаладин" or T.name == "Чаккерс" or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупаяшколота" then
+if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.name == "Пратифный"
+or T.name == "Рукалицо" or T.name == "Трольпаладин" or T.name == "Чаккерс"
+or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупаяшколота" then
 	C["media"].texture = "Interface\\AddOns\\Media_texture\\TextureTuk.tga"
 	C["general"].welcome_message = false
 	C["general"].custom_lagtolerance = true
@@ -324,7 +325,6 @@ or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азу�
 	C["font"].bags_font_style = "OUTLINE"
 	C["font"].bags_font_size = 14
 	if T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Махес" or T.name == "Ночнойшорох" then
-		C["position"].threat_meter = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 428, 24}
 		C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -345, 166}
 		C["position"].group_loot = {"RIGHT", UIParent, "RIGHT", -331, -24}
 		C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 285, -20}
@@ -336,13 +336,11 @@ or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азу�
 		C["chat"].width = 398
 		C["chat"].height = 300
 		C["actionbar"].split_bars = true
-		C["unitframe"].plugins_totem_bar_name = false
 		C["stats"].battleground = true
 	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Виринеа" or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вириней" then
 		C["position"].unitframes.player = {"TOPLEFT", UIParent, "TOPLEFT", 90, -60}
 		C["position"].unitframes.target = {"TOP", UIParent, "TOP", -200, -60}
 		C["position"].achievement = {"TOP", UIParent, "TOP", 0, -170}
-		C["position"].threat_meter = {"LEFT", UIParent, "LEFT", 20, -70}
 		C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -95, 120}
 		C["position"].group_loot = {"CENTER", UIParent, "CENTER", 0, -235}
 		C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 285, -20}
