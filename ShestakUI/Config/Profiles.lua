@@ -204,7 +204,7 @@ end
 --	ILF7-Virinea Config
 ----------------------------------------------------------------------------------------
 if (T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Махес" or T.name == "Ночнойшорох"
-or T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вирин" or T.name == "Виринеа"
+or T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
 or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азурегос" then
 	C["media"].pixel_font = C.media.normal_font
 	C["media"].pixel_font_style = "OUTLINE"
@@ -223,6 +223,7 @@ or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азу�
 	C["pulsecooldown"].sound = true
 	C["pulsecooldown"].anim_scale = 2
 	C["pulsecooldown"].threshold = 10
+	C["threat"].enable = false
 	C["tooltip"].item_icon = true
 	C["tooltip"].health_value = true
 	C["tooltip"].talents = true
@@ -279,8 +280,7 @@ or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азу�
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].raid_groups = 8
 	C["toppanel"].height = 120
-	C["error"].black = false
-	C["error"].white = true
+	C["error"].hide = false
 	C["font"].stats_font = C.media.pixel_font
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 14
@@ -294,9 +294,6 @@ or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азу�
 	C["font"].action_bars_font = C.media.pixel_font
 	C["font"].action_bars_font_style = "OUTLINE"
 	C["font"].action_bars_font_size = 12
-	C["font"].threat_meter_font = C.media.pixel_font
-	C["font"].threat_meter_font_style = "OUTLINE"
-	C["font"].threat_meter_font_size = 11
 	C["font"].raid_cooldowns_font = C.media.pixel_font
 	C["font"].raid_cooldowns_font_style = ""
 	C["font"].raid_cooldowns_font_shadow = true
@@ -333,18 +330,15 @@ or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азу�
 		C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 285, -20}
 		C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -270, -100}
 		C["position"].vehicle_bar = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 440, 175}
-		C["position"].unitframes.tank = {"LEFT", UIParent, "LEFT", 25, 15}
+		C["position"].unitframes.tank = {"LEFT", UIParent, "LEFT", 23, 0}
 		C["combattext"].icon_size = 25
 		C["combattext"].heal_treshold = 1000
-		C["threat"].height = 11
-		C["threat"].width = 185
-		C["threat"].bar_rows = 8
 		C["chat"].width = 398
 		C["chat"].height = 300
 		C["actionbar"].split_bars = true
 		C["unitframe"].plugins_totem_bar_name = false
 		C["stats"].battleground = true
-	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Виринеа" or T.name == "Лунорог" or T.name == "Вирка" then
+	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Виринеа" or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вириней" then
 		C["position"].unitframes.player = {"TOPLEFT", UIParent, "TOPLEFT", 90, -60}
 		C["position"].unitframes.target = {"TOP", UIParent, "TOP", -200, -60}
 		C["position"].achievement = {"TOP", UIParent, "TOP", 0, -170}
@@ -356,7 +350,6 @@ or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азу�
 		C["position"].vehicle_bar = {"BOTTOM", UIParent, "BOTTOM", 200, 120}
 		C["position"].enemy_cooldown = {"BOTTOM", UIParent, "BOTTOM", -140, 185}
 		C["combattext"].enable = false
-		C["threat"].enable = false
 		C["chat"].width = 380
 		C["chat"].height = 150
 		C["actionbar"].shapeshift_mouseover = false
