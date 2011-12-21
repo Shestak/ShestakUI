@@ -13,7 +13,7 @@ local type = type
 local AddMessage = function(self, text, ...)
 	if type(text) == "string" then
 		local _, size = self:GetFont()
-		size = math.floor(size + 5)
+		size = math.floor(size + 3)
 		text = text:gsub("|h%[(%d+)%. .-%]|h", "|h[%1]|h")
 		text = text:gsub("(|T[^:]+:)(%d+:*%d*)", ("%%1%d:%1$d"):format(size))
 	end

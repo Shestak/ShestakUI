@@ -5,7 +5,7 @@ if C.chat.enable ~= true or C.chat.chat_bar ~= true then return end
 --	ChatBar(FavChatBar by Favorit)
 ----------------------------------------------------------------------------------------
 local cbar = CreateFrame("Frame", "ChatBar", UIParent)
-cbar:CreatePanel("Invisible", 16, C.chat.background and C.chat.height + 5 or C.chat.height + 1, "BOTTOMLEFT", UIParent, "BOTTOMLEFT", 2, C.chat.background and 24 or 20)
+cbar:CreatePanel("Invisible", 16, C.chat.background and C.chat.height + 5 or C.chat.height + 1, "BOTTOMLEFT", UIParent, "BOTTOMLEFT", 2, C.chat.background and 24 or 18)
 
 function cbar:SW(button)
 	if button == "RightButton" then

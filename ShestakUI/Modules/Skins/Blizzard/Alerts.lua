@@ -64,7 +64,7 @@ local function LoadSkin()
 				for i = 1, frame:GetNumRegions() do
 					local region = select(i, frame:GetRegions())
 					if region:GetObjectType() == "Texture" then
-						if region:GetTexture() == "Interface\\LFGFrame\\UI-LFG-DUNGEONTOAST" then
+						if region:GetTexture() == "Interface\\LFGFrame\\UI-LFG-DUNGEONTOAST" or region:GetTexture() == "Interface\\LFGFrame\\LFR-Texture" then
 							region:Kill()
 						end
 					end
