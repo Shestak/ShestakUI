@@ -239,7 +239,9 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 
 		hooksecurefunc(DBM.RangeCheck, "Show", function()
 			DBMRangeCheck:SetTemplate("Transparent")
-			DBMRangeCheckRadar:SetTemplate("Transparent")
+			if DBMRangeCheckRadar then
+				DBMRangeCheckRadar:SetTemplate("Transparent")
+			end
 		end)
 
 		hooksecurefunc(DBM.InfoFrame, "Show", function()
