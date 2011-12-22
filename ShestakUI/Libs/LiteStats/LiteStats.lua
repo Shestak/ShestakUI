@@ -80,7 +80,7 @@ end)
 if not modules then return end
 
 if modules and ((coords and coords.enabled) or (location and location.enabled)) then
-	ls:RegisterEvent('ZONE_CHANGED_NEW_AREA')
+	ls:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 	ls:SetScript("OnUpdate", function() coordX, coordY = GetPlayerMapPosition(P) end)
 	WorldMapFrame:HookScript("OnHide", SetMapToCurrentZone)
 	function Coords() return format(coords and coords.fmt or "%d,%d", coordX * 100, coordY * 100) end
@@ -331,7 +331,7 @@ if memory.enabled then
 				GameTooltip:AddLine(" ")
 			end
 			GameTooltip:AddDoubleLine(L_STATS_MEMORY_USAGE,formatmem(gcinfo() - self.text.total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-			GameTooltip:AddDoubleLine(L_STATS_TOTAL_MEMORY_USAGE,formatmem(collectgarbage'count'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddDoubleLine(L_STATS_TOTAL_MEMORY_USAGE,formatmem(collectgarbage"count"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:Show()
 		end,
 		--OnUpdate = AltUpdate,
@@ -578,7 +578,7 @@ if clock.enabled then
 	Inject("Clock", {
 		text = {
 			string = function()
-				return zsub(GameTime_GetTime(true), '%s*AM', clock.AM, '%s*PM', clock.PM, ':', clock.colon)
+				return zsub(GameTime_GetTime(true), "%s*AM", clock.AM, "%s*PM", clock.PM, ":", clock.colon)
 			end
 		},
 		OnLoad = function(self) RequestRaidInfo() RegEvents(self, "UPDATE_INSTANCE_INFO") end,
@@ -589,10 +589,10 @@ if clock.enabled then
 			GameTooltip:ClearAllPoints()
 			GameTooltip:Point(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(date'%A, %B %d %Y', tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(date"%A, %B %d %Y", tthead.r, tthead.g, tthead.b)
 			GameTooltip:AddLine(" ")
-			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME, ':', ''), zsub(GameTime_GetLocalTime(true), '%s*AM', 'am', '%s*PM', 'pm'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME, ':', ''), zsub(GameTime_GetGameTime(true), '%s*AM', 'am', '%s*PM', 'pm'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME, ":", ""), zsub(GameTime_GetLocalTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME, ":", ""), zsub(GameTime_GetGameTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:AddLine(" ")
 			for i = 1, 2 do
 				local _, localizedName, isActive, _, startTime, _ = GetWorldPVPAreaInfo(i)
@@ -720,7 +720,7 @@ end
 ----------------------------------------------------------------------------------------
 if ping.enabled then
 	Inject("Ping", {
-		OnLoad = function(self) self:RegisterEvent('MINIMAP_PING') end,
+		OnLoad = function(self) self:RegisterEvent("MINIMAP_PING") end,
 		OnEvent = function(self, event, unit)
 			if unit == P and ping.hide_self then return end
 			if (unit == P and self.timer and time() - self.timer > 1) or not self.timer or unit ~= P then
@@ -984,33 +984,6 @@ if friends.enabled then
 			end
 		end)
 	end
-
-	local function UpdateFriendTable(total)
-		totalFriendsOnline = 0
-		for i = 1, #friendTable do
-			local name, level, class, area, connected, status, note = GetFriendInfo(i)
-			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do
-				if class == v then
-					class = k
-				end
-			end
-			index = GetTableIndex(friendTable, 1, name)
-			if (index == -1) then
-				BuildFriendTable(total)
-				break
-			end
-			friendTable[index][5] = connected
-			if connected then
-				friendTable[index][2] = level
-				friendTable[index][3] = class
-				friendTable[index][4] = area
-				friendTable[index][6] = status
-				friendTable[index][7] = note
-				totalFriendsOnline = totalFriendsOnline + 1
-			end
-		end
-	end
-
 	local function BuildBNTable(total)
 		totalBattleNetOnline = 0
 		wipe(BNTable)
@@ -1037,68 +1010,16 @@ if friends.enabled then
 			end
 		end)
 	end
-
-	local function UpdateBNTable(total)
-		totalBattleNetOnline = 0
-		for i = 1, #BNTable do
-			local presenceID, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND, _, noteText = BNGetFriendInfo(i)
-			local _, _, _, realmName, faction, _, race, class, _, zoneName, level = BNGetToonInfo(presenceID)
-			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do
-				if class == v then
-					class = k
-				end
-			end
-			index = GetTableIndex(BNTable, 1, presenceID)
-			if index == -1 then
-				BuildBNTable(total)
-				return
-			end
-			BNTable[index][7] = isOnline
-			if isOnline then
-				BNTable[index][2] = givenName
-				BNTable[index][3] = surname
-				BNTable[index][4] = toonName
-				BNTable[index][5] = toonID
-				BNTable[index][6] = client
-				BNTable[index][8] = isAFK
-				BNTable[index][9] = isDND
-				BNTable[index][10] = noteText
-				BNTable[index][11] = realmName
-				BNTable[index][12] = faction
-				BNTable[index][13] = race
-				BNTable[index][14] = class
-				BNTable[index][15] = zoneName
-				BNTable[index][16] = level
-				totalBattleNetOnline = totalBattleNetOnline + 1
-			end
-		end
-	end
 	Inject("Friends", {
-		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN BN_FRIEND_LIST_SIZE_CHANGED PARTY_MEMBERS_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_TOON_ONLINE BN_FRIEND_TOON_OFFLINE BN_TOON_NAME_UPDATED FRIENDLIST_UPDATE PLAYER_ENTERING_WORLD") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD PARTY_MEMBERS_CHANGED FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_TOON_ONLINE BN_FRIEND_TOON_OFFLINE BN_TOON_NAME_UPDATED") end,
 		OnEvent = function(self, event)
 			if event ~= "PARTY_MEMBERS_CHANGED" then
 				local numBNetTotal, numBNetOnline = BNGetNumFriends()
 				local online, total = 0, GetNumFriends()
 				for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
-				online=online+numBNetOnline
-				total=total+numBNetTotal
+				online = online + numBNetOnline
+				total = total + numBNetTotal
 				self.text:SetText(format(friends.fmt, online, total))
-			end
-			if event == "BN_FRIEND_INFO_CHANGED" or event == "BN_FRIEND_ACCOUNT_ONLINE" or event == "BN_FRIEND_ACCOUNT_OFFLINE" or event == "BN_TOON_NAME_UPDATED" or event == "BN_FRIEND_TOON_ONLINE" or event == "BN_FRIEND_TOON_OFFLINE" or event == "PLAYER_ENTERING_WORLD" then
-				local BNTotal = BNGetNumFriends()
-				if BNTotal == #BNTable then
-					UpdateBNTable(BNTotal)
-				else
-					BuildBNTable(BNTotal)
-				end
-			end
-			if event == "FRIENDLIST_UPDATE" or event == "PLAYER_ENTERING_WORLD" then
-				local total = GetNumFriends()
-				if total == #friendTable then
-					UpdateFriendTable(total)
-				else
-					BuildFriendTable(total)
-				end
 			end
 			if self.hovered then self:GetScript("OnEnter")(self) end
 		end,
@@ -1111,6 +1032,11 @@ if friends.enabled then
 			elseif b == "MiddleButton" then
 				HideTT(self)
 
+				local BNTotal = BNGetNumFriends()
+				local total = GetNumFriends()
+				BuildBNTable(BNTotal)
+				BuildFriendTable(total)
+
 				local menuCountWhispers = 0
 				local menuCountInvites = 0
 				local classc, levelc
@@ -1120,12 +1046,12 @@ if friends.enabled then
 
 				if totalFriendsOnline > 0 then
 					for i = 1, #friendTable do
-						if (friendTable[i][5]) then
+						if friendTable[i][5] then
 							menuCountInvites = menuCountInvites + 1
 							menuCountWhispers = menuCountWhispers + 1
 
-							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
-							if (classc == nil) then
+							classc, levelc = RAID_CLASS_COLORS[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
+							if classc == nil then
 								classc = GetQuestDifficultyColor(friendTable[i][2]) 
 							end
 
@@ -1152,10 +1078,10 @@ if friends.enabled then
 					end
 				end
 
-				if (totalBattleNetOnline > 0) then
+				if totalBattleNetOnline > 0 then
 					local realID, playerFaction, grouped
 					for i = 1, #BNTable do
-						if (BNTable[i][7]) then
+						if BNTable[i][7] then
 							realID = (BATTLENET_NAME_FORMAT):format(BNTable[i][2], BNTable[i][3])
 							menuCountWhispers = menuCountWhispers + 1
 							menuList[3].menuList[menuCountWhispers] = {
@@ -1168,19 +1094,19 @@ if friends.enabled then
 								end
 							}
 
-							if (select(1, UnitFactionGroup("player")) == "Horde") then
+							if select(1, UnitFactionGroup("player")) == "Horde" then
 								playerFaction = 0
 							else 
 								playerFaction = 1
 							end
 
-							if (BNTable[i][6] == "WoW" and BNTable[i][11] == GetRealmName() and playerFaction == BNTable[i][12]) then
+							if (BNTable[i][6] == "WoW" and playerFaction == BNTable[i][12]) then
 								classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
-								if (classc == nil) then 
+								if classc == nil then
 									classc = GetQuestDifficultyColor(BNTable[i][16])
 								end
 
-								if (UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4])) then
+								if UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4]) then
 									grouped = 1
 								else 
 									grouped = 2
@@ -1201,8 +1127,7 @@ if friends.enabled then
 					end
 				end
 
-				EasyMenu(menuList, menuFrame, self, 0, 0, 'MENU', 2)
-			
+				EasyMenu(menuList, menuFrame, self, 0, 0, "MENU", 2)
 			end
 		end,
 		OnEnter = function(self)
@@ -1334,9 +1259,9 @@ if talents.enabled then
 		end,
 		OnEvent = function(self, event, ...)
 			if event == "PLAYER_ENTERING_WORLD" then
-				self:RegisterEvent('PLAYER_TALENT_UPDATE')
+				self:RegisterEvent("PLAYER_TALENT_UPDATE")
 			elseif event == "PLAYER_LEAVING_WORLD" then
-				self:UnregisterEvent('PLAYER_TALENT_UPDATE')
+				self:UnregisterEvent("PLAYER_TALENT_UPDATE")
 			elseif event == "UNIT_SPELLCAST_START" then
 				local unit, spell = ...
 				if unit == P and (spell == GetSpellInfo(63645) or spell == GetSpellInfo(63644)) then timer = GetTime() end
@@ -1362,10 +1287,10 @@ if talents.enabled then
 							self.text:SetText(zsub(talents.fmt,"%[(.-)%]", {
 								name = name[1], shortname = gsub(name[1],".*",talents.name_subs),
 								icon = format("|T%s:"..talents.iconsize..":"..talents.iconsize..":0:0:64:64:5:59:5:59:%d|t", icon, talents.iconsize),
-								unspent = self.unspent > 0 and format("|cff55ff55+"..self.unspent) or ''
+								unspent = self.unspent > 0 and format("|cff55ff55+"..self.unspent) or ""
 							},"%[spec(.-)%]", function(spec)
-								return format(spec == '' and "%d/%d/%d" or gsub(spec, '^ ', ''), tal[1][5], tal[2][5], tal[3][5])
-							end, ' $', ''))
+								return format(spec == "" and "%d/%d/%d" or gsub(spec, "^ ", ""), tal[1][5], tal[2][5], tal[3][5])
+							end, " $", ""))
 							tinsert(tal, 1)
 						end
 					end
@@ -1384,7 +1309,7 @@ if talents.enabled then
 			if UnitLevel(P) >= 10 then
 				GameTooltip:SetOwner(self, talents.tip_anchor, talents.tip_x, talents.tip_y)
 				GameTooltip:ClearLines()
-				GameTooltip:AddDoubleLine(TALENTS,self.unspent > 0 and format("%d %s",self.unspent,UNUSED) or '', tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddDoubleLine(TALENTS,self.unspent > 0 and format("%d %s",self.unspent,UNUSED) or "", tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 				GameTooltip:AddLine(" ")
 				for i = 1, GetNumTalentGroups() do
 					local tal = self.talents[i]
@@ -1521,9 +1446,9 @@ if experience.enabled then
 		if short or tt then
 			num = tonumber(num)
 			if num >= 1000000 then
-				return gsub(format("%.1f%s", num/1000000, experience.million or 'm'), "%.0", "")
+				return gsub(format("%.1f%s", num/1000000, experience.million or "m"), "%.0", "")
 			elseif num >= 1000 then
-				return gsub(format("%.1f%s", num/1000, experience.thousand or 'k'), "%.0", "")
+				return gsub(format("%.1f%s", num/1000, experience.thousand or "k"), "%.0", "")
 			end
 		end
 		return floor(tonumber(num))
@@ -1655,19 +1580,19 @@ if experience.enabled then
 			elseif conf.ExpMode == "xp" then
 				GameTooltip:AddDoubleLine(COMBAT_XP_GAIN, format(LEVEL_GAINED, UnitLevel(P)), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 				GameTooltip:AddLine(" ")
-				GameTooltip:AddDoubleLine(L_STATS_CURRENT_XP, format("%s/%s (%s%%)", tags'curxp', tags'totalxp', tags'cur%'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-				GameTooltip:AddDoubleLine(L_STATS_REMAINING_XP, format("%s (%s%%)", tags'remainingxp', tags'remaining%'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_CURRENT_XP, format("%s/%s (%s%%)", tags"curxp", tags"totalxp", tags"cur%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_REMAINING_XP, format("%s (%s%%)", tags"remainingxp", tags"remaining%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				if GetXPExhaustion() and GetXPExhaustion() ~= 0 then
-					GameTooltip:AddDoubleLine(L_STATS_RESTED_XP, format("%s (%s%%)", tags'restxp', tags'rest%'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+					GameTooltip:AddDoubleLine(L_STATS_RESTED_XP, format("%s (%s%%)", tags"restxp", tags"rest%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				end
 				GameTooltip:AddLine(" ")
-				GameTooltip:AddDoubleLine(L_STATS_SESSION_XP, format("%s/%s (%s)", tags'sessionrate', L_STATS_HR, tags'sessionttl'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-				GameTooltip:AddDoubleLine(L_STATS_XP_RATE, format("%s/%s (%s)", tags'levelrate', L_STATS_HR, tags'levelttl'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-				GameTooltip:AddDoubleLine(format(L_STATS_QUESTS_TO, UnitLevel(P) + 1), format("%s:%s %s:%s", L_STATS_QUEST, tags'questsleft', L_STATS_KILLS, tags'killsleft'), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_SESSION_XP, format("%s/%s (%s)", tags"sessionrate", L_STATS_HR, tags"sessionttl"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_XP_RATE, format("%s/%s (%s)", tags"levelrate", L_STATS_HR, tags"levelttl"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(format(L_STATS_QUESTS_TO, UnitLevel(P) + 1), format("%s:%s %s:%s", L_STATS_QUEST, tags"questsleft", L_STATS_KILLS, tags"killsleft"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				GameTooltip:AddLine(" ")
-				GameTooltip:AddDoubleLine(L_STATS_PLAYED_SESSION, tags'playedsession', ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-				GameTooltip:AddDoubleLine(L_STATS_PLAYED_LEVEL, tags'playedlevel', ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-				GameTooltip:AddDoubleLine(L_STATS_PLAYED_TOTAL, tags'playedtotal', ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_SESSION, tags"playedsession", ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_LEVEL, tags"playedlevel", ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_PLAYED_TOTAL, tags"playedtotal", ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			elseif conf.ExpMode == "rep" then
 				local desc, war, watched
 				for i = 1, GetNumFactions() do
@@ -1677,8 +1602,8 @@ if experience.enabled then
 				GameTooltip:AddLine(repname, tthead.r, tthead.g, tthead.b)
 				GameTooltip:AddLine(desc, ttsubh.r, ttsubh.g, ttsubh.b, 1)
 				GameTooltip:AddLine(" ")
-				GameTooltip:AddDoubleLine(format("%s%s", tags'repcolor', tags'standing'), war and format("|cffff5555%s", AT_WAR))
-				GameTooltip:AddDoubleLine(format("%s%% | %s/%s", tags'rep%', tags'currep', tags'maxrep'), -tags'repleft', ttsubh.r, ttsubh.g, ttsubh.b, 1, 0.33, 0.33)
+				GameTooltip:AddDoubleLine(format("%s%s", tags"repcolor", tags"standing"), war and format("|cffff5555%s", AT_WAR))
+				GameTooltip:AddDoubleLine(format("%s%% | %s/%s", tags"rep%", tags"currep", tags"maxrep"), -tags"repleft", ttsubh.r, ttsubh.g, ttsubh.b, 1, 0.33, 0.33)
 			end
 			GameTooltip:Show()
 		end,
