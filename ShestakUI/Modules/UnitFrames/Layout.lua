@@ -894,7 +894,7 @@ local function Shared(self, unit)
 
 				self.Castbar.Latency = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 				self.Castbar.Latency:SetTextColor(1, 1, 1)
-				self.Castbar.Latency:Point("BOTTOMRIGHT", self.Castbar, "BOTTOMRIGHT", 0, -3)
+				self.Castbar.Latency:Point("TOPRIGHT", self.Castbar.Time, "BOTTOMRIGHT", 0, 0)
 				self.Castbar.Latency:SetJustifyH("RIGHT")
 
 				self:RegisterEvent("UNIT_SPELLCAST_SENT", function(self, event, caster)
