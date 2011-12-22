@@ -82,7 +82,7 @@ local function Shared(self, unit)
 	self.Health.bg:SetAllPoints()
 	self.Health.bg:SetTexture(C.media.texture)
 	if C.unitframe.own_color == true then
-		self.Health.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)	
+		self.Health.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
 	else
 		self.Health.bg.multiplier = 0.25
 	end
@@ -551,31 +551,6 @@ local function Shared(self, unit)
 			self.Reputation.Tooltip = true
 		end
 
-		-- Swing bar
-		if C.unitframe.plugins_swing == true then
-			self.Swing = CreateFrame("StatusBar", self:GetName().."_Swing", self)
-			self.Swing:SetStatusBarTexture(C.media.texture)
-			self.Swing:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-			self.Swing:Height(5)
-			self.Swing:Width(281)
-			self.Swing:Point("BOTTOMLEFT", "oUF_Player", "BOTTOMRIGHT", 35, 23)
-
-			self.Swing.bg = self.Swing:CreateTexture(nil, "BORDER")
-			self.Swing.bg:SetAllPoints(self.Swing)
-			self.Swing.bg:SetTexture(C.media.texture)
-			self.Swing.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
-
-			self.Swing.FrameBackdrop = CreateFrame("Frame", nil, self.Swing)
-			self.Swing.FrameBackdrop:SetTemplate("Default")
-			self.Swing.FrameBackdrop:SetFrameLevel(1)
-			self.Swing.FrameBackdrop:Point("TOPLEFT", -2, 2)
-			self.Swing.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
-
-			self.Swing.Text = T.SetFontString(self.Swing, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.Swing.Text:Point("CENTER", 0, 0)
-			self.Swing.Text:SetTextColor(1, 1, 1)
-		end
-
 		-- GCD spark
 		if C.unitframe.plugins_gcd == true then
 			self.GCD = CreateFrame("Frame", nil, self)
@@ -803,26 +778,26 @@ local function Shared(self, unit)
 
 		if unit == "player" then
 			if C.unitframe.castbar_icon == true then
-				self.Castbar:Point(unpack(C.position.unitframes.player_castbar))
+				self.Castbar:Point(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4] + 11, C.position.unitframes.player_castbar[5])
 				self.Castbar:Width(258)
 			else
-				self.Castbar:Point(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4] - 23, C.position.unitframes.player_castbar[5])
+				self.Castbar:Point(unpack(C.position.unitframes.player_castbar))
 				self.Castbar:Width(281)
 			end
 			self.Castbar:Height(16)
 		elseif unit == "target" then
 			if C.unitframe.castbar_icon == true then
 				if C.unitframe.plugins_swing == true then
-					self.Castbar:Point(unpack(C.position.unitframes.target_castbar))
+					self.Castbar:Point(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - 23, C.position.unitframes.target_castbar[5] + 12)
 				else
-					self.Castbar:Point(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4], C.position.unitframes.target_castbar[5] - 12)
+					self.Castbar:Point(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - 23, C.position.unitframes.target_castbar[5])
 				end
 				self.Castbar:Width(258)
 			else
 				if C.unitframe.plugins_swing == true then
-					self.Castbar:Point(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] + 23, C.position.unitframes.target_castbar[5])
+					self.Castbar:Point(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4], C.position.unitframes.target_castbar[5] + 12)
 				else
-					self.Castbar:Point(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] + 23, C.position.unitframes.target_castbar[5] - 12)
+					self.Castbar:Point(unpack(C.position.unitframes.target_castbar))
 				end
 				self.Castbar:Width(281)
 			end
@@ -929,6 +904,39 @@ local function Shared(self, unit)
 				end)
 			end
 		end
+	end
+
+	-- Swing bar
+	if C.unitframe.plugins_swing == true and unit == "player" then
+		self.Swing = CreateFrame("StatusBar", self:GetName().."_Swing", self)
+		self.Swing:SetStatusBarTexture(C.media.texture)
+		if C.unitframe.own_color == true then
+			self.Swing:SetStatusBarColor(unpack(C.unitframe.uf_color))
+		else
+			self.Swing:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+		end
+		self.Swing:Height(5)
+		self.Swing:Width(281)
+		self.Swing:Point("BOTTOMRIGHT", "oUF_Player_Castbar", "TOPRIGHT", 0, 7)
+
+		self.Swing.bg = self.Swing:CreateTexture(nil, "BORDER")
+		self.Swing.bg:SetAllPoints(self.Swing)
+		self.Swing.bg:SetTexture(C.media.texture)
+		if C.unitframe.own_color == true then
+			self.Swing.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
+		else
+			self.Swing.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
+		end
+
+		self.Swing.FrameBackdrop = CreateFrame("Frame", nil, self.Swing)
+		self.Swing.FrameBackdrop:SetTemplate("Default")
+		self.Swing.FrameBackdrop:SetFrameLevel(1)
+		self.Swing.FrameBackdrop:Point("TOPLEFT", -2, 2)
+		self.Swing.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
+
+		self.Swing.Text = T.SetFontString(self.Swing, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+		self.Swing.Text:Point("CENTER", 0, 0)
+		self.Swing.Text:SetTextColor(1, 1, 1)
 	end
 
 	if C.unitframe.show_arena and unit == "arena" then

@@ -40,10 +40,10 @@ C["position"] = {
 	unitframes = {
 		["player"] = {"BOTTOMRIGHT", "ActionBarAnchor", "TOPLEFT", -9, 175},		-- Player frame
 		["target"] = {"BOTTOMLEFT", "ActionBarAnchor", "TOPRIGHT", 9, 175},			-- Target frame
-		["target_target"] = {"BOTTOMRIGHT", "oUF_Target", "TOPRIGHT", 0, -54},		-- ToT frame
-		["pet"] = {"BOTTOMLEFT", "oUF_Player", "TOPLEFT", 0, -54},					-- Pet frame
-		["focus"] = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 0, -54},				-- Focus frame
-		["focus_target"] = {"BOTTOMLEFT", "oUF_Target", "TOPLEFT", 0, -54},			-- Focus target frame
+		["target_target"] = {"TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 0, -11},		-- ToT frame
+		["pet"] = {"TOPLEFT", "oUF_Player", "BOTTOMLEFT", 0, -11},					-- Pet frame
+		["focus"] = {"TOPRIGHT", "oUF_Player", "BOTTOMRIGHT", 0, -11},				-- Focus frame
+		["focus_target"] = {"TOPLEFT", "oUF_Target", "BOTTOMLEFT", 0, -11},			-- Focus target frame
 		["party_heal"] = {"TOPLEFT", "oUF_Player", "BOTTOMRIGHT", 11, -12},			-- Heal layout Party frames
 		["raid_heal"] = {"TOPLEFT", "oUF_Player", "BOTTOMRIGHT", 11, -12},			-- Heal layout Raid frames
 		["party_dps"] = {"BOTTOMLEFT", UIParent, "LEFT", 23, -70},					-- DPS layout Party frames
@@ -53,8 +53,8 @@ C["position"] = {
 		["tank"] = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 26},						-- Tank frames
 		["player_portrait"] = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -12, 28},		-- Player Portrait
 		["target_portrait"] = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 10, 28},		-- Target Portrait
-		["player_castbar"] = {"BOTTOMLEFT", "oUF_Player", "BOTTOMRIGHT", 58, 0},	-- Player Castbar
-		["target_castbar"] = {"CENTER", "oUF_Player_Castbar", "CENTER", -23, 35},	-- Target Castbar
+		["player_castbar"] = {"BOTTOM", "ActionBarAnchor", "TOP", 0, 175},			-- Player Castbar
+		["target_castbar"] = {"BOTTOM", "oUF_Player_Castbar", "TOP", 0, 7},			-- Target Castbar
 		["focus_castbar"] = {"CENTER", UIParent, "CENTER", 0, 250},					-- Focus Castbar icon
 	},
 }
