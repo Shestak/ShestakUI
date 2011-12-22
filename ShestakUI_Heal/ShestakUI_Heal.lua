@@ -43,9 +43,11 @@ local function Shared(self, unit)
 	self.Health:SetPoint("TOPLEFT")
 	self.Health:SetPoint("TOPRIGHT")
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Health:Height(14)
+		self.Health:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
+		self.Health:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
 	else
-		self.Health:Height(23)
+		self.Health:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 3)
+		self.Health:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 3)
 	end
 	self.Health:SetStatusBarTexture(C.media.texture)
 
@@ -76,18 +78,27 @@ local function Shared(self, unit)
 		self.Health.bg.multiplier = 0.25
 	end
 
+	-- Names
+	self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
+		self.Info:Point("CENTER", self.Health, "CENTER", 0, 0)
+	else
+		self.Info:Point("TOP", self.Health, "TOP", 0, -4)
+	end
+	self:Tag(self.Info, "[GetNameColor][NameShort]")
+
 	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank")) then
 		self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-		self.Health.value:Point("CENTER", self.Health, "CENTER", 0, -5)
+		self.Health.value:Point("TOP", self.Info, "BOTTOM", 0, -1)
 		self.Health.value:SetTextColor(1, 1, 1)
 
 		self.Health.PostUpdate = T.PostUpdateRaidHealth
 
 		-- Power bar
 		self.Power = CreateFrame("StatusBar", nil, self)
-		self.Power:Height(2)
-		self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
-		self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
+		self.Power:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
+		self.Power:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
+		self.Power:Point("TOP", self, "BOTTOM", 0, 2)
 		self.Power:SetStatusBarTexture(C.media.texture)
 
 		self.Power.frequentUpdates = true
@@ -105,15 +116,6 @@ local function Shared(self, unit)
 		self.Power.bg:SetAlpha(1)
 		self.Power.bg.multiplier = 0.3
 	end
-
-	-- Names
-	self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Info:Point("CENTER", self.Health, "CENTER", 0, 0)
-	else
-		self.Info:Point("CENTER", self.Health, "CENTER", 0, 4)
-	end
-	self:Tag(self.Info, "[GetNameColor][NameShort]")
 
 	-- Agro border
 	if C.raidframe.aggro_border == true then
@@ -309,7 +311,7 @@ oUF:Factory(function(self)
 				self:SetAttribute("unitsuffix", "target")
 			]],
 			"initial-width", unit_width,
-			"initial-height", T.Scale(unit_height-12),
+			"initial-height", T.Scale(unit_height / 2),
 			"showSolo", C.raidframe.solo_mode,
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
@@ -329,7 +331,7 @@ oUF:Factory(function(self)
 				self:SetAttribute("unitsuffix", "pet")
 			]],
 			"initial-width", unit_width,
-			"initial-height", T.Scale(unit_height-12),
+			"initial-height", T.Scale(unit_height / 2),
 			"showSolo", C.raidframe.solo_mode,
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
@@ -352,7 +354,7 @@ oUF:Factory(function(self)
 				end
 			end
 
-			partypet:Point("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, -28)
+			partypet:Point("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, -((unit_height / 2) + 14.5))
 		end)
 		partypetupdate:RegisterEvent("PARTY_MEMBERS_CHANGED")
 		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -429,8 +431,8 @@ oUF:Factory(function(self)
 			end
 			local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
 				"oUF-initialConfigFunction", ([[
-					self:SetWidth(60.2)
-					self:SetHeight(26)
+					self:SetWidth(unit_width)
+					self:SetHeight(unit_height)
 				]]),
 				"showRaid", true,
 				"yOffset", T.Scale(-7),
