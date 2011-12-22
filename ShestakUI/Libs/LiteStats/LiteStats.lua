@@ -170,6 +170,22 @@ local function AltUpdate(self)
 	elseif not IsAltKeyDown() and self.altdown then self.altdown = false self:GetScript("OnEnter")(self) end
 end
 
+local function GetTableIndex(table, fieldIndex, value)
+	for k, v in ipairs(table) do
+		if (v[fieldIndex] == value) then
+			return k
+		end
+	end
+	return -1
+end
+
+local menuFrame = CreateFrame("Frame", "ContactDropDownMenu", UIParent, "UIDropDownMenuTemplate")
+local menuList = {
+	{text = OPTIONS_MENU, isTitle = true, notCheckable = true},
+	{text = INVITE, hasArrow = true, notCheckable = true},
+	{text = CHAT_MSG_WHISPER_INFORM, hasArrow = true, notCheckable = true}
+}
+
 SLASH_LSTATS1, SLASH_LSTATS2, SLASH_LSTATS3 = "/ls", "/lstats", "/litestats"
 local function slprint(...)
 	local m, l = "|cffbcee68", "|cffff9912 -|r"
@@ -723,7 +739,25 @@ end
 --	Guild
 ----------------------------------------------------------------------------------------
 if guild.enabled then
+	local totalGuildOnline = 0
 	local guildXP = {}
+	local guildTable = {}
+	local function BuildGuildTable()
+		totalGuildOnline = 0
+		wipe(guildTable)
+		for i = 1, GetNumGuildMembers() do
+			local name, rank, _, level, _, zone, note, officernote, connected, status, class = GetGuildRosterInfo(i)
+			guildTable[i] = {name, rank, level, zone, note, officernote, connected, status, class}
+			if connected then
+				totalGuildOnline = totalGuildOnline + 1
+			end
+		end
+		sort(guildTable, function(a, b)
+			if (a and b) then
+				return a[1] < b[1]
+			end
+		end)
+	end
 	local function UpdateGuildXP()
 		local currentXP, remainingXP, dailyXP, maxDailyXP = UnitGetGuildXP("player")
 		local nextLevelXP = currentXP + remainingXP
@@ -737,8 +771,8 @@ if guild.enabled then
 			percentDaily = 0
 		end
 
-		guildXP[0] = { currentXP, nextLevelXP, percentTotal }
-		guildXP[1] = { dailyXP, maxDailyXP, percentDaily }
+		guildXP[0] = {currentXP, nextLevelXP, percentTotal}
+		guildXP[1] = {dailyXP, maxDailyXP, percentDaily}
 	end
 	local function ShortValueXP(v)
 		if v >= 1e6 then
@@ -765,9 +799,9 @@ if guild.enabled then
 			UpdateGuildXP()
 			SortGuildRoster(guild.sorting == "note" and "rank" or "note")
 			SortGuildRoster(guild.sorting)
-			self:RegisterEvent('PARTY_MEMBERS_CHANGED')
-			self:RegisterEvent('GUILD_XP_UPDATE')
-			self:RegisterEvent('GUILD_ROSTER_UPDATE')
+			self:RegisterEvent("PARTY_MEMBERS_CHANGED")
+			self:RegisterEvent("GUILD_XP_UPDATE")
+			self:RegisterEvent("GUILD_ROSTER_UPDATE")
 		end,
 		OnEvent = function(self, event)
 			if self.hovered then
@@ -775,6 +809,9 @@ if guild.enabled then
 			end
 			if event == "GUILD_XP_UPDATE" then
 				UpdateGuildXP()
+			end
+			if IsInGuild() then
+				BuildGuildTable()
 			end
 		end,
 		OnUpdate = function(self, u)
@@ -785,7 +822,7 @@ if guild.enabled then
 				if not self.gmotd then
 					-- Give me the GMOTD *today* pls.
 					if self.elapsed > 1 then GuildRoster(); self.elapsed = 0 end
-				 	if GetGuildRosterMOTD() ~= '' then self.gmotd = true; if self.hovered then self:GetScript("OnEnter")(self) end end
+					if GetGuildRosterMOTD() ~= "" then self.gmotd = true; if self.hovered then self:GetScript("OnEnter")(self) end end
 					self.elapsed = self.elapsed + u
 				end
 			end
@@ -804,6 +841,49 @@ if guild.enabled then
 				local s = CURRENT_GUILD_SORTING
 				SortGuildRoster(IsShiftKeyDown() and s or (IsAltKeyDown() and (s == "rank" and "note" or "rank") or s == "class" and "name" or s == "name" and "level" or s == "level" and "zone" or "class"))
 				self:GetScript("OnEnter")(self)
+			elseif b == "MiddleButton" then
+				HideTT(self)
+
+				local classc, levelc, grouped
+				local menuCountWhispers = 0
+				local menuCountInvites = 0
+
+				menuList[2].menuList = {}
+				menuList[3].menuList = {}
+
+				for i = 1, #guildTable do
+					if (guildTable[i][7] and guildTable[i][1] ~= select(1, UnitName("player"))) then
+						local classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[guildTable[i][9]], GetQuestDifficultyColor(guildTable[i][3])
+						if (UnitInParty(guildTable[i][1]) or UnitInRaid(guildTable[i][1])) then
+							grouped = "|cffaaaaaa*|r"
+						else
+							menuCountInvites = menuCountInvites + 1
+							grouped = ""
+							menuList[2].menuList[menuCountInvites] = {
+								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, guildTable[i][1], ""),
+								arg1 = guildTable[i][1],
+								notCheckable = true,
+								func = function(self, arg1)
+									menuFrame:Hide()
+									InviteUnit(arg1)
+								end
+							}
+						end
+
+						menuCountWhispers = menuCountWhispers + 1
+						menuList[3].menuList[menuCountWhispers] = {
+							text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, guildTable[i][1], grouped),
+							arg1 = guildTable[i][1],
+							notCheckable = true,
+							func = function(self, arg1)
+								menuFrame:Hide()
+								SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
+							end
+						}
+					end
+				end
+
+				EasyMenu(menuList, menuFrame, self, 0, 0, "MENU", 2)
 			end
 		end,
 		OnEnter = function(self)
@@ -830,7 +910,6 @@ if guild.enabled then
 						GameTooltip:AddLine(string.format(col..GUILD_EXPERIENCE_CURRENT, "|r |cFFFFFFFF"..ShortValueXP(currentXP), ShortValueXP(nextLevelXP), percentTotal))
 						GameTooltip:AddLine(string.format(col..GUILD_EXPERIENCE_DAILY, "|r |cFFFFFFFF"..ShortValueXP(dailyXP), ShortValueXP(maxDailyXP), percentDaily))
 					end
-					
 					if standingID ~= 8 then -- Not Max Rep
 						barMax = barMax - barMin
 						barValue = barValue - barMin
@@ -838,7 +917,6 @@ if guild.enabled then
 						GameTooltip:AddLine(string.format("%s:|r |cFFFFFFFF%s/%s (%s%%)", col..COMBAT_FACTION_CHANGE, ShortValueXP(barValue), ShortValueXP(barMax), math.ceil((barValue / barMax) * 100)))
 					end
 				end
-				
 				if guild.maxguild ~= 0 and online >= 1 then
 					GameTooltip:AddLine(" ")
 					for i = 1, total do
@@ -879,8 +957,124 @@ end
 --	Friends
 ----------------------------------------------------------------------------------------
 if friends.enabled then
+	local totalFriendsOnline = 0
+	local totalBattleNetOnline = 0
+	local BNTable = {}
+	local friendTable  = {}
+	local function BuildFriendTable(total)
+		totalFriendsOnline = 0
+		wipe(friendTable)
+
+		for i = 1, total do
+			local name, level, class, area, connected, status, note = GetFriendInfo(i)
+			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do
+				if class == v then
+					class = k
+				end
+			end
+			friendTable[i] = {name, level, class, area, connected, status, note}
+			if connected then
+				totalFriendsOnline = totalFriendsOnline + 1
+			end
+		end
+
+		sort(friendTable, function(a, b)
+			if a[1] and b[1] then
+				return a[1] < b[1]
+			end
+		end)
+	end
+
+	local function UpdateFriendTable(total)
+		totalFriendsOnline = 0
+		for i = 1, #friendTable do
+			local name, level, class, area, connected, status, note = GetFriendInfo(i)
+			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do
+				if class == v then
+					class = k
+				end
+			end
+			index = GetTableIndex(friendTable, 1, name)
+			if (index == -1) then
+				BuildFriendTable(total)
+				break
+			end
+			friendTable[index][5] = connected
+			if connected then
+				friendTable[index][2] = level
+				friendTable[index][3] = class
+				friendTable[index][4] = area
+				friendTable[index][6] = status
+				friendTable[index][7] = note
+				totalFriendsOnline = totalFriendsOnline + 1
+			end
+		end
+	end
+
+	local function BuildBNTable(total)
+		totalBattleNetOnline = 0
+		wipe(BNTable)
+		for i = 1, total do
+			local presenceID, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND, _, noteText = BNGetFriendInfo(i)
+			local _, _, _, realmName, _, faction, race, class, _, zoneName, level = BNGetToonInfo(presenceID)
+			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do
+				if class == v then
+					class = k
+				end
+			end
+			BNTable[i] = { presenceID, givenName, surname, toonName, toonID, client, isOnline, isAFK, isDND, noteText, realmName, faction, race, class, zoneName, level }
+			if isOnline then
+				totalBattleNetOnline = totalBattleNetOnline + 1
+			end
+		end
+
+		sort(BNTable, function(a, b)
+			if (a[2] and b[2]) then
+				if (a[2] == b[2]) then
+					return a[3] < b[3]
+				end
+				return a[2] < b[2]
+			end
+		end)
+	end
+
+	local function UpdateBNTable(total)
+		totalBattleNetOnline = 0
+		for i = 1, #BNTable do
+			local presenceID, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND, _, noteText = BNGetFriendInfo(i)
+			local _, _, _, realmName, faction, _, race, class, _, zoneName, level = BNGetToonInfo(presenceID)
+			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do
+				if class == v then
+					class = k
+				end
+			end
+			index = GetTableIndex(BNTable, 1, presenceID)
+			if index == -1 then
+				BuildBNTable(total)
+				return
+			end
+			BNTable[index][7] = isOnline
+			if isOnline then
+				BNTable[index][2] = givenName
+				BNTable[index][3] = surname
+				BNTable[index][4] = toonName
+				BNTable[index][5] = toonID
+				BNTable[index][6] = client
+				BNTable[index][8] = isAFK
+				BNTable[index][9] = isDND
+				BNTable[index][10] = noteText
+				BNTable[index][11] = realmName
+				BNTable[index][12] = faction
+				BNTable[index][13] = race
+				BNTable[index][14] = class
+				BNTable[index][15] = zoneName
+				BNTable[index][16] = level
+				totalBattleNetOnline = totalBattleNetOnline + 1
+			end
+		end
+	end
 	Inject("Friends", {
-		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED PARTY_MEMBERS_CHANGED") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN BN_FRIEND_LIST_SIZE_CHANGED PARTY_MEMBERS_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_TOON_ONLINE BN_FRIEND_TOON_OFFLINE BN_TOON_NAME_UPDATED FRIENDLIST_UPDATE PLAYER_ENTERING_WORLD") end,
 		OnEvent = function(self, event)
 			if event ~= "PARTY_MEMBERS_CHANGED" then
 				local numBNetTotal, numBNetOnline = BNGetNumFriends()
@@ -890,10 +1084,127 @@ if friends.enabled then
 				total=total+numBNetTotal
 				self.text:SetText(format(friends.fmt, online, total))
 			end
+			if event == "BN_FRIEND_INFO_CHANGED" or event == "BN_FRIEND_ACCOUNT_ONLINE" or event == "BN_FRIEND_ACCOUNT_OFFLINE" or event == "BN_TOON_NAME_UPDATED" or event == "BN_FRIEND_TOON_ONLINE" or event == "BN_FRIEND_TOON_OFFLINE" or event == "PLAYER_ENTERING_WORLD" then
+				local BNTotal = BNGetNumFriends()
+				if BNTotal == #BNTable then
+					UpdateBNTable(BNTotal)
+				else
+					BuildBNTable(BNTotal)
+				end
+			end
+			if event == "FRIENDLIST_UPDATE" or event == "PLAYER_ENTERING_WORLD" then
+				local total = GetNumFriends()
+				if total == #friendTable then
+					UpdateFriendTable(total)
+				else
+					BuildFriendTable(total)
+				end
+			end
 			if self.hovered then self:GetScript("OnEnter")(self) end
 		end,
 		OnUpdate = AltUpdate,
-		OnClick = function(_, b) (b == "RightButton" and ToggleIgnorePanel or ToggleFriendsPanel)() end,
+		OnClick = function(self, b)
+			if b == "RightButton" then
+				ToggleIgnorePanel()
+			elseif b == "LeftButton" then
+				ToggleFriendsPanel()
+			elseif b == "MiddleButton" then
+				HideTT(self)
+
+				local menuCountWhispers = 0
+				local menuCountInvites = 0
+				local classc, levelc
+
+				menuList[2].menuList = {}
+				menuList[3].menuList = {}
+
+				if totalFriendsOnline > 0 then
+					for i = 1, #friendTable do
+						if (friendTable[i][5]) then
+							menuCountInvites = menuCountInvites + 1
+							menuCountWhispers = menuCountWhispers + 1
+
+							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
+							if (classc == nil) then
+								classc = GetQuestDifficultyColor(friendTable[i][2]) 
+							end
+
+							menuList[2].menuList[menuCountInvites] = {
+								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
+								arg1 = friendTable[i][1],
+								notCheckable = true,
+								func = function(self, arg1)
+									menuFrame:Hide()
+									InviteUnit(arg1)
+								end
+							}
+
+							menuList[3].menuList[menuCountWhispers] = {
+								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
+								arg1 = friendTable[i][1],
+								notCheckable = true,
+								func = function(self, arg1)
+									menuFrame:Hide() 
+									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
+								end
+							}
+						end
+					end
+				end
+
+				if (totalBattleNetOnline > 0) then
+					local realID, playerFaction, grouped
+					for i = 1, #BNTable do
+						if (BNTable[i][7]) then
+							realID = (BATTLENET_NAME_FORMAT):format(BNTable[i][2], BNTable[i][3])
+							menuCountWhispers = menuCountWhispers + 1
+							menuList[3].menuList[menuCountWhispers] = {
+								text = realID,
+								arg1 = realID,
+								notCheckable = true,
+								func = function(self, arg1)
+									menuFrame:Hide()
+									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
+								end
+							}
+
+							if (select(1, UnitFactionGroup("player")) == "Horde") then
+								playerFaction = 0
+							else 
+								playerFaction = 1
+							end
+
+							if (BNTable[i][6] == "WoW" and BNTable[i][11] == GetRealmName() and playerFaction == BNTable[i][12]) then
+								classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
+								if (classc == nil) then 
+									classc = GetQuestDifficultyColor(BNTable[i][16])
+								end
+
+								if (UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4])) then
+									grouped = 1
+								else 
+									grouped = 2
+								end
+
+								menuCountInvites = menuCountInvites + 1
+								menuList[2].menuList[menuCountInvites] = {
+									text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, BNTable[i][16], classc.r * 255, classc.g * 255, classc.b * 255, BNTable[i][4]),
+									arg1 = BNTable[i][4],
+									notCheckable = true,
+									func = function(self, arg1)
+										menuFrame:Hide()
+										InviteUnit(arg1)
+									end
+								}
+							end
+						end
+					end
+				end
+
+				EasyMenu(menuList, menuFrame, self, 0, 0, 'MENU', 2)
+			
+			end
+		end,
 		OnEnter = function(self)
 			ShowFriends()
 			self.hovered = true
