@@ -819,10 +819,6 @@ function Stuffing:ADDON_LOADED(addon)
 	CloseBackpack = Stuffing_Close
 
 	BankFrame:UnregisterAllEvents()
-end
-
-function Stuffing:PLAYER_ENTERING_WORLD()
-	Stuffing:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	ToggleBackpack()
 	ToggleBackpack()
 end
