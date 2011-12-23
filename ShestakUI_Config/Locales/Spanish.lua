@@ -331,7 +331,6 @@ L_GUI_STATS_FPS = "FPS (Marcos por segundo)"
 L_GUI_STATS_EXPERIENCE = "Experiencia"
 L_GUI_STATS_COORDS = "Coordenadas"
 L_GUI_STATS_LOCATION = "Localización"
-L_GUI_STATS_GUILD_REPAIR = "Reparar con dinero de la hermandad"
 
 -- Error options
 L_GUI_ERROR = "Errores"

@@ -331,7 +331,6 @@ L_GUI_STATS_FPS = "帧数"
 L_GUI_STATS_EXPERIENCE = "经验"
 L_GUI_STATS_COORDS = "坐标"
 L_GUI_STATS_LOCATION = "区域"
-L_GUI_STATS_GUILD_REPAIR = "公会银行修理"
 
 -- Error options
 L_GUI_ERROR = "错误收集"

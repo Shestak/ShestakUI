@@ -332,7 +332,6 @@ L_GUI_STATS_FPS = "Кадры в секунду"
 L_GUI_STATS_EXPERIENCE = "Опыт"
 L_GUI_STATS_COORDS = "Координаты"
 L_GUI_STATS_LOCATION = "Зона"
-L_GUI_STATS_GUILD_REPAIR = "Починка из банка гильдии"
 
 -- Error options
 L_GUI_ERROR = "Ошибки боя"

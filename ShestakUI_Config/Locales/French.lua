@@ -331,7 +331,6 @@ L_GUI_STATS_FPS = "FPS"
 L_GUI_STATS_EXPERIENCE = "Expérience"
 L_GUI_STATS_COORDS = "Coordonnées"
 L_GUI_STATS_LOCATION = "Lieu actuel"
-L_GUI_STATS_GUILD_REPAIR = "Réparation de guilde"
 
 -- Error options
 L_GUI_ERROR = "Erreurs"

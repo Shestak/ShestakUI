@@ -357,7 +357,7 @@ if durability.enabled then
 	Inject("Durability", {
 		OnLoad = function(self)
 			CreateFrame("GameTooltip", "LPDURA")
-			LPDURA:SetOwner(WorldFrame,"ANCHOR_NONE")
+			LPDURA:SetOwner(WorldFrame, "ANCHOR_NONE")
 			if durability.man then DurabilityFrame.Show = DurabilityFrame.Hide end
 			RegEvents(self, "UPDATE_INVENTORY_DURABILITY MERCHANT_SHOW PLAYER_LOGIN")
 		end,
@@ -424,6 +424,7 @@ if durability.enabled then
 			end
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddDoubleLine(" ", L_STATS_AUTO_REPAIR..": "..(conf.AutoRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
+			GameTooltip:AddDoubleLine(" ", L_STATS_GUILD_REPAIR..": "..(C.stats.guild_repair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
 			GameTooltip:Show()
 		end,
 		OnClick = function(self, button)

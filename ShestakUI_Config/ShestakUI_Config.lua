@@ -374,7 +374,7 @@ local function Local(o)
 	if o == "UIConfigstatsexperience" then o = L_GUI_STATS_EXPERIENCE end
 	if o == "UIConfigstatscoords" then o = L_GUI_STATS_COORDS end
 	if o == "UIConfigstatslocation" then o = L_GUI_STATS_LOCATION end
-	if o == "UIConfigstatsguild_repair" then o = L_GUI_STATS_GUILD_REPAIR end
+	if o == "UIConfigstatsguild_repair" then o = L_STATS_GUILD_REPAIR end
 
 	-- Error options
 	if o == "UIConfigerror" then o = L_GUI_ERROR end

@@ -243,6 +243,7 @@ L_STATS_ADDED_JUNK = "Добавлено нежелательное исключ
 L_STATS_REMOVE_EXCEPTION = "Добавить/удалить исключения."
 L_STATS_ALT = "ALT"
 L_STATS_AUTO_REPAIR = "Авто починка"
+L_STATS_GUILD_REPAIR = "Починка из банка гильдии"
 L_STATS_AUTO_SELL = "Авто продажа"
 L_STATS_BANDWIDTH = "Скорость:"
 L_STATS_DOWNLOAD = "Загрузка:"
