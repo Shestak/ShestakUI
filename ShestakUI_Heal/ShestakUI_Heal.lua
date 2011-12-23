@@ -349,7 +349,7 @@ oUF:Factory(function(self)
 			if numRaidMembers > 0 then
 				local playerGroup
 				for member = 1, numRaidMembers do
-					_, _, playerGroup, _, _, _, _, _, _, _, _ = GetRaidRosterInfo(member)
+					_, _, playerGroup = GetRaidRosterInfo(member)
 					lastGroup = math.max(lastGroup, playerGroup)
 				end
 			end
@@ -431,9 +431,9 @@ oUF:Factory(function(self)
 			end
 			local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
 				"oUF-initialConfigFunction", ([[
-					self:SetWidth(unit_width)
-					self:SetHeight(unit_height)
-				]]),
+					self:SetWidth(%d)
+					self:SetHeight(%d)
+				]]):format(unit_width, unit_height),
 				"showRaid", true,
 				"yOffset", T.Scale(-7),
 				"groupFilter", "MAINTANK",
