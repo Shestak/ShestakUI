@@ -150,7 +150,7 @@ Filger_Spells = {
 			-- Kiroptyric Sigil (Agility, Use)
 			{ spellID = 109715, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Starcatcher Compass (Haste, Proc)
-			{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Arrow of Time (Haste, Proc)
 			{ spellID = 102659, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
@@ -169,7 +169,7 @@ Filger_Spells = {
 			-- Bottled Wishes (Spell Power, Use)
 			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Insignia of the Corrupted Mind (Haste, Proc)
-			{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Foul Gift of the Demon Lord (Mastery, Proc)
 			{ spellID = 102663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
@@ -205,7 +205,7 @@ Filger_Spells = {
 			-- Reflection of the Light (Spell Power, Use)
 			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Seal of the Seven Signs (Haste, Proc)
-			{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -459,7 +459,7 @@ Filger_Spells = {
 			-- Kiroptyric Sigil (Agility, Use)
 			{ spellID = 109715, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Starcatcher Compass (Haste, Proc)
-			{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Arrow of Time (Haste, Proc)
 			{ spellID = 102659, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
@@ -707,7 +707,7 @@ Filger_Spells = {
 			-- Bottled Wishes (Spell Power, Use)
 			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Insignia of the Corrupted Mind (Haste, Proc)
-			{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Foul Gift of the Demon Lord (Mastery, Proc)
 			{ spellID = 102663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
@@ -1227,7 +1227,7 @@ Filger_Spells = {
 			-- Kiroptyric Sigil (Agility, Use)
 			{ spellID = 109715, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Starcatcher Compass (Haste, Proc)
-			{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Arrow of Time (Haste, Proc)
 			{ spellID = 102659, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster General
@@ -1246,7 +1246,7 @@ Filger_Spells = {
 			-- Bottled Wishes (Spell Power, Use)
 			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Insignia of the Corrupted Mind (Haste, Proc)
-			{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Foul Gift of the Demon Lord (Mastery, Proc)
 			{ spellID = 102663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
@@ -1282,7 +1282,7 @@ Filger_Spells = {
 			-- Reflection of the Light (Spell Power, Use)
 			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Seal of the Seven Signs (Haste, Proc)
-			{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -1581,7 +1581,7 @@ Filger_Spells = {
 			-- Reflection of the Light (Spell Power, Use)
 			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Seal of the Seven Signs (Haste, Proc)
-			{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -1791,7 +1791,7 @@ Filger_Spells = {
 			-- Bottled Wishes (Spell Power, Use)
 			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Insignia of the Corrupted Mind (Haste, Proc)
-			{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Foul Gift of the Demon Lord (Mastery, Proc)
 			{ spellID = 102663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
@@ -1827,7 +1827,7 @@ Filger_Spells = {
 			-- Reflection of the Light (Spell Power, Use)
 			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Seal of the Seven Signs (Haste, Proc)
-			{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 109804, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Enchants
 			-- General
@@ -2064,7 +2064,7 @@ Filger_Spells = {
 			-- Bottled Wishes (Spell Power, Use)
 			{ spellID = 109792, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Insignia of the Corrupted Mind (Haste, Proc)
-			{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 109789, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Foul Gift of the Demon Lord (Mastery, Proc)
 			{ spellID = 102663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Caster DPS
@@ -2343,7 +2343,7 @@ Filger_Spells = {
 			-- Kiroptyric Sigil (Agility, Use)
 			{ spellID = 109715, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Starcatcher Compass (Haste, Proc)
-			{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			--{ spellID = 107982, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Arrow of Time (Haste, Proc)
 			{ spellID = 102659, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
