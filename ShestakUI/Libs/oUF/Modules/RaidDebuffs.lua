@@ -150,7 +150,7 @@ local function UpdateDebuff(self, name, icon, count, debuffType, duration, endTi
 		f.duration = duration
 
 		if f.count then
-			if count and (count > 0) then
+			if count and (count > 1) then
 				f.count:SetText(count)
 				f.count:Show()
 			else
@@ -165,7 +165,7 @@ local function UpdateDebuff(self, name, icon, count, debuffType, duration, endTi
 		end
 
 		if f.time then
-			if duration and (duration > 1) then
+			if duration and (duration > 0) then
 				f.endTime = endTime
 				f.nextUpdate = 0
 				f:SetScript("OnUpdate", OnUpdate)
