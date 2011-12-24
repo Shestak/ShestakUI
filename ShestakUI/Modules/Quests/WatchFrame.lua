@@ -83,7 +83,7 @@ end)
 --	Skin item buttons
 ----------------------------------------------------------------------------------------
 hooksecurefunc("SetItemButtonTexture", function(button, texture)
-	if button:GetName():match("WatchFrameItem%d+") and not button.skinned then
+	if button:GetName():match("WatchFrameItem%d+") and not button.skinned and not InCombatLockdown() then
 		local icon = _G[button:GetName().."IconTexture"]
 		local border = _G[button:GetName().."NormalTexture"]
 		local count = _G[button:GetName().."Count"]
@@ -124,7 +124,7 @@ hooksecurefunc("WatchFrame_Update", function()
 	for i = 1, numQuestWatches do
 		questIndex = GetQuestIndexForWatch(i)
 		if questIndex then
-			local title, level, questTag, suggestedGroup, isHeader, isCollapsed, isComplete, isDaily, questID, startEvent = GetQuestLogTitle(questIndex)
+			local title, level = GetQuestLogTitle(questIndex)
 			local col = GetQuestDifficultyColor(level)
 
 			for j = 1, #WATCHFRAME_QUESTLINES do
