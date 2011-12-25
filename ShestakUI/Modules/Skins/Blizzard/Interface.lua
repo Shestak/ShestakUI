@@ -82,7 +82,6 @@ local function LoadSkin()
 		"ObjectivesPanelAutoQuestTracking",
 		"ObjectivesPanelAutoQuestProgress",
 		"ObjectivesPanelMapQuestDifficulty",
-		"ObjectivesPanelAdvancedWorldMap",
 		"ObjectivesPanelWatchFrameWidth",
 		-- Social
 		"SocialPanelProfanityFilter",
@@ -137,7 +136,6 @@ local function LoadSkin()
 		"CombatTextPanelPeriodicEnergyGains",
 		"CombatTextPanelHonorGains",
 		"CombatTextPanelAuras",
-		"CombatTextPanelAutoSelfCast",
 		-- StatusText
 		"StatusTextPanelPlayer",
 		"StatusTextPanelPet",
@@ -157,7 +155,6 @@ local function LoadSkin()
 		"BuffsPanelBuffDurations",
 		"BuffsPanelDispellableDebuffs",
 		"BuffsPanelCastableBuffs",
-		"BuffsPanelShowCastableDebuffs",
 		"BuffsPanelConsolidateBuffs",
 		"BuffsPanelShowAllEnemyDebuffs",
 		-- Battlenet
@@ -166,7 +163,6 @@ local function LoadSkin()
 		"BattlenetPanelOfflineFriends",
 		"BattlenetPanelBroadcasts",
 		"BattlenetPanelFriendRequests",
-		"BattlenetPanelOnlineFriendsConversations",
 		"BattlenetPanelShowToastWindow",
 		-- Camera
 		"CameraPanelFollowTerrain",
