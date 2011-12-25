@@ -2,13 +2,10 @@ local T, C, L = unpack(ShestakUI)
 if C.unitframe.enable ~= true or IsAddOnLoaded("ShestakUI_Heal") then return end
 
 ----------------------------------------------------------------------------------------
---	
+--	UnitFrames based on oUF_Caellian(by Caellian)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = oUFShestakUI
-
-ns._Objects = {}
-ns._Headers = {}
 
 -- Frame size
 local party_width = 140
@@ -395,7 +392,7 @@ oUF:Factory(function(self)
 		end
 		local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
 			"oUF-initialConfigFunction", ([[
-				self:SetWidth(60.2)
+				self:SetWidth(60)
 				self:SetHeight(26)
 			]]),
 			"showRaid", true,

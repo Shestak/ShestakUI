@@ -79,7 +79,7 @@ local function CreateRollButton(parent, ntex, ptex, htex, rolltype, tiptext, ...
 	f:SetScript("OnClick", ClickRoll)
 	f:SetMotionScriptsWhileDisabled(true)
 	local txt = f:CreateFontString(nil, nil)
-	txt:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style);
+	txt:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 	txt:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
 	txt:Point("CENTER", 0, rolltype == 2 and 1 or rolltype == 0 and -1.2 or 0)
 	return f, txt
@@ -103,7 +103,6 @@ local function CreateRollFrame()
 	button:SetScript("OnLeave", HideTip2)
 	button:SetScript("OnUpdate", ItemOnUpdate)
 	button:SetScript("OnClick", LootClick)
-
 	frame.button = button
 
 	local buttonborder = CreateFrame("Frame", nil, button)
@@ -145,12 +144,12 @@ local function CreateRollFrame()
 
 	local bind = frame:CreateFontString()
 	bind:Point("LEFT", pass, "RIGHT", 3, 1)
-	bind:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style);
+	bind:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 	bind:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
 	frame.fsbind = bind
 
 	local loot = frame:CreateFontString(nil, "ARTWORK")
-	loot:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style);
+	loot:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 	loot:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
 	loot:Point("LEFT", bind, "RIGHT", 0, 0)
 	loot:Point("RIGHT", frame, "RIGHT", -5, 0)
@@ -184,7 +183,6 @@ local function GetFrame()
 	table.insert(frames, f)
 	return f
 end
-
 
 local function START_LOOT_ROLL(rollid, time)
 	if cancelled_rolls[rollid] then return end
@@ -301,6 +299,7 @@ end
 LootRollAnchor:RegisterEvent("ADDON_LOADED")
 LootRollAnchor:SetScript("OnEvent", function(frame, event, addon)
 	if addon ~= "ShestakUI" then return end
+
 	LootRollAnchor:UnregisterEvent("ADDON_LOADED")
 	LootRollAnchor:RegisterEvent("START_LOOT_ROLL")
 	LootRollAnchor:RegisterEvent("CHAT_MSG_LOOT")

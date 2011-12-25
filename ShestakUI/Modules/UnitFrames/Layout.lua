@@ -2,13 +2,10 @@
 if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	
+--	UnitFrames based on oUF_Caellian(by Caellian)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF
-
-ns._Objects = {}
-ns._Headers = {}
 
 local backdrop = {
 	bgFile = C.media.blank,
@@ -1193,27 +1190,24 @@ end
 --	Testmode(by Fernir)
 ----------------------------------------------------------------------------------------
 SlashCmdList.TESTUF = function()
-	if(oUF) then
-		for i, v in pairs(oUF.units) do
-			if not v.fff then
-				v.fff = CreateFrame("Frame")
-				v.fff:SetTemplate("Transparent")
-				v.fff:SetParent(UIParent)
-				v.fff:SetFrameStrata("MEDIUM")
-				v.fff:SetFrameLevel(20)
-				v.fff:SetPoint("TOPLEFT", v, -2, 2)
-				v.fff:SetPoint("BOTTOMRIGHT", v, 2, -2)
+	for i, v in pairs(oUF.units) do
+		if not v.frame then
+			v.frame = CreateFrame("Frame")
+			v.frame:SetTemplate("Transparent")
+			v.frame:SetParent(UIParent)
+			v.frame:SetFrameStrata("MEDIUM")
+			v.frame:SetFrameLevel(20)
+			v.frame:SetPoint("TOPLEFT", v, -2, 2)
+			v.frame:SetPoint("BOTTOMRIGHT", v, 2, -2)
 
-				v.fffs = T.SetFontString(v.fff, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				v.fffs:SetShadowOffset(0, 0)
-				v.fffs:SetAllPoints(v.fff)
-				v.fffs:SetText(v:GetName())
+			v.text = T.SetFontString(v.frame, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			v.text:SetAllPoints(v.frame)
+			v.text:SetText(v:GetName())
+		else
+			if v.frame:IsShown() then
+				v.frame:Hide()
 			else
-				if v.fff:IsShown() then 
-					v.fff:Hide()
-				else
-					v.fff:Show()
-				end
+				v.frame:Show()
 			end
 		end
 	end

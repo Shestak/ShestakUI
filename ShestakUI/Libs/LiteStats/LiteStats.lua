@@ -968,11 +968,7 @@ if friends.enabled then
 
 		for i = 1, total do
 			local name, level, class, area, connected, status, note = GetFriendInfo(i)
-			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do
-				if class == v then
-					class = k
-				end
-			end
+			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 			friendTable[i] = {name, level, class, area, connected, status, note}
 			if connected then
 				totalFriendsOnline = totalFriendsOnline + 1
@@ -991,12 +987,8 @@ if friends.enabled then
 		for i = 1, total do
 			local presenceID, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND, _, noteText = BNGetFriendInfo(i)
 			local _, _, _, realmName, _, faction, race, class, _, zoneName, level = BNGetToonInfo(presenceID)
-			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do
-				if class == v then
-					class = k
-				end
-			end
-			BNTable[i] = { presenceID, givenName, surname, toonName, toonID, client, isOnline, isAFK, isDND, noteText, realmName, faction, race, class, zoneName, level }
+			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+			BNTable[i] = {presenceID, givenName, surname, toonName, toonID, client, isOnline, isAFK, isDND, noteText, realmName, faction, race, class, zoneName, level}
 			if isOnline then
 				totalBattleNetOnline = totalBattleNetOnline + 1
 			end
