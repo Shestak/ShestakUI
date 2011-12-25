@@ -74,6 +74,7 @@ if T.author == true then
 	C["actionbar"].toggle_mode = false
 	C["unitframe"].arena_on_right = false
 	C["unitframe"].plugins_vengeance_bar = false
+	C["raidframe"].plugins_auto_resurrection = true
 	C["stats"].fps = false
 	C["stats"].battleground = true
 	if T.level == MAX_PLAYER_LEVEL then
