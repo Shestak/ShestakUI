@@ -158,8 +158,8 @@ local function LoadSkin()
 
 		if event == "PLAYER_LOGIN" then
 			if not miniWorldMap then
-				ToggleFrame(WorldMapFrame)
-				ToggleFrame(WorldMapFrame)
+				WorldMapFrame:Show()
+				WorldMapFrame:Hide()
 			end
 		elseif event == "PLAYER_REGEN_DISABLED" then
 			WorldMapFrameSizeDownButton:Disable()

@@ -1,8 +1,10 @@
 ----------------------------------------------------------------------------------------
---	Based on tekability
+--	Durability value on slot buttons in CharacterFrame(tekability by Tekkub)
 ----------------------------------------------------------------------------------------
-local SLOTIDS, FONTSIZE = {}, 12
-for _, slot in pairs({"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands", "MainHand", "SecondaryHand", "Ranged"}) do SLOTIDS[slot] = GetInventorySlotInfo(slot .. "Slot") end
+local SLOTIDS = {}
+for _, slot in pairs({"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands", "MainHand", "SecondaryHand", "Ranged"}) do
+	SLOTIDS[slot] = GetInventorySlotInfo(slot .. "Slot")
+end
 local frame = CreateFrame("Frame", nil, CharacterFrame)
 
 local function RYGColorGradient(perc)
@@ -27,8 +29,8 @@ local fontstrings = setmetatable({}, {
 
 		local fstr = gslot:CreateFontString(nil, "OVERLAY")
 		local font, _, flags = NumberFontNormal:GetFont()
-		fstr:SetFont(font, FONTSIZE, flags)
-		fstr:SetPoint("CENTER", gslot, "BOTTOM", 0, 8)
+		fstr:SetFont(font, 12, flags)
+		fstr:SetPoint("BOTTOM", gslot, "BOTTOM", 0, 1)
 		t[i] = fstr
 		return fstr
 	end,
@@ -39,7 +41,7 @@ function frame:OnEvent(event, arg1)
 		for i, fstr in pairs(fontstrings) do
 			-- Re-apply the font, so that we catch any changes to NumberFontNormal by addons like ClearFont
 			local font, _, flags = NumberFontNormal:GetFont()
-			fstr:SetFont(font, FONTSIZE, flags)
+			fstr:SetFont(font, 12, flags)
 		end
 		return
 	end

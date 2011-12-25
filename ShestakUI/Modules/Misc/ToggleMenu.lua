@@ -50,7 +50,7 @@ C["togglemainmenu"] = {
 			SlashCmdList.UIHELP()
 		end
 	},
-	{	["text"] = "Reload UI",
+	{	["text"] = L_ALOAD_RL,
 		["function"] = function()
 			ReloadUI()
 		end
