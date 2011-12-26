@@ -38,7 +38,6 @@ local function SetCasterOnlyBuffs()
 	Spell5Buff = {	-- Total Mana
 		54424,	-- Fel Intelligence
 		61316,	-- Dalaran Brilliance
-		48100,	-- Scroll of Intellect VIII
 		1459,	-- Arcane Brilliance
 	}
 	Spell6Buff = {	-- Mana Regen
