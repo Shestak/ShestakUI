@@ -32,7 +32,6 @@ local function SetCasterOnlyBuffs()
 		469,	-- Commanding Shout
 		6307,	-- Blood Pact
 		90364,	-- Qiraji Fortitude
-		72590,	-- Drums of Fortitude
 		86507,	-- Runescroll of Fortitude II
 	}
 	Spell5Buff = {	-- Total Mana
@@ -42,7 +41,7 @@ local function SetCasterOnlyBuffs()
 	}
 	Spell6Buff = {	-- Mana Regen
 		54424,	-- Fel Intelligence
-		24853,	-- Mana Spring Totem
+		5677,	-- Mana Spring Totem
 		19740,	-- Blessing of Might
 	}
 end
@@ -60,7 +59,6 @@ local function SetBuffs()
 		469,	-- Commanding Shout
 		6307,	-- Blood Pact
 		90364,	-- Qiraji Fortitude
-		72590,	-- Drums of Fortitude
 		86507,	-- Runescroll of Fortitude II
 	}
 	Spell5Buff = {	-- Total Str + Agi
