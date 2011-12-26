@@ -258,19 +258,21 @@ local function Shared(self, unit)
 
 		if C.raidframe.plugins_aura_watch_timer == true then
 			self.RaidDebuffs.time = T.SetFontString(self.RaidDebuffs, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			if C.aura.show_spiral == true then
-				self.RaidDebuffs.time:SetParent(self.RaidDebuffs.cd)
-			end
 			self.RaidDebuffs.time:SetPoint("CENTER", 1, 0)
 			self.RaidDebuffs.time:SetTextColor(1, 1, 1)
 		end
 
 		self.RaidDebuffs.count = T.SetFontString(self.RaidDebuffs, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-		if C.aura.show_spiral == true then
-			self.RaidDebuffs.count:SetParent(self.RaidDebuffs.cd)
-		end
 		self.RaidDebuffs.count:Point("BOTTOMRIGHT", self.RaidDebuffs, "BOTTOMRIGHT", 2, 0)
 		self.RaidDebuffs.count:SetTextColor(1, 1, 1)
+
+		if C.aura.show_spiral == true then
+			self.RaidDebuffs.overlay = CreateFrame("Frame", nil, self.RaidDebuffs)
+			self.RaidDebuffs.cd:SetFrameLevel(self.RaidDebuffs:GetFrameLevel() + 1)
+			self.RaidDebuffs.overlay:SetFrameLevel(self.RaidDebuffs.cd:GetFrameLevel() + 1)
+			self.RaidDebuffs.time:SetParent(self.RaidDebuffs.overlay)
+			self.RaidDebuffs.count:SetParent(self.RaidDebuffs.overlay)
+		end
 	end
 
 	return self

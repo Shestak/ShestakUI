@@ -1195,15 +1195,15 @@ end
 local FormatTime = function(s)
 	local day, hour, minute = 86400, 3600, 60
 	if s >= day then
-		return format("%dd", floor(s/day + 0.5)), s % day
+		return format("%dd", floor(s /day + 0.5)), s % day
 	elseif s >= hour then
-		return format("%dh", floor(s/hour + 0.5)), s % hour
+		return format("%dh", floor(s / hour + 0.5)), s % hour
 	elseif s >= minute then
-		return format("%dm", floor(s/minute + 0.5)), s % minute
+		return format("%dm", floor(s / minute + 0.5)), s % minute
 	elseif s >= minute / 12 then
-		return floor(s + 0.5), (s * 100 - floor(s * 100))/100
+		return floor(s + 0.5), (s * 100 - floor(s * 100)) / 100
 	end
-	return format("%.1f", s), (s * 100 - floor(s * 100))/100
+	return format("%.1f", s), (s * 100 - floor(s * 100)) / 100
 end
 
 local CreateAuraTimer = function(self, elapsed)
