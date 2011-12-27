@@ -345,9 +345,9 @@ end
 function Stuffing:CreateBagFrame(w)
 	local n = "StuffingFrame" .. w
 	local f = CreateFrame("Frame", n, UIParent)
-	f:EnableMouse(1)
-	f:SetMovable(1)
-	f:SetToplevel(1)
+	f:EnableMouse(true)
+	f:SetMovable(true)
+	f:SetToplevel(true)
 	f:SetFrameStrata("DIALOG")
 	f:SetFrameLevel(5)
 	f:SetScript("OnMouseDown", function(self, button)
@@ -360,7 +360,7 @@ function Stuffing:CreateBagFrame(w)
 	if w == "Bank" then
 		f:Point(unpack(C.position.bank))
 	else
-		f:Point(C.position.bag[1], C.position.bag[2], C.position.bag[3], C.position.bag[4]+3, C.position.bag[5]-3)
+		f:Point(unpack(C.position.bag))
 	end
 
 	-- Buy button
@@ -480,7 +480,7 @@ function Stuffing:InitBags()
 	end
 
 	local button = CreateFrame("Button", nil, f)
-	button:EnableMouse(1)
+	button:EnableMouse(true)
 	button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 	button:SetAllPoints(detail)
 	button:SetScript("OnClick", function(self, btn)

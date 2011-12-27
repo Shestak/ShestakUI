@@ -126,4 +126,4 @@ button2:SetScript("OnEnter", function()
 	GameTooltip:Show()
 end)
 
-button2:SetScript("OnLeave", function()	GameTooltip:Hide() end)
+button2:SetScript("OnLeave", function() GameTooltip:Hide() end)
