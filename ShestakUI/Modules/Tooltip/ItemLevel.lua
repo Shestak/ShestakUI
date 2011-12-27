@@ -13,15 +13,14 @@ local slotName = {
 }
 
 local function GetAiL(unit)
-	local i, total, slot, itn = 0, 0, nil, 0
-	local sName, sLink, iRarity, iLevel, iMinLevel, sType, sSubType, iStackCount
+	local i, total, slot, itn, level = 0, 0, nil, 0
 
 	for i in pairs(slotName) do
 		slot = GetInventoryItemLink(unit, GetInventorySlotInfo(slotName[i]))
 		if slot ~= nil then
 			itn = itn + 1
-			sName, sLink, iRarity, iLevel, iMinLevel, sType, sSubType, iStackCount = GetItemInfo(slot)
-			total = total + iLevel
+			level = select(4, GetItemInfo(slot))
+			total = total + level
 		end
 	end
 
