@@ -270,7 +270,9 @@ local function Shared(self, unit)
 			self.RaidDebuffs.overlay = CreateFrame("Frame", nil, self.RaidDebuffs)
 			self.RaidDebuffs.cd:SetFrameLevel(self.RaidDebuffs:GetFrameLevel() + 1)
 			self.RaidDebuffs.overlay:SetFrameLevel(self.RaidDebuffs.cd:GetFrameLevel() + 1)
-			self.RaidDebuffs.time:SetParent(self.RaidDebuffs.overlay)
+			if C.raidframe.plugins_aura_watch_timer == true then
+				self.RaidDebuffs.time:SetParent(self.RaidDebuffs.overlay)
+			end
 			self.RaidDebuffs.count:SetParent(self.RaidDebuffs.overlay)
 		end
 	end
