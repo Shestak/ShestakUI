@@ -77,7 +77,7 @@ end
 
 function onEvent(frame, event, arg1, arg2, arg3, arg4)
 	if event == "UI_ERROR_MESSAGE" then
-		if arg1 == ERR_INV_FULL then
+		if arg1 == ERR_INV_FULL or arg1 == ERR_ITEM_MAX_COUNT then
 			stopOpening("|cffffff00"..L_MAIL_STOPPED)
 		end
 	end
