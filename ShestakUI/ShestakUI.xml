@@ -114,7 +114,6 @@
 	<Script file="Modules\ActionBars\Others.lua"/>
 	<Script file="Modules\ActionBars\Cooldowns.lua"/>
 
-	<Include file="Modules\UnitFrames\Templates.xml"/>
 	<Script file="Modules\UnitFrames\Tags.lua"/>
 	<Script file="Modules\UnitFrames\Layout.lua"/>
 
