@@ -133,7 +133,7 @@ end
 --	Oz@Runetotem Config
 ----------------------------------------------------------------------------------------
 if T.name == "Oz" and T.realm == "Runetotem" then
-	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 381, 24}
+	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 381, 25}
 	C["position"].quest = {"TOPLEFT", UIParent, "TOPLEFT", 21, -46}
 	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -154}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
@@ -191,6 +191,7 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["unitframe"].portrait_classcolor_border = false
 	C["unitframe"].portrait_height = 27
 	C["unitframe"].portrait_width = 27
+	C["unitframe"].plugins_necro_strike = true
 	C["unitframe"].plugins_smooth_bar = true
 	C["unitframe"].plugins_talents = true
 	C["raidframe"].raid_tanks_tt = true
