@@ -133,7 +133,7 @@ end
 --	Oz@Runetotem Config
 ----------------------------------------------------------------------------------------
 if T.name == "Oz" and T.realm == "Runetotem" then
-	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 381, 25}
+	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 381, 24}
 	C["position"].quest = {"TOPLEFT", UIParent, "TOPLEFT", 21, -46}
 	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -154}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
@@ -143,10 +143,12 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", -284, 289}
 	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 289}
 	C["position"].unitframes.raid_dps = {"TOPLEFT", UIParent, "TOPLEFT", 23, -115}
-	C["position"].unitframes.player_portrait = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -12, 0}
-	C["position"].unitframes.target_portrait = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 10, 0}
-	C["media"].border_color = {0.1, 0.1, 0.1, 1}
-	C["general"].welcome_message = false
+	C["position"].unitframes.player_portrait = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -8, 0}
+	C["position"].unitframes.target_portrait = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 6, 0}
+	C["position"].unitframes.player_castbar = {"BOTTOM", "ActionBarAnchor", "TOP", 0, 223}
+	C["position"].unitframes.target_castbar = {"BOTTOM", "ActionBarAnchor", "TOP", 11, 246}
+	C["media"].border_color = {0.6, 0.6, 0.6, 1}
+	C["media"].backdrop_color = {0.1, 0.1, 0.1, 1}
 	C["misc"].auto_decline_duel = false
 	C["misc"].auto_resurrection = false
 	C["misc"].ach_screens = true
