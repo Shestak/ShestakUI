@@ -528,7 +528,7 @@ local function UpdateThreat(frame, elapsed)
 				else
 					frame.hp:SetStatusBarColor(goodR, goodG, goodB)
 					frame.hp.hpbg:SetTexture(goodR, goodG, goodB, 0.25)
-				end		
+				end
 			else
 				-- Set colors to their original, not in combat
 				frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
@@ -548,7 +548,7 @@ local function UpdateThreat(frame, elapsed)
 				end
 			else
 				-- Losing/Gaining Threat
-				frame.hp:SetStatusBarColor(transitionR, transitionG, transitionB)	
+				frame.hp:SetStatusBarColor(transitionR, transitionG, transitionB)
 				frame.hp.hpbg:SetTexture(transitionR, transitionG, transitionB, 0.25)
 			end
 		end
