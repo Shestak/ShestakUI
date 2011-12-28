@@ -74,6 +74,7 @@ Monomyth:Register("QUEST_DETAIL", function()
 		CloseQuest()
 	else
 		QuestFrame_OnEvent(nil, "QUEST_DETAIL")
+		QuestInfoDescriptionText:SetAlphaGradient(0, math.huge)
 		AcceptQuest()
 	end
 end)

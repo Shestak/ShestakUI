@@ -38,5 +38,3 @@ T.oUF_colors = setmetatable({
 		[8] = {0.33, 0.59, 0.33}, -- Exalted
 	}, {__index = oUF.colors.reaction}),
 }, {__index = oUF.colors})
-
-T.ColorTemplate = T.oUF_colors
