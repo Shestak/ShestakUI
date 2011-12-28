@@ -107,7 +107,7 @@ L_BAG_RIGHT_CLICK_SEARCH = "Rechtsklick um zu suchen"
 
 -- Grab mail
 L_MAIL_STOPPED = "Angehalten, Inventar ist voll."
-L_MAIL_UNIQUE = "Stopped, unique item in mail." -- Needs review
+L_MAIL_UNIQUE = "Stopped. Found a duplicate unique item in bag or in bank." -- Needs review
 L_MAIL_COMPLETE = "Alles Fertig."
 L_MAIL_NEED = "Benötige einen Briefkasten."
 L_MAIL_MESSAGES = "nachrichten"

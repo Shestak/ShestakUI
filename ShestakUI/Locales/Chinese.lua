@@ -107,7 +107,7 @@ L_BAG_RIGHT_CLICK_SEARCH = "点击右键以搜寻物品"
 
 -- Grab mail
 L_MAIL_STOPPED = "无法拾取, 背包已满."
-L_MAIL_UNIQUE = "Stopped, unique item in mail." -- Needs review
+L_MAIL_UNIQUE = "Stopped. Found a duplicate unique item in bag or in bank." -- Needs review
 L_MAIL_COMPLETE = "完成."
 L_MAIL_NEED = "需要一个信箱."
 L_MAIL_MESSAGES = "新邮件"
