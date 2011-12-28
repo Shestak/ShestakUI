@@ -1392,10 +1392,9 @@ if stats.enabled then
 			string = GetParryChance()
 		elseif sub == "block" then
 			string = GetBlockChance()
-		elseif sub == "defense" then
-			local base, add = UnitDefense(P)
-			string, percent = base + add
 		elseif sub == "avoidance" then
+			string = GetDodgeChance() + GetParryChance()
+		elseif sub == "blockcap" then
 			string = GetDodgeChance() + GetParryChance() + GetBlockChance() + 5
 		elseif sub == "manaregen" then
 			local _, class = UnitClass(P)

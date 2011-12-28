@@ -140,7 +140,7 @@ LPSTAT_CONFIG = {
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
 			--   Ranged Haste% [rangedhaste]	Spell Haste% [spellhaste]		Melee Crit% [meleecrit]			Ranged Crit% [rangedcrit]
 			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				Spell Pen [spellpen]
-			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Defense Rating [defense]
+			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Combat table Coverage% [blockcap]
 			--   Avoidance% [avoidance]			MP5 I5SR [manaregen]			Armor Value [armor]				Resilience [resilience]
 		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
 		spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%", -- Spec #2 string
@@ -253,7 +253,7 @@ LPSTAT_PROFILES = {
 	},
 	WARRIOR = {
 		Stats = { 
-			spec1fmt = class"Def: ".."[defense]"..class" Armor: ".."[armor]"..class" Avoid: ".."[avoidance]%",
+			spec1fmt = class"Armor: ".."[armor]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
 			spec2fmt = class"AP: ".."[ap]"..class" Crit: ".."[meleecrit]%"..class" Hit: ".."[meleehit]%",
 		}
 	},
