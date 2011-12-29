@@ -1755,8 +1755,6 @@ Filger_Spells = {
 			{ spellID = 87117, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Mind melt
 			{ spellID = 87160, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Mind spike
-			{ spellID = 87178, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Chakra: Sanctuary
 			{ spellID = 81206, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Chakra: Serenity
@@ -1853,6 +1851,8 @@ Filger_Spells = {
 
 			-- Sin and Punishment
 			{ spellID = 87099, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			-- Mind spike
+			{ spellID = 87178, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -2102,7 +2102,7 @@ Filger_Spells = {
 
 			-- Self
 			-- Shadow Embrace
-			{ spellID = 32385, size = 37, unitId = "target", caster = "player", filter = "BUFF" },
+			{ spellID = 32389, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Curse of Tongues
 			{ spellID = 1714, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Curse of Exhaustion
@@ -2113,8 +2113,6 @@ Filger_Spells = {
 			{ spellID = 6789, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Enslave Demon
 			{ spellID = 1098, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
-			-- Dark Intent
-			{ spellID = 85767, size = 37, unitId = "target", caster = "player", filter = "BUFF" },
 			-- Shadowsnare
 			{ spellID = 63311, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 

@@ -55,6 +55,7 @@ if C.raidframe.plugins_aura_watch == true then
 			},
 			WARLOCK = {
 				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone Resurrection
+				{85767, "TOPLEFT", {0.93, 0.75, 0}},			-- Dark Intent
 			},
 			ALL = {
 				{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag, Horde
