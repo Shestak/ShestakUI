@@ -1849,8 +1849,6 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
-			-- Sin and Punishment
-			{ spellID = 87099, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Mind spike
 			{ spellID = 87178, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
@@ -3494,6 +3492,8 @@ Filger_Spells = {
 			{ spellID = 5484, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Seduction (Succubus)
 			{ spellID = 6358, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
+			-- Sin and Punishment
+			{ spellID = 87204, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 		},
 	},
 }
