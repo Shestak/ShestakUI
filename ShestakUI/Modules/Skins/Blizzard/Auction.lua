@@ -329,7 +329,9 @@ local function LoadSkin()
 	local dropdown = {
 		"Atr_DropDown1",
 		"Atr_Duration",
-		"Atr_DropDownSL"
+		"Atr_DropDownSL",
+		"Atr_ASDD_Class",
+		"Atr_ASDD_Subclass"
 	}
 
 	for i = 1, getn(dropdown) do
