@@ -226,7 +226,7 @@ or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азу�
 	C["pulsecooldown"].enable = true
 	C["pulsecooldown"].sound = true
 	C["pulsecooldown"].anim_scale = 2
-	C["pulsecooldown"].threshold = 10
+	C["pulsecooldown"].threshold = 5
 	C["threat"].enable = false
 	C["tooltip"].item_icon = true
 	C["tooltip"].health_value = true
