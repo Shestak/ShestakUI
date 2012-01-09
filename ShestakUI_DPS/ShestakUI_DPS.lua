@@ -336,7 +336,7 @@ oUF:Factory(function(self)
 			if numRaidMembers > 0 then
 				local playerGroup
 				for member = 1, numRaidMembers do
-					_, _, playerGroup, _, _, _, _, _, _, _, _ = GetRaidRosterInfo(member)
+					_, _, playerGroup = GetRaidRosterInfo(member)
 					lastGroup = math.max(lastGroup, playerGroup)
 				end
 			end
