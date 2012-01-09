@@ -143,6 +143,7 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", -284, 289}
 	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 289}
 	C["position"].unitframes.raid_dps = {"TOPLEFT", UIParent, "TOPLEFT", 23, -115}
+	C["position"].unitframes.tank = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 10, 2}
 	C["position"].unitframes.player_portrait = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -12, 0}
 	C["position"].unitframes.target_portrait = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 10, 0}
 	C["position"].unitframes.player_castbar = {"BOTTOM", "ActionBarAnchor", "TOP", 0, 223}

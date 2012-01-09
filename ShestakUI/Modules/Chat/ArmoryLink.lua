@@ -20,6 +20,10 @@ elseif T.client == "deDE" then
 	link = "de"
 elseif T.client == "esES" or T.client == "esMX" then
 	link = "es"
+elseif T.client == "zhTW" then
+	link = "zh"
+elseif T.client == "koKR" then
+	link = "kr"
 else
 	link = "eu"
 end
@@ -54,6 +58,16 @@ hooksecurefunc("UnitPopup_OnClick", function(self)
 			inputBox.editBox:SetText(linkurl)
 			inputBox.editBox:HighlightText()
 			return
+		elseif realmLocal == "tw" then
+			linkurl = "http://tw.battle.net/wow/"..link.."/character/"..realmName.."/"..name.."/advanced"
+			inputBox.editBox:SetText(linkurl)
+			inputBox.editBox:HighlightText()
+			return
+		elseif realmLocal == "kr" then
+			linkurl = "http://kr.battle.net/wow/"..link.."/character/"..realmName.."/"..name.."/advanced"
+			inputBox.editBox:SetText(linkurl)
+			inputBox.editBox:HighlightText()
+			return
 		else
 			DEFAULT_CHAT_FRAME:AddMessage("|cFFFFFF00Unsupported realm location.|r")
 			StaticPopup_Hide("LINK_COPY_DIALOG")
@@ -64,3 +78,6 @@ end)
 
 UnitPopupButtons["ARMORYLINK"] = {text = DUNGEON_FLOOR_SCARLETMONASTERY3, dist = 0, func = UnitPopup_OnClick}
 tinsert(UnitPopupMenus["FRIEND"], #UnitPopupMenus["FRIEND"] - 1, "ARMORYLINK")
+tinsert(UnitPopupMenus["PARTY"], #UnitPopupMenus["PARTY"] - 1, "ARMORYLINK")
+tinsert(UnitPopupMenus["RAID"], #UnitPopupMenus["RAID"] - 1, "ARMORYLINK")
+tinsert(UnitPopupMenus["PLAYER"], #UnitPopupMenus["PLAYER"] - 1, "ARMORYLINK")

@@ -172,7 +172,7 @@ local n = FriendsFrame.numTabs + 1
 local gtframe = CreateFrame("Button", "FriendsFrameTab"..n, FriendsFrame, "FriendsFrameTabTemplate")
 gtframe:SetID(n)
 gtframe:SetText(GUILD)
-gtframe:SetPoint("LEFT", getglobal("FriendsFrameTab"..n-1), "RIGHT", -15, 0)
+gtframe:SetPoint("LEFT", getglobal("FriendsFrameTab"..n - 1), "RIGHT", -15, 0)
 gtframe:RegisterForClicks("AnyUp")
 gtframe:SetScript("OnClick", function() ToggleGuildFrame() end)
 PanelTemplates_SetNumTabs(FriendsFrame, n)
@@ -258,7 +258,9 @@ pFilter:RegisterEvent("CVAR_UPDATE")
 pFilter:RegisterEvent("PLAYER_ENTERING_WORLD")
 pFilter:SetScript("OnEvent", function(self, event, cvar)
 	SetCVar("profanityFilter", 0)
-	BNSetMatureLanguageFilter(false)
+	if BNConnected() then
+		BNSetMatureLanguageFilter(false)
+	end
 end)
 
 ----------------------------------------------------------------------------------------
@@ -285,6 +287,32 @@ ForceWarning:SetScript("OnEvent", function(self, event)
 	elseif event == "LFG_PROPOSAL_SHOW" or event == "PARTY_INVITE_REQUEST" then
 		PlaySound("ReadyCheck", "Master")
 	end
+end)]]
+
+----------------------------------------------------------------------------------------
+--	Check date
+----------------------------------------------------------------------------------------
+--[[function T.DateCheck(m, d)
+	local month = tonumber(date("%m"))
+	local day = tonumber(date("%d"))
+	if month == m and day == d then
+		return true
+	else
+		return false
+	end
+end
+
+local f = CreateFrame("Frame")
+f:RegisterEvent("PLAYER_ENTERING_WORLD")
+f:SetScript("OnEvent", function(self)
+	if T.DateCheck(1, 1) == true then
+		T.Delay(15, print, "|cffffff00Happy New Year. From Shestak.|r")
+		T.Delay(16, T.InfoTextShow, "Happy New Year. From Shestak.")
+	--elseif T.DateCheck(1, 8) == true then
+	--	T.Delay(15, print, "|cffffff00Blah blah. From Shestak.|r")
+	--	T.Delay(16, T.InfoTextShow, "Blah blah. From Shestak.")
+	end
+	self:UnregisterAllEvents()
 end)]]
 
 ----------------------------------------------------------------------------------------
