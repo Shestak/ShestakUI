@@ -124,12 +124,15 @@ end)
 Monomyth:Register("BAG_UPDATE", function(bag)
 	if bag < 0 then return end
 
+	SavedOptionsPerChar.QuestCompleted = SavedOptionsPerChar.QuestCompleted or {}
+
 	for slot = 1, GetContainerNumSlots(bag) do
 		local _, id, active = GetContainerItemQuestInfo(bag, slot)
-		if id and not active then
-			-- We should check if the item is cached yet
-			-- The negative result of this is a disconnect
+		if id and not active and not SavedOptionsPerChar.QuestCompleted[id] then
 			UseContainerItem(bag, slot)
+
+			-- This is a temporary solution to the spam and bugs with some items
+			SavedOptionsPerChar.QuestCompleted[id] = true
 		end
 	end
 end)
