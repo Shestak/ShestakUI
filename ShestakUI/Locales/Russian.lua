@@ -27,6 +27,7 @@ L_RAID_UTIL_DISBAND = "Распустить группу"
 
 -- Zone name
 L_ZONE_WINTERGRASP = "Озеро Ледяных Оков"
+L_ZONE_TOLBARAD = "Тол Барад"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Ссылка на Wowhead"

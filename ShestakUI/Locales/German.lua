@@ -27,6 +27,7 @@ L_RAID_UTIL_DISBAND = "Gruppe auflösen"
 
 -- Zone name
 L_ZONE_WINTERGRASP = "Tausendwinter"
+L_ZONE_TOLBARAD = "Tol Barad" -- Needs review
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Wowhead Link"
