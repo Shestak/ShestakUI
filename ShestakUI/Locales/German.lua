@@ -26,7 +26,7 @@ L_MISC_ONECLICK_BID = "Shift-Click um auf den ausgewählten Gegenstand ohne Best
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"
 
 -- Zone name
-L_ZONE_WINTERGRASP = "Tausendwinter"
+L_ZONE_WINTERGRASP = "Tausendwintersee"
 L_ZONE_TOLBARAD = "Tol Barad" -- Needs review
 
 -- WatchFrame Wowhead link

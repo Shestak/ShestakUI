@@ -26,7 +26,7 @@ L_MISC_ONECLICK_BID = "Shift-Click to bid on the selected item without confirmat
 L_RAID_UTIL_DISBAND = "Disband Group"
 
 -- Zone name
-L_ZONE_WINTERGRASP = "Wintergrasp"
+L_ZONE_WINTERGRASP = "겨울손아귀 호수"
 L_ZONE_TOLBARAD = "톨 바라드"
 
 -- WatchFrame Wowhead link
