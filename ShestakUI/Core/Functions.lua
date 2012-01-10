@@ -213,12 +213,11 @@ local function CheckRole(self, event, unit)
 	else
 		resilience = false
 	end
-	if ((T.class == "PALADIN" and tree == 2) or 
-	(T.class == "WARRIOR" and tree == 3) or 
-	(T.class == "DEATHKNIGHT" and tree == 1)) and
-	resilience == false or
-	(T.class == "DRUID" and tree == 2 and GetBonusBarOffset() == 3) then
+	if ((T.class == "PALADIN" and tree == 2) or (T.class == "WARRIOR" and tree == 3) or (T.class == "DEATHKNIGHT" and tree == 1)) and resilience == false
+	or (T.class == "DRUID" and tree == 2 and GetBonusBarOffset() == 3) then
 		T.Role = "Tank"
+	elseif ((T.class == "PALADIN" and tree == 1) or (T.class == "DRUID" and tree == 3) or (T.class == "SHAMAN" and tree == 3) or (T.class == "PRIEST" and tree <= 2)) then
+		T.Role = "Healer"
 	else
 		local playerint = select(2, UnitStat("player", 4))
 		local playeragi = select(2, UnitStat("player", 2))
