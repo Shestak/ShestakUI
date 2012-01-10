@@ -27,7 +27,7 @@ L_RAID_UTIL_DISBAND = "解散團隊"
 
 -- Zone name
 L_ZONE_WINTERGRASP = "冬握湖"
-L_ZONE_TOLBARAD = "Tol Barad" -- Needs review
+L_ZONE_TOLBARAD = "托巴拉德"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Wowhead鏈接"

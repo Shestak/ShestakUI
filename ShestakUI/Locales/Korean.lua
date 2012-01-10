@@ -27,7 +27,7 @@ L_RAID_UTIL_DISBAND = "Disband Group"
 
 -- Zone name
 L_ZONE_WINTERGRASP = "Wintergrasp"
-L_ZONE_TOLBARAD = "Tol Barad"
+L_ZONE_TOLBARAD = "톨 바라드"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Wowhead link"
