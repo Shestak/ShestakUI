@@ -120,7 +120,7 @@ local function OnAuraChange(self, event, arg1, unit)
 	if event == "UNIT_AURA" and arg1 ~= "player" then return end
 
 	-- If We're a caster we may want to see differant buffs
-	if T.Role == "Caster" then 
+	if T.Role == "Caster" or T.Role == "Healer" then
 		SetCasterOnlyBuffs() 
 	else
 		SetBuffs()
