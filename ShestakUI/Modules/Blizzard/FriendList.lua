@@ -101,10 +101,10 @@ hooksecurefunc("WhoList_Update", function()
 
 	for i = 1, WHOS_TO_DISPLAY, 1 do
 		local index = whoOffset + i
-		local nameText = getglobal("WhoFrameButton"..i.."Name")
-		local levelText = getglobal("WhoFrameButton"..i.."Level")
-		local classText = getglobal("WhoFrameButton"..i.."Class")
-		local variableText = getglobal("WhoFrameButton"..i.."Variable")
+		local nameText = _G["WhoFrameButton"..i.."Name"]
+		local levelText = _G["WhoFrameButton"..i.."Level"]
+		local classText = _G["WhoFrameButton"..i.."Class"]
+		local variableText = _G["WhoFrameButton"..i.."Variable"]
 
 		local name, guild, level, race, class, zone, classFileName = GetWhoInfo(index)
 		if name then

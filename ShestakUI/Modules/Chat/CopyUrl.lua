@@ -44,7 +44,7 @@ end
 
 -- Hook all the AddMessage funcs
 for i = 1, NUM_CHAT_WINDOWS do
-	local frame = getglobal("ChatFrame"..i)
+	local frame = _G["ChatFrame"..i]
 	local addmessage = frame.AddMessage
 	frame.AddMessage = function(self, text, ...) addmessage(self, ReURL_AddLinkSyntax(text), ...) end
 end

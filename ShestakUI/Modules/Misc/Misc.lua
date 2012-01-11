@@ -172,7 +172,7 @@ local n = FriendsFrame.numTabs + 1
 local gtframe = CreateFrame("Button", "FriendsFrameTab"..n, FriendsFrame, "FriendsFrameTabTemplate")
 gtframe:SetID(n)
 gtframe:SetText(GUILD)
-gtframe:SetPoint("LEFT", getglobal("FriendsFrameTab"..n - 1), "RIGHT", -15, 0)
+gtframe:SetPoint("LEFT", _G["FriendsFrameTab"..n - 1], "RIGHT", -15, 0)
 gtframe:RegisterForClicks("AnyUp")
 gtframe:SetScript("OnClick", function() ToggleGuildFrame() end)
 PanelTemplates_SetNumTabs(FriendsFrame, n)

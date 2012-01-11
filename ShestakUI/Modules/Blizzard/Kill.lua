@@ -5,89 +5,123 @@ local T, C, L = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 local Kill = CreateFrame("Frame")
 Kill:RegisterEvent("ADDON_LOADED")
-Kill:RegisterEvent("PLAYER_LOGIN")
 Kill:SetScript("OnEvent", function(self, event, addon)
-	if event == "PLAYER_LOGIN" then
-		if C.unitframe.enable and (IsAddOnLoaded("ShestakUI_DPS") or IsAddOnLoaded("ShestakUI_Heal")) then
-			InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
-			InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
-			SetCVar("useCompactPartyFrames", 0)
-			CompactRaidFrameManager:Kill()
-			CompactRaidFrameContainer:Kill()
-			CompactUnitFrame_UpateVisible = T.dummy
-			CompactUnitFrame_UpdateAll = T.dummy
+	if addon == "Blizzard_AchievementUI" then
+		if C.tooltip.enable then
+			hooksecurefunc("AchievementFrameCategories_DisplayButton", function(button) button.showTooltipFunc = nil end)
 		end
-	else
-		if addon == "Blizzard_AchievementUI" then
-			if C.tooltip.enable then
-				hooksecurefunc("AchievementFrameCategories_DisplayButton", function(button) button.showTooltipFunc = nil end)
+	end
+
+	if C.unitframe.enable and (addon == "ShestakUI_DPS" or addon == "ShestakUI_Heal") then
+		InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
+		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
+
+		local function KillRaidFrame()
+			CompactRaidFrameManager:UnregisterAllEvents()
+			if not InCombatLockdown() then CompactRaidFrameManager:Hide() end
+
+			local shown = CompactRaidFrameManager_GetSetting("IsShown")
+			if shown and shown ~= "0" then
+				CompactRaidFrameManager_SetSetting("IsShown", "0")
 			end
 		end
 
-		if addon ~= "ShestakUI" then return end
+		hooksecurefunc("CompactRaidFrameManager_UpdateShown", function()
+			KillRaidFrame()
+		end)
 
-		Advanced_UseUIScale:Kill()
-		Advanced_UIScaleSlider:Kill()
-		TutorialFrameAlertButton:Kill()
-		HelpOpenTicketButtonTutorial:Kill()
-		PlayerTalentFrameLearnButtonTutorialArrow:Kill()
-		TalentMicroButtonAlert:Kill()
+		KillRaidFrame()
 
-		if C.chat.enable then
-			SetCVar("WholeChatWindowClickable", 0)
-			SetCVar("ConversationMode", "inline")
-			InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
-			InterfaceOptionsSocialPanelConversationMode:Kill()
-		end
+		local function KillPartyFrame()
+			CompactPartyFrame:Kill()
 
-		if C.unitframe.enable then
-			PlayerFrame:Kill()
-			if T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar ~= true then
-				RuneFrame:Kill()
-			end
-			InterfaceOptionsFrameCategoriesButton9:SetScale(0.00001)
-			InterfaceOptionsFrameCategoriesButton9:SetAlpha(0)
-			InterfaceOptionsFrameCategoriesButton10:SetScale(0.00001)
-			InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
-			InterfaceOptionsBuffsPanelCastableBuffs:Kill()
-			InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
-			InterfaceOptionsBuffsPanelBuffDurations:Kill()
-			InterfaceOptionsBuffsPanelShowAllEnemyDebuffs:Kill()
-			InterfaceOptionsUnitFramePanelPartyBackground:Kill()
-			PartyMemberBackground:Kill()
-
-			if C.unitframe.show_arena then
-				SetCVar("showArenaEnemyFrames", 0)
-				InterfaceOptionsUnitFramePanelArenaEnemyFrames:Kill()
-				InterfaceOptionsUnitFramePanelArenaEnemyCastBar:Kill()
-				InterfaceOptionsUnitFramePanelArenaEnemyPets:Kill()
+			for i = 1, MEMBERS_PER_RAID_GROUP do
+				local name = "CompactPartyFrameMember"..i
+				local frame = _G[name]
+				frame:UnregisterAllEvents()
 			end
 		end
 
-		if C.actionbar.enable then
-			InterfaceOptionsActionBarsPanelBottomLeft:Kill()
-			InterfaceOptionsActionBarsPanelBottomRight:Kill()
-			InterfaceOptionsActionBarsPanelRight:Kill()
-			InterfaceOptionsActionBarsPanelRightTwo:Kill()
-			InterfaceOptionsActionBarsPanelAlwaysShowActionBars:Kill()
-		end
+		for i = 1, MAX_PARTY_MEMBERS do
+			local name = "PartyMemberFrame"..i
+			local frame = _G[name]
 
-		if C.nameplate.enable == true and C.nameplate.enhance_threat == true then
-			InterfaceOptionsDisplayPanelAggroWarningDisplay:Kill()
-		end
+			frame:Kill()
 
-		if C.combattext.enable then
-			InterfaceOptionsCombatTextPanelFCTDropDown:Kill()
-			if C.combattext.blizz_head_numbers ~= true then
-				SetCVar("CombatLogPeriodicSpells", 0)
-				SetCVar("PetMeleeDamage", 0)
-				SetCVar("CombatDamage", 0)
-				SetCVar("CombatHealing", 0)
-				InterfaceOptionsCombatTextPanelTargetDamage:Kill()
-				InterfaceOptionsCombatTextPanelPeriodicDamage:Kill()
-				InterfaceOptionsCombatTextPanelPetDamage:Kill()
-				InterfaceOptionsCombatTextPanelHealing:Kill()
-			end
+			_G[name .. "HealthBar"]:UnregisterAllEvents()
+			_G[name .. "ManaBar"]:UnregisterAllEvents()
+		end
+		
+		if CompactPartyFrame then
+			KillPartyFrame()
+		elseif CompactPartyFrame_Generate then
+			hooksecurefunc("CompactPartyFrame_Generate", KillPartyFrame)
+		end
+	end
+
+	if addon ~= "ShestakUI" then return end
+
+	Advanced_UseUIScale:Kill()
+	Advanced_UIScaleSlider:Kill()
+	TutorialFrameAlertButton:Kill()
+	HelpOpenTicketButtonTutorial:Kill()
+	PlayerTalentFrameLearnButtonTutorialArrow:Kill()
+	TalentMicroButtonAlert:Kill()
+
+	if C.chat.enable then
+		SetCVar("WholeChatWindowClickable", 0)
+		SetCVar("ConversationMode", "inline")
+		InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
+		InterfaceOptionsSocialPanelConversationMode:Kill()
+	end
+
+	if C.unitframe.enable then
+		PlayerFrame:Kill()
+		if T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar ~= true then
+			RuneFrame:Kill()
+		end
+		InterfaceOptionsFrameCategoriesButton9:SetScale(0.00001)
+		InterfaceOptionsFrameCategoriesButton9:SetAlpha(0)
+		InterfaceOptionsFrameCategoriesButton10:SetScale(0.00001)
+		InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
+		InterfaceOptionsBuffsPanelCastableBuffs:Kill()
+		InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
+		InterfaceOptionsBuffsPanelBuffDurations:Kill()
+		InterfaceOptionsBuffsPanelShowAllEnemyDebuffs:Kill()
+		InterfaceOptionsUnitFramePanelPartyBackground:Kill()
+		PartyMemberBackground:Kill()
+
+		if C.unitframe.show_arena then
+			SetCVar("showArenaEnemyFrames", 0)
+			InterfaceOptionsUnitFramePanelArenaEnemyFrames:Kill()
+			InterfaceOptionsUnitFramePanelArenaEnemyCastBar:Kill()
+			InterfaceOptionsUnitFramePanelArenaEnemyPets:Kill()
+		end
+	end
+
+	if C.actionbar.enable then
+		InterfaceOptionsActionBarsPanelBottomLeft:Kill()
+		InterfaceOptionsActionBarsPanelBottomRight:Kill()
+		InterfaceOptionsActionBarsPanelRight:Kill()
+		InterfaceOptionsActionBarsPanelRightTwo:Kill()
+		InterfaceOptionsActionBarsPanelAlwaysShowActionBars:Kill()
+	end
+
+	if C.nameplate.enable == true and C.nameplate.enhance_threat == true then
+		InterfaceOptionsDisplayPanelAggroWarningDisplay:Kill()
+	end
+
+	if C.combattext.enable then
+		InterfaceOptionsCombatTextPanelFCTDropDown:Kill()
+		if C.combattext.blizz_head_numbers ~= true then
+			SetCVar("CombatLogPeriodicSpells", 0)
+			SetCVar("PetMeleeDamage", 0)
+			SetCVar("CombatDamage", 0)
+			SetCVar("CombatHealing", 0)
+			InterfaceOptionsCombatTextPanelTargetDamage:Kill()
+			InterfaceOptionsCombatTextPanelPeriodicDamage:Kill()
+			InterfaceOptionsCombatTextPanelPetDamage:Kill()
+			InterfaceOptionsCombatTextPanelHealing:Kill()
 		end
 	end
 end)

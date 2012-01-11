@@ -230,6 +230,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(103628),	-- Deep Corruption
 			-- Hagara the Stormbinder
 			SpellName(104451),	-- Ice Tomb
+			SpellName(105259),	-- Watery Entrenchment
 			SpellName(109325),	-- Frostflake
 			SpellName(105289),	-- Shattered Ice
 			SpellName(105285),	-- Target

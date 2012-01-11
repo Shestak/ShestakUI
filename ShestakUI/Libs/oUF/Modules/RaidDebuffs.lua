@@ -236,7 +236,7 @@ local function Update(self, event, unit)
 		["Curse"]	= 3,
 		["Disease"]	= 2,
 		["Poison"]	= 1,
-	}	
+	}
 end
 
 local function Enable(self)
