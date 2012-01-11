@@ -48,8 +48,8 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 
 			frame:Kill()
 
-			_G[name .. "HealthBar"]:UnregisterAllEvents()
-			_G[name .. "ManaBar"]:UnregisterAllEvents()
+			_G[name.."HealthBar"]:UnregisterAllEvents()
+			_G[name.."ManaBar"]:UnregisterAllEvents()
 		end
 		
 		if CompactPartyFrame then
