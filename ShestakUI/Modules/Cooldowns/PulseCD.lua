@@ -5,7 +5,7 @@ if not C.pulsecooldown.enable == true then return end
 --	Based on Doom Cooldown Pulse(by Woffle of Dark Iron, editor Affli)
 ----------------------------------------------------------------------------------------
 local noscalemult = T.mult * C.general.uiscale
-local fadeInTime, fadeOutTime, maxAlpha, animScale, iconSize, holdTime
+local fadeInTime, fadeOutTime, maxAlpha, animScale, iconSize, holdTime, threshold
 local cooldowns, animating, watching = { }, { }, { }
 local GetTime = GetTime
 
@@ -55,6 +55,7 @@ local function RefreshLocals()
 	animScale = C.pulsecooldown.anim_scale
 	iconSize = C.pulsecooldown.size
 	holdTime = C.pulsecooldown.hold_time
+	threshold = C.pulsecooldown.threshold
 
 	for _, v in pairs(T.pulse_ignored_spells) do
 		T.pulse_ignored_spells[v] = true
@@ -68,7 +69,7 @@ local function OnUpdate(_, update)
 	elapsed = elapsed + update
 	if elapsed > 0.05 then
 		for i, v in pairs(watching) do
-			if GetTime() >= v[1] + 0.5 + C.pulsecooldown.threshold then
+			if GetTime() >= v[1] + 0.5 + threshold then
 				if T.pulse_ignored_spells[i] then
 					watching[i] = nil
 				else
@@ -96,7 +97,7 @@ local function OnUpdate(_, update)
 			end
 		end
 		for i, v in pairs(cooldowns) do
-			local remaining = v[2]-(GetTime()-v[1])
+			local remaining = v[2] - (GetTime() - v[1])
 			if remaining <= 0 then
 				tinsert(animating, {v[3],v[4]})
 				cooldowns[i] = nil
@@ -164,12 +165,12 @@ end
 DCP:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 
 function DCP:COMBAT_LOG_EVENT_UNFILTERED(...)
-	local _, eventType, _, _, _, sourceFlags, _, _, _, spellID = ...
+	local _, eventType, _, _, _, sourceFlags, _, _, _, _, _, spellID = ...
 	if eventType == "SPELL_CAST_SUCCESS" then
 		if (bit.band(sourceFlags, COMBATLOG_OBJECT_TYPE_PET) == COMBATLOG_OBJECT_TYPE_PET and bit.band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_MINE) == COMBATLOG_OBJECT_AFFILIATION_MINE) then
 			local name = GetSpellInfo(spellID)
 			local index = GetPetActionIndexByName(name)
-			if index and not select(8, GetPetActionInfo(index)) then
+			if index and not select(7, GetPetActionInfo(index)) then
 				watching[name] = {GetTime(), "pet", index}
 			elseif not index and name then
 				watching[name] = {GetTime(), "spell", name}
