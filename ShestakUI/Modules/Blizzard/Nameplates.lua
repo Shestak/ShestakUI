@@ -94,8 +94,8 @@ end
 -- Create aura icons
 local function CreateAuraIcon(parent)
 	local button = CreateFrame("Frame", nil, parent)
-	button:SetWidth(20)
-	button:SetHeight(20)
+	button:SetWidth(C.nameplate.auras_size)
+	button:SetHeight(C.nameplate.auras_size)
 
 	button.bg = button:CreateTexture(nil, "BACKGROUND")
 	button.bg:SetTexture(unpack(C.media.backdrop_color))
@@ -158,7 +158,7 @@ local function OnAura(frame, unit)
 	if not frame.icons or not frame.unit then return end
 	local i = 1
 	for index = 1, 40 do
-		if i > 5 then return end
+		if i > C.nameplate.width / C.nameplate.auras_size then return end
 		local match
 		local name, _, _, _, _, duration, _, caster, _, _, spellid = UnitAura(frame.unit, index, "HARMFUL")
 
@@ -170,7 +170,7 @@ local function OnAura(frame, unit)
 			if not frame.icons[i] then frame.icons[i] = CreateAuraIcon(frame) end
 			local icon = frame.icons[i]
 			if i == 1 then icon:SetPoint("RIGHT", frame.icons, "RIGHT") end
-			if i ~= 1 and i <= 5 then icon:SetPoint("RIGHT", frame.icons[i-1], "LEFT", -2, 0) end
+			if i ~= 1 and i <= C.nameplate.width / C.nameplate.auras_size then icon:SetPoint("RIGHT", frame.icons[i-1], "LEFT", -2, 0) end
 			i = i + 1
 			UpdateAuraIcon(icon, frame.unit, index, "HARMFUL")
 		end
@@ -355,7 +355,7 @@ local function UpdateObjects(frame)
 	if C.nameplate.track_auras == true then
 		if frame.icons then return end
 		frame.icons = CreateFrame("Frame", nil, frame)
-		frame.icons:SetPoint("BOTTOMRIGHT", frame.hp, "TOPRIGHT", 0, C.font.nameplates_font_size + 5)
+		frame.icons:SetPoint("BOTTOMRIGHT", frame.hp, "TOPRIGHT", 0, C.font.nameplates_font_size + 7)
 		frame.icons:SetWidth(20 + C.nameplate.width)
 		frame.icons:SetHeight(25)
 		frame.icons:SetFrameLevel(frame.hp:GetFrameLevel() + 2)

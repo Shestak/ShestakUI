@@ -282,6 +282,7 @@ C["nameplate"] = {
 	["near_color"] = {1, 1, 0},					-- Near threat color
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
 	["track_auras"] = false,					-- Show debuffs
+	["auras_size"] = 22,						-- Debuffs size
 }
 
 ----------------------------------------------------------------------------------------
