@@ -22,7 +22,7 @@ L_GUI_MISC_AUTOQUEST = "自動接受任務"
 L_GUI_MISC_AUTODUEL = "自動取消决鬥"
 L_GUI_MISC_AUTOACCEPT = "自動接受組隊邀請"
 L_GUI_MISC_AUTORESSURECT = "在戰場中自動釋放靈魂"
-L_GUI_MISC_AUTOBUYREAGENTS = "Auto buy reagents" -- Needs review
+L_GUI_MISC_AUTOBUYREAGENTS = "自動購買消耗材料"
 L_GUI_MISC_MARKING = "點擊shift顯示團隊標記圖示菜單"
 L_GUI_MISC_INVKEYWORD = "自動邀請關鍵字 (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "AFK時旋轉鏡頭"
@@ -118,7 +118,7 @@ L_GUI_COOLDOWN_PULSE_SIZE = "冷卻閃爍提示大小"
 L_GUI_COOLDOWN_PULSE_SOUND = "播放聲音提醒"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "動畫縮放"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "不透明狀態持續時間"
-L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimal threshold time" -- Needs review
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "持續時間最小閥值"
 
 -- Threat options
 L_GUI_THREAT = "仇恨欄"
@@ -208,7 +208,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨著色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "臨近仇恨著色"
 L_GUI_NAMEPLATE_BAD_COLOR = "危險仇恨著色"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "顯示debuffs(需要關閉名稱縮寫)"
-L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs size" -- Needs review
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs大小"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "開啟快捷列"
@@ -279,7 +279,7 @@ L_GUI_UF_PLUGINS_ECLIPSE_BAR = "開啟日蝕/月蝕欄"
 L_GUI_UF_PLUGINS_HOLY_BAR = "開啟聖光能量欄"
 L_GUI_UF_PLUGINS_SHARD_BAR = "開啟靈魂碎片欄"
 L_GUI_UF_PLUGINS_RUNE_BAR = "符文條"
-L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar" -- Needs review
+L_GUI_UF_PLUGINS_NECRO_STRIKE = "開啟亡域打擊計時條"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "開啟仇恨欄"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "圖騰欄"
 L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "圖騰名字"
@@ -313,7 +313,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff與圖示高亮"
 L_GUI_UF_PLUGINS_AURA_WATCH = "團隊法術監視"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "顯示團隊減益時間"
 L_GUI_UF_PLUGINS_HEALCOMM = "即將受到的治療條"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle click when the unit is dead (does not work with Clique enabled)" -- Needs review
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "滑鼠中鍵點擊已死亡的角色時自動施放復活技能(Clique啟用時不生效)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "頂部面板"

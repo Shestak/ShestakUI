@@ -22,7 +22,7 @@ L_GUI_MISC_AUTOQUEST = "自动接受任务"
 L_GUI_MISC_AUTODUEL = "自动取消决斗"
 L_GUI_MISC_AUTOACCEPT = "自动接受组队邀请"
 L_GUI_MISC_AUTORESSURECT = "在战场中自动释放灵魂"
-L_GUI_MISC_AUTOBUYREAGENTS = "Auto buy reagents" -- Needs review
+L_GUI_MISC_AUTOBUYREAGENTS = "自动购买消耗材料"
 L_GUI_MISC_MARKING = "点击shift显示团队标记图示菜单"
 L_GUI_MISC_INVKEYWORD = "自动邀请关键字(/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "afk时旋转镜头"
@@ -118,7 +118,7 @@ L_GUI_COOLDOWN_PULSE_SIZE = "冷却闪烁大小"
 L_GUI_COOLDOWN_PULSE_SOUND = "播放声音提醒"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "动画缩放"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "不透明状态持续时间"
-L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimal threshold time" -- Needs review
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "最小持续时间"
 
 -- Threat options
 L_GUI_THREAT = "仇恨栏"
@@ -208,7 +208,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "依据你的队伍角色(坦克,输出/治疗)分�
 L_GUI_NAMEPLATE_NEAR_COLOR = "显示增加和减少的威胁颜色"
 L_GUI_NAMEPLATE_BAD_COLOR = "依据你的队伍角色(坦克,输出/治疗)显示的威胁颜色"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "显示Debuff (必须关闭名字缩写)"
-L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs size" -- Needs review
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs大小"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "开启动作条"
@@ -279,7 +279,7 @@ L_GUI_UF_PLUGINS_ECLIPSE_BAR = "开启日蚀/月蚀栏"
 L_GUI_UF_PLUGINS_HOLY_BAR = "开启圣光能量栏"
 L_GUI_UF_PLUGINS_SHARD_BAR = "开启灵魂碎片栏"
 L_GUI_UF_PLUGINS_RUNE_BAR = "符文条"
-L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar" -- Needs review
+L_GUI_UF_PLUGINS_NECRO_STRIKE = "开启死疽打击计时条" 
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "开启仇恨栏"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "图腾栏"
 L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "图腾名字"
@@ -313,7 +313,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff与图示高亮"
 L_GUI_UF_PLUGINS_AURA_WATCH = "团队法术监视"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "在团队Debuff图标上显示时间"
 L_GUI_UF_PLUGINS_HEALCOMM = "即将受到的治疗条"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle click when the unit is dead (does not work with Clique enabled)" -- Needs review
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "鼠标中键点击已死亡角色时自动施放复活技能(Clique启用时不生效)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "顶部面板"
