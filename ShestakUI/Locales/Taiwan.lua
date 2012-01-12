@@ -32,7 +32,7 @@ L_ZONE_TOLBARAD = "托巴拉德"
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Wowhead鏈接"
 
--- Toogle Menu
+-- Toggle Menu
 L_TOGGLE_ADDON = "插件 "
 L_TOGGLE_ADDONS = " 插件系列"
 L_TOGGLE_EXPAND = "展開 "

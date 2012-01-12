@@ -32,7 +32,7 @@ L_ZONE_TOLBARAD = "Tol Barad" -- Needs review
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Wowhead Link"
 
--- Toogle Menu
+-- Toggle Menu
 L_TOGGLE_ADDON = "Erweiterung "
 L_TOGGLE_ADDONS = " Erweiterungen"
 L_TOGGLE_EXPAND = "erweitern "

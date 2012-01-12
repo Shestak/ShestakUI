@@ -32,7 +32,7 @@ L_ZONE_TOLBARAD = "Тол Барад"
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Ссылка на Wowhead"
 
--- Toogle Menu
+-- Toggle Menu
 L_TOGGLE_ADDON = "Модификация "
 L_TOGGLE_ADDONS = " модификации"
 L_TOGGLE_EXPAND = "Показать "
