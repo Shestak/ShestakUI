@@ -208,6 +208,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "依据你的队伍角色(坦克,输出/治疗)分�
 L_GUI_NAMEPLATE_NEAR_COLOR = "显示增加和减少的威胁颜色"
 L_GUI_NAMEPLATE_BAD_COLOR = "依据你的队伍角色(坦克,输出/治疗)显示的威胁颜色"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "显示Debuff (必须关闭名字缩写)"
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs size" -- Needs review
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "开启动作条"

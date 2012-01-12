@@ -208,6 +208,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "Цвет наименьшей угрозы, зав
 L_GUI_NAMEPLATE_NEAR_COLOR = "Цвет получения/сброса угрозы, зависит от вашей роли"
 L_GUI_NAMEPLATE_BAD_COLOR = "Цвет наивысшей угрозы, зависит от вашей роли"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Отображать отрицательные эффекты (сокращение имён должно быть выключено)"
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Размер отрицательных эффектов"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Включить панели команд"

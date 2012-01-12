@@ -208,6 +208,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨著色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "臨近仇恨著色"
 L_GUI_NAMEPLATE_BAD_COLOR = "危險仇恨著色"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "顯示debuffs(需要關閉名稱縮寫)"
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs size" -- Needs review
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "開啟快捷列"

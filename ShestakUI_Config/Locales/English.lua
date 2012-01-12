@@ -206,6 +206,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "Good threat color, varies depending if your a tank
 L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"
 L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned off)"
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs size"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Enable action bars"
