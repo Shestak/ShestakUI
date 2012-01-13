@@ -145,6 +145,8 @@ elseif T.class == "SHAMAN" then
 		ct.aoespam[73921] = true	-- Healing Rain
 		ct.aoespam[52042] = true	-- Healing Stream Totem
 		ct.aoespam[1064] = true		-- Chain Heal
+		ct.aoespam[51945] = true	-- Earthliving
+		ct.aoespam[61295] = true	-- Riptide (HoT and instant heal)
 		ct.aoespam[105996] = true	-- Essence of Dreams
 		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
 		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
@@ -157,6 +159,7 @@ elseif T.class == "SHAMAN" then
 		ct.aoespam[51490] = true	-- Thunderstorm
 		ct.aoespam[8187] = true		-- Magma Totem
 		ct.aoespam[8050] = true		-- Flame Shock
+		ct.aoespam[25504] = true	-- Windfury
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
