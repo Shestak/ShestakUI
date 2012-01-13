@@ -33,7 +33,8 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		KillRaidFrame()
 
 		local function KillPartyFrame()
-			CompactPartyFrame:Kill()
+			CompactPartyFrame:SetScale(0.00001)
+			CompactPartyFrame:SetAlpha(0)
 
 			for i = 1, MEMBERS_PER_RAID_GROUP do
 				local name = "CompactPartyFrameMember"..i
