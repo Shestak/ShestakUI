@@ -11,6 +11,7 @@
 	<Script file="Pipes\Merchant.lua" />
 	<Script file="Pipes\Mail.lua" />
 	<Script file="Pipes\CharFlyout.lua" />
+	<Script file="Pipes\VoidStorage.lua" />
 
 	<Script file="Displays\Border.lua" />
 
