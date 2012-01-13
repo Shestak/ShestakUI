@@ -30,10 +30,12 @@ local function LoadSkin()
 	}
 
 	for _, slot in pairs(slots) do
+		_G["Character"..slot.."Frame"]:Hide()
 		local icon = _G["Character"..slot.."IconTexture"]
 		local slot = _G["Character"..slot]
-		slot:StripTextures()
+
 		slot:StyleButton(false)
+		slot:SetNormalTexture("")
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
 		icon:Point("TOPLEFT", 2, -2)
@@ -43,6 +45,9 @@ local function LoadSkin()
 		slot:CreateBackdrop("Default")
 		slot.backdrop:SetAllPoints()
 	end
+
+	select(8, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
+	select(8, _G["CharacterRangedSlot"]:GetRegions()):Hide()
 
 	-- Strip Textures
 	local charframe = {
