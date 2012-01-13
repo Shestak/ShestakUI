@@ -69,7 +69,8 @@ local function LoadSkin()
 		"AudioOptionsVoicePanelEnableMicrophone",
 		"AudioOptionsVoicePanelPushToTalkSound",
 		"NetworkOptionsPanelOptimizeSpeed",
-		"NetworkOptionsPanelUseIPv6"
+		"NetworkOptionsPanelUseIPv6",
+		"Advanced_DesktopGamma"
 	}
 
 	for i = 1, getn(checkboxes) do
@@ -135,6 +136,16 @@ local function LoadSkin()
 	_G["AudioOptionsVoicePanelTalking"]:SetFrameLevel(2)
 	_G["AudioOptionsVoicePanelBinding"]:SetFrameLevel(2)
 	_G["AudioOptionsVoicePanelListening"]:SetFrameLevel(2)
+	_G["AudioOptionsSoundPanelSoundQuality"]:SetFrameLevel(3)
+	_G["AudioOptionsSoundPanelMasterVolume"]:SetFrameLevel(3)
+	_G["AudioOptionsSoundPanelSoundVolume"]:SetFrameLevel(3)
+	_G["AudioOptionsSoundPanelMusicVolume"]:SetFrameLevel(3)
+	_G["AudioOptionsSoundPanelAmbienceVolume"]:SetFrameLevel(3)
+	_G["AudioOptionsVoicePanelMicrophoneVolume"]:SetFrameLevel(3)
+	_G["AudioOptionsVoicePanelSpeakerVolume"]:SetFrameLevel(3)
+	_G["AudioOptionsVoicePanelSoundFade"]:SetFrameLevel(3)
+	_G["AudioOptionsVoicePanelMusicFade"]:SetFrameLevel(3)
+	_G["AudioOptionsVoicePanelAmbienceFade"]:SetFrameLevel(3)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
