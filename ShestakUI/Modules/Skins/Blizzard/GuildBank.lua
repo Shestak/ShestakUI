@@ -31,7 +31,7 @@ local function LoadSkin()
 	GuildBankFrame.inset:Point("TOPLEFT", 30, -65)
 	GuildBankFrame.inset:Point("BOTTOMRIGHT", -20, 63)
 
-	GuildItemSearchBox:StripTextures()
+	GuildItemSearchBox:StripTextures(true)
 	GuildItemSearchBox:CreateBackdrop("Overlay")
 	GuildItemSearchBox.backdrop:Point("TOPLEFT", 10, -2)
 	GuildItemSearchBox.backdrop:Point("BOTTOMRIGHT", -5, 2)
