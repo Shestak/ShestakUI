@@ -1,7 +1,7 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Accept invites from guild memers or friend list(by ALZA)
+--	Accept invites from guild members or friend list(by ALZA)
 ----------------------------------------------------------------------------------------
 if C.misc.auto_accept_invite == true then
 	local IsFriend = function(name)
