@@ -83,7 +83,13 @@ local function LoadSkin()
 		_G[button]:SkinButton()
 	end
 
-	FriendsFrame:StripTextures(true)
+	for i = 1, FriendsFrame:GetNumRegions() do
+		local region = select(i, FriendsFrame:GetRegions())
+		if region:GetObjectType() == "Texture" then
+			region:SetTexture(nil)
+			region:SetAlpha(0)
+		end
+	end
 
 	-- Reposition buttons
 	WhoFrameWhoButton:Point("RIGHT", WhoFrameAddFriendButton, "LEFT", -3, 0)
