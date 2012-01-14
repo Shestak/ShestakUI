@@ -27,7 +27,7 @@ L_RAID_UTIL_DISBAND = "Fin du raid"
 
 -- Zone name
 L_ZONE_WINTERGRASP = "Joug-d'hiver"
-L_ZONE_TOLBARAD = "Tol Barad" -- Needs review
+L_ZONE_TOLBARAD = "Tol Barad"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Lien wowhead"
@@ -108,7 +108,7 @@ L_BAG_RIGHT_CLICK_SEARCH = "Clic droit pour rechercher"
 
 -- Grab mail
 L_MAIL_STOPPED = "Inventaire plein."
-L_MAIL_UNIQUE = "Stopped. Found a duplicate unique item in bag or in bank." -- Needs review
+L_MAIL_UNIQUE = "Arrêt. Un objet unique a été trouvé dans le sac ou à la banque."
 L_MAIL_COMPLETE = "Terminé."
 L_MAIL_NEED = "Vous avez besoin d'une boîte aux lettres."
 L_MAIL_MESSAGES = "messages"
