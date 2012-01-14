@@ -268,6 +268,12 @@ local rollpairs = locale == "deDE" and {
 	["(.*) eligió Codicia para: (.+)"] = "greed",
 	["(.*) eligió Necesidad para: (.+)"]  = "need",
 	["(.*) eligió Desencantar para: (.+)"]  = "disenchant",
+} or locale == "ptBR" and {
+	["^(.*) abdicou de (.+) automaticamente porque não pode saquear o item.$"] = "pass",
+	["^(.*) dispensou: (.+|r)$"] = "pass",
+	["(.*) selecionou Ganância para: (.+)"] = "greed",
+	["(.*) escolheu Necessidade para: (.+)"] = "need",
+	["(.*) selecionou Desencantar para: (.+)"] = "disenchant",
 } or {
 	["^(.*) automatically passed on: (.+) because s?he cannot loot that item.$"] = "pass",
 	["^(.*) passed on: (.+|r)$"] = "pass",
