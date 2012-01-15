@@ -133,7 +133,7 @@ local function LoadSkin()
 		_G[sorttab.."Right"]:Kill()
 	end
 
-	for i = 1, 3 do
+	for i = 1, AuctionFrame.numTabs do
 		T.SkinTab(_G["AuctionFrameTab"..i])
 	end
 
@@ -433,10 +433,6 @@ local function LoadSkin()
 	Atr_CreateAuctionButton:Width(165)
 	Atr_CreateAuctionButton:ClearAllPoints()
 	Atr_CreateAuctionButton:Point("CENTER", 14, -20)
-
-	for i = 4, 6 do
-		T.SkinTab(_G["AuctionFrameTab"..i])
-	end
 
 	AuctionatorCloseButton:ClearAllPoints()
 	AuctionatorCloseButton:Point("BOTTOMLEFT", Atr_Main_Panel, "BOTTOMRIGHT", -14, 10)
