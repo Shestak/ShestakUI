@@ -1,3 +1,5 @@
+local _E
+
 local update = function(self)
 	if not IsAddOnLoaded("Blizzard_GuildBankUI") then return end
 
@@ -12,31 +14,22 @@ local update = function(self)
 		local slotLink = GetGuildBankItemLink(tab, i)
 		local slotFrame = _G["GuildBankColumn"..column.."Button"..index]
 
-		self:CallFilters("gbank", slotFrame, slotLink)
+		self:CallFilters("gbank", slotFrame, _E and slotLink)
 	end
 end
 
 local enable = function(self)
+	_E = true
+
 	self:RegisterEvent("GUILDBANKBAGSLOTS_CHANGED", update)
 	self:RegisterEvent("GUILDBANKFRAME_OPENED", update)
 end
 
 local disable = function(self)
+	_E = nil
+
 	self:UnregisterEvent("GUILDBANKBAGSLOTS_CHANGED", update)
 	self:UnregisterEvent("GUILDBANKFRAME_OPENED", update)
-	
-	if not IsAddOnLoaded("Blizzard_GuildBankUI") then return end
-
-	for i = 1, MAX_GUILDBANK_SLOTS_PER_TAB or 98 do
-		local index = math.fmod(i, 14)
-		if index == 0 then
-			index = 14
-		end
-		local column = math.ceil((i - 0.5) / 14)
-
-		self:CallFilters("gbank", _G["GuildBankColumn"..column.."Button"..index])
-	end
-
 end
 
 oGlow:RegisterPipe("gbank", enable, disable, update, "Guild bank frame", nil)

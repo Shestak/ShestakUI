@@ -1,3 +1,4 @@
+local _E
 local hook
 local stack = {}
 
@@ -7,7 +8,7 @@ local send = function(self)
 	for i = 1, ATTACHMENTS_MAX_SEND do
 		local slotLink = GetSendMailItemLink(i)
 		local slotFrame = _G["SendMailAttachment"..i]
-		self:CallFilters("mail", slotFrame, slotLink)
+		self:CallFilters("mail", slotFrame, _E and slotLink)
 	end
 end
 
@@ -26,7 +27,7 @@ local inbox = function()
 			end
 		end
 
-		oGlow:CallFilters("mail", slotFrame, unpack(stack))
+		oGlow:CallFilters("mail", slotFrame, _E and unpack(stack))
 		wipe(stack)
 
 		index = index + 1
@@ -41,34 +42,8 @@ local letter = function()
 		if itemLink then
 			local slotFrame = _G["OpenMailAttachmentButton"..i]
 
-			oGlow:CallFilters("mail", slotFrame, itemLink)
+			oGlow:CallFilters("mail", slotFrame, _E and itemLink)
 		end
-	end
-end
-
-local enable = function(self)
-	self:RegisterEvent("MAIL_SHOW", send)
-	self:RegisterEvent("MAIL_SEND_INFO_UPDATE", send)
-	self:RegisterEvent("MAIL_SEND_SUCCESS", send)
-
-	if not hook then
-		hooksecurefunc("OpenMail_Update", letter)
-		hooksecurefunc("InboxFrame_Update", inbox)
-		hook = true
-	end
-end
-
-local disable = function(self)
-	self:UnregisterEvent("MAIL_SHOW", send)
-	self:UnregisterEvent("MAIL_SEND_INFO_UPDATE", send)
-	self:UnregisterEvent("MAIL_SEND_SUCCESS", send)
-
-	for i = 1, INBOXITEMS_TO_DISPLAY do
-		oGlow:CallFilters("mail", _G["MailItem"..i.."Button"])
-	end
-
-	for i = 1, ATTACHMENTS_MAX_RECEIVE do
-		oGlow:CallFilters("mail", _G["OpenMailAttachmentButton"..i])
 	end
 end
 
@@ -76,6 +51,36 @@ local update = function(self)
 	send(self)
 	inbox()
 	letter()
+end
+
+local hookLetter = function(...)
+	if _E then return letter(...) end
+end
+
+local hookInbox = function(...)
+	if _E then return inbox(...) end
+end
+
+local enable = function(self)
+	_E = true
+
+	self:RegisterEvent("MAIL_SHOW", send)
+	self:RegisterEvent("MAIL_SEND_INFO_UPDATE", send)
+	self:RegisterEvent("MAIL_SEND_SUCCESS", send)
+
+	if not hook then
+		hooksecurefunc("OpenMail_Update", hookLetter)
+		hooksecurefunc("InboxFrame_Update", hookInbox)
+		hook = true
+	end
+end
+
+local disable = function(self)
+	_E = nil
+
+	self:UnregisterEvent("MAIL_SHOW", send)
+	self:UnregisterEvent("MAIL_SEND_INFO_UPDATE", send)
+	self:UnregisterEvent("MAIL_SEND_SUCCESS", send)
 end
 
 oGlow:RegisterPipe("mail", enable, disable, update, "Mail frame", nil)

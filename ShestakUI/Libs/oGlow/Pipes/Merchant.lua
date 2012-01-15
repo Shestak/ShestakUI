@@ -1,4 +1,6 @@
+local _E
 local hook
+
 local update = function()
 	if MerchantFrame:IsShown() then
 		if MerchantFrame.selectedTab == 1 then
@@ -7,35 +9,36 @@ local update = function()
 				local itemLink = GetMerchantItemLink(index)
 				local slotFrame = _G["MerchantItem"..i.."ItemButton"]
 
-				oGlow:CallFilters("merchant", slotFrame, itemLink)
+				oGlow:CallFilters("merchant", slotFrame, _E and itemLink)
 			end
 
 			local buyBackLink = GetBuybackItemLink(GetNumBuybackItems())
-			oGlow:CallFilters("merchant", MerchantBuyBackItemItemButton, buyBackLink)
+			oGlow:CallFilters("merchant", MerchantBuyBackItemItemButton, _E and buyBackLink)
 		else
 			for i = 1, BUYBACK_ITEMS_PER_PAGE do
 				local itemLink = GetBuybackItemLink(i)
 				local slotFrame = _G["MerchantItem"..i.."ItemButton"]
 
-				oGlow:CallFilters("merchant", slotFrame, itemLink)
+				oGlow:CallFilters("merchant", slotFrame, _E and itemLink)
 			end
 		end
 	end
 end
 
 local enable = function(self)
+	_E = true
+
 	if not hook then
-		hooksecurefunc("MerchantFrame_Update", update)
-		hook = true
+		hook = function(...)
+			if _E then return update(...) end
+		end
+
+		hooksecurefunc("MerchantFrame_Update", hook)
 	end
 end
 
 local disable = function(self)
-	for i = 1, MERCHANT_ITEMS_PER_PAGE do
-		oGlow:CallFilters("merchant", _G["MerchantItem"..i.."ItemButton"])
-	end
-
-	oGlow:CallFilters("merchant", MerchantBuyBackItemItemButton)
+	_E = nil
 end
 
 oGlow:RegisterPipe("merchant", enable, disable, update, "Vendor frame", nil)

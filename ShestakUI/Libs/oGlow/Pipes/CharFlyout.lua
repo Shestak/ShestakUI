@@ -1,5 +1,5 @@
-local T, C, L = unpack(select(2, ...))
 local hook
+local _E
 
 local getID = function(loc)
 	local player, bank, bags, slot, bag = EquipmentManager_UnpackLocation(loc)
@@ -18,7 +18,7 @@ local pipe = function(self)
 		id = getID(location)
 	end
 
-	return oGlow:CallFilters("char-flyout", self, id)
+	return oGlow:CallFilters("char-flyout", self, _E and id)
 end
 
 local update = function(self)
@@ -29,18 +29,19 @@ local update = function(self)
 end
 
 local enable = function(self)
-	if not hook then
-		hooksecurefunc("EquipmentFlyout_DisplayButton", pipe)
+	_E = true
 
-		hook = true
+	if not hook then
+		hook = function(...)
+			if _E then return pipe(...) end
+		end
+
+		hooksecurefunc("EquipmentFlyout_DisplayButton", hook)
 	end
 end
 
 local disable = function(self)
-	local buttons = EquipmentFlyoutFrameButtons.buttons
-	for _, button in next, buttons do
-		self:CallFilters("char-flyout", button)
-	end
+	_E = nil
 end
 
 oGlow:RegisterPipe("char-flyout", enable, disable, update, "Character equipment flyout frame", nil)

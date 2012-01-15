@@ -5,12 +5,12 @@ local updateContents = function(self)
 
 	for slot = 1, VOID_WITHDRAW_MAX or 80 do
 		local slotFrame = _G["VoidStorageStorageButton"..slot]
-		self:CallFilters("voidstore", slotFrame, _E and (GetVoidItemInfo(slot)))
+		self:CallFilters("voidstore", slotFrame, _E and GetVoidItemInfo(slot))
 	end
 
 	for slot = 1, VOID_WITHDRAW_MAX or 9 do
 		local slotFrame = _G["VoidStorageWithdrawButton"..slot]
-		self:CallFilters("voidstore", slotFrame, _E and (GetVoidTransferWithdrawalInfo(slot)))
+		self:CallFilters("voidstore", slotFrame, _E and GetVoidTransferWithdrawalInfo(slot))
 	end
 end
 
@@ -18,7 +18,7 @@ local updateDeposit = function(self, event, slot)
 	if not IsAddOnLoaded("Blizzard_VoidStorageUI") then return end
 
 	local slotFrame = _G["VoidStorageDepositButton"..slot]
-	self:CallFilters("voidstore", slotFrame, _E and (GetVoidTransferDepositInfo(slot)))
+	self:CallFilters("voidstore", slotFrame, _E and GetVoidTransferDepositInfo(slot))
 end
 
 local update = function(self)
@@ -47,8 +47,6 @@ local disable = function(self)
 	self:UnregisterEvent("VOID_STORAGE_DEPOSIT_UPDATE", updateDeposit)
 	self:UnregisterEvent("VOID_TRANSFER_DONE", update)
 	self:UnregisterEvent("VOID_STORAGE_OPEN", update)
-
-	update(self)
 end
 
 oGlow:RegisterPipe("voidstore", enable, disable, update, "Void storage frame", nil)

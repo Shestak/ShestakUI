@@ -12,6 +12,7 @@
 	<Script file="Pipes\Mail.lua" />
 	<Script file="Pipes\CharFlyout.lua" />
 	<Script file="Pipes\VoidStorage.lua" />
+	<Script file="Pipes\Loot.lua" />
 
 	<Script file="Displays\Border.lua" />
 

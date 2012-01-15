@@ -1,5 +1,6 @@
 if (select(4, GetAddOnInfo("Fizzle"))) then return end
 
+local _E
 local hook
 local slots = {
 	"Head", "Neck", "Shoulder", "Shirt", "Chest", "Waist", "Legs", "Feet", "Wrist",
@@ -14,7 +15,7 @@ local update = function(self)
 			local slotFrame = _G["Character"..slotName.."Slot"]
 			local slotLink = GetInventoryItemLink("player", slotID)
 
-			oGlow:CallFilters("char", slotFrame, slotLink)
+			oGlow:CallFilters("char", slotFrame, _E and slotLink)
 		end
 	end
 end
@@ -26,20 +27,22 @@ local UNIT_INVENTORY_CHANGED = function(self, event, unit)
 end
 
 local enable = function(self)
+	_E = true
+
 	self:RegisterEvent("UNIT_INVENTORY_CHANGED", UNIT_INVENTORY_CHANGED)
 
 	if not hook then
-		CharacterFrame:HookScript("OnShow", update)
-		hook = true
+		hook = function(...)
+			if _E then return update(...) end
+		end
+
+		CharacterFrame:HookScript("OnShow", hook)
 	end
 end
 
 local disable = function(self)
+	_E = nil
 	self:UnregisterEvent("UNIT_INVENTORY_CHANGED", UNIT_INVENTORY_CHANGED)
-
-	for key, slotName in ipairs(slots) do
-		oGlow:CallFilters("char", _G["Character"..slotName.."Slot"])
-	end
 end
 
 oGlow:RegisterPipe("char", enable, disable, update, "Character frame", nil)
