@@ -18,13 +18,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 
 		local function KillRaidFrame()
 			CompactRaidFrameManager:UnregisterAllEvents()
-			if not InCombatLockdown() then
-				CompactRaidFrameManager:Hide()
-				--CompactRaidFrameManager:SetScale(0.00001)
-				--CompactRaidFrameManager:SetAlpha(0)
-				CompactUnitFrame_UpateVisible = T.dummy
-				CompactUnitFrame_UpdateAll = T.dummy
-			end
+			if not InCombatLockdown() then CompactRaidFrameManager:Hide() end
 
 			local shown = CompactRaidFrameManager_GetSetting("IsShown")
 			if shown and shown ~= "0" then
@@ -99,7 +93,6 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		PartyMemberBackground:Kill()
 
 		if C.unitframe.show_arena then
-			SetCVar("showArenaEnemyFrames", 0)
 			InterfaceOptionsUnitFramePanelArenaEnemyFrames:Kill()
 			InterfaceOptionsUnitFramePanelArenaEnemyCastBar:Kill()
 			InterfaceOptionsUnitFramePanelArenaEnemyPets:Kill()
