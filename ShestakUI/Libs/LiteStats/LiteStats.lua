@@ -1626,7 +1626,7 @@ end
 ----------------------------------------------------------------------------------------
 if loot.enabled then
 	Inject("Loot", {
-		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN CVAR_UPDATE") end,
 		OnEvent = function(self)
 			if GetCVarBool("AutoLootDefault") then
 				self.text:SetText(format(loot.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
@@ -1669,7 +1669,7 @@ end
 ----------------------------------------------------------------------------------------
 if helm.enabled then
 	Inject("Helm", {
-		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN CVAR_UPDATE") end,
 		OnEvent = function(self)
 			if ShowingHelm() then
 				self.text:SetText(format(helm.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
@@ -1712,7 +1712,7 @@ end
 ----------------------------------------------------------------------------------------
 if cloak.enabled then
 	Inject("Cloak", {
-		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN CVAR_UPDATE") end,
 		OnEvent = function(self)
 			if ShowingCloak() then
 				self.text:SetText(format(cloak.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
@@ -1755,7 +1755,7 @@ end
 ----------------------------------------------------------------------------------------
 if nameplates.enabled then
 	Inject("Nameplates", {
-		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN CVAR_UPDATE") end,
 		OnEvent = function(self)
 			if GetCVar("nameplateMotion") == "0" then
 				self.text:SetText(format(nameplates.fmt, "|cff55ff55"..L_STATS_ON.."|r"))

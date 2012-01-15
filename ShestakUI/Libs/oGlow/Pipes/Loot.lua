@@ -1,3 +1,6 @@
+local T, C, L = unpack(select(2, ...))
+if C.loot.lootframe == true then return end
+
 local _E
 
 local update = function(self)
