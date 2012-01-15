@@ -47,9 +47,10 @@ function Butsu:LOOT_OPENED(event, autoloot)
 	if items > 0 then
 		for i = 1, items do
 			local slot = _NS.slots[i] or _NS.CreateSlot(i)
-			local texture, item, quantity, quality, locked = GetLootSlotInfo(i)
+			local texture, item, quantity, quality, locked, isQuestItem, questId, isActive = GetLootSlotInfo(i)
 			if texture then
 				local color = ITEM_QUALITY_COLORS[quality]
+				local r, g, b = color.r, color.g, color.b
 
 				if LootSlotIsCoin(i) then
 					item = item:gsub("\n", ", ")
@@ -62,17 +63,29 @@ function Butsu:LOOT_OPENED(event, autoloot)
 					slot.count:Hide()
 				end
 
-				if color then
-					slot.iconFrame:SetBackdropBorderColor(color.r, color.g, color.b)
-					slot.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
-					slot.drop:SetVertexColor(color.r, color.g, color.b)
+				if questId and not isActive then
+					slot.quest:Show()
+				else
+					slot.quest:Hide()
+				end
+
+				if color or questId or isQuestItem then
+					if questId or isQuestItem then
+						r, g, b = 1, 1, 0.2
+					end
+
+					slot.iconFrame:SetBackdropBorderColor(r, g, b)
+					slot.backdrop:SetBackdropBorderColor(r, g, b)
+					slot.drop:SetVertexColor(r, g, b)
 				end
 				slot.drop:Show()
 
+				slot.isQuestItem = isQuestItem
 				slot.quality = quality
+
 				slot.name:SetText(item)
 				if color then
-					slot.name:SetTextColor(color.r, color.g, color.b)
+					slot.name:SetTextColor(r, g, b)
 				end
 				slot.icon:SetTexture(texture)
 
@@ -301,7 +314,7 @@ do
 		if color then
 			self.drop:SetVertexColor(color.r, color.g, color.b)
 		end
-		
+
 		GameTooltip:Hide()
 		ResetCursor()
 	end
@@ -342,8 +355,7 @@ do
 		frame:SetScript("OnUpdate", OnUpdate)
 
 		local iconFrame = CreateFrame("Frame", nil, frame)
-		iconFrame:Height(C.loot.icon_size)
-		iconFrame:Width(C.loot.icon_size)
+		iconFrame:Size(C.loot.icon_size)
 		iconFrame:SetTemplate("Default")
 		iconFrame:Point("LEFT", frame)
 		frame.iconFrame = iconFrame
@@ -353,6 +365,13 @@ do
 		icon:Point("TOPLEFT", 2, -2)
 		icon:Point("BOTTOMRIGHT", -2, 2)
 		frame.icon = icon
+
+		local quest = iconFrame:CreateTexture(nil, "OVERLAY")
+		quest:SetTexture("Interface\\Minimap\\ObjectIcons")
+		quest:SetTexCoord(1/8, 2/8, 1/8, 2/8)
+		quest:Size(C.loot.icon_size * 0.8)
+		quest:SetPoint("BOTTOMLEFT", -C.loot.icon_size * 0.15, 0)
+		frame.quest = quest
 
 		local count = iconFrame:CreateFontString(nil, "OVERLAY")
 		count:SetJustifyH("RIGHT")
