@@ -208,7 +208,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "Bonne couleur de menace, dépend de si vous êtes 
 L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
 L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Affiche les débuffs (Les noms abbrégés doivent être désactivés)"
-L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Taille des débuffs"
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Taille des affaiblissements"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Activer les barres d'action"
