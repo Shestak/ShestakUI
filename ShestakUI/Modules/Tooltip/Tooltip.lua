@@ -18,7 +18,9 @@ local tooltips = {
 	ConsolidatedBuffsTooltip,
 	AtlasLootTooltip,
 	QuestHelperTooltip,
-	QuestGuru_QuestWatchTooltip
+	QuestGuru_QuestWatchTooltip,
+	ItemRefShoppingTooltip1,
+	ItemRefShoppingTooltip2
 }
 
 for _, tt in pairs(tooltips) do

@@ -170,7 +170,7 @@ AceGUI.RegisterAsContainer = function(self, widget)
 		frame:SetTemplate("Overlay")
 
 		if widget.treeframe then
-			widget.treeframe:SetTemplate("Transparent")
+			widget.treeframe:SetTemplate("Overlay")
 			frame:Point("TOPLEFT", widget.treeframe, "TOPRIGHT", 1, 0)
 		end
 
