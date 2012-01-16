@@ -118,7 +118,7 @@ L_GUI_COOLDOWN_PULSE_SIZE = "Tamaño de los icono de las cuentas atras de tiempo
 L_GUI_COOLDOWN_PULSE_SOUND = "Aviso sonoro"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Escalado animado"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Opacidad máxima del tiempo de espera"
-L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimal threshold time" -- Needs review
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "Umbral de tiempo mínimo"
 
 -- Threat options
 L_GUI_THREAT = "Barras de Amenaza"
@@ -208,7 +208,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "Color de alta amenaza, varía dependiendo si eres 
 L_GUI_NAMEPLATE_NEAR_COLOR = "Color de perdiendo/ganando amenaza"
 L_GUI_NAMEPLATE_BAD_COLOR = "Color de baja amenaza, varía dependiendo si eres tanque o dps/sanador"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Mostrar perjuicios (Nombres abreviados debe ser desactivado)"
-L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs size" -- Needs review
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Tamaño de los perjuicios"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Activar barras de acción"
@@ -279,7 +279,7 @@ L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Activar barra de eclipse"
 L_GUI_UF_PLUGINS_HOLY_BAR = "Activar barra de poder sagrado"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Activar barra de fragmentos"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Activar barra de Runas"
-L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar" -- Needs review
+L_GUI_UF_PLUGINS_NECRO_STRIKE = "Activar barra para Golpe Necrótico"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Activar barra de venganza"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Activar barra de totems"
 L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Nombre de la barra de totems"

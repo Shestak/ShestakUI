@@ -27,7 +27,7 @@ L_RAID_UTIL_DISBAND = "Disolver grupo"
 
 -- Zone name
 L_ZONE_WINTERGRASP = "Conquista del Invierno"
-L_ZONE_TOLBARAD = "Tol Barad" -- Needs review
+L_ZONE_TOLBARAD = "Tol Barad"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Link de WoWhead"
@@ -108,7 +108,7 @@ L_BAG_RIGHT_CLICK_SEARCH = "Click derecho para buscar"
 
 -- Grab mail
 L_MAIL_STOPPED = "Sin espacio, inventario lleno."
-L_MAIL_UNIQUE = "Stopped. Found a duplicate unique item in bag or in bank." -- Needs review
+L_MAIL_UNIQUE = "Abortado. Se encontró un duplicado del objeto único en las bolsas o en el banco."
 L_MAIL_COMPLETE = "Todo enviado."
 L_MAIL_NEED = "Necesitas un buzón."
 L_MAIL_MESSAGES = "mensajes"
