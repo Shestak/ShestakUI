@@ -64,6 +64,7 @@ local function Stuffing_OnShow()
 
 	Stuffing:Layout()
 	Stuffing:SearchReset()
+	PlaySound("igBackPackOpen")
 	collectgarbage("collect")
 end
 
@@ -72,12 +73,14 @@ local function StuffingBank_OnHide()
 	if Stuffing.frame:IsShown() then
 		Stuffing.frame:Hide()
 	end
+	PlaySound("igBackPackClose")
 end
 
 local function Stuffing_OnHide()
 	if Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
 		Stuffing.bankFrame:Hide()
 	end
+	PlaySound("igBackPackClose")
 end
 
 local function Stuffing_Open()
