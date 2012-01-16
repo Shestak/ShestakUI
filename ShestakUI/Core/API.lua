@@ -182,9 +182,8 @@ local function Kill(object)
 	if object.UnregisterAllEvents then
 		object:UnregisterAllEvents()
 		object:SetParent(T.HiddenFrame)
-	else
-		object.Show = T.dummy
 	end
+	object.Show = T.dummy
 	object:Hide()
 end
 
