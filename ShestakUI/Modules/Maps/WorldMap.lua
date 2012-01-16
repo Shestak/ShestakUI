@@ -81,34 +81,34 @@ local SmallerMapSkin = function()
 	WorldMapFrameTitle:Point("TOP", WorldMapDetailFrame, 0, -3)
 	WorldMapFrameTitle:SetFont(C.media.normal_font, 17)
 
-	WorldMapQuestShowObjectivesText:SetFont(C.media.normal_font, 17)
+	WorldMapQuestShowObjectivesText:SetFont(C.media.normal_font, 13)
 	WorldMapQuestShowObjectivesText:ClearAllPoints()
 	WorldMapQuestShowObjectivesText:Point("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", 0, 4)
 
-	WorldMapQuestShowObjectives:SetParent(WorldMapDetailFrame)
 	WorldMapQuestShowObjectives:ClearAllPoints()
 	WorldMapQuestShowObjectives:Point("RIGHT", WorldMapQuestShowObjectivesText, "LEFT", 0, 0)
 	WorldMapQuestShowObjectives:SetFrameStrata("HIGH")
 
-	WorldMapTrackQuest:SetParent(WorldMapDetailFrame)
 	WorldMapTrackQuest:ClearAllPoints()
 	WorldMapTrackQuest:Point("BOTTOMLEFT", WorldMapButton, "BOTTOMLEFT", 0, 0)
 	WorldMapTrackQuest:SetFrameStrata("HIGH")
 
-	WorldMapTrackQuestText:SetFont(C.media.normal_font, 17)
+	WorldMapTrackQuestText:SetFont(C.media.normal_font, 13)
 
-	WorldMapShowDigSites:SetParent(WorldMapDetailFrame)
 	WorldMapShowDigSites:ClearAllPoints()
 	WorldMapShowDigSites:Point("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
 	WorldMapShowDigSites:SetFrameStrata("HIGH")
 
+	WorldMapShowDigSitesText:SetFont(C.media.normal_font, 13)
 	WorldMapShowDigSitesText:ClearAllPoints()
 	WorldMapShowDigSitesText:Point("LEFT", WorldMapShowDigSites, "RIGHT", 0, 0)
-	WorldMapShowDigSitesText:SetFont(C.media.normal_font, 17)
 
-	WorldMapFrameAreaLabel:SetFontObject("GameFontNormal")
 	WorldMapFrameAreaLabel:SetFont(C.media.normal_font, 40)
+	WorldMapFrameAreaLabel:SetShadowOffset(2, -2)
 	WorldMapFrameAreaLabel:SetTextColor(0.9, 0.83, 0.64)
+
+	WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 40)
+	WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
 
 	WorldMapLevelDropDown:SetAlpha(0)
 	WorldMapLevelDropDown:SetScale(0.00001)
@@ -124,26 +124,49 @@ end
 hooksecurefunc("WorldMap_ToggleSizeDown", function() SmallerMapSkin() end)
 
 local BiggerMapSkin = function()
+	WorldMapFrame:EnableKeyboard(nil)
+	WorldMapFrame:EnableMouse(nil)
+
+	UIPanelWindows["WorldMapFrame"].area = "center"
+	WorldMapFrame:SetAttribute("UIPanelLayout-defined", nil)
+
+	WorldMapFrame:ClearAllPoints()
+	WorldMapFrame:SetPoint("CENTER")
+
 	WorldMapLevelDropDown:SetAlpha(1)
 	WorldMapLevelDropDown:SetScale(1)
 
-	WorldMapQuestShowObjectivesText:SetFont(C.media.normal_font, 11)
-	WorldMapQuestShowObjectivesText:ClearAllPoints()
-	WorldMapQuestShowObjectivesText:Point("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", 0, 4)
+	WorldMapFrameTitle:SetParent(WorldMapPositioningGuide)
+	WorldMapFrameTitle:SetFont(C.media.normal_font, 13)
+	WorldMapFrameTitle:ClearAllPoints()
+	WorldMapFrameTitle:Point("TOP", WorldMapPositioningGuide, "TOP", 0, -5)
 
-	WorldMapQuestShowObjectives:SetParent(WorldMapDetailFrame)
+	WorldMapQuestShowObjectivesText:SetFont(C.media.normal_font, 12)
+	WorldMapQuestShowObjectivesText:ClearAllPoints()
+	WorldMapQuestShowObjectivesText:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", -10, 10)
+
 	WorldMapQuestShowObjectives:ClearAllPoints()
 	WorldMapQuestShowObjectives:Point("RIGHT", WorldMapQuestShowObjectivesText, "LEFT", 0, 0)
 	WorldMapQuestShowObjectives:SetFrameStrata("TOOLTIP")
 
-	WorldMapShowDigSites:SetParent(WorldMapDetailFrame)
+	WorldMapShowDigSitesText:SetFont(C.media.normal_font, 12)
+	WorldMapShowDigSitesText:ClearAllPoints()
+	WorldMapShowDigSitesText:Point("RIGHT", WorldMapQuestShowObjectives, "LEFT", 0, 0)
+
 	WorldMapShowDigSites:ClearAllPoints()
-	WorldMapShowDigSites:Point("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
+	WorldMapShowDigSites:Point("RIGHT", WorldMapShowDigSitesText, "LEFT", 0, 0)
 	WorldMapShowDigSites:SetFrameStrata("TOOLTIP")
 
-	WorldMapShowDigSitesText:ClearAllPoints()
-	WorldMapShowDigSitesText:Point("LEFT", WorldMapShowDigSites, "RIGHT", 0, 0)
-	WorldMapShowDigSitesText:SetFont(C.media.normal_font, 17)
+	WorldMapTrackQuest:ClearAllPoints()
+	WorldMapTrackQuest:Point("BOTTOMLEFT", WorldMapPositioningGuide, "BOTTOMLEFT", 10, 3)
+	WorldMapTrackQuest:SetFrameStrata("HIGH")
+
+	WorldMapTrackQuestText:SetFont(C.media.normal_font, 12)
+
+	WorldMapShowDropDown:SetScale(1)
+	WorldMapShowDropDown:ClearAllPoints()
+	WorldMapShowDropDown:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", 10, -3)
+	WorldMapShowDropDown:SetFrameStrata("HIGH")
 end
 hooksecurefunc("WorldMap_ToggleSizeUp", function() BiggerMapSkin() end)
 
