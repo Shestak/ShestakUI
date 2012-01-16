@@ -17,9 +17,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
 
 		local function KillRaidFrame()
-			CompactRaidFrameManager:UnregisterAllEvents()
-			if not InCombatLockdown() then CompactRaidFrameManager:Hide() end
-
+			CompactRaidFrameManager:Kill()
 			local shown = CompactRaidFrameManager_GetSetting("IsShown")
 			if shown and shown ~= "0" then
 				CompactRaidFrameManager_SetSetting("IsShown", "0")
@@ -29,6 +27,8 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		hooksecurefunc("CompactRaidFrameManager_UpdateShown", function()
 			KillRaidFrame()
 		end)
+		CompactRaidFrameManager:HookScript("OnShow", KillRaidFrame)
+		CompactRaidFrameContainer:UnregisterAllEvents()
 
 		KillRaidFrame()
 
@@ -52,7 +52,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 			_G[name.."HealthBar"]:UnregisterAllEvents()
 			_G[name.."ManaBar"]:UnregisterAllEvents()
 		end
-		
+
 		if CompactPartyFrame then
 			KillPartyFrame()
 		elseif CompactPartyFrame_Generate then
