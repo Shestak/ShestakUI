@@ -1393,9 +1393,17 @@ if stats.enabled then
 		elseif sub == "block" then
 			string = GetBlockChance()
 		elseif sub == "avoidance" then
-			string = GetDodgeChance() + GetParryChance()
+			if T.race == "NightElf" then
+				string = GetDodgeChance() + GetParryChance() + 2
+			else
+				string = GetDodgeChance() + GetParryChance()
+			end
 		elseif sub == "blockcap" then
-			string = GetDodgeChance() + GetParryChance() + GetBlockChance() + 5
+			if T.race == "NightElf" then
+				string = GetDodgeChance() + GetParryChance() + GetBlockChance() + 7
+			else
+				string = GetDodgeChance() + GetParryChance() + GetBlockChance() + 5
+			end
 		elseif sub == "manaregen" then
 			local _, class = UnitClass(P)
 			local I5SR = true -- oo5sr/i5sr swapping NYI
