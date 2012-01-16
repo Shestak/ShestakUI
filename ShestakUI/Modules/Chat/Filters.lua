@@ -52,7 +52,7 @@ if C.chat.spam == true then
 
 	local lastMessage
 	local repeatMessageFilter = function(self, event, text, sender, ...)
-		if self.repeatFilter then
+		if self.repeatFilter and sender ~= T.name then
 			if not self.repeatMessages or self.repeatCount > 100 then
 				self.repeatCount = 0
 				self.repeatMessages = {}
