@@ -199,6 +199,7 @@ end
 
 local blackList = {
 	[105171] = true,	-- Deep Corruption
+	[108220] = true,	-- Deep Corruption (trash)
 	[106368] = true,	-- Twilight Shift
 }
 
