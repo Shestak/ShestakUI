@@ -53,14 +53,18 @@ local function LoadSkin()
 		_G[buttons[i]]:SkinButton()
 	end
 
-	T.SkinDropDownBox(ClassTrainerFrameFilterDropDown, 155)
-
 	ClassTrainerFrame:CreateBackdrop("Transparent")
 	ClassTrainerFrame.backdrop:Point("TOPLEFT", ClassTrainerFrame, "TOPLEFT")
 	ClassTrainerFrame.backdrop:Point("BOTTOMRIGHT", ClassTrainerFrame, "BOTTOMRIGHT")
 
+	T.SkinDropDownBox(ClassTrainerFrameFilterDropDown, 155)
+	ClassTrainerFrameFilterDropDown:ClearAllPoints()
+	ClassTrainerFrameFilterDropDown:Point("TOPRIGHT", ClassTrainerFrame.backdrop, "TOPRIGHT", 4, -30)
+
 	T.SkinCloseButton(ClassTrainerFrameCloseButton, ClassTrainerFrame)
 
+	ClassTrainerFrameSkillStepButton:ClearAllPoints()
+	ClassTrainerFrameSkillStepButton:Point("TOPRIGHT", ClassTrainerFrameFilterDropDown, "BOTTOMRIGHT", -16, 0)
 	ClassTrainerFrameSkillStepButton.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	ClassTrainerFrameSkillStepButton:CreateBackdrop("Default")
 	ClassTrainerFrameSkillStepButton.backdrop:Point("TOPLEFT", ClassTrainerFrameSkillStepButton.icon, "TOPLEFT", -2, 2)
@@ -76,6 +80,9 @@ local function LoadSkin()
 	ClassTrainerStatusBar:Point("RIGHT", ClassTrainerFrameFilterDropDown, "LEFT", 10, 3)
 	ClassTrainerStatusBar.rankText:ClearAllPoints()
 	ClassTrainerStatusBar.rankText:SetPoint("CENTER", ClassTrainerStatusBar, "CENTER")
+
+	ClassTrainerFrameBottomInset:ClearAllPoints()
+	ClassTrainerFrameBottomInset:Point("TOPLEFT", ClassTrainerFrameSkillStepButton.backdrop, "BOTTOMLEFT", -9, 0)
 end
 
 T.SkinFuncs["Blizzard_TrainerUI"] = LoadSkin
