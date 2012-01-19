@@ -938,7 +938,11 @@ if guild.enabled then
 								if note ~= "" then GameTooltip:AddLine("   "..NOTE_COLON.." "..note, ttsubh.r, ttsubh.g, ttsubh.b, 1) end
 								if officernote ~= "" and EPGP then
 									local ep, gp = EPGP:GetEPGP(name)
-									officernote = "   EP: "..ep.."  GP: "..gp.."  PR: "..string.format("%.3f", ep / gp)
+									if ep then
+										officernote = "   EP: "..ep.."  GP: "..gp.."  PR: "..string.format("%.3f", ep / gp)
+									else
+										officernote = "   O."..NOTE_COLON.." "..officernote
+									end
 								elseif officernote ~= "" then
 									officernote = "   O."..NOTE_COLON.." "..officernote
 								end
