@@ -148,8 +148,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(83500),	-- Swirling Winds
 			SpellName(83581),	-- Grounded
 			SpellName(92505),	-- Frozen
-			SpellName(92511),	-- Hydro Lance
-			SpellName(92518),	-- Flame Torrent
+			SpellName(92067),	-- Static Overload
 			SpellName(92075),	-- Gravity Core
 			-- Cho'gall
 			SpellName(93187),	-- Corrupted Blood
