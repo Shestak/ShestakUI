@@ -10,6 +10,9 @@ local function LoadSkin()
 	WorldStateScoreFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(WorldStateScoreFrameCloseButton)
 	WorldStateScoreFrameInset:Kill()
+	WorldStateScoreFrameInset:ClearAllPoints()
+	WorldStateScoreFrameInset:Point("TOPLEFT", WorldStateScoreFrame, "TOPLEFT", 4, -60)
+	WorldStateScoreFrameInset:Point("BOTTOMRIGHT", WorldStateScoreFrame, "BOTTOMRIGHT", -6, 40)
 	WorldStateScoreFrameLeaveButton:SkinButton()
 
 	for i = 1, WorldStateScoreScrollFrameScrollChildFrame:GetNumChildren() do
