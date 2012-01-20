@@ -201,6 +201,10 @@ local blackList = {
 	[105171] = true,	-- Deep Corruption
 	[108220] = true,	-- Deep Corruption (trash)
 	[106368] = true,	-- Twilight Shift
+	[33878] = true,		-- Mangle (Bear)
+	[33876] = true,		-- Mangle (Cat)
+	[94009] = true,		-- Rend
+	[58567] = true,		-- Sunder Armor
 }
 
 local function Update(self, event, unit)

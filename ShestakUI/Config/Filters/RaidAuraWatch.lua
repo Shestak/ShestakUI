@@ -103,7 +103,6 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(92035),	-- Acquiring Target
 			SpellName(79835),	-- Poison Soaked Shell
 			SpellName(91555),	-- Power Generator
-			SpellName(80094),	-- Fixate
 			SpellName(91521),	-- Incineration Security Measure
 			SpellName(92048),	-- Shadow Infusion
 			SpellName(92053),	-- Shadow Conductor
@@ -113,7 +112,6 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(77760),	-- Biting Chill
 			SpellName(92971),	-- Consuming Flames
 			SpellName(92989),	-- Rend
-			SpellName(78617),	-- Fixate
 			-- Atramedes
 			SpellName(92423),	-- Searing Flame
 			SpellName(92485),	-- Roaring Flame
@@ -237,7 +235,7 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Ultraxion
 			SpellName(105925),	-- Fading Light
 			-- Warmaster Blackhorn
-			SpellName(108043),	-- Devastate
+			SpellName(108043),	-- Sunder Armor
 			SpellName(108046),	-- Shockwave
 			SpellName(107567),	-- Brutal Strike
 			SpellName(107558),	-- Degeneration
