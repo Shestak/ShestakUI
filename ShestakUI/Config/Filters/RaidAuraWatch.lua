@@ -271,13 +271,11 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(55080),	-- Shattered Barrier
 			-- Paladin
 			SpellName(20066),	-- Repentance
-			SpellName(10326),	-- Turn Evil
 			SpellName(853),		-- Hammer of Justice
 			-- Priest
 			SpellName(605),		-- Mind Control
 			SpellName(64044),	-- Psychic Horror
 			SpellName(8122),	-- Psychic Scream
-			SpellName(9484),	-- Shackle Undead
 			SpellName(15487),	-- Silence
 			-- Rogue
 			SpellName(2094),	-- Blind
@@ -291,7 +289,6 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(63685),	-- Freeze
 			SpellName(39796),	-- Stoneclaw Stun
 			-- Warlock
-			SpellName(710),		-- Banish
 			SpellName(6789),	-- Death Coil
 			SpellName(5484),	-- Howl of Terror
 			SpellName(6358),	-- Seduction
