@@ -338,6 +338,10 @@ local function StyleTotemFlyout(flyout)
 		end
 		button:SetBackdropBorderColor(flyout.parent:GetBackdropBorderColor())
 		button:StyleButton()
+		if C.actionbar.shapeshift_mouseover == true then
+			button:HookScript("OnEnter", function(self) ShapeShiftMouseOver(1) end)
+			button:HookScript("OnLeave", function(self) ShapeShiftMouseOver(0) end)
+		end
 	end
 
 	flyout.buttons[1]:Point("BOTTOM", flyout, "BOTTOM", 0, 0)
