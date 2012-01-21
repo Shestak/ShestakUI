@@ -716,7 +716,10 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 			local c = T.oUF_colors.reaction[5]
 			local r, g, b = c[1], c[2], c[3]
 			health:SetStatusBarColor(r, g, b)
-			health.bg:SetTexture(0.1, 0.1, 0.1)
+			if health.bg and health.bg.multiplier then
+				local mu = health.bg.multiplier
+				health.bg:SetVertexColor(r * mu, g * mu, b * mu)
+			end
 		end
 		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
 			if C.unitframe.own_color == true then
