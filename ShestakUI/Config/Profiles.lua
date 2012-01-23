@@ -133,7 +133,7 @@ end
 --	Oz@Runetotem Config
 ----------------------------------------------------------------------------------------
 if T.name == "Oz" and T.realm == "Runetotem" then
-	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 381, 24}
+	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 382, 25}
 	C["position"].quest = {"TOPLEFT", UIParent, "TOPLEFT", 21, -46}
 	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -154}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
