@@ -210,11 +210,6 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(99613),	-- Molten Blast
 			-- Trash
 			SpellName(99532),	-- Melt Armor
-		-- Other
-			SpellName(67479),	-- Impale
-			SpellName(5782),	-- Fear
-			SpellName(84853),	-- Dark Pool
-			SpellName(91325),	-- Shadow Vortex
 		-- Dragon Soul
 			-- Morchok
 			SpellName(103687),	-- Crush Armor
@@ -244,6 +239,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(105479),	-- Searing Plasma
 			SpellName(105490),	-- Fiery Grip
 			-- Madness of Deathwing
+			SpellName(106444),	-- Impale
 			SpellName(105841),	-- Degenerative bite
 			SpellName(105445),	-- Blistering heat
 			SpellName(109603),	-- Tetanus
@@ -289,6 +285,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(63685),	-- Freeze
 			SpellName(39796),	-- Stoneclaw Stun
 			-- Warlock
+			SpellName(5782),	-- Fear
 			SpellName(6789),	-- Death Coil
 			SpellName(5484),	-- Howl of Terror
 			SpellName(6358),	-- Seduction
