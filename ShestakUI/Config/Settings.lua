@@ -350,6 +350,7 @@ C["unitframe"] = {
 	["unit_castbar"] = true,					-- Show castbars
 	["castbar_icon"] = false,					-- Show castbar icons
 	["castbar_latency"] = true,					-- Castbar latency
+	["castbar_ticks"] = false,					-- Castbar ticks
 	-- Frames
 	["show_pet"] = true,						-- Show pet frame
 	["show_focus"] = true,						-- Show focus frame

@@ -1068,6 +1068,47 @@ T.UpdateComboPoint = function(self, event, unit)
 	end
 end
 
+local ticks = {}
+local channelingTicks = {
+	-- Warlock
+	[GetSpellInfo(689)] = 3,	-- Drain Life
+	[GetSpellInfo(5740)] = 4,	-- Rain of Fire
+	-- Druid
+	[GetSpellInfo(44203)] = 4,	-- Tranquility
+	[GetSpellInfo(16914)] = 10,	-- Hurricane
+	-- Priest
+	[GetSpellInfo(15407)] = 3,	-- Mind Flay
+	[GetSpellInfo(48045)] = 5,	-- Mind Sear
+	[GetSpellInfo(47540)] = 2,	-- Penance
+	-- Mage
+	[GetSpellInfo(5143)] = 5,	-- Arcane Missiles
+	[GetSpellInfo(10)] = 5,		-- Blizzard
+	[GetSpellInfo(12051)] = 4,	-- Evocation
+}
+
+local setBarTicks = function(Castbar, ticknum)
+	if ticknum and ticknum > 0 then
+		local delta = Castbar:GetWidth() / ticknum
+		for k = 1, ticknum do
+			if not ticks[k] then
+				ticks[k] = Castbar:CreateTexture(nil, "OVERLAY")
+				ticks[k]:SetTexture(C.media.texture)
+				ticks[k]:SetVertexColor(unpack(C.media.border_color))
+				ticks[k]:SetWidth(1)
+				ticks[k]:SetHeight(Castbar:GetHeight())
+				ticks[k]:SetDrawLayer("OVERLAY", 7)
+			end
+			ticks[k]:ClearAllPoints()
+			ticks[k]:SetPoint("CENTER", Castbar, "LEFT", delta * k, 0)
+			ticks[k]:Show()
+		end
+	else
+		for k, v in pairs(ticks) do
+			v:Hide()
+		end
+	end
+end
+
 T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 	Castbar.channeling = false
 	if unit == "vehicle" then unit = "player" end
@@ -1139,6 +1180,12 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 		Castbar.SafeZone:ClearAllPoints()
 		Castbar.SafeZone:SetPoint("TOPLEFT")
 		Castbar.SafeZone:SetPoint("BOTTOMLEFT")
+	end
+
+	if unit == "player" and C.unitframe.castbar_ticks == true then
+		local spell = UnitChannelInfo(unit)
+		Castbar.channelingTicks = channelingTicks[spell] or 0
+		setBarTicks(Castbar, Castbar.channelingTicks)
 	end
 
 	local r, g, b, color
