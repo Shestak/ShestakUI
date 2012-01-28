@@ -31,6 +31,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Accepte les quêtes automatiquement"
 L_GUI_MISC_RAID_TOOLS = "Outils de raid"
 L_GUI_MISC_ACH_SCREENS = "Prend un screenshot quand un evenement est accomplie"
 L_GUI_MISC_PROFESSION_TABS = "Onglet des professions sur les fenêtres de métiers et de craft"
+L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
@@ -257,6 +258,7 @@ L_GUI_UF_BAR_COLOR_VALUE = "Couleur de barre de vie en fonction des points de vi
 L_GUI_UF_UNIT_CASTBAR = "Voir la barre de cast"
 L_GUI_UF_CASTBAR_ICON = "Voir l'icone de la barre de cast"
 L_GUI_UF_CASTBAR_LATENCY = "Voir la latence de la barre de cast"
+L_GUI_UF_CASTBAR_TICKS = "Castbar ticks" -- Needs review
 L_GUI_UF_SHOW_PET = "Afficher la barre du familier"
 L_GUI_UF_SHOW_FOCUS = "Afficher la barre du focus"
 L_GUI_UF_SHOW_TOT = "Afficher la barre de la cible de la cible"

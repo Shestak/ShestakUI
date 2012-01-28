@@ -31,6 +31,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Кнопка квестовых(список) п�
 L_GUI_MISC_RAID_TOOLS = "Инструменты рейда"
 L_GUI_MISC_ACH_SCREENS = "Автоматическое сохранение скриншота во время получения достижений"
 L_GUI_MISC_PROFESSION_TABS = "Закладки всех профессий у окна торговли/профессии"
+L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Анонсы"
@@ -258,6 +259,7 @@ L_GUI_UF_BAR_COLOR_VALUE = "Окрашивать полосу здоровья �
 L_GUI_UF_UNIT_CASTBAR = "Индикатор заклинания"
 L_GUI_UF_CASTBAR_ICON = "Иконка индикатора заклинания"
 L_GUI_UF_CASTBAR_LATENCY = "Задержка заклинания на индикаторе"
+L_GUI_UF_CASTBAR_TICKS = "Castbar ticks" -- Needs review
 L_GUI_UF_SHOW_PET = "Отображать рамку питомца"
 L_GUI_UF_SHOW_FOCUS = "Отображать рамку фокуса"
 L_GUI_UF_SHOW_TOT = "Отображать рамку цели цели"

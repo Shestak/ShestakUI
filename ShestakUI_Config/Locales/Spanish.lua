@@ -31,6 +31,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
 L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
 L_GUI_MISC_ACH_SCREENS = "Tomar una captura de pantalla cuando consigas un logro"
 L_GUI_MISC_PROFESSION_TABS = "Pestanas de profesiones de artesania y marcos de comercio"
+L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Anuncios"
@@ -257,6 +258,7 @@ L_GUI_UF_BAR_COLOR_VALUE = "Color de la barra de vida dependiendo de la vida res
 L_GUI_UF_UNIT_CASTBAR = "Mostrar barras de lanzamiento"
 L_GUI_UF_CASTBAR_ICON = "Mostrar iconos en las barras de lanzamiento"
 L_GUI_UF_CASTBAR_LATENCY = "Latencia en la barra de lanzamiento"
+L_GUI_UF_CASTBAR_TICKS = "Castbar ticks" -- Needs review
 L_GUI_UF_SHOW_PET = "Mostrar marco de la mascota"
 L_GUI_UF_SHOW_FOCUS = "Mostrar marco del foco"
 L_GUI_UF_SHOW_TOT = "Mostrar marco del objetivo del objetivo"

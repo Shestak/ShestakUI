@@ -31,6 +31,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "任務/道具自動按鈕"
 L_GUI_MISC_RAID_TOOLS = "團隊工具"
 L_GUI_MISC_ACH_SCREENS = "當你獲得成就的時候自動截屏"
 L_GUI_MISC_PROFESSION_TABS = "在專業和商業框體顯示專業技能按鈕"
+L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
@@ -257,6 +258,7 @@ L_GUI_UF_BAR_COLOR_VALUE = "生命值以現在剩餘生命著色"
 L_GUI_UF_UNIT_CASTBAR = "顯示施法條"
 L_GUI_UF_CASTBAR_ICON = "顯示施法條圖示"
 L_GUI_UF_CASTBAR_LATENCY = "施法條延遲"
+L_GUI_UF_CASTBAR_TICKS = "Castbar ticks" -- Needs review
 L_GUI_UF_SHOW_PET = "顯示寵物框體"
 L_GUI_UF_SHOW_FOCUS = "顯示焦點框體"
 L_GUI_UF_SHOW_TOT = "顯示目標的目標框體"

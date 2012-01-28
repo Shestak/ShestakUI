@@ -61,6 +61,7 @@ local function Local(o)
 	if o == "UIConfigmiscraid_tools" then o = L_GUI_MISC_RAID_TOOLS end
 	if o == "UIConfigmiscach_screens" then o = L_GUI_MISC_ACH_SCREENS end
 	if o == "UIConfigmiscprofession_tabs" then o = L_GUI_MISC_PROFESSION_TABS end
+	if o == "UIConfigmischide_bg_spam" then o = L_GUI_MISC_HIDE_BG_SPAM end
 
 	-- Announcements options
 	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end
@@ -296,6 +297,7 @@ local function Local(o)
 	if o == "UIConfigunitframeunit_castbar" then o = L_GUI_UF_UNIT_CASTBAR end
 	if o == "UIConfigunitframecastbar_icon" then o = L_GUI_UF_CASTBAR_ICON end
 	if o == "UIConfigunitframecastbar_latency" then o = L_GUI_UF_CASTBAR_LATENCY end
+	if o == "UIConfigunitframecastbar_ticks" then o = L_GUI_UF_CASTBAR_TICKS end
 	if o == "UIConfigunitframeshow_pet" then o = L_GUI_UF_SHOW_PET end
 	if o == "UIConfigunitframeshow_focus" then o = L_GUI_UF_SHOW_FOCUS end
 	if o == "UIConfigunitframeshow_target_target" then o = L_GUI_UF_SHOW_TOT end

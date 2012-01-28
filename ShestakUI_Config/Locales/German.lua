@@ -31,6 +31,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/Gegenstand auto Taste"
 L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
 L_GUI_MISC_ACH_SCREENS = "Speicher einen Screenshot wenn ein Achivment errungen wird."
 L_GUI_MISC_PROFESSION_TABS = "Berufereiter an Handelsfähigkeiten und Handelsfenstern anzeigen"
+L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -257,6 +258,7 @@ L_GUI_UF_BAR_COLOR_VALUE = "Lebensbalken nach vorhandenem Leben einfärben"
 L_GUI_UF_UNIT_CASTBAR = "Zeige Zauberleisten"
 L_GUI_UF_CASTBAR_ICON = "Zeige Symbole der Zauberleisten an"
 L_GUI_UF_CASTBAR_LATENCY = "Latenz in Zauberleiste anzeigen"
+L_GUI_UF_CASTBAR_TICKS = "Castbar ticks" -- Needs review
 L_GUI_UF_SHOW_PET = "Zeige Begleiterfenster an"
 L_GUI_UF_SHOW_FOCUS = "Zeige Fokusfenster an"
 L_GUI_UF_SHOW_TOT = "Zeige 'Ziel des Ziels' Fenster an"
