@@ -69,6 +69,7 @@ if T.author == true then
 	C["tooltip"].average_lvl = true
 	C["tooltip"].who_targetting = true
 	C["tooltip"].raid_icon = true
+	C["tooltip"].unit_role = true
 	C["chat"].combatlog = false
 	C["chat"].spam = true
 	C["nameplate"].track_auras = true

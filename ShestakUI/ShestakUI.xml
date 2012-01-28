@@ -144,6 +144,7 @@
 	<Script file="Modules\Tooltip\RuFix.lua"/>
 	<Script file="Modules\Tooltip\SpellID.lua"/>
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
+	<Script file="Modules\Tooltip\UnitRole.lua"/>
 
 	<Script file="Modules\Loot\AutoDez.lua"/>
 	<Script file="Modules\Loot\Loot.lua"/>
