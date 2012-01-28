@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+﻿local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Force readycheck warning
@@ -132,6 +132,28 @@ if C.general.custom_lagtolerance == true then
 	end
 	customlag:SetScript("OnUpdate", LatencyUpdate)
 	LatencyUpdate(customlag, 10)
+end
+
+----------------------------------------------------------------------------------------
+--	Remove Boss Emote spam during BG(ArathiBasin SpamFix by Partha)
+----------------------------------------------------------------------------------------
+if C.misc.hide_bg_spam == true then
+	local Fixer = CreateFrame("Frame")
+	local RaidBossEmoteFrame, spamDisabled = RaidBossEmoteFrame
+
+	local function DisableSpam()
+		if GetZoneText() == L_ZONE_ARATHIBASIN or GetZoneText() == L_ZONE_GILNEAS then
+			RaidBossEmoteFrame:UnregisterEvent("RAID_BOSS_EMOTE")
+			spamDisabled = true
+		elseif spamDisabled then
+			RaidBossEmoteFrame:RegisterEvent("RAID_BOSS_EMOTE")
+			spamDisabled = false
+		end
+	end
+
+	Fixer:RegisterEvent("PLAYER_ENTERING_WORLD")
+	Fixer:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+	Fixer:SetScript("OnEvent", DisableSpam)
 end
 
 ----------------------------------------------------------------------------------------

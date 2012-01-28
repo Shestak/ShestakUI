@@ -52,6 +52,7 @@ C["misc"] = {
 	["raid_tools"] = true,						-- Raid tools
 	["ach_screens"] = false,					-- Take screenshot when player get achievement
 	["profession_tabs"] = true,					-- Professions tabs on tradeskill frame
+	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
 }
 
 ----------------------------------------------------------------------------------------

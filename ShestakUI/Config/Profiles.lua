@@ -52,6 +52,7 @@ if T.author == true then
 	C["misc"].auto_accept_invite = true
 	C["misc"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
+	C["misc"].hide_bg_spam = true
 	C["announcements"].spells = true
 	C["skins"].blizzard_frames = true
 	C["combattext"].crit_postfix = ""
@@ -209,7 +210,7 @@ end
 ----------------------------------------------------------------------------------------
 if (T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Махес" or T.name == "Ночнойшорох"
 or T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
-or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азурегос" then
+or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка") and T.realm == "Азурегос" then
 	C["media"].pixel_font = C.media.normal_font
 	C["media"].pixel_font_style = "OUTLINE"
 	C["media"].pixel_font_size = 14
@@ -340,7 +341,8 @@ or T.name == "Лунорог" or T.name == "Вирка") and T.realm == "Азу�
 		C["chat"].height = 300
 		C["actionbar"].split_bars = true
 		C["stats"].battleground = true
-	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Виринеа" or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вириней" then
+	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
+	or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка" then
 		C["position"].unitframes.player = {"TOPLEFT", UIParent, "TOPLEFT", 90, -60}
 		C["position"].unitframes.target = {"TOP", UIParent, "TOP", -200, -60}
 		C["position"].achievement = {"TOP", UIParent, "TOP", 0, -170}

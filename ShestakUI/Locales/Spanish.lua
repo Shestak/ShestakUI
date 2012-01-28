@@ -28,6 +28,8 @@ L_RAID_UTIL_DISBAND = "Disolver grupo"
 -- Zone name
 L_ZONE_WINTERGRASP = "Conquista del Invierno"
 L_ZONE_TOLBARAD = "Tol Barad"
+L_ZONE_ARATHIBASIN = "Cuenca de Arathi"
+L_ZONE_GILNEAS = "La Batalla por Gilneas"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Link de WoWhead"
