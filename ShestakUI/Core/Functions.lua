@@ -1123,6 +1123,10 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 		Castbar.SafeZone:SetPoint("BOTTOMRIGHT")
 	end
 
+	if unit == "player" and C.unitframe.castbar_ticks == true then
+		setBarTicks(Castbar, 0)
+	end
+
 	local r, g, b, color
 	if UnitIsPlayer(unit) then
 		local _, class = UnitClass(unit)

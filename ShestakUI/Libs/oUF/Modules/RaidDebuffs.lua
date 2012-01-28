@@ -206,6 +206,7 @@ local blackList = {
 	[94009] = true,		-- Rend
 	[58567] = true,		-- Sunder Armor
 	[77661] = true,		-- Searing Flames
+	[9007] = true,		-- Pounce Bleed
 }
 
 local function Update(self, event, unit)

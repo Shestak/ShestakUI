@@ -238,11 +238,12 @@ local rollpairs = locale == "deDE" and {
 	["(.*) a choisi Besoin pour : (.+)"] = "need",
 	["(.*) a choisi Désenchantement pour : (.+)"] = "disenchant",
 } or locale == "zhTW" and {
-	["(.*)自動放棄:(.+)，因為"] = "pass",
+	["(.*)自動放棄:(.+)，因為他無法拾取該物品$"]  = "pass",
+	["(.*)自動放棄:(.+)，因為她無法拾取該物品$"]  = "pass",
 	["(.*)放棄了:(.+)"] = "pass",
 	["(.*)選擇了貪婪:(.+)"] = "greed",
 	["(.*)選擇了需求:(.+)"] = "need",
-	["(.*)選擇分解:(.+)"] = "disenchant",
+	["(.*)選擇了分解:(.+)"] = "disenchant",
 } or locale == "zhCN" and {
 	["(.*)自动放弃了(.+)，因为他无法拾取该物品。$"] = "pass",
 	["(.*)放弃了：(.+)"] = "pass",

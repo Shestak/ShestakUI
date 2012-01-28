@@ -103,7 +103,7 @@ local function LoadSkin()
 	PVPFrameConquestBar.progress:SetTexture(C.media.texture)
 	PVPFrameConquestBar:CreateBackdrop("Overlay")
 	PVPFrameConquestBar.backdrop:Point("TOPLEFT", PVPFrameConquestBar.progress, "TOPLEFT", -2, 2)
-	PVPFrameConquestBar.backdrop:Point("BOTTOMRIGHT", PVPFrameConquestBar, "BOTTOMRIGHT", -2, 2)
+	PVPFrameConquestBar.backdrop:Point("BOTTOMRIGHT", PVPFrameConquestBar, "BOTTOMRIGHT", -2, 1)
 
 	PVPBannerFrame:CreateBackdrop("Transparent")
 	PVPBannerFrame.backdrop:Point("TOPLEFT", PVPBannerFrame, "TOPLEFT")
