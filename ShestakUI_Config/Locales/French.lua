@@ -148,6 +148,7 @@ L_GUI_TOOLTIP_SPELL_ID = "ID du sort"
 L_GUI_TOOLTIP_RAID_ICON = "Icone de raid"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Affiche qui cible actuellement l'unité qui est dans votre groupe/raid"
 L_GUI_TOOLTIP_ITEM_COUNT = "Afficher le nombre d'objets possédés"
+L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activer le chat"

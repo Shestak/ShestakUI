@@ -148,6 +148,7 @@ L_GUI_TOOLTIP_SPELL_ID = "法术ID"
 L_GUI_TOOLTIP_RAID_ICON = "团队图标"
 L_GUI_TOOLTIP_WHO_TARGETTING = "当你在队伍/团队中时显示谁以目标为目标的提示"
 L_GUI_TOOLTIP_ITEM_COUNT = "叠堆数量"
+L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "开启聊天框增强"

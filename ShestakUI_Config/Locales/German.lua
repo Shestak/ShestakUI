@@ -148,6 +148,7 @@ L_GUI_TOOLTIP_SPELL_ID = "Zauber ID"
 L_GUI_TOOLTIP_RAID_ICON = "Raidsymbol"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Zeige an, wer die Eihneit, die in deiner Gruppe/Raid ist, ins Ziel nimmt"
 L_GUI_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe"
+L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Chat aktivieren"

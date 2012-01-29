@@ -146,6 +146,7 @@ L_GUI_TOOLTIP_SPELL_ID = "Spell ID"
 L_GUI_TOOLTIP_RAID_ICON = "Raid icon"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Display who is targetting the unit that is in your party/raid"
 L_GUI_TOOLTIP_ITEM_COUNT = "Item count"
+L_GUI_TOOLTIP_UNIT_ROLE = "Unit role"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Enable chat"
