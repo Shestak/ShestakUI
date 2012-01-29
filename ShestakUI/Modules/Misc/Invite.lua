@@ -4,15 +4,15 @@
 --	Accept invites from guild members or friend list(by ALZA)
 ----------------------------------------------------------------------------------------
 if C.misc.auto_accept_invite == true then
-	local IsFriend = function(name)
+	local CheckFriend = function(name)
 		for i = 1, GetNumFriends() do
 			if GetFriendInfo(i) == name then
 				return true
 			end
 		end
 		for i = 1, select(2, BNGetNumFriends()) do
-			local _, _, _, _, _, client, _, _, _, _, _, _, isFriend = BNGetFriendInfo(i)
-			if client == "WoW" and isFriend then
+			local _, _, _, toonName, _, client = BNGetFriendInfo(i)
+			if client == "WoW" and toonName == name then
 				return true
 			end
 		end
@@ -27,9 +27,9 @@ if C.misc.auto_accept_invite == true then
 
 	local ai = CreateFrame("Frame")
 	ai:RegisterEvent("PARTY_INVITE_REQUEST")
-	ai:SetScript("OnEvent", function(frame, event, name)
+	ai:SetScript("OnEvent", function(self, event, name)
 		if MiniMapLFGFrame:IsShown() or GetNumPartyMembers() > 0 or GetNumRaidMembers() > 0 then return end
-		if IsFriend(name) then
+		if CheckFriend(name) then
 			T.InfoTextShow(L_INFO_INVITE..name)
 			print(format("|cffffff00"..L_INFO_INVITE..name.."."))
 			AcceptGroup()
