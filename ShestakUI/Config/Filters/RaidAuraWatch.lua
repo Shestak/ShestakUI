@@ -244,6 +244,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(105445),	-- Blistering heat
 			SpellName(109603),	-- Tetanus
 			SpellName(110141),	-- Shrapnel
+			SpellName(108649),	-- Corrupting Parasite
 		-- PvP
 			-- Death Knight
 			--[[SpellName(51209),	-- Hungering Cold
