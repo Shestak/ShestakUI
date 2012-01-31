@@ -286,17 +286,6 @@ pFilter:SetScript("OnEvent", function(self, event, cvar)
 end)
 
 ----------------------------------------------------------------------------------------
---	Auto SetFilter for AchievementUI
-----------------------------------------------------------------------------------------
---[[local AchFilter = CreateFrame("Frame")
-AchFilter:RegisterEvent("ADDON_LOADED")
-AchFilter:SetScript("OnEvent", function(self, event, addon)
-	if addon == "Blizzard_AchievementUI" then
-		AchievementFrame_SetFilter(3)
-	end
-end)]]
-
-----------------------------------------------------------------------------------------
 --	Force other warning
 ----------------------------------------------------------------------------------------
 --[[local ForceWarning = CreateFrame("Frame")
@@ -337,10 +326,20 @@ f:SetScript("OnEvent", function(self)
 	self:UnregisterAllEvents()
 end)]]
 
+if T.author == true then
+----------------------------------------------------------------------------------------
+--	Auto SetFilter for AchievementUI
+----------------------------------------------------------------------------------------
+	local AchFilter = CreateFrame("Frame")
+	AchFilter:RegisterEvent("ADDON_LOADED")
+	AchFilter:SetScript("OnEvent", function(self, event, addon)
+		if addon == "Blizzard_AchievementUI" then
+			AchievementFrame_SetFilter(3)
+		end
+	end)
 ----------------------------------------------------------------------------------------
 --	Force quit
 ----------------------------------------------------------------------------------------
-if T.author == true then
 	local CloseWoW = CreateFrame("Frame")
 	CloseWoW:RegisterEvent("CHAT_MSG_SYSTEM")
 	CloseWoW:SetScript("OnEvent", function(self, event, msg)
