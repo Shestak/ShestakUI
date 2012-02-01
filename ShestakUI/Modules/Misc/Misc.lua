@@ -275,7 +275,7 @@ end)
 ----------------------------------------------------------------------------------------
 --	Check date
 ----------------------------------------------------------------------------------------
---[[function T.DateCheck(m, d)
+function T.DateCheck(m, d)
 	local month = tonumber(date("%m"))
 	local day = tonumber(date("%d"))
 	if month == m and day == d then
@@ -296,7 +296,7 @@ f:SetScript("OnEvent", function(self)
 	--	T.Delay(16, T.InfoTextShow, "Blah blah. From Shestak.")
 	end
 	self:UnregisterAllEvents()
-end)]]
+end)
 
 if T.author ~= true then return end
 ----------------------------------------------------------------------------------------

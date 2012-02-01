@@ -949,9 +949,9 @@ if guild.enabled then
 								if officernote ~= "" then GameTooltip:AddLine(officernote, 0.3, 1, 0.3, 1) end
 							else
 								if status == 1 then
-									status = " |cffff0000[AFK]|r"
+									status = " |cffE7E716"..L_CHAT_AFK.."|r"
 								elseif status == 2 then
-									status = " |cffff0000[DND]|r"
+									status = " |cffff0000"..L_CHAT_DND.."|r"
 								else
 									status = ""
 								end
@@ -1180,10 +1180,10 @@ if friends.enabled then
 						_, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND, _, _, _, _ = BNGetFriendInfo(i)
 						if not isOnline then break end
 						if isAFK then
-							status = L_CHAT_AFK
+							status = "|cffE7E716"..L_CHAT_AFK.."|r"
 						else 
 							if isDND then
-								status = L_CHAT_DND
+								status = "|cffff0000"..L_CHAT_DND.."|r"
 							else
 								status = ""
 							end
