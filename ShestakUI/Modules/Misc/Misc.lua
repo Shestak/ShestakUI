@@ -273,34 +273,6 @@ TaintFix:SetScript("OnUpdate", function(self, elapsed)
 end)
 
 ----------------------------------------------------------------------------------------
---	Fix profanityFilter(by p3lim)(temporarily, until Blizzard fix it)
-----------------------------------------------------------------------------------------
-local pFilter = CreateFrame("Frame")
-pFilter:RegisterEvent("CVAR_UPDATE")
-pFilter:RegisterEvent("PLAYER_ENTERING_WORLD")
-pFilter:SetScript("OnEvent", function(self, event, cvar)
-	SetCVar("profanityFilter", 0)
-	if BNConnected() then
-		BNSetMatureLanguageFilter(false)
-	end
-end)
-
-----------------------------------------------------------------------------------------
---	Force other warning
-----------------------------------------------------------------------------------------
---[[local ForceWarning = CreateFrame("Frame")
-ForceWarning:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
-ForceWarning:RegisterEvent("LFG_PROPOSAL_SHOW")
-ForceWarning:RegisterEvent("PARTY_INVITE_REQUEST")
-ForceWarning:SetScript("OnEvent", function(self, event)
-	if event == "UPDATE_BATTLEFIELD_STATUS" and StaticPopup_Visible("CONFIRM_BATTLEFIELD_ENTRY") then
-		PlaySound("ReadyCheck", "Master")
-	elseif event == "LFG_PROPOSAL_SHOW" or event == "PARTY_INVITE_REQUEST" then
-		PlaySound("ReadyCheck", "Master")
-	end
-end)]]
-
-----------------------------------------------------------------------------------------
 --	Check date
 ----------------------------------------------------------------------------------------
 --[[function T.DateCheck(m, d)
@@ -326,27 +298,42 @@ f:SetScript("OnEvent", function(self)
 	self:UnregisterAllEvents()
 end)]]
 
-if T.author == true then
+if T.author ~= true then return end
+----------------------------------------------------------------------------------------
+--	Force other warning
+----------------------------------------------------------------------------------------
+local ForceWarning = CreateFrame("Frame")
+ForceWarning:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
+ForceWarning:RegisterEvent("LFG_PROPOSAL_SHOW")
+ForceWarning:RegisterEvent("PARTY_INVITE_REQUEST")
+ForceWarning:SetScript("OnEvent", function(self, event)
+	if event == "UPDATE_BATTLEFIELD_STATUS" and StaticPopup_Visible("CONFIRM_BATTLEFIELD_ENTRY") then
+		PlaySound("ReadyCheck", "Master")
+	elseif event == "LFG_PROPOSAL_SHOW" or event == "PARTY_INVITE_REQUEST" then
+		PlaySound("ReadyCheck", "Master")
+	end
+end)
+
 ----------------------------------------------------------------------------------------
 --	Auto SetFilter for AchievementUI
 ----------------------------------------------------------------------------------------
-	local AchFilter = CreateFrame("Frame")
-	AchFilter:RegisterEvent("ADDON_LOADED")
-	AchFilter:SetScript("OnEvent", function(self, event, addon)
-		if addon == "Blizzard_AchievementUI" then
-			AchievementFrame_SetFilter(3)
-		end
-	end)
+local AchFilter = CreateFrame("Frame")
+AchFilter:RegisterEvent("ADDON_LOADED")
+AchFilter:SetScript("OnEvent", function(self, event, addon)
+	if addon == "Blizzard_AchievementUI" then
+		AchievementFrame_SetFilter(3)
+	end
+end)
+
 ----------------------------------------------------------------------------------------
 --	Force quit
 ----------------------------------------------------------------------------------------
-	local CloseWoW = CreateFrame("Frame")
-	CloseWoW:RegisterEvent("CHAT_MSG_SYSTEM")
-	CloseWoW:SetScript("OnEvent", function(self, event, msg)
-		if event == "CHAT_MSG_SYSTEM" then
-			if msg and msg == IDLE_MESSAGE then
-				ForceQuit()
-			end
+local CloseWoW = CreateFrame("Frame")
+CloseWoW:RegisterEvent("CHAT_MSG_SYSTEM")
+CloseWoW:SetScript("OnEvent", function(self, event, msg)
+	if event == "CHAT_MSG_SYSTEM" then
+		if msg and msg == IDLE_MESSAGE then
+			ForceQuit()
 		end
-	end)
-end
+	end
+end)
