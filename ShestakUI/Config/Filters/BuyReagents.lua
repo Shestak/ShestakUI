@@ -11,6 +11,7 @@ T.AutoBuy = {
 		[17031] = 20,	-- Rune of Teleportation
 		[17032] = 20,	-- Rune of Portals
 		[17020] = 100,	-- Arcane Powder
+		[17030] = 0,	-- Ankh
 	},
 	ROGUE = {
 		[6947] = 20,	-- Instant Poison
