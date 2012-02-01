@@ -3,9 +3,7 @@ local oUF = ns.oUF
 
 oUF.colors.power = {}
 for power, color in next, PowerBarColor do
-	if(type(power) == 'string') then
-		oUF.colors.power[power] = {color.r, color.g, color.b}
-	end
+	oUF.colors.power[power] = {color.r, color.g, color.b}
 end
 
 local GetDisplayPower = function(power, unit)
@@ -45,8 +43,14 @@ local Update = function(self, event, unit)
 		local ptype, ptoken, altR, altG, altB = UnitPowerType(unit)
 
 		t = self.colors.power[ptoken]
-		if(not t and altR) then
-			r, g, b = altR, altG, altB
+		if(not t) then
+			if(power.GetAlternativeColor) then
+				r, g, b = power:GetAlternativeColor(unit, ptype, ptoken, altR, altG, altB)
+			elseif(altR) then
+				r, g, b = altR, altG, altB
+			else
+				t = self.colors.power[ptype]
+			end
 		end
 	elseif(power.colorClass and UnitIsPlayer(unit)) or
 		(power.colorClassNPC and not UnitIsPlayer(unit)) or
