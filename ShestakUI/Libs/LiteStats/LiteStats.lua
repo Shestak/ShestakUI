@@ -948,7 +948,14 @@ if guild.enabled then
 								end
 								if officernote ~= "" then GameTooltip:AddLine(officernote, 0.3, 1, 0.3, 1) end
 							else
-								GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, level, name, (status ~= "" and " "..status or ""), grouped), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
+								if status == 1 then
+									status = " |cffff0000[AFK]|r"
+								elseif status == 2 then
+									status = " |cffff0000[DND]|r"
+								else
+									status = ""
+								end
+								GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, level, name, status, grouped), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
 							end
 						end
 					end
