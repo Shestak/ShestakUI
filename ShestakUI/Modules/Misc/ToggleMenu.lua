@@ -153,6 +153,9 @@ C["toggleaddons"] = {
 	["CoolLine"] = function()
 		T.RunSlashCmd("/coolline")
 	end,
+	["PreformAVEnabler"] = function()
+		SlashCmdList.PREFORMAV()
+	end,
 }
 
 -- Button size
