@@ -2,10 +2,10 @@
 ## Title: ShestakUI DPS
 ## Notes: Raid layout for ShestakUI
 ## Author: Shestak
-## Version: 3.3.9
+## Version: 3.4.0
 ## Credits: ALZA, Tukz, Caellian
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 3.3.9
+## X-Curse-Packaged-Version: 3.4.0
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org

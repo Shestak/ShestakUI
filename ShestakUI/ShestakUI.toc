@@ -2,14 +2,14 @@
 ## Title: ShestakUI
 ## Notes: A total UI overhaul for World of Warcraft
 ## Author: Shestak
-## Version: 3.3.9
+## Version: 3.4.0
 ## Credits: ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Havoc74, Duffed, Hydra, Gorlasch, Nefarion, Compost, Blamdarot, Suicidal Katt, Tuller, Rostok, Thizzelle, Astromech, Ammo, Slakah, Xuerian, Thalyra, Soeters, Evilpaul, Beoko, Califpornia, kunda, g0st, Partha
 ## Thanks: Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, PterOs, tat2dawn, Wetxius, Oz, Nefrit, Ente, ILF7, UI Users, Russian Community and Others
 ## OptionalDeps: ShestakUI_Config, Blizzard_CombatText, Clique, Stuf, PitBull4, ShadowedUnitFrames, Grid, Grid2, VuhDo, oUF_Freebgrid, TidyPlates, caelNamePlates, dNameplates, Mapster, Prat-3.0, eCastingBar, Quartz, alEnemyCD, TipTac, TipTacTalents, Omen, sThreatMeter2, alRaidCD, cargBags, Postal, AtlasLoot, DXE, _NPCScan.Overlay, epgp
 ## SavedVariables: SavedOptions, SavedStats
 ## SavedVariablesPerCharacter: SavedOptionsPerChar, SavedPositions
 ## X-oUF: oUFShestakUI
-## X-Curse-Packaged-Version: 3.3.9
+## X-Curse-Packaged-Version: 3.4.0
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
