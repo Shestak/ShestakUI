@@ -211,7 +211,7 @@ end
 ----------------------------------------------------------------------------------------
 if (T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Махес" or T.name == "Ночнойшорох"
 or T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
-or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка") and T.realm == "Azuregos" then
+or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка") and T.realm == "Азурегос" then
 	C["media"].pixel_font = C.media.normal_font
 	C["media"].pixel_font_style = "OUTLINE"
 	C["media"].pixel_font_size = 14
