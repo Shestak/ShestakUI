@@ -340,6 +340,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["combattext"].heal_treshold = 1000
 		C["chat"].width = 398
 		C["chat"].height = 300
+		C["nameplate"].auras_size = 30
 		C["actionbar"].split_bars = true
 		C["stats"].battleground = true
 	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
