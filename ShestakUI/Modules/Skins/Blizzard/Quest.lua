@@ -28,6 +28,7 @@ local function LoadSkin()
 		local texture = _G["QuestProgressItem"..i.."IconTexture"]
 		button:StripTextures()
 		button:StyleButton()
+		button:SetTemplate("Overlay")
 		button:Width(_G["QuestProgressItem"..i]:GetWidth() - 4)
 		button:SetFrameLevel(button:GetFrameLevel() + 2)
 		texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -35,7 +36,8 @@ local function LoadSkin()
 		texture:Point("TOPLEFT", 2, -2)
 		texture:Size(texture:GetWidth() - 2, texture:GetHeight() - 2)
 		_G["QuestProgressItem"..i.."Count"]:SetDrawLayer("OVERLAY")
-		button:SetTemplate("Default")
+		_G["QuestProgressItem"..i.."Name"]:SetFont(C.media.normal_font, 12)
+		_G["QuestProgressItem"..i.."Name"]:SetDrawLayer("OVERLAY")
 	end
 
 	hooksecurefunc("QuestFrameProgressItems_Update", function()
