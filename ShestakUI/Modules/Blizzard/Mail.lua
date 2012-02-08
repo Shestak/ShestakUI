@@ -27,13 +27,13 @@ end
 
 function openMail(index)
 	if not InboxFrame:IsVisible() then return stopOpening("|cffffff00"..L_MAIL_NEED) end
-	if index == 0 then MiniMapMailFrame:Hide() stopOpening("|cffffff00"..L_MAIL_COMPLETE) return end
+	if index == 0 then MiniMapMailFrame:Hide() return stopOpening("|cffffff00"..L_MAIL_COMPLETE) end
 	local _, _, _, _, money, COD, _, numItems = GetInboxHeaderInfo(index)
 	if money > 0 then
 		TakeInboxMoney(index)
 		needsToWait = true
 		if total_cash then total_cash = total_cash - money end
-	elseif (not takingOnlyCash) and numItems and (numItems > 0) and COD <= 0 then
+	elseif (not takingOnlyCash) and (numItems and numItems > 0) and COD <= 0 then
 		TakeInboxItem(index)
 		needsToWait = true
 	end
