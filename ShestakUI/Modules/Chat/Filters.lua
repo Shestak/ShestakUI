@@ -75,7 +75,7 @@ if C.chat.spam == true then
 		if SpamList and SpamList[1] then
 			for i, SpamList in pairs(SpamList) do
 				if arg2 == T.name then return end
-				if arg1:lower():match(SpamList) then
+				if arg1:match(SpamList) then
 					return true
 				end
 			end
