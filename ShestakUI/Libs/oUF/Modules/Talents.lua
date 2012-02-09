@@ -31,7 +31,7 @@ local spells = {
 	[GetSpellInfo(55090)] = L_PLANNER_DEATHKNIGHT_3,	-- Scourge Strike
 	-- MAGE
 	[GetSpellInfo(44425)] = L_PLANNER_MAGE_1,			-- Arcane Barrage
-	[GetSpellInfo(11366)] = L_PLANNER_MAGE_2,			-- Pyroblast
+	[GetSpellInfo(44457)] = L_PLANNER_MAGE_2,			-- Living Bomb
 	[GetSpellInfo(44572)] = L_PLANNER_MAGE_3,			-- Deep Freeze
 	-- WARLOCK
 	[GetSpellInfo(30108)] = L_PLANNER_WARLOCK_1,		-- Unstable Affliction
@@ -80,6 +80,7 @@ local buffs = { -- Credits: Proditor, Rinu
 	[GetSpellInfo(82930)] = L_PLANNER_MAGE_1,			-- Arcane Tactics
 	[GetSpellInfo(48108)] = L_PLANNER_MAGE_2,			-- Hot Streak
 	[GetSpellInfo(11426)] = L_PLANNER_MAGE_3,			-- Ice Barrier
+	[GetSpellInfo(44544)] = L_PLANNER_MAGE_3,			-- Fingers of Frost
 	-- WARLOCK
 	[GetSpellInfo(53646)] = L_PLANNER_WARLOCK_2,		-- Demonic Pact
 	[GetSpellInfo(30301)] = L_PLANNER_WARLOCK_3,		-- Nether Protection
