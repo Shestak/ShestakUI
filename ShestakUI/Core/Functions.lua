@@ -839,7 +839,7 @@ T.PostUpdatePower = function(power, unit, min, max)
 							power.value:SetFormattedText("|cffffffff%d%%|r", floor(min / max * 100))
 						end
 					end
-				elseif unit and unit:find("arena%d") then
+				elseif unit and (unit:find("arena%d") or unit:find("boss%d")) then
 					if C.unitframe.color_value == true then
 						power.value:SetFormattedText("|cffD7BEA5%d%% - %s|r", floor(min / max * 100), T.ShortValue(max - (max - min)))
 					else
