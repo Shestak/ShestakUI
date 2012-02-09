@@ -114,20 +114,17 @@ local function LoadSkin()
 			_G["GuildChallengeAlertFrameGlow"]:Kill()
 			_G["GuildChallengeAlertFrameShine"]:Kill()
 			_G["GuildChallengeAlertFrameEmblemBorder"]:Kill()
-			_G["GuildChallengeAlertFrameEmblemBackground"]:Kill()
 
-			-- Icon
-			_G["GuildChallengeAlertFrameEmblemIcon"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			_G["GuildChallengeAlertFrameEmblemIcon"]:ClearAllPoints()
-			_G["GuildChallengeAlertFrameEmblemIcon"]:Point("LEFT", frame, 7, 0)
-
+			-- Icon border
 			if not _G["GuildChallengeAlertFrameEmblemIcon"].b then
 				_G["GuildChallengeAlertFrameEmblemIcon"].b = CreateFrame("Frame", nil, _G["GuildChallengeAlertFrame"])
 				_G["GuildChallengeAlertFrameEmblemIcon"].b:SetFrameLevel(0)
 				_G["GuildChallengeAlertFrameEmblemIcon"].b:SetTemplate("Default")
-				_G["GuildChallengeAlertFrameEmblemIcon"].b:Point("TOPLEFT", _G["GuildChallengeAlertFrameEmblemIcon"], "TOPLEFT", -2, 2)
-				_G["GuildChallengeAlertFrameEmblemIcon"].b:Point("BOTTOMRIGHT", _G["GuildChallengeAlertFrameEmblemIcon"], "BOTTOMRIGHT", 2, -2)
+				_G["GuildChallengeAlertFrameEmblemIcon"].b:Point("TOPLEFT", _G["GuildChallengeAlertFrameEmblemIcon"], "TOPLEFT", -3, 3)
+				_G["GuildChallengeAlertFrameEmblemIcon"].b:Point("BOTTOMRIGHT", _G["GuildChallengeAlertFrameEmblemIcon"], "BOTTOMRIGHT", 3, -2)
 			end
+
+			SetLargeGuildTabardTextures("player", GuildChallengeAlertFrameEmblemIcon, nil, nil)
 		end
 	end
 	hooksecurefunc("GuildChallengeAlertFrame_FixAnchors", SkinChallengePopUp)
