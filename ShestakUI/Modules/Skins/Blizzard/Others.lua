@@ -32,7 +32,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"StackSplitFrame",
 			"OpacityFrame",
 			"GeneralDockManagerOverflowButtonList",
-			"LFGSearchStatus"
+			"LFGSearchStatus",
+			"DeclensionFrame"
 		}
 
 		for i = 1, getn(bgskins) do
@@ -178,7 +179,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ReadyCheckButton",
 			"ShowButton",
 			"CloseButton",
-			"RaidControlButton"
+			"RaidControlButton",
+			"DeclensionFrameCancelButton",
+			"DeclensionFrameOkayButton"
 		}
 
 		for i = 1, getn(BlizzardButtons) do
@@ -223,13 +226,20 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		if C.skins.blizzard_frames == true then
 			_G["StaticPopup1CloseButton"]:HookScript("OnShow", function(self)
 				self:StripTextures(true)
-				T.SkinCloseButton(StaticPopup1CloseButton, nil, "-")
+				T.SkinCloseButton(self, nil, "-")
 			end)
-			T.SkinCloseButton(LFGDungeonReadyStatusCloseButton, nil, "-")
-			T.SkinCloseButton(ChannelPulloutCloseButton)
-			T.SkinCloseButton(RolePollPopupCloseButton)
-			T.SkinCloseButton(ItemRefCloseButton)
-			T.SkinCloseButton(aLoadCloseButton)
+			T.SkinCloseButton(_G["LFGDungeonReadyStatusCloseButton"], nil, "-")
+			T.SkinCloseButton(_G["ChannelPulloutCloseButton"])
+			T.SkinCloseButton(_G["RolePollPopupCloseButton"])
+			T.SkinCloseButton(_G["ItemRefCloseButton"])
+			T.SkinCloseButton(_G["aLoadCloseButton"])
+			T.SkinNextPrevButton(_G["DeclensionFrameSetNext"])
+			T.SkinNextPrevButton(_G["DeclensionFrameSetPrev"])
+			for i = 1, 5 do
+				_G["DeclensionFrameDeclension"..i.."Edit"]:StripTextures(true)
+				_G["DeclensionFrameDeclension"..i.."Edit"]:SetTemplate("Overlay")
+				_G["DeclensionFrameDeclension"..i.."Edit"]:SetTextInsets(3, 0, 0, 0)
+			end
 		end
 	end
 
