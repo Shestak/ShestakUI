@@ -18,7 +18,7 @@ local function LoadSkin()
 	QuestLogFrameShowMapButton:StripTextures()
 	QuestLogFrameShowMapButton:SkinButton()
 	QuestLogFrameShowMapButton.text:ClearAllPoints()
-	QuestLogFrameShowMapButton.text:SetPoint("CENTER")
+	QuestLogFrameShowMapButton.text:SetPoint("CENTER", 1, 0)
 	QuestLogFrameShowMapButton:Size(QuestLogFrameShowMapButton:GetWidth() - 30, QuestLogFrameShowMapButton:GetHeight(), - 40)
 
 	local buttons = {
