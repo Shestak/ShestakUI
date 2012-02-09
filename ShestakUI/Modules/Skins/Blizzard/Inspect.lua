@@ -27,6 +27,8 @@ local function LoadSkin()
 	InspectModelFrameBorderBottom2:Kill()
 	InspectModelFrameBackgroundOverlay:Kill()
 	InspectModelFrame:CreateBackdrop("Default")
+	InspectModelFrame.backdrop:Point("TOPLEFT", -2, 2)
+	InspectModelFrame.backdrop:Point("BOTTOMRIGHT", 2, -3)
 
 	local slots = {
 		"HeadSlot",
