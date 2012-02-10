@@ -2829,9 +2829,7 @@ Filger_Spells = {
 			{ spellID = 50435, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Druid
-			-- Skull Bash (Bear Form)
-			{ spellID = 80964, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Skull Bash (Cat Form)
+			-- Skull Bash
 			{ spellID = 80965, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Solar Beam
 			{ spellID = 78675, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
@@ -2978,8 +2976,6 @@ Filger_Spells = {
 			{ spellID = 87204, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Paralysis
 			{ spellID = 87194, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Shackle Undead
-			{ spellID = 9484, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Rogue
 			-- Dismantle
@@ -3024,8 +3020,6 @@ Filger_Spells = {
 			{ spellID = 3600, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Frost Shock
 			{ spellID = 8056, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Bash (Feral Spirit)
-			{ spellID = 58861, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Earthquake
 			{ spellID = 77505, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Frostbrand Attack
@@ -3038,8 +3032,6 @@ Filger_Spells = {
 			{ spellID = 93975, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Demon Leap
 			{ spellID = 54785, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Banish
-			{ spellID = 710, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Death Coil
 			{ spellID = 6789, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Fear
