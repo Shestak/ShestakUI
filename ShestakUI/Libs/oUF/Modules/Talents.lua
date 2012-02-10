@@ -125,7 +125,6 @@ local function Enable(object)
 	if not object.Talents then return end
 	object:RegisterEvent("UNIT_AURA", Update)
 	object:RegisterEvent("UNIT_SPELLCAST_START", Update)
-	--object:RegisterEvent('PLAYER_TARGET_CHANGED', Update)
 	return true
 end
 
@@ -133,7 +132,6 @@ local function Disable(object)
 	if object.Talents then
 		object:UnregisterEvent("UNIT_AURA", Update)
 		object:UnregisterEvent("UNIT_SPELLCAST_START", Update)
-		--object:UnregisterEvent('PLAYER_TARGET_CHANGED', Update)
 	end
 end
 
