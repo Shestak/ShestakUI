@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if IsAddOnLoaded("AuctionProfitMaster") or IsAddOnLoaded("OpenAll") or IsAddOnLoaded("Postal") or IsAddOnLoaded("TradeSkillMaster_Mailing") then return end
+if IsAddOnLoaded("QuickAuctions") or IsAddOnLoaded("AuctionProfitMaster") or IsAddOnLoaded("OpenAll") or IsAddOnLoaded("Postal") or IsAddOnLoaded("TradeSkillMaster_Mailing") then return end
 
 ----------------------------------------------------------------------------------------
 --	Grab mail in 1 button(OpenAll by Kemayo)
@@ -98,6 +98,10 @@ button:SetScript("OnClick", openAll)
 button:SetScript("OnEvent", onEvent)
 button2 = makeButton("OpenAllButton2", MONEY, 70, 25, 28, -408)
 button2:SetScript("OnClick", openAllCash)
+if C.skins.blizzard_frames == true then
+	OpenAllButton:SkinButton()
+	OpenAllButton2:SkinButton()
+end
 
 button:SetScript("OnEnter", function()
 	GameTooltip:SetOwner(button, "ANCHOR_RIGHT")

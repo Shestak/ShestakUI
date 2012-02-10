@@ -144,10 +144,6 @@ local function LoadSkin()
 	OpenMailReplyButton:Point("RIGHT", OpenMailDeleteButton, "LEFT", -2, 0)
 	OpenMailDeleteButton:Point("RIGHT", OpenMailCancelButton, "LEFT", -2, 0)
 	SendMailMailButton:Point("RIGHT", SendMailCancelButton, "LEFT", -2, 0)
-
-	if IsAddOnLoaded("AuctionProfitMaster") or IsAddOnLoaded("OpenAll") or IsAddOnLoaded("Postal") then return end
-	OpenAllButton:SkinButton()
-	OpenAllButton2:SkinButton()
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
