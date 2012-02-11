@@ -234,6 +234,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(108046),	-- Shockwave
 			SpellName(107567),	-- Brutal Strike
 			SpellName(107558),	-- Degeneration
+			SpellName(110214),	-- Consuming Shroud
 			-- Spine of Deathwing
 			SpellName(105563),	-- Grasping Tendrils
 			SpellName(105479),	-- Searing Plasma
