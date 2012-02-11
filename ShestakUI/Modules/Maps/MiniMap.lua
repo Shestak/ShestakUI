@@ -269,6 +269,8 @@ end)
 
 -- Set Square Map Mask
 Minimap:SetMaskTexture(C.media.blank)
+Minimap:SetArchBlobRingAlpha(0)
+Minimap:SetQuestBlobRingAlpha(0)
 
 -- For others mods with a minimap button, set minimap buttons position in square mode
 function GetMinimapShape() return "SQUARE" end
