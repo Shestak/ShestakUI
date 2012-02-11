@@ -316,7 +316,8 @@ local function LoadSkin()
 		"Atr_Buy_Confirm_OKBut",
 		"Atr_Buy_Confirm_CancelBut",
 		"Atr_MngSListsButton",
-		"Auctionator_Search"
+		"Auctionator_Search",
+		"Atr_SaveThisList_Button"
 	}
 
 	for i = 1, getn(buttons) do
