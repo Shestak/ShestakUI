@@ -337,3 +337,17 @@ CloseWoW:SetScript("OnEvent", function(self, event, msg)
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Delete Replace Enchant popup
+----------------------------------------------------------------------------------------
+local EnchantPopup = CreateFrame("Frame")
+EnchantPopup:RegisterEvent("REPLACE_ENCHANT")
+EnchantPopup:SetScript("OnEvent", function(...)
+	for i = 1, STATICPOPUP_NUMDIALOGS do
+		local popup = _G["StaticPopup"..i]
+		if popup.which == "REPLACE_ENCHANT" then
+			StaticPopup_OnClick(popup, 1)
+		end
+	end
+end)
