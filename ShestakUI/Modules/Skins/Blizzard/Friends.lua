@@ -59,6 +59,7 @@ local function LoadSkin()
 		"WhoFrameGroupInviteButton",
 		"ChannelFrameNewButton",
 		"FriendsFrameIgnorePlayerButton",
+		"FriendsFrameMutePlayerButton",
 		"FriendsFrameUnsquelchButton",
 		"FriendsFramePendingButton1AcceptButton",
 		"FriendsFramePendingButton1DeclineButton",
@@ -175,6 +176,9 @@ local function LoadSkin()
 	T.SkinDropDownBox(FriendsFriendsFrameDropDown)
 	FriendsFrameAddFriendButton:Point("BOTTOMLEFT", FriendsFrame.backdrop, "BOTTOMLEFT", 5, 5)
 	FriendsFrameIgnorePlayerButton:Point("BOTTOMLEFT", FriendsFrame.backdrop, "BOTTOMLEFT", 5, 5)
+	FriendsFrameUnsquelchButton:Point("BOTTOMRIGHT", FriendsFrame.backdrop, "BOTTOMRIGHT", -5, 5)
+	FriendsFrameMutePlayerButton:Point("LEFT", FriendsFrameIgnorePlayerButton, "RIGHT", 3, 0)
+	FriendsFrameMutePlayerButton:Point("RIGHT", FriendsFrameUnsquelchButton, "LEFT", -3, 0)
 
 	-- Bottom Tabs
 	for i = 1, 5 do
