@@ -189,6 +189,8 @@ elseif T.class == "WARRIOR" then
 		ct.aoespam[1680] = true		-- Whirlwind
 		ct.aoespam[94009] = true	-- Rend
 		ct.aoespam[12721] = true	-- Deep Wounds
+		ct.aoespam[50622] = true	-- Bladestorm
+		ct.aoespam[52174] = true	-- Heroic Leap
 	end
 	if C.combattext.healing then
 		ct.healfilter[23880] = true	-- Bloodthirst
@@ -198,9 +200,11 @@ elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
 		ct.aoespam[2643] = true		-- Multi-Shot
 		ct.aoespam[83077] = true	-- Instant part of Serpent Sting
-		ct.aoespam[88466] = true	-- Serpent Sting#1
-		ct.aoespam[1978] = true		-- Serpent Sting#2
+		ct.aoespam[88453] = true	-- Serpent Sting (Dot 1/2)
+		ct.aoespam[88466] = true	-- Serpent Sting (Dot 2/2)
+		ct.aoespam[1978] = true		-- Serpent Sting
 		ct.aoespam[13812] = true	-- Explosive Trap
+		ct.aoespam[53301] = true	-- Explosive Shot
 	end
 elseif T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
@@ -212,6 +216,8 @@ elseif T.class == "DEATHKNIGHT" then
 		ct.aoespam[52212] = true	-- Death and Decay
 		ct.aoespam[47541] = true	-- Death Coil
 		ct.aoespam[55050] = true	-- Heart Strike
+		ct.aoespam[98957] = true	-- Burning Blood (T13 x2)
+		ct.aoespam[59754] = true	-- Rune Tap (AOE heal)
 		-- Merging mh/oh strikes(by Bozo)
 		ct.aoespam[49020] = true	-- Obliterate MH
 		ct.aoespam[66198] = 49020	-- Obliterate OH
@@ -232,6 +238,39 @@ elseif T.class == "ROGUE"then
 		ct.aoespam[2818] = true		-- Deadly Poison
 		ct.aoespam[8680] = true		-- Instant Poison
 	end
+end
+
+-- Dragon Soul Items config
+if C.combattext.merge_aoe_spam and C.combattext.vremennaya_zaglushka then
+	-- Windward Heart (Healer Trinket)
+	ct.aoespam[109822] = true	-- Nick of Time (LFR)
+	ct.aoespam[108000] = true	-- Nick of Time (Normal)
+	ct.aoespam[109825] = true	-- Nick of Time (Heroic)
+	-- Bone-Link Fetish (Melee DPS Trinket)
+	ct.aoespam[109752] = true	-- Whirling Maw (LFR)
+	ct.aoespam[107997] = true	-- Whirling Maw (Normal)
+	ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
+	-- Cunning of the Cruel (Caster DPS Trinket)
+	ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
+	ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
+	ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
+	-- Maw of the Dragonlord (Healer MH Mace)
+	ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
+	ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
+	ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
+	-- Rathrak, the Poisonous Mind (Caster DPS MH Dagger)
+	ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
+	ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
+	ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
+	-- Vishanka, Jaws of the Earth (Physical DPS Bow)
+	ct.aoespam[109856] = true	-- Speaking of Rage (LFR)
+	ct.aoespam[107821] = true	-- Speaking of Rage (Normal)
+	ct.aoespam[109859] = true	-- Speaking of Rage (Heroic)
+	-- Dragon Soul - The Madness of Deathwing
+	ct.aoespam[109609] = true	-- Spellweave
+	ct.aoespam[109610] = true	-- Spellweave
+	ct.aoespam[106043] = true	-- Spellweave
+	ct.aoespam[109611] = true	-- Spellweave
 end
 
 -- Do not edit below unless you know what you are doing
