@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.misc.auto_quest == true then return end
+if C.misc.auto_quest ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Quest automation(Monomyth by p3lim)
@@ -131,7 +131,7 @@ Monomyth:Register("QUEST_COMPLETE", function()
 				end
 			else
 				choiceQueue = true
-				return GetQuestItemInfo('choice', index)
+				return GetQuestItemInfo("choice", index)
 			end
 		end
 
