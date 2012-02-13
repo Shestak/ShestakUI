@@ -258,8 +258,8 @@ end)
 ----------------------------------------------------------------------------------------
 --	Misclicks for same popup
 ----------------------------------------------------------------------------------------
-StaticPopupDialogs.PARTY_INVITE.hideOnEscape = 0
-StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = 0
+StaticPopupDialogs.PARTY_INVITE.hideOnEscape = nil
+StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = nil
 StaticPopupDialogs.CONFIRM_BATTLEFIELD_ENTRY.button2 = nil
 
 ----------------------------------------------------------------------------------------
