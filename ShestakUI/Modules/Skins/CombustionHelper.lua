@@ -13,6 +13,7 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 	CombustionFrame:SetTemplate("Transparent")
 	LBtrackFrame:SetTemplate("Transparent")
 
+	CombuCautscalevar = 1
 	combusettingstable.combuscale = 1
 	combusettingstable.comburefreshmode = false
 	combusettingstable.combuchat = false
@@ -32,6 +33,16 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 	--PyroButton:Hide()
 	--IgniteButton:Hide()
 	--LBButton:Hide()
+
+	if CombuCautenablevar == true then
+		CombuCautTimerText:SetFont(C.font.stylization_font, (C.font.stylization_font_size / combusettingstable.combuscale) * 2, C.font.stylization_font_style)
+		CombuCautTimerText:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+		CombuCautFrame:SetTemplate("Default")
+		CombuCautIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		CombuCautIcon:ClearAllPoints()
+		CombuCautIcon:Point("TOPLEFT", 2, -2)
+		CombuCautIcon:Point("BOTTOMRIGHT", -2, 2)
+	end
 
 	if combusettingstable.combubartimers == true then
 		combusettingstable.combubarwidth = 55
