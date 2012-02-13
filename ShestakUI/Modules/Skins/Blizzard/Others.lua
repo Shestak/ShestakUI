@@ -32,8 +32,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"StackSplitFrame",
 			"OpacityFrame",
 			"GeneralDockManagerOverflowButtonList",
-			"LFGSearchStatus",
-			"DeclensionFrame"
+			"LFGSearchStatus"
 		}
 
 		for i = 1, getn(bgskins) do
@@ -179,9 +178,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ReadyCheckButton",
 			"ShowButton",
 			"CloseButton",
-			"RaidControlButton",
-			"DeclensionFrameCancelButton",
-			"DeclensionFrameOkayButton"
+			"RaidControlButton"
 		}
 
 		for i = 1, getn(BlizzardButtons) do
@@ -233,12 +230,17 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 			T.SkinCloseButton(_G["ItemRefCloseButton"])
 			T.SkinCloseButton(_G["aLoadCloseButton"])
-			T.SkinNextPrevButton(_G["DeclensionFrameSetNext"])
-			T.SkinNextPrevButton(_G["DeclensionFrameSetPrev"])
-			for i = 1, 5 do
-				_G["DeclensionFrameDeclension"..i.."Edit"]:StripTextures(true)
-				_G["DeclensionFrameDeclension"..i.."Edit"]:SetTemplate("Overlay")
-				_G["DeclensionFrameDeclension"..i.."Edit"]:SetTextInsets(3, 0, 0, 0)
+			if T.client == "ruRU" then
+				_G["DeclensionFrame"]:SetTemplate("Transparent")
+				_G["DeclensionFrameCancelButton"]:SkinButton()
+				_G["DeclensionFrameOkayButton"]:SkinButton()
+				T.SkinNextPrevButton(_G["DeclensionFrameSetNext"])
+				T.SkinNextPrevButton(_G["DeclensionFrameSetPrev"])
+				for i = 1, 5 do
+					_G["DeclensionFrameDeclension"..i.."Edit"]:StripTextures(true)
+					_G["DeclensionFrameDeclension"..i.."Edit"]:SetTemplate("Overlay")
+					_G["DeclensionFrameDeclension"..i.."Edit"]:SetTextInsets(3, 0, 0, 0)
+				end
 			end
 		end
 	end
