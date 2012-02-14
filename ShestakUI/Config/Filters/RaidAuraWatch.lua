@@ -239,6 +239,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(105563),	-- Grasping Tendrils
 			SpellName(105479),	-- Searing Plasma
 			SpellName(105490),	-- Fiery Grip
+			SpellName(106199),	-- Blood Corruption: Death
 			-- Madness of Deathwing
 			SpellName(106444),	-- Impale
 			SpellName(105841),	-- Degenerative bite
