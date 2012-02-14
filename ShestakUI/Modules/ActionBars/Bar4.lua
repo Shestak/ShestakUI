@@ -17,7 +17,7 @@ for i = 1, 12 do
 		b:Point("TOPRIGHT", RightActionBarAnchor, "TOPRIGHT", 0, 0)
 	else
 		b:Point("TOP", b2, "BOTTOM", 0, -T.buttonspacing)
-	end	
+	end
 end
 
 -- Hide bar

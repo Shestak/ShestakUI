@@ -134,4 +134,83 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 		LBtrackFrame:SetPoint("BOTTOMLEFT", CombustionFrame, "TOPLEFT", 0, 3)
 		LBtrackFrame:SetPoint("BOTTOMRIGHT", CombustionFrame, "TOPRIGHT", 0, 3)
 	end
+
+	-- Options
+	CombuOptionsTooltipFrame:SetTemplate("Transparent")
+	CombuOptionsTooltipTitle:SetFont(C.media.normal_font, 13)
+	CombuOptionsTooltipTitle:SetShadowOffset(1, -1)
+	CombuOptionsTooltipText:SetFont(C.media.normal_font, 11)
+	CombuOptionsTooltipText:SetShadowOffset(1, -1)
+
+	local buttons = {
+		"CombuvalueokButton",
+		"CombuIgniteokButton",
+		"CombutimerokButton",
+		"ComburesetButton",
+		"CombuCautAnnounceEditBoxokButton",
+		"CombuCautAnnounceAltEditBoxokButton",
+		"CombuCautresetButton"
+	}
+
+	for i = 1, getn(buttons) do
+		local button = _G[buttons[i]]
+		if button then
+			button:SkinButton()
+		end
+	end
+
+	local checkboxes = {
+		"CombulockButton",
+		"CombucritButton",
+		"ComburefreshButton",
+		"CombureportButton",
+		"Combureportthreshold",
+		"CombuIgnitePredictButton",
+		"CombuffbButton",
+		"CombuMunchingButton",
+		"CombuFlamestrikeButton",
+		"ComburefreshpyroButton",
+		"CombuimpactButton",
+		"CombutrackerButton",
+		"CombuchatButton",
+		"CombuLBtrackerButton",
+		"CombuLBtargetButton",
+		"CombuThresholdSoundButton",
+		"CombuBarButton",
+		"CombuTileButton",
+		"CombuCautEnableButton",
+		"CombuCautlockButton",
+		"CombuCautHideButton",
+		"CombuCautTimerButton",
+		"CombuCautChatAloneButton",
+		"CombuCautAnnounceRaidButton",
+		"CombuCautAnnounceSayButton",
+		"CombuCautAnnounceYellButton",
+		"CombuCautAnnounceAltButton"
+	}
+
+	for i = 1, getn(checkboxes) do
+		local checkbox = _G[checkboxes[i]]
+		if checkbox then
+			T.SkinCheckBox(checkbox)
+		end
+	end
+
+	local dropdown = {
+		"LBtrackerDropDown",
+		"CombuAutohideDropDown",
+		"CombuLanguageDropDown",
+		"CombuTextureDropDown",
+		"CombuFontDropDown",
+		"CombuSoundDropDown",
+		"CombuBorderDropDown",
+		"CombuBackgroundDropDown"
+	}
+
+	for i = 1, getn(dropdown) do
+		local frame = _G[dropdown[i]]
+		if frame then
+			--T.SkinDropDownBox(frame)
+		end
+	end
 end)
