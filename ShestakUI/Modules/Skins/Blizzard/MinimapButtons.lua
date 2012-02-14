@@ -16,7 +16,9 @@ local function SkinButton(f)
 	if f:GetObjectType() ~= "Button" then return end
 
 	for i, buttons in pairs(buttons) do
-		if f:GetName():match(buttons) then return end
+		if f:GetName() ~= nil then
+			if f:GetName():match(buttons) then return end
+		end
 	end
 
 	f:SetPushedTexture(nil)
@@ -37,6 +39,9 @@ local function SkinButton(f)
 				region:Point("BOTTOMRIGHT", f, "BOTTOMRIGHT", -2, 2)
 				region:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				region:SetDrawLayer("ARTWORK")
+				if f:GetName() == "PS_MinimapButton" then
+					region.SetPoint = T.dummy
+				end
 			end
 		end
 	end
@@ -47,7 +52,6 @@ end
 local x = CreateFrame("Frame")
 x:RegisterEvent("PLAYER_LOGIN")
 x:SetScript("OnEvent", function(self, event)
-
 	for i = 1, Minimap:GetNumChildren() do
 		SkinButton(select(i, Minimap:GetChildren()))
 	end
