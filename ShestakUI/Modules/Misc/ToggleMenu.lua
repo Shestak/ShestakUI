@@ -84,7 +84,7 @@ C["toggleaddons"] = {
 	end,
 	-- Boss Addons
 	["BigWigs"] = function()
-		T.RunSlashCmd("/bigwigs")
+		SlashCmdList.BigWigs()
 	end,
 	["DBM-Core"] = function()
 		DBM:LoadGUI()
