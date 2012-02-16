@@ -28,6 +28,7 @@ L_RAID_UTIL_DISBAND = "Disband Group"
 -- Zone name
 L_ZONE_WINTERGRASP = "Wintergrasp"
 L_ZONE_TOLBARAD = "Tol Barad"
+L_ZONE_TOLBARADPEN = "Tol Barad Peninsula"
 L_ZONE_ARATHIBASIN = "Arathi Basin"
 L_ZONE_GILNEAS = "The Battle for Gilneas"
 

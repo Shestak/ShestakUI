@@ -28,6 +28,7 @@ L_RAID_UTIL_DISBAND = "解散团队"
 -- Zone name
 L_ZONE_WINTERGRASP = "冬握湖"
 L_ZONE_TOLBARAD = "托尔巴拉德"
+L_ZONE_TOLBARADPEN = "Tol Barad Peninsula" -- Needs review
 L_ZONE_ARATHIBASIN = "阿拉希盆地"
 L_ZONE_GILNEAS = "The Battle for Gilneas" -- Needs review
 

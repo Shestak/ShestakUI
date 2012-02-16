@@ -28,6 +28,7 @@ L_RAID_UTIL_DISBAND = "Gruppe auflösen"
 -- Zone name
 L_ZONE_WINTERGRASP = "Tausendwintersee"
 L_ZONE_TOLBARAD = "Tol Barad"
+L_ZONE_TOLBARADPEN = "Tol Barad Peninsula" -- Needs review
 L_ZONE_ARATHIBASIN = "Arathibecken"
 L_ZONE_GILNEAS = "Die Schlacht um Gilneas"
 

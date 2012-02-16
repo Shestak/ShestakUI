@@ -28,6 +28,7 @@ L_RAID_UTIL_DISBAND = "Распустить группу"
 -- Zone name
 L_ZONE_WINTERGRASP = "Озеро Ледяных Оков"
 L_ZONE_TOLBARAD = "Тол Барад"
+L_ZONE_TOLBARADPEN = "Полуостров Тол Барад"
 L_ZONE_ARATHIBASIN = "Низина Арати"
 L_ZONE_GILNEAS = "Битва за Гилнеас"
 

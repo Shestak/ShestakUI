@@ -28,6 +28,7 @@ L_RAID_UTIL_DISBAND = "Fin du raid"
 -- Zone name
 L_ZONE_WINTERGRASP = "Joug-d'hiver"
 L_ZONE_TOLBARAD = "Tol Barad"
+L_ZONE_TOLBARADPEN = "Tol Barad Peninsula" -- Needs review
 L_ZONE_ARATHIBASIN = "Bassin d'Arathi"
 L_ZONE_GILNEAS = "La bataille de Gilnéas"
 
