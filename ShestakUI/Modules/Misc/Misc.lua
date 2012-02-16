@@ -177,7 +177,7 @@ strip:SetScript("OnEvent", function(this)
 	if AuctionFrame:IsVisible() and this.model ~= SideDressUpModel then
 		this:SetParent(SideDressUpModel)
 		this:ClearAllPoints()
-		this:SetPoint("BOTTOM", SideDressUpModelResetButton, "TOP", 0, 3)
+		this:SetPoint("TOP", SideDressUpModelResetButton, "BOTTOM", 0, -3)
 		this.model = SideDressUpModel
 	elseif this.model ~= DressUpModel then
 		this:SetParent(DressUpModel)
@@ -351,3 +351,22 @@ EnchantPopup:SetScript("OnEvent", function(...)
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Block damage meter spam(Decount by Tekkub)
+----------------------------------------------------------------------------------------
+local filterstrings = {
+	"^Recount - (.*)$",
+	"%d+%. %S+%s*%d+ %([%d.]+, [%d.]+%%%)",
+	"%d+%. - [%d.]+%%% %S+%s*%d+",
+	"%d+%.%s+[%w%s]+%s+[%d.]+ %([%d.]+%)",
+	"%d+%.%s+%S+%s+[%d.]+",
+}
+
+local function filter(self, event, msg)
+	for _, str in pairs(filterstrings) do if msg:match(str) then return true end end
+end
+
+for _,event in pairs{"CHAT_MSG_YELL", "CHAT_MSG_SAY", "CHAT_MSG_RAID", "CHAT_MSG_PARTY"} do
+	ChatFrame_AddMessageEventFilter(event, filter)
+end
