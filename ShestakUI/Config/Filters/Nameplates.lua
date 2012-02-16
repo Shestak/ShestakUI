@@ -100,4 +100,7 @@ T.PlateBlacklist = {
 	["Жидкий обсидиан"] = true,
 	["Lava Parasites"] = true,
 	["Лавовый паразит"] = true,
+	-- Gundrak
+	["Fanged Pit Viper"] = true,
+	["Клыкастая глубинная гадюка"] = true,
 }
