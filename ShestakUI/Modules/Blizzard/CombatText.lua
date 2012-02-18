@@ -42,6 +42,13 @@ if T.class == "WARLOCK" then
 		ct.aoespam[30213] = true	-- Legion Strike (Felguard)
 		ct.aoespam[89753] = true	-- Felstorm (Felguard)
 		ct.aoespam[20153] = true	-- Immolation (Infrenal)
+		-- Item spells
+		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
+		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
+		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
+		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
+		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
+		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
 	end
 	if C.combattext.healing then
 		ct.healfilter[28176] = true	-- Fel Armor
@@ -62,10 +69,6 @@ elseif T.class == "DRUID" then
 		ct.aoespam[33763] = true	-- Lifebloom
 		ct.aoespam[44203] = true	-- Tranquility
 		ct.aoespam[81269] = true	-- Efflorescence
-		ct.aoespam[105996] = true	-- Essence of Dreams
-		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
-		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
-		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
 		-- Damager spells
 		ct.aoespam[8921] = true		-- Moonfire
 		ct.aoespam[93402] = true	-- Sunfire
@@ -81,6 +84,20 @@ elseif T.class == "DRUID" then
 		ct.aoespam[779] = true		-- Swipe (Bear Form)
 		ct.aoespam[33745] = true	-- Lacerate
 		ct.aoespam[1079] = true		-- Rip
+		-- Item spells
+		ct.aoespam[105996] = true	-- Essence of Dreams
+		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
+		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
+		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
+		ct.aoespam[109822] = true	-- Nick of Time (LFR)
+		ct.aoespam[108000] = true	-- Nick of Time (Normal)
+		ct.aoespam[109825] = true	-- Nick of Time (Heroic)
+		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
+		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
+		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
+		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
+		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
+		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
@@ -91,10 +108,6 @@ elseif T.class == "PALADIN" then
 		ct.aoespam[85222] = true	-- Light of Dawn
 		ct.aoespam[82327] = true	-- Holy Radiance
 		ct.aoespam[86452] = true	-- Holy Radiance (Hot)
-		ct.aoespam[105996] = true	-- Essence of Dreams
-		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
-		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
-		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
 		-- Damager spells
 		ct.aoespam[81297] = true	-- Consecration
 		ct.aoespam[2812] = true		-- Holy Wrath
@@ -105,6 +118,20 @@ elseif T.class == "PALADIN" then
 		ct.aoespam[101423] = true	-- Seal of Righteousness
 		ct.aoespam[88263] = true	-- Hammer of the Righteous
 		ct.aoespam[31935] = true	-- Avenger's Shield
+		-- Item spells
+		ct.aoespam[105996] = true	-- Essence of Dreams
+		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
+		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
+		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
+		ct.aoespam[109822] = true	-- Nick of Time (LFR)
+		ct.aoespam[108000] = true	-- Nick of Time (Normal)
+		ct.aoespam[109825] = true	-- Nick of Time (Heroic)
+		ct.aoespam[109752] = true	-- Whirling Maw (LFR)
+		ct.aoespam[107997] = true	-- Whirling Maw (Normal)
+		ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
+		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
+		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
+		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
 	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
@@ -120,10 +147,8 @@ elseif T.class == "PRIEST" then
 		ct.aoespam[23455] = true	-- Holy Nova (Healing Effect)
 		ct.aoespam[33110] = true	-- Prayer of Mending
 		ct.aoespam[63544] = true	-- Divine Touch
-		ct.aoespam[105996] = true	-- Essence of Dreams
-		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
-		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
-		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
+		ct.aoespam[81751] = true	-- Atonement (Non-crit)
+		ct.aoespam[94472] = true	-- Atonement (Crit)
 		-- Damager spells
 		ct.aoespam[47666] = true	-- Penance (Damage Effect)
 		ct.aoespam[15237] = true	-- Holy Nova (Damage Effect)
@@ -134,6 +159,21 @@ elseif T.class == "PRIEST" then
 		ct.aoespam[15407] = true	-- Mind Flay
 		ct.aoespam[49821] = true	-- Mind Seer
 		ct.aoespam[87532] = true	-- Shadowy Apparition
+		ct.aoespam[14914] = true	-- Holy Fire
+		-- Item spells
+		ct.aoespam[105996] = true	-- Essence of Dreams
+		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
+		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
+		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
+		ct.aoespam[109822] = true	-- Nick of Time (LFR)
+		ct.aoespam[108000] = true	-- Nick of Time (Normal)
+		ct.aoespam[109825] = true	-- Nick of Time (Heroic)
+		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
+		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
+		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
+		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
+		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
+		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
 	end
 	if C.combattext.healing then
 		ct.healfilter[2944] = true	-- Devouring Plague (Healing)
@@ -147,10 +187,6 @@ elseif T.class == "SHAMAN" then
 		ct.aoespam[1064] = true		-- Chain Heal
 		ct.aoespam[51945] = true	-- Earthliving
 		ct.aoespam[61295] = true	-- Riptide (HoT and instant heal)
-		ct.aoespam[105996] = true	-- Essence of Dreams
-		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
-		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
-		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
 		-- Damager spells
 		ct.aoespam[421] = true		-- Chain Lightning
 		ct.aoespam[45297] = true	-- Chain Lightning (Mastery proc)
@@ -160,6 +196,20 @@ elseif T.class == "SHAMAN" then
 		ct.aoespam[8187] = true		-- Magma Totem
 		ct.aoespam[8050] = true		-- Flame Shock
 		ct.aoespam[25504] = true	-- Windfury
+		-- Item spells
+		ct.aoespam[105996] = true	-- Essence of Dreams
+		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
+		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
+		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
+		ct.aoespam[109822] = true	-- Nick of Time (LFR)
+		ct.aoespam[108000] = true	-- Nick of Time (Normal)
+		ct.aoespam[109825] = true	-- Nick of Time (Heroic)
+		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
+		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
+		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
+		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
+		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
+		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
@@ -180,6 +230,13 @@ elseif T.class == "MAGE" then
 		ct.aoespam[82739] = true	-- Flame Orb
 		ct.aoespam[83619] = true	-- Fire Power
 		ct.aoespam[120] = true		-- Cone of Cold
+		-- Item spells
+		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
+		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
+		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
+		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
+		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
+		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
 	end
 elseif T.class == "WARRIOR" then
 	if C.combattext.merge_aoe_spam then
@@ -191,6 +248,10 @@ elseif T.class == "WARRIOR" then
 		ct.aoespam[12721] = true	-- Deep Wounds
 		ct.aoespam[50622] = true	-- Bladestorm
 		ct.aoespam[52174] = true	-- Heroic Leap
+		-- Item spells
+		ct.aoespam[109752] = true	-- Whirling Maw (LFR)
+		ct.aoespam[107997] = true	-- Whirling Maw (Normal)
+		ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
 	end
 	if C.combattext.healing then
 		ct.healfilter[23880] = true	-- Bloodthirst
@@ -205,6 +266,10 @@ elseif T.class == "HUNTER" then
 		ct.aoespam[1978] = true		-- Serpent Sting
 		ct.aoespam[13812] = true	-- Explosive Trap
 		ct.aoespam[53301] = true	-- Explosive Shot
+		-- Item spells
+		ct.aoespam[109856] = true	-- Speaking of Rage (LFR)
+		ct.aoespam[107821] = true	-- Speaking of Rage (Normal)
+		ct.aoespam[109859] = true	-- Speaking of Rage (Heroic)
 	end
 elseif T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
@@ -231,8 +296,12 @@ elseif T.class == "DEATHKNIGHT" then
 		ct.aoespam[66217] = 56815	-- Rune Strike OH
 		ct.aoespam[45902] = true	-- Blood Strike MH
 		ct.aoespam[66215] = 45902	-- Blood Strike OH
+		-- Item spells
+		ct.aoespam[109752] = true	-- Whirling Maw (LFR)
+		ct.aoespam[107997] = true	-- Whirling Maw (Normal)
+		ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
 	end
-elseif T.class == "ROGUE"then
+elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
 		ct.aoespam[51723] = true	-- Fan of Knives
 		ct.aoespam[2818] = true		-- Deadly Poison
@@ -240,32 +309,7 @@ elseif T.class == "ROGUE"then
 	end
 end
 
--- Dragon Soul Items config
-if C.combattext.merge_aoe_spam and C.combattext.vremennaya_zaglushka then
-	-- Windward Heart (Healer Trinket)
-	ct.aoespam[109822] = true	-- Nick of Time (LFR)
-	ct.aoespam[108000] = true	-- Nick of Time (Normal)
-	ct.aoespam[109825] = true	-- Nick of Time (Heroic)
-	-- Bone-Link Fetish (Melee DPS Trinket)
-	ct.aoespam[109752] = true	-- Whirling Maw (LFR)
-	ct.aoespam[107997] = true	-- Whirling Maw (Normal)
-	ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
-	-- Cunning of the Cruel (Caster DPS Trinket)
-	ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
-	ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
-	ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
-	-- Maw of the Dragonlord (Healer MH Mace)
-	ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
-	ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
-	ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
-	-- Rathrak, the Poisonous Mind (Caster DPS MH Dagger)
-	ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
-	ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
-	ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
-	-- Vishanka, Jaws of the Earth (Physical DPS Bow)
-	ct.aoespam[109856] = true	-- Speaking of Rage (LFR)
-	ct.aoespam[107821] = true	-- Speaking of Rage (Normal)
-	ct.aoespam[109859] = true	-- Speaking of Rage (Heroic)
+if C.combattext.merge_aoe_spam then
 	-- Dragon Soul - The Madness of Deathwing
 	ct.aoespam[109609] = true	-- Spellweave
 	ct.aoespam[109610] = true	-- Spellweave
