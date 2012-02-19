@@ -116,7 +116,7 @@ local function LoadSkin()
 	GuildXPBar.progress:SetTexture(C.media.texture)
 	GuildXPBar:CreateBackdrop("Overlay")
 	GuildXPBar.backdrop:Point("TOPLEFT", GuildXPBar.progress, "TOPLEFT", -2, 2)
-	GuildXPBar.backdrop:Point("BOTTOMRIGHT", GuildXPBar, "BOTTOMRIGHT", -2, 0)
+	GuildXPBar.backdrop:Point("BOTTOMRIGHT", GuildXPBar, "BOTTOMRIGHT", 0, 0)
 
 	GuildLatestPerkButton:StripTextures()
 	GuildLatestPerkButtonIconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
