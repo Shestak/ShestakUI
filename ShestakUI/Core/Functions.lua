@@ -1147,6 +1147,7 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 	if Castbar.interrupt and UnitCanAttack("player", unit) then
 		Castbar:SetStatusBarColor(1, 0, 0)
 		Castbar.bg:SetVertexColor(1, 0, 0, 0.25)
+		Castbar.Overlay:SetBackdropBorderColor(1, 0, 0)
 	else
 		if unit == "pet" or unit == "vehicle" then
 			local _, class = UnitClass("player")
@@ -1169,6 +1170,7 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 				Castbar.bg:SetVertexColor(r, g, b, 0.25)
 			end
 		end
+		Castbar.Overlay:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
 end
 
@@ -1212,6 +1214,7 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 	if Castbar.interrupt and UnitCanAttack("player", unit) then
 		Castbar:SetStatusBarColor(1, 0, 0)
 		Castbar.bg:SetVertexColor(1, 0, 0, 0.25)
+		Castbar.Overlay:SetBackdropBorderColor(1, 0, 0)
 	else
 		if unit == "pet" or unit == "vehicle" then
 			local _, class = UnitClass("player")
@@ -1234,6 +1237,7 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 				Castbar.bg:SetVertexColor(r, g, b, 0.25)
 			end
 		end
+		Castbar.Overlay:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
 end
 
