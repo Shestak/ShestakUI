@@ -75,6 +75,7 @@
 	<Script file="Modules\Maps\WorldMap.lua"/>
 
 	<Script file="Modules\Misc\Panels.lua"/>
+	<Script file="Modules\Misc\Author.lua"/>
 	<Script file="Modules\Misc\AutoButton.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
 	<Script file="Modules\Misc\SelfBuffs.lua"/>
