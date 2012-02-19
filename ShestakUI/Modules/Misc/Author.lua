@@ -1,0 +1,74 @@
+﻿local T, C, L = unpack(select(2, ...))
+if T.author ~= true then return end
+
+----------------------------------------------------------------------------------------
+--	Force other warning
+----------------------------------------------------------------------------------------
+local ForceWarning = CreateFrame("Frame")
+ForceWarning:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
+ForceWarning:RegisterEvent("LFG_PROPOSAL_SHOW")
+ForceWarning:RegisterEvent("PARTY_INVITE_REQUEST")
+ForceWarning:SetScript("OnEvent", function(self, event)
+	if event == "UPDATE_BATTLEFIELD_STATUS" and StaticPopup_Visible("CONFIRM_BATTLEFIELD_ENTRY") then
+		PlaySound("ReadyCheck", "Master")
+	elseif event == "LFG_PROPOSAL_SHOW" or event == "PARTY_INVITE_REQUEST" then
+		PlaySound("ReadyCheck", "Master")
+	end
+end)
+
+----------------------------------------------------------------------------------------
+--	Auto SetFilter for AchievementUI
+----------------------------------------------------------------------------------------
+local AchFilter = CreateFrame("Frame")
+AchFilter:RegisterEvent("ADDON_LOADED")
+AchFilter:SetScript("OnEvent", function(self, event, addon)
+	if addon == "Blizzard_AchievementUI" then
+		AchievementFrame_SetFilter(3)
+	end
+end)
+
+----------------------------------------------------------------------------------------
+--	Force quit
+----------------------------------------------------------------------------------------
+local CloseWoW = CreateFrame("Frame")
+CloseWoW:RegisterEvent("CHAT_MSG_SYSTEM")
+CloseWoW:SetScript("OnEvent", function(self, event, msg)
+	if event == "CHAT_MSG_SYSTEM" then
+		if msg and msg == IDLE_MESSAGE then
+			ForceQuit()
+		end
+	end
+end)
+
+----------------------------------------------------------------------------------------
+--	Delete Replace Enchant popup
+----------------------------------------------------------------------------------------
+local EnchantPopup = CreateFrame("Frame")
+EnchantPopup:RegisterEvent("REPLACE_ENCHANT")
+EnchantPopup:SetScript("OnEvent", function(...)
+	for i = 1, STATICPOPUP_NUMDIALOGS do
+		local popup = _G["StaticPopup"..i]
+		if popup.which == "REPLACE_ENCHANT" then
+			StaticPopup_OnClick(popup, 1)
+		end
+	end
+end)
+
+----------------------------------------------------------------------------------------
+--	Block damage meter spam(Decount by Tekkub)
+----------------------------------------------------------------------------------------
+local filterstrings = {
+	"^Recount - (.*)$",
+	"%d+%. %S+%s*%d+ %([%d.]+, [%d.]+%%%)",
+	"%d+%. - [%d.]+%%% %S+%s*%d+",
+	"%d+%.%s+[%w%s]+%s+[%d.]+ %([%d.]+%)",
+	"%d+%.%s+%S+%s+[%d.]+",
+}
+
+local function filter(self, event, msg)
+	for _, str in pairs(filterstrings) do if msg:match(str) then return true end end
+end
+
+for _,event in pairs{"CHAT_MSG_YELL", "CHAT_MSG_SAY", "CHAT_MSG_RAID", "CHAT_MSG_PARTY"} do
+	ChatFrame_AddMessageEventFilter(event, filter)
+end
