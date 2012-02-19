@@ -46,6 +46,7 @@
 	<Script file="Core\Disable.lua"/>
 	<Script file="Core\Commands.lua"/>
 	<Script file="Core\WTF.lua"/>
+	<Script file="Core\Kill.lua"/>
 	<Script file="Core\Temp.lua"/>
 
 	<Script file="Modules\Blizzard\Vehicle.lua"/>
@@ -54,7 +55,6 @@
 	<Script file="Modules\Blizzard\Symbols.lua"/>
 	<Script file="Modules\Blizzard\Errors.lua"/>
 	<Script file="Modules\Blizzard\Achievements.lua"/>
-	<Script file="Modules\Blizzard\Kill.lua"/>
 	<Script file="Modules\Blizzard\Durability.lua"/>
 	<Script file="Modules\Blizzard\Mail.lua"/>
 	<Script file="Modules\Blizzard\FriendList.lua"/>
