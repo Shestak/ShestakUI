@@ -222,7 +222,7 @@ LPSTAT_CONFIG = {
 
 LPSTAT_PROFILES = {
 	MAGE = { 
-		Stats = { 
+		Stats = {
 			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
 			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
 		}
@@ -252,7 +252,7 @@ LPSTAT_PROFILES = {
 		}
 	},
 	WARRIOR = {
-		Stats = { 
+		Stats = {
 			spec1fmt = class"Armor: ".."[armor]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
 			spec2fmt = class"AP: ".."[ap]"..class" Crit: ".."[meleecrit]%"..class" Hit: ".."[meleehit]%",
 		}
@@ -261,6 +261,12 @@ LPSTAT_PROFILES = {
 		Stats = {
 			spec1fmt = class"Mastery: ".."[mastery]"..class" Armor: ".."[armor]"..class" Avoid: ".."[avoidance]%",
 			spec2fmt = class"Mastery: ".."[mastery]"..class" Hit: ".."[meleehit]%"..class" Haste: ".."[meleehaste]%",
+		}
+	},
+	PALADIN = {
+		Stats = {
+			spec1fmt = class"Mastery: ".."[mastery]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
+			spec1fmt = class"Mastery: ".."[mastery]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
 		}
 	},
 }
