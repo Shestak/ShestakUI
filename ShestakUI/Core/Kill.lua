@@ -70,8 +70,6 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	TalentMicroButtonAlert:Kill()
 
 	if C.chat.enable then
-		SetCVar("WholeChatWindowClickable", 0)
-		SetCVar("ConversationMode", "inline")
 		InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
 		InterfaceOptionsSocialPanelConversationMode:Kill()
 	end
@@ -89,14 +87,10 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
 		InterfaceOptionsBuffsPanelBuffDurations:Kill()
 		InterfaceOptionsBuffsPanelShowAllEnemyDebuffs:Kill()
-		InterfaceOptionsUnitFramePanelPartyBackground:Kill()
+		InterfaceOptionsCombatPanelTargetOfTarget:Kill()
+		InterfaceOptionsCombatPanelTOTDropDown:Kill()
+		InterfaceOptionsCombatPanelEnemyCastBarsOnPortrait:Kill()
 		PartyMemberBackground:Kill()
-
-		if C.unitframe.show_arena then
-			InterfaceOptionsUnitFramePanelArenaEnemyFrames:Kill()
-			InterfaceOptionsUnitFramePanelArenaEnemyCastBar:Kill()
-			InterfaceOptionsUnitFramePanelArenaEnemyPets:Kill()
-		end
 	end
 
 	if C.actionbar.enable then
@@ -107,8 +101,15 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsActionBarsPanelAlwaysShowActionBars:Kill()
 	end
 
-	if C.nameplate.enable == true and C.nameplate.enhance_threat == true then
-		InterfaceOptionsDisplayPanelAggroWarningDisplay:Kill()
+	if C.nameplate.enable then
+		InterfaceOptionsCombatPanelEnemyCastBarsOnNameplates:Kill()
+		if C.nameplate.enhance_threat == true then
+			InterfaceOptionsDisplayPanelAggroWarningDisplay:Kill()
+		end
+	end
+
+	if C.minimap.enable then
+		InterfaceOptionsDisplayPanelRotateMinimap:Kill()
 	end
 
 	if C.combattext.enable then
