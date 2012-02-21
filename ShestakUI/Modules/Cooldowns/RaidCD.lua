@@ -5,6 +5,7 @@ if not C.raidcooldown.enable == true then return end
 --	Raid cooldowns(alRaidCD by Allez)
 ----------------------------------------------------------------------------------------
 local show = {
+	none = false,	-- Only for test
 	raid = C.raidcooldown.show_inraid,
 	party = C.raidcooldown.show_inparty,
 	arena = C.raidcooldown.show_inarena,
@@ -144,11 +145,17 @@ local CreateBar = function()
 end
 
 local StartTimer = function(name, spellId)
-	local bar = CreateBar()
 	local spell, rank, icon = GetSpellInfo(spellId)
+	for _, v in pairs(bars) do
+		if v.name == name and v.spell == spell then
+			return
+		end
+	end
+	local bar = CreateBar()
 	bar.endTime = GetTime() + T.raid_spells[spellId]
 	bar.startTime = GetTime()
 	bar.left:SetText(name.." - "..spell)
+	bar.name = name
 	bar.right:SetText(FormatTime(T.raid_spells[spellId]))
 	if C.raidcooldown.show_icon == true then
 		bar.icon:SetNormalTexture(icon)
@@ -176,24 +183,10 @@ end
 local OnEvent = function(self, event, ...)
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
 		local _, eventType, _, _, sourceName, sourceFlags = ...
-
 		if band(sourceFlags, filter) == 0 then return end
-		local spellId = select(12, ...)
-
-		if T.raid_spells[spellId] and show[select(2, IsInInstance())] then
-			if eventType == "SPELL_RESURRECT" and not spellId == 61999 then
-				if spellId == 95750 then spellId = 6203 end
-				StartTimer(sourceName, spellId)
-			elseif eventType == "SPELL_RESURRECT" and spellId == 20484 then
-				StartTimer(sourceName, spellId)
-			elseif eventType == "SPELL_AURA_APPLIED" then
-				if spellId == 20707 then
-					local _, class = UnitClass(sourceName)
-					if class == "WARLOCK" then
-						StartTimer(sourceName, spellId)
-					end
-				end
-			elseif eventType == "SPELL_CAST_SUCCESS" then
+		if eventType == "SPELL_RESURRECT" or eventType == "SPELL_CAST_SUCCESS" or eventType == "SPELL_AURA_APPLIED" then
+			local spellId = select(12, ...)
+			if T.raid_spells[spellId] and show[select(2, IsInInstance())] then
 				StartTimer(sourceName, spellId)
 			end
 		end
