@@ -141,6 +141,7 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -147}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
 	C["position"].top_panel = {"BOTTOM", UIParent, "BOTTOM", 0, 7}
+	C["position"].raid_buffs = {"BOTTOMLEFT", Minimap, "TOPLEFT", -2, 5}
 	C["position"].raid_utility = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 211}
 	C["position"].bottom_bars = {"BOTTOM", UIParent, "BOTTOM", 0, 41}
 	C["position"].stance_bar = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21}
@@ -171,6 +172,7 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["tooltip"].who_targetting = true
 	C["chat"].background = true
 	C["chat"].filter = false
+	C["minimap"].size = 129
 	C["loot"].auto_greed = false
 	C["nameplate"].show_castbar_name = true
 	C["nameplate"].class_icons = true
