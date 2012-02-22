@@ -784,7 +784,7 @@ Filger_Spells = {
 			Interval = 3,
 			Mode = "BAR",
 			setPoint = {unpack(Filger_Settings.pve_cc)},
-			
+
 			-- Polymorph
 			{ spellID = 118, size = 25, barWidth = 191, unitId = "focus", caster = "all", filter = "DEBUFF" },
 		},
@@ -2145,7 +2145,7 @@ Filger_Spells = {
 			-- Unstable Affliction
 			{ spellID = 30108, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Haunt
-			{ spellID = 48181, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },	
+			{ spellID = 48181, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Seed of Corruption
 			{ spellID = 27243, size = 25, barWidth = 188, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},

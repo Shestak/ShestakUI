@@ -5,7 +5,6 @@ if not C.raidcooldown.enable == true then return end
 --	Raid cooldowns(alRaidCD by Allez)
 ----------------------------------------------------------------------------------------
 local show = {
-	none = false,	-- Only for test
 	raid = C.raidcooldown.show_inraid,
 	party = C.raidcooldown.show_inparty,
 	arena = C.raidcooldown.show_inarena,
