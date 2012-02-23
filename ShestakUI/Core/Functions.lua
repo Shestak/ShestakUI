@@ -1145,11 +1145,11 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 	end
 
 	if Castbar.interrupt and UnitCanAttack("player", unit) then
-		Castbar:SetStatusBarColor(1, 0, 0)
-		Castbar.bg:SetVertexColor(1, 0, 0, 0.25)
-		Castbar.Overlay:SetBackdropBorderColor(1, 0, 0)
+		Castbar:SetStatusBarColor(0.8, 0, 0)
+		Castbar.bg:SetVertexColor(0.8, 0, 0, 0.25)
+		Castbar.Overlay:SetBackdropBorderColor(0.8, 0, 0)
 		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
-			Castbar.Button:SetBackdropBorderColor(1, 0, 0)
+			Castbar.Button:SetBackdropBorderColor(0.8, 0, 0)
 		end
 	else
 		if unit == "pet" or unit == "vehicle" then
@@ -1218,11 +1218,11 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 	end
 
 	if Castbar.interrupt and UnitCanAttack("player", unit) then
-		Castbar:SetStatusBarColor(1, 0, 0)
-		Castbar.bg:SetVertexColor(1, 0, 0, 0.25)
-		Castbar.Overlay:SetBackdropBorderColor(1, 0, 0)
+		Castbar:SetStatusBarColor(0.8, 0, 0)
+		Castbar.bg:SetVertexColor(0.8, 0, 0, 0.25)
+		Castbar.Overlay:SetBackdropBorderColor(0.8, 0, 0)
 		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
-			Castbar.Button:SetBackdropBorderColor(1, 0, 0)
+			Castbar.Button:SetBackdropBorderColor(0.8, 0, 0)
 		end
 	else
 		if unit == "pet" or unit == "vehicle" then
