@@ -286,7 +286,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["raidframe"].plugins_debuffhighlight_icon = true
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].raid_groups = 8
-	C["toppanel"].height = 120
 	C["error"].hide = false
 	C["font"].stats_font = C.media.pixel_font
 	C["font"].stats_font_style = "OUTLINE"
