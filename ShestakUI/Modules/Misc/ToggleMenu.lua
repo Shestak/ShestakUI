@@ -1,4 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
+if C.minimap.toggle_menu ~= true then return end
 
 ----------------------------------------------------------------------------------------
 -- Toggle menu(by Hydra, Foof, Gorlasch and HyPeRnIcS)
