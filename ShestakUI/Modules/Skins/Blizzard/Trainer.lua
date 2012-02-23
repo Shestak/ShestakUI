@@ -7,6 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	local StripAllTextures = {
 		"ClassTrainerFrame",
+		"ClassTrainerFrameInset",
 		"ClassTrainerScrollFrameScrollChild",
 		"ClassTrainerFrameSkillStepButton",
 		"ClassTrainerFrameBottomInset"
@@ -17,7 +18,6 @@ local function LoadSkin()
 	}
 
 	local KillTextures = {
-		"ClassTrainerFrameInset",
 		"ClassTrainerFramePortrait",
 		"ClassTrainerScrollFrameScrollBarBG",
 		"ClassTrainerScrollFrameScrollBarTop",
@@ -83,6 +83,9 @@ local function LoadSkin()
 
 	ClassTrainerFrameBottomInset:ClearAllPoints()
 	ClassTrainerFrameBottomInset:Point("TOPLEFT", ClassTrainerFrameSkillStepButton.backdrop, "BOTTOMLEFT", -9, 0)
+
+	ClassTrainerFrameInset:ClearAllPoints()
+	ClassTrainerFrameInset:SetPoint("TOPLEFT", ClassTrainerFrame.backdrop, "TOPLEFT", 4, -55)
 end
 
 T.SkinFuncs["Blizzard_TrainerUI"] = LoadSkin
