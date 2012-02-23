@@ -1,10 +1,11 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if C.misc.auto_buy_reagents ~= true then return end
+if C.misc.auto_buy_reagents ~= true or T.level ~= MAX_PLAYER_LEVEL then return end
 
 ----------------------------------------------------------------------------------------
---	Auto buy reagents(Квилайт, кредитсы не забывай в коде оставлять/прописывать ;))
+--	Auto buy reagents
 ----------------------------------------------------------------------------------------
 local reagents = T.AutoBuy
+local ItemIDPattern = "item:(%d+)"
 
 local function FormatGold(amount)
 	local gold, silver, copper = floor(amount * 0.0001), floor(mod(amount * 0.01, 100)), floor(mod(amount, 100))
@@ -21,7 +22,7 @@ local function CheckReagents(CheckID, RequiredAmount)
 	for bag = 0, NUM_BAG_FRAMES do
 		for slot = 1, GetContainerNumSlots(bag) do
 			ItemLink = GetContainerItemLink(bag, slot)
-			if ItemLink and CheckID == tonumber(select(3, string.find(ItemLink, "item:(%d+)"))) then
+			if ItemLink and CheckID == tonumber(select(3, string.find(ItemLink, ItemIDPattern))) then
 				stack = select(2, GetContainerItemInfo(bag, slot))
 				total = total + stack
 			end
@@ -34,15 +35,15 @@ end
 local function BuyReagents(reagents)
 	local ItemLink, ItemID, stock, price, stack, quantity, fullstack
 
-	for MerchantIDIndex = 1, GetMerchantNumItems() do
-		ItemLink = GetMerchantItemLink(MerchantIDIndex)
+	for i = 1, GetMerchantNumItems() do
+		ItemLink = GetMerchantItemLink(i)
 
 		if ItemLink then
-			ItemID = tonumber(select(3, string.find(ItemLink, "item:(%d+)")))
+			ItemID = tonumber(select(3, string.find(ItemLink, ItemIDPattern)))
 		end
 
 		if ItemID and reagents[ItemID] then
-			price, stack, stock = select(3, GetMerchantItemInfo(MerchantIDIndex))
+			price, stack, stock = select(3, GetMerchantItemInfo(i))
 			quantity = CheckReagents(ItemID, reagents[ItemID])
 
 			if quantity > 0 then
@@ -60,12 +61,12 @@ local function BuyReagents(reagents)
 				fullstack = select(8, GetItemInfo(ItemID))
 
 				while quantity > fullstack do
-					BuyMerchantItem(MerchantIDIndex, fullstack)
+					BuyMerchantItem(i, fullstack)
 					quantity = quantity - fullstack
 				end
 
 				if quantity > 0 then
-					BuyMerchantItem(MerchantIDIndex, quantity)
+					BuyMerchantItem(i, quantity)
 					if ItemLink then
 						print("|cff66C6FF"..ITEM_PURCHASED_COLON.." "..ItemLink.." - "..FormatGold(subtotal)..".")
 					end
@@ -80,7 +81,9 @@ end
 local f = CreateFrame("Frame")
 f:RegisterEvent("MERCHANT_SHOW")
 f:SetScript("OnEvent", function(self, event)
-	if event == "MERCHANT_SHOW" and reagents[T.class] and T.level == MAX_PLAYER_LEVEL and not (IsAltKeyDown() or IsShiftKeyDown()) then
-		BuyReagents(reagents[T.class])
+	if event == "MERCHANT_SHOW" and not (IsAltKeyDown() or IsShiftKeyDown()) then
+		if reagents[T.class] then
+			BuyReagents(reagents[T.class])
+		end
 	end
 end)
