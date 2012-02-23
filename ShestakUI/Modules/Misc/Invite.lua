@@ -50,27 +50,28 @@ end
 ----------------------------------------------------------------------------------------
 --	Auto invite by whisper(by Tukz)
 ----------------------------------------------------------------------------------------
-local ainvenabled = false
+if not SavedOptionsPerChar then SavedOptionsPerChar = {} end
+if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
 local ainvkeyword = C.misc.invite_keyword
 
 local autoinvite = CreateFrame("Frame")
 autoinvite:RegisterEvent("CHAT_MSG_WHISPER")
 autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2)
-	if ((not UnitExists("party1") or IsPartyLeader("player") or IsRaidOfficer("player") or IsRaidLeader("player")) and arg1:lower():match(ainvkeyword)) and ainvenabled == true then
+	if ((not UnitExists("party1") or IsPartyLeader("player") or IsRaidOfficer("player") or IsRaidLeader("player")) and arg1:lower():match(ainvkeyword)) and SavedOptionsPerChar.AutoInvite == true then
 		InviteUnit(arg2)
 	end
 end)
 
 SlashCmdList.AUTOINVITE = function(msg, editbox)
 	if msg == "off" then
-		ainvenabled = false
+		SavedOptionsPerChar.AutoInvite = false
 		print("|cffffff00"..L_INVITE_DISABLE..".")
 	elseif msg == "" then
-		ainvenabled = true
+		SavedOptionsPerChar.AutoInvite = true
 		print("|cffffff00"..L_INVITE_ENABLE..ainvkeyword..".")
 		ainvkeyword = C.misc.invite_keyword
 	else
-		ainvenabled = true
+		SavedOptionsPerChar.AutoInvite = true
 		print("|cffffff00"..L_INVITE_ENABLE..msg..".")
 		ainvkeyword = msg
 	end
