@@ -72,7 +72,7 @@ function Update(self)
 			if bar.icon then
 				bar.icon = _G[bar.icon:GetName()]
 			else
-				bar.icon = bar:CreateTexture("$parentIcon", "ARTWORK")
+				bar.icon = bar:CreateTexture("$parentIcon", "BORDER")
 				bar.icon:Point("TOPLEFT", 2, -2)
 				bar.icon:Point("BOTTOMRIGHT", -2, 2)
 				bar.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -82,14 +82,15 @@ function Update(self)
 				bar.cooldown = CreateFrame("Cooldown", "$parentCD", bar, "CooldownFrameTemplate")
 				bar.cooldown:SetAllPoints(bar.icon)
 				bar.cooldown:SetReverse()
+				bar.cooldown:SetFrameLevel(2)
 
 				if bar.count then
 					bar.count = _G[bar.count:GetName()]
 				else
-					bar.count = bar.cooldown:CreateFontString("$parentCount", "OVERLAY")
+					bar.count = bar:CreateFontString("$parentCount", "OVERLAY")
 					bar.count:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
 					bar.count:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
-					bar.count:Point("BOTTOMRIGHT", 3, -4)
+					bar.count:Point("BOTTOMRIGHT", 1, -1)
 					bar.count:SetJustifyH("CENTER")
 				end
 			else
@@ -132,7 +133,7 @@ function Update(self)
 				if bar.time then
 					bar.time = _G[bar.time:GetName()]
 				else
-					bar.time = bar.statusbar:CreateFontString("$parentTime", "ARTWORK")
+					bar.time = bar.statusbar:CreateFontString("$parentTime", "OVERLAY")
 					bar.time:SetFont(C.font.filger_font, C.font.filger_font_size, C.font.filger_font_style)
 					bar.time:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
 					bar.time:Point("RIGHT", bar.statusbar, 0, 0)
@@ -141,17 +142,17 @@ function Update(self)
 				if bar.count then
 					bar.count = _G[bar.count:GetName()]
 				else
-					bar.count = bar:CreateFontString("$parentCount", "ARTWORK")
+					bar.count = bar:CreateFontString("$parentCount", "OVERLAY")
 					bar.count:SetFont(C.font.filger_font, C.font.filger_font_size, C.font.filger_font_style)
 					bar.count:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
-					bar.count:Point("BOTTOMRIGHT", 1, 1)
+					bar.count:Point("BOTTOMRIGHT", 1, 0)
 					bar.count:SetJustifyH("CENTER")
 				end
 
 				if bar.spellname then
 					bar.spellname = _G[bar.spellname:GetName()]
 				else
-					bar.spellname = bar.statusbar:CreateFontString("$parentSpellName", "ARTWORK")
+					bar.spellname = bar.statusbar:CreateFontString("$parentSpellName", "OVERLAY")
 					bar.spellname:SetFont(C.font.filger_font, C.font.filger_font_size, C.font.filger_font_style)
 					bar.spellname:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
 					bar.spellname:Point("LEFT", bar.statusbar, 2, 0)
@@ -172,7 +173,6 @@ function Update(self)
 		if value.duration > 0 then
 			if self.Mode == "ICON" then
 				CooldownFrame_SetTimer(bar.cooldown, value.data.filter == "CD" and value.expirationTime or (value.expirationTime - value.duration), value.duration, 1)
-				bar.count:SetParent(bar.cooldown)
 				if value.data.filter == "CD" then
 					bar.expirationTime = value.expirationTime
 					bar.duration = value.duration
@@ -189,7 +189,6 @@ function Update(self)
 		else
 			if self.Mode == "ICON" then
 				bar.cooldown:Hide()
-				bar.count:SetParent(bar)
 			else
 				bar.statusbar:SetMinMaxValues(0, 1)
 				bar.statusbar:SetValue(1)
