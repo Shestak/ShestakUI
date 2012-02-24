@@ -178,6 +178,7 @@ L_GUI_MINIMAP_ENABLE = "開啟迷你地圖增強"
 L_GUI_MINIMAP_ICON = "追蹤類型圖示"
 L_GUI_MINIMAP_SIZE = "迷你地圖大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "戰鬥中隱藏迷你地圖"
+L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
 L_GUI_MINIMAP_MERGE_MENUS = "在小地圖上側菜單中整合主要功能和插件按鈕(禁用更簡潔一點)"
 
 -- Map options

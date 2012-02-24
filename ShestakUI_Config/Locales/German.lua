@@ -178,6 +178,7 @@ L_GUI_MINIMAP_ENABLE = "Minimap aktivieren"
 L_GUI_MINIMAP_ICON = "Aufspüren-Symbol"
 L_GUI_MINIMAP_SIZE = "Kartengröße"
 L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
+L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
 L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu"
 
 -- Map options
