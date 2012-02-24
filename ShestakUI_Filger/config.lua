@@ -3012,8 +3012,6 @@ Filger_Spells = {
 			{ spellID = 51514, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Earthgrab
 			{ spellID = 64695, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Freeze
-			{ spellID = 63685, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Stoneclaw Stun
 			{ spellID = 39796, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Earthbind
