@@ -15,49 +15,11 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	if C.unitframe.enable and (addon == "ShestakUI_DPS" or addon == "ShestakUI_Heal") then
 		InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
 		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
-
-		local function KillRaidFrame()
-			CompactRaidFrameManager:Kill()
-			local shown = CompactRaidFrameManager_GetSetting("IsShown")
-			if shown and shown ~= "0" then
-				CompactRaidFrameManager_SetSetting("IsShown", "0")
-			end
-		end
-
-		hooksecurefunc("CompactRaidFrameManager_UpdateShown", function()
-			KillRaidFrame()
-		end)
-		CompactRaidFrameManager:HookScript("OnShow", KillRaidFrame)
-		CompactRaidFrameContainer:UnregisterAllEvents()
-
-		KillRaidFrame()
-
-		local function KillPartyFrame()
-			CompactPartyFrame:SetScale(0.00001)
-			CompactPartyFrame:SetAlpha(0)
-
-			for i = 1, MEMBERS_PER_RAID_GROUP do
-				local name = "CompactPartyFrameMember"..i
-				local frame = _G[name]
-				frame:UnregisterAllEvents()
-			end
-		end
-
-		for i = 1, MAX_PARTY_MEMBERS do
-			local name = "PartyMemberFrame"..i
-			local frame = _G[name]
-
-			frame:Kill()
-
-			_G[name.."HealthBar"]:UnregisterAllEvents()
-			_G[name.."ManaBar"]:UnregisterAllEvents()
-		end
-
-		if CompactPartyFrame then
-			KillPartyFrame()
-		elseif CompactPartyFrame_Generate then
-			hooksecurefunc("CompactPartyFrame_Generate", KillPartyFrame)
-		end
+		CompactRaidFrameManager:Kill()
+		CompactRaidFrameContainer:Kill()
+		CompactUnitFrame_UpateVisible = T.dummy
+		CompactUnitFrame_UpdateAll = T.dummy
+		CompactUnitFrameProfiles_ApplyProfile = T.dummy
 	end
 
 	if addon ~= "ShestakUI" then return end
