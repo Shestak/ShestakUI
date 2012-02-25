@@ -13,13 +13,14 @@
 ## Website: http://shestak.org
 
 Locales\English.lua
-Locales\Russian.lua
-Locales\German.lua
-Locales\French.lua
-Locales\Spanish.lua
-Locales\Korean.lua
 Locales\Chinese.lua
-Locales\Taiwan.lua
+Locales\French.lua
+Locales\German.lua
+## Locales\Italian.lua
+Locales\Korean.lua
 Locales\Portuguese.lua
+Locales\Russian.lua
+Locales\Spanish.lua
+Locales\Taiwan.lua
 
 ShestakUI_Config.lua
