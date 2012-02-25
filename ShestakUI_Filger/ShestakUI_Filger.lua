@@ -79,10 +79,14 @@ function Update(self)
 			end
 
 			if self.Mode == "ICON" then
-				bar.cooldown = CreateFrame("Cooldown", "$parentCD", bar, "CooldownFrameTemplate")
-				bar.cooldown:SetAllPoints(bar.icon)
-				bar.cooldown:SetReverse()
-				bar.cooldown:SetFrameLevel(2)
+				if bar.cooldown then
+					bar.cooldown = _G[bar.cooldown:GetName()]
+				else
+					bar.cooldown = CreateFrame("Cooldown", "$parentCD", bar, "CooldownFrameTemplate")
+					bar.cooldown:SetAllPoints(bar.icon)
+					bar.cooldown:SetReverse()
+					bar.cooldown:SetFrameLevel(2)
+				end
 
 				if bar.count then
 					bar.count = _G[bar.count:GetName()]
