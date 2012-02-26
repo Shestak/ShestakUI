@@ -537,8 +537,6 @@ Filger_Spells = {
 			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
-			-- Fervor
-			{ spellID = 82726, size = 30, filter = "CD" },
 			-- Silencing Shot
 			{ spellID = 34490, size = 30, filter = "CD" },
 			-- Explosive Shot
@@ -575,6 +573,8 @@ Filger_Spells = {
 			{ spellID = 19577, size = 30, filter = "CD" },
 			-- Rapid Fire
 			{ spellID = 3045, size = 30, filter = "CD" },
+			-- Fervor
+			{ spellID = 82726, size = 30, filter = "CD" },
 			-- Readiness
 			{ spellID = 23989, size = 30, filter = "CD" },
 			-- Chimera Shot
@@ -3006,8 +3006,6 @@ Filger_Spells = {
 			{ spellID = 31125, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Deadly Throw
 			{ spellID = 26679, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Vendetta
-			{ spellID = 79140, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Waylay
 			{ spellID = 51693, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Crippling Poison
