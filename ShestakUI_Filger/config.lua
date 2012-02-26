@@ -537,6 +537,8 @@ Filger_Spells = {
 			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Fervor
+			{ spellID = 82726, size = 30, filter = "CD" },
 			-- Silencing Shot
 			{ spellID = 34490, size = 30, filter = "CD" },
 			-- Explosive Shot
@@ -1454,8 +1456,6 @@ Filger_Spells = {
 			{ spellID = 85696, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Holy Shield
 			{ spellID = 20925, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Aura Mastery
-			{ spellID = 31821, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Other
 			-- Saint's Vigor (T13 Holy 2P Bonus)
@@ -2776,30 +2776,38 @@ Filger_Spells = {
 			{ spellID = 1038, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Hand of Sacrifice
 			{ spellID = 6940, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Aura Mastery
+			{ spellID = 31821, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Pain Suppression
 			{ spellID = 33206, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Guardian Spirit
 			{ spellID = 47788, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Power Infusion
 			{ spellID = 10060, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Innervate
-			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Unholy Frenzy
 			{ spellID = 49016, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Tricks of the Trade
 			{ spellID = 57933, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Slow Fall
-			{ spellID = 130, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Levitate
-			{ spellID = 1706, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
-			-- Rallying Cry
-			{ spellID = 97462, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Divine Guardian
 			{ spellID = 70940, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Mass Regeneration
+			{ spellID = 105737, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Vampiric Brood
+			{ spellID = 105588, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Shield Fortress
+			--{ spellID = 105914, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Rallying Cry
+			{ spellID = 97462, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Stampeding Roar
 			{ spellID = 77764, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 			-- Grounding Totem
 			{ spellID = 8178, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Innervate
+			{ spellID = 29166, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Slow Fall
+			{ spellID = 130, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
+			-- Levitate
+			{ spellID = 1706, size = 37, unitId = "player", caster = "all", filter = "BUFF" },
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
