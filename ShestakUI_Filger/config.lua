@@ -889,22 +889,30 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Last Stand
-			{ spellID = 12975, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Shield Wall
 			{ spellID = 871, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Spell Reflection
-			{ spellID = 23920, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Blood Reserve
-			{ spellID = 64568, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Berserker Rage
-			{ spellID = 18499, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Slaughter
-			{ spellID = 84586, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Victorious
-			{ spellID = 32216, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Last Stand
+			{ spellID = 12975, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Enraged Regeneration
 			{ spellID = 55694, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Shield Block
+			{ spellID = 2565, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Spell Reflection
+			{ spellID = 23920, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Berserker Rage
+			{ spellID = 18499, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Death Wish
+			{ spellID = 12292, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Recklesness
+			{ spellID = 1719, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Deadly Calm
+			{ spellID = 85730, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Inner Rage
+			{ spellID = 1134, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Sweeping Strikes
+			{ spellID = 12328, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Victorious
+			{ spellID = 32216, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -913,22 +921,16 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = {unpack(Filger_Settings.player_proc_icon)},
 
-			-- Sudden Death
-			{ spellID = 52437, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Bloodsurge
 			{ spellID = 46916, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Sword and Board
 			{ spellID = 50227, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Thunderstruck
-			{ spellID = 80980, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Blood Drinker
-			{ spellID = 70855, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 87096, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Taste for Blood
-			{ spellID = 56638, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Chaos Bane
-			{ spellID = 73422, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 60503, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Battle trance
-			{ spellID = 85742, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 12964, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Incite
 			{ spellID = 86627, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Enrage
@@ -939,12 +941,8 @@ Filger_Spells = {
 			{ spellID = 90806, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 			-- Rude Interruption
 			{ spellID = 86663, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Death Wish
-			{ spellID = 12292, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Recklesness
-			{ spellID = 1719, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
-			-- Inner Rage
-			{ spellID = 1134, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
+			-- Slaughter
+			{ spellID = 84586, size = 37, unitId = "player", caster = "player", filter = "BUFF" },
 
 			-- Trinkets
 			-- General
@@ -1030,6 +1028,8 @@ Filger_Spells = {
 			Mode = "ICON",
 			setPoint = {unpack(Filger_Settings.target_debuff_icon)},
 
+			-- Colossus Smash
+			{ spellID = 86346, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Hamstring
 			{ spellID = 1715, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Rend
@@ -1037,25 +1037,21 @@ Filger_Spells = {
 			-- Sunder Armor
 			{ spellID = 7386, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Thunder Clap
-			{ spellID = 6343, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 6343, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Infected Wounds
 			{ spellID = 48484, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Frost Fever
 			{ spellID = 55095, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Demoralizing Shout
-			{ spellID = 1160, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 1160, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Demoralizing Roar
 			{ spellID = 99, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Curse of Weakness
 			{ spellID = 702, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
-			-- Mortal Strike
-			{ spellID = 12294, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 			-- Judgements of the Just
 			{ spellID = 68055, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Vindication
 			{ spellID = 26017, size = 37, unitId = "target", caster = "all", filter = "DEBUFF" },
-			-- Colossus Smash
-			{ spellID = 86346, size = 37, unitId = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -1065,34 +1061,36 @@ Filger_Spells = {
 			setPoint = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
-			-- Intervene
-			{ spellID = 3411, size = 30, filter = "CD" },
-			-- Shield Slam
-			{ spellID = 23922, size = 30, filter = "CD" },
-			-- Whirlwind
-			{ spellID = 1680, size = 30, filter = "CD" },
-			-- Mortal Strike
-			{ spellID = 12294, size = 30, filter = "CD" },
-			-- Thunder Clap
-			{ spellID = 6343, size = 30, filter = "CD" },
-			-- Revenge
-			{ spellID = 6572, size = 30, filter = "CD" },
-			-- Overpower
-			{ spellID = 7384, size = 30, filter = "CD" },
 			-- Pummel
 			{ spellID = 6552, size = 30, filter = "CD" },
+			-- Shield Slam
+			{ spellID = 23922, size = 30, filter = "CD" },
+			-- Shockwave
+			{ spellID = 46968, size = 30, filter = "CD" },
+			-- Thunder Clap
+			{ spellID = 6343, size = 30, filter = "CD" },
 			-- Charge
 			{ spellID = 100, size = 30, filter = "CD" },
+			-- Intervene
+			{ spellID = 3411, size = 30, filter = "CD" },
 			-- Intercept
 			{ spellID = 20252, size = 30, filter = "CD" },
 			-- Spell Reflection
 			{ spellID = 23920, size = 30, filter = "CD" },
+			-- Concussion Blow
+			{ spellID = 12809, size = 30, filter = "CD" },
 			-- Shield Block
 			{ spellID = 2565, size = 30, filter = "CD" },
+			-- Enraged Regeneration
+			{ spellID = 55694, size = 30, filter = "CD" },
+			-- Colossus Smash
+			{ spellID = 86346, size = 30, filter = "CD" },
 			-- Commanding Shout
 			{ spellID = 469, size = 30, filter = "CD" },
 			-- Raging Blow
 			{ spellID = 85288, size = 30, filter = "CD" },
+			-- Whirlwind
+			{ spellID = 1680, size = 30, filter = "CD" },
 			-- Taunt
 			{ spellID = 355, size = 30, filter = "CD" },
 			-- Berserker Rage
@@ -1101,10 +1099,12 @@ Filger_Spells = {
 			{ spellID = 1134, size = 30, filter = "CD" },
 			-- Heroic Leap
 			{ spellID = 6544, size = 30, filter = "CD" },
-			-- Enraged Regeneration
-			{ spellID = 55694, size = 30, filter = "CD" },
 			-- Rallying Cry
 			{ spellID = 97462, size = 30, filter = "CD" },
+			-- Disarm
+			{ spellID = 676, size = 30, filter = "CD" },
+			-- Throwdown
+			{ spellID = 85388, size = 30, filter = "CD" },
 
 			-- Racials
 			-- Every Man for Himself (Human)
