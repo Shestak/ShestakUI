@@ -3066,12 +3066,8 @@ Filger_Spells = {
 			{ spellID = 676, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Silenced (Gag Order)
 			{ spellID = 18498, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Charge Stun
-			{ spellID = 7922, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Concussion Blow
 			{ spellID = 12809, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
-			-- Intercept
-			{ spellID = 20253, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Shockwave
 			{ spellID = 46968, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Improved Hamstring
@@ -3438,12 +3434,8 @@ Filger_Spells = {
 			{ spellID = 89766, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Throwdown
 			{ spellID = 85388, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
-			-- Charge Stun
-			{ spellID = 7922, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Concussion Blow
 			{ spellID = 12809, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
-			-- Intercept
-			{ spellID = 20253, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- Shockwave
 			{ spellID = 46968, size = 60, unitId = "target", caster = "all", filter = "DEBUFF" },
 			-- War Stomp (Tauren)
