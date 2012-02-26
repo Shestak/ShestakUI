@@ -586,7 +586,7 @@ Filger_Spells = {
 			-- Venom Web spray (exotic)
 			{ spellID = 54706, size = 30, filter = "CD" },
 			-- Web Wrap (exotic)
-			{ spellID = 4167, size = 30, filter = "CD" },
+			{ spellID = 96201, size = 30, filter = "CD" },
 
 			-- Racials
 			-- Every Man for Himself (Human)
