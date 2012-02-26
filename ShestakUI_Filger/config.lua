@@ -559,8 +559,6 @@ Filger_Spells = {
 			{ spellID = 13809, size = 30, filter = "CD" },
 			-- Wyvern Sting
 			{ spellID = 19386, size = 30, filter = "CD" },
-			-- Scare Beast
-			{ spellID = 1513, size = 30, filter = "CD" },
 			-- Master's Call
 			{ spellID = 53271, size = 30, filter = "CD" },
 			-- Deterrence
