@@ -211,7 +211,7 @@ local function Local(o)
 	if o == "UIConfigminimaptracking_icon" then o = L_GUI_MINIMAP_ICON end
 	if o == "UIConfigminimapsize" then o = L_GUI_MINIMAP_SIZE end
 	if o == "UIConfigminimaphide_combat" then o = L_GUI_MINIMAP_HIDE_COMBAT end
-	if o == "UIConfigminimapmerge_menus" then o = L_GUI_MINIMAP_TOGGLE_MENU end
+	if o == "UIConfigminimaptoggle_menu" then o = L_GUI_MINIMAP_TOGGLE_MENU end
 	if o == "UIConfigminimapmerge_menus" then o = L_GUI_MINIMAP_MERGE_MENUS end
 
 	-- Map options

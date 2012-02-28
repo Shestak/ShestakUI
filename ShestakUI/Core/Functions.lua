@@ -1264,7 +1264,7 @@ end
 local FormatTime = function(s)
 	local day, hour, minute = 86400, 3600, 60
 	if s >= day then
-		return format("%dd", floor(s /day + 0.5)), s % day
+		return format("%dd", floor(s / day + 0.5)), s % day
 	elseif s >= hour then
 		return format("%dh", floor(s / hour + 0.5)), s % hour
 	elseif s >= minute then
