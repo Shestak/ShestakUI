@@ -186,26 +186,28 @@ local function Shared(self, unit)
 			self:Tag(self.Level, "[cpoints] [Threat] [DiffColor][level][shortclassification]")
 		elseif unit == "focus" or unit == "pet" then
 			self.Info:Point("LEFT", self.Health, "LEFT", 2, 0)
-			self:Tag(self.Info, "[GetNameColor][NameMedium]")
+			if unit == "pet" then
+				self:Tag(self.Info, "[PetNameColor][NameMedium]")
+			else
+				self:Tag(self.Info, "[GetNameColor][NameMedium]")
+			end
 		elseif unit == "arenatarget" then
 			self.Info:Point("CENTER", self.Health, "CENTER", 0, 0)
 			self:Tag(self.Info, "[GetNameColor][NameArena]")
 		elseif unit == "arena" then
 			if C.unitframe.arena_on_right == true then
 				self.Info:Point("RIGHT", self.Health, "RIGHT", 0, 0)
-				self:Tag(self.Info, "[GetNameColor][NameMedium]")
 			else
 				self.Info:Point("LEFT", self.Health, "LEFT", 2, 0)
-				self:Tag(self.Info, "[GetNameColor][NameMedium]")
 			end
+			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		elseif unit == "boss" then
 			if C.unitframe.boss_on_right == true then
 				self.Info:Point("RIGHT", self.Health, "RIGHT", 0, 0)
-				self:Tag(self.Info, "[GetNameColor][NameMedium]")
 			else
 				self.Info:Point("LEFT", self.Health, "LEFT", 2, 0)
-				self:Tag(self.Info, "[GetNameColor][NameMedium]")
 			end
+			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		else
 			self.Info:Point("RIGHT", self.Health, "RIGHT", 0, 0)
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
