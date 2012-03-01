@@ -50,6 +50,7 @@ if T.author == true then
 	C["general"].custom_lagtolerance = true
 	C["misc"].auto_quest = true
 	C["misc"].auto_accept_invite = true
+	C["misc"].auto_buy_reagents  = true
 	C["misc"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
 	C["misc"].hide_bg_spam = true
