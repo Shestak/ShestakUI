@@ -3202,6 +3202,8 @@ Filger_Spells = {
 			{ spellID = 100460, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 
 			-- Dragon Soul
+			-- Frostflake (Hagara the Stormbinder)
+			{ spellID = 109325, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Disrupting Shadows (Zon'ozz)
 			{ spellID = 103434, size = 60, unitId = "player", caster = "all", filter = "DEBUFF" },
 			-- Fading Light (Ultraxion)
