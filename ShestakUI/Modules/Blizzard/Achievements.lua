@@ -18,13 +18,13 @@ function T.AchievementMove(self, event, ...)
 			aFrame:ClearAllPoints()
 			if pos == "TOP" then
 				if previousFrame and previousFrame:IsShown() then
-					aFrame:SetPoint("TOP", previousFrame, "BOTTOM", 0, -10)
+					aFrame:SetPoint("TOP", previousFrame, "BOTTOM", 0, 3)
 				else
 					aFrame:SetPoint("TOP", AchievementAnchor, "TOP")
 				end
 			else
 				if previousFrame and previousFrame:IsShown() then
-					aFrame:SetPoint("BOTTOM", previousFrame, "TOP", 0, 10)
+					aFrame:SetPoint("BOTTOM", previousFrame, "TOP", 0, -3)
 				else
 					aFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
 				end
@@ -41,51 +41,55 @@ hooksecurefunc("DungeonCompletionAlertFrame_FixAnchors", function()
 		if aFrame and aFrame:IsShown() then
 			DungeonCompletionAlertFrame1:ClearAllPoints()
 			if pos == "TOP" then
-				DungeonCompletionAlertFrame1:SetPoint("TOP", aFrame, "BOTTOM", 0, -10)
+				DungeonCompletionAlertFrame1:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
 			else
-				DungeonCompletionAlertFrame1:SetPoint("BOTTOM", aFrame, "TOP", 0, 10)
+				DungeonCompletionAlertFrame1:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
 			end
 			return
 		end
 
 		DungeonCompletionAlertFrame1:ClearAllPoints()
 		if pos == "TOP" then
-			DungeonCompletionAlertFrame1:SetPoint("TOP", AchievementAnchor, "BOTTOM")
+			DungeonCompletionAlertFrame1:SetPoint("TOP", AchievementAnchor, "TOP")
 		else
-			DungeonCompletionAlertFrame1:SetPoint("BOTTOM", AchievementAnchor, "TOP")
+			DungeonCompletionAlertFrame1:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
 		end
 	end
 end)
 
 hooksecurefunc("GuildChallengeAlertFrame_FixAnchors", function()
 	for i = MAX_ACHIEVEMENT_ALERTS, 1, -1 do
+		local aFrame = _G["AchievementAlertFrame"..i]
 		local dFrame = _G["DungeonCompletionAlertFrame1"]
-		if dFrame and dFrame:IsShown() then
+		if (aFrame and aFrame:IsShown()) and not (dFrame and dFrame:IsShown()) then
 			GuildChallengeAlertFrame:ClearAllPoints()
 			if pos == "TOP" then
-				GuildChallengeAlertFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, -10)
+				GuildChallengeAlertFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
 			else
-				GuildChallengeAlertFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, 10)
+				GuildChallengeAlertFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+			end
+			return
+		elseif dFrame and dFrame:IsShown() then
+			GuildChallengeAlertFrame:ClearAllPoints()
+			if pos == "TOP" then
+				GuildChallengeAlertFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
+			else
+				GuildChallengeAlertFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -3)
 			end
 			return
 		end
 
 		GuildChallengeAlertFrame:ClearAllPoints()
 		if pos == "TOP" then
-			GuildChallengeAlertFrame:SetPoint("TOP", AchievementAnchor, "BOTTOM")
+			GuildChallengeAlertFrame:SetPoint("TOP", AchievementAnchor, "TOP")
 		else
-			GuildChallengeAlertFrame:SetPoint("BOTTOM", AchievementAnchor, "TOP")
+			GuildChallengeAlertFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
 		end
 	end
 end)
 
-local initialize = false
 function T.PostAchievementMove(frame)
 	local point = select(1, frame:GetPoint())
-
-	if not AchievementFrame and initialize == true then
-		AchievementFrame_LoadUI()
-	end
 
 	if string.find(point, "TOP") or point == "CENTER" or point == "LEFT" or point == "RIGHT" then
 		pos = "TOP"
@@ -93,11 +97,7 @@ function T.PostAchievementMove(frame)
 		pos = "BOTTOM"
 	end
 
-	if initialize == true then
-		AchievementAlertFrame_ShowAlert(50)
-	end
 	T.AchievementMove()
-	initialize = true
 end
 
 local frame = CreateFrame("Frame")
