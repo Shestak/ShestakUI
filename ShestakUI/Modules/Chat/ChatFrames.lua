@@ -16,6 +16,8 @@ local AddMessage = function(self, text, ...)
 		size = math.floor(size + 3)
 		text = text:gsub("|h%[(%d+)%. .-%]|h", "|h[%1]|h")
 		text = text:gsub("(|T[^:]+:)(%d+:*%d*)", ("%%1%d:%1$d"):format(size))
+
+		--text = text:gsub("|Hplayer:"..UnitName("player")..":", "|TInterface\\ChatFrame\\UI-ChatIcon-Blizz:12:20:0:0:32:16:4:28:0:16|t|Hplayer:"..UnitName("player")..":")
 	end
 	return origs[self](self, text, ...)
 end
