@@ -201,8 +201,6 @@ Filger_Spells = {
 			{spellID = 97008, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jaws of Defeat (Manacost, Use)
 			{spellID = 96908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jaws of Defeat (Manacost, Proc)
-			{spellID = 96907, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Reflection of the Light (Spell Power, Use)
 			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
@@ -1330,8 +1328,6 @@ Filger_Spells = {
 			{spellID = 97008, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jaws of Defeat (Manacost, Use)
 			{spellID = 96908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jaws of Defeat (Manacost, Proc)
-			{spellID = 96907, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Reflection of the Light (Spell Power, Use)
 			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
@@ -1642,8 +1638,6 @@ Filger_Spells = {
 			{spellID = 97008, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jaws of Defeat (Manacost, Use)
 			{spellID = 96908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jaws of Defeat (Manacost, Proc)
-			{spellID = 96907, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Reflection of the Light (Spell Power, Use)
 			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
@@ -1892,8 +1886,6 @@ Filger_Spells = {
 			{spellID = 97008, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jaws of Defeat (Manacost, Use)
 			{spellID = 96908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jaws of Defeat (Manacost, Proc)
-			{spellID = 96907, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Reflection of the Light (Spell Power, Use)
 			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
