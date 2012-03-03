@@ -291,6 +291,9 @@ elseif T.class == "ROGUE" then
 		ct.aoespam[51723] = true	-- Fan of Knives
 		ct.aoespam[2818] = true		-- Deadly Poison
 		ct.aoespam[8680] = true		-- Instant Poison
+		-- Merging mh/oh strikes
+		ct.aoespam[5374] = true		-- Mutilate
+		ct.aoespam[27576] = 5374	-- Mutilate Off-Hand
 	end
 end
 
