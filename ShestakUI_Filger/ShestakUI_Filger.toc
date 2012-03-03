@@ -3,7 +3,7 @@
 ## Notes: Class timers for ShestakUI
 ## Author: Nils Ruesch
 ## Version: 3.4.3
-## Credits: Affli
+## Credits: Affli, SinaC, Ildyria
 ## RequiredDeps: ShestakUI
 ## X-Curse-Packaged-Version: 3.4.3
 ## X-Curse-Project-Name: ShestakUI

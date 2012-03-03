@@ -2,70 +2,87 @@ local T, C, L = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Filger(by Nils Ruesch, editor Affli)
+--	Filger(by Nils Ruesch, editors Affli/SinaC/Ildyria)
 ----------------------------------------------------------------------------------------
 SpellActivationOverlayFrame:SetFrameStrata("BACKGROUND")
-local class = select(2, UnitClass("player"))
-local active, bars = {}, {}
-local MyUnits = {
-	player = true,
-	vehicle = true,
-	pet = true,
-}
+local Filger = {}
+local MyUnits = {player = true, vehicle = true, pet = true}
 
-local function OnUpdate(self, elapsed)
-	local time = self.filter == "CD" and (self.expirationTime + self.duration - GetTime()) or (self.expirationTime - GetTime())
+function Filger:UnitBuff(unitID, inSpellID, spn, absID)
+	if absID then
+		for i = 1, 40, 1 do
+			local name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable, shouldConsolidate, spellID = UnitBuff(unitID, i)
+			if not name then break end
+			if inSpellID == spellID then
+				return name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable, shouldConsolidate, spellID
+			end
+		end
+	else
+		return UnitBuff(unitID, spn)
+	end
+	return nil
+end
+
+function Filger:UnitDebuff(unitID, inSpellID, spn, absID)
+	if absID then
+		for i = 1, 40, 1 do
+			local name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable, shouldConsolidate, spellID = UnitDebuff(unitID, i)
+			if not name then break end
+			if inSpellID == spellID then
+				return name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable, shouldConsolidate, spellID
+			end
+		end
+	else
+		return UnitDebuff(unitID, spn)
+	end
+	return nil
+end
+
+function Filger:UpdateCD()
+	local time = self.value.start + self.value.duration - GetTime()
+
 	if self:GetParent().Mode == "BAR" then
 		self.statusbar:SetValue(time)
 		if time <= 60 then
 			self.time:SetFormattedText("%.1f", time)
 		else
-			self.time:SetFormattedText("%d:%.2d", time/60, time%60)
+			self.time:SetFormattedText("%d:%.2d", time / 60, time % 60)
 		end
-	end
-	if (time < 0 and self.filter == "CD") then
-		local id = self:GetParent().Id
-		for index, value in ipairs(active[id]) do
-			local spn = GetFilgerData(value.data)
-			if self.spellName == spn then
-				tremove(active[id], index)
-				break
-			end
+	else
+		if time < 0 then
+			local frame = self:GetParent()
+			frame.actives[self.activeIndex] = nil
+			self:SetScript("OnUpdate", nil)
+			Filger.DisplayActives(frame)
 		end
-		self:SetScript("OnUpdate", nil)
-		Update(self:GetParent())
 	end
 end
 
-function Update(self)
+function Filger:DisplayActives()
+	if not self.actives then return end
+	if not self.bars then self.bars = {} end
 	local id = self.Id
-	if not bars[id] then
-		bars[id] = {}
-	end
-	for index, value in ipairs(bars[id]) do
-		value:Hide()
-	end
-	local bar
-	for index, value in ipairs(active[id]) do
-		bar = bars[id][index]
+	local index = 1
+	local previous = nil
+
+	for _, _ in pairs(self.actives) do
+		local bar = self.bars[index]
 		if not bar then
 			bar = CreateFrame("Frame", "FilgerAnchor"..id.."Frame"..index, self)
-			bar:Width(value.data.size)
-			bar:Height(value.data.size)
 			bar:SetScale(1)
 			bar:SetTemplate("Default")
 
 			if index == 1 then
-				bar:Point(unpack(self.setPoint))
+				bar:Point(unpack(self.Position))
 			else
 				if self.Direction == "UP" then
-					bar:Point("BOTTOM", bars[id][index-1], "TOP", 0, self.Interval)
+					bar:Point("BOTTOM", previous, "TOP", 0, self.Interval)
 				elseif self.Direction == "RIGHT" then
-					bar:Point("LEFT", bars[id][index-1], "RIGHT", self.Mode == "ICON" and self.Interval or value.data.barWidth + self.Interval, 0)
+					bar:Point("LEFT", previous, "RIGHT", self.Mode == "ICON" and self.Interval or (self.BarWidth + self.Interval + 7), 0)
 				elseif self.Direction == "LEFT" then
-					bar:Point("RIGHT", bars[id][index-1], "LEFT", self.Mode == "ICON" and -self.Interval or -(value.data.barWidth + self.Interval), 0)
+					bar:Point("RIGHT", previous, "LEFT", self.Mode == "ICON" and -self.Interval or -(self.BarWidth + self.Interval + 7), 0)
 				else
-					bar:Point("TOP", bars[id][index-1], "BOTTOM", 0, -self.Interval)
+					bar:Point("TOP", previous, "BOTTOM", 0, -self.Interval)
 				end
 			end
 
@@ -102,8 +119,8 @@ function Update(self)
 					bar.statusbar = _G[bar.statusbar:GetName()]
 				else
 					bar.statusbar = CreateFrame("StatusBar", "$parentStatusBar", bar)
-					bar.statusbar:Width(value.data.barWidth - 2)
-					bar.statusbar:Height(value.data.size - 10)
+					bar.statusbar:Width(self.BarWidth)
+					bar.statusbar:Height(self.IconSize - 10)
 					bar.statusbar:SetStatusBarTexture(C.media.texture)
 					bar.statusbar:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1)
 					if self.IconSide == "LEFT" then
@@ -141,6 +158,7 @@ function Update(self)
 					bar.time:SetFont(C.font.filger_font, C.font.filger_font_size, C.font.filger_font_style)
 					bar.time:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
 					bar.time:Point("RIGHT", bar.statusbar, 0, 0)
+					bar.time:SetJustifyH("RIGHT")
 				end
 
 				if bar.count then
@@ -164,31 +182,42 @@ function Update(self)
 					bar.spellname:SetJustifyH("LEFT")
 				end
 			end
-			tinsert(bars[id], bar)
+			bar.spellID = 0
+			self.bars[index] = bar
 		end
+		previous = bar
+		index = index + 1
+	end
 
-		bar.spellName = value.data.displayName
-
-		bar.icon:SetTexture(value.icon)
-		bar.count:SetText(value.count > 1 and value.count or "")
+	index = 1
+	for activeIndex, value in pairs(self.actives) do
+		local bar = self.bars[index]
+		bar.spellName = GetSpellInfo(value.spid)
 		if self.Mode == "BAR" then
-			bar.spellname:SetText(value.data.displayName)
+			bar.spellname:SetText(bar.spellName)
 		end
-		if value.duration > 0 then
+		bar.icon:SetTexture(value.icon)
+		if value.count and value.count > 1 then
+			bar.count:SetText(value.count)
+			bar.count:Show()
+		else
+			bar.count:Hide()
+		end
+		if value.duration and value.duration > 0 then
 			if self.Mode == "ICON" then
-				CooldownFrame_SetTimer(bar.cooldown, value.data.filter == "CD" and value.expirationTime or (value.expirationTime - value.duration), value.duration, 1)
-				if value.data.filter == "CD" then
-					bar.expirationTime = value.expirationTime
-					bar.duration = value.duration
-					bar.filter = value.data.filter
-					bar:SetScript("OnUpdate", OnUpdate)
+				CooldownFrame_SetTimer(bar.cooldown, value.start, value.duration, 1)
+				if value.data.filter == "CD" or value.data.filter == "ICD" then
+					bar.value = value
+					bar.activeIndex = activeIndex
+					bar:SetScript("OnUpdate", Filger.UpdateCD)
+				else
+					bar:SetScript("OnUpdate", nil)
 				end
+				bar.cooldown:Show()
 			else
 				bar.statusbar:SetMinMaxValues(0, value.duration)
-				bar.expirationTime = value.expirationTime
-				bar.duration = value.duration
-				bar.filter = value.data.filter
-				bar:SetScript("OnUpdate", OnUpdate)
+				bar.value = value
+				bar:SetScript("OnUpdate", Filger.UpdateCD)
 			end
 		else
 			if self.Mode == "ICON" then
@@ -197,190 +226,235 @@ function Update(self)
 				bar.statusbar:SetMinMaxValues(0, 1)
 				bar.statusbar:SetValue(1)
 				bar.time:SetText("")
-				bar:SetScript("OnUpdate", nil)
 			end
+			bar:SetScript("OnUpdate", nil)
 		end
-
+		bar.spellID = value.spid
+		bar:Width(self.IconSize or 37)
+		bar:Height(self.IconSize or 37)
+		bar:SetAlpha(value.data.opacity or 1)
 		bar:Show()
+		index = index + 1
+	end
+
+	for i = index, #self.bars, 1 do
+		local bar = self.bars[i]
+		bar:Hide()
 	end
 end
 
-local function OnEvent(self, event, ...)
-	local unit = ...
-	if ((unit == "target" or unit == "player" or unit == "pet" or unit == "focus") or event == "PLAYER_TARGET_CHANGED" or event == "PLAYER_ENTERING_WORLD" or event == "SPELL_UPDATE_COOLDOWN" ) then
-		local data, name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, slotLink, spn
+function Filger:OnEvent(event, unit)
+	if event == "SPELL_UPDATE_COOLDOWN" or event == "PLAYER_TARGET_CHANGED" or event == "PLAYER_FOCUS_CHANGED" or event == "PLAYER_ENTERING_WORLD" or event == "UNIT_AURA" and (unit == "target" or unit == "player" or unit == "pet" or unit == "focus") then
+		local needUpdate = false
 		local id = self.Id
-		for i = 1, #Filger_Spells[class][id], 1 do
-			data = Filger_Spells[class][id][i]
 
-			name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, filgerId = GetFilgerData(data)
+		for i = 1, #Filger_Spells[T.class][id], 1 do
+			local data = Filger_Spells[T.class][id][i]
+			local found = false
+			local name, icon, count, duration, start, spid
+			spid = 0
 
-			if not active[id] then
-				active[id] = {}
-			end
-
-			for index, value in ipairs(active[id]) do
-				if data.filgerId == value.data.filgerId then
-					tremove(active[id], index)
-				end
-			end
-
-			if data.filter == "CD" then
-				if (name and ((enabled or 0) > 0 and (duration or 0) > 1.5)) then
-					table.insert(active[id], { data = data, icon = icon, count = count, duration = duration, expirationTime = expirationTime or start, displayName = spn, filgerId = filgerId })
-				end
-			elseif data.filter == "BUFF" then
-				spn = GetSpellInfo(data.spellID)
-				name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable = UnitBuff(data.unitId, spn)
-				if (name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster])) then
-					table.insert(active[id], { data = data, icon = icon, count = count, duration = duration, expirationTime = expirationTime or start})
+			if data.filter == "BUFF" then
+				local caster, spn, expirationTime
+				spn, _, icon = GetSpellInfo(data.spellID)
+				name, _, _, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
+				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
+					start = expirationTime - duration
+					found = true
 				end
 			elseif data.filter == "DEBUFF" then
-				spn = GetSpellInfo(data.spellID)
-				name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable = UnitDebuff(data.unitId, spn)
-				if (name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all" ) or MyUnits[caster])) then
-					table.insert(active[id], { data = data, icon = icon, count = count, duration = duration, expirationTime = expirationTime or start})
+				local caster, spn, expirationTime
+				spn, _, icon = GetSpellInfo(data.spellID)
+				name, _, _, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitDebuff(data.unitID, data.spellID, spn, data.absID)
+				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
+					start = expirationTime - duration
+					found = true
+				end
+			elseif data.filter == "CD" then
+				if data.spellID then
+					name, _, icon = GetSpellInfo(data.spellID)
+					if data.absID then
+						start, duration = GetSpellCooldown(data.spellID)
+					else
+						start, duration = GetSpellCooldown(name)
+					end
+					spid = data.spellID
+				elseif data.slotID then
+					spid = data.slotID
+					local slotLink = GetInventoryItemLink("player", data.slotID)
+					if slotLink then
+						name, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
+						start, duration = GetInventoryItemCooldown("player", data.slotID)
+					end
+				end
+				if name and (duration or 0) > 1.5 then
+					found = true
+				end
+			elseif data.filter == "ICD" then
+				if data.trigger == "BUFF" then
+					local spn
+					spn, _, icon = GetSpellInfo(data.spellID)
+					name, _, _, _, _, _, _, _, _, _, spid = Filger:UnitBuff("player", data.spellID, spn, data.absID)
+				elseif data.trigger == "DEBUFF" then
+					local spn
+					spn, _, icon = GetSpellInfo(data.spellID)
+					name, _, _, _, _, _, _, _, _, _, spid = Filger:UnitDebuff("player", data.spellID, spn, data.absID)
+				end
+				if name then
+					if data.slotID then
+						local slotLink = GetInventoryItemLink("player", data.slotID)
+						_, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
+					end
+					duration = data.duration
+					start = GetTime()
+					found = true
+				end
+			end
+
+			if found then
+				if not self.actives then self.actives = {} end
+				if not self.actives[i] then
+					self.actives[i] = {data = data, name = name, icon = icon, count = count, start = start, duration = duration, spid = spid}
+					needUpdate = true
+				else
+					if data.filter ~= "ICD" and (self.actives[i].count ~= count or self.actives[i].start ~= start or self.actives[i].duration ~= duration or self.actives[i].spid ~= spid) then
+						self.actives[i].count = count
+						self.actives[i].start = start
+						self.actives[i].duration = duration
+						self.actives[i].spid = spid
+						needUpdate = true
+					end
+				end
+			else
+				if data.filter ~= "ICD" and self.actives and self.actives[i] then
+					self.actives[i] = nil
+					needUpdate = true
 				end
 			end
 		end
-		Update(self)
-	end
-end
 
-function GetFilgerData(data)
-	local name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, slotLink, spn, filgerId
-
-	if data.spellID then
-		filgerId = data.spellID
-		spn, _, icon = GetSpellInfo(data.spellID)
-		if not spn then
-			print("|cffff0000WARNING: spellID "..data.spellID.." no longer exists! Report this to Shestak.|r")
-		end
-		if data.filter == "BUFF" then
-			name, rank, _, count, debuffType, duration, expirationTime, caster, isStealable = UnitBuff(data.unitId, spn)
-		elseif data.filter == "DEBUFF" then
-			name, rank, _, count, debuffType, duration, expirationTime, caster, isStealable = UnitDebuff(data.unitId, spn)
-		elseif data.filter == "CD" then
-			start, duration, enabled = GetSpellCooldown(spn)
-		end
-	elseif data.slotID then
-		filgerId = data.slotID
-		if data.filter == "CD" then
-			slotLink = GetInventoryItemLink("player", data.slotID)
-
-			if slotLink then
-				spn, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
-				start, duration, enabled = GetInventoryItemCooldown("player", data.slotID)
-			end
-		end
-		count = 0
-		caster = "all"
-	elseif data.itemID then
-		filgerId = data.itemID
-		if data.filter == "CD" then
-			start, duration, enabled = GetItemCooldown(data.itemID)
-			spn, _, _, _, _, _, _, _, _, icon = GetItemInfo(data.itemID)
+		if needUpdate and self.actives then
+			Filger.DisplayActives(self)
 		end
 	end
-
-	if not count then
-		count = 0
-	end
-
-	if not duration then
-		duration = 0
-	end
-
-	if not start then
-		start = 0
-	end
-
-	if not enabled then
-		enabled = 0
-	end
-
-	if not data.displayName then
-		data.displayName = spn
-	end
-
-	if not data.filgerId then
-		data.filgerId = filgerId
-	end
-
-	return spn, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, start, enabled, filgerId
 end
 
 if Filger_Spells and Filger_Spells["ALL"] then
-	if not Filger_Spells[class] then
-		Filger_Spells[class] = {}
+	if not Filger_Spells[T.class] then
+		Filger_Spells[T.class] = {}
 	end
-	local didMerge
-	for i = 1, #Filger_Spells["ALL"], 1 do
-		didMerge = false
-		for j = 1, #Filger_Spells[class], 1 do
-			local baseTable = Filger_Spells[class][j]
-			local addTable = Filger_Spells["ALL"][i]
-			if baseTable["Name"] and addTable["Name"] and baseTable["Name"] == addTable["Name"] then
-				for k = 1, #addTable, 1 do
-					if addTable[k].spellID or addTable[k].slotID or addTable[k].itemID then
-						table.insert(baseTable, addTable[k])
-					end
-				end
 
-				didMerge = true
+	for i = 1, #Filger_Spells["ALL"], 1 do
+		local merge = false
+		local spellListAll = Filger_Spells["ALL"][i]
+		local spellListClass = nil
+		for j = 1, #Filger_Spells[T.class], 1 do
+			spellListClass = Filger_Spells[T.class][j]
+			local mergeAll = spellListAll.Merge or false
+			local mergeClass = spellListClass.Merge or false
+			if spellListClass.Name == spellListAll.Name and (mergeAll or mergeClass) then
+				merge = true
+				break
 			end
 		end
-
-		if not didMerge then
-			table.insert(Filger_Spells[class], Filger_Spells["ALL"][i])
+		if not merge or not spellListClass then
+			table.insert(Filger_Spells[T.class], Filger_Spells["ALL"][i])
+		else
+			for j = 1, #spellListAll, 1 do
+				table.insert(spellListClass, spellListAll[j])
+			end
 		end
 	end
 end
 
-if Filger_Spells and Filger_Spells[class] then
+if Filger_Spells and Filger_Spells[T.class] then
 	for index in pairs(Filger_Spells) do
-		if index ~= class then
+		if index ~= T.class then
 			Filger_Spells[index] = nil
 		end
 	end
-	local data, frame
-	for i = 1, #Filger_Spells[class], 1 do
-		data = Filger_Spells[class][i]
 
-		frame = CreateFrame("Frame", "FilgerAnchor"..i, UIParent)
+	local idx = {}
+	for i = 1, #Filger_Spells[T.class], 1 do
+		local jdx = {}
+		local data = Filger_Spells[T.class][i]
+
+		for j = 1, #data, 1 do
+			local spn
+			if data[j].spellID then
+				spn = GetSpellInfo(data[j].spellID)
+			else
+				local slotLink = GetInventoryItemLink("player", data[j].slotID)
+				if slotLink then
+					spn = GetItemInfo(slotLink)
+				end
+			end
+			if not spn and not data[j].slotID then
+				print("|cffff0000WARNING: spell/slot ID ["..(data[j].spellID or data[j].slotID or "UNKNOWN").."] no longer exists! Report this to Shestak.|r")
+				table.insert(jdx, j)
+			end
+		end
+
+		for _, v in ipairs(jdx) do
+			table.remove(data, v)
+		end
+
+		if #data == 0 then
+			print("|cffff0000WARNING: section ["..data.Name.."] is empty! Report this to Shestak.|r")
+			table.insert(idx, i)
+		end
+	end
+
+	for _, v in ipairs(idx) do
+		table.remove(Filger_Spells[T.class], v)
+	end
+
+	for i = 1, #Filger_Spells[T.class], 1 do
+		local data = Filger_Spells[T.class][i]
+		local frame = CreateFrame("Frame", "FilgerFrame"..i.."_"..data.Name, UIParent)
 		frame.Id = i
 		frame.Name = data.Name
 		frame.Direction = data.Direction or "DOWN"
 		frame.IconSide = data.IconSide or "LEFT"
-		frame.Interval = data.Interval or 3
 		frame.Mode = data.Mode or "ICON"
-		frame.setPoint = data.setPoint or "CENTER"
-		frame:Width(Filger_Spells[class][i][1] and Filger_Spells[class][i][1].size or 100)
-		frame:Height(Filger_Spells[class][i][1] and Filger_Spells[class][i][1].size or 20)
-		frame:Point(unpack(data.setPoint))
+		frame.Interval = data.Interval or 3
+		frame:SetAlpha(data.Alpha or 1)
+		frame.IconSize = data.IconSize or 37
+		frame.BarWidth = data.BarWidth or 186
+		frame.Position = data.Position or "CENTER"
+		frame:Point(unpack(data.Position))
 
-		if Filger_Settings.configmode then
-			for j = 1, #Filger_Spells[class][i], 1 do
-				data = Filger_Spells[class][i][j]
-				if not active[i] then
-					active[i] = {}
+		if Filger_Settings.config_mode then
+			frame.actives = {}
+			for j = 1, math.min(Filger_Settings.max_test_icon, #Filger_Spells[T.class][i]), 1 do
+				local data = Filger_Spells[T.class][i][j]
+				local name, icon
+				if data.spellID then
+					name, _, icon = GetSpellInfo(data.spellID)
+				elseif data.slotID then
+					local slotLink = GetInventoryItemLink("player", data.slotID)
+					if slotLink then
+						name, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
+					end
 				end
-				_, _, spellIcon = GetFilgerData(data)
-				table.insert(active[i], {data = data, icon = spellIcon, count = 9, duration = 0, expirationTime = 0})
+				frame.actives[j] = {data = data, name = name, icon = icon, count = 9, start = 0, duration = 0, spid = data.spellID or data.slotID}
 			end
-			Update(frame)
+			Filger.DisplayActives(frame)
 		else
-			for j = 1, #Filger_Spells[class][i], 1 do
-				data = Filger_Spells[class][i][j]
+			for j = 1, #Filger_Spells[T.class][i], 1 do
+				local data = Filger_Spells[T.class][i][j]
 				if data.filter == "CD" then
 					frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
+					break
+				elseif data.unitID == "focus" then
+					frame:RegisterEvent("PLAYER_FOCUS_CHANGED")
 					break
 				end
 			end
 			frame:RegisterEvent("UNIT_AURA")
 			frame:RegisterEvent("PLAYER_TARGET_CHANGED")
 			frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-			frame:SetScript("OnEvent", OnEvent)
+			frame:SetScript("OnEvent", Filger.OnEvent)
 		end
 	end
 end
