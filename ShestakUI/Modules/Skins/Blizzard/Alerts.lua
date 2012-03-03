@@ -12,11 +12,18 @@ local function LoadSkin()
 			if frame then
 				frame:SetAlpha(1)
 				frame.SetAlpha = T.dummy
+
 				if not frame.backdrop then
 					frame:CreateBackdrop("Transparent")
-					frame.backdrop:Point("TOPLEFT", _G[frame:GetName().."Background"], "TOPLEFT", -2, -6)
-					frame.backdrop:Point("BOTTOMRIGHT", _G[frame:GetName().."Background"], "BOTTOMRIGHT", -2, 6)
+					frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", -2, -6)
+					frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 6)
+				else
+					frame.backdrop:SetBackdropColor(unpack(C.media.overlay_color))
 				end
+
+				frame:HookScript("OnShow", function()
+					frame.backdrop:SetBackdropColor(unpack(C.media.overlay_color))
+				end)
 
 				-- Background
 				_G["AchievementAlertFrame"..i.."Background"]:SetTexture(nil)
@@ -25,7 +32,7 @@ local function LoadSkin()
 
 				-- Text
 				_G["AchievementAlertFrame"..i.."Name"]:SetTextColor(1, 0.8, 0)
-				_G["AchievementAlertFrame"..i.."Name"]:SetFont(C.media.normal_font, 14)
+				_G["AchievementAlertFrame"..i.."Name"]:SetFont(C.media.normal_font, 11)
 				_G["AchievementAlertFrame"..i.."Unlocked"]:SetTextColor(1, 1, 1)
 				_G["AchievementAlertFrame"..i.."Unlocked"]:SetFont(C.media.normal_font, 11)
 
@@ -54,10 +61,11 @@ local function LoadSkin()
 			if frame then
 				frame:SetAlpha(1)
 				frame.SetAlpha = T.dummy
+
 				if not frame.backdrop then
 					frame:CreateBackdrop("Transparent")
-					frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", -2, -6)
-					frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 6)
+					frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", 16, -6)
+					frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -20, 6)
 				end
 
 				-- Background
@@ -69,6 +77,7 @@ local function LoadSkin()
 						end
 					end
 				end
+
 				_G["DungeonCompletionAlertFrame"..i.."Shine"]:Kill()
 				_G["DungeonCompletionAlertFrame"..i.."GlowFrame"]:Kill()
 				_G["DungeonCompletionAlertFrame"..i.."GlowFrame"].glow:Kill()
@@ -76,8 +85,6 @@ local function LoadSkin()
 
 				-- Icon
 				_G["DungeonCompletionAlertFrame"..i.."DungeonTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				_G["DungeonCompletionAlertFrame"..i.."DungeonTexture"]:ClearAllPoints()
-				_G["DungeonCompletionAlertFrame"..i.."DungeonTexture"]:Point("LEFT", frame, 7, 0)
 
 				if not _G["DungeonCompletionAlertFrame"..i.."DungeonTexture"].b then
 					_G["DungeonCompletionAlertFrame"..i.."DungeonTexture"].b = CreateFrame("Frame", nil, _G["DungeonCompletionAlertFrame"..i])
@@ -97,6 +104,7 @@ local function LoadSkin()
 		if frame then
 			frame:SetAlpha(1)
 			frame.SetAlpha = T.dummy
+
 			if not frame.backdrop then
 				frame:CreateBackdrop("Transparent")
 				frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", -2, -6)

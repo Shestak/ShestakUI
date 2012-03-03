@@ -47,6 +47,7 @@ if C.loot.auto_confirm_de == true then
 				end
 				elapsed = 0
 				ConfirmLootSlot(id)
+				self:SetScript("OnUpdate", nil)
 			end)
 		else
 			for i = 1, STATICPOPUP_NUMDIALOGS do
