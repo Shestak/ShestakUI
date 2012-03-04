@@ -2888,9 +2888,10 @@ Filger_Spells = {
 			-- Volcanic Power
 			{spellID = 79476, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Speed from BG
-			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			--{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Speed from Potion
-			{spellID = 2379, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			--{spellID = 2379, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 
 			-- Leeroy Jenkins
 			-- Bloodlust
