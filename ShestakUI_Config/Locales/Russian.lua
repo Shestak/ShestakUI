@@ -18,7 +18,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Приветственное сообщение
 L_GUI_GENERAL_LAG_TOLERANCE = "Автоматическое обновление допустимой задержки"
 
 -- Miscellaneous options
-L_GUI_MISC_AUTOQUEST = "Автоматическое принятие заданий (только на максимальном уровне)"
+L_GUI_MISC_AUTOQUEST = "Автоматическое принятие заданий"
 L_GUI_MISC_AUTODUEL = "Автоматическая отмена дуэлей от игроков"
 L_GUI_MISC_AUTOACCEPT = "Автоматическое принятие приглашений от друзей и гильдии"
 L_GUI_MISC_AUTORESSURECT = "Автоматическое воскрешение на Полях Сражений"
