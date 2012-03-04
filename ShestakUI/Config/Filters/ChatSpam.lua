@@ -49,5 +49,6 @@ T.ChatSpamList = {
 	"rpgdealer.ru",
 	"gamersgold.ru",
 	"wowelfgold.ru",
-	"ArenaMasters.Ru"
+	"ArenaMasters.Ru",
+	"project-razgrom.ru"
 }
