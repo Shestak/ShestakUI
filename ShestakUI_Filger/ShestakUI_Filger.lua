@@ -446,12 +446,10 @@ if Filger_Spells and Filger_Spells[T.class] then
 				if data.filter == "CD" then
 					frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 					break
-				elseif data.unitID == "focus" then
-					frame:RegisterEvent("PLAYER_FOCUS_CHANGED")
-					break
 				end
 			end
 			frame:RegisterEvent("UNIT_AURA")
+			frame:RegisterEvent("PLAYER_FOCUS_CHANGED")
 			frame:RegisterEvent("PLAYER_TARGET_CHANGED")
 			frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 			frame:SetScript("OnEvent", Filger.OnEvent)

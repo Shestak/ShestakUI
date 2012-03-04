@@ -527,7 +527,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 186,
-			Position = {"BOTTOMLEFT", "FilgerTargetBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.target_bar)},
 
 			-- Hunter's Mark
 			{spellID = 1130, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -551,7 +551,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {"BOTTOMLEFT", "FilgerFocusDeBuffBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.pve_cc)},
 
 			-- Wyvern Sting
 			{spellID = 19386, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -824,7 +824,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {"BOTTOMLEFT", "FilgerFocusDeBuffBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.pve_cc)},
 
 			-- Polymorph
 			{spellID = 118, unitID = "focus", caster = "all", filter = "DEBUFF"},
@@ -1387,7 +1387,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 186,
-			Position = {"BOTTOMLEFT", "FilgerTargetBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.target_bar)},
 
 			-- Earth Shield
 			{spellID = 974, unitID = "target", caster = "player", filter = "BUFF"},
@@ -1407,7 +1407,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {"BOTTOMLEFT", "FilgerFocusDeBuffBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.pve_cc)},
 
 			-- Hex
 			{spellID = 51514, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -1927,7 +1927,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 186,
-			Position = {"BOTTOMLEFT", "FilgerTargetBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.target_bar)},
 
 			-- Renew
 			{spellID = 139, unitID = "target", caster = "player", filter = "BUFF"},
@@ -1955,7 +1955,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {"BOTTOMLEFT", "FilgerFocusDeBuffBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.pve_cc)},
 
 			-- Shackle undead
 			{spellID = 9484, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -2216,7 +2216,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 186,
-			Position = {"BOTTOMLEFT", "FilgerTargetBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.target_bar)},
 
 			-- Corruption
 			{spellID = 172, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2242,7 +2242,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {"BOTTOMLEFT", "FilgerFocusDeBuffBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.pve_cc)},
 
 			-- Fear
 			{spellID = 5782, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -2507,7 +2507,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {"BOTTOMLEFT", "FilgerFocusDeBuffBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.pve_cc)},
 
 			-- Blind
 			{spellID = 2094, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -2722,7 +2722,7 @@ Filger_Spells = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 186,
-			Position = {"BOTTOMLEFT", "FilgerTargetBar", "BOTTOMLEFT", 0, 0},
+			Position = {unpack(Filger_Settings.target_bar)},
 
 			-- Blood Plague
 			{spellID = 59879, unitID = "target", caster = "player", filter = "DEBUFF"},
