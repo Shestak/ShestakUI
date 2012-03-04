@@ -186,8 +186,6 @@ Filger_Spells = {
 			{spellID = 91047, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Theralion's Mirror (Mastery, Proc)
 			{spellID = 91024, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
-			{spellID = 96890, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Core of Ripeness (Spirit, Use)
 			{spellID = 91155, unitID = "player", caster = "player", filter = "BUFF"},
@@ -227,8 +225,6 @@ Filger_Spells = {
 			-- Caster Heal
 			-- Darkglow (Spirit)
 			{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Heartsong (Spirit)
-			{spellID = 74224, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -349,9 +345,9 @@ Filger_Spells = {
 			-- Faerie Fire(Feral)
 			{spellID = 16857, filter = "CD"},
 			-- Feral Charge - Bear
-			{spellID = 16979, filter = "CD"},
+			{spellID = 16979, filter = "CD", absID = true},
 			-- Feral Charge - Cat
-			{spellID = 49376, filter = "CD"},
+			{spellID = 49376, filter = "CD", absID = true},
 			-- Bash
 			{spellID = 5211, filter = "CD"},
 			-- Maim
@@ -375,7 +371,7 @@ Filger_Spells = {
 			-- War Stomp (Tauren)
 			{spellID = 20549, filter = "CD"},
 			-- Berserking (Troll)
-			{spellID = 26297, filter = "CD"},
+			{spellID = 26297, filter = "CD", absID = true},
 
 			-- Other
 			-- Gloves
@@ -391,6 +387,8 @@ Filger_Spells = {
 			-- Internal
 			-- Nature's Grace
 			{spellID = 16886, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Lightweave
+			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
@@ -485,8 +483,6 @@ Filger_Spells = {
 
 			-- Enchants
 			-- General
-			-- Hurricane (Haste)
-			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
 			{spellID = 75176, unitID = "player", caster = "player", filter = "BUFF"},
@@ -756,8 +752,6 @@ Filger_Spells = {
 			{spellID = 91047, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Theralion's Mirror (Mastery, Proc)
 			{spellID = 91024, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
-			{spellID = 96890, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
 			{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -922,6 +916,14 @@ Filger_Spells = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Cauterize
+			{spellID = 87023, filter = "ICD", trigger = "DEBUFF", duration = 60},
+			-- Lightweave
+			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Power Torrent
+			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
 	},
 	["WARRIOR"] = {
@@ -1195,6 +1197,10 @@ Filger_Spells = {
 			-- Trinkets
 			{ slotID = 13, filter = "CD"},
 			{ slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Find Weakness (Creche of the Final Dragon)
+			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["SHAMAN"] = {
@@ -1313,8 +1319,6 @@ Filger_Spells = {
 			{spellID = 91047, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Theralion's Mirror (Mastery, Proc)
 			{spellID = 91024, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
-			{spellID = 96890, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Core of Ripeness (Spirit, Use)
 			{spellID = 91155, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1351,8 +1355,6 @@ Filger_Spells = {
 			-- Caster Heal
 			-- Darkglow (Spirit)
 			{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Heartsong (Spirit)
-			{spellID = 74224, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1479,6 +1481,12 @@ Filger_Spells = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Lightweave
+			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Power Torrent
+			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
 	},
 	["PALADIN"] = {
@@ -1664,8 +1672,6 @@ Filger_Spells = {
 			-- Caster Heal
 			-- Darkglow (Spirit)
 			{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Heartsong (Spirit)
-			{spellID = 74224, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1760,6 +1766,14 @@ Filger_Spells = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Find Weakness (Creche of the Final Dragon)
+			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
+			-- Lightweave
+			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Power Torrent
+			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
 	},
 	["PRIEST"] = {
@@ -1871,8 +1885,6 @@ Filger_Spells = {
 			{spellID = 91047, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Theralion's Mirror (Mastery, Proc)
 			{spellID = 91024, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
-			{spellID = 96890, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Core of Ripeness (Spirit, Use)
 			{spellID = 91155, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1903,8 +1915,6 @@ Filger_Spells = {
 			-- Caster Heal
 			-- Darkglow (Spirit)
 			{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Heartsong (Spirit)
-			{spellID = 74224, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2047,6 +2057,12 @@ Filger_Spells = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Lightweave
+			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Power Torrent
+			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
 	},
 	["WARLOCK"] = {
@@ -2155,8 +2171,6 @@ Filger_Spells = {
 			{spellID = 91047, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Theralion's Mirror (Mastery, Proc)
 			{spellID = 91024, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Variable Pulse Lightning Capacitor (Electrical Charge, Proc)
-			{spellID = 96890, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
 			{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -2340,6 +2354,12 @@ Filger_Spells = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Lightweave
+			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Power Torrent
+			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
 	},
 	["ROGUE"] = {
@@ -2820,6 +2840,10 @@ Filger_Spells = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Find Weakness (Creche of the Final Dragon)
+			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["ALL"] = {
@@ -2868,7 +2892,7 @@ Filger_Spells = {
 
 			-- Racial
 			-- Berserking (Troll)
-			{spellID = 26297, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 26297, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Stoneform (Dwarf)
 			{spellID = 65116, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blood Fury (Orc)
