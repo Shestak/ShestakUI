@@ -391,6 +391,8 @@ Filger_Spells = {
 			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["HUNTER"] = {
@@ -649,6 +651,10 @@ Filger_Spells = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["MAGE"] = {
@@ -924,6 +930,8 @@ Filger_Spells = {
 			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["WARRIOR"] = {
@@ -1201,6 +1209,8 @@ Filger_Spells = {
 			-- Internal
 			-- Find Weakness (Creche of the Final Dragon)
 			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["SHAMAN"] = {
@@ -1487,6 +1497,8 @@ Filger_Spells = {
 			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["PALADIN"] = {
@@ -1774,6 +1786,8 @@ Filger_Spells = {
 			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["PRIEST"] = {
@@ -2063,6 +2077,8 @@ Filger_Spells = {
 			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["WARLOCK"] = {
@@ -2360,6 +2376,8 @@ Filger_Spells = {
 			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["ROGUE"] = {
@@ -2607,6 +2625,10 @@ Filger_Spells = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["DEATHKNIGHT"] = {
@@ -2844,6 +2866,8 @@ Filger_Spells = {
 			-- Internal
 			-- Find Weakness (Creche of the Final Dragon)
 			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["ALL"] = {
