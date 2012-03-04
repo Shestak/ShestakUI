@@ -202,7 +202,7 @@ Filger_Spells = {
 			-- Reflection of the Light (Spell Power, Use)
 			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
-			{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
+			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -392,7 +392,7 @@ Filger_Spells = {
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["HUNTER"] = {
@@ -481,7 +481,7 @@ Filger_Spells = {
 			-- Arrow of Time (Haste, Proc)
 			{spellID = 102659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
-			{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
+			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -654,7 +654,7 @@ Filger_Spells = {
 
 			-- Internal
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["MAGE"] = {
@@ -759,7 +759,7 @@ Filger_Spells = {
 			-- Theralion's Mirror (Mastery, Proc)
 			{spellID = 91024, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
-			{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
+			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -931,7 +931,7 @@ Filger_Spells = {
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["WARRIOR"] = {
@@ -1210,7 +1210,7 @@ Filger_Spells = {
 			-- Find Weakness (Creche of the Final Dragon)
 			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["SHAMAN"] = {
@@ -1345,7 +1345,7 @@ Filger_Spells = {
 			-- Reflection of the Light (Spell Power, Use)
 			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
-			{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
+			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -1498,7 +1498,7 @@ Filger_Spells = {
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["PALADIN"] = {
@@ -1661,7 +1661,7 @@ Filger_Spells = {
 			-- Reflection of the Light (Spell Power, Use)
 			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
-			{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
+			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -1787,7 +1787,7 @@ Filger_Spells = {
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["PRIEST"] = {
@@ -1915,7 +1915,7 @@ Filger_Spells = {
 			-- Reflection of the Light (Spell Power, Use)
 			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
-			{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
+			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2078,7 +2078,7 @@ Filger_Spells = {
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["WARLOCK"] = {
@@ -2188,7 +2188,7 @@ Filger_Spells = {
 			-- Theralion's Mirror (Mastery, Proc)
 			{spellID = 91024, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
-			{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
+			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2377,7 +2377,7 @@ Filger_Spells = {
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["ROGUE"] = {
@@ -2473,7 +2473,7 @@ Filger_Spells = {
 			-- Arrow of Time (Haste, Proc)
 			{spellID = 102659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
-			{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
+			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2628,7 +2628,7 @@ Filger_Spells = {
 
 			-- Internal
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["DEATHKNIGHT"] = {
@@ -2867,7 +2867,7 @@ Filger_Spells = {
 			-- Find Weakness (Creche of the Final Dragon)
 			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["ALL"] = {
