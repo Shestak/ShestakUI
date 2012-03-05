@@ -2590,6 +2590,8 @@ Filger_Spells = {
 			{spellID = 14183, filter = "CD"},
 			-- Sprint
 			{spellID = 2983, filter = "CD"},
+			-- Dismantle
+			{spellID = 51722, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
