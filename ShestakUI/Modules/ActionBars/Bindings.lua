@@ -231,11 +231,12 @@ SlashCmdList.MOUSEOVERBIND = function()
 		end
 
 		function bind:Deactivate(save)
+			local which = GetCurrentBindingSet()
 			if save then
-				SaveBindings(2)
+				SaveBindings(which)
 				print("|cffffff00"..L_BIND_SAVED.."|r")
 			else
-				LoadBindings(2)
+				LoadBindings(which)
 				print("|cffffff00"..L_BIND_DISCARD.."|r")
 			end
 			self.enabled = false
