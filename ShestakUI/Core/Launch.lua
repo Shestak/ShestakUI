@@ -33,6 +33,8 @@ local function InstallUI()
 	if T.author == true then
 		SetCVar("taintLog", 1)
 		SetCVar("interactOnLeftClick", 0)
+		SetCVar("displayWorldPVPObjectives", 2)
+		SetCVar("timeMgrUseLocalTime", 1)
 		SetCVar("profanityFilter", 0)
 		SetCVar("Sound_EnableErrorSpeech", 0)
 		SetCVar("Sound_EnableEmoteSounds", 0)
