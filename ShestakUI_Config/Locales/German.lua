@@ -1,7 +1,7 @@
 ﻿if GetLocale() ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for deDE client(Thanks to Baine, chubidu and Vienchen for the translation)
+--	Localization for deDE client(Thanks to Baine, chubidu, Vienchen and Alwa for the translation)
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Standards wiederherstellen"
 L_GUI_SET_SAVED_SETTTINGS = "Einstellungen für jeden Charakter einzeln vornehmen"
@@ -22,7 +22,7 @@ L_GUI_MISC_AUTOQUEST = "Quests automatisch annehmen"
 L_GUI_MISC_AUTODUEL = "Duell automatisch ablehnen"
 L_GUI_MISC_AUTOACCEPT = "Einladungen automatisch annehmen"
 L_GUI_MISC_AUTORESSURECT = "Automatisch im Schlachtfeld wiederbeleben"
-L_GUI_MISC_AUTOBUYREAGENTS = "Auto buy reagents" -- Needs review
+L_GUI_MISC_AUTOBUYREAGENTS = "Automatisch Reagenzien kaufen"
 L_GUI_MISC_MARKING = "Ziele markieren wenn *Umschalttaste* gedürckt wird"
 L_GUI_MISC_INVKEYWORD = "Kurzes Schlüsselwort für Einladungen (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Kamera drehen während du afk bist"
@@ -31,7 +31,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/Gegenstand auto Taste"
 L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
 L_GUI_MISC_ACH_SCREENS = "Speicher einen Screenshot wenn ein Achivment errungen wird."
 L_GUI_MISC_PROFESSION_TABS = "Berufereiter an Handelsfähigkeiten und Handelsfenstern anzeigen"
-L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
+L_GUI_MISC_HIDE_BG_SPAM = "In Schlachtfeldern Bossemotes im Chat unterbinden"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -148,7 +148,7 @@ L_GUI_TOOLTIP_SPELL_ID = "Zauber ID"
 L_GUI_TOOLTIP_RAID_ICON = "Raidsymbol"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Zeige an, wer die Eihneit, die in deiner Gruppe/Raid ist, ins Ziel nimmt"
 L_GUI_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe"
-L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
+L_GUI_TOOLTIP_UNIT_ROLE = "Klassenrolle"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Chat aktivieren"
@@ -211,7 +211,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "Positive Bedrohungsfarbe. Variiert abhängig ob Ta
 L_GUI_NAMEPLATE_NEAR_COLOR = "Verlust oder Zuwachs der Bedrohung farbig kennzeichen"
 L_GUI_NAMEPLATE_BAD_COLOR = "Negative Bedrohungsfarbe. Variiert abhängig ob Tank oder dps/heal"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Zeige Schwächungszauber (Abgekürzte Namen müssen deaktiviert sein)"
-L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs size" -- Needs review
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Größe der Debuffs"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
@@ -283,7 +283,7 @@ L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Aktiviere Eclipseleiste"
 L_GUI_UF_PLUGINS_HOLY_BAR = "Aktivere Heilige Kraft Leiste"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Aktiviere Splitter Leiste"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Runenleiste"
-L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar" -- Needs review
+L_GUI_UF_PLUGINS_NECRO_STRIKE = "Aktiviere Leiste für Nekrotischer Stoß"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Zeige Rachebar an"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Totemleiste"
 L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Totemname"
@@ -317,7 +317,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debufftextur und Symbol hervorheben"
 L_GUI_UF_PLUGINS_AURA_WATCH = "*RAID* Buffüberwachung"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer auf Schlachtzugsdebuff Icons"
 L_GUI_UF_PLUGINS_HEALCOMM = "Leiste für Eingehende Heilung"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle click when the unit is dead (does not work with Clique enabled)" -- Needs review
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Mittel-Klick um automatisch Auferstehung zu zauber wenn das Ziel tot ist (funktioniert nicht wenn Clique installiert ist)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Oberes Panel"

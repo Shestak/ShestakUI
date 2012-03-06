@@ -156,7 +156,6 @@ function Stuffing:SlotUpdate(b)
 		for i = 1, StuffingTT:NumLines() do
 			local txt = _G["StuffingTTTextLeft"..i]
 			if txt then
-				local text = txt:GetText()
 				if string.find(txt:GetText(), ITEM_BIND_QUEST) or string.find(txt:GetText(), ITEM_STARTS_QUEST) then
 					iType = QUEST_ITEM_STRING
 				end
