@@ -108,6 +108,9 @@ local trashParent = CreateFrame("Frame", nil, UIParent)
 local trashButton = {}
 local trashBag = {}
 
+-- For the tooltip frame used to scan item tooltips
+local StuffingTT = nil
+
 -- Mostly from carg.bags_Aurora
 local QUEST_ITEM_STRING = nil
 
@@ -136,11 +139,28 @@ function Stuffing:SlotUpdate(b)
 			b.frame:SetBackdropBorderColor(GetItemQualityColor(b.rarity))
 		end
 
+		if not StuffingTT then
+			StuffingTT = CreateFrame("GameTooltip", "StuffingTT", nil, "GameTooltipTemplate")
+			StuffingTT:Hide()
+		end
+
 		if QUEST_ITEM_STRING == nil then
 			-- GetItemInfo returns a localized item type
-			-- this is to figure out what that string is
 			local t = {GetAuctionItemClasses()}
-			QUEST_ITEM_STRING = t[#t]	-- #t == 12
+			QUEST_ITEM_STRING = t[#t]
+		end
+
+		StuffingTT:SetOwner(WorldFrame, "ANCHOR_NONE")
+		StuffingTT:ClearLines()
+		StuffingTT:SetBagItem(b.bag, b.slot)
+		for i = 1, StuffingTT:NumLines() do
+			local txt = _G["StuffingTTTextLeft"..i]
+			if txt then
+				local text = txt:GetText()
+				if string.find(txt:GetText(), ITEM_BIND_QUEST) or string.find(txt:GetText(), ITEM_STARTS_QUEST) then
+					iType = QUEST_ITEM_STRING
+				end
+			end
 		end
 
 		if iType and iType == QUEST_ITEM_STRING then
