@@ -256,16 +256,16 @@ function Filger:OnEvent(event, unit)
 
 			if data.filter == "BUFF" then
 				local caster, spn, expirationTime
-				spn, _, icon = GetSpellInfo(data.spellID)
-				name, _, _, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
+				spn, _, _ = GetSpellInfo(data.spellID)
+				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
 				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
 					start = expirationTime - duration
 					found = true
 				end
 			elseif data.filter == "DEBUFF" then
 				local caster, spn, expirationTime
-				spn, _, icon = GetSpellInfo(data.spellID)
-				name, _, _, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitDebuff(data.unitID, data.spellID, spn, data.absID)
+				spn, _, _ = GetSpellInfo(data.spellID)
+				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitDebuff(data.unitID, data.spellID, spn, data.absID)
 				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
 					start = expirationTime - duration
 					found = true
@@ -317,11 +317,10 @@ function Filger:OnEvent(event, unit)
 					self.actives[i] = {data = data, name = name, icon = icon, count = count, start = start, duration = duration, spid = spid}
 					needUpdate = true
 				else
-					if data.filter ~= "ICD" and (self.actives[i].count ~= count or self.actives[i].start ~= start or self.actives[i].duration ~= duration or self.actives[i].spid ~= spid) then
+					if data.filter ~= "ICD" and (self.actives[i].count ~= count or self.actives[i].start ~= start or self.actives[i].duration ~= duration) then
 						self.actives[i].count = count
 						self.actives[i].start = start
 						self.actives[i].duration = duration
-						self.actives[i].spid = spid
 						needUpdate = true
 					end
 				end

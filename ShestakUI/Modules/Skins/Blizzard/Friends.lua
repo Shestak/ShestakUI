@@ -36,7 +36,11 @@ local function LoadSkin()
 		"ChannelFrameLeftInset",
 		"LFRQueueFrameListInset",
 		"LFRQueueFrameRoleInset",
-		"LFRQueueFrameCommentInset"
+		"LFRQueueFrameCommentInset",
+		"ScrollOfResurrectionSelectionFrame",
+		"ScrollOfResurrectionSelectionFrameList",
+		"ScrollOfResurrectionFrame",
+		"ScrollOfResurrectionFrameNoteFrame"
 	}
 
 	local KillTextures = {
@@ -77,7 +81,11 @@ local function LoadSkin()
 		"FriendsFriendsCloseButton",
 		"FriendsFriendsSendRequestButton",
 		"BNConversationInviteDialogCancelButton",
-		"BNConversationInviteDialogInviteButton"
+		"BNConversationInviteDialogInviteButton",
+		"ScrollOfResurrectionSelectionFrameAcceptButton",
+		"ScrollOfResurrectionSelectionFrameCancelButton",
+		"ScrollOfResurrectionFrameAcceptButton",
+		"ScrollOfResurrectionFrameCancelButton"
 	}
 
 	for _, button in pairs(buttons) do
@@ -152,21 +160,13 @@ local function LoadSkin()
 	WhoListScrollFrame:ClearAllPoints()
 	WhoListScrollFrame:SetPoint("TOPRIGHT", WhoFrameListInset, -25, 0)
 
-	ScrollOfResurrectionSelectionFrame:StripTextures()
-	ScrollOfResurrectionSelectionFrameList:StripTextures()
 	ScrollOfResurrectionSelectionFrame:SetTemplate("Transparent")
 	ScrollOfResurrectionSelectionFrameList:SetTemplate("Overlay")
-	ScrollOfResurrectionSelectionFrameAcceptButton:SkinButton()
-	ScrollOfResurrectionSelectionFrameCancelButton:SkinButton()
 	T.SkinEditBox(ScrollOfResurrectionSelectionFrameTargetEditBox)
 	ScrollOfResurrectionFrameTargetEditBox:Height(ScrollOfResurrectionSelectionFrameTargetEditBox:GetHeight() - 5)
 
-	ScrollOfResurrectionFrame:StripTextures()
-	ScrollOfResurrectionFrameNoteFrame:StripTextures()
 	ScrollOfResurrectionFrame:SetTemplate("Transparent")
 	ScrollOfResurrectionFrameNoteFrame:SetTemplate("Overlay")
-	ScrollOfResurrectionFrameAcceptButton:SkinButton()
-	ScrollOfResurrectionFrameCancelButton:SkinButton()
 	T.SkinEditBox(ScrollOfResurrectionFrameTargetEditBox)
 	ScrollOfResurrectionFrameTargetEditBox:Height(ScrollOfResurrectionFrameTargetEditBox:GetHeight() - 5)
 
