@@ -28,9 +28,9 @@ L_RAID_UTIL_DISBAND = "Disband Group"
 -- Zone name
 L_ZONE_WINTERGRASP = "겨울손아귀 호수"
 L_ZONE_TOLBARAD = "톨 바라드"
-L_ZONE_TOLBARADPEN = "Tol Barad Peninsula"
+L_ZONE_TOLBARADPEN = "톨 바라드 반도"
 L_ZONE_ARATHIBASIN = "아라시 분지"
-L_ZONE_GILNEAS = "The Battle for Gilneas"
+L_ZONE_GILNEAS = "길니아스 전투지"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Wowhead link"

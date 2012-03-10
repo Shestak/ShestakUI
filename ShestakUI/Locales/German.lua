@@ -2,7 +2,7 @@
 if T.client ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for deDE client(Thanks to Baine, chubidu and Vienchen for the translation)
+--	Localization for deDE client(Thanks to Baine, chubidu, Vienchen and Alwa for the translation)
 ----------------------------------------------------------------------------------------
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
@@ -28,7 +28,7 @@ L_RAID_UTIL_DISBAND = "Gruppe auflösen"
 -- Zone name
 L_ZONE_WINTERGRASP = "Tausendwintersee"
 L_ZONE_TOLBARAD = "Tol Barad"
-L_ZONE_TOLBARADPEN = "Tol Barad Peninsula" -- Needs review
+L_ZONE_TOLBARADPEN = "Halbinsel von Tol Barad"
 L_ZONE_ARATHIBASIN = "Arathibecken"
 L_ZONE_GILNEAS = "Die Schlacht um Gilneas"
 
@@ -111,7 +111,7 @@ L_BAG_RIGHT_CLICK_SEARCH = "Rechtsklick um zu suchen"
 
 -- Grab mail
 L_MAIL_STOPPED = "Angehalten, Inventar ist voll."
-L_MAIL_UNIQUE = "Stopped. Found a duplicate unique item in bag or in bank." -- Needs review
+L_MAIL_UNIQUE = "Angehalten, dieses einzigartiges Item befindet sich bereits in der Tasche oder auf der Bank."
 L_MAIL_COMPLETE = "Alles Fertig."
 L_MAIL_NEED = "Benötige einen Briefkasten."
 L_MAIL_MESSAGES = "nachrichten"
