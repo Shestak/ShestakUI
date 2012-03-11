@@ -189,8 +189,27 @@ function Filger:DisplayActives()
 		index = index + 1
 	end
 
+	if not self.sortedIndex then self.sortedIndex = {} end
+
+	for n in pairs(self.sortedIndex) do
+		self.sortedIndex[n] = 999
+	end
+
+	local activeCount = 1
+	for n in pairs(self.actives) do
+		self.sortedIndex[activeCount] = n
+		activeCount = activeCount + 1
+	end
+	table.sort(self.sortedIndex)
+
 	index = 1
-	for activeIndex, value in pairs(self.actives) do
+
+	for n in pairs(self.sortedIndex) do
+		if n >= activeCount then
+			break
+		end
+		local activeIndex = self.sortedIndex[n]
+		local value = self.actives[activeIndex]
 		local bar = self.bars[index]
 		bar.spellName = GetSpellInfo(value.spid)
 		if self.Mode == "BAR" then
