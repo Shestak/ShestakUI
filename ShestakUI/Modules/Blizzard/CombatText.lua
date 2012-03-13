@@ -115,6 +115,7 @@ elseif T.class == "PALADIN" then
 		ct.aoespam[101423] = true	-- Seal of Righteousness
 		ct.aoespam[88263] = true	-- Hammer of the Righteous
 		ct.aoespam[31935] = true	-- Avenger's Shield
+		ct.aoespam[96172] = true	-- Hand of Light (Mastery)
 		-- Item spells
 		ct.aoespam[105996] = true	-- Essence of Dreams
 		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
