@@ -137,19 +137,22 @@ end
 ----------------------------------------------------------------------------------------
 if T.name == "Oz" and T.realm == "Runetotem" then
 	C["position"].chat = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 24, 22}
-	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 381, 24}
+	C["position"].bn_popup = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5}
 	C["position"].quest = {"TOPLEFT", UIParent, "TOPLEFT", 21, -46}
 	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -147}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
-	C["position"].top_panel = {"BOTTOM", UIParent, "BOTTOM", 0, 7}
+	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -402, 227}
+	C["position"].bg_score = {"BOTTOM", UIParent, "BOTTOM", 327, 5}
+	C["position"].top_panel = {"TOP", UIParent, "TOP", 0, -118}
 	C["position"].raid_buffs = {"BOTTOMLEFT", Minimap, "TOPLEFT", -2, 5}
-	C["position"].raid_utility = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 211}
-	C["position"].bottom_bars = {"BOTTOM", UIParent, "BOTTOM", 0, 41}
+	C["position"].raid_utility = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 223}
 	C["position"].stance_bar = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21}
 	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", -284, 289}
 	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 289}
 	C["position"].unitframes.raid_dps = {"TOPLEFT", UIParent, "TOPLEFT", 23, -115}
 	C["position"].unitframes.tank = {"BOTTOM", UIParent, "BOTTOM", 201, 71}
+	C["position"].unitframes.player_portrait = {"CENTER", Minimap, "LEFT", -54, 0}
+	C["position"].unitframes.target_portrait = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 6, 59}
 	C["position"].unitframes.player_castbar = {"BOTTOM", UIParent, "BOTTOM", 0, 289}
 	C["position"].unitframes.target_castbar = {"BOTTOM", UIParent, "BOTTOM", 11, 312}
 	C["media"].border_color = {0.1, 0.1, 0.1, 1}
@@ -157,6 +160,7 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["misc"].auto_decline_duel = false
 	C["misc"].auto_resurrection = false
 	C["misc"].ach_screens = true
+	C["announcements"].drinking = true
 	C["skins"].blizzard_frames = true
 	C["skins"].dbm = true
 	C["combattext"].scrollable = true
@@ -173,6 +177,7 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["tooltip"].who_targetting = true
 	C["chat"].background = true
 	C["chat"].filter = false
+	C["chat"].height = 125
 	C["minimap"].size = 129
 	C["loot"].auto_greed = false
 	C["nameplate"].show_castbar_name = true
@@ -195,6 +200,9 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["unitframe"].castbar_icon = true
 	C["unitframe"].castbar_latency = false
 	C["unitframe"].icons_pvp = true
+	C["unitframe"].portrait_enable = true
+	C["unitframe"].portrait_height = 125
+	C["unitframe"].portrait_width = 92
 	C["unitframe"].plugins_gcd = true
 	C["unitframe"].plugins_rune_bar = false
 	C["unitframe"].plugins_necro_strike = true
@@ -202,8 +210,8 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["unitframe"].plugins_talents = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].icons_lfd_role = true
-	C["toppanel"].mouseover = false
-	C["toppanel"].width = 333
+	C["raidframe"].plugins_aura_watch_timer = true
+	C["raidframe"].plugins_auto_resurrection = true
 	C["stats"].battleground = true
 	C["stats"].guild_repair = false
 end
