@@ -124,6 +124,7 @@ elseif T.class == "PALADIN" then
 		ct.aoespam[109752] = true	-- Whirling Maw (LFR)
 		ct.aoespam[107997] = true	-- Whirling Maw (Normal)
 		ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
+		ct.aoespam[52586] = true	-- Gurthalak, Voice of the Deeps
 	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
@@ -238,6 +239,7 @@ elseif T.class == "WARRIOR" then
 		ct.aoespam[109752] = true	-- Whirling Maw (LFR)
 		ct.aoespam[107997] = true	-- Whirling Maw (Normal)
 		ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
+		ct.aoespam[52586] = true	-- Gurthalak, Voice of the Deeps
 	end
 	if C.combattext.healing then
 		ct.healfilter[23880] = true	-- Bloodthirst
@@ -286,6 +288,7 @@ elseif T.class == "DEATHKNIGHT" then
 		ct.aoespam[109752] = true	-- Whirling Maw (LFR)
 		ct.aoespam[107997] = true	-- Whirling Maw (Normal)
 		ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
+		ct.aoespam[52586] = true	-- Gurthalak, Voice of the Deeps
 	end
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
