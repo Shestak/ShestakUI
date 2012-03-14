@@ -440,7 +440,7 @@ local function OnEvent(self, event, subevent, ...)
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, RESIST, arg3), 0.75, 0.5, 0.5)
 					else
-						xCT1:AddMessage(arg2, 0.75, 0.1, 0.1)
+						xCT1:AddMessage("-"..arg2, 0.75, 0.1, 0.1)
 					end
 				elseif COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 					xCT1:AddMessage(RESIST, 0.5, 0.5, 0.5)
@@ -450,7 +450,7 @@ local function OnEvent(self, event, subevent, ...)
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, BLOCK, arg3), 0.75, 0.5, 0.5)
 					else
-						xCT1:AddMessage(arg2, 0.75, 0.1, 0.1)
+						xCT1:AddMessage("-"..arg2, 0.75, 0.1, 0.1)
 					end
 				elseif COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 					xCT1:AddMessage(BLOCK, 0.5, 0.5, 0.5)
@@ -460,7 +460,7 @@ local function OnEvent(self, event, subevent, ...)
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, ABSORB, arg3), 0.75, 0.5, 0.5)
 					else
-						xCT1:AddMessage(arg2, 0.75, 0.1, 0.1)
+						xCT1:AddMessage("-"..arg2, 0.75, 0.1, 0.1)
 					end
 				elseif COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 					xCT1:AddMessage(ABSORB, 0.5, 0.5, 0.5)
@@ -470,7 +470,7 @@ local function OnEvent(self, event, subevent, ...)
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, RESIST, arg3), 0.5, 0.3, 0.5)
 					else
-						xCT1:AddMessage(arg2, 0.75, 0.3, 0.85)
+						xCT1:AddMessage("-"..arg2, 0.75, 0.3, 0.85)
 					end
 				elseif COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 					xCT1:AddMessage(RESIST, 0.5, 0.5, 0.5)
@@ -490,7 +490,7 @@ local function OnEvent(self, event, subevent, ...)
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, ABSORB, arg3), 0.5, 0.3, 0.5)
 					else
-						xCT1:AddMessage(arg2, 0.75, 0.3, 0.85)
+						xCT1:AddMessage("-"..arg2, 0.75, 0.3, 0.85)
 					end
 				elseif COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 					xCT1:AddMessage(ABSORB, 0.5, 0.5, 0.5)
