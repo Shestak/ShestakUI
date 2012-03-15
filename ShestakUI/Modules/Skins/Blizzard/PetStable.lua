@@ -25,7 +25,7 @@ local function LoadSkin()
 
 	T.SkinCloseButton(PetStableFrameCloseButton)
 
-	for i = 1, 5 do
+	for i = 1, NUM_PET_ACTIVE_SLOTS do
 		local button = _G["PetStableActivePet"..i]
 		local icon = _G["PetStableActivePet"..i.."IconTexture"]
 
@@ -39,7 +39,7 @@ local function LoadSkin()
 		icon:Point("BOTTOMRIGHT", -2, 2)
 	end
 
-	for i = 1, 10 do
+	for i = 1, NUM_PET_STABLE_SLOTS do
 		local button = _G["PetStableStabledPet"..i]
 		local icon = _G["PetStableStabledPet"..i.."IconTexture"]
 

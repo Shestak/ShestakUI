@@ -349,19 +349,6 @@ local function SetScroll()
 	end
 end
 
--- Msg flow direction
-local function ScrollDirection()
-	if COMBAT_TEXT_FLOAT_MODE == "2" then
-		ct.mode = "TOP"
-	else
-		ct.mode = "BOTTOM"
-	end
-	for i = 1, #ct.frames do
-		ct.frames[i]:Clear()
-		ct.frames[i]:SetInsertMode(ct.mode)
-	end
-end
-
 -- Partial resists styler
 local part = "-%s [%s %s]"
 local r, g, b
@@ -615,9 +602,9 @@ for i = 1, numf do
 	f:SetShadowOffset(C.font.combat_text_font_shadow and 1 or 0, C.font.combat_text_font_shadow and -1 or 0)
 	f:SetTimeVisible(C.combattext.time_visible)
 	f:SetMaxLines(C.combattext.max_lines)
-	f:SetSpacing(2)
+	f:SetSpacing(1)
 	f:SetWidth(128)
-	f:SetHeight(128)
+	f:SetHeight(112)
 	f:SetPoint("CENTER", 0, 0)
 	f:SetMovable(true)
 	f:SetResizable(true)
@@ -646,6 +633,9 @@ for i = 1, numf do
 	else
 		f:SetJustifyH(ct.justify_4)
 		f:SetWidth(200)
+		if C.combattext.icons then
+			f:SetHeight(150)
+		end
 		if C.unitframe.enable == true and _G.oUF_Target then
 			f:SetPoint("BOTTOMRIGHT", "oUF_Target", "TOPRIGHT", 2, 278)
 		else
