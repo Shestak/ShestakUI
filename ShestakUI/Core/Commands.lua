@@ -20,6 +20,10 @@ SlashCmdList.JOURNAL = function() ToggleEncounterJournal() end
 SLASH_JOURNAL1 = "/ej"
 SLASH_JOURNAL2 = "/уо"
 
+SlashCmdList.ROLECHECK = function() InitiateRolePoll() end
+SLASH_ROLECHECK1 = "/role"
+SLASH_ROLECHECK2 = "/кщду"
+
 ----------------------------------------------------------------------------------------
 --	Description of the slash commands
 ----------------------------------------------------------------------------------------
