@@ -72,3 +72,20 @@ end
 for _,event in pairs{"CHAT_MSG_YELL", "CHAT_MSG_SAY", "CHAT_MSG_RAID", "CHAT_MSG_PARTY"} do
 	ChatFrame_AddMessageEventFilter(event, filter)
 end
+
+----------------------------------------------------------------------------------------
+--	Auto select current event boss from LFD tool(by Nathanyel)
+----------------------------------------------------------------------------------------
+local firstLFD
+LFDParentFrame:HookScript("OnShow", function()
+	if not firstLFD then
+		firstLFD = 1
+		for i = 1, GetNumRandomDungeons() do
+			local id = GetLFGRandomDungeonInfo(i)
+			local isHoliday = select(15, GetLFGDungeonInfo(id))
+			if isHoliday and not GetLFGDungeonRewards(id) then
+				LFDQueueFrame_SetType(id)
+			end
+		end
+	end
+end)
