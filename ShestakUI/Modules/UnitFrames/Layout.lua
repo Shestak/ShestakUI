@@ -104,6 +104,8 @@ local function Shared(self, unit)
 			self.Health.value:Point("RIGHT", self.Health, "RIGHT", 0, 0)
 			self.Health.value:SetJustifyH("RIGHT")
 		end
+	elseif unit == "arenatarget" then
+		self.Health.value:Hide()
 	else
 		self.Health.value:Point("LEFT", self.Health, "LEFT", 2, 0)
 		self.Health.value:SetJustifyH("LEFT")
@@ -192,7 +194,7 @@ local function Shared(self, unit)
 				self:Tag(self.Info, "[GetNameColor][NameMedium]")
 			end
 		elseif unit == "arenatarget" then
-			self.Info:Point("CENTER", self.Health, "CENTER", 0, 0)
+			self.Info:Point("CENTER", self.Health, "CENTER", 1, 0)
 			self:Tag(self.Info, "[GetNameColor][NameArena]")
 		elseif unit == "arena" then
 			if C.unitframe.arena_on_right == true then
