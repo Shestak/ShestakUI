@@ -16,12 +16,13 @@ local tooltips = {
 	WorldMapCompareTooltip3,
 	FriendsTooltip,
 	ConsolidatedBuffsTooltip,
+	ItemRefShoppingTooltip1,
+	ItemRefShoppingTooltip2,
+	ItemRefShoppingTooltip3,
 	AtlasLootTooltip,
 	QuestHelperTooltip,
 	QuestGuru_QuestWatchTooltip,
-	ItemRefShoppingTooltip1,
-	ItemRefShoppingTooltip2,
-	ItemRefShoppingTooltip3
+	InstanceLockTooltip
 }
 
 for _, tt in pairs(tooltips) do
