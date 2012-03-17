@@ -47,7 +47,7 @@ local function hookSetHyperlink(tooltip, refString)
 				output[a].text = nil
 				output[a].color = nil
 				if i + a <= numCriteria then
-					name, _, completed, quantity, reqQuantity = GetAchievementCriteriaInfo(achievementID, i+a)
+					name, _, completed, quantity, reqQuantity = GetAchievementCriteriaInfo(achievementID, i + a)
 					if completed then
 						output[a].text = name
 						output[a].color = "GREEN"
@@ -75,4 +75,5 @@ local function hookSetHyperlink(tooltip, refString)
 	tooltip:Show()
 end
 
+hooksecurefunc(GameTooltip, "SetHyperlink", hookSetHyperlink)
 hooksecurefunc(ItemRefTooltip, "SetHyperlink", hookSetHyperlink)
