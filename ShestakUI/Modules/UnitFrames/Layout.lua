@@ -166,7 +166,7 @@ local function Shared(self, unit)
 			self.Power.value:Point("RIGHT", self.Power, "RIGHT", 0, 0)
 			self.Power.value:SetJustifyH("RIGHT")
 		end
-	elseif unit == "pet" then
+	elseif unit == "pet" or unit == "focus" or unit == "focustarget" or unit == "targettarget" then
 		self.Power.value:Hide()
 	else
 		self.Power.value:Point("LEFT", self.Power, "LEFT", 2, 0)
