@@ -310,6 +310,7 @@ local function UpdateObjects(frame)
 
 	-- Match values
 	frame.hp:SetMinMaxValues(frame.healthOriginal:GetMinMaxValues())
+	frame.hp:SetValue(frame.healthOriginal:GetValue() - 1) -- Blizzard bug fix
 	frame.hp:SetValue(frame.healthOriginal:GetValue())
 
 	-- Colorize Plate
