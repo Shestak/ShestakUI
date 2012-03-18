@@ -71,6 +71,7 @@ local function InstallUI()
 		SetCVar("nameplateShowEnemyTotems", 0)
 		SetCVar("shadowMode", 0)
 		SetCVar("ffxDeath", 0)
+		SetAutoDeclineGuildInvites(1)
 	end
 
 	-- Setting chat frames
