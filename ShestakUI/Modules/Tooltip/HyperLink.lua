@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.chat.enable == true or IsAddOnLoaded("tekKompare") then return end
+if C.chat.enable ~= true or C.tooltip.enable ~= true or IsAddOnLoaded("tekKompare") then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on tekKompare(by Tekkub)

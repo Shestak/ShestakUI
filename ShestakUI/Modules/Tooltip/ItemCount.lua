@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if C.tooltip.item_count ~= true then return end
+if C.tooltip.enable ~= true or C.tooltip.item_count ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Item count in tooltip(by Tukz)
