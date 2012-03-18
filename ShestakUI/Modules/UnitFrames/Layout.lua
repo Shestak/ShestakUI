@@ -1191,7 +1191,7 @@ if C.unitframe.show_arena == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Testmode(by Fernir)
+--	Test UnitFrames(by Fernir)
 ----------------------------------------------------------------------------------------
 SlashCmdList.TESTUF = function()
 	for i, v in pairs(oUF.units) do
@@ -1218,6 +1218,58 @@ SlashCmdList.TESTUF = function()
 end
 SLASH_TESTUF1 = "/testuf"
 SLASH_TESTUF2 = "/еуыега"
+
+
+----------------------------------------------------------------------------------------
+--	Test UnitFrames(by community)
+----------------------------------------------------------------------------------------
+SlashCmdList.TEST_UF = function(msg)
+	if msg == "hide" or msg == "ршву" then
+		for _, frames in pairs({"oUF_Target", "oUF_TargetTarget", "oUF_Pet", "oUF_Focus", "oUF_FocusTarget"}) do
+			_G[frames].Hide = nil
+		end
+
+		for i = 1, 5 do
+			_G["oUF_Arena"..i].Hide = nil
+			_G["oUF_Arena"..i.."Target"].Hide = nil
+		end
+
+		for i = 1, 4 do
+			_G["oUF_Boss"..i].Hide = nil
+		end
+	else
+		for _, frames in pairs({"oUF_Target", "oUF_TargetTarget", "oUF_Pet", "oUF_Focus", "oUF_FocusTarget"}) do
+			_G[frames].Hide = function() end
+			_G[frames].unit = "player"
+			_G[frames]:Show()
+		end
+
+		for i = 1, 5 do
+			_G["oUF_Arena"..i].Hide = function() end
+			_G["oUF_Arena"..i].unit = "player"
+			_G["oUF_Arena"..i]:Show()
+			_G["oUF_Arena"..i]:UpdateAllElements()
+			_G["oUF_Arena"..i].Trinket.Icon:SetTexture("Interface\\Icons\\INV_Jewelry_Necklace_37")
+			if C.unitframe.plugins_talents == true then
+				_G["oUF_Arena"..i].Talents:SetText(L_PLANNER_DRUID_1)
+			end
+
+			_G["oUF_Arena"..i.."Target"].Hide = function() end
+			_G["oUF_Arena"..i.."Target"].unit = "player"
+			_G["oUF_Arena"..i.."Target"]:Show()
+			_G["oUF_Arena"..i.."Target"]:UpdateAllElements()
+		end
+
+		for i = 1, 4 do
+			_G["oUF_Boss"..i].Hide = function() end
+			_G["oUF_Boss"..i].unit = "player"
+			_G["oUF_Boss"..i]:Show()
+			_G["oUF_Boss"..i]:UpdateAllElements()
+		end
+	end
+end
+SLASH_TEST_UF1 = "/testui"
+SLASH_TEST_UF2 = "/еуыегш"
 
 ----------------------------------------------------------------------------------------
 --	Player line
