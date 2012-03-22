@@ -14,6 +14,14 @@ T.color = RAID_CLASS_COLORS[T.class]
 T.version = GetAddOnMetadata("ShestakUI", "Version")
 T.getscreenheight = tonumber(string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)"))
 T.getscreenwidth = tonumber(string.match(({GetScreenResolutions()})[GetCurrentResolution()], "(%d+)x+%d"))
+T.patch = select(4, GetBuildInfo())
+T.MOPVersion = function()
+	if T.patch >= 50000 then
+		return true
+	else
+		return false
+	end
+end
 
 if (T.name == "Вершок" or T.name == "Вещмешок" or T.name == "Гребешок" or T.name == "Кулешок" or T.name == "Лапушок"
 or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торгашок" or T.name == "Черешок" or T.name == "Шестак")
