@@ -100,7 +100,7 @@ end
 
 local CreateBar = function()
 	local bar = CreateFrame("Statusbar", nil, UIParent)
-	bar:SetFrameStrata("HIGH")
+	bar:SetFrameStrata("MEDIUM")
 	if C.raidcooldown.show_icon == true then
 		bar:Size(C.raidcooldown.width, C.raidcooldown.height)
 	else

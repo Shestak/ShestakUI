@@ -299,8 +299,6 @@ end
 
 local OpenMenuBG = CreateFrame("Button", "TTOpenMenuBackground", UIParent)
 OpenMenuBG:CreatePanel("Overlay", borderwidth(1), buttonheight(1) / 1.3, "BOTTOM", MenuBG, "BOTTOM", 0, 0)
-OpenMenuBG:SetFrameLevel(defaultframelevel)
-OpenMenuBG:SetFrameStrata("HIGH")
 OpenMenuBG:EnableMouse(true)
 OpenMenuBG:RegisterForClicks("AnyUp")
 OpenMenuBG:SetFrameLevel(defaultframelevel)
