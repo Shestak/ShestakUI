@@ -4,8 +4,8 @@ local T, C, L = unpack(select(2, ...))
 --	Display number of companions on pet/mount tab(CompanionCount by chrippa)
 ----------------------------------------------------------------------------------------
 local MAX_COMPANIONS = {
-	CRITTER = 223,
-	MOUNT = 334
+	CRITTER = 207,
+	MOUNT = 227
 }
 
 local progress = CreateFrame("StatusBar", "CompanionCountProgress", SpellBookCompanionsFrame, "ProfessionStatusBarTemplate")
