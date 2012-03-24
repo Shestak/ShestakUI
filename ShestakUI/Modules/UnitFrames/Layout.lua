@@ -1228,13 +1228,17 @@ SlashCmdList.TEST_UF = function(msg)
 			_G[frames].Hide = nil
 		end
 
-		for i = 1, 5 do
-			_G["oUF_Arena"..i].Hide = nil
-			_G["oUF_Arena"..i.."Target"].Hide = nil
+		if C.unitframe.show_arena == true then
+			for i = 1, 5 do
+				_G["oUF_Arena"..i].Hide = nil
+				_G["oUF_Arena"..i.."Target"].Hide = nil
+			end
 		end
 
-		for i = 1, 4 do
-			_G["oUF_Boss"..i].Hide = nil
+		if C.unitframe.show_boss == true then
+			for i = 1, 4 do
+				_G["oUF_Boss"..i].Hide = nil
+			end
 		end
 	else
 		for _, frames in pairs({"oUF_Target", "oUF_TargetTarget", "oUF_Pet", "oUF_Focus", "oUF_FocusTarget"}) do
@@ -1243,27 +1247,31 @@ SlashCmdList.TEST_UF = function(msg)
 			_G[frames]:Show()
 		end
 
-		for i = 1, 5 do
-			_G["oUF_Arena"..i].Hide = function() end
-			_G["oUF_Arena"..i].unit = "player"
-			_G["oUF_Arena"..i]:Show()
-			_G["oUF_Arena"..i]:UpdateAllElements()
-			_G["oUF_Arena"..i].Trinket.Icon:SetTexture("Interface\\Icons\\INV_Jewelry_Necklace_37")
-			if C.unitframe.plugins_talents == true then
-				_G["oUF_Arena"..i].Talents:SetText(L_PLANNER_DRUID_1)
-			end
+		if C.unitframe.show_arena == true then
+			for i = 1, 5 do
+				_G["oUF_Arena"..i].Hide = function() end
+				_G["oUF_Arena"..i].unit = "player"
+				_G["oUF_Arena"..i]:Show()
+				_G["oUF_Arena"..i]:UpdateAllElements()
+				_G["oUF_Arena"..i].Trinket.Icon:SetTexture("Interface\\Icons\\INV_Jewelry_Necklace_37")
+				if C.unitframe.plugins_talents == true then
+					_G["oUF_Arena"..i].Talents:SetText(L_PLANNER_DRUID_1)
+				end
 
-			_G["oUF_Arena"..i.."Target"].Hide = function() end
-			_G["oUF_Arena"..i.."Target"].unit = "player"
-			_G["oUF_Arena"..i.."Target"]:Show()
-			_G["oUF_Arena"..i.."Target"]:UpdateAllElements()
+				_G["oUF_Arena"..i.."Target"].Hide = function() end
+				_G["oUF_Arena"..i.."Target"].unit = "player"
+				_G["oUF_Arena"..i.."Target"]:Show()
+				_G["oUF_Arena"..i.."Target"]:UpdateAllElements()
+			end
 		end
 
-		for i = 1, 4 do
-			_G["oUF_Boss"..i].Hide = function() end
-			_G["oUF_Boss"..i].unit = "player"
-			_G["oUF_Boss"..i]:Show()
-			_G["oUF_Boss"..i]:UpdateAllElements()
+		if C.unitframe.show_boss == true then
+			for i = 1, 4 do
+				_G["oUF_Boss"..i].Hide = function() end
+				_G["oUF_Boss"..i].unit = "player"
+				_G["oUF_Boss"..i]:Show()
+				_G["oUF_Boss"..i]:UpdateAllElements()
+			end
 		end
 	end
 end
