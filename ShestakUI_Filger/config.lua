@@ -1056,7 +1056,7 @@ Filger_Spells = {
 			-- Essence of the Eternal Flame (Strength, Use)
 			{spellID = 97010, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rotting Skull (Strength, Use)
-			{spellID = 109747, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 107949, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Creche of the Final Dragon (Crit, Proc)
 			{spellID = 109744, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rosary of Light (Crit, Proc)
@@ -1625,7 +1625,7 @@ Filger_Spells = {
 			-- Essence of the Eternal Flame (Strength, Use)
 			{spellID = 97010, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rotting Skull (Strength, Use)
-			{spellID = 109747, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 107949, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Creche of the Final Dragon (Crit, Proc)
 			{spellID = 109744, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rosary of Light (Crit, Proc)
@@ -2735,7 +2735,7 @@ Filger_Spells = {
 			-- Essence of the Eternal Flame (Strength, Use)
 			{spellID = 97010, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rotting Skull (Strength, Use)
-			{spellID = 109747, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 107949, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Creche of the Final Dragon (Crit, Proc)
 			{spellID = 109744, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rosary of Light (Crit, Proc)
