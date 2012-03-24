@@ -36,10 +36,10 @@ T.ChatSpamList = {
 	"анальное",
 	"visа",
 	"qiwi",
-	"Qiwі",
+	"qiwі",
 	"к/г",
-	"Ісq",
-	"ІCQ",
+	"ісq",
+	"іcq",
 	"аsя",
 	"asя",
 	"овощевик.рф",
@@ -49,6 +49,7 @@ T.ChatSpamList = {
 	"rpgdealer.ru",
 	"gamersgold.ru",
 	"wowelfgold.ru",
-	"ArenaMasters.Ru",
-	"project-razgrom.ru"
+	"arenamasters.ru",
+	"project-razgrom.ru",
+	"www.project-razgrom.ru"
 }
