@@ -465,7 +465,9 @@ function Stuffing:InitBags()
 	editbox:Hide()
 	editbox:SetAutoFocus(true)
 	editbox:Height(32)
-	editbox:SetTemplate("Default")
+	editbox:CreateBackdrop("Default")
+	editbox.backdrop:Point("TOPLEFT", -2, 1)
+	editbox.backdrop:Point("BOTTOMRIGHT", 2, -1)
 
 	local resetAndClear = function (self)
 		self:GetParent().detail:Show()
@@ -487,7 +489,7 @@ function Stuffing:InitBags()
 	editbox:SetText(SEARCH)
 
 	local detail = f:CreateFontString(nil, "ARTWORK", "GameFontHighlightLarge")
-	detail:Point("TOPLEFT", f, 12, -10)
+	detail:Point("TOPLEFT", f, 11, -10)
 	detail:Point("RIGHT", f, -140, -10)
 	detail:Height(13)
 	detail:SetShadowColor(0, 0, 0, 0)
@@ -821,6 +823,8 @@ function Stuffing:ADDON_LOADED(addon)
 	self:RegisterEvent("ITEM_LOCK_CHANGED")
 	self:RegisterEvent("BANKFRAME_OPENED")
 	self:RegisterEvent("BANKFRAME_CLOSED")
+	self:RegisterEvent("GUILDBANKFRAME_OPENED")
+	self:RegisterEvent("GUILDBANKFRAME_CLOSED")
 	self:RegisterEvent("PLAYERBANKSLOTS_CHANGED")
 	self:RegisterEvent("BAG_CLOSED")
 
@@ -884,7 +888,7 @@ end
 
 function Stuffing:BANKFRAME_OPENED()
 	Stuffing_Open()
-	
+
 	if not self.bankFrame then
 		self:InitBank()
 	end
@@ -902,6 +906,14 @@ function Stuffing:BANKFRAME_CLOSED()
 	end
 
 	self.bankFrame:Hide()
+end
+
+function Stuffing:GUILDBANKFRAME_OPENED()
+	Stuffing_Open()
+end
+
+function Stuffing:GUILDBANKFRAME_CLOSED()
+	Stuffing_Close()
 end
 
 function Stuffing:BAG_CLOSED(id)
@@ -1050,7 +1062,7 @@ local function InBags(x)
 end
 
 function Stuffing:SortBags()
-	if (UnitAffectingCombat("player")) then return end
+	if UnitAffectingCombat("player") then return end
 
 	local free
 	local total = 0
