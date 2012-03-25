@@ -31,7 +31,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "任務/道具自動按鈕"
 L_GUI_MISC_RAID_TOOLS = "團隊工具"
 L_GUI_MISC_ACH_SCREENS = "當你獲得成就的時候自動截屏"
 L_GUI_MISC_PROFESSION_TABS = "在專業和商業框體顯示專業技能按鈕"
-L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
+L_GUI_MISC_HIDE_BG_SPAM = "在戰場内移除Boss表情信息"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
@@ -148,7 +148,7 @@ L_GUI_TOOLTIP_SPELL_ID = "法術ID"
 L_GUI_TOOLTIP_RAID_ICON = "團隊圖示"
 L_GUI_TOOLTIP_WHO_TARGETTING = "當你在隊伍/團隊中時顯示誰以目標為目標的提示"
 L_GUI_TOOLTIP_ITEM_COUNT = "叠堆數量"
-L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
+L_GUI_TOOLTIP_UNIT_ROLE = "單位角色"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "開啟聊天框增強"
@@ -178,7 +178,7 @@ L_GUI_MINIMAP_ENABLE = "開啟迷你地圖增強"
 L_GUI_MINIMAP_ICON = "追蹤類型圖示"
 L_GUI_MINIMAP_SIZE = "迷你地圖大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "戰鬥中隱藏迷你地圖"
-L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
+L_GUI_MINIMAP_TOGGLE_MENU = "顯示可開/関的菜單"
 L_GUI_MINIMAP_MERGE_MENUS = "在小地圖上側菜單中整合主要功能和插件按鈕(禁用更簡潔一點)"
 
 -- Map options
@@ -260,7 +260,7 @@ L_GUI_UF_BAR_COLOR_VALUE = "生命值以現在剩餘生命著色"
 L_GUI_UF_UNIT_CASTBAR = "顯示施法條"
 L_GUI_UF_CASTBAR_ICON = "顯示施法條圖示"
 L_GUI_UF_CASTBAR_LATENCY = "施法條延遲"
-L_GUI_UF_CASTBAR_TICKS = "Castbar ticks" -- Needs review
+L_GUI_UF_CASTBAR_TICKS = "施法條跳數"
 L_GUI_UF_SHOW_PET = "顯示寵物框體"
 L_GUI_UF_SHOW_FOCUS = "顯示焦點框體"
 L_GUI_UF_SHOW_TOT = "顯示目標的目標框體"
