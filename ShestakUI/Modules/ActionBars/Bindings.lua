@@ -202,8 +202,9 @@ SlashCmdList.MOUSEOVERBIND = function()
 			if key == "LSHIFT" or key == "RSHIFT" or key == "LCTRL" or key == "RCTRL" or key == "LALT"
 			or key == "RALT" or key == "UNKNOWN" or key == "LeftButton" then return end
 			if key == "MiddleButton" then key = "BUTTON3" end
-			if key == "Button4" then key = "BUTTON4" end
-			if key == "Button5" then key = "BUTTON5" end
+			if key:find("Button%d") then
+				key = key:upper()
+			end
 
 			local alt = IsAltKeyDown() and "ALT-" or ""
 			local ctrl = IsControlKeyDown() and "CTRL-" or ""
