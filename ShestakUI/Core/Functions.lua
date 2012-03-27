@@ -368,8 +368,12 @@ function T.SkinNextPrevButton(btn, horizonal)
 
 	if horizonal then
 		btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.72, 0.65, 0.29, 0.65, 0.72)
-		btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.8, 0.65, 0.35, 0.65, 0.8)
-		btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
+		if btn:GetPushedTexture() then
+			btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.8, 0.65, 0.35, 0.65, 0.8)
+		end
+		if btn:GetDisabledTexture() then
+			btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
+		end
 	else
 		btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.81, 0.65, 0.29, 0.65, 0.81)
 		if btn:GetPushedTexture() then
@@ -428,14 +432,16 @@ function T.SkinEditBox(frame)
 end
 
 function T.SkinDropDownBox(frame, width)
-	local button = _G[frame:GetName().."Button"]
+	local button = _G[frame:GetName().."Button"] or _G[frame:GetName().."_Button"]
 	if not width then width = 155 end
 
 	frame:StripTextures()
 	frame:Width(width)
 
-	_G[frame:GetName().."Text"]:ClearAllPoints()
-	_G[frame:GetName().."Text"]:Point("RIGHT", button, "LEFT", -2, 0)
+	if _G[frame:GetName().."Text"] then
+		_G[frame:GetName().."Text"]:ClearAllPoints()
+		_G[frame:GetName().."Text"]:Point("RIGHT", button, "LEFT", -2, 0)
+	end
 
 	button:ClearAllPoints()
 	button:Point("RIGHT", frame, "RIGHT", -10, 3)
