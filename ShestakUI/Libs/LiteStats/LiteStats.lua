@@ -1374,13 +1374,21 @@ if stats.enabled then
 		elseif sub == "expertise" then
 			string = GetExpertisePercent()
 		elseif strmatch(sub, "hit$") then
-			local var = _G["CR_HIT_"..(strupper(strmatch(sub, "(%w-)hit$")) or "")]
-			string, percent = var and GetCombatRatingBonus(var) or format("[%s]", sub), var
+			local var = _G["CR_HIT_"..(strupper(strmatch(sub,"(%w-)hit$")) or "")]
+			if T.race == "Draenei" then
+				string, percent = var and GetCombatRatingBonus(var) + 1 or format("[%s]", sub), var
+			else
+				string, percent = var and GetCombatRatingBonus(var) or format("[%s]", sub), var
+			end
 		elseif strmatch(sub, "haste$") then
 			local var = _G["CR_HASTE_"..(strupper(strmatch(sub, "(%w-)haste$")) or "")]
-			string, percent = var and GetCombatRatingBonus(var) or format("[%s]", sub), var
+			if T.race == "Goblin" then
+				string, percent = var and GetCombatRatingBonus(var) + 1 or format("[%s]", sub), var
+			else
+				string, percent = var and GetCombatRatingBonus(var) or format("[%s]", sub), var
+			end
 		elseif sub == "resilience" then
-			string, percent = max(GetCombatRating(CR_CRIT_TAKEN_MELEE), GetCombatRating(CR_CRIT_TAKEN_RANGED), GetCombatRating(CR_CRIT_TAKEN_SPELL))
+			string, percent = GetCombatRating(16)
 		elseif sub == "meleecrit" then
 			string = GetCritChance()
 		elseif sub == "rangedcrit" then
