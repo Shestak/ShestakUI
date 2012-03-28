@@ -1374,7 +1374,7 @@ if stats.enabled then
 		elseif sub == "expertise" then
 			string = GetExpertisePercent()
 		elseif strmatch(sub, "hit$") then
-			local var = _G["CR_HIT_"..(strupper(strmatch(sub,"(%w-)hit$")) or "")]
+			local var = _G["CR_HIT_"..(strupper(strmatch(sub, "(%w-)hit$")) or "")]
 			if T.race == "Draenei" then
 				string, percent = var and GetCombatRatingBonus(var) + 1 or format("[%s]", sub), var
 			else

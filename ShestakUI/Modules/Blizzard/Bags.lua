@@ -669,7 +669,7 @@ function Stuffing:Layout(lb)
 
 			self.bags[i]:Show()
 			for j = 1, bag_cnt do
-				local b, isnew = self:SlotNew (i, j)
+				local b, isnew = self:SlotNew(i, j)
 				local xoff
 				local yoff
 				local x = (idx % cols)
