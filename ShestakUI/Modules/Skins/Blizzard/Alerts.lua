@@ -86,7 +86,7 @@ local function LoadSkin()
 				-- Icon
 				_G["DungeonCompletionAlertFrame"..i.."DungeonTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				_G["DungeonCompletionAlertFrame"..i.."DungeonTexture"]:ClearAllPoints()
-				_G["DungeonCompletionAlertFrame"..i.."DungeonTexture"]:Point("LEFT", frame.backdrop, 7, 0)
+				_G["DungeonCompletionAlertFrame"..i.."DungeonTexture"]:Point("LEFT", frame.backdrop, 9, 0)
 
 				if not _G["DungeonCompletionAlertFrame"..i.."DungeonTexture"].b then
 					_G["DungeonCompletionAlertFrame"..i.."DungeonTexture"].b = CreateFrame("Frame", nil, _G["DungeonCompletionAlertFrame"..i])
