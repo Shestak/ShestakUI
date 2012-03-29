@@ -153,6 +153,7 @@ local function LoadSkin()
 	LFDQueueFrameCapBarCap2:SetTexture(C.media.texture)
 	T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
 	RolePollPopup:SetTemplate("Transparent")
+	LFGInvitePopup:SetTemplate("Transparent")
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
 	LFGDungeonReadyDialog.SetBackdrop = T.dummy
 	LFGDungeonReadyDialog.filigree:SetAlpha(0)
