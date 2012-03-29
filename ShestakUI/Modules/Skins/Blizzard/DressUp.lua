@@ -16,6 +16,11 @@ local function LoadSkin()
 	T.SkinCloseButton(DressUpFrameCloseButton, DressUpFrame.backdrop)
 	DressUpFrameCancelButton:Point("BOTTOMRIGHT", DressUpFrame.backdrop, "BOTTOMRIGHT", -4, 4)
 	DressUpFrameResetButton:Point("RIGHT", DressUpFrameCancelButton, "LEFT", -2, 0)
+
+	SideDressUpFrame:StripTextures()
+	SideDressUpFrame:SetTemplate("Transparent")
+	SideDressUpModelResetButton:SkinButton()
+	T.SkinCloseButton(SideDressUpModelCloseButton, SideDressUpFrame)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

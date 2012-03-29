@@ -35,6 +35,11 @@ local function LoadSkin()
 	VoidItemSearchBox.backdrop:Point("TOPLEFT", 10, -1)
 	VoidItemSearchBox.backdrop:Point("BOTTOMRIGHT", 4, 1)
 
+	VoidStorageFrame:HookScript("OnShow", function()
+		SideDressUpFrame:ClearAllPoints()
+		SideDressUpFrame:Point("TOPLEFT", VoidStorageFrame, "TOPRIGHT", 3, 0)
+	end)
+
 	for i = 1, 9 do
 		local button_d = _G["VoidStorageDepositButton"..i]
 		local button_w = _G["VoidStorageWithdrawButton"..i]

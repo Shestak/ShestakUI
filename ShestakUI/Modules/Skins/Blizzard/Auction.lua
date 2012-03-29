@@ -22,12 +22,7 @@ local function LoadSkin()
 	T.SkinCheckBox(ShowOnPlayerCheckButton)
 
 	-- Dress Up Frame
-	SideDressUpFrame:StripTextures()
-	SideDressUpFrame:SetTemplate("Transparent")
-	SideDressUpModelResetButton:SkinButton()
-	T.SkinCloseButton(SideDressUpModelCloseButton, SideDressUpFrame)
-
-	SideDressUpFrame:HookScript("OnShow", function()
+	AuctionFrame:HookScript("OnShow", function()
 		SideDressUpFrame:ClearAllPoints()
 		SideDressUpFrame:Point("TOPLEFT", AuctionFrame, "TOPRIGHT", 3, 0)
 	end)
