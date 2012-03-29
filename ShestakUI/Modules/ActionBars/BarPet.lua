@@ -27,7 +27,7 @@ bar:RegisterEvent("UNIT_AURA")
 bar:SetScript("OnEvent", function(self, event, arg1)
 	if event == "PLAYER_LOGIN" then
 		PetActionBarFrame.showgrid = 1
-		
+
 		local button
 		for i = 1, 10 do
 			button = _G["PetActionButton"..i]

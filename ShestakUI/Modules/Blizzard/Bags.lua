@@ -574,7 +574,7 @@ function Stuffing:Layout(lb)
 	if bag_bars == 1 then
 		fb:SetClampedToScreen(1)
 		fb:SetTemplate("Transparent")
-		
+
 		local bsize = C.bag.button_size
 
 		local w = 2 * 10
@@ -679,7 +679,7 @@ function Stuffing:Layout(lb)
 					table.insert(self.buttons, idx + 1, b)
 				end
 
-				xoff = 10 + (x * C.bag.button_size)	+ (x * C.bag.button_space)
+				xoff = 10 + (x * C.bag.button_size) + (x * C.bag.button_space)
 				yoff = off + 10 + (y * C.bag.button_size) + ((y - 1) * C.bag.button_space)
 				yoff = yoff * -1
 
@@ -690,7 +690,7 @@ function Stuffing:Layout(lb)
 				b.frame:SetPushedTexture("")
 				b.frame:SetNormalTexture("")
 				b.frame:Show()
-				b.frame:SetTemplate("Transparent")
+				b.frame:SetTemplate("Default")
 				b.frame:StyleButton()
 
 				-- Color fish bag border slot to red
