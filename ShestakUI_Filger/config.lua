@@ -3491,6 +3491,8 @@ Filger_Spells = {
 			{spellID = 48792, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pillar of Frost
 			{spellID = 51271, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Unholy Frenzy
+			{spellID = 49016, unitID = "target", caster = "all", filter = "BUFF"},
 
 			-- Shaman
 			-- Grounding Totem Effect

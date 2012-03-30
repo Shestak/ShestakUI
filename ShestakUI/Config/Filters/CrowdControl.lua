@@ -101,6 +101,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(31821)] = 1,	-- Aura mastery
 		[GetSpellInfo(96267)] = 1,	-- Strength of Soul
 		[GetSpellInfo(8178)] = 1,	-- Grounding Totem
+		[GetSpellInfo(49016)] = 1,	-- Unholy Frenzy
 
 		-- Defense abilities
 		[GetSpellInfo(871)] = 1,	-- Shield Wall
