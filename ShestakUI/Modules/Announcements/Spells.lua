@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.announcements.spells ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Announce same spells
+--	Announce some spells
 ----------------------------------------------------------------------------------------
 local misdir_announce = CreateFrame("Frame")
 misdir_announce:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")

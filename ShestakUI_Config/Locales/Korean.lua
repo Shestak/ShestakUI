@@ -37,7 +37,7 @@ L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG"
 L_GUI_ANNOUNCEMENTS = "Announcements"
 L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in chat when arena enemy is drinking"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Announce in party/raid when you interrupt"
-L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast same spell"
+L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast some spell"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members"
 
 -- Skins options

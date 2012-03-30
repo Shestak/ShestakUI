@@ -256,7 +256,7 @@ button:SetScript("OnEvent", function(self)
 end)
 
 ----------------------------------------------------------------------------------------
---	Misclicks for same popup
+--	Misclicks for some popup
 ----------------------------------------------------------------------------------------
 StaticPopupDialogs.RESURRECT.hideOnEscape = nil
 StaticPopupDialogs.PARTY_INVITE.hideOnEscape = nil

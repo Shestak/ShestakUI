@@ -1,7 +1,7 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Skin same ShestakUI frames if loaded Aurora
+--	Skin some ShestakUI frames if loaded Aurora
 ----------------------------------------------------------------------------------------
 local AuroraSkin = CreateFrame("Frame")
 AuroraSkin:RegisterEvent("PLAYER_LOGIN")

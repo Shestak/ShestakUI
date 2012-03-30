@@ -1317,7 +1317,7 @@ VerticalTargetLine:SetScript("OnEvent", function(self)
 end)
 
 ----------------------------------------------------------------------------------------
---	Delete same lines from unit dropdown menu
+--	Delete some lines from unit dropdown menu
 ----------------------------------------------------------------------------------------
 do
 	local PET_DISMISS = "PET_DISMISS"
