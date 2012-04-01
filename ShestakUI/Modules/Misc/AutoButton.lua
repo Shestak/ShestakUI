@@ -68,7 +68,7 @@ AutoButton.c = AutoButton:CreateFontString(nil, "OVERLAY", f)
 AutoButton.c:SetFont(C.media.pixel_font, C.media.pixel_font_size * 2, C.media.pixel_font_style)
 AutoButton.c:SetTextColor(1, 1, 1, 1)
 AutoButton.c:Point("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", 0.5, 0)
-AutoButton.c:SetJustifyH("CENTER")	
+AutoButton.c:SetJustifyH("CENTER")
 
 -- Cooldown
 AutoButton.Cooldown = CreateFrame("Cooldown", nil, AutoButton)

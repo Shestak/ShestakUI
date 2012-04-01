@@ -20,6 +20,7 @@ T.ABItems = {
 	52507,	-- Stardust No.2 (Daily Quest)
 	69240,	-- Enchanted Salve (Daily Quest)
 	69235,	-- Fang of the Wolf (Daily Quest)
+	71978,	-- Darkmoon Bandage (Daily Quest)
 }
 
 T.ABEquipedItems = {
