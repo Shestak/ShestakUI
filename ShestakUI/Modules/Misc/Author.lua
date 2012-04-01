@@ -91,3 +91,29 @@ LFDParentFrame:HookScript("OnShow", function()
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Check date
+----------------------------------------------------------------------------------------
+function T.DateCheck(m, d)
+	local month = tonumber(date("%m"))
+	local day = tonumber(date("%d"))
+	if month == m and day == d then
+		return true
+	else
+		return false
+	end
+end
+
+local f = CreateFrame("Frame")
+f:RegisterEvent("PLAYER_ENTERING_WORLD")
+f:SetScript("OnEvent", function(self)
+	if T.DateCheck(1, 1) == true then
+		T.Delay(15, print, "|cffffff00Happy New Year. From Shestak.|r")
+		T.Delay(16, T.InfoTextShow, "Happy New Year. From Shestak.")
+	--elseif T.DateCheck(1, 8) == true then
+	--	T.Delay(15, print, "|cffffff00Blah blah. From Shestak.|r")
+	--	T.Delay(16, T.InfoTextShow, "Blah blah. From Shestak.")
+	end
+	self:UnregisterAllEvents()
+end)
