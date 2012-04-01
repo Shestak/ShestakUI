@@ -274,6 +274,16 @@ TaintFix:SetScript("OnUpdate", function(self, elapsed)
 end)
 
 ----------------------------------------------------------------------------------------
+--	Fix LFRBrowseFrameList/LFRQueueFrameSpecificList scroll frames
+----------------------------------------------------------------------------------------
+LFRBrowseFrameListScrollFrame:ClearAllPoints()
+LFRBrowseFrameListScrollFrame:SetPoint("TOPLEFT", LFRBrowseFrameListButton1, "TOPLEFT", 0, 0)
+LFRBrowseFrameListScrollFrame:SetPoint("BOTTOMRIGHT", LFRBrowseFrameListButton19, "BOTTOMRIGHT", 5, -2)
+LFRQueueFrameSpecificListScrollFrame:ClearAllPoints()
+LFRQueueFrameSpecificListScrollFrame:SetPoint("TOPLEFT", LFRQueueFrameSpecificListButton1, "TOPLEFT", 0, 0)
+LFRQueueFrameSpecificListScrollFrame:SetPoint("BOTTOMRIGHT", LFRQueueFrameSpecificListButton14, "BOTTOMRIGHT", 0, -2)
+
+----------------------------------------------------------------------------------------
 --	Check date
 ----------------------------------------------------------------------------------------
 function T.DateCheck(m, d)
