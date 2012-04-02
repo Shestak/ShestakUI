@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.misc.quest_auto_button == true then return end
+if C.misc.quest_auto_button ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	AutoButton for used items(by Elv22)
@@ -13,10 +13,10 @@ local function AutoButtonHide()
 		AutoButton:EnableMouse(false)
 	else
 		AutoButton:RegisterEvent("PLAYER_REGEN_ENABLED")
-		AutoButton:SetScript("OnEvent", function(self, event) 
+		AutoButton:SetScript("OnEvent", function(self, event)
 			if event == "PLAYER_REGEN_ENABLED" then
-				AutoButton:EnableMouse(false) 
-				AutoButton:UnregisterEvent("PLAYER_REGEN_ENABLED") 
+				AutoButton:EnableMouse(false)
+				AutoButton:UnregisterEvent("PLAYER_REGEN_ENABLED")
 			end
 		end)
 	end
@@ -31,13 +31,13 @@ local function AutoButtonShow(item)
 		end
 	else
 		AutoButton:RegisterEvent("PLAYER_REGEN_ENABLED")
-		AutoButton:SetScript("OnEvent", function(self, event) 
+		AutoButton:SetScript("OnEvent", function(self, event)
 			if event == "PLAYER_REGEN_ENABLED" then
-				AutoButton:EnableMouse(true) 
+				AutoButton:EnableMouse(true)
 				if item then
 					AutoButton:SetAttribute("item", item)
 				end
-				AutoButton:UnregisterEvent("PLAYER_REGEN_ENABLED") 
+				AutoButton:UnregisterEvent("PLAYER_REGEN_ENABLED")
 			end
 		end)
 	end
@@ -87,7 +87,7 @@ Scanner:SetScript("OnEvent", function()
 			itemID = tonumber(itemID)
 			for i, Items in pairs(Items) do
 				if itemID == Items then
-					local itemName, _, _, _, _, _, _, _, _, _, _ = GetItemInfo(itemID) 
+					local itemName, _, _, _, _, _, _, _, _, _, _ = GetItemInfo(itemID)
 					local count = GetItemCount(itemID)
 					local itemIcon = GetItemIcon(itemID)
 
@@ -115,12 +115,12 @@ Scanner:SetScript("OnEvent", function()
 	for w = 1, 19 do
 		for e, EquipedItems in pairs(EquipedItems) do
 			if GetInventoryItemID("player", w) == EquipedItems then
-				local itemName, _, _, _, _, _, _, _, _, _, _ = GetItemInfo(EquipedItems) 
+				local itemName, _, _, _, _, _, _, _, _, _, _ = GetItemInfo(EquipedItems)
 				local itemIcon = GetInventoryItemTexture("player", w)
 				-- Set our texture to the item found in bags
 				AutoButton.t:SetTexture(itemIcon)
 				AutoButton.c:SetText("")
-				
+
 				AutoButton:SetScript("OnUpdate", function(self, elapsed)
 					local cd_start, cd_finish, cd_enable = GetInventoryItemCooldown("player", w)
 					CooldownFrame_SetTimer(AutoButton.Cooldown, cd_start, cd_finish, cd_enable)
