@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.actionbar.enable ~= true or IsAddOnLoaded("ncHoverBind") then return end
+if IsAddOnLoaded("ncHoverBind") then return end
 
 ----------------------------------------------------------------------------------------
 --	Binding buttons(ncHoverBind by nightcracker)
