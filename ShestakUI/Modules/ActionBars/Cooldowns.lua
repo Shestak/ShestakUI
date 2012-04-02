@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if IsAddOnLoaded("OmniCC") or IsAddOnLoaded("ncCooldown") then return end
+if IsAddOnLoaded("OmniCC") or IsAddOnLoaded("ncCooldown") or IsAddOnLoaded("tullaCC") then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on OmniCC
