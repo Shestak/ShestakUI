@@ -2493,6 +2493,10 @@ Filger_Spells = {
 			{spellID = 99187, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Master of Flames (T12 x4)
 			{spellID = 99188, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadows of the Destroyer
+			{spellID = 109941, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fury of the Destroyer
+			{spellID = 109949, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
