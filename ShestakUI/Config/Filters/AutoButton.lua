@@ -21,6 +21,7 @@ T.ABItems = {
 	69240,	-- Enchanted Salve (Daily Quest)
 	69235,	-- Fang of the Wolf (Daily Quest)
 	71978,	-- Darkmoon Bandage (Daily Quest)
+	69981,	-- Ironforge Rations (Daily Quest)
 }
 
 T.ABEquipedItems = {
