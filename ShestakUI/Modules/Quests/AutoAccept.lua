@@ -115,7 +115,6 @@ Monomyth:Register("QUEST_ITEM_UPDATE", function(...)
 	end
 end)
 
-local completing
 Monomyth:Register("QUEST_COMPLETE", function()
 	local choices = GetNumQuestChoices()
 	if choices <= 1 then
@@ -141,19 +140,11 @@ Monomyth:Register("QUEST_COMPLETE", function()
 			_G["QuestInfoItem" .. bestIndex]:Click()
 		end
 	end
-
-	completing = true
 end)
 
-local completedQuests = {}
 Monomyth:Register("QUEST_FINISHED", function()
 	if choiceFinished then
 		choiceQueue = false
-	end
-
-	if completing then
-		completing = false
-		completedQuests[GetQuestID()] = true
 	end
 end)
 
@@ -182,25 +173,25 @@ Monomyth:Register("GUILDBANKFRAME_CLOSED", function()
 	atBank = false
 end)
 
-local query, queried
+local completedQuests, query = {}
 Monomyth:Register("QUEST_QUERY_COMPLETE", function()
 	if query then
+		local bag = query
+		query = nil
+
 		GetQuestsCompleted(completedQuests)
-		Monomyth.BAG_UPDATE(query, true)
+		Monomyth.BAG_UPDATE(bag)
 	end
 end)
 
-Monomyth:Register("BAG_UPDATE", function(bag, handled)
-	if bag < 0 or atBank or (query == bag and not handled) then return end
-
-	query = nil
+Monomyth:Register("BAG_UPDATE", function(bag)
+	if bag < 0 or atBank or query then return end
 
 	for slot = 1, GetContainerNumSlots(bag) do
 		local _, id, active = GetContainerItemQuestInfo(bag, slot)
 		if id and not active then
-			if not queried then
+			if not next(completedQuests) then
 				query = bag
-				queried = true
 				QueryQuestsCompleted()
 			elseif not completedQuests[id] then
 				UseContainerItem(bag, slot)
