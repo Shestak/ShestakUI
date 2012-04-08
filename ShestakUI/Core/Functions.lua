@@ -248,6 +248,37 @@ function T.SkinTab(tab)
 end
 
 function T.SkinNextPrevButton(btn, horizonal)
+	local normal, pushed, disabled
+	if btn:GetNormalTexture() then
+		normal = btn:GetNormalTexture():GetTexture()
+	end
+
+	if btn:GetPushedTexture() then
+		pushed = btn:GetPushedTexture():GetTexture()
+	end
+
+	if btn:GetDisabledTexture() then
+		disabled = btn:GetDisabledTexture():GetTexture()
+	end
+
+	btn:StripTextures()
+
+	if not normal then
+		normal = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up"
+	end
+
+	if not pushed then
+		pushed = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Down"
+	end
+
+	if not disabled then
+		disabled = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Disabled"
+	end
+
+	btn:SetNormalTexture(normal)
+	btn:SetPushedTexture(pushed)
+	btn:SetDisabledTexture(disabled)
+
 	btn:SetTemplate("Overlay")
 	btn:Size(btn:GetWidth() - 7, btn:GetHeight() - 7)
 
