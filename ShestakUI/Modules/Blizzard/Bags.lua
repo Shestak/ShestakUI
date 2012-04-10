@@ -46,7 +46,7 @@ Stuffing:SetScript("OnEvent", function(this, event, ...)
 end)
 
 local function Print(x)
-	DEFAULT_CHAT_FRAME:AddMessage("|cffffff00" .. x)
+	DEFAULT_CHAT_FRAME:AddMessage("|cffffff00"..x)
 end
 
 local function Stuffing_Sort(args)
@@ -166,7 +166,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	if slot > 3 then
 		ret.slot = slot
 		slot = slot - 4
-		ret.frame = CreateFrame("CheckButton", "StuffingBBag" .. slot, p, "BankItemButtonBagTemplate")
+		ret.frame = CreateFrame("CheckButton", "StuffingBBag"..slot, p, "BankItemButtonBagTemplate")
 		ret.frame:SetID(slot + 4)
 		table.insert(self.bagframe_buttons, ret)
 
@@ -177,7 +177,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 			ret.frame.tooltipText = ""
 		end
 	else
-		ret.frame = CreateFrame("CheckButton", "StuffingFBag" .. slot .. "Slot", p, "BagSlotButtonTemplate")
+		ret.frame = CreateFrame("CheckButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
 		ret.slot = slot
 		table.insert(self.bagframe_buttons, ret)
 	end
@@ -395,7 +395,7 @@ function Stuffing:CreateBagFrame(w)
 	end
 
 	-- Close button
-	f.b_close = CreateFrame("Button", "Stuffing_CloseButton" .. w, f, "UIPanelCloseButton")
+	f.b_close = CreateFrame("Button", "Stuffing_CloseButton"..w, f, "UIPanelCloseButton")
 	if C.skins.blizzard_frames == true then
 		T.SkinCloseButton(f.b_close, nil, nil, true)
 		f.b_close:Size(15)
@@ -417,7 +417,7 @@ function Stuffing:CreateBagFrame(w)
 	f.b_close:RegisterForClicks("AnyUp")
 
 	-- Create the bags frame
-	local fb = CreateFrame("Frame", n .. "BagsFrame", f)
+	local fb = CreateFrame("Frame", n.."BagsFrame", f)
 	fb:Point("BOTTOMLEFT", f, "TOPLEFT", 0, 3)
 	fb:SetFrameStrata("MEDIUM")
 	f.bags_frame = fb
@@ -482,7 +482,7 @@ function Stuffing:InitBags()
 	detail:Height(13)
 	detail:SetShadowColor(0, 0, 0, 0)
 	detail:SetJustifyH("LEFT")
-	detail:SetText("|cff9999ff" .. SEARCH)
+	detail:SetText("|cff9999ff"..SEARCH.."|r")
 	editbox:SetAllPoints(detail)
 
 	local OpenEditbox = function(self)
@@ -780,9 +780,9 @@ local function StuffingSlashCmd(Cmd)
 			Print(L_BAG_OPEN_BANK)
 		end
 	else
-		Print("/bags sort - " .. L_BAG_SORT)
-		Print("/bags stack - " .. L_BAG_STACK)
-		Print("/bags purchase - " .. L_BAG_BUY_BANKS_SLOT)
+		Print("/bags sort - "..L_BAG_SORT)
+		Print("/bags stack - "..L_BAG_STACK)
+		Print("/bags purchase - "..L_BAG_BUY_BANKS_SLOT)
 	end
 end
 
@@ -1079,12 +1079,7 @@ function Stuffing:SortBags()
 			if v.name then
 				local tex, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
 				local n, _, q, iL, rL, c1, c2, _, Sl = GetItemInfo(clink)
-				table.insert(st, {
-					srcSlot = v,
-					sslot = v.slot,
-					sbag = v.bag,
-					sort = q .. c1 .. c2 .. rL .. n .. iL .. Sl .. (#self.buttons - i),
-				})
+				table.insert(st, {srcSlot = v, sslot = v.slot, sbag = v.bag, sort = q..c1..c2..rL..n..iL..Sl..(#self.buttons - i)})
 			end
 		end
 	end
