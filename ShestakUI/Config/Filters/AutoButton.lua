@@ -22,6 +22,7 @@ T.ABItems = {
 	69235,	-- Fang of the Wolf (Daily Quest)
 	71978,	-- Darkmoon Bandage (Daily Quest)
 	69981,	-- Ironforge Rations (Daily Quest)
+	45072,	-- Brightly Colored Egg (Noblegarden)
 }
 
 T.ABEquipedItems = {
