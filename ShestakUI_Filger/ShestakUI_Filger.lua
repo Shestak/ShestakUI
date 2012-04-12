@@ -236,6 +236,7 @@ function Filger:DisplayActives()
 			else
 				bar.statusbar:SetMinMaxValues(0, value.duration)
 				bar.value = value
+				bar.activeIndex = activeIndex
 				bar:SetScript("OnUpdate", Filger.UpdateCD)
 			end
 		else
