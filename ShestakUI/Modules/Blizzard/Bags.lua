@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.bag.enable == true then return end
+if C.bag.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on Stuffing(by Hungtar, editor Tukz)
