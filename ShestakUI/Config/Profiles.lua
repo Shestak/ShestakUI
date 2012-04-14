@@ -98,7 +98,7 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -398, 245}
 	C["position"].top_panel = {"TOP", UIParent, "TOP", 0, -118}
 	C["position"].raid_buffs = {"BOTTOMLEFT", Minimap, "TOPLEFT", -2, 5}
-	C["position"].raid_utility = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", -79, 210}
+	C["position"].raid_utility = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 210}
 	C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -298, 210}
 	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", -284, 307}
 	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 307}
