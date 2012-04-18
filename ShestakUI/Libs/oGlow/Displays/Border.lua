@@ -15,7 +15,7 @@ local colorTable = setmetatable(
 local createBorder = function(self, point)
 	local bc = self.oGlowBorder
 	if not bc then
-		if C.skins.blizzard_frames == true then
+		if C.skins.blizzard_frames == true or IsAddOnLoaded("Aurora") then
 			if not self:IsObjectType("Frame") then
 				bc = CreateFrame("Frame", nil, self:GetParent())
 			else
@@ -62,7 +62,7 @@ local borderDisplay = function(frame, color)
 		local rgb = colorTable[color]
 
 		if rgb then
-			if C.skins.blizzard_frames == true then
+			if C.skins.blizzard_frames == true or IsAddOnLoaded("Aurora") then
 				bc:SetBackdropBorderColor(rgb[1], rgb[2], rgb[3])
 				if bc.backdrop then
 					bc.backdrop:SetBackdropBorderColor(rgb[1], rgb[2], rgb[3])
