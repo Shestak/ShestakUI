@@ -9,18 +9,13 @@ local function LoadSkin()
 		"HelpFrameLeftInset",
 		"HelpFrameMainInset",
 		"HelpFrameKnowledgebase",
-		"HelpFrameKnowledgebaseErrorFrame"
+		"HelpFrameKnowledgebaseErrorFrame",
+		"ReportPlayerNameDialogCommentFrame",
+		"ReportCheatingDialogCommentFrame"
 	}
 
 	local buttons = {
 		"HelpFrameAccountSecurityOpenTicket",
-		"HelpFrameReportLagLoot",
-		"HelpFrameReportLagAuctionHouse",
-		"HelpFrameReportLagMail",
-		"HelpFrameReportLagMovement",
-		"HelpFrameReportLagSpell",
-		"HelpFrameReportLagChat",
-		"HelpFrameReportAbuseOpenTicket",
 		"HelpFrameOpenTicketHelpTopIssues",
 		"HelpFrameOpenTicketHelpOpenTicket",
 		"HelpFrameKnowledgebaseSearchButton",
@@ -28,7 +23,16 @@ local function LoadSkin()
 		"HelpFrameCharacterStuckStuck",
 		"GMChatOpenLog",
 		"HelpFrameTicketSubmit",
-		"HelpFrameTicketCancel"
+		"HelpFrameTicketCancel",
+		"HelpFrameGM_ResponseNeedMoreHelp",
+		"HelpFrameGM_ResponseCancel",
+		"HelpFrameSubmitSuggestionSubmit",
+		"HelpFrameReportBugSubmit",
+		"HelpFrameButton16",
+		"ReportCheatingDialogCancelButton",
+		"ReportCheatingDialogReportButton",
+		"ReportPlayerNameDialogReportButton",
+		"ReportPlayerNameDialogCancelButton"
 	}
 
 	-- Main frames
@@ -53,27 +57,49 @@ local function LoadSkin()
 		end
 	end
 
+	HelpFrameReportBugScrollFrame:StripTextures()
+	HelpFrameReportBugScrollFrame:CreateBackdrop("Overlay")
+	HelpFrameReportBugScrollFrame.backdrop:Point("TOPLEFT", -4, 4)
+	HelpFrameReportBugScrollFrame.backdrop:Point("BOTTOMRIGHT", 6, -4)
+	HelpFrameReportBugScrollFrame:ClearAllPoints()
+	HelpFrameReportBugScrollFrame:Point("BOTTOM", HelpFrameReportBugSubmit, "TOP", 0, 10)
+
+	for i = 1, HelpFrameReportBug:GetNumChildren() do
+		local child = select(i, HelpFrameReportBug:GetChildren())
+		if not child:GetName() then
+			child:StripTextures()
+		end
+	end
+
+	HelpFrameSubmitSuggestionScrollFrame:StripTextures()
+	HelpFrameSubmitSuggestionScrollFrame:CreateBackdrop("Overlay")
+	HelpFrameSubmitSuggestionScrollFrame.backdrop:Point("TOPLEFT", -4, 4)
+	HelpFrameSubmitSuggestionScrollFrame.backdrop:Point("BOTTOMRIGHT", 6, -4)
+
+	for i = 1, HelpFrameSubmitSuggestion:GetNumChildren() do
+		local child = select(i, HelpFrameSubmitSuggestion:GetChildren())
+		if not child:GetName() then
+			child:StripTextures()
+		end
+	end
+
 	T.SkinScrollBar(HelpFrameKnowledgebaseScrollFrame2ScrollBar)
 
 	-- Sub buttons
 	for i = 1, #buttons do
-		_G[buttons[i]]:StripTextures(true)
-		_G[buttons[i]]:SkinButton(true)
+		local b = _G[buttons[i]]
+		b:SkinButton(false)
 
-		if _G[buttons[i]].text then
-			_G[buttons[i]].text:ClearAllPoints()
-			_G[buttons[i]].text:SetPoint("CENTER")
-			_G[buttons[i]].text:SetJustifyH("CENTER")
+		if b.text then
+			b.text:SetFont(C.media.normal_font, 13)
 		end
 	end
 
 	-- Main buttons
 	for i = 1, 6 do
 		local b = _G["HelpFrameButton"..i]
-		b:SkinButton(true)
-		b.text:ClearAllPoints()
-		b.text:SetPoint("CENTER")
-		b.text:SetJustifyH("CENTER")
+		b:SkinButton(false)
+		b.text:SetFont(C.media.normal_font, 13)
 	end
 
 	-- Table options
@@ -86,6 +112,8 @@ local function LoadSkin()
 	-- Misc items
 	HelpFrameKnowledgebaseSearchBox:ClearAllPoints()
 	HelpFrameKnowledgebaseSearchBox:Point("TOPLEFT", HelpFrameMainInset, "TOPLEFT", 13, -10)
+	HelpFrameKnowledgebaseNavBarHomeButton:ClearAllPoints()
+	HelpFrameKnowledgebaseNavBarHomeButton:Point("TOPLEFT", HelpFrameKnowledgebaseSearchBox, "BOTTOMLEFT", -2, -10)
 	HelpFrameKnowledgebaseNavBarOverlay:Kill()
 	HelpFrameKnowledgebaseNavBar:StripTextures()
 	HelpFrame:StripTextures(true)
@@ -98,11 +126,17 @@ local function LoadSkin()
 
 	-- Hearth Stone Button
 	HelpFrameCharacterStuckHearthstone:StyleButton()
-	HelpFrameCharacterStuckHearthstone:SetTemplate("Default", true)
+	HelpFrameCharacterStuckHearthstone:SetTemplate("Default")
 	HelpFrameCharacterStuckHearthstone.IconTexture:ClearAllPoints()
 	HelpFrameCharacterStuckHearthstone.IconTexture:Point("TOPLEFT", 2, -2)
 	HelpFrameCharacterStuckHearthstone.IconTexture:Point("BOTTOMRIGHT", -2, 2)
 	HelpFrameCharacterStuckHearthstone.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+	-- Report frames
+	ReportPlayerNameDialog:StripTextures()
+	ReportPlayerNameDialog:CreateBackdrop("Transparent")
+	ReportCheatingDialog:StripTextures()
+	ReportCheatingDialog:CreateBackdrop("Transparent")
 
 	local function navButtonFrameLevel(self)
 		for i = 1, #self.navList do
@@ -131,8 +165,6 @@ local function LoadSkin()
 		navButtonFrameLevel(self)
 	end)
 
-	HelpFrameGM_ResponseNeedMoreHelp:SkinButton()
-	HelpFrameGM_ResponseCancel:SkinButton()
 	for i = 1, HelpFrameGM_Response:GetNumChildren() do
 		local child = select(i, HelpFrameGM_Response:GetChildren())
 		if child and child:GetObjectType() == "Frame" and not child:GetName() then
