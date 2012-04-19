@@ -199,8 +199,6 @@ Filger_Spells = {
 			{spellID = 97008, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jaws of Defeat (Manacost, Use)
 			{spellID = 96908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Reflection of the Light (Spell Power, Use)
-			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
 			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1342,8 +1340,6 @@ Filger_Spells = {
 			{spellID = 97008, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jaws of Defeat (Manacost, Use)
 			{spellID = 96908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Reflection of the Light (Spell Power, Use)
-			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
 			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1912,8 +1908,6 @@ Filger_Spells = {
 			{spellID = 97008, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jaws of Defeat (Manacost, Use)
 			{spellID = 96908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Reflection of the Light (Spell Power, Use)
-			{spellID = 109792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Universal Trinket (Haste, Proc)
 			--{spellID = 109789, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -3186,6 +3180,8 @@ Filger_Spells = {
 			{spellID = 3409, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mind-numbing Poison
 			{spellID = 5760, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Smoke Bomb
+			{spellID = 88611, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Shaman
 			-- Hex
@@ -3483,6 +3479,8 @@ Filger_Spells = {
 			{spellID = 74002, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Shadow Dance
 			{spellID = 51713, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Smoke Bomb
+			{spellID = 88611, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Death knight
 			-- Anti-Magic Shell
