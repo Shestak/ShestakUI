@@ -154,7 +154,7 @@ end)
 --	Skin WatchFrameCollapseExpandButton
 ----------------------------------------------------------------------------------------
 if C.skins.blizzard_frames == true then
-	T.SkinCloseButton(WatchFrameCollapseExpandButton, nil, "-")
+	T.SkinCloseButton(WatchFrameCollapseExpandButton, nil, "-", true)
 	WatchFrameCollapseExpandButton:HookScript("OnClick", function(self)
 		if WatchFrame.collapsed then
 			self.text:SetText("+")

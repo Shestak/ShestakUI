@@ -238,8 +238,8 @@ local function OnHide(frame)
 		for _, icon in ipairs(frame.icons) do
 			icon:Hide()
 		end
-	end	
-	
+	end
+
 	frame:SetScript("OnUpdate", nil)
 end
 
@@ -304,7 +304,7 @@ local function UpdateObjects(frame)
 
 	-- Have to reposition this here so it doesnt resize after being hidden
 	frame.hp:ClearAllPoints()
-	frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)	
+	frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
 	frame.hp:SetPoint("TOP", frame, "TOP", 0, -15)
 	frame.hp:GetStatusBarTexture():SetHorizTile(true)
 
@@ -392,7 +392,7 @@ local function SkinObjects(frame)
 
 	-- Create Health Text
 	if C.nameplate.health_value == true then
-		hp.value = hp:CreateFontString(nil, "OVERLAY")	
+		hp.value = hp:CreateFontString(nil, "OVERLAY")
 		hp.value:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
 		hp.value:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 		hp.value:SetPoint("RIGHT", hp, "RIGHT", 0, 0)
@@ -410,7 +410,7 @@ local function SkinObjects(frame)
 	hp.hpbg = hp:CreateTexture(nil, "BORDER")
 	hp.hpbg:SetAllPoints(hp)
 	hp.hpbg:SetTexture(1, 1, 1, 0.25)
-	
+
 	hp:HookScript("OnShow", UpdateObjects)
 	frame.hp = hp
 
@@ -469,7 +469,7 @@ local function SkinObjects(frame)
 	cbshield:SetPoint("TOP", cb, "BOTTOM")
 	cb:HookScript("OnShow", UpdateCastbar)
 	cb:HookScript("OnSizeChanged", OnSizeChanged)
-	cb:HookScript("OnValueChanged", OnValueChanged)	
+	cb:HookScript("OnValueChanged", OnValueChanged)
 	frame.cb = cb
 
 	-- Highlight
