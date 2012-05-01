@@ -535,7 +535,7 @@ T.PostUpdateHealth = function(health, unit, min, max)
 		end
 		if unit == "pet" or unit == "vehicle" then
 			local _, class = UnitClass("player")
-			local r, g, b = unpack(oUF.colors.class[class])
+			local r, g, b = unpack(T.oUF_colors.class[class])
 			if C.unitframe.own_color == true then
 				health:SetStatusBarColor(unpack(C.unitframe.uf_color))
 				health.bg:SetVertexColor(0.1, 0.1, 0.1)
@@ -1057,7 +1057,7 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 	local r, g, b, color
 	if UnitIsPlayer(unit) then
 		local _, class = UnitClass(unit)
-		color = oUF.colors.class[class]
+		color = T.oUF_colors.class[class]
 	else
 		local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
 		if reaction then
@@ -1081,7 +1081,7 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 	else
 		if unit == "pet" or unit == "vehicle" then
 			local _, class = UnitClass("player")
-			local r, g, b = unpack(oUF.colors.class[class])
+			local r, g, b = unpack(T.oUF_colors.class[class])
 			if C.unitframe.own_color == true then
 				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
 				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
@@ -1130,7 +1130,7 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 	local r, g, b, color
 	if UnitIsPlayer(unit) then
 		local _, class = UnitClass(unit)
-		color = oUF.colors.class[class]
+		color = T.oUF_colors.class[class]
 	else
 		local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
 		if reaction then
@@ -1154,7 +1154,7 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 	else
 		if unit == "pet" or unit == "vehicle" then
 			local _, class = UnitClass("player")
-			local r, g, b = unpack(oUF.colors.class[class])
+			local r, g, b = unpack(T.oUF_colors.class[class])
 			if C.unitframe.own_color == true then
 				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
 				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
