@@ -192,8 +192,8 @@ if T.client == "zhTW" then
 	C["font"].bags_font_style = "OUTLINE"
 	C["font"].bags_font_shadow = true
 elseif T.client == "zhCN" then
-	C["media"].normal_font = "Fonts\\ZYKai_T.ttf"
-	C["media"].pixel_font = "Fonts\\ZYKai_T.ttf"
+	C["media"].normal_font = "Fonts\\ARKai_T.ttf"
+	C["media"].pixel_font = "Fonts\\ARKai_T.ttf"
 	C["media"].pixel_font_style = "OUTLINE"
 	C["media"].pixel_font_size = 11
 end
