@@ -85,6 +85,22 @@ Monomyth:Register("GOSSIP_SHOW", function()
 	end
 end)
 
+local darkmoonNPC = {
+	[57850] = true,	-- Teleportologist Fozlebub
+	[55382] = true,	-- Darkmoon Faire Mystic Mage (Horde)
+	[54334] = true,	-- Darkmoon Faire Mystic Mage (Alliance)
+}
+
+Monomyth:Register("GOSSIP_CONFIRM", function(index)
+	local GUID = UnitGUID("target") or ""
+	local creatureID = tonumber(string.sub(GUID, -12, -9), 16)
+
+	if creatureID and darkmoonNPC[creatureID] then
+		SelectGossipOption(index, "", true)
+		StaticPopup_Hide("GOSSIP_CONFIRM")
+	end
+end)
+
 QuestFrame:UnregisterEvent("QUEST_DETAIL")
 Monomyth:Register("QUEST_DETAIL", function()
 	if QuestGetAutoAccept() then
@@ -115,6 +131,7 @@ Monomyth:Register("QUEST_ITEM_UPDATE", function(...)
 	end
 end)
 
+local completing
 Monomyth:Register("QUEST_COMPLETE", function()
 	local choices = GetNumQuestChoices()
 	if choices <= 1 then
@@ -140,11 +157,19 @@ Monomyth:Register("QUEST_COMPLETE", function()
 			_G["QuestInfoItem" .. bestIndex]:Click()
 		end
 	end
+
+	completing = true
 end)
 
+local completedQuests = {}
 Monomyth:Register("QUEST_FINISHED", function()
 	if choiceFinished then
 		choiceQueue = false
+	end
+
+	if completing then
+		completing = false
+		completedQuests[GetQuestID()] = true
 	end
 end)
 
@@ -173,28 +198,29 @@ Monomyth:Register("GUILDBANKFRAME_CLOSED", function()
 	atBank = false
 end)
 
-local completedQuests, query = {}
+local query, queried
 Monomyth:Register("QUEST_QUERY_COMPLETE", function()
 	if query then
-		local bag = query
-		query = nil
-
 		GetQuestsCompleted(completedQuests)
-		Monomyth.BAG_UPDATE(bag)
+		Monomyth.BAG_UPDATE(query, true)
 	end
 end)
 
-Monomyth:Register("BAG_UPDATE", function(bag)
-	if bag < 0 or atBank or query then return end
+Monomyth:Register("BAG_UPDATE", function(bag, handled)
+	if bag < 0 or atBank or (query == bag and not handled) then return end
+
+	query = nil
 
 	for slot = 1, GetContainerNumSlots(bag) do
 		local _, id, active = GetContainerItemQuestInfo(bag, slot)
 		if id and not active then
-			if not next(completedQuests) then
+			if not queried then
 				query = bag
+				queried = true
 				QueryQuestsCompleted()
 			elseif not completedQuests[id] then
 				UseContainerItem(bag, slot)
+				completedQuests[id] = true
 			end
 		end
 	end
