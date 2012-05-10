@@ -22,7 +22,7 @@ local function LoadSkin()
 	end
 
 	-- Icons/merchant slots
-	for i = 1, 12 do
+	for i = 1, MERCHANT_ITEMS_PER_PAGE do
 		local b = _G["MerchantItem"..i.."ItemButton"]
 		local t = _G["MerchantItem"..i.."ItemButtonIconTexture"]
 		local item_bar = _G["MerchantItem"..i]
