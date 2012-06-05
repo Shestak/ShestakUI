@@ -128,3 +128,10 @@ getmetatable(DEFAULT_CHAT_FRAME).__index.AddMessage = function(s, t, ...)
 		return "|Hplayer:"..a.."|h"..g(b, "-([^%]:]+)(.*)","%2|r").."|h"
 	end), ...)
 end
+
+----------------------------------------------------------------------------------------
+--	Enables Launcher to download Mist of Pandaria data files
+----------------------------------------------------------------------------------------
+if GetCVar("accounttype") ~= "MP" then
+	SetCVar("accounttype", "MP")
+end
