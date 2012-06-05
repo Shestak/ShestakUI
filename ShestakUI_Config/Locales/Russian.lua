@@ -81,6 +81,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Объединять многократные
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Время в секундах для объединения многократных значений"
 L_GUI_COMBATTEXT_DISPEL = "Отображать ваши рассеивания"
 L_GUI_COMBATTEXT_INTERRUPT = "Отображать ваши прерывания"
+L_GUI_COMBATTEXT_DIRECTION = "Направление прокрутки текста боя('top'(направление вниз) or 'bottom'(направление вверх))"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Напоминания"

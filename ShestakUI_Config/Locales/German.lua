@@ -81,6 +81,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Vereint mehrfachen Flächenschaden in eine ei
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Zeit in Sekunden in der ein Flächenzauber in eine Nachricht vereint wird"
 L_GUI_COMBATTEXT_DISPEL = "Informiert dich über deine Bannungen"
 L_GUI_COMBATTEXT_INTERRUPT = "Informiert dich über deine Unterbrechungen"
+L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))" -- Needs review
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Erinnerungen für Buffs"

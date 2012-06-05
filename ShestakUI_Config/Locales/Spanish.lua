@@ -81,6 +81,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unir el spam de daño de area en un solo mens
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Tiempo en segundos que se unirá en un solo mensaje de daño de area"
 L_GUI_COMBATTEXT_DISPEL = "Mostrar tus disipaciones"
 L_GUI_COMBATTEXT_INTERRUPT = "Mostrar tus interrupciones"
+L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))" -- Needs review
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Recordatorio de Ventajas"

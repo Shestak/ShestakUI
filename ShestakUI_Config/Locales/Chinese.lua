@@ -81,6 +81,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "将AOE伤害合并为一条信息"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "AOE伤害合并信息阀值(秒)"
 L_GUI_COMBATTEXT_DISPEL = "当你驱散成功的时候提示"
 L_GUI_COMBATTEXT_INTERRUPT = "当你打断成功的时候提示"
+L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))" -- Needs review
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buffs提示"

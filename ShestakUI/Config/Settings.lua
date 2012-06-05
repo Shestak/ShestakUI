@@ -111,6 +111,7 @@ C["combattext"] = {
 	["merge_aoe_spam_time"] = 3,				-- Time in seconds aoe spell will be merged into single message(works only with ["damage"] = true)
 	["dispel"] = true,							-- Tells you about your dispels(works only with ["damage"] = true)
 	["interrupt"] = true,						-- Tells you about your interrupts(works only with ["damage"] = true)
+	["direction"] = "bottom",					-- Scrolling Direction("top"(goes down) or "bottom"(goes up))
 }
 
 ----------------------------------------------------------------------------------------

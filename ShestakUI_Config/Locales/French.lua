@@ -81,6 +81,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Rassembler tous les dégats d'un aoe en un se
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Temps en seconde durant lequel les dégats d'aoe seront fusionnés en un seul message"
 L_GUI_COMBATTEXT_DISPEL = "Informe si vous ete dispel"
 L_GUI_COMBATTEXT_INTERRUPT = "Informe si vous ete interrompu"
+L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))" -- Needs review
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Contrôle des buffs"

@@ -79,6 +79,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single m
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Time in seconds aoe spell will be merged into single message"
 L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels"
 L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts"
+L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buffs reminder"
