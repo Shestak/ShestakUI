@@ -164,6 +164,7 @@ L_GUI_CHAT_TIMESTAMP = "Цвет времени чата"
 L_GUI_CHAT_WHISP = "Звуковое оповещение во время шепота"
 L_GUI_CHAT_SKIN_BUBBLE = "Стилизация облачков чата"
 L_GUI_CHAT_CL_TAB = "Включить закладку журнала боя"
+L_GUI_CHAT_TABS_MOUSEOVER = "Закладки чата по наведению курсора"
 L_GUI_CHAT_STICKY = "Запоминать последний канал чата"
 
 -- Bag options

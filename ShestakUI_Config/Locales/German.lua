@@ -164,6 +164,7 @@ L_GUI_CHAT_TIMESTAMP = "Farbe des Zeitstempels"
 L_GUI_CHAT_WHISP = "Geräusch abspielen wenn eine private Nachricht empfangen wird"
 L_GUI_CHAT_SKIN_BUBBLE = "Blizzard Chat Blasen verändern"
 L_GUI_CHAT_CL_TAB = "Kampflog Reiter anzeigen"
+L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
 L_GUI_CHAT_STICKY = "Behalte den letzen Channel"
 
 -- Bag options

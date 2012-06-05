@@ -164,6 +164,7 @@ L_GUI_CHAT_TIMESTAMP = "Coloration du temps"
 L_GUI_CHAT_WHISP = "Alerte sonore quand murmure"
 L_GUI_CHAT_SKIN_BUBBLE = "Skin des bulles de discussions"
 L_GUI_CHAT_CL_TAB = "Afficher l'onglet du journal de combat"
+L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
 L_GUI_CHAT_STICKY = "Revient sur le dernier canal"
 
 -- Bag options

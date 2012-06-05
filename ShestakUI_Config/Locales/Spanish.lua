@@ -164,6 +164,7 @@ L_GUI_CHAT_TIMESTAMP = "Color de la marca de tiempo"
 L_GUI_CHAT_WHISP = "Sonido cuando te susurran"
 L_GUI_CHAT_SKIN_BUBBLE = "Estilizar las burbujas de chat"
 L_GUI_CHAT_CL_TAB = "Mostrar la pestaña del Registro de Combate"
+L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
 L_GUI_CHAT_STICKY = "Recordar último canal"
 
 -- Bag options

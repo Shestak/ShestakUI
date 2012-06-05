@@ -164,6 +164,7 @@ L_GUI_CHAT_TIMESTAMP = "時間標籤顏色"
 L_GUI_CHAT_WHISP = "接受密語時聲音提示"
 L_GUI_CHAT_SKIN_BUBBLE = "美化默認聊天泡泡"
 L_GUI_CHAT_CL_TAB = "顯示戰鬥記錄標簽"
+L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
 L_GUI_CHAT_STICKY = "記住上一次使用的頻道"
 
 -- Bag options

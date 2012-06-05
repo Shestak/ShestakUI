@@ -221,7 +221,7 @@ C["chat"] = {
 	["whisp_sound"] = true,						-- Sound when whisper
 	["bubbles"] = true,							-- Skin Blizzard chat bubbles
 	["combatlog"] = true,						-- Show CombatLog tab(need two reloads when false)
-	["tabs_mouseover"] = true,					-- Chat tabs on mouseover
+	["tabs_mouseover"] = false,					-- Chat tabs on mouseover
 	["sticky"] = true,							-- Remember last channel
 }
 

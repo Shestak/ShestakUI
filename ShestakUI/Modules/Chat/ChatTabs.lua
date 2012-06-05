@@ -4,6 +4,15 @@ if C.chat.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Based on Fane(by Haste)
 ----------------------------------------------------------------------------------------
+if C.chat.tabs_mouseover == true then
+	CHAT_FRAME_TAB_SELECTED_NOMOUSE_ALPHA = 0
+	CHAT_FRAME_TAB_NORMAL_NOMOUSE_ALPHA = 0
+	CHAT_FRAME_TAB_ALERTING_NOMOUSE_ALPHA = 1
+	CHAT_FRAME_TAB_SELECTED_MOUSEOVER_ALPHA = 1
+	CHAT_FRAME_TAB_NORMAL_MOUSEOVER_ALPHA = 1
+	CHAT_FRAME_TAB_ALERTING_MOUSEOVER_ALPHA = 1
+end
+
 local Fane = CreateFrame("Frame")
 
 local updateFS = function(self, inc, flags, ...)
@@ -56,19 +65,21 @@ local faneifyTab = function(frame, sel)
 	if not frame.Fane then
 		frame:HookScript("OnEnter", OnEnter)
 		frame:HookScript("OnLeave", OnLeave)
-		frame:SetAlpha(1)
+		if C.chat.tabs_mouseover ~= true then
+			frame:SetAlpha(1)
 
-		if i ~= 2 then
-			-- Might not be the best solution, but we avoid hooking into the UIFrameFade
-			-- system this way.
-			frame.SetAlpha = UIFrameFadeRemoveFrame
-		else
-			frame.SetAlpha = ChatFrame2_SetAlpha
-			frame.GetAlpha = ChatFrame2_GetAlpha
+			if i ~= 2 then
+				-- Might not be the best solution, but we avoid hooking into the UIFrameFade
+				-- system this way.
+				frame.SetAlpha = UIFrameFadeRemoveFrame
+			else
+				frame.SetAlpha = ChatFrame2_SetAlpha
+				frame.GetAlpha = ChatFrame2_GetAlpha
 
-			-- We do this here as people might be using AddonLoader together with Fane
-			if CombatLogQuickButtonFrame_Custom then
-				CombatLogQuickButtonFrame_Custom:SetAlpha(0.4)
+				-- We do this here as people might be using AddonLoader together with Fane
+				if CombatLogQuickButtonFrame_Custom then
+					CombatLogQuickButtonFrame_Custom:SetAlpha(0.4)
+				end
 			end
 		end
 
