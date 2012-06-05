@@ -15,11 +15,11 @@ function clcret:CreateButton(name, size, point, parent, pointParent, offsetx, of
 	name = "clcret" .. name
 	local button
 	if isChecked then
-		button = CreateFrame("CheckButton", name , parent)
+		button = CreateFrame("CheckButton", name, parent)
 		button:SetTemplate("Default")
 		button:StyleButton(true)
 	else
-		button = CreateFrame("Button", name , parent)
+		button = CreateFrame("Button", name, parent)
 		button:SetTemplate("Default")
 	end
 	button:EnableMouse(false)
