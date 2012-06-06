@@ -45,6 +45,7 @@
 	<Script file="Modules\Fader.lua"/>
 	<Script file="Modules\GCD.lua"/>
 	<Script file="Modules\MovableFrames.lua"/>
+	<Script file="Modules\NecroticStrike.lua"/>
 	<Script file="Modules\RaidDebuffs.lua"/>
 	<Script file="Modules\Reputation.lua"/>
 	<Script file="Modules\Smooth.lua"/>
@@ -53,7 +54,6 @@
 	<Script file="Modules\TotemBar.lua"/>
 	<Script file="Modules\Trinkets.lua"/>
 	<Script file="Modules\Vengeance.lua"/>
-	<Script file="Modules\NecroticStrike.lua"/>
 
 	<!-- Clique Support -->
 	<Button name="oUF_ClickCastUnitTemplate" virtual="true" inherits="SecureUnitButtonTemplate,SecureHandlerEnterLeaveTemplate">

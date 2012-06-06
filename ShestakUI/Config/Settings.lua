@@ -393,6 +393,7 @@ C["unitframe"] = {
 	["plugins_talents"] = false,				-- Enemy talents spec
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
 	["plugins_fader"] = false,					-- Fade unit frames
+	["plugins_diminishing"] = false,			-- Diminishing Returns icons on arena frames
 }
 
 ----------------------------------------------------------------------------------------
