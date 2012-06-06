@@ -77,7 +77,8 @@ Monomyth:Register("GOSSIP_SHOW", function()
 		end
 	end
 
-	if available == 0 and active == 0 and GetNumGossipOptions() == 1 then
+	local _, instance = GetInstanceInfo()
+	if available == 0 and active == 0 and GetNumGossipOptions() == 1 and instance == "raid" then
 		local _, type = GetGossipOptions()
 		if type == "gossip" then
 			SelectGossipOption(1)
@@ -223,6 +224,12 @@ Monomyth:Register("BAG_UPDATE", function(bag, handled)
 				completedQuests[id] = true
 			end
 		end
+	end
+end)
+
+ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(self, event, message)
+	if message == ERR_QUEST_ALREADY_DONE then
+		return true
 	end
 end)
 
