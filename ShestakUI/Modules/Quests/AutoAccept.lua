@@ -7,10 +7,12 @@ if C.misc.auto_quest ~= true then return end
 local Monomyth = CreateFrame("Frame")
 Monomyth:SetScript("OnEvent", function(self, event, ...) self[event](...) end)
 
+local atBank, atMail
+
 function Monomyth:Register(event, func)
 	self:RegisterEvent(event)
 	self[event] = function(...)
-		if IsShiftKeyDown() then
+		if IsShiftKeyDown() or atBank or atMail then
 			if event == "QUEST_DETAIL" then
 				QuestFrame_OnEvent(nil, event)
 			end
@@ -78,7 +80,7 @@ Monomyth:Register("GOSSIP_SHOW", function()
 	end
 
 	local _, instance = GetInstanceInfo()
-	if available == 0 and active == 0 and GetNumGossipOptions() == 1 and instance == "raid" then
+	if available == 0 and active == 0 and GetNumGossipOptions() == 1 and instance ~= "raid" then
 		local _, type = GetGossipOptions()
 		if type == "gossip" then
 			SelectGossipOption(1)
@@ -182,7 +184,6 @@ Monomyth:Register("QUEST_AUTOCOMPLETE", function(id)
 	end
 end)
 
-local atBank
 Monomyth:Register("BANKFRAME_OPENED", function()
 	atBank = true
 end)
@@ -197,6 +198,14 @@ end)
 
 Monomyth:Register("GUILDBANKFRAME_CLOSED", function()
 	atBank = false
+end)
+
+Monomyth:Register("MAIL_SHOW", function()
+	atMail = true
+end)
+
+Monomyth:Register("MAIL_CLOSED", function()
+	atMail = false
 end)
 
 local query, queried
