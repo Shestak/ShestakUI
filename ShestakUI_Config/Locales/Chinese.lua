@@ -45,6 +45,7 @@ L_GUI_SKINS = "风格化"
 L_GUI_SKINS_BLIZZARD = "开启暴风默认界面风格增强"
 L_GUI_SKINS_MINIMAP_BUTTONS = "开启小地图插件图标风格增强"
 L_GUI_SKINS_CLCR = "开启CLCRet样式增强"
+L_GUI_SKINS_CLCP = "开启CLCProt样式增强"
 L_GUI_SKINS_COMBUSTION_HELPER = "开启CombustionHelper样式增强"
 L_GUI_SKINS_BW = "开启BigWigs样式增强"
 L_GUI_SKINS_DBM = "开启DBM样式增强"
@@ -295,6 +296,7 @@ L_GUI_UF_PLUGINS_SMOOTH_BAR = "平滑条"
 L_GUI_UF_PLUGINS_TALENTS = "显示敌对玩家天赋"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "显示玩家/目标的文字战斗信息"
 L_GUI_UF_PLUGINS_FADER = "头像框体渐隐"
+L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "仇恨边框"

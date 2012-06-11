@@ -45,6 +45,7 @@ L_GUI_SKINS = "Estilización"
 L_GUI_SKINS_BLIZZARD = "Activar estilizado de marcos de Blizzard"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Activar estilizado de los iconos de los addons en el minimapa"
 L_GUI_SKINS_CLCR = "Activar estilo del CLCRet"
+L_GUI_SKINS_CLCP = "Activar estilo del CLCProt"
 L_GUI_SKINS_COMBUSTION_HELPER = "Activar estilo del CombustionHelper"
 L_GUI_SKINS_BW = "Activar estilo del BigWigs"
 L_GUI_SKINS_DBM = "Activar estilo del DBM"
@@ -295,6 +296,7 @@ L_GUI_UF_PLUGINS_SMOOTH_BAR = "Activar barra de suavizado"
 L_GUI_UF_PLUGINS_TALENTS = "Mostrar configuración de los talentos del enemigo"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texto de combate en el marco del jugador/objetivo"
 L_GUI_UF_PLUGINS_FADER = "Desvanecer marcos de unidades"
+L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Borde de aggro"

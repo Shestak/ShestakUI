@@ -45,6 +45,7 @@ L_GUI_SKINS = "Personalisation d'addon"
 L_GUI_SKINS_BLIZZARD = "Activer la personnalisation des fenêtres Blizzard"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Activer la personnalisation des icônes de la minimap"
 L_GUI_SKINS_CLCR = "Activer la personalisation pour CLCRet"
+L_GUI_SKINS_CLCP = "Activer la personalisation pour CLCProt"
 L_GUI_SKINS_COMBUSTION_HELPER = "Activer la personalisation pour CombustionHelper"
 L_GUI_SKINS_BW = "Activer la personalisation pour BigWigs"
 L_GUI_SKINS_DBM = "Activer la personalisation pour DBM"
@@ -295,6 +296,7 @@ L_GUI_UF_PLUGINS_SMOOTH_BAR = "Barre lisse"
 L_GUI_UF_PLUGINS_TALENTS = "Afficher les talent de l'ennemi"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texte de combat sur les barres du joueur et de la cible"
 L_GUI_UF_PLUGINS_FADER = "Barres de unités"
+L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"

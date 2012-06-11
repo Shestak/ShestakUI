@@ -45,6 +45,7 @@ L_GUI_SKINS = "Стилизация"
 L_GUI_SKINS_BLIZZARD = "Включить стилизацию элементов интерфейса Blizzard"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Включить стилизацию кнопок модификаций у мини-карты"
 L_GUI_SKINS_CLCR = "Включить стилизацию CLCRet"
+L_GUI_SKINS_CLCP = "Включить стилизацию CLCProt"
 L_GUI_SKINS_COMBUSTION_HELPER = "Включить стилизацию CombustionHelper"
 L_GUI_SKINS_BW = "Включить стилизацию BigWigs"
 L_GUI_SKINS_DBM = "Включить стилизацию DBM"
@@ -296,6 +297,7 @@ L_GUI_UF_PLUGINS_SMOOTH_BAR = "Плавное изменение полос"
 L_GUI_UF_PLUGINS_TALENTS = "Отображать таланты врага"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Текст боя на рамках игрока и цели"
 L_GUI_UF_PLUGINS_FADER = "Скрывать рамки вне боя"
+L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Включить отображение угрозы на рамках группы/рейда"

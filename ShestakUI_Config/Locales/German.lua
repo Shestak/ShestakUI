@@ -45,6 +45,7 @@ L_GUI_SKINS = "Stilisierung"
 L_GUI_SKINS_BLIZZARD = "Aktiviere Styles für Blizzardfenster"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Aktiviere styling Addonincons an der Minimap"
 L_GUI_SKINS_CLCR = "CLCRet Design aktivieren"
+L_GUI_SKINS_CLCP = "CLCProt Design aktivieren"
 L_GUI_SKINS_COMBUSTION_HELPER = "CombustionHelper Design aktivieren"
 L_GUI_SKINS_BW = "BigWigs Design aktivieren"
 L_GUI_SKINS_DBM = "DBM Design aktivieren"
@@ -295,6 +296,7 @@ L_GUI_UF_PLUGINS_SMOOTH_BAR = "Weichgezeichnete Leisten"
 L_GUI_UF_PLUGINS_TALENTS = "Zeige gegnerische Talente"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"
 L_GUI_UF_PLUGINS_FADER = "Blende Einheitenfenster aus"
+L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"
