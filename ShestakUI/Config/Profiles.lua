@@ -164,7 +164,7 @@ end
 ----------------------------------------------------------------------------------------
 --	ILF7-Virinea Config
 ----------------------------------------------------------------------------------------
-if (T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Махес" or T.name == "Ночнойшорох"
+if (T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Мейнрейн" or T.name == "Мейнгрейв"
 or T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
 or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка") and T.realm == "Азурегос" then
 	C["media"].pixel_font = C.media.normal_font
@@ -283,7 +283,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["font"].bags_font = C.media.pixel_font
 	C["font"].bags_font_style = "OUTLINE"
 	C["font"].bags_font_size = 14
-	if T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Махес" or T.name == "Ночнойшорох" then
+	if T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Мейнрейн" or T.name == "Мейнгрейв" then
 		C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -345, 166}
 		C["position"].group_loot = {"RIGHT", UIParent, "RIGHT", -331, -24}
 		C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 285, -20}
