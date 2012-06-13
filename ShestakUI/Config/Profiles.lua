@@ -89,52 +89,53 @@ if T.author == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Oz@Runetotem Config
+--	Oz Config
 ----------------------------------------------------------------------------------------
-if T.name == "Oz" and T.realm == "Runetotem" then
+if T.name == "Oz" then
 	C["position"].bn_popup = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5}
-	C["position"].quest = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21}
-	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -129}
+	C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -239, -113}
+	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -69}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
-	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -398, 245}
+	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -398, 293}
 	C["position"].top_panel = {"TOP", UIParent, "TOP", 0, -118}
 	C["position"].raid_buffs = {"BOTTOMLEFT", Minimap, "TOPLEFT", -2, 5}
 	C["position"].raid_utility = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 210}
-	C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -298, 210}
-	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", -284, 307}
-	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 307}
+	C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -298, 258}
+	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", -284, 355}
+	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 355}
 	C["position"].unitframes.tank = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 5, 18}
-	C["position"].unitframes.player_castbar = {"BOTTOM", UIParent, "BOTTOM", 0, 307}
-	C["position"].unitframes.target_castbar = {"BOTTOM", UIParent, "BOTTOM", 11, 330}
+	C["position"].unitframes.player_castbar = {"CENTER", UIParent, "CENTER", 0, -177}
+	C["position"].unitframes.target_castbar = {"CENTER", UIParent, "CENTER", 11, -154}
 	C["media"].border_color = {0.1, 0.1, 0.1, 1}
 	C["general"].welcome_message = false
 	C["misc"].auto_decline_duel = false
 	C["misc"].auto_resurrection = false
+	C["misc"].invite_keyword = "inv"
 	C["misc"].vehicle_mouseover = true
 	C["misc"].ach_screens = true
 	C["skins"].blizzard_frames = true
 	C["skins"].dbm = true
 	C["combattext"].scrollable = true
-	C["combattext"].dk_runes = false
 	C["combattext"].killingblow = true
 	C["enemycooldown"].show_always = true
-	C["threat"].width = 150
-	C["threat"].bar_rows = 3
+	C["threat"].width = 125
+	C["threat"].bar_rows = 2
 	C["tooltip"].item_icon = true
 	C["tooltip"].talents = true
+	C["tooltip"].achievements = false
 	C["tooltip"].title = true
+	C["tooltip"].spell_id = true
 	C["tooltip"].average_lvl = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].who_targetting = true
 	C["chat"].filter = false
+	C["chat"].tabs_mouseover = false
 	C["minimap"].size = 129
 	C["loot"].auto_greed = false
 	C["nameplate"].show_castbar_name = true
 	C["nameplate"].class_icons = true
 	C["actionbar"].hotkey = false
-	C["actionbar"].toggle_mode = false
 	C["actionbar"].bottombars = 1
-	C["actionbar"].rightbars = 3
 	C["aura"].show_spiral = true
 	C["aura"].focus_debuffs = true
 	C["aura"].fot_debuffs = true
@@ -149,10 +150,12 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["unitframe"].castbar_icon = true
 	C["unitframe"].icons_pvp = true
 	C["unitframe"].plugins_gcd = true
-	C["unitframe"].plugins_rune_bar = false
 	C["unitframe"].plugins_necro_strike = true
+	C["unitframe"].plugins_reputation_bar = true
+	C["unitframe"].plugins_experience_bar = true
 	C["unitframe"].plugins_smooth_bar = true
 	C["unitframe"].plugins_talents = true
+	C["unitframe"].plugins_diminishing = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].raid_groups = 8
 	C["raidframe"].icons_lfd_role = true
