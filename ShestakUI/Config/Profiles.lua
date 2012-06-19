@@ -129,7 +129,7 @@ if T.name == "Oz" then
 	C["tooltip"].raid_icon = true
 	C["tooltip"].who_targetting = true
 	C["chat"].filter = false
-	C["chat"].tabs_mouseover = false
+	C["chat"].tabs_mouseover = true
 	C["minimap"].size = 129
 	C["loot"].auto_greed = false
 	C["nameplate"].show_castbar_name = true
