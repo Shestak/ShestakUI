@@ -16,7 +16,7 @@ Locales\English.lua
 Locales\Chinese.lua
 Locales\French.lua
 Locales\German.lua
-## Locales\Italian.lua
+Locales\Italian.lua
 Locales\Korean.lua
 Locales\Portuguese.lua
 Locales\Russian.lua

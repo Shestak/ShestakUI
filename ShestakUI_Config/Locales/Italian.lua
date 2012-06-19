@@ -152,7 +152,7 @@ L_GUI_TOOLTIP_WHO_TARGETTING = "Visualizza chi ha in bersaglio l'unità che è n
 L_GUI_TOOLTIP_ITEM_COUNT = "Conteggio oggetti"
 L_GUI_TOOLTIP_UNIT_ROLE = "Ruolo dell'unità"
 
-Chat options
+-- Chat options
 L_GUI_CHAT_ENABLE = "Attiva chat"
 L_GUI_CHAT_BACKGROUND = "Attiva lo sfondo della chat"
 L_GUI_CHAT_BACKGROUND_ALPHA = "Trasparenza sfondo della chat"

@@ -6,7 +6,7 @@
 	<Script file="Locales\Chinese.lua"/>
 	<Script file="Locales\French.lua"/>
 	<Script file="Locales\German.lua"/>
-	<!--<Script file="Locales\Italian.lua"/>-->
+	<Script file="Locales\Italian.lua"/>
 	<Script file="Locales\Korean.lua"/>
 	<Script file="Locales\Portuguese.lua"/>
 	<Script file="Locales\Russian.lua"/>
