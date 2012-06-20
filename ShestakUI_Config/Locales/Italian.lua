@@ -122,7 +122,7 @@ L_GUI_COOLDOWN_PULSE_SOUND = "Attiva un suono di avviso"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Regolazione dell'animazione"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Opacità del tempo d'attesa massimo"
 L_GUI_COOLDOWN_PULSE_THRESHOLD = "Soglia di tempo minimo"
---]]
+
 -- Threat options
 L_GUI_THREAT = "Barre di minaccia"
 L_GUI_THREAT_ENABLE = "Attiva le barre di minaccia"

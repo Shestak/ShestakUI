@@ -191,7 +191,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 
 		if level and level == -1 then
 			if classification == "worldboss" then
-				level = "|cffff0000|r"..BOSS
+				level = "|cffff0000|r"..ENCOUNTER_JOURNAL_ENCOUNTER
 			else
 				level = "|cffff0000??|r"
 			end
