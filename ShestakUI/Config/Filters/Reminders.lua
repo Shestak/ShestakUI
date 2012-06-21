@@ -182,6 +182,13 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["personal"] = true,
 			},
+			[4] = {	-- Blessings group
+				["spells"] = {
+					20217,	-- Blessing of Kings
+					19740,	-- Blessing of Might
+				},
+				["combat"] = true,
+			},
 		},
 		SHAMAN = {
 			[1] = {	-- Shields group
@@ -262,7 +269,7 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		DRUID = {
-			[1] = {	-- Horn of Winter group
+			[1] = {	-- Mark of the Wild group
 				["spells"] = {
 					1126,	-- Mark of the Wild
 				},
