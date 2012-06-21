@@ -47,14 +47,18 @@ function frame:OnEvent(event, arg1)
 	end
 
 	local min = 1
-	for slot,id in pairs(SLOTIDS) do
+	for slot, id in pairs(SLOTIDS) do
 		local v1, v2 = GetInventoryItemDurability(id)
 
 		if v1 and v2 and v2 ~= 0 then
 			min = math.min(v1 / v2, min)
 			local str = fontstrings[slot]
 			str:SetTextColor(RYGColorGradient(v1 / v2))
-			str:SetText(string.format("%d%%", v1 / v2 * 100))
+			if v1 < v2 then
+				str:SetText(string.format("%d%%", v1 / v2 * 100))
+			else
+				str:SetText(nil)
+			end
 		else
 			local str = rawget(fontstrings, slot)
 			if str then str:SetText(nil) end
