@@ -53,6 +53,7 @@ local UpdateRune = function(self, event, rid)
 			rune:SetMinMaxValues(1, duration)
 			rune:SetScript("OnUpdate", OnUpdate)
 		end
+		UpdateType(self, event, rid)
 	end
 end
 

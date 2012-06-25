@@ -76,7 +76,7 @@ for _,event in pairs{"CHAT_MSG_YELL", "CHAT_MSG_SAY", "CHAT_MSG_RAID", "CHAT_MSG
 end
 
 ----------------------------------------------------------------------------------------
---	Auto select current event boss from LFD tool(by Nathanyel)
+--	Auto select current event boss from LFD tool(EventBossAutoSelect by Nathanyel)
 ----------------------------------------------------------------------------------------
 local firstLFD
 LFDParentFrame:HookScript("OnShow", function()
