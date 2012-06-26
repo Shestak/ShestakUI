@@ -119,17 +119,6 @@ f:SetScript("OnEvent", function(self)
 end)
 
 ----------------------------------------------------------------------------------------
---	Remove realm from cross-realm player names in chat(NoRealm by Semlar)
-----------------------------------------------------------------------------------------
-local a, g = getmetatable(DEFAULT_CHAT_FRAME).__index.AddMessage, gsub
-getmetatable(DEFAULT_CHAT_FRAME).__index.AddMessage = function(s, t, ...)
-	if s == ChatFrame2 then return a(s, t, ...) end
-	return a(s, g(t, "|Hplayer:(.-)|h(.-)|h", function(a, b)
-		return "|Hplayer:"..a.."|h"..g(b, "-([^%]:]+)(.*)","%2|r").."|h"
-	end), ...)
-end
-
-----------------------------------------------------------------------------------------
 --	Enables Launcher to download Mist of Pandaria data files
 ----------------------------------------------------------------------------------------
 if GetCVar("accounttype") ~= "MP" then
