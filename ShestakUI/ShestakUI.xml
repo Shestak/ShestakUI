@@ -96,6 +96,7 @@
 	<Script file="Modules\Misc\DungeonTabs.lua"/>
 	<Script file="Modules\Misc\AutoChefsHat.lua"/>
 	<Script file="Modules\Misc\CompanionCount.lua"/>
+	<Script file="Modules\Misc\SolveArtifact.lua"/>
 
 	<Script file="Modules\Announcements\Drinking.lua"/>
 	<Script file="Modules\Announcements\Interrupts.lua"/>
