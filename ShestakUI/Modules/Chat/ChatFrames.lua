@@ -2,17 +2,21 @@
 if C.chat.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Style chat frame(by Tukz)
+--	Style chat frame(by Tukz and p3lim)
 ----------------------------------------------------------------------------------------
-local UIChat = CreateFrame("Frame")
 local _G = _G
 local origs = {}
 local type = type
+
+local function Strip(info, name)
+	return string.format("|Hplayer:%s|h[%s]|h", info, name:gsub("%-[^|]+", ""))
+end
 
 -- Function to rename channel and other stuff
 local AddMessage = function(self, text, ...)
 	if type(text) == "string" then
 		text = text:gsub("|h%[(%d+)%. .-%]|h", "|h[%1]|h")
+		text = text:gsub("|Hplayer:(.-)|h%[(.-)%]|h", Strip)
 	end
 	return origs[self](self, text, ...)
 end
@@ -254,6 +258,7 @@ local function SetupChatPosAndFont(self)
 	end)
 end
 
+local UIChat = CreateFrame("Frame")
 UIChat:RegisterEvent("ADDON_LOADED")
 UIChat:RegisterEvent("PLAYER_ENTERING_WORLD")
 UIChat:SetScript("OnEvent", function(self, event, addon)
