@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Setup Shapeshift Bar by Tukz
+--	Setup Stance Bar by Tukz
 ----------------------------------------------------------------------------------------
 local ShiftHolder = CreateFrame("Frame", "ShiftBar", UIParent)
 if C.actionbar.shapeshift_horizontal == true then
@@ -19,7 +19,7 @@ else
 	ShiftHolder:Height((T.buttonsize * 7) + (T.buttonspacing * 6))
 end
 
--- Shapeshift command to move totem or shapeshift in-game
+-- Stance command to move totem or stance in-game
 local ShapeShiftAnchor = CreateFrame("Frame", "ShapeShiftAnchor", UIParent)
 ShapeShiftAnchor:SetAllPoints(ShiftHolder)
 
@@ -52,8 +52,8 @@ bar:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
 bar:SetScript("OnEvent", function(self, event, ...)
 	if event == "PLAYER_LOGIN" then
 		local button
-		for i = 1, NUM_SHAPESHIFT_SLOTS do
-			button = _G["ShapeshiftButton"..i]
+		for i = 1, NUM_STANCE_SLOTS do
+			button = _G["StanceButton"..i]
 			button:ClearAllPoints()
 			button:SetParent(self)
 			if i == 1 then
@@ -63,7 +63,7 @@ bar:SetScript("OnEvent", function(self, event, ...)
 					button:Point("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
 				end
 			else
-				local previous = _G["ShapeshiftButton"..i-1]
+				local previous = _G["StanceButton"..i-1]
 				if C.actionbar.shapeshift_horizontal == true then
 					button:Point("LEFT", previous, "RIGHT", T.buttonspacing, 0)
 				else
@@ -77,12 +77,12 @@ bar:SetScript("OnEvent", function(self, event, ...)
 		end
 		RegisterStateDriver(self, "visibility", States[T.class] or "hide")
 	elseif event == "UPDATE_SHAPESHIFT_FORMS" then
-		-- Update Shapeshift Bar Button Visibility
+		-- Update Stance Bar Button Visibility
 		-- I seriously don't know if it's the best way to do it on spec changes or when we learn a new stance.
 		if InCombatLockdown() then return end -- > just to be safe ;p
 		local button
-		for i = 1, NUM_SHAPESHIFT_SLOTS do
-			button = _G["ShapeshiftButton"..i]
+		for i = 1, NUM_STANCE_SLOTS do
+			button = _G["StanceButton"..i]
 			local _, name = GetShapeshiftFormInfo(i)
 			if name then
 				button:Show()
@@ -100,40 +100,13 @@ end)
 
 -- Mouseover bar
 if C.actionbar.shapeshift_mouseover == true then
-	if T.class == "SHAMAN" then
-		MultiCastSummonSpellButton:SetAlpha(0)
-		MultiCastSummonSpellButton:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-		MultiCastSummonSpellButton:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
-		MultiCastRecallSpellButton:SetAlpha(0)
-		MultiCastRecallSpellButton:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-		MultiCastRecallSpellButton:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
-		MultiCastFlyoutFrameOpenButton:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-		MultiCastFlyoutFrameOpenButton:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
-		MultiCastFlyoutFrame:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-		MultiCastFlyoutFrame:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
-		MultiCastActionBarFrame:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-		MultiCastActionBarFrame:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
-		for i = 1, 12 do
-			local b = _G["MultiCastActionButton"..i]
-			b:SetAlpha(0)
-			b:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-			b:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
-		end
-		for i = 1, 4 do
-			local b = _G["MultiCastSlotButton"..i]
-			b:SetAlpha(0)
-			b:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-			b:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
-		end
-	else
-		ShapeShiftBarAnchor:SetAlpha(0)
-		ShapeShiftBarAnchor:SetScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-		ShapeShiftBarAnchor:SetScript("OnLeave", function() ShapeShiftMouseOver(0) end)
-		for i = 1, NUM_SHAPESHIFT_SLOTS do
-			local b = _G["ShapeshiftButton"..i]
-			b:SetAlpha(0)
-			b:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-			b:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
-		end
+	ShapeShiftBarAnchor:SetAlpha(0)
+	ShapeShiftBarAnchor:SetScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+	ShapeShiftBarAnchor:SetScript("OnLeave", function() ShapeShiftMouseOver(0) end)
+	for i = 1, NUM_STANCE_SLOTS do
+		local b = _G["StanceButton"..i]
+		b:SetAlpha(0)
+		b:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
+		b:HookScript("OnLeave", function() ShapeShiftMouseOver(0) end)
 	end
 end
