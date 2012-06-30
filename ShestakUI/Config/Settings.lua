@@ -314,10 +314,10 @@ C["actionbar"] = {
 	["petbar_mouseover"] = false,				-- Petbar on mouseover(only for horizontal petbar)
 	["petbar_hide"] = false,					-- Hide pet bar
 	["petbar_horizontal"] = false,				-- Enable horizontal pet bar
-	-- Shapeshift/Stance/Totem bars
-	["shapeshift_mouseover"] = true,			-- Shapeshift/Stance/Totem bars on mouseover
-	["shapeshift_hide"] = false,				-- Hide shapeshift
-	["shapeshift_horizontal"] = true,			-- Enable horizontal shapeshift bar
+	-- Stance/Totem bars
+	["shapeshift_mouseover"] = true,			-- Stance/Totem bars on mouseover
+	["shapeshift_hide"] = false,				-- Hide stance
+	["shapeshift_horizontal"] = true,			-- Enable horizontal stance bar
 }
 
 ----------------------------------------------------------------------------------------
