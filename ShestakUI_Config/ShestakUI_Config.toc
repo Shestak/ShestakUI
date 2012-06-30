@@ -1,4 +1,4 @@
-## Interface: 50000
+## Interface: 50001
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI
 ## Author: Tohveli
