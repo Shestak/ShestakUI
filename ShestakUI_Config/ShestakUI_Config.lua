@@ -407,6 +407,9 @@ local NewButton = function(text, parent)
 	result:SetNormalTexture("")
 	result:SetHighlightTexture("")
 	result:SetPushedTexture("")
+	result.Left:SetAlpha(0)
+	result.Right:SetAlpha(0)
+	result.Middle:SetAlpha(0)
 
 	return result
 end

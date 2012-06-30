@@ -250,16 +250,9 @@ local function SkinButton(f, strip)
 	if f.SetDisabledTexture then f:SetDisabledTexture("") end
 	if strip then f:StripTextures() end
 
-	if f:GetName() then
-		if _G[f:GetName().."Left"] then _G[f:GetName().."Left"]:SetAlpha(0) end
-		if _G[f:GetName().."Middle"] then _G[f:GetName().."Middle"]:SetAlpha(0) end
-		if _G[f:GetName().."Right"] then _G[f:GetName().."Right"]:SetAlpha(0) end
-		if _G[f:GetName().."Selected"] then _G[f:GetName().."Selected"]:SetAlpha(0) end
-		if _G[f:GetName().."LeftDisabled"] then _G[f:GetName().."LeftDisabled"]:SetAlpha(0) end
-		if _G[f:GetName().."MiddleDisabled"] then _G[f:GetName().."MiddleDisabled"]:SetAlpha(0) end
-		if _G[f:GetName().."RightDisabled"] then _G[f:GetName().."RightDisabled"]:SetAlpha(0) end
-		if _G[f:GetName().."HighlightTexture"] then _G[f:GetName().."HighlightTexture"]:SetAlpha(0) end
-	end
+	if f.Left then f.Left:SetAlpha(0) end
+	if f.Right then f.Right:SetAlpha(0) end
+	if f.Middle then f.Middle:SetAlpha(0) end
 
 	f:SetTemplate("Overlay")
 	f:HookScript("OnEnter", T.SetModifiedBackdrop)
