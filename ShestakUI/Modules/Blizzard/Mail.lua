@@ -93,14 +93,16 @@ local function makeButton(id, text, w, h, x, y)
 	button:SetText(text)
 	return button
 end
-button = makeButton("OpenAllButton", ALL, 70, 25, -45, -408)
+button = makeButton("OpenAllButton", ALL, 70, 25, -65, -398)
 button:SetScript("OnClick", openAll)
 button:SetScript("OnEvent", onEvent)
-button2 = makeButton("OpenAllButton2", MONEY, 70, 25, 28, -408)
+button2 = makeButton("OpenAllButton2", MONEY, 70, 25, 18, -398)
 button2:SetScript("OnClick", openAllCash)
 if C.skins.blizzard_frames == true then
 	OpenAllButton:SkinButton()
 	OpenAllButton2:SkinButton()
+	OpenAllButton:SetPoint("CENTER", InboxFrame, "TOP", -45, -408)
+	OpenAllButton2:SetPoint("CENTER", InboxFrame, "TOP", 28, -408)
 end
 
 button:SetScript("OnEnter", function()
@@ -112,11 +114,11 @@ button:SetScript("OnLeave", function() GameTooltip:Hide() end)
 
 function copper_to_pretty_money(c)
 	if c > 10000 then
-		return ("%d|cffffd700"..GOLD_AMOUNT_SYMBOL.."|r %d|cffc7c7cf"..SILVER_AMOUNT_SYMBOL.."|r %d|cffeda55f"..COPPER_AMOUNT_SYMBOL.."|r"):format(c/10000, (c/100)%100, c%100)
+		return ("%d|cffffd700"..GOLD_AMOUNT_SYMBOL.."|r %d|cffc7c7cf"..SILVER_AMOUNT_SYMBOL.."|r %d|cffeda55f"..COPPER_AMOUNT_SYMBOL.."|r"):format(c / 10000, (c / 100) % 100, c % 100)
 	elseif c > 100 then
-		return ("%d|cffc7c7cf"..SILVER_AMOUNT_SYMBOL.."|r %d|cffeda55f"..COPPER_AMOUNT_SYMBOL.."|r"):format((c/100)%100, c%100)
+		return ("%d|cffc7c7cf"..SILVER_AMOUNT_SYMBOL.."|r %d|cffeda55f"..COPPER_AMOUNT_SYMBOL.."|r"):format((c / 100) % 100, c % 100)
 	else
-		return ("%d|cffeda55f"..COPPER_AMOUNT_SYMBOL.."|r"):format(c%100)
+		return ("%d|cffeda55f"..COPPER_AMOUNT_SYMBOL.."|r"):format(c % 100)
 	end
 end
 
