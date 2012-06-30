@@ -67,7 +67,7 @@ for class, color in next, RAID_CLASS_COLORS do
 end
 
 local function AddTargetedBy()
-	local numParty, numRaid = GetNumPartyMembers(), GetNumRaidMembers()
+	local numParty, numRaid = GetNumSubgroupMembers(), GetNumGroupMembers()
 	if numParty > 0 or numRaid > 0 then
 		for i = 1, (numRaid > 0 and numRaid or numParty) do
 			local unit = (numRaid > 0 and "raid"..i or "party"..i)
@@ -311,7 +311,7 @@ if C.tooltip.rank == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Hide tooltips in combat for action bars, pet bar and shapeshift bar
+--	Hide tooltips in combat for action bars, pet bar and stance bar
 ----------------------------------------------------------------------------------------
 if C.tooltip.hidebuttons == true then
 	local CombatHideActionButtonsTooltip = function(self)

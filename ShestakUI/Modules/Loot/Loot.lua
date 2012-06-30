@@ -52,9 +52,9 @@ function Butsu:LOOT_OPENED(event, autoloot)
 				local color = ITEM_QUALITY_COLORS[quality]
 				local r, g, b = color.r, color.g, color.b
 
-				if LootSlotIsCoin(i) then
-					item = item:gsub("\n", ", ")
-				end
+				--if LootSlotIsCoin(i) then
+				--	item = item:gsub("\n", ", ")
+				--end
 
 				if quantity and quantity > 1 then
 					slot.count:SetText(quantity)
@@ -218,7 +218,7 @@ function Announce(chn)
 		SendChatMessage(L_LOOT_MONSTER.."'"..UnitName("target").."':", chn)
 	end
 	for i = 1, GetNumLootItems() do
-		if LootSlotIsItem(i) then
+		if LootSlotHasItem(i) then
 			local link = GetLootSlotLink(i)
 			local messlink = "- %s"
 			SendChatMessage(format(messlink, link), chn)
@@ -299,7 +299,7 @@ do
 
 	local OnEnter = function(self)
 		local slot = self:GetID()
-		if LootSlotIsItem(slot) then
+		if LootSlotHasItem(slot) then
 			GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
 			GameTooltip:SetLootItem(slot)
 			CursorUpdate(self)
@@ -442,6 +442,7 @@ table.insert(UISpecialFrames, "Butsu")
 ----------------------------------------------------------------------------------------
 --	MasterLoot by Ammo
 ----------------------------------------------------------------------------------------
+--[[
 local hexColors = {}
 for k, v in pairs(RAID_CLASS_COLORS) do
 	hexColors[k] = string.format("|cff%02x%02x%02x", v.r * 255, v.g * 255, v.b * 255)
@@ -495,7 +496,7 @@ local function init()
 	info.notClickable = nil
 	UIDropDownMenu_AddButton(info)
 
-	if GetNumRaidMembers() > 0 then
+	if GetNumGroupMembers() > 0 then
 		-- In a raid
 		for k, v in pairs(classesInRaid) do
 			classesInRaid[k] = nil
@@ -574,4 +575,4 @@ local function init()
 	end
 end
 
-UIDropDownMenu_Initialize(GroupLootDropDown, init, "MENU")
+UIDropDownMenu_Initialize(GroupLootDropDown, init, "MENU")]]

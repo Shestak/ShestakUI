@@ -12,7 +12,7 @@ autoreleasepvp:RegisterEvent("PLAYER_DEAD")
 autoreleasepvp:SetScript("OnEvent", function(self, event)
 	local soulstone = GetSpellInfo(20707)
 	if (T.class ~= "SHAMAN") and not (soulstone and UnitBuff("player", soulstone)) then
-		if (tostring(GetZoneText()) == WINTERGRASP) or (tostring(GetZoneText()) == BARAD) or MiniMapBattlefieldFrame.status == "active" then
+		if (tostring(GetZoneText()) == WINTERGRASP) or (tostring(GetZoneText()) == BARAD) or QueueStatusMinimapButton.status == "active" then
 			RepopMe()
 		end
 	end

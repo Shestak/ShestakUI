@@ -37,7 +37,7 @@ if C.loot.auto_confirm_de == true then
 	acd:RegisterEvent("CONFIRM_LOOT_ROLL")
 	acd:RegisterEvent("LOOT_BIND_CONFIRM")
 	acd:SetScript("OnEvent", function(self, event, id)
-		if GetNumRaidMembers() == 0 and GetNumPartyMembers() == 0 then
+		if GetNumGroupMembers() == 0 and GetNumSubgroupMembers() == 0 then
 			local elapsed = 0
 			self:SetScript("OnUpdate", function(self, elap)
 				elapsed = elapsed + elap

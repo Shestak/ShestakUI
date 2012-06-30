@@ -234,12 +234,12 @@ local handler = CreateFrame("Frame")
 handler:RegisterEvent("PLAYER_TALENT_UPDATE")
 handler:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 handler:SetScript("OnEvent", function()
-	local tabs = GetNumTalentTabs()
+	local tabs = GetNumSpecializations()
 	if tabs == 0 then return end
 
 	local mostPoints = -1
 	for index = 1, tabs do
-		local _, _, _, _, points = GetTalentTabInfo(index)
+		local _, _, _, _, points = GetSpecializationInfo(index)
 		if points > mostPoints then
 			mostPoints = points
 			spec = index

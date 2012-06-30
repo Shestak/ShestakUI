@@ -84,11 +84,11 @@ if not C.actionbar.shapeshift_hide then
 			if C.actionbar.shapeshift_horizontal ~= true then
 				shiftanchor:Width(T.buttonsize)
 				shiftanchor:Height((T.buttonsize * forms) + ((T.buttonspacing * forms) - 3 ))
-				shiftanchor:Point("TOPLEFT", _G["ShapeshiftButton1"], "TOPLEFT")
+				shiftanchor:Point("TOPLEFT", _G["StanceButton1"], "TOPLEFT")
 			else
 				shiftanchor:Width((T.buttonsize * forms) + ((T.buttonspacing * forms) - 3))
 				shiftanchor:Height(T.buttonsize)
-				shiftanchor:Point("TOPLEFT", _G["ShapeshiftButton1"], "TOPLEFT")
+				shiftanchor:Point("TOPLEFT", _G["StanceButton1"], "TOPLEFT")
 			end
 		end
 	end)

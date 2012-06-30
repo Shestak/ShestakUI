@@ -110,7 +110,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 				if not self.button.id or self.button.id < 1 or self.button.id > (spellmacro=="STANCE" and 10 or 12) then
 					self.button.bindstring = "CLICK "..self.button.name..":LeftButton"
 				else
-					self.button.bindstring = (spellmacro == "STANCE" and "SHAPESHIFTBUTTON" or "BONUSACTIONBUTTON")..self.button.id
+					self.button.bindstring = (spellmacro == "STANCE" and "STANCEBUTTON" or "BONUSACTIONBUTTON")..self.button.id
 				end
 
 				GameTooltip:AddLine("Trigger")
@@ -259,11 +259,9 @@ SlashCmdList.MOUSEOVERBIND = function()
 		}
 
 		-- Registering
-		local stance = ShapeshiftButton1:GetScript("OnClick")
+		local stance = StanceButton1:GetScript("OnClick")
 		local pet = PetActionButton1:GetScript("OnClick")
 		local button = SecureActionButton_OnClick
-		local summon = MultiCastSummonSpellButton:GetScript("OnClick")
-		local recall = MultiCastRecallSpellButton:GetScript("OnClick")
 
 		local function register(val)
 			if val.IsProtected and val.GetObjectType and val.GetScript and val:GetObjectType() == "CheckButton" and val:IsProtected() then
@@ -274,10 +272,6 @@ SlashCmdList.MOUSEOVERBIND = function()
 					val:HookScript("OnEnter", function(self) bind:Update(self, "STANCE") end)
 				elseif script == pet then
 					val:HookScript("OnEnter", function(self) bind:Update(self, "PET") end)
-				elseif script == summon then
-					val:HookScript("OnEnter", function(self) bind:Update(self, "MULTICASTSUMMONSPELL") end)
-				elseif script == recall then
-					val:HookScript("OnEnter", function(self) bind:Update(self, "MULTICASTRECALL") end)
 				end
 			end
 		end
@@ -314,7 +308,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 	if not bind.enabled then
 		bind:Activate()
 		StaticPopup_Show("KEYBIND_MODE")
-		local stance = ShapeshiftButton1:GetScript("OnClick")
+		local stance = StanceButton1:GetScript("OnClick")
 		local pet = PetActionButton1:GetScript("OnClick")
 		local button = SecureActionButton_OnClick
 		local focus = GetMouseFocus()

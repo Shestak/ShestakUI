@@ -50,10 +50,27 @@ MiniMapMailBorder:Hide()
 MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
 MiniMapMailIcon:Size(16)
 
--- Move battleground icon
-MiniMapBattlefieldFrame:ClearAllPoints()
-MiniMapBattlefieldFrame:Point("TOP", Minimap, "TOP", 1, 6)
-MiniMapBattlefieldBorder:Hide()
+-- Move QueueStatus icon
+QueueStatusMinimapButton:ClearAllPoints()
+QueueStatusMinimapButton:Point("TOP", Minimap, "TOP", 1, 6)
+QueueStatusMinimapButton:SetHighlightTexture(nil)
+QueueStatusMinimapButtonBorder:Hide()
+
+local function UpdateLFGTooltip()
+	local position = MinimapAnchor:GetPoint()
+	QueueStatusFrame:ClearAllPoints()
+	if position:match("BOTTOMRIGHT") then
+		QueueStatusFrame:Point("BOTTOMRIGHT", QueueStatusMinimapButton, "BOTTOMLEFT", 0, 0)
+	elseif position:match("BOTTOM") then
+		QueueStatusFrame:Point("BOTTOMLEFT", QueueStatusMinimapButton, "BOTTOMRIGHT", 4, 0)
+	elseif position:match("LEFT") then
+		QueueStatusFrame:Point("TOPLEFT", QueueStatusMinimapButton, "TOPRIGHT", 4, 0)
+	else
+		QueueStatusFrame:Point("TOPRIGHT", QueueStatusMinimapButton, "TOPLEFT", 0, 0)
+	end
+end
+QueueStatusFrame:HookScript("OnShow", UpdateLFGTooltip)
+QueueStatusFrame:SetFrameStrata("TOOLTIP")
 
 -- Hide world map button
 MiniMapWorldMapButton:Hide()
@@ -75,14 +92,8 @@ GameTimeCalendarInvitesTexture:ClearAllPoints()
 GameTimeCalendarInvitesTexture:SetParent(Minimap)
 GameTimeCalendarInvitesTexture:Point("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
 
--- LFG/LFR icon
-MiniMapLFGFrame:ClearAllPoints()
-MiniMapLFGFrame:Point("TOP", Minimap, "TOP", 1, 6)
-MiniMapLFGFrame:SetHighlightTexture(nil)
-MiniMapLFGFrameBorder:Hide()
-
 -- Default LFG icon
-MiniMapLFGFrameGroupSize:Hide()
+--MiniMapLFGFrameGroupSize:Hide()
 LFG_EYE_TEXTURES.raid = LFG_EYE_TEXTURES.default
 LFG_EYE_TEXTURES.unknown = LFG_EYE_TEXTURES.default
 
@@ -115,23 +126,6 @@ GhostFrameContentsFrame.SetPoint = T.dummy
 GhostFrame:ClearAllPoints()
 GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
--- LFDSearchStatus
-local function UpdateLFGTooltip()
-	local position = MinimapAnchor:GetPoint()
-	LFGSearchStatus:ClearAllPoints()
-	if position:match("BOTTOMRIGHT") then
-		LFGSearchStatus:Point("BOTTOMRIGHT", MiniMapLFGFrame, "BOTTOMLEFT", 0, 0)
-	elseif position:match("BOTTOM") then
-		LFGSearchStatus:Point("BOTTOMLEFT", MiniMapLFGFrame, "BOTTOMRIGHT", 4, 0)
-	elseif position:match("LEFT") then
-		LFGSearchStatus:Point("TOPLEFT", MiniMapLFGFrame, "TOPRIGHT", 4, 0)
-	else
-		LFGSearchStatus:Point("TOPRIGHT", MiniMapLFGFrame, "TOPLEFT", 0, 0)
-	end
-end
-LFGSearchStatus:HookScript("OnShow", UpdateLFGTooltip)
-LFGSearchStatus:SetFrameStrata("TOOLTIP")
 
 -- Enable mouse scrolling
 Minimap:EnableMouseWheel(true)
@@ -186,6 +180,9 @@ local micromenu = {
 	{text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
 		ToggleFrame(QuestLogFrame)
 	end},
+	{text = MOUNTS_AND_PETS, notCheckable = 1, func = function()
+		TogglePetJournal()
+	end},
 	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
 		ToggleFriendsFrame(1)
 	end},
@@ -213,14 +210,7 @@ local micromenu = {
 	end},
 	{text = LFG_TITLE, notCheckable = 1, func = function()
 		if T.level >= SHOW_LFD_LEVEL then
-			ToggleFrame(LFDParentFrame)
-		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
-		end
-	end},
-	{text = RAID_FINDER, notCheckable = true, func = function()
-		if T.level >= SHOW_LFD_LEVEL then
-			ToggleRaidFrame(1)
+			PVEFrame_ToggleFrame()
 		else
 			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
 		end

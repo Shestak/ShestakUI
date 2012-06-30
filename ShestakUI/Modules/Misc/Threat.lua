@@ -122,12 +122,12 @@ end
 
 local UpdateThreat = function()
 	if targeted then
-		if GetNumRaidMembers() > 0 then
-			for i = 1, GetNumRaidMembers(), 1 do
+		if GetNumGroupMembers() > 0 then
+			for i = 1, GetNumGroupMembers(), 1 do
 				CheckUnit("raid"..i)
 			end
-		elseif GetNumPartyMembers() > 0 then
-			for i = 1, GetNumPartyMembers(), 1 do
+		elseif GetNumSubgroupMembers() > 0 then
+			for i = 1, GetNumSubgroupMembers(), 1 do
 				CheckUnit("party"..i)
 			end
 		end
@@ -139,7 +139,7 @@ end
 
 local OnEvent = function(self, event, ...)
 	if event == "PLAYER_TARGET_CHANGED" or event == "UNIT_THREAT_LIST_UPDATE" then
-		if C.threat.hide_solo == true and (GetNumRaidMembers() + GetNumPartyMembers() == 0) then
+		if C.threat.hide_solo == true and (GetNumGroupMembers() + GetNumSubgroupMembers() == 0) then
 			targeted = false
 		else
 			if UnitExists("target") and not UnitIsDead("target") and not UnitIsPlayer("target") and UnitCanAttack("player", "target") then

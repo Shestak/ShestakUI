@@ -5,7 +5,7 @@ if C.tooltip.enable ~= true or C.tooltip.talents ~= true then return end
 --	Target Talents(TipTacTalents by Aezay)
 ----------------------------------------------------------------------------------------
 local gtt = GameTooltip
-local GetTalentTabInfo = GetTalentTabInfo
+local GetSpecializationInfo = GetSpecializationInfo
 
 -- Constants
 local TALENTS_PREFIX = TALENTS..":|cffffffff "
@@ -31,17 +31,17 @@ ttt:Hide()
 ----------------------------------------------------------------------------------------
 local function GatherTalents(isInspect)
 	-- Inspect functions will always use the active spec when not inspecting
-	local group = GetActiveTalentGroup(isInspect)
+	local group = GetActiveSpecGroup(isInspect)
 	-- Get points per tree, and set "primaryTree" to the tree with most points
 	local primaryTree = 1
 	for i = 1, 3 do
-		local _, _, _, _, pointsSpent = GetTalentTabInfo(i, isInspect, nil, group)
+		local _, _, _, _, pointsSpent = GetSpecializationInfo(i, isInspect, nil, group)
 		current[i] = pointsSpent
 		if current[i] > current[primaryTree] then
 			primaryTree = i
 		end
 	end
-	local _, tabName = GetTalentTabInfo(primaryTree, isInspect, nil, group)
+	local _, tabName = GetSpecializationInfo(primaryTree, isInspect, nil, group)
 	current.tree = tabName
 	-- Customise output. Use TipTac setting if it exists, otherwise just use formatting style one.
 	if current[primaryTree] == 0 then

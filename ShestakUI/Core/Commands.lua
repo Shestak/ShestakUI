@@ -73,7 +73,7 @@ function DisbandRaidGroup()
 	if InCombatLockdown() then return end
 	if UnitInRaid("player") then
 		SendChatMessage(L_INFO_DISBAND, "RAID")
-		for i = 1, GetNumRaidMembers() do
+		for i = 1, GetNumGroupMembers() do
 			local name, _, _, _, _, _, _, online = GetRaidRosterInfo(i)
 			if online and name ~= T.name then
 				UninviteUnit(name)
@@ -82,7 +82,7 @@ function DisbandRaidGroup()
 	else
 		SendChatMessage(L_INFO_DISBAND, "PARTY")
 		for i = MAX_PARTY_MEMBERS, 1, -1 do
-			if GetPartyMember(i) then
+			if GetGroupMember(i) then
 				UninviteUnit(UnitName("party"..i))
 			end
 		end
@@ -111,7 +111,7 @@ SLASH_GROUPDISBAND2 = "/кв"
 --	Convert party to raid
 ----------------------------------------------------------------------------------------
 SlashCmdList.PARTYTORAID = function()
-	if GetNumPartyMembers() > 0 or GetNumRaidMembers() > 0 then
+	if GetNumSubgroupMembers() > 0 or GetNumGroupMembers() > 0 then
 		if UnitInRaid("player") and IsRaidLeader() then
 			ConvertToParty()
 		elseif UnitInParty("player") and IsPartyLeader() then
@@ -161,7 +161,7 @@ SLASH_LUAERROR2 = "/дгфуккщк"
 ----------------------------------------------------------------------------------------
 SlashCmdList.SPEC = function()
 	if T.level >= SHOW_TALENT_LEVEL then
-		local spec = GetActiveTalentGroup()
+		local spec = GetActiveSpecGroup()
 		if spec == 1 then SetActiveTalentGroup(2) elseif spec == 2 then SetActiveTalentGroup(1) end
 	else
 		print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")

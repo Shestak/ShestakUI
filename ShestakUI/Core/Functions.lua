@@ -71,7 +71,7 @@ end
 T.CheckForKnownTalent = function(spellid)
 	local wanted_name = GetSpellInfo(spellid)
 	if not wanted_name then return nil end
-	local num_tabs = GetNumTalentTabs()
+	local num_tabs = GetNumSpecializations()
 	for t = 1, num_tabs do
 		local num_talents = GetNumTalents(t)
 		for i = 1, num_talents do
@@ -90,7 +90,7 @@ end
 
 local RoleUpdater = CreateFrame("Frame")
 local function CheckRole(self, event, unit)
-	local tree = GetPrimaryTalentTree()
+	local tree = GetSpecialization()
 	local resilience
 	local resilperc = GetCombatRatingBonus(COMBAT_RATING_RESILIENCE_PLAYER_DAMAGE_TAKEN)
 	if resilperc > GetDodgeChance() and resilperc > GetParryChance() and UnitLevel("player") == MAX_PLAYER_LEVEL then
@@ -109,8 +109,8 @@ local function CheckRole(self, event, unit)
 		local base, posBuff, negBuff = UnitAttackPower("player")
 		local playerap = base + posBuff + negBuff
 
-		if (((playerap > playerint) or (playeragi > playerint)) and not (T.class == "SHAMAN" and tree ~= 1 and tree ~= 3) and not (UnitBuff("player", GetSpellInfo(24858)) 
-		or UnitBuff("player", GetSpellInfo(65139)))) or T.class == "ROGUE" or T.class == "HUNTER" or (T.class == "SHAMAN" and tree == 2) then
+		if (((playerap > playerint) or (playeragi > playerint)) and not (T.class == "SHAMAN" and tree ~= 1 and tree ~= 3) and not (UnitBuff("player", GetSpellInfo(24858))
+		or UnitBuff("player", GetSpellInfo(114282)))) or T.class == "ROGUE" or T.class == "HUNTER" or (T.class == "SHAMAN" and tree == 2) then
 			T.Role = "Melee"
 		else
 			T.Role = "Caster"
@@ -913,7 +913,8 @@ end
 T.UpdateHoly = function(self, event, unit, powerType)
 	if self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER") then return end
 	local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)
-	for i = 1, MAX_HOLY_POWER do
+	local numMax = UnitPowerMax("player", SPELL_POWER_HOLY_POWER)
+	for i = 1, numMax do
 		if i <= num then
 			self.HolyPower[i]:SetAlpha(1)
 		else

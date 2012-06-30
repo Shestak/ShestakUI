@@ -95,7 +95,7 @@ local function LoadSkin()
 				tal = 1
 				tab = tab + 1
 			end
-			if tab <= GetNumTalentTabs(inspect, pet) then
+			if tab <= GetNumSpecializations(inspect, pet) then
 				return tab, tal
 			end
 		end
@@ -264,7 +264,7 @@ local function LoadSkin()
 
 		if icon then
 			d:ClearAllPoints()
-			pointsSpent = select(5, GetTalentTabInfo(1, Partycheck, true, 1))
+			pointsSpent = select(5, GetSpecializationInfo(1, Partycheck, true, 1))
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			button:SetFrameLevel(button:GetFrameLevel() + 1)
 			button:ClearAllPoints()

@@ -791,20 +791,17 @@ if guild.enabled then
 		end)
 	end
 	local function UpdateGuildXP()
-		local currentXP, remainingXP, dailyXP, maxDailyXP = UnitGetGuildXP("player")
+		local currentXP, remainingXP = UnitGetGuildXP("player")
 		local nextLevelXP = currentXP + remainingXP
 		local percentTotal
-		local percentDaily
+
 		if currentXP > 0 then
 			percentTotal = tostring(math.ceil((currentXP / nextLevelXP) * 100))
-			percentDaily = tostring(math.ceil((dailyXP / maxDailyXP) * 100))
 		else
 			percentTotal = 0
-			percentDaily = 0
 		end
 
 		guildXP[0] = {currentXP, nextLevelXP, percentTotal}
-		guildXP[1] = {dailyXP, maxDailyXP, percentDaily}
 	end
 	local function ShortValueXP(v)
 		if v >= 1e6 then
@@ -831,7 +828,7 @@ if guild.enabled then
 			UpdateGuildXP()
 			SortGuildRoster(guild.sorting == "note" and "rank" or "note")
 			SortGuildRoster(guild.sorting)
-			self:RegisterEvent("PARTY_MEMBERS_CHANGED")
+			self:RegisterEvent("GROUP_ROSTER_UPDATE")
 			self:RegisterEvent("GUILD_XP_UPDATE")
 			self:RegisterEvent("GUILD_ROSTER_UPDATE")
 		end,
@@ -938,9 +935,7 @@ if guild.enabled then
 				if guild.show_xp then
 					if GetGuildLevel() ~= 25 then
 						local currentXP, nextLevelXP, percentTotal = unpack(guildXP[0])
-						local dailyXP, maxDailyXP, percentDaily = unpack(guildXP[1])
 						GameTooltip:AddLine(string.format(col..GUILD_EXPERIENCE_CURRENT, "|r |cFFFFFFFF"..ShortValueXP(currentXP), ShortValueXP(nextLevelXP), percentTotal))
-						GameTooltip:AddLine(string.format(col..GUILD_EXPERIENCE_DAILY, "|r |cFFFFFFFF"..ShortValueXP(dailyXP), ShortValueXP(maxDailyXP), percentDaily))
 					end
 					if standingID ~= 8 then -- Not Max Rep
 						barMax = barMax - barMin
@@ -1046,9 +1041,9 @@ if friends.enabled then
 		end)
 	end
 	Inject("Friends", {
-		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD PARTY_MEMBERS_CHANGED FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_TOON_ONLINE BN_FRIEND_TOON_OFFLINE BN_TOON_NAME_UPDATED") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD GROUP_ROSTER_UPDATE FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_TOON_ONLINE BN_FRIEND_TOON_OFFLINE BN_TOON_NAME_UPDATED") end,
 		OnEvent = function(self, event)
-			if event ~= "PARTY_MEMBERS_CHANGED" then
+			if event ~= "GROUP_ROSTER_UPDATE" then
 				local numBNetTotal, numBNetOnline = BNGetNumFriends()
 				local online, total = 0, GetNumFriends()
 				for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
@@ -1303,22 +1298,21 @@ if talents.enabled then
 			else
 				if UnitLevel(P) < 10 then
 					self.text:SetText(format("%s %s", NO, TALENTS))
-				elseif GetNumTalentTabs() == 3 then
+				elseif GetNumSpecializations() == 3 then
 					self.talents = {}
-					self.unspent = GetUnspentTalentPoints(false, false, GetActiveTalentGroup())
-					for i = 1, GetNumTalentGroups() do
+					self.unspent = GetUnspentTalentPoints(false, false, GetActiveSpecGroup())
+					for i = 1, GetNumSpecGroups() do
 						tinsert(self.talents, {})
 						local tal, pts, icon, name = self.talents[i], -1
-						for tree = 1, GetNumTalentTabs() do
-							tinsert(tal, {GetTalentTabInfo(tree, nil, nil, i)})
+						for tree = 1, GetNumSpecializations() do
+							tinsert(tal, {GetSpecializationInfo(tree, nil, nil, i)})
 							if tal[tree][5] ~= 0 and tal[tree][5] > pts then
 								name, icon, pts = {tal[tree][1],tree}, tal[tree][4], tal[tree][5]
 							end
 						end
 						if not name then name, icon = {format("%s %s", NO, TALENTS)}, "Interface\\Icons\\INV_Misc_QuestionMark" end
 						tinsert(tal, name)
-						if i == GetActiveTalentGroup() then
-						
+						if i == GetActiveSpecGroup() then
 							self.text:SetText(zsub(talents.fmt,"%[(.-)%]", {
 								name = name[1], shortname = gsub(name[1],".*",talents.name_subs),
 								icon = format("|T%s:"..talents.iconsize..":"..talents.iconsize..":0:0:64:64:5:59:5:59:%d|t", icon, talents.iconsize),
@@ -1334,7 +1328,7 @@ if talents.enabled then
 			end
 		end,
 		OnUpdate = function(self)
-			if GetNumTalentTabs() == 3 then
+			if GetNumSpecializations() == 3 then
 				self:SetScript("OnUpdate",nil)
 				self:GetScript("OnEvent")(self)
 			end
@@ -1346,7 +1340,7 @@ if talents.enabled then
 				GameTooltip:ClearLines()
 				GameTooltip:AddDoubleLine(TALENTS,self.unspent > 0 and format("%d %s",self.unspent,UNUSED) or "", tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 				GameTooltip:AddLine(" ")
-				for i = 1, GetNumTalentGroups() do
+				for i = 1, GetNumSpecGroups() do
 					local tal = self.talents[i]
 					local tree = tal[4][2]
 					local name, icon, spent = tree and tal[tree][2] or NONE, tree and tal[tree][4] or "Interface\\Icons\\INV_Misc_QuestionMark", format("%d/%d/%d",tal[1][5],tal[2][5],tal[3][5])
@@ -1366,8 +1360,8 @@ if talents.enabled then
 			end
 		end,
 		OnClick = function(_,b)
-			if b == "RightButton" and GetNumTalentGroups() > 1 then
-				SetActiveTalentGroup(3 - GetActiveTalentGroup())
+			if b == "RightButton" and GetNumSpecGroups() > 1 then
+				SetActiveTalentGroup(3 - GetActiveSpecGroup())
 			elseif b == "LeftButton" then
 				if not PlayerTalentFrame then
 					LoadAddOn("Blizzard_TalentUI")
@@ -1400,7 +1394,7 @@ if stats.enabled then
 		elseif sub == "mastery" then
 			string = GetMastery()
 		elseif sub == "expertise" then
-			string = GetExpertisePercent()
+			string = GetExpertise()
 		elseif strmatch(sub, "hit$") then
 			local var = _G["CR_HIT_"..(strupper(strmatch(sub, "(%w-)hit$")) or "")]
 			if T.race == "Draenei" then
@@ -1477,7 +1471,7 @@ if stats.enabled then
 		OnUpdate = function(self, u)
 			self.elapsed = self.elapsed + u
 			if self.fired and self.elapsed > 2.5 then
-				self.text:SetText(gsub(stats[format("spec%dfmt", GetActiveTalentGroup())], "%[(%w-)%]", tags))
+				self.text:SetText(gsub(stats[format("spec%dfmt", GetActiveSpecGroup())], "%[(%w-)%]", tags))
 				self.elapsed, self.fired = 0, false
 			end
 		end

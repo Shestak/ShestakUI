@@ -400,7 +400,7 @@ local function Shared(self, unit)
 			bars:SetBackdrop(backdrop)
 			bars:SetBackdropColor(0, 0, 0)
 
-			for i = 1, 3 do
+			for i = 1, T.class == "PALADIN" and 5 or 3 do
 				bars[i] = CreateFrame("StatusBar", self:GetName().."_Shard"..i, self)
 				bars[i]:Height(7)
 				bars[i]:SetStatusBarTexture(C.media.texture)
@@ -418,11 +418,19 @@ local function Shared(self, unit)
 
 				if i == 1 then
 					bars[i]:Point("LEFT", bars)
-					bars[i]:Width(71)
+					if T.class == "PALADIN" then
+						bars[i]:Width(41)
+					else
+						bars[i]:Width(71)
+					end
 					bars[i].bg:SetAllPoints(bars[i])
 				else
 					bars[i]:Point("LEFT", bars[i-1], "RIGHT", 1, 0)
-					bars[i]:Width(72)
+					if T.class == "PALADIN" then
+						bars[i]:Width(43)
+					else
+						bars[i]:Width(72)
+					end
 					bars[i].bg:SetAllPoints(bars[i])
 				end
 			end
@@ -434,8 +442,8 @@ local function Shared(self, unit)
 			bars.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			if T.class == "WARLOCK" then
-				bars.Override = T.UpdateShards
-				self.SoulShards = bars
+				--bars.Override = T.UpdateShards
+				--self.SoulShards = bars
 			elseif T.class == "PALADIN" then
 				bars.Override = T.UpdateHoly
 				self.HolyPower = bars

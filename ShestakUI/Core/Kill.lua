@@ -28,7 +28,6 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	Advanced_UIScaleSlider:Kill()
 	TutorialFrameAlertButton:Kill()
 	HelpOpenTicketButtonTutorial:Kill()
-	PlayerTalentFrameLearnButtonTutorialArrow:Kill()
 	TalentMicroButtonAlert:Kill()
 
 	if C.chat.enable then

@@ -91,7 +91,7 @@ oUF.Tags["LFD"] = function(unit)
 		return "|cffFF6161[D]|r"
 	end
 end
-oUF.TagEvents["LFD"] = "PLAYER_ROLES_ASSIGNED PARTY_MEMBERS_CHANGED"
+oUF.TagEvents["LFD"] = "PLAYER_ROLES_ASSIGNED GROUP_ROSTER_UPDATE"
 
 oUF.Tags["AltPower"] = function(unit)
 	local cur = UnitPower(unit, ALTERNATE_POWER_INDEX)

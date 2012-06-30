@@ -7,14 +7,14 @@ if C.actionbar.enable ~= true then return end
 do
 	MainMenuBar:SetScale(0.00001)
 	MainMenuBar:EnableMouse(false)
-	VehicleMenuBar:SetScale(0.00001)
-	VehicleMenuBar:EnableMouse(false)
+	OverrideActionBar:SetScale(0.00001)
+	OverrideActionBar:EnableMouse(false)
 	PetActionBarFrame:EnableMouse(false)
-	ShapeshiftBarFrame:EnableMouse(false)
+	StanceBarFrame:EnableMouse(false)
 
 	local elements = {
-		MainMenuBar, MainMenuBarArtFrame, BonusActionBarFrame, VehicleMenuBar,
-		PossessBarFrame, PetActionBarFrame, ShapeshiftBarFrame,
+		MainMenuBar, MainMenuBarArtFrame, BonusActionBarFrame, OverrideActionBar,
+		PossessBarFrame, PetActionBarFrame, StanceBarFrame,
 		ShapeshiftBarLeft, ShapeshiftBarMiddle, ShapeshiftBarRight,
 	}
 	for _, element in pairs(elements) do
@@ -40,11 +40,9 @@ do
 		"MultiBarRight",
 		"MultiBarBottomLeft",
 		"MultiBarBottomRight",
-		"ShapeshiftBarFrame",
+		"StanceBarFrame",
 		"PossessBarFrame",
 		"PETACTIONBAR_YPOS",
-		"MultiCastActionBarFrame",
-		"MULTICASTACTIONBAR_YPOS",
 		"ChatFrame1",
 		"ChatFrame2",
 	}
@@ -97,24 +95,11 @@ function RightBarMouseOver(alpha)
 end
 
 function ShapeShiftMouseOver(alpha)
-	if T.class == "SHAMAN" then
-		for i = 1, 12 do
-			local pb = _G["MultiCastActionButton"..i]
-			pb:SetAlpha(alpha)
-		end
-		for i = 1, 4 do
-			local pb = _G["MultiCastSlotButton"..i]
-			pb:SetAlpha(alpha)
-		end
-		_G["MultiCastSummonSpellButton"]:SetAlpha(alpha)
-		_G["MultiCastRecallSpellButton"]:SetAlpha(alpha)
-	else
-		for i = 1, NUM_SHAPESHIFT_SLOTS do
-			local pb = _G["ShapeshiftButton"..i]
-			pb:SetAlpha(alpha)
-		end
-		ShapeShiftBarAnchor:SetAlpha(alpha)
+	for i = 1, NUM_STANCE_SLOTS do
+		local pb = _G["StanceButton"..i]
+		pb:SetAlpha(alpha)
 	end
+	ShapeShiftBarAnchor:SetAlpha(alpha)
 end
 
 function PetMouseOver(alpha)

@@ -5,7 +5,7 @@ if C.skins.minimap_buttons ~= true or C.minimap.enable ~= true then return end
 --	Skin addons icons on minimap
 ----------------------------------------------------------------------------------------
 local buttons = {
-	"MiniMapBattlefieldFrame",
+	"QueueStatusMinimapButton",
 	"MiniMapLFGFrame",
 	"MiniMapTrackingButton",
 	"MiniMapMailFrame",

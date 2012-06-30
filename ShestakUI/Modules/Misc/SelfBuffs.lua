@@ -10,7 +10,7 @@ if not tab then return end
 local function OnEvent(self, event, arg1, arg2)
 	local group = tab[self.id]
 	if not group.spells and not group.weapon then return end
-	if not GetActiveTalentGroup() then return end
+	if not GetActiveSpecGroup() then return end
 	if event == "UNIT_AURA" and arg1 ~= "player" then return end 
 	if group.level and UnitLevel("player") < group.level then return end
 
@@ -113,7 +113,7 @@ local function OnEvent(self, event, arg1, arg2)
 	end
 
 	if tree ~= nil then
-		if tree == GetPrimaryTalentTree() then
+		if tree == GetSpecialization() then
 			treepass = true
 		else
 			treepass = false
@@ -150,7 +150,7 @@ local function OnEvent(self, event, arg1, arg2)
 			if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
 		elseif ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid"))) and 
 		reversecheck == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
-			if negate_reversecheck and negate_reversecheck == GetPrimaryTalentTree() then self:Hide() return end
+			if negate_reversecheck and negate_reversecheck == GetSpecialization() then self:Hide() return end
 			for _, buff in pairs(group.spells) do
 				local name = GetSpellInfo(buff)
 				local _, _, icon, _, _, _, _, unitCaster, _, _, _ = UnitBuff("player", name)
