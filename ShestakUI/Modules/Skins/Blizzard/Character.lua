@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Petition skin
+--	CharacterFrame skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	T.SkinCloseButton(CharacterFrameCloseButton)
@@ -48,6 +48,7 @@ local function LoadSkin()
 
 	select(8, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
 	select(8, _G["CharacterRangedSlot"]:GetRegions()):Hide()
+	select(8, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
 
 	-- Strip Textures
 	local charframe = {
