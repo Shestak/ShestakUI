@@ -43,7 +43,7 @@ Filger_Spells = {
 			-- Nature's Grasp
 			{spellID = 16689, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thorns
-			{spellID = 467, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 467, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Owlkin Frenzy
 			{spellID = 48391, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Starfall
@@ -63,7 +63,7 @@ Filger_Spells = {
 			-- Tiger's Fury
 			{spellID = 5217, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stampede
-			{spellID = 81017, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 81017, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -90,7 +90,7 @@ Filger_Spells = {
 			-- Predator's Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pulverize
-			{spellID = 80313, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 80313, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Weapons
 			-- Physical Agility
@@ -119,12 +119,12 @@ Filger_Spells = {
 			{spellID = 74245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Lightweave (Intellect)
-			{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Torrent (Intellect)
 			{spellID = 74241, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Darkglow (Spirit)
-			{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -140,7 +140,7 @@ Filger_Spells = {
 			-- Sunfire
 			{spellID = 93402, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Earth and Moon
-			{spellID = 48506, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--MOP{spellID = 48506, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Insect Swarm
 			{spellID = 5570, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Fungal Growth
@@ -243,7 +243,7 @@ Filger_Spells = {
 			-- Enrage
 			{spellID = 5229, filter = "CD"},
 			-- Faerie Fire(Feral)
-			{spellID = 16857, filter = "CD"},
+			--MOP{spellID = 16857, filter = "CD"},
 			-- Feral Charge - Bear
 			{spellID = 16979, filter = "CD", absID = true},
 			-- Feral Charge - Cat
@@ -253,9 +253,9 @@ Filger_Spells = {
 			-- Maim
 			{spellID = 22570, filter = "CD"},
 			-- Cower
-			{spellID = 8998, filter = "CD"},
+			--MOP{spellID = 8998, filter = "CD"},
 			-- Thorns
-			{spellID = 467, filter = "CD"},
+			--MOP{spellID = 467, filter = "CD"},
 			-- Tree of Life
 			{spellID = 33891, filter = "CD"},
 			-- Skull Bash - Cat
@@ -288,7 +288,7 @@ Filger_Spells = {
 			-- Nature's Grace
 			{spellID = 16886, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Lightweave
-			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
@@ -332,7 +332,7 @@ Filger_Spells = {
 			-- Rapid Fire
 			{spellID = 3045, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Call of the Wild
-			{spellID = 53434, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 53434, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Improved Steady Shot
 			{spellID = 53220, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fire!
@@ -374,7 +374,7 @@ Filger_Spells = {
 			-- Hunter's Mark
 			{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Marked for Death
-			{spellID = 88691, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--MOP{spellID = 88691, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Piercing Shots
 			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Serpent Sting
@@ -398,7 +398,7 @@ Filger_Spells = {
 			-- Hunter's Mark
 			{spellID = 1130, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Marked for Death
-			{spellID = 88691, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--MOP{spellID = 88691, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Piercing shots
 			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Serpent Sting
@@ -540,7 +540,7 @@ Filger_Spells = {
 			-- Icy Veins
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyromaniac
-			{spellID = 83582, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 83582, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mana Shield
 			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
@@ -548,7 +548,7 @@ Filger_Spells = {
 			-- Ice Block
 			{spellID = 45438, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mage Ward
-			{spellID = 543, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 543, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Improved Blink
 			{spellID = 46989, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blazing Speed
@@ -556,7 +556,7 @@ Filger_Spells = {
 			-- Arcane Power
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Improved Mana Gem
-			{spellID = 83098, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 83098, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -573,17 +573,17 @@ Filger_Spells = {
 			-- Brain Freeze
 			{spellID = 57761, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hot Streak
-			{spellID = 44445, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 44445, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
-			{spellID = 12536, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 12536, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Impact
-			{spellID = 64343, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 64343, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Missiles!
 			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invocation
-			{spellID = 87098, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 87098, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incanter's Absorption
-			{spellID = 44413, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 44413, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Weapons
 			-- Caster General
@@ -599,7 +599,7 @@ Filger_Spells = {
 			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Lightweave (Intellect)
-			{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Torrent (Intellect)
 			{spellID = 74241, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -623,11 +623,11 @@ Filger_Spells = {
 			-- Living Bomb
 			{spellID = 44457, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pyroblast!
-			{spellID = 92315, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--MOP{spellID = 92315, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pyroblast
 			{spellID = 11366, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Critical Mass
-			{spellID = 22959, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--MOP{spellID = 22959, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Combustion
 			{spellID = 83853, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Blast Wave
@@ -680,7 +680,7 @@ Filger_Spells = {
 			-- Deep Freeze
 			{spellID = 44572, filter = "CD"},
 			-- Mage Ward
-			{spellID = 543, filter = "CD"},
+			--MOP{spellID = 543, filter = "CD"},
 			-- Presence of Mind
 			{spellID = 12043, filter = "CD"},
 			-- Arcane Power
@@ -704,9 +704,9 @@ Filger_Spells = {
 			-- Mirror Image
 			{spellID = 55342, filter = "CD"},
 			-- Ring of Frost
-			{spellID = 82676, filter = "CD"},
+			--MOP{spellID = 82676, filter = "CD"},
 			-- Flame Orb
-			{spellID = 82731, filter = "CD"},
+			--MOP{spellID = 82731, filter = "CD"},
 			-- Freeze (Elemental)
 			{spellID = 33395, filter = "CD"},
 			-- Combustion
@@ -757,7 +757,7 @@ Filger_Spells = {
 			-- Cauterize
 			{spellID = 87023, filter = "ICD", trigger = "DEBUFF", duration = 60},
 			-- Lightweave
-			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
@@ -793,7 +793,7 @@ Filger_Spells = {
 			-- Deadly Calm
 			{spellID = 85730, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Rage
-			{spellID = 1134, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 1134, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sweeping Strikes
 			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Victorious
@@ -813,23 +813,23 @@ Filger_Spells = {
 			-- Sword and Board
 			{spellID = 50227, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thunderstruck
-			{spellID = 87096, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 87096, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Taste for Blood
-			{spellID = 60503, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 60503, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Battle trance
-			{spellID = 12964, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 12964, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incite
-			{spellID = 86627, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 86627, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
-			{spellID = 14202, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 14202, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Executioner
-			{spellID = 90806, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 90806, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rude Interruption
 			{spellID = 86663, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Slaughter
-			{spellID = 84586, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 84586, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -864,7 +864,7 @@ Filger_Spells = {
 			-- Hamstring
 			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Rend
-			{spellID = 94009, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--MOP{spellID = 94009, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Sunder Armor
 			{spellID = 7386, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Thunder Clap
@@ -878,9 +878,9 @@ Filger_Spells = {
 			-- Demoralizing Roar
 			{spellID = 99, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Curse of Weakness
-			{spellID = 702, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--MOP{spellID = 702, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Judgements of the Just
-			{spellID = 68055, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--MOP{spellID = 68055, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Vindication
 			{spellID = 26017, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
@@ -907,7 +907,7 @@ Filger_Spells = {
 			-- Intervene
 			{spellID = 3411, filter = "CD"},
 			-- Intercept
-			{spellID = 20252, filter = "CD"},
+			--MOP{spellID = 20252, filter = "CD"},
 			-- Spell Reflection
 			{spellID = 23920, filter = "CD"},
 			-- Concussion Blow
@@ -929,7 +929,7 @@ Filger_Spells = {
 			-- Berserker Rage
 			{spellID = 18499, filter = "CD"},
 			-- Inner Rage
-			{spellID = 1134, filter = "CD"},
+			--MOP{spellID = 1134, filter = "CD"},
 			-- Heroic Leap
 			{spellID = 6544, filter = "CD"},
 			-- Rallying Cry
@@ -1004,7 +1004,7 @@ Filger_Spells = {
 			-- Water Shield
 			{spellID = 52127, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental mastery
-			{spellID = 64701, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 64701, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spiritwalker's grace
 			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Flame
@@ -1012,7 +1012,7 @@ Filger_Spells = {
 			-- Unleash Life
 			{spellID = 73685, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Focused Insight
-			{spellID = 77800, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 77800, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature Guardian
 			{spellID = 31616, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -1029,9 +1029,9 @@ Filger_Spells = {
 			-- Clearcasting
 			{spellID = 16246, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tidal Waves
-			{spellID = 51562, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 51562, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lava flows
-			{spellID = 65264, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 65264, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stoneclaw Totem
 			--MOP{spellID = 55277, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1057,12 +1057,12 @@ Filger_Spells = {
 			{spellID = 74245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Lightweave (Intellect)
-			{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Torrent (Intellect)
 			{spellID = 74241, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Darkglow (Spirit)
-			{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1104,7 +1104,7 @@ Filger_Spells = {
 			-- Riptide
 			{spellID = 61295, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Ancestral Fortitude
-			{spellID = 16236, unitID = "target", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 16236, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Earthliving
 			{spellID = 51945, unitID = "target", caster = "player", filter = "BUFF"},
 		},
@@ -1149,7 +1149,7 @@ Filger_Spells = {
 			-- Earthbind Totem
 			{spellID = 2484, filter = "CD"},
 			-- Stoneclaw Totem
-			{spellID = 5730, filter = "CD"},
+			--MOP{spellID = 5730, filter = "CD"},
 			-- Tremor totem
 			{spellID = 8143, filter = "CD"},
 			-- Feral Spirit
@@ -1192,7 +1192,7 @@ Filger_Spells = {
 
 			-- Internal
 			-- Lightweave
-			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
@@ -1256,7 +1256,7 @@ Filger_Spells = {
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sacred Shield
-			{spellID = 96263, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 96263, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Guardian of Ancient Kings Ret PROC
@@ -1469,12 +1469,12 @@ Filger_Spells = {
 			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Lightweave (Intellect)
-			{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Torrent (Intellect)
 			{spellID = 74241, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Darkglow (Spirit)
-			{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1620,7 +1620,7 @@ Filger_Spells = {
 
 			-- Internal
 			-- Lightweave
-			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
@@ -1641,17 +1641,17 @@ Filger_Spells = {
 			-- Burning Soul
 			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demon Soul Succub
-			{spellID = 79463, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 79463, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demon Soul Imp
-			{spellID = 79459, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 79459, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demon Soul Void
-			{spellID = 79464, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 79464, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demon Soul Fel Hunter
-			{spellID = 79460, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 79460, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demon Soul Fel Guard
-			{spellID = 79462, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 79462, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Intent
-			{spellID = 85768, unitID = "player", caster = "all", filter = "BUFF"},
+			--MOP{spellID = 85768, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Shadow Ward
 			{spellID = 6229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
@@ -1668,27 +1668,27 @@ Filger_Spells = {
 
 			-- Buffs
 			-- Molten Core
-			{spellID = 47383, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 47383, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Decimation
-			{spellID = 63158, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 63158, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Backdraft
-			{spellID = 54277, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 54277, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Backlash
-			{spellID = 34939, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 34939, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nether Protection
-			{spellID = 30301, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 30301, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nightfall
-			{spellID = 18095, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 18095, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Eradication
-			{spellID = 47195, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 47195, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Improved Soul Fire
-			{spellID = 85383, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 85383, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Empowered Imp
-			{spellID = 47283, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 47283, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fel Spark
 			{spellID = 89937, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demonic Rebirth
-			{spellID = 88447, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 88447, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadow Trance
 			{spellID = 17941, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1706,7 +1706,7 @@ Filger_Spells = {
 			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Lightweave (Intellect)
-			{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Torrent (Intellect)
 			{spellID = 74241, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -1721,13 +1721,13 @@ Filger_Spells = {
 
 			-- Self
 			-- Shadow Embrace
-			{spellID = 32389, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--MOP{spellID = 32389, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Curse of Tongues
-			{spellID = 1714, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--MOP{spellID = 1714, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Curse of Exhaustion
 			{spellID = 18223, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Curse of Weakness
-			{spellID = 702, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--MOP{spellID = 702, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Death Coil
 			{spellID = 6789, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Enslave Demon
@@ -1739,11 +1739,11 @@ Filger_Spells = {
 			-- Curse of the Elements (Warlock)
 			{spellID = 1490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Curse of the Elements: Jinx (Warlock)
-			{spellID = 86105, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--MOP{spellID = 86105, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Earth and Moon (Moonkin)
-			{spellID = 48506, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--MOP{spellID = 48506, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Ebon Plaguebringer (DK)
-			{spellID = 65142, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--MOP{spellID = 65142, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Master poisoner (Rogue)
 			{spellID = 93068, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
@@ -1806,7 +1806,7 @@ Filger_Spells = {
 			-- Shadow Ward
 			{spellID = 6229, filter = "CD"},
 			-- Demonic Empowerment
-			{spellID = 47193, filter = "CD"},
+			--MOP{spellID = 47193, filter = "CD"},
 			-- Demon Leap
 			{spellID = 54785, filter = "CD"},
 			-- Soulshatter
@@ -1824,11 +1824,11 @@ Filger_Spells = {
 			-- Shadowfury
 			{spellID = 30283, filter = "CD"},
 			-- Chaos Bolt
-			{spellID = 50796, filter = "CD"},
+			--MOP{spellID = 50796, filter = "CD"},
 			-- Shadowflame
 			{spellID = 47897, filter = "CD"},
 			-- Fel Domination
-			{spellID = 18708, filter = "CD"},
+			--MOP{spellID = 18708, filter = "CD"},
 			-- Sacrifice (Voidwalker)
 			{spellID = 7812, filter = "CD"},
 			-- Suffering (Voidwalker)
@@ -1844,9 +1844,9 @@ Filger_Spells = {
 			-- Soulburn
 			{spellID = 74434, filter = "CD"},
 			-- Hand of Gul'dan
-			{spellID = 71521, filter = "CD"},
+			--MOP{spellID = 71521, filter = "CD"},
 			-- Immolation Aura
-			{spellID = 50589, filter = "CD"},
+			--MOP{spellID = 50589, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -1883,7 +1883,7 @@ Filger_Spells = {
 
 			-- Internal
 			-- Lightweave
-			{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
 			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
