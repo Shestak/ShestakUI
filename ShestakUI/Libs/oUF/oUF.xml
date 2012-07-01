@@ -35,6 +35,7 @@
 	<Script file="Elements\EclipseBar.lua"/>
 	<Script file="Elements\AltPowerBar.lua"/>
 	<Script file="Elements\Resurrect.lua"/>
+	<Script file="Elements\HarmonyBar.lua"/>
 
 	<Script file="Modules\AuraTracker.lua"/>
 	<Script file="Modules\AuraWatch.lua"/>

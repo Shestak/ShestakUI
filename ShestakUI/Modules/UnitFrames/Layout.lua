@@ -301,6 +301,36 @@ local function Shared(self, unit)
 			end
 		end
 
+		-- Harmony bar
+		if T.class == "MONK" then
+			self.HarmonyBar = CreateFrame("Frame", nil, self)
+			self.HarmonyBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.HarmonyBar:SetHeight(7)
+			self.HarmonyBar:SetWidth(217)
+			self.HarmonyBar:SetBackdrop(backdrop)
+			self.HarmonyBar:SetBackdropColor(0, 0, 0)
+
+			self.HarmonyBar:CreateBackdrop("Default")
+			self.HarmonyBar.backdrop:Point("TOPLEFT", -2, 2)
+			self.HarmonyBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
+
+			for i = 1, 5 do
+				self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar"..i, self)
+				self.HarmonyBar[i]:SetSize(213 / 5, 7)
+				if i == 1 then
+					self.HarmonyBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				else
+					self.HarmonyBar[i]:Point("TOPLEFT", self.HarmonyBar[i-1], "TOPRIGHT", 1, 0)
+				end
+				self.HarmonyBar[i]:SetStatusBarTexture(C.media.texture)
+
+				self.HarmonyBar[i].bg = self.HarmonyBar[i]:CreateTexture(nil, "BORDER")
+				self.HarmonyBar[i].bg:SetAllPoints()
+				self.HarmonyBar[i].bg:SetTexture(C.media.texture)
+				self.HarmonyBar[i].bg.multiplier = 0.25
+			end
+		end
+
 		-- Totem bar
 		if C.unitframe.plugins_totem_bar == true and T.class == "SHAMAN" then
 			self.TotemBar = {}
