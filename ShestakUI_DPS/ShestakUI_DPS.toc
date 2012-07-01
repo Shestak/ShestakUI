@@ -1,4 +1,4 @@
-## Interface: 40300
+## Interface: 50001
 ## Title: ShestakUI DPS
 ## Notes: Raid layout for ShestakUI
 ## Author: Shestak
