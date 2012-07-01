@@ -51,9 +51,9 @@
 	<Script file="Core\Temp.lua"/>
 
 	<!--<Script file="Modules\Blizzard\Vehicle.lua"/>
-	<Script file="Modules\Blizzard\CaptureBar.lua"/>
+	<Script file="Modules\Blizzard\CaptureBar.lua"/>-->
 	<Script file="Modules\Blizzard\MirrorBars.lua"/>
-	<Script file="Modules\Blizzard\Symbols.lua"/>-->
+	<Script file="Modules\Blizzard\Symbols.lua"/>
 	<Script file="Modules\Blizzard\Errors.lua"/>
 	<!--<Script file="Modules\Blizzard\Achievements.lua"/>-->
 	<Script file="Modules\Blizzard\Durability.lua"/>
@@ -64,10 +64,10 @@
 	<Script file="Modules\Blizzard\Nameplates.lua"/>
 	<!--<Script file="Modules\Blizzard\AltPowerBar.lua"/>
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
-	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
+	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>-->
 
 	<Script file="Modules\Quests\AutoAccept.lua"/>
-	<Script file="Modules\Quests\AutoButton.lua"/>-->
+	<Script file="Modules\Quests\AutoButton.lua"/>
 	<Script file="Modules\Quests\QuestLevel.lua"/>
 	<Script file="Modules\Quests\WatchFrame.lua"/>
 	<Script file="Modules\Quests\WowheadLink.lua"/>
@@ -77,10 +77,10 @@
 	<Script file="Modules\Maps\WorldMap.lua"/>
 
 	<Script file="Modules\Misc\Panels.lua"/>
-	<!--<Script file="Modules\Misc\Author.lua"/>
+	<!--<Script file="Modules\Misc\Author.lua"/>-->
 	<Script file="Modules\Misc\Threat.lua"/>
 	<Script file="Modules\Misc\SelfBuffs.lua"/>
-	<Script file="Modules\Misc\RaidBuffs.lua"/>
+	<!--<Script file="Modules\Misc\RaidBuffs.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>-->
 	<Script file="Modules\Misc\AddOns.lua"/>
 	<!--<Script file="Modules\Misc\AutoRelease.lua"/>
@@ -93,12 +93,12 @@
 	<!--<Script file="Modules\Misc\OneClickBuyOut.lua"/>-->
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<!--<Script file="Modules\Misc\AutoBuy.lua"/>
-	<Script file="Modules\Misc\DungeonTabs.lua"/>
+	<Script file="Modules\Misc\DungeonTabs.lua"/>-->
 	<Script file="Modules\Misc\AutoChefsHat.lua"/>
-	<Script file="Modules\Misc\CompanionCount.lua"/>
+	<!--<Script file="Modules\Misc\CompanionCount.lua"/>-->
 	<Script file="Modules\Misc\SolveArtifact.lua"/>
 
-	<Script file="Modules\Announcements\Drinking.lua"/>
+	<!--<Script file="Modules\Announcements\Drinking.lua"/>
 	<Script file="Modules\Announcements\Interrupts.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>-->
 
@@ -130,7 +130,7 @@
 	<Script file="Modules\Chat\ChatTabs.lua"/>
 	<Script file="Modules\Chat\CopyUrl.lua"/>
 	<Script file="Modules\Chat\CopyChat.lua"/>
-	<!--<Script file="Modules\Chat\ChatBars.lua"/>-->
+	<Script file="Modules\Chat\ChatBars.lua"/>
 	<Script file="Modules\Chat\Filters.lua"/>
 	<Script file="Modules\Chat\Invite.lua"/>
 	<Script file="Modules\Chat\MouseScroll.lua"/>
@@ -161,7 +161,7 @@
 	<Script file="Modules\Class\Mage.lua"/>
 
 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
-	<!--<Script file="Modules\Skins\ACE3.lua"/>
+	<Script file="Modules\Skins\ACE3.lua"/>
 	<Script file="Modules\Skins\Aurora.lua"/>
 	<Script file="Modules\Skins\BigWigs.lua"/>
 	<Script file="Modules\Skins\CLCProt.lua"/>
@@ -174,7 +174,7 @@
 	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
 
-	<Script file="Modules\Buffs\Buffs.lua"/>
+	<!--<Script file="Modules\Buffs\Buffs.lua"/>
 	<Script file="Modules\Buffs\CastBy.lua"/>-->
 
 	<Script file="Modules\Blizzard\CombatText.lua"/>

@@ -52,9 +52,9 @@ function Butsu:LOOT_OPENED(event, autoloot)
 				local color = ITEM_QUALITY_COLORS[quality]
 				local r, g, b = color.r, color.g, color.b
 
-				--if LootSlotIsCoin(i) then
-				--	item = item:gsub("\n", ", ")
-				--end
+				if GetLootSlotType(i) == LOOT_SLOT_MONEY then
+					item = item:gsub("\n", ", ")
+				end
 
 				if quantity and quantity > 1 then
 					slot.count:SetText(quantity)
@@ -221,7 +221,9 @@ function Announce(chn)
 		if LootSlotHasItem(i) then
 			local link = GetLootSlotLink(i)
 			local messlink = "- %s"
-			SendChatMessage(format(messlink, link), chn)
+			if GetLootSlotType(i) ~= LOOT_SLOT_MONEY then
+				SendChatMessage(format(messlink, link), chn)
+			end
 		end
 	end
 end
@@ -281,9 +283,9 @@ lb:SetScript("OnClick", function(self, button)
 	if button == "RightButton" then
 		OnLinkClick()
 	else
-		if GetRealNumRaidMembers() > 0 then
+		if GetNumGroupMembers() > 0 then
 			Announce("RAID")
-		elseif GetRealNumPartyMembers() > 0 and not UnitInRaid("player") then
+		elseif GetNumSubgroupMembers() > 0 and not UnitInRaid("player") then
 			Announce("PARTY")
 		else
 			Announce("SAY")

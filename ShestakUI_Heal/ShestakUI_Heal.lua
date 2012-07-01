@@ -364,10 +364,9 @@ oUF:Factory(function(self)
 
 			partypet:Point("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, -((unit_height / 2) + 14.5))
 		end)
-		partypetupdate:RegisterEvent("PARTY_MEMBERS_CHANGED")
 		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
 		partypetupdate:RegisterEvent("PLAYER_REGEN_ENABLED")
-		partypetupdate:RegisterEvent("RAID_ROSTER_UPDATE")
+		partypetupdate:RegisterEvent("GROUP_ROSTER_UPDATE")
 		partypetupdate:RegisterEvent("UNIT_ENTERED_VEHICLE")
 		partypetupdate:RegisterEvent("UNIT_EXITED_VEHICLE")
 	end

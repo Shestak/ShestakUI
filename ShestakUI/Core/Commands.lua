@@ -82,7 +82,7 @@ function DisbandRaidGroup()
 	else
 		SendChatMessage(L_INFO_DISBAND, "PARTY")
 		for i = MAX_PARTY_MEMBERS, 1, -1 do
-			if GetGroupMember(i) then
+			if GetSubgroupMembers(i) then
 				UninviteUnit(UnitName("party"..i))
 			end
 		end

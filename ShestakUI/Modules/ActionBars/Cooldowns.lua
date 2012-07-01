@@ -137,8 +137,9 @@ end
 local function cooldown_Update(self)
 	local button = self:GetParent()
 	local start, duration, enable = GetActionCooldown(button.action)
+	local charges, maxCharges, chargeStart, chargeDuration = GetActionCharges(button.action)
 
-	if cooldown_ShouldUpdateTimer(self, start, duration) then
+	if charges == 0 and cooldown_ShouldUpdateTimer(self, start, duration) then
 		Timer_Start(self, start, duration)
 	end
 end
