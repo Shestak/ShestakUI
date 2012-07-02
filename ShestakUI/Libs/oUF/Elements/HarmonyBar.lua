@@ -5,14 +5,6 @@ local oUF = ns.oUF
 
 local SPELL_POWER_LIGHT_FORCE = SPELL_POWER_LIGHT_FORCE
 
-local Colors = {
-	[1] = {.69, .31, .31, 1},
-	[2] = {.65, .42, .31, 1},
-	[3] = {.65, .63, .35, 1},
-	[4] = {.46, .63, .35, 1},
-	[5] = {.33, .63, .33, 1},
-}
-
 local function Update(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'LIGHT_FORCE')) then return end
 
@@ -69,18 +61,6 @@ local function Enable(self, unit)
 
 		self:RegisterEvent("UNIT_POWER", Path)
 		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)
-
-		for i = 1, 5 do
-			local Point = hb[i]
-			if not Point:GetStatusBarTexture() then
-				Point:SetStatusBarTexture([=[Interface\TargetingFrame\UI-StatusBar]=])
-			end
-
-			Point:SetStatusBarColor(unpack(Colors[i]))
-			Point:SetFrameLevel(hb:GetFrameLevel() + 1)
-			Point:GetStatusBarTexture():SetHorizTile(false)
-			Point.W = Point:GetWidth()
-		end
 
 		hb.numPoints = 5
 

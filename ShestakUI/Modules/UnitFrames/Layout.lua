@@ -282,7 +282,7 @@ local function Shared(self, unit)
 			self.Runes.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			for i = 1, 6 do
-				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_Runes"..i, self)
+				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_Runes"..i, self.Runes)
 				self.Runes[i]:SetSize(212 / 6, 7)
 				if i == 1 then
 					self.Runes[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -311,7 +311,7 @@ local function Shared(self, unit)
 			self.HarmonyBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			for i = 1, 5 do
-				self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar"..i, self)
+				self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar"..i, self.HarmonyBar)
 				self.HarmonyBar[i]:Height(7)
 				if i == 1 then
 					self.HarmonyBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -319,11 +319,12 @@ local function Shared(self, unit)
 					self.HarmonyBar[i]:Point("TOPLEFT", self.HarmonyBar[i-1], "TOPRIGHT", 1, 0)
 				end
 				self.HarmonyBar[i]:SetStatusBarTexture(C.media.texture)
+				self.HarmonyBar[i]:SetStatusBarColor(0.33, 0.63, 0.33)
 
 				self.HarmonyBar[i].bg = self.HarmonyBar[i]:CreateTexture(nil, "BORDER")
 				self.HarmonyBar[i].bg:SetAllPoints()
 				self.HarmonyBar[i].bg:SetTexture(C.media.texture)
-				self.HarmonyBar[i].bg.multiplier = 0.25
+				self.HarmonyBar[i].bg:SetVertexColor(0.33, 0.63, 0.33, 0.25)
 			end
 		end
 
@@ -340,7 +341,7 @@ local function Shared(self, unit)
 			self.ShadowOrbsBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			for i = 1, 3 do
-				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar"..i, self)
+				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar"..i, self.ShadowOrbsBar)
 				self.ShadowOrbsBar[i]:SetSize(215 / 3, 7)
 				if i == 1 then
 					self.ShadowOrbsBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -348,11 +349,12 @@ local function Shared(self, unit)
 					self.ShadowOrbsBar[i]:Point("TOPLEFT", self.ShadowOrbsBar[i-1], "TOPRIGHT", 1, 0)
 				end
 				self.ShadowOrbsBar[i]:SetStatusBarTexture(C.media.texture)
+				self.ShadowOrbsBar[i]:SetStatusBarColor(0.70, 0.32, 0.75)
 
 				self.ShadowOrbsBar[i].bg = self.ShadowOrbsBar[i]:CreateTexture(nil, "BORDER")
 				self.ShadowOrbsBar[i].bg:SetAllPoints()
 				self.ShadowOrbsBar[i].bg:SetTexture(C.media.texture)
-				self.ShadowOrbsBar[i].bg.multiplier = 0.25
+				self.ShadowOrbsBar[i].bg:SetVertexColor(0.70, 0.32, 0.75, 0.25)
 			end
 		end
 
@@ -369,7 +371,7 @@ local function Shared(self, unit)
 			self.HolyPower.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			for i = 1, 5 do
-				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPower"..i, self)
+				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPower"..i, self.HolyPower)
 				self.HolyPower[i]:SetSize(213 / 5, 7)
 				if i == 1 then
 					self.HolyPower[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -383,7 +385,6 @@ local function Shared(self, unit)
 				self.HolyPower[i].bg:SetAllPoints()
 				self.HolyPower[i].bg:SetTexture(C.media.texture)
 				self.HolyPower[i].bg:SetVertexColor(0.89, 0.88, 0.1, 0.25)
-				--self.HolyPower[i].bg.multiplier = 0.25
 			end
 
 			self.HolyPower.Override = T.UpdateHoly
@@ -391,34 +392,32 @@ local function Shared(self, unit)
 
 		-- Shard bar
 		if C.unitframe.plugins_shard_bar == true and T.class == "WARLOCK" then
-			self.SoulShards = CreateFrame("Frame", nil, self)
-			self.SoulShards:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.SoulShards:Size(217, 7)
-			self.SoulShards:SetBackdrop(backdrop)
-			self.SoulShards:SetBackdropColor(0, 0, 0)
+			self.WarlockSpecBars = CreateFrame("Frame", nil, self)
+			self.WarlockSpecBars:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.WarlockSpecBars:Size(217, 7)
+			self.WarlockSpecBars:SetBackdrop(backdrop)
+			self.WarlockSpecBars:SetBackdropColor(0, 0, 0)
 
-			self.SoulShards:CreateBackdrop("Default")
-			self.SoulShards.backdrop:Point("TOPLEFT", -2, 2)
-			self.SoulShards.backdrop:Point("BOTTOMRIGHT", 2, -2)
+			self.WarlockSpecBars:CreateBackdrop("Default")
+			self.WarlockSpecBars.backdrop:Point("TOPLEFT", -2, 2)
+			self.WarlockSpecBars.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
-			for i = 1, 3 do
-				self.SoulShards[i] = CreateFrame("StatusBar", self:GetName().."_Shard"..i, self)
-				self.SoulShards[i]:SetSize(215 / 3, 7)
+			for i = 1, 4 do
+				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."_WarlockSpecBars"..i, self.WarlockSpecBars)
+				self.WarlockSpecBars[i]:Height(7)
 				if i == 1 then
-					self.SoulShards[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					self.WarlockSpecBars[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
-					self.SoulShards[i]:Point("TOPLEFT", self.SoulShards[i-1], "TOPRIGHT", 1, 0)
+					self.WarlockSpecBars[i]:Point("TOPLEFT", self.WarlockSpecBars[i-1], "TOPRIGHT", 1, 0)
 				end
-				self.SoulShards[i]:SetStatusBarTexture(C.media.texture)
-				self.SoulShards[i]:SetStatusBarColor(0.70, 0.32, 0.75)
+				self.WarlockSpecBars[i]:SetStatusBarTexture(C.media.texture)
+				self.WarlockSpecBars[i]:SetStatusBarColor(0.9, 0.37, 0.37)
 
-				self.SoulShards[i].bg = self.SoulShards[i]:CreateTexture(nil, "BORDER")
-				self.SoulShards[i].bg:SetAllPoints()
-				self.SoulShards[i].bg:SetTexture(C.media.texture)
-				self.SoulShards[i].bg.multiplier = 0.25
+				self.WarlockSpecBars[i].bg = self.WarlockSpecBars[i]:CreateTexture(nil, "BORDER")
+				self.WarlockSpecBars[i].bg:SetAllPoints()
+				self.WarlockSpecBars[i].bg:SetTexture(C.media.texture)
+				self.WarlockSpecBars[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.25)
 			end
-
-			--self.SoulShards.Override = T.UpdateShards
 		end
 
 		-- Totem bar

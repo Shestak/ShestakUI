@@ -898,18 +898,6 @@ T.UpdatePvPStatus = function(self, elapsed)
 	end
 end
 
-T.UpdateShards = function(self, event, unit, powerType)
-	if self.unit ~= unit or (powerType and powerType ~= "SOUL_SHARDS") then return end
-	local num = UnitPower(unit, SPELL_POWER_SOUL_SHARDS)
-	for i = 1, SHARD_BAR_NUM_SHARDS do
-		if i <= num then
-			self.SoulShards[i]:SetAlpha(1)
-		else
-			self.SoulShards[i]:SetAlpha(0.2)
-		end
-	end
-end
-
 T.UpdateHoly = function(self, event, unit, powerType)
 	if self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER") then return end
 	local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)

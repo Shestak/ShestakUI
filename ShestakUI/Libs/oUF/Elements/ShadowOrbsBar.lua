@@ -7,12 +7,6 @@ local SHADOW_ORBS_SHOW_LEVEL = SHADOW_ORBS_SHOW_LEVEL
 local PRIEST_BAR_NUM_ORBS = PRIEST_BAR_NUM_ORBS
 local SPELL_POWER_SHADOW_ORBS = SPELL_POWER_SHADOW_ORBS
 
-local Colors = {
-	[1] = {109/255, 51/255, 188/255, 1},
-	[2] = {139/255, 51/255, 188/255, 1},
-	[3] = {179/255, 51/255, 188/255, 1},
-}
-
 local function Update(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'SHADOW_ORBS')) then return end
 
@@ -59,7 +53,7 @@ end
 
 local function Enable(self, unit)
 	local sb = self.ShadowOrbsBar
-	if sb and unit == "player" then
+	if(sb) and unit == "player" then
 		sb.__owner = self
 		sb.ForceUpdate = ForceUpdate
 
@@ -68,24 +62,13 @@ local function Enable(self, unit)
 		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)
 		self:RegisterEvent("UNIT_POWER_FREQUENT", Path)
 
-		for i = 1, 3 do
-			local Point = sb[i]
-			if not Point:GetStatusBarTexture() then
-				Point:SetStatusBarTexture([=[Interface\TargetingFrame\UI-StatusBar]=])
-			end
-
-			Point:SetStatusBarColor(unpack(Colors[i]))
-			Point:SetFrameLevel(sb:GetFrameLevel() + 1)
-			Point:GetStatusBarTexture():SetHorizTile(false)
-		end
-
 		return true
 	end
 end
 
 local function Disable(self)
 	local sb = self.ShadowOrbsBar
-	if sb then
+	if(sb) then
 		self:UnregisterEvent("PLAYER_LEVEL_UP", ShowHide)
 		self:UnregisterEvent("PLAYER_TALENT_UPDATE", ShowHide)
 		self:UnregisterEvent("UNIT_DISPLAYPOWER", Path)
