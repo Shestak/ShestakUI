@@ -200,38 +200,6 @@ local function LoadSkin()
 		statusbar.rankText:SetPoint("CENTER")
 	end
 
-	-- Mounts/Companions
-	for i = 1, NUM_COMPANIONS_PER_PAGE do
-		local button = _G["SpellBookCompanionButton"..i]
-		local icon = _G["SpellBookCompanionButton"..i.."IconTexture"]
-		button:StripTextures()
-		button:StyleButton(false)
-
-		if icon then
-			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			icon:ClearAllPoints()
-			icon:Point("TOPLEFT", 2, -2)
-			icon:Point("BOTTOMRIGHT", -2, 2)
-
-			button:SetFrameLevel(button:GetFrameLevel() + 2)
-			if not button.backdrop then
-				button:CreateBackdrop("Default", true)
-				button.backdrop:SetAllPoints()
-			end
-		end
-	end
-
-	SpellBookCompanionSummonButton:SkinButton()
-	SpellBookCompanionModelFrame:StripTextures()
-	SpellBookCompanionModelFrameShadowOverlay:StripTextures()
-	SpellBookCompanionsModelFrame:Kill()
-	SpellBookCompanionModelFrame:SetTemplate("Overlay")
-	SpellBookCompanionsFrame:SetFrameLevel(SpellBookCompanionsFrame:GetFrameLevel() + 2)
-
-	T.SkinRotateButton(SpellBookCompanionModelFrameRotateRightButton)
-	T.SkinRotateButton(SpellBookCompanionModelFrameRotateLeftButton)
-	SpellBookCompanionModelFrameRotateRightButton:Point("TOPLEFT", SpellBookCompanionModelFrameRotateLeftButton, "TOPRIGHT", 3, 0)
-
 	-- Bottom Tabs
 	for i = 1, 5 do
 		T.SkinTab(_G["SpellBookFrameTabButton"..i])

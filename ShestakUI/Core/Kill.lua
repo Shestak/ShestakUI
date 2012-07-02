@@ -17,7 +17,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
 		CompactRaidFrameManager:Kill()
 		CompactRaidFrameContainer:Kill()
-		CompactUnitFrame_UpateVisible = T.dummy
+		--MOP--CompactUnitFrame_UpateVisible = T.dummy
 		CompactUnitFrame_UpdateAll = T.dummy
 		CompactUnitFrameProfiles_ApplyProfile = T.dummy
 	end
