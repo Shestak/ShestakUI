@@ -46,8 +46,8 @@ _G.ACHIEVEMENT_BROADCAST_SELF = "%s!"
 _G.PLAYER_SERVER_FIRST_ACHIEVEMENT = "|Hplayer:%s|h[%s]|h! $a!"
 _G.SERVER_FIRST_ACHIEVEMENT = "%s! $a!"
 if T.client == "ruRU" then
-	_G.FACTION_STANDING_DECREASED = "Отношение |3-7(%s) -%d."
-	_G.FACTION_STANDING_INCREASED = "Отношение |3-7(%s) +%d."
+	_G.FACTION_STANDING_DECREASED = "Отношение %s -%d."
+	_G.FACTION_STANDING_INCREASED = "Отношение %s +%d."
 end
 
 -- Hide friends micro button

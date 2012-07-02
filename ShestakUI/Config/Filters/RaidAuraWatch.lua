@@ -83,6 +83,27 @@ if C.raidframe.plugins_aura_watch == true then
 		end
 
 		T.debuffids = {
+		-- Heart of Fear
+			-- Imperial Vizier Zor'lok
+			-- Blade Lord Ta'yak
+			-- Garalon
+			-- Wind Lord Mel'jarak
+			-- Amber-Shaper Un'sok
+			-- Grand Empress Shek'zeer
+		-- Mogu'shan Vaults
+			-- The Stone Guard
+			-- Feng the Accursed
+			-- Gara'jal the Spiritbinder
+			-- The Spirit Kings
+			-- Elegon
+			-- Will of the Emperor
+		-- Terrace of Endless Spring
+			-- Protectors of the Endless
+			-- Sha of Anger
+			-- Salyis's Warband
+			-- Tsulong
+			-- Lei Shi
+			-- Sha of Fear
 		-- Baradin Hold
 			-- Argaloth
 			SpellName(95173),	-- Consuming Darkness
