@@ -23,7 +23,7 @@ local spells = {
 	-- PRIEST
 	[GetSpellInfo(47540)] = L_PLANNER_PRIEST_1,			-- Penance
 	[GetSpellInfo(34861)] = L_PLANNER_PRIEST_2,			-- Circle of Healing
-	[GetSpellInfo(88684)] = L_PLANNER_PRIEST_2,		    -- Holy Word: Serenity
+	[GetSpellInfo(88684)] = L_PLANNER_PRIEST_2,			-- Holy Word: Serenity
 	[GetSpellInfo(15407)] = L_PLANNER_PRIEST_3,			-- Mind Flay
 	-- DEATHKNIGHT
 	[GetSpellInfo(55050)] = L_PLANNER_DEATHKNIGHT_1,	-- Heart Strike
@@ -35,9 +35,9 @@ local spells = {
 	[GetSpellInfo(44572)] = L_PLANNER_MAGE_3,			-- Deep Freeze
 	-- WARLOCK
 	[GetSpellInfo(30108)] = L_PLANNER_WARLOCK_1,		-- Unstable Affliction
-	[GetSpellInfo(71521)] = L_PLANNER_WARLOCK_2,		-- Hand of Gul'dan
+	--MOP[GetSpellInfo(71521)] = L_PLANNER_WARLOCK_2,		-- Hand of Gul'dan
 	[GetSpellInfo(17962)] = L_PLANNER_WARLOCK_3,		-- Conflagrate
-	[GetSpellInfo(50796)] = L_PLANNER_WARLOCK_3,		-- Chaos Bolt
+	--MOP[GetSpellInfo(50796)] = L_PLANNER_WARLOCK_3,		-- Chaos Bolt
 	-- SHAMAN
 	[GetSpellInfo(51490)] = L_PLANNER_SHAMAN_1,			-- Thunderstorm
 	[GetSpellInfo(60103)] = L_PLANNER_SHAMAN_2,			-- Lava Lash
@@ -55,43 +55,43 @@ local spells = {
 
 local buffs = { -- Credits: Proditor, Rinu
 	-- WARRIOR
-	[GetSpellInfo(60503)] = L_PLANNER_WARRIOR_1,		-- Taste for Blood
-	[GetSpellInfo(29801)] = L_PLANNER_WARRIOR_2,		-- Rampage
+	--MOP[GetSpellInfo(60503)] = L_PLANNER_WARRIOR_1,		-- Taste for Blood
+	--MOP[GetSpellInfo(29801)] = L_PLANNER_WARRIOR_2,		-- Rampage
 	[GetSpellInfo(50227)] = L_PLANNER_WARRIOR_3,		-- Sword and Board
 	-- PALADIN
-	[GetSpellInfo(20053)] = L_PLANNER_PALADIN_1,		-- Conviction
-	[GetSpellInfo(20178)] = L_PLANNER_PALADIN_2,		-- Reckoning
+	--MOP[GetSpellInfo(20053)] = L_PLANNER_PALADIN_1,		-- Conviction
+	--MOP[GetSpellInfo(20178)] = L_PLANNER_PALADIN_2,		-- Reckoning
 	[GetSpellInfo(89906)] = L_PLANNER_PALADIN_3,		-- Judgements of the Bold
 	-- ROGUE
 	[GetSpellInfo(58426)] = L_PLANNER_ROGUE_1,			-- Overkill
 	[GetSpellInfo(13877)] = L_PLANNER_ROGUE_2,			-- Blade Flurry
-	[GetSpellInfo(51698)] = L_PLANNER_ROGUE_3,			-- Honor Among Thieves
+	--MOP[GetSpellInfo(51698)] = L_PLANNER_ROGUE_3,			-- Honor Among Thieves
 	-- PRIEST
-	[GetSpellInfo(47930)] = L_PLANNER_PRIEST_1,			-- Grace
+	--MOP[GetSpellInfo(47930)] = L_PLANNER_PRIEST_1,			-- Grace
 	[GetSpellInfo(59889)] = L_PLANNER_PRIEST_1,			-- Borrowed Time
 	[GetSpellInfo(63735)] = L_PLANNER_PRIEST_2,			-- Serendipity
 	[GetSpellInfo(15473)] = L_PLANNER_PRIEST_3,			-- Shadowform
 	-- DEATHKNIGHT
 	[GetSpellInfo(49222)] = L_PLANNER_DEATHKNIGHT_1,	-- Bone Shield
-	[GetSpellInfo(53138)] = L_PLANNER_DEATHKNIGHT_1,	-- Abomination's Might
+	--MOP[GetSpellInfo(53138)] = L_PLANNER_DEATHKNIGHT_1,	-- Abomination's Might
 	[GetSpellInfo(55610)] = L_PLANNER_DEATHKNIGHT_2,	-- Improved Icy Talons
 	[GetSpellInfo(81340)] = L_PLANNER_DEATHKNIGHT_3,	-- Sudden Doom
 	-- MAGE
-	[GetSpellInfo(82930)] = L_PLANNER_MAGE_1,			-- Arcane Tactics
+	--MOP[GetSpellInfo(82930)] = L_PLANNER_MAGE_1,			-- Arcane Tactics
 	[GetSpellInfo(48108)] = L_PLANNER_MAGE_2,			-- Hot Streak
 	[GetSpellInfo(11426)] = L_PLANNER_MAGE_3,			-- Ice Barrier
 	[GetSpellInfo(44544)] = L_PLANNER_MAGE_3,			-- Fingers of Frost
 	-- WARLOCK
-	[GetSpellInfo(53646)] = L_PLANNER_WARLOCK_2,		-- Demonic Pact
-	[GetSpellInfo(30301)] = L_PLANNER_WARLOCK_3,		-- Nether Protection
+	--MOP[GetSpellInfo(53646)] = L_PLANNER_WARLOCK_2,		-- Demonic Pact
+	--MOP[GetSpellInfo(30301)] = L_PLANNER_WARLOCK_3,		-- Nether Protection
 	-- SHAMAN
-	[GetSpellInfo(51466)] = L_PLANNER_SHAMAN_1,			-- Elemental Oath
-	[GetSpellInfo(30808)] = L_PLANNER_SHAMAN_2,			-- Unleashed Rage
+	--MOP[GetSpellInfo(51466)] = L_PLANNER_SHAMAN_1,			-- Elemental Oath
+	--MOP[GetSpellInfo(30808)] = L_PLANNER_SHAMAN_2,			-- Unleashed Rage
 	[GetSpellInfo(974)] = L_PLANNER_SHAMAN_3,			-- Earth Shield
 	-- HUNTER
-	[GetSpellInfo(75447)] = L_PLANNER_HUNTER_1,			-- Ferocious Inspiration
+	--MOP[GetSpellInfo(75447)] = L_PLANNER_HUNTER_1,			-- Ferocious Inspiration
 	[GetSpellInfo(19506)] = L_PLANNER_HUNTER_2,			-- Trueshot Aura
-	[GetSpellInfo(53290)] = L_PLANNER_HUNTER_3,			-- Hunting Party
+	--MOP[GetSpellInfo(53290)] = L_PLANNER_HUNTER_3,			-- Hunting Party
 	-- DRUID
 	[GetSpellInfo(24858)] = L_PLANNER_DRUID_1,			-- Moonkin Form
 	[GetSpellInfo(17007)] = L_PLANNER_DRUID_2,			-- Leader of the Pack
