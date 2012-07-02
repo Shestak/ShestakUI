@@ -50,8 +50,8 @@
 	<Script file="Core\Kill.lua"/>
 	<Script file="Core\Temp.lua"/>
 
-	<!--<Script file="Modules\Blizzard\Vehicle.lua"/>
-	<Script file="Modules\Blizzard\CaptureBar.lua"/>-->
+	<Script file="Modules\Blizzard\Vehicle.lua"/>
+	<!--<Script file="Modules\Blizzard\CaptureBar.lua"/>-->
 	<Script file="Modules\Blizzard\MirrorBars.lua"/>
 	<Script file="Modules\Blizzard\Symbols.lua"/>
 	<Script file="Modules\Blizzard\Errors.lua"/>
