@@ -58,7 +58,7 @@
 	<!--<Script file="Modules\Blizzard\Achievements.lua"/>-->
 	<Script file="Modules\Blizzard\Durability.lua"/>
 	<Script file="Modules\Blizzard\Mail.lua"/>
-	<!--<Script file="Modules\Blizzard\FriendList.lua"/>-->
+	<Script file="Modules\Blizzard\FriendList.lua"/>
 	<Script file="Modules\Blizzard\Fonts.lua"/>
 	<Script file="Modules\Blizzard\Bags.lua"/>
 	<Script file="Modules\Blizzard\Nameplates.lua"/>
