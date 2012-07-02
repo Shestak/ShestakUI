@@ -22,7 +22,7 @@ local function LoadSkin()
 	end
 
 	-- Icons/merchant slots
-	for i = 1, MERCHANT_ITEMS_PER_PAGE do
+	for i = 1, BUYBACK_ITEMS_PER_PAGE do
 		local b = _G["MerchantItem"..i.."ItemButton"]
 		local t = _G["MerchantItem"..i.."ItemButtonIconTexture"]
 		local item_bar = _G["MerchantItem"..i]
@@ -86,6 +86,24 @@ local function LoadSkin()
 	-- Reposition tabs
 	MerchantFrameTab1:ClearAllPoints()
 	MerchantFrameTab1:SetPoint("TOPLEFT", MerchantFrame.backdrop, "BOTTOMLEFT", 0, 2)
+
+	hooksecurefunc("MerchantFrame_UpdateCurrencies", function()
+		for i = 1, MAX_MERCHANT_CURRENCIES do
+			local b = _G["MerchantToken"..i]
+			local t = _G["MerchantToken"..i.."Icon"]
+			local c = _G["MerchantToken"..i.."Count"]
+
+			if b and not b.reskinned then
+				t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				b:CreateBackdrop("Default")
+				b.backdrop:Point("TOPLEFT", t, "TOPLEFT", -2, 2)
+				b.backdrop:Point("BOTTOMRIGHT", t, "BOTTOMRIGHT", 2, -2)
+				t:Point("LEFT", c, "RIGHT", 2, 0)
+
+				b.reskinned = true
+			end
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
