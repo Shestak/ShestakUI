@@ -793,14 +793,8 @@ if guild.enabled then
 	local function UpdateGuildXP()
 		local currentXP, remainingXP = UnitGetGuildXP("player")
 		local nextLevelXP = currentXP + remainingXP
-		local percentTotal
-
-		if currentXP > 0 then
-			percentTotal = tostring(math.ceil((currentXP / nextLevelXP) * 100))
-		else
-			percentTotal = 0
-		end
-
+		if nextLevelXP == 0 then return end
+		local percentTotal = tostring(math.ceil((currentXP / nextLevelXP) * 100))
 		guildXP[0] = {currentXP, nextLevelXP, percentTotal}
 	end
 	local function ShortValueXP(v)
@@ -924,7 +918,7 @@ if guild.enabled then
 				local _, _, standingID, barMin, barMax, barValue = GetGuildFactionInfo()
 				local col = T.RGBToHex(ttsubh.r, ttsubh.g, ttsubh.b)
 				for i = 0, total do if select(9, GetGuildRosterInfo(i)) then online = online + 1 end end
-				
+
 				GameTooltip:SetOwner(self, "ANCHOR_NONE")
 				GameTooltip:ClearAllPoints()
 				GameTooltip:SetPoint(modules.Guild.tip_anchor, modules.Guild.tip_frame, modules.Guild.tip_x, modules.Guild.tip_y)
