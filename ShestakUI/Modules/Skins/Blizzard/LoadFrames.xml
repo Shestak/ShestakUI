@@ -12,10 +12,10 @@
 	<!--<Script file="ChatConfig.lua"/>
 	<Script file="Container.lua"/>
 	<Script file="DebugTools.lua"/>
-	<Script file="DressUp.lua"/>
+	<Script file="DressUp.lua"/>-->
 	<Script file="FrameStack.lua"/>
 	<Script file="Friends.lua"/>
-	<Script file="Glyph.lua"/>
+	<!--<Script file="Glyph.lua"/>
 	<Script file="Gossip.lua"/>
 	<Script file="Greeting.lua"/>
 	<Script file="Guild.lua"/>
