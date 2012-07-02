@@ -35,6 +35,7 @@ if C.chat.filter == true then
 	ERR_PET_SPELL_UNLEARNED_S = ""
 	ERR_LEARN_ABILITY_S = ""
 	ERR_LEARN_SPELL_S = ""
+	ERR_LEARN_PASSIVE_S = ""
 	ERR_SPELL_UNLEARNED_S = ""
 	GUILD_REP_WEEKLY_CAPPED = ""
 	if T.author ~= true then
