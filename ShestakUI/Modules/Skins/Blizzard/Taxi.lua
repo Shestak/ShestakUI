@@ -12,14 +12,8 @@ local function LoadSkin()
 	TaxiRouteMap:CreateBackdrop("Default")
 	TaxiRouteMap.backdrop:Point("TOPLEFT", -2, 2)
 	TaxiRouteMap.backdrop:Point("BOTTOMRIGHT", 2, -2)
-
-	for i = 1, TaxiFrame:GetNumChildren() do
-		local child = select(i, TaxiFrame:GetChildren())
-		if child and not child:GetName() and child:GetObjectType() == "Button" then
-			T.SkinCloseButton(child)
-			child:Point("TOPRIGHT", -4, -1)
-		end
-	end
+	T.SkinCloseButton(TaxiFrame.CloseButton)
+	TaxiFrame.CloseButton:Point("TOPRIGHT", -4, -1)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

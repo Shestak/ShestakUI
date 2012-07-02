@@ -35,6 +35,8 @@ local function LoadSkin()
 		"ReportPlayerNameDialogCancelButton"
 	}
 
+	HelpFrameKnowledgebaseNavBarHomeButton:StripTextures(false)
+
 	-- Main frames
 	for i = 1, #frames do
 		_G[frames[i]]:StripTextures(true)
@@ -98,8 +100,14 @@ local function LoadSkin()
 	-- Main buttons
 	for i = 1, 6 do
 		local b = _G["HelpFrameButton"..i]
+		local t = _G["HelpFrameButton"..i.."Selected"]
 		b:SkinButton(false)
 		b.text:SetFont(C.media.normal_font, 13)
+		if t then
+			t:SetTexture(T.color.r, T.color.g, T.color.b, 0.3)
+			t:Point("TOPLEFT", b, 2, -2)
+			t:Point("BOTTOMRIGHT", b, -2, 2)
+		end
 	end
 
 	-- Table options

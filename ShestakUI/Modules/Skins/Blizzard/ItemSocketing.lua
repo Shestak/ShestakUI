@@ -7,8 +7,9 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	ItemSocketingFrame:StripTextures()
 	ItemSocketingFrame:CreateBackdrop("Transparent")
-	ItemSocketingFrame.backdrop:Point("TOPLEFT", 16, -12)
-	ItemSocketingFrame.backdrop:Point("BOTTOMRIGHT", 0, 20)
+	ItemSocketingFrame.backdrop:Point("TOPLEFT", 0, 0)
+	ItemSocketingFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+	ItemSocketingFrameInset:StripTextures()
 	ItemSocketingScrollFrame:StripTextures()
 	ItemSocketingScrollFrame:CreateBackdrop("Overlay")
 
@@ -38,7 +39,7 @@ local function LoadSkin()
 	ItemSocketingSocketButton:ClearAllPoints()
 	ItemSocketingSocketButton:Point("BOTTOMRIGHT", ItemSocketingFrame.backdrop, "BOTTOMRIGHT", -5, 5)
 	ItemSocketingSocketButton:SkinButton()
-	T.SkinCloseButton(ItemSocketingCloseButton, ItemSocketingFrame.backdrop)
+	T.SkinCloseButton(ItemSocketingFrameCloseButton, ItemSocketingFrame.backdrop)
 end
 
 T.SkinFuncs["Blizzard_ItemSocketingUI"] = LoadSkin

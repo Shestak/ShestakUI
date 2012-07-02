@@ -21,17 +21,17 @@
 	<Script file="Guild.lua"/>
 	<Script file="GuildBank.lua"/>
 	<Script file="GuildControl.lua"/>
-	<Script file="GuildRegistrar.lua"/>
+	<Script file="GuildRegistrar.lua"/>-->
 	<Script file="Help.lua"/>
-	<Script file="Inspect.lua"/>-->
+	<!--<Script file="Inspect.lua"/>-->
 	<Script file="Interface.lua"/>
-	<!--<Script file="ItemAlteration.lua"/>
-	<Script file="ItemSocketing.lua"/>-->
+	<Script file="ItemAlteration.lua"/>
+	<Script file="ItemSocketing.lua"/>
 	<Script file="ItemText.lua"/>
 	<!--<Script file="Journal.lua"/>
-	<Script file="LFD.lua"/>
+	<Script file="LFD.lua"/>-->
 	<Script file="LFG.lua"/>
-	<Script file="LFR.lua"/>
+	<!--<Script file="LFR.lua"/>
 	<Script file="MacClient.lua"/>
 	<Script file="Macro.lua"/>-->
 	<Script file="Mail.lua"/>
@@ -45,9 +45,9 @@
 	<Script file="Quest.lua"/>
 	<Script file="QuestLog.lua"/>
 	<Script file="Raid.lua"/>
-	<Script file="RaidInfo.lua"/>
+	<Script file="RaidInfo.lua"/>-->
 	<Script file="Reforging.lua"/>
-	<Script file="SpellBook.lua"/>
+	<!--<Script file="SpellBook.lua"/>
 	<Script file="Tabard.lua"/>
 	<Script file="Talent.lua"/>-->
 	<Script file="Taxi.lua"/>
@@ -55,8 +55,8 @@
 	<Script file="Trade.lua"/>
 	<Script file="TradeSkill.lua"/>-->
 	<Script file="Trainer.lua"/>
-	<!--<Script file="Tutorial.lua"/>
+	<!--<Script file="Tutorial.lua"/>-->
 	<Script file="VoidStorage.lua"/>
-	<Script file="WorldMap.lua"/>
+	<!--<Script file="WorldMap.lua"/>
 	<Script file="WorldState.lua"/>-->
 </Ui>
