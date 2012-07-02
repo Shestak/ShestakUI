@@ -44,7 +44,7 @@ local function LoadSkin()
 	BarberShopFrame:Size(BarberShopFrame:GetWidth() - 30, BarberShopFrame:GetHeight() - 56)
 
 	BarberShopFrameMoneyFrame:StripTextures()
-	BarberShopFrameMoneyFrame:CreateBackdrop()
+	BarberShopFrameMoneyFrame:CreateBackdrop("Overlay")
 	BarberShopFrameBackground:Kill()
 
 	BarberShopBannerFrameBGTexture:Kill()
