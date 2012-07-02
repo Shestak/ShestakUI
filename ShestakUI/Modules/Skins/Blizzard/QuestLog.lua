@@ -7,13 +7,14 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	QuestLogFrame:StripTextures()
 	QuestLogFrame:CreateBackdrop("Transparent")
-	QuestLogFrame.backdrop:Point("TOPLEFT", 16, -12)
-	QuestLogFrame.backdrop:Point("BOTTOMRIGHT", 0, 11)
+	QuestLogFrame.backdrop:Point("TOPLEFT", 0, 0)
+	QuestLogFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
 	T.SkinCloseButton(QuestLogFrameCloseButton, QuestLogFrame.backdrop)
 
 	QuestLogCount:StripTextures()
-
+	QuestLogFrameInset:StripTextures()
 	EmptyQuestLogFrame:StripTextures()
+	QuestLogScrollFrame:StripTextures(true)
 
 	QuestLogFrameShowMapButton:StripTextures()
 	QuestLogFrameShowMapButton:SkinButton()
@@ -134,13 +135,12 @@ local function LoadSkin()
 	end)
 
 	QuestLogFrame:HookScript("OnShow", function()
-		QuestLogScrollFrame:Height(QuestLogScrollFrame:GetHeight() - 3)
-		QuestLogDetailScrollFrame:Height(QuestLogDetailScrollFrame:GetHeight() - 3)
 		QuestLogFrameAbandonButton:ClearAllPoints()
 		QuestLogFrameAbandonButton:Point("BOTTOMLEFT", QuestLogFrame.backdrop, "BOTTOMLEFT", 4, 4)
 		QuestLogFramePushQuestButton:Point("LEFT", QuestLogFrameAbandonButton, "RIGHT", 3, 0)
 		QuestLogFramePushQuestButton:Point("RIGHT", QuestLogFrameTrackButton, "LEFT", -3, 0)
 		QuestLogFrameCancelButton:Point("BOTTOMRIGHT", QuestLogFrame.backdrop, "BOTTOMRIGHT", -4, 4)
+		QuestLogFrameTrackButton:Point("BOTTOMRIGHT", QuestLogFrame.backdrop, "BOTTOMRIGHT", -4, 4)
 	end)
 end
 
