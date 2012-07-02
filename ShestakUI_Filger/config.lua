@@ -1454,7 +1454,7 @@ Filger_Spells = {
 			-- Fear Ward
 			{spellID = 6346, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Borrowed Time
-			{spellID = 59887, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 59887, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Fire
 			--{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Will
@@ -1481,17 +1481,17 @@ Filger_Spells = {
 
 			-- Buffs
 			-- Surge of Light
-			{spellID = 88688, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 88688, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Serendipity
-			{spellID = 63731, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 63731, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadow Orb
 			{spellID = 77487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Empowered Shadow
-			{spellID = 95799, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 95799, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evangelism
 			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Evangelism
-			{spellID = 87117, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 87117, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mind melt
 			{spellID = 87160, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Sanctuary
@@ -1626,9 +1626,9 @@ Filger_Spells = {
 			-- Inner Focus
 			{spellID = 89485, filter = "CD"},
 			-- Archangel
-			{spellID = 87151, filter = "CD"},
+			--MOP{spellID = 87151, filter = "CD"},
 			-- Chakra
-			{spellID = 14751, filter = "CD"},
+			--MOP{spellID = 14751, filter = "CD"},
 			-- Desperate Prayer
 			{spellID = 19236, filter = "CD"},
 			-- Leap of Faith
@@ -2225,7 +2225,7 @@ Filger_Spells = {
 			-- Sudden Doom
 			{spellID = 81340, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Crimson Scourge
-			{spellID = 81141, unitID = "player", caster = "player", filter = "BUFF"},
+			--MOP{spellID = 81141, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unholy Strength
 			{spellID = 53365, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -2270,7 +2270,7 @@ Filger_Spells = {
 			-- Frost Fever
 			{spellID = 59921, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Unholy Blight
-			{spellID = 49194, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--MOP{spellID = 49194, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Summon Gargoyle
 			{spellID = 49206, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
