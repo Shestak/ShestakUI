@@ -105,7 +105,8 @@ local function LoadSkin()
 		"AudioOptionsSoundPanelSoundChannelsDropDown",
 		"AudioOptionsVoicePanelInputDeviceDropDown",
 		"AudioOptionsVoicePanelChatModeDropDown",
-		"AudioOptionsVoicePanelOutputDeviceDropDown"
+		"AudioOptionsVoicePanelOutputDeviceDropDown",
+		"Graphics_SSAODropDown"
 	}
 
 	for i = 1, getn(dropdown) do

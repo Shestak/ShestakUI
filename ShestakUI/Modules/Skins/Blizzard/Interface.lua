@@ -12,6 +12,9 @@ local function LoadSkin()
 	InterfaceOptionsFrameHeader:ClearAllPoints()
 	InterfaceOptionsFrameHeader:Point("TOP", InterfaceOptionsFrame, 0, 0)
 
+	InterfaceOptionsFrameTab1:StripTextures()
+	InterfaceOptionsFrameTab2:StripTextures()
+
 	local frames = {
 		"InterfaceOptionsFramePanelContainer",
 		"InterfaceOptionsFrameAddOns",
@@ -33,9 +36,7 @@ local function LoadSkin()
 		"InterfaceOptionsFrameCancel",
 		"InterfaceOptionsFrameTab1",
 		"InterfaceOptionsFrameTab2",
-		"InterfaceOptionsHelpPanelResetTutorials",
-		"InterfaceOptionsUnitFramePanelResetPartyPosition",
-		"InterfaceOptionsRaidFramePanelResetPosition"
+		"InterfaceOptionsHelpPanelResetTutorials"
 	}
 
 	for i = 1, getn(buttons) do
@@ -55,6 +56,7 @@ local function LoadSkin()
 		"ControlsPanelLootAtMouse",
 		"ControlsPanelAutoLootCorpse",
 		"ControlsPanelInteractOnLeftClick",
+		"ControlsPanelAutoOpenLootHistory",
 		-- Combat
 		"CombatPanelAutoSelfCast",
 		"CombatPanelAttackOnAssist",
@@ -71,7 +73,6 @@ local function LoadSkin()
 		"DisplayPanelShowHelm",
 		"DisplayPanelShowAggroPercentage",
 		"DisplayPanelPlayAggroSounds",
-		"DisplayPanelDetailedLootInfo",
 		"DisplayPanelShowSpellPointsAvg",
 		"DisplayPanelemphasizeMySpellEffects",
 		"DisplayPanelShowFreeBagSpace",
@@ -177,7 +178,6 @@ local function LoadSkin()
 		"HelpPanelShowTutorials",
 		"HelpPanelLoadingScreenTips",
 		"HelpPanelEnhancedTooltips",
-		"HelpPanelBeginnerTooltips",
 		"HelpPanelShowLuaErrors",
 		"HelpPanelColorblindMode",
 		"HelpPanelMovePad"
