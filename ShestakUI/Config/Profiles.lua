@@ -50,7 +50,6 @@ if T.author == true then
 	C["general"].custom_lagtolerance = true
 	C["misc"].auto_quest = true
 	C["misc"].auto_accept_invite = true
-	C["misc"].auto_buy_reagents  = true
 	C["misc"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
 	C["misc"].hide_bg_spam = true
@@ -293,7 +292,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -270, -100}
 		C["position"].vehicle_bar = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 440, 175}
 		C["position"].unitframes.tank = {"LEFT", UIParent, "LEFT", 23, 0}
-		C["misc"].auto_buy_reagents  = true
 		C["combattext"].icon_size = 25
 		C["combattext"].heal_treshold = 1000
 		C["chat"].width = 398

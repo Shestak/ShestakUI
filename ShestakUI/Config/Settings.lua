@@ -43,7 +43,6 @@ C["misc"] = {
 	["auto_decline_duel"] = true,				-- Auto decline duel
 	["auto_accept_invite"] = false,				-- Auto accept invite
 	["auto_resurrection"] = true,				-- Auto resurrection in Battle Ground
-	["auto_buy_reagents"] = false,				-- Auto buy reagents(if hold shift or alt, auto buy is disable)
 	["shift_marking"] = true,					-- Marks target when you push "shift"
 	["invite_keyword"] = "invite",				-- Short keyword for invite(for enable - in game type /ainv)
 	["afk_spin_camera"] = false,				-- Spin camera while afk
