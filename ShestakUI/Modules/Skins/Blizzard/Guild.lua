@@ -67,6 +67,7 @@ local function LoadSkin()
 
 	for i, button in pairs(buttons) do
 		if i == 1 then
+			_G[button]:StripTextures(true)
 			_G[button]:SkinButton()
 		else
 			_G[button]:SkinButton(true)
