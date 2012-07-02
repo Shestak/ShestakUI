@@ -316,7 +316,7 @@ local function Shared(self, unit)
 
 			for i = 1, 5 do
 				self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar"..i, self)
-				self.HarmonyBar[i]:SetSize(213 / 5, 7)
+				self.HarmonyBar[i]:SetHeight(7)
 				if i == 1 then
 					self.HarmonyBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
