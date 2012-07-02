@@ -49,9 +49,9 @@
 	<Script file="Reforging.lua"/>
 	<Script file="SpellBook.lua"/>
 	<Script file="Tabard.lua"/>
-	<Script file="Talent.lua"/>
+	<Script file="Talent.lua"/>-->
 	<Script file="Taxi.lua"/>
-	<Script file="TimeManager.lua"/>
+	<!--<Script file="TimeManager.lua"/>
 	<Script file="Trade.lua"/>
 	<Script file="TradeSkill.lua"/>
 	<Script file="Trainer.lua"/>
