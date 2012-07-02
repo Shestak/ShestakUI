@@ -49,6 +49,7 @@ local function LoadSkin()
 	select(8, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
 	select(8, _G["CharacterRangedSlot"]:GetRegions()):Hide()
 	select(8, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
+	select(9, _G["CharacterRangedSlot"]:GetRegions()):Hide()
 
 	-- Strip Textures
 	local charframe = {
