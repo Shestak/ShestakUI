@@ -462,8 +462,6 @@ Filger_Spells = {
 			{spellID = 19263, filter = "CD"},
 			-- Concussive Shot
 			{spellID = 5116, filter = "CD"},
-			-- Counterattack
-			--MOP{spellID = 19306, filter = "CD"},
 			-- Intimidation
 			{spellID = 19577, filter = "CD"},
 			-- Rapid Fire
@@ -1256,7 +1254,7 @@ Filger_Spells = {
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sacred Shield
-			--MOP{spellID = 96263, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 20925, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Guardian of Ancient Kings Ret PROC
@@ -2523,8 +2521,6 @@ Filger_Spells = {
 			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Divine Guardian
-			--MOP{spellID = 70940, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mass Regeneration
 			{spellID = 105737, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Vampiric Brood
@@ -2624,8 +2620,6 @@ Filger_Spells = {
 			{spellID = 13810, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Wing Clip
 			--MOP{spellID = 2974, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Counterattack
-			--MOP{spellID = 19306, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entrapment
 			{spellID = 19185, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Pets
@@ -2831,6 +2825,8 @@ Filger_Spells = {
 			{spellID = 20549, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Arcane Torrent
 			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Quaking Palm
+			{spellID = 107079, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Other
 			-- Rocket Fuel Leak
@@ -2883,7 +2879,7 @@ Filger_Spells = {
 			-- Berserker
 			{spellID = 18499, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Last stand
-			--MOP{spellID = 12976, unitID = "target", caster = "all", filter = "BUFF"},
+			{spellID = 12975, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Bladestorm
 			{spellID = 46924, unitID = "target", caster = "all", filter = "BUFF"},
 
@@ -2896,7 +2892,7 @@ Filger_Spells = {
 			{spellID = 6940, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Hand of Freedom
 			{spellID = 1044, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Aura Mastery
+			-- Devotion Aura
 			{spellID = 31821, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Ardent Defender
 			{spellID = 31850, unitID = "target", caster = "all", filter = "BUFF"},
@@ -2904,8 +2900,6 @@ Filger_Spells = {
 			{spellID = 498, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Guardian of Ancient Kings
 			{spellID = 86698, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Divine Guardian
-			--MOP{spellID = 70940, unitID = "target", caster = "all", filter = "BUFF"},
 
 			-- Mage
 			-- Ice Block
