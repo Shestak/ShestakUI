@@ -98,9 +98,19 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Physical Agility DPS
+			-- PvP Trinkets (Agility, Use)
+			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Agility, Proc)
+			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- PvP Trinkets (Spell Power, Use)
+			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Spell Power, Proc)
+			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
 			-- Caster Heal
 
@@ -349,7 +359,13 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- PvP Trinkets (Agility, Use)
+			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Agility, Proc)
+			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -588,7 +604,13 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- PvP Trinkets (Spell Power, Use)
+			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Spell Power, Proc)
+			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
 
 			-- Enchants
@@ -831,8 +853,14 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Physical Strength DPS
+			-- PvP Trinkets (Strength, Use)
+			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Strength, Proc)
+			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -1038,8 +1066,19 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
+			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- PvP Trinkets (Agility, Use)
+			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Agility, Proc)
+			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- PvP Trinkets (Spell Power, Use)
+			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Spell Power, Proc)
+			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
 			-- Caster Heal
 
@@ -1262,9 +1301,19 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Physical Strength DPS
+			-- PvP Trinkets (Strength, Use)
+			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Strength, Proc)
+			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- PvP Trinkets (Spell Power, Use)
+			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Spell Power, Proc)
+			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Enchants
@@ -1457,7 +1506,13 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- PvP Trinkets (Spell Power, Use)
+			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Spell Power, Proc)
+			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
 			-- Caster Heal
 
@@ -1695,7 +1750,13 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- PvP Trinkets (Spell Power, Use)
+			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Spell Power, Proc)
+			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
 
 			-- Enchants
@@ -1951,7 +2012,13 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- PvP Trinkets (Agility, Use)
+			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Agility, Proc)
+			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2164,66 +2231,14 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
-			-- Battlemaster Trinket (Health, Use)
-			{spellID = 92223, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mirror of Broken Images (Resistance, Use)
-			{spellID = 92222, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
-			-- Bedrock Talisman (Dodge, Proc)
-			{spellID = 92233, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Darkmoon Card: Earthquake (Health, Use)
-			{spellID = 89181, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Symbiotic Worm (Mastery, Proc)
-			{spellID = 92235, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vial of Stolen Memories (Dodge, Use)
-			{spellID = 92213, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Moonwell Phial (Dodge, Use)
-			{spellID = 101156, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spidersilk Spindle (Absorb, Proc)
-			{spellID = 96945, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stay of Execution (Absorb, Use)
-			{spellID = 96988, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stay of Execution (Drawback)
-			{spellID = 96993, unitID = "player", caster = "player", filter = "DEBUFF"},
-			-- Soulshifter Vortex (Mastery, Proc)
-			{spellID = 109776, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Indomitable Pride (Absorb, Proc)
-			{spellID = 109786, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fire of the Deep (Dodge, Use)
-			{spellID = 109779, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Veil of Lies (Dodge, Proc)
-			{spellID = 102667, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
-			-- Crushing Weight (Haste, Proc)
-			{spellID = 91821, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fury of Angerforge (Raw Fury, Proc)
-			{spellID = 91832, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fury of Angerforge (Strength, Use)
-			{spellID = 91836, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Heart of Rage (Strength, Proc)
-			{spellID = 91816, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Impatience of Youth (Strength, Use)
-			{spellID = 91828, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Gladiator's Badge of Victory (Strength, Use)
-			{spellID = 92224, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Gladiator's Insignia of Victory (Strength, Proc)
-			{spellID = 92216, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dwyer's Caber (Crit, Use)
-			{spellID = 100322, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Apparatus of Khaz'goroth (Titanic Power, Proc)
-			{spellID = 96923, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Apparatus of Khaz'goroth (Highest Stat, Use)
-			{spellID = 96929, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Essence of the Eternal Flame (Strength, Use)
-			{spellID = 97010, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rotting Skull (Strength, Use)
-			{spellID = 107949, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Creche of the Final Dragon (Crit, Proc)
-			{spellID = 109744, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rosary of Light (Crit, Proc)
-			{spellID = 102660, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Varo'then's Brooch (Mastery, Proc)
-			{spellID = 102664, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Strength, Use)
+			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Strength, Proc)
+			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2379,8 +2394,14 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
-			-- Physical Strength DPS
+			-- Physical Agility DPS
+			-- PvP Trinkets (Agility, Use)
+			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Agility, Proc)
+			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2446,12 +2467,12 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.special_proc_icon)},
 
 			-- Potions
-			-- Tol'vir Agility
-			{spellID = 79633, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Golem's Strength
-			{spellID = 79634, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Volcanic Power
-			{spellID = 79476, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Virmen's Bite
+			{spellID = 105697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Potion of Mogu Power
+			{spellID = 105706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Potion of the Jade Serpent
+			{spellID = 105702, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Speed from BG
 			--{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF"},
