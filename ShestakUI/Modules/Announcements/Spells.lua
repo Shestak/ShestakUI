@@ -18,9 +18,9 @@ misdir_announce:SetScript("OnEvent", function(self, _, ...)
 
 			for i, spells in pairs(spells) do
 				if spellID == spells then
-					if GetRealNumRaidMembers() > 0 then
+					if GetNumGroupMembers() > 0 then
 						SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "RAID")
-					elseif GetRealNumPartyMembers() > 0 and not UnitInRaid("player") then
+					elseif GetNumSubgroupMembers() > 0 and not UnitInRaid("player") then
 						SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "PARTY")
 					else
 						SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "SAY")
@@ -32,9 +32,9 @@ misdir_announce:SetScript("OnEvent", function(self, _, ...)
 
 			for i, spells in pairs(spells) do
 				if spellID == spells then
-					if GetRealNumRaidMembers() > 0 then
+					if GetNumGroupMembers() > 0 then
 						SendChatMessage(GetSpellLink(spellID).." -> "..destName, "RAID")
-					elseif GetRealNumPartyMembers() > 0 and not UnitInRaid("player") then
+					elseif GetNumSubgroupMembers() > 0 and not UnitInRaid("player") then
 						SendChatMessage(GetSpellLink(spellID).." -> "..destName, "PARTY")
 					else
 						SendChatMessage(GetSpellLink(spellID).." -> "..destName, "SAY")

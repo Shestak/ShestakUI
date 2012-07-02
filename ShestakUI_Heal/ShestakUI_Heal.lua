@@ -353,7 +353,7 @@ oUF:Factory(function(self)
 			if InCombatLockdown() then return end
 
 			local lastGroup = 1
-			local numRaidMembers = GetNumRaidMembers()
+			local numRaidMembers = GetNumGroupMembers()
 			if numRaidMembers > 0 then
 				local playerGroup
 				for member = 1, numRaidMembers do

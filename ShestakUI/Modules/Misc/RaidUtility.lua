@@ -15,7 +15,7 @@ RaidUtilityPanel.toggled = false
 -- Check if We are Raid Leader or Raid Officer
 local function CheckRaidStatus()
 	local inInstance, instanceType = IsInInstance()
-	if ((GetNumSubgroupMembers() > 0 and UnitIsGroupLeader("player") and not UnitInRaid("player")) or IsRaidLeader() or IsRaidOfficer()) and not (inInstance and (instanceType == "pvp" or instanceType == "arena")) then
+	if ((GetNumSubgroupMembers() > 0 and UnitIsSubgroupLeader("player") and not UnitInRaid("player")) or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and not (inInstance and (instanceType == "pvp" or instanceType == "arena")) then
 		return true
 	else
 		return false
