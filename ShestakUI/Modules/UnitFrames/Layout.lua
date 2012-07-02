@@ -273,10 +273,13 @@ local function Shared(self, unit)
 		if C.unitframe.plugins_rune_bar == true and T.class == "DEATHKNIGHT" then
 			self.Runes = CreateFrame("Frame", nil, self)
 			self.Runes:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.Runes:Height(7)
-			self.Runes:SetWidth(212)
+			self.Runes:Size(217, 7)
 			self.Runes:SetBackdrop(backdrop)
 			self.Runes:SetBackdropColor(0, 0, 0)
+
+			self.Runes:CreateBackdrop("Default")
+			self.Runes.backdrop:Point("TOPLEFT", -2, 2)
+			self.Runes.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			for i = 1, 6 do
 				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_Runes"..i, self)
@@ -292,12 +295,6 @@ local function Shared(self, unit)
 				self.Runes[i].bg:SetAllPoints()
 				self.Runes[i].bg:SetTexture(C.media.texture)
 				self.Runes[i].bg.multiplier = 0.25
-
-				self.Runes[i].FrameBackdrop = CreateFrame("Frame", nil, self.Runes[i])
-				self.Runes[i].FrameBackdrop:SetTemplate("Default")
-				self.Runes[i].FrameBackdrop:SetFrameStrata("BACKGROUND")
-				self.Runes[i].FrameBackdrop:Point("TOPLEFT", -2, 2)
-				self.Runes[i].FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
 			end
 		end
 
@@ -305,8 +302,7 @@ local function Shared(self, unit)
 		if T.class == "MONK" then
 			self.HarmonyBar = CreateFrame("Frame", nil, self)
 			self.HarmonyBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.HarmonyBar:SetHeight(7)
-			self.HarmonyBar:SetWidth(217)
+			self.HarmonyBar:Size(217, 7)
 			self.HarmonyBar:SetBackdrop(backdrop)
 			self.HarmonyBar:SetBackdropColor(0, 0, 0)
 
@@ -316,7 +312,7 @@ local function Shared(self, unit)
 
 			for i = 1, 5 do
 				self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar"..i, self)
-				self.HarmonyBar[i]:SetHeight(7)
+				self.HarmonyBar[i]:Height(7)
 				if i == 1 then
 					self.HarmonyBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
@@ -329,6 +325,100 @@ local function Shared(self, unit)
 				self.HarmonyBar[i].bg:SetTexture(C.media.texture)
 				self.HarmonyBar[i].bg.multiplier = 0.25
 			end
+		end
+
+		-- ShadowOrbs bar
+		if T.class == "PRIEST" then
+			self.ShadowOrbsBar = CreateFrame("Frame", nil, self)
+			self.ShadowOrbsBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.ShadowOrbsBar:Size(217, 7)
+			self.ShadowOrbsBar:SetBackdrop(backdrop)
+			self.ShadowOrbsBar:SetBackdropColor(0, 0, 0)
+
+			self.ShadowOrbsBar:CreateBackdrop("Default")
+			self.ShadowOrbsBar.backdrop:Point("TOPLEFT", -2, 2)
+			self.ShadowOrbsBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
+
+			for i = 1, 3 do
+				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar"..i, self)
+				self.ShadowOrbsBar[i]:SetSize(215 / 3, 7)
+				if i == 1 then
+					self.ShadowOrbsBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				else
+					self.ShadowOrbsBar[i]:Point("TOPLEFT", self.ShadowOrbsBar[i-1], "TOPRIGHT", 1, 0)
+				end
+				self.ShadowOrbsBar[i]:SetStatusBarTexture(C.media.texture)
+
+				self.ShadowOrbsBar[i].bg = self.ShadowOrbsBar[i]:CreateTexture(nil, "BORDER")
+				self.ShadowOrbsBar[i].bg:SetAllPoints()
+				self.ShadowOrbsBar[i].bg:SetTexture(C.media.texture)
+				self.ShadowOrbsBar[i].bg.multiplier = 0.25
+			end
+		end
+
+		-- HolyPower bar
+		if C.unitframe.plugins_holy_bar == true and T.class == "PALADIN" then
+			self.HolyPower = CreateFrame("Frame", nil, self)
+			self.HolyPower:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.HolyPower:Size(217, 7)
+			self.HolyPower:SetBackdrop(backdrop)
+			self.HolyPower:SetBackdropColor(0, 0, 0)
+
+			self.HolyPower:CreateBackdrop("Default")
+			self.HolyPower.backdrop:Point("TOPLEFT", -2, 2)
+			self.HolyPower.backdrop:Point("BOTTOMRIGHT", 2, -2)
+
+			for i = 1, 5 do
+				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPower"..i, self)
+				self.HolyPower[i]:SetSize(213 / 5, 7)
+				if i == 1 then
+					self.HolyPower[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				else
+					self.HolyPower[i]:Point("TOPLEFT", self.HolyPower[i-1], "TOPRIGHT", 1, 0)
+				end
+				self.HolyPower[i]:SetStatusBarTexture(C.media.texture)
+				self.HolyPower[i]:SetStatusBarColor(0.89, 0.88, 0.1)
+
+				self.HolyPower[i].bg = self.HolyPower[i]:CreateTexture(nil, "BORDER")
+				self.HolyPower[i].bg:SetAllPoints()
+				self.HolyPower[i].bg:SetTexture(C.media.texture)
+				self.HolyPower[i].bg:SetVertexColor(0.89, 0.88, 0.1, 0.25)
+				--self.HolyPower[i].bg.multiplier = 0.25
+			end
+
+			self.HolyPower.Override = T.UpdateHoly
+		end
+
+		-- Shard bar
+		if C.unitframe.plugins_shard_bar == true and T.class == "WARLOCK" then
+			self.SoulShards = CreateFrame("Frame", nil, self)
+			self.SoulShards:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.SoulShards:Size(217, 7)
+			self.SoulShards:SetBackdrop(backdrop)
+			self.SoulShards:SetBackdropColor(0, 0, 0)
+
+			self.SoulShards:CreateBackdrop("Default")
+			self.SoulShards.backdrop:Point("TOPLEFT", -2, 2)
+			self.SoulShards.backdrop:Point("BOTTOMRIGHT", 2, -2)
+
+			for i = 1, 3 do
+				self.SoulShards[i] = CreateFrame("StatusBar", self:GetName().."_Shard"..i, self)
+				self.SoulShards[i]:SetSize(215 / 3, 7)
+				if i == 1 then
+					self.SoulShards[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				else
+					self.SoulShards[i]:Point("TOPLEFT", self.SoulShards[i-1], "TOPRIGHT", 1, 0)
+				end
+				self.SoulShards[i]:SetStatusBarTexture(C.media.texture)
+				self.SoulShards[i]:SetStatusBarColor(0.70, 0.32, 0.75)
+
+				self.SoulShards[i].bg = self.SoulShards[i]:CreateTexture(nil, "BORDER")
+				self.SoulShards[i].bg:SetAllPoints()
+				self.SoulShards[i].bg:SetTexture(C.media.texture)
+				self.SoulShards[i].bg.multiplier = 0.25
+			end
+
+			--self.SoulShards.Override = T.UpdateShards
 		end
 
 		-- Totem bar
@@ -421,65 +511,6 @@ local function Shared(self, unit)
 			end
 		end
 
-		-- Holy power bar or shard bar
-		if (T.class == "WARLOCK" and C.unitframe.plugins_shard_bar == true) or (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true) then
-			local bars = CreateFrame("Frame", nil, self)
-			bars:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			bars:Width(217)
-			bars:Height(7)
-			bars:SetBackdrop(backdrop)
-			bars:SetBackdropColor(0, 0, 0)
-
-			for i = 1, T.class == "PALADIN" and 5 or 3 do
-				bars[i] = CreateFrame("StatusBar", self:GetName().."_Shard"..i, self)
-				bars[i]:Height(7)
-				bars[i]:SetStatusBarTexture(C.media.texture)
-
-				bars[i].bg = bars[i]:CreateTexture(nil, "BORDER")
-				bars[i].bg:SetTexture(C.media.texture)
-
-				if T.class == "WARLOCK" then
-					bars[i]:SetStatusBarColor(0.70, 0.32, 0.75)
-					bars[i].bg:SetTexture(0.70, 0.32, 0.75, 0.25)
-				elseif T.class == "PALADIN" then
-					bars[i]:SetStatusBarColor(0.89, 0.88, 0.1)
-					bars[i].bg:SetTexture(0.89, 0.88, 0.1, 0.25)
-				end
-
-				if i == 1 then
-					bars[i]:Point("LEFT", bars)
-					if T.class == "PALADIN" then
-						bars[i]:Width(41)
-					else
-						bars[i]:Width(71)
-					end
-					bars[i].bg:SetAllPoints(bars[i])
-				else
-					bars[i]:Point("LEFT", bars[i-1], "RIGHT", 1, 0)
-					if T.class == "PALADIN" then
-						bars[i]:Width(43)
-					else
-						bars[i]:Width(72)
-					end
-					bars[i].bg:SetAllPoints(bars[i])
-				end
-			end
-
-			bars.FrameBackdrop = CreateFrame("Frame", nil, bars)
-			bars.FrameBackdrop:SetTemplate("Default")
-			bars.FrameBackdrop:SetFrameStrata("BACKGROUND")
-			bars.FrameBackdrop:Point("TOPLEFT", -2, 2)
-			bars.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
-
-			if T.class == "WARLOCK" then
-				--bars.Override = T.UpdateShards
-				--self.SoulShards = bars
-			elseif T.class == "PALADIN" then
-				bars.Override = T.UpdateHoly
-				self.HolyPower = bars
-			end
-		end
-
 		-- Vengeance bar
 		if C.unitframe.plugins_vengeance_bar == true then
 			local vengeanceBar = CreateFrame("Frame", nil, self)
@@ -525,7 +556,7 @@ local function Shared(self, unit)
 			self.Experience:Width(7)
 			self.Experience:SetOrientation("Vertical")
 			if C.unitframe.portrait_enable == true then
-				self.Experience:Point("TOPLEFT", self, "TOPLEFT", -25-C.unitframe.portrait_width, 28)
+				self.Experience:Point("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
 			else
 				self.Experience:Point("TOPLEFT", self, "TOPLEFT", -18, 28)
 			end
@@ -564,7 +595,7 @@ local function Shared(self, unit)
 			self.Reputation:Width(7)
 			self.Reputation:SetOrientation("Vertical")
 			if C.unitframe.portrait_enable == true then
-				self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -39-C.unitframe.portrait_width, 28)
+				self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
 			else
 				self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -32, 28)
 			end
