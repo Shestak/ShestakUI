@@ -6,6 +6,8 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local StripAllTextures = {
+		"GossipFrame",
+		"GossipFrameInset",
 		"GossipFrameGreetingPanel"
 	}
 
@@ -39,9 +41,10 @@ local function LoadSkin()
 	GossipGreetingText:SetTextColor(1, 1, 1)
 	GossipGreetingText:SetShadowOffset(1, -1)
 	GossipFrame:CreateBackdrop("Transparent")
-	GossipFrame.backdrop:Point("TOPLEFT", GossipFrame, "TOPLEFT", 16, -12)
-	GossipFrame.backdrop:Point("BOTTOMRIGHT", GossipFrame, "BOTTOMRIGHT", -30, 69)
+	GossipFrame.backdrop:Point("TOPLEFT", GossipFrame, "TOPLEFT", 1, -1)
+	GossipFrame.backdrop:Point("BOTTOMRIGHT", GossipFrame, "BOTTOMRIGHT", -1, 1)
 	T.SkinCloseButton(GossipFrameCloseButton, GossipFrame.backdrop)
+	T.SkinScrollBar(GossipGreetingScrollFrame)
 
 	-- Extreme hackage, blizzard makes button text on quest frame use hex color codes for some reason
 	hooksecurefunc("GossipFrameUpdate", function()
