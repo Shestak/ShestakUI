@@ -7,7 +7,6 @@ if IsAddOnLoaded("QuickAuctions") or IsAddOnLoaded("AuctionProfitMaster") or IsA
 local deletedelay, t = 0.5, 0
 local takingOnlyCash = false
 local button, button2, waitForMail, openAll, openAllCash, openMail, lastopened, stopOpening, onEvent, needsToWait, copper_to_pretty_money, total_cash
-local _G = _G
 local baseInboxFrame_OnClick
 
 function openAll()
@@ -85,33 +84,6 @@ function onEvent(frame, event, arg1, arg2, arg3, arg4)
 	end
 end
 
-local function makeButton(id, text, w, h, x, y)
-	local button = CreateFrame("Button", id, InboxFrame, "UIPanelButtonTemplate")
-	button:SetWidth(w)
-	button:SetHeight(h)
-	button:SetPoint("CENTER", InboxFrame, "TOP", x, y)
-	button:SetText(text)
-	return button
-end
-button = makeButton("OpenAllButton", ALL, 70, 25, -65, -398)
-button:SetScript("OnClick", openAll)
-button:SetScript("OnEvent", onEvent)
-button2 = makeButton("OpenAllButton2", MONEY, 70, 25, 18, -398)
-button2:SetScript("OnClick", openAllCash)
-if C.skins.blizzard_frames == true then
-	OpenAllButton:SkinButton()
-	OpenAllButton2:SkinButton()
-	OpenAllButton:SetPoint("CENTER", InboxFrame, "TOP", -45, -408)
-	OpenAllButton2:SetPoint("CENTER", InboxFrame, "TOP", 28, -408)
-end
-
-button:SetScript("OnEnter", function()
-	GameTooltip:SetOwner(button, "ANCHOR_RIGHT")
-	GameTooltip:AddLine(string.format("%d "..L_MAIL_MESSAGES, GetInboxNumItems()), 1, 1, 1)
-	GameTooltip:Show()
-end)
-button:SetScript("OnLeave", function() GameTooltip:Hide() end)
-
 function copper_to_pretty_money(c)
 	if c > 10000 then
 		return ("%d|cffffd700"..GOLD_AMOUNT_SYMBOL.."|r %d|cffc7c7cf"..SILVER_AMOUNT_SYMBOL.."|r %d|cffeda55f"..COPPER_AMOUNT_SYMBOL.."|r"):format(c / 10000, (c / 100) % 100, c % 100)
@@ -122,6 +94,27 @@ function copper_to_pretty_money(c)
 	end
 end
 
+local function makeButton(id, text, w, h, x, y)
+	local button = CreateFrame("Button", id, InboxFrame, "UIPanelButtonTemplate")
+	button:SetWidth(w)
+	button:SetHeight(h)
+	button:SetPoint("CENTER", InboxFrame, "TOP", x, y)
+	button:SetText(text)
+	return button
+end
+
+button = makeButton("OpenAllButton", ALL, 70, 25, -65, -398)
+button:SetScript("OnClick", openAll)
+button:SetScript("OnEvent", onEvent)
+button:SetScript("OnEnter", function()
+	GameTooltip:SetOwner(button, "ANCHOR_RIGHT")
+	GameTooltip:AddLine(string.format("%d "..L_MAIL_MESSAGES, GetInboxNumItems()), 1, 1, 1)
+	GameTooltip:Show()
+end)
+button:SetScript("OnLeave", function() GameTooltip:Hide() end)
+
+button2 = makeButton("OpenAllButton2", MONEY, 70, 25, 18, -398)
+button2:SetScript("OnClick", openAllCash)
 button2:SetScript("OnEnter", function()
 	if not total_cash then
 		total_cash = 0
@@ -133,5 +126,9 @@ button2:SetScript("OnEnter", function()
 	GameTooltip:AddLine(copper_to_pretty_money(total_cash), 1, 1, 1)
 	GameTooltip:Show()
 end)
-
 button2:SetScript("OnLeave", function() GameTooltip:Hide() end)
+
+if C.skins.blizzard_frames == true then
+	OpenAllButton:SkinButton()
+	OpenAllButton2:SkinButton()
+end

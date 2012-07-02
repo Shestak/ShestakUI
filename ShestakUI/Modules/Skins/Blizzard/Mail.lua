@@ -5,10 +5,15 @@ if C.skins.blizzard_frames ~= true then return end
 --	Mail skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	MailFrame:StripTextures(true)
+	MailFrame:StripTextures()
 	MailFrame:CreateBackdrop("Transparent")
-	MailFrame.backdrop:Point("TOPLEFT", 16, -12)
-	MailFrame.backdrop:Point("BOTTOMRIGHT", -30, 76)
+	MailFrame.backdrop:Point("TOPLEFT", 0, 0)
+	MailFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+
+	InboxFrame:StripTextures()
+	MailFrameInset:StripTextures()
+	SendMailMoneyInset:StripTextures()
+	SendMailMoneyBg:StripTextures()
 
 	for i = 1, INBOXITEMS_TO_DISPLAY do
 		local bg = _G["MailItem"..i]
@@ -29,25 +34,20 @@ local function LoadSkin()
 		t:Point("BOTTOMRIGHT", -2, 2)
 	end
 
-	T.SkinCloseButton(InboxCloseButton, MailFrame.backdrop)
+	T.SkinCloseButton(MailFrameCloseButton, MailFrame.backdrop)
 	T.SkinNextPrevButton(InboxPrevPageButton)
 	T.SkinNextPrevButton(InboxNextPageButton)
 
-	MailFrameTab1:StripTextures()
-	MailFrameTab2:StripTextures()
 	T.SkinTab(MailFrameTab1)
 	T.SkinTab(MailFrameTab2)
 
-	-- Reposition tabs
-	MailFrameTab1:ClearAllPoints()
-	MailFrameTab1:SetPoint("TOPLEFT", MailFrame.backdrop, "BOTTOMLEFT", 0, 2)
-	MailFrameTab1.SetPoint = T.dummy
-
 	-- Send mail
+	SendMailFrame:StripTextures()
+
 	SendMailScrollFrame:StripTextures(true)
 	SendMailScrollFrame:CreateBackdrop("Overlay")
 	SendMailScrollFrame.backdrop:Point("TOPLEFT", 12, 0)
-	SendMailScrollFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+	SendMailScrollFrame.backdrop:Point("BOTTOMRIGHT", 2, 0)
 
 	T.SkinScrollBar(SendMailScrollFrameScrollBar)
 
@@ -57,9 +57,10 @@ local function LoadSkin()
 	T.SkinEditBox(SendMailMoneySilver)
 	T.SkinEditBox(SendMailMoneyCopper)
 
-	SendMailNameEditBox.backdrop:Point("BOTTOMRIGHT", 2, 0)
-	SendMailSubjectEditBox.backdrop:Point("BOTTOMRIGHT", 2, 0)
-	SendMailFrame:StripTextures()
+	SendMailNameEditBox.backdrop:Point("TOPLEFT", -3, -2)
+	SendMailNameEditBox.backdrop:Point("BOTTOMRIGHT", 2, 3)
+	SendMailSubjectEditBox.backdrop:Point("TOPLEFT", -3, 0)
+	SendMailSubjectEditBox.backdrop:Point("BOTTOMRIGHT", -4, 0)
 
 	local function MailFrameSkin()
 		for i = 1, ATTACHMENTS_MAX_SEND do
@@ -87,10 +88,11 @@ local function LoadSkin()
 	-- Open mail (cod)
 	OpenMailFrame:StripTextures(true)
 	OpenMailFrame:CreateBackdrop("Transparent")
-	OpenMailFrame.backdrop:Point("TOPLEFT", 16, -12)
-	OpenMailFrame.backdrop:Point("BOTTOMRIGHT", -30, 76)
+	OpenMailFrame.backdrop:Point("TOPLEFT", -5, 0)
+	OpenMailFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+	OpenMailFrameInset:StripTextures()
 
-	T.SkinCloseButton(OpenMailCloseButton, OpenMailFrame.backdrop)
+	T.SkinCloseButton(OpenMailFrameCloseButton, OpenMailFrame.backdrop)
 	OpenMailReportSpamButton:SkinButton()
 	OpenMailReplyButton:SkinButton()
 	OpenMailDeleteButton:SkinButton()
