@@ -3,6 +3,7 @@
 ----------------------------------------------------------------------------------------
 --	ShestakUI variables
 ----------------------------------------------------------------------------------------
+RAID_CLASS_COLORS.MONK = {r = 0.33, g = 0.54, b = 0.52, colorStr = "FF558A84"}
 T.dummy = function() return end
 T.name = select(1, UnitName("player"))
 T.class = select(2, UnitClass("player"))
