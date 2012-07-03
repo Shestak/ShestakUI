@@ -7,9 +7,9 @@
 	<Script file="BarberShop.lua"/>
 	<Script file="Binding.lua"/>
 	<Script file="Bubbles.lua"/>
-	<!--<Script file="Calendar.lua"/>-->
+	<Script file="Calendar.lua"/>
 	<Script file="Character.lua"/>
-	<!--<Script file="ChatConfig.lua"/>-->
+	<Script file="ChatConfig.lua"/>
 	<Script file="Container.lua"/>
 	<!--<Script file="DebugTools.lua"/>-->
 	<Script file="DressUp.lua"/>
@@ -51,12 +51,12 @@
 	<Script file="Tabard.lua"/>
 	<!--<Script file="Talent.lua"/>-->
 	<Script file="Taxi.lua"/>
-	<!--<Script file="TimeManager.lua"/>
-	<Script file="Trade.lua"/>
-	<Script file="TradeSkill.lua"/>-->
+	<Script file="TimeManager.lua"/>
+	<!--<Script file="Trade.lua"/>-->
+	<Script file="TradeSkill.lua"/>
 	<Script file="Trainer.lua"/>
-	<!--<Script file="Tutorial.lua"/>-->
+	<Script file="Tutorial.lua"/>
 	<Script file="VoidStorage.lua"/>
 	<Script file="WorldMap.lua"/>
-	<!--<Script file="WorldState.lua"/>-->
+	<Script file="WorldState.lua"/>
 </Ui>
