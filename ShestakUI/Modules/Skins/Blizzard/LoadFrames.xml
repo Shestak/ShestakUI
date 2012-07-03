@@ -1,9 +1,9 @@
 ﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="Others.lua"/>
 	<!--<Script file="Achievement.lua"/>
-	<Script file="Alerts.lua"/>
+	<Script file="Alerts.lua"/>-->
 	<Script file="Archeology.lua"/>
-	<Script file="Auction.lua"/>-->
+	<Script file="Auction.lua"/>
 	<Script file="BarberShop.lua"/>
 	<Script file="Binding.lua"/>
 	<Script file="Bubbles.lua"/>
@@ -11,7 +11,7 @@
 	<Script file="Character.lua"/>
 	<Script file="ChatConfig.lua"/>
 	<Script file="Container.lua"/>
-	<!--<Script file="DebugTools.lua"/>-->
+	<Script file="DebugTools.lua"/>
 	<Script file="DressUp.lua"/>
 	<Script file="FrameStack.lua"/>
 	<Script file="Friends.lua"/>

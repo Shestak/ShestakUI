@@ -12,16 +12,20 @@ local function LoadSkin()
 	QuestDetailScrollChildFrame:StripTextures(true)
 	QuestRewardScrollFrame:StripTextures(true)
 	QuestRewardScrollChildFrame:StripTextures(true)
+	QuestProgressScrollFrame:StripTextures(true)
 	QuestFrameProgressPanel:StripTextures(true)
 	QuestFrameRewardPanel:StripTextures(true)
+
 	QuestFrame:CreateBackdrop("Transparent")
 	QuestFrame.backdrop:Point("TOPLEFT", 0, 0)
 	QuestFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+
 	QuestFrameAcceptButton:SkinButton(true)
 	QuestFrameDeclineButton:SkinButton(true)
 	QuestFrameCompleteButton:SkinButton(true)
 	QuestFrameGoodbyeButton:SkinButton(true)
 	QuestFrameCompleteQuestButton:SkinButton(true)
+
 	T.SkinCloseButton(QuestFrameCloseButton, QuestFrame.backdrop)
 
 	for i = 1, 6 do

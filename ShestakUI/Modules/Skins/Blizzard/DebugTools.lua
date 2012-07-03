@@ -10,6 +10,7 @@ local function LoadSkin()
 	EventTraceFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(ScriptErrorsFrameClose)
 	T.SkinCloseButton(EventTraceFrameCloseButton)
+	EventTraceFrameScrollBG:SetTexture(nil)
 	_G["EventTraceTooltip"]:HookScript("OnShow", function(self) self:SetTemplate("Transparent") end)
 
 	local texs = {
