@@ -77,6 +77,7 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	SetFont(SubZoneTextString, NORMAL, 25, "OUTLINE")
 	SetFont(PVPInfoTextString, NORMAL, 22, "THINOUTLINE")
 	SetFont(PVPArenaTextString, NORMAL, 22, "THINOUTLINE")
+	SetFont(CoreAbilityFont, NORMAL, 32, nil, 1, 0.82, 0, 0, 0, 0, 1, -1)
 
 	-- Derived fonts
 	SetFont(BossEmoteNormalHuge, NORMAL, 27, "THICKOUTLINE")
