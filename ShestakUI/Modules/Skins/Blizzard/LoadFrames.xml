@@ -20,8 +20,8 @@
 	<!--<Script file="Greeting.lua"/>-->
 	<Script file="Guild.lua"/>
 	<Script file="GuildBank.lua"/>
-	<!--<Script file="GuildControl.lua"/>
-	<Script file="GuildRegistrar.lua"/>-->
+	<!--<Script file="GuildControl.lua"/>-->
+	<Script file="GuildRegistrar.lua"/>
 	<Script file="Help.lua"/>
 	<!--<Script file="Inspect.lua"/>-->
 	<Script file="Interface.lua"/>
@@ -47,9 +47,9 @@
 	<!--<Script file="Raid.lua"/>
 	<Script file="RaidInfo.lua"/>-->
 	<Script file="Reforging.lua"/>
-	<!--<Script file="SpellBook.lua"/>
+	<!--<Script file="SpellBook.lua"/>-->
 	<Script file="Tabard.lua"/>
-	<Script file="Talent.lua"/>-->
+	<!--<Script file="Talent.lua"/>-->
 	<Script file="Taxi.lua"/>
 	<!--<Script file="TimeManager.lua"/>
 	<Script file="Trade.lua"/>

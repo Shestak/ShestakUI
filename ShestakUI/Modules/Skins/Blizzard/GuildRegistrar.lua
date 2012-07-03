@@ -7,9 +7,10 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	GuildRegistrarFrame:StripTextures(true)
 	GuildRegistrarFrame:CreateBackdrop("Transparent")
-	GuildRegistrarFrame.backdrop:Point("TOPLEFT", 16, -12)
-	GuildRegistrarFrame.backdrop:Point("BOTTOMRIGHT", -30, 76)
+	GuildRegistrarFrame.backdrop:Point("TOPLEFT", 0, 0)
+	GuildRegistrarFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
 	GuildRegistrarGreetingFrame:StripTextures()
+	GuildRegistrarFrameInset:StripTextures()
 
 	GuildRegistrarFramePurchaseButton:SkinButton()
 	GuildRegistrarFrameCancelButton:SkinButton()
@@ -23,15 +24,8 @@ local function LoadSkin()
 
 	T.SkinCloseButton(GuildRegistrarFrameCloseButton, GuildRegistrarFrame.backdrop)
 
+	GuildRegistrarFrameEditBox:StripTextures(true)
 	T.SkinEditBox(GuildRegistrarFrameEditBox)
-	for i = 1, GuildRegistrarFrameEditBox:GetNumRegions() do
-		local region = select(i, GuildRegistrarFrameEditBox:GetRegions())
-		if region and region:GetObjectType() == "Texture" then
-			if region:GetTexture() == "Interface\\ChatFrame\\UI-ChatInputBorder-Left" or region:GetTexture() == "Interface\\ChatFrame\\UI-ChatInputBorder-Right" then
-				region:Kill()
-			end
-		end
-	end
 	GuildRegistrarFrameEditBox:Height(GuildRegistrarFrameEditBox:GetHeight() - 15)
 
 	for i = 1, 2 do
