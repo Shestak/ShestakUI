@@ -7,7 +7,6 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_totem_bar ~= true or T.clas
 local _, ns = ...
 local oUF = ns.oUF
 
-local _, pClass = UnitClass("player")
 local total = 0
 local delay = 0.01
 
@@ -69,7 +68,6 @@ local function UpdateSlot(self, slot)
 
 	-- If we have a totem then set his value 
 	if haveTotem then
-		
 		if totem[slot].Name then
 			totem[slot].Name:SetText(Abbrev(name))
 		end
@@ -77,17 +75,17 @@ local function UpdateSlot(self, slot)
 			totem[slot]:SetValue(1 - ((GetTime() - startTime) / duration))
 			-- Status bar update
 			totem[slot]:SetScript("OnUpdate", function(self, elapsed)
-					total = total + elapsed
-					if total >= delay then
-						total = 0
-						haveTotem, name, startTime, duration, totemIcon = GetTotemInfo(self.ID)
-							if ((GetTime() - startTime) == 0) then
-								self:SetValue(0)
-							else
-								self:SetValue(1 - ((GetTime() - startTime) / duration))
-							end
+				total = total + elapsed
+				if total >= delay then
+					total = 0
+					haveTotem, name, startTime, duration, totemIcon = GetTotemInfo(self.ID)
+					if ((GetTime() - startTime) == 0) then
+						self:SetValue(0)
+					else
+						self:SetValue(1 - ((GetTime() - startTime) / duration))
 					end
-				end)
+				end
+			end)
 		else
 			-- There's no need to update because it doesn't have any duration
 			totem[slot]:SetScript("OnUpdate", nil)
