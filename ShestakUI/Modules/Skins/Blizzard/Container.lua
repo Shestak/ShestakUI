@@ -9,12 +9,8 @@ local function LoadSkin()
 	-- Container Frame
 	BagItemSearchBox:StripTextures(true)
 	BagItemSearchBox:CreateBackdrop("Overlay")
-	BagItemSearchBox.backdrop:Point("TOPLEFT", 10, -2)
+	BagItemSearchBox.backdrop:Point("TOPLEFT", 13, -2)
 	BagItemSearchBox.backdrop:Point("BOTTOMRIGHT", -2, 2)
-	BankItemSearchBox:StripTextures(true)
-	BankItemSearchBox:CreateBackdrop("Overlay")
-	BankItemSearchBox.backdrop:Point("TOPLEFT", 10, -2)
-	BankItemSearchBox.backdrop:Point("BOTTOMRIGHT", -2, 2)
 
 	for i = 1, NUM_CONTAINER_FRAMES do
 		local frame = _G["ContainerFrame"..i]
@@ -39,8 +35,7 @@ local function LoadSkin()
 			icon:Point("TOPLEFT", 2, -2)
 			icon:Point("BOTTOMRIGHT", -2, 2)
 
-			quest:SetVertexColor(1, 1, 0)
-			quest:SetTexCoord(0.05, 0.955, 0.05, 0.955)
+			quest:SetAlpha(0)
 		end
 
 		if i == 1 then
@@ -58,12 +53,19 @@ local function LoadSkin()
 	-- Bank Frame
 	BankFrame:StripTextures(true)
 	BankFrame:CreateBackdrop("Transparent")
-	BankFrame.backdrop:Point("TOPLEFT", 16, -12)
-	BankFrame.backdrop:Point("BOTTOMRIGHT", -25, 76)
+	BankFrame.backdrop:Point("TOPLEFT", 0, 0)
+	BankFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+
+	BankItemSearchBox:StripTextures(true)
+	BankItemSearchBox:CreateBackdrop("Overlay")
+	BankItemSearchBox.backdrop:Point("TOPLEFT", 13, -2)
+	BankItemSearchBox.backdrop:Point("BOTTOMRIGHT", -2, 2)
+
+	BankFrameMoneyFrameInset:StripTextures()
+	BankFrameMoneyFrameBorder:StripTextures()
 
 	BankFramePurchaseButton:SkinButton()
-
-	T.SkinCloseButton(BankCloseButton, BankFrame.backdrop)
+	T.SkinCloseButton(BankFrameCloseButton, BankFrame.backdrop)
 
 	for i = 1, 28 do
 		local item = _G["BankFrame".."Item"..i]
@@ -78,8 +80,7 @@ local function LoadSkin()
 		icon:Point("TOPLEFT", 2, -2)
 		icon:Point("BOTTOMRIGHT", -2, 2)
 
-		quest:SetVertexColor(1, 1, 0)
-		quest:SetTexCoord(0.05, 0.955, 0.05, 0.955)
+		quest:SetAlpha(0)
 	end
 
 	for i = 1, 7 do
@@ -105,6 +106,30 @@ local function LoadSkin()
 			highlight.skinned = true
 		end
 	end
+
+	-- Color QuestItem
+	hooksecurefunc("ContainerFrame_Update", function(frame)
+		local name = frame:GetName()
+		local item
+		for i = 1, MAX_CONTAINER_ITEMS do
+			item = _G[name.."Item"..i]
+			if _G[name.."Item"..i.."IconQuestTexture"]:IsShown() then
+				item:SetBackdropBorderColor(1, 1, 0)
+			else
+				item:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
+		end
+	end)
+
+	hooksecurefunc("BankFrameItemButton_Update", function(item)
+		if not item.isBag then
+			if _G[item:GetName().."IconQuestTexture"]:IsShown() then
+				item:SetBackdropBorderColor(1, 1, 0)
+			else
+				item:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
+		end
+	end)
 
 	-- Frame Anchors
 	hooksecurefunc("updateContainerFrameAnchors", function()

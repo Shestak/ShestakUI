@@ -9,9 +9,9 @@
 	<Script file="Bubbles.lua"/>
 	<!--<Script file="Calendar.lua"/>-->
 	<Script file="Character.lua"/>
-	<!--<Script file="ChatConfig.lua"/>
+	<!--<Script file="ChatConfig.lua"/>-->
 	<Script file="Container.lua"/>
-	<Script file="DebugTools.lua"/>-->
+	<!--<Script file="DebugTools.lua"/>-->
 	<Script file="DressUp.lua"/>
 	<Script file="FrameStack.lua"/>
 	<Script file="Friends.lua"/>
@@ -19,8 +19,8 @@
 	<Script file="Gossip.lua"/>
 	<!--<Script file="Greeting.lua"/>-->
 	<Script file="Guild.lua"/>
-	<!--<Script file="GuildBank.lua"/>
-	<Script file="GuildControl.lua"/>
+	<Script file="GuildBank.lua"/>
+	<!--<Script file="GuildControl.lua"/>
 	<Script file="GuildRegistrar.lua"/>-->
 	<Script file="Help.lua"/>
 	<!--<Script file="Inspect.lua"/>-->
