@@ -129,7 +129,7 @@ local function UpdateBuffAnchors()
 	local numBuffs = 0
 	local slack = BuffFrame.numEnchants
 	local mainhand, _, _, offhand, _, _, hand3 = GetWeaponEnchantInfo()
-	if BuffFrame.numConsolidated > 0 then
+	if ShouldShowConsolidatedBuffFrame() then
 		slack = slack + 1
 	end
 	for index = 1, BUFF_ACTUAL_DISPLAY do
