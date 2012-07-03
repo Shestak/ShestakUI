@@ -61,9 +61,9 @@
 	<Script file="Modules\Blizzard\Fonts.lua"/>
 	<Script file="Modules\Blizzard\Bags.lua"/>
 	<Script file="Modules\Blizzard\Nameplates.lua"/>
-	<!--<Script file="Modules\Blizzard\AltPowerBar.lua"/>
+	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
-	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>-->
+	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
 
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoButton.lua"/>
@@ -171,7 +171,7 @@
 	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
 
-	<!--<Script file="Modules\Buffs\Buffs.lua"/>-->
+	<Script file="Modules\Buffs\Buffs.lua"/>
 	<Script file="Modules\Buffs\CastBy.lua"/>
 
 	<Script file="Modules\Blizzard\CombatText.lua"/>
