@@ -1290,11 +1290,12 @@ if talents.enabled then
 				local unit, spell = ...
 				if unit == P and (spell == GetSpellInfo(63645) or spell == GetSpellInfo(63644)) then timer = GetTime() end
 			else
+				if T.MOPVersion then return end
 				if UnitLevel(P) < 10 then
 					self.text:SetText(format("%s %s", NO, TALENTS))
 				elseif GetNumSpecializations() == 3 then
 					self.talents = {}
-					self.unspent = GetUnspentTalentPoints(false, false, GetActiveSpecGroup())
+					--MOPself.unspent = GetUnspentTalentPoints(false, false, GetActiveSpecGroup())
 					for i = 1, GetNumSpecGroups() do
 						tinsert(self.talents, {})
 						local tal, pts, icon, name = self.talents[i], -1
@@ -1419,8 +1420,6 @@ if stats.enabled then
 			string, percent = power
 		elseif sub == "healing" then
 			string, percent = GetSpellBonusHealing()
-		elseif sub == "spellpen" then
-			string, percent = GetSpellPenetration()
 		elseif sub == "dodge" then
 			string = GetDodgeChance()
 		elseif sub == "parry" then

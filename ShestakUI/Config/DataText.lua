@@ -139,7 +139,7 @@ LPSTAT_CONFIG = {
 			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery [mastery]				Expertise% [expertise]
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
 			--   Ranged Haste% [rangedhaste]	Spell Haste% [spellhaste]		Melee Crit% [meleecrit]			Ranged Crit% [rangedcrit]
-			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				Spell Pen [spellpen]
+			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				
 			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Combat table Coverage% [blockcap]
 			--   Avoidance% [avoidance]			MP5 I5SR [manaregen]			Armor Value [armor]				Resilience [resilience]
 		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
