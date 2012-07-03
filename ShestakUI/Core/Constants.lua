@@ -24,6 +24,7 @@ T.MOPVersion = function()
 end
 
 if T.name == "Вершок" or T.name == "Вещмешок" or T.name == "Гребешок" or T.name == "Кулешок" or T.name == "Лапушок"
-or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торгашок" or T.name == "Черешок" or T.name == "Шестак" then
+or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торгашок" or T.name == "Черешок" or T.name == "Шестак"
+or T.name == "Scape"or T.name == "Shestak" then
 	T.author = true
 end
