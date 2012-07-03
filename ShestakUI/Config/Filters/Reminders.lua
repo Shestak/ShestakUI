@@ -9,7 +9,7 @@ if C.reminder.raid_buffs_enable == true then
 	T.ReminderRaidBuffs = {
 		Flask = {
 			79471,	-- Flask of the Winds
-			79637,	-- Flask of Enhancement
+			--MOP79637,	-- Flask of Enhancement
 			92679,	-- Flask of Battle
 			79469,	-- Flask of Steelskin
 			79470,	-- Flask of the Draconic Mind
@@ -152,18 +152,7 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		PALADIN = {
-			[1] = {	-- Seals group
-				["spells"] = {
-					31801,	-- Seal of Truth
-					20154,	-- Seal of Righteousness
-					20164,	-- Seal of Justice
-					20165,	-- Seal of Insight
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[2] = {	-- Righteous Fury group
+			[1] = {	-- Righteous Fury group
 				["spells"] = {
 					25780,	-- Righteous Fury
 				},
@@ -172,17 +161,7 @@ if C.reminder.solo_buffs_enable == true then
 				["reversecheck"] = true,
 				["negate_reversecheck"] = 1,	-- Holy paladins use RF sometimes
 			},
-			[3] = {	-- Auras group
-				["spells"] = {
-					465,	-- Devotion Aura
-					7294,	-- Retribution Aura
-					19746,	-- Concentration Aura
-					19891,	-- Resistance Aura
-				},
-				["instance"] = true,
-				["personal"] = true,
-			},
-			[4] = {	-- Blessings group
+			[2] = {	-- Blessings group
 				["spells"] = {
 					20217,	-- Blessing of Kings
 					19740,	-- Blessing of Might

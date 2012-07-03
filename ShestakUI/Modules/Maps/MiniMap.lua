@@ -22,6 +22,11 @@ Minimap:Point("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
 Minimap:Point("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
 Minimap:Size(MinimapAnchor:GetWidth())
 
+MinimapBackdrop:ClearAllPoints()
+MinimapBackdrop:Point("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
+MinimapBackdrop:Point("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
+MinimapBackdrop:Size(MinimapAnchor:GetWidth())
+
 -- Hide Border
 MinimapBorder:Hide()
 MinimapBorderTop:Hide()

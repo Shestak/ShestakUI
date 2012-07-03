@@ -43,11 +43,11 @@ if C.enemycooldown.enable == true then
 		[1499] = 30,	-- Freezing Trap
 		[5484] = 32,	-- Howl of Terror
 		[51514] = 45,	-- Hex
-		[85388] = 45,	-- Throwdown
+		--MOP[85388] = 45,	-- Throwdown
 		[44572] = 30,	-- Deep Freeze
 		[20066] = 60,	-- Repentance
 		[853] = 60,		-- Hammer of Justice
-		[49203] = 60,	-- Hungering Cold
+		--MOP[49203] = 60,	-- Hungering Cold
 		[6789] = 90,	-- Death Coil
 		[64044] = 90,	-- Psychic Horror
 		[2094] = 120,	-- Blind

@@ -1355,7 +1355,7 @@ if talents.enabled then
 		end,
 		OnClick = function(_,b)
 			if b == "RightButton" and GetNumSpecGroups() > 1 then
-				SetActiveTalentGroup(3 - GetActiveSpecGroup())
+				SetActiveSpecGroup(3 - GetActiveSpecGroup())
 			elseif b == "LeftButton" then
 				if not PlayerTalentFrame then
 					LoadAddOn("Blizzard_TalentUI")

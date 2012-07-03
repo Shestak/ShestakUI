@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.reminder.solo_buffs_enable == true then return end
+if C.reminder.solo_buffs_enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Self buffs on player(by Tukz and Elv22)
@@ -181,7 +181,7 @@ local function OnEvent(self, event, arg1, arg2)
 					else
 						self.icon:SetTexture(GetInventoryItemTexture("player", 17))
 					end
-					if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end	
+					if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
 					return
 				end
 			end

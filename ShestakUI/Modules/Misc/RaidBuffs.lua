@@ -35,13 +35,13 @@ local function SetCasterOnlyBuffs()
 		86507,	-- Runescroll of Fortitude II
 	}
 	Spell5Buff = {	-- Total Mana
-		54424,	-- Fel Intelligence
+		--MOP54424,	-- Fel Intelligence
 		61316,	-- Dalaran Brilliance
 		1459,	-- Arcane Brilliance
 	}
 	Spell6Buff = {	-- Mana Regen
-		54424,	-- Fel Intelligence
-		5677,	-- Mana Spring Totem
+		--MOP54424,	-- Fel Intelligence
+		--MOP5677,	-- Mana Spring Totem
 		19740,	-- Blessing of Might
 	}
 end
@@ -63,14 +63,14 @@ local function SetBuffs()
 	}
 	Spell5Buff = {	-- Total Str + Agi
 		6673,	-- Battle Shout
-		8076,	-- Strength of Earth
+		--MOP8076,	-- Strength of Earth
 		93435,	-- Roar of Courage
 		57330,	-- Horn of Winter
 	}
 	Spell6Buff = {	-- Total AP
-		53138,	-- Abom Might
+		--MOP53138,	-- Abom Might
 		19506,	-- Trushot
-		30808,	-- Unleashed Rage
+		--MOP30808,	-- Unleashed Rage
 		19740,	-- Blessing of Might
 	}
 end

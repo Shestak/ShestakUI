@@ -52,10 +52,10 @@ local function GetSpellDR()
 		[80483] = {"silence"},		-- Arcane Torrent (Focus version)
 		[15487] = {"silence"},		-- Silence
 		[34490] = {"silence"},		-- Silencing Shot
-		[18425] = {"silence"},		-- Improved Kick (Rank 1)
+		--MOP[18425] = {"silence"},		-- Improved Kick (Rank 1)
 		[86759] = {"silence"},		-- Improved Kick (Rank 2)
-		[18469] = {"silence"},		-- Improved Counterspell (Rank 1)
-		[55021] = {"silence"},		-- Improved Counterspell (Rank 2)
+		--MOP[18469] = {"silence"},		-- Improved Counterspell (Rank 1)
+		--MOP[55021] = {"silence"},		-- Improved Counterspell (Rank 2)
 		[24259] = {"silence"},		-- Spell Lock (Felhunter)
 		[47476] = {"silence"},		-- Strangulate
 		[18498] = {"silence"},		-- Gag Order (Warrior talent)
@@ -85,7 +85,7 @@ local function GetSpellDR()
 		-- Control Stuns
 		[89766] = {"ctrlstun"},		-- Axe Toss (Felguard)
 		[50519] = {"ctrlstun"},		-- Sonic Blast (Bat)
-		[12809] = {"ctrlstun"},		-- Concussion Blow
+		--MOP[12809] = {"ctrlstun"},		-- Concussion Blow
 		[46968] = {"ctrlstun"},		-- Shockwave
 		[853] = {"ctrlstun"},		-- Hammer of Justice
 		[5211] = {"ctrlstun"},		-- Bash
@@ -103,7 +103,7 @@ local function GetSpellDR()
 		[47481] = {"ctrlstun"},		-- Gnaw (Ghoul)
 		[93433] = {"ctrlstun"},		-- Burrow Attack (Worm)
 		[56626] = {"ctrlstun"},		-- Sting (Wasp)
-		[85388] = {"ctrlstun"},		-- Throwdown
+		--MOP[85388] = {"ctrlstun"},		-- Throwdown
 		[1833] = {"ctrlstun"},		-- Cheap Shot
 		[9005] = {"ctrlstun"},		-- Pounce
 		[88625] = {"ctrlstun"},		-- Holy Word: Chastise

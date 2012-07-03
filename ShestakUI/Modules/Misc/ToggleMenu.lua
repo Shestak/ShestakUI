@@ -308,13 +308,10 @@ OpenMenuBG:SetScript("OnMouseUp", function()
 	if (T.class == "MAGE" and T.level > 19) and _G["TeleportMenu"]:IsShown() then
 		_G["TeleportMenu"]:Hide()
 	end
-	if (T.class == "PALADIN" and T.level > 3) and _G["SealMenu"]:IsShown() then
-		_G["SealMenu"]:Hide()
-	end
 end)
 OpenMenuBG:HookScript("OnEnter", function(self) self:FadeIn() end)
 OpenMenuBG:HookScript("OnLeave", function(self) self:FadeOut() end)
---updateTextures(OpenMenuBG)
+
 Text = OpenMenuBG:CreateFontString(nil, "OVERLAY")
 Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 Text:SetPoint("CENTER", OpenMenuBG, 0, 0)

@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.pulsecooldown.enable == true then return end
+if C.pulsecooldown.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on Doom Cooldown Pulse(by Woffle of Dark Iron, editor Affli)

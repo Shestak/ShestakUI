@@ -40,6 +40,7 @@ local States = {
 	["PRIEST"] = "show",
 	["HUNTER"] = "show",
 	["WARLOCK"] = "show",
+	["MONK"] = "show",
 }
 
 bar:RegisterEvent("PLAYER_LOGIN")
@@ -73,13 +74,23 @@ bar:SetScript("OnEvent", function(self, event, ...)
 			local _, name = GetShapeshiftFormInfo(i)
 			if name then
 				button:Show()
+			else
+				button:Hide()
 			end
 		end
 		RegisterStateDriver(self, "visibility", States[T.class] or "hide")
+		local function movestance()
+			if not InCombatLockdown() then
+				if C.actionbar.shapeshift_horizontal == true then
+					StanceButton1:Point("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
+				else
+					StanceButton1:Point("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
+				end
+			end
+		end
+		hooksecurefunc("StanceBar_Update", movestance)
 	elseif event == "UPDATE_SHAPESHIFT_FORMS" then
-		-- Update Stance Bar Button Visibility
-		-- I seriously don't know if it's the best way to do it on spec changes or when we learn a new stance.
-		if InCombatLockdown() then return end -- > just to be safe ;p
+		if InCombatLockdown() then return end
 		local button
 		for i = 1, NUM_STANCE_SLOTS do
 			button = _G["StanceButton"..i]

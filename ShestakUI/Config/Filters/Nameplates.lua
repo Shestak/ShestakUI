@@ -14,7 +14,7 @@ end
 -- Nameplates use these
 T.DebuffWhiteList = {
 	-- Death Knight
-	--[SpellName(49203)] = true,	-- Hungering Cold
+	--MOP[SpellName(49203)] = true,	-- Hungering Cold
 	[SpellName(47476)] = true,	-- Atrangulate
 	-- Druid
 	[SpellName(33786)] = true,	-- Cyclone
@@ -38,9 +38,9 @@ T.DebuffWhiteList = {
 	-- Mage
 	[SpellName(31661)] = true,	-- Dragon's Breath
 	[SpellName(61305)] = true,	-- Polymorph
-	--[SpellName(18469)] = true,	-- Silenced - Improved Counterspell
+	--MOP[SpellName(18469)] = true,	-- Silenced - Improved Counterspell
 	[SpellName(122)] = true,	-- Frost Nova
-	--[SpellName(55080)] = true,	-- Shattered Barrier
+	--MOP[SpellName(55080)] = true,	-- Shattered Barrier
 	-- Paladin
 	[SpellName(20066)] = true,	-- Repentance
 	[SpellName(10326)] = true,	-- Turn Evil
@@ -55,14 +55,14 @@ T.DebuffWhiteList = {
 	[SpellName(2094)] = true,	-- Blind
 	[SpellName(1776)] = true,	-- Gouge
 	[SpellName(6770)] = true,	-- Sap
-	--[SpellName(18425)] = true,	-- Silenced - Improved Kick
+	--MOP[SpellName(18425)] = true,	-- Silenced - Improved Kick
 	-- Shaman
 	[SpellName(51514)] = true,	-- Hex
 	[SpellName(3600)] = true,	-- Earthbind
 	[SpellName(8056)] = true,	-- Frost Shock
 	[SpellName(8050)] = true,	-- Flame Shock
 	[SpellName(63685)] = true,	-- Freeze
-	--[SpellName(39796)] = true,	-- Stoneclaw Stun
+	--MOP[SpellName(39796)] = true,	-- Stoneclaw Stun
 	-- Warlock
 	[SpellName(710)] = true,	-- Banish
 	[SpellName(6789)] = true,	-- Death Coil
@@ -70,15 +70,15 @@ T.DebuffWhiteList = {
 	[SpellName(5484)] = true,	-- Howl of Terror
 	[SpellName(6358)] = true,	-- Seduction
 	[SpellName(30283)] = true,	-- Shadowfury
-	--[SpellName(89605)] = true,	-- Aura of Foreboding
+	--MOP[SpellName(89605)] = true,	-- Aura of Foreboding
 	[SpellName(603)] = true,	-- Bane of Doom
 	[SpellName(980)] = true,	-- Bane of Agony
 	[SpellName(172)] = true,	-- Corruption
-	--[SpellName(17800)] = true,	-- Shadow and Flame
+	--MOP[SpellName(17800)] = true,	-- Shadow and Flame
 	[SpellName(48181)] = true,	-- Haunt
 	[SpellName(30108)] = true,	-- Unstable Affliction
 	[SpellName(348)] = true,	-- Immolate
-	--[SpellName(86000)] = true,	-- Curse of Gul'dan
+	--MOP[SpellName(86000)] = true,	-- Curse of Gul'dan
 	-- Warrior
 	[SpellName(20511)] = true,	-- Intimidating Shout
 	-- Racial

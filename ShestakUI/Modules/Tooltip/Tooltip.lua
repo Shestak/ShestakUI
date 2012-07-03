@@ -38,9 +38,6 @@ local anchor = CreateFrame("Frame", "TooltipAnchor", UIParent)
 anchor:SetSize(200, 40)
 anchor:SetPoint(unpack(C.position.tooltip))
 
--- Hide PVP text
-PVP_ENABLED = ""
-
 -- Statusbar
 GameTooltipStatusBar:SetStatusBarTexture(C.media.texture)
 GameTooltipStatusBar:Height(4)
@@ -218,10 +215,19 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			-- thx TipTac for the fix above with color blind enabled
 			if GetCVar("colorblindMode") == "1" then n = n + 1 end
 			_G["GameTooltipTextLeft"..n]:SetFormattedText("|cff%02x%02x%02x%s|r %s", levelColor.r * 255, levelColor.g * 255, levelColor.b * 255, level, race)
+
+			for i = 2, lines do
+				local line = _G["GameTooltipTextLeft"..i]
+				if not line or not line:GetText() then return end
+				if line and line:GetText() and (line:GetText() == PVP_ENABLED or line:GetText() == FACTION_HORDE or line:GetText() == FACTION_ALLIANCE) then
+					line:SetText()
+					break
+				end
+			end
 		else
 			for i = 2, lines do
 				local line = _G["GameTooltipTextLeft"..i]
-				if not line or not line:GetText() then return end -- damn QuestHelper!
+				if not line or not line:GetText() then return end
 				if (level and line:GetText():find("^"..LEVEL)) or (creatureType and line:GetText():find("^"..creatureType)) then
 					local r, g, b = GameTooltip_UnitColor(unit)
 					line:SetFormattedText("|cff%02x%02x%02x%s%s|r %s", levelColor.r * 255, levelColor.g * 255, levelColor.b * 255, level, classification, creatureType or "")

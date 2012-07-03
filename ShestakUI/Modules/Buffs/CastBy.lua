@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.aura.cast_by == true then return end
+if C.aura.cast_by ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Tells you who cast a buff or debuff in its tooltip(CastBy by Compost)
