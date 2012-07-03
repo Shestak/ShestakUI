@@ -32,8 +32,8 @@
 	<Script file="LFD.lua"/>-->
 	<Script file="LFG.lua"/>
 	<!--<Script file="LFR.lua"/>
-	<Script file="MacClient.lua"/>
-	<Script file="Macro.lua"/>-->
+	<Script file="MacClient.lua"/>-->
+	<Script file="Macro.lua"/>
 	<Script file="Mail.lua"/>
 	<Script file="Merchant.lua"/>
 	<!--<Script file="MinimapButtons.lua"/>
