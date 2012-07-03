@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.reminder.raid_buffs_enable == true then return end
+if C.reminder.raid_buffs_enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Raid buffs on player(by Elv22)
@@ -22,8 +22,8 @@ local spell6
 -- Setup caster buffs
 local function SetCasterOnlyBuffs()
 	Spell3Buff = {	-- Total Stats
-		69378,	-- Drums of Forgotten Kings
 		20217,	-- Blessing of Kings
+		115921,	-- Legacy of the Emperor
 		90363,	-- Embrace of the Shale Spider
 		1126,	-- Mark of the Wild
 	}
@@ -32,25 +32,26 @@ local function SetCasterOnlyBuffs()
 		469,	-- Commanding Shout
 		6307,	-- Blood Pact
 		90364,	-- Qiraji Fortitude
-		86507,	-- Runescroll of Fortitude II
+		111922,	-- Runescroll of Fortitude III
 	}
-	Spell5Buff = {	-- Total Mana
-		--MOP54424,	-- Fel Intelligence
+	Spell5Buff = {	-- Spell Power
+		77747,	-- Burning Wrath
+		109773,	-- Dark Intent
 		61316,	-- Dalaran Brilliance
 		1459,	-- Arcane Brilliance
 	}
-	Spell6Buff = {	-- Mana Regen
-		--MOP54424,	-- Fel Intelligence
-		--MOP5677,	-- Mana Spring Totem
-		19740,	-- Blessing of Might
+	Spell6Buff = {	-- Spell Haste
+		24907,	-- Moonkin Aura
+		15473,	-- Shadowform
+		51470,	-- Elemental Oath
 	}
 end
 
 -- Setup everyone else's buffs
 local function SetBuffs()
 	Spell3Buff = {	-- Total Stats
-		69378,	-- Drums of Forgotten Kings
 		20217,	-- Blessing of Kings
+		115921,	-- Legacy of the Emperor
 		90363,	-- Embrace of the Shale Spider
 		1126,	-- Mark of the Wild
 	}
@@ -59,19 +60,17 @@ local function SetBuffs()
 		469,	-- Commanding Shout
 		6307,	-- Blood Pact
 		90364,	-- Qiraji Fortitude
-		86507,	-- Runescroll of Fortitude II
+		111922,	-- Runescroll of Fortitude III
 	}
-	Spell5Buff = {	-- Total Str + Agi
+	Spell5Buff = {	-- Attack Power
 		6673,	-- Battle Shout
-		--MOP8076,	-- Strength of Earth
-		93435,	-- Roar of Courage
+		19506,	-- Trueshot Aura
 		57330,	-- Horn of Winter
 	}
-	Spell6Buff = {	-- Total AP
-		--MOP53138,	-- Abom Might
-		19506,	-- Trushot
-		--MOP30808,	-- Unleashed Rage
-		19740,	-- Blessing of Might
+	Spell6Buff = {	-- Melee and Ranged Haste
+		30809,	-- Unleashed Rage
+		113742,	-- Swiftblade's Cunning
+		55610,	-- Unholy Aura
 	}
 end
 
