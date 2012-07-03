@@ -31,8 +31,10 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"StackSplitFrame",
 			"OpacityFrame",
 			"GeneralDockManagerOverflowButtonList",
-			"LFGSearchStatus"
+			"QueueStatusFrame"
 		}
+
+		QueueStatusFrame:StripTextures()
 
 		for i = 1, getn(bgskins) do
 			local frame = _G[bgskins[i]]

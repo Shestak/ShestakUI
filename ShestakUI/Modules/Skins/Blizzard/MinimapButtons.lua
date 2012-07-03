@@ -6,7 +6,6 @@ if C.skins.minimap_buttons ~= true or C.minimap.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local buttons = {
 	"QueueStatusMinimapButton",
-	"MiniMapLFGFrame",
 	"MiniMapTrackingButton",
 	"MiniMapMailFrame",
 	"HelpOpenTicketButton"
