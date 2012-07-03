@@ -29,12 +29,15 @@ local function LoadSkin()
 	local pagebackdrop = CreateFrame("Frame", nil, SpellBookPage1:GetParent())
 	pagebackdrop:SetTemplate("Overlay")
 	pagebackdrop:Point("TOPLEFT", SpellBookFrame, "TOPLEFT", 50, -50)
-	pagebackdrop:Point("BOTTOMRIGHT", SpellBookPage1, "BOTTOMRIGHT", 5, 35)
+	pagebackdrop:Point("BOTTOMRIGHT", SpellBookFrame, "BOTTOMRIGHT", -26, 23)
 
 	T.SkinNextPrevButton(SpellBookPrevPageButton)
 	T.SkinNextPrevButton(SpellBookNextPageButton)
 	SpellBookNextPageButton:Point("BOTTOMRIGHT", pagebackdrop, "BOTTOMRIGHT", -15, 10)
 	SpellBookPrevPageButton:Point("BOTTOMRIGHT", SpellBookNextPageButton, "BOTTOMLEFT", -6, 0)
+
+	SpellBookFrameTutorialButton.Ring:Hide()
+	SpellBookFrameTutorialButton:SetPoint("TOPLEFT", SpellBookFrame, "TOPLEFT", -5, 10)
 
 	-- Skin SpellButtons
 	local function SpellButtons(self, first)
@@ -169,13 +172,14 @@ local function LoadSkin()
 		if icon then
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:ClearAllPoints()
-			icon:Point("TOPLEFT", 2, -2)
-			icon:Point("BOTTOMRIGHT", -2, 2)
+			icon:Point("TOPLEFT", 4, -4)
+			icon:Point("BOTTOMRIGHT", -4, 4)
 
 			button:SetFrameLevel(button:GetFrameLevel() + 2)
 			if not button.backdrop then
 				button:CreateBackdrop("Default", true)
-				button.backdrop:SetAllPoints()
+				button.backdrop:Point("TOPLEFT", 2, -2)
+				button.backdrop:Point("BOTTOMRIGHT", -2, 2)
 			end
 		end
 	end
@@ -206,6 +210,82 @@ local function LoadSkin()
 	end
 	_G["SpellBookFrameTabButton1"]:ClearAllPoints()
 	_G["SpellBookFrameTabButton1"]:Point("TOPLEFT", _G["SpellBookFrame"], "BOTTOMLEFT", -5, 1)
+
+	-- Core Ability Tab
+	for i = 1, GetNumSpecializations() do
+		local tab = SpellBook_GetCoreAbilitySpecTab(i)
+		if tab then
+			tab:StripTextures()
+			tab:GetNormalTexture():ClearAllPoints()
+			tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
+			tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+			tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			tab:CreateBackdrop("Default")
+			tab.backdrop:SetAllPoints()
+
+			local hover = tab:CreateTexture("Frame", nil, tab)
+			hover:SetTexture(1, 1, 1, 0.3)
+			hover:Point("TOPLEFT", tab, 2, -2)
+			hover:Point("BOTTOMRIGHT", tab, -2, 2)
+			tab:SetHighlightTexture(hover)
+
+			local pushed = tab:CreateTexture("Frame", nil, tab)
+			pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
+			pushed:Point("TOPLEFT", tab, 2, -2)
+			pushed:Point("BOTTOMRIGHT", tab, -2, 2)
+			tab:SetPushedTexture(pushed)
+
+			local checked = tab:CreateTexture("Frame", nil, tab)
+			checked:SetTexture(0, 1, 0, 0.3)
+			checked:Point("TOPLEFT", tab, 2, -2)
+			checked:Point("BOTTOMRIGHT", tab, -2, 2)
+			tab:SetCheckedTexture(checked)
+
+			if i == 1 then
+				tab:SetPoint("TOPLEFT", SpellBookFrame.backdrop, "TOPRIGHT", 1, 0)
+			end
+		end
+	end
+
+	hooksecurefunc("SpellBook_UpdateCoreAbilitiesTab", function()
+		for i = 1, #SpellBookCoreAbilitiesFrame.Abilities do
+			local button = SpellBook_GetCoreAbilityButton(i)
+			if not button.reskinned then
+				button:SetFrameLevel(button:GetFrameLevel() + 2)
+				button:CreateBackdrop("Default", true)
+				button.backdrop:Point("TOPLEFT", -2, 2)
+				button.backdrop:Point("BOTTOMRIGHT", 1, -1)
+
+				button.EmptySlot:SetAlpha(0)
+				button.ActiveTexture:SetAlpha(0)
+				button.FutureTexture:SetAlpha(0)
+
+				button.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+				if button.FutureTexture:IsShown() then
+					button.iconTexture:SetDesaturated(true)
+					button.Name:SetTextColor(0.6, 0.6, 0.6)
+					button.InfoText:SetTextColor(0.6, 0.6, 0.6)
+				else
+					button.Name:SetTextColor(1, 0.82, 0)
+					button.InfoText:SetTextColor(0.8, 0.8, 0.8)
+				end
+				button.reskinned = true
+			end
+		end
+	end)
+
+	-- What Has Changed Tab
+	hooksecurefunc("SpellBook_UpdateWhatHasChangedTab", function()
+		for i = 1, #SpellBookWhatHasChanged.ChangedItems do
+			local button = SpellBook_GetWhatChangedItem(i)
+			button.Ring:Hide()
+			select(2, button:GetRegions()):Hide()
+			button:SetTextColor(0.8, 0.8, 0.8)
+			button.Title:SetTextColor(1, 0.82, 0)
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

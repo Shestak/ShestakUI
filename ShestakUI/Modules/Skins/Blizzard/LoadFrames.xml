@@ -31,8 +31,8 @@
 	<!--<Script file="Journal.lua"/>
 	<Script file="LFD.lua"/>-->
 	<Script file="LFG.lua"/>
-	<!--<Script file="LFR.lua"/>
-	<Script file="MacClient.lua"/>-->
+	<!--<Script file="LFR.lua"/>-->
+	<Script file="MacClient.lua"/>
 	<Script file="Macro.lua"/>
 	<Script file="Mail.lua"/>
 	<Script file="Merchant.lua"/>
@@ -47,7 +47,7 @@
 	<!--<Script file="Raid.lua"/>
 	<Script file="RaidInfo.lua"/>-->
 	<Script file="Reforging.lua"/>
-	<!--<Script file="SpellBook.lua"/>-->
+	<Script file="SpellBook.lua"/>
 	<Script file="Tabard.lua"/>
 	<!--<Script file="Talent.lua"/>-->
 	<Script file="Taxi.lua"/>
