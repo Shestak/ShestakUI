@@ -38,6 +38,9 @@ local anchor = CreateFrame("Frame", "TooltipAnchor", UIParent)
 anchor:SetSize(200, 40)
 anchor:SetPoint(unpack(C.position.tooltip))
 
+--- Hide PVP text
+PVP_ENABLED = ""
+
 -- Statusbar
 GameTooltipStatusBar:SetStatusBarTexture(C.media.texture)
 GameTooltipStatusBar:Height(4)
@@ -219,7 +222,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			for i = 2, lines do
 				local line = _G["GameTooltipTextLeft"..i]
 				if not line or not line:GetText() then return end
-				if line and line:GetText() and (line:GetText() == PVP_ENABLED or line:GetText() == FACTION_HORDE or line:GetText() == FACTION_ALLIANCE) then
+				if line and line:GetText() and (line:GetText() == FACTION_HORDE or line:GetText() == FACTION_ALLIANCE) then
 					line:SetText()
 					break
 				end

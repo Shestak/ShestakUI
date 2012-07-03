@@ -121,6 +121,7 @@ local function Enable(self)
 		wsb.ForceUpdate = ForceUpdate
 
 		self:RegisterEvent('UNIT_POWER', Path)
+		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)
 
 		wsb.number = 4
 
@@ -132,6 +133,7 @@ local function Disable(self)
 	local wsb = self.WarlockSpecBars
 	if(wsb) then
 		self:UnregisterEvent('UNIT_POWER', Path)
+		self:UnregisterEvent("UNIT_DISPLAYPOWER", Path)
 	end
 end
 

@@ -128,6 +128,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Auto hide unnecessary stats from CharacterFrame(module from Inomena by p3lim)
 ----------------------------------------------------------------------------------------
+if T.MOPVersion then return end
 PAPERDOLL_STATCATEGORIES = {
 	GENERAL = {
 		id = 1,

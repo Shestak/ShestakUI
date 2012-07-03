@@ -211,7 +211,7 @@ end)
 local query, queried
 Monomyth:Register("QUEST_QUERY_COMPLETE", function()
 	if query then
-		GetQuestsCompleted(completedQuests)
+		--MOPGetQuestsCompleted(completedQuests)
 		Monomyth.BAG_UPDATE(query, true)
 	end
 end)
@@ -227,7 +227,7 @@ Monomyth:Register("BAG_UPDATE", function(bag, handled)
 			if not queried then
 				query = bag
 				queried = true
-				QueryQuestsCompleted()
+				--MOPQueryQuestsCompleted()
 			elseif not completedQuests[id] then
 				UseContainerItem(bag, slot)
 				completedQuests[id] = true
