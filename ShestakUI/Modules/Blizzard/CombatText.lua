@@ -299,6 +299,26 @@ elseif T.class == "ROGUE" then
 		ct.aoespam[5374] = true		-- Mutilate
 		ct.aoespam[27576] = 5374	-- Mutilate Off-Hand
 	end
+elseif T.class == "MONK" then
+	if C.combattext.merge_aoe_spam then
+		-- Healer spells
+		ct.aoespam[115175] = true	-- Soothing Mist
+		-- Damager spells
+		ct.aoespam[117952] = true	-- Crackling Jade Lightning
+		ct.aoespam[107270] = true	-- Spinning Crane Kick
+		ct.aoespam[117418] = true	-- Fists of Fury
+		-- Item spells
+		ct.aoespam[105996] = true	-- Essence of Dreams
+		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
+		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
+		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
+		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
+		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
+		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
+		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
+		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
+		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
+	end
 end
 
 if C.combattext.merge_aoe_spam then
