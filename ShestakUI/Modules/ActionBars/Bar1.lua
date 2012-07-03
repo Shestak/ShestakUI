@@ -55,7 +55,7 @@ bar:SetScript("OnEvent", function(self, event, ...)
 				button:SetAttribute("actionpage", tonumber(newstate))
 			end
 		]])
-		
+
 		RegisterStateDriver(self, "page", GetBar())
 	elseif event == "PLAYER_ENTERING_WORLD" then
 		local button
