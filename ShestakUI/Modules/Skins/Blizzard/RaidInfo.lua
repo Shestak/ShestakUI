@@ -33,7 +33,9 @@ local function LoadSkin()
 		"RaidFrameRaidInfoButton",
 		"RaidInfoExtendButton",
 		"RaidInfoCancelButton",
-		"RaidFinderQueueFrameIneligibleFrameLeaveQueueButton"
+		"RaidFinderQueueFrameIneligibleFrameLeaveQueueButton",
+		"RaidFrameRaidInfoButton",
+		"RaidFrameRaidBrowserButton"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -68,7 +70,7 @@ local function LoadSkin()
 	RaidFinderQueueFrameSelectionDropDown:Point("RIGHT", -10, 0)
 
 	RaidFinderFrameFindRaidButton:SkinButton(true)
-	RaidFinderFrameCancelButton:SkinButton(true)
+	--RaidFinderFrameCancelButton:SkinButton(true)
 
 	for i = 1, 3 do
 		T.SkinTab(_G["RaidParentFrameTab"..i])
