@@ -116,25 +116,21 @@ Filger_Spells = {
 
 			-- Enchants
 			-- General
-			-- Hurricane (Haste)
-			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
-			-- Windwalk (Dodge and Movement)
-			{spellID = 74243, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Flowing River (Dodge)
+			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
-			--MOP{spellID = 75176, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
-			-- Landslide (AP)
-			{spellID = 74245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
-			-- Lightweave (Intellect)
-			--MOP{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power Torrent (Intellect)
-			{spellID = 74241, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave Embroidery (Intellect)
+			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Spirit (Intellect + Spirit)
+			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
-			-- Darkglow (Spirit)
-			--MOP{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkglow Embroidery (Spirit)
+			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -178,7 +174,7 @@ Filger_Spells = {
 			-- Feral Charge Effect
 			{spellID = 45334, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Infected Wounds
-			--MOP{spellID = 58179, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 58180, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -371,12 +367,12 @@ Filger_Spells = {
 			-- General
 			-- Physical General
 			-- Swordguard Embroidery (AP)
-			--MOP{spellID = 75176, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Ranged
-			-- X-Ray Targeting (RAP)
-			{spellID = 95712, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Flintlocke's Woodchucker (Agility)
-			{spellID = 99621, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mirror Scope (Crit)
+			{spellID = 109092, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lord Blastington's Scope of Doom (Agility)
+			{spellID = 109085, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -615,13 +611,11 @@ Filger_Spells = {
 
 			-- Enchants
 			-- General
-			-- Hurricane (Haste)
-			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
-			-- Lightweave (Intellect)
-			--MOP{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power Torrent (Intellect)
-			{spellID = 74241, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave Embroidery (Intellect)
+			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Spirit (Intellect + Spirit)
+			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Item Sets
 		},
@@ -864,17 +858,13 @@ Filger_Spells = {
 
 			-- Enchants
 			-- General
-			-- Hurricane (Haste)
-			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
-			-- Windwalk (Dodge and Movement)
-			{spellID = 74243, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Flowing River (Dodge)
+			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
-			--MOP{spellID = 75176, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
-			-- Landslide (AP)
-			{spellID = 74245, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1084,22 +1074,18 @@ Filger_Spells = {
 
 			-- Enchants
 			-- General
-			-- Hurricane (Haste)
-			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
-			--MOP{spellID = 75176, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
-			-- Landslide (AP)
-			{spellID = 74245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
-			-- Lightweave (Intellect)
-			--MOP{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power Torrent (Intellect)
-			{spellID = 74241, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave Embroidery (Intellect)
+			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Spirit (Intellect + Spirit)
+			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
-			-- Darkglow (Spirit)
-			--MOP{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkglow Embroidery (Spirit)
+			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1319,10 +1305,20 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
+			-- Flowing River (Dodge)
+			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
+			-- Swordguard Embroidery (AP)
+			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Caster General
+			-- Lightweave Embroidery (Intellect)
+			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Spirit (Intellect + Spirit)
+			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+			-- Darkglow Embroidery (Spirit)
+			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1518,16 +1514,14 @@ Filger_Spells = {
 
 			-- Enchants
 			-- General
-			-- Hurricane (Haste)
-			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
-			-- Lightweave (Intellect)
-			--MOP{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power Torrent (Intellect)
-			{spellID = 74241, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave Embroidery (Intellect)
+			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Spirit (Intellect + Spirit)
+			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
-			-- Darkglow (Spirit)
-			--MOP{spellID = 75173, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkglow Embroidery (Spirit)
+			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1761,13 +1755,11 @@ Filger_Spells = {
 
 			-- Enchants
 			-- General
-			-- Hurricane (Haste)
-			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
-			-- Lightweave (Intellect)
-			--MOP{spellID = 75170, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power Torrent (Intellect)
-			{spellID = 74241, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave Embroidery (Intellect)
+			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Spirit (Intellect + Spirit)
+			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2022,14 +2014,10 @@ Filger_Spells = {
 
 			-- Enchants
 			-- General
-			-- Hurricane (Haste)
-			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
-			--MOP{spellID = 75176, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
-			-- Landslide (AP)
-			{spellID = 74245, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Other
 			-- Future on Fire (T12 x4)
@@ -2242,17 +2230,13 @@ Filger_Spells = {
 
 			-- Enchants
 			-- General
-			-- Hurricane (Haste)
-			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
-			-- Windwalk (Dodge and Movement)
-			{spellID = 74243, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Flowing River (Dodge)
+			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
-			--MOP{spellID = 75176, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
-			-- Landslide (AP)
-			{spellID = 74245, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -2405,17 +2389,13 @@ Filger_Spells = {
 
 			-- Enchants
 			-- General
-			-- Hurricane (Haste)
-			{spellID = 74221, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
-			-- Windwalk (Dodge and Movement)
-			{spellID = 74243, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Flowing River (Dodge)
+			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
-			--MOP{spellID = 75176, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
-			-- Landslide (AP)
-			{spellID = 74245, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
@@ -2612,7 +2592,7 @@ Filger_Spells = {
 			-- Feral Charge Effect
 			{spellID = 45334, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Infected Wounds
-			--MOP{spellID = 58179, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 58180, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Typhoon
 			{spellID = 61391, unitID = "player", caster = "all", filter = "DEBUFF"},
 
