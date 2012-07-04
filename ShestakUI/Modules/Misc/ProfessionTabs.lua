@@ -74,12 +74,12 @@ end
 
 function ProfessionTabs:CreateTab(Table, Parent)
 	local Tab = CreateFrame("CheckButton", "ProTabs"..#Table, Parent, "SpellBookSkillLineTabTemplate SecureActionButtonTemplate")
-	Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", (Parent == ATSWFrame or Parent == TradeFrame) and -32 or 0, (Parent == TradeFrame and -32 or -24) + -44 * #Table)
+	Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", 0, (-44 * #Table) - 24)
 	Tab:SetScript("OnEnter", Tab_OnEnter)
 	Tab:SetScript("OnLeave", Tab_OnLeave)
 
 	if IsAddOnLoaded("Aurora") then
-		Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", (Parent == ATSWFrame or Parent == TradeFrame) and -19 or 11, (Parent == TradeFrame and -47 or -35) + -48 * #Table)
+		Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", 11, (-44 * #Table) - 35)
 
 		Tab:StripTextures()
 		Tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -91,7 +91,7 @@ function ProfessionTabs:CreateTab(Table, Parent)
 		F.CreateBG(Tab)
 		F.CreateSD(Tab, 5, 0, 0, 0, 1, 1)
 	elseif C.skins.blizzard_frames == true then
-		Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", (Parent == ATSWFrame or Parent == TradeFrame) and -19 or 1, (Parent == TradeFrame and -12 or 0) + -44 * #Table)
+		Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", 1, -44 * #Table)
 
 		Tab:StripTextures()
 		Tab:GetNormalTexture():ClearAllPoints()
