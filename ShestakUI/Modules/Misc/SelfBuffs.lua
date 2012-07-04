@@ -33,15 +33,16 @@ local function OnEvent(self, event, arg1, arg2)
 			local usable, nomana = IsUsableSpell(name)
 			if (usable or nomana) then
 				self.icon:SetTexture(select(3, GetSpellInfo(buff)))
+				self.hasTexture = true
 				break
 			end
 		end
 
-		if (not self.icon:GetTexture() and event == "PLAYER_LOGIN") then
+		if (not self.hasTexture and event == "PLAYER_LOGIN") then
 			self:UnregisterAllEvents()
 			self:RegisterEvent("LEARNED_SPELL_IN_TAB")
 			return
-		elseif (self.icon:GetTexture() and event == "LEARNED_SPELL_IN_TAB") then
+		elseif (self.hasTexture and event == "LEARNED_SPELL_IN_TAB") then
 			self:UnregisterAllEvents()
 			self:RegisterEvent("UNIT_AURA")
 			if group.combat and group.combat == true then
@@ -130,7 +131,7 @@ local function OnEvent(self, event, arg1, arg2)
 
 	if not group.weapon then
 		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and 
-		treepass == true and rolepass == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
+		treepass == true and rolepass == true and not (UnitInVehicle("player") and self.hasTexture) then
 			for _, buff in pairs(group.spells) do
 				local name = GetSpellInfo(buff)
 				local _, _, icon, _, _, _, _, unitCaster, _, _, _ = UnitBuff("player", name)
@@ -149,7 +150,7 @@ local function OnEvent(self, event, arg1, arg2)
 			self:Show()
 			if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
 		elseif ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid"))) and 
-		reversecheck == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
+		reversecheck == true and not (UnitInVehicle("player") and self.hasTexture) then
 			if negate_reversecheck and negate_reversecheck == GetSpecialization() then self:Hide() return end
 			for _, buff in pairs(group.spells) do
 				local name = GetSpellInfo(buff)
@@ -165,7 +166,7 @@ local function OnEvent(self, event, arg1, arg2)
 		end
 	else
 		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and 
-		treepass == true and rolepass == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
+		treepass == true and rolepass == true and not (UnitInVehicle("player") and self.hasTexture) then
 			if hasOffhandWeapon == nil then
 				if hasMainHandEnchant == nil then
 					self:Show()
@@ -219,12 +220,12 @@ for i = 1, #tab do
 	frame:RegisterEvent("UNIT_EXITED_VEHICLE")
 	frame:SetScript("OnEvent", OnEvent)
 	frame:SetScript("OnUpdate", function(self, elapsed)
-		if not self.icon:GetTexture() then
+		if not self.hasTexture then
 			self:Hide()
 		end
 	end)
 	frame:SetScript("OnShow", function(self)
-		if not self.icon:GetTexture() then
+		if not self.hasTexture then
 			self:Hide()
 		end
 	end)
