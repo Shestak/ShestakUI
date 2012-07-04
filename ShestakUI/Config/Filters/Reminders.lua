@@ -223,8 +223,13 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		ROGUE = { 
-			[1] = {	-- Weapons enchants group
-				["weapon"] = true,
+			[1] = {	-- Poisons group
+				["spells"] = {
+					2823, -- Deadly Poison
+					8679, -- Wound Poison
+					5761, -- Mind-numbing Poison
+					3408, -- Crippling Poison
+				},
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
