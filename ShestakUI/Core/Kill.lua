@@ -15,11 +15,11 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	if C.unitframe.enable and (addon == "ShestakUI_DPS" or addon == "ShestakUI_Heal") then
 		InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
 		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
-		CompactRaidFrameManager:Kill()
-		CompactRaidFrameContainer:Kill()
+		--MOP--CompactRaidFrameManager:Kill()
+		--MOP--CompactRaidFrameContainer:Kill()
 		--MOP--CompactUnitFrame_UpateVisible = T.dummy
-		CompactUnitFrame_UpdateAll = T.dummy
-		CompactUnitFrameProfiles_ApplyProfile = T.dummy
+		--MOP--CompactUnitFrame_UpdateAll = T.dummy
+		--MOP--CompactUnitFrameProfiles_ApplyProfile = T.dummy
 	end
 
 	if addon ~= "ShestakUI" then return end
@@ -51,7 +51,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsCombatPanelTargetOfTarget:Kill()
 		InterfaceOptionsCombatPanelTOTDropDown:Kill()
 		InterfaceOptionsCombatPanelEnemyCastBarsOnPortrait:Kill()
-		PartyMemberBackground:Kill()
+		--MOP--PartyMemberBackground:Kill()
 	end
 
 	if C.actionbar.enable then
