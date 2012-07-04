@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.aura.player_auras == true then return end
+if C.aura.player_auras ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Style player buff(by Tukz)

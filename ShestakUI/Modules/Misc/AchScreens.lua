@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.misc.ach_screens == true then return end
+if C.misc.ach_screens ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Take screenshots of Achievements(Based on Achievement Screenshotter by Blamdarot)

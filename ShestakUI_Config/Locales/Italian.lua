@@ -274,7 +274,6 @@ L_GUI_UF_ICONS_PVP = "Testo PvP (senza icona) in mouseover sui riquadri di gioca
 L_GUI_UF_ICONS_COMBAT = "Icona di status 'in combattimento'"
 L_GUI_UF_ICONS_RESTING = "Icona 'Riposato' per personaggi di basso livello"
 L_GUI_UF_ICONS_COMBO_POINT = "Icone punti combo per Druido e Ladro"
-L_GUI_UF_ICONS_COMBO_POINT_NEW = "Nuovo stile per i punti combo"
 L_GUI_UF_PORTRAIT_ENABLE = "Attiva ritratti per giocatore e bersaglio"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Bordi dei ritratti colorati in base alle classi"
 L_GUI_UF_PORTRAIT_HEIGHT = "Altezza del ritratto"

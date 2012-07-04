@@ -78,6 +78,7 @@ if T.author == true then
 	C["unitframe"].arena_on_right = false
 	C["unitframe"].plugins_talents = true
 	C["unitframe"].plugins_vengeance_bar = false
+	C["unitframe"].plugins_diminishing = true
 	C["stats"].fps = false
 	C["stats"].battleground = true
 	if T.level == MAX_PLAYER_LEVEL then

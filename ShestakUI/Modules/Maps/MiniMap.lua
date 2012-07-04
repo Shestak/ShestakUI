@@ -98,7 +98,6 @@ GameTimeCalendarInvitesTexture:SetParent(Minimap)
 GameTimeCalendarInvitesTexture:Point("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
 
 -- Default LFG icon
---MiniMapLFGFrameGroupSize:Hide()
 LFG_EYE_TEXTURES.raid = LFG_EYE_TEXTURES.default
 LFG_EYE_TEXTURES.unknown = LFG_EYE_TEXTURES.default
 

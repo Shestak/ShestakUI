@@ -97,7 +97,7 @@ local function GetSpellDR()
 		[20253] = {"ctrlstun"},		-- Intercept
 		[44572] = {"ctrlstun"},		-- Deep Freeze
 		[30283] = {"ctrlstun"},		-- Shadowfury
-		[2812] = {"ctrlstun"},		-- Holy Wrath
+		[119072] = {"ctrlstun"},	-- Holy Wrath
 		[22703] = {"ctrlstun"},		-- Inferno Effect
 		[54785] = {"ctrlstun"},		-- Demon Leap (Warlock)
 		[47481] = {"ctrlstun"},		-- Gnaw (Ghoul)

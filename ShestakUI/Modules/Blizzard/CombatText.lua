@@ -107,7 +107,7 @@ elseif T.class == "PALADIN" then
 		ct.aoespam[86452] = true	-- Holy Radiance (Hot)
 		-- Damager spells
 		ct.aoespam[81297] = true	-- Consecration
-		ct.aoespam[2812] = true		-- Holy Wrath
+		ct.aoespam[119072] = true	-- Holy Wrath
 		ct.aoespam[53385] = true	-- Divine Storm
 		ct.aoespam[31803] = true	-- Censure
 		ct.aoespam[20424] = true	-- Seals of Command

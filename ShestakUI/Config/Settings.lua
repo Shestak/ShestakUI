@@ -369,7 +369,6 @@ C["unitframe"] = {
 	["icons_combat"] = true,					-- Combat icon
 	["icons_resting"] = true,					-- Resting icon for low lvl chars
 	["icons_combo_point"] = true,				-- Rogue|Druid combo point icons
-	["icons_combo_point_new"] = true,			-- New style for combo points
 	-- Portraits
 	["portrait_enable"] = false,				-- Enable player/target portraits
 	["portrait_classcolor_border"] = true,		-- Enable classcolor border
