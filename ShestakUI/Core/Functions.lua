@@ -88,35 +88,28 @@ T.CheckForKnownTalent = function(spellid)
 	return false
 end
 
-local RoleUpdater = CreateFrame("Frame")
 local function CheckRole(self, event, unit)
 	local tree = GetSpecialization()
-	local resilience
-	local resilperc = GetCombatRatingBonus(COMBAT_RATING_RESILIENCE_PLAYER_DAMAGE_TAKEN)
-	if resilperc > GetDodgeChance() and resilperc > GetParryChance() and UnitLevel("player") == MAX_PLAYER_LEVEL then
-		resilience = true
-	else
-		resilience = false
-	end
-	if ((T.class == "PALADIN" and tree == 2) or (T.class == "WARRIOR" and tree == 3) or (T.class == "DEATHKNIGHT" and tree == 1)) and resilience == false
-	or (T.class == "DRUID" and tree == 2 and GetBonusBarOffset() == 3) then
+	local role = tree and select(6, GetSpecializationInfo(tree))
+
+	if role == "TANK" then
 		T.Role = "Tank"
-	elseif ((T.class == "PALADIN" and tree == 1) or (T.class == "DRUID" and tree == 3) or (T.class == "SHAMAN" and tree == 3) or (T.class == "PRIEST" and tree ~= 3)) then
+	elseif role == "HEALER" then
 		T.Role = "Healer"
-	else
+	elseif role == "DAMAGER" then
 		local playerint = select(2, UnitStat("player", 4))
 		local playeragi = select(2, UnitStat("player", 2))
 		local base, posBuff, negBuff = UnitAttackPower("player")
 		local playerap = base + posBuff + negBuff
 
-		if (((playerap > playerint) or (playeragi > playerint)) and not (T.class == "SHAMAN" and tree ~= 1 and tree ~= 3) and not (UnitBuff("player", GetSpellInfo(24858))
-		or UnitBuff("player", GetSpellInfo(114282)))) or T.class == "ROGUE" or T.class == "HUNTER" or (T.class == "SHAMAN" and tree == 2) then
+		if (playerap > playerint) or (playeragi > playerint) then
 			T.Role = "Melee"
 		else
 			T.Role = "Caster"
 		end
 	end
 end
+local RoleUpdater = CreateFrame("Frame")
 RoleUpdater:RegisterEvent("PLAYER_ENTERING_WORLD")
 RoleUpdater:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 RoleUpdater:RegisterEvent("PLAYER_TALENT_UPDATE")
@@ -124,7 +117,6 @@ RoleUpdater:RegisterEvent("CHARACTER_POINTS_CHANGED")
 RoleUpdater:RegisterEvent("UNIT_INVENTORY_CHANGED")
 RoleUpdater:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 RoleUpdater:SetScript("OnEvent", CheckRole)
-CheckRole()
 
 ----------------------------------------------------------------------------------------
 --	UTF functions
@@ -965,10 +957,12 @@ T.UpdateComboPoint = function(self, event, unit)
 
 	if cpoints[1]:GetAlpha() == 1 then
 		for i = 1, MAX_COMBO_POINTS do
+			cpoints:Show()
 			cpoints[i]:Show()
 		end
 	else
 		for i = 1, MAX_COMBO_POINTS do
+			cpoints:Hide()
 			cpoints[i]:Hide()
 		end
 	end
