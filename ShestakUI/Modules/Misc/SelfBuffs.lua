@@ -226,6 +226,6 @@ for i = 1, #tab do
 	frame:SetScript("OnShow", function(self)
 		if not self.icon:GetTexture() then
 			self:Hide()
-		end	
+		end
 	end)
 end

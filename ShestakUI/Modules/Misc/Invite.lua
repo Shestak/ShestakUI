@@ -28,7 +28,7 @@ if C.misc.auto_accept_invite == true then
 	local ai = CreateFrame("Frame")
 	ai:RegisterEvent("PARTY_INVITE_REQUEST")
 	ai:SetScript("OnEvent", function(self, event, name)
-		if MiniMapLFGFrame:IsShown() or GetNumSubgroupMembers() > 0 or GetNumGroupMembers() > 0 then return end
+		if QueueStatusMinimapButton:IsShown() or GetNumSubgroupMembers() > 0 or GetNumGroupMembers() > 0 then return end
 		if CheckFriend(name) then
 			T.InfoTextShow(L_INFO_INVITE..name)
 			print(format("|cffffff00"..L_INFO_INVITE..name.."."))

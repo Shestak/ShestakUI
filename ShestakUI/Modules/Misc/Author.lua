@@ -187,11 +187,7 @@ PAPERDOLL_STATCATEGORIES = {
 			"PARRY",
 			"BLOCK",
 			"RESILIENCE_REDUCTION",
-			"ARCANE",
-			"FIRE",
-			"FROST",
-			"NATURE",
-			"SHADOW",
+			"PVP_POWER",
 		},
 	},
 }
@@ -229,6 +225,7 @@ local classes = {
 	SHAMAN = {3, 1, 3},
 	WARLOCK = {3, 3, 3},
 	WARRIOR = {1, 1, 1},
+	MONK = {1, 1, 1},
 }
 
 local handler = CreateFrame("Frame")

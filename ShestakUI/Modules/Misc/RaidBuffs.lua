@@ -20,7 +20,7 @@ local spell5
 local spell6
 
 -- Setup caster buffs
-local function SetCasterOnlyBuffs()
+local function SetCasterBuffs()
 	Spell3Buff = {	-- Total Stats
 		20217,	-- Blessing of Kings
 		115921,	-- Legacy of the Emperor
@@ -120,7 +120,7 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	-- If We're a caster we may want to see differant buffs
 	if T.Role == "Caster" or T.Role == "Healer" then
-		SetCasterOnlyBuffs() 
+		SetCasterBuffs()
 	else
 		SetBuffs()
 	end
