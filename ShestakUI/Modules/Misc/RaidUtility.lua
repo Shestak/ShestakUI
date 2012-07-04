@@ -104,15 +104,6 @@ CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:Height(18)
 CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:Width(RoleCheckButton:GetWidth() * 0.22)
 CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:StripTextures(true)
 
--- Put other stuff back
---CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateReadyCheck:ClearAllPoints()
---CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateReadyCheck:Point("BOTTOMLEFT", CompactRaidFrameManagerDisplayFrameLockedModeToggle, "TOPLEFT", 0, 1)
---CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateReadyCheck:Point("BOTTOMRIGHT", CompactRaidFrameManagerDisplayFrameHiddenModeToggle, "TOPRIGHT", 0, 1)
-
---CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateRolePoll:ClearAllPoints()
---CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateRolePoll:Point("BOTTOMLEFT", CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateReadyCheck, "TOPLEFT", 0, 1)
---CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateRolePoll:Point("BOTTOMRIGHT", CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateReadyCheck, "TOPRIGHT", 0, 1)
-
 local MarkTexture = CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:CreateTexture(nil, "OVERLAY")
 MarkTexture:SetTexture("Interface\\RaidFrame\\Raid-WorldPing")
 MarkTexture:Point("CENTER", 0, -1)
@@ -152,3 +143,14 @@ local LeadershipCheck = CreateFrame("Frame")
 LeadershipCheck:RegisterEvent("PLAYER_ENTERING_WORLD")
 LeadershipCheck:RegisterEvent("GROUP_ROSTER_UPDATE")
 LeadershipCheck:SetScript("OnEvent", ToggleRaidUtil)
+
+-- Support Aurora
+if IsAddOnLoaded("Aurora") then
+	local F = unpack(Aurora)
+	RaidUtilityPanel:SetBackdropColor(0, 0, 0, 0)
+	RaidUtilityPanel:SetBackdropBorderColor(0, 0, 0, 0)
+	RaidUtilityPanelInnerBorder:SetBackdropBorderColor(0, 0, 0, 0)
+	RaidUtilityPanelOuterBorder:SetBackdropBorderColor(0, 0, 0, 0)
+	F.CreateBD(RaidUtilityPanel)
+	F.CreateSD(RaidUtilityPanel)
+end

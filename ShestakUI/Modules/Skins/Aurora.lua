@@ -21,6 +21,16 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 		"GameMenuButtonSettingsGUI",
 		"BaudErrorFrameClearButton",
 		"BaudErrorFrameCloseButton",
+		"DisbandRaidButton",
+		"SwitchRaidButton",
+		"MainTankButton",
+		"MainAssistButton",
+		"RoleCheckButton",
+		"ReadyCheckButton",
+		"ShowButton",
+		"CloseButton",
+		"RaidControlButton",
+		"CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton"
 	}
 
 	for i = 1, getn(buttons) do
@@ -33,7 +43,7 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 	local frames = {
 		"aLoadFrame",
 		"AddonSets",
-		"BaudErrorFrame",
+		"BaudErrorFrame"
 	}
 
 	for i = 1, getn(frames) do
@@ -47,7 +57,7 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 	local bd = {
 		"aLoadScroll",
 		"BaudErrorFrameListScrollBox",
-		"BaudErrorFrameDetailScrollBox",
+		"BaudErrorFrameDetailScrollBox"
 	}
 
 	for i = 1, getn(bd) do
