@@ -91,9 +91,7 @@
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
 	<Script file="Modules\Misc\OneClickBuyOut.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
-	<!--<Script file="Modules\Misc\DungeonTabs.lua"/>-->
 	<Script file="Modules\Misc\AutoChefsHat.lua"/>
-	<!--<Script file="Modules\Misc\CompanionCount.lua"/>-->
 	<Script file="Modules\Misc\SolveArtifact.lua"/>
 
 	<Script file="Modules\Announcements\Drinking.lua"/>
@@ -151,9 +149,9 @@
 
 	<Script file="Modules\Loot\AutoDez.lua"/>
 	<Script file="Modules\Loot\Loot.lua"/>
-	<!--<Script file="Modules\Loot\LootRoll.lua"/>
+	<!--<Script file="Modules\Loot\LootRoll.lua"/>-->
 
-	<Script file="Modules\DataText\Battleground.lua"/>-->
+	<Script file="Modules\DataText\Battleground.lua"/>
 
 	<Script file="Modules\Class\Mage.lua"/>
 
