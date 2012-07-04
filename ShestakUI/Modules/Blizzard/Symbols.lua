@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.misc.shift_marking == true then return end
+if C.misc.shift_marking ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Mob marking(by ALZA)
@@ -29,9 +29,7 @@ local menuList = {
 
 WorldFrame:HookScript("OnMouseDown", function(self, button)
 	if button == "LeftButton" and IsShiftKeyDown() and UnitExists("mouseover") then
-		local inParty = GetNumSubgroupMembers() > 0
-		local inRaid = GetNumGroupMembers() > 0
-		if inRaid and (IsGroupLeader() or IsGroupAssistant()) or (inParty and not inRaid) then
+		if (GetNumGroupMembers() > 0 and UnitIsGroupLeader("player") and not UnitInRaid("player")) or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player") then
 			EasyMenu(menuList, menuFrame, "cursor", 0, 0, "MENU", 1)
 		end
 	end
