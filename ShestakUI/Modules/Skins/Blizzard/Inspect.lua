@@ -7,7 +7,6 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	InspectFrame:StripTextures(true)
 	InspectFrameInset:StripTextures(true)
-	InspectTalentFramePointsBar:StripTextures()
 	InspectFrame:CreateBackdrop("Transparent")
 	InspectFrame.backdrop:SetAllPoints()
 	T.SkinCloseButton(InspectFrameCloseButton)
@@ -16,17 +15,8 @@ local function LoadSkin()
 		T.SkinTab(_G["InspectFrameTab"..i])
 	end
 
-	InspectModelFrameBorderTopLeft:Kill()
-	InspectModelFrameBorderTopRight:Kill()
-	InspectModelFrameBorderTop:Kill()
-	InspectModelFrameBorderLeft:Kill()
-	InspectModelFrameBorderRight:Kill()
-	InspectModelFrameBorderBottomLeft:Kill()
-	InspectModelFrameBorderBottomRight:Kill()
-	InspectModelFrameBorderBottom:Kill()
-	InspectModelFrameBorderBottom2:Kill()
-	InspectModelFrameBackgroundOverlay:Kill()
-	InspectModelFrame:CreateBackdrop("Default")
+	InspectModelFrame:StripTextures(true)
+	InspectModelFrame:CreateBackdrop("Overlay")
 	InspectModelFrame.backdrop:Point("TOPLEFT", -2, 2)
 	InspectModelFrame.backdrop:Point("BOTTOMRIGHT", 2, -3)
 
@@ -55,6 +45,7 @@ local function LoadSkin()
 	for _, slot in pairs(slots) do
 		local icon = _G["Inspect"..slot.."IconTexture"]
 		local slot = _G["Inspect"..slot]
+
 		slot:StripTextures()
 		slot:StyleButton(false)
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -73,40 +64,38 @@ local function LoadSkin()
 
 	for i = 1, 3 do
 		_G["InspectPVPTeam"..i]:StripTextures()
-		_G["InspectTalentFrameTab"..i]:StripTextures()
 	end
 
-	InspectTalentFrame.bg = CreateFrame("Frame", nil, InspectTalentFrame)
-	InspectTalentFrame.bg:SetTemplate("Default")
-	InspectTalentFrame.bg:Point("TOPLEFT", InspectTalentFrameBackgroundTopLeft, "TOPLEFT", -2, 2)
-	InspectTalentFrame.bg:Point("BOTTOMRIGHT", InspectTalentFrameBackgroundBottomRight, "BOTTOMRIGHT", -20, 52)
-	InspectTalentFrame.bg:SetFrameLevel(InspectTalentFrame.bg:GetFrameLevel() - 2)
+	SpecializationSpecName:SetFont(C.media.normal_font, 20)
+	--SpecializationRing:SetTexture("")
+	--InspectTalentFrame:StripTextures()
+	InspectTalentFrame:DisableDrawLayer("BACKGROUND")
+	InspectTalentFrame:DisableDrawLayer("BORDER")
 
-	for i = 1, MAX_NUM_TALENTS do
-		local button = _G["InspectTalentFrameTalent"..i]
-		local icon = _G["InspectTalentFrameTalent"..i.."IconTexture"]
-		if button then
+	for i = 1, 6 do
+		for j = 1, 3 do
+			local button = _G["TalentsTalentRow"..i.."Talent"..j]
+			local icon = _G["TalentsTalentRow"..i.."Talent"..j.."IconTexture"]
+
 			button:StripTextures()
-			button:StyleButton()
-			button:SetTemplate("Default")
-			button.SetHighlightTexture = T.dummy
-			button.SetPushedTexture = T.dummy
-			button:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			button:GetPushedTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			button:GetHighlightTexture():SetAllPoints(icon)
-			button:GetPushedTexture():SetAllPoints(icon)
+			button:CreateBackdrop("Default")
+			button.backdrop:Point("TOPLEFT", icon, -2, 2)
+			button.backdrop:Point("BOTTOMRIGHT", icon, 2, -2)
 
-			if button.Rank then
-				button.Rank:SetFont(C.media.normal_font, 11, "OUTLINE")
-				button.Rank:ClearAllPoints()
-				button.Rank:SetPoint("BOTTOMRIGHT", 1, 0)
-			end
-
-			icon:ClearAllPoints()
-			icon:Point("TOPLEFT", 2, -2)
-			icon:Point("BOTTOMRIGHT", -2, 2)
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		end
+	end
+
+	for i = 1, 6 do
+		local button = _G["InspectGlyphsGlyph"..i]
+		local icon = _G["InspectGlyphsGlyph"..i.."IconTexture"]
+
+		--button:StripTextures()
+		--button:CreateBackdrop("Default")
+		--button.backdrop:Point("TOPLEFT", -2, 2)
+		--button.backdrop:Point("BOTTOMRIGHT", 2, -2)
+
+		--button.ring:SetTexCoord(0.1, 0.9, 0.1, 0.9);
 	end
 end
 

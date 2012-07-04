@@ -212,7 +212,8 @@ local function LoadSkin()
 	_G["SpellBookFrameTabButton1"]:Point("TOPLEFT", _G["SpellBookFrame"], "BOTTOMLEFT", -5, 1)
 
 	-- Core Ability Tab
-	for i = 1, GetNumSpecializations() do
+	--for i = 1, GetNumSpecializations() do
+	for i = 1, 4 do
 		local tab = SpellBook_GetCoreAbilitySpecTab(i)
 		if tab then
 			tab:StripTextures()
