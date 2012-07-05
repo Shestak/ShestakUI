@@ -8,7 +8,7 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true then return end
 ----------------------------------------------------------------------------------------
 T.ArenaControl = function()
 	return {
-		-- Crowd Control
+		-- Crowd Controls
 		[GetSpellInfo(33786)] = 3,	-- Cyclone
 		[GetSpellInfo(2637)] = 3,	-- Hibernate
 		[GetSpellInfo(55041)] = 3,	-- Freezing Trap Effect
@@ -59,6 +59,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(9005)] = 3,	-- Pounce
 		[GetSpellInfo(22570)] = 3,	-- Maim
 		[GetSpellInfo(853)] = 3,	-- Hammer of Justice
+		[GetSpellInfo(105593)] = 3,	-- Fist of Justice
 		[GetSpellInfo(20066)] = 3,	-- Repentance
 		[GetSpellInfo(46968)] = 3,	-- Shockwave
 		--MOP[GetSpellInfo(49203)] = 3,	-- Hungering Cold
