@@ -85,7 +85,8 @@ local function LoadSkin()
 		"ScrollOfResurrectionSelectionFrameAcceptButton",
 		"ScrollOfResurrectionSelectionFrameCancelButton",
 		"ScrollOfResurrectionFrameAcceptButton",
-		"ScrollOfResurrectionFrameCancelButton"
+		"ScrollOfResurrectionFrameCancelButton",
+		"PendingListInfoFrameContinueButton"
 	}
 
 	for _, button in pairs(buttons) do
@@ -128,6 +129,7 @@ local function LoadSkin()
 	FriendsFriendsFrame:SetTemplate("Transparent")
 	FriendsFriendsNoteFrame:SetTemplate("Overlay")
 	FriendsFriendsList:SetTemplate("Overlay")
+	PendingListInfoFrame:SetTemplate("Overlay")
 
 	-- Who Frame
 	local function UpdateWhoSkins()
