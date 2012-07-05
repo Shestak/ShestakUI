@@ -13,6 +13,7 @@ local Page = {
 	["DRUID"] = "[bonusbar:1,nostealth] 7; [bonusbar:1,stealth] 8; [bonusbar:2] 8; [bonusbar:3] 9; [bonusbar:4] 10;",
 	["WARRIOR"] = "[bonusbar:1] 7; [bonusbar:2] 8; [bonusbar:3] 9;",
 	["PRIEST"] = "[bonusbar:1] 7;",
+	["MONK"] = "[bonusbar:1] 7;",
 	["ROGUE"] = "[bonusbar:1] 7; [form:3] 7;",
 	["WARLOCK"] = "[form:2] 10;",
 	["DEFAULT"] = "[vehicleui:12] 12; [bar:2] 2; [bar:3] 3; [bar:4] 4; [bar:5] 5; [bar:6] 6;",
@@ -71,8 +72,6 @@ bar:SetScript("OnEvent", function(self, event, ...)
 				button:Point("LEFT", previous, "RIGHT", T.buttonspacing, 0)
 			end
 		end
-	elseif event == "ACTIVE_TALENT_GROUP_CHANGED" then
-		LoadAddOn("Blizzard_GlyphUI")
 	else
 		MainMenuBar_OnEvent(self, event, ...)
 	end
