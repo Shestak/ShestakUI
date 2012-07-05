@@ -61,7 +61,7 @@ if T.class == "WARLOCK" then
 	end
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
-		-- Healer spells
+		-- Healing spells
 		ct.aoespam[774] = true		-- Rejuvenation (Normal)
 		ct.aoespam[64801] = true	-- Rejuvenation (First tick)
 		ct.aoespam[48438] = true	-- Wild Growth
@@ -69,7 +69,7 @@ elseif T.class == "DRUID" then
 		ct.aoespam[33763] = true	-- Lifebloom
 		ct.aoespam[44203] = true	-- Tranquility
 		ct.aoespam[81269] = true	-- Efflorescence
-		-- Damager spells
+		-- Damaging spells
 		ct.aoespam[8921] = true		-- Moonfire
 		ct.aoespam[93402] = true	-- Sunfire
 		ct.aoespam[5570] = true		-- Insect Swarm
@@ -85,7 +85,6 @@ elseif T.class == "DRUID" then
 		ct.aoespam[33745] = true	-- Lacerate
 		ct.aoespam[1079] = true		-- Rip
 		-- Item spells
-		ct.aoespam[105996] = true	-- Essence of Dreams
 		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
 		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
 		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
@@ -98,14 +97,14 @@ elseif T.class == "DRUID" then
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
-		-- Healer spells
+		-- Healing spells
 		ct.aoespam[20167] = true	-- Seal of Insight (Heal Effect)
 		ct.aoespam[94289] = true	-- Protector of the Innocent
 		ct.aoespam[53652] = true	-- Beacon of Light
 		ct.aoespam[85222] = true	-- Light of Dawn
 		ct.aoespam[82327] = true	-- Holy Radiance
-		ct.aoespam[86452] = true	-- Holy Radiance (Hot)
-		-- Damager spells
+		ct.aoespam[20473] = true	-- Holy Shock
+		-- Damaging spells
 		ct.aoespam[81297] = true	-- Consecration
 		ct.aoespam[119072] = true	-- Holy Wrath
 		ct.aoespam[53385] = true	-- Divine Storm
@@ -117,7 +116,6 @@ elseif T.class == "PALADIN" then
 		ct.aoespam[31935] = true	-- Avenger's Shield
 		ct.aoespam[96172] = true	-- Hand of Light (Mastery)
 		-- Item spells
-		ct.aoespam[105996] = true	-- Essence of Dreams
 		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
 		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
 		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
@@ -128,7 +126,7 @@ elseif T.class == "PALADIN" then
 	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
-		-- Healer spells
+		-- Healing spells
 		ct.aoespam[47750] = true	-- Penance (Heal Effect)
 		ct.aoespam[139] = true		-- Renew
 		ct.aoespam[596] = true		-- Prayer of Healing
@@ -142,7 +140,7 @@ elseif T.class == "PRIEST" then
 		ct.aoespam[63544] = true	-- Divine Touch
 		ct.aoespam[81751] = true	-- Atonement (Non-crit)
 		ct.aoespam[94472] = true	-- Atonement (Crit)
-		-- Damager spells
+		-- Damaging spells
 		ct.aoespam[47666] = true	-- Penance (Damage Effect)
 		ct.aoespam[15237] = true	-- Holy Nova (Damage Effect)
 		ct.aoespam[589] = true		-- Shadow Word: Pain
@@ -154,7 +152,6 @@ elseif T.class == "PRIEST" then
 		ct.aoespam[87532] = true	-- Shadowy Apparition
 		ct.aoespam[14914] = true	-- Holy Fire
 		-- Item spells
-		ct.aoespam[105996] = true	-- Essence of Dreams
 		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
 		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
 		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
@@ -171,13 +168,13 @@ elseif T.class == "PRIEST" then
 	end
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
-		-- Healer spells
+		-- Healing spells
 		ct.aoespam[73921] = true	-- Healing Rain
 		ct.aoespam[52042] = true	-- Healing Stream Totem
 		ct.aoespam[1064] = true		-- Chain Heal
 		ct.aoespam[51945] = true	-- Earthliving
 		ct.aoespam[61295] = true	-- Riptide (HoT and instant heal)
-		-- Damager spells
+		-- Damaging spells
 		ct.aoespam[421] = true		-- Chain Lightning
 		ct.aoespam[45297] = true	-- Chain Lightning (Mastery proc)
 		ct.aoespam[8349] = true		-- Fire Nova
@@ -187,7 +184,6 @@ elseif T.class == "SHAMAN" then
 		ct.aoespam[8050] = true		-- Flame Shock
 		ct.aoespam[25504] = true	-- Windfury
 		-- Item spells
-		ct.aoespam[105996] = true	-- Essence of Dreams
 		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
 		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
 		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
@@ -301,28 +297,24 @@ elseif T.class == "ROGUE" then
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
-		-- Healer spells
+		-- Healing spells
 		ct.aoespam[115175] = true	-- Soothing Mist
-		-- Damager spells
+		-- Damaging spells
 		ct.aoespam[117952] = true	-- Crackling Jade Lightning
 		ct.aoespam[107270] = true	-- Spinning Crane Kick
 		ct.aoespam[117418] = true	-- Fists of Fury
 		-- Item spells
-		ct.aoespam[105996] = true	-- Essence of Dreams
 		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
 		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
 		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
-		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
-		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
-		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
-		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
-		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
-		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
 	end
 end
 
 if C.combattext.merge_aoe_spam then
-	-- Dragon Soul - The Madness of Deathwing
+	-- Dragon Soul
+	-- Ultraxion
+	ct.aoespam[105996] = true	-- Essence of Dreams
+	-- The Madness of Deathwing
 	ct.aoespam[109609] = true	-- Spellweave
 	ct.aoespam[109610] = true	-- Spellweave
 	ct.aoespam[106043] = true	-- Spellweave
