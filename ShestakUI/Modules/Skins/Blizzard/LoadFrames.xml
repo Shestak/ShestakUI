@@ -15,7 +15,7 @@
 	<Script file="DressUp.lua"/>
 	<Script file="FrameStack.lua"/>
 	<Script file="Friends.lua"/>
-	<!--<Script file="Glyph.lua"/>-->
+	<Script file="Glyph.lua"/>
 	<Script file="Gossip.lua"/>
 	<Script file="Greeting.lua"/>
 	<Script file="Guild.lua"/>
@@ -39,7 +39,7 @@
 	<!--<Script file="MinimapButtons.lua"/>-->
 	<Script file="MissingLoot.lua"/>
 	<Script file="Options.lua"/>
-	<!--<Script file="Petition.lua"/>-->
+	<Script file="Petition.lua"/>
 	<Script file="PetStable.lua"/>
 	<Script file="PvP.lua"/>
 	<Script file="Quest.lua"/>
@@ -49,7 +49,7 @@
 	<Script file="Reforging.lua"/>
 	<Script file="SpellBook.lua"/>
 	<Script file="Tabard.lua"/>
-	<!--<Script file="Talent.lua"/>-->
+	<Script file="Talent.lua"/>
 	<Script file="Taxi.lua"/>
 	<Script file="TimeManager.lua"/>
 	<Script file="Trade.lua"/>
