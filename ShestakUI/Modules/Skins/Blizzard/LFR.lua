@@ -24,9 +24,6 @@ local function LoadSkin()
 
 	LFRBrowseFrame:StripTextures()
 	LFRBrowseFrameRoleInset:StripTextures()
-	LFRBrowseFrameRoleInset:CreateBackdrop("Overlay")
-	LFRBrowseFrameRoleInset.backdrop:Point("TOPLEFT", 5, 0)
-	LFRBrowseFrameRoleInset.backdrop:Point("BOTTOMRIGHT", -5, 3)
 
 	LFRQueueFrameFindGroupButton:Point("BOTTOMLEFT", RaidBrowserFrame, "BOTTOMLEFT", 9, 4)
 	LFRQueueFrameAcceptCommentButton:Point("BOTTOMRIGHT", RaidBrowserFrame, "BOTTOMRIGHT", -9, 4)
