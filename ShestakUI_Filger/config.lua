@@ -2386,6 +2386,11 @@ Filger_Spells = {
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
 			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster General
+			-- PvP Trinkets (Spell Power, Use)
+			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Spell Power, Proc)
+			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2396,6 +2401,12 @@ Filger_Spells = {
 			-- Swordguard Embroidery (AP)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
+			-- Caster General
+			-- Jade Spirit (Intellect + Spirit)
+			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster Heal
+			-- Darkglow Embroidery (Spirit)
+			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
@@ -2421,7 +2432,29 @@ Filger_Spells = {
 			-- Self
 
 			-- Racials
-
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Shadowmeld (Night Elf)
+			{spellID = 58984, filter = "CD"},
+			-- Escape Artist (Gnome)
+			{spellID = 20589, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			
 			-- Other
 			-- Gloves
 			{slotID = 10, filter = "CD"},
