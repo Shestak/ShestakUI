@@ -401,6 +401,10 @@ SlashCmdList.TEST_ACHIEVEMENT = function()
 	AchievementAlertFrame_ShowAlert(5780)
 	AchievementAlertFrame_ShowAlert(5000)
 	GuildChallengeAlertFrame_ShowAlert(3, 2, 5)
+	ChallengeModeAlertFrame_ShowAlert()
+	--ScenarioAlertFrame_ShowAlert()
+	--CriteriaAlertFrame_ShowAlert(achievementID, criteriaID)
+	--LootWonAlertFrame_ShowAlert(itemLink, quantity, rollType, roll)
 end
 SLASH_TEST_ACHIEVEMENT1 = "/tach"
 SLASH_TEST_ACHIEVEMENT2 = "/ефср"

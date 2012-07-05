@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Tutorial skin
+--	AlertFrames skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local function SkinAchievePopUp()
@@ -52,7 +52,7 @@ local function LoadSkin()
 			end
 		end
 	end
-	hooksecurefunc("AchievementAlertFrame_FixAnchors", SkinAchievePopUp)
+	hooksecurefunc("AlertFrame_SetAchievementAnchors", SkinAchievePopUp)
 
 	function SkinDungeonPopUp()
 		for i = 1, DUNGEON_COMPLETION_MAX_REWARDS do
@@ -98,9 +98,9 @@ local function LoadSkin()
 			end
 		end
 	end
-	hooksecurefunc("DungeonCompletionAlertFrame_FixAnchors", SkinDungeonPopUp)
+	hooksecurefunc("AlertFrame_SetDungeonCompletionAnchors", SkinDungeonPopUp)
 
-	function SkinChallengePopUp()
+	function SkinGuildChallengePopUp()
 		local frame = _G["GuildChallengeAlertFrame"]
 
 		if frame then
@@ -137,7 +137,97 @@ local function LoadSkin()
 			SetLargeGuildTabardTextures("player", GuildChallengeAlertFrameEmblemIcon, nil, nil)
 		end
 	end
-	hooksecurefunc("GuildChallengeAlertFrame_FixAnchors", SkinChallengePopUp)
+	hooksecurefunc("AlertFrame_SetGuildChallengeAnchors", SkinGuildChallengePopUp)
+
+	function SkinChallengePopUp()
+		local frame = _G["ChallengeModeAlertFrame1"]
+
+		if frame then
+			frame:SetAlpha(1)
+			frame.SetAlpha = T.dummy
+
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", 19, -6)
+				frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -22, 6)
+			end
+
+			-- Background
+			for i = 1, frame:GetNumRegions() do
+				local region = select(i, frame:GetRegions())
+				if region:GetObjectType() == "Texture" then
+					if region:GetTexture() == "Interface\\Challenges\\challenges-main" then
+						region:Kill()
+					end
+				end
+			end
+
+			_G["ChallengeModeAlertFrame1Shine"]:Kill()
+			_G["ChallengeModeAlertFrame1GlowFrame"]:Kill()
+			_G["ChallengeModeAlertFrame1GlowFrame"].glow:Kill()
+			_G["ChallengeModeAlertFrame1Border"]:Kill()
+
+			-- Icon
+			_G["ChallengeModeAlertFrame1DungeonTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			_G["ChallengeModeAlertFrame1DungeonTexture"]:ClearAllPoints()
+			_G["ChallengeModeAlertFrame1DungeonTexture"]:Point("LEFT", frame.backdrop, 9, 0)
+
+			-- Icon border
+			if not _G["ChallengeModeAlertFrame1DungeonTexture"].b then
+				_G["ChallengeModeAlertFrame1DungeonTexture"].b = CreateFrame("Frame", nil, _G["ChallengeModeAlertFrame1"])
+				_G["ChallengeModeAlertFrame1DungeonTexture"].b:SetFrameLevel(0)
+				_G["ChallengeModeAlertFrame1DungeonTexture"].b:SetTemplate("Default")
+				_G["ChallengeModeAlertFrame1DungeonTexture"].b:Point("TOPLEFT", _G["ChallengeModeAlertFrame1DungeonTexture"], "TOPLEFT", -2, 2)
+				_G["ChallengeModeAlertFrame1DungeonTexture"].b:Point("BOTTOMRIGHT", _G["ChallengeModeAlertFrame1DungeonTexture"], "BOTTOMRIGHT", 2, -2)
+			end
+		end
+	end
+	hooksecurefunc("AlertFrame_SetChallengeModeAnchors", SkinChallengePopUp)
+
+	function SkinScenarioPopUp()
+		local frame = _G["ScenarioAlertFrame1"]
+
+		if frame then
+			frame:SetAlpha(1)
+			frame.SetAlpha = T.dummy
+
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", 4, 4)
+				frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -7, 6)
+			end
+
+			-- Background
+			for i = 1, frame:GetNumRegions() do
+				local region = select(i, frame:GetRegions())
+				if region:GetObjectType() == "Texture" then
+					if region:GetTexture() == "Interface\\Scenarios\\ScenariosParts" then
+						region:Kill()
+					end
+				end
+			end
+
+			_G["ScenarioAlertFrame1Shine"]:Kill()
+			_G["ScenarioAlertFrame1GlowFrame"]:Kill()
+			_G["ScenarioAlertFrame1GlowFrame"].glow:Kill()
+			--_G["ScenarioAlertFrame1Border"]:Kill()
+
+			-- Icon
+			_G["ScenarioAlertFrame1DungeonTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			_G["ScenarioAlertFrame1DungeonTexture"]:ClearAllPoints()
+			_G["ScenarioAlertFrame1DungeonTexture"]:Point("LEFT", frame.backdrop, 9, 0)
+
+			-- Icon border
+			if not _G["ScenarioAlertFrame1DungeonTexture"].b then
+				_G["ScenarioAlertFrame1DungeonTexture"].b = CreateFrame("Frame", nil, _G["ScenarioAlertFrame1"])
+				_G["ScenarioAlertFrame1DungeonTexture"].b:SetFrameLevel(0)
+				_G["ScenarioAlertFrame1DungeonTexture"].b:SetTemplate("Default")
+				_G["ScenarioAlertFrame1DungeonTexture"].b:Point("TOPLEFT", _G["ScenarioAlertFrame1DungeonTexture"], "TOPLEFT", -2, 2)
+				_G["ScenarioAlertFrame1DungeonTexture"].b:Point("BOTTOMRIGHT", _G["ScenarioAlertFrame1DungeonTexture"], "BOTTOMRIGHT", 2, -2)
+			end
+		end
+	end
+	hooksecurefunc("AlertFrame_SetScenarioAnchors", SkinScenarioPopUp)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

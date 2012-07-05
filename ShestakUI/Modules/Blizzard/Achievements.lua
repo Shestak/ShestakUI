@@ -33,57 +33,98 @@ function T.AchievementMove(self, event, ...)
 		end
 	end
 end
-hooksecurefunc("AchievementAlertFrame_FixAnchors", T.AchievementMove)
+hooksecurefunc("AlertFrame_SetAchievementAnchors", T.AchievementMove)
 
-hooksecurefunc("DungeonCompletionAlertFrame_FixAnchors", function()
+hooksecurefunc("AlertFrame_SetDungeonCompletionAnchors", function()
 	for i = MAX_ACHIEVEMENT_ALERTS, 1, -1 do
 		local aFrame = _G["AchievementAlertFrame"..i]
+		local dFrame = _G["DungeonCompletionAlertFrame1"]
+
+		dFrame:ClearAllPoints()
 		if aFrame and aFrame:IsShown() then
-			DungeonCompletionAlertFrame1:ClearAllPoints()
+			dFrame:ClearAllPoints()
 			if pos == "TOP" then
-				DungeonCompletionAlertFrame1:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
+				dFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
 			else
-				DungeonCompletionAlertFrame1:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+				dFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
 			end
 			return
-		end
-
-		DungeonCompletionAlertFrame1:ClearAllPoints()
-		if pos == "TOP" then
-			DungeonCompletionAlertFrame1:SetPoint("TOP", AchievementAnchor, "TOP")
 		else
-			DungeonCompletionAlertFrame1:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+			if pos == "TOP" then
+				dFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+			else
+				dFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+			end
 		end
 	end
 end)
 
-hooksecurefunc("GuildChallengeAlertFrame_FixAnchors", function()
+hooksecurefunc("AlertFrame_SetGuildChallengeAnchors", function()
 	for i = MAX_ACHIEVEMENT_ALERTS, 1, -1 do
 		local aFrame = _G["AchievementAlertFrame"..i]
 		local dFrame = _G["DungeonCompletionAlertFrame1"]
-		if (aFrame and aFrame:IsShown()) and not (dFrame and dFrame:IsShown()) then
-			GuildChallengeAlertFrame:ClearAllPoints()
+		local cFrame = _G["GuildChallengeAlertFrame"]
+
+		cFrame:ClearAllPoints()
+		if dFrame and dFrame:IsShown() then
 			if pos == "TOP" then
-				GuildChallengeAlertFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
+				cFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
 			else
-				GuildChallengeAlertFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+				cFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -3)
+			end
+			return
+		elseif aFrame and aFrame:IsShown() then
+			if pos == "TOP" then
+				cFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
+			else
+				cFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+			end
+			return
+		else
+			if pos == "TOP" then
+				cFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+			else
+				cFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+			end
+		end
+	end
+end)
+
+hooksecurefunc("AlertFrame_SetChallengeModeAnchors", function()
+	for i = MAX_ACHIEVEMENT_ALERTS, 1, -1 do
+		local aFrame = _G["AchievementAlertFrame"..i]
+		local dFrame = _G["DungeonCompletionAlertFrame1"]
+		local cFrame = _G["GuildChallengeAlertFrame"]
+		local cmFrame = _G["ChallengeModeAlertFrame1"]
+
+		cmFrame:ClearAllPoints()
+		if cFrame and cFrame:IsShown() then
+			if pos == "TOP" then
+				cmFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
+			else
+				cmFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -3)
 			end
 			return
 		elseif dFrame and dFrame:IsShown() then
-			GuildChallengeAlertFrame:ClearAllPoints()
 			if pos == "TOP" then
-				GuildChallengeAlertFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
+				cmFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
 			else
-				GuildChallengeAlertFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -3)
+				cmFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -3)
 			end
 			return
-		end
-
-		GuildChallengeAlertFrame:ClearAllPoints()
-		if pos == "TOP" then
-			GuildChallengeAlertFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+		elseif aFrame and aFrame:IsShown() then
+			if pos == "TOP" then
+				cmFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
+			else
+				cmFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+			end
+			return
 		else
-			GuildChallengeAlertFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+			if pos == "TOP" then
+				cmFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+			else
+				cmFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+			end
 		end
 	end
 end)

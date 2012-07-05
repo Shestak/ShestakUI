@@ -54,7 +54,7 @@
 	<Script file="Modules\Blizzard\MirrorBars.lua"/>
 	<Script file="Modules\Blizzard\Symbols.lua"/>
 	<Script file="Modules\Blizzard\Errors.lua"/>
-	<!--<Script file="Modules\Blizzard\Achievements.lua"/>-->
+	<Script file="Modules\Blizzard\Achievements.lua"/>
 	<Script file="Modules\Blizzard\Durability.lua"/>
 	<Script file="Modules\Blizzard\Mail.lua"/>
 	<Script file="Modules\Blizzard\FriendList.lua"/>
