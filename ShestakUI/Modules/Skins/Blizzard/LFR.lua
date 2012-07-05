@@ -11,41 +11,36 @@ local function LoadSkin()
 		"LFRBrowseFrameSendMessageButton",
 		"LFRBrowseFrameInviteButton",
 		"LFRBrowseFrameRefreshButton",
-		"LFRQueueFrameNoLFRWhileLFDLeaveQueueButton"
 	}
-
-	LFRParentFrame:StripTextures()
-	LFRQueueFrameNoLFRWhileLFD:StripTextures()
-	LFRQueueFrameNoLFRWhileLFD:CreateBackdrop("Overlay")
-	LFRQueueFrameNoLFRWhileLFD.backdrop:Point("TOPLEFT", 5, 0)
-	LFRQueueFrameNoLFRWhileLFD.backdrop:Point("BOTTOMRIGHT", -2, -3)
-	LFRQueueFrame:StripTextures()
-	LFRBrowseFrame:StripTextures()
 
 	for i = 1, #buttons do
 		_G[buttons[i]]:SkinButton()
 	end
 
-	LFRQueueFrameFindGroupButton:Point("BOTTOMLEFT", LFRParentFrame, "BOTTOMLEFT", 9, 4)
-	LFRQueueFrameAcceptCommentButton:Point("BOTTOMRIGHT", LFRParentFrame, "BOTTOMRIGHT", -9, 4)
+	RaidBrowserFrame:StripTextures()
+	RaidBrowserFrame:CreateBackdrop("Transparent")
+	RaidBrowserFrame.backdrop:Point("TOPLEFT", 0, 0)
+	RaidBrowserFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
 
-	-- Close button
-	for i = 1, LFRParentFrame:GetNumChildren() do
-		local child = select(i, LFRParentFrame:GetChildren())
-		if child.GetPushedTexture and child:GetPushedTexture() and not child:GetName() then
-			T.SkinCloseButton(child, LFRParentFrame.backdrop)
-		end
-	end
+	LFRBrowseFrame:StripTextures()
+	LFRBrowseFrameRoleInset:StripTextures()
+	LFRBrowseFrameRoleInset:CreateBackdrop("Overlay")
+	LFRBrowseFrameRoleInset.backdrop:Point("TOPLEFT", 5, 0)
+	LFRBrowseFrameRoleInset.backdrop:Point("BOTTOMRIGHT", -5, 3)
 
-	T.SkinTab(LFRParentFrameTab1)
-	T.SkinTab(LFRParentFrameTab2)
+	LFRQueueFrameFindGroupButton:Point("BOTTOMLEFT", RaidBrowserFrame, "BOTTOMLEFT", 9, 4)
+	LFRQueueFrameAcceptCommentButton:Point("BOTTOMRIGHT", RaidBrowserFrame, "BOTTOMRIGHT", -9, 4)
+	LFRBrowseFrameSendMessageButton:Point("BOTTOMLEFT", LFRBrowseFrame, "BOTTOMLEFT", 9, 4)
+	LFRBrowseFrameRefreshButton:Point("BOTTOMRIGHT", LFRBrowseFrame, "BOTTOMRIGHT", -9, 4)
+
+	T.SkinCloseButton(RaidBrowserFrameCloseButton)
 
 	T.SkinDropDownBox(LFRBrowseFrameRaidDropDown)
 	LFRQueueFrameSpecificListScrollFrame:StripTextures()
 
 	LFRQueueFrameCommentTextButton:CreateBackdrop("Overlay")
 	LFRQueueFrameCommentTextButton.backdrop:Point("TOPLEFT", -4, 2)
-	LFRQueueFrameCommentTextButton.backdrop:Point("BOTTOMRIGHT", 3, 2)
+	LFRQueueFrameCommentTextButton.backdrop:Point("BOTTOMRIGHT", 15, 2)
 
 	for i = 1, 7 do
 		local button = "LFRBrowseFrameColumnHeader"..i
@@ -59,6 +54,7 @@ local function LoadSkin()
 		T.SkinCheckBox(button.enableButton)
 	end
 
+	T.SkinCheckBox(RaidFrameAllAssistCheckButton)
 	T.SkinCheckBox(LFRQueueFrameRoleButtonTank:GetChildren())
 	T.SkinCheckBox(LFRQueueFrameRoleButtonHealer:GetChildren())
 	T.SkinCheckBox(LFRQueueFrameRoleButtonDPS:GetChildren())
@@ -68,21 +64,19 @@ local function LoadSkin()
 
 	for i = 1, 2 do
 		local tab = _G["LFRParentFrameSideTab"..i]
-		if tab then
-			local icon = tab:GetNormalTexture():GetTexture()
+		local icon = select(2, tab:GetRegions())
 
-			tab:StripTextures()
-			tab:SetNormalTexture(icon)
-			tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			tab:GetNormalTexture():ClearAllPoints()
-			tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
-			tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+		tab:GetRegions():Hide()
+		tab:CreateBackdrop("Default")
+		tab.backdrop:SetAllPoints()
+		tab:StyleButton(true)
 
-			tab:CreateBackdrop("Default")
-			tab.backdrop:SetAllPoints()
-			tab:StyleButton(true)
-		end
-		LFRParentFrameSideTab1:Point("TOPLEFT", FriendsFrame, "TOPRIGHT", 1, 0)
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:ClearAllPoints()
+		icon:Point("TOPLEFT", 2, -2)
+		icon:Point("BOTTOMRIGHT", -2, 2)
+
+		LFRParentFrameSideTab1:Point("TOPLEFT", RaidBrowserFrame, "TOPRIGHT", 1, 0)
 	end
 end
 

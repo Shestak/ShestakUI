@@ -31,7 +31,7 @@
 	<!--<Script file="Journal.lua"/>
 	<Script file="LFD.lua"/>-->
 	<Script file="LFG.lua"/>
-	<!--<Script file="LFR.lua"/>-->
+	<Script file="LFR.lua"/>
 	<Script file="MacClient.lua"/>
 	<Script file="Macro.lua"/>
 	<Script file="Mail.lua"/>
