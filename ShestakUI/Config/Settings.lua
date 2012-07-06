@@ -368,7 +368,6 @@ C["unitframe"] = {
 	["icons_pvp"] = false,						-- Mouseover pvp text(not icons) on player and target frames
 	["icons_combat"] = true,					-- Combat icon
 	["icons_resting"] = true,					-- Resting icon for low lvl chars
-	["icons_combo_point"] = true,				-- Rogue|Druid combo point icons
 	-- Portraits
 	["portrait_enable"] = false,				-- Enable player/target portraits
 	["portrait_classcolor_border"] = true,		-- Enable classcolor border
@@ -377,14 +376,7 @@ C["unitframe"] = {
 	-- Plugins
 	["plugins_gcd"] = false,					-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar
-	["plugins_eclipse_bar"] = true,				-- Elipse bar
-	["plugins_holy_bar"] = true,				-- Holy bar
-	["plugins_shard_bar"] = true,				-- Shard bar
-	["plugins_rune_bar"] = true,				-- Rune bar
 	["plugins_necro_strike"] = false,			-- Necrotic Strike bar
-	["plugins_vengeance_bar"] = true,			-- Vengeance bar
-	["plugins_totem_bar"] = true,				-- Totem bar
-	["plugins_totem_bar_name"] = false,			-- Totem name
 	["plugins_reputation_bar"] = false,			-- Reputation bar
 	["plugins_experience_bar"] = false,			-- Experience bar
 	["plugins_smooth_bar"] = false,				-- Smooth bar
@@ -392,6 +384,17 @@ C["unitframe"] = {
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
 	["plugins_fader"] = false,					-- Fade unit frames
 	["plugins_diminishing"] = false,			-- Diminishing Returns icons on arena frames
+	-- Class bars
+	["plugins_combo_bar"] = true,				-- Rogue/Druid Combo bar
+	["plugins_shadow_bar"] = true,				-- Shadow Orbs bar
+	["plugins_chi_bar"] = true,					-- Chi bar
+	["plugins_vengeance_bar"] = true,			-- Vengeance bar
+	["plugins_eclipse_bar"] = true,				-- Eclipse bar
+	["plugins_holy_bar"] = true,				-- Holy Power bar
+	["plugins_shard_bar"] = true,				-- Shard/Burning bar
+	["plugins_rune_bar"] = true,				-- Rune bar
+	["plugins_totem_bar"] = true,				-- Totem bar
+	["plugins_totem_bar_name"] = false,			-- Totem name
 }
 
 ----------------------------------------------------------------------------------------

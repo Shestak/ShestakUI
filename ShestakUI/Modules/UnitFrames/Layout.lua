@@ -296,8 +296,8 @@ local function Shared(self, unit)
 			end
 		end
 
-		-- Harmony bar
-		if T.class == "MONK" then
+		-- Chi bar
+		if C.unitframe.plugins_chi_bar == true and T.class == "MONK" then
 			self.HarmonyBar = CreateFrame("Frame", nil, self)
 			self.HarmonyBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.HarmonyBar:Size(217, 7)
@@ -324,8 +324,8 @@ local function Shared(self, unit)
 			end
 		end
 
-		-- ShadowOrbs bar
-		if T.class == "PRIEST" then
+		-- Shadow Orbs bar
+		if C.unitframe.plugins_shadow_bar == true and T.class == "PRIEST" then
 			self.ShadowOrbsBar = CreateFrame("Frame", nil, self)
 			self.ShadowOrbsBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.ShadowOrbsBar:Size(217, 7)
@@ -352,7 +352,7 @@ local function Shared(self, unit)
 			end
 		end
 
-		-- HolyPower bar
+		-- Holy Power bar
 		if C.unitframe.plugins_holy_bar == true and T.class == "PALADIN" then
 			self.HolyPower = CreateFrame("Frame", nil, self)
 			self.HolyPower:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -382,7 +382,7 @@ local function Shared(self, unit)
 			self.HolyPower.Override = T.UpdateHoly
 		end
 
-		-- Shard bar
+		-- Shard/Burning bar
 		if C.unitframe.plugins_shard_bar == true and T.class == "WARLOCK" then
 			self.WarlockSpecBars = CreateFrame("Frame", nil, self)
 			self.WarlockSpecBars:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -449,12 +449,13 @@ local function Shared(self, unit)
 			end
 		end
 
-		-- Druid mana
 		if T.class == "DRUID" then
+			-- Druid mana
 			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateDruidMana(self) end)
 			self.DruidMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.DruidMana:SetTextColor(1, 0.49, 0.04)
 
+			-- Eclipse bar
 			if C.unitframe.plugins_eclipse_bar == true then
 				self.EclipseBar = CreateFrame("Frame", nil, self)
 				self.EclipseBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -704,7 +705,8 @@ local function Shared(self, unit)
 			self.Auras.PostCreateIcon = T.PostCreateAura
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
-			if C.unitframe.icons_combo_point == true then
+			-- Rogue/Druid Combo bar
+			if C.unitframe.plugins_combo_bar == true then
 				self.CPoints = CreateFrame("Frame", nil, self)
 				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.CPoints:Size(217, 7)
