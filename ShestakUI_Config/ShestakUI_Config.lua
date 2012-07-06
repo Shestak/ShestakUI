@@ -312,21 +312,13 @@ local function Local(o)
 	if o == "UIConfigunitframeicons_pvp" then o = L_GUI_UF_ICONS_PVP end
 	if o == "UIConfigunitframeicons_combat" then o = L_GUI_UF_ICONS_COMBAT end
 	if o == "UIConfigunitframeicons_resting" then o = L_GUI_UF_ICONS_RESTING end
-	if o == "UIConfigunitframeicons_combo_point" then o = L_GUI_UF_ICONS_COMBO_POINT end
 	if o == "UIConfigunitframeportrait_enable" then o = L_GUI_UF_PORTRAIT_ENABLE end
 	if o == "UIConfigunitframeportrait_classcolor_border" then o = L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER end
 	if o == "UIConfigunitframeportrait_height" then o = L_GUI_UF_PORTRAIT_HEIGHT end
 	if o == "UIConfigunitframeportrait_width" then o = L_GUI_UF_PORTRAIT_WIDTH end
 	if o == "UIConfigunitframeplugins_gcd" then o = L_GUI_UF_PLUGINS_GCD end
 	if o == "UIConfigunitframeplugins_swing" then o = L_GUI_UF_PLUGINS_SWING end
-	if o == "UIConfigunitframeplugins_eclipse_bar" then o = L_GUI_UF_PLUGINS_ECLIPSE_BAR end
-	if o == "UIConfigunitframeplugins_holy_bar" then o = L_GUI_UF_PLUGINS_HOLY_BAR end
-	if o == "UIConfigunitframeplugins_shard_bar" then o = L_GUI_UF_PLUGINS_SHARD_BAR end
-	if o == "UIConfigunitframeplugins_rune_bar" then o = L_GUI_UF_PLUGINS_RUNE_BAR end
 	if o == "UIConfigunitframeplugins_necro_strike" then o = L_GUI_UF_PLUGINS_NECRO_STRIKE end
-	if o == "UIConfigunitframeplugins_vengeance_bar" then o = L_GUI_UF_PLUGINS_VENGEANCE_BAR end
-	if o == "UIConfigunitframeplugins_totem_bar" then o = L_GUI_UF_PLUGINS_TOTEM_BAR end
-	if o == "UIConfigunitframeplugins_totem_bar_name" then o = L_GUI_UF_PLUGINS_TOTEM_BAR_NAME end
 	if o == "UIConfigunitframeplugins_reputation_bar" then o = L_GUI_UF_PLUGINS_REPUTATION_BAR end
 	if o == "UIConfigunitframeplugins_experience_bar" then o = L_GUI_UF_PLUGINS_EXPERIENCE_BAR end
 	if o == "UIConfigunitframeplugins_smooth_bar" then o = L_GUI_UF_PLUGINS_SMOOTH_BAR end
@@ -334,6 +326,18 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_combat_feedback" then o = L_GUI_UF_PLUGINS_COMBAT_FEEDBACK end
 	if o == "UIConfigunitframeplugins_fader" then o = L_GUI_UF_PLUGINS_FADER end
 	if o == "UIConfigunitframeplugins_diminishing" then o = L_GUI_UF_PLUGINS_DIMINISHING end
+
+	-- Unit Frames Class bar options
+	if o == "UIConfigunitframeplugins_combo_bar" then o = L_GUI_UF_PLUGINS_COMBO_BAR end
+	if o == "UIConfigunitframeplugins_shadow_bar" then o = L_GUI_UF_PLUGINS_SHADOW_BAR end
+	if o == "UIConfigunitframeplugins_chi_bar" then o = L_GUI_UF_PLUGINS_CHI_BAR end
+	if o == "UIConfigunitframeplugins_vengeance_bar" then o = L_GUI_UF_PLUGINS_VENGEANCE_BAR end
+	if o == "UIConfigunitframeplugins_eclipse_bar" then o = L_GUI_UF_PLUGINS_ECLIPSE_BAR end
+	if o == "UIConfigunitframeplugins_holy_bar" then o = L_GUI_UF_PLUGINS_HOLY_BAR end
+	if o == "UIConfigunitframeplugins_shard_bar" then o = L_GUI_UF_PLUGINS_SHARD_BAR end
+	if o == "UIConfigunitframeplugins_rune_bar" then o = L_GUI_UF_PLUGINS_RUNE_BAR end
+	if o == "UIConfigunitframeplugins_totem_bar" then o = L_GUI_UF_PLUGINS_TOTEM_BAR end
+	if o == "UIConfigunitframeplugins_totem_bar_name" then o = L_GUI_UF_PLUGINS_TOTEM_BAR_NAME end
 
 	-- Raid Frames options
 	if o == "UIConfigraidframe" then o = RAID_FRAMES_LABEL end
