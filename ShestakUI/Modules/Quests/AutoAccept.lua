@@ -109,7 +109,7 @@ Monomyth:Register("QUEST_DETAIL", function()
 	if QuestGetAutoAccept() then
 		if GossipFrame:IsShown() then
 			HideUIPanel(GossipFrame)
-			CloseQuest()
+			--CloseQuest()
 		else
 			CloseQuest()
 		end
@@ -137,8 +137,10 @@ end)
 local completing
 Monomyth:Register("QUEST_COMPLETE", function()
 	local choices = GetNumQuestChoices()
-	if choices <= 1 then
+	if choices < 1 then
 		GetQuestReward(QuestFrameRewardPanel.itemChoice)
+	elseif choices == 1 then
+		GetQuestReward(1)
 	elseif choices > 1 then
 		local bestValue, bestIndex = 0
 
