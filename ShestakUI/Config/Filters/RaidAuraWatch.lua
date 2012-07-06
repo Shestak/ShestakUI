@@ -26,10 +26,13 @@ if C.raidframe.plugins_aura_watch == true then
 			},
 			PALADIN = {
 				{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Beacon of Light
+				{20925, "TOPLEFT", {0.9, 0.9, 0.1}},			-- Sacred Shield
+				{114163, "TOPLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
 				{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},		-- Hand of Protection
 				{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},	-- Hand of Freedom
 				{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},	-- Hand of Salvation
 				{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},	-- Hand of Sacrifice
+				{114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},	-- Hand of Purity
 			},
 			SHAMAN = {
 				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Riptide 
@@ -47,7 +50,7 @@ if C.raidframe.plugins_aura_watch == true then
 				--MOP{54646, "TOPRIGHT", {0.2, 0.2, 1}},				-- Focus Magic
 			},
 			WARRIOR = {
-				--MOP{59665, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
+				{114030, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
 				{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Intervene
 			},
 			HUNTER = {
@@ -55,7 +58,6 @@ if C.raidframe.plugins_aura_watch == true then
 			},
 			WARLOCK = {
 				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone Resurrection
-				--MOP{85767, "TOPLEFT", {0.93, 0.75, 0}},			-- Dark Intent
 			},
 			MONK = {
 				
@@ -275,6 +277,7 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Death Knight
 			--[[SpellName(51209),	-- Hungering Cold
 			SpellName(47476),	-- Strangulate
+			SpellName(108194),	-- Asphyxiate
 			-- Druid
 			SpellName(33786),	-- Cyclone
 			SpellName(2637),	-- Hibernate
@@ -295,6 +298,7 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Paladin
 			SpellName(20066),	-- Repentance
 			SpellName(853),		-- Hammer of Justice
+			SpellName(105593),	-- Fist of Justice
 			-- Priest
 			SpellName(605),		-- Mind Control
 			SpellName(64044),	-- Psychic Horror
