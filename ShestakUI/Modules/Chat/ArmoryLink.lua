@@ -29,7 +29,7 @@ else
 end
 
 StaticPopupDialogs.LINK_COPY_DIALOG = {
-	text = DUNGEON_FLOOR_SCARLETMONASTERY3,
+	text = L_POPUP_ARMORY,
 	button1 = OKAY,
 	timeout = 0,
 	whileDead = true,
@@ -76,7 +76,7 @@ hooksecurefunc("UnitPopup_OnClick", function(self)
 	end
 end)
 
-UnitPopupButtons["ARMORYLINK"] = {text = DUNGEON_FLOOR_SCARLETMONASTERY3, dist = 0, func = UnitPopup_OnClick}
+UnitPopupButtons["ARMORYLINK"] = {text = L_POPUP_ARMORY, dist = 0, func = UnitPopup_OnClick}
 tinsert(UnitPopupMenus["FRIEND"], #UnitPopupMenus["FRIEND"] - 1, "ARMORYLINK")
 tinsert(UnitPopupMenus["PARTY"], #UnitPopupMenus["PARTY"] - 1, "ARMORYLINK")
 tinsert(UnitPopupMenus["RAID"], #UnitPopupMenus["RAID"] - 1, "ARMORYLINK")

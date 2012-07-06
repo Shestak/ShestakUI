@@ -223,6 +223,7 @@ L_POPUP_SETTINGS_ALL = "Voulez-vous appliquer les modifications pour tout ? (DBM
 L_POPUP_SETTINGS_DBM = "La position des éléments de DBM doit être changée."
 L_POPUP_SETTINGS_DXE = "La position des éléments de DXE doit être changée."
 L_POPUP_SETTINGS_BW = "La position des éléments de BigWigs doit être changée."
+L_POPUP_ARMORY = "Armurerie"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Bienvenue sur ShestakUI "

@@ -223,6 +223,7 @@ L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM/DXE, Skada an
 L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."
 L_POPUP_SETTINGS_DXE = "Need to change the position of elements DXE."
 L_POPUP_SETTINGS_BW = "Need to change the position of elements BigWigs."
+L_POPUP_ARMORY = "Armaria"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Welcome to ShestakUI "

@@ -223,6 +223,7 @@ L_POPUP_SETTINGS_ALL = "應用所有的UI設置? (DBM/DXE, Skada and MSBT)"
 L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素。"
 L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素。"
 L_POPUP_SETTINGS_BW = "需要改變BigWigs描點及風格化元素。"
+L_POPUP_ARMORY = "軍械庫"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "歡迎使用ShestakUI "

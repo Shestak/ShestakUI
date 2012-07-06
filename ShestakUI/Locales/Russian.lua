@@ -223,6 +223,7 @@ L_POPUP_SETTINGS_ALL = "Применить настройки для всех м
 L_POPUP_SETTINGS_DBM = "Необходимо изменить позиции элементов DBM."
 L_POPUP_SETTINGS_DXE = "Необходимо изменить позиции элементов DXE."
 L_POPUP_SETTINGS_BW = "Необходимо изменить позиции элементов BigWigs."
+L_POPUP_ARMORY = "Оружейная"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Добро пожаловать в ShestakUI "
