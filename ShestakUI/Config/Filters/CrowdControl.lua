@@ -82,6 +82,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(34490)] = 1,	-- Silencing Shot
 		--MOP[GetSpellInfo(18425)] = 1,	-- Improved Kick
 		[GetSpellInfo(47476)] = 1,	-- Strangulate
+		[GetSpellInfo(108194)] = 1,	-- Asphyxiate
 		[GetSpellInfo(81261)] = 1,	-- Solar Beam
 		[GetSpellInfo(1330)] = 1,	-- Garrote - Silence
 		[GetSpellInfo(24259)] = 1,	-- Spell Lock (Felhunter)

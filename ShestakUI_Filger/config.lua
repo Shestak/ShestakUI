@@ -3037,6 +3037,8 @@ Filger_Spells = {
 			-- Silence
 			-- Strangulate (DK)
 			{spellID = 47476, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Asphyxiate (DK)
+			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot (Hunter)
 			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
@@ -3085,6 +3087,8 @@ Filger_Spells = {
 			{spellID = 44572, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Hammer of Justice
 			{spellID = 853, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Fist of Justice
+			{spellID = 105593, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Psychic Horror
 			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Cheap Shot
