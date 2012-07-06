@@ -46,6 +46,7 @@ T.DebuffWhiteList = {
 	[SpellName(20066)] = true,	-- Repentance
 	[SpellName(10326)] = true,	-- Turn Evil
 	[SpellName(853)] = true,	-- Hammer of Justice
+	[SpellName(105593)] = true,	-- Fist of Justice
 	-- Priest
 	[SpellName(605)] = true,	-- Mind Control
 	[SpellName(64044)] = true,	-- Psychic Horror

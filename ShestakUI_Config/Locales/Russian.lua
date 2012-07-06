@@ -291,11 +291,11 @@ L_GUI_UF_PLUGINS_DIMINISHING = "Иконка диминишинга на рам�
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_COMBO_BAR = "Включить индикатор серии приемов"
-L_GUI_UF_PLUGINS_SHADOW_BAR = "Enable Shadow Orbs bar" -- Needs review
-L_GUI_UF_PLUGINS_CHI_BAR = "Enable Chi bar" -- Needs review
+L_GUI_UF_PLUGINS_SHADOW_BAR = "Включить индикатор темных сфер"
+L_GUI_UF_PLUGINS_CHI_BAR = "Включить индикатор ци"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Включить индикатор отмщения"
 L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Включить индикатор затмений"
-L_GUI_UF_PLUGINS_HOLY_BAR = "Включить индикатор святых рун"
+L_GUI_UF_PLUGINS_HOLY_BAR = "Включить индикатор энергии Света"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Включить индикатор осколков душ"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Включить индикатор рун"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Включить индикатор тотемов"
