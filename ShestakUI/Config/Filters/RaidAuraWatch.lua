@@ -34,7 +34,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SHAMAN = {
 				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Riptide 
 				{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},		-- Earth Shield
-				{16236, "TOPLEFT", {0.4, 0.7, 0.2}},			-- Ancestral Fortitude
+				--MOP{16236, "TOPLEFT", {0.4, 0.7, 0.2}},			-- Ancestral Fortitude
 				{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},			-- Earthliving
 			},
 			ROGUE = {
@@ -44,10 +44,10 @@ if C.raidframe.plugins_aura_watch == true then
 				{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},			-- Unholy Frenzy
 			},
 			MAGE = {
-				{54646, "TOPRIGHT", {0.2, 0.2, 1}},				-- Focus Magic
+				--MOP{54646, "TOPRIGHT", {0.2, 0.2, 1}},				-- Focus Magic
 			},
 			WARRIOR = {
-				{59665, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
+				--MOP{59665, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
 				{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Intervene
 			},
 			HUNTER = {
@@ -55,7 +55,10 @@ if C.raidframe.plugins_aura_watch == true then
 			},
 			WARLOCK = {
 				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone Resurrection
-				{85767, "TOPLEFT", {0.93, 0.75, 0}},			-- Dark Intent
+				--MOP{85767, "TOPLEFT", {0.93, 0.75, 0}},			-- Dark Intent
+			},
+			MONK = {
+				
 			},
 			ALL = {
 				{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag, Horde

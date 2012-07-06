@@ -5,7 +5,7 @@ if C.unitframe.enable ~= true or IsAddOnLoaded("ShestakUI_Heal") then return end
 --	UnitFrames based on oUF_Caellian(by Caellian)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = oUFShestakUI
+local oUF = oUFShestakUI or ShestakUI.oUF
 
 -- Frame size
 local party_width = 140

@@ -141,8 +141,8 @@
 	<!--<Script file="Modules\Tooltip\Talents.lua"/>-->
 	<Script file="Modules\Tooltip\ItemIcons.lua"/>
 	<!--<Script file="Modules\Tooltip\ItemLevel.lua"/>
-	<Script file="Modules\Tooltip\PvPRating.lua"/>
-	<Script file="Modules\Tooltip\RuFix.lua"/>-->
+	<Script file="Modules\Tooltip\PvPRating.lua"/>-->
+	<Script file="Modules\Tooltip\RuFix.lua"/>
 	<Script file="Modules\Tooltip\SpellID.lua"/>
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
