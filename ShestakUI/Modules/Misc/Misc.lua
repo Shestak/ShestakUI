@@ -260,6 +260,7 @@ end)
 ----------------------------------------------------------------------------------------
 StaticPopupDialogs.RESURRECT.hideOnEscape = nil
 StaticPopupDialogs.PARTY_INVITE.hideOnEscape = nil
+StaticPopupDialogs.PARTY_INVITE_XREALM.hideOnEscape = nil
 StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = nil
 StaticPopupDialogs.CONFIRM_BATTLEFIELD_ENTRY.button2 = nil
 
