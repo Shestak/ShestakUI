@@ -1519,7 +1519,7 @@ if experience.enabled then
 			or sub == "currep" and abs(currep - minrep)
 			or sub == "repleft" and abs(maxrep - currep)
 			or sub == "maxrep" and abs(maxrep - minrep)
-			or sub == "rep%" and floor(abs(currep - minrep) / abs(maxrep - minrep) * 100)
+			or sub == "rep%" and (currep ~= 0 and floor(abs(currep - minrep) / abs(maxrep - minrep) * 100) or 0)
 			or format("[%s]",sub)
 	end
 	Inject("Experience", {
