@@ -226,7 +226,7 @@ L_POPUP_SETTINGS_BW = "È necessario cambiare la posizione degli elementi di Big
 L_POPUP_ARMORY = "Armory" -- Needs review
 
 -- Welcome message
-L_WELCOME_LINE_1 = "Benvenuti in ShestakUI "
+L_WELCOME_LINE_1 = "Benvenuto/a in ShestakUI "
 L_WELCOME_LINE_2_1 = "Digita /cfg per configurare l'interfaccia oppure visita http://shestak.org"
 L_WELCOME_LINE_2_2 = "per maggiori informazioni."
 
