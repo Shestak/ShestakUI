@@ -200,9 +200,6 @@ local function LoadSkin()
 	LFDQueueFrameCooldownFrame.backdrop:Point("TOPLEFT", 2, 4)
 	LFDQueueFrameCooldownFrame.backdrop:Point("BOTTOMRIGHT", 0, 6)
 
-	LFDQueueFrameSpecific:Point("TOPLEFT", -5, 0)
-	LFDQueueFrameSpecific:Point("BOTTOMRIGHT", 0, 10)
-
 	T.SkinDropDownBox(LFDQueueFrameTypeDropDown, 300)
 	LFDQueueFrameTypeDropDown:Point("RIGHT", -10, 0)
 
@@ -213,24 +210,18 @@ local function LoadSkin()
 	ScenarioQueueFrameTypeDropDown:Point("RIGHT", -10, 0)
 
 	T.SkinCloseButton(PVEFrameCloseButton)
-	
-	
-	
-	
-	--[[T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
 
-	
-	
+	--[[T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
 	RolePollPopup:SetTemplate("Transparent")
 	LFGInvitePopup:SetTemplate("Transparent")
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
 	LFGDungeonReadyDialog.SetBackdrop = T.dummy
 	LFGDungeonReadyDialog.filigree:SetAlpha(0)
 	LFGDungeonReadyDialog.bottomArt:SetAlpha(0)
-	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")]]
-	--LFDQueueFrameFindGroupButton:Point("BOTTOMLEFT", LFDParentFrame.backdrop, "BOTTOMLEFT", 4, 4)
-	--LFDQueueFrameCancelButton:Point("BOTTOMRIGHT", LFDParentFrame.backdrop, "BOTTOMRIGHT", -6, 4)
-	--LFDQueueFrameRandomScrollFrame:Height(LFDQueueFrameRandomScrollFrame:GetHeight() + 10)
+	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
+	LFDQueueFrameFindGroupButton:Point("BOTTOMLEFT", LFDParentFrame.backdrop, "BOTTOMLEFT", 4, 4)
+	LFDQueueFrameCancelButton:Point("BOTTOMRIGHT", LFDParentFrame.backdrop, "BOTTOMRIGHT", -6, 4)
+	LFDQueueFrameRandomScrollFrame:Height(LFDQueueFrameRandomScrollFrame:GetHeight() + 10)]]
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

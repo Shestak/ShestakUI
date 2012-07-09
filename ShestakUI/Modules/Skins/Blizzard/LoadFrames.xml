@@ -1,7 +1,7 @@
 ﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="Others.lua"/>
 	<Script file="Achievement.lua"/>
-	<Script file="Alerts.lua"/>
+	<Script file="AlertFrames.lua"/>
 	<Script file="Archeology.lua"/>
 	<Script file="Auction.lua"/>
 	<Script file="BarberShop.lua"/>
@@ -29,7 +29,6 @@
 	<Script file="ItemSocketing.lua"/>
 	<Script file="ItemText.lua"/>
 	<!--<Script file="Journal.lua"/>-->
-	<Script file="LFD.lua"/>
 	<Script file="LFG.lua"/>
 	<Script file="LFR.lua"/>
 	<Script file="MacClient.lua"/>
@@ -41,6 +40,7 @@
 	<Script file="Options.lua"/>
 	<Script file="Petition.lua"/>
 	<Script file="PetStable.lua"/>
+	<Script file="PvE.lua"/>
 	<Script file="PvP.lua"/>
 	<Script file="Quest.lua"/>
 	<Script file="QuestLog.lua"/>
