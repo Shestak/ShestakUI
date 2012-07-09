@@ -29,7 +29,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Riquadro veicolo in mouseover"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Auto-bottone missione/oggetto"
 L_GUI_MISC_RAID_TOOLS = "Strumenti per le incursioni"
 L_GUI_MISC_ACH_SCREENS = "Cattura una schermata quando il giocatore completa un'impresa"
-L_GUI_MISC_PROFESSION_TABS = "Visualizza la linguetta delle professioni sul riquadro mercante"
+L_GUI_MISC_PROFESSION_TABS = "Visualizza la linguetta delle professioni sul riquadro abilità di commercio/mercante"
 L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei Boss durante i Campi di Battaglia"
 
 -- Announcements options
@@ -255,7 +255,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Colora i bordi dei benefici del giocatore in bas
 L_GUI_UF_ENABLE = "Abilita i riquadri delle unità"
 L_GUI_UF_OWN_COLOR = "Scegli il colore per la tua barra della salute"
 L_GUI_UF_UF_COLOR = "Colore delle barre della salute (se è attivo il colore per la tua barra della salute)"
-L_GUI_UF_ENEMY_HEALTH_COLOR = "Colora di rossa la barra della salute dei nemici"
+L_GUI_UF_ENEMY_HEALTH_COLOR = "Colora di rosso la barra della salute dei nemici"
 L_GUI_UF_TOTAL_VALUE = "Visualizza un testo sui riquadri di giocatore e bersaglio con i valori XXXX/Totale"
 L_GUI_UF_COLOR_VALUE = "Valori di salute e mana colorati"
 L_GUI_UF_BAR_COLOR_VALUE = "Barra della salute colorata in base alla salute restante"
