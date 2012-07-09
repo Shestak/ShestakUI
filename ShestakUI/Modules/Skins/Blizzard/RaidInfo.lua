@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.skins.blizzard_frames ~= true then return end
+if C.skins.blizzard_frames == true then return end
 
 ----------------------------------------------------------------------------------------
 --	RaidInfo skin
@@ -69,23 +69,8 @@ local function LoadSkin()
 	T.SkinDropDownBox(RaidFinderQueueFrameSelectionDropDown, 300)
 	RaidFinderQueueFrameSelectionDropDown:Point("RIGHT", -10, 0)
 
-	RaidFinderFrameFindRaidButton:SkinButton(true)
-	--RaidFinderFrameCancelButton:SkinButton(true)
-
 	for i = 1, 3 do
 		T.SkinTab(_G["RaidParentFrameTab"..i])
-	end
-
-	local checkButtons = {
-		"RaidFinderQueueFrameRoleButtonTank",
-		"RaidFinderQueueFrameRoleButtonHealer",
-		"RaidFinderQueueFrameRoleButtonDPS",
-		"RaidFinderQueueFrameRoleButtonLeader"
-	}
-
-	for _, object in pairs(checkButtons) do
-		_G[object].checkButton:SetFrameLevel(_G[object].checkButton:GetFrameLevel() + 2)
-		T.SkinCheckBox(_G[object].checkButton)
 	end
 
 	for i = 1, 1 do

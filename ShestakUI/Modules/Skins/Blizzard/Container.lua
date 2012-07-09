@@ -53,8 +53,7 @@ local function LoadSkin()
 	-- Bank Frame
 	BankFrame:StripTextures(true)
 	BankFrame:CreateBackdrop("Transparent")
-	BankFrame.backdrop:Point("TOPLEFT", 0, 0)
-	BankFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+	BankFrame.backdrop:SetAllPoints()
 
 	BankItemSearchBox:StripTextures(true)
 	BankItemSearchBox:CreateBackdrop("Overlay")

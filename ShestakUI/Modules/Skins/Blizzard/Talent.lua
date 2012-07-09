@@ -122,8 +122,11 @@ local function LoadSkin()
 			if not frame.reskinned then
 				frame.reskinned = true
 				frame.ring:Hide()
-				frame:SetTemplate("Default")
+				frame:CreateBackdrop("Default")
+				frame.backdrop:Point("TOPLEFT", 2, -2)
+				frame.backdrop:Point("BOTTOMRIGHT", -2, 2)
 				frame.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				frame.icon:SetParent(frame.backdrop)
 				frame.icon:Point("TOPLEFT", 2, -2)
 				frame.icon:Point("BOTTOMRIGHT", -2, 2)
 			end

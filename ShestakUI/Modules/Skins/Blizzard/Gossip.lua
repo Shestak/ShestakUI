@@ -42,8 +42,7 @@ local function LoadSkin()
 	GossipGreetingText:SetShadowOffset(1, -1)
 
 	GossipFrame:CreateBackdrop("Transparent")
-	GossipFrame.backdrop:Point("TOPLEFT", GossipFrame, "TOPLEFT", 0, 0)
-	GossipFrame.backdrop:Point("BOTTOMRIGHT", GossipFrame, "BOTTOMRIGHT", 0, 0)
+	GossipFrame.backdrop:SetAllPoints()
 
 	T.SkinCloseButton(GossipFrameCloseButton, GossipFrame.backdrop)
 	T.SkinScrollBar(GossipGreetingScrollFrame)

@@ -5,6 +5,13 @@ if C.skins.blizzard_frames ~= true then return end
 --	AlertFrames skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
+	local function FixBg(f)
+		if f:GetObjectType() == "AnimationGroup" then
+			f = f:GetParent()
+		end
+		f.backdrop:SetBackdropColor(unpack(C.media.overlay_color))
+	end
+
 	local function SkinAchievePopUp()
 		for i = 1, MAX_ACHIEVEMENT_ALERTS do
 			local frame = _G["AchievementAlertFrame"..i]
@@ -17,13 +24,11 @@ local function LoadSkin()
 					frame:CreateBackdrop("Transparent")
 					frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", -2, -6)
 					frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 6)
-				else
-					frame.backdrop:SetBackdropColor(unpack(C.media.overlay_color))
-				end
 
-				frame:HookScript("OnShow", function()
-					frame.backdrop:SetBackdropColor(unpack(C.media.overlay_color))
-				end)
+					frame:HookScript("OnEnter", FixBg)
+					frame:HookScript("OnShow", FixBg)
+					frame.animIn:HookScript("OnFinished", FixBg)
+				end
 
 				-- Background
 				_G["AchievementAlertFrame"..i.."Background"]:SetTexture(nil)

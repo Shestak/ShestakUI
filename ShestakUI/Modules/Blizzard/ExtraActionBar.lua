@@ -27,7 +27,7 @@ local button = ExtraActionButton1
 local icon = button.icon
 local texture = button.style
 local disableTexture = function(style, texture)
-	if string.sub(texture, 1, 9) == "Interface" then
+	if texture then
 		style:SetTexture("")
 	end
 end
