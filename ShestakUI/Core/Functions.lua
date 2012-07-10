@@ -944,26 +944,7 @@ T.UpdateComboPoint = function(self, event, unit)
 end
 
 local ticks = {}
-local channelingTicks = {
-	-- Warlock
-	[GetSpellInfo(689)] = 3,	-- Drain Life
-	[GetSpellInfo(5740)] = 4,	-- Rain of Fire
-	[GetSpellInfo(1120)] = 5,	-- Drain Soul
-	[GetSpellInfo(755)] = 3,	-- Health Funnel
-	-- Druid
-	[GetSpellInfo(44203)] = 4,	-- Tranquility
-	[GetSpellInfo(16914)] = 10,	-- Hurricane
-	-- Priest
-	[GetSpellInfo(15407)] = 3,	-- Mind Flay
-	[GetSpellInfo(48045)] = 5,	-- Mind Sear
-	[GetSpellInfo(47540)] = 2,	-- Penance
-	[GetSpellInfo(64901)] = 4,	-- Hymn of Hope
-	[GetSpellInfo(64843)] = 4,	-- Divine Hymn
-	-- Mage
-	[GetSpellInfo(5143)] = 5,	-- Arcane Missiles
-	[GetSpellInfo(10)] = 5,		-- Blizzard
-	[GetSpellInfo(12051)] = 4,	-- Evocation
-}
+local channelingTicks = T.CastBarTicks
 
 local setBarTicks = function(Castbar, ticknum)
 	if ticknum and ticknum > 0 then

@@ -34,7 +34,7 @@ if T.class == "WARLOCK" then
 		ct.aoespam[980] = true		-- Bane of Agony
 		ct.aoespam[85455] = true	-- Bane of Havoc
 		ct.aoespam[85421] = true	-- Burning Embers
-		ct.aoespam[42223] = true	-- Rain of Fire
+		ct.aoespam[104233] = true	-- Rain of Fire
 		ct.aoespam[5857] = true		-- Hellfire Effect
 		ct.aoespam[47897] = true	-- Shadowflame (Shadow direct damage)
 		ct.aoespam[47960] = true	-- Shadowflame (Fire dot)
