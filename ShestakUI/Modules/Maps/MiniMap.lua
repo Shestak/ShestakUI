@@ -122,14 +122,17 @@ HelpOpenTicketButton:Point("BOTTOM", Minimap, "BOTTOM", 0, -5)
 HelpOpenTicketButton:SetHighlightTexture(nil)
 
 -- GhostFrame
-GhostFrameContentsFrame:SetTemplate("Overlay")
-GhostFrameContentsFrame:Width(C.minimap.size)
-GhostFrameContentsFrame:ClearAllPoints()
-GhostFrameContentsFrame:SetPoint("CENTER")
-GhostFrameContentsFrame.SetPoint = T.dummy
+GhostFrame:StripTextures()
+GhostFrame:SetTemplate("Overlay")
+GhostFrame:StyleButton()
 GhostFrame:ClearAllPoints()
 GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+GhostFrameContentsFrameIcon:Size(34)
+GhostFrameContentsFrame:SetFrameLevel(GhostFrameContentsFrame:GetFrameLevel() + 2)
+GhostFrameContentsFrame:CreateBackdrop("Overlay")
+GhostFrameContentsFrame.backdrop:Point("TOPLEFT", GhostFrameContentsFrameIcon, -2, 2)
+GhostFrameContentsFrame.backdrop:Point("BOTTOMRIGHT", GhostFrameContentsFrameIcon, 2, -2)
 
 -- Enable mouse scrolling
 Minimap:EnableMouseWheel(true)
