@@ -1265,14 +1265,19 @@ SlashCmdList.TEST_UF = function(msg)
 				_G["oUF_Arena"..i]:Show()
 				_G["oUF_Arena"..i]:UpdateAllElements()
 				_G["oUF_Arena"..i].Trinket.Icon:SetTexture("Interface\\Icons\\INV_Jewelry_Necklace_37")
-				if C.unitframe.plugins_talents == true then
-					_G["oUF_Arena"..i].Talents:SetText(L_PLANNER_DRUID_1)
-				end
 
 				_G["oUF_Arena"..i.."Target"].Hide = function() end
 				_G["oUF_Arena"..i.."Target"].unit = "player"
 				_G["oUF_Arena"..i.."Target"]:Show()
 				_G["oUF_Arena"..i.."Target"]:UpdateAllElements()
+
+				if C.unitframe.plugins_talents == true then
+					_G["oUF_Arena"..i].Talents:SetText(L_PLANNER_DRUID_1)
+				end
+
+				if C.unitframe.plugins_diminishing == true then
+					SlashCmdList.MOVINGDRTRACKER()
+				end
 			end
 		end
 
