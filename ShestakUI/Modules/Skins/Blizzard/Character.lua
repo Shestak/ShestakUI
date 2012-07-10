@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	CharacterFrame skin
+--	Character skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	T.SkinCloseButton(CharacterFrameCloseButton)
@@ -34,8 +34,9 @@ local function LoadSkin()
 		local icon = _G["Character"..slot.."IconTexture"]
 		local slot = _G["Character"..slot]
 
-		slot:StyleButton(false)
+		slot:StyleButton()
 		slot:SetNormalTexture("")
+
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
 		icon:Point("TOPLEFT", 2, -2)
@@ -73,7 +74,7 @@ local function LoadSkin()
 			local button = _G["EquipmentFlyoutFrameButton"..i]
 			local icon = _G["EquipmentFlyoutFrameButton"..i.."IconTexture"]
 			if button then
-				button:StyleButton(false)
+				button:StyleButton()
 
 				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				button:GetNormalTexture():SetTexture(nil)
@@ -171,7 +172,7 @@ local function LoadSkin()
 
 			if button then
 				button:StripTextures()
-				button:StyleButton(true)
+				button:StyleButton()
 
 				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				_G["GearManagerDialogPopupButton"..i.."Icon"]:SetTexture(nil)

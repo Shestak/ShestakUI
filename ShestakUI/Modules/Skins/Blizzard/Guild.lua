@@ -138,6 +138,7 @@ local function LoadSkin()
 	-- Guild Perk buttons list
 	for i = 1, 8 do
 		local button = _G["GuildPerksContainerButton"..i]
+
 		button:StripTextures()
 
 		if button.icon then

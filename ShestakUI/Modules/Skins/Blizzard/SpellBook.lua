@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Spellbook skin
+--	SpellBook skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local StripAllTextures = {
@@ -100,7 +100,7 @@ local function LoadSkin()
 
 			tab:CreateBackdrop("Default")
 			tab.backdrop:SetAllPoints()
-			tab:StyleButton(true)
+			tab:StyleButton()
 
 			local point, relatedTo, point2, x, y = tab:GetPoint()
 			tab:Point(point, relatedTo, point2, 16, -1)

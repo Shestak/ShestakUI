@@ -101,7 +101,7 @@ function ProfessionTabs:CreateTab(Table, Parent)
 
 		Tab:CreateBackdrop("Default")
 		Tab.backdrop:SetAllPoints()
-		Tab:StyleButton(true)
+		Tab:StyleButton()
 	end
 
 	Table[#Table + 1] = Tab

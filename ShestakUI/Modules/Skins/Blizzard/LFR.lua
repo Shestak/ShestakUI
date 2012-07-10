@@ -66,7 +66,7 @@ local function LoadSkin()
 		tab:GetRegions():Hide()
 		tab:CreateBackdrop("Default")
 		tab.backdrop:SetAllPoints()
-		tab:StyleButton(true)
+		tab:StyleButton()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()

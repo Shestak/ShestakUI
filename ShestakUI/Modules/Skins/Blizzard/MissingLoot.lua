@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	MissingLootFrame skin
+--	MissingLoot skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	_G["MissingLootFrame"]:SetTemplate("Transparent")

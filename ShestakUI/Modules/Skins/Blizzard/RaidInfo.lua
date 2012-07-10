@@ -79,12 +79,15 @@ local function LoadSkin()
 		local count = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."Count"]
 
 		if button then
-			local __texture = _G[button:GetName().."IconTexture"]:GetTexture()
+			local texture = _G[button:GetName().."IconTexture"]:GetTexture()
+
 			button:StripTextures()
-			icon:SetTexture(__texture)
+
+			icon:SetTexture(texture)
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:Point("TOPLEFT", 2, -2)
 			icon:SetDrawLayer("OVERLAY")
+
 			count:SetDrawLayer("OVERLAY")
 
 			if not button.backdrop then

@@ -28,7 +28,7 @@
 	<Script file="ItemAlteration.lua"/>
 	<Script file="ItemSocketing.lua"/>
 	<Script file="ItemText.lua"/>
-	<!--<Script file="Journal.lua"/>-->
+	<Script file="Journal.lua"/>
 	<Script file="LFG.lua"/>
 	<Script file="LFR.lua"/>
 	<Script file="MacClient.lua"/>
@@ -39,6 +39,7 @@
 	<Script file="MissingLoot.lua"/>
 	<Script file="Options.lua"/>
 	<Script file="Petition.lua"/>
+	<Script file="PetJournal.lua"/>
 	<Script file="PetStable.lua"/>
 	<Script file="PvE.lua"/>
 	<Script file="PvP.lua"/>

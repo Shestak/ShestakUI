@@ -43,7 +43,7 @@ local function LoadSkin()
 			border:Kill()
 			grabber:Kill()
 
-			slot:StyleButton(false)
+			slot:StyleButton()
 			slot:SetFrameLevel(slot:GetFrameLevel() + 2)
 			slot:CreateBackdrop("Default")
 			slot.backdrop:SetAllPoints()

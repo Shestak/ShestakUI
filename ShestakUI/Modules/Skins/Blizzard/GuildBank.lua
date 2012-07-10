@@ -43,6 +43,7 @@ local function LoadSkin()
 		for x = 1, NUM_SLOTS_PER_GUILDBANK_GROUP do
 			local button = _G["GuildBankColumn"..i.."Button"..x]
 			local icon = _G["GuildBankColumn"..i.."Button"..x.."IconTexture"]
+
 			button:SetNormalTexture(nil)
 			button:StyleButton()
 			button:SetTemplate("Default", true)
@@ -60,7 +61,7 @@ local function LoadSkin()
 		_G["GuildBankTab"..i]:StripTextures(true)
 
 		button:StripTextures()
-		button:StyleButton(true)
+		button:StyleButton()
 		button:SetTemplate("Default", true)
 
 		-- Reposition tabs
@@ -105,7 +106,7 @@ local function LoadSkin()
 		local texture = _G["GuildBankPopupButton"..i.."Icon"]
 
 		button:StripTextures()
-		button:StyleButton(true)
+		button:StyleButton()
 		button:SetTemplate("Default", true)
 
 		texture:ClearAllPoints()

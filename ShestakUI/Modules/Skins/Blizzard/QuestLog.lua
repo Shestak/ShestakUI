@@ -79,10 +79,9 @@ local function LoadSkin()
 	local function QuestObjectiveText()
 		local numObjectives = GetNumQuestLeaderBoards()
 		local objective
-		local type, finished
 		local numVisibleObjectives = 0
 		for i = 1, numObjectives do
-			_, type, finished = GetQuestLogLeaderBoard(i)
+			local _, type, finished = GetQuestLogLeaderBoard(i)
 			if type ~= "spell" then
 				numVisibleObjectives = numVisibleObjectives + 1
 				objective = _G["QuestInfoObjective"..numVisibleObjectives]

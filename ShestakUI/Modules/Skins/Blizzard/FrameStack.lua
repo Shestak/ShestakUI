@@ -5,7 +5,6 @@ if C.skins.blizzard_frames ~= true then return end
 --	FrameStackTooltip skin(by Elv22)
 ----------------------------------------------------------------------------------------
 local FSTooltip = CreateFrame("Frame", nil, UIParent)
-
 FSTooltip:SetScript("OnUpdate", function(self, elapsed)
 	if IsAddOnLoaded("Aurora") then return end
 

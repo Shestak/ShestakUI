@@ -191,34 +191,35 @@ end
 ----------------------------------------------------------------------------------------
 --	Style ActionBars/Bags buttons function(by Chiril & Karudon)
 ----------------------------------------------------------------------------------------
-local function StyleButton(b, c) 
-	local name = b:GetName()
-	local button = _G[name]
-	local cooldown = _G[name.."Cooldown"]
+local function StyleButton(button)
+	if button.SetHighlightTexture and not button.hover then
+		local hover = button:CreateTexture("Frame", nil, self)
+		hover:SetTexture(1, 1, 1, 0.3)
+		hover:Point("TOPLEFT", button, 2, -2)
+		hover:Point("BOTTOMRIGHT", button, -2, 2)
+		button.hover = hover
+		button:SetHighlightTexture(hover)
+	end
 
-	local hover = b:CreateTexture("Frame", nil, self)
-	hover:SetTexture(1, 1, 1, 0.3)
-	hover:Size(button:GetWidth(), button:GetHeight())
-	hover:Point("TOPLEFT", button, 2, -2)
-	hover:Point("BOTTOMRIGHT", button, -2, 2)
-	button:SetHighlightTexture(hover)
+	if button.SetPushedTexture and not button.pushed then
+		local pushed = button:CreateTexture("Frame", nil, self)
+		pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
+		pushed:Point("TOPLEFT", button, 2, -2)
+		pushed:Point("BOTTOMRIGHT", button, -2, 2)
+		button.pushed = pushed
+		button:SetPushedTexture(pushed)
+	end
 
-	local pushed = b:CreateTexture("Frame", nil, self)
-	pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
-	pushed:Size(button:GetWidth(), button:GetHeight())
-	pushed:Point("TOPLEFT", button, 2, -2)
-	pushed:Point("BOTTOMRIGHT", button, -2, 2)
-	button:SetPushedTexture(pushed)
- 
-	if c then
-		local checked = b:CreateTexture("Frame", nil, self)
+	if button.SetCheckedTexture and not button.checked then
+		local checked = button:CreateTexture("Frame", nil, self)
 		checked:SetTexture(0, 1, 0, 0.3)
-		checked:Size(button:GetWidth(), button:GetHeight())
 		checked:Point("TOPLEFT", button, 2, -2)
 		checked:Point("BOTTOMRIGHT", button, -2, 2)
+		button.checked = checked
 		button:SetCheckedTexture(checked)
 	end
 
+	local cooldown = button:GetName() and _G[button:GetName().."Cooldown"]
 	if cooldown then
 		cooldown:ClearAllPoints()
 		cooldown:Point("TOPLEFT", button, 2, -2)

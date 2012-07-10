@@ -17,6 +17,7 @@ local function LoadSkin()
 
 	for i = 1, INBOXITEMS_TO_DISPLAY do
 		local bg = _G["MailItem"..i]
+
 		bg:StripTextures()
 		bg:CreateBackdrop("Overlay")
 		bg.backdrop:Point("TOPLEFT", 2, 1)
@@ -65,13 +66,16 @@ local function LoadSkin()
 	local function MailFrameSkin()
 		for i = 1, ATTACHMENTS_MAX_SEND do
 			local b = _G["SendMailAttachment"..i]
+
 			if not b.skinned then
 				b:StripTextures()
 				b:SetTemplate("Default", true)
 				b:StyleButton()
 				b.skinned = true
 			end
+
 			local t = b:GetNormalTexture()
+
 			if t then
 				t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				t:ClearAllPoints()
@@ -130,11 +134,12 @@ local function LoadSkin()
 
 	for i = 1, ATTACHMENTS_MAX_SEND do
 		local b = _G["OpenMailAttachmentButton"..i]
+		local t = _G["OpenMailAttachmentButton"..i.."IconTexture"]
+
 		b:StripTextures()
 		b:SetTemplate("Default", true)
 		b:StyleButton()
 
-		local t = _G["OpenMailAttachmentButton"..i.."IconTexture"]
 		if t then
 			t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			t:ClearAllPoints()

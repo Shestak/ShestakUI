@@ -32,13 +32,15 @@ local function LoadSkin()
 		local b = _G["MerchantItem"..i.."ItemButton"]
 		local t = _G["MerchantItem"..i.."ItemButtonIconTexture"]
 		local item_bar = _G["MerchantItem"..i]
+
 		item_bar:StripTextures(true)
 		item_bar:CreateBackdrop("Overlay")
 
 		b:StripTextures()
-		b:StyleButton(false)
+		b:StyleButton()
 		b:SetTemplate("Default", true)
 		b:Point("TOPLEFT", item_bar, "TOPLEFT", 4, -4)
+
 		t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		t:ClearAllPoints()
 		t:Point("TOPLEFT", 2, -2)
@@ -50,14 +52,14 @@ local function LoadSkin()
 
 	-- Buyback item frame + icon
 	MerchantBuyBackItemItemButton:StripTextures()
-	MerchantBuyBackItemItemButton:StyleButton(false)
+	MerchantBuyBackItemItemButton:StyleButton()
 	MerchantBuyBackItemItemButton:SetTemplate("Default", true)
 	MerchantBuyBackItemItemButtonIconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	MerchantBuyBackItemItemButtonIconTexture:ClearAllPoints()
 	MerchantBuyBackItemItemButtonIconTexture:Point("TOPLEFT", 2, -2)
 	MerchantBuyBackItemItemButtonIconTexture:Point("BOTTOMRIGHT", -2, 2)
 
-	MerchantRepairItemButton:StyleButton(false)
+	MerchantRepairItemButton:StyleButton()
 	MerchantRepairItemButton:SetTemplate("Default", true)
 	MerchantRepairItemButton:GetRegions():SetTexCoord(0.04, 0.24, 0.06, 0.5)
 	MerchantRepairItemButton:GetRegions():ClearAllPoints()
@@ -71,7 +73,7 @@ local function LoadSkin()
 	MerchantGuildBankRepairButtonIcon:Point("TOPLEFT", 2, -2)
 	MerchantGuildBankRepairButtonIcon:Point("BOTTOMRIGHT", -2, 2)
 
-	MerchantRepairAllButton:StyleButton(false)
+	MerchantRepairAllButton:StyleButton()
 	MerchantRepairAllButton:SetTemplate("Default", true)
 	MerchantRepairAllIcon:SetTexCoord(0.34, 0.1, 0.34, 0.535, 0.535, 0.1, 0.535, 0.535)
 	MerchantRepairAllIcon:ClearAllPoints()
@@ -96,10 +98,11 @@ local function LoadSkin()
 
 			if b and not b.reskinned then
 				t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				t:Point("LEFT", c, "RIGHT", 2, 0)
+
 				b:CreateBackdrop("Default")
 				b.backdrop:Point("TOPLEFT", t, "TOPLEFT", -2, 2)
 				b.backdrop:Point("BOTTOMRIGHT", t, "BOTTOMRIGHT", 2, -2)
-				t:Point("LEFT", c, "RIGHT", 2, 0)
 
 				b.reskinned = true
 			end

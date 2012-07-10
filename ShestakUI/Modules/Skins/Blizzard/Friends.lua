@@ -203,6 +203,7 @@ local function LoadSkin()
 	local function Channel()
 		for i = 1, MAX_DISPLAY_CHANNEL_BUTTONS do
 			local button = _G["ChannelButton"..i]
+
 			if button then
 				button:StripTextures()
 				button:SetHighlightTexture("Interface\\PaperDollInfoFrame\\UI-Character-Tab-Highlight")

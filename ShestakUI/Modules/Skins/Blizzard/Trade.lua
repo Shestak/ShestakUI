@@ -47,9 +47,12 @@ local function LoadSkin()
 			player_button_icon:Point("BOTTOMRIGHT", player_button, "BOTTOMRIGHT", -2, 2)
 			player_button_icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			player_button_icon:SetDrawLayer("OVERLAY")
+
 			player_button_count:SetDrawLayer("OVERLAY")
+
 			player_button:SetTemplate("Overlay", true)
 			player_button:StyleButton()
+
 			player_button.bg = CreateFrame("Frame", nil, player_button)
 			player_button.bg:SetTemplate("Overlay")
 			player_button.bg:SetPoint("TOPLEFT", player_button, "TOPRIGHT", 4, 0)
@@ -61,9 +64,12 @@ local function LoadSkin()
 			recipient_button_icon:Point("BOTTOMRIGHT", recipient_button, "BOTTOMRIGHT", -2, 2)
 			recipient_button_icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			recipient_button_icon:SetDrawLayer("OVERLAY")
+
 			recipient_button_count:SetDrawLayer("OVERLAY")
+
 			recipient_button:SetTemplate("Overlay", true)
 			recipient_button:StyleButton()
+
 			recipient_button.bg = CreateFrame("Frame", nil, recipient_button)
 			recipient_button.bg:SetTemplate("Overlay")
 			recipient_button.bg:SetPoint("TOPLEFT", recipient_button, "TOPRIGHT", 4, 0)

@@ -47,7 +47,8 @@ local function LoadSkin()
 		local slot = _G["Inspect"..slot]
 
 		slot:StripTextures()
-		slot:StyleButton(false)
+		slot:StyleButton()
+
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
 		icon:Point("TOPLEFT", 2, -2)

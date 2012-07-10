@@ -43,7 +43,7 @@ local function LoadSkin()
 	CliqueSpellTab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
 	CliqueSpellTab:CreateBackdrop("Default")
 	CliqueSpellTab.backdrop:SetAllPoints()
-	CliqueSpellTab:StyleButton(true)
+	CliqueSpellTab:StyleButton()
 
 	CliqueConfigPage1:SetScript("OnShow", function(self)
 		for i = 1, 12 do

@@ -184,39 +184,13 @@ local function UpdateHotkey(self, actionButtonType)
 	end
 end
 
--- Rescale cooldown spiral to fix texture
-local buttonNames = {
-	"ActionButton",
-	"MultiBarBottomLeftButton",
-	"MultiBarBottomRightButton",
-	"MultiBarLeftButton",
-	"MultiBarRightButton",
-	"StanceButton",
-	"PetActionButton"
-}
-for _, name in ipairs(buttonNames) do
-	for index = 1, 12 do
-		local buttonName = name..tostring(index)
-		local button = _G[buttonName]
-		local cooldown = _G[buttonName.."Cooldown"]
-
-		if (button == nil or cooldown == nil) then
-			break
-		end
-
-		cooldown:ClearAllPoints()
-		cooldown:Point("TOPLEFT", button, "TOPLEFT", 2, -2)
-		cooldown:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
-	end
-end
-
 local buttons = 0
 local function SetupFlyoutButton()
 	for i = 1, buttons do
 		-- Prevent error if you don't have max ammount of buttons
 		if _G["SpellFlyoutButton"..i] then
 			StyleNormalButton(_G["SpellFlyoutButton"..i])
-			_G["SpellFlyoutButton"..i]:StyleButton(true)
+			_G["SpellFlyoutButton"..i]:StyleButton()
 
 			if _G["SpellFlyoutButton"..i]:GetChecked() then
 				_G["SpellFlyoutButton"..i]:SetChecked(nil)
@@ -258,16 +232,16 @@ end
 
 do
 	for i = 1, 12 do
-		_G["ActionButton"..i]:StyleButton(true)
-		_G["MultiBarBottomLeftButton"..i]:StyleButton(true)
-		_G["MultiBarBottomRightButton"..i]:StyleButton(true)
-		_G["MultiBarLeftButton"..i]:StyleButton(true)
-		_G["MultiBarRightButton"..i]:StyleButton(true)
+		_G["ActionButton"..i]:StyleButton()
+		_G["MultiBarBottomLeftButton"..i]:StyleButton()
+		_G["MultiBarBottomRightButton"..i]:StyleButton()
+		_G["MultiBarLeftButton"..i]:StyleButton()
+		_G["MultiBarRightButton"..i]:StyleButton()
 	end
 
 	for i = 1, 10 do
-		_G["StanceButton"..i]:StyleButton(true)
-		_G["PetActionButton"..i]:StyleButton(true)
+		_G["StanceButton"..i]:StyleButton()
+		_G["PetActionButton"..i]:StyleButton()
 	end
 end
 

@@ -17,7 +17,7 @@ function clcprot:CreateButton(name, size, point, parent, pointParent, offsetx, o
 	if isChecked then
 		button = CreateFrame("CheckButton", name, parent)
 		button:SetTemplate("Default")
-		button:StyleButton(true)
+		button:StyleButton()
 	else
 		button = CreateFrame("Button", name, parent)
 		button:SetTemplate("Default")

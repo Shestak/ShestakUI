@@ -108,7 +108,7 @@ hooksecurefunc("SetItemButtonTexture", function(button, texture)
 		border:SetAllPoints()
 		border:SetTexture(nil)
 
-		button:StyleButton(false)
+		button:StyleButton()
 
 		button.skinned = true
 	end

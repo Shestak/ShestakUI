@@ -39,5 +39,5 @@ icon:Point("TOPLEFT", button, 2, -2)
 icon:Point("BOTTOMRIGHT", button, -2, 2)
 icon:SetDrawLayer("ARTWORK")
 
-button:StyleButton(true)
+button:StyleButton()
 button:SetTemplate("Default")

@@ -90,6 +90,7 @@ local function LoadSkin()
 	-- Sub buttons
 	for i = 1, #buttons do
 		local b = _G[buttons[i]]
+
 		b:SkinButton(false)
 
 		if b.text then
@@ -101,8 +102,11 @@ local function LoadSkin()
 	for i = 1, 6 do
 		local b = _G["HelpFrameButton"..i]
 		local t = _G["HelpFrameButton"..i.."Selected"]
+
 		b:SkinButton(false)
+
 		b.text:SetFont(C.media.normal_font, 13)
+
 		if t then
 			t:SetTexture(T.color.r, T.color.g, T.color.b, 0.3)
 			t:Point("TOPLEFT", b, 2, -2)
@@ -113,6 +117,7 @@ local function LoadSkin()
 	-- Table options
 	for i = 1, HelpFrameKnowledgebaseScrollFrameScrollChild:GetNumChildren() do
 		local b = _G["HelpFrameKnowledgebaseScrollFrameButton"..i]
+
 		b:StripTextures(true)
 		b:SkinButton(true)
 	end
@@ -150,6 +155,7 @@ local function LoadSkin()
 		for i = 1, #self.navList do
 			local navButton = self.navList[i]
 			local lastNav = self.navList[i-1]
+
 			if navButton and lastNav then
 				navButton:SetFrameLevel(lastNav:GetFrameLevel() - 2)
 				navButton:ClearAllPoints()

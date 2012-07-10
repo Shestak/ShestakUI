@@ -162,40 +162,23 @@ local micromenu = {
 		if InCombatLockdown() then
 			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
 		end
-		ToggleFrame(SpellBookFrame)
+		ToggleSpellBook(BOOKTYPE_SPELL)
 	end},
 	{text = TALENTS_BUTTON, notCheckable = 1, func = function()
 		if not PlayerTalentFrame then
-			LoadAddOn("Blizzard_TalentUI")
-		end
-		if not GlyphFrame then
-			LoadAddOn("Blizzard_GlyphUI")
+			TalentFrame_LoadUI()
 		end
 		if T.level >= SHOW_TALENT_LEVEL then
-			PlayerTalentFrame_Toggle()
+			ToggleTalentFrame()
 		else
 			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
 		end
 	end},
 	{text = ACHIEVEMENT_BUTTON, notCheckable = 1, func = function()
 		ToggleAchievementFrame()
-		--AchievementFrame_SetFilter(3)
 	end},
 	{text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
 		ToggleFrame(QuestLogFrame)
-	end},
-	{text = MOUNTS_AND_PETS, notCheckable = 1, func = function()
-		TogglePetJournal()
-	end},
-	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
-		ToggleFriendsFrame(1)
-	end},
-	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
-		if T.level >= SHOW_PVP_LEVEL then
-			ToggleFrame(PVPFrame)
-		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
-		end
 	end},
 	{text = ACHIEVEMENTS_GUILD_TAB, notCheckable = 1, func = function()
 		if IsInGuild() then
@@ -212,7 +195,20 @@ local micromenu = {
 			LookingForGuildFrame_Toggle()
 		end
 	end},
-	{text = LFG_TITLE, notCheckable = 1, func = function()
+	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
+		ToggleFriendsFrame(1)
+	end},
+	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
+		if T.level >= SHOW_PVP_LEVEL then
+			TogglePVPFrame()
+		else
+			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
+		end
+	end},
+	{text = MOUNTS_AND_PETS, notCheckable = 1, func = function()
+		TogglePetJournal()
+	end},
+	{text = DUNGEONS_BUTTON, notCheckable = 1, func = function()
 		if T.level >= SHOW_LFD_LEVEL then
 			PVEFrame_ToggleFrame()
 		else
@@ -221,6 +217,12 @@ local micromenu = {
 	end},
 	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
 		ToggleRaidFrame(3)
+	end},
+	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
+		if not IsAddOnLoaded("Blizzard_EncounterJournal") then
+			LoadAddOn("Blizzard_EncounterJournal")
+		end
+		ToggleEncounterJournal()
 	end},
 	{text = HELP_BUTTON, notCheckable = 1, func = function()
 		ToggleHelpFrame()
@@ -234,12 +236,7 @@ local micromenu = {
 	{text = BATTLEFIELD_MINIMAP, notCheckable = true, func = function()
 		ToggleBattlefieldMinimap()
 	end},
-	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
-		if not IsAddOnLoaded("Blizzard_EncounterJournal") then
-			LoadAddOn("Blizzard_EncounterJournal")
-		end
-		ToggleFrame(EncounterJournal)
-	end},
+	
 }
 
 Minimap:SetScript("OnMouseUp", function(self, button)

@@ -62,6 +62,7 @@ local function LoadSkin()
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:SetDrawLayer("OVERLAY")
+
 			if not icon.backdrop then
 				icon.backdrop = CreateFrame("Frame", nil, button)
 				icon.backdrop:SetFrameLevel(button:GetFrameLevel() - 1)
@@ -72,6 +73,7 @@ local function LoadSkin()
 			icon:SetParent(icon.backdrop)
 			icon:Point("TOPLEFT", icon.backdrop, "TOPLEFT", 2, -2)
 			icon:Point("BOTTOMRIGHT", icon.backdrop, "BOTTOMRIGHT", -2, 2)
+
 			count:SetParent(icon.backdrop)
 			count:SetFont(C.media.normal_font, 12, "OUTLINE")
 			count:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
