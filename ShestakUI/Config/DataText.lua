@@ -77,7 +77,6 @@ LPSTAT_CONFIG = {
 		enabled = C.stats.durability,
 		fmt = "[color]%d|r%%"..class"d",-- "54%D" -- %% outputs %, [color] inserts durability color code.
 		man = true, -- Hide bliz durability man.
-		gfunds = C.stats.guild_repair, -- Change to false to disable guild repairing.
 		ignore_inventory = false, -- Ignore inventory gear when auto-repairing.
 		gear_icons = false, -- Show your gear icons in the tooltip.
 		anchor_frame = "Guild", anchor_to = "left", anchor_from = "right",

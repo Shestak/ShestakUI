@@ -66,10 +66,11 @@ ls:SetScript("OnEvent", function(_, event, addon)
 		if not SavedStats[realm] then SavedStats[realm] = {} end
 		if not SavedStats[realm][char] then SavedStats[realm][char] = {} end
 		conf = SavedStats[realm][char]
-		
+
 		-- true/false defaults for autosell and autorepair
 		if conf.AutoSell == nil then conf.AutoSell = true end
 		if conf.AutoRepair == nil then conf.AutoRepair = true end
+		if conf.AutoGuildRepair == nil then conf.AutoGuildRepair = true end
 	end
 	if event == "ZONE_CHANGED_NEW_AREA" and not WorldMapFrame:IsShown() then
 		SetMapToCurrentZone()
@@ -368,12 +369,12 @@ if durability.enabled then
 					local dur, dmax = GetInventoryItemDurability(id)
 					if dur ~= dmax then dmin = floor(min(dmin, dur / dmax * 100)) end
 				end
-				self.text:SetText(format(gsub(durability.fmt,"%[color%]", (gradient(dmin / 100))), dmin))
+				self.text:SetText(format(gsub(durability.fmt, "%[color%]", (gradient(dmin / 100))), dmin))
 			elseif event == "MERCHANT_SHOW" and not (IsAltKeyDown() or IsShiftKeyDown()) then
 				if conf.AutoRepair and CanMerchantRepair() then
 					local cost, total = GetRepairAllCost(), 0
 					if cost > 0 then
-						if durability.gfunds and CanGuildBankRepair() then RepairAllItems(1) total = cost end
+						if conf.AutoGuildRepair and CanGuildBankRepair() then RepairAllItems(1) total = cost end
 						if GetRepairAllCost() > 0 then
 							if not durability.ignore_inventory and GetRepairAllCost() <= GetMoney() then
 								total = GetRepairAllCost(); RepairAllItems()
@@ -409,7 +410,7 @@ if durability.enabled then
 			end
 			GameTooltip:AddLine(" ")
 			local nodur, totalcost = true, 0
-			for slot, string in gmatch("1HEAD3SHOULDER5CHEST6WAIST7LEGS8FEET9WRIST10HANDS16MAINHAND17SECONDARYHAND18RANGED","(%d+)([^%d]+)") do
+			for slot, string in gmatch("1HEAD3SHOULDER5CHEST6WAIST7LEGS8FEET9WRIST10HANDS16MAINHAND17SECONDARYHAND18RANGED", "(%d+)([^%d]+)") do
 				local dur, dmax = GetInventoryItemDurability(slot)
 				local string = _G[string.."SLOT"]
 				if dur ~= dmax then
@@ -427,14 +428,17 @@ if durability.enabled then
 			end
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddDoubleLine(" ", L_STATS_AUTO_REPAIR..": "..(conf.AutoRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
-			GameTooltip:AddDoubleLine(" ", L_STATS_GUILD_REPAIR..": "..(C.stats.guild_repair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
+			GameTooltip:AddDoubleLine(" ", L_STATS_GUILD_REPAIR..": "..(conf.AutoGuildRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
 			GameTooltip:Show()
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" then
 				conf.AutoRepair = not conf.AutoRepair
 				self:GetScript("OnEnter")(self)
-			elseif GetNumEquipmentSets() > 0 and ((button == "LeftButton" and IsShiftKeyDown()) or button == "MiddleButton") then
+			elseif button == "MiddleButton" then
+				conf.AutoGuildRepair = not conf.AutoGuildRepair
+				self:GetScript("OnEnter")(self)
+			elseif GetNumEquipmentSets() > 0 and button == "LeftButton" and (IsAltKeyDown() or IsShiftKeyDown()) then
 				local menulist = {{isTitle = true, notCheckable = 1, text = format(gsub(EQUIPMENT_SETS, ":", ""), "")}}
 				if GetNumEquipmentSets() == 0 then
 					tinsert(menulist, {text = NONE, notCheckable = 1, disabled = true})

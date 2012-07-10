@@ -455,7 +455,6 @@ C["stats"] = {
 	["experience"] = true,						-- Experience
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
-	["guild_repair"] = true,					-- Repair from guild bank
 }
 
 ----------------------------------------------------------------------------------------
