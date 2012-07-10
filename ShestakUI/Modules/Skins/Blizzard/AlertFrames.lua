@@ -155,6 +155,10 @@ local function LoadSkin()
 				frame:CreateBackdrop("Transparent")
 				frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", 19, -6)
 				frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -22, 6)
+
+				frame:HookScript("OnEnter", FixBg)
+				frame:HookScript("OnShow", FixBg)
+				frame.animIn:HookScript("OnFinished", FixBg)
 			end
 
 			-- Background
