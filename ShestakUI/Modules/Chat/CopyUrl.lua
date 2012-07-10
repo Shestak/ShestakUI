@@ -14,12 +14,15 @@ local patterns = {
 for _, event in pairs({
 	"CHAT_MSG_GUILD",
 	"CHAT_MSG_PARTY",
+	"CHAT_MSG_PARTY_LEADER",
 	"CHAT_MSG_RAID",
 	"CHAT_MSG_RAID_LEADER",
 	"CHAT_MSG_CHANNEL",
 	"CHAT_MSG_WHISPER",
 	"CHAT_MSG_BN_WHISPER",
-	"CHAT_MSG_SAY"
+	"CHAT_MSG_SAY",
+	"CHAT_MSG_BATTLEGROUND",
+	"CHAT_MSG_BATTLEGROUND_LEADER"
 }) do
 	ChatFrame_AddMessageEventFilter(event, function(self, event, str, ...)
 		for _, pattern in pairs(patterns) do
@@ -35,7 +38,7 @@ local orig = SetItemRef
 function SetItemRef(link, str, ...)
 	if string.sub(link, 1, 3) ~= "url" then return orig(link, str, ...) end
 
-	local editbox = DEFAULT_CHAT_FRAME.editBox
+	local editbox = ChatEdit_ChooseBoxForSend()
 	ChatEdit_ActivateChat(editbox)
 	editbox:Insert(string.sub(link, 5))
 	editbox:HighlightText()

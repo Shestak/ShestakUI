@@ -71,7 +71,7 @@ local function filter(self, event, msg)
 	for _, str in pairs(filterstrings) do if msg:match(str) then return true end end
 end
 
-for _,event in pairs{"CHAT_MSG_YELL", "CHAT_MSG_SAY", "CHAT_MSG_RAID", "CHAT_MSG_PARTY"} do
+for _,event in pairs{"CHAT_MSG_YELL", "CHAT_MSG_SAY", "CHAT_MSG_RAID", "CHAT_MSG_RAID_LEADER", "CHAT_MSG_PARTY", "CHAT_MSG_PARTY_LEADER", "CHAT_MSG_BATTLEGROUND", "CHAT_MSG_BATTLEGROUND_LEADER"} do
 	ChatFrame_AddMessageEventFilter(event, filter)
 end
 
