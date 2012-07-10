@@ -10,13 +10,12 @@ local BARAD = L_ZONE_TOLBARAD
 local autoreleasepvp = CreateFrame("Frame")
 autoreleasepvp:RegisterEvent("PLAYER_DEAD")
 autoreleasepvp:SetScript("OnEvent", function(self, event)
-	local soulstone = GetSpellInfo(20707)
 	local inBattlefield = false
 	for i = 1, GetMaxBattlefieldID() do
 		local status = GetBattlefieldStatus(i)
 		if status == "active" then inBattlefield = true end
 	end
-	if (T.class ~= "SHAMAN") and not (soulstone and UnitBuff("player", soulstone)) then
+	if (T.class ~= "SHAMAN") and not (HasSoulstone() and CanUseSoulstone()) then
 		if (tostring(GetZoneText()) == WINTERGRASP) or (tostring(GetZoneText()) == BARAD) or inBattlefield == true then
 			RepopMe()
 		end

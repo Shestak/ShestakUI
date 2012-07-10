@@ -139,7 +139,7 @@ local function Inject(name, stat)
 	if not stat then stat = pxpx end
 
 	local m = modules[name]
-	for k,v in pairs{ -- retrieving config variables from LPSTAT_CONFIG
+	for k, v in pairs{ -- retrieving config variables from LPSTAT_CONFIG
 		--name = name, anchor_frame = m.anchor_frame,
 		name = name, parent = m.anchor_frame,
 		anchor_to = m.anchor_to, anchor_from = m.anchor_from,

@@ -153,8 +153,8 @@ local makeList = function()
 				cb:Width(22)
 				cb:Height(22)
 			else
-				cb:Width(16)
-				cb:Height(16)
+				cb:Width(18)
+				cb:Height(18)
 			end
 			cb:SetScript("OnClick", function()
 				local _, _, _, enabled = GetAddOnInfo(name)
