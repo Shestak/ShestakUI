@@ -5,10 +5,10 @@ if C.reminder.raid_buffs_enable ~= true then return end
 --	Raid buffs on player(by Elv22)
 ----------------------------------------------------------------------------------------
 -- Locals
-local flaskbuffs = T.ReminderRaidBuffs["Flask"]
-local battleelixirbuffs = T.ReminderRaidBuffs["BattleElixir"]
-local guardianelixirbuffs = T.ReminderRaidBuffs["GuardianElixir"]
-local foodbuffs = T.ReminderRaidBuffs["Food"]
+local flaskbuffs = T.ReminderConsumableBuffs["Flask"]
+local battleelixirbuffs = T.ReminderConsumableBuffs["BattleElixir"]
+local guardianelixirbuffs = T.ReminderConsumableBuffs["GuardianElixir"]
+local foodbuffs = T.ReminderConsumableBuffs["Food"]
 local visible
 local flasked
 local battleelixired
@@ -18,61 +18,6 @@ local spell3
 local spell4
 local spell5
 local spell6
-
--- Setup caster buffs
-local function SetCasterBuffs()
-	Spell3Buff = {	-- Total Stats
-		20217,	-- Blessing of Kings
-		115921,	-- Legacy of the Emperor
-		90363,	-- Embrace of the Shale Spider
-		1126,	-- Mark of the Wild
-	}
-	Spell4Buff = {	-- Total Stamina
-		21562,	-- Power Word: Fortitude
-		469,	-- Commanding Shout
-		6307,	-- Blood Pact
-		90364,	-- Qiraji Fortitude
-		111922,	-- Runescroll of Fortitude III
-	}
-	Spell5Buff = {	-- Spell Power
-		77747,	-- Burning Wrath
-		109773,	-- Dark Intent
-		61316,	-- Dalaran Brilliance
-		1459,	-- Arcane Brilliance
-	}
-	Spell6Buff = {	-- Spell Haste
-		24907,	-- Moonkin Aura
-		15473,	-- Shadowform
-		51470,	-- Elemental Oath
-	}
-end
-
--- Setup everyone else's buffs
-local function SetBuffs()
-	Spell3Buff = {	-- Total Stats
-		20217,	-- Blessing of Kings
-		115921,	-- Legacy of the Emperor
-		90363,	-- Embrace of the Shale Spider
-		1126,	-- Mark of the Wild
-	}
-	Spell4Buff = {	-- Total Stamina
-		21562,	-- Power Word: Fortitude
-		469,	-- Commanding Shout
-		6307,	-- Blood Pact
-		90364,	-- Qiraji Fortitude
-		111922,	-- Runescroll of Fortitude III
-	}
-	Spell5Buff = {	-- Attack Power
-		6673,	-- Battle Shout
-		19506,	-- Trueshot Aura
-		57330,	-- Horn of Winter
-	}
-	Spell6Buff = {	-- Melee and Ranged Haste
-		30809,	-- Unleashed Rage
-		113742,	-- Swiftblade's Cunning
-		55610,	-- Unholy Aura
-	}
-end
 
 -- We need to check if you have two differant elixirs if your not flasked, before we say your not flasked
 local function CheckElixir(unit)
@@ -120,9 +65,9 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	-- If We're a caster we may want to see differant buffs
 	if T.Role == "Caster" or T.Role == "Healer" then
-		SetCasterBuffs()
+		T.ReminderCasterBuffs()
 	else
-		SetBuffs()
+		T.ReminderPhysicalBuffs()
 	end
 
 	-- Start checking buffs to see if we can find a match from the list

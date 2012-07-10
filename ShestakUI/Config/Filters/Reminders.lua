@@ -6,7 +6,8 @@ local T, C, L = unpack(select(2, ...))
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 if C.reminder.raid_buffs_enable == true then
-	T.ReminderRaidBuffs = {
+	-- Consumable buffs
+	T.ReminderConsumableBuffs = {
 		Flask = {
 			105617,	-- Alchemist's Flask
 			--92679,	-- Flask of Battle
@@ -44,6 +45,61 @@ if C.reminder.raid_buffs_enable == true then
 			104275,	-- Sea Mist Rice Noodles
 		},
 	}
+
+	-- Caster buffs
+	function T.ReminderCasterBuffs()
+		Spell3Buff = {	-- Total Stats
+			20217,	-- Blessing of Kings
+			115921,	-- Legacy of the Emperor
+			90363,	-- Embrace of the Shale Spider
+			1126,	-- Mark of the Wild
+		}
+		Spell4Buff = {	-- Total Stamina
+			21562,	-- Power Word: Fortitude
+			469,	-- Commanding Shout
+			6307,	-- Blood Pact
+			90364,	-- Qiraji Fortitude
+			111922,	-- Runescroll of Fortitude III
+		}
+		Spell5Buff = {	-- Spell Power
+			77747,	-- Burning Wrath
+			109773,	-- Dark Intent
+			61316,	-- Dalaran Brilliance
+			1459,	-- Arcane Brilliance
+		}
+		Spell6Buff = {	-- Spell Haste
+			24907,	-- Moonkin Aura
+			15473,	-- Shadowform
+			51470,	-- Elemental Oath
+		}
+	end
+
+	-- Physical buffs
+	function T.ReminderPhysicalBuffs()
+		Spell3Buff = {	-- Total Stats
+			20217,	-- Blessing of Kings
+			115921,	-- Legacy of the Emperor
+			90363,	-- Embrace of the Shale Spider
+			1126,	-- Mark of the Wild
+		}
+		Spell4Buff = {	-- Total Stamina
+			21562,	-- Power Word: Fortitude
+			469,	-- Commanding Shout
+			6307,	-- Blood Pact
+			90364,	-- Qiraji Fortitude
+			111922,	-- Runescroll of Fortitude III
+		}
+		Spell5Buff = {	-- Attack Power
+			6673,	-- Battle Shout
+			19506,	-- Trueshot Aura
+			57330,	-- Horn of Winter
+		}
+		Spell6Buff = {	-- Melee and Ranged Haste
+			30809,	-- Unleashed Rage
+			113742,	-- Swiftblade's Cunning
+			55610,	-- Unholy Aura
+		}
+	end
 end
 
 ----------------------------------------------------------------------------------------
