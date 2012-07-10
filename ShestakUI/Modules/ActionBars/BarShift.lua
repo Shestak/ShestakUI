@@ -52,9 +52,8 @@ bar:RegisterEvent("UPDATE_SHAPESHIFT_FORM")
 bar:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
 bar:SetScript("OnEvent", function(self, event, ...)
 	if event == "PLAYER_LOGIN" then
-		local button
 		for i = 1, NUM_STANCE_SLOTS do
-			button = _G["StanceButton"..i]
+			local button = _G["StanceButton"..i]
 			button:ClearAllPoints()
 			button:SetParent(self)
 			if i == 1 then
@@ -91,9 +90,8 @@ bar:SetScript("OnEvent", function(self, event, ...)
 		hooksecurefunc("StanceBar_Update", movestance)
 	elseif event == "UPDATE_SHAPESHIFT_FORMS" then
 		if InCombatLockdown() then return end
-		local button
 		for i = 1, NUM_STANCE_SLOTS do
-			button = _G["StanceButton"..i]
+			local button = _G["StanceButton"..i]
 			local _, name = GetShapeshiftFormInfo(i)
 			if name then
 				button:Show()

@@ -98,7 +98,9 @@ local function LoadSkin()
 		f:StripTextures()
 	end
 
-	--PetJournalTutorialButton:Kill()
+	PetJournalTutorialButton.Ring:Hide()
+	PetJournalTutorialButton:SetPoint("TOPLEFT", PetJournal, "TOPLEFT", -5, 10)
+
 	PetJournal.PetCount:StripTextures()
 	T.SkinEditBox(PetJournalSearchBox)
 
@@ -158,13 +160,13 @@ local function LoadSkin()
 
 	for i = 1, 3 do
 		_G["PetJournalLoadoutPet"..i]:StripTextures()
-		_G["PetJournalLoadoutPet"..i]:SetTemplate()
+		_G["PetJournalLoadoutPet"..i]:SetTemplate("Overlay")
 
 		_G["PetJournalLoadoutPet"..i].dragButton:SetTemplate("Default", true)
 		_G["PetJournalLoadoutPet"..i].dragButton:StyleButton()
 	end
-	
-	PetJournalPetCardList:SetPoint("TOPLEFT", PetJournal, "TOPRIGHT", 1, 0)
+
+	PetJournalPetCardList:SetPoint("TOPLEFT", PetJournal, "TOPRIGHT", 3, 0)
 	PetJournalPetCardList.MainCard:StripTextures()
 	PetJournalPetCardList.MainCard:SetTemplate("Default")
 

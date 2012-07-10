@@ -15,16 +15,14 @@ local function LoadSkin()
 		"RaidFinderFrameBottomInset",
 		"RaidFinderFrameRoleInset",
 		"ScenarioFinderFrame",
-
+		"LFGDungeonReadyDialog",
+		"LFDQueueFrameCooldownFrame",
 		--[["LFDQueueFrameSpecific",
 		"LFDQueueFrameRandom",
 		"LFDQueueFrameRandomScrollFrame",
-		"LFDQueueFrameCapBar",
 		"LFDQueueFrameRandomScrollFrameScrollBar",
 		"LFDQueueFrameNoLFDWhileLFR",
 		"LFDQueueFrameSpecificListScrollFrame",
-		"LFDQueueFrameCooldownFrame",
-		"LFGDungeonReadyDialog",
 		"LFGDungeonReadyStatus",
 		"LFGInvitePopup"]]
 	}
@@ -37,8 +35,7 @@ local function LoadSkin()
 		"LFDQueueFrameBackground",
 		"PVEFramePortrait",
 		"ScenarioFinderFrameInset",
-
-		--"LFGDungeonReadyDialogBackground",
+		"LFGDungeonReadyDialogBackground"
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -49,14 +46,13 @@ local function LoadSkin()
 		"LFDQueueFrameFindGroupButton",
 		"RaidFinderFrameFindRaidButton",
 		"ScenarioQueueFrameFindGroupButton",
-		
-		--[[
-		"LFDQueueFrameCancelButton",
+		"LFGDungeonReadyDialogLeaveQueueButton",
+		"LFGDungeonReadyDialogEnterDungeonButton"
+
+		--[["LFDQueueFrameCancelButton",
 		"LFDQueueFramePartyBackfillBackfillButton",
 		"LFDQueueFramePartyBackfillNoBackfillButton",
 		"LFDQueueFrameNoLFDWhileLFRLeaveQueueButton",
-		"LFGDungeonReadyDialogEnterDungeonButton",
-		"LFGDungeonReadyDialogLeaveQueueButton",
 		"LFGInvitePopupAcceptButton",
 		"LFGInvitePopupDeclineButton",]]
 	}
@@ -211,7 +207,7 @@ local function LoadSkin()
 
 	T.SkinCloseButton(PVEFrameCloseButton)
 
-	--[[T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
+	T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
 	RolePollPopup:SetTemplate("Transparent")
 	LFGInvitePopup:SetTemplate("Transparent")
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
@@ -219,9 +215,8 @@ local function LoadSkin()
 	LFGDungeonReadyDialog.filigree:SetAlpha(0)
 	LFGDungeonReadyDialog.bottomArt:SetAlpha(0)
 	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
-	LFDQueueFrameFindGroupButton:Point("BOTTOMLEFT", LFDParentFrame.backdrop, "BOTTOMLEFT", 4, 4)
-	LFDQueueFrameCancelButton:Point("BOTTOMRIGHT", LFDParentFrame.backdrop, "BOTTOMRIGHT", -6, 4)
-	LFDQueueFrameRandomScrollFrame:Height(LFDQueueFrameRandomScrollFrame:GetHeight() + 10)]]
+
+	--LFDQueueFrameRandomScrollFrame:Height(LFDQueueFrameRandomScrollFrame:GetHeight() + 10)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
