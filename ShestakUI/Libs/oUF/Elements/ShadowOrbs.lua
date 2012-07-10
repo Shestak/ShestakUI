@@ -15,7 +15,7 @@ local function Update(self, event, unit, powerType)
 		sb:PreUpdate(unit)
 	end
 
-	local numOrbs = UnitPower("player", SPELL_POWER_SHADOW_ORBS)
+	local numOrbs = UnitPower('player', SPELL_POWER_SHADOW_ORBS)
 
 	for i = 1, PRIEST_BAR_NUM_ORBS do
 		if i <= numOrbs then
@@ -51,13 +51,13 @@ end
 
 local function Enable(self, unit)
 	local sb = self.ShadowOrbsBar
-	if(sb) and unit == "player" then
+	if(sb) and unit == 'player' then
 		sb.__owner = self
 		sb.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent("PLAYER_TALENT_UPDATE", Visibility)
-		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)
-		self:RegisterEvent("UNIT_POWER_FREQUENT", Path)
+		self:RegisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+		self:RegisterEvent('UNIT_DISPLAYPOWER', Path)
+		self:RegisterEvent('UNIT_POWER_FREQUENT', Path)
 
 		return true
 	end
@@ -66,9 +66,9 @@ end
 local function Disable(self)
 	local sb = self.ShadowOrbsBar
 	if(sb) then
-		self:UnregisterEvent("PLAYER_TALENT_UPDATE", Visibility)
-		self:UnregisterEvent("UNIT_DISPLAYPOWER", Path)
-		self:UnregisterEvent("UNIT_POWER_FREQUENT", Path)
+		self:UnregisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+		self:UnregisterEvent('UNIT_DISPLAYPOWER', Path)
+		self:UnregisterEvent('UNIT_POWER_FREQUENT', Path)
 	end
 end
 

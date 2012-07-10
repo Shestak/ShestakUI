@@ -1,25 +1,14 @@
---[[ Runebar:
-	Authors: Zariel, Haste
-]]
-
-if select(2, UnitClass("player")) ~= "DEATHKNIGHT" then return end
+if(select(2, UnitClass('player')) ~= 'DEATHKNIGHT') then return end
 
 local parent, ns = ...
 local oUF = ns.oUF
-
-oUF.colors.runes = {
-	{1, 0, 0},
-	{0, .5, 0},
-	{0, 1, 1},
-	{.9, .1, 1},
-}
 
 local runemap = { 1, 2, 5, 6, 3, 4 }
 
 local OnUpdate = function(self, elapsed)
 	local duration = self.duration + elapsed
 	if(duration >= self.max) then
-		return self:SetScript("OnUpdate", nil)
+		return self:SetScript('OnUpdate', nil)
 	else
 		self.duration = duration
 		return self:SetValue(duration)
@@ -46,12 +35,12 @@ local UpdateRune = function(self, event, rid)
 		if(runeReady) then
 			rune:SetMinMaxValues(0, 1)
 			rune:SetValue(1)
-			rune:SetScript("OnUpdate", nil)
+			rune:SetScript('OnUpdate', nil)
 		else
 			rune.duration = GetTime() - start
 			rune.max = duration
 			rune:SetMinMaxValues(1, duration)
-			rune:SetScript("OnUpdate", OnUpdate)
+			rune:SetScript('OnUpdate', OnUpdate)
 		end
 		UpdateType(self, event, rid)
 	end
@@ -84,8 +73,8 @@ local Enable = function(self, unit)
 			UpdateType(self, nil, i, math.floor((runemap[i]+1)/2))
 		end
 
-		self:RegisterEvent("RUNE_POWER_UPDATE", UpdateRune)
-		self:RegisterEvent("RUNE_TYPE_UPDATE", UpdateType)
+		self:RegisterEvent('RUNE_POWER_UPDATE', UpdateRune)
+		self:RegisterEvent('RUNE_TYPE_UPDATE', UpdateType)
 
 		-- oUF leaves the vehicle events registered on the player frame, so
 		-- buffs and such are correctly updated when entering/exiting vehicles.
@@ -102,8 +91,8 @@ local Disable = function(self)
 	RuneFrame.Show = nil
 	RuneFrame:Show()
 
-	self:UnregisterEvent("RUNE_POWER_UPDATE", UpdateRune)
-	self:UnregisterEvent("RUNE_TYPE_UPDATE", UpdateType)
+	self:UnregisterEvent('RUNE_POWER_UPDATE', UpdateRune)
+	self:UnregisterEvent('RUNE_TYPE_UPDATE', UpdateType)
 end
 
-oUF:AddElement("Runes", Update, Enable, Disable)
+oUF:AddElement('Runes', Update, Enable, Disable)

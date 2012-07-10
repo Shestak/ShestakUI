@@ -394,7 +394,7 @@ local function Shared(self, unit)
 
 			for i = 1, 4 do
 				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."_WarlockSpecBars"..i, self.WarlockSpecBars)
-				self.WarlockSpecBars[i]:Height(7)
+				self.WarlockSpecBars[i]:SetSize(214 / 4, 7)
 				if i == 1 then
 					self.WarlockSpecBars[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
