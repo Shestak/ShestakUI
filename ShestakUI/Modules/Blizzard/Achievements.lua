@@ -1,4 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
+if T.MOPVersion then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on AchievementMover(modified by Tukz)

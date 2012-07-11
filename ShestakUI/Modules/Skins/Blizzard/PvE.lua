@@ -17,10 +17,9 @@ local function LoadSkin()
 		"ScenarioFinderFrame",
 		"LFGDungeonReadyDialog",
 		"LFDQueueFrameCooldownFrame",
+
 		--[["LFDQueueFrameSpecific",
 		"LFDQueueFrameRandom",
-		"LFDQueueFrameRandomScrollFrame",
-		"LFDQueueFrameRandomScrollFrameScrollBar",
 		"LFDQueueFrameNoLFDWhileLFR",
 		"LFDQueueFrameSpecificListScrollFrame",
 		"LFGDungeonReadyStatus",
@@ -208,6 +207,9 @@ local function LoadSkin()
 	T.SkinCloseButton(PVEFrameCloseButton)
 
 	T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
+	LFDQueueFrameRandomScrollFrameScrollBackground:SetTexture(nil)
+	LFDQueueFrameRandomScrollFrameScrollBackgroundTopLeft:SetTexture(nil)
+	LFDQueueFrameRandomScrollFrameScrollBackgroundBottomRight:SetTexture(nil)
 	RolePollPopup:SetTemplate("Transparent")
 	LFGInvitePopup:SetTemplate("Transparent")
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
