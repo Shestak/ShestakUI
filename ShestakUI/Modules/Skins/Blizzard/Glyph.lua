@@ -12,6 +12,7 @@ local function LoadSkin()
 	T.SkinEditBox(GlyphFrameSearchBox)
 	T.SkinDropDownBox(GlyphFrameFilterDropDown, 212)
 
+	GlyphFrameBackground:SetDrawLayer("OVERLAY")
 	GlyphFrameBackground:SetPoint("TOPLEFT", 5, 0)
 	GlyphFrameBackground:SetPoint("BOTTOMRIGHT", -5, 2)
 
