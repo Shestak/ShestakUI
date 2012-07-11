@@ -1251,8 +1251,10 @@ Filger_Spells = {
 			{spellID = 31850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Holy Avenger
 			{spellID = 105809, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Eternal Flame (HoT)
+			-- Eternal Flame
 			{spellID = 114163, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sacred Shield
+			{spellID = 20925, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 
 			-- Other
 		},
@@ -1267,21 +1269,19 @@ Filger_Spells = {
 
 			-- Buffs
 			-- Infusion of Light
-			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Daybreak
 			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bastion of Glory
+			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Selfless Healer
+			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
-			-- The Art of War
-			{spellID = 59578, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Purpose
 			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sacred Shield
-			{spellID = 20925, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Selfless Healer
-			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Guardian of Ancient Kings Ret PROC
 			{spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1339,7 +1339,7 @@ Filger_Spells = {
 			{spellID = 2812, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Dazed - Avenger's Shield
 			{spellID = 63529, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Burden of Guilt (-50% speed)
+			-- Burden of Guilt
 			{spellID = 110300, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -1356,10 +1356,6 @@ Filger_Spells = {
 			{spellID = 96231, filter = "CD"},
 			-- Hammer of Justice
 			{spellID = 853, filter = "CD"},
-			-- Fist of Justice
-			{spellID = 105593, filter = "CD"},
-			-- Repentance
-			{spellID = 20066, filter = "CD"},
 			-- Judgement
 			{spellID = 20271, filter = "CD"},
 			-- Exorcism
@@ -1402,6 +1398,8 @@ Filger_Spells = {
 			{spellID = 115750, filter = "CD"},
 			-- Speed of Light
 			{spellID = 85499, filter = "CD"},
+			-- Cleanse
+			{spellID = 4987, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2729,8 +2727,6 @@ Filger_Spells = {
 			{spellID = 63529, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hammer of Justice
 			{spellID = 853, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Fist of Justice
-			{spellID = 105593, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seal of Justice proc
 			{spellID = 20170, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Denounce
@@ -3087,8 +3083,6 @@ Filger_Spells = {
 			{spellID = 44572, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Hammer of Justice
 			{spellID = 853, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Fist of Justice
-			{spellID = 105593, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Psychic Horror
 			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Cheap Shot
