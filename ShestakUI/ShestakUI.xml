@@ -52,6 +52,12 @@
 	<Script file="Core\Kill.lua"/>
 	<Script file="Core\Temp.lua"/>
 
+	<Script file="Modules\Automation\AchScreens.lua"/>
+	<Script file="Modules\Automation\AutoChefsHat.lua"/>
+	<Script file="Modules\Automation\AutoInvite.lua"/>
+	<Script file="Modules\Automation\AutoRelease.lua"/>
+	<Script file="Modules\Automation\SolveArtifact.lua"/>
+
 	<Script file="Modules\Blizzard\Vehicle.lua"/>
 	<Script file="Modules\Blizzard\CaptureBar.lua"/>
 	<Script file="Modules\Blizzard\MirrorBars.lua"/>
@@ -84,18 +90,14 @@
 	<Script file="Modules\Misc\SelfBuffs.lua"/>
 	<Script file="Modules\Misc\RaidBuffs.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>
-	<Script file="Modules\Misc\AddOns.lua"/>
-	<Script file="Modules\Misc\AutoRelease.lua"/>
+	<Script file="Modules\Misc\AddOnsList.lua"/>
 	<Script file="Modules\Misc\Misc.lua"/>
 	<Script file="Modules\Misc\Mounts.lua"/>
-	<Script file="Modules\Misc\Invite.lua"/>
 	<Script file="Modules\Misc\ToggleMenu.lua"/>
-	<Script file="Modules\Misc\AchScreens.lua"/>
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
 	<Script file="Modules\Misc\OneClickBuyOut.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
-	<Script file="Modules\Misc\AutoChefsHat.lua"/>
-	<Script file="Modules\Misc\SolveArtifact.lua"/>
+	<Script file="Modules\Misc\MagePortals.lua"/>
 
 	<Script file="Modules\Announcements\Drinking.lua"/>
 	<Script file="Modules\Announcements\Interrupts.lua"/>
@@ -141,22 +143,21 @@
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
 	<Script file="Modules\Tooltip\Achievement.lua"/>
-	<!--<Script file="Modules\Tooltip\Talents.lua"/>-->
+	<Script file="Modules\Tooltip\Talents.lua"/>
 	<Script file="Modules\Tooltip\ItemIcons.lua"/>
-	<!--<Script file="Modules\Tooltip\ItemLevel.lua"/>
-	<Script file="Modules\Tooltip\PvPRating.lua"/>-->
+	<Script file="Modules\Tooltip\ItemLevel.lua"/>
+	<Script file="Modules\Tooltip\PvPRating.lua"/>
 	<Script file="Modules\Tooltip\RuFix.lua"/>
 	<Script file="Modules\Tooltip\SpellID.lua"/>
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
 
-	<Script file="Modules\Loot\AutoDez.lua"/>
+	<Script file="Modules\Loot\AutoDisenchant.lua"/>
+	<Script file="Modules\Loot\AutoGreed.lua"/>
 	<Script file="Modules\Loot\Loot.lua"/>
 	<Script file="Modules\Loot\LootRoll.lua"/>
 
 	<Script file="Modules\DataText\Battleground.lua"/>
-
-	<Script file="Modules\Class\Mage.lua"/>
 
 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
 	<Script file="Modules\Skins\ACE3.lua"/>

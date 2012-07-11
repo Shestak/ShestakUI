@@ -1,5 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if C.tooltip.enable ~= true or C.tooltip.talents ~= true then return end
+if T.MOPVersion then return end
 
 ----------------------------------------------------------------------------------------
 --	Target Talents(TipTacTalents by Aezay)

@@ -1,5 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if C.skins.minimap_buttons ~= true or C.minimap.enable ~= true then return end
+if T.MOPVersion then return end
 
 ----------------------------------------------------------------------------------------
 --	Skin addons icons on minimap

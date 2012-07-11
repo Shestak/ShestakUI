@@ -4,14 +4,11 @@ if C.loot.rolllootframe ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Based on teksLoot(by Tekkub)
 ----------------------------------------------------------------------------------------
-local backdrop = ({
-	bgFile = C.media.blank,
-	edgeFile = C.media.blank,
-	tile = true, tileSize = 0, edgeSize = T.mult,
-	insets = {left = -T.mult, right = -T.mult, top = -T.mult, bottom = -T.mult},
-})
 local pos = "TOP"
+local frames = {}
 local cancelled_rolls = {}
+local LootRollAnchor = CreateFrame("Frame", "LootRollAnchor", UIParent)
+LootRollAnchor:Size(362, 26)
 
 local function ClickRoll(frame)
 	RollOnLoot(frame.parent.rollID, frame.rolltype)
@@ -99,7 +96,7 @@ local function CreateRollFrame()
 	frame:Hide()
 
 	local button = CreateFrame("Button", nil, frame)
-	button:Point("LEFT", -27, 0)
+	button:Point("LEFT", -29, 0)
 	button:Size(22)
 	button:CreateBackdrop("Default")
 	button:SetScript("OnEnter", SetItemTip)
@@ -114,8 +111,8 @@ local function CreateRollFrame()
 
 	local status = CreateFrame("StatusBar", nil, frame)
 	status:Size(326, 20)
-	status:Point("TOPLEFT", 2, -2)
-	status:Point("BOTTOMRIGHT", -2, 2)
+	status:Point("TOPLEFT", 0, 0)
+	status:Point("BOTTOMRIGHT", 0, 0)
 	status:SetScript("OnUpdate", StatusUpdate)
 	status:SetFrameLevel(status:GetFrameLevel() - 1)
 	status:SetStatusBarTexture(C.media.texture)
@@ -155,19 +152,6 @@ local function CreateRollFrame()
 	return frame
 end
 
-local LootRollAnchor = CreateFrame("Frame", "LootRollAnchor", UIParent)
-LootRollAnchor:Size(300, 20)
-
-local frames = {}
-
---[[local f = CreateRollFrame() -- Create one for good measure
-if pos == "TOP" then
-	f:Point("TOPLEFT", next(frames) and frames[#frames] or LootRollAnchor, "BOTTOMLEFT", 0, -4)
-else
-	f:Point("BOTTOMLEFT", next(frames) and frames[#frames] or LootRollAnchor, "TOPLEFT", 0, 4)
-end
-table.insert(frames, f)]]
-
 local function GetFrame()
 	for i, f in ipairs(frames) do
 		if not f.rollID then return f end
@@ -175,9 +159,9 @@ local function GetFrame()
 
 	local f = CreateRollFrame()
 	if pos == "TOP" then
-		f:Point("TOPLEFT", next(frames) and frames[#frames] or LootRollAnchor, "BOTTOMLEFT", 0, -4)
+		f:Point("TOPRIGHT", next(frames) and frames[#frames] or LootRollAnchor, "BOTTOMRIGHT", 0, -7)
 	else
-		f:Point("BOTTOMLEFT", next(frames) and frames[#frames] or LootRollAnchor, "TOPLEFT", 0, 4)
+		f:Point("BOTTOMRIGHT", next(frames) and frames[#frames] or LootRollAnchor, "TOPRIGHT", 0, 7)
 	end
 	table.insert(frames, f)
 	return f
@@ -252,7 +236,6 @@ LootRollAnchor:SetScript("OnEvent", function(frame, event, addon)
 	UIParent:UnregisterEvent("CANCEL_LOOT_ROLL")
 
 	LootRollAnchor:SetScript("OnEvent", function(frame, event, ...) if event == "LOOT_HISTORY_ROLL_CHANGED" then return LOOT_HISTORY_ROLL_CHANGED(...) else return START_LOOT_ROLL(...) end end)
-	--LootRollAnchor:SetScript("OnEvent", function(frame, event, ...) return START_LOOT_ROLL(...) end)
 
 	LootRollAnchor:Point(unpack(C.position.group_loot))
 end)
