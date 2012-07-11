@@ -54,10 +54,9 @@ local HAND_OF_LIGHT = GetSpellInfo(90174)
 local isHolyPowerAbility
 do
 	local HOLY_POWER_SPELLS = {
-		[85256] = GetSpellInfo(85256), -- Templar's Verdict
-		[53600] = GetSpellInfo(53600), -- Shield of the Righteous
-		[84963] = GetSpellInfo(84963), -- Inquisition
+		--[84963] = GetSpellInfo(84963), -- Inquisition
 		--[85673] = GetSpellInfo(85673), -- Word of Glory
+		--[114163] = GetSpellInfo(114163), -- Eternal Flame
 	}
 
 	isHolyPowerAbility = function(actionId)
