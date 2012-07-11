@@ -199,12 +199,7 @@ function tullaRange.UpdateButtonUsable(button)
 		end
 	-- Out of mana
 	elseif notEnoughMana then
-		-- Holy Power
-		--if PLAYER_IS_PALADIN and isHolyPowerAbility(action) and not (UnitPower("player", SPELL_POWER_HOLY_POWER) >= 3 or UnitBuff("player", HAND_OF_LIGHT)) then
-		--	tullaRange.SetButtonColor(button, "ooh")
-		--else
-			tullaRange.SetButtonColor(button, "oom")
-		--end
+		tullaRange.SetButtonColor(button, "oom")
 	-- Unusable
 	else
 		button.tullaRangeColor = "unusuable"
@@ -251,8 +246,7 @@ function tullaRange:LoadDefaults()
 		normal = {1, 1, 1},
 		oor = {1, 0.1, 0.1},
 		oom = {0.1, 0.3, 1},
-		--ooh = {0.45, 0.45, 1},
-		ooh = {0, 1, 0},
+		ooh = {0.45, 0.45, 1},
 	}
 end
 
