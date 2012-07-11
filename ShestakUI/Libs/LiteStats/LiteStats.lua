@@ -842,9 +842,9 @@ if guild.enabled then
 			end
 		end,
 		OnUpdate = function(self, u)
-			if not GuildFrame then LoadAddOn("Blizzard_GuildUI") UpdateGuildXP() end
-			if u == "GUILD_XP_UPDATE" then UpdateGuildXP() end
 			if IsInGuild() then
+				if not GuildFrame then LoadAddOn("Blizzard_GuildUI") UpdateGuildXP() end
+				if u == "GUILD_XP_UPDATE" then UpdateGuildXP() end
 				AltUpdate(self)
 				if not self.gmotd then
 					-- Give me the GMOTD *today* pls.
