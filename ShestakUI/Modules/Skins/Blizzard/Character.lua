@@ -36,15 +36,13 @@ local function LoadSkin()
 
 		slot:StyleButton()
 		slot:SetNormalTexture("")
+		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
+		slot:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
 		icon:Point("TOPLEFT", 2, -2)
 		icon:Point("BOTTOMRIGHT", -2, 2)
-
-		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
-		slot:CreateBackdrop("Default")
-		slot.backdrop:SetAllPoints()
 	end
 
 	select(8, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
