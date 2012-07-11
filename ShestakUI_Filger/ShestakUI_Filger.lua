@@ -276,23 +276,23 @@ function Filger:OnEvent(event, unit)
 
 			if data.filter == "BUFF" then
 				local caster, spn, expirationTime
-				spn, _, _ = GetSpellInfo(data.spellID)
-				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
+				spn = GetSpellInfo(data.spellID)
+				name, rank, icon, count, debuffType, duration, expirationTime, caster,isStealable, shouldConsolidate, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
 				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
 					start = expirationTime - duration
 					found = true
 				end
 			elseif data.filter == "DEBUFF" then
 				local caster, spn, expirationTime
-				spn, _, _ = GetSpellInfo(data.spellID)
-				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitDebuff(data.unitID, data.spellID, spn, data.absID)
+				spn = GetSpellInfo(data.spellID)
+				name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, shouldConsolidate, spid = Filger:UnitDebuff(data.unitID, data.spellID, spn, data.absID)
 				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
 					start = expirationTime - duration
 					found = true
 				end
 			elseif data.filter == "CD" then
 				if data.spellID then
-					name, _, icon = GetSpellInfo(data.spellID)
+					name, rank, icon = GetSpellInfo(data.spellID)
 					if data.absID then
 						start, duration = GetSpellCooldown(data.spellID)
 					else
@@ -303,7 +303,7 @@ function Filger:OnEvent(event, unit)
 					spid = data.slotID
 					local slotLink = GetInventoryItemLink("player", data.slotID)
 					if slotLink then
-						name, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
+						name, itemLink, itemRarity, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, icon = GetItemInfo(slotLink)
 						start, duration = GetInventoryItemCooldown("player", data.slotID)
 					end
 				end
