@@ -5,19 +5,13 @@ if C.reminder.raid_buffs_enable ~= true then return end
 --	Raid buffs on player(by Elv22)
 ----------------------------------------------------------------------------------------
 -- Locals
-local flaskbuffs = T.ReminderConsumableBuffs["Flask"]
-local battleelixirbuffs = T.ReminderConsumableBuffs["BattleElixir"]
-local guardianelixirbuffs = T.ReminderConsumableBuffs["GuardianElixir"]
-local foodbuffs = T.ReminderConsumableBuffs["Food"]
-local visible
-local flasked
-local battleelixired
-local guardianelixired
-local food
-local spell3
-local spell4
-local spell5
-local spell6
+local flaskbuffs = T.ReminderBuffs["Flask"]
+local battleelixirbuffs = T.ReminderBuffs["BattleElixir"]
+local guardianelixirbuffs = T.ReminderBuffs["GuardianElixir"]
+local foodbuffs = T.ReminderBuffs["Food"]
+local statbuffs = T.ReminderBuffs["Stat"]
+local staminabuffs = T.ReminderBuffs["Stamina"]
+local visible, flask, battleelixir, guardianelixir, food, stat, stamina, spell5, spell6
 
 -- We need to check if you have two differant elixirs if your not flasked, before we say your not flasked
 local function CheckElixir(unit)
@@ -26,10 +20,10 @@ local function CheckElixir(unit)
 			local spellname = select(1, GetSpellInfo(battleelixirbuffs))
 			if UnitAura("player", spellname) then
 				FlaskFrame.t:SetTexture(select(3, GetSpellInfo(battleelixirbuffs)))
-				battleelixired = true
+				battleelixir = true
 				break
 			else
-				battleelixired = false
+				battleelixir = false
 			end
 		end
 	end
@@ -38,24 +32,24 @@ local function CheckElixir(unit)
 		for i, guardianelixirbuffs in pairs(guardianelixirbuffs) do
 			local spellname = select(1, GetSpellInfo(guardianelixirbuffs))
 			if UnitAura("player", spellname) then
-				guardianelixired = true
-				if not battleelixired then
+				guardianelixir = true
+				if not battleelixir then
 					FlaskFrame.t:SetTexture(select(3, GetSpellInfo(guardianelixirbuffs)))
 				end
 				break
 			else
-				guardianelixired = false
+				guardianelixir = false
 			end
 		end
 	end
 
-	if guardianelixired == true and battleelixired == true then
+	if guardianelixir == true and battleelixir == true then
 		FlaskFrame:SetAlpha(C.reminder.raid_buffs_alpha)
-		flasked = true
+		flask = true
 		return
 	else
 		FlaskFrame:SetAlpha(1)
-		flasked = false
+		flask = false
 	end
 end
 
@@ -78,7 +72,7 @@ local function OnAuraChange(self, event, arg1, unit)
 			if UnitAura("player", spellname) then
 				FlaskFrame.t:SetTexture(select(3, GetSpellInfo(flaskbuffs)))
 				FlaskFrame:SetAlpha(C.reminder.raid_buffs_alpha)
-				flasked = true
+				flask = true
 				break
 			else
 				CheckElixir()
@@ -102,31 +96,31 @@ local function OnAuraChange(self, event, arg1, unit)
 		end
 	end
 
-	for i, Spell3Buff in pairs(Spell3Buff) do
-		local spellname = select(1, GetSpellInfo(Spell3Buff))
+	for i, statbuffs in pairs(statbuffs) do
+		local spellname = select(1, GetSpellInfo(statbuffs))
 		if UnitAura("player", spellname) then
-			Spell3Frame:SetAlpha(C.reminder.raid_buffs_alpha)
-			Spell3Frame.t:SetTexture(select(3, GetSpellInfo(Spell3Buff)))
-			spell3 = true
+			StatFrame:SetAlpha(C.reminder.raid_buffs_alpha)
+			StatFrame.t:SetTexture(select(3, GetSpellInfo(statbuffs)))
+			stat = true
 			break
 		else
-			Spell3Frame:SetAlpha(1)
-			Spell3Frame.t:SetTexture(select(3, GetSpellInfo(Spell3Buff)))
-			spell3 = false
+			StatFrame:SetAlpha(1)
+			StatFrame.t:SetTexture(select(3, GetSpellInfo(statbuffs)))
+			stat = false
 		end
 	end
 
-	for i, Spell4Buff in pairs(Spell4Buff) do
-		local spellname = select(1, GetSpellInfo(Spell4Buff))
+	for i, staminabuffs in pairs(staminabuffs) do
+		local spellname = select(1, GetSpellInfo(staminabuffs))
 		if UnitAura("player", spellname) then
-			Spell4Frame:SetAlpha(C.reminder.raid_buffs_alpha)
-			Spell4Frame.t:SetTexture(select(3, GetSpellInfo(Spell4Buff)))
-			spell4 = true
+			StaminaFrame:SetAlpha(C.reminder.raid_buffs_alpha)
+			StaminaFrame.t:SetTexture(select(3, GetSpellInfo(staminabuffs)))
+			stamina = true
 			break
 		else
-			Spell4Frame:SetAlpha(1)
-			Spell4Frame.t:SetTexture(select(3, GetSpellInfo(Spell4Buff)))
-			spell4 = false
+			StaminaFrame:SetAlpha(1)
+			StaminaFrame.t:SetTexture(select(3, GetSpellInfo(staminabuffs)))
+			stamina = false
 		end
 	end
 
@@ -162,7 +156,7 @@ local function OnAuraChange(self, event, arg1, unit)
 	if not (inInstance and (instanceType == "raid")) and C.reminder.raid_buffs_always == false then
 		RaidBuffReminder:SetAlpha(0)
 		visible = false
-	elseif flasked == true and food == true and spell3 == true and spell4 == true and spell5 == true and spell6 == true then
+	elseif flask == true and food == true and stat == true and stamina == true and spell5 == true and spell6 == true then
 		if not visible then
 			RaidBuffReminder:SetAlpha(0)
 			visible = false
@@ -217,8 +211,8 @@ end
 do
 	CreateButton("FlaskFrame", RaidBuffReminder, true)
 	CreateButton("FoodFrame", FlaskFrame, false)
-	CreateButton("Spell3Frame", FoodFrame, false)
-	CreateButton("Spell4Frame", Spell3Frame, false)
-	CreateButton("Spell5Frame", Spell4Frame, false)
+	CreateButton("StatFrame", FoodFrame, false)
+	CreateButton("StaminaFrame", StatFrame, false)
+	CreateButton("Spell5Frame", StaminaFrame, false)
 	CreateButton("Spell6Frame", Spell5Frame, false)
 end

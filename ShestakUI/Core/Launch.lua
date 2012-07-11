@@ -70,6 +70,7 @@ local function InstallUI()
 		SetCVar("shadowMode", 0)
 		SetCVar("ffxDeath", 0)
 		SetCVar("ffxNetherWorld", 0)
+		SetCVar("autoOpenLootHistory", 0)
 		SetAutoDeclineGuildInvites(1)
 	end
 

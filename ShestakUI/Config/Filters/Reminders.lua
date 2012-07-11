@@ -6,8 +6,8 @@ local T, C, L = unpack(select(2, ...))
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 if C.reminder.raid_buffs_enable == true then
-	-- Consumable buffs
-	T.ReminderConsumableBuffs = {
+	-- General buffs
+	T.ReminderBuffs = {
 		Flask = {
 			105617,	-- Alchemist's Flask
 			--92679,	-- Flask of Battle
@@ -44,23 +44,23 @@ if C.reminder.raid_buffs_enable == true then
 			104283,	-- Chun Tian Spring Rolls
 			104275,	-- Sea Mist Rice Noodles
 		},
-	}
-
-	-- Caster buffs
-	function T.ReminderCasterBuffs()
-		Spell3Buff = {	-- Total Stats
+		Stat = {
 			20217,	-- Blessing of Kings
 			115921,	-- Legacy of the Emperor
 			90363,	-- Embrace of the Shale Spider
 			1126,	-- Mark of the Wild
-		}
-		Spell4Buff = {	-- Total Stamina
+		},
+		Stamina = {
 			21562,	-- Power Word: Fortitude
 			469,	-- Commanding Shout
 			6307,	-- Blood Pact
 			90364,	-- Qiraji Fortitude
 			111922,	-- Runescroll of Fortitude III
 		}
+	}
+
+	-- Caster buffs
+	function T.ReminderCasterBuffs()
 		Spell5Buff = {	-- Spell Power
 			77747,	-- Burning Wrath
 			109773,	-- Dark Intent
@@ -76,19 +76,6 @@ if C.reminder.raid_buffs_enable == true then
 
 	-- Physical buffs
 	function T.ReminderPhysicalBuffs()
-		Spell3Buff = {	-- Total Stats
-			20217,	-- Blessing of Kings
-			115921,	-- Legacy of the Emperor
-			90363,	-- Embrace of the Shale Spider
-			1126,	-- Mark of the Wild
-		}
-		Spell4Buff = {	-- Total Stamina
-			21562,	-- Power Word: Fortitude
-			469,	-- Commanding Shout
-			6307,	-- Blood Pact
-			90364,	-- Qiraji Fortitude
-			111922,	-- Runescroll of Fortitude III
-		}
 		Spell5Buff = {	-- Attack Power
 			6673,	-- Battle Shout
 			19506,	-- Trueshot Aura
