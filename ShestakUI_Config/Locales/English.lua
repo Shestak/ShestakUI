@@ -287,6 +287,7 @@ L_GUI_UF_PLUGINS_FADER = "Fade unit frames"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames"
 
 -- Unit Frames Class bar options
+L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars"
 L_GUI_UF_PLUGINS_COMBO_BAR = "Enable Rogue/Druid Combo bar"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "Enable Shadow Orbs bar"
 L_GUI_UF_PLUGINS_CHI_BAR = "Enable Chi bar"

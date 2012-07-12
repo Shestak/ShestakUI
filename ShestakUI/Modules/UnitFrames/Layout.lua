@@ -270,7 +270,7 @@ local function Shared(self, unit)
 		end
 
 		-- Rune bar
-		if C.unitframe.plugins_rune_bar == true and T.class == "DEATHKNIGHT" then
+		if C.unitframe_class_bar.rune == true and T.class == "DEATHKNIGHT" then
 			self.Runes = CreateFrame("Frame", nil, self)
 			self.Runes:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.Runes:Size(217, 7)
@@ -297,7 +297,7 @@ local function Shared(self, unit)
 		end
 
 		-- Chi bar
-		if C.unitframe.plugins_chi_bar == true and T.class == "MONK" then
+		if C.unitframe_class_bar.chi == true and T.class == "MONK" then
 			self.HarmonyBar = CreateFrame("Frame", nil, self)
 			self.HarmonyBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.HarmonyBar:Size(217, 7)
@@ -325,7 +325,7 @@ local function Shared(self, unit)
 		end
 
 		-- Shadow Orbs bar
-		if C.unitframe.plugins_shadow_bar == true and T.class == "PRIEST" then
+		if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
 			self.ShadowOrbsBar = CreateFrame("Frame", nil, self)
 			self.ShadowOrbsBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.ShadowOrbsBar:Size(217, 7)
@@ -353,7 +353,7 @@ local function Shared(self, unit)
 		end
 
 		-- Holy Power bar
-		if C.unitframe.plugins_holy_bar == true and T.class == "PALADIN" then
+		if C.unitframe_class_bar.holy == true and T.class == "PALADIN" then
 			self.HolyPower = CreateFrame("Frame", nil, self)
 			self.HolyPower:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.HolyPower:Size(217, 7)
@@ -383,7 +383,7 @@ local function Shared(self, unit)
 		end
 
 		-- Shard/Burning bar
-		if C.unitframe.plugins_shard_bar == true and T.class == "WARLOCK" then
+		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
 			self.WarlockSpecBars = CreateFrame("Frame", nil, self)
 			self.WarlockSpecBars:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.WarlockSpecBars:Size(217, 7)
@@ -411,7 +411,7 @@ local function Shared(self, unit)
 		end
 
 		-- Totem bar
-		if C.unitframe.plugins_totem_bar == true and T.class == "SHAMAN" then
+		if C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
 			self.TotemBar = {}
 			self.TotemBar.Destroy = true
 			for i = 1, 4 do
@@ -441,7 +441,7 @@ local function Shared(self, unit)
 				self.TotemBar[i].bg:SetTexture(C.media.texture)
 				self.TotemBar[i].bg.multiplier = 0.25
 
-				if C.unitframe.plugins_totem_bar_name == true then
+				if C.unitframe_class_bar.totem_name == true then
 					self.TotemBar[i].Name = T.SetFontString(self.TotemBar[i], C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 					self.TotemBar[i].Name:Point("CENTER", self.TotemBar[i], "CENTER", 0, 0)
 					self.TotemBar[i].Name:SetTextColor(1, 1, 1)
@@ -456,7 +456,7 @@ local function Shared(self, unit)
 			self.DruidMana:SetTextColor(1, 0.49, 0.04)
 
 			-- Eclipse bar
-			if C.unitframe.plugins_eclipse_bar == true then
+			if C.unitframe_class_bar.eclipse == true then
 				self.EclipseBar = CreateFrame("Frame", nil, self)
 				self.EclipseBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.EclipseBar:Size(217, 7)
@@ -492,10 +492,10 @@ local function Shared(self, unit)
 		end
 
 		-- Vengeance bar
-		if C.unitframe.plugins_vengeance_bar == true then
+		if C.unitframe_class_bar.vengeance == true then
 			local vengeanceBar = CreateFrame("Frame", nil, self)
-			if (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
-			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) then
+			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
+			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true) then
 				vengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
 			else
 				vengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -673,13 +673,13 @@ local function Shared(self, unit)
 			self.Debuffs.initialAnchor = "BOTTOMRIGHT"
 			self.Debuffs["growth-y"] = "UP"
 			self.Debuffs["growth-x"] = "LEFT"
-			if (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true)
-			or (T.class == "SHAMAN" and C.unitframe.plugins_totem_bar == true)
-			or (T.class == "DRUID" and C.unitframe.plugins_eclipse_bar == true)
-			or (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
-			or (T.class == "WARLOCK" and C.unitframe.plugins_shard_bar == true)
-			or (T.class == "PRIEST" and C.unitframe.plugins_shadow_bar == true)
-			or (T.class == "MONK" and C.unitframe.plugins_chi_bar == true) then
+			if (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
+			or (T.class == "SHAMAN" and C.unitframe_class_bar.totem == true)
+			or (T.class == "DRUID" and C.unitframe_class_bar.eclipse == true)
+			or (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
+			or (T.class == "WARLOCK" and C.unitframe_class_bar.shard == true)
+			or (T.class == "PRIEST" and C.unitframe_class_bar.shadow == true)
+			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			else
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
@@ -706,7 +706,7 @@ local function Shared(self, unit)
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
 			-- Rogue/Druid Combo bar
-			if C.unitframe.plugins_combo_bar == true then
+			if C.unitframe_class_bar.combo == true then
 				self.CPoints = CreateFrame("Frame", nil, self)
 				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.CPoints:Size(217, 7)

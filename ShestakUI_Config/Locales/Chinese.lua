@@ -289,6 +289,7 @@ L_GUI_UF_PLUGINS_FADER = "头像框体渐隐"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
 
 -- Unit Frames Class bar options
+L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars" -- Needs review
 L_GUI_UF_PLUGINS_COMBO_BAR = "潜行者|德鲁伊连击点图示"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "Enable Shadow Orbs bar" -- Needs review
 L_GUI_UF_PLUGINS_CHI_BAR = "Enable Chi bar" -- Needs review

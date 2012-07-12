@@ -289,6 +289,7 @@ L_GUI_UF_PLUGINS_FADER = "Sfuma i riquadri delle unità"
 L_GUI_UF_PLUGINS_DIMINISHING = "Rendimenti Decrescenti (Diminishing Returns) sulle icone dei riquadri d'arena"
 
 -- Unit Frames Class bar options
+L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars" -- Needs review
 L_GUI_UF_PLUGINS_COMBO_BAR = "Icone punti combo per Druido e Ladro"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "Attiva la barra sfere d'ombra"
 L_GUI_UF_PLUGINS_CHI_BAR = "Attiva la barra chi"

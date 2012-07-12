@@ -384,17 +384,22 @@ C["unitframe"] = {
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
 	["plugins_fader"] = false,					-- Fade unit frames
 	["plugins_diminishing"] = false,			-- Diminishing Returns icons on arena frames
-	-- Class bars
-	["plugins_combo_bar"] = true,				-- Rogue/Druid Combo bar
-	["plugins_shadow_bar"] = true,				-- Shadow Orbs bar
-	["plugins_chi_bar"] = true,					-- Chi bar
-	["plugins_vengeance_bar"] = true,			-- Vengeance bar
-	["plugins_eclipse_bar"] = true,				-- Eclipse bar
-	["plugins_holy_bar"] = true,				-- Holy Power bar
-	["plugins_shard_bar"] = true,				-- Shard/Burning bar
-	["plugins_rune_bar"] = true,				-- Rune bar
-	["plugins_totem_bar"] = true,				-- Totem bar
-	["plugins_totem_bar_name"] = false,			-- Totem name
+}
+
+----------------------------------------------------------------------------------------
+--	Unit Frames Class bar options
+----------------------------------------------------------------------------------------
+C["unitframe_class_bar"] = {
+	["combo"] = true,				-- Rogue/Druid Combo bar
+	["shadow"] = true,				-- Shadow Orbs bar
+	["chi"] = true,					-- Chi bar
+	["vengeance"] = true,			-- Vengeance bar
+	["eclipse"] = true,				-- Eclipse bar
+	["holy"] = true,				-- Holy Power bar
+	["shard"] = true,				-- Shard/Burning bar
+	["rune"] = true,				-- Rune bar
+	["totem"] = true,				-- Totem bar
+	["totem_name"] = false,			-- Totem name
 }
 
 ----------------------------------------------------------------------------------------

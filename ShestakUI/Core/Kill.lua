@@ -37,7 +37,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 
 	if C.unitframe.enable then
 		PlayerFrame:Kill()
-		if T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar ~= true then
+		if T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune ~= true then
 			RuneFrame:Kill()
 		end
 		InterfaceOptionsFrameCategoriesButton9:SetScale(0.00001)

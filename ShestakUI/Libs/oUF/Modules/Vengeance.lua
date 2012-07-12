@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.unitframe.enable ~= true or C.unitframe.plugins_vengeance_bar ~= true then return end
+if C.unitframe.enable ~= true or C.unitframe_class_bar.vengeance ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on oUF_VengeanceBar(by Evilpaul)
@@ -52,12 +52,12 @@ local Update = function(self, event, unit)
 		vb:Show()
 
 		if self.Debuffs then
-			if (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
-			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) then
+			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
+			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 33)
 			elseif (T.class == "WARRIOR" or T.class == "DRUID")
-			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar ~= true)
-			or (T.class == "PALADIN" and C.unitframe.plugins_holy_bar ~= true) then
+			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune ~= true)
+			or (T.class == "PALADIN" and C.unitframe_class_bar.holy ~= true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			end
 		end
@@ -65,12 +65,12 @@ local Update = function(self, event, unit)
 		vb:Hide()
 
 		if self.Debuffs then
-			if (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
-			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) then
+			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
+			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			elseif (T.class == "WARRIOR" or (T.class == "DRUID" and T.Role == "Tank"))
-			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar ~= true)
-			or (T.class == "PALADIN" and C.unitframe.plugins_holy_bar ~= true) then
+			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune ~= true)
+			or (T.class == "PALADIN" and C.unitframe_class_bar.holy ~= true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
 			end
 		end

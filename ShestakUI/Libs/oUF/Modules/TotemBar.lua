@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.unitframe.enable ~= true or C.unitframe.plugins_totem_bar ~= true or T.class ~= "SHAMAN" then return end
+if C.unitframe.enable ~= true or C.unitframe_class_bar.totem ~= true or T.class ~= "SHAMAN" then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on oUF_TotemBar(by Soeters)

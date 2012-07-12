@@ -10,7 +10,7 @@
 -- if T.name == "MegaChar" then
 --		C["chat"].width = 100500
 --		C["tooltip"].cursor = false
---		C["unitframe"].plugins_totem_bar = false
+--		C["unitframe_class_bar"].totem = false
 --		C["addon"].pvp = {ADDON1, ADDON2, ADDON3, ETC}
 --		C["addon"].raid = {ADDON1, ADDON2, ADDON3, ETC}
 --		C["position"].tooltip = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5}
@@ -77,8 +77,8 @@ if T.author == true then
 	C["actionbar"].toggle_mode = false
 	C["unitframe"].arena_on_right = false
 	C["unitframe"].plugins_talents = true
-	C["unitframe"].plugins_vengeance_bar = false
 	C["unitframe"].plugins_diminishing = true
+	C["unitframe_class_bar"].vengeance = false
 	C["stats"].fps = false
 	C["stats"].battleground = true
 	if T.level == MAX_PLAYER_LEVEL then
