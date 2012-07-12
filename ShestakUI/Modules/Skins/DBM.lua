@@ -370,7 +370,7 @@ StaticPopupDialogs.SETTINGS_DBM = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 ----------------------------------------------------------------------------------------

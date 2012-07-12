@@ -197,7 +197,7 @@ StaticPopupDialogs.INSTALL_UI = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.DISABLE_UI = {
@@ -209,7 +209,7 @@ StaticPopupDialogs.DISABLE_UI = {
 	whileDead = 1,
 	showAlert = true,
 	hideOnEscape = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.RESET_UI = {
@@ -222,7 +222,7 @@ StaticPopupDialogs.RESET_UI = {
 	whileDead = 1,
 	showAlert = true,
 	hideOnEscape = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.RESET_STATS = {
@@ -234,7 +234,7 @@ StaticPopupDialogs.RESET_STATS = {
 	whileDead = 1,
 	showAlert = true,
 	hideOnEscape = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.SWITCH_RAID = {
@@ -246,7 +246,7 @@ StaticPopupDialogs.SWITCH_RAID = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 ----------------------------------------------------------------------------------------

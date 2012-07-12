@@ -554,7 +554,7 @@ StaticPopupDialogs.XCT_LOCK = {
 	whileDead = 1,
 	hideOnEscape = true,
 	showAlert = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 -- Slash commands
