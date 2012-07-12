@@ -1272,6 +1272,8 @@ Filger_Spells = {
 			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Daybreak
 			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Light of the Ancient Kings
+			{spellID = 86678, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bastion of Glory
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
@@ -1282,7 +1284,7 @@ Filger_Spells = {
 			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Guardian of Ancient Kings Ret PROC
+			-- Ancient Power
 			{spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
@@ -2193,6 +2195,10 @@ Filger_Spells = {
 			{spellID = 49039, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pillar of Frost
 			{spellID = 51271, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Death's Advance
+			{spellID = 96268, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unholy Blight
+			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2204,6 +2210,8 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
+			-- Blood Charge -- Experimental
+			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Freezing Fog
 			{spellID = 59052, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Killing Machine
@@ -2266,6 +2274,10 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Strangulate
+			{spellID = 47476, filter = "CD"},
+			-- Mind Freeze
+			{spellID = 47528, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Anti-Magic Shell
@@ -2284,10 +2296,6 @@ Filger_Spells = {
 			{spellID = 49206, filter = "CD"},
 			-- Gnaw
 			{spellID = 47481, filter = "CD"},
-			-- Strangulate
-			{spellID = 47476, filter = "CD"},
-			-- Mind Freeze
-			{spellID = 47528, filter = "CD"},
 			-- Rune Tap
 			{spellID = 48982, filter = "CD"},
 			-- Vampiric Blood
@@ -2304,6 +2312,14 @@ Filger_Spells = {
 			{spellID = 49016, filter = "CD"},
 			-- Anti-Magic Zone
 			{spellID = 51052, filter = "CD"},
+			-- Outbreak
+			{spellID = 77575, filter = "CD"},
+			-- Death's Advance
+			{spellID = 96268, filter = "CD"},
+			-- Plague Leech
+			{spellID = 123693, filter = "CD"},
+			-- Unholy Blight
+			{spellID = 115989, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2352,7 +2368,7 @@ Filger_Spells = {
 		},
 	},
 	["MONK"] = {
-		--[[{
+		{
 			Name = "P_BUFF_ICON",
 			Direction = "LEFT",
 			Mode = "ICON",
@@ -2362,7 +2378,13 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Self
-		},]]
+			-- Fortifying Brew
+			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Energizing Brew
+			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Touch of Karma
+			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
+		},
 		{
 			Name = "P_PROC_ICON",
 			Direction = "RIGHT",
@@ -2373,6 +2395,12 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
+			-- Tiger Power
+			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combo Breaker: Blackout Kick
+			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combo Breaker: Tiger Palm
+			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -2428,6 +2456,20 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Paralysis
+			{spellID = 115078, filter = "CD"},
+			-- Fists of Fury
+			{spellID = 113656, filter = "CD"},
+			-- Charging Ox Wave
+			{spellID = 119392, filter = "CD"},
+			-- Dampen Harm
+			{spellID = 122278, filter = "CD"},
+			-- Flying Serpent Kick
+			{spellID = 101545, filter = "CD"},
+			-- Touch of Karma
+			{spellID = 125174, filter = "CD"},
+			-- Touch of Death
+			{spellID = 115080, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2850,6 +2892,14 @@ Filger_Spells = {
 			-- Colossus Smash
 			{spellID = 86346, unitID = "player", caster = "all", filter = "DEBUFF"},
 
+			-- Monk
+			-- Fists of Fury
+			{spellID = 113656, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Paralysis
+			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
+
 			-- Racials
 			-- War Stomp
 			{spellID = 20549, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2972,6 +3022,8 @@ Filger_Spells = {
 			{spellID = 51271, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
 			{spellID = 49016, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Death's Advance
+			{spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
 
 			-- Shaman
 			-- Grounding Totem Effect
@@ -3006,6 +3058,10 @@ Filger_Spells = {
 			{spellID = 20707, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Unstable Affliction
 			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
+
+			-- Monk
+			-- Touch of Karma
+			{spellID = 125174, unitID = "target", caster = "target", filter = "BUFF"},
 
 			-- All
 			-- Warsong flag
@@ -3107,6 +3163,8 @@ Filger_Spells = {
 			--MOP{spellID = 20253, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- War Stomp (Tauren)
 			{spellID = 20549, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3149,6 +3207,8 @@ Filger_Spells = {
 			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Sin and Punishment
 			--MOP{spellID = 87204, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Paralysis
+			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 	},
 }
