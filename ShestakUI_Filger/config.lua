@@ -2193,6 +2193,10 @@ Filger_Spells = {
 			{spellID = 49039, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pillar of Frost
 			{spellID = 51271, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Death's Advance
+			{spellID = 96268, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unholy Blight
+			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2204,6 +2208,8 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
+			-- Blood Charge -- Experimental
+			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Freezing Fog
 			{spellID = 59052, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Killing Machine
@@ -2266,6 +2272,10 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Strangulate
+			{spellID = 47476, filter = "CD"},
+			-- Mind Freeze
+			{spellID = 47528, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Anti-Magic Shell
@@ -2284,10 +2294,6 @@ Filger_Spells = {
 			{spellID = 49206, filter = "CD"},
 			-- Gnaw
 			{spellID = 47481, filter = "CD"},
-			-- Strangulate
-			{spellID = 47476, filter = "CD"},
-			-- Mind Freeze
-			{spellID = 47528, filter = "CD"},
 			-- Rune Tap
 			{spellID = 48982, filter = "CD"},
 			-- Vampiric Blood
@@ -2304,6 +2310,14 @@ Filger_Spells = {
 			{spellID = 49016, filter = "CD"},
 			-- Anti-Magic Zone
 			{spellID = 51052, filter = "CD"},
+			-- Outbreak
+			{spellID = 77575, filter = "CD"},
+			-- Death's Advance
+			{spellID = 96268, filter = "CD"},
+			-- Plague Leech
+			{spellID = 123693, filter = "CD"},
+			-- Unholy Blight
+			{spellID = 115989, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2972,6 +2986,8 @@ Filger_Spells = {
 			{spellID = 51271, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
 			{spellID = 49016, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Death's Advance
+			{spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
 
 			-- Shaman
 			-- Grounding Totem Effect
