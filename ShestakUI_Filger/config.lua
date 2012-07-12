@@ -2366,7 +2366,7 @@ Filger_Spells = {
 		},
 	},
 	["MONK"] = {
-		--[[{
+		{
 			Name = "P_BUFF_ICON",
 			Direction = "LEFT",
 			Mode = "ICON",
@@ -2376,7 +2376,13 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Self
-		},]]
+			-- Fortifying Brew
+			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Energizing Brew
+			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Touch of Karma
+			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
+		},
 		{
 			Name = "P_PROC_ICON",
 			Direction = "RIGHT",
@@ -2387,6 +2393,12 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
+			-- Tiger Power
+			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combo Breaker: Blackout Kick
+			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combo Breaker: Tiger Palm
+			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -2442,6 +2454,20 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Paralysis
+			{spellID = 115078, filter = "CD"},
+			-- Fists of Fury
+			{spellID = 113656, filter = "CD"},
+			-- Charging Ox Wave
+			{spellID = 119392, filter = "CD"},
+			-- Dampen Harm
+			{spellID = 122278, filter = "CD"},
+			-- Flying Serpent Kick
+			{spellID = 101545, filter = "CD"},
+			-- Touch of Karma
+			{spellID = 125174, filter = "CD"},
+			-- Touch of Death
+			{spellID = 115080, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2864,6 +2890,14 @@ Filger_Spells = {
 			-- Colossus Smash
 			{spellID = 86346, unitID = "player", caster = "all", filter = "DEBUFF"},
 
+			-- Monk
+			-- Fists of Fury
+			{spellID = 113656, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Paralysis
+			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
+
 			-- Racials
 			-- War Stomp
 			{spellID = 20549, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -3023,6 +3057,10 @@ Filger_Spells = {
 			-- Unstable Affliction
 			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 
+			-- Monk
+			-- Touch of Karma
+			{spellID = 125174, unitID = "target", caster = "target", filter = "BUFF"},
+
 			-- All
 			-- Warsong flag
 			{spellID = 23333, unitID = "target", caster = "all", filter = "BUFF"},
@@ -3123,6 +3161,8 @@ Filger_Spells = {
 			--MOP{spellID = 20253, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- War Stomp (Tauren)
 			{spellID = 20549, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3165,6 +3205,8 @@ Filger_Spells = {
 			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Sin and Punishment
 			--MOP{spellID = 87204, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Paralysis
+			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 	},
 }
