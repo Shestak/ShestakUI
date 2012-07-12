@@ -69,7 +69,7 @@ if C.reminder.raid_buffs_enable == true then
 		}
 		Spell6Buff = {	-- Spell Haste
 			24907,	-- Moonkin Aura
-			15473,	-- Shadowform
+			49868,	-- Mind Quickening
 			51470,	-- Elemental Oath
 		}
 	end
