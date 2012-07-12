@@ -1618,7 +1618,7 @@ Filger_Spells = {
 			-- Archangel
 			{spellID = 81700, filter = "CD"},
 			-- Chakras
-			spellID = 81209, filter = "CD"},
+			{spellID = 81209, filter = "CD"},
 			-- Desperate Prayer
 			{spellID = 19236, filter = "CD"},
 			-- Leap of Faith
