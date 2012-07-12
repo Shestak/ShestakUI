@@ -1477,19 +1477,15 @@ Filger_Spells = {
 
 			-- Buffs
 			-- Surge of Light
-			--MOP{spellID = 88688, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 114255, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Surge of Darkness
+			{spellID = 87160, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Serendipity
 			--MOP{spellID = 63731, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Orb
-			{spellID = 77487, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Empowered Shadow
-			--MOP{spellID = 95799, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Insight
+			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evangelism
 			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Evangelism
-			--MOP{spellID = 87117, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mind melt
-			{spellID = 87160, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Sanctuary
 			{spellID = 81206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Serenity
@@ -1620,13 +1616,15 @@ Filger_Spells = {
 			-- Inner Focus
 			{spellID = 89485, filter = "CD"},
 			-- Archangel
-			--MOP{spellID = 87151, filter = "CD"},
-			-- Chakra
-			--MOP{spellID = 14751, filter = "CD"},
+			{spellID = 81700, filter = "CD"},
+			-- Chakras
+			spellID = 81209, filter = "CD"},
 			-- Desperate Prayer
 			{spellID = 19236, filter = "CD"},
 			-- Leap of Faith
 			{spellID = 73325, filter = "CD"},
+			-- Void Tendrils
+			{spellID = 108920, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2613,6 +2611,10 @@ Filger_Spells = {
 			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Levitate
 			{spellID = 1706, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Body and Soul
+			{spellID = 65081, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Angelic Feather
+			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
