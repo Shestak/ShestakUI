@@ -27,6 +27,9 @@ do
 	end
 	elements = nil
 
+	IconIntroTracker:UnregisterAllEvents()
+	IconIntroTracker:Hide()
+
 	hooksecurefunc("TalentFrame_LoadUI", function()
 		PlayerTalentFrame:UnregisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 	end)

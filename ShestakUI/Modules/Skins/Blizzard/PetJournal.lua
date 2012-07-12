@@ -27,6 +27,9 @@ local function LoadSkin()
 	}
 
 	for i = 1, #buttons do
+		if i == 4 then
+			_G[buttons[i]]:StripTextures(true)
+		end
 		_G[buttons[i]]:SkinButton()
 	end
 

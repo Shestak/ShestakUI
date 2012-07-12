@@ -64,7 +64,7 @@ bgframe:SetScript("OnEnter", function(self)
 end) 
 bgframe:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
 bgframe:SetScript("OnMouseUp", function(self)
-	if QueueStatusMinimapButton.status == "active" then
+	if QueueStatusMinimapButton:IsShown() then
 		if IsShiftKeyDown() then
 			ToggleBattlefieldMinimap()
 		else
