@@ -160,6 +160,7 @@ L_GUI_CHAT_GOLD = "Remover spam del algunos jugadores (Vendedores de oro)"
 L_GUI_CHAT_WIDTH = "Anchura del chat"
 L_GUI_CHAT_HEIGHT = "Altura del chat"
 L_GUI_CHAT_BAR = "Pequeña barra de botones para cambiar de canal en el chat"
+L_GUI_CHAT_BAR_MOUSEOVER = "Lite Button Bar on mouseover" -- Needs review
 L_GUI_CHAT_TIMESTAMP = "Color de la marca de tiempo"
 L_GUI_CHAT_WHISP = "Sonido cuando te susurran"
 L_GUI_CHAT_SKIN_BUBBLE = "Estilizar las burbujas de chat"

@@ -216,6 +216,7 @@ C["chat"] = {
 	["width"] = 350,							-- Chat width
 	["height"] = 112,							-- Chat height
 	["chat_bar"] = false,						-- Lite Button Bar for switch chat channel
+	["chat_bar_mouseover"] = false,				-- Lite Button Bar on mouseover
 	["time_color"] = {1, 1, 0},					-- Timestamp coloring(http://www.december.com/html/spec/colorcodes.html)
 	["whisp_sound"] = true,						-- Sound when whisper
 	["bubbles"] = true,							-- Skin Blizzard chat bubbles

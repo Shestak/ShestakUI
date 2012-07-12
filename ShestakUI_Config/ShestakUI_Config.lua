@@ -193,6 +193,7 @@ local function Local(o)
 	if o == "UIConfigchatwidth" then o = L_GUI_CHAT_WIDTH end
 	if o == "UIConfigchatheight" then o = L_GUI_CHAT_HEIGHT end
 	if o == "UIConfigchatchat_bar" then o = L_GUI_CHAT_BAR end
+	if o == "UIConfigchatchat_bar_mouseover" then o = L_GUI_CHAT_BAR_MOUSEOVER end
 	if o == "UIConfigchattime_color" then o = L_GUI_CHAT_TIMESTAMP end
 	if o == "UIConfigchatwhisp_sound" then o = L_GUI_CHAT_WHISP end
 	if o == "UIConfigchatbubbles" then o = L_GUI_CHAT_SKIN_BUBBLE end

@@ -160,6 +160,7 @@ L_GUI_CHAT_GOLD = "Entferne einigen Spam vom Server"
 L_GUI_CHAT_WIDTH = "Breite des Chatfensters"
 L_GUI_CHAT_HEIGHT = "Höhe desChatfensters"
 L_GUI_CHAT_BAR = "Kleine Leiste um den Chatchannel zu wechseln"
+L_GUI_CHAT_BAR_MOUSEOVER = "Lite Button Bar on mouseover" -- Needs review
 L_GUI_CHAT_TIMESTAMP = "Farbe des Zeitstempels"
 L_GUI_CHAT_WHISP = "Geräusch abspielen wenn eine private Nachricht empfangen wird"
 L_GUI_CHAT_SKIN_BUBBLE = "Blizzard Chat Blasen verändern"

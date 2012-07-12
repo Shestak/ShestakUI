@@ -5,7 +5,16 @@ if C.chat.enable ~= true or C.chat.chat_bar ~= true then return end
 --	ChatBar(FavChatBar by Favorit)
 ----------------------------------------------------------------------------------------
 local cbar = CreateFrame("Frame", "ChatBar", UIParent)
-cbar:CreatePanel("Invisible", 16, C.chat.background and C.chat.height + 5 or C.chat.height + 1, "BOTTOMLEFT", UIParent, "BOTTOMLEFT", 2, C.chat.background and 24 or 18)
+cbar:CreatePanel("Invisible", 16, C.chat.background and C.chat.height + 5 or C.chat.height + 1, "BOTTOMLEFT", UIParent, "BOTTOMLEFT", 2, C.chat.background and 23 or 18)
+if C.chat.chat_bar_mouseover == true then
+	cbar:SetAlpha(0)
+	cbar:SetScript("OnEnter", function()
+		cbar:FadeIn()
+	end)
+	cbar:SetScript("OnLeave", function()
+		cbar:FadeOut()
+	end)
+end
 
 function cbar:SW(button)
 	if button == "RightButton" then
@@ -57,17 +66,25 @@ function cbar:YR(button)
 	end
 end
 
-local function CreateButton(f, c)
-	f:Width(16)
-	f:Height(16)
-	f:SetTemplate()
-	f:RegisterForClicks("AnyUp")
-	f:SetScript("OnClick", c)
+local function CreateButton(b, f)
+	b:Width(16)
+	b:Height(16)
+	b:SetTemplate()
+	b:RegisterForClicks("AnyUp")
+	b:SetScript("OnClick", f)
+	if C.chat.chat_bar_mouseover == true then
+		b:SetScript("OnEnter", function()
+			cbar:FadeIn()
+		end)
+		b:SetScript("OnLeave", function()
+			cbar:FadeOut()
+		end)
+	end
 
-	f.t = f:CreateTexture(nil, "ARTWORK")
-	f.t:SetTexture(C.media.blank)
-	f.t:Point("TOPLEFT", f, "TOPLEFT", 2, -2)
-	f.t:Point("BOTTOMRIGHT", f, "BOTTOMRIGHT", -2, 2)
+	b.t = b:CreateTexture(nil, "ARTWORK")
+	b.t:SetTexture(C.media.blank)
+	b.t:Point("TOPLEFT", b, "TOPLEFT", 2, -2)
+	b.t:Point("BOTTOMRIGHT", b, "BOTTOMRIGHT", -2, 2)
 end
 
 local sw = CreateFrame("Button", "sw", ChatBar)

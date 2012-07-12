@@ -160,6 +160,7 @@ L_GUI_CHAT_GOLD = "屏蔽某些玩家的垃圾信息"
 L_GUI_CHAT_WIDTH = "框体宽度"
 L_GUI_CHAT_HEIGHT = "框体高度"
 L_GUI_CHAT_BAR = "显示频道快捷图示栏"
+L_GUI_CHAT_BAR_MOUSEOVER = "Lite Button Bar on mouseover" -- Needs review
 L_GUI_CHAT_TIMESTAMP = "时间标签颜色"
 L_GUI_CHAT_WHISP = "接受密语时声音提示"
 L_GUI_CHAT_SKIN_BUBBLE = "美化默认聊天泡泡"

@@ -160,6 +160,7 @@ L_GUI_CHAT_GOLD = "Rimozione di un po' di spam degli altri giocatori"
 L_GUI_CHAT_WIDTH = "Larghezza chat"
 L_GUI_CHAT_HEIGHT = "Altezza chat"
 L_GUI_CHAT_BAR = "Barra con bottoni per passare velocemente da un canale all'altro della chat"
+L_GUI_CHAT_BAR_MOUSEOVER = "Lite Button Bar on mouseover" -- Needs review
 L_GUI_CHAT_TIMESTAMP = "Colorazione orario dei messaggi"
 L_GUI_CHAT_WHISP = "Tipo di suono quando ricevi un sussurro"
 L_GUI_CHAT_SKIN_BUBBLE = "Restyling dei fumetti delle chats"
