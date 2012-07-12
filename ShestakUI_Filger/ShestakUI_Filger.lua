@@ -277,7 +277,7 @@ function Filger:OnEvent(event, unit)
 			if data.filter == "BUFF" then
 				local caster, spn, expirationTime
 				spn = GetSpellInfo(data.spellID)
-				name, rank, icon, count, debuffType, duration, expirationTime, caster,isStealable, shouldConsolidate, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
+				name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, shouldConsolidate, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
 				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
 					start = expirationTime - duration
 					found = true
@@ -313,17 +313,17 @@ function Filger:OnEvent(event, unit)
 			elseif data.filter == "ICD" then
 				if data.trigger == "BUFF" then
 					local spn
-					spn, _, icon = GetSpellInfo(data.spellID)
-					name, _, _, _, _, _, _, _, _, _, spid = Filger:UnitBuff("player", data.spellID, spn, data.absID)
+					spn, rank, icon = GetSpellInfo(data.spellID)
+					name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, shouldConsolidate, spid = Filger:UnitBuff("player", data.spellID, spn, data.absID)
 				elseif data.trigger == "DEBUFF" then
 					local spn
-					spn, _, icon = GetSpellInfo(data.spellID)
-					name, _, _, _, _, _, _, _, _, _, spid = Filger:UnitDebuff("player", data.spellID, spn, data.absID)
+					spn, rank, icon = GetSpellInfo(data.spellID)
+					name, rank, icon, count, debuffType, duration, expirationTime, caster, isStealable, shouldConsolidate, spid = Filger:UnitDebuff("player", data.spellID, spn, data.absID)
 				end
 				if name then
 					if data.slotID then
 						local slotLink = GetInventoryItemLink("player", data.slotID)
-						_, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
+						name, itemLink, itemRarity, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, icon = GetItemInfo(slotLink)
 					end
 					duration = data.duration
 					start = GetTime()
@@ -453,7 +453,7 @@ if Filger_Spells and Filger_Spells[T.class] then
 				elseif data.slotID then
 					local slotLink = GetInventoryItemLink("player", data.slotID)
 					if slotLink then
-						name, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
+						name, itemLink, itemRarity, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, icon = GetItemInfo(slotLink)
 					end
 				end
 				frame.actives[j] = {data = data, name = name, icon = icon, count = 9, start = 0, duration = 0, spid = data.spellID or data.slotID}

@@ -16,14 +16,7 @@ local function LoadSkin()
 		"RaidFinderFrameRoleInset",
 		"ScenarioFinderFrame",
 		"LFGDungeonReadyDialog",
-		"LFDQueueFrameCooldownFrame",
-
-		--[["LFDQueueFrameSpecific",
-		"LFDQueueFrameRandom",
-		"LFDQueueFrameNoLFDWhileLFR",
-		"LFDQueueFrameSpecificListScrollFrame",
-		"LFGDungeonReadyStatus",
-		"LFGInvitePopup"]]
+		"LFDQueueFrameCooldownFrame"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -34,7 +27,8 @@ local function LoadSkin()
 		"LFDQueueFrameBackground",
 		"PVEFramePortrait",
 		"ScenarioFinderFrameInset",
-		"LFGDungeonReadyDialogBackground"
+		"LFGDungeonReadyDialogBackground",
+		"RaidFinderQueueFrameBackground"
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -47,13 +41,6 @@ local function LoadSkin()
 		"ScenarioQueueFrameFindGroupButton",
 		"LFGDungeonReadyDialogLeaveQueueButton",
 		"LFGDungeonReadyDialogEnterDungeonButton"
-
-		--[["LFDQueueFrameCancelButton",
-		"LFDQueueFramePartyBackfillBackfillButton",
-		"LFDQueueFramePartyBackfillNoBackfillButton",
-		"LFDQueueFrameNoLFDWhileLFRLeaveQueueButton",
-		"LFGInvitePopupAcceptButton",
-		"LFGInvitePopupDeclineButton",]]
 	}
 
 	for i = 1, #buttons do
@@ -163,16 +150,36 @@ local function LoadSkin()
 		end
 	end)
 
-	--[[hooksecurefunc("LFDQueueFrameSpecificListButton_SetDungeon", function(button, dungeonID, mode, submode)
-		for _, object in pairs(checkButtons) do
-			local button = _G[object]
-			if not button.checkButton:GetChecked() then
-				button.checkButton:SetDisabledTexture(nil)
-			else
-				button.checkButton:SetDisabledTexture("Interface\\Buttons\\UI-CheckBox-Check-Disabled")
+	for i = 1, 1 do
+		local button = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i]
+		local icon = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."IconTexture"]
+		local count = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."Count"]
+
+		if button then
+			local texture = _G[button:GetName().."IconTexture"]:GetTexture()
+
+			button:StripTextures()
+
+			icon:SetTexture(texture)
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			icon:Point("TOPLEFT", 2, -2)
+			icon:SetDrawLayer("OVERLAY")
+
+			count:SetDrawLayer("OVERLAY")
+
+			if not button.backdrop then
+				button:CreateBackdrop("Default")
+				button.backdrop:Point("TOPLEFT", icon, "TOPLEFT", -2, 2)
+				button.backdrop:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+				icon:SetParent(button.backdrop)
+				icon.SetPoint = T.dummy
+
+				if count then
+					count:SetParent(button.backdrop)
+				end
 			end
 		end
-	end)]]
+	end
 
 	for i = 1, NUM_LFD_CHOICE_BUTTONS do
 		T.SkinCheckBox(_G["LFDQueueFrameSpecificListButton"..i.."EnableButton"])

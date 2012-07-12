@@ -179,22 +179,6 @@ LPSTAT_CONFIG = {
 	},
 	Talents = {
 		enabled = C.toppanel.enable,
-		fmt = class"T: ".."[spec %d/%d/%d] [unspent]", -- "Protection: 15/0/51 +5", [shortname] shortens spec name.
-		iconsize = 11,  -- Size of talent [icon].
-		name_subs = { -- Substitutions for long talent tree names, remove and/or change any/all.
-			["Protection"] = "Prot.",
-			["Restoration"] = "Resto.",
-			["Feral Combat"] = "Feral",
-			["Retribution"] = "Ret.",
-			["Discipline"] = "Disc.",
-			["Enhancement"] = "Enhance.",
-			["Elemental"] = "Ele.",
-			["Demonology"] = "Demon.",
-			["Destruction"] = "Destro.",
-			["Assassination"] = "Assassin.",
-			["Marksmanship"] = "Marks.",
-			["Beast Mastery"] = "B.M.",
-		},
 		anchor_frame = "Stats", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = -3, tip_y = 13
 	},

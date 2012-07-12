@@ -51,7 +51,6 @@ local function LoadSkin()
 		T.SkinCheckBox(button.enableButton)
 	end
 
-	T.SkinCheckBox(RaidFrameAllAssistCheckButton)
 	T.SkinCheckBox(LFRQueueFrameRoleButtonTank:GetChildren())
 	T.SkinCheckBox(LFRQueueFrameRoleButtonHealer:GetChildren())
 	T.SkinCheckBox(LFRQueueFrameRoleButtonDPS:GetChildren())

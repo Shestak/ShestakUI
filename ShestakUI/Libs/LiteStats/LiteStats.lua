@@ -1487,9 +1487,9 @@ if experience.enabled then
 		if short or tt then
 			num = tonumber(num)
 			if num >= 1000000 then
-				return gsub(format("%.1f%s", num/1000000, experience.million or "m"), "%.0", "")
+				return gsub(format("%.1f%s", num / 1000000, experience.million or "m"), "%.0", "")
 			elseif num >= 1000 then
-				return gsub(format("%.1f%s", num/1000, experience.thousand or "k"), "%.0", "")
+				return gsub(format("%.1f%s", num / 1000, experience.thousand or "k"), "%.0", "")
 			end
 		end
 		return floor(tonumber(num))
@@ -1579,7 +1579,7 @@ if experience.enabled then
 				else
 					color = FACTION_BAR_COLORS[standing]
 				end
-				standingname = _G[format("FACTION_STANDING_LABEL%s%s", standing,UnitSex(P) == 3 and "_FEMALE" or "")]
+				standingname = _G[format("FACTION_STANDING_LABEL%s%s", standing, UnitSex(P) == 3 and "_FEMALE" or "")]
 				if not standingname then standingname = UNKNOWN end
 				repcolor = format("%02x%02x%02x", min(color.r * 255 + 40, 255), min(color.g * 255 + 40, 255), min(color.b * 255 + 40, 255))
 				self.text:SetText(gsub(experience.faction_fmt, "%[([%w%%]-)%]", tags))
