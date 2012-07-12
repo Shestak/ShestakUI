@@ -97,7 +97,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[53652] = true		-- Beacon of Light
 		T.aoespam[85222] = true		-- Light of Dawn
 		T.aoespam[82327] = true		-- Holy Radiance
-		T.aoespam[20473] = true		-- Holy Shock
+		T.aoespam[121129] = true	-- Daybreak
 		-- Damaging spells
 		T.aoespam[81297] = true		-- Consecration
 		T.aoespam[119072] = true	-- Holy Wrath
