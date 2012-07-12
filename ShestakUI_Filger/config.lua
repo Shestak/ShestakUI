@@ -1272,6 +1272,8 @@ Filger_Spells = {
 			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Daybreak
 			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Light of the Ancient Kings
+			{spellID = 86678, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bastion of Glory
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
@@ -1282,7 +1284,7 @@ Filger_Spells = {
 			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Guardian of Ancient Kings Ret PROC
+			-- Ancient Power
 			{spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
