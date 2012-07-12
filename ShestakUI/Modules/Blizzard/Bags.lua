@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.bag.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -124,7 +124,7 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	if clink then
-		b.name, b.link, b.rarity = GetItemInfo(clink)
+		b.name, _, b.rarity = GetItemInfo(clink)
 
 		-- Color slot according to item quality
 		if not b.frame.lock and b.rarity and b.rarity > 1 and not (isQuestItem or questId) then

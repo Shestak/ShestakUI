@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Based on LiteStats(by Katae)
@@ -1294,41 +1294,22 @@ if talents.enabled then
 				local unit, spell = ...
 				if unit == P and (spell == GetSpellInfo(63645) or spell == GetSpellInfo(63644)) then timer = GetTime() end
 			else
-				if T.MOPVersion then return end
 				if UnitLevel(P) < 10 then
-					self.text:SetText(format("%s %s", NO, TALENTS))
-				elseif GetNumSpecializations() == 3 then
-					self.talents = {}
-					--MOPself.unspent = GetUnspentTalentPoints(false, false, GetActiveSpecGroup())
-					for i = 1, GetNumSpecGroups() do
-						tinsert(self.talents, {})
-						local tal, pts, icon, name = self.talents[i], -1
-						for tree = 1, GetNumSpecializations() do
-							tinsert(tal, {GetSpecializationInfo(tree, nil, nil, i)})
-							if tal[tree][5] ~= 0 and tal[tree][5] > pts then
-								name, icon, pts = {tal[tree][1],tree}, tal[tree][4], tal[tree][5]
-							end
-						end
-						if not name then name, icon = {format("%s %s", NO, TALENTS)}, "Interface\\Icons\\INV_Misc_QuestionMark" end
-						tinsert(tal, name)
-						if i == GetActiveSpecGroup() then
-							self.text:SetText(zsub(talents.fmt,"%[(.-)%]", {
-								name = name[1], shortname = gsub(name[1],".*",talents.name_subs),
-								icon = format("|T%s:"..talents.iconsize..":"..talents.iconsize..":0:0:64:64:5:59:5:59:%d|t", icon, talents.iconsize),
-								unspent = self.unspent > 0 and format("|cff55ff55+"..self.unspent) or ""
-							},"%[spec(.-)%]", function(spec)
-								return format(spec == "" and "%d/%d/%d" or gsub(spec, "^ ", ""), tal[1][5], tal[2][5], tal[3][5])
-							end, " $", ""))
-							tinsert(tal, 1)
-						end
+					self.text:SetText(format("%s %s", NO, SPECIALIZATION))
+				else
+					local active = GetActiveSpecGroup()
+					if GetSpecialization(false, false, active) then
+						self.text:SetText(select(2, GetSpecializationInfo(GetSpecialization(false, false, active))))
+					else
+						self.text:SetText(format("%s %s", NO, SPECIALIZATION))
 					end
 					if self.hovered then self:GetScript("OnEnter")(self) end
 				end
 			end
 		end,
 		OnUpdate = function(self)
-			if GetNumSpecializations() == 3 then
-				self:SetScript("OnUpdate",nil)
+			if GetNumSpecGroups() > 1 then
+				self:SetScript("OnUpdate", nil)
 				self:GetScript("OnEvent")(self)
 			end
 		end,
@@ -1337,14 +1318,10 @@ if talents.enabled then
 			if UnitLevel(P) >= 10 then
 				GameTooltip:SetOwner(self, talents.tip_anchor, talents.tip_x, talents.tip_y)
 				GameTooltip:ClearLines()
-				GameTooltip:AddDoubleLine(TALENTS,self.unspent > 0 and format("%d %s",self.unspent,UNUSED) or "", tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
-				GameTooltip:AddLine(" ")
 				for i = 1, GetNumSpecGroups() do
-					local tal = self.talents[i]
-					local tree = tal[4][2]
-					local name, icon, spent = tree and tal[tree][2] or NONE, tree and tal[tree][4] or "Interface\\Icons\\INV_Misc_QuestionMark", format("%d/%d/%d",tal[1][5],tal[2][5],tal[3][5])
-					if tal[5] then r,g,b = 0.3, 1, 0.3 else r,g,b = 0.5, 0.5, 0.5 end
-					GameTooltip:AddDoubleLine(format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s %s", icon, t_icon, gsub(name, ".*", talents.name_subs), spent), i == 1 and PRIMARY or SECONDARY, 1, 1, 1, r, g, b)
+					if GetSpecialization(false, false, i) then
+						GameTooltip:AddLine(string.join(" ", string.format("", select(2, GetSpecializationInfo(GetSpecialization(false, false, i)))), (i == active and string.join("", "|cff00FF00" , ACTIVE_PETS, "|r") or string.join("", "|cffFF0000", FACTION_INACTIVE, "|r"))),1,1,1)
+					end
 				end
 				GameTooltip:Show()
 				if C.toppanel.enable == true and C.toppanel.mouseover == true then
@@ -1358,7 +1335,7 @@ if talents.enabled then
 				TopPanel:SetAlpha(0)
 			end
 		end,
-		OnClick = function(_,b)
+		OnClick = function(_, b)
 			if b == "RightButton" and GetNumSpecGroups() > 1 then
 				SetActiveSpecGroup(3 - GetActiveSpecGroup())
 			elseif b == "LeftButton" then
