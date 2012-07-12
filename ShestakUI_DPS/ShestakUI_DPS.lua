@@ -33,11 +33,9 @@ local function Shared(self, unit)
 	self.menu = T.SpawnMenu
 
 	-- Backdrop for every units
-	self.FrameBackdrop = CreateFrame("Frame", nil, self)
-	self.FrameBackdrop:SetTemplate("Default")
-	self.FrameBackdrop:SetFrameStrata("BACKGROUND")
-	self.FrameBackdrop:Point("TOPLEFT", -2, 2)
-	self.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
+	self:CreateBackdrop("Default")
+	self.backdrop:Point("TOPLEFT", -2, 2)
+	self.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", nil, self)

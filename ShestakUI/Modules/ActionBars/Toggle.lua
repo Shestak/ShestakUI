@@ -254,7 +254,7 @@ for i = 1, 5 do
 					SavedOptionsPerChar.BottomBars = 1
 				end
 			end
-			
+
 			MainBars()
 		end)
 		ToggleBar[i]:SetScript("OnEvent", MainBars)

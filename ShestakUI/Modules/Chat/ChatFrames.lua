@@ -133,7 +133,7 @@ local function SetChatStyle(frame)
 		EditBoxBackground:CreatePanel("Transparent", 1, 1, "LEFT", _G[chat.."EditBox"], "LEFT", 0, 0)
 		EditBoxBackground:ClearAllPoints()
 		EditBoxBackground:Point("TOPLEFT", _G[chat.."EditBox"], "TOPLEFT", 7, -5)
-		EditBoxBackground:Point("BOTTOMRIGHT", _G[chat.."EditBox"], "BOTTOMRIGHT", -7, 5)
+		EditBoxBackground:Point("BOTTOMRIGHT", _G[chat.."EditBox"], "BOTTOMRIGHT", -7, 4)
 		EditBoxBackground:SetFrameStrata("LOW")
 		EditBoxBackground:SetFrameLevel(1)
 

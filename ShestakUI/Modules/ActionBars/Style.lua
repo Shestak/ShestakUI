@@ -62,22 +62,21 @@ local function StyleNormalButton(self)
 		hotkey:Kill()
 	end
 
-	if not _G[name.."Panel"] then
+	if not button.isSkinned then
 		if self:GetHeight() ~= T.buttonsize and not InCombatLockdown() then
 			self:Size(T.buttonsize)
 		end
-
-		local panel = CreateFrame("Frame", name.."Panel", self)
-		panel:CreatePanel("Transparent", T.buttonsize, T.buttonsize, "CENTER", self, "CENTER", 0, 0)
+		button:CreateBackdrop("Transparent")
+		button.backdrop:SetAllPoints()
 		if C.actionbar.classcolor_border == true then
-			panel:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 		end
-		panel:SetFrameStrata(self:GetFrameStrata())
-		panel:SetFrameLevel(self:GetFrameLevel() - 1)
- 
+
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:Point("TOPLEFT", button, 2, -2)
 		icon:Point("BOTTOMRIGHT", button, -2, 2)
+
+		button.isSkinned = true
 	end
 
 	if normal then
@@ -96,17 +95,13 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 	flash:Point("TOPLEFT", button, 2, -2)
 	flash:Point("BOTTOMRIGHT", button, -2, 2)
 
-	if not _G[name.."Panel"] then
-		button:SetWidth(T.buttonsize)
-		button:SetHeight(T.buttonsize)
-
-		local panel = CreateFrame("Frame", name.."Panel", button)
-		panel:CreatePanel("Transparent", T.buttonsize, T.buttonsize, "CENTER", button, "CENTER", 0, 0)
+	if not button.isSkinned then
+		button:Size(T.buttonsize)
+		button:CreateBackdrop("Transparent")
+		button.backdrop:SetAllPoints()
 		if C.actionbar.classcolor_border == true then
-			panel:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 		end
-		panel:SetFrameStrata(button:GetFrameStrata())
-		panel:SetFrameLevel(button:GetFrameLevel() - 1)
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
@@ -115,19 +110,18 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 
 		if pet then
 			local autocast = _G[name.."AutoCastable"]
-			autocast:Width((T.buttonsize * 2) - 10)
-			autocast:Height((T.buttonsize * 2) - 10)
+			autocast:Size((T.buttonsize * 2) - 10)
 			autocast:ClearAllPoints()
 			autocast:Point("CENTER", button, 0, 0)
 
 			local shine = _G[name.."Shine"]
-			shine:Width(T.buttonsize)
-			shine:Height(T.buttonsize)
+			shine:Size(T.buttonsize)
 
 			local cooldown = _G[name.."Cooldown"]
-			cooldown:Width(T.buttonsize - 2)
-			cooldown:Height(T.buttonsize - 2)
+			cooldown:Size(T.buttonsize - 2)
 		end
+
+		button.isSkinned = true
 	end
 
 	if normal then
@@ -187,7 +181,6 @@ end
 local buttons = 0
 local function SetupFlyoutButton()
 	for i = 1, buttons do
-		-- Prevent error if you don't have max ammount of buttons
 		if _G["SpellFlyoutButton"..i] then
 			StyleNormalButton(_G["SpellFlyoutButton"..i])
 			_G["SpellFlyoutButton"..i]:StyleButton()
@@ -207,7 +200,6 @@ local function SetupFlyoutButton()
 end
 SpellFlyout:HookScript("OnShow", SetupFlyoutButton)
 
--- Hide the Mouseover texture and attempt to find the ammount of buttons to be skinned
 local function StyleFlyoutButton(self)
 	if self.FlyoutBorder then
 		self.FlyoutBorder:SetAlpha(0)

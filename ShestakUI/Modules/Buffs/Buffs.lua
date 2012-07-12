@@ -24,52 +24,50 @@ BuffsAnchor:Size((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size *
 
 ConsolidatedBuffs:ClearAllPoints()
 ConsolidatedBuffs:Point("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
-ConsolidatedBuffs:Size(C.aura.player_buff_size, C.aura.player_buff_size)
+ConsolidatedBuffs:Size(C.aura.player_buff_size)
 ConsolidatedBuffs.SetPoint = T.dummy
+ConsolidatedBuffs:CreateBackdrop("Default")
+ConsolidatedBuffs.backdrop:SetAllPoints()
+if C.aura.classcolor_border == true then
+	ConsolidatedBuffs.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+end
 
 ConsolidatedBuffsIcon:SetTexture("Interface\\Icons\\Spell_ChargePositive")
 ConsolidatedBuffsIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-ConsolidatedBuffsIcon:Size(C.aura.player_buff_size - 4, C.aura.player_buff_size - 4)
+ConsolidatedBuffsIcon:Size(C.aura.player_buff_size - 4)
 
-local h = CreateFrame("Frame")
-h:SetParent(ConsolidatedBuffs)
-h:SetAllPoints(ConsolidatedBuffs)
-h:SetFrameLevel(30)
-
-ConsolidatedBuffsCount:SetParent(h)
 ConsolidatedBuffsCount:Point("BOTTOMRIGHT", 0, 1)
 ConsolidatedBuffsCount:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 ConsolidatedBuffsCount:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
-local CBbg = CreateFrame("Frame", nil, ConsolidatedBuffs)
-CBbg:SetTemplate("Default")
-if C.aura.classcolor_border == true then
-	CBbg:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-end
-CBbg:Point("TOPLEFT", ConsolidatedBuffs, 0, 0)
-CBbg:Point("BOTTOMRIGHT", ConsolidatedBuffs, 0, 0)
-CBbg:SetFrameStrata("BACKGROUND")
-
 for i = 1, 3 do
-	local f = CreateFrame("Frame", nil, _G["TempEnchant"..i])
-	f:CreatePanel("Default", C.aura.player_buff_size, C.aura.player_buff_size, "CENTER", _G["TempEnchant"..i], "CENTER", 0, 0)
+	local buff = _G["TempEnchant"..i]
+	local icon = _G["TempEnchant"..i.."Icon"]
+	local border = _G["TempEnchant"..i.."Border"]
+	local duration = _G["TempEnchant"..i.."Duration"]
+
+	if border then border:Hide() end
+
+	buff:Size(C.aura.player_buff_size)
+	buff:CreateBackdrop("Default")
+	buff.backdrop:SetAllPoints()
 	if C.aura.classcolor_border == true then
-		f:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		buff.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 	end
+
+	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	icon:Point("TOPLEFT", buff, 2, -2)
+	icon:Point("BOTTOMRIGHT", buff, -2, 2)
+
+	duration:ClearAllPoints()
+	duration:Point("CENTER", 2, 1)
+	duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+	duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+
 	_G["TempEnchant2"]:ClearAllPoints()
 	_G["TempEnchant2"]:Point("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
 	_G["TempEnchant3"]:ClearAllPoints()
 	_G["TempEnchant3"]:Point("RIGHT", _G["TempEnchant2"], "LEFT", -3, 0)
-	_G["TempEnchant"..i.."Border"]:Hide()
-	_G["TempEnchant"..i.."Icon"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	_G["TempEnchant"..i.."Icon"]:Point("TOPLEFT", _G["TempEnchant"..i], 2, -2)
-	_G["TempEnchant"..i.."Icon"]:Point("BOTTOMRIGHT", _G["TempEnchant"..i], -2, 2)
-	_G["TempEnchant"..i]:Height(C.aura.player_buff_size)
-	_G["TempEnchant"..i]:Width(C.aura.player_buff_size)
-	_G["TempEnchant"..i.."Duration"]:ClearAllPoints()
-	_G["TempEnchant"..i.."Duration"]:Point("CENTER", 2, 1)
-	_G["TempEnchant"..i.."Duration"]:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
-	_G["TempEnchant"..i.."Duration"]:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 end
 
 local function StyleBuffs(buttonName, index, debuff)
@@ -78,13 +76,20 @@ local function StyleBuffs(buttonName, index, debuff)
 	local border = _G[buttonName..index.."Border"]
 	local duration = _G[buttonName..index.."Duration"]
 	local count = _G[buttonName..index.."Count"]
-	if icon and not _G[buttonName..index.."Panel"] then
+
+	if border then border:Hide() end
+
+	if icon and not buff.isSkinned then
+		buff:Size(C.aura.player_buff_size)
+		buff:CreateBackdrop("Default")
+		buff.backdrop:SetAllPoints()
+		if C.aura.classcolor_border == true then
+			buff.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		end
+
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:Point("TOPLEFT", buff, 2, -2)
 		icon:Point("BOTTOMRIGHT", buff, -2, 2)
-
-		buff:Height(C.aura.player_buff_size)
-		buff:Width(C.aura.player_buff_size)
 
 		duration:ClearAllPoints()
 		duration:Point("CENTER", 2, 1)
@@ -96,15 +101,8 @@ local function StyleBuffs(buttonName, index, debuff)
 		count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 		count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
-		local panel = CreateFrame("Frame", buttonName..index.."Panel", buff)
-		panel:CreatePanel("Default", C.aura.player_buff_size, C.aura.player_buff_size, "CENTER", buff, "CENTER", 0, 0)
-		if C.aura.classcolor_border == true then
-			panel:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-		end
-		panel:SetFrameLevel(buff:GetFrameLevel() - 1)
-		panel:SetFrameStrata(buff:GetFrameStrata())
+		buff.isSkinned = true
 	end
-	if border then border:Hide() end
 end
 
 function UpdateFlash(self, elapsed)
@@ -173,15 +171,7 @@ local function UpdateDebuffAnchors(buttonName, index)
 	_G[buttonName..index]:Hide()
 end
 
--- Fixing the consolidated buff container size
-local z = 0.79
-local function UpdateConsolidatedBuffsAnchors()
-	ConsolidatedBuffsTooltip:Width(min(BuffFrame.numConsolidated * C.aura.player_buff_size * z + 18, 4 * C.aura.player_buff_size * z + 18))
-	ConsolidatedBuffsTooltip:Height(floor((BuffFrame.numConsolidated + 3) / 4 ) * C.aura.player_buff_size * z + CONSOLIDATED_BUFF_ROW_HEIGHT * z)
-end
-
 hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
 hooksecurefunc("DebuffButton_UpdateAnchors", UpdateDebuffAnchors)
 hooksecurefunc("AuraButton_UpdateDuration", UpdateDuration)
 hooksecurefunc("AuraButton_OnUpdate", UpdateFlash)
---MOP--hooksecurefunc("ConsolidatedBuffs_UpdateAllAnchors", UpdateConsolidatedBuffsAnchors)

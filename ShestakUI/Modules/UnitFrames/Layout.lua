@@ -36,11 +36,9 @@ local function Shared(self, unit)
 	end
 
 	-- Backdrop for every units
-	self.FrameBackdrop = CreateFrame("Frame", nil, self)
-	self.FrameBackdrop:SetTemplate("Default")
-	self.FrameBackdrop:SetFrameStrata("LOW")
-	self.FrameBackdrop:Point("TOPLEFT", -2, 2)
-	self.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
+	self:CreateBackdrop("Default")
+	self.backdrop:Point("TOPLEFT", -2, 2)
+	self.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", self:GetName().."_Health", self)

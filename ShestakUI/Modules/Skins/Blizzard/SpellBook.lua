@@ -69,7 +69,7 @@ local function LoadSkin()
 
 				if not button.backdrop then
 					button:SetFrameLevel(button:GetFrameLevel() + 1)
-					button:CreateBackdrop("Default", true)
+					button:CreateBackdrop("Default")
 				end
 			end
 
@@ -177,7 +177,7 @@ local function LoadSkin()
 
 			button:SetFrameLevel(button:GetFrameLevel() + 2)
 			if not button.backdrop then
-				button:CreateBackdrop("Default", true)
+				button:CreateBackdrop("Default")
 				button.backdrop:Point("TOPLEFT", 2, -2)
 				button.backdrop:Point("BOTTOMRIGHT", -2, 2)
 			end
@@ -254,7 +254,7 @@ local function LoadSkin()
 			local button = SpellBook_GetCoreAbilityButton(i)
 			if not button.reskinned then
 				button:SetFrameLevel(button:GetFrameLevel() + 2)
-				button:CreateBackdrop("Default", true)
+				button:CreateBackdrop("Default")
 				button.backdrop:Point("TOPLEFT", -2, 2)
 				button.backdrop:Point("BOTTOMRIGHT", 1, -1)
 

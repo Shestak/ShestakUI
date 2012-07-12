@@ -584,7 +584,7 @@ end
 T.PostUpdateRaidHealth = function(health, unit, min, max)
 	local self = health:GetParent()
 	local power = self.Power
-	local border = self.FrameBackdrop
+	local border = self.backdrop
 	if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
 		health:SetValue(0)
 		if not UnitIsConnected(unit) then
@@ -1281,13 +1281,9 @@ T.UpdateThreat = function(self, event, unit)
 	local threat = UnitThreatSituation(self.unit)
 	if threat and threat > 1 then
 		r, g, b = GetThreatStatusColor(threat)
-		if self.FrameBackdrop then
-			self.FrameBackdrop:SetBackdropBorderColor(r, g, b)
-		end
+		self.backdrop:SetBackdropBorderColor(r, g, b)
 	else
-		if self.FrameBackdrop then
-			self.FrameBackdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-		end
+		self.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 	end 
 end
 

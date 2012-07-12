@@ -36,7 +36,7 @@ end
 local function CreateOverlay(f)
 	if f.overlay then return end
 
-	local overlay = f:CreateTexture(f:GetName() and f:GetName().."Overlay" or nil, "BORDER", f)
+	local overlay = f:CreateTexture("$parentOverlay", "BORDER", f)
 	overlay:ClearAllPoints()
 	overlay:Point("TOPLEFT", 2, -2)
 	overlay:Point("BOTTOMRIGHT", -2, 2)
@@ -48,7 +48,7 @@ end
 local function CreateBorder(f, i, o)
 	if i then
 		if f.iborder then return end
-		local border = CreateFrame("Frame", f:GetName() and f:GetName().."InnerBorder" or nil, f)
+		local border = CreateFrame("Frame", "$parentInnerBorder", f)
 		border:Point("TOPLEFT", T.mult, -T.mult)
 		border:Point("BOTTOMRIGHT", -T.mult, T.mult)
 		border:SetBackdrop({
@@ -61,7 +61,7 @@ local function CreateBorder(f, i, o)
 
 	if o then
 		if f.oborder then return end
-		local border = CreateFrame("Frame", f:GetName() and f:GetName().."OuterBorder" or nil, f)
+		local border = CreateFrame("Frame", "$parentOuterBorder", f)
 		border:Point("TOPLEFT", -T.mult, T.mult)
 		border:Point("BOTTOMRIGHT", T.mult, -T.mult)
 		border:SetFrameLevel(f:GetFrameLevel() + 1)
@@ -85,9 +85,7 @@ local function GetTemplate(t)
 	end
 end
 
-local function SetTemplate(f, t, tex)
-	if tex then texture = C.media.texture else texture = C.media.blank end
-
+local function SetTemplate(f, t)
 	GetTemplate(t)
 
 	f:SetBackdrop({
@@ -143,13 +141,13 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	f:SetBackdropBorderColor(borderr, borderg, borderb, bordera)
 end
 
-local function CreateBackdrop(f, t, tex)
+local function CreateBackdrop(f, t)
 	if not t then t = "Default" end
 
-	local b = CreateFrame("Frame", nil, f)
+	local b = CreateFrame("Frame", "$parentBackdrop", f)
 	b:Point("TOPLEFT", -2, 2)
 	b:Point("BOTTOMRIGHT", 2, -2)
-	b:SetTemplate(t, tex)
+	b:SetTemplate(t)
 
 	if f:GetFrameLevel() - 1 >= 0 then
 		b:SetFrameLevel(f:GetFrameLevel() - 1)
