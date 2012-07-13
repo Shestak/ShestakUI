@@ -1017,8 +1017,6 @@ Filger_Spells = {
 			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightning Shield
 			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Water Shield
-			{spellID = 52127, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental mastery
 			--MOP{spellID = 64701, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spiritwalker's grace
@@ -1031,6 +1029,12 @@ Filger_Spells = {
 			--MOP{spellID = 77800, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature Guardian
 			{spellID = 31616, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stone Bulwark
+			{spellID = 114893, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ancestral Guidance
+			{spellID = 108281, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Astral Shift
+			{spellID = 108271, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1044,12 +1048,12 @@ Filger_Spells = {
 			-- Buffs
 			-- Clearcasting
 			{spellID = 16246, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lava Surge
+			{spellID = 77762, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tidal Waves
 			--MOP{spellID = 51562, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lava flows
 			--MOP{spellID = 65264, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stoneclaw Totem
-			--MOP{spellID = 55277, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Weapons
 			-- Caster General
@@ -1098,8 +1102,6 @@ Filger_Spells = {
 
 			-- Storm Strike
 			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Earth Shock
-			{spellID = 8042, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Shock
 			{spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Flame Shock
@@ -1171,8 +1173,6 @@ Filger_Spells = {
 			{spellID = 57994, filter = "CD"},
 			-- Earthbind Totem
 			{spellID = 2484, filter = "CD"},
-			-- Stoneclaw Totem
-			--MOP{spellID = 5730, filter = "CD"},
 			-- Tremor totem
 			{spellID = 8143, filter = "CD"},
 			-- Feral Spirit
@@ -1187,6 +1187,14 @@ Filger_Spells = {
 			{spellID = 73920, filter = "CD"},
 			-- Unleash weapon
 			{spellID = 73680, filter = "CD"},
+			-- Stone Bulwark Totem
+			{spellID = 108270, filter = "CD"},
+			-- Ancestral Swiftness
+			{spellID = 16188, filter = "CD"},
+			-- Ancestral Guidance
+			{spellID = 108281, filter = "CD"},
+			-- Astral Shift
+			{spellID = 108271, filter = "CD"},
 
 			-- Racials
 			-- Stoneform (Dwarf)
