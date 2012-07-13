@@ -267,13 +267,13 @@ local function Shared(self, unit)
 
 		-- Rune bar
 		if C.unitframe_class_bar.rune == true and T.class == "DEATHKNIGHT" then
-			self.Runes = CreateFrame("Frame", nil, self)
+			self.Runes = CreateFrame("Frame", self:GetName().."_RuneBar", self)
 			self.Runes:CreateBackdrop("Default")
 			self.Runes:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.Runes:Size(217, 7)
 
 			for i = 1, 6 do
-				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_Runes"..i, self.Runes)
+				self.Runes[i] = CreateFrame("StatusBar", nil, self.Runes)
 				self.Runes[i]:SetSize(212 / 6, 7)
 				if i == 1 then
 					self.Runes[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -291,13 +291,13 @@ local function Shared(self, unit)
 
 		-- Chi bar
 		if C.unitframe_class_bar.chi == true and T.class == "MONK" then
-			self.HarmonyBar = CreateFrame("Frame", nil, self)
+			self.HarmonyBar = CreateFrame("Frame", self:GetName().."_HarmonyBar", self)
 			self.HarmonyBar:CreateBackdrop("Default")
 			self.HarmonyBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.HarmonyBar:Size(217, 7)
 
 			for i = 1, 5 do
-				self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar"..i, self.HarmonyBar)
+				self.HarmonyBar[i] = CreateFrame("StatusBar", nil, self.HarmonyBar)
 				self.HarmonyBar[i]:Height(7)
 				if i == 1 then
 					self.HarmonyBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -316,13 +316,13 @@ local function Shared(self, unit)
 
 		-- Shadow Orbs bar
 		if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
-			self.ShadowOrbsBar = CreateFrame("Frame", nil, self)
+			self.ShadowOrbsBar = CreateFrame("Frame", self:GetName().."_ShadowOrbsBar", self)
 			self.ShadowOrbsBar:CreateBackdrop("Default")
 			self.ShadowOrbsBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.ShadowOrbsBar:Size(217, 7)
 
 			for i = 1, 3 do
-				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar"..i, self.ShadowOrbsBar)
+				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", nil, self.ShadowOrbsBar)
 				self.ShadowOrbsBar[i]:SetSize(215 / 3, 7)
 				if i == 1 then
 					self.ShadowOrbsBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -341,13 +341,13 @@ local function Shared(self, unit)
 
 		-- Holy Power bar
 		if C.unitframe_class_bar.holy == true and T.class == "PALADIN" then
-			self.HolyPower = CreateFrame("Frame", nil, self)
+			self.HolyPower = CreateFrame("Frame", self:GetName().."_HolyPowerBar", self)
 			self.HolyPower:CreateBackdrop("Default")
 			self.HolyPower:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.HolyPower:Size(217, 7)
 
 			for i = 1, 5 do
-				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPower"..i, self.HolyPower)
+				self.HolyPower[i] = CreateFrame("StatusBar", nil, self.HolyPower)
 				self.HolyPower[i]:SetSize(213 / 5, 7)
 				if i == 1 then
 					self.HolyPower[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -368,13 +368,13 @@ local function Shared(self, unit)
 
 		-- Shard/Burning bar
 		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
-			self.WarlockSpecBars = CreateFrame("Frame", nil, self)
+			self.WarlockSpecBars = CreateFrame("Frame", self:GetName().."_WarlockSpecBar", self)
 			self.WarlockSpecBars:CreateBackdrop("Default")
 			self.WarlockSpecBars:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.WarlockSpecBars:Size(217, 7)
 
 			for i = 1, 4 do
-				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."_WarlockSpecBars"..i, self.WarlockSpecBars)
+				self.WarlockSpecBars[i] = CreateFrame("StatusBar", nil, self.WarlockSpecBars)
 				self.WarlockSpecBars[i]:SetSize(214 / 4, 7)
 				if i == 1 then
 					self.WarlockSpecBars[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -431,7 +431,7 @@ local function Shared(self, unit)
 
 			-- Eclipse bar
 			if C.unitframe_class_bar.eclipse == true then
-				self.EclipseBar = CreateFrame("Frame", nil, self)
+				self.EclipseBar = CreateFrame("Frame", self:GetName().."_EclipseBar", self)
 				self.EclipseBar:CreateBackdrop("Default")
 				self.EclipseBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.EclipseBar:Size(217, 7)
@@ -464,40 +464,29 @@ local function Shared(self, unit)
 
 		-- Vengeance bar
 		if C.unitframe_class_bar.vengeance == true then
-			local vengeanceBar = CreateFrame("Frame", nil, self)
+			self.VengeanceBar = CreateFrame("Frame", self:GetName().."_VengeanceBar", self)
+			self.VengeanceBar:CreateBackdrop("Default")
 			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true) then
-				vengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
+				self.VengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
 			else
-				vengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.VengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			end
-			vengeanceBar:Size(217, 7)
-			vengeanceBar:SetBackdrop(backdrop)
-			vengeanceBar:SetBackdropColor(0, 0, 0)
+			self.VengeanceBar:Size(217, 7)
 
-			vengeanceBar.FrameBackdrop = CreateFrame("Frame", nil, vengeanceBar)
-			vengeanceBar.FrameBackdrop:SetTemplate("Default")
-			vengeanceBar.FrameBackdrop:SetFrameStrata("BACKGROUND")
-			vengeanceBar.FrameBackdrop:Point("TOPLEFT", -2, 2)
-			vengeanceBar.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
+			self.VengeanceBar.Bar = CreateFrame("StatusBar", nil, self.VengeanceBar)
+			self.VengeanceBar.Bar:Point("LEFT", self.VengeanceBar, "LEFT", 0, 0)
+			self.VengeanceBar.Bar:Size(217, 7)
+			self.VengeanceBar.Bar:SetStatusBarTexture(C.media.texture)
+			self.VengeanceBar.Bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 
-			local statusBar = CreateFrame("StatusBar", nil, vengeanceBar)
-			statusBar:Point("LEFT", vengeanceBar, "LEFT", 0, 0)
-			statusBar:Size(217, 7)
-			statusBar:SetStatusBarTexture(C.media.texture)
-			statusBar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-			vengeanceBar.Bar = statusBar
+			self.VengeanceBar.bg = self.VengeanceBar.Bar:CreateTexture(nil, "BORDER")
+			self.VengeanceBar.bg:SetAllPoints()
+			self.VengeanceBar.bg:SetTexture(C.media.texture)
+			self.VengeanceBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
 
-			statusBar.bg = statusBar:CreateTexture(nil, "BORDER")
-			statusBar.bg:SetAllPoints()
-			statusBar.bg:SetTexture(C.media.texture)
-			statusBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
-
-			local vengeanceBarText = T.SetFontString(statusBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			vengeanceBarText:Point("CENTER", statusBar, "CENTER", 0, 0)
-			vengeanceBar.Text = vengeanceBarText
-
-			self.VengeanceBar = vengeanceBar
+			self.VengeanceBar.Text = T.SetFontString(self.VengeanceBar.Bar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.VengeanceBar.Text:Point("CENTER", self.VengeanceBar.Bar, "CENTER", 0, 0)
 		end
 
 		-- Experience bar
@@ -606,27 +595,26 @@ local function Shared(self, unit)
 				self.Portrait:Point(unpack(C.position.unitframes.target_portrait))
 			end
 
-			self.PortraitOverlay = CreateFrame("Frame", self:GetName().."_PortraitOverlay", self.Portrait)
-			self.PortraitOverlay:SetFrameLevel(self.PortraitOverlay:GetFrameLevel() - 1)
-			self.PortraitOverlay:SetTemplate("Transparent")
+			self.Portrait:CreateBackdrop("Transparent")
+			self.Portrait.backdrop:Point("TOPLEFT", -2 + T.mult, 2 + T.mult)
+			self.Portrait.backdrop:Point("BOTTOMRIGHT", 2 + T.mult, -2 - T.mult)
+
 			if C.unitframe.portrait_classcolor_border == true then
 				if unit == "player" then
-					self.PortraitOverlay:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+					self.Portrait.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 				elseif unit == "target" then
-					self.PortraitOverlay:RegisterEvent("PLAYER_TARGET_CHANGED")
-					self.PortraitOverlay:SetScript("OnEvent", function(self)
+					self.Portrait.backdrop:RegisterEvent("PLAYER_TARGET_CHANGED")
+					self.Portrait.backdrop:SetScript("OnEvent", function()
 						local _, class = UnitClass("target")
 						local color = RAID_CLASS_COLORS[class]
 						if color then
-							self:SetBackdropBorderColor(color.r, color.g, color.b)
+							self.Portrait.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
 						else
-							self:SetBackdropBorderColor(unpack(C.media.border_color))
+							self.Portrait.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 						end
 					end)
 				end
 			end
-			self.PortraitOverlay:Point("TOPLEFT", -2 + T.mult, 2)
-			self.PortraitOverlay:Point("BOTTOMRIGHT", 2 + T.mult, -2)
 		end
 
 		if unit == "player" then
@@ -883,15 +871,15 @@ local function Shared(self, unit)
 	-- Swing bar
 	if C.unitframe.plugins_swing == true and unit == "player" then
 		self.Swing = CreateFrame("StatusBar", self:GetName().."_Swing", self)
+		self.Swing:CreateBackdrop("Default")
+		self.Swing:Point("BOTTOMRIGHT", "oUF_Player_Castbar", "TOPRIGHT", 0, 7)
+		self.Swing:Size(281, 5)
 		self.Swing:SetStatusBarTexture(C.media.texture)
 		if C.unitframe.own_color == true then
 			self.Swing:SetStatusBarColor(unpack(C.unitframe.uf_color))
 		else
 			self.Swing:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 		end
-		self.Swing:Height(5)
-		self.Swing:Width(281)
-		self.Swing:Point("BOTTOMRIGHT", "oUF_Player_Castbar", "TOPRIGHT", 0, 7)
 
 		self.Swing.bg = self.Swing:CreateTexture(nil, "BORDER")
 		self.Swing.bg:SetAllPoints(self.Swing)
@@ -901,12 +889,6 @@ local function Shared(self, unit)
 		else
 			self.Swing.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
 		end
-
-		self.Swing.FrameBackdrop = CreateFrame("Frame", nil, self.Swing)
-		self.Swing.FrameBackdrop:SetTemplate("Default")
-		self.Swing.FrameBackdrop:SetFrameLevel(1)
-		self.Swing.FrameBackdrop:Point("TOPLEFT", -2, 2)
-		self.Swing.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
 
 		self.Swing.Text = T.SetFontString(self.Swing, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.Swing.Text:Point("CENTER", 0, 0)

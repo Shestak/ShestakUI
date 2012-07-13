@@ -372,7 +372,7 @@ C["unitframe"] = {
 	-- Portraits
 	["portrait_enable"] = false,				-- Enable player/target portraits
 	["portrait_classcolor_border"] = true,		-- Enable classcolor border
-	["portrait_height"] = 94,					-- Portrait height
+	["portrait_height"] = 92,					-- Portrait height
 	["portrait_width"] = 67,					-- Portrait width
 	-- Plugins
 	["plugins_gcd"] = false,					-- Global cooldown spark
