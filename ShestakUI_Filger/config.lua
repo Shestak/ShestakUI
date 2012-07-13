@@ -887,6 +887,8 @@ Filger_Spells = {
 			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Demoralizing Shout
 			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Weakened Blows
+			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
