@@ -2577,7 +2577,7 @@ Filger_Spells = {
 			-- Other
 			-- Lifeblood
 			{spellID = 74497, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lightwell
+			-- Lightwell Renew
 			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Protection
 			{spellID = 1022, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2601,12 +2601,6 @@ Filger_Spells = {
 			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mass Regeneration
-			{spellID = 105737, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Vampiric Brood
-			{spellID = 105588, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Shield Fortress
-			{spellID = 105914, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Rallying Cry
 			{spellID = 97462, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
@@ -2835,8 +2829,6 @@ Filger_Spells = {
 			{spellID = 51514, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthgrab
 			{spellID = 64695, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Stoneclaw Stun
-			--MOP{spellID = 39796, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthbind
 			{spellID = 3600, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Shock
