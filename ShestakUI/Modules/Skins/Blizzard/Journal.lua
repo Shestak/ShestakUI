@@ -25,14 +25,10 @@ local function LoadSkin()
 	EncounterJournal:HookScript("OnShow", function()
 		if not EncounterJournalInstanceSelect.backdrop then
 			EncounterJournalInstanceSelect:CreateBackdrop("Default")
-			EncounterJournalInstanceSelect.backdrop:Point("TOPLEFT", -2, 2)
-			EncounterJournalInstanceSelect.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
 		end
 
 		if not EncounterJournalEncounterFrameInfo.backdrop then
 			EncounterJournalEncounterFrameInfo:CreateBackdrop("Default")
-			EncounterJournalEncounterFrameInfo.backdrop:Point("TOPLEFT", -2, 2)
-			EncounterJournalEncounterFrameInfo.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
 		end
 
 		EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()

@@ -87,10 +87,8 @@ end
 
 local function CreateRollFrame()
 	local frame = CreateFrame("Frame", nil, UIParent)
-	frame:Size(328, 22)
 	frame:CreateBackdrop("Default")
-	frame.backdrop:Point("TOPLEFT", -2, 2)
-	frame.backdrop:Point("BOTTOMRIGHT", 2, -2)
+	frame:Size(328, 22)
 	frame:SetScript("OnEvent", OnEvent)
 	frame:RegisterEvent("CANCEL_LOOT_ROLL")
 	frame:Hide()

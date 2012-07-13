@@ -12,8 +12,6 @@ Omen.UpdateBarTextureSettings = function(self)
 	for i, v in ipairs(self.Bars) do
 		v.texture:SetTexture(C.media.texture)
 		v:CreateBackdrop("Transparent")
-		v.backdrop:Point("TOPLEFT", -2, 2)
-		v.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	end
 end
 

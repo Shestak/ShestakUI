@@ -37,8 +37,6 @@ local function Shared(self, unit)
 
 	-- Backdrop for every units
 	self:CreateBackdrop("Default")
-	self.backdrop:Point("TOPLEFT", -2, 2)
-	self.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", self:GetName().."_Health", self)
@@ -270,12 +268,9 @@ local function Shared(self, unit)
 		-- Rune bar
 		if C.unitframe_class_bar.rune == true and T.class == "DEATHKNIGHT" then
 			self.Runes = CreateFrame("Frame", nil, self)
+			self.Runes:CreateBackdrop("Default")
 			self.Runes:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.Runes:Size(217, 7)
-
-			self.Runes:CreateBackdrop("Default")
-			self.Runes.backdrop:Point("TOPLEFT", -2, 2)
-			self.Runes.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			for i = 1, 6 do
 				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_Runes"..i, self.Runes)
@@ -297,12 +292,9 @@ local function Shared(self, unit)
 		-- Chi bar
 		if C.unitframe_class_bar.chi == true and T.class == "MONK" then
 			self.HarmonyBar = CreateFrame("Frame", nil, self)
+			self.HarmonyBar:CreateBackdrop("Default")
 			self.HarmonyBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.HarmonyBar:Size(217, 7)
-
-			self.HarmonyBar:CreateBackdrop("Default")
-			self.HarmonyBar.backdrop:Point("TOPLEFT", -2, 2)
-			self.HarmonyBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			for i = 1, 5 do
 				self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar"..i, self.HarmonyBar)
@@ -325,12 +317,9 @@ local function Shared(self, unit)
 		-- Shadow Orbs bar
 		if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
 			self.ShadowOrbsBar = CreateFrame("Frame", nil, self)
+			self.ShadowOrbsBar:CreateBackdrop("Default")
 			self.ShadowOrbsBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.ShadowOrbsBar:Size(217, 7)
-
-			self.ShadowOrbsBar:CreateBackdrop("Default")
-			self.ShadowOrbsBar.backdrop:Point("TOPLEFT", -2, 2)
-			self.ShadowOrbsBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			for i = 1, 3 do
 				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar"..i, self.ShadowOrbsBar)
@@ -353,12 +342,9 @@ local function Shared(self, unit)
 		-- Holy Power bar
 		if C.unitframe_class_bar.holy == true and T.class == "PALADIN" then
 			self.HolyPower = CreateFrame("Frame", nil, self)
+			self.HolyPower:CreateBackdrop("Default")
 			self.HolyPower:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.HolyPower:Size(217, 7)
-
-			self.HolyPower:CreateBackdrop("Default")
-			self.HolyPower.backdrop:Point("TOPLEFT", -2, 2)
-			self.HolyPower.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			for i = 1, 5 do
 				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPower"..i, self.HolyPower)
@@ -383,12 +369,9 @@ local function Shared(self, unit)
 		-- Shard/Burning bar
 		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
 			self.WarlockSpecBars = CreateFrame("Frame", nil, self)
+			self.WarlockSpecBars:CreateBackdrop("Default")
 			self.WarlockSpecBars:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.WarlockSpecBars:Size(217, 7)
-
-			self.WarlockSpecBars:CreateBackdrop("Default")
-			self.WarlockSpecBars.backdrop:Point("TOPLEFT", -2, 2)
-			self.WarlockSpecBars.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			for i = 1, 4 do
 				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."_WarlockSpecBars"..i, self.WarlockSpecBars)
@@ -412,9 +395,12 @@ local function Shared(self, unit)
 		if C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
 			self.TotemBar = {}
 			self.TotemBar.Destroy = true
+
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self)
+				self.TotemBar[i]:CreateBackdrop("Default")
 				self.TotemBar[i]:SetSize((i == 1 and 210 or 214) / 4, 7)
+
 				local fixpos
 				if i == 2 then
 					self.TotemBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -429,10 +415,6 @@ local function Shared(self, unit)
 				self.TotemBar[i]:SetMinMaxValues(0, 1)
 				self.TotemBar[i]:SetBackdrop(backdrop)
 				self.TotemBar[i]:SetBackdropColor(0, 0, 0)
-
-				self.TotemBar[i]:CreateBackdrop("Default")
-				self.TotemBar[i].backdrop:Point("TOPLEFT", -2, 2)
-				self.TotemBar[i].backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 				self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
 				self.TotemBar[i].bg:SetAllPoints()
@@ -450,12 +432,9 @@ local function Shared(self, unit)
 			-- Eclipse bar
 			if C.unitframe_class_bar.eclipse == true then
 				self.EclipseBar = CreateFrame("Frame", nil, self)
+				self.EclipseBar:CreateBackdrop("Default")
 				self.EclipseBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.EclipseBar:Size(217, 7)
-
-				self.EclipseBar:CreateBackdrop("Default")
-				self.EclipseBar.backdrop:Point("TOPLEFT", -2, 2)
-				self.EclipseBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 				self.EclipseBar.LunarBar= CreateFrame("StatusBar", nil, self.EclipseBar)
 				self.EclipseBar.LunarBar:Point("LEFT", self.EclipseBar, "LEFT", 0, 0)
@@ -524,6 +503,7 @@ local function Shared(self, unit)
 		-- Experience bar
 		if T.level ~= MAX_PLAYER_LEVEL and C.unitframe.plugins_experience_bar == true then
 			self.Experience = CreateFrame("StatusBar", self:GetName().."_Experience", self)
+			self.Experience:CreateBackdrop("Default")
 			if C.unitframe.portrait_enable == true then
 				self.Experience:Point("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
 			else
@@ -534,10 +514,6 @@ local function Shared(self, unit)
 			self.Experience:SetStatusBarTexture(C.media.texture)
 			self.Experience:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 			self.Experience:SetAlpha(0)
-
-			self.Experience:CreateBackdrop("Default")
-			self.Experience.backdrop:Point("TOPLEFT", -2, 2)
-			self.Experience.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			self.Experience.bg = self.Experience:CreateTexture(nil, "BORDER")
 			self.Experience.bg:SetAllPoints()
@@ -559,6 +535,7 @@ local function Shared(self, unit)
 		-- Reputation bar
 		if C.unitframe.plugins_reputation_bar == true then
 			self.Reputation = CreateFrame("StatusBar", self:GetName().."_Reputation", self)
+			self.Reputation:CreateBackdrop("Default")
 			if C.unitframe.portrait_enable == true then
 				self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
 			else
@@ -568,10 +545,6 @@ local function Shared(self, unit)
 			self.Reputation:SetOrientation("Vertical")
 			self.Reputation:SetStatusBarTexture(C.media.texture)
 			self.Reputation:SetAlpha(0)
-
-			self.Reputation:CreateBackdrop("Default")
-			self.Reputation.backdrop:Point("TOPLEFT", -2, 2)
-			self.Reputation.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			self.Reputation.bg = self.Reputation:CreateTexture(nil, "BORDER")
 			self.Reputation.bg:SetAllPoints()
@@ -700,12 +673,9 @@ local function Shared(self, unit)
 			-- Rogue/Druid Combo bar
 			if C.unitframe_class_bar.combo == true then
 				self.CPoints = CreateFrame("Frame", nil, self)
+				self.CPoints:CreateBackdrop("Default")
 				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.CPoints:Size(217, 7)
-
-				self.CPoints:CreateBackdrop("Default")
-				self.CPoints.backdrop:Point("TOPLEFT", -2, 2)
-				self.CPoints.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 				for i = 1, 5 do
 					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_Combo"..i, self.CPoints)

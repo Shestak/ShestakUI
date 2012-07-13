@@ -12,8 +12,6 @@ local function LoadSkin()
 	PetStableModelShadow:StripTextures(true)
 
 	PetStableFrame:CreateBackdrop("Transparent")
-	PetStableFrame.backdrop:Point("TOPLEFT", -2, 2)
-	PetStableFrame.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 	T.SkinRotateButton(PetStableModelRotateLeftButton)
 	T.SkinRotateButton(PetStableModelRotateRightButton)

@@ -50,6 +50,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsBuffsPanelShowAllEnemyDebuffs:Kill()
 		InterfaceOptionsCombatPanelTargetOfTarget:Kill()
 		InterfaceOptionsCombatPanelTOTDropDown:Kill()
+		InterfaceOptionsCombatPanelEnemyCastBars:Kill()
 		InterfaceOptionsCombatPanelEnemyCastBarsOnPortrait:Kill()
 		SetCVar("showPartyBackground", 0)
 	end
