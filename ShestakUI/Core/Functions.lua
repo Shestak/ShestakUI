@@ -339,17 +339,29 @@ function T.SkinCheckBox(frame)
 	frame.backdrop:Point("TOPLEFT", 4, -4)
 	frame.backdrop:Point("BOTTOMRIGHT", -4, 4)
 
+	if frame.SetHighlightTexture then
+		local highligh = frame:CreateTexture("Frame", nil, self)
+		highligh:SetTexture(1, 1, 1, 0.3)
+		highligh:Point("TOPLEFT", frame, 6, -6)
+		highligh:Point("BOTTOMRIGHT", frame, -6, 6)
+		frame:SetHighlightTexture(highligh)
+	end
+
 	if frame.SetCheckedTexture then
-		frame:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
+		local checked = frame:CreateTexture("Frame", nil, self)
+		checked:SetTexture(1, 0.82, 0, 0.8)
+		checked:Point("TOPLEFT", frame, 6, -6)
+		checked:Point("BOTTOMRIGHT", frame, -6, 6)
+		frame:SetCheckedTexture(checked)
 	end
 
 	if frame.SetDisabledCheckedTexture then
-		frame:SetDisabledCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check-Disabled")
+		local disabled = frame:CreateTexture("Frame", nil, self)
+		disabled:SetTexture(0.6, 0.6, 0.6, 0.75)
+		disabled:Point("TOPLEFT", frame, 6, -6)
+		disabled:Point("BOTTOMRIGHT", frame, -6, 6)
+		frame:SetDisabledCheckedTexture(disabled)
 	end
-
-	frame.SetNormalTexture = T.dummy
-	frame.SetPushedTexture = T.dummy
-	frame.SetHighlightTexture = T.dummy
 end
 
 function T.SkinCloseButton(f, point, text, pixel)
@@ -377,6 +389,20 @@ function T.SkinCloseButton(f, point, text, pixel)
 
 	f:HookScript("OnEnter", T.SetModifiedBackdrop)
 	f:HookScript("OnLeave", T.SetOriginalBackdrop)
+end
+
+function T.SkinSlider(f)
+	f:SetBackdrop(nil)
+
+	local bd = CreateFrame("Frame", nil, f)
+	bd:SetTemplate("Overlay")
+	bd:SetPoint("TOPLEFT", 14, -2)
+	bd:SetPoint("BOTTOMRIGHT", -15, 3)
+	bd:SetFrameLevel(f:GetFrameLevel() - 1)
+
+	local slider = select(4, f:GetRegions())
+	slider:SetTexture("Interface\\CastingBar\\UI-CastingBar-Spark")
+	slider:SetBlendMode("ADD")
 end
 
 local LoadBlizzardSkin = CreateFrame("Frame")

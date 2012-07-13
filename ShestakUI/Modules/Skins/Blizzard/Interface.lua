@@ -268,6 +268,26 @@ local function LoadSkin()
 		end
 	end
 
+	local sliders = {
+		"InterfaceOptionsCombatPanelSpellAlertOpacitySlider",
+		"InterfaceOptionsCombatPanelMaxSpellStartRecoveryOffset",
+		"CompactUnitFrameProfilesGeneralOptionsFrameHeightSlider",
+		"CompactUnitFrameProfilesGeneralOptionsFrameWidthSlider",
+		"InterfaceOptionsBattlenetPanelToastDurationSlider",
+		"InterfaceOptionsCameraPanelMaxDistanceSlider",
+		"InterfaceOptionsCameraPanelFollowSpeedSlider",
+		"InterfaceOptionsMousePanelMouseSensitivitySlider",
+		"InterfaceOptionsMousePanelMouseLookSpeedSlider"
+	}
+
+	for i = 1, getn(sliders) do
+		local slider = _G[sliders[i]]
+		if slider then
+			T.SkinSlider(slider)
+			slider:SetFrameLevel(slider:GetFrameLevel() + 2)
+		end
+	end
+
 	_G["InterfaceOptionsFrameDefaults"]:ClearAllPoints()
 	_G["InterfaceOptionsFrameDefaults"]:Point("TOPLEFT", _G["InterfaceOptionsFrameCategories"], "BOTTOMLEFT", 0, -14)
 	_G["InterfaceOptionsFrameCancel"]:ClearAllPoints()

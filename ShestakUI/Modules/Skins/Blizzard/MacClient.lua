@@ -57,6 +57,8 @@ local function LoadSkin()
 
 		_G["MacOptionsFrameDefaults"]:Width(96)
 		_G["MacOptionsFrameDefaults"]:Height(22)
+
+		T.SkinSlider(_G["MacOptionsFrameQualitySlider"])
 	end
 end
 
