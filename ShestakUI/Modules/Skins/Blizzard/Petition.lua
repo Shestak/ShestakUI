@@ -6,9 +6,9 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	PetitionFrame:StripTextures(true)
+	PetitionFrameInset:StripTextures()
 	PetitionFrame:CreateBackdrop("Transparent")
-	PetitionFrame.backdrop:Point("TOPLEFT", 16, -12)
-	PetitionFrame.backdrop:Point("BOTTOMRIGHT", -30, -3)
+	PetitionFrame.backdrop:SetAllPoints()
 
 	PetitionFrameSignButton:SkinButton()
 	PetitionFrameRequestButton:SkinButton()
@@ -33,10 +33,7 @@ local function LoadSkin()
 
 	PetitionFrameRenameButton:Point("LEFT", PetitionFrameRequestButton, "RIGHT", 3, 0)
 	PetitionFrameRenameButton:Point("RIGHT", PetitionFrameCancelButton, "LEFT", -3, 0)
-	PetitionFrame:Height(PetitionFrame:GetHeight() - 80)
-
-	PetitionFrameCancelButton:Point("BOTTOMRIGHT", PetitionFrame, "BOTTOMRIGHT", -40, 3)
-	PetitionFrameRequestButton:Point("BOTTOMLEFT", PetitionFrame, "BOTTOMLEFT", 25, 3)
+	PetitionFrameCancelButton:Point("BOTTOMRIGHT", PetitionFrame, "BOTTOMRIGHT", -5, 4)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
