@@ -61,10 +61,18 @@ L_MAP_BOUNDS = "L'extérieur de la carte !"
 L_MINIMAP_CALENDAR = "Calendrier"
 
 -- Addons list
-L_ALOAD_RL = "Recharger l'interface"
-L_ALOAD_TRADE = "Echanger"
-L_ALOAD_SOLO = "Solo"
+L_ALOAD_RL = "Recharger UI"
 L_ALOAD_DEP = "Dépendances: "
+L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
+L_ALOAD_PROFILES = "Profiles" -- Needs review
+L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
+L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
+L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
+L_ALOAD_SET_TO = "Set To.." -- Needs review
+L_ALOAD_ADD_TO = "Add To.." -- Needs review
+L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
+L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
+L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "De"
@@ -201,8 +209,6 @@ L_INFO_ERRORS = "Pas d'erreur pour le moment."
 L_INFO_INVITE = "Invitation acceptée par : "
 L_INFO_DUEL = "Duel rejetée par : "
 L_INFO_DISBAND = "Groupe dissous..."
-L_INFO_ADDON_SETS1 = "Taper /addons <solo/party/raid/pvp/trade/quest>, Pour charger les configurations préinstallées."
-L_INFO_ADDON_SETS2 = "Vous pouvez ajouter, supprimer ou changer la liste des configurations en modifiant le fichier Settings.lua dans le dossier `Config`."
 L_INFO_SETTINGS_DBM = "Taper /settings dbm, pour configurer DBM automatiquement."
 L_INFO_SETTINGS_DXE = "Taper /settings dxe, pour configurer DXE automatiquement."
 L_INFO_SETTINGS_MSBT = "Taper /settings msbt, pour configurer msbt automatiquement."
@@ -328,7 +334,6 @@ L_SLASHCMD_HELP = {
 	"/heal - Bascule vers l'interface 'Heal'.",
 	"/dps - Bascule sur l'interface 'DPS'.",
 	"/frame - Description is not ready.",
-	"/addons solo|party|raid|pvp|trade - Vous pouvez changer la list des addons vers la fin du ficher ShestakUI\Config\Settings.lua, Section - 'Addons group'.",
 	"/farmmode - Agrandi la taille de la minimap.",
 	"/moveui - Permet de déplacer des éléments de l'interface.",
 	"/resetui - Remet les paramètres généraux à leurs valeurs par défaut.",

@@ -1,224 +1,482 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Based on aLoad(by Fernir)
+--	Enabled/disable addons without logging out(stAddonManager by Safturento)
 ----------------------------------------------------------------------------------------
-local loadf = CreateFrame("Frame", "aLoadFrame", UIParent)
-loadf:Width(400)
-loadf:Height(400)
-loadf:Point("BOTTOM", UIParent, "BOTTOM", 0, 317)
-loadf:SetFrameStrata("DIALOG")
-tinsert(UISpecialFrames, "aLoadFrame")
-loadf:Hide()
-loadf:SetScript("OnHide", function(self) ShowUIPanel(GameMenuFrame) end)
+local AddonManager = CreateFrame("Frame", "AddonManager", UIParent)
+AddonManager:SetFrameStrata("HIGH")
 
-local title = loadf:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-title:SetPoint("TOP", 0, -8)
-title:SetText(ADDONS)
+AddonManager.header = CreateFrame("Frame", "AddonManagerHeader", AddonManager)
+AddonManager.header:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 317)
+AddonManager.header:SetSize(300, 400)
+AddonManager:SetPoint("TOP", AddonManager.header, "TOP", 0, 0)
 
-local scrollf = CreateFrame("ScrollFrame", "aLoadScroll", loadf, "UIPanelScrollFrameTemplate")
-local mainf = CreateFrame("Frame", "aLoadMain", scrollf)
-
-scrollf:Point("TOPLEFT", loadf, "TOPLEFT", 10, -30)
-scrollf:Point("BOTTOMRIGHT", loadf, "BOTTOMRIGHT", -28, 40)
-scrollf:SetScrollChild(mainf)
-
-local reloadb = CreateFrame("Button", "aLoadReload", loadf, "UIPanelButtonTemplate")
-reloadb:Width(150)
-reloadb:Height(22)
-reloadb:Point("BOTTOM", 0, 10)
-reloadb:SetText(L_ALOAD_RL)
-reloadb:SetScript("OnClick", function() ReloadUI() end)
-
-local addonf = CreateFrame("Frame", "AddonSets", loadf)
-addonf:Width(400)
-addonf:Height(44)
-addonf:Point("TOP", loadf, "BOTTOM", 0, -3)
-addonf:SetFrameStrata("DIALOG")
-
-local addonset1 = CreateFrame("Button", "AddonSet1", addonf, "UIPanelButtonTemplate")
-addonset1:Width(60)
-addonset1:Height(22)
-addonset1:Point("BOTTOMLEFT", 7, 10)
-addonset1:SetText(PARTY)
-addonset1:SetScript("OnClick", function() T.RunSlashCmd("/addons party") end)
-
-local addonset2 = CreateFrame("Button", "AddonSet2", addonf, "UIPanelButtonTemplate")
-addonset2:Width(60)
-addonset2:Height(22)
-addonset2:Point("LEFT", addonset1, "RIGHT", 5, 0)
-addonset2:SetText(RAID)
-addonset2:SetScript("OnClick", function() T.RunSlashCmd("/addons raid") end)
-
-local addonset3 = CreateFrame("Button", "AddonSet3", addonf, "UIPanelButtonTemplate")
-addonset3:Width(60)
-addonset3:Height(22)
-addonset3:Point("LEFT", addonset2, "RIGHT", 5, 0)
-addonset3:SetText(QUESTS_LABEL)
-addonset3:SetScript("OnClick", function() T.RunSlashCmd("/addons quest") end)
-
-local addonset4 = CreateFrame("Button", "AddonSet4", addonf, "UIPanelButtonTemplate")
-addonset4:Width(60)
-addonset4:Height(22)
-addonset4:Point("LEFT", addonset3, "RIGHT", 5, 0)
-addonset4:SetText(L_ALOAD_TRADE)
-addonset4:SetScript("OnClick", function() T.RunSlashCmd("/addons trade") end)
-
-local addonset5 = CreateFrame("Button", "AddonSet5", addonf, "UIPanelButtonTemplate")
-addonset5:Width(60)
-addonset5:Height(22)
-addonset5:Point("LEFT", addonset4, "RIGHT", 5, 0)
-addonset5:SetText(PVP)
-addonset5:SetScript("OnClick", function() T.RunSlashCmd("/addons pvp") end)
-
-local addonset6 = CreateFrame("Button", "AddonSet6", addonf, "UIPanelButtonTemplate")
-addonset6:Width(60)
-addonset6:Height(22)
-addonset6:Point("LEFT", addonset5, "RIGHT", 5, 0)
-addonset6:SetText(L_ALOAD_SOLO)
-addonset6:SetScript("OnClick", function() T.RunSlashCmd("/addons solo") end)
-
-local closeb = CreateFrame("Button", "aLoadCloseButton", loadf, "UIPanelCloseButton")
-closeb:Point("TOPRIGHT", loadf, "TOPRIGHT", 2, 0)
-closeb:SetScript("OnClick", function() loadf:Hide() end)
-
-local makeList = function()
-	local self = mainf
-	self:Point("TOPLEFT", scrollf, "TOPLEFT", 0, 0)
-	self:Width(scrollf:GetWidth())
-	self:Height(scrollf:GetHeight())
-	self.addons = {}
+local function GetEnabledAddons()
+	local EnabledAddons = {}
 	for i = 1, GetNumAddOns() do
-		self.addons[i] = select(1, GetAddOnInfo(i))
-	end
-
-	local oldb
-
-	for i, v in pairs(self.addons) do
-		local name, title, notes, enabled, loadable, reason, security = GetAddOnInfo(v)
-		local version = GetAddOnMetadata(v, "Version")
-		if not version then
-			version = GetAddOnMetadata(v, "X-Curse-Packaged-Version") or ""
-		end
-
-		if name then
-			local bf = _G[v.."_cbf"] or CreateFrame("Button", v.."_cbf", self)
-			if i == 1 then
-				bf:Point("TOPLEFT", self, "TOPLEFT", 2, -2)
-				bf:Point("BOTTOMRIGHT", self, "TOPRIGHT", -2, -20)
-			else
-				bf:Point("TOPLEFT", oldb, "BOTTOMLEFT", 0, 0)
-				bf:Point("BOTTOMRIGHT", oldb, "BOTTOMRIGHT", 0, -20)
-			end
-
-			bf:EnableMouse(true)
-			bf:SetBackdrop({bgFile = C.media.blank})
-			bf:SetBackdropColor(0, 0, 0, 0)
-
-			local maketool = function(self, v)
-				GameTooltip:ClearLines()
-				GameTooltip:SetOwner(self, ANCHOR_TOPRIGHT)
-				GameTooltip:AddLine(title.." "..version)
-				if notes then
-					GameTooltip:AddLine(notes, 1, 1, 1, 1)
-				end
-				if GetAddOnDependencies(v) then
-					local s = "|cffff2200"..L_ALOAD_DEP
-					for i = 1, select("#", GetAddOnDependencies(v)) do
-						s = s..select(i, GetAddOnDependencies(v))
-						if i > 1 then s = s..", " end
-					end
-					s = s.."|r"
-					GameTooltip:AddLine(s, _, _, _, 1)
-				end
-				GameTooltip:Show()
-			end
-
-			bf:SetScript("OnEnter", function(self)
-				self:SetBackdropColor(0, 1, 0, 0.25)
-				maketool(self, v)
-			end)
-
-			bf:SetScript("OnLeave", function(self)
-				self:SetBackdropColor(0, 0, 0, 0)
-				GameTooltip:Hide()
-			end)
-			
-			oldb = bf
-
-			local cb = _G[v.."_cb"] or CreateFrame("CheckButton", v.."_cb", bf, "OptionsCheckButtonTemplate")
-			if IsAddOnLoaded("Aurora") then
-				local F = unpack(Aurora)
-				F.ReskinCheck(cb)
-				cb:Width(22)
-				cb:Height(22)
-			else
-				cb:Width(18)
-				cb:Height(18)
-			end
-			cb:SetScript("OnClick", function()
-				local _, _, _, enabled = GetAddOnInfo(name)
-				if enabled then
-					DisableAddOn(name)
-				else
-					EnableAddOn(name)
-				end
-			end)
-			cb:SetChecked(enabled)
-			cb:Point("LEFT", 4, 0)
-
-			cb:SetScript("OnEnter", function()
-				bf:SetBackdropColor(0, 1, 0, 0.25)
-				maketool(cb, v)
-			end)
-
-			cb:SetScript("OnLeave", function()
-				bf:SetBackdropColor(0, 0, 0, 0)
-				GameTooltip:Hide()
-			end)
-
-			local fs = _G[v.."_fs"] or bf:CreateFontString(v.."_fs", "OVERLAY", "GameFontNormal")
-			fs:SetText(title)
-
-			fs:SetJustifyH("LEFT")
-			fs:SetPoint("TOPLEFT", cb, "TOPRIGHT", 0, 0)
-			fs:SetPoint("BOTTOMRIGHT", bf, "BOTTOMRIGHT", 0, 0)
-
-			bf:SetScript("OnClick", function(self)
-				cb:Click()
-			end)
+		local name, _, _, enabled = GetAddOnInfo(i)
+		if enabled then
+			tinsert(EnabledAddons, name)
 		end
 	end
+	return EnabledAddons
 end
 
-makeList()
+local function CreateMenuButton(parent, width, height, text, ...)
+	local button = CreateFrame("Button", "Test", parent, "UIPanelButtonTemplate")
+	button:SetSize(width, height)
+	button:SkinButton()
+	button:SetText(text)
+	if ... then button:SetPoint(...) end
+	return button
+end
+
+function AddonManager:UpdateAddonList(query)
+	local addons = {}
+	for i = 1, GetNumAddOns() do
+		local name, title, notes, enabled, loadable, reason, security = GetAddOnInfo(i)
+		local lwrTitle, lwrName = strlower(title), strlower(name)
+		if (query and (strfind(lwrTitle, strlower(query)) or strfind(lwrName, strlower(query)))) or (not query) then
+			addons[i] = {}
+			addons[i].name = name
+			addons[i].title = title
+			addons[i].notes = notes
+			addons[i].enabled = enabled
+			if GetAddOnMetadata(i, "version") then
+				addons[i].version = GetAddOnMetadata(i, "version")
+			end
+			if GetAddOnDependencies(i) then
+				addons[i].dependencies = {GetAddOnDependencies(i)}
+			end
+			if GetAddOnOptionalDependencies(i) then
+				addons[i].optionaldependencies = {GetAddOnOptionalDependencies(i)}
+			end
+		end
+	end
+	return addons
+end
+
+function AddonManager:LoadProfileWindow()
+	local self = AddonManager
+	if not SavedAddonProfiles then SavedAddonProfiles = {} end
+
+	if self.ProfileWindow then ToggleFrame(self.ProfileWindow) return end
+
+	local window = CreateFrame("Frame", "AddonManagerProfileWindow", self)
+	window:SetPoint("TOPLEFT", self, "TOPRIGHT", 5, 0)
+	window:SetSize(175, 20)
+	window:CreateBackdrop("Transparent")
+	window.backdrop:Point("TOPLEFT", 0, 2)
+	window.backdrop:Point("BOTTOMRIGHT", 0, -2)
+
+	local title = window:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+	title:SetPoint("CENTER")
+	title:SetText(L_ALOAD_PROFILES)
+	window.title = title
+
+	local EnableAll = CreateMenuButton(window, (window:GetWidth() - 15) / 2, 20, L_ALOAD_ENABLE_ALL, "TOPLEFT", window, "BOTTOMLEFT", 5, -5)
+	EnableAll:SetScript("OnClick", function(self)
+		for i, addon in pairs(AddonManager.AllAddons) do
+			EnableAddOn(addon.name)
+			if AddonManager.Buttons[i].overlay then
+				AddonManager.Buttons[i].overlay:SetVertexColor(1, 0.82, 0, 0.8)
+			end
+			addon.enabled = true
+		end
+	end)
+	self.EnableAll = EnableAll
+
+	local DisableAll = CreateMenuButton(window, EnableAll:GetWidth(), EnableAll:GetHeight(), L_ALOAD_DISABLE_ALL, "TOPRIGHT", window, "BOTTOMRIGHT", -5, -5)
+	DisableAll:SetScript("OnClick", function(self)
+		for i, addon in pairs(AddonManager.AllAddons) do
+			if addon.name ~= "ShestakUI" then
+				DisableAddOn(addon.name)
+				if AddonManager.Buttons[i].overlay then
+					AddonManager.Buttons[i].overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+				end
+				addon.enabled = false
+			end
+		end
+	end)
+	self.DisableAll = DisableAll
+
+	local SaveProfile = CreateMenuButton(window, window:GetWidth() - 10, 20, NEW_COMPACT_UNIT_FRAME_PROFILE, "TOPLEFT", EnableAll, "BOTTOMLEFT", 0, -5)
+	SaveProfile:SetScript("OnClick", function(self)
+		if not self.editbox then
+			local editbox = CreateFrame("EditBox", nil, self)
+			editbox:SetTemplate("Overlay")
+			editbox:SetAllPoints(self)
+			editbox:SetFont(C.media.normal_font, 13)
+			editbox:SetText(L_ALOAD_PROFILE_NAME)
+			editbox:SetAutoFocus(false)
+			editbox:SetFocus(true)
+			editbox:HighlightText()
+			editbox:SetTextInsets(3, 0, 0, 0)
+			editbox:SetScript("OnEditFocusGained", function(self) self:HighlightText() end)
+			editbox:SetScript("OnEscapePressed", function(self) self:SetText(L_ALOAD_PROFILE_NAME) self:ClearFocus() self:Hide() end)
+			editbox:SetScript("OnEnterPressed", function(self)
+				local profileName = self:GetText()
+				self:ClearFocus()
+				self:SetText(L_ALOAD_PROFILE_NAME)
+				self:Hide()
+				if not profileName then return end
+				SavedAddonProfiles[profileName] = GetEnabledAddons()
+				AddonManager:UpdateProfileList()
+			end)
+			self.editbox = editbox
+		else
+			self.editbox:Show()
+			self.editbox:SetFocus(true)
+			self.editbox:HighlightText()
+		end
+	end)
+	self.SaveProfile = SaveProfile
+
+	self:SetScript("OnHide", function(self)
+		if self.SaveProfile.editbox then self.SaveProfile.editbox:Hide() end
+		window:Hide()
+	end)
+
+	local buttons = {}
+	function AddonManager:UpdateProfileList()
+		local sort = function(t, func)
+			local temp = {}
+			local i = 0
+
+			for n in pairs(t) do
+				table.insert(temp, n)
+			end
+
+			table.sort(temp, func)
+
+			local iter = function()
+				i = i + 1
+				if temp[i] == nil then
+					return nil
+				else
+					return temp[i], t[temp[i]]
+				end
+			end
+
+			return iter
+		end
+
+		local function CollapseAllProfiles()
+			for i = 1, #buttons do
+				buttons[i].overlay2:Hide()
+				buttons[i]:SetHeight(20)
+			end
+		end
+
+		for i = 1, #buttons do
+			buttons[i]:Hide()
+			CollapseAllProfiles()
+		end
+
+		local i = 1
+		for profileName, addonList in sort(SavedAddonProfiles, function(a, b) return strlower(b) > strlower(a) end) do
+			if not buttons[i] then
+				local button = CreateMenuButton(window, window:GetWidth() - 10, 20)
+
+				local overlay2 = CreateFrame("Frame", nil, button)
+				overlay2:SetHeight(1)
+				overlay2:SetPoint("TOP", button, "TOP", 0, -18)
+				overlay2:SetWidth(button:GetWidth() - 10)
+				overlay2:SetFrameLevel(button:GetFrameLevel() + 1)
+				overlay2:Hide()
+
+				overlay2.set = CreateMenuButton(overlay2, overlay2:GetWidth(), 20, L_ALOAD_SET_TO, "TOP", button, "TOP", 0, -5)
+				overlay2.add = CreateMenuButton(overlay2, overlay2:GetWidth(), 20, L_ALOAD_ADD_TO, "TOP", overlay2.set, "BOTTOM", 0, -3)
+				overlay2.remove = CreateMenuButton(overlay2, overlay2:GetWidth(), 20, L_ALOAD_REMOVE_FROM, "TOP", overlay2.add, "BOTTOM", 0, -3)
+				overlay2.delete = CreateMenuButton(overlay2, overlay2:GetWidth(), 20, L_ALOAD_DELETE_PROFILE, "TOP", overlay2.remove, "BOTTOM", 0, -3)
+
+				button.overlay2 = overlay2
+
+				button:SetScript("OnClick", function(self)
+					if self.overlay2:IsShown() then
+						CollapseAllProfiles()
+					else
+						CollapseAllProfiles()
+						self.overlay2:Show()
+						self:SetHeight((20 * 5) - 1)
+					end
+				end)
+
+				buttons[i] = button
+			end
+
+			buttons[i]:Show()
+			buttons[i]:SetText(profileName)
+			local overlay2 = buttons[i].overlay2
+			overlay2.set:SetScript("OnClick", function(self)
+				DisableAllAddOns()
+				EnableAddOn("ShestakUI")
+				for i, name in pairs(addonList) do EnableAddOn(name) end
+				AddonManager.AllAddons = AddonManager:UpdateAddonList()
+				AddonManager:UpdateList(AddonManager.AllAddons)
+				CollapseAllProfiles()
+			end)
+			overlay2.add:SetScript("OnClick", function(self)
+				for i, name in pairs(addonList) do EnableAddOn(name) end
+				AddonManager.AllAddons = AddonManager:UpdateAddonList()
+				AddonManager:UpdateList(AddonManager.AllAddons)
+				CollapseAllProfiles()
+			end)
+			overlay2.remove:SetScript("OnClick", function(self)
+				for i, name in pairs(addonList) do if name ~= "ShestakUI" then DisableAddOn(name) end end
+				AddonManager.AllAddons = AddonManager:UpdateAddonList()
+				AddonManager:UpdateList(AddonManager.AllAddons)
+				CollapseAllProfiles()
+			end)
+			overlay2.delete:SetScript("OnClick", function(self)
+				if IsShiftKeyDown() then
+					SavedAddonProfiles[profileName] = nil
+					AddonManager:UpdateProfileList()
+					CollapseAllProfiles()
+				else
+					print("|cffff0000"..L_ALOAD_CONFIRM_DELETE.."|r")
+				end
+			end)
+			i = i + 1
+		end
+
+		local prevButton
+		for i, button in pairs(buttons) do
+			if i == 1 then
+				button:SetPoint("TOP", SaveProfile, "BOTTOM", 0, -5)
+			else
+				button:SetPoint("TOP", prevButton, "BOTTOM", 0, -5)
+			end
+			prevButton = button
+		end
+
+		if not prevButton then prevButton = SaveProfile end
+		window.backdrop:ClearAllPoints()
+		window.backdrop:SetPoint("TOPLEFT", window, "TOPLEFT", 0, 2)
+		window.backdrop:SetPoint("TOPRIGHT", window, "TOPRIGHT", 0, 2)
+		window.backdrop:SetPoint("BOTTOM", prevButton, "BOTTOM", 0, -5)
+	end
+	self.ProfileWindow = window
+
+	AddonManager:UpdateProfileList()
+end
+
+function AddonManager:LoadWindow()
+	if AddonManager.Loaded then AddonManager:Show() return  end
+	local window = AddonManager
+	local header = window.header
+
+	tinsert(UISpecialFrames, window:GetName())
+
+	window:SetSize(300, 400)
+	window:CreateBackdrop("Transparent")
+
+	header:SetSize(300, 400)
+
+	local hTitle = AddonManager.header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+	hTitle:SetPoint("TOP", 0, -8)
+	hTitle:SetText(ADDONS)
+	header.title = hTitle
+
+	local close = CreateFrame("Button", window:GetName().."CloseButton", header, "UIPanelCloseButton")
+	T.SkinCloseButton(close, window.backdrop)
+	close:SetScript("OnClick", function() window:Hide() end)
+	header.close = close
+
+	local addonListBG = CreateFrame("Frame", window:GetName().."ScrollBackground", window)
+	addonListBG:SetPoint("TOPLEFT", header, "TOPLEFT", 10, -50)
+	addonListBG:SetWidth(window:GetWidth() - 20)
+	addonListBG:SetHeight(window:GetHeight() - 60)
+	addonListBG:CreateBackdrop("Overlay")
+
+	local scrollFrame = CreateFrame("ScrollFrame", window:GetName().."ScrollFrame", window, "UIPanelScrollFrameTemplate")
+	scrollFrame:SetPoint("TOPLEFT", addonListBG, "TOPLEFT", 0, -2)
+	scrollFrame:SetWidth(addonListBG:GetWidth() - 25)
+	scrollFrame:SetHeight(addonListBG:GetHeight() - 5)
+	scrollFrame:SetFrameLevel(window:GetFrameLevel() + 1)
+
+	scrollFrame.Anchor = CreateFrame("Frame", window:GetName().."ScrollAnchor", scrollFrame)
+	scrollFrame.Anchor:SetPoint("TOPLEFT", scrollFrame, "TOPLEFT", 0, -3)
+	scrollFrame.Anchor:SetWidth(window:GetWidth() - 40)
+	scrollFrame.Anchor:SetHeight(scrollFrame:GetHeight())
+	scrollFrame.Anchor:SetFrameLevel(scrollFrame:GetFrameLevel() + 1)
+	scrollFrame:SetScrollChild(scrollFrame.Anchor)
+
+	-- Load addon information
+	AddonManager.AllAddons = AddonManager:UpdateAddonList()
+	AddonManager.FilteredAddons = AddonManager:UpdateAddonList()
+	AddonManager.showEnabled = true
+	AddonManager.showDisabled = true
+
+	AddonManager.Buttons = {}
+
+	-- Create initial list
+	for i, addon in pairs(AddonManager.AllAddons) do
+		local button = CreateFrame("Frame", nil, scrollFrame.Anchor)
+		button:SetFrameLevel(scrollFrame.Anchor:GetFrameLevel() + 1)
+		button:SetSize(14, 14)
+		button:SkinButton()
+		if addon.enabled then
+			if button.overlay then
+				button.overlay:SetVertexColor(1, 0.82, 0, 0.8)
+			end
+		end
+
+		if i == 1 then
+			button:SetPoint("TOPLEFT", scrollFrame.Anchor, "TOPLEFT", 5, -5)
+		elseif i == 2 then
+			button:SetPoint("TOP", AddonManager.Buttons[1], "BOTTOM", 1, -3)
+		else
+			button:SetPoint("TOP", AddonManager.Buttons[i-1], "BOTTOM", 0, -3)
+		end
+		button.text = button:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+		button.text:SetJustifyH("LEFT")
+		button.text:SetPoint("LEFT", button, "RIGHT", 8, 0)
+		button.text:SetPoint("RIGHT", scrollFrame.Anchor, "RIGHT", 0, 0)
+		button.text:SetText(addon.title)
+
+		button:SetScript("OnEnter", function(self)
+			GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, self:GetHeight())
+			GameTooltip:ClearLines()
+			if addon.version then
+				GameTooltip:AddDoubleLine(addon.title, addon.version)
+			else
+				GameTooltip:AddLine(addon.title)
+			end
+			if addon.notes then
+				GameTooltip:AddLine(addon.notes, nil, nil, nil, true)
+			end
+			if addon.dependencies then
+				GameTooltip:AddLine(L_ALOAD_DEP..unpack(addon.dependencies), 1, 0.2, 0, true)
+			end
+			if addon.optionaldependencies then
+				GameTooltip:AddLine(L_ALOAD_OP_DEP..unpack(addon.optionaldependencies), 1, 0.5, 0, true)
+			end
+			GameTooltip:Show()
+		end)
+		button:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
+		button:SetScript("OnMouseDown", function(self)
+			if addon.enabled then
+				if self.overlay then
+					self.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+				end
+				DisableAddOn(addon.name)
+				addon.enabled = false
+			else
+				if self.overlay then
+					self.overlay:SetVertexColor(1, 0.82, 0, 0.8)
+				end
+				EnableAddOn(addon.name)
+				addon.enabled = true
+			end
+		end)
+
+		AddonManager.Buttons[i] = button
+	end
+
+	function AddonManager:UpdateList(AddonsTable)
+		-- Start off by hiding all of the buttons
+		for _, b in pairs(AddonManager.Buttons) do b:Hide() end
+		local i = 1
+		for _, addon in pairs(AddonsTable) do
+			local button = AddonManager.Buttons[i]
+			button:Show()
+			if addon.enabled then
+				if button.overlay then
+					button.overlay:SetVertexColor(1, 0.82, 0, 0.8)
+				end
+			else
+				if button.overlay then
+					button.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+				end
+			end
+
+			button:SetScript("OnMouseDown", function(self)
+				if addon.enabled then
+					if self.overlay then
+						self.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+					end
+					DisableAddOn(addon.name)
+					addon.enabled = false
+				else
+					if self.overlay then
+						self.overlay:SetVertexColor(1, 0.82, 0, 0.8)
+					end
+					EnableAddOn(addon.name)
+					addon.enabled = true
+				end
+			end)
+
+			button.text:SetText(addon.title)
+			i = i + 1
+		end
+	end
+
+	-- Search bar
+	local searchBar = CreateFrame("EditBox", window:GetName().."SearchBar", window)
+	searchBar:SetFrameLevel(window:GetFrameLevel() + 1)
+	searchBar:SetPoint("BOTTOMLEFT", addonListBG, "TOPLEFT", 0, 5)
+	searchBar:SetWidth(150)
+	searchBar:SetHeight(20)
+	searchBar:CreateBackdrop("Overlay")
+	searchBar.backdrop:SetPoint("TOPLEFT", -2, 0)
+	searchBar.backdrop:SetPoint("BOTTOMRIGHT", 2, 0)
+	searchBar:SetFont(C.media.normal_font, 13)
+	searchBar:SetText(SEARCH)
+	searchBar:SetAutoFocus(false)
+	searchBar:SetTextInsets(1, 0, 0, 0)
+	searchBar:SetScript("OnEnterPressed", function(self) self:ClearFocus() end)
+	searchBar:SetScript("OnEscapePressed", function(self) searchBar:SetText(SEARCH) AddonManager:UpdateList(AddonManager.AllAddons) searchBar:ClearFocus() end)
+	searchBar:SetScript("OnEditFocusGained", function(self) self:HighlightText() end)
+	searchBar:SetScript("OnTextChanged", function(self, input)
+		if input then
+			AddonManager.FilteredAddons = AddonManager:UpdateAddonList(self:GetText())
+			AddonManager:UpdateList(AddonManager.FilteredAddons)
+		end
+	end)
+	AddonManager.searchBar = searchBar
+
+	local profileButton = CreateMenuButton(window, 50, 20, L_ALOAD_PROFILES, "BOTTOMRIGHT", addonListBG, "TOPRIGHT", 2, 5)
+	profileButton:SetScript("OnClick", function(self)
+		AddonManager:LoadProfileWindow()
+	end)
+	AddonManager.profileButton = profileButton
+
+	local reloadButton = CreateMenuButton(window, 1, 20, L_ALOAD_RL, "LEFT", searchBar, "RIGHT", 5, 0)
+	reloadButton:SetPoint("RIGHT", profileButton, "LEFT", -3, 0)
+	reloadButton:SetScript("OnClick", function(self)
+		if InCombatLockdown() then return end
+		ReloadUI()
+	end)
+	AddonManager.reloadButton = reloadButton
+
+	AddonManager.Loaded = true
+end
 
 -- Slash command
-SLASH_ALOAD1 = "/aload"
-SLASH_ALOAD2 = "/фдщфв"
-SlashCmdList.ALOAD = function(msg)
-	loadf:Show()
-end
+SLASH_ADDONMANAGER1 = "/aload"
+SLASH_ADDONMANAGER2 = "/фдщфв"
+SlashCmdList.ADDONMANAGER = function() AddonManager:LoadWindow() end
 
-local showb = CreateFrame("Button", "GameMenuButtonAddonManager", GameMenuFrame, "GameMenuButtonTemplate")
-showb:SetText(ADDONS)
-showb:Point("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -1)
-
-GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + showb:GetHeight())
+-- Game menu buttons
+local gmbAddOns = CreateFrame("Button", "GameMenuButtonAddonManager", GameMenuFrame, "GameMenuButtonTemplate")
+gmbAddOns:SetText(ADDONS)
+gmbAddOns:Point("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -1)
+GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + gmbAddOns:GetHeight())
 if IsMacClient() then
-	GameMenuButtonMacOptions:Point("TOP", showb, "BOTTOM", 0, -1)
+	GameMenuButtonMacOptions:Point("TOP", gmbAddOns, "BOTTOM", 0, -1)
 else
-	GameMenuButtonUIOptions:Point("TOP", showb, "BOTTOM", 0, -1)
+	GameMenuButtonUIOptions:Point("TOP", gmbAddOns, "BOTTOM", 0, -1)
 end
 
-showb:SetScript("OnClick", function()
+gmbAddOns:SetScript("OnClick", function()
 	PlaySound("igMainMenuOption")
 	HideUIPanel(GameMenuFrame)
-	loadf:Show()
+	AddonManager:LoadWindow()
 end)
 
 if not IsAddOnLoaded("ShestakUI_Config") then return end
-local guib = CreateFrame("Button", "GameMenuButtonSettingsGUI", GameMenuFrame, "GameMenuButtonTemplate")
+local guib = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "GameMenuButtonTemplate")
 guib:SetText("ShestakUI")
 guib:Point("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -23)
 

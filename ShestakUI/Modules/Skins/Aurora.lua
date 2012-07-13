@@ -10,15 +10,8 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 	local F = unpack(Aurora)
 
 	local buttons = {
-		"AddonSet1",
-		"AddonSet2",
-		"AddonSet3",
-		"AddonSet4",
-		"AddonSet5",
-		"AddonSet6",
-		"aLoadReload",
 		"GameMenuButtonAddonManager",
-		"GameMenuButtonSettingsGUI",
+		"GameMenuButtonSettingsUI",
 		"BaudErrorFrameClearButton",
 		"BaudErrorFrameCloseButton",
 		"DisbandRaidButton",
@@ -41,8 +34,6 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	local frames = {
-		"aLoadFrame",
-		"AddonSets",
 		"BaudErrorFrame"
 	}
 
@@ -55,7 +46,6 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	local bd = {
-		"aLoadScroll",
 		"BaudErrorFrameListScrollBox",
 		"BaudErrorFrameDetailScrollBox"
 	}
@@ -68,8 +58,6 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	F.CreateTab(_G["FriendsFrameTab5"])
-	F.ReskinClose(_G["aLoadCloseButton"])
-	F.ReskinScroll(_G["aLoadScrollScrollBar"])
 	if IsAddOnLoaded("!BaudErrorFrame") then
 		F.ReskinScroll(_G["BaudErrorFrameListScrollBoxScrollBarScrollBar"])
 		F.ReskinScroll(_G["BaudErrorFrameDetailScrollFrameScrollBar"])

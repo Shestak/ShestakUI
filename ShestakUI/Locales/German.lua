@@ -62,9 +62,17 @@ L_MINIMAP_CALENDAR = "Kalender"
 
 -- Addons list
 L_ALOAD_RL = "Interface Neuladen"
-L_ALOAD_TRADE = "Handel"
-L_ALOAD_SOLO = "Solo"
 L_ALOAD_DEP = "Abhängigkeiten: "
+L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
+L_ALOAD_PROFILES = "Profiles" -- Needs review
+L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
+L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
+L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
+L_ALOAD_SET_TO = "Set To.." -- Needs review
+L_ALOAD_ADD_TO = "Add To.." -- Needs review
+L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
+L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
+L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "Von"
@@ -201,8 +209,6 @@ L_INFO_ERRORS = "Noch keine Fehler."
 L_INFO_INVITE = "Gruppeneinladung akzeptiert von: "
 L_INFO_DUEL = "Duellanfrage Ignoriert von: "
 L_INFO_DISBAND = "Löse Gruppe auf..."
-L_INFO_ADDON_SETS1 = "Gebe /addons <solo/party/raid/pvp/trade/quest> ein, um ein vorgegebenes Set an Addons zu laden."
-L_INFO_ADDON_SETS2 = "Du kannst Sets hinzufügen, löschen oder verändern, indem du die Settings.lua im `Config` Ordner bearbeitest."
 L_INFO_SETTINGS_DBM = "Gebe /settings dbm ein, um DBM Einstellungen zu laden."
 L_INFO_SETTINGS_DXE = "Gebe /settings dxe ein, um DXE Einstellungen zu laden."
 L_INFO_SETTINGS_MSBT = "Gebe /settings msbt ein, um die MSBT Einstellungen zu laden."
@@ -328,7 +334,6 @@ L_SLASHCMD_HELP = {
 	"/heal - Switches to 'Heal' layout.",
 	"/dps - Switches to 'DPS' layout.",
 	"/frame - Description is not ready.",
-	"/addons solo|party|raid|pvp|trade - You can change addons list in ending of file ShestakUI\Config\Settings.lua, block - 'Addons group'.",
 	"/farmmode - Increase the size of the minimap.",
 	"/moveui - Allows the movement of interface elements.",
 	"/resetui - Resets general settings to default.",

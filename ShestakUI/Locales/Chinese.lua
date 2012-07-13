@@ -62,9 +62,17 @@ L_MINIMAP_CALENDAR = "日历"
 
 -- Addons list
 L_ALOAD_RL = "重新加载UI"
-L_ALOAD_TRADE = "贸易"
-L_ALOAD_SOLO = "独自"
 L_ALOAD_DEP = "依赖关系: "
+L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
+L_ALOAD_PROFILES = "Profiles" -- Needs review
+L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
+L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
+L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
+L_ALOAD_SET_TO = "Set To.." -- Needs review
+L_ALOAD_ADD_TO = "Add To.." -- Needs review
+L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
+L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
+L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -201,8 +209,6 @@ L_INFO_ERRORS = "目前没有错误."
 L_INFO_INVITE = "接受邀请: "
 L_INFO_DUEL = "拒绝决斗请求: "
 L_INFO_DISBAND = "解散团队..."
-L_INFO_ADDON_SETS1 = "键入 /addons <solo/party/raid/pvp/trade/quest>, 载入预设的设定."
-L_INFO_ADDON_SETS2 = "你可以通过编辑`Config`文件夹的Settings.lua 进行添加,刪除和更改设置."
 L_INFO_SETTINGS_DBM = "键入 /settings dbm, 载入 DBM 的设定."
 L_INFO_SETTINGS_DXE = "键入 /settings dxe, 载入 DXE 的设定."
 L_INFO_SETTINGS_MSBT = "键入 /settings msbt, 载入 MSBT 的设定."
@@ -328,7 +334,6 @@ L_SLASHCMD_HELP = {
 	"/heal - 载入治疗模式界面.",
 	"/dps - 载入伤害输出模式界面.",
 	"/frame - 在聊天窗口输出当前鼠标下的框体的名字.",
-	"/addons solo|party|raid|pvp|trade - 载入插件给 单独|队伍|团队|玩家对玩家|交易.",
 	"/farmmode - 打开小地图的采集模式(小地图框体放大).",
 	"/moveui - 解锁/锁定 界面中所有可以移动的框体.",
 	"/resetui - 恢复界面到原始设定值.",

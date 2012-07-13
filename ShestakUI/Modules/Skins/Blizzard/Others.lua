@@ -25,8 +25,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"RolePollPopup",
 			"AddFriendFrame",
 			"ChannelFrameDaughterFrame",
-			"aLoadFrame",
-			"AddonSets",
 			"BaudErrorFrame",
 			"StackSplitFrame",
 			"OpacityFrame",
@@ -44,7 +42,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		end
 
 		local insetskins = {
-			"aLoadScroll",
 			"BaudErrorFrameListScrollBox",
 			"BaudErrorFrameDetailScrollBox"
 		}
@@ -145,7 +142,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"GameMenuButtonMacOptions",
 			"GameMenuButtonOptionHouse",
 			"GameMenuButtonAddonManager",
-			"GameMenuButtonSettingsGUI",
+			"GameMenuButtonSettingsUI",
 			"ReadyCheckFrameYesButton",
 			"ReadyCheckFrameNoButton",
 			"ColorPickerOkayButton",
@@ -161,13 +158,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"AddFriendEntryFrameAcceptButton",
 			"ChannelFrameDaughterFrameOkayButton",
 			"ChannelFrameDaughterFrameCancelButton",
-			"AddonSet1",
-			"AddonSet2",
-			"AddonSet3",
-			"AddonSet4",
-			"AddonSet5",
-			"AddonSet6",
-			"aLoadReload",
 			"StackSplitOkayButton",
 			"StackSplitCancelButton",
 			"CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton",
@@ -230,7 +220,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			T.SkinCloseButton(_G["ChannelPulloutCloseButton"])
 			T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 			T.SkinCloseButton(_G["ItemRefCloseButton"])
-			T.SkinCloseButton(_G["aLoadCloseButton"])
 			if T.client == "ruRU" then
 				_G["DeclensionFrame"]:SetTemplate("Transparent")
 				_G["DeclensionFrameCancelButton"]:SkinButton()

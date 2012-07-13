@@ -11,8 +11,6 @@
 --		C["chat"].width = 100500
 --		C["tooltip"].cursor = false
 --		C["unitframe_class_bar"].totem = false
---		C["addon"].pvp = {ADDON1, ADDON2, ADDON3, ETC}
---		C["addon"].raid = {ADDON1, ADDON2, ADDON3, ETC}
 --		C["position"].tooltip = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5}
 --		C["position"].bottom_bars = {"BOTTOM", UIParent, "BOTTOM", 2, 8}
 --		C["position"].unitframes.tank = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 68}

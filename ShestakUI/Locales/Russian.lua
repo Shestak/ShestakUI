@@ -62,9 +62,17 @@ L_MINIMAP_CALENDAR = "Календарь"
 
 -- Addons list
 L_ALOAD_RL = "Перезагрузить"
-L_ALOAD_TRADE = "Торговля"
-L_ALOAD_SOLO = "Соло"
 L_ALOAD_DEP = "Зависимые ресурсы: "
+L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
+L_ALOAD_PROFILES = "Профили"
+L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
+L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
+L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
+L_ALOAD_SET_TO = "Set To.." -- Needs review
+L_ALOAD_ADD_TO = "Add To.." -- Needs review
+L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
+L_ALOAD_DELETE_PROFILE = "Удалить профиль.."
+L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "От"
@@ -201,8 +209,6 @@ L_INFO_ERRORS = "Ошибок не обнаружено."
 L_INFO_INVITE = "Приглашение принято от: "
 L_INFO_DUEL = "Дуэль отклонена от: "
 L_INFO_DISBAND = "Роспуск группы..."
-L_INFO_ADDON_SETS1 = "Введите /addons <solo/party/raid/pvp/trade/quest>, чтобы загрузить предустановленный набор модификаций."
-L_INFO_ADDON_SETS2 = "Вы можете добавить, удалить или изменить списки модификаций, изменив файл Settings.lua(~469 строка) в папке Config."
 L_INFO_SETTINGS_DBM = "Введите /settings dbm, чтобы применить настройки DBM."
 L_INFO_SETTINGS_DXE = "Введите /settings dxe, чтобы применить настройки DXE."
 L_INFO_SETTINGS_MSBT = "Введите /settings msbt, чтобы применить настройки MSBT."
@@ -328,7 +334,6 @@ L_SLASHCMD_HELP = {
 	"/heal - Переключает на 'Heal' раскладку.",
 	"/dps - Переключает на 'DPS' раскладку.",
 	"/frame - Описание не готово.",
-	"/addons solo|party|raid|pvp|trade - Переключение между списками эддонов.",
 	"/farmmode - Увеличивает миникарту.",
 	"/moveui - Перемещение элементов интерфейса.",
 	"/resetui - Сброс общих настроек на стандартные.",

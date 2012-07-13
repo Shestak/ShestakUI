@@ -62,9 +62,17 @@ L_MINIMAP_CALENDAR = "Calendar"
 
 -- Addons list
 L_ALOAD_RL = "Reload UI"
-L_ALOAD_TRADE = "Trade"
-L_ALOAD_SOLO = "Solo"
 L_ALOAD_DEP = "Dependencies: "
+L_ALOAD_OP_DEP = "Optional Dependencies: "
+L_ALOAD_PROFILES = "Profiles"
+L_ALOAD_ENABLE_ALL = "Enable All"
+L_ALOAD_DISABLE_ALL = "Disable All"
+L_ALOAD_PROFILE_NAME = "Profile Name"
+L_ALOAD_SET_TO = "Set To.."
+L_ALOAD_ADD_TO = "Add To.."
+L_ALOAD_REMOVE_FROM = "Remove From.."
+L_ALOAD_DELETE_PROFILE = "Delete Profile.."
+L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are."
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -201,8 +209,6 @@ L_INFO_ERRORS = "No error yet."
 L_INFO_INVITE = "Accepted invite from: "
 L_INFO_DUEL = "Declined duel request from: "
 L_INFO_DISBAND = "Disbanding group..."
-L_INFO_ADDON_SETS1 = "Type /addons <solo/party/raid/pvp/trade/quest>, to load the preinstalled set of modifications."
-L_INFO_ADDON_SETS2 = "You can add, delete or change lists of modifications, modifying Settings.lua in *Config* folder."
 L_INFO_SETTINGS_DBM = "Type /settings dbm, to apply the settings DBM."
 L_INFO_SETTINGS_DXE = "Type /settings dxe, to apply the settings DXE."
 L_INFO_SETTINGS_MSBT = "Type /settings msbt, to apply the settings MSBT."
@@ -328,7 +334,6 @@ L_SLASHCMD_HELP = {
 	"/heal - Switches to 'Heal' layout.",
 	"/dps - Switches to 'DPS' layout.",
 	"/frame - Description is not ready.",
-	"/addons solo|party|raid|pvp|trade - You can change addons list in ending of file ShestakUI\Config\Settings.lua, block - 'Addons group'.",
 	"/farmmode - Increase the size of the minimap.",
 	"/moveui - Allows the movement of interface elements.",
 	"/resetui - Resets general settings to default.",

@@ -62,9 +62,17 @@ L_MINIMAP_CALENDAR = "Calendario"
 
 -- Addons list
 L_ALOAD_RL = "Ricarica l'interfaccia"
-L_ALOAD_TRADE = "Commercio"
-L_ALOAD_SOLO = "In solitaria"
 L_ALOAD_DEP = "Dipendenze: "
+L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
+L_ALOAD_PROFILES = "Profiles" -- Needs review
+L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
+L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
+L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
+L_ALOAD_SET_TO = "Set To.." -- Needs review
+L_ALOAD_ADD_TO = "Add To.." -- Needs review
+L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
+L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
+L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "Da"
@@ -201,8 +209,6 @@ L_INFO_ERRORS = "Nessun errore ancora."
 L_INFO_INVITE = "Accettato l'invito di: "
 L_INFO_DUEL = "Declinata la richiesta di duello di: "
 L_INFO_DISBAND = "Scioglimento gruppo..."
-L_INFO_ADDON_SETS1 = "Digita /addons <solo/party/raid/pvp/trade/quest>, per caricare set preinstallati di AddOns."
-L_INFO_ADDON_SETS2 = "Puoi aggiungere, cancellare o cambiare gli elenchi di AddOns modificando il file Settings.lua nella cartella *Config*."
 L_INFO_SETTINGS_DBM = "Digita /settings dbm per applicare le impostazioni predefinite per DBM."
 L_INFO_SETTINGS_DXE = "Digita /settings dxe per applicare le impostazioni predefinite per DXE."
 L_INFO_SETTINGS_MSBT = "Digita /settings msbt per applicare le impostazioni predefinite per MSBT."
@@ -328,7 +334,6 @@ L_SLASHCMD_HELP = {
 	"/heal - Passa alla configurazione 'guaritori'.",
 	"/dps - Passa alla configurazione 'assaltatori'",
 	"/frame - La descrizione non è pronta.",
-	"/addons solo|party|raid|pvp|trade - Puoi modificare la lista AddOns alla fine del file ShestakUI\Config\Settings.lua, nel blocco - 'Addons group'.",
 	"/farmmode - Incrementa le dimensioni della minimappa.",
 	"/moveui - Consenti lo spostamento degli elementi dell'interfaccia.",
 	"/resetui - Ripristina le impostazioni generali iniziali.",
