@@ -8,7 +8,7 @@ AddonManager:SetFrameStrata("HIGH")
 
 AddonManager.header = CreateFrame("Frame", "AddonManagerHeader", AddonManager)
 AddonManager.header:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 317)
-AddonManager.header:SetSize(300, 400)
+AddonManager.header:SetSize(350, 400)
 AddonManager:SetPoint("TOP", AddonManager.header, "TOP", 0, 0)
 
 local function GetEnabledAddons()
@@ -66,8 +66,8 @@ function AddonManager:LoadProfileWindow()
 	window:SetPoint("TOPLEFT", self, "TOPRIGHT", 5, 0)
 	window:SetSize(175, 20)
 	window:CreateBackdrop("Transparent")
-	window.backdrop:Point("TOPLEFT", 0, 2)
-	window.backdrop:Point("BOTTOMRIGHT", 0, -2)
+	window.backdrop:SetPoint("TOPLEFT", 0, 2)
+	window.backdrop:SetPoint("BOTTOMRIGHT", 0, -2)
 
 	local title = window:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 	title:SetPoint("CENTER")
@@ -268,13 +268,15 @@ function AddonManager:LoadWindow()
 
 	tinsert(UISpecialFrames, window:GetName())
 
-	window:SetSize(300, 400)
+	window:SetSize(350, 400)
 	window:CreateBackdrop("Transparent")
+	window.backdrop:SetPoint("TOPLEFT", -2, 2)
+	window.backdrop:SetPoint("BOTTOMRIGHT", 2, -19)
 
-	header:SetSize(300, 400)
+	header:SetSize(350, 400)
 
 	local hTitle = AddonManager.header:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-	hTitle:SetPoint("TOP", 0, -8)
+	hTitle:SetPoint("TOP", 0, -3)
 	hTitle:SetText(ADDONS)
 	header.title = hTitle
 
@@ -324,8 +326,6 @@ function AddonManager:LoadWindow()
 
 		if i == 1 then
 			button:SetPoint("TOPLEFT", scrollFrame.Anchor, "TOPLEFT", 5, -5)
-		elseif i == 2 then
-			button:SetPoint("TOP", AddonManager.Buttons[1], "BOTTOM", 1, -3)
 		else
 			button:SetPoint("TOP", AddonManager.Buttons[i-1], "BOTTOM", 0, -3)
 		end
@@ -416,7 +416,7 @@ function AddonManager:LoadWindow()
 	local searchBar = CreateFrame("EditBox", window:GetName().."SearchBar", window)
 	searchBar:SetFrameLevel(window:GetFrameLevel() + 1)
 	searchBar:SetPoint("BOTTOMLEFT", addonListBG, "TOPLEFT", 0, 5)
-	searchBar:SetWidth(150)
+	searchBar:SetWidth(180)
 	searchBar:SetHeight(20)
 	searchBar:CreateBackdrop("Overlay")
 	searchBar.backdrop:SetPoint("TOPLEFT", -2, 0)
@@ -436,14 +436,14 @@ function AddonManager:LoadWindow()
 	end)
 	AddonManager.searchBar = searchBar
 
-	local profileButton = CreateMenuButton(window, 50, 20, L_ALOAD_PROFILES, "BOTTOMRIGHT", addonListBG, "TOPRIGHT", 2, 5)
+	local profileButton = CreateMenuButton(window, 70, 20, L_ALOAD_PROFILES, "BOTTOMRIGHT", addonListBG, "TOPRIGHT", 2, 5)
+	profileButton:SetPoint("LEFT", searchBar, "RIGHT", 5, 0)
 	profileButton:SetScript("OnClick", function(self)
 		AddonManager:LoadProfileWindow()
 	end)
 	AddonManager.profileButton = profileButton
 
-	local reloadButton = CreateMenuButton(window, 1, 20, L_ALOAD_RL, "LEFT", searchBar, "RIGHT", 5, 0)
-	reloadButton:SetPoint("RIGHT", profileButton, "LEFT", -3, 0)
+	local reloadButton = CreateMenuButton(window, 130, 20, L_ALOAD_RL, "TOP", addonListBG, "BOTTOM", 0, -5)
 	reloadButton:SetScript("OnClick", function(self)
 		if InCombatLockdown() then return end
 		ReloadUI()
@@ -461,12 +461,12 @@ SlashCmdList.ADDONMANAGER = function() AddonManager:LoadWindow() end
 -- Game menu buttons
 local gmbAddOns = CreateFrame("Button", "GameMenuButtonAddonManager", GameMenuFrame, "GameMenuButtonTemplate")
 gmbAddOns:SetText(ADDONS)
-gmbAddOns:Point("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -1)
+gmbAddOns:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -1)
 GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + gmbAddOns:GetHeight())
 if IsMacClient() then
-	GameMenuButtonMacOptions:Point("TOP", gmbAddOns, "BOTTOM", 0, -1)
+	GameMenuButtonMacOptions:SetPoint("TOP", gmbAddOns, "BOTTOM", 0, -1)
 else
-	GameMenuButtonUIOptions:Point("TOP", gmbAddOns, "BOTTOM", 0, -1)
+	GameMenuButtonUIOptions:SetPoint("TOP", gmbAddOns, "BOTTOM", 0, -1)
 end
 
 gmbAddOns:SetScript("OnClick", function()
@@ -478,13 +478,13 @@ end)
 if not IsAddOnLoaded("ShestakUI_Config") then return end
 local guib = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "GameMenuButtonTemplate")
 guib:SetText("ShestakUI")
-guib:Point("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -23)
+guib:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -23)
 
 GameMenuFrame:Height(GameMenuFrame:GetHeight() + guib:GetHeight())
 if IsMacClient() then
-	GameMenuButtonMacOptions:Point("TOP", guib, "BOTTOM", 0, -1)
+	GameMenuButtonMacOptions:SetPoint("TOP", guib, "BOTTOM", 0, -1)
 else
-	GameMenuButtonUIOptions:Point("TOP", guib, "BOTTOM", 0, -1)
+	GameMenuButtonUIOptions:SetPoint("TOP", guib, "BOTTOM", 0, -1)
 end
 
 guib:SetScript("OnClick", function()
