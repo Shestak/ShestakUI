@@ -301,7 +301,6 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Включить индикатор энергии 
 L_GUI_UF_PLUGINS_SHARD_BAR = "Включить индикатор осколков душ"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Включить индикатор рун"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Включить индикатор тотемов"
-L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Отображать имена тотемов на индикаторе тотемов"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Включить отображение угрозы на рамках группы/рейда"

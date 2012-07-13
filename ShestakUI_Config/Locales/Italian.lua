@@ -300,7 +300,6 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Attiva la barra potere sacro"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Attiva la barra poteri stregone/a"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Attiva la barra rune"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Attiva la barra totem"
-L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Nome del totem"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Cambio di colore dei bordi in base al grado di aggressione"

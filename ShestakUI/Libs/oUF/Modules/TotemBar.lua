@@ -20,12 +20,7 @@ local colors = {
 
 local GetTotemInfo, SetValue, GetTime = GetTotemInfo, SetValue, GetTime
 
-local Abbrev = function(name)
-	local newname = (string.len(name) > 11) and string.gsub(name, "%s?(.[\128-\191]*)%S+%s", "%1. ") or name
-	return T.UTF(newname, 11, false)
-end
-
-local function TotemOnClick(self,...)
+local function TotemOnClick(self, ...)
 	local id = self.ID
 	local mouse = ...
 
@@ -68,9 +63,6 @@ local function UpdateSlot(self, slot)
 
 	-- If we have a totem then set his value 
 	if haveTotem then
-		if totem[slot].Name then
-			totem[slot].Name:SetText(Abbrev(name))
-		end
 		if duration > 0 then
 			totem[slot]:SetValue(1 - ((GetTime() - startTime) / duration))
 			-- Status bar update
@@ -79,6 +71,7 @@ local function UpdateSlot(self, slot)
 				if total >= delay then
 					total = 0
 					haveTotem, name, startTime, duration, totemIcon = GetTotemInfo(self.ID)
+					if startTime == 0 then return end
 					if ((GetTime() - startTime) == 0) then
 						self:SetValue(0)
 					else
@@ -92,10 +85,6 @@ local function UpdateSlot(self, slot)
 			totem[slot]:SetValue(0)
 		end 
 	else
-		-- No totem = no time 
-		if totem[slot].Name then
-			totem[slot].Name:SetText(" ")
-		end
 		totem[slot]:SetValue(0)
 	end
 

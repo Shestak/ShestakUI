@@ -400,7 +400,6 @@ C["unitframe_class_bar"] = {
 	["shard"] = true,				-- Shard/Burning bar
 	["rune"] = true,				-- Rune bar
 	["totem"] = true,				-- Totem bar
-	["totem_name"] = false,			-- Totem name
 }
 
 ----------------------------------------------------------------------------------------

@@ -438,12 +438,6 @@ local function Shared(self, unit)
 				self.TotemBar[i].bg:SetAllPoints()
 				self.TotemBar[i].bg:SetTexture(C.media.texture)
 				self.TotemBar[i].bg.multiplier = 0.25
-
-				if C.unitframe_class_bar.totem_name == true then
-					self.TotemBar[i].Name = T.SetFontString(self.TotemBar[i], C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-					self.TotemBar[i].Name:Point("CENTER", self.TotemBar[i], "CENTER", 0, 0)
-					self.TotemBar[i].Name:SetTextColor(1, 1, 1)
-				end
 			end
 		end
 
