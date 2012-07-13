@@ -90,25 +90,58 @@ if C.raidframe.plugins_aura_watch == true then
 		T.debuffids = {
 		-- Heart of Fear
 			-- Imperial Vizier Zor'lok
+			SpellName(122761),	-- Exhale
+			SpellName(122740),	-- Convert
+			SpellName(123812),	-- Pheromones of Zeal
 			-- Blade Lord Ta'yak
+			SpellName(123180),	-- Wind Step
+			SpellName(123474),	-- Overwhelming Assault
 			-- Garalon
+			SpellName(122835),	-- Pheromones
+			SpellName(123081),	-- Pungency
 			-- Wind Lord Mel'jarak
+			SpellName(122125),	-- Corrosive Resin Pool
 			-- Amber-Shaper Un'sok
+			SpellName(121949),	-- Parasitic Growth
 			-- Grand Empress Shek'zeer
 		-- Mogu'shan Vaults
 			-- The Stone Guard
+			SpellName(116281),	-- Cobalt Mine Blast
 			-- Feng the Accursed
+			SpellName(116784),	-- Wildfire Spark
+			SpellName(116417),	-- Arcane Resonance
+			SpellName(116942),	-- Flaming Spear
 			-- Gara'jal the Spiritbinder
+			SpellName(116161),	-- Crossed Over
 			-- The Spirit Kings
+			SpellName(117708),	-- Maddening Shout
+			SpellName(118303),	-- Fixate
+			SpellName(118048),	-- Pillaged
+			SpellName(118135),	-- Pinned Down
 			-- Elegon
+			SpellName(117878),	-- Overcharged
+			SpellName(117949),	-- Closed Circuit
 			-- Will of the Emperor
+			SpellName(116835),	-- Devastating Arc
+			SpellName(116778),	-- Focused Defense
+			SpellName(116525),	-- Focused Assault
 		-- Terrace of Endless Spring
 			-- Protectors of the Endless
+			SpellName(117436),	-- Lightning Prison
+			SpellName(118091),	-- Defiled Ground
+			SpellName(117519),	-- Touch of Sha
 			-- Sha of Anger
 			-- Salyis's Warband
 			-- Tsulong
+			SpellName(122752),	-- Shadow Breath
+			SpellName(123011),	-- Terrorize
+			SpellName(116161),	-- Crossed Over
 			-- Lei Shi
+			SpellName(123121),	-- Spray
 			-- Sha of Fear
+			SpellName(119985),	-- Dread Spray
+			SpellName(119086),	-- Penetrating Bolt
+			SpellName(119775),	-- Reaching Attack
 		-- Baradin Hold
 			-- Argaloth
 			SpellName(95173),	-- Consuming Darkness
