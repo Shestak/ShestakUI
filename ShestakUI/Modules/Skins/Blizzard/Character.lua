@@ -103,6 +103,7 @@ local function LoadSkin()
 	local scrollbars = {
 		"PaperDollTitlesPaneScrollBar",
 		"PaperDollEquipmentManagerPaneScrollBar",
+		"CharacterStatsPaneScrollBar"
 	}
 
 	for _, scrollbar in pairs(scrollbars) do
@@ -220,10 +221,15 @@ local function LoadSkin()
 	end
 	hooksecurefunc("PaperDollFrame_UpdateSidebarTabs", FixSidebarTabCoords)
 
-	-- Stat panels, atm it looks like 7 is the max
-	for i = 1, 7 do
-		_G["CharacterStatsPaneCategory"..i]:StripTextures()
-	end
+	hooksecurefunc("PaperDollFrame_CollapseStatCategory", function(categoryFrame)
+		categoryFrame.BgMinimized:Hide()
+	end)
+
+	hooksecurefunc("PaperDollFrame_ExpandStatCategory", function(categoryFrame)
+		categoryFrame.BgTop:Hide()
+		categoryFrame.BgMiddle:Hide()
+		categoryFrame.BgBottom:Hide()
+	end)
 
 	-- Reputation
 	local function UpdateFactionSkins()

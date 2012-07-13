@@ -65,6 +65,7 @@ local function LoadSkin()
 		"AudioOptionsSoundPanelHRTF",
 		"AudioOptionsSoundPanelEnableDSPs",
 		"AudioOptionsSoundPanelUseHardware",
+		"AudioOptionsSoundPanelPetBattleMusic",
 		"AudioOptionsVoicePanelEnableVoice",
 		"AudioOptionsVoicePanelEnableMicrophone",
 		"AudioOptionsVoicePanelPushToTalkSound",
@@ -125,7 +126,7 @@ local function LoadSkin()
 	_G["VideoOptionsFrameApply"]:ClearAllPoints()
 	_G["VideoOptionsFrameApply"]:Point("RIGHT", _G["VideoOptionsFrameOkay"], "LEFT", -4, 0)
 	_G["AudioOptionsVoicePanelPushToTalkSound"]:ClearAllPoints()
-	_G["AudioOptionsVoicePanelPushToTalkSound"]:Point("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", -1, -1)
+	_G["AudioOptionsVoicePanelPushToTalkSound"]:Point("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", 0, 0)
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:ClearAllPoints()
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:Point("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
 
