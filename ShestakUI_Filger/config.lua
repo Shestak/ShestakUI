@@ -812,6 +812,8 @@ Filger_Spells = {
 			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Victorious
 			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shield Barrier
+			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -826,6 +828,8 @@ Filger_Spells = {
 			{spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sword and Board
 			{spellID = 50227, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ultimatum
+			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thunderstruck
 			--MOP{spellID = 87096, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Taste for Blood
@@ -835,7 +839,7 @@ Filger_Spells = {
 			-- Incite
 			--MOP{spellID = 86627, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
-			--MOP{spellID = 14202, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 12880, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Executioner
@@ -879,26 +883,10 @@ Filger_Spells = {
 			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hamstring
 			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Rend
-			--MOP{spellID = 94009, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Sunder Armor
-			{spellID = 7386, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Thunder Clap
-			{spellID = 6343, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Infected Wounds
-			{spellID = 48484, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Frost Fever
-			{spellID = 55095, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Weakened Armor
+			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Demoralizing Shout
 			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Demoralizing Roar
-			{spellID = 99, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of Weakness
-			--MOP{spellID = 702, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Judgements of the Just
-			--MOP{spellID = 68055, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Vindication
-			{spellID = 26017, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -952,6 +940,8 @@ Filger_Spells = {
 			{spellID = 97462, filter = "CD"},
 			-- Disarm
 			{spellID = 676, filter = "CD"},
+			-- Demoralizing Shout
+			{spellID = 1160, filter = "CD"},
 			-- Throwdown
 			--MOP{spellID = 85388, filter = "CD"},
 
@@ -3211,6 +3201,8 @@ Filger_Spells = {
 			--MOP{spellID = 87204, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
 			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Intimidating Shout
+			{spellID = 20511, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 	},
 }
