@@ -812,6 +812,8 @@ Filger_Spells = {
 			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Victorious
 			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shield Barrier
+			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -826,6 +828,8 @@ Filger_Spells = {
 			{spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sword and Board
 			{spellID = 50227, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ultimatum
+			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thunderstruck
 			--MOP{spellID = 87096, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Taste for Blood
@@ -835,7 +839,7 @@ Filger_Spells = {
 			-- Incite
 			--MOP{spellID = 86627, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
-			--MOP{spellID = 14202, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 12880, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Executioner
@@ -879,26 +883,12 @@ Filger_Spells = {
 			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hamstring
 			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Rend
-			--MOP{spellID = 94009, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Sunder Armor
-			{spellID = 7386, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Thunder Clap
-			{spellID = 6343, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Infected Wounds
-			{spellID = 48484, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Frost Fever
-			{spellID = 55095, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Weakened Armor
+			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Demoralizing Shout
 			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Demoralizing Roar
-			{spellID = 99, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of Weakness
-			--MOP{spellID = 702, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Judgements of the Just
-			--MOP{spellID = 68055, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Vindication
-			{spellID = 26017, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Weakened Blows
+			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -952,6 +942,8 @@ Filger_Spells = {
 			{spellID = 97462, filter = "CD"},
 			-- Disarm
 			{spellID = 676, filter = "CD"},
+			-- Demoralizing Shout
+			{spellID = 1160, filter = "CD"},
 			-- Throwdown
 			--MOP{spellID = 85388, filter = "CD"},
 
@@ -1017,8 +1009,6 @@ Filger_Spells = {
 			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightning Shield
 			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Water Shield
-			{spellID = 52127, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental mastery
 			--MOP{spellID = 64701, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spiritwalker's grace
@@ -1031,6 +1021,12 @@ Filger_Spells = {
 			--MOP{spellID = 77800, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature Guardian
 			{spellID = 31616, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stone Bulwark
+			{spellID = 114893, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ancestral Guidance
+			{spellID = 108281, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Astral Shift
+			{spellID = 108271, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1044,12 +1040,12 @@ Filger_Spells = {
 			-- Buffs
 			-- Clearcasting
 			{spellID = 16246, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lava Surge
+			{spellID = 77762, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tidal Waves
 			--MOP{spellID = 51562, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lava flows
 			--MOP{spellID = 65264, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stoneclaw Totem
-			--MOP{spellID = 55277, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Weapons
 			-- Caster General
@@ -1098,8 +1094,6 @@ Filger_Spells = {
 
 			-- Storm Strike
 			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Earth Shock
-			{spellID = 8042, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Shock
 			{spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Flame Shock
@@ -1171,8 +1165,6 @@ Filger_Spells = {
 			{spellID = 57994, filter = "CD"},
 			-- Earthbind Totem
 			{spellID = 2484, filter = "CD"},
-			-- Stoneclaw Totem
-			--MOP{spellID = 5730, filter = "CD"},
 			-- Tremor totem
 			{spellID = 8143, filter = "CD"},
 			-- Feral Spirit
@@ -1187,6 +1179,14 @@ Filger_Spells = {
 			{spellID = 73920, filter = "CD"},
 			-- Unleash weapon
 			{spellID = 73680, filter = "CD"},
+			-- Stone Bulwark Totem
+			{spellID = 108270, filter = "CD"},
+			-- Ancestral Swiftness
+			{spellID = 16188, filter = "CD"},
+			-- Ancestral Guidance
+			{spellID = 108281, filter = "CD"},
+			-- Astral Shift
+			{spellID = 108271, filter = "CD"},
 
 			-- Racials
 			-- Stoneform (Dwarf)
@@ -2569,7 +2569,7 @@ Filger_Spells = {
 			-- Other
 			-- Lifeblood
 			{spellID = 74497, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lightwell
+			-- Lightwell Renew
 			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Protection
 			{spellID = 1022, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2593,12 +2593,6 @@ Filger_Spells = {
 			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mass Regeneration
-			{spellID = 105737, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Vampiric Brood
-			{spellID = 105588, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Shield Fortress
-			{spellID = 105914, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Rallying Cry
 			{spellID = 97462, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
@@ -2827,8 +2821,6 @@ Filger_Spells = {
 			{spellID = 51514, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthgrab
 			{spellID = 64695, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Stoneclaw Stun
-			--MOP{spellID = 39796, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthbind
 			{spellID = 3600, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Shock
@@ -3211,6 +3203,8 @@ Filger_Spells = {
 			--MOP{spellID = 87204, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
 			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Intimidating Shout
+			{spellID = 20511, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 	},
 }
