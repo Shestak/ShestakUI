@@ -51,7 +51,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsCombatPanelTargetOfTarget:Kill()
 		InterfaceOptionsCombatPanelTOTDropDown:Kill()
 		InterfaceOptionsCombatPanelEnemyCastBarsOnPortrait:Kill()
-		--MOP--PartyMemberBackground:Kill()
+		SetCVar("showPartyBackground", 0)
 	end
 
 	if C.actionbar.enable then

@@ -652,19 +652,19 @@ function CreateUIConfig()
 	slider:SetThumbTexture("Interface\\Buttons\\UI-ScrollBar-Knob")
 	slider:SetOrientation("VERTICAL")
 	slider:SetValueStep(20)
-	slider:SetScript("OnValueChanged", function(self,value) groups:SetVerticalScroll(value) end)
+	slider:SetScript("OnValueChanged", function(self, value) groups:SetVerticalScroll(value) end)
 
 	local child = CreateFrame("Frame", nil, groups)
 	child:SetPoint("TOPLEFT")
 	local offset = 5
-	for group in pairs(ALLOWED_GROUPS) do
-		local o = "UIConfig"..group
+	for i in pairs(ALLOWED_GROUPS) do
+		local o = "UIConfig"..i
 		Local(o)
 		local button = NewButton(T.option, child)
 		button:SetHeight(16)
 		button:SetWidth(125)
 		button:SetPoint("TOPLEFT", 5, -(offset))
-		button:SetScript("OnClick", function(self) ShowGroup(group, button) self:SetText("|cff00ff00"..T.option.."|r") end)
+		button:SetScript("OnClick", function(self) ShowGroup(i, button) self:SetText("|cff00ff00"..T.option.."|r") end)
 		offset = offset + 20
 	end
 	child:SetWidth(125)
@@ -700,37 +700,36 @@ function CreateUIConfig()
 	slider:SetThumbTexture("Interface\\Buttons\\UI-ScrollBar-Knob")
 	slider:SetOrientation("VERTICAL")
 	slider:SetValueStep(20)
-	slider:SetScript("OnValueChanged", function(self,value) group:SetVerticalScroll(value) end)
+	slider:SetScript("OnValueChanged", function(self, value) group:SetVerticalScroll(value) end)
 
-	for group in pairs(ALLOWED_GROUPS) do
-		local frame = CreateFrame("Frame", "UIConfig"..group, UIConfigGroup)
+	for i in pairs(ALLOWED_GROUPS) do
+		local frame = CreateFrame("Frame", "UIConfig"..i, UIConfigGroup)
 		frame:SetPoint("TOPLEFT")
 		frame:SetWidth(225)
 
 		local offset = 5
 
-		if type(C[group]) ~= "table" then error(group.." GroupName not found in config table.") return end
-		for option, value in pairs(C[group]) do
-
+		if type(C[i]) ~= "table" then error(i.." GroupName not found in config table.") return end
+		for j, value in pairs(C[i]) do
 			if type(value) == "boolean" then
-				local button = CreateFrame("CheckButton", "UIConfig"..group..option, frame, "InterfaceOptionsCheckButtonTemplate")
+				local button = CreateFrame("CheckButton", "UIConfig"..i..j, frame, "InterfaceOptionsCheckButtonTemplate")
 				if IsAddOnLoaded("Aurora") then
 					local F = unpack(Aurora)
 					F.ReskinCheck(button)
 				end
-				local o = "UIConfig"..group..option
+				local o = "UIConfig"..i..j
 				Local(o)
-				_G["UIConfig"..group..option.."Text"]:SetText(T.option)
-				_G["UIConfig"..group..option.."Text"]:SetFontObject(GameFontHighlight)
-				_G["UIConfig"..group..option.."Text"]:SetWidth(460)
-				_G["UIConfig"..group..option.."Text"]:SetJustifyH("LEFT")
+				_G["UIConfig"..i..j.."Text"]:SetText(T.option)
+				_G["UIConfig"..i..j.."Text"]:SetFontObject(GameFontHighlight)
+				_G["UIConfig"..i..j.."Text"]:SetWidth(460)
+				_G["UIConfig"..i..j.."Text"]:SetJustifyH("LEFT")
 				button:SetChecked(value)
-				button:SetScript("OnClick", function(self) SetValue(group, option, (self:GetChecked() and true or false)) end)
+				button:SetScript("OnClick", function(self) SetValue(i, j, (self:GetChecked() and true or false)) end)
 				button:SetPoint("TOPLEFT", 5, -(offset))
 				offset = offset + 25
 			elseif type(value) == "number" or type(value) == "string" then
 				local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-				local o = "UIConfig"..group..option
+				local o = "UIConfig"..i..j
 				Local(o)
 				label:SetText(T.option)
 				label:SetWidth(460)
@@ -769,19 +768,19 @@ function CreateUIConfig()
 				if type(value) == "number" then
 					editbox:SetScript("OnEscapePressed", function(self) okbutton:Hide() self:ClearFocus() self:SetText(value) end)
 					editbox:SetScript("OnChar", function(self) okbutton:Show() end)
-					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(group, option, tonumber(self:GetText())) end)
-					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(group, option, tonumber(editbox:GetText())) end)
+					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(i, j, tonumber(self:GetText())) end)
+					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(i, j, tonumber(editbox:GetText())) end)
 				else
 					editbox:SetScript("OnEscapePressed", function(self) okbutton:Hide() self:ClearFocus() self:SetText(value) end)
 					editbox:SetScript("OnChar", function(self) okbutton:Show() end)
-					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(group, option, tostring(self:GetText())) end)
-					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(group, option, tostring(editbox:GetText())) end)
+					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(i, j, tostring(self:GetText())) end)
+					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(i, j, tostring(editbox:GetText())) end)
 				end
 
 				offset = offset + 45
-			elseif type(value) == "table" and not TableFilter[option] then
+			elseif type(value) == "table" and not TableFilter[j] then
 				local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-				local o = "UIConfig"..group..option
+				local o = "UIConfig"..i..j
 				Local(o)
 				label:SetText(T.option)
 				label:SetWidth(440)
@@ -790,12 +789,14 @@ function CreateUIConfig()
 				label:SetPoint("TOPLEFT", 5, -(offset))
 
 				colorbuttonname = (label:GetText().."ColorPicker")
+
 				local colorbutton = CreateFrame("Button", colorbuttonname, frame)
 				colorbutton:SetHeight(20)
 				colorbutton:SetTemplate("Transparent")
 				colorbutton:SetBackdropBorderColor(unpack(value))
 				colorbutton:SetBackdropColor(value[1], value[2], value[3], 0.3)
 				colorbutton:SetPoint("LEFT", label, "RIGHT", 2, 0)
+
 				local colortext = colorbutton:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
 				colortext:SetText(COLOR)
 				colortext:SetPoint("CENTER")
@@ -813,17 +814,17 @@ function CreateUIConfig()
 					local newR, newG, newB, newA
 					local fired = 0
 
-					local r, g, b, a = self:GetBackdropBorderColor();
+					local r, g, b, a = self:GetBackdropBorderColor()
 					r, g, b, a = round(r, 2), round(g, 2), round(b, 2), round(a, 2)
-					local originalR,originalG,originalB,originalA = r, g, b, a
+					local originalR, originalG, originalB, originalA = r, g, b, a
 
 					local function ShowColorPicker(r, g, b, a, changedCallback)
-						ColorPickerFrame.func, ColorPickerFrame.opacityFunc, ColorPickerFrame.cancelFunc = changedCallback, changedCallback, changedCallback;
+						ColorPickerFrame.func, ColorPickerFrame.opacityFunc, ColorPickerFrame.cancelFunc = changedCallback, changedCallback, changedCallback
 						ColorPickerFrame:SetColorRGB(r, g, b)
 						a = tonumber(a)
 						ColorPickerFrame.hasOpacity = (a ~= nil and a ~= 1)
 						ColorPickerFrame.opacity = a
-						ColorPickerFrame.previousValues = {originalR,originalG,originalB,originalA}
+						ColorPickerFrame.previousValues = {originalR, originalG, originalB, originalA}
 						ColorPickerFrame:Hide()
 						ColorPickerFrame:Show()
 					end
@@ -838,8 +839,8 @@ function CreateUIConfig()
 							newA, newR, newG, newB = OpacitySliderFrame:GetValue(), ColorPickerFrame:GetColorRGB()
 						end
 
-						value = { newR, newG, newB, newA }
-						SetValue(group, option, (value)) 
+						value = {newR, newG, newB, newA}
+						SetValue(i, j, (value))
 						self:SetBackdropBorderColor(newR, newG, newB, newA)
 						self:SetBackdropColor(newR, newG, newB, 0.3)
 					end
