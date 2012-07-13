@@ -65,14 +65,14 @@ L_ALOAD_RL = "Перезагрузить"
 L_ALOAD_DEP = "Зависимые ресурсы: "
 L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
 L_ALOAD_PROFILES = "Профили"
-L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
-L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
-L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
-L_ALOAD_SET_TO = "Set To.." -- Needs review
-L_ALOAD_ADD_TO = "Add To.." -- Needs review
-L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
+L_ALOAD_ENABLE_ALL = "Вкл. все"
+L_ALOAD_DISABLE_ALL = "Выкл. все"
+L_ALOAD_PROFILE_NAME = "Имя профиля"
+L_ALOAD_SET_TO = "Выбрать профиль.."
+L_ALOAD_ADD_TO = "Добавить в профиль.."
+L_ALOAD_REMOVE_FROM = "Очистить профиль.."
 L_ALOAD_DELETE_PROFILE = "Удалить профиль.."
-L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
+L_ALOAD_CONFIRM_DELETE = "Вы уверены, что хотите удалить этот профиль? Если да, удерживая shift, нажмите еще раз."
 
 -- Chat
 L_CHAT_WHISPER = "От"
