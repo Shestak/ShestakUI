@@ -60,7 +60,7 @@ if C.raidframe.plugins_aura_watch == true then
 				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone Resurrection
 			},
 			MONK = {
-				
+				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},			-- Renewing Mist
 			},
 			ALL = {
 				{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag, Horde
