@@ -1243,6 +1243,8 @@ Filger_Spells = {
 			{spellID = 31884, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Plea
 			{spellID = 54428, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Favor
+			{spellID = 31842, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Speed of Light
 			{spellID = 85499, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Protection
