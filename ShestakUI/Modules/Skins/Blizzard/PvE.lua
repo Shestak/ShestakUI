@@ -240,6 +240,8 @@ local function LoadSecondarySkin()
 	select(11, ChallengesFrameDetails:GetRegions()):Hide()
 	ChallengesFrameDungeonButton1:SetPoint("TOPLEFT", ChallengesFrame, "TOPLEFT", 8, -83)
 
+	ChallengesFrameLeaderboard:SkinButton(true)
+
 	for i = 1, 9 do
 		local bu = ChallengesFrame["button"..i]
 		bu:SkinButton()

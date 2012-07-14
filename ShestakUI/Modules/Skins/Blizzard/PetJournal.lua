@@ -11,8 +11,10 @@ local function LoadSkin()
 		"PetJournalRightInset",
 		"PetJournalLeftInset",
 		"PetJournalPrimaryAbilityTooltip",
-		"PetJournalPetCardListHealthStatusBar",
-		"PetJournalPetCardListStatusBar"
+		--"PetJournalPetCardListHealthStatusBar",
+		--"PetJournalPetCardListStatusBar",
+		"PetJournalPetCard",
+		"PetJournalPetCardInset"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -106,24 +108,31 @@ local function LoadSkin()
 
 	PetJournal.PetCount:StripTextures()
 	T.SkinEditBox(PetJournalSearchBox)
+	PetJournalSearchBox:SetHeight(18)
 
-	--!!!!!!!!!PetJournalListScrollFrame:StripTextures()
+	PetJournalFilterButton:SetPoint("TOPLEFT", PetJournalSearchBox, "TOPRIGHT", 5, 2)
+
 	T.SkinScrollBar(PetJournalListScrollFrameScrollBar)
 
 	for i = 1, #PetJournal.listScroll.buttons do
 		local b = _G["PetJournalListScrollFrameButton"..i]
+		local t = _G["PetJournalListScrollFrameButton"..i.."Name"]
+
 		if not b.isSkinned then
-
 			b:StripTextures()
-			b:SetTemplate()
-			b:SetBackdropBorderColor(0, 0, 0, 0)
-			b:StyleButton()
-			b.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			b:CreateBackdrop("Overlay")
+			b.backdrop:Point("TOPLEFT", 2, -2)
+			b.backdrop:Point("BOTTOMRIGHT", -2, 2)
 
-			b:CreateBackdrop("Default")
-			b.backdrop:Point("TOPLEFT", b.icon, -2, 2)
-			b.backdrop:Point("BOTTOMRIGHT", b.icon, 2, -2)
-			b.backdrop:SetBackdropColor(0, 0, 0, 0)
+			b.border = CreateFrame("Frame", nil, b)
+			b.border:CreateBackdrop("Default")
+			b.border.backdrop:Point("TOPLEFT", b.icon, -2, 2)
+			b.border.backdrop:Point("BOTTOMRIGHT", b.icon, 2, -2)
+
+			b.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			b.icon:SetParent(b.border.backdrop)
+
+			t:SetParent(b.border.backdrop)
 
 			b.isSkinned = true
 		end
@@ -137,9 +146,11 @@ local function LoadSkin()
 			if b.selectedTexture:IsShown() then
 				t:SetTextColor(1, 1, 0)
 				b.backdrop:SetBackdropBorderColor(1, 1, 0)
+				b.border.backdrop:SetBackdropBorderColor(1, 1, 0)
 			else
 				t:SetTextColor(1, 1, 1)
 				b.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				b.border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 			end
 		end
 	end
@@ -161,6 +172,8 @@ local function LoadSkin()
 	PetJournalHealPetButton.texture:Point("TOPLEFT", 2, -2)
 	PetJournalHealPetButton.texture:Point("BOTTOMRIGHT", -2, 2)
 
+	PetJournalLoadoutBorder:StripTextures()
+
 	for i = 1, 3 do
 		_G["PetJournalLoadoutPet"..i]:StripTextures()
 		_G["PetJournalLoadoutPet"..i]:SetTemplate("Overlay")
@@ -169,43 +182,38 @@ local function LoadSkin()
 		_G["PetJournalLoadoutPet"..i].dragButton:StyleButton()
 	end
 
-	PetJournalPetCardList:SetPoint("TOPLEFT", PetJournal, "TOPRIGHT", 3, 0)
-	PetJournalPetCardList.MainCard:StripTextures()
-	PetJournalPetCardList.MainCard:SetTemplate("Default")
+	PetJournalPetCard:CreateBackdrop("Overlay")
+	PetJournalPetCard.backdrop:Point("TOPLEFT", 2, -2)
+	PetJournalPetCard.backdrop:Point("BOTTOMRIGHT", -4, 2)
 
-	PetJournalPetCardListIconBG:Kill()
-	PetJournalPetCardListIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-	T.SkinCloseButton(PetJournalPetCardListCloseButton)
+	PetJournalPetCardPetInfo:StripTextures()
+	PetJournalPetCardPetInfoIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	PetJournalPrimaryAbilityTooltip:SetTemplate("Transparent")
 
 	for i = 1, 6 do
-		local b = _G["PetJournalPetCardListSpell"..i]
+		local b = _G["PetJournalPetCardSpell"..i]
 
 		b:StripTextures()
-		b:SetTemplate()
-		b:SetBackdropBorderColor(0, 0, 0, 0)
+		b:SetTemplate("Default")
 		b:StyleButton()
-		b.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-		b:CreateBackdrop("Default")
-		b.backdrop:Point("TOPLEFT", b.icon, -2, 2)
-		b.backdrop:Point("BOTTOMRIGHT", b.icon, 2, -2)
-		b.backdrop:SetBackdropColor(0, 0, 0, 0)
-		b.backdrop:SetFrameLevel(b:GetFrameLevel() + 2)
+		b.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		b.icon:ClearAllPoints()
+		b.icon:Point("TOPLEFT", 2, -2)
+		b.icon:Point("BOTTOMRIGHT", -2, 2)
 
 		b.isSkinned = true
 	end
 
-	PetJournalPetCardListHealthStatusBar:CreateBackdrop("Default")
-	PetJournalPetCardListHealthStatusBar:SetStatusBarTexture(C.media.texture)
-	PetJournalPetCardListHealthStatusBar.healthRankText:SetPoint("CENTER", 0, 1)
+	--PetJournalPetCardListHealthStatusBar:CreateBackdrop("Default")
+	--PetJournalPetCardListHealthStatusBar:SetStatusBarTexture(C.media.texture)
+	--PetJournalPetCardListHealthStatusBar.healthRankText:SetPoint("CENTER", 0, 1)
 
-	PetJournalPetCardListStatusBar:CreateBackdrop("Default")
-	PetJournalPetCardListStatusBar:SetStatusBarTexture(C.media.texture)
-	PetJournalPetCardListStatusBar:SetPoint("TOP", PetJournalPetCardListHealthStatusBar, "BOTTOM", 0, -6)
-	PetJournalPetCardListStatusBar.rankText:SetPoint("CENTER", 0, 1)
+	--PetJournalPetCardListStatusBar:CreateBackdrop("Default")
+	--PetJournalPetCardListStatusBar:SetStatusBarTexture(C.media.texture)
+	--PetJournalPetCardListStatusBar:SetPoint("TOP", PetJournalPetCardListHealthStatusBar, "BOTTOM", 0, -6)
+	--PetJournalPetCardListStatusBar.rankText:SetPoint("CENTER", 0, 1)
 end
 
 T.SkinFuncs["Blizzard_PetJournal"] = LoadSkin
