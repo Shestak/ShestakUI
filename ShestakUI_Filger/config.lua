@@ -2589,6 +2589,8 @@ Filger_Spells = {
 			{spellID = 33206, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Guardian Spirit
 			{spellID = 47788, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Life Cocoon
+			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Power Infusion
 			{spellID = 10060, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
