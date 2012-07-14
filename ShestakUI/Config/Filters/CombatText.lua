@@ -293,6 +293,7 @@ elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		T.aoespam[115175] = true	-- Soothing Mist
+		T.aoespam[126890] = true	-- Eminence
 		-- Damaging spells
 		T.aoespam[117952] = true	-- Crackling Jade Lightning
 		T.aoespam[107270] = true	-- Spinning Crane Kick
