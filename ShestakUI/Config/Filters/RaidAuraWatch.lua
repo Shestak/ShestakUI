@@ -61,6 +61,7 @@ if C.raidframe.plugins_aura_watch == true then
 			},
 			MONK = {
 				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},			-- Renewing Mist
+				{116849, "LEFT", {0.81, 0.85, 0.1}, true},		-- Life Cocoon
 			},
 			ALL = {
 				{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag, Horde
