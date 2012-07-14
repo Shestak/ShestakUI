@@ -240,38 +240,82 @@ function T.SkinTab(tab)
 end
 
 function T.SkinNextPrevButton(btn, horizonal)
+	local normal, pushed, disabled
+	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev"))
+
+	if btn:GetNormalTexture() then
+		normal = btn:GetNormalTexture():GetTexture()
+	end
+
+	if btn:GetPushedTexture() then
+		pushed = btn:GetPushedTexture():GetTexture()
+	end
+
+	if btn:GetDisabledTexture() then
+		disabled = btn:GetDisabledTexture():GetTexture()
+	end
+
+	btn:StripTextures()
+
+	if not normal and isPrevButton then
+		normal = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up"
+	elseif not normal then
+		normal = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up"
+	end
+
+	if not pushed and isPrevButton then
+		pushed = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Down"
+	elseif not pushed then
+		pushed = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Down"
+	end
+
+	if not disabled and isPrevButton then
+		disabled = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Disabled"
+	elseif not disabled then
+		disabled = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Disabled"
+	end
+
+	btn:SetNormalTexture(normal)
+	btn:SetPushedTexture(pushed)
+	btn:SetDisabledTexture(disabled)
+
 	btn:SetTemplate("Overlay")
 	btn:Size(btn:GetWidth() - 7, btn:GetHeight() - 7)
 
-	if horizonal then
-		btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.72, 0.65, 0.29, 0.65, 0.72)
-		if btn:GetPushedTexture() then
-			btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.8, 0.65, 0.35, 0.65, 0.8)
+	if normal and pushed and disabled then
+		if horizonal then
+			btn:SetNormalTexture([[Interface\ChatFrame\UI-ChatIcon-ScrollDown-Up]])
+			btn:SetPushedTexture([[Interface\ChatFrame\UI-ChatIcon-ScrollDown-Down]])
+			btn:SetDisabledTexture([[Interface\ChatFrame\UI-ChatIcon-ScrollDown-Disabled]])
+			btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.72, 0.65, 0.29, 0.65, 0.72)
+			if btn:GetPushedTexture() then
+				btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.8, 0.65, 0.35, 0.65, 0.8)
+			end
+			if btn:GetDisabledTexture() then
+				btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
+			end
+		else
+			btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.81, 0.65, 0.29, 0.65, 0.81)
+			if btn:GetPushedTexture() then
+				btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.81, 0.65, 0.35, 0.65, 0.81)
+			end
+			if btn:GetDisabledTexture() then
+				btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
+			end
 		end
-		if btn:GetDisabledTexture() then
-			btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
-		end
-	else
-		btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.81, 0.65, 0.29, 0.65, 0.81)
-		if btn:GetPushedTexture() then
-			btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.81, 0.65, 0.35, 0.65, 0.81)
-		end
-		if btn:GetDisabledTexture() then
-			btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
-		end
-	end
 
-	btn:GetNormalTexture():ClearAllPoints()
-	btn:GetNormalTexture():Point("TOPLEFT", 2, -2)
-	btn:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
-	if btn:GetDisabledTexture() then
-		btn:GetDisabledTexture():SetAllPoints(btn:GetNormalTexture())
+		btn:GetNormalTexture():ClearAllPoints()
+		btn:GetNormalTexture():Point("TOPLEFT", 2, -2)
+		btn:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+		if btn:GetDisabledTexture() then
+			btn:GetDisabledTexture():SetAllPoints(btn:GetNormalTexture())
+		end
+		if btn:GetPushedTexture() then
+			btn:GetPushedTexture():SetAllPoints(btn:GetNormalTexture())
+		end
+		btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+		btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
 	end
-	if btn:GetPushedTexture() then
-		btn:GetPushedTexture():SetAllPoints(btn:GetNormalTexture())
-	end
-	btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
-	btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
 end
 
 function T.SkinRotateButton(btn)

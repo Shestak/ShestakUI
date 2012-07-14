@@ -160,16 +160,16 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ChannelFrameDaughterFrameCancelButton",
 			"StackSplitOkayButton",
 			"StackSplitCancelButton",
-			"CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton",
-			"DisbandRaidButton",
-			"SwitchRaidButton",
-			"MainTankButton",
-			"MainAssistButton",
-			"RoleCheckButton",
-			"ReadyCheckButton",
-			"ShowButton",
-			"CloseButton",
-			"RaidControlButton"
+			"RaidUtilityConvertButton",
+			"RaidUtilityMainTankButton",
+			"RaidUtilityMainAssistButton",
+			"RaidUtilityRoleButton",
+			"RaidUtilityReadyCheckButton",
+			"RaidUtilityShowButton",
+			"RaidUtilityCloseButton",
+			"RaidUtilityDisbandButton",
+			"RaidUtilityRaidControlButton",
+			"CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton"
 		}
 
 		for i = 1, getn(BlizzardButtons) do

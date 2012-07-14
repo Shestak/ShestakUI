@@ -12,7 +12,12 @@ local function LoadSkin()
 		"PetJournalLeftInset",
 		"PetJournalPrimaryAbilityTooltip",
 		"PetJournalPetCard",
-		"PetJournalPetCardInset"
+		"PetJournalPetCardInset",
+		"PetJournalPetCardPetInfo",
+		"PetJournalLoadoutBorder",
+		"PetJournalSpellSelect",
+		"PetJournalHealPetButton",
+		"PetJournalPetCardXPBar"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -159,7 +164,6 @@ local function LoadSkin()
 
 	PetJournalAchievementStatus:DisableDrawLayer("BACKGROUND")
 
-	PetJournalHealPetButton:StripTextures()
 	PetJournalHealPetButton:CreateBackdrop()
 	PetJournalHealPetButton.backdrop:SetAllPoints()
 	PetJournalHealPetButton:StyleButton()
@@ -169,8 +173,6 @@ local function LoadSkin()
 	PetJournalHealPetButton.texture:ClearAllPoints()
 	PetJournalHealPetButton.texture:Point("TOPLEFT", 2, -2)
 	PetJournalHealPetButton.texture:Point("BOTTOMRIGHT", -2, 2)
-
-	PetJournalLoadoutBorder:StripTextures()
 
 	for i = 1, 3 do
 		local button = _G["PetJournalLoadoutPet"..i]
@@ -188,18 +190,46 @@ local function LoadSkin()
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:SetParent(button.dragButton.backdrop)
 
-		--[[for j = 1, 3 do
+		for j = 1, 3 do
 			local button = _G["PetJournalLoadoutPet"..i.."Spell"..j]
+			local icon = _G["PetJournalLoadoutPet"..i.."Spell"..j.."Icon"]
 
 			button:StripTextures()
-		end]]
+			button:StyleButton()
+			button:SetTemplate("Default")
+
+			button.FlyoutArrow:SetTexture("Interface\\Buttons\\ActionBarFlyoutButton")
+
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			icon:ClearAllPoints()
+			icon:Point("TOPLEFT", 2, -2)
+			icon:Point("BOTTOMRIGHT", -2, 2)
+		end
+
+		_G["PetJournalLoadoutPet"..i.."XPBar"]:StripTextures()
+		_G["PetJournalLoadoutPet"..i.."XPBar"]:CreateBackdrop("Overlay")
+		_G["PetJournalLoadoutPet"..i.."XPBar"]:SetStatusBarTexture(C.media.texture)
+		_G["PetJournalLoadoutPet"..i.."XPBar"]:SetFrameLevel(_G["PetJournalLoadoutPet"..i.."XPBar"]:GetFrameLevel() + 2)
+	end
+
+	for i = 1, 2 do
+		local button = _G["PetJournalSpellSelectSpell"..i]
+		local icon = _G["PetJournalSpellSelectSpell"..i.."Icon"]
+
+		button:StripTextures()
+		button:StyleButton()
+		button:SetTemplate("Default")
+
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:ClearAllPoints()
+		icon:Point("TOPLEFT", 2, -2)
+		icon:Point("BOTTOMRIGHT", -2, 2)
 	end
 
 	PetJournalPetCard:CreateBackdrop("Overlay")
 	PetJournalPetCard.backdrop:Point("TOPLEFT", 2, -2)
 	PetJournalPetCard.backdrop:Point("BOTTOMRIGHT", -4, 2)
 
-	PetJournalPetCardPetInfo:StripTextures()
 	PetJournalPetCardPetInfoIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	PetJournalPrimaryAbilityTooltip:SetTemplate("Transparent")
@@ -218,6 +248,9 @@ local function LoadSkin()
 
 		b.isSkinned = true
 	end
+
+	PetJournalPetCardXPBar:CreateBackdrop("Overlay")
+	PetJournalPetCardXPBar:SetStatusBarTexture(C.media.texture)
 end
 
 T.SkinFuncs["Blizzard_PetJournal"] = LoadSkin

@@ -214,6 +214,8 @@ local function LoadSkin()
 	T.SkinCloseButton(PVEFrameCloseButton)
 
 	T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
+	LFDQueueFrameSpecificListScrollFrameScrollBackgroundTopLeft:SetTexture(nil)
+	LFDQueueFrameSpecificListScrollFrameScrollBackgroundBottomRight:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameScrollBackground:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameScrollBackgroundTopLeft:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameScrollBackgroundBottomRight:SetTexture(nil)
