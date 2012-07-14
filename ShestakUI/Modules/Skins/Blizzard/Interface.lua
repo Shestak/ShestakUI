@@ -61,7 +61,6 @@ local function LoadSkin()
 		"CombatPanelAutoSelfCast",
 		"CombatPanelAttackOnAssist",
 		"CombatPanelStopAutoAttack",
-		"CombatPanelNameplateClassColors",
 		"CombatPanelTargetOfTarget",
 		"CombatPanelShowSpellAlerts",
 		"CombatPanelReducedLagTolerance",
@@ -74,14 +73,11 @@ local function LoadSkin()
 		"DisplayPanelShowAggroPercentage",
 		"DisplayPanelPlayAggroSounds",
 		"DisplayPanelShowSpellPointsAvg",
-		"DisplayPanelemphasizeMySpellEffects",
-		"DisplayPanelShowFreeBagSpace",
 		"DisplayPanelCinematicSubtitles",
 		"DisplayPanelRotateMinimap",
-		"DisplayPanelScreenEdgeFlash",
+		"DisplayPanelShowAccountAchievments",
 		-- Objectives
 		"ObjectivesPanelAutoQuestTracking",
-		"ObjectivesPanelAutoQuestProgress",
 		"ObjectivesPanelMapQuestDifficulty",
 		"ObjectivesPanelWatchFrameWidth",
 		-- Social
@@ -92,7 +88,13 @@ local function LoadSkin()
 		"SocialPanelChatHoverDelay",
 		"SocialPanelGuildMemberAlert",
 		"SocialPanelChatMouseScroll",
+		"SocialPanelWholeChatWindowClickable",
 		-- ActionBars
+		"ActionBarsPanelBottomLeft",
+		"ActionBarsPanelBottomRight",
+		"ActionBarsPanelRight",
+		"ActionBarsPanelRightTwo",
+		"ActionBarsPanelAlwaysShowActionBars",
 		"ActionBarsPanelLockActionBars",
 		"ActionBarsPanelSecureAbilityToggle",
 		-- Names
@@ -117,7 +119,8 @@ local function LoadSkin()
 		"NamesPanelUnitNameplatesEnemies",
 		"NamesPanelUnitNameplatesEnemyGuardians",
 		"NamesPanelUnitNameplatesEnemyTotems",
-		-- CombatText
+		"NamesPanelUnitNameplatesNameplateClassColors",
+		-- Floating Combat Text
 		"CombatTextPanelTargetDamage",
 		"CombatTextPanelPeriodicDamage",
 		"CombatTextPanelPetDamage",
@@ -137,7 +140,7 @@ local function LoadSkin()
 		"CombatTextPanelPeriodicEnergyGains",
 		"CombatTextPanelHonorGains",
 		"CombatTextPanelAuras",
-		-- StatusText
+		-- Status Text
 		"StatusTextPanelPlayer",
 		"StatusTextPanelPet",
 		"StatusTextPanelParty",
@@ -145,20 +148,18 @@ local function LoadSkin()
 		"StatusTextPanelAlternateResource",
 		"StatusTextPanelPercentages",
 		"StatusTextPanelXP",
-		-- UnitFrame
-		"UnitFramePanelPartyBackground",
+		-- Unit Frames
 		"UnitFramePanelPartyPets",
 		"UnitFramePanelArenaEnemyFrames",
 		"UnitFramePanelArenaEnemyCastBar",
 		"UnitFramePanelArenaEnemyPets",
 		"UnitFramePanelFullSizeFocusFrame",
-		-- Buffs
-		"BuffsPanelBuffDurations",
+		-- Buffs and Debuffs
 		"BuffsPanelDispellableDebuffs",
 		"BuffsPanelCastableBuffs",
 		"BuffsPanelConsolidateBuffs",
 		"BuffsPanelShowAllEnemyDebuffs",
-		-- Battlenet
+		-- Battle.net
 		"BattlenetPanelConversations",
 		"BattlenetPanelOnlineFriends",
 		"BattlenetPanelOfflineFriends",
@@ -176,7 +177,6 @@ local function LoadSkin()
 		"MousePanelWoWMouse",
 		-- Help
 		"HelpPanelShowTutorials",
-		"HelpPanelLoadingScreenTips",
 		"HelpPanelEnhancedTooltips",
 		"HelpPanelShowLuaErrors",
 		"HelpPanelColorblindMode",
@@ -226,15 +226,13 @@ local function LoadSkin()
 
 	local dropdown = {
 		"ControlsPanelAutoLootKeyDropDown",
-		"CombatPanelTOTDropDown",
 		"CombatPanelFocusCastKeyDropDown",
 		"CombatPanelSelfCastKeyDropDown",
-		"DisplayPanelAggroWarningDisplay",
-		"DisplayPanelWorldPVPObjectiveDisplay",
 		"SocialPanelChatStyle",
 		"SocialPanelWhisperMode",
 		"SocialPanelTimestamps",
 		"SocialPanelBnWhisperMode",
+		"SocialPanelConversationMode",
 		"ActionBarsPanelPickupActionKeyDropDown",
 		"NamesPanelNPCNamesDropDown",
 		"NamesPanelUnitNameplatesMotionDropDown",

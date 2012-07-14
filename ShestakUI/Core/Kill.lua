@@ -46,10 +46,8 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
 		InterfaceOptionsBuffsPanelCastableBuffs:Kill()
 		InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
-		InterfaceOptionsBuffsPanelBuffDurations:Kill()
 		InterfaceOptionsBuffsPanelShowAllEnemyDebuffs:Kill()
 		InterfaceOptionsCombatPanelTargetOfTarget:Kill()
-		InterfaceOptionsCombatPanelTOTDropDown:Kill()
 		InterfaceOptionsCombatPanelEnemyCastBars:Kill()
 		InterfaceOptionsCombatPanelEnemyCastBarsOnPortrait:Kill()
 		SetCVar("showPartyBackground", 0)
@@ -65,9 +63,6 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 
 	if C.nameplate.enable then
 		InterfaceOptionsCombatPanelEnemyCastBarsOnNameplates:Kill()
-		if C.nameplate.enhance_threat == true then
-			InterfaceOptionsDisplayPanelAggroWarningDisplay:Kill()
-		end
 	end
 
 	if C.minimap.enable then
