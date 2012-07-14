@@ -29,6 +29,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	TutorialFrameAlertButton:Kill()
 	HelpOpenTicketButtonTutorial:Kill()
 	TalentMicroButtonAlert:Kill()
+	CompanionsMicroButtonAlert:Kill()
 
 	if C.chat.enable then
 		InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()

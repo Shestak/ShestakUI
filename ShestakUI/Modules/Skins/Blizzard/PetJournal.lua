@@ -11,8 +11,6 @@ local function LoadSkin()
 		"PetJournalRightInset",
 		"PetJournalLeftInset",
 		"PetJournalPrimaryAbilityTooltip",
-		--"PetJournalPetCardListHealthStatusBar",
-		--"PetJournalPetCardListStatusBar",
 		"PetJournalPetCard",
 		"PetJournalPetCardInset"
 	}
@@ -175,11 +173,26 @@ local function LoadSkin()
 	PetJournalLoadoutBorder:StripTextures()
 
 	for i = 1, 3 do
-		_G["PetJournalLoadoutPet"..i]:StripTextures()
-		_G["PetJournalLoadoutPet"..i]:SetTemplate("Overlay")
+		local button = _G["PetJournalLoadoutPet"..i]
+		local icon = _G["PetJournalLoadoutPet"..i.."Icon"]
 
-		_G["PetJournalLoadoutPet"..i].dragButton:SetTemplate("Default", true)
-		_G["PetJournalLoadoutPet"..i].dragButton:StyleButton()
+		button:StripTextures()
+		button:SetTemplate("Overlay")
+
+		button.dragButton:CreateBackdrop("Default")
+		button.dragButton.backdrop:Point("TOPLEFT", -1, 1)
+		button.dragButton.backdrop:Point("BOTTOMRIGHT", 1, -1)
+		button.dragButton:StyleButton()
+		button.dragButton:SetFrameLevel(button:GetFrameLevel() + 2)
+
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:SetParent(button.dragButton.backdrop)
+
+		--[[for j = 1, 3 do
+			local button = _G["PetJournalLoadoutPet"..i.."Spell"..j]
+
+			button:StripTextures()
+		end]]
 	end
 
 	PetJournalPetCard:CreateBackdrop("Overlay")
@@ -205,15 +218,6 @@ local function LoadSkin()
 
 		b.isSkinned = true
 	end
-
-	--PetJournalPetCardListHealthStatusBar:CreateBackdrop("Default")
-	--PetJournalPetCardListHealthStatusBar:SetStatusBarTexture(C.media.texture)
-	--PetJournalPetCardListHealthStatusBar.healthRankText:SetPoint("CENTER", 0, 1)
-
-	--PetJournalPetCardListStatusBar:CreateBackdrop("Default")
-	--PetJournalPetCardListStatusBar:SetStatusBarTexture(C.media.texture)
-	--PetJournalPetCardListStatusBar:SetPoint("TOP", PetJournalPetCardListHealthStatusBar, "BOTTOM", 0, -6)
-	--PetJournalPetCardListStatusBar.rankText:SetPoint("CENTER", 0, 1)
 end
 
 T.SkinFuncs["Blizzard_PetJournal"] = LoadSkin
