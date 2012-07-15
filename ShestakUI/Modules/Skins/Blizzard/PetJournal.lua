@@ -101,11 +101,6 @@ local function LoadSkin()
 	MountJournalListScrollFrame:HookScript("OnMouseWheel", ColorSelectedMount)
 
 	-- PetJournal
-	for i = 1, 3 do
-		local f = _G["PetJournalLoadoutPet"..i.."HelpFrame"]
-		f:StripTextures()
-	end
-
 	PetJournalTutorialButton.Ring:Hide()
 	PetJournalTutorialButton:SetPoint("TOPLEFT", PetJournal, "TOPLEFT", -5, 10)
 
@@ -175,6 +170,7 @@ local function LoadSkin()
 	PetJournalHealPetButton.texture:Point("BOTTOMRIGHT", -2, 2)
 
 	for i = 1, 3 do
+		_G["PetJournalLoadoutPet"..i.."HelpFrame"]:StripTextures()
 		local button = _G["PetJournalLoadoutPet"..i]
 		local icon = _G["PetJournalLoadoutPet"..i.."Icon"]
 
@@ -205,6 +201,10 @@ local function LoadSkin()
 			icon:Point("TOPLEFT", 2, -2)
 			icon:Point("BOTTOMRIGHT", -2, 2)
 		end
+
+		_G["PetJournalLoadoutPet"..i.."HealthFrame"].healthBar:StripTextures()
+		_G["PetJournalLoadoutPet"..i.."HealthFrame"].healthBar:CreateBackdrop("Overlay")
+		_G["PetJournalLoadoutPet"..i.."HealthFrame"].healthBar:SetStatusBarTexture(C.media.texture)
 
 		_G["PetJournalLoadoutPet"..i.."XPBar"]:StripTextures()
 		_G["PetJournalLoadoutPet"..i.."XPBar"]:CreateBackdrop("Overlay")
@@ -249,6 +249,10 @@ local function LoadSkin()
 
 		b.isSkinned = true
 	end
+
+	PetJournalPetCardHealthFrame.healthBar:StripTextures()
+	PetJournalPetCardHealthFrame.healthBar:CreateBackdrop("Overlay")
+	PetJournalPetCardHealthFrame.healthBar:SetStatusBarTexture(C.media.texture)
 
 	PetJournalPetCardXPBar:CreateBackdrop("Overlay")
 	PetJournalPetCardXPBar:SetStatusBarTexture(C.media.texture)
