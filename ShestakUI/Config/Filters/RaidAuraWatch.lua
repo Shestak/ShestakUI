@@ -26,8 +26,8 @@ if C.raidframe.plugins_aura_watch == true then
 			},
 			PALADIN = {
 				{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Beacon of Light
-				{20925, "TOPLEFT", {0.9, 0.9, 0.1}},			-- Sacred Shield
-				{114163, "TOPLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
+				{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},			-- Sacred Shield
+				{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},		-- Eternal Flame
 				{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},		-- Hand of Protection
 				{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},	-- Hand of Freedom
 				{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},	-- Hand of Salvation
@@ -60,7 +60,8 @@ if C.raidframe.plugins_aura_watch == true then
 				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone Resurrection
 			},
 			MONK = {
-				
+				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},			-- Renewing Mist
+				{116849, "LEFT", {0.81, 0.85, 0.1}, true},		-- Life Cocoon
 			},
 			ALL = {
 				{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag, Horde

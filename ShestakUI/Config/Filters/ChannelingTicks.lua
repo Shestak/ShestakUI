@@ -23,6 +23,6 @@ T.CastBarTicks = {
 	[GetSpellInfo(64843)] = 4,	-- Divine Hymn
 	-- Mage
 	[GetSpellInfo(5143)] = 5,	-- Arcane Missiles
-	[GetSpellInfo(10)] = 5,		-- Blizzard
+	[GetSpellInfo(10)] = 8,		-- Blizzard
 	[GetSpellInfo(12051)] = 4,	-- Evocation
 }

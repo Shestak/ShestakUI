@@ -46,7 +46,7 @@ if C.reminder.raid_buffs_enable == true then
 		},
 		Stat = {
 			20217,	-- Blessing of Kings
-			115921,	-- Legacy of the Emperor
+			117666,	-- Legacy of the Emperor
 			90363,	-- Embrace of the Shale Spider
 			1126,	-- Mark of the Wild
 		},
@@ -150,32 +150,29 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 			},
-			[2] = {	-- Intellect group
+			[2] = {	-- Brilliance group
 				["spells"] = {
 					1459,	-- Arcane Brilliance
 					61316,	-- Dalaran Brilliance
 				},
 				["combat"] = true,
 				["instance"] = true,
-				["level"] = 58,
+				["pvp"] = true,
 			},
 		},
 		WARLOCK = {
-			[1] = {	-- Armors group
+			[1] = { -- Dark Intent group
 				["spells"] = {
-					28176,	-- Fel Armor
-					687,	-- Demon Armor
+					109773,	-- Dark Intent
+				},
+				["negate_spells"] = {
+					1459,	-- Arcane Brilliance
+					61316,	-- Dalaran Brilliance
+					77747,	-- Burning Wrath
 				},
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
-			},
-			[2] = { -- Buffs group
-				["spells"] = {
-					85768,	-- Dark Intent
-				},
-				["instance"] = true,
-				["level"] = 83,
 			},
 		},
 		PALADIN = {
@@ -188,12 +185,32 @@ if C.reminder.solo_buffs_enable == true then
 				["reversecheck"] = true,
 				["negate_reversecheck"] = 1,	-- Holy paladins use RF sometimes
 			},
-			[2] = {	-- Blessings group
+			[2] = {	-- Blessing of Kings group
 				["spells"] = {
 					20217,	-- Blessing of Kings
+				},
+				["negate_spells"] = {
+					1126,	-- Mark of the Wild
 					19740,	-- Blessing of Might
+					117666,	-- Legacy of the Emperor
+					90363,	-- Embrace of the Shale Spider
 				},
 				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+			[3] = {	-- Blessing of Might group
+				["spells"] = {
+					19740,	-- Blessing of Might
+				},
+				["negate_spells"] = {
+					20217,	-- Blessing of Kings
+					116956,	-- Grace of Air
+					93435,	-- Roar of Courage
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
 			},
 		},
 		SHAMAN = {
@@ -223,7 +240,6 @@ if C.reminder.solo_buffs_enable == true then
 				["negate_spells"] = {
 					6307,	-- Blood Pact
 					90364,	-- Qiraji Fortitude
-					72590,	-- Drums of Fortitude
 					21562,	-- Fortitude
 					6673,	-- Battle Shout
 				},
@@ -235,9 +251,8 @@ if C.reminder.solo_buffs_enable == true then
 					6673,	-- Battle Shout
 				},
 				["negate_spells"] = {
-					8076,	-- Strength of Earth
 					57330,	-- Horn of Winter
-					93435,	-- Roar of Courage(hunter pet)
+					19506,	-- Trueshot Aura
 					469,	-- Commanding Shout
 				},
 				["combat"] = true,
@@ -250,9 +265,8 @@ if C.reminder.solo_buffs_enable == true then
 					57330,	-- Horn of Winter
 				},
 				["negate_spells"] = {
-					8076,	-- Strength of Earth
 					6673,	-- Battle Shout
-					93435,	-- Roar of Courage(hunter pet)
+					19506,	-- Trueshot Aura
 				},
 				["combat"] = true,
 			},
@@ -286,8 +300,40 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					20217,	-- Blessing of Kings
+					117666,	-- Legacy of the Emperor
+					90363,	-- Embrace of the Shale Spider
 				},
 				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+		},
+		MONK = {
+			[1] = {	-- Legacy of the Emperor group
+				["spells"] = {
+					117666,	-- Legacy of the Emperor
+				},
+				["negate_spells"] = {
+					1126,	-- Mark of the Wild
+					20217,	-- Blessing of Kings
+					90363,	-- Embrace of the Shale Spider
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+			[2] = {	-- Legacy of the White Tiger group
+				["spells"] = {
+					116781,	-- Legacy of the White Tiger
+				},
+				["negate_spells"] = {
+					1459,	-- Arcane Brilliance
+					61316,	-- Dalaran Brilliance
+					24932,	-- Leader of the Pack
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
 			},
 		},
 	}
