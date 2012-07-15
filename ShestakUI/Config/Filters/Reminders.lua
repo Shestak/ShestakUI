@@ -150,7 +150,7 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 			},
-			[2] = {	-- Intellect group
+			[2] = {	-- Brilliance group
 				["spells"] = {
 					1459,	-- Arcane Brilliance
 					61316,	-- Dalaran Brilliance
@@ -161,16 +161,7 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		WARLOCK = {
-			[1] = {	-- Armors group
-				["spells"] = {
-					28176,	-- Fel Armor
-					687,	-- Demon Armor
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[2] = { -- Dark Intent group
+			[1] = { -- Dark Intent group
 				["spells"] = {
 					109773,	-- Dark Intent
 				},
@@ -331,7 +322,7 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 			},
-			[2] = {	-- Legacy of the White Tige group
+			[2] = {	-- Legacy of the White Tiger group
 				["spells"] = {
 					116781,	-- Legacy of the White Tiger
 				},
