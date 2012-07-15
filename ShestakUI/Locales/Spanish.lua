@@ -89,6 +89,7 @@ L_CHAT_RAID_WARNING = "AB"
 L_CHAT_BATTLEGROUND = "CB"
 L_CHAT_BATTLEGROUND_LEADER = "LCB"
 L_CHAT_OFFICER = "O"
+L_CHAT_PET_BATTLE = "PB" -- Needs review
 L_CHAT_COME_ONLINE = "se ha conectado."
 L_CHAT_GONE_OFFLINE = "se ha desconectado."
 L_CHAT_COME_ONLINE_COLOR = "se ha |cff298F00conectado|r !"

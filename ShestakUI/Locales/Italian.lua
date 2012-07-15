@@ -89,6 +89,7 @@ L_CHAT_RAID_WARNING = "AIN"
 L_CHAT_BATTLEGROUND = "CB"
 L_CHAT_BATTLEGROUND_LEADER = "CCB"
 L_CHAT_OFFICER = "UF"
+L_CHAT_PET_BATTLE = "PB" -- Needs review
 L_CHAT_COME_ONLINE = "è adesso online."
 L_CHAT_GONE_OFFLINE = "è andato offline."
 L_CHAT_COME_ONLINE_COLOR = "è adesso |cff298F00online|r !"
