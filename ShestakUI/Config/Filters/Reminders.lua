@@ -214,7 +214,6 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					20217,	-- Blessing of Kings
-					116781,	-- Legacy of the White Tiger
 					116956,	-- Grace of Air
 					93435,	-- Roar of Courage
 				},
