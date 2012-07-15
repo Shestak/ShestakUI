@@ -1452,7 +1452,7 @@ Filger_Spells = {
 			-- Fear Ward
 			{spellID = 6346, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Borrowed Time
-			--MOP{spellID = 59887, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Fire
 			--{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Will
@@ -1483,7 +1483,7 @@ Filger_Spells = {
 			-- Surge of Darkness
 			{spellID = 87160, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Serendipity
-			--MOP{spellID = 63731, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 63735, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Insight
 			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evangelism
