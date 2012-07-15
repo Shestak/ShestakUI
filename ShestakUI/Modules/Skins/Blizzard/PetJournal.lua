@@ -231,6 +231,11 @@ local function LoadSkin()
 	PetJournalPetCard.backdrop:Point("TOPLEFT", 2, -2)
 	PetJournalPetCard.backdrop:Point("BOTTOMRIGHT", -4, 2)
 
+	PetJournalPetCardPetInfo:Point("TOPLEFT", PetJournalPetCard.backdrop, 2, -2)
+	PetJournalPetCardPetInfo:CreateBackdrop("Default")
+	PetJournalPetCardPetInfo.backdrop:Point("TOPLEFT", PetJournalPetCardPetInfoIcon, -2, 2)
+	PetJournalPetCardPetInfo.backdrop:Point("BOTTOMRIGHT", PetJournalPetCardPetInfoIcon, 2, -2)
+
 	PetJournalPetCardPetInfoIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	PetJournalPrimaryAbilityTooltip:SetTemplate("Transparent")
