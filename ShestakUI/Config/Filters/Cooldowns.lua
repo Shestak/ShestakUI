@@ -25,19 +25,20 @@ end
 if C.enemycooldown.enable == true then
 	T.enemy_spells = {
 		-- Interrupts and Silences
-		[6552] = 10,	-- Pummel
-		[1766] = 10,	-- Kick
-		[47528] = 10,	-- Mind Freeze
-		[96231] = 10,	-- Rebuke
-		[80965] = 10,	-- Skull Bash
-		[57994] = 15,	-- Wind Shear
+		[6552] = 15,	-- Pummel
+		[1766] = 15,	-- Kick
+		[47528] = 15,	-- Mind Freeze
+		[96231] = 15,	-- Rebuke
+		[80965] = 15,	-- Skull Bash
+		[116705] = 15,	-- Spear Hand Strike
+		[57994] = 12,	-- Wind Shear
 		[34490] = 20,	-- Silencing Shot
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
 		[15487] = 45,	-- Silence
 		[78675] = 60,	-- Solar Bream
 		[47476] = 120,	-- Strangulate
-		-- Crowd Control
+		-- Crowd Controls
 		[8122] = 30,	-- Psychic Scream
 		[19503] = 30,	-- Scatter Shot
 		[1499] = 30,	-- Freezing Trap

@@ -291,7 +291,7 @@ L_GUI_UF_PLUGINS_FADER = "Скрывать рамки вне боя"
 L_GUI_UF_PLUGINS_DIMINISHING = "Иконка диминишинга на рамках арены"
 
 -- Unit Frames Class bar options
-L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars" -- Needs review
+L_GUI_UF_PLUGINS_CLASS_BAR = "Классовые панели"
 L_GUI_UF_PLUGINS_COMBO_BAR = "Включить индикатор серии приемов"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "Включить индикатор темных сфер"
 L_GUI_UF_PLUGINS_CHI_BAR = "Включить индикатор ци"
