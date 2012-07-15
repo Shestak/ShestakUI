@@ -46,7 +46,7 @@ if C.reminder.raid_buffs_enable == true then
 		},
 		Stat = {
 			20217,	-- Blessing of Kings
-			115921,	-- Legacy of the Emperor
+			117666,	-- Legacy of the Emperor
 			90363,	-- Embrace of the Shale Spider
 			1126,	-- Mark of the Wild
 		},
@@ -201,7 +201,7 @@ if C.reminder.solo_buffs_enable == true then
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
 					19740,	-- Blessing of Might
-					115921,	-- Legacy of the Emperor
+					117666,	-- Legacy of the Emperor
 					90363,	-- Embrace of the Shale Spider
 				},
 				["combat"] = true,
@@ -310,8 +310,36 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					20217,	-- Blessing of Kings
-					115921,	-- Legacy of the Emperor
+					117666,	-- Legacy of the Emperor
 					90363,	-- Embrace of the Shale Spider
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+		},
+		MONK = {
+			[1] = {	-- Legacy of the Emperor group
+				["spells"] = {
+					117666,	-- Legacy of the Emperor
+				},
+				["negate_spells"] = {
+					1126,	-- Mark of the Wild
+					20217,	-- Blessing of Kings
+					90363,	-- Embrace of the Shale Spider
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+			[2] = {	-- Legacy of the White Tige group
+				["spells"] = {
+					116781,	-- Legacy of the White Tiger
+				},
+				["negate_spells"] = {
+					19740,	-- Blessing of Might
+					116956,	-- Grace of Air
+					93435,	-- Roar of Courage
 				},
 				["combat"] = true,
 				["instance"] = true,
