@@ -337,9 +337,9 @@ if C.reminder.solo_buffs_enable == true then
 					116781,	-- Legacy of the White Tiger
 				},
 				["negate_spells"] = {
-					19740,	-- Blessing of Might
-					116956,	-- Grace of Air
-					93435,	-- Roar of Courage
+					1459,	-- Arcane Brilliance
+					61316,	-- Dalaran Brilliance
+					24932,	-- Leader of the Pack
 				},
 				["combat"] = true,
 				["instance"] = true,
