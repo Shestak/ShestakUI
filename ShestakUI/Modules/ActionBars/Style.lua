@@ -44,7 +44,7 @@ local function StyleNormalButton(self)
 			btname:Point("BOTTOM", 0, 0)
 			btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-			--btname:Width(T.buttonsize - 1)
+			--btname:Width(C.actionbar.button_size - 1)
 		else
 			btname:Kill()
 		end
@@ -55,7 +55,7 @@ local function StyleNormalButton(self)
 		hotkey:Point("TOPRIGHT", 0, 0)
 		hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 		hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-		hotkey:Width(T.buttonsize - 1)
+		hotkey:Width(C.actionbar.button_size - 1)
 		hotkey.ClearAllPoints = T.dummy
 		hotkey.SetPoint = T.dummy
 	else
@@ -63,8 +63,8 @@ local function StyleNormalButton(self)
 	end
 
 	if not button.isSkinned then
-		if self:GetHeight() ~= T.buttonsize and not InCombatLockdown() then
-			self:Size(T.buttonsize)
+		if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() then
+			self:Size(C.actionbar.button_size)
 		end
 		button:CreateBackdrop("Transparent")
 		button.backdrop:SetAllPoints()
@@ -96,7 +96,7 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 	flash:Point("BOTTOMRIGHT", button, -2, 2)
 
 	if not button.isSkinned then
-		button:Size(T.buttonsize)
+		button:Size(C.actionbar.button_size)
 		button:CreateBackdrop("Transparent")
 		button.backdrop:SetAllPoints()
 		if C.actionbar.classcolor_border == true then
@@ -110,15 +110,15 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 
 		if pet then
 			local autocast = _G[name.."AutoCastable"]
-			autocast:Size((T.buttonsize * 2) - 10)
+			autocast:Size((C.actionbar.button_size * 2) - 10)
 			autocast:ClearAllPoints()
 			autocast:Point("CENTER", button, 0, 0)
 
 			local shine = _G[name.."Shine"]
-			shine:Size(T.buttonsize)
+			shine:Size(C.actionbar.button_size)
 
 			local cooldown = _G[name.."Cooldown"]
-			cooldown:Size(T.buttonsize - 2)
+			cooldown:Size(C.actionbar.button_size - 2)
 		end
 
 		button.isSkinned = true

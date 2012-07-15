@@ -32,20 +32,20 @@ for i = 1, 12 do
 		elseif i == 10 then
 			b:Point("BOTTOMLEFT", SplitBarRight, "BOTTOMLEFT", 0, 0)
 		else
-			b:Point("LEFT", b2, "RIGHT", T.buttonspacing, 0)
+			b:Point("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
 		end
 	else
 		if i == 1 then
 			if C.actionbar.rightbars < 3 then
-				b:Point("BOTTOM", ActionButton1, "TOP", 0, T.buttonsize + (T.buttonspacing * 2))
+				b:Point("BOTTOM", ActionButton1, "TOP", 0, C.actionbar.button_size + (C.actionbar.button_space * 2))
 			else
 				b:Point("TOPLEFT", RightActionBarAnchor, "TOPLEFT", 0, 0)
 			end
 		else
 			if C.actionbar.rightbars < 3 then
-				b:Point("LEFT", b2, "RIGHT", T.buttonspacing, 0)
+				b:Point("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
 			else
-				b:Point("TOP", b2, "BOTTOM", 0, -T.buttonspacing)
+				b:Point("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
 			end
 		end
 	end

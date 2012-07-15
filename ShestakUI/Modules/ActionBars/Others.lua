@@ -39,12 +39,12 @@ end)
 -- Vehicle button anchor
 local VehicleButtonAnchor = CreateFrame("Frame", "VehicleButtonAnchor", UIParent)
 VehicleButtonAnchor:Point(unpack(C.position.vehicle_bar))
-VehicleButtonAnchor:Size(T.buttonsize)
+VehicleButtonAnchor:Size(C.actionbar.button_size)
 
 -- Vehicle button
 local vehicle = CreateFrame("BUTTON", "VehicleButton", UIParent, "SecureActionButtonTemplate")
-vehicle:Width(T.buttonsize)
-vehicle:Height(T.buttonsize)
+vehicle:Width(C.actionbar.button_size)
+vehicle:Height(C.actionbar.button_size)
 vehicle:Point("BOTTOMLEFT", VehicleButtonAnchor, "BOTTOMLEFT", 0, 0)
 vehicle:SetNormalTexture("Interface\\Vehicles\\UI-Vehicles-Button-Exit-Up")
 vehicle:GetNormalTexture():SetTexCoord(0.2, 0.8, 0.2, 0.8)

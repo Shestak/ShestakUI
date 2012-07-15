@@ -1,27 +1,21 @@
 local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Action Bar button size/spacings
-----------------------------------------------------------------------------------------
-T.buttonsize = T.Scale(C.actionbar.button_size)
-T.buttonspacing = T.Scale(C.actionbar.button_space)
-
-----------------------------------------------------------------------------------------
 --	Bottom bars panel
 ----------------------------------------------------------------------------------------
 local bottombaranchor = CreateFrame("Frame", "ActionBarAnchor", UIParent)
 bottombaranchor:CreatePanel("Invisible", 1, 1, unpack(C.position.bottom_bars))
-bottombaranchor:Width((T.buttonsize * 12) + (T.buttonspacing * 11))
+bottombaranchor:Width((C.actionbar.button_size * 12) + (C.actionbar.button_space * 11))
 if C.actionbar.bottombars == 2 then
-	bottombaranchor:Height((T.buttonsize * 2) + T.buttonspacing)
+	bottombaranchor:Height((C.actionbar.button_size * 2) + C.actionbar.button_space)
 elseif C.actionbar.bottombars == 3 then
 	if C.actionbar.split_bars == true then
-		bottombaranchor:Height((T.buttonsize * 2) + T.buttonspacing)
+		bottombaranchor:Height((C.actionbar.button_size * 2) + C.actionbar.button_space)
 	else
-		bottombaranchor:Height((T.buttonsize * 3) + (T.buttonspacing * 2))
+		bottombaranchor:Height((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
 	end
 else
-	bottombaranchor:Height(T.buttonsize)
+	bottombaranchor:Height(C.actionbar.button_size)
 end
 bottombaranchor:SetFrameStrata("LOW")
 
@@ -30,13 +24,13 @@ bottombaranchor:SetFrameStrata("LOW")
 ----------------------------------------------------------------------------------------
 local rightbaranchor = CreateFrame("Frame", "RightActionBarAnchor", UIParent)
 rightbaranchor:CreatePanel("Invisible", 1, 1, unpack(C.position.right_bars))
-rightbaranchor:Height((T.buttonsize * 12) + (T.buttonspacing * 11))
+rightbaranchor:Height((C.actionbar.button_size * 12) + (C.actionbar.button_space * 11))
 if C.actionbar.rightbars == 1 then
-	rightbaranchor:Width(T.buttonsize)
+	rightbaranchor:Width(C.actionbar.button_size)
 elseif C.actionbar.rightbars == 2 then
-	rightbaranchor:Width((T.buttonsize * 2) + T.buttonspacing)
+	rightbaranchor:Width((C.actionbar.button_size * 2) + C.actionbar.button_space)
 elseif C.actionbar.rightbars == 3 then
-	rightbaranchor:Width((T.buttonsize * 3) + (T.buttonspacing * 2))
+	rightbaranchor:Width((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
 else
 	rightbaranchor:Hide()
 end
@@ -47,11 +41,11 @@ rightbaranchor:SetFrameStrata("BACKGROUND")
 ----------------------------------------------------------------------------------------
 if C.actionbar.split_bars == true then
 	local SplitBarLeft = CreateFrame("Frame", "SplitBarLeft", UIParent)
-	SplitBarLeft:CreatePanel("Invisible", (T.buttonsize * 3) + (T.buttonspacing * 2), (T.buttonsize * 2) + T.buttonspacing, "BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -T.buttonspacing, 0)
+	SplitBarLeft:CreatePanel("Invisible", (C.actionbar.button_size * 3) + (C.actionbar.button_space * 2), (C.actionbar.button_size * 2) + C.actionbar.button_space, "BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 	SplitBarLeft:SetFrameStrata("LOW")
 
 	local SplitBarRight = CreateFrame("Frame", "SplitBarRight", UIParent)
-	SplitBarRight:CreatePanel("Invisible", (T.buttonsize * 3) + (T.buttonspacing * 2), (T.buttonsize * 2) + T.buttonspacing, "BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", T.buttonspacing, 0)
+	SplitBarRight:CreatePanel("Invisible", (C.actionbar.button_size * 3) + (C.actionbar.button_space * 2), (C.actionbar.button_size * 2) + C.actionbar.button_space, "BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", C.actionbar.button_space, 0)
 	SplitBarRight:SetFrameStrata("LOW")
 end
 
@@ -61,12 +55,12 @@ end
 local petbaranchor = CreateFrame("Frame", "PetActionBarAnchor", UIParent)
 if C.actionbar.rightbars > 0 then
 	if C.actionbar.petbar_horizontal == true then
-		petbaranchor:CreatePanel("Invisible", (T.buttonsize * 10) + (T.buttonspacing * 9), (T.buttonsize + T.buttonspacing), unpack(C.position.pet_horizontal))
+		petbaranchor:CreatePanel("Invisible", (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), (C.actionbar.button_size + C.actionbar.button_space), unpack(C.position.pet_horizontal))
 	else
-		petbaranchor:CreatePanel("Invisible", (T.buttonsize + T.buttonspacing), (T.buttonsize * 10) + (T.buttonspacing * 9), "RIGHT", rightbaranchor, "LEFT", 0, 0)
+		petbaranchor:CreatePanel("Invisible", (C.actionbar.button_size + C.actionbar.button_space), (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), "RIGHT", rightbaranchor, "LEFT", 0, 0)
 	end
 else
-	petbaranchor:CreatePanel("Invisible", (T.buttonsize + T.buttonspacing), (T.buttonsize * 10) + (T.buttonspacing * 9), unpack(C.position.right_bars))
+	petbaranchor:CreatePanel("Invisible", (C.actionbar.button_size + C.actionbar.button_space), (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), unpack(C.position.right_bars))
 end
 
 ----------------------------------------------------------------------------------------
@@ -82,12 +76,12 @@ if not C.actionbar.shapeshift_hide then
 		local forms = GetNumShapeshiftForms()
 		if forms > 0 then
 			if C.actionbar.shapeshift_horizontal ~= true then
-				shiftanchor:Width(T.buttonsize)
-				shiftanchor:Height((T.buttonsize * forms) + ((T.buttonspacing * forms) - 3 ))
+				shiftanchor:Width(C.actionbar.button_size)
+				shiftanchor:Height((C.actionbar.button_size * forms) + ((C.actionbar.button_space * forms) - 3 ))
 				shiftanchor:Point("TOPLEFT", _G["StanceButton1"], "TOPLEFT")
 			else
-				shiftanchor:Width((T.buttonsize * forms) + ((T.buttonspacing * forms) - 3))
-				shiftanchor:Height(T.buttonsize)
+				shiftanchor:Width((C.actionbar.button_size * forms) + ((C.actionbar.button_space * forms) - 3))
+				shiftanchor:Height(C.actionbar.button_size)
 				shiftanchor:Point("TOPLEFT", _G["StanceButton1"], "TOPLEFT")
 			end
 		end

@@ -20,7 +20,7 @@ for i = 1, 12 do
 			b:Point("TOPLEFT", RightActionBarAnchor, "TOPLEFT", 0, 0)
 		end
 	else
-		b:Point("TOP", b2, "BOTTOM", 0, -T.buttonspacing)
+		b:Point("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
 	end
 end
 

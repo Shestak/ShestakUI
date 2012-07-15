@@ -16,7 +16,7 @@ for i = 1, 12 do
 	if i == 1 then
 		b:Point("TOPRIGHT", RightActionBarAnchor, "TOPRIGHT", 0, 0)
 	else
-		b:Point("TOP", b2, "BOTTOM", 0, -T.buttonspacing)
+		b:Point("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
 	end
 end
 

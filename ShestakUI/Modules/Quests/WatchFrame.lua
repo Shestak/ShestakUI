@@ -89,7 +89,7 @@ hooksecurefunc("SetItemButtonTexture", function(button, texture)
 		local count = _G[button:GetName().."Count"]
 		local hotkey = _G[button:GetName().."HotKey"]
 
-		button:Size(T.buttonsize)
+		button:Size(C.actionbar.button_size)
 		button:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

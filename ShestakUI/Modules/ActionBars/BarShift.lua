@@ -7,16 +7,16 @@ if C.actionbar.enable ~= true then return end
 local ShiftHolder = CreateFrame("Frame", "ShiftBar", UIParent)
 if C.actionbar.shapeshift_horizontal == true then
 	ShiftHolder:Point(unpack(C.position.stance_bar))
-	ShiftHolder:Width((T.buttonsize * 7) + (T.buttonspacing * 6))
-	ShiftHolder:Height(T.buttonsize)
+	ShiftHolder:Width((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
+	ShiftHolder:Height(C.actionbar.button_size)
 else
 	if (PetActionBarFrame:IsShown() or PetHolder) and C.actionbar.petbar_horizontal ~= true then
-		ShiftHolder:Point("RIGHT", "PetHolder", "LEFT", -T.buttonspacing, (T.buttonsize / 2) + 1)
+		ShiftHolder:Point("RIGHT", "PetHolder", "LEFT", -C.actionbar.button_space, (C.actionbar.button_size / 2) + 1)
 	else
-		ShiftHolder:Point("RIGHT", "RightActionBarAnchor", "LEFT", -T.buttonspacing, (T.buttonsize / 2) + 1)
+		ShiftHolder:Point("RIGHT", "RightActionBarAnchor", "LEFT", -C.actionbar.button_space, (C.actionbar.button_size / 2) + 1)
 	end
-	ShiftHolder:Width(T.buttonsize)
-	ShiftHolder:Height((T.buttonsize * 7) + (T.buttonspacing * 6))
+	ShiftHolder:Width(C.actionbar.button_size)
+	ShiftHolder:Height((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
 end
 
 -- Stance command to move totem or stance in-game
@@ -65,9 +65,9 @@ bar:SetScript("OnEvent", function(self, event, ...)
 			else
 				local previous = _G["StanceButton"..i-1]
 				if C.actionbar.shapeshift_horizontal == true then
-					button:Point("LEFT", previous, "RIGHT", T.buttonspacing, 0)
+					button:Point("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
 				else
-					button:Point("TOP", previous, "BOTTOM", 0, -T.buttonspacing)
+					button:Point("TOP", previous, "BOTTOM", 0, -C.actionbar.button_space)
 				end
 			end
 			local _, name = GetShapeshiftFormInfo(i)

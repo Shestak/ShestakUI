@@ -36,7 +36,7 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 			PetActionBarAnchor:SetParent(PetHolder)
 			PetActionBarAnchor:SetFrameStrata("BACKGROUND")
 			PetActionBarAnchor:SetFrameLevel(1)
-			button:Size(T.buttonsize)
+			button:Size(C.actionbar.button_size)
 			if i == 1 then
 				if C.actionbar.petbar_horizontal == true then
 					button:Point("BOTTOMLEFT", 0, 0)
@@ -45,9 +45,9 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 				end
 			else
 				if C.actionbar.petbar_horizontal == true then
-					button:Point("LEFT", _G["PetActionButton"..(i - 1)], "RIGHT", T.buttonspacing, 0)
+					button:Point("LEFT", _G["PetActionButton"..(i - 1)], "RIGHT", C.actionbar.button_space, 0)
 				else
-					button:Point("TOP", _G["PetActionButton"..(i - 1)], "BOTTOM", 0, -T.buttonspacing)
+					button:Point("TOP", _G["PetActionButton"..(i - 1)], "BOTTOM", 0, -C.actionbar.button_space)
 				end
 			end
 			button:Show()
