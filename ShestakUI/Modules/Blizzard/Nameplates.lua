@@ -729,12 +729,4 @@ function NamePlates:PLAYER_ENTERING_WORLD()
 			SetCVar("nameplateShowEnemies", 0)
 		end
 	end
-
-	if C.nameplate.enable == true and C.nameplate.enhance_threat == true then
-		SetCVar("threatWarning", 3)
-	end
-
-	SetCVar("bloatthreat", 0)
-	SetCVar("bloattest", 0)
-	SetCVar("bloatnameplates", 0)
 end
