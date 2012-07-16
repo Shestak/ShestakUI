@@ -1697,8 +1697,6 @@ Filger_Spells = {
 			--MOP{spellID = 79460, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demon Soul Fel Guard
 			--MOP{spellID = 79462, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Intent
-			--MOP{spellID = 85768, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Shadow Ward
 			{spellID = 6229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
@@ -1813,7 +1811,7 @@ Filger_Spells = {
 			{spellID = 172, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Immolate
 			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Bane of Agony
+			-- Agony
 			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Bane of Doom
 			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},

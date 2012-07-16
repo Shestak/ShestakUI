@@ -67,7 +67,6 @@ if C.raidframe.plugins_aura_watch == true then
 				{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag, Horde
 				{23335, "LEFT", {0, 0, 1}, true},				-- Warsong flag, Alliance
 				{34976, "LEFT", {1, 0, 0}, true}, 				-- Netherstorm Flag
-				{64413, "RIGHT", {0.8, 0.2, 0}, true},			-- Protection of Ancient Kings
 			},
 		}
 	end

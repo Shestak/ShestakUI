@@ -39,7 +39,7 @@ T.DebuffWhiteList = {
 	-- Mage
 	[SpellName(31661)] = true,	-- Dragon's Breath
 	[SpellName(61305)] = true,	-- Polymorph
-	--MOP[SpellName(18469)] = true,	-- Silenced - Improved Counterspell
+	[SpellName(55021)] = true,	-- Silenced - Improved Counterspell
 	[SpellName(122)] = true,	-- Frost Nova
 	--MOP[SpellName(55080)] = true,	-- Shattered Barrier
 	-- Paladin
@@ -74,7 +74,7 @@ T.DebuffWhiteList = {
 	[SpellName(30283)] = true,	-- Shadowfury
 	--MOP[SpellName(89605)] = true,	-- Aura of Foreboding
 	[SpellName(603)] = true,	-- Bane of Doom
-	[SpellName(980)] = true,	-- Bane of Agony
+	[SpellName(980)] = true,	-- Agony
 	[SpellName(172)] = true,	-- Corruption
 	--MOP[SpellName(17800)] = true,	-- Shadow and Flame
 	[SpellName(48181)] = true,	-- Haunt

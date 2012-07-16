@@ -25,9 +25,8 @@ if T.class == "WARLOCK" then
 		T.aoespam[87389] = true		-- Corruption (Soulburn: Seed of Corruption)
 		T.aoespam[30108] = true		-- Unstable Affliction
 		T.aoespam[348] = true		-- Immolate
-		T.aoespam[980] = true		-- Bane of Agony
+		T.aoespam[980] = true		-- Agony
 		T.aoespam[85455] = true		-- Bane of Havoc
-		T.aoespam[85421] = true		-- Burning Embers
 		T.aoespam[104233] = true	-- Rain of Fire
 		T.aoespam[5857] = true		-- Hellfire Effect
 		T.aoespam[47897] = true		-- Shadowflame (Shadow direct damage)
@@ -38,8 +37,6 @@ if T.class == "WARLOCK" then
 		T.aoespam[20153] = true		-- Immolation (Infrenal)
 	end
 	if C.combattext.healing then
-		T.healfilter[28176] = true	-- Fel Armor
-		T.healfilter[96379] = true	-- Fel Armor
 		T.healfilter[63106] = true	-- Siphon Life
 		T.healfilter[54181] = true	-- Fel Synergy
 		T.healfilter[89653] = true	-- Drain Life
@@ -76,7 +73,6 @@ elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		T.aoespam[20167] = true		-- Seal of Insight (Heal Effect)
-		T.aoespam[94289] = true		-- Protector of the Innocent
 		T.aoespam[53652] = true		-- Beacon of Light
 		T.aoespam[85222] = true		-- Light of Dawn
 		T.aoespam[82327] = true		-- Holy Radiance
@@ -86,7 +82,6 @@ elseif T.class == "PALADIN" then
 		T.aoespam[119072] = true	-- Holy Wrath
 		T.aoespam[53385] = true		-- Divine Storm
 		T.aoespam[31803] = true		-- Censure
-		T.aoespam[20424] = true		-- Seals of Command
 		T.aoespam[42463] = true		-- Seal of Truth
 		T.aoespam[101423] = true	-- Seal of Righteousness
 		T.aoespam[88263] = true		-- Hammer of the Righteous
@@ -169,13 +164,12 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[46968] = true		-- Shockwave
 		T.aoespam[6343] = true		-- Thunder Clap
 		T.aoespam[1680] = true		-- Whirlwind
-		T.aoespam[94009] = true		-- Rend
-		T.aoespam[12721] = true		-- Deep Wounds
+		T.aoespam[115767] = true	-- Deep Wounds
 		T.aoespam[50622] = true		-- Bladestorm
 		T.aoespam[52174] = true		-- Heroic Leap
 	end
 	if C.combattext.healing then
-		T.healfilter[23880] = true	-- Bloodthirst
+		T.healfilter[117313] = true	-- Bloodthirst Heal
 		T.healfilter[55694] = true	-- Enraged Regeneration
 	end
 elseif T.class == "HUNTER" then
@@ -192,14 +186,11 @@ elseif T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[55095] = true		-- Frost Fever
 		T.aoespam[55078] = true		-- Blood Plague
-		T.aoespam[55536] = true		-- Unholy Blight
 		T.aoespam[48721] = true		-- Blood Boil
 		T.aoespam[49184] = true		-- Howling Blast
 		T.aoespam[52212] = true		-- Death and Decay
-		T.aoespam[47541] = true		-- Death Coil
 		T.aoespam[55050] = true		-- Heart Strike
-		T.aoespam[98957] = true		-- Burning Blood (T13 x2)
-		T.aoespam[59754] = true		-- Rune Tap (AOE heal)
+		T.aoespam[119980] = true	-- Conversion
 		-- Merging mh/oh strikes(by Bozo)
 		T.aoespam[49020] = true		-- Obliterate MH
 		T.aoespam[66198] = 49020	-- Obliterate OH
@@ -209,10 +200,6 @@ elseif T.class == "DEATHKNIGHT" then
 		T.aoespam[66216] = 45462	-- Plague Strike OH
 		T.aoespam[49143] = true		-- Frost Strike MH
 		T.aoespam[66196] = 49143	-- Frost Strike OH
-		T.aoespam[56815] = true		-- Rune Strike MH
-		T.aoespam[66217] = 56815	-- Rune Strike OH
-		T.aoespam[45902] = true		-- Blood Strike MH
-		T.aoespam[66215] = 45902	-- Blood Strike OH
 	end
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
