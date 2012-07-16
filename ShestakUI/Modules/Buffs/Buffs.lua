@@ -4,7 +4,8 @@ if C.aura.player_auras ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Style player buff(by Tukz)
 ----------------------------------------------------------------------------------------
-local mainhand, _, _, offhand, _, _, hand3 = GetWeaponEnchantInfo()
+local mainhand, _, _, offhand = GetWeaponEnchantInfo()
+SHOW_BUFF_DURATIONS = "1"
 local rowbuffs = 16
 
 local GetFormattedTime = function(s)
@@ -40,7 +41,7 @@ ConsolidatedBuffsCount:Point("BOTTOMRIGHT", 0, 1)
 ConsolidatedBuffsCount:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 ConsolidatedBuffsCount:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
-for i = 1, 3 do
+for i = 1, 2 do
 	local buff = _G["TempEnchant"..i]
 	local icon = _G["TempEnchant"..i.."Icon"]
 	local border = _G["TempEnchant"..i.."Border"]
@@ -66,8 +67,6 @@ for i = 1, 3 do
 
 	_G["TempEnchant2"]:ClearAllPoints()
 	_G["TempEnchant2"]:Point("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
-	_G["TempEnchant3"]:ClearAllPoints()
-	_G["TempEnchant3"]:Point("RIGHT", _G["TempEnchant2"], "LEFT", -3, 0)
 end
 
 local function StyleBuffs(buttonName, index, debuff)
@@ -125,20 +124,25 @@ local function UpdateBuffAnchors()
 	local buttonName = "BuffButton"
 	local buff, previousBuff, aboveBuff
 	local numBuffs = 0
+	local numAuraRows = 0
 	local slack = BuffFrame.numEnchants
-	local mainhand, _, _, offhand, _, _, hand3 = GetWeaponEnchantInfo()
+	local mainhand, _, _, offhand = GetWeaponEnchantInfo()
+
 	if ShouldShowConsolidatedBuffFrame() then
 		slack = slack + 1
+		_G["TempEnchant1"]:ClearAllPoints()
+		_G["TempEnchant1"]:Point("RIGHT", ConsolidatedBuffsIcon, "LEFT", -5, 0)
 	end
+
 	for index = 1, BUFF_ACTUAL_DISPLAY do
 		StyleBuffs(buttonName, index, false)
 		local buff = _G[buttonName..index]
-
 		if not buff.consolidated then
 			numBuffs = numBuffs + 1
 			index = numBuffs + slack
 			buff:ClearAllPoints()
 			if (index > 1) and (mod(index, rowbuffs) == 1) then
+				numAuraRows = numAuraRows + 1
 				if index == rowbuffs + 1 then
 					buff:Point("TOP", ConsolidatedBuffs, "BOTTOM", 0, -3)
 				else
@@ -146,17 +150,16 @@ local function UpdateBuffAnchors()
 				end
 				aboveBuff = buff
 			elseif index == 1 then
+				numAuraRows = 1
 				buff:Point("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
 			else
 				if numBuffs == 1 then
-					if (mainhand and offhand and hand3) and not UnitHasVehicleUI("player") then
-						buff:Point("RIGHT", TempEnchant3, "LEFT", -3, 0)
-					elseif ((mainhand and offhand) or (mainhand and hand3) or (offhand and hand3)) and not UnitHasVehicleUI("player") then
+					if mainhand and offhand and not UnitHasVehicleUI("player") then
 						buff:Point("RIGHT", TempEnchant2, "LEFT", -3, 0)
-					elseif ((mainhand and not offhand and not hand3) or (offhand and not mainhand and not hand3) or (hand3 and not mainhand and not offhand)) and not UnitHasVehicleUI("player") then
+					elseif ((mainhand and not offhand) or (offhand and not mainhand)) and not UnitHasVehicleUI("player") then
 						buff:Point("RIGHT", TempEnchant1, "LEFT", -3, 0)
 					else
-						buff:Point("RIGHT", ConsolidatedBuffs, "LEFT", -3, 0)
+						buff:Point("TOPRIGHT", ConsolidatedBuffs, "TOPLEFT", -3, 0)
 					end
 				else
 					buff:Point("RIGHT", previousBuff, "LEFT", -3, 0)
