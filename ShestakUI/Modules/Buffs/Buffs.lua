@@ -5,7 +5,6 @@ if C.aura.player_auras ~= true then return end
 --	Style player buff(by Tukz)
 ----------------------------------------------------------------------------------------
 local mainhand, _, _, offhand = GetWeaponEnchantInfo()
-SHOW_BUFF_DURATIONS = "1"
 local rowbuffs = 16
 
 local GetFormattedTime = function(s)
@@ -104,14 +103,14 @@ local function StyleBuffs(buttonName, index, debuff)
 	end
 end
 
-function UpdateFlash(self, elapsed)
+local function UpdateFlash(self, elapsed)
 	local index = self:GetID()
 	self:SetAlpha(1)
 end
 
-local UpdateDuration = function(auraButton, timeLeft)
+local function UpdateDuration(auraButton, timeLeft)
 	local duration = auraButton.duration
-	if SHOW_BUFF_DURATIONS == "1" and timeLeft and C.aura.show_timer == true then
+	if timeLeft and C.aura.show_timer == true then
 		duration:SetFormattedText(GetFormattedTime(timeLeft))
 		duration:SetVertexColor(1, 1, 1)
 		duration:Show()
@@ -172,6 +171,12 @@ local function UpdateDebuffAnchors(buttonName, index)
 	_G[buttonName..index]:Hide()
 end
 
+local function UpdateEnchantAnchors()
+	_G["TempEnchant1"]:ClearAllPoints()
+	_G["TempEnchant1"]:Point("RIGHT", ConsolidatedBuffs, "LEFT", -5, 0)
+end
+
+--hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
 hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
 hooksecurefunc("DebuffButton_UpdateAnchors", UpdateDebuffAnchors)
 hooksecurefunc("AuraButton_UpdateDuration", UpdateDuration)

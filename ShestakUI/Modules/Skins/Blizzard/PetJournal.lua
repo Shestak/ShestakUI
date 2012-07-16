@@ -163,7 +163,7 @@ local function LoadSkin()
 	PetJournalHealPetButton.backdrop:SetAllPoints()
 	PetJournalHealPetButton:StyleButton()
 
-	PetJournalHealPetButton.texture:SetTexture("Interface\\Icons\\spell_magic_polymorphrabbit")
+	PetJournalHealPetButton.texture:SetTexture("Interface\\Icons\\spell_misc_petheal")
 	PetJournalHealPetButton.texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	PetJournalHealPetButton.texture:ClearAllPoints()
 	PetJournalHealPetButton.texture:Point("TOPLEFT", 2, -2)
@@ -173,6 +173,7 @@ local function LoadSkin()
 		_G["PetJournalLoadoutPet"..i.."HelpFrame"]:StripTextures()
 		local button = _G["PetJournalLoadoutPet"..i]
 		local icon = _G["PetJournalLoadoutPet"..i.."Icon"]
+		local level = _G["PetJournalLoadoutPet"..i.."Level"]
 
 		button:StripTextures()
 		button:SetTemplate("Overlay")
@@ -185,6 +186,8 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:SetParent(button.dragButton.backdrop)
+
+		level:SetParent(button.dragButton.backdrop)
 
 		for j = 1, 3 do
 			local button = _G["PetJournalLoadoutPet"..i.."Spell"..j]
