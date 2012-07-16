@@ -1129,7 +1129,7 @@ if friends.enabled then
 							end
 
 							if (BNTable[i][6] == "WoW" and playerFaction == BNTable[i][12]) then
-								classc, levelc = CUSTOM_CLASS_COLORS[BNTable[i][14]] or RAID_CLASS_COLORS[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
+								classc, levelc = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[BNTable[i][14]] or RAID_CLASS_COLORS[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
 								if classc == nil then
 									classc = GetQuestDifficultyColor(BNTable[i][16])
 								end
