@@ -192,14 +192,11 @@ elseif T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[55095] = true		-- Frost Fever
 		T.aoespam[55078] = true		-- Blood Plague
-		T.aoespam[55536] = true		-- Unholy Blight
 		T.aoespam[48721] = true		-- Blood Boil
 		T.aoespam[49184] = true		-- Howling Blast
 		T.aoespam[52212] = true		-- Death and Decay
-		T.aoespam[47541] = true		-- Death Coil
 		T.aoespam[55050] = true		-- Heart Strike
-		T.aoespam[98957] = true		-- Burning Blood (T13 x2)
-		T.aoespam[59754] = true		-- Rune Tap (AOE heal)
+		T.aoespam[119980] = true	-- Conversion
 		-- Merging mh/oh strikes(by Bozo)
 		T.aoespam[49020] = true		-- Obliterate MH
 		T.aoespam[66198] = 49020	-- Obliterate OH
@@ -209,10 +206,6 @@ elseif T.class == "DEATHKNIGHT" then
 		T.aoespam[66216] = 45462	-- Plague Strike OH
 		T.aoespam[49143] = true		-- Frost Strike MH
 		T.aoespam[66196] = 49143	-- Frost Strike OH
-		T.aoespam[56815] = true		-- Rune Strike MH
-		T.aoespam[66217] = 56815	-- Rune Strike OH
-		T.aoespam[45902] = true		-- Blood Strike MH
-		T.aoespam[66215] = 45902	-- Blood Strike OH
 	end
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
