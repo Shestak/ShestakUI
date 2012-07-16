@@ -56,27 +56,6 @@ EnchantPopup:SetScript("OnEvent", function(...)
 end)
 
 ----------------------------------------------------------------------------------------
---	Block damage meter spam(Decount by Tekkub)
-----------------------------------------------------------------------------------------
-local filterstrings = {
-	"^Recount - (.*)$",
-	"%d+%. %S+%s*%d+ %([%d.]+, [%d.]+%%%)",			-- Recount
-	--"^(%d+). (.*)$",								-- Also Recount
-	"%d+%. - [%d.]+%%% %S+%s*%d+",					-- 
-	"%d+%.%s+[%w%s]+%s+[%d.]+ %([%d.]+%)",			-- 10. Khal 2397.9 (5.8%)
-	--"%d+%.%s+%S+%s+<%S+>%s+[%d.]+%s+%([%d.]+%)",	-- 2. Bonehead <Demante> 129.9 (3.9%)
-	"%d+%.%s+%S+%s+[%d.]+",							-- 10. Khal 2397.9
-}
-
-local function filter(self, event, msg)
-	for _, str in pairs(filterstrings) do if msg:match(str) then return true end end
-end
-
-for _,event in pairs{"CHAT_MSG_YELL", "CHAT_MSG_SAY", "CHAT_MSG_RAID", "CHAT_MSG_RAID_LEADER", "CHAT_MSG_PARTY", "CHAT_MSG_PARTY_LEADER", "CHAT_MSG_BATTLEGROUND", "CHAT_MSG_BATTLEGROUND_LEADER"} do
-	ChatFrame_AddMessageEventFilter(event, filter)
-end
-
-----------------------------------------------------------------------------------------
 --	Auto select current event boss from LFD tool(EventBossAutoSelect by Nathanyel)
 ----------------------------------------------------------------------------------------
 local firstLFD
@@ -92,39 +71,6 @@ LFDParentFrame:HookScript("OnShow", function()
 		end
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	Check date
-----------------------------------------------------------------------------------------
-function T.DateCheck(m, d)
-	local month = tonumber(date("%m"))
-	local day = tonumber(date("%d"))
-	if month == m and day == d then
-		return true
-	else
-		return false
-	end
-end
-
-local f = CreateFrame("Frame")
-f:RegisterEvent("PLAYER_ENTERING_WORLD")
-f:SetScript("OnEvent", function(self)
-	if T.DateCheck(1, 1) == true then
-		T.Delay(15, print, "|cffffff00Happy New Year. From Shestak.|r")
-		T.Delay(16, T.InfoTextShow, "Happy New Year. From Shestak.")
-	--elseif T.DateCheck(1, 8) == true then
-	--	T.Delay(15, print, "|cffffff00Blah blah. From Shestak.|r")
-	--	T.Delay(16, T.InfoTextShow, "Blah blah. From Shestak.")
-	end
-	self:UnregisterAllEvents()
-end)
-
-----------------------------------------------------------------------------------------
---	Enables Launcher to download Mist of Pandaria data files
-----------------------------------------------------------------------------------------
-if GetCVar("accounttype") ~= "MP" then
-	SetCVar("accounttype", "MP")
-end
 
 ----------------------------------------------------------------------------------------
 --	Auto hide unnecessary stats from CharacterFrame(module from Inomena by p3lim)
