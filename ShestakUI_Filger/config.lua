@@ -1697,8 +1697,6 @@ Filger_Spells = {
 			--MOP{spellID = 79460, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demon Soul Fel Guard
 			--MOP{spellID = 79462, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Intent
-			--MOP{spellID = 85768, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Shadow Ward
 			{spellID = 6229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
