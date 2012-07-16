@@ -72,7 +72,6 @@ T.ArenaControl = function()
 		--MOP[GetSpellInfo(83047)] = 3,	-- Improved Polymorph
 		--MOP[GetSpellInfo(93986)] = 3,	-- Aura of Foreboding
 		[GetSpellInfo(30283)] = 3,	-- Shadowfury
-		--MOP[GetSpellInfo(12809)] = 3,	-- Concussion Blow
 		[GetSpellInfo(6544)] = 3,	-- Heroic Leap
 		--MOP[GetSpellInfo(85388)] = 3,	-- Throwdown
 

@@ -71,7 +71,6 @@ T.DiminishingSpells = function()
 		-- Control Stuns
 		[89766] = {"ctrlstun"},		-- Axe Toss (Felguard)
 		[50519] = {"ctrlstun"},		-- Sonic Blast (Bat)
-		--MOP[12809] = {"ctrlstun"},		-- Concussion Blow
 		[46968] = {"ctrlstun"},		-- Shockwave
 		[853] = {"ctrlstun"},		-- Hammer of Justice
 		[5211] = {"ctrlstun"},		-- Bash
@@ -79,8 +78,6 @@ T.DiminishingSpells = function()
 		[22570] = {"ctrlstun"},		-- Maim
 		[408] = {"ctrlstun"},		-- Kidney Shot
 		[20549] = {"ctrlstun"},		-- War Stomp
-		[20252] = {"ctrlstun"},		-- Intercept
-		[20253] = {"ctrlstun"},		-- Intercept
 		[44572] = {"ctrlstun"},		-- Deep Freeze
 		[30283] = {"ctrlstun"},		-- Shadowfury
 		[119072] = {"ctrlstun"},	-- Holy Wrath

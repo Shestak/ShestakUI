@@ -167,6 +167,8 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[115767] = true	-- Deep Wounds
 		T.aoespam[50622] = true		-- Bladestorm
 		T.aoespam[52174] = true		-- Heroic Leap
+		T.aoespam[118000] = true	-- Dragon Roar
+		T.aoespam[76858] = true		-- Opportunity Strike
 	end
 	if C.combattext.healing then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
