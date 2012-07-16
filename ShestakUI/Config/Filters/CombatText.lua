@@ -76,7 +76,6 @@ elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		T.aoespam[20167] = true		-- Seal of Insight (Heal Effect)
-		T.aoespam[94289] = true		-- Protector of the Innocent
 		T.aoespam[53652] = true		-- Beacon of Light
 		T.aoespam[85222] = true		-- Light of Dawn
 		T.aoespam[82327] = true		-- Holy Radiance
@@ -86,7 +85,6 @@ elseif T.class == "PALADIN" then
 		T.aoespam[119072] = true	-- Holy Wrath
 		T.aoespam[53385] = true		-- Divine Storm
 		T.aoespam[31803] = true		-- Censure
-		T.aoespam[20424] = true		-- Seals of Command
 		T.aoespam[42463] = true		-- Seal of Truth
 		T.aoespam[101423] = true	-- Seal of Righteousness
 		T.aoespam[88263] = true		-- Hammer of the Righteous
@@ -169,13 +167,12 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[46968] = true		-- Shockwave
 		T.aoespam[6343] = true		-- Thunder Clap
 		T.aoespam[1680] = true		-- Whirlwind
-		T.aoespam[94009] = true		-- Rend
-		T.aoespam[12721] = true		-- Deep Wounds
+		T.aoespam[115767] = true	-- Deep Wounds
 		T.aoespam[50622] = true		-- Bladestorm
 		T.aoespam[52174] = true		-- Heroic Leap
 	end
 	if C.combattext.healing then
-		T.healfilter[23880] = true	-- Bloodthirst
+		T.healfilter[117313] = true	-- Bloodthirst Heal
 		T.healfilter[55694] = true	-- Enraged Regeneration
 	end
 elseif T.class == "HUNTER" then
