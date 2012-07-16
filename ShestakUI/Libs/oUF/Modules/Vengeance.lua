@@ -53,11 +53,13 @@ local Update = function(self, event, unit)
 
 		if self.Debuffs then
 			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
-			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true) then
+			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
+			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 33)
 			elseif (T.class == "WARRIOR" or T.class == "DRUID")
 			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune ~= true)
-			or (T.class == "PALADIN" and C.unitframe_class_bar.holy ~= true) then
+			or (T.class == "PALADIN" and C.unitframe_class_bar.holy ~= true)
+			or (T.class == "MONK" and C.unitframe_class_bar.chi ~= true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			end
 		end
@@ -66,11 +68,13 @@ local Update = function(self, event, unit)
 
 		if self.Debuffs then
 			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
-			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true) then
+			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
+			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			elseif (T.class == "WARRIOR" or (T.class == "DRUID" and T.Role == "Tank"))
 			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune ~= true)
-			or (T.class == "PALADIN" and C.unitframe_class_bar.holy ~= true) then
+			or (T.class == "PALADIN" and C.unitframe_class_bar.holy ~= true)
+			or (T.class == "MONK" and C.unitframe_class_bar.chi ~= true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
 			end
 		end

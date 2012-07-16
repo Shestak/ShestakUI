@@ -467,7 +467,8 @@ local function Shared(self, unit)
 			self.VengeanceBar = CreateFrame("Frame", self:GetName().."_VengeanceBar", self)
 			self.VengeanceBar:CreateBackdrop("Default")
 			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
-			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true) then
+			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
+			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
 				self.VengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
 			else
 				self.VengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
