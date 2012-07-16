@@ -39,7 +39,7 @@ T.DebuffWhiteList = {
 	-- Mage
 	[SpellName(31661)] = true,	-- Dragon's Breath
 	[SpellName(61305)] = true,	-- Polymorph
-	--MOP[SpellName(18469)] = true,	-- Silenced - Improved Counterspell
+	[SpellName(55021)] = true,	-- Silenced - Improved Counterspell
 	[SpellName(122)] = true,	-- Frost Nova
 	--MOP[SpellName(55080)] = true,	-- Shattered Barrier
 	-- Paladin
