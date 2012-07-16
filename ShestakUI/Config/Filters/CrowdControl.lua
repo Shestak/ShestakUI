@@ -76,10 +76,9 @@ T.ArenaControl = function()
 		--MOP[GetSpellInfo(85388)] = 3,	-- Throwdown
 
 		-- Silences
-		--MOP[GetSpellInfo(18469)] = 1,	-- Improved Counterspell
+		[GetSpellInfo(55021)] = 1,	-- Improved Counterspell
 		[GetSpellInfo(15487)] = 1,	-- Silence
 		[GetSpellInfo(34490)] = 1,	-- Silencing Shot
-		--MOP[GetSpellInfo(18425)] = 1,	-- Improved Kick
 		[GetSpellInfo(47476)] = 1,	-- Strangulate
 		[GetSpellInfo(108194)] = 1,	-- Asphyxiate
 		[GetSpellInfo(81261)] = 1,	-- Solar Beam

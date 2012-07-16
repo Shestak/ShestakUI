@@ -2781,8 +2781,6 @@ Filger_Spells = {
 			{spellID = 6770, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Garrote - Silence
 			{spellID = 1330, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Silenced - Improved Kick
-			--MOP{spellID = 18425, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cheap Shot
 			{spellID = 1833, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Kidney Shot
@@ -3079,8 +3077,6 @@ Filger_Spells = {
 			{spellID = 15487, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Garrote - Silence (Rogue)
 			{spellID = 1330, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Silenced - Improved Kick (Rogue)
-			--MOP{spellID = 18425, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Spell Lock (Felhunter) (Warlock)
 			{spellID = 24259, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silenced (Gag Order) (War)
