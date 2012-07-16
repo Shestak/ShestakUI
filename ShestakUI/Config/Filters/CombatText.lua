@@ -25,9 +25,8 @@ if T.class == "WARLOCK" then
 		T.aoespam[87389] = true		-- Corruption (Soulburn: Seed of Corruption)
 		T.aoespam[30108] = true		-- Unstable Affliction
 		T.aoespam[348] = true		-- Immolate
-		T.aoespam[980] = true		-- Bane of Agony
+		T.aoespam[980] = true		-- Agony
 		T.aoespam[85455] = true		-- Bane of Havoc
-		T.aoespam[85421] = true		-- Burning Embers
 		T.aoespam[104233] = true	-- Rain of Fire
 		T.aoespam[5857] = true		-- Hellfire Effect
 		T.aoespam[47897] = true		-- Shadowflame (Shadow direct damage)
@@ -38,8 +37,6 @@ if T.class == "WARLOCK" then
 		T.aoespam[20153] = true		-- Immolation (Infrenal)
 	end
 	if C.combattext.healing then
-		T.healfilter[28176] = true	-- Fel Armor
-		T.healfilter[96379] = true	-- Fel Armor
 		T.healfilter[63106] = true	-- Siphon Life
 		T.healfilter[54181] = true	-- Fel Synergy
 		T.healfilter[89653] = true	-- Drain Life

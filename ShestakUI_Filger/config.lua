@@ -1813,7 +1813,7 @@ Filger_Spells = {
 			{spellID = 172, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Immolate
 			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Bane of Agony
+			-- Agony
 			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Bane of Doom
 			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
