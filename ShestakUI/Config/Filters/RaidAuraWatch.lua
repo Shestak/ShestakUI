@@ -325,7 +325,7 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Mage
 			SpellName(31661),	-- Dragon's Breath
 			SpellName(61305),	-- Polymorph
-			--MOPSpellName(18469),	-- Improved Counterspell
+			SpellName(55021),	-- Improved Counterspell
 			SpellName(122),		-- Frost Nova
 			SpellName(55080),	-- Shattered Barrier
 			-- Paladin
@@ -341,7 +341,6 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(2094),	-- Blind
 			SpellName(1776),	-- Gouge
 			SpellName(6770),	-- Sap
-			--MOPSpellName(18425),	-- Improved Kick
 			-- Shaman
 			SpellName(51514),	-- Hex
 			SpellName(3600),	-- Earthbind
