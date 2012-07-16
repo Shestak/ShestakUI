@@ -632,7 +632,6 @@ local function Shared(self, unit)
 			or (T.class == "DRUID" and C.unitframe_class_bar.eclipse == true)
 			or (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			or (T.class == "WARLOCK" and C.unitframe_class_bar.shard == true)
-			or (T.class == "PRIEST" and C.unitframe_class_bar.shadow == true)
 			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			else
