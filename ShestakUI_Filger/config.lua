@@ -806,8 +806,6 @@ Filger_Spells = {
 			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Deadly Calm
 			{spellID = 85730, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Inner Rage
-			--MOP{spellID = 1134, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sweeping Strikes
 			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Victorious
@@ -830,24 +828,14 @@ Filger_Spells = {
 			{spellID = 50227, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ultimatum
 			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thunderstruck
-			--MOP{spellID = 87096, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Taste for Blood
-			--MOP{spellID = 60503, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Battle trance
-			--MOP{spellID = 12964, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Incite
-			--MOP{spellID = 86627, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125831, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
 			{spellID = 12880, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Executioner
-			--MOP{spellID = 90806, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rude Interruption
 			{spellID = 86663, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Slaughter
-			--MOP{spellID = 84586, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -912,12 +900,8 @@ Filger_Spells = {
 			{spellID = 100, filter = "CD"},
 			-- Intervene
 			{spellID = 3411, filter = "CD"},
-			-- Intercept
-			--MOP{spellID = 20252, filter = "CD"},
 			-- Spell Reflection
 			{spellID = 23920, filter = "CD"},
-			-- Concussion Blow
-			--MOP{spellID = 12809, filter = "CD"},
 			-- Shield Block
 			{spellID = 2565, filter = "CD"},
 			-- Enraged Regeneration
@@ -934,8 +918,6 @@ Filger_Spells = {
 			{spellID = 355, filter = "CD"},
 			-- Berserker Rage
 			{spellID = 18499, filter = "CD"},
-			-- Inner Rage
-			--MOP{spellID = 1134, filter = "CD"},
 			-- Heroic Leap
 			{spellID = 6544, filter = "CD"},
 			-- Rallying Cry
@@ -2799,8 +2781,6 @@ Filger_Spells = {
 			{spellID = 6770, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Garrote - Silence
 			{spellID = 1330, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Silenced - Improved Kick
-			--MOP{spellID = 18425, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cheap Shot
 			{spellID = 1833, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Kidney Shot
@@ -2873,10 +2853,6 @@ Filger_Spells = {
 			{spellID = 18498, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Charge Stun
 			{spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Concussion Blow
-			--MOP{spellID = 12809, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Intercept
-			--MOP{spellID = 20253, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Improved Hamstring
@@ -3101,8 +3077,6 @@ Filger_Spells = {
 			{spellID = 15487, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Garrote - Silence (Rogue)
 			{spellID = 1330, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Silenced - Improved Kick (Rogue)
-			--MOP{spellID = 18425, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Spell Lock (Felhunter) (Warlock)
 			{spellID = 24259, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silenced (Gag Order) (War)
@@ -3153,10 +3127,6 @@ Filger_Spells = {
 			--MOP{spellID = 85388, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Charge Stun
 			{spellID = 7922, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Concussion Blow
-			--MOP{spellID = 12809, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Intercept
-			--MOP{spellID = 20253, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Charging Ox Wave

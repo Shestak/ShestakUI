@@ -72,15 +72,13 @@ T.ArenaControl = function()
 		--MOP[GetSpellInfo(83047)] = 3,	-- Improved Polymorph
 		--MOP[GetSpellInfo(93986)] = 3,	-- Aura of Foreboding
 		[GetSpellInfo(30283)] = 3,	-- Shadowfury
-		--MOP[GetSpellInfo(12809)] = 3,	-- Concussion Blow
 		[GetSpellInfo(6544)] = 3,	-- Heroic Leap
 		--MOP[GetSpellInfo(85388)] = 3,	-- Throwdown
 
 		-- Silences
-		--MOP[GetSpellInfo(18469)] = 1,	-- Improved Counterspell
+		[GetSpellInfo(55021)] = 1,	-- Improved Counterspell
 		[GetSpellInfo(15487)] = 1,	-- Silence
 		[GetSpellInfo(34490)] = 1,	-- Silencing Shot
-		--MOP[GetSpellInfo(18425)] = 1,	-- Improved Kick
 		[GetSpellInfo(47476)] = 1,	-- Strangulate
 		[GetSpellInfo(108194)] = 1,	-- Asphyxiate
 		[GetSpellInfo(81261)] = 1,	-- Solar Beam
