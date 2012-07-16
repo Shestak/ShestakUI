@@ -130,8 +130,6 @@ local function UpdateBuffAnchors()
 
 	if ShouldShowConsolidatedBuffFrame() then
 		slack = slack + 1
-		_G["TempEnchant1"]:ClearAllPoints()
-		_G["TempEnchant1"]:Point("RIGHT", ConsolidatedBuffsIcon, "LEFT", -5, 0)
 	end
 
 	for index = 1, BUFF_ACTUAL_DISPLAY do

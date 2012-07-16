@@ -20,15 +20,7 @@ local function LoadSkin()
 	T.SkinEditBox(TimeManagerAlarmMessageEditBox)
 	TimeManagerAlarmMessageEditBox:Height(TimeManagerAlarmMessageEditBox:GetHeight() - 5)
 
-	TimeManagerAlarmEnabledButton:SkinButton(true)
-	TimeManagerAlarmEnabledButton:HookScript("OnClick", function(self)
-		self:SkinButton()
-	end)
-
-	TimeManagerFrame:HookScript("OnShow", function(self)
-		TimeManagerAlarmEnabledButton:SkinButton()
-	end)
-
+	T.SkinCheckBox(TimeManagerAlarmEnabledButton)
 	T.SkinCheckBox(TimeManagerMilitaryTimeCheck)
 	T.SkinCheckBox(TimeManagerLocalTimeCheck)
 
