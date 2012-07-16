@@ -8,7 +8,7 @@ local classcolor = true			-- Classcolored bars
 local skinrange = true			-- Skin distance window
 local disablescaling = true		-- Disables bar scaling (including emphasized bars)
 
-local barcolor = classcolor and (CUSTOM_CLASS_COLORS[T.class] or RAID_CLASS_COLORS[T.class])
+local barcolor = classcolor and (CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[T.class] or RAID_CLASS_COLORS[T.class])
 local buttonsize = 21
 
 -- Init some tables to store backgrounds
