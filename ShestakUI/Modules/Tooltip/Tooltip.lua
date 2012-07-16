@@ -63,7 +63,7 @@ local targetedList = {}
 local ClassColors = {}
 local token
 for class, color in next, RAID_CLASS_COLORS do
-	ClassColors[class] = ("|cff%.2x%.2x%.2x"):format(color.r*255,color.g*255,color.b*255)
+	ClassColors[class] = ("|cff%.2x%.2x%.2x"):format(color.r * 255, color.g * 255, color.b * 255)
 end
 
 local function AddTargetedBy()
@@ -279,7 +279,8 @@ function GameTooltip_UnitColor(unit)
 
 	if UnitIsPlayer(unit) then
 		local _, class = UnitClass(unit)
-		r, g, b = RAID_CLASS_COLORS[class].r, RAID_CLASS_COLORS[class].g, RAID_CLASS_COLORS[class].b
+		local color = CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
+		r, g, b = color.r, color.g, color.b
 	elseif UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit) or UnitIsDead(unit) then
 		r, g, b = 0.6, 0.6, 0.6
 	else

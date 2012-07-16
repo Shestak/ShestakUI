@@ -17,7 +17,7 @@ LTIPICONSIZE = 11							-- Icon sizes in info tips
 -- Player class coloring function for optional use with fmt strings config.
 -- Example use: fmt = class'G:'.." %d"..class'/'.."%d" (colors 'G:' and '/' and numbers retain the default text color)
 -- Example2: fmt = class'%d'.."fps" (colors the fps number and "fps" retains the default text color)
-local ctab = RAID_CLASS_COLORS
+local ctab = CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS
 local function class(string)
 	local color = ctab[select(2,UnitClass'player')]
 	return format("|cff%02x%02x%02x%s|r",color.r*255,color.g*255,color.b*255,string or '')

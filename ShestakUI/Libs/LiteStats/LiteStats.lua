@@ -760,7 +760,7 @@ if ping.enabled then
 		OnEvent = function(self, event, unit)
 			if unit == P and ping.hide_self then return end
 			if (unit == P and self.timer and time() - self.timer > 1) or not self.timer or unit ~= P then
-				local class = RAID_CLASS_COLORS[select(2, UnitClass(unit))]
+				local class = CUSTOM_CLASS_COLORS[select(2, UnitClass(unit))] or RAID_CLASS_COLORS[select(2, UnitClass(unit))]
 				self.text:SetText(format(ping.fmt, UnitName(unit)))
 				self.text:SetTextColor(class.r, class.g, class.b, 1)
 	 			if UIFrameIsFading(self) then UIFrameFlashRemoveFrame(self) end
@@ -880,7 +880,7 @@ if guild.enabled then
 
 				for i = 1, #guildTable do
 					if (guildTable[i][7] and guildTable[i][1] ~= select(1, UnitName("player"))) then
-						local classc, levelc = RAID_CLASS_COLORS[guildTable[i][9]], GetQuestDifficultyColor(guildTable[i][3])
+						local classc, levelc = CUSTOM_CLASS_COLORS[guildTable[i][9]] or RAID_CLASS_COLORS[guildTable[i][9]], GetQuestDifficultyColor(guildTable[i][3])
 						if (UnitInParty(guildTable[i][1]) or UnitInRaid(guildTable[i][1])) then
 							grouped = "|cffaaaaaa*|r"
 						else
@@ -952,7 +952,7 @@ if guild.enabled then
 						name, rank, _, level, _, zone, note, officernote, connected, status, class = GetGuildRosterInfo(i)
 						if connected and level >= guild.threshold then
 							if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
-							classc, levelc = RAID_CLASS_COLORS[class], GetQuestDifficultyColor(level)
+							classc, levelc = CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class], GetQuestDifficultyColor(level)
 							grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
 							if self.altdown then
 								GameTooltip:AddDoubleLine(format("%s%s |cff999999- |cffffffff%s", grouped, name, rank), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
@@ -1078,7 +1078,7 @@ if friends.enabled then
 							menuCountInvites = menuCountInvites + 1
 							menuCountWhispers = menuCountWhispers + 1
 
-							classc, levelc = RAID_CLASS_COLORS[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
+							classc, levelc = CUSTOM_CLASS_COLORS[friendTable[i][3]] or RAID_CLASS_COLORS[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
 							if classc == nil then
 								classc = GetQuestDifficultyColor(friendTable[i][2]) 
 							end
@@ -1129,7 +1129,7 @@ if friends.enabled then
 							end
 
 							if (BNTable[i][6] == "WoW" and playerFaction == BNTable[i][12]) then
-								classc, levelc = RAID_CLASS_COLORS[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
+								classc, levelc = CUSTOM_CLASS_COLORS[BNTable[i][14]] or RAID_CLASS_COLORS[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
 								if classc == nil then
 									classc = GetQuestDifficultyColor(BNTable[i][16])
 								end
@@ -1188,7 +1188,7 @@ if friends.enabled then
 						if GetLocale() ~= "enUS" then -- feminine class localization (unsure if it's really needed)
 							for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 						end
-						classc, levelc = RAID_CLASS_COLORS[class], GetQuestDifficultyColor(level)
+						classc, levelc = CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class], GetQuestDifficultyColor(level)
 						grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
 						GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, level, name, grouped, " "..status), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
 						if self.altdown and note then GameTooltip:AddLine("  "..note, ttsubh.r, ttsubh.g, ttsubh.b, 1) end
@@ -1215,7 +1215,7 @@ if friends.enabled then
 							if GetLocale() ~= "enUS" then -- feminine class localization (unsure if it's really needed)
 								for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 							end
-							classc, levelc = RAID_CLASS_COLORS[class], GetQuestDifficultyColor(level)
+							classc, levelc = CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class], GetQuestDifficultyColor(level)
 							if UnitInParty(toonName) or UnitInRaid(toonName) then grouped = "|cffaaaaaa*|r" else grouped = "" end
 							GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), givenName.." "..surname, 238, 238, 238, 238, 238, 238)
 							if self.altdown then

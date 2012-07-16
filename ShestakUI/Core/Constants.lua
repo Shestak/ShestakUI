@@ -3,7 +3,6 @@
 ----------------------------------------------------------------------------------------
 --	ShestakUI variables
 ----------------------------------------------------------------------------------------
-RAID_CLASS_COLORS.MONK = {r = 0.33, g = 0.54, b = 0.52, colorStr = "FF558A84"}
 T.dummy = function() return end
 T.name = select(1, UnitName("player"))
 T.class = select(2, UnitClass("player"))
@@ -11,7 +10,7 @@ T.race = select(2, UnitRace("player"))
 T.level = UnitLevel("player")
 T.client = GetLocale()
 T.realm = GetRealmName()
-T.color = RAID_CLASS_COLORS[T.class]
+T.color = CUSTOM_CLASS_COLORS[T.class] or RAID_CLASS_COLORS[T.class]
 T.version = GetAddOnMetadata("ShestakUI", "Version")
 T.getscreenheight = tonumber(string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)"))
 T.getscreenwidth = tonumber(string.match(({GetScreenResolutions()})[GetCurrentResolution()], "(%d+)x+%d"))

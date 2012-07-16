@@ -13,7 +13,7 @@ end
 for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do
 	BC[v] = k
 end
-local RAID_CLASS_COLORS = RAID_CLASS_COLORS
+local RAID_CLASS_COLORS = CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS
 local WHITE_HEX = "|cffffffff"
 
 local function Hex(r, g, b)
@@ -90,6 +90,13 @@ local classColorRaw = setmetatable({}, {
 		return c
 	end
 })
+
+if CUSTOM_CLASS_COLORS then
+	CUSTOM_CLASS_COLORS:RegisterCallback(function()
+		wipe(classColorRaw)
+		wipe(classColor)
+	end)
+end
 
 -- WhoList
 hooksecurefunc("WhoList_Update", function()

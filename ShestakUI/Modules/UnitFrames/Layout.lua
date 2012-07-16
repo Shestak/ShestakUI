@@ -298,7 +298,7 @@ local function Shared(self, unit)
 
 			for i = 1, 5 do
 				self.HarmonyBar[i] = CreateFrame("StatusBar", nil, self.HarmonyBar)
-				self.HarmonyBar[i]:Height(7)
+				self.HarmonyBar[i]:SetSize(213 / 5, 7)
 				if i == 1 then
 					self.HarmonyBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
@@ -607,7 +607,7 @@ local function Shared(self, unit)
 					self.Portrait.backdrop:RegisterEvent("PLAYER_TARGET_CHANGED")
 					self.Portrait.backdrop:SetScript("OnEvent", function()
 						local _, class = UnitClass("target")
-						local color = RAID_CLASS_COLORS[class]
+						local color = CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
 						if color then
 							self.Portrait.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
 						else
@@ -1256,7 +1256,7 @@ HorizontalTargetLine:CreatePanel("ClassColor", 228, 1, "TOPRIGHT", "oUF_Target",
 HorizontalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
 HorizontalTargetLine:SetScript("OnEvent", function(self)
 	local _, class = UnitClass("target")
-	local color = RAID_CLASS_COLORS[class]
+	local color = CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
 	if color then
 		self:SetBackdropBorderColor(color.r, color.g, color.b)
 	else
@@ -1269,7 +1269,7 @@ VerticalTargetLine:CreatePanel("ClassColor", 1, 98, "LEFT", HorizontalTargetLine
 VerticalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
 VerticalTargetLine:SetScript("OnEvent", function(self)
 	local _, class = UnitClass("target")
-	local color = RAID_CLASS_COLORS[class]
+	local color = CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
 	if color then
 		self:SetBackdropBorderColor(color.r, color.g, color.b)
 	else

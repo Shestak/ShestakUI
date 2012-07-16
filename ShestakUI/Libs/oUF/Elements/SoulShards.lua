@@ -12,7 +12,7 @@ local SPEC_WARLOCK_DESTRUCTION_GLYPH_EMBERS = 63304
 local SPEC_WARLOCK_AFFLICTION = SPEC_WARLOCK_AFFLICTION
 local SPEC_WARLOCK_AFFLICTION_GLYPH_SHARDS = 63302
 local SPEC_WARLOCK_DEMONOLOGY = SPEC_WARLOCK_DEMONOLOGY
-local LATEST_SPEC = 2
+local LATEST_SPEC = 0
 
 local Update = function(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'BURNING_EMBERS' and powerType ~= 'SOUL_SHARDS' and powerType ~= 'DEMONIC_FURY')) then return end
@@ -62,11 +62,10 @@ local Update = function(self, event, unit, powerType)
 end
 
 local function Visibility(self, event, unit)
-	if event == 'QUEST_LOG_UPDATE' then
-		self:UnregisterEvent('QUEST_LOG_UPDATE', Visibility)
-	end
-
 	local wsb = self.WarlockSpecBars
+	local spacing = select(4, wsb[4]:GetPoint())
+	local w = wsb:GetWidth()
+	local s = 0
 
 	local spec = GetSpecialization()
 	if spec then
@@ -74,72 +73,54 @@ local function Visibility(self, event, unit)
 			wsb:Show()
 		end
 
-		if LATEST_SPEC ~= spec and (spec == SPEC_WARLOCK_DESTRUCTION or spec == SPEC_WARLOCK_AFFLICTION) then
-			wsb.number = 4
-			wsb[1]:SetWidth(wsb[1].W)
+		if LATEST_SPEC ~= spec then
 			for i = 1, 4 do
 				local max = select(2, wsb[i]:GetMinMaxValues())
-				wsb[i]:SetValue(max)
-				wsb[i]:Show()
+				if spec == SPEC_WARLOCK_AFFLICTION then
+					wsb[i]:SetValue(max)
+				else
+					wsb[i]:SetValue(0)
+				end
 			end
 		end
 
 		if spec == SPEC_WARLOCK_DESTRUCTION then
-			local EmbersGlyph = false
+			local maxembers = 3
 
 			for i = 1, GetNumGlyphSockets() do
 				local glyphID = select(4, GetGlyphSocketInfo(i))
-				if glyphID == SPEC_WARLOCK_DESTRUCTION_GLYPH_EMBERS then EmbersGlyph = true end
+				if glyphID == SPEC_WARLOCK_DESTRUCTION_GLYPH_EMBERS then maxembers = 4 end
 			end
 
-			if not EmbersGlyph then
-				local spacing = select(4, wsb[4]:GetPoint())
-				wsb[4]:Hide()
-				local w = wsb:GetWidth()
-				local s = 0
-				for i = 1, 3 do
-					if i ~= 3 then
-						wsb[i]:SetWidth(w / 3 - spacing)
-						s = s + (w / 3)
-					else
-						wsb[i]:SetWidth(w - s)
-					end
-				end
-			else
-				wsb[4]:Show()
-				for i = 1, 4 do
-					wsb[i]:SetWidth(wsb[i].W)
+			for i = 1, maxembers do
+				if i ~= maxembers then
+					wsb[i]:SetWidth(w / maxembers - spacing)
+					s = s + (w / maxembers)
+				else
+					wsb[i]:SetWidth(w - s)
 				end
 			end
+
+			if maxembers == 3 then wsb[4]:Hide() else wsb[4]:Show() end
 		elseif spec == SPEC_WARLOCK_AFFLICTION then
-			local ShardsGlyph = false
+			local maxshards = 3
 
 			for i = 1, GetNumGlyphSockets() do
 				local glyphID = select(4, GetGlyphSocketInfo(i))
-				if glyphID == SPEC_WARLOCK_AFFLICTION_GLYPH_SHARDS then ShardsGlyph = true end
+				if glyphID == SPEC_WARLOCK_AFFLICTION_GLYPH_SHARDS then maxshards = 4 end
 			end
 
-			if not ShardsGlyph then
-				local spacing = select(4, wsb[4]:GetPoint())
-				wsb[4]:Hide()
-				local w = wsb:GetWidth()
-				local s = 0
-				for i = 1, 3 do
-					if i ~= 3 then
-						wsb[i]:SetWidth(w / 3 - spacing)
-						s = s + (w / 3)
-					else
-						wsb[i]:SetWidth(w - s)
-					end
-				end
-			else
-				wsb[4]:Show()
-				for i = 1, 4 do
-					wsb[i]:SetWidth(wsb[i].W)
+			for i = 1, maxshards do
+				if i ~= maxshards then
+					wsb[i]:SetWidth(w / maxshards - spacing)
+					s = s + (w / maxshards)
+				else
+					wsb[i]:SetWidth(w - s)
 				end
 			end
+
+			if maxshards == 3 then wsb[4]:Hide() else wsb[4]:Show() end
 		elseif spec == SPEC_WARLOCK_DEMONOLOGY then
-			wsb.number = 1
 			wsb[2]:Hide()
 			wsb[3]:Hide()
 			wsb[4]:Hide()
@@ -170,16 +151,12 @@ local function Enable(self)
 
 		self:RegisterEvent('UNIT_POWER', Path)
 		self:RegisterEvent('UNIT_DISPLAYPOWER', Path)
-		self:RegisterEvent('PLAYER_TALENT_UPDATE', Visibility)
 
-		self:RegisterEvent('QUEST_LOG_UPDATE', Visibility)
+		wsb.Visibility = CreateFrame("Frame", nil, wsb)
+		wsb.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
+		wsb.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
 
-		for i = 1, 4 do
-			local Point = wsb[i]
-			Point.W = Point:GetWidth()
-		end
-
-		wsb.number = 4
+		wsb:Hide()
 
 		return true
 	end
@@ -190,7 +167,7 @@ local function Disable(self)
 	if(wsb) then
 		self:UnregisterEvent('UNIT_POWER', Path)
 		self:UnregisterEvent('UNIT_DISPLAYPOWER', Path)
-		self:UnregisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+		wsb.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
 	end
 end
 

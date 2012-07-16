@@ -95,8 +95,9 @@ for i, unit in pairs(units) do
 	unit.Level:SetFontObject(SystemFont_Large)
 	unit.Level:ClearAllPoints()
 	unit.Level:Point("BOTTOMLEFT", unit.Icon, "BOTTOMLEFT", 2, 2)
-end
 
+	unit.BorderFlash:Kill()
+end
 
 -- Pets speed indicator update
 hooksecurefunc("PetBattleFrame_UpdateSpeedIndicators", function(self)
@@ -129,22 +130,14 @@ end)
 hooksecurefunc("PetBattleAuraHolder_Update", function(self)
 	if not self.petOwner or not self.petIndex then return end
 
-	-- Skin buffs and debuffs
+	local nextFrame = 1
 	for i = 1, C_PetBattles.GetNumAuras(self.petOwner, self.petIndex) do
-		local frame = self.frames[i]
-		if frame then
-			local isBuff = select(4, C_PetBattles.GetAuraInfo(self.petOwner, self.petIndex, i))
-
-			-- Auras are stretched, fix it
-			frame:Width(frame:GetHeight())
+		local auraID, instanceID, turnsRemaining, isBuff = C_PetBattles.GetAuraInfo(self.petOwner, self.petIndex, i)
+		if (isBuff and self.displayBuffs) or (not isBuff and self.displayDebuffs) then
+			local frame = self.frames[nextFrame]
 
 			-- Always hide the border
 			frame.DebuffBorder:Hide()
-
-			-- Move duration inside
-			frame.Duration:SetFont(C.media.normal_font, 10, "OUTLINE")
-			frame.Duration:ClearAllPoints()
-			frame.Duration:SetPoint("TOP", frame, "TOP", 1, -8)
 
 			if not frame.isSkinned then
 				frame:CreateBackdrop()
@@ -161,6 +154,16 @@ hooksecurefunc("PetBattleAuraHolder_Update", function(self)
 			else
 				frame.backdrop:SetBackdropBorderColor(1, 0, 0)
 			end
+
+			if turnsRemaining > 0 then
+				frame.Duration:SetText(turnsRemaining)
+			end
+
+			frame.Duration:SetFont(C.media.normal_font, 10, "OUTLINE")
+			frame.Duration:ClearAllPoints()
+			frame.Duration:SetPoint("CENTER", frame.Icon, "CENTER", 1, 0)
+
+			nextFrame = nextFrame + 1
 		end
 	end
 end)
@@ -222,45 +225,45 @@ hooksecurefunc("PetBattleWeatherFrame_Update", function(self)
 end)
 
 -- Frames to hide while going into Pet Battle UI
-local FramesToHide = {Bar1Holder, Bar2Holder, Bar3Holder, Bar4Holder, Bar5Holder, WatchFrameAnchor, MinimapAnchor, oUF_Player, oUF_Target, oUF_Pet, oUF_Focus}
+local AlphaThem = {oUF_Player, Bar1Holder, Bar2Holder, Bar3Holder, Bar4Holder, Bar5Holder}
+local DisableThem = {oUF_Player, oUF_Target, oUF_Pet, oUF_Focus}
+local HideThem = {MinimapAnchor}
 
 local bar = CreateFrame("Frame", "PetBattleBarHolder", UIParent)
 bar:SetSize((C.actionbar.button_size * 6) + (C.actionbar.button_space * 5), C.actionbar.button_size)
 bar:EnableMouse(true)
 bar:SetFrameStrata("HIGH")
 bar:SetPoint(unpack(C.position.bottom_bars))
-bar:RegisterEvent("PET_BATTLE_OPENING_START")
+bar:RegisterEvent("PET_BATTLE_OPENING_DONE")
 bar:RegisterEvent("PET_BATTLE_CLOSE")
 bar:Hide()
 bar:SetScript("OnEvent", function(self, event)
-	if event == "PET_BATTLE_OPENING_START" then
-		if InCombatLockdown() then return end
-
-		for _, frame in pairs(FramesToHide) do
-			if frame then
-				if frame.Enable then frame:Disable() end
-				if frame:GetName():match("Bar") then
-					frame:SetAlpha(0)
-				else
-					frame:Hide()
-				end
-			end
+	if event == "PET_BATTLE_OPENING_DONE" then
+		for i, frame in pairs(DisableThem) do
+			if frame then frame:Disable() end
 		end
-		
+		for i, frame in pairs(HideThem) do
+			if frame then frame:Hide() end
+		end
 		self:Show()
 	else
-		for _, frame in pairs(FramesToHide) do
-			if frame then
-				if frame.Disable then frame:Enable() end
-				if frame:GetName():match("Bar") then
-					frame:SetAlpha(1)
-				else
-					frame:Show()
-				end
-			end
+		for i, frame in pairs(DisableThem) do
+			if frame then frame:Enable() end
 		end
-		
+		for i, frame in pairs(HideThem) do
+			if frame then frame:Show() end
+		end
 		self:Hide()
+	end
+end)
+f:SetScript("OnShow", function(self)
+	for i, frame in pairs(AlphaThem) do
+		if frame then frame:SetAlpha(0) end
+	end
+end)
+f:SetScript("OnHide", function(self)
+	for i, frame in pairs(AlphaThem) do
+		if frame then frame:SetAlpha(1) end
 	end
 end)
 
@@ -285,7 +288,7 @@ bf.TurnTimer.TimerText:SetPoint("CENTER")
 bf.MicroButtonFrame:StripTextures()
 bf.MicroButtonFrame:Hide()
 bf.Delimiter:StripTextures()
-bf.FlowFrame:StripTextures()
+bf.FlowFrame:Kill()
 
 bf.xpBar:SetParent(bar)
 bf.xpBar:Width(bar:GetWidth() - 4)

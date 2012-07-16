@@ -7,7 +7,7 @@ if C.aura.cast_by ~= true then return end
 local a, b, d = _G.GameTooltip.SetUnitAura, _G.GameTooltip.SetUnitBuff, _G.GameTooltip.SetUnitDebuff
 local un, uc, uvsi, ua, uip, upc, sub = _G.UnitName, _G.UnitClass, _G.UnitVehicleSeatInfo, _G.UnitAura, _G.UnitIsPlayer, _G.UnitPlayerControlled, _G.string.sub
 local co = setmetatable({}, {__index = function(t, cl)
-	local c = RAID_CLASS_COLORS[cl]
+	local c = CUSTOM_CLASS_COLORS[cl] or RAID_CLASS_COLORS[cl]
 	if c then
 		t[cl] = ("ff%02x%02x%02x"):format(c.r * 255, c.g * 255, c.b * 255)
 	else

@@ -111,7 +111,7 @@ local UpdateBars = function()
 			end
 		end
 		bar[i]:SetValue(100 * cur.pct / max.pct)
-		local color = RAID_CLASS_COLORS[cur.class]
+		local color = CUSTOM_CLASS_COLORS[cur.class] or RAID_CLASS_COLORS[cur.class]
 		bar[i]:SetStatusBarColor(color.r, color.g, color.b)
 		bar[i].bg:SetVertexColor(color.r, color.g, color.b, 0.25)
 		bar[i].left:SetText(cur.name)
