@@ -4,7 +4,7 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Setup Stance Bar by Tukz
 ----------------------------------------------------------------------------------------
-local ShiftHolder = CreateFrame("Frame", "ShiftBar", UIParent)
+local ShiftHolder = CreateFrame("Frame", "ShiftHolder", UIParent)
 if C.actionbar.shapeshift_horizontal == true then
 	ShiftHolder:Point(unpack(C.position.stance_bar))
 	ShiftHolder:Width((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
