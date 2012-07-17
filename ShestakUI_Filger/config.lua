@@ -16,6 +16,203 @@ Filger_Settings = {
 }
 
 Filger_Spells = {
+	["DEATHKNIGHT"] = {
+		{
+			Name = "P_BUFF_ICON",
+			Direction = "LEFT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 37,
+			Position = {unpack(Filger_Settings.player_buff_icon)},
+
+			-- Self
+			-- Bone Shield
+			{spellID = 49222, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vampiric Blood
+			{spellID = 55233, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Icebound Fortitude
+			{spellID = 48792, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Anti-Magic Shell
+			{spellID = 48707, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dancing Rune Weapon
+			{spellID = 49028, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lichborne
+			{spellID = 49039, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Pillar of Frost
+			{spellID = 51271, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Death's Advance
+			{spellID = 96268, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unholy Blight
+			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
+		},
+		{
+			Name = "P_PROC_ICON",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 37,
+			Position = {unpack(Filger_Settings.player_proc_icon)},
+
+			-- Buffs
+			-- Blood Charge -- Experimental
+			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Freezing Fog
+			{spellID = 59052, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Killing Machine
+			{spellID = 51124, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sudden Doom
+			{spellID = 81340, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Crimson Scourge
+			--MOP{spellID = 81141, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unholy Strength
+			{spellID = 53365, unitID = "player", caster = "player", filter = "BUFF"},
+
+			-- Trinkets
+			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tank
+			-- Physical Strength DPS
+			-- PvP Trinkets (Strength, Use)
+			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Strength, Proc)
+			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
+
+			-- Enchants
+			-- General
+			-- Tank
+			-- Flowing River (Dodge)
+			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Physical General
+			-- Swordguard Embroidery (AP)
+			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Physical Melee
+		},
+		{
+			Name = "T_DE/BUFF_BAR",
+			Direction = "UP",
+			IconSide = "LEFT",
+			Mode = "BAR",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 25,
+			BarWidth = 186,
+			Position = {unpack(Filger_Settings.target_bar)},
+
+			-- Blood Plague
+			{spellID = 59879, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frost Fever
+			{spellID = 59921, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Unholy Blight
+			--MOP{spellID = 49194, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Summon Gargoyle
+			{spellID = 49206, unitID = "target", caster = "player", filter = "DEBUFF"},
+		},
+		{
+			Name = "COOLDOWN",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 30,
+			Position = {unpack(Filger_Settings.cooldown)},
+
+			-- Self
+			-- Strangulate
+			{spellID = 47476, filter = "CD"},
+			-- Mind Freeze
+			{spellID = 47528, filter = "CD"},
+			-- Death Grip
+			{spellID = 49576, filter = "CD"},
+			-- Anti-Magic Shell
+			{spellID = 48707, filter = "CD"},
+			-- Blood Tap
+			{spellID = 45529, filter = "CD"},
+			-- Death Pact
+			{spellID = 48743, filter = "CD"},
+			-- Icebound Fortitude
+			{spellID = 48792, filter = "CD"},
+			-- Death and Decay
+			{spellID = 43265, filter = "CD"},
+			-- Raise Dead
+			{spellID = 46584, filter = "CD"},
+			-- Summon Gargoyle
+			{spellID = 49206, filter = "CD"},
+			-- Gnaw
+			{spellID = 47481, filter = "CD"},
+			-- Rune Tap
+			{spellID = 48982, filter = "CD"},
+			-- Vampiric Blood
+			{spellID = 55233, filter = "CD"},
+			-- Lichborne
+			{spellID = 49039, filter = "CD"},
+			-- Dancing Rune Weapon
+			{spellID = 49028, filter = "CD"},
+			-- Pillar of Frost
+			{spellID = 51271, filter = "CD"},
+			-- Hungering Cold
+			--MOP{spellID = 49203, filter = "CD"},
+			-- Unholy Frenzy
+			{spellID = 49016, filter = "CD"},
+			-- Anti-Magic Zone
+			{spellID = 51052, filter = "CD"},
+			-- Outbreak
+			{spellID = 77575, filter = "CD"},
+			-- Death's Advance
+			{spellID = 96268, filter = "CD"},
+			-- Plague Leech
+			{spellID = 123693, filter = "CD"},
+			-- Unholy Blight
+			{spellID = 115989, filter = "CD"},
+
+			-- Racials
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Shadowmeld (Night Elf)
+			{spellID = 58984, filter = "CD"},
+			-- Escape Artist (Gnome)
+			{spellID = 20589, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- Darkflight (Worgen)
+			{spellID = 68992, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
+
+			-- Other
+			-- Gloves
+			{slotID = 10, filter = "CD"},
+			-- Belt
+			{slotID = 6, filter = "CD"},
+			-- Back
+			{slotID = 15, filter = "CD"},
+			-- Trinkets
+			{slotID = 13, filter = "CD"},
+			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Find Weakness (Creche of the Final Dragon)
+			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+		},
+	},
 	["DRUID"] = {
 		{
 			Name = "P_BUFF_ICON",
@@ -155,8 +352,6 @@ Filger_Spells = {
 			{spellID = 770, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Entangling Roots
 			{spellID = 339, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Hibernate
-			{spellID = 2637, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 1822, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rip
@@ -171,7 +366,7 @@ Filger_Spells = {
 			{spellID = 99, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Skull Bash (Bear Form)
 			{spellID = 80964, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Feral Charge Effect
+			-- Immobilized
 			{spellID = 45334, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Infected Wounds
 			{spellID = 58180, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -254,7 +449,7 @@ Filger_Spells = {
 			{spellID = 16979, filter = "CD", absID = true},
 			-- Feral Charge - Cat
 			{spellID = 49376, filter = "CD", absID = true},
-			-- Bash
+			-- Mighty Bash
 			{spellID = 5211, filter = "CD"},
 			-- Maim
 			{spellID = 22570, filter = "CD"},
@@ -312,14 +507,18 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Self
-			-- Spirit Mend
-			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Deterrence
 			{spellID = 19263, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Fire
+			{spellID = 3045, unitID = "player", caster = "player", filter = "BUFF"},
+			-- The Beast Within
+			{spellID = 34471, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focus Fire
+			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit Mend
+			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Other
-			-- Burning Adrenaline (T12 x4)
-			{spellID = 99060, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -333,22 +532,16 @@ Filger_Spells = {
 			-- Buffs
 			-- Ready, Set, Aim...
 			{spellID = 82925, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lock and Load
-			{spellID = 56453, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rapid Fire
-			{spellID = 3045, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Call of the Wild
-			--MOP{spellID = 53434, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Improved Steady Shot
-			{spellID = 53220, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fire!
 			{spellID = 82926, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Improved Steady Shot
+			{spellID = 53220, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lock and Load
+			{spellID = 56453, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frenzy
+			{spellID = 19623, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mend Pet
 			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
-			-- Cobra Strikes
-			{spellID = 53257, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Focus Fire
-			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Weapons
 			-- Physical Agility
@@ -385,16 +578,14 @@ Filger_Spells = {
 
 			-- Hunter's Mark
 			{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Marked for Death
-			--MOP{spellID = 88691, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Piercing Shots
-			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 1978, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Black Arrow
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Piercing Shots
+			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
@@ -408,17 +599,15 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.target_bar)},
 
 			-- Hunter's Mark
-			{spellID = 1130, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Marked for Death
-			--MOP{spellID = 88691, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Piercing shots
-			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 1978, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Black Arrow
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Piercing Shots
+			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},]]
 		{
 			Name = "PVE/PVP_CC",
@@ -460,6 +649,8 @@ Filger_Spells = {
 			{spellID = 34026, filter = "CD"},
 			-- Feign Death
 			{spellID = 28728, filter = "CD"},
+			-- Scatter Shot
+			{spellID = 19503, filter = "CD"},
 			-- Snake Trap
 			{spellID = 34600, filter = "CD"},
 			-- Explosive Trap
@@ -778,7 +969,7 @@ Filger_Spells = {
 			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
-	["WARRIOR"] = {
+	["MONK"] = {
 		{
 			Name = "P_BUFF_ICON",
 			Direction = "LEFT",
@@ -788,30 +979,13 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Shield Wall
-			{spellID = 871, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Last Stand
-			{spellID = 12975, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enraged Regeneration
-			{spellID = 55694, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shield Block
-			{spellID = 2565, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spell Reflection
-			{spellID = 23920, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Berserker Rage
-			{spellID = 18499, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Death Wish
-			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Recklesness
-			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Deadly Calm
-			{spellID = 85730, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sweeping Strikes
-			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Victorious
-			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shield Barrier
-			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Self
+			-- Fortifying Brew
+			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Energizing Brew
+			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Touch of Karma
+			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -822,31 +996,29 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
-			-- Bloodsurge
-			{spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sword and Board
-			{spellID = 50227, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ultimatum
-			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Taste for Blood
-			{spellID = 125831, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enrage
-			{spellID = 12880, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Meat Cleaver
-			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rude Interruption
-			{spellID = 86663, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Buffs
+			-- Tiger Power
+			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combo Breaker: Blackout Kick
+			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combo Breaker: Tiger Palm
+			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
-			-- Physical Strength DPS
-			-- PvP Trinkets (Strength, Use)
-			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Strength, Proc)
-			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Physical Agility DPS
+			-- PvP Trinkets (Agility, Use)
+			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Agility, Proc)
+			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster General
+			-- PvP Trinkets (Spell Power, Use)
+			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Spell Power, Proc)
+			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -857,27 +1029,25 @@ Filger_Spells = {
 			-- Swordguard Embroidery (AP)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
+			-- Caster General
+			-- Jade Spirit (Intellect + Spirit)
+			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster Heal
+			-- Darkglow Embroidery (Spirit)
+			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
-		{
-			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
-			Mode = "ICON",
+		--[[{
+			Name = "T_DE/BUFF_BAR",
+			Direction = "UP",
+			IconSide = "LEFT",
+			Mode = "BAR",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
-			Position = {unpack(Filger_Settings.target_debuff_icon)},
+			IconSize = 25,
+			BarWidth = 186,
+			Position = {unpack(Filger_Settings.target_bar)},
 
-			-- Colossus Smash
-			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Hamstring
-			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Weakened Armor
-			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Demoralizing Shout
-			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Weakened Blows
-			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF"},
-		},
+		},]]
 		{
 			Name = "COOLDOWN",
 			Direction = "RIGHT",
@@ -888,46 +1058,20 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
-			-- Pummel
-			{spellID = 6552, filter = "CD"},
-			-- Shield Slam
-			{spellID = 23922, filter = "CD"},
-			-- Shockwave
-			{spellID = 46968, filter = "CD"},
-			-- Thunder Clap
-			{spellID = 6343, filter = "CD"},
-			-- Charge
-			{spellID = 100, filter = "CD"},
-			-- Intervene
-			{spellID = 3411, filter = "CD"},
-			-- Spell Reflection
-			{spellID = 23920, filter = "CD"},
-			-- Shield Block
-			{spellID = 2565, filter = "CD"},
-			-- Enraged Regeneration
-			{spellID = 55694, filter = "CD"},
-			-- Colossus Smash
-			{spellID = 86346, filter = "CD"},
-			-- Commanding Shout
-			{spellID = 469, filter = "CD"},
-			-- Raging Blow
-			{spellID = 85288, filter = "CD"},
-			-- Whirlwind
-			{spellID = 1680, filter = "CD"},
-			-- Taunt
-			{spellID = 355, filter = "CD"},
-			-- Berserker Rage
-			{spellID = 18499, filter = "CD"},
-			-- Heroic Leap
-			{spellID = 6544, filter = "CD"},
-			-- Rallying Cry
-			{spellID = 97462, filter = "CD"},
-			-- Disarm
-			{spellID = 676, filter = "CD"},
-			-- Demoralizing Shout
-			{spellID = 1160, filter = "CD"},
-			-- Throwdown
-			--MOP{spellID = 85388, filter = "CD"},
+			-- Paralysis
+			{spellID = 115078, filter = "CD"},
+			-- Fists of Fury
+			{spellID = 113656, filter = "CD"},
+			-- Charging Ox Wave
+			{spellID = 119392, filter = "CD"},
+			-- Dampen Harm
+			{spellID = 122278, filter = "CD"},
+			-- Flying Serpent Kick
+			{spellID = 101545, filter = "CD"},
+			-- Touch of Karma
+			{spellID = 125174, filter = "CD"},
+			-- Touch of Death
+			{spellID = 115080, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -940,8 +1084,6 @@ Filger_Spells = {
 			{spellID = 20589, filter = "CD"},
 			-- Gift of the Naaru (Draenei)
 			{spellID = 28880, filter = "CD"},
-			-- Darkflight (Worgen)
-			{spellID = 68992, filter = "CD"},
 			-- Blood Fury (Orc)
 			{spellID = 20572, filter = "CD"},
 			-- Will of the Forsaken (Forsaken)
@@ -954,236 +1096,7 @@ Filger_Spells = {
 			{spellID = 26297, filter = "CD"},
 			-- Arcane Torrent (Blood Elf)
 			{spellID = 69179, filter = "CD"},
-			-- Rocket Jump (Goblin)
-			{spellID = 69070, filter = "CD"},
-
-			-- Other
-			-- Gloves
-			{ slotID = 10, filter = "CD"},
-			-- Belt
-			{ slotID = 6, filter = "CD"},
-			-- Back
-			{ slotID = 15, filter = "CD"},
-			-- Trinkets
-			{ slotID = 13, filter = "CD"},
-			{ slotID = 14, filter = "CD"},
-
-			-- Internal
-			-- Find Weakness (Creche of the Final Dragon)
-			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
-		},
-	},
-	["SHAMAN"] = {
-		{
-			Name = "P_BUFF_ICON",
-			Direction = "LEFT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 37,
-			Position = {unpack(Filger_Settings.player_buff_icon)},
-
-			-- Maelstorm Weapon
-			{spellID = 53817, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shamanistic rage
-			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lightning Shield
-			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Elemental mastery
-			--MOP{spellID = 64701, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spiritwalker's grace
-			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unleash Flame
-			{spellID = 73683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unleash Life
-			{spellID = 73685, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Focused Insight
-			--MOP{spellID = 77800, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nature Guardian
-			{spellID = 31616, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stone Bulwark
-			{spellID = 114893, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ancestral Guidance
-			{spellID = 108281, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Astral Shift
-			{spellID = 108271, unitID = "player", caster = "player", filter = "BUFF"},
-		},
-		{
-			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 37,
-			Position = {unpack(Filger_Settings.player_proc_icon)},
-
-			-- Buffs
-			-- Clearcasting
-			{spellID = 16246, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lava Surge
-			{spellID = 77762, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tidal Waves
-			--MOP{spellID = 51562, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lava flows
-			--MOP{spellID = 65264, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Weapons
-			-- Caster General
-
-			-- Trinkets
-			-- General
-			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Agility DPS
-			-- PvP Trinkets (Agility, Use)
-			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Proc)
-			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster General
-			-- PvP Trinkets (Spell Power, Use)
-			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Proc)
-			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS
-			-- Caster Heal
-
-			-- Enchants
-			-- General
-			-- Physical General
-			-- Swordguard Embroidery (AP)
-			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Melee
-			-- Caster General
-			-- Lightweave Embroidery (Intellect)
-			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster Heal
-			-- Darkglow Embroidery (Spirit)
-			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
-		},
-		{
-			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 37,
-			Position = {unpack(Filger_Settings.target_debuff_icon)},
-
-			-- Storm Strike
-			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Frost Shock
-			{spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Flame Shock
-			{spellID = 8050, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Searing Flames
-			{spellID = 77661, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Earthgrab
-			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Bind Elemental
-			{spellID = 76780, unitID = "target", caster = "player", filter = "DEBUFF"},
-		},
-		{
-			Name = "T_DE/BUFF_BAR",
-			Direction = "UP",
-			IconSide = "LEFT",
-			Mode = "BAR",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 186,
-			Position = {unpack(Filger_Settings.target_bar)},
-
-			-- Earth Shield
-			{spellID = 974, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Riptide
-			{spellID = 61295, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Ancestral Fortitude
-			--MOP{spellID = 16236, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Earthliving
-			{spellID = 51945, unitID = "target", caster = "player", filter = "BUFF"},
-		},
-		{
-			Name = "PVE/PVP_CC",
-			Direction = "DOWN",
-			IconSide = "LEFT",
-			Mode = "BAR",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 189,
-			Position = {unpack(Filger_Settings.pve_cc)},
-
-			-- Hex
-			{spellID = 51514, unitID = "focus", caster = "player", filter = "DEBUFF"},
-			-- Bind elemental 
-			{spellID = 76780, unitID = "focus", caster = "player", filter = "DEBUFF"},
-		},
-		{
-			Name = "COOLDOWN",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 30,
-			Position = {unpack(Filger_Settings.cooldown)},
-
-			-- Self
-			-- Earth Shock
-			{spellID = 8042, filter = "CD"},
-			-- Riptide
-			{spellID = 61295, filter = "CD"},
-			-- Thunderstorm
-			{spellID = 51490, filter = "CD"},
-			-- Lava Burst
-			{spellID = 51505, filter = "CD"},
-			-- Lava Lash
-			{spellID = 60103, filter = "CD"},
-			-- Wind Shear
-			{spellID = 57994, filter = "CD"},
-			-- Earthbind Totem
-			{spellID = 2484, filter = "CD"},
-			-- Tremor totem
-			{spellID = 8143, filter = "CD"},
-			-- Feral Spirit
-			{spellID = 51533, filter = "CD"},
-			-- Shamanistic Rage
-			{spellID = 30823, filter = "CD"},
-			-- Stormstrike
-			{spellID = 17364, filter = "CD"},
-			-- Spiritwalker's grace
-			{spellID = 79206, filter = "CD"},
-			-- Healing rain
-			{spellID = 73920, filter = "CD"},
-			-- Unleash weapon
-			{spellID = 73680, filter = "CD"},
-			-- Stone Bulwark Totem
-			{spellID = 108270, filter = "CD"},
-			-- Ancestral Swiftness
-			{spellID = 16188, filter = "CD"},
-			-- Ancestral Guidance
-			{spellID = 108281, filter = "CD"},
-			-- Astral Shift
-			{spellID = 108271, filter = "CD"},
-
-			-- Racials
-			-- Stoneform (Dwarf)
-			{spellID = 20594, filter = "CD"},
-			-- Gift of the Naaru (Draenei)
-			{spellID = 28880, filter = "CD"},
-			-- Blood Fury (Orc)
-			{spellID = 20572, filter = "CD"},
-			-- War Stomp (Tauren)
-			{spellID = 20549, filter = "CD"},
-			-- Berserking (Troll)
-			{spellID = 26297, filter = "CD"},
-			-- Rocket Jump (Goblin)
-			{spellID = 69070, filter = "CD"},
-
+			
 			-- Other
 			-- Gloves
 			{slotID = 10, filter = "CD"},
@@ -1196,12 +1109,6 @@ Filger_Spells = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
-			-- Power Torrent
-			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["PALADIN"] = {
@@ -1323,7 +1230,7 @@ Filger_Spells = {
 			{spellID = 20170, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Denounce
 			{spellID = 2812, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Dazed - Avenger's Shield
+			-- Avenger's Shield with Glyph
 			{spellID = 63529, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Burden of Guilt
 			{spellID = 110300, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1656,271 +1563,6 @@ Filger_Spells = {
 			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
-	["WARLOCK"] = {
-		{
-			Name = "P_BUFF_ICON",
-			Direction = "LEFT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 37,
-			Position = {unpack(Filger_Settings.player_buff_icon)},
-
-			-- Self
-			-- Burning Soul
-			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Succub
-			--MOP{spellID = 79463, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Imp
-			--MOP{spellID = 79459, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Void
-			--MOP{spellID = 79464, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Fel Hunter
-			--MOP{spellID = 79460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Fel Guard
-			--MOP{spellID = 79462, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Ward
-			{spellID = 6229, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Soul Swap
-			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
-		},
-		{
-			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 37,
-			Position = {unpack(Filger_Settings.player_proc_icon)},
-
-			-- Buffs
-			-- Molten Core
-			--MOP{spellID = 47383, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Decimation
-			--MOP{spellID = 63158, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Backdraft
-			--MOP{spellID = 54277, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Backlash
-			--MOP{spellID = 34939, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nether Protection
-			--MOP{spellID = 30301, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nightfall
-			--MOP{spellID = 18095, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Eradication
-			--MOP{spellID = 47195, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Improved Soul Fire
-			--MOP{spellID = 85383, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Empowered Imp
-			--MOP{spellID = 47283, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fel Spark
-			{spellID = 89937, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demonic Rebirth
-			--MOP{spellID = 88447, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Trance
-			{spellID = 17941, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Weapons
-			-- Caster General
-
-			-- Trinkets
-			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster General
-			-- PvP Trinkets (Spell Power, Use)
-			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Proc)
-			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS
-
-			-- Enchants
-			-- General
-			-- Caster General
-			-- Lightweave Embroidery (Intellect)
-			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
-		},
-		{
-			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 37,
-			Position = {unpack(Filger_Settings.target_debuff_icon)},
-
-			-- Self
-			-- Shadow Embrace
-			--MOP{spellID = 32389, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Curse of Tongues
-			--MOP{spellID = 1714, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of Exhaustion
-			{spellID = 18223, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of Weakness
-			--MOP{spellID = 702, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Death Coil
-			{spellID = 6789, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Enslave Demon
-			{spellID = 1098, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Shadowsnare
-			{spellID = 63311, unitID = "target", caster = "player", filter = "DEBUFF"},
-
-			-- Other
-			-- Curse of the Elements (Warlock)
-			{spellID = 1490, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of the Elements: Jinx (Warlock)
-			--MOP{spellID = 86105, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Earth and Moon (Moonkin)
-			--MOP{spellID = 48506, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Ebon Plaguebringer (DK)
-			--MOP{spellID = 65142, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Master poisoner (Rogue)
-			{spellID = 93068, unitID = "target", caster = "all", filter = "DEBUFF"},
-		},
-		{
-			Name = "T_DE/BUFF_BAR",
-			Direction = "UP",
-			IconSide = "LEFT",
-			Mode = "BAR",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 186,
-			Position = {unpack(Filger_Settings.target_bar)},
-
-			-- Corruption
-			{spellID = 172, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Immolate
-			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Agony
-			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Bane of Doom
-			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Unstable Affliction
-			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Haunt
-			{spellID = 48181, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Seed of Corruption
-			{spellID = 27243, unitID = "target", caster = "player", filter = "DEBUFF"},
-		},
-		{
-			Name = "PVE/PVP_CC",
-			Direction = "DOWN",
-			IconSide = "LEFT",
-			Mode = "BAR",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 189,
-			Position = {unpack(Filger_Settings.pve_cc)},
-
-			-- Fear
-			{spellID = 5782, unitID = "focus", caster = "player", filter = "DEBUFF"},
-			-- Banish
-			{spellID = 710, unitID = "focus", caster = "player", filter = "DEBUFF"},
-		},
-		{
-			Name = "COOLDOWN",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 30,
-			Position = {unpack(Filger_Settings.cooldown)},
-
-			-- Self
-			-- Conflagrate
-			{spellID = 17962, filter = "CD"},
-			-- Ritual of Summoning
-			{spellID = 698, filter = "CD"},
-			-- Shadow Ward
-			{spellID = 6229, filter = "CD"},
-			-- Demonic Empowerment
-			--MOP{spellID = 47193, filter = "CD"},
-			-- Demon Leap
-			{spellID = 54785, filter = "CD"},
-			-- Soulshatter
-			{spellID = 29858, filter = "CD"},
-			-- Demonic Circle: Teleport
-			{spellID = 48020, filter = "CD"},
-			-- Howl of Terror
-			{spellID = 5484, filter = "CD"},
-			-- Death Coil
-			{spellID = 6789, filter = "CD"},
-			-- Haunt
-			{spellID = 48181, filter = "CD"},
-			-- Shadowburn
-			{spellID = 17877, filter = "CD"},
-			-- Shadowfury
-			{spellID = 30283, filter = "CD"},
-			-- Chaos Bolt
-			--MOP{spellID = 50796, filter = "CD"},
-			-- Shadowflame
-			{spellID = 47897, filter = "CD"},
-			-- Fel Domination
-			--MOP{spellID = 18708, filter = "CD"},
-			-- Sacrifice (Voidwalker)
-			{spellID = 7812, filter = "CD"},
-			-- Suffering (Voidwalker)
-			{spellID = 17735, filter = "CD"},
-			-- Spell Lock (Felhunter)
-			{spellID = 19647, filter = "CD"},
-			-- Devour Magic (Felhunter)
-			{spellID = 19505, filter = "CD"},
-			-- Soul Harvest
-			--MOP{spellID = 79268, filter = "CD"},
-			-- Felstorm
-			{spellID = 89751, filter = "CD"},
-			-- Soulburn
-			{spellID = 74434, filter = "CD"},
-			-- Hand of Gul'dan
-			--MOP{spellID = 71521, filter = "CD"},
-			-- Immolation Aura
-			--MOP{spellID = 50589, filter = "CD"},
-
-			-- Racials
-			-- Every Man for Himself (Human)
-			{spellID = 59752, filter = "CD"},
-			-- Stoneform (Dwarf)
-			{spellID = 20594, filter = "CD"},
-			-- Escape Artist (Gnome)
-			{spellID = 20589, filter = "CD"},
-			-- Darkflight (Worgen)
-			{spellID = 68992, filter = "CD"},
-			-- Blood Fury (Orc)
-			{spellID = 20572, filter = "CD"},
-			-- Will of the Forsaken (Forsaken)
-			{spellID = 7744, filter = "CD"},
-			-- Cannibalize (Forsaken)
-			{spellID = 20577, filter = "CD"},
-			-- Berserking (Troll)
-			{spellID = 26297, filter = "CD"},
-			-- Arcane Torrent (Blood Elf)
-			{spellID = 69179, filter = "CD"},
-			-- Rocket Jump (Goblin)
-			{spellID = 69070, filter = "CD"},
-
-			-- Other
-			-- Gloves
-			{slotID = 10, filter = "CD"},
-			-- Belt
-			{slotID = 6, filter = "CD"},
-			-- Back
-			{slotID = 15, filter = "CD"},
-			-- Trinkets
-			{slotID = 13, filter = "CD"},
-			{slotID = 14, filter = "CD"},
-
-			-- Internal
-			-- Lightweave
-			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
-			-- Power Torrent
-			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
-		},
-	},
 	["ROGUE"] = {
 		{
 			Name = "P_BUFF_ICON",
@@ -2150,7 +1792,7 @@ Filger_Spells = {
 			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
-	["DEATHKNIGHT"] = {
+	["SHAMAN"] = {
 		{
 			Name = "P_BUFF_ICON",
 			Direction = "LEFT",
@@ -2160,25 +1802,30 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Self
-			-- Bone Shield
-			{spellID = 49222, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vampiric Blood
-			{spellID = 55233, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Icebound Fortitude
-			{spellID = 48792, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Anti-Magic Shell
-			{spellID = 48707, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dancing Rune Weapon
-			{spellID = 49028, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lichborne
-			{spellID = 49039, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pillar of Frost
-			{spellID = 51271, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Death's Advance
-			{spellID = 96268, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unholy Blight
-			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Maelstorm Weapon
+			{spellID = 53817, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shamanistic rage
+			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightning Shield
+			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elemental mastery
+			--MOP{spellID = 64701, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spiritwalker's grace
+			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unleash Flame
+			{spellID = 73683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unleash Life
+			{spellID = 73685, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focused Insight
+			--MOP{spellID = 77800, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nature Guardian
+			{spellID = 31616, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stone Bulwark
+			{spellID = 114893, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ancestral Guidance
+			{spellID = 108281, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Astral Shift
+			{spellID = 108271, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2190,18 +1837,513 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
-			-- Blood Charge -- Experimental
-			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Freezing Fog
-			{spellID = 59052, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Killing Machine
-			{spellID = 51124, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sudden Doom
-			{spellID = 81340, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Crimson Scourge
-			--MOP{spellID = 81141, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unholy Strength
-			{spellID = 53365, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Clearcasting
+			{spellID = 16246, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lava Surge
+			{spellID = 77762, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tidal Waves
+			--MOP{spellID = 51562, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lava flows
+			--MOP{spellID = 65264, unitID = "player", caster = "player", filter = "BUFF"},
+
+			-- Weapons
+			-- Caster General
+
+			-- Trinkets
+			-- General
+			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Physical Agility DPS
+			-- PvP Trinkets (Agility, Use)
+			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Agility, Proc)
+			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster General
+			-- PvP Trinkets (Spell Power, Use)
+			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Spell Power, Proc)
+			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS
+			-- Caster Heal
+
+			-- Enchants
+			-- General
+			-- Physical General
+			-- Swordguard Embroidery (AP)
+			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Physical Melee
+			-- Caster General
+			-- Lightweave Embroidery (Intellect)
+			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Spirit (Intellect + Spirit)
+			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster Heal
+			-- Darkglow Embroidery (Spirit)
+			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
+		},
+		{
+			Name = "T_DEBUFF_ICON",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 37,
+			Position = {unpack(Filger_Settings.target_debuff_icon)},
+
+			-- Storm Strike
+			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frost Shock
+			{spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Flame Shock
+			{spellID = 8050, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Searing Flames
+			{spellID = 77661, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Earthgrab
+			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Bind Elemental
+			{spellID = 76780, unitID = "target", caster = "player", filter = "DEBUFF"},
+		},
+		{
+			Name = "T_DE/BUFF_BAR",
+			Direction = "UP",
+			IconSide = "LEFT",
+			Mode = "BAR",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 25,
+			BarWidth = 186,
+			Position = {unpack(Filger_Settings.target_bar)},
+
+			-- Earth Shield
+			{spellID = 974, unitID = "target", caster = "player", filter = "BUFF"},
+			-- Riptide
+			{spellID = 61295, unitID = "target", caster = "player", filter = "BUFF"},
+			-- Ancestral Fortitude
+			--MOP{spellID = 16236, unitID = "target", caster = "player", filter = "BUFF"},
+			-- Earthliving
+			{spellID = 51945, unitID = "target", caster = "player", filter = "BUFF"},
+		},
+		{
+			Name = "PVE/PVP_CC",
+			Direction = "DOWN",
+			IconSide = "LEFT",
+			Mode = "BAR",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 25,
+			BarWidth = 189,
+			Position = {unpack(Filger_Settings.pve_cc)},
+
+			-- Hex
+			{spellID = 51514, unitID = "focus", caster = "player", filter = "DEBUFF"},
+			-- Bind elemental 
+			{spellID = 76780, unitID = "focus", caster = "player", filter = "DEBUFF"},
+		},
+		{
+			Name = "COOLDOWN",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 30,
+			Position = {unpack(Filger_Settings.cooldown)},
+
+			-- Self
+			-- Earth Shock
+			{spellID = 8042, filter = "CD"},
+			-- Riptide
+			{spellID = 61295, filter = "CD"},
+			-- Thunderstorm
+			{spellID = 51490, filter = "CD"},
+			-- Lava Burst
+			{spellID = 51505, filter = "CD"},
+			-- Lava Lash
+			{spellID = 60103, filter = "CD"},
+			-- Wind Shear
+			{spellID = 57994, filter = "CD"},
+			-- Earthbind Totem
+			{spellID = 2484, filter = "CD"},
+			-- Tremor totem
+			{spellID = 8143, filter = "CD"},
+			-- Feral Spirit
+			{spellID = 51533, filter = "CD"},
+			-- Shamanistic Rage
+			{spellID = 30823, filter = "CD"},
+			-- Stormstrike
+			{spellID = 17364, filter = "CD"},
+			-- Spiritwalker's grace
+			{spellID = 79206, filter = "CD"},
+			-- Healing rain
+			{spellID = 73920, filter = "CD"},
+			-- Unleash weapon
+			{spellID = 73680, filter = "CD"},
+			-- Stone Bulwark Totem
+			{spellID = 108270, filter = "CD"},
+			-- Ancestral Swiftness
+			{spellID = 16188, filter = "CD"},
+			-- Ancestral Guidance
+			{spellID = 108281, filter = "CD"},
+			-- Astral Shift
+			{spellID = 108271, filter = "CD"},
+
+			-- Racials
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
+
+			-- Other
+			-- Gloves
+			{slotID = 10, filter = "CD"},
+			-- Belt
+			{slotID = 6, filter = "CD"},
+			-- Back
+			{slotID = 15, filter = "CD"},
+			-- Trinkets
+			{slotID = 13, filter = "CD"},
+			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Lightweave
+			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Power Torrent
+			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+		},
+	},
+	["WARLOCK"] = {
+		{
+			Name = "P_BUFF_ICON",
+			Direction = "LEFT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 37,
+			Position = {unpack(Filger_Settings.player_buff_icon)},
+
+			-- Self
+			-- Burning Soul
+			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Demon Soul Succub
+			--MOP{spellID = 79463, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Demon Soul Imp
+			--MOP{spellID = 79459, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Demon Soul Void
+			--MOP{spellID = 79464, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Demon Soul Fel Hunter
+			--MOP{spellID = 79460, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Demon Soul Fel Guard
+			--MOP{spellID = 79462, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Ward
+			{spellID = 6229, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Soul Swap
+			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
+		},
+		{
+			Name = "P_PROC_ICON",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 37,
+			Position = {unpack(Filger_Settings.player_proc_icon)},
+
+			-- Buffs
+			-- Molten Core
+			--MOP{spellID = 47383, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Decimation
+			--MOP{spellID = 63158, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Backdraft
+			--MOP{spellID = 54277, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Backlash
+			--MOP{spellID = 34939, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nether Protection
+			--MOP{spellID = 30301, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nightfall
+			--MOP{spellID = 18095, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Eradication
+			--MOP{spellID = 47195, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Improved Soul Fire
+			--MOP{spellID = 85383, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Empowered Imp
+			--MOP{spellID = 47283, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fel Spark
+			{spellID = 89937, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Demonic Rebirth
+			--MOP{spellID = 88447, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Trance
+			{spellID = 17941, unitID = "player", caster = "player", filter = "BUFF"},
+
+			-- Weapons
+			-- Caster General
+
+			-- Trinkets
+			-- General
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster General
+			-- PvP Trinkets (Spell Power, Use)
+			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Spell Power, Proc)
+			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS
+
+			-- Enchants
+			-- General
+			-- Caster General
+			-- Lightweave Embroidery (Intellect)
+			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Spirit (Intellect + Spirit)
+			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+		},
+		{
+			Name = "T_DEBUFF_ICON",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 37,
+			Position = {unpack(Filger_Settings.target_debuff_icon)},
+
+			-- Self
+			-- Shadow Embrace
+			--MOP{spellID = 32389, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Curse of Tongues
+			--MOP{spellID = 1714, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Curse of Exhaustion
+			{spellID = 18223, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Curse of Weakness
+			--MOP{spellID = 702, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Death Coil
+			{spellID = 6789, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Enslave Demon
+			{spellID = 1098, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Shadowsnare
+			{spellID = 63311, unitID = "target", caster = "player", filter = "DEBUFF"},
+
+			-- Other
+			-- Curse of the Elements (Warlock)
+			{spellID = 1490, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Curse of the Elements: Jinx (Warlock)
+			--MOP{spellID = 86105, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Earth and Moon (Moonkin)
+			--MOP{spellID = 48506, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Ebon Plaguebringer (DK)
+			--MOP{spellID = 65142, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Master poisoner (Rogue)
+			{spellID = 93068, unitID = "target", caster = "all", filter = "DEBUFF"},
+		},
+		{
+			Name = "T_DE/BUFF_BAR",
+			Direction = "UP",
+			IconSide = "LEFT",
+			Mode = "BAR",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 25,
+			BarWidth = 186,
+			Position = {unpack(Filger_Settings.target_bar)},
+
+			-- Corruption
+			{spellID = 172, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Immolate
+			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Agony
+			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Bane of Doom
+			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Unstable Affliction
+			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Haunt
+			{spellID = 48181, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Seed of Corruption
+			{spellID = 27243, unitID = "target", caster = "player", filter = "DEBUFF"},
+		},
+		{
+			Name = "PVE/PVP_CC",
+			Direction = "DOWN",
+			IconSide = "LEFT",
+			Mode = "BAR",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 25,
+			BarWidth = 189,
+			Position = {unpack(Filger_Settings.pve_cc)},
+
+			-- Fear
+			{spellID = 5782, unitID = "focus", caster = "player", filter = "DEBUFF"},
+			-- Banish
+			{spellID = 710, unitID = "focus", caster = "player", filter = "DEBUFF"},
+		},
+		{
+			Name = "COOLDOWN",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 30,
+			Position = {unpack(Filger_Settings.cooldown)},
+
+			-- Self
+			-- Conflagrate
+			{spellID = 17962, filter = "CD"},
+			-- Ritual of Summoning
+			{spellID = 698, filter = "CD"},
+			-- Shadow Ward
+			{spellID = 6229, filter = "CD"},
+			-- Demonic Empowerment
+			--MOP{spellID = 47193, filter = "CD"},
+			-- Demonic Leap
+			{spellID = 54785, filter = "CD"},
+			-- Soulshatter
+			{spellID = 29858, filter = "CD"},
+			-- Demonic Circle: Teleport
+			{spellID = 48020, filter = "CD"},
+			-- Howl of Terror
+			{spellID = 5484, filter = "CD"},
+			-- Death Coil
+			{spellID = 6789, filter = "CD"},
+			-- Haunt
+			{spellID = 48181, filter = "CD"},
+			-- Shadowburn
+			{spellID = 17877, filter = "CD"},
+			-- Shadowfury
+			{spellID = 30283, filter = "CD"},
+			-- Chaos Bolt
+			--MOP{spellID = 50796, filter = "CD"},
+			-- Shadowflame
+			{spellID = 47897, filter = "CD"},
+			-- Fel Domination
+			--MOP{spellID = 18708, filter = "CD"},
+			-- Sacrifice (Voidwalker)
+			{spellID = 7812, filter = "CD"},
+			-- Suffering (Voidwalker)
+			{spellID = 17735, filter = "CD"},
+			-- Spell Lock (Felhunter)
+			{spellID = 19647, filter = "CD"},
+			-- Devour Magic (Felhunter)
+			{spellID = 19505, filter = "CD"},
+			-- Soul Harvest
+			--MOP{spellID = 79268, filter = "CD"},
+			-- Felstorm
+			{spellID = 89751, filter = "CD"},
+			-- Soulburn
+			{spellID = 74434, filter = "CD"},
+			-- Hand of Gul'dan
+			--MOP{spellID = 71521, filter = "CD"},
+			-- Immolation Aura
+			--MOP{spellID = 50589, filter = "CD"},
+
+			-- Racials
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Escape Artist (Gnome)
+			{spellID = 20589, filter = "CD"},
+			-- Darkflight (Worgen)
+			{spellID = 68992, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
+
+			-- Other
+			-- Gloves
+			{slotID = 10, filter = "CD"},
+			-- Belt
+			{slotID = 6, filter = "CD"},
+			-- Back
+			{slotID = 15, filter = "CD"},
+			-- Trinkets
+			{slotID = 13, filter = "CD"},
+			{slotID = 14, filter = "CD"},
+
+			-- Internal
+			-- Lightweave
+			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Power Torrent
+			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
+			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+		},
+	},
+	["WARRIOR"] = {
+		{
+			Name = "P_BUFF_ICON",
+			Direction = "LEFT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 37,
+			Position = {unpack(Filger_Settings.player_buff_icon)},
+
+			-- Shield Wall
+			{spellID = 871, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Last Stand
+			{spellID = 12975, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Enraged Regeneration
+			{spellID = 55694, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shield Block
+			{spellID = 2565, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spell Reflection
+			{spellID = 23920, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Berserker Rage
+			{spellID = 18499, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Death Wish
+			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Recklesness
+			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Deadly Calm
+			{spellID = 85730, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sweeping Strikes
+			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Victorious
+			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shield Barrier
+			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
+		},
+		{
+			Name = "P_PROC_ICON",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 37,
+			Position = {unpack(Filger_Settings.player_proc_icon)},
+
+			-- Bloodsurge
+			{spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sword and Board
+			{spellID = 50227, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ultimatum
+			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Taste for Blood
+			{spellID = 125831, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Enrage
+			{spellID = 12880, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Meat Cleaver
+			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rude Interruption
+			{spellID = 86663, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -2225,24 +2367,24 @@ Filger_Spells = {
 			-- Physical Melee
 		},
 		{
-			Name = "T_DE/BUFF_BAR",
-			Direction = "UP",
-			IconSide = "LEFT",
-			Mode = "BAR",
+			Name = "T_DEBUFF_ICON",
+			Direction = "RIGHT",
+			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 186,
-			Position = {unpack(Filger_Settings.target_bar)},
+			IconSize = 37,
+			Position = {unpack(Filger_Settings.target_debuff_icon)},
 
-			-- Blood Plague
-			{spellID = 59879, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Frost Fever
-			{spellID = 59921, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Unholy Blight
-			--MOP{spellID = 49194, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Summon Gargoyle
-			{spellID = 49206, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Colossus Smash
+			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Hamstring
+			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Weakened Armor
+			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Demoralizing Shout
+			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Weakened Blows
+			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -2254,52 +2396,46 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
-			-- Strangulate
-			{spellID = 47476, filter = "CD"},
-			-- Mind Freeze
-			{spellID = 47528, filter = "CD"},
-			-- Death Grip
-			{spellID = 49576, filter = "CD"},
-			-- Anti-Magic Shell
-			{spellID = 48707, filter = "CD"},
-			-- Blood Tap
-			{spellID = 45529, filter = "CD"},
-			-- Death Pact
-			{spellID = 48743, filter = "CD"},
-			-- Icebound Fortitude
-			{spellID = 48792, filter = "CD"},
-			-- Death and Decay
-			{spellID = 43265, filter = "CD"},
-			-- Raise Dead
-			{spellID = 46584, filter = "CD"},
-			-- Summon Gargoyle
-			{spellID = 49206, filter = "CD"},
-			-- Gnaw
-			{spellID = 47481, filter = "CD"},
-			-- Rune Tap
-			{spellID = 48982, filter = "CD"},
-			-- Vampiric Blood
-			{spellID = 55233, filter = "CD"},
-			-- Lichborne
-			{spellID = 49039, filter = "CD"},
-			-- Dancing Rune Weapon
-			{spellID = 49028, filter = "CD"},
-			-- Pillar of Frost
-			{spellID = 51271, filter = "CD"},
-			-- Hungering Cold
-			--MOP{spellID = 49203, filter = "CD"},
-			-- Unholy Frenzy
-			{spellID = 49016, filter = "CD"},
-			-- Anti-Magic Zone
-			{spellID = 51052, filter = "CD"},
-			-- Outbreak
-			{spellID = 77575, filter = "CD"},
-			-- Death's Advance
-			{spellID = 96268, filter = "CD"},
-			-- Plague Leech
-			{spellID = 123693, filter = "CD"},
-			-- Unholy Blight
-			{spellID = 115989, filter = "CD"},
+			-- Pummel
+			{spellID = 6552, filter = "CD"},
+			-- Shield Slam
+			{spellID = 23922, filter = "CD"},
+			-- Shockwave
+			{spellID = 46968, filter = "CD"},
+			-- Thunder Clap
+			{spellID = 6343, filter = "CD"},
+			-- Charge
+			{spellID = 100, filter = "CD"},
+			-- Intervene
+			{spellID = 3411, filter = "CD"},
+			-- Spell Reflection
+			{spellID = 23920, filter = "CD"},
+			-- Shield Block
+			{spellID = 2565, filter = "CD"},
+			-- Enraged Regeneration
+			{spellID = 55694, filter = "CD"},
+			-- Colossus Smash
+			{spellID = 86346, filter = "CD"},
+			-- Commanding Shout
+			{spellID = 469, filter = "CD"},
+			-- Raging Blow
+			{spellID = 85288, filter = "CD"},
+			-- Whirlwind
+			{spellID = 1680, filter = "CD"},
+			-- Taunt
+			{spellID = 355, filter = "CD"},
+			-- Berserker Rage
+			{spellID = 18499, filter = "CD"},
+			-- Heroic Leap
+			{spellID = 6544, filter = "CD"},
+			-- Rallying Cry
+			{spellID = 97462, filter = "CD"},
+			-- Disarm
+			{spellID = 676, filter = "CD"},
+			-- Demoralizing Shout
+			{spellID = 1160, filter = "CD"},
+			-- Throwdown
+			--MOP{spellID = 85388, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2331,14 +2467,14 @@ Filger_Spells = {
 
 			-- Other
 			-- Gloves
-			{slotID = 10, filter = "CD"},
+			{ slotID = 10, filter = "CD"},
 			-- Belt
-			{slotID = 6, filter = "CD"},
+			{ slotID = 6, filter = "CD"},
 			-- Back
-			{slotID = 15, filter = "CD"},
+			{ slotID = 15, filter = "CD"},
 			-- Trinkets
-			{slotID = 13, filter = "CD"},
-			{slotID = 14, filter = "CD"},
+			{ slotID = 13, filter = "CD"},
+			{ slotID = 14, filter = "CD"},
 
 			-- Internal
 			-- Find Weakness (Creche of the Final Dragon)
@@ -2346,149 +2482,7 @@ Filger_Spells = {
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
 			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
-	},
-	["MONK"] = {
-		{
-			Name = "P_BUFF_ICON",
-			Direction = "LEFT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 37,
-			Position = {unpack(Filger_Settings.player_buff_icon)},
-
-			-- Self
-			-- Fortifying Brew
-			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Energizing Brew
-			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Touch of Karma
-			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
-		},
-		{
-			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 37,
-			Position = {unpack(Filger_Settings.player_proc_icon)},
-
-			-- Buffs
-			-- Tiger Power
-			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combo Breaker: Blackout Kick
-			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combo Breaker: Tiger Palm
-			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Trinkets
-			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tank
-			-- Physical Agility DPS
-			-- PvP Trinkets (Agility, Use)
-			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Proc)
-			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster General
-			-- PvP Trinkets (Spell Power, Use)
-			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Proc)
-			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Enchants
-			-- General
-			-- Tank
-			-- Flowing River (Dodge)
-			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical General
-			-- Swordguard Embroidery (AP)
-			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Melee
-			-- Caster General
-			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster Heal
-			-- Darkglow Embroidery (Spirit)
-			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
-		},
-		--[[{
-			Name = "T_DE/BUFF_BAR",
-			Direction = "UP",
-			IconSide = "LEFT",
-			Mode = "BAR",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 186,
-			Position = {unpack(Filger_Settings.target_bar)},
-
-		},]]
-		{
-			Name = "COOLDOWN",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 30,
-			Position = {unpack(Filger_Settings.cooldown)},
-
-			-- Self
-			-- Paralysis
-			{spellID = 115078, filter = "CD"},
-			-- Fists of Fury
-			{spellID = 113656, filter = "CD"},
-			-- Charging Ox Wave
-			{spellID = 119392, filter = "CD"},
-			-- Dampen Harm
-			{spellID = 122278, filter = "CD"},
-			-- Flying Serpent Kick
-			{spellID = 101545, filter = "CD"},
-			-- Touch of Karma
-			{spellID = 125174, filter = "CD"},
-			-- Touch of Death
-			{spellID = 115080, filter = "CD"},
-
-			-- Racials
-			-- Every Man for Himself (Human)
-			{spellID = 59752, filter = "CD"},
-			-- Stoneform (Dwarf)
-			{spellID = 20594, filter = "CD"},
-			-- Shadowmeld (Night Elf)
-			{spellID = 58984, filter = "CD"},
-			-- Escape Artist (Gnome)
-			{spellID = 20589, filter = "CD"},
-			-- Gift of the Naaru (Draenei)
-			{spellID = 28880, filter = "CD"},
-			-- Blood Fury (Orc)
-			{spellID = 20572, filter = "CD"},
-			-- Will of the Forsaken (Forsaken)
-			{spellID = 7744, filter = "CD"},
-			-- Cannibalize (Forsaken)
-			{spellID = 20577, filter = "CD"},
-			-- War Stomp (Tauren)
-			{spellID = 20549, filter = "CD"},
-			-- Berserking (Troll)
-			{spellID = 26297, filter = "CD"},
-			-- Arcane Torrent (Blood Elf)
-			{spellID = 69179, filter = "CD"},
-			
-			-- Other
-			-- Gloves
-			{slotID = 10, filter = "CD"},
-			-- Belt
-			{slotID = 6, filter = "CD"},
-			-- Back
-			{slotID = 15, filter = "CD"},
-			-- Trinkets
-			{slotID = 13, filter = "CD"},
-			{slotID = 14, filter = "CD"},
-
-			-- Internal
-		},
-	},
+	},	
 	["ALL"] = {
 		{
 			Name = "SPECIAL_P_BUFF_ICON",
@@ -2634,7 +2628,7 @@ Filger_Spells = {
 			{spellID = 33786, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hibernate
 			{spellID = 2637, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Bash
+			-- Mighty Bash
 			{spellID = 5211, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Maim
 			{spellID = 22570, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2642,7 +2636,7 @@ Filger_Spells = {
 			{spellID = 9005, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entangling Roots
 			{spellID = 339, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Feral Charge Effect
+			-- Immobilized
 			{spellID = 45334, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Infected Wounds
 			{spellID = 58180, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2652,7 +2646,7 @@ Filger_Spells = {
 			-- Hunter
 			-- Aspect of the Pack
 			{spellID = 13159, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Freezing Trap Effect
+			-- Freezing Trap
 			{spellID = 3355, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Freezing Trap
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2670,7 +2664,7 @@ Filger_Spells = {
 			{spellID = 35101, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Shot
 			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Frost Trap Aura
+			-- Ice Trap
 			{spellID = 13810, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Wing Clip
 			--MOP{spellID = 2974, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2687,10 +2681,8 @@ Filger_Spells = {
 			{spellID = 90337, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Web (Spider)
 			{spellID = 4167, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Froststorm Breath (Chimera)
+			-- Frost Breath (Chimaera)
 			{spellID = 54644, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Swoop (Moth)
-			{spellID = 53148, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
 			{spellID = 50433, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Clench (Scorpid)
@@ -2740,6 +2732,14 @@ Filger_Spells = {
 			-- Frostfire Bolt
 			{spellID = 44614, unitID = "player", caster = "all", filter = "DEBUFF"},
 
+			-- Monk
+			-- Fists of Fury
+			{spellID = 113656, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Paralysis
+			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
+
 			-- Paladin
 			-- Repentance
 			{spellID = 20066, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2767,7 +2767,7 @@ Filger_Spells = {
 			{spellID = 15407, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Sin and Punishment
 			--MOP{spellID = 87204, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Paralysis
+			-- Glyph of Mind Blast
 			{spellID = 87194, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Rogue
@@ -2817,7 +2817,7 @@ Filger_Spells = {
 			-- Warlock
 			-- Aura of Foreboding
 			--MOP{spellID = 93975, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Demon Leap
+			-- Demonic Leap
 			{spellID = 54785, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Death Coil
 			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2864,14 +2864,6 @@ Filger_Spells = {
 			-- Colossus Smash
 			{spellID = 86346, unitID = "player", caster = "all", filter = "DEBUFF"},
 
-			-- Monk
-			-- Fists of Fury
-			{spellID = 113656, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Paralysis
-			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Charging Ox Wave
-			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
-
 			-- Racials
 			-- War Stomp
 			{spellID = 20549, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2897,13 +2889,30 @@ Filger_Spells = {
 			IconSize = 60,
 			Position = {unpack(Filger_Settings.target_buff_icon)},
 
-			-- Hunter
-			-- Aspect of the Pack
-			{spellID = 13159, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Aspect of the Cheetah
-			{spellID = 5118, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Deterrence
-			{spellID = 19263, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Death knight
+			-- Anti-Magic Shell
+			{spellID = 48707, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Lichborne
+			{spellID = 49039, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Bone shield
+			{spellID = 49222, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Icebound Fortitude
+			{spellID = 48792, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Pillar of Frost
+			{spellID = 51271, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Unholy Frenzy
+			{spellID = 49016, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Death's Advance
+			{spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
+
+			-- Gnaw (Pet)
+			{spellID = 47481, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Gnaw (Pet - mutant)
+			{spellID = 91797, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Strangulate
+			{spellID = 47476, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Asphyxiate
+			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Druid
 			-- Innervate
@@ -2923,17 +2932,95 @@ Filger_Spells = {
 			-- Berserk
 			{spellID = 50334, unitID = "target", caster = "all", filter = "BUFF"},
 
-			-- Warrior
-			-- Spell Reflection
-			{spellID = 23920, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Shield wall
-			{spellID = 871, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Berserker
-			{spellID = 18499, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Last stand
-			{spellID = 12975, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Bladestorm
-			{spellID = 46924, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Cyclone
+			{spellID = 33786, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Solar Beam
+			{spellID = 78675, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Hibernate
+			{spellID = 2637, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Mighty Bash
+			{spellID = 5211, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Maim
+			{spellID = 22570, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Pounce
+			{spellID = 9005, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Immobilized
+			{spellID = 45334, unitID = "target", caster = "all", filter = "DEBUFF"},
+
+			-- Hunter
+			-- Aspect of the Pack
+			{spellID = 13159, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Aspect of the Cheetah
+			{spellID = 5118, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Deterrence
+			{spellID = 19263, unitID = "target", caster = "all", filter = "BUFF"},
+
+			-- Freezing Trap
+			{spellID = 3355, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Scare Beast
+			{spellID = 1513, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Scatter Shot
+			{spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Silencing Shot
+			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Wyvern sting 
+			{spellID = 19386, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Intimidation
+			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Sonic Blast (Bat)
+			{spellID = 50519, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Pin (Crab)
+			{spellID = 50245, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Venom Web Spray (Silithid)
+			{spellID = 54706, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Bad Manner (Monkey)
+			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Web (Spider)
+			{spellID = 4167, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Frost Breath (Chimaera)
+			{spellID = 54644, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Sting (Wasp)
+			{spellID = 56626, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Nether Shock (Nether Ray)
+			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
+
+			-- Mage
+			-- Ice Block
+			{spellID = 45438, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Invisibility
+			{spellID = 66, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Evocation
+			{spellID = 12051, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Improved blink
+			{spellID = 46989, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Blazing Speed
+			--MOP{spellID = 31643, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Cauterize
+			{spellID = 87023, unitID = "target", caster = "target", filter = "DEBUFF"},
+
+			-- Dragon's Breath
+			{spellID = 31661, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Polymorph
+			{spellID = 118, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Improved Polymorph
+			--MOP{spellID = 83047, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Silenced - Improved Counterspell
+			{spellID = 55021, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Deep Freeze
+			{spellID = 44572, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Impact
+			--MOP{spellID = 12355, unitID = "target", caster = "all", filter = "DEBUFF"},
+
+			-- Monk
+			-- Touch of Karma
+			{spellID = 125174, unitID = "target", caster = "target", filter = "BUFF"},
+
+			-- Fists of Fury
+			{spellID = 113656, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Paralysis
+			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Divine Shield
@@ -2953,63 +3040,12 @@ Filger_Spells = {
 			-- Guardian of Ancient Kings
 			{spellID = 86698, unitID = "target", caster = "all", filter = "BUFF"},
 
-			-- Mage
-			-- Ice Block
-			{spellID = 45438, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Invisibility
-			{spellID = 66, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Evocation
-			{spellID = 12051, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Improved blink
-			{spellID = 46989, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Blazing Speed
-			--MOP{spellID = 31643, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Cauterize
-			{spellID = 87023, unitID = "target", caster = "target", filter = "DEBUFF"},
-
-			-- Rogue
-			-- Cloak of Shadows
-			{spellID = 31224, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Evasion
-			{spellID = 5277, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Cheating Death
-			{spellID = 45182, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Combat Insight
-			{spellID = 74002, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Shadow Dance
-			{spellID = 51713, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Smoke Bomb
-			{spellID = 88611, unitID = "target", caster = "all", filter = "DEBUFF"},
-
-			-- Death knight
-			-- Anti-Magic Shell
-			{spellID = 48707, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Lichborne
-			{spellID = 49039, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Bone shield
-			{spellID = 49222, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Icebound Fortitude
-			{spellID = 48792, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Pillar of Frost
-			{spellID = 51271, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Unholy Frenzy
-			{spellID = 49016, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Death's Advance
-			{spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
-
-			-- Shaman
-			-- Grounding Totem Effect
-			{spellID = 8178, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Stoneclaw Totem
-			--MOP{spellID = 55277, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Shamanistic Rage
-			{spellID = 30823, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Earth Shield
-			{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Spiritwalker's Grace
-			{spellID = 79206, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Mana Tide
-			--{spellID = 16191, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Hammer of Justice
+			{spellID = 853, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Repentance
+			{spellID = 20066, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Avenger's Shield
+			{spellID = 31935, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Priest
 			-- Dispersion
@@ -3023,17 +3059,120 @@ Filger_Spells = {
 			-- Fear Ward
 			{spellID = 6346, unitID = "target", caster = "all", filter = "BUFF"},
 
+			-- Psychic Horror
+			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Mind Control
+			{spellID = 605, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Psychic Scream
+			{spellID = 8122, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Silence
+			{spellID = 15487, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Sin and Punishment
+			--MOP{spellID = 87204, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Glyph of Mind Blast
+			{spellID = 87194, unitID = "target", caster = "all", filter = "DEBUFF"},
+
+			-- Rogue
+			-- Cloak of Shadows
+			{spellID = 31224, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Evasion
+			{spellID = 5277, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Cheating Death
+			{spellID = 45182, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Combat Insight
+			{spellID = 74002, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Shadow Dance
+			{spellID = 51713, unitID = "target", caster = "all", filter = "BUFF"},
+
+			-- Smoke Bomb
+			{spellID = 88611, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Blind
+			{spellID = 2094, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Sap
+			{spellID = 6770, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Garrote - Silence
+			{spellID = 1330, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Cheap Shot
+			{spellID = 1833, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Kidney Shot
+			{spellID = 408, unitID = "target", caster = "all", filter = "DEBUFF"},
+
+			-- Shaman
+			-- Grounding Totem Effect
+			{spellID = 8178, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Shamanistic Rage
+			{spellID = 30823, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Earth Shield
+			{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Spiritwalker's Grace
+			{spellID = 79206, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Mana Tide
+			--{spellID = 16191, unitID = "target", caster = "all", filter = "BUFF"},
+
+			-- Hex
+			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},
+
 			-- Warlock
 			-- Soul harvest
 			--MOP{spellID = 79268, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Soulstone
 			{spellID = 20707, unitID = "target", caster = "all", filter = "BUFF"},
+
 			-- Unstable Affliction
 			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
+			-- Aura of Foreboding
+			--MOP{spellID = 93975, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Demonic Leap
+			{spellID = 54785, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Death Coil
+			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Fear
+			{spellID = 5782, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Howl of Terror
+			{spellID = 5484, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Shadowfury
+			{spellID = 30283, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Banish
+			{spellID = 710, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Aftermath
+			--MOP{spellID = 18118, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Seduction (Succubus)
+			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Spell Lock (Felhunter)
+			{spellID = 24259, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Axe Toss (Felguard)
+			{spellID = 89766, unitID = "target", caster = "all", filter = "DEBUFF"},
 
-			-- Monk
-			-- Touch of Karma
-			{spellID = 125174, unitID = "target", caster = "target", filter = "BUFF"},
+			-- Warrior
+			-- Spell Reflection
+			{spellID = 23920, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Shield wall
+			{spellID = 871, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Berserker
+			{spellID = 18499, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Last stand
+			{spellID = 12975, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Bladestorm
+			{spellID = 46924, unitID = "target", caster = "all", filter = "BUFF"},
+
+			-- Throwdown
+			--MOP{spellID = 85388, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Intimidating Shout
+			{spellID = 20511, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Silenced (Gag Order)
+			{spellID = 18498, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Charge Stun
+			{spellID = 7922, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Shockwave
+			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
+
+			-- Racials
+			-- War Stomp
+			{spellID = 20549, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Arcane Torrent
+			{spellID = 28730, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Quaking Palm
+			{spellID = 107079, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- All
 			-- Warsong flag
@@ -3048,135 +3187,6 @@ Filger_Spells = {
 
 			-- Drink
 			{spellID = 80167, unitID = "target", caster = "all", filter = "BUFF"},
-
-			-- Control block
-			-- Immune
-			-- Cyclone
-			{spellID = 33786, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Banish
-			{spellID = 710, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Mind Control
-			{spellID = 605, unitID = "target", caster = "all", filter = "DEBUFF"},
-
-			-- Silence
-			-- Strangulate (DK)
-			{spellID = 47476, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Asphyxiate (DK)
-			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Silencing Shot (Hunter)
-			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Nether Shock (Nether Ray)
-			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Solar Beam (Druid)
-			{spellID = 78675, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Silenced - Improved Counterspell (Mage)
-			{spellID = 55021, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Avenger's Shield (Pally)
-			{spellID = 31935, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Silence (Priest)
-			{spellID = 15487, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Garrote - Silence (Rogue)
-			{spellID = 1330, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Spell Lock (Felhunter) (Warlock)
-			{spellID = 24259, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Silenced (Gag Order) (War)
-			{spellID = 18498, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Arcane torrent (BE) (Racial)
-			{spellID = 28730, unitID = "target", caster = "all", filter = "DEBUFF"},
-
-			-- Stun
-			-- Gnaw (Pet)
-			{spellID = 47481, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Gnaw (Pet - mutant)
-			{spellID = 91797, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Bash
-			{spellID = 5211, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Maim
-			{spellID = 22570, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Pounce
-			{spellID = 9005, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Intimidation
-			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Sonic Blast (Bat)
-			{spellID = 50519, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Sting (Wasp)
-			{spellID = 56626, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Impact
-			--MOP{spellID = 12355, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Improved Polymorph
-			--MOP{spellID = 83047, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Deep Freeze
-			{spellID = 44572, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Hammer of Justice
-			{spellID = 853, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Psychic Horror
-			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Cheap Shot
-			{spellID = 1833, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Kidney Shot
-			{spellID = 408, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Aura of Foreboding
-			--MOP{spellID = 93975, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Demon Leap
-			{spellID = 54786, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Shadowfury
-			{spellID = 30283, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Axe Toss (Felguard)
-			{spellID = 89766, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Throwdown
-			--MOP{spellID = 85388, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Charge Stun
-			{spellID = 7922, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Shockwave
-			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Charging Ox Wave
-			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- War Stomp (Tauren)
-			{spellID = 20549, unitID = "target", caster = "all", filter = "DEBUFF"},
-
-			-- CC
-			-- Hungering Cold
-			--MOP{spellID = 49203, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Hibernate
-			{spellID = 2637, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Freezing Trap Effect
-			{spellID = 3355, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Wyvern sting 
-			{spellID = 19386, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Scatter Shot
-			{spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Polymorph
-			{spellID = 118, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Ring of frost
-			{spellID = 82691, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Dragon's Breath
-			{spellID = 31661, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Bad Manner (Monkey)
-			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Repentance
-			{spellID = 20066, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Psychic Scream
-			{spellID = 8122, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Shackle Undead
-			{spellID = 9484, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Blind
-			{spellID = 2094, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Sap
-			{spellID = 6770, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Hex
-			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Fear
-			{spellID = 5782, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Howl of Terror
-			{spellID = 5484, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Seduction (Succubus)
-			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Sin and Punishment
-			--MOP{spellID = 87204, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Paralysis
-			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Intimidating Shout
-			{spellID = 20511, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 	},
 }
