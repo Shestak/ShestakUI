@@ -48,6 +48,7 @@ for i, unit in pairs(units) do
 	unit.FirstAttack = unit:CreateTexture(nil, "ARTWORK")
 	unit.FirstAttack:Size(20)
 	unit.FirstAttack:SetTexture("Interface\\PetBattles\\PetBattle-StatIcons")
+	unit.FirstAttack:Hide()
 
 	if i == 1 then
 		unit.HealthBarBackdrop:Point("TOPLEFT", unit.ActualHealthBar, "TOPLEFT", -2, 2)
@@ -102,12 +103,13 @@ end
 -- Pets speed indicator update
 hooksecurefunc("PetBattleFrame_UpdateSpeedIndicators", function(self)
 	if not f.ActiveAlly.SpeedIcon:IsShown() and not f.ActiveEnemy.SpeedIcon:IsShown() then
-		f.ActiveAlly.FirstAttack:SetVertexColor(0.1, 0.1, 0.1, 1)
-		f.ActiveEnemy.FirstAttack:SetVertexColor(0.1, 0.1, 0.1, 1)
+		f.ActiveAlly.FirstAttack:Hide()
+		f.ActiveEnemy.FirstAttack:Hide()
 		return
 	end
 
 	for i, unit in pairs(units) do
+		unit.FirstAttack:Show()
 		if unit.SpeedIcon:IsShown() then
 			unit.FirstAttack:SetVertexColor(0, 1, 0, 1)
 		else
@@ -135,6 +137,8 @@ hooksecurefunc("PetBattleAuraHolder_Update", function(self)
 		local auraID, instanceID, turnsRemaining, isBuff = C_PetBattles.GetAuraInfo(self.petOwner, self.petIndex, i)
 		if (isBuff and self.displayBuffs) or (not isBuff and self.displayDebuffs) then
 			local frame = self.frames[nextFrame]
+
+			frame:Width(frame:GetHeight())
 
 			-- Always hide the border
 			frame.DebuffBorder:Hide()
@@ -224,10 +228,16 @@ hooksecurefunc("PetBattleWeatherFrame_Update", function(self)
 	end
 end)
 
--- Frames to hide while going into Pet Battle UI
-local AlphaThem = {oUF_Player, Bar1Holder, Bar2Holder, Bar3Holder, Bar4Holder, Bar5Holder}
-local DisableThem = {oUF_Player, oUF_Target, oUF_Pet, oUF_Focus}
-local HideThem = {MinimapAnchor}
+--- Frames to hide while going into Pet Battle UI
+FRAMELOCK_STATES.PETBATTLES["Bar1Holder"] = "hidden"
+FRAMELOCK_STATES.PETBATTLES["Bar2Holder"] = "hidden"
+FRAMELOCK_STATES.PETBATTLES["Bar3Holder"] = "hidden"
+FRAMELOCK_STATES.PETBATTLES["Bar4Holder"] = "hidden"
+FRAMELOCK_STATES.PETBATTLES["Bar5Holder"] = "hidden"
+FRAMELOCK_STATES.PETBATTLES["ShiftHolder"] = "hidden"
+--FRAMELOCK_STATES.PETBATTLES["PetActionBarAnchor"] = "hidden"
+--FRAMELOCK_STATES.PETBATTLES["MinimapAnchor"] = "hidden"
+FRAMELOCK_STATES.PETBATTLES["WatchFrameAnchor"] = "hidden"
 
 local bar = CreateFrame("Frame", "PetBattleBarHolder", UIParent)
 bar:SetSize((C.actionbar.button_size * 6) + (C.actionbar.button_space * 5), C.actionbar.button_size)
@@ -239,31 +249,19 @@ bar:RegisterEvent("PET_BATTLE_CLOSE")
 bar:Hide()
 bar:SetScript("OnEvent", function(self, event)
 	if event == "PET_BATTLE_OPENING_DONE" then
-		for i, frame in pairs(DisableThem) do
-			if frame then frame:Disable() end
-		end
-		for i, frame in pairs(HideThem) do
-			if frame then frame:Hide() end
+		if C.unitframe.enable == true then
+			oUF_Player:SetAlpha(0)
+			oUF_Pet:SetAlpha(0)
+			oUF_Focus:SetAlpha(0)
 		end
 		self:Show()
 	else
-		for i, frame in pairs(DisableThem) do
-			if frame then frame:Enable() end
-		end
-		for i, frame in pairs(HideThem) do
-			if frame then frame:Show() end
+		if C.unitframe.enable == true then
+			oUF_Player:SetAlpha(1)
+			oUF_Pet:SetAlpha(1)
+			oUF_Focus:SetAlpha(1)
 		end
 		self:Hide()
-	end
-end)
-f:SetScript("OnShow", function(self)
-	for i, frame in pairs(AlphaThem) do
-		if frame then frame:SetAlpha(0) end
-	end
-end)
-f:SetScript("OnHide", function(self)
-	for i, frame in pairs(AlphaThem) do
-		if frame then frame:SetAlpha(1) end
 	end
 end)
 
@@ -278,24 +276,23 @@ bf.TurnTimer.SkipButton:SetPoint("BOTTOM", bar, "TOP", 0, 3)
 bf.TurnTimer.SkipButton.ClearAllPoints = T.dummy
 bf.TurnTimer.SkipButton.SetPoint = T.dummy
 
+bf.xpBar:SetParent(bar)
+bf.xpBar:Width(bar:GetWidth() - 4)
+bf.xpBar:CreateBackdrop("Overlay")
+bf.xpBar:ClearAllPoints()
+bf.xpBar:SetPoint("BOTTOM", bf.TurnTimer.SkipButton, "TOP", 0, 5)
+bf.xpBar:SetScript("OnShow", function(self) self:StripTextures() self:SetStatusBarTexture(C.media.texture) end)
+
 bf.TurnTimer:SetParent(bar)
-bf.TurnTimer:SetTemplate("Overlay")
 bf.TurnTimer:Size(bf.TurnTimer.SkipButton:GetWidth(), bf.TurnTimer.SkipButton:GetHeight())
 bf.TurnTimer:ClearAllPoints() 
-bf.TurnTimer:SetPoint("BOTTOM", bf.TurnTimer.SkipButton, "TOP", 0, 3)
+bf.TurnTimer:SetPoint("BOTTOM", bf.xpBar, "TOP", 0, 5)
 bf.TurnTimer.TimerText:SetPoint("CENTER")
 
 bf.MicroButtonFrame:StripTextures()
 bf.MicroButtonFrame:Hide()
 bf.Delimiter:StripTextures()
 bf.FlowFrame:Kill()
-
-bf.xpBar:SetParent(bar)
-bf.xpBar:Width(bar:GetWidth() - 4)
-bf.xpBar:CreateBackdrop("Overlay")
-bf.xpBar:ClearAllPoints()
-bf.xpBar:SetPoint("BOTTOM", bf.TurnTimer, "TOP", 0, 5)
-bf.xpBar:SetScript("OnShow", function(self) self:StripTextures() self:SetStatusBarTexture(C.media.texture) end)
 
 -- Pets selection skin
 for i = 1, 3 do
