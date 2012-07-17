@@ -312,14 +312,18 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
 			-- Self
-			-- Spirit Mend
-			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Deterrence
 			{spellID = 19263, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Fire
+			{spellID = 3045, unitID = "player", caster = "player", filter = "BUFF"},
+			-- The Beast Within
+			{spellID = 34471, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focus Fire
+			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit Mend
+			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Other
-			-- Burning Adrenaline (T12 x4)
-			{spellID = 99060, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -333,22 +337,16 @@ Filger_Spells = {
 			-- Buffs
 			-- Ready, Set, Aim...
 			{spellID = 82925, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lock and Load
-			{spellID = 56453, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rapid Fire
-			{spellID = 3045, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Call of the Wild
-			--MOP{spellID = 53434, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Improved Steady Shot
-			{spellID = 53220, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fire!
 			{spellID = 82926, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Improved Steady Shot
+			{spellID = 53220, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lock and Load
+			{spellID = 56453, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frenzy
+			{spellID = 19623, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mend Pet
 			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
-			-- Cobra Strikes
-			{spellID = 53257, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Focus Fire
-			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Weapons
 			-- Physical Agility
@@ -385,16 +383,14 @@ Filger_Spells = {
 
 			-- Hunter's Mark
 			{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Marked for Death
-			--MOP{spellID = 88691, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Piercing Shots
-			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 1978, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Black Arrow
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Piercing Shots
+			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
@@ -408,17 +404,15 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.target_bar)},
 
 			-- Hunter's Mark
-			{spellID = 1130, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Marked for Death
-			--MOP{spellID = 88691, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Piercing shots
-			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 1978, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Black Arrow
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Piercing Shots
+			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},]]
 		{
 			Name = "PVE/PVP_CC",
@@ -460,6 +454,8 @@ Filger_Spells = {
 			{spellID = 34026, filter = "CD"},
 			-- Feign Death
 			{spellID = 28728, filter = "CD"},
+			-- Scatter Shot
+			{spellID = 19503, filter = "CD"},
 			-- Snake Trap
 			{spellID = 34600, filter = "CD"},
 			-- Explosive Trap
