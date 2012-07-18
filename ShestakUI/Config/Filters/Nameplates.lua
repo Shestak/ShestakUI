@@ -3,7 +3,7 @@ if C.nameplate.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Hungering Cold -> http://www.wowhead.com/spell=49203
+--	Example: Polymorph -> http://www.wowhead.com/spell=118
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 local function SpellName(id)
@@ -38,7 +38,7 @@ T.DebuffWhiteList = {
 	[SpellName(34490)] = true,	-- Silencing Shot
 	-- Mage
 	[SpellName(31661)] = true,	-- Dragon's Breath
-	[SpellName(61305)] = true,	-- Polymorph
+	[SpellName(118)] = true,	-- Polymorph
 	[SpellName(55021)] = true,	-- Improved Counterspell
 	[SpellName(122)] = true,	-- Frost Nova
 	--MOP[SpellName(55080)] = true,	-- Shattered Barrier

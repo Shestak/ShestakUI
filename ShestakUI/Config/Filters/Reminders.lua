@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Flask of the Winds -> http://www.wowhead.com/spell=79471
+--	Example: Flask of the Earth -> http://www.wowhead.com/spell=105694
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 if C.reminder.raid_buffs_enable == true then

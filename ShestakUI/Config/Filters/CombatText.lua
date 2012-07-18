@@ -3,7 +3,7 @@ if C.combattext.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Flask of the Winds -> http://www.wowhead.com/spell=79471
+--	Example: Cleave -> http://www.wowhead.com/spell=845
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 -- Outgoing healing filter
