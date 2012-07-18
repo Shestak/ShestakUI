@@ -29,6 +29,8 @@ if T.class == "WARLOCK" then
 		T.aoespam[85455] = true		-- Bane of Havoc
 		T.aoespam[104233] = true	-- Rain of Fire
 		T.aoespam[5857] = true		-- Hellfire Effect
+		T.aoespam[86040] = true		-- Hand of Gul'dan
+		T.aoespam[103103] = true	-- Malefic Grasp
 		T.aoespam[47897] = true		-- Shadowflame (Shadow direct damage)
 		T.aoespam[47960] = true		-- Shadowflame (Fire dot)
 		T.aoespam[50590] = true		-- Immolation Aura
