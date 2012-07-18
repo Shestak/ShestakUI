@@ -534,7 +534,7 @@ Filger_Spells = {
 			{spellID = 82925, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fire!
 			{spellID = 82926, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Improved Steady Shot
+			-- Steady Focus
 			{spellID = 53220, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lock and Load
 			{spellID = 56453, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1809,7 +1809,9 @@ Filger_Spells = {
 			-- Lightning Shield
 			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental mastery
-			--MOP{spellID = 64701, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 16166, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ascendance
+			{spellID = 114050, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spiritwalker's grace
 			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Flame
@@ -1986,6 +1988,8 @@ Filger_Spells = {
 			{spellID = 108281, filter = "CD"},
 			-- Astral Shift
 			{spellID = 108271, filter = "CD"},
+			-- Ascendance
+			{spellID = 114049, filter = "CD"},
 
 			-- Racials
 			-- Stoneform (Dwarf)
@@ -2034,17 +2038,17 @@ Filger_Spells = {
 			-- Self
 			-- Burning Soul
 			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Succub
-			--MOP{spellID = 79463, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Imp
-			--MOP{spellID = 79459, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Void
-			--MOP{spellID = 79464, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Fel Hunter
-			--MOP{spellID = 79460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Fel Guard
-			--MOP{spellID = 79462, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Ward
+			-- Dark Soul: Knowledge
+			{spellID = 113861, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Soul: Misery
+			{spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Soul: Instability
+			{spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unending Resolve
+			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Bargain
+			{spellID = 110913, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Twilight Ward
 			{spellID = 6229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2060,7 +2064,7 @@ Filger_Spells = {
 
 			-- Buffs
 			-- Molten Core
-			--MOP{spellID = 47383, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 122355, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Decimation
 			--MOP{spellID = 63158, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Backdraft
@@ -2160,7 +2164,7 @@ Filger_Spells = {
 			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Agony
 			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Bane of Doom
+			-- Doom
 			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2199,7 +2203,7 @@ Filger_Spells = {
 			{spellID = 17962, filter = "CD"},
 			-- Ritual of Summoning
 			{spellID = 698, filter = "CD"},
-			-- Shadow Ward
+			-- Twilight Ward
 			{spellID = 6229, filter = "CD"},
 			-- Demonic Empowerment
 			--MOP{spellID = 47193, filter = "CD"},
@@ -2240,7 +2244,7 @@ Filger_Spells = {
 			-- Soulburn
 			{spellID = 74434, filter = "CD"},
 			-- Hand of Gul'dan
-			--MOP{spellID = 71521, filter = "CD"},
+			{spellID = 86040, filter = "CD"},
 			-- Immolation Aura
 			--MOP{spellID = 50589, filter = "CD"},
 
@@ -2467,14 +2471,14 @@ Filger_Spells = {
 
 			-- Other
 			-- Gloves
-			{ slotID = 10, filter = "CD"},
+			{slotID = 10, filter = "CD"},
 			-- Belt
-			{ slotID = 6, filter = "CD"},
+			{slotID = 6, filter = "CD"},
 			-- Back
-			{ slotID = 15, filter = "CD"},
+			{slotID = 15, filter = "CD"},
 			-- Trinkets
-			{ slotID = 13, filter = "CD"},
-			{ slotID = 14, filter = "CD"},
+			{slotID = 13, filter = "CD"},
+			{slotID = 14, filter = "CD"},
 
 			-- Internal
 			-- Find Weakness (Creche of the Final Dragon)
@@ -2587,6 +2591,8 @@ Filger_Spells = {
 			{spellID = 65081, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Angelic Feather
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Stormlash Totem
+			{spellID = 120676, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",

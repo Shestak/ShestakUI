@@ -3,7 +3,7 @@ if C.combattext.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Flask of the Winds -> http://www.wowhead.com/spell=79471
+--	Example: Cleave -> http://www.wowhead.com/spell=845
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 -- Outgoing healing filter
@@ -29,6 +29,8 @@ if T.class == "WARLOCK" then
 		T.aoespam[85455] = true		-- Bane of Havoc
 		T.aoespam[104233] = true	-- Rain of Fire
 		T.aoespam[5857] = true		-- Hellfire Effect
+		T.aoespam[86040] = true		-- Hand of Gul'dan
+		T.aoespam[103103] = true	-- Malefic Grasp
 		T.aoespam[47897] = true		-- Shadowflame (Shadow direct damage)
 		T.aoespam[47960] = true		-- Shadowflame (Fire dot)
 		T.aoespam[50590] = true		-- Immolation Aura
