@@ -1809,7 +1809,9 @@ Filger_Spells = {
 			-- Lightning Shield
 			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental mastery
-			--MOP{spellID = 64701, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 16166, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ascendance
+			{spellID = 114050, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spiritwalker's grace
 			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Flame
@@ -1986,6 +1988,8 @@ Filger_Spells = {
 			{spellID = 108281, filter = "CD"},
 			-- Astral Shift
 			{spellID = 108271, filter = "CD"},
+			-- Ascendance
+			{spellID = 114049, filter = "CD"},
 
 			-- Racials
 			-- Stoneform (Dwarf)
@@ -2587,6 +2591,8 @@ Filger_Spells = {
 			{spellID = 65081, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Angelic Feather
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Stormlash Totem
+			{spellID = 120676, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
