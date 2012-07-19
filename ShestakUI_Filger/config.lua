@@ -83,7 +83,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
-			-- Flowing River (Dodge)
+			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
@@ -314,7 +314,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
-			-- Flowing River (Dodge)
+			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
@@ -1027,7 +1027,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
-			-- Flowing River (Dodge)
+			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
@@ -1204,7 +1204,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
-			-- Flowing River (Dodge)
+			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
@@ -2369,7 +2369,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
-			-- Flowing River (Dodge)
+			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
