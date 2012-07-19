@@ -126,7 +126,7 @@ local function Shared(self, unit)
 	end
 
 	-- LFD role icons
-	if C.raidframe.icons_lfd_role == true and not (self:GetAttribute("unitsuffix") == "target") then 
+	if C.raidframe.icons_lfd_role == true and not (self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:Size(12)
 		self.LFDRole:Point("TOP", self.Health, 0, 8)
@@ -371,7 +371,7 @@ oUF:Factory(function(self)
 		if C.raidframe.raid_groups_vertical then
 			-- Raid vertical
 			local raid = {}
-			for i = 1, C.raidframe.raid_groups do 
+			for i = 1, C.raidframe.raid_groups do
 				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
 					"oUF-initialConfigFunction", [[
 						local header = self:GetParent()
@@ -399,7 +399,7 @@ oUF:Factory(function(self)
 		else
 			-- Raid horizontal
 			local raid = {}
-			for i = 1, C.raidframe.raid_groups do 
+			for i = 1, C.raidframe.raid_groups do
 				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
 					"oUF-initialConfigFunction", [[
 						local header = self:GetParent()

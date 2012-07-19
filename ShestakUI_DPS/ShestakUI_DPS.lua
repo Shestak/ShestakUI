@@ -349,7 +349,7 @@ oUF:Factory(function(self)
 	if C.raidframe.show_raid == true then
 		-- Raid
 		local raid = {}
-		for i = 1, C.raidframe.raid_groups do 
+		for i = 1, C.raidframe.raid_groups do
 			local raidgroup = self:SpawnHeader("oUF_RaidDPS"..i, nil, "custom [@raid6,exists] show;hide",
 				"oUF-initialConfigFunction", [[
 					local header = self:GetParent()
@@ -358,7 +358,7 @@ oUF:Factory(function(self)
 				]],
 				"initial-width", T.Scale(unit_width),
 				"initial-height", T.Scale(unit_height),
-				"showRaid", true, 
+				"showRaid", true,
 				"yOffset", T.Scale(-7),
 				"point", "TOPLEFT",
 				"groupFilter", tostring(i),

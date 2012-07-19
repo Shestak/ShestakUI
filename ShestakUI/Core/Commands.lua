@@ -41,7 +41,7 @@ SLASH_UIHELP3 = "/гшрудз"
 ----------------------------------------------------------------------------------------
 --	Enable/Disable addons
 ----------------------------------------------------------------------------------------
-SlashCmdList.DISABLE_ADDON = function(addon) 
+SlashCmdList.DISABLE_ADDON = function(addon)
 	local _, _, _, _, _, reason, _ = GetAddOnInfo(addon)
 	if reason ~= "MISSING" then
 		DisableAddOn(addon)
@@ -224,12 +224,12 @@ SlashCmdList.FRAME = function(arg)
 		if arg:GetParent() and arg:GetParent():GetName() then
 			ChatFrame1:AddMessage("Parent: |cffFFD100"..arg:GetParent():GetName())
 		end
- 
+
 		ChatFrame1:AddMessage("Width: |cffFFD100"..format("%.2f", arg:GetWidth()))
 		ChatFrame1:AddMessage("Height: |cffFFD100"..format("%.2f", arg:GetHeight()))
 		ChatFrame1:AddMessage("Strata: |cffFFD100"..arg:GetFrameStrata())
 		ChatFrame1:AddMessage("Level: |cffFFD100"..arg:GetFrameLevel())
- 
+
 		if relativeTo and relativeTo:GetName() then
 			ChatFrame1:AddMessage("Point: |cffFFD100"..point.."|r anchored to "..relativeTo:GetName().."'s |cffFFD100"..relativePoint)
 		end

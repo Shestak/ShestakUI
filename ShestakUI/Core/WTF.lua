@@ -378,7 +378,7 @@ StaticPopupDialogs.SETTINGS_ALL = {
 		if IsAddOnLoaded("DXE") and C.skins.dxe then T.UploadDXE() end
 		if IsAddOnLoaded("MikScrollingBattleText") then UploadMSBT() end
 		if IsAddOnLoaded("Skada") then UploadSkada() end
-		ReloadUI() 
+		ReloadUI()
 	end,
 	timeout = 0,
 	whileDead = 1,

@@ -1102,7 +1102,7 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
-			
+
 			-- Other
 			-- Gloves
 			{slotID = 10, filter = "CD"},
@@ -1688,7 +1688,7 @@ Filger_Spells = {
 			--MOP{spellID = 51693, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hemorrhage
 			{spellID = 16511, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
-			-- Glyph of Hemorrhage 
+			-- Glyph of Hemorrhage
 			{spellID = 89775, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
 			-- Find Weakness
 			{spellID = 91021, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1951,7 +1951,7 @@ Filger_Spells = {
 
 			-- Hex
 			{spellID = 51514, unitID = "focus", caster = "player", filter = "DEBUFF"},
-			-- Bind elemental 
+			-- Bind elemental
 			{spellID = 76780, unitID = "focus", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -2494,7 +2494,7 @@ Filger_Spells = {
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
 			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
-	},	
+	},
 	["ALL"] = {
 		{
 			Name = "SPECIAL_P_BUFF_ICON",
@@ -2670,7 +2670,7 @@ Filger_Spells = {
 			{spellID = 19503, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
 			{spellID = 34490, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Wyvern sting 
+			-- Wyvern sting
 			{spellID = 19386, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Intimidation
 			{spellID = 24394, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2933,7 +2933,7 @@ Filger_Spells = {
 			{spellID = 29166, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Barskin
 			{spellID = 22812, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Nature's grasp 
+			-- Nature's grasp
 			{spellID = 16689, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
 			{spellID = 77764, unitID = "target", caster = "all", filter = "BUFF"},
@@ -2977,7 +2977,7 @@ Filger_Spells = {
 			{spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
 			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Wyvern sting 
+			-- Wyvern sting
 			{spellID = 19386, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Intimidation
 			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},

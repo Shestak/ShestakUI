@@ -111,7 +111,7 @@ local function SetChatStyle(frame)
 	_G[format("ChatFrame%sEditBoxFocusRight", id)]:Kill()
 
 	_G[format("ChatFrame%sTabGlow", id)]:Kill()
-	
+
 	-- Kill off editbox artwork
 	local a, b, c = select(6, _G[chat.."EditBox"]:GetRegions()) a:Kill() b:Kill() c:Kill()
 

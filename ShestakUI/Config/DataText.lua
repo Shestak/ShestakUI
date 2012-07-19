@@ -94,9 +94,9 @@ LPSTAT_CONFIG = {
 			--	Quests To Level [questsleft]	Kills To Level [killsleft]
 			--	Total Played [playedtotal]		Level Played [playedlevel]		Session Played [playedsession]
 		xp_normal_fmt = "[curxp]([cur%]%)"..class"XP", -- XP string used when not rested.
-		xp_rested_fmt = "[curxp]([cur%]%)"..class"XP ".." [restxp]([rest%]%)"..class"R", -- XP string used when rested.		
+		xp_rested_fmt = "[curxp]([cur%]%)"..class"XP ".." [restxp]([rest%]%)"..class"R", -- XP string used when rested.
 		played_fmt = class"Online: ".."|r".."[playedsession]", -- Played time format.
-		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")		
+		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")
 			-- day = "d", hour = "h", minute = "m", second = "s", -- Customizable time labels. Will localize by default.
 			-- Faction tags...
 			--	Faction name [repname]
@@ -138,7 +138,7 @@ LPSTAT_CONFIG = {
 			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery [mastery]				Expertise% [expertise]
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
 			--   Ranged Haste% [rangedhaste]	Spell Haste% [spellhaste]		Melee Crit% [meleecrit]			Ranged Crit% [rangedcrit]
-			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				
+			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]
 			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Combat table Coverage% [blockcap]
 			--   Avoidance% [avoidance]			MP5 I5SR [manaregen]			Armor Value [armor]				Resilience [resilience]
 		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
@@ -204,19 +204,19 @@ LPSTAT_CONFIG = {
 }
 
 LPSTAT_PROFILES = {
-	MAGE = { 
+	MAGE = {
 		Stats = {
 			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
 			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
 		}
 	},
-	PRIEST = { 
+	PRIEST = {
 		Stats = {
 			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
 			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
 		}
 	},
-	WARLOCK = { 
+	WARLOCK = {
 		Stats = {
 			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
 			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
