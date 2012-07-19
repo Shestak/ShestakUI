@@ -709,6 +709,8 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
@@ -946,6 +948,8 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
@@ -1096,6 +1100,8 @@ Filger_Spells = {
 			{spellID = 26297, filter = "CD"},
 			-- Arcane Torrent (Blood Elf)
 			{spellID = 69179, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 			
 			-- Other
 			-- Gloves
@@ -1542,6 +1548,8 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
@@ -1775,6 +1783,8 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
@@ -2008,6 +2018,8 @@ Filger_Spells = {
 			{spellID = 26297, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
@@ -2462,6 +2474,8 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
