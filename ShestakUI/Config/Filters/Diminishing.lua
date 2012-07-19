@@ -118,7 +118,7 @@ T.DiminishingSpells = function()
 		[54787] = {"rndroot"},		-- Shattered Barrier (Rank 2)
 
 		-- Horror
-		[6789] = {"horror"},		-- Death Coil
+		[6789] = {"horror"},		-- Mortal Coil
 		[64044] = {"horror"},		-- Psychic Horror
 		[87099] = {"horror"},		-- Sin and Punishment (Rank 1)
 		[87100] = {"horror"},		-- Sin and Punishment (Rank 2)

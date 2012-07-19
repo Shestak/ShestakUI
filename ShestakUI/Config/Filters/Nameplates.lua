@@ -66,7 +66,7 @@ T.DebuffWhiteList = {
 	--MOP[SpellName(39796)] = true,	-- Stoneclaw Stun
 	-- Warlock
 	[SpellName(710)] = true,	-- Banish
-	[SpellName(6789)] = true,	-- Death Coil
+	[SpellName(6789)] = true,	-- Mortal Coil
 	[SpellName(5782)] = true,	-- Fear
 	[SpellName(5484)] = true,	-- Howl of Terror
 	[SpellName(6358)] = true,	-- Seduction

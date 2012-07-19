@@ -2056,6 +2056,8 @@ Filger_Spells = {
 			{spellID = 6229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Burning Rush
+			{spellID = 111400, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2124,30 +2126,18 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Self
-			-- Shadow Embrace
-			--MOP{spellID = 32389, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Curse of Tongues
-			--MOP{spellID = 1714, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Curse of the Elements
+			{spellID = 1490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Curse of Exhaustion
 			{spellID = 18223, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of Weakness
-			--MOP{spellID = 702, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Death Coil
-			{spellID = 6789, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Curse of Enfeeblement
+			{spellID = 109466, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Enslave Demon
 			{spellID = 1098, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Shadowsnare
 			{spellID = 63311, unitID = "target", caster = "player", filter = "DEBUFF"},
 
-			-- Other
-			-- Curse of the Elements (Warlock)
-			{spellID = 1490, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of the Elements: Jinx (Warlock)
-			--MOP{spellID = 86105, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Earth and Moon (Moonkin)
-			--MOP{spellID = 48506, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Ebon Plaguebringer (DK)
-			--MOP{spellID = 65142, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- CoE group
 			-- Master poisoner (Rogue)
 			{spellID = 93068, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
@@ -2219,7 +2209,7 @@ Filger_Spells = {
 			{spellID = 48020, filter = "CD"},
 			-- Howl of Terror
 			{spellID = 5484, filter = "CD"},
-			-- Death Coil
+			-- Mortal Coil
 			{spellID = 6789, filter = "CD"},
 			-- Haunt
 			{spellID = 48181, filter = "CD"},
@@ -2829,7 +2819,7 @@ Filger_Spells = {
 			--MOP{spellID = 93975, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Demonic Leap
 			{spellID = 54785, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Death Coil
+			-- Mortal Coil
 			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 5782, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -3134,7 +3124,7 @@ Filger_Spells = {
 			--MOP{spellID = 93975, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Demonic Leap
 			{spellID = 54785, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Death Coil
+			-- Mortal Coil
 			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 5782, unitID = "target", caster = "all", filter = "DEBUFF"},

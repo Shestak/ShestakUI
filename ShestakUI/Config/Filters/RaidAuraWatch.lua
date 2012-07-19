@@ -349,7 +349,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(39796),	-- Stoneclaw Stun
 			-- Warlock
 			SpellName(5782),	-- Fear
-			SpellName(6789),	-- Death Coil
+			SpellName(6789),	-- Mortal Coil
 			SpellName(5484),	-- Howl of Terror
 			SpellName(6358),	-- Seduction
 			SpellName(30283),	-- Shadowfury

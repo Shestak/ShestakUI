@@ -27,7 +27,8 @@ if T.class == "WARLOCK" then
 		T.aoespam[348] = true		-- Immolate
 		T.aoespam[980] = true		-- Agony
 		T.aoespam[85455] = true		-- Bane of Havoc
-		T.aoespam[104233] = true	-- Rain of Fire
+		T.aoespam[42223] = true		-- Rain of Fire
+		T.aoespam[689] = true		-- Drain Life
 		T.aoespam[5857] = true		-- Hellfire Effect
 		T.aoespam[86040] = true		-- Hand of Gul'dan
 		T.aoespam[103103] = true	-- Malefic Grasp
@@ -44,6 +45,7 @@ if T.class == "WARLOCK" then
 		T.healfilter[89653] = true	-- Drain Life
 		T.healfilter[79268] = true	-- Soul Harvest
 		T.healfilter[30294] = true	-- Soul Leech
+		T.healfilter[108359] = true	-- Dark Regeneration
 	end
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
