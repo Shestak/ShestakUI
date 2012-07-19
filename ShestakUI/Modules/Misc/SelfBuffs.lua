@@ -11,7 +11,7 @@ local function OnEvent(self, event, arg1, arg2)
 	local group = tab[self.id]
 	if not group.spells and not group.weapon then return end
 	if not GetActiveSpecGroup() then return end
-	if event == "UNIT_AURA" and arg1 ~= "player" then return end 
+	if event == "UNIT_AURA" and arg1 ~= "player" then return end
 	if group.level and UnitLevel("player") < group.level then return end
 
 	self.icon:SetTexture(nil)
@@ -130,7 +130,7 @@ local function OnEvent(self, event, arg1, arg2)
 	if (event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_REGEN_DISABLED") and C.reminder.solo_buffs_sound == true then canplaysound = true end
 
 	if not group.weapon then
-		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and 
+		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and
 		treepass == true and rolepass == true and not (UnitInVehicle("player") and self.hasTexture) then
 			for _, buff in pairs(group.spells) do
 				local name = GetSpellInfo(buff)
@@ -149,7 +149,7 @@ local function OnEvent(self, event, arg1, arg2)
 			end
 			self:Show()
 			if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
-		elseif ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid"))) and 
+		elseif ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid"))) and
 		reversecheck == true and not (UnitInVehicle("player") and self.hasTexture) then
 			if negate_reversecheck and negate_reversecheck == GetSpecialization() then self:Hide() return end
 			for _, buff in pairs(group.spells) do
@@ -165,7 +165,7 @@ local function OnEvent(self, event, arg1, arg2)
 			self:Hide()
 		end
 	else
-		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and 
+		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and
 		treepass == true and rolepass == true and not (UnitInVehicle("player") and self.hasTexture) then
 			if hasOffhandWeapon == nil then
 				if hasMainHandEnchant == nil then

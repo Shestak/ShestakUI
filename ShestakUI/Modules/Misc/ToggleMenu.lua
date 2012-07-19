@@ -465,7 +465,7 @@ local function refreshAddOnMenu()
 	expandbutton:SetWidth(buttonwidth(menuwidth) + buttonspacing(menuwidth - 1))
 end
 
-expandbutton:SetScript("OnMouseUp", function(self) 
+expandbutton:SetScript("OnMouseUp", function(self)
 	addonToggleOnly = not addonToggleOnly
 	if addonToggleOnly then
 		self.txt:SetText("+ + +")

@@ -26,9 +26,9 @@ local function hookSetHyperlink(tooltip, refString)
 	numCriteria = GetAchievementNumCriteria(achievementID)
 	GUID = select(3, string.find(refString, ":%d+:(.-):"))
 
-	if GUID == string.sub(UnitGUID("player"), 3) then 
+	if GUID == string.sub(UnitGUID("player"), 3) then
 		tooltip:Show()
-		return 
+		return
 	end
 
 	tooltip:AddLine(" ")

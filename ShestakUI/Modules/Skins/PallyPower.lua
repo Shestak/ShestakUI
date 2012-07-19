@@ -19,18 +19,18 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 		local forty = 40
 		local sixty = 60
 		local hundred = 100
-		
+
 		self.db = LibStub("AceDB-3.0"):New("PallyPowerDB", PallyPower.defaults, "Default")
 		settings = self.db.profile
 		settings.buffscale = one
 		settings.display.buttonWidth = hundred + three
 		settings.display.buttonHeight = forty - three
-		
+
 		local _applyskin = PallyPower.ApplySkin
 		function PallyPower:ApplySkin(skinname)
 
 			local needSkinning = {PallyPowerAutoBtn, PallyPowerRFBtn, PallyPowerAuraBtn}
-			
+
 			for _, frame in pairs(needSkinning) do
 				frame:SetBackdrop({
 					bgFile = C.media.blank,
@@ -42,7 +42,7 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 					frame.bg:SetFrameLevel(frame:GetFrameLevel() - 1)
 					frame.bg:SetTemplate("Transparent")
 				end
-				
+
 				local fname = frame:GetName()
 				for _, fontstring in pairs({"Time", "Text", "TimeSeal"}) do
 					local fs = _G[fname..fontstring]
@@ -68,7 +68,7 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 				for _, tex in pairs({"Icon", "IconAura", "BuffIcon", "IconSeal", "IconRF"}) do
 					if _G[fname..tex] and not _G[fname.."New"..tex] then
 						local oldicon = _G[fname..tex]
-						oldicon:SetAlpha(0)	
+						oldicon:SetAlpha(0)
 						oldicon:ClearAllPoints()
 						-- Swap seal and RF icon
 						if fname == "PallyPowerAuraBtn" then
@@ -83,11 +83,11 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 						else
 							oldicon:Point("TOPLEFT", four, -four)
 						end
-						
+
 						local panel = CreateFrame("Frame", fname.."New"..tex, frame)
 						panel:SetAllPoints(oldicon)
 						panel:SetTemplate("Default")
-						
+
 						local icon = panel:CreateTexture()
 						panel.icon = panel
 						icon:Point("TOPLEFT", panel, 2, -2)
@@ -115,12 +115,12 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 		local _updatelayout = PallyPower.UpdateLayout
 		function PallyPower:UpdateLayout()
 			_updatelayout(self)
-			
+
 			-- Update button layout for aura, rf and auto
 			for _, button in pairs({PallyPowerAutoBtn, PallyPowerRFBtn, PallyPowerAuraBtn}) do
 				local a, p, b, x, y = button:GetPoint()
 				y = y + three
-				
+
 				if not InCombatLockdown() then
 					button:Point(a, p, b, x, y)
 				end

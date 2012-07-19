@@ -194,7 +194,7 @@ addon:SetScript("OnEvent", function(self, event)
 			WorldMapTooltip:Hide()
 		end
 		WorldMap_ToggleSizeDown()
-		if FeedbackUIMapTip then 
+		if FeedbackUIMapTip then
 			FeedbackUIMapTip:Hide()
 			FeedbackUIMapTip.Show = function() end
 		end

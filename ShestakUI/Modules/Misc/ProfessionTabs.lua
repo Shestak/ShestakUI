@@ -63,7 +63,7 @@ function ProfessionTabs:TriggerEvents()
 end
 
 local function Tab_OnEnter(self)
-	GameTooltip:SetOwner(self, "ANCHOR_RIGHT") 
+	GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
 	GameTooltip:AddLine(self.SpellRank ~= "" and format("%s (%s)", self.SpellName, self.SpellRank) or self.SpellName, 1, 1, 1)
 	GameTooltip:Show()
 end
@@ -132,7 +132,7 @@ function ProfessionTabs:EventHandler(Table, Parent)
 		for Index = 1, #Cache do
 			local SpellName, SpellRank, SpellTexture = GetSpellInfo(Cache[Index])
 			local Tab = Table[Index] or self:CreateTab(Table, Parent)
-			
+
 			Tab.SpellName = SpellName
 			Tab.SpellRank = SpellRank
 			Tab:SetNormalTexture(SpellTexture)
