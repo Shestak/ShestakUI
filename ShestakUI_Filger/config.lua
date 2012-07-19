@@ -1843,6 +1843,8 @@ Filger_Spells = {
 			{spellID = 16246, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lava Surge
 			{spellID = 77762, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elemental Blast
+			{spellID = 118522, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tidal Waves
 			--MOP{spellID = 51562, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lava flows
@@ -1974,6 +1976,8 @@ Filger_Spells = {
 			{spellID = 30823, filter = "CD"},
 			-- Stormstrike
 			{spellID = 17364, filter = "CD"},
+			-- Elemental Blast
+			{spellID = 117014, filter = "CD"},
 			-- Spiritwalker's grace
 			{spellID = 79206, filter = "CD"},
 			-- Healing rain
