@@ -63,16 +63,16 @@ L_MINIMAP_CALENDAR = "Calendario"
 -- Addons list
 L_ALOAD_RL = "Ricarica l'interfaccia"
 L_ALOAD_DEP = "Dipendenze: "
-L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
-L_ALOAD_PROFILES = "Profiles" -- Needs review
-L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
-L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
-L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
-L_ALOAD_SET_TO = "Set To.." -- Needs review
-L_ALOAD_ADD_TO = "Add To.." -- Needs review
-L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
-L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
-L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
+L_ALOAD_OP_DEP = "Dipendenze opzionali: "
+L_ALOAD_PROFILES = "Profili"
+L_ALOAD_ENABLE_ALL = "Attiva tutti"
+L_ALOAD_DISABLE_ALL = "Disattiva tutti"
+L_ALOAD_PROFILE_NAME = "Nome del profilo"
+L_ALOAD_SET_TO = "Imposta su.."
+L_ALOAD_ADD_TO = "Aggiungi a.."
+L_ALOAD_REMOVE_FROM = "Rimuovi da.."
+L_ALOAD_DELETE_PROFILE = "Cancella il profilo.."
+L_ALOAD_CONFIRM_DELETE = "Vuoi davvero cancellare questo profilo? Allora tieni premuto Shift e clicca di nuovo"
 
 -- Chat
 L_CHAT_WHISPER = "Da"
@@ -89,7 +89,7 @@ L_CHAT_RAID_WARNING = "AIN"
 L_CHAT_BATTLEGROUND = "CB"
 L_CHAT_BATTLEGROUND_LEADER = "CCB"
 L_CHAT_OFFICER = "UF"
-L_CHAT_PET_BATTLE = "PB" -- Needs review
+L_CHAT_PET_BATTLE = "STM"
 L_CHAT_COME_ONLINE = "è adesso online."
 L_CHAT_GONE_OFFLINE = "è andato offline."
 L_CHAT_COME_ONLINE_COLOR = "è adesso |cff298F00online|r !"
@@ -141,7 +141,7 @@ L_LOOT_CANNOT = "Non puoi partecipare al tiro per il bottino"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "Sei assente!"
-L_PANELS_AFK_RCLICK = "Clicca col destro per nascondere il pannello."
+L_PANELS_AFK_RCLICK = "Click destro = nascondi pannello."
 L_PANELS_AFK_LCLICK = "Clicca col sinistro per non essere più impostato come assente."
 
 -- Cooldowns
@@ -165,8 +165,8 @@ L_PLANNER_DEATHKNIGHT_1 = "Sangue"
 L_PLANNER_DEATHKNIGHT_2 = "Gelo"
 L_PLANNER_DEATHKNIGHT_3 = "Empietà"
 L_PLANNER_DRUID_1 = "Equilibrio"
-L_PLANNER_DRUID_2 = "Combattimento ferino"
-L_PLANNER_DRUID_3 = "Guardian"	--need review
+L_PLANNER_DRUID_2 = "Aggressore Ferino"
+L_PLANNER_DRUID_3 = "Guardiano Ferino"
 L_PLANNER_DRUID_4 = "Rigenerazione"
 L_PLANNER_HUNTER_1 = "Affinità animale"
 L_PLANNER_HUNTER_2 = "Precisione di tiro"
@@ -174,9 +174,9 @@ L_PLANNER_HUNTER_3 = "Sopravvivenza"
 L_PLANNER_MAGE_1 = "Arcano"
 L_PLANNER_MAGE_2 = "Fuoco"
 L_PLANNER_MAGE_3 = "Gelo"
-L_PLANNER_MONK_1 = "Brewmaster"	--need review
-L_PLANNER_MONK_2 = "Mistweaver"	--need review
-L_PLANNER_MONK_3 = "Windwalker"	--need review
+L_PLANNER_MONK_1 = "Mastro Birraio"
+L_PLANNER_MONK_2 = "Misticismo"
+L_PLANNER_MONK_3 = "Impeto"
 L_PLANNER_PALADIN_1 = "Sacro"
 L_PLANNER_PALADIN_2 = "Protezione"
 L_PLANNER_PALADIN_3 = "Castigo"
@@ -234,7 +234,7 @@ L_POPUP_SETTINGS_ALL = "Applica le impostazioni per tutte le AddOns? (DBM/DXE, S
 L_POPUP_SETTINGS_DBM = "È necessario cambiare la posizione degli elementi di DBM."
 L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DXE."
 L_POPUP_SETTINGS_BW = "È necessario cambiare la posizione degli elementi di BigWigs."
-L_POPUP_ARMORY = "Armory" -- Needs review
+L_POPUP_ARMORY = "Armeria"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Benvenuto/a in ShestakUI "
