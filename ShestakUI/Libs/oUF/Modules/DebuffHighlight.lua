@@ -13,7 +13,8 @@ local CanDispel = {
 	SHAMAN = {Magic = false, Curse = true,},
 	PALADIN = {Magic = false, Poison = true, Disease = true,},
 	MAGE = {Curse = true,},
-	DRUID = {Magic = false, Curse = true, Poison = true,}
+	DRUID = {Magic = false, Curse = true, Poison = true,},
+	MONK = {Magic = false, Poison = true, Disease = true,}
 }
 local dispellist = CanDispel[playerClass] or {}
 local origColors = {}
@@ -55,6 +56,13 @@ local function CheckSpec(self, event, levels)
 	elseif playerClass == "DRUID" then
 		-- Check to see if we have the 'Nature's Cure' talent.
 		if T.CheckForKnownTalent(88423) then
+			dispellist.Magic = true
+		else
+			dispellist.Magic = false
+		end
+	elseif playerClass == "MONK" then
+		-- Check to see if we have the 'Internal Medicine' talent.
+		if T.CheckForKnownTalent(115451) then
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false

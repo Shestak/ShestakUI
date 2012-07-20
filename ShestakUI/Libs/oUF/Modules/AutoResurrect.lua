@@ -28,6 +28,9 @@ local classList = {
 	["SHAMAN"] = {
 		ooc = GetSpellInfo(2008),		-- Ancestral Spirit
 	},
+	["MONK"] = {
+		ooc = GetSpellInfo(115178),		-- Resuscitate
+	},
 }
 
 local body = ""

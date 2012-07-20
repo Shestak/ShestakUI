@@ -71,8 +71,8 @@ do
 			["Curse"] = true,
 		},
 		["PALADIN"] = {
-			["Poison"] = true,
 			["Magic"] = false,
+			["Poison"] = true,
 			["Disease"] = true,
 		},
 		["MAGE"] = {
@@ -82,6 +82,11 @@ do
 			["Magic"] = false,
 			["Curse"] = true,
 			["Poison"] = true,
+		},
+		["MONK"] = {
+			["Magic"] = false,
+			["Poison"] = true,
+			["Disease"] = true,
 		},
 	}
 
@@ -110,6 +115,13 @@ local function CheckSpec(self, event, levels)
 	elseif select(2, UnitClass("player")) == "DRUID" then
 		-- Check to see if we have the 'Nature's Cure' talent
 		if T.CheckForKnownTalent(88423) then
+			DispellFilter.Magic = true
+		else
+			DispellFilter.Magic = false
+		end
+	elseif select(2, UnitClass("player")) == "MONK" then
+		-- Check to see if we have the 'Internal Medicine' talent
+		if T.CheckForKnownTalent(115451) then
 			DispellFilter.Magic = true
 		else
 			DispellFilter.Magic = false
