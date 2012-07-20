@@ -12,9 +12,9 @@ FSTooltip:SetScript("OnUpdate", function(self, elapsed)
 		if FrameStackTooltip then
 			local noscalemult = T.mult * C.general.uiscale
 			FrameStackTooltip:SetBackdrop({
-				bgFile = C.media.blank, 
-				edgeFile = C.media.blank, 
-				tile = false, tileSize = 0, edgeSize = noscalemult, 
+				bgFile = C.media.blank,
+				edgeFile = C.media.blank,
+				tile = false, tileSize = 0, edgeSize = noscalemult,
 				insets = { left = -noscalemult, right = -noscalemult, top = -noscalemult, bottom = -noscalemult}
 			})
 			FrameStackTooltip:SetBackdropColor(unpack(C.media.overlay_color))

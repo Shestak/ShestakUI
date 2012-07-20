@@ -142,7 +142,7 @@ local function Disable(self)
 		if not bar.disableMelee then
 			self:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED", Melee)
 		end
-		
+
 		if not bar.disableOoc then
 			self:UnregisterEvent("PLAYER_REGEN_ENABLED", Ooc)
 		end

@@ -32,7 +32,7 @@ local function GetDebuffType(unit, filter)
 		i = i + 1
 	end
 end
- 
+
 local function CheckSpec(self, event, levels)
 	-- Not interested in gained points from leveling
 	if event == "CHARACTER_POINTS_CHANGED" and levels > 0 then return end
@@ -66,7 +66,7 @@ local function Update(object, event, unit)
 	if object.unit ~= unit then return end
 	local debuffType, texture = GetDebuffType(unit, object.DebuffHighlightFilter)
 	if debuffType then
-		local color = DebuffTypeColor[debuffType] 
+		local color = DebuffTypeColor[debuffType]
 		if object.DebuffHighlightBackdrop or object.DebuffHighlightBackdropBorder then
 			if object.DebuffHighlightBackdrop then
 				object:SetBackdropColor(color.r, color.g, color.b, object.DebuffHighlightAlpha or 1)

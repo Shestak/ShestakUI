@@ -24,10 +24,10 @@ lpanels:CreateLayout("Load For All", {
 				anchor_to = "CENTER", color = "1 0.1 0.1"
 			},
 			{	string = L_PANELS_AFK_RCLICK, anchor_to = "BOTTOM", y_off = 12,
-				shadow = 0, outline = 3, font = C.font.stats_font, size = C.font.stats_font_size, 
+				shadow = 0, outline = 3, font = C.font.stats_font, size = C.font.stats_font_size,
 			},
 			{	string = L_PANELS_AFK_LCLICK, anchor_to = "BOTTOM", y_off = 3,
-				shadow = 0, outline = 3, font = C.font.stats_font, size = C.font.stats_font_size, 
+				shadow = 0, outline = 3, font = C.font.stats_font, size = C.font.stats_font_size,
 			}
 		},
 		OnLoad = function(self)

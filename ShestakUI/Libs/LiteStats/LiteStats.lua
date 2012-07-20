@@ -104,7 +104,7 @@ local function formatgold(style, amount)
 		return (gold > 0 and format("%s|cffffd700%s|r ",gold,GOLD_AMOUNT_SYMBOL) or "")
 			.. (silver > 0 and format("%s|cffc7c7cf%s|r ",silver,SILVER_AMOUNT_SYMBOL) or "")
 			.. ((copper > 0 or (gold == 0 and silver == 0)) and format("%s|cffeda55f%s|r", copper,COPPER_AMOUNT_SYMBOL) or "")
-	elseif style == 2 or not style then	
+	elseif style == 2 or not style then
 		return format("%.1f|cffffd700%s|r", amount * 0.0001, GOLD_AMOUNT_SYMBOL)
 	elseif style == 3 then
 		return format("|cffffd700%s|r.|cffc7c7cf%s|r.|cffeda55f%s|r", gold, silver, copper)
@@ -229,9 +229,9 @@ CreateFrame("Frame", "LSMenus", UIParent, "UIDropDownMenuTemplate")
 ----------------------------------------------------------------------------------------
 if fps.enabled then
 	Inject("FPS", {
-		text = { 
+		text = {
 			string = function()
-				return format(fps.fmt, floor(GetFramerate())) 
+				return format(fps.fmt, floor(GetFramerate()))
 			end
 		},
 	})
@@ -338,7 +338,7 @@ if memory.enabled then
 		--OnUpdate = AltUpdate,
 		OnLeave = function(self) self.hovered = false end,
 		OnClick = function(self, button)
-			if button == "RightButton" then 
+			if button == "RightButton" then
 				UpdateMemUse()
 				local before = gcinfo()
 				collectgarbage()
@@ -516,7 +516,7 @@ if gold.enabled then
 			GameTooltip:AddDoubleLine(" ", "-----------------", 1, 1, 1, 0.5, 0.5, 0.5)
 			GameTooltip:AddDoubleLine(L_STATS_TOTAL, formatgold(1, total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:AddLine(" ")
-			
+
 			local currencies = 0
 			for i = 1, GetCurrencyListSize() do
 				local name, _, _, _, watched, count, icon = GetCurrencyListInfo(i)
@@ -542,7 +542,7 @@ if gold.enabled then
 		end
 	})
 	SLASH_KJUNK1 = "/junk"
-	function SlashCmdList.KJUNK(s) 
+	function SlashCmdList.KJUNK(s)
 		local action = strsplit(" ", s)
 		if action == "list" then
 			print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_EXCEPTIONS, (#SavedStats.JunkIgnore == 0 and NONE or "")))
@@ -1054,7 +1054,7 @@ if friends.enabled then
 
 							classc, levelc = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[friendTable[i][3]] or RAID_CLASS_COLORS[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
 							if classc == nil then
-								classc = GetQuestDifficultyColor(friendTable[i][2]) 
+								classc = GetQuestDifficultyColor(friendTable[i][2])
 							end
 
 							menuList[2].menuList[menuCountInvites] = {
@@ -1072,7 +1072,7 @@ if friends.enabled then
 								arg1 = friendTable[i][1],
 								notCheckable = true,
 								func = function(self, arg1)
-									menuFrame:Hide() 
+									menuFrame:Hide()
 									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
 								end
 							}
@@ -1098,7 +1098,7 @@ if friends.enabled then
 
 							if select(1, UnitFactionGroup("player")) == "Horde" then
 								playerFaction = 0
-							else 
+							else
 								playerFaction = 1
 							end
 
@@ -1110,7 +1110,7 @@ if friends.enabled then
 
 								if UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4]) then
 									grouped = 1
-								else 
+								else
 									grouped = 2
 								end
 
@@ -1176,7 +1176,7 @@ if friends.enabled then
 						if not isOnline then break end
 						if isAFK then
 							status = "|cffE7E716"..L_CHAT_AFK.."|r"
-						else 
+						else
 							if isDND then
 								status = "|cffff0000"..L_CHAT_DND.."|r"
 							else
@@ -1676,7 +1676,7 @@ if helm.enabled then
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
-				if ShowingHelm() then 
+				if ShowingHelm() then
 					ShowHelm(0)
 					self.text:SetText(format(helm.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else
@@ -1719,7 +1719,7 @@ if cloak.enabled then
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
-				if ShowingCloak() then 
+				if ShowingCloak() then
 					ShowCloak(0)
 					self.text:SetText(format(cloak.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else

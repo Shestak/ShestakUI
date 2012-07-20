@@ -56,7 +56,7 @@ chatbubblehook:SetScript("OnUpdate", function(chatbubblehook, elapsed)
 			end
 			numkids = newnumkids
 		end
-		
+
 		for i, frame in next, bubbles do
 			frame:SetBackdropBorderColor(unpack(C.media.border_color))
 		end

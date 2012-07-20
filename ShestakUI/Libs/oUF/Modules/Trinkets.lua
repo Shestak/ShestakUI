@@ -11,7 +11,7 @@ local arenaFrame = {}
 local arenaGUID = {}
 local usedTrinkets = {}
 local trinketFrame = {}
- 
+
 local TrinketUpdate = function(self, elapsed)
 	if self.endTime < GetTime() then
 		usedTrinkets[self.guid] = false
@@ -52,7 +52,7 @@ local TrinketUsed = function(guid, time)
 		end
 	end
 	usedTrinkets[guid] = true
-	if not trinketFrame[guid] then 
+	if not trinketFrame[guid] then
 		trinketFrame[guid] = CreateFrame("Frame")
 	end
 	trinketFrame[guid].endTime = GetTime() + time
@@ -111,11 +111,11 @@ local Enable = function(self)
 		arenaFrame[self.unit] = self
 	end
 end
- 
+
 local Disable = function(self)
 	if self.Trinket then
 		arenaFrame[self.unit] = nil
 	end
 end
- 
+
 oUF:AddElement("Trinket", function() return end, Enable, Disable)

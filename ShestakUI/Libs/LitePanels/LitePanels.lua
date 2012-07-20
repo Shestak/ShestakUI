@@ -69,7 +69,7 @@ end
 
 ------------------------------------------------------------------------------------------
 -- API: lpanels:ApplyLayout("n:Character r:Realm c:Class", "layout1", "layout2")
---  » arg1 - Profile string: May be set to any combination of n:ame, r:ealm, c:lass, 
+--  » arg1 - Profile string: May be set to any combination of n:ame, r:ealm, c:lass,
 --		separated by a single space. If nil, applies the specified layouts to all
 --		characters. Additionally, a dash may be applied to front of the
 --		condition (-n:ame -r:ealm -c:lass) to make the layout NOT load on the specified
@@ -175,7 +175,7 @@ function lpanels:MakePanel(f)
 	panel:SetFrameStrata(f.strata or d.strata)
 	if f.level then panel:SetFrameLevel(f.level) end
 
-	-- default texts bg alpha, blend mode		
+	-- default texts bg alpha, blend mode
 	if f.text and not f.bg_alpha and not f.tex_file and not f.bg_color then f.bg_alpha = 0 end
 	if f.bg_blend then panel.bg:SetBlendMode(f.bg_blend) end
 
@@ -250,7 +250,7 @@ function lpanels:MakePanel(f)
 				text:SetFont(d.text.font, t.size or d.text.size, flags)
 				print("|cffffffffLite|cff66C6FFPanels  |cffff5555Font invalid:", strmatch(t.font, "([^/\\]+)$"))
 			end
-			
+
 			-- texts string
 			if not t.string then t.string = d.text.string end
 			text:SetText(is(t.string,'function') and t.string(text) or t.string)
@@ -260,7 +260,7 @@ function lpanels:MakePanel(f)
 			text:SetTextColor(tx_r,tx_g,tx_b,t.alpha or d.text.alpha)
 
 			-- texts shadow
-			if (not t.shadow and not t.outline) or (t.shadow and t.shadow ~= 0) then 
+			if (not t.shadow and not t.outline) or (t.shadow and t.shadow ~= 0) then
 				if not t.shadow then t.shadow = d.text.shadow end
 				if is(t.shadow,'number') then t.shadow = {x=t.shadow,y=-t.shadow,alpha=d.text.shadow.alpha} end
 				if is(t.shadow,'table') then
@@ -324,7 +324,7 @@ end
 
 function lpanels:Init()
 	if #self.profile == 0 then return end
-		
+
 	-- check if parent/anchor names are the names of other panels, then tag with 'LP_'
 	for i, f in ipairs(self.profile) do for _, p in ipairs(self.profile) do
 		if f.name ~= nil then
@@ -332,7 +332,7 @@ function lpanels:Init()
 			if f.name == p.anchor_frame then p.anchor_frame = "LP_"..p.anchor_frame end
 		end
 	end f.name = f.name and "LP_"..f.name or "LP_"..i end
-	
+
 	-- set viewport
 	if is(self.profile.vp,'table') then
 		WorldFrame:ClearAllPoints()
@@ -368,7 +368,7 @@ function lpanels.OnEvent(self, event)
 	elseif event == "ADDON_LOADED" and deps then
 		for frame, addon in pairs(deps) do
 			if IsAddOnLoaded(addon) then _G[frame]:Show() frame = nil end
-		end 
+		end
 	end
 end
 
@@ -385,7 +385,7 @@ function lpanels.CreateFrame(_, frame)
 			if panel.level then panel:SetFrameLevel(panel.level) end
 			hidden[frame][i] = nil
 		end
-	end	
+	end
 	if #hidden[frame] == 0 then hidden[frame] = nil end
 end
 

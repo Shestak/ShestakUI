@@ -25,11 +25,11 @@ local function TotemOnClick(self, ...)
 	local mouse = ...
 
 	if IsShiftKeyDown() then
-		for j = 1, 4 do 
+		for j = 1, 4 do
 			DestroyTotem(j)
-		end 
-	else 
-		DestroyTotem(id) 
+		end
+	else
+		DestroyTotem(id)
 	end
 end
 
@@ -56,12 +56,12 @@ local function UpdateSlot(self, slot)
 		local mu = totem[slot].bg.multiplier
 		local r, g, b = totem[slot]:GetStatusBarColor()
 		r, g, b = r*mu, g*mu, b*mu
-		totem[slot].bg:SetVertexColor(r, g, b) 
+		totem[slot].bg:SetVertexColor(r, g, b)
 	end
 
 	totem[slot].ID = slot
 
-	-- If we have a totem then set his value 
+	-- If we have a totem then set his value
 	if haveTotem then
 		if duration > 0 then
 			totem[slot]:SetValue(1 - ((GetTime() - startTime) / duration))
@@ -83,7 +83,7 @@ local function UpdateSlot(self, slot)
 			-- There's no need to update because it doesn't have any duration
 			totem[slot]:SetScript("OnUpdate", nil)
 			totem[slot]:SetValue(0)
-		end 
+		end
 	else
 		totem[slot]:SetValue(0)
 	end
@@ -92,7 +92,7 @@ end
 
 local function Update(self, unit)
 	-- Update every slot on login, still have issues with it
-	for i = 1, 4 do 
+	for i = 1, 4 do
 		UpdateSlot(self, i)
 	end
 end
