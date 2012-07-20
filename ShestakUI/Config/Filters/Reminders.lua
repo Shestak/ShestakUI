@@ -132,7 +132,7 @@ if C.reminder.solo_buffs_enable == true then
 			[1] = {	-- Aspects group
 				["spells"] = {
 					13165,	-- Aspect of the Hawk
-					20043,	-- Aspect of the Wild
+					109260,	-- Aspect of the Iron Hawk
 					82661,	-- Aspect of the Fox
 				},
 				["instance"] = true,
