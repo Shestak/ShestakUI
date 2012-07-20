@@ -161,7 +161,7 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		WARLOCK = {
-			[1] = { -- Dark Intent group
+			[1] = {	-- Dark Intent group
 				["spells"] = {
 					109773,	-- Dark Intent
 				},
@@ -282,10 +282,12 @@ if C.reminder.solo_buffs_enable == true then
 		ROGUE = {
 			[1] = {	-- Poisons group
 				["spells"] = {
-					2823, -- Deadly Poison
-					8679, -- Wound Poison
-					5761, -- Mind-numbing Poison
-					3408, -- Crippling Poison
+					2823,	-- Deadly Poison
+					8679,	-- Wound Poison
+					5761,	-- Mind-numbing Poison
+					3408,	-- Crippling Poison
+					108211,	-- Leeching Poison
+					108215,	-- Paralytic Poison
 				},
 				["combat"] = true,
 				["instance"] = true,
