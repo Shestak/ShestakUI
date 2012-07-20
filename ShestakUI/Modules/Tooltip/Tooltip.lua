@@ -329,7 +329,7 @@ if C.tooltip.hidebuttons == true then
 			self:Hide()
 		end
 	end
- 
+
 	hooksecurefunc(GameTooltip, "SetAction", CombatHideActionButtonsTooltip)
 	hooksecurefunc(GameTooltip, "SetPetAction", CombatHideActionButtonsTooltip)
 	hooksecurefunc(GameTooltip, "SetShapeshift", CombatHideActionButtonsTooltip)
@@ -460,6 +460,6 @@ local function BackdropFix(self)
 	end
 end
 
-if C.tooltip.cursor ~= true and C.tooltip.shift_modifer ~= true then 
+if C.tooltip.cursor ~= true and C.tooltip.shift_modifer ~= true then
 	GameTooltip:HookScript("OnUpdate", BackdropFix)
 end

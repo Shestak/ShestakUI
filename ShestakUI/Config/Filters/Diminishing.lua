@@ -3,13 +3,13 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true or C.unitframe.p
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Cyclone -> http://www.wowhead.com/spell=33786
+--	Example: Fear -> http://www.wowhead.com/spell=5782
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 T.DiminishingSpells = function()
 	return {
 		-- Disorients
-		[49203] = {"disorient"},	-- Hungering Cold
+		--MOP[49203] = {"disorient"},	-- Hungering Cold
 		[6770] = {"disorient"},		-- Sap
 		[1776] = {"disorient"},		-- Gouge
 		[51514] = {"disorient"},	-- Hex
@@ -118,7 +118,7 @@ T.DiminishingSpells = function()
 		[54787] = {"rndroot"},		-- Shattered Barrier (Rank 2)
 
 		-- Horror
-		[6789] = {"horror"},		-- Death Coil
+		[6789] = {"horror"},		-- Mortal Coil
 		[64044] = {"horror"},		-- Psychic Horror
 		[87099] = {"horror"},		-- Sin and Punishment (Rank 1)
 		[87100] = {"horror"},		-- Sin and Punishment (Rank 2)

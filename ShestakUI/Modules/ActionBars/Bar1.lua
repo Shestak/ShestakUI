@@ -51,7 +51,7 @@ bar:SetScript("OnEvent", function(self, event, ...)
 			end
 		]])
 
-		self:SetAttribute("_onstate-page", [[ 
+		self:SetAttribute("_onstate-page", [[
 			for i, button in ipairs(buttons) do
 				button:SetAttribute("actionpage", tonumber(newstate))
 			end

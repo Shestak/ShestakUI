@@ -556,7 +556,7 @@ T.PostUpdateHealth = function(health, unit, min, max)
 		local r, g, b
 		if (C.unitframe.own_color ~= true and C.unitframe.enemy_health_color and unit == "target" and UnitIsEnemy(unit, "player") and UnitIsPlayer(unit)) or (C.unitframe.own_color ~= true and unit == "target" and not UnitIsPlayer(unit) and UnitIsFriend(unit, "player")) then
 			local c = T.oUF_colors.reaction[UnitReaction(unit, "player")]
-			if c then 
+			if c then
 				r, g, b = c[1], c[2], c[3]
 				health:SetStatusBarColor(r, g, b)
 			else
@@ -1239,7 +1239,7 @@ T.AuraTrackerTime = function(self, elapsed)
 		if self.timeleft <= 0 then
 			self.icon:SetTexture("")
 			self.text:SetText("")
-		end	
+		end
 		self.text:SetFormattedText("%.1f", self.timeleft)
 	end
 end
@@ -1252,7 +1252,7 @@ T.HideAuraFrame = function(self)
 			TemporaryEnchantFrame:Hide()
 			self.Debuffs:Hide()
 		end
-	elseif self.unit == "pet" and not C.aura.pet_debuffs or self.unit == "focus" and not C.aura.focus_debuffs 
+	elseif self.unit == "pet" and not C.aura.pet_debuffs or self.unit == "focus" and not C.aura.focus_debuffs
 	or self.unit == "focustarget" and not C.aura.fot_debuffs or self.unit == "targettarget" and not C.aura.tot_debuffs then
 		self.Debuffs:Hide()
 	elseif self.unit == "target" and not C.aura.target_auras then
@@ -1354,7 +1354,7 @@ T.UpdateThreat = function(self, event, unit)
 		self.backdrop:SetBackdropBorderColor(r, g, b)
 	else
 		self.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-	end 
+	end
 end
 
 T.CountOffsets = {
@@ -1432,6 +1432,6 @@ T.CreateAuraWatch = function(self, unit)
 			auras.icons[spell[1]] = icon
 		end
 	end
-	
+
 	self.AuraWatch = auras
 end

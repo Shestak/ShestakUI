@@ -47,7 +47,7 @@ local AddUnit = function(unit)
 			class = UnitIsPlayer(unit) and select(2, UnitClass(unit)) or "PET",
 		}
 	end
-	tList[guid].pct = threatpct or 0 
+	tList[guid].pct = threatpct or 0
 	tList[guid].val = threatval or 0
 end
 
@@ -101,7 +101,7 @@ local UpdateBars = function()
 		cur = tList[barList[i]]
 		max = tList[barList[1]]
 		if i > C.threat.bar_rows or not cur or cur.pct == 0 then break end
-		if not bar[i] then 
+		if not bar[i] then
 			bar[i] = CreateBar()
 			--bar[i]:Point("TOP", ThreatMeterAnchor, 0, - (C.threat.height + spacing) * (i-1))
 			if i == 1 then

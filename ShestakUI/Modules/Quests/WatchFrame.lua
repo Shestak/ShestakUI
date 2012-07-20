@@ -73,7 +73,7 @@ f:SetScript("OnUpdate", function(self, elapsed)
 	end
 end)
 UIWatchFrame:SetScript("OnEvent", function()
-	if not IsAddOnLoaded("Who Framed Watcher Wabbit") or not IsAddOnLoaded("Fux") then 
+	if not IsAddOnLoaded("Who Framed Watcher Wabbit") or not IsAddOnLoaded("Fux") then
 		init()
 		f:Show()
 	end

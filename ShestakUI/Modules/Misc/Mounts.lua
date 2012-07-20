@@ -9,7 +9,7 @@ function Mountz(groundmount, flyingmount, underwatermount)
 		Dismount()
 		return
 	end
-	if CanExitVehicle() then 
+	if CanExitVehicle() then
 		VehicleExit()
 		return
 	end

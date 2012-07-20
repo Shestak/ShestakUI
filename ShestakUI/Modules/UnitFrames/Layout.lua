@@ -22,7 +22,7 @@ local function Shared(self, unit)
 	self:SetScript("OnEnter", UnitFrame_OnEnter)
 	self:SetScript("OnLeave", UnitFrame_OnLeave)
 
-	local unit = (unit and unit:find("arena%dtarget")) and "arenatarget" 
+	local unit = (unit and unit:find("arena%dtarget")) and "arenatarget"
 	or (unit and unit:find("arena%d")) and "arena"
 	or (unit and unit:find("boss%d")) and "boss" or unit
 
@@ -259,7 +259,7 @@ local function Shared(self, unit)
 		end
 
 		-- LFD role icons
-		if C.raidframe.icons_lfd_role == true then 
+		if C.raidframe.icons_lfd_role == true then
 			self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 			self.LFDRole:Size(12)
 			self.LFDRole:Point("TOPLEFT", 10, 8)
@@ -579,7 +579,7 @@ local function Shared(self, unit)
 		end
 		self.Debuffs.PostCreateIcon = T.PostCreateAura
 		self.Debuffs.PostUpdateIcon = T.PostUpdateIcon
-		
+
 		if unit == "pet" then
 			self:RegisterEvent("UNIT_PET", T.UpdateAllElements)
 		end
@@ -948,9 +948,9 @@ local function Shared(self, unit)
 		self.AltPowerBar:SetPoint("RIGHT")
 		self.AltPowerBar:SetPoint("TOP", self.Health, "TOP")
 		self.AltPowerBar:SetBackdrop({
-			bgFile = C.media.blank, 
-			edgeFile = C.media.blank, 
-			tile = false, tileSize = 0, edgeSize = T.Scale(1), 
+			bgFile = C.media.blank,
+			edgeFile = C.media.blank,
+			tile = false, tileSize = 0, edgeSize = T.Scale(1),
 			insets = { left = 0, right = 0, top = 0, bottom = T.Scale(-1)}
 		})
 		self.AltPowerBar:SetBackdropColor(0, 0, 0)
@@ -1046,8 +1046,8 @@ local function Shared(self, unit)
 	if C.unitframe.plugins_fader == true then
 		if unit ~= "arena" or unit ~= "arenatarget" or unit ~= "boss" then
 			self.Fader = {
-				[1] = {Combat = 1, Arena = 1, Instance = 1}, 
-				[2] = {PlayerTarget = 1, PlayerNotMaxHealth = 1, PlayerNotMaxMana = 1}, 
+				[1] = {Combat = 1, Arena = 1, Instance = 1},
+				[2] = {PlayerTarget = 1, PlayerNotMaxHealth = 1, PlayerNotMaxMana = 1},
 				[3] = {Stealth = 0.5},
 				[4] = {notCombat = 0, PlayerTaxi = 0},
 			}

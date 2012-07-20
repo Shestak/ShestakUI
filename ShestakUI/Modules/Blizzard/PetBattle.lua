@@ -187,7 +187,7 @@ local extraUnits = {
 	f.Ally3,
 	f.Enemy2,
 	f.Enemy3
-}	
+}
 
 for i, unit in pairs(extraUnits) do
 	unit.BorderAlive:SetAlpha(0)
@@ -285,7 +285,7 @@ bf.xpBar:SetScript("OnShow", function(self) self:StripTextures() self:SetStatusB
 
 bf.TurnTimer:SetParent(bar)
 bf.TurnTimer:Size(bf.TurnTimer.SkipButton:GetWidth(), bf.TurnTimer.SkipButton:GetHeight())
-bf.TurnTimer:ClearAllPoints() 
+bf.TurnTimer:ClearAllPoints()
 bf.TurnTimer:SetPoint("BOTTOM", bf.xpBar, "TOP", 0, 5)
 bf.TurnTimer.TimerText:SetPoint("CENTER")
 

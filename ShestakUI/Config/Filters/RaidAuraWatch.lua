@@ -35,7 +35,7 @@ if C.raidframe.plugins_aura_watch == true then
 				{114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},	-- Hand of Purity
 			},
 			SHAMAN = {
-				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Riptide 
+				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Riptide
 				{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},		-- Earth Shield
 				--MOP{16236, "TOPLEFT", {0.4, 0.7, 0.2}},			-- Ancestral Fortitude
 				{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},			-- Earthliving
@@ -349,7 +349,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(39796),	-- Stoneclaw Stun
 			-- Warlock
 			SpellName(5782),	-- Fear
-			SpellName(6789),	-- Death Coil
+			SpellName(6789),	-- Mortal Coil
 			SpellName(5484),	-- Howl of Terror
 			SpellName(6358),	-- Seduction
 			SpellName(30283),	-- Shadowfury

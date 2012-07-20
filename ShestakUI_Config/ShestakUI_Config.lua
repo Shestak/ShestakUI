@@ -439,19 +439,19 @@ end
 
 StaticPopupDialogs.PERCHAR = {
 	text = L_GUI_PER_CHAR,
-	OnAccept = function() 
-		if UIConfigAllCharacters:GetChecked() then 
+	OnAccept = function()
+		if UIConfigAllCharacters:GetChecked() then
 			GUIConfigAll[myPlayerRealm][myPlayerName] = true
-		else 
+		else
 			GUIConfigAll[myPlayerRealm][myPlayerName] = false
 		end
-		ReloadUI() 
+		ReloadUI()
 	end,
-	OnCancel = function() 
+	OnCancel = function()
 		UIConfigCover:Hide()
-		if UIConfigAllCharacters:GetChecked() then 
+		if UIConfigAllCharacters:GetChecked() then
 			UIConfigAllCharacters:SetChecked(false)
-		else 
+		else
 			UIConfigAllCharacters:SetChecked(true)
 		end
 	end,
@@ -464,9 +464,9 @@ StaticPopupDialogs.PERCHAR = {
 
 StaticPopupDialogs.RESET_PERCHAR = {
 	text = L_GUI_RESET_CHAR,
-	OnAccept = function() 
+	OnAccept = function()
 		GUIConfig = GUIConfigSettings
-		ReloadUI() 
+		ReloadUI()
 	end,
 	OnCancel = function() if UIConfig and UIConfig:IsShown() then UIConfigCover:Hide() end end,
 	button1 = ACCEPT,
@@ -478,10 +478,10 @@ StaticPopupDialogs.RESET_PERCHAR = {
 
 StaticPopupDialogs.RESET_ALL = {
 	text = L_GUI_RESET_ALL,
-	OnAccept = function() 
+	OnAccept = function()
 		GUIConfigSettings = nil
 		GUIConfig = nil
-		ReloadUI() 
+		ReloadUI()
 	end,
 	OnCancel = function() UIConfigCover:Hide() end,
 	button1 = ACCEPT,
@@ -548,7 +548,7 @@ local function ShowGroup(group, button)
 		_G["UIConfigGroup"]:SetScrollChild(_G["UIConfig"..group])
 
 		local x
-		if UIConfigGroupSlider:IsShown() then 
+		if UIConfigGroupSlider:IsShown() then
 			_G["UIConfigGroup"]:EnableMouseWheel(true)
 			_G["UIConfigGroup"]:SetScript("OnMouseWheel", function(self, delta)
 				if UIConfigGroupSlider:IsShown() then
@@ -763,7 +763,7 @@ function CreateUIConfig()
 				oktext:SetPoint("CENTER", okbutton, "CENTER", -1, 0)
 				okbutton:SetWidth(oktext:GetWidth() + 5)
 				okbutton:Hide()
- 
+
 				if type(value) == "number" then
 					editbox:SetScript("OnEscapePressed", function(self) okbutton:Hide() self:ClearFocus() self:SetText(value) end)
 					editbox:SetScript("OnChar", function(self) okbutton:Show() end)
@@ -808,7 +808,7 @@ function CreateUIConfig()
 					return (("%%.%df"):format(decimal)):format(number)
 				end
 
-				colorbutton:SetScript("OnMouseDown", function(self) 
+				colorbutton:SetScript("OnMouseDown", function(self)
 					if ColorPickerFrame:IsShown() then return end
 					local newR, newG, newB, newA
 					local fired = 0
@@ -857,7 +857,7 @@ function CreateUIConfig()
 
 	local reset = NormalButton(DEFAULT, UIConfigMain)
 	reset:SetPoint("TOPLEFT", UIConfig, "BOTTOMLEFT", -10, -25)
-	reset:SetScript("OnClick", function(self) 
+	reset:SetScript("OnClick", function(self)
 		UIConfigCover:Show()
 		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
 			StaticPopup_Show("RESET_PERCHAR")

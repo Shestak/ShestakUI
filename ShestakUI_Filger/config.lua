@@ -83,7 +83,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
-			-- Flowing River (Dodge)
+			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
@@ -314,7 +314,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
-			-- Flowing River (Dodge)
+			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
@@ -534,7 +534,7 @@ Filger_Spells = {
 			{spellID = 82925, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fire!
 			{spellID = 82926, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Improved Steady Shot
+			-- Steady Focus
 			{spellID = 53220, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lock and Load
 			{spellID = 56453, unitID = "player", caster = "player", filter = "BUFF"},
@@ -709,6 +709,8 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
@@ -946,6 +948,8 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
@@ -1023,7 +1027,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
-			-- Flowing River (Dodge)
+			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
@@ -1096,7 +1100,9 @@ Filger_Spells = {
 			{spellID = 26297, filter = "CD"},
 			-- Arcane Torrent (Blood Elf)
 			{spellID = 69179, filter = "CD"},
-			
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
+
 			-- Other
 			-- Gloves
 			{slotID = 10, filter = "CD"},
@@ -1198,7 +1204,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
-			-- Flowing River (Dodge)
+			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
@@ -1542,6 +1548,8 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
@@ -1680,7 +1688,7 @@ Filger_Spells = {
 			--MOP{spellID = 51693, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hemorrhage
 			{spellID = 16511, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
-			-- Glyph of Hemorrhage 
+			-- Glyph of Hemorrhage
 			{spellID = 89775, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
 			-- Find Weakness
 			{spellID = 91021, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1775,6 +1783,8 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
@@ -1809,7 +1819,9 @@ Filger_Spells = {
 			-- Lightning Shield
 			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental mastery
-			--MOP{spellID = 64701, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 16166, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ascendance
+			{spellID = 114050, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spiritwalker's grace
 			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Flame
@@ -1841,6 +1853,8 @@ Filger_Spells = {
 			{spellID = 16246, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lava Surge
 			{spellID = 77762, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elemental Blast
+			{spellID = 118522, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tidal Waves
 			--MOP{spellID = 51562, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lava flows
@@ -1937,7 +1951,7 @@ Filger_Spells = {
 
 			-- Hex
 			{spellID = 51514, unitID = "focus", caster = "player", filter = "DEBUFF"},
-			-- Bind elemental 
+			-- Bind elemental
 			{spellID = 76780, unitID = "focus", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -1972,6 +1986,8 @@ Filger_Spells = {
 			{spellID = 30823, filter = "CD"},
 			-- Stormstrike
 			{spellID = 17364, filter = "CD"},
+			-- Elemental Blast
+			{spellID = 117014, filter = "CD"},
 			-- Spiritwalker's grace
 			{spellID = 79206, filter = "CD"},
 			-- Healing rain
@@ -1986,6 +2002,8 @@ Filger_Spells = {
 			{spellID = 108281, filter = "CD"},
 			-- Astral Shift
 			{spellID = 108271, filter = "CD"},
+			-- Ascendance
+			{spellID = 114049, filter = "CD"},
 
 			-- Racials
 			-- Stoneform (Dwarf)
@@ -2000,6 +2018,8 @@ Filger_Spells = {
 			{spellID = 26297, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
@@ -2034,20 +2054,22 @@ Filger_Spells = {
 			-- Self
 			-- Burning Soul
 			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Succub
-			--MOP{spellID = 79463, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Imp
-			--MOP{spellID = 79459, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Void
-			--MOP{spellID = 79464, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Fel Hunter
-			--MOP{spellID = 79460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demon Soul Fel Guard
-			--MOP{spellID = 79462, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Ward
+			-- Dark Soul: Knowledge
+			{spellID = 113861, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Soul: Misery
+			{spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Soul: Instability
+			{spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unending Resolve
+			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Bargain
+			{spellID = 110913, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Twilight Ward
 			{spellID = 6229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Burning Rush
+			{spellID = 111400, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2060,7 +2082,7 @@ Filger_Spells = {
 
 			-- Buffs
 			-- Molten Core
-			--MOP{spellID = 47383, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 122355, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Decimation
 			--MOP{spellID = 63158, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Backdraft
@@ -2116,30 +2138,18 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.target_debuff_icon)},
 
 			-- Self
-			-- Shadow Embrace
-			--MOP{spellID = 32389, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Curse of Tongues
-			--MOP{spellID = 1714, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Curse of the Elements
+			{spellID = 1490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Curse of Exhaustion
 			{spellID = 18223, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of Weakness
-			--MOP{spellID = 702, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Death Coil
-			{spellID = 6789, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Curse of Enfeeblement
+			{spellID = 109466, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Enslave Demon
 			{spellID = 1098, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Shadowsnare
 			{spellID = 63311, unitID = "target", caster = "player", filter = "DEBUFF"},
 
-			-- Other
-			-- Curse of the Elements (Warlock)
-			{spellID = 1490, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of the Elements: Jinx (Warlock)
-			--MOP{spellID = 86105, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Earth and Moon (Moonkin)
-			--MOP{spellID = 48506, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Ebon Plaguebringer (DK)
-			--MOP{spellID = 65142, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- CoE group
 			-- Master poisoner (Rogue)
 			{spellID = 93068, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
@@ -2160,7 +2170,7 @@ Filger_Spells = {
 			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Agony
 			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Bane of Doom
+			-- Doom
 			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2199,7 +2209,7 @@ Filger_Spells = {
 			{spellID = 17962, filter = "CD"},
 			-- Ritual of Summoning
 			{spellID = 698, filter = "CD"},
-			-- Shadow Ward
+			-- Twilight Ward
 			{spellID = 6229, filter = "CD"},
 			-- Demonic Empowerment
 			--MOP{spellID = 47193, filter = "CD"},
@@ -2211,7 +2221,7 @@ Filger_Spells = {
 			{spellID = 48020, filter = "CD"},
 			-- Howl of Terror
 			{spellID = 5484, filter = "CD"},
-			-- Death Coil
+			-- Mortal Coil
 			{spellID = 6789, filter = "CD"},
 			-- Haunt
 			{spellID = 48181, filter = "CD"},
@@ -2240,7 +2250,7 @@ Filger_Spells = {
 			-- Soulburn
 			{spellID = 74434, filter = "CD"},
 			-- Hand of Gul'dan
-			--MOP{spellID = 71521, filter = "CD"},
+			{spellID = 86040, filter = "CD"},
 			-- Immolation Aura
 			--MOP{spellID = 50589, filter = "CD"},
 
@@ -2359,7 +2369,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Tank
-			-- Flowing River (Dodge)
+			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (AP)
@@ -2464,17 +2474,19 @@ Filger_Spells = {
 			{spellID = 69179, filter = "CD"},
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- Other
 			-- Gloves
-			{ slotID = 10, filter = "CD"},
+			{slotID = 10, filter = "CD"},
 			-- Belt
-			{ slotID = 6, filter = "CD"},
+			{slotID = 6, filter = "CD"},
 			-- Back
-			{ slotID = 15, filter = "CD"},
+			{slotID = 15, filter = "CD"},
 			-- Trinkets
-			{ slotID = 13, filter = "CD"},
-			{ slotID = 14, filter = "CD"},
+			{slotID = 13, filter = "CD"},
+			{slotID = 14, filter = "CD"},
 
 			-- Internal
 			-- Find Weakness (Creche of the Final Dragon)
@@ -2482,7 +2494,7 @@ Filger_Spells = {
 			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
 			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
-	},	
+	},
 	["ALL"] = {
 		{
 			Name = "SPECIAL_P_BUFF_ICON",
@@ -2587,6 +2599,8 @@ Filger_Spells = {
 			{spellID = 65081, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Angelic Feather
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Stormlash Totem
+			{spellID = 120676, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
@@ -2656,7 +2670,7 @@ Filger_Spells = {
 			{spellID = 19503, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
 			{spellID = 34490, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Wyvern sting 
+			-- Wyvern sting
 			{spellID = 19386, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Intimidation
 			{spellID = 24394, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2819,7 +2833,7 @@ Filger_Spells = {
 			--MOP{spellID = 93975, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Demonic Leap
 			{spellID = 54785, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Death Coil
+			-- Mortal Coil
 			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 5782, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2919,7 +2933,7 @@ Filger_Spells = {
 			{spellID = 29166, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Barskin
 			{spellID = 22812, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Nature's grasp 
+			-- Nature's grasp
 			{spellID = 16689, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
 			{spellID = 77764, unitID = "target", caster = "all", filter = "BUFF"},
@@ -2963,7 +2977,7 @@ Filger_Spells = {
 			{spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
 			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Wyvern sting 
+			-- Wyvern sting
 			{spellID = 19386, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Intimidation
 			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
@@ -3124,7 +3138,7 @@ Filger_Spells = {
 			--MOP{spellID = 93975, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Demonic Leap
 			{spellID = 54785, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Death Coil
+			-- Mortal Coil
 			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 5782, unitID = "target", caster = "all", filter = "DEBUFF"},

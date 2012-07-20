@@ -61,7 +61,7 @@ bgframe:SetScript("OnEnter", function(self)
 			end
 		end
 	end
-end) 
+end)
 bgframe:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
 bgframe:SetScript("OnMouseUp", function(self)
 	if QueueStatusMinimapButton:IsShown() then
@@ -113,9 +113,9 @@ local function Update(self, t)
 					Text2:SetText(classcolor..COMBAT_HONOR_GAIN.." :|r "..format("%d", honorGained))
 					Text1:SetText(dmgtxt)
 					Text3:SetText(classcolor..KILLING_BLOWS.." :|r "..killingBlows)
-				end   
+				end
 			end
-		end 
+		end
 		int = 2
 	end
 end
