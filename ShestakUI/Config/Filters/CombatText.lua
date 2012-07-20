@@ -26,7 +26,7 @@ if T.class == "WARLOCK" then
 		T.aoespam[30108] = true		-- Unstable Affliction
 		T.aoespam[348] = true		-- Immolate
 		T.aoespam[980] = true		-- Agony
-		T.aoespam[85455] = true		-- Bane of Havoc
+		T.aoespam[80240] = true		-- Havoc
 		T.aoespam[42223] = true		-- Rain of Fire
 		T.aoespam[689] = true		-- Drain Life
 		T.aoespam[5857] = true		-- Hellfire Effect
