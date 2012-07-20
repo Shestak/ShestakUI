@@ -631,34 +631,6 @@ if clock.enabled then
 				end
 			end
 
-			local avgItemLevel = GetAverageItemLevel()
-			if avgItemLevel > 372 then
-				local dungeonId1 = 416
-				local dungeonId2 = 417
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine("LFR "..BOSSES, ttsubh.r, ttsubh.g, ttsubh.b)
-				for i = 1, 4 do
-					bossName, texture, isKilled, isIneligible = GetLFGDungeonEncounterInfo(dungeonId1, i)
-					if isKilled then
-						GameTooltip:AddDoubleLine(bossName, BOSS_DEAD, RED_FONT_COLOR.r, RED_FONT_COLOR.g, RED_FONT_COLOR.b, RED_FONT_COLOR.r, RED_FONT_COLOR.g, RED_FONT_COLOR.b)
-					 elseif isIneligible then
-						GameTooltip:AddDoubleLine(bossName, BOSS_ALIVE_INELIGIBLE, GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b, GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b)
-					 else
-						GameTooltip:AddDoubleLine(bossName, BOSS_ALIVE, GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b, GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b)
-					end
-				end
-				for i = 5, 8 do
-					bossName, texture, isKilled, isIneligible = GetLFGDungeonEncounterInfo(dungeonId2, i)
-					if isKilled then
-						GameTooltip:AddDoubleLine(bossName, BOSS_DEAD, RED_FONT_COLOR.r, RED_FONT_COLOR.g, RED_FONT_COLOR.b, RED_FONT_COLOR.r, RED_FONT_COLOR.g, RED_FONT_COLOR.b)
-					 elseif isIneligible then
-						GameTooltip:AddDoubleLine(bossName, BOSS_ALIVE_INELIGIBLE, GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b, GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b)
-					 else
-						GameTooltip:AddDoubleLine(bossName, BOSS_ALIVE, GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b, GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b)
-					end
-				end
-			end
-
 			local oneraid
 			for i = 1, GetNumSavedInstances() do
 				local name, _, reset, difficulty, locked, extended, _, isRaid, maxPlayers = GetSavedInstanceInfo(i)
@@ -699,7 +671,7 @@ if location.enabled then
 			self.subzone, self.zone, self.pvp = GetSubZoneText(), GetZoneText(), {GetZonePVPInfo()}
 			if not self.pvp[1] then self.pvp[1] = "neutral" end
 			local label = (self.subzone ~= "" and location.subzone) and self.subzone or self.zone
-			local r,g,b = unpack(self.pvp[1] and (self[self.pvp[1]][2] or self.other) or self.other)
+			local r, g, b = unpack(self.pvp[1] and (self[self.pvp[1]][2] or self.other) or self.other)
 			self.text:SetText(location.truncate == 0 and label or strtrim(strsub(label, 1, location.truncate)))
 			self.text:SetTextColor(r, g, b, font.alpha)
 		end,
@@ -729,7 +701,9 @@ if location.enabled then
 			if IsShiftKeyDown() then
 				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
 				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", self.zone, Coords()))
-			else ToggleFrame(WorldMapFrame) end
+			else
+				ToggleFrame(WorldMapFrame)
+			end
 		end
 	})
 end

@@ -207,9 +207,6 @@ local micromenu = {
 			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
 		end
 	end},
-	{text = MOUNTS_AND_PETS, notCheckable = 1, func = function()
-		TogglePetJournal()
-	end},
 	{text = DUNGEONS_BUTTON, notCheckable = 1, func = function()
 		if T.level >= SHOW_LFD_LEVEL then
 			PVEFrame_ToggleFrame()
@@ -219,6 +216,9 @@ local micromenu = {
 	end},
 	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
 		ToggleRaidFrame(3)
+	end},
+	{text = MOUNTS_AND_PETS, notCheckable = 1, func = function()
+		TogglePetJournal()
 	end},
 	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
 		if not IsAddOnLoaded("Blizzard_EncounterJournal") then
