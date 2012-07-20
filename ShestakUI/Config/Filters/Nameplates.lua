@@ -32,7 +32,7 @@ T.DebuffWhiteList = {
 	[SpellName(1822)] = true,	-- Rake
 	[SpellName(1079)] = true,	-- Rip
 	-- Hunter
-	[SpellName(3355)] = true,	-- Freezing Trap Effect
+	[SpellName(3355)] = true,	-- Freezing Trap
 	[SpellName(1513)] = true,	-- Scare Beast
 	[SpellName(19503)] = true,	-- Scatter Shot
 	[SpellName(34490)] = true,	-- Silencing Shot
@@ -63,7 +63,6 @@ T.DebuffWhiteList = {
 	[SpellName(8056)] = true,	-- Frost Shock
 	[SpellName(8050)] = true,	-- Flame Shock
 	[SpellName(63685)] = true,	-- Freeze
-	--MOP[SpellName(39796)] = true,	-- Stoneclaw Stun
 	-- Warlock
 	[SpellName(710)] = true,	-- Banish
 	[SpellName(6789)] = true,	-- Mortal Coil
@@ -75,11 +74,9 @@ T.DebuffWhiteList = {
 	[SpellName(603)] = true,	-- Doom
 	[SpellName(980)] = true,	-- Agony
 	[SpellName(172)] = true,	-- Corruption
-	--MOP[SpellName(17800)] = true,	-- Shadow and Flame
 	[SpellName(48181)] = true,	-- Haunt
 	[SpellName(30108)] = true,	-- Unstable Affliction
 	[SpellName(348)] = true,	-- Immolate
-	--MOP[SpellName(86000)] = true,	-- Curse of Gul'dan
 	-- Warrior
 	[SpellName(20511)] = true,	-- Intimidating Shout
 	-- Racial

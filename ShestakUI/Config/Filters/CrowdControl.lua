@@ -11,7 +11,7 @@ T.ArenaControl = function()
 		-- Crowd Controls
 		[GetSpellInfo(33786)] = 3,	-- Cyclone
 		[GetSpellInfo(2637)] = 3,	-- Hibernate
-		[GetSpellInfo(55041)] = 3,	-- Freezing Trap Effect
+		[GetSpellInfo(3355)] = 3,	-- Freezing Trap
 		[GetSpellInfo(6770)] = 3,	-- Sap
 		[GetSpellInfo(2094)] = 3,	-- Blind
 		[GetSpellInfo(5782)] = 3,	-- Fear
@@ -74,13 +74,13 @@ T.ArenaControl = function()
 		[GetSpellInfo(30283)] = 3,	-- Shadowfury
 		[GetSpellInfo(6544)] = 3,	-- Heroic Leap
 		--MOP[GetSpellInfo(85388)] = 3,	-- Throwdown
+		[GetSpellInfo(108194)] = 3,	-- Asphyxiate
 
 		-- Silences
 		[GetSpellInfo(55021)] = 1,	-- Improved Counterspell
 		[GetSpellInfo(15487)] = 1,	-- Silence
 		[GetSpellInfo(34490)] = 1,	-- Silencing Shot
 		[GetSpellInfo(47476)] = 1,	-- Strangulate
-		[GetSpellInfo(108194)] = 1,	-- Asphyxiate
 		[GetSpellInfo(81261)] = 1,	-- Solar Beam
 		[GetSpellInfo(1330)] = 1,	-- Garrote - Silence
 		[GetSpellInfo(24259)] = 1,	-- Spell Lock (Felhunter)
