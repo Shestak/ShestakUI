@@ -264,6 +264,7 @@ StaticPopupDialogs.PARTY_INVITE_XREALM.hideOnEscape = nil
 StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = nil
 StaticPopupDialogs.PET_BATTLE_QUEUE_PROPOSE_MATCH.hideOnEscape = nil
 StaticPopupDialogs.CONFIRM_BATTLEFIELD_ENTRY.button2 = nil
+StaticPopupDialogs.ADDON_ACTION_FORBIDDEN.button1 = nil
 
 ----------------------------------------------------------------------------------------
 --	Fix SearchLFGLeave() taint
