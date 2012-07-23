@@ -29,7 +29,7 @@ local function InstallUI()
 	SetCVar("buffDurations", 1)
 
 	if T.author == true then
-		SetCVar("taintLog", 1)
+		--SetCVar("taintLog", 1)
 		SetCVar("interactOnLeftClick", 0)
 		SetCVar("displayWorldPVPObjectives", 2)
 		SetCVar("timeMgrUseLocalTime", 1)
