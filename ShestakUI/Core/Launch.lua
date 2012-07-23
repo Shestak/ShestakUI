@@ -26,6 +26,7 @@ local function InstallUI()
 	SetCVar("autoQuestWatch", 0)
 	SetCVar("autoQuestProgress", 1)
 	SetCVar("scriptErrors", 1)
+	SetCVar("buffDurations", 1)
 
 	if T.author == true then
 		SetCVar("taintLog", 1)
