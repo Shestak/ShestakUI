@@ -237,7 +237,6 @@ FRAMELOCK_STATES.PETBATTLES["Bar5Holder"] = "hidden"
 FRAMELOCK_STATES.PETBATTLES["ShiftHolder"] = "hidden"
 --FRAMELOCK_STATES.PETBATTLES["PetActionBarAnchor"] = "hidden"
 --FRAMELOCK_STATES.PETBATTLES["MinimapAnchor"] = "hidden"
-FRAMELOCK_STATES.PETBATTLES["WatchFrameAnchor"] = "hidden"
 
 local bar = CreateFrame("Frame", "PetBattleBarHolder", UIParent)
 bar:SetSize((C.actionbar.button_size * 6) + (C.actionbar.button_space * 5), C.actionbar.button_size)
