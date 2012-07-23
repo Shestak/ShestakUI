@@ -231,7 +231,7 @@ FRAMELOCK_STATES.PETBATTLES["ShiftHolder"] = "hidden"
 --FRAMELOCK_STATES.PETBATTLES["PetActionBarAnchor"] = "hidden"
 
 local bar = CreateFrame("Frame", "PetBattleBarHolder", UIParent)
-bar:SetSize((C.actionbar.button_size * 6) + (C.actionbar.button_space * 5), C.actionbar.button_size)
+bar:SetSize(((C.actionbar.button_size * 1.5) * 6) + (C.actionbar.button_space * 5), C.actionbar.button_size * 1.5)
 bar:EnableMouse(true)
 bar:SetFrameStrata("HIGH")
 bar:SetPoint(unpack(C.position.bottom_bars))
@@ -333,7 +333,7 @@ local function SkinPetButton(self)
 		self.HotKey:Point("TOPRIGHT", 0, 0)
 		self.HotKey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 		self.HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-		self.HotKey:Width(C.actionbar.button_size - 1)
+		self.HotKey:Width((C.actionbar.button_size * 1.5) - 1)
 	else
 		hotkey:Kill()
 	end
@@ -346,7 +346,7 @@ hooksecurefunc("PetBattleFrame_UpdateActionBarLayout", function(self)
 
 		SkinPetButton(b)
 		b:SetParent(bar)
-		b:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+		b:SetSize(C.actionbar.button_size * 1.5, C.actionbar.button_size * 1.5)
 		b:ClearAllPoints()
 		if i == 1 then
 			b:SetPoint("BOTTOMLEFT", 0, 0)
@@ -357,7 +357,7 @@ hooksecurefunc("PetBattleFrame_UpdateActionBarLayout", function(self)
 	end
 
 	bf.SwitchPetButton:SetParent(bar)
-	bf.SwitchPetButton:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+	bf.SwitchPetButton:SetSize(C.actionbar.button_size * 1.5, C.actionbar.button_size * 1.5)
 	bf.SwitchPetButton:ClearAllPoints()
 	bf.SwitchPetButton:SetPoint("LEFT", bf.abilityButtons[3], "RIGHT", C.actionbar.button_space, 0)
 
@@ -366,13 +366,13 @@ hooksecurefunc("PetBattleFrame_UpdateActionBarLayout", function(self)
 	end)
 
 	bf.CatchButton:SetParent(bar)
-	bf.CatchButton:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+	bf.CatchButton:SetSize(C.actionbar.button_size * 1.5, C.actionbar.button_size * 1.5)
 	bf.CatchButton:ClearAllPoints()
 	bf.CatchButton:SetPoint("LEFT", bf.SwitchPetButton, "RIGHT", C.actionbar.button_space, 0)
 
 	bf.ForfeitButton:SetParent(bar)
 	bf.ForfeitButton:ClearAllPoints()
-	bf.ForfeitButton:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+	bf.ForfeitButton:SetSize(C.actionbar.button_size * 1.5, C.actionbar.button_size * 1.5)
 	bf.ForfeitButton:SetPoint("LEFT", bf.CatchButton, "RIGHT", C.actionbar.button_space, 0)
 
 	SkinPetButton(bf.SwitchPetButton)
@@ -417,7 +417,7 @@ end
 
 
 ----------------------------------------------------------------------------------------
---	Color borders/names by pets quality(PetBattleQualityGlow by Tia Lynn)
+--	Coloring borders/names by pets quality(PetBattleQualityGlow by Tia Lynn)
 ----------------------------------------------------------------------------------------
 hooksecurefunc("PetBattleUnitFrame_UpdateDisplay", function(self)
 	self.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
