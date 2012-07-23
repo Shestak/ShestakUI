@@ -231,6 +231,9 @@ FRAMELOCK_STATES.PETBATTLES["Bar5Holder"] = "hidden"
 FRAMELOCK_STATES.PETBATTLES["ShiftHolder"] = "hidden"
 --FRAMELOCK_STATES.PETBATTLES["PetActionBarAnchor"] = "hidden"
 
+local HiddenFrame = CreateFrame("Frame")
+HiddenFrame:Hide()
+
 local bar = CreateFrame("Frame", "PetBattleBarHolder", UIParent)
 bar:SetSize(((C.actionbar.button_size * 1.5) * 6) + (C.actionbar.button_space * 5), C.actionbar.button_size * 1.5)
 bar:EnableMouse(true)
@@ -245,6 +248,38 @@ bar:SetScript("OnEvent", function(self, event)
 			oUF_Player:SetAlpha(0)
 			oUF_Pet:SetAlpha(0)
 			oUF_Focus:SetAlpha(0)
+			for i = 1, 5 do
+				local party_dps = "oUF_PartyDPSUnitButton"..i
+				local partytarget_dps = "oUF_PartyTargetDPSUnitButton"..i
+				local party_heal = "oUF_PartyUnitButton"..i
+				local partytarget_heal = "oUF_PartyTargetUnitButton"..i
+
+				if party_dps then
+					party_dps:SetParent(HiddenFrame)
+				end
+				if partytarget_dps then
+					partytarget_dps:SetParent(HiddenFrame)
+				end
+				if party_heal then
+					party_heal:SetParent(HiddenFrame)
+				end
+				if partytarget_heal then
+					partytarget_heal:SetParent(HiddenFrame)
+				end
+			end
+			for i = 1, 8 do
+				for j = 1, 5 do
+					local raid_heal = "oUF_RaidHeal"..i.."UnitButton"..j
+					local raid_dps = "oUF_RaidDPS"..i.."UnitButton"..j
+
+					if raid_heal then
+						raid_heal:SetParent(HiddenFrame)
+					end
+					if raid_dps then
+						raid_dps:SetParent(HiddenFrame)
+					end
+				end
+			end
 		end
 		self:Show()
 	else
@@ -252,6 +287,38 @@ bar:SetScript("OnEvent", function(self, event)
 			oUF_Player:SetAlpha(1)
 			oUF_Pet:SetAlpha(1)
 			oUF_Focus:SetAlpha(1)
+			for i = 1, 5 do
+				local party_dps = "oUF_PartyDPSUnitButton"..i
+				local partytarget_dps = "oUF_PartyTargetDPSUnitButton"..i
+				local party_heal = "oUF_PartyUnitButton"..i
+				local partytarget_heal = "oUF_PartyTargetUnitButton"..i
+
+				if party_dps then
+					party_dps:SetParent(UIParent)
+				end
+				if partytarget_dps then
+					partytarget_dps:SetParent(UIParent)
+				end
+				if party_heal then
+					party_heal:SetParent(UIParent)
+				end
+				if partytarget_heal then
+					partytarget_heal:SetParent(UIParent)
+				end
+			end
+			for i = 1, 8 do
+				for j = 1, 5 do
+					local raid_heal = "oUF_RaidHeal"..i.."UnitButton"..j
+					local raid_dps = "oUF_RaidDPS"..i.."UnitButton"..j
+
+					if raid_heal then
+						raid_heal:SetParent(UIParent)
+					end
+					if raid_dps then
+						raid_dps:SetParent(UIParent)
+					end
+				end
+			end
 		end
 		self:Hide()
 	end
