@@ -161,7 +161,8 @@ hooksecurefunc("PetBattleAuraHolder_Update", function(self)
 				frame.Duration:SetText(turnsRemaining)
 			end
 
-			frame.Duration:SetFont(C.media.normal_font, 10, "OUTLINE")
+			frame.Duration:SetFont(C.media.normal_font, 12)
+			frame.Duration:SetShadowOffset(1, -1)
 			frame.Duration:ClearAllPoints()
 			frame.Duration:SetPoint("CENTER", frame.Icon, "CENTER", 1, 0)
 
