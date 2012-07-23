@@ -53,7 +53,6 @@ for i, unit in pairs(units) do
 	if i == 1 then
 		unit.HealthBarBackdrop:Point("TOPLEFT", unit.ActualHealthBar, "TOPLEFT", -2, 2)
 		unit.HealthBarBackdrop:Point("BOTTOMLEFT", unit.ActualHealthBar, "BOTTOMLEFT", -2, -2)
-		unit.ActualHealthBar:SetVertexColor(171/255, 214/255, 116/255)
 		f.Ally2.iconPoint = unit.IconBackdrop
 		f.Ally3.iconPoint = unit.IconBackdrop
 
@@ -69,7 +68,6 @@ for i, unit in pairs(units) do
 	else
 		unit.HealthBarBackdrop:Point("TOPRIGHT", unit.ActualHealthBar, "TOPRIGHT", 2, 2)
 		unit.HealthBarBackdrop:Point("BOTTOMRIGHT", unit.ActualHealthBar, "BOTTOMRIGHT", 2, -2)
-		unit.ActualHealthBar:SetVertexColor(196/255,  30/255,  60/255)
 		f.Enemy2.iconPoint = unit.IconBackdrop
 		f.Enemy3.iconPoint = unit.IconBackdrop
 
@@ -172,11 +170,6 @@ hooksecurefunc("PetBattleAuraHolder_Update", function(self)
 	end
 end)
 
--- Pets unitframes, always hide blizzard icons border
-hooksecurefunc("PetBattleUnitFrame_UpdateDisplay", function(self)
-	self.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-end)
-
 -- Reposition "vs" text
 f.TopVersusText:ClearAllPoints()
 f.TopVersusText:SetPoint("TOP", f, "TOP", 0, -46)
@@ -236,7 +229,6 @@ FRAMELOCK_STATES.PETBATTLES["Bar4Holder"] = "hidden"
 FRAMELOCK_STATES.PETBATTLES["Bar5Holder"] = "hidden"
 FRAMELOCK_STATES.PETBATTLES["ShiftHolder"] = "hidden"
 --FRAMELOCK_STATES.PETBATTLES["PetActionBarAnchor"] = "hidden"
---FRAMELOCK_STATES.PETBATTLES["MinimapAnchor"] = "hidden"
 
 local bar = CreateFrame("Frame", "PetBattleBarHolder", UIParent)
 bar:SetSize((C.actionbar.button_size * 6) + (C.actionbar.button_space * 5), C.actionbar.button_size)
@@ -422,3 +414,50 @@ for i = 1, FloatingPetBattleAbilityTooltip:GetNumChildren() do
 		T.SkinCloseButton(child)
 	end
 end
+
+
+----------------------------------------------------------------------------------------
+--	Color borders/names by pets quality(PetBattleQualityGlow by Tia Lynn)
+----------------------------------------------------------------------------------------
+hooksecurefunc("PetBattleUnitFrame_UpdateDisplay", function(self)
+	self.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+	-- There must be a petOwner and a petIndex
+	if not self.petOwner or not self.petIndex then return end
+
+	-- Is this Enemy or Player? (This Value will be Added to the Glow Index)
+	local nEnemy = 0
+	if self.petOwner == LE_BATTLE_PET_ENEMY then nEnemy = 3 end
+
+	-- Check if this is the Tooltip
+	local isTooltip = false
+	if self:GetName() == "PetBattlePrimaryUnitTooltip" then isTooltip = true end
+
+	-- Set which Glow frame this will use (Enemy Frames are +3 / Tooltip is 7)
+	local sGlow = "Glow7"
+	if not isTooltip then sGlow = "Glow"..tostring(self.petIndex + nEnemy) end
+
+	-- Set the color for the Glow
+	local nQuality = C_PetBattles.GetBreedQuality(self.petOwner, self.petIndex) - 1
+	local r, g, b, hex = GetItemQualityColor(nQuality)
+	if nQuality >= 2 and not isTooltip and self.IconBackdrop then
+		self.IconBackdrop:SetBackdropBorderColor(r, g, b)
+	elseif self.IconBackdrop then
+		self.IconBackdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+	end
+
+	-- Color the Name with the Quality color
+	if self.Name then
+		local sPetName = C_PetBattles.GetName(self.petOwner, self.petIndex)
+		if sPetName then
+			self.Name:SetText("|c"..hex..sPetName.."|r")
+		end
+	end
+
+	-- Color the non-active Health Bars with the Quality color
+	if self.ActualHealthBar and not isTooltip then
+		--if self.petIndex ~= 1 then
+			self.ActualHealthBar:SetVertexColor(r, g, b)
+		--end
+	end
+end)
