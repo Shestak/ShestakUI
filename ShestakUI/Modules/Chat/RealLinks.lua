@@ -28,10 +28,12 @@ local function GetLinkColor(data)
 		return "|cffff8000"
 	elseif type == "glyph" or type == "journal" then
 		return "|cff66bbff"
-	elseif type == "talent" then
+	elseif type == "talent" or type == "battlePetAbil" then
 		return "|cff4e96f7"
 	elseif type == "levelup" then
-		return "|cffFF4E00"
+		return "|cffff4e00"
+	elseif type == "battlepet" then
+		return "|cffffd200"
 	else
 		return "|cffffff00"
 	end
