@@ -990,6 +990,8 @@ Filger_Spells = {
 			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Touch of Karma
 			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Avert Harm
+			{spellID = 115213, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
