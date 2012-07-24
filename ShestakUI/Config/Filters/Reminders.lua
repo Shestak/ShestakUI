@@ -117,15 +117,39 @@ end
 ]]-------------------------------------------------------------------------------------
 if C.reminder.solo_buffs_enable == true then
 	T.ReminderSelfBuffs = {
-		PRIEST = {
-			[1] = {	-- Inner Fire/Will group
+		DEATHKNIGHT = {
+			[1] = {	-- Horn of Winter group
 				["spells"] = {
-					588,	-- Inner Fire
-					73413,	-- Inner Will
+					57330,	-- Horn of Winter
+				},
+				["negate_spells"] = {
+					6673,	-- Battle Shout
+					19506,	-- Trueshot Aura
+				},
+				["combat"] = true,
+			},
+			[2] = {	-- Blood Presence group
+				["spells"] = {
+					48263,	-- Blood Presence
+				},
+				["role"] = "Tank",
+				["instance"] = true,
+				["reversecheck"] = true,
+			},
+		},
+		DRUID = {
+			[1] = {	-- Mark of the Wild group
+				["spells"] = {
+					1126,	-- Mark of the Wild
+				},
+				["negate_spells"] = {
+					20217,	-- Blessing of Kings
+					117666,	-- Legacy of the Emperor
+					90363,	-- Embrace of the Shale Spider
 				},
 				["combat"] = true,
 				["instance"] = true,
-				["pvp"] = true
+				["pvp"] = true,
 			},
 		},
 		HUNTER = {
@@ -160,15 +184,28 @@ if C.reminder.solo_buffs_enable == true then
 				["pvp"] = true,
 			},
 		},
-		WARLOCK = {
-			[1] = {	-- Dark Intent group
+		MONK = {
+			[1] = {	-- Legacy of the Emperor group
 				["spells"] = {
-					109773,	-- Dark Intent
+					117666,	-- Legacy of the Emperor
+				},
+				["negate_spells"] = {
+					1126,	-- Mark of the Wild
+					20217,	-- Blessing of Kings
+					90363,	-- Embrace of the Shale Spider
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+			[2] = {	-- Legacy of the White Tiger group
+				["spells"] = {
+					116781,	-- Legacy of the White Tiger
 				},
 				["negate_spells"] = {
 					1459,	-- Arcane Brilliance
 					61316,	-- Dalaran Brilliance
-					77747,	-- Burning Wrath
+					24932,	-- Leader of the Pack
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -213,6 +250,33 @@ if C.reminder.solo_buffs_enable == true then
 				["pvp"] = true,
 			},
 		},
+		PRIEST = {
+			[1] = {	-- Inner Fire/Will group
+				["spells"] = {
+					588,	-- Inner Fire
+					73413,	-- Inner Will
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true
+			},
+		},
+		ROGUE = {
+			[1] = {	-- Poisons group
+				["spells"] = {
+					2823,	-- Deadly Poison
+					8679,	-- Wound Poison
+					5761,	-- Mind-numbing Poison
+					3408,	-- Crippling Poison
+					108211,	-- Leeching Poison
+					108215,	-- Paralytic Poison
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+				["level"] = 10,
+			},
+		},
 		SHAMAN = {
 			[1] = {	-- Shields group
 				["spells"] = {
@@ -230,6 +294,21 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 				["level"] = 10,
+			},
+		},
+		WARLOCK = {
+			[1] = {	-- Dark Intent group
+				["spells"] = {
+					109773,	-- Dark Intent
+				},
+				["negate_spells"] = {
+					1459,	-- Arcane Brilliance
+					61316,	-- Dalaran Brilliance
+					77747,	-- Burning Wrath
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
 			},
 		},
 		WARRIOR = {
@@ -257,85 +336,6 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["combat"] = true,
 				["role"] = "Melee",
-			},
-		},
-		DEATHKNIGHT = {
-			[1] = {	-- Horn of Winter group
-				["spells"] = {
-					57330,	-- Horn of Winter
-				},
-				["negate_spells"] = {
-					6673,	-- Battle Shout
-					19506,	-- Trueshot Aura
-				},
-				["combat"] = true,
-			},
-			[2] = {	-- Blood Presence group
-				["spells"] = {
-					48263,	-- Blood Presence
-				},
-				["role"] = "Tank",
-				["instance"] = true,
-				["reversecheck"] = true,
-			},
-		},
-		ROGUE = {
-			[1] = {	-- Poisons group
-				["spells"] = {
-					2823,	-- Deadly Poison
-					8679,	-- Wound Poison
-					5761,	-- Mind-numbing Poison
-					3408,	-- Crippling Poison
-					108211,	-- Leeching Poison
-					108215,	-- Paralytic Poison
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-				["level"] = 10,
-			},
-		},
-		DRUID = {
-			[1] = {	-- Mark of the Wild group
-				["spells"] = {
-					1126,	-- Mark of the Wild
-				},
-				["negate_spells"] = {
-					20217,	-- Blessing of Kings
-					117666,	-- Legacy of the Emperor
-					90363,	-- Embrace of the Shale Spider
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-		},
-		MONK = {
-			[1] = {	-- Legacy of the Emperor group
-				["spells"] = {
-					117666,	-- Legacy of the Emperor
-				},
-				["negate_spells"] = {
-					1126,	-- Mark of the Wild
-					20217,	-- Blessing of Kings
-					90363,	-- Embrace of the Shale Spider
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[2] = {	-- Legacy of the White Tiger group
-				["spells"] = {
-					116781,	-- Legacy of the White Tiger
-				},
-				["negate_spells"] = {
-					1459,	-- Arcane Brilliance
-					61316,	-- Dalaran Brilliance
-					24932,	-- Leader of the Pack
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
 			},
 		},
 	}
