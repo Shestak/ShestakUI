@@ -1,7 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
-local floor = math.floor
-local texture = C.media.blank
 local backdropr, backdropg, backdropb, backdropa = unpack(C.media.backdrop_color)
 local borderr, borderg, borderb, bordera = unpack(C.media.border_color)
 
