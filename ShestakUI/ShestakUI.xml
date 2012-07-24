@@ -174,8 +174,9 @@
 	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
 
-	<Script file="Modules\Buffs\Buffs.lua"/>
+	<Script file="Modules\Buffs\BuffFrame.lua"/>
 	<Script file="Modules\Buffs\CastBy.lua"/>
+	<Script file="Modules\Buffs\ConsolidatedBuffDuration.lua"/>
 
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Core\Movers.lua"/>

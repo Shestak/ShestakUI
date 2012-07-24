@@ -9,11 +9,11 @@ local rowbuffs = 16
 
 local GetFormattedTime = function(s)
 	if s >= 86400 then
-		return format("%dd", floor(s/86400 + 0.5))
+		return format("%dd", floor(s / 86400 + 0.5))
 	elseif s >= 3600 then
-		return format("%dh", floor(s/3600 + 0.5))
+		return format("%dh", floor(s / 3600 + 0.5))
 	elseif s >= 60 then
-		return format("%dm", floor(s/60 + 0.5))
+		return format("%dm", floor(s / 60 + 0.5))
 	end
 	return floor(s + 0.5)
 end
@@ -176,7 +176,6 @@ local function UpdateEnchantAnchors()
 	_G["TempEnchant1"]:Point("RIGHT", ConsolidatedBuffs, "LEFT", -5, 0)
 end
 
---hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
 hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
 hooksecurefunc("DebuffButton_UpdateAnchors", UpdateDebuffAnchors)
 hooksecurefunc("AuraButton_UpdateDuration", UpdateDuration)
