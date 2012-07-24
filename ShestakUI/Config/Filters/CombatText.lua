@@ -187,6 +187,8 @@ elseif T.class == "HUNTER" then
 		T.aoespam[1978] = true		-- Serpent Sting
 		T.aoespam[13812] = true		-- Explosive Trap
 		T.aoespam[53301] = true		-- Explosive Shot
+		T.aoespam[118459] = true	-- Beast Cleave
+		T.aoespam[34655] = true		-- Deadly Poison(Snake)
 	end
 elseif T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
