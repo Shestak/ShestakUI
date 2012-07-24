@@ -538,6 +538,8 @@ Filger_Spells = {
 			{spellID = 53220, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lock and Load
 			{spellID = 56453, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thrill of the Hunt
+			{spellID = 34720, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Frenzy
 			{spellID = 19623, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mend Pet
