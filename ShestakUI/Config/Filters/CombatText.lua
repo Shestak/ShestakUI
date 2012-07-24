@@ -16,36 +16,24 @@ if C.combattext.merge_aoe_spam then
 end
 
 -- Class config
-if T.class == "WARLOCK" then
+if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[27243] = true		-- Seed of Corruption (DoT)
-		T.aoespam[27285] = true		-- Seed of Corruption (Explosion)
-		T.aoespam[87385] = true		-- Seed of Corruption (Explosion Soulburned)
-		T.aoespam[172] = true		-- Corruption
-		T.aoespam[87389] = true		-- Corruption (Soulburn: Seed of Corruption)
-		T.aoespam[30108] = true		-- Unstable Affliction
-		T.aoespam[348] = true		-- Immolate
-		T.aoespam[980] = true		-- Agony
-		T.aoespam[80240] = true		-- Havoc
-		T.aoespam[42223] = true		-- Rain of Fire
-		T.aoespam[689] = true		-- Drain Life
-		T.aoespam[5857] = true		-- Hellfire Effect
-		T.aoespam[86040] = true		-- Hand of Gul'dan
-		T.aoespam[103103] = true	-- Malefic Grasp
-		T.aoespam[47897] = true		-- Shadowflame (Shadow direct damage)
-		T.aoespam[47960] = true		-- Shadowflame (Fire dot)
-		T.aoespam[50590] = true		-- Immolation Aura
-		T.aoespam[30213] = true		-- Legion Strike (Felguard)
-		T.aoespam[89753] = true		-- Felstorm (Felguard)
-		T.aoespam[20153] = true		-- Immolation (Infrenal)
-	end
-	if C.combattext.healing then
-		T.healfilter[63106] = true	-- Siphon Life
-		T.healfilter[54181] = true	-- Fel Synergy
-		T.healfilter[89653] = true	-- Drain Life
-		T.healfilter[79268] = true	-- Soul Harvest
-		T.healfilter[30294] = true	-- Soul Leech
-		T.healfilter[108359] = true	-- Dark Regeneration
+		T.aoespam[55095] = true		-- Frost Fever
+		T.aoespam[55078] = true		-- Blood Plague
+		T.aoespam[48721] = true		-- Blood Boil
+		T.aoespam[49184] = true		-- Howling Blast
+		T.aoespam[52212] = true		-- Death and Decay
+		T.aoespam[55050] = true		-- Heart Strike
+		T.aoespam[119980] = true	-- Conversion
+		-- Merging mh/oh strikes(by Bozo)
+		T.aoespam[49020] = true		-- Obliterate MH
+		T.aoespam[66198] = 49020	-- Obliterate OH
+		T.aoespam[49998] = true		-- Death Strike MH
+		T.aoespam[66188] = 49998	-- Death Strike OH
+		T.aoespam[45462] = true		-- Plague Strike MH
+		T.aoespam[66216] = 45462	-- Plague Strike OH
+		T.aoespam[49143] = true		-- Frost Strike MH
+		T.aoespam[66196] = 49143	-- Frost Strike OH
 	end
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
@@ -72,6 +60,47 @@ elseif T.class == "DRUID" then
 		T.aoespam[779] = true		-- Swipe (Bear Form)
 		T.aoespam[33745] = true		-- Lacerate
 		T.aoespam[1079] = true		-- Rip
+	end
+elseif T.class == "HUNTER" then
+	if C.combattext.merge_aoe_spam then
+		T.aoespam[2643] = true		-- Multi-Shot
+		T.aoespam[83077] = true		-- Improved Serpent Sting
+		T.aoespam[118253] = true	-- Serpent Sting
+		T.aoespam[13812] = true		-- Explosive Trap
+		T.aoespam[53301] = true		-- Explosive Shot
+		T.aoespam[63468] = true		-- Piercing Shots
+		T.aoespam[118459] = true	-- Beast Cleave
+		T.aoespam[34655] = true		-- Deadly Poison(Snake)
+	end
+elseif T.class == "MAGE" then
+	if C.combattext.merge_aoe_spam then
+		T.aoespam[44461] = true		-- Living Bomb Explosion
+		T.aoespam[44457] = true		-- Living Bomb Dot
+		T.aoespam[2120] = true		-- Flamestrike
+		T.aoespam[12654] = true		-- Ignite
+		T.aoespam[11366] = true		-- Pyroblast
+		T.aoespam[31661] = true		-- Dragon's Breath
+		T.aoespam[42208] = true		-- Blizzard
+		T.aoespam[122] = true		-- Frost Nova
+		T.aoespam[1449] = true		-- Arcane Explosion
+		T.aoespam[92315] = true		-- Pyroblast
+		T.aoespam[83853] = true		-- Combustion
+		T.aoespam[11113] = true		-- Blast Wave
+		T.aoespam[88148] = true		-- Flamestrike void
+		T.aoespam[84721] = true		-- Frostfire Orb
+		T.aoespam[82739] = true		-- Flame Orb
+		T.aoespam[83619] = true		-- Fire Power
+		T.aoespam[120] = true		-- Cone of Cold
+	end
+elseif T.class == "MONK" then
+	if C.combattext.merge_aoe_spam then
+		-- Healing spells
+		T.aoespam[115175] = true	-- Soothing Mist
+		T.aoespam[126890] = true	-- Eminence
+		-- Damaging spells
+		T.aoespam[117952] = true	-- Crackling Jade Lightning
+		T.aoespam[107270] = true	-- Spinning Crane Kick
+		T.aoespam[117418] = true	-- Fists of Fury
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
@@ -124,6 +153,15 @@ elseif T.class == "PRIEST" then
 		T.healfilter[2944] = true	-- Devouring Plague (Healing)
 		T.healfilter[15290] = true	-- Vampiric Embrace
 	end
+elseif T.class == "ROGUE" then
+	if C.combattext.merge_aoe_spam then
+		T.aoespam[51723] = true		-- Fan of Knives
+		T.aoespam[2818] = true		-- Deadly Poison
+		T.aoespam[8680] = true		-- Instant Poison
+		-- Merging mh/oh strikes
+		T.aoespam[5374] = true		-- Mutilate
+		T.aoespam[27576] = 5374		-- Mutilate Off-Hand
+	end
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
@@ -141,26 +179,37 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[8187] = true		-- Magma Totem
 		T.aoespam[8050] = true		-- Flame Shock
 		T.aoespam[25504] = true		-- Windfury
-	end
-elseif T.class == "MAGE" then
+	end	
+elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[44461] = true		-- Living Bomb Explosion
-		T.aoespam[44457] = true		-- Living Bomb Dot
-		T.aoespam[2120] = true		-- Flamestrike
-		T.aoespam[12654] = true		-- Ignite
-		T.aoespam[11366] = true		-- Pyroblast
-		T.aoespam[31661] = true		-- Dragon's Breath
-		T.aoespam[42208] = true		-- Blizzard
-		T.aoespam[122] = true		-- Frost Nova
-		T.aoespam[1449] = true		-- Arcane Explosion
-		T.aoespam[92315] = true		-- Pyroblast
-		T.aoespam[83853] = true		-- Combustion
-		T.aoespam[11113] = true		-- Blast Wave
-		T.aoespam[88148] = true		-- Flamestrike void
-		T.aoespam[84721] = true		-- Frostfire Orb
-		T.aoespam[82739] = true		-- Flame Orb
-		T.aoespam[83619] = true		-- Fire Power
-		T.aoespam[120] = true		-- Cone of Cold
+		T.aoespam[27243] = true		-- Seed of Corruption (DoT)
+		T.aoespam[27285] = true		-- Seed of Corruption (Explosion)
+		T.aoespam[87385] = true		-- Seed of Corruption (Explosion Soulburned)
+		T.aoespam[172] = true		-- Corruption
+		T.aoespam[87389] = true		-- Corruption (Soulburn: Seed of Corruption)
+		T.aoespam[30108] = true		-- Unstable Affliction
+		T.aoespam[348] = true		-- Immolate
+		T.aoespam[980] = true		-- Agony
+		T.aoespam[80240] = true		-- Havoc
+		T.aoespam[42223] = true		-- Rain of Fire
+		T.aoespam[689] = true		-- Drain Life
+		T.aoespam[5857] = true		-- Hellfire Effect
+		T.aoespam[86040] = true		-- Hand of Gul'dan
+		T.aoespam[103103] = true	-- Malefic Grasp
+		T.aoespam[47897] = true		-- Shadowflame (Shadow direct damage)
+		T.aoespam[47960] = true		-- Shadowflame (Fire dot)
+		T.aoespam[50590] = true		-- Immolation Aura
+		T.aoespam[30213] = true		-- Legion Strike (Felguard)
+		T.aoespam[89753] = true		-- Felstorm (Felguard)
+		T.aoespam[20153] = true		-- Immolation (Infrenal)
+	end
+	if C.combattext.healing then
+		T.healfilter[63106] = true	-- Siphon Life
+		T.healfilter[54181] = true	-- Fel Synergy
+		T.healfilter[89653] = true	-- Drain Life
+		T.healfilter[79268] = true	-- Soul Harvest
+		T.healfilter[30294] = true	-- Soul Leech
+		T.healfilter[108359] = true	-- Dark Regeneration
 	end
 elseif T.class == "WARRIOR" then
 	if C.combattext.merge_aoe_spam then
@@ -178,53 +227,4 @@ elseif T.class == "WARRIOR" then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
 		T.healfilter[55694] = true	-- Enraged Regeneration
 	end
-elseif T.class == "HUNTER" then
-	if C.combattext.merge_aoe_spam then
-		T.aoespam[2643] = true		-- Multi-Shot
-		T.aoespam[83077] = true		-- Improved Serpent Sting
-		T.aoespam[118253] = true	-- Serpent Sting
-		T.aoespam[13812] = true		-- Explosive Trap
-		T.aoespam[53301] = true		-- Explosive Shot
-		T.aoespam[63468] = true		-- Piercing Shots
-		T.aoespam[118459] = true	-- Beast Cleave
-		T.aoespam[34655] = true		-- Deadly Poison(Snake)
-	end
-elseif T.class == "DEATHKNIGHT" then
-	if C.combattext.merge_aoe_spam then
-		T.aoespam[55095] = true		-- Frost Fever
-		T.aoespam[55078] = true		-- Blood Plague
-		T.aoespam[48721] = true		-- Blood Boil
-		T.aoespam[49184] = true		-- Howling Blast
-		T.aoespam[52212] = true		-- Death and Decay
-		T.aoespam[55050] = true		-- Heart Strike
-		T.aoespam[119980] = true	-- Conversion
-		-- Merging mh/oh strikes(by Bozo)
-		T.aoespam[49020] = true		-- Obliterate MH
-		T.aoespam[66198] = 49020	-- Obliterate OH
-		T.aoespam[49998] = true		-- Death Strike MH
-		T.aoespam[66188] = 49998	-- Death Strike OH
-		T.aoespam[45462] = true		-- Plague Strike MH
-		T.aoespam[66216] = 45462	-- Plague Strike OH
-		T.aoespam[49143] = true		-- Frost Strike MH
-		T.aoespam[66196] = 49143	-- Frost Strike OH
-	end
-elseif T.class == "ROGUE" then
-	if C.combattext.merge_aoe_spam then
-		T.aoespam[51723] = true		-- Fan of Knives
-		T.aoespam[2818] = true		-- Deadly Poison
-		T.aoespam[8680] = true		-- Instant Poison
-		-- Merging mh/oh strikes
-		T.aoespam[5374] = true		-- Mutilate
-		T.aoespam[27576] = 5374		-- Mutilate Off-Hand
-	end
-elseif T.class == "MONK" then
-	if C.combattext.merge_aoe_spam then
-		-- Healing spells
-		T.aoespam[115175] = true	-- Soothing Mist
-		T.aoespam[126890] = true	-- Eminence
-		-- Damaging spells
-		T.aoespam[117952] = true	-- Crackling Jade Lightning
-		T.aoespam[107270] = true	-- Spinning Crane Kick
-		T.aoespam[117418] = true	-- Fists of Fury
-	end
-end
+end	
