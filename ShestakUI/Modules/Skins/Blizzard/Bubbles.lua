@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.chat.bubbles ~= true or IsAddOnLoaded("BossEncounter2") then return end
 
 ----------------------------------------------------------------------------------------
---	ChatBubbles skin(by Elv22 or nightcracker)
+--	ChatBubbles skin(by Elv22 or Nightcracker)
 ----------------------------------------------------------------------------------------
 local chatbubblehook = CreateFrame("Frame", nil, UIParent)
 local noscalemult = T.mult * C.general.uiscale

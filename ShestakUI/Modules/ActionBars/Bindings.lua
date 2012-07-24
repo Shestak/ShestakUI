@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if IsAddOnLoaded("ncHoverBind") then return end
 
 ----------------------------------------------------------------------------------------
---	Binding buttons(ncHoverBind by nightcracker)
+--	Binding buttons(ncHoverBind by Nightcracker)
 ----------------------------------------------------------------------------------------
 local bind = CreateFrame("Frame", "HoverBind", UIParent)
 

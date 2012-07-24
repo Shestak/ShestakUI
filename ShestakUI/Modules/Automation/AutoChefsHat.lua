@@ -1,7 +1,7 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Auto equip Chef's Hat(ChefsHat by kunda)
+--	Auto equip Chef's Hat(ChefsHat by Kunda)
 ----------------------------------------------------------------------------------------
 local ChefsHat = CreateFrame("Frame")
 local ChefsKitchen = GetSpellInfo(33359)

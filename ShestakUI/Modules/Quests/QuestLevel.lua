@@ -1,7 +1,7 @@
 local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Quest level(yQuestLevel by yleaf)
+--	Quest level(yQuestLevel by Yleaf)
 ----------------------------------------------------------------------------------------
 local function questlevel()
 	local buttons = QuestLogScrollFrame.buttons

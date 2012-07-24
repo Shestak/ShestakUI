@@ -1,7 +1,7 @@
 ﻿if (IsAddOnLoaded("yClassColor")) then return end
 
 ----------------------------------------------------------------------------------------
---	Class color guild/friends/etc list(yClassColor by yleaf)
+--	Class color guild/friends/etc list(yClassColor by Yleaf)
 ----------------------------------------------------------------------------------------
 local GUILD_INDEX_MAX = 12
 local SMOOTH = {1, 0, 0, 1, 1, 0, 0, 1, 0}

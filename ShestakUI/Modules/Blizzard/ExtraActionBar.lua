@@ -21,7 +21,7 @@ ExtraActionBarFrame:SetScript("OnMouseUp", function()
 end)
 
 ------------------------------------------------------------------------------------------
---	Skin ExtraActionBarFrame(by Roth)
+--	Skin ExtraActionBarFrame(by Zork)
 ------------------------------------------------------------------------------------------
 local button = ExtraActionButton1
 local icon = button.icon
