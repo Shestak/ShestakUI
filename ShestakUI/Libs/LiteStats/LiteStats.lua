@@ -101,9 +101,9 @@ local function zsub(s, ...) local t = {...} for i = 1, #t, 2 do s = gsub(s, t[i]
 local function formatgold(style, amount)
 	local gold, silver, copper = floor(amount * 0.0001), floor(mod(amount * 0.01, 100)), floor(mod(amount, 100))
 	if style == 1 then
-		return (gold > 0 and format("%s|cffffd700%s|r ",gold,GOLD_AMOUNT_SYMBOL) or "")
-			.. (silver > 0 and format("%s|cffc7c7cf%s|r ",silver,SILVER_AMOUNT_SYMBOL) or "")
-			.. ((copper > 0 or (gold == 0 and silver == 0)) and format("%s|cffeda55f%s|r", copper,COPPER_AMOUNT_SYMBOL) or "")
+		return (gold > 0 and format("%s|cffffd700%s|r ", gold,GOLD_AMOUNT_SYMBOL) or "")
+			.. (silver > 0 and format("%s|cffc7c7cf%s|r ", silver,SILVER_AMOUNT_SYMBOL) or "")
+			.. ((copper > 0 or (gold == 0 and silver == 0)) and format("%s|cffeda55f%s|r", copper, COPPER_AMOUNT_SYMBOL) or "")
 	elseif style == 2 or not style then
 		return format("%.1f|cffffd700%s|r", amount * 0.0001, GOLD_AMOUNT_SYMBOL)
 	elseif style == 3 then
@@ -217,7 +217,7 @@ function SlashCmdList.LSTATS()
 		slprint(TALENTS, L_STATS_OPEN_TALENT, L_STATS_RC_TALENT)
 	end
 	if experience.enabled then
-		slprint(format("%s/%s/%s", COMBAT_XP_GAIN,TIME_PLAYED_MSG,FACTION), L_STATS_RC_EXPERIENCE, L_STATS_WATCH_FACTIONS)
+		slprint(format("%s/%s/%s", COMBAT_XP_GAIN, TIME_PLAYED_MSG, FACTION), L_STATS_RC_EXPERIENCE, L_STATS_WATCH_FACTIONS)
 	end
 	print("|cffBCEE68", format(L_STATS_OTHER_OPTIONS, "|cff66C6FFShestakUI\\Config\\DataText.lua"))
 end
@@ -327,12 +327,12 @@ if memory.enabled then
 			end
 			local bandwidth = GetAvailableBandwidth()
 			if bandwidth ~= 0 then
-				GameTooltip:AddDoubleLine(L_STATS_BANDWIDTH, format("%s ".."Mbps",T.Round(bandwidth, 2)), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_BANDWIDTH, format("%s ".."Mbps", T.Round(bandwidth, 2)), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_STATS_DOWNLOAD, format("%s%%", floor(GetDownloadedPercentage() * 100 + 0.5)), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				GameTooltip:AddLine(" ")
 			end
-			GameTooltip:AddDoubleLine(L_STATS_MEMORY_USAGE,formatmem(gcinfo() - self.text.total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-			GameTooltip:AddDoubleLine(L_STATS_TOTAL_MEMORY_USAGE,formatmem(collectgarbage"count"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddDoubleLine(L_STATS_MEMORY_USAGE, formatmem(gcinfo() - self.text.total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddDoubleLine(L_STATS_TOTAL_MEMORY_USAGE, formatmem(collectgarbage"count"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:Show()
 		end,
 		--OnUpdate = AltUpdate,
@@ -1475,7 +1475,7 @@ if experience.enabled then
 			or sub == "repleft" and abs(maxrep - currep)
 			or sub == "maxrep" and abs(maxrep - minrep)
 			or sub == "rep%" and (currep ~= 0 and floor(abs(currep - minrep) / abs(maxrep - minrep) * 100) or 0)
-			or format("[%s]",sub)
+			or format("[%s]", sub)
 	end
 	Inject("Experience", {
 		text = {
