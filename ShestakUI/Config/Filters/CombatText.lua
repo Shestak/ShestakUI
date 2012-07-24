@@ -184,7 +184,7 @@ elseif T.class == "HUNTER" then
 		T.aoespam[83077] = true		-- Instant part of Serpent Sting
 		T.aoespam[88453] = true		-- Serpent Sting (Dot 1/2)
 		T.aoespam[88466] = true		-- Serpent Sting (Dot 2/2)
-		T.aoespam[1978] = true		-- Serpent Sting
+		T.aoespam[118253] = true	-- Serpent Sting
 		T.aoespam[13812] = true		-- Explosive Trap
 		T.aoespam[53301] = true		-- Explosive Shot
 		T.aoespam[118459] = true	-- Beast Cleave
