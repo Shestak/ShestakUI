@@ -724,7 +724,7 @@ function CreateUIConfig()
 				_G["UIConfig"..i..j.."Text"]:SetJustifyH("LEFT")
 				button:SetChecked(value)
 				button:SetScript("OnClick", function(self) SetValue(i, j, (self:GetChecked() and true or false)) end)
-				button:SetPoint("TOPLEFT", 5, -(offset))
+				button:SetPoint("TOPLEFT", 5, -offset)
 				offset = offset + 25
 			elseif type(value) == "number" or type(value) == "string" then
 				local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
@@ -734,7 +734,7 @@ function CreateUIConfig()
 				label:SetWidth(460)
 				label:SetHeight(20)
 				label:SetJustifyH("LEFT")
-				label:SetPoint("TOPLEFT", 5, -(offset))
+				label:SetPoint("TOPLEFT", 5, -offset)
 
 				local editbox = CreateFrame("EditBox", nil, frame)
 				editbox:SetAutoFocus(false)
@@ -785,7 +785,7 @@ function CreateUIConfig()
 				label:SetWidth(440)
 				label:SetHeight(20)
 				label:SetJustifyH("LEFT")
-				label:SetPoint("TOPLEFT", 5, -(offset))
+				label:SetPoint("TOPLEFT", 5, -offset)
 
 				colorbuttonname = (label:GetText().."ColorPicker")
 

@@ -23,7 +23,7 @@ local function GetEnabledAddons()
 end
 
 local function CreateMenuButton(parent, width, height, text, ...)
-	local button = CreateFrame("Button", "Test", parent, "UIPanelButtonTemplate")
+	local button = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
 	button:SetSize(width, height)
 	button:SkinButton()
 	button:SetText(text)
@@ -314,9 +314,9 @@ function AddonManager:LoadWindow()
 
 	-- Create initial list
 	for i, addon in pairs(AddonManager.AllAddons) do
-		local button = CreateFrame("Frame", nil, scrollFrame.Anchor)
+		local button = CreateFrame("Button", nil, scrollFrame.Anchor)
 		button:SetFrameLevel(scrollFrame.Anchor:GetFrameLevel() + 1)
-		button:SetSize(14, 14)
+		button:SetSize(15.5, 15.5)
 		button:SkinButton()
 		if addon.enabled then
 			if button.overlay then
@@ -324,10 +324,16 @@ function AddonManager:LoadWindow()
 			end
 		end
 
+		local highligh = button:CreateTexture("Frame", nil, self)
+		highligh:SetTexture(1, 1, 1, 0.3)
+		highligh:Point("TOPLEFT", button, 2, -2)
+		highligh:Point("BOTTOMRIGHT", button, -2, 2)
+		button:SetHighlightTexture(highligh)
+
 		if i == 1 then
-			button:SetPoint("TOPLEFT", scrollFrame.Anchor, "TOPLEFT", 5, -5)
+			button:SetPoint("TOPLEFT", scrollFrame.Anchor, "TOPLEFT", 5, -5.5)
 		else
-			button:SetPoint("TOP", AddonManager.Buttons[i-1], "BOTTOM", 0, -3)
+			button:SetPoint("TOP", AddonManager.Buttons[i-1], "BOTTOM", 0, -3.5)
 		end
 		button.text = button:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 		button.text:SetJustifyH("LEFT")
