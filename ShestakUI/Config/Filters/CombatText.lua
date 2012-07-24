@@ -181,12 +181,11 @@ elseif T.class == "WARRIOR" then
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[2643] = true		-- Multi-Shot
-		T.aoespam[83077] = true		-- Instant part of Serpent Sting
-		T.aoespam[88453] = true		-- Serpent Sting (Dot 1/2)
-		T.aoespam[88466] = true		-- Serpent Sting (Dot 2/2)
+		T.aoespam[83077] = true		-- Improved Serpent Sting
 		T.aoespam[118253] = true	-- Serpent Sting
 		T.aoespam[13812] = true		-- Explosive Trap
 		T.aoespam[53301] = true		-- Explosive Shot
+		T.aoespam[63468] = true		-- Piercing Shots
 		T.aoespam[118459] = true	-- Beast Cleave
 		T.aoespam[34655] = true		-- Deadly Poison(Snake)
 	end
