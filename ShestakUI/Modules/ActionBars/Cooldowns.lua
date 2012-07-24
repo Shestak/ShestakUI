@@ -126,7 +126,7 @@ local function cooldown_OnHide(self)
 	active[self] = nil
 end
 
-local function cooldown_ShouldUpdateTimer(self, start, duration, enable, charges, maxCharges)
+local function cooldown_ShouldUpdateTimer(self, start, duration)
 	local timer = self.timer
 	if not timer then
 		return true
@@ -136,10 +136,11 @@ end
 
 local function cooldown_Update(self)
 	local button = self:GetParent()
-	local start, duration, enable, charges, maxCharges = GetActionCooldown(button.action)
+	local start, duration, enable = GetActionCooldown(button.action)
+	local charges, maxCharges, chargeStart, chargeDuration = GetActionCharges(button.action)
 
-	if charges == 0 and cooldown_ShouldUpdateTimer(self, start, duration, enable, charges, maxCharges) then
-		Timer_Start(self, start, duration, enable, charges, maxCharges)
+	if charges == 0 and cooldown_ShouldUpdateTimer(self, start, duration) then
+		Timer_Start(self, start, duration)
 	end
 end
 
