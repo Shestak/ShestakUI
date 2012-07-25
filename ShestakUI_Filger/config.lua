@@ -606,8 +606,6 @@ Filger_Spells = {
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Piercing Shots
-			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},]]
 		{
 			Name = "PVE/PVP_CC",
@@ -2154,6 +2152,10 @@ Filger_Spells = {
 			-- CoE group
 			-- Master poisoner (Rogue)
 			{spellID = 93068, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Lightning Breath (Wind Serpent)
+			{spellID = 24844, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Fire Breath (Dragonhawk)
+			{spellID = 34889, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",

@@ -84,6 +84,7 @@ if C.reminder.raid_buffs_enable == true then
 		Spell6Buff = {	-- Melee and Ranged Haste
 			30809,	-- Unleashed Rage
 			113742,	-- Swiftblade's Cunning
+			128432,	-- Cackling Howl
 			55610,	-- Unholy Aura
 		}
 	end
@@ -206,6 +207,8 @@ if C.reminder.solo_buffs_enable == true then
 					1459,	-- Arcane Brilliance
 					61316,	-- Dalaran Brilliance
 					24932,	-- Leader of the Pack
+					90309,	-- Terrifying Roar
+					24604,	-- Furious Howl
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -244,6 +247,7 @@ if C.reminder.solo_buffs_enable == true then
 					20217,	-- Blessing of Kings
 					116956,	-- Grace of Air
 					93435,	-- Roar of Courage
+					127830,	-- Spirit Beast Blessing
 				},
 				["combat"] = true,
 				["instance"] = true,
