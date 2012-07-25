@@ -1,5 +1,6 @@
 local T, C, L = unpack(select(2, ...))
 if C.chat.bubbles ~= true or IsAddOnLoaded("BossEncounter2") then return end
+if T.MOPVersion then return end
 
 ----------------------------------------------------------------------------------------
 --	ChatBubbles skin(by Elv22 or Nightcracker)

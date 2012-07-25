@@ -160,7 +160,7 @@
 
 	<Script file="Modules\DataText\Battleground.lua"/>
 
-	<!--<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>-->
+	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
 	<Script file="Modules\Skins\ACE3.lua"/>
 	<Script file="Modules\Skins\Aurora.lua"/>
 	<Script file="Modules\Skins\BigWigs.lua"/>
