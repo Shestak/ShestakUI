@@ -10,7 +10,6 @@ local function LoadSkin()
 		"PetJournalParent",
 		"PetJournalRightInset",
 		"PetJournalLeftInset",
-		"PetJournalPrimaryAbilityTooltip",
 		"PetJournalPetCard",
 		"PetJournalPetCardInset",
 		"PetJournalPetCardPetInfo",
@@ -56,42 +55,42 @@ local function LoadSkin()
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelFrame.RotateRightButton)
 
 	for i = 1, #MountJournal.ListScrollFrame.buttons do
-		local b = _G["MountJournalListScrollFrameButton"..i]
-		local t = _G["MountJournalListScrollFrameButton"..i.."Name"]
+		local button = _G["MountJournalListScrollFrameButton"..i]
+		local name = _G["MountJournalListScrollFrameButton"..i.."Name"]
 
-		if not b.isSkinned then
-			b:StripTextures()
-			b:CreateBackdrop("Overlay")
-			b.backdrop:Point("TOPLEFT", 2, -2)
-			b.backdrop:Point("BOTTOMRIGHT", -2, 2)
+		if not button.isSkinned then
+			button:StripTextures()
+			button:CreateBackdrop("Overlay")
+			button.backdrop:Point("TOPLEFT", 2, -2)
+			button.backdrop:Point("BOTTOMRIGHT", -2, 2)
 
-			b.border = CreateFrame("Frame", nil, b)
-			b.border:CreateBackdrop("Default")
-			b.border.backdrop:Point("TOPLEFT", b.icon, -2, 2)
-			b.border.backdrop:Point("BOTTOMRIGHT", b.icon, 2, -2)
+			button.border = CreateFrame("Frame", nil, button)
+			button.border:CreateBackdrop("Default")
+			button.border.backdrop:Point("TOPLEFT", button.icon, -2, 2)
+			button.border.backdrop:Point("BOTTOMRIGHT", button.icon, 2, -2)
 
-			b.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			b.icon:SetParent(b.border.backdrop)
+			button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button.icon:SetParent(button.border.backdrop)
 
-			t:SetParent(b.border.backdrop)
+			name:SetParent(button.border.backdrop)
 
-			b.isSkinned = true
+			button.isSkinned = true
 		end
 	end
 
 	local function ColorSelectedMount()
 		for i = 1, #MountJournal.ListScrollFrame.buttons do
-			local b = _G["MountJournalListScrollFrameButton"..i]
-			local t = _G["MountJournalListScrollFrameButton"..i.."Name"]
+			local button = _G["MountJournalListScrollFrameButton"..i]
+			local name = _G["MountJournalListScrollFrameButton"..i.."Name"]
 
-			if b.selectedTexture:IsShown() then
-				t:SetTextColor(1, 1, 0)
-				b.backdrop:SetBackdropBorderColor(1, 1, 0)
-				b.border.backdrop:SetBackdropBorderColor(1, 1, 0)
+			if button.selectedTexture:IsShown() then
+				name:SetTextColor(1, 1, 0)
+				button.backdrop:SetBackdropBorderColor(1, 1, 0)
+				button.border.backdrop:SetBackdropBorderColor(1, 1, 0)
 			else
-				t:SetTextColor(1, 1, 1)
-				b.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-				b.border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				name:SetTextColor(1, 1, 1)
+				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				button.border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 			end
 		end
 	end
@@ -113,42 +112,52 @@ local function LoadSkin()
 	T.SkinScrollBar(PetJournalListScrollFrameScrollBar)
 
 	for i = 1, #PetJournal.listScroll.buttons do
-		local b = _G["PetJournalListScrollFrameButton"..i]
-		local t = _G["PetJournalListScrollFrameButton"..i.."Name"]
+		local button = _G["PetJournalListScrollFrameButton"..i]
+		local name = _G["PetJournalListScrollFrameButton"..i.."Name"]
+		local level = _G["PetJournalListScrollFrameButton"..i.."Level"]
 
-		if not b.isSkinned then
-			b:StripTextures()
-			b:CreateBackdrop("Overlay")
-			b.backdrop:Point("TOPLEFT", 2, -2)
-			b.backdrop:Point("BOTTOMRIGHT", -2, 2)
+		if not button.isSkinned then
+			_G["PetJournalListScrollFrameButton"..i.."LevelBG"]:SetAlpha(0)
 
-			b.border = CreateFrame("Frame", nil, b)
-			b.border:CreateBackdrop("Default")
-			b.border.backdrop:Point("TOPLEFT", b.icon, -2, 2)
-			b.border.backdrop:Point("BOTTOMRIGHT", b.icon, 2, -2)
+			button:StripTextures()
+			button:CreateBackdrop("Overlay")
+			button.backdrop:Point("TOPLEFT", 2, -2)
+			button.backdrop:Point("BOTTOMRIGHT", -2, 2)
 
-			b.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			b.icon:SetParent(b.border.backdrop)
+			button.petTypeIcon:SetParent(button.backdrop)
 
-			t:SetParent(b.border.backdrop)
+			button.border = CreateFrame("Frame", nil, button)
+			button.border:CreateBackdrop("Default")
+			button.border.backdrop:Point("TOPLEFT", button.icon, -2, 2)
+			button.border.backdrop:Point("BOTTOMRIGHT", button.icon, 2, -2)
 
-			b.isSkinned = true
+			name:SetParent(button.border.backdrop)
+
+			level:SetParent(button.border.backdrop)
+			level:SetFontObject("NumberFont_OutlineThick_Mono_Small")
+
+			button.dragButton.favorite:SetParent(button.border.backdrop)
+
+			button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button.icon:SetParent(button.border.backdrop)
+
+			button.isSkinned = true
 		end
 	end
 
 	local function ColorSelectedPet()
 		for i = 1, #PetJournal.listScroll.buttons do
-			local b = _G["PetJournalListScrollFrameButton"..i]
-			local t = _G["PetJournalListScrollFrameButton"..i.."Name"]
+			local button = _G["PetJournalListScrollFrameButton"..i]
+			local name = _G["PetJournalListScrollFrameButton"..i.."Name"]
 
-			if b.selectedTexture:IsShown() then
-				t:SetTextColor(1, 1, 0)
-				b.backdrop:SetBackdropBorderColor(1, 1, 0)
-				b.border.backdrop:SetBackdropBorderColor(1, 1, 0)
+			if button.selectedTexture:IsShown() then
+				name:SetTextColor(1, 1, 0)
+				button.backdrop:SetBackdropBorderColor(1, 1, 0)
+				button.border.backdrop:SetBackdropBorderColor(1, 1, 0)
 			else
-				t:SetTextColor(1, 1, 1)
-				b.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-				b.border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				name:SetTextColor(1, 1, 1)
+				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				button.border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 			end
 		end
 	end
@@ -188,6 +197,9 @@ local function LoadSkin()
 		icon:SetParent(button.dragButton.backdrop)
 
 		level:SetParent(button.dragButton.backdrop)
+		level:SetFontObject("NumberFont_OutlineThick_Mono_Small")
+		level:ClearAllPoints()
+		level:Point("BOTTOMRIGHT", -2, 3)
 
 		for j = 1, 3 do
 			local button = _G["PetJournalLoadoutPet"..i.."Spell"..j]
@@ -241,21 +253,29 @@ local function LoadSkin()
 
 	PetJournalPetCardPetInfoIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
+	PetJournalPrimaryAbilityTooltip.Background:SetTexture(nil)
+	PetJournalPrimaryAbilityTooltip.Delimiter1:SetTexture(nil)
+	PetJournalPrimaryAbilityTooltip.Delimiter2:SetTexture(nil)
+	PetJournalPrimaryAbilityTooltip.BorderTop:SetTexture(nil)
+	PetJournalPrimaryAbilityTooltip.BorderTopLeft:SetTexture(nil)
+	PetJournalPrimaryAbilityTooltip.BorderTopRight:SetTexture(nil)
+	PetJournalPrimaryAbilityTooltip.BorderLeft:SetTexture(nil)
+	PetJournalPrimaryAbilityTooltip.BorderRight:SetTexture(nil)
+	PetJournalPrimaryAbilityTooltip.BorderBottom:SetTexture(nil)
+	PetJournalPrimaryAbilityTooltip.BorderBottomRight:SetTexture(nil)
+	PetJournalPrimaryAbilityTooltip.BorderBottomLeft:SetTexture(nil)
 	PetJournalPrimaryAbilityTooltip:SetTemplate("Transparent")
 
 	for i = 1, 6 do
-		local b = _G["PetJournalPetCardSpell"..i]
+		local button = _G["PetJournalPetCardSpell"..i]
 
-		b:StripTextures()
-		b:SetTemplate("Default")
-		b:StyleButton()
+		button:SetTemplate("Default")
+		button:StyleButton()
 
-		b.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		b.icon:ClearAllPoints()
-		b.icon:Point("TOPLEFT", 2, -2)
-		b.icon:Point("BOTTOMRIGHT", -2, 2)
-
-		b.isSkinned = true
+		button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button.icon:ClearAllPoints()
+		button.icon:Point("TOPLEFT", 2, -2)
+		button.icon:Point("BOTTOMRIGHT", -2, 2)
 	end
 
 	PetJournalPetCardHealthFrame.healthBar:StripTextures()
