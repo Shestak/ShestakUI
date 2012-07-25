@@ -750,10 +750,6 @@ Filger_Spells = {
 			{spellID = 45438, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mage Ward
 			--MOP{spellID = 543, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Improved Blink
-			{spellID = 46989, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blazing Speed
-			--MOP{spellID = 31643, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Power
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Improved Mana Gem
@@ -3009,10 +3005,6 @@ Filger_Spells = {
 			{spellID = 66, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Evocation
 			{spellID = 12051, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Improved blink
-			{spellID = 46989, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Blazing Speed
-			--MOP{spellID = 31643, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Cauterize
 			{spellID = 87023, unitID = "target", caster = "target", filter = "DEBUFF"},
 
