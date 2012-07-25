@@ -16,17 +16,12 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tolerance option to your latency"
 
 -- Miscellaneous options
-L_GUI_MISC_AUTOQUEST = "Auto accept quest"
-L_GUI_MISC_AUTODUEL = "Auto decline duel"
-L_GUI_MISC_AUTOACCEPT = "Auto accept invite"
-L_GUI_MISC_AUTORESSURECT = "Auto resurrection in Battle Ground"
 L_GUI_MISC_MARKING = "Marks target when you push *shift*"
 L_GUI_MISC_INVKEYWORD = "Short keyword for invite (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Spin camera while afk"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Vehicle frame on mouseover"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button"
 L_GUI_MISC_RAID_TOOLS = "Raid tools"
-L_GUI_MISC_ACH_SCREENS = "Take screenshot when player get achievement"
 L_GUI_MISC_PROFESSION_TABS = "Professions tabs on tradeskill/trade frames"
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG"
 
@@ -36,6 +31,16 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in chat when arena enemy is drinking"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Announce in party/raid when you interrupt"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast some spell"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members"
+
+-- Automation options
+L_GUI_AUTOMATION = "Automation"
+L_GUI_AUTOMATION_RESURRECTION = "Auto resurrection in Battle Ground"
+L_GUI_AUTOMATION_SCREENSHOT = "Take screenshot when player get achievement"
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact"
+L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat"
+L_GUI_AUTOMATION_ACCEPT_INVITE = "Auto accept invite"
+L_GUI_AUTOMATION_DECLINE_DUEL = "Auto decline duel"
+L_GUI_AUTOMATION_ACCEPT_QUEST = "Auto accept quest"
 
 -- Skins options
 L_GUI_SKINS = "Stylization"

@@ -1,4 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
+if C.automation.chefs_hat ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Auto equip Chef's Hat(ChefsHat by Kunda)

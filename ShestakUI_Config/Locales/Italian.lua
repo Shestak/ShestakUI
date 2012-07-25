@@ -18,17 +18,12 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Messaggio di benvenuto in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Allinea automaticamente la tolleranza automatica lag della Blizzard alla tua latenza"
 
 -- Miscellaneous options
-L_GUI_MISC_AUTOQUEST = "Auto-accetta le missioni"
-L_GUI_MISC_AUTODUEL = "Auto-declina i duelli"
-L_GUI_MISC_AUTOACCEPT = "Auto-accetta gli inviti"
-L_GUI_MISC_AUTORESSURECT = "Auto-risorgi nei Campi di Battaglia"
 L_GUI_MISC_MARKING = "Marca il bersaglio quando premi Shift"
 L_GUI_MISC_INVKEYWORD = "Parola chiave per invitare (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Ruota la camera mentre sei assente"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Riquadro veicolo in mouseover"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Bottone automatico missione/oggetto"
 L_GUI_MISC_RAID_TOOLS = "Strumenti per le incursioni"
-L_GUI_MISC_ACH_SCREENS = "Cattura una schermata quando il giocatore completa un'impresa"
 L_GUI_MISC_PROFESSION_TABS = "Visualizza la linguetta delle professioni sul riquadro abilità di commercio/mercante"
 L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei bosses durante i Campi di Battaglia"
 
@@ -38,6 +33,16 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Annuncia in chat quando un nemico in arena sta b
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annuncia in gruppo/incursione quando tu interrompi un incantesimo/abilità"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Annuncia in gruppo/incursione quando tu lanci alcuni incantesimi/abilità"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Controlla incantesimi/abilità lanciati da tutti i compagni di gruppo/incursione"
+
+-- Automation options
+L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION_RESURRECTION = "Auto-risorgi nei Campi di Battaglia"
+L_GUI_AUTOMATION_SCREENSHOT = "Cattura una schermata quando il giocatore completa un'impresa"
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
+L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_ACCEPT_INVITE = "Auto-accetta gli inviti"
+L_GUI_AUTOMATION_DECLINE_DUEL = "Auto-declina i duelli"
+L_GUI_AUTOMATION_ACCEPT_QUEST = "Auto-accetta le missioni"
 
 -- Skins options
 L_GUI_SKINS = "Restyling"

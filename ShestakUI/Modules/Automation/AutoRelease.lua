@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.misc.auto_resurrection ~= true then return end
+if C.automation.resurrection ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Auto resurection
@@ -7,9 +7,9 @@ if C.misc.auto_resurrection ~= true then return end
 local WINTERGRASP = L_ZONE_WINTERGRASP
 local BARAD = L_ZONE_TOLBARAD
 
-local autoreleasepvp = CreateFrame("Frame")
-autoreleasepvp:RegisterEvent("PLAYER_DEAD")
-autoreleasepvp:SetScript("OnEvent", function(self, event)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_DEAD")
+frame:SetScript("OnEvent", function(self, event)
 	local inBattlefield = false
 	for i = 1, GetMaxBattlefieldID() do
 		local status = GetBattlefieldStatus(i)

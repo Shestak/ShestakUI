@@ -18,17 +18,12 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Automatische Anpassung der Blizzard Custom Lag Toleranz an deine Latenz"
 
 -- Miscellaneous options
-L_GUI_MISC_AUTOQUEST = "Quests automatisch annehmen"
-L_GUI_MISC_AUTODUEL = "Duell automatisch ablehnen"
-L_GUI_MISC_AUTOACCEPT = "Einladungen automatisch annehmen"
-L_GUI_MISC_AUTORESSURECT = "Automatisch im Schlachtfeld wiederbeleben"
 L_GUI_MISC_MARKING = "Ziele markieren wenn *Umschalttaste* gedürckt wird"
 L_GUI_MISC_INVKEYWORD = "Kurzes Schlüsselwort für Einladungen (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Kamera drehen während du afk bist"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Fahrzeugfenster bei mouseover anzeigen"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/Gegenstand auto Taste"
 L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
-L_GUI_MISC_ACH_SCREENS = "Speicher einen Screenshot wenn ein Achivment errungen wird."
 L_GUI_MISC_PROFESSION_TABS = "Berufereiter an Handelsfähigkeiten und Handelsfenstern anzeigen"
 L_GUI_MISC_HIDE_BG_SPAM = "In Schlachtfeldern Bossemotes im Chat unterbinden"
 
@@ -38,6 +33,16 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Sage im Chat an wenn ein Arenagegener trinkt"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Sage deine Unterbrechungen im Raid oder Schlachtzugschat an"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Sage im Raid / Schachtzugschat an, wenn du den selben Zauber castest"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Prüfe Zauber von allen Spielern"
+
+-- Automation options
+L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION_RESURRECTION = "Automatisch im Schlachtfeld wiederbeleben"
+L_GUI_AUTOMATION_SCREENSHOT = "Speicher einen Screenshot wenn ein Achivment errungen wird"
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
+L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_ACCEPT_INVITE = "Einladungen automatisch annehmen"
+L_GUI_AUTOMATION_DECLINE_DUEL = "Duell automatisch ablehnen"
+L_GUI_AUTOMATION_ACCEPT_QUEST = "Quests automatisch annehmen"
 
 -- Skins options
 L_GUI_SKINS = "Stilisierung"

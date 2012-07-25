@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if C.misc.ach_screens ~= true then return end
+if C.automation.screenshot ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Take screenshots of Achievements(Based on Achievement Screenshotter by Blamdarot)
@@ -31,6 +31,6 @@ local function OnEvent(...)
 	TakeScreen(1, Screenshot)
 end
 
-local AchScreen = CreateFrame("Frame")
-AchScreen:RegisterEvent("ACHIEVEMENT_EARNED")
-AchScreen:SetScript("OnEvent", OnEvent)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("ACHIEVEMENT_EARNED")
+frame:SetScript("OnEvent", OnEvent)

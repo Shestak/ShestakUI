@@ -18,17 +18,12 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "显示欢迎信息"
 L_GUI_GENERAL_LAG_TOLERANCE = "自动更新自定延迟容许值"
 
 -- Miscellaneous options
-L_GUI_MISC_AUTOQUEST = "自动接受任务"
-L_GUI_MISC_AUTODUEL = "自动取消决斗"
-L_GUI_MISC_AUTOACCEPT = "自动接受组队邀请"
-L_GUI_MISC_AUTORESSURECT = "在战场中自动释放灵魂"
 L_GUI_MISC_MARKING = "点击shift显示团队标记图示菜单"
 L_GUI_MISC_INVKEYWORD = "自动邀请关键字(/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "afk时旋转镜头"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框体解锁"
 L_GUI_MISC_QUEST_AUTOBUTTON = "任务/道具自动按钮"
 L_GUI_MISC_RAID_TOOLS = "团队工具"
-L_GUI_MISC_ACH_SCREENS = "当你获得成就的时候自动截屏"
 L_GUI_MISC_PROFESSION_TABS = "在专业和商业框体显示专业技能按鈕"
 L_GUI_MISC_HIDE_BG_SPAM = "在战场内移除 Boss 表情信息"
 
@@ -38,6 +33,16 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "当敌人在进食喝水的时候在队伍/团�
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "当你成功打断的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS = "当有人与你使用同一法术的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "检视所有队员的施法"
+
+-- Automation options
+L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION_RESURRECTION = "在战场中自动释放灵魂"
+L_GUI_AUTOMATION_SCREENSHOT = "当你获得成就的时候自动截屏"
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
+L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_ACCEPT_INVITE = "自动接受组队邀请"
+L_GUI_AUTOMATION_DECLINE_DUEL = "自动取消决斗"
+L_GUI_AUTOMATION_ACCEPT_QUEST = "自动接受任务"
 
 -- Skins options
 L_GUI_SKINS = "风格化"

@@ -18,17 +18,12 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Message de bienvenue pour le chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Ajuste automatiquement la barre de latence Blizzard avec votre propre latence"
 
 -- Miscellaneous options
-L_GUI_MISC_AUTOQUEST = "Accepter les quêtes automatiquement"
-L_GUI_MISC_AUTODUEL = "Décliner les duels automatiquement"
-L_GUI_MISC_AUTOACCEPT = "Accepter automatiquement les invitations"
-L_GUI_MISC_AUTORESSURECT = "Autorésurrection en champ de bataille"
 L_GUI_MISC_MARKING = "Marque la cible quand vous appuyez sur MAJ"
 L_GUI_MISC_INVKEYWORD = "Mot clé pour inviter (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Faire tourner la caméra quand absent"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Fenêtre de véhicule en mouseover"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Accepte les quêtes automatiquement"
 L_GUI_MISC_RAID_TOOLS = "Outils de raid"
-L_GUI_MISC_ACH_SCREENS = "Prend un screenshot quand un evenement est accomplie"
 L_GUI_MISC_PROFESSION_TABS = "Onglet des professions sur les fenêtres de métiers et de craft"
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 
@@ -38,6 +33,16 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Annonce dans la fenêtre de discussion quand un 
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annonce /gr, /raid si vous interrompez un sort"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Annonce dans la fenêtre groupe/raid quand vous lancez certains sorts"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Afficher les sorts lancés par tous les membres"
+
+-- Automation options
+L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION_RESURRECTION = "Autorésurrection en champ de bataille"
+L_GUI_AUTOMATION_SCREENSHOT = "Prend un screenshot quand un evenement est accomplie"
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
+L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_ACCEPT_INVITE = "Accepter automatiquement les invitations"
+L_GUI_AUTOMATION_DECLINE_DUEL = "Décliner les duels automatiquement"
+L_GUI_AUTOMATION_ACCEPT_QUEST = "Accepter les quêtes automatiquement"
 
 -- Skins options
 L_GUI_SKINS = "Personalisation d'addon"

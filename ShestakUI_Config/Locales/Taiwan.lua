@@ -18,17 +18,12 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "顯示歡迎信息"
 L_GUI_GENERAL_LAG_TOLERANCE = "自動更新自訂延遲容許值"
 
 -- Miscellaneous options
-L_GUI_MISC_AUTOQUEST = "自動接受任務"
-L_GUI_MISC_AUTODUEL = "自動取消决鬥"
-L_GUI_MISC_AUTOACCEPT = "自動接受組隊邀請"
-L_GUI_MISC_AUTORESSURECT = "在戰場中自動釋放靈魂"
 L_GUI_MISC_MARKING = "點擊shift顯示團隊標記圖示菜單"
 L_GUI_MISC_INVKEYWORD = "自動邀請關鍵字 (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "AFK時旋轉鏡頭"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "駕駛框體解鎖"
 L_GUI_MISC_QUEST_AUTOBUTTON = "任務/道具自動按鈕"
 L_GUI_MISC_RAID_TOOLS = "團隊工具"
-L_GUI_MISC_ACH_SCREENS = "當你獲得成就的時候自動截屏"
 L_GUI_MISC_PROFESSION_TABS = "在專業和商業框體顯示專業技能按鈕"
 L_GUI_MISC_HIDE_BG_SPAM = "在戰場内移除Boss表情信息"
 
@@ -38,6 +33,16 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "當敵人在進食敵人在進食在聊天窗口
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "當你成功打斷的時候在隊伍/團隊中進行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS = "當你使用相同法術的時候在隊伍/團隊中進行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "檢視所有隊員的法術"
+
+-- Automation options
+L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION_RESURRECTION = "在戰場中自動釋放靈魂"
+L_GUI_AUTOMATION_SCREENSHOT = "當你獲得成就的時候自動截屏"
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
+L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_ACCEPT_INVITE = "自動接受組隊邀請"
+L_GUI_AUTOMATION_DECLINE_DUEL = "自動取消决鬥"
+L_GUI_AUTOMATION_ACCEPT_QUEST = "自動接受任務"
 
 -- Skins options
 L_GUI_SKINS = "風格化"

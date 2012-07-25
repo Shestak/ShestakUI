@@ -8,6 +8,7 @@ local ALLOWED_GROUPS = {
 	["general"] = 1,
 	["misc"] = 1,
 	["announcements"] = 1,
+	["automation"] = 1,
 	["skins"] = 1,
 	["combattext"] = 1,
 	["reminder"] = 1,
@@ -44,17 +45,12 @@ local function Local(o)
 
 	-- Miscellaneous options
 	if o == "UIConfigmisc" then o = OTHER end
-	if o == "UIConfigmiscauto_quest" then o = L_GUI_MISC_AUTOQUEST end
-	if o == "UIConfigmiscauto_decline_duel" then o = L_GUI_MISC_AUTODUEL end
-	if o == "UIConfigmiscauto_accept_invite" then o = L_GUI_MISC_AUTOACCEPT end
-	if o == "UIConfigmiscauto_resurrection" then o = L_GUI_MISC_AUTORESSURECT end
 	if o == "UIConfigmiscshift_marking" then o = L_GUI_MISC_MARKING end
 	if o == "UIConfigmiscinvite_keyword" then o = L_GUI_MISC_INVKEYWORD end
 	if o == "UIConfigmiscafk_spin_camera" then o = L_GUI_MISC_SPIN_CAMERA end
 	if o == "UIConfigmiscvehicle_mouseover" then o = L_GUI_MISC_VEHICLE_MOUSEOVER end
 	if o == "UIConfigmiscquest_auto_button" then o = L_GUI_MISC_QUEST_AUTOBUTTON end
 	if o == "UIConfigmiscraid_tools" then o = L_GUI_MISC_RAID_TOOLS end
-	if o == "UIConfigmiscach_screens" then o = L_GUI_MISC_ACH_SCREENS end
 	if o == "UIConfigmiscprofession_tabs" then o = L_GUI_MISC_PROFESSION_TABS end
 	if o == "UIConfigmischide_bg_spam" then o = L_GUI_MISC_HIDE_BG_SPAM end
 
@@ -64,6 +60,16 @@ local function Local(o)
 	if o == "UIConfigannouncementsinterrupts" then o = L_GUI_ANNOUNCEMENTS_INTERRUPTS end
 	if o == "UIConfigannouncementsspells" then o = L_GUI_ANNOUNCEMENTS_SPELLS end
 	if o == "UIConfigannouncementsspells_from_all" then o = L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL end
+
+	-- Automation options
+	if o == "UIConfigautomation" then o = L_GUI_AUTOMATION end
+	if o == "UIConfigautomationresurrection" then o = L_GUI_AUTOMATION_RESURRECTION end
+	if o == "UIConfigautomationscreenshot" then o = L_GUI_AUTOMATION_SCREENSHOT end
+	if o == "UIConfigautomationsolve_artifact" then o = L_GUI_AUTOMATION_SOLVE_ARTIFACT end
+	if o == "UIConfigautomationchefs_hat" then o = L_GUI_AUTOMATION_CHEFS_HAT end
+	if o == "UIConfigautomationaccept_invite" then o = L_GUI_AUTOMATION_ACCEPT_INVITE end
+	if o == "UIConfigautomationdecline_duel" then o = L_GUI_AUTOMATION_DECLINE_DUEL end
+	if o == "UIConfigautomationaccept_quest" then o = L_GUI_AUTOMATION_ACCEPT_QUEST end
 
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end

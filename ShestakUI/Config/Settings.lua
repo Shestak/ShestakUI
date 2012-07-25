@@ -39,17 +39,12 @@ C["general"] = {
 --	Miscellaneous options
 ----------------------------------------------------------------------------------------
 C["misc"] = {
-	["auto_quest"] = false,						-- Auto accept quests(if hold shift or alt, auto accept is disable)
-	["auto_decline_duel"] = true,				-- Auto decline duel
-	["auto_accept_invite"] = false,				-- Auto accept invite
-	["auto_resurrection"] = true,				-- Auto resurrection in Battle Ground
 	["shift_marking"] = true,					-- Marks target when you push "shift"
 	["invite_keyword"] = "invite",				-- Short keyword for invite(for enable - in game type /ainv)
 	["afk_spin_camera"] = false,				-- Spin camera while afk
 	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
 	["quest_auto_button"] = false,				-- Quest auto button
 	["raid_tools"] = true,						-- Raid tools
-	["ach_screens"] = false,					-- Take screenshot when player get achievement
 	["profession_tabs"] = true,					-- Professions tabs on tradeskill frame
 	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
 }
@@ -62,6 +57,19 @@ C["announcements"] = {
 	["interrupts"] = false,						-- Announce in party/raid when you interrupt
 	["spells"] = false,							-- Announce in party/raid when you cast some spell
 	["spells_from_all"] = false,				-- Check spells cast from all members
+}
+
+----------------------------------------------------------------------------------------
+--	Automation options
+----------------------------------------------------------------------------------------
+C["automation"] = {
+	["resurrection"] = true,					-- Auto resurrection in Battle Ground
+	["screenshot"] = false,						-- Take screenshot when player get achievement
+	["solve_artifact"] = true,					-- Auto popup for solve artifact
+	["chefs_hat"] = true,						-- Auto equip Chef's Hat
+	["accept_invite"] = false,					-- Auto accept invite
+	["decline_duel"] = true,					-- Auto decline duel
+	["accept_quest"] = false,					-- Auto accept quests(if hold shift or alt, auto accept is disable)
 }
 
 ----------------------------------------------------------------------------------------

@@ -56,6 +56,7 @@
 	<Script file="Modules\Automation\AutoChefsHat.lua"/>
 	<Script file="Modules\Automation\AutoInvite.lua"/>
 	<Script file="Modules\Automation\AutoRelease.lua"/>
+	<Script file="Modules\Automation\DeclineDuel.lua"/>
 	<Script file="Modules\Automation\SolveArtifact.lua"/>
 
 	<Script file="Modules\Blizzard\Vehicle.lua"/>

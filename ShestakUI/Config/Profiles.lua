@@ -46,11 +46,11 @@ end
 if T.author == true then
 	C["general"].welcome_message = false
 	C["general"].custom_lagtolerance = true
-	C["misc"].auto_quest = true
-	C["misc"].auto_accept_invite = true
 	C["misc"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
 	C["misc"].hide_bg_spam = true
+	C["automation"].accept_invite = true
+	C["automation"].accept_quest = true
 	C["announcements"].spells = true
 	C["skins"].blizzard_frames = true
 	C["combattext"].crit_postfix = ""
@@ -80,7 +80,7 @@ if T.author == true then
 	C["stats"].fps = false
 	C["stats"].battleground = true
 	if T.level == MAX_PLAYER_LEVEL then
-		C["misc"].ach_screens = true
+		C["automation"].screenshot = true
 		C["stats"].experience = false
 		C["combattext"].heal_treshold = 500
 	end
@@ -106,11 +106,11 @@ if T.name == "Oz" then
 	C["position"].unitframes.target_castbar = {"CENTER", UIParent, "CENTER", 11, -154}
 	C["media"].border_color = {0.1, 0.1, 0.1, 1}
 	C["general"].welcome_message = false
-	C["misc"].auto_decline_duel = false
-	C["misc"].auto_resurrection = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].vehicle_mouseover = true
-	C["misc"].ach_screens = true
+	C["automation"].resurrection = false
+	C["automation"].screenshot = true
+	C["automation"].decline_duel = false
 	C["skins"].blizzard_frames = true
 	C["skins"].dbm = true
 	C["combattext"].scrollable = true
@@ -172,10 +172,10 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["media"].pixel_font_style = "OUTLINE"
 	C["media"].pixel_font_size = 14
 	C["general"].custom_lagtolerance = true
-	C["misc"].auto_decline_duel = false
-	C["misc"].auto_accept_invite = true
 	C["misc"].invite_keyword = "инвайт"
-	C["misc"].ach_screens = true
+	C["automation"].screenshot = true
+	C["automation"].accept_invite = true
+	C["automation"].decline_duel = false
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["reminder"].solo_buffs_sound = true

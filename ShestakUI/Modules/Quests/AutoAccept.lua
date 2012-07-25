@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.misc.auto_quest ~= true then return end
+if C.automation.accept_quest ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Quest automation(Monomyth by p3lim)

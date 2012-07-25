@@ -18,17 +18,12 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Приветственное сообщение
 L_GUI_GENERAL_LAG_TOLERANCE = "Автоматическое обновление допустимой задержки"
 
 -- Miscellaneous options
-L_GUI_MISC_AUTOQUEST = "Автоматическое принятие заданий"
-L_GUI_MISC_AUTODUEL = "Автоматическая отмена дуэлей"
-L_GUI_MISC_AUTOACCEPT = "Автоматическое принятие приглашений от друзей и гильдии"
-L_GUI_MISC_AUTORESSURECT = "Автоматическое воскрешение на полях боя"
 L_GUI_MISC_MARKING = "Меню с метками при нажатии *shift*"
 L_GUI_MISC_INVKEYWORD = "Ключевое слово для автоматического приглашения (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Вращать камеру во время афк"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Индикатор транспорта по наведению курсора"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Кнопка квестовых(список) предметов над миникартой"
 L_GUI_MISC_RAID_TOOLS = "Инструменты рейда"
-L_GUI_MISC_ACH_SCREENS = "Автоматическое сохранение скриншота во время получения достижения"
 L_GUI_MISC_PROFESSION_TABS = "Закладки всех профессий у окна торговли/профессии"
 L_GUI_MISC_HIDE_BG_SPAM = "Скрывать сообщения в центре экрана на полях боя"
 
@@ -38,6 +33,16 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Сообщать в чат, когда враг 
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Сообщать в чат о вашем прерывании заклинания"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Сообщать в чат, когда вы произнесли заклинание"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Проверка заклинаний от всех участников группы/рейда"
+
+-- Automation options
+L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION_RESURRECTION = "Автоматическое воскрешение на полях боя"
+L_GUI_AUTOMATION_SCREENSHOT = "Автоматическое сохранение скриншота во время получения достижения"
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
+L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_ACCEPT_INVITE = "Автоматическое принятие приглашений от друзей и гильдии"
+L_GUI_AUTOMATION_DECLINE_DUEL = "Автоматическая отмена дуэлей"
+L_GUI_AUTOMATION_ACCEPT_QUEST = "Автоматическое принятие заданий"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

@@ -60,20 +60,6 @@ GameTooltip:HookScript("OnTooltipSetItem", function(self)
 end)
 
 ----------------------------------------------------------------------------------------
---	Auto decline duels
-----------------------------------------------------------------------------------------
-if C.misc.auto_decline_duel == true then
-	local dd = CreateFrame("Frame")
-	dd:RegisterEvent("DUEL_REQUESTED")
-	dd:SetScript("OnEvent", function(self, event, name)
-		HideUIPanel(StaticPopup1)
-		CancelDuel()
-		T.InfoTextShow(L_INFO_DUEL..name)
-		print(format("|cffffff00"..L_INFO_DUEL..name.."."))
-	end)
-end
-
-----------------------------------------------------------------------------------------
 --	Spin camera while afk(by Telroth and Eclipse)
 ----------------------------------------------------------------------------------------
 if C.misc.afk_spin_camera == true then
