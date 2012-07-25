@@ -154,7 +154,7 @@ AceGUI.RegisterAsContainer = function(self, widget)
 	if TYPE == "ScrollFrame" then
 		local frame = widget.scrollbar
 		T.SkinScrollBar(frame)
-	elseif TYPE == "InlineGroup" or TYPE == "TreeGroup" or TYPE == "TabGroup" or TYPE == "SimpleGroup" or TYPE == "Frame" or TYPE == "DropdownGroup" then
+	elseif TYPE == "InlineGroup" or TYPE == "TreeGroup" or TYPE == "TabGroup" or TYPE == "Frame" or TYPE == "DropdownGroup" then
 		local frame = widget.content:GetParent()
 		if TYPE == "Frame" then
 			frame:StripTextures()
