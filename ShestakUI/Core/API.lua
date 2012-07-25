@@ -35,7 +35,6 @@ local function CreateOverlay(f)
 	if f.overlay then return end
 
 	local overlay = f:CreateTexture("$parentOverlay", "BORDER", f)
-	overlay:ClearAllPoints()
 	overlay:Point("TOPLEFT", 2, -2)
 	overlay:Point("BOTTOMRIGHT", -2, 2)
 	overlay:SetTexture(C.media.blank)

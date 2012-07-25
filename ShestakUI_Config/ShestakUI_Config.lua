@@ -32,11 +32,6 @@ local ALLOWED_GROUPS = {
 	["stats"] = 1,
 }
 
--- List of "Table Names" that we do not want to show in the config
-local TableFilter = {
-	--["table_name"] = 1,
-}
-
 local function Local(o)
 	local T, C, L = unpack(ShestakUI)
 	-- General options
@@ -614,7 +609,7 @@ function CreateUIConfig()
 	local TitleBoxText = TitleBox:CreateFontString("UIConfigTitle", "OVERLAY", "GameFontNormal")
 	TitleBoxText:SetPoint("LEFT", TitleBox, "LEFT", 15, 0)
 
-	-- Main Frame
+	-- Options Frame
 	local UIConfig = CreateFrame("Frame", "UIConfig", UIConfigMain)
 	UIConfig:SetPoint("TOPLEFT", TitleBox, "BOTTOMLEFT", 10, -15)
 	UIConfig:SetWidth(520)
@@ -626,7 +621,7 @@ function CreateUIConfig()
 	UIConfigBG:SetPoint("TOPLEFT", -10, 10)
 	UIConfigBG:SetPoint("BOTTOMRIGHT", 10, -10)
 
-	-- Group selection(left side)
+	-- Group Frame
 	local groups = CreateFrame("ScrollFrame", "UIConfigCategoryGroup", UIConfig)
 	groups:SetPoint("TOPLEFT", TitleBoxVer, "BOTTOMLEFT", 10, -15)
 	groups:SetWidth(160)
@@ -644,6 +639,7 @@ function CreateUIConfig()
 	UIConfigCover:SetScript("OnMouseDown", function(self) print(L_GUI_MAKE_SELECTION) end)
 	UIConfigCover:Hide()
 
+	-- Group Scroll
 	local slider = CreateFrame("Slider", "UIConfigCategorySlider", groups)
 	slider:SetPoint("TOPRIGHT", 0, 0)
 	slider:SetWidth(20)
@@ -686,12 +682,12 @@ function CreateUIConfig()
 		end
 	end)
 
-	-- Group scroll frame(right side)
 	local group = CreateFrame("ScrollFrame", "UIConfigGroup", UIConfig)
 	group:SetPoint("TOPLEFT", 0, 5)
 	group:SetWidth(520)
 	group:SetHeight(400)
 
+	-- Options Scroll
 	local slider = CreateFrame("Slider", "UIConfigGroupSlider", group)
 	slider:SetPoint("TOPRIGHT", 0, 0)
 	slider:SetWidth(20)
@@ -716,6 +712,8 @@ function CreateUIConfig()
 					local F = unpack(Aurora)
 					F.ReskinCheck(button)
 				end
+				--button:SetNormalTexture("")
+				--T.SkinCheckBox(button)
 				local o = "UIConfig"..i..j
 				Local(o)
 				_G["UIConfig"..i..j.."Text"]:SetText(T.option)
@@ -777,7 +775,7 @@ function CreateUIConfig()
 				end
 
 				offset = offset + 45
-			elseif type(value) == "table" and not TableFilter[j] then
+			elseif type(value) == "table" then
 				local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
 				local o = "UIConfig"..i..j
 				Local(o)
@@ -897,7 +895,7 @@ function CreateUIConfig()
 			T.SkinCheckBox(button)
 		end
 
-		local label = UIConfigAllCharacters:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+		local label = button:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 		label:SetText(L_GUI_SET_SAVED_SETTTINGS)
 		label:SetPoint("RIGHT", button, "LEFT")
 
