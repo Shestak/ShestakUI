@@ -586,8 +586,6 @@ Filger_Spells = {
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Piercing Shots
-			{spellID = 63468, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
