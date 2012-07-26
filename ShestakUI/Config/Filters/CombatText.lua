@@ -180,6 +180,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[8187] = true		-- Magma Totem
 		T.aoespam[8050] = true		-- Flame Shock
 		T.aoespam[25504] = true		-- Windfury
+		T.aoespam[3606] = true		-- Searing Bolt
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
