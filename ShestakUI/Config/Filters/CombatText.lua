@@ -83,18 +83,14 @@ elseif T.class == "MAGE" then
 		T.aoespam[42208] = true		-- Blizzard
 		T.aoespam[122] = true		-- Frost Nova
 		T.aoespam[1449] = true		-- Arcane Explosion
-		T.aoespam[92315] = true		-- Pyroblast
 		T.aoespam[83853] = true		-- Combustion
 		T.aoespam[11113] = true		-- Blast Wave
-		T.aoespam[88148] = true		-- Flamestrike void
-		T.aoespam[84721] = true		-- Frostfire Orb
-		T.aoespam[82739] = true		-- Flame Orb
-		T.aoespam[83619] = true		-- Fire Power
 		T.aoespam[120] = true		-- Cone of Cold
 		T.aoespam[114923] = true	-- Nether Tempest
 		T.aoespam[114954] = true	-- Nether Tempest (AoE)
 		T.aoespam[7268] = true		-- Arcane Missiles
 		T.aoespam[113092] = true	-- Frost Bomb
+		T.aoespam[44425] = true		-- Arcane Barrage
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
