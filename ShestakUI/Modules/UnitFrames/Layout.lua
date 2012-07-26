@@ -425,9 +425,9 @@ local function Shared(self, unit)
 
 		if T.class == "DRUID" then
 			-- Druid mana
-			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateDruidMana(self) end)
-			self.DruidMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.DruidMana:SetTextColor(1, 0.49, 0.04)
+			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateClassMana(self) end)
+			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.ClassMana:SetTextColor(1, 0.49, 0.04)
 
 			-- Eclipse bar
 			if C.unitframe_class_bar.eclipse == true then
@@ -544,6 +544,13 @@ local function Shared(self, unit)
 			self.Reputation:HookScript("OnLeave", function(self) self:SetAlpha(0) end)
 			self.Reputation.PostUpdate = T.UpdateReputationColor
 			self.Reputation.Tooltip = true
+		end
+
+		-- Monk mana
+		if T.class == "MONK" then
+			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateClassMana(self) end)
+			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.ClassMana:SetTextColor(0.0, 1, 0.59)
 		end
 
 		-- GCD spark

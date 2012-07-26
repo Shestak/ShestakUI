@@ -862,11 +862,10 @@ T.UpdateManaLevel = function(self, elapsed)
 	end
 end
 
-T.UpdateDruidMana = function(self)
+T.UpdateClassMana = function(self)
 	if self.unit ~= "player" then return end
 
-	local num, str = UnitPowerType("player")
-	if num ~= 0 then
+	if UnitPowerType("player") ~= 0 then
 		local min = UnitPower("player", 0)
 		local max = UnitPowerMax("player", 0)
 
@@ -881,20 +880,20 @@ T.UpdateDruidMana = function(self)
 
 		if min ~= max then
 			if self.Power.value:GetText() then
-				self.DruidMana:Point("RIGHT", self.Power.value, "LEFT", -1, 0)
-				self.DruidMana:SetFormattedText("%d%%|r |cffD7BEA5-|r", floor(min / max * 100))
-				self.DruidMana:SetJustifyH("RIGHT")
+				self.ClassMana:Point("RIGHT", self.Power.value, "LEFT", -1, 0)
+				self.ClassMana:SetFormattedText("%d%%|r |cffD7BEA5-|r", floor(min / max * 100))
+				self.ClassMana:SetJustifyH("RIGHT")
 			else
-				self.DruidMana:Point("LEFT", self.Power, "LEFT", 4, 1)
-				self.DruidMana:SetFormattedText("%d%%", floor(min / max * 100))
+				self.ClassMana:Point("LEFT", self.Power, "LEFT", 4, 1)
+				self.ClassMana:SetFormattedText("%d%%", floor(min / max * 100))
 			end
 		else
-			self.DruidMana:SetText()
+			self.ClassMana:SetText()
 		end
 
-		self.DruidMana:SetAlpha(1)
+		self.ClassMana:SetAlpha(1)
 	else
-		self.DruidMana:SetAlpha(0)
+		self.ClassMana:SetAlpha(0)
 	end
 end
 
