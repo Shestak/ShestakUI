@@ -43,8 +43,8 @@ L_GUI_AUTOMATION_CHEFS_HAT = "Надевать Поварской колпак �
 L_GUI_AUTOMATION_ACCEPT_INVITE = "Принятие приглашений от друзей и гильдии"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Отмена дуэлей"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Принятие заданий(если зажат shift или alt - не работает)"
-L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
-L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
+L_GUI_AUTOMATION_SKIP_CINEMATIC = "Пропуск видеороликов(если зажат ctrl - не работает)"
+L_GUI_AUTOMATION_AUTO_ROLE = "Выбор вашей роли(в группе/рейде)"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"
