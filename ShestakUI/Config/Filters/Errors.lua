@@ -1,4 +1,5 @@
 local T, C, L = unpack(select(2, ...))
+if C.error.hide ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	All errors on www.wowwiki.com/WoW_Constants/Errors
@@ -35,6 +36,7 @@ T.black_list = {
 	[SPELL_FAILED_NOT_IN_CONTROL] = true,
 	[SPELL_FAILED_MOVING] = true,
 	[SPELL_FAILED_AURA_BOUNCED] = true,
+	[SPELL_FAILED_CANT_DO_THAT_RIGHT_NOW] = true,
 	[ERR_ATTACK_FLEEING] = true,
 	[ERR_ITEM_COOLDOWN] = true,
 	[ERR_GENERIC_NO_TARGET] = true,
