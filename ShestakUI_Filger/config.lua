@@ -736,6 +736,8 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
+			-- Ice Block
+			{spellID = 45438, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invisibility
 			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Greater Invisibility
@@ -744,16 +746,16 @@ Filger_Spells = {
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyromaniac
 			--MOP{spellID = 83582, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mana Shield
+			-- Incanter's Ward
 			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ice Block
-			{spellID = 45438, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mage Ward
-			--MOP{spellID = 543, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ice Ward
+			{spellID = 111264, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ice Floes
+			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Power
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Improved Mana Gem
@@ -833,8 +835,6 @@ Filger_Spells = {
 			--MOP{spellID = 92315, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pyroblast
 			{spellID = 11366, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Critical Mass
-			--MOP{spellID = 22959, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Combustion
 			{spellID = 83853, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Blast Wave
@@ -884,10 +884,10 @@ Filger_Spells = {
 			{spellID = 11426, filter = "CD"},
 			-- Counterspell
 			{spellID = 2139, filter = "CD"},
+			-- Frostjaw
+			{spellID = 102051, filter = "CD"},
 			-- Deep Freeze
 			{spellID = 44572, filter = "CD"},
-			-- Mage Ward
-			--MOP{spellID = 543, filter = "CD"},
 			-- Presence of Mind
 			{spellID = 12043, filter = "CD"},
 			-- Arcane Power
@@ -912,18 +912,22 @@ Filger_Spells = {
 			{spellID = 55342, filter = "CD"},
 			-- Ring of Frost
 			{spellID = 113724, filter = "CD"},
-			-- Flame Orb
-			--MOP{spellID = 82731, filter = "CD"},
 			-- Freeze (Elemental)
 			{spellID = 33395, filter = "CD"},
 			-- Combustion
 			{spellID = 11129, filter = "CD"},
-			-- Mana Shield
+			-- Incanter's Ward
 			{spellID = 1463, filter = "CD"},
 			-- Invisibility
 			{spellID = 66, filter = "CD"},
 			-- Temporal Shield
 			{spellID = 115610, filter = "CD"},
+			-- Ice Ward
+			{spellID = 111264, filter = "CD"},
+			-- Ice Floes
+			{spellID = 108839, filter = "CD"},
+			-- Frost Bomb
+			{spellID = 112948, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2721,8 +2725,8 @@ Filger_Spells = {
 			{spellID = 31661, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Polymorph
 			{spellID = 118, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Improved Polymorph
-			--MOP{spellID = 83047, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Frostjaw
+			{spellID = 102051, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silenced - Improved Counterspell
 			{spellID = 55021, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Deep Freeze
@@ -3022,8 +3026,8 @@ Filger_Spells = {
 			{spellID = 31661, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Polymorph
 			{spellID = 118, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Improved Polymorph
-			--MOP{spellID = 83047, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Frostjaw
+			{spellID = 102051, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silenced - Improved Counterspell
 			{spellID = 55021, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Deep Freeze

@@ -74,8 +74,8 @@ elseif T.class == "HUNTER" then
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[44461] = true		-- Living Bomb Explosion
-		T.aoespam[44457] = true		-- Living Bomb Dot
+		T.aoespam[44461] = true		-- Living Bomb (Explosion)
+		T.aoespam[44457] = true		-- Living Bomb (Dot)
 		T.aoespam[2120] = true		-- Flamestrike
 		T.aoespam[12654] = true		-- Ignite
 		T.aoespam[11366] = true		-- Pyroblast
@@ -92,7 +92,9 @@ elseif T.class == "MAGE" then
 		T.aoespam[83619] = true		-- Fire Power
 		T.aoespam[120] = true		-- Cone of Cold
 		T.aoespam[114923] = true	-- Nether Tempest
-		T.aoespam[114954] = true	-- Nether Tempest
+		T.aoespam[114954] = true	-- Nether Tempest (AoE)
+		T.aoespam[7268] = true		-- Arcane Missiles
+		T.aoespam[113092] = true	-- Frost Bomb
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
