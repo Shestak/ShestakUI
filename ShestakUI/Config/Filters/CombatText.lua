@@ -91,6 +91,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[7268] = true		-- Arcane Missiles
 		T.aoespam[113092] = true	-- Frost Bomb
 		T.aoespam[44425] = true		-- Arcane Barrage
+		T.aoespam[84721] = true		-- Frozen Orb
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
