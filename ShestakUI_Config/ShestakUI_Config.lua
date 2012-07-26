@@ -978,7 +978,7 @@ do
 		subtitle2:SetWidth(580)
 		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
 		subtitle2:SetJustifyH("LEFT")
-		subtitle2:SetText("ALZA, Aezay, Affli, Allez, Ammo, Astromech, Beoko, Blamdarot, Bozo, Caellian, Chiril, Compost, Dawn, Don Kaban, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Havoc74, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, Karudon, Katae, Kemayo, Kunda, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, RustamIrzaev, Safturento, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Woffle of Dark Iron, Xuerian, Yleaf, Zork.")
+		subtitle2:SetText("ALZA, Aezay, Affli, Allez, Ammo, Astromech, Beoko, Blamdarot, Bozo, Caellian, Chiril, Dawn, Don Kaban, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Havoc74, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, Karudon, Katae, Kemayo, Kunda, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Renstrom, RustamIrzaev, Safturento, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Woffle of Dark Iron, Xuerian, Yleaf, Zork.")
 
 		local title3 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)
