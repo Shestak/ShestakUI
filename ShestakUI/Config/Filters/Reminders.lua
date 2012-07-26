@@ -115,7 +115,7 @@ end
 		combat - check when entering combat
 
 	For every group created a new frame is created, it's a lot easier this way.
-]]-------------------------------------------------------------------------------------
+]]--------------------------------------------------------------------------------------
 if C.reminder.solo_buffs_enable == true then
 	T.ReminderSelfBuffs = {
 		DEATHKNIGHT = {

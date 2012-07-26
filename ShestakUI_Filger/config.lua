@@ -738,12 +738,16 @@ Filger_Spells = {
 
 			-- Invisibility
 			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Greater Invisibility
+			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Icy Veins
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyromaniac
 			--MOP{spellID = 83582, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mana Shield
 			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Temporal Shield
+			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Block
@@ -823,6 +827,8 @@ Filger_Spells = {
 			{spellID = 12654, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Living Bomb
 			{spellID = 44457, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Nether Tempest
+			{spellID = 114923, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pyroblast!
 			--MOP{spellID = 92315, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pyroblast
@@ -905,7 +911,7 @@ Filger_Spells = {
 			-- Mirror Image
 			{spellID = 55342, filter = "CD"},
 			-- Ring of Frost
-			--MOP{spellID = 82676, filter = "CD"},
+			{spellID = 113724, filter = "CD"},
 			-- Flame Orb
 			--MOP{spellID = 82731, filter = "CD"},
 			-- Freeze (Elemental)
@@ -916,6 +922,8 @@ Filger_Spells = {
 			{spellID = 1463, filter = "CD"},
 			-- Invisibility
 			{spellID = 66, filter = "CD"},
+			-- Temporal Shield
+			{spellID = 115610, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -3005,9 +3013,11 @@ Filger_Spells = {
 			{spellID = 66, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Evocation
 			{spellID = 12051, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Temporal Shield
+			{spellID = 115610, unitID = "target", caster = "all", filter = "BUFF"},
+
 			-- Cauterize
 			{spellID = 87023, unitID = "target", caster = "target", filter = "DEBUFF"},
-
 			-- Dragon's Breath
 			{spellID = 31661, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Polymorph
@@ -3020,6 +3030,8 @@ Filger_Spells = {
 			{spellID = 44572, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Impact
 			--MOP{spellID = 12355, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Ring of Frost
+			{spellID = 82691, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Monk
 			-- Touch of Karma

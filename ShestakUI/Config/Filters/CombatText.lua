@@ -91,6 +91,8 @@ elseif T.class == "MAGE" then
 		T.aoespam[82739] = true		-- Flame Orb
 		T.aoespam[83619] = true		-- Fire Power
 		T.aoespam[120] = true		-- Cone of Cold
+		T.aoespam[114923] = true	-- Nether Tempest
+		T.aoespam[114954] = true	-- Nether Tempest
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
@@ -179,7 +181,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[8187] = true		-- Magma Totem
 		T.aoespam[8050] = true		-- Flame Shock
 		T.aoespam[25504] = true		-- Windfury
-	end	
+	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[27243] = true		-- Seed of Corruption (DoT)
@@ -227,4 +229,4 @@ elseif T.class == "WARRIOR" then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
 		T.healfilter[55694] = true	-- Enraged Regeneration
 	end
-end	
+end
