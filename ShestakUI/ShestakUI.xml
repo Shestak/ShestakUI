@@ -102,6 +102,8 @@
 	<Script file="Modules\Automation\AutoInvite.lua"/>
 	<Script file="Modules\Automation\AutoRelease.lua"/>
 	<Script file="Modules\Automation\DeclineDuel.lua"/>
+	<Script file="Modules\Automation\SetRole.lua"/>
+	<Script file="Modules\Automation\SkipCinematic.lua"/>
 	<Script file="Modules\Automation\SolveArtifact.lua"/>
 
 	<Script file="Modules\Blizzard\Vehicle.lua"/>

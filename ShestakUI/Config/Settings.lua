@@ -70,6 +70,8 @@ C["automation"] = {
 	["accept_invite"] = false,					-- Auto accept invite
 	["decline_duel"] = true,					-- Auto decline duel
 	["accept_quest"] = false,					-- Auto accept quests(if hold shift or alt, auto accept is disable)
+	["skip_cinematic"] = false,					-- Skip cinematics/movies
+	["auto_role"] = false,						-- Auto set your role
 }
 
 ----------------------------------------------------------------------------------------

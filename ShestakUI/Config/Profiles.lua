@@ -49,9 +49,11 @@ if T.author == true then
 	C["misc"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
 	C["misc"].hide_bg_spam = true
+	C["announcements"].spells = true
 	C["automation"].accept_invite = true
 	C["automation"].accept_quest = true
-	C["announcements"].spells = true
+	C["automation"].skip_cinematic = true
+	C["automation"].auto_role = true
 	C["skins"].blizzard_frames = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
@@ -176,6 +178,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
 	C["automation"].decline_duel = false
+	C["automation"].skip_cinematic = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["reminder"].solo_buffs_sound = true
@@ -291,6 +294,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -270, -100}
 		C["position"].vehicle_bar = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 440, 175}
 		C["position"].unitframes.tank = {"LEFT", UIParent, "LEFT", 23, 0}
+		C["automation"].auto_role = true
 		C["combattext"].icon_size = 25
 		C["combattext"].heal_treshold = 1000
 		C["chat"].width = 398
