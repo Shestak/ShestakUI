@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if T.class ~= "MAGE" or T.level < 24 then return end
+if T.class ~= "MAGE" or T.level < 17 then return end
 
 ----------------------------------------------------------------------------------------
 --	Mage portals menu(by Foof and Tohveli)
@@ -24,29 +24,28 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[8] = {88342,88345},	-- Tol Barad
 }
 
-local f = CreateFrame("Frame", "TeleportMenu", UIParent)
-f:CreatePanel("Invisible", C.minimap.size, (#spells + 1) * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)
+local frame = CreateFrame("Frame", "TeleportMenu", UIParent)
+frame:CreatePanel("Invisible", C.minimap.size, (#spells) * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)
+frame:RegisterEvent("UNIT_SPELLCAST_START")
+frame:SetScript("OnEvent", function(self)
+	if self:IsShown() then
+		self:Hide()
+	end
+end)
+frame:Hide()
 tinsert(UISpecialFrames, "TeleportMenu")
-
-local r = CreateFrame("Frame", nil, f)
-r:CreatePanel("Transparent", C.minimap.size, 20, "BOTTOMLEFT", f, "BOTTOMLEFT", 0, 0)
-r:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-
-local l = r:CreateFontString("TeleportMenuReagentText", "OVERLAY")
-l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-l:SetPoint("CENTER", r, "CENTER")
 
 for i, spell in pairs(spells) do
 	local teleport = GetSpellInfo(spell[1])
 
-	local b = CreateFrame("Button", nil, f, "SecureActionButtonTemplate")
-	b:CreatePanel("Transparent", C.minimap.size, 20, "BOTTOMLEFT", f, "BOTTOMLEFT", 0, (i * 21))
+	local b = CreateFrame("Button", nil, frame, "SecureActionButtonTemplate")
+	b:CreatePanel("Transparent", C.minimap.size, 20, "BOTTOMLEFT", frame, "BOTTOMLEFT", 0, ((i - 1) * 21))
 	b:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 	b:SetFrameStrata("HIGH")
 
 	local l = b:CreateFontString(nil, "OVERLAY")
 	l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-	l:SetText(string.sub(teleport, string.find(teleport,":") + 1))
+	l:SetText(string.sub(teleport, string.find(teleport, ":") + 1))
 	b:SetFontString(l)
 
 	b:RegisterForClicks("LeftButtonDown", "RightButtonDown")
@@ -55,27 +54,25 @@ for i, spell in pairs(spells) do
 	b:SetAttribute("type2", "spell")
 	b:SetAttribute("spell2", GetSpellInfo(spell[2]))
 end
-f:Hide()
 
-local b = CreateFrame("Button", nil, UIParent)
-b:SetTemplate("ClassColor")
-b:Point("TOPLEFT", Minimap, "TOPLEFT")
-b:Width(20)
-b:Height(20)
-b:SetAlpha(0)
+local button = CreateFrame("Button", nil, UIParent)
+button:SetTemplate("ClassColor")
+button:Point("TOPLEFT", Minimap, "TOPLEFT")
+button:Width(20)
+button:Height(20)
+button:SetAlpha(0)
 
-local bt = b:CreateTexture(nil, "OVERLAY")
-bt:SetTexture("Interface\\Icons\\Spell_Arcane_TeleportStormwind")
-bt:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-bt:Point("TOPLEFT", b, 2, -2)
-bt:Point("BOTTOMRIGHT", b, -2, 2)
+button.t = button:CreateTexture(nil, "OVERLAY")
+button.t:SetTexture("Interface\\Icons\\Spell_Arcane_TeleportStormwind")
+button.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+button.t:Point("TOPLEFT", button, 2, -2)
+button.t:Point("BOTTOMRIGHT", button, -2, 2)
 
-b:SetScript("OnClick", function(self)
+button:SetScript("OnClick", function(self)
 	if not InCombatLockdown() then
 		if _G["TeleportMenu"]:IsShown() then
 			_G["TeleportMenu"]:Hide()
 		else
-			_G["TeleportMenuReagentText"]:SetText(MINIMAP_TRACKING_VENDOR_REAGENT..": [ "..GetItemCount(17031).." ] | [ "..GetItemCount(17032).." ]")
 			_G["TeleportMenu"]:Show()
 		end
 		if C.minimap.toggle_menu and _G["TTMenuAddOnBackground"]:IsShown() then
@@ -87,18 +84,11 @@ b:SetScript("OnClick", function(self)
 	end
 end)
 
-b:SetScript("OnEnter", function()
+button:SetScript("OnEnter", function()
 	if InCombatLockdown() then return end
-	b:FadeIn()
+	button:FadeIn()
 end)
 
-b:SetScript("OnLeave", function()
-	b:FadeOut()
-end)
-
-f:RegisterEvent("UNIT_SPELLCAST_START")
-f:SetScript("OnEvent", function(self)
-	if self:IsShown() then
-		self:Hide()
-	end
+button:SetScript("OnLeave", function()
+	button:FadeOut()
 end)

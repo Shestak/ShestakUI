@@ -305,11 +305,16 @@ OpenMenuBG:SetFrameLevel(defaultframelevel)
 OpenMenuBG:SetFrameStrata("HIGH")
 OpenMenuBG:SetScript("OnMouseUp", function()
 	ToggleMenu_Toggle()
-	if (T.class == "MAGE" and T.level > 19) and _G["TeleportMenu"]:IsShown() then
+	if (T.class == "MAGE" and T.level >= 17) and _G["TeleportMenu"]:IsShown() then
 		_G["TeleportMenu"]:Hide()
 	end
 end)
-OpenMenuBG:HookScript("OnEnter", function(self) self:FadeIn() end)
+OpenMenuBG:HookScript("OnEnter", function(self)
+	if (T.class == "MAGE" and T.level >= 17) and _G["TeleportMenu"]:IsShown() then
+	else
+		self:FadeIn()
+	end
+end)
 OpenMenuBG:HookScript("OnLeave", function(self) self:FadeOut() end)
 
 Text = OpenMenuBG:CreateFontString(nil, "OVERLAY")
@@ -330,6 +335,7 @@ expandbutton:RegisterForClicks("AnyUp")
 expandbutton:SetFrameLevel(defaultframelevel + 1)
 expandbutton:SetFrameStrata("HIGH")
 updateTextures(expandbutton)
+
 Text = expandbutton:CreateFontString(nil, "OVERLAY")
 Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 Text:SetPoint("CENTER", expandbutton, 0, 0)
