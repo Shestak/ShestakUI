@@ -302,6 +302,7 @@ local function LoadSkin()
 	PetJournalPetCardXPBar:CreateBackdrop("Overlay")
 	PetJournalPetCardXPBar:SetStatusBarTexture(C.media.texture)
 	PetJournalPetCardXPBar:Point("BOTTOM", PetJournalPetCard.backdrop, "BOTTOM", 0, 6)
+	PetJournalPetCardXPBar:SetFrameLevel(PetJournalPetCardXPBar:GetFrameLevel() + 2)
 end
 
 T.SkinFuncs["Blizzard_PetJournal"] = LoadSkin
