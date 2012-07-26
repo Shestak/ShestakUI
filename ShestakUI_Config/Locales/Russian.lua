@@ -35,14 +35,14 @@ L_GUI_ANNOUNCEMENTS_SPELLS = "Сообщать в чат, когда вы про
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Проверка заклинаний от всех участников группы/рейда"
 
 -- Automation options
-L_GUI_AUTOMATION = "Automation" -- Needs review
-L_GUI_AUTOMATION_RESURRECTION = "Автоматическое воскрешение на полях боя"
-L_GUI_AUTOMATION_SCREENSHOT = "Автоматическое сохранение скриншота во время получения достижения"
-L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
-L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
-L_GUI_AUTOMATION_ACCEPT_INVITE = "Автоматическое принятие приглашений от друзей и гильдии"
-L_GUI_AUTOMATION_DECLINE_DUEL = "Автоматическая отмена дуэлей"
-L_GUI_AUTOMATION_ACCEPT_QUEST = "Автоматическое принятие заданий"
+L_GUI_AUTOMATION = "Автоматизация"
+L_GUI_AUTOMATION_RESURRECTION = "Воскрешение на полях боя"
+L_GUI_AUTOMATION_SCREENSHOT = "Сохранять скриншот, если получено достижение"
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Окно сборки артефактов"
+L_GUI_AUTOMATION_CHEFS_HAT = "Надевать Поварской колпак при готовке"
+L_GUI_AUTOMATION_ACCEPT_INVITE = "Принятие приглашений от друзей и гильдии"
+L_GUI_AUTOMATION_DECLINE_DUEL = "Отмена дуэлей"
+L_GUI_AUTOMATION_ACCEPT_QUEST = "Принятие заданий(если зажат shift или alt - не работает)"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"
