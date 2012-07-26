@@ -74,8 +74,8 @@ elseif T.class == "HUNTER" then
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[44461] = true		-- Living Bomb Explosion
-		T.aoespam[44457] = true		-- Living Bomb Dot
+		T.aoespam[44461] = true		-- Living Bomb (Explosion)
+		T.aoespam[44457] = true		-- Living Bomb (Dot)
 		T.aoespam[2120] = true		-- Flamestrike
 		T.aoespam[12654] = true		-- Ignite
 		T.aoespam[11366] = true		-- Pyroblast
@@ -83,14 +83,14 @@ elseif T.class == "MAGE" then
 		T.aoespam[42208] = true		-- Blizzard
 		T.aoespam[122] = true		-- Frost Nova
 		T.aoespam[1449] = true		-- Arcane Explosion
-		T.aoespam[92315] = true		-- Pyroblast
 		T.aoespam[83853] = true		-- Combustion
 		T.aoespam[11113] = true		-- Blast Wave
-		T.aoespam[88148] = true		-- Flamestrike void
-		T.aoespam[84721] = true		-- Frostfire Orb
-		T.aoespam[82739] = true		-- Flame Orb
-		T.aoespam[83619] = true		-- Fire Power
 		T.aoespam[120] = true		-- Cone of Cold
+		T.aoespam[114923] = true	-- Nether Tempest
+		T.aoespam[114954] = true	-- Nether Tempest (AoE)
+		T.aoespam[7268] = true		-- Arcane Missiles
+		T.aoespam[113092] = true	-- Frost Bomb
+		T.aoespam[44425] = true		-- Arcane Barrage
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
@@ -169,7 +169,8 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[52042] = true		-- Healing Stream Totem
 		T.aoespam[1064] = true		-- Chain Heal
 		T.aoespam[51945] = true		-- Earthliving
-		T.aoespam[61295] = true		-- Riptide (HoT and instant heal)
+		T.aoespam[61295] = true		-- Riptide
+		T.aoespam[98021] = true		-- Spirit Link
 		-- Damaging spells
 		T.aoespam[421] = true		-- Chain Lightning
 		T.aoespam[45297] = true		-- Chain Lightning (Mastery proc)
@@ -179,7 +180,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[8187] = true		-- Magma Totem
 		T.aoespam[8050] = true		-- Flame Shock
 		T.aoespam[25504] = true		-- Windfury
-	end	
+	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[27243] = true		-- Seed of Corruption (DoT)
@@ -227,4 +228,4 @@ elseif T.class == "WARRIOR" then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
 		T.healfilter[55694] = true	-- Enraged Regeneration
 	end
-end	
+end
