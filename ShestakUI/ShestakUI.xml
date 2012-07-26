@@ -52,30 +52,6 @@
 	<Script file="Core\Kill.lua"/>
 	<Script file="Core\Temp.lua"/>
 
-	<Script file="Modules\Automation\AchScreens.lua"/>
-	<Script file="Modules\Automation\AutoChefsHat.lua"/>
-	<Script file="Modules\Automation\AutoInvite.lua"/>
-	<Script file="Modules\Automation\AutoRelease.lua"/>
-	<Script file="Modules\Automation\DeclineDuel.lua"/>
-	<Script file="Modules\Automation\SolveArtifact.lua"/>
-
-	<Script file="Modules\Blizzard\Vehicle.lua"/>
-	<Script file="Modules\Blizzard\CaptureBar.lua"/>
-	<Script file="Modules\Blizzard\MirrorBars.lua"/>
-	<Script file="Modules\Blizzard\Symbols.lua"/>
-	<Script file="Modules\Blizzard\Errors.lua"/>
-	<Script file="Modules\Blizzard\Achievements.lua"/>
-	<Script file="Modules\Blizzard\Durability.lua"/>
-	<Script file="Modules\Blizzard\Mail.lua"/>
-	<Script file="Modules\Blizzard\FriendList.lua"/>
-	<Script file="Modules\Blizzard\Fonts.lua"/>
-	<Script file="Modules\Blizzard\Bags.lua"/>
-	<Script file="Modules\Blizzard\Nameplates.lua"/>
-	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
-	<Script file="Modules\Blizzard\TimerTracker.lua"/>
-	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
-	<Script file="Modules\Blizzard\PetBattle.lua"/>
-
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoButton.lua"/>
 	<Script file="Modules\Quests\QuestLevel.lua"/>
@@ -101,10 +77,6 @@
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
 
-	<Script file="Modules\Announcements\Drinking.lua"/>
-	<Script file="Modules\Announcements\Interrupts.lua"/>
-	<Script file="Modules\Announcements\Spells.lua"/>
-
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>
 	<Script file="Modules\ActionBars\Hide.lua"/>
@@ -120,6 +92,38 @@
 	<Script file="Modules\ActionBars\Range.lua"/>
 	<Script file="Modules\ActionBars\Others.lua"/>
 	<Script file="Modules\ActionBars\Cooldowns.lua"/>
+
+	<Script file="Modules\Announcements\Drinking.lua"/>
+	<Script file="Modules\Announcements\Interrupts.lua"/>
+	<Script file="Modules\Announcements\Spells.lua"/>
+
+	<Script file="Modules\Automation\AchScreens.lua"/>
+	<Script file="Modules\Automation\AutoChefsHat.lua"/>
+	<Script file="Modules\Automation\AutoInvite.lua"/>
+	<Script file="Modules\Automation\AutoRelease.lua"/>
+	<Script file="Modules\Automation\DeclineDuel.lua"/>
+	<Script file="Modules\Automation\SolveArtifact.lua"/>
+
+	<Script file="Modules\Blizzard\Vehicle.lua"/>
+	<Script file="Modules\Blizzard\CaptureBar.lua"/>
+	<Script file="Modules\Blizzard\MirrorBars.lua"/>
+	<Script file="Modules\Blizzard\Symbols.lua"/>
+	<Script file="Modules\Blizzard\Errors.lua"/>
+	<Script file="Modules\Blizzard\Achievements.lua"/>
+	<Script file="Modules\Blizzard\Durability.lua"/>
+	<Script file="Modules\Blizzard\Mail.lua"/>
+	<Script file="Modules\Blizzard\FriendList.lua"/>
+	<Script file="Modules\Blizzard\Fonts.lua"/>
+	<Script file="Modules\Blizzard\Bags.lua"/>
+	<Script file="Modules\Blizzard\Nameplates.lua"/>
+	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
+	<Script file="Modules\Blizzard\TimerTracker.lua"/>
+	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
+	<Script file="Modules\Blizzard\PetBattle.lua"/>
+
+	<Script file="Modules\Buffs\AuraSource.lua"/>
+	<Script file="Modules\Buffs\BuffFrame.lua"/>
+	<Script file="Modules\Buffs\ConsolidatedBuffDuration.lua"/>
 
 	<Script file="Modules\UnitFrames\Tags.lua"/>
 	<Script file="Modules\UnitFrames\Layout.lua"/>
@@ -174,10 +178,6 @@
 	<Script file="Modules\Skins\Omen.lua"/>
 	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
-
-	<Script file="Modules\Buffs\BuffFrame.lua"/>
-	<Script file="Modules\Buffs\CastBy.lua"/>
-	<Script file="Modules\Buffs\ConsolidatedBuffDuration.lua"/>
 
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Core\Movers.lua"/>
