@@ -131,6 +131,14 @@ L_GUI_THREAT_WIDTH = "Largeur des barres de menace"
 L_GUI_THREAT_ROWS = "Nombre de barres de menace"
 L_GUI_THREAT_HIDE_SOLO = "Afficher la menace seulement en groupe/raid"
 
+-- Meter options
+L_GUI_METER = "Compteur des dommages"
+L_GUI_METER_ENABLE = "Activer le compteur des dommages (uniquement pour les ShestakUI_alDamageMeter)"
+L_GUI_METER_SPACING = "Espacement entre les barreaux"
+L_GUI_METER_HEIGHT = "Hauteur des barres"
+L_GUI_METER_WIDTH = "Largeur des barres"
+L_GUI_METER_MAXBARS = "Nombre de barres"
+
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"
 L_GUI_TOOLTIP_ENABLE = "Activer les tooltips"
@@ -280,6 +288,7 @@ L_GUI_UF_PORTRAIT_ENABLE = "Activer les portraits du joueur et de la cible"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Activer la bordure aux couleurs de la classe"
 L_GUI_UF_PORTRAIT_HEIGHT = "Hauteur des portraits"
 L_GUI_UF_PORTRAIT_WIDTH = "Largeur des portraits"
+L_GUI_UF_ALTERNATIVE_PORTRAITS = "Active les portraits sur les barres de santé (vous devez désactiver l'option pour le joueur / cible portraits)"
 L_GUI_UF_PLUGINS_GCD = "Scintillement du GCD"
 L_GUI_UF_PLUGINS_SWING = "Barre d'attaque automatique / tir automatique"
 L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Activer la barre d'eclipse"
@@ -297,6 +306,7 @@ L_GUI_UF_PLUGINS_TALENTS = "Afficher les talent de l'ennemi"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texte de combat sur les barres du joueur et de la cible"
 L_GUI_UF_PLUGINS_FADER = "Barres de unités"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
+L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE = "Annoncent (en anglais) l'utilisation de bibelots ennemies (ne fonctionne que dans l'arène)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"
@@ -313,6 +323,7 @@ L_GUI_UF_SHOW_TANK = "Afficher les tanks de raid"
 L_GUI_UF_SHOW_TANK_TT = "Afficher la cible de la cible des tanks"
 L_GUI_UF_RAID_GROUP = "Nombre de groupe dans le raid (Seulement pour ShestakUI_Heal)"
 L_GUI_UF_RAID_VERTICAL_GROUP = "Groupe de raid verticaux(Seulement pour ShestakUI_Heal)"
+L_GUI_UF_RAID_PORTRAITS = "Activer portraits sur les cadres de raid"
 L_GUI_UF_ICONS_LEADER = "Icone du Chef de raid, icone de l'assistant, icone du maоtre du butin"
 L_GUI_UF_ICONS_LFD_ROLE = "Icone de chef de raid"
 L_GUI_UF_ICONS_RAID_MARK = "Signe de raid"
@@ -347,3 +358,5 @@ L_GUI_ERROR_HIDE = "Cacher les erreurs"
 L_GUI_ERROR_BLACK = "Cacher les erreurs de la liste noire"
 L_GUI_ERROR_WHITE = "Afficher les erreurs de la liste blanche"
 L_GUI_ERROR_HIDE_COMBAT = "Cacher les erreurs en combat"
+
+-- edit by Oz of shestak. org --

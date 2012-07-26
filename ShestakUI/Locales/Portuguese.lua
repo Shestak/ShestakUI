@@ -228,6 +228,7 @@ L_POPUP_SETTINGS_BW = "Need to change the position of elements BigWigs."
 L_WELCOME_LINE_1 = "Welcome to ShestakUI "
 L_WELCOME_LINE_2_1 = "Type /cfg to config interface, or visit http://shestak.org"
 L_WELCOME_LINE_2_2 = "for more informations."
+L_WELCOME_LINE_3 = "Nota: esta versão do ShestakUI é editado por Oz de shestak.org."
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Killing Blow"
@@ -279,6 +280,7 @@ L_STATS_IGNORED_ITEMS = "List currently ignored items."
 L_STATS_TOGGLE_TIME = "Local/realm & 24hr time can be toggled from the time manager."
 L_STATS_LOCATION = "Location/Coords"
 L_STATS_MEMORY = "Memory"
+L_STATS_TALENTS = "Talentos"
 L_STATS_ON = "ON"
 L_STATS_OTHER_OPTIONS = "Other options may be configured in %s"
 L_STATS_PLAYED_LEVEL = "Played this level"
@@ -347,3 +349,5 @@ L_SLASHCMD_HELP = {
 	"/testuf - Unit frame test.",
 	"/cfg - Opens interface settings.",
 }
+
+-- edit by Oz of shestak. org --

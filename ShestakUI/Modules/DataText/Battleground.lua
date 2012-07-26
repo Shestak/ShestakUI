@@ -31,7 +31,7 @@ bgframe:SetScript("OnEnter", function(self)
 				GameTooltip:ClearLines()
 				GameTooltip:Point("BOTTOM", self, "TOP", 0, 1)
 				GameTooltip:ClearLines()
-				GameTooltip:AddDoubleLine(STATISTICS, classcolor..name.."|r")
+				GameTooltip:AddDoubleLine(STATISTICS, name.."|r")
 				GameTooltip:AddLine("")
 				GameTooltip:AddDoubleLine(KILLING_BLOWS..":", killingBlows, 1, 1, 1)
 				GameTooltip:AddDoubleLine(HONORABLE_KILLS..":", honorableKills, 1, 1, 1)
@@ -104,15 +104,15 @@ local function Update(self, t)
 		for i = 1, numScores do
 			local name, killingBlows, honorableKills, deaths, honorGained, faction, race, class, classToken, damageDone, healingDone, bgRating, ratingChange = GetBattlefieldScore(i)
 			if healingDone > damageDone then
-				dmgtxt = (classcolor..SHOW_COMBAT_HEALING.." :|r "..healingDone)
+				dmgtxt = (SHOW_COMBAT_HEALING.." :|r "..healingDone)
 			else
-				dmgtxt = (classcolor..COMBATLOG_HIGHLIGHT_DAMAGE.." :|r "..damageDone)
+				dmgtxt = (COMBATLOG_HIGHLIGHT_DAMAGE.." :|r "..damageDone)
 			end
 			if name then
 				if name == T.name then
-					Text2:SetText(classcolor..COMBAT_HONOR_GAIN.." :|r "..format("%d", honorGained))
+					Text2:SetText(COMBAT_HONOR_GAIN.." :|r "..format("%d", honorGained))
 					Text1:SetText(dmgtxt)
-					Text3:SetText(classcolor..KILLING_BLOWS.." :|r "..killingBlows)
+					Text3:SetText(KILLING_BLOWS.." :|r "..killingBlows)
 				end   
 			end
 		end 
@@ -139,3 +139,5 @@ Stat:RegisterEvent("PLAYER_ENTERING_WORLD")
 Stat:SetScript("OnEvent", OnEvent)
 Stat:SetScript("OnUpdate", Update)
 Update(Stat, 2)
+
+-- edit by Oz of shestak. org --

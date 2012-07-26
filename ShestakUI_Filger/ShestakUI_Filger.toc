@@ -1,6 +1,7 @@
 ## Interface: 40300
 ## Title: ShestakUI Filger
-## Notes: Class timers for ShestakUI
+## Notes: Class timers for ShestakUI (Oz of shestak.org Edit)
+
 ## Author: Nils Ruesch
 ## Version: 3.5.1
 ## Credits: Affli, SinaC, Ildyria

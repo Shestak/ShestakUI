@@ -131,6 +131,14 @@ L_GUI_THREAT_WIDTH = "Anchura de las barras de amenaza"
 L_GUI_THREAT_ROWS = "Número de barras de amenaza"
 L_GUI_THREAT_HIDE_SOLO = "Mostrar solo en grupo/raid"
 
+-- Meter options
+L_GUI_METER = "Contador de daños"
+L_GUI_METER_ENABLE = "Habilitar el contador de daños (sólo para ShestakUI_alDamageMeter)"
+L_GUI_METER_SPACING = "Espacio entre las barras"
+L_GUI_METER_HEIGHT = "Altura de las barras"
+L_GUI_METER_WIDTH = "Ancho de las barras"
+L_GUI_METER_MAXBARS = "Número de barras"
+
 -- Tooltip options
 L_GUI_TOOLTIP = "Descripciones"
 L_GUI_TOOLTIP_ENABLE = "Activar descripciones"
@@ -280,6 +288,7 @@ L_GUI_UF_PORTRAIT_ENABLE = "Activar retratos del jugador/objetivo"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Borde de color de clase para los retratos"
 L_GUI_UF_PORTRAIT_HEIGHT = "Altura del retrato"
 L_GUI_UF_PORTRAIT_WIDTH = "Anchura del retrato"
+L_GUI_UF_ALTERNATIVE_PORTRAITS = "Activar los retratos de las barras de salud (es necesario deshabilitar la opción de imágenes de los jugadores/objetivo)"
 L_GUI_UF_PLUGINS_GCD = "Brillo de tiempo de reutilización global"
 L_GUI_UF_PLUGINS_SWING = "Activar barra de oscilación"
 L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Activar barra de eclipse"
@@ -297,6 +306,7 @@ L_GUI_UF_PLUGINS_TALENTS = "Mostrar configuración de los talentos del enemigo"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texto de combate en el marco del jugador/objetivo"
 L_GUI_UF_PLUGINS_FADER = "Desvanecer marcos de unidades"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
+L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE = "Anuncian (en Inglés) el uso de baratijas enemigos (sólo funciona en la arena)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Borde de aggro"
@@ -313,6 +323,7 @@ L_GUI_UF_SHOW_TANK = "Mostrar tanques de la banda"
 L_GUI_UF_SHOW_TANK_TT = "Mostrar el objetivo del objetivo de los tanques de la banda"
 L_GUI_UF_RAID_GROUP = "Número de grupos en la banda (Sólo para ShestakUI_Heal)"
 L_GUI_UF_RAID_VERTICAL_GROUP = "Grupos de la banda en vertical (Sólo para ShestakUI_Heal)"
+L_GUI_UF_RAID_PORTRAITS = "Habilitar los retratos en los marcos de banda"
 L_GUI_UF_ICONS_LEADER = "Iconos de líder, ayudantes y maestro despojador en los marcos"
 L_GUI_UF_ICONS_LFD_ROLE = "Iconos de rol en el grupo en los marcos"
 L_GUI_UF_ICONS_RAID_MARK = "Marcas de banda"
@@ -347,3 +358,5 @@ L_GUI_ERROR_HIDE = "Ocultar errores"
 L_GUI_ERROR_BLACK = "Ocultar errores de la lista negra"
 L_GUI_ERROR_WHITE = "Mostrar errores de la lista blanca"
 L_GUI_ERROR_HIDE_COMBAT = "Ocultar errores en combate"
+
+-- edit by Oz of shestak. org --

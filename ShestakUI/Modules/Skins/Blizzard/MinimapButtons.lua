@@ -46,7 +46,7 @@ local function SkinButton(f)
 		end
 	end
 
-	f:SetTemplate("ClassColor")
+	f:SetTemplate("Default")
 end
 
 local x = CreateFrame("Frame")
@@ -58,3 +58,5 @@ x:SetScript("OnEvent", function(self, event)
 
 	self = nil
 end)
+
+-- edit by Oz of shestak. org --

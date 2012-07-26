@@ -22,10 +22,10 @@ T.oUF_colors = setmetatable({
 		["POWER_TYPE_PYRITE"] = {0.60, 0.09, 0.17},
 	}, {__index = oUF.colors.power}),
 	runes = setmetatable({
-		[1] = {0.69, 0.31, 0.31},
-		[2] = {0.33, 0.59, 0.33},
-		[3] = {0.31, 0.45, 0.63},
-		[4] = {0.84, 0.75, 0.65},
+		[1] = {0.77, 0.12, 0.23, 1},
+		[2] = {0.3, 0.8, 0.1, 1},
+		[3] = {0, 0.4, 0.7, 1},
+		[4] = {0.51, 0.23, 0.65, 1},
 	}, {__index = oUF.colors.runes}),
 	reaction = setmetatable({
 		[1] = {0.85, 0.27, 0.27}, -- Hated
@@ -38,3 +38,5 @@ T.oUF_colors = setmetatable({
 		[8] = {0.33, 0.59, 0.33}, -- Exalted
 	}, {__index = oUF.colors.reaction}),
 }, {__index = oUF.colors})
+
+-- edit by Oz of shestak. org --

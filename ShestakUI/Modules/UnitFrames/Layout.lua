@@ -44,12 +44,10 @@ local function Shared(self, unit)
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", self:GetName().."_Health", self)
-	if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
-		self.Health:Height(21)
-	elseif unit == "arenatarget" then
+	if unit == "player" or unit == "target" or unit == "arena" or unit == "arenatarget" or unit == "boss" then
 		self.Health:Height(27)
 	else
-		self.Health:Height(13)
+		self.Health:Height(16)
 	end
 	self.Health:Point("TOPLEFT", self, "TOPLEFT", 0, 0)
 	self.Health:Point("TOPRIGHT", self, "TOPRIGHT", 0, 0)
@@ -120,8 +118,9 @@ local function Shared(self, unit)
 	else
 		self.Power:Height(2)
 	end
-	self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
-	self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
+	self.Power:CreateBackdrop()
+	self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -7)
+	self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -7)
 	self.Power:SetStatusBarTexture(C.media.texture)
 
 	self.Power.frequentUpdates = true
@@ -575,11 +574,11 @@ local function Shared(self, unit)
 		self.Debuffs.num = 4
 		self.Debuffs["growth-y"] = "DOWN"
 		if unit == "pet" or unit == "focus" then
-			self.Debuffs:Point("TOPRIGHT", self, "BOTTOMRIGHT", 2, -17)
+			self.Debuffs:Point("TOPRIGHT", self, "BOTTOMRIGHT", 2, -26)
 			self.Debuffs.initialAnchor = "TOPRIGHT"
 			self.Debuffs["growth-x"] = "LEFT"
 		else
-			self.Debuffs:Point("TOPLEFT", self, "BOTTOMLEFT", -2, -17)
+			self.Debuffs:Point("TOPLEFT", self, "BOTTOMLEFT", -2, -26)
 			self.Debuffs.initialAnchor = "TOPLEFT"
 			self.Debuffs["growth-x"] = "RIGHT"
 		end
@@ -589,6 +588,12 @@ local function Shared(self, unit)
 		if unit == "pet" then
 			self:RegisterEvent("UNIT_PET", T.UpdateAllElements)
 		end
+	end
+
+	if C.unitframe.portrait_enable ~= true and C.unitframe.alternative_portraits == true then
+		self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self.Health)
+		self.Portrait:SetAllPoints(self.Health)
+		self.Portrait:SetAlpha(0.2)
 	end
 
 	if unit == "player" or unit == "target" then
@@ -804,11 +809,11 @@ local function Shared(self, unit)
 			end
 			self.Castbar:Height(16)
 		elseif unit == "arena" or unit == "boss" then
-			self.Castbar:Point("TOPLEFT", self, "BOTTOMLEFT", 0, -7)
+			self.Castbar:Point("TOPLEFT", self, "BOTTOMLEFT", 0, -19)
 			self.Castbar:Width(150)
 			self.Castbar:Height(16)
 		else
-			self.Castbar:Point("TOPLEFT", self, "BOTTOMLEFT", 0, -7)
+			self.Castbar:Point("TOPLEFT", self, "BOTTOMLEFT", 0, -16)
 			self.Castbar:Width(105)
 			self.Castbar:Height(5)
 		end
@@ -1152,7 +1157,7 @@ if C.unitframe.show_boss == true then
 				boss[i]:Point("BOTTOMLEFT", C.position.unitframes.boss[2], "LEFT", C.position.unitframes.boss[4] + 38, C.position.unitframes.boss[5])
 			end
 		else
-			boss[i]:Point("BOTTOM", boss[i-1], "TOP", 0, 30)
+			boss[i]:Point("BOTTOM", boss[i-1], "TOP", 0, 42)
 		end
 		boss[i]:Size(150, 27)
 	end
@@ -1169,7 +1174,7 @@ if C.unitframe.show_arena == true then
 				arena[i]:Point("BOTTOMLEFT", C.position.unitframes.arena[2], "LEFT", C.position.unitframes.arena[4] + 83, C.position.unitframes.arena[5])
 			end
 		else
-			arena[i]:Point("BOTTOM", arena[i-1], "TOP", 0, 30)
+			arena[i]:Point("BOTTOM", arena[i-1], "TOP", 0, 42)
 		end
 		arena[i]:Size(150, 27)
 	end
@@ -1184,7 +1189,7 @@ if C.unitframe.show_arena == true then
 				arenatarget[i]:Point("TOPRIGHT", arena[i], "TOPLEFT", -7, 0)
 			end
 		else
-			arenatarget[i]:Point("BOTTOM", arenatarget[i-1], "TOP", 0, 30)
+			arenatarget[i]:Point("BOTTOM", arenatarget[i-1], "TOP", 0, 42)
 		end
 		arenatarget[i]:Size(30, 27)
 	end
@@ -1279,44 +1284,6 @@ SLASH_TEST_UF1 = "/testui"
 SLASH_TEST_UF2 = "/еуыегш"
 
 ----------------------------------------------------------------------------------------
---	Player line
-----------------------------------------------------------------------------------------
-local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", oUF_Player)
-HorizontalPlayerLine:CreatePanel("ClassColor", 228, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -5, -5)
-
-local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", oUF_Player)
-VerticalPlayerLine:CreatePanel("ClassColor", 1, 98, "RIGHT", HorizontalPlayerLine, "LEFT", 0, 13)
-
-----------------------------------------------------------------------------------------
---	Target line
-----------------------------------------------------------------------------------------
-local HorizontalTargetLine = CreateFrame("Frame", "HorizontalTargetLine", oUF_Target)
-HorizontalTargetLine:CreatePanel("ClassColor", 228, 1, "TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 5, -5)
-HorizontalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
-HorizontalTargetLine:SetScript("OnEvent", function(self)
-	local _, class = UnitClass("target")
-	local color = RAID_CLASS_COLORS[class]
-	if color then
-		self:SetBackdropBorderColor(color.r, color.g, color.b)
-	else
-		self:SetBackdropBorderColor(unpack(C.media.border_color))
-	end
-end)
-
-local VerticalTargetLine = CreateFrame("Frame", "VerticalTargetLine", oUF_Target)
-VerticalTargetLine:CreatePanel("ClassColor", 1, 98, "LEFT", HorizontalTargetLine, "RIGHT", 0, 13)
-VerticalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
-VerticalTargetLine:SetScript("OnEvent", function(self)
-	local _, class = UnitClass("target")
-	local color = RAID_CLASS_COLORS[class]
-	if color then
-		self:SetBackdropBorderColor(color.r, color.g, color.b)
-	else
-		self:SetBackdropBorderColor(unpack(C.media.border_color))
-	end
-end)
-
-----------------------------------------------------------------------------------------
 --	Delete some lines from unit dropdown menu
 ----------------------------------------------------------------------------------------
 do
@@ -1337,3 +1304,5 @@ do
 	UnitPopupMenus["FOCUS"] = {"RAID_TARGET_ICON", "CANCEL"}
 	UnitPopupMenus["BOSS"] = {"RAID_TARGET_ICON", "CANCEL"}
 end
+
+-- edit by Oz of shestak. org --

@@ -190,7 +190,7 @@ end
 
 local MenuBG = CreateFrame("Frame", "TTMenuBackground", UIParent)
 local AddonBG = CreateFrame("Frame", "TTMenuAddOnBackground", UIParent)
-MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 3)
+MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
 AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", MenuBG, "BOTTOMRIGHT", 0, 0)
 MenuBG:SetFrameLevel(defaultframelevel)
 MenuBG:SetFrameStrata("HIGH")
@@ -565,3 +565,5 @@ for i = 1, GetNumAddOns() do
 end
 
 refreshAddOnMenu()
+
+-- edit by Oz of shestak. org --

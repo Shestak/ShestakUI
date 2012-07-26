@@ -19,7 +19,7 @@ C["media"] = {
 	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for wispers
 	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
 	["proc_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Proc.mp3]],			-- Sound for procs
-	["border_color"] = {0.37, 0.3, 0.3, 1},		-- Color for borders
+	["border_color"] = {0.6, 0.6, 0.6, 1},		-- Color for borders
 	["backdrop_color"] = {0, 0, 0, 1},			-- Color for borders backdrop
 	["overlay_color"] = {0, 0, 0, 0.7},			-- Color for action bars overlay
 }
@@ -45,8 +45,8 @@ C["misc"] = {
 	["auto_resurrection"] = true,				-- Auto resurrection in Battle Ground
 	["auto_buy_reagents"] = false,				-- Auto buy reagents(if hold shift or alt, auto buy is disable)
 	["shift_marking"] = true,					-- Marks target when you push "shift"
-	["invite_keyword"] = "invite",				-- Short keyword for invite(for enable - in game type /ainv)
-	["afk_spin_camera"] = false,				-- Spin camera while afk
+	["invite_keyword"] = "inv",					-- Short keyword for invite(for enable - in game type /ainv)
+	["afk_spin_camera"] = true,					-- Spin camera while afk
 	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
 	["quest_auto_button"] = false,				-- Quest auto button
 	["raid_tools"] = true,						-- Raid tools
@@ -69,17 +69,17 @@ C["announcements"] = {
 --	Skins options
 ----------------------------------------------------------------------------------------
 C["skins"] = {
-	["blizzard_frames"] = false,				-- Blizzard frames skin
-	["minimap_buttons"] = false,				-- Skin addons icons on minimap
-	["clcprot"] = false,						-- CLCProt skin
-	["clcret"] = false,							-- CLCRet skin
-	["combustion_helper"] = false,				-- CombustionHelper skin
-	["bigwigs"] = false,						-- BigWigs skin
-	["dbm"] = false,							-- DBM skin
-	["dxe"] = false,							-- DXE skin
-	["omen"] = false,							-- Omen skin
-	["pallypower"] = false,						-- PallyPower skin
-	["recount"] = false,						-- Recount skin
+	["blizzard_frames"] = true,					-- Blizzard frames skin
+	["minimap_buttons"] = true,					-- Skin addons icons on minimap
+	["clcprot"] = true,							-- CLCProt skin
+	["clcret"] = true,							-- CLCRet skin
+	["combustion_helper"] = true,				-- CombustionHelper skin
+	["bigwigs"] = true,							-- BigWigs skin
+	["dbm"] = true,								-- DBM skin
+	["dxe"] = true,								-- DXE skin
+	["omen"] = true,							-- Omen skin
+	["pallypower"] = true,						-- PallyPower skin
+	["recount"] = true,							-- Recount skin
 }
 
 ----------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ C["combattext"] = {
 	["damage_color"] = true,					-- Display damage numbers depending on school of magic
 	["crit_prefix"] = "*",						-- Symbol that will be added before crit
 	["crit_postfix"] = "*",						-- Symbol that will be added after crit
-	["icons"] = true,							-- Show outgoing damage icons
+	["icons"] = false,							-- Show outgoing damage icons
 	["icon_size"] = 16,							-- Icon size of spells in outgoing damage frame, also has effect on dmg font size
 	["treshold"] = 1,							-- Minimum damage to show in damage frame
 	["heal_treshold"] = 1,						-- Minimum healing to show in incoming/outgoing healing messages
@@ -125,7 +125,7 @@ C["reminder"] = {
 	["solo_buffs_size"] = 45,					-- Icon size
 	-- Raid buffs
 	["raid_buffs_enable"] = true,				-- Show missing raid buffs
-	["raid_buffs_always"] = false,				-- Show frame always
+	["raid_buffs_always"] = true,				-- Show frame always
 	["raid_buffs_size"] = 19,					-- Icon size
 	["raid_buffs_alpha"] = 0,					-- Transparent icons when the buff is present
 }
@@ -180,6 +180,17 @@ C["threat"] = {
 }
 
 ----------------------------------------------------------------------------------------
+--	Meter options
+----------------------------------------------------------------------------------------
+C["meter"] = {
+	["enable"] = true,							-- Enable damage meter
+	["spacing"] = 7,							-- Bars spacing
+	["height"] = 12,							-- Bars height
+	["width"] = 217,							-- Bars width
+	["maxbars"] = 7,							-- Number of bars
+}
+
+----------------------------------------------------------------------------------------
 --	Tooltip options
 ----------------------------------------------------------------------------------------
 C["tooltip"] = {
@@ -198,7 +209,7 @@ C["tooltip"] = {
 	["rank"] = true,							-- Player guild-rank in tooltip
 	["arena_experience"] = false,				-- Player PVP experience in arena
 	["spell_id"] = false,						-- Id number spells
-	["average_lvl"] = false,					-- Average items level
+	["average_lvl"] = true,						-- Average items level
 	["raid_icon"] = false,						-- Raid icon
 	["who_targetting"] = false,					-- Show who is targetting the unit(in raid or party)
 	["item_count"] = false,						-- Item count in tooltip
@@ -212,7 +223,7 @@ C["chat"] = {
 	["enable"] = true,							-- Enable chat
 	["background"] = false,						-- Enable background for chat
 	["background_alpha"] = 0.7,					-- Background alpha
-	["filter"] = true,							-- Removing some systems spam("Player1" won duel "Player2")
+	["filter"] = false,							-- Removing some systems spam("Player1" won duel "Player2")
 	["spam"] = false,							-- Removing some players spam(gold/portals/etc)
 	["width"] = 350,							-- Chat width
 	["height"] = 112,							-- Chat height
@@ -221,7 +232,7 @@ C["chat"] = {
 	["whisp_sound"] = true,						-- Sound when whisper
 	["bubbles"] = true,							-- Skin Blizzard chat bubbles
 	["combatlog"] = true,						-- Show CombatLog tab(need two reloads when false)
-	["tabs_mouseover"] = false,					-- Chat tabs on mouseover
+	["tabs_mouseover"] = true,					-- Chat tabs on mouseover
 	["sticky"] = true,							-- Remember last channel
 }
 
@@ -242,7 +253,7 @@ C["bag"] = {
 C["minimap"] = {
 	["enable"] = true,							-- Enable minimap
 	["tracking_icon"] = false,					-- Tracking icon
-	["size"] = 130,								-- Minimap size
+	["size"] = 129,								-- Minimap size
 	["hide_combat"] = false,					-- Hide minimap in combat
 	["toggle_menu"] = true,						-- Show toggle menu
 	["merge_menus"] = true,						-- Merge main and addon buttons in toggle menu
@@ -265,8 +276,8 @@ C["loot"] = {
 	["rolllootframe"] = true,					-- Enable group roll frame
 	["icon_size"] = 22,							-- Icon size
 	["width"] = 221,							-- Loot window width
-	["auto_greed"] = true,						-- Push "greed" button when an item roll
-	["auto_confirm_de"] = true,					-- Auto confirm disenchant
+	["auto_greed"] = false,						-- Push "greed" button when an item roll
+	["auto_confirm_de"] = false,				-- Auto confirm disenchant
 }
 
 ----------------------------------------------------------------------------------------
@@ -280,7 +291,7 @@ C["nameplate"] = {
 	["ad_width"] = 0,							-- Additional width for selected nameplate
 	["combat"] = false,							-- Automatically show nameplate in combat
 	["health_value"] = false,					-- Numeral health value
-	["show_castbar_name"] = false,				-- Show castbar name
+	["show_castbar_name"] = true,				-- Show castbar name
 	["enhance_threat"] = true,					-- If tank good aggro = green, bad = red
 	["class_icons"] = false,					-- Icons by class in pvp
 	["name_abbrev"] = false,					-- Display the abbreviated names
@@ -306,7 +317,7 @@ C["actionbar"] = {
 	["classcolor_border"] = false,				-- Enable classcolor border
 	["toggle_mode"] = true,						-- Enable toggle mode
 	-- Bottom bars
-	["bottombars"] = 2,							-- Number of action bars on the bottom
+	["bottombars"] = 1,							-- Number of action bars on the bottom
 	-- Right bars
 	["rightbars"] = 3,							-- Number of action bars on right
 	["rightbars_mouseover"] = true,				-- Right bars on mouseover
@@ -315,7 +326,7 @@ C["actionbar"] = {
 	["petbar_hide"] = false,					-- Hide pet bar
 	["petbar_horizontal"] = false,				-- Enable horizontal pet bar
 	-- Shapeshift/Stance/Totem bars
-	["shapeshift_mouseover"] = true,			-- Shapeshift/Stance/Totem bars on mouseover
+	["shapeshift_mouseover"] = false,			-- Shapeshift/Stance/Totem bars on mouseover
 	["shapeshift_hide"] = false,				-- Hide shapeshift
 	["shapeshift_horizontal"] = true,			-- Enable horizontal shapeshift bar
 }
@@ -346,17 +357,17 @@ C["aura"] = {
 C["unitframe"] = {
 	-- Main
 	["enable"] = true,							-- Enable unit frames
-	["own_color"] = false,						-- Set your color for health bars
-	["uf_color"] = {0.4, 0.4, 0.4},				-- Color for UF if ["own_color"] = true
-	["enemy_health_color"] = true,				-- If enable, enemy target color is red
+	["own_color"] = true,						-- Set your color for health bars
+	["uf_color"] = {0.2, 0.2, 0.2},				-- Color for UF if ["own_color"] = true
+	["enemy_health_color"] = false,				-- If enable, enemy target color is red
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
-	["color_value"] = false,					-- Health/mana value is colored
-	["bar_color_value"] = false,				-- Health bar color by current health remaining
+	["color_value"] = true,						-- Health/mana value is colored
+	["bar_color_value"] = true,					-- Health bar color by current health remaining
 	-- Cast bars
 	["unit_castbar"] = true,					-- Show castbars
-	["castbar_icon"] = false,					-- Show castbar icons
+	["castbar_icon"] = true,					-- Show castbar icons
 	["castbar_latency"] = true,					-- Castbar latency
-	["castbar_ticks"] = false,					-- Castbar ticks
+	["castbar_ticks"] = true,					-- Castbar ticks
 	-- Frames
 	["show_pet"] = true,						-- Show pet frame
 	["show_focus"] = true,						-- Show focus frame
@@ -372,10 +383,11 @@ C["unitframe"] = {
 	["icons_combo_point"] = true,				-- Rogue|Druid combo point icons
 	["icons_combo_point_new"] = true,			-- New style for combo points
 	-- Portraits
-	["portrait_enable"] = false,				-- Enable player/target portraits
-	["portrait_classcolor_border"] = true,		-- Enable classcolor border
-	["portrait_height"] = 94,					-- Portrait height
-	["portrait_width"] = 67,					-- Portrait width
+	["portrait_enable"] = true,					-- Enable player/target portraits
+	["portrait_classcolor_border"] = false,		-- Enable classcolor border
+	["portrait_height"] = 27,					-- Portrait height
+	["portrait_width"] = 20,					-- Portrait width
+	["alternative_portraits"] = false,			-- Enable the portraits on the health bars (you need to disable the option for player/target portraits)
 	-- Plugins
 	["plugins_gcd"] = false,					-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar
@@ -383,17 +395,18 @@ C["unitframe"] = {
 	["plugins_holy_bar"] = true,				-- Holy bar
 	["plugins_shard_bar"] = true,				-- Shard bar
 	["plugins_rune_bar"] = true,				-- Rune bar
-	["plugins_necro_strike"] = false,			-- Necrotic Strike bar
+	["plugins_necro_strike"] = true,			-- Necrotic Strike bar
 	["plugins_vengeance_bar"] = true,			-- Vengeance bar
 	["plugins_totem_bar"] = true,				-- Totem bar
 	["plugins_totem_bar_name"] = false,			-- Totem name
-	["plugins_reputation_bar"] = false,			-- Reputation bar
-	["plugins_experience_bar"] = false,			-- Experience bar
-	["plugins_smooth_bar"] = false,				-- Smooth bar
+	["plugins_reputation_bar"] = true,			-- Reputation bar
+	["plugins_experience_bar"] = true,			-- Experience bar
+	["plugins_smooth_bar"] = true,				-- Smooth bar
 	["plugins_talents"] = false,				-- Enemy talents spec
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
 	["plugins_fader"] = false,					-- Fade unit frames
-	["plugins_diminishing"] = false,			-- Diminishing Returns icons on arena frames
+	["plugins_diminishing"] = true,				-- Diminishing Returns icons on arena frames
+	["plugins_trinkets_announce"] = false,		-- Announce (in English) the usage of enemy trinkets (only works in arena)
 }
 
 ----------------------------------------------------------------------------------------
@@ -415,9 +428,11 @@ C["raidframe"] = {
 	["raid_tanks"] = true,						-- Show raid tanks
 	["raid_tanks_tt"] = false,					-- Show raid tanks target target
 	["raid_groups"] = 5,						-- Number of groups in raid
-	["raid_groups_vertical"] = false,			-- Vertical raid groups(only for ShestakUI_Heal)
+	["raid_groups_vertical"] = true,			-- Vertical raid groups(only for ShestakUI_Heal)
+	-- Portraits
+	["raid_portraits"] = false,					-- Enable portraits on raid frames
 	-- Icons
-	["icons_lfd_role"] = false,					-- Party leader icon on frames
+	["icons_lfd_role"] = true,					-- Party leader icon on frames
 	["icons_raid_mark"] = true,					-- Raid mark icons on frames
 	["icons_ready_check"] = true,				-- Ready check icons on frames
 	["icons_leader"] = true,					-- Leader icon, assistant icon, master loot icon on frames
@@ -443,7 +458,7 @@ C["toppanel"] = {
 --	Stats options
 ----------------------------------------------------------------------------------------
 C["stats"] = {
-	["battleground"] = false,					-- BG Score
+	["battleground"] = true,					-- BG Score
 	["clock"] = true,							-- Clock
 	["latency"] = true,							-- Latency
 	["memory"] = true,							-- Memory
@@ -455,6 +470,7 @@ C["stats"] = {
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
 	["guild_repair"] = true,					-- Repair from guild bank
+	["talents"] = true,							-- Talents
 }
 
 ----------------------------------------------------------------------------------------
@@ -519,3 +535,5 @@ C["addon"] = {	-- Group AddOns for fast selection
 		"Stubby",
 	},
 }
+
+-- edit by Oz of shestak. org --

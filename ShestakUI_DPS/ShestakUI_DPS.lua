@@ -43,14 +43,10 @@ local function Shared(self, unit)
 	self.Health = CreateFrame("StatusBar", nil, self)
 	self.Health:Point("TOPLEFT", self, "TOPLEFT", 0, 0)
 	self.Health:Point("TOPRIGHT", self, "TOPRIGHT", 0, 0)
-	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
+	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" or unit == "party" then
 		self.Health:Height(27)
 	elseif unit == "tank" then
-		self.Health:Height(23)
-	elseif unit == "raid" then
-		self.Health:Height(15)
-	elseif unit == "party" then
-		self.Health:Height(21)
+		self.Health:Height(26)
 	else
 		self.Health:Height(17)
 	end
@@ -99,8 +95,9 @@ local function Shared(self, unit)
 		else
 			self.Power:Height(2)
 		end
-		self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
-		self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
+		self.Power:CreateBackdrop()
+		self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -7)
+		self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, 7)
 		self.Power:SetStatusBarTexture(C.media.texture)
 
 		self.Power.frequentUpdates = true
@@ -181,6 +178,13 @@ local function Shared(self, unit)
 		self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", T.UpdateThreat)
 	end
 
+	-- Portraits
+	if C.raidframe.raid_portraits == true then
+		self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self.Health)
+		self.Portrait:SetAllPoints(self.Health)
+		self.Portrait:SetAlpha(0.2)
+	end
+
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
@@ -192,7 +196,7 @@ local function Shared(self, unit)
 	if C.raidframe.icons_ready_check == true then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
 		self.ReadyCheck:Size(12)
-		self.ReadyCheck:Point("BOTTOMRIGHT", self.Health, 2, -1)
+		self.ReadyCheck:Point("TOP", self.Health, "TOP", 5, -3)
 	end
 
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then
@@ -284,7 +288,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(28),
+			"yOffset", T.Scale(19),
 			"point", "BOTTOM"
 		)
 		party:Point(unpack(C.position.unitframes.party_dps))
@@ -303,7 +307,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(28),
+			"yOffset", T.Scale(19),
 			"point", "BOTTOM"
 		)
 		partytarget:Point("TOPLEFT", party, "TOPRIGHT", 7, 0)
@@ -323,7 +327,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(28),
+			"yOffset", T.Scale(19),
 			"point", "BOTTOM"
 		)
 
@@ -369,7 +373,7 @@ oUF:Factory(function(self)
 				"groupFilter", tostring(i),
 				"maxColumns", 5,
 				"unitsPerColumn", 1,
-				"columnSpacing", T.Scale(7),
+				"columnSpacing", T.Scale(15),
 				"columnAnchorPoint", "TOP"
 			)
 			if i == 1 then
@@ -377,7 +381,7 @@ oUF:Factory(function(self)
 			elseif i == 5 then
 				raidgroup:Point("TOPLEFT", raid[1], "TOPRIGHT", 7, 0)
 			else
-				raidgroup:Point("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -7)
+				raidgroup:Point("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -15)
 			end
 			raid[i] = raidgroup
 		end
@@ -396,10 +400,12 @@ oUF:Factory(function(self)
 				self:SetHeight(26)
 			]]),
 			"showRaid", true,
-			"yOffset", T.Scale(-7),
+			"yOffset", T.Scale(-16),
 			"groupFilter", "MAINTANK",
 			"template", mt_template
 		)
 		raidtank:Point(unpack(C.position.unitframes.tank))
 	end
 end)
+
+-- edit by Oz of shestak. org --

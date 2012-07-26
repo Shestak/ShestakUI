@@ -31,41 +31,41 @@ LPSTAT_CONFIG = {
 -- Bottomleft block
 	Clock = {
 		enabled = C.stats.clock, -- Local time and the 24 hour clock can be enabled in-game via time manager (right-click)
-		AM = class"A", PM = class"P", colon = class":", -- These values apply to the displayed clock.
+		AM = "A", PM = "P", colon = ":", -- These values apply to the displayed clock.
 		anchor_frame = "UIParent", anchor_to = "left", anchor_from = "bottomleft",
 		x_off = 20, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20,
 		justify_h = "left",
 	},
 	Latency = {
 		enabled = C.stats.latency,
-		fmt = "[color]%d|r"..class"ms", -- "77ms", [color] inserts latency color code.
+		fmt = "[color]%d|r".."ms", -- "77ms", [color] inserts latency color code.
 	 	anchor_frame = "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.clock and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Memory = {
 		enabled = C.stats.memory,
-		fmt_mb = "%.1f"..class"mb", -- "12.5mb"
-		fmt_kb = "%.0f"..class"kb", -- "256kb" - only shows if memory is under one megabyte
+		fmt_mb = "%.1f".."mb", -- "12.5mb"
+		fmt_kb = "%.0f".."kb", -- "256kb" - only shows if memory is under one megabyte
 		--max_addons = 15, -- Set to nil or comment/delete this line to disable. Holding Alt reveals hidden addons.
 		anchor_frame = "Latency", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.latency and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	FPS = {
 		enabled = C.stats.fps,
-		fmt = "%d"..class"fps", -- "42fps"
+		fmt = "%d".."fps", -- "42fps"
 		anchor_frame = "Memory", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.memory and 3 or 0, y_off = 0,
 	},
 	Friends = {
 		enabled = C.stats.friend,
-		fmt = "%d/%d"..class"f", -- "F: 3/40"
+		fmt = "%d/%d".."f", -- "F: 3/40"
 		maxfriends = nil, -- Set max friends listed, nil means no limit.
 		anchor_frame = "FPS", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.fps and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Guild = {
 		enabled = C.stats.guild,
-		fmt = "%d/%d"..class"g", -- "G: 5/114"
+		fmt = "%d/%d".."g", -- "G: 5/114"
 		maxguild = nil, -- Set max members listed, nil means no limit. Alt-key reveals hidden members.
 		threshold = 1, -- Minimum level displayed (1-80).
 		show_xp = true, -- Show guild experience.
@@ -75,7 +75,7 @@ LPSTAT_CONFIG = {
 	},
 	Durability = {
 		enabled = C.stats.durability,
-		fmt = "[color]%d|r%%"..class"d",-- "54%D" -- %% outputs %, [color] inserts durability color code.
+		fmt = "[color]%d|r%%".."d",-- "54%D" -- %% outputs %, [color] inserts durability color code.
 		man = true, -- Hide bliz durability man.
 		gfunds = C.stats.guild_repair, -- Change to false to disable guild repairing.
 		ignore_inventory = false, -- Ignore inventory gear when auto-repairing.
@@ -94,9 +94,9 @@ LPSTAT_CONFIG = {
 			--	Rested XP [rest]				Rested/Level% [rest%]
 			--	Quests To Level [questsleft]	Kills To Level [killsleft]
 			--	Total Played [playedtotal]		Level Played [playedlevel]		Session Played [playedsession]
-		xp_normal_fmt = "[curxp]([cur%]%)"..class"XP", -- XP string used when not rested.
-		xp_rested_fmt = "[curxp]([cur%]%)"..class"XP ".." [restxp]([rest%]%)"..class"R", -- XP string used when rested.		
-		played_fmt = class"Online: ".."|r".."[playedsession]", -- Played time format.
+		xp_normal_fmt = "[curxp]([cur%]%)".."XP", -- XP string used when not rested.
+		xp_rested_fmt = "[curxp]([cur%]%)".."XP ".." [restxp]([rest%]%)".."R", -- XP string used when rested.		
+		played_fmt = "Online: ".."|r".."[playedsession]", -- Played time format.
 		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")		
 			-- day = "d", hour = "h", minute = "m", second = "s", -- Customizable time labels. Will localize by default.
 			-- Faction tags...
@@ -121,20 +121,20 @@ LPSTAT_CONFIG = {
 	Coords = {
 		enabled = C.stats.coords, -- Location tooltip has coords, this module is for displaying it as a separate stat.
 		fmt = "%d,%d", -- "44,19"
-		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
-		x_off = -17, y_off = 11, justify_h = "right",
+		anchor_frame = "Minimap", anchor_to = "right", anchor_from = "topright",
+		x_off = 3, y_off = -4, justify_h = "right",
 	},
 	Location = {
 		enabled = C.stats.location,
 		subzone = true, -- Set to false to display the main zone's name instead of the subzone.
-		truncate = 0, -- Max number of letters for location text, set to 0 to disable.
+		truncate = 16, -- Max number of letters for location text, set to 0 to disable.
 		coord_fmt = "%d,%d", -- "44,19", to add tenths, use '%.1f' (digit determines decimal)
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
 		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
--- Top block
+-- Bottomleft block
 	Stats = {
-		enabled = C.toppanel.enable,
+		enabled = C.stats.talents,
 			-- Available stat tags...
 			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery [mastery]				Expertise% [expertise]
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
@@ -142,45 +142,48 @@ LPSTAT_CONFIG = {
 			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				Spell Pen [spellpen]
 			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Combat table Coverage% [blockcap]
 			--   Avoidance% [avoidance]			MP5 I5SR [manaregen]			Armor Value [armor]				Resilience [resilience]
-		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
-		spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%", -- Spec #2 string
-		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
-		x_off = -20, y_off = 6,
+		spec1fmt = "SP: ".."[healing]".."  Crit: ".."[spellcrit]%".."  Haste: ".."[spellhaste]%", -- Spec #1 string
+		spec2fmt = "SP: ".."[spellpower]".."  Crit: ".."[spellcrit]%".."  Hit: ".."[spellhit]%", -- Spec #2 string
+		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
+		x_off = -62, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20,
+		justify_h = "right",
 	},
+-- Bottomleft block
 	Bags = {
 		enabled = C.toppanel.enable,
-		fmt = class"B: ".."%d/%d", -- "B: 24/98"
-		anchor_frame = "Stats", anchor_to = "topleft", anchor_from = "bottomleft",
-		x_off = 0, y_off = -5,
+		fmt = "B: ".."%d/%d", -- "B: 24/98"
+		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
+		x_off = -52, y_off = 0,
 	},
 	-- New block
 	Helm = {
 		enabled = C.toppanel.enable,
-		fmt = class"H: ".."%s", -- "Helm"
+		fmt = "H: ".."%s", -- "Helm"
 		anchor_frame = "Bags", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Cloak = {
 		enabled = C.toppanel.enable,
-		fmt = class"C: ".."%s", -- "Cloak"
+		fmt = "C: ".."%s", -- "Cloak"
 		anchor_frame = "Helm", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Loot = {
 		enabled = C.toppanel.enable,
-		fmt = class"L: ".."%s", -- "Loot"
+		fmt = "L: ".."%s", -- "Loot"
 		anchor_frame = "Cloak", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Nameplates = {
 		enabled = C.toppanel.enable,
-		fmt = class"N: ".."%s", -- "Nameplates"
+		fmt = "N: ".."%s", -- "Nameplates"
 		anchor_frame = "Loot", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
+-- Bottomleft block 2
 	Talents = {
-		enabled = C.toppanel.enable,
-		fmt = class"T: ".."[spec %d/%d/%d] [unspent]", -- "Protection: 15/0/51 +5", [shortname] shortens spec name.
+		enabled = C.stats.talents,
+		fmt = "T: ".."[spec %d/%d/%d] [unspent]", -- "Protection: 15/0/51 +5", [shortname] shortens spec name.
 		iconsize = 11,  -- Size of talent [icon].
 		name_subs = { -- Substitutions for long talent tree names, remove and/or change any/all.
 			["Protection"] = "Prot.",
@@ -223,50 +226,52 @@ LPSTAT_CONFIG = {
 LPSTAT_PROFILES = {
 	MAGE = { 
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+			spec1fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
+			spec2fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
 		}
 	},
 	PRIEST = { 
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+			spec1fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
+			spec2fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
 		}
 	},
 	WARLOCK = { 
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+			spec1fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
+			spec2fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
 		}
 	},
 	HUNTER = {
 		Stats = {
-			spec1fmt = class"AP: ".."[rangedap]"..class" Crit: ".."[rangedcrit]%"..class" Hit: ".."[rangedhit]%",
-			spec2fmt = class"AP: ".."[rangedap]"..class" Crit: ".."[rangedcrit]%"..class" Hit: ".."[rangedhit]%",
+			spec1fmt = "AP: ".."[rangedap]".." Crit: ".."[rangedcrit]%".." Hit: ".."[rangedhit]%",
+			spec2fmt = "AP: ".."[rangedap]".." Crit: ".."[rangedcrit]%".." Hit: ".."[rangedhit]%",
 		}
 	},
 	ROGUE = {
 		Stats = {
-			spec1fmt = class"AP: ".."[ap]"..class" Exp: ".."[expertise]%"..class" Hit: ".."[meleehit]%",
-			spec2fmt = class"AP: ".."[ap]"..class" Exp: ".."[expertise]%"..class" Hit: ".."[meleehit]%",
+			spec1fmt = "AP: ".."[ap]".." Exp: ".."[expertise]%".." Hit: ".."[meleehit]%",
+			spec2fmt = "AP: ".."[ap]".." Exp: ".."[expertise]%".." Hit: ".."[meleehit]%",
 		}
 	},
 	WARRIOR = {
 		Stats = {
-			spec1fmt = class"Armor: ".."[armor]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
-			spec2fmt = class"AP: ".."[ap]"..class" Crit: ".."[meleecrit]%"..class" Hit: ".."[meleehit]%",
+			spec1fmt = "Armor: ".."[armor]".." BlockCap: ".."[blockcap]%".." Avoid: ".."[avoidance]%",
+			spec2fmt = "AP: ".."[ap]".." Crit: ".."[meleecrit]%".." Hit: ".."[meleehit]%",
 		}
 	},
 	DEATHKNIGHT = {
 		Stats = {
-			spec1fmt = class"Mastery: ".."[mastery]"..class" Armor: ".."[armor]"..class" Avoid: ".."[avoidance]%",
-			spec2fmt = class"Mastery: ".."[mastery]"..class" Hit: ".."[meleehit]%"..class" Haste: ".."[meleehaste]%",
+			spec1fmt = "Mastery: ".."[mastery]".." Armor: ".."[armor]".." Avoid: ".."[avoidance]%",
+			spec2fmt = "Mastery: ".."[mastery]".." Hit: ".."[meleehit]%".." Haste: ".."[meleehaste]%",
 		}
 	},
 	PALADIN = {
 		Stats = {
-			spec1fmt = class"Mastery: ".."[mastery]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
-			spec1fmt = class"Mastery: ".."[mastery]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
+			spec1fmt = "Mastery: ".."[mastery]".." BlockCap: ".."[blockcap]%".." Avoid: ".."[avoidance]%",
+			spec1fmt = "Mastery: ".."[mastery]".." BlockCap: ".."[blockcap]%".." Avoid: ".."[avoidance]%",
 		}
 	},
 }
+
+-- edit by Oz of shestak. org --

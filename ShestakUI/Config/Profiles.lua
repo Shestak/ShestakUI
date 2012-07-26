@@ -89,51 +89,32 @@ if T.author == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Oz Config
+--	Oz@Runetotem Config
 ----------------------------------------------------------------------------------------
-if T.name == "Oz" then
-	C["position"].bn_popup = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5}
-	C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -239, -113}
-	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -69}
-	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
-	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -398, 293}
-	C["position"].top_panel = {"TOP", UIParent, "TOP", 0, -118}
-	C["position"].raid_buffs = {"BOTTOMLEFT", Minimap, "TOPLEFT", -2, 5}
-	C["position"].raid_utility = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 210}
-	C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -298, 258}
-	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", -284, 355}
-	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 355}
-	C["position"].unitframes.tank = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 5, 18}
-	C["position"].unitframes.player_castbar = {"CENTER", UIParent, "CENTER", 0, -177}
-	C["position"].unitframes.target_castbar = {"CENTER", UIParent, "CENTER", 11, -154}
-	C["media"].border_color = {0.1, 0.1, 0.1, 1}
+if T.name == "Oz" and T.realm == "Runetotem" then
+	C["position"].threat_meter = {"BOTTOM", UIParent, "BOTTOM", 0, 294}
+	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -402, 321}
+	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", 0, 388}
+	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 388}
+	C["position"].unitframes.pet = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 379, 75}
+	C["position"].unitframes.focus = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 379, 238}
+	C["position"].unitframes.focus_target = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 379, 166}
+	C["position"].unitframes.party_heal = {"BOTTOM", UIParent, "BOTTOM", -235, 253}
+	C["position"].unitframes.raid_heal = {"BOTTOM", UIParent, "BOTTOM", -235, 95}
+	C["position"].unitframes.player_castbar = {"CENTER", UIParent, "CENTER", 0, -202}
+	C["position"].unitframes.target_castbar = {"CENTER", UIParent, "CENTER", 11, -179}
 	C["general"].welcome_message = false
-	C["misc"].auto_decline_duel = false
-	C["misc"].auto_resurrection = false
-	C["misc"].invite_keyword = "inv"
-	C["misc"].vehicle_mouseover = true
+	C["misc"].afk_spin_camera = false
 	C["misc"].ach_screens = true
-	C["skins"].blizzard_frames = true
-	C["skins"].dbm = true
 	C["combattext"].scrollable = true
 	C["combattext"].killingblow = true
 	C["enemycooldown"].show_always = true
-	C["threat"].width = 125
-	C["threat"].bar_rows = 2
+	C["threat"].width = 128
+	C["threat"].bar_rows = 3
 	C["tooltip"].item_icon = true
 	C["tooltip"].talents = true
-	C["tooltip"].achievements = false
-	C["tooltip"].title = true
-	C["tooltip"].spell_id = true
-	C["tooltip"].average_lvl = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].who_targetting = true
-	C["chat"].filter = false
-	C["chat"].tabs_mouseover = true
-	C["minimap"].size = 129
-	C["loot"].auto_greed = false
-	C["nameplate"].show_castbar_name = true
-	C["nameplate"].class_icons = true
 	C["actionbar"].hotkey = false
 	C["actionbar"].bottombars = 1
 	C["aura"].show_spiral = true
@@ -142,26 +123,17 @@ if T.name == "Oz" then
 	C["aura"].pet_debuffs = true
 	C["aura"].tot_debuffs = true
 	C["aura"].cast_by = true
-	C["unitframe"].own_color = true
-	C["unitframe"].uf_color = {0.15, 0.15, 0.15}
-	C["unitframe"].enemy_health_color = false
-	C["unitframe"].color_value = true
-	C["unitframe"].bar_color_value = true
-	C["unitframe"].castbar_icon = true
 	C["unitframe"].icons_pvp = true
+	C["unitframe"].portrait_enable = false
+	C["unitframe"].alternative_portraits = true
 	C["unitframe"].plugins_gcd = true
-	C["unitframe"].plugins_necro_strike = true
-	C["unitframe"].plugins_reputation_bar = true
-	C["unitframe"].plugins_experience_bar = true
 	C["unitframe"].plugins_smooth_bar = true
 	C["unitframe"].plugins_talents = true
-	C["unitframe"].plugins_diminishing = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].raid_groups = 8
-	C["raidframe"].icons_lfd_role = true
+	C["raidframe"].raid_portraits = true
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].plugins_auto_resurrection = true
-	C["stats"].battleground = true
 end
 
 ----------------------------------------------------------------------------------------
@@ -321,3 +293,5 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["stats"].experience = false
 	end
 end
+
+-- edit by Oz of shestak. org --

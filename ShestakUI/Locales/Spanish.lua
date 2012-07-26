@@ -228,6 +228,7 @@ L_POPUP_SETTINGS_BW = "Necesito cambiar la posición de los elementos del BigWig
 L_WELCOME_LINE_1 = "Bienvenido a ShestakUI "
 L_WELCOME_LINE_2_1 = "Escribe /cfg para configurar la interfaz, o visita http://shestak.org"
 L_WELCOME_LINE_2_2 = "para más información."
+L_WELCOME_LINE_3 = "Nota: esta versión de ShestakUI está editado por Oz de shestak.org."
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Golpe de gracia"
@@ -279,6 +280,7 @@ L_STATS_IGNORED_ITEMS = "Enumerar los objetos ignorados actualmente."
 L_STATS_TOGGLE_TIME = "Hora Local/Reino y el reloj de 24hr se pueden activar desde el administrador de tiempo."
 L_STATS_LOCATION = "Situación/Coordenadas"
 L_STATS_MEMORY = "Memoria"
+L_STATS_TALENTS = "Talentos"
 L_STATS_ON = "ON"
 L_STATS_OTHER_OPTIONS = "Otras opciones se pueden configurar en %s"
 L_STATS_PLAYED_LEVEL = "Jugado este nivel"
@@ -347,3 +349,5 @@ L_SLASHCMD_HELP = {
 	"/testuf - Prueba de los marcos de unidades.",
 	"/cfg - Abre la configuración de la interfaz.",
 }
+
+-- edit by Oz of shestak. org --

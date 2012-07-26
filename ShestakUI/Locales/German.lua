@@ -228,6 +228,7 @@ L_POPUP_SETTINGS_BW = "Die Position der BigWigs Elemente muss verändert werden.
 L_WELCOME_LINE_1 = "Willkommen bei ShestakUI "
 L_WELCOME_LINE_2_1 = "Gebe /cfg ein um das Interface zu konfigurieren, oder besuche http://shestak.org"
 L_WELCOME_LINE_2_2 = "für weitere Informationen."
+L_WELCOME_LINE_3 = "Hinweis: Diese Version von ShestakUI wird von Oz von shestak.org bearbeitet."
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Todesstoß"
@@ -279,6 +280,7 @@ L_STATS_IGNORED_ITEMS = "Zeige die aktuell ignorierten Gegenstände."
 L_STATS_TOGGLE_TIME = "Lokal/Realm & 24-Stunden-Modus können in den Einstellungen der Uhr gewechselt werden."
 L_STATS_LOCATION = "Standort/Koordinaten"
 L_STATS_MEMORY = "Speicher"
+L_STATS_TALENTS = "Talente"
 L_STATS_ON = "AN"
 L_STATS_OTHER_OPTIONS = "Weitere Einstellungen können in %s konfiguriert werden"
 L_STATS_PLAYED_LEVEL = "Auf diesem Level gespielt"
@@ -347,3 +349,5 @@ L_SLASHCMD_HELP = {
 	"/testuf - Unit frame test.",
 	"/cfg - Opens interface settings.",
 }
+
+-- edit by Oz of shestak. org --

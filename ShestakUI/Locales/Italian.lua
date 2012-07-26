@@ -132,8 +132,8 @@ L_LOOT_CANNOT = "Non puoi partecipare al tiro per il bottino"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "Sei assente!"
-L_PANELS_AFK_RCLICK = "Clicca col destro per nascondere il pannello."
-L_PANELS_AFK_LCLICK = "Clicca col sinistro per non essere più impostato come assente."
+L_PANELS_AFK_RCLICK = "Click destro = nascondi pannello."
+L_PANELS_AFK_LCLICK = "Clicca sinistro = no assente."
 
 -- Cooldowns
 L_COOLDOWNS = "RC: "
@@ -225,7 +225,7 @@ L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DX
 L_POPUP_SETTINGS_BW = "È necessario cambiare la posizione degli elementi di BigWigs."
 
 -- Welcome message
-L_WELCOME_LINE_1 = "Benvenuti in ShestakUI "
+L_WELCOME_LINE_1 = "Benvenuto/a in ShestakUI "
 L_WELCOME_LINE_2_1 = "Digita /cfg per configurare l'interfaccia oppure visita http://shestak.org"
 L_WELCOME_LINE_2_2 = "per maggiori informazioni."
 

@@ -1,6 +1,6 @@
 ## Interface: 40300
 ## Title: ShestakUI Heal
-## Notes: Raid layout for ShestakUI
+## Notes: Raid layout for ShestakUI (Oz of shestak.org Edit)
 ## Author: Shestak
 ## Version: 3.5.1
 ## Credits: ALZA, Tukz, Caellian

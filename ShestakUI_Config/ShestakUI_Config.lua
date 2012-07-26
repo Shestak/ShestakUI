@@ -15,6 +15,7 @@ local ALLOWED_GROUPS = {
 	["enemycooldown"] = 1,
 	["pulsecooldown"] = 1,
 	["threat"] = 1,
+	["meter"] = 1,
 	["tooltip"] = 1,
 	["chat"] = 1,
 	["bag"] = 1,
@@ -160,6 +161,14 @@ local function Local(o)
 	if o == "UIConfigthreatwidth" then o = L_GUI_THREAT_WIDTH end
 	if o == "UIConfigthreatbar_rows" then o = L_GUI_THREAT_ROWS end
 	if o == "UIConfigthreathide_solo" then o = L_GUI_THREAT_HIDE_SOLO end
+
+	-- Meter options
+	if o == "UIConfigmeter" then o = L_GUI_METER end
+	if o == "UIConfigmeterenable" then o = L_GUI_METER_ENABLE end
+	if o == "UIConfigmeterspacing" then o = L_GUI_METER_SPACING end
+	if o == "UIConfigmeterheight" then o = L_GUI_METER_HEIGHT end
+	if o == "UIConfigmeterwidth" then o = L_GUI_METER_WIDTH end
+	if o == "UIConfigmetermaxbars" then o = L_GUI_METER_MAXBARS end
 
 	-- Tooltip options
 	if o == "UIConfigtooltip" then o = L_GUI_TOOLTIP end
@@ -319,6 +328,7 @@ local function Local(o)
 	if o == "UIConfigunitframeportrait_classcolor_border" then o = L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER end
 	if o == "UIConfigunitframeportrait_height" then o = L_GUI_UF_PORTRAIT_HEIGHT end
 	if o == "UIConfigunitframeportrait_width" then o = L_GUI_UF_PORTRAIT_WIDTH end
+	if o == "UIConfigunitframealternative_portraits" then o = L_GUI_UF_ALTERNATIVE_PORTRAITS end
 	if o == "UIConfigunitframeplugins_gcd" then o = L_GUI_UF_PLUGINS_GCD end
 	if o == "UIConfigunitframeplugins_swing" then o = L_GUI_UF_PLUGINS_SWING end
 	if o == "UIConfigunitframeplugins_eclipse_bar" then o = L_GUI_UF_PLUGINS_ECLIPSE_BAR end
@@ -336,6 +346,7 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_combat_feedback" then o = L_GUI_UF_PLUGINS_COMBAT_FEEDBACK end
 	if o == "UIConfigunitframeplugins_fader" then o = L_GUI_UF_PLUGINS_FADER end
 	if o == "UIConfigunitframeplugins_diminishing" then o = L_GUI_UF_PLUGINS_DIMINISHING end
+	if o == "UIConfigunitframeplugins_trinkets_announce" then o = L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE end
 
 	-- Raid Frames options
 	if o == "UIConfigraidframe" then o = RAID_FRAMES_LABEL end
@@ -353,6 +364,7 @@ local function Local(o)
 	if o == "UIConfigraidframeraid_tanks_tt" then o = L_GUI_UF_SHOW_TANK_TT end
 	if o == "UIConfigraidframeraid_groups" then o = L_GUI_UF_RAID_GROUP end
 	if o == "UIConfigraidframeraid_groups_vertical" then o = L_GUI_UF_RAID_VERTICAL_GROUP end
+	if o == "UIConfigraidframeraid_portraits" then o = L_GUI_UF_RAID_PORTRAITS end
 	if o == "UIConfigraidframeicons_leader" then o = L_GUI_UF_ICONS_LEADER end
 	if o == "UIConfigraidframeicons_lfd_role" then o = L_GUI_UF_ICONS_LFD_ROLE end
 	if o == "UIConfigraidframeicons_raid_mark" then o = L_GUI_UF_ICONS_RAID_MARK end
@@ -384,6 +396,7 @@ local function Local(o)
 	if o == "UIConfigstatscoords" then o = L_GUI_STATS_COORDS end
 	if o == "UIConfigstatslocation" then o = L_GUI_STATS_LOCATION end
 	if o == "UIConfigstatsguild_repair" then o = L_STATS_GUILD_REPAIR end
+	if o == "UIConfigstatstalents" then o = L_STATS_TALENTS end
 
 	-- Error options
 	if o == "UIConfigerror" then o = L_GUI_ERROR end
@@ -991,3 +1004,5 @@ do
 
 	InterfaceOptions_AddCategory(thxui)
 end
+
+-- edit by Oz of shestak. org --

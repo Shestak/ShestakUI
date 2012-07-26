@@ -4,9 +4,10 @@ if C.misc.raid_tools ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Raid Utility(by Elv22)
 ----------------------------------------------------------------------------------------
+local width = (C.minimap.size)
 -- Create main frame
 local RaidUtilityPanel = CreateFrame("Frame", "RaidUtilityPanel", UIParent)
-RaidUtilityPanel:CreatePanel("Transparent", 170, 145, unpack(C.position.raid_utility))
+RaidUtilityPanel:CreatePanel("Transparent", 167, 145, unpack(C.position.raid_utility))
 if GetCVarBool("watchFrameWidth") then
 	RaidUtilityPanel:Point(C.position.raid_utility[1], C.position.raid_utility[2], C.position.raid_utility[3], C.position.raid_utility[4] + 100, C.position.raid_utility[5])
 end
@@ -39,7 +40,7 @@ local function CreateButton(name, parent, template, width, height, point, relati
 end
 
 -- Show button
-CreateButton("ShowButton", UIParent, "UIMenuButtonStretchTemplate, SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, 18, "TOP", RaidUtilityPanel, "TOP", 0, 0, RAID_CONTROL)
+CreateButton("ShowButton", UIParent, "UIMenuButtonStretchTemplate, SecureHandlerClickTemplate", width, 18, "TOP", RaidUtilityPanel, "TOP", 0, 0, RAID_CONTROL)
 ShowButton:SetFrameRef("RaidUtilityPanel", RaidUtilityPanel)
 ShowButton:SetAttribute("_onclick", [=[self:Hide(); self:GetFrameRef("RaidUtilityPanel"):Show();]=])
 ShowButton:SetScript("OnMouseUp", function(self, button)
@@ -152,3 +153,5 @@ LeadershipCheck:RegisterEvent("RAID_ROSTER_UPDATE")
 LeadershipCheck:RegisterEvent("PLAYER_ENTERING_WORLD")
 LeadershipCheck:RegisterEvent("PARTY_MEMBERS_CHANGED")
 LeadershipCheck:SetScript("OnEvent", ToggleRaidUtil)
+
+-- edit by Oz of shestak. org --

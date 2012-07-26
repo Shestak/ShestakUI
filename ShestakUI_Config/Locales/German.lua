@@ -131,6 +131,14 @@ L_GUI_THREAT_WIDTH = "Breite der Bedrohungsleisten"
 L_GUI_THREAT_ROWS = "Anzahl der Bedrohungsleisten"
 L_GUI_THREAT_HIDE_SOLO = "Nur in Gruppen oder Schlachtzügen anzeigen"
 
+-- Meter options
+L_GUI_METER = "Zähler Schaden"
+L_GUI_METER_ENABLE = "Aktivieren Sie den Zähler für Schäden (nur für ShestakUI_alDamageMeter)"
+L_GUI_METER_SPACING = "Abstand zwischen den Balken"
+L_GUI_METER_HEIGHT = "Höhe der Balken"
+L_GUI_METER_WIDTH = "Stegbreite"
+L_GUI_METER_MAXBARS = "Anzahl der Bars"
+
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"
 L_GUI_TOOLTIP_ENABLE = "Aktiviere Tooltip"
@@ -280,6 +288,7 @@ L_GUI_UF_PORTRAIT_ENABLE = "Aktiviere Spieler/Ziel Portraits"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Aktiviere Rahmen in Klassenfarbe"
 L_GUI_UF_PORTRAIT_HEIGHT = "Portraithöhe"
 L_GUI_UF_PORTRAIT_WIDTH = "Portraitbreite"
+L_GUI_UF_ALTERNATIVE_PORTRAITS = "Aktiviere Sie die Portraits an den Gesundheits-Bars (Sie brauchen, um die Option für Spieler/target Portraits deaktivieren)"
 L_GUI_UF_PLUGINS_GCD = "Blitz für globalen Cooldown"
 L_GUI_UF_PLUGINS_SWING = "Swingleiste"
 L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Aktiviere Eclipseleiste"
@@ -297,6 +306,7 @@ L_GUI_UF_PLUGINS_TALENTS = "Zeige gegnerische Talente"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"
 L_GUI_UF_PLUGINS_FADER = "Blende Einheitenfenster aus"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
+L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE = "Kündigen Sie (in englischer Sprache) die Nutzung der Feind Schmuckstücke (funktioniert nur in der Arena)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"
@@ -313,6 +323,7 @@ L_GUI_UF_SHOW_TANK = "Zeige Raid Tanks an"
 L_GUI_UF_SHOW_TANK_TT = "Zeige Ziel des Raid Tank Ziels (Ziel des Ziels)"
 L_GUI_UF_RAID_GROUP = "Anzahl der Gruppen im Raid(nur für ShestakUI_Heal)"
 L_GUI_UF_RAID_VERTICAL_GROUP = "Vertikale Raidgruppen(nur für ShestakUI_Heal)"
+L_GUI_UF_RAID_PORTRAITS = "Aktivieren Porträts auf RAID-Frames"
 L_GUI_UF_ICONS_LEADER = "Anführer/Assistent/Plündermeister-Symbole an den Fenstern anzeigen"
 L_GUI_UF_ICONS_LFD_ROLE = "Gruppenanführersymbol an den Fenstern"
 L_GUI_UF_ICONS_RAID_MARK = "Raidsymbole"
@@ -347,3 +358,5 @@ L_GUI_ERROR_HIDE = "Zeige Fehler an"
 L_GUI_ERROR_BLACK = "Verstecke Fehler der Schwarzen Liste"
 L_GUI_ERROR_WHITE = "Zeige Fehler der Weißen Liste"
 L_GUI_ERROR_HIDE_COMBAT = "Verstecke Fehler im Kampf"
+
+-- edit by Oz of shestak. org --

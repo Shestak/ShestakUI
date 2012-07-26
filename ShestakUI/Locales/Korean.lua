@@ -228,6 +228,7 @@ L_POPUP_SETTINGS_BW = "Need to change the position of elements BigWigs."
 L_WELCOME_LINE_1 = "Welcome to ShestakUI "
 L_WELCOME_LINE_2_1 = "Type /cfg to config interface, or visit http://shestak.org"
 L_WELCOME_LINE_2_2 = "for more informations."
+L_WELCOME_LINE_3 = "참고: ShestakUI이 버전은 shestak.org의 오즈 (가) 수정되었습니다."
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Killing Blow"
@@ -279,6 +280,7 @@ L_STATS_IGNORED_ITEMS = "현재무시된 아이템을 목록화합니다. "
 L_STATS_TOGGLE_TIME = "시간 관리 틀에서 지역/서버 & 24시간제를 전환시킬 수 있습니다. "
 L_STATS_LOCATION = "위치/좌표"
 L_STATS_MEMORY = "메모리"
+L_STATS_TALENTS = "재능"
 L_STATS_ON = "켜기"
 L_STATS_OTHER_OPTIONS = "다른 옵션은 %s에서 설정할 수 있습니다."
 L_STATS_PLAYED_LEVEL = "이 레벨에서의 플레이 시간"
@@ -347,3 +349,5 @@ L_SLASHCMD_HELP = {
 	"/testuf - Unit frame test.",
 	"/cfg - Opens interface settings.",
 }
+
+-- edit by Oz of shestak. org --

@@ -8,7 +8,7 @@ WORLDMAP_WINDOWED_SIZE = C.map.scale
 local mapscale = WORLDMAP_WINDOWED_SIZE
 
 local mapbg = CreateFrame("Frame", nil, WorldMapDetailFrame)
-mapbg:SetTemplate("ClassColor")
+mapbg:SetTemplate("Default")
 
 -- Create move button for map
 local movebutton = CreateFrame("Frame", nil, WorldMapFrameSizeUpButton)
@@ -262,3 +262,5 @@ coords:SetScript("OnUpdate", function(self, elapsed)
 		int = 0
 	end
 end)
+
+-- edit by Oz of shestak. org --

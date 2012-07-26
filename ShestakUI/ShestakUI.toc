@@ -1,6 +1,6 @@
 ﻿## Interface: 40300
 ## Title: ShestakUI
-## Notes: A total UI overhaul for World of Warcraft
+## Notes: A total UI overhaul for World of Warcraft (Oz of shestak.org Edit)
 ## Author: Shestak
 ## Version: 3.5.1
 ## Credits: ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Havoc74, Duffed, Hydra, Gorlasch, Nefarion, Compost, Blamdarot, Suicidal Katt, Tuller, Rostok, Thizzelle, Astromech, Ammo, Slakah, Xuerian, Thalyra, Soeters, Evilpaul, Beoko, Califpornia, kunda, g0st, Partha, chrippa, Nathanyel, Semlar, Ildyria

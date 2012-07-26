@@ -228,6 +228,7 @@ L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
 L_WELCOME_LINE_1 = "欢迎使用ShestakUI "
 L_WELCOME_LINE_2_1 = "输入/cfg进行插件设置,或者访问http://shestak.org"
 L_WELCOME_LINE_2_2 = "得到更多信息."
+L_WELCOME_LINE_3 = "注： 此版本的ShestakUI由shestak.org奥兹编辑。"
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "最后一击"
@@ -279,6 +280,7 @@ L_STATS_IGNORED_ITEMS = "列出目前忽略物品"
 L_STATS_TOGGLE_TIME = "当地/服务器及24小时制可显示于时间管理器"
 L_STATS_LOCATION = "位置/座标"
 L_STATS_MEMORY = "内存"
+L_STATS_TALENTS = "人才"
 L_STATS_ON = "启用"
 L_STATS_OTHER_OPTIONS = "其它选项可能配置在%s"
 L_STATS_PLAYED_LEVEL = "当前等级总上线时间"
@@ -347,3 +349,5 @@ L_SLASHCMD_HELP = {
 	"/testuf - 测试头像面板.",
 	"/cfg - 打开shestakui设置界面.",
 }
+
+-- edit by Oz of shestak. org --

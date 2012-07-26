@@ -26,7 +26,7 @@ local function InstallUI()
 	SetCVar("autoLootDefault", 1)
 	SetCVar("RotateMinimap", 0)
 	SetCVar("ConsolidateBuffs", 0)
-	SetCVar("autoQuestWatch", 0)
+	SetCVar("autoQuestWatch", 1)
 	SetCVar("autoQuestProgress", 1)
 	SetCVar("scriptErrors", 1)
 
@@ -99,10 +99,6 @@ local function InstallUI()
 			-- Set default font size
 			FCF_SetChatWindowFontSize(nil, frame, 11)
 
-			-- Rename general and combat log tabs
-			if i == 1 then FCF_SetWindowName(frame, GENERAL) end
-			if i == 2 then FCF_SetWindowName(frame, GUILD_BANK_LOG) end
-
 			-- Lock them if unlocked
 			if not frame.isLocked then FCF_SetLocked(frame, 1) end
 		end
@@ -147,6 +143,9 @@ local function InstallUI()
 			ChatFrame_AddMessageGroup(ChatFrame4, "MONEY")
 			ChatFrame_AddMessageGroup(ChatFrame4, "SKILL")
 		end
+
+		-- Show Target Icons
+		ChatFrame_AddMessageGroup(ChatFrame1, "TARGETICONS")
 
 		-- Enable classcolor automatically on login and on each character without doing /configure each time
 		ToggleChatColorNamesByClassGroup(true, "SAY")
@@ -291,6 +290,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if C.general.welcome_message == true then
 		print("|cffffff00"..L_WELCOME_LINE_1..T.version.." "..T.client..", "..T.name..".|r")
 		print("|cffffff00"..L_WELCOME_LINE_2_1.." |cffffff00"..L_WELCOME_LINE_2_2)
+		print("|cffffff00"..L_WELCOME_LINE_3)
 	end
 end)
 
@@ -314,3 +314,5 @@ SlashCmdList.CONFIGURE = function() StaticPopup_Show("RESET_UI") end
 
 SLASH_RESETSTATS1 = "/resetstats"
 SlashCmdList.RESETSTATS = function() StaticPopup_Show("RESET_STATS") end
+
+-- edit by Oz of shestak. org --

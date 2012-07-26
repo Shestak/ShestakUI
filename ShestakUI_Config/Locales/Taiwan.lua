@@ -131,6 +131,14 @@ L_GUI_THREAT_WIDTH = "仇恨欄寬度"
 L_GUI_THREAT_ROWS = "仇恨欄數目"
 L_GUI_THREAT_HIDE_SOLO = "僅在隊伍/團隊中使用"
 
+-- Meter options
+L_GUI_METER = "計數器損壞"
+L_GUI_METER_ENABLE = "使損害賠償的計數器 （只為ShestakUI_alDamageMeter）"
+L_GUI_METER_SPACING = "酒吧之間的空間"
+L_GUI_METER_HEIGHT = "酒吧的高度"
+L_GUI_METER_WIDTH = "酒吧的寬度"
+L_GUI_METER_MAXBARS = "酒吧的數量"
+
 -- Tooltip options
 L_GUI_TOOLTIP = "提示資訊"
 L_GUI_TOOLTIP_ENABLE = "開啟提示資訊增強"
@@ -280,6 +288,7 @@ L_GUI_UF_PORTRAIT_ENABLE = "開啟玩家/目標頭像"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "開啟職業顏色邊框"
 L_GUI_UF_PORTRAIT_HEIGHT = "頭像高度"
 L_GUI_UF_PORTRAIT_WIDTH = "頭像寬度"
+L_GUI_UF_ALTERNATIVE_PORTRAITS = "啟用對健康酒吧的畫像（你需要禁用的選項，播放/目標畫像）"
 L_GUI_UF_PLUGINS_GCD = "公共CD計時"
 L_GUI_UF_PLUGINS_SWING = "普通攻擊計時條"
 L_GUI_UF_PLUGINS_ECLIPSE_BAR = "開啟日蝕/月蝕欄"
@@ -297,6 +306,7 @@ L_GUI_UF_PLUGINS_TALENTS = "開啟顯示敵對玩家天賦"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "顯示玩家/目標的文字戰鬥信息"
 L_GUI_UF_PLUGINS_FADER = "無必要時隱藏玩家框體"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
+L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE = "宣布（英文）使用（只在舞台上的敵人飾品）"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "仇恨邊框"
@@ -313,6 +323,7 @@ L_GUI_UF_SHOW_TANK = "顯示團隊主坦克框體"
 L_GUI_UF_SHOW_TANK_TT = "顯示坦克目標的目標"
 L_GUI_UF_RAID_GROUP = "顯示小隊數目(ShestakUI_Heal風格)"
 L_GUI_UF_RAID_VERTICAL_GROUP = "竪向排列團隊隊伍(ShestakUI_Heal風格)"
+L_GUI_UF_RAID_PORTRAITS = "啟用RAID幀上的肖像“"
 L_GUI_UF_ICONS_LEADER = "顯示團隊隊長標識/助手標識/分配者標識"
 L_GUI_UF_ICONS_LFD_ROLE = "顯示隊長標識"
 L_GUI_UF_ICONS_RAID_MARK = "顯示團隊標記"
@@ -347,3 +358,5 @@ L_GUI_ERROR_HIDE = "隱藏錯誤提示"
 L_GUI_ERROR_BLACK = "隱藏黑名單錯誤"
 L_GUI_ERROR_WHITE = "顯示白名單錯誤"
 L_GUI_ERROR_HIDE_COMBAT = "在戰鬥中隱藏錯誤提示"
+
+-- edit by Oz of shestak. org --

@@ -1,6 +1,6 @@
 ## Interface: 40300
 ## Title: ShestakUI Config
-## Notes: In-game configuration for ShestakUI
+## Notes: In-game configuration for ShestakUI (Oz of shestak.org Edit)
 ## Author: Tohveli
 ## Version: 3.5.1
 ## Credits: Tukz, Fernir, Elv22

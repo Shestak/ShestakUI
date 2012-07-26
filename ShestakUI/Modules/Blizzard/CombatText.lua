@@ -615,14 +615,18 @@ for i = 1, numf do
 	f:SetInsertMode(C.combattext.direction or "bottom")
 	if i == 1 then
 		f:SetJustifyH(ct.justify_1)
-		if C.unitframe.enable == true and _G.oUF_Player then
+		if C.unitframe.enable == true and _G.oUF_Player and T.name == "Oz" and T.realm == "Runetotem" then
+			f:SetPoint("CENTER", -330, 205)
+		elseif C.unitframe.enable == true and _G.oUF_Player then
 			f:SetPoint("BOTTOMLEFT", "oUF_Player", "TOPLEFT", -3, 60)
 		else
 			f:SetPoint("CENTER", -192, -32)
 		end
 	elseif i == 2 then
 		f:SetJustifyH(ct.justify_2)
-		if C.unitframe.enable == true and _G.oUF_Player then
+		if C.unitframe.enable == true and _G.oUF_Player and T.name == "Oz" and T.realm == "Runetotem" then
+			f:SetPoint("CENTER", -330, 90)
+		elseif C.unitframe.enable == true and _G.oUF_Player then
 			f:SetPoint("BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 5, 60)
 		else
 			f:SetPoint("CENTER", 192, -32)
@@ -1191,3 +1195,5 @@ if C.combattext.healing then
 	xCTh:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 	xCTh:SetScript("OnEvent", heal)
 end
+
+-- edit by Oz of shestak. org --

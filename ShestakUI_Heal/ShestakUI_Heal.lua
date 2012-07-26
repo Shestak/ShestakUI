@@ -39,13 +39,8 @@ local function Shared(self, unit)
 	self.Health = CreateFrame("StatusBar", nil, self)
 	self.Health:SetPoint("TOPLEFT")
 	self.Health:SetPoint("TOPRIGHT")
-	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Health:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
-		self.Health:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
-	else
-		self.Health:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 3)
-		self.Health:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 3)
-	end
+	self.Health:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
+	self.Health:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
 	self.Health:SetStatusBarTexture(C.media.texture)
 
 	if C.raidframe.vertical_health == true then
@@ -93,9 +88,10 @@ local function Shared(self, unit)
 
 		-- Power bar
 		self.Power = CreateFrame("StatusBar", nil, self)
-		self.Power:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
-		self.Power:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
-		self.Power:Point("TOP", self, "BOTTOM", 0, 2)
+		self.Power:CreateBackdrop()
+		self.Power:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, -9)
+		self.Power:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, -17)
+		self.Power:Point("TOP", self, "BOTTOM", 0, -7)
 		self.Power:SetStatusBarTexture(C.media.texture)
 
 		self.Power.frequentUpdates = true
@@ -122,6 +118,13 @@ local function Shared(self, unit)
 		self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", T.UpdateThreat)
 	end
 
+	-- Portraits
+	if C.raidframe.raid_portraits == true then
+		self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self.Health)
+		self.Portrait:SetAllPoints(self.Health)
+		self.Portrait:SetAlpha(0.2)
+	end
+
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
@@ -133,14 +136,14 @@ local function Shared(self, unit)
 	if C.raidframe.icons_lfd_role == true and not (self:GetAttribute("unitsuffix") == "target") then 
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:Size(12)
-		self.LFDRole:Point("TOP", self.Health, 0, 8)
+		self.LFDRole:Point("TOPLEFT", self.Health, 0, 0)
 	end
 
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
 		self.ReadyCheck:Size(12)
-		self.ReadyCheck:Point("BOTTOMRIGHT", self.Health, 2, 1)
+		self.ReadyCheck:Point("BOTTOMRIGHT", self.Health, 2, 2)
 	end
 
 	-- Leader/Assistant/ML icons
@@ -166,7 +169,7 @@ local function Shared(self, unit)
 	--self.ResurrectIcon:SetTexture("Interface\\Icons\\Spell_Holy_Resurrection")
 	--self.ResurrectIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	self.ResurrectIcon:Size(13)
-	self.ResurrectIcon:Point("BOTTOMRIGHT", self.Health, 2, -7)
+	self.ResurrectIcon:Point("BOTTOMRIGHT", self.Health, 2, 3)
 
 	-- Debuff highlight
 	if not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
@@ -327,7 +330,7 @@ oUF:Factory(function(self)
 			"xOffset", T.Scale(7),
 			"point", "LEFT"
 		)
-		partytarget:Point("TOPLEFT", party, "BOTTOMLEFT", 0, -7)
+		partytarget:Point("TOPLEFT", party, "BOTTOMLEFT", 0, -16)
 
 		-- Party pets
 		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists] hide;show",
@@ -362,7 +365,7 @@ oUF:Factory(function(self)
 				end
 			end
 
-			partypet:Point("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, -((unit_height / 2) + 14.5))
+			partypet:Point("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, -((unit_height / 2) + 23))
 		end)
 		partypetupdate:RegisterEvent("PARTY_MEMBERS_CHANGED")
 		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -391,7 +394,7 @@ oUF:Factory(function(self)
 					"groupFilter", tostring(i),
 					"maxColumns", 5,
 					"unitsPerColumn", 1,
-					"columnSpacing", T.Scale(7),
+					"columnSpacing", T.Scale(16),
 					"columnAnchorPoint", "TOP"
 				)
 				if i == 1 then
@@ -424,7 +427,7 @@ oUF:Factory(function(self)
 				if i == 1 then
 					raidgroup:Point(unpack(C.position.unitframes.raid_heal))
 				else
-					raidgroup:Point("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -7)
+					raidgroup:Point("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -16)
 				end
 				raid[i] = raidgroup
 			end
@@ -443,7 +446,7 @@ oUF:Factory(function(self)
 					self:SetHeight(%d)
 				]]):format(unit_width, unit_height),
 				"showRaid", true,
-				"yOffset", T.Scale(-7),
+				"yOffset", T.Scale(-16),
 				"groupFilter", "MAINTANK",
 				"template", mt_template
 			)
@@ -451,3 +454,5 @@ oUF:Factory(function(self)
 		end
 	end
 end)
+
+-- edit by Oz of shestak. org --

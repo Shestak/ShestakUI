@@ -5,7 +5,7 @@ if C.minimap.enable ~= true then return end
 --	Minimap border
 ----------------------------------------------------------------------------------------
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
-MinimapAnchor:CreatePanel("ClassColor", C.minimap.size, C.minimap.size, "CENTER", UIParent, "CENTER", 0, 0)
+MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, "CENTER", UIParent, "CENTER", 0, 0)
 MinimapAnchor:RegisterEvent("ADDON_LOADED")
 MinimapAnchor:Point(unpack(C.position.minimap))
 
@@ -52,7 +52,7 @@ MiniMapMailIcon:Size(16)
 
 -- Move battleground icon
 MiniMapBattlefieldFrame:ClearAllPoints()
-MiniMapBattlefieldFrame:Point("TOP", Minimap, "TOP", 1, 6)
+MiniMapBattlefieldFrame:Point("BOTTOM", Minimap, "BOTTOM", 1, -7)
 MiniMapBattlefieldBorder:Hide()
 
 -- Hide world map button
@@ -113,7 +113,7 @@ GhostFrameContentsFrame:ClearAllPoints()
 GhostFrameContentsFrame:SetPoint("CENTER")
 GhostFrameContentsFrame.SetPoint = T.dummy
 GhostFrame:ClearAllPoints()
-GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
+GhostFrame:SetPoint("BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -51)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 -- LFDSearchStatus
@@ -300,7 +300,7 @@ if C.minimap.tracking_icon then
 	trackborder:Height(20)
 	trackborder:Width(20)
 	trackborder:Point("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
-	trackborder:SetTemplate("ClassColor")
+	trackborder:SetTemplate("Default")
 
 	MiniMapTrackingBackground:Hide()
 	MiniMapTracking:ClearAllPoints()
@@ -313,3 +313,5 @@ if C.minimap.tracking_icon then
 else
 	MiniMapTracking:Hide()
 end
+
+-- edit by Oz of shestak. org --

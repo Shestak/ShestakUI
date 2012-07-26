@@ -17,7 +17,7 @@ tinymap:Hide()
 local tinymapbg = CreateFrame("Frame", nil, tinymap)
 tinymapbg:SetAllPoints()
 tinymapbg:SetFrameLevel(0)
-tinymapbg:SetTemplate("ClassColor")
+tinymapbg:SetTemplate("Default")
 
 tinymap:SetScript("OnEvent", function(self, event, addon)
 	if addon ~= "Blizzard_BattlefieldMinimap" then return end
@@ -65,3 +65,5 @@ tinymap:SetScript("OnEvent", function(self, event, addon)
 		end
 	end)
 end)
+
+-- edit by Oz of shestak. org --

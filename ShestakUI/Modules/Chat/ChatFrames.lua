@@ -64,9 +64,6 @@ local function SetChatStyle(frame)
 	-- Removes crap from the bottom of the chatbox so it can go to the bottom of the screen
 	_G[chat]:SetClampedToScreen(false)
 
-	-- Stop the chat chat from fading out
-	_G[chat]:SetFading(false)
-
 	-- Move the chat edit box
 	_G[chat.."EditBox"]:ClearAllPoints()
 	_G[chat.."EditBox"]:Point("BOTTOMLEFT", ChatFrame1, "TOPLEFT", -10, 23)
@@ -156,9 +153,8 @@ local function SetChatStyle(frame)
 		end)
 	end
 
-	-- Rename combat log tab
+	-- Combat Log Tab
 	if _G[chat] == _G["ChatFrame2"] then
-		FCF_SetWindowName(_G[chat], GUILD_BANK_LOG)
 		CombatLogQuickButtonFrame_Custom:StripTextures()
 		CombatLogQuickButtonFrame_Custom:CreateBackdrop("Transparent")
 		CombatLogQuickButtonFrame_Custom.backdrop:Point("TOPLEFT", 1, -2)
@@ -280,3 +276,5 @@ local function SetupTempChat()
 	SetChatStyle(frame)
 end
 hooksecurefunc("FCF_OpenTemporaryWindow", SetupTempChat)
+
+-- edit by Oz of shestak. org --
