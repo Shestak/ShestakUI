@@ -173,7 +173,8 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[52042] = true		-- Healing Stream Totem
 		T.aoespam[1064] = true		-- Chain Heal
 		T.aoespam[51945] = true		-- Earthliving
-		T.aoespam[61295] = true		-- Riptide (HoT and instant heal)
+		T.aoespam[61295] = true		-- Riptide
+		T.aoespam[98021] = true		-- Spirit Link
 		-- Damaging spells
 		T.aoespam[421] = true		-- Chain Lightning
 		T.aoespam[45297] = true		-- Chain Lightning (Mastery proc)
