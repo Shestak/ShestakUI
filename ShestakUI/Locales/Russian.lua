@@ -228,7 +228,7 @@ L_POPUP_SETTINGS_BW = "Необходимо изменить позиции эл
 L_WELCOME_LINE_1 = "Добро пожаловать в ShestakUI "
 L_WELCOME_LINE_2_1 = "Введите /cfg для входа в настройки интерфейса, или посетите страницу http://shestak.org"
 L_WELCOME_LINE_2_2 = "для получения дополнительной информации."
-L_WELCOME_LINE_3 = "Примечание: данная версия ShestakUI под редакцией унций shestak.org."
+L_WELCOME_LINE_3 = "Примечание: данная версия ShestakUI изменена Oz."
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Смерт. Удар"
