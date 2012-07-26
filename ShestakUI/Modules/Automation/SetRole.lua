@@ -2,7 +2,7 @@
 if C.automation.auto_role ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Automatically sets your role(Corporation auto role setter by iSpawnAtHome)
+--	Automatically sets your role(Auto role setter by iSpawnAtHome)
 ----------------------------------------------------------------------------------------
 local ATT = GetActiveSpecGroup(false, false)
 local PTT = GetSpecialization(false, false, ATT)

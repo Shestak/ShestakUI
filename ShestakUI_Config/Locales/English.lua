@@ -41,6 +41,8 @@ L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat"
 L_GUI_AUTOMATION_ACCEPT_INVITE = "Auto accept invite"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Auto decline duel"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Auto accept quest"
+L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies"
+L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role"
 
 -- Skins options
 L_GUI_SKINS = "Stylization"
