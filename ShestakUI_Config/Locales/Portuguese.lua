@@ -1,7 +1,7 @@
-﻿if GetLocale() ~= "ptBR" then return end
+﻿if GetLocale() ~= "ptBR" and GetLocale() ~= "ptPT" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for ptBR client(Need full translation)
+--	Localization for ptBR and ptPT client(Need full translation)
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Total Reset UI"
 L_GUI_SET_SAVED_SETTTINGS = "Set settings Per-Character"

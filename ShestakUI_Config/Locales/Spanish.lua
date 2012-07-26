@@ -1,4 +1,4 @@
-﻿if GetLocale() ~= "esES" or GetLocale() ~= "esMX" then return end
+﻿if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for esES and esMX client(Thanks to eXecrate for the translation)

@@ -1,8 +1,8 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if T.client ~= "ptBR" then return end
+if T.client ~= "ptBR" and T.client ~= "ptPT" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for ptBR client(Need full translation)
+--	Localization for ptBR and ptPT client(Need full translation)
 ----------------------------------------------------------------------------------------
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "No Talents"

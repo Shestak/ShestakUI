@@ -235,7 +235,7 @@ L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Right bars on mouseover"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Petbar on mouseover (only for horizontal petbar)"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Hide pet bar"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Enable horizontal pet bar"
-L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Shapeshift/Stance/Totem bars on mouseover"
+L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Shapeshift/Stance bars on mouseover"
 L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Hide shapeshift"
 L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Enable horizontal stance bar"
 

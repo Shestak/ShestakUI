@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if T.client ~= "esES" or T.client ~= "esMX" then return end
+if T.client ~= "esES" and T.client ~= "esMX" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for esES and esMX client(Thanks to Seal and eXecrate for the translation)
@@ -165,8 +165,8 @@ L_PLANNER_DEATHKNIGHT_1 = "Sangre"
 L_PLANNER_DEATHKNIGHT_2 = "Escarcha"
 L_PLANNER_DEATHKNIGHT_3 = "Profana"
 L_PLANNER_DRUID_1 = "Equilibrio"
-L_PLANNER_DRUID_2 = "Combate feral"
-L_PLANNER_DRUID_3 = "Guardian"	--need review
+L_PLANNER_DRUID_2 = "Feral"
+L_PLANNER_DRUID_3 = "Guardián"
 L_PLANNER_DRUID_4 = "Restauración"
 L_PLANNER_HUNTER_1 = "Dominio de bestias"
 L_PLANNER_HUNTER_2 = "Puntería"
@@ -174,9 +174,9 @@ L_PLANNER_HUNTER_3 = "Supervivencia"
 L_PLANNER_MAGE_1 = "Arcano"
 L_PLANNER_MAGE_2 = "Fuego"
 L_PLANNER_MAGE_3 = "Escarcha"
-L_PLANNER_MONK_1 = "Brewmaster"	--need review
-L_PLANNER_MONK_2 = "Mistweaver"	--need review
-L_PLANNER_MONK_3 = "Windwalker"	--need review
+L_PLANNER_MONK_1 = "Maestro cervecero"
+L_PLANNER_MONK_2 = "Tejedor de niebla"
+L_PLANNER_MONK_3 = "Viajero del viento"
 L_PLANNER_PALADIN_1 = "Sagrado"
 L_PLANNER_PALADIN_2 = "Protección"
 L_PLANNER_PALADIN_3 = "Reprensión"
