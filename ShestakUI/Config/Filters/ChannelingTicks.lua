@@ -14,6 +14,8 @@ T.CastBarTicks = {
 	[GetSpellInfo(5143)] = 5,	-- Arcane Missiles
 	[GetSpellInfo(10)] = 8,		-- Blizzard
 	[GetSpellInfo(12051)] = 4,	-- Evocation
+	-- Monk
+	[GetSpellInfo(115175)] = 9,	-- Soothing Mist
 	-- Priest
 	[GetSpellInfo(15407)] = 3,	-- Mind Flay
 	[GetSpellInfo(48045)] = 5,	-- Mind Sear
