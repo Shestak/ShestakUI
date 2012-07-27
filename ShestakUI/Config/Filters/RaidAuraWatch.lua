@@ -90,6 +90,9 @@ if C.raidframe.plugins_aura_watch == true then
 		end
 
 		T.debuffids = {
+		-----------------------------------------------------------------
+		-- Pandaria
+		-----------------------------------------------------------------
 		-- Heart of Fear
 			-- Imperial Vizier Zor'lok
 			SpellName(122761),	-- Exhale
@@ -144,9 +147,12 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(119985),	-- Dread Spray
 			SpellName(119086),	-- Penetrating Bolt
 			SpellName(119775),	-- Reaching Attack
+		-----------------------------------------------------------------
+		-- Cataclysm
+		-----------------------------------------------------------------
 		-- Baradin Hold
 			-- Argaloth
-			SpellName(95173),	-- Consuming Darkness
+			--[[SpellName(95173),	-- Consuming Darkness
 			-- Occu'thar
 			SpellName(96913),	-- Searing Shadows
 			-- Alizabal
@@ -307,8 +313,10 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(105445),	-- Blistering heat
 			SpellName(109603),	-- Tetanus
 			SpellName(110141),	-- Shrapnel
-			SpellName(108649),	-- Corrupting Parasite
+			SpellName(108649),	-- Corrupting Parasite]]
+		-----------------------------------------------------------------
 		-- PvP
+		-----------------------------------------------------------------
 			-- Death Knight
 			--[[SpellName(51209),	-- Hungering Cold
 			SpellName(47476),	-- Strangulate
