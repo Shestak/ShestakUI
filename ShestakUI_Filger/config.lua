@@ -1686,8 +1686,6 @@ Filger_Spells = {
 			{spellID = 84617, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vendetta
 			{spellID = 79140, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Waylay
-			--MOP{spellID = 51693, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hemorrhage
 			{spellID = 16511, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
 			-- Glyph of Hemorrhage
@@ -2773,106 +2771,94 @@ Filger_Spells = {
 			-- Priest
 			-- Psychic Horror
 			{spellID = 64044, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mind Control
+			-- Dominate Mind
 			{spellID = 605, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Psychic Scream
 			{spellID = 8122, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silence
 			{spellID = 15487, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mind Flay
-			{spellID = 15407, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Sin and Punishment
-			--MOP{spellID = 87204, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Mind Blast
 			{spellID = 87194, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mind Flay
+			{spellID = 15407, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Rogue
-			-- Dismantle
-			{spellID = 51722, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Kidney Shot
+			{spellID = 408, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Cheap Shot
+			{spellID = 1833, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Sap
+			{spellID = 6770, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Blind
 			{spellID = 2094, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Gouge
 			{spellID = 1776, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Sap
-			{spellID = 6770, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Garrote - Silence
 			{spellID = 1330, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Cheap Shot
-			{spellID = 1833, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Kidney Shot
-			{spellID = 408, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Blade Twisting
-			--MOP{spellID = 31125, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Smoke Bomb
+			{spellID = 88611, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Dismantle
+			{spellID = 51722, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Deadly Throw
 			{spellID = 26679, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Waylay
-			--MOP{spellID = 51693, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Crippling Poison
 			{spellID = 3409, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mind-numbing Poison
 			{spellID = 5760, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Smoke Bomb
-			{spellID = 88611, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Shaman
 			-- Hex
 			{spellID = 51514, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Earthquake
+			{spellID = 77505, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthgrab
 			{spellID = 64695, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthbind
 			{spellID = 3600, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Shock
 			{spellID = 8056, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Earthquake
-			{spellID = 77505, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frostbrand Attack
 			{spellID = 8034, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Thunderstorm
-			--MOP{spellID = 100955, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 51490, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Warlock
-			-- Aura of Foreboding
-			--MOP{spellID = 93975, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Demonic Leap
-			{spellID = 54785, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mortal Coil
-			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowfury
+			{spellID = 30283, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Axe Toss (Felguard)
+			{spellID = 89766, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Aftermath
+			{spellID = 85387, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 5782, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
 			{spellID = 5484, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Shadowfury
-			{spellID = 30283, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Aftermath
-			--MOP{spellID = 18118, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Curse of Exhaustion
-			{spellID = 18223, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Unstable Affliction
-			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
+			-- Mortal Coil
+			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Unstable Affliction
+			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spell Lock (Felhunter)
 			{spellID = 24259, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Axe Toss (Felguard)
-			{spellID = 89766, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shadowsnare
 			{spellID = 63311, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Curse of Exhaustion
+			{spellID = 18223, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Warrior
 			-- Throwdown
 			--MOP{spellID = 85388, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Intimidating Shout
-			{spellID = 20511, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Disarm
-			{spellID = 676, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Silenced (Gag Order)
-			{spellID = 18498, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Charge Stun
-			{spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Improved Hamstring
-			--MOP{spellID = 23694, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Charge Stun
+			{spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Intimidating Shout
+			{spellID = 20511, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Silenced (Gag Order)
+			{spellID = 18498, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Disarm
+			{spellID = 676, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hamstring
 			{spellID = 1715, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Piercing Howl
@@ -2883,10 +2869,10 @@ Filger_Spells = {
 			-- Racials
 			-- War Stomp
 			{spellID = 20549, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Arcane Torrent
-			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Quaking Palm
 			{spellID = 107079, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Arcane Torrent
+			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Other
 			-- Rocket Fuel Leak
@@ -3078,14 +3064,12 @@ Filger_Spells = {
 
 			-- Psychic Horror
 			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Mind Control
+			-- Dominate Mind
 			{spellID = 605, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Psychic Scream
 			{spellID = 8122, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silence
 			{spellID = 15487, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Sin and Punishment
-			--MOP{spellID = 87204, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Mind Blast
 			{spellID = 87194, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3101,18 +3085,18 @@ Filger_Spells = {
 			-- Shadow Dance
 			{spellID = 51713, unitID = "target", caster = "all", filter = "BUFF"},
 
-			-- Smoke Bomb
-			{spellID = 88611, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Blind
-			{spellID = 2094, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Sap
-			{spellID = 6770, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Garrote - Silence
-			{spellID = 1330, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Cheap Shot
-			{spellID = 1833, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Kidney Shot
 			{spellID = 408, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Cheap Shot
+			{spellID = 1833, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Sap
+			{spellID = 6770, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Blind
+			{spellID = 2094, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Garrote - Silence
+			{spellID = 1330, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Smoke Bomb
+			{spellID = 88611, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Shaman
 			-- Grounding Totem Effect
@@ -3135,30 +3119,26 @@ Filger_Spells = {
 			-- Soulstone
 			{spellID = 20707, unitID = "target", caster = "all", filter = "BUFF"},
 
-			-- Unstable Affliction
-			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
-			-- Aura of Foreboding
-			--MOP{spellID = 93975, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Demonic Leap
-			{spellID = 54785, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Mortal Coil
-			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Banish
+			{spellID = 710, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Shadowfury
+			{spellID = 30283, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Axe Toss (Felguard)
+			{spellID = 89766, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Aftermath
+			{spellID = 85387, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 5782, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
 			{spellID = 5484, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Shadowfury
-			{spellID = 30283, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Banish
-			{spellID = 710, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Aftermath
-			--MOP{spellID = 18118, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Mortal Coil
+			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Unstable Affliction
+			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spell Lock (Felhunter)
 			{spellID = 24259, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Axe Toss (Felguard)
-			{spellID = 89766, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warrior
 			-- Spell Reflection
@@ -3174,22 +3154,22 @@ Filger_Spells = {
 
 			-- Throwdown
 			--MOP{spellID = 85388, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Shockwave
+			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Charge Stun
+			{spellID = 7922, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
 			{spellID = 20511, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silenced (Gag Order)
 			{spellID = 18498, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Charge Stun
-			{spellID = 7922, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Shockwave
-			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Racials
 			-- War Stomp
 			{spellID = 20549, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Arcane Torrent
-			{spellID = 28730, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Quaking Palm
 			{spellID = 107079, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Arcane Torrent
+			{spellID = 28730, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- All
 			-- Warsong flag
@@ -3199,7 +3179,6 @@ Filger_Spells = {
 			{spellID = 34976, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Seaforium
 			{spellID = 52418, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Seaforium 2
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Drink
