@@ -350,8 +350,6 @@ Filger_Spells = {
 			{spellID = 81281, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Faerie Fire
 			{spellID = 770, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Entangling Roots
-			{spellID = 339, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 1822, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rip
@@ -835,9 +833,7 @@ Filger_Spells = {
 			{spellID = 11366, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Combustion
 			{spellID = 83853, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Blast Wave
-			{spellID = 11113, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Freeze (Water Elemental)
+			-- Freeze (Pet)
 			{spellID = 33395, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -845,8 +841,6 @@ Filger_Spells = {
 			--MOP{spellID = 55080, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Improved Cone of Cold
-			--MOP{spellID = 83302, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frostfire Bolt
 			{spellID = 44614, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
@@ -890,8 +884,6 @@ Filger_Spells = {
 			{spellID = 12043, filter = "CD"},
 			-- Arcane Power
 			{spellID = 12042, filter = "CD"},
-			-- Blast Wave
-			{spellID = 11113, filter = "CD"},
 			-- Dragon's Breath
 			{spellID = 31661, filter = "CD"},
 			-- Cone of Cold
@@ -910,7 +902,7 @@ Filger_Spells = {
 			{spellID = 55342, filter = "CD"},
 			-- Ring of Frost
 			{spellID = 113724, filter = "CD"},
-			-- Freeze (Elemental)
+			-- Freeze (Pet)
 			{spellID = 33395, filter = "CD"},
 			-- Combustion
 			{spellID = 11129, filter = "CD"},
@@ -2628,30 +2620,26 @@ Filger_Spells = {
 			-- Death Knight
 			-- Gnaw (Pet)
 			{spellID = 47481, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Gnaw (Pet - mutant)
+			-- Monstrous Blow (Pet - mutant)
 			{spellID = 91797, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Asphyxiate
+			{spellID = 108194, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Strangulate
 			{spellID = 47476, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Dark Simulacrum
+			{spellID = 77606, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Necrotic Strike
+			{spellID = 73975, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Chains of Ice
 			{spellID = 45524, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Chilblains
+			{spellID = 50435, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Desecration
 			--MOP{spellID = 55741, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hungering Cold
 			--MOP{spellID = 49203, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Necrotic strike
-			{spellID = 73975, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Dark simulacrum
-			{spellID = 77606, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Chilblains
-			{spellID = 50435, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Druid
-			-- Skull Bash
-			{spellID = 80965, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Solar Beam
-			{spellID = 78675, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Fungal Growth
-			{spellID = 81281, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cyclone
 			{spellID = 33786, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hibernate
@@ -2662,6 +2650,8 @@ Filger_Spells = {
 			{spellID = 22570, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Pounce
 			{spellID = 9005, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Solar Beam
+			{spellID = 78675, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entangling Roots
 			{spellID = 339, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Immobilized
@@ -2670,24 +2660,26 @@ Filger_Spells = {
 			{spellID = 58180, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Typhoon
 			{spellID = 61391, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Fungal Growth
+			{spellID = 81281, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Hunter
 			-- Aspect of the Pack
 			{spellID = 13159, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Intimidation
+			{spellID = 24394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap
 			{spellID = 3355, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Glyph of Freezing Trap
-			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Scare Beast
 			{spellID = 1513, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Scatter Shot
 			{spellID = 19503, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Silencing Shot
-			{spellID = 34490, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Wyvern sting
 			{spellID = 19386, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Intimidation
-			{spellID = 24394, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Silencing Shot
+			{spellID = 34490, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Entrapment
+			{spellID = 19185, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Barrage
 			{spellID = 35101, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Shot
@@ -2696,8 +2688,8 @@ Filger_Spells = {
 			{spellID = 13810, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Wing Clip
 			--MOP{spellID = 2974, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Entrapment
-			{spellID = 19185, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Glyph of Freezing Trap
+			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Pets
 			-- Sonic Blast (Bat)
 			{spellID = 50519, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2723,42 +2715,38 @@ Filger_Spells = {
 			{spellID = 44957, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Mage
-			-- Dragon's Breath
-			{spellID = 31661, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Cauterize
+			{spellID = 87023, unitID = "player", caster = "player", filter = "DEBUFF"},
+			-- Deep Freeze
+			{spellID = 44572, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Polymorph
 			{spellID = 118, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Ring of Frost
+			{spellID = 82691, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Dragon's Breath
+			{spellID = 31661, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Combustion Impact
+			{spellID = 118271, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frostjaw
 			{spellID = 102051, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silenced - Improved Counterspell
 			{spellID = 55021, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Deep Freeze
-			{spellID = 44572, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Freeze (Water Elemental)
+			-- Freeze (Pet)
 			{spellID = 33395, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shattered Barrier
 			--MOP{spellID = 55080, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Chilled
-			{spellID = 6136, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Improved Cone of Cold
-			--MOP{spellID = 83302, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Slow
 			{spellID = 31589, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Ring of Frost
-			{spellID = 82691, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Combustion Impact
-			{spellID = 118271, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Blast Wave
-			{spellID = 11113, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Cauterize
-			{spellID = 87023, unitID = "player", caster = "player", filter = "DEBUFF"},
 			-- Frostbolt
 			{spellID = 116, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frostfire Bolt
 			{spellID = 44614, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Chilled
+			{spellID = 7321, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Monk
 			-- Fists of Fury
@@ -2769,14 +2757,14 @@ Filger_Spells = {
 			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
+			-- Hammer of Justice
+			{spellID = 853, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Repentance
 			{spellID = 20066, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
 			{spellID = 31935, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield with Glyph
 			{spellID = 63529, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Hammer of Justice
-			{spellID = 853, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seal of Justice proc
 			{spellID = 20170, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Denounce
@@ -2935,12 +2923,12 @@ Filger_Spells = {
 
 			-- Gnaw (Pet)
 			{spellID = 47481, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Gnaw (Pet - mutant)
+			-- Monstrous Blow (Pet - mutant)
 			{spellID = 91797, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Strangulate
-			{spellID = 47476, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Strangulate
+			{spellID = 47476, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Druid
 			-- Innervate
@@ -2962,8 +2950,6 @@ Filger_Spells = {
 
 			-- Cyclone
 			{spellID = 33786, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Solar Beam
-			{spellID = 78675, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Hibernate
 			{spellID = 2637, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
@@ -2972,8 +2958,10 @@ Filger_Spells = {
 			{spellID = 22570, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Pounce
 			{spellID = 9005, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Immobilized
-			{spellID = 45334, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Solar Beam
+			{spellID = 78675, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Entangling Roots
+			{spellID = 339, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Hunter
 			-- Aspect of the Pack
@@ -2983,18 +2971,19 @@ Filger_Spells = {
 			-- Deterrence
 			{spellID = 19263, unitID = "target", caster = "all", filter = "BUFF"},
 
+			-- Intimidation
+			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap
 			{spellID = 3355, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Scare Beast
 			{spellID = 1513, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Scatter Shot
 			{spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Silencing Shot
-			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Wyvern sting
 			{spellID = 19386, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Intimidation
-			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Silencing Shot
+			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
+			
 			-- Sonic Blast (Bat)
 			{spellID = 50519, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Pin (Crab)
@@ -3024,20 +3013,20 @@ Filger_Spells = {
 
 			-- Cauterize
 			{spellID = 87023, unitID = "target", caster = "target", filter = "DEBUFF"},
-			-- Dragon's Breath
-			{spellID = 31661, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Deep Freeze
+			{spellID = 44572, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Polymorph
 			{spellID = 118, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Ring of Frost
+			{spellID = 82691, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Dragon's Breath
+			{spellID = 31661, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Combustion Impact
+			{spellID = 118271, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Frostjaw
 			{spellID = 102051, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silenced - Improved Counterspell
 			{spellID = 55021, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Deep Freeze
-			{spellID = 44572, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Combustion Impact
-			{spellID = 118271, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Ring of Frost
-			{spellID = 82691, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Monk
 			-- Touch of Karma
