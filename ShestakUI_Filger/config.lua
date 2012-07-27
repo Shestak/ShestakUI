@@ -775,14 +775,16 @@ Filger_Spells = {
 			{spellID = 44544, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brain Freeze
 			{spellID = 57761, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Hot Streak
-			--MOP{spellID = 44445, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Missiles!
+			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Heating Up
+			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Pyroblast!
+			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
 			--MOP{spellID = 12536, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Impact
 			--MOP{spellID = 64343, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Arcane Missiles!
-			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invocation
 			--MOP{spellID = 87098, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incanter's Absorption
@@ -831,8 +833,6 @@ Filger_Spells = {
 			{spellID = 44457, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Nether Tempest
 			{spellID = 114923, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Pyroblast!
-			--MOP{spellID = 92315, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pyroblast
 			{spellID = 11366, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Combustion
