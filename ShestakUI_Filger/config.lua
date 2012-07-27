@@ -928,6 +928,8 @@ Filger_Spells = {
 			{spellID = 112948, filter = "CD"},
 			-- Frozen Orb
 			{spellID = 84714, filter = "CD"},
+			-- Flamestrike
+			{spellID = 2120, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
