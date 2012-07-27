@@ -783,8 +783,6 @@ Filger_Spells = {
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
 			--MOP{spellID = 12536, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Impact
-			--MOP{spellID = 64343, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invocation
 			--MOP{spellID = 87098, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incanter's Absorption
@@ -972,7 +970,7 @@ Filger_Spells = {
 
 			-- Internal
 			-- Cauterize
-			{spellID = 87023, filter = "ICD", trigger = "DEBUFF", duration = 60},
+			{spellID = 87023, filter = "ICD", trigger = "DEBUFF", duration = 120},
 			-- Lightweave
 			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Power Torrent
@@ -2749,8 +2747,8 @@ Filger_Spells = {
 			{spellID = 31589, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ring of Frost
 			{spellID = 82691, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Impact
-			--MOP{spellID = 12355, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Combustion Impact
+			{spellID = 118271, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Blast Wave
 			{spellID = 11113, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cauterize
@@ -3034,8 +3032,8 @@ Filger_Spells = {
 			{spellID = 55021, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Deep Freeze
 			{spellID = 44572, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Impact
-			--MOP{spellID = 12355, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Combustion Impact
+			{spellID = 118271, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Ring of Frost
 			{spellID = 82691, unitID = "target", caster = "all", filter = "DEBUFF"},
 
