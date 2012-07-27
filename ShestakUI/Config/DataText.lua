@@ -144,9 +144,8 @@ LPSTAT_CONFIG = {
 			--   Avoidance% [avoidance]			MP5 I5SR [manaregen]			Armor Value [armor]				Resilience [resilience]
 		spec1fmt = "SP: ".."[healing]".."  Crit: ".."[spellcrit]%".."  Haste: ".."[spellhaste]%", -- Spec #1 string
 		spec2fmt = "SP: ".."[spellpower]".."  Crit: ".."[spellcrit]%".."  Hit: ".."[spellhit]%", -- Spec #2 string
-		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
-		x_off = -62, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20,
-		justify_h = "right",
+		anchor_frame = "Talents", anchor_to = "right", anchor_from = "left",
+		x_off = 0, y_off = 0,
 	},
 -- Bottomleft block
 	Bags = {
@@ -199,8 +198,9 @@ LPSTAT_CONFIG = {
 			["Marksmanship"] = "Marks.",
 			["Beast Mastery"] = "B.M.",
 		},
-		anchor_frame = "Stats", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = -3, tip_y = 13
+		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
+		x_off = -16, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20,
+		justify_h = "right",
 	},
 -- MiniMap block
 	Ping = {
