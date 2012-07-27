@@ -183,11 +183,13 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 
 		if not unit then return end
 
-		local race = UnitRace(unit)
+		local race, englishRace = UnitRace(unit)
 		local level = UnitLevel(unit)
 		local levelColor = GetQuestDifficultyColor(level)
 		local classification = UnitClassification(unit)
 		local creatureType = UnitCreatureType(unit)
+		local _, faction = UnitFactionGroup(unit)
+		local _, playerFaction = UnitFactionGroup("player")
 
 		if level and level == -1 then
 			if classification == "worldboss" then
@@ -205,6 +207,20 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		if not C.tooltip.title then _G["GameTooltipTextLeft1"]:SetText(name) end
 
 		if UnitIsPlayer(unit) then
+			if UnitIsAFK(unit) then
+				self:AppendText((" %s"):format("|cffE7E716"..L_CHAT_AFK.."|r"))
+			elseif UnitIsDND(unit) then
+				self:AppendText((" %s"):format("|cffFF0000"..L_CHAT_DND.."|r"))
+			end
+
+			if UnitIsPlayer(unit) and englishRace == "Pandaren" and faction ~= "" and faction ~= playerFaction then
+				local hex = "cffff3333"
+				if faction == "Alliance" then
+					hex = "cff69ccf0"
+				end
+				self:AppendText((" [|%s%s|r]"):format(hex, faction:sub(1, 1)))
+			end
+
 			if GetGuildInfo(unit) then
 				_G["GameTooltipTextLeft2"]:SetFormattedText("%s", GetGuildInfo(unit))
 				if UnitIsInMyGuild(unit) then
