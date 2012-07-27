@@ -15,18 +15,18 @@ LPSTAT_FONT = {
 LTIPICONSIZE = 11							-- Icon sizes in info tips
 
 -- Player class coloring function for optional use with fmt strings config.
--- Example use: fmt = class'G:'.." %d"..class'/'.."%d" (colors 'G:' and '/' and numbers retain the default text color)
--- Example2: fmt = class'%d'.."fps" (colors the fps number and "fps" retains the default text color)
+-- Example use: fmt = class"G:".." %d"..class"/".."%d" (colors "G:" and "/" and numbers retain the default text color)
+-- Example2: fmt = class"%d".."fps" (colors the fps number and "fps" retains the default text color)
 local ctab = CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS
 local function class(string)
-	local color = ctab[select(2,UnitClass'player')]
-	return format("|cff%02x%02x%02x%s|r",color.r*255,color.g*255,color.b*255,string or '')
+	local color = ctab[select(2, UnitClass("player"))]
+	return format("|cff%02x%02x%02x%s|r", color.r * 255, color.g * 255, color.b * 255, string or "")
 end
 
 -- Modules Config. Note: omitting any variable will likely cause errors, check carefully when updating.
 -- * More tip_anchor strings: http://www.wowwiki.com/API_GameTooltip_SetOwner
--- * To color any of your 'fmt' strings, use hex format ("|cffFFFF55*string*|r") or the class format described above.
--- * You can start a new line by using '\n' in your format strings.
+-- * To color any of your "fmt" strings, use hex format ("|cffFFFF55*string*|r") or the class format described above.
+-- * You can start a new line by using "\n" in your format strings.
 LPSTAT_CONFIG = {
 -- Bottomleft block
 	Clock = {
@@ -127,7 +127,7 @@ LPSTAT_CONFIG = {
 		enabled = C.stats.location,
 		subzone = true, -- Set to false to display the main zone's name instead of the subzone.
 		truncate = 0, -- Max number of letters for location text, set to 0 to disable.
-		coord_fmt = "%d,%d", -- "44,19", to add tenths, use '%.1f' (digit determines decimal)
+		coord_fmt = "%d,%d", -- "44,19", to add tenths, use "%.1f" (digit determines decimal)
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
 		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
@@ -204,22 +204,10 @@ LPSTAT_CONFIG = {
 }
 
 LPSTAT_PROFILES = {
-	MAGE = {
+	DEATHKNIGHT = {
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-		}
-	},
-	PRIEST = {
-		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-		}
-	},
-	WARLOCK = {
-		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+			spec1fmt = class"Mastery: ".."[mastery]"..class" Armor: ".."[armor]"..class" Avoid: ".."[avoidance]%",
+			spec2fmt = class"Mastery: ".."[mastery]"..class" Hit: ".."[meleehit]%"..class" Haste: ".."[meleehaste]%",
 		}
 	},
 	HUNTER = {
@@ -228,28 +216,40 @@ LPSTAT_PROFILES = {
 			spec2fmt = class"AP: ".."[rangedap]"..class" Crit: ".."[rangedcrit]%"..class" Hit: ".."[rangedhit]%",
 		}
 	},
-	ROGUE = {
+	MAGE = {
 		Stats = {
-			spec1fmt = class"AP: ".."[ap]"..class" Exp: ".."[expertise]%"..class" Hit: ".."[meleehit]%",
-			spec2fmt = class"AP: ".."[ap]"..class" Exp: ".."[expertise]%"..class" Hit: ".."[meleehit]%",
-		}
-	},
-	WARRIOR = {
-		Stats = {
-			spec1fmt = class"Armor: ".."[armor]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
-			spec2fmt = class"AP: ".."[ap]"..class" Crit: ".."[meleecrit]%"..class" Hit: ".."[meleehit]%",
-		}
-	},
-	DEATHKNIGHT = {
-		Stats = {
-			spec1fmt = class"Mastery: ".."[mastery]"..class" Armor: ".."[armor]"..class" Avoid: ".."[avoidance]%",
-			spec2fmt = class"Mastery: ".."[mastery]"..class" Hit: ".."[meleehit]%"..class" Haste: ".."[meleehaste]%",
+			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
 		}
 	},
 	PALADIN = {
 		Stats = {
 			spec1fmt = class"Mastery: ".."[mastery]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
 			spec1fmt = class"Mastery: ".."[mastery]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
+		}
+	},
+	PRIEST = {
+		Stats = {
+			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+		}
+	},
+	ROGUE = {
+		Stats = {
+			spec1fmt = class"AP: ".."[ap]"..class" Exp: ".."[expertise]%"..class" Hit: ".."[meleehit]%",
+			spec2fmt = class"AP: ".."[ap]"..class" Exp: ".."[expertise]%"..class" Hit: ".."[meleehit]%",
+		}
+	},
+	WARLOCK = {
+		Stats = {
+			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+		}
+	},
+	WARRIOR = {
+		Stats = {
+			spec1fmt = class"Armor: ".."[armor]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
+			spec2fmt = class"AP: ".."[ap]"..class" Crit: ".."[meleecrit]%"..class" Hit: ".."[meleehit]%",
 		}
 	},
 }
