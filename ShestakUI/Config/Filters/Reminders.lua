@@ -100,12 +100,12 @@ end
 
 	Spells only Requirements:
 		negate_spells - List of spells in a group, if you have anyone of these spells the icon will immediately hide and stop running the spell check (these should be other peoples spells)
-		reversecheck - only works if you provide a role or a tree, instead of hiding the frame when you have the buff, it shows the frame when you have the buff, doesn't work with weapons
-		negate_reversecheck - if reversecheck is set you can set a talent tree to not follow the reverse check, doesn't work with weapons
+		reversecheck - only works if you provide a role or a spec, instead of hiding the frame when you have the buff, it shows the frame when you have the buff, doesn't work with weapons
+		negate_reversecheck - if reversecheck is set you can set a spec to not follow the reverse check, doesn't work with weapons
 
 	Requirements: (These work for both spell and weapon checks)
 		role - you must be a certain role for it to display (Tank, Melee, Caster)
-		tree - you must be active in a specific talent tree for it to display (1, 2, 3) note: tree order can be viewed from left to right when you open your talent pane
+		spec - you must be active in a specific spec for it to display (1, 2, 3) note: spec order can be viewed from top to bottom when you open your talent pane
 		level - the minimum level you must be (most of the time we don't need to use this because it will register the spell learned event if you don't know the spell, but in the case of weapon enchants this is useful)
 		personal - aura must come from the player
 
