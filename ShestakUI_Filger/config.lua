@@ -1699,7 +1699,7 @@ Filger_Spells = {
 			-- Find Weakness
 			{spellID = 91021, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Smoke Bomb
-			{spellID = 88611, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--{spellID = 76577, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Deadly Poison
 			{spellID = 2818, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Mind-numbing Poison
@@ -1707,7 +1707,7 @@ Filger_Spells = {
 			-- Crippling Poison
 			{spellID = 3409, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Wound Poison
-			--MOP{spellID = 13218, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 8680, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2802,7 +2802,7 @@ Filger_Spells = {
 			-- Garrote - Silence
 			{spellID = 1330, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Smoke Bomb
-			{spellID = 88611, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 76577, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dismantle
 			{spellID = 51722, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Deadly Throw
@@ -3102,7 +3102,7 @@ Filger_Spells = {
 			-- Garrote - Silence
 			{spellID = 1330, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Smoke Bomb
-			{spellID = 88611, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 76577, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Shaman
 			-- Grounding Totem Effect
