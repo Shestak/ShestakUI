@@ -172,13 +172,6 @@ SLASH_SPEC2 = "/spec"
 SLASH_SPEC3 = "/ыы"
 
 ----------------------------------------------------------------------------------------
---	Fix combatlog after a crash (2.4 and 3.3.2 bug)
-----------------------------------------------------------------------------------------
-SlashCmdList.CLFIX = function() CombatLogClearEntries() end
-SLASH_CLFIX1 = "/clfix"
-SLASH_CLFIX2 = "/сдашч"
-
-----------------------------------------------------------------------------------------
 --	Demo mode for DBM
 ----------------------------------------------------------------------------------------
 SlashCmdList.DBMTEST = function() if IsAddOnLoaded("DBM-Core") then DBM:DemoMode() end end
