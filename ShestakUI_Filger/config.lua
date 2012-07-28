@@ -255,12 +255,10 @@ Filger_Spells = {
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
 			{spellID = 5229, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Frenzied Regeneration
-			{spellID = 22842, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Glyph of Frenzied Regeneration
+			{spellID = 124769, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tiger's Fury
 			{spellID = 5217, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stampede
-			--MOP{spellID = 81017, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -362,8 +360,8 @@ Filger_Spells = {
 			{spellID = 33876, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Demoralizing Roar
 			{spellID = 99, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Skull Bash (Bear Form)
-			{spellID = 80964, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Skull Bash
+			{spellID = 82365, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Immobilized
 			{spellID = 45334, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Infected Wounds
@@ -441,12 +439,10 @@ Filger_Spells = {
 			{spellID = 6795, filter = "CD"},
 			-- Enrage
 			{spellID = 5229, filter = "CD"},
-			-- Faerie Fire(Feral)
-			--MOP{spellID = 16857, filter = "CD"},
-			-- Feral Charge - Bear
-			{spellID = 16979, filter = "CD", absID = true},
-			-- Feral Charge - Cat
-			{spellID = 49376, filter = "CD", absID = true},
+			-- Faerie Fire
+			{spellID = 770, filter = "CD"},
+			-- Wild Charge
+			{spellID = 102401, filter = "CD"},
 			-- Mighty Bash
 			{spellID = 5211, filter = "CD"},
 			-- Maim
@@ -457,8 +453,8 @@ Filger_Spells = {
 			--MOP{spellID = 467, filter = "CD"},
 			-- Tree of Life
 			{spellID = 33891, filter = "CD"},
-			-- Skull Bash - Cat
-			{spellID = 80965, filter = "CD"},
+			-- Skull Bash
+			{spellID = 106839, filter = "CD"},
 			-- Tiger's Fury
 			{spellID = 5217, filter = "CD"},
 
@@ -2933,8 +2929,6 @@ Filger_Spells = {
 			{spellID = 77764, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Survival Instincts
 			{spellID = 61336, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Frenzied Regeneration
-			{spellID = 22842, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Tree of life
 			{spellID = 33891, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserk
