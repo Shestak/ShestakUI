@@ -1524,6 +1524,12 @@ Filger_Spells = {
 			{spellID = 73325, filter = "CD"},
 			-- Void Tendrils
 			{spellID = 108920, filter = "CD"},
+			-- Cascade
+			{spellID = 121148, filter = "CD"},
+			-- Divine Star
+			{spellID = 110745, filter = "CD"},
+			-- Halo
+			{spellID = 120692, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2969,7 +2975,7 @@ Filger_Spells = {
 			{spellID = 19386, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
 			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
-			
+
 			-- Sonic Blast (Bat)
 			{spellID = 50519, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Pin (Crab)
