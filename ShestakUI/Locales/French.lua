@@ -335,7 +335,6 @@ L_SLASHCMD_HELP = {
 	"/teleport - Téléportation dans le donjon aléatoire en cours.",
 	"/luaerror ON|OFF - Active/Désactive l'affiche des erreurs LUA.",
 	"/spec, /ss - Bascule d'une spécialisation talent à l'autre.",
-	"/clfix - Corrige le journal de combat.",
 	"/heal - Bascule vers l'interface 'Heal'.",
 	"/dps - Bascule sur l'interface 'DPS'.",
 	"/frame - Description is not ready.",

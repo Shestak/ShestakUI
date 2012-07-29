@@ -332,7 +332,6 @@ L_SLASHCMD_HELP = {
 	"/teleport - Teleportation from random dungeon.",
 	"/luaerror ON|OFF - Toggles display of lua errors.",
 	"/spec, /ss - Switches between talent spec's.",
-	"/clfix - Fixes the combat log.",
 	"/heal - Switches to 'Heal' layout.",
 	"/dps - Switches to 'DPS' layout.",
 	"/frame - Description is not ready.",

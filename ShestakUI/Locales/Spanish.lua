@@ -335,7 +335,6 @@ L_SLASHCMD_HELP = {
 	"/teleport - Teleportarse desde una mazmorra aleatoria.",
 	"/luaerror ON|OFF - Activa la visión de errores lua.",
 	"/spec, /ss - Cambia entre especializaciones de talentos.",
-	"/clfix - Arregla el registro de combate.",
 	"/heal - Cambia a la apariencia de 'Curación'.",
 	"/dps - Cambia a la apariencia de 'Daño'.",
 	"/frame - La descripción aun no está lista.",

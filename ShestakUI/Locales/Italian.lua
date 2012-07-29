@@ -335,7 +335,6 @@ L_SLASHCMD_HELP = {
 	"/teleport - Teletrasporto dalle spedizioni casuali.",
 	"/luaerror ON|OFF - Attiva/disattiva la visualizzazione degli errori LUA.",
 	"/spec, /ss - Passa da un albero talenti all'altro",
-	"/clfix - Correggi il Registro di combattimento.",
 	"/heal - Passa alla configurazione 'guaritori'.",
 	"/dps - Passa alla configurazione 'assaltatori'",
 	"/frame - La descrizione non è pronta.",
