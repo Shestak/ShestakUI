@@ -135,6 +135,7 @@ local function LoadSkin()
 
 			button.dragButton.favorite:SetParent(button.dragButton.backdrop)
 			button.petTypeIcon:SetParent(button.backdrop)
+			button.petTypeIcon:SetDrawLayer("OVERLAY")
 			button.isDead:SetParent(button.dragButton.backdrop)
 
 			name:SetParent(button.backdrop)
