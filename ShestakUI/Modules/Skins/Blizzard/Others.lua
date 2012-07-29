@@ -1,5 +1,4 @@
 local T, C, L = unpack(select(2, ...))
-if T.MOPVersion then return end
 
 ----------------------------------------------------------------------------------------
 --	Reskin Blizzard windows(by Tukz and Co)
