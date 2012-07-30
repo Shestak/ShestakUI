@@ -33,6 +33,13 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "当敌人在进食喝水的时候在队伍/团�
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "当你成功打断的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS = "当有人与你使用同一法术的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "检视所有队员的施法"
+L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Announce your Lightwell" -- Needs review
+L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Announce Toy Train or Direbrew's Remote cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Says thanks for some spells" -- Needs review
+L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown.Pull(#))" -- Needs review
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food" -- Needs review
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)" -- Needs review
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automation" -- Needs review

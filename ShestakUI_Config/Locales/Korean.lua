@@ -33,6 +33,13 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in chat when arena enemy is drinking"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Announce in party/raid when you interrupt"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast some spell"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members"
+L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Announce your Lightwell"
+L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Announce Toy Train or Direbrew's Remote cast"
+L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Says thanks for some spells"
+L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown.Pull(#))"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automation"
