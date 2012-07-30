@@ -37,7 +37,6 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if C.unitframe.enable then
-		PlayerFrame:Kill()
 		if T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune ~= true then
 			RuneFrame:Kill()
 		end
