@@ -41,7 +41,9 @@ local function LoadSkin()
 		"ScrollOfResurrectionSelectionFrame",
 		"ScrollOfResurrectionSelectionFrameList",
 		"ScrollOfResurrectionFrame",
-		"ScrollOfResurrectionFrameNoteFrame"
+		"ScrollOfResurrectionFrameNoteFrame",
+		"FriendsFrameBattlenetFrame",
+		"BattleTagInviteFrame"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -148,6 +150,29 @@ local function LoadSkin()
 	ChannelFrameDaughterFrameChannelPassword:CreateBackdrop("Overlay")
 	BNConversationInviteDialog:SetTemplate("Transparent")
 	BNConversationInviteDialogList:SetTemplate("Overlay")
+
+	FriendsFrameBattlenetFrame.BroadcastButton:SetAlpha(0)
+	FriendsFrameBattlenetFrame.BroadcastButton:ClearAllPoints()
+	FriendsFrameBattlenetFrame.BroadcastButton:SetAllPoints(FriendsFrameBattlenetFrame)
+
+	FriendsFrameBattlenetFrame.BroadcastFrame:StripTextures()
+	FriendsFrameBattlenetFrame.BroadcastFrame:CreateBackdrop("Transparent")
+	FriendsFrameBattlenetFrame.BroadcastFrame.backdrop:Point("TOPLEFT", 1, 1)
+	FriendsFrameBattlenetFrame.BroadcastFrame.backdrop:Point("BOTTOMRIGHT", 1, 1)
+
+	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:StripTextures()
+	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:SetTemplate("Overlay")
+	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.CancelButton:SkinButton()
+	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.UpdateButton:SkinButton()
+
+	BattleTagInviteFrame:SetTemplate("Transparent")
+	T.SkinEditBox(BattleTagInviteFrameScrollFrame)
+	for i=1, BattleTagInviteFrame:GetNumChildren() do
+		local child = select(i, BattleTagInviteFrame:GetChildren())
+		if child:GetObjectType() == "Button" then
+			child:SkinButton()
+		end
+	end
 
 	ChannelFrame:HookScript("OnShow", UpdateChannel)
 	hooksecurefunc("FriendsFrame_OnEvent", UpdateChannel)
