@@ -415,6 +415,23 @@ for i = 1, FloatingPetBattleAbilityTooltip:GetNumChildren() do
 	end
 end
 
+FloatingBattlePetTooltip.Delimiter:SetTexture(nil)
+FloatingBattlePetTooltip.Background:SetTexture(nil)
+FloatingBattlePetTooltip.BorderTop:SetTexture(nil)
+FloatingBattlePetTooltip.BorderTopLeft:SetTexture(nil)
+FloatingBattlePetTooltip.BorderTopRight:SetTexture(nil)
+FloatingBattlePetTooltip.BorderLeft:SetTexture(nil)
+FloatingBattlePetTooltip.BorderRight:SetTexture(nil)
+FloatingBattlePetTooltip.BorderBottom:SetTexture(nil)
+FloatingBattlePetTooltip.BorderBottomRight:SetTexture(nil)
+FloatingBattlePetTooltip.BorderBottomLeft:SetTexture(nil)
+FloatingBattlePetTooltip:SetTemplate("Transparent")
+for i = 1, FloatingBattlePetTooltip:GetNumChildren() do
+	local child = select(i, FloatingBattlePetTooltip:GetChildren())
+	if child:GetObjectType() == "Button" and not child:GetName() and child:GetWidth() < 50 then
+		T.SkinCloseButton(child)
+	end
+end
 
 ----------------------------------------------------------------------------------------
 --	Coloring borders/names by pets quality(PetBattleQualityGlow by Tia Lynn)
