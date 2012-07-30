@@ -178,7 +178,6 @@
 	<Script file="Modules\Skins\DBM.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>
 	<Script file="Modules\Skins\Omen.lua"/>
-	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
 
 	<Script file="Modules\Blizzard\CombatText.lua"/>

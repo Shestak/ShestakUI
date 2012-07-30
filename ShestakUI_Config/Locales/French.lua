@@ -57,7 +57,6 @@ L_GUI_SKINS_BW = "Activer la personalisation pour BigWigs"
 L_GUI_SKINS_DBM = "Activer la personalisation pour DBM"
 L_GUI_SKINS_DXE = "Activer la personalisation pour DXE"
 L_GUI_SKINS_OMEN = "Activer la personalisation pour Omen"
-L_GUI_SKINS_PP = "Activer la personalisation pour PallyPower"
 L_GUI_SKINS_RECOUNT = "Activer la personalisation pour Recount"
 
 -- Combat text options

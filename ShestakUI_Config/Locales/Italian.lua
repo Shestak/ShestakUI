@@ -57,7 +57,6 @@ L_GUI_SKINS_BW = "Attiva il restyling di BigWigs"
 L_GUI_SKINS_DBM = "Attiva il restyling di DBM"
 L_GUI_SKINS_DXE = "Attiva il restyling di DXE"
 L_GUI_SKINS_OMEN = "Attiva il restyling di Omen"
-L_GUI_SKINS_PP = "Attiva il restyling di PallyPower"
 L_GUI_SKINS_RECOUNT = "Attiva il restyling di Recount"
 
 -- Combat text options

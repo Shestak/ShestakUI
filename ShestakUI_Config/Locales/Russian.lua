@@ -57,7 +57,6 @@ L_GUI_SKINS_BW = "Включить стилизацию BigWigs"
 L_GUI_SKINS_DBM = "Включить стилизацию DBM"
 L_GUI_SKINS_DXE = "Включить стилизацию DXE"
 L_GUI_SKINS_OMEN = "Включить стилизацию Omen"
-L_GUI_SKINS_PP = "Включить стилизацию PallyPower"
 L_GUI_SKINS_RECOUNT = "Включить стилизацию Recount"
 
 -- Combat text options

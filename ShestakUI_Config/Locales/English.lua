@@ -55,7 +55,6 @@ L_GUI_SKINS_BW = "Enable styling BigWigs"
 L_GUI_SKINS_DBM = "Enable styling DBM"
 L_GUI_SKINS_DXE = "Enable styling DXE"
 L_GUI_SKINS_OMEN = "Enable styling Omen"
-L_GUI_SKINS_PP = "Enable styling PallyPower"
 L_GUI_SKINS_RECOUNT = "Enable styling Recount"
 
 -- Combat text options

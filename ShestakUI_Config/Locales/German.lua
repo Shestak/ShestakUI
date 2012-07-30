@@ -57,7 +57,6 @@ L_GUI_SKINS_BW = "BigWigs Design aktivieren"
 L_GUI_SKINS_DBM = "DBM Design aktivieren"
 L_GUI_SKINS_DXE = "DXE Design aktivieren"
 L_GUI_SKINS_OMEN = "Omen Design aktivieren"
-L_GUI_SKINS_PP = "PallyPower Design aktivieren"
 L_GUI_SKINS_RECOUNT = "Recount Design aktivieren"
 
 -- Combat text options
