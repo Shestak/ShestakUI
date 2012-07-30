@@ -231,6 +231,7 @@ L_DATATEXT_CONTROL = " sotto controllo:"
 L_INFO_ERRORS = "Nessun errore ancora."
 L_INFO_INVITE = "Accettato l'invito di: "
 L_INFO_DUEL = "Declinata la richiesta di duello di: "
+L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
 L_INFO_DISBAND = "Scioglimento gruppo..."
 L_INFO_SETTINGS_DBM = "Digita /settings dbm per applicare le impostazioni predefinite per DBM."
 L_INFO_SETTINGS_DXE = "Digita /settings dxe per applicare le impostazioni predefinite per DXE."

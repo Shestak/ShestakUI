@@ -10,10 +10,12 @@ frame:RegisterEvent("PET_BATTLE_PVP_DUEL_REQUESTED")
 frame:SetScript("OnEvent", function(self, event, name)
 	if event == "DUEL_REQUESTED" then
 		CancelDuel()
+		T.InfoTextShow(L_INFO_DUEL..name)
+		print(format("|cffffff00"..L_INFO_DUEL..name.."."))
 	elseif event == "PET_BATTLE_PVP_DUEL_REQUESTED" then
 		C_PetBattles.CancelPVPDuel()
+		T.InfoTextShow(L_INFO_PET_DUEL..name)
+		print(format("|cffffff00"..L_INFO_PET_DUEL..name.."."))
 	end
 	HideUIPanel(StaticPopup1)
-	T.InfoTextShow(L_INFO_DUEL..name)
-	print(format("|cffffff00"..L_INFO_DUEL..name.."."))
 end)

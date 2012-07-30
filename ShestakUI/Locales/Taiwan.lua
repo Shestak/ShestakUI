@@ -231,6 +231,7 @@ L_DATATEXT_CONTROL = "控制:"
 L_INFO_ERRORS = "目前沒有錯誤."
 L_INFO_INVITE = "接受邀請自: "
 L_INFO_DUEL = "拒絕決鬥請求: "
+L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
 L_INFO_DISBAND = "解散隊伍..."
 L_INFO_SETTINGS_DBM = "鍵入 /settings dbm, 載入 DBM 的設定."
 L_INFO_SETTINGS_DXE = "鍵入 /settings dxe, 載入 DXE 的設定."

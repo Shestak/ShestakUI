@@ -231,6 +231,7 @@ L_DATATEXT_CONTROL = " 已经被占领:"
 L_INFO_ERRORS = "目前没有错误."
 L_INFO_INVITE = "接受邀请: "
 L_INFO_DUEL = "拒绝决斗请求: "
+L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
 L_INFO_DISBAND = "解散团队..."
 L_INFO_SETTINGS_DBM = "键入 /settings dbm, 载入 DBM 的设定."
 L_INFO_SETTINGS_DXE = "键入 /settings dxe, 载入 DXE 的设定."

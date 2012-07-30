@@ -231,6 +231,7 @@ L_DATATEXT_CONTROL = " под контролем:"
 L_INFO_ERRORS = "Ошибок не обнаружено."
 L_INFO_INVITE = "Приглашение принято от: "
 L_INFO_DUEL = "Дуэль отклонена от: "
+L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
 L_INFO_DISBAND = "Роспуск группы..."
 L_INFO_SETTINGS_DBM = "Введите /settings dbm, чтобы применить настройки DBM."
 L_INFO_SETTINGS_DXE = "Введите /settings dxe, чтобы применить настройки DXE."
