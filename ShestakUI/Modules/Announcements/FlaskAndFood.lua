@@ -12,13 +12,13 @@ local foods = {
 }
 
 local flasks = {
-	79631, -- Prismatic Elixir
-	79469, -- Flask of Steelskin
-	79470, -- Flask of the Draconic Mind
-	79471, -- Flask of the Winds
-	79472, -- Flask of Titanic Strength
-	92679, -- Flask of Battle
-	94160, -- Flask of Flowing Water
+	105617,	-- Alchemist's Flask
+	--92679,	-- Flask of Battle
+	105689,	-- Flask of Spring Blossoms
+	105694,	-- Flask of the Earth
+	105691,	-- Flask of the Warm Sun
+	105696,	-- Flask of Winter's Bite
+	105693,	-- Flask of Falling Leaves
 }
 
 local function scan(unit)
