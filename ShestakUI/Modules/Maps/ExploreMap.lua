@@ -2,7 +2,7 @@
 if C.map.explore_map ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Tracking completion of the Explorer and Lore Master achievements in WorldMap(ExpLoreMaster by CrusaderHeimdall)
+--	Tracking Explorer and Lore Master achievements in World Map(ExpLoreMaster by CrusaderHeimdall)
 ----------------------------------------------------------------------------------------
 FACTION = UnitFactionGroup("player")
 local questCompletion, exploreCompletion, adjustedX, adjustedY

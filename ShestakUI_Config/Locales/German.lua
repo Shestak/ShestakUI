@@ -202,7 +202,7 @@ L_GUI_MAP_ENABLE = "Weltkarte aktivieren"
 L_GUI_MAP_SCALE = "Skalierung der Weltkarte"
 L_GUI_MAP_BG_STYLIZATION = "Schlachtfeldkarte Aussehn"
 L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
-L_GUI_MAP_EXPLORE = "Tracking completion of the Explorer and Lore Master achievements in World Map" -- Needs review
+L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Plünderfenster aktivieren"

@@ -200,7 +200,7 @@ L_GUI_MAP_ENABLE = "Enable World Map"
 L_GUI_MAP_SCALE = "World Map scale"
 L_GUI_MAP_BG_STYLIZATION = "BG map stylization"
 L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map"
-L_GUI_MAP_EXPLORE = "Tracking completion of the Explorer and Lore Master achievements in World Map"
+L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map"
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Enable loot frame"

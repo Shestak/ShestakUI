@@ -202,7 +202,7 @@ L_GUI_MAP_ENABLE = "Attiva la mappa del mondo"
 L_GUI_MAP_SCALE = "Scala della mappa del mondo"
 L_GUI_MAP_BG_STYLIZATION = "Restyling della mappa dei Campi di Battaglia"
 L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
-L_GUI_MAP_EXPLORE = "Tracking completion of the Explorer and Lore Master achievements in World Map" -- Needs review
+L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Attiva il riquadro bottino"
