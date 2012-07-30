@@ -211,7 +211,6 @@ local function LoadSkin()
 			local button = _G["PetJournalLoadoutPet"..i.."Spell"..j]
 			local icon = _G["PetJournalLoadoutPet"..i.."Spell"..j.."Icon"]
 
-			button:StripTextures()
 			button:StyleButton()
 			button:SetTemplate("Default")
 
@@ -221,6 +220,9 @@ local function LoadSkin()
 			icon:ClearAllPoints()
 			icon:Point("TOPLEFT", 2, -2)
 			icon:Point("BOTTOMRIGHT", -2, 2)
+
+			_G["PetJournalLoadoutPet"..i.."Spell"..j.."Background"]:SetTexture(nil)
+			_G["PetJournalLoadoutPet"..i.."Spell"..j.."Selected"]:SetTexture(nil)
 		end
 
 		_G["PetJournalLoadoutPet"..i.."HelpFrame"]:StripTextures()
@@ -246,7 +248,6 @@ local function LoadSkin()
 		local button = _G["PetJournalSpellSelectSpell"..i]
 		local icon = _G["PetJournalSpellSelectSpell"..i.."Icon"]
 
-		button:StripTextures()
 		button:StyleButton()
 		button:SetTemplate("Default")
 
@@ -255,6 +256,8 @@ local function LoadSkin()
 		icon:Point("TOPLEFT", 2, -2)
 		icon:Point("BOTTOMRIGHT", -2, 2)
 		icon:SetDrawLayer("OVERLAY")
+
+		button.BlackCover:SetDrawLayer("OVERLAY", 1)
 	end
 
 	for i = 1, 6 do
