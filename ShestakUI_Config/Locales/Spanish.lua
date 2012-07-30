@@ -201,6 +201,8 @@ L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu"
 L_GUI_MAP_ENABLE = "Activar mapa del mundo"
 L_GUI_MAP_SCALE = "Escalado del mapa del mundo"
 L_GUI_MAP_BG_STYLIZATION = "Estilizado del mapa de CB"
+L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
+L_GUI_MAP_EXPLORE = "Tracking completion of the Explorer and Lore Master achievements in World Map" -- Needs review
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Activar el marco de botín"

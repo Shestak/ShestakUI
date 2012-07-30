@@ -232,6 +232,8 @@ local function Local(o)
 	if o == "UIConfigmapenable" then o = L_GUI_MAP_ENABLE end
 	if o == "UIConfigmapscale" then o = L_GUI_MAP_SCALE end
 	if o == "UIConfigmapbg_map_stylization" then o = L_GUI_MAP_BG_STYLIZATION end
+	if o == "UIConfigmapmap_boss_count" then o = L_GUI_MAP_BOSS_COUNT end
+	if o == "UIConfigmapexplore_map" then o = L_GUI_MAP_EXPLORE end
 
 	-- Loot options
 	if o == "UIConfigloot" then o = LOOT end
@@ -986,7 +988,7 @@ do
 		subtitle2:SetWidth(580)
 		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
 		subtitle2:SetJustifyH("LEFT")
-		subtitle2:SetText("ALZA, Aezay, Affli, Allez, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Chiril, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Havoc74, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Kunda, m2jest1c, Meurtcriss, Monolit, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Woffle of Dark Iron, Xuerian, Yleaf, Zork.")
+		subtitle2:SetText("ALZA, Aezay, Affli, Allez, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Chiril, CrusaderHeimdall, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Havoc74, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Woffle of Dark Iron, Xuerian, Yleaf, Zork.")
 
 		local title3 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)

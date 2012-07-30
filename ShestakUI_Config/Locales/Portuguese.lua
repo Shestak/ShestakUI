@@ -198,9 +198,11 @@ L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu"
 L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu"
 
 -- Map options
-L_GUI_MAP_ENABLE = "Enable world map"
-L_GUI_MAP_SCALE = "World map scale"
+L_GUI_MAP_ENABLE = "Enable World Map"
+L_GUI_MAP_SCALE = "World Map scale"
 L_GUI_MAP_BG_STYLIZATION = "BG map stylization"
+L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map"
+L_GUI_MAP_EXPLORE = "Tracking completion of the Explorer and Lore Master achievements in World Map"
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Enable loot frame"

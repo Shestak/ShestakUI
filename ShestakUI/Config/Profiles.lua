@@ -76,6 +76,7 @@ if T.author == true then
 	C["chat"].combatlog = false
 	C["chat"].spam = true
 	C["chat"].tabs_mouseover = true
+	C["map"].map_boss_count = true
 	C["nameplate"].track_auras = true
 	C["actionbar"].toggle_mode = false
 	C["unitframe"].arena_on_right = false
@@ -88,6 +89,7 @@ if T.author == true then
 		C["automation"].screenshot = true
 		C["stats"].experience = false
 		C["combattext"].heal_treshold = 500
+		C["map"].explore_map = true
 	end
 	if T.class == "PRIEST" then
 		C["announcements"].lightwell = true
@@ -138,6 +140,7 @@ if T.name == "Oz" then
 	C["chat"].filter = false
 	C["chat"].tabs_mouseover = true
 	C["minimap"].size = 129
+	C["map"].map_boss_count = true
 	C["loot"].auto_greed = false
 	C["nameplate"].show_castbar_name = true
 	C["nameplate"].class_icons = true
@@ -216,6 +219,8 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["bag"].bank_columns = 15
 	C["minimap"].tracking_icon = true
 	C["minimap"].size = 200
+	C["map"].map_boss_count = true
+	C["map"].explore_map = true
 	C["loot"].icon_size = 40
 	C["loot"].width = 300
 	C["loot"].auto_greed = false

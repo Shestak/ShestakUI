@@ -201,6 +201,8 @@ L_GUI_MINIMAP_MERGE_MENUS = "将小地图上依附的插件按钮整合到菜单
 L_GUI_MAP_ENABLE = "开启世界地图增强"
 L_GUI_MAP_SCALE = "世界地图缩放"
 L_GUI_MAP_BG_STYLIZATION = "战场地图风格"
+L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
+L_GUI_MAP_EXPLORE = "Tracking completion of the Explorer and Lore Master achievements in World Map" -- Needs review
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "开启拾取增强"
