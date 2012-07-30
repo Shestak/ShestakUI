@@ -4,6 +4,24 @@ if T.client ~= "zhTW" then return end
 ----------------------------------------------------------------------------------------
 --	Localization for zhTW client(Thanks to Ianchan, Aelb, nanjiqq, Spacedragon, Mania and tat2dawn for the translation)
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " 使用我的光束泉. "
+L_ANNOUNCE_LA_CHARGE = " 刷新)"
+L_ANNOUNCE_LA_USELESS = " 盡量少地使用我的光束泉. "
+L_ANNOUNCE_LA_STOP = "你不應該使用光束泉."
+L_ANNOUNCE_LA_PLACED = "光束泉位置. "
+L_ANNOUNCE_LA_CHARGES = " 刷新."
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "No Food: " -- Needs review
+L_ANNOUNCE_FF_NOFLASK = "No Flask: " -- Needs review
+L_ANNOUNCE_FF_ALLBUFFED = "All Buffed!" -- Needs review
+L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask" -- Needs review
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Thanks for " -- Needs review
+L_ANNOUNCE_SS_RECEIVED = " received from " -- Needs review
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "沒有天賦"
 L_TOOLTIP_LOADING = "讀取中..."

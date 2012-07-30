@@ -94,8 +94,13 @@
 	<Script file="Modules\ActionBars\Cooldowns.lua"/>
 
 	<Script file="Modules\Announcements\Drinking.lua"/>
+	<Script file="Modules\Announcements\FlaskAndFood.lua"/>
 	<Script file="Modules\Announcements\Interrupts.lua"/>
+	<Script file="Modules\Announcements\Lightwell.lua"/>
+	<Script file="Modules\Announcements\PullCountdown.lua"/>
+	<Script file="Modules\Announcements\SayThanks.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>
+	<Script file="Modules\Announcements\ToyTrain.lua"/>
 
 	<Script file="Modules\Automation\AchScreens.lua"/>
 	<Script file="Modules\Automation\AutoChefsHat.lua"/>

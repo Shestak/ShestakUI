@@ -4,6 +4,24 @@ if T.client ~= "ruRU" then return end
 ----------------------------------------------------------------------------------------
 --	Localization for ruRU client
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " выпил из моего колодца. "
+L_ANNOUNCE_LA_CHARGE = " заряд(ов))"
+L_ANNOUNCE_LA_USELESS = " использовал мой колодец впустую! "
+L_ANNOUNCE_LA_STOP = "Прекрати пить из моего колодца!!!"
+L_ANNOUNCE_LA_PLACED = "Колодец Света поставлен. "
+L_ANNOUNCE_LA_CHARGES = " зарядов."
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "Нет еды: "
+L_ANNOUNCE_FF_NOFLASK = "Нет настоя: "
+L_ANNOUNCE_FF_ALLBUFFED = "Еда и настой есть у всех. Можно щемить!"
+L_ANNOUNCE_FF_CHECK_BUTTON = "Проверка еды и настоя"
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Спасибо за "
+L_ANNOUNCE_SS_RECEIVED = " получено от "
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Нет талантов"
 L_TOOLTIP_LOADING = "Загрузка..."

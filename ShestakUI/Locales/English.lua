@@ -1,6 +1,24 @@
 ﻿----------------------------------------------------------------------------------------
 --	Localization for enUS and enGB client
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " used my lightwell. "
+L_ANNOUNCE_LA_CHARGE = " charge(s))"
+L_ANNOUNCE_LA_USELESS = " used my lightwell, uselessly. "
+L_ANNOUNCE_LA_STOP = "You shouldn't have used the lightwell."
+L_ANNOUNCE_LA_PLACED = "Lightwell placed. "
+L_ANNOUNCE_LA_CHARGES = " charges."
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "No Food: "
+L_ANNOUNCE_FF_NOFLASK = "No Flask: "
+L_ANNOUNCE_FF_ALLBUFFED = "All Buffed!"
+L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask"
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Thanks for "
+L_ANNOUNCE_SS_RECEIVED = " received from "
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "No Talents"
 L_TOOLTIP_LOADING = "Loading..."

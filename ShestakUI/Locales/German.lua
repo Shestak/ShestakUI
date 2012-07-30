@@ -4,6 +4,24 @@ if T.client ~= "deDE" then return end
 ----------------------------------------------------------------------------------------
 --	Localization for deDE client(Thanks to Baine, chubidu, Vienchen and Alwa for the translation)
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " used my lightwell. " -- Needs review
+L_ANNOUNCE_LA_CHARGE = " charge(s))" -- Needs review
+L_ANNOUNCE_LA_USELESS = " used my lightwell, uselessly. " -- Needs review
+L_ANNOUNCE_LA_STOP = "You shouldn't have used the lightwell." -- Needs review
+L_ANNOUNCE_LA_PLACED = "Lightwell placed. " -- Needs review
+L_ANNOUNCE_LA_CHARGES = " charges." -- Needs review
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "Kein Essen: "
+L_ANNOUNCE_FF_NOFLASK = "Kein Fläschchen: "
+L_ANNOUNCE_FF_ALLBUFFED = "Alles drin!"
+L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask" -- Needs review
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Thanks for " -- Needs review
+L_ANNOUNCE_SS_RECEIVED = " received from " -- Needs review
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
 L_TOOLTIP_LOADING = "Lade..."

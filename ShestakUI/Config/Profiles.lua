@@ -50,6 +50,9 @@ if T.author == true then
 	C["misc"].quest_auto_button = true
 	C["misc"].hide_bg_spam = true
 	C["announcements"].spells = true
+	C["announcements"].flask_food = true
+	C["announcements"].toy_train = true
+	C["announcements"].says_thanks = true
 	C["automation"].accept_invite = true
 	C["automation"].accept_quest = true
 	C["automation"].skip_cinematic = true
@@ -86,6 +89,9 @@ if T.author == true then
 		C["stats"].experience = false
 		C["combattext"].heal_treshold = 500
 	end
+	if T.class == "PRIEST" then
+		C["announcements"].lightwell = true
+	end
 end
 
 ----------------------------------------------------------------------------------------
@@ -110,6 +116,7 @@ if T.name == "Oz" then
 	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].vehicle_mouseover = true
+	C["announcements"].flask_food = true
 	C["automation"].resurrection = false
 	C["automation"].screenshot = true
 	C["automation"].decline_duel = false
@@ -175,6 +182,8 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["media"].pixel_font_size = 14
 	C["general"].custom_lagtolerance = true
 	C["misc"].invite_keyword = "инвайт"
+	C["announcements"].flask_food = true
+	C["announcements"].flask_food_auto = true
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
 	C["automation"].decline_duel = false
@@ -320,5 +329,8 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["unitframe"].show_boss = false
 		C["raidframe"].raid_tanks = false
 		C["stats"].experience = false
+		if T.name == "Виринеа" then
+			C["announcements"].lightwell = true
+		end
 	end
 end

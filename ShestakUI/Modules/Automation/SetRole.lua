@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L = unpack(select(2, ...))
 if C.automation.auto_role ~= true then return end
 
 ----------------------------------------------------------------------------------------

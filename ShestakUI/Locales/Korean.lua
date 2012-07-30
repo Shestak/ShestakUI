@@ -4,6 +4,24 @@ if T.client ~= "koKR" then return end
 ----------------------------------------------------------------------------------------
 --	Localization for koKR client(Need full translation)
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " used my lightwell. "
+L_ANNOUNCE_LA_CHARGE = " charge(s))"
+L_ANNOUNCE_LA_USELESS = " used my lightwell, uselessly. "
+L_ANNOUNCE_LA_STOP = "You shouldn't have used the lightwell."
+L_ANNOUNCE_LA_PLACED = "Lightwell placed. "
+L_ANNOUNCE_LA_CHARGES = " charges."
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "No Food: "
+L_ANNOUNCE_FF_NOFLASK = "No Flask: "
+L_ANNOUNCE_FF_ALLBUFFED = "All Buffed!"
+L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask"
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Thanks for "
+L_ANNOUNCE_SS_RECEIVED = " received from "
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "No Talents"
 L_TOOLTIP_LOADING = "Loading..."
@@ -166,7 +184,7 @@ L_PLANNER_DEATHKNIGHT_2 = "냉기"
 L_PLANNER_DEATHKNIGHT_3 = "부정"
 L_PLANNER_DRUID_1 = "조화"
 L_PLANNER_DRUID_2 = "야성"
-L_PLANNER_DRUID_3 = "Guardian"	--need review
+L_PLANNER_DRUID_3 = "Guardian"
 L_PLANNER_DRUID_4 = "회복"
 L_PLANNER_HUNTER_1 = "야수"
 L_PLANNER_HUNTER_2 = "사격"
@@ -174,9 +192,9 @@ L_PLANNER_HUNTER_3 = "생존"
 L_PLANNER_MAGE_1 = "비전"
 L_PLANNER_MAGE_2 = "화염"
 L_PLANNER_MAGE_3 = "냉기"
-L_PLANNER_MONK_1 = "Brewmaster"	--need review
-L_PLANNER_MONK_2 = "Mistweaver"	--need review
-L_PLANNER_MONK_3 = "Windwalker"	--need review
+L_PLANNER_MONK_1 = "Brewmaster"
+L_PLANNER_MONK_2 = "Mistweaver"
+L_PLANNER_MONK_3 = "Windwalker"
 L_PLANNER_PALADIN_1 = "신성"
 L_PLANNER_PALADIN_2 = "보호"
 L_PLANNER_PALADIN_3 = "징벌"

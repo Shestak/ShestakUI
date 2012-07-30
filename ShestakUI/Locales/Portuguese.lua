@@ -4,6 +4,24 @@ if T.client ~= "ptBR" and T.client ~= "ptPT" then return end
 ----------------------------------------------------------------------------------------
 --	Localization for ptBR and ptPT client(Need full translation)
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " used my lightwell. "
+L_ANNOUNCE_LA_CHARGE = " charge(s))"
+L_ANNOUNCE_LA_USELESS = " used my lightwell, uselessly. "
+L_ANNOUNCE_LA_STOP = "You shouldn't have used the lightwell."
+L_ANNOUNCE_LA_PLACED = "Lightwell placed. "
+L_ANNOUNCE_LA_CHARGES = " charges."
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "No Food: "
+L_ANNOUNCE_FF_NOFLASK = "No Flask: "
+L_ANNOUNCE_FF_ALLBUFFED = "All Buffed!"
+L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask"
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Thanks for "
+L_ANNOUNCE_SS_RECEIVED = " received from "
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "No Talents"
 L_TOOLTIP_LOADING = "Loading..."
@@ -166,7 +184,7 @@ L_PLANNER_DEATHKNIGHT_2 = "Frost"
 L_PLANNER_DEATHKNIGHT_3 = "Unholy"
 L_PLANNER_DRUID_1 = "Balance"
 L_PLANNER_DRUID_2 = "Feral Combat"
-L_PLANNER_DRUID_3 = "Guardian"	--need review
+L_PLANNER_DRUID_3 = "Guardian"
 L_PLANNER_DRUID_4 = "Restoration"
 L_PLANNER_HUNTER_1 = "Beast Mastery"
 L_PLANNER_HUNTER_2 = "Marksmanship"
@@ -174,9 +192,9 @@ L_PLANNER_HUNTER_3 = "Survival"
 L_PLANNER_MAGE_1 = "Arcane"
 L_PLANNER_MAGE_2 = "Fire"
 L_PLANNER_MAGE_3 = "Frost"
-L_PLANNER_MONK_1 = "Brewmaster"	--need review
-L_PLANNER_MONK_2 = "Mistweaver"	--need review
-L_PLANNER_MONK_3 = "Windwalker"	--need review
+L_PLANNER_MONK_1 = "Brewmaster"
+L_PLANNER_MONK_2 = "Mistweaver"
+L_PLANNER_MONK_3 = "Windwalker"
 L_PLANNER_PALADIN_1 = "Holy"
 L_PLANNER_PALADIN_2 = "Protection"
 L_PLANNER_PALADIN_3 = "Retribution"

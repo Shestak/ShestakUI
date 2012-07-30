@@ -4,6 +4,24 @@ if T.client ~= "frFR" then return end
 ----------------------------------------------------------------------------------------
 --	Localization for frFR client(Thanks to Cranan and Puree for the translation)
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " a utilisé mon Puits de lumière. "
+L_ANNOUNCE_LA_CHARGE = " charge(s))"
+L_ANNOUNCE_LA_USELESS = " a utilisé mon Puits de lumière, pour rien. "
+L_ANNOUNCE_LA_STOP = "Vous n'aviez pas besoin d'utiliser le Puits de lumière."
+L_ANNOUNCE_LA_PLACED = "Puits de lumière placé. "
+L_ANNOUNCE_LA_CHARGES = " charges."
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "No Food: " -- Needs review
+L_ANNOUNCE_FF_NOFLASK = "No Flask: " -- Needs review
+L_ANNOUNCE_FF_ALLBUFFED = "All Buffed!" -- Needs review
+L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask" -- Needs review
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Thanks for " -- Needs review
+L_ANNOUNCE_SS_RECEIVED = " received from " -- Needs review
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Aucun talent"
 L_TOOLTIP_LOADING = "Chargement..."

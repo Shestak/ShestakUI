@@ -4,6 +4,24 @@ if T.client ~= "zhCN" then return end
 ----------------------------------------------------------------------------------------
 --	Localization for zhCN client(Thanks to Ianchan, nanjiqq, Mania and tat2dawn for the translation)
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " 使用我的光束泉. "
+L_ANNOUNCE_LA_CHARGE = " 刷新)"
+L_ANNOUNCE_LA_USELESS = "尽量少地使用我的光束泉. "
+L_ANNOUNCE_LA_STOP = "你不应该使用光束泉."
+L_ANNOUNCE_LA_PLACED = "光束泉位置. "
+L_ANNOUNCE_LA_CHARGES = "刷新."
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "No Food: " -- Needs review
+L_ANNOUNCE_FF_NOFLASK = "No Flask: " -- Needs review
+L_ANNOUNCE_FF_ALLBUFFED = "All Buffed!" -- Needs review
+L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask" -- Needs review
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Thanks for " -- Needs review
+L_ANNOUNCE_SS_RECEIVED = " received from " -- Needs review
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "没有天赋"
 L_TOOLTIP_LOADING = "读取中..."
@@ -166,7 +184,7 @@ L_PLANNER_DEATHKNIGHT_2 = "冰霜"
 L_PLANNER_DEATHKNIGHT_3 = "邪恶"
 L_PLANNER_DRUID_1 = "平衡"
 L_PLANNER_DRUID_2 = "野性战斗"
-L_PLANNER_DRUID_3 = "Guardian"	--need review
+L_PLANNER_DRUID_3 = "Guardian" -- need review
 L_PLANNER_DRUID_4 = "恢复"
 L_PLANNER_HUNTER_1 = "野兽掌握"
 L_PLANNER_HUNTER_2 = "射击"
@@ -174,9 +192,9 @@ L_PLANNER_HUNTER_3 = "生存"
 L_PLANNER_MAGE_1 = "奥术"
 L_PLANNER_MAGE_2 = "火焰"
 L_PLANNER_MAGE_3 = "冰霜"
-L_PLANNER_MONK_1 = "Brewmaster"	--need review
-L_PLANNER_MONK_2 = "Mistweaver"	--need review
-L_PLANNER_MONK_3 = "Windwalker"	--need review
+L_PLANNER_MONK_1 = "Brewmaster" -- need review
+L_PLANNER_MONK_2 = "Mistweaver" -- need review
+L_PLANNER_MONK_3 = "Windwalker" -- need review
 L_PLANNER_PALADIN_1 = "神圣"
 L_PLANNER_PALADIN_2 = "防护"
 L_PLANNER_PALADIN_3 = "惩戒"
