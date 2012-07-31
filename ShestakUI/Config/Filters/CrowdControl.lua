@@ -33,21 +33,6 @@ T.ArenaControl = function()
 		[GetSpellInfo(605)] = 3,	-- Mind Control
 		[GetSpellInfo(64044)] = 3,	-- Psychic Horror
 
-		-- Roots
-		[GetSpellInfo(339)] = 3,	-- Entangling Roots
-		[GetSpellInfo(122)] = 3,	-- Frost Nova
-		[GetSpellInfo(87194)] = 3,	-- Paralysis (SP)
-		[GetSpellInfo(33395)] = 3,	-- Freeze
-		--MOP[GetSpellInfo(83302)] = 3,	-- Improved Cone of Cold
-		--MOP[GetSpellInfo(55080)] = 3,	-- Shattered Barrier
-		[GetSpellInfo(16979)] = 3,	-- Feral Charge
-		[GetSpellInfo(19185)] = 3,	-- Entrapment
-		[GetSpellInfo(50245)] = 3,	-- Pin (Crab)
-		[GetSpellInfo(54706)] = 3,	-- Venom Web Spray (Silithid)
-		[GetSpellInfo(4167)] = 3,	-- Web (Spider)
-		[GetSpellInfo(63685)] = 3,	-- Freeze (Frozen Power)
-		[GetSpellInfo(7922)] = 3,	-- Charge Stun
-
 		-- Stuns and Incapacitates
 		[GetSpellInfo(5211)] = 3,	-- Bash
 		[GetSpellInfo(1833)] = 3,	-- Cheap Shot
@@ -75,6 +60,27 @@ T.ArenaControl = function()
 		[GetSpellInfo(6544)] = 3,	-- Heroic Leap
 		--MOP[GetSpellInfo(85388)] = 3,	-- Throwdown
 		[GetSpellInfo(108194)] = 3,	-- Asphyxiate
+
+		-- Roots
+		[GetSpellInfo(339)] = 3,	-- Entangling Roots
+		[GetSpellInfo(122)] = 3,	-- Frost Nova
+		[GetSpellInfo(87194)] = 3,	-- Paralysis (SP)
+		[GetSpellInfo(33395)] = 3,	-- Freeze
+		--MOP[GetSpellInfo(83302)] = 3,	-- Improved Cone of Cold
+		--MOP[GetSpellInfo(55080)] = 3,	-- Shattered Barrier
+		[GetSpellInfo(16979)] = 3,	-- Feral Charge
+		[GetSpellInfo(19185)] = 3,	-- Entrapment
+		[GetSpellInfo(50245)] = 3,	-- Pin (Crab)
+		[GetSpellInfo(54706)] = 3,	-- Venom Web Spray (Silithid)
+		[GetSpellInfo(4167)] = 3,	-- Web (Spider)
+		[GetSpellInfo(63685)] = 3,	-- Freeze (Frozen Power)
+		[GetSpellInfo(7922)] = 3,	-- Charge Stun
+
+		-- Immunities
+		[GetSpellInfo(45438)] = 2,	-- Ice Block
+		[GetSpellInfo(642)] = 2,	-- Divine Shield
+		[GetSpellInfo(46924)] = 2,	-- Bladestorm
+		[GetSpellInfo(19263)] = 2,	-- Deterrence
 
 		-- Silences
 		[GetSpellInfo(55021)] = 1,	-- Improved Counterspell
@@ -108,11 +114,5 @@ T.ArenaControl = function()
 		[GetSpellInfo(48707)] = 1,	-- Anti-Magic Shell
 		[GetSpellInfo(31224)] = 1,	-- Cloak of Shadows
 		[GetSpellInfo(48792)] = 1,	-- Icebound Fortitude
-
-		-- Immunities
-		[GetSpellInfo(45438)] = 2,	-- Ice Block
-		[GetSpellInfo(642)] = 2,	-- Divine Shield
-		[GetSpellInfo(46924)] = 2,	-- Bladestorm
-		[GetSpellInfo(19263)] = 2,	-- Deterrence
 	}
 end
