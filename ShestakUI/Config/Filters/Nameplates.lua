@@ -14,7 +14,7 @@ end
 -- Nameplates use these
 T.DebuffWhiteList = {
 	-- Death Knight
-	--MOP[SpellName(49203)] = true,	-- Hungering Cold
+	[SpellName(115001)] = true,	-- Remorseless Winter
 	[SpellName(47476)] = true,	-- Strangulate
 	[SpellName(108194)] = true,	-- Asphyxiate
 	-- Druid

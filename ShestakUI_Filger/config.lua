@@ -56,7 +56,9 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
-			-- Blood Charge -- Experimental
+			-- Scent of Blood -- useful?
+			{spellID = 50421, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blood Charge -- useful?
 			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Freezing Fog
 			{spellID = 59052, unitID = "player", caster = "player", filter = "BUFF"},
@@ -64,8 +66,6 @@ Filger_Spells = {
 			{spellID = 51124, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sudden Doom
 			{spellID = 81340, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Crimson Scourge
-			--MOP{spellID = 81141, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unholy Strength
 			{spellID = 53365, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -105,8 +105,6 @@ Filger_Spells = {
 			{spellID = 59879, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Fever
 			{spellID = 59921, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Unholy Blight
-			--MOP{spellID = 49194, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Summon Gargoyle
 			{spellID = 49206, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
@@ -124,12 +122,12 @@ Filger_Spells = {
 			{spellID = 47476, filter = "CD"},
 			-- Mind Freeze
 			{spellID = 47528, filter = "CD"},
+			-- Remorseless Winter
+			{spellID = 108200, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Anti-Magic Shell
 			{spellID = 48707, filter = "CD"},
-			-- Blood Tap
-			{spellID = 45529, filter = "CD"},
 			-- Death Pact
 			{spellID = 48743, filter = "CD"},
 			-- Icebound Fortitude
@@ -152,8 +150,6 @@ Filger_Spells = {
 			{spellID = 49028, filter = "CD"},
 			-- Pillar of Frost
 			{spellID = 51271, filter = "CD"},
-			-- Hungering Cold
-			--MOP{spellID = 49203, filter = "CD"},
 			-- Unholy Frenzy
 			{spellID = 49016, filter = "CD"},
 			-- Anti-Magic Zone
@@ -233,8 +229,8 @@ Filger_Spells = {
 			{spellID = 48504, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Bounty
 			{spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tree of Life
-			{spellID = 33891, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Incarnation
+			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Grasp
@@ -451,7 +447,7 @@ Filger_Spells = {
 			--MOP{spellID = 8998, filter = "CD"},
 			-- Thorns
 			--MOP{spellID = 467, filter = "CD"},
-			-- Tree of Life
+			-- Incarnation: Tree of Life
 			{spellID = 33891, filter = "CD"},
 			-- Skull Bash
 			{spellID = 106839, filter = "CD"},
@@ -2624,6 +2620,8 @@ Filger_Spells = {
 			{spellID = 91797, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Remorseless Winter
+			{spellID = 115001, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Strangulate
 			{spellID = 47476, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dark Simulacrum
@@ -2636,8 +2634,6 @@ Filger_Spells = {
 			{spellID = 50435, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Desecration
 			--MOP{spellID = 55741, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Hungering Cold
-			--MOP{spellID = 49203, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Druid
 			-- Cyclone
@@ -2915,6 +2911,8 @@ Filger_Spells = {
 			{spellID = 91797, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Remorseless Winter
+			{spellID = 115001, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Strangulate
 			{spellID = 47476, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -2929,8 +2927,8 @@ Filger_Spells = {
 			{spellID = 77764, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Survival Instincts
 			{spellID = 61336, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Tree of life
-			{spellID = 33891, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Incarnation
+			{spellID = 117679, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserk
 			{spellID = 50334, unitID = "target", caster = "all", filter = "BUFF"},
 
