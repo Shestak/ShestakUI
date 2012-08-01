@@ -30,12 +30,12 @@
 	<Script file="Modules\UnitFrames\Colors.lua"/>
 
 	<Script file="Config\Filters\AnnounceSpells.lua"/>
+	<Script file="Config\Filters\ArenaControl.lua"/>
 	<Script file="Config\Filters\AutoButton.lua"/>
 	<Script file="Config\Filters\ChannelingTicks.lua"/>
 	<Script file="Config\Filters\ChatSpam.lua"/>
 	<Script file="Config\Filters\CombatText.lua"/>
 	<Script file="Config\Filters\Cooldowns.lua"/>
-	<Script file="Config\Filters\CrowdControl.lua"/>
 	<Script file="Config\Filters\Diminishing.lua"/>
 	<Script file="Config\Filters\Errors.lua"/>
 	<Script file="Config\Filters\Nameplates.lua"/>
