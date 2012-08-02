@@ -57,12 +57,12 @@ local ainvkeyword = C.misc.invite_keyword
 local autoinvite = CreateFrame("Frame")
 autoinvite:RegisterEvent("CHAT_MSG_WHISPER")
 autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2)
-	if ((not UnitExists("party1") or IsGroupLeader("player") or IsGroupAssistant("player") or IsGroupLeader("player")) and arg1:lower():match(ainvkeyword)) and SavedOptionsPerChar.AutoInvite == true then
+	if ((not UnitExists("party1") or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and arg1:lower():match(ainvkeyword)) and SavedOptionsPerChar.AutoInvite == true then
 		InviteUnit(arg2)
 	end
 end)
 
-SlashCmdList.AUTOINVITE = function(msg, editbox)
+SlashCmdList.AUTOINVITE = function(msg)
 	if msg == "off" then
 		SavedOptionsPerChar.AutoInvite = false
 		print("|cffffff00"..L_INVITE_DISABLE..".")
