@@ -444,47 +444,70 @@ table.insert(UISpecialFrames, "Butsu")
 ----------------------------------------------------------------------------------------
 --	MasterLoot by Ammo
 ----------------------------------------------------------------------------------------
---[[
 local hexColors = {}
 for k, v in pairs(RAID_CLASS_COLORS) do
 	hexColors[k] = string.format("|cff%02x%02x%02x", v.r * 255, v.g * 255, v.b * 255)
 end
 hexColors["UNKNOWN"] = string.format("|cff%02x%02x%02x", 0.6 * 255, 0.6 * 255, 0.6 * 255)
 
-local playerName = UnitName("player")
-local unknownColor = {r = 0.6, g = 0.6, b = 0.6}
-local classesInRaid = {}
-local randoms = {}
-local function CandidateUnitClass(candidate)
-	local class, fileName = UnitClass(candidate)
-	if class then
-		return class, fileName
+if CUSTOM_CLASS_COLORS then
+	local function update()
+		for k, v in pairs(CUSTOM_CLASS_COLORS) do
+			hexColors[k] = string.format("|cff%02x%02x%02x", v.r * 255, v.g * 255, v.b * 255)
+		end
 	end
-	return L_LOOT_UNKNOWN, "UNKNOWN"
+	CUSTOM_CLASS_COLORS:RegisterCallback(update)
+	update()
+end
+
+local playerName = UnitName("player")
+local classesInRaid = {}
+local players, player_indices = {}, {}
+local randoms = {}
+local wipe = table.wipe
+
+local function MasterLoot_RequestRoll(frame)
+	DoMasterLootRoll(frame.value)
+end
+
+local function MasterLoot_GiveLoot(frame)
+	if LootFrame.selectedQuality >= MASTER_LOOT_THREHOLD then
+		StaticPopup_Show("CONFIRM_LOOT_DISTRIBUTION", ITEM_QUALITY_COLORS[LootFrame.selectedQuality].hex..LootFrame.selectedItemName..FONT_COLOR_CODE_CLOSE, frame.text, "LootWindow")
+	else
+		GiveMasterLoot(LootFrame.selectedSlot, frame.value)
+	end
+	CloseDropDownMenus()
 end
 
 local function init()
-	local candidate, color
+	local candidate, color, lclass, className
+	local slot = LootFrame.selectedSlot or 0
 	local info = UIDropDownMenu_CreateInfo()
 
 	if UIDROPDOWNMENU_MENU_LEVEL == 2 then
 		-- Raid class menu
-		for i = 1, 40 do
-			candidate = GetMasterLootCandidate(i)
-			if candidate then
-				local class = select(2, CandidateUnitClass(candidate))
-				-- Check for not class
-				if class == UIDROPDOWNMENU_MENU_VALUE then
-					-- Add candidate button
-					info.text = candidate -- coloredNames[candidate]
-					info.colorCode = hexColors[class] or hexColors["UNKOWN"]
-					info.textHeight = 12
-					info.value = i
-					info.notCheckable = 1
-					info.disabled = nil
-					info.func = GroupLootDropDown_GiveLoot
-					UIDropDownMenu_AddButton(info, UIDROPDOWNMENU_MENU_LEVEL)
-				end
+		wipe(players)
+		wipe(player_indices)
+		local this_class = UIDROPDOWNMENU_MENU_VALUE
+		for i = 1, MAX_RAID_MEMBERS do
+			candidate, lclass, className = GetMasterLootCandidate(slot, i)
+			if candidate and this_class == className then
+				table.insert(players,candidate)
+				player_indices[candidate] = i
+			end
+		end
+		if #players > 0 then
+			table.sort(players)
+			for _, cand in ipairs(players) do
+				-- Add candidate button
+				info.text = cand
+				info.colorCode = hexColors[this_class] or hexColors["UNKOWN"]
+				info.textHeight = 12
+				info.value = player_indices[cand]
+				info.notCheckable = 1
+				info.disabled = nil
+				info.func = MasterLoot_GiveLoot
+				UIDropDownMenu_AddButton(info, UIDROPDOWNMENU_MENU_LEVEL)
 			end
 		end
 		return
@@ -498,54 +521,65 @@ local function init()
 	info.notClickable = nil
 	UIDropDownMenu_AddButton(info)
 
-	if GetNumGroupMembers() > 0 then
+	if IsInRaid() then
 		-- In a raid
-		for k, v in pairs(classesInRaid) do
-			classesInRaid[k] = nil
-		end
-		for i = 1, 40 do
-			candidate = GetMasterLootCandidate(i)
+		wipe(classesInRaid)
+		for i = 1, MAX_RAID_MEMBERS do
+			candidate, lclass, className = GetMasterLootCandidate(slot, i)
 			if candidate then
-				local cname, class = CandidateUnitClass(candidate)
-				classesInRaid[class] = cname
+				classesInRaid[className] = lclass
 			end
 		end
 
-		for k, v in pairs(classesInRaid) do
-			info.isTitle = nil
-			info.text = v -- classColors[k]..v.."|r"
-			info.colorCode = hexColors[k] or hexColors["UNKOWN"]
-			info.textHeight = 12
-			info.hasArrow = 1
-			info.notCheckable = 1
-			info.value = k
-			info.func = nil
-			info.disabled = nil
-			UIDropDownMenu_AddButton(info)
+		for i, class in ipairs(CLASS_SORT_ORDER) do
+			local cname = classesInRaid[class]
+			if cname then
+				info.isTitle = nil
+				info.text = cname
+				info.colorCode = hexColors[class] or hexColors["UNKOWN"]
+				info.textHeight = 12
+				info.hasArrow = 1
+				info.notCheckable = 1
+				info.value = class
+				info.func = nil
+				info.disabled = nil
+				UIDropDownMenu_AddButton(info)
+			end
 		end
 	else
 		-- In a party
 		for i = 1, MAX_PARTY_MEMBERS + 1, 1 do
-			candidate = GetMasterLootCandidate(i)
+			candidate, lclass, className = GetMasterLootCandidate(slot, i)
 			if candidate then
 				-- Add candidate button
 				info.text = candidate -- coloredNames[candidate]
-				info.colorCode = hexColors[select(2, CandidateUnitClass(candidate))] or hexColors["UNKOWN"]
+				info.colorCode = hexColors[className] or hexColors["UNKOWN"]
 				info.textHeight = 12
 				info.value = i
 				info.notCheckable = 1
 				info.hasArrow = nil
 				info.isTitle = nil
 				info.disabled = nil
-				info.func = GroupLootDropDown_GiveLoot
+				info.func = MasterLoot_GiveLoot
 				UIDropDownMenu_AddButton(info)
 			end
 		end
 	end
 
-	for k, v in pairs(randoms) do randoms[k] = nil end
-	for i = 1, 40 do
-		candidate = GetMasterLootCandidate(i)
+	info.colorCode = "|cffffffff"
+	info.isTitle = nil
+	info.textHeight = 12
+	info.value = slot
+	info.notCheckable = 1
+	info.hasArrow = nil
+	info.text = REQUEST_ROLL
+	info.func = MasterLoot_RequestRoll
+	info.icon = nil
+	UIDropDownMenu_AddButton(info)
+
+	wipe(randoms)
+	for i = 1, MAX_RAID_MEMBERS do
+		candidate,lclass,className = GetMasterLootCandidate(slot,i)
 		if candidate then
 			table.insert(randoms, i)
 		end
@@ -557,24 +591,24 @@ local function init()
 		info.value = randoms[math.random(1, #randoms)]
 		info.notCheckable = 1
 		info.text = L_LOOT_RANDOM
-		info.func = GroupLootDropDown_GiveLoot
-		info.icon = nil
+		info.func = MasterLoot_GiveLoot
+		info.icon = "Interface\\Buttons\\UI-GroupLoot-Coin-Up"
 		UIDropDownMenu_AddButton(info)
 	end
-	for i = 1, 40 do
-		candidate = GetMasterLootCandidate(i)
+	for i = 1, MAX_RAID_MEMBERS do
+		candidate, lclass, className = GetMasterLootCandidate(slot, i)
 		if candidate and candidate == playerName then
-			info.colorCode = hexColors[select(2, CandidateUnitClass(candidate))] or hexColors["UNKOWN"]
+			info.colorCode = hexColors[className] or hexColors["UNKOWN"]
 			info.isTitle = nil
 			info.textHeight = 12
 			info.value = i
 			info.notCheckable = 1
 			info.text = L_LOOT_SELF
-			info.func = GroupLootDropDown_GiveLoot
+			info.func = MasterLoot_GiveLoot
 			info.icon = nil
 			UIDropDownMenu_AddButton(info)
 		end
 	end
 end
 
-UIDropDownMenu_Initialize(GroupLootDropDown, init, "MENU")]]
+UIDropDownMenu_Initialize(GroupLootDropDown, init, "MENU")
