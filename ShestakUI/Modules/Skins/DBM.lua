@@ -264,8 +264,10 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 		_G["DBM_GUI_OptionsFrame"]:SetTemplate("Transparent")
 		_G["DBM_GUI_OptionsFramePanelContainer"]:SetTemplate("Overlay")
 
+		_G["DBM_GUI_OptionsFrameTab1"]:StripTextures()
 		_G["DBM_GUI_OptionsFrameTab1"]:ClearAllPoints()
 		_G["DBM_GUI_OptionsFrameTab1"]:Point("TOPLEFT", _G["DBM_GUI_OptionsFrameBossMods"], "TOPLEFT", 10, 27)
+		_G["DBM_GUI_OptionsFrameTab2"]:StripTextures()
 		_G["DBM_GUI_OptionsFrameTab2"]:ClearAllPoints()
 		_G["DBM_GUI_OptionsFrameTab2"]:Point("TOPLEFT", _G["DBM_GUI_OptionsFrameTab1"], "TOPRIGHT", 6, 0)
 
@@ -278,7 +280,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 		local dbmbskins = {
 			"DBM_GUI_OptionsFrameOkay",
 			"DBM_GUI_OptionsFrameTab1",
-			"DBM_GUI_OptionsFrameTab2",
+			"DBM_GUI_OptionsFrameTab2"
 		}
 
 		for i = 1, getn(dbmbskins) do
