@@ -16,7 +16,7 @@ L_ANNOUNCE_LA_CHARGES = " cariche."
 L_ANNOUNCE_FF_NOFOOD = "Senza beneficio da cibo: "
 L_ANNOUNCE_FF_NOFLASK = "Senza beneficio da tonico: "
 L_ANNOUNCE_FF_ALLBUFFED = "Tutti i benefici sono attivi!"
-L_ANNOUNCE_FF_CHECK_BUTTON = "Controllo uso cibi e tonici"
+L_ANNOUNCE_FF_CHECK_BUTTON = "Controllo cibi e tonici"
 
 -- Says thanks for some spells
 L_ANNOUNCE_SS_THANKS = "Grazie per "
@@ -36,7 +36,7 @@ L_TOOLTIP_ITEM_COUNT = "Conteggio oggetti:"
 -- Misc
 L_MISC_UNDRESS = "Senza vestiti"
 L_MISC_DRINKING = " sta bevendo."
-L_MISC_BUY_STACK = "Alt + click per comprarne un pacco"
+L_MISC_BUY_STACK = "Alt + click per comprarne una pila"
 L_MISC_ONECLICK_BUYOUT = "Shift + click per comprare direttamente l'oggetto selezionato senza conferma"
 L_MISC_ONECLICK_BID = "Shift + click per fare una puntata sull'oggetto selezionato senza conferma"
 
@@ -47,8 +47,8 @@ L_RAID_UTIL_DISBAND = "Sciogli il gruppo"
 L_ZONE_WINTERGRASP = "Lungoinverno"
 L_ZONE_TOLBARAD = "Tol Barad"
 L_ZONE_TOLBARADPEN = "Penisola di Tol Barad"
-L_ZONE_ARATHIBASIN = "Bacino di Arathi"
-L_ZONE_GILNEAS = "La Battaglia per Gilneas"
+L_ZONE_ARATHIBASIN = "Bacino d'Arathi"
+L_ZONE_GILNEAS = "Battaglia per Gilneas"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Link a Wowhead"
@@ -97,7 +97,7 @@ L_CHAT_WHISPER = "Da"
 L_CHAT_BN_WHISPER = "DA"
 L_CHAT_AFK = "[Assente]"
 L_CHAT_DND = "[Occupato]"
-L_CHAT_GM = "[CG]"
+L_CHAT_GM = "[RG]"
 L_CHAT_GUILD = "G"
 L_CHAT_PARTY = "GR"
 L_CHAT_PARTY_LEADER = "CGR"
@@ -108,10 +108,10 @@ L_CHAT_BATTLEGROUND = "CB"
 L_CHAT_BATTLEGROUND_LEADER = "CCB"
 L_CHAT_OFFICER = "UF"
 L_CHAT_PET_BATTLE = "STM"
-L_CHAT_COME_ONLINE = "è adesso online."
-L_CHAT_GONE_OFFLINE = "è andato offline."
-L_CHAT_COME_ONLINE_COLOR = "è adesso |cff298F00online|r !"
-L_CHAT_GONE_OFFLINE_COLOR = "è adesso |cffff0000offline|r !"
+L_CHAT_COME_ONLINE = "sì è connesso."
+L_CHAT_GONE_OFFLINE = "si è disconnesso."
+L_CHAT_COME_ONLINE_COLOR = "si è |cff298F00connesso|r !"
+L_CHAT_GONE_OFFLINE_COLOR = "si è |cffff0000disconnesso|r !"
 
 -- Errors frame
 L_ERRORFRAME_L = "Clicca per vedere gli errori."
@@ -119,7 +119,7 @@ L_ERRORFRAME_L = "Clicca per vedere gli errori."
 -- Bags
 L_BAG_BANK = "Banca"
 L_BAG_NO_SLOTS = "Non puoi comprare altri spazi!"
-L_BAG_COSTS = "Costo: %.2f ori"
+L_BAG_COSTS = "Costo in oro: %.2f"
 L_BAG_BUY_SLOTS = "Compra nuovi spazi con /bags purchase yes"
 L_BAG_OPEN_BANK = "Devi prima aprire la tua banca."
 L_BAG_SORT = "Riordina le tue sacche o la tua banca, se aperta."
@@ -149,7 +149,7 @@ L_LOOT_SELF = "Bottino personale"
 L_LOOT_UNKNOWN = "Sconosciuto"
 L_LOOT_FISH = "Bottino pescato"
 L_LOOT_MONSTER = ">> Bottino da"
-L_LOOT_CHEST = ">> Bottino della cassa"
+L_LOOT_CHEST = ">> Bottino nella cassa"
 L_LOOT_ANNOUNCE = "Annuncia a"
 L_LOOT_TO_RAID = "  incursione"
 L_LOOT_TO_PARTY = "  gruppo"
@@ -160,7 +160,7 @@ L_LOOT_CANNOT = "Non puoi partecipare al tiro per il bottino"
 -- LitePanels AFK module
 L_PANELS_AFK = "Sei assente!"
 L_PANELS_AFK_RCLICK = "Click destro = nascondi pannello."
-L_PANELS_AFK_LCLICK = "Clicca col sinistro per non essere più impostato come assente."
+L_PANELS_AFK_LCLICK = "Clicca sinistro = non più assente."
 
 -- Cooldowns
 L_COOLDOWNS = "RC: "
@@ -172,7 +172,7 @@ L_INVITE_DISABLE = "Invito automatico disattivato"
 -- Bind key
 L_BIND_SAVED = "Tutte le assegnazioni tasti sono state salvate."
 L_BIND_DISCARD = "Tutte le nuove assegnazioni tasti non sono state salvate."
-L_BIND_INSTRUCT = "Passa il tuo mouse sul bottone della barra delle azioni a cui vuoi assegnare un tasto. Premi il pulsante ESC o il tasto destro per cancellare l'attuale assegnazione tasti di quel bottone"
+L_BIND_INSTRUCT = "Passa il tuo mouse sul bottone della barra delle azioni a cui vuoi assegnare un tasto. Premi il pulsante ESC o il tasto destro per cancellare l'attuale assegnazione tasti di quel bottone."
 L_BIND_CLEARED = "Tutte le assegnazioni tasti sono state cancellate per"
 L_BIND_BINDING = "Assegnazione"
 L_BIND_KEY = "Tasto"
@@ -231,7 +231,7 @@ L_DATATEXT_CONTROL = " sotto controllo:"
 L_INFO_ERRORS = "Nessun errore ancora."
 L_INFO_INVITE = "Accettato l'invito di: "
 L_INFO_DUEL = "Declinata la richiesta di duello di: "
-L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
+L_INFO_PET_DUEL = "Declinata la richiesta di duello tra mascottes di: "
 L_INFO_DISBAND = "Scioglimento gruppo..."
 L_INFO_SETTINGS_DBM = "Digita /settings dbm per applicare le impostazioni predefinite per DBM."
 L_INFO_SETTINGS_DXE = "Digita /settings dxe per applicare le impostazioni predefinite per DXE."
@@ -247,9 +247,9 @@ L_POPUP_INSTALLUI = "È la prima volta che utilizzi la ShestakUI con questo pers
 L_POPUP_RESETUI = "Vuoi davvero ripristinare tutte le impostazioni iniziali della ShestakUI?"
 L_POPUP_RESETSTATS = "Vuoi davvero riazzerare tutte le statistiche relative a tempo trascorso in gioco e oro?"
 L_POPUP_SWITCH_RAID = "Sono attive entrambe le configurazioni per le incursioni, scegline una, per favore."
-L_POPUP_DISBAND_RAID = "Vuoi davvero sciogliere il gruppo??"
-L_POPUP_DISABLEUI = "A questa risoluzione la ShestakUI non funziona correttamente, vuoi disabilitare l'AddOn? (clicca 'Cancella' se vuoi provare con un'altra risoluzione)"
-L_POPUP_SETTINGS_ALL = "Applica le impostazioni per tutte le AddOns? (DBM/DXE, Skada e MSBT)"
+L_POPUP_DISBAND_RAID = "Vuoi davvero sciogliere il gruppo?"
+L_POPUP_DISABLEUI = "A questa risoluzione la ShestakUI non funziona correttamente, vuoi disabilitare l'AddOn (clicca 'Cancella' se vuoi provare con un'altra risoluzione)?"
+L_POPUP_SETTINGS_ALL = "Applica le impostazioni per tutte le AddOns (DBM/DXE, Skada e MSBT)?"
 L_POPUP_SETTINGS_DBM = "È necessario cambiare la posizione degli elementi di DBM."
 L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DXE."
 L_POPUP_SETTINGS_BW = "È necessario cambiare la posizione degli elementi di BigWigs."
@@ -289,7 +289,7 @@ L_STATS_WORLD_MAP = "Clicca per aprire la mappa del mondo."
 L_STATS_CURRENT_XP = "PE attuali/massimi"
 L_STATS_MEMORY_USAGE = "Utilizzo memoria interfaccia:"
 L_STATS_GARBAGE_COLLECTED = "Spazzatura raccolta"
-L_STATS_CHANGE_SORTING = "(Gilda) Clicca col destro per cambiare l'ordine, clicca shift+tasto destro per invertirlo."
+L_STATS_CHANGE_SORTING = "(Gilda) Clicca col destro per cambiare l'ordine, clicca Shift+tasto destro per invertirlo."
 L_STATS_HIDDEN = "Nascosto/a"
 L_STATS_VIEW_NOTES = "Tieni premuto il tasto Alt per visualizzare gradi, note e note degli ufficiali."
 L_STATS_HR = "o"
@@ -346,7 +346,7 @@ L_SLASHCMD_HELP = {
 	"Comandi slash disponibili:",
 	"/rl - Ricarica l'interfaccia.",
 	"/rc - Avvia un appello.",
-	"/gm - Apre il pannello per interagire con i GM.",
+	"/gm - Apri il pannello per interagire con i RG.",
 	"/dis ADDON_NAME - Disabilita AddOn.",
 	"/en ADDON_NAME - Attiva AddOn.",
 	"/rd - Sciogli gruppo o incursione.",
@@ -386,7 +386,7 @@ L_EXTRA_ZONEACHID = { -- Needs review
 	["Kalimdor"]						= {X =   43, A =    0, H =    0},
 	["Terre Esterne"]					= {X =   44, A =    0, H =    0},
 	["Nordania"]						= {X =   45, A =    0, H =    0},
-	["Pandaria"]						= {X = 6974, A =    0, H =    0}, -- Needs review
+	["Pandaria"]						= {X = 6974, A =    0, H =    0},
 	["Mappa del mondo"]					= {X =  nil, A =    0, H =    0},
 	-- Eastern Kingdoms
 	["Altipiani d'Arathi"]				= {X =  761, A = 4896, H = 4896},
@@ -462,13 +462,13 @@ L_EXTRA_ZONEACHID = { -- Needs review
 	["Tol Barad"]						= {X =    0, A = 4874, H = 4874},
 	["Penisola di Tol Barad"]			= {X =    0, A = 4874, H = 4874},
 	-- Pandaria
-	["The Jade Forest"]					= {X = 6351, A = 6300, H = 6534}, -- Needs review
-	["Valley of the Four Winds"]		= {X = 6969, A = 6301, H = 6301}, -- Needs review
-	--["Krasarang Wilds"]					= {X = 6975, A = 6535, H = 6536}, -- Needs review
-	["Kun-Lai Summit"]					= {X = 6976, A = 6537, H = 6538}, -- Needs review
-	["Townlong Steppes"]				= {X = 6977, A = 6539, H = 6539}, -- Needs review
-	["Dread Wastes"]					= {X = 6978, A = 6540, H = 6540}, -- Needs review
-	["Vale of Eternal Blossoms"]		= {X = 6979, A =    0, H =    0}, -- Needs review
+	["Foresta di Giada"]				= {X = 6351, A = 6300, H = 6534},
+	["Valle dei Quattro Venti"]			= {X = 6969, A = 6301, H = 6301},
+	--["Giungla di Krasarang"]			= {X = 6975, A = 6535, H = 6536},
+	["Massiccio del Kun-Lai"]			= {X = 6976, A = 6537, H = 6538},
+	["Steppe di Tong Long"]				= {X = 6977, A = 6539, H = 6539},
+	["Distese del Terrore"]				= {X = 6978, A = 6540, H = 6540},
+	["Vallata dell'Eterna Primavera"]	= {X = 6979, A =    0, H =    0},
 	-- Boolean Explores
 	["Isola di Quel'Danas"]				= {X =  868, A =    0, H =    0},
 	["Ahn'Qiraj: il Regno Perduto"]		= {X =    0, A =    0, H =    0},

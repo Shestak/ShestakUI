@@ -33,25 +33,25 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Annuncia in chat quando un nemico in arena sta b
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annuncia in gruppo/incursione quando tu interrompi un incantesimo/abilità"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Annuncia in gruppo/incursione quando tu lanci alcuni incantesimi/abilità"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Controlla incantesimi/abilità lanciati da tutti i compagni di gruppo/incursione"
-L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Announce your Lightwell" -- Needs review
-L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Announce Toy Train or Direbrew's Remote cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Says thanks for some spells" -- Needs review
-L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown.Pull(#))" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel" -- Needs review
+L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Annuncia il tuo Pozzo di Luce"
+L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Annuncia l'uso del trenino giocattolo o del telecomando che ti conduce ai Sotterranei di Roccianera"
+L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Ringrazia per alcuni incantesimi"
+L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Annuncia il conto alla rovescia di avvio incontro (/run PullCountdown.Pull(#))"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Annuncia l'uso di tonici e cibo"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Annuncio automatico all'appello (se attivato, annuncia nel canale incursione)"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Annuncia nel canale incursione"
 
 -- Automation options
-L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION = "Automatismi"
 L_GUI_AUTOMATION_RESURRECTION = "Auto-risorgi nei Campi di Battaglia"
 L_GUI_AUTOMATION_SCREENSHOT = "Cattura una schermata quando il giocatore completa un'impresa"
-L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
-L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Popup automatico risoluzione artefatto"
+L_GUI_AUTOMATION_CHEFS_HAT = "Auto-indossa il cappello da cuoco"
 L_GUI_AUTOMATION_ACCEPT_INVITE = "Auto-accetta gli inviti"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Auto-declina i duelli"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Auto-accetta le missioni"
-L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
-L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
+L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto-salta i filmati"
+L_GUI_AUTOMATION_AUTO_ROLE = "Auto-imposta il tuo ruolo"
 
 -- Skins options
 L_GUI_SKINS = "Restyling"
@@ -159,7 +159,7 @@ L_GUI_TOOLTIP_TITLE = "Titolo dei giocatori nei suggerimenti"
 L_GUI_TOOLTIP_RANK = "Grado in gilda nei suggerimenti"
 L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Esperienza PvP del giocatore in arena"
 L_GUI_TOOLTIP_SPELL_ID = "ID Incantesimo/Abilità"
-L_GUI_TOOLTIP_RAID_ICON = "Icone dell'incursione"
+L_GUI_TOOLTIP_RAID_ICON = "Visualizza i marchi d'incursione nei suggerimenti"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Visualizza chi ha in bersaglio l'unità che è nel tuo gruppo/incursione"
 L_GUI_TOOLTIP_ITEM_COUNT = "Conteggio oggetti"
 L_GUI_TOOLTIP_UNIT_ROLE = "Ruolo dell'unità"
@@ -201,15 +201,15 @@ L_GUI_MINIMAP_MERGE_MENUS = "Unisci i bottoni principali e quelli delle AddOns d
 L_GUI_MAP_ENABLE = "Attiva la mappa del mondo"
 L_GUI_MAP_SCALE = "Scala della mappa del mondo"
 L_GUI_MAP_BG_STYLIZATION = "Restyling della mappa dei Campi di Battaglia"
-L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
-L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
+L_GUI_MAP_BOSS_COUNT = "Mostra il conteggio dei bosses sulla mappa del mondo"
+L_GUI_MAP_EXPLORE = "Traccia le imprese Esploratore mondiale e Storico sulla mappa del mondo"
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Attiva il riquadro bottino"
 L_GUI_LOOT_ROLL_ENABLE = "Attiva il riquadro del bottino di gruppo"
-L_GUI_LOOT_ICON_SIZE = "Dimensioni dell'icone"
+L_GUI_LOOT_ICON_SIZE = "Dimensioni delle icone"
 L_GUI_LOOT_WIDTH = "Larghezza del riquadro bottino"
-L_GUI_LOOT_AUTOGREED = "A livello massimo, attiva automaticament la bramosia per gli oggetti verdi"
+L_GUI_LOOT_AUTOGREED = "A livello massimo, attiva automaticamente la bramosia per gli oggetti verdi"
 L_GUI_LOOT_AUTODE = "Auto-conferma il disincantamento degli oggetti"
 
 -- Nameplate options
@@ -225,9 +225,9 @@ L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostra il nome di incantesimi/abilità sulle bar
 L_GUI_NAMEPLATE_THREAT = "Attiva il sensore di rilevamento minaccia (si adatta automaticamente al tuo ruolo)"
 L_GUI_NAMEPLATE_CLASS_ICON = "Icone delle classi in PvP"
 L_GUI_NAMEPLATE_NAME_ABBREV = "Mostra nomi abbreviati"
-L_GUI_NAMEPLATE_GOOD_COLOR = "Colore se il PG è minacciato (in base a difensore o assalitore/guaritore)"
+L_GUI_NAMEPLATE_GOOD_COLOR = "Colore se il PG è minacciato (in base a difensore o assaltatore/guaritore)"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Colore per perdita/guadagno minaccia"
-L_GUI_NAMEPLATE_BAD_COLOR = "Colore se il PG non è minacciato (in base a difensore o assalitore/guaritore)"
+L_GUI_NAMEPLATE_BAD_COLOR = "Colore se il PG non è minacciato (se difensore o assaltatore/guaritore)"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Mostra le penalità sulle barre delle unità (l'ozpione 'Mostra nomi abbreviati' deve essere disabilitata)"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Dimensioni delle penalità sulle barre delle unità"
 
@@ -283,14 +283,14 @@ L_GUI_UF_SHOW_PET = "Mostra il riquadro per il famiglio"
 L_GUI_UF_SHOW_FOCUS = "Mostra il riquadro per il focus"
 L_GUI_UF_SHOW_TOT = "Mostra il riquadro per il bersaglio del bersaglio"
 L_GUI_UF_SHOW_BOSS = "Mostra i riquadri per i bosses"
-L_GUI_UF_BOSS_RIGHT = "Riquadri per i boss sulla destra"
+L_GUI_UF_BOSS_RIGHT = "Riquadri per i bosses sulla destra"
 L_GUI_UF_SHOW_ARENA = "Mostra i riquadri per l'arena"
 L_GUI_UF_ARENA_RIGHT = "Riquadri per l'arena sulla destra"
 L_GUI_UF_ICONS_PVP = "Testo PvP (senza icona) in mouseover sui riquadri di giocatore e bersaglio"
 L_GUI_UF_ICONS_COMBAT = "Icona di status 'in combattimento'"
 L_GUI_UF_ICONS_RESTING = "Icona 'Riposato' per personaggi di basso livello"
 L_GUI_UF_PORTRAIT_ENABLE = "Attiva ritratti per giocatore e bersaglio"
-L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Bordi dei ritratti colorati in base alle classi"
+L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Bordi dei ritratti colorati in base alla classe"
 L_GUI_UF_PORTRAIT_HEIGHT = "Altezza del ritratto"
 L_GUI_UF_PORTRAIT_WIDTH = "Larghezza del ritratto"
 L_GUI_UF_PLUGINS_GCD = "Scintilla del recupero globale"
@@ -306,15 +306,15 @@ L_GUI_UF_PLUGINS_DIMINISHING = "Rendimenti Decrescenti (Diminishing Returns) sul
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Barre di classe"
-L_GUI_UF_PLUGINS_COMBO_BAR = "Icone punti combo per Druido e Ladro"
-L_GUI_UF_PLUGINS_SHADOW_BAR = "Attiva la barra Sfere d'Ombra del Sacerdote"
-L_GUI_UF_PLUGINS_CHI_BAR = "Attiva la barra Chi del Monaco"
-L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Attiva la barra Vendetta"
-L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Attiva la barra Equilibrio del Druido"
-L_GUI_UF_PLUGINS_HOLY_BAR = "Attiva la barra del Potere Sacro del Paladino"
-L_GUI_UF_PLUGINS_SHARD_BAR = "Attiva la barra poteri Stregone"
-L_GUI_UF_PLUGINS_RUNE_BAR = "Attiva la barra Rune del Cavaliere della Morte"
-L_GUI_UF_PLUGINS_TOTEM_BAR = "Attiva la barra Totem dello Sciamano"
+L_GUI_UF_PLUGINS_COMBO_BAR = "Icone punti combo per druido e ladro"
+L_GUI_UF_PLUGINS_SHADOW_BAR = "Attiva la barra di classe del sacerdote"
+L_GUI_UF_PLUGINS_CHI_BAR = "Attiva la barra di classe del monaco"
+L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Attiva la barra della vendetta"
+L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Attiva la barra di classe del druido"
+L_GUI_UF_PLUGINS_HOLY_BAR = "Attiva la barra di classe del paladino"
+L_GUI_UF_PLUGINS_SHARD_BAR = "Attiva la barra di classe dello stregone"
+L_GUI_UF_PLUGINS_RUNE_BAR = "Attiva la barra di classe del cavaliere della morte"
+L_GUI_UF_PLUGINS_TOTEM_BAR = "Attiva la barra dei totems dello sciamano"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Cambio di colore dei bordi in base al grado di aggressione"
@@ -325,7 +325,7 @@ L_GUI_UF_VERTICAL_HEALTH = "Orientamento verticale della salute"
 L_GUI_UF_ALPHA_HEALTH = "Trasparenza delle barre della salute quando i punti sono al 100%"
 L_GUI_UF_SHOW_RANGE = "Abilita l'opacità dei riquadri dell'incursione in base alla distanza"
 L_GUI_UF_RANGE_ALPHA = "Trasparenza dei riquadri delle unità quando un'unità è fuori portata"
-L_GUI_UF_SOLO_MODE = "Mostra sempre il riquadro del giocatore sempre"
+L_GUI_UF_SOLO_MODE = "Mostra sempre il riquadro del giocatore"
 L_GUI_UF_PLAYER_PARTY = "Mostra il riquadro del giocatore in gruppo"
 L_GUI_UF_SHOW_TANK = "Mostra i difensori dell'incursione"
 L_GUI_UF_SHOW_TANK_TT = "Mostra il bersaglio del bersaglio dei difensori dell'incursione"
@@ -333,12 +333,12 @@ L_GUI_UF_RAID_GROUP = "Numero dei gruppi nell'incursione (solo con ShestakUI_Hea
 L_GUI_UF_RAID_VERTICAL_GROUP = "Gruppi dell'incursione verticali (solo con ShestakUI_Heal)"
 L_GUI_UF_ICONS_LEADER = "Icona del capoincursione, dell'assistente e del responsabile del bottino sui riquadri"
 L_GUI_UF_ICONS_LFD_ROLE = "Icona del ruolo nel gruppo sul riquadro"
-L_GUI_UF_ICONS_RAID_MARK = "Marchi dell'incursione"
+L_GUI_UF_ICONS_RAID_MARK = "Marchi d'incursione"
 L_GUI_UF_ICONS_READY_CHECK = "Icone dell'appello"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Evidenzia texture + icona delle penalità"
-L_GUI_UF_PLUGINS_AURA_WATCH = "Icone delle penalità dell'incursione"
-L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer sulle icone delle penalità dell'incursione"
-L_GUI_UF_PLUGINS_HEALCOMM = "Mostra sul riquadro le cure in arrivo"
+L_GUI_UF_PLUGINS_AURA_WATCH = "Icone delle penalità d'incursione"
+L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer sulle icone delle penalità d'incursione"
+L_GUI_UF_PLUGINS_HEALCOMM = "Mostra le cure in arrivo sul riquadro"
 L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto-lancia resurrezione col tasto centrale quando l'unità è morta (non funziona con Clique attiva)"
 
 -- Panel options
@@ -349,7 +349,7 @@ L_GUI_TOP_PANEL_WIDTH = "Larghezza pannello"
 L_GUI_TOP_PANEL_HEIGHT = "Altezza pannello"
 
 -- Stats options
-L_GUI_STATS = "Caratteristiche"
+L_GUI_STATS = "Stats"
 L_GUI_STATS_BG = "Campi di Battaglia"
 L_GUI_STATS_CLOCK = "Orologio"
 L_GUI_STATS_LATENCY = "Latenza"
