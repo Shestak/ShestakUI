@@ -9,7 +9,6 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true or C.unitframe.p
 T.DiminishingSpells = function()
 	return {
 		-- Disorients
-		--MOP[49203] = {"disorient"},	-- Hungering Cold
 		[6770] = {"disorient"},		-- Sap
 		[1776] = {"disorient"},		-- Gouge
 		[51514] = {"disorient"},	-- Hex
@@ -69,6 +68,7 @@ T.DiminishingSpells = function()
 		[89766] = {"ctrlstun"},		-- Axe Toss (Felguard)
 		[50519] = {"ctrlstun"},		-- Sonic Blast (Bat)
 		[46968] = {"ctrlstun"},		-- Shockwave
+		[115001] = {"ctrlstun"},	-- Remorseless Winter
 		[853] = {"ctrlstun"},		-- Hammer of Justice
 		[5211] = {"ctrlstun"},		-- Bash
 		[19577] = {"ctrlstun"},		-- Intimidation

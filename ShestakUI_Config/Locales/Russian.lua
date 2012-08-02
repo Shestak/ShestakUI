@@ -33,13 +33,13 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Сообщать в чат, когда враг 
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Сообщать в чат о вашем прерывании заклинания"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Сообщать в чат, когда вы произнесли заклинание"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Проверка заклинаний от всех участников группы/рейда"
-L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Announce your Lightwell" -- Needs review
-L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Announce Toy Train or Direbrew's Remote cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Says thanks for some spells" -- Needs review
-L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown.Pull(#))" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel" -- Needs review
+L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Сообщать в чат о вашем Колодце Света"
+L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Сообщать в чат об использовании Игрушечной ж/д или Пульте Худовара"
+L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Благодарить за полезные заклинания"
+L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Отсчитывать время до атаки(/run PullCountdown.Pull(#))"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Сообщать в чат об отсутствующих настоях и еде"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Автоматически сообщать при проверке готовности(если включено: сообщать в рейдовый канал)"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Сообщать в рейдовый канал"
 
 -- Automation options
 L_GUI_AUTOMATION = "Автоматизация"

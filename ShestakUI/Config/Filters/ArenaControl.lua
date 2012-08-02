@@ -33,6 +33,34 @@ T.ArenaControl = function()
 		[GetSpellInfo(605)] = 3,	-- Mind Control
 		[GetSpellInfo(64044)] = 3,	-- Psychic Horror
 
+		-- Stuns and Incapacitates
+		[GetSpellInfo(5211)] = 3,	-- Bash
+		[GetSpellInfo(1833)] = 3,	-- Cheap Shot
+		[GetSpellInfo(408)] = 3,	-- Kidney Shot
+		[GetSpellInfo(1776)] = 3,	-- Gouge
+		[GetSpellInfo(44572)] = 3,	-- Deep Freeze
+		[GetSpellInfo(19386)] = 3,	-- Wyvern Sting
+		[GetSpellInfo(19503)] = 3,	-- Scatter Shot
+		[GetSpellInfo(9005)] = 3,	-- Pounce
+		[GetSpellInfo(22570)] = 3,	-- Maim
+		[GetSpellInfo(853)] = 3,	-- Hammer of Justice
+		[GetSpellInfo(105593)] = 3,	-- Fist of Justice
+		[GetSpellInfo(20066)] = 3,	-- Repentance
+		[GetSpellInfo(46968)] = 3,	-- Shockwave
+		[GetSpellInfo(115001)] = 3,	-- Remorseless Winter
+		[GetSpellInfo(47481)] = 3,	-- Gnaw (dk pet stun)
+		[GetSpellInfo(91797)] = 3,	-- Gnaw (dk pet stun mutant)
+		[GetSpellInfo(24394)] = 3,	-- Intimidation
+		[GetSpellInfo(82691)] = 3,	-- Ring of Frost
+		[GetSpellInfo(31661)] = 3,	-- Dragon's Breath
+		--MOP[GetSpellInfo(12355)] = 3,	-- Impact
+		--MOP[GetSpellInfo(83047)] = 3,	-- Improved Polymorph
+		--MOP[GetSpellInfo(93986)] = 3,	-- Aura of Foreboding
+		[GetSpellInfo(30283)] = 3,	-- Shadowfury
+		[GetSpellInfo(6544)] = 3,	-- Heroic Leap
+		--MOP[GetSpellInfo(85388)] = 3,	-- Throwdown
+		[GetSpellInfo(108194)] = 3,	-- Asphyxiate
+
 		-- Roots
 		[GetSpellInfo(339)] = 3,	-- Entangling Roots
 		[GetSpellInfo(122)] = 3,	-- Frost Nova
@@ -48,33 +76,11 @@ T.ArenaControl = function()
 		[GetSpellInfo(63685)] = 3,	-- Freeze (Frozen Power)
 		[GetSpellInfo(7922)] = 3,	-- Charge Stun
 
-		-- Stuns and Incapacitates
-		[GetSpellInfo(5211)] = 3,	-- Bash
-		[GetSpellInfo(1833)] = 3,	-- Cheap Shot
-		[GetSpellInfo(408)] = 3,	-- Kidney Shot
-		[GetSpellInfo(1776)] = 3,	-- Gouge
-		[GetSpellInfo(44572)] = 3,	-- Deep Freeze
-		[GetSpellInfo(19386)] = 3,	-- Wyvern Sting
-		[GetSpellInfo(19503)] = 3,	-- Scatter Shot
-		[GetSpellInfo(9005)] = 3,	-- Pounce
-		[GetSpellInfo(22570)] = 3,	-- Maim
-		[GetSpellInfo(853)] = 3,	-- Hammer of Justice
-		[GetSpellInfo(105593)] = 3,	-- Fist of Justice
-		[GetSpellInfo(20066)] = 3,	-- Repentance
-		[GetSpellInfo(46968)] = 3,	-- Shockwave
-		--MOP[GetSpellInfo(49203)] = 3,	-- Hungering Cold
-		[GetSpellInfo(47481)] = 3,	-- Gnaw (dk pet stun)
-		[GetSpellInfo(91797)] = 3,	-- Gnaw (dk pet stun mutant)
-		[GetSpellInfo(24394)] = 3,	-- Intimidation
-		[GetSpellInfo(82691)] = 3,	-- Ring of Frost
-		[GetSpellInfo(31661)] = 3,	-- Dragon's Breath
-		--MOP[GetSpellInfo(12355)] = 3,	-- Impact
-		--MOP[GetSpellInfo(83047)] = 3,	-- Improved Polymorph
-		--MOP[GetSpellInfo(93986)] = 3,	-- Aura of Foreboding
-		[GetSpellInfo(30283)] = 3,	-- Shadowfury
-		[GetSpellInfo(6544)] = 3,	-- Heroic Leap
-		--MOP[GetSpellInfo(85388)] = 3,	-- Throwdown
-		[GetSpellInfo(108194)] = 3,	-- Asphyxiate
+		-- Immunities
+		[GetSpellInfo(45438)] = 2,	-- Ice Block
+		[GetSpellInfo(642)] = 2,	-- Divine Shield
+		[GetSpellInfo(46924)] = 2,	-- Bladestorm
+		[GetSpellInfo(19263)] = 2,	-- Deterrence
 
 		-- Silences
 		[GetSpellInfo(55021)] = 1,	-- Improved Counterspell
@@ -108,11 +114,5 @@ T.ArenaControl = function()
 		[GetSpellInfo(48707)] = 1,	-- Anti-Magic Shell
 		[GetSpellInfo(31224)] = 1,	-- Cloak of Shadows
 		[GetSpellInfo(48792)] = 1,	-- Icebound Fortitude
-
-		-- Immunities
-		[GetSpellInfo(45438)] = 2,	-- Ice Block
-		[GetSpellInfo(642)] = 2,	-- Divine Shield
-		[GetSpellInfo(46924)] = 2,	-- Bladestorm
-		[GetSpellInfo(19263)] = 2,	-- Deterrence
 	}
 end

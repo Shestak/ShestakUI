@@ -56,7 +56,9 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
-			-- Blood Charge -- Experimental
+			-- Scent of Blood -- useful?
+			{spellID = 50421, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blood Charge -- useful?
 			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Freezing Fog
 			{spellID = 59052, unitID = "player", caster = "player", filter = "BUFF"},
@@ -64,8 +66,6 @@ Filger_Spells = {
 			{spellID = 51124, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sudden Doom
 			{spellID = 81340, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Crimson Scourge
-			--MOP{spellID = 81141, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unholy Strength
 			{spellID = 53365, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -105,8 +105,6 @@ Filger_Spells = {
 			{spellID = 59879, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Fever
 			{spellID = 59921, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Unholy Blight
-			--MOP{spellID = 49194, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Summon Gargoyle
 			{spellID = 49206, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
@@ -124,12 +122,12 @@ Filger_Spells = {
 			{spellID = 47476, filter = "CD"},
 			-- Mind Freeze
 			{spellID = 47528, filter = "CD"},
+			-- Remorseless Winter
+			{spellID = 108200, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Anti-Magic Shell
 			{spellID = 48707, filter = "CD"},
-			-- Blood Tap
-			{spellID = 45529, filter = "CD"},
 			-- Death Pact
 			{spellID = 48743, filter = "CD"},
 			-- Icebound Fortitude
@@ -152,8 +150,6 @@ Filger_Spells = {
 			{spellID = 49028, filter = "CD"},
 			-- Pillar of Frost
 			{spellID = 51271, filter = "CD"},
-			-- Hungering Cold
-			--MOP{spellID = 49203, filter = "CD"},
 			-- Unholy Frenzy
 			{spellID = 49016, filter = "CD"},
 			-- Anti-Magic Zone
@@ -231,18 +227,18 @@ Filger_Spells = {
 			{spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Living Seed
 			{spellID = 48504, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nature's Bounty
+			-- Glyph of Rejuvenation
 			{spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tree of Life
-			{spellID = 33891, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Incarnation
+			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Grasp
 			{spellID = 16689, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thorns
-			--MOP{spellID = 467, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Owlkin Frenzy
 			{spellID = 48391, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Celestial Alignment
+			{spellID = 112071, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Starfall
 			{spellID = 48505, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Roar
@@ -255,6 +251,10 @@ Filger_Spells = {
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
 			{spellID = 5229, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Might of Ursoc
+			{spellID = 106922, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Savage Defense
+			{spellID = 62606, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Frenzied Regeneration
 			{spellID = 124769, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tiger's Fury
@@ -284,8 +284,6 @@ Filger_Spells = {
 			{spellID = 16870, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Predator's Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pulverize
-			--MOP{spellID = 80313, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Weapons
 			-- Physical Agility
@@ -340,10 +338,6 @@ Filger_Spells = {
 			{spellID = 8921, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Sunfire
 			{spellID = 93402, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Earth and Moon
-			--MOP{spellID = 48506, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Insect Swarm
-			{spellID = 5570, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Fungal Growth
 			{spellID = 81281, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Faerie Fire
@@ -354,12 +348,10 @@ Filger_Spells = {
 			{spellID = 1079, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Lacerate
 			{spellID = 33745, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Thrash
+			{spellID = 77758, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pounce Bleed
 			{spellID = 9007, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Mangle
-			{spellID = 33876, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Demoralizing Roar
-			{spellID = 99, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Skull Bash
 			{spellID = 82365, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Immobilized
@@ -441,17 +433,17 @@ Filger_Spells = {
 			{spellID = 5229, filter = "CD"},
 			-- Faerie Fire
 			{spellID = 770, filter = "CD"},
+			-- Disorienting Roar
+			{spellID = 99, filter = "CD"},
 			-- Wild Charge
 			{spellID = 102401, filter = "CD"},
 			-- Mighty Bash
 			{spellID = 5211, filter = "CD"},
+			-- Bear Hug
+			{spellID = 102795, filter = "CD"},
 			-- Maim
 			{spellID = 22570, filter = "CD"},
-			-- Cower
-			--MOP{spellID = 8998, filter = "CD"},
-			-- Thorns
-			--MOP{spellID = 467, filter = "CD"},
-			-- Tree of Life
+			-- Incarnation: Tree of Life
 			{spellID = 33891, filter = "CD"},
 			-- Skull Bash
 			{spellID = 106839, filter = "CD"},
@@ -2624,6 +2616,8 @@ Filger_Spells = {
 			{spellID = 91797, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Remorseless Winter
+			{spellID = 115001, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Strangulate
 			{spellID = 47476, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dark Simulacrum
@@ -2636,8 +2630,6 @@ Filger_Spells = {
 			{spellID = 50435, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Desecration
 			--MOP{spellID = 55741, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Hungering Cold
-			--MOP{spellID = 49203, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Druid
 			-- Cyclone
@@ -2646,10 +2638,14 @@ Filger_Spells = {
 			{spellID = 2637, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Bear Hug
+			{spellID = 102795, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Maim
 			{spellID = 22570, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Pounce
 			{spellID = 9005, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Disorienting Roar
+			{spellID = 99, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
 			{spellID = 78675, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entangling Roots
@@ -2915,6 +2911,8 @@ Filger_Spells = {
 			{spellID = 91797, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Remorseless Winter
+			{spellID = 115001, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Strangulate
 			{spellID = 47476, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -2929,8 +2927,8 @@ Filger_Spells = {
 			{spellID = 77764, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Survival Instincts
 			{spellID = 61336, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Tree of life
-			{spellID = 33891, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Incarnation
+			{spellID = 117679, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserk
 			{spellID = 50334, unitID = "target", caster = "all", filter = "BUFF"},
 
@@ -2940,10 +2938,14 @@ Filger_Spells = {
 			{spellID = 2637, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Bear Hug
+			{spellID = 102795, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Maim
 			{spellID = 22570, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Pounce
 			{spellID = 9005, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Disorienting Roar
+			{spellID = 99, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
 			{spellID = 78675, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Entangling Roots

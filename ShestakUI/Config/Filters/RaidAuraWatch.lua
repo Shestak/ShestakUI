@@ -318,7 +318,7 @@ if C.raidframe.plugins_aura_watch == true then
 		-- PvP
 		-----------------------------------------------------------------
 			-- Death Knight
-			--[[SpellName(51209),	-- Hungering Cold
+			--[[SpellName(115001),	-- Remorseless Winter
 			SpellName(47476),	-- Strangulate
 			SpellName(108194),	-- Asphyxiate
 			-- Druid

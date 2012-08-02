@@ -14,7 +14,7 @@ end
 -- Nameplates use these
 T.DebuffWhiteList = {
 	-- Death Knight
-	--MOP[SpellName(49203)] = true,	-- Hungering Cold
+	[SpellName(115001)] = true,	-- Remorseless Winter
 	[SpellName(47476)] = true,	-- Strangulate
 	[SpellName(108194)] = true,	-- Asphyxiate
 	-- Druid
@@ -24,10 +24,8 @@ T.DebuffWhiteList = {
 	[SpellName(80964)] = true,	-- Skull Bash
 	[SpellName(78675)] = true,	-- Solar Beam
 	[SpellName(8921)] = true,	-- Moonfire
-	[SpellName(5570)] = true,	-- Insect Swarm
 	[SpellName(93402)] = true,	-- Sunfire
 	[SpellName(58180)] = true,	-- Infected Wounds
-	[SpellName(33878)] = true,	-- Mangle
 	[SpellName(33745)] = true,	-- Lacerate
 	[SpellName(1822)] = true,	-- Rake
 	[SpellName(1079)] = true,	-- Rip

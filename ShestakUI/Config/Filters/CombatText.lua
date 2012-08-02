@@ -48,8 +48,8 @@ elseif T.class == "DRUID" then
 		-- Damaging spells
 		T.aoespam[8921] = true		-- Moonfire
 		T.aoespam[93402] = true		-- Sunfire
-		T.aoespam[5570] = true		-- Insect Swarm
 		T.aoespam[42231] = true		-- Hurricane
+		T.aoespam[106998] = true	-- Astral Storm
 		T.aoespam[50288] = true		-- Starfall
 		T.aoespam[78777] = true		-- Wild Mushroom
 		T.aoespam[61391] = true		-- Typhoon
@@ -59,6 +59,7 @@ elseif T.class == "DRUID" then
 		T.aoespam[62078] = true		-- Swipe (Cat Form)
 		T.aoespam[779] = true		-- Swipe (Bear Form)
 		T.aoespam[33745] = true		-- Lacerate
+		T.aoespam[77758] = true		-- Thrash
 		T.aoespam[1079] = true		-- Rip
 	end
 elseif T.class == "HUNTER" then
