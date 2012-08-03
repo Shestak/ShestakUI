@@ -730,8 +730,6 @@ Filger_Spells = {
 			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Icy Veins
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pyromaniac
-			--MOP{spellID = 83582, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incanter's Ward
 			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
@@ -744,8 +742,6 @@ Filger_Spells = {
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Power
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Improved Mana Gem
-			--MOP{spellID = 83098, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -767,12 +763,8 @@ Filger_Spells = {
 			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyroblast!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Clearcasting
-			--MOP{spellID = 12536, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invocation
 			--MOP{spellID = 87098, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Incanter's Absorption
-			--MOP{spellID = 44413, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Weapons
 			-- Caster General
@@ -825,8 +817,8 @@ Filger_Spells = {
 			{spellID = 33395, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Shattered Barrier
-			--MOP{spellID = 55080, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Ice Ward
+			{spellID = 111340, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frostfire Bolt
@@ -2731,8 +2723,8 @@ Filger_Spells = {
 			{spellID = 33395, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Shattered Barrier
-			--MOP{spellID = 55080, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Ice Ward
+			{spellID = 111340, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Slow
