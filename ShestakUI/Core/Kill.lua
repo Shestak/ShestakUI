@@ -34,6 +34,8 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	if C.chat.enable then
 		InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
 		InterfaceOptionsSocialPanelConversationMode:Kill()
+		InterfaceOptionsSocialPanelBnWhisperMode:Kill()
+		InterfaceOptionsSocialPanelWhisperMode:Kill()
 	end
 
 	if C.unitframe.enable then
