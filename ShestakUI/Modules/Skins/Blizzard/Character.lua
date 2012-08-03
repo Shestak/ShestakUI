@@ -25,8 +25,7 @@ local function LoadSkin()
 		"Trinket0Slot",
 		"Trinket1Slot",
 		"MainHandSlot",
-		"SecondaryHandSlot",
-		"RangedSlot"
+		"SecondaryHandSlot"
 	}
 
 	for _, slot in pairs(slots) do
@@ -46,9 +45,7 @@ local function LoadSkin()
 	end
 
 	select(8, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
-	select(8, _G["CharacterRangedSlot"]:GetRegions()):Hide()
 	select(8, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
-	select(9, _G["CharacterRangedSlot"]:GetRegions()):Hide()
 
 	-- Strip Textures
 	local charframe = {

@@ -10,7 +10,7 @@ local MINCOLOR, COLORINC, INCMOD, MinIL, MaxIL = 0.5, 0.2, 0.5, 288, 397
 local slotName = {
 	"HeadSlot", "NeckSlot", "ShoulderSlot", "BackSlot", "ChestSlot", "WristSlot",
 	"HandsSlot", "WaistSlot", "LegsSlot", "FeetSlot", "Finger0Slot", "Finger1Slot",
-	"Trinket0Slot", "Trinket1Slot", "MainHandSlot", "SecondaryHandSlot", "RangedSlot", "AmmoSlot"
+	"Trinket0Slot", "Trinket1Slot", "MainHandSlot", "SecondaryHandSlot"
 }
 
 local function GetAiL(unit)

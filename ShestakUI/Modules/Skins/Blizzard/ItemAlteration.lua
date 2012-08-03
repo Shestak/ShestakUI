@@ -31,7 +31,7 @@ local function LoadSkin()
 	T.SkinCloseButton(TransmogrifyArtFrameCloseButton)
 
 	local slots = {"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet",
-	"Wrist", "Hands", "Back", "MainHand", "SecondaryHand", "Ranged"}
+	"Wrist", "Hands", "Back", "MainHand", "SecondaryHand"}
 
 	for i = 1, #slots do
 		local slot = _G["TransmogrifyFrame"..slots[i].."Slot"]

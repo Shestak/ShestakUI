@@ -2,7 +2,7 @@
 --	Durability value on slot buttons in CharacterFrame(tekability by Tekkub)
 ----------------------------------------------------------------------------------------
 local SLOTIDS = {}
-for _, slot in pairs({"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands", "MainHand", "SecondaryHand", "Ranged"}) do
+for _, slot in pairs({"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands", "MainHand", "SecondaryHand"}) do
 	SLOTIDS[slot] = GetInventorySlotInfo(slot.."Slot")
 end
 local frame = CreateFrame("Frame", nil, CharacterFrame)
