@@ -830,7 +830,7 @@ local function Shared(self, unit)
 			self.Castbar.Icon:Point("BOTTOMRIGHT", self.Castbar.Button, -2, 2)
 			self.Castbar.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-			self.Castbar.Time = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
+			self.Castbar.Time = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.Castbar.Time:SetParent(self.Castbar.Button)
 			self.Castbar.Time:Point("CENTER", self.Castbar.Icon, "CENTER", 0, 0)
 			self.Castbar.Time:SetTextColor(1, 1, 1)
