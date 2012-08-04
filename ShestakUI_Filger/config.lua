@@ -203,10 +203,6 @@ Filger_Spells = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Find Weakness (Creche of the Final Dragon)
-			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["DRUID"] = {
@@ -318,7 +314,7 @@ Filger_Spells = {
 			-- Physical Melee
 			-- Caster General
 			-- Lightweave Embroidery (Intellect)
-			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
@@ -475,11 +471,9 @@ Filger_Spells = {
 			-- Nature's Grace
 			{spellID = 16886, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Lightweave
-			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
-			-- Power Torrent
-			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Jade Spirit
+			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
 	},
 	["HUNTER"] = {
@@ -708,8 +702,6 @@ Filger_Spells = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["MAGE"] = {
@@ -784,7 +776,7 @@ Filger_Spells = {
 			-- General
 			-- Caster General
 			-- Lightweave Embroidery (Intellect)
-			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -946,11 +938,9 @@ Filger_Spells = {
 			-- Cauterize
 			{spellID = 87023, filter = "ICD", trigger = "DEBUFF", duration = 120},
 			-- Lightweave
-			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
-			-- Power Torrent
-			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Jade Spirit
+			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
 	},
 	["MONK"] = {
@@ -1194,7 +1184,7 @@ Filger_Spells = {
 			-- Physical Melee
 			-- Caster General
 			-- Lightweave Embroidery (Intellect)
-			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
@@ -1391,7 +1381,7 @@ Filger_Spells = {
 			-- General
 			-- Caster General
 			-- Lightweave Embroidery (Intellect)
-			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
@@ -1552,11 +1542,9 @@ Filger_Spells = {
 
 			-- Internal
 			-- Lightweave
-			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
-			-- Power Torrent
-			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Jade Spirit
+			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
 	},
 	["ROGUE"] = {
@@ -1784,8 +1772,6 @@ Filger_Spells = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["SHAMAN"] = {
@@ -1875,7 +1861,7 @@ Filger_Spells = {
 			-- Physical Melee
 			-- Caster General
 			-- Lightweave Embroidery (Intellect)
-			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
@@ -2020,11 +2006,9 @@ Filger_Spells = {
 
 			-- Internal
 			-- Lightweave
-			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
-			-- Power Torrent
-			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Jade Spirit
+			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
 	},
 	["WARLOCK"] = {
@@ -2110,7 +2094,7 @@ Filger_Spells = {
 			-- General
 			-- Caster General
 			-- Lightweave Embroidery (Intellect)
-			{spellID = 125484, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -2279,11 +2263,9 @@ Filger_Spells = {
 
 			-- Internal
 			-- Lightweave
-			--MOP{spellID = 75170, filter = "ICD", trigger = "BUFF", duration = 60},
-			-- Power Torrent
-			{spellID = 74241, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
+			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Jade Spirit
+			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
 		},
 	},
 	["WARRIOR"] = {
@@ -2479,10 +2461,6 @@ Filger_Spells = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Find Weakness (Creche of the Final Dragon)
-			{spellID = 109744, filter = "ICD", trigger = "BUFF", duration = 115},
-			-- Velocity (Starcatcher Compass, Insignia of the Corrupted Mind, Seal of the Seven Signs)
-			--{spellID = 109789, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["ALL"] = {
