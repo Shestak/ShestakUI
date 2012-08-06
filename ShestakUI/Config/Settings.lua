@@ -407,7 +407,6 @@ C["unitframe"] = {
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
 	["plugins_fader"] = false,					-- Fade unit frames
 	["plugins_diminishing"] = true,				-- Diminishing Returns icons on arena frames
-	["plugins_trinkets_announce"] = false,		-- Announce (in English) the usage of enemy trinkets (only works in arena)
 }
 
 ----------------------------------------------------------------------------------------
