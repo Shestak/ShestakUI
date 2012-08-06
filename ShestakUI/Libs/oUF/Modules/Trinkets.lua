@@ -18,7 +18,7 @@ local TrinketUpdate = function(self, elapsed)
 		local unit = arenaGUID[self.guid]
 		if unit and arenaFrame[unit] then
 			if arenaFrame[unit].Trinket.trinketUpAnnounce then
-				if C.unitframe.plugins_trinkets_announce == true then
+				if C.announcements.enemy_trinkets == true then
 					if UnitInParty("player") then
 						SendChatMessage(L_UF_TRINKET_READY..UnitName(unit).." "..UnitClass(unit), "PARTY")
 					else
@@ -46,7 +46,7 @@ local TrinketUsed = function(guid, time)
 		CooldownFrame_SetTimer(arenaFrame[unit].Trinket.cooldownFrame, GetTime(), time, 1)
 		if arenaFrame[unit].Trinket.trinketUseAnnounce then
 			message = time == 120 and L_UF_TRINKET_USED or L_UF_WOTF_USED
-			if C.unitframe.plugins_trinkets_announce == true then
+			if C.announcements.enemy_trinkets == true then
 				if UnitInParty("player") then
 					SendChatMessage(message..UnitName(unit).." "..UnitClass(unit), "PARTY")
 				else

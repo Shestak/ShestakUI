@@ -39,6 +39,7 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "当敌人在进食喝水的时候在队伍/团�
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "当你成功打断的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS = "当有人与你使用同一法术的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "检视所有队员的施法"
+L_GUI_ANNOUNCEMENTS_ENEMY_TRINKETS = "宣布的敌人饰品的使用（只在舞台上）"
 
 -- Skins options
 L_GUI_SKINS = "风格化"
@@ -306,7 +307,6 @@ L_GUI_UF_PLUGINS_TALENTS = "显示敌对玩家天赋"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "显示玩家/目标的文字战斗信息"
 L_GUI_UF_PLUGINS_FADER = "头像框体渐隐"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
-L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE = "宣布（英文）使用（只在舞台上的敌人饰品）"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "仇恨边框"

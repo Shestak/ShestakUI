@@ -39,6 +39,7 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Sage im Chat an wenn ein Arenagegener trinkt"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Sage deine Unterbrechungen im Raid oder Schlachtzugschat an"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Sage im Raid / Schachtzugschat an, wenn du den selben Zauber castest"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Prüfe Zauber von allen Spielern"
+L_GUI_ANNOUNCEMENTS_ENEMY_TRINKETS = "Kündigen Sie die Nutzung der Feind Schmuckstücke (funktioniert nur in der Arena)"
 
 -- Skins options
 L_GUI_SKINS = "Stilisierung"
@@ -306,7 +307,6 @@ L_GUI_UF_PLUGINS_TALENTS = "Zeige gegnerische Talente"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"
 L_GUI_UF_PLUGINS_FADER = "Blende Einheitenfenster aus"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
-L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE = "Kündigen Sie (in englischer Sprache) die Nutzung der Feind Schmuckstücke (funktioniert nur in der Arena)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"

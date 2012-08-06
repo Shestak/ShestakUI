@@ -14,7 +14,7 @@ C["media"] = {
 	["pixel_font_style"] = "OUTLINEMONOCHROME",										-- Pixel font style("OUTLINEMONOCHROME" or "OUTLINE")
 	["pixel_font_size"] = 8,														-- Pixel font size for those places where it is not specified
 	["blank"] = [[Interface\AddOns\ShestakUI\Media\Textures\White.tga]],			-- Texture for borders
-	["texture"] = [[Interface\AddOns\ShestakUI\Media\Textures\Texture.tga]],		-- Texture for status bars
+	["texture"] = [[Interface\AddOns\ShestakUI\Media\Textures\Tukz.tga]],			-- Texture for status bars
 	["highlight"] = [[Interface\AddOns\ShestakUI\Media\Textures\Highlight.tga]],	-- Texture for debuffs highlight
 	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for wispers
 	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
@@ -63,6 +63,7 @@ C["announcements"] = {
 	["interrupts"] = false,						-- Announce in party/raid when you interrupt
 	["spells"] = false,							-- Announce in party/raid when you cast some spell
 	["spells_from_all"] = false,				-- Check spells cast from all members
+	["enemy_trinkets"] = false,					-- Announce (in English) the usage of enemy trinkets (only works in arena)
 }
 
 ----------------------------------------------------------------------------------------

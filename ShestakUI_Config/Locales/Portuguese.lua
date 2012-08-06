@@ -39,6 +39,7 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Announce in chat when arena enemy is drinking"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Announce in party/raid when you interrupt"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Announce in party/raid when you cast some spell"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Check spells cast from all members"
+L_GUI_ANNOUNCEMENTS_ENEMY_TRINKETS = "Anuncie o uso de bijuterias inimigos (só funciona em arena)"
 
 -- Skins options
 L_GUI_SKINS = "Stylization"
@@ -306,7 +307,6 @@ L_GUI_UF_PLUGINS_TALENTS = "Show enemy talent spec"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Combat text on player/target frame"
 L_GUI_UF_PLUGINS_FADER = "Fade unit frames"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames"
-L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE = "Anunciar (em Inglês) o uso de bijuterias inimigos (só funciona em arena)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Aggro border"

@@ -39,6 +39,7 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Annonce dans la fenêtre de discussion quand un 
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annonce /gr, /raid si vous interrompez un sort"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Annonce dans la fenêtre groupe/raid quand vous lancez certains sorts"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Afficher les sorts lancés par tous les membres"
+L_GUI_ANNOUNCEMENTS_ENEMY_TRINKETS = "Annoncent l'utilisation de bibelots ennemies (ne fonctionne que dans l'arène)"
 
 -- Skins options
 L_GUI_SKINS = "Personalisation d'addon"
@@ -306,7 +307,6 @@ L_GUI_UF_PLUGINS_TALENTS = "Afficher les talent de l'ennemi"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texte de combat sur les barres du joueur et de la cible"
 L_GUI_UF_PLUGINS_FADER = "Barres de unités"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
-L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE = "Annoncent (en anglais) l'utilisation de bibelots ennemies (ne fonctionne que dans l'arène)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"

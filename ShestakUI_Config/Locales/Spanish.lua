@@ -39,6 +39,7 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Anunciar en el chat cuando un enemigo en la aren
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Anunciar en el grupo/banda cuando interrumpes"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Anunciar en grupo/banda cuando lanzas el mismo hechizo que otro"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Comprueba los lanzamientos de hechizo de todos los miembros"
+L_GUI_ANNOUNCEMENTS_ENEMY_TRINKETS = "Anuncian el uso de chucherías del enemigo (sólo funciona en la arena)"
 
 -- Skins options
 L_GUI_SKINS = "Estilización"
@@ -306,7 +307,6 @@ L_GUI_UF_PLUGINS_TALENTS = "Mostrar configuración de los talentos del enemigo"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texto de combate en el marco del jugador/objetivo"
 L_GUI_UF_PLUGINS_FADER = "Desvanecer marcos de unidades"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
-L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE = "Anuncian (en Inglés) el uso de baratijas enemigos (sólo funciona en la arena)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Borde de aggro"

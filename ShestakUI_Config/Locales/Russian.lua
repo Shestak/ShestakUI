@@ -39,6 +39,7 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Сообщать в чат, когда враг 
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Сообщать в чат о вашем прерывании заклинания"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Сообщать в чат, когда вы произнесли заклинание"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Проверка заклинаний от всех участников группы/рейда"
+L_GUI_ANNOUNCEMENTS_ENEMY_TRINKETS = "Объявить использование враг безделушки (работает только на арене)"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"
@@ -307,7 +308,6 @@ L_GUI_UF_PLUGINS_TALENTS = "Отображать таланты врага"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Текст боя на рамках игрока и цели"
 L_GUI_UF_PLUGINS_FADER = "Скрывать рамки вне боя"
 L_GUI_UF_PLUGINS_DIMINISHING = "Иконка диминишинга на рамках арены"
-L_GUI_UF_PLUGINS_TRINKETS_ANNOUNCE = "Анонс (на английском) использование враг безделушки (работает только на арене)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Включить отображение угрозы на рамках группы/рейда"
