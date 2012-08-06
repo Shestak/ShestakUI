@@ -63,7 +63,7 @@ C["announcements"] = {
 	["interrupts"] = false,						-- Announce in party/raid when you interrupt
 	["spells"] = false,							-- Announce in party/raid when you cast some spell
 	["spells_from_all"] = false,				-- Check spells cast from all members
-	["enemy_trinkets"] = false,					-- Announce (in English) the usage of enemy trinkets (only works in arena)
+	["enemy_trinkets"] = false,					-- Announce the usage of enemy trinkets (only works in arena)
 }
 
 ----------------------------------------------------------------------------------------

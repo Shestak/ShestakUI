@@ -96,6 +96,7 @@
 	<Script file="Modules\Misc\AutoChefsHat.lua"/>
 	<Script file="Modules\Misc\CompanionCount.lua"/>
 	<Script file="Modules\Misc\SolveArtifact.lua"/>
+	<Script file="Modules\Misc\HideButton.lua"/>
 
 	<Script file="Modules\Announcements\Drinking.lua"/>
 	<Script file="Modules\Announcements\Interrupts.lua"/>
@@ -180,3 +181,5 @@
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Core\Movers.lua"/>
 </Ui>
+
+<!-- Editing by Oz of shestak.org -->
