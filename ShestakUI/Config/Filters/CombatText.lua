@@ -199,15 +199,17 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[80240] = true		-- Havoc
 		T.aoespam[42223] = true		-- Rain of Fire
 		T.aoespam[689] = true		-- Drain Life
-		T.aoespam[5857] = true		-- Hellfire Effect
-		T.aoespam[86040] = true		-- Hand of Gul'dan
+		T.aoespam[5857] = true		-- Hellfire
+		T.aoespam[129476] = true	-- Immolation Aura
 		T.aoespam[103103] = true	-- Malefic Grasp
-		T.aoespam[47897] = true		-- Shadowflame (Shadow direct damage)
-		T.aoespam[47960] = true		-- Shadowflame (Fire dot)
+		T.aoespam[86040] = true		-- Hand of Gul'dan
+		T.aoespam[124915] = true	-- Chaos Wave
+		T.aoespam[47960] = true		-- Shadowflame
 		T.aoespam[50590] = true		-- Immolation Aura
 		T.aoespam[30213] = true		-- Legion Strike (Felguard)
 		T.aoespam[89753] = true		-- Felstorm (Felguard)
 		T.aoespam[20153] = true		-- Immolation (Infrenal)
+		T.aoespam[103988] = true	-- Melee
 	end
 	if C.combattext.healing then
 		T.healfilter[63106] = true	-- Siphon Life
