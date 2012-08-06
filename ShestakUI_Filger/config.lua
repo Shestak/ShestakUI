@@ -2053,26 +2053,12 @@ Filger_Spells = {
 			-- Buffs
 			-- Molten Core
 			{spellID = 122355, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Decimation
-			--MOP{spellID = 63158, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Backdraft
-			--MOP{spellID = 54277, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 117828, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Backlash
-			--MOP{spellID = 34939, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nether Protection
-			--MOP{spellID = 30301, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nightfall
-			--MOP{spellID = 18095, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Eradication
-			--MOP{spellID = 47195, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Improved Soul Fire
-			--MOP{spellID = 85383, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Empowered Imp
-			--MOP{spellID = 47283, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fel Spark
-			{spellID = 89937, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 34936, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demonic Rebirth
-			--MOP{spellID = 88447, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 108559, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadow Trance
 			{spellID = 17941, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -2185,8 +2171,6 @@ Filger_Spells = {
 			{spellID = 698, filter = "CD"},
 			-- Twilight Ward
 			{spellID = 6229, filter = "CD"},
-			-- Demonic Empowerment
-			--MOP{spellID = 47193, filter = "CD"},
 			-- Demonic Leap
 			{spellID = 54785, filter = "CD"},
 			-- Soulshatter
@@ -2203,12 +2187,8 @@ Filger_Spells = {
 			{spellID = 17877, filter = "CD"},
 			-- Shadowfury
 			{spellID = 30283, filter = "CD"},
-			-- Chaos Bolt
-			--MOP{spellID = 50796, filter = "CD"},
 			-- Shadowflame
 			{spellID = 47897, filter = "CD"},
-			-- Fel Domination
-			--MOP{spellID = 18708, filter = "CD"},
 			-- Sacrifice (Voidwalker)
 			{spellID = 7812, filter = "CD"},
 			-- Suffering (Voidwalker)
@@ -2217,16 +2197,12 @@ Filger_Spells = {
 			{spellID = 19647, filter = "CD"},
 			-- Devour Magic (Felhunter)
 			{spellID = 19505, filter = "CD"},
-			-- Soul Harvest
-			--MOP{spellID = 79268, filter = "CD"},
 			-- Felstorm
 			{spellID = 89751, filter = "CD"},
 			-- Soulburn
 			{spellID = 74434, filter = "CD"},
 			-- Hand of Gul'dan
 			{spellID = 86040, filter = "CD"},
-			-- Immolation Aura
-			--MOP{spellID = 50589, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -3086,8 +3062,6 @@ Filger_Spells = {
 			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warlock
-			-- Soul harvest
-			--MOP{spellID = 79268, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Soulstone
 			{spellID = 20707, unitID = "target", caster = "all", filter = "BUFF"},
 
