@@ -1,8 +1,8 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
-------------------------------------------------------------------------------
---  HideButton : a button to hide your chat and minimap (thanks to Wetxius) --
-------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+--  HideButton : a button to hide your chat and minimap
+----------------------------------------------------------------------------------------
 local HideB = CreateFrame("Frame", "HideB", UIParent)
 HideB:CreatePanel("ClassColor", 18, 18, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -1, 0)
 
