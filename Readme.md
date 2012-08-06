@@ -6,6 +6,6 @@ Compared to the original UI, I just changed a bit of things to better fit to my 
 
 A BIG thank to Shestak for his amazing work (all credits go out to him)!
 
-Note: locales are "Google translated". Your help for a more accurate translation is welcome!
+Note: "my" locales are "Google translated". Your help for a more accurate translation is welcome!
 
-![placeholder img](http://i.imgur.com/a3BVg.jpg)
+![placeholder img](http://i.imgur.com/WxtO0.jpg)

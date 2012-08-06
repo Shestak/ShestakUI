@@ -26,7 +26,7 @@ else
 	target_buff_icon = {"BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 253},	-- "T_BUFF"
 	pve_debuff = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 253},			-- "PVE/PVP_DEBUFF"
 	pve_cc = {"TOPLEFT", "oUF_Player", "BOTTOMLEFT", -2, -49},				-- "PVE/PVP_CC"
-	cooldown = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 59, C.unitframe.plugins_swing and 21 or 9},		-- "COOLDOWN"
+	cooldown = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 59, C.unitframe.plugins_swing and 17 or 5},		-- "COOLDOWN"
 	target_bar = {"BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_PortraitOverlay" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 9, C.unitframe.portrait_enable and 0 or -41},	-- "T_DE/BUFF_BAR"
 	}
 end

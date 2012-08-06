@@ -54,7 +54,7 @@ C["position"] = {
 		["tank"] = {"BOTTOM", "UIParent", "BOTTOM", 302, 35},						-- Tank frames
 		["player_portrait"] = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -8, 0},			-- Player Portrait
 		["target_portrait"] = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 6, 0},			-- Target Portrait
-		["player_castbar"] = {"BOTTOM", "ActionBarAnchor", "TOP", 0, 239},			-- Player Castbar
+		["player_castbar"] = {"BOTTOM", "ActionBarAnchor", "TOP", 0, 235},			-- Player Castbar
 		["target_castbar"] = {"BOTTOM", "oUF_Player_Castbar", "TOP", 0, 7},			-- Target Castbar
 		["focus_castbar"] = {"CENTER", UIParent, "CENTER", 0, 250},					-- Focus Castbar icon
 	},
