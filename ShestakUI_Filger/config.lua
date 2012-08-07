@@ -2390,8 +2390,8 @@ Filger_Spells = {
 			{spellID = 676, filter = "CD"},
 			-- Demoralizing Shout
 			{spellID = 1160, filter = "CD"},
-			-- Throwdown
-			--MOP{spellID = 85388, filter = "CD"},
+			-- Storm Bolt
+			{spellID = 107570, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2791,8 +2791,8 @@ Filger_Spells = {
 			{spellID = 18223, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Warrior
-			-- Throwdown
-			--MOP{spellID = 85388, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Storm Bolt
+			{spellID = 107570, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Charge Stun
@@ -3100,8 +3100,8 @@ Filger_Spells = {
 			-- Bladestorm
 			{spellID = 46924, unitID = "target", caster = "all", filter = "BUFF"},
 
-			-- Throwdown
-			--MOP{spellID = 85388, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Storm Bolt
+			{spellID = 107570, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Charge Stun
