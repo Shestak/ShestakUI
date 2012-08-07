@@ -1828,7 +1828,7 @@ Filger_Spells = {
 			-- Elemental Blast
 			{spellID = 118522, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tidal Waves
-			--MOP{spellID = 51562, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 53390, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lava flows
 			--MOP{spellID = 65264, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1905,8 +1905,6 @@ Filger_Spells = {
 			{spellID = 974, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Riptide
 			{spellID = 61295, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Ancestral Fortitude
-			--MOP{spellID = 16236, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Earthliving
 			{spellID = 51945, unitID = "target", caster = "player", filter = "BUFF"},
 		},
@@ -2753,6 +2751,8 @@ Filger_Spells = {
 			-- Shaman
 			-- Hex
 			{spellID = 51514, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Static Charge
+			{spellID = 118905, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthquake
 			{spellID = 77505, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthgrab
@@ -3060,6 +3060,8 @@ Filger_Spells = {
 
 			-- Hex
 			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Static Charge
+			{spellID = 118905, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warlock
 			-- Soulstone

@@ -60,6 +60,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(6544)] = 3,	-- Heroic Leap
 		--MOP[GetSpellInfo(85388)] = 3,	-- Throwdown
 		[GetSpellInfo(108194)] = 3,	-- Asphyxiate
+		[GetSpellInfo(118905)] = 3,	-- Static Charge
 
 		-- Roots
 		[GetSpellInfo(339)] = 3,	-- Entangling Roots

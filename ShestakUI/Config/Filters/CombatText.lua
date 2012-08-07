@@ -13,6 +13,7 @@ end
 
 if C.combattext.merge_aoe_spam then
 	T.aoespam = {}
+	T.aoespam[120687] = true		-- Stormlash
 end
 
 -- Class config
@@ -175,6 +176,9 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[51945] = true		-- Earthliving
 		T.aoespam[61295] = true		-- Riptide
 		T.aoespam[98021] = true		-- Spirit Link
+		T.aoespam[114911] = true	-- Ancestral Guidance
+		T.aoespam[118800] = true	-- Conductivity
+		T.aoespam[114942] = true	-- Healing Tide
 		-- Damaging spells
 		T.aoespam[421] = true		-- Chain Lightning
 		T.aoespam[45297] = true		-- Chain Lightning (Mastery proc)

@@ -37,7 +37,6 @@ if C.raidframe.plugins_aura_watch == true then
 			SHAMAN = {
 				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Riptide
 				{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},		-- Earth Shield
-				--MOP{16236, "TOPLEFT", {0.4, 0.7, 0.2}},			-- Ancestral Fortitude
 				{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},			-- Earthliving
 			},
 			ROGUE = {
@@ -353,6 +352,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(6770),	-- Sap
 			-- Shaman
 			SpellName(51514),	-- Hex
+			SpellName(118905),	-- Static Charge
 			SpellName(3600),	-- Earthbind
 			SpellName(8056),	-- Frost Shock
 			SpellName(63685),	-- Freeze
