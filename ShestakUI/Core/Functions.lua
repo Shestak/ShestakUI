@@ -66,26 +66,15 @@ T.RGBToHex = function(r, g, b)
 end
 
 ----------------------------------------------------------------------------------------
---	Player's Role and Talents spent
+--	Player's Role and Specialization check
 ----------------------------------------------------------------------------------------
-T.CheckForKnownTalent = function(spellid)
-	local wanted_name = GetSpellInfo(spellid)
-	if not wanted_name then return nil end
-	local num_tabs = GetNumSpecializations()
-	for t = 1, num_tabs do
-		local num_talents = GetNumTalents(t)
-		for i = 1, num_talents do
-			local name_talent, _, _, _, current_rank = GetTalentInfo(t, i)
-			if name_talent and name_talent == wanted_name then
-				if current_rank and current_rank > 0 then
-					return true
-				else
-					return false
-				end
-			end
+T.CheckSpec = function(tree)
+	local function CheckSpec(tree)
+		local activeGroup = GetActiveSpecGroup()
+		if activeGroup and GetSpecialization(false, false, activeGroup) then
+			return tree == GetSpecialization(false, false, activeGroup)
 		end
 	end
-	return false
 end
 
 local function CheckRole(self, event, unit)

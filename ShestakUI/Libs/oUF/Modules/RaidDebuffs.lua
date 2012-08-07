@@ -62,6 +62,24 @@ local DispellPriority = {
 local DispellFilter
 do
 	local dispellClasses = {
+		["DRUID"] = {
+			["Magic"] = false,
+			["Curse"] = true,
+			["Poison"] = true,
+		},
+		["MAGE"] = {
+			["Curse"] = true,
+		},
+		["MONK"] = {
+			["Magic"] = false,
+			["Poison"] = true,
+			["Disease"] = true,
+		},
+		["PALADIN"] = {
+			["Magic"] = false,
+			["Poison"] = true,
+			["Disease"] = true,
+		},
 		["PRIEST"] = {
 			["Magic"] = true,
 			["Disease"] = true,
@@ -69,24 +87,6 @@ do
 		["SHAMAN"] = {
 			["Magic"] = false,
 			["Curse"] = true,
-		},
-		["PALADIN"] = {
-			["Magic"] = false,
-			["Poison"] = true,
-			["Disease"] = true,
-		},
-		["MAGE"] = {
-			["Curse"] = true,
-		},
-		["DRUID"] = {
-			["Magic"] = false,
-			["Curse"] = true,
-			["Poison"] = true,
-		},
-		["MONK"] = {
-			["Magic"] = false,
-			["Poison"] = true,
-			["Disease"] = true,
 		},
 	}
 
@@ -97,31 +97,27 @@ local function CheckSpec(self, event, levels)
 	-- Not interested in gained points from leveling
 	if event == "CHARACTER_POINTS_CHANGED" and levels > 0 then return end
 
-	-- Check for certain talents to see if we can dispel magic or not
-	if select(2, UnitClass("player")) == "PALADIN" then
-		-- Check to see if we have the 'Sacred Cleansing' talent
-		if T.CheckForKnownTalent(53551) then
-			DispellFilter.Magic = true
-		else
-			DispellFilter.Magic = false
-		end
-	elseif select(2, UnitClass("player")) == "SHAMAN" then
-		-- Check to see if we have the 'Improved Cleanse Spirit' talent
-		if T.CheckForKnownTalent(77130) then
-			DispellFilter.Magic = true
-		else
-			DispellFilter.Magic = false
-		end
-	elseif select(2, UnitClass("player")) == "DRUID" then
-		-- Check to see if we have the 'Nature's Cure' talent
-		if T.CheckForKnownTalent(88423) then
+	-- Check spec to see if we can dispel magic or not
+	if select(2, UnitClass("player")) == "DRUID" then
+		if T.CheckSpec(4) then
 			DispellFilter.Magic = true
 		else
 			DispellFilter.Magic = false
 		end
 	elseif select(2, UnitClass("player")) == "MONK" then
-		-- Check to see if we have the 'Internal Medicine' talent
-		if T.CheckForKnownTalent(115451) then
+		if T.CheckSpec(2) then
+			DispellFilter.Magic = true
+		else
+			DispellFilter.Magic = false
+		end
+	elseif select(2, UnitClass("player")) == "PALADIN" then
+		if T.CheckSpec(1) then
+			DispellFilter.Magic = true
+		else
+			DispellFilter.Magic = false
+		end
+	elseif select(2, UnitClass("player")) == "SHAMAN" then
+		if T.CheckSpec(3) then
 			DispellFilter.Magic = true
 		else
 			DispellFilter.Magic = false
