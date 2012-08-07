@@ -336,13 +336,13 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(61305),	-- Polymorph
 			SpellName(55021),	-- Improved Counterspell
 			SpellName(122),		-- Frost Nova
-			SpellName(55080),	-- Shattered Barrier
+			SpellName(111340),	-- Ice Ward
 			-- Paladin
 			SpellName(20066),	-- Repentance
 			SpellName(853),		-- Hammer of Justice
 			SpellName(105593),	-- Fist of Justice
 			-- Priest
-			SpellName(605),		-- Mind Control
+			SpellName(605),		-- Dominate Mind
 			SpellName(64044),	-- Psychic Horror
 			SpellName(8122),	-- Psychic Scream
 			SpellName(15487),	-- Silence
@@ -356,14 +356,12 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(3600),	-- Earthbind
 			SpellName(8056),	-- Frost Shock
 			SpellName(63685),	-- Freeze
-			SpellName(39796),	-- Stoneclaw Stun
 			-- Warlock
 			SpellName(5782),	-- Fear
 			SpellName(6789),	-- Mortal Coil
 			SpellName(5484),	-- Howl of Terror
 			SpellName(6358),	-- Seduction
 			SpellName(30283),	-- Shadowfury
-			SpellName(89605),	-- Aura of Foreboding
 			-- Warrior
 			SpellName(20511),	-- Intimidating Shout]]
 		}

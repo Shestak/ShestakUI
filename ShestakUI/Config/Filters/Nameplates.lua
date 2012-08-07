@@ -39,7 +39,7 @@ T.DebuffWhiteList = {
 	[SpellName(118)] = true,	-- Polymorph
 	[SpellName(55021)] = true,	-- Improved Counterspell
 	[SpellName(122)] = true,	-- Frost Nova
-	--MOP[SpellName(55080)] = true,	-- Shattered Barrier
+	[SpellName(111340)] = true,	-- Ice Ward
 	-- Paladin
 	[SpellName(20066)] = true,	-- Repentance
 	[SpellName(10326)] = true,	-- Turn Evil
@@ -68,7 +68,6 @@ T.DebuffWhiteList = {
 	[SpellName(5484)] = true,	-- Howl of Terror
 	[SpellName(6358)] = true,	-- Seduction
 	[SpellName(30283)] = true,	-- Shadowfury
-	--MOP[SpellName(89605)] = true,	-- Aura of Foreboding
 	[SpellName(603)] = true,	-- Doom
 	[SpellName(980)] = true,	-- Agony
 	[SpellName(172)] = true,	-- Corruption
