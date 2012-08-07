@@ -30,7 +30,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(51514)] = 3,	-- Hex
 		[GetSpellInfo(50519)] = 3,	-- Sonic Blast (Bat)
 		[GetSpellInfo(90337)] = 3,	-- Bad Manner (Monkey)
-		[GetSpellInfo(605)] = 3,	-- Mind Control
+		[GetSpellInfo(605)] = 3,	-- Dominate Mind
 		[GetSpellInfo(64044)] = 3,	-- Psychic Horror
 
 		-- Stuns and Incapacitates
@@ -48,34 +48,30 @@ T.ArenaControl = function()
 		[GetSpellInfo(20066)] = 3,	-- Repentance
 		[GetSpellInfo(46968)] = 3,	-- Shockwave
 		[GetSpellInfo(115001)] = 3,	-- Remorseless Winter
-		[GetSpellInfo(47481)] = 3,	-- Gnaw (dk pet stun)
-		[GetSpellInfo(91797)] = 3,	-- Gnaw (dk pet stun mutant)
+		[GetSpellInfo(47481)] = 3,	-- Gnaw (dk pet)
+		[GetSpellInfo(91797)] = 3,	-- Monstrous Blow (dk pet - mutant)
 		[GetSpellInfo(24394)] = 3,	-- Intimidation
 		[GetSpellInfo(82691)] = 3,	-- Ring of Frost
 		[GetSpellInfo(31661)] = 3,	-- Dragon's Breath
-		--MOP[GetSpellInfo(12355)] = 3,	-- Impact
-		--MOP[GetSpellInfo(83047)] = 3,	-- Improved Polymorph
-		--MOP[GetSpellInfo(93986)] = 3,	-- Aura of Foreboding
 		[GetSpellInfo(30283)] = 3,	-- Shadowfury
-		[GetSpellInfo(6544)] = 3,	-- Heroic Leap
 		--MOP[GetSpellInfo(85388)] = 3,	-- Throwdown
 		[GetSpellInfo(108194)] = 3,	-- Asphyxiate
 		[GetSpellInfo(118905)] = 3,	-- Static Charge
+		[GetSpellInfo(118271)] = 3,	-- Combustion Impact
+		[GetSpellInfo(99)] = 3,		-- Disorienting Roar
 
 		-- Roots
 		[GetSpellInfo(339)] = 3,	-- Entangling Roots
 		[GetSpellInfo(122)] = 3,	-- Frost Nova
-		[GetSpellInfo(87194)] = 3,	-- Paralysis (SP)
+		[GetSpellInfo(87194)] = 3,	-- Glyph of Mind Blast
 		[GetSpellInfo(33395)] = 3,	-- Freeze
-		--MOP[GetSpellInfo(83302)] = 3,	-- Improved Cone of Cold
-		--MOP[GetSpellInfo(55080)] = 3,	-- Shattered Barrier
-		[GetSpellInfo(16979)] = 3,	-- Feral Charge
+		[GetSpellInfo(111340)] = 3,	-- Ice Ward
+		[GetSpellInfo(45334)] = 3,	-- Immobilized
 		[GetSpellInfo(19185)] = 3,	-- Entrapment
 		[GetSpellInfo(50245)] = 3,	-- Pin (Crab)
 		[GetSpellInfo(54706)] = 3,	-- Venom Web Spray (Silithid)
 		[GetSpellInfo(4167)] = 3,	-- Web (Spider)
 		[GetSpellInfo(63685)] = 3,	-- Freeze (Frozen Power)
-		[GetSpellInfo(7922)] = 3,	-- Charge Stun
 
 		-- Immunities
 		[GetSpellInfo(45438)] = 2,	-- Ice Block
@@ -103,9 +99,8 @@ T.ArenaControl = function()
 		[GetSpellInfo(6940)] = 1,	-- Hand of Sacrifice
 		[GetSpellInfo(1044)] = 1,	-- Hand of Freedom
 		[GetSpellInfo(29166)] = 1,	-- Innervate
-		--MOP[GetSpellInfo(18708)] = 1,	-- Fel Domination
 		[GetSpellInfo(54428)] = 1,	-- Divine Plea
-		[GetSpellInfo(31821)] = 1,	-- Aura mastery
+		[GetSpellInfo(31821)] = 1,	-- Devotion Aura
 		[GetSpellInfo(96267)] = 1,	-- Strength of Soul
 		[GetSpellInfo(8178)] = 1,	-- Grounding Totem
 		[GetSpellInfo(49016)] = 1,	-- Unholy Frenzy
