@@ -755,8 +755,6 @@ Filger_Spells = {
 			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyroblast!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Invocation
-			--MOP{spellID = 87098, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Weapons
 			-- Caster General
@@ -1800,8 +1798,6 @@ Filger_Spells = {
 			{spellID = 73683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Life
 			{spellID = 73685, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Focused Insight
-			--MOP{spellID = 77800, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature Guardian
 			{spellID = 31616, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stone Bulwark
@@ -1829,8 +1825,6 @@ Filger_Spells = {
 			{spellID = 118522, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tidal Waves
 			{spellID = 53390, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lava flows
-			--MOP{spellID = 65264, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Weapons
 			-- Caster General
@@ -2572,8 +2566,6 @@ Filger_Spells = {
 			{spellID = 45524, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Chilblains
 			{spellID = 50435, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Desecration
-			--MOP{spellID = 55741, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Druid
 			-- Cyclone
@@ -2626,8 +2618,6 @@ Filger_Spells = {
 			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Trap
 			{spellID = 13810, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Wing Clip
-			--MOP{spellID = 2974, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Freezing Trap
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Pets
