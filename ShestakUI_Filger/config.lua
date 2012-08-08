@@ -2633,26 +2633,26 @@ Filger_Spells = {
 			-- Pets
 			-- Sonic Blast (Bat)
 			{spellID = 50519, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Sting (Wasp)
+			{spellID = 56626, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Bad Manner (Monkey)
+			{spellID = 90337, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Pin (Crab)
 			{spellID = 50245, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Venom Web Spray (Silithid)
 			{spellID = 54706, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Bad Manner (Monkey)
-			{spellID = 90337, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Web (Spider)
 			{spellID = 4167, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Nether Shock (Nether Ray)
+			{spellID = 44957, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Clench (Scorpid)
+			{spellID = 50541, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Breath (Chimaera)
 			{spellID = 54644, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
 			{spellID = 50433, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Clench (Scorpid)
-			{spellID = 50541, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Time Warp (Warp Stalker)
 			{spellID = 35346, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Sting (Wasp)
-			{spellID = 56626, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Nether Shock (Nether Ray)
-			{spellID = 44957, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Mage
 			-- Cauterize
@@ -2920,18 +2920,16 @@ Filger_Spells = {
 
 			-- Sonic Blast (Bat)
 			{spellID = 50519, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Sting (Wasp)
+			{spellID = 56626, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Bad Manner (Monkey)
+			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Pin (Crab)
 			{spellID = 50245, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Venom Web Spray (Silithid)
 			{spellID = 54706, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Bad Manner (Monkey)
-			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Web (Spider)
 			{spellID = 4167, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Frost Breath (Chimaera)
-			{spellID = 54644, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Sting (Wasp)
-			{spellID = 56626, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
 			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
 

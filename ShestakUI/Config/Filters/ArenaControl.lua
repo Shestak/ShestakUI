@@ -9,56 +9,82 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true then return end
 T.ArenaControl = function()
 	return {
 		-- Crowd Controls
-		[GetSpellInfo(33786)] = 3,	-- Cyclone
-		[GetSpellInfo(2637)] = 3,	-- Hibernate
-		[GetSpellInfo(3355)] = 3,	-- Freezing Trap
-		[GetSpellInfo(6770)] = 3,	-- Sap
-		[GetSpellInfo(2094)] = 3,	-- Blind
-		[GetSpellInfo(5782)] = 3,	-- Fear
-		[GetSpellInfo(6789)] = 3,	-- Mortal Coil
-		[GetSpellInfo(6358)] = 3,	-- Seduction
-		[GetSpellInfo(5484)] = 3,	-- Howl of Terror
-		[GetSpellInfo(5246)] = 3,	-- Intimidating Shout
-		[GetSpellInfo(8122)] = 3,	-- Psychic Scream
-		[GetSpellInfo(118)] = 3,	-- Polymorph
-		[GetSpellInfo(28272)] = 3,	-- Polymorph Pig
-		[GetSpellInfo(28271)] = 3,	-- Polymorph Turtle
-		[GetSpellInfo(61305)] = 3,	-- Polymorph Black Cat
-		[GetSpellInfo(61721)] = 3,	-- Polymorph Rabbit
-		[GetSpellInfo(61025)] = 3,	-- Polymorph Serpent
-		[GetSpellInfo(61780)] = 3,	-- Polymorph Turkey
-		[GetSpellInfo(51514)] = 3,	-- Hex
-		[GetSpellInfo(50519)] = 3,	-- Sonic Blast (Bat)
-		[GetSpellInfo(90337)] = 3,	-- Bad Manner (Monkey)
-		[GetSpellInfo(605)] = 3,	-- Dominate Mind
-		[GetSpellInfo(64044)] = 3,	-- Psychic Horror
+		-- Death Knight
+		[GetSpellInfo(47481)] = 4,	-- Gnaw (Pet)
+		[GetSpellInfo(91797)] = 4,	-- Monstrous Blow (Pet - mutant)
+		[GetSpellInfo(108194)] = 4,	-- Asphyxiate
+		[GetSpellInfo(115001)] = 4,	-- Remorseless Winter
+		-- Druid
+		[GetSpellInfo(33786)] = 4,	-- Cyclone
+		[GetSpellInfo(2637)] = 4,	-- Hibernate
+		[GetSpellInfo(5211)] = 4,	-- Mighty Bash
+		[GetSpellInfo(102795)] = 4,	-- Bear Hug
+		[GetSpellInfo(22570)] = 4,	-- Maim
+		[GetSpellInfo(9005)] = 4,	-- Pounce
+		[GetSpellInfo(99)] = 4,		-- Disorienting Roar
+		-- Hunter
+		[GetSpellInfo(24394)] = 4,	-- Intimidation
+		[GetSpellInfo(3355)] = 4,	-- Freezing Trap
+		[GetSpellInfo(19503)] = 4,	-- Scatter Shot
+		[GetSpellInfo(19386)] = 4,	-- Wyvern Sting
+		[GetSpellInfo(50519)] = 4,	-- Sonic Blast (Bat)
+		[GetSpellInfo(90337)] = 4,	-- Bad Manner (Monkey)
+		-- Mage
+		[GetSpellInfo(44572)] = 4,	-- Deep Freeze
+		[GetSpellInfo(118)] = 4,	-- Polymorph
+		[GetSpellInfo(28272)] = 4,	-- Polymorph Pig
+		[GetSpellInfo(28271)] = 4,	-- Polymorph Turtle
+		[GetSpellInfo(61305)] = 4,	-- Polymorph Black Cat
+		[GetSpellInfo(61721)] = 4,	-- Polymorph Rabbit
+		[GetSpellInfo(61025)] = 4,	-- Polymorph Serpent
+		[GetSpellInfo(61780)] = 4,	-- Polymorph Turkey
+		[GetSpellInfo(82691)] = 4,	-- Ring of Frost
+		[GetSpellInfo(31661)] = 4,	-- Dragon's Breath
+		[GetSpellInfo(118271)] = 4,	-- Combustion Impact
+		-- Monk
+		[GetSpellInfo(113656)] = 4,	-- Fists of Fury
+		[GetSpellInfo(115078)] = 4,	-- Paralysis
+		[GetSpellInfo(119392)] = 4,	-- Charging Ox Wave
+		-- Paladin
+		[GetSpellInfo(853)] = 4,	-- Hammer of Justice
+		[GetSpellInfo(105593)] = 4,	-- Fist of Justice
+		[GetSpellInfo(20066)] = 4,	-- Repentance
+		-- Priest
+		[GetSpellInfo(64044)] = 4,	-- Psychic Horror
+		[GetSpellInfo(605)] = 4,	-- Dominate Mind
+		[GetSpellInfo(8122)] = 4,	-- Psychic Scream
+		-- Rogue
+		[GetSpellInfo(408)] = 4,	-- Kidney Shot
+		[GetSpellInfo(1833)] = 4,	-- Cheap Shot
+		[GetSpellInfo(6770)] = 4,	-- Sap
+		[GetSpellInfo(2094)] = 4,	-- Blind
+		[GetSpellInfo(1776)] = 4,	-- Gouge
+		-- Shaman
+		[GetSpellInfo(51514)] = 4,	-- Hex
+		[GetSpellInfo(118905)] = 4,	-- Static Charge
+		-- Warlock
+		[GetSpellInfo(30283)] = 4,	-- Shadowfury
+		[GetSpellInfo(89766)] = 4,	-- Axe Toss (Felguard)
+		[GetSpellInfo(5782)] = 4,	-- Fear
+		[GetSpellInfo(5484)] = 4,	-- Howl of Terror
+		[GetSpellInfo(6789)] = 4,	-- Mortal Coil
+		[GetSpellInfo(6358)] = 4,	-- Seduction
+		-- Warrior
+		[GetSpellInfo(107570)] = 4,	-- Storm Bolt
+		[GetSpellInfo(46968)] = 4,	-- Shockwave
+		[GetSpellInfo(5246)] = 4,	-- Intimidating Shout
 
-		-- Stuns and Incapacitates
-		[GetSpellInfo(5211)] = 3,	-- Bash
-		[GetSpellInfo(1833)] = 3,	-- Cheap Shot
-		[GetSpellInfo(408)] = 3,	-- Kidney Shot
-		[GetSpellInfo(1776)] = 3,	-- Gouge
-		[GetSpellInfo(44572)] = 3,	-- Deep Freeze
-		[GetSpellInfo(19386)] = 3,	-- Wyvern Sting
-		[GetSpellInfo(19503)] = 3,	-- Scatter Shot
-		[GetSpellInfo(9005)] = 3,	-- Pounce
-		[GetSpellInfo(22570)] = 3,	-- Maim
-		[GetSpellInfo(853)] = 3,	-- Hammer of Justice
-		[GetSpellInfo(105593)] = 3,	-- Fist of Justice
-		[GetSpellInfo(20066)] = 3,	-- Repentance
-		[GetSpellInfo(46968)] = 3,	-- Shockwave
-		[GetSpellInfo(115001)] = 3,	-- Remorseless Winter
-		[GetSpellInfo(47481)] = 3,	-- Gnaw (dk pet)
-		[GetSpellInfo(91797)] = 3,	-- Monstrous Blow (dk pet - mutant)
-		[GetSpellInfo(24394)] = 3,	-- Intimidation
-		[GetSpellInfo(82691)] = 3,	-- Ring of Frost
-		[GetSpellInfo(31661)] = 3,	-- Dragon's Breath
-		[GetSpellInfo(30283)] = 3,	-- Shadowfury
-		[GetSpellInfo(107570)] = 3,	-- Storm Bolt
-		[GetSpellInfo(108194)] = 3,	-- Asphyxiate
-		[GetSpellInfo(118905)] = 3,	-- Static Charge
-		[GetSpellInfo(118271)] = 3,	-- Combustion Impact
-		[GetSpellInfo(99)] = 3,		-- Disorienting Roar
+		-- Silences
+		[GetSpellInfo(47476)] = 4,	-- Strangulate
+		[GetSpellInfo(81261)] = 4,	-- Solar Beam
+		[GetSpellInfo(34490)] = 4,	-- Silencing Shot
+		[GetSpellInfo(44957)] = 4,	-- Nether Shock (Nether Ray)
+		[GetSpellInfo(102051)] = 4,	-- Frostjaw
+		[GetSpellInfo(55021)] = 4,	-- Improved Counterspell
+		[GetSpellInfo(31935)] = 4,	-- Avenger's Shield
+		[GetSpellInfo(15487)] = 4,	-- Silence
+		[GetSpellInfo(1330)] = 4,	-- Garrote - Silence
+		[GetSpellInfo(24259)] = 4,	-- Spell Lock (Felhunter)
 
 		-- Roots
 		[GetSpellInfo(339)] = 3,	-- Entangling Roots
@@ -78,15 +104,6 @@ T.ArenaControl = function()
 		[GetSpellInfo(642)] = 2,	-- Divine Shield
 		[GetSpellInfo(46924)] = 2,	-- Bladestorm
 		[GetSpellInfo(19263)] = 2,	-- Deterrence
-
-		-- Silences
-		[GetSpellInfo(55021)] = 1,	-- Improved Counterspell
-		[GetSpellInfo(15487)] = 1,	-- Silence
-		[GetSpellInfo(34490)] = 1,	-- Silencing Shot
-		[GetSpellInfo(47476)] = 1,	-- Strangulate
-		[GetSpellInfo(81261)] = 1,	-- Solar Beam
-		[GetSpellInfo(1330)] = 1,	-- Garrote - Silence
-		[GetSpellInfo(24259)] = 1,	-- Spell Lock (Felhunter)
 
 		-- Disarms
 		[GetSpellInfo(676)] = 1,	-- Disarm
