@@ -68,7 +68,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(5782)] = 4,	-- Fear
 		[GetSpellInfo(5484)] = 4,	-- Howl of Terror
 		[GetSpellInfo(6789)] = 4,	-- Mortal Coil
-		[GetSpellInfo(6358)] = 4,	-- Seduction
+		[GetSpellInfo(6358)] = 4,	-- Seduction (Succubus)
 		-- Warrior
 		[GetSpellInfo(107570)] = 4,	-- Storm Bolt
 		[GetSpellInfo(46968)] = 4,	-- Shockwave
@@ -108,7 +108,7 @@ T.ArenaControl = function()
 		-- Disarms
 		[GetSpellInfo(676)] = 1,	-- Disarm
 		[GetSpellInfo(51722)] = 1,	-- Dismantle
-		[GetSpellInfo(50541)] = 1,	-- Clench - Scorpid
+		[GetSpellInfo(50541)] = 1,	-- Clench (Scorpid)
 
 		-- Buffs
 		[GetSpellInfo(33206)] = 1,	-- Pain Suppression
