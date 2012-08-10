@@ -1427,10 +1427,10 @@ Filger_Spells = {
 			{spellID = 77613, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Shadow Word: Pain
 			{spellID = 589, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Devouring Plague
-			{spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vampiric Touch
 			{spellID = 34914, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Devouring Plague
+			{spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
