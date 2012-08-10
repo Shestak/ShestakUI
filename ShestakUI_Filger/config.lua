@@ -956,10 +956,16 @@ Filger_Spells = {
 			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
 			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tigereye Brew
+			{spellID = 116740, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Touch of Karma
 			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Avert Harm
 			{spellID = 115213, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Diffuse Magic
+			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Momentum
+			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2537,6 +2543,8 @@ Filger_Spells = {
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stormlash Totem
 			{spellID = 120676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Tiger's Lust
+			{spellID = 116841, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
@@ -2681,6 +2689,8 @@ Filger_Spells = {
 			-- Monk
 			-- Fists of Fury
 			{spellID = 113656, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Leg Sweep
+			{spellID = 119381, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
 			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Charging Ox Wave
@@ -2956,6 +2966,8 @@ Filger_Spells = {
 
 			-- Fists of Fury
 			{spellID = 113656, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Leg Sweep
+			{spellID = 119381, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
 			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Charging Ox Wave

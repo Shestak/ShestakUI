@@ -43,6 +43,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(118271)] = 4,	-- Combustion Impact
 		-- Monk
 		[GetSpellInfo(113656)] = 4,	-- Fists of Fury
+		[GetSpellInfo(119381)] = 4,	-- Leg Sweep
 		[GetSpellInfo(115078)] = 4,	-- Paralysis
 		[GetSpellInfo(119392)] = 4,	-- Charging Ox Wave
 		-- Paladin

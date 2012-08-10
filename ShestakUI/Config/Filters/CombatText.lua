@@ -102,10 +102,14 @@ elseif T.class == "MONK" then
 		T.aoespam[125953] = 115175	-- Soothing Mist
 		T.aoespam[126890] = true	-- Eminence
 		T.aoespam[117640] = true	-- Spinning Crane Kick
+		T.aoespam[132463] = true	-- Chi Wave
+		T.aoespam[124101] = true	-- Zen Sphere: Detonate
 		-- Damaging spells
 		T.aoespam[117952] = true	-- Crackling Jade Lightning
 		T.aoespam[107270] = true	-- Spinning Crane Kick
 		T.aoespam[117418] = true	-- Fists of Fury
+		T.aoespam[132467] = true	-- Chi Wave
+		T.aoespam[125033] = true	-- Zen Sphere: Detonate
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
