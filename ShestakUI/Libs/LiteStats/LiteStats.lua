@@ -1262,7 +1262,7 @@ if bags.enabled then
 			for i = 0, NUM_BAG_SLOTS do
 				free, total = free + GetContainerNumFreeSlots(i), total + GetContainerNumSlots(i)
 			end
-			GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, 26)
+			GameTooltip:SetOwner(self, bags.tip_anchor, bags.tip_x, bags.tip_y)
 			GameTooltip:ClearLines()
 			if GetBindingKey("TOGGLEBACKPACK") then
 				GameTooltip:AddLine(BACKPACK_TOOLTIP.." ("..GetBindingKey("TOGGLEBACKPACK")..")", tthead.r, tthead.g, tthead.b)
@@ -1272,14 +1272,6 @@ if bags.enabled then
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddLine(format(NUM_FREE_SLOTS, free, total), 1, 1, 1)
 			GameTooltip:Show()
-			if C.toppanel.enable == true and C.toppanel.mouseover == true then
-				TopPanel:SetAlpha(1)
-			end
-		end,
-		OnLeave = function()
-			if C.toppanel.enable == true and C.toppanel.mouseover == true then
-				TopPanel:SetAlpha(0)
-			end
 		end,
 	})
 end
@@ -1354,16 +1346,10 @@ if talents.enabled then
 					GameTooltip:AddDoubleLine(format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s %s", icon, t_icon, gsub(name, ".*", talents.name_subs), spent), i == 1 and PRIMARY or SECONDARY, 1, 1, 1, r, g, b)
 				end
 				GameTooltip:Show()
-				if C.toppanel.enable == true and C.toppanel.mouseover == true then
-					TopPanel:SetAlpha(1)
-				end
 			end
 		end,
 		OnLeave = function(self)
 			self.hovered = false
-			if C.toppanel.enable == true and C.toppanel.mouseover == true then
-				TopPanel:SetAlpha(0)
-			end
 		end,
 		OnClick = function(_,b)
 			if b == "RightButton" and GetNumTalentGroups() > 1 then

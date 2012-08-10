@@ -117,7 +117,7 @@ LPSTAT_CONFIG = {
 		anchor_frame = "Durability", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.durability and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
--- Bottomright block
+-- Minimap block
 	Coords = {
 		enabled = C.stats.coords, -- Location tooltip has coords, this module is for displaying it as a separate stat.
 		fmt = "%d,%d", -- "44,19"
@@ -130,11 +130,11 @@ LPSTAT_CONFIG = {
 		truncate = 16, -- Max number of letters for location text, set to 0 to disable.
 		coord_fmt = "%d,%d", -- "44,19", to add tenths, use '%.1f' (digit determines decimal)
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
-		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
+		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "TOPRIGHT", tip_x = -21, tip_y = -104
 	},
--- Bottomleft block
+-- Bottomright block 1
 	Stats = {
-		enabled = C.stats.talents,
+		enabled = C.stats.bags,
 			-- Available stat tags...
 			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery [mastery]				Expertise% [expertise]
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
@@ -147,19 +147,20 @@ LPSTAT_CONFIG = {
 		anchor_frame = "Talents", anchor_to = "right", anchor_from = "left",
 		x_off = 0, y_off = 0,
 	},
--- Bottomleft block
+-- Bottomright block 1
 	Bags = {
-		enabled = C.toppanel.enable,
+		enabled = C.stats.bags,
 		fmt = "B: ".."%d/%d", -- "B: 24/98"
-		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
-		x_off = -52, y_off = 0,
+		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
+		x_off = -16, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 37, tip_y = 5,
+		justify_h = "right",
 	},
-	-- New block
+	-- Top block
 	Helm = {
 		enabled = C.toppanel.enable,
 		fmt = "H: ".."%s", -- "Helm"
-		anchor_frame = "Bags", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0,
+		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
+		x_off = -69, y_off = 0,
 	},
 	Cloak = {
 		enabled = C.toppanel.enable,
@@ -181,7 +182,7 @@ LPSTAT_CONFIG = {
 	},
 -- Bottomleft block 2
 	Talents = {
-		enabled = C.stats.talents,
+		enabled = C.stats.bags,
 		fmt = "T: ".."[spec %d/%d/%d] [unspent]", -- "Protection: 15/0/51 +5", [shortname] shortens spec name.
 		iconsize = 11,  -- Size of talent [icon].
 		name_subs = { -- Substitutions for long talent tree names, remove and/or change any/all.
@@ -198,9 +199,8 @@ LPSTAT_CONFIG = {
 			["Marksmanship"] = "Marks.",
 			["Beast Mastery"] = "B.M.",
 		},
-		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
-		x_off = -16, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20,
-		justify_h = "right",
+		anchor_frame = "Bags", anchor_to = "right", anchor_from = "left", tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 80, tip_y = 5,
+		x_off = 0, y_off = 0,
 	},
 -- MiniMap block
 	Ping = {
