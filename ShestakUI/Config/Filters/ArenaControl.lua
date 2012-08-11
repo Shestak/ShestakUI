@@ -43,6 +43,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(118271)] = 4,	-- Combustion Impact
 		-- Monk
 		[GetSpellInfo(113656)] = 4,	-- Fists of Fury
+		[GetSpellInfo(119381)] = 4,	-- Leg Sweep
 		[GetSpellInfo(115078)] = 4,	-- Paralysis
 		[GetSpellInfo(119392)] = 4,	-- Charging Ox Wave
 		-- Paladin
@@ -68,7 +69,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(5782)] = 4,	-- Fear
 		[GetSpellInfo(5484)] = 4,	-- Howl of Terror
 		[GetSpellInfo(6789)] = 4,	-- Mortal Coil
-		[GetSpellInfo(6358)] = 4,	-- Seduction
+		[GetSpellInfo(6358)] = 4,	-- Seduction (Succubus)
 		-- Warrior
 		[GetSpellInfo(107570)] = 4,	-- Storm Bolt
 		[GetSpellInfo(46968)] = 4,	-- Shockwave
@@ -108,7 +109,7 @@ T.ArenaControl = function()
 		-- Disarms
 		[GetSpellInfo(676)] = 1,	-- Disarm
 		[GetSpellInfo(51722)] = 1,	-- Dismantle
-		[GetSpellInfo(50541)] = 1,	-- Clench - Scorpid
+		[GetSpellInfo(50541)] = 1,	-- Clench (Scorpid)
 
 		-- Buffs
 		[GetSpellInfo(33206)] = 1,	-- Pain Suppression
@@ -118,7 +119,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(29166)] = 1,	-- Innervate
 		[GetSpellInfo(54428)] = 1,	-- Divine Plea
 		[GetSpellInfo(31821)] = 1,	-- Devotion Aura
-		[GetSpellInfo(96267)] = 1,	-- Strength of Soul
+		[GetSpellInfo(96267)] = 1,	-- Glyph of Inner Focus
 		[GetSpellInfo(8178)] = 1,	-- Grounding Totem
 		[GetSpellInfo(49016)] = 1,	-- Unholy Frenzy
 

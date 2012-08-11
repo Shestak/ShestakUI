@@ -46,7 +46,7 @@ if C.raidframe.plugins_aura_watch == true then
 				{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},			-- Unholy Frenzy
 			},
 			MAGE = {
-				--MOP{54646, "TOPRIGHT", {0.2, 0.2, 1}},				-- Focus Magic
+				{111264, "TOPRIGHT", {0.2, 0.2, 1}},			-- Ice Ward
 			},
 			WARRIOR = {
 				{114030, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
@@ -56,7 +56,7 @@ if C.raidframe.plugins_aura_watch == true then
 				{34477, "TOPRIGHT", {0.2, 0.2, 1}},				-- Misdirection
 			},
 			WARLOCK = {
-				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone Resurrection
+				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone
 			},
 			MONK = {
 				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},			-- Renewing Mist

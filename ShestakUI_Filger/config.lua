@@ -956,10 +956,16 @@ Filger_Spells = {
 			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
 			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tigereye Brew
+			{spellID = 116740, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Touch of Karma
 			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Avert Harm
 			{spellID = 115213, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Diffuse Magic
+			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Momentum
+			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1326,7 +1332,7 @@ Filger_Spells = {
 			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Archangel
 			{spellID = 87153, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Strength of Soul
+			-- Glyph of Inner Focus
 			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Prayer of Mending
 			{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1421,10 +1427,10 @@ Filger_Spells = {
 			{spellID = 77613, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Shadow Word: Pain
 			{spellID = 589, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Devouring Plague
-			{spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vampiric Touch
 			{spellID = 34914, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Devouring Plague
+			{spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1624,16 +1630,6 @@ Filger_Spells = {
 			-- Physical Melee
 
 			-- Other
-			-- Future on Fire (T12 x4)
-			{spellID = 99186, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fiery Devastation (T12 x4)
-			{spellID = 99187, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Master of Flames (T12 x4)
-			{spellID = 99188, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadows of the Destroyer
-			{spellID = 109941, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fury of the Destroyer
-			{spellID = 109949, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2157,36 +2153,18 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
-			-- Conflagrate
-			{spellID = 17962, filter = "CD"},
-			-- Ritual of Summoning
-			{spellID = 698, filter = "CD"},
-			-- Twilight Ward
-			{spellID = 6229, filter = "CD"},
-			-- Demonic Leap
-			{spellID = 54785, filter = "CD"},
-			-- Soulshatter
-			{spellID = 29858, filter = "CD"},
-			-- Demonic Circle: Teleport
-			{spellID = 48020, filter = "CD"},
 			-- Howl of Terror
 			{spellID = 5484, filter = "CD"},
 			-- Mortal Coil
 			{spellID = 6789, filter = "CD"},
-			-- Haunt
-			{spellID = 48181, filter = "CD"},
-			-- Shadowburn
-			{spellID = 17877, filter = "CD"},
 			-- Shadowfury
 			{spellID = 30283, filter = "CD"},
-			-- Shadowflame
-			{spellID = 47897, filter = "CD"},
-			-- Sacrifice (Voidwalker)
-			{spellID = 7812, filter = "CD"},
-			-- Suffering (Voidwalker)
-			{spellID = 17735, filter = "CD"},
 			-- Spell Lock (Felhunter)
 			{spellID = 19647, filter = "CD"},
+			-- Twilight Ward
+			{spellID = 6229, filter = "CD"},
+			-- Sacrifice (Voidwalker)
+			{spellID = 7812, filter = "CD"},
 			-- Devour Magic (Felhunter)
 			{spellID = 19505, filter = "CD"},
 			-- Felstorm
@@ -2195,6 +2173,12 @@ Filger_Spells = {
 			{spellID = 74434, filter = "CD"},
 			-- Hand of Gul'dan
 			{spellID = 86040, filter = "CD"},
+			-- Demonic Circle: Teleport
+			{spellID = 48020, filter = "CD"},
+			-- Soulshatter
+			{spellID = 29858, filter = "CD"},
+			-- Ritual of Summoning
+			{spellID = 698, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2254,11 +2238,13 @@ Filger_Spells = {
 			{spellID = 55694, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shield Block
 			{spellID = 2565, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shield Barrier
+			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spell Reflection
 			{spellID = 23920, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Berserker Rage
 			{spellID = 18499, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Death Wish
+			-- Bloodbath
 			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recklesness
 			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2268,8 +2254,6 @@ Filger_Spells = {
 			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Victorious
 			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shield Barrier
-			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2329,10 +2313,10 @@ Filger_Spells = {
 			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hamstring
 			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Weakened Armor
-			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Demoralizing Shout
 			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Weakened Armor
+			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Weakened Blows
 			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
@@ -2352,6 +2336,8 @@ Filger_Spells = {
 			{spellID = 23922, filter = "CD"},
 			-- Shockwave
 			{spellID = 46968, filter = "CD"},
+			-- Storm Bolt
+			{spellID = 107570, filter = "CD"},
 			-- Thunder Clap
 			{spellID = 6343, filter = "CD"},
 			-- Charge
@@ -2360,18 +2346,12 @@ Filger_Spells = {
 			{spellID = 3411, filter = "CD"},
 			-- Spell Reflection
 			{spellID = 23920, filter = "CD"},
-			-- Shield Block
-			{spellID = 2565, filter = "CD"},
 			-- Enraged Regeneration
 			{spellID = 55694, filter = "CD"},
 			-- Colossus Smash
 			{spellID = 86346, filter = "CD"},
 			-- Commanding Shout
 			{spellID = 469, filter = "CD"},
-			-- Raging Blow
-			{spellID = 85288, filter = "CD"},
-			-- Whirlwind
-			{spellID = 1680, filter = "CD"},
 			-- Taunt
 			{spellID = 355, filter = "CD"},
 			-- Berserker Rage
@@ -2384,8 +2364,6 @@ Filger_Spells = {
 			{spellID = 676, filter = "CD"},
 			-- Demoralizing Shout
 			{spellID = 1160, filter = "CD"},
-			-- Storm Bolt
-			{spellID = 107570, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2537,6 +2515,8 @@ Filger_Spells = {
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stormlash Totem
 			{spellID = 120676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Tiger's Lust
+			{spellID = 116841, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
@@ -2681,6 +2661,8 @@ Filger_Spells = {
 			-- Monk
 			-- Fists of Fury
 			{spellID = 113656, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Leg Sweep
+			{spellID = 119381, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
 			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Charging Ox Wave
@@ -2831,7 +2813,7 @@ Filger_Spells = {
 			-- Lichborne
 			{spellID = 49039, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Bone shield
-			{spellID = 49222, unitID = "target", caster = "all", filter = "BUFF"},
+			--{spellID = 49222, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Icebound Fortitude
 			{spellID = 48792, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pillar of Frost
@@ -2956,6 +2938,8 @@ Filger_Spells = {
 
 			-- Fists of Fury
 			{spellID = 113656, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Leg Sweep
+			{spellID = 119381, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
 			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Charging Ox Wave
@@ -2991,7 +2975,7 @@ Filger_Spells = {
 			{spellID = 47585, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pain supression
 			{spellID = 33206, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Strength of Soul
+			-- Glyph of Inner Focus
 			{spellID = 96267, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Guardian Spirit
 			{spellID = 47788, unitID = "target", caster = "all", filter = "BUFF"},
@@ -3040,7 +3024,7 @@ Filger_Spells = {
 			-- Shamanistic Rage
 			{spellID = 30823, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Earth Shield
-			{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
+			--{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Spiritwalker's Grace
 			{spellID = 79206, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Mana Tide

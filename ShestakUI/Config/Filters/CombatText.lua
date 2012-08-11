@@ -39,20 +39,19 @@ if T.class == "DEATHKNIGHT" then
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		T.aoespam[774] = true		-- Rejuvenation (Normal)
-		T.aoespam[64801] = true		-- Rejuvenation (First tick)
+		T.aoespam[774] = true		-- Rejuvenation
 		T.aoespam[48438] = true		-- Wild Growth
 		T.aoespam[8936] = true		-- Regrowth
 		T.aoespam[33763] = true		-- Lifebloom
 		T.aoespam[44203] = true		-- Tranquility
-		T.aoespam[81269] = true		-- Efflorescence
+		T.aoespam[81269] = true		-- Swiftmend
 		-- Damaging spells
 		T.aoespam[8921] = true		-- Moonfire
 		T.aoespam[93402] = true		-- Sunfire
 		T.aoespam[42231] = true		-- Hurricane
 		T.aoespam[106998] = true	-- Astral Storm
 		T.aoespam[50288] = true		-- Starfall
-		T.aoespam[78777] = true		-- Wild Mushroom
+		T.aoespam[78777] = true		-- Wild Mushroom: Detonate
 		T.aoespam[61391] = true		-- Typhoon
 		T.aoespam[1822] = true		-- Rake
 		T.aoespam[33876] = true		-- Mangle (Cat Form)
@@ -72,12 +71,12 @@ elseif T.class == "HUNTER" then
 		T.aoespam[53301] = true		-- Explosive Shot
 		T.aoespam[63468] = true		-- Piercing Shots
 		T.aoespam[118459] = true	-- Beast Cleave
-		T.aoespam[34655] = true		-- Deadly Poison(Snake)
+		T.aoespam[34655] = true		-- Deadly Poison (Snake)
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[44461] = true		-- Living Bomb (Explosion)
-		T.aoespam[44457] = true		-- Living Bomb (Dot)
+		T.aoespam[44457] = true		-- Living Bomb
+		T.aoespam[44461] = true		-- Living Bomb (AoE)
 		T.aoespam[2120] = true		-- Flamestrike
 		T.aoespam[12654] = true		-- Ignite
 		T.aoespam[11366] = true		-- Pyroblast
@@ -102,10 +101,14 @@ elseif T.class == "MONK" then
 		T.aoespam[125953] = 115175	-- Soothing Mist
 		T.aoespam[126890] = true	-- Eminence
 		T.aoespam[117640] = true	-- Spinning Crane Kick
+		T.aoespam[132463] = true	-- Chi Wave
+		T.aoespam[124101] = true	-- Zen Sphere: Detonate
 		-- Damaging spells
 		T.aoespam[117952] = true	-- Crackling Jade Lightning
 		T.aoespam[107270] = true	-- Spinning Crane Kick
 		T.aoespam[117418] = true	-- Fists of Fury
+		T.aoespam[132467] = true	-- Chi Wave
+		T.aoespam[125033] = true	-- Zen Sphere: Detonate
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
@@ -139,7 +142,7 @@ elseif T.class == "PRIEST" then
 		T.aoespam[34861] = true		-- Circle of Healing
 		T.aoespam[23455] = true		-- Holy Nova (Healing Effect)
 		T.aoespam[33110] = true		-- Prayer of Mending
-		T.aoespam[63544] = true		-- Divine Touch
+		T.aoespam[63544] = true		-- Rapid Renewal
 		T.aoespam[81751] = true		-- Atonement (Non-crit)
 		T.aoespam[94472] = true		-- Atonement (Crit)
 		-- Damaging spells
@@ -148,7 +151,6 @@ elseif T.class == "PRIEST" then
 		T.aoespam[589] = true		-- Shadow Word: Pain
 		T.aoespam[34914] = true		-- Vampiric Touch
 		T.aoespam[2944] = true		-- Devouring Plague
-		T.aoespam[63675] = true		-- Improved Devouring Plague
 		T.aoespam[15407] = true		-- Mind Flay
 		T.aoespam[49821] = true		-- Mind Seer
 		T.aoespam[87532] = true		-- Shadowy Apparition

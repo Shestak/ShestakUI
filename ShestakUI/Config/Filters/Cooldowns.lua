@@ -9,16 +9,14 @@ if C.raidcooldown.enable == true then
 	T.raid_spells = {
 		[20484] = 600,	-- Rebirth
 		[61999] = 600,	-- Raise Ally
-		[6203] = 900,	-- Soulstone
-		[95750] = 900,	-- Soulstone Resurrection
-		[20707] = 900,	-- Soulstone Resurrection
+		[20707] = 600,	-- Soulstone
 		[6346] = 180,	-- Fear Ward
 		[29166] = 180,	-- Innervate
+		[16190] = 180,	-- Mana Tide Totem
 		[32182] = 300,	-- Heroism
 		[2825] = 300,	-- Bloodlust
 		[80353] = 300,	-- Time Warp
-		[90355] = 300,	-- Ancient Hysteria
-		[16190] = 180,	-- Mana Tide Totem
+		[90355] = 360,	-- Ancient Hysteria
 	}
 end
 
