@@ -1630,16 +1630,6 @@ Filger_Spells = {
 			-- Physical Melee
 
 			-- Other
-			-- Future on Fire (T12 x4)
-			{spellID = 99186, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fiery Devastation (T12 x4)
-			{spellID = 99187, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Master of Flames (T12 x4)
-			{spellID = 99188, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadows of the Destroyer
-			{spellID = 109941, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fury of the Destroyer
-			{spellID = 109949, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2163,36 +2153,18 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
-			-- Conflagrate
-			{spellID = 17962, filter = "CD"},
-			-- Ritual of Summoning
-			{spellID = 698, filter = "CD"},
-			-- Twilight Ward
-			{spellID = 6229, filter = "CD"},
-			-- Demonic Leap
-			{spellID = 54785, filter = "CD"},
-			-- Soulshatter
-			{spellID = 29858, filter = "CD"},
-			-- Demonic Circle: Teleport
-			{spellID = 48020, filter = "CD"},
 			-- Howl of Terror
 			{spellID = 5484, filter = "CD"},
 			-- Mortal Coil
 			{spellID = 6789, filter = "CD"},
-			-- Haunt
-			{spellID = 48181, filter = "CD"},
-			-- Shadowburn
-			{spellID = 17877, filter = "CD"},
 			-- Shadowfury
 			{spellID = 30283, filter = "CD"},
-			-- Shadowflame
-			{spellID = 47897, filter = "CD"},
-			-- Sacrifice (Voidwalker)
-			{spellID = 7812, filter = "CD"},
-			-- Suffering (Voidwalker)
-			{spellID = 17735, filter = "CD"},
 			-- Spell Lock (Felhunter)
 			{spellID = 19647, filter = "CD"},
+			-- Twilight Ward
+			{spellID = 6229, filter = "CD"},
+			-- Sacrifice (Voidwalker)
+			{spellID = 7812, filter = "CD"},
 			-- Devour Magic (Felhunter)
 			{spellID = 19505, filter = "CD"},
 			-- Felstorm
@@ -2201,6 +2173,12 @@ Filger_Spells = {
 			{spellID = 74434, filter = "CD"},
 			-- Hand of Gul'dan
 			{spellID = 86040, filter = "CD"},
+			-- Demonic Circle: Teleport
+			{spellID = 48020, filter = "CD"},
+			-- Soulshatter
+			{spellID = 29858, filter = "CD"},
+			-- Ritual of Summoning
+			{spellID = 698, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -2835,7 +2813,7 @@ Filger_Spells = {
 			-- Lichborne
 			{spellID = 49039, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Bone shield
-			{spellID = 49222, unitID = "target", caster = "all", filter = "BUFF"},
+			--{spellID = 49222, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Icebound Fortitude
 			{spellID = 48792, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pillar of Frost
@@ -3046,7 +3024,7 @@ Filger_Spells = {
 			-- Shamanistic Rage
 			{spellID = 30823, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Earth Shield
-			{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
+			--{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Spiritwalker's Grace
 			{spellID = 79206, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Mana Tide
