@@ -39,6 +39,7 @@ L_MISC_DRINKING = " пьёт."
 L_MISC_BUY_STACK = "Зажмите Alt и щелкните мышью, чтобы купить связку"
 L_MISC_ONECLICK_BUYOUT = "Зажмите Shift и щелкните мышью, чтобы выкупить выбранный предмет без подтверждения"
 L_MISC_ONECLICK_BID = "Зажмите Shift и щелкните мышью, чтобы сделать ставку на выбранном предмете без подтверждения"
+L_MISC_UI_OUTDATED = "Ваша версия ShestakUI устарела. Вы можете скачать последнюю версию на www.shestak.org"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"

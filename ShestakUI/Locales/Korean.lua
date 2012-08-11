@@ -39,6 +39,7 @@ L_MISC_DRINKING = " is drinking."
 L_MISC_BUY_STACK = "Alt-Click to buy a stack"
 L_MISC_ONECLICK_BUYOUT = "Shift-Click to buyout the selected item without confirmation"
 L_MISC_ONECLICK_BID = "Shift-Click to bid on the selected item without confirmation"
+L_MISC_UI_OUTDATED = "당신의 ShestakUI 버전이 구버전입니다. 당신은 www.shestak.org 에서 최신 버전을 다운로드하실 수 있습니다"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disband Group"

@@ -39,6 +39,7 @@ L_MISC_DRINKING = " est entrain de boire."
 L_MISC_BUY_STACK = "Alt-Click pour acheter une pile d'objet"
 L_MISC_ONECLICK_BUYOUT = "Shift-Click pour acheter l'objet sélectionné sans confirmation"
 L_MISC_ONECLICK_BID = "Shift-Click pour enchérir sur l'objet sélectionné sans confirmation"
+L_MISC_UI_OUTDATED = "Une version plus récente de ShestakUI est disponible. Vous pouvez télécharger la dernière version sur www.shestak.org"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Fin du raid"
