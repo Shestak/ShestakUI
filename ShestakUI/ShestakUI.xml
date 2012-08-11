@@ -51,6 +51,7 @@
 	<Script file="Core\WTF.lua"/>
 	<Script file="Core\Kill.lua"/>
 	<Script file="Core\Temp.lua"/>
+	<Script file="Core\CheckVersion.lua"/>
 
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoButton.lua"/>
