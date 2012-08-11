@@ -2260,11 +2260,13 @@ Filger_Spells = {
 			{spellID = 55694, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shield Block
 			{spellID = 2565, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shield Barrier
+			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spell Reflection
 			{spellID = 23920, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Berserker Rage
 			{spellID = 18499, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Death Wish
+			-- Bloodbath
 			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recklesness
 			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2274,8 +2276,6 @@ Filger_Spells = {
 			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Victorious
 			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shield Barrier
-			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2335,10 +2335,10 @@ Filger_Spells = {
 			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hamstring
 			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Weakened Armor
-			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Demoralizing Shout
 			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Weakened Armor
+			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Weakened Blows
 			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
@@ -2358,6 +2358,8 @@ Filger_Spells = {
 			{spellID = 23922, filter = "CD"},
 			-- Shockwave
 			{spellID = 46968, filter = "CD"},
+			-- Storm Bolt
+			{spellID = 107570, filter = "CD"},
 			-- Thunder Clap
 			{spellID = 6343, filter = "CD"},
 			-- Charge
@@ -2366,18 +2368,12 @@ Filger_Spells = {
 			{spellID = 3411, filter = "CD"},
 			-- Spell Reflection
 			{spellID = 23920, filter = "CD"},
-			-- Shield Block
-			{spellID = 2565, filter = "CD"},
 			-- Enraged Regeneration
 			{spellID = 55694, filter = "CD"},
 			-- Colossus Smash
 			{spellID = 86346, filter = "CD"},
 			-- Commanding Shout
 			{spellID = 469, filter = "CD"},
-			-- Raging Blow
-			{spellID = 85288, filter = "CD"},
-			-- Whirlwind
-			{spellID = 1680, filter = "CD"},
 			-- Taunt
 			{spellID = 355, filter = "CD"},
 			-- Berserker Rage
@@ -2390,8 +2386,6 @@ Filger_Spells = {
 			{spellID = 676, filter = "CD"},
 			-- Demoralizing Shout
 			{spellID = 1160, filter = "CD"},
-			-- Storm Bolt
-			{spellID = 107570, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
