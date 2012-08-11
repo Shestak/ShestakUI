@@ -258,6 +258,18 @@ local function LoadSkin()
 				button.backdrop:Point("TOPLEFT", -2, 2)
 				button.backdrop:Point("BOTTOMRIGHT", 1, -1)
 
+				local hover = button:CreateTexture("Frame", nil, button)
+				hover:SetTexture(1, 1, 1, 0.3)
+				hover:Point("TOPLEFT", button, 0, 0)
+				hover:Point("BOTTOMRIGHT", button, -1, 1)
+				button:SetHighlightTexture(hover)
+
+				local pushed = button:CreateTexture("Frame", nil, button)
+				pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
+				pushed:Point("TOPLEFT", button, 0, 0)
+				pushed:Point("BOTTOMRIGHT", button, -1, 1)
+				button:SetPushedTexture(pushed)
+
 				button.EmptySlot:SetAlpha(0)
 				button.ActiveTexture:SetAlpha(0)
 				button.FutureTexture:SetAlpha(0)
@@ -272,6 +284,9 @@ local function LoadSkin()
 					button.Name:SetTextColor(1, 0.82, 0)
 					button.InfoText:SetTextColor(0.8, 0.8, 0.8)
 				end
+				button.Name:SetShadowOffset(1, -1)
+				button.InfoText:SetShadowOffset(1, -1)
+
 				button.reskinned = true
 			end
 		end
@@ -285,6 +300,9 @@ local function LoadSkin()
 			select(2, button:GetRegions()):Hide()
 			button:SetTextColor(0.8, 0.8, 0.8)
 			button.Title:SetTextColor(1, 0.82, 0)
+			button:SetShadowColor(0, 0, 0)
+			button:SetShadowOffset(1, -1)
+			button.Title:SetShadowOffset(1, -1)
 		end
 	end)
 end
