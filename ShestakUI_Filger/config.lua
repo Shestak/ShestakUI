@@ -1332,7 +1332,7 @@ Filger_Spells = {
 			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Archangel
 			{spellID = 87153, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Strength of Soul
+			-- Glyph of Inner Focus
 			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Prayer of Mending
 			{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2975,7 +2975,7 @@ Filger_Spells = {
 			{spellID = 47585, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pain supression
 			{spellID = 33206, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Strength of Soul
+			-- Glyph of Inner Focus
 			{spellID = 96267, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Guardian Spirit
 			{spellID = 47788, unitID = "target", caster = "all", filter = "BUFF"},

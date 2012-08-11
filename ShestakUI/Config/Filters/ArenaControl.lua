@@ -119,7 +119,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(29166)] = 1,	-- Innervate
 		[GetSpellInfo(54428)] = 1,	-- Divine Plea
 		[GetSpellInfo(31821)] = 1,	-- Devotion Aura
-		[GetSpellInfo(96267)] = 1,	-- Strength of Soul
+		[GetSpellInfo(96267)] = 1,	-- Glyph of Inner Focus
 		[GetSpellInfo(8178)] = 1,	-- Grounding Totem
 		[GetSpellInfo(49016)] = 1,	-- Unholy Frenzy
 
