@@ -368,10 +368,10 @@ if C.raidframe.plugins_aura_watch == true then
 
 		T.ReverseTimer = {
 		-- Sinestra
-			[92956] = true,		-- Wrack
+			--[[[92956] = true,		-- Wrack
 			[89435] = true,		-- Wrack
 			[92955] = true,		-- Wrack
-			[89421] = true,		-- Wrack
+			[89421] = true,		-- Wrack]]
 		}
 
 		ORD:RegisterDebuffs(T.debuffids)
