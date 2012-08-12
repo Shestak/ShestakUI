@@ -420,7 +420,7 @@ Filger_Spells = {
 			-- Starsurge
 			{spellID = 78674, filter = "CD"},
 			-- Typhoon
-			{spellID = 50516, filter = "CD"},
+			{spellID = 132469, filter = "CD"},
 			-- Solar beam
 			{spellID = 78675, filter = "CD"},
 			-- Growl
