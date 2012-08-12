@@ -959,7 +959,7 @@ Filger_Spells = {
 			-- Elusive Brew
 			{spellID = 115308, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Tigereye Brew
-			{spellID = 116740, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 116740, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Touch of Karma
 			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Avert Harm
@@ -1068,7 +1068,7 @@ Filger_Spells = {
 			-- Flying Serpent Kick
 			{spellID = 101545, filter = "CD"},
 			-- Touch of Karma
-			{spellID = 125174, filter = "CD"},
+			{spellID = 122470, filter = "CD"},
 			-- Touch of Death
 			{spellID = 115080, filter = "CD"},
 

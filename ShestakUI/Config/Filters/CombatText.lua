@@ -106,6 +106,8 @@ elseif T.class == "MONK" then
 		-- Damaging spells
 		T.aoespam[117952] = true	-- Crackling Jade Lightning
 		T.aoespam[117418] = true	-- Fists of Fury
+		T.aoespam[120274] = true	-- Tiger Strikes
+		T.aoespam[128531] = true	-- Blackout Kick
 		T.aoespam[123725] = true	-- Breath of Fire
 		T.aoespam[107270] = true	-- Spinning Crane Kick
 		T.aoespam[132467] = true	-- Chi Wave
