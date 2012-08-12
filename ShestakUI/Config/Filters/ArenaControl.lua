@@ -46,6 +46,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(119381)] = 4,	-- Leg Sweep
 		[GetSpellInfo(115078)] = 4,	-- Paralysis
 		[GetSpellInfo(119392)] = 4,	-- Charging Ox Wave
+		[GetSpellInfo(122242)] = 4,	-- Clash
 		-- Paladin
 		[GetSpellInfo(853)] = 4,	-- Hammer of Justice
 		[GetSpellInfo(105593)] = 4,	-- Fist of Justice

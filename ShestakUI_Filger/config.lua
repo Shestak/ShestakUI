@@ -956,6 +956,8 @@ Filger_Spells = {
 			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
 			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elusive Brew
+			{spellID = 115308, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Tigereye Brew
 			{spellID = 116740, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Touch of Karma
@@ -983,6 +985,8 @@ Filger_Spells = {
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Breaker: Tiger Palm
 			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shuffle
+			{spellID = 115307, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -1015,6 +1019,21 @@ Filger_Spells = {
 			-- Caster Heal
 			-- Darkglow Embroidery (Spirit)
 			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
+		},
+		{
+			Name = "T_DEBUFF_ICON",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 37,
+			Position = {unpack(Filger_Settings.target_debuff_icon)},
+
+			-- Breath of Fire
+			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Dizzying Haze
+			{spellID = 116330, unitID = "target", caster = "player", filter = "DEBUFF"},
+
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
@@ -2667,6 +2686,8 @@ Filger_Spells = {
 			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Charging Ox Wave
 			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Clash
+			{spellID = 122242, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Hammer of Justice
@@ -2944,6 +2965,8 @@ Filger_Spells = {
 			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Charging Ox Wave
 			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Clash
+			{spellID = 122242, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Divine Shield

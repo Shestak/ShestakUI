@@ -105,8 +105,9 @@ elseif T.class == "MONK" then
 		T.aoespam[124101] = true	-- Zen Sphere: Detonate
 		-- Damaging spells
 		T.aoespam[117952] = true	-- Crackling Jade Lightning
-		T.aoespam[107270] = true	-- Spinning Crane Kick
 		T.aoespam[117418] = true	-- Fists of Fury
+		T.aoespam[123725] = true	-- Breath of Fire
+		T.aoespam[107270] = true	-- Spinning Crane Kick
 		T.aoespam[132467] = true	-- Chi Wave
 		T.aoespam[125033] = true	-- Zen Sphere: Detonate
 	end
