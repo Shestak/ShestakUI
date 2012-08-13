@@ -160,7 +160,7 @@ elseif T.class == "PRIEST" then
 		T.aoespam[14914] = true		-- Holy Fire
 	end
 	if C.combattext.healing then
-		T.healfilter[2944] = true	-- Devouring Plague (Healing)
+		T.healfilter[127626] = true	-- Devouring Plague (Healing)
 		T.healfilter[15290] = true	-- Vampiric Embrace
 	end
 elseif T.class == "ROGUE" then
