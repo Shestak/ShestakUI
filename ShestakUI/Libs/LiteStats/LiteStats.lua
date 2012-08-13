@@ -59,7 +59,7 @@ local function RegEvents(f, l) for _, e in ipairs{strsplit(" ", l)} do f:Registe
 ------------------------------------------
 -- Saved Vars Init / Coords
 local ls, coordX, coordY, conf, Coords = CreateFrame("Frame"), 0, 0, {}
-RegEvents(ls,"ADDON_LOADED PLAYER_REGEN_DISABLED PLAYER_REGEN_ENABLED")
+RegEvents(ls, "ADDON_LOADED PLAYER_REGEN_DISABLED PLAYER_REGEN_ENABLED")
 ls:SetScript("OnEvent", function(_, event, addon)
 	if event == "ADDON_LOADED" and addon == "ShestakUI" then
 		if not SavedStats then SavedStats = {} end

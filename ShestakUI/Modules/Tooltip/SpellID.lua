@@ -4,9 +4,6 @@ if C.tooltip.enable ~= true or C.tooltip.spell_id ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Spell/Item IDs(idTip by Silverwind)
 ----------------------------------------------------------------------------------------
-local select, UnitBuff, UnitDebuff, UnitAura, tonumber, strfind, hooksecurefunc =
-select, UnitBuff, UnitDebuff, UnitAura, tonumber, strfind, hooksecurefunc
-
 local function addLine(self, id, isItem)
 	if isItem then
 		self:AddLine("|cffffffff"..L_TOOLTIP_ITEM_ID.." "..id)
