@@ -1,6 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if C.skins.minimap_buttons ~= true or C.minimap.enable ~= true then return end
-if T.MOPVersion then return end
 
 ----------------------------------------------------------------------------------------
 --	Skin addons icons on minimap
@@ -31,7 +30,7 @@ local function SkinButton(f)
 		if region:GetObjectType() == "Texture" then
 			local tex = region:GetTexture()
 
-			if tex:find("Border") or tex:find("Background") or tex:find("AlphaMask") then
+			if tex and (tex:find("Border") or tex:find("Background") or tex:find("AlphaMask")) then
 				region:SetTexture(nil)
 			else
 				region:ClearAllPoints()
