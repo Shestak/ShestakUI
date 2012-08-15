@@ -20,7 +20,7 @@ lpanels:CreateLayout("Load For All", {
 					return format("%s:%02.f", mins, secs)
 					end
 				end, update = 0.1,
-				shadow = 0, outline = 3, font = C.font.stats_font, size = C.font.stats_font_size*2,
+				shadow = 0, outline = 3, font = C.font.stats_font, size = C.font.stats_font_size * 2,
 				anchor_to = "CENTER", color = "1 0.1 0.1"
 			},
 			{	string = L_PANELS_AFK_RCLICK, anchor_to = "BOTTOM", y_off = 12,

@@ -38,7 +38,7 @@ function Mountz(groundmount, flyingmount, underwatermount)
 		local _, info, id = GetCompanionInfo("MOUNT", i)
 		if underwatermount and info == underwatermount and swimablex then
 			CallCompanion("MOUNT", i)
-            return
+			return
 		elseif flyingmount and info == flyingmount and flyablex and not swimablex then
 			CallCompanion("MOUNT", i)
 			return

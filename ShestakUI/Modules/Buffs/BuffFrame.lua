@@ -171,11 +171,6 @@ local function UpdateDebuffAnchors(buttonName, index)
 	_G[buttonName..index]:Hide()
 end
 
-local function UpdateEnchantAnchors()
-	_G["TempEnchant1"]:ClearAllPoints()
-	_G["TempEnchant1"]:Point("RIGHT", ConsolidatedBuffs, "LEFT", -5, 0)
-end
-
 hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
 hooksecurefunc("DebuffButton_UpdateAnchors", UpdateDebuffAnchors)
 hooksecurefunc("AuraButton_UpdateDuration", UpdateDuration)

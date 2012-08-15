@@ -118,10 +118,10 @@ local function CreateRollFrame()
 	status.parent = frame
 	frame.status = status
 
-	status.bg = status:CreateTexture(nil, 'BACKGROUND')
+	status.bg = status:CreateTexture(nil, "BACKGROUND")
 	status.bg:SetAlpha(0.1)
 	status.bg:SetAllPoints()
-	status.bg:SetDrawLayer('BACKGROUND', 2)
+	status.bg:SetDrawLayer("BACKGROUND", 2)
 
 	local need, needtext = CreateRollButton(frame, "Interface\\Buttons\\UI-GroupLoot-Dice-Up", "Interface\\Buttons\\UI-GroupLoot-Dice-Highlight", "Interface\\Buttons\\UI-GroupLoot-Dice-Down", 1, NEED, "LEFT", frame.button, "RIGHT", 5, -1)
 	local greed, greedtext = CreateRollButton(frame, "Interface\\Buttons\\UI-GroupLoot-Coin-Up", "Interface\\Buttons\\UI-GroupLoot-Coin-Highlight", "Interface\\Buttons\\UI-GroupLoot-Coin-Down", 2, GREED, "LEFT", need, "RIGHT", 0, -1)

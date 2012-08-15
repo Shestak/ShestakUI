@@ -728,8 +728,6 @@ function CreateUIConfig()
 					local F = unpack(Aurora)
 					F.ReskinCheck(button)
 				end
-				--button:SetNormalTexture("")
-				--T.SkinCheckBox(button)
 				local o = "UIConfig"..i..j
 				Local(o)
 				_G["UIConfig"..i..j.."Text"]:SetText(T.option)

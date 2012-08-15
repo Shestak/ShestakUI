@@ -178,6 +178,7 @@ local function InstallUI()
 	SavedOptionsPerChar = {}
 
 	SavedOptionsPerChar.Install = true
+	SavedOptionsPerChar.BarsLocked = true
 
 	ReloadUI()
 end

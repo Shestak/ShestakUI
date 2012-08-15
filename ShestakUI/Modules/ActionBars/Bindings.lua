@@ -107,7 +107,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 
 				if not self.button.name then return end
 
-				if not self.button.id or self.button.id < 1 or self.button.id > (spellmacro=="STANCE" and 10 or 12) then
+				if not self.button.id or self.button.id < 1 or self.button.id > (spellmacro == "STANCE" and 10 or 12) then
 					self.button.bindstring = "CLICK "..self.button.name..":LeftButton"
 				else
 					self.button.bindstring = (spellmacro == "STANCE" and "STANCEBUTTON" or "BONUSACTIONBUTTON")..self.button.id

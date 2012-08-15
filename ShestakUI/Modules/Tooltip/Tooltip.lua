@@ -38,7 +38,7 @@ local anchor = CreateFrame("Frame", "TooltipAnchor", UIParent)
 anchor:SetSize(200, 40)
 anchor:SetPoint(unpack(C.position.tooltip))
 
---- Hide PVP text
+-- Hide PVP text
 PVP_ENABLED = ""
 
 -- Statusbar

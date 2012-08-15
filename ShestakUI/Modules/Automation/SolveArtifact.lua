@@ -47,7 +47,7 @@ frame:SetScript("OnEvent", function(self, event, message)
 		local fragments, stones, total = GetArtifactProgress()
 		if fragments + stones >= total then
 			local color
-			if rare then
+			if rare and rare > 0 then
 				color = "|cff0070dd"
 			else
 				color = "|cff9d9d9d"

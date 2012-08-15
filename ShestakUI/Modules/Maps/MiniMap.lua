@@ -238,7 +238,6 @@ local micromenu = {
 	{text = BATTLEFIELD_MINIMAP, notCheckable = true, func = function()
 		ToggleBattlefieldMinimap()
 	end},
-
 }
 
 Minimap:SetScript("OnMouseUp", function(self, button)

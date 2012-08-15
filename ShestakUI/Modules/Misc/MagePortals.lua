@@ -58,8 +58,7 @@ end
 local button = CreateFrame("Button", nil, UIParent)
 button:SetTemplate("ClassColor")
 button:Point("TOPLEFT", Minimap, "TOPLEFT")
-button:Width(20)
-button:Height(20)
+button:Size(20)
 button:SetAlpha(0)
 
 button.t = button:CreateTexture(nil, "OVERLAY")

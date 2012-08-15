@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.loot.lootframe == true then return end
+if C.loot.lootframe ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Loot frame(Butsu by Haste)
@@ -212,7 +212,7 @@ end
 function Announce(chn)
 	local nums = GetNumLootItems()
 	if nums == 0 then return end
-	if UnitIsPlayer("target") or not UnitExists("target") then -- Chests are hard to identify!
+	if UnitIsPlayer("target") or not UnitExists("target") then
 		SendChatMessage(L_LOOT_CHEST..":", chn)
 	else
 		SendChatMessage(L_LOOT_MONSTER.."'"..UnitName("target").."':", chn)
