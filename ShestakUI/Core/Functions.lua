@@ -69,11 +69,9 @@ end
 --	Player's Role and Specialization check
 ----------------------------------------------------------------------------------------
 T.CheckSpec = function(tree)
-	local function CheckSpec(tree)
-		local activeGroup = GetActiveSpecGroup()
-		if activeGroup and GetSpecialization(false, false, activeGroup) then
-			return tree == GetSpecialization(false, false, activeGroup)
-		end
+	local activeGroup = GetActiveSpecGroup()
+	if activeGroup and GetSpecialization(false, false, activeGroup) then
+		return tree == GetSpecialization(false, false, activeGroup)
 	end
 end
 
@@ -395,6 +393,15 @@ function T.SkinCheckBox(frame)
 		disabled:Point("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetDisabledCheckedTexture(disabled)
 	end
+
+	frame:HookScript("OnDisable", function(self)
+		if not self.SetDisabledTexture then return; end
+		if self:GetChecked() then
+			self:SetDisabledTexture(disabled)
+		else
+			self:SetDisabledTexture("")
+		end
+	end)
 end
 
 function T.SkinCloseButton(f, point, text, pixel)
