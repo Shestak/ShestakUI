@@ -8,6 +8,13 @@ local lines = {}
 local frame = nil
 local editBox = nil
 local isf = nil
+local sizes = {
+	":14:14",
+	":15:15",
+	":16:16",
+	":12:20",
+	":14"
+}
 
 local function CreatCopyFrame()
 	frame = CreateFrame("Frame", "CopyFrame", UIParent)
@@ -34,6 +41,16 @@ local function CreatCopyFrame()
 	editBox:SetScript("OnEscapePressed", function() frame:Hide() end)
 
 	scrollArea:SetScrollChild(editBox)
+
+	editBox:SetScript("OnTextSet", function(self)
+		local text = self:GetText()
+
+		for _, size in pairs(sizes) do
+			if string.find(text, size) and not string.find(text, size.."]") then
+				self:SetText(string.gsub(text, size, ":12:12"))
+			end
+		end
+	end)
 
 	local close = CreateFrame("Button", "CopyCloseButton", frame, "UIPanelCloseButton")
 	if C.skins.blizzard_frames == true then
