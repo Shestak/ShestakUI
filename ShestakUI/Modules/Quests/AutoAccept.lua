@@ -12,11 +12,7 @@ local atBank, atMail
 function Monomyth:Register(event, func)
 	self:RegisterEvent(event)
 	self[event] = function(...)
-		if IsShiftKeyDown() then
-			if event == "QUEST_DETAIL" then
-				QuestFrame_OnEvent(nil, event)
-			end
-		else
+		if not IsShiftKeyDown() then
 			func(...)
 		end
 	end
@@ -53,11 +49,25 @@ Monomyth:Register("QUEST_GREETING", function()
 end)
 
 local function IsGossipQuestCompleted(index)
-	return not not select(index * 4, GetGossipActiveQuests())
+	return not not select(((index * 5) - 5) + 4, GetGossipActiveQuests())
 end
 
 local function IsGossipQuestTrivial(index)
-	return not not select(index * 3, GetGossipAvailableQuests())
+	return not not select(((index * 6) - 6) + 3, GetGossipAvailableQuests())
+end
+
+local function GetNumGossipCompletedQuests()
+	local completed = 0
+	local active = GetNumGossipActiveQuests()
+	if active > 0 then
+		for index = 1, active do
+			if select(index + 3, (GetGossipActiveQuests())) then
+				completed = completed + 1
+			end
+		end
+	end
+
+	return completed
 end
 
 Monomyth:Register("GOSSIP_SHOW", function()
@@ -84,6 +94,7 @@ Monomyth:Register("GOSSIP_SHOW", function()
 		local _, type = GetGossipOptions()
 		if type == "gossip" then
 			SelectGossipOption(1)
+			return
 		end
 	end
 end)
@@ -104,17 +115,8 @@ Monomyth:Register("GOSSIP_CONFIRM", function(index)
 	end
 end)
 
-QuestFrame:UnregisterEvent("QUEST_DETAIL")
 Monomyth:Register("QUEST_DETAIL", function()
-	if QuestGetAutoAccept() then
-		if GossipFrame:IsShown() then
-			HideUIPanel(GossipFrame)
-			--CloseQuest()
-		else
-			CloseQuest()
-		end
-	else
-		QuestFrame_OnEvent(nil, "QUEST_DETAIL")
+	if not QuestGetAutoAccept() then
 		AcceptQuest()
 	end
 end)
@@ -134,7 +136,6 @@ Monomyth:Register("QUEST_ITEM_UPDATE", function(...)
 	end
 end)
 
-local completing
 Monomyth:Register("QUEST_COMPLETE", function()
 	local choices = GetNumQuestChoices()
 	if choices < 1 then
@@ -148,6 +149,12 @@ Monomyth:Register("QUEST_COMPLETE", function()
 			local link = GetQuestItemLink("choice", index)
 			if link then
 				local _, _, _, _, _, _, _, _, _, _, value = GetItemInfo(link)
+
+				if string.match(link, "item:45724:") then
+					-- Champion's Purse, contains 10 gold
+					value = 1e5
+				end
+
 				if value > bestValue then
 					bestValue, bestIndex = value, index
 				end
@@ -162,19 +169,11 @@ Monomyth:Register("QUEST_COMPLETE", function()
 			_G["QuestInfoItem" .. bestIndex]:Click()
 		end
 	end
-
-	completing = true
 end)
 
-local completedQuests = {}
 Monomyth:Register("QUEST_FINISHED", function()
 	if choiceFinished then
 		choiceQueue = false
-	end
-
-	if completing then
-		completing = false
-		completedQuests[GetQuestID()] = true
 	end
 end)
 
@@ -210,30 +209,13 @@ Monomyth:Register("MAIL_CLOSED", function()
 	atMail = false
 end)
 
-local query, queried
-Monomyth:Register("QUEST_QUERY_COMPLETE", function()
-	if query then
-		--MOPGetQuestsCompleted(completedQuests)
-		Monomyth.BAG_UPDATE(query, true)
-	end
-end)
-
-Monomyth:Register("BAG_UPDATE", function(bag, handled)
-	if bag < 0 or atBank or atMail or (query == bag and not handled) then return end
-
-	query = nil
+Monomyth:Register("BAG_UPDATE", function(bag)
+	if atBank or atMail then return end
 
 	for slot = 1, GetContainerNumSlots(bag) do
 		local _, id, active = GetContainerItemQuestInfo(bag, slot)
-		if id and not active then
-			if not queried then
-				query = bag
-				queried = true
-				--MOPQueryQuestsCompleted()
-			elseif not completedQuests[id] then
-				UseContainerItem(bag, slot)
-				completedQuests[id] = true
-			end
+		if id and not active and not IsQuestFlaggedCompleted(id) then
+			UseContainerItem(bag, slot)
 		end
 	end
 end)
