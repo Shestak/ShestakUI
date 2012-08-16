@@ -58,8 +58,6 @@ Filger_Spells = {
 			-- Buffs
 			-- Scent of Blood -- useful?
 			{spellID = 50421, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blood Charge -- useful?
-			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Freezing Fog
 			{spellID = 59052, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Killing Machine
@@ -68,6 +66,8 @@ Filger_Spells = {
 			{spellID = 81340, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unholy Strength
 			{spellID = 53365, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Transformation
+			{spellID = 63560, unitID = "pet", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
