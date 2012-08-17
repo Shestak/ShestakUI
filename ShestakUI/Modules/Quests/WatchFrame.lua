@@ -53,29 +53,35 @@ local function setup()
 	WatchFrame:SetParent(UIWatchFrame)
 	WatchFrame:SetFrameStrata("MEDIUM")
 	WatchFrame:SetFrameLevel(3)
-	WatchFrame:SetClampedToScreen(false)
+	WatchFrame:SetClampedToScreen(true)
 	WatchFrame:ClearAllPoints()
-	WatchFrame.ClearAllPoints = function() end
-	WatchFrame:Point("TOPLEFT", 25, 2)
-	WatchFrame:Point("BOTTOMRIGHT", 0, 0)
-	WatchFrame.SetPoint = T.dummy
+	WatchFrame:SetPoint("TOPLEFT", 25, 2)
+	WatchFrame:SetPoint("BOTTOMRIGHT", 0, 0)
+
+	hooksecurefunc(WatchFrame, "SetPoint", function(_, _, parent)
+		if parent ~= UIWatchFrame then
+			WatchFrame:ClearAllPoints()
+			WatchFrame:SetPoint("TOPLEFT", 25, 2)
+			WatchFrame:SetPoint("BOTTOMRIGHT", 0, 0)
+		end
+	end)
 end
 
 -- Execute setup after we enter world
-local f = CreateFrame("Frame")
-f:Hide()
-f.elapsed = 0
-f:SetScript("OnUpdate", function(self, elapsed)
-	f.elapsed = f.elapsed + elapsed
-	if f.elapsed > 0.5 then
+local frame = CreateFrame("Frame")
+frame:Hide()
+frame.elapsed = 0
+frame:SetScript("OnUpdate", function(self, elapsed)
+	frame.elapsed = frame.elapsed + elapsed
+	if frame.elapsed > 0.5 then
 		setup()
-		f:Hide()
+		frame:Hide()
 	end
 end)
 UIWatchFrame:SetScript("OnEvent", function()
 	if not IsAddOnLoaded("Who Framed Watcher Wabbit") or not IsAddOnLoaded("Fux") then
 		init()
-		f:Show()
+		frame:Show()
 	end
 end)
 

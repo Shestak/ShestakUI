@@ -48,9 +48,9 @@ local function SkinButton(f)
 	f:SetTemplate("ClassColor")
 end
 
-local x = CreateFrame("Frame")
-x:RegisterEvent("PLAYER_LOGIN")
-x:SetScript("OnEvent", function(self, event)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event)
 	for i = 1, Minimap:GetNumChildren() do
 		SkinButton(select(i, Minimap:GetChildren()))
 	end

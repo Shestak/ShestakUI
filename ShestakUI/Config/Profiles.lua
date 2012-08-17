@@ -89,6 +89,7 @@ if T.author == true then
 		C["automation"].screenshot = true
 		C["stats"].experience = false
 		C["combattext"].heal_treshold = 500
+	else
 		C["map"].explore_map = true
 	end
 	if T.class == "PRIEST" then

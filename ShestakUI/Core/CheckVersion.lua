@@ -1,7 +1,7 @@
 ﻿local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	
+--	Check outdated UI version
 ----------------------------------------------------------------------------------------
 local check = function(self, event, prefix, message, channel, sender)
 	if event == "CHAT_MSG_ADDON" then
@@ -11,7 +11,13 @@ local check = function(self, event, prefix, message, channel, sender)
 			self:UnregisterEvent("CHAT_MSG_ADDON")
 		end
 	else
-		SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "RAID")
+		if UnitInParty("player") then
+			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "PARTY") 
+		elseif UnitInRaid("player") then
+			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "RAID")
+		elseif IsInGuild() then
+			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "GUILD")
+		end
 	end
 end
 

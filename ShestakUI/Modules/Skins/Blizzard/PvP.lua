@@ -147,19 +147,14 @@ local function LoadSkin()
 	WarGamesFrameDescription:SetTextColor(1, 1, 1)
 	WarGamesFrameDescription:SetFont(C.media.normal_font, 14)
 
-	-- Cancel Button FFSlocal
-	local f = PVPBannerFrameCancelButton
-	local l = _G[f:GetName().."Left"]
-	local m = _G[f:GetName().."Middle"]
-	local r = _G[f:GetName().."Right"]
-	if l then l:SetAlpha(0) end
-	if m then m:SetAlpha(0) end
-	if r then r:SetAlpha(0) end
-	f:CreateBackdrop("Overlay")
-	f:SetFrameLevel(PVPBannerFrameAcceptButton:GetFrameLevel() + 1)
-	f.backdrop:Point("TOPLEFT", PVPBannerFrameAcceptButton, "TOPLEFT", PVPBannerFrame:GetWidth() - PVPBannerFrameAcceptButton:GetWidth() - 10, 0)
-	f.backdrop:Point("BOTTOMRIGHT", PVPBannerFrameAcceptButton, "BOTTOMRIGHT", PVPBannerFrame:GetWidth() - PVPBannerFrameAcceptButton:GetWidth() - 10, 0)
-	f.backdrop:SetFrameLevel(f:GetFrameLevel() - 1)
+	-- Cancel PVPBanner Button
+	for i = 1, PVPBannerFrame:GetNumChildren() do
+		local child = select(i, PVPBannerFrame:GetChildren())
+		if child:GetObjectType() == "Button" then
+			local name = child:GetName()
+			if name ~= "PVPBannerFrameCloseButton" then child:SkinButton() end
+		end
+	end
 
 	-- Bottom Tabs
 	for i = 1, 4 do
