@@ -78,9 +78,17 @@ Filger_Spells = {
 			-- Tank
 			-- Stuff of Nightmares (Dodge, Proc)
 			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vial of Dragon's Blood (Dodge, Proc)
+			{spellID = 126533, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Warlord Figurine (Mastery, Use)
+			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lei Shin's Final Orders (Strength, Proc)
+			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Charioteer Figurine (Strength, Use)
+			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
@@ -298,14 +306,24 @@ Filger_Spells = {
 			-- Tank
 			-- Stuff of Nightmares (Dodge, Proc)
 			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vial of Dragon's Blood (Dodge, Proc)
+			{spellID = 126533, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Warlord Figurine (Mastery, Use)
+			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Bandit Figurine (Haste, Use)
+			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bottle of Infinite Stars (Agility, Proc)
+			{spellID = 126554, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Use)
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
 			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Jade Magistrate Figurine (Crit, Use)
+			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
 			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Proc)
@@ -313,7 +331,11 @@ Filger_Spells = {
 			-- Caster DPS
 			-- Essence of Terror (Haste, Proc)
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Light of the Cosmos (Intellect, Proc)
+			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+			-- Qin-xi's Polarizing Seal (Intellect, Proc)
+			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -547,6 +569,10 @@ Filger_Spells = {
 			-- Physical Agility DPS
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Bandit Figurine (Haste, Use)
+			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bottle of Infinite Stars (Agility, Proc)
+			{spellID = 126554, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Use)
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
@@ -629,6 +655,8 @@ Filger_Spells = {
 			-- Self
 			-- Silencing Shot
 			{spellID = 34490, filter = "CD"},
+			-- Scatter Shot
+			{spellID = 19503, filter = "CD"},
 			-- Explosive Shot
 			{spellID = 53301, filter = "CD"},
 			-- Kill Shot
@@ -639,10 +667,10 @@ Filger_Spells = {
 			{spellID = 34477, filter = "CD"},
 			-- Kill Command
 			{spellID = 34026, filter = "CD"},
+			-- Chimera Shot
+			{spellID = 53209, filter = "CD"},
 			-- Feign Death
-			{spellID = 28728, filter = "CD"},
-			-- Scatter Shot
-			{spellID = 19503, filter = "CD"},
+			{spellID = 5384, filter = "CD"},
 			-- Snake Trap
 			{spellID = 34600, filter = "CD"},
 			-- Explosive Trap
@@ -659,19 +687,17 @@ Filger_Spells = {
 			{spellID = 5116, filter = "CD"},
 			-- Intimidation
 			{spellID = 19577, filter = "CD"},
-			-- Rapid Fire
-			{spellID = 3045, filter = "CD"},
 			-- Fervor
 			{spellID = 82726, filter = "CD"},
+			-- Rapid Fire
+			{spellID = 3045, filter = "CD"},
 			-- Readiness
 			{spellID = 23989, filter = "CD"},
-			-- Chimera Shot
-			{spellID = 53209, filter = "CD"},
 			-- Spirit Mend (exotic)
 			{spellID = 90361, filter = "CD"},
 			-- Web
 			{spellID = 4167, filter = "CD"},
-			-- Venom Web spray (exotic)
+			-- Venom Web Spray (exotic)
 			{spellID = 54706, filter = "CD"},
 			-- Web Wrap (exotic)
 			{spellID = 96201, filter = "CD"},
@@ -778,6 +804,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Jade Magistrate Figurine (Crit, Use)
+			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
 			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Proc)
@@ -785,6 +813,8 @@ Filger_Spells = {
 			-- Caster DPS
 			-- Essence of Terror (Haste, Proc)
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Light of the Cosmos (Intellect, Proc)
+			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -1011,18 +1041,31 @@ Filger_Spells = {
 			-- Tank
 			-- Stuff of Nightmares (Dodge, Proc)
 			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vial of Dragon's Blood (Dodge, Proc)
+			{spellID = 126533, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Warlord Figurine (Mastery, Use)
+			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Bandit Figurine (Haste, Use)
+			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bottle of Infinite Stars (Agility, Proc)
+			{spellID = 126554, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Use)
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
 			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Jade Magistrate Figurine (Crit, Use)
+			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
 			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster Heal
+			-- Qin-xi's Polarizing Seal (Intellect, Proc)
+			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -1206,19 +1249,31 @@ Filger_Spells = {
 			-- Tank
 			-- Stuff of Nightmares (Dodge, Proc)
 			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vial of Dragon's Blood (Dodge, Proc)
+			{spellID = 126533, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Warlord Figurine (Mastery, Use)
+			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lei Shin's Final Orders (Strength, Proc)
+			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Charioteer Figurine (Strength, Use)
+			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
 			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Jade Magistrate Figurine (Crit, Use)
+			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
 			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+			-- Qin-xi's Polarizing Seal (Intellect, Proc)
+			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -1417,6 +1472,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Jade Magistrate Figurine (Crit, Use)
+			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
 			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Proc)
@@ -1424,7 +1481,11 @@ Filger_Spells = {
 			-- Caster DPS
 			-- Essence of Terror (Haste, Proc)
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Light of the Cosmos (Intellect, Proc)
+			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+			-- Qin-xi's Polarizing Seal (Intellect, Proc)
+			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -1664,6 +1725,10 @@ Filger_Spells = {
 			-- Physical Agility DPS
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Bandit Figurine (Haste, Use)
+			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bottle of Infinite Stars (Agility, Proc)
+			{spellID = 126554, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Use)
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
@@ -1880,11 +1945,17 @@ Filger_Spells = {
 			-- Physical Agility DPS
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Bandit Figurine (Haste, Use)
+			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bottle of Infinite Stars (Agility, Proc)
+			{spellID = 126554, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Use)
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
 			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Jade Magistrate Figurine (Crit, Use)
+			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
 			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Proc)
@@ -1892,7 +1963,11 @@ Filger_Spells = {
 			-- Caster DPS
 			-- Essence of Terror (Haste, Proc)
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Light of the Cosmos (Intellect, Proc)
+			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+			-- Qin-xi's Polarizing Seal (Intellect, Proc)
+			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2109,6 +2184,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Jade Magistrate Figurine (Crit, Use)
+			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
 			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Proc)
@@ -2116,6 +2193,8 @@ Filger_Spells = {
 			-- Caster DPS
 			-- Essence of Terror (Haste, Proc)
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Light of the Cosmos (Intellect, Proc)
+			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2339,9 +2418,17 @@ Filger_Spells = {
 			-- Tank
 			-- Stuff of Nightmares (Dodge, Proc)
 			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vial of Dragon's Blood (Dodge, Proc)
+			{spellID = 126533, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Warlord Figurine (Mastery, Use)
+			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lei Shin's Final Orders (Strength, Proc)
+			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Jade Charioteer Figurine (Strength, Use)
+			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
