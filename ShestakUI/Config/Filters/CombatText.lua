@@ -198,9 +198,9 @@ elseif T.class == "SHAMAN" then
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[27243] = true		-- Seed of Corruption (DoT)
-		T.aoespam[27285] = true		-- Seed of Corruption (Explosion)
-		T.aoespam[87385] = true		-- Seed of Corruption (Explosion Soulburned)
+		T.aoespam[27243] = true		-- Seed of Corruption
+		T.aoespam[27285] = true		-- Seed of Corruption (AoE)
+		T.aoespam[87385] = true		-- Seed of Corruption (Soulburn)
 		T.aoespam[172] = true		-- Corruption
 		T.aoespam[87389] = true		-- Corruption (Soulburn: Seed of Corruption)
 		T.aoespam[30108] = true		-- Unstable Affliction
@@ -209,6 +209,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[80240] = true		-- Havoc
 		T.aoespam[42223] = true		-- Rain of Fire
 		T.aoespam[689] = true		-- Drain Life
+		T.aoespam[89420] = true		-- Drain Life (Soulburn)
 		T.aoespam[5857] = true		-- Hellfire
 		T.aoespam[129476] = true	-- Immolation Aura
 		T.aoespam[103103] = true	-- Malefic Grasp
@@ -220,13 +221,14 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[89753] = true		-- Felstorm (Felguard)
 		T.aoespam[20153] = true		-- Immolation (Infrenal)
 		T.aoespam[103988] = true	-- Melee
+		T.aoespam[108371] = true	-- Harvest Life
+		T.aoespam[115707] = true	-- Harvest Life (Soulburn)
 	end
 	if C.combattext.healing then
-		T.healfilter[63106] = true	-- Siphon Life
-		T.healfilter[54181] = true	-- Fel Synergy
+		T.healfilter[63106] = true	-- Siphon Lifey
 		T.healfilter[89653] = true	-- Drain Life
-		T.healfilter[79268] = true	-- Soul Harvest
-		T.healfilter[30294] = true	-- Soul Leech
+		T.healfilter[125314] = true	-- Harvest Life
+		T.healfilter[108366] = true	-- Soul Leech
 		T.healfilter[108359] = true	-- Dark Regeneration
 	end
 elseif T.class == "WARRIOR" then
