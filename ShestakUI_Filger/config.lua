@@ -56,8 +56,10 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
-			-- Scent of Blood -- useful?
+			-- Scent of Blood
 			{spellID = 50421, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Crimson Scourge
+			{spellID = 81141, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Freezing Fog
 			{spellID = 59052, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Killing Machine
@@ -74,7 +76,11 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Stuff of Nightmares (Dodge, Proc)
+			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Darkmist Vortex (Haste, Proc)
+			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
@@ -118,12 +124,14 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
-			-- Strangulate
-			{spellID = 47476, filter = "CD"},
 			-- Mind Freeze
 			{spellID = 47528, filter = "CD"},
+			-- Gnaw
+			{spellID = 47481, filter = "CD"},
 			-- Remorseless Winter
 			{spellID = 108200, filter = "CD"},
+			-- Strangulate
+			{spellID = 47476, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Anti-Magic Shell
@@ -138,8 +146,6 @@ Filger_Spells = {
 			{spellID = 46584, filter = "CD"},
 			-- Summon Gargoyle
 			{spellID = 49206, filter = "CD"},
-			-- Gnaw
-			{spellID = 47481, filter = "CD"},
 			-- Rune Tap
 			{spellID = 48982, filter = "CD"},
 			-- Vampiric Blood
@@ -290,7 +296,11 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Stuff of Nightmares (Dodge, Proc)
+			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Terror in the Mists (Crit, Proc)
+			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Use)
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
@@ -301,6 +311,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Essence of Terror (Haste, Proc)
+			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Enchants
@@ -533,6 +545,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Terror in the Mists (Crit, Proc)
+			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Use)
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
@@ -769,6 +783,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Essence of Terror (Haste, Proc)
+			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -993,7 +1009,11 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Stuff of Nightmares (Dodge, Proc)
+			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Terror in the Mists (Crit, Proc)
+			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Use)
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
@@ -1184,7 +1204,11 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Stuff of Nightmares (Dodge, Proc)
+			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Darkmist Vortex (Haste, Proc)
+			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
@@ -1398,6 +1422,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Essence of Terror (Haste, Proc)
+			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Enchants
@@ -1636,6 +1662,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Terror in the Mists (Crit, Proc)
+			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Use)
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
@@ -1850,6 +1878,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Terror in the Mists (Crit, Proc)
+			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Use)
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
@@ -1860,6 +1890,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Essence of Terror (Haste, Proc)
+			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Enchants
@@ -2082,6 +2114,8 @@ Filger_Spells = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Essence of Terror (Haste, Proc)
+			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2303,7 +2337,11 @@ Filger_Spells = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Stuff of Nightmares (Dodge, Proc)
+			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Darkmist Vortex (Haste, Proc)
+			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
