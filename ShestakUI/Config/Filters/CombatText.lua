@@ -116,7 +116,7 @@ elseif T.class == "MONK" then
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		T.aoespam[20167] = true		-- Seal of Insight (Heal Effect)
+		T.aoespam[20167] = true		-- Seal of Insight
 		T.aoespam[53652] = true		-- Beacon of Light
 		T.aoespam[85222] = true		-- Light of Dawn
 		T.aoespam[82327] = true		-- Holy Radiance
@@ -135,37 +135,38 @@ elseif T.class == "PALADIN" then
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		T.aoespam[47750] = true		-- Penance (Heal Effect)
+		T.aoespam[47750] = true		-- Penance
+		T.aoespam[23455] = true		-- Holy Nova
 		T.aoespam[139] = true		-- Renew
 		T.aoespam[596] = true		-- Prayer of Healing
-		T.aoespam[56161] = true		-- Glyph of Prayer of Healing
 		T.aoespam[64844] = true		-- Divine Hymn
 		T.aoespam[32546] = true		-- Binding Heal
 		T.aoespam[77489] = true		-- Echo of Light
 		T.aoespam[34861] = true		-- Circle of Healing
-		T.aoespam[23455] = true		-- Holy Nova (Healing Effect)
 		T.aoespam[33110] = true		-- Prayer of Mending
 		T.aoespam[63544] = true		-- Rapid Renewal
-		T.aoespam[81751] = true		-- Atonement (Non-crit)
-		T.aoespam[94472] = true		-- Atonement (Crit)
+		T.aoespam[81751] = true		-- Atonement
+		T.aoespam[94472] = 81751	-- Atonement (Crit)
 		-- Damaging spells
-		T.aoespam[47666] = true		-- Penance (Damage Effect)
-		T.aoespam[15237] = true		-- Holy Nova (Damage Effect)
+		T.aoespam[47666] = true		-- Penance
+		T.aoespam[132157] = true	-- Holy Nova
 		T.aoespam[589] = true		-- Shadow Word: Pain
 		T.aoespam[34914] = true		-- Vampiric Touch
 		T.aoespam[2944] = true		-- Devouring Plague
 		T.aoespam[15407] = true		-- Mind Flay
-		T.aoespam[49821] = true		-- Mind Seer
+		T.aoespam[49821] = true		-- Mind Sear
 		T.aoespam[87532] = true		-- Shadowy Apparition
 		T.aoespam[14914] = true		-- Holy Fire
 	end
 	if C.combattext.healing then
-		T.healfilter[127626] = true	-- Devouring Plague (Healing)
+		T.healfilter[127626] = true	-- Devouring Plague
 		T.healfilter[15290] = true	-- Vampiric Embrace
 	end
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[51723] = true		-- Fan of Knives
+		T.aoespam[121411] = true	-- Crimson Tempest
+		T.aoespam[122233] = true	-- Crimson Tempest (DoT)
 		T.aoespam[2818] = true		-- Deadly Poison
 		T.aoespam[8680] = true		-- Instant Poison
 		-- Merging mh/oh strikes
