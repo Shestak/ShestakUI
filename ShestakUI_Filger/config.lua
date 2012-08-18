@@ -103,6 +103,8 @@ Filger_Spells = {
 			-- Swordguard Embroidery (AP)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
+			-- Dancing Steel (Strength)
+			{spellID = 118335, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -346,6 +348,8 @@ Filger_Spells = {
 			-- Swordguard Embroidery (AP)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
+			-- Dancing Steel (Agility)
+			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Lightweave Embroidery (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1076,6 +1080,8 @@ Filger_Spells = {
 			-- Swordguard Embroidery (AP)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
+			-- Dancing Steel (Agility)
+			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1284,6 +1290,8 @@ Filger_Spells = {
 			-- Swordguard Embroidery (AP)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
+			-- Dancing Steel (Strength)
+			{spellID = 118335, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Lightweave Embroidery (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1740,6 +1748,8 @@ Filger_Spells = {
 			-- Swordguard Embroidery (AP)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
+			-- Dancing Steel (Agility)
+			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Other
 		},
@@ -1975,6 +1985,8 @@ Filger_Spells = {
 			-- Swordguard Embroidery (AP)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
+			-- Dancing Steel (Agility)
+			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Lightweave Embroidery (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2443,6 +2455,8 @@ Filger_Spells = {
 			-- Swordguard Embroidery (AP)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
+			-- Dancing Steel (Strength)
+			{spellID = 118335, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
