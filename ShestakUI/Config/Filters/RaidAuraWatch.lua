@@ -92,6 +92,10 @@ if C.raidframe.plugins_aura_watch == true then
 		-----------------------------------------------------------------
 		-- Pandaria
 		-----------------------------------------------------------------
+		-- Kun-Lai Summit
+			-- Sha of Anger
+			SpellName(119626),	-- Aggressive Behavior
+			SpellName(119488),	-- Unleashed Wrath
 		-- Heart of Fear
 			-- Imperial Vizier Zor'lok
 			SpellName(122761),	-- Exhale
@@ -134,8 +138,6 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(117436),	-- Lightning Prison
 			SpellName(118091),	-- Defiled Ground
 			SpellName(117519),	-- Touch of Sha
-			-- Sha of Anger
-			-- Salyis's Warband
 			-- Tsulong
 			SpellName(122752),	-- Shadow Breath
 			SpellName(123011),	-- Terrorize
