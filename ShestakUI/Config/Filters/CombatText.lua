@@ -168,7 +168,7 @@ elseif T.class == "ROGUE" then
 		T.aoespam[121411] = true	-- Crimson Tempest
 		T.aoespam[122233] = true	-- Crimson Tempest (DoT)
 		T.aoespam[2818] = true		-- Deadly Poison
-		T.aoespam[8680] = true		-- Instant Poison
+		T.aoespam[8680] = true		-- Wound Poison
 		-- Merging mh/oh strikes
 		T.aoespam[5374] = true		-- Mutilate
 		T.aoespam[27576] = 5374		-- Mutilate Off-Hand
@@ -225,7 +225,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[115707] = true	-- Harvest Life (Soulburn)
 	end
 	if C.combattext.healing then
-		T.healfilter[63106] = true	-- Siphon Lifey
+		T.healfilter[63106] = true	-- Siphon Life
 		T.healfilter[89653] = true	-- Drain Life
 		T.healfilter[125314] = true	-- Harvest Life
 		T.healfilter[108366] = true	-- Soul Leech
