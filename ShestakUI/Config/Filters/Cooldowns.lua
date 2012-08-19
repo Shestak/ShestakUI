@@ -61,8 +61,6 @@ if C.enemycooldown.enable == true then
 		[49039] = 120,	-- Lichborne
 		[1856] = 180,	-- Vanish
 		[33206] = 180,	-- Pain Suppression
-		[45438] = 300,	-- Ice Block
-		[1022] = 300,	-- Hand of Protection
 		-- Other
 		[51722] = 60,	-- Dismantle
 		[676] = 60,		-- Disarm
