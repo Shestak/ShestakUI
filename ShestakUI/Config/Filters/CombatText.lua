@@ -112,6 +112,7 @@ elseif T.class == "MONK" then
 		T.aoespam[107270] = true	-- Spinning Crane Kick
 		T.aoespam[132467] = true	-- Chi Wave
 		T.aoespam[125033] = true	-- Zen Sphere: Detonate
+		T.aoespam[123586] = true	-- Flying Serpent Kick
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
