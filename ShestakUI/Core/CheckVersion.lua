@@ -11,10 +11,10 @@ local check = function(self, event, prefix, message, channel, sender)
 			self:UnregisterEvent("CHAT_MSG_ADDON")
 		end
 	else
-		if UnitInParty("player") then
-			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "PARTY") 
-		elseif UnitInRaid("player") then
+		if UnitInRaid("player") then
 			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "RAID")
+		elseif UnitInParty("player") then
+			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "PARTY")
 		elseif IsInGuild() then
 			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "GUILD")
 		end

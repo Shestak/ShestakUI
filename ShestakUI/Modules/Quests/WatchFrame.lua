@@ -55,16 +55,10 @@ local function setup()
 	WatchFrame:SetFrameLevel(3)
 	WatchFrame:SetClampedToScreen(true)
 	WatchFrame:ClearAllPoints()
-	WatchFrame:SetPoint("TOPLEFT", 25, 2)
-	WatchFrame:SetPoint("BOTTOMRIGHT", 0, 0)
-
-	hooksecurefunc(WatchFrame, "SetPoint", function(_, _, parent)
-		if parent ~= UIWatchFrame then
-			WatchFrame:ClearAllPoints()
-			WatchFrame:SetPoint("TOPLEFT", 25, 2)
-			WatchFrame:SetPoint("BOTTOMRIGHT", 0, 0)
-		end
-	end)
+	WatchFrame.ClearAllPoints = function() end
+	WatchFrame:Point("TOPLEFT", 25, 2)
+	WatchFrame:Point("BOTTOMRIGHT", 0, 0)
+	WatchFrame.SetPoint = T.dummy
 end
 
 -- Execute setup after we enter world
