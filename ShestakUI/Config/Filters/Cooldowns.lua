@@ -40,7 +40,7 @@ if C.enemycooldown.enable == true then
 		[8122] = 30,	-- Psychic Scream
 		[19503] = 30,	-- Scatter Shot
 		[1499] = 30,	-- Freezing Trap
-		[5484] = 32,	-- Howl of Terror
+		[5484] = 40,	-- Howl of Terror
 		[51514] = 45,	-- Hex
 		[107570] = 30,	-- Storm Bolt
 		[44572] = 30,	-- Deep Freeze
@@ -48,23 +48,23 @@ if C.enemycooldown.enable == true then
 		[853] = 60,		-- Hammer of Justice
 		[108200] = 60,	-- Remorseless Winter
 		[6789] = 45,	-- Mortal Coil
-		[64044] = 90,	-- Psychic Horror
-		[2094] = 120,	-- Blind
+		[64044] = 45,	-- Psychic Horror
+		[2094] = 180,	-- Blind
 		-- Defense abilities
 		[48707] = 45,	-- Anti-Magic Shell
 		[8143] = 60,	-- Tremor Totem
 		[22812] = 60,	-- Barkskin
-		[47585] = 75,	-- Dispersion
-		[31224] = 90,	-- Cloak of Shadows
-		[1856] = 120,	-- Vanish
+		[47585] = 120,	-- Dispersion
+		[31224] = 120,	-- Cloak of Shadows
+		[1856] = 180,	-- Vanish
 		[49039] = 120,	-- Lichborne
 		[33206] = 180,	-- Pain Suppression
-		[45438] = 240,	-- Ice Block
+		[45438] = 300,	-- Ice Block
 		[1022] = 300,	-- Hand of Protection
 		-- Other
 		[51722] = 60,	-- Dismantle
 		[676] = 60,		-- Disarm
-		[46924] = 75,	-- Bladestorm
+		[46924] = 90,	-- Bladestorm
 		[54428] = 120,	-- Divine Plea
 		[29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem
