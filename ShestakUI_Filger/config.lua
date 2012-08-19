@@ -351,13 +351,11 @@ Filger_Spells = {
 			-- Dancing Steel (Agility)
 			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
-			-- Lightweave Embroidery (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave (Intellect)
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
-			-- Darkglow Embroidery (Spirit)
-			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -823,10 +821,10 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Caster General
-			-- Lightweave Embroidery (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave (Intellect)
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Item Sets
 		},
@@ -1085,9 +1083,9 @@ Filger_Spells = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave (Intellect)
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
-			-- Darkglow Embroidery (Spirit)
-			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1293,13 +1291,11 @@ Filger_Spells = {
 			-- Dancing Steel (Strength)
 			{spellID = 118335, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
-			-- Lightweave Embroidery (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave (Intellect)
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
-			-- Darkglow Embroidery (Spirit)
-			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1498,13 +1494,11 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Caster General
-			-- Lightweave Embroidery (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave (Intellect)
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
-			-- Darkglow Embroidery (Spirit)
-			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1988,13 +1982,11 @@ Filger_Spells = {
 			-- Dancing Steel (Agility)
 			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
-			-- Lightweave Embroidery (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave (Intellect)
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
-			-- Darkglow Embroidery (Spirit)
-			{spellID = 125485, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2211,10 +2203,10 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Caster General
-			-- Lightweave Embroidery (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightweave (Intellect)
+			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
