@@ -130,7 +130,7 @@ LPSTAT_CONFIG = {
 		truncate = 16, -- Max number of letters for location text, set to 0 to disable.
 		coord_fmt = "%d,%d", -- "44,19", to add tenths, use '%.1f' (digit determines decimal)
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
-		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "TOPRIGHT", tip_x = -21, tip_y = -104
+		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "TOPRIGHT", tip_x = -21, tip_y = -153
 	},
 -- Bottomright block 1
 	Stats = {

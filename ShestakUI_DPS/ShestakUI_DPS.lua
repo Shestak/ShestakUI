@@ -201,7 +201,7 @@ local function Shared(self, unit)
 
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then
 		self.Debuffs = CreateFrame("Frame", nil, self)
-		self.Debuffs:Point("TOPLEFT", self, "BOTTOMLEFT", -2, -5)
+		self.Debuffs:Point("TOPLEFT", self, "BOTTOMLEFT", -2, -17)
 		self.Debuffs:Height(18)
 		self.Debuffs:Width(144)
 		self.Debuffs.size = T.Scale(18)
@@ -288,7 +288,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(19),
+			"yOffset", T.Scale(40),
 			"point", "BOTTOM"
 		)
 		party:Point(unpack(C.position.unitframes.party_dps))
