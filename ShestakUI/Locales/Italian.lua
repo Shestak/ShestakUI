@@ -6,10 +6,10 @@ if T.client ~= "itIT" then return end
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " ha usato il mio Pozzo di Luce. "
-L_ANNOUNCE_LA_CHARGE = " carica (cariche)."
-L_ANNOUNCE_LA_USELESS = " ha usato il mio Pozzo di Luce inutilmente."
-L_ANNOUNCE_LA_STOP = "Non avresti dovuto utilizzare il Pozzo di Luce."
-L_ANNOUNCE_LA_PLACED = "Pozzo di Luce posizionato."
+L_ANNOUNCE_LA_CHARGE = " carica (cariche)"
+L_ANNOUNCE_LA_USELESS = " ha usato il mio Pozzo di Luce inutilmente! "
+L_ANNOUNCE_LA_STOP = "Non avresti dovuto utilizzare il Pozzo di Luce!!!"
+L_ANNOUNCE_LA_PLACED = "Pozzo di Luce posizionato. "
 L_ANNOUNCE_LA_CHARGES = " cariche."
 
 -- Announce flasks and food
@@ -39,7 +39,7 @@ L_MISC_DRINKING = " sta bevendo."
 L_MISC_BUY_STACK = "Alt + click per comprarne una pila"
 L_MISC_ONECLICK_BUYOUT = "Shift + click per comprare direttamente l'oggetto selezionato senza conferma"
 L_MISC_ONECLICK_BID = "Shift + click per fare una puntata sull'oggetto selezionato senza conferma"
-L_MISC_UI_OUTDATED = "Your version of ShestakUI is out of date. You can download the latest version from www.shestak.org" -- Needs review
+L_MISC_UI_OUTDATED = "La tua versione della ShestakUI non è aggiornata: puoi scaricare la nuova versione da www.shestak.org."
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Sciogli il gruppo"
@@ -66,10 +66,10 @@ L_TOGGLE_RELOAD = " (bisogna ricaricare l'interfaccia)"
 -- UnitFrame
 L_UF_GHOST = "Spirito"
 L_UF_DEAD = "Morto"
-L_UF_OFFLINE = "Offline"
+L_UF_OFFLINE = "Disconnesso/a"
 L_UF_MANA = "Poco mana"
-L_UF_TRINKET_READY = "Ninnolo pronto all'uso: "
-L_UF_TRINKET_USED = "Ninnolo utilizzato: "
+L_UF_TRINKET_READY = "Monile pronto all'uso: "
+L_UF_TRINKET_USED = "Monile utilizzato: "
 L_UF_WOTF_USED = "Volontà dei Reietti utilizzata: "
 
 -- Map
@@ -85,13 +85,13 @@ L_ALOAD_DEP = "Dipendenze: "
 L_ALOAD_OP_DEP = "Dipendenze opzionali: "
 L_ALOAD_PROFILES = "Profili"
 L_ALOAD_ENABLE_ALL = "Attiva tutti"
-L_ALOAD_DISABLE_ALL = "Disattiva tutti"
+L_ALOAD_DISABLE_ALL = "Disatt. tutti"
 L_ALOAD_PROFILE_NAME = "Nome del profilo"
 L_ALOAD_SET_TO = "Imposta su.."
 L_ALOAD_ADD_TO = "Aggiungi a.."
 L_ALOAD_REMOVE_FROM = "Rimuovi da.."
 L_ALOAD_DELETE_PROFILE = "Cancella il profilo.."
-L_ALOAD_CONFIRM_DELETE = "Vuoi davvero cancellare questo profilo? Allora tieni premuto Shift e clicca di nuovo"
+L_ALOAD_CONFIRM_DELETE = "Vuoi davvero cancellare questo profilo? Allora tieni premuto Shift e clicca di nuovo."
 
 -- Chat
 L_CHAT_WHISPER = "Da"
@@ -111,8 +111,8 @@ L_CHAT_OFFICER = "UF"
 L_CHAT_PET_BATTLE = "STM"
 L_CHAT_COME_ONLINE = "sì è connesso."
 L_CHAT_GONE_OFFLINE = "si è disconnesso."
-L_CHAT_COME_ONLINE_COLOR = "si è |cff298F00connesso|r !"
-L_CHAT_GONE_OFFLINE_COLOR = "si è |cffff0000disconnesso|r !"
+L_CHAT_COME_ONLINE_COLOR = "si è |cff298F00connesso|r!"
+L_CHAT_GONE_OFFLINE_COLOR = "si è |cffff0000disconnesso|r!"
 
 -- Errors frame
 L_ERRORFRAME_L = "Clicca per vedere gli errori."
@@ -290,7 +290,7 @@ L_STATS_WORLD_MAP = "Clicca per aprire la mappa del mondo."
 L_STATS_CURRENT_XP = "PE attuali/massimi"
 L_STATS_MEMORY_USAGE = "Utilizzo memoria interfaccia:"
 L_STATS_GARBAGE_COLLECTED = "Spazzatura raccolta"
-L_STATS_CHANGE_SORTING = "(Gilda) Clicca col destro per cambiare l'ordine, clicca Shift+tasto destro per invertirlo."
+L_STATS_CHANGE_SORTING = "(Gilda) Clicca col destro per cambiare l'ordine, clicca Shift + tasto destro per invertirlo."
 L_STATS_HIDDEN = "Nascosto/a"
 L_STATS_VIEW_NOTES = "Tieni premuto il tasto Alt per visualizzare gradi, note e note degli ufficiali."
 L_STATS_HR = "o"
@@ -321,7 +321,7 @@ L_STATS_QUESTS_TO = "Missioni/uccisioni per %s"
 L_STATS_REMAINING_XP = "PE rimanenti"
 L_STATS_REMOVED_JUNK = "Eccezione cianfrusaglie rimossa."
 L_STATS_RESTED_XP = "PE da 'riposato'"
-L_STATS_RC_COLLECTS_GARBAGE = "Clicca col destro per raccogliere la 'spazzatura LUA'."
+L_STATS_RC_COLLECTS_GARBAGE = "Clicca col destro per raccogliere la 'spazzatura Lua'."
 L_STATS_RC_TIME_MANAGER = "Clicca col destro per aprire le impostazionni orologio."
 L_STATS_RC_EXPERIENCE = "Clicca col destro per navigare tra esperienza, tempo giocato e il visualizzatore fazione sotto osservazione."
 L_STATS_RC_AUTO_REPAIRING = "Clicca col destro per attivare/disattivare la riparazione automatica."
@@ -337,7 +337,7 @@ L_STATS_TIPS = "suggerimenti:"
 L_STATS_TOTAL = "Totale"
 L_STATS_TOTAL_MEMORY_USAGE = "Utilizzo totale memoria:"
 L_STATS_NOT_TO_SELL = "Utilizza /junk per configurare quali oggetti non vendere."
-L_STATS_WATCH_CURRENCY = "Gli oggetti attualmente osservati nel pannello Valuta non inseriti nei suggerimenti."
+L_STATS_WATCH_CURRENCY = "Gli oggetti attualmente osservati nel pannello Valuta saranno inseriti nei suggerimenti."
 L_STATS_WATCH_FACTIONS = "Fazioni sotto osservazione dal pannello delle fazioni del personaggio."
 L_STATS_TOOLTIP_TIME_PLAYED = "A livello massimo, un suggerimento mostrerà i dettagli su quanto tempo hai giocato con questo account."
 L_STATS_TOOLTIP_EXPERIENCE = "A livelli inferiori a quello massimo, un suggerimento mostrerà dettagli sull'esperienza."
@@ -353,10 +353,10 @@ L_SLASHCMD_HELP = {
 	"/rd - Sciogli gruppo o incursione.",
 	"/toraid - Trasforma il gruppo in incursione.",
 	"/teleport - Teletrasporto dalle spedizioni casuali.",
-	"/luaerror ON|OFF - Attiva/disattiva la visualizzazione degli errori LUA.",
+	"/luaerror ON|OFF - Attiva/disattiva la visualizzazione degli errori Lua.",
 	"/spec, /ss - Passa da un albero talenti all'altro",
 	"/heal - Passa alla configurazione 'guaritori'.",
-	"/dps - Passa alla configurazione 'assaltatori'",
+	"/dps - Passa alla configurazione 'assaltatori'.",
 	"/frame - La descrizione non è pronta.",
 	"/farmmode - Incrementa le dimensioni della minimappa.",
 	"/moveui - Consenti lo spostamento degli elementi dell'interfaccia.",
@@ -368,13 +368,13 @@ L_SLASHCMD_HELP = {
 	"/ls, /litestats - Comandi d'aiuto per LiteStats.",
 	"/bags - Gestione sacche.",
 	"/xct - Gestione testo di combattimento.",
-	"/raidcd - Prova dei recuperi dell'incursione.",
-	"/enemycd - Prova dei recuperi del nemico.",
-	"/pulsecd - Prova dei tuoi recuperi con effetto 'pulse'.",
-	"/threat - Prova del Contatore Minaccia.",
+	"/raidcd - Prova i recuperi d'incursione.",
+	"/enemycd - Prova i recuperi del nemico.",
+	"/pulsecd - Prova i tuoi recuperi con effetto 'pulse'.",
+	"/threat - Prova il Contatore Minaccia.",
 	"/tt - Sussurra al bersaglio.",
 	"/ainv - Attiva gli inviti automatici.",
-	"/testuf - Prova dei riquadri delle unità.",
+	"/testuf - Prova i riquadri delle unità.",
 	"/cfg - Apri il pannello impostazioni interfaccia.",
 }
 

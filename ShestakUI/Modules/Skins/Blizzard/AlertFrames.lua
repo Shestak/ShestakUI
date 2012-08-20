@@ -34,6 +34,9 @@ local function LoadSkin()
 				_G["AchievementAlertFrame"..i.."Background"]:SetTexture(nil)
 				_G["AchievementAlertFrame"..i.."Glow"]:Kill()
 				_G["AchievementAlertFrame"..i.."Shine"]:Kill()
+				_G["AchievementAlertFrame"..i.."OldAchievement"]:Kill()
+				_G["AchievementAlertFrame"..i.."GuildBanner"]:Kill()
+				_G["AchievementAlertFrame"..i.."GuildBorder"]:Kill()
 
 				-- Text
 				_G["AchievementAlertFrame"..i.."Name"]:SetTextColor(1, 0.8, 0)
