@@ -10,6 +10,7 @@ T.CastBarTicks = {
 	-- Druid
 	[GetSpellInfo(44203)] = 4,	-- Tranquility
 	[GetSpellInfo(16914)] = 10,	-- Hurricane
+	[GetSpellInfo(106996)] = 10,-- Astral Storm
 	-- Mage
 	[GetSpellInfo(5143)] = 5,	-- Arcane Missiles
 	[GetSpellInfo(10)] = 8,		-- Blizzard
@@ -24,7 +25,10 @@ T.CastBarTicks = {
 	[GetSpellInfo(64843)] = 4,	-- Divine Hymn
 	-- Warlock
 	[GetSpellInfo(689)] = 6,	-- Drain Life
+	[GetSpellInfo(108371)] = 6, -- Harvest Life
 	[GetSpellInfo(1120)] = 6,	-- Drain Soul
-	[GetSpellInfo(755)] = 3,	-- Health Funnel
+	[GetSpellInfo(755)] = 6,	-- Health Funnel
 	[GetSpellInfo(1949)] = 15,	-- Hellfire
+	[GetSpellInfo(5740)] = 4,	-- Rain of Fire
+	[GetSpellInfo(103103)] = 3,	-- Malefic Grasp
 }

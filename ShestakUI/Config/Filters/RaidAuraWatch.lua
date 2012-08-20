@@ -9,20 +9,17 @@ if C.raidframe.plugins_aura_watch == true then
 	do
 		-- Class buffs
 		T.buffids = {
-			PRIEST = {
-				{6788, "TOPRIGHT", {1, 0, 0}, true},			-- Weakened Soul
-				{33076, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},		-- Prayer of Mending
-				{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 			-- Renew
-				{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},		-- Power Word: Shield
-				{10060, "RIGHT", {0.89, 0.1, 0.1}},				-- Power Infusion
-				{33206, "LEFT", {0.89, 0.1, 0.1}, true},		-- Pain Suppress
-				{47788, "LEFT", {0.86, 0.52, 0}, true},			-- Guardian Spirit
-			},
 			DRUID = {
 				{774, "TOPRIGHT", {0.8, 0.4, 0.8}},				-- Rejuvenation
 				{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},			-- Regrowth
 				{94447, "TOPLEFT", {0.4, 0.8, 0.2}},			-- Lifebloom
 				{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},			-- Wild Growth
+			},
+			MONK = {
+				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},			-- Renewing Mist
+				{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}},		-- Enveloping Mist
+				{124081, "BOTTOMRIGHT", {0.7, 0.4, 0}},			-- Zen Sphere
+				{116849, "LEFT", {0.81, 0.85, 0.1}, true},		-- Life Cocoon
 			},
 			PALADIN = {
 				{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Beacon of Light
@@ -34,35 +31,38 @@ if C.raidframe.plugins_aura_watch == true then
 				{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},	-- Hand of Sacrifice
 				{114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},	-- Hand of Purity
 			},
+			PRIEST = {
+				{6788, "TOPRIGHT", {1, 0, 0}, true},			-- Weakened Soul
+				{33076, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},		-- Prayer of Mending
+				{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 			-- Renew
+				{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},		-- Power Word: Shield
+				{10060, "RIGHT", {0.89, 0.1, 0.1}},				-- Power Infusion
+				{33206, "LEFT", {0.89, 0.1, 0.1}, true},		-- Pain Suppress
+				{47788, "LEFT", {0.86, 0.52, 0}, true},			-- Guardian Spirit
+			},
 			SHAMAN = {
 				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Riptide
 				{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},		-- Earth Shield
 				{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},			-- Earthliving
 			},
-			ROGUE = {
-				{57933, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Tricks of the Trade
-			},
 			DEATHKNIGHT = {
 				{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},			-- Unholy Frenzy
-			},
-			MAGE = {
-				{111264, "TOPRIGHT", {0.2, 0.2, 1}},			-- Ice Ward
-			},
-			WARRIOR = {
-				{114030, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
-				{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Intervene
 			},
 			HUNTER = {
 				{34477, "TOPRIGHT", {0.2, 0.2, 1}},				-- Misdirection
 			},
+			MAGE = {
+				{111264, "TOPRIGHT", {0.2, 0.2, 1}},			-- Ice Ward
+			},
+			ROGUE = {
+				{57933, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Tricks of the Trade
+			},
 			WARLOCK = {
 				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone
 			},
-			MONK = {
-				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},			-- Renewing Mist
-				{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}},		-- Enveloping Mist
-				{124081, "BOTTOMRIGHT", {0.7, 0.4, 0}},			-- Zen Sphere
-				{116849, "LEFT", {0.81, 0.85, 0.1}, true},		-- Life Cocoon
+			WARRIOR = {
+				{114030, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
+				{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Intervene
 			},
 			ALL = {
 				{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag, Horde
@@ -72,8 +72,8 @@ if C.raidframe.plugins_aura_watch == true then
 		}
 	end
 
-	-- Raid debuffs
 	do
+		-- Raid debuffs
 		local _, ns = ...
 		local ORD = ns.oUF_RaidDebuffs or oUF_RaidDebuffs
 
@@ -117,11 +117,14 @@ if C.raidframe.plugins_aura_watch == true then
 		-- Mogu'shan Vaults
 			-- The Stone Guard
 			SpellName(125206),	-- Rend Flesh
+			SpellName(130395),	-- Jasper Chains
 			SpellName(116281),	-- Cobalt Mine Blast
 			-- Feng the Accursed
+			SpellName(131788),	-- Lightning Lash
+			SpellName(116942),	-- Flaming Spear
+			SpellName(131790),	-- Arcane Shock
 			SpellName(116784),	-- Wildfire Spark
 			SpellName(116417),	-- Arcane Resonance
-			SpellName(116942),	-- Flaming Spear
 			-- Gara'jal the Spiritbinder
 			SpellName(116161),	-- Crossed Over
 			SpellName(116000),	-- Voodoo Dolls
