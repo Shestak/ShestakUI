@@ -112,8 +112,11 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Amber-Shaper Un'sok
 			SpellName(121949),	-- Parasitic Growth
 			-- Grand Empress Shek'zeer
+			SpellName(123788),	-- Cry of Terror
+			SpellName(124849),	-- Consuming Terror
 		-- Mogu'shan Vaults
 			-- The Stone Guard
+			SpellName(125206),	-- Rend Flesh
 			SpellName(116281),	-- Cobalt Mine Blast
 			-- Feng the Accursed
 			SpellName(116784),	-- Wildfire Spark
@@ -121,6 +124,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(116942),	-- Flaming Spear
 			-- Gara'jal the Spiritbinder
 			SpellName(116161),	-- Crossed Over
+			SpellName(116000),	-- Voodoo Dolls
 			-- The Spirit Kings
 			SpellName(117708),	-- Maddening Shout
 			SpellName(118303),	-- Fixate
@@ -129,6 +133,7 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Elegon
 			SpellName(117878),	-- Overcharged
 			SpellName(117949),	-- Closed Circuit
+			SpellName(132222),	-- Destabilizing Energies
 			-- Will of the Emperor
 			SpellName(116835),	-- Devastating Arc
 			SpellName(116778),	-- Focused Defense
