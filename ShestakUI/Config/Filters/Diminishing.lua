@@ -92,8 +92,6 @@ T.DiminishingSpells = function()
 		-- Random Stuns
 		[64343] = {"rndstun"},		-- Impact
 		[39796] = {"rndstun"},		-- Stoneclaw Stun
-		[11210] = {"rndstun"},		-- Improved Polymorph (Rank 1)
-		[12592] = {"rndstun"},		-- Improved Polymorph (Rank 2)
 
 		-- Cyclone
 		[33786] = {"cyclone"},		-- Cyclone
@@ -107,21 +105,14 @@ T.DiminishingSpells = function()
 		[64695] = {"ctrlroot"},		-- Earthgrab (Storm, Earth and Fire talent)
 		[4167] = {"ctrlroot"},		-- Web (Spider)
 		[54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
-		[19306] = {"ctrlroot"},		-- Counterattack
 		[90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
-		[11190] = {"ctrlroot"},		-- Improved Cone of Cold (Rank 1)
-		[12489] = {"ctrlroot", "rndroot"},	-- Improved Cone of Cold (Rank 2)
 
 		-- Random Roots
 		[23694] = {"rndroot"},		-- Improved Hamstring
-		[44745] = {"rndroot"},		-- Shattered Barrier (Rank 1)
-		[54787] = {"rndroot"},		-- Shattered Barrier (Rank 2)
 
 		-- Horror
 		[6789] = {"horror"},		-- Mortal Coil
 		[64044] = {"horror"},		-- Psychic Horror
-		[87099] = {"horror"},		-- Sin and Punishment (Rank 1)
-		[87100] = {"horror"},		-- Sin and Punishment (Rank 2)
 
 		-- Misc
 		[19503] = {"scatters"},		-- Scatter Shot

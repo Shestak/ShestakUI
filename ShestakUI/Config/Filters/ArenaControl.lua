@@ -32,12 +32,6 @@ T.ArenaControl = function()
 		-- Mage
 		[GetSpellInfo(44572)] = 4,	-- Deep Freeze
 		[GetSpellInfo(118)] = 4,	-- Polymorph
-		[GetSpellInfo(28272)] = 4,	-- Polymorph Pig
-		[GetSpellInfo(28271)] = 4,	-- Polymorph Turtle
-		[GetSpellInfo(61305)] = 4,	-- Polymorph Black Cat
-		[GetSpellInfo(61721)] = 4,	-- Polymorph Rabbit
-		[GetSpellInfo(61025)] = 4,	-- Polymorph Serpent
-		[GetSpellInfo(61780)] = 4,	-- Polymorph Turkey
 		[GetSpellInfo(82691)] = 4,	-- Ring of Frost
 		[GetSpellInfo(31661)] = 4,	-- Dragon's Breath
 		[GetSpellInfo(118271)] = 4,	-- Combustion Impact
