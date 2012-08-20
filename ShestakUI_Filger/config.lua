@@ -1420,6 +1420,8 @@ Filger_Spells = {
 			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dispersion
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Power Infusion
+			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fade
 			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fear Ward
@@ -1459,6 +1461,8 @@ Filger_Spells = {
 			{spellID = 63735, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Insight
 			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Twist of Fate
+			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evangelism
 			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Sanctuary
@@ -2592,17 +2596,17 @@ Filger_Spells = {
 			-- Ancient Hysteria
 			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Enchants
-			-- Hyperspeed Accelerators
-			{spellID = 54758, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Engineering
 			-- Synapse Springs
-			{spellID = 82175, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 126734, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Phase Fingers
+			{spellID = 108789, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nitro Boosts
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Parachute
 			{spellID = 55001, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grounded Plasma Shield
-			{spellID = 82627, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 82627, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -2641,8 +2645,6 @@ Filger_Spells = {
 			{spellID = 47788, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Life Cocoon
 			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Power Infusion
-			{spellID = 10060, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
 			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
