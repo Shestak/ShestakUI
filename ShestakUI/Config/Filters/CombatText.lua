@@ -45,6 +45,7 @@ elseif T.class == "DRUID" then
 		T.aoespam[33763] = true		-- Lifebloom
 		T.aoespam[44203] = true		-- Tranquility
 		T.aoespam[81269] = true		-- Swiftmend
+		T.aoespam[102792] = true	-- Wild Mushroom: Bloom
 		-- Damaging spells
 		T.aoespam[8921] = true		-- Moonfire
 		T.aoespam[93402] = true		-- Sunfire

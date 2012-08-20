@@ -121,8 +121,6 @@ Filger_Spells = {
 			{spellID = 59879, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Fever
 			{spellID = 59921, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Summon Gargoyle
-			{spellID = 49206, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -370,10 +368,6 @@ Filger_Spells = {
 			{spellID = 8921, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Sunfire
 			{spellID = 93402, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Fungal Growth
-			{spellID = 81281, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Faerie Fire
-			{spellID = 770, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 1822, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rip
@@ -2605,8 +2599,6 @@ Filger_Spells = {
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Parachute
 			{spellID = 55001, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Grounded Plasma Shield
-			--OLD{spellID = 82627, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -2724,8 +2716,6 @@ Filger_Spells = {
 			{spellID = 58180, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Typhoon
 			{spellID = 61391, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Fungal Growth
-			{spellID = 81281, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Hunter
 			-- Aspect of the Pack
@@ -2831,7 +2821,7 @@ Filger_Spells = {
 			{spellID = 31935, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield with Glyph
 			{spellID = 63529, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Seal of Justice proc
+			-- Seal of Justice
 			{spellID = 20170, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Denounce
 			{spellID = 2812, unitID = "player", caster = "all", filter = "DEBUFF"},
