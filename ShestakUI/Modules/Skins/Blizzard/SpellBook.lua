@@ -212,68 +212,45 @@ local function LoadSkin()
 	_G["SpellBookFrameTabButton1"]:Point("TOPLEFT", _G["SpellBookFrame"], "BOTTOMLEFT", -5, 1)
 
 	-- Core Ability Tab
-	--for i = 1, GetNumSpecializations() do
-	for i = 1, 4 do
-		local tab = SpellBook_GetCoreAbilitySpecTab(i)
-		if tab then
-			tab:StripTextures()
-			tab:GetNormalTexture():ClearAllPoints()
-			tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
-			tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
-			tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	local function SkinCoreTabs()
+		for i = 1, 4 do
+			local tab = SpellBookCoreAbilitiesFrame.SpecTabs[i]
+			if tab and tab.isSkinned ~= true then
+				local id, name, description, icon = GetSpecializationInfo(i)
 
-			tab:CreateBackdrop("Default")
-			tab.backdrop:SetAllPoints()
+				tab:StripTextures()
+				tab:SetNormalTexture(icon)
+				tab:GetNormalTexture():ClearAllPoints()
+				tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
+				tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+				tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-			local hover = tab:CreateTexture("Frame", nil, tab)
-			hover:SetTexture(1, 1, 1, 0.3)
-			hover:Point("TOPLEFT", tab, 2, -2)
-			hover:Point("BOTTOMRIGHT", tab, -2, 2)
-			tab:SetHighlightTexture(hover)
+				tab:CreateBackdrop("Default")
+				tab.backdrop:SetAllPoints()
 
-			local pushed = tab:CreateTexture("Frame", nil, tab)
-			pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
-			pushed:Point("TOPLEFT", tab, 2, -2)
-			pushed:Point("BOTTOMRIGHT", tab, -2, 2)
-			tab:SetPushedTexture(pushed)
+				tab:StyleButton()
 
-			local checked = tab:CreateTexture("Frame", nil, tab)
-			checked:SetTexture(0, 1, 0, 0.3)
-			checked:Point("TOPLEFT", tab, 2, -2)
-			checked:Point("BOTTOMRIGHT", tab, -2, 2)
-			tab:SetCheckedTexture(checked)
+				if i == 1 then
+					tab:SetPoint("TOPLEFT", SpellBookFrame.backdrop, "TOPRIGHT", 1, 0)
+				end
 
-			if i == 1 then
-				tab:SetPoint("TOPLEFT", SpellBookFrame.backdrop, "TOPRIGHT", 1, 0)
+				tab.isSkinned = true
 			end
 		end
 	end
 
 	hooksecurefunc("SpellBook_UpdateCoreAbilitiesTab", function()
 		for i = 1, #SpellBookCoreAbilitiesFrame.Abilities do
-			local button = SpellBook_GetCoreAbilityButton(i)
-			if not button.reskinned then
-				button:SetFrameLevel(button:GetFrameLevel() + 2)
-				button:CreateBackdrop("Default")
-				button.backdrop:Point("TOPLEFT", -2, 2)
-				button.backdrop:Point("BOTTOMRIGHT", 1, -1)
-
-				local hover = button:CreateTexture("Frame", nil, button)
-				hover:SetTexture(1, 1, 1, 0.3)
-				hover:Point("TOPLEFT", button, 0, 0)
-				hover:Point("BOTTOMRIGHT", button, -1, 1)
-				button:SetHighlightTexture(hover)
-
-				local pushed = button:CreateTexture("Frame", nil, button)
-				pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
-				pushed:Point("TOPLEFT", button, 0, 0)
-				pushed:Point("BOTTOMRIGHT", button, -1, 1)
-				button:SetPushedTexture(pushed)
+			local button = SpellBookCoreAbilitiesFrame.Abilities[i]
+			if button and button.isSkinned ~= true then
+				button:SetTemplate("Default")
 
 				button.EmptySlot:SetAlpha(0)
 				button.ActiveTexture:SetAlpha(0)
 				button.FutureTexture:SetAlpha(0)
 
+				button.iconTexture:Point("TOPLEFT", 2, -2)
+				button.iconTexture:Point("BOTTOMRIGHT", -2, 2)
 				button.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 				if button.FutureTexture:IsShown() then
@@ -287,9 +264,11 @@ local function LoadSkin()
 				button.Name:SetShadowOffset(1, -1)
 				button.InfoText:SetShadowOffset(1, -1)
 
-				button.reskinned = true
+				button:StyleButton()
+				button.isSkinned = true
 			end
 		end
+		SkinCoreTabs()
 	end)
 
 	-- What Has Changed Tab
