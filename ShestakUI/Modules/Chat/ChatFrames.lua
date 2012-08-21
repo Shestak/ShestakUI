@@ -140,6 +140,9 @@ local function SetChatStyle(frame)
 	-- Kill off editbox artwork
 	local a, b, c = select(6, _G[chat.."EditBox"]:GetRegions()) a:Kill() b:Kill() c:Kill()
 
+	-- Kill bubble tex/glow
+	if _G[chat.."Tab"].conversationIcon then _G[chat.."Tab"].conversationIcon:Kill() end
+
 	-- Disable alt key usage
 	_G[chat.."EditBox"]:SetAltArrowKeyMode(false)
 
@@ -303,6 +306,10 @@ end)
 -- Setup temp chat (BN, WHISPER) when needed
 local function SetupTempChat()
 	local frame = FCF_GetCurrentChatFrame()
+	if _G[frame:GetName().."Tab"]:GetText():match(PET_BATTLE_COMBAT_LOG) then
+		FCF_Close(frame)
+		return
+	end
 	if frame.skinned then return end
 	SetChatStyle(frame)
 end
