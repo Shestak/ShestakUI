@@ -163,8 +163,8 @@ L_GUI_TOOLTIP_RAID_ICON = "Метка цели рейда"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Показывать того, кто нацеливается на игрока группы/рейда"
 L_GUI_TOOLTIP_ITEM_COUNT = "Количество предмета"
 L_GUI_TOOLTIP_UNIT_ROLE = "Роль игрока"
-L_GUI_TOOLTIP_REFORGE = "Item reforge info" -- Needs review
-L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
+L_GUI_TOOLTIP_REFORGE = "Отображать перековку вещей"
+L_GUI_TOOLTIP_SYMBIOSIS = "Подсказка для Симбиоза"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Включить чат"
