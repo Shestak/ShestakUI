@@ -30,6 +30,8 @@ do
 	IconIntroTracker:UnregisterAllEvents()
 	IconIntroTracker:Hide()
 
+	MainMenuBar.slideOut.IsPlaying = function() return true end
+
 	hooksecurefunc("TalentFrame_LoadUI", function()
 		PlayerTalentFrame:UnregisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 	end)

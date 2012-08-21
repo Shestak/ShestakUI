@@ -46,6 +46,7 @@ end
 
 local function UpdateSlot(self, slot)
 	local totem = self.TotemBar
+	if not totem[slot] then return end
 	local haveTotem, name, startTime, duration, totemIcon = GetTotemInfo(slot)
 
 	totem[slot]:SetStatusBarColor(unpack(totem.colors[slot]))

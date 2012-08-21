@@ -62,6 +62,10 @@ end
 local function Stuffing_OnShow()
 	Stuffing:PLAYERBANKSLOTS_CHANGED(29)
 
+	for i = 0, #BAGS_BACKPACK - 1 do
+		Stuffing:BAG_UPDATE(i)
+	end
+
 	Stuffing:Layout()
 	Stuffing:SearchReset()
 	PlaySound("igBackPackOpen")

@@ -9,7 +9,6 @@ local replace = string.gsub
 
 local function StyleNormalButton(self)
 	local name = self:GetName()
-	if name:match("ExtraActionButton") then return end
 	local button = self
 	local icon = _G[name.."Icon"]
 	local count = _G[name.."Count"]
@@ -63,13 +62,18 @@ local function StyleNormalButton(self)
 	end
 
 	if not button.isSkinned then
-		if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() then
+		if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not name:match("Extra") then
 			self:Size(C.actionbar.button_size)
 		end
-		button:CreateBackdrop("Transparent")
-		button.backdrop:SetAllPoints()
-		if C.actionbar.classcolor_border == true then
-			button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		if name:match("Extra") then
+			button:SetTemplate("Default")
+			icon:SetDrawLayer("ARTWORK")
+		else
+			button:CreateBackdrop("Transparent")
+			button.backdrop:SetAllPoints()
+			if C.actionbar.classcolor_border == true then
+				button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			end
 		end
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
