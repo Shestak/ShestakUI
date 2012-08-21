@@ -1,4 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
+if C.tooltip.enable ~= true or C.tooltip.reforge ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Item reforge info(bTooltip by Fernir)

@@ -1,4 +1,5 @@
 local T, C, L = unpack(select(2, ...))
+if C.tooltip.enable ~= true or C.tooltip.symbiosis ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Symbiosis info(bTooltip by Fernir)

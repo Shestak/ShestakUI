@@ -218,6 +218,8 @@ C["tooltip"] = {
 	["who_targetting"] = false,					-- Show who is targetting the unit(in raid or party)
 	["item_count"] = false,						-- Item count in tooltip
 	["unit_role"] = false,						-- Unit role in tooltip
+	["reforge"] = false,						-- Item reforge info
+	["symbiosis"] = false,						-- Symbiosis info
 }
 
 ----------------------------------------------------------------------------------------
