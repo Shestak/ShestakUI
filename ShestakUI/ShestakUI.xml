@@ -167,6 +167,7 @@
 	<Script file="Modules\Tooltip\SpellID.lua"/>
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
+	<Script file="Modules\Tooltip\ReforgeInfo.lua"/>
 
 	<Script file="Modules\Loot\AutoDisenchant.lua"/>
 	<Script file="Modules\Loot\AutoGreed.lua"/>
