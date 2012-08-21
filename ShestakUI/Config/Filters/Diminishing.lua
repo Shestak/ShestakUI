@@ -25,7 +25,7 @@ T.DiminishingSpells = function()
 		[20066] = {"disorient"},	-- Repentance
 		[90337] = {"disorient"},	-- Bad Manner (Monkey)
 		[2637] = {"disorient"},		-- Hibernate
-		[82676] = {"disorient", "ctrlstun"},	-- Ring of Frost
+		[82691] = {"disorient"},	-- Ring of Frost
 
 		-- Silences
 		[50479] = {"silence"},		-- Nether Shock (Nether ray)
@@ -40,8 +40,7 @@ T.DiminishingSpells = function()
 		[55021] = {"silence"},		-- Improved Counterspell
 		[24259] = {"silence"},		-- Spell Lock (Felhunter)
 		[47476] = {"silence"},		-- Strangulate
-		[18498] = {"silence"},		-- Gag Order (Warrior talent)
-		[74347] = {"silence"},		-- Gag Order (Warrior talent)
+		[18498] = {"silence"},		-- Gag Order (Warrior glyph)
 		[81261] = {"silence"},		-- Solar Beam
 		[31935] = {"silence"},		-- Avenger's Shield
 
@@ -58,7 +57,6 @@ T.DiminishingSpells = function()
 		[6358] = {"fear"},			-- Seduction (Succubus)
 		[5484] = {"fear"},			-- Howl of Terror
 		[8122] = {"fear"},			-- Psychic Scream
-		[65545] = {"fear"},			-- Psychic Horror
 		[1513] = {"fear"},			-- Scare Beast
 		[10326] = {"fear"},			-- Turn Evil
 		[5246] = {"fear"},			-- Intimidating Shout (Main target)
@@ -79,36 +77,29 @@ T.DiminishingSpells = function()
 		[30283] = {"ctrlstun"},		-- Shadowfury
 		[119072] = {"ctrlstun"},	-- Holy Wrath
 		[22703] = {"ctrlstun"},		-- Inferno Effect
-		[54785] = {"ctrlstun"},		-- Demon Leap (Warlock)
 		[47481] = {"ctrlstun"},		-- Gnaw (Ghoul)
-		[93433] = {"ctrlstun"},		-- Burrow Attack (Worm)
 		[56626] = {"ctrlstun"},		-- Sting (Wasp)
 		[107570] = {"ctrlstun"},	-- Storm Bolt
 		[1833] = {"ctrlstun"},		-- Cheap Shot
 		[9005] = {"ctrlstun"},		-- Pounce
 		[88625] = {"ctrlstun"},		-- Holy Word: Chastise
-		[7922] = {"ctrlstun"},		-- Charge
 
 		-- Random Stuns
-		[64343] = {"rndstun"},		-- Impact
-		[39796] = {"rndstun"},		-- Stoneclaw Stun
-
-		-- Cyclone
-		[33786] = {"cyclone"},		-- Cyclone
+		--MOP[64343] = {"rndstun"},		-- Impact
 
 		-- Roots
 		[33395] = {"ctrlroot"},		-- Freeze (Water Elemental)
 		[50245] = {"ctrlroot"},		-- Pin (Crab)
 		[122] = {"ctrlroot"},		-- Frost Nova
 		[339] = {"ctrlroot"},		-- Entangling Roots
-		[19975] = {"ctrlroot"},		-- Nature's Grasp (Uses different spellIDs than Entangling Roots for the same spell)
-		[64695] = {"ctrlroot"},		-- Earthgrab (Storm, Earth and Fire talent)
+		[19975] = {"ctrlroot"},		-- Nature's Grasp
+		[64695] = {"ctrlroot"},		-- Earthgrab
 		[4167] = {"ctrlroot"},		-- Web (Spider)
 		[54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
 		[90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
 
 		-- Random Roots
-		[23694] = {"rndroot"},		-- Improved Hamstring
+		--MOP[23694] = {"rndroot"},		-- Improved Hamstring
 
 		-- Horror
 		[6789] = {"horror"},		-- Mortal Coil
@@ -117,15 +108,14 @@ T.DiminishingSpells = function()
 		-- Misc
 		[19503] = {"scatters"},		-- Scatter Shot
 		[31661] = {"dragons"},		-- Dragon's Breath
+		[33786] = {"cyclone"},		-- Cyclone
 		[605] = {"mc"},				-- Mind Control
-		[710] = {"banish"},			-- Banish
 		[19185] = {"entrapment"},	-- Entrapment
 	}
 end
 
 T.DiminishingIcons = function()
 	return {
-		["banish"] = select(3, GetSpellInfo(710)),
 		["ctrlstun"] = select(3, GetSpellInfo(44572)),
 		["cyclone"] = select(3, GetSpellInfo(33786)),
 		["disarm"] = select(3, GetSpellInfo(676)),
@@ -140,6 +130,5 @@ T.DiminishingIcons = function()
 		["scatters"] = select(3, GetSpellInfo(19503)),
 		["dragons"] = select(3, GetSpellInfo(31661)),
 		["silence"] = select(3, GetSpellInfo(55021)),
-		["taunt"] = select(3, GetSpellInfo(355)),
 	}
 end
