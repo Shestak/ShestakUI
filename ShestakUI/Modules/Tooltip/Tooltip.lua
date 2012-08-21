@@ -21,7 +21,8 @@ local tooltips = {
 	ItemRefShoppingTooltip3,
 	AtlasLootTooltip,
 	QuestHelperTooltip,
-	QuestGuru_QuestWatchTooltip
+	QuestGuru_QuestWatchTooltip,
+	SymbiosisTip
 }
 
 for _, tt in pairs(tooltips) do
@@ -95,7 +96,6 @@ end
 aTooltip = CreateFrame("Frame", "aTooltip", UIParent)
 aTooltip:RegisterEvent("ADDON_LOADED")
 aTooltip:SetScript("OnEvent", function(self, event, addon)
-	if addon == "QuestHelper" then self.QH_found = true end
 	if addon ~= "ShestakUI" then return end
 
 	local function GameTooltipDefault(tooltip, parent)
@@ -141,7 +141,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 				if InCombatLockdown() and C.tooltip.hide_combat and not IsShiftKeyDown() then
 					GameTooltip:Hide()
 				else
-					GameTooltip:SetOwner(parent,"ANCHOR_CURSOR")
+					GameTooltip:SetOwner(parent, "ANCHOR_CURSOR")
 				end
 			end)
 		else
