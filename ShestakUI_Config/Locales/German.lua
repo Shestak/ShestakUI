@@ -163,6 +163,8 @@ L_GUI_TOOLTIP_RAID_ICON = "Raidsymbol"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Zeige an, wer die Eihneit, die in deiner Gruppe/Raid ist, ins Ziel nimmt"
 L_GUI_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe"
 L_GUI_TOOLTIP_UNIT_ROLE = "Klassenrolle"
+L_GUI_TOOLTIP_REFORGE = "Item reforge info" -- Needs review
+L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Chat aktivieren"

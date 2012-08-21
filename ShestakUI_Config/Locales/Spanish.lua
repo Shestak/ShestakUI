@@ -163,6 +163,8 @@ L_GUI_TOOLTIP_RAID_ICON = "Icono de banda"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Muestra quien está marcando la unidad que está en tu grupo/banda"
 L_GUI_TOOLTIP_ITEM_COUNT = "Contador del objeto"
 L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
+L_GUI_TOOLTIP_REFORGE = "Item reforge info" -- Needs review
+L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activar chat"
