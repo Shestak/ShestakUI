@@ -95,6 +95,7 @@
 	<Script file="Modules\ActionBars\Range.lua"/>
 	<Script file="Modules\ActionBars\Others.lua"/>
 	<Script file="Modules\ActionBars\Cooldowns.lua"/>
+	<Script file="Modules\ActionBars\MicroMenu.lua"/>
 
 	<Script file="Modules\Announcements\Drinking.lua"/>
 	<Script file="Modules\Announcements\FlaskAndFood.lua"/>

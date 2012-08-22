@@ -340,6 +340,9 @@ C["actionbar"] = {
 	["shapeshift_mouseover"] = true,			-- Stance bars on mouseover
 	["shapeshift_hide"] = false,				-- Hide stance
 	["shapeshift_horizontal"] = true,			-- Enable horizontal stance bar
+	-- MicroMenu
+	["micromenu"] = false,						-- Enable micro menu
+	["micromenu_mouseover"] = false,			-- Micro menu on mouseover
 }
 
 ----------------------------------------------------------------------------------------
