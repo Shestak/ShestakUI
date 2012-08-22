@@ -876,14 +876,14 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Counterspell
+			{spellID = 2139, filter = "CD"},
 			-- Blink
 			{spellID = 1953, filter = "CD"},
 			-- Frost Nova
 			{spellID = 11831, filter = "CD"},
 			-- Ice Barrier
 			{spellID = 11426, filter = "CD"},
-			-- Counterspell
-			{spellID = 2139, filter = "CD"},
 			-- Frostjaw
 			{spellID = 102051, filter = "CD"},
 			-- Deep Freeze
@@ -1560,52 +1560,54 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Dominate Mind
+			{spellID = 605, filter = "CD"},
 			-- Penance
 			{spellID = 47540, filter = "CD"},
-			-- Pain Suppression
-			{spellID = 33206, filter = "CD"},
-			-- Power Infusion
-			{spellID = 10060, filter = "CD"},
-			-- Psychic Scream
-			{spellID = 8122, filter = "CD"},
-			-- Circle of Healing
-			{spellID = 34861, filter = "CD"},
-			-- Guardian Spirit
-			{spellID = 47788, filter = "CD"},
-			-- Prayer of Mending
-			{spellID = 33076, filter = "CD"},
-			-- Silence
-			{spellID = 15487, filter = "CD"},
 			-- Holy Fire
 			{spellID = 14914, filter = "CD"},
-			-- Shadow Word: Death
-			{spellID = 32379, filter = "CD"},
-			-- Dispersion
-			{spellID = 47585, filter = "CD"},
-			-- Psychic Horror
-			{spellID = 64044, filter = "CD"},
-			-- Holy Word: Chastise
-			{spellID = 88625, filter = "CD"},
-			-- Power Word: Barrier
-			{spellID = 62618, filter = "CD"},
-			-- Inner Focus
-			{spellID = 89485, filter = "CD"},
+			-- Circle of Healing
+			{spellID = 34861, filter = "CD"},
+			-- Prayer of Mending
+			{spellID = 33076, filter = "CD"},
+			-- Divine Star
+			{spellID = 110744, filter = "CD"},
+			-- Cascade
+			{spellID = 121135, filter = "CD"},
 			-- Archangel
 			{spellID = 81700, filter = "CD"},
-			-- Chakras
-			{spellID = 81209, filter = "CD"},
+			-- Holy Word: Chastise
+			{spellID = 88625, filter = "CD"},
+			-- Chakra
+			{spellID = 81206, filter = "CD"},
+			-- Halo
+			{spellID = 120517, filter = "CD"},
+			-- Inner Focus
+			{spellID = 89485, filter = "CD"},
+			-- Shadow Word: Death
+			{spellID = 32379, filter = "CD"},
+			-- Psychic Scream
+			{spellID = 8122, filter = "CD"},
+			-- Psychic Horror
+			{spellID = 64044, filter = "CD"},
+			-- Silence
+			{spellID = 15487, filter = "CD"},
+			-- Power Infusion
+			{spellID = 10060, filter = "CD"},
+			-- Dispersion
+			{spellID = 47585, filter = "CD"},
+			-- Pain Suppression
+			{spellID = 33206, filter = "CD"},
+			-- Guardian Spirit
+			{spellID = 47788, filter = "CD"},
+			-- Power Word: Barrier
+			{spellID = 62618, filter = "CD"},
 			-- Desperate Prayer
 			{spellID = 19236, filter = "CD"},
 			-- Leap of Faith
 			{spellID = 73325, filter = "CD"},
 			-- Void Tendrils
 			{spellID = 108920, filter = "CD"},
-			-- Cascade
-			{spellID = 121148, filter = "CD"},
-			-- Divine Star
-			{spellID = 110745, filter = "CD"},
-			-- Halo
-			{spellID = 120692, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
@@ -3165,10 +3167,10 @@ Filger_Spells = {
 			{spellID = 8178, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Shamanistic Rage
 			{spellID = 30823, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Earth Shield
-			--{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Spiritwalker's Grace
 			{spellID = 79206, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Earth Shield
+			--{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Mana Tide
 			--{spellID = 16191, unitID = "target", caster = "all", filter = "BUFF"},
 
@@ -3187,8 +3189,6 @@ Filger_Spells = {
 			{spellID = 30283, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Axe Toss (Felguard)
 			{spellID = 89766, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Aftermath
-			{spellID = 85387, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 5782, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
@@ -3207,7 +3207,7 @@ Filger_Spells = {
 			{spellID = 23920, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Shield wall
 			{spellID = 871, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Berserker
+			-- Berserker Rage
 			{spellID = 18499, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Last stand
 			{spellID = 12975, unitID = "target", caster = "all", filter = "BUFF"},
@@ -3218,8 +3218,6 @@ Filger_Spells = {
 			{spellID = 107570, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Charge Stun
-			{spellID = 7922, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
 			{spellID = 20511, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silenced (Gag Order)
