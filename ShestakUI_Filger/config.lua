@@ -235,40 +235,36 @@ Filger_Spells = {
 			{spellID = 774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Regrowth
 			{spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Living Seed
-			{spellID = 48504, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Glyph of Rejuvenation
-			{spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation
 			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Barkskin
-			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nature's Grasp
-			{spellID = 16689, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Owlkin Frenzy
-			{spellID = 48391, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Celestial Alignment
-			{spellID = 112071, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Starfall
-			{spellID = 48505, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Savage Roar
-			{spellID = 52610, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Survival Instincts
 			{spellID = 61336, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Berserk
-			{spellID = 50334, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dash
-			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enrage
-			{spellID = 5229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Might of Ursoc
 			{spellID = 106922, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Barkskin
+			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Defense
 			{spellID = 62606, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Frenzied Regeneration
 			{spellID = 124769, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Savage Roar
+			{spellID = 52610, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Berserk
+			{spellID = 50334, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tiger's Fury
 			{spellID = 5217, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Celestial Alignment
+			{spellID = 112071, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Starfall
+			{spellID = 48505, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nature's Grasp
+			{spellID = 16689, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Owlkin Frenzy
+			{spellID = 48391, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dash
+			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Enrage
+			{spellID = 5229, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -290,6 +286,8 @@ Filger_Spells = {
 			{spellID = 81192, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Grace
 			{spellID = 16886, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Glyph of Rejuvenation
+			{spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
 			{spellID = 16870, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Predator's Swiftness
@@ -372,12 +370,12 @@ Filger_Spells = {
 			{spellID = 1822, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rip
 			{spellID = 1079, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Pounce Bleed
+			{spellID = 9007, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Lacerate
 			{spellID = 33745, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Thrash
 			{spellID = 77758, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Pounce Bleed
-			{spellID = 9007, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Skull Bash
 			{spellID = 82365, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Immobilized
@@ -404,8 +402,6 @@ Filger_Spells = {
 			{spellID = 8936, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Wild Growth
 			{spellID = 48438, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Living Seed
-			{spellID = 48504, unitID = "target", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -418,12 +414,12 @@ Filger_Spells = {
 			BarWidth = 189,
 			Position = {unpack(Filger_Settings.pve_cc)},
 
-			-- Entangling Roots
-			{spellID = 339, unitID = "focus", caster = "all", filter = "DEBUFF"},
 			-- Cyclone
 			{spellID = 33786, unitID = "focus", caster = "all", filter = "DEBUFF"},
 			-- Hibernate
 			{spellID = 2637, unitID = "focus", caster = "all", filter = "DEBUFF"},
+			-- Entangling Roots
+			{spellID = 339, unitID = "focus", caster = "all", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -435,6 +431,8 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Skull Bash
+			{spellID = 106839, filter = "CD"},
 			-- Wild Growth
 			{spellID = 48438, filter = "CD"},
 			-- Swiftmend
@@ -443,8 +441,8 @@ Filger_Spells = {
 			{spellID = 22812, filter = "CD"},
 			-- Mangle(Bear)
 			{spellID = 33878, filter = "CD"},
-			-- Nature's Grasp
-			{spellID = 16689, filter = "CD"},
+			-- Tiger's Fury
+			{spellID = 5217, filter = "CD"},
 			-- Starfall
 			{spellID = 48505, filter = "CD"},
 			-- Starsurge
@@ -455,26 +453,24 @@ Filger_Spells = {
 			{spellID = 78675, filter = "CD"},
 			-- Growl
 			{spellID = 6795, filter = "CD"},
-			-- Enrage
-			{spellID = 5229, filter = "CD"},
+			-- Maim
+			{spellID = 22570, filter = "CD"},
 			-- Faerie Fire
 			{spellID = 770, filter = "CD"},
-			-- Disorienting Roar
-			{spellID = 99, filter = "CD"},
 			-- Wild Charge
 			{spellID = 102401, filter = "CD"},
+			-- Disorienting Roar
+			{spellID = 99, filter = "CD"},
 			-- Mighty Bash
 			{spellID = 5211, filter = "CD"},
 			-- Bear Hug
 			{spellID = 102795, filter = "CD"},
-			-- Maim
-			{spellID = 22570, filter = "CD"},
+			-- Enrage
+			{spellID = 5229, filter = "CD"},
+			-- Nature's Grasp
+			{spellID = 16689, filter = "CD"},
 			-- Incarnation: Tree of Life
 			{spellID = 33891, filter = "CD"},
-			-- Skull Bash
-			{spellID = 106839, filter = "CD"},
-			-- Tiger's Fury
-			{spellID = 5217, filter = "CD"},
 
 			-- Racials
 			-- Shadowmeld (Night Elf)
@@ -1190,20 +1186,20 @@ Filger_Spells = {
 			{spellID = 84963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Guardian of Ancient Kings
 			{spellID = 86698, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Avenging Wrath
-			{spellID = 31884, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Plea
-			{spellID = 54428, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Favor
-			{spellID = 31842, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Speed of Light
-			{spellID = 85499, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Protection
-			{spellID = 498, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Argent Defender
-			{spellID = 31850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Holy Avenger
 			{spellID = 105809, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Avenging Wrath
+			{spellID = 31884, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Favor
+			{spellID = 31842, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Argent Defender
+			{spellID = 31850, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Protection
+			{spellID = 498, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Plea
+			{spellID = 54428, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Speed of Light
+			{spellID = 85499, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Eternal Flame
 			{spellID = 114163, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sacred Shield
@@ -1416,8 +1412,6 @@ Filger_Spells = {
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Infusion
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fade
-			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fear Ward
 			{spellID = 6346, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Borrowed Time
@@ -1434,6 +1428,8 @@ Filger_Spells = {
 			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Prayer of Mending
 			{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fade
+			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Holy Walk
 			{spellID = 96219, unitID = "player", caster = "player", filter = "BUFF"},
 		},
