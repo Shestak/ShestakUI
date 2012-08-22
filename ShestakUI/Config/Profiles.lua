@@ -73,9 +73,10 @@ if T.author == true then
 	C["tooltip"].who_targetting = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].unit_role = true
+	C["tooltip"].reforge = true
+	C["tooltip"].symbiosis = true
 	C["chat"].combatlog = false
 	C["chat"].spam = true
-	C["chat"].tabs_mouseover = true
 	C["map"].map_boss_count = true
 	C["nameplate"].track_auras = true
 	C["actionbar"].toggle_mode = false
