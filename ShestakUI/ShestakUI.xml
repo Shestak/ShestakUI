@@ -82,6 +82,7 @@
 	<Script file="Modules\Misc\AlreadyKnown.lua"/>
 	<Script file="Modules\Misc\GemCounter.lua"/>
 	<Script file="Modules\Misc\SlotItemLevel.lua"/>
+	<Script file="Modules\Misc\HealerIconNameplate.lua"/>
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>

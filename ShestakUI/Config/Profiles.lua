@@ -83,6 +83,7 @@ if T.author == true then
 	C["chat"].spam = true
 	C["map"].map_boss_count = true
 	C["nameplate"].track_auras = true
+	C["nameplate"].healer_icon = true
 	C["actionbar"].toggle_mode = false
 	C["unitframe"].arena_on_right = false
 	C["unitframe"].plugins_talents = true
@@ -153,6 +154,7 @@ if T.name == "Oz" then
 	C["loot"].auto_greed = false
 	C["nameplate"].show_castbar_name = true
 	C["nameplate"].class_icons = true
+	C["nameplate"].healer_icon = true
 	C["actionbar"].hotkey = false
 	C["actionbar"].bottombars = 1
 	C["aura"].show_spiral = true
@@ -245,6 +247,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["nameplate"].show_castbar_name = true
 	C["nameplate"].class_icons = true
 	C["nameplate"].track_auras = true
+	C["nameplate"].healer_icon = true
 	C["actionbar"].macro = true
 	C["actionbar"].button_size = 35
 	C["actionbar"].classcolor_border = true

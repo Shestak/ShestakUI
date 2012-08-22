@@ -237,6 +237,7 @@ L_GUI_NAMEPLATE_NEAR_COLOR = "Цвет получения/сброса угро�
 L_GUI_NAMEPLATE_BAD_COLOR = "Цвет наивысшей угрозы, зависит от вашей роли"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Отображать отрицательные эффекты (сокращение имён должно быть выключено)"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Размер отрицательных эффектов"
+L_GUI_NAMEPLATE_HEALER_ICON = "Show healer icon on all enemy healers nameplate in battlegrounds" -- Needs review
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Включить панели команд"
