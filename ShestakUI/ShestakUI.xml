@@ -166,7 +166,7 @@
 	<Script file="Modules\Chat\RealLinks.lua"/>
 	<Script file="Modules\Chat\ArmoryLink.lua"/>
 	<Script file="Modules\Chat\SpamageMeters.lua"/>
-	<Script file="Modules\Misc\ChatBind.lua"/>
+	<Script file="Modules\Chat\ChatBind.lua"/>
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
