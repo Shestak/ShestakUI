@@ -29,6 +29,8 @@ L_GUI_MISC_HIDE_BG_SPAM = "在戰場内移除Boss表情信息"
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
+L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
+L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
@@ -170,6 +172,8 @@ L_GUI_TOOLTIP_ITEM_COUNT = "叠堆數量"
 L_GUI_TOOLTIP_UNIT_ROLE = "單位角色"
 L_GUI_TOOLTIP_REFORGE = "Item reforge info" -- Needs review
 L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
+L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
+L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "開啟聊天框增強"
@@ -187,6 +191,7 @@ L_GUI_CHAT_SKIN_BUBBLE = "美化默認聊天泡泡"
 L_GUI_CHAT_CL_TAB = "顯示戰鬥記錄標簽"
 L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
 L_GUI_CHAT_STICKY = "記住上一次使用的頻道"
+L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
 
 -- Bag options
 L_GUI_BAGS = "背包"

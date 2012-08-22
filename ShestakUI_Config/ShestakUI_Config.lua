@@ -56,6 +56,8 @@ local function Local(o)
 	if o == "UIConfigmiscitem_level" then o = L_GUI_MISC_ITEM_LEVEL end
 	if o == "UIConfigmiscgem_counter" then o = L_GUI_MISC_GEM_COUNTER end
 	if o == "UIConfigmiscalready_known" then o = L_GUI_MISC_ALREADY_KNOWN end
+	if o == "UIConfigmiscdisenchanting" then o = L_GUI_MISC_DISENCHANTING end
+	if o == "UIConfigmiscsum_buyouts" then o = L_GUI_MISC_SUM_BUYOUTS end
 
 	-- Announcements options
 	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end
@@ -198,6 +200,8 @@ local function Local(o)
 	if o == "UIConfigtooltipunit_role" then o = L_GUI_TOOLTIP_UNIT_ROLE end
 	if o == "UIConfigtooltipreforge" then o = L_GUI_TOOLTIP_REFORGE end
 	if o == "UIConfigtooltipsymbiosis" then o = L_GUI_TOOLTIP_SYMBIOSIS end
+	if o == "UIConfigtooltipinstance_lock" then o = L_GUI_TOOLTIP_INSTANCE_LOCK end
+	if o == "UIConfigtooltipitem_transmogrify" then o = L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY end
 
 	-- Chat options
 	if o == "UIConfigchat" then o = SOCIALS end
@@ -216,6 +220,7 @@ local function Local(o)
 	if o == "UIConfigchatcombatlog" then o = L_GUI_CHAT_CL_TAB end
 	if o == "UIConfigchattabs_mouseover" then o = L_GUI_CHAT_TABS_MOUSEOVER end
 	if o == "UIConfigchatsticky" then o = L_GUI_CHAT_STICKY end
+	if o == "UIConfigchatdamage_meter_spam" then o = L_GUI_CHAT_DAMAGE_METER_SPAM end
 
 	-- Bag options
 	if o == "UIConfigbag" then o = L_GUI_BAGS end

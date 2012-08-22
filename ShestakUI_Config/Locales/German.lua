@@ -29,6 +29,8 @@ L_GUI_MISC_HIDE_BG_SPAM = "In Schlachtfeldern Bossemotes im Chat unterbinden"
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
+L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
+L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -170,6 +172,8 @@ L_GUI_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe"
 L_GUI_TOOLTIP_UNIT_ROLE = "Klassenrolle"
 L_GUI_TOOLTIP_REFORGE = "Item reforge info" -- Needs review
 L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
+L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
+L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Chat aktivieren"
@@ -187,6 +191,7 @@ L_GUI_CHAT_SKIN_BUBBLE = "Blizzard Chat Blasen verändern"
 L_GUI_CHAT_CL_TAB = "Kampflog Reiter anzeigen"
 L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
 L_GUI_CHAT_STICKY = "Behalte den letzen Channel"
+L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
 
 -- Bag options
 L_GUI_BAGS = "Taschen"

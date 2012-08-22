@@ -29,6 +29,8 @@ L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei bosses durante i Cam
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
+L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
+L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -170,6 +172,8 @@ L_GUI_TOOLTIP_ITEM_COUNT = "Conteggio oggetti"
 L_GUI_TOOLTIP_UNIT_ROLE = "Ruolo dell'unità"
 L_GUI_TOOLTIP_REFORGE = "Item reforge info" -- Needs review
 L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
+L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
+L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Attiva chat"
@@ -187,6 +191,7 @@ L_GUI_CHAT_SKIN_BUBBLE = "Restyling dei fumetti delle chats"
 L_GUI_CHAT_CL_TAB = "Mostra la linguetta del Registro di combattimento"
 L_GUI_CHAT_TABS_MOUSEOVER = "Linguette delle chats al passaggio del mouse"
 L_GUI_CHAT_STICKY = "Ricorda l'ultimo canale"
+L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
 
 -- Bag options
 L_GUI_BAGS = "Sacche"
