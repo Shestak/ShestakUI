@@ -136,9 +136,9 @@ if T.name == "Oz" then
 	C["automation"].resurrection = false
 	C["automation"].screenshot = true
 	C["automation"].decline_duel = false
-	C["automation"].tab_binder = true
 	C["skins"].blizzard_frames = true
 	C["skins"].dbm = true
+	C["combattext"].icons = false
 	C["combattext"].scrollable = true
 	C["combattext"].killingblow = true
 	C["enemycooldown"].show_always = true
@@ -152,6 +152,8 @@ if T.name == "Oz" then
 	C["tooltip"].average_lvl = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].who_targetting = true
+	C["tooltip"].reforge = true
+	C["tooltip"].symbiosis = true
 	C["tooltip"].item_transmogrify = true
 	C["chat"].filter = false
 	C["chat"].tabs_mouseover = true
