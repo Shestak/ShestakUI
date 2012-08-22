@@ -52,8 +52,8 @@ L_GUI_AUTOMATION_DECLINE_DUEL = "Отмена дуэлей"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Принятие заданий(если зажат shift или alt - не работает)"
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "Пропуск видеороликов(если зажат ctrl - не работает)"
 L_GUI_AUTOMATION_AUTO_ROLE = "Выбор вашей роли(в группе/рейде)"
-L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
-L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Снимать *плохие* баффы"
+L_GUI_AUTOMATION_TAB_BINDER = "Клавиша *Tab* выбирает вражеских игроков"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"
@@ -205,8 +205,8 @@ L_GUI_MINIMAP_MERGE_MENUS = "Объединять общие кнопки и к�
 L_GUI_MAP_ENABLE = "Включить карту"
 L_GUI_MAP_SCALE = "Масштаб карты"
 L_GUI_MAP_BG_STYLIZATION = "Стилизация карты полей боя"
-L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
-L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
+L_GUI_MAP_BOSS_COUNT = "Отмечать номера боссов на карте"
+L_GUI_MAP_EXPLORE = "Отслеживать на карте достижения Первооткрыватель и Хранитель мудрости"
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Включить окно добычи"
@@ -255,8 +255,8 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Переключиться на гориз�
 L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Панель стоек по наведению курсора"
 L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Скрыть панель стоек"
 L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Переключиться на горизонтальную панель стоек"
-L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU = "Включить микроменю"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Микроменю по наведению курсора"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Размер положительных эффектов игрока"
