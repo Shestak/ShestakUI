@@ -83,6 +83,8 @@
 	<Script file="Modules\Misc\GemCounter.lua"/>
 	<Script file="Modules\Misc\SlotItemLevel.lua"/>
 	<Script file="Modules\Misc\HealerIconNameplate.lua"/>
+	<Script file="Modules\Misc\OneClickDisenchanting.lua"/>
+	<Script file="Modules\Misc\SumAucBuyouts.lua"/>
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>
@@ -162,6 +164,7 @@
 	<Script file="Modules\Chat\TellTarget.lua"/>
 	<Script file="Modules\Chat\RealLinks.lua"/>
 	<Script file="Modules\Chat\ArmoryLink.lua"/>
+	<Script file="Modules\Chat\SpamageMeters.lua"/>
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
@@ -176,6 +179,8 @@
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
 	<Script file="Modules\Tooltip\ReforgeInfo.lua"/>
 	<Script file="Modules\Tooltip\Symbiosis.lua"/>
+	<Script file="Modules\Tooltip\CheckItemTransmogrify.lua"/>
+	<Script file="Modules\Tooltip\InstanceLockCompare.lua"/>
 
 	<Script file="Modules\Loot\AutoDisenchant.lua"/>
 	<Script file="Modules\Loot\AutoGreed.lua"/>

@@ -52,6 +52,8 @@ if T.author == true then
 	C["misc"].item_level = true
 	C["misc"].gem_counter = true
 	C["misc"].already_known = true
+	C["misc"].disenchanting = true
+	C["misc"].sum_buyouts = true
 	C["announcements"].spells = true
 	C["announcements"].flask_food = true
 	C["announcements"].toy_train = true
@@ -79,8 +81,11 @@ if T.author == true then
 	C["tooltip"].unit_role = true
 	C["tooltip"].reforge = true
 	C["tooltip"].symbiosis = true
+	C["tooltip"].instance_lock = true
+	C["tooltip"].item_transmogrify = true
 	C["chat"].combatlog = false
 	C["chat"].spam = true
+	C["chat"].damage_meter_spam = true
 	C["map"].map_boss_count = true
 	C["nameplate"].track_auras = true
 	C["nameplate"].healer_icon = true
@@ -147,8 +152,10 @@ if T.name == "Oz" then
 	C["tooltip"].average_lvl = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].who_targetting = true
+	C["tooltip"].item_transmogrify = true
 	C["chat"].filter = false
 	C["chat"].tabs_mouseover = true
+	C["chat"].damage_meter_spam = true
 	C["minimap"].size = 129
 	C["map"].map_boss_count = true
 	C["loot"].auto_greed = false
@@ -198,6 +205,8 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["misc"].invite_keyword = "инвайт"
 	C["misc"].item_level = true
 	C["misc"].gem_counter = true
+	C["misc"].disenchanting = true
+	C["misc"].sum_buyouts = true
 	C["announcements"].flask_food = true
 	C["announcements"].flask_food_auto = true
 	C["automation"].screenshot = true
@@ -225,10 +234,13 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["tooltip"].raid_icon = true
 	C["tooltip"].who_targetting = true
 	C["tooltip"].item_count = true
+	C["tooltip"].instance_lock = true
+	C["tooltip"].item_transmogrify = true
 	C["chat"].background = true
 	C["chat"].background_alpha = 0.45
 	C["chat"].chat_bar = true
 	C["chat"].bubbles = false
+	C["chat"].damage_meter_spam = true
 	C["bag"].button_size = 35
 	C["bag"].bank_columns = 15
 	C["minimap"].tracking_icon = true

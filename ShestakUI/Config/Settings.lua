@@ -50,6 +50,8 @@ C["misc"] = {
 	["item_level"] = false,						-- Item level on character slot buttons
 	["gem_counter"] = false,					-- Displays how many red/blue/yellow gems you have
 	["already_known"] = false,					-- Colorizes recipes/mounts/pets that is already known
+	["disenchanting"] = false,					-- One-click Milling, Prospecting and Disenchanting
+	["sum_buyouts"] = false,					-- Sum upp all current auctions
 }
 
 ----------------------------------------------------------------------------------------
@@ -225,6 +227,8 @@ C["tooltip"] = {
 	["unit_role"] = false,						-- Unit role in tooltip
 	["reforge"] = false,						-- Item reforge info
 	["symbiosis"] = false,						-- Symbiosis info
+	["instance_lock"] = false,					-- Your instance lock status in tooltip
+	["item_transmogrify"] = false,				-- Displays items can not be transmogrified
 }
 
 ----------------------------------------------------------------------------------------
@@ -246,6 +250,7 @@ C["chat"] = {
 	["combatlog"] = true,						-- Show CombatLog tab(need two reloads when false)
 	["tabs_mouseover"] = false,					-- Chat tabs on mouseover
 	["sticky"] = true,							-- Remember last channel
+	["damage_meter_spam"] = false,				-- Merge damage meter spam in one line-link
 }
 
 ----------------------------------------------------------------------------------------
