@@ -57,6 +57,7 @@ if T.author == true then
 	C["automation"].accept_quest = true
 	C["automation"].skip_cinematic = true
 	C["automation"].auto_role = true
+	C["automation"].tab_binder = true
 	C["skins"].blizzard_frames = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
@@ -124,6 +125,7 @@ if T.name == "Oz" then
 	C["automation"].resurrection = false
 	C["automation"].screenshot = true
 	C["automation"].decline_duel = false
+	C["automation"].tab_binder = true
 	C["skins"].blizzard_frames = true
 	C["skins"].dbm = true
 	C["combattext"].scrollable = true
@@ -193,6 +195,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["automation"].accept_invite = true
 	C["automation"].decline_duel = false
 	C["automation"].skip_cinematic = true
+	C["automation"].tab_binder = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["reminder"].solo_buffs_sound = true

@@ -79,6 +79,8 @@ C["automation"] = {
 	["accept_quest"] = false,					-- Auto accept quests(if hold shift or alt, auto accept is disable)
 	["skip_cinematic"] = false,					-- Auto skip cinematics/movies
 	["auto_role"] = false,						-- Auto set your role
+	["cancel_bad_buffs"] = false,				-- Auto cancel various buffs
+	["tab_binder"] = false,						-- Auto change Tab key to only target enemy players
 }
 
 ----------------------------------------------------------------------------------------
