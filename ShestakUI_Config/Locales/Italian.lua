@@ -26,11 +26,11 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Bottone automatico missione/oggetto"
 L_GUI_MISC_RAID_TOOLS = "Strumenti per le incursioni"
 L_GUI_MISC_PROFESSION_TABS = "Visualizza la linguetta delle professioni sul riquadro abilità di commercio/mercante"
 L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei bosses durante i Campi di Battaglia"
-L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
-L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
-L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
-L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
-L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
+L_GUI_MISC_ITEM_LEVEL = "Livello oggetto sui bottoni della schermata Personaggio"
+L_GUI_MISC_GEM_COUNTER = "Mostra quante gemme rosse/blu/gialle possiedi"
+L_GUI_MISC_ALREADY_KNOWN = "Colora ricette/cavalcature/mascottes possedute"
+L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo click."
+L_GUI_MISC_SUM_BUYOUTS = "Somma assieme tutte le aste correnti"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -57,8 +57,8 @@ L_GUI_AUTOMATION_DECLINE_DUEL = "Auto-declina i duelli"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Auto-accetta le missioni"
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto-salta i filmati"
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto-imposta il tuo ruolo"
-L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
-L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto-cancella alcuni benefici"
+L_GUI_AUTOMATION_TAB_BINDER = "Usando il tasto TAB, consente di prendere come bersaglio soltanto nemici controllati da altri giocatori (se presenti)"
 
 -- Skins options
 L_GUI_SKINS = "Restyling"
@@ -170,10 +170,10 @@ L_GUI_TOOLTIP_RAID_ICON = "Visualizza i marchi d'incursione nei suggerimenti"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Visualizza chi ha in bersaglio l'unità che è nel tuo gruppo/incursione"
 L_GUI_TOOLTIP_ITEM_COUNT = "Conteggio oggetti"
 L_GUI_TOOLTIP_UNIT_ROLE = "Ruolo dell'unità"
-L_GUI_TOOLTIP_REFORGE = "Item reforge info" -- Needs review
-L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
-L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
-L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
+L_GUI_TOOLTIP_REFORGE = "Informazioni di Riforgiatura degli oggetti"
+L_GUI_TOOLTIP_SYMBIOSIS = "Informazioni di Simbiosi"
+L_GUI_TOOLTIP_INSTANCE_LOCK = "Info incursione nei suggerimenti"
+L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Mostra gli oggetti che non possono essere transmogrifati"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Attiva chat"
@@ -191,7 +191,7 @@ L_GUI_CHAT_SKIN_BUBBLE = "Restyling dei fumetti delle chats"
 L_GUI_CHAT_CL_TAB = "Mostra la linguetta del Registro di combattimento"
 L_GUI_CHAT_TABS_MOUSEOVER = "Linguette delle chats al passaggio del mouse"
 L_GUI_CHAT_STICKY = "Ricorda l'ultimo canale"
-L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
+L_GUI_CHAT_DAMAGE_METER_SPAM = "Riunisce lo spam di un contatore dei danni in un singolo link"
 
 -- Bag options
 L_GUI_BAGS = "Sacche"
@@ -242,7 +242,7 @@ L_GUI_NAMEPLATE_NEAR_COLOR = "Colore per perdita/guadagno minaccia"
 L_GUI_NAMEPLATE_BAD_COLOR = "Colore se il PG non è minacciato (se difensore o assaltatore/guaritore)"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Mostra le penalità sulle barre delle unità (l'ozpione 'Mostra nomi abbreviati' deve essere disabilitata)"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Dimensioni delle penalità sulle barre delle unità"
-L_GUI_NAMEPLATE_HEALER_ICON = "Show healer icon on all enemy healers nameplate in battlegrounds" -- Needs review
+L_GUI_NAMEPLATE_HEALER_ICON = "Nei Campi di Battaglia, mostra un'icona 'guaritore' accanto alle barre delle unità di tutti i guaritori nemici"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Attiva le barre delle azioni"
@@ -260,11 +260,11 @@ L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barre sulla destra al passaggio del mouse
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barra famiglio al passaggio del mouse (solo con la barra famiglio orizzontale)"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Nascondi la barra famiglio"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Rendi orizzontale la barra famiglio"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barre postura al passaggio del mouse"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barra postura al passaggio del mouse"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Nascondi barra postura"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Rendi orizzontale la barra postura"
-L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU = "Attiva il micro menu"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu al passaggio del mouse"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Dimensione benefici giocatore"
