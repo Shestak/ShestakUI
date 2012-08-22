@@ -19,11 +19,11 @@ local microbuttons = {
 	"HelpMicroButton"
 }
 
-local f = CreateFrame("Frame", "MicroAnchor", UIParent)
-MicroAnchor.shown = false
-if C.actionbar.micromenu_mouseover == true then f:SetAlpha(0) end
+local frame = CreateFrame("Frame", "MicroAnchor", UIParent)
+frame.shown = false
+if C.actionbar.micromenu_mouseover == true then frame:SetAlpha(0) end
 
-UpdateMicroButtonsParent(f)
+UpdateMicroButtonsParent(frame)
 
 local function CheckFade(self, elapsed)
 	local mouseactive
@@ -36,7 +36,7 @@ local function CheckFade(self, elapsed)
 
 	if C.actionbar.micromenu_mouseover ~= true then return end
 
-	if MicroAnchor.mouseover == true then
+	if frame.mouseover == true then
 		mouseactive = true
 		if GameTooltip:IsShown() then
 			GameTooltip:Hide()
@@ -44,18 +44,18 @@ local function CheckFade(self, elapsed)
 	end
 
 	if mouseactive == true then
-		if MicroAnchor.shown ~= true then
-			MicroAnchor:SetAlpha(1)
-			MicroAnchor.shown = true
+		if frame.shown ~= true then
+			frame:SetAlpha(1)
+			frame.shown = true
 		end
 	else
-		if MicroAnchor.shown == true then
-			MicroAnchor:SetAlpha(0)
-			MicroAnchor.shown = false
+		if frame.shown == true then
+			frame:SetAlpha(0)
+			frame.shown = false
 		end
 	end
 end
-f:SetScript("OnUpdate", CheckFade)
+frame:SetScript("OnUpdate", CheckFade)
 
 for i, button in pairs(microbuttons) do
 	local m = _G[button]
@@ -63,7 +63,7 @@ for i, button in pairs(microbuttons) do
 	local normal = m:GetNormalTexture()
 	local disabled = m:GetDisabledTexture()
 
-	m:SetParent(MicroAnchor)
+	m:SetParent(frame)
 	m.SetParent = T.dummy
 	_G[button.."Flash"]:SetTexture("")
 	m:SetHighlightTexture("")
@@ -117,12 +117,11 @@ do
 	GuildMicroButtonTabard.ClearAllPoints = T.dummy
 end
 
-MicroAnchor:Point(unpack(C.position.micro_menu))
-MicroAnchor:Width(((CharacterMicroButton:GetWidth() + 4) * 9) + 12)
-MicroAnchor:Height(CharacterMicroButton:GetHeight() - 28)
-tinsert(T.MoverFrames, MicroAnchor)
+frame:Point(unpack(C.position.micro_menu))
+frame:Width(((CharacterMicroButton:GetWidth() + 4) * 9) + 12)
+frame:Height(CharacterMicroButton:GetHeight() - 28)
 
 CharacterMicroButton:ClearAllPoints()
-CharacterMicroButton:Point("BOTTOMLEFT", MicroAnchor, "BOTTOMLEFT", -2, 0)
+CharacterMicroButton:Point("BOTTOMLEFT", frame, "BOTTOMLEFT", -2, 0)
 CharacterMicroButton.SetPoint = T.dummy
 CharacterMicroButton.ClearAllPoints = T.dummy
