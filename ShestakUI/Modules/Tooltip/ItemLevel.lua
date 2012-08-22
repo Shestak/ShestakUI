@@ -5,9 +5,8 @@ if C.tooltip.enable ~= true or C.tooltip.average_lvl ~= true then return end
 --	Equipped average item level(EquippedItemLevel by Villiv)
 ----------------------------------------------------------------------------------------
 -- Additional strings
-local UPDATED = CANNOT_COOPERATE_LABEL -- '*'
-local WAITING = CONTINUED -- '...'
-local PENDING = CONTINUED .. CONTINUED -- '......'
+local WAITING = CONTINUED
+local PENDING = CONTINUED..CONTINUED
 
 -- Output prefix
 local PREFIX = STAT_FORMAT:format(STAT_AVERAGE_ITEM_LEVEL).."|Heqppditmlvl|h |h"..HIGHLIGHT_FONT_COLOR_CODE
