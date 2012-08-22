@@ -49,6 +49,9 @@ if T.author == true then
 	C["misc"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
 	C["misc"].hide_bg_spam = true
+	C["misc"].item_level = true
+	C["misc"].gem_counter = true
+	C["misc"].already_known = true
 	C["announcements"].spells = true
 	C["announcements"].flask_food = true
 	C["announcements"].toy_train = true
@@ -121,6 +124,8 @@ if T.name == "Oz" then
 	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].vehicle_mouseover = true
+	C["misc"].item_level = true
+	C["misc"].gem_counter = true
 	C["announcements"].flask_food = true
 	C["automation"].resurrection = false
 	C["automation"].screenshot = true
@@ -189,6 +194,8 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["media"].pixel_font_size = 14
 	C["general"].custom_lagtolerance = true
 	C["misc"].invite_keyword = "инвайт"
+	C["misc"].item_level = true
+	C["misc"].gem_counter = true
 	C["announcements"].flask_food = true
 	C["announcements"].flask_food_auto = true
 	C["automation"].screenshot = true

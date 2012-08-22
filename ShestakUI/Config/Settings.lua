@@ -47,6 +47,9 @@ C["misc"] = {
 	["raid_tools"] = true,						-- Raid tools
 	["profession_tabs"] = true,					-- Professions tabs on tradeskill frame
 	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
+	["item_level"] = false,						-- Item level on character slot buttons
+	["gem_counter"] = false,					-- Displays how many red/blue/yellow gems you have
+	["already_known"] = false,					-- Colorizes recipes/mounts/pets that is already known
 }
 
 ----------------------------------------------------------------------------------------
