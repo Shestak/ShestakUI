@@ -52,6 +52,8 @@ L_GUI_AUTOMATION_DECLINE_DUEL = "Auto-declina i duelli"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Auto-accetta le missioni"
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto-salta i filmati"
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto-imposta il tuo ruolo"
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
+L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Restyling"
@@ -249,9 +251,11 @@ L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barre sulla destra al passaggio del mouse
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barra famiglio al passaggio del mouse (solo con la barra famiglio orizzontale)"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Nascondi la barra famiglio"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Rendi orizzontale la barra famiglio"
-L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Barre mutaforma/postura/totem al passaggio del mouse"
-L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Nascondi barra mutaforma"
+L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Barre postura al passaggio del mouse"
+L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Nascondi barra postura"
 L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Rendi orizzontale la barra postura"
+L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Dimensione benefici giocatore"

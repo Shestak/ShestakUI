@@ -52,6 +52,8 @@ L_GUI_AUTOMATION_DECLINE_DUEL = "Отмена дуэлей"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Принятие заданий(если зажат shift или alt - не работает)"
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "Пропуск видеороликов(если зажат ctrl - не работает)"
 L_GUI_AUTOMATION_AUTO_ROLE = "Выбор вашей роли(в группе/рейде)"
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
+L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"
@@ -250,9 +252,11 @@ L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Правые панели команд п
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Горизонтальная панель питомца по наведению курсора"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Скрыть панель питомца"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Переключиться на горизонтальную панель питомца"
-L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Панель стоек и тотемов по наведению курсора"
+L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Панель стоек по наведению курсора"
 L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Скрыть панель стоек"
 L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Переключиться на горизонтальную панель стоек"
+L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Размер положительных эффектов игрока"

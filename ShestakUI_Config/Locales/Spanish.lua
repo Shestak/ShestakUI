@@ -52,6 +52,8 @@ L_GUI_AUTOMATION_DECLINE_DUEL = "Auto rechazar duelos"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Auto aceptar misiones"
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
+L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Estilización"
@@ -249,9 +251,11 @@ L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barras de la derecha se muestran al pasar
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barra de mascota al pasar el ratón (sólo para la barra de mascota horizontal)"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Ocultar barra de mascota"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activar barra de mascota horizontal"
-L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Barras de Cambios de forma/Estancias/Totems al pasar el ratón"
+L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Barras de Cambios de forma/Estancias al pasar el ratón"
 L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Ocultar cambio de forma"
 L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Activar barra de estancia horizontal"
+L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Tamaño de las beneficios del jugador"

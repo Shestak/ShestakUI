@@ -20,6 +20,9 @@ local microbuttons = {
 }
 
 local frame = CreateFrame("Frame", "MicroAnchor", UIParent)
+frame:Point(unpack(C.position.micro_menu))
+frame:Width(((CharacterMicroButton:GetWidth() + 4) * 9) + 12)
+frame:Height(CharacterMicroButton:GetHeight() - 28)
 frame.shown = false
 if C.actionbar.micromenu_mouseover == true then frame:SetAlpha(0) end
 
@@ -116,10 +119,6 @@ do
 	GuildMicroButtonTabard.SetPoint = T.dummy
 	GuildMicroButtonTabard.ClearAllPoints = T.dummy
 end
-
-frame:Point(unpack(C.position.micro_menu))
-frame:Width(((CharacterMicroButton:GetWidth() + 4) * 9) + 12)
-frame:Height(CharacterMicroButton:GetHeight() - 28)
 
 CharacterMicroButton:ClearAllPoints()
 CharacterMicroButton:Point("BOTTOMLEFT", frame, "BOTTOMLEFT", -2, 0)

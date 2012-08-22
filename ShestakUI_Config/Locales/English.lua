@@ -50,6 +50,8 @@ L_GUI_AUTOMATION_DECLINE_DUEL = "Auto decline duel"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Auto accept quest"
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies"
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role"
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs"
+L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players"
 
 -- Skins options
 L_GUI_SKINS = "Stylization"
@@ -247,9 +249,11 @@ L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Right bars on mouseover"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Petbar on mouseover (only for horizontal petbar)"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Hide pet bar"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Enable horizontal pet bar"
-L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Shapeshift/Stance bars on mouseover"
-L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Hide shapeshift"
+L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Stance bar on mouseover"
+L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Hide stance bar"
 L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Enable horizontal stance bar"
+L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Player buffs size"

@@ -79,6 +79,8 @@ local function Local(o)
 	if o == "UIConfigautomationaccept_quest" then o = L_GUI_AUTOMATION_ACCEPT_QUEST end
 	if o == "UIConfigautomationskip_cinematic" then o = L_GUI_AUTOMATION_SKIP_CINEMATIC end
 	if o == "UIConfigautomationauto_role" then o = L_GUI_AUTOMATION_AUTO_ROLE end
+	if o == "UIConfigautomationcancel_bad_buffs" then o = L_GUI_AUTOMATION_CANCEL_BAD_BUFFS end
+	if o == "UIConfigautomationtab_binder" then o = L_GUI_AUTOMATION_TAB_BINDER end
 
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
@@ -286,6 +288,8 @@ local function Local(o)
 	if o == "UIConfigactionbarshapeshift_mouseover" then o = L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER end
 	if o == "UIConfigactionbarshapeshift_hide" then o = L_GUI_ACTIONBAR_SHAPESHIFT_HIDE end
 	if o == "UIConfigactionbarshapeshift_horizontal" then o = L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL end
+	if o == "UIConfigactionbarmicromenu" then o = L_GUI_ACTIONBAR_MICROMENU end
+	if o == "UIConfigactionbarmicromenu_mouseover" then o = L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER end
 
 	-- Auras/Buffs/Debuffs
 	if o == "UIConfigaura" then o = BUFFOPTIONS_LABEL end

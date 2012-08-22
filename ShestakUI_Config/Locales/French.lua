@@ -52,6 +52,8 @@ L_GUI_AUTOMATION_DECLINE_DUEL = "Décliner les duels automatiquement"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Accepter les quêtes automatiquement"
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
+L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Personalisation d'addon"
@@ -252,6 +254,8 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activer la barre du familier horizontale"
 L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Changeforme/Posture/barre de totems en 'mouseover'"
 L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Cacher changeforme"
 L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Activer la barre de posture horizontale"
+L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Taille des buffs du joueur"

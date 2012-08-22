@@ -52,6 +52,8 @@ L_GUI_AUTOMATION_DECLINE_DUEL = "自动取消决斗"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "自动接受任务"
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
+L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "风格化"
@@ -252,6 +254,8 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "打开横向宠物动作条"
 L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "鼠标划过时显示变身/姿态/图腾快捷列"
 L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "隐藏变身/姿态/图腾动作条"
 L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "横向显示变身/姿态动作条"
+L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "玩家Buffs图标大小"
