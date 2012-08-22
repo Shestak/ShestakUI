@@ -40,6 +40,7 @@ L_MISC_BUY_STACK = "Alt-右键点击购买一叠"
 L_MISC_ONECLICK_BUYOUT = "Shift-左键,不弹出确认框体直接购买"
 L_MISC_ONECLICK_BID = "Shift-左鍵,不弹出确认框体直接竞标"
 L_MISC_UI_OUTDATED = "ShestakUI 版本已过期，请至 www.shestak.org 下载最新版"
+L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"

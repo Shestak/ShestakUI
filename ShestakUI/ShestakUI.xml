@@ -85,6 +85,7 @@
 	<Script file="Modules\Misc\HealerIconNameplate.lua"/>
 	<Script file="Modules\Misc\OneClickDisenchanting.lua"/>
 	<Script file="Modules\Misc\SumAucBuyouts.lua"/>
+	<Script file="Modules\Misc\MouseoverMarking.lua"/>
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>
@@ -165,6 +166,7 @@
 	<Script file="Modules\Chat\RealLinks.lua"/>
 	<Script file="Modules\Chat\ArmoryLink.lua"/>
 	<Script file="Modules\Chat\SpamageMeters.lua"/>
+	<Script file="Modules\Misc\ChatBind.lua"/>
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
