@@ -68,8 +68,6 @@
 	<Script file="Modules\Misc\Panels.lua"/>
 	<Script file="Modules\Misc\Author.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
-	<Script file="Modules\Misc\SelfBuffs.lua"/>
-	<Script file="Modules\Misc\RaidBuffs.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>
 	<Script file="Modules\Misc\AddOnsList.lua"/>
 	<Script file="Modules\Misc\Misc.lua"/>
@@ -144,6 +142,8 @@
 	<Script file="Modules\Buffs\AuraSource.lua"/>
 	<Script file="Modules\Buffs\BuffFrame.lua"/>
 	<Script file="Modules\Buffs\ConsolidatedBuffDuration.lua"/>
+	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
+	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
 
 	<Script file="Modules\UnitFrames\Tags.lua"/>
 	<Script file="Modules\UnitFrames\Layout.lua"/>
