@@ -26,6 +26,9 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "任務/道具自動按鈕"
 L_GUI_MISC_RAID_TOOLS = "團隊工具"
 L_GUI_MISC_PROFESSION_TABS = "在專業和商業框體顯示專業技能按鈕"
 L_GUI_MISC_HIDE_BG_SPAM = "在戰場内移除Boss表情信息"
+L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
+L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
+L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"

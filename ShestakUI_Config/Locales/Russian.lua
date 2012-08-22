@@ -26,6 +26,9 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Кнопка квестовых(список) п�
 L_GUI_MISC_RAID_TOOLS = "Инструменты рейда"
 L_GUI_MISC_PROFESSION_TABS = "Закладки всех профессий у окна торговли/профессии"
 L_GUI_MISC_HIDE_BG_SPAM = "Скрывать сообщения в центре экрана на полях боя"
+L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
+L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
+L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"

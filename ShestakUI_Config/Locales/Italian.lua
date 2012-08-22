@@ -26,6 +26,9 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Bottone automatico missione/oggetto"
 L_GUI_MISC_RAID_TOOLS = "Strumenti per le incursioni"
 L_GUI_MISC_PROFESSION_TABS = "Visualizza la linguetta delle professioni sul riquadro abilità di commercio/mercante"
 L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei bosses durante i Campi di Battaglia"
+L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
+L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
+L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"

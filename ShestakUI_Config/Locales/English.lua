@@ -24,6 +24,9 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button"
 L_GUI_MISC_RAID_TOOLS = "Raid tools"
 L_GUI_MISC_PROFESSION_TABS = "Professions tabs on tradeskill/trade frames"
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG"
+L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons"
+L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have"
+L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Announcements"
