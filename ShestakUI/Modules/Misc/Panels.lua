@@ -66,7 +66,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Stance bar panel
 ----------------------------------------------------------------------------------------
-if not C.actionbar.shapeshift_hide then
+if not C.actionbar.stancebar_hide then
 	local shiftanchor = CreateFrame("Frame", "ShapeShiftBarAnchor", UIParent)
 	shiftanchor:RegisterEvent("PLAYER_LOGIN")
 	shiftanchor:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -75,7 +75,7 @@ if not C.actionbar.shapeshift_hide then
 	shiftanchor:SetScript("OnEvent", function(self, event, ...)
 		local forms = GetNumShapeshiftForms()
 		if forms > 0 then
-			if C.actionbar.shapeshift_horizontal ~= true then
+			if C.actionbar.stancebar_horizontal ~= true then
 				shiftanchor:Width(C.actionbar.button_size)
 				shiftanchor:Height((C.actionbar.button_size * forms) + ((C.actionbar.button_space * forms) - 3 ))
 				shiftanchor:Point("TOPLEFT", _G["StanceButton1"], "TOPLEFT")

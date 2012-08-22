@@ -26,7 +26,7 @@ if C.actionbar.bottombars < 1 then
 end
 
 if C.actionbar.petbar_horizontal == true then
-	C.actionbar.shapeshift_horizontal = false
+	C.actionbar.stancebar_horizontal = false
 end
 
 if C.error.black == true and C.error.white == true then

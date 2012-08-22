@@ -5,7 +5,7 @@ if C.actionbar.enable ~= true then return end
 --	Setup Stance Bar by Tukz
 ----------------------------------------------------------------------------------------
 local ShiftHolder = CreateFrame("Frame", "ShiftHolder", UIParent)
-if C.actionbar.shapeshift_horizontal == true then
+if C.actionbar.stancebar_horizontal == true then
 	ShiftHolder:Point(unpack(C.position.stance_bar))
 	ShiftHolder:Width((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
 	ShiftHolder:Height(C.actionbar.button_size)
@@ -24,7 +24,7 @@ local ShapeShiftAnchor = CreateFrame("Frame", "ShapeShiftAnchor", UIParent)
 ShapeShiftAnchor:SetAllPoints(ShiftHolder)
 
 -- Hide bar
-if C.actionbar.shapeshift_hide then ShiftHolder:Hide() return end
+if C.actionbar.stancebar_hide then ShiftHolder:Hide() return end
 
 -- Create bar
 local bar = CreateFrame("Frame", "UIShapeShift", ShiftHolder, "SecureHandlerStateTemplate")
@@ -57,14 +57,14 @@ bar:SetScript("OnEvent", function(self, event, ...)
 			button:ClearAllPoints()
 			button:SetParent(self)
 			if i == 1 then
-				if C.actionbar.shapeshift_horizontal == true then
+				if C.actionbar.stancebar_horizontal == true then
 					button:Point("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
 				else
 					button:Point("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
 				end
 			else
 				local previous = _G["StanceButton"..i-1]
-				if C.actionbar.shapeshift_horizontal == true then
+				if C.actionbar.stancebar_horizontal == true then
 					button:Point("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
 				else
 					button:Point("TOP", previous, "BOTTOM", 0, -C.actionbar.button_space)
@@ -80,7 +80,7 @@ bar:SetScript("OnEvent", function(self, event, ...)
 		RegisterStateDriver(self, "visibility", States[T.class] or "hide")
 		local function movestance()
 			if not InCombatLockdown() then
-				if C.actionbar.shapeshift_horizontal == true then
+				if C.actionbar.stancebar_horizontal == true then
 					StanceButton1:Point("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
 				else
 					StanceButton1:Point("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
@@ -108,7 +108,7 @@ bar:SetScript("OnEvent", function(self, event, ...)
 end)
 
 -- Mouseover bar
-if C.actionbar.shapeshift_mouseover == true then
+if C.actionbar.stancebar_mouseover == true then
 	ShapeShiftBarAnchor:SetAlpha(0)
 	ShapeShiftBarAnchor:SetScript("OnEnter", function() ShapeShiftMouseOver(1) end)
 	ShapeShiftBarAnchor:SetScript("OnLeave", function() ShapeShiftMouseOver(0) end)

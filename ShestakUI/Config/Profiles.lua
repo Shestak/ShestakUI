@@ -335,7 +335,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["combattext"].enable = false
 		C["chat"].width = 380
 		C["chat"].height = 150
-		C["actionbar"].shapeshift_mouseover = false
+		C["actionbar"].stancebar_mouseover = false
 		C["unitframe"].show_boss = false
 		C["raidframe"].raid_tanks = false
 		C["stats"].experience = false

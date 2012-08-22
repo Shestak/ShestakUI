@@ -337,9 +337,9 @@ C["actionbar"] = {
 	["petbar_hide"] = false,					-- Hide pet bar
 	["petbar_horizontal"] = false,				-- Enable horizontal pet bar
 	-- Stance bar
-	["shapeshift_mouseover"] = true,			-- Stance bar on mouseover
-	["shapeshift_hide"] = false,				-- Hide stance bar
-	["shapeshift_horizontal"] = true,			-- Enable horizontal stance bar
+	["stancebar_mouseover"] = true,				-- Stance bar on mouseover
+	["stancebar_hide"] = false,					-- Hide stance bar
+	["stancebar_horizontal"] = true,			-- Enable horizontal stance bar
 	-- MicroMenu
 	["micromenu"] = false,						-- Enable micro menu
 	["micromenu_mouseover"] = false,			-- Micro menu on mouseover
