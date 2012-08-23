@@ -33,12 +33,9 @@ local stabledruid = {
 GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 	local unit = (select(2, self:GetUnit())) or (GetMouseFocus() and GetMouseFocus():GetAttribute("unit")) or (UnitExists("mouseover") and "mouseover") or nil
 	if unit then
-		local name = UnitName(unit)
 		if UnitIsPlayer(unit) and UnitFactionGroup(unit) == UnitFactionGroup("player") then
 			for i = 1, 40 do
-				if select(11, UnitAura(unit, i, "HELPFUL")) == 110309 then
-					return
-				end
+				if select(11, UnitAura(unit, i, "HELPFUL")) == 110309 then return end
 			end
 			local uclass = select(2, UnitClass(unit))
 			local spec = SPEC_CORE_ABILITY_TEXT[select(1, GetSpecializationInfo(GetSpecialization()))]

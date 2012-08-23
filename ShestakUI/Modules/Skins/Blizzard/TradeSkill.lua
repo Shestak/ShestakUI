@@ -13,7 +13,6 @@ local function LoadSkin()
 	TradeSkillDetailScrollChildFrame:StripTextures()
 
 	TradeSkillFrame:SetTemplate("Transparent")
-	TradeSkillFrame:Height(TradeSkillFrame:GetHeight() + 12)
 	TradeSkillRankFrame:StripTextures()
 	TradeSkillRankFrame:CreateBackdrop("Overlay")
 	TradeSkillRankFrame:SetStatusBarTexture(C.media.texture)
