@@ -384,7 +384,7 @@ C["unitframe"] = {
 	["icons_combo_point"] = true,				-- Rogue|Druid combo point icons
 	["icons_combo_point_new"] = true,			-- New style for combo points
 	-- Portraits
-	["portrait_enable"] = true,					-- Enable player/target portraits
+	["portrait_enable"] = false,				-- Enable player/target portraits
 	["portrait_classcolor_border"] = false,		-- Enable classcolor border
 	["portrait_height"] = 27,					-- Portrait height
 	["portrait_width"] = 20,					-- Portrait width

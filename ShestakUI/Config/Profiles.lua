@@ -124,7 +124,6 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["aura"].tot_debuffs = true
 	C["aura"].cast_by = true
 	C["unitframe"].icons_pvp = true
-	C["unitframe"].portrait_enable = false
 	C["unitframe"].alternative_portraits = true
 	C["unitframe"].plugins_gcd = true
 	C["unitframe"].plugins_smooth_bar = true
