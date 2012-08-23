@@ -26,7 +26,6 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Self
 			-- Bone Shield
 			{spellID = 49222, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Blood
@@ -293,10 +292,6 @@ Filger_Spells = {
 			-- Predator's Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Weapons
-			-- Physical Agility
-			-- Caster General
-
 			-- Trinkets
 			-- General
 			-- PvP Trinkets (Health, Use)
@@ -512,7 +507,6 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Self
 			-- Deterrence
 			{spellID = 19263, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rapid Fire
@@ -523,8 +517,6 @@ Filger_Spells = {
 			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spirit Mend
 			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Other
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -550,9 +542,6 @@ Filger_Spells = {
 			{spellID = 19623, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mend Pet
 			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
-
-			-- Weapons
-			-- Physical Agility
 
 			-- Trinkets
 			-- General
@@ -788,9 +777,6 @@ Filger_Spells = {
 			-- Pyroblast!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Weapons
-			-- Caster General
-
 			-- Trinkets
 			-- General
 			-- PvP Trinkets (Health, Use)
@@ -815,8 +801,6 @@ Filger_Spells = {
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Item Sets
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -989,7 +973,6 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Self
 			-- Fortifying Brew
 			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
@@ -1179,7 +1162,6 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Self
 			-- Divine Shield
 			{spellID = 642, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inquisition
@@ -1204,8 +1186,6 @@ Filger_Spells = {
 			{spellID = 114163, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sacred Shield
 			{spellID = 20925, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-
-			-- Other
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1462,9 +1442,6 @@ Filger_Spells = {
 			-- Chakra: Chastise
 			{spellID = 81209, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Weapons
-			-- Caster General
-
 			-- Trinkets
 			-- General
 			-- PvP Trinkets (Health, Use)
@@ -1665,7 +1642,6 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Self
 			-- Sprint
 			{spellID = 2983, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Adrenaline Rush
@@ -1740,8 +1716,6 @@ Filger_Spells = {
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Other
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1933,9 +1907,6 @@ Filger_Spells = {
 			{spellID = 118522, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tidal Waves
 			{spellID = 53390, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Weapons
-			-- Caster General
 
 			-- Trinkets
 			-- General
@@ -2135,7 +2106,6 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Self
 			-- Burning Soul
 			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Knowledge
@@ -2175,9 +2145,6 @@ Filger_Spells = {
 			{spellID = 108559, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadow Trance
 			{spellID = 17941, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Weapons
-			-- Caster General
 
 			-- Trinkets
 			-- General
@@ -2244,20 +2211,21 @@ Filger_Spells = {
 			BarWidth = 186,
 			Position = {unpack(Filger_Settings.target_bar)},
 
-			-- Corruption
-			{spellID = 172, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Immolate
-			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Agony
-			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Doom
 			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Agony
+			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Corruption
+			{spellID = 172, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Seed of Corruption
+			{spellID = 27243, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Immolate
+			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Haunt
 			{spellID = 48181, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Seed of Corruption
-			{spellID = 27243, unitID = "target", caster = "player", filter = "DEBUFF"},
+
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2309,8 +2277,6 @@ Filger_Spells = {
 			{spellID = 48020, filter = "CD"},
 			-- Soulshatter
 			{spellID = 29858, filter = "CD"},
-			-- Ritual of Summoning
-			{spellID = 698, filter = "CD"},
 
 			-- Racials
 			-- Every Man for Himself (Human)
