@@ -57,6 +57,7 @@ if C.reminder.raid_buffs_enable == true then
 		Spell5Buff = {	-- Spell Power
 			77747,	-- Burning Wrath
 			109773,	-- Dark Intent
+			126309,	-- Still Water
 			61316,	-- Dalaran Brilliance
 			1459,	-- Arcane Brilliance
 		}
@@ -78,6 +79,7 @@ if C.reminder.raid_buffs_enable == true then
 			30809,	-- Unleashed Rage
 			113742,	-- Swiftblade's Cunning
 			128432,	-- Cackling Howl
+			128433,	-- Serpent's Swiftness
 			55610,	-- Unholy Aura
 		}
 	end
@@ -224,9 +226,9 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
-					19740,	-- Blessing of Might
 					117666,	-- Legacy of the Emperor
 					90363,	-- Embrace of the Shale Spider
+					19740,	-- Blessing of Might
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -237,10 +239,10 @@ if C.reminder.solo_buffs_enable == true then
 					19740,	-- Blessing of Might
 				},
 				["negate_spells"] = {
-					20217,	-- Blessing of Kings
 					116956,	-- Grace of Air
 					93435,	-- Roar of Courage
 					127830,	-- Spirit Beast Blessing
+					20217,	-- Blessing of Kings
 				},
 				["combat"] = true,
 				["instance"] = true,
