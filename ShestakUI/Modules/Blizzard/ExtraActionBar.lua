@@ -9,7 +9,7 @@ ExtraActionBarFrame:ClearAllPoints()
 ExtraActionBarFrame:SetPoint("BOTTOM", 0, 350)
 ExtraActionBarFrame:SetMovable(true)
 ExtraActionBarFrame:SetUserPlaced(true)
-ExtraActionBarFrame:SetFrameStrata("HIGH")
+ExtraActionBarFrame:SetFrameStrata("MEDIUM")
 ExtraActionBarFrame:SetScript("OnMouseDown", function()
 	if IsAltKeyDown() or IsShiftKeyDown() then
 		ExtraActionBarFrame:ClearAllPoints()
