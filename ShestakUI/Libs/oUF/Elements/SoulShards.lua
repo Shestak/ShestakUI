@@ -81,6 +81,7 @@ local function Visibility(self, event, unit)
 				else
 					wsb[i]:SetValue(0)
 				end
+				wsb[i]:Show()
 			end
 		end
 
@@ -126,6 +127,8 @@ local function Visibility(self, event, unit)
 			wsb[4]:Hide()
 			wsb[1]:SetWidth(wsb:GetWidth())
 		end
+
+		Update(self, nil, "player")
 	else
 		if wsb:IsShown() then 
 			wsb:Hide()
