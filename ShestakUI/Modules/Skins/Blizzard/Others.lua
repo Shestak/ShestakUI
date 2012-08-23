@@ -27,7 +27,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"StackSplitFrame",
 			"OpacityFrame",
 			"GeneralDockManagerOverflowButtonList",
-			"QueueStatusFrame"
+			"QueueStatusFrame",
+			"BasicScriptErrors"
 		}
 
 		QueueStatusFrame:StripTextures()
@@ -163,7 +164,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"RaidUtilityCloseButton",
 			"RaidUtilityDisbandButton",
 			"RaidUtilityRaidControlButton",
-			"CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton"
+			"CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton",
+			"BasicScriptErrorsButton"
 		}
 
 		for i = 1, getn(BlizzardButtons) do
