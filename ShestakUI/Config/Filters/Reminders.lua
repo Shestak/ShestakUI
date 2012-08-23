@@ -9,8 +9,6 @@ if C.reminder.raid_buffs_enable == true then
 	-- General buffs
 	T.ReminderBuffs = {
 		Flask = {
-			105617,	-- Alchemist's Flask
-			--92679,	-- Flask of Battle
 			105689,	-- Flask of Spring Blossoms
 			105694,	-- Flask of the Earth
 			105691,	-- Flask of the Warm Sun
@@ -18,13 +16,8 @@ if C.reminder.raid_buffs_enable == true then
 			105693,	-- Flask of Falling Leaves
 		},
 		BattleElixir = {
-			--[[ Scrolls
-			89343,	-- Scroll of Agility IX
-			89344,	-- Scroll of Protection IX
-			89347,	-- Scroll of Intellect IX
-			89342,	-- Scroll of Spirit IX
-			89345,	-- Scroll of Stamina IX
-			89346,	-- Scroll of Strength IX]]
+			-- Scrolls
+
 			-- Elixirs
 			105682,	-- Mad Hozen Elixir
 			105683,	-- Elixir of Weaponry

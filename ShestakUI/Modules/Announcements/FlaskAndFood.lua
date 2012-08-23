@@ -7,13 +7,13 @@ if C.announcements.flask_food ~= true then return end
 local noFood, noFlask, unitBuffs = {}, {}, {}
 
 local foods = {
-	35272,	-- Well Fed
-	44106,	-- Well Fed from Brewfest
+	104277,	-- Mogu Fish Stew
+	104272,	-- Black Pepper Ribs and Shrimp
+	104283,	-- Chun Tian Spring Rolls
+	104275,	-- Sea Mist Rice Noodles
 }
 
 local flasks = {
-	105617,	-- Alchemist's Flask
-	--92679,	-- Flask of Battle
 	105689,	-- Flask of Spring Blossoms
 	105694,	-- Flask of the Earth
 	105691,	-- Flask of the Warm Sun

@@ -1,3 +1,7 @@
+
+----------------------------------------------------------------------------------------
+--	Binding keys for mouseover marking
+----------------------------------------------------------------------------------------
 BINDING_HEADER_TAR_MARK_HEADER = L_MISC_HEADER_MARK
 BINDING_NAME_TAR_MARK_1 = BINDING_NAME_RAIDTARGET1
 BINDING_NAME_TAR_MARK_2 = BINDING_NAME_RAIDTARGET2

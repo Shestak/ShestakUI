@@ -45,8 +45,8 @@ function isGlyphed()
 	for i = 7, NUM_GLYPH_SLOTS do
 		local enabled, _, _, glyphSpellID = GetGlyphSocketInfo(i)
 		if enabled and glyphSpellID == 55673 then
-			return 15
+			return 17
 		end
 	end
-	return 10
+	return 15
 end
