@@ -106,10 +106,10 @@ T.DiminishingSpells = function()
 		[64044] = {"horror"},		-- Psychic Horror
 
 		-- Misc
-		[19503] = {"scatters"},		-- Scatter Shot
-		[31661] = {"dragons"},		-- Dragon's Breath
+		[19503] = {"scatter"},		-- Scatter Shot
+		[31661] = {"dragon"},		-- Dragon's Breath
 		[33786] = {"cyclone"},		-- Cyclone
-		[605] = {"mc"},				-- Mind Control
+		[605] = {"mind"},			-- Dominate Mind
 		[19185] = {"entrapment"},	-- Entrapment
 	}
 end
@@ -123,12 +123,12 @@ T.DiminishingIcons = function()
 		["entrapment"] = select(3, GetSpellInfo(19185)),
 		["fear"] = select(3, GetSpellInfo(8122)),
 		["horror"] = select(3, GetSpellInfo(64044)),
-		["mc"] = select(3, GetSpellInfo(605)),
+		["mind"] = select(3, GetSpellInfo(605)),
 		["rndroot"] = select(3, GetSpellInfo(12489)),
 		["rndstun"] = select(3, GetSpellInfo(64343)),
 		["ctrlroot"] = select(3, GetSpellInfo(122)),
-		["scatters"] = select(3, GetSpellInfo(19503)),
-		["dragons"] = select(3, GetSpellInfo(31661)),
+		["scatter"] = select(3, GetSpellInfo(19503)),
+		["dragon"] = select(3, GetSpellInfo(31661)),
 		["silence"] = select(3, GetSpellInfo(55021)),
 	}
 end

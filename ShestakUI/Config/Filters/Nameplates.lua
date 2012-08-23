@@ -11,7 +11,6 @@ local function SpellName(id)
 	return name
 end
 
--- Nameplates use these
 T.DebuffWhiteList = {
 	-- Death Knight
 	[SpellName(115001)] = true,	-- Remorseless Winter
@@ -22,7 +21,6 @@ T.DebuffWhiteList = {
 	[SpellName(2637)] = true,	-- Hibernate
 	[SpellName(339)] = true,	-- Entangling Roots
 	[SpellName(80964)] = true,	-- Skull Bash
-	[SpellName(78675)] = true,	-- Solar Beam
 	[SpellName(8921)] = true,	-- Moonfire
 	[SpellName(93402)] = true,	-- Sunfire
 	[SpellName(58180)] = true,	-- Infected Wounds
@@ -46,7 +44,6 @@ T.DebuffWhiteList = {
 	[SpellName(853)] = true,	-- Hammer of Justice
 	[SpellName(105593)] = true,	-- Fist of Justice
 	-- Priest
-	[SpellName(605)] = true,	-- Mind Control
 	[SpellName(64044)] = true,	-- Psychic Horror
 	[SpellName(8122)] = true,	-- Psychic Scream
 	[SpellName(9484)] = true,	-- Shackle Undead

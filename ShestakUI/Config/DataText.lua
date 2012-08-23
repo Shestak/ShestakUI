@@ -2,7 +2,7 @@
 
 ----------------------------------------------------------------------------------------
 --	LiteStats configuration file
---	BACKUP YOUR CHANGES TO THIS FILE BEFORE UPDATING!
+--	BACKUP THIS FILE BEFORE UPDATING!
 ----------------------------------------------------------------------------------------
 LPSTAT_FONT = {
 	font = C.font.stats_font,				-- Path to your font

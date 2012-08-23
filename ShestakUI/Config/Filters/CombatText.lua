@@ -6,11 +6,12 @@ if C.combattext.enable ~= true then return end
 --	Example: Cleave -> http://www.wowhead.com/spell=845
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
--- Outgoing healing filter
+-- General filter outgoing healing
 if C.combattext.healing then
 	T.healfilter = {}
 end
 
+-- General merge outgoing damage
 if C.combattext.merge_aoe_spam then
 	T.aoespam = {}
 	T.aoespam[120687] = true		-- Stormlash

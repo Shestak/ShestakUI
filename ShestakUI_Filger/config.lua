@@ -176,7 +176,7 @@ Filger_Spells = {
 			-- Unholy Blight
 			{spellID = 115989, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Every Man for Himself (Human)
 			{spellID = 59752, filter = "CD"},
 			-- Stoneform (Dwarf)
@@ -467,7 +467,7 @@ Filger_Spells = {
 			-- Incarnation: Tree of Life
 			{spellID = 33891, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Shadowmeld (Night Elf)
 			{spellID = 58984, filter = "CD"},
 			-- Darkflight (Worgen)
@@ -683,7 +683,7 @@ Filger_Spells = {
 			-- Web Wrap (exotic)
 			{spellID = 96201, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Every Man for Himself (Human)
 			{spellID = 59752, filter = "CD"},
 			-- Stoneform (Dwarf)
@@ -915,7 +915,7 @@ Filger_Spells = {
 			-- Flamestrike
 			{spellID = 2120, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Every Man for Himself (Human)
 			{spellID = 59752, filter = "CD"},
 			-- Stoneform (Dwarf)
@@ -1112,7 +1112,7 @@ Filger_Spells = {
 			-- Touch of Death
 			{spellID = 115080, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Every Man for Himself (Human)
 			{spellID = 59752, filter = "CD"},
 			-- Stoneform (Dwarf)
@@ -1348,7 +1348,7 @@ Filger_Spells = {
 			-- Cleanse
 			{spellID = 4987, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Every Man for Himself (Human)
 			{spellID = 59752, filter = "CD"},
 			-- Stoneform (Dwarf)
@@ -1586,7 +1586,7 @@ Filger_Spells = {
 			-- Void Tendrils
 			{spellID = 108920, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Every Man for Himself (Human)
 			{spellID = 59752, filter = "CD"},
 			-- Stoneform (Dwarf)
@@ -1814,7 +1814,7 @@ Filger_Spells = {
 			-- Dismantle
 			{spellID = 51722, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Every Man for Himself (Human)
 			{spellID = 59752, filter = "CD"},
 			-- Stoneform (Dwarf)
@@ -2062,7 +2062,7 @@ Filger_Spells = {
 			-- Ascendance
 			{spellID = 114049, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Stoneform (Dwarf)
 			{spellID = 20594, filter = "CD"},
 			-- Gift of the Naaru (Draenei)
@@ -2225,7 +2225,6 @@ Filger_Spells = {
 			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Haunt
 			{spellID = 48181, unitID = "target", caster = "player", filter = "DEBUFF"},
-
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2278,7 +2277,7 @@ Filger_Spells = {
 			-- Soulshatter
 			{spellID = 29858, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Every Man for Himself (Human)
 			{spellID = 59752, filter = "CD"},
 			-- Stoneform (Dwarf)
@@ -2477,7 +2476,7 @@ Filger_Spells = {
 			-- Demoralizing Shout
 			{spellID = 1160, filter = "CD"},
 
-			-- Racials
+			-- Racial
 			-- Every Man for Himself (Human)
 			{spellID = 59752, filter = "CD"},
 			-- Stoneform (Dwarf)
@@ -2890,7 +2889,7 @@ Filger_Spells = {
 			-- Colossus Smash
 			{spellID = 86346, unitID = "player", caster = "all", filter = "DEBUFF"},
 
-			-- Racials
+			-- Racial
 			-- War Stomp
 			{spellID = 20549, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Quaking Palm
@@ -3189,7 +3188,7 @@ Filger_Spells = {
 			-- Silenced (Gag Order)
 			{spellID = 18498, unitID = "target", caster = "all", filter = "DEBUFF"},
 
-			-- Racials
+			-- Racial
 			-- War Stomp
 			{spellID = 20549, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Quaking Palm
