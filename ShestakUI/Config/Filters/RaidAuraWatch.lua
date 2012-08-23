@@ -148,7 +148,6 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Tsulong
 			SpellName(122752),	-- Shadow Breath
 			SpellName(123011),	-- Terrorize
-			SpellName(116161),	-- Crossed Over
 			-- Lei Shi
 			SpellName(123121),	-- Spray
 			-- Sha of Fear
