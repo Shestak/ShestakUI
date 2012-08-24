@@ -103,8 +103,11 @@ if T.author == true then
 	else
 		C["map"].explore_map = true
 	end
-	if T.class == "PRIEST" then
-		C["announcements"].lightwell = true
+	if T.class == "DRUID" or T.class == "PRIEST" then
+		C["misc"].click_cast = true
+		if T.class == "PRIEST" then
+			C["announcements"].lightwell = true
+		end
 	end
 end
 

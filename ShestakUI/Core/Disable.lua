@@ -108,3 +108,7 @@ end
 if IsAddOnLoaded("GnomishVendorShrinker") then
 	C.misc.already_known = false
 end
+
+if IsAddOnLoaded("Clique") then
+	C.misc.click_cast = false
+end

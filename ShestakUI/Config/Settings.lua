@@ -52,6 +52,7 @@ C["misc"] = {
 	["already_known"] = false,					-- Colorizes recipes/mounts/pets that is already known
 	["disenchanting"] = false,					-- One-click Milling, Prospecting and Disenchanting
 	["sum_buyouts"] = false,					-- Sum upp all current auctions
+	["click_cast"] = false,						-- Simple click2cast spell binder
 }
 
 ----------------------------------------------------------------------------------------

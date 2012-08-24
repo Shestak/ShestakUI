@@ -38,6 +38,7 @@ L_MISC_ONECLICK_BUYOUT = "Shift-Click to buyout the selected item without confir
 L_MISC_ONECLICK_BID = "Shift-Click to bid on the selected item without confirmation"
 L_MISC_UI_OUTDATED = "Your version of ShestakUI is out of date. You can download the latest version from www.shestak.org"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons"
+L_MISC_BINDER_OPEN = "Mouse Bindings"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disband Group"

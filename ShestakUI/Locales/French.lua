@@ -41,6 +41,7 @@ L_MISC_ONECLICK_BUYOUT = "Shift-Click pour acheter l'objet sélectionné sans co
 L_MISC_ONECLICK_BID = "Shift-Click pour enchérir sur l'objet sélectionné sans confirmation"
 L_MISC_UI_OUTDATED = "Une version plus récente de ShestakUI est disponible. Vous pouvez télécharger la dernière version sur www.shestak.org"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
+L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Fin du raid"

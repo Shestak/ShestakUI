@@ -41,6 +41,7 @@ L_MISC_ONECLICK_BUYOUT = "Shift-左鍵,不彈出確認窗口直接購買"
 L_MISC_ONECLICK_BID = "Shift-左鍵,不彈出確認窗口直接競標"
 L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
+L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
