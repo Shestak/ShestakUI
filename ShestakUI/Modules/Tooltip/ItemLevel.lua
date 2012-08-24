@@ -146,7 +146,7 @@ do
 
 		if isReady then
 			cache[guid] = level
-			return SetTipText(level.." ("..((myLevel > 0) and "|cffff0000+" or "|cff00ff00")..myLevel.."|r|cffffffff)|r")
+			return SetTipText(level.." ("..((myLevel > 0) and "|cff00ff00+" or "|cffff0000")..myLevel.."|r|cffffffff)|r")
 		end
 
 		level = cachedLevel or level
