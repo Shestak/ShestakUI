@@ -73,7 +73,7 @@ if IsAddOnLoaded("Afflicted3") or IsAddOnLoaded("InterruptBar") or IsAddOnLoaded
 	C.enemycooldown.enable = false
 end
 
-if IsAddOnLoaded("TipTac") or IsAddOnLoaded("FreebTip") then
+if IsAddOnLoaded("TipTac") or IsAddOnLoaded("FreebTip") or IsAddOnLoaded("bTooltip") or IsAddOnLoaded("PhoenixTooltip") or IsAddOnLoaded("Icetip") then
 	C.tooltip.enable = false
 end
 
@@ -81,7 +81,7 @@ if IsAddOnLoaded("Gladius") then
 	C.unitframe.show_arena = false
 end
 
-if IsAddOnLoaded("Omen") or IsAddOnLoaded("sThreatMeter2") or IsAddOnLoaded("SkadaThreat") then
+if IsAddOnLoaded("Omen") or IsAddOnLoaded("sThreatMeter2") or IsAddOnLoaded("SkadaThreat") or IsAddOnLoaded("RecountThreat") then
 	C.threat.enable = false
 end
 
@@ -109,6 +109,6 @@ if IsAddOnLoaded("GnomishVendorShrinker") then
 	C.misc.already_known = false
 end
 
-if IsAddOnLoaded("Clique") then
+if IsAddOnLoaded("Clique") or IsAddOnLoaded("sBinder") then
 	C.misc.click_cast = false
 end
