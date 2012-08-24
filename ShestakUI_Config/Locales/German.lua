@@ -31,6 +31,7 @@ L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Ne
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
 L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
 L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
+L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"

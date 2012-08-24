@@ -31,6 +31,7 @@ L_GUI_MISC_GEM_COUNTER = "Отображать количество вставл
 L_GUI_MISC_ALREADY_KNOWN = "Помечать цветом известные рецепты/спутников"
 L_GUI_MISC_DISENCHANTING = "Распылять, измельчать и просеивать одним нажатием"
 L_GUI_MISC_SUM_BUYOUTS = "Выводить сумму ваших аукционов"
+L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"

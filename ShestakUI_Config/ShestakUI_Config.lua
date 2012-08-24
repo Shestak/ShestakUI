@@ -58,6 +58,7 @@ local function Local(o)
 	if o == "UIConfigmiscalready_known" then o = L_GUI_MISC_ALREADY_KNOWN end
 	if o == "UIConfigmiscdisenchanting" then o = L_GUI_MISC_DISENCHANTING end
 	if o == "UIConfigmiscsum_buyouts" then o = L_GUI_MISC_SUM_BUYOUTS end
+	if o == "UIConfigmiscclick_cast" then o = L_GUI_MISC_CLICK_CAST end
 
 	-- Announcements options
 	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end
