@@ -73,6 +73,8 @@ elseif T.class == "HUNTER" then
 		T.aoespam[53301] = true		-- Explosive Shot
 		T.aoespam[63468] = true		-- Piercing Shots
 		T.aoespam[118459] = true	-- Beast Cleave
+		T.aoespam[120699] = true	-- Lynx Rush
+		T.aoespam[131900] = true	-- A Murder of Crows
 		T.aoespam[34655] = true		-- Deadly Poison (Snake)
 	end
 elseif T.class == "MAGE" then
