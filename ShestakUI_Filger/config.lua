@@ -276,9 +276,9 @@ Filger_Spells = {
 
 			-- Buffs
 			-- Eclipse (Lunar)
-			{spellID = 48518, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 48518, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Eclipse (Solar)
-			{spellID = 48517, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 48517, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shooting Stars
 			{spellID = 93400, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lunar Shower
@@ -1397,9 +1397,9 @@ Filger_Spells = {
 			-- Borrowed Time
 			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Fire
-			--{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Will
-			--{spellID = 73413, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 73413, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Archangel
 			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Archangel
@@ -1747,7 +1747,7 @@ Filger_Spells = {
 			-- Find Weakness
 			{spellID = 91021, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Smoke Bomb
-			--{spellID = 76577, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--OLD{spellID = 76577, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Deadly Poison
 			{spellID = 2818, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Mind-numbing Poison
@@ -2920,7 +2920,7 @@ Filger_Spells = {
 			-- Lichborne
 			{spellID = 49039, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Bone shield
-			--{spellID = 49222, unitID = "target", caster = "all", filter = "BUFF"},
+			--OLD{spellID = 49222, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Icebound Fortitude
 			{spellID = 48792, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pillar of Frost
@@ -3135,9 +3135,9 @@ Filger_Spells = {
 			-- Spiritwalker's Grace
 			{spellID = 79206, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Earth Shield
-			--{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
+			--OLD{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Mana Tide
-			--{spellID = 16191, unitID = "target", caster = "all", filter = "BUFF"},
+			--OLD{spellID = 16191, unitID = "target", caster = "all", filter = "BUFF"},
 
 			-- Hex
 			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},
