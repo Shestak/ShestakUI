@@ -2,7 +2,7 @@
 
 ----------------------------------------------------------------------------------------
 --	LitePanels configuration file
---	BACKUP YOUR CHANGES TO THIS FILE BEFORE UPDATING!
+--	BACKUP THIS FILE BEFORE UPDATING!
 ----------------------------------------------------------------------------------------
 lpanels:CreateLayout("Load For All", {
 
