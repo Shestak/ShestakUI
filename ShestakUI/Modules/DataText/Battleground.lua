@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.stats.battleground == true then return end
+if C.stats.battleground ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	BGScore(by Elv22, edited by Tukz)

@@ -50,8 +50,6 @@ end
 ----------------------------------------------------------------------------------------
 --	Auto invite by whisper(by Tukz)
 ----------------------------------------------------------------------------------------
-if not SavedOptionsPerChar then SavedOptionsPerChar = {} end
-if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
 local ainvkeyword = C.misc.invite_keyword
 
 local autoinvite = CreateFrame("Frame")

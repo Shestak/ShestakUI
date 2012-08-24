@@ -263,7 +263,9 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	-- Create empty CVar if they doesn't exist
 	if SavedOptions == nil then SavedOptions = {} end
 	if SavedPositions == nil then SavedPositions = {} end
+	if SavedAddonProfiles == nil then SavedAddonProfiles = {} end
 	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
+	if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
 
 	if T.getscreenwidth < 1024 then
 		SetCVar("useUiScale", 0)

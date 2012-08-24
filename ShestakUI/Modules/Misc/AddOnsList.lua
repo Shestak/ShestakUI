@@ -58,8 +58,6 @@ end
 
 function AddonManager:LoadProfileWindow()
 	local self = AddonManager
-	if not SavedAddonProfiles then SavedAddonProfiles = {} end
-
 	if self.ProfileWindow then ToggleFrame(self.ProfileWindow) return end
 
 	local window = CreateFrame("Frame", "AddonManagerProfileWindow", self)

@@ -66,7 +66,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Stance bar panel
 ----------------------------------------------------------------------------------------
-if not C.actionbar.stancebar_hide then
+if C.actionbar.stancebar_hide ~= true then
 	local shiftanchor = CreateFrame("Frame", "ShapeShiftBarAnchor", UIParent)
 	shiftanchor:RegisterEvent("PLAYER_LOGIN")
 	shiftanchor:RegisterEvent("PLAYER_ENTERING_WORLD")

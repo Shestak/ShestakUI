@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.raidcooldown.enable == true then return end
+if C.raidcooldown.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Raid cooldowns(alRaidCD by Allez)
