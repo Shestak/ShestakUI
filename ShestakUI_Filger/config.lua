@@ -3145,6 +3145,10 @@ Filger_Spells = {
 			{spellID = 118905, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warlock
+			-- Unending Resolve
+			{spellID = 104773, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Dark Bargain
+			{spellID = 110913, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Soulstone
 			{spellID = 20707, unitID = "target", caster = "all", filter = "BUFF"},
 

@@ -2,7 +2,7 @@
 if C.announcements.toy_train ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Announce Toy Train Set
+--	Announce Toy Train or Direbrew's Remote cast
 ----------------------------------------------------------------------------------------
 local train_announce = CreateFrame("Frame")
 train_announce:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
