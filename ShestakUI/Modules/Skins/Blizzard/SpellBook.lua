@@ -284,9 +284,6 @@ local function LoadSkin()
 			button.Title:SetShadowOffset(1, -1)
 		end
 	end)
-
-	-- Fix taint
-	ToggleFrame(SpellBookFrame)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

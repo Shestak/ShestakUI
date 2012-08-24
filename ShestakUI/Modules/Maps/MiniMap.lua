@@ -37,6 +37,7 @@ MinimapZoomOut:Hide()
 -- Hide Voice Chat Frame
 MiniMapVoiceChatFrame:Kill()
 VoiceChatTalkers:Kill()
+VoiceChat_Toggle = T.dummy
 
 -- Hide North texture at top
 MinimapNorthTag:SetTexture(nil)
@@ -218,6 +219,9 @@ local micromenu = {
 		ToggleRaidFrame(3)
 	end},
 	{text = MOUNTS_AND_PETS, notCheckable = 1, func = function()
+		if InCombatLockdown() then
+			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
+		end
 		TogglePetJournal()
 	end},
 	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
