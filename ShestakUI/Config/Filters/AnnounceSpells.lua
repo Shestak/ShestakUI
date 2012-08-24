@@ -14,4 +14,5 @@ T.AnnounceSpells = {
 	20484,	-- Rebirth
 	6199,	-- Raise Ally
 	20707,	-- Soulstone
+	110309,	-- Symbiosis
 }
