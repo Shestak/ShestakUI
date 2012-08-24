@@ -234,7 +234,6 @@ for i = 1, 5 do
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
-			if SavedOptionsPerChar.BottomBars == nil then SavedOptionsPerChar.BottomBars = C.actionbar.bottombars end
 			SavedOptionsPerChar.BottomBars = SavedOptionsPerChar.BottomBars + 1
 
 			if C.actionbar.rightbars > 2 then
@@ -264,7 +263,6 @@ for i = 1, 5 do
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
-			if SavedOptionsPerChar.RightBars == nil then SavedOptionsPerChar.RightBars = C.actionbar.rightbars end
 			SavedOptionsPerChar.RightBars = SavedOptionsPerChar.RightBars - 1
 
 			if C.actionbar.rightbars > 2 then
@@ -306,7 +304,6 @@ for i = 1, 5 do
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then return end
-			if SavedOptionsPerChar.BarsLocked == nil then SavedOptionsPerChar.BarsLocked = C.actionbar.toggle_mode end
 
 			if SavedOptionsPerChar.BarsLocked == true then
 				SavedOptionsPerChar.BarsLocked = false
@@ -322,7 +319,6 @@ for i = 1, 5 do
 	if i == 3 or i == 4 then
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
-			if SavedOptionsPerChar.SplitBars == nil then SavedOptionsPerChar.SplitBars = false end
 
 			if SavedOptionsPerChar.SplitBars == false then
 				SavedOptionsPerChar.SplitBars = true
