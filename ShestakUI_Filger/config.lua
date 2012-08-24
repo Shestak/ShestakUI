@@ -489,8 +489,6 @@ Filger_Spells = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Nature's Grace
-			{spellID = 16886, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
@@ -1746,8 +1744,6 @@ Filger_Spells = {
 			{spellID = 89775, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
 			-- Find Weakness
 			{spellID = 91021, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Smoke Bomb
-			--OLD{spellID = 76577, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Deadly Poison
 			{spellID = 2818, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Mind-numbing Poison
@@ -2537,11 +2533,10 @@ Filger_Spells = {
 			{spellID = 105706, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Potion of the Jade Serpent
 			{spellID = 105702, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Speed from BG
-			--{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Speed from Potion
-			--{spellID = 2379, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Speed (Potion)
+			{spellID = 2379, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Speed (BG)
+			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 
 			-- Leeroy Jenkins
 			-- Bloodlust
