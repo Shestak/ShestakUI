@@ -20,6 +20,10 @@ elseif T.client == "deDE" then
 	link = "de"
 elseif T.client == "esES" or T.client == "esMX" then
 	link = "es"
+elseif T.client == "ptBR" or T.client == "ptPT" then
+	link = "pt"
+elseif T.client == "itIT" then
+	link = "it"
 elseif T.client == "zhTW" then
 	link = "zh"
 elseif T.client == "koKR" then
