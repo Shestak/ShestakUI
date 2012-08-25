@@ -20,7 +20,7 @@ for i = 1, 12 do
 	end
 end
 
--- Hide it if needed
+-- Hide bar
 if C.actionbar.bottombars == 1 then
 	bar:Hide()
 end
