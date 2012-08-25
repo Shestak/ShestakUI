@@ -4,10 +4,10 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Setup MultiBarRight as bar #4 by Tukz
 ----------------------------------------------------------------------------------------
-local Bar4Holder = CreateFrame("Frame", "Bar4Holder", UIParent)
-Bar4Holder:SetAllPoints(RightActionBarAnchor)
-Bar4Holder:SetFrameStrata("BACKGROUND")
-MultiBarRight:SetParent(Bar4Holder)
+local bar = CreateFrame("Frame", "Bar4Holder", UIParent)
+bar:SetAllPoints(RightActionBarAnchor)
+bar:SetFrameStrata("BACKGROUND")
+MultiBarRight:SetParent(bar)
 
 for i = 1, 12 do
 	local b = _G["MultiBarRightButton"..i]
@@ -22,7 +22,7 @@ end
 
 -- Hide bar
 if C.actionbar.rightbars < 1 then
-	Bar4Holder:Hide()
+	bar:Hide()
 end
 
 -- Mouseover bar

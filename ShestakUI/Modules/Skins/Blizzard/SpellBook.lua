@@ -175,8 +175,8 @@ local function LoadSkin()
 			icon:Point("TOPLEFT", 4, -4)
 			icon:Point("BOTTOMRIGHT", -4, 4)
 
-			button:SetFrameLevel(button:GetFrameLevel() + 2)
 			if not button.backdrop then
+				button:SetFrameLevel(button:GetFrameLevel() + 2)
 				button:CreateBackdrop("Default")
 				button.backdrop:Point("TOPLEFT", 2, -2)
 				button.backdrop:Point("BOTTOMRIGHT", -2, 2)

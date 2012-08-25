@@ -4,9 +4,9 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Setup MultiBarBottomLeft as bar #2 by Tukz
 ----------------------------------------------------------------------------------------
-local Bar2Holder = CreateFrame("Frame", "Bar2Holder", UIParent)
-Bar2Holder:SetAllPoints(ActionBarAnchor)
-MultiBarBottomLeft:SetParent(Bar2Holder)
+local bar = CreateFrame("Frame", "Bar2Holder", UIParent)
+bar:SetAllPoints(ActionBarAnchor)
+MultiBarBottomLeft:SetParent(bar)
 
 for i = 1, 12 do
 	local b = _G["MultiBarBottomLeftButton"..i]
@@ -21,5 +21,5 @@ end
 
 -- Hide it if needed
 if C.actionbar.bottombars == 1 then
-	Bar2Holder:Hide()
+	bar:Hide()
 end

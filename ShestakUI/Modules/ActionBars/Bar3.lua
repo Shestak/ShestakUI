@@ -4,10 +4,10 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Setup MultiBarLeft as bar #3 by Tukz
 ----------------------------------------------------------------------------------------
-local Bar3Holder = CreateFrame("Frame", "Bar3Holder", UIParent)
-Bar3Holder:SetAllPoints(RightActionBarAnchor)
-Bar3Holder:SetFrameStrata("BACKGROUND")
-MultiBarLeft:SetParent(Bar3Holder)
+local bar = CreateFrame("Frame", "Bar3Holder", UIParent)
+bar:SetAllPoints(RightActionBarAnchor)
+bar:SetFrameStrata("BACKGROUND")
+MultiBarLeft:SetParent(bar)
 
 for i = 1, 12 do
 	local b = _G["MultiBarLeftButton"..i]
@@ -26,7 +26,7 @@ end
 
 -- Hide bar
 if C.actionbar.rightbars < 2 then
-	Bar3Holder:Hide()
+	bar:Hide()
 end
 
 -- Mouseover bar

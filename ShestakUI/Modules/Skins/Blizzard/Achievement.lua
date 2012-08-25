@@ -364,6 +364,12 @@ local function LoadSkin()
 				frame.bg3:Point("TOPLEFT", -T.mult, T.mult)
 				frame.bg3:Point("BOTTOMRIGHT", T.mult, -T.mult)
 
+				frame.bg4 = frame:CreateTexture(nil, "BACKGROUND")
+				frame.bg4:SetDrawLayer("BACKGROUND", -4)
+				frame.bg4:SetTexture(0.1, 0.1, 0.1)
+				frame.bg4:Point("TOPLEFT", 0, 0)
+				frame.bg4:Point("BOTTOMRIGHT", 0, 0)
+
 				frame.text:ClearAllPoints()
 				frame.text:SetPoint("CENTER", frame, "CENTER", 0, -1)
 				frame.text:SetJustifyH("CENTER")
