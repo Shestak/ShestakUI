@@ -234,8 +234,14 @@ Filger_Spells = {
 			{spellID = 774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Regrowth
 			{spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Incarnation
+			-- Incarnation: Tree of Life
 			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Incarnation: Chosen of Elunee
+			{spellID = 102560, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Incarnation: King of the Jungle
+			{spellID = 102543, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Incarnation: Son of Ursoc
+			{spellID = 102558, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Survival Instincts
 			{spellID = 61336, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Might of Ursoc
@@ -438,8 +444,6 @@ Filger_Spells = {
 			{spellID = 33878, filter = "CD"},
 			-- Tiger's Fury
 			{spellID = 5217, filter = "CD"},
-			-- Starfall
-			{spellID = 48505, filter = "CD"},
 			-- Starsurge
 			{spellID = 78674, filter = "CD"},
 			-- Typhoon
@@ -464,8 +468,8 @@ Filger_Spells = {
 			{spellID = 5229, filter = "CD"},
 			-- Nature's Grasp
 			{spellID = 16689, filter = "CD"},
-			-- Incarnation: Tree of Life
-			{spellID = 33891, filter = "CD"},
+			-- Incarnation
+			{spellID = 106731, filter = "CD"},
 
 			-- Racial
 			-- Shadowmeld (Night Elf)
@@ -2947,7 +2951,7 @@ Filger_Spells = {
 			{spellID = 77764, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Survival Instincts
 			{spellID = 61336, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Incarnation
+			-- Incarnation: Tree of Life
 			{spellID = 117679, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserk
 			{spellID = 50334, unitID = "target", caster = "all", filter = "BUFF"},
