@@ -4,9 +4,6 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	By Tukz
 ----------------------------------------------------------------------------------------
-local _G = _G
-local replace = string.gsub
-
 local function StyleNormalButton(self)
 	local name = self:GetName()
 	local button = self
@@ -159,21 +156,21 @@ local function UpdateHotkey(self, actionButtonType)
 	local hotkey = _G[self:GetName().."HotKey"]
 	local text = hotkey:GetText()
 
-	text = replace(text, "(s%-)", "S")
-	text = replace(text, "(a%-)", "A")
-	text = replace(text, "(c%-)", "C")
-	text = replace(text, "(Mouse Button )", "M")
-	text = replace(text, "(Кнопка мыши )", "M")
-	text = replace(text, KEY_BUTTON3, "M3")
-	text = replace(text, "(Num Pad )", "N")
-	text = replace(text, KEY_PAGEUP, "PU")
-	text = replace(text, KEY_PAGEDOWN, "PD")
-	text = replace(text, KEY_SPACE, "SpB")
-	text = replace(text, KEY_INSERT, "Ins")
-	text = replace(text, KEY_HOME, "Hm")
-	text = replace(text, KEY_MOUSEWHEELDOWN, "MWD")
-	text = replace(text, KEY_MOUSEWHEELUP, "MWU")
-	text = replace(text, KEY_DELETE, "Del")
+	text = string.gsub(text, "(s%-)", "S")
+	text = string.gsub(text, "(a%-)", "A")
+	text = string.gsub(text, "(c%-)", "C")
+	text = string.gsub(text, "(Mouse Button )", "M")
+	text = string.gsub(text, "(Кнопка мыши )", "M")
+	text = string.gsub(text, KEY_BUTTON3, "M3")
+	text = string.gsub(text, "(Num Pad )", "N")
+	text = string.gsub(text, KEY_PAGEUP, "PU")
+	text = string.gsub(text, KEY_PAGEDOWN, "PD")
+	text = string.gsub(text, KEY_SPACE, "SpB")
+	text = string.gsub(text, KEY_INSERT, "Ins")
+	text = string.gsub(text, KEY_HOME, "Hm")
+	text = string.gsub(text, KEY_MOUSEWHEELDOWN, "MWD")
+	text = string.gsub(text, KEY_MOUSEWHEELUP, "MWU")
+	text = string.gsub(text, KEY_DELETE, "Del")
 
 	if hotkey:GetText() == _G["RANGE_INDICATOR"] then
 		hotkey:SetText("")

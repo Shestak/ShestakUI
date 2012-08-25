@@ -5,7 +5,6 @@ if C.actionbar.enable ~= true then return end
 --	Setup Main Action Bar by Tukz
 ----------------------------------------------------------------------------------------
 local bar = CreateFrame("Frame", "Bar1Holder", ActionBarAnchor, "SecureHandlerStateTemplate")
-bar:ClearAllPoints()
 bar:SetAllPoints(ActionBarAnchor)
 bar:SetFrameStrata("BACKGROUND")
 
@@ -38,9 +37,8 @@ bar:RegisterEvent("BAG_UPDATE")
 bar:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 bar:SetScript("OnEvent", function(self, event, ...)
 	if event == "PLAYER_LOGIN" or event == "ACTIVE_TALENT_GROUP_CHANGED" then
-		local button
 		for i = 1, NUM_ACTIONBAR_BUTTONS do
-			button = _G["ActionButton"..i]
+			local button = _G["ActionButton"..i]
 			self:SetFrameRef("ActionButton"..i, button)
 		end
 
@@ -59,9 +57,8 @@ bar:SetScript("OnEvent", function(self, event, ...)
 
 		RegisterStateDriver(self, "page", GetBar())
 	elseif event == "PLAYER_ENTERING_WORLD" then
-		local button
 		for i = 1, 12 do
-			button = _G["ActionButton"..i]
+			local button = _G["ActionButton"..i]
 			button:Size(C.actionbar.button_size)
 			button:ClearAllPoints()
 			button:SetParent(Bar1Holder)

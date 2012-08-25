@@ -6,6 +6,7 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local bar = CreateFrame("Frame", "Bar2Holder", UIParent)
 bar:SetAllPoints(ActionBarAnchor)
+bar:SetFrameStrata("BACKGROUND")
 MultiBarBottomLeft:SetParent(bar)
 
 for i = 1, 12 do

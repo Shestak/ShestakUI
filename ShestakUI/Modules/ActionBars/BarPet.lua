@@ -11,6 +11,7 @@ if C.actionbar.petbar_hide then PetActionBarAnchor:Hide() return end
 local bar = CreateFrame("Frame", "PetHolder", UIParent, "SecureHandlerStateTemplate")
 bar:ClearAllPoints()
 bar:SetAllPoints(PetActionBarAnchor)
+bar:SetFrameStrata("BACKGROUND")
 
 bar:RegisterEvent("PLAYER_LOGIN")
 bar:RegisterEvent("PLAYER_CONTROL_LOST")
@@ -27,10 +28,8 @@ bar:RegisterEvent("UNIT_AURA")
 bar:SetScript("OnEvent", function(self, event, arg1)
 	if event == "PLAYER_LOGIN" then
 		PetActionBarFrame.showgrid = 1
-
-		local button
 		for i = 1, 10 do
-			button = _G["PetActionButton"..i]
+			local button button = _G["PetActionButton"..i]
 			button:ClearAllPoints()
 			button:SetParent(PetHolder)
 			PetActionBarAnchor:SetParent(PetHolder)
