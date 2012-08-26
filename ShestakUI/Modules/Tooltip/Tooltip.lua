@@ -179,10 +179,11 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 
 	local OnTooltipSetUnit = function(self)
 		local lines = self:NumLines()
-		local name, unit = self:GetUnit()
+		local unit = (select(2, self:GetUnit())) or (GetMouseFocus() and GetMouseFocus():GetAttribute("unit")) or (UnitExists("mouseover") and "mouseover") or nil
 
 		if not unit then return end
 
+		local name = self:GetUnit()
 		local race, englishRace = UnitRace(unit)
 		local level = UnitLevel(unit)
 		local levelColor = GetQuestDifficultyColor(level)
