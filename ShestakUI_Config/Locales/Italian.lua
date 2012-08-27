@@ -25,14 +25,14 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Riquadro veicolo al passaggio del mouse"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Bottone automatico missione/oggetto"
 L_GUI_MISC_RAID_TOOLS = "Strumenti per le incursioni"
 L_GUI_MISC_PROFESSION_TABS = "Visualizza la linguetta delle professioni sul riquadro abilità di commercio/mercante"
-L_GUI_MISC_DUNGEON_TABS = "PvP/PvE tabs on own frames" -- Needs review
+L_GUI_MISC_DUNGEON_TABS = "Linguette PvA/PvP sui relativi riquadri"
 L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei bosses durante i Campi di Battaglia"
 L_GUI_MISC_ITEM_LEVEL = "Livello oggetto sui bottoni della schermata Personaggio"
 L_GUI_MISC_GEM_COUNTER = "Mostra quante gemme rosse/blu/gialle possiedi"
 L_GUI_MISC_ALREADY_KNOWN = "Colora ricette/cavalcature/mascottes possedute"
 L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo click."
 L_GUI_MISC_SUM_BUYOUTS = "Somma assieme tutte le aste correnti"
-L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
+L_GUI_MISC_CLICK_CAST = "Scorciatoie da mouse (Click2Cast)"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"

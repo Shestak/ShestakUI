@@ -32,7 +32,7 @@ L_TOOLTIP_SPELL_ID = "ID incantesimo/abilità:"
 L_TOOLTIP_ITEM_ID = "ID oggetto:"
 L_TOOLTIP_WHO_TARGET = "Bersaglio di"
 L_TOOLTIP_ITEM_COUNT = "Conteggio oggetti:"
-L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
+L_TOOLTIP_INSPECT_OPEN = "Il riquadro 'Ispeziona' è aperto"
 
 -- Misc
 L_MISC_UNDRESS = "Senza vestiti"
@@ -357,7 +357,7 @@ L_SLASHCMD_HELP = {
 	"/toraid - Trasforma il gruppo in incursione.",
 	"/teleport - Teletrasporto dalle spedizioni casuali.",
 	"/luaerror ON|OFF - Attiva/disattiva la visualizzazione degli errori Lua.",
-	"/spec, /ss - Passa da un albero talenti all'altro",
+	"/spec, /ss - Passa da una specializzazione dei talenti all'altra",
 	"/heal - Passa alla configurazione 'guaritori'.",
 	"/dps - Passa alla configurazione 'assaltatori'.",
 	"/frame - La descrizione non è pronta.",
