@@ -2,7 +2,7 @@
 if C.tooltip.enable ~= true or C.tooltip.reforge ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Item reforge info(bTooltip by Fernir)
+--	Item reforge info(module from bTooltip by Fernir)
 ----------------------------------------------------------------------------------------
 local StatNames = {
 	ITEM_MOD_SPIRIT_SHORT, ITEM_MOD_DODGE_RATING_SHORT, ITEM_MOD_PARRY_RATING_SHORT, ITEM_MOD_HIT_RATING_SHORT,

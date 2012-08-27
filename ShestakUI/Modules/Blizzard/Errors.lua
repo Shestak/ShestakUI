@@ -1,7 +1,7 @@
 local T, C, L = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Clear UIErrorsFrame(ncError by Nightcracker)
+--	Clear UIErrorsFrame(module from Kousei by Haste)
 ----------------------------------------------------------------------------------------
 if C.error.hide == true then
 	local frame = CreateFrame("Frame")
