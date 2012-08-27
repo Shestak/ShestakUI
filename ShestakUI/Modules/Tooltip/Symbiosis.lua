@@ -40,7 +40,9 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 			end
 			local uclass = select(2, UnitClass(unit))
 			local ulevel = UnitLevel(unit)
-			local spec = SPEC_CORE_ABILITY_TEXT[select(1, GetSpecializationInfo(GetSpecialization()))]
+			local uspec = GetSpecialization()
+			if not uspec then return end
+			local spec = SPEC_CORE_ABILITY_TEXT[select(1, GetSpecializationInfo(uspec))]
 			local spellID
 			if T.class == "DRUID" and T.level >= 87 and uclass ~= "DRUID" then
 				spellID = symbiosis.grant[uclass][spec]
