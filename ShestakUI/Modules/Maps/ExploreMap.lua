@@ -121,6 +121,7 @@ function XLM_UD(self, elapsed)
 		end
 		GameTooltip:FadeOut()
 	end
+
 	if fileName then
 		WorldMapHighlight:SetDesaturated(true)
 		if line1 ~= nil then

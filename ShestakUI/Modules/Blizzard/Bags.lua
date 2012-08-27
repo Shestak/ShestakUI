@@ -734,10 +734,6 @@ function Stuffing:SetBagsForSorting(c)
 				end
 			end
 		else
-			if tonumber(s) == nil then
-				Print(string.format("Error: don't know what \"%s\" means.", s))
-			end
-
 			table.insert(self.sortBags, tonumber(s))
 		end
 	end
