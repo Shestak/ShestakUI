@@ -74,6 +74,7 @@
 	<Script file="Modules\Misc\Mounts.lua"/>
 	<Script file="Modules\Misc\ToggleMenu.lua"/>
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
+	<Script file="Modules\Misc\DungeonTabs.lua"/>
 	<Script file="Modules\Misc\OneClickBuyOut.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>

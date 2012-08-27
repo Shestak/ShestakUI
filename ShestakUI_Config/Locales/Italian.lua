@@ -25,6 +25,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Riquadro veicolo al passaggio del mouse"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Bottone automatico missione/oggetto"
 L_GUI_MISC_RAID_TOOLS = "Strumenti per le incursioni"
 L_GUI_MISC_PROFESSION_TABS = "Visualizza la linguetta delle professioni sul riquadro abilità di commercio/mercante"
+L_GUI_MISC_DUNGEON_TABS = "PvP/PvE tabs on own frames" -- Needs review
 L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei bosses durante i Campi di Battaglia"
 L_GUI_MISC_ITEM_LEVEL = "Livello oggetto sui bottoni della schermata Personaggio"
 L_GUI_MISC_GEM_COUNTER = "Mostra quante gemme rosse/blu/gialle possiedi"

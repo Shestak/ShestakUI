@@ -25,6 +25,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Fahrzeugfenster bei mouseover anzeigen"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/Gegenstand auto Taste"
 L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
 L_GUI_MISC_PROFESSION_TABS = "Berufereiter an Handelsfähigkeiten und Handelsfenstern anzeigen"
+L_GUI_MISC_DUNGEON_TABS = "PvP/PvE tabs on own frames" -- Needs review
 L_GUI_MISC_HIDE_BG_SPAM = "In Schlachtfeldern Bossemotes im Chat unterbinden"
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review

@@ -25,6 +25,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "駕駛框體解鎖"
 L_GUI_MISC_QUEST_AUTOBUTTON = "任務/道具自動按鈕"
 L_GUI_MISC_RAID_TOOLS = "團隊工具"
 L_GUI_MISC_PROFESSION_TABS = "在專業和商業框體顯示專業技能按鈕"
+L_GUI_MISC_DUNGEON_TABS = "PvP/PvE tabs on own frames" -- Needs review
 L_GUI_MISC_HIDE_BG_SPAM = "在戰場内移除Boss表情信息"
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
