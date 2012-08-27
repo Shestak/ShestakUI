@@ -106,6 +106,7 @@ local function Local(o)
 	if o == "UIConfigskinsflyout_button" then o = L_GUI_SKINS_FLYOUT_BUTTON end
 	if o == "UIConfigskinsnug_running" then o = L_GUI_SKINS_NUG_RUNNING end
 	if o == "UIConfigskinsovale" then o = L_GUI_SKINS_OVALE end
+	if o == "UIConfigskinsclique" then o = L_GUI_SKINS_CLIQUE end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end

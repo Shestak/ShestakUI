@@ -110,6 +110,7 @@ C["skins"] = {
 	["flyout_button"] = false,					-- FlyoutButtonCustom skin
 	["nug_running"] = false,					-- NugRunning skin
 	["ovale"] = false,							-- OvaleSpellPriority skin
+	["clique"] = false,							-- Clique skin
 }
 
 ----------------------------------------------------------------------------------------

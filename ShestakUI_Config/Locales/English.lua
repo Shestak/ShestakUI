@@ -77,6 +77,7 @@ L_GUI_SKINS_DOMINOS = "Enable styling Dominos"
 L_GUI_SKINS_FLYOUT_BUTTON = "Enable styling FlyoutButtonCustom"
 L_GUI_SKINS_NUG_RUNNING = "Enable styling NugRunning"
 L_GUI_SKINS_OVALE = "Enable styling OvaleSpellPriority"
+L_GUI_SKINS_CLIQUE = "Enable styling Clique"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"

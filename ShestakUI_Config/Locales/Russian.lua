@@ -79,6 +79,7 @@ L_GUI_SKINS_DOMINOS = "Включить стилизацию Dominos"
 L_GUI_SKINS_FLYOUT_BUTTON = "Включить стилизацию FlyoutButtonCustom"
 L_GUI_SKINS_NUG_RUNNING = "Включить стилизацию NugRunning"
 L_GUI_SKINS_OVALE = "Включить стилизацию OvaleSpellPriority"
+L_GUI_SKINS_CLIQUE = "Включить стилизацию Clique"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"

@@ -1,4 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
+if C.skins.blizzard_frames ~= true or C.skins.clique ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Clique skin

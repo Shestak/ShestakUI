@@ -79,6 +79,7 @@ L_GUI_SKINS_DOMINOS = "Activer la personalisation pour Dominos"
 L_GUI_SKINS_FLYOUT_BUTTON = "Activer la personalisation pour FlyoutButtonCustom"
 L_GUI_SKINS_NUG_RUNNING = "Activer la personalisation pour NugRunning"
 L_GUI_SKINS_OVALE = "Activer la personalisation pour OvaleSpellPriority"
+L_GUI_SKINS_CLIQUE = "Activer la personalisation pour Clique"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"
