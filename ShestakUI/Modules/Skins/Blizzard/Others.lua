@@ -100,7 +100,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 
 		for i = 1, getn(ChatMenus) do
 			if _G[ChatMenus[i]] == _G["ChatMenu"] then
-				_G[ChatMenus[i]]:HookScript("OnShow", function(self) self:SetTemplate("Transparent")
+				_G[ChatMenus[i]]:HookScript("OnShow", function(self)
+					self:SetTemplate("Transparent")
 					self:ClearAllPoints()
 					self:Point("BOTTOMRIGHT", ChatFrame1, "BOTTOMRIGHT", 0, 30)
 				end)
