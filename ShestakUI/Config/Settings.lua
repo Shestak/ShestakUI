@@ -105,6 +105,11 @@ C["skins"] = {
 	["dxe"] = false,							-- DXE skin
 	["omen"] = false,							-- Omen skin
 	["recount"] = false,						-- Recount skin
+	["blood_shield_tracker"] = false,			-- BloodShieldTracker skin
+	["dominos"] = false,						-- Dominos skin
+	["flyout_button"] = false,					-- FlyoutButtonCustom skin
+	["nug_running"] = false,					-- NugRunning skin
+	["ovale"] = false,							-- Ovale Spell Priority skin
 }
 
 ----------------------------------------------------------------------------------------

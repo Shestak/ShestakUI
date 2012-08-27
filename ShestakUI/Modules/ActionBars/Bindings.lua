@@ -140,7 +140,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 				if not self.button.action or self.button.action < 1 or self.button.action > 132 then
 					self.button.bindstring = "CLICK "..self.button.name..":LeftButton"
 				else
-					local modact = 1+(self.button.action-1)%12
+					local modact = 1 + (self.button.action - 1) % 12
 					if self.button.action < 13 or self.button.action > 72 then
 						self.button.bindstring = "ACTIONBUTTON"..modact
 					elseif self.button.action < 73 and self.button.action > 60 then
