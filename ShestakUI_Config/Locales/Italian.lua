@@ -74,6 +74,11 @@ L_GUI_SKINS_DBM = "Attiva il restyling di DBM"
 L_GUI_SKINS_DXE = "Attiva il restyling di DXE"
 L_GUI_SKINS_OMEN = "Attiva il restyling di Omen"
 L_GUI_SKINS_RECOUNT = "Attiva il restyling di Recount"
+L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "Attiva il restyling di BloodShieldTracker"
+L_GUI_SKINS_DOMINOS = "Attiva il restyling di Dominos"
+L_GUI_SKINS_FLYOUT_BUTTON = "Attiva il restyling di FlyoutButtonCustom"
+L_GUI_SKINS_NUG_RUNNING = "Attiva il restyling di NugRunning"
+L_GUI_SKINS_OVALE = "Attiva il restyling di OvaleSpellPriority"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"

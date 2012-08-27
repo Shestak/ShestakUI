@@ -74,6 +74,11 @@ L_GUI_SKINS_DBM = "Activar estilo del DBM"
 L_GUI_SKINS_DXE = "Activar estilo del DXE"
 L_GUI_SKINS_OMEN = "Activar estilo del Omen"
 L_GUI_SKINS_RECOUNT = "Activar estilo del Recount"
+L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "Activar estilo del BloodShieldTracker"
+L_GUI_SKINS_DOMINOS = "Activar estilo del Dominos"
+L_GUI_SKINS_FLYOUT_BUTTON = "Activar estilo del FlyoutButtonCustom"
+L_GUI_SKINS_NUG_RUNNING = "Activar estilo del NugRunning"
+L_GUI_SKINS_OVALE = "Activar estilo del OvaleSpellPriority"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texto de Combate"

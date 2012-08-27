@@ -2,7 +2,7 @@
 if C.skins.ovale ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Ovale Spell Priority skin
+--	OvaleSpellPriority skin
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")

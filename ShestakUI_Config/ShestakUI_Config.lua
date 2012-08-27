@@ -101,6 +101,11 @@ local function Local(o)
 	if o == "UIConfigskinsdxe" then o = L_GUI_SKINS_DXE end
 	if o == "UIConfigskinsomen" then o = L_GUI_SKINS_OMEN end
 	if o == "UIConfigskinsrecount" then o = L_GUI_SKINS_RECOUNT end
+	if o == "UIConfigskinsblood_shield_tracker" then o = L_GUI_SKINS_BLOOD_SHIELD_TRACKER end
+	if o == "UIConfigskinsdominos" then o = L_GUI_SKINS_DOMINOS end
+	if o == "UIConfigskinsflyout_button" then o = L_GUI_SKINS_FLYOUT_BUTTON end
+	if o == "UIConfigskinsnug_running" then o = L_GUI_SKINS_NUG_RUNNING end
+	if o == "UIConfigskinsovale" then o = L_GUI_SKINS_OVALE end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end

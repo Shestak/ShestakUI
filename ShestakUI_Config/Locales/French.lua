@@ -74,6 +74,11 @@ L_GUI_SKINS_DBM = "Activer la personalisation pour DBM"
 L_GUI_SKINS_DXE = "Activer la personalisation pour DXE"
 L_GUI_SKINS_OMEN = "Activer la personalisation pour Omen"
 L_GUI_SKINS_RECOUNT = "Activer la personalisation pour Recount"
+L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "Activer la personalisation pour BloodShieldTracker"
+L_GUI_SKINS_DOMINOS = "Activer la personalisation pour Dominos"
+L_GUI_SKINS_FLYOUT_BUTTON = "Activer la personalisation pour FlyoutButtonCustom"
+L_GUI_SKINS_NUG_RUNNING = "Activer la personalisation pour NugRunning"
+L_GUI_SKINS_OVALE = "Activer la personalisation pour OvaleSpellPriority"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"

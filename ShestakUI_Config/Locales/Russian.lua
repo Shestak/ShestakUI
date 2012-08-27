@@ -74,6 +74,11 @@ L_GUI_SKINS_DBM = "Включить стилизацию DBM"
 L_GUI_SKINS_DXE = "Включить стилизацию DXE"
 L_GUI_SKINS_OMEN = "Включить стилизацию Omen"
 L_GUI_SKINS_RECOUNT = "Включить стилизацию Recount"
+L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "Включить стилизацию BloodShieldTracker"
+L_GUI_SKINS_DOMINOS = "Включить стилизацию Dominos"
+L_GUI_SKINS_FLYOUT_BUTTON = "Включить стилизацию FlyoutButtonCustom"
+L_GUI_SKINS_NUG_RUNNING = "Включить стилизацию NugRunning"
+L_GUI_SKINS_OVALE = "Включить стилизацию OvaleSpellPriority"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"

@@ -109,7 +109,7 @@ C["skins"] = {
 	["dominos"] = false,						-- Dominos skin
 	["flyout_button"] = false,					-- FlyoutButtonCustom skin
 	["nug_running"] = false,					-- NugRunning skin
-	["ovale"] = false,							-- Ovale Spell Priority skin
+	["ovale"] = false,							-- OvaleSpellPriority skin
 }
 
 ----------------------------------------------------------------------------------------

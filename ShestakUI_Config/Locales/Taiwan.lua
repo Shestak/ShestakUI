@@ -74,6 +74,11 @@ L_GUI_SKINS_DBM = "開啟DBM樣式增強"
 L_GUI_SKINS_DXE = "開啟DXE樣式增強"
 L_GUI_SKINS_OMEN = "開啟Omen樣式增強"
 L_GUI_SKINS_RECOUNT = "開啟Recount樣式增強"
+L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "開啟BloodShieldTracker樣式增強"
+L_GUI_SKINS_DOMINOS = "開啟Dominos樣式增強"
+L_GUI_SKINS_FLYOUT_BUTTON = "開啟FlyoutButtonCustom樣式增強"
+L_GUI_SKINS_NUG_RUNNING = "開啟NugRunning樣式增強"
+L_GUI_SKINS_OVALE = "開啟OvaleSpellPriority樣式增強"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"

@@ -74,6 +74,11 @@ L_GUI_SKINS_DBM = "DBM Design aktivieren"
 L_GUI_SKINS_DXE = "DXE Design aktivieren"
 L_GUI_SKINS_OMEN = "Omen Design aktivieren"
 L_GUI_SKINS_RECOUNT = "Recount Design aktivieren"
+L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "BloodShieldTracker Design aktivieren"
+L_GUI_SKINS_DOMINOS = "Dominos Design aktivieren"
+L_GUI_SKINS_FLYOUT_BUTTON = "FlyoutButtonCustom Design aktivieren"
+L_GUI_SKINS_NUG_RUNNING = "NugRunning Design aktivieren"
+L_GUI_SKINS_OVALE = "OvaleSpellPriority Design aktivieren"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Kampftext"
