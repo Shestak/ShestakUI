@@ -56,7 +56,6 @@ function GetInfo(mapName)
 			qHeader = QUESTS_LABEL..": "
 		end
 		if questsDone == questsNeeded then
-			--questCompletion = qHeader..COMPLETE
 			questCompletion = qHeader.."100%"
 		else
 			questCompletion = qHeader..questsDone.."/"..questsNeeded.." ("..percentage.."%)"
@@ -122,14 +121,11 @@ function XLM_UD(self, elapsed)
 		end
 		GameTooltip:FadeOut()
 	end
-
 	if fileName then
 		WorldMapHighlight:SetDesaturated(true)
 		if line1 ~= nil then
 			loc = tonumber(string.sub(line1, 10, (string.find(line1, "%%") - 1)))
-			if loc == nil then
-				return
-			end
+			if loc == nil then return end
 			if loc == 100 then
 				WorldMapHighlight:SetVertexColor(0, 1, 0, 1)
 			elseif loc == 0 then
