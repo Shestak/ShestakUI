@@ -148,6 +148,8 @@ gtt:HookScript("OnTooltipSetUnit", function(self, ...)
 			if not cacheLoaded then
 				self:AddLine(TALENTS_PREFIX..L_TOOLTIP_LOADING)
 			end
+		elseif isInspectOpen then
+			self:AddLine(TALENTS_PREFIX.."Inspect Frame is open")
 		end
 	end
 end)
