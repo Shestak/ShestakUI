@@ -142,9 +142,8 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(116525),	-- Focused Assault
 		-- Terrace of Endless Spring
 			-- Protectors of the Endless
-			SpellName(117436),	-- Lightning Prison
-			SpellName(118091),	-- Defiled Ground
 			SpellName(117519),	-- Touch of Sha
+			SpellName(117436),	-- Lightning Prison
 			-- Tsulong
 			SpellName(122752),	-- Shadow Breath
 			SpellName(123011),	-- Terrorize
@@ -153,7 +152,6 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Sha of Fear
 			SpellName(119985),	-- Dread Spray
 			SpellName(119086),	-- Penetrating Bolt
-			SpellName(119775),	-- Reaching Attack
 		-----------------------------------------------------------------
 		-- Cataclysm
 		-----------------------------------------------------------------
