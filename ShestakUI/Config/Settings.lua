@@ -427,15 +427,15 @@ C["unitframe"] = {
 --	Unit Frames Class bar options
 ----------------------------------------------------------------------------------------
 C["unitframe_class_bar"] = {
-	["combo"] = true,				-- Rogue/Druid Combo bar
-	["shadow"] = true,				-- Shadow Orbs bar
-	["chi"] = true,					-- Chi bar
-	["vengeance"] = true,			-- Vengeance bar
-	["eclipse"] = true,				-- Eclipse bar
-	["holy"] = true,				-- Holy Power bar
-	["shard"] = true,				-- Shard/Burning bar
-	["rune"] = true,				-- Rune bar
-	["totem"] = true,				-- Totem bar
+	["combo"] = true,							-- Rogue/Druid Combo bar
+	["shadow"] = true,							-- Shadow Orbs bar
+	["chi"] = true,								-- Chi bar
+	["vengeance"] = true,						-- Vengeance bar
+	["eclipse"] = true,							-- Eclipse bar
+	["holy"] = true,							-- Holy Power bar
+	["shard"] = true,							-- Shard/Burning bar
+	["rune"] = true,							-- Rune bar
+	["totem"] = true,							-- Totem bar
 }
 
 ----------------------------------------------------------------------------------------
