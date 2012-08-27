@@ -13,6 +13,8 @@ local IOC = 540
 local EOTS = 482
 local TBFG = 736
 local AB = 461
+local TOK = 856
+local SSM = 860
 
 local classcolor = ("|cff%.2x%.2x%.2x"):format(T.color.r * 255, T.color.g * 255, T.color.b * 255)
 
@@ -56,6 +58,11 @@ bgframe:SetScript("OnEnter", function(self)
 				elseif curmapid == SOTA then
 					GameTooltip:AddDoubleLine(L_DATATEXT_DEMOLISHERSDESTROYED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 					GameTooltip:AddDoubleLine(L_DATATEXT_GATESDESTROYED, GetBattlefieldStatData(i, 2), 1, 1, 1)
+				elseif CurrentMapID == TOK then
+					GameTooltip:AddDoubleLine(L_DATATEXT_ORB_POSSESSIONS, GetBattlefieldStatData(i, 1), 1, 1, 1)
+					GameTooltip:AddDoubleLine(L_DATATEXT_VICTORY_POINTS, GetBattlefieldStatData(i, 2), 1, 1, 1)
+				elseif CurrentMapID == SSM then
+					GameTooltip:AddDoubleLine(L_DATATEXT_CARTS_CONTROLLED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 				end
 				GameTooltip:Show()
 			end

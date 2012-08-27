@@ -229,7 +229,9 @@ L_DATATEXT_GRAVEYARDSASSAULTED = "Cimetières Attaqués :"
 L_DATATEXT_GRAVEYARDSDEFENDED = "Cimetières Défendus :"
 L_DATATEXT_DEMOLISHERSDESTROYED = "Démolisseurs Détruits :"
 L_DATATEXT_GATESDESTROYED = "Portes Détruites :"
-L_DATATEXT_CONTROL = " sous contrôle :"
+L_DATATEXT_ORB_POSSESSIONS = "Orbes en possession :"
+L_DATATEXT_VICTORY_POINTS = "Points de Victoire :"
+L_DATATEXT_CARTS_CONTROLLED = "Chariots contrôlée :"
 
 -- Info text
 L_INFO_ERRORS = "Pas d'erreur pour le moment."

@@ -226,7 +226,9 @@ L_DATATEXT_GRAVEYARDSASSAULTED = "Graveyards Assaulted:"
 L_DATATEXT_GRAVEYARDSDEFENDED = "Graveyards Defended:"
 L_DATATEXT_DEMOLISHERSDESTROYED = "Demolishers Destroyed:"
 L_DATATEXT_GATESDESTROYED = "Gates Destroyed:"
-L_DATATEXT_CONTROL = " under control:"
+L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:"
+L_DATATEXT_VICTORY_POINTS = "Victory Points:"
+L_DATATEXT_CARTS_CONTROLLED = "Carts Controlled:"
 
 -- Info text
 L_INFO_ERRORS = "No error yet."

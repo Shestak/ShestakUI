@@ -229,7 +229,9 @@ L_DATATEXT_GRAVEYARDSASSAULTED = "墓地突襲:"
 L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:"
 L_DATATEXT_DEMOLISHERSDESTROYED = "石毀車摧毀:"
 L_DATATEXT_GATESDESTROYED = "大門摧毀:"
-L_DATATEXT_CONTROL = "控制:"
+L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:" -- Needs review
+L_DATATEXT_VICTORY_POINTS = "Victory Points:" -- Needs review
+L_DATATEXT_CARTS_CONTROLLED = "Carts Controlled:" -- Needs review
 
 -- Info text
 L_INFO_ERRORS = "目前沒有錯誤."

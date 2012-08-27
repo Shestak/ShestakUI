@@ -229,7 +229,9 @@ L_DATATEXT_GRAVEYARDSASSAULTED = "Штурмы кладбищ:"
 L_DATATEXT_GRAVEYARDSDEFENDED = "Оборона кладбищ:"
 L_DATATEXT_DEMOLISHERSDESTROYED = "Разрушителей уничтожено:"
 L_DATATEXT_GATESDESTROYED = "Врат разрушено:"
-L_DATATEXT_CONTROL = " под контролем:"
+L_DATATEXT_ORB_POSSESSIONS = "Захваты сферы:"
+L_DATATEXT_VICTORY_POINTS = "Очки победы:"
+L_DATATEXT_CARTS_CONTROLLED = "Захваты вагонеток:"
 
 -- Info text
 L_INFO_ERRORS = "Ошибок не обнаружено."
