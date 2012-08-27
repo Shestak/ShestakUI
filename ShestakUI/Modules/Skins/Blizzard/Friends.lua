@@ -211,6 +211,9 @@ local function LoadSkin()
 	T.SkinDropDownBox(FriendsFrameStatusDropDown, 70)
 	T.SkinDropDownBox(FriendsFriendsFrameDropDown)
 
+	T.SkinCheckBox(ChannelFrameAutoJoinBattleground)
+	T.SkinCheckBox(ChannelFrameAutoJoinParty)
+
 	-- Bottom Tabs
 	for i = 1, 5 do
 		T.SkinTab(_G["FriendsFrameTab"..i])

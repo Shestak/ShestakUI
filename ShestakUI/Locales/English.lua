@@ -111,8 +111,8 @@ L_CHAT_OFFICER = "O"
 L_CHAT_PET_BATTLE = "PB"
 L_CHAT_COME_ONLINE = "has come online."
 L_CHAT_GONE_OFFLINE = "has gone offline."
-L_CHAT_COME_ONLINE_COLOR = "is now |cff298F00online|r !"
-L_CHAT_GONE_OFFLINE_COLOR = "is now |cffff0000offline|r !"
+L_CHAT_COME_ONLINE_COLOR = "is now |cff298F00online|r!"
+L_CHAT_GONE_OFFLINE_COLOR = "is now |cffff0000offline|r!"
 
 -- Errors frame
 L_ERRORFRAME_L = "Click to view errors."
