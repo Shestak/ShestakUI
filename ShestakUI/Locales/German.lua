@@ -32,6 +32,7 @@ L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
 L_TOOLTIP_WHO_TARGET = "Anvisiert von"
 L_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe:"
+L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "Ausziehen"

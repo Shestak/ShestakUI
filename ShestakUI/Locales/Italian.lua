@@ -32,6 +32,7 @@ L_TOOLTIP_SPELL_ID = "ID incantesimo/abilità:"
 L_TOOLTIP_ITEM_ID = "ID oggetto:"
 L_TOOLTIP_WHO_TARGET = "Bersaglio di"
 L_TOOLTIP_ITEM_COUNT = "Conteggio oggetti:"
+L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "Senza vestiti"

@@ -32,6 +32,7 @@ L_TOOLTIP_SPELL_ID = "ID du sort :"
 L_TOOLTIP_ITEM_ID = "ID de l'objet :"
 L_TOOLTIP_WHO_TARGET = "Qui on cible"
 L_TOOLTIP_ITEM_COUNT = "Objets possédés :"
+L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "Déshabillé"

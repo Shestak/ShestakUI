@@ -32,6 +32,7 @@ L_TOOLTIP_SPELL_ID = "Spell ID:"
 L_TOOLTIP_ITEM_ID = "Item ID:"
 L_TOOLTIP_WHO_TARGET = "Targeted By"
 L_TOOLTIP_ITEM_COUNT = "Item count:"
+L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open"
 
 -- Misc
 L_MISC_UNDRESS = "Undress"

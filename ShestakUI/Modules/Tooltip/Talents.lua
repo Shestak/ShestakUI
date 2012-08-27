@@ -32,7 +32,7 @@ ttt:Hide()
 local function GatherTalents(mouseover)
 	if mouseover == 1 then
 		local currentSpecID = GetInspectSpecialization("mouseover")
-		local currentSpecName = currentSpecID and select(2, GetSpecializationInfoByID(currentSpecID)) or L_TOOLTIP_NO_TALENT
+		local currentSpecName = currentSpecID and select(2, GetSpecializationInfoByID(currentSpecID)) or L_TOOLTIP_LOADING
 		current.tree = currentSpecName
 	else
 		local currentSpec = GetSpecialization()
@@ -47,9 +47,6 @@ local function GatherTalents(mouseover)
 		for i = 2, gtt:NumLines() do
 			if (_G["GameTooltipTextLeft"..i]:GetText() or ""):match("^"..TALENTS_PREFIX) then
 				_G["GameTooltipTextLeft"..i]:SetFormattedText("%s%s", TALENTS_PREFIX, current.tree)
-				if not gtt.fadeOut then
-					gtt:Show()
-				end
 				break
 			end
 		end
@@ -130,9 +127,10 @@ gtt:HookScript("OnTooltipSetUnit", function(self, ...)
 			return
 		end
 		-- Show Cached Talents, If Available
+		local isInspectOpen = (InspectFrame and InspectFrame:IsShown()) or (Examiner and Examiner:IsShown())
 		local cacheLoaded = false
 		for _, entry in ipairs(cache) do
-			if current.name == entry.name then
+			if current.name == entry.name and not isInspectOpen then
 				self:AddLine(TALENTS_PREFIX..entry.tree)
 				current.tree = entry.tree
 				cacheLoaded = true
@@ -140,7 +138,6 @@ gtt:HookScript("OnTooltipSetUnit", function(self, ...)
 			end
 		end
 		-- Queue an inspect request
-		local isInspectOpen = (InspectFrame and InspectFrame:IsShown()) or (Examiner and Examiner:IsShown())
 		if CanInspect(unit) and not isInspectOpen then
 			local lastInspectTime = GetTime() - lastInspectRequest
 			ttt.nextUpdate = (lastInspectTime > INSPECT_FREQ) and INSPECT_DELAY or (INSPECT_FREQ - lastInspectTime + INSPECT_DELAY)
@@ -149,7 +146,7 @@ gtt:HookScript("OnTooltipSetUnit", function(self, ...)
 				self:AddLine(TALENTS_PREFIX..L_TOOLTIP_LOADING)
 			end
 		elseif isInspectOpen then
-			self:AddLine(TALENTS_PREFIX.."Inspect Frame is open")
+			self:AddLine(TALENTS_PREFIX..L_TOOLTIP_INSPECT_OPEN)
 		end
 	end
 end)

@@ -32,6 +32,7 @@ L_TOOLTIP_SPELL_ID = "Номер заклинания:"
 L_TOOLTIP_ITEM_ID = "Номер предмета:"
 L_TOOLTIP_WHO_TARGET = "Выбран целью"
 L_TOOLTIP_ITEM_COUNT = "Количество предмета:"
+L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "Раздеть"

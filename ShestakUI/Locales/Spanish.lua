@@ -32,6 +32,7 @@ L_TOOLTIP_SPELL_ID = "ID del hechizo:"
 L_TOOLTIP_ITEM_ID = "ID del objeto:"
 L_TOOLTIP_WHO_TARGET = "Marcado por"
 L_TOOLTIP_ITEM_COUNT = "Contador del objeto:"
+L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "Desvestir"

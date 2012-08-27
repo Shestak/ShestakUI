@@ -32,6 +32,7 @@ L_TOOLTIP_SPELL_ID = "法术ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
 L_TOOLTIP_WHO_TARGET = "以其为目标的"
 L_TOOLTIP_ITEM_COUNT = "物品数量: "
+L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "无装备"
