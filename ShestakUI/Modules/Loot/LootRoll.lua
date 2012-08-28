@@ -237,3 +237,30 @@ LootRollAnchor:SetScript("OnEvent", function(frame, event, addon)
 
 	LootRollAnchor:Point(unpack(C.position.group_loot))
 end)
+
+SlashCmdList.TESTROLL = function()
+	local f = GetFrame()
+	if f:IsShown() then
+		f:Hide()
+	else
+		local texture = select(10, GetItemInfo(32837))
+
+		f.button.icon:SetTexture(texture)
+		f.button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		f.fsloot:SetText(GetItemInfo(32837))
+		f.fsloot:SetVertexColor(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b)
+
+		f.status:SetMinMaxValues(0, 100)
+		f.status:SetValue(70)
+		f.status:SetStatusBarColor(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b, 0.7)
+		f.status.bg:SetTexture(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b)
+
+		f.backdrop:SetBackdropBorderColor(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b, 0.7)
+		f.button.backdrop:SetBackdropBorderColor(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b, 0.7)
+
+		f:Show()
+	end
+end
+SLASH_TESTROLL1 = "/testroll"
+SLASH_TESTROLL2 = "/еуыекщдд"
