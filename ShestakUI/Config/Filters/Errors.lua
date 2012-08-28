@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.error.hide ~= true then return end
+if C.error.white ~= true and C.error.black ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	All errors on www.wowwiki.com/WoW_Constants/Errors
