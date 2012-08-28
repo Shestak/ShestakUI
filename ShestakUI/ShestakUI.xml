@@ -60,6 +60,7 @@
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
 	<Script file="Modules\Maps\BattlefieldMap.lua"/>
+	<Script file="Modules\Maps\ButtonCollect.lua"/>
 	<Script file="Modules\Maps\ExploreMap.lua"/>
 	<Script file="Modules\Maps\MapBossCount.lua"/>
 	<Script file="Modules\Maps\MiniMap.lua"/>
