@@ -47,7 +47,7 @@ SlashCmdList.DISABLE_ADDON = function(addon)
 		DisableAddOn(addon)
 		ReloadUI()
 	else
-		print("|cffffff00"..L_TOGGLE_ADDON.."'"..addon.."' not found.|r")
+		print("|cffffff00"..L_TOGGLE_ADDON.."'"..addon.."'"..L_TOGGLE_NOT_FOUND.."|r")
 	end
 end
 SLASH_DISABLE_ADDON1 = "/dis"
@@ -60,7 +60,7 @@ SlashCmdList.ENABLE_ADDON = function(addon)
 		LoadAddOn(addon)
 		ReloadUI()
 	else
-		print("|cffffff00"..L_TOGGLE_ADDON.."'"..addon.."' not found.|r")
+		print("|cffffff00"..L_TOGGLE_ADDON.."'"..addon.."'"..L_TOGGLE_NOT_FOUND.."|r")
 	end
 end
 SLASH_ENABLE_ADDON1 = "/en"
@@ -139,22 +139,6 @@ SlashCmdList.INSTTELEPORT = function()
 end
 SLASH_INSTTELEPORT1 = "/teleport"
 SLASH_INSTTELEPORT2 = "/еудузщке"
-
-----------------------------------------------------------------------------------------
---	Enable lua error
-----------------------------------------------------------------------------------------
-SlashCmdList.LUAERROR = function (msg, editbox)
-	if (msg == "on") then
-		SetCVar("scriptErrors", 1)
-		ReloadUI()
-	elseif (msg == "off") then
-		SetCVar("scriptErrors", 0)
-	else
-		print("|cffffff00".."/luaerror on - /luaerror off".."|r")
-	end
-end
-SLASH_LUAERROR1 = "/luaerror"
-SLASH_LUAERROR2 = "/дгфуккщк"
 
 ----------------------------------------------------------------------------------------
 --	Spec switching(by Monolit)
