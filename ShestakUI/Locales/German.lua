@@ -65,6 +65,7 @@ L_TOGGLE_COLLAPSE = "schließen "
 L_TOGGLE_RCLICK = "Rechtsklick zum Aktivieren oder Deaktiveren "
 L_TOGGLE_LCLICK = "Links klicken um Fenster aktiv zu halten "
 L_TOGGLE_RELOAD = " (benötigt UI neustart)"
+L_TOGGLE_NOT_FOUND = " not found." -- Needs review
 
 -- UnitFrame
 L_UF_GHOST = "Geist"
@@ -358,7 +359,6 @@ L_SLASHCMD_HELP = {
 	"/rd - Disband party or raid.",
 	"/toraid - Convert to party or raid.",
 	"/teleport - Teleportation from random dungeon.",
-	"/luaerror ON|OFF - Toggles display of lua errors.",
 	"/spec, /ss - Switches between talent spec's.",
 	"/heal - Switches to 'Heal' layout.",
 	"/dps - Switches to 'DPS' layout.",

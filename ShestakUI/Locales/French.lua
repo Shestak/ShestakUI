@@ -65,6 +65,7 @@ L_TOGGLE_COLLAPSE = "Permet de réduire les barres "
 L_TOGGLE_RCLICK = "Faites un clic droit pour activer ou désactiver "
 L_TOGGLE_LCLICK = "Clic gauche pour basculer la fenêtre "
 L_TOGGLE_RELOAD = " (recharger votre UI)"
+L_TOGGLE_NOT_FOUND = " not found." -- Needs review
 
 -- UnitFrame
 L_UF_GHOST = "Spectre"
@@ -358,7 +359,6 @@ L_SLASHCMD_HELP = {
 	"/rd - Dissout le groupe ou raid.",
 	"/toraid - Active le mode raid.",
 	"/teleport - Téléportation dans le donjon aléatoire en cours.",
-	"/luaerror ON|OFF - Active/Désactive l'affiche des erreurs LUA.",
 	"/spec, /ss - Bascule d'une spécialisation talent à l'autre.",
 	"/heal - Bascule vers l'interface 'Heal'.",
 	"/dps - Bascule sur l'interface 'DPS'.",

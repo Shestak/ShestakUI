@@ -65,6 +65,7 @@ L_TOGGLE_COLLAPSE = "Colapsar "
 L_TOGGLE_RCLICK = "Click derecho para activar o desactivar "
 L_TOGGLE_LCLICK = "Click izquierdo para cambiar de ventana "
 L_TOGGLE_RELOAD = " (necesita reiniciar la UI)"
+L_TOGGLE_NOT_FOUND = " not found." -- Needs review
 
 -- UnitFrame
 L_UF_GHOST = "Fantasma"
@@ -358,7 +359,6 @@ L_SLASHCMD_HELP = {
 	"/rd - Rompe el grupo o la banda.",
 	"/toraid - Convierte el grupo a bandaConvert to party or raid.",
 	"/teleport - Teleportarse desde una mazmorra aleatoria.",
-	"/luaerror ON|OFF - Activa la visión de errores lua.",
 	"/spec, /ss - Cambia entre especializaciones de talentos.",
 	"/heal - Cambia a la apariencia de 'Curación'.",
 	"/dps - Cambia a la apariencia de 'Daño'.",

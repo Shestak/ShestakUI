@@ -65,6 +65,7 @@ L_TOGGLE_COLLAPSE = "折叠 "
 L_TOGGLE_RCLICK = "右键点击以启用或禁用 "
 L_TOGGLE_LCLICK = "左键点击来显示/隐藏窗口 "
 L_TOGGLE_RELOAD = " (需要重载插件)"
+L_TOGGLE_NOT_FOUND = " not found." -- Needs review
 
 -- UnitFrame
 L_UF_GHOST = "灵魂"
@@ -358,7 +359,6 @@ L_SLASHCMD_HELP = {
 	"/rd - 解散队伍.",
 	"/toraid - 转换队伍/团队.",
 	"/teleport - 传送随机副本.",
-	"/luaerror - 打开/关闭 lua报错弹出窗口.",
 	"/spec - 切换天赋.",
 	"/heal - 载入治疗模式界面.",
 	"/dps - 载入伤害输出模式界面.",

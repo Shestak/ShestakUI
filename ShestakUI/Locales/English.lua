@@ -62,6 +62,7 @@ L_TOGGLE_COLLAPSE = "Collapse "
 L_TOGGLE_RCLICK = "Right click to enable or disable "
 L_TOGGLE_LCLICK = "Left click to toggle window "
 L_TOGGLE_RELOAD = " (needs UI reload)"
+L_TOGGLE_NOT_FOUND = " not found."
 
 -- UnitFrame
 L_UF_GHOST = "Ghost"
@@ -355,7 +356,6 @@ L_SLASHCMD_HELP = {
 	"/rd - Disband party or raid.",
 	"/toraid - Convert to party or raid.",
 	"/teleport - Teleportation from random dungeon.",
-	"/luaerror ON|OFF - Toggles display of lua errors.",
 	"/spec, /ss - Switches between talent spec's.",
 	"/heal - Switches to 'Heal' layout.",
 	"/dps - Switches to 'DPS' layout.",

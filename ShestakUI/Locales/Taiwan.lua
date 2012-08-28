@@ -65,6 +65,7 @@ L_TOGGLE_COLLAPSE = "折疊 "
 L_TOGGLE_RCLICK = "右鍵點擊以啟用或禁用 "
 L_TOGGLE_LCLICK = "左鍵點擊來顯示/隱藏窗口 "
 L_TOGGLE_RELOAD = " (需要重載插件)"
+L_TOGGLE_NOT_FOUND = " not found." -- Needs review
 
 -- UnitFrame
 L_UF_GHOST = "靈魂"
@@ -358,7 +359,6 @@ L_SLASHCMD_HELP = {
 	"/rd - 解散隊伍.",
 	"/toraid - 轉換為團隊或隊伍.",
 	"/teleport - 傳出隨機副本的命令.",
-	"/luaerror - 打開/關閉 插件報錯的彈出窗口.",
 	"/spec - 切換天賦.",
 	"/heal - 載入治療模式介面.",
 	"/dps - 載入傷害輸出模式介面.",

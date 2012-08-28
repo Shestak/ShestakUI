@@ -65,6 +65,7 @@ L_TOGGLE_COLLAPSE = "Rimpicciolisci "
 L_TOGGLE_RCLICK = "Clicca col destro per attivare o disattivare "
 L_TOGGLE_LCLICK = "Clicca col sinistro per mostrare la finestra "
 L_TOGGLE_RELOAD = " (bisogna ricaricare l'interfaccia)"
+L_TOGGLE_NOT_FOUND = " not found." -- Needs review
 
 -- UnitFrame
 L_UF_GHOST = "Spirito"
@@ -358,7 +359,6 @@ L_SLASHCMD_HELP = {
 	"/rd - Sciogli gruppo o incursione.",
 	"/toraid - Trasforma il gruppo in incursione.",
 	"/teleport - Teletrasporto dalle spedizioni casuali.",
-	"/luaerror ON|OFF - Attiva/disattiva la visualizzazione degli errori Lua.",
 	"/spec, /ss - Passa da una specializzazione dei talenti all'altra",
 	"/heal - Passa alla configurazione 'guaritori'.",
 	"/dps - Passa alla configurazione 'assaltatori'.",
