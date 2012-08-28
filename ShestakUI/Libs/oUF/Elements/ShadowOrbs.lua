@@ -57,9 +57,12 @@ local function Enable(self, unit)
 		sb.__owner = self
 		sb.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+		self:RegisterEvent('UNIT_POWER', Path)
 		self:RegisterEvent('UNIT_DISPLAYPOWER', Path)
-		self:RegisterEvent('UNIT_POWER_FREQUENT', Path)
+
+		sb.Visibility = CreateFrame("Frame", nil, sb)
+		sb.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
+		sb.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
 
 		return true
 	end
@@ -68,9 +71,9 @@ end
 local function Disable(self)
 	local sb = self.ShadowOrbsBar
 	if(sb) then
-		self:UnregisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+		self:UnregisterEvent('UNIT_POWER', Path)
 		self:UnregisterEvent('UNIT_DISPLAYPOWER', Path)
-		self:UnregisterEvent('UNIT_POWER_FREQUENT', Path)
+		sb.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
 	end
 end
 
