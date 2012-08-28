@@ -113,6 +113,18 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Grand Empress Shek'zeer
 			SpellName(123788),	-- Cry of Terror
 			SpellName(124849),	-- Consuming Terror
+		-- Terrace of Endless Spring
+			-- Protectors of the Endless
+			SpellName(117519),	-- Touch of Sha
+			SpellName(117436),	-- Lightning Prison
+			-- Tsulong
+			SpellName(122752),	-- Shadow Breath
+			SpellName(123011),	-- Terrorize
+			-- Lei Shi
+			SpellName(123121),	-- Spray
+			-- Sha of Fear
+			SpellName(119985),	-- Dread Spray
+			SpellName(119086),	-- Penetrating Bolt
 		-- Mogu'shan Vaults
 			-- The Stone Guard
 			SpellName(125206),	-- Rend Flesh
@@ -140,18 +152,6 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(116835),	-- Devastating Arc
 			SpellName(116778),	-- Focused Defense
 			SpellName(116525),	-- Focused Assault
-		-- Terrace of Endless Spring
-			-- Protectors of the Endless
-			SpellName(117519),	-- Touch of Sha
-			SpellName(117436),	-- Lightning Prison
-			-- Tsulong
-			SpellName(122752),	-- Shadow Breath
-			SpellName(123011),	-- Terrorize
-			-- Lei Shi
-			SpellName(123121),	-- Spray
-			-- Sha of Fear
-			SpellName(119985),	-- Dread Spray
-			SpellName(119086),	-- Penetrating Bolt
 		-----------------------------------------------------------------
 		-- Cataclysm
 		-----------------------------------------------------------------
