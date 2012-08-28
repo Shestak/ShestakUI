@@ -182,7 +182,21 @@ gtframe:SetID(n)
 gtframe:SetText(GUILD)
 gtframe:SetPoint("LEFT", _G["FriendsFrameTab"..n - 1], "RIGHT", -15, 0)
 gtframe:RegisterForClicks("AnyUp")
-gtframe:SetScript("OnClick", function() ToggleGuildFrame() end)
+gtframe:SetScript("OnClick", function()
+	if IsInGuild() then
+		if not GuildFrame then
+			LoadAddOn("Blizzard_GuildUI")
+		end
+		ToggleGuildFrame()
+		GuildFrame_TabClicked(GuildFrameTab2)
+	else
+		if not LookingForGuildFrame then
+			LoadAddOn("Blizzard_LookingForGuildUI")
+		end
+		if not LookingForGuildFrame then return end
+		LookingForGuildFrame_Toggle()
+	end
+end)
 PanelTemplates_SetNumTabs(FriendsFrame, n)
 PanelTemplates_EnableTab(FriendsFrame, n)
 
