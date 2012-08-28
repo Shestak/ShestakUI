@@ -8,7 +8,7 @@ if T.client ~= "itIT" then return end
 L_ANNOUNCE_LA_USE = " ha usato il mio Pozzo di Luce. "
 L_ANNOUNCE_LA_CHARGE = " carica (cariche)"
 L_ANNOUNCE_LA_USELESS = " ha usato il mio Pozzo di Luce inutilmente! "
-L_ANNOUNCE_LA_STOP = "Non avresti dovuto utilizzare il Pozzo di Luce!!!"
+L_ANNOUNCE_LA_STOP = "Non avresti dovuto utilizzare il Pozzo di Luce!"
 L_ANNOUNCE_LA_PLACED = "Pozzo di Luce posizionato. "
 L_ANNOUNCE_LA_CHARGES = " cariche."
 
@@ -176,7 +176,7 @@ L_INVITE_DISABLE = "Invito automatico disattivato"
 -- Bind key
 L_BIND_SAVED = "Tutte le assegnazioni tasti sono state salvate."
 L_BIND_DISCARD = "Tutte le nuove assegnazioni tasti non sono state salvate."
-L_BIND_INSTRUCT = "Passa il tuo mouse sul bottone della barra delle azioni a cui vuoi assegnare un tasto. Premi il pulsante ESC o il tasto destro per cancellare l'attuale assegnazione tasti di quel bottone."
+L_BIND_INSTRUCT = "Passa il tuo mouse sullo scomparto della barra delle azioni a cui vuoi assegnare un tasto. Premi il pulsante ESC o il tasto destro per cancellare l'attuale assegnazione tasti di quello scomparto."
 L_BIND_CLEARED = "Tutte le assegnazioni tasti sono state cancellate per"
 L_BIND_BINDING = "Assegnazione"
 L_BIND_KEY = "Tasto"
@@ -229,9 +229,9 @@ L_DATATEXT_GRAVEYARDSASSAULTED = "Cimiteri assaltati:"
 L_DATATEXT_GRAVEYARDSDEFENDED = "Cimiteri difesi"
 L_DATATEXT_DEMOLISHERSDESTROYED = "Demolitori distrutti:"
 L_DATATEXT_GATESDESTROYED = "Cancelli distrutti:"
-L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:" -- Needs review
-L_DATATEXT_VICTORY_POINTS = "Victory Points:" -- Needs review
-L_DATATEXT_CARTS_CONTROLLED = "Carts Controlled:" -- Needs review
+L_DATATEXT_ORB_POSSESSIONS = "Diamanti posseduti:"
+L_DATATEXT_VICTORY_POINTS = "Punti vittoria:"
+L_DATATEXT_CARTS_CONTROLLED = "Carrelli controllati:"
 
 -- Info text
 L_INFO_ERRORS = "Nessun errore ancora."
@@ -331,7 +331,7 @@ L_STATS_RC_TIME_MANAGER = "Clicca col destro per aprire le impostazionni orologi
 L_STATS_RC_EXPERIENCE = "Clicca col destro per navigare tra esperienza, tempo giocato e il visualizzatore fazione sotto osservazione."
 L_STATS_RC_AUTO_REPAIRING = "Clicca col destro per attivare/disattivare la riparazione automatica."
 L_STATS_RC_AUTO_SELLING = "Clicca col destro per attivare/disattivare la vendita automatica delle cianfrusaglie"
-L_STATS_RC_TALENT = "Clicca col destro per cambiare l'albero talenti attivo."
+L_STATS_RC_TALENT = "Clicca col destro per cambiare la spec. talenti attiva."
 L_STATS_SERVER_GOLD = "Oro totale su questo reame"
 L_STATS_SESSION_GAIN = "Guadagno/perdita della sessione"
 L_STATS_SESSION_XP = "Andamento PE della sessione"
