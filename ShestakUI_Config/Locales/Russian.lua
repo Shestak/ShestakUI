@@ -384,7 +384,6 @@ L_GUI_STATS_LOCATION = "Зона"
 
 -- Error options
 L_GUI_ERROR = "Ошибки боя"
-L_GUI_ERROR_HIDE = "Спрятать все ошибки"
 L_GUI_ERROR_BLACK = "Спрятать ошибки из *черного* списка"
 L_GUI_ERROR_WHITE = "Показывать ошибки из *белого* списка"
-L_GUI_ERROR_HIDE_COMBAT = "Спрятать ошибки во время боя (необходимо выбрать *список*)"
+L_GUI_ERROR_HIDE_COMBAT = "Спрятать все ошибки во время боя"

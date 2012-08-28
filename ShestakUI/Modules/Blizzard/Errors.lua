@@ -3,7 +3,7 @@ local T, C, L = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Clear UIErrorsFrame(module from Kousei by Haste)
 ----------------------------------------------------------------------------------------
-if C.error.hide == true then
+if C.error.white == true or C.error.black == true then
 	local frame = CreateFrame("Frame")
 	frame:SetScript("OnEvent", function(self, event, text)
 		if C.error.white == true and C.error.black == false then
@@ -29,9 +29,9 @@ if C.error.hide == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Clear UIErrors frame in combat(Warrning: "C.error.hide" be false)
+--	Clear all UIErrors frame in combat
 ----------------------------------------------------------------------------------------
-if C.error.combat == true and C.error.hide == false then
+if C.error.combat == true then
 	local frame = CreateFrame("Frame")
 	local OnEvent = function(self, event, ...) self[event](self, event, ...) end
 	frame:SetScript("OnEvent", OnEvent)

@@ -384,7 +384,6 @@ L_GUI_STATS_LOCATION = "Località"
 
 -- Error options
 L_GUI_ERROR = "Errori"
-L_GUI_ERROR_HIDE = "Nascondi gli errori"
 L_GUI_ERROR_BLACK = "Nascondi gli errori della lista nera"
 L_GUI_ERROR_WHITE = "Mostra gli errori della lista bianca"
-L_GUI_ERROR_HIDE_COMBAT = "Nascondi gli errori in combattimento"
+L_GUI_ERROR_HIDE_COMBAT = "Hide all errors in combat" -- Needs review

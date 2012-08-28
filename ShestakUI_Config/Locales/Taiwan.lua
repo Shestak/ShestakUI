@@ -384,7 +384,6 @@ L_GUI_STATS_LOCATION = "位置"
 
 -- Error options
 L_GUI_ERROR = "錯誤收集"
-L_GUI_ERROR_HIDE = "隱藏錯誤提示"
 L_GUI_ERROR_BLACK = "隱藏黑名單錯誤"
 L_GUI_ERROR_WHITE = "顯示白名單錯誤"
-L_GUI_ERROR_HIDE_COMBAT = "在戰鬥中隱藏錯誤提示"
+L_GUI_ERROR_HIDE_COMBAT = "Hide all errors in combat" -- Needs review

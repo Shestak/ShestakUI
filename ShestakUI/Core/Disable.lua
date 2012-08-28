@@ -33,8 +33,9 @@ if C.error.black == true and C.error.white == true then
 	C.error.white = false
 end
 
-if C.error.hide == true and C.error.combat == true then
-	C.error.hide = false
+if C.error.combat == true then
+	C.error.black = false
+	C.error.white = false
 end
 
 ----------------------------------------------------------------------------------------

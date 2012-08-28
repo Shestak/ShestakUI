@@ -510,8 +510,7 @@ C["stats"] = {
 --	Error options
 ----------------------------------------------------------------------------------------
 C["error"] = {	-- http://www.wowwiki.com/WoW_Constants/Errors
-	["hide"] = true,							-- Enable hide combat errors
 	["black"] = true,							-- Hide errors from black list
 	["white"] = false,							-- Show errors from white list
-	["combat"] = false,							-- Hide errors in combat
+	["combat"] = false,							-- Hide all errors in combat
 }
