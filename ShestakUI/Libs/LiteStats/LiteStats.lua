@@ -733,7 +733,7 @@ if ping.enabled then
 		OnEvent = function(self, event, unit)
 			if unit == P and ping.hide_self then return end
 			if (unit == P and self.timer and time() - self.timer > 1) or not self.timer or unit ~= P then
-				local class = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[select(2, UnitClass(unit))] or RAID_CLASS_COLORS[select(2, UnitClass(unit))]
+				local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(unit))]
 				self.text:SetText(format(ping.fmt, UnitName(unit)))
 				self.text:SetTextColor(class.r, class.g, class.b, 1)
 	 			if UIFrameIsFading(self) then UIFrameFlashRemoveFrame(self) end
@@ -761,7 +761,7 @@ if guild.enabled then
 				totalGuildOnline = totalGuildOnline + 1
 			end
 		end
-		sort(guildTable, function(a, b)
+		table.sort(guildTable, function(a, b)
 			if (a and b) then
 				return a[1] < b[1]
 			end
@@ -852,27 +852,28 @@ if guild.enabled then
 				menuList[3].menuList = {}
 
 				for i = 1, #guildTable do
-					if (guildTable[i][7] and guildTable[i][1] ~= select(1, UnitName("player"))) then
-						local classc, levelc = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[guildTable[i][9]] or RAID_CLASS_COLORS[guildTable[i][9]], GetQuestDifficultyColor(guildTable[i][3])
-						if (UnitInParty(guildTable[i][1]) or UnitInRaid(guildTable[i][1])) then
+					if guildTable[i][7] and guildTable[i][1] ~= select(1, UnitName("player")) then
+						local classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[guildTable[i][9]], GetQuestDifficultyColor(guildTable[i][3])
+						if UnitInParty(guildTable[i][1]) or UnitInRaid(guildTable[i][1]) then
 							grouped = "|cffaaaaaa*|r"
 						else
-							menuCountInvites = menuCountInvites + 1
 							grouped = ""
-							menuList[2].menuList[menuCountInvites] = {
-								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, guildTable[i][1], ""),
-								arg1 = guildTable[i][1],
-								notCheckable = true,
-								func = function(self, arg1)
-									menuFrame:Hide()
-									InviteUnit(arg1)
-								end
-							}
+							if not guildTable[i][10] then
+								menuCountInvites = menuCountInvites + 1
+								menuList[2].menuList[menuCountInvites] = {
+									text = string.format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, guildTable[i][1], ""),
+									arg1 = guildTable[i][1],
+									notCheckable = true,
+									func = function(self, arg1)
+										menuFrame:Hide()
+										InviteUnit(arg1)
+									end
+								}
+							end
 						end
-
 						menuCountWhispers = menuCountWhispers + 1
 						menuList[3].menuList[menuCountWhispers] = {
-							text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, guildTable[i][1], grouped),
+							text = string.format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, guildTable[i][1], grouped),
 							arg1 = guildTable[i][1],
 							notCheckable = true,
 							func = function(self, arg1)
@@ -890,7 +891,7 @@ if guild.enabled then
 			if IsInGuild() then
 				self.hovered = true
 				GuildRoster()
-				local name, rank, level, zone, note, officernote, connected, status, class, zone_r, zone_g, zone_b, classc, levelc, grouped
+				local name, rank, level, zone, note, officernote, connected, status, class, isMobile, zone_r, zone_g, zone_b, classc, levelc, grouped
 				local online, total, gmotd = 0, GetNumGuildMembers(true), GetGuildRosterMOTD()
 				local _, _, standingID, barMin, barMax, barValue = GetGuildFactionInfo()
 				local col = T.RGBToHex(ttsubh.r, ttsubh.g, ttsubh.b)
@@ -922,10 +923,11 @@ if guild.enabled then
 							if online > 2 then GameTooltip:AddLine(format("%d %s (%s)", online - guild.maxguild, L_STATS_HIDDEN, L_STATS_ALT), ttsubh.r, ttsubh.g, ttsubh.b) end
 							break
 						end
-						name, rank, _, level, _, zone, note, officernote, connected, status, class = GetGuildRosterInfo(i)
+						name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, isMobile = GetGuildRosterInfo(i)
 						if connected and level >= guild.threshold then
 							if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
-							classc, levelc = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class], GetQuestDifficultyColor(level)
+							if isMobile then zone = "" end
+							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
 							grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
 							if self.altdown then
 								GameTooltip:AddDoubleLine(format("%s%s |cff999999- |cffffffff%s", grouped, name, rank), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
@@ -983,7 +985,7 @@ if friends.enabled then
 			end
 		end
 
-		sort(friendTable, function(a, b)
+		table.sort(friendTable, function(a, b)
 			if a[1] and b[1] then
 				return a[1] < b[1]
 			end
@@ -992,17 +994,18 @@ if friends.enabled then
 	local function BuildBNTable(total)
 		totalBattleNetOnline = 0
 		wipe(BNTable)
+
 		for i = 1, total do
-			local presenceID, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND, _, noteText = BNGetFriendInfo(i)
+			local presenceID, presenceName, battleTag, _, toonName, toonID, client, isOnline, _, isAFK, isDND, _, noteText = BNGetFriendInfo(i)
 			local _, _, _, realmName, _, faction, race, class, _, zoneName, level = BNGetToonInfo(presenceID)
 			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
-			BNTable[i] = {presenceID, givenName, surname, toonName, toonID, client, isOnline, isAFK, isDND, noteText, realmName, faction, race, class, zoneName, level}
+			BNTable[i] = {presenceID, presenceName, battleTag, toonName, toonID, client, isOnline, isAFK, isDND, noteText, realmName, faction, race, class, zoneName, level}
 			if isOnline then
 				totalBattleNetOnline = totalBattleNetOnline + 1
 			end
 		end
 
-		sort(BNTable, function(a, b)
+		table.sort(BNTable, function(a, b)
 			if (a[2] and b[2]) then
 				if (a[2] == b[2]) then
 					return a[3] < b[3]
@@ -1051,7 +1054,7 @@ if friends.enabled then
 							menuCountInvites = menuCountInvites + 1
 							menuCountWhispers = menuCountWhispers + 1
 
-							classc, levelc = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[friendTable[i][3]] or RAID_CLASS_COLORS[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
+							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
 							if classc == nil then
 								classc = GetQuestDifficultyColor(friendTable[i][2])
 							end
@@ -1080,14 +1083,15 @@ if friends.enabled then
 				end
 
 				if totalBattleNetOnline > 0 then
-					local realID, playerFaction, grouped
+					local realID, grouped
 					for i = 1, #BNTable do
 						if BNTable[i][7] then
-							realID = (BATTLENET_NAME_FORMAT):format(BNTable[i][2], BNTable[i][3])
+							realID = BNTable[i][2]
 							menuCountWhispers = menuCountWhispers + 1
 							menuList[3].menuList[menuCountWhispers] = {
 								text = realID,
 								arg1 = realID,
+								arg2 = true,
 								notCheckable = true,
 								func = function(self, arg1)
 									menuFrame:Hide()
@@ -1095,14 +1099,8 @@ if friends.enabled then
 								end
 							}
 
-							if select(1, UnitFactionGroup("player")) == "Horde" then
-								playerFaction = 0
-							else
-								playerFaction = 1
-							end
-
-							if BNTable[i][6] == "WoW" and playerFaction == BNTable[i][12] then
-								classc, levelc = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[BNTable[i][14]] or RAID_CLASS_COLORS[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
+							if BNTable[i][6] == "WoW" and UnitFactionGroup("player") == BNTable[i][12] then
+								classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
 								if classc == nil then
 									classc = GetQuestDifficultyColor(BNTable[i][16])
 								end
@@ -1138,9 +1136,9 @@ if friends.enabled then
 			local name, level, class, zone, connected, status, note, classc, levelc, zone_r, zone_g, zone_b, grouped
 			for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
 			local BNonline, BNtotal = 0, BNGetNumFriends()
-			local presenceID, givenName, surname, toonName, toonID, client, isOnline
+			local presenceID, presenceName, battleTag, toonName, toonID, client, isOnline
 			if BNtotal > 0 then
-				for i = 1, BNtotal do if select(7, BNGetFriendInfo(i)) then BNonline = BNonline + 1 end end
+				for i = 1, BNtotal do if select(8, BNGetFriendInfo(i)) then BNonline = BNonline + 1 end end
 			end
 			local totalonline = online + BNonline
 			local totalfriends = total + BNtotal
@@ -1154,14 +1152,14 @@ if friends.enabled then
 					GameTooltip:AddLine(" ")
 					GameTooltip:AddLine(CHARACTER_FRIEND)
 					for i = 1, total do
-						local name, level, class, zone, connected, status, note = GetFriendInfo(i)
+						name, level, class, zone, connected, status, note = GetFriendInfo(i)
 						if not connected then break end
 						if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
 						for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 						if GetLocale() ~= "enUS" then -- feminine class localization (unsure if it's really needed)
 							for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 						end
-						classc, levelc = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class], GetQuestDifficultyColor(level)
+						classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
 						grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
 						GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, level, name, grouped, " "..status), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
 						if self.altdown and note then GameTooltip:AddLine("  "..note, ttsubh.r, ttsubh.g, ttsubh.b, 1) end
@@ -1171,7 +1169,7 @@ if friends.enabled then
 					GameTooltip:AddLine(" ")
 					GameTooltip:AddLine(BATTLENET_OPTIONS_LABEL)
 					for i = 1, BNtotal do
-						_, givenName, surname, toonName, toonID, client, isOnline, _, isAFK, isDND, _, _, _, _ = BNGetFriendInfo(i)
+						_, presenceName, battleTag, _, toonName, toonID, client, isOnline, _, isAFK, isDND = BNGetFriendInfo(i)
 						if not isOnline then break end
 						if isAFK then
 							status = "|cffE7E716"..L_CHAT_AFK.."|r"
@@ -1183,21 +1181,21 @@ if friends.enabled then
 							end
 						end
 						if client == "WoW" then
-							local _, toonName, client, realmName, _, _, _, class, _, zoneName, level, _ = BNGetToonInfo(toonID)
+							local _, toonName, client, realmName, _, _, _, class, _, zoneName, level = BNGetToonInfo(toonID)
 							for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 							if GetLocale() ~= "enUS" then -- feminine class localization (unsure if it's really needed)
 								for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 							end
-							classc, levelc = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class], GetQuestDifficultyColor(level)
+							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
 							if UnitInParty(toonName) or UnitInRaid(toonName) then grouped = "|cffaaaaaa*|r" else grouped = "" end
-							GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), givenName.." "..surname, 238, 238, 238, 238, 238, 238)
+							GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), presenceName.." "..battleTag, 238, 238, 238, 238, 238, 238)
 							if self.altdown then
 								if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
 								if GetRealmName() == realmName then realm_r, realm_g, realm_b = 0.3, 1.0, 0.3 else realm_r, realm_g, realm_b = 0.65, 0.65, 0.65 end
 								GameTooltip:AddDoubleLine("  "..zoneName, realmName, zone_r, zone_g, zone_b, realm_r, realm_g, realm_b)
 							end
 						else
-							GameTooltip:AddDoubleLine("|cffeeeeee"..client.." ("..toonName..")|r", "|cffeeeeee"..givenName.." "..surname.."|r")
+							GameTooltip:AddDoubleLine("|cffeeeeee"..client.." ("..toonName..")|r", "|cffeeeeee"..presenceName.." "..battleTag.."|r")
 						end
 					end
 				end
