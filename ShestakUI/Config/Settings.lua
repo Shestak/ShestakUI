@@ -47,6 +47,7 @@ C["misc"] = {
 	["quest_auto_button"] = false,				-- Quest auto button
 	["raid_tools"] = true,						-- Raid tools
 	["profession_tabs"] = true,					-- Professions tabs on tradeskill frames
+	["profession_database"] = false,			-- Professions Database on Professions frame
 	["dungeon_tabs"] = true,					-- PvP/PvE tabs on own frames
 	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
 	["item_level"] = false,						-- Item level on character slot buttons

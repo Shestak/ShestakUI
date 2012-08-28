@@ -54,6 +54,7 @@ if T.author == true then
 	C["misc"].already_known = true
 	C["misc"].disenchanting = true
 	C["misc"].sum_buyouts = true
+	C["misc"].profession_database = true
 	C["announcements"].spells = true
 	C["announcements"].flask_food = true
 	C["announcements"].toy_train = true
