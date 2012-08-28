@@ -211,7 +211,6 @@ function tullaRange.SetButtonColor(button, colorType)
 		button.tullaRangeColor = colorType
 
 		local r, g, b = tullaRange:GetColor(colorType)
-
 		local icon =  _G[button:GetName() .. "Icon"]
 		icon:SetVertexColor(r, g, b)
 	end
