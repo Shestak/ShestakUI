@@ -162,7 +162,7 @@ local StartTimer = function(name, spellId)
 	end
 	bar.spell = spell
 	bar:Show()
-	local color = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[select(2, UnitClass(name))] or RAID_CLASS_COLORS[select(2, UnitClass(name))]
+	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(name))]
 	if color then
 		bar:SetStatusBarColor(color.r, color.g, color.b)
 		bar.bg:SetVertexColor(color.r, color.g, color.b, 0.25)

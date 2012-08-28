@@ -614,7 +614,7 @@ local function Shared(self, unit)
 					self.Portrait.backdrop:RegisterEvent("PLAYER_TARGET_CHANGED")
 					self.Portrait.backdrop:SetScript("OnEvent", function()
 						local _, class = UnitClass("target")
-						local color = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
+						local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
 						if color then
 							self.Portrait.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
 						else
@@ -1262,7 +1262,7 @@ HorizontalTargetLine:CreatePanel("ClassColor", 228, 1, "TOPRIGHT", "oUF_Target",
 HorizontalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
 HorizontalTargetLine:SetScript("OnEvent", function(self)
 	local _, class = UnitClass("target")
-	local color = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
+	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
 	if color then
 		self:SetBackdropBorderColor(color.r, color.g, color.b)
 	else
@@ -1275,7 +1275,7 @@ VerticalTargetLine:CreatePanel("ClassColor", 1, 98, "LEFT", HorizontalTargetLine
 VerticalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
 VerticalTargetLine:SetScript("OnEvent", function(self)
 	local _, class = UnitClass("target")
-	local color = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
+	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
 	if color then
 		self:SetBackdropBorderColor(color.r, color.g, color.b)
 	else

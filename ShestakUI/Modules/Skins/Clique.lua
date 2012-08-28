@@ -26,7 +26,8 @@ local function LoadSkin()
 	CliqueDialog:SetTemplate("Transparent")
 
 	T.SkinCloseButton(CliqueConfigCloseButton)
-	T.SkinCloseButton(CliqueDialogCloseButton)
+	if CliqueDialog.CloseButton then T.SkinCloseButton(CliqueDialog.CloseButton) end
+	if CliqueDialogCloseButton then T.SkinCloseButton(CliqueDialogCloseButton) end
 
 	CliqueConfigPage1ButtonOptions:SkinButton(true)
 	CliqueConfigPage1ButtonOther:SkinButton(true)
