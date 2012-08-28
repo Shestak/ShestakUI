@@ -193,7 +193,7 @@ if T.name == "Oz" then
 	C["unitframe"].plugins_diminishing = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].raid_groups = 8
-	C["raidframe"].icons_lfd_role = true
+	C["raidframe"].icons_role = true
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].plugins_auto_resurrection = true
 	C["stats"].battleground = true
@@ -288,7 +288,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["unitframe"].plugins_talents = true
 	C["unitframe"].plugins_combat_feedback = true
 	C["raidframe"].raid_tanks_tt = true
-	C["raidframe"].icons_lfd_role = true
+	C["raidframe"].icons_role = true
 	C["raidframe"].plugins_debuffhighlight_icon = true
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].raid_groups = 8
