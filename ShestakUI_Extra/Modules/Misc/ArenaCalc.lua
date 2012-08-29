@@ -2,7 +2,7 @@
 if C.extra_general.arena_calc ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Arena conquest point Calculator(by Hydra & fraz0816)
+--	Arena conquest point Calculator(by Hydra & Fraz0816)
 ----------------------------------------------------------------------------------------
 local buttonSize = 20
 local buttonSpacing = 5
@@ -56,7 +56,7 @@ local function CreateModule()
 		else
 			hCalcButton[i]:SetPoint("LEFT", hCalcButton[i-1], "RIGHT", buttonSpacing, 0)
 		end
-		
+
 		hCalcButton[i]:HookScript("OnEnter", T.SetModifiedBackdrop)
 		hCalcButton[i]:HookScript("OnLeave", T.SetOriginalBackdrop)
 	end

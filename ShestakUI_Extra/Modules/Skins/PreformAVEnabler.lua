@@ -4,9 +4,9 @@ if C.extra_skins.preform_av ~= true then return end
 ----------------------------------------------------------------------------------------
 --	PreformAVEnabler skin
 ----------------------------------------------------------------------------------------
-local SkinPAV = CreateFrame("Frame")
-SkinPAV:RegisterEvent("PLAYER_ENTERING_WORLD")
-SkinPAV:SetScript("OnEvent", function(self, event)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function(self, event)
 	if not IsAddOnLoaded("PreformAVEnabler") then return end
 
 	PreformAVEnablerFrame:StripTextures()

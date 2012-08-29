@@ -4,9 +4,9 @@ if C.extra_skins.mog_it ~= true then return end
 ----------------------------------------------------------------------------------------
 --	MogIt skin
 ----------------------------------------------------------------------------------------
-local MISkin = CreateFrame("Frame")
-MISkin:RegisterEvent("PLAYER_LOGIN")
-MISkin:SetScript("OnEvent", function(self, event, addon)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event, addon)
 	if not IsAddOnLoaded("MogIt") then return end
 
 	MogItTooltip:SetBackdrop(nil)
@@ -35,13 +35,6 @@ MISkin:SetScript("OnEvent", function(self, event, addon)
 	T.SkinCloseButton(MogItPreviewCloseButton)
 	T.SkinCloseButton(MogItFrameCloseButton)
 	T.SkinCloseButton(MogItFiltersCloseButton)
-
-	--T.SkinCheckBox(MogItFiltersMoggable)
-	--T.SkinCheckBox(MogItFiltersFactionAlliance)
-	--T.SkinCheckBox(MogItFiltersFactionHorde)
-
-	--T.SkinDropDownBox(MogItSortingButton)
-	--T.SkinDropDownBox(MogItDropdown)
 
 	MogItFramePreviewAddItem:SetText(ADD)
 	MogItFramePreviewImport:ClearAllPoints()
@@ -93,16 +86,16 @@ MISkin:SetScript("OnEvent", function(self, event, addon)
 		"LegsSlot",
 		"FeetSlot",
 		"MainHandSlot",
-		"SecondaryHandSlot",
-		"RangedSlot"
+		"SecondaryHandSlot"
 	}
 
 	for _, slot in pairs(slots) do
 		local icon = _G["MogItPreview"..slot.."IconTexture"]
 		local slot = _G["MogItPreview"..slot]
 
-		slot:StyleButton(false)
+		slot:StyleButton()
 		slot:SetNormalTexture(nil)
+
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
 		icon:Point("TOPLEFT", 2, -2)

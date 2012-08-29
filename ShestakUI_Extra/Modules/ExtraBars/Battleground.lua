@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(ShestakUI)
-if C.extra_announce.battleground ~= true then return end
+if C.extra_bar.battleground ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Battleground Defence Announcer(by Azmara)
@@ -7,7 +7,7 @@ if C.extra_announce.battleground ~= true then return end
 -- Create Main Button Frame
 local buttonframe = CreateFrame("Frame", "BGAnnouncerButtonFrame", UIParent)
 buttonframe:CreatePanel("Invisible", 313, 20, unpack(C.extra_position.bg_announce))
-if C.extra_announce.battleground_two_row == true then
+if C.extra_bar.battleground_two_row == true then
 	buttonframe:Size(156, 43)
 end
 buttonframe:Hide()
@@ -59,7 +59,7 @@ button3.t:SetText("High")
 -- Button 4
 local button4 = CreateFrame("Button", "BGAnnouncerButton4", buttonframe)
 button4:CreatePanel("Transparent", 50, 20, "LEFT", button3, "RIGHT", 3, 0)
-if C.extra_announce.battleground_two_row == true then
+if C.extra_bar.battleground_two_row == true then
 	button4:Point("TOPLEFT", button1, "BOTTOMLEFT", 0, -3)
 end
 button4:SetScript("OnEnter", T.SetModifiedBackdrop)

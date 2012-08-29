@@ -13,7 +13,7 @@ SlashCmdList.EA = function()
 		f:Hide()
 		f = nil
 	else
-		f = CreateFrame("Frame", nil, UIParent) 
+		f = CreateFrame("Frame", nil, UIParent)
 		f:SetAllPoints(UIParent)
 		local w = GetScreenWidth() / 128
 		local h = GetScreenHeight() / 72

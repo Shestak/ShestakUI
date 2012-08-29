@@ -4,9 +4,9 @@ if C.extra_skins.adibags ~= true then return end
 ----------------------------------------------------------------------------------------
 --	AdiBags skin(Not Ready)
 ----------------------------------------------------------------------------------------
-local SkinAB = CreateFrame("Frame")
-SkinAB:RegisterEvent("PLAYER_ENTERING_WORLD")
-SkinAB:SetScript("OnEvent", function(self, event)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function(self, event)
 	if not IsAddOnLoaded("AdiBags") then return end
 
 	local addon = LibStub("AceAddon-3.0"):GetAddon("AdiBags")

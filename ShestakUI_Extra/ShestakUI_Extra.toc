@@ -1,11 +1,14 @@
-﻿## Interface: 40300
+﻿## Interface: 50001
 ## Title: ShestakUI Extra
 ## Notes: Extra mods for ShestakUI (Oz of shestak.org Edit)
 ## Author: Shestak
-## Version: 0.9.5
-## Credits: Fernir, Gsuz, Hydra, fraz0816, Slushe, Elv22, Tukz, Epic, Smelly, Jaslm, Dridzt, Safturento, Cowmonster, Azmara, Villiv, Egingell, Camealion, Sara.Festung, Rahanprout, Pigmonkey, MrRuben5, iSpawnAtHome, Veev, AcidWeb, CrusaderHeimdall, Rainrider, Magdain, Kraftman, Nathanyel, Driizt, MrLulz, Wrug, Cybey, Silverwind, Ailae, Killakhan, Bitbyte, m2jest1c
+## Version: 4.0.2
+## Credits: Azmara, Camealion, Cowmonster, Driizt, Epic, Fraz0816, Gsuz, Hydra, Jaslm, Nathanyel, Rainrider, Safturento, Sara.Festung, Slushe, Smelly
 ## RequiredDeps: ShestakUI
-## SavedVariables: ExtraOptionsDB
 ## SavedVariablesPerCharacter: ExtraTanksDB, ExtraArchyDB
+## X-Curse-Packaged-Version: 4.0.2
+## X-Curse-Project-Name: ShestakUI
+## X-Curse-Project-ID: shestakui
+## Website: http://shestak.org
 
 ShestakUI_Extra.xml

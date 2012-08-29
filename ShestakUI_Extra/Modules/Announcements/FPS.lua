@@ -2,7 +2,7 @@
 if C.extra_announce.my_fps ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Announce fps to guild chat(FPSAnnounce by Slushe) 
+--	Announce fps to guild chat(FPSAnnounce by Slushe)
 ----------------------------------------------------------------------------------------
 local throttleSpam = 15
 local sentTime = 0

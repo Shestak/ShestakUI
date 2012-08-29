@@ -4,9 +4,9 @@ if C.extra_skins.mage_nuggets ~= true then return end
 ----------------------------------------------------------------------------------------
 --	MageNuggets skin /run ShowConfigFrames()
 ----------------------------------------------------------------------------------------
-local MNSkin = CreateFrame("Frame")
-MNSkin:RegisterEvent("PLAYER_LOGIN")
-MNSkin:SetScript("OnEvent", function()
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function()
 	if not IsAddOnLoaded("MageNuggets") then return end
 
 	MageNugz.cautSize = 3
@@ -211,8 +211,6 @@ MNSkin:SetScript("OnEvent", function()
 	MageNugMI_Frame_MiBar:Height(15)
 	MageNugMI_Frame_MiBar:SetStatusBarTexture(C.media.texture)
 	MageNugMI_Frame_MiBar:CreateBackdrop("Default")
-	MageNugMI_Frame_MiBar.backdrop:Point("TOPLEFT", -2, 2)
-	MageNugMI_Frame_MiBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	MageNugMI_Frame_MiBar:ClearAllPoints()
 	MageNugMI_Frame_MiBar:Point("BOTTOMLEFT", MageNugMI_FrameTexture1, "BOTTOMRIGHT", 7, 0)
 
@@ -233,8 +231,6 @@ MNSkin:SetScript("OnEvent", function()
 	MageNugCauterize_Frame_Bar:Height(15)
 	MageNugCauterize_Frame_Bar:SetStatusBarTexture(C.media.texture)
 	MageNugCauterize_Frame_Bar:CreateBackdrop("Default")
-	MageNugCauterize_Frame_Bar.backdrop:Point("TOPLEFT", -2, 2)
-	MageNugCauterize_Frame_Bar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	MageNugCauterize_Frame_Bar:ClearAllPoints()
 	MageNugCauterize_Frame_Bar:Point("BOTTOMLEFT", MageNugCauterize_FrameTexture1, "BOTTOMRIGHT", 7, 0)
 
@@ -256,8 +252,6 @@ MNSkin:SetScript("OnEvent", function()
 	MageNugMBProcFrame_ProcBar:Height(15)
 	MageNugMBProcFrame_ProcBar:SetStatusBarTexture(C.media.texture)
 	MageNugMBProcFrame_ProcBar:CreateBackdrop("Default")
-	MageNugMBProcFrame_ProcBar.backdrop:Point("TOPLEFT", -2, 2)
-	MageNugMBProcFrame_ProcBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	MageNugMBProcFrame_ProcBar:ClearAllPoints()
 	MageNugMBProcFrame_ProcBar:Point("BOTTOMLEFT", MageNugMBProcFrameTexture, "BOTTOMRIGHT", 7, 0)
 
@@ -279,8 +273,6 @@ MNSkin:SetScript("OnEvent", function()
 	MageNugPolyFrame_Bar:Height(15)
 	MageNugPolyFrame_Bar:SetStatusBarTexture(C.media.texture)
 	MageNugPolyFrame_Bar:CreateBackdrop("Default")
-	MageNugPolyFrame_Bar.backdrop:Point("TOPLEFT", -2, 2)
-	MageNugPolyFrame_Bar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	MageNugPolyFrame_Bar:ClearAllPoints()
 	MageNugPolyFrame_Bar:Point("BOTTOMLEFT", MageNugPolyFrameTexture, "BOTTOMRIGHT", 7, 0)
 
@@ -302,8 +294,6 @@ MNSkin:SetScript("OnEvent", function()
 	MageNugFoFProcFrame_ProcBar:Height(15)
 	MageNugFoFProcFrame_ProcBar:SetStatusBarTexture(C.media.texture)
 	MageNugFoFProcFrame_ProcBar:CreateBackdrop("Default")
-	MageNugFoFProcFrame_ProcBar.backdrop:Point("TOPLEFT", -2, 2)
-	MageNugFoFProcFrame_ProcBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	MageNugFoFProcFrame_ProcBar:ClearAllPoints()
 	MageNugFoFProcFrame_ProcBar:Point("BOTTOMLEFT", MageNugFoFProcFrameTexture, "BOTTOMRIGHT", 7, 0)
 
@@ -328,8 +318,6 @@ MNSkin:SetScript("OnEvent", function()
 	MageNugImpactProcFrame_ProcBar:Height(15)
 	MageNugImpactProcFrame_ProcBar:SetStatusBarTexture(C.media.texture)
 	MageNugImpactProcFrame_ProcBar:CreateBackdrop("Default")
-	MageNugImpactProcFrame_ProcBar.backdrop:Point("TOPLEFT", -2, 2)
-	MageNugImpactProcFrame_ProcBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	MageNugImpactProcFrame_ProcBar:ClearAllPoints()
 	MageNugImpactProcFrame_ProcBar:Point("BOTTOMLEFT", MageNugImpactProcFrameTexture, "BOTTOMRIGHT", 7, 0)
 
@@ -351,8 +339,6 @@ MNSkin:SetScript("OnEvent", function()
 	MageNugBFProcFrame_ProcBar:Height(15)
 	MageNugBFProcFrame_ProcBar:SetStatusBarTexture(C.media.texture)
 	MageNugBFProcFrame_ProcBar:CreateBackdrop("Default")
-	MageNugBFProcFrame_ProcBar.backdrop:Point("TOPLEFT", -2, 2)
-	MageNugBFProcFrame_ProcBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	MageNugBFProcFrame_ProcBar:ClearAllPoints()
 	MageNugBFProcFrame_ProcBar:Point("BOTTOMLEFT", MageNugBFProcFrameTexture, "BOTTOMRIGHT", 7, 0)
 
@@ -374,8 +360,6 @@ MNSkin:SetScript("OnEvent", function()
 	MageNugProcFrame_ProcBar:Height(15)
 	MageNugProcFrame_ProcBar:SetStatusBarTexture(C.media.texture)
 	MageNugProcFrame_ProcBar:CreateBackdrop("Default")
-	MageNugProcFrame_ProcBar.backdrop:Point("TOPLEFT", -2, 2)
-	MageNugProcFrame_ProcBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	MageNugProcFrame_ProcBar:ClearAllPoints()
 	MageNugProcFrame_ProcBar:Point("BOTTOMLEFT", MageNugProcFrameTexture, "BOTTOMRIGHT", 7, 0)
 
@@ -535,8 +519,6 @@ MNSkin:SetScript("OnEvent", function()
 
 	MageNugMoonkin_Frame_Bar:SetStatusBarTexture(C.media.texture)
 	MageNugMoonkin_Frame_Bar:CreateBackdrop("Default")
-	MageNugMoonkin_Frame_Bar.backdrop:Point("TOPLEFT", -2, 2)
-	MageNugMoonkin_Frame_Bar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	MageNugMoonkin_Frame_Bar:ClearAllPoints()
 	MageNugMoonkin_Frame_Bar:Point("BOTTOMLEFT", MageNugMoonkin_Frame_Texture, "BOTTOMRIGHT", 7, 0)
 	MageNugMoonkin_Frame_Bar:SetSize(80, 15)
@@ -604,8 +586,6 @@ MNSkin:SetScript("OnEvent", function()
 	MageNugSSProcFrame_ProcBar:Height(15)
 	MageNugSSProcFrame_ProcBar:SetStatusBarTexture(C.media.texture)
 	MageNugSSProcFrame_ProcBar:CreateBackdrop("Default")
-	MageNugSSProcFrame_ProcBar.backdrop:Point("TOPLEFT", -2, 2)
-	MageNugSSProcFrame_ProcBar.backdrop:Point("BOTTOMRIGHT", 2, -2)
 	MageNugSSProcFrame_ProcBar:ClearAllPoints()
 	MageNugSSProcFrame_ProcBar:Point("BOTTOMLEFT", MageNugSSProcFrameTexture, "BOTTOMRIGHT", 7, 0)
 
@@ -614,22 +594,4 @@ MNSkin:SetScript("OnEvent", function()
 
 	MageNugSSProcFrameText2:ClearAllPoints()
 	MageNugSSProcFrameText2:Point("RIGHT", MageNugSSProcFrame_ProcBar, "RIGHT", 0, 0)
-
-	-- MageNugWE_Frame
-	--MageNugWE_FrameTexture1
-	--MageNugWE_Frame_MIText
-	--MageNugWE_Frame_WEText1
-	--MageNugWE_Frame_WeBar
-
-	-- MageNugCD1_Frame
-	--_Texture
-	--_Text
-	--_Text2
-	--_Bar
-
-	-- MageNugCD2_Frame
-	-- MageNugCD3_Frame
-	-- MageNugCD4_Frame
-	-- MageNugCD5_Frame
-	-- MageNugCD6_Frame
 end)

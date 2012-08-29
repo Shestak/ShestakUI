@@ -17,8 +17,8 @@ local defaults = {
 local spellList = {
 	-- Warrior
 	355,	-- Taunt
-	1161,	-- Challenging Shout
-	694,	-- Mocking Blow
+	--MOP--1161,	-- Challenging Shout
+	--MOP--694,	-- Mocking Blow
 	-- Paladin
 	31789,	-- Rghteous Defense
 	62124,	-- Hand of Reckoning
@@ -27,13 +27,13 @@ local spellList = {
 	56222,	-- Dark Command
 	-- Druid
 	6795,	-- Growl
-	5209,	-- Challenging Roar
+	--MOP--5209,	-- Challenging Roar
 	-- Hunter
 	20736,	-- Distracting Shot
 	-- Hunter's pet
 	--2649,	-- Growl (Stupid hunters will never turn off this ability)
 	-- Warlock's pets
-	33698,	-- Anguish 
+	--MOP--33698,	-- Anguish
 	3716,	-- Torment
 	17735,	-- Suffering
 }
@@ -84,16 +84,11 @@ function BadGroup:ADDON_LOADED(event, name)
 
 		-- Register events
 		self:RegisterEvent("PLAYER_ENTERING_WORLD")
-		self:RegisterEvent("PARTY_MEMBERS_CHANGED")
-		self:RegisterEvent("RAID_ROSTER_UPDATE")
+		self:RegisterEvent("GROUP_ROSTER_UPDATE")
 	end
 end
 
-function BadGroup:PARTY_MEMBERS_CHANGED()
-	self:CountGroupMembers()
-end
-
-function BadGroup:RAID_ROSTER_UPDATE()
+function BadGroup:GROUP_ROSTER_UPDATE()
 	self:CountGroupMembers()
 end
 
@@ -125,13 +120,13 @@ function BadGroup:COMBAT_LOG_EVENT_UNFILTERED(event, ...)
 end
 
 function BadGroup:CountGroupMembers(event)
-	numMembers = GetNumRaidMembers()
+	numMembers = GetNumGroupMembers()
 	if numMembers > 0 then
 		groupType = "raid"
 		return
 	end
 
-	numMembers = GetNumPartyMembers()
+	numMembers = GetNumSubgroupMembers()
 	if numMembers > 0 then
 		groupType = "party"
 		return
@@ -185,7 +180,7 @@ end
 
 function BadGroup:ClassColoredName(srcName)
 	local _, playerClass = UnitClass(srcName)
-	local classColor = RAID_CLASS_COLORS[playerClass]
+	local classColor = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[playerClass]
 	if classColor then
 		return string.format("|cff%02x%02x%02x%s|r", classColor.r * 255, classColor.g * 255, classColor.b * 255, srcName)
 	else
@@ -319,7 +314,7 @@ function BadGroup.Command(str, editbox)
 	elseif str == "private" then
 		ExtraTanksDB.SocialOutput = false
 		BadGroup:Print("Output set to "..yellowColor.."private|r.")
-	elseif str == "status" then 
+	elseif str == "status" then
 		BadGroup:Print(ExtraTanksDB)
 	elseif str == "add" then
 		if not UnitExists("target") then
@@ -501,7 +496,7 @@ end)
 InfoButton.text = InfoButton:CreateFontString(nil, "OVERLAY")
 InfoButton.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 InfoButton.text:SetPoint("CENTER")
-InfoButton.text:SetText(GUILD_INFORMATION)
+InfoButton.text:SetText(INFO)
 
 local b = CreateFrame("Button", nil, UIParent)
 b:SetTemplate("ClassColor")

@@ -1,5 +1,5 @@
-﻿local T, C, L = unpack(ShestakUI)
-if not C.meter.enable == true then return end
+﻿local T, C, L = unpack(select(2, ...))
+if not IsAddOnLoaded("ShestakUI_alDamageMeter") and C.meter.enable ~= true then return end
 
 -- Config start
 local barheight = C.meter.height
@@ -144,7 +144,7 @@ StaticPopupDialogs[addon_name.."ReportDialog"] = {
 	hasEditBox = 1,
 	timeout = 30,
 	hideOnEscape = 1,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 local reportList = {
@@ -312,13 +312,13 @@ local UpdateBars = function()
 		max = display[barguids[1]]
 		if i > maxbars or not cur then break end
 		if cur[sMode].amount == 0 then break end
-		if not bar[i] then 
+		if not bar[i] then
 			bar[i] = CreateBar()
 			bar[i]:SetPoint("TOP", 0, -(barheight + spacing) * (i-1))
 		end
 		bar[i].id = i + offset
 		bar[i]:SetValue(100 * cur[sMode].amount / max[sMode].amount)
-		color = RAID_CLASS_COLORS[cur.class]
+		color = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[cur.class] or RAID_CLASS_COLORS[cur.class]
 		bar[i]:SetStatusBarColor(color.r, color.g, color.b)
 		bar[i].bg:SetVertexColor(color.r, color.g, color.b, 0.25)
 		if sMode == DAMAGE or sMode == SHOW_COMBAT_HEALING then
@@ -468,12 +468,12 @@ end
 
 local CheckRoster = function()
 	wipe(units)
-	if GetNumRaidMembers() > 0 then
-		for i = 1, GetNumRaidMembers(), 1 do
+	if GetNumGroupMembers() > 0 then
+		for i = 1, GetNumGroupMembers(), 1 do
 			CheckUnit("raid"..i)
 		end
-	elseif GetNumPartyMembers() > 0 then
-		for i = 1, GetNumPartyMembers(), 1 do
+	elseif GetNumSubgroupMembers() > 0 then
+		for i = 1, GetNumSubgroupMembers(), 1 do
 			CheckUnit("party"..i)
 		end
 	end
@@ -481,14 +481,14 @@ local CheckRoster = function()
 end
 
 local IsRaidInCombat = function()
-	if GetNumRaidMembers() > 0 then
-		for i = 1, GetNumRaidMembers(), 1 do
+	if GetNumGroupMembers() > 0 then
+		for i = 1, GetNumGroupMembers(), 1 do
 			if UnitExists("raid"..i) and UnitAffectingCombat("raid"..i) then
 				return true
 			end
 		end
-	elseif GetNumPartyMembers() > 0 then
-		for i = 1, GetNumPartyMembers(), 1 do
+	elseif GetNumSubgroupMembers() > 0 then
+		for i = 1, GetNumSubgroupMembers(), 1 do
 			if UnitExists("party"..i) and UnitAffectingCombat("party"..i) then
 				return true
 			end
@@ -645,7 +645,7 @@ local OnEvent = function(self, event, ...)
 			self:UnregisterEvent(event)
 			MainFrame = CreateFrame("Frame", addon_name.."Frame", UIParent)
 			MainFrame:SetSize(width, height)
-			MainFrame:SetPoint(unpack(C.position.damage_meter))
+			MainFrame:SetPoint(C.position.damage_meter)
 			MainFrame:SetMovable(true)
 			MainFrame:EnableMouse(true)
 			MainFrame:EnableMouseWheel(true)
@@ -672,7 +672,7 @@ local OnEvent = function(self, event, ...)
 			UIDropDownMenu_Initialize(menuFrame, CreateMenu, "MENU")
 			CheckRoster()
 		end
-	elseif event == "RAID_ROSTER_UPDATE" or event == "PARTY_MEMBERS_CHANGED" or event == "PLAYER_ENTERING_WORLD" then
+	elseif event == "GROUP_ROSTER_UPDATE" or event == "PLAYER_ENTERING_WORLD" then
 		CheckRoster()
 	elseif event == "PLAYER_REGEN_DISABLED" then
 		if not combatstarted then
@@ -690,8 +690,7 @@ addon:SetScript("OnEvent", OnEvent)
 addon:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 addon:RegisterEvent("ADDON_LOADED")
 addon:RegisterEvent("VARIABLES_LOADED")
-addon:RegisterEvent("RAID_ROSTER_UPDATE")
-addon:RegisterEvent("PARTY_MEMBERS_CHANGED")
+addon:RegisterEvent("GROUP_ROSTER_UPDATE")
 addon:RegisterEvent("PLAYER_ENTERING_WORLD")
 addon:RegisterEvent("PLAYER_REGEN_DISABLED")
 addon:RegisterEvent("UNIT_PET")

@@ -4,9 +4,9 @@ if C.extra_skins.face_shooter ~= true or T.class ~= "HUNTER" or T.level < 80 the
 ----------------------------------------------------------------------------------------
 --	FaceShooter skin
 ----------------------------------------------------------------------------------------
-local FSSkin = CreateFrame("Frame")
-FSSkin:RegisterEvent("PLAYER_LOGIN")
-FSSkin:SetScript("OnEvent", function(self, event, addon)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event, addon)
 	if not IsAddOnLoaded("FaceShooter") then return end
 
 	if ttlMover then

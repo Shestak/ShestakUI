@@ -2,7 +2,7 @@
 if C.extra_bar.enable ~= true or C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Extra ActionBar(ExtraBar by Cowmonster)
+--	Custom ActionBar(ExtraBar by Cowmonster)
 ----------------------------------------------------------------------------------------
 local bar = CreateFrame("Frame", "ExtraBarAnchor", UIParent)
 bar:CreatePanel("Invisible", 1, 1, unpack(C.extra_position.extra_bar))
@@ -37,7 +37,6 @@ for i = 13, 24 do
 		f:SetAttribute("showgrid", 1)
 	end
 	f:SetID(i)
-
 	f:ClearAllPoints()
 	if C.extra_bar.style == "1*12" then
 		if i == 13 then
@@ -89,11 +88,25 @@ for i = 13, 24 do
 		end
 	end
 
-	f:StyleButton(true)
+	f:StyleButton()
 	f:Show()
+	RegisterStateDriver(f, "visibility", "[petbattle] hide;show")
 end
 
-BINDING_HEADER_EXTRABAR_HEADER = L_EXTRA_HEADER_EXTRABAR
+-- Correct bindinng names
+_G["BINDING_HEADER_EXTRABAR_HEADER"] = L_EXTRA_HEADER_EXTRABAR
+_G["BINDING_NAME_CLICK ExtraBarButton1:LeftButton"] = "Extra ActionBar Button 1"
+_G["BINDING_NAME_CLICK ExtraBarButton2:LeftButton"] = "Extra ActionBar Button 2"
+_G["BINDING_NAME_CLICK ExtraBarButton3:LeftButton"] = "Extra ActionBar Button 3"
+_G["BINDING_NAME_CLICK ExtraBarButton4:LeftButton"] = "Extra ActionBar Button 4"
+_G["BINDING_NAME_CLICK ExtraBarButton5:LeftButton"] = "Extra ActionBar Button 5"
+_G["BINDING_NAME_CLICK ExtraBarButton6:LeftButton"] = "Extra ActionBar Button 6"
+_G["BINDING_NAME_CLICK ExtraBarButton7:LeftButton"] = "Extra ActionBar Button 7"
+_G["BINDING_NAME_CLICK ExtraBarButton8:LeftButton"] = "Extra ActionBar Button 8"
+_G["BINDING_NAME_CLICK ExtraBarButton9:LeftButton"] = "Extra ActionBar Button 9"
+_G["BINDING_NAME_CLICK ExtraBarButton10:LeftButton"] = "Extra ActionBar Button 10"
+_G["BINDING_NAME_CLICK ExtraBarButton11:LeftButton"] = "Extra ActionBar Button 11"
+_G["BINDING_NAME_CLICK ExtraBarButton12:LeftButton"] = "Extra ActionBar Button 12"
 
 -- Mouseover bar
 if C.extra_bar.mouseover ~= true then return end

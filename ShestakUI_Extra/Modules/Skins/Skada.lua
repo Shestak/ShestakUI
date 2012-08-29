@@ -4,9 +4,9 @@ if C.extra_skins.skada ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Skada skin
 ----------------------------------------------------------------------------------------
-local SkadaSkin = CreateFrame("Frame")
-SkadaSkin:RegisterEvent("PLAYER_LOGIN")
-SkadaSkin:SetScript("OnEvent", function(self, event, addon)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event, addon)
 	if not IsAddOnLoaded("Skada") then return end
 
 	local Skada = Skada

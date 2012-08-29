@@ -44,7 +44,7 @@ local function AL_OnShow(self, event, ...)
 end
 
 local function Nine_IsThere(Self, event, ...)
-	for i = 1, 9 do 
+	for i = 1, 9 do
 		local f = _G["AtlasLootCompareFrameSortButton_"..i]
 		f:SetWidth(44)
 	end
@@ -86,9 +86,9 @@ local function Compare_OnShow(self, event, ...)
 	end
 end
 
-local SkinAL = CreateFrame("Frame")
-SkinAL:RegisterEvent("PLAYER_ENTERING_WORLD")
-SkinAL:SetScript("OnEvent", function(self, event)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") then return end
 	if not IsAddOnLoaded("AtlasLoot") then return end

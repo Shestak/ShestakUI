@@ -1,6 +1,6 @@
 ﻿--[[
 Name: LibBossIDs-1.0
-Revision: $Revision: 77 $
+Revision: $Revision: 79 $
 Author: Elsia
 Website: http://www.wowace.com/addons/libbossids-1-0/
 Documentation:
@@ -10,7 +10,7 @@ Dependencies: LibStub
 License: Public Domain, Absolutely no Warranty.
 ]]
 
-local MAJOR, MINOR = "LibBossIDs-1.0", "$Revision: 77 $"
+local MAJOR, MINOR = "LibBossIDs-1.0", "$Revision: 79 $"
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not lib then return end
@@ -372,6 +372,14 @@ local BossIDs = {
 	[36502] = true,	-- Devourer of Souls
 
 	-------------------------------------------------------------------------------
+	-- Gate of the Setting Sun
+	-------------------------------------------------------------------------------
+	[54432] = true,	-- Gadok
+	[56636] = true,	-- Rimok
+	[56877] = true,	-- Raigon
+	[56906] = true,	-- Kiptilak
+
+	-------------------------------------------------------------------------------
 	-- Gnomeregan
 	-------------------------------------------------------------------------------
 	[7800] = true,	-- Mekgineer Thermaplugg
@@ -445,6 +453,11 @@ local BossIDs = {
 	[27975] = true,	-- Maiden of Grief
 	[28234] = true,	-- The Tribunal of Ages
 	[27978] = true,	-- Sjonnir The Ironshaper
+
+	-------------------------------------------------------------------------------
+	-- Heart of Fear
+	-------------------------------------------------------------------------------
+	[62980] = true,	-- Zorlok
 
 	-------------------------------------------------------------------------------
 	-- Hellfire Citadel: Hellfire Ramparts
@@ -611,6 +624,22 @@ local BossIDs = {
 	[12201] = true,	-- Princess Theradras
 
 	-------------------------------------------------------------------------------
+	-- Mogu'Shan Palace
+	-------------------------------------------------------------------------------
+	[61442] = true,	-- Kuai the Brute, Trial of the King
+	[61444] = true,	-- Ming the Cunning, Trial of the King
+	[61445] = true,	-- Haiyan the Unstoppable, Trial of the King
+	[61243] = true,	-- Gekkan
+	[61398] = true,	-- Xin the Weaponmaster
+
+	-------------------------------------------------------------------------------
+	-- Mogu'Shan Vault
+	-------------------------------------------------------------------------------
+	[59915]	= true,	-- Jasper, Stone Guard
+	[60043]	= true,	-- Jade, Stone Guard
+	[60051]	= true,	-- Cobalt, Stone Guard
+
+	-------------------------------------------------------------------------------
 	-- Molten Core
 	-------------------------------------------------------------------------------
 	[12118] = true,	-- Lucifron
@@ -684,6 +713,14 @@ local BossIDs = {
 	[16064] = true,	-- Thane Korth'azz
 	[16062] = true,	-- Highlord Mograine
 	[16063] = true,	-- Sir Zeliek
+
+	-------------------------------------------------------------------------------
+	-- Nizuao Temple (MoP-Dungeon 5.0.1)
+	-------------------------------------------------------------------------------
+	[61634] = true,	-- Vojak
+	[61567] = true,	-- Jinbak
+	[62205] = true,	-- Neronok
+	[61485] = true,	-- Pavalak
 
 	-------------------------------------------------------------------------------
 	-- Obsidian Sanctum
@@ -999,6 +1036,16 @@ local BossIDs = {
 	[5719] = true,	-- Morphaz
 	[5722] = true,	-- Hazzas
 	[5709] = true,	-- Shade of Eranikus
+
+	-------------------------------------------------------------------------------
+	-- Temple of the Jade Serpent
+	-------------------------------------------------------------------------------
+	[56448] = true, -- Wise Mari
+	[58826] = true, -- Zao Sunseeker / Library Event
+	[59051] = true, -- Strife / Library Event
+	[59726] = true, -- Anger / Library Event
+	[56732] = true, -- Liu Flameheart
+	[56439] = true, -- Sha of Doubt
 
 	-------------------------------------------------------------------------------
 	-- The Bastion of Twilight

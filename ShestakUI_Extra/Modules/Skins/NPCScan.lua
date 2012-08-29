@@ -4,9 +4,9 @@ if C.extra_skins.npcscan ~= true then return end
 ----------------------------------------------------------------------------------------
 --	NPCScan skin
 ----------------------------------------------------------------------------------------
-local NPCSkin = CreateFrame("Frame")
-NPCSkin:RegisterEvent("PLAYER_LOGIN")
-NPCSkin:SetScript("OnEvent", function(self, event, addon)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event, addon)
 	if not IsAddOnLoaded("_NPCScan") then return end
 	_NPCScanButton:StripTextures()
 	_NPCScanButton:SetTemplate("Transparent")

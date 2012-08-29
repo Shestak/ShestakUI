@@ -5,20 +5,14 @@ if C.extra_general.move_blizzard ~= true then return end
 --	Move Blizzard frames
 ----------------------------------------------------------------------------------------
 local frames = {
-	"CharacterFrame", "PlayerTalentFrameHeaderFrame", "SpellBookFrame", "PVPFrame",
-	"GuildFrame", "TaxiFrame", "QuestFrame", "QuestLogFrame", "QuestLogDetailFrame",
-	"MerchantFrame", "TradeFrame", "FriendsFrame", "CinematicFrame", "TabardFrame",
-	"PVPBannerFrame", "GuildRegistrarFrame", "ArenaRegistrarFrame", "PetitionFrame",
-	"HelpFrame", "GossipFrame", "MailFrame", "BattlefieldFrame", "PetStableFrame",
-	"WorldStateScoreFrame", "DressUpFrame", "MinigameFrame", "LFGParentFrame",
-	"LFDParentFrame", "LFRParentFrame", "ArenaFrame", "ChatConfigFrame", "PVPParentFrame",
-	"GameMenuFrame", "InterfaceOptionsFrame", "VideoOptionsFrame", "EncounterJournal",
-	"aLoadFrame",
-}
-
-local framesLoD = {
-	"AchievementFrameHeader", "ClassTrainerFrame", "MacroFrame", "KeyBindingFrame",
-	"CalendarFrame", "TimeManagerFrame", "LookingForGuildFrame", "InspectFrame",
+	"CharacterFrame", "SpellBookFrame", "PVPFrame", "TaxiFrame", "QuestFrame", "PVEFrame",
+	"QuestLogFrame", "QuestLogDetailFrame", "MerchantFrame", "TradeFrame", "MailFrame",
+	"FriendsFrame", "CinematicFrame", "TabardFrame", "PVPBannerFrame", "PetStableFrame",
+	"GuildRegistrarFrame", "PetitionFrame", "HelpFrame", "GossipFrame", "DressUpFrame",
+	"WorldStateScoreFrame", "LFDParentFrame", "LFRParentFrame", "ChatConfigFrame",
+	"GameMenuFrame", "InterfaceOptionsFrame", "VideoOptionsFrame", "GuildInviteFrame",
+	"OpenMailFrame", "LootFrame", "StackSplitFrame", "MacOptionsFrame", "ItemTextFrame",
+	"StaticPopup1", "TutorialFrame", "MissingLootFrame", "PVPBannerFrame", "BankFrame"
 }
 
 for i, v in pairs(frames) do

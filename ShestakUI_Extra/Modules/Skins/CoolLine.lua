@@ -4,9 +4,9 @@ if C.extra_skins.cool_line ~= true then return end
 ----------------------------------------------------------------------------------------
 --	CoolLine skin
 ----------------------------------------------------------------------------------------
-local CLSkin = CreateFrame("Frame")
-CLSkin:RegisterEvent("PLAYER_LOGIN")
-CLSkin:SetScript("OnEvent", function(self, event, addon)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event, addon)
 	if not IsAddOnLoaded("CoolLine") then return end
 
 	CoolLineDB.border = "None"

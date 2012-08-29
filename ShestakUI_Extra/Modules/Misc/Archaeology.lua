@@ -328,7 +328,7 @@ function stArch:updateArtifactBar(index)
 
 	bar['race']:SetText(artifact['race'])
 
-	if GetNumArtifactsByRace(index) ~= 0 then 
+	if GetNumArtifactsByRace(index) ~= 0 then
 		local keystoneBonus = 0
 
 		if artifact['numKeysockets'] then
@@ -395,7 +395,7 @@ function stArch:EnableSolve(index, button)
 		end
 
 		if GetNumArtifactsByRace(index) > 0 then
-			if stArch['artifactInfo'][index]['canSolve'] then 
+			if stArch['artifactInfo'][index]['canSolve'] then
 				if not ((stArch['archSkill']['rank'] + 5) > stArch['archSkill']['maxRank'] and stArch['archSkill']['maxRank'] ~= 525) or IsShiftKeyDown() then
 					SolveArtifact()
 				end
@@ -463,7 +463,7 @@ function stArch:updateFramePosition(self)
 	end
 
 	progressBars['solveToggle']:ClearAllPoints()
-	if progressBars['solveFrame']:IsShown() then 
+	if progressBars['solveFrame']:IsShown() then
 		progressBars['solveToggle']:SetPoint(unpack(progressBars['solveToggle']['closePoint']))
 	else
 		progressBars['solveToggle']:SetPoint(unpack(progressBars['solveToggle']['openPoint1']))

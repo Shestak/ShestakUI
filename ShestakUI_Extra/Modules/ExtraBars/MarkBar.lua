@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(ShestakUI)
-if C.extra_general.mark_bar ~= true then return end
+if C.extra_bar.mark_bar ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Mark Bar(by Smelly)
@@ -92,7 +92,13 @@ local PullTargetButton = CreateFrame("Frame", "PullTargetButton", MarkBarAnchor)
 PullTargetButton:CreatePanel("Transparent", button_size, button_size, "TOP", WorldMarkButton, "BOTTOM", 0, -3)
 PullTargetButton:SetScript("OnEnter", T.SetModifiedBackdrop)
 PullTargetButton:SetScript("OnLeave", T.SetOriginalBackdrop)
-PullTargetButton:SetScript("OnMouseUp", function() PullCountdown.Pull(3) end)
+PullTargetButton:SetScript("OnMouseUp", function()
+	if C.announcements.pull_countdown then
+		PullCountdown.Pull(3)
+	else
+		print("|cffffff00Enable 'Pull countdown announce' option.|r")
+	end
+end)
 
 local PullTargetButtonTexture = PullTargetButton:CreateTexture(nil, "OVERLAY")
 PullTargetButtonTexture:SetTexture("Interface\\Icons\\Ability_Hunter_Beastcall")
@@ -103,18 +109,16 @@ PullTargetButtonTexture:Point("BOTTOMRIGHT", PullTargetButton, -2, 2)
 -- Check if we are Raid Leader/Officer or in Party
 local function CheckRaidStatus()
 	local inInstance, instanceType = IsInInstance()
-	local partyMembers = GetNumPartyMembers()
- 
-	if not UnitInRaid("player") and partyMembers >= 1 then return true
-	elseif UnitIsRaidOfficer("player") then return true
-	elseif not inInstance or instanceType == "pvp" or instanceType == "arena" then return false
+	if ((GetNumGroupMembers() > 0 and UnitIsGroupLeader("player") and not UnitInRaid("player")) or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and not (inInstance and (instanceType == "pvp" or instanceType == "arena")) then
+		return true
+	else
+		return false
 	end
 end
 
 -- Automatically show/hide the frame if we have Raid Leader or Raid Officer or in Party
 local LeadershipCheck = CreateFrame("Frame")
-LeadershipCheck:RegisterEvent("RAID_ROSTER_UPDATE")
-LeadershipCheck:RegisterEvent("PARTY_MEMBERS_CHANGED")
+LeadershipCheck:RegisterEvent("GROUP_ROSTER_UPDATE")
 LeadershipCheck:RegisterEvent("PLAYER_ENTERING_WORLD")
 LeadershipCheck:SetScript("OnEvent", function(self, event)
 	if InCombatLockdown() then

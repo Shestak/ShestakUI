@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(ShestakUI)
-if C.extra_general.switch_spec ~= true then return end
+if C.extra_bar.switch_spec ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Switch spec panel(by Epic)
@@ -11,27 +11,22 @@ local dr, dg, db = unpack({0.4, 0.4, 0.4})
 local panelcolor = ("|cff%.2x%.2x%.2x"):format(dr * 255, dg * 255, db * 255)
 
 -- Functions
-local function HasDualSpec() if GetNumTalentGroups() > 1 then return true end end
+local function HasDualSpec() if GetNumSpecGroups() > 1 then return true end end
 
-local function ActiveTalents()
-	local tree1 = select(5, GetTalentTabInfo(1)) or 0
-	local tree2 = select(5, GetTalentTabInfo(2)) or 0
-	local tree3 = select(5, GetTalentTabInfo(3)) or 0
-	local Tree = GetPrimaryTalentTree(false, false, GetActiveTalentGroup()) or 0
-	return tree1, tree2, tree3, Tree
+local function GetSecondarySpecIndex()
+	return 3 - (GetActiveSpecGroup() or 1)
 end
 
-local function UnactiveTalents()
-	if GetActiveTalentGroup() == 1 then
-		secondary = 2
-	else
-		secondary = 1
-	end
-	local sTree1 = select(5, GetTalentTabInfo(1, false, false, secondary)) or 0
-	local sTree2 = select(5, GetTalentTabInfo(2, false, false, secondary)) or 0
-	local sTree3 = select(5, GetTalentTabInfo(3, false, false, secondary)) or 0
-	local sTree = GetPrimaryTalentTree(false, false, (secondary)) or 0
-	return sTree1, sTree2, sTree3, sTree
+local function GetCurrentSpec()
+	local index = GetSpecialization(false, false, GetActiveSpecGroup())
+	local name = index and select(2, GetSpecializationInfo(index))
+	return index, name
+end
+
+local function GetSecondarySpec()
+	local index = GetSpecialization(false, false, GetSecondarySpecIndex())
+	local name = index and select(2, GetSpecializationInfo(index))
+	return index, name
 end
 
 local function enableDPS()
@@ -57,46 +52,45 @@ spec.t:Width(SpecAnchor:GetWidth() - 4)
 spec.t:Height(C.media.pixel_font_size)
 spec.t:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 
-local int = 1
-local function Update(self, t)
-	int = int - t
-	if int > 0 then return end
-	local tree1, tree2, tree3, Tree = ActiveTalents()
-	name = select(2, GetTalentTabInfo(Tree)) or NONE
-	spec.t:SetText(name..": "..panelcolor..tree1.."/"..tree2.."/"..tree3)
-	if HasDualSpec() then
-		local sTree1, sTree2, sTree3, sTree = UnactiveTalents()
-		sName = select(2, GetTalentTabInfo(sTree)) or NONE
-		spec:SetScript("OnEnter", function()
-			spec.t:SetText(cm..sName..": "..panelcolor..sTree1.."/"..sTree2.."/"..sTree3)
-			self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-		end)
-		spec:SetScript("OnLeave", function()
-			spec.t:SetText(name..": "..panelcolor..tree1.."/"..tree2.."/"..tree3)
-			self:SetBackdropBorderColor(unpack(C.media.border_color))
-		end)
-	end
-	int = 1
-	self:SetScript("OnUpdate", nil)
-end
-
-local function OnEvent(self, event)
-	if event == "PLAYER_ENTERING_WORLD" then
-		self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-	else
-		self:SetScript("OnUpdate", Update)
-	end
-end
-
 spec:RegisterEvent("PLAYER_TALENT_UPDATE")
 spec:RegisterEvent("PLAYER_ENTERING_WORLD")
 spec:RegisterEvent("CHARACTER_POINTS_CHANGED")
 spec:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
-spec:SetScript("OnEvent", OnEvent)
-spec:SetScript("OnClick", function(self) 
-	local i = GetActiveTalentGroup()
-	if i == 1 then SetActiveTalentGroup(2) end
-	if i == 2 then SetActiveTalentGroup(1) end
+spec:SetScript("OnEvent", function(self, event)
+	name = select(2, GetCurrentSpec()) or NONE
+	spec.t:SetText(name)
+
+	if HasDualSpec() then
+		local secondarySpecIndex, secondarySpecName = GetSecondarySpec()
+		if secondarySpecIndex ~= nil then
+			spec:SetScript("OnEnter", function()
+				spec.t:SetText(cm..secondarySpecName)
+				self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			end)
+			spec:SetScript("OnLeave", function()
+				spec.t:SetText(name)
+				self:SetBackdropBorderColor(unpack(C.media.border_color))
+			end)
+		else
+			spec:SetScript("OnEnter", function()
+				spec.t:SetText(cm..NONE)
+				self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			end)
+			spec:SetScript("OnLeave", function()
+				spec.t:SetText(name)
+				self:SetBackdropBorderColor(unpack(C.media.border_color))
+			end)
+		end
+	end
+end)
+spec:SetScript("OnClick", function(self)
+	if IsModifierKeyDown() then
+		ToggleTalentFrame()
+	else
+		local i = GetActiveSpecGroup()
+		if i == 1 then SetActiveSpecGroup(2) end
+		if i == 2 then SetActiveSpecGroup(1) end
+	end
 end)
 
 -- Toggle Button
@@ -175,7 +169,7 @@ for i = 1, 10 do
 	gearSets[i]:SetScript("OnEvent", function(self, event)
 		local points, pt = 0, GetNumEquipmentSets()
 		local frames = {
-			gearSets[1]:IsShown(), gearSets[2]:IsShown(), gearSets[3]:IsShown(), gearSets[4]:IsShown(),	gearSets[5]:IsShown(),
+			gearSets[1]:IsShown(), gearSets[2]:IsShown(), gearSets[3]:IsShown(), gearSets[4]:IsShown(), gearSets[5]:IsShown(),
 			gearSets[6]:IsShown(), gearSets[7]:IsShown(), gearSets[8]:IsShown(), gearSets[9]:IsShown(), gearSets[10]:IsShown()
 		}
 
@@ -185,14 +179,14 @@ for i = 1, 10 do
 			end
 		end
 
-		if frames[pt+1] == 1 then
-			gearSets[pt+1]:Hide()
+		if frames[pt + 1] == 1 then
+			gearSets[pt + 1]:Hide()
 		end
 
 		gearSets[i].texture = gearSets[i]:CreateTexture(nil, "BORDER")
 		gearSets[i].texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		gearSets[i].texture:SetPoint("TOPLEFT", gearSets[i] ,"TOPLEFT", 2, -2)
-		gearSets[i].texture:SetPoint("BOTTOMRIGHT", gearSets[i] ,"BOTTOMRIGHT", -2, 2)
+		gearSets[i].texture:SetPoint("TOPLEFT", gearSets[i], "TOPLEFT", 2, -2)
+		gearSets[i].texture:SetPoint("BOTTOMRIGHT", gearSets[i], "BOTTOMRIGHT", -2, 2)
 		gearSets[i].texture:SetTexture(select(2, GetEquipmentSetInfo(i)))
 
 		gearSets[i]:SetScript("OnEnter", T.SetModifiedBackdrop)

@@ -4,9 +4,9 @@ if C.extra_skins.tiny_dps ~= true then return end
 ----------------------------------------------------------------------------------------
 --	TinyDPS skin
 ----------------------------------------------------------------------------------------
-local TDPSSkin = CreateFrame("Frame")
-TDPSSkin:RegisterEvent("ADDON_LOADED")
-TDPSSkin:SetScript("OnEvent", function(self, event, addon)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("ADDON_LOADED")
+frame:SetScript("OnEvent", function(self, event, addon)
 	if not IsAddOnLoaded("TinyDPS") then return end
 
 	tdps.width = 221
@@ -19,9 +19,9 @@ TDPSSkin:SetScript("OnEvent", function(self, event, addon)
 	tdps.showMinimapButton = false
 	tdps.layout = 11
 	tdpsVisibleBars = 7
-	tdpsFont.name = C.media.pixel_font
-	tdpsFont.size = C.media.pixel_font_size
-	tdpsFont.outline = C.media.pixel_font_style
+	tdpsFont.name = C.font.stylization_font
+	tdpsFont.size = C.font.stylization_font_size
+	tdpsFont.outline = C.font.stylization_font_style
 	tdpsFont.shadow = 0
 	tdpsTextOffset = 0
 

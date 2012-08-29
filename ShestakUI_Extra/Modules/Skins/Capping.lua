@@ -97,12 +97,8 @@ function self:StyleBar(...)
 		local i = t.icon
 
 		f:CreateBackdrop("Default")
-		f.backdrop:Point("TOPLEFT", -2, 2)
-		f.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 		i:CreateBackdrop("Default")
-		i.backdrop:Point("TOPLEFT", -2, 2)
-		i.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 		self:PosBar(parent)
 		tinsert(bars, parent)

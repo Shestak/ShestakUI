@@ -4,9 +4,9 @@ if C.extra_skins.epgp ~= true then return end
 ----------------------------------------------------------------------------------------
 --	EPGP skin
 ----------------------------------------------------------------------------------------
-local EPGPSkin = CreateFrame("Frame")
-EPGPSkin:RegisterEvent("PLAYER_LOGIN")
-EPGPSkin:SetScript("OnEvent", function(self, event, addon)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event, addon)
 	if not IsAddOnLoaded("epgp") then return end
 
 	local StripAllTextures = {

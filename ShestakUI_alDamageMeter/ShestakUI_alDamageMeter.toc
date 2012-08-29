@@ -1,8 +1,8 @@
-## Interface: 40300
+## Interface: 50001
 ## Title: ShestakUI alDamageMeter
 ## Notes: Damage meter. Edit by Oz of shestak.org
 ## Author: Allez
-## Version: 40300.10
+## Version: 50001.10
 ## RequiredDeps: ShestakUI
 
 lib\LibStub\LibStub.lua

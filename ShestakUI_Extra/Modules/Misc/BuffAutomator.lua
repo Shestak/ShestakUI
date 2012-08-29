@@ -8,46 +8,6 @@ local frame = CreateFrame("Frame", "AutomatorFrame")
 
 -- Settings for each class and spec in the format of : Class'TalentTree'
 -- PRIEST1 is Disc Priest while MAGE2 is Fire Mage
-MAGE1 = {
-	6117,	-- Mage Armor
-	1459,	-- Arcane Intellect
-	543,	-- Mage Ward
-}
-
-MAGE2 = {
-	34913,	-- Molten Armor
-	1459,	-- Arcane Intellect
-	543,	-- Mage Ward
-}
-
-MAGE3 = {
-	7302,	-- Frost Armor
-	1459,	-- Arcane Intellect
-	543,	-- Mage Ward
-	11426,	-- Ice Barrier
-}
-
-PRIEST1 = {
-	79107,	-- Shadow Protection
-	79105,	-- Power Word: Fortitude
-	73413,	-- Inner Will
-	6346,	-- Fear Ward
-}
-
-PRIEST2 = {
-	79107,	-- Shadow Protection
-	79105,	-- Power Word: Fortitude
-	73413,	-- Inner Will
-	6346,	-- Fear Ward
-}
-
-PRIEST3 = {
-	79107,	-- Shadow Protection
-	79105,	-- Power Word: Fortitude
-	73413,	-- Inner Will
-	6346,	-- Fear Ward
-}
-
 DEATHKNIGHT1 = {
 	49222,	-- Bone Shield
 	57330,	-- Horn of Winter
@@ -64,50 +24,20 @@ DEATHKNIGHT3 = {
 	3714,	-- Path of Frost
 }
 
-WARRIOR1 = {
-	6673,	-- Battle Shout
+DRUID1 = {
+	1126,	-- Mark of the Wild
 }
 
-WARRIOR2 = {
-	6673,	-- Battle Shout
+DRUID2 = {
+	1126,	-- Mark of the Wild
 }
 
-WARRIOR3 = {
-	6673,	-- Battle Shout
+DRUID3 = {
+	1126,	-- Mark of the Wild
 }
 
-WARLOCK1 = {
-	6229,	-- Shadow Ward
-	28176,	-- Fel Armor
-}
-
-WARLOCK2 = {
-	6229,	-- Shadow Ward
-	28176,	-- Fel Armor
-}
-
-WARLOCK3 = {
-	6229,	-- Shadow Ward
-	28176,	-- Fel Armor
-}
-
-ROGUE1 = {}
-
-ROGUE2 = {}
-
-ROGUE3 = {}
-
-PALADIN1 = {
-	20217,	-- Blessing of Kings
-	20165,	-- Seal of Insight
-}
-
-PALADIN2 = {
-	20217,	-- Blessing of Kings
-}
-
-PALADIN3 = {
-	20217,	-- Blessing of Kings
+DRUID4 = {
+	1126,	-- Mark of the Wild
 }
 
 HUNTER1 = {
@@ -122,16 +52,94 @@ HUNTER3 = {
 	13165,	-- Aspect of the Hawk
 }
 
-DRUID1 = {
-	1126,	-- Mark of the Wild
+MAGE1 = {
+	1459,	-- Arcane Brilliance
 }
 
-DRUID2 = {
-	1126,	-- Mark of the Wild
+MAGE2 = {
+	1459,	-- Arcane Brilliance
 }
 
-DRUID3 = {
-	1126,	-- Mark of the Wild
+MAGE3 = {
+	1459,	-- Arcane Brilliance
+}
+
+MONK1 = {
+	117666,	-- Legacy of the Emperor
+	116781,	-- Legacy of the White Tiger
+}
+
+MONK2 = {
+	117666,	-- Legacy of the Emperor
+	116781,	-- Legacy of the White Tiger
+}
+
+MONK3 = {
+	117666,	-- Legacy of the Emperor
+	116781,	-- Legacy of the White Tiger
+}
+
+PALADIN1 = {
+	20217,	-- Blessing of Kings
+}
+
+PALADIN2 = {
+	20217,	-- Blessing of Kings
+}
+
+PALADIN3 = {
+	20217,	-- Blessing of Kings
+}
+
+PRIEST1 = {
+	21562,	-- Power Word: Fortitude
+	73413,	-- Inner Will
+}
+
+PRIEST2 = {
+	21562,	-- Power Word: Fortitude
+	73413,	-- Inner Will
+}
+
+PRIEST3 = {
+	21562,	-- Power Word: Fortitude
+	73413,	-- Inner Will
+}
+
+ROGUE1 = {}
+
+ROGUE2 = {}
+
+ROGUE3 = {}
+
+SHAMAN1 = {}
+
+SHAMAN2 = {}
+
+SHAMAN3 = {}
+
+WARLOCK1 = {
+	109773,	-- Dark Intent
+}
+
+WARLOCK2 = {
+	109773,	-- Dark Intent
+}
+
+WARLOCK3 = {
+	109773,	-- Dark Intent
+}
+
+WARRIOR1 = {
+	6673,	-- Battle Shout
+}
+
+WARRIOR2 = {
+	6673,	-- Battle Shout
+}
+
+WARRIOR3 = {
+	469,	-- Commanding Shout
 }
 
 -- Function for waiting through the global cooldown
@@ -154,7 +162,7 @@ btn:SetAttribute("unit", "player")
 
 -- Main function for changing keybinding to mousewheel when a buff is needed
 function CheckBuffs()
-	local tree = GetPrimaryTalentTree() or 1
+	local tree = GetSpecialization() or 1
 	if IsFlying() or IsMounted() or UnitIsDeadOrGhost("Player") or InCombatLockdown() then return end
 	ClearOverrideBindings(btn)
 	btn:SetAttribute("spell", nil)
