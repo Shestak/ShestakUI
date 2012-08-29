@@ -198,6 +198,7 @@ if T.name == "Oz" then
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].plugins_auto_resurrection = true
 	C["stats"].battleground = true
+	C["toppanel"].enable = false
 end
 
 ----------------------------------------------------------------------------------------
