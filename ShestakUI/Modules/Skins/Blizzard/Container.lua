@@ -132,7 +132,7 @@ local function LoadSkin()
 	end)
 
 	-- Frame Anchors
-	hooksecurefunc("updateContainerFrameAnchors", function()
+	hooksecurefunc("UpdateContainerFrameAnchors", function()
 		local frame, xOffset, yOffset, screenHeight, freeScreenHeight, leftMostPoint, column
 		local screenWidth = GetScreenWidth()
 		local containerScale = 1
