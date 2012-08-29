@@ -176,7 +176,7 @@ local SplitBars = function()
 			ToggleBar[4]:ClearAllPoints()
 			ToggleBar[4]:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			VehicleButtonAnchor:ClearAllPoints()
-			VehicleButtonAnchor:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, C.actionbar.button_size + C.actionbar.button_space)
+			VehicleButtonAnchor:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			if SavedOptionsPerChar.BottomBars == 2 then
 				ToggleBarText(3, "<\n<\n<", false, true)
 				ToggleBarText(4, ">\n>\n>", false, true)
@@ -191,7 +191,7 @@ local SplitBars = function()
 			ToggleBar[4]:ClearAllPoints()
 			ToggleBar[4]:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			VehicleButtonAnchor:ClearAllPoints()
-			VehicleButtonAnchor:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, C.actionbar.button_size + C.actionbar.button_space)
+			VehicleButtonAnchor:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			if SavedOptionsPerChar.BottomBars == 2 then
 				ToggleBarText(3, ">\n>\n>", true)
 				ToggleBarText(4, "<\n<\n<", true)
@@ -347,7 +347,7 @@ for i = 1, 5 do
 			ToggleBar[3]:FadeIn()
 			ToggleBar[4]:FadeIn()
 			VehicleButtonAnchor:ClearAllPoints()
-			VehicleButtonAnchor:Point("BOTTOMRIGHT", ToggleBar[4], "BOTTOMLEFT", -C.actionbar.button_space, C.actionbar.button_size + C.actionbar.button_space)
+			VehicleButtonAnchor:Point("BOTTOMRIGHT", ToggleBar[4], "BOTTOMLEFT", -C.actionbar.button_space, 0)
 		else
 			ToggleBar[i]:FadeIn()
 		end
@@ -367,9 +367,9 @@ for i = 1, 5 do
 			ToggleBar[4]:FadeOut()
 			VehicleButtonAnchor:ClearAllPoints()
 			if SavedOptionsPerChar.SplitBars == true then
-				VehicleButtonAnchor:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, C.actionbar.button_size + C.actionbar.button_space)
+				VehicleButtonAnchor:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			else
-				VehicleButtonAnchor:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, C.actionbar.button_size + C.actionbar.button_space)
+				VehicleButtonAnchor:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			end
 		else
 			ToggleBar[i]:FadeOut()
