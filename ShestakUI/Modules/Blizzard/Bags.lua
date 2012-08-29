@@ -111,8 +111,6 @@ local trashButton = {}
 local trashBag = {}
 
 function Stuffing:SlotUpdate(b)
-	-- Don't do any slot update if bags are not show
-	if not StuffingFrameBags:IsShown() then return end
 	local texture, count, locked = GetContainerItemInfo(b.bag, b.slot)
 	local clink = GetContainerItemLink(b.bag, b.slot)
 	local isQuestItem, questId = GetContainerItemQuestInfo(b.bag, b.slot)
