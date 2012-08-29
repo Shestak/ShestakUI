@@ -229,6 +229,16 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 					_G["DeclensionFrameDeclension"..i.."Edit"]:SetTextInsets(3, 0, 0, 0)
 				end
 			end
+			if C.skins.clique ~= true and IsAddOnLoaded("Clique") then
+				CliqueSpellTab:GetRegions():SetSize(0.1, 0.1)
+				CliqueSpellTab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				CliqueSpellTab:GetNormalTexture():ClearAllPoints()
+				CliqueSpellTab:GetNormalTexture():Point("TOPLEFT", 2, -2)
+				CliqueSpellTab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+				CliqueSpellTab:CreateBackdrop("Default")
+				CliqueSpellTab.backdrop:SetAllPoints()
+				CliqueSpellTab:StyleButton()
+			end
 		end
 	end
 
