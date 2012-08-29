@@ -98,6 +98,7 @@ if T.author == true then
 	C["unitframe_class_bar"].vengeance = false
 	C["stats"].fps = false
 	C["stats"].battleground = true
+	C["toppanel"].enable = false
 	if T.level == MAX_PLAYER_LEVEL then
 		C["automation"].screenshot = true
 		C["stats"].experience = false
@@ -198,7 +199,6 @@ if T.name == "Oz" then
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].plugins_auto_resurrection = true
 	C["stats"].battleground = true
-	C["toppanel"].enable = false
 end
 
 ----------------------------------------------------------------------------------------
