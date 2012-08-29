@@ -1204,7 +1204,7 @@ Filger_Spells = {
 			-- Daybreak
 			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Ancient Kings
-			{spellID = 86678, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 86678, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Bastion of Glory
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
