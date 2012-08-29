@@ -23,16 +23,15 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ChannelPulloutTab",
 			"GuildInviteFrame",
 			"RolePollPopup",
-			"AddFriendFrame",
-			"ChannelFrameDaughterFrame",
-			"aLoadFrame",
-			"AddonSets",
 			"BaudErrorFrame",
 			"StackSplitFrame",
 			"OpacityFrame",
 			"GeneralDockManagerOverflowButtonList",
-			"LFGSearchStatus"
+			"QueueStatusFrame",
+			"BasicScriptErrors"
 		}
+
+		QueueStatusFrame:StripTextures()
 
 		for i = 1, getn(bgskins) do
 			local frame = _G[bgskins[i]]
@@ -42,7 +41,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		end
 
 		local insetskins = {
-			"aLoadScroll",
 			"BaudErrorFrameListScrollBox",
 			"BaudErrorFrameDetailScrollBox"
 		}
@@ -102,7 +100,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 
 		for i = 1, getn(ChatMenus) do
 			if _G[ChatMenus[i]] == _G["ChatMenu"] then
-				_G[ChatMenus[i]]:HookScript("OnShow", function(self) self:SetTemplate("Transparent")
+				_G[ChatMenus[i]]:HookScript("OnShow", function(self)
+					self:SetTemplate("Transparent")
 					self:ClearAllPoints()
 					self:Point("BOTTOMRIGHT", ChatFrame1, "BOTTOMRIGHT", 0, 30)
 				end)
@@ -143,7 +142,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"GameMenuButtonMacOptions",
 			"GameMenuButtonOptionHouse",
 			"GameMenuButtonAddonManager",
-			"GameMenuButtonSettingsGUI",
+			"GameMenuButtonSettingsUI",
 			"ReadyCheckFrameYesButton",
 			"ReadyCheckFrameNoButton",
 			"ColorPickerOkayButton",
@@ -155,29 +154,19 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"RolePollPopupAcceptButton",
 			"LFDRoleCheckPopupDeclineButton",
 			"LFDRoleCheckPopupAcceptButton",
-			"AddFriendEntryFrameCancelButton",
-			"AddFriendEntryFrameAcceptButton",
-			"ChannelFrameDaughterFrameOkayButton",
-			"ChannelFrameDaughterFrameCancelButton",
-			"AddonSet1",
-			"AddonSet2",
-			"AddonSet3",
-			"AddonSet4",
-			"AddonSet5",
-			"AddonSet6",
-			"aLoadReload",
 			"StackSplitOkayButton",
 			"StackSplitCancelButton",
+			"RaidUtilityConvertButton",
+			"RaidUtilityMainTankButton",
+			"RaidUtilityMainAssistButton",
+			"RaidUtilityRoleButton",
+			"RaidUtilityReadyCheckButton",
+			"RaidUtilityShowButton",
+			"RaidUtilityCloseButton",
+			"RaidUtilityDisbandButton",
+			"RaidUtilityRaidControlButton",
 			"CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton",
-			"DisbandRaidButton",
-			"SwitchRaidButton",
-			"MainTankButton",
-			"MainAssistButton",
-			"RoleCheckButton",
-			"ReadyCheckButton",
-			"ShowButton",
-			"CloseButton",
-			"RaidControlButton"
+			"BasicScriptErrorsButton"
 		}
 
 		for i = 1, getn(BlizzardButtons) do
@@ -228,7 +217,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			T.SkinCloseButton(_G["ChannelPulloutCloseButton"])
 			T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 			T.SkinCloseButton(_G["ItemRefCloseButton"])
-			T.SkinCloseButton(_G["aLoadCloseButton"])
 			if T.client == "ruRU" then
 				_G["DeclensionFrame"]:SetTemplate("Transparent")
 				_G["DeclensionFrameCancelButton"]:SkinButton()

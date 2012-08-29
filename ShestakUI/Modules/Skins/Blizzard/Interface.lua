@@ -12,6 +12,9 @@ local function LoadSkin()
 	InterfaceOptionsFrameHeader:ClearAllPoints()
 	InterfaceOptionsFrameHeader:Point("TOP", InterfaceOptionsFrame, 0, 0)
 
+	InterfaceOptionsFrameTab1:StripTextures()
+	InterfaceOptionsFrameTab2:StripTextures()
+
 	local frames = {
 		"InterfaceOptionsFramePanelContainer",
 		"InterfaceOptionsFrameAddOns",
@@ -33,9 +36,7 @@ local function LoadSkin()
 		"InterfaceOptionsFrameCancel",
 		"InterfaceOptionsFrameTab1",
 		"InterfaceOptionsFrameTab2",
-		"InterfaceOptionsHelpPanelResetTutorials",
-		"InterfaceOptionsUnitFramePanelResetPartyPosition",
-		"InterfaceOptionsRaidFramePanelResetPosition"
+		"InterfaceOptionsHelpPanelResetTutorials"
 	}
 
 	for i = 1, getn(buttons) do
@@ -55,11 +56,11 @@ local function LoadSkin()
 		"ControlsPanelLootAtMouse",
 		"ControlsPanelAutoLootCorpse",
 		"ControlsPanelInteractOnLeftClick",
+		"ControlsPanelAutoOpenLootHistory",
 		-- Combat
 		"CombatPanelAutoSelfCast",
 		"CombatPanelAttackOnAssist",
 		"CombatPanelStopAutoAttack",
-		"CombatPanelNameplateClassColors",
 		"CombatPanelTargetOfTarget",
 		"CombatPanelShowSpellAlerts",
 		"CombatPanelReducedLagTolerance",
@@ -71,16 +72,12 @@ local function LoadSkin()
 		"DisplayPanelShowHelm",
 		"DisplayPanelShowAggroPercentage",
 		"DisplayPanelPlayAggroSounds",
-		"DisplayPanelDetailedLootInfo",
 		"DisplayPanelShowSpellPointsAvg",
-		"DisplayPanelemphasizeMySpellEffects",
-		"DisplayPanelShowFreeBagSpace",
 		"DisplayPanelCinematicSubtitles",
 		"DisplayPanelRotateMinimap",
-		"DisplayPanelScreenEdgeFlash",
+		"DisplayPanelShowAccountAchievments",
 		-- Objectives
 		"ObjectivesPanelAutoQuestTracking",
-		"ObjectivesPanelAutoQuestProgress",
 		"ObjectivesPanelMapQuestDifficulty",
 		"ObjectivesPanelWatchFrameWidth",
 		-- Social
@@ -91,7 +88,13 @@ local function LoadSkin()
 		"SocialPanelChatHoverDelay",
 		"SocialPanelGuildMemberAlert",
 		"SocialPanelChatMouseScroll",
+		"SocialPanelWholeChatWindowClickable",
 		-- ActionBars
+		"ActionBarsPanelBottomLeft",
+		"ActionBarsPanelBottomRight",
+		"ActionBarsPanelRight",
+		"ActionBarsPanelRightTwo",
+		"ActionBarsPanelAlwaysShowActionBars",
 		"ActionBarsPanelLockActionBars",
 		"ActionBarsPanelSecureAbilityToggle",
 		-- Names
@@ -116,7 +119,8 @@ local function LoadSkin()
 		"NamesPanelUnitNameplatesEnemies",
 		"NamesPanelUnitNameplatesEnemyGuardians",
 		"NamesPanelUnitNameplatesEnemyTotems",
-		-- CombatText
+		"NamesPanelUnitNameplatesNameplateClassColors",
+		-- Floating Combat Text
 		"CombatTextPanelTargetDamage",
 		"CombatTextPanelPeriodicDamage",
 		"CombatTextPanelPetDamage",
@@ -136,7 +140,7 @@ local function LoadSkin()
 		"CombatTextPanelPeriodicEnergyGains",
 		"CombatTextPanelHonorGains",
 		"CombatTextPanelAuras",
-		-- StatusText
+		-- Status Text
 		"StatusTextPanelPlayer",
 		"StatusTextPanelPet",
 		"StatusTextPanelParty",
@@ -144,20 +148,18 @@ local function LoadSkin()
 		"StatusTextPanelAlternateResource",
 		"StatusTextPanelPercentages",
 		"StatusTextPanelXP",
-		-- UnitFrame
-		"UnitFramePanelPartyBackground",
+		-- Unit Frames
 		"UnitFramePanelPartyPets",
 		"UnitFramePanelArenaEnemyFrames",
 		"UnitFramePanelArenaEnemyCastBar",
 		"UnitFramePanelArenaEnemyPets",
 		"UnitFramePanelFullSizeFocusFrame",
-		-- Buffs
-		"BuffsPanelBuffDurations",
+		-- Buffs and Debuffs
 		"BuffsPanelDispellableDebuffs",
 		"BuffsPanelCastableBuffs",
 		"BuffsPanelConsolidateBuffs",
 		"BuffsPanelShowAllEnemyDebuffs",
-		-- Battlenet
+		-- Battle.net
 		"BattlenetPanelConversations",
 		"BattlenetPanelOnlineFriends",
 		"BattlenetPanelOfflineFriends",
@@ -175,9 +177,7 @@ local function LoadSkin()
 		"MousePanelWoWMouse",
 		-- Help
 		"HelpPanelShowTutorials",
-		"HelpPanelLoadingScreenTips",
 		"HelpPanelEnhancedTooltips",
-		"HelpPanelBeginnerTooltips",
 		"HelpPanelShowLuaErrors",
 		"HelpPanelColorblindMode",
 		"HelpPanelMovePad"
@@ -226,15 +226,13 @@ local function LoadSkin()
 
 	local dropdown = {
 		"ControlsPanelAutoLootKeyDropDown",
-		"CombatPanelTOTDropDown",
 		"CombatPanelFocusCastKeyDropDown",
 		"CombatPanelSelfCastKeyDropDown",
-		"DisplayPanelAggroWarningDisplay",
-		"DisplayPanelWorldPVPObjectiveDisplay",
 		"SocialPanelChatStyle",
 		"SocialPanelWhisperMode",
 		"SocialPanelTimestamps",
 		"SocialPanelBnWhisperMode",
+		"SocialPanelConversationMode",
 		"ActionBarsPanelPickupActionKeyDropDown",
 		"NamesPanelNPCNamesDropDown",
 		"NamesPanelUnitNameplatesMotionDropDown",
@@ -265,6 +263,26 @@ local function LoadSkin()
 		local button = _G[buttons[i]]
 		if button then
 			button:SkinButton()
+		end
+	end
+
+	local sliders = {
+		"InterfaceOptionsCombatPanelSpellAlertOpacitySlider",
+		"InterfaceOptionsCombatPanelMaxSpellStartRecoveryOffset",
+		"CompactUnitFrameProfilesGeneralOptionsFrameHeightSlider",
+		"CompactUnitFrameProfilesGeneralOptionsFrameWidthSlider",
+		"InterfaceOptionsBattlenetPanelToastDurationSlider",
+		"InterfaceOptionsCameraPanelMaxDistanceSlider",
+		"InterfaceOptionsCameraPanelFollowSpeedSlider",
+		"InterfaceOptionsMousePanelMouseSensitivitySlider",
+		"InterfaceOptionsMousePanelMouseLookSpeedSlider"
+	}
+
+	for i = 1, getn(sliders) do
+		local slider = _G[sliders[i]]
+		if slider then
+			T.SkinSlider(slider)
+			slider:SetFrameLevel(slider:GetFrameLevel() + 2)
 		end
 	end
 

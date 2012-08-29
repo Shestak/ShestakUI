@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if IsAddOnLoaded("ncHoverBind") then return end
 
 ----------------------------------------------------------------------------------------
---	Binding buttons(ncHoverBind by nightcracker)
+--	Binding buttons(ncHoverBind by Nightcracker)
 ----------------------------------------------------------------------------------------
 local bind = CreateFrame("Frame", "HoverBind", UIParent)
 
@@ -107,10 +107,10 @@ SlashCmdList.MOUSEOVERBIND = function()
 
 				if not self.button.name then return end
 
-				if not self.button.id or self.button.id < 1 or self.button.id > (spellmacro=="STANCE" and 10 or 12) then
+				if not self.button.id or self.button.id < 1 or self.button.id > (spellmacro == "STANCE" and 10 or 12) then
 					self.button.bindstring = "CLICK "..self.button.name..":LeftButton"
 				else
-					self.button.bindstring = (spellmacro == "STANCE" and "SHAPESHIFTBUTTON" or "BONUSACTIONBUTTON")..self.button.id
+					self.button.bindstring = (spellmacro == "STANCE" and "STANCEBUTTON" or "BONUSACTIONBUTTON")..self.button.id
 				end
 
 				GameTooltip:AddLine("Trigger")
@@ -140,7 +140,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 				if not self.button.action or self.button.action < 1 or self.button.action > 132 then
 					self.button.bindstring = "CLICK "..self.button.name..":LeftButton"
 				else
-					local modact = 1+(self.button.action-1)%12
+					local modact = 1 + (self.button.action - 1) % 12
 					if self.button.action < 13 or self.button.action > 72 then
 						self.button.bindstring = "ACTIONBUTTON"..modact
 					elseif self.button.action < 73 and self.button.action > 60 then
@@ -255,15 +255,13 @@ SlashCmdList.MOUSEOVERBIND = function()
 			timeout = 0,
 			whileDead = 1,
 			hideOnEscape = false,
-			preferredIndex = 3,
+			preferredIndex = 5,
 		}
 
 		-- Registering
-		local stance = ShapeshiftButton1:GetScript("OnClick")
+		local stance = StanceButton1:GetScript("OnClick")
 		local pet = PetActionButton1:GetScript("OnClick")
 		local button = SecureActionButton_OnClick
-		local summon = MultiCastSummonSpellButton:GetScript("OnClick")
-		local recall = MultiCastRecallSpellButton:GetScript("OnClick")
 
 		local function register(val)
 			if val.IsProtected and val.GetObjectType and val.GetScript and val:GetObjectType() == "CheckButton" and val:IsProtected() then
@@ -274,10 +272,6 @@ SlashCmdList.MOUSEOVERBIND = function()
 					val:HookScript("OnEnter", function(self) bind:Update(self, "STANCE") end)
 				elseif script == pet then
 					val:HookScript("OnEnter", function(self) bind:Update(self, "PET") end)
-				elseif script == summon then
-					val:HookScript("OnEnter", function(self) bind:Update(self, "MULTICASTSUMMONSPELL") end)
-				elseif script == recall then
-					val:HookScript("OnEnter", function(self) bind:Update(self, "MULTICASTRECALL") end)
 				end
 			end
 		end
@@ -314,7 +308,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 	if not bind.enabled then
 		bind:Activate()
 		StaticPopup_Show("KEYBIND_MODE")
-		local stance = ShapeshiftButton1:GetScript("OnClick")
+		local stance = StanceButton1:GetScript("OnClick")
 		local pet = PetActionButton1:GetScript("OnClick")
 		local button = SecureActionButton_OnClick
 		local focus = GetMouseFocus()

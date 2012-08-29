@@ -18,20 +18,21 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Message de bienvenue pour le chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Ajuste automatiquement la barre de latence Blizzard avec votre propre latence"
 
 -- Miscellaneous options
-L_GUI_MISC_AUTOQUEST = "Accepter les quêtes automatiquement"
-L_GUI_MISC_AUTODUEL = "Décliner les duels automatiquement"
-L_GUI_MISC_AUTOACCEPT = "Accepter automatiquement les invitations"
-L_GUI_MISC_AUTORESSURECT = "Autorésurrection en champ de bataille"
-L_GUI_MISC_AUTOBUYREAGENTS = "Achat automatique de composants"
 L_GUI_MISC_MARKING = "Marque la cible quand vous appuyez sur MAJ"
 L_GUI_MISC_INVKEYWORD = "Mot clé pour inviter (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Faire tourner la caméra quand absent"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Fenêtre de véhicule en mouseover"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Accepte les quêtes automatiquement"
 L_GUI_MISC_RAID_TOOLS = "Outils de raid"
-L_GUI_MISC_ACH_SCREENS = "Prend un screenshot quand un evenement est accomplie"
 L_GUI_MISC_PROFESSION_TABS = "Onglet des professions sur les fenêtres de métiers et de craft"
+L_GUI_MISC_DUNGEON_TABS = "PvP/PvE tabs on own frames" -- Needs review
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
+L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
+L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
+L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
+L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
+L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
+L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
@@ -40,6 +41,27 @@ L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annonce /gr, /raid si vous interrompez un sort
 L_GUI_ANNOUNCEMENTS_SPELLS = "Annonce dans la fenêtre groupe/raid quand vous lancez certains sorts"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Afficher les sorts lancés par tous les membres"
 L_GUI_ANNOUNCEMENTS_ENEMY_TRINKETS = "Annoncent l'utilisation de bibelots ennemies (ne fonctionne que dans l'arène)"
+L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Announce your Lightwell" -- Needs review
+L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Announce Toy Train or Direbrew's Remote cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Says thanks for some spells" -- Needs review
+L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown.Pull(#))" -- Needs review
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food" -- Needs review
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)" -- Needs review
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel" -- Needs review
+
+-- Automation options
+L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION_RESURRECTION = "Autorésurrection en champ de bataille"
+L_GUI_AUTOMATION_SCREENSHOT = "Prend un screenshot quand un evenement est accomplie"
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
+L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_ACCEPT_INVITE = "Accepter automatiquement les invitations"
+L_GUI_AUTOMATION_DECLINE_DUEL = "Décliner les duels automatiquement"
+L_GUI_AUTOMATION_ACCEPT_QUEST = "Accepter les quêtes automatiquement"
+L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
+L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
+L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Personalisation d'addon"
@@ -52,8 +74,13 @@ L_GUI_SKINS_BW = "Activer la personalisation pour BigWigs"
 L_GUI_SKINS_DBM = "Activer la personalisation pour DBM"
 L_GUI_SKINS_DXE = "Activer la personalisation pour DXE"
 L_GUI_SKINS_OMEN = "Activer la personalisation pour Omen"
-L_GUI_SKINS_PP = "Activer la personalisation pour PallyPower"
 L_GUI_SKINS_RECOUNT = "Activer la personalisation pour Recount"
+L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "Activer la personalisation pour BloodShieldTracker"
+L_GUI_SKINS_DOMINOS = "Activer la personalisation pour Dominos"
+L_GUI_SKINS_FLYOUT_BUTTON = "Activer la personalisation pour FlyoutButtonCustom"
+L_GUI_SKINS_NUG_RUNNING = "Activer la personalisation pour NugRunning"
+L_GUI_SKINS_OVALE = "Activer la personalisation pour OvaleSpellPriority"
+L_GUI_SKINS_CLIQUE = "Activer la personalisation pour Clique"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"
@@ -135,7 +162,7 @@ L_GUI_THREAT_HIDE_SOLO = "Afficher la menace seulement en groupe/raid"
 -- Meter options
 L_GUI_METER = "Compteur des dommages"
 L_GUI_METER_ENABLE = "Activer le compteur des dommages (uniquement pour les ShestakUI_alDamageMeter)"
-L_GUI_METER_SPACING = "Espacement entre les barreaux"
+L_GUI_METER_SPACING = "Espacement entre les barres"
 L_GUI_METER_HEIGHT = "Hauteur des barres"
 L_GUI_METER_WIDTH = "Largeur des barres"
 L_GUI_METER_MAXBARS = "Nombre de barres"
@@ -160,6 +187,10 @@ L_GUI_TOOLTIP_RAID_ICON = "Icone de raid"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Affiche qui cible actuellement l'unité qui est dans votre groupe/raid"
 L_GUI_TOOLTIP_ITEM_COUNT = "Afficher le nombre d'objets possédés"
 L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
+L_GUI_TOOLTIP_REFORGE = "Item reforge info" -- Needs review
+L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
+L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
+L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activer le chat"
@@ -170,12 +201,14 @@ L_GUI_CHAT_GOLD = "Supprime tous les spams joueur"
 L_GUI_CHAT_WIDTH = "Largeur du chat"
 L_GUI_CHAT_HEIGHT = "Hauteur du chat"
 L_GUI_CHAT_BAR = "Bouton pour changer de canal"
+L_GUI_CHAT_BAR_MOUSEOVER = "Lite Button Bar on mouseover" -- Needs review
 L_GUI_CHAT_TIMESTAMP = "Coloration du temps"
 L_GUI_CHAT_WHISP = "Alerte sonore quand murmure"
 L_GUI_CHAT_SKIN_BUBBLE = "Skin des bulles de discussions"
 L_GUI_CHAT_CL_TAB = "Afficher l'onglet du journal de combat"
 L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
 L_GUI_CHAT_STICKY = "Revient sur le dernier canal"
+L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
 
 -- Bag options
 L_GUI_BAGS = "Sacs"
@@ -196,7 +229,9 @@ L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu"
 -- Map options
 L_GUI_MAP_ENABLE = "Activer la carte du monde"
 L_GUI_MAP_SCALE = "Echelle de la carte"
-L_GUI_MAP_BG_STYLIZATION = "Style d'arrière plan de la carte"
+L_GUI_MAP_BG_STYLIZATION = "Style d'arrière plan de la carte"	
+L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
+L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Activer la fenêtre de butin"
@@ -224,6 +259,7 @@ L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
 L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Affiche les débuffs (Les noms abbrégés doivent être désactivés)"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Taille des affaiblissements"
+L_GUI_NAMEPLATE_HEALER_ICON = "Show healer icon on all enemy healers nameplate in battlegrounds" -- Needs review
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Activer les barres d'action"
@@ -241,9 +277,11 @@ L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barres de droite en 'mouseover'"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barre du familier en 'mouseover'(uniquement pour la barre horizontale)"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Cacher la barre du familier"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activer la barre du familier horizontale"
-L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER = "Changeforme/Posture/barre de totems en 'mouseover'"
-L_GUI_ACTIONBAR_SHAPESHIFT_HIDE = "Cacher changeforme"
-L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL = "Activer la barre de posture horizontale"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Changeforme/Posture/barre de totems en 'mouseover'"
+L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Cacher changeforme"
+L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Activer la barre de posture horizontale"
+L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Taille des buffs du joueur"
@@ -283,8 +321,6 @@ L_GUI_UF_ARENA_RIGHT = "Barres d'arène sur la droite"
 L_GUI_UF_ICONS_PVP = "Texte JcJ en Mouseover pour la barre du joueur et celle de la cible"
 L_GUI_UF_ICONS_COMBAT = "Icone de combat"
 L_GUI_UF_ICONS_RESTING = "Icone Resting pour les personnage de bas niveau"
-L_GUI_UF_ICONS_COMBO_POINT = "Affichage des points de combo pour les Voleurs/druides"
-L_GUI_UF_ICONS_COMBO_POINT_NEW = "Nouveau style/présentation pour les points de combos"
 L_GUI_UF_PORTRAIT_ENABLE = "Activer les portraits du joueur et de la cible"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Activer la bordure aux couleurs de la classe"
 L_GUI_UF_PORTRAIT_HEIGHT = "Hauteur des portraits"
@@ -292,14 +328,7 @@ L_GUI_UF_PORTRAIT_WIDTH = "Largeur des portraits"
 L_GUI_UF_ALTERNATIVE_PORTRAITS = "Active les portraits sur les barres de santé (vous devez désactiver l'option pour le joueur / cible portraits)"
 L_GUI_UF_PLUGINS_GCD = "Scintillement du GCD"
 L_GUI_UF_PLUGINS_SWING = "Barre d'attaque automatique / tir automatique"
-L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Activer la barre d'eclipse"
-L_GUI_UF_PLUGINS_HOLY_BAR = "Activer la barre de puissance sacrée"
-L_GUI_UF_PLUGINS_SHARD_BAR = "Activier la barre de fragment d'âme"
-L_GUI_UF_PLUGINS_RUNE_BAR = "Barre de rune"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Active une barre pour la Frappe nécrotique"
-L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Active la barre de menace"
-L_GUI_UF_PLUGINS_TOTEM_BAR = "Barre de totem"
-L_GUI_UF_PLUGINS_TOTEM_BAR_NAME = "Nom des totems"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Barre de réputation"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Barre d'expérience"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Barre lisse"
@@ -307,6 +336,18 @@ L_GUI_UF_PLUGINS_TALENTS = "Afficher les talent de l'ennemi"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texte de combat sur les barres du joueur et de la cible"
 L_GUI_UF_PLUGINS_FADER = "Barres de unités"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
+
+-- Unit Frames Class bar options
+L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars" -- Needs review
+L_GUI_UF_PLUGINS_COMBO_BAR = "Affichage des points de combo pour les Voleurs/Druides"
+L_GUI_UF_PLUGINS_SHADOW_BAR = "Enable Shadow Orbs bar" -- Needs review
+L_GUI_UF_PLUGINS_CHI_BAR = "Enable Chi bar" -- Needs review
+L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Active la barre de menace"
+L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Activer la barre d'eclipse"
+L_GUI_UF_PLUGINS_HOLY_BAR = "Activer la barre de puissance sacrée"
+L_GUI_UF_PLUGINS_SHARD_BAR = "Activier la barre de fragment d'âme"
+L_GUI_UF_PLUGINS_RUNE_BAR = "Barre de rune"
+L_GUI_UF_PLUGINS_TOTEM_BAR = "Barre de totem"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"
@@ -325,7 +366,7 @@ L_GUI_UF_RAID_GROUP = "Nombre de groupe dans le raid (Seulement pour ShestakUI_H
 L_GUI_UF_RAID_VERTICAL_GROUP = "Groupe de raid verticaux(Seulement pour ShestakUI_Heal)"
 L_GUI_UF_RAID_PORTRAITS = "Activer portraits sur les cadres de raid"
 L_GUI_UF_ICONS_LEADER = "Icone du Chef de raid, icone de l'assistant, icone du maоtre du butin"
-L_GUI_UF_ICONS_LFD_ROLE = "Icone de chef de raid"
+L_GUI_UF_ICONS_ROLE = "Role icon on frames" -- Needs review
 L_GUI_UF_ICONS_RAID_MARK = "Signe de raid"
 L_GUI_UF_ICONS_READY_CHECK = "Icone d'appel"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Mise en évidence des debuffs texture + icone"
@@ -354,9 +395,8 @@ L_GUI_STATS_LOCATION = "Lieu actuel"
 
 -- Error options
 L_GUI_ERROR = "Erreurs"
-L_GUI_ERROR_HIDE = "Cacher les erreurs"
 L_GUI_ERROR_BLACK = "Cacher les erreurs de la liste noire"
 L_GUI_ERROR_WHITE = "Afficher les erreurs de la liste blanche"
-L_GUI_ERROR_HIDE_COMBAT = "Cacher les erreurs en combat"
+L_GUI_ERROR_HIDE_COMBAT = "Hide all errors in combat" -- Needs review
 
 -- edit by Oz of shestak. org --

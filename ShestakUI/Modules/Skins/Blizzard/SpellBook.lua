@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Spellbook skin
+--	SpellBook skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local StripAllTextures = {
@@ -29,12 +29,15 @@ local function LoadSkin()
 	local pagebackdrop = CreateFrame("Frame", nil, SpellBookPage1:GetParent())
 	pagebackdrop:SetTemplate("Overlay")
 	pagebackdrop:Point("TOPLEFT", SpellBookFrame, "TOPLEFT", 50, -50)
-	pagebackdrop:Point("BOTTOMRIGHT", SpellBookPage1, "BOTTOMRIGHT", 5, 35)
+	pagebackdrop:Point("BOTTOMRIGHT", SpellBookFrame, "BOTTOMRIGHT", -26, 23)
 
 	T.SkinNextPrevButton(SpellBookPrevPageButton)
 	T.SkinNextPrevButton(SpellBookNextPageButton)
 	SpellBookNextPageButton:Point("BOTTOMRIGHT", pagebackdrop, "BOTTOMRIGHT", -15, 10)
 	SpellBookPrevPageButton:Point("BOTTOMRIGHT", SpellBookNextPageButton, "BOTTOMLEFT", -6, 0)
+
+	SpellBookFrameTutorialButton.Ring:Hide()
+	SpellBookFrameTutorialButton:SetPoint("TOPLEFT", SpellBookFrame, "TOPLEFT", -5, 10)
 
 	-- Skin SpellButtons
 	local function SpellButtons(self, first)
@@ -46,7 +49,7 @@ local function LoadSkin()
 				for i = 1, button:GetNumRegions() do
 					local region = select(i, button:GetRegions())
 					if region:GetObjectType() == "Texture" then
-						if region:GetTexture() ~= "Interface\\Buttons\\ActionBarFlyoutButton" then
+						if region ~= button.FlyoutArrow then
 							region:SetTexture(nil)
 						end
 					end
@@ -66,7 +69,7 @@ local function LoadSkin()
 
 				if not button.backdrop then
 					button:SetFrameLevel(button:GetFrameLevel() + 1)
-					button:CreateBackdrop("Default", true)
+					button:CreateBackdrop("Default")
 				end
 			end
 
@@ -97,7 +100,7 @@ local function LoadSkin()
 
 			tab:CreateBackdrop("Default")
 			tab.backdrop:SetAllPoints()
-			tab:StyleButton(true)
+			tab:StyleButton()
 
 			local point, relatedTo, point2, x, y = tab:GetPoint()
 			tab:Point(point, relatedTo, point2, 16, -1)
@@ -169,13 +172,14 @@ local function LoadSkin()
 		if icon then
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:ClearAllPoints()
-			icon:Point("TOPLEFT", 2, -2)
-			icon:Point("BOTTOMRIGHT", -2, 2)
+			icon:Point("TOPLEFT", 4, -4)
+			icon:Point("BOTTOMRIGHT", -4, 4)
 
-			button:SetFrameLevel(button:GetFrameLevel() + 2)
 			if not button.backdrop then
-				button:CreateBackdrop("Default", true)
-				button.backdrop:SetAllPoints()
+				button:SetFrameLevel(button:GetFrameLevel() + 2)
+				button:CreateBackdrop("Default")
+				button.backdrop:Point("TOPLEFT", 2, -2)
+				button.backdrop:Point("BOTTOMRIGHT", -2, 2)
 			end
 		end
 	end
@@ -200,44 +204,86 @@ local function LoadSkin()
 		statusbar.rankText:SetPoint("CENTER")
 	end
 
-	-- Mounts/Companions
-	for i = 1, NUM_COMPANIONS_PER_PAGE do
-		local button = _G["SpellBookCompanionButton"..i]
-		local icon = _G["SpellBookCompanionButton"..i.."IconTexture"]
-		button:StripTextures()
-		button:StyleButton(false)
-
-		if icon then
-			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			icon:ClearAllPoints()
-			icon:Point("TOPLEFT", 2, -2)
-			icon:Point("BOTTOMRIGHT", -2, 2)
-
-			button:SetFrameLevel(button:GetFrameLevel() + 2)
-			if not button.backdrop then
-				button:CreateBackdrop("Default", true)
-				button.backdrop:SetAllPoints()
-			end
-		end
-	end
-
-	SpellBookCompanionSummonButton:SkinButton()
-	SpellBookCompanionModelFrame:StripTextures()
-	SpellBookCompanionModelFrameShadowOverlay:StripTextures()
-	SpellBookCompanionsModelFrame:Kill()
-	SpellBookCompanionModelFrame:SetTemplate("Overlay")
-	SpellBookCompanionsFrame:SetFrameLevel(SpellBookCompanionsFrame:GetFrameLevel() + 2)
-
-	T.SkinRotateButton(SpellBookCompanionModelFrameRotateRightButton)
-	T.SkinRotateButton(SpellBookCompanionModelFrameRotateLeftButton)
-	SpellBookCompanionModelFrameRotateRightButton:Point("TOPLEFT", SpellBookCompanionModelFrameRotateLeftButton, "TOPRIGHT", 3, 0)
-
 	-- Bottom Tabs
 	for i = 1, 5 do
 		T.SkinTab(_G["SpellBookFrameTabButton"..i])
 	end
 	_G["SpellBookFrameTabButton1"]:ClearAllPoints()
 	_G["SpellBookFrameTabButton1"]:Point("TOPLEFT", _G["SpellBookFrame"], "BOTTOMLEFT", -5, 1)
+
+	-- Core Ability Tab
+	local function SkinCoreTabs()
+		for i = 1, 4 do
+			local tab = SpellBookCoreAbilitiesFrame.SpecTabs[i]
+			if tab and tab.isSkinned ~= true then
+				local id, name, description, icon = GetSpecializationInfo(i)
+
+				tab:StripTextures()
+				tab:SetNormalTexture(icon)
+				tab:GetNormalTexture():ClearAllPoints()
+				tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
+				tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+				tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+				tab:CreateBackdrop("Default")
+				tab.backdrop:SetAllPoints()
+
+				tab:StyleButton()
+
+				if i == 1 then
+					tab:SetPoint("TOPLEFT", SpellBookFrame.backdrop, "TOPRIGHT", 1, 0)
+				end
+
+				tab.isSkinned = true
+			end
+		end
+	end
+
+	hooksecurefunc("SpellBook_UpdateCoreAbilitiesTab", function()
+		for i = 1, #SpellBookCoreAbilitiesFrame.Abilities do
+			local button = SpellBookCoreAbilitiesFrame.Abilities[i]
+			if button and button.isSkinned ~= true then
+				button:SetTemplate("Default")
+
+				button.EmptySlot:SetAlpha(0)
+				button.ActiveTexture:SetAlpha(0)
+				button.FutureTexture:SetAlpha(0)
+
+				button.iconTexture:Point("TOPLEFT", 2, -2)
+				button.iconTexture:Point("BOTTOMRIGHT", -2, 2)
+				button.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+				if button.FutureTexture:IsShown() then
+					button.iconTexture:SetDesaturated(true)
+					button.Name:SetTextColor(0.6, 0.6, 0.6)
+					button.InfoText:SetTextColor(0.6, 0.6, 0.6)
+				else
+					button.Name:SetTextColor(1, 0.82, 0)
+					button.InfoText:SetTextColor(0.8, 0.8, 0.8)
+				end
+				button.Name:SetShadowOffset(1, -1)
+				button.InfoText:SetShadowOffset(1, -1)
+
+				button:StyleButton()
+				button.isSkinned = true
+			end
+		end
+		SkinCoreTabs()
+	end)
+
+	-- What Has Changed Tab
+	hooksecurefunc("SpellBook_UpdateWhatHasChangedTab", function()
+		for i = 1, #SpellBookWhatHasChanged.ChangedItems do
+			local button = SpellBook_GetWhatChangedItem(i)
+			button.Ring:Hide()
+			select(2, button:GetRegions()):Hide()
+			button:SetTextColor(0.8, 0.8, 0.8)
+			button.Title:SetTextColor(1, 0.82, 0)
+			button:SetShadowColor(0, 0, 0)
+			button:SetShadowOffset(1, -1)
+			button.Title:SetShadowOffset(1, -1)
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

@@ -65,7 +65,7 @@ local function LoadSkin()
 		end
 
 		WorldMapFrame.backdrop:ClearAllPoints()
-		WorldMapFrame.backdrop:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 70)
+		WorldMapFrame.backdrop:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 66)
 		WorldMapFrame.backdrop:Point("BOTTOMRIGHT", WorldMapDetailFrame, "BOTTOMRIGHT", 25, -27)
 
 		WorldMapFrameCloseButton:Point("TOPRIGHT", WorldMapFrame.backdrop, "TOPRIGHT", -4, -4)
@@ -86,7 +86,7 @@ local function LoadSkin()
 		end
 
 		WorldMapFrame.backdrop:ClearAllPoints()
-		WorldMapFrame.backdrop:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 69)
+		WorldMapFrame.backdrop:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 65)
 		WorldMapFrame.backdrop:Point("BOTTOMRIGHT", WorldMapDetailFrame, "BOTTOMRIGHT", 334, -234)
 
 		WorldMapQuestDetailScrollFrame:Width(332)

@@ -20,6 +20,10 @@ elseif T.client == "deDE" then
 	link = "de"
 elseif T.client == "esES" or T.client == "esMX" then
 	link = "es"
+elseif T.client == "ptBR" or T.client == "ptPT" then
+	link = "pt"
+elseif T.client == "itIT" then
+	link = "it"
 elseif T.client == "zhTW" then
 	link = "zh"
 elseif T.client == "koKR" then
@@ -29,7 +33,7 @@ else
 end
 
 StaticPopupDialogs.LINK_COPY_DIALOG = {
-	text = DUNGEON_FLOOR_SCARLETMONASTERY3,
+	text = L_POPUP_ARMORY,
 	button1 = OKAY,
 	timeout = 0,
 	whileDead = true,
@@ -38,7 +42,7 @@ StaticPopupDialogs.LINK_COPY_DIALOG = {
 	OnShow = function(self, ...) self.editBox:SetFocus() end,
 	EditBoxOnEnterPressed = function(self) self:GetParent():Hide() end,
 	EditBoxOnEscapePressed = function(self) self:GetParent():Hide() end,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 -- Dropdown menu link
@@ -76,7 +80,7 @@ hooksecurefunc("UnitPopup_OnClick", function(self)
 	end
 end)
 
-UnitPopupButtons["ARMORYLINK"] = {text = DUNGEON_FLOOR_SCARLETMONASTERY3, dist = 0, func = UnitPopup_OnClick}
+UnitPopupButtons["ARMORYLINK"] = {text = L_POPUP_ARMORY, dist = 0, func = UnitPopup_OnClick}
 tinsert(UnitPopupMenus["FRIEND"], #UnitPopupMenus["FRIEND"] - 1, "ARMORYLINK")
 tinsert(UnitPopupMenus["PARTY"], #UnitPopupMenus["PARTY"] - 1, "ARMORYLINK")
 tinsert(UnitPopupMenus["RAID"], #UnitPopupMenus["RAID"] - 1, "ARMORYLINK")

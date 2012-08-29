@@ -22,7 +22,7 @@ local function Shared(self, unit)
 	self:SetScript("OnEnter", UnitFrame_OnEnter)
 	self:SetScript("OnLeave", UnitFrame_OnLeave)
 
-	local unit = (unit and unit:find("arena%dtarget")) and "arenatarget" 
+	local unit = (unit and unit:find("arena%dtarget")) and "arenatarget"
 	or (unit and unit:find("arena%d")) and "arena"
 	or (unit and unit:find("boss%d")) and "boss" or unit
 
@@ -36,11 +36,7 @@ local function Shared(self, unit)
 	end
 
 	-- Backdrop for every units
-	self.FrameBackdrop = CreateFrame("Frame", nil, self)
-	self.FrameBackdrop:SetTemplate("Default")
-	self.FrameBackdrop:SetFrameStrata("LOW")
-	self.FrameBackdrop:Point("TOPLEFT", -2, 2)
-	self.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
+	self:CreateBackdrop("Default")
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", self:GetName().."_Health", self)
@@ -122,6 +118,7 @@ local function Shared(self, unit)
 	self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -7)
 	self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -7)
 	self.Power:SetStatusBarTexture(C.media.texture)
+
 
 	self.Power.frequentUpdates = true
 	self.Power.colorDisconnected = true
@@ -262,23 +259,21 @@ local function Shared(self, unit)
 		end
 
 		-- LFD role icons
-		if C.raidframe.icons_lfd_role == true then 
+		if C.raidframe.icons_lfd == true then
 			self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 			self.LFDRole:Size(12)
 			self.LFDRole:Point("TOPLEFT", 10, 8)
 		end
 
 		-- Rune bar
-		if C.unitframe.plugins_rune_bar == true and T.class == "DEATHKNIGHT" then
-			self.Runes = CreateFrame("Frame", nil, self)
+		if C.unitframe_class_bar.rune == true and T.class == "DEATHKNIGHT" then
+			self.Runes = CreateFrame("Frame", self:GetName().."_RuneBar", self)
+			self.Runes:CreateBackdrop("Default")
 			self.Runes:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.Runes:Height(7)
-			self.Runes:SetWidth(212)
-			self.Runes:SetBackdrop(backdrop)
-			self.Runes:SetBackdropColor(0, 0, 0)
+			self.Runes:Size(217, 7)
 
 			for i = 1, 6 do
-				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_Runes"..i, self)
+				self.Runes[i] = CreateFrame("StatusBar", nil, self.Runes)
 				self.Runes[i]:SetSize(212 / 6, 7)
 				if i == 1 then
 					self.Runes[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -291,22 +286,121 @@ local function Shared(self, unit)
 				self.Runes[i].bg:SetAllPoints()
 				self.Runes[i].bg:SetTexture(C.media.texture)
 				self.Runes[i].bg.multiplier = 0.25
+			end
+		end
 
-				self.Runes[i].FrameBackdrop = CreateFrame("Frame", nil, self.Runes[i])
-				self.Runes[i].FrameBackdrop:SetTemplate("Default")
-				self.Runes[i].FrameBackdrop:SetFrameStrata("BACKGROUND")
-				self.Runes[i].FrameBackdrop:Point("TOPLEFT", -2, 2)
-				self.Runes[i].FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
+		-- Chi bar
+		if C.unitframe_class_bar.chi == true and T.class == "MONK" then
+			self.HarmonyBar = CreateFrame("Frame", self:GetName().."_HarmonyBar", self)
+			self.HarmonyBar:CreateBackdrop("Default")
+			self.HarmonyBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.HarmonyBar:Size(217, 7)
+
+			for i = 1, 5 do
+				self.HarmonyBar[i] = CreateFrame("StatusBar", nil, self.HarmonyBar)
+				self.HarmonyBar[i]:SetSize(213 / 5, 7)
+				if i == 1 then
+					self.HarmonyBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				else
+					self.HarmonyBar[i]:Point("TOPLEFT", self.HarmonyBar[i-1], "TOPRIGHT", 1, 0)
+				end
+				self.HarmonyBar[i]:SetStatusBarTexture(C.media.texture)
+				self.HarmonyBar[i]:SetStatusBarColor(0.33, 0.63, 0.33)
+
+				self.HarmonyBar[i].bg = self.HarmonyBar[i]:CreateTexture(nil, "BORDER")
+				self.HarmonyBar[i].bg:SetAllPoints()
+				self.HarmonyBar[i].bg:SetTexture(C.media.texture)
+				self.HarmonyBar[i].bg:SetVertexColor(0.33, 0.63, 0.33, 0.25)
+			end
+		end
+
+		-- Shadow Orbs bar
+		if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
+			self.ShadowOrbsBar = CreateFrame("Frame", self:GetName().."_ShadowOrbsBar", self)
+			self.ShadowOrbsBar:CreateBackdrop("Default")
+			self.ShadowOrbsBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.ShadowOrbsBar:Size(217, 7)
+
+			for i = 1, 3 do
+				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", nil, self.ShadowOrbsBar)
+				self.ShadowOrbsBar[i]:SetSize(215 / 3, 7)
+				if i == 1 then
+					self.ShadowOrbsBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				else
+					self.ShadowOrbsBar[i]:Point("TOPLEFT", self.ShadowOrbsBar[i-1], "TOPRIGHT", 1, 0)
+				end
+				self.ShadowOrbsBar[i]:SetStatusBarTexture(C.media.texture)
+				self.ShadowOrbsBar[i]:SetStatusBarColor(0.70, 0.32, 0.75)
+
+				self.ShadowOrbsBar[i].bg = self.ShadowOrbsBar[i]:CreateTexture(nil, "BORDER")
+				self.ShadowOrbsBar[i].bg:SetAllPoints()
+				self.ShadowOrbsBar[i].bg:SetTexture(C.media.texture)
+				self.ShadowOrbsBar[i].bg:SetVertexColor(0.70, 0.32, 0.75, 0.25)
+			end
+		end
+
+		-- Holy Power bar
+		if C.unitframe_class_bar.holy == true and T.class == "PALADIN" then
+			self.HolyPower = CreateFrame("Frame", self:GetName().."_HolyPowerBar", self)
+			self.HolyPower:CreateBackdrop("Default")
+			self.HolyPower:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.HolyPower:Size(217, 7)
+
+			for i = 1, 5 do
+				self.HolyPower[i] = CreateFrame("StatusBar", nil, self.HolyPower)
+				self.HolyPower[i]:SetSize(213 / 5, 7)
+				if i == 1 then
+					self.HolyPower[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				else
+					self.HolyPower[i]:Point("TOPLEFT", self.HolyPower[i-1], "TOPRIGHT", 1, 0)
+				end
+				self.HolyPower[i]:SetStatusBarTexture(C.media.texture)
+				self.HolyPower[i]:SetStatusBarColor(0.89, 0.88, 0.1)
+
+				self.HolyPower[i].bg = self.HolyPower[i]:CreateTexture(nil, "BORDER")
+				self.HolyPower[i].bg:SetAllPoints()
+				self.HolyPower[i].bg:SetTexture(C.media.texture)
+				self.HolyPower[i].bg:SetVertexColor(0.89, 0.88, 0.1, 0.25)
+			end
+
+			self.HolyPower.Override = T.UpdateHoly
+		end
+
+		-- Shard/Burning bar
+		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
+			self.WarlockSpecBars = CreateFrame("Frame", self:GetName().."_WarlockSpecBar", self)
+			self.WarlockSpecBars:CreateBackdrop("Default")
+			self.WarlockSpecBars:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.WarlockSpecBars:Size(217, 7)
+
+			for i = 1, 4 do
+				self.WarlockSpecBars[i] = CreateFrame("StatusBar", nil, self.WarlockSpecBars)
+				self.WarlockSpecBars[i]:SetSize(214 / 4, 7)
+				if i == 1 then
+					self.WarlockSpecBars[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				else
+					self.WarlockSpecBars[i]:Point("TOPLEFT", self.WarlockSpecBars[i-1], "TOPRIGHT", 1, 0)
+				end
+				self.WarlockSpecBars[i]:SetStatusBarTexture(C.media.texture)
+				self.WarlockSpecBars[i]:SetStatusBarColor(0.9, 0.37, 0.37)
+
+				self.WarlockSpecBars[i].bg = self.WarlockSpecBars[i]:CreateTexture(nil, "BORDER")
+				self.WarlockSpecBars[i].bg:SetAllPoints()
+				self.WarlockSpecBars[i].bg:SetTexture(C.media.texture)
+				self.WarlockSpecBars[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.25)
 			end
 		end
 
 		-- Totem bar
-		if C.unitframe.plugins_totem_bar == true and T.class == "SHAMAN" then
+		if C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
 			self.TotemBar = {}
 			self.TotemBar.Destroy = true
+
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self)
+				self.TotemBar[i]:CreateBackdrop("Default")
 				self.TotemBar[i]:SetSize((i == 1 and 210 or 214) / 4, 7)
+
 				local fixpos
 				if i == 2 then
 					self.TotemBar[i]:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -325,230 +419,138 @@ local function Shared(self, unit)
 				self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
 				self.TotemBar[i].bg:SetAllPoints()
 				self.TotemBar[i].bg:SetTexture(C.media.texture)
-				self.TotemBar[i].bg.multiplier = 0.30
-
-				self.TotemBar[i].FrameBackdrop = CreateFrame("Frame", nil, self.TotemBar[i])
-				self.TotemBar[i].FrameBackdrop:SetTemplate("Default")
-				self.TotemBar[i].FrameBackdrop:SetFrameStrata("BACKGROUND")
-				self.TotemBar[i].FrameBackdrop:Point("TOPLEFT", -2, 2)
-				self.TotemBar[i].FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
-
-				if C.unitframe.plugins_totem_bar_name == true then
-					self.TotemBar[i].Name = T.SetFontString(self.TotemBar[i], C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-					self.TotemBar[i].Name:Point("CENTER", self.TotemBar[i], "CENTER", 0, 0)
-					self.TotemBar[i].Name:SetTextColor(1, 1, 1)
-				end
+				self.TotemBar[i].bg.multiplier = 0.25
 			end
 		end
 
-		-- Druid mana
 		if T.class == "DRUID" then
-			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateDruidMana(self) end)
-			self.DruidMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.DruidMana:SetTextColor(1, 0.49, 0.04)
+			-- Druid mana
+			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateClassMana(self) end)
+			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.ClassMana:SetTextColor(1, 0.49, 0.04)
 
-			if C.unitframe.plugins_eclipse_bar == true then
-				local eclipseBar = CreateFrame("Frame", "EclipseBar", self)
-				eclipseBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				eclipseBar:Size(217, 7)
-				eclipseBar:SetBackdrop(backdrop)
-				eclipseBar:SetBackdropColor(0, 0, 0)
-				eclipseBar:SetScript("OnShow", function() T.UpdateEclipse(self, false) end)
-				eclipseBar:SetScript("OnUpdate", function() T.UpdateEclipse(self, true) end)
-				eclipseBar:SetScript("OnHide", function() T.UpdateEclipse(self, false) end)
+			-- Eclipse bar
+			if C.unitframe_class_bar.eclipse == true then
+				self.EclipseBar = CreateFrame("Frame", self:GetName().."_EclipseBar", self)
+				self.EclipseBar:CreateBackdrop("Default")
+				self.EclipseBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.EclipseBar:Size(217, 7)
 
-				eclipseBar.FrameBackdrop = CreateFrame("Frame", nil, eclipseBar)
-				eclipseBar.FrameBackdrop:SetTemplate("Default")
-				eclipseBar.FrameBackdrop:SetFrameStrata("BACKGROUND")
-				eclipseBar.FrameBackdrop:Point("TOPLEFT", -2, 2)
-				eclipseBar.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
+				self.EclipseBar.LunarBar= CreateFrame("StatusBar", nil, self.EclipseBar)
+				self.EclipseBar.LunarBar:Point("LEFT", self.EclipseBar, "LEFT", 0, 0)
+				self.EclipseBar.LunarBar:Size(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
+				self.EclipseBar.LunarBar:SetStatusBarTexture(C.media.texture)
+				self.EclipseBar.LunarBar:SetStatusBarColor(0.80, 0.80, 0.20)
 
-				local lunarBar = CreateFrame("StatusBar", nil, eclipseBar)
-				lunarBar:Point("LEFT", eclipseBar, "LEFT", 0, 0)
-				lunarBar:Size(eclipseBar:GetWidth(), eclipseBar:GetHeight())
-				lunarBar:SetStatusBarTexture(C.media.texture)
-				lunarBar:SetStatusBarColor(0.30, 0.30, 0.80)
-				eclipseBar.LunarBar = lunarBar
+				self.EclipseBar.SolarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
+				self.EclipseBar.SolarBar:Point("LEFT", self.EclipseBar.LunarBar:GetStatusBarTexture(), "RIGHT", 0, 0)
+				self.EclipseBar.SolarBar:Size(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
+				self.EclipseBar.SolarBar:SetStatusBarTexture(C.media.texture)
+				self.EclipseBar.SolarBar:SetStatusBarColor(0.30, 0.30, 0.80)
 
-				local solarBar = CreateFrame("StatusBar", nil, eclipseBar)
-				solarBar:Point("LEFT", lunarBar:GetStatusBarTexture(), "RIGHT", 0, 0)
-				solarBar:Size(eclipseBar:GetWidth(), eclipseBar:GetHeight())
-				solarBar:SetStatusBarTexture(C.media.texture)
-				solarBar:SetStatusBarColor(0.80, 0.80, 0.20)
-				eclipseBar.SolarBar = solarBar
+				self.EclipseBar.Text = T.SetFontString(self.EclipseBar.SolarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+				self.EclipseBar.Text:Point("CENTER", self.EclipseBar, "CENTER", -6, 0)
 
-				local eclipseBarText = T.SetFontString(solarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				eclipseBarText:Point("CENTER", eclipseBar, "CENTER", -6, 0)
-				eclipseBar.PostUpdatePower = T.EclipseDirection
+				self.EclipseBar.Pers = T.SetFontString(self.EclipseBar.SolarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+				self.EclipseBar.Pers:Point("LEFT", self.EclipseBar.Text, "RIGHT", 2, 0)
+				self:Tag(self.EclipseBar.Pers, "[pereclipse]%")
 
-				local eclipseBarPers = T.SetFontString(solarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				eclipseBarPers:Point("LEFT", eclipseBarText, "RIGHT", 2, 0)
-				self:Tag(eclipseBarPers, "[pereclipse]%")
-
-				self.EclipseBar = eclipseBar
-				self.EclipseBar.Text = eclipseBarText
-			end
-		end
-
-		-- Holy power bar or shard bar
-		if (T.class == "WARLOCK" and C.unitframe.plugins_shard_bar == true) or (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true) then
-			local bars = CreateFrame("Frame", nil, self)
-			bars:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			bars:Width(217)
-			bars:Height(7)
-			bars:SetBackdrop(backdrop)
-			bars:SetBackdropColor(0, 0, 0)
-
-			for i = 1, 3 do
-				bars[i] = CreateFrame("StatusBar", self:GetName().."_Shard"..i, self)
-				bars[i]:Height(7)
-				bars[i]:SetStatusBarTexture(C.media.texture)
-
-				bars[i].bg = bars[i]:CreateTexture(nil, "BORDER")
-				bars[i].bg:SetTexture(C.media.texture)
-
-				if T.class == "WARLOCK" then
-					bars[i]:SetStatusBarColor(0.70, 0.32, 0.75)
-					bars[i].bg:SetTexture(0.70, 0.32, 0.75, 0.25)
-				elseif T.class == "PALADIN" then
-					bars[i]:SetStatusBarColor(0.89, 0.88, 0.1)
-					bars[i].bg:SetTexture(0.89, 0.88, 0.1, 0.25)
-				end
-
-				if i == 1 then
-					bars[i]:Point("LEFT", bars)
-					bars[i]:Width(71)
-					bars[i].bg:SetAllPoints(bars[i])
-				else
-					bars[i]:Point("LEFT", bars[i-1], "RIGHT", 1, 0)
-					bars[i]:Width(72)
-					bars[i].bg:SetAllPoints(bars[i])
-				end
-			end
-
-			bars.FrameBackdrop = CreateFrame("Frame", nil, bars)
-			bars.FrameBackdrop:SetTemplate("Default")
-			bars.FrameBackdrop:SetFrameStrata("BACKGROUND")
-			bars.FrameBackdrop:Point("TOPLEFT", -2, 2)
-			bars.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
-
-			if T.class == "WARLOCK" then
-				bars.Override = T.UpdateShards
-				self.SoulShards = bars
-			elseif T.class == "PALADIN" then
-				bars.Override = T.UpdateHoly
-				self.HolyPower = bars
+				self.EclipseBar:SetScript("OnShow", function() T.UpdateEclipse(self, false) end)
+				self.EclipseBar:SetScript("OnUpdate", function() T.UpdateEclipse(self, true) end)
+				self.EclipseBar:SetScript("OnHide", function() T.UpdateEclipse(self, false) end)
+				self.EclipseBar.PostUpdatePower = T.EclipseDirection
 			end
 		end
 
 		-- Vengeance bar
-		if C.unitframe.plugins_vengeance_bar == true then
-			local vengeanceBar = CreateFrame("Frame", nil, self)
-			if (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
-			or (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true) then
-				vengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
+		if C.unitframe_class_bar.vengeance == true then
+			self.VengeanceBar = CreateFrame("Frame", self:GetName().."_VengeanceBar", self)
+			self.VengeanceBar:CreateBackdrop("Default")
+			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
+			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
+			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
+				self.VengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
 			else
-				vengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.VengeanceBar:Point("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			end
-			vengeanceBar:Size(217, 7)
-			vengeanceBar:SetBackdrop(backdrop)
-			vengeanceBar:SetBackdropColor(0, 0, 0)
+			self.VengeanceBar:Size(217, 7)
 
-			vengeanceBar.FrameBackdrop = CreateFrame("Frame", nil, vengeanceBar)
-			vengeanceBar.FrameBackdrop:SetTemplate("Default")
-			vengeanceBar.FrameBackdrop:SetFrameStrata("BACKGROUND")
-			vengeanceBar.FrameBackdrop:Point("TOPLEFT", -2, 2)
-			vengeanceBar.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
+			self.VengeanceBar.Bar = CreateFrame("StatusBar", nil, self.VengeanceBar)
+			self.VengeanceBar.Bar:Point("LEFT", self.VengeanceBar, "LEFT", 0, 0)
+			self.VengeanceBar.Bar:Size(217, 7)
+			self.VengeanceBar.Bar:SetStatusBarTexture(C.media.texture)
+			self.VengeanceBar.Bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 
-			local statusBar = CreateFrame("StatusBar", nil, vengeanceBar)
-			statusBar:Point("LEFT", vengeanceBar, "LEFT", 0, 0)
-			statusBar:Size(217, 7)
-			statusBar:SetStatusBarTexture(C.media.texture)
-			statusBar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-			vengeanceBar.Bar = statusBar
+			self.VengeanceBar.bg = self.VengeanceBar.Bar:CreateTexture(nil, "BORDER")
+			self.VengeanceBar.bg:SetAllPoints()
+			self.VengeanceBar.bg:SetTexture(C.media.texture)
+			self.VengeanceBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
 
-			statusBar.bg = statusBar:CreateTexture(nil, "BORDER")
-			statusBar.bg:SetAllPoints()
-			statusBar.bg:SetTexture(C.media.texture)
-			statusBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
-
-			local vengeanceBarText = T.SetFontString(statusBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			vengeanceBarText:Point("CENTER", statusBar, "CENTER", 0, 0)
-			vengeanceBar.Text = vengeanceBarText
-
-			self.VengeanceBar = vengeanceBar
+			self.VengeanceBar.Text = T.SetFontString(self.VengeanceBar.Bar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.VengeanceBar.Text:Point("CENTER", self.VengeanceBar.Bar, "CENTER", 0, 0)
 		end
 
 		-- Experience bar
 		if T.level ~= MAX_PLAYER_LEVEL and C.unitframe.plugins_experience_bar == true then
 			self.Experience = CreateFrame("StatusBar", self:GetName().."_Experience", self)
-			self.Experience:Height(94)
-			self.Experience:Width(7)
-			self.Experience:SetOrientation("Vertical")
+			self.Experience:CreateBackdrop("Default")
 			if C.unitframe.portrait_enable == true then
-				self.Experience:Point("TOPLEFT", self, "TOPLEFT", -25-C.unitframe.portrait_width, 28)
+				self.Experience:Point("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
 			else
 				self.Experience:Point("TOPLEFT", self, "TOPLEFT", -18, 28)
 			end
+			self.Experience:Size(7, 94)
+			self.Experience:SetOrientation("Vertical")
 			self.Experience:SetStatusBarTexture(C.media.texture)
 			self.Experience:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 			self.Experience:SetAlpha(0)
 
-			self.Experience:HookScript("OnEnter", function(self) self:SetAlpha(1) end)
-			self.Experience:HookScript("OnLeave", function(self) self:SetAlpha(0) end)
-
 			self.Experience.bg = self.Experience:CreateTexture(nil, "BORDER")
-			self.Experience.bg:SetAllPoints(self.Experience)
+			self.Experience.bg:SetAllPoints()
 			self.Experience.bg:SetTexture(C.media.texture)
 			self.Experience.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
-
-			self.Experience.FrameBackdrop = CreateFrame("Frame", nil, self.Experience)
-			self.Experience.FrameBackdrop:SetTemplate("Default")
-			self.Experience.FrameBackdrop:SetFrameLevel(1)
-			self.Experience.FrameBackdrop:Point("TOPLEFT", -2, 2)
-			self.Experience.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
 
 			self.Experience.Rested = CreateFrame("StatusBar", nil, self.Experience)
 			self.Experience.Rested:SetParent(self.Experience)
 			self.Experience.Rested:SetOrientation("Vertical")
-			self.Experience.Rested:SetAllPoints(self.Experience)
+			self.Experience.Rested:SetAllPoints()
 			self.Experience.Rested:SetStatusBarTexture(C.media.texture)
 			self.Experience.Rested:SetStatusBarColor(0, 0, 1, 0.5)
 
+			self.Experience:HookScript("OnEnter", function(self) self:SetAlpha(1) end)
+			self.Experience:HookScript("OnLeave", function(self) self:SetAlpha(0) end)
 			self.Experience.Tooltip = true
 		end
 
 		-- Reputation bar
 		if C.unitframe.plugins_reputation_bar == true then
 			self.Reputation = CreateFrame("StatusBar", self:GetName().."_Reputation", self)
-			self.Reputation:Height(94)
-			self.Reputation:Width(7)
-			self.Reputation:SetOrientation("Vertical")
+			self.Reputation:CreateBackdrop("Default")
 			if C.unitframe.portrait_enable == true then
-				self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -39-C.unitframe.portrait_width, 28)
+				self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
 			else
 				self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -32, 28)
 			end
+			self.Reputation:Size(7, 94)
+			self.Reputation:SetOrientation("Vertical")
 			self.Reputation:SetStatusBarTexture(C.media.texture)
-			self.Reputation:SetBackdrop(backdrop)
-			self.Reputation:SetBackdropColor(0, 0, 0)
 			self.Reputation:SetAlpha(0)
+
+			self.Reputation.bg = self.Reputation:CreateTexture(nil, "BORDER")
+			self.Reputation.bg:SetAllPoints()
+			self.Reputation.bg:SetTexture(C.media.texture)
 
 			self.Reputation:HookScript("OnEnter", function(self) self:SetAlpha(1) end)
 			self.Reputation:HookScript("OnLeave", function(self) self:SetAlpha(0) end)
-
-			self.Reputation.bg = self.Reputation:CreateTexture(nil, "BORDER")
-			self.Reputation.bg:SetAllPoints(self.Reputation)
-			self.Reputation.bg:SetTexture(C.media.texture)
-
-			self.Reputation.FrameBackdrop = CreateFrame("Frame", nil, self.Reputation)
-			self.Reputation.FrameBackdrop:SetTemplate("Default")
-			self.Reputation.FrameBackdrop:SetFrameLevel(1)
-			self.Reputation.FrameBackdrop:Point("TOPLEFT", -2, 2)
-			self.Reputation.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
-
 			self.Reputation.PostUpdate = T.UpdateReputationColor
 			self.Reputation.Tooltip = true
+		end
+
+		-- Monk mana
+		if T.class == "MONK" then
+			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateClassMana(self) end)
+			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.ClassMana:SetTextColor(0.0, 1, 0.59)
 		end
 
 		-- GCD spark
@@ -584,13 +586,13 @@ local function Shared(self, unit)
 		end
 		self.Debuffs.PostCreateIcon = T.PostCreateAura
 		self.Debuffs.PostUpdateIcon = T.PostUpdateIcon
-		
+
 		if unit == "pet" then
 			self:RegisterEvent("UNIT_PET", T.UpdateAllElements)
 		end
 	end
 
-	if C.unitframe.portrait_enable ~= true and C.unitframe.alternative_portraits == true then
+	if C.unitframe.portrait_enable ~= true and C.unitframe.portrait_two_enable == true then
 		self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self.Health)
 		self.Portrait:SetAllPoints(self.Health)
 		self.Portrait:SetAlpha(0.2)
@@ -607,27 +609,26 @@ local function Shared(self, unit)
 				self.Portrait:Point(unpack(C.position.unitframes.target_portrait))
 			end
 
-			self.PortraitOverlay = CreateFrame("Frame", self:GetName().."_PortraitOverlay", self.Portrait)
-			self.PortraitOverlay:SetFrameLevel(self.PortraitOverlay:GetFrameLevel() - 1)
-			self.PortraitOverlay:SetTemplate("Transparent")
+			self.Portrait:CreateBackdrop("Transparent")
+			self.Portrait.backdrop:Point("TOPLEFT", -2 + T.mult, 2 + T.mult)
+			self.Portrait.backdrop:Point("BOTTOMRIGHT", 2 + T.mult, -2 - T.mult)
+
 			if C.unitframe.portrait_classcolor_border == true then
 				if unit == "player" then
-					self.PortraitOverlay:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+					self.Portrait.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 				elseif unit == "target" then
-					self.PortraitOverlay:RegisterEvent("PLAYER_TARGET_CHANGED")
-					self.PortraitOverlay:SetScript("OnEvent", function(self)
+					self.Portrait.backdrop:RegisterEvent("PLAYER_TARGET_CHANGED")
+					self.Portrait.backdrop:SetScript("OnEvent", function()
 						local _, class = UnitClass("target")
-						local color = RAID_CLASS_COLORS[class]
+						local color = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
 						if color then
-							self:SetBackdropBorderColor(color.r, color.g, color.b)
+							self.Portrait.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
 						else
-							self:SetBackdropBorderColor(unpack(C.media.border_color))
+							self.Portrait.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 						end
 					end)
 				end
 			end
-			self.PortraitOverlay:Point("TOPLEFT", -2 + T.mult, 2)
-			self.PortraitOverlay:Point("BOTTOMRIGHT", 2 + T.mult, -2)
 		end
 
 		if unit == "player" then
@@ -639,11 +640,12 @@ local function Shared(self, unit)
 			self.Debuffs.initialAnchor = "BOTTOMRIGHT"
 			self.Debuffs["growth-y"] = "UP"
 			self.Debuffs["growth-x"] = "LEFT"
-			if (T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar == true)
-			or (T.class == "SHAMAN" and C.unitframe.plugins_totem_bar == true)
-			or (T.class == "DRUID" and C.unitframe.plugins_eclipse_bar == true)
-			or (T.class == "PALADIN" and C.unitframe.plugins_holy_bar == true)
-			or (T.class == "WARLOCK" and C.unitframe.plugins_shard_bar == true) then
+			if (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
+			or (T.class == "SHAMAN" and C.unitframe_class_bar.totem == true)
+			or (T.class == "DRUID" and C.unitframe_class_bar.eclipse == true)
+			or (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
+			or (T.class == "WARLOCK" and C.unitframe_class_bar.shard == true)
+			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			else
 				self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
@@ -669,64 +671,31 @@ local function Shared(self, unit)
 			self.Auras.PostCreateIcon = T.PostCreateAura
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
-			if C.unitframe.icons_combo_point == true then
-				if C.unitframe.icons_combo_point_new == true then
-					self.CPoints = CreateFrame("Frame", nil, self)
-					self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-					self.CPoints:SetWidth(217)
-					self.CPoints:SetHeight(7)
+			-- Rogue/Druid Combo bar
+			if C.unitframe_class_bar.combo == true then
+				self.CPoints = CreateFrame("Frame", nil, self)
+				self.CPoints:CreateBackdrop("Default")
+				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.CPoints:Size(217, 7)
 
-					for i = 1, 5 do
-						self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_Combo"..i, self.CPoints)
-						self.CPoints[i]:SetWidth((217 - 4) / 5)
-						self.CPoints[i]:SetHeight(7)
-						self.CPoints[i]:SetStatusBarTexture(C.media.texture)
-						if i == 1 then
-							self.CPoints[i]:SetPoint("LEFT", self.CPoints)
-						else
-							self.CPoints[i]:SetPoint("LEFT", self.CPoints[i-1], "RIGHT", 1, 0)
-						end
+				for i = 1, 5 do
+					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_Combo"..i, self.CPoints)
+					self.CPoints[i]:SetSize(213 / 5, 7)
+					if i == 1 then
+						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
+					else
+						self.CPoints[i]:SetPoint("LEFT", self.CPoints[i-1], "RIGHT", 1, 0)
 					end
-
-					self.CPoints[1]:SetStatusBarColor(0.9, 0.1, 0.1)
-					self.CPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
-					self.CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
-					self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
-					self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
-
-					self.CPoints.FrameBackdrop = CreateFrame("Frame", nil, self.CPoints[1])
-					self.CPoints.FrameBackdrop:SetTemplate("Default")
-					self.CPoints.FrameBackdrop:SetFrameStrata("BACKGROUND")
-					self.CPoints.FrameBackdrop:Point("TOPLEFT", self.CPoints, -2, 2)
-					self.CPoints.FrameBackdrop:Point("BOTTOMRIGHT", self.CPoints, 2, -2)
-
-					self.CPoints.Override = T.UpdateComboPoint
-				else
-					local CPoints = {}
-					CPoints.unit = PlayerFrame.unit
-					for i = 1, 5 do
-						CPoints[i] = CreateFrame("StatusBar", nil, self)
-						CPoints[i]:Height(6)
-						CPoints[i]:Width(7)
-						CPoints[i]:SetStatusBarTexture(C.media.blank)
-						if i == 1 then
-							CPoints[i]:Point("BOTTOMRIGHT", self, "BOTTOMLEFT", -7, 0)
-							CPoints[i]:SetStatusBarColor(0.9, 0.1, 0.1)
-						else
-							CPoints[i]:Point("BOTTOM", CPoints[i-1], "TOP", 0, 7)
-						end
-						CPoints[i].overlay = CreateFrame("Frame", nil, CPoints[i])
-						CPoints[i].overlay:SetTemplate("Default")
-						CPoints[i].overlay:SetFrameStrata("BACKGROUND")
-						CPoints[i].overlay:Point("TOPLEFT", -2, 2)
-						CPoints[i].overlay:Point("BOTTOMRIGHT", 2, -2)
-					end
-					CPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
-					CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
-					CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
-					CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
-					self.CPoints = CPoints
+					self.CPoints[i]:SetStatusBarTexture(C.media.texture)
 				end
+
+				self.CPoints[1]:SetStatusBarColor(0.9, 0.1, 0.1)
+				self.CPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
+				self.CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
+				self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
+				self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
+
+				self.CPoints.Override = T.UpdateComboPoint
 			end
 
 			if C.unitframe.plugins_talents == true then
@@ -915,15 +884,15 @@ local function Shared(self, unit)
 	-- Swing bar
 	if C.unitframe.plugins_swing == true and unit == "player" then
 		self.Swing = CreateFrame("StatusBar", self:GetName().."_Swing", self)
+		self.Swing:CreateBackdrop("Default")
+		self.Swing:Point("BOTTOMRIGHT", "oUF_Player_Castbar", "TOPRIGHT", 0, 7)
+		self.Swing:Size(281, 5)
 		self.Swing:SetStatusBarTexture(C.media.texture)
 		if C.unitframe.own_color == true then
 			self.Swing:SetStatusBarColor(unpack(C.unitframe.uf_color))
 		else
 			self.Swing:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 		end
-		self.Swing:Height(5)
-		self.Swing:Width(281)
-		self.Swing:Point("BOTTOMRIGHT", "oUF_Player_Castbar", "TOPRIGHT", 0, 7)
 
 		self.Swing.bg = self.Swing:CreateTexture(nil, "BORDER")
 		self.Swing.bg:SetAllPoints(self.Swing)
@@ -933,12 +902,6 @@ local function Shared(self, unit)
 		else
 			self.Swing.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
 		end
-
-		self.Swing.FrameBackdrop = CreateFrame("Frame", nil, self.Swing)
-		self.Swing.FrameBackdrop:SetTemplate("Default")
-		self.Swing.FrameBackdrop:SetFrameLevel(1)
-		self.Swing.FrameBackdrop:Point("TOPLEFT", -2, 2)
-		self.Swing.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
 
 		self.Swing.Text = T.SetFontString(self.Swing, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.Swing.Text:Point("CENTER", 0, 0)
@@ -998,9 +961,9 @@ local function Shared(self, unit)
 		self.AltPowerBar:SetPoint("RIGHT")
 		self.AltPowerBar:SetPoint("TOP", self.Health, "TOP")
 		self.AltPowerBar:SetBackdrop({
-			bgFile = C.media.blank, 
-			edgeFile = C.media.blank, 
-			tile = false, tileSize = 0, edgeSize = T.Scale(1), 
+			bgFile = C.media.blank,
+			edgeFile = C.media.blank,
+			tile = false, tileSize = 0, edgeSize = T.Scale(1),
 			insets = { left = 0, right = 0, top = 0, bottom = T.Scale(-1)}
 		})
 		self.AltPowerBar:SetBackdropColor(0, 0, 0)
@@ -1096,8 +1059,8 @@ local function Shared(self, unit)
 	if C.unitframe.plugins_fader == true then
 		if unit ~= "arena" or unit ~= "arenatarget" or unit ~= "boss" then
 			self.Fader = {
-				[1] = {Combat = 1, Arena = 1, Instance = 1}, 
-				[2] = {PlayerTarget = 1, PlayerNotMaxHealth = 1, PlayerNotMaxMana = 1}, 
+				[1] = {Combat = 1, Arena = 1, Instance = 1},
+				[2] = {PlayerTarget = 1, PlayerNotMaxHealth = 1, PlayerNotMaxMana = 1},
 				[3] = {Stealth = 0.5},
 				[4] = {notCombat = 0, PlayerTaxi = 0},
 			}
@@ -1259,14 +1222,19 @@ SlashCmdList.TEST_UF = function(msg)
 				_G["oUF_Arena"..i]:Show()
 				_G["oUF_Arena"..i]:UpdateAllElements()
 				_G["oUF_Arena"..i].Trinket.Icon:SetTexture("Interface\\Icons\\INV_Jewelry_Necklace_37")
-				if C.unitframe.plugins_talents == true then
-					_G["oUF_Arena"..i].Talents:SetText(L_PLANNER_DRUID_1)
-				end
 
 				_G["oUF_Arena"..i.."Target"].Hide = function() end
 				_G["oUF_Arena"..i.."Target"].unit = "player"
 				_G["oUF_Arena"..i.."Target"]:Show()
 				_G["oUF_Arena"..i.."Target"]:UpdateAllElements()
+
+				if C.unitframe.plugins_talents == true then
+					_G["oUF_Arena"..i].Talents:SetText(L_PLANNER_DRUID_1)
+				end
+
+				if C.unitframe.plugins_diminishing == true then
+					SlashCmdList.MOVINGDRTRACKER()
+				end
 			end
 		end
 
@@ -1292,14 +1260,15 @@ do
 		PET_DISMISS = nil
 	end
 
-	UnitPopupMenus["SELF"] = {"PVP_FLAG", "LOOT_METHOD", "LOOT_THRESHOLD", "OPT_OUT_LOOT_TITLE", "LOOT_PROMOTE", "CONVERT_TO_RAID", "CONVERT_TO_PARTY", "DUNGEON_DIFFICULTY", "RAID_DIFFICULTY", "RESET_INSTANCES", "RAID_TARGET_ICON", "SELECT_ROLE", "LEAVE", "CANCEL"}
+	UnitPopupMenus["SELF"] = {"PVP_FLAG", "LOOT_METHOD", "LOOT_THRESHOLD", "OPT_OUT_LOOT_TITLE", "LOOT_PROMOTE", "CONVERT_TO_RAID", "CONVERT_TO_PARTY", "DUNGEON_DIFFICULTY", "RAID_DIFFICULTY", "RESET_INSTANCES", "RESET_CHALLENGE_MODE", "RAID_TARGET_ICON", "SELECT_ROLE", "INSTANCE_LEAVE", "LEAVE", "CANCEL"}
 	UnitPopupMenus["PET"] = {"PET_PAPERDOLL", "PET_RENAME", "PET_ABANDON", PET_DISMISS, "CANCEL"}
-	UnitPopupMenus["PARTY"] = {"MUTE", "UNMUTE", "PARTY_SILENCE", "PARTY_UNSILENCE", "RAID_SILENCE", "RAID_UNSILENCE", "BATTLEGROUND_SILENCE", "BATTLEGROUND_UNSILENCE", "WHISPER", "PROMOTE", "PROMOTE_GUIDE", "LOOT_PROMOTE", "VOTE_TO_KICK", "UNINVITE", "INSPECT", "ACHIEVEMENTS", "TRADE", "FOLLOW", "DUEL", "RAID_TARGET_ICON", "SELECT_ROLE", "PVP_REPORT_AFK", "RAF_SUMMON", "RAF_GRANT_LEVEL", "CANCEL"}
-	UnitPopupMenus["PLAYER"] = {"WHISPER", "INSPECT", "ACHIEVEMENTS", "INVITE", "TRADE", "FOLLOW", "DUEL", "RAID_TARGET_ICON", "RAF_SUMMON", "RAF_GRANT_LEVEL", "REPORT_PLAYER", "CANCEL"}
-	UnitPopupMenus["RAID_PLAYER"] = {"MUTE", "UNMUTE", "RAID_SILENCE", "RAID_UNSILENCE", "BATTLEGROUND_SILENCE", "BATTLEGROUND_UNSILENCE", "WHISPER", "INSPECT", "ACHIEVEMENTS", "TRADE", "FOLLOW", "DUEL", "RAID_TARGET_ICON", "SELECT_ROLE", "RAID_LEADER", "RAID_PROMOTE", "RAID_DEMOTE", "LOOT_PROMOTE", "VOTE_TO_KICK", "RAID_REMOVE", "PVP_REPORT_AFK", "RAF_SUMMON", "RAF_GRANT_LEVEL", "CANCEL"}
-	UnitPopupMenus["RAID"] = {"MUTE", "UNMUTE", "RAID_SILENCE", "RAID_UNSILENCE", "BATTLEGROUND_SILENCE", "BATTLEGROUND_UNSILENCE", "RAID_LEADER", "RAID_PROMOTE", "RAID_MAINTANK", "RAID_MAINASSIST", "LOOT_PROMOTE", "RAID_DEMOTE", "VOTE_TO_KICK", "RAID_REMOVE", "PVP_REPORT_AFK", "CANCEL"}
+	UnitPopupMenus["OTHERPET"] = {"RAID_TARGET_ICON", "REPORT_PET", "CANCEL"}
+	UnitPopupMenus["PARTY"] = {"ADD_FRIEND", "ADD_FRIEND_MENU", "MUTE", "UNMUTE", "PARTY_SILENCE", "PARTY_UNSILENCE", "RAID_SILENCE", "RAID_UNSILENCE", "BATTLEGROUND_SILENCE", "BATTLEGROUND_UNSILENCE", "WHISPER", "PROMOTE", "PROMOTE_GUIDE", "LOOT_PROMOTE", "VOTE_TO_KICK", "UNINVITE", "INSPECT", "ACHIEVEMENTS", "TRADE", "FOLLOW", "DUEL", "PET_BATTLE_PVP_DUEL", "RAID_TARGET_ICON", "SELECT_ROLE", "PVP_REPORT_AFK", "RAF_SUMMON", "RAF_GRANT_LEVEL", "REPORT_PLAYER", "CANCEL"}
+	UnitPopupMenus["PLAYER"] = {"ADD_FRIEND", "ADD_FRIEND_MENU", "WHISPER", "INSPECT", "ACHIEVEMENTS", "INVITE", "TRADE", "FOLLOW", "DUEL", "PET_BATTLE_PVP_DUEL", "RAID_TARGET_ICON", "RAF_SUMMON", "RAF_GRANT_LEVEL", "REPORT_PLAYER", "CANCEL"}
+	UnitPopupMenus["RAID_PLAYER"] = {"ADD_FRIEND", "ADD_FRIEND_MENU", "MUTE", "UNMUTE", "RAID_SILENCE", "RAID_UNSILENCE", "BATTLEGROUND_SILENCE", "BATTLEGROUND_UNSILENCE", "WHISPER", "INSPECT", "ACHIEVEMENTS", "TRADE", "FOLLOW", "DUEL", "PET_BATTLE_PVP_DUEL", "RAID_TARGET_ICON", "SELECT_ROLE", "RAID_LEADER", "RAID_PROMOTE", "RAID_DEMOTE", "LOOT_PROMOTE", "VOTE_TO_KICK", "RAID_REMOVE", "PVP_REPORT_AFK", "RAF_SUMMON", "RAF_GRANT_LEVEL", "REPORT_PLAYER", "CANCEL"}
+	UnitPopupMenus["RAID"] = {"MUTE", "UNMUTE", "RAID_SILENCE", "RAID_UNSILENCE", "BATTLEGROUND_SILENCE", "BATTLEGROUND_UNSILENCE", "RAID_LEADER", "RAID_PROMOTE", "RAID_MAINTANK", "RAID_MAINASSIST", "LOOT_PROMOTE", "RAID_DEMOTE", "VOTE_TO_KICK", "RAID_REMOVE", "PVP_REPORT_AFK", "REPORT_PLAYER", "CANCEL"}
 	UnitPopupMenus["VEHICLE"] = {"RAID_TARGET_ICON", "VEHICLE_LEAVE", "CANCEL"}
-	UnitPopupMenus["TARGET"] = {"RAID_TARGET_ICON", "CANCEL"}
+	UnitPopupMenus["TARGET"] = {"ADD_FRIEND", "ADD_FRIEND_MENU", "RAID_TARGET_ICON", "CANCEL"}
 	UnitPopupMenus["ARENAENEMY"] = {"CANCEL"}
 	UnitPopupMenus["FOCUS"] = {"RAID_TARGET_ICON", "CANCEL"}
 	UnitPopupMenus["BOSS"] = {"RAID_TARGET_ICON", "CANCEL"}

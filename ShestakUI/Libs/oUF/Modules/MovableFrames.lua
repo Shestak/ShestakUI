@@ -310,7 +310,7 @@ do
 		if (SavedOptionsPerChar == nil) then SavedOptionsPerChar = {} end
 		_DB = SavedOptionsPerChar.UFPos or {}
 		SavedOptionsPerChar.UFPos = _DB
-		
+
 		-- Got to catch them all!
 		for _, obj in next, oUF.objects do
 			restorePosition(obj)
@@ -349,7 +349,7 @@ do
 		local backdrop = CreateFrame"Frame"
 		backdrop:SetParent(UIParent)
 		backdrop:Hide()
-		
+
 		backdrop:SetFrameStrata("MEDIUM")
 		backdrop:SetFrameLevel(20)
 		backdrop:SetAllPoints(target)
@@ -373,7 +373,7 @@ do
 		backdrop.header = isHeader
 
 		backdrop.backdrop:SetBackdropBorderColor(1, 0, 0)
-		
+
 		-- We have to define a minHeight on the header if it doesn't have one. The
 		-- reason for this is that the header frame will have an height of 0.1 when
 		-- it doesn't have any frames visible.
@@ -423,7 +423,7 @@ StaticPopupDialogs.RESET_UF = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 SlashCmdList.RESETUF = function() StaticPopup_Show("RESET_UF") end

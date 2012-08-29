@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.threat.enable == true then return end
+if C.threat.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on alThreatMeter(by Allez)
@@ -47,7 +47,7 @@ local AddUnit = function(unit)
 			class = UnitIsPlayer(unit) and select(2, UnitClass(unit)) or "PET",
 		}
 	end
-	tList[guid].pct = threatpct or 0 
+	tList[guid].pct = threatpct or 0
 	tList[guid].val = threatval or 0
 end
 
@@ -101,7 +101,7 @@ local UpdateBars = function()
 		cur = tList[barList[i]]
 		max = tList[barList[1]]
 		if i > C.threat.bar_rows or not cur or cur.pct == 0 then break end
-		if not bar[i] then 
+		if not bar[i] then
 			bar[i] = CreateBar()
 			--bar[i]:Point("TOP", ThreatMeterAnchor, 0, - (C.threat.height + spacing) * (i-1))
 			if i == 1 then
@@ -111,7 +111,7 @@ local UpdateBars = function()
 			end
 		end
 		bar[i]:SetValue(100 * cur.pct / max.pct)
-		local color = RAID_CLASS_COLORS[cur.class]
+		local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[cur.class]
 		bar[i]:SetStatusBarColor(color.r, color.g, color.b)
 		bar[i].bg:SetVertexColor(color.r, color.g, color.b, 0.25)
 		bar[i].left:SetText(cur.name)
@@ -122,12 +122,12 @@ end
 
 local UpdateThreat = function()
 	if targeted then
-		if GetNumRaidMembers() > 0 then
-			for i = 1, GetNumRaidMembers(), 1 do
+		if GetNumGroupMembers() > 0 then
+			for i = 1, GetNumGroupMembers(), 1 do
 				CheckUnit("raid"..i)
 			end
-		elseif GetNumPartyMembers() > 0 then
-			for i = 1, GetNumPartyMembers(), 1 do
+		elseif GetNumSubgroupMembers() > 0 then
+			for i = 1, GetNumSubgroupMembers(), 1 do
 				CheckUnit("party"..i)
 			end
 		end
@@ -139,7 +139,7 @@ end
 
 local OnEvent = function(self, event, ...)
 	if event == "PLAYER_TARGET_CHANGED" or event == "UNIT_THREAT_LIST_UPDATE" then
-		if C.threat.hide_solo == true and (GetNumRaidMembers() + GetNumPartyMembers() == 0) then
+		if C.threat.hide_solo == true and (GetNumGroupMembers() + GetNumSubgroupMembers() == 0) then
 			targeted = false
 		else
 			if UnitExists("target") and not UnitIsDead("target") and not UnitIsPlayer("target") and UnitCanAttack("player", "target") then

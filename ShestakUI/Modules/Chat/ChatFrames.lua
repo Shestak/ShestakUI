@@ -4,12 +4,36 @@ if C.chat.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Style chat frame(by Tukz and p3lim)
 ----------------------------------------------------------------------------------------
-local _G = _G
 local origs = {}
-local type = type
+local classes = {}
+do
+	local maleClasses = {}
+	local femaleClasses = {}
+	FillLocalizedClassList(maleClasses)
+	FillLocalizedClassList(femaleClasses, true)
+
+	for token, localized in pairs(maleClasses) do
+		classes[localized] = token
+	end
+
+	for token, localized in pairs(femaleClasses) do
+		classes[localized] = token
+	end
+end
 
 local function Strip(info, name)
 	return string.format("|Hplayer:%s|h[%s]|h", info, name:gsub("%-[^|]+", ""))
+end
+
+local function BattleNet(info, name)
+	local _, presence = string.split(":", info)
+
+	local _, toon, client, _, _, _, _, class = BNGetFriendToonInfo(BNGetFriendIndex(presence), 1)
+
+	if client == BNET_CLIENT_WOW then
+		local colors = RAID_CLASS_COLORS[classes[class]]
+		return string.format("|HBNplayer:%s|h|c%s%s|r|h", info, colors.colorStr, toon)
+	end
 end
 
 -- Function to rename channel and other stuff
@@ -17,22 +41,24 @@ local AddMessage = function(self, text, ...)
 	if type(text) == "string" then
 		text = text:gsub("|h%[(%d+)%. .-%]|h", "|h[%1]|h")
 		text = text:gsub("|Hplayer:(.-)|h%[(.-)%]|h", Strip)
+		text = text:gsub("|HBNplayer:(.-)|h%[(.-)%]|h", BattleNet)
 	end
 	return origs[self](self, text, ...)
 end
 
 -- Global strings
-_G.CHAT_BATTLEGROUND_GET = "|Hchannel:Battleground|h["..L_CHAT_BATTLEGROUND.."]|h %s:\32"
-_G.CHAT_BATTLEGROUND_LEADER_GET = "|Hchannel:Battleground|h["..L_CHAT_BATTLEGROUND_LEADER.."]|h %s:\32"
+_G.CHAT_BATTLEGROUND_GET = "|Hchannel:BATTLEGROUND|h["..L_CHAT_BATTLEGROUND.."]|h %s:\32"
+_G.CHAT_BATTLEGROUND_LEADER_GET = "|Hchannel:BATTLEGROUND|h["..L_CHAT_BATTLEGROUND_LEADER.."]|h %s:\32"
 _G.CHAT_BN_WHISPER_GET = L_CHAT_BN_WHISPER.." %s:\32"
-_G.CHAT_GUILD_GET = "|Hchannel:Guild|h["..L_CHAT_GUILD.."]|h %s:\32"
-_G.CHAT_OFFICER_GET = "|Hchannel:o|h["..L_CHAT_OFFICER.."]|h %s:\32"
-_G.CHAT_PARTY_GET = "|Hchannel:Party|h["..L_CHAT_PARTY.."]|h %s:\32"
-_G.CHAT_PARTY_LEADER_GET = "|Hchannel:party|h["..L_CHAT_PARTY_LEADER.."]|h %s:\32"
+_G.CHAT_GUILD_GET = "|Hchannel:GUILD|h["..L_CHAT_GUILD.."]|h %s:\32"
+_G.CHAT_OFFICER_GET = "|Hchannel:OFFICER|h["..L_CHAT_OFFICER.."]|h %s:\32"
+_G.CHAT_PARTY_GET = "|Hchannel:PARTY|h["..L_CHAT_PARTY.."]|h %s:\32"
+_G.CHAT_PARTY_LEADER_GET = "|Hchannel:PARTY|h["..L_CHAT_PARTY_LEADER.."]|h %s:\32"
 _G.CHAT_PARTY_GUIDE_GET = CHAT_PARTY_LEADER_GET
-_G.CHAT_RAID_GET = "|Hchannel:raid|h["..L_CHAT_RAID.."]|h %s:\32"
-_G.CHAT_RAID_LEADER_GET = "|Hchannel:raid|h["..L_CHAT_RAID_LEADER.."]|h %s:\32"
+_G.CHAT_RAID_GET = "|Hchannel:RAID|h["..L_CHAT_RAID.."]|h %s:\32"
+_G.CHAT_RAID_LEADER_GET = "|Hchannel:RAID|h["..L_CHAT_RAID_LEADER.."]|h %s:\32"
 _G.CHAT_RAID_WARNING_GET = "["..L_CHAT_RAID_WARNING.."] %s:\32"
+_G.CHAT_PET_BATTLE_COMBAT_LOG_GET = "|Hchannel:PET_BATTLE_COMBAT_LOG|h["..L_CHAT_PET_BATTLE.."]|h:\32";
 _G.CHAT_SAY_GET = "%s:\32"
 _G.CHAT_WHISPER_GET = L_CHAT_WHISPER.." %s:\32"
 _G.CHAT_YELL_GET = "%s:\32"
@@ -40,15 +66,16 @@ _G.CHAT_FLAG_AFK = "|cffE7E716"..L_CHAT_AFK.."|r "
 _G.CHAT_FLAG_DND = "|cffFF0000"..L_CHAT_DND.."|r "
 _G.CHAT_FLAG_GM = "|cff4154F5"..L_CHAT_GM.."|r "
 _G.ERR_FRIEND_ONLINE_SS = "|Hplayer:%s|h[%s]|h "..L_CHAT_COME_ONLINE_COLOR
-_G.ERR_FRIEND_OFFLINE_S = "%s "..L_CHAT_GONE_OFFLINE_COLOR
+_G.ERR_FRIEND_OFFLINE_S = "[%s] "..L_CHAT_GONE_OFFLINE_COLOR
 _G.ACHIEVEMENT_BROADCAST = "%s! %s!"
 _G.ACHIEVEMENT_BROADCAST_SELF = "%s!"
 _G.PLAYER_SERVER_FIRST_ACHIEVEMENT = "|Hplayer:%s|h[%s]|h! $a!"
 _G.SERVER_FIRST_ACHIEVEMENT = "%s! $a!"
 if T.client == "ruRU" then
-	_G.FACTION_STANDING_DECREASED = "Отношение |3-7(%s) -%d."
-	_G.FACTION_STANDING_INCREASED = "Отношение |3-7(%s) +%d."
+	_G.FACTION_STANDING_DECREASED = "Отношение %s -%d."
+	_G.FACTION_STANDING_INCREASED = "Отношение %s +%d."
 end
+_G.GUILD_MOTD_TEMPLATE = "|cff40ff40"..GUILD_MOTD_LABEL2..": %s|r"
 
 -- Hide friends micro button
 FriendsMicroButton:Kill()
@@ -106,9 +133,12 @@ local function SetChatStyle(frame)
 	_G[format("ChatFrame%sEditBoxFocusRight", id)]:Kill()
 
 	_G[format("ChatFrame%sTabGlow", id)]:Kill()
-	
+
 	-- Kill off editbox artwork
 	local a, b, c = select(6, _G[chat.."EditBox"]:GetRegions()) a:Kill() b:Kill() c:Kill()
+
+	-- Kill bubble tex/glow
+	if _G[chat.."Tab"].conversationIcon then _G[chat.."Tab"].conversationIcon:Kill() end
 
 	-- Disable alt key usage
 	_G[chat.."EditBox"]:SetAltArrowKeyMode(false)
@@ -129,7 +159,7 @@ local function SetChatStyle(frame)
 		EditBoxBackground:CreatePanel("Transparent", 1, 1, "LEFT", _G[chat.."EditBox"], "LEFT", 0, 0)
 		EditBoxBackground:ClearAllPoints()
 		EditBoxBackground:Point("TOPLEFT", _G[chat.."EditBox"], "TOPLEFT", 7, -5)
-		EditBoxBackground:Point("BOTTOMRIGHT", _G[chat.."EditBox"], "BOTTOMRIGHT", -7, 5)
+		EditBoxBackground:Point("BOTTOMRIGHT", _G[chat.."EditBox"], "BOTTOMRIGHT", -7, 4)
 		EditBoxBackground:SetFrameStrata("LOW")
 		EditBoxBackground:SetFrameLevel(1)
 
@@ -272,6 +302,10 @@ end)
 -- Setup temp chat (BN, WHISPER) when needed
 local function SetupTempChat()
 	local frame = FCF_GetCurrentChatFrame()
+	if _G[frame:GetName().."Tab"]:GetText():match(PET_BATTLE_COMBAT_LOG) then
+		FCF_Close(frame)
+		return
+	end
 	if frame.skinned then return end
 	SetChatStyle(frame)
 end

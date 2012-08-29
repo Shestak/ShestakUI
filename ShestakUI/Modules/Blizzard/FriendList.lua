@@ -1,7 +1,7 @@
 ﻿if (IsAddOnLoaded("yClassColor")) then return end
 
 ----------------------------------------------------------------------------------------
---	Class color guild/friends/etc list(yClassColor by yleaf)
+--	Class color guild/friends/etc list(yClassColor by Yleaf)
 ----------------------------------------------------------------------------------------
 local GUILD_INDEX_MAX = 12
 local SMOOTH = {1, 0, 0, 1, 1, 0, 0, 1, 0}
@@ -13,7 +13,7 @@ end
 for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do
 	BC[v] = k
 end
-local RAID_CLASS_COLORS = RAID_CLASS_COLORS
+local RAID_CLASS_COLORS = CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS
 local WHITE_HEX = "|cffffffff"
 
 local function Hex(r, g, b)
@@ -91,6 +91,13 @@ local classColorRaw = setmetatable({}, {
 	end
 })
 
+if CUSTOM_CLASS_COLORS then
+	CUSTOM_CLASS_COLORS:RegisterCallback(function()
+		wipe(classColorRaw)
+		wipe(classColor)
+	end)
+end
+
 -- WhoList
 hooksecurefunc("WhoList_Update", function()
 	local whoOffset = FauxScrollFrame_GetOffset(WhoListScrollFrame)
@@ -129,9 +136,9 @@ end)
 
 -- LFRBrowseList
 hooksecurefunc("LFRBrowseFrameListButton_SetData", function(button, index)
-	local name, level, areaName, className, comment, partyMembers, status, class, encountersTotal, encountersComplete, isLeader, isTank, isHealer, isDamage = SearchLFGGetResults(index)
+	local name, level, _, className, _, _, _, class = SearchLFGGetResults(index)
 
-	if index and class and name and level and (name ~= myName) then
+	if index and class and name and level then
 		button.name:SetText(classColor[class]..name)
 		button.class:SetText(classColor[class]..className)
 		button.level:SetText(diffColor[level]..level)
@@ -145,7 +152,7 @@ hooksecurefunc("WorldStateScoreFrame_Update", function()
 
 	for i = 1, MAX_WORLDSTATE_SCORE_BUTTONS do
 		local index = offset + i
-		local name, killingBlows, honorableKills, deaths, honorGained, faction, rank, race, class, classToken, damageDone, healingDone = GetBattlefieldScore(index)
+		local name, _, _, _, _, faction, _, _, class = GetBattlefieldScore(index)
 		if name then
 			local n, r = strsplit("-", name, 2)
 			n = classColor[class]..n.."|r"
@@ -194,7 +201,7 @@ local function update()
 	for i, button in ipairs(buttons) do
 		if button:IsShown() and button.online and button.guildIndex then
 			if _VIEW == "tradeskill" then
-				local skillID, isCollapsed, iconTexture, headerName, numOnline, numVisible, numPlayers, playerName, class, online, zone, skill, classFileName, isMobile = GetGuildTradeSkillInfo(button.guildIndex)
+				local _, _, _, headerName, _, _, _, playerName, _, _, zone, _, classFileName = GetGuildTradeSkillInfo(button.guildIndex)
 				if not headerName and playerName then
 					local c = classColorRaw[classFileName]
 					button.string1:SetTextColor(c.r, c.g, c.b)
@@ -203,7 +210,7 @@ local function update()
 					end
 				end
 			else
-				local name, rank, rankIndex, level, class, zone, note, officernote, online, status, classFileName, achievementPnts, achievementRank, isMobile = GetGuildRosterInfo(button.guildIndex)
+				local name, rank, rankIndex, level, _, zone, _, _, _, _, classFileName = GetGuildRosterInfo(button.guildIndex)
 				local displayedName = classColor[classFileName]..name
 				if _VIEW == "playerStatus" then
 					button.string1:SetText(diffColor[level]..level)
@@ -267,7 +274,7 @@ local function friendsFrame()
 					end
 				end
 			elseif button.buttonType == FRIENDS_BUTTON_TYPE_BNET then
-				local _, givenName, surname, toonName, toonID, client, isOnline, _, _, _, _, _, _, _ = BNGetFriendInfo(button.id)
+				local _, givenName, surname, toonName, toonID, client, isOnline = BNGetFriendInfo(button.id)
 				if isOnline and client == BNET_CLIENT_WOW then
 					local _, toonName, client, _, _, _, _, class, _, zoneName, level, _ = BNGetToonInfo(toonID)
 					if givenName and surname and toonName and class then

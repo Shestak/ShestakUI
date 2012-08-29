@@ -4,7 +4,6 @@ local parent, ns = ...
 local oUF = ns.oUF
 
 local SPELL_POWER_HOLY_POWER = SPELL_POWER_HOLY_POWER
-local MAX_HOLY_POWER = MAX_HOLY_POWER
 
 local Update = function(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'HOLY_POWER')) then return end
@@ -12,8 +11,9 @@ local Update = function(self, event, unit, powerType)
 	local hp = self.HolyPower
 	if(hp.PreUpdate) then hp:PreUpdate() end
 
+	local maxHolyPower = UnitPowerMax('player', SPELL_POWER_HOLY_POWER)
 	local num = UnitPower('player', SPELL_POWER_HOLY_POWER)
-	for i = 1, MAX_HOLY_POWER do
+	for i = 1, maxHolyPower do
 		if(i <= num) then
 			hp[i]:Show()
 		else

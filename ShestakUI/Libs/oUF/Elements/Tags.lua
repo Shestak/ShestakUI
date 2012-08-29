@@ -39,20 +39,22 @@ local tagStrings = {
 	end]],
 
 	["leader"] = [[function(u)
-		if(UnitIsPartyLeader(u)) then
+		if(UnitIsGroupLeader(u)) then
 			return 'L'
 		end
 	end]],
 
 	["leaderlong"]  = [[function(u)
-		if(UnitIsPartyLeader(u)) then
+		if(UnitIsGroupLeader(u)) then
 			return 'Leader'
 		end
 	end]],
 
 	["level"] = [[function(u)
 		local l = UnitLevel(u)
-		if(l > 0) then
+		if(UnitIsWildBattlePet(u) or UnitIsBattlePetCompanion(u)) then
+			return UnitBattlePetLevel(u)
+		elseif(l > 0) then
 			return l
 		else
 			return '??'
@@ -238,7 +240,7 @@ local tagStrings = {
 			name = string.format("%s-%s", name, server)
 		end
 
-		for i=1, GetNumRaidMembers() do
+		for i=1, GetNumGroupMembers() do
 			local raidName, _, group = GetRaidRosterInfo(i)
 			if( raidName == name ) then
 				return group
@@ -281,6 +283,20 @@ local tagStrings = {
 
 	['holypower'] = [[function()
 		local num = UnitPower('player', SPELL_POWER_HOLY_POWER)
+		if(num > 0) then
+			return num
+		end
+	end]],
+
+	['chi'] = [[function()
+		local num = UnitPower('player', SPELL_POWER_LIGHT_FORCE)
+		if(num > 0) then
+			return num
+		end
+	end]],
+
+	['shadoworbs'] = [[function()
+		local num = UnitPower('player', SPELL_POWER_SHADOW_ORBS)
 		if(num > 0) then
 			return num
 		end
@@ -352,7 +368,7 @@ local tagEvents = {
 	['rare']                = 'UNIT_CLASSIFICATION_CHANGED',
 	['classification']      = 'UNIT_CLASSIFICATION_CHANGED',
 	['shortclassification'] = 'UNIT_CLASSIFICATION_CHANGED',
-	["group"]               = "RAID_ROSTER_UPDATE",
+	["group"]               = "GROUP_ROSTER_UPDATE",
 	["curpp"]               = 'UNIT_POWER',
 	["maxpp"]               = 'UNIT_MAXPOWER',
 	["missingpp"]           = 'UNIT_MAXPOWER UNIT_POWER',
@@ -364,6 +380,8 @@ local tagEvents = {
 	['maxmana']             = 'UNIT_POWER UNIT_MAXPOWER',
 	['soulshards']          = 'UNIT_POWER',
 	['holypower']           = 'UNIT_POWER',
+	['chi']                 = 'UNIT_POWER',
+	['shadoworbs']          = 'UNIT_POWER',
 }
 
 local unitlessEvents = {
@@ -373,7 +391,7 @@ local unitlessEvents = {
 
 	PARTY_LEADER_CHANGED = true,
 
-	RAID_ROSTER_UPDATE = true,
+	GROUP_ROSTER_UPDATE = true,
 
 	UNIT_COMBO_POINTS = true
 }

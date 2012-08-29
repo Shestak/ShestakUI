@@ -32,8 +32,7 @@ local function LoadSkin()
 		"CombatConfigColorsColorizeSpellNames",
 		"CombatConfigColorsColorizeDamageNumber",
 		"CombatConfigColorsColorizeDamageSchool",
-		"CombatConfigColorsColorizeEntireLine",
-		--"ChatConfigCombatSettingsFiltersScrollFrame"
+		"CombatConfigColorsColorizeEntireLine"
 	}
 
 	for i = 1, getn(frames) do
@@ -145,6 +144,15 @@ local function LoadSkin()
 			T.SkinCheckBox(_G["ChatConfigOtherSettingsSystemCheckBox"..i.."Check"])
 		end
 
+		for i = 1, #CHAT_CONFIG_CHANNEL_LIST do
+			_G["ChatConfigChannelSettingsLeftCheckBox"..i]:StripTextures()
+			_G["ChatConfigChannelSettingsLeftCheckBox"..i]:CreateBackdrop("Overlay")
+			_G["ChatConfigChannelSettingsLeftCheckBox"..i].backdrop:Point("TOPLEFT", 3, -1)
+			_G["ChatConfigChannelSettingsLeftCheckBox"..i].backdrop:Point("BOTTOMRIGHT", -3, 1)
+			_G["ChatConfigChannelSettingsLeftCheckBox"..i].backdrop:SetFrameLevel(4)
+			T.SkinCheckBox(_G["ChatConfigChannelSettingsLeftCheckBox"..i.."Check"])
+		end
+
 		for i = 1, #CHAT_CONFIG_CHAT_CREATURE_LEFT do
 			_G["ChatConfigOtherSettingsCreatureCheckBox"..i]:StripTextures()
 			_G["ChatConfigOtherSettingsCreatureCheckBox"..i]:CreateBackdrop("Overlay")
@@ -154,7 +162,7 @@ local function LoadSkin()
 			T.SkinCheckBox(_G["ChatConfigOtherSettingsCreatureCheckBox"..i.."Check"])
 		end
 
-		for i = 1,#COMBAT_CONFIG_MESSAGESOURCES_BY do
+		for i = 1, #COMBAT_CONFIG_MESSAGESOURCES_BY do
 			_G["CombatConfigMessageSourcesDoneByCheckBox"..i]:StripTextures()
 			_G["CombatConfigMessageSourcesDoneByCheckBox"..i]:CreateBackdrop("Overlay")
 			_G["CombatConfigMessageSourcesDoneByCheckBox"..i].backdrop:Point("TOPLEFT", 3, -1)

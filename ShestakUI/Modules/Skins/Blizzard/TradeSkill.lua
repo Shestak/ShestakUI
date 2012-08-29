@@ -13,14 +13,14 @@ local function LoadSkin()
 	TradeSkillDetailScrollChildFrame:StripTextures()
 
 	TradeSkillFrame:SetTemplate("Transparent")
-	TradeSkillFrame:Height(TradeSkillFrame:GetHeight() + 12)
 	TradeSkillRankFrame:StripTextures()
 	TradeSkillRankFrame:CreateBackdrop("Overlay")
 	TradeSkillRankFrame:SetStatusBarTexture(C.media.texture)
 
+	TradeSkillFilterButton:StripTextures(true)
+	TradeSkillFilterButton:SkinButton(true)
 	TradeSkillCreateButton:SkinButton(true)
 	TradeSkillCancelButton:SkinButton(true)
-	TradeSkillFilterButton:SkinButton(true)
 	TradeSkillCreateAllButton:SkinButton(true)
 	TradeSkillViewGuildCraftersButton:SkinButton(true)
 
@@ -30,6 +30,7 @@ local function LoadSkin()
 	TradeSkillLinkButton:CreateBackdrop("Overlay")
 	TradeSkillLinkButton:Size(17, 14)
 	TradeSkillLinkButton:Point("LEFT", TradeSkillLinkFrame, "LEFT", 5, -1)
+
 	T.SkinEditBox(TradeSkillFrameSearchBox)
 	TradeSkillFrameSearchBox:Height(TradeSkillFrameSearchBox:GetHeight() - 2)
 	T.SkinEditBox(TradeSkillInputBox)
@@ -60,6 +61,7 @@ local function LoadSkin()
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:SetDrawLayer("OVERLAY")
+
 			if not icon.backdrop then
 				icon.backdrop = CreateFrame("Frame", nil, button)
 				icon.backdrop:SetFrameLevel(button:GetFrameLevel() - 1)
@@ -70,6 +72,7 @@ local function LoadSkin()
 			icon:SetParent(icon.backdrop)
 			icon:Point("TOPLEFT", icon.backdrop, "TOPLEFT", 2, -2)
 			icon:Point("BOTTOMRIGHT", icon.backdrop, "BOTTOMRIGHT", -2, 2)
+
 			count:SetParent(icon.backdrop)
 			count:SetFont(C.media.normal_font, 12, "OUTLINE")
 			count:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)

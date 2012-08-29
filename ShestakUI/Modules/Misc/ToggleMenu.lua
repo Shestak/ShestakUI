@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.minimap.toggle_menu ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -305,16 +305,18 @@ OpenMenuBG:SetFrameLevel(defaultframelevel)
 OpenMenuBG:SetFrameStrata("HIGH")
 OpenMenuBG:SetScript("OnMouseUp", function()
 	ToggleMenu_Toggle()
-	if (T.class == "MAGE" and T.level > 19) and _G["TeleportMenu"]:IsShown() then
+	if (T.class == "MAGE" and T.level >= 17) and _G["TeleportMenu"]:IsShown() then
 		_G["TeleportMenu"]:Hide()
 	end
-	if (T.class == "PALADIN" and T.level > 3) and _G["SealMenu"]:IsShown() then
-		_G["SealMenu"]:Hide()
+end)
+OpenMenuBG:HookScript("OnEnter", function(self)
+	if (T.class == "MAGE" and T.level >= 17) and _G["TeleportMenu"]:IsShown() then
+	else
+		self:FadeIn()
 	end
 end)
-OpenMenuBG:HookScript("OnEnter", function(self) self:FadeIn() end)
 OpenMenuBG:HookScript("OnLeave", function(self) self:FadeOut() end)
---updateTextures(OpenMenuBG)
+
 Text = OpenMenuBG:CreateFontString(nil, "OVERLAY")
 Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 Text:SetPoint("CENTER", OpenMenuBG, 0, 0)
@@ -333,6 +335,7 @@ expandbutton:RegisterForClicks("AnyUp")
 expandbutton:SetFrameLevel(defaultframelevel + 1)
 expandbutton:SetFrameStrata("HIGH")
 updateTextures(expandbutton)
+
 Text = expandbutton:CreateFontString(nil, "OVERLAY")
 Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 Text:SetPoint("CENTER", expandbutton, 0, 0)
@@ -468,7 +471,7 @@ local function refreshAddOnMenu()
 	expandbutton:SetWidth(buttonwidth(menuwidth) + buttonspacing(menuwidth - 1))
 end
 
-expandbutton:SetScript("OnMouseUp", function(self) 
+expandbutton:SetScript("OnMouseUp", function(self)
 	addonToggleOnly = not addonToggleOnly
 	if addonToggleOnly then
 		self.txt:SetText("+ + +")

@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if not C.stats.battleground == true then return end
+if C.stats.battleground ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	BGScore(by Elv22, edited by Tukz)
@@ -13,6 +13,8 @@ local IOC = 540
 local EOTS = 482
 local TBFG = 736
 local AB = 461
+local TOK = 856
+local SSM = 860
 
 local classcolor = ("|cff%.2x%.2x%.2x"):format(T.color.r * 255, T.color.g * 255, T.color.b * 255)
 
@@ -56,15 +58,20 @@ bgframe:SetScript("OnEnter", function(self)
 				elseif curmapid == SOTA then
 					GameTooltip:AddDoubleLine(L_DATATEXT_DEMOLISHERSDESTROYED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 					GameTooltip:AddDoubleLine(L_DATATEXT_GATESDESTROYED, GetBattlefieldStatData(i, 2), 1, 1, 1)
+				elseif CurrentMapID == TOK then
+					GameTooltip:AddDoubleLine(L_DATATEXT_ORB_POSSESSIONS, GetBattlefieldStatData(i, 1), 1, 1, 1)
+					GameTooltip:AddDoubleLine(L_DATATEXT_VICTORY_POINTS, GetBattlefieldStatData(i, 2), 1, 1, 1)
+				elseif CurrentMapID == SSM then
+					GameTooltip:AddDoubleLine(L_DATATEXT_CARTS_CONTROLLED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 				end
 				GameTooltip:Show()
 			end
 		end
 	end
-end) 
+end)
 bgframe:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
 bgframe:SetScript("OnMouseUp", function(self)
-	if MiniMapBattlefieldFrame.status == "active" then
+	if QueueStatusMinimapButton:IsShown() then
 		if IsShiftKeyDown() then
 			ToggleBattlefieldMinimap()
 		else
@@ -113,9 +120,9 @@ local function Update(self, t)
 					Text2:SetText(COMBAT_HONOR_GAIN.." :|r "..format("%d", honorGained))
 					Text1:SetText(dmgtxt)
 					Text3:SetText(KILLING_BLOWS.." :|r "..killingBlows)
-				end   
+				end
 			end
-		end 
+		end
 		int = 2
 	end
 end

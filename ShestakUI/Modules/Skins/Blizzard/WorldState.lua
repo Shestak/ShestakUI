@@ -14,8 +14,9 @@ local function LoadSkin()
 
 	for i = 1, WorldStateScoreScrollFrameScrollChildFrame:GetNumChildren() do
 		local b = _G["WorldStateScoreButton"..i]
+
 		b:StripTextures()
-		b:StyleButton(false)
+		b:StyleButton()
 		b:SetTemplate("Default", true)
 	end
 

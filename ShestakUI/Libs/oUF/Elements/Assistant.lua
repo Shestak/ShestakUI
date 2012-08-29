@@ -9,7 +9,7 @@ local Update = function(self, event)
 	end
 
 	local unit = self.unit
-	local isAssistant = UnitInRaid(unit) and UnitIsRaidOfficer(unit) and not UnitIsPartyLeader(unit)
+	local isAssistant = UnitInRaid(unit) and UnitIsGroupAssistant(unit) and not UnitIsGroupLeader(unit)
 	if(isAssistant) then
 		assistant:Show()
 	else
@@ -32,7 +32,7 @@ end
 local Enable = function(self)
 	local assistant = self.Assistant
 	if(assistant) then
-		self:RegisterEvent("PARTY_MEMBERS_CHANGED", Path)
+		self:RegisterEvent("GROUP_ROSTER_UPDATE", Path)
 
 		if(assistant:IsObjectType"Texture" and not assistant:GetTexture()) then
 			assistant:SetTexture[[Interface\GroupFrame\UI-Group-AssistantIcon]]
@@ -48,7 +48,7 @@ end
 local Disable = function(self)
 	local assistant = self.Assistant
 	if(assistant) then
-		self:UnregisterEvent("PARTY_MEMBERS_CHANGED", Path)
+		self:UnregisterEvent("GROUP_ROSTER_UPDATE", Path)
 	end
 end
 

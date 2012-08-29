@@ -1,15 +1,15 @@
-﻿## Interface: 40300
+﻿## Interface: 50001
 ## Title: ShestakUI
 ## Notes: A total UI overhaul for World of Warcraft (Oz of shestak.org Edit)
 ## Author: Shestak
-## Version: 3.5.1
-## Credits: ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Havoc74, Duffed, Hydra, Gorlasch, Nefarion, Compost, Blamdarot, Suicidal Katt, Tuller, Rostok, Thizzelle, Astromech, Ammo, Slakah, Xuerian, Thalyra, Soeters, Evilpaul, Beoko, Califpornia, kunda, g0st, Partha, chrippa, Nathanyel, Semlar, Ildyria
-## Thanks: Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, PterOs, tat2dawn, Wetxius, Oz, Nefrit, Ente, ILF7, UI Users, Russian Community and Others
+## Version: 4.0.1
+## Credits: AcidWeb, Aezay, Affli, Ailae, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Chiril, CrusaderHeimdall, Cybey, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Woffle of Dark Iron, Wrug, Xuerian, Yleaf, Zork
+## Thanks: Aelb, Akimba, Antthemage, Baine, Cranan, Crunching, Dandruff, DesFolk, Elfrey, Ente, Erratic, eXecrate, Falchior, Gromcha, Halogen, Homicidal Retribution, ILF7, Ianchan, Illusion, Ipton, k07n, Kazarl, Leots, Mania, MoLLIa, Nanjiqq, Nefrit, Noobolov, Obakol, Oz, PterOs, Puree, Sart, Scorpions, Seal, Sitatunga, Spacedragon, Sw2rT1, tat2dawn, Wetxius, Yakodzuna, UI Users and Russian Community
 ## OptionalDeps: ShestakUI_Config, Blizzard_CombatText, Clique, Stuf, PitBull4, ShadowedUnitFrames, Grid, Grid2, VuhDo, oUF_Freebgrid, TidyPlates, caelNamePlates, dNameplates, Mapster, Prat-3.0, eCastingBar, Quartz, alEnemyCD, TipTac, TipTacTalents, Omen, sThreatMeter2, alRaidCD, cargBags, Postal, AtlasLoot, DXE, _NPCScan.Overlay, epgp
-## SavedVariables: SavedOptions, SavedStats
+## SavedVariables: SavedOptions, SavedStats, SavedAddonProfiles, SavedBindings
 ## SavedVariablesPerCharacter: SavedOptionsPerChar, SavedPositions
 ## X-oUF: oUFShestakUI
-## X-Curse-Packaged-Version: 3.5.1
+## X-Curse-Packaged-Version: 4.0.1
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org

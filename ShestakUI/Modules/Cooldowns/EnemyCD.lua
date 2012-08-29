@@ -102,7 +102,7 @@ local OnEvent = function(self, event, ...)
 					StartTimer(spellID)
 				end
 			end
-		end 
+		end
 	elseif event == "ZONE_CHANGED_NEW_AREA" then
 		for k, v in pairs(icons) do
 			StopTimer(v)
@@ -115,7 +115,7 @@ addon:SetScript("OnEvent", OnEvent)
 addon:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 
-SlashCmdList.EnemyCD = function(msg) 
+SlashCmdList.EnemyCD = function(msg)
 	StartTimer(47528)
 	StartTimer(19647)
 	StartTimer(47476)

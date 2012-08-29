@@ -66,57 +66,37 @@ T.RGBToHex = function(r, g, b)
 end
 
 ----------------------------------------------------------------------------------------
---	Player's Role and Talents spent
+--	Player's Role and Specialization check
 ----------------------------------------------------------------------------------------
-T.CheckForKnownTalent = function(spellid)
-	local wanted_name = GetSpellInfo(spellid)
-	if not wanted_name then return nil end
-	local num_tabs = GetNumTalentTabs()
-	for t = 1, num_tabs do
-		local num_talents = GetNumTalents(t)
-		for i = 1, num_talents do
-			local name_talent, _, _, _, current_rank = GetTalentInfo(t, i)
-			if name_talent and name_talent == wanted_name then
-				if current_rank and current_rank > 0 then
-					return true
-				else
-					return false
-				end
-			end
-		end
+T.CheckSpec = function(tree)
+	local activeGroup = GetActiveSpecGroup()
+	if activeGroup and GetSpecialization(false, false, activeGroup) then
+		return tree == GetSpecialization(false, false, activeGroup)
 	end
-	return false
 end
 
-local RoleUpdater = CreateFrame("Frame")
 local function CheckRole(self, event, unit)
-	local tree = GetPrimaryTalentTree()
-	local resilience
-	local resilperc = GetCombatRatingBonus(COMBAT_RATING_RESILIENCE_PLAYER_DAMAGE_TAKEN)
-	if resilperc > GetDodgeChance() and resilperc > GetParryChance() and UnitLevel("player") == MAX_PLAYER_LEVEL then
-		resilience = true
-	else
-		resilience = false
-	end
-	if ((T.class == "PALADIN" and tree == 2) or (T.class == "WARRIOR" and tree == 3) or (T.class == "DEATHKNIGHT" and tree == 1)) and resilience == false
-	or (T.class == "DRUID" and tree == 2 and GetBonusBarOffset() == 3) then
+	local tree = GetSpecialization()
+	local role = tree and select(6, GetSpecializationInfo(tree))
+
+	if role == "TANK" then
 		T.Role = "Tank"
-	elseif ((T.class == "PALADIN" and tree == 1) or (T.class == "DRUID" and tree == 3) or (T.class == "SHAMAN" and tree == 3) or (T.class == "PRIEST" and tree ~= 3)) then
+	elseif role == "HEALER" then
 		T.Role = "Healer"
-	else
+	elseif role == "DAMAGER" then
 		local playerint = select(2, UnitStat("player", 4))
 		local playeragi = select(2, UnitStat("player", 2))
 		local base, posBuff, negBuff = UnitAttackPower("player")
 		local playerap = base + posBuff + negBuff
 
-		if (((playerap > playerint) or (playeragi > playerint)) and not (T.class == "SHAMAN" and tree ~= 1 and tree ~= 3) and not (UnitBuff("player", GetSpellInfo(24858)) 
-		or UnitBuff("player", GetSpellInfo(65139)))) or T.class == "ROGUE" or T.class == "HUNTER" or (T.class == "SHAMAN" and tree == 2) then
+		if (playerap > playerint) or (playeragi > playerint) then
 			T.Role = "Melee"
 		else
 			T.Role = "Caster"
 		end
 	end
 end
+local RoleUpdater = CreateFrame("Frame")
 RoleUpdater:RegisterEvent("PLAYER_ENTERING_WORLD")
 RoleUpdater:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 RoleUpdater:RegisterEvent("PLAYER_TALENT_UPDATE")
@@ -124,7 +104,6 @@ RoleUpdater:RegisterEvent("CHARACTER_POINTS_CHANGED")
 RoleUpdater:RegisterEvent("UNIT_INVENTORY_CHANGED")
 RoleUpdater:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 RoleUpdater:SetScript("OnEvent", CheckRole)
-CheckRole()
 
 ----------------------------------------------------------------------------------------
 --	UTF functions
@@ -249,6 +228,9 @@ end
 
 function T.SkinNextPrevButton(btn, horizonal)
 	local normal, pushed, disabled
+	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement"))
+
+
 	if btn:GetNormalTexture() then
 		normal = btn:GetNormalTexture():GetTexture()
 	end
@@ -263,15 +245,21 @@ function T.SkinNextPrevButton(btn, horizonal)
 
 	btn:StripTextures()
 
-	if not normal then
+	if not normal and isPrevButton then
+		normal = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up"
+	elseif not normal then
 		normal = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up"
 	end
 
-	if not pushed then
+	if not pushed and isPrevButton then
+		pushed = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Down"
+	elseif not pushed then
 		pushed = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Down"
 	end
 
-	if not disabled then
+	if not disabled and isPrevButton then
+		disabled = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Disabled"
+	elseif not disabled then
 		disabled = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Disabled"
 	end
 
@@ -282,35 +270,40 @@ function T.SkinNextPrevButton(btn, horizonal)
 	btn:SetTemplate("Overlay")
 	btn:Size(btn:GetWidth() - 7, btn:GetHeight() - 7)
 
-	if horizonal then
-		btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.72, 0.65, 0.29, 0.65, 0.72)
-		if btn:GetPushedTexture() then
-			btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.8, 0.65, 0.35, 0.65, 0.8)
+	if normal and pushed and disabled then
+		if horizonal then
+			btn:SetNormalTexture([[Interface\ChatFrame\UI-ChatIcon-ScrollDown-Up]])
+			btn:SetPushedTexture([[Interface\ChatFrame\UI-ChatIcon-ScrollDown-Down]])
+			btn:SetDisabledTexture([[Interface\ChatFrame\UI-ChatIcon-ScrollDown-Disabled]])
+			btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.72, 0.65, 0.29, 0.65, 0.72)
+			if btn:GetPushedTexture() then
+				btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.8, 0.65, 0.35, 0.65, 0.8)
+			end
+			if btn:GetDisabledTexture() then
+				btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
+			end
+		else
+			btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.81, 0.65, 0.29, 0.65, 0.81)
+			if btn:GetPushedTexture() then
+				btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.81, 0.65, 0.35, 0.65, 0.81)
+			end
+			if btn:GetDisabledTexture() then
+				btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
+			end
 		end
-		if btn:GetDisabledTexture() then
-			btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
-		end
-	else
-		btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.81, 0.65, 0.29, 0.65, 0.81)
-		if btn:GetPushedTexture() then
-			btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.81, 0.65, 0.35, 0.65, 0.81)
-		end
-		if btn:GetDisabledTexture() then
-			btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
-		end
-	end
 
-	btn:GetNormalTexture():ClearAllPoints()
-	btn:GetNormalTexture():Point("TOPLEFT", 2, -2)
-	btn:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
-	if btn:GetDisabledTexture() then
-		btn:GetDisabledTexture():SetAllPoints(btn:GetNormalTexture())
+		btn:GetNormalTexture():ClearAllPoints()
+		btn:GetNormalTexture():Point("TOPLEFT", 2, -2)
+		btn:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+		if btn:GetDisabledTexture() then
+			btn:GetDisabledTexture():SetAllPoints(btn:GetNormalTexture())
+		end
+		if btn:GetPushedTexture() then
+			btn:GetPushedTexture():SetAllPoints(btn:GetNormalTexture())
+		end
+		btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+		btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
 	end
-	if btn:GetPushedTexture() then
-		btn:GetPushedTexture():SetAllPoints(btn:GetNormalTexture())
-	end
-	btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
-	btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
 end
 
 function T.SkinRotateButton(btn)
@@ -378,17 +371,38 @@ function T.SkinCheckBox(frame)
 	frame.backdrop:Point("TOPLEFT", 4, -4)
 	frame.backdrop:Point("BOTTOMRIGHT", -4, 4)
 
+	if frame.SetHighlightTexture then
+		local highligh = frame:CreateTexture("Frame", nil, self)
+		highligh:SetTexture(1, 1, 1, 0.3)
+		highligh:Point("TOPLEFT", frame, 6, -6)
+		highligh:Point("BOTTOMRIGHT", frame, -6, 6)
+		frame:SetHighlightTexture(highligh)
+	end
+
 	if frame.SetCheckedTexture then
-		frame:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
+		local checked = frame:CreateTexture("Frame", nil, self)
+		checked:SetTexture(1, 0.82, 0, 0.8)
+		checked:Point("TOPLEFT", frame, 6, -6)
+		checked:Point("BOTTOMRIGHT", frame, -6, 6)
+		frame:SetCheckedTexture(checked)
 	end
 
 	if frame.SetDisabledCheckedTexture then
-		frame:SetDisabledCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check-Disabled")
+		local disabled = frame:CreateTexture("Frame", nil, self)
+		disabled:SetTexture(0.6, 0.6, 0.6, 0.75)
+		disabled:Point("TOPLEFT", frame, 6, -6)
+		disabled:Point("BOTTOMRIGHT", frame, -6, 6)
+		frame:SetDisabledCheckedTexture(disabled)
 	end
 
-	frame.SetNormalTexture = T.dummy
-	frame.SetPushedTexture = T.dummy
-	frame.SetHighlightTexture = T.dummy
+	frame:HookScript("OnDisable", function(self)
+		if not self.SetDisabledTexture then return; end
+		if self:GetChecked() then
+			self:SetDisabledTexture(disabled)
+		else
+			self:SetDisabledTexture("")
+		end
+	end)
 end
 
 function T.SkinCloseButton(f, point, text, pixel)
@@ -416,6 +430,20 @@ function T.SkinCloseButton(f, point, text, pixel)
 
 	f:HookScript("OnEnter", T.SetModifiedBackdrop)
 	f:HookScript("OnLeave", T.SetOriginalBackdrop)
+end
+
+function T.SkinSlider(f)
+	f:SetBackdrop(nil)
+
+	local bd = CreateFrame("Frame", nil, f)
+	bd:SetTemplate("Overlay")
+	bd:SetPoint("TOPLEFT", 14, -2)
+	bd:SetPoint("BOTTOMRIGHT", -15, 3)
+	bd:SetFrameLevel(f:GetFrameLevel() - 1)
+
+	local slider = select(4, f:GetRegions())
+	slider:SetTexture("Interface\\CastingBar\\UI-CastingBar-Spark")
+	slider:SetBlendMode("ADD")
 end
 
 local LoadBlizzardSkin = CreateFrame("Frame")
@@ -525,7 +553,7 @@ T.PostUpdateHealth = function(health, unit, min, max)
 		local r, g, b
 		if (C.unitframe.own_color ~= true and C.unitframe.enemy_health_color and unit == "target" and UnitIsEnemy(unit, "player") and UnitIsPlayer(unit)) or (C.unitframe.own_color ~= true and unit == "target" and not UnitIsPlayer(unit) and UnitIsFriend(unit, "player")) then
 			local c = T.oUF_colors.reaction[UnitReaction(unit, "player")]
-			if c then 
+			if c then
 				r, g, b = c[1], c[2], c[3]
 				health:SetStatusBarColor(r, g, b)
 			else
@@ -623,7 +651,7 @@ end
 T.PostUpdateRaidHealth = function(health, unit, min, max)
 	local self = health:GetParent()
 	local power = self.Power
-	local border = self.FrameBackdrop
+	local border = self.backdrop
 	if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
 		health:SetValue(0)
 		if not UnitIsConnected(unit) then
@@ -698,6 +726,11 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 				power:SetAlpha(1)
 				border:SetAlpha(1)
 			end
+		end
+		if min == 0 and self:GetParent().ResurrectIcon then
+			self:GetParent().ResurrectIcon:SetAlpha(1)
+		elseif self:GetParent().ResurrectIcon then
+			self:GetParent().ResurrectIcon:SetAlpha(0)
 		end
 	end
 end
@@ -831,11 +864,10 @@ T.UpdateManaLevel = function(self, elapsed)
 	end
 end
 
-T.UpdateDruidMana = function(self)
+T.UpdateClassMana = function(self)
 	if self.unit ~= "player" then return end
 
-	local num, str = UnitPowerType("player")
-	if num ~= 0 then
+	if UnitPowerType("player") ~= 0 then
 		local min = UnitPower("player", 0)
 		local max = UnitPowerMax("player", 0)
 
@@ -850,20 +882,20 @@ T.UpdateDruidMana = function(self)
 
 		if min ~= max then
 			if self.Power.value:GetText() then
-				self.DruidMana:Point("RIGHT", self.Power.value, "LEFT", -1, 0)
-				self.DruidMana:SetFormattedText("%d%%|r |cffD7BEA5-|r", floor(min / max * 100))
-				self.DruidMana:SetJustifyH("RIGHT")
+				self.ClassMana:Point("RIGHT", self.Power.value, "LEFT", -1, 0)
+				self.ClassMana:SetFormattedText("%d%%|r |cffD7BEA5-|r", floor(min / max * 100))
+				self.ClassMana:SetJustifyH("RIGHT")
 			else
-				self.DruidMana:Point("LEFT", self.Power, "LEFT", 4, 1)
-				self.DruidMana:SetFormattedText("%d%%", floor(min / max * 100))
+				self.ClassMana:Point("LEFT", self.Power, "LEFT", 4, 1)
+				self.ClassMana:SetFormattedText("%d%%", floor(min / max * 100))
 			end
 		else
-			self.DruidMana:SetText()
+			self.ClassMana:SetText()
 		end
 
-		self.DruidMana:SetAlpha(1)
+		self.ClassMana:SetAlpha(1)
 	else
-		self.DruidMana:SetAlpha(0)
+		self.ClassMana:SetAlpha(0)
 	end
 end
 
@@ -898,22 +930,11 @@ T.UpdatePvPStatus = function(self, elapsed)
 	end
 end
 
-T.UpdateShards = function(self, event, unit, powerType)
-	if self.unit ~= unit or (powerType and powerType ~= "SOUL_SHARDS") then return end
-	local num = UnitPower(unit, SPELL_POWER_SOUL_SHARDS)
-	for i = 1, SHARD_BAR_NUM_SHARDS do
-		if i <= num then
-			self.SoulShards[i]:SetAlpha(1)
-		else
-			self.SoulShards[i]:SetAlpha(0.2)
-		end
-	end
-end
-
 T.UpdateHoly = function(self, event, unit, powerType)
 	if self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER") then return end
 	local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)
-	for i = 1, MAX_HOLY_POWER do
+	local numMax = UnitPowerMax("player", SPELL_POWER_HOLY_POWER)
+	for i = 1, numMax do
 		if i <= num then
 			self.HolyPower[i]:SetAlpha(1)
 		else
@@ -976,10 +997,12 @@ T.UpdateComboPoint = function(self, event, unit)
 
 	if cpoints[1]:GetAlpha() == 1 then
 		for i = 1, MAX_COMBO_POINTS do
+			cpoints:Show()
 			cpoints[i]:Show()
 		end
 	else
 		for i = 1, MAX_COMBO_POINTS do
+			cpoints:Hide()
 			cpoints[i]:Hide()
 		end
 	end
@@ -992,26 +1015,7 @@ T.UpdateComboPoint = function(self, event, unit)
 end
 
 local ticks = {}
-local channelingTicks = {
-	-- Warlock
-	[GetSpellInfo(689)] = 3,	-- Drain Life
-	[GetSpellInfo(5740)] = 4,	-- Rain of Fire
-	[GetSpellInfo(1120)] = 5,	-- Drain Soul
-	[GetSpellInfo(755)] = 3,	-- Health Funnel
-	-- Druid
-	[GetSpellInfo(44203)] = 4,	-- Tranquility
-	[GetSpellInfo(16914)] = 10,	-- Hurricane
-	-- Priest
-	[GetSpellInfo(15407)] = 3,	-- Mind Flay
-	[GetSpellInfo(48045)] = 5,	-- Mind Sear
-	[GetSpellInfo(47540)] = 2,	-- Penance
-	[GetSpellInfo(64901)] = 4,	-- Hymn of Hope
-	[GetSpellInfo(64843)] = 4,	-- Divine Hymn
-	-- Mage
-	[GetSpellInfo(5143)] = 5,	-- Arcane Missiles
-	[GetSpellInfo(10)] = 5,		-- Blizzard
-	[GetSpellInfo(12051)] = 4,	-- Evocation
-}
+local channelingTicks = T.CastBarTicks
 
 local setBarTicks = function(Castbar, ticknum)
 	if ticknum and ticknum > 0 then
@@ -1236,7 +1240,7 @@ T.AuraTrackerTime = function(self, elapsed)
 		if self.timeleft <= 0 then
 			self.icon:SetTexture("")
 			self.text:SetText("")
-		end	
+		end
 		self.text:SetFormattedText("%.1f", self.timeleft)
 	end
 end
@@ -1249,7 +1253,7 @@ T.HideAuraFrame = function(self)
 			TemporaryEnchantFrame:Hide()
 			self.Debuffs:Hide()
 		end
-	elseif self.unit == "pet" and not C.aura.pet_debuffs or self.unit == "focus" and not C.aura.focus_debuffs 
+	elseif self.unit == "pet" and not C.aura.pet_debuffs or self.unit == "focus" and not C.aura.focus_debuffs
 	or self.unit == "focustarget" and not C.aura.fot_debuffs or self.unit == "targettarget" and not C.aura.tot_debuffs then
 		self.Debuffs:Hide()
 	elseif self.unit == "target" and not C.aura.target_auras then
@@ -1348,14 +1352,10 @@ T.UpdateThreat = function(self, event, unit)
 	local threat = UnitThreatSituation(self.unit)
 	if threat and threat > 1 then
 		r, g, b = GetThreatStatusColor(threat)
-		if self.FrameBackdrop then
-			self.FrameBackdrop:SetBackdropBorderColor(r, g, b)
-		end
+		self.backdrop:SetBackdropBorderColor(r, g, b)
 	else
-		if self.FrameBackdrop then
-			self.FrameBackdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-		end
-	end 
+		self.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+	end
 end
 
 T.CountOffsets = {
@@ -1433,6 +1433,6 @@ T.CreateAuraWatch = function(self, unit)
 			auras.icons[spell[1]] = icon
 		end
 	end
-	
+
 	self.AuraWatch = auras
 end

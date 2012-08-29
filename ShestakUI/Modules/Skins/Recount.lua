@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L = unpack(select(2, ...))
 if C.skins.recount ~= true or not IsAddOnLoaded("Recount") then return end
 
 ----------------------------------------------------------------------------------------
@@ -146,7 +146,7 @@ RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["RowSpacing"] = 7
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["ShowScrollbar"] = false
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["HideTotalBar"] = true
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Position"]["x"] = 284
-RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Position"]["y"] = -305
+RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Position"]["y"] = -281
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Position"]["w"] = 221
 --RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["Position"]["h"] = 158
 RecountDB["profiles"][T.name.." - "..T.realm]["MainWindow"]["BarText"]["NumFormat"] = 3

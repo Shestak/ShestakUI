@@ -41,13 +41,13 @@ SLASH_UIHELP3 = "/гшрудз"
 ----------------------------------------------------------------------------------------
 --	Enable/Disable addons
 ----------------------------------------------------------------------------------------
-SlashCmdList.DISABLE_ADDON = function(addon) 
+SlashCmdList.DISABLE_ADDON = function(addon)
 	local _, _, _, _, _, reason, _ = GetAddOnInfo(addon)
 	if reason ~= "MISSING" then
 		DisableAddOn(addon)
 		ReloadUI()
 	else
-		print("|cffffff00"..L_TOGGLE_ADDON.."'"..addon.."' not found.|r")
+		print("|cffffff00"..L_TOGGLE_ADDON.."'"..addon.."'"..L_TOGGLE_NOT_FOUND.."|r")
 	end
 end
 SLASH_DISABLE_ADDON1 = "/dis"
@@ -60,7 +60,7 @@ SlashCmdList.ENABLE_ADDON = function(addon)
 		LoadAddOn(addon)
 		ReloadUI()
 	else
-		print("|cffffff00"..L_TOGGLE_ADDON.."'"..addon.."' not found.|r")
+		print("|cffffff00"..L_TOGGLE_ADDON.."'"..addon.."'"..L_TOGGLE_NOT_FOUND.."|r")
 	end
 end
 SLASH_ENABLE_ADDON1 = "/en"
@@ -73,7 +73,7 @@ function DisbandRaidGroup()
 	if InCombatLockdown() then return end
 	if UnitInRaid("player") then
 		SendChatMessage(L_INFO_DISBAND, "RAID")
-		for i = 1, GetNumRaidMembers() do
+		for i = 1, GetNumGroupMembers() do
 			local name, _, _, _, _, _, _, online = GetRaidRosterInfo(i)
 			if online and name ~= T.name then
 				UninviteUnit(name)
@@ -82,7 +82,7 @@ function DisbandRaidGroup()
 	else
 		SendChatMessage(L_INFO_DISBAND, "PARTY")
 		for i = MAX_PARTY_MEMBERS, 1, -1 do
-			if GetPartyMember(i) then
+			if GetSubgroupMembers(i) then
 				UninviteUnit(UnitName("party"..i))
 			end
 		end
@@ -98,7 +98,7 @@ StaticPopupDialogs.DISBAND_RAID = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 SlashCmdList.GROUPDISBAND = function()
@@ -111,10 +111,10 @@ SLASH_GROUPDISBAND2 = "/кв"
 --	Convert party to raid
 ----------------------------------------------------------------------------------------
 SlashCmdList.PARTYTORAID = function()
-	if GetNumPartyMembers() > 0 or GetNumRaidMembers() > 0 then
-		if UnitInRaid("player") and IsRaidLeader() then
+	if GetNumSubgroupMembers() > 0 or GetNumGroupMembers() > 0 then
+		if UnitInRaid("player") and IsGroupLeader() then
 			ConvertToParty()
-		elseif UnitInParty("player") and IsPartyLeader() then
+		elseif UnitInParty("player") and IsGroupLeader() then
 			ConvertToRaid()
 		end
 	else
@@ -141,28 +141,12 @@ SLASH_INSTTELEPORT1 = "/teleport"
 SLASH_INSTTELEPORT2 = "/еудузщке"
 
 ----------------------------------------------------------------------------------------
---	Enable lua error
-----------------------------------------------------------------------------------------
-SlashCmdList.LUAERROR = function (msg, editbox)
-	if (msg == "on") then
-		SetCVar("scriptErrors", 1)
-		ReloadUI()
-	elseif (msg == "off") then
-		SetCVar("scriptErrors", 0)
-	else
-		print("|cffffff00".."/luaerror on - /luaerror off".."|r")
-	end
-end
-SLASH_LUAERROR1 = "/luaerror"
-SLASH_LUAERROR2 = "/дгфуккщк"
-
-----------------------------------------------------------------------------------------
 --	Spec switching(by Monolit)
 ----------------------------------------------------------------------------------------
 SlashCmdList.SPEC = function()
 	if T.level >= SHOW_TALENT_LEVEL then
-		local spec = GetActiveTalentGroup()
-		if spec == 1 then SetActiveTalentGroup(2) elseif spec == 2 then SetActiveTalentGroup(1) end
+		local spec = GetActiveSpecGroup()
+		if spec == 1 then SetActiveSpecGroup(2) elseif spec == 2 then SetActiveSpecGroup(1) end
 	else
 		print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
 	end
@@ -170,13 +154,6 @@ end
 SLASH_SPEC1 = "/ss"
 SLASH_SPEC2 = "/spec"
 SLASH_SPEC3 = "/ыы"
-
-----------------------------------------------------------------------------------------
---	Fix combatlog after a crash (2.4 and 3.3.2 bug)
-----------------------------------------------------------------------------------------
-SlashCmdList.CLFIX = function() CombatLogClearEntries() end
-SLASH_CLFIX1 = "/clfix"
-SLASH_CLFIX2 = "/сдашч"
 
 ----------------------------------------------------------------------------------------
 --	Demo mode for DBM
@@ -224,12 +201,12 @@ SlashCmdList.FRAME = function(arg)
 		if arg:GetParent() and arg:GetParent():GetName() then
 			ChatFrame1:AddMessage("Parent: |cffFFD100"..arg:GetParent():GetName())
 		end
- 
+
 		ChatFrame1:AddMessage("Width: |cffFFD100"..format("%.2f", arg:GetWidth()))
 		ChatFrame1:AddMessage("Height: |cffFFD100"..format("%.2f", arg:GetHeight()))
 		ChatFrame1:AddMessage("Strata: |cffFFD100"..arg:GetFrameStrata())
 		ChatFrame1:AddMessage("Level: |cffFFD100"..arg:GetFrameLevel())
- 
+
 		if relativeTo and relativeTo:GetName() then
 			ChatFrame1:AddMessage("Point: |cffFFD100"..point.."|r anchored to "..relativeTo:GetName().."'s |cffFFD100"..relativePoint)
 		end
@@ -248,119 +225,6 @@ SlashCmdList.FRAME = function(arg)
 end
 SLASH_FRAME1 = "/frame"
 SLASH_FRAME2 = "/акфьу"
-
-----------------------------------------------------------------------------------------
---	Addons group
-----------------------------------------------------------------------------------------
-SlashCmdList.CHANGEADDONS = function(s)
-	if(s and s == "raid") then
-		for i in pairs(C.addon.party) do
-			DisableAddOn(C.addon.party[i])
-		end
-		for i in pairs(C.addon.pvp) do
-			DisableAddOn(C.addon.pvp[i])
-		end
-		for i in pairs(C.addon.quest) do
-			DisableAddOn(C.addon.quest[i])
-		end
-		for i in pairs(C.addon.trade) do
-			DisableAddOn(C.addon.trade[i])
-		end
-		for i in pairs(C.addon.raid) do
-			EnableAddOn(C.addon.raid[i])
-		end
-		ReloadUI()
-	elseif(s and s == "party") then
-		for i in pairs(C.addon.raid) do
-			DisableAddOn(C.addon.raid[i])
-		end
-		for i in pairs(C.addon.pvp) do
-			DisableAddOn(C.addon.pvp[i])
-		end
-		for i in pairs(C.addon.quest) do
-			DisableAddOn(C.addon.quest[i])
-		end
-		for i in pairs(C.addon.trade) do
-			DisableAddOn(C.addon.trade[i])
-		end
-		for i in pairs(C.addon.party) do
-			EnableAddOn(C.addon.party[i])
-		end
-		ReloadUI()
-	elseif(s and s == "pvp") then
-		for i in pairs(C.addon.raid) do
-			DisableAddOn(C.addon.raid[i])
-		end
-		for i in pairs(C.addon.party) do
-			DisableAddOn(C.addon.party[i])
-		end
-		for i in pairs(C.addon.quest) do
-			DisableAddOn(C.addon.quest[i])
-		end
-		for i in pairs(C.addon.trade) do
-			DisableAddOn(C.addon.trade[i])
-		end
-		for i in pairs(C.addon.pvp) do
-			EnableAddOn(C.addon.pvp[i])
-		end
-		ReloadUI()
-	elseif(s and s == "quest") then
-		for i in pairs(C.addon.raid) do
-			DisableAddOn(C.addon.raid[i])
-		end
-		for i in pairs(C.addon.party) do
-			DisableAddOn(C.addon.party[i])
-		end
-		for i in pairs(C.addon.pvp) do
-			DisableAddOn(C.addon.pvp[i])
-		end
-		for i in pairs(C.addon.trade) do
-			DisableAddOn(C.addon.trade[i])
-		end
-		for i in pairs(C.addon.quest) do
-			EnableAddOn(C.addon.quest[i])
-		end
-		ReloadUI()
-	elseif(s and s == "trade") then
-		for i in pairs(C.addon.raid) do
-			DisableAddOn(C.addon.raid[i])
-		end
-		for i in pairs(C.addon.party) do
-			DisableAddOn(C.addon.party[i])
-		end
-		for i in pairs(C.addon.pvp) do
-			DisableAddOn(C.addon.pvp[i])
-		end
-		for i in pairs(C.addon.quest) do
-			DisableAddOn(C.addon.quest[i])
-		end
-		for i in pairs(C.addon.trade) do
-			EnableAddOn(C.addon.trade[i])
-		end
-		ReloadUI()
-	elseif(s and s == "solo") then
-		for i in pairs(C.addon.raid) do
-			DisableAddOn(C.addon.raid[i])
-		end
-		for i in pairs(C.addon.party) do
-			DisableAddOn(C.addon.party[i])
-		end
-		for i in pairs(C.addon.pvp) do
-			DisableAddOn(C.addon.pvp[i])
-		end
-		for i in pairs(C.addon.quest) do
-			DisableAddOn(C.addon.quest[i])
-		end
-		for i in pairs(C.addon.trade) do
-			DisableAddOn(C.addon.trade[i])
-		end
-		ReloadUI()
-	else
-		print("|cffffff00"..L_INFO_ADDON_SETS1.."|r")
-		print("|cffffff00"..L_INFO_ADDON_SETS2.."|r")
-	end
-end
-SLASH_CHANGEADDONS1 = "/addons"
 
 ----------------------------------------------------------------------------------------
 --	Farm mode for minimap(by Elv22)
@@ -401,6 +265,37 @@ SlashCmdList.TEST_ACHIEVEMENT = function()
 	AchievementAlertFrame_ShowAlert(5780)
 	AchievementAlertFrame_ShowAlert(5000)
 	GuildChallengeAlertFrame_ShowAlert(3, 2, 5)
+	ChallengeModeAlertFrame_ShowAlert()
+	CriteriaAlertFrame_GetAlertFrame()
+	MoneyWonAlertFrame_ShowAlert(9999999)
+	LootWonAlertFrame_ShowAlert(GetItemInfo(6948), -1, 1, 100)
+
+	AlertFrame_AnimateIn(CriteriaAlertFrame1)
+	AlertFrame_AnimateIn(DungeonCompletionAlertFrame1)
+	AlertFrame_AnimateIn(ScenarioAlertFrame1)
+
+	AlertFrame_FixAnchors()
+
+	--CriteriaAlertFrame_ShowAlert(achievementID, criteriaID)
 end
 SLASH_TEST_ACHIEVEMENT1 = "/tach"
 SLASH_TEST_ACHIEVEMENT2 = "/ефср"
+
+----------------------------------------------------------------------------------------
+--	Test and move Blizzard Extra Action Button
+----------------------------------------------------------------------------------------
+SlashCmdList.TEST_EXTRABUTTON = function()
+	if ExtraActionBarFrame:IsShown() then
+		ExtraActionBarFrame:Hide()
+	else
+		ExtraActionBarFrame:Show()
+		ExtraActionBarFrame:SetAlpha(1)
+		ExtraActionButton1:Show()
+		ExtraActionButton1:SetAlpha(1)
+		ExtraActionButton1.icon:SetTexture("Interface\\Icons\\INV_Pet_DiseasedSquirrel")
+		ExtraActionButton1.icon:Show()
+		ExtraActionButton1.icon:SetAlpha(1)
+	end
+end
+SLASH_TEST_EXTRABUTTON1 = "/teb"
+SLASH_TEST_EXTRABUTTON2 = "/еуи"

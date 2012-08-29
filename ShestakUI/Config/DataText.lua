@@ -2,7 +2,7 @@
 
 ----------------------------------------------------------------------------------------
 --	LiteStats configuration file
---	BACKUP YOUR CHANGES TO THIS FILE BEFORE UPDATING!
+--	BACKUP THIS FILE BEFORE UPDATING!
 ----------------------------------------------------------------------------------------
 LPSTAT_FONT = {
 	font = C.font.stats_font,				-- Path to your font
@@ -15,18 +15,18 @@ LPSTAT_FONT = {
 LTIPICONSIZE = 11							-- Icon sizes in info tips
 
 -- Player class coloring function for optional use with fmt strings config.
--- Example use: fmt = class'G:'.." %d"..class'/'.."%d" (colors 'G:' and '/' and numbers retain the default text color)
--- Example2: fmt = class'%d'.."fps" (colors the fps number and "fps" retains the default text color)
-local ctab = RAID_CLASS_COLORS
+-- Example use: fmt = class"G:".." %d"..class"/".."%d" (colors "G:" and "/" and numbers retain the default text color)
+-- Example2: fmt = class"%d".."fps" (colors the fps number and "fps" retains the default text color)
+local ctab = CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS
 local function class(string)
-	local color = ctab[select(2,UnitClass'player')]
-	return format("|cff%02x%02x%02x%s|r",color.r*255,color.g*255,color.b*255,string or '')
+	local color = ctab[select(2, UnitClass("player"))]
+	return format("|cff%02x%02x%02x%s|r", color.r * 255, color.g * 255, color.b * 255, string or "")
 end
 
 -- Modules Config. Note: omitting any variable will likely cause errors, check carefully when updating.
 -- * More tip_anchor strings: http://www.wowwiki.com/API_GameTooltip_SetOwner
--- * To color any of your 'fmt' strings, use hex format ("|cffFFFF55*string*|r") or the class format described above.
--- * You can start a new line by using '\n' in your format strings.
+-- * To color any of your "fmt" strings, use hex format ("|cffFFFF55*string*|r") or the class format described above.
+-- * You can start a new line by using "\n" in your format strings.
 LPSTAT_CONFIG = {
 -- Bottomleft block
 	Clock = {
@@ -77,7 +77,6 @@ LPSTAT_CONFIG = {
 		enabled = C.stats.durability,
 		fmt = "[color]%d|r%%".."d",-- "54%D" -- %% outputs %, [color] inserts durability color code.
 		man = true, -- Hide bliz durability man.
-		gfunds = C.stats.guild_repair, -- Change to false to disable guild repairing.
 		ignore_inventory = false, -- Ignore inventory gear when auto-repairing.
 		gear_icons = false, -- Show your gear icons in the tooltip.
 		anchor_frame = "Guild", anchor_to = "left", anchor_from = "right",
@@ -97,7 +96,7 @@ LPSTAT_CONFIG = {
 		xp_normal_fmt = "[curxp]([cur%]%)".."XP", -- XP string used when not rested.
 		xp_rested_fmt = "[curxp]([cur%]%)".."XP ".." [restxp]([rest%]%)".."R", -- XP string used when rested.		
 		played_fmt = "Online: ".."|r".."[playedsession]", -- Played time format.
-		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")		
+		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")
 			-- day = "d", hour = "h", minute = "m", second = "s", -- Customizable time labels. Will localize by default.
 			-- Faction tags...
 			--	Faction name [repname]
@@ -128,18 +127,18 @@ LPSTAT_CONFIG = {
 		enabled = C.stats.location,
 		subzone = true, -- Set to false to display the main zone's name instead of the subzone.
 		truncate = 16, -- Max number of letters for location text, set to 0 to disable.
-		coord_fmt = "%d,%d", -- "44,19", to add tenths, use '%.1f' (digit determines decimal)
+		coord_fmt = "%d,%d", -- "44,19", to add tenths, use "%.1f" (digit determines decimal)
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
 		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "TOPRIGHT", tip_x = -21, tip_y = -153
 	},
--- Bottomright block 1
+-- Bottomright block 3
 	Stats = {
 		enabled = C.stats.bags,
 			-- Available stat tags...
 			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery [mastery]				Expertise% [expertise]
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
 			--   Ranged Haste% [rangedhaste]	Spell Haste% [spellhaste]		Melee Crit% [meleecrit]			Ranged Crit% [rangedcrit]
-			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				Spell Pen [spellpen]
+			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]
 			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Combat table Coverage% [blockcap]
 			--   Avoidance% [avoidance]			MP5 I5SR [manaregen]			Armor Value [armor]				Resilience [resilience]
 		spec1fmt = "SP: ".."[healing]".."  Crit: ".."[spellcrit]%".."  Haste: ".."[spellhaste]%", -- Spec #1 string
@@ -152,7 +151,7 @@ LPSTAT_CONFIG = {
 		enabled = C.stats.bags,
 		fmt = "B: ".."%d/%d", -- "B: 24/98"
 		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
-		x_off = -16, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 37, tip_y = 5,
+		x_off = -16, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 41, tip_y = 5,
 		justify_h = "right",
 	},
 	-- Top block
@@ -183,23 +182,8 @@ LPSTAT_CONFIG = {
 -- Bottomleft block 2
 	Talents = {
 		enabled = C.stats.bags,
-		fmt = "T: ".."[spec %d/%d/%d] [unspent]", -- "Protection: 15/0/51 +5", [shortname] shortens spec name.
-		iconsize = 11,  -- Size of talent [icon].
-		name_subs = { -- Substitutions for long talent tree names, remove and/or change any/all.
-			["Protection"] = "Prot.",
-			["Restoration"] = "Resto.",
-			["Feral Combat"] = "Feral",
-			["Retribution"] = "Ret.",
-			["Discipline"] = "Disc.",
-			["Enhancement"] = "Enhance.",
-			["Elemental"] = "Ele.",
-			["Demonology"] = "Demon.",
-			["Destruction"] = "Destro.",
-			["Assassination"] = "Assassin.",
-			["Marksmanship"] = "Marks.",
-			["Beast Mastery"] = "B.M.",
-		},
-		anchor_frame = "Bags", anchor_to = "right", anchor_from = "left", tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 80, tip_y = 5,
+		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
+		anchor_frame = "Bags", anchor_to = "right", anchor_from = "left", tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 66, tip_y = 5,
 		x_off = 0, y_off = 0,
 	},
 -- MiniMap block
@@ -224,19 +208,7 @@ LPSTAT_CONFIG = {
 }
 
 LPSTAT_PROFILES = {
-	MAGE = { 
-		Stats = {
-			spec1fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
-			spec2fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
-		}
-	},
-	PRIEST = { 
-		Stats = {
-			spec1fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
-			spec2fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
-		}
-	},
-	WARLOCK = { 
+	DEATHKNIGHT = {
 		Stats = {
 			spec1fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
 			spec2fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
@@ -248,28 +220,40 @@ LPSTAT_PROFILES = {
 			spec2fmt = "AP: ".."[rangedap]".." Crit: ".."[rangedcrit]%".." Hit: ".."[rangedhit]%",
 		}
 	},
-	ROGUE = {
+	MAGE = {
 		Stats = {
-			spec1fmt = "AP: ".."[ap]".." Exp: ".."[expertise]%".." Hit: ".."[meleehit]%",
-			spec2fmt = "AP: ".."[ap]".." Exp: ".."[expertise]%".." Hit: ".."[meleehit]%",
-		}
-	},
-	WARRIOR = {
-		Stats = {
-			spec1fmt = "Armor: ".."[armor]".." BlockCap: ".."[blockcap]%".." Avoid: ".."[avoidance]%",
-			spec2fmt = "AP: ".."[ap]".." Crit: ".."[meleecrit]%".." Hit: ".."[meleehit]%",
-		}
-	},
-	DEATHKNIGHT = {
-		Stats = {
-			spec1fmt = "Mastery: ".."[mastery]".." Armor: ".."[armor]".." Avoid: ".."[avoidance]%",
-			spec2fmt = "Mastery: ".."[mastery]".." Hit: ".."[meleehit]%".." Haste: ".."[meleehaste]%",
+			spec1fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
+			spec2fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
 		}
 	},
 	PALADIN = {
 		Stats = {
 			spec1fmt = "Mastery: ".."[mastery]".." BlockCap: ".."[blockcap]%".." Avoid: ".."[avoidance]%",
 			spec1fmt = "Mastery: ".."[mastery]".." BlockCap: ".."[blockcap]%".." Avoid: ".."[avoidance]%",
+		}
+	},
+	PRIEST = {
+		Stats = {
+			spec1fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
+			spec2fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
+		}
+	},
+	ROGUE = {
+		Stats = {
+			spec1fmt = "AP: ".."[ap]".." Exp: ".."[expertise]%".." Hit: ".."[meleehit]%",
+			spec2fmt = "AP: ".."[ap]".." Exp: ".."[expertise]%".." Hit: ".."[meleehit]%",
+		}
+	},
+	WARLOCK = {
+		Stats = {
+			spec1fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
+			spec2fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
+		}
+	},
+	WARRIOR = {
+		Stats = {
+			spec1fmt = "Mastery: ".."[mastery]".." Armor: ".."[armor]".." Avoid: ".."[avoidance]%",
+			spec2fmt = "Mastery: ".."[mastery]".." Hit: ".."[meleehit]%".." Haste: ".."[meleehaste]%",
 		}
 	},
 }

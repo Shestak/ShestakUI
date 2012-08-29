@@ -5,9 +5,8 @@ if C.minimap.enable ~= true then return end
 --	Minimap border
 ----------------------------------------------------------------------------------------
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
-MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, "CENTER", UIParent, "CENTER", 0, 0)
+MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
 MinimapAnchor:RegisterEvent("ADDON_LOADED")
-MinimapAnchor:Point(unpack(C.position.minimap))
 
 ----------------------------------------------------------------------------------------
 --	Shape, location and scale
@@ -22,6 +21,11 @@ Minimap:Point("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
 Minimap:Point("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
 Minimap:Size(MinimapAnchor:GetWidth())
 
+MinimapBackdrop:ClearAllPoints()
+MinimapBackdrop:Point("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
+MinimapBackdrop:Point("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
+MinimapBackdrop:Size(MinimapAnchor:GetWidth())
+
 -- Hide Border
 MinimapBorder:Hide()
 MinimapBorderTop:Hide()
@@ -33,6 +37,7 @@ MinimapZoomOut:Hide()
 -- Hide Voice Chat Frame
 MiniMapVoiceChatFrame:Kill()
 VoiceChatTalkers:Kill()
+VoiceChat_Toggle = T.dummy
 
 -- Hide North texture at top
 MinimapNorthTag:SetTexture(nil)
@@ -50,10 +55,27 @@ MiniMapMailBorder:Hide()
 MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
 MiniMapMailIcon:Size(16)
 
--- Move battleground icon
-MiniMapBattlefieldFrame:ClearAllPoints()
-MiniMapBattlefieldFrame:Point("BOTTOM", Minimap, "BOTTOM", 1, -7)
-MiniMapBattlefieldBorder:Hide()
+-- Move QueueStatus icon
+QueueStatusMinimapButton:ClearAllPoints()
+QueueStatusMinimapButton:Point("BOTTOM", Minimap, "BOTTOM", 1, -7)
+QueueStatusMinimapButton:SetHighlightTexture(nil)
+QueueStatusMinimapButtonBorder:Hide()
+
+local function UpdateLFGTooltip()
+	local position = MinimapAnchor:GetPoint()
+	QueueStatusFrame:ClearAllPoints()
+	if position:match("BOTTOMRIGHT") then
+		QueueStatusFrame:Point("BOTTOMRIGHT", QueueStatusMinimapButton, "BOTTOMLEFT", 0, 0)
+	elseif position:match("BOTTOM") then
+		QueueStatusFrame:Point("BOTTOMLEFT", QueueStatusMinimapButton, "BOTTOMRIGHT", 4, 0)
+	elseif position:match("LEFT") then
+		QueueStatusFrame:Point("TOPLEFT", QueueStatusMinimapButton, "TOPRIGHT", 4, 0)
+	else
+		QueueStatusFrame:Point("TOPRIGHT", QueueStatusMinimapButton, "TOPLEFT", 0, 0)
+	end
+end
+QueueStatusFrame:HookScript("OnShow", UpdateLFGTooltip)
+QueueStatusFrame:SetFrameStrata("TOOLTIP")
 
 -- Hide world map button
 MiniMapWorldMapButton:Hide()
@@ -75,14 +97,7 @@ GameTimeCalendarInvitesTexture:ClearAllPoints()
 GameTimeCalendarInvitesTexture:SetParent(Minimap)
 GameTimeCalendarInvitesTexture:Point("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
 
--- LFG/LFR icon
-MiniMapLFGFrame:ClearAllPoints()
-MiniMapLFGFrame:Point("TOP", Minimap, "TOP", 1, 6)
-MiniMapLFGFrame:SetHighlightTexture(nil)
-MiniMapLFGFrameBorder:Hide()
-
 -- Default LFG icon
-MiniMapLFGFrameGroupSize:Hide()
 LFG_EYE_TEXTURES.raid = LFG_EYE_TEXTURES.default
 LFG_EYE_TEXTURES.unknown = LFG_EYE_TEXTURES.default
 
@@ -107,31 +122,17 @@ HelpOpenTicketButton:Point("BOTTOM", Minimap, "BOTTOM", 0, -5)
 HelpOpenTicketButton:SetHighlightTexture(nil)
 
 -- GhostFrame
-GhostFrameContentsFrame:SetTemplate("Overlay")
-GhostFrameContentsFrame:Width(C.minimap.size)
-GhostFrameContentsFrame:ClearAllPoints()
-GhostFrameContentsFrame:SetPoint("CENTER")
-GhostFrameContentsFrame.SetPoint = T.dummy
+GhostFrame:StripTextures()
+GhostFrame:SetTemplate("Overlay")
+GhostFrame:StyleButton()
 GhostFrame:ClearAllPoints()
 GhostFrame:SetPoint("BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -51)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
--- LFDSearchStatus
-local function UpdateLFGTooltip()
-	local position = MinimapAnchor:GetPoint()
-	LFGSearchStatus:ClearAllPoints()
-	if position:match("BOTTOMRIGHT") then
-		LFGSearchStatus:Point("BOTTOMRIGHT", MiniMapLFGFrame, "BOTTOMLEFT", 0, 0)
-	elseif position:match("BOTTOM") then
-		LFGSearchStatus:Point("BOTTOMLEFT", MiniMapLFGFrame, "BOTTOMRIGHT", 4, 0)
-	elseif position:match("LEFT") then
-		LFGSearchStatus:Point("TOPLEFT", MiniMapLFGFrame, "TOPRIGHT", 4, 0)
-	else
-		LFGSearchStatus:Point("TOPRIGHT", MiniMapLFGFrame, "TOPLEFT", 0, 0)
-	end
-end
-LFGSearchStatus:HookScript("OnShow", UpdateLFGTooltip)
-LFGSearchStatus:SetFrameStrata("TOOLTIP")
+GhostFrameContentsFrameIcon:Size(34)
+GhostFrameContentsFrame:SetFrameLevel(GhostFrameContentsFrame:GetFrameLevel() + 2)
+GhostFrameContentsFrame:CreateBackdrop("Overlay")
+GhostFrameContentsFrame.backdrop:Point("TOPLEFT", GhostFrameContentsFrameIcon, -2, 2)
+GhostFrameContentsFrame.backdrop:Point("BOTTOMRIGHT", GhostFrameContentsFrameIcon, 2, -2)
 
 -- Enable mouse scrolling
 Minimap:EnableMouseWheel(true)
@@ -164,37 +165,23 @@ local micromenu = {
 		if InCombatLockdown() then
 			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
 		end
-		ToggleFrame(SpellBookFrame)
+		ToggleSpellBook(BOOKTYPE_SPELL)
 	end},
 	{text = TALENTS_BUTTON, notCheckable = 1, func = function()
 		if not PlayerTalentFrame then
-			LoadAddOn("Blizzard_TalentUI")
-		end
-		if not GlyphFrame then
-			LoadAddOn("Blizzard_GlyphUI")
+			TalentFrame_LoadUI()
 		end
 		if T.level >= SHOW_TALENT_LEVEL then
-			PlayerTalentFrame_Toggle()
+			ToggleTalentFrame()
 		else
 			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
 		end
 	end},
 	{text = ACHIEVEMENT_BUTTON, notCheckable = 1, func = function()
 		ToggleAchievementFrame()
-		--AchievementFrame_SetFilter(3)
 	end},
 	{text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
 		ToggleFrame(QuestLogFrame)
-	end},
-	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
-		ToggleFriendsFrame(1)
-	end},
-	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
-		if T.level >= SHOW_PVP_LEVEL then
-			ToggleFrame(PVPFrame)
-		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
-		end
 	end},
 	{text = ACHIEVEMENTS_GUILD_TAB, notCheckable = 1, func = function()
 		if IsInGuild() then
@@ -211,22 +198,37 @@ local micromenu = {
 			LookingForGuildFrame_Toggle()
 		end
 	end},
-	{text = LFG_TITLE, notCheckable = 1, func = function()
-		if T.level >= SHOW_LFD_LEVEL then
-			ToggleFrame(LFDParentFrame)
+	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
+		ToggleFriendsFrame(1)
+	end},
+	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
+		if T.level >= SHOW_PVP_LEVEL then
+			TogglePVPFrame()
 		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
+			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
 		end
 	end},
-	{text = RAID_FINDER, notCheckable = true, func = function()
+	{text = DUNGEONS_BUTTON, notCheckable = 1, func = function()
 		if T.level >= SHOW_LFD_LEVEL then
-			ToggleRaidFrame(1)
+			PVEFrame_ToggleFrame()
 		else
 			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
 		end
 	end},
 	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
 		ToggleRaidFrame(3)
+	end},
+	{text = MOUNTS_AND_PETS, notCheckable = 1, func = function()
+		if InCombatLockdown() then
+			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
+		end
+		TogglePetJournal()
+	end},
+	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
+		if not IsAddOnLoaded("Blizzard_EncounterJournal") then
+			LoadAddOn("Blizzard_EncounterJournal")
+		end
+		ToggleEncounterJournal()
 	end},
 	{text = HELP_BUTTON, notCheckable = 1, func = function()
 		ToggleHelpFrame()
@@ -239,12 +241,6 @@ local micromenu = {
 	end},
 	{text = BATTLEFIELD_MINIMAP, notCheckable = true, func = function()
 		ToggleBattlefieldMinimap()
-	end},
-	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
-		if not IsAddOnLoaded("Blizzard_EncounterJournal") then
-			LoadAddOn("Blizzard_EncounterJournal")
-		end
-		ToggleFrame(EncounterJournal)
 	end},
 }
 
@@ -314,4 +310,3 @@ else
 	MiniMapTracking:Hide()
 end
 
--- edit by Oz of shestak. org --

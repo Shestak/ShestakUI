@@ -29,36 +29,24 @@ ttt:Hide()
 ----------------------------------------------------------------------------------------
 --	Gather Talents
 ----------------------------------------------------------------------------------------
-local function GatherTalents(isInspect)
-	-- Inspect functions will always use the active spec when not inspecting
-	local group = GetActiveTalentGroup(isInspect)
-	-- Get points per tree, and set "primaryTree" to the tree with most points
-	local primaryTree = 1
-	for i = 1, 3 do
-		local _, _, _, _, pointsSpent = GetTalentTabInfo(i, isInspect, nil, group)
-		current[i] = pointsSpent
-		if current[i] > current[primaryTree] then
-			primaryTree = i
-		end
-	end
-	local _, tabName = GetTalentTabInfo(primaryTree, isInspect, nil, group)
-	current.tree = tabName
-	-- Customise output. Use TipTac setting if it exists, otherwise just use formatting style one.
-	if current[primaryTree] == 0 then
-		current.format = L_TOOLTIP_NO_TALENT
+local function GatherTalents(mouseover)
+	if mouseover == 1 then
+		local currentSpecID = GetInspectSpecialization("mouseover")
+		local currentSpecName = currentSpecID and select(2, GetSpecializationInfoByID(currentSpecID)) or L_TOOLTIP_LOADING
+		current.tree = currentSpecName
 	else
-		current.format = current.tree.." ("..current[1].."/"..current[2].."/"..current[3]..")"
+		local currentSpec = GetSpecialization()
+		local currentSpecName = currentSpec and select(2, GetSpecializationInfo(currentSpec)) or L_TOOLTIP_NO_TALENT
+		current.tree = currentSpecName
 	end
+
 	-- Set the tips line output, for inspect, only update if the tip is still showing a unit!
-	if not isInspect then
-		gtt:AddLine(TALENTS_PREFIX..current.format)
+	if mouseover == 0 then
+		gtt:AddLine(TALENTS_PREFIX..current.tree)
 	elseif gtt:GetUnit() then
 		for i = 2, gtt:NumLines() do
 			if (_G["GameTooltipTextLeft"..i]:GetText() or ""):match("^"..TALENTS_PREFIX) then
-				_G["GameTooltipTextLeft"..i]:SetFormattedText("%s%s", TALENTS_PREFIX, current.format)
-				if not gtt.fadeOut then
-					gtt:Show()
-				end
+				_G["GameTooltipTextLeft"..i]:SetFormattedText("%s%s", TALENTS_PREFIX, current.tree)
 				break
 			end
 		end
@@ -68,7 +56,7 @@ local function GatherTalents(isInspect)
 	for i = #cache, 1, -1 do
 		if current.name == cache[i].name then
 			tremove(cache, i)
-			break;
+			break
 		end
 	end
 	if #cache > cacheSize then
@@ -135,23 +123,21 @@ gtt:HookScript("OnTooltipSetUnit", function(self, ...)
 		current.guid = UnitGUID(unit)
 		-- No need for inspection on the player
 		if UnitIsUnit(unit, "player") then
-			GatherTalents()
+			GatherTalents(0)
 			return
 		end
 		-- Show Cached Talents, If Available
+		local isInspectOpen = (InspectFrame and InspectFrame:IsShown()) or (Examiner and Examiner:IsShown())
 		local cacheLoaded = false
 		for _, entry in ipairs(cache) do
-			if current.name == entry.name then
-				self:AddLine(TALENTS_PREFIX..entry.format)
+			if current.name == entry.name and not isInspectOpen then
+				self:AddLine(TALENTS_PREFIX..entry.tree)
 				current.tree = entry.tree
-				current.format = entry.format
-				current[1], current[2], current[3] = entry[1], entry[2], entry[3]
 				cacheLoaded = true
 				break
 			end
 		end
 		-- Queue an inspect request
-		local isInspectOpen = (InspectFrame and InspectFrame:IsShown()) or (Examiner and Examiner:IsShown())
 		if CanInspect(unit) and not isInspectOpen then
 			local lastInspectTime = GetTime() - lastInspectRequest
 			ttt.nextUpdate = (lastInspectTime > INSPECT_FREQ) and INSPECT_DELAY or (INSPECT_FREQ - lastInspectTime + INSPECT_DELAY)
@@ -159,6 +145,8 @@ gtt:HookScript("OnTooltipSetUnit", function(self, ...)
 			if not cacheLoaded then
 				self:AddLine(TALENTS_PREFIX..L_TOOLTIP_LOADING)
 			end
+		elseif isInspectOpen then
+			self:AddLine(TALENTS_PREFIX..L_TOOLTIP_INSPECT_OPEN)
 		end
 	end
 end)

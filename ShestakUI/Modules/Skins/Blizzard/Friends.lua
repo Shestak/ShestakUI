@@ -6,6 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local StripAllTextures = {
+		"FriendsFrame",
 		"FriendsListFrame",
 		"FriendsTabHeader",
 		"FriendsFrameFriendsScrollFrame",
@@ -40,10 +41,17 @@ local function LoadSkin()
 		"ScrollOfResurrectionSelectionFrame",
 		"ScrollOfResurrectionSelectionFrameList",
 		"ScrollOfResurrectionFrame",
-		"ScrollOfResurrectionFrameNoteFrame"
+		"ScrollOfResurrectionFrameNoteFrame",
+		"FriendsFrameBattlenetFrame",
+		"BattleTagInviteFrame"
 	}
 
+	for _, object in pairs(StripAllTextures) do
+		_G[object]:StripTextures()
+	end
+
 	local KillTextures = {
+		"FriendsFrameIcon",
 		"FriendsFrameBroadcastInputLeft",
 		"FriendsFrameBroadcastInputRight",
 		"FriendsFrameBroadcastInputMiddle",
@@ -54,6 +62,10 @@ local function LoadSkin()
 		"ChannelFrameDaughterFrameChannelPasswordRight",
 		"ChannelFrameDaughterFrameChannelPasswordMiddle"
 	}
+
+	for _, texture in pairs(KillTextures) do
+		_G[texture]:Kill()
+	end
 
 	local buttons = {
 		"FriendsFrameAddFriendButton",
@@ -93,18 +105,17 @@ local function LoadSkin()
 		_G[button]:SkinButton()
 	end
 
-	for i = 1, FriendsFrame:GetNumRegions() do
-		local region = select(i, FriendsFrame:GetRegions())
-		if region:GetObjectType() == "Texture" then
-			region:SetTexture(nil)
-			region:SetAlpha(0)
-		end
-	end
-
 	-- Reposition buttons
 	WhoFrameWhoButton:Point("RIGHT", WhoFrameAddFriendButton, "LEFT", -3, 0)
 	WhoFrameAddFriendButton:Point("RIGHT", WhoFrameGroupInviteButton, "LEFT", -3, 0)
 	WhoFrameGroupInviteButton:Point("BOTTOMRIGHT", WhoFrame, "BOTTOMRIGHT", -4, 4)
+	ChannelFrameDaughterFrameCancelButton:Point("LEFT", ChannelFrameDaughterFrameOkayButton, "RIGHT", 3, 0)
+	FriendsFrameAddFriendButton:Point("BOTTOMLEFT", FriendsFrame, "BOTTOMLEFT", 4, 4)
+	FriendsFrameSendMessageButton:Point("BOTTOMRIGHT", FriendsFrame, "BOTTOMRIGHT", -4, 4)
+	FriendsFrameIgnorePlayerButton:Point("BOTTOMLEFT", FriendsFrame, "BOTTOMLEFT", 4, 4)
+	FriendsFrameUnsquelchButton:Point("BOTTOMRIGHT", FriendsFrame, "BOTTOMRIGHT", -4, 4)
+	FriendsFrameMutePlayerButton:Point("LEFT", FriendsFrameIgnorePlayerButton, "RIGHT", 3, 0)
+	FriendsFrameMutePlayerButton:Point("RIGHT", FriendsFrameUnsquelchButton, "LEFT", -3, 0)
 
 	-- Resize Buttons
 	WhoFrameWhoButton:Size(WhoFrameWhoButton:GetWidth() + 7, WhoFrameWhoButton:GetHeight())
@@ -114,14 +125,6 @@ local function LoadSkin()
 	WhoFrameEditBox:Height(WhoFrameEditBox:GetHeight() - 15)
 	WhoFrameEditBox:Width(WhoFrameEditBox:GetWidth() + 30)
 	WhoFrameEditBox:Point("BOTTOM", WhoFrame, "BOTTOM", 0, 31)
-
-	for _, texture in pairs(KillTextures) do
-		_G[texture]:Kill()
-	end
-
-	for _, object in pairs(StripAllTextures) do
-		_G[object]:StripTextures()
-	end
 
 	T.SkinEditBox(AddFriendNameEditBox)
 	AddFriendNameEditBox:Height(AddFriendNameEditBox:GetHeight() - 5)
@@ -148,17 +151,39 @@ local function LoadSkin()
 	BNConversationInviteDialog:SetTemplate("Transparent")
 	BNConversationInviteDialogList:SetTemplate("Overlay")
 
+	FriendsFrameBattlenetFrame.BroadcastButton:SetAlpha(0)
+	FriendsFrameBattlenetFrame.BroadcastButton:ClearAllPoints()
+	FriendsFrameBattlenetFrame.BroadcastButton:SetAllPoints(FriendsFrameBattlenetFrame)
+
+	FriendsFrameBattlenetFrame.BroadcastFrame:StripTextures()
+	FriendsFrameBattlenetFrame.BroadcastFrame:CreateBackdrop("Transparent")
+	FriendsFrameBattlenetFrame.BroadcastFrame.backdrop:Point("TOPLEFT", 1, 1)
+	FriendsFrameBattlenetFrame.BroadcastFrame.backdrop:Point("BOTTOMRIGHT", 1, 1)
+
+	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:StripTextures()
+	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:SetTemplate("Overlay")
+	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.CancelButton:SkinButton()
+	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.UpdateButton:SkinButton()
+
+	BattleTagInviteFrame:SetTemplate("Transparent")
+	T.SkinEditBox(BattleTagInviteFrameScrollFrame)
+	for i=1, BattleTagInviteFrame:GetNumChildren() do
+		local child = select(i, BattleTagInviteFrame:GetChildren())
+		if child:GetObjectType() == "Button" then
+			child:SkinButton()
+		end
+	end
+
 	ChannelFrame:HookScript("OnShow", UpdateChannel)
 	hooksecurefunc("FriendsFrame_OnEvent", UpdateChannel)
 
 	WhoFrame:HookScript("OnShow", UpdateWhoSkins)
 	hooksecurefunc("FriendsFrame_OnEvent", UpdateWhoSkins)
 
-	ChannelFrameDaughterFrame:CreateBackdrop("Transparent")
+	ChannelFrameDaughterFrame:SetTemplate("Transparent")
 
-	FriendsFrame:CreateBackdrop("Transparent")
-	FriendsFrame.backdrop:Point("TOPLEFT", FriendsFrame, "TOPLEFT", 0, -0)
-	FriendsFrame.backdrop:Point("BOTTOMRIGHT", FriendsFrame, "BOTTOMRIGHT", 0, 0)
+	FriendsFrame:SetTemplate("Transparent")
+
 	WhoListScrollFrame:ClearAllPoints()
 	WhoListScrollFrame:SetPoint("TOPRIGHT", WhoFrameListInset, -25, 0)
 
@@ -181,15 +206,13 @@ local function LoadSkin()
 	FriendsTabHeaderSoRButton.icon:Point("BOTTOMRIGHT", -2, 2)
 
 	T.SkinCloseButton(ChannelFrameDaughterFrameDetailCloseButton, ChannelFrameDaughterFrame)
-	T.SkinCloseButton(FriendsFrameCloseButton, FriendsFrame.backdrop)
+	T.SkinCloseButton(FriendsFrameCloseButton)
 	T.SkinDropDownBox(WhoFrameDropDown, 150)
 	T.SkinDropDownBox(FriendsFrameStatusDropDown, 70)
 	T.SkinDropDownBox(FriendsFriendsFrameDropDown)
-	FriendsFrameAddFriendButton:Point("BOTTOMLEFT", FriendsFrame.backdrop, "BOTTOMLEFT", 5, 5)
-	FriendsFrameIgnorePlayerButton:Point("BOTTOMLEFT", FriendsFrame.backdrop, "BOTTOMLEFT", 5, 5)
-	FriendsFrameUnsquelchButton:Point("BOTTOMRIGHT", FriendsFrame.backdrop, "BOTTOMRIGHT", -5, 5)
-	FriendsFrameMutePlayerButton:Point("LEFT", FriendsFrameIgnorePlayerButton, "RIGHT", 3, 0)
-	FriendsFrameMutePlayerButton:Point("RIGHT", FriendsFrameUnsquelchButton, "LEFT", -3, 0)
+
+	T.SkinCheckBox(ChannelFrameAutoJoinBattleground)
+	T.SkinCheckBox(ChannelFrameAutoJoinParty)
 
 	-- Bottom Tabs
 	for i = 1, 5 do
@@ -203,6 +226,7 @@ local function LoadSkin()
 	local function Channel()
 		for i = 1, MAX_DISPLAY_CHANNEL_BUTTONS do
 			local button = _G["ChannelButton"..i]
+
 			if button then
 				button:StripTextures()
 				button:SetHighlightTexture("Interface\\PaperDollInfoFrame\\UI-Character-Tab-Highlight")

@@ -1,4 +1,5 @@
 local T, C, L = unpack(select(2, ...))
+if C.error.white ~= true and C.error.black ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	All errors on www.wowwiki.com/WoW_Constants/Errors
@@ -35,12 +36,22 @@ T.black_list = {
 	[SPELL_FAILED_NOT_IN_CONTROL] = true,
 	[SPELL_FAILED_MOVING] = true,
 	[SPELL_FAILED_AURA_BOUNCED] = true,
+	[SPELL_FAILED_CANT_DO_THAT_RIGHT_NOW] = true,
 	[ERR_ATTACK_FLEEING] = true,
 	[ERR_ITEM_COOLDOWN] = true,
 	[ERR_GENERIC_NO_TARGET] = true,
 	[ERR_ABILITY_COOLDOWN] = true,
 	[ERR_NO_ATTACK_TARGET] = true,
 	[ERR_SPELL_COOLDOWN] = true,
+	[ERR_OUT_OF_ARCANE_CHARGES] = true,
+	[ERR_OUT_OF_BALANCE_NEGATIVE] = true,
+	[ERR_OUT_OF_BALANCE_POSITIVE] = true,
+	[ERR_OUT_OF_BURNING_EMBERS] = true,
+	[ERR_OUT_OF_CHI] = true,
+	[ERR_OUT_OF_DARK_FORCE] = true,
+	[ERR_OUT_OF_DEMONIC_FURY] = true,
+	[ERR_OUT_OF_LIGHT_FORCE] = true,
+	[ERR_OUT_OF_SHADOW_ORBS] = true,
 	[ERR_OUT_OF_HOLY_POWER] = true,
 	[ERR_OUT_OF_ENERGY] = true,
 	[ERR_OUT_OF_RAGE] = true,

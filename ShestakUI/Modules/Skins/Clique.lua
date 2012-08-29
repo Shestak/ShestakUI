@@ -1,4 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
+if C.skins.blizzard_frames ~= true or C.skins.clique ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Clique skin
@@ -25,7 +26,8 @@ local function LoadSkin()
 	CliqueDialog:SetTemplate("Transparent")
 
 	T.SkinCloseButton(CliqueConfigCloseButton)
-	T.SkinCloseButton(CliqueDialogCloseButton)
+	if CliqueDialog.CloseButton then T.SkinCloseButton(CliqueDialog.CloseButton) end
+	if CliqueDialogCloseButton then T.SkinCloseButton(CliqueDialogCloseButton) end
 
 	CliqueConfigPage1ButtonOptions:SkinButton(true)
 	CliqueConfigPage1ButtonOther:SkinButton(true)
@@ -43,7 +45,7 @@ local function LoadSkin()
 	CliqueSpellTab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
 	CliqueSpellTab:CreateBackdrop("Default")
 	CliqueSpellTab.backdrop:SetAllPoints()
-	CliqueSpellTab:StyleButton(true)
+	CliqueSpellTab:StyleButton()
 
 	CliqueConfigPage1:SetScript("OnShow", function(self)
 		for i = 1, 12 do

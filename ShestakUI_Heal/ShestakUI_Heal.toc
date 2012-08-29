@@ -1,11 +1,11 @@
-## Interface: 40300
+## Interface: 50001
 ## Title: ShestakUI Heal
 ## Notes: Raid layout for ShestakUI (Oz of shestak.org Edit)
 ## Author: Shestak
-## Version: 3.5.1
-## Credits: ALZA, Tukz, Caellian
+## Version: 4.0.1
+## Credits: ALZA, Caellian, Tukz
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 3.5.1
+## X-Curse-Packaged-Version: 4.0.1
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org

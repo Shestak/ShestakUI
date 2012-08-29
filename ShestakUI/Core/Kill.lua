@@ -28,17 +28,18 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	Advanced_UIScaleSlider:Kill()
 	TutorialFrameAlertButton:Kill()
 	HelpOpenTicketButtonTutorial:Kill()
-	PlayerTalentFrameLearnButtonTutorialArrow:Kill()
 	TalentMicroButtonAlert:Kill()
+	CompanionsMicroButtonAlert:Kill()
 
 	if C.chat.enable then
 		InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
 		InterfaceOptionsSocialPanelConversationMode:Kill()
+		InterfaceOptionsSocialPanelBnWhisperMode:Kill()
+		InterfaceOptionsSocialPanelWhisperMode:Kill()
 	end
 
 	if C.unitframe.enable then
-		PlayerFrame:Kill()
-		if T.class == "DEATHKNIGHT" and C.unitframe.plugins_rune_bar ~= true then
+		if T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune ~= true then
 			RuneFrame:Kill()
 		end
 		InterfaceOptionsFrameCategoriesButton9:SetScale(0.00001)
@@ -47,12 +48,11 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
 		InterfaceOptionsBuffsPanelCastableBuffs:Kill()
 		InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
-		InterfaceOptionsBuffsPanelBuffDurations:Kill()
 		InterfaceOptionsBuffsPanelShowAllEnemyDebuffs:Kill()
 		InterfaceOptionsCombatPanelTargetOfTarget:Kill()
-		InterfaceOptionsCombatPanelTOTDropDown:Kill()
+		InterfaceOptionsCombatPanelEnemyCastBars:Kill()
 		InterfaceOptionsCombatPanelEnemyCastBarsOnPortrait:Kill()
-		PartyMemberBackground:Kill()
+		SetCVar("showPartyBackground", 0)
 	end
 
 	if C.actionbar.enable then
@@ -65,9 +65,6 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 
 	if C.nameplate.enable then
 		InterfaceOptionsCombatPanelEnemyCastBarsOnNameplates:Kill()
-		if C.nameplate.enhance_threat == true then
-			InterfaceOptionsDisplayPanelAggroWarningDisplay:Kill()
-		end
 	end
 
 	if C.minimap.enable then

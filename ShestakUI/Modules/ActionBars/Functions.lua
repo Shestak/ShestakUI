@@ -2,21 +2,21 @@ local T, C, L = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Pet and shapeshift bars style function
+--	Pet and stance bars style function
 ----------------------------------------------------------------------------------------
 T.ShiftBarUpdate = function()
 	local numForms = GetNumShapeshiftForms()
 	local texture, name, isActive, isCastable
 	local button, icon, cooldown
 	local start, duration, enable
-	for i = 1, NUM_SHAPESHIFT_SLOTS do
-		button = _G["ShapeshiftButton"..i]
-		icon = _G["ShapeshiftButton"..i.."Icon"]
+	for i = 1, NUM_STANCE_SLOTS do
+		button = _G["StanceButton"..i]
+		icon = _G["StanceButton"..i.."Icon"]
 		if i <= numForms then
 			texture, name, isActive, isCastable = GetShapeshiftFormInfo(i)
 			icon:SetTexture(texture)
 
-			cooldown = _G["ShapeshiftButton"..i.."Cooldown"]
+			cooldown = _G["StanceButton"..i.."Cooldown"]
 			if texture then
 				cooldown:SetAlpha(1)
 			else
@@ -27,7 +27,7 @@ T.ShiftBarUpdate = function()
 			CooldownFrame_SetTimer(cooldown, start, duration, enable)
 
 			if isActive then
-				ShapeshiftBarFrame.lastSelected = button:GetID()
+				StanceBarFrame.lastSelected = button:GetID()
 				button:SetChecked(1)
 			else
 				button:SetChecked(0)

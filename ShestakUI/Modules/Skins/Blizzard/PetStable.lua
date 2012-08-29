@@ -12,8 +12,6 @@ local function LoadSkin()
 	PetStableModelShadow:StripTextures(true)
 
 	PetStableFrame:CreateBackdrop("Transparent")
-	PetStableFrame.backdrop:Point("TOPLEFT", -2, 2)
-	PetStableFrame.backdrop:Point("BOTTOMRIGHT", 2, -2)
 
 	T.SkinRotateButton(PetStableModelRotateLeftButton)
 	T.SkinRotateButton(PetStableModelRotateRightButton)
@@ -30,7 +28,7 @@ local function LoadSkin()
 		local icon = _G["PetStableActivePet"..i.."IconTexture"]
 
 		button:StripTextures()
-		button:StyleButton(false)
+		button:StyleButton()
 		button:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -44,7 +42,7 @@ local function LoadSkin()
 		local icon = _G["PetStableStabledPet"..i.."IconTexture"]
 
 		button:StripTextures()
-		button:StyleButton(false)
+		button:StyleButton()
 		button:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

@@ -1,5 +1,5 @@
-﻿local T, C, L = unpack(select(2, ...))
-if not C.combattext.enable == true then return end
+﻿local T, C, L, _ = unpack(select(2, ...))
+if C.combattext.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Combat Text(xCT by Affli)
@@ -11,303 +11,6 @@ local ct = {
 	["justify_3"] = "CENTER",		-- Various messages justify
 	["justify_4"] = "RIGHT",		-- Outgoing damage/healing justify
 }
-
--- Outgoing healing filter
-if C.combattext.healing then
-	ct.healfilter = {}
-end
-
-if C.combattext.merge_aoe_spam then
-	ct.aoespam = {}
-end
-
--- Class config
-if T.class == "WARLOCK" then
-	if C.combattext.merge_aoe_spam then
-		ct.aoespam[27243] = true	-- Seed of Corruption (DoT)
-		ct.aoespam[27285] = true	-- Seed of Corruption (Explosion)
-		ct.aoespam[87385] = true	-- Seed of Corruption (Explosion Soulburned)
-		ct.aoespam[172] = true		-- Corruption
-		ct.aoespam[87389] = true	-- Corruption (Soulburn: Seed of Corruption)
-		ct.aoespam[30108] = true	-- Unstable Affliction
-		ct.aoespam[348] = true		-- Immolate
-		ct.aoespam[980] = true		-- Bane of Agony
-		ct.aoespam[85455] = true	-- Bane of Havoc
-		ct.aoespam[85421] = true	-- Burning Embers
-		ct.aoespam[42223] = true	-- Rain of Fire
-		ct.aoespam[5857] = true		-- Hellfire Effect
-		ct.aoespam[47897] = true	-- Shadowflame (Shadow direct damage)
-		ct.aoespam[47960] = true	-- Shadowflame (Fire dot)
-		ct.aoespam[50590] = true	-- Immolation Aura
-		ct.aoespam[30213] = true	-- Legion Strike (Felguard)
-		ct.aoespam[89753] = true	-- Felstorm (Felguard)
-		ct.aoespam[20153] = true	-- Immolation (Infrenal)
-		-- Item spells
-		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
-		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
-		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
-		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
-		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
-		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
-	end
-	if C.combattext.healing then
-		ct.healfilter[28176] = true	-- Fel Armor
-		ct.healfilter[96379] = true	-- Fel Armor
-		ct.healfilter[63106] = true	-- Siphon Life
-		ct.healfilter[54181] = true	-- Fel Synergy
-		ct.healfilter[89653] = true	-- Drain Life
-		ct.healfilter[79268] = true	-- Soul Harvest
-		ct.healfilter[30294] = true	-- Soul Leech
-	end
-elseif T.class == "DRUID" then
-	if C.combattext.merge_aoe_spam then
-		-- Healer spells
-		ct.aoespam[774] = true		-- Rejuvenation (Normal)
-		ct.aoespam[64801] = true	-- Rejuvenation (First tick)
-		ct.aoespam[48438] = true	-- Wild Growth
-		ct.aoespam[8936] = true		-- Regrowth
-		ct.aoespam[33763] = true	-- Lifebloom
-		ct.aoespam[44203] = true	-- Tranquility
-		ct.aoespam[81269] = true	-- Efflorescence
-		-- Damager spells
-		ct.aoespam[8921] = true		-- Moonfire
-		ct.aoespam[93402] = true	-- Sunfire
-		ct.aoespam[5570] = true		-- Insect Swarm
-		ct.aoespam[42231] = true	-- Hurricane
-		ct.aoespam[50288] = true	-- Starfall
-		ct.aoespam[78777] = true	-- Wild Mushroom
-		ct.aoespam[61391] = true	-- Typhoon
-		ct.aoespam[1822] = true		-- Rake
-		ct.aoespam[33876] = true	-- Mangle (Cat Form)
-		ct.aoespam[33878] = true	-- Mangle (Bear Form)
-		ct.aoespam[62078] = true	-- Swipe (Cat Form)
-		ct.aoespam[779] = true		-- Swipe (Bear Form)
-		ct.aoespam[33745] = true	-- Lacerate
-		ct.aoespam[1079] = true		-- Rip
-		-- Item spells
-		ct.aoespam[105996] = true	-- Essence of Dreams
-		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
-		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
-		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
-		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
-		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
-		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
-		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
-		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
-		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
-	end
-elseif T.class == "PALADIN" then
-	if C.combattext.merge_aoe_spam then
-		-- Healer spells
-		ct.aoespam[20167] = true	-- Seal of Insight (Heal Effect)
-		ct.aoespam[94289] = true	-- Protector of the Innocent
-		ct.aoespam[53652] = true	-- Beacon of Light
-		ct.aoespam[85222] = true	-- Light of Dawn
-		ct.aoespam[82327] = true	-- Holy Radiance
-		ct.aoespam[86452] = true	-- Holy Radiance (Hot)
-		-- Damager spells
-		ct.aoespam[81297] = true	-- Consecration
-		ct.aoespam[2812] = true		-- Holy Wrath
-		ct.aoespam[53385] = true	-- Divine Storm
-		ct.aoespam[31803] = true	-- Censure
-		ct.aoespam[20424] = true	-- Seals of Command
-		ct.aoespam[42463] = true	-- Seal of Truth
-		ct.aoespam[101423] = true	-- Seal of Righteousness
-		ct.aoespam[88263] = true	-- Hammer of the Righteous
-		ct.aoespam[31935] = true	-- Avenger's Shield
-		ct.aoespam[96172] = true	-- Hand of Light (Mastery)
-		-- Item spells
-		ct.aoespam[105996] = true	-- Essence of Dreams
-		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
-		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
-		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
-		ct.aoespam[109752] = true	-- Whirling Maw (LFR)
-		ct.aoespam[107997] = true	-- Whirling Maw (Normal)
-		ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
-		ct.aoespam[52586] = true	-- Gurthalak, Voice of the Deeps
-	end
-elseif T.class == "PRIEST" then
-	if C.combattext.merge_aoe_spam then
-		-- Healer spells
-		ct.aoespam[47750] = true	-- Penance (Heal Effect)
-		ct.aoespam[139] = true		-- Renew
-		ct.aoespam[596] = true		-- Prayer of Healing
-		ct.aoespam[56161] = true	-- Glyph of Prayer of Healing
-		ct.aoespam[64844] = true	-- Divine Hymn
-		ct.aoespam[32546] = true	-- Binding Heal
-		ct.aoespam[77489] = true	-- Echo of Light
-		ct.aoespam[34861] = true	-- Circle of Healing
-		ct.aoespam[23455] = true	-- Holy Nova (Healing Effect)
-		ct.aoespam[33110] = true	-- Prayer of Mending
-		ct.aoespam[63544] = true	-- Divine Touch
-		ct.aoespam[81751] = true	-- Atonement (Non-crit)
-		ct.aoespam[94472] = true	-- Atonement (Crit)
-		-- Damager spells
-		ct.aoespam[47666] = true	-- Penance (Damage Effect)
-		ct.aoespam[15237] = true	-- Holy Nova (Damage Effect)
-		ct.aoespam[589] = true		-- Shadow Word: Pain
-		ct.aoespam[34914] = true	-- Vampiric Touch
-		ct.aoespam[2944] = true		-- Devouring Plague
-		ct.aoespam[63675] = true	-- Improved Devouring Plague
-		ct.aoespam[15407] = true	-- Mind Flay
-		ct.aoespam[49821] = true	-- Mind Seer
-		ct.aoespam[87532] = true	-- Shadowy Apparition
-		ct.aoespam[14914] = true	-- Holy Fire
-		-- Item spells
-		ct.aoespam[105996] = true	-- Essence of Dreams
-		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
-		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
-		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
-		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
-		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
-		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
-		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
-		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
-		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
-	end
-	if C.combattext.healing then
-		ct.healfilter[2944] = true	-- Devouring Plague (Healing)
-		ct.healfilter[15290] = true	-- Vampiric Embrace
-	end
-elseif T.class == "SHAMAN" then
-	if C.combattext.merge_aoe_spam then
-		-- Healer spells
-		ct.aoespam[73921] = true	-- Healing Rain
-		ct.aoespam[52042] = true	-- Healing Stream Totem
-		ct.aoespam[1064] = true		-- Chain Heal
-		ct.aoespam[51945] = true	-- Earthliving
-		ct.aoespam[61295] = true	-- Riptide (HoT and instant heal)
-		-- Damager spells
-		ct.aoespam[421] = true		-- Chain Lightning
-		ct.aoespam[45297] = true	-- Chain Lightning (Mastery proc)
-		ct.aoespam[8349] = true		-- Fire Nova
-		ct.aoespam[77478] = true	-- Earhquake
-		ct.aoespam[51490] = true	-- Thunderstorm
-		ct.aoespam[8187] = true		-- Magma Totem
-		ct.aoespam[8050] = true		-- Flame Shock
-		ct.aoespam[25504] = true	-- Windfury
-		-- Item spells
-		ct.aoespam[105996] = true	-- Essence of Dreams
-		ct.aoespam[109847] = true	-- Cleansing Flames (LFR)
-		ct.aoespam[107835] = true	-- Cleansing Flames (Normal)
-		ct.aoespam[109849] = true	-- Cleansing Flames (Heroic)
-		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
-		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
-		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
-		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
-		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
-		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
-	end
-elseif T.class == "MAGE" then
-	if C.combattext.merge_aoe_spam then
-		ct.aoespam[44461] = true	-- Living Bomb Explosion
-		ct.aoespam[44457] = true	-- Living Bomb Dot
-		ct.aoespam[2120] = true		-- Flamestrike
-		ct.aoespam[12654] = true	-- Ignite
-		ct.aoespam[11366] = true	-- Pyroblast
-		ct.aoespam[31661] = true	-- Dragon's Breath
-		ct.aoespam[42208] = true	-- Blizzard
-		ct.aoespam[122] = true		-- Frost Nova
-		ct.aoespam[1449] = true		-- Arcane Explosion
-		ct.aoespam[92315] = true	-- Pyroblast
-		ct.aoespam[83853] = true	-- Combustion
-		ct.aoespam[11113] = true	-- Blast Wave
-		ct.aoespam[88148] = true	-- Flamestrike void
-		ct.aoespam[84721] = true	-- Frostfire Orb
-		ct.aoespam[82739] = true	-- Flame Orb
-		ct.aoespam[83619] = true	-- Fire Power
-		ct.aoespam[120] = true		-- Cone of Cold
-		-- Item spells
-		ct.aoespam[109851] = true	-- Blast of Corruption (LFR)
-		ct.aoespam[107831] = true	-- Blast of Corruption (Normal)
-		ct.aoespam[109854] = true	-- Blast of Corruption (Heroic)
-		ct.aoespam[109798] = true	-- Shadowbolt Volley (LFR)
-		ct.aoespam[108005] = true	-- Shadowbolt Volley (Normal)
-		ct.aoespam[109800] = true	-- Shadowbolt Volley (Heroic)
-	end
-elseif T.class == "WARRIOR" then
-	if C.combattext.merge_aoe_spam then
-		ct.aoespam[845] = true		-- Cleave
-		ct.aoespam[46968] = true	-- Shockwave
-		ct.aoespam[6343] = true		-- Thunder Clap
-		ct.aoespam[1680] = true		-- Whirlwind
-		ct.aoespam[94009] = true	-- Rend
-		ct.aoespam[12721] = true	-- Deep Wounds
-		ct.aoespam[50622] = true	-- Bladestorm
-		ct.aoespam[52174] = true	-- Heroic Leap
-		-- Item spells
-		ct.aoespam[109752] = true	-- Whirling Maw (LFR)
-		ct.aoespam[107997] = true	-- Whirling Maw (Normal)
-		ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
-		ct.aoespam[52586] = true	-- Gurthalak, Voice of the Deeps
-	end
-	if C.combattext.healing then
-		ct.healfilter[23880] = true	-- Bloodthirst
-		ct.healfilter[55694] = true	-- Enraged Regeneration
-	end
-elseif T.class == "HUNTER" then
-	if C.combattext.merge_aoe_spam then
-		ct.aoespam[2643] = true		-- Multi-Shot
-		ct.aoespam[83077] = true	-- Instant part of Serpent Sting
-		ct.aoespam[88453] = true	-- Serpent Sting (Dot 1/2)
-		ct.aoespam[88466] = true	-- Serpent Sting (Dot 2/2)
-		ct.aoespam[1978] = true		-- Serpent Sting
-		ct.aoespam[13812] = true	-- Explosive Trap
-		ct.aoespam[53301] = true	-- Explosive Shot
-		-- Item spells
-		ct.aoespam[109856] = true	-- Speaking of Rage (LFR)
-		ct.aoespam[107821] = true	-- Speaking of Rage (Normal)
-		ct.aoespam[109859] = true	-- Speaking of Rage (Heroic)
-	end
-elseif T.class == "DEATHKNIGHT" then
-	if C.combattext.merge_aoe_spam then
-		ct.aoespam[55095] = true	-- Frost Fever
-		ct.aoespam[55078] = true	-- Blood Plague
-		ct.aoespam[55536] = true	-- Unholy Blight
-		ct.aoespam[48721] = true	-- Blood Boil
-		ct.aoespam[49184] = true	-- Howling Blast
-		ct.aoespam[52212] = true	-- Death and Decay
-		ct.aoespam[47541] = true	-- Death Coil
-		ct.aoespam[55050] = true	-- Heart Strike
-		ct.aoespam[98957] = true	-- Burning Blood (T13 x2)
-		ct.aoespam[59754] = true	-- Rune Tap (AOE heal)
-		-- Merging mh/oh strikes(by Bozo)
-		ct.aoespam[49020] = true	-- Obliterate MH
-		ct.aoespam[66198] = 49020	-- Obliterate OH
-		ct.aoespam[49998] = true	-- Death Strike MH
-		ct.aoespam[66188] = 49998	-- Death Strike OH
-		ct.aoespam[45462] = true	-- Plague Strike MH
-		ct.aoespam[66216] = 45462	-- Plague Strike OH
-		ct.aoespam[49143] = true	-- Frost Strike MH
-		ct.aoespam[66196] = 49143	-- Frost Strike OH
-		ct.aoespam[56815] = true	-- Rune Strike MH
-		ct.aoespam[66217] = 56815	-- Rune Strike OH
-		ct.aoespam[45902] = true	-- Blood Strike MH
-		ct.aoespam[66215] = 45902	-- Blood Strike OH
-		-- Item spells
-		ct.aoespam[109752] = true	-- Whirling Maw (LFR)
-		ct.aoespam[107997] = true	-- Whirling Maw (Normal)
-		ct.aoespam[109754] = true	-- Whirling Maw (Heroic)
-		ct.aoespam[52586] = true	-- Gurthalak, Voice of the Deeps
-	end
-elseif T.class == "ROGUE" then
-	if C.combattext.merge_aoe_spam then
-		ct.aoespam[51723] = true	-- Fan of Knives
-		ct.aoespam[2818] = true		-- Deadly Poison
-		ct.aoespam[8680] = true		-- Instant Poison
-		-- Merging mh/oh strikes
-		ct.aoespam[5374] = true		-- Mutilate
-		ct.aoespam[27576] = 5374	-- Mutilate Off-Hand
-	end
-end
-
-if C.combattext.merge_aoe_spam then
-	-- Dragon Soul - The Madness of Deathwing
-	ct.aoespam[109609] = true	-- Spellweave
-	ct.aoespam[109610] = true	-- Spellweave
-	ct.aoespam[106043] = true	-- Spellweave
-	ct.aoespam[109611] = true	-- Spellweave
-end
 
 -- Do not edit below unless you know what you are doing
 local numf
@@ -484,13 +187,13 @@ local function OnEvent(self, event, subevent, ...)
 				end
 			elseif subevent == "ENERGIZE" and COMBAT_TEXT_SHOW_ENERGIZE == "1" then
 				if tonumber(arg2) > 0 then
-					if arg3 and arg3 == "MANA" or arg3 == "RAGE" or arg3 == "FOCUS" or arg3 == "ENERGY" or arg3 == "RUNIC_POWER" or arg3 == "SOUL_SHARDS" or arg3 == "HOLY_POWER" then
+					if arg3 and arg3 == "MANA" or arg3 == "RAGE" or arg3 == "FOCUS" or arg3 == "ENERGY" or arg3 == "RUNIC_POWER" or arg3 == "SOUL_SHARDS" or arg3 == "HOLY_POWER" or arg3 == "LIGHT_FORCE" then
 						xCT3:AddMessage("+"..arg2.." ".._G[arg3], PowerBarColor[arg3].r, PowerBarColor[arg3].g, PowerBarColor[arg3].b)
 					end
 				end
 			elseif subevent == "PERIODIC_ENERGIZE" and COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE == "1" then
 				if tonumber(arg2) > 0 then
-					if arg3 and arg3 == "MANA" or arg3 == "RAGE" or arg3 == "FOCUS" or arg3 == "ENERGY" or arg3 == "RUNIC_POWER" or arg3 == "SOUL_SHARDS" or arg3 == "HOLY_POWER" then
+					if arg3 and arg3 == "MANA" or arg3 == "RAGE" or arg3 == "FOCUS" or arg3 == "ENERGY" or arg3 == "RUNIC_POWER" or arg3 == "SOUL_SHARDS" or arg3 == "HOLY_POWER" or arg3 == "LIGHT_FORCE" then
 						xCT3:AddMessage("+"..arg2.." ".._G[arg3], PowerBarColor[arg3].r, PowerBarColor[arg3].g, PowerBarColor[arg3].b)
 					end
 				end
@@ -681,10 +384,11 @@ CombatText:SetScript("OnEvent", nil)
 CombatText:SetScript("OnUpdate", nil)
 
 -- Steal external messages sent by other addons using CombatText_AddMessage
-Blizzard_CombatText_AddMessage = CombatText_AddMessage
-function CombatText_AddMessage(message, scrollFunction, r, g, b, displayType, isStaggered)
+hooksecurefunc("CombatText_AddMessage", function(message, scrollFunction, r, g, b, displayType, isStaggered)
+	local lastEntry = COMBAT_TEXT_TO_ANIMATE[#COMBAT_TEXT_TO_ANIMATE]
+	CombatText_RemoveMessage(lastEntry)
 	xCT3:AddMessage(message, r, g, b)
-end
+end)
 
 -- Color printer
 local pr = function(msg)
@@ -855,7 +559,7 @@ StaticPopupDialogs.XCT_LOCK = {
 	whileDead = 1,
 	hideOnEscape = true,
 	showAlert = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 -- Slash commands
@@ -918,7 +622,7 @@ if C.combattext.merge_aoe_spam then
 		end
 		local pairs = pairs
 		SQ = {}
-		for k, v in pairs(ct.aoespam) do
+		for k, v in pairs(T.aoespam) do
 			SQ[k] = {queue = 0, msg = "", color = {}, count = 0, utime = 0, locked = false}
 		end
 		ct.SpamQueue = function(spellId, add)
@@ -1040,7 +744,7 @@ if C.combattext.damage then
 					else
 						msg = ""
 					end
-					if C.combattext.merge_aoe_spam and ct.aoespam[spellId] then
+					if C.combattext.merge_aoe_spam and T.aoespam[spellId] then
 						SQ[spellId]["locked"] = true
 						SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
 						SQ[spellId]["msg"] = msg
@@ -1148,7 +852,7 @@ if C.combattext.healing then
 			if eventType == "SPELL_HEAL" or (eventType == "SPELL_PERIODIC_HEAL" and C.combattext.show_hots) then
 				if C.combattext.healing then
 					local spellId, spellName, spellSchool, amount, overhealing, absorbed, critical = select(12, ...)
-					if ct.healfilter[spellId] then
+					if T.healfilter[spellId] then
 						return
 					end
 					if amount >= C.combattext.heal_treshold then
@@ -1173,7 +877,7 @@ if C.combattext.healing then
 						elseif(C.combattext.icons)then
 							msg=" \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 						end
-						if C.combattext.merge_aoe_spam and ct.aoespam[spellId] then
+						if C.combattext.merge_aoe_spam and T.aoespam[spellId] then
 							SQ[spellId]["locked"] = true
 							SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
 							SQ[spellId]["msg"] = msg

@@ -1,5 +1,6 @@
 ﻿local T, C, L = unpack(select(2, ...))
 if C.tooltip.enable ~= true or C.tooltip.arena_experience ~= true then return end
+if T.MOPVersion then return end
 
 ----------------------------------------------------------------------------------------
 --	Arena function(ArenaExp by Fernir)
@@ -16,7 +17,7 @@ strGradient = function(val, low, high)
 	local percent, r, g
 	if high > low then
 		percent = val / (high - low)
-	else 
+	else
 		percent = 1 - val / (low - high)
 	end
 	if percent > 1 then percent = 1 end

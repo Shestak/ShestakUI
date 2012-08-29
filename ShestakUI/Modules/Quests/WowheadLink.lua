@@ -17,6 +17,9 @@ elseif T.client == "deDE" then
 elseif T.client == "esES" or T.client == "esMX" then
 	linkQuest = "http://es.wowhead.com/quest=%d"
 	linkAchievement = "http://es.wowhead.com/achievement=%d"
+elseif T.client == "ptBR" or T.client == "ptPT" then
+	linkQuest = "http://pt.wowhead.com/quest=%d"
+	linkAchievement = "http://pt.wowhead.com/achievement=%d"
 else
 	linkQuest = "http://www.wowhead.com/quest=%d"
 	linkAchievement = "http://www.wowhead.com/achievement=%d"
@@ -32,7 +35,7 @@ StaticPopupDialogs.WATCHFRAME_URL = {
 	OnShow = function(self, ...) self.editBox:SetFocus() end,
 	EditBoxOnEnterPressed = function(self) self:GetParent():Hide() end,
 	EditBoxOnEscapePressed = function(self) self:GetParent():Hide() end,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 local tblDropDown = {}

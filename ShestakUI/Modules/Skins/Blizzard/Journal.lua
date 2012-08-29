@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	GuildRegistrar skin
+--	EncounterJournal skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	EncounterJournal:StripTextures(true)
@@ -25,14 +25,10 @@ local function LoadSkin()
 	EncounterJournal:HookScript("OnShow", function()
 		if not EncounterJournalInstanceSelect.backdrop then
 			EncounterJournalInstanceSelect:CreateBackdrop("Default")
-			EncounterJournalInstanceSelect.backdrop:Point("TOPLEFT", -2, 2)
-			EncounterJournalInstanceSelect.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
 		end
 
 		if not EncounterJournalEncounterFrameInfo.backdrop then
 			EncounterJournalEncounterFrameInfo:CreateBackdrop("Default")
-			EncounterJournalEncounterFrameInfo.backdrop:Point("TOPLEFT", -2, 2)
-			EncounterJournalEncounterFrameInfo.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
 		end
 
 		EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()

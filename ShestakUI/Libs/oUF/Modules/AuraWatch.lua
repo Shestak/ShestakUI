@@ -17,7 +17,7 @@ local PLAYER_UNITS = {
 }
 
 local setupGUID
-do 
+do
 	local cache = setmetatable({}, {__type = "k"})
 
 	local frame = CreateFrame"Frame"
@@ -32,7 +32,7 @@ do
 	end)
 	frame:RegisterEvent"PLAYER_REGEN_ENABLED"
 	frame:RegisterEvent"PLAYER_ENTERING_WORLD"
-	
+
 	function setupGUID(guid)
 		local t = next(cache)
 		if t then
@@ -86,7 +86,7 @@ local function Update(frame, event, unit)
 	if frame.unit ~= unit then return end
 	local watch = frame.AuraWatch
 	local index, icons = 1, watch.watched
-	local _, name, texture, count, duration, remaining, caster, key, icon, spellid 
+	local _, name, texture, count, duration, remaining, caster, key, icon, spellid
 	local filter = "HELPFUL"
 	local guid = UnitGUID(unit)
 	if not guid then return end
@@ -98,7 +98,7 @@ local function Update(frame, event, unit)
 
 	while true do
 		name, _, texture, count, _, duration, remaining, caster, _, _, spellid = UnitAura(unit, index, filter)
-		if not name then 
+		if not name then
 			if filter == "HELPFUL" then
 				filter = "HARMFUL"
 				index = 1
@@ -112,7 +112,7 @@ local function Update(frame, event, unit)
 				key = name..texture
 			end
 			icon = icons[key]
-			if icon and (icon.anyUnit or (caster and icon.fromUnits[caster])) then
+			if icon and (icon.anyUnit or (caster and icon.fromUnits and icon.fromUnits[caster])) then
 				resetIcon(icon, watch, count, duration, remaining)
 				GUIDs[guid][key] = true
 				found[key] = true
@@ -139,7 +139,7 @@ local function setupIcons(self)
 	if not watch.missingAlpha then watch.missingAlpha = 0.75 end
 	if not watch.presentAlpha then watch.presentAlpha = 1 end
 
-	for _,icon in pairs(icons) do
+	for _, icon in pairs(icons) do
 
 		local name, _, image = GetSpellInfo(icon.spellID)
 		if not name then error("oUF_AuraWatch error: no spell with "..tostring(icon.spellID).." spell ID exists") end

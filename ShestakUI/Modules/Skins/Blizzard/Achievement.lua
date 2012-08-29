@@ -105,7 +105,7 @@ local function LoadSkin()
 	AchievementFrameComparisonSummaryFriendStatusBar.text:SetPoint("CENTER")
 	AchievementFrameComparisonHeader:Point("BOTTOMRIGHT", AchievementFrameComparison, "TOPRIGHT", 45, -20)
 
-	for i = 1, 8 do
+	for i = 1, 10 do
 		local frame = _G["AchievementFrameSummaryCategoriesCategory"..i]
 		local button = _G["AchievementFrameSummaryCategoriesCategory"..i.."Button"]
 		local highlight = _G["AchievementFrameSummaryCategoriesCategory"..i.."ButtonHighlight"]
@@ -117,13 +117,22 @@ local function LoadSkin()
 		_G[highlight:GetName().."Middle"]:SetAllPoints(frame)
 	end
 
-	AchievementFrame:HookScript("OnShow", function()
+	AchievementFrame:HookScript("OnShow", function(self)
+		if self.containerSkined then return; end
 		for i = 1, 20 do
 			local frame = _G["AchievementFrameCategoriesContainerButton"..i]
-			local lastframe = _G["AchievementFrameCategoriesContainerButton"..i-1]
 
 			frame:StripTextures()
 			frame:StyleButton()
+		end
+		self.containerSkined = true
+	end)
+
+	hooksecurefunc("AchievementButton_DisplayAchievement", function(frame)
+		if frame.accountWide and frame.bg3 then
+			frame.bg3:SetTexture(ACHIEVEMENTUI_BLUEBORDER_R, ACHIEVEMENTUI_BLUEBORDER_G, ACHIEVEMENTUI_BLUEBORDER_B)
+		elseif frame.bg3 then
+			frame.bg3:SetTexture(unpack(C.media.border_color))
 		end
 	end)
 
@@ -134,6 +143,7 @@ local function LoadSkin()
 			frame:StripTextures()
 
 			_G["AchievementFrameSummaryAchievement"..i.."Description"]:SetTextColor(0.6, 0.6, 0.6)
+			_G["AchievementFrameSummaryAchievement"..i.."Description"]:SetShadowOffset(1, -1)
 
 			if not frame.backdrop then
 				frame:CreateBackdrop("Overlay", true)
@@ -152,14 +162,19 @@ local function LoadSkin()
 				_G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:Point("TOPLEFT", 2, -2)
 				_G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:Point("BOTTOMRIGHT", -2, 2)
 			end
+
+			if frame.accountWide then
+				frame.backdrop:SetBackdropBorderColor(ACHIEVEMENTUI_BLUEBORDER_R, ACHIEVEMENTUI_BLUEBORDER_G, ACHIEVEMENTUI_BLUEBORDER_B)
+			else
+				frame.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
 		end
 	end)
 
 	for i = 1, 7 do
 		local frame = _G["AchievementFrameAchievementsContainerButton"..i]
 		_G["AchievementFrameAchievementsContainerButton"..i.."Highlight"]:Kill()
-		frame:StripTextures()
-		frame.SetBackdropBorderColor = T.dummy
+		frame:StripTextures(true)
 
 		-- Initiate method of creating a backdrop
 		frame.bg1 = frame:CreateTexture(nil, "BACKGROUND")
@@ -189,6 +204,8 @@ local function LoadSkin()
 
 		_G["AchievementFrameAchievementsContainerButton"..i.."Description"]:SetTextColor(0.6, 0.6, 0.6)
 		_G["AchievementFrameAchievementsContainerButton"..i.."Description"].SetTextColor = T.dummy
+		_G["AchievementFrameAchievementsContainerButton"..i.."Description"]:SetShadowOffset(1, -1)
+		_G["AchievementFrameAchievementsContainerButton"..i.."Description"].SetShadowOffset = T.dummy
 		_G["AchievementFrameAchievementsContainerButton"..i.."HiddenDescription"]:SetTextColor(1, 1, 1)
 		_G["AchievementFrameAchievementsContainerButton"..i.."HiddenDescription"].SetTextColor = T.dummy
 
@@ -230,26 +247,39 @@ local function LoadSkin()
 			_G[frame]:StripTextures()
 			_G[frame.."Background"]:Kill()
 
-			_G[frame]:CreateBackdrop("Overlay", true)
-			_G[frame].backdrop:Point("TOPLEFT", 2, -2)
-			_G[frame].backdrop:Point("BOTTOMRIGHT", -2, 2)
-			_G[frame].SetBackdropBorderColor = T.dummy
-
 			if _G[frame.."Description"] then
 				_G[frame.."Description"]:SetTextColor(0.6, 0.6, 0.6)
 				_G[frame.."Description"].SetTextColor = T.dummy
-				_G[frame.."Description"]:SetParent(_G[frame].backdrop)
 			end
 
-			_G[frame.."Icon"]:SetParent(_G[frame].backdrop)
-			_G[frame.."Shield"]:SetParent(_G[frame].backdrop)
+			-- Initiate method of creating a backdrop
+			_G[frame].bg1 = _G[frame]:CreateTexture(nil, "BACKGROUND")
+			_G[frame].bg1:SetDrawLayer("BACKGROUND", 4)
+			_G[frame].bg1:SetTexture(C.media.blank)
+			_G[frame].bg1:SetVertexColor(0.1, 0.1, 0.1)
+			_G[frame].bg1:Point("TOPLEFT", T.mult * 4, -T.mult * 4)
+			_G[frame].bg1:Point("BOTTOMRIGHT", -T.mult * 4, T.mult * 4)
+
+			_G[frame].bg2 = _G[frame]:CreateTexture(nil, "BACKGROUND")
+			_G[frame].bg2:SetDrawLayer("BACKGROUND", 3)
+			_G[frame].bg2:SetTexture(0, 0, 0)
+			_G[frame].bg2:Point("TOPLEFT", T.mult * 3, -T.mult * 3)
+			_G[frame].bg2:Point("BOTTOMRIGHT", -T.mult * 3, T.mult * 3)
+
+			_G[frame].bg3 = _G[frame]:CreateTexture(nil, "BACKGROUND")
+			_G[frame].bg3:SetDrawLayer("BACKGROUND", 2)
+			_G[frame].bg3:SetTexture(unpack(C.media.border_color))
+			_G[frame].bg3:Point("TOPLEFT", T.mult * 2, -T.mult * 2)
+			_G[frame].bg3:Point("BOTTOMRIGHT", -T.mult * 2, T.mult * 2)
+
+			_G[frame].bg4 = _G[frame]:CreateTexture(nil, "BACKGROUND")
+			_G[frame].bg4:SetDrawLayer("BACKGROUND", 1)
+			_G[frame].bg4:SetTexture(0, 0, 0)
+			_G[frame].bg4:Point("TOPLEFT", T.mult, -T.mult)
+			_G[frame].bg4:Point("BOTTOMRIGHT", -T.mult, T.mult)
 
 			if compare == "Friend" then
 				_G[frame.."Shield"]:Point("TOPRIGHT", _G["AchievementFrameComparisonContainerButton"..i.."Friend"], "TOPRIGHT", -20, -9)
-			end
-
-			if _G[frame.."Label"] then
-				_G[frame.."Label"]:SetParent(_G[frame].backdrop)
 			end
 
 			_G[frame.."IconBling"]:Kill()
@@ -265,6 +295,27 @@ local function LoadSkin()
 			_G[frame.."IconTexture"]:Point("BOTTOMRIGHT", -2, 2)
 		end
 	end
+
+	hooksecurefunc("AchievementFrameComparison_DisplayAchievement", function(button)
+		local player = button.player
+		local friend = button.friend
+		player.titleBar:Kill()
+		friend.titleBar:Kill()
+
+		if not player.bg3 or not friend.bg3 then return end
+
+		if player.accountWide then
+			player.bg3:SetTexture(ACHIEVEMENTUI_BLUEBORDER_R, ACHIEVEMENTUI_BLUEBORDER_G, ACHIEVEMENTUI_BLUEBORDER_B)
+		else
+			player.bg3:SetTexture(unpack(C.media.border_color))
+		end
+
+		if friend.accountWide then
+			friend.bg3:SetTexture(ACHIEVEMENTUI_BLUEBORDER_R, ACHIEVEMENTUI_BLUEBORDER_G, ACHIEVEMENTUI_BLUEBORDER_B)
+		else
+			friend.bg3:SetTexture(unpack(C.media.border_color))
+		end
+	end)
 
 	for i = 1, 20 do
 		local frame = _G["AchievementFrameStatsContainerButton"..i]
@@ -313,6 +364,12 @@ local function LoadSkin()
 				frame.bg3:Point("TOPLEFT", -T.mult, T.mult)
 				frame.bg3:Point("BOTTOMRIGHT", T.mult, -T.mult)
 
+				frame.bg4 = frame:CreateTexture(nil, "BACKGROUND")
+				frame.bg4:SetDrawLayer("BACKGROUND", -4)
+				frame.bg4:SetTexture(0.1, 0.1, 0.1)
+				frame.bg4:Point("TOPLEFT", 0, 0)
+				frame.bg4:Point("BOTTOMRIGHT", 0, 0)
+
 				frame.text:ClearAllPoints()
 				frame.text:SetPoint("CENTER", frame, "CENTER", 0, -1)
 				frame.text:SetJustifyH("CENTER")
@@ -340,7 +397,7 @@ local function LoadSkin()
 				local metaCriteria = AchievementButton_GetMeta(metas)
 				if objectivesFrame.completed and completed then
 					metaCriteria.label:SetTextColor(1, 1, 1, 1)
-					metaCriteria.label:SetShadowOffset(0, 0)
+					metaCriteria.label:SetShadowOffset(1, -1)
 				elseif completed then
 					metaCriteria.label:SetTextColor(0, 1, 0, 1)
 					metaCriteria.label:SetShadowOffset(1, -1)
@@ -353,7 +410,7 @@ local function LoadSkin()
 				local criteria = AchievementButton_GetCriteria(textStrings)
 				if objectivesFrame.completed and completed then
 					criteria.name:SetTextColor(1, 1, 1, 1)
-					criteria.name:SetShadowOffset(0, 0)
+					criteria.name:SetShadowOffset(1, -1)
 				elseif completed then
 					criteria.name:SetTextColor(0, 1, 0, 1)
 					criteria.name:SetShadowOffset(1, -1)

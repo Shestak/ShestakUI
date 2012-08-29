@@ -2,7 +2,7 @@ local T, C, L = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Petition skin
+--	Character skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	T.SkinCloseButton(CharacterFrameCloseButton)
@@ -25,8 +25,7 @@ local function LoadSkin()
 		"Trinket0Slot",
 		"Trinket1Slot",
 		"MainHandSlot",
-		"SecondaryHandSlot",
-		"RangedSlot"
+		"SecondaryHandSlot"
 	}
 
 	for _, slot in pairs(slots) do
@@ -34,20 +33,19 @@ local function LoadSkin()
 		local icon = _G["Character"..slot.."IconTexture"]
 		local slot = _G["Character"..slot]
 
-		slot:StyleButton(false)
+		slot:StyleButton()
 		slot:SetNormalTexture("")
+		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
+		slot:SetTemplate("Default")
+
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
 		icon:Point("TOPLEFT", 2, -2)
 		icon:Point("BOTTOMRIGHT", -2, 2)
-
-		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
-		slot:CreateBackdrop("Default")
-		slot.backdrop:SetAllPoints()
 	end
 
 	select(8, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
-	select(8, _G["CharacterRangedSlot"]:GetRegions()):Hide()
+	select(8, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
 
 	-- Strip Textures
 	local charframe = {
@@ -71,7 +69,7 @@ local function LoadSkin()
 			local button = _G["EquipmentFlyoutFrameButton"..i]
 			local icon = _G["EquipmentFlyoutFrameButton"..i.."IconTexture"]
 			if button then
-				button:StyleButton(false)
+				button:StyleButton()
 
 				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				button:GetNormalTexture():SetTexture(nil)
@@ -95,13 +93,14 @@ local function LoadSkin()
 
 	-- Icon in upper right corner of character frame
 	CharacterFramePortrait:Kill()
-	CharacterModelFrame:CreateBackdrop("Default")
+	CharacterModelFrame:CreateBackdrop("Overlay")
 	CharacterModelFrame.backdrop:Point("TOPLEFT", -2, 2)
 	CharacterModelFrame.backdrop:Point("BOTTOMRIGHT", 2, -3)
 
 	local scrollbars = {
 		"PaperDollTitlesPaneScrollBar",
 		"PaperDollEquipmentManagerPaneScrollBar",
+		"CharacterStatsPaneScrollBar"
 	}
 
 	for _, scrollbar in pairs(scrollbars) do
@@ -169,7 +168,7 @@ local function LoadSkin()
 
 			if button then
 				button:StripTextures()
-				button:StyleButton(true)
+				button:StyleButton()
 
 				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				_G["GearManagerDialogPopupButton"..i.."Icon"]:SetTexture(nil)
@@ -219,10 +218,15 @@ local function LoadSkin()
 	end
 	hooksecurefunc("PaperDollFrame_UpdateSidebarTabs", FixSidebarTabCoords)
 
-	-- Stat panels, atm it looks like 7 is the max
-	for i = 1, 7 do
-		_G["CharacterStatsPaneCategory"..i]:StripTextures()
-	end
+	hooksecurefunc("PaperDollFrame_CollapseStatCategory", function(categoryFrame)
+		categoryFrame.BgMinimized:Hide()
+	end)
+
+	hooksecurefunc("PaperDollFrame_ExpandStatCategory", function(categoryFrame)
+		categoryFrame.BgTop:Hide()
+		categoryFrame.BgMiddle:Hide()
+		categoryFrame.BgBottom:Hide()
+	end)
 
 	-- Reputation
 	local function UpdateFactionSkins()

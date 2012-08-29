@@ -2,6 +2,7 @@
 
 ----------------------------------------------------------------------------------------
 --	Position options
+--	BACKUP THIS FILE BEFORE UPDATING!
 ----------------------------------------------------------------------------------------
 C["position"] = {
 	-- Miscellaneous positions
@@ -36,6 +37,7 @@ C["position"] = {
 	["pet_horizontal"] = {"BOTTOMRIGHT", UIParent, "BOTTOM", -175, 167},			-- Horizontal pet bar
 	["stance_bar"] = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21},						-- Stance/Shift/Totem bars
 	["vehicle_bar"] = {"BOTTOMRIGHT", ActionButton1, "BOTTOMLEFT", -3, 0},			-- Vehicle button
+	["micro_menu"] = {"TOPLEFT", UIParent, "TOPLEFT", 217, -16},					-- Micro menu
 	-- UnitFrame positions
 	["player_buffs"] = {"TOPLEFT", Minimap, "TOPLEFT", -422, 2},					-- Player buffs
 	unitframes = {
@@ -52,8 +54,8 @@ C["position"] = {
 		["arena"] = {"BOTTOMRIGHT", UIParent, "RIGHT", -23, -70},					-- Arena frames
 		["boss"] = {"BOTTOMRIGHT", UIParent, "RIGHT", -23, -70},					-- Boss frames
 		["tank"] = {"BOTTOM", "UIParent", "BOTTOM", 302, 35},						-- Tank frames
-		["player_portrait"] = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -8, 0},			-- Player Portrait
-		["target_portrait"] = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 6, 0},			-- Target Portrait
+		["player_portrait"] = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -8, -1},		-- Player Portrait
+		["target_portrait"] = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 6, -1},			-- Target Portrait
 		["player_castbar"] = {"BOTTOM", "ActionBarAnchor", "TOP", 0, 235},			-- Player Castbar
 		["target_castbar"] = {"BOTTOM", "oUF_Player_Castbar", "TOP", 0, 7},			-- Target Castbar
 		["focus_castbar"] = {"CENTER", UIParent, "CENTER", 0, 250},					-- Focus Castbar icon

@@ -6,21 +6,21 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	-- Glyph Tab
-	GlyphFrameSparkleFrame:CreateBackdrop("Default")
-	GlyphFrameSparkleFrame.backdrop:Point("TOPLEFT", GlyphFrameSparkleFrame, "TOPLEFT", 3, -3)
-	GlyphFrameSparkleFrame.backdrop:Point("BOTTOMRIGHT", GlyphFrameSparkleFrame, "BOTTOMRIGHT", -3, 3)
+	GlyphFrame:CreateBackdrop("Default")
+	GlyphFrame.backdrop:Point("TOPLEFT", GlyphFrame, "TOPLEFT", 3, 2)
+	GlyphFrame.backdrop:Point("BOTTOMRIGHT", GlyphFrame, "BOTTOMRIGHT", -3, 0)
 	T.SkinEditBox(GlyphFrameSearchBox)
 	T.SkinDropDownBox(GlyphFrameFilterDropDown, 212)
 
-	GlyphFrameBackground:SetParent(GlyphFrameSparkleFrame)
-	GlyphFrameBackground:SetPoint("TOPLEFT", 5, -5)
-	GlyphFrameBackground:SetPoint("BOTTOMRIGHT", -5, 5)
+	GlyphFrameBackground:SetDrawLayer("OVERLAY")
+	GlyphFrameBackground:SetPoint("TOPLEFT", 5, 0)
+	GlyphFrameBackground:SetPoint("BOTTOMRIGHT", -5, 2)
 
-	for i = 1, 9 do
+	for i = 1, 6 do
 		_G["GlyphFrameGlyph"..i]:SetFrameLevel(_G["GlyphFrameGlyph"..i]:GetFrameLevel() + 5)
 	end
 
-	for i = 1, 3 do
+	for i = 1, 2 do
 		_G["GlyphFrameHeader"..i]:StripTextures()
 	end
 
@@ -42,20 +42,15 @@ local function LoadSkin()
 		Glyphs(nil, true, i)
 	end
 
+	GlyphFrameClearInfoFrame:SetTemplate("Default")
 	GlyphFrameClearInfoFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	GlyphFrameClearInfoFrameIcon:ClearAllPoints()
 	GlyphFrameClearInfoFrameIcon:Point("TOPLEFT", 2, -2)
 	GlyphFrameClearInfoFrameIcon:Point("BOTTOMRIGHT", -2, 2)
 
-	GlyphFrameClearInfoFrame:CreateBackdrop("Default", true)
-	GlyphFrameClearInfoFrame.backdrop:SetAllPoints()
-	GlyphFrameClearInfoFrame:StyleButton()
-	GlyphFrameClearInfoFrame:Size(25)
-
-	GlyphFrame.levelOverlay1:SetParent(GlyphFrameSparkleFrame)
-	GlyphFrame.levelOverlayText1:SetParent(GlyphFrameSparkleFrame)
-	GlyphFrame.levelOverlay2:SetParent(GlyphFrameSparkleFrame)
-	GlyphFrame.levelOverlayText2:SetParent(GlyphFrameSparkleFrame)
+	GlyphFrameLevelOverlay1:SetParent(GlyphFrame.backdrop)
+	GlyphFrameLevelOverlayText1:SetParent(GlyphFrame.backdrop)
+	GlyphFrameLevelOverlay2:SetParent(GlyphFrame.backdrop)
+	GlyphFrameLevelOverlayText2:SetParent(GlyphFrame.backdrop)
 
 	T.SkinScrollBar(GlyphFrameScrollFrameScrollBar)
 

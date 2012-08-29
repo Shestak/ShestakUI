@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.bag.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ StaticPopupDialogs.BUY_BANK_SLOT = {
 	hasMoneyFrame = 1,
 	timeout = 0,
 	hideOnEscape = 1,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.CANNOT_BUY_BANK_SLOT = {
@@ -32,7 +32,7 @@ StaticPopupDialogs.CANNOT_BUY_BANK_SLOT = {
 	button1 = ACCEPT,
 	timeout = 0,
 	whileDead = 1,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 -- Hide bags options in default interface
@@ -41,7 +41,7 @@ InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
 Stuffing:SetScript("OnEvent", function(this, event, ...)
-	if IsAddOnLoaded("AdiBags") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") then return end
+	if IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") then return end
 	Stuffing[event](this, ...)
 end)
 
@@ -61,6 +61,10 @@ end
 
 local function Stuffing_OnShow()
 	Stuffing:PLAYERBANKSLOTS_CHANGED(29)
+
+	for i = 0, #BAGS_BACKPACK - 1 do
+		Stuffing:BAG_UPDATE(i)
+	end
 
 	Stuffing:Layout()
 	Stuffing:SearchReset()
@@ -108,7 +112,7 @@ local trashBag = {}
 
 function Stuffing:SlotUpdate(b)
 	-- Don't do any slot update if bags are not show
-	--if not StuffingFrameBags:IsShown() then return end
+	if not StuffingFrameBags:IsShown() then return end
 	local texture, count, locked = GetContainerItemInfo(b.bag, b.slot)
 	local clink = GetContainerItemLink(b.bag, b.slot)
 	local isQuestItem, questId = GetContainerItemQuestInfo(b.bag, b.slot)
@@ -730,10 +734,6 @@ function Stuffing:SetBagsForSorting(c)
 				end
 			end
 		else
-			if tonumber(s) == nil then
-				Print(string.format("Error: don't know what \"%s\" means.", s))
-			end
-
 			table.insert(self.sortBags, tonumber(s))
 		end
 	end

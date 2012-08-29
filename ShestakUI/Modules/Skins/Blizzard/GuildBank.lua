@@ -8,6 +8,7 @@ local function LoadSkin()
 	GuildBankFrame:StripTextures()
 	GuildBankFrame:SetTemplate("Transparent")
 	GuildBankEmblemFrame:StripTextures(true)
+	GuildBankMoneyFrameBackground:StripTextures()
 
 	for i = 1, GuildBankFrame:GetNumChildren() do
 		local child = select(i, GuildBankFrame:GetChildren())
@@ -28,12 +29,12 @@ local function LoadSkin()
 
 	GuildBankFrame.inset = CreateFrame("Frame", nil, GuildBankFrame)
 	GuildBankFrame.inset:SetTemplate("Overlay")
-	GuildBankFrame.inset:Point("TOPLEFT", 30, -65)
-	GuildBankFrame.inset:Point("BOTTOMRIGHT", -20, 63)
+	GuildBankFrame.inset:Point("TOPLEFT", 21, -58)
+	GuildBankFrame.inset:Point("BOTTOMRIGHT", -17, 61)
 
 	GuildItemSearchBox:StripTextures(true)
 	GuildItemSearchBox:CreateBackdrop("Overlay")
-	GuildItemSearchBox.backdrop:Point("TOPLEFT", 10, -2)
+	GuildItemSearchBox.backdrop:Point("TOPLEFT", 13, -2)
 	GuildItemSearchBox.backdrop:Point("BOTTOMRIGHT", -5, 2)
 
 	for i = 1, NUM_GUILDBANK_COLUMNS do
@@ -42,6 +43,7 @@ local function LoadSkin()
 		for x = 1, NUM_SLOTS_PER_GUILDBANK_GROUP do
 			local button = _G["GuildBankColumn"..i.."Button"..x]
 			local icon = _G["GuildBankColumn"..i.."Button"..x.."IconTexture"]
+
 			button:SetNormalTexture(nil)
 			button:StyleButton()
 			button:SetTemplate("Default", true)
@@ -59,7 +61,7 @@ local function LoadSkin()
 		_G["GuildBankTab"..i]:StripTextures(true)
 
 		button:StripTextures()
-		button:StyleButton(true)
+		button:StyleButton()
 		button:SetTemplate("Default", true)
 
 		-- Reposition tabs
@@ -104,7 +106,7 @@ local function LoadSkin()
 		local texture = _G["GuildBankPopupButton"..i.."Icon"]
 
 		button:StripTextures()
-		button:StyleButton(true)
+		button:StyleButton()
 		button:SetTemplate("Default", true)
 
 		texture:ClearAllPoints()

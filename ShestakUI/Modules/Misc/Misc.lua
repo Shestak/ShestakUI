@@ -52,26 +52,12 @@ end
 GameTooltip:HookScript("OnTooltipSetItem", function(self)
 	if MerchantFrame:IsShown() and IsMerchantButtonOver() then
 		for i = 2, GameTooltip:NumLines() do
-			if _G["GameTooltipTextLeft"..i]:GetText():find(ITEM_VENDOR_STACK_BUY) then
+			if _G["GameTooltipTextLeft"..i]:GetText():find("<[sS]hift") then
 				GameTooltip:AddLine("|cff00ff00<"..L_MISC_BUY_STACK..">|r")
 			end
 		end
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	Auto decline duels
-----------------------------------------------------------------------------------------
-if C.misc.auto_decline_duel == true then
-	local dd = CreateFrame("Frame")
-	dd:RegisterEvent("DUEL_REQUESTED")
-	dd:SetScript("OnEvent", function(self, event, name)
-		HideUIPanel(StaticPopup1)
-		CancelDuel()
-		T.InfoTextShow(L_INFO_DUEL..name)
-		print(format("|cffffff00"..L_INFO_DUEL..name.."."))
-	end)
-end
 
 ----------------------------------------------------------------------------------------
 --	Spin camera while afk(by Telroth and Eclipse)
@@ -196,7 +182,21 @@ gtframe:SetID(n)
 gtframe:SetText(GUILD)
 gtframe:SetPoint("LEFT", _G["FriendsFrameTab"..n - 1], "RIGHT", -15, 0)
 gtframe:RegisterForClicks("AnyUp")
-gtframe:SetScript("OnClick", function() ToggleGuildFrame() end)
+gtframe:SetScript("OnClick", function()
+	if IsInGuild() then
+		if not GuildFrame then
+			LoadAddOn("Blizzard_GuildUI")
+		end
+		ToggleGuildFrame()
+		GuildFrame_TabClicked(GuildFrameTab2)
+	else
+		if not LookingForGuildFrame then
+			LoadAddOn("Blizzard_LookingForGuildUI")
+		end
+		if not LookingForGuildFrame then return end
+		LookingForGuildFrame_Toggle()
+	end
+end)
 PanelTemplates_SetNumTabs(FriendsFrame, n)
 PanelTemplates_EnableTab(FriendsFrame, n)
 
@@ -260,8 +260,12 @@ end)
 ----------------------------------------------------------------------------------------
 StaticPopupDialogs.RESURRECT.hideOnEscape = nil
 StaticPopupDialogs.PARTY_INVITE.hideOnEscape = nil
+StaticPopupDialogs.PARTY_INVITE_XREALM.hideOnEscape = nil
 StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = nil
+StaticPopupDialogs.PET_BATTLE_QUEUE_PROPOSE_MATCH.hideOnEscape = nil
 StaticPopupDialogs.CONFIRM_BATTLEFIELD_ENTRY.button2 = nil
+StaticPopupDialogs.ADDON_ACTION_FORBIDDEN.button1 = nil
+StaticPopupDialogs.TOO_MANY_LUA_ERRORS.button1 = nil
 
 ----------------------------------------------------------------------------------------
 --	Fix SearchLFGLeave() taint

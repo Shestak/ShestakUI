@@ -5,8 +5,7 @@ if C.skins.minimap_buttons ~= true or C.minimap.enable ~= true then return end
 --	Skin addons icons on minimap
 ----------------------------------------------------------------------------------------
 local buttons = {
-	"MiniMapBattlefieldFrame",
-	"MiniMapLFGFrame",
+	"QueueStatusMinimapButton",
 	"MiniMapTrackingButton",
 	"MiniMapMailFrame",
 	"HelpOpenTicketButton"
@@ -31,7 +30,7 @@ local function SkinButton(f)
 		if region:GetObjectType() == "Texture" then
 			local tex = region:GetTexture()
 
-			if tex:find("Border") or tex:find("Background") or tex:find("AlphaMask") then
+			if tex and (tex:find("Border") or tex:find("Background") or tex:find("AlphaMask")) then
 				region:SetTexture(nil)
 			else
 				region:ClearAllPoints()
@@ -49,9 +48,9 @@ local function SkinButton(f)
 	f:SetTemplate("Default")
 end
 
-local x = CreateFrame("Frame")
-x:RegisterEvent("PLAYER_LOGIN")
-x:SetScript("OnEvent", function(self, event)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event)
 	for i = 1, Minimap:GetNumChildren() do
 		SkinButton(select(i, Minimap:GetChildren()))
 	end

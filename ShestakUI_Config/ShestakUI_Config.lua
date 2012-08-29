@@ -8,6 +8,7 @@ local ALLOWED_GROUPS = {
 	["general"] = 1,
 	["misc"] = 1,
 	["announcements"] = 1,
+	["automation"] = 1,
 	["skins"] = 1,
 	["combattext"] = 1,
 	["reminder"] = 1,
@@ -26,15 +27,11 @@ local ALLOWED_GROUPS = {
 	["actionbar"] = 1,
 	["aura"] = 1,
 	["unitframe"] = 1,
+	["unitframe_class_bar"] = 1,
 	["raidframe"] = 1,
 	["toppanel"] = 1,
 	["error"] = 1,
 	["stats"] = 1,
-}
-
--- List of "Table Names" that we do not want to show in the config
-local TableFilter = {
-	--["table_name"] = 1,
 }
 
 local function Local(o)
@@ -49,20 +46,21 @@ local function Local(o)
 
 	-- Miscellaneous options
 	if o == "UIConfigmisc" then o = OTHER end
-	if o == "UIConfigmiscauto_quest" then o = L_GUI_MISC_AUTOQUEST end
-	if o == "UIConfigmiscauto_decline_duel" then o = L_GUI_MISC_AUTODUEL end
-	if o == "UIConfigmiscauto_accept_invite" then o = L_GUI_MISC_AUTOACCEPT end
-	if o == "UIConfigmiscauto_resurrection" then o = L_GUI_MISC_AUTORESSURECT end
-	if o == "UIConfigmiscauto_buy_reagents" then o = L_GUI_MISC_AUTOBUYREAGENTS end
 	if o == "UIConfigmiscshift_marking" then o = L_GUI_MISC_MARKING end
 	if o == "UIConfigmiscinvite_keyword" then o = L_GUI_MISC_INVKEYWORD end
 	if o == "UIConfigmiscafk_spin_camera" then o = L_GUI_MISC_SPIN_CAMERA end
 	if o == "UIConfigmiscvehicle_mouseover" then o = L_GUI_MISC_VEHICLE_MOUSEOVER end
 	if o == "UIConfigmiscquest_auto_button" then o = L_GUI_MISC_QUEST_AUTOBUTTON end
 	if o == "UIConfigmiscraid_tools" then o = L_GUI_MISC_RAID_TOOLS end
-	if o == "UIConfigmiscach_screens" then o = L_GUI_MISC_ACH_SCREENS end
 	if o == "UIConfigmiscprofession_tabs" then o = L_GUI_MISC_PROFESSION_TABS end
+	if o == "UIConfigmiscdungeon_tabs" then o = L_GUI_MISC_DUNGEON_TABS end
 	if o == "UIConfigmischide_bg_spam" then o = L_GUI_MISC_HIDE_BG_SPAM end
+	if o == "UIConfigmiscitem_level" then o = L_GUI_MISC_ITEM_LEVEL end
+	if o == "UIConfigmiscgem_counter" then o = L_GUI_MISC_GEM_COUNTER end
+	if o == "UIConfigmiscalready_known" then o = L_GUI_MISC_ALREADY_KNOWN end
+	if o == "UIConfigmiscdisenchanting" then o = L_GUI_MISC_DISENCHANTING end
+	if o == "UIConfigmiscsum_buyouts" then o = L_GUI_MISC_SUM_BUYOUTS end
+	if o == "UIConfigmiscclick_cast" then o = L_GUI_MISC_CLICK_CAST end
 
 	-- Announcements options
 	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end
@@ -71,6 +69,27 @@ local function Local(o)
 	if o == "UIConfigannouncementsspells" then o = L_GUI_ANNOUNCEMENTS_SPELLS end
 	if o == "UIConfigannouncementsspells_from_all" then o = L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL end
 	if o == "UIConfigannouncementsenemy_trinkets" then o = L_GUI_ANNOUNCEMENTS_ENEMY_TRINKETS end
+	if o == "UIConfigannouncementslightwell" then o = L_GUI_ANNOUNCEMENTS_LIGHTWELL end
+	if o == "UIConfigannouncementstoy_train" then o = L_GUI_ANNOUNCEMENTS_TOY_TRAIN end
+	if o == "UIConfigannouncementssays_thanks" then o = L_GUI_ANNOUNCEMENTS_SAYS_THANKS end
+	if o == "UIConfigannouncementspull_countdown" then o = L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN end
+	if o == "UIConfigannouncementsflask_food" then o = L_GUI_ANNOUNCEMENTS_FLASK_FOOD end
+	if o == "UIConfigannouncementsflask_food_auto" then o = L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO end
+	if o == "UIConfigannouncementsflask_food_raid" then o = L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID end
+
+	-- Automation options
+	if o == "UIConfigautomation" then o = L_GUI_AUTOMATION end
+	if o == "UIConfigautomationresurrection" then o = L_GUI_AUTOMATION_RESURRECTION end
+	if o == "UIConfigautomationscreenshot" then o = L_GUI_AUTOMATION_SCREENSHOT end
+	if o == "UIConfigautomationsolve_artifact" then o = L_GUI_AUTOMATION_SOLVE_ARTIFACT end
+	if o == "UIConfigautomationchefs_hat" then o = L_GUI_AUTOMATION_CHEFS_HAT end
+	if o == "UIConfigautomationaccept_invite" then o = L_GUI_AUTOMATION_ACCEPT_INVITE end
+	if o == "UIConfigautomationdecline_duel" then o = L_GUI_AUTOMATION_DECLINE_DUEL end
+	if o == "UIConfigautomationaccept_quest" then o = L_GUI_AUTOMATION_ACCEPT_QUEST end
+	if o == "UIConfigautomationskip_cinematic" then o = L_GUI_AUTOMATION_SKIP_CINEMATIC end
+	if o == "UIConfigautomationauto_role" then o = L_GUI_AUTOMATION_AUTO_ROLE end
+	if o == "UIConfigautomationcancel_bad_buffs" then o = L_GUI_AUTOMATION_CANCEL_BAD_BUFFS end
+	if o == "UIConfigautomationtab_binder" then o = L_GUI_AUTOMATION_TAB_BINDER end
 
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
@@ -83,8 +102,13 @@ local function Local(o)
 	if o == "UIConfigskinsdbm" then o = L_GUI_SKINS_DBM end
 	if o == "UIConfigskinsdxe" then o = L_GUI_SKINS_DXE end
 	if o == "UIConfigskinsomen" then o = L_GUI_SKINS_OMEN end
-	if o == "UIConfigskinspallypower" then o = L_GUI_SKINS_PP end
 	if o == "UIConfigskinsrecount" then o = L_GUI_SKINS_RECOUNT end
+	if o == "UIConfigskinsblood_shield_tracker" then o = L_GUI_SKINS_BLOOD_SHIELD_TRACKER end
+	if o == "UIConfigskinsdominos" then o = L_GUI_SKINS_DOMINOS end
+	if o == "UIConfigskinsflyout_button" then o = L_GUI_SKINS_FLYOUT_BUTTON end
+	if o == "UIConfigskinsnug_running" then o = L_GUI_SKINS_NUG_RUNNING end
+	if o == "UIConfigskinsovale" then o = L_GUI_SKINS_OVALE end
+	if o == "UIConfigskinsclique" then o = L_GUI_SKINS_CLIQUE end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end
@@ -192,6 +216,10 @@ local function Local(o)
 	if o == "UIConfigtooltipwho_targetting" then o = L_GUI_TOOLTIP_WHO_TARGETTING end
 	if o == "UIConfigtooltipitem_count" then o = L_GUI_TOOLTIP_ITEM_COUNT end
 	if o == "UIConfigtooltipunit_role" then o = L_GUI_TOOLTIP_UNIT_ROLE end
+	if o == "UIConfigtooltipreforge" then o = L_GUI_TOOLTIP_REFORGE end
+	if o == "UIConfigtooltipsymbiosis" then o = L_GUI_TOOLTIP_SYMBIOSIS end
+	if o == "UIConfigtooltipinstance_lock" then o = L_GUI_TOOLTIP_INSTANCE_LOCK end
+	if o == "UIConfigtooltipitem_transmogrify" then o = L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY end
 
 	-- Chat options
 	if o == "UIConfigchat" then o = SOCIALS end
@@ -203,12 +231,14 @@ local function Local(o)
 	if o == "UIConfigchatwidth" then o = L_GUI_CHAT_WIDTH end
 	if o == "UIConfigchatheight" then o = L_GUI_CHAT_HEIGHT end
 	if o == "UIConfigchatchat_bar" then o = L_GUI_CHAT_BAR end
+	if o == "UIConfigchatchat_bar_mouseover" then o = L_GUI_CHAT_BAR_MOUSEOVER end
 	if o == "UIConfigchattime_color" then o = L_GUI_CHAT_TIMESTAMP end
 	if o == "UIConfigchatwhisp_sound" then o = L_GUI_CHAT_WHISP end
 	if o == "UIConfigchatbubbles" then o = L_GUI_CHAT_SKIN_BUBBLE end
 	if o == "UIConfigchatcombatlog" then o = L_GUI_CHAT_CL_TAB end
 	if o == "UIConfigchattabs_mouseover" then o = L_GUI_CHAT_TABS_MOUSEOVER end
 	if o == "UIConfigchatsticky" then o = L_GUI_CHAT_STICKY end
+	if o == "UIConfigchatdamage_meter_spam" then o = L_GUI_CHAT_DAMAGE_METER_SPAM end
 
 	-- Bag options
 	if o == "UIConfigbag" then o = L_GUI_BAGS end
@@ -232,6 +262,8 @@ local function Local(o)
 	if o == "UIConfigmapenable" then o = L_GUI_MAP_ENABLE end
 	if o == "UIConfigmapscale" then o = L_GUI_MAP_SCALE end
 	if o == "UIConfigmapbg_map_stylization" then o = L_GUI_MAP_BG_STYLIZATION end
+	if o == "UIConfigmapmap_boss_count" then o = L_GUI_MAP_BOSS_COUNT end
+	if o == "UIConfigmapexplore_map" then o = L_GUI_MAP_EXPLORE end
 
 	-- Loot options
 	if o == "UIConfigloot" then o = LOOT end
@@ -261,6 +293,7 @@ local function Local(o)
 	if o == "UIConfignameplatebad_color" then o = L_GUI_NAMEPLATE_BAD_COLOR end
 	if o == "UIConfignameplatetrack_auras" then o = L_GUI_NAMEPLATE_SHOW_DEBUFFS end
 	if o == "UIConfignameplateauras_size" then o = L_GUI_NAMEPLATE_DEBUFFS_SIZE end
+	if o == "UIConfignameplatehealer_icon" then o = L_GUI_NAMEPLATE_HEALER_ICON end
 
 	-- ActionBar options
 	if o == "UIConfigactionbar" then o = ACTIONBARS_LABEL end
@@ -279,9 +312,11 @@ local function Local(o)
 	if o == "UIConfigactionbarpetbar_mouseover" then o = L_GUI_ACTIONBAR_PETBAR_MOUSEOVER end
 	if o == "UIConfigactionbarpetbar_hide" then o = L_GUI_ACTIONBAR_PETBAR_HIDE end
 	if o == "UIConfigactionbarpetbar_horizontal" then o = L_GUI_ACTIONBAR_PETBAR_HORIZONTAL end
-	if o == "UIConfigactionbarshapeshift_mouseover" then o = L_GUI_ACTIONBAR_SHAPESHIFT_MOUSEOVER end
-	if o == "UIConfigactionbarshapeshift_hide" then o = L_GUI_ACTIONBAR_SHAPESHIFT_HIDE end
-	if o == "UIConfigactionbarshapeshift_horizontal" then o = L_GUI_ACTIONBAR_SHAPESHIFT_HORIZONTAL end
+	if o == "UIConfigactionbarstancebar_mouseover" then o = L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER end
+	if o == "UIConfigactionbarstancebar_hide" then o = L_GUI_ACTIONBAR_STANCEBAR_HIDE end
+	if o == "UIConfigactionbarstancebar_horizontal" then o = L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL end
+	if o == "UIConfigactionbarmicromenu" then o = L_GUI_ACTIONBAR_MICROMENU end
+	if o == "UIConfigactionbarmicromenu_mouseover" then o = L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER end
 
 	-- Auras/Buffs/Debuffs
 	if o == "UIConfigaura" then o = BUFFOPTIONS_LABEL end
@@ -323,8 +358,6 @@ local function Local(o)
 	if o == "UIConfigunitframeicons_pvp" then o = L_GUI_UF_ICONS_PVP end
 	if o == "UIConfigunitframeicons_combat" then o = L_GUI_UF_ICONS_COMBAT end
 	if o == "UIConfigunitframeicons_resting" then o = L_GUI_UF_ICONS_RESTING end
-	if o == "UIConfigunitframeicons_combo_point" then o = L_GUI_UF_ICONS_COMBO_POINT end
-	if o == "UIConfigunitframeicons_combo_point_new" then o = L_GUI_UF_ICONS_COMBO_POINT_NEW end
 	if o == "UIConfigunitframeportrait_enable" then o = L_GUI_UF_PORTRAIT_ENABLE end
 	if o == "UIConfigunitframeportrait_classcolor_border" then o = L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER end
 	if o == "UIConfigunitframeportrait_height" then o = L_GUI_UF_PORTRAIT_HEIGHT end
@@ -332,14 +365,7 @@ local function Local(o)
 	if o == "UIConfigunitframealternative_portraits" then o = L_GUI_UF_ALTERNATIVE_PORTRAITS end
 	if o == "UIConfigunitframeplugins_gcd" then o = L_GUI_UF_PLUGINS_GCD end
 	if o == "UIConfigunitframeplugins_swing" then o = L_GUI_UF_PLUGINS_SWING end
-	if o == "UIConfigunitframeplugins_eclipse_bar" then o = L_GUI_UF_PLUGINS_ECLIPSE_BAR end
-	if o == "UIConfigunitframeplugins_holy_bar" then o = L_GUI_UF_PLUGINS_HOLY_BAR end
-	if o == "UIConfigunitframeplugins_shard_bar" then o = L_GUI_UF_PLUGINS_SHARD_BAR end
-	if o == "UIConfigunitframeplugins_rune_bar" then o = L_GUI_UF_PLUGINS_RUNE_BAR end
 	if o == "UIConfigunitframeplugins_necro_strike" then o = L_GUI_UF_PLUGINS_NECRO_STRIKE end
-	if o == "UIConfigunitframeplugins_vengeance_bar" then o = L_GUI_UF_PLUGINS_VENGEANCE_BAR end
-	if o == "UIConfigunitframeplugins_totem_bar" then o = L_GUI_UF_PLUGINS_TOTEM_BAR end
-	if o == "UIConfigunitframeplugins_totem_bar_name" then o = L_GUI_UF_PLUGINS_TOTEM_BAR_NAME end
 	if o == "UIConfigunitframeplugins_reputation_bar" then o = L_GUI_UF_PLUGINS_REPUTATION_BAR end
 	if o == "UIConfigunitframeplugins_experience_bar" then o = L_GUI_UF_PLUGINS_EXPERIENCE_BAR end
 	if o == "UIConfigunitframeplugins_smooth_bar" then o = L_GUI_UF_PLUGINS_SMOOTH_BAR end
@@ -347,6 +373,18 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_combat_feedback" then o = L_GUI_UF_PLUGINS_COMBAT_FEEDBACK end
 	if o == "UIConfigunitframeplugins_fader" then o = L_GUI_UF_PLUGINS_FADER end
 	if o == "UIConfigunitframeplugins_diminishing" then o = L_GUI_UF_PLUGINS_DIMINISHING end
+
+	-- Unit Frames Class bar options
+	if o == "UIConfigunitframe_class_bar" then o = L_GUI_UF_PLUGINS_CLASS_BAR end
+	if o == "UIConfigunitframe_class_barcombo" then o = L_GUI_UF_PLUGINS_COMBO_BAR end
+	if o == "UIConfigunitframe_class_barshadow" then o = L_GUI_UF_PLUGINS_SHADOW_BAR end
+	if o == "UIConfigunitframe_class_barchi" then o = L_GUI_UF_PLUGINS_CHI_BAR end
+	if o == "UIConfigunitframe_class_barvengeance" then o = L_GUI_UF_PLUGINS_VENGEANCE_BAR end
+	if o == "UIConfigunitframe_class_bareclipse" then o = L_GUI_UF_PLUGINS_ECLIPSE_BAR end
+	if o == "UIConfigunitframe_class_barholy" then o = L_GUI_UF_PLUGINS_HOLY_BAR end
+	if o == "UIConfigunitframe_class_barshard" then o = L_GUI_UF_PLUGINS_SHARD_BAR end
+	if o == "UIConfigunitframe_class_barrune" then o = L_GUI_UF_PLUGINS_RUNE_BAR end
+	if o == "UIConfigunitframe_class_bartotem" then o = L_GUI_UF_PLUGINS_TOTEM_BAR end
 
 	-- Raid Frames options
 	if o == "UIConfigraidframe" then o = RAID_FRAMES_LABEL end
@@ -366,7 +404,7 @@ local function Local(o)
 	if o == "UIConfigraidframeraid_groups_vertical" then o = L_GUI_UF_RAID_VERTICAL_GROUP end
 	if o == "UIConfigraidframeraid_portraits" then o = L_GUI_UF_RAID_PORTRAITS end
 	if o == "UIConfigraidframeicons_leader" then o = L_GUI_UF_ICONS_LEADER end
-	if o == "UIConfigraidframeicons_lfd_role" then o = L_GUI_UF_ICONS_LFD_ROLE end
+	if o == "UIConfigraidframeicons_role" then o = L_GUI_UF_ICONS_ROLE end
 	if o == "UIConfigraidframeicons_raid_mark" then o = L_GUI_UF_ICONS_RAID_MARK end
 	if o == "UIConfigraidframeicons_ready_check" then o = L_GUI_UF_ICONS_READY_CHECK end
 	if o == "UIConfigraidframeplugins_debuffhighlight_icon" then o = L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON end
@@ -391,16 +429,14 @@ local function Local(o)
 	if o == "UIConfigstatsfps" then o = L_GUI_STATS_FPS end
 	if o == "UIConfigstatsfriend" then o = FRIENDS end
 	if o == "UIConfigstatsguild" then o = GUILD end
+	if o == "UIConfigstatsbags" then o = L_STATS_BAGS end
 	if o == "UIConfigstatsdurability" then o = DURABILITY end
 	if o == "UIConfigstatsexperience" then o = L_GUI_STATS_EXPERIENCE end
 	if o == "UIConfigstatscoords" then o = L_GUI_STATS_COORDS end
 	if o == "UIConfigstatslocation" then o = L_GUI_STATS_LOCATION end
-	if o == "UIConfigstatsguild_repair" then o = L_STATS_GUILD_REPAIR end
-	if o == "UIConfigstatsbags" then o = L_STATS_BAGS end
 
 	-- Error options
 	if o == "UIConfigerror" then o = L_GUI_ERROR end
-	if o == "UIConfigerrorhide" then o = L_GUI_ERROR_HIDE end
 	if o == "UIConfigerrorblack" then o = L_GUI_ERROR_BLACK end
 	if o == "UIConfigerrorwhite" then o = L_GUI_ERROR_WHITE end
 	if o == "UIConfigerrorcombat" then o = L_GUI_ERROR_HIDE_COMBAT end
@@ -420,6 +456,9 @@ local NewButton = function(text, parent)
 	result:SetNormalTexture("")
 	result:SetHighlightTexture("")
 	result:SetPushedTexture("")
+	result.Left:SetAlpha(0)
+	result.Right:SetAlpha(0)
+	result.Middle:SetAlpha(0)
 
 	return result
 end
@@ -446,19 +485,19 @@ end
 
 StaticPopupDialogs.PERCHAR = {
 	text = L_GUI_PER_CHAR,
-	OnAccept = function() 
-		if UIConfigAllCharacters:GetChecked() then 
+	OnAccept = function()
+		if UIConfigAllCharacters:GetChecked() then
 			GUIConfigAll[myPlayerRealm][myPlayerName] = true
-		else 
+		else
 			GUIConfigAll[myPlayerRealm][myPlayerName] = false
 		end
-		ReloadUI() 
+		ReloadUI()
 	end,
-	OnCancel = function() 
+	OnCancel = function()
 		UIConfigCover:Hide()
-		if UIConfigAllCharacters:GetChecked() then 
+		if UIConfigAllCharacters:GetChecked() then
 			UIConfigAllCharacters:SetChecked(false)
-		else 
+		else
 			UIConfigAllCharacters:SetChecked(true)
 		end
 	end,
@@ -466,36 +505,36 @@ StaticPopupDialogs.PERCHAR = {
 	button2 = CANCEL,
 	timeout = 0,
 	whileDead = 1,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.RESET_PERCHAR = {
 	text = L_GUI_RESET_CHAR,
-	OnAccept = function() 
+	OnAccept = function()
 		GUIConfig = GUIConfigSettings
-		ReloadUI() 
+		ReloadUI()
 	end,
 	OnCancel = function() if UIConfig and UIConfig:IsShown() then UIConfigCover:Hide() end end,
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	timeout = 0,
 	whileDead = 1,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.RESET_ALL = {
 	text = L_GUI_RESET_ALL,
-	OnAccept = function() 
+	OnAccept = function()
 		GUIConfigSettings = nil
 		GUIConfig = nil
-		ReloadUI() 
+		ReloadUI()
 	end,
 	OnCancel = function() UIConfigCover:Hide() end,
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	timeout = 0,
 	whileDead = 1,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 local function SetValue(group, option, value)
@@ -555,7 +594,7 @@ local function ShowGroup(group, button)
 		_G["UIConfigGroup"]:SetScrollChild(_G["UIConfig"..group])
 
 		local x
-		if UIConfigGroupSlider:IsShown() then 
+		if UIConfigGroupSlider:IsShown() then
 			_G["UIConfigGroup"]:EnableMouseWheel(true)
 			_G["UIConfigGroup"]:SetScript("OnMouseWheel", function(self, delta)
 				if UIConfigGroupSlider:IsShown() then
@@ -621,7 +660,7 @@ function CreateUIConfig()
 	local TitleBoxText = TitleBox:CreateFontString("UIConfigTitle", "OVERLAY", "GameFontNormal")
 	TitleBoxText:SetPoint("LEFT", TitleBox, "LEFT", 15, 0)
 
-	-- Main Frame
+	-- Options Frame
 	local UIConfig = CreateFrame("Frame", "UIConfig", UIConfigMain)
 	UIConfig:SetPoint("TOPLEFT", TitleBox, "BOTTOMLEFT", 10, -15)
 	UIConfig:SetWidth(520)
@@ -633,7 +672,7 @@ function CreateUIConfig()
 	UIConfigBG:SetPoint("TOPLEFT", -10, 10)
 	UIConfigBG:SetPoint("BOTTOMRIGHT", 10, -10)
 
-	-- Group selection(left side)
+	-- Group Frame
 	local groups = CreateFrame("ScrollFrame", "UIConfigCategoryGroup", UIConfig)
 	groups:SetPoint("TOPLEFT", TitleBoxVer, "BOTTOMLEFT", 10, -15)
 	groups:SetWidth(160)
@@ -651,6 +690,7 @@ function CreateUIConfig()
 	UIConfigCover:SetScript("OnMouseDown", function(self) print(L_GUI_MAKE_SELECTION) end)
 	UIConfigCover:Hide()
 
+	-- Group Scroll
 	local slider = CreateFrame("Slider", "UIConfigCategorySlider", groups)
 	slider:SetPoint("TOPRIGHT", 0, 0)
 	slider:SetWidth(20)
@@ -658,19 +698,19 @@ function CreateUIConfig()
 	slider:SetThumbTexture("Interface\\Buttons\\UI-ScrollBar-Knob")
 	slider:SetOrientation("VERTICAL")
 	slider:SetValueStep(20)
-	slider:SetScript("OnValueChanged", function(self,value) groups:SetVerticalScroll(value) end)
+	slider:SetScript("OnValueChanged", function(self, value) groups:SetVerticalScroll(value) end)
 
 	local child = CreateFrame("Frame", nil, groups)
 	child:SetPoint("TOPLEFT")
 	local offset = 5
-	for group in pairs(ALLOWED_GROUPS) do
-		local o = "UIConfig"..group
+	for i in pairs(ALLOWED_GROUPS) do
+		local o = "UIConfig"..i
 		Local(o)
 		local button = NewButton(T.option, child)
 		button:SetHeight(16)
 		button:SetWidth(125)
 		button:SetPoint("TOPLEFT", 5, -(offset))
-		button:SetScript("OnClick", function(self) ShowGroup(group, button) self:SetText("|cff00ff00"..T.option.."|r") end)
+		button:SetScript("OnClick", function(self) ShowGroup(i, button) self:SetText("|cff00ff00"..T.option.."|r") end)
 		offset = offset + 20
 	end
 	child:SetWidth(125)
@@ -693,12 +733,12 @@ function CreateUIConfig()
 		end
 	end)
 
-	-- Group scroll frame(right side)
 	local group = CreateFrame("ScrollFrame", "UIConfigGroup", UIConfig)
 	group:SetPoint("TOPLEFT", 0, 5)
 	group:SetWidth(520)
 	group:SetHeight(400)
 
+	-- Options Scroll
 	local slider = CreateFrame("Slider", "UIConfigGroupSlider", group)
 	slider:SetPoint("TOPRIGHT", 0, 0)
 	slider:SetWidth(20)
@@ -706,43 +746,42 @@ function CreateUIConfig()
 	slider:SetThumbTexture("Interface\\Buttons\\UI-ScrollBar-Knob")
 	slider:SetOrientation("VERTICAL")
 	slider:SetValueStep(20)
-	slider:SetScript("OnValueChanged", function(self,value) group:SetVerticalScroll(value) end)
+	slider:SetScript("OnValueChanged", function(self, value) group:SetVerticalScroll(value) end)
 
-	for group in pairs(ALLOWED_GROUPS) do
-		local frame = CreateFrame("Frame", "UIConfig"..group, UIConfigGroup)
+	for i in pairs(ALLOWED_GROUPS) do
+		local frame = CreateFrame("Frame", "UIConfig"..i, UIConfigGroup)
 		frame:SetPoint("TOPLEFT")
 		frame:SetWidth(225)
 
 		local offset = 5
 
-		if type(C[group]) ~= "table" then error(group.." GroupName not found in config table.") return end
-		for option, value in pairs(C[group]) do
-
+		if type(C[i]) ~= "table" then error(i.." GroupName not found in config table.") return end
+		for j, value in pairs(C[i]) do
 			if type(value) == "boolean" then
-				local button = CreateFrame("CheckButton", "UIConfig"..group..option, frame, "InterfaceOptionsCheckButtonTemplate")
+				local button = CreateFrame("CheckButton", "UIConfig"..i..j, frame, "InterfaceOptionsCheckButtonTemplate")
 				if IsAddOnLoaded("Aurora") then
 					local F = unpack(Aurora)
 					F.ReskinCheck(button)
 				end
-				local o = "UIConfig"..group..option
+				local o = "UIConfig"..i..j
 				Local(o)
-				_G["UIConfig"..group..option.."Text"]:SetText(T.option)
-				_G["UIConfig"..group..option.."Text"]:SetFontObject(GameFontHighlight)
-				_G["UIConfig"..group..option.."Text"]:SetWidth(460)
-				_G["UIConfig"..group..option.."Text"]:SetJustifyH("LEFT")
+				_G["UIConfig"..i..j.."Text"]:SetText(T.option)
+				_G["UIConfig"..i..j.."Text"]:SetFontObject(GameFontHighlight)
+				_G["UIConfig"..i..j.."Text"]:SetWidth(460)
+				_G["UIConfig"..i..j.."Text"]:SetJustifyH("LEFT")
 				button:SetChecked(value)
-				button:SetScript("OnClick", function(self) SetValue(group, option, (self:GetChecked() and true or false)) end)
-				button:SetPoint("TOPLEFT", 5, -(offset))
+				button:SetScript("OnClick", function(self) SetValue(i, j, (self:GetChecked() and true or false)) end)
+				button:SetPoint("TOPLEFT", 5, -offset)
 				offset = offset + 25
 			elseif type(value) == "number" or type(value) == "string" then
 				local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-				local o = "UIConfig"..group..option
+				local o = "UIConfig"..i..j
 				Local(o)
 				label:SetText(T.option)
 				label:SetWidth(460)
 				label:SetHeight(20)
 				label:SetJustifyH("LEFT")
-				label:SetPoint("TOPLEFT", 5, -(offset))
+				label:SetPoint("TOPLEFT", 5, -offset)
 
 				local editbox = CreateFrame("EditBox", nil, frame)
 				editbox:SetAutoFocus(false)
@@ -771,37 +810,39 @@ function CreateUIConfig()
 				oktext:SetPoint("CENTER", okbutton, "CENTER", -1, 0)
 				okbutton:SetWidth(oktext:GetWidth() + 5)
 				okbutton:Hide()
- 
+
 				if type(value) == "number" then
 					editbox:SetScript("OnEscapePressed", function(self) okbutton:Hide() self:ClearFocus() self:SetText(value) end)
 					editbox:SetScript("OnChar", function(self) okbutton:Show() end)
-					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(group, option, tonumber(self:GetText())) end)
-					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(group, option, tonumber(editbox:GetText())) end)
+					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(i, j, tonumber(self:GetText())) end)
+					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(i, j, tonumber(editbox:GetText())) end)
 				else
 					editbox:SetScript("OnEscapePressed", function(self) okbutton:Hide() self:ClearFocus() self:SetText(value) end)
 					editbox:SetScript("OnChar", function(self) okbutton:Show() end)
-					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(group, option, tostring(self:GetText())) end)
-					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(group, option, tostring(editbox:GetText())) end)
+					editbox:SetScript("OnEnterPressed", function(self) okbutton:Hide() self:ClearFocus() SetValue(i, j, tostring(self:GetText())) end)
+					okbutton:SetScript("OnMouseDown", function(self) editbox:ClearFocus() self:Hide() SetValue(i, j, tostring(editbox:GetText())) end)
 				end
 
 				offset = offset + 45
-			elseif type(value) == "table" and not TableFilter[option] then
+			elseif type(value) == "table" then
 				local label = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-				local o = "UIConfig"..group..option
+				local o = "UIConfig"..i..j
 				Local(o)
 				label:SetText(T.option)
 				label:SetWidth(440)
 				label:SetHeight(20)
 				label:SetJustifyH("LEFT")
-				label:SetPoint("TOPLEFT", 5, -(offset))
+				label:SetPoint("TOPLEFT", 5, -offset)
 
 				colorbuttonname = (label:GetText().."ColorPicker")
+
 				local colorbutton = CreateFrame("Button", colorbuttonname, frame)
 				colorbutton:SetHeight(20)
 				colorbutton:SetTemplate("Transparent")
 				colorbutton:SetBackdropBorderColor(unpack(value))
 				colorbutton:SetBackdropColor(value[1], value[2], value[3], 0.3)
 				colorbutton:SetPoint("LEFT", label, "RIGHT", 2, 0)
+
 				local colortext = colorbutton:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
 				colortext:SetText(COLOR)
 				colortext:SetPoint("CENTER")
@@ -814,22 +855,22 @@ function CreateUIConfig()
 					return (("%%.%df"):format(decimal)):format(number)
 				end
 
-				colorbutton:SetScript("OnMouseDown", function(self) 
+				colorbutton:SetScript("OnMouseDown", function(self)
 					if ColorPickerFrame:IsShown() then return end
 					local newR, newG, newB, newA
 					local fired = 0
 
-					local r, g, b, a = self:GetBackdropBorderColor();
+					local r, g, b, a = self:GetBackdropBorderColor()
 					r, g, b, a = round(r, 2), round(g, 2), round(b, 2), round(a, 2)
-					local originalR,originalG,originalB,originalA = r, g, b, a
+					local originalR, originalG, originalB, originalA = r, g, b, a
 
 					local function ShowColorPicker(r, g, b, a, changedCallback)
-						ColorPickerFrame.func, ColorPickerFrame.opacityFunc, ColorPickerFrame.cancelFunc = changedCallback, changedCallback, changedCallback;
+						ColorPickerFrame.func, ColorPickerFrame.opacityFunc, ColorPickerFrame.cancelFunc = changedCallback, changedCallback, changedCallback
 						ColorPickerFrame:SetColorRGB(r, g, b)
 						a = tonumber(a)
 						ColorPickerFrame.hasOpacity = (a ~= nil and a ~= 1)
 						ColorPickerFrame.opacity = a
-						ColorPickerFrame.previousValues = {originalR,originalG,originalB,originalA}
+						ColorPickerFrame.previousValues = {originalR, originalG, originalB, originalA}
 						ColorPickerFrame:Hide()
 						ColorPickerFrame:Show()
 					end
@@ -844,8 +885,8 @@ function CreateUIConfig()
 							newA, newR, newG, newB = OpacitySliderFrame:GetValue(), ColorPickerFrame:GetColorRGB()
 						end
 
-						value = { newR, newG, newB, newA }
-						SetValue(group, option, (value)) 
+						value = {newR, newG, newB, newA}
+						SetValue(i, j, (value))
 						self:SetBackdropBorderColor(newR, newG, newB, newA)
 						self:SetBackdropColor(newR, newG, newB, 0.3)
 					end
@@ -863,7 +904,7 @@ function CreateUIConfig()
 
 	local reset = NormalButton(DEFAULT, UIConfigMain)
 	reset:SetPoint("TOPLEFT", UIConfig, "BOTTOMLEFT", -10, -25)
-	reset:SetScript("OnClick", function(self) 
+	reset:SetScript("OnClick", function(self)
 		UIConfigCover:Show()
 		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
 			StaticPopup_Show("RESET_PERCHAR")
@@ -903,7 +944,7 @@ function CreateUIConfig()
 			T.SkinCheckBox(button)
 		end
 
-		local label = UIConfigAllCharacters:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+		local label = button:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 		label:SetText(L_GUI_SET_SAVED_SETTTINGS)
 		label:SetPoint("RIGHT", button, "LEFT")
 
@@ -955,20 +996,19 @@ do
 end
 
 do
-	local thxui = CreateFrame("Frame", nil, InterfaceOptionsFramePanelContainer)
-	thxui:Hide()
+	local frame = CreateFrame("Frame", nil, InterfaceOptionsFramePanelContainer)
+	frame:Hide()
 
-	thxui.name = "ShestakUI"
-	thxui:SetScript("OnShow", function(self)
+	frame.name = "ShestakUI"
+	frame:SetScript("OnShow", function(self)
 		if self.show then return end
 		local T, C, L = unpack(ShestakUI)
 		local title = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title:SetPoint("TOPLEFT", 16, -16)
 		title:SetText("Info:")
 
-		local subtitle = self:CreateFontString(nil, "ARTWORK")
-		subtitle:SetFont(C.media.normal_font, 12)
-		subtitle:SetWidth(500)
+		local subtitle = self:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+		subtitle:SetWidth(580)
 		subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
 		subtitle:SetJustifyH("LEFT")
 		subtitle:SetText("UI Site: |cff298F00http//shestak.org|r\nGitHub: |cff298F00https://github.com/Shestak/ShestakUI|r\nCurse: |cff298F00http://wow.curseforge.com/addons/shestakui/|r\nWoWInterface: |cff298F00http://www.wowinterface.com/downloads/info19033-ShestakUI.html|r\nChange Log: |cff298F00https://github.com/Shestak/ShestakUI/commits/master/|r")
@@ -977,23 +1017,21 @@ do
 		title2:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -16)
 		title2:SetText("Credits:")
 
-		local subtitle2 = self:CreateFontString(nil, "ARTWORK")
-		subtitle2:SetFont(C.media.normal_font, 12)
-		subtitle2:SetWidth(500)
+		local subtitle2 = self:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+		subtitle2:SetWidth(580)
 		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
 		subtitle2:SetJustifyH("LEFT")
-		subtitle2:SetText("ALZA, Katae, pHishr, Roth, P3lim, Led++, Haste, Caellian, Tekkub, Neal, Industrial, Nightcracker, Kemayo, Yleaf, Monolit, Tukz, Totalpackage, Syzgyn, AlleyKat, Phanx, v6o, Meurtcriss, Favorit, Allez, Fernir, Affli, Eclipse, Elv22, Foof, Tohveli, FourOne, Havoc74, Duffed, Hydra, Gorlasch, Nefarion, Compost, Blamdarot, Suicidal Katt, Tuller, Rostok, Thizzelle, Astromech, Ammo, Slakah, Xuerian, Thalyra, Soeters, Evilpaul, Beoko, Califpornia, kunda, g0st, Partha, chrippa, Nathanyel, Semlar.")
+		subtitle2:SetText("AcidWeb, Aezay, Affli, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Chiril, CrusaderHeimdall, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Woffle of Dark Iron, Xuerian, Yleaf, Zork.")
 
 		local title3 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)
 		title3:SetText("Thanks:")
 
-		local subtitle3 = self:CreateFontString(nil, "ARTWORK")
-		subtitle3:SetFont(C.media.normal_font, 12)
-		subtitle3:SetWidth(500)
+		local subtitle3 = self:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+		subtitle3:SetWidth(580)
 		subtitle3:SetPoint("TOPLEFT", title3, "BOTTOMLEFT", 0, -8)
 		subtitle3:SetJustifyH("LEFT")
-		subtitle3:SetText("Akimba, Sart, Antthemage, Homicidal Retribution, Sitatunga, Mania, Baine, Sw2rT1, Nanjiqq, Cranan, Leots, Ianchan, Spacedragon, Seal, eXecrate, Aelb, Halogen, Illusion, Obakol, Elfrey, k07n, Kazarl, Scorpions, Yakodzuna, MoLLIa, Erratic, gromcha, PterOs, tat2dawn, Wetxius, Oz, Nefrit, Ente, ILF7, UI Users, Russian Community and Others.")
+		subtitle3:SetText("Aelb, Akimba, Antthemage, Baine, Cranan, Crunching, Dandruff, DesFolk, Elfrey, Ente, Erratic, eXecrate, Falchior, Gromcha, Halogen, Homicidal Retribution, ILF7, Ianchan, Illusion, Ipton, k07n, Kazarl, Leots, Mania, MoLLIa, Nanjiqq, Nefrit, Noobolov, Obakol, Oz, PterOs, Puree, Sart, Scorpions, Seal, Sitatunga, Spacedragon, Sw2rT1, tat2dawn, Wetxius, Yakodzuna, UI Users and Russian Community.")
 
 		local version = self:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 		version:SetPoint("BOTTOMRIGHT", -16, 16)
@@ -1002,7 +1040,7 @@ do
 		self.show = true
 	end)
 
-	InterfaceOptions_AddCategory(thxui)
+	InterfaceOptions_AddCategory(frame)
 end
 
 -- edit by Oz of shestak. org --

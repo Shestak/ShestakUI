@@ -10,7 +10,7 @@ T.race = select(2, UnitRace("player"))
 T.level = UnitLevel("player")
 T.client = GetLocale()
 T.realm = GetRealmName()
-T.color = RAID_CLASS_COLORS[T.class]
+T.color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[T.class]
 T.version = GetAddOnMetadata("ShestakUI", "Version")
 T.getscreenheight = tonumber(string.match(({GetScreenResolutions()})[GetCurrentResolution()], "%d+x(%d+)"))
 T.getscreenwidth = tonumber(string.match(({GetScreenResolutions()})[GetCurrentResolution()], "(%d+)x+%d"))
@@ -23,8 +23,7 @@ T.MOPVersion = function()
 	end
 end
 
-if (T.name == "Вершок" or T.name == "Вещмешок" or T.name == "Гребешок" or T.name == "Кулешок" or T.name == "Лапушок"
-or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торгашок" or T.name == "Черешок" or T.name == "Шестак")
-and T.realm == "Страж Смерти" then
+if T.name == "Вершок" or T.name == "Вещмешок" or T.name == "Гребешок" or T.name == "Кулешок" or T.name == "Лапушок"
+or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торгашок" or T.name == "Черешок" or T.name == "Шестак" then
 	T.author = true
 end

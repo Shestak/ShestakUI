@@ -65,6 +65,7 @@ local function LoadSkin()
 		"AudioOptionsSoundPanelHRTF",
 		"AudioOptionsSoundPanelEnableDSPs",
 		"AudioOptionsSoundPanelUseHardware",
+		"AudioOptionsSoundPanelPetBattleMusic",
 		"AudioOptionsVoicePanelEnableVoice",
 		"AudioOptionsVoicePanelEnableMicrophone",
 		"AudioOptionsVoicePanelPushToTalkSound",
@@ -105,7 +106,8 @@ local function LoadSkin()
 		"AudioOptionsSoundPanelSoundChannelsDropDown",
 		"AudioOptionsVoicePanelInputDeviceDropDown",
 		"AudioOptionsVoicePanelChatModeDropDown",
-		"AudioOptionsVoicePanelOutputDeviceDropDown"
+		"AudioOptionsVoicePanelOutputDeviceDropDown",
+		"Graphics_SSAODropDown"
 	}
 
 	for i = 1, getn(dropdown) do
@@ -114,6 +116,35 @@ local function LoadSkin()
 			T.SkinDropDownBox(frame, 165)
 		end
 	end
+
+	local sliders = {
+		"Graphics_Quality",
+		"Advanced_UIScaleSlider",
+		"Advanced_MaxFPSSlider",
+		"Advanced_MaxFPSBKSlider",
+		"Advanced_GammaSlider",
+		"AudioOptionsSoundPanelSoundQuality",
+		"AudioOptionsSoundPanelMasterVolume",
+		"AudioOptionsSoundPanelSoundVolume",
+		"AudioOptionsSoundPanelMusicVolume",
+		"AudioOptionsSoundPanelAmbienceVolume",
+		"AudioOptionsVoicePanelMicrophoneVolume",
+		"AudioOptionsVoicePanelSpeakerVolume",
+		"AudioOptionsVoicePanelSoundFade",
+		"AudioOptionsVoicePanelMusicFade",
+		"AudioOptionsVoicePanelAmbienceFade"
+	}
+
+	for i = 1, getn(sliders) do
+		local slider = _G[sliders[i]]
+		if slider then
+			T.SkinSlider(slider)
+			slider:SetFrameLevel(slider:GetFrameLevel() + 2)
+		end
+	end
+
+	_G["Graphics_Quality"].SetBackdrop = T.dummy
+	_G["Graphics_RightQuality"]:StripTextures()
 
 	_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
 	_G["VideoOptionsFrameDefaults"]:Point("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
@@ -124,7 +155,7 @@ local function LoadSkin()
 	_G["VideoOptionsFrameApply"]:ClearAllPoints()
 	_G["VideoOptionsFrameApply"]:Point("RIGHT", _G["VideoOptionsFrameOkay"], "LEFT", -4, 0)
 	_G["AudioOptionsVoicePanelPushToTalkSound"]:ClearAllPoints()
-	_G["AudioOptionsVoicePanelPushToTalkSound"]:Point("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", -1, -1)
+	_G["AudioOptionsVoicePanelPushToTalkSound"]:Point("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", 0, 0)
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:ClearAllPoints()
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:Point("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
 
@@ -135,17 +166,6 @@ local function LoadSkin()
 	_G["AudioOptionsSoundPanelVolume"]:SetFrameLevel(2)
 	_G["AudioOptionsVoicePanelTalking"]:SetFrameLevel(2)
 	_G["AudioOptionsVoicePanelBinding"]:SetFrameLevel(2)
-	_G["AudioOptionsVoicePanelListening"]:SetFrameLevel(2)
-	_G["AudioOptionsSoundPanelSoundQuality"]:SetFrameLevel(3)
-	_G["AudioOptionsSoundPanelMasterVolume"]:SetFrameLevel(3)
-	_G["AudioOptionsSoundPanelSoundVolume"]:SetFrameLevel(3)
-	_G["AudioOptionsSoundPanelMusicVolume"]:SetFrameLevel(3)
-	_G["AudioOptionsSoundPanelAmbienceVolume"]:SetFrameLevel(3)
-	_G["AudioOptionsVoicePanelMicrophoneVolume"]:SetFrameLevel(3)
-	_G["AudioOptionsVoicePanelSpeakerVolume"]:SetFrameLevel(3)
-	_G["AudioOptionsVoicePanelSoundFade"]:SetFrameLevel(3)
-	_G["AudioOptionsVoicePanelMusicFade"]:SetFrameLevel(3)
-	_G["AudioOptionsVoicePanelAmbienceFade"]:SetFrameLevel(3)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

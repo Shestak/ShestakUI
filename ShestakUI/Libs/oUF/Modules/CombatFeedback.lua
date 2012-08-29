@@ -13,7 +13,7 @@ local maxAlpha = 0.6
 local updateFrame
 local feedback = {}
 local originalHeight = {}
-local color 
+local color
 local colors = {
 	STANDARD		= { 1, 1, 1 },
 	-- Damage

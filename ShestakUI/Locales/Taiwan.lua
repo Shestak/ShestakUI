@@ -4,6 +4,24 @@ if T.client ~= "zhTW" then return end
 ----------------------------------------------------------------------------------------
 --	Localization for zhTW client(Thanks to Ianchan, Aelb, nanjiqq, Spacedragon, Mania and tat2dawn for the translation)
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " 使用我的光束泉. "
+L_ANNOUNCE_LA_CHARGE = " 刷新)"
+L_ANNOUNCE_LA_USELESS = " 盡量少地使用我的光束泉. "
+L_ANNOUNCE_LA_STOP = "你不應該使用光束泉."
+L_ANNOUNCE_LA_PLACED = "光束泉位置. "
+L_ANNOUNCE_LA_CHARGES = " 刷新."
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "No Food: " -- Needs review
+L_ANNOUNCE_FF_NOFLASK = "No Flask: " -- Needs review
+L_ANNOUNCE_FF_ALLBUFFED = "All Buffed!" -- Needs review
+L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask" -- Needs review
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Thanks for " -- Needs review
+L_ANNOUNCE_SS_RECEIVED = " received from " -- Needs review
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "沒有天賦"
 L_TOOLTIP_LOADING = "讀取中..."
@@ -14,6 +32,7 @@ L_TOOLTIP_SPELL_ID = "法術ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
 L_TOOLTIP_WHO_TARGET = "以其為目標的"
 L_TOOLTIP_ITEM_COUNT = "物品數量:"
+L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "無裝備"
@@ -21,6 +40,9 @@ L_MISC_DRINKING = " 吃喝中"
 L_MISC_BUY_STACK = "Alt-右鍵點擊購買一疊"
 L_MISC_ONECLICK_BUYOUT = "Shift-左鍵,不彈出確認窗口直接購買"
 L_MISC_ONECLICK_BID = "Shift-左鍵,不彈出確認窗口直接競標"
+L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
+L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
+L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
@@ -43,6 +65,7 @@ L_TOGGLE_COLLAPSE = "折疊 "
 L_TOGGLE_RCLICK = "右鍵點擊以啟用或禁用 "
 L_TOGGLE_LCLICK = "左鍵點擊來顯示/隱藏窗口 "
 L_TOGGLE_RELOAD = " (需要重載插件)"
+L_TOGGLE_NOT_FOUND = " not found." -- Needs review
 
 -- UnitFrame
 L_UF_GHOST = "靈魂"
@@ -62,9 +85,17 @@ L_MINIMAP_CALENDAR = "日曆"
 
 -- Addons list
 L_ALOAD_RL = "重新加載UI"
-L_ALOAD_TRADE = "經商"
-L_ALOAD_SOLO = "獨自"
 L_ALOAD_DEP = "依賴關係: "
+L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
+L_ALOAD_PROFILES = "Profiles" -- Needs review
+L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
+L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
+L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
+L_ALOAD_SET_TO = "Set To.." -- Needs review
+L_ALOAD_ADD_TO = "Add To.." -- Needs review
+L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
+L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
+L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -81,6 +112,7 @@ L_CHAT_RAID_WARNING = "團隊警告"
 L_CHAT_BATTLEGROUND = "戰場"
 L_CHAT_BATTLEGROUND_LEADER = "戰場領袖"
 L_CHAT_OFFICER = "官員"
+L_CHAT_PET_BATTLE = "PB" -- Needs review
 L_CHAT_COME_ONLINE = "上線了."
 L_CHAT_GONE_OFFLINE = "離線了."
 L_CHAT_COME_ONLINE_COLOR = "|cff298F00上線了|r !"
@@ -155,33 +187,37 @@ L_BIND_NO_SET = "沒有綁定快捷鍵"
 L_PLANNER_DEATHKNIGHT_1 = "血魄"
 L_PLANNER_DEATHKNIGHT_2 = "冰霜"
 L_PLANNER_DEATHKNIGHT_3 = "穢邪"
-L_PLANNER_WARRIOR_1 = "武器"
-L_PLANNER_WARRIOR_2 = "狂怒"
-L_PLANNER_WARRIOR_3 = "防護"
-L_PLANNER_ROGUE_1 = "刺殺"
-L_PLANNER_ROGUE_2 = "戰鬥"
-L_PLANNER_ROGUE_3 = "敏銳"
-L_PLANNER_MAGE_1 = "秘法"
-L_PLANNER_MAGE_2 = "火焰"
-L_PLANNER_MAGE_3 = "冰霜"
-L_PLANNER_PRIEST_1 = "戒律"
-L_PLANNER_PRIEST_2 = "神聖"
-L_PLANNER_PRIEST_3 = "暗影"
-L_PLANNER_WARLOCK_1 = "痛苦"
-L_PLANNER_WARLOCK_2 = "惡魔"
-L_PLANNER_WARLOCK_3 = "毀滅"
+L_PLANNER_DRUID_1 = "平衡"
+L_PLANNER_DRUID_2 = "野性戰鬥"
+L_PLANNER_DRUID_3 = "Guardian"	--need review
+L_PLANNER_DRUID_4 = "恢復"
 L_PLANNER_HUNTER_1 = "野獸控制"
 L_PLANNER_HUNTER_2 = "射擊"
 L_PLANNER_HUNTER_3 = "生存"
-L_PLANNER_DRUID_1 = "平衡"
-L_PLANNER_DRUID_2 = "野性戰鬥"
-L_PLANNER_DRUID_3 = "恢復"
-L_PLANNER_SHAMAN_1 = "元素"
-L_PLANNER_SHAMAN_2 = "增強"
-L_PLANNER_SHAMAN_3 = "恢復"
+L_PLANNER_MAGE_1 = "秘法"
+L_PLANNER_MAGE_2 = "火焰"
+L_PLANNER_MAGE_3 = "冰霜"
+L_PLANNER_MONK_1 = "Brewmaster"	--need review
+L_PLANNER_MONK_2 = "Mistweaver"	--need review
+L_PLANNER_MONK_3 = "Windwalker"	--need review
 L_PLANNER_PALADIN_1 = "神聖"
 L_PLANNER_PALADIN_2 = "防護"
 L_PLANNER_PALADIN_3 = "懲戒"
+L_PLANNER_PRIEST_1 = "戒律"
+L_PLANNER_PRIEST_2 = "神聖"
+L_PLANNER_PRIEST_3 = "暗影"
+L_PLANNER_ROGUE_1 = "刺殺"
+L_PLANNER_ROGUE_2 = "戰鬥"
+L_PLANNER_ROGUE_3 = "敏銳"
+L_PLANNER_SHAMAN_1 = "元素"
+L_PLANNER_SHAMAN_2 = "增強"
+L_PLANNER_SHAMAN_3 = "恢復"
+L_PLANNER_WARLOCK_1 = "痛苦"
+L_PLANNER_WARLOCK_2 = "惡魔"
+L_PLANNER_WARLOCK_3 = "毀滅"
+L_PLANNER_WARRIOR_1 = "武器"
+L_PLANNER_WARRIOR_2 = "狂怒"
+L_PLANNER_WARRIOR_3 = "防護"
 
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "基地突襲:"
@@ -194,15 +230,16 @@ L_DATATEXT_GRAVEYARDSASSAULTED = "墓地突襲:"
 L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:"
 L_DATATEXT_DEMOLISHERSDESTROYED = "石毀車摧毀:"
 L_DATATEXT_GATESDESTROYED = "大門摧毀:"
-L_DATATEXT_CONTROL = "控制:"
+L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:" -- Needs review
+L_DATATEXT_VICTORY_POINTS = "Victory Points:" -- Needs review
+L_DATATEXT_CARTS_CONTROLLED = "Carts Controlled:" -- Needs review
 
 -- Info text
 L_INFO_ERRORS = "目前沒有錯誤."
 L_INFO_INVITE = "接受邀請自: "
 L_INFO_DUEL = "拒絕決鬥請求: "
+L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
 L_INFO_DISBAND = "解散隊伍..."
-L_INFO_ADDON_SETS1 = "鍵入 /addons <solo/party/raid/pvp/trade/quest>, 載入預設的UI設定."
-L_INFO_ADDON_SETS2 = "你可以通過編輯`Config`資料夾的Settings.lua 以添加,刪除或改變設置."
 L_INFO_SETTINGS_DBM = "鍵入 /settings dbm, 載入 DBM 的設定."
 L_INFO_SETTINGS_DXE = "鍵入 /settings dxe, 載入 DXE 的設定."
 L_INFO_SETTINGS_MSBT = "鍵入 /settings msbt, 載入 MSBT 的設定."
@@ -223,6 +260,7 @@ L_POPUP_SETTINGS_ALL = "應用所有的UI設置? (DBM/DXE, Skada and MSBT)"
 L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素。"
 L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素。"
 L_POPUP_SETTINGS_BW = "需要改變BigWigs描點及風格化元素。"
+L_POPUP_ARMORY = "軍械庫"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "歡迎使用ShestakUI "
@@ -323,13 +361,10 @@ L_SLASHCMD_HELP = {
 	"/rd - 解散隊伍.",
 	"/toraid - 轉換為團隊或隊伍.",
 	"/teleport - 傳出隨機副本的命令.",
-	"/luaerror - 打開/關閉 插件報錯的彈出窗口.",
 	"/spec - 切換天賦.",
-	"/clfix - 戰鬥記錄修復.",
 	"/heal - 載入治療模式介面.",
 	"/dps - 載入傷害輸出模式介面.",
 	"/frame - 在聊天窗口輸出框架名稱.",
-	"/addons solo|party|raid|pvp|trade - 載入插件給 單獨|隊伍|團隊|玩家對玩家|交易.",
 	"/farmmode - 打開/關閉 小地圖採集模式.",
 	"/moveui - 解鎖/鎖定 介面內所有移動的框體.",
 	"/resetui - 重置介面設置到初始狀態.",
@@ -348,6 +383,104 @@ L_SLASHCMD_HELP = {
 	"/ainv - 打開/關閉 自動接受公會+好友 組隊邀請.",
 	"/testuf - 測試頭像框體位置.",
 	"/cfg - 打開介面設置面板.",
+}
+
+-- ExploreMap
+L_EXTRA_EXPLORED = "Explored: " -- Needs review
+L_EXTRA_ZONEACHID = {
+	-- http://www.wowhead.com/achievement=*
+	-- e(X)plore achievement id, (Q)uest achievement id
+	["東部王國"]							= {X =   42, A =    0, H =    0},
+	["卡林多"]							= {X =   43, A =    0, H =    0},
+	["外域"]							= {X =   44, A =    0, H =    0},
+	["北裂境"]							= {X =   45, A =    0, H =    0},
+	["Pandaria"]						= {X = 6974, A =    0, H =    0}, -- Needs review
+	["世界地圖"]							= {X =  nil, A =    0, H =    0},
+	-- Eastern Kingdoms
+	["阿拉希高地"]						= {X =  761, A = 4896, H = 4896},
+	["荒蕪之地"]							= {X =  765, A = 4900, H = 4900},
+	["詛咒之地"]							= {X =  766, A = 4909, H = 4909},
+	["燃燒平原"]							= {X =  775, A = 4901, H = 4901},
+	["逆風小徑"]							= {X =  777, A =    0, H =    0},
+	["丹莫洛"]							= {X =  627, A =    0, H =    0},
+	["暮色森林"]							= {X =  778, A = 4903, H =    0},
+	["東瘟疫之地"]						= {X =  771, A = 4892, H = 4892},
+	["艾爾文森林"]						= {X =  776, A =    0, H =    0},
+	["永歌森林"]							= {X =  859, A =    0, H =    0},
+	["鬼魂之地"]							= {X =  858, A =    0, H = 4908},
+	["希爾斯布萊德丘陵"]					= {X =  772, A =    0, H = 4895},
+	["洛克莫丹"]							= {X =  779, A = 4899, H =    0},
+	["北荊棘谷"]							= {X =  781, A = 4906, H = 4906},
+	["赤脊山"]							= {X =  780, A = 4902, H =    0},
+	["灼熱峽谷"]							= {X =  774, A = 4910, H = 4910},
+	["銀松森林"]							= {X =  769, A =    0, H = 4894},
+	["悲傷沼澤"]							= {X =  782, A = 4904, H = 4904},
+	["荊棘谷海角"]						= {X = 4995, A = 4905, H = 4905},
+	["辛特蘭"]							= {X =  773, A = 4897, H = 4897},
+	["提里斯法林地"]						= {X =  768, A =    0, H =    0},
+	["西瘟疫之地"]						= {X =  770, A = 4893, H = 4893},
+	["西部荒野"]							= {X =  802, A = 4903, H =    0},
+	["濕地"]							= {X =  841, A = 4899, H =    0},
+	-- Kalimdor
+	["梣谷"]							= {X =  845, A = 4925, H = 4976},
+	["艾薩拉"]							= {X =  852, A =    0, H = 4927},
+	["藍謎島"]							= {X =  860, A =    0, H =    0},
+	["血謎島"]							= {X =  861, A = 4926, H = 4926},
+	["黑海岸"]							= {X =  844, A = 4928, H = 4928},
+	["淒涼之地"]							= {X =  848, A = 4930, H = 4930},
+	["杜洛塔"]							= {X =  728, A =    0, H =    0},
+	["塵泥沼澤"]							= {X =  850, A = 4929, H = 4978},
+	["費伍德森林"]						= {X =  853, A = 4931, H = 4931},
+	["菲拉斯"]							= {X =  849, A = 4932, H = 4979},
+	["月光林地"]							= {X =  855, A =    0, H =    0},
+	["莫高雷"]							= {X =  736, A =    0, H =    0},
+	["北貧瘠之地"]						= {X =  750, A =    0, H = 4933},
+	["希利蘇斯"]							= {X =  856, A = 4934, H = 4934},
+	["南貧瘠之地"]						= {X = 4996, A = 4937, H = 4981},
+	["石爪山脈"]							= {X =  847, A = 4936, H = 4980},
+	["塔納利斯"]							= {X =  851, A = 4935, H = 4935},
+	["泰達希爾"]							= {X =  842, A =    0, H =    0},
+	["千針石林"]							= {X =  846, A = 4938, H = 4938},
+	["安戈洛環形山"]						= {X =  854, A = 4939, H = 4939},
+	["冬泉谷"]							= {X =  857, A = 4940, H = 4940},
+	-- Outland
+	["劍刃山脈"]							= {X =  865, A = 1193, H = 1193},
+	["地獄火半島"]						= {X =  862, A = 1189, H = 1271},
+	["納葛蘭"]							= {X =  866, A = 1192, H = 1273},
+	["虛空風暴"]							= {X =  843, A = 1194, H = 1194},
+	["影月谷"]							= {X =  864, A = 1195, H = 1195},
+	["泰洛卡森林"]						= {X =  867, A = 1191, H = 1272},
+	["贊格沼澤"]							= {X =  863, A = 1190, H = 1190},
+	-- Northrend
+	["北風凍原"]							= {X = 1264, A =   33, H = 1358},
+	["水晶之歌森林"]						= {X = 1457, A =    0, H =    0},
+	["龍骨荒野"]							= {X = 1265, A =   35, H = 1356},
+	["灰白之丘"]							= {X = 1266, A =   37, H = 1357},
+	["凜風峽灣"]							= {X = 1263, A =   34, H = 1356},
+	["寒冰皇冠"]							= {X = 1270, A =   40, H =   40},
+	["休拉薩盆地"]						= {X = 1268, A =   39, H =   39},
+	["風暴群山"]							= {X = 1269, A =   38, H =   38},
+	["祖爾德拉克"]						= {X = 1267, A =   36, H =   36},
+	-- Cataclysm
+	["地深之源"]							= {X = 4864, A = 4871, H = 4871},
+	["海加爾山"]							= {X = 4863, A = 4870, H = 4870},
+	["暮光高地"]							= {X = 4866, A = 4873, H = 5501},
+	["奧丹姆"]							= {X = 4865, A = 4872, H = 4872},
+	["瓦許伊爾"]							= {X = 4825, A = 4869, H = 4982},
+	["托巴拉德"]							= {X =    0, A = 4874, H = 4874},
+	["托巴拉德半島"]						= {X =    0, A = 4874, H = 4874},
+	-- Pandaria
+	["The Jade Forest"]					= {X = 6351, A = 6300, H = 6534}, -- Needs review
+	["Valley of the Four Winds"]		= {X = 6969, A = 6301, H = 6301}, -- Needs review
+	--["Krasarang Wilds"]					= {X = 6975, A = 6535, H = 6536}, -- Needs review
+	["Kun-Lai Summit"]					= {X = 6976, A = 6537, H = 6538}, -- Needs review
+	["Townlong Steppes"]				= {X = 6977, A = 6539, H = 6539}, -- Needs review
+	["Dread Wastes"]					= {X = 6978, A = 6540, H = 6540}, -- Needs review
+	["Vale of Eternal Blossoms"]		= {X = 6979, A =    0, H =    0}, -- Needs review
+	-- Boolean Explores
+	["奎爾達納斯之島"]					= {X =  868, A =    0, H =    0},
+	["安其拉: 沒落的王朝"]				= {X =    0, A =    0, H =    0},
+	["冬握湖"]							= {X =    0, A =    0, H =    0},
 }
 
 -- edit by Oz of shestak. org --

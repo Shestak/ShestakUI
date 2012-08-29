@@ -7,8 +7,9 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	ItemSocketingFrame:StripTextures()
 	ItemSocketingFrame:CreateBackdrop("Transparent")
-	ItemSocketingFrame.backdrop:Point("TOPLEFT", 16, -12)
-	ItemSocketingFrame.backdrop:Point("BOTTOMRIGHT", 0, 20)
+	ItemSocketingFrame.backdrop:Point("TOPLEFT", 0, 0)
+	ItemSocketingFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+	ItemSocketingFrameInset:StripTextures()
 	ItemSocketingScrollFrame:StripTextures()
 	ItemSocketingScrollFrame:CreateBackdrop("Overlay")
 
@@ -17,11 +18,13 @@ local function LoadSkin()
 		local button_bracket = _G["ItemSocketingSocket"..i.."BracketFrame"]
 		local button_bg = _G["ItemSocketingSocket"..i.."Background"]
 		local button_icon = _G["ItemSocketingSocket"..i.."IconTexture"]
+
 		button:StripTextures()
-		button:StyleButton(false)
+		button:StyleButton()
 		button:SetTemplate("Overlay", true)
 		button_bracket:Kill()
 		button_bg:Kill()
+
 		button_icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		button_icon:ClearAllPoints()
 		button_icon:Point("TOPLEFT", 2, -2)
@@ -38,7 +41,7 @@ local function LoadSkin()
 	ItemSocketingSocketButton:ClearAllPoints()
 	ItemSocketingSocketButton:Point("BOTTOMRIGHT", ItemSocketingFrame.backdrop, "BOTTOMRIGHT", -5, 5)
 	ItemSocketingSocketButton:SkinButton()
-	T.SkinCloseButton(ItemSocketingCloseButton, ItemSocketingFrame.backdrop)
+	T.SkinCloseButton(ItemSocketingFrameCloseButton, ItemSocketingFrame.backdrop)
 end
 
 T.SkinFuncs["Blizzard_ItemSocketingUI"] = LoadSkin

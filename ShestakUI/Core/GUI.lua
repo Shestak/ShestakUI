@@ -1,21 +1,17 @@
 local T, C, L = unpack(select(2, ...))
+if not IsAddOnLoaded("ShestakUI_Config") then return end
 
 ----------------------------------------------------------------------------------------
 --	This Module loads new user settings if ShestakUI_Config is loaded
 ----------------------------------------------------------------------------------------
-local myPlayerRealm = GetCVar("realmName")
-local myPlayerName = UnitName("player")
-
-if not IsAddOnLoaded("ShestakUI_Config") then return end
-
 if not GUIConfigAll then GUIConfigAll = {} end
-if (GUIConfigAll[myPlayerRealm] == nil) then GUIConfigAll[myPlayerRealm] = {} end
-if (GUIConfigAll[myPlayerRealm][myPlayerName] == nil) then GUIConfigAll[myPlayerRealm][myPlayerName] = false end
+if (GUIConfigAll[T.realm] == nil) then GUIConfigAll[T.realm] = {} end
+if (GUIConfigAll[T.realm][T.name] == nil) then GUIConfigAll[T.realm][T.name] = false end
 
-if GUIConfigAll[myPlayerRealm][myPlayerName] == true and not GUIConfig then return end
-if GUIConfigAll[myPlayerRealm][myPlayerName] == false and not GUIConfigSettings then return end
+if GUIConfigAll[T.realm][T.name] == true and not GUIConfig then return end
+if GUIConfigAll[T.realm][T.name] == false and not GUIConfigSettings then return end
 
-if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
+if GUIConfigAll[T.realm][T.name] == true then
 	for group, options in pairs(GUIConfig) do
 		if C[group] then
 			local count = 0

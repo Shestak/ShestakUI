@@ -54,10 +54,9 @@ local HAND_OF_LIGHT = GetSpellInfo(90174)
 local isHolyPowerAbility
 do
 	local HOLY_POWER_SPELLS = {
-		[85256] = GetSpellInfo(85256), -- Templar's Verdict
-		[53600] = GetSpellInfo(53600), -- Shield of the Righteous
-		[84963] = GetSpellInfo(84963), -- Inquisition
-		--[85673] = GetSpellInfo(85673), -- Word of Glory
+		[84963] = GetSpellInfo(84963),		-- Inquisition
+		[85673] = GetSpellInfo(85673),		-- Word of Glory
+		[114163] = GetSpellInfo(114163),	-- Eternal Flame
 	}
 
 	isHolyPowerAbility = function(actionId)
@@ -192,7 +191,7 @@ function tullaRange.UpdateButtonUsable(button)
 		if IsActionInRange(action) == 0 then
 			tullaRange.SetButtonColor(button, "oor")
 		-- Holy Power
-		elseif PLAYER_IS_PALADIN and isHolyPowerAbility(action) and not(UnitPower("player", SPELL_POWER_HOLY_POWER) == 3 or UnitBuff("player", HAND_OF_LIGHT)) then
+		elseif PLAYER_IS_PALADIN and isHolyPowerAbility(action) and not (UnitPower("player", SPELL_POWER_HOLY_POWER) >= 3 or UnitBuff("player", HAND_OF_LIGHT)) then
 			tullaRange.SetButtonColor(button, "ooh")
 		-- In range
 		else
@@ -200,12 +199,7 @@ function tullaRange.UpdateButtonUsable(button)
 		end
 	-- Out of mana
 	elseif notEnoughMana then
-		-- Holy Power
-		if PLAYER_IS_PALADIN and isHolyPowerAbility(action) and not(UnitPower("player", SPELL_POWER_HOLY_POWER) == 3 or UnitBuff("player", HAND_OF_LIGHT)) then
-			tullaRange.SetButtonColor(button, 'ooh')
-		else
-			tullaRange.SetButtonColor(button, 'oom')
-		end
+		tullaRange.SetButtonColor(button, "oom")
 	-- Unusable
 	else
 		button.tullaRangeColor = "unusuable"
@@ -217,7 +211,6 @@ function tullaRange.SetButtonColor(button, colorType)
 		button.tullaRangeColor = colorType
 
 		local r, g, b = tullaRange:GetColor(colorType)
-
 		local icon =  _G[button:GetName() .. "Icon"]
 		icon:SetVertexColor(r, g, b)
 	end

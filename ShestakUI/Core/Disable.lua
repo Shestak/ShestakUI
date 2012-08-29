@@ -26,15 +26,16 @@ if C.actionbar.bottombars < 1 then
 end
 
 if C.actionbar.petbar_horizontal == true then
-	C.actionbar.shapeshift_horizontal = false
+	C.actionbar.stancebar_horizontal = false
 end
 
 if C.error.black == true and C.error.white == true then
 	C.error.white = false
 end
 
-if C.error.hide == true and C.error.combat == true then
-	C.error.hide = false
+if C.error.combat == true then
+	C.error.black = false
+	C.error.white = false
 end
 
 ----------------------------------------------------------------------------------------
@@ -73,7 +74,7 @@ if IsAddOnLoaded("Afflicted3") or IsAddOnLoaded("InterruptBar") or IsAddOnLoaded
 	C.enemycooldown.enable = false
 end
 
-if IsAddOnLoaded("TipTac") or IsAddOnLoaded("FreebTip") then
+if IsAddOnLoaded("TipTac") or IsAddOnLoaded("FreebTip") or IsAddOnLoaded("bTooltip") or IsAddOnLoaded("PhoenixTooltip") or IsAddOnLoaded("Icetip") then
 	C.tooltip.enable = false
 end
 
@@ -81,7 +82,7 @@ if IsAddOnLoaded("Gladius") then
 	C.unitframe.show_arena = false
 end
 
-if IsAddOnLoaded("Omen") or IsAddOnLoaded("sThreatMeter2") or IsAddOnLoaded("SkadaThreat") then
+if IsAddOnLoaded("Omen") or IsAddOnLoaded("sThreatMeter2") or IsAddOnLoaded("SkadaThreat") or IsAddOnLoaded("RecountThreat") then
 	C.threat.enable = false
 end
 
@@ -93,14 +94,22 @@ if IsAddOnLoaded("TipTacTalents") then
 	C.tooltip.talents = false
 end
 
-if IsAddOnLoaded("AdiBags") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") then
+if IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") then
 	C.bag.enable = false
 end
 
-if IsAddOnLoaded("MikScrollingBattleText") then
+if IsAddOnLoaded("MikScrollingBattleText") or IsAddOnLoaded("Parrot") or IsAddOnLoaded("xCT") or IsAddOnLoaded("sct") then
 	C.combattext.enable = false
 end
 
 if IsAddOnLoaded("Doom_CooldownPulse") then
 	C.pulsecooldown.enable = false
+end
+
+if IsAddOnLoaded("GnomishVendorShrinker") then
+	C.misc.already_known = false
+end
+
+if IsAddOnLoaded("Clique") or IsAddOnLoaded("sBinder") then
+	C.misc.click_cast = false
 end

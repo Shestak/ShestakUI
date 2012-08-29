@@ -359,6 +359,9 @@ local UploadSkada = function()
 						["point"] = "BOTTOMRIGHT",
 						["x"] = -247,
 						["y"] = 1,
+						["title"] = {
+							["height"] = 12,
+						},
 					},
 				},
 				["icon"] = {
@@ -378,12 +381,12 @@ StaticPopupDialogs.SETTINGS_ALL = {
 		if IsAddOnLoaded("DXE") and C.skins.dxe then T.UploadDXE() end
 		if IsAddOnLoaded("MikScrollingBattleText") then UploadMSBT() end
 		if IsAddOnLoaded("Skada") then UploadSkada() end
-		ReloadUI() 
+		ReloadUI()
 	end,
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 SlashCmdList.SETTINGS = function(msg)

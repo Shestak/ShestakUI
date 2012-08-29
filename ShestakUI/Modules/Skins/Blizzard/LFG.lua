@@ -59,6 +59,7 @@ local function LoadSkin()
 	for i = 1, 5 do
 		local b = _G["LookingForGuildBrowseFrameContainerButton"..i]
 		local t = _G["LookingForGuildAppsFrameContainerButton"..i]
+
 		b:SetBackdrop(nil)
 		t:SetBackdrop(nil)
 	end

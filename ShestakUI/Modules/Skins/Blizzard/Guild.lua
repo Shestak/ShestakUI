@@ -67,6 +67,7 @@ local function LoadSkin()
 
 	for i, button in pairs(buttons) do
 		if i == 1 then
+			_G[button]:StripTextures(true)
 			_G[button]:SkinButton()
 		else
 			_G[button]:SkinButton(true)
@@ -137,6 +138,7 @@ local function LoadSkin()
 	-- Guild Perk buttons list
 	for i = 1, 8 do
 		local button = _G["GuildPerksContainerButton"..i]
+
 		button:StripTextures()
 
 		if button.icon then

@@ -4,6 +4,24 @@ if T.client ~= "ruRU" then return end
 ----------------------------------------------------------------------------------------
 --	Localization for ruRU client
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " выпил из моего колодца. "
+L_ANNOUNCE_LA_CHARGE = " заряд(ов))"
+L_ANNOUNCE_LA_USELESS = " использовал мой колодец впустую! "
+L_ANNOUNCE_LA_STOP = "Прекрати пить из моего колодца!!!"
+L_ANNOUNCE_LA_PLACED = "Колодец Света поставлен. "
+L_ANNOUNCE_LA_CHARGES = " зарядов."
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "Нет еды: "
+L_ANNOUNCE_FF_NOFLASK = "Нет настоя: "
+L_ANNOUNCE_FF_ALLBUFFED = "Еда и настой есть у всех. Можно щемить!"
+L_ANNOUNCE_FF_CHECK_BUTTON = "Проверка еды и настоя"
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Спасибо за "
+L_ANNOUNCE_SS_RECEIVED = " получено от "
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Нет талантов"
 L_TOOLTIP_LOADING = "Загрузка..."
@@ -14,6 +32,7 @@ L_TOOLTIP_SPELL_ID = "Номер заклинания:"
 L_TOOLTIP_ITEM_ID = "Номер предмета:"
 L_TOOLTIP_WHO_TARGET = "Выбран целью"
 L_TOOLTIP_ITEM_COUNT = "Количество предмета:"
+L_TOOLTIP_INSPECT_OPEN = "Открыто окно осмотра"
 
 -- Misc
 L_MISC_UNDRESS = "Раздеть"
@@ -21,6 +40,9 @@ L_MISC_DRINKING = " пьёт."
 L_MISC_BUY_STACK = "Зажмите Alt и щелкните мышью, чтобы купить связку"
 L_MISC_ONECLICK_BUYOUT = "Зажмите Shift и щелкните мышью, чтобы выкупить выбранный предмет без подтверждения"
 L_MISC_ONECLICK_BID = "Зажмите Shift и щелкните мышью, чтобы сделать ставку на выбранном предмете без подтверждения"
+L_MISC_UI_OUTDATED = "Ваша версия ShestakUI устарела. Вы можете скачать последнюю версию на www.shestak.org"
+L_MISC_HEADER_MARK = "Метки по наведению курсора"
+L_MISC_BINDER_OPEN = "Назначения мыши"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"
@@ -43,6 +65,7 @@ L_TOGGLE_COLLAPSE = "Скрыть "
 L_TOGGLE_RCLICK = "ПКМ - Включить или выключить "
 L_TOGGLE_LCLICK = "ЛКМ - Показать окно "
 L_TOGGLE_RELOAD = " (необходимо перезагрузить интерфейс)"
+L_TOGGLE_NOT_FOUND = " не найден."
 
 -- UnitFrame
 L_UF_GHOST = "Призрак"
@@ -62,9 +85,17 @@ L_MINIMAP_CALENDAR = "Календарь"
 
 -- Addons list
 L_ALOAD_RL = "Перезагрузить"
-L_ALOAD_TRADE = "Торговля"
-L_ALOAD_SOLO = "Соло"
 L_ALOAD_DEP = "Зависимые ресурсы: "
+L_ALOAD_OP_DEP = "Доп. зависимости: "
+L_ALOAD_PROFILES = "Профили"
+L_ALOAD_ENABLE_ALL = "Вкл. все"
+L_ALOAD_DISABLE_ALL = "Выкл. все"
+L_ALOAD_PROFILE_NAME = "Имя профиля"
+L_ALOAD_SET_TO = "Выбрать профиль.."
+L_ALOAD_ADD_TO = "Добавить в профиль.."
+L_ALOAD_REMOVE_FROM = "Очистить профиль.."
+L_ALOAD_DELETE_PROFILE = "Удалить профиль.."
+L_ALOAD_CONFIRM_DELETE = "Вы уверены, что хотите удалить этот профиль? Если да, удерживая shift, нажмите еще раз."
 
 -- Chat
 L_CHAT_WHISPER = "От"
@@ -81,6 +112,7 @@ L_CHAT_RAID_WARNING = "ОР"
 L_CHAT_BATTLEGROUND = "ПБ"
 L_CHAT_BATTLEGROUND_LEADER = "ЛПБ"
 L_CHAT_OFFICER = "О"
+L_CHAT_PET_BATTLE = "БП"
 L_CHAT_COME_ONLINE = "входит в игровой мир."
 L_CHAT_GONE_OFFLINE = "выходит из игрового мира."
 L_CHAT_COME_ONLINE_COLOR = "|cff298F00входит|r в игровой мир!"
@@ -155,33 +187,37 @@ L_BIND_NO_SET = "Не назначено"
 L_PLANNER_DEATHKNIGHT_1 = "Кровь"
 L_PLANNER_DEATHKNIGHT_2 = "Лед"
 L_PLANNER_DEATHKNIGHT_3 = "Нечестивость"
-L_PLANNER_WARRIOR_1 = "Оружие"
-L_PLANNER_WARRIOR_2 = "Неистовство"
-L_PLANNER_WARRIOR_3 = "Защита"
-L_PLANNER_ROGUE_1 = "Ликвидация"
-L_PLANNER_ROGUE_2 = "Бой"
-L_PLANNER_ROGUE_3 = "Скрытность"
-L_PLANNER_MAGE_1 = "Тайная магия"
-L_PLANNER_MAGE_2 = "Огонь"
-L_PLANNER_MAGE_3 = "Лед"
-L_PLANNER_PRIEST_1 = "Послушание"
-L_PLANNER_PRIEST_2 = "Свет"
-L_PLANNER_PRIEST_3 = "Тьма"
-L_PLANNER_WARLOCK_1 = "Колдовство"
-L_PLANNER_WARLOCK_2 = "Демонология"
-L_PLANNER_WARLOCK_3 = "Разрушение"
+L_PLANNER_DRUID_1 = "Баланс"
+L_PLANNER_DRUID_2 = "Сила зверя"
+L_PLANNER_DRUID_3 = "Страж"
+L_PLANNER_DRUID_4 = "Исцеление"
 L_PLANNER_HUNTER_1 = "Повелитель зверей"
 L_PLANNER_HUNTER_2 = "Стрельба"
 L_PLANNER_HUNTER_3 = "Выживание"
-L_PLANNER_DRUID_1 = "Баланс"
-L_PLANNER_DRUID_2 = "Сила зверя"
-L_PLANNER_DRUID_3 = "Исцеление"
-L_PLANNER_SHAMAN_1 = "Стихии"
-L_PLANNER_SHAMAN_2 = "Совершенствование"
-L_PLANNER_SHAMAN_3 = "Исцеление"
+L_PLANNER_MAGE_1 = "Тайная магия"
+L_PLANNER_MAGE_2 = "Огонь"
+L_PLANNER_MAGE_3 = "Лед"
+L_PLANNER_MONK_1 = "Хмелевар"
+L_PLANNER_MONK_2 = "Ткач туманов"
+L_PLANNER_MONK_3 = "Танцующий с ветром"
 L_PLANNER_PALADIN_1 = "Свет"
 L_PLANNER_PALADIN_2 = "Защита"
 L_PLANNER_PALADIN_3 = "Воздаяние"
+L_PLANNER_PRIEST_1 = "Послушание"
+L_PLANNER_PRIEST_2 = "Свет"
+L_PLANNER_PRIEST_3 = "Тьма"
+L_PLANNER_ROGUE_1 = "Ликвидация"
+L_PLANNER_ROGUE_2 = "Бой"
+L_PLANNER_ROGUE_3 = "Скрытность"
+L_PLANNER_SHAMAN_1 = "Стихии"
+L_PLANNER_SHAMAN_2 = "Совершенствование"
+L_PLANNER_SHAMAN_3 = "Исцеление"
+L_PLANNER_WARLOCK_1 = "Колдовство"
+L_PLANNER_WARLOCK_2 = "Демонология"
+L_PLANNER_WARLOCK_3 = "Разрушение"
+L_PLANNER_WARRIOR_1 = "Оружие"
+L_PLANNER_WARRIOR_2 = "Неистовство"
+L_PLANNER_WARRIOR_3 = "Защита"
 
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "Штурмы баз:"
@@ -194,15 +230,16 @@ L_DATATEXT_GRAVEYARDSASSAULTED = "Штурмы кладбищ:"
 L_DATATEXT_GRAVEYARDSDEFENDED = "Оборона кладбищ:"
 L_DATATEXT_DEMOLISHERSDESTROYED = "Разрушителей уничтожено:"
 L_DATATEXT_GATESDESTROYED = "Врат разрушено:"
-L_DATATEXT_CONTROL = " под контролем:"
+L_DATATEXT_ORB_POSSESSIONS = "Захваты сферы:"
+L_DATATEXT_VICTORY_POINTS = "Очки победы:"
+L_DATATEXT_CARTS_CONTROLLED = "Захваты вагонеток:"
 
 -- Info text
 L_INFO_ERRORS = "Ошибок не обнаружено."
 L_INFO_INVITE = "Приглашение принято от: "
 L_INFO_DUEL = "Дуэль отклонена от: "
+L_INFO_PET_DUEL = "Битва питомцев отклонена от: "
 L_INFO_DISBAND = "Роспуск группы..."
-L_INFO_ADDON_SETS1 = "Введите /addons <solo/party/raid/pvp/trade/quest>, чтобы загрузить предустановленный набор модификаций."
-L_INFO_ADDON_SETS2 = "Вы можете добавить, удалить или изменить списки модификаций, изменив файл Settings.lua(~469 строка) в папке Config."
 L_INFO_SETTINGS_DBM = "Введите /settings dbm, чтобы применить настройки DBM."
 L_INFO_SETTINGS_DXE = "Введите /settings dxe, чтобы применить настройки DXE."
 L_INFO_SETTINGS_MSBT = "Введите /settings msbt, чтобы применить настройки MSBT."
@@ -223,6 +260,7 @@ L_POPUP_SETTINGS_ALL = "Применить настройки для всех м
 L_POPUP_SETTINGS_DBM = "Необходимо изменить позиции элементов DBM."
 L_POPUP_SETTINGS_DXE = "Необходимо изменить позиции элементов DXE."
 L_POPUP_SETTINGS_BW = "Необходимо изменить позиции элементов BigWigs."
+L_POPUP_ARMORY = "Оружейная"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Добро пожаловать в ShestakUI "
@@ -277,7 +315,7 @@ L_STATS_OPEN_CURRENCY = "ЛКМ открывает окно валюты."
 L_STATS_OPEN_TALENT = "ЛКМ открывает окно талантов."
 L_STATS_XP_RATE = "Уровень ставки XP"
 L_STATS_IGNORED_ITEMS = "Список игнорируемых предметов."
-L_STATS_TOGGLE_TIME = "Местный / области и 24 часов времени могут быть переключены с момента управлять."
+L_STATS_TOGGLE_TIME = "Местное / Серверное и 24-ч. показ времени изменяются через меню часов."
 L_STATS_LOCATION = "Зона/Координаты"
 L_STATS_MEMORY = "Память"
 L_STATS_BAGS = "Сумки"
@@ -293,7 +331,7 @@ L_STATS_REMOVED_JUNK = "Удалено нежелательное исключе
 L_STATS_RESTED_XP = "Опыт отдыха"
 L_STATS_RC_COLLECTS_GARBAGE = "ПКМ очищает память от lua мусора."
 L_STATS_RC_TIME_MANAGER = "ПКМ открывает часы."
-L_STATS_RC_EXPERIENCE = "ПКМ циклу на основе опыта, время играл, и фракция часы."
+L_STATS_RC_EXPERIENCE = "ПКМ переключает показ опыта, время игры, слежение за фракцией."
 L_STATS_RC_AUTO_REPAIRING = "ПКМ переключает авто починку."
 L_STATS_RC_AUTO_SELLING = "ПКМ переключает авто продажу."
 L_STATS_RC_TALENT = "ПКМ переключает ваш набор талантов."
@@ -323,13 +361,10 @@ L_SLASHCMD_HELP = {
 	"/rd - Расформировать группу/рейд.",
 	"/toraid - Конвертация в группу/рейд.",
 	"/teleport - Телепортация из подземелья.",
-	"/luaerror ON|OFF - Включение/выключение lua ошибок.",
 	"/spec, /ss - Переключение набора талантов.",
-	"/clfix - Исправляет журнал боя.",
 	"/heal - Переключает на 'Heal' раскладку.",
 	"/dps - Переключает на 'DPS' раскладку.",
 	"/frame - Описание не готово.",
-	"/addons solo|party|raid|pvp|trade - Переключение между списками эддонов.",
 	"/farmmode - Увеличивает миникарту.",
 	"/moveui - Перемещение элементов интерфейса.",
 	"/resetui - Сброс общих настроек на стандартные.",
@@ -348,6 +383,104 @@ L_SLASHCMD_HELP = {
 	"/ainv - Включение автоматического приглашения.",
 	"/testuf - Тест юнит фреймов",
 	"/cfg - Открыть настройки интерфейса.",
+}
+
+-- ExploreMap
+L_EXTRA_EXPLORED = "Исследовано: "
+L_EXTRA_ZONEACHID = {
+	-- http://www.wowhead.com/achievement=*
+	-- e(X)plore achievement id, (Q)uest achievement id
+	["Восточные королевства"]			= {X =   42, A =    0, H =    0},
+	["Калимдор"]						= {X =   43, A =    0, H =    0},
+	["Запределье"]						= {X =   44, A =    0, H =    0},
+	["Нордскол"]						= {X =   45, A =    0, H =    0},
+	["Пандария"]						= {X = 6974, A =    0, H =    0},
+	["Карта мира"]						= {X =  nil, A =    0, H =    0},
+	-- Eastern Kingdoms
+	["Нагорье Арати"]					= {X =  761, A = 4896, H = 4896},
+	["Бесплодные земли"]				= {X =  765, A = 4900, H = 4900},
+	["Выжженные земли"]					= {X =  766, A = 4909, H = 4909},
+	["Пылающие степи"]					= {X =  775, A = 4901, H = 4901},
+	["Перевал Мертвого Ветра"]			= {X =  777, A =    0, H =    0},
+	["Дун Морог"]						= {X =  627, A =    0, H =    0},
+	["Сумеречный лес"]					= {X =  778, A = 4903, H =    0},
+	["Восточные Чумные земли"]			= {X =  771, A = 4892, H = 4892},
+	["Элвиннский лес"]					= {X =  776, A =    0, H =    0},
+	["Леса Вечной Песни"]				= {X =  859, A =    0, H =    0},
+	["Призрачные земли"]				= {X =  858, A =    0, H = 4908},
+	["Предгорья Хилсбрада"]				= {X =  772, A =    0, H = 4895},
+	["Лок Модан"]						= {X =  779, A = 4899, H =    0},
+	["Северная Тернистая долина"]		= {X =  781, A = 4906, H = 4906},
+	["Красногорье"]						= {X =  780, A = 4902, H =    0},
+	["Тлеющее ущелье"]					= {X =  774, A = 4910, H = 4910},
+	["Серебряный бор"]					= {X =  769, A =    0, H = 4894},
+	["Болото Печали"]					= {X =  782, A = 4904, H = 4904},
+	["Мыс Тернистой долины"]			= {X = 4995, A = 4905, H = 4905},
+	["Внутренние земли"]				= {X =  773, A = 4897, H = 4897},
+	["Тирисфальские леса"]				= {X =  768, A =    0, H =    0},
+	["Западные Чумные земли"]			= {X =  770, A = 4893, H = 4893},
+	["Западный Край"]					= {X =  802, A = 4903, H =    0},
+	["Болотина"]						= {X =  841, A = 4899, H =    0},
+	-- Kalimdor
+	["Ясеневый лес"]					= {X =  845, A = 4925, H = 4976},
+	["Азшара"]							= {X =  852, A =    0, H = 4927},
+	["Остров Лазурной Дымки"]			= {X =  860, A =    0, H =    0},
+	["Остров Кровавой Дымки"]			= {X =  861, A = 4926, H = 4926},
+	["Темные берега"]					= {X =  844, A = 4928, H = 4928},
+	["Пустоши"]							= {X =  848, A = 4930, H = 4930},
+	["Дуротар"]							= {X =  728, A =    0, H =    0},
+	["Пылевые топи"]					= {X =  850, A = 4929, H = 4978},
+	["Оскверненный лес"]				= {X =  853, A = 4931, H = 4931},
+	["Фералас"]							= {X =  849, A = 4932, H = 4979},
+	["Лунная поляна"]					= {X =  855, A =    0, H =    0},
+	["Мулгор"]							= {X =  736, A =    0, H =    0},
+	["Северные Степи"]					= {X =  750, A =    0, H = 4933},
+	["Силитус"]							= {X =  856, A = 4934, H = 4934},
+	["Южные Степи"]						= {X = 4996, A = 4937, H = 4981},
+	["Когтистые горы"]					= {X =  847, A = 4936, H = 4980},
+	["Танарис"]							= {X =  851, A = 4935, H = 4935},
+	["Тельдрассил"]						= {X =  842, A =    0, H =    0},
+	["Тысяча Игл"]						= {X =  846, A = 4938, H = 4938},
+	["Кратер Ун'Горо"]					= {X =  854, A = 4939, H = 4939},
+	["Зимние Ключи"]					= {X =  857, A = 4940, H = 4940},
+	-- Outland
+	["Острогорье"]						= {X =  865, A = 1193, H = 1193},
+	["Полуостров Адского Пламени"]		= {X =  862, A = 1189, H = 1271},
+	["Награнд"]							= {X =  866, A = 1192, H = 1273},
+	["Пустоверть"]						= {X =  843, A = 1194, H = 1194},
+	["Долина Призрачной Луны"]			= {X =  864, A = 1195, H = 1195},
+	["Лес Тероккар"]					= {X =  867, A = 1191, H = 1272},
+	["Зангартопь"]						= {X =  863, A = 1190, H = 1190},
+	-- Northrend
+	["Борейская тундра"]				= {X = 1264, A =   33, H = 1358},
+	["Лес Хрустальной Песни"]			= {X = 1457, A =    0, H =    0},
+	["Драконий Погост"]					= {X = 1265, A =   35, H = 1356},
+	["Седые холмы"]						= {X = 1266, A =   37, H = 1357},
+	["Ревущий фьорд"]					= {X = 1263, A =   34, H = 1356},
+	["Ледяная Корона"]					= {X = 1270, A =   40, H =   40},
+	["Низина Шолазар"]					= {X = 1268, A =   39, H =   39},
+	["Грозовая Гряда"]					= {X = 1269, A =   38, H =   38},
+	["Зул'Драк"]						= {X = 1267, A =   36, H =   36},
+	-- Cataclysm
+	["Подземье"]						= {X = 4864, A = 4871, H = 4871},
+	["Хиджал"]							= {X = 4863, A = 4870, H = 4870},
+	["Сумеречное нагорье"]				= {X = 4866, A = 4873, H = 5501},
+	["Ульдум"]							= {X = 4865, A = 4872, H = 4872},
+	["Вайш'ир"]							= {X = 4825, A = 4869, H = 4982},
+	["Тол Барад"]						= {X =    0, A = 4874, H = 4874},
+	["Полуостров Тол Барад"]			= {X =    0, A = 4874, H = 4874},
+	-- Pandaria
+	["Нефритовый лес"]					= {X = 6351, A = 6300, H = 6534},
+	["Долина Четырех Ветров"]			= {X = 6969, A = 6301, H = 6301},
+	--["Красарангские джунгли"]			= {X = 6975, A = 6535, H = 6536},
+	["Вершина Кунь-Лай"]				= {X = 6976, A = 6537, H = 6538},
+	["Танлунские степи"]				= {X = 6977, A = 6539, H = 6539},
+	["Жуткие пустоши"]					= {X = 6978, A = 6540, H = 6540},
+	["Вечноцветущий Дол"]				= {X = 6979, A =    0, H =    0},
+	-- Boolean Explores
+	["Остров Кель'Данас"]				= {X =  868, A =    0, H =    0},
+	["Ан'Кираж: Павшее Королевство"]	= {X =    0, A =    0, H =    0},
+	["Озеро Ледяных Оков"]				= {X =    0, A =    0, H =    0},
 }
 
 -- edit by Oz of shestak. org --

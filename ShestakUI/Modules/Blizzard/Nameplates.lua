@@ -265,22 +265,22 @@ local function Colorize(frame)
 	if g + b == 0 then	-- Hostile
 		r, g, b = unpack(T.oUF_colors.reaction[1])
 		frame.isFriendly = false
-		texcoord = {0.5, 0.75, 0.5, 0.75}
+		texcoord = {0, 0, 0, 0}
 	elseif r + b == 0 then	-- Friendly npc
 		r, g, b = unpack(T.oUF_colors.power["MANA"])
 		frame.isFriendly = true
-		texcoord = {0.5, 0.75, 0.5, 0.75}
+		texcoord = {0, 0, 0, 0}
 	elseif r + g > 1.95 then	-- Neutral
 		r, g, b = unpack(T.oUF_colors.reaction[4])
 		frame.isFriendly = false
-		texcoord = {0.5, 0.75, 0.5, 0.75}
+		texcoord = {0, 0, 0, 0}
 	elseif r + g == 0 then	-- Friendly player
 		r, g, b = unpack(T.oUF_colors.reaction[5])
 		frame.isFriendly = true
-		texcoord = {0.5, 0.75, 0.5, 0.75}
+		texcoord = {0, 0, 0, 0}
 	else	-- Enemy player
 		frame.isFriendly = false
-		texcoord = {0.5, 0.75, 0.5, 0.75}
+		texcoord = {0, 0, 0, 0}
 	end
 	frame.hasClass = false
 
@@ -667,9 +667,10 @@ local function HookFrames(...)
 		local frame = select(index, ...)
 		local region = frame:GetRegions()
 
-		if (not frames[frame] and (frame:GetName() and frame:GetName():find("NamePlate%d")) and region and region:GetObjectType() == "Texture" and region:GetTexture() == [[Interface\TargetingFrame\UI-TargetingFrame-Flash]]) then
+		if (not frames[frame] and (frame:GetName() and not frame.isSkinned and frame:GetName():find("NamePlate%d")) and region and region:GetObjectType() == "Texture") then
 			SkinObjects(frame)
 			frame.region = region
+			frame.isSkinned = true
 		end
 	end
 end
@@ -728,12 +729,4 @@ function NamePlates:PLAYER_ENTERING_WORLD()
 			SetCVar("nameplateShowEnemies", 0)
 		end
 	end
-
-	if C.nameplate.enable == true and C.nameplate.enhance_threat == true then
-		SetCVar("threatWarning", 3)
-	end
-
-	SetCVar("bloatthreat", 0)
-	SetCVar("bloattest", 0)
-	SetCVar("bloatnameplates", 0)
 end

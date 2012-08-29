@@ -5,15 +5,6 @@ if C.skins.blizzard_frames ~= true then return end
 --	RaidUI skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	local buttons = {
-		"RaidFrameRaidInfoButton",
-		"RaidFrameReadyCheckButton"
-	}
-
-	for i = 1, #buttons do
-		_G[buttons[i]]:SkinButton()
-	end
-
 	local StripAllTextures = {
 		"RaidGroup1",
 		"RaidGroup2",
@@ -39,8 +30,6 @@ local function LoadSkin()
 			_G["RaidGroup"..i.."Slot"..j]:SetTemplate("Transparent")
 		end
 	end
-
-	T.SkinCheckBox(RaidFrameAllAssistCheckButton)
 end
 
 T.SkinFuncs["Blizzard_RaidUI"] = LoadSkin

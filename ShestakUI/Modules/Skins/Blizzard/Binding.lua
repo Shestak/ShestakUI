@@ -28,11 +28,13 @@ local function LoadSkin()
 	for i = 1, KEY_BINDINGS_DISPLAYED do
 		local button1 = _G["KeyBindingFrameBinding"..i.."Key1Button"]
 		local button2 = _G["KeyBindingFrameBinding"..i.."Key2Button"]
+
 		button1:StripTextures(true)
-		button1:StyleButton(false)
+		button1:StyleButton()
 		button1:SetTemplate("Overlay", true)
+
 		button2:StripTextures(true)
-		button2:StyleButton(false)
+		button2:StyleButton()
 		button2:SetTemplate("Overlay", true)
 		button2:Point("LEFT", button1, "RIGHT", 1, 0)
 	end

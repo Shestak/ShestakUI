@@ -5,7 +5,7 @@ if C.unitframe.enable ~= true or IsAddOnLoaded("ShestakUI_DPS") then return end
 --	UnitFrames based on oUF_Caellian(by Caellian)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = oUFShestakUI
+local oUF = oUFShestakUI or ShestakUI.oUF
 
 -- Frame size
 local unit_width = 60.2
@@ -29,11 +29,7 @@ local function Shared(self, unit)
 	self.menu = T.SpawnMenu
 
 	-- Backdrop for every units
-	self.FrameBackdrop = CreateFrame("Frame", nil, self)
-	self.FrameBackdrop:SetTemplate("Default")
-	self.FrameBackdrop:SetFrameStrata("BACKGROUND")
-	self.FrameBackdrop:Point("TOPLEFT", -2, 2)
-	self.FrameBackdrop:Point("BOTTOMRIGHT", 2, -2)
+	self:CreateBackdrop("Default")
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", nil, self)
@@ -133,7 +129,7 @@ local function Shared(self, unit)
 	end
 
 	-- LFD role icons
-	if C.raidframe.icons_lfd_role == true and not (self:GetAttribute("unitsuffix") == "target") then 
+	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:Size(12)
 		self.LFDRole:Point("TOPLEFT", self.Health, 0, 0)
@@ -292,7 +288,7 @@ oUF:Factory(function(self)
 	oUF:SetActiveStyle("ShestakHeal")
 	if C.raidframe.show_party == true then
 		-- Party
-		local party = self:SpawnHeader("oUF_Party", nil, "custom [@raid6,exists] hide;show",
+		local party = self:SpawnHeader("oUF_Party", nil, "custom [@raid6,exists][petbattle] hide;show",
 			"oUF-initialConfigFunction", [[
 				local header = self:GetParent()
 				self:SetWidth(header:GetAttribute("initial-width"))
@@ -314,7 +310,7 @@ oUF:Factory(function(self)
 		end
 
 		-- Party targets
-		local partytarget = self:SpawnHeader("oUF_PartyTarget", nil, "custom [@raid6,exists] hide;show",
+		local partytarget = self:SpawnHeader("oUF_PartyTarget", nil, "custom [@raid6,exists][petbattle] hide;show",
 			"oUF-initialConfigFunction", [[
 				local header = self:GetParent()
 				self:SetWidth(header:GetAttribute("initial-width"))
@@ -333,7 +329,7 @@ oUF:Factory(function(self)
 		partytarget:Point("TOPLEFT", party, "BOTTOMLEFT", 0, -16)
 
 		-- Party pets
-		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists] hide;show",
+		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists][petbattle] hide;show",
 			"oUF-initialConfigFunction", [[
 				local header = self:GetParent()
 				self:SetWidth(header:GetAttribute("initial-width"))
@@ -356,7 +352,7 @@ oUF:Factory(function(self)
 			if InCombatLockdown() then return end
 
 			local lastGroup = 1
-			local numRaidMembers = GetNumRaidMembers()
+			local numRaidMembers = GetNumGroupMembers()
 			if numRaidMembers > 0 then
 				local playerGroup
 				for member = 1, numRaidMembers do
@@ -367,10 +363,9 @@ oUF:Factory(function(self)
 
 			partypet:Point("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, -((unit_height / 2) + 23))
 		end)
-		partypetupdate:RegisterEvent("PARTY_MEMBERS_CHANGED")
 		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
 		partypetupdate:RegisterEvent("PLAYER_REGEN_ENABLED")
-		partypetupdate:RegisterEvent("RAID_ROSTER_UPDATE")
+		partypetupdate:RegisterEvent("GROUP_ROSTER_UPDATE")
 		partypetupdate:RegisterEvent("UNIT_ENTERED_VEHICLE")
 		partypetupdate:RegisterEvent("UNIT_EXITED_VEHICLE")
 	end
@@ -379,8 +374,8 @@ oUF:Factory(function(self)
 		if C.raidframe.raid_groups_vertical then
 			-- Raid vertical
 			local raid = {}
-			for i = 1, C.raidframe.raid_groups do 
-				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
+			for i = 1, C.raidframe.raid_groups do
+				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists][petbattle] show;hide",
 					"oUF-initialConfigFunction", [[
 						local header = self:GetParent()
 						self:SetWidth(header:GetAttribute("initial-width"))
@@ -407,8 +402,8 @@ oUF:Factory(function(self)
 		else
 			-- Raid horizontal
 			local raid = {}
-			for i = 1, C.raidframe.raid_groups do 
-				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
+			for i = 1, C.raidframe.raid_groups do
+				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists][petbattle] show;hide",
 					"oUF-initialConfigFunction", [[
 						local header = self:GetParent()
 						self:SetWidth(header:GetAttribute("initial-width"))
@@ -427,7 +422,7 @@ oUF:Factory(function(self)
 				if i == 1 then
 					raidgroup:Point(unpack(C.position.unitframes.raid_heal))
 				else
-					raidgroup:Point("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -16)
+					raidgroup:Point("TOPLEFT", raid[i-1], "TOPRIGHT", 0, -16)
 				end
 				raid[i] = raidgroup
 			end

@@ -80,9 +80,6 @@ local function LoadSkin()
 		ArenaHeader(nil, true, i)
 	end
 
-	PVPBannerFrame:ClearAllPoints()
-	PVPBannerFrame:Point("TOPLEFT", PVPFrame, "TOPRIGHT", 3, 0)
-	PVPBannerFrame.SetPoint = T.dummy
 	PVPBannerFrameEditBox:CreateBackdrop("Overlay")
 	PVPBannerFrameEditBox.backdrop:Point("TOPLEFT", PVPBannerFrameEditBox, "TOPLEFT" , -5, -5)
 	PVPBannerFrameEditBox.backdrop:Point("BOTTOMRIGHT", PVPBannerFrameEditBox, "BOTTOMRIGHT", 5, 5)
@@ -100,20 +97,24 @@ local function LoadSkin()
 	PVPFrameConquestBarMiddle:Kill()
 	PVPFrameConquestBarBG:Kill()
 	PVPFrameConquestBarShadow:Kill()
-	PVPFrameConquestBar.progress:SetTexture(C.media.texture)
+
+	PVPFrameConquestBarProgress:SetTexture(C.media.texture)
 	PVPFrameConquestBar:CreateBackdrop("Overlay")
-	PVPFrameConquestBar.backdrop:Point("TOPLEFT", PVPFrameConquestBar.progress, "TOPLEFT", -2, 2)
-	PVPFrameConquestBar.backdrop:Point("BOTTOMRIGHT", PVPFrameConquestBar, "BOTTOMRIGHT", -2, 1)
+	PVPFrameConquestBar.backdrop:Point("TOPLEFT", PVPFrameConquestBar, "TOPLEFT", 2, -2)
+	PVPFrameConquestBar.backdrop:Point("BOTTOMRIGHT", PVPFrameConquestBar, "BOTTOMRIGHT", -2, 2)
+	PVPFrameConquestBar.backdrop:SetFrameLevel(PVPFrameConquestBar:GetFrameLevel() - 1)
 
 	PVPBannerFrame:CreateBackdrop("Transparent")
 	PVPBannerFrame.backdrop:Point("TOPLEFT", PVPBannerFrame, "TOPLEFT")
 	PVPBannerFrame.backdrop:Point("BOTTOMRIGHT", PVPBannerFrame, "BOTTOMRIGHT")
+
 	PVPBannerFrameCustomization1:CreateBackdrop("Overlay")
 	PVPBannerFrameCustomization1.backdrop:Point("TOPLEFT", PVPBannerFrameCustomization1LeftButton, "TOPRIGHT" , 2, 0)
 	PVPBannerFrameCustomization1.backdrop:Point("BOTTOMRIGHT", PVPBannerFrameCustomization1RightButton, "BOTTOMLEFT", -2, 0)
 	PVPBannerFrameCustomization2:CreateBackdrop("Overlay")
 	PVPBannerFrameCustomization2.backdrop:Point("TOPLEFT", PVPBannerFrameCustomization2LeftButton, "TOPRIGHT", 2, 0)
 	PVPBannerFrameCustomization2.backdrop:Point("BOTTOMRIGHT", PVPBannerFrameCustomization2RightButton, "BOTTOMLEFT", -2, 0)
+
 	T.SkinCloseButton(PVPBannerFrameCloseButton, PVPBannerFrame)
 	T.SkinNextPrevButton(PVPBannerFrameCustomization1LeftButton)
 	PVPBannerFrameCustomization1LeftButton:Height(PVPBannerFrameCustomization1:GetHeight())
@@ -122,6 +123,7 @@ local function LoadSkin()
 	T.SkinNextPrevButton(PVPBannerFrameCustomization2LeftButton)
 	PVPBannerFrameCustomization2LeftButton:Height(PVPBannerFrameCustomization1:GetHeight())
 	T.SkinNextPrevButton(PVPBannerFrameCustomization2RightButton)
+
 	PVPBannerFrameCustomization2RightButton:Height(PVPBannerFrameCustomization1:GetHeight())
 	PVPFrame:CreateBackdrop("Transparent")
 	PVPFrame.backdrop:Point("TOPLEFT", PVPFrame, "TOPLEFT")
@@ -145,19 +147,14 @@ local function LoadSkin()
 	WarGamesFrameDescription:SetTextColor(1, 1, 1)
 	WarGamesFrameDescription:SetFont(C.media.normal_font, 14)
 
-	-- Cancel Button FFSlocal
-	local f = PVPBannerFrameCancelButton
-	local l = _G[f:GetName().."Left"]
-	local m = _G[f:GetName().."Middle"]
-	local r = _G[f:GetName().."Right"]
-	if l then l:SetAlpha(0) end
-	if m then m:SetAlpha(0) end
-	if r then r:SetAlpha(0) end
-	f:CreateBackdrop("Overlay")
-	f:SetFrameLevel(PVPBannerFrameAcceptButton:GetFrameLevel() + 1)
-	f.backdrop:Point("TOPLEFT", PVPBannerFrameAcceptButton, "TOPLEFT", PVPBannerFrame:GetWidth() - PVPBannerFrameAcceptButton:GetWidth() - 10, 0)
-	f.backdrop:Point("BOTTOMRIGHT", PVPBannerFrameAcceptButton, "BOTTOMRIGHT", PVPBannerFrame:GetWidth() - PVPBannerFrameAcceptButton:GetWidth() - 10, 0)
-	f.backdrop:SetFrameLevel(f:GetFrameLevel() - 1)
+	-- Cancel PVPBanner Button
+	for i = 1, PVPBannerFrame:GetNumChildren() do
+		local child = select(i, PVPBannerFrame:GetChildren())
+		if child:GetObjectType() == "Button" then
+			local name = child:GetName()
+			if name ~= "PVPBannerFrameCloseButton" then child:SkinButton() end
+		end
+	end
 
 	-- Bottom Tabs
 	for i = 1, 4 do

@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.raidcooldown.enable == true then return end
+if C.raidcooldown.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Raid cooldowns(alRaidCD by Allez)
@@ -86,9 +86,9 @@ end
 
 local OnMouseDown = function(self, button)
 	if button == "LeftButton" then
-		if GetRealNumRaidMembers() > 0 then
+		if GetNumGroupMembers() > 0 then
 			SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "RAID")
-		elseif GetRealNumPartyMembers() > 0 and not UnitInRaid("player") then
+		elseif GetNumSubgroupMembers() > 0 and not UnitInRaid("player") then
 			SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "PARTY")
 		else
 			SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "SAY")
@@ -162,7 +162,7 @@ local StartTimer = function(name, spellId)
 	end
 	bar.spell = spell
 	bar:Show()
-	local color = RAID_CLASS_COLORS[select(2, UnitClass(name))]
+	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(name))]
 	if color then
 		bar:SetStatusBarColor(color.r, color.g, color.b)
 		bar.bg:SetVertexColor(color.r, color.g, color.b, 0.25)

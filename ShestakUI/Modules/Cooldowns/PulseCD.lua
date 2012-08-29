@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if not C.pulsecooldown.enable == true then return end
+if C.pulsecooldown.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on Doom Cooldown Pulse(by Woffle of Dark Iron, editor Affli)
@@ -220,7 +220,7 @@ hooksecurefunc("UseContainerItem", function(bag, slot)
 	end
 end)
 
-SlashCmdList.PulseCD = function(msg) 
+SlashCmdList.PulseCD = function(msg)
 	RefreshLocals()
 	tinsert(animating, {"Interface\\Icons\\Inv_Misc_Tournaments_Banner_Human"})
 	DCP:SetScript("OnUpdate", OnUpdate)

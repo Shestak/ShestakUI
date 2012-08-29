@@ -60,7 +60,7 @@ local conditions = setmetatable({
 			return unit and UnitPower("player") ~= UnitPowerMax("player")
 		end
 	end,
-	Arena = function(obj, unit) return unit and GetZonePVPInfo() == "arena" end, 
+	Arena = function(obj, unit) return unit and GetZonePVPInfo() == "arena" end,
 	Instance = function(obj, unit) return unit and IsInInstance() ~= nil end,
 }, {__index = function(t, k)
 	local cond = strmatch(k, "not(.+)")

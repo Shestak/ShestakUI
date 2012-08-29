@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.unitframe.enable ~= true or C.unitframe.plugins_totem_bar ~= true or T.class ~= "SHAMAN" then return end
+if C.unitframe.enable ~= true or C.unitframe_class_bar.totem ~= true or T.class ~= "SHAMAN" then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on oUF_TotemBar(by Soeters)
@@ -7,7 +7,6 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_totem_bar ~= true or T.clas
 local _, ns = ...
 local oUF = ns.oUF
 
-local _, pClass = UnitClass("player")
 local total = 0
 local delay = 0.01
 
@@ -21,21 +20,16 @@ local colors = {
 
 local GetTotemInfo, SetValue, GetTime = GetTotemInfo, SetValue, GetTime
 
-local Abbrev = function(name)
-	local newname = (string.len(name) > 11) and string.gsub(name, "%s?(.[\128-\191]*)%S+%s", "%1. ") or name
-	return T.UTF(newname, 11, false)
-end
-
-local function TotemOnClick(self,...)
+local function TotemOnClick(self, ...)
 	local id = self.ID
 	local mouse = ...
 
 	if IsShiftKeyDown() then
-		for j = 1, 4 do 
+		for j = 1, 4 do
 			DestroyTotem(j)
-		end 
-	else 
-		DestroyTotem(id) 
+		end
+	else
+		DestroyTotem(id)
 	end
 end
 
@@ -52,6 +46,7 @@ end
 
 local function UpdateSlot(self, slot)
 	local totem = self.TotemBar
+	if not totem[slot] then return end
 	local haveTotem, name, startTime, duration, totemIcon = GetTotemInfo(slot)
 
 	totem[slot]:SetStatusBarColor(unpack(totem.colors[slot]))
@@ -62,42 +57,35 @@ local function UpdateSlot(self, slot)
 		local mu = totem[slot].bg.multiplier
 		local r, g, b = totem[slot]:GetStatusBarColor()
 		r, g, b = r*mu, g*mu, b*mu
-		totem[slot].bg:SetVertexColor(r, g, b) 
+		totem[slot].bg:SetVertexColor(r, g, b)
 	end
 
 	totem[slot].ID = slot
 
-	-- If we have a totem then set his value 
+	-- If we have a totem then set his value
 	if haveTotem then
-		
-		if totem[slot].Name then
-			totem[slot].Name:SetText(Abbrev(name))
-		end
 		if duration > 0 then
 			totem[slot]:SetValue(1 - ((GetTime() - startTime) / duration))
 			-- Status bar update
 			totem[slot]:SetScript("OnUpdate", function(self, elapsed)
-					total = total + elapsed
-					if total >= delay then
-						total = 0
-						haveTotem, name, startTime, duration, totemIcon = GetTotemInfo(self.ID)
-							if ((GetTime() - startTime) == 0) then
-								self:SetValue(0)
-							else
-								self:SetValue(1 - ((GetTime() - startTime) / duration))
-							end
+				total = total + elapsed
+				if total >= delay then
+					total = 0
+					haveTotem, name, startTime, duration, totemIcon = GetTotemInfo(self.ID)
+					if startTime == 0 then return end
+					if ((GetTime() - startTime) == 0) then
+						self:SetValue(0)
+					else
+						self:SetValue(1 - ((GetTime() - startTime) / duration))
 					end
-				end)
+				end
+			end)
 		else
 			-- There's no need to update because it doesn't have any duration
 			totem[slot]:SetScript("OnUpdate", nil)
 			totem[slot]:SetValue(0)
-		end 
-	else
-		-- No totem = no time 
-		if totem[slot].Name then
-			totem[slot].Name:SetText(" ")
 		end
+	else
 		totem[slot]:SetValue(0)
 	end
 
@@ -105,7 +93,7 @@ end
 
 local function Update(self, unit)
 	-- Update every slot on login, still have issues with it
-	for i = 1, 4 do 
+	for i = 1, 4 do
 		UpdateSlot(self, i)
 	end
 end

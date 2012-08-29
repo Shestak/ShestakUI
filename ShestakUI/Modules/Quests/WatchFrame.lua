@@ -53,7 +53,7 @@ local function setup()
 	WatchFrame:SetParent(UIWatchFrame)
 	WatchFrame:SetFrameStrata("MEDIUM")
 	WatchFrame:SetFrameLevel(3)
-	WatchFrame:SetClampedToScreen(false)
+	WatchFrame:SetClampedToScreen(true)
 	WatchFrame:ClearAllPoints()
 	WatchFrame.ClearAllPoints = function() end
 	WatchFrame:Point("TOPLEFT", 25, 2)
@@ -62,20 +62,20 @@ local function setup()
 end
 
 -- Execute setup after we enter world
-local f = CreateFrame("Frame")
-f:Hide()
-f.elapsed = 0
-f:SetScript("OnUpdate", function(self, elapsed)
-	f.elapsed = f.elapsed + elapsed
-	if f.elapsed > 0.5 then
+local frame = CreateFrame("Frame")
+frame:Hide()
+frame.elapsed = 0
+frame:SetScript("OnUpdate", function(self, elapsed)
+	frame.elapsed = frame.elapsed + elapsed
+	if frame.elapsed > 0.5 then
 		setup()
-		f:Hide()
+		frame:Hide()
 	end
 end)
 UIWatchFrame:SetScript("OnEvent", function()
-	if not IsAddOnLoaded("Who Framed Watcher Wabbit") or not IsAddOnLoaded("Fux") then 
+	if not IsAddOnLoaded("Who Framed Watcher Wabbit") or not IsAddOnLoaded("Fux") then
 		init()
-		f:Show()
+		frame:Show()
 	end
 end)
 
@@ -89,7 +89,7 @@ hooksecurefunc("SetItemButtonTexture", function(button, texture)
 		local count = _G[button:GetName().."Count"]
 		local hotkey = _G[button:GetName().."HotKey"]
 
-		button:Size(T.buttonsize)
+		button:Size(C.actionbar.button_size)
 		button:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -108,7 +108,7 @@ hooksecurefunc("SetItemButtonTexture", function(button, texture)
 		border:SetAllPoints()
 		border:SetTexture(nil)
 
-		button:StyleButton(false)
+		button:StyleButton()
 
 		button.skinned = true
 	end

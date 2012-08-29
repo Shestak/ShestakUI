@@ -8,10 +8,11 @@ local ForceWarning = CreateFrame("Frame")
 ForceWarning:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
 ForceWarning:RegisterEvent("LFG_PROPOSAL_SHOW")
 ForceWarning:RegisterEvent("PARTY_INVITE_REQUEST")
+ForceWarning:RegisterEvent("CONFIRM_SUMMON")
 ForceWarning:SetScript("OnEvent", function(self, event)
 	if event == "UPDATE_BATTLEFIELD_STATUS" and StaticPopup_Visible("CONFIRM_BATTLEFIELD_ENTRY") then
 		PlaySound("ReadyCheck", "Master")
-	elseif event == "LFG_PROPOSAL_SHOW" or event == "PARTY_INVITE_REQUEST" then
+	elseif event == "LFG_PROPOSAL_SHOW" or event == "PARTY_INVITE_REQUEST" or event == "CONFIRM_SUMMON" then
 		PlaySound("ReadyCheck", "Master")
 	end
 end)
@@ -24,6 +25,19 @@ AchFilter:RegisterEvent("ADDON_LOADED")
 AchFilter:SetScript("OnEvent", function(self, event, addon)
 	if addon == "Blizzard_AchievementUI" then
 		AchievementFrame_SetFilter(3)
+	end
+end)
+
+----------------------------------------------------------------------------------------
+--	Auto SetFilter for PetJournal
+----------------------------------------------------------------------------------------
+local PetFilter = CreateFrame("Frame")
+PetFilter:RegisterEvent("ADDON_LOADED")
+PetFilter:SetScript("OnEvent", function(self, event, addon)
+	if addon == "Blizzard_PetJournal" then
+		C_PetJournal.SetFlagFilter(LE_PET_JOURNAL_FLAG_COLLECTED, true)
+		C_PetJournal.SetFlagFilter(LE_PET_JOURNAL_FLAG_FAVORITES, true)
+		C_PetJournal.SetFlagFilter(LE_PET_JOURNAL_FLAG_NOT_COLLECTED, false)
 	end
 end)
 
@@ -55,27 +69,6 @@ EnchantPopup:SetScript("OnEvent", function(...)
 end)
 
 ----------------------------------------------------------------------------------------
---	Block damage meter spam(Decount by Tekkub)
-----------------------------------------------------------------------------------------
-local filterstrings = {
-	"^Recount - (.*)$",
-	"%d+%. %S+%s*%d+ %([%d.]+, [%d.]+%%%)",			-- Recount
-	--"^(%d+). (.*)$",								-- Also Recount
-	"%d+%. - [%d.]+%%% %S+%s*%d+",					-- 
-	"%d+%.%s+[%w%s]+%s+[%d.]+ %([%d.]+%)",			-- 10. Khal 2397.9 (5.8%)
-	--"%d+%.%s+%S+%s+<%S+>%s+[%d.]+%s+%([%d.]+%)",	-- 2. Bonehead <Demante> 129.9 (3.9%)
-	"%d+%.%s+%S+%s+[%d.]+",							-- 10. Khal 2397.9
-}
-
-local function filter(self, event, msg)
-	for _, str in pairs(filterstrings) do if msg:match(str) then return true end end
-end
-
-for _,event in pairs{"CHAT_MSG_YELL", "CHAT_MSG_SAY", "CHAT_MSG_RAID", "CHAT_MSG_PARTY"} do
-	ChatFrame_AddMessageEventFilter(event, filter)
-end
-
-----------------------------------------------------------------------------------------
 --	Auto select current event boss from LFD tool(EventBossAutoSelect by Nathanyel)
 ----------------------------------------------------------------------------------------
 local firstLFD
@@ -93,41 +86,9 @@ LFDParentFrame:HookScript("OnShow", function()
 end)
 
 ----------------------------------------------------------------------------------------
---	Check date
-----------------------------------------------------------------------------------------
-function T.DateCheck(m, d)
-	local month = tonumber(date("%m"))
-	local day = tonumber(date("%d"))
-	if month == m and day == d then
-		return true
-	else
-		return false
-	end
-end
-
-local f = CreateFrame("Frame")
-f:RegisterEvent("PLAYER_ENTERING_WORLD")
-f:SetScript("OnEvent", function(self)
-	if T.DateCheck(1, 1) == true then
-		T.Delay(15, print, "|cffffff00Happy New Year. From Shestak.|r")
-		T.Delay(16, T.InfoTextShow, "Happy New Year. From Shestak.")
-	--elseif T.DateCheck(1, 8) == true then
-	--	T.Delay(15, print, "|cffffff00Blah blah. From Shestak.|r")
-	--	T.Delay(16, T.InfoTextShow, "Blah blah. From Shestak.")
-	end
-	self:UnregisterAllEvents()
-end)
-
-----------------------------------------------------------------------------------------
---	Enables Launcher to download Mist of Pandaria data files
-----------------------------------------------------------------------------------------
-if GetCVar("accounttype") ~= "MP" then
-	SetCVar("accounttype", "MP")
-end
-
-----------------------------------------------------------------------------------------
 --	Auto hide unnecessary stats from CharacterFrame(module from Inomena by p3lim)
 ----------------------------------------------------------------------------------------
+if T.MOPVersion then return end
 PAPERDOLL_STATCATEGORIES = {
 	GENERAL = {
 		id = 1,
@@ -186,11 +147,7 @@ PAPERDOLL_STATCATEGORIES = {
 			"PARRY",
 			"BLOCK",
 			"RESILIENCE_REDUCTION",
-			"ARCANE",
-			"FIRE",
-			"FROST",
-			"NATURE",
-			"SHADOW",
+			"PVP_POWER",
 		},
 	},
 }
@@ -228,18 +185,19 @@ local classes = {
 	SHAMAN = {3, 1, 3},
 	WARLOCK = {3, 3, 3},
 	WARRIOR = {1, 1, 1},
+	MONK = {1, 1, 1},
 }
 
 local handler = CreateFrame("Frame")
 handler:RegisterEvent("PLAYER_TALENT_UPDATE")
 handler:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 handler:SetScript("OnEvent", function()
-	local tabs = GetNumTalentTabs()
+	local tabs = GetNumSpecializations()
 	if tabs == 0 then return end
 
 	local mostPoints = -1
 	for index = 1, tabs do
-		local _, _, _, _, points = GetTalentTabInfo(index)
+		local _, _, _, _, points = GetSpecializationInfo(index)
 		if points > mostPoints then
 			mostPoints = points
 			spec = index

@@ -4,6 +4,24 @@ if T.client ~= "deDE" then return end
 ----------------------------------------------------------------------------------------
 --	Localization for deDE client(Thanks to Baine, chubidu, Vienchen and Alwa for the translation)
 ----------------------------------------------------------------------------------------
+-- Announce your Lightwell
+L_ANNOUNCE_LA_USE = " used my lightwell. " -- Needs review
+L_ANNOUNCE_LA_CHARGE = " charge(s))" -- Needs review
+L_ANNOUNCE_LA_USELESS = " used my lightwell, uselessly. " -- Needs review
+L_ANNOUNCE_LA_STOP = "You shouldn't have used the lightwell." -- Needs review
+L_ANNOUNCE_LA_PLACED = "Lightwell placed. " -- Needs review
+L_ANNOUNCE_LA_CHARGES = " charges." -- Needs review
+
+-- Announce flasks and food
+L_ANNOUNCE_FF_NOFOOD = "Kein Essen: "
+L_ANNOUNCE_FF_NOFLASK = "Kein Fläschchen: "
+L_ANNOUNCE_FF_ALLBUFFED = "Alles drin!"
+L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask" -- Needs review
+
+-- Says thanks for some spells
+L_ANNOUNCE_SS_THANKS = "Thanks for " -- Needs review
+L_ANNOUNCE_SS_RECEIVED = " received from " -- Needs review
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
 L_TOOLTIP_LOADING = "Lade..."
@@ -14,6 +32,7 @@ L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
 L_TOOLTIP_WHO_TARGET = "Anvisiert von"
 L_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe:"
+L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
 
 -- Misc
 L_MISC_UNDRESS = "Ausziehen"
@@ -21,6 +40,9 @@ L_MISC_DRINKING = " trinkt."
 L_MISC_BUY_STACK = "Alt-Klick um einen Stapel zu kaufen"
 L_MISC_ONECLICK_BUYOUT = "Shift-Click um den ausgewählten Gegenstand ohne Bestätigung zu kaufen"
 L_MISC_ONECLICK_BID = "Shift-Click um auf den ausgewählten Gegenstand ohne Bestätigung zu bieten"
+L_MISC_UI_OUTDATED = "Deine Version von ShestakUI ist veraltet. Du kannst die aktuelle Version von www.shestak.org laden"
+L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
+L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"
@@ -43,6 +65,7 @@ L_TOGGLE_COLLAPSE = "schließen "
 L_TOGGLE_RCLICK = "Rechtsklick zum Aktivieren oder Deaktiveren "
 L_TOGGLE_LCLICK = "Links klicken um Fenster aktiv zu halten "
 L_TOGGLE_RELOAD = " (benötigt UI neustart)"
+L_TOGGLE_NOT_FOUND = " not found." -- Needs review
 
 -- UnitFrame
 L_UF_GHOST = "Geist"
@@ -62,9 +85,17 @@ L_MINIMAP_CALENDAR = "Kalender"
 
 -- Addons list
 L_ALOAD_RL = "Interface Neuladen"
-L_ALOAD_TRADE = "Handel"
-L_ALOAD_SOLO = "Solo"
 L_ALOAD_DEP = "Abhängigkeiten: "
+L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
+L_ALOAD_PROFILES = "Profiles" -- Needs review
+L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
+L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
+L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
+L_ALOAD_SET_TO = "Set To.." -- Needs review
+L_ALOAD_ADD_TO = "Add To.." -- Needs review
+L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
+L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
+L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "Von"
@@ -81,6 +112,7 @@ L_CHAT_RAID_WARNING = "RW"
 L_CHAT_BATTLEGROUND = "BG"
 L_CHAT_BATTLEGROUND_LEADER = "BGL"
 L_CHAT_OFFICER = "O"
+L_CHAT_PET_BATTLE = "PB" -- Needs review
 L_CHAT_COME_ONLINE = "ist jetzt online."
 L_CHAT_GONE_OFFLINE = "ist jetzt offline."
 L_CHAT_COME_ONLINE_COLOR = "ist jetzt |cff298F00online|r !"
@@ -155,33 +187,37 @@ L_BIND_NO_SET = "Keine Tastaturbelegung festgelegt"
 L_PLANNER_DEATHKNIGHT_1 = "Blut"
 L_PLANNER_DEATHKNIGHT_2 = "Frost"
 L_PLANNER_DEATHKNIGHT_3 = "Unheilig"
-L_PLANNER_WARRIOR_1 = "Waffen"
-L_PLANNER_WARRIOR_2 = "Furor"
-L_PLANNER_WARRIOR_3 = "Schutz"
-L_PLANNER_ROGUE_1 = "Meucheln"
-L_PLANNER_ROGUE_2 = "Kampf"
-L_PLANNER_ROGUE_3 = "Täuschung"
-L_PLANNER_MAGE_1 = "Arkan"
-L_PLANNER_MAGE_2 = "Feuer"
-L_PLANNER_MAGE_3 = "Frost"
-L_PLANNER_PRIEST_1 = "Disziplin"
-L_PLANNER_PRIEST_2 = "Heilig"
-L_PLANNER_PRIEST_3 = "Schatten"
-L_PLANNER_WARLOCK_1 = "Gebrechen"
-L_PLANNER_WARLOCK_2 = "Dämonologie"
-L_PLANNER_WARLOCK_3 = "Zerstörung"
+L_PLANNER_DRUID_1 = "Gleichgewicht"
+L_PLANNER_DRUID_2 = "Wildheit"
+L_PLANNER_DRUID_3 = "Wätchter"
+L_PLANNER_DRUID_4 = "Wiederherstellung"
 L_PLANNER_HUNTER_1 = "Tierherrschaft"
 L_PLANNER_HUNTER_2 = "Treffsicherheit"
 L_PLANNER_HUNTER_3 = "Überleben"
-L_PLANNER_DRUID_1 = "Gleichgewicht"
-L_PLANNER_DRUID_2 = "Wilder Kampf"
-L_PLANNER_DRUID_3 = "Wiederherstellung"
-L_PLANNER_SHAMAN_1 = "Elementar"
-L_PLANNER_SHAMAN_2 = "Verstärkung"
-L_PLANNER_SHAMAN_3 = "Wiederherstellung"
+L_PLANNER_MAGE_1 = "Arkan"
+L_PLANNER_MAGE_2 = "Feuer"
+L_PLANNER_MAGE_3 = "Frost"
+L_PLANNER_MONK_1 = "Braumeister"
+L_PLANNER_MONK_2 = "Nebelwirker"
+L_PLANNER_MONK_3 = "Windläufer"
 L_PLANNER_PALADIN_1 = "Heilig"
 L_PLANNER_PALADIN_2 = "Schutz"
 L_PLANNER_PALADIN_3 = "Vergeltung"
+L_PLANNER_PRIEST_1 = "Disziplin"
+L_PLANNER_PRIEST_2 = "Heilig"
+L_PLANNER_PRIEST_3 = "Schatten"
+L_PLANNER_ROGUE_1 = "Meucheln"
+L_PLANNER_ROGUE_2 = "Kampf"
+L_PLANNER_ROGUE_3 = "Täuschung"
+L_PLANNER_SHAMAN_1 = "Elementar"
+L_PLANNER_SHAMAN_2 = "Verstärkung"
+L_PLANNER_SHAMAN_3 = "Wiederherstellung"
+L_PLANNER_WARLOCK_1 = "Gebrechen"
+L_PLANNER_WARLOCK_2 = "Dämonologie"
+L_PLANNER_WARLOCK_3 = "Zerstörung"
+L_PLANNER_WARRIOR_1 = "Waffen"
+L_PLANNER_WARRIOR_2 = "Furor"
+L_PLANNER_WARRIOR_3 = "Schutz"
 
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "Basen angegriffen:"
@@ -194,15 +230,16 @@ L_DATATEXT_GRAVEYARDSASSAULTED = "Friedhöfe angegriffen:"
 L_DATATEXT_GRAVEYARDSDEFENDED = "Friedhöfe verteidigt:"
 L_DATATEXT_DEMOLISHERSDESTROYED = "Verwüster zerstört:"
 L_DATATEXT_GATESDESTROYED = "Tore zerstört:"
-L_DATATEXT_CONTROL = " unter Kontrolle:"
+L_DATATEXT_ORB_POSSESSIONS = "Gehaltene Kugeln:"
+L_DATATEXT_VICTORY_POINTS = "Siegespunkte:"
+L_DATATEXT_CARTS_CONTROLLED = "Kontrollierte Loren:"
 
 -- Info text
 L_INFO_ERRORS = "Noch keine Fehler."
 L_INFO_INVITE = "Gruppeneinladung akzeptiert von: "
 L_INFO_DUEL = "Duellanfrage Ignoriert von: "
+L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
 L_INFO_DISBAND = "Löse Gruppe auf..."
-L_INFO_ADDON_SETS1 = "Gebe /addons <solo/party/raid/pvp/trade/quest> ein, um ein vorgegebenes Set an Addons zu laden."
-L_INFO_ADDON_SETS2 = "Du kannst Sets hinzufügen, löschen oder verändern, indem du die Settings.lua im `Config` Ordner bearbeitest."
 L_INFO_SETTINGS_DBM = "Gebe /settings dbm ein, um DBM Einstellungen zu laden."
 L_INFO_SETTINGS_DXE = "Gebe /settings dxe ein, um DXE Einstellungen zu laden."
 L_INFO_SETTINGS_MSBT = "Gebe /settings msbt ein, um die MSBT Einstellungen zu laden."
@@ -223,6 +260,7 @@ L_POPUP_SETTINGS_ALL = "Einstellungen für alle AddOns übernehmen? (DBM/DXE, Sk
 L_POPUP_SETTINGS_DBM = "Die Position der DBM Elemente muss verändert werden."
 L_POPUP_SETTINGS_DXE = "Die Position der DXE Elemente muss verändert werden."
 L_POPUP_SETTINGS_BW = "Die Position der BigWigs Elemente muss verändert werden."
+L_POPUP_ARMORY = "Waffenkammer"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Willkommen bei ShestakUI "
@@ -323,13 +361,10 @@ L_SLASHCMD_HELP = {
 	"/rd - Disband party or raid.",
 	"/toraid - Convert to party or raid.",
 	"/teleport - Teleportation from random dungeon.",
-	"/luaerror ON|OFF - Toggles display of lua errors.",
 	"/spec, /ss - Switches between talent spec's.",
-	"/clfix - Fixes the combat log.",
 	"/heal - Switches to 'Heal' layout.",
 	"/dps - Switches to 'DPS' layout.",
 	"/frame - Description is not ready.",
-	"/addons solo|party|raid|pvp|trade - You can change addons list in ending of file ShestakUI\Config\Settings.lua, block - 'Addons group'.",
 	"/farmmode - Increase the size of the minimap.",
 	"/moveui - Allows the movement of interface elements.",
 	"/resetui - Resets general settings to default.",
@@ -348,6 +383,104 @@ L_SLASHCMD_HELP = {
 	"/ainv - Enables automatic invitation.",
 	"/testuf - Unit frame test.",
 	"/cfg - Opens interface settings.",
+}
+
+-- ExploreMap
+L_EXTRA_EXPLORED = "Explored: " -- Needs review
+L_EXTRA_ZONEACHID = {
+	-- http://www.wowhead.com/achievement=*
+	-- e(X)plore achievement id, (Q)uest achievement id
+	["Östliche Königreiche"]			= {X =   42, A =    0, H =    0},
+	["Kalimdor"]						= {X =   43, A =    0, H =    0},
+	["Scherbenwelt"]					= {X =   44, A =    0, H =    0},
+	["Nordend"]							= {X =   45, A =    0, H =    0},
+	["Pandaria"]						= {X = 6974, A =    0, H =    0},
+	["Weltkarte"]						= {X =  nil, A =    0, H =    0},
+	-- Eastern Kingdoms
+	["Arathihochland"]					= {X =  761, A = 4896, H = 4896},
+	["Ödland"]							= {X =  765, A = 4900, H = 4900},
+	["Verwüstete Lande"]				= {X =  766, A = 4909, H = 4909},
+	["Brennende Steppe"]				= {X =  775, A = 4901, H = 4901},
+	["Gebirgspass der Totenwinde"]		= {X =  777, A =    0, H =    0},
+	["Dun Morogh"]						= {X =  627, A =    0, H =    0},
+	["Dämmerwald"]						= {X =  778, A = 4903, H =    0},
+	["Östliche Pestländer"]				= {X =  771, A = 4892, H = 4892},
+	["Wald von Elwynn"]					= {X =  776, A =    0, H =    0},
+	["Immersangwald"]					= {X =  859, A =    0, H =    0},
+	["Geisterlande"]					= {X =  858, A =    0, H = 4908},
+	["Vorgebirge des Hügellands"]		= {X =  772, A =    0, H = 4895},
+	["Loch Modan"]						= {X =  779, A = 4899, H =    0},
+	["Nördliches Schlingendorntal"]		= {X =  781, A = 4906, H = 4906},
+	["Rotkammgebirge"]					= {X =  780, A = 4902, H =    0},
+	["Sengende Schlucht"]				= {X =  774, A = 4910, H = 4910},
+	["Silberwald"]						= {X =  769, A =    0, H = 4894},
+	["Sümpfe des Elends"]				= {X =  782, A = 4904, H = 4904},
+	["Das Schlingendornkap"]			= {X = 4995, A = 4905, H = 4905},
+	["Hinterland"]						= {X =  773, A = 4897, H = 4897},
+	["Tirisfal"]						= {X =  768, A =    0, H =    0},
+	["Westliche Pestländer"]			= {X =  770, A = 4893, H = 4893},
+	["Westfall"]						= {X =  802, A = 4903, H =    0},
+	["Sumpfland"]						= {X =  841, A = 4899, H =    0},
+	-- Kalimdor
+	["Eschental"]						= {X =  845, A = 4925, H = 4976},
+	["Azshara"]							= {X =  852, A =    0, H = 4927},
+	["Azurmythosinsel"]					= {X =  860, A =    0, H =    0},
+	["Blutmythosinsel"]					= {X =  861, A = 4926, H = 4926},
+	["Dunkelküste"]						= {X =  844, A = 4928, H = 4928},
+	["Desolace"]						= {X =  848, A = 4930, H = 4930},
+	["Durotar"]							= {X =  728, A =    0, H =    0},
+	["Düstermarschen"]					= {X =  850, A = 4929, H = 4978},
+	["Teufelswald"]						= {X =  853, A = 4931, H = 4931},
+	["Feralas"]							= {X =  849, A = 4932, H = 4979},
+	["Mondlichtung"]					= {X =  855, A =    0, H =    0},
+	["Mulgore"]							= {X =  736, A =    0, H =    0},
+	["Nördliches Brachland"]			= {X =  750, A =    0, H = 4933},
+	["Silithus"]						= {X =  856, A = 4934, H = 4934},
+	["Südliches Brachland"]				= {X = 4996, A = 4937, H = 4981},
+	["Steinkrallengebirge"]				= {X =  847, A = 4936, H = 4980},
+	["Tanaris"]							= {X =  851, A = 4935, H = 4935},
+	["Teldrassil"]						= {X =  842, A =    0, H =    0},
+	["Tausend Nadeln"]					= {X =  846, A = 4938, H = 4938},
+	["Krater von Un'Goro"]				= {X =  854, A = 4939, H = 4939},
+	["Winterquell"]						= {X =  857, A = 4940, H = 4940},
+	-- Outland
+	["Schergrat"]						= {X =  865, A = 1193, H = 1193},
+	["Höllenfeuerhalbinsel"]			= {X =  862, A = 1189, H = 1271},
+	["Nagrand"]							= {X =  866, A = 1192, H = 1273},
+	["Nethersturm"]						= {X =  843, A = 1194, H = 1194},
+	["Schattenmondtal"]					= {X =  864, A = 1195, H = 1195},
+	["Wälder von Terokkar"]				= {X =  867, A = 1191, H = 1272},
+	["Zangarmarschen"]					= {X =  863, A = 1190, H = 1190},
+	-- Northrend
+	["Boreanische Tundra"]				= {X = 1264, A =   33, H = 1358},
+	["Kristallsangwald"]				= {X = 1457, A =    0, H =    0},
+	["Drachenöde"]						= {X = 1265, A =   35, H = 1356},
+	["Grizzlyhügel"]					= {X = 1266, A =   37, H = 1357},
+	["Der Heulende Fjord"]				= {X = 1263, A =   34, H = 1356},
+	["Eiskrone"]						= {X = 1270, A =   40, H =   40},
+	["Sholazarbecken"]					= {X = 1268, A =   39, H =   39},
+	["Die Sturmgipfel"]					= {X = 1269, A =   38, H =   38},
+	["Zul'Drak"]						= {X = 1267, A =   36, H =   36},
+	-- Cataclysm
+	["Tiefenheim"]						= {X = 4864, A = 4871, H = 4871},
+	["Hyjal"]							= {X = 4863, A = 4870, H = 4870},
+	["Schattenhochland"]				= {X = 4866, A = 4873, H = 5501},
+	["Uldum"]							= {X = 4865, A = 4872, H = 4872},
+	["Vashj'ir"]						= {X = 4825, A = 4869, H = 4982},
+	["Tol Barad"]						= {X =    0, A = 4874, H = 4874},
+	["Halbinsel von Tol Barad"]			= {X =    0, A = 4874, H = 4874},
+	-- Pandaria
+	["Der Jadewald"]					= {X = 6351, A = 6300, H = 6534},
+	["Tal der Vier Winde"]				= {X = 6969, A = 6301, H = 6301},
+	--["Krasarangwildnis"]				= {X = 6975, A = 6535, H = 6536},
+	["Kun-Lai-Gipfel"]					= {X = 6976, A = 6537, H = 6538},
+	["Tonlongsteppe"]					= {X = 6977, A = 6539, H = 6539},
+	["Schreckensöde"]					= {X = 6978, A = 6540, H = 6540},
+	["Tal der Ewigen Blüten"]			= {X = 6979, A =    0, H =    0},
+	-- Boolean Explores
+	["Insel von Quel'Danas"]			= {X =  868, A =    0, H =    0},
+	["Ahn'Qiraj: Das Gefallene Königreich"] = {X =    0, A =    0, H =    0},
+	["Tausendwintersee"]				= {X =    0, A =    0, H =    0},
 }
 
 -- edit by Oz of shestak. org --

@@ -8,26 +8,33 @@ local function LoadSkin()
 	ReforgingFrame:StripTextures()
 	ReforgingFrame:SetTemplate("Transparent")
 
-	ReforgingFrameButtonFrame:StripTextures()
+	ReforgingFrameMoneyFrame:StripTextures()
+	ReforgingFrame.ButtonFrame:StripTextures()
 	ReforgingFrameReforgeButton:ClearAllPoints()
 	ReforgingFrameReforgeButton:Point("LEFT", ReforgingFrameRestoreButton, "RIGHT", 2, 0)
 	ReforgingFrameReforgeButton:Point("BOTTOMRIGHT", -3, 3)
 	ReforgingFrameRestoreButton:SkinButton(true)
 	ReforgingFrameReforgeButton:SkinButton(true)
 
-	ReforgingFrameItemButton:StripTextures()
-	ReforgingFrameItemButton:SetTemplate("Default", true)
-	ReforgingFrameItemButton:StyleButton()
-	ReforgingFrameItemButtonIconTexture:ClearAllPoints()
-	ReforgingFrameItemButtonIconTexture:Point("TOPLEFT", 2, -2)
-	ReforgingFrameItemButtonIconTexture:Point("BOTTOMRIGHT", -2, 2)
+	ReforgingFrame.ItemButton:StripTextures()
+	ReforgingFrame.ItemButton:SetTemplate("Default", true)
+	ReforgingFrame.ItemButton.IconTexture:ClearAllPoints()
+	ReforgingFrame.ItemButton.IconTexture:Point("TOPLEFT", 2, -2)
+	ReforgingFrame.ItemButton.IconTexture:Point("BOTTOMRIGHT", -2, 2)
+
+	local hover = ReforgingFrame.ItemButton:CreateTexture("Frame", nil, self)
+	hover:SetTexture(1, 1, 1, 0.3)
+	hover:Size(ReforgingFrame.ItemButton:GetWidth(), ReforgingFrame.ItemButton:GetHeight())
+	hover:Point("TOPLEFT", ReforgingFrame.ItemButton, 2, -2)
+	hover:Point("BOTTOMRIGHT", ReforgingFrame.ItemButton, -2, 2)
+	ReforgingFrame.ItemButton:SetHighlightTexture(hover)
 
 	hooksecurefunc("ReforgingFrame_Update", function(self)
-		local currentReforge, icon, name, quality, bound, cost = GetReforgeItemInfo()
+		local _, icon = GetReforgeItemInfo()
 		if icon then
-			ReforgingFrameItemButtonIconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			ReforgingFrame.ItemButton.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		else
-			ReforgingFrameItemButtonIconTexture:SetTexture(nil)
+			ReforgingFrame.ItemButton.IconTexture:SetTexture(nil)
 		end
 	end)
 

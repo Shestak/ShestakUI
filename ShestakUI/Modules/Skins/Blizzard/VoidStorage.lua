@@ -30,7 +30,7 @@ local function LoadSkin()
 	VoidStorageHelpBoxButton:SkinButton()
 	VoidStorageTransferButton:SkinButton()
 
-	T.SkinCloseButton(VoidStorageBorderFrameCloseButton)
+	T.SkinCloseButton(VoidStorageBorderFrame.CloseButton)
 	VoidItemSearchBox:CreateBackdrop("Overlay")
 	VoidItemSearchBox.backdrop:Point("TOPLEFT", 10, -1)
 	VoidItemSearchBox.backdrop:Point("BOTTOMRIGHT", 4, 1)

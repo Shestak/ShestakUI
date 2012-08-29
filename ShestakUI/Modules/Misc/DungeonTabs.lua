@@ -1,69 +1,68 @@
 local T, C, L = unpack(select(2, ...))
---if C.misc.dungeon_tabs ~= true then return end
+if C.misc.dungeon_tabs ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	LFD/LFR/PVP tabs on frames(SocialTabs by Califpornia)
+--	PvP/PvE tabs on own frame(SocialTabs by Califpornia)
 ----------------------------------------------------------------------------------------
-local f = CreateFrame("Frame")
-local TabArray = {}
+local hookAtLoad = {"PVEFrame", "RaidBrowserFrame", "PVPFrame"}
+local SocialTabs = CreateFrame("Frame")
+local TabRefArray = {}
 local VisibleFrames = {}
 
-local function ToggleFrameByType(ftype)
-	if ftype == "lfd" then
-		ToggleLFDParentFrame()
-	elseif ftype == "lfr" then
-		ToggleRaidFrame()
-	elseif ftype == "pvp" then
-		TogglePVPFrame()
+local function HideOtherFrames(fname)
+	if IsControlKeyDown() then return end
+	for k, v in pairs(VisibleFrames) do
+		if k ~= fname and v then
+			HideUIPanel(_G[k])
+		end
 	end
 end
 
-local function UpdateTabCheckedState(ftype, chkd)
-	for k, v in pairs(TabArray) do
-		if v then TabArray[k][ftype]:SetChecked(chkd) end
+local function SetTabCheckedState(fname, isChecked)
+	for k, v in pairs(TabRefArray) do
+		if v then TabRefArray[k][fname]:SetChecked(isChecked) end
 	end
 end
 
-local function UpdateTabEnabledState(ftype, enabled)
-	for k, v in pairs(TabArray) do
+local function SetTabEnabledState(fname, isEnabled)
+	for k, v in pairs(TabRefArray) do
 		if v then
-			if enabled then
-				TabArray[k][ftype]:Enable()
-				TabArray[k][ftype]:SetAlpha(1)
-				SetDesaturation(TabArray[k][ftype]:GetNormalTexture(), false)
+			if isEnabled then
+				TabRefArray[k][fname]:Enable()
+				SetDesaturation(TabRefArray[k][fname]:GetNormalTexture(), false)
+				TabRefArray[k][fname]:SetAlpha(1)
 			else
-				TabArray[k][ftype]:Disable()
-				TabArray[k][ftype]:SetAlpha(0.5)
-				SetDesaturation(TabArray[k][ftype]:GetNormalTexture(), true)
+				TabRefArray[k][fname]:Disable()
+				TabRefArray[k][fname]:SetAlpha(0.5)
+				SetDesaturation(TabRefArray[k][fname]:GetNormalTexture(), true)
 			end
 		end
 	end
 end
 
-local function UpdateTabVisibleState(ftype, enabled)
-	for k, v in pairs(TabArray) do
+local function SetTabVisibleState(fname, isVisible)
+	for k, v in pairs(TabRefArray) do
 		if v then
-			if enabled then
-				TabArray[k][ftype]:Show()
+			if isVisible then
+				TabRefArray[k][fname]:Show()
 			else
-				TabArray[k][ftype]:Hide()
+				TabRefArray[k][fname]:Hide()
 			end
-		end
-	end
-end
-
-local function CloseAllTabs()
-	-- Keep other frames open if CTRL modifier is pressed
-	if not IsControlKeyDown() then
-		for k, v in pairs(VisibleFrames) do
-			if v then ToggleFrameByType(k) end
 		end
 	end
 end
 
 local function Tab_OnClick(self)
-	CloseAllTabs()
-	ToggleFrameByType(self.ToggleFrameType)
+	local frame = _G[self.ToggleFrame]
+	if frame:IsShown() then
+		HideUIPanel(frame)
+	else
+		if self.ToggleFrame == "PVEFrame" then
+			ToggleLFDParentFrame()
+		else
+			ShowUIPanel(frame)
+		end
+	end
 end
 
 local function SkinTab(f, t)
@@ -85,118 +84,84 @@ local function SkinTab(f, t)
 		f:GetNormalTexture():Point("TOPLEFT", 2, -2)
 		f:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
 		f:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		--if f:GetPushedTexture() then
-		--	f:GetPushedTexture():SetTexture(0.9, 0.8, 0.1, 0.3)
-		--	f:GetPushedTexture():SetAllPoints(f:GetNormalTexture())
-		--end
 		if f:GetCheckedTexture() then
 			f:GetCheckedTexture():SetTexture(0, 1, 0, 0.3)
 			f:GetCheckedTexture():SetAllPoints(f:GetNormalTexture())
 		end
 		f:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
 		f:GetHighlightTexture():SetAllPoints(f:GetNormalTexture())
-		f:CreateBackdrop("Default")
-		f.backdrop:SetAllPoints()
-		f:StyleButton(true)
+		f:SetTemplate("Default")
+		f:StyleButton()
 	else
 		f:SetNormalTexture(t)
 	end
 end
 
-local function CreateTabs(fr, frtype)
+local function STHookFrame(fname)
+	local frame = _G[fname]
+	local prevtab
 	local frametabs = {}
 
-	-- LFD tab
-	frametabs["lfd"] = CreateFrame("CheckButton", "LFDSideTab", fr, "SpellBookSkillLineTabTemplate")
-	SkinTab(frametabs["lfd"], "Interface\\LFGFrame\\UI-LFG-PORTRAIT")
+	-- PvE tab
+	frametabs["PVEFrame"] = CreateFrame("CheckButton", "LFDSideTab", frame, "SpellBookSkillLineTabTemplate")
+	SkinTab(frametabs["PVEFrame"], "Interface\\Icons\\INV_Helmet_08")
 	if IsAddOnLoaded("Aurora") then
-		frametabs["lfd"]:SetPoint("TOPLEFT", fr, "TOPRIGHT", 11, -35)
+		frametabs["PVEFrame"]:SetPoint("TOPLEFT", frame, "TOPRIGHT", 11, -35)
 	elseif C.skins.blizzard_frames == true then
-		frametabs["lfd"]:SetPoint("TOPLEFT", fr, "TOPRIGHT", 1, 0)
+		frametabs["PVEFrame"]:SetPoint("TOPLEFT", frame, "TOPRIGHT", 1, 0)
 	else
-		frametabs["lfd"]:SetPoint("TOPLEFT", fr, "TOPRIGHT", 0, -30)
+		frametabs["PVEFrame"]:SetPoint("TOPLEFT", frame, "TOPRIGHT", 0, -30)
 	end
-	frametabs["lfd"].tooltip = LOOKING_FOR_DUNGEON
-	frametabs["lfd"].ToggleFrame = LFDParentFrame
-	frametabs["lfd"].ToggleFrameType = "lfd"
-	frametabs["lfd"]:SetScript("OnClick", Tab_OnClick)
-	if T.level < SHOW_LFD_LEVEL then
-		frametabs["lfd"]:SetAlpha(0.5)
-		SetDesaturation(frametabs["lfd"]:GetNormalTexture(), true)
-		frametabs["lfd"]:Disable()
-	end
+	frametabs["PVEFrame"].tooltip = LOOKING_FOR_DUNGEON
+	frametabs["PVEFrame"].ToggleFrame = "PVEFrame"
+	frametabs["PVEFrame"]:SetScript("OnClick", Tab_OnClick)
+	prevtab = frametabs["PVEFrame"]
 
-	-- LFR tab
-	frametabs["lfr"] = CreateFrame("CheckButton", "LFRSideTab", fr, "SpellBookSkillLineTabTemplate")
-	SkinTab(frametabs["lfr"], "Interface\\LFGFrame\\UI-LFR-PORTRAIT")
-	frametabs["lfr"]:SetPoint("TOPLEFT", frametabs["lfd"], "BOTTOMLEFT", 0, -12)
-	frametabs["lfr"].tooltip = RAID_FINDER
-	frametabs["lfr"].ToggleFrame = RaidParentFrame
-	frametabs["lfr"].ToggleFrameType = "lfr"
-	frametabs["lfr"]:SetScript("OnClick", Tab_OnClick)
+	-- Raid Browser tab
+	frametabs["RaidBrowserFrame"] = CreateFrame("CheckButton", "LFRSideTab", frame, "SpellBookSkillLineTabTemplate")
+	SkinTab(frametabs["RaidBrowserFrame"], "Interface\\LFGFrame\\UI-LFR-PORTRAIT")
+	frametabs["RaidBrowserFrame"]:SetPoint("TOPLEFT", prevtab, "BOTTOMLEFT", 0, -15)
+	frametabs["RaidBrowserFrame"].tooltip = LOOKING_FOR_RAID
+	frametabs["RaidBrowserFrame"].ToggleFrame = "RaidBrowserFrame"
+	frametabs["RaidBrowserFrame"]:SetScript("OnClick", Tab_OnClick)
+	prevtab = frametabs["RaidBrowserFrame"]
 
 	-- PVP tab
-	frametabs["pvp"] = CreateFrame("CheckButton", "PVPSideTab", fr, "SpellBookSkillLineTabTemplate")
-	SkinTab(frametabs["pvp"], "Interface\\BattlefieldFrame\\UI-Battlefield-Icon")
-	frametabs["pvp"]:SetPoint("TOPLEFT", frametabs["lfr"], "BOTTOMLEFT", 0, -12)
-	frametabs["pvp"].tooltip = PLAYER_V_PLAYER
-	frametabs["pvp"].ToggleFrame = PvpFrame
-	frametabs["pvp"].ToggleFrameType = "pvp"
-	frametabs["pvp"]:SetScript("OnClick", Tab_OnClick)
-	if T.level < SHOW_PVP_LEVEL then
-		frametabs["pvp"]:SetAlpha(0.5)
-		SetDesaturation(frametabs["pvp"]:GetNormalTexture(), true)
-		frametabs["pvp"]:Disable()
+	frametabs["PVPFrame"] = CreateFrame("CheckButton", "PVPSideTab", frame, "SpellBookSkillLineTabTemplate")
+	SkinTab(frametabs["PVPFrame"], "Interface\\BattlefieldFrame\\UI-Battlefield-Icon")
+	frametabs["PVPFrame"]:SetPoint("TOPLEFT", prevtab, "BOTTOMLEFT", 0, -15)
+	frametabs["PVPFrame"].tooltip = PLAYER_V_PLAYER
+	frametabs["PVPFrame"].ToggleFrame = "PVPFrame"
+	frametabs["PVPFrame"]:SetScript("OnClick", Tab_OnClick)
+	prevtab = frametabs["PVPFrame"]
+
+	if fname == "RaidBrowserFrame" then
+		LFRParentFrameSideTab1:SetPoint("TOPLEFT", frametabs["PVPFrame"], "BOTTOMLEFT", 0, -15)
 	end
 
-	-- First show
-	CloseAllTabs()
-	VisibleFrames[frtype] = true
+	TabRefArray[fname] = frametabs
 
-	fr:HookScript("OnShow", function()
-		VisibleFrames[frtype] = true
-		UpdateTabCheckedState(frtype, true)
+	frame:HookScript("OnShow", function()
+		HideOtherFrames(fname)
+		VisibleFrames[fname] = true
+		SetTabCheckedState(fname, true)
 	end)
 
-	fr:HookScript("OnHide", function()
-		VisibleFrames[frtype] = false
-		UpdateTabCheckedState(frtype, false)
+	frame:HookScript("OnHide", function()
+		VisibleFrames[fname] = false
+		SetTabCheckedState(fname, false)
 	end)
-
-	TabArray[fr:GetName()] = frametabs
-	UpdateTabCheckedState(frtype, true)
 end
 
-LFDParentFrame:HookScript("OnShow", function()
-	if not TabArray[LFDParentFrame:GetName()] then
-		CreateTabs(LFDParentFrame, "lfd")
+local function InitSocialTabs()
+	for i = 1, #hookAtLoad do
+		STHookFrame(hookAtLoad[i])
+	end
+end
+
+SocialTabs:SetScript("OnEvent", function(self, event, addon)
+	if event == "ADDON_LOADED" and addon == "ShestakUI" then
+		InitSocialTabs()
 	end
 end)
-
-RaidParentFrame:HookScript("OnShow", function()
-	if not TabArray[RaidParentFrame:GetName()] then
-		CreateTabs(RaidParentFrame, "lfr")
-
-		LFRParentFrameSideTab1:SetPoint("TOPLEFT", "PVPSideTab", "BOTTOMLEFT", 0, -12)
-	end
-end)
-
-PVPFrame:HookScript("OnShow", function()
-	if not TabArray[PVPFrame:GetName()] then
-		CreateTabs(PVPFrame, "pvp")
-	end
-end)
-
-f:SetScript("OnEvent", function(self, event, addon)
-	if event == "PLAYER_LEVEL_UP" then
-		if T.level >= SHOW_LFD_LEVEL then
-			UpdateTabEnabledState("lfd", true)
-		end
-		if T.level >= SHOW_PVP_LEVEL then
-			UpdateTabEnabledState("pvp", true)
-		end
-	end
-end)
-
-f:RegisterEvent("ADDON_LOADED")
-f:RegisterEvent("PLAYER_LEVEL_UP")
+SocialTabs:RegisterEvent("ADDON_LOADED")

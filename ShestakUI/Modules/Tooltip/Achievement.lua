@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.tooltip.enable ~= true or C.tooltip.achievements ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -26,18 +26,27 @@ local function hookSetHyperlink(tooltip, refString)
 	numCriteria = GetAchievementNumCriteria(achievementID)
 	GUID = select(3, string.find(refString, ":%d+:(.-):"))
 
-	if GUID == string.sub(UnitGUID("player"), 3) then 
+	if GUID == string.sub(UnitGUID("player"), 3) then
 		tooltip:Show()
-		return 
+		return
 	end
 
 	tooltip:AddLine(" ")
-	_, _, _, completed, month, day, year = GetAchievementInfo(achievementID)
+	_, _, _, completed, month, day, year, _, _, _, _, _, wasEarnedByMe, earnedBy = GetAchievementInfo(achievementID)
 
 	if completed then
 		if year < 10 then year = "0" .. year end
 
 		tooltip:AddLine(L_TOOLTIP_ACH_COMPLETE .. month .. "/" .. day .. "/" .. year, 0, 1, 0)
+
+		if earnedBy then
+			tooltip:AddLine(format(ACHIEVEMENT_EARNED_BY, earnedBy))
+			if not wasEarnedByMe then
+				tooltip:AddLine(format(ACHIEVEMENT_NOT_COMPLETED_BY, T.name))
+			elseif T.name ~= earnedBy then
+				tooltip:AddLine(format(ACHIEVEMENT_COMPLETED_BY, T.name))
+			end
+		end
 	elseif numCriteria == 0 then
 		tooltip:AddLine(L_TOOLTIP_ACH_INCOMPLETE)
 	else

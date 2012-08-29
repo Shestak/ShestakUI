@@ -9,26 +9,25 @@ local function InstallUI()
 	SetCVar("cameraDistanceMax", 50)
 	SetCVar("cameraDistanceMaxFactor", 3.4)
 	SetCVar("ShowClassColorInNameplate", 1)
-	SetCVar("buffDurations", 1)
 	SetCVar("mapQuestDifficulty", 1)
 	SetCVar("showTutorials", 0)
 	SetCVar("gameTip", "0")
-	SetCVar("showNewbieTips", 0)
 	SetCVar("UberTooltips", 1)
-	SetCVar("showLootSpam", 1)
 	SetCVar("chatMouseScroll", 1)
 	SetCVar("removeChatDelay", 1)
 	SetCVar("chatStyle", "im")
 	SetCVar("WholeChatWindowClickable", 0)
 	SetCVar("ConversationMode", "inline")
+	SetCVar("WhisperMode", "inline")
+	SetCVar("BnWhisperMode", "inline")
 	SetCVar("colorblindMode", 0)
 	SetCVar("lootUnderMouse", 0)
 	SetCVar("autoLootDefault", 1)
 	SetCVar("RotateMinimap", 0)
 	SetCVar("ConsolidateBuffs", 0)
-	SetCVar("autoQuestWatch", 1)
 	SetCVar("autoQuestProgress", 1)
 	SetCVar("scriptErrors", 1)
+	SetCVar("buffDurations", 1)
 
 	if T.author == true then
 		SetCVar("taintLog", 1)
@@ -47,6 +46,7 @@ local function InstallUI()
 		SetCVar("ConsolidateBuffs", 1)
 		SetCVar("autoDismountFlying", 1)
 		SetCVar("autoSelfCast", 1)
+		SetCVar("autoQuestWatch", 1)
 		SetCVar("guildMemberNotify", 1)
 		SetCVar("UnitNameOwn", 0)
 		SetCVar("UnitNameNPC", 0)
@@ -72,6 +72,7 @@ local function InstallUI()
 		SetCVar("shadowMode", 0)
 		SetCVar("ffxDeath", 0)
 		SetCVar("ffxNetherWorld", 0)
+		SetCVar("autoOpenLootHistory", 0)
 		SetAutoDeclineGuildInvites(1)
 	end
 
@@ -176,6 +177,11 @@ local function InstallUI()
 	SavedOptionsPerChar = {}
 
 	SavedOptionsPerChar.Install = true
+	SavedOptionsPerChar.AutoInvite = false
+	SavedOptionsPerChar.BarsLocked = false
+	SavedOptionsPerChar.SplitBars = true
+	SavedOptionsPerChar.RightBars = C.actionbar.rightbars
+	SavedOptionsPerChar.BottomBars = C.actionbar.bottombars
 
 	ReloadUI()
 end
@@ -197,7 +203,7 @@ StaticPopupDialogs.INSTALL_UI = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.DISABLE_UI = {
@@ -209,7 +215,7 @@ StaticPopupDialogs.DISABLE_UI = {
 	whileDead = 1,
 	showAlert = true,
 	hideOnEscape = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.RESET_UI = {
@@ -222,7 +228,7 @@ StaticPopupDialogs.RESET_UI = {
 	whileDead = 1,
 	showAlert = true,
 	hideOnEscape = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.RESET_STATS = {
@@ -234,7 +240,7 @@ StaticPopupDialogs.RESET_STATS = {
 	whileDead = 1,
 	showAlert = true,
 	hideOnEscape = true,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 StaticPopupDialogs.SWITCH_RAID = {
@@ -246,7 +252,7 @@ StaticPopupDialogs.SWITCH_RAID = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
-	preferredIndex = 3,
+	preferredIndex = 5,
 }
 
 ----------------------------------------------------------------------------------------
@@ -260,7 +266,13 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	-- Create empty CVar if they doesn't exist
 	if SavedOptions == nil then SavedOptions = {} end
 	if SavedPositions == nil then SavedPositions = {} end
+	if SavedAddonProfiles == nil then SavedAddonProfiles = {} end
 	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
+	if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
+	if SavedOptionsPerChar.BarsLocked == nil then SavedOptionsPerChar.BarsLocked = false end
+	if SavedOptionsPerChar.SplitBars == nil then SavedOptionsPerChar.SplitBars = true end
+	if SavedOptionsPerChar.RightBars == nil then SavedOptionsPerChar.RightBars = C.actionbar.rightbars end
+	if SavedOptionsPerChar.BottomBars == nil then SavedOptionsPerChar.BottomBars = C.actionbar.bottombars end
 
 	if T.getscreenwidth < 1024 then
 		SetCVar("useUiScale", 0)
@@ -303,7 +315,7 @@ Garbage:RegisterAllEvents()
 Garbage:SetScript("OnEvent", function(self, event)
 	eventcount = eventcount + 1
 
-	if (InCombatLockdown() and eventcount > 25000) or eventcount > 10000 then
+	if (InCombatLockdown() and eventcount > 25000) or eventcount > 10000 or event == "PLAYER_ENTERING_WORLD" then
 		collectgarbage("collect")
 		eventcount = 0
 	end
