@@ -43,7 +43,7 @@ C["misc"] = {
 	["shift_marking"] = true,					-- Marks target when you push "shift"
 	["invite_keyword"] = "inv",					-- Short keyword for invite(for enable - in game type /ainv)
 	["afk_spin_camera"] = true,					-- Spin camera while afk
-	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
+	["vehicle_mouseover"] = true,				-- Vehicle frame on mouseover
 	["quest_auto_button"] = false,				-- Quest auto button
 	["raid_tools"] = true,						-- Raid tools
 	["profession_tabs"] = true,					-- Professions tabs on tradeskill frames
@@ -80,7 +80,7 @@ C["announcements"] = {
 --	Automation options
 ----------------------------------------------------------------------------------------
 C["automation"] = {
-	["resurrection"] = true,					-- Auto resurrection in Battle Ground
+	["resurrection"] = false,					-- Auto resurrection in Battle Ground
 	["screenshot"] = false,						-- Take screenshot when player get achievement
 	["solve_artifact"] = false,					-- Auto popup for solve artifact
 	["chefs_hat"] = true,						-- Auto equip Chef's Hat
@@ -97,22 +97,22 @@ C["automation"] = {
 --	Skins options
 ----------------------------------------------------------------------------------------
 C["skins"] = {
-	["blizzard_frames"] = true,				-- Blizzard frames skin
-	["minimap_buttons"] = true,				-- Skin addons icons on minimap
-	["clcprot"] = true,						-- CLCProt skin
-	["clcret"] = true,						-- CLCRet skin
-	["combustion_helper"] = true,			-- CombustionHelper skin
-	["bigwigs"] = true,						-- BigWigs skin
-	["dbm"] = true,							-- DBM skin
-	["dxe"] = true,							-- DXE skin
-	["omen"] = true,						-- Omen skin
-	["recount"] = true,						-- Recount skin
-	["blood_shield_tracker"] = true,		-- BloodShieldTracker skin
-	["dominos"] = true,						-- Dominos skin
-	["flyout_button"] = true,				-- FlyoutButtonCustom skin
-	["nug_running"] = true,					-- NugRunning skin
-	["ovale"] = true,						-- OvaleSpellPriority skin
-	["clique"] = true,						-- Clique skin
+	["blizzard_frames"] = true,					-- Blizzard frames skin
+	["minimap_buttons"] = true,					-- Skin addons icons on minimap
+	["clcprot"] = true,							-- CLCProt skin
+	["clcret"] = true,							-- CLCRet skin
+	["combustion_helper"] = true,				-- CombustionHelper skin
+	["bigwigs"] = true,							-- BigWigs skin
+	["dbm"] = true,								-- DBM skin
+	["dxe"] = true,								-- DXE skin
+	["omen"] = true,							-- Omen skin
+	["recount"] = true,							-- Recount skin
+	["blood_shield_tracker"] = true,			-- BloodShieldTracker skin
+	["dominos"] = true,							-- Dominos skin
+	["flyout_button"] = true,					-- FlyoutButtonCustom skin
+	["nug_running"] = true,						-- NugRunning skin
+	["ovale"] = true,							-- OvaleSpellPriority skin
+	["clique"] = true,							-- Clique skin
 }
 
 ----------------------------------------------------------------------------------------
@@ -140,7 +140,7 @@ C["combattext"] = {
 	["time_visible"] = 3,						-- Time(seconds) a single message will be visible
 	["stop_ve_spam"] = false,					-- Automaticly turns off healing spam for priests in shadowform
 	["dk_runes"] = true,						-- Show deathknight rune recharge
-	["killingblow"] = false,					-- Tells you about your killingblows
+	["killingblow"] = true,					-- Tells you about your killingblows
 	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
 	["merge_aoe_spam_time"] = 3,				-- Time in seconds aoe spell will be merged into single message(works only with ["damage"] = true)
 	["dispel"] = true,							-- Tells you about your dispels(works only with ["damage"] = true)
@@ -230,7 +230,7 @@ C["tooltip"] = {
 	["enable"] = true,							-- Enable tooltip
 	["shift_modifer"] = false,					-- Show tooltip when "shift" is pushed
 	["cursor"] = false,							-- ToolTip under cursor
-	["item_icon"] = false,						-- Item icon in tooltip
+	["item_icon"] = true,						-- Item icon in tooltip
 	["health_value"] = false,					-- Numeral health value
 	["hidebuttons"] = false,					-- Hide tooltip for actions bars
 	["hide_combat"] = false,					-- Hide tooltip in combat
@@ -243,9 +243,9 @@ C["tooltip"] = {
 	["arena_experience"] = false,				-- Player PVP experience in arena
 	["spell_id"] = true,						-- Id number spells
 	["average_lvl"] = true,						-- Average items level
-	["raid_icon"] = false,						-- Raid icon
+	["raid_icon"] = true,						-- Raid icon
 	["who_targetting"] = true,					-- Show who is targetting the unit(in raid or party)
-	["item_count"] = false,						-- Item count in tooltip
+	["item_count"] = true,						-- Item count in tooltip
 	["unit_role"] = false,						-- Unit role in tooltip
 	["reforge"] = true,							-- Item reforge info
 	["symbiosis"] = true,						-- Symbiosis info
@@ -428,8 +428,9 @@ C["unitframe"] = {
 	-- Portraits
 	["portrait_enable"] = false,				-- Enable player/target portraits
 	["portrait_classcolor_border"] = false,		-- Enable classcolor border
-	["portrait_height"] = 27,					-- Portrait height
+	["portrait_height"] = 25,					-- Portrait height
 	["portrait_width"] = 20,					-- Portrait width
+	["alternative_portraits"] = false,			-- Enable the portraits on the health bars (you need to disable the option for player/target portraits)
 	-- Plugins
 	["plugins_gcd"] = false,					-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar
@@ -477,11 +478,11 @@ C["raidframe"] = {
 	["raid_tanks"] = true,						-- Show raid tanks
 	["raid_tanks_tt"] = false,					-- Show raid tanks target target
 	["raid_groups"] = 5,						-- Number of groups in raid
-	["raid_groups_vertical"] = true,			-- Vertical raid groups(only for ShestakUI_Heal)
+	["raid_groups_vertical"] = false,			-- Vertical raid groups(only for ShestakUI_Heal)
 	-- Portraits
 	["raid_portraits"] = false,					-- Enable portraits on raid frames
 	-- Icons
-	["icons_role"] = true,						-- Role icon on frames
+	["icons_role"] = false,						-- Role icon on frames
 	["icons_raid_mark"] = true,					-- Raid mark icons on frames
 	["icons_ready_check"] = true,				-- Ready check icons on frames
 	["icons_leader"] = true,					-- Leader icon, assistant icon, master loot icon on frames
@@ -514,11 +515,11 @@ C["stats"] = {
 	["fps"] = true,								-- FPS
 	["friend"] = true,							-- Friends
 	["guild"] = true,							-- Guild
+	["bags"] = true,							-- Bags
 	["durability"] = true,						-- Durability
 	["experience"] = true,						-- Experience
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
-	["bags"] = true,							-- Bags
 }
 
 ----------------------------------------------------------------------------------------
