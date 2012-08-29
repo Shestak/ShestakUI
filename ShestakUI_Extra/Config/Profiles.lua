@@ -42,7 +42,7 @@ end
 --	Oz Config
 ----------------------------------------------------------------------------------------
 if T.name == "Oz" then
-	C["extra_position"].extra_bar = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -245, 24}
+	C["extra_position"].extra_bar = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -237, 24}
 	C["extra_bar"].enable = true
 	C["extra_bar"].mouseover = true
 end
@@ -64,3 +64,5 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["extra_general"].buff_automator = true
 	end
 end
+
+-- edit by Oz of shestak. org --
