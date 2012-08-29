@@ -1,4 +1,4 @@
-﻿if (IsAddOnLoaded("yClassColor")) then return end
+﻿if IsAddOnLoaded("yClassColor") then return end
 
 ----------------------------------------------------------------------------------------
 --	Class color guild/friends/etc list(yClassColor by Yleaf)
