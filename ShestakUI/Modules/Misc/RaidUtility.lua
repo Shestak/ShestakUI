@@ -4,9 +4,7 @@ if C.misc.raid_tools ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Raid Utility(by Elv22)
 ----------------------------------------------------------------------------------------
-
 local width = (C.minimap.size)
-
 -- Create main frame
 local RaidUtilityPanel = CreateFrame("Frame", "RaidUtilityPanel", UIParent)
 RaidUtilityPanel:CreatePanel("Transparent", 167, 145, unpack(C.position.raid_utility))

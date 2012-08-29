@@ -6,7 +6,6 @@
 	<Script file="Locales\Chinese.lua"/>
 	<Script file="Locales\French.lua"/>
 	<Script file="Locales\German.lua"/>
-	<Script file="Locales\Italian.lua"/>
 	<Script file="Locales\Korean.lua"/>
 	<Script file="Locales\Portuguese.lua"/>
 	<Script file="Locales\Russian.lua"/>
@@ -60,6 +59,7 @@
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
 	<Script file="Modules\Maps\BattlefieldMap.lua"/>
+	<Script file="Modules\Maps\ButtonCollect.lua"/>
 	<Script file="Modules\Maps\ExploreMap.lua"/>
 	<Script file="Modules\Maps\MapBossCount.lua"/>
 	<Script file="Modules\Maps\MiniMap.lua"/>
@@ -84,10 +84,10 @@
 	<Script file="Modules\Misc\HealerIconNameplate.lua"/>
 	<Script file="Modules\Misc\OneClickDisenchanting.lua"/>
 	<Script file="Modules\Misc\SumAucBuyouts.lua"/>
-	<Script file="Modules\Misc\HideButton.lua"/>
 	<Script file="Modules\Misc\MouseoverMarking.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
 	<Script file="Modules\Misc\ProfessionsDatabase.lua"/>
+	<Script file="Modules\Misc\HideButton.lua"/>
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>

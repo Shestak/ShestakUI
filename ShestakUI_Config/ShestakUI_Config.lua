@@ -429,11 +429,11 @@ local function Local(o)
 	if o == "UIConfigstatsfps" then o = L_GUI_STATS_FPS end
 	if o == "UIConfigstatsfriend" then o = FRIENDS end
 	if o == "UIConfigstatsguild" then o = GUILD end
-	if o == "UIConfigstatsbags" then o = L_STATS_BAGS end
 	if o == "UIConfigstatsdurability" then o = DURABILITY end
 	if o == "UIConfigstatsexperience" then o = L_GUI_STATS_EXPERIENCE end
 	if o == "UIConfigstatscoords" then o = L_GUI_STATS_COORDS end
 	if o == "UIConfigstatslocation" then o = L_GUI_STATS_LOCATION end
+	if o == "UIConfigstatsbags" then o = L_STATS_BAGS end
 
 	-- Error options
 	if o == "UIConfigerror" then o = L_GUI_ERROR end
@@ -1043,4 +1043,4 @@ do
 	InterfaceOptions_AddCategory(frame)
 end
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of shestak.org --

@@ -96,7 +96,7 @@ LPSTAT_CONFIG = {
 		xp_normal_fmt = "[curxp]([cur%]%)".."XP", -- XP string used when not rested.
 		xp_rested_fmt = "[curxp]([cur%]%)".."XP ".." [restxp]([rest%]%)".."R", -- XP string used when rested.		
 		played_fmt = "Online: ".."|r".."[playedsession]", -- Played time format.
-		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")
+		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")		
 			-- day = "d", hour = "h", minute = "m", second = "s", -- Customizable time labels. Will localize by default.
 			-- Faction tags...
 			--	Faction name [repname]
@@ -127,11 +127,11 @@ LPSTAT_CONFIG = {
 		enabled = C.stats.location,
 		subzone = true, -- Set to false to display the main zone's name instead of the subzone.
 		truncate = 16, -- Max number of letters for location text, set to 0 to disable.
-		coord_fmt = "%d,%d", -- "44,19", to add tenths, use "%.1f" (digit determines decimal)
+		coord_fmt = "%d,%d", -- "44,19", to add tenths, use '%.1f' (digit determines decimal)
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
 		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "TOPRIGHT", tip_x = -21, tip_y = -153
 	},
--- Bottomright block 3
+-- Bottomright block 1
 	Stats = {
 		enabled = C.stats.bags,
 			-- Available stat tags...
@@ -151,7 +151,7 @@ LPSTAT_CONFIG = {
 		enabled = C.stats.bags,
 		fmt = "B: ".."%d/%d", -- "B: 24/98"
 		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
-		x_off = -16, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 41, tip_y = 5,
+		x_off = -16, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 37, tip_y = 5,
 		justify_h = "right",
 	},
 	-- Top block
@@ -182,8 +182,23 @@ LPSTAT_CONFIG = {
 -- Bottomleft block 2
 	Talents = {
 		enabled = C.stats.bags,
-		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
-		anchor_frame = "Bags", anchor_to = "right", anchor_from = "left", tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 66, tip_y = 5,
+		fmt = "T: ".."[spec %d/%d/%d] [unspent]", -- "Protection: 15/0/51 +5", [shortname] shortens spec name.
+		iconsize = 11,  -- Size of talent [icon].
+		name_subs = { -- Substitutions for long talent tree names, remove and/or change any/all.
+			["Protection"] = "Prot.",
+			["Restoration"] = "Resto.",
+			["Feral Combat"] = "Feral",
+			["Retribution"] = "Ret.",
+			["Discipline"] = "Disc.",
+			["Enhancement"] = "Enhance.",
+			["Elemental"] = "Ele.",
+			["Demonology"] = "Demon.",
+			["Destruction"] = "Destro.",
+			["Assassination"] = "Assassin.",
+			["Marksmanship"] = "Marks.",
+			["Beast Mastery"] = "B.M.",
+		},
+		anchor_frame = "Bags", anchor_to = "right", anchor_from = "left", tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 80, tip_y = 5,
 		x_off = 0, y_off = 0,
 	},
 -- MiniMap block
@@ -210,8 +225,8 @@ LPSTAT_CONFIG = {
 LPSTAT_PROFILES = {
 	DEATHKNIGHT = {
 		Stats = {
-			spec1fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
-			spec2fmt = "SP: ".."[spellpower]".." Crit: ".."[spellcrit]%".." Hit: ".."[spellhit]%",
+			spec1fmt = "Mastery: ".."[mastery]".." Armor: ".."[armor]".." Avoid: ".."[avoidance]%",
+			spec2fmt = "Mastery: ".."[mastery]".." Hit: ".."[meleehit]%".." Haste: ".."[meleehaste]%",
 		}
 	},
 	HUNTER = {
@@ -252,8 +267,8 @@ LPSTAT_PROFILES = {
 	},
 	WARRIOR = {
 		Stats = {
-			spec1fmt = "Mastery: ".."[mastery]".." Armor: ".."[armor]".." Avoid: ".."[avoidance]%",
-			spec2fmt = "Mastery: ".."[mastery]".." Hit: ".."[meleehit]%".." Haste: ".."[meleehaste]%",
+			spec1fmt = "Armor: ".."[armor]".." BlockCap: ".."[blockcap]%".." Avoid: ".."[avoidance]%",
+			spec2fmt = "AP: ".."[ap]".." Crit: ".."[meleecrit]%".." Hit: ".."[meleehit]%",
 		}
 	},
 }

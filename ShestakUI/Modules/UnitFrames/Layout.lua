@@ -119,7 +119,6 @@ local function Shared(self, unit)
 	self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -7)
 	self.Power:SetStatusBarTexture(C.media.texture)
 
-
 	self.Power.frequentUpdates = true
 	self.Power.colorDisconnected = true
 	self.Power.colorTapping = true
@@ -259,7 +258,7 @@ local function Shared(self, unit)
 		end
 
 		-- LFD role icons
-		if C.raidframe.icons_lfd == true then
+		if C.raidframe.icons_role == true then
 			self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 			self.LFDRole:Size(12)
 			self.LFDRole:Point("TOPLEFT", 10, 8)
@@ -592,7 +591,7 @@ local function Shared(self, unit)
 		end
 	end
 
-	if C.unitframe.portrait_enable ~= true and C.unitframe.portrait_two_enable == true then
+	if C.unitframe.portrait_enable ~= true and C.unitframe.alternative_portraits == true then
 		self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self.Health)
 		self.Portrait:SetAllPoints(self.Health)
 		self.Portrait:SetAlpha(0.2)
@@ -620,7 +619,7 @@ local function Shared(self, unit)
 					self.Portrait.backdrop:RegisterEvent("PLAYER_TARGET_CHANGED")
 					self.Portrait.backdrop:SetScript("OnEvent", function()
 						local _, class = UnitClass("target")
-						local color = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
+						local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
 						if color then
 							self.Portrait.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
 						else

@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L = unpack(ShestakUI)
 if not IsAddOnLoaded("ShestakUI_alDamageMeter") and C.meter.enable ~= true then return end
 
 -- Config start
@@ -645,7 +645,7 @@ local OnEvent = function(self, event, ...)
 			self:UnregisterEvent(event)
 			MainFrame = CreateFrame("Frame", addon_name.."Frame", UIParent)
 			MainFrame:SetSize(width, height)
-			MainFrame:SetPoint(C.position.damage_meter)
+			MainFrame:SetPoint(unpack(C.position.damage_meter))
 			MainFrame:SetMovable(true)
 			MainFrame:EnableMouse(true)
 			MainFrame:EnableMouseWheel(true)
@@ -707,4 +707,4 @@ end
 SLASH_alDamage1 = "/aldmg"
 SLASH_alDamage2 = "/фдвьп"
 
--- edit by Oz of shestak.org --
+-- edit by Oz of shestak. org --

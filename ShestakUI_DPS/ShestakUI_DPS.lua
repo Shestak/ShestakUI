@@ -192,7 +192,7 @@ local function Shared(self, unit)
 	if C.raidframe.icons_ready_check == true then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
 		self.ReadyCheck:Size(12)
-		self.ReadyCheck:Point("BOTTOMRIGHT", self.Health, -30, -1)
+		self.ReadyCheck:Point("TOP", self.Health, "TOP", 5, -3)
 	end
 
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then

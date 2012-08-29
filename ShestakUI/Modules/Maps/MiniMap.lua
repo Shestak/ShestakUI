@@ -55,28 +55,6 @@ MiniMapMailBorder:Hide()
 MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
 MiniMapMailIcon:Size(16)
 
--- Move QueueStatus icon
-QueueStatusMinimapButton:ClearAllPoints()
-QueueStatusMinimapButton:Point("BOTTOM", Minimap, "BOTTOM", 1, -7)
-QueueStatusMinimapButton:SetHighlightTexture(nil)
-QueueStatusMinimapButtonBorder:Hide()
-
-local function UpdateLFGTooltip()
-	local position = MinimapAnchor:GetPoint()
-	QueueStatusFrame:ClearAllPoints()
-	if position:match("BOTTOMRIGHT") then
-		QueueStatusFrame:Point("BOTTOMRIGHT", QueueStatusMinimapButton, "BOTTOMLEFT", 0, 0)
-	elseif position:match("BOTTOM") then
-		QueueStatusFrame:Point("BOTTOMLEFT", QueueStatusMinimapButton, "BOTTOMRIGHT", 4, 0)
-	elseif position:match("LEFT") then
-		QueueStatusFrame:Point("TOPLEFT", QueueStatusMinimapButton, "TOPRIGHT", 4, 0)
-	else
-		QueueStatusFrame:Point("TOPRIGHT", QueueStatusMinimapButton, "TOPLEFT", 0, 0)
-	end
-end
-QueueStatusFrame:HookScript("OnShow", UpdateLFGTooltip)
-QueueStatusFrame:SetFrameStrata("TOOLTIP")
-
 -- Hide world map button
 MiniMapWorldMapButton:Hide()
 
@@ -310,3 +288,4 @@ else
 	MiniMapTracking:Hide()
 end
 
+-- edit by Oz of shestak. org --

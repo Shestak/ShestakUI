@@ -120,7 +120,7 @@ local function Update(self, t)
 					Text2:SetText(COMBAT_HONOR_GAIN.." :|r "..format("%d", honorGained))
 					Text1:SetText(dmgtxt)
 					Text3:SetText(KILLING_BLOWS.." :|r "..killingBlows)
-				end
+				end   
 			end
 		end
 		int = 2

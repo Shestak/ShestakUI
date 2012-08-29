@@ -422,7 +422,7 @@ oUF:Factory(function(self)
 				if i == 1 then
 					raidgroup:Point(unpack(C.position.unitframes.raid_heal))
 				else
-					raidgroup:Point("TOPLEFT", raid[i-1], "TOPRIGHT", 0, -16)
+					raidgroup:Point("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -16)
 				end
 				raid[i] = raidgroup
 			end

@@ -1237,8 +1237,6 @@ if bags.enabled then
 			GameTooltip:AddLine(format(NUM_FREE_SLOTS, free, total), 1, 1, 1)
 			GameTooltip:Show()
 		end,
-		OnLeave = function()
-		end,
 	})
 end
 

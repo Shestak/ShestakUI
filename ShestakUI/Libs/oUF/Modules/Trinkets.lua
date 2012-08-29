@@ -121,7 +121,7 @@ local Disable = function(self)
 		arenaFrame[self.unit] = nil
 	end
 end
-
+ 
 oUF:AddElement("Trinket", function() return end, Enable, Disable)
 
 -- edit by Oz of shestak. org --
