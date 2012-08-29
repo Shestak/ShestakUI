@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+﻿local T, C, L = unpack(select(2, ...))
 if C.automation.accept_quest ~= true then return end
 
 ----------------------------------------------------------------------------------------
