@@ -29,7 +29,7 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 	if event == "PLAYER_LOGIN" then
 		PetActionBarFrame.showgrid = 1
 		for i = 1, 10 do
-			local button button = _G["PetActionButton"..i]
+			local button = _G["PetActionButton"..i]
 			button:ClearAllPoints()
 			button:SetParent(PetHolder)
 			PetActionBarAnchor:SetParent(PetHolder)
