@@ -121,6 +121,14 @@ Monomyth:Register("QUEST_DETAIL", function()
 	end
 end)
 
+Monomyth:Register("QUEST_ACCEPTED", function()
+	if GossipFrame:IsShown() and GetNumGossipAvailableQuests() == 0 and GetNumGossipCompletedQuests() == 0 then
+		CloseGossip()
+	elseif QuestFrame:IsShown() then
+		HideUIPanel(QuestFrame)
+	end
+end)
+
 Monomyth:Register("QUEST_ACCEPT_CONFIRM", AcceptQuest)
 
 Monomyth:Register("QUEST_PROGRESS", function()
