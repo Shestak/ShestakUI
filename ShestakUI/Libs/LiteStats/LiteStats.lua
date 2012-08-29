@@ -979,6 +979,9 @@ if friends.enabled then
 		for i = 1, total do
 			local name, level, class, area, connected, status, note = GetFriendInfo(i)
 			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+			if GetLocale() ~= "enUS" then
+				for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
+			end
 			friendTable[i] = {name, level, class, area, connected, status, note}
 			if connected then
 				totalFriendsOnline = totalFriendsOnline + 1
@@ -999,20 +1002,14 @@ if friends.enabled then
 			local presenceID, presenceName, battleTag, _, toonName, toonID, client, isOnline, _, isAFK, isDND, _, noteText = BNGetFriendInfo(i)
 			local _, _, _, realmName, _, faction, race, class, _, zoneName, level = BNGetToonInfo(presenceID)
 			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+			if GetLocale() ~= "enUS" then
+				for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
+			end
 			BNTable[i] = {presenceID, presenceName, battleTag, toonName, toonID, client, isOnline, isAFK, isDND, noteText, realmName, faction, race, class, zoneName, level}
 			if isOnline then
 				totalBattleNetOnline = totalBattleNetOnline + 1
 			end
 		end
-
-		table.sort(BNTable, function(a, b)
-			if (a[2] and b[2]) then
-				if (a[2] == b[2]) then
-					return a[3] < b[3]
-				end
-				return a[2] < b[2]
-			end
-		end)
 	end
 	Inject("Friends", {
 		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD GROUP_ROSTER_UPDATE FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_TOON_ONLINE BN_FRIEND_TOON_OFFLINE BN_TOON_NAME_UPDATED") end,
@@ -1091,7 +1088,6 @@ if friends.enabled then
 							menuList[3].menuList[menuCountWhispers] = {
 								text = realID,
 								arg1 = realID,
-								arg2 = true,
 								notCheckable = true,
 								func = function(self, arg1)
 									menuFrame:Hide()
@@ -1156,7 +1152,7 @@ if friends.enabled then
 						if not connected then break end
 						if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
 						for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
-						if GetLocale() ~= "enUS" then -- feminine class localization (unsure if it's really needed)
+						if GetLocale() ~= "enUS" then
 							for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 						end
 						classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
@@ -1183,19 +1179,19 @@ if friends.enabled then
 						if client == "WoW" then
 							local _, toonName, client, realmName, _, _, _, class, _, zoneName, level = BNGetToonInfo(toonID)
 							for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
-							if GetLocale() ~= "enUS" then -- feminine class localization (unsure if it's really needed)
+							if GetLocale() ~= "enUS" then
 								for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 							end
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
 							if UnitInParty(toonName) or UnitInRaid(toonName) then grouped = "|cffaaaaaa*|r" else grouped = "" end
-							GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), presenceName.." "..battleTag, 238, 238, 238, 238, 238, 238)
+							GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), presenceName.." ("..battleTag..")", 238, 238, 238, 238, 238, 238)
 							if self.altdown then
 								if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
 								if GetRealmName() == realmName then realm_r, realm_g, realm_b = 0.3, 1.0, 0.3 else realm_r, realm_g, realm_b = 0.65, 0.65, 0.65 end
 								GameTooltip:AddDoubleLine("  "..zoneName, realmName, zone_r, zone_g, zone_b, realm_r, realm_g, realm_b)
 							end
 						else
-							GameTooltip:AddDoubleLine("|cffeeeeee"..client.." ("..toonName..")|r", "|cffeeeeee"..presenceName.." "..battleTag.."|r")
+							GameTooltip:AddDoubleLine("|cffeeeeee"..client.." ("..toonName..")|r", "|cffeeeeee"..presenceName.." ("..battleTag..")|r")
 						end
 					end
 				end
