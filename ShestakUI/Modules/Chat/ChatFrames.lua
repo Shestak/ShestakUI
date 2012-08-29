@@ -5,35 +5,9 @@ if C.chat.enable ~= true then return end
 --	Style chat frame(by Tukz and p3lim)
 ----------------------------------------------------------------------------------------
 local origs = {}
-local classes = {}
-do
-	local maleClasses = {}
-	local femaleClasses = {}
-	FillLocalizedClassList(maleClasses)
-	FillLocalizedClassList(femaleClasses, true)
-
-	for token, localized in pairs(maleClasses) do
-		classes[localized] = token
-	end
-
-	for token, localized in pairs(femaleClasses) do
-		classes[localized] = token
-	end
-end
 
 local function Strip(info, name)
 	return string.format("|Hplayer:%s|h[%s]|h", info, name:gsub("%-[^|]+", ""))
-end
-
-local function BattleNet(info, name)
-	local _, presence = string.split(":", info)
-
-	local _, toon, client, _, _, _, _, class = BNGetFriendToonInfo(BNGetFriendIndex(presence), 1)
-
-	if client == BNET_CLIENT_WOW then
-		local colors = RAID_CLASS_COLORS[classes[class]]
-		return string.format("|HBNplayer:%s|h|c%s%s|r|h", info, colors.colorStr, toon)
-	end
 end
 
 -- Function to rename channel and other stuff
@@ -41,7 +15,6 @@ local AddMessage = function(self, text, ...)
 	if type(text) == "string" then
 		text = text:gsub("|h%[(%d+)%. .-%]|h", "|h[%1]|h")
 		text = text:gsub("|Hplayer:(.-)|h%[(.-)%]|h", Strip)
-		text = text:gsub("|HBNplayer:(.-)|h%[(.-)%]|h", BattleNet)
 	end
 	return origs[self](self, text, ...)
 end
