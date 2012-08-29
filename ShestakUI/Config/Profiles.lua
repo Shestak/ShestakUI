@@ -87,6 +87,7 @@ if T.author == true then
 	C["chat"].combatlog = false
 	C["chat"].spam = true
 	C["chat"].damage_meter_spam = true
+	C["minimap"].toggle_menu = false
 	C["map"].map_boss_count = true
 	C["nameplate"].track_auras = true
 	C["nameplate"].healer_icon = true

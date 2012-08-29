@@ -297,7 +297,7 @@ end)
 ----------------------------------------------------------------------------------------
 function T.UploadDBM()
 	DBM_SavedOptions.Enabled = true
-	DBM_SavedOptions.ShowMinimapButton = false
+	DBM_SavedOptions.ShowMinimapButton = C.skins.minimap_buttons and true or false
 	DBM_SavedOptions.WarningIconLeft = false
 	DBM_SavedOptions.WarningIconRight = false
 	DBM_SavedOptions["WarningColors"] = {
