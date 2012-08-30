@@ -594,25 +594,6 @@ end
 SLASH_XCT1 = "/xct"
 SLASH_XCT2 = "/чсе"
 
--- Shadow priest helper
-if C.combattext.stop_ve_spam and T.class == "PRIEST" then
-	local sp = CreateFrame("Frame")
-	sp:SetScript("OnEvent", function(...)
-		if GetShapeshiftForm() == 1 then
-			if C.combattext.blizz_head_numbers then
-				SetCVar("CombatHealing", 0)
-			end
-		else
-			if C.combattext.blizz_head_numbers then
-				SetCVar("CombatHealing", 1)
-			end
-		end
-	end)
-	sp:RegisterEvent("PLAYER_ENTERING_WORLD")
-	sp:RegisterEvent("UPDATE_SHAPESHIFT_FORM")
-	sp:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
-end
-
 -- Spam merger
 local SQ
 if C.combattext.merge_aoe_spam then

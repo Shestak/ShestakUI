@@ -105,7 +105,6 @@ L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Soins minimum pour afficher dans la fenêtre d
 L_GUI_COMBATTEXT_SCROLLABLE = "Autoriser le défilement avec la moulette dans la fenêtre de dégâts/soins"
 L_GUI_COMBATTEXT_MAX_LINES = "Nombre de lignes maximum à conserver si l'option de défilement est activer (plus de ligne = plus de mémoire utilisée)"
 L_GUI_COMBATTEXT_TIME_VISIBLE = "Temps en seconde durant lequel un message est affiché"
-L_GUI_COMBATTEXT_STOP_VE_SPAM = "Désactiver automatiquement le spam de soins pour les prêtre en forme d'ombre"
 L_GUI_COMBATTEXT_DK_RUNES = "Afficher le recgargement des runes du chevalier de la mort"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Afficher les coups fataux"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Rassembler tous les dégats d'un aoe en un seul message"
