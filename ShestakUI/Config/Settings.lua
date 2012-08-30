@@ -113,6 +113,7 @@ C["skins"] = {
 	["nug_running"] = false,					-- NugRunning skin
 	["ovale"] = false,							-- OvaleSpellPriority skin
 	["clique"] = false,							-- Clique skin
+	["ace3"] = false,							-- Ace3 options elements skin
 }
 
 ----------------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 ﻿local T, C, L = unpack(select(2, ...))
-if C.skins.blizzard_frames ~= true then return end
+if C.skins.blizzard_frames ~= true and C.skins.ace3 ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Ace3 options skin

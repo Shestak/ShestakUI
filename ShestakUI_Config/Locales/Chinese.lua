@@ -82,6 +82,7 @@ L_GUI_SKINS_FLYOUT_BUTTON = "开启FlyoutButtonCustom样式增强"
 L_GUI_SKINS_NUG_RUNNING = "开启NugRunning样式增强"
 L_GUI_SKINS_OVALE = "开启OvaleSpellPriority样式增强"
 L_GUI_SKINS_CLIQUE = "开启Clique样式增强"
+L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "战斗文字"

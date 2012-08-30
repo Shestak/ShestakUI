@@ -82,6 +82,7 @@ L_GUI_SKINS_FLYOUT_BUTTON = "Attiva il restyling di FlyoutButtonCustom"
 L_GUI_SKINS_NUG_RUNNING = "Attiva il restyling di NugRunning"
 L_GUI_SKINS_OVALE = "Attiva il restyling di OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Attiva il restyling di Clique"
+L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"
