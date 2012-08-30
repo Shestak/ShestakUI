@@ -11,7 +11,7 @@ if C.misc.auto_accept_invite == true then
 			end
 		end
 		for i = 1, select(2, BNGetNumFriends()) do
-			local _, _, _, toonName, _, client = BNGetFriendInfo(i)
+			local _, _, _, _, toonName, _, client = BNGetFriendInfo(i)
 			if client == "WoW" and toonName == name then
 				return true
 			end
