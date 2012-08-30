@@ -1410,8 +1410,6 @@ T.CreateAuraWatch = function(self, unit)
 	local auras = CreateFrame("Frame", nil, self)
 	auras:Point("TOPLEFT", self.Health, 0, 0)
 	auras:Point("BOTTOMRIGHT", self.Health, 0, 0)
-	auras.presentAlpha = 1
-	auras.missingAlpha = 0
 	auras.icons = {}
 	auras.PostCreateIcon = T.CreateAuraWatchIcon
 

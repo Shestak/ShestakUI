@@ -83,7 +83,6 @@ if T.author == true then
 	C["tooltip"].reforge = true
 	C["tooltip"].symbiosis = true
 	C["tooltip"].instance_lock = true
-	C["tooltip"].item_transmogrify = true
 	C["chat"].combatlog = false
 	C["chat"].spam = true
 	C["chat"].damage_meter_spam = true

@@ -29,7 +29,7 @@ local function LoadSkin()
 		T.SkinDropDownBox(_G["MacOptionsFrameCodecDropDown"])
 
 		-- Skin CheckBox
-		for i = 1, 10 do
+		for i = 1, 11 do
 			T.SkinCheckBox(_G["MacOptionsFrameCheckButton"..i])
 		end
 
