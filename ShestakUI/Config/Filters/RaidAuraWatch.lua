@@ -84,8 +84,6 @@ if C.raidframe.plugins_aura_watch == true then
 		end
 
 		T.debuffids = {
-			SpellName(6788),	-- Focused Assault
-			SpellName(213123),	-- Focused Assault
 		-----------------------------------------------------------------
 		-- Pandaria
 		-----------------------------------------------------------------
