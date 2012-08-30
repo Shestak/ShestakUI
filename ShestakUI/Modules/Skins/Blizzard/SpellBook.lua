@@ -253,6 +253,14 @@ local function LoadSkin()
 				button.iconTexture:Point("BOTTOMRIGHT", -2, 2)
 				button.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
+				if button.highlightTexture then
+					hooksecurefunc(button.highlightTexture, "SetTexture", function(self, texOrR, G, B)
+						if texOrR == "Interface\\Buttons\\ButtonHilight-Square" then
+							button.highlightTexture:SetTexture(1, 1, 1, 0.3)
+						end
+					end)
+				end
+
 				if button.FutureTexture:IsShown() then
 					button.iconTexture:SetDesaturated(true)
 					button.Name:SetTextColor(0.6, 0.6, 0.6)
