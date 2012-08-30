@@ -47,20 +47,20 @@ LPSTAT_CONFIG = {
 		fmt_mb = "%.1f"..class"mb", -- "12.5mb"
 		fmt_kb = "%.0f"..class"kb", -- "256kb" - only shows if memory is under one megabyte
 		--max_addons = 15, -- Set to nil or comment/delete this line to disable. Holding Alt reveals hidden addons.
-		anchor_frame = "Latency", anchor_to = "left", anchor_from = "right",
+		anchor_frame = C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.latency and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	FPS = {
 		enabled = C.stats.fps,
 		fmt = "%d"..class"fps", -- "42fps"
-		anchor_frame = "Memory", anchor_to = "left", anchor_from = "right",
+		anchor_frame = C.stats.memory and "Memory" or "Latency", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.memory and 3 or 0, y_off = 0,
 	},
 	Friends = {
 		enabled = C.stats.friend,
 		fmt = "%d/%d"..class"f", -- "F: 3/40"
 		maxfriends = nil, -- Set max friends listed, nil means no limit.
-		anchor_frame = "FPS", anchor_to = "left", anchor_from = "right",
+		anchor_frame = C.stats.fps and "FPS" or "Memory", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.fps and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Guild = {

@@ -933,7 +933,33 @@ T.UpdateHoly = function(self, event, unit, powerType)
 	if self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER") then return end
 	local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)
 	local numMax = UnitPowerMax("player", SPELL_POWER_HOLY_POWER)
-	for i = 1, numMax do
+	local barWidth = self.HolyPower:GetWidth()
+	local spacing = select(4, self.HolyPower[4]:GetPoint())
+	local lastBar = 0
+
+	if numMax ~= self.HolyPower.maxPower then
+		if numMax == 3 then
+			self.HolyPower[4]:Hide()
+			self.HolyPower[5]:Hide()
+			for i = 1, 3 do
+				if i ~= 3 then
+					self.HolyPower[i]:SetWidth(barWidth / 3)
+					lastBar = lastBar + (barWidth / 3 + spacing)
+				else
+					self.HolyPower[i]:SetWidth(barWidth - lastBar)
+				end
+			end
+		else
+			self.HolyPower[4]:Show()
+			self.HolyPower[5]:Show()
+			for i = 1, 5 do
+				self.HolyPower[i]:SetWidth(self.HolyPower[i].width)
+			end
+		end
+		self.HolyPower.maxPower = numMax
+	end
+
+	for i = 1, 5 do
 		if i <= num then
 			self.HolyPower[i]:SetAlpha(1)
 		else
