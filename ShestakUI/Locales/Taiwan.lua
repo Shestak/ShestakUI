@@ -88,8 +88,8 @@ L_ALOAD_RL = "重新加載UI"
 L_ALOAD_DEP = "依賴關係: "
 L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
 L_ALOAD_PROFILES = "Profiles" -- Needs review
-L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
-L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
+L_ALOAD_ENABLE_ALL = "全部啟用"
+L_ALOAD_DISABLE_ALL = "全部禁用"
 L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
 L_ALOAD_SET_TO = "Set To.." -- Needs review
 L_ALOAD_ADD_TO = "Add To.." -- Needs review
@@ -189,7 +189,7 @@ L_PLANNER_DEATHKNIGHT_2 = "冰霜"
 L_PLANNER_DEATHKNIGHT_3 = "穢邪"
 L_PLANNER_DRUID_1 = "平衡"
 L_PLANNER_DRUID_2 = "野性戰鬥"
-L_PLANNER_DRUID_3 = "Guardian"	--need review
+L_PLANNER_DRUID_3 = "守護"
 L_PLANNER_DRUID_4 = "恢復"
 L_PLANNER_HUNTER_1 = "野獸控制"
 L_PLANNER_HUNTER_2 = "射擊"
@@ -197,9 +197,9 @@ L_PLANNER_HUNTER_3 = "生存"
 L_PLANNER_MAGE_1 = "秘法"
 L_PLANNER_MAGE_2 = "火焰"
 L_PLANNER_MAGE_3 = "冰霜"
-L_PLANNER_MONK_1 = "Brewmaster"	--need review
-L_PLANNER_MONK_2 = "Mistweaver"	--need review
-L_PLANNER_MONK_3 = "Windwalker"	--need review
+L_PLANNER_MONK_1 = "醉酒"
+L_PLANNER_MONK_2 = "織霧"
+L_PLANNER_MONK_3 = "禦風"
 L_PLANNER_PALADIN_1 = "神聖"
 L_PLANNER_PALADIN_2 = "防護"
 L_PLANNER_PALADIN_3 = "懲戒"
@@ -394,7 +394,7 @@ L_EXTRA_ZONEACHID = {
 	["卡林多"]							= {X =   43, A =    0, H =    0},
 	["外域"]							= {X =   44, A =    0, H =    0},
 	["北裂境"]							= {X =   45, A =    0, H =    0},
-	["Pandaria"]						= {X = 6974, A =    0, H =    0}, -- Needs review
+	["潘達利亞"]							= {X = 6974, A =    0, H =    0},
 	["世界地圖"]							= {X =  nil, A =    0, H =    0},
 	-- Eastern Kingdoms
 	["阿拉希高地"]						= {X =  761, A = 4896, H = 4896},
@@ -470,13 +470,13 @@ L_EXTRA_ZONEACHID = {
 	["托巴拉德"]							= {X =    0, A = 4874, H = 4874},
 	["托巴拉德半島"]						= {X =    0, A = 4874, H = 4874},
 	-- Pandaria
-	["The Jade Forest"]					= {X = 6351, A = 6300, H = 6534}, -- Needs review
-	["Valley of the Four Winds"]		= {X = 6969, A = 6301, H = 6301}, -- Needs review
-	--["Krasarang Wilds"]					= {X = 6975, A = 6535, H = 6536}, -- Needs review
-	["Kun-Lai Summit"]					= {X = 6976, A = 6537, H = 6538}, -- Needs review
-	["Townlong Steppes"]				= {X = 6977, A = 6539, H = 6539}, -- Needs review
-	["Dread Wastes"]					= {X = 6978, A = 6540, H = 6540}, -- Needs review
-	["Vale of Eternal Blossoms"]		= {X = 6979, A =    0, H =    0}, -- Needs review
+	["翠玉林"]							= {X = 6351, A = 6300, H = 6534},
+	["四風峽"]							= {X = 6969, A = 6301, H = 6301},
+	--["喀撒朗蠻荒"]						= {X = 6975, A = 6535, H = 6536},
+	["崑萊峰"]							= {X = 6976, A = 6537, H = 6538},
+	["螳螂荒原"]							= {X = 6977, A = 6539, H = 6539},
+	["悚然荒野"]							= {X = 6978, A = 6540, H = 6540},
+	["恆春谷"]							= {X = 6979, A =    0, H =    0},
 	-- Boolean Explores
 	["奎爾達納斯之島"]					= {X =  868, A =    0, H =    0},
 	["安其拉: 沒落的王朝"]				= {X =    0, A =    0, H =    0},
