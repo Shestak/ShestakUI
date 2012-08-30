@@ -1010,6 +1010,13 @@ if friends.enabled then
 				totalBattleNetOnline = totalBattleNetOnline + 1
 			end
 		end
+
+		table.sort(BNTable, function(a, b)
+			if a[2] and b[2] and a[3] and b[3] then
+				if a[2] == b[2] then return a[3] < b[3] end
+				return a[2] < b[2]
+			end
+		end)
 	end
 	Inject("Friends", {
 		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD GROUP_ROSTER_UPDATE FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_TOON_ONLINE BN_FRIEND_TOON_OFFLINE BN_TOON_NAME_UPDATED") end,
@@ -1285,9 +1292,11 @@ if talents.enabled then
 			if UnitLevel(P) >= 10 then
 				GameTooltip:SetOwner(self, talents.tip_anchor, talents.tip_x, talents.tip_y)
 				GameTooltip:ClearLines()
+				GameTooltip:AddLine(SPECIALIZATION, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddLine(" ")
 				for i = 1, GetNumSpecGroups() do
 					if GetSpecialization(false, false, i) then
-						GameTooltip:AddLine(string.join(" ", string.format("", select(2, GetSpecializationInfo(GetSpecialization(false, false, i)))), (i == active and string.join("", "|cff00FF00" , ACTIVE_PETS, "|r") or string.join("", "|cffFF0000", FACTION_INACTIVE, "|r"))),1,1,1)
+						GameTooltip:AddLine(string.join(" ", string.format("", select(2, GetSpecializationInfo(GetSpecialization(false, false, i)))), (i == GetActiveSpecGroup() and string.join("", "|cff00FF00" , TALENT_ACTIVE_SPEC_STATUS, "|r") or string.join("", "|cffFF0000", FACTION_INACTIVE, "|r"))), 1, 1, 1)
 					end
 				end
 				GameTooltip:Show()
