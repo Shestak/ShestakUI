@@ -104,7 +104,6 @@ L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Minimum healing to show in incoming/outgoing h
 L_GUI_COMBATTEXT_SCROLLABLE = "Allows you to scroll frame lines with mousewheel"
 L_GUI_COMBATTEXT_MAX_LINES = "Max lines to keep in scrollable mode (more lines = more memory)"
 L_GUI_COMBATTEXT_TIME_VISIBLE = "Time(seconds) a single message will be visible"
-L_GUI_COMBATTEXT_STOP_VE_SPAM = "Automaticly turns off healing spam for priests in shadowform"
 L_GUI_COMBATTEXT_DK_RUNES = "Show deathknight rune recharge"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Tells you about your killingblows"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Merges multiple aoe damage spam into single message"

@@ -104,7 +104,6 @@ L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Sanación mínima que se mostrar en los mensaj
 L_GUI_COMBATTEXT_SCROLLABLE = "Permitir usar la rueda del ratón para desplazar las líneas de los marcos"
 L_GUI_COMBATTEXT_MAX_LINES = "Máx de líneas para mantener desplazables (a más lineas, más memoria requerida)"
 L_GUI_COMBATTEXT_TIME_VISIBLE = "Tiempo (segundos) en que un mensaje es visible"
-L_GUI_COMBATTEXT_STOP_VE_SPAM = "Ocultar automáticamente el spam de sanación del Sacerdote cuando estás en Forma de las Sombras"
 L_GUI_COMBATTEXT_DK_RUNES = "Mostrar recarga de runas de los Caballeros de la Muerte"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Mostrar tus golpes de gracia"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unir el spam de daño de area en un solo mensaje"

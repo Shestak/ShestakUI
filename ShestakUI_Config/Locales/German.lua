@@ -104,7 +104,6 @@ L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Ab welche Größe soll ein-/ausgehende Heilung
 L_GUI_COMBATTEXT_SCROLLABLE = "Erlaubt es dir mit dem Mausrad durch die letzten Zeilen zu scrollen"
 L_GUI_COMBATTEXT_MAX_LINES = "Maximale Zeilen, die behalten werden sollen im Scrollmodus (mehr Zeilen = mehr Speicherverbrauch)"
 L_GUI_COMBATTEXT_TIME_VISIBLE = "Zeit(Sekunden) wielange eine einzelne Nachricht angezeigt wird"
-L_GUI_COMBATTEXT_STOP_VE_SPAM = "Heilung von Priestern in Schattenform wird automatisch ausgeschaltet"
 L_GUI_COMBATTEXT_DK_RUNES = "Zeige Runenaufladung vom Todesritter"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Teilt dir mit ob du den Todesstoß bei einer Kreatur/einem Spieler hattest"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Vereint mehrfachen Flächenschaden in eine einzige Nachricht"

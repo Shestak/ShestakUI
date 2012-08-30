@@ -104,7 +104,6 @@ L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Cure minime da mostrare nei messaggi delle cur
 L_GUI_COMBATTEXT_SCROLLABLE = "Attiva la 'modalità scorrimento': consente di scorrere tra le righe dei riquadri con la rotellina del mouse"
 L_GUI_COMBATTEXT_MAX_LINES = "Massimo numero righe da ricordare in 'scorrimento' (più righe = più memoria)"
 L_GUI_COMBATTEXT_TIME_VISIBLE = "Tempo (in secondi) in cui un singolo messaggio sarà visibile"
-L_GUI_COMBATTEXT_STOP_VE_SPAM = "Disabilita automaticamente lo spam delle cure dei sacerdoti in forma d'ombra"
 L_GUI_COMBATTEXT_DK_RUNES = "Mostra la ricarica delle rune dei cavalieri della morte"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Ti comunica i tuoi colpi mortali"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unisce lo spam per danni multipli a più bersagli in un singolo messaggio"

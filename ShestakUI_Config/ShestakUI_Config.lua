@@ -131,7 +131,6 @@ local function Local(o)
 	if o == "UIConfigcombattextscrollable" then o = L_GUI_COMBATTEXT_SCROLLABLE end
 	if o == "UIConfigcombattextmax_lines" then o = L_GUI_COMBATTEXT_MAX_LINES end
 	if o == "UIConfigcombattexttime_visible" then o = L_GUI_COMBATTEXT_TIME_VISIBLE end
-	if o == "UIConfigcombattextstop_ve_spam" then o = L_GUI_COMBATTEXT_STOP_VE_SPAM end
 	if o == "UIConfigcombattextdk_runes" then o = L_GUI_COMBATTEXT_DK_RUNES end
 	if o == "UIConfigcombattextkillingblow" then o = L_GUI_COMBATTEXT_KILLINGBLOW end
 	if o == "UIConfigcombattextmerge_aoe_spam" then o = L_GUI_COMBATTEXT_MERGE_AOE_SPAM end
