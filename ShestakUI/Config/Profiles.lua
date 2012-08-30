@@ -67,7 +67,6 @@ if T.author == true then
 	C["skins"].blizzard_frames = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].crit_prefix = ""
-	C["combattext"].stop_ve_spam = true
 	C["combattext"].dk_runes = false
 	C["combattext"].dispel = false
 	C["combattext"].interrupt = false
