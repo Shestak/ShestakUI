@@ -360,6 +360,8 @@ local function Shared(self, unit)
 				self.HolyPower[i].bg:SetAllPoints()
 				self.HolyPower[i].bg:SetTexture(C.media.texture)
 				self.HolyPower[i].bg:SetVertexColor(0.89, 0.88, 0.1, 0.25)
+
+				self.HolyPower[i].width = self.HolyPower[i]:GetWidth()
 			end
 
 			self.HolyPower.Override = T.UpdateHoly

@@ -65,7 +65,11 @@ end
 
 -- Option Overrides
 Omen.db.profile.NumBars = 7
-Omen.db.profile.MinimapIcon.hide = true
+if C.skins.minimap_buttons == true then
+	Omen.db.profile.MinimapIcon.hide = false
+else
+	Omen.db.profile.MinimapIcon.hide = true
+end
 Omen.db.profile.Autocollapse = true
 Omen.db.profile.Bar.Spacing = 7
 Omen.db.profile.Bar.Height = 12
@@ -79,6 +83,8 @@ Omen.db.profile.TitleBar.Font = "Hooge"
 Omen.db.profile.Background.Texture = "Smooth"
 Omen.db.profile.Bar.FontSize = 8
 Omen.db.profile.Bar.ShowHeadings = false
+Omen.db.profile.Shown = true
+Omen.db.profile.Locked = true
 
 -- Force updates
 Omen:UpdateBarTextureSettings()

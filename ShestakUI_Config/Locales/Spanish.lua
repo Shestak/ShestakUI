@@ -25,6 +25,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encim
 L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
 L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
 L_GUI_MISC_PROFESSION_TABS = "Pestanas de profesiones de artesania y marcos de comercio"
+L_GUI_MISC_PROFESSION_DATABASE = "Professions Database on Professions frame" -- Needs review
 L_GUI_MISC_DUNGEON_TABS = "PvP/PvE tabs on own frames" -- Needs review
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
@@ -62,6 +63,7 @@ L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
 L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
+L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Estilización"

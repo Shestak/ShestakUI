@@ -11,7 +11,9 @@ local check = function(self, event, prefix, message, channel, sender)
 			self:UnregisterEvent("CHAT_MSG_ADDON")
 		end
 	else
-		if UnitInRaid("player") then
+		if UnitInBattleground("player") and UnitInBattleground("player") > 0 then
+			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "BATTLEGROUND")
+		elseif UnitInRaid("player") then
 			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "RAID")
 		elseif UnitInParty("player") then
 			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "PARTY")

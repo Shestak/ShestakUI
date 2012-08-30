@@ -40,7 +40,7 @@ ConsolidatedBuffsCount:Point("BOTTOMRIGHT", 0, 1)
 ConsolidatedBuffsCount:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 ConsolidatedBuffsCount:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
-for i = 1, 2 do
+for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 	local buff = _G["TempEnchant"..i]
 	local icon = _G["TempEnchant"..i.."Icon"]
 	local border = _G["TempEnchant"..i.."Border"]
@@ -49,10 +49,12 @@ for i = 1, 2 do
 	if border then border:Hide() end
 
 	buff:Size(C.aura.player_buff_size)
-	buff:CreateBackdrop("Default")
-	buff.backdrop:SetAllPoints()
-	if C.aura.classcolor_border == true then
-		buff.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	if i ~= 3 then
+		buff:CreateBackdrop("Default")
+		buff.backdrop:SetAllPoints()
+		if C.aura.classcolor_border == true then
+			buff.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		end
 	end
 
 	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

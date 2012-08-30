@@ -1,13 +1,12 @@
 ## Interface: 50001
 ## Title: ShestakUI Filger
 ## Notes: Class timers for ShestakUI (Oz of shestak.org Edit)
-
 ## Author: Nils Ruesch
-## Version: 4.0.2
+## Version: 4.0.4
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 4.0.2
+## X-Curse-Packaged-Version: 4.0.4
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org

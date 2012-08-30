@@ -264,6 +264,8 @@ Filger_Spells = {
 			{spellID = 106922, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ironbark
+			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Savage Defense
 			{spellID = 62606, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Frenzied Regeneration
@@ -456,6 +458,8 @@ Filger_Spells = {
 			{spellID = 18562, filter = "CD"},
 			-- Barkskin
 			{spellID = 22812, filter = "CD"},
+			-- Ironbark
+			{spellID = 102342, filter = "CD"},
 			-- Mangle(Bear)
 			{spellID = 33878, filter = "CD"},
 			-- Tiger's Fury
@@ -1451,6 +1455,8 @@ Filger_Spells = {
 			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Twist of Fate
 			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Glyph of Mind Spike
+			{spellID = 81292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evangelism
 			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Sanctuary
@@ -2793,6 +2799,8 @@ Filger_Spells = {
 			-- Paladin
 			-- Hammer of Justice
 			{spellID = 853, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Fist of Justice
+			{spellID = 105593, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Repentance
 			{spellID = 20066, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
@@ -2959,8 +2967,10 @@ Filger_Spells = {
 			-- Druid
 			-- Innervate
 			{spellID = 29166, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Barskin
+			-- Barkskin
 			{spellID = 22812, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Ironbark
+			{spellID = 102342, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Nature's grasp
 			{spellID = 16689, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
@@ -3089,6 +3099,8 @@ Filger_Spells = {
 
 			-- Hammer of Justice
 			{spellID = 853, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Fist of Justice
+			{spellID = 105593, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Repentance
 			{spellID = 20066, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield

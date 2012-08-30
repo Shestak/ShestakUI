@@ -25,6 +25,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Индикатор транспорта по н�
 L_GUI_MISC_QUEST_AUTOBUTTON = "Кнопка квестовых(список) предметов над миникартой"
 L_GUI_MISC_RAID_TOOLS = "Инструменты рейда"
 L_GUI_MISC_PROFESSION_TABS = "Закладки всех профессий у окна торговли/профессии"
+L_GUI_MISC_PROFESSION_DATABASE = "Professions Database on Professions frame" -- Needs review
 L_GUI_MISC_DUNGEON_TABS = "Вкладки возле окон PvP/PvE"
 L_GUI_MISC_HIDE_BG_SPAM = "Скрывать сообщения в центре экрана на полях боя"
 L_GUI_MISC_ITEM_LEVEL = "Отображать уровень предметов на экранах персонажа и осмотра"
@@ -62,6 +63,7 @@ L_GUI_AUTOMATION_SKIP_CINEMATIC = "Пропуск видеороликов(ес�
 L_GUI_AUTOMATION_AUTO_ROLE = "Выбор вашей роли(в группе/рейде)"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Снимать *плохие* баффы"
 L_GUI_AUTOMATION_TAB_BINDER = "Клавиша *Tab* выбирает вражеских игроков"
+L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

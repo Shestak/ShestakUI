@@ -143,14 +143,14 @@ local micromenu = {
 		if InCombatLockdown() then
 			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
 		end
-		ToggleSpellBook(BOOKTYPE_SPELL)
+		ToggleFrame(SpellBookFrame)
 	end},
 	{text = TALENTS_BUTTON, notCheckable = 1, func = function()
 		if not PlayerTalentFrame then
 			TalentFrame_LoadUI()
 		end
 		if T.level >= SHOW_TALENT_LEVEL then
-			ToggleTalentFrame()
+			ShowUIPanel(PlayerTalentFrame)
 		else
 			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
 		end

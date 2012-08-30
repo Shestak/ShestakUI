@@ -25,6 +25,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框体解锁"
 L_GUI_MISC_QUEST_AUTOBUTTON = "任务/道具自动按钮"
 L_GUI_MISC_RAID_TOOLS = "团队工具"
 L_GUI_MISC_PROFESSION_TABS = "在专业和商业框体显示专业技能按鈕"
+L_GUI_MISC_PROFESSION_DATABASE = "Professions Database on Professions frame" -- Needs review
 L_GUI_MISC_DUNGEON_TABS = "PvP/PvE tabs on own frames" -- Needs review
 L_GUI_MISC_HIDE_BG_SPAM = "在战场内移除 Boss 表情信息"
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
@@ -62,6 +63,7 @@ L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
 L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
+L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "风格化"

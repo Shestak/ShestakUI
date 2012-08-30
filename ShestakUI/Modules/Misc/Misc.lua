@@ -52,7 +52,7 @@ end
 GameTooltip:HookScript("OnTooltipSetItem", function(self)
 	if MerchantFrame:IsShown() and IsMerchantButtonOver() then
 		for i = 2, GameTooltip:NumLines() do
-			if _G["GameTooltipTextLeft"..i]:GetText():find("<[sS]hift") then
+			if _G["GameTooltipTextLeft"..i]:GetText():find(ITEM_VENDOR_STACK_BUY) then
 				GameTooltip:AddLine("|cff00ff00<"..L_MISC_BUY_STACK..">|r")
 			end
 		end

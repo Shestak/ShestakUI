@@ -83,7 +83,6 @@ if T.author == true then
 	C["tooltip"].reforge = true
 	C["tooltip"].symbiosis = true
 	C["tooltip"].instance_lock = true
-	C["tooltip"].item_transmogrify = true
 	C["chat"].combatlog = false
 	C["chat"].spam = true
 	C["chat"].damage_meter_spam = true
@@ -98,6 +97,7 @@ if T.author == true then
 	C["unitframe_class_bar"].vengeance = false
 	C["stats"].fps = false
 	C["stats"].battleground = true
+	C["toppanel"].enable = false
 	if T.level == MAX_PLAYER_LEVEL then
 		C["automation"].screenshot = true
 		C["stats"].experience = false

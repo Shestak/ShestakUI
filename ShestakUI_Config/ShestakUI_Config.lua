@@ -53,6 +53,7 @@ local function Local(o)
 	if o == "UIConfigmiscquest_auto_button" then o = L_GUI_MISC_QUEST_AUTOBUTTON end
 	if o == "UIConfigmiscraid_tools" then o = L_GUI_MISC_RAID_TOOLS end
 	if o == "UIConfigmiscprofession_tabs" then o = L_GUI_MISC_PROFESSION_TABS end
+	if o == "UIConfigmiscprofession_database" then o = L_GUI_MISC_PROFESSION_DATABASE end
 	if o == "UIConfigmiscdungeon_tabs" then o = L_GUI_MISC_DUNGEON_TABS end
 	if o == "UIConfigmischide_bg_spam" then o = L_GUI_MISC_HIDE_BG_SPAM end
 	if o == "UIConfigmiscitem_level" then o = L_GUI_MISC_ITEM_LEVEL end
@@ -90,6 +91,7 @@ local function Local(o)
 	if o == "UIConfigautomationauto_role" then o = L_GUI_AUTOMATION_AUTO_ROLE end
 	if o == "UIConfigautomationcancel_bad_buffs" then o = L_GUI_AUTOMATION_CANCEL_BAD_BUFFS end
 	if o == "UIConfigautomationtab_binder" then o = L_GUI_AUTOMATION_TAB_BINDER end
+	if o == "UIConfigautomationlogging_combat" then o = L_GUI_AUTOMATION_LOGGING_COMBAT end
 
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
@@ -1021,7 +1023,7 @@ do
 		subtitle2:SetWidth(580)
 		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
 		subtitle2:SetJustifyH("LEFT")
-		subtitle2:SetText("AcidWeb, Aezay, Affli, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Chiril, CrusaderHeimdall, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Woffle of Dark Iron, Xuerian, Yleaf, Zork.")
+		subtitle2:SetText("AcidWeb, Aezay, Affli, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Chiril, CrusaderHeimdall, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Woffle of Dark Iron, Xuerian, Yleaf, Zork.")
 
 		local title3 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)

@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+﻿local T, C, L = unpack(select(2, ...))
 if C.automation.accept_quest ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -118,6 +118,14 @@ end)
 Monomyth:Register("QUEST_DETAIL", function()
 	if not QuestGetAutoAccept() then
 		AcceptQuest()
+	end
+end)
+
+Monomyth:Register("QUEST_ACCEPTED", function()
+	if GossipFrame:IsShown() and GetNumGossipAvailableQuests() == 0 and GetNumGossipCompletedQuests() == 0 then
+		CloseGossip()
+	elseif QuestFrame:IsShown() then
+		HideUIPanel(QuestFrame)
 	end
 end)
 

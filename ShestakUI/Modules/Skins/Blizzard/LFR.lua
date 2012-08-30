@@ -46,10 +46,9 @@ local function LoadSkin()
 		_G[button.."Right"]:Kill()
 	end
 
-	for i = 1, NUM_LFR_CHOICE_BUTTONS do
-		local button = _G["LFRQueueFrameSpecificListButton"..i]
+	hooksecurefunc("LFRQueueFrameSpecificListButton_SetDungeon", function(button, dungeonID)
 		T.SkinCheckBox(button.enableButton)
-	end
+	end)
 
 	T.SkinCheckBox(LFRQueueFrameRoleButtonTank:GetChildren())
 	T.SkinCheckBox(LFRQueueFrameRoleButtonHealer:GetChildren())

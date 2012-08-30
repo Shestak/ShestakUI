@@ -78,10 +78,6 @@ if C.raidframe.plugins_aura_watch == true then
 
 		if not ORD then return end
 
-		ORD.ShowDispelableDebuff = C.raidframe.plugins_debuffhighlight_icon
-		ORD.FilterDispellableDebuff = true
-		ORD.MatchBySpellName = true
-
 		local function SpellName(id)
 			local name = select(1, GetSpellInfo(id))
 			return name

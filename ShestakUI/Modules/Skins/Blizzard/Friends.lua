@@ -213,6 +213,16 @@ local function LoadSkin()
 
 	T.SkinCheckBox(ChannelFrameAutoJoinBattleground)
 	T.SkinCheckBox(ChannelFrameAutoJoinParty)
+	hooksecurefunc("BNConversationInvite_Update", function()
+		for i = 1, BN_CONVERSATION_INVITE_NUM_DISPLAYED do
+			local button = _G["BNConversationInviteDialogListFriend"..i]
+			local check = button.checkButton
+			if check and not check.isSkinned then
+				T.SkinCheckBox(check)
+				check.isSkinned = true
+			end
+		end
+	end)
 
 	-- Bottom Tabs
 	for i = 1, 5 do
