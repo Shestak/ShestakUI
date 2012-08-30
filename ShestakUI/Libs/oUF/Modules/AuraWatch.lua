@@ -178,7 +178,7 @@ local function setupIcons(self)
 
 			if watch.PostCreateIcon then watch:PostCreateIcon(icon, icon.spellID, name, self) end
 		else
-			print("oUF_AuraWatch error: no spell with "..tostring(icon.spellID).." spell ID exists")
+			print("|cffff0000WARNING: spell ID ["..tostring(icon.spellID).."] no longer exists! Report this to Shestak.|r")
 		end
 	end
 end
