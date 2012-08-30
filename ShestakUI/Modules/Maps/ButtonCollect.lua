@@ -17,7 +17,7 @@ local button = CreateFrame("Frame", "ButtonCollectFrame", UIParent)
 
 local function PositionAndStyle()
 	button:Size(20)
-	button:SetPoint("TOPRIGHT", Minimap, "TOPLEFT", -3, 2)
+	button:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
 	for i =1, #buttons do
 		buttons[i]:ClearAllPoints()
 		buttons[i]:SetPoint("TOP", button, "TOP", 0, -((i - 1) * 21))
@@ -42,3 +42,5 @@ collect:SetScript("OnEvent", function(self)
 	end
 	PositionAndStyle()
 end)
+
+-- edit by Oz of shestak. org --

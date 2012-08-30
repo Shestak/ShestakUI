@@ -151,7 +151,7 @@ LPSTAT_CONFIG = {
 		enabled = C.stats.bags,
 		fmt = "B: ".."%d/%d", -- "B: 24/98"
 		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
-		x_off = -16, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 41, tip_y = 5,
+		x_off = -16, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 34, tip_y = 5,
 		justify_h = "right",
 	},
 	-- Top block
@@ -198,7 +198,7 @@ LPSTAT_CONFIG = {
 			["Marksmanship"] = "Marks.",
 			["Beast Mastery"] = "B.M.",
 		},
-		anchor_frame = "Bags", anchor_to = "right", anchor_from = "left", tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 66, tip_y = 5,
+		anchor_frame = "Bags", anchor_to = "right", anchor_from = "left", tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = 90, tip_y = 5,
 		x_off = 0, y_off = 0,
 	},
 -- MiniMap block

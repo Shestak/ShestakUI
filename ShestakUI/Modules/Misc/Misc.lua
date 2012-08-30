@@ -207,9 +207,9 @@ local button = CreateFrame("Button", "SwitchLayout", UIParent)
 button:SetTemplate("Transparent")
 button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 if C.actionbar.toggle_mode == true then
-	button:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -18)
+	button:Point("TOPRIGHT", Minimap, "TOPLEFT", -3, -18)
 else
-	button:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
+	button:Point("TOPRIGHT", Minimap, "TOPLEFT", -3, 2)
 end
 button:Size(19)
 button:SetAlpha(0)
@@ -286,3 +286,5 @@ LFRBrowseFrameListScrollFrame:SetPoint("BOTTOMRIGHT", LFRBrowseFrameListButton19
 LFRQueueFrameSpecificListScrollFrame:ClearAllPoints()
 LFRQueueFrameSpecificListScrollFrame:SetPoint("TOPLEFT", LFRQueueFrameSpecificListButton1, "TOPLEFT", 0, 0)
 LFRQueueFrameSpecificListScrollFrame:SetPoint("BOTTOMRIGHT", LFRQueueFrameSpecificListButton14, "BOTTOMRIGHT", 0, -2)
+
+-- edit by Oz of shestak. org --
