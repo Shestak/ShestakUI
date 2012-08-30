@@ -68,6 +68,7 @@ T.DiminishingSpells = function()
 		[46968] = {"ctrlstun"},		-- Shockwave
 		[115001] = {"ctrlstun"},	-- Remorseless Winter
 		[853] = {"ctrlstun"},		-- Hammer of Justice
+		[105593] = {"ctrlstun"},	-- Fist of Justice
 		[5211] = {"ctrlstun"},		-- Bash
 		[19577] = {"ctrlstun"},		-- Intimidation
 		[22570] = {"ctrlstun"},		-- Maim
