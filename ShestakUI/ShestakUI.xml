@@ -121,6 +121,7 @@
 	<Script file="Modules\Automation\AutoRelease.lua"/>
 	<Script file="Modules\Automation\CancelBadBuffs.lua"/>
 	<Script file="Modules\Automation\DeclineDuel.lua"/>
+	<Script file="Modules\Automation\LoggingCombat.lua"/>
 	<Script file="Modules\Automation\SetRole.lua"/>
 	<Script file="Modules\Automation\SkipCinematic.lua"/>
 	<Script file="Modules\Automation\SolveArtifact.lua"/>

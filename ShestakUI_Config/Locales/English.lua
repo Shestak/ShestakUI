@@ -60,6 +60,7 @@ L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies"
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs"
 L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players"
+L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances"
 
 -- Skins options
 L_GUI_SKINS = "Stylization"

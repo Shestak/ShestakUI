@@ -62,6 +62,7 @@ L_GUI_AUTOMATION_SKIP_CINEMATIC = "Пропуск видеороликов(ес�
 L_GUI_AUTOMATION_AUTO_ROLE = "Выбор вашей роли(в группе/рейде)"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Снимать *плохие* баффы"
 L_GUI_AUTOMATION_TAB_BINDER = "Клавиша *Tab* выбирает вражеских игроков"
+L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

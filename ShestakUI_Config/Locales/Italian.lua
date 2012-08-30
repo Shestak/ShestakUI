@@ -62,6 +62,7 @@ L_GUI_AUTOMATION_SKIP_CINEMATIC = "'Auto-salta' i filmati"
 L_GUI_AUTOMATION_AUTO_ROLE = "'Auto-imposta' il tuo ruolo"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "'Auto-cancella' alcuni benefici"
 L_GUI_AUTOMATION_TAB_BINDER = "Usando il tasto TAB, consente di prendere come bersaglio soltanto nemici controllati da altri giocatori (se presenti)"
+L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Restyling"

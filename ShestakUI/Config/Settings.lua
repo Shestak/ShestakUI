@@ -90,6 +90,7 @@ C["automation"] = {
 	["auto_role"] = false,						-- Auto set your role
 	["cancel_bad_buffs"] = false,				-- Auto cancel various buffs
 	["tab_binder"] = false,						-- Auto change Tab key to only target enemy players
+	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
 }
 
 ----------------------------------------------------------------------------------------
