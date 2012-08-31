@@ -261,6 +261,7 @@ L_POPUP_SETTINGS_DBM = "È necessario cambiare la posizione degli elementi di DB
 L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DXE."
 L_POPUP_SETTINGS_BW = "È necessario cambiare la posizione degli elementi di BigWigs."
 L_POPUP_ARMORY = "Armeria"
+L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Benvenuto/a in ShestakUI "

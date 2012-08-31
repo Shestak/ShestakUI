@@ -261,6 +261,7 @@ L_POPUP_SETTINGS_DBM = "需要改变DBM描点及风格化元素."
 L_POPUP_SETTINGS_DXE = "需要改变DXE描点及风格化元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
 L_POPUP_ARMORY = "军械库"
+L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
 
 -- Welcome message
 L_WELCOME_LINE_1 = "欢迎使用ShestakUI "
