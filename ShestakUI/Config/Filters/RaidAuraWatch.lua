@@ -153,7 +153,7 @@ if C.raidframe.plugins_aura_watch == true then
 		-----------------------------------------------------------------
 		-- Baradin Hold
 			-- Argaloth
-			--[[SpellName(95173),	-- Consuming Darkness
+			SpellName(95173),	-- Consuming Darkness
 			-- Occu'thar
 			SpellName(96913),	-- Searing Shadows
 			-- Alizabal
@@ -314,7 +314,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(105445),	-- Blistering heat
 			SpellName(109603),	-- Tetanus
 			SpellName(110141),	-- Shrapnel
-			SpellName(108649),	-- Corrupting Parasite]]
+			SpellName(108649),	-- Corrupting Parasite
 		-----------------------------------------------------------------
 		-- PvP
 		-----------------------------------------------------------------
