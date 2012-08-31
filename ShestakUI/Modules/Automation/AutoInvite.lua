@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Accept invites from guild members or friend list(by ALZA)
@@ -11,9 +11,12 @@ if C.automation.accept_invite == true then
 			end
 		end
 		for i = 1, select(2, BNGetNumFriends()) do
-			local _, _, _, _, toonName, _, client = BNGetFriendInfo(i)
-			if client == "WoW" and toonName == name then
-				return true
+			local presenceID, _, _, _, _, _, client, isOnline = BNGetFriendInfo(i)
+			if client == "WoW" and isOnline then
+				_, toonName, _, realmname = BNGetToonInfo(presenceID)
+				if name == toonName or name == toonName.."-"..realmname then
+					return true
+				end
 			end
 		end
 		if IsInGuild() then

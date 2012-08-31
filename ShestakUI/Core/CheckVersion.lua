@@ -8,7 +8,7 @@ local check = function(self, event, prefix, message, channel, sender)
 		if prefix ~= "ShestakUIVersion" or sender == T.name then return end
 		if tonumber(message) == nil then return end
 		if tonumber(message) > tonumber(T.version) then
-			print("|cffad2424"..L_MISC_UI_OUTDATED.."|r")
+			print("|cffff0000"..L_MISC_UI_OUTDATED.."|r")
 			self:UnregisterEvent("CHAT_MSG_ADDON")
 		end
 	else
