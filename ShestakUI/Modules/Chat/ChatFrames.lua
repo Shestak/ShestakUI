@@ -245,9 +245,9 @@ local function SetupChatPosAndFont(self)
 			FCF_SavePositionAndDimensions(chat)
 		elseif i == 2 then
 			if C.chat.combatlog == true then
-				FCF_DockFrame(ChatFrame2)
+				FCF_DockFrame(chat)
 			else
-				FCF_UnDockFrame(ChatFrame2)
+				FCF_UnDockFrame(chat)
 				chat:ClearAllPoints()
 				chat:Point("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)
 			end
