@@ -5,20 +5,20 @@
 ----------------------------------------------------------------------------------------
 local check = function(self, event, prefix, message, channel, sender)
 	if event == "CHAT_MSG_ADDON" then
-		if prefix ~= "ShestakUIVersion" or sender == UnitName("player") then return end
-		if tonumber(message) > tonumber(GetAddOnMetadata("ShestakUI", "Version")) then
+		if prefix ~= "ShestakUIVersion" or sender == T.name then return end
+		if tonumber(message) > tonumber(T.version) then
 			print("|cffad2424"..L_MISC_UI_OUTDATED.."|r")
 			self:UnregisterEvent("CHAT_MSG_ADDON")
 		end
 	else
 		if UnitInBattleground("player") and UnitInBattleground("player") > 0 then
-			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "BATTLEGROUND")
+			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "BATTLEGROUND")
 		elseif UnitInRaid("player") then
-			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "RAID")
+			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "RAID")
 		elseif UnitInParty("player") then
-			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "PARTY")
+			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "PARTY")
 		elseif IsInGuild() then
-			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "GUILD")
+			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "GUILD")
 		end
 	end
 end
