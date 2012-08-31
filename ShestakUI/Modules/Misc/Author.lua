@@ -86,6 +86,12 @@ LFDParentFrame:HookScript("OnShow", function()
 end)
 
 ----------------------------------------------------------------------------------------
+--	Unregister some events
+----------------------------------------------------------------------------------------
+AlertFrame:UnregisterEvent("LOOT_ITEM_ROLL_WON")
+AlertFrame:UnregisterEvent("SHOW_LOOT_TOAST")
+
+----------------------------------------------------------------------------------------
 --	Auto hide unnecessary stats from CharacterFrame(module from Inomena by p3lim)
 ----------------------------------------------------------------------------------------
 PAPERDOLL_STATCATEGORIES = {
