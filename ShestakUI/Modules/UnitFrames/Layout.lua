@@ -1225,7 +1225,7 @@ SlashCmdList.TEST_UF = function(msg)
 				_G["oUF_Arena"..i.."Target"]:UpdateAllElements()
 
 				if C.unitframe.plugins_talents == true then
-					_G["oUF_Arena"..i].Talents:SetText(L_PLANNER_DRUID_1)
+					_G["oUF_Arena"..i].Talents:SetText(TALENTS)
 				end
 
 				if C.unitframe.plugins_diminishing == true then
