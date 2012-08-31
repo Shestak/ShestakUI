@@ -83,6 +83,7 @@ L_GUI_SKINS_NUG_RUNNING = "Activer la personalisation pour NugRunning"
 L_GUI_SKINS_OVALE = "Activer la personalisation pour OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Activer la personalisation pour Clique"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
+L_GUI_SKINS_PP = "Activer la personalisation pour PallyPower"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"

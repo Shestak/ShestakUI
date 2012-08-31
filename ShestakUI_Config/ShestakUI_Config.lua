@@ -110,6 +110,7 @@ local function Local(o)
 	if o == "UIConfigskinsovale" then o = L_GUI_SKINS_OVALE end
 	if o == "UIConfigskinsclique" then o = L_GUI_SKINS_CLIQUE end
 	if o == "UIConfigskinsace3" then o = L_GUI_SKINS_ACE3 end
+	if o == "UIConfigskinspallypower" then o = L_GUI_SKINS_PP end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end

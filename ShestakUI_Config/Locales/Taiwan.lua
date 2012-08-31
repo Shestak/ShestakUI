@@ -83,6 +83,7 @@ L_GUI_SKINS_NUG_RUNNING = "開啟NugRunning樣式增強"
 L_GUI_SKINS_OVALE = "開啟OvaleSpellPriority樣式增強"
 L_GUI_SKINS_CLIQUE = "開啟Clique樣式增強"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
+L_GUI_SKINS_PP = "開啟PallyPower樣式增強"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"

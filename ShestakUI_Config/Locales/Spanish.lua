@@ -83,6 +83,7 @@ L_GUI_SKINS_NUG_RUNNING = "Activar estilo del NugRunning"
 L_GUI_SKINS_OVALE = "Activar estilo del OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Activar estilo del Clique"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
+L_GUI_SKINS_PP = "Activar estilo del PallyPower"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texto de Combate"
