@@ -130,6 +130,8 @@ if T.name == "Oz" and T.realm == "Runetotem" then
 	C["general"].welcome_message = false
 	C["misc"].afk_spin_camera = false
 	C["misc"].ach_screens = true
+	C["misc"].profession_database = true
+	C["automation"].logging_combat = true
 	C["combattext"].scrollable = true
 	C["enemycooldown"].show_always = true
 	C["threat"].width = 128

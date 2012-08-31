@@ -9,15 +9,22 @@ frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function(self, event, addon)
 	if not IsAddOnLoaded("Ovale") then return end
 
+	if not OvaleDB then OvaleDB = {} end
+	if not OvaleDB["profiles"] then OvaleDB["profiles"] = {} end
+	if not OvaleDB["profiles"][T.name.." - "..T.realm] then OvaleDB["profiles"][T.name.." - "..T.realm] = {} end
+	if not OvaleDB["profiles"][T.name.." - "..T.realm]["apparence"] then OvaleDB["profiles"][T.name.." - "..T.realm]["apparence"] = {} end
+
 	OvaleDB["profiles"][T.name.." - "..T.realm]["apparence"]["iconScale"] = 1
 	OvaleDB["profiles"][T.name.." - "..T.realm]["apparence"]["smallIconScale"] = 1
 	OvaleDB["profiles"][T.name.." - "..T.realm]["apparence"]["secondIconScale"] = 1
+	OvaleDB["profiles"][T.name.." - "..T.realm]["apparence"]["margin"] = 3
 
-	for i = 1, 3 do
+	for i = 1, 10 do
 		for j = 1, 2 do
 			local button = _G["Icon"..i.."n"..j]
 
 			if button and not button.isSkinned then
+				button.cd.noOCC = true
 				button:StyleButton()
 				button:SetNormalTexture("")
 				button:CreateBackdrop("Transparent")
@@ -32,6 +39,9 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 				button.shortcut:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 				button.shortcut:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+
+				button.focusText:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+				button.focusText:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 
 				button.isSkinned = true
 			end

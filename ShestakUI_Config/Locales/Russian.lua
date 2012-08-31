@@ -83,6 +83,7 @@ L_GUI_SKINS_FLYOUT_BUTTON = "Включить стилизацию FlyoutButtonC
 L_GUI_SKINS_NUG_RUNNING = "Включить стилизацию NugRunning"
 L_GUI_SKINS_OVALE = "Включить стилизацию OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Включить стилизацию Clique"
+L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"

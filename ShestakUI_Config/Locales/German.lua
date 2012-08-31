@@ -83,6 +83,7 @@ L_GUI_SKINS_FLYOUT_BUTTON = "FlyoutButtonCustom Design aktivieren"
 L_GUI_SKINS_NUG_RUNNING = "NugRunning Design aktivieren"
 L_GUI_SKINS_OVALE = "OvaleSpellPriority Design aktivieren"
 L_GUI_SKINS_CLIQUE = "Clique Design aktivieren"
+L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Kampftext"

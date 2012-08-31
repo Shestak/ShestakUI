@@ -196,6 +196,7 @@ local function START_LOOT_ROLL(rollID, time)
 
 	local color = ITEM_QUALITY_COLORS[quality]
 	f.fsloot:SetText(name)
+	f.fsloot:SetVertexColor(color.r, color.g, color.b)
 	f.status:SetStatusBarColor(color.r, color.g, color.b, 0.7)
 	f.status.bg:SetTexture(color.r, color.g, color.b)
 	f.backdrop:SetBackdropBorderColor(color.r, color.g, color.b, 0.7)

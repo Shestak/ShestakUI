@@ -65,7 +65,7 @@ L_TOGGLE_COLLAPSE = "Rimpicciolisci "
 L_TOGGLE_RCLICK = "Clicca col destro per attivare o disattivare "
 L_TOGGLE_LCLICK = "Clicca col sinistro per mostrare la finestra "
 L_TOGGLE_RELOAD = " (bisogna ricaricare l'interfaccia)"
-L_TOGGLE_NOT_FOUND = " not found." -- Needs review
+L_TOGGLE_NOT_FOUND = " non trovata."
 
 -- UnitFrame
 L_UF_GHOST = "Spirito"
