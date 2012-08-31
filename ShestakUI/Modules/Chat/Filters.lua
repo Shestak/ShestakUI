@@ -5,11 +5,11 @@ if C.chat.enable ~= true then return end
 --	Systems spam filter
 ----------------------------------------------------------------------------------------
 if C.chat.filter == true then
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", function(msg) return true end)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", function(msg) return true end)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_NOTICE", function(msg) return true end)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", function(msg) return true end)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", function(msg) return true end)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", function() return true end)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", function() return true end)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_NOTICE", function() return true end)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", function() return true end)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", function() return true end)
 	DUEL_WINNER_KNOCKOUT = ""
 	DUEL_WINNER_RETREAT = ""
 	DRUNK_MESSAGE_ITEM_OTHER1 = ""
@@ -38,6 +38,7 @@ if C.chat.filter == true then
 	ERR_LEARN_PASSIVE_S = ""
 	ERR_SPELL_UNLEARNED_S = ""
 	GUILD_REP_WEEKLY_CAPPED = ""
+	ERR_CHAT_THROTTLED = ""
 	if T.author ~= true then
 		INTERFACE_ACTION_BLOCKED = ""
 	end
