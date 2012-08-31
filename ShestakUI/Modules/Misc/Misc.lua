@@ -256,7 +256,7 @@ button:SetScript("OnEvent", function(self)
 end)
 
 ----------------------------------------------------------------------------------------
---	Misclicks for some popup
+--	Misclicks for some popups
 ----------------------------------------------------------------------------------------
 StaticPopupDialogs.RESURRECT.hideOnEscape = nil
 StaticPopupDialogs.PARTY_INVITE.hideOnEscape = nil
@@ -266,23 +266,3 @@ StaticPopupDialogs.PET_BATTLE_QUEUE_PROPOSE_MATCH.hideOnEscape = nil
 StaticPopupDialogs.CONFIRM_BATTLEFIELD_ENTRY.button2 = nil
 StaticPopupDialogs.ADDON_ACTION_FORBIDDEN.button1 = nil
 StaticPopupDialogs.TOO_MANY_LUA_ERRORS.button1 = nil
-
-----------------------------------------------------------------------------------------
---	Fix SearchLFGLeave() taint
-----------------------------------------------------------------------------------------
-local TaintFix = CreateFrame("Frame")
-TaintFix:SetScript("OnUpdate", function(self, elapsed)
-	if LFRBrowseFrame.timeToClear then
-		LFRBrowseFrame.timeToClear = nil
-	end
-end)
-
-----------------------------------------------------------------------------------------
---	Fix LFRBrowseFrameList/LFRQueueFrameSpecificList scroll frames
-----------------------------------------------------------------------------------------
-LFRBrowseFrameListScrollFrame:ClearAllPoints()
-LFRBrowseFrameListScrollFrame:SetPoint("TOPLEFT", LFRBrowseFrameListButton1, "TOPLEFT", 0, 0)
-LFRBrowseFrameListScrollFrame:SetPoint("BOTTOMRIGHT", LFRBrowseFrameListButton19, "BOTTOMRIGHT", 5, -2)
-LFRQueueFrameSpecificListScrollFrame:ClearAllPoints()
-LFRQueueFrameSpecificListScrollFrame:SetPoint("TOPLEFT", LFRQueueFrameSpecificListButton1, "TOPLEFT", 0, 0)
-LFRQueueFrameSpecificListScrollFrame:SetPoint("BOTTOMRIGHT", LFRQueueFrameSpecificListButton14, "BOTTOMRIGHT", 0, -2)

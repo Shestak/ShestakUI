@@ -257,6 +257,12 @@ StaticPopupDialogs.SWITCH_RAID = {
 	preferredIndex = 5,
 }
 
+SLASH_CONFIGURE1 = "/resetui"
+SlashCmdList.CONFIGURE = function() StaticPopup_Show("RESET_UI") end
+
+SLASH_RESETSTATS1 = "/resetstats"
+SlashCmdList.RESETSTATS = function() StaticPopup_Show("RESET_STATS") end
+
 ----------------------------------------------------------------------------------------
 --	On logon function
 ----------------------------------------------------------------------------------------
@@ -328,24 +334,3 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		end
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	Collect garbage function
-----------------------------------------------------------------------------------------
-local eventcount = 0
-local Garbage = CreateFrame("Frame")
-Garbage:RegisterAllEvents()
-Garbage:SetScript("OnEvent", function(self, event)
-	eventcount = eventcount + 1
-
-	if (InCombatLockdown() and eventcount > 25000) or eventcount > 10000 or event == "PLAYER_ENTERING_WORLD" then
-		collectgarbage("collect")
-		eventcount = 0
-	end
-end)
-
-SLASH_CONFIGURE1 = "/resetui"
-SlashCmdList.CONFIGURE = function() StaticPopup_Show("RESET_UI") end
-
-SLASH_RESETSTATS1 = "/resetstats"
-SlashCmdList.RESETSTATS = function() StaticPopup_Show("RESET_STATS") end
