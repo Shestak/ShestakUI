@@ -448,7 +448,7 @@ if durability.enabled then
 						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon,name), notCheckable = 1, func = function() UseEquipmentSet(name) end})
 					end
 				end
-				EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU")
+				EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU", nil)
 			elseif button == "LeftButton" then
 				ToggleCharacter("PaperDollFrame")
 			end
@@ -884,7 +884,7 @@ if guild.enabled then
 					end
 				end
 
-				EasyMenu(menuList, menuFrame, self, 0, 0, "MENU", 2)
+				EasyMenu(menuList, menuFrame, self, 0, 0, "MENU", nil)
 			end
 		end,
 		OnEnter = function(self)
@@ -1129,7 +1129,7 @@ if friends.enabled then
 					end
 				end
 
-				EasyMenu(menuList, menuFrame, self, 0, 0, "MENU", 2)
+				EasyMenu(menuList, menuFrame, self, 0, 0, "MENU", nil)
 			end
 		end,
 		OnEnter = function(self)

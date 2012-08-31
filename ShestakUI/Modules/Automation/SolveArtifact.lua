@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.automation.solve_artifact ~= true then return end
 
 ----------------------------------------------------------------------------------------

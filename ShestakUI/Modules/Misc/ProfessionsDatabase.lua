@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.misc.profession_database ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -67,7 +67,7 @@ UIDropDownMenu_Initialize(dropdown, DropDown_Init, "MENU")
 
 -- Shows the dropdown on said frame
 local function DropDown_Show(self)
-	ToggleDropDownMenu(1, nil, dropdown, self, 0, 0)
+	ToggleDropDownMenu(nil, nil, dropdown, self, 0, 0)
 end
 
 -- Create button in SpellBook

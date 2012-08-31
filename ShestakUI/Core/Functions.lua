@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Info text function
@@ -519,14 +519,14 @@ T.SpawnMenu = function(self)
 	if unit == "Targettarget" or unit == "focustarget" or unit == "pettarget" then return end
 
 	if _G[unit.."FrameDropDown"] then
-		ToggleDropDownMenu(1, nil, _G[unit.."FrameDropDown"], "cursor")
+		ToggleDropDownMenu(nil, nil, _G[unit.."FrameDropDown"], "cursor")
 	elseif self.unit:match("party") then
-		ToggleDropDownMenu(1, nil, _G["PartyMemberFrame"..self.id.."DropDown"], "cursor")
+		ToggleDropDownMenu(nil, nil, _G["PartyMemberFrame"..self.id.."DropDown"], "cursor")
 	else
 		FriendsDropDown.unit = self.unit
 		FriendsDropDown.id = self.id
 		FriendsDropDown.initialize = RaidFrameDropDown_Initialize
-		ToggleDropDownMenu(1, nil, FriendsDropDown, "cursor")
+		ToggleDropDownMenu(nil, nil, FriendsDropDown, "cursor")
 	end
 end
 

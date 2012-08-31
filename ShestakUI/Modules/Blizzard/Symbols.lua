@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.misc.shift_marking ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ local menuList = {
 WorldFrame:HookScript("OnMouseDown", function(self, button)
 	if button == "LeftButton" and IsShiftKeyDown() and UnitExists("mouseover") then
 		if (GetNumGroupMembers() > 0 and UnitIsGroupLeader("player") and not UnitInRaid("player")) or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player") then
-			EasyMenu(menuList, menuFrame, "cursor", 0, 0, "MENU", 1)
+			EasyMenu(menuList, menuFrame, "cursor", 0, 0, "MENU", nil)
 		end
 	end
 end)

@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.loot.lootframe ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -141,7 +141,7 @@ end
 Butsu:RegisterEvent("LOOT_CLOSED")
 
 function Butsu:OPEN_MASTER_LOOT_LIST()
-	ToggleDropDownMenu(1, nil, GroupLootDropDown, LootFrame.selectedLootButton, 0, 0)
+	ToggleDropDownMenu(nil, nil, GroupLootDropDown, LootFrame.selectedLootButton, 0, 0)
 end
 Butsu:RegisterEvent("OPEN_MASTER_LOOT_LIST")
 
@@ -201,7 +201,7 @@ close:SetScript("OnClick", function() CloseLoot() end)
 --	Announce loot(lcLoot by RustamIrzaev)
 ----------------------------------------------------------------------------------------
 local function OnLinkClick(self)
-	ToggleDropDownMenu(1, nil, LDD, lb, 0, 0)
+	ToggleDropDownMenu(nil, nil, LDD, lb, 0, 0)
 end
 
 local function LDD_OnClick(self)

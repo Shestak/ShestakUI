@@ -411,7 +411,7 @@ function Stuffing:CreateBagFrame(w)
 				CloseDropDownMenus()
 				Stuffing_DDMenu.initialize = Stuffing.Menu
 			end
-			ToggleDropDownMenu(1, nil, Stuffing_DDMenu, self:GetName(), 0, 0)
+			ToggleDropDownMenu(nil, nil, Stuffing_DDMenu, self:GetName(), 0, 0)
 			return
 		end
 		self:GetParent():Hide()

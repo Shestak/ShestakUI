@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.minimap.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -248,15 +248,15 @@ Minimap:SetScript("OnMouseUp", function(self, button)
 	local position = MinimapAnchor:GetPoint()
 	if button == "RightButton" then
 		if position:match("LEFT") then
-			EasyMenu(micromenu, menuFrame, "cursor", 0, 0, "MENU", 2)
+			EasyMenu(micromenu, menuFrame, "cursor", 0, 0, "MENU", nil)
 		else
-			EasyMenu(micromenu, menuFrame, "cursor", -160, 0, "MENU", 2)
+			EasyMenu(micromenu, menuFrame, "cursor", -160, 0, "MENU", nil)
 		end
 	elseif button == "MiddleButton" then
 		if position:match("LEFT") then
-			ToggleDropDownMenu(1, nil, MiniMapTrackingDropDown, "cursor", 0, 0, "MENU", 2)
+			ToggleDropDownMenu(nil, nil, MiniMapTrackingDropDown, "cursor", 0, 0, "MENU", 2)
 		else
-			ToggleDropDownMenu(1, nil, MiniMapTrackingDropDown, "cursor", -160, 0, "MENU", 2)
+			ToggleDropDownMenu(nil, nil, MiniMapTrackingDropDown, "cursor", -160, 0, "MENU", 2)
 		end
 	elseif button == "LeftButton" then
 		Minimap_OnClick(self)
