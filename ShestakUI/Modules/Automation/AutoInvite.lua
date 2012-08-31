@@ -3,7 +3,7 @@
 ----------------------------------------------------------------------------------------
 --	Accept invites from guild members or friend list(by ALZA)
 ----------------------------------------------------------------------------------------
-if C.misc.auto_accept_invite == true then
+if C.automation.accept_invite == true then
 	local CheckFriend = function(name)
 		for i = 1, GetNumFriends() do
 			if GetFriendInfo(i) == name then
@@ -28,16 +28,20 @@ if C.misc.auto_accept_invite == true then
 	local ai = CreateFrame("Frame")
 	ai:RegisterEvent("PARTY_INVITE_REQUEST")
 	ai:SetScript("OnEvent", function(self, event, name)
-		if QueueStatusMinimapButton:IsShown() or GetNumSubgroupMembers() > 0 or GetNumGroupMembers() > 0 then return end
+		if QueueStatusMinimapButton:IsShown() or GetNumGroupMembers() > 0 then return end
 		if CheckFriend(name) then
 			T.InfoTextShow(L_INFO_INVITE..name)
 			print(format("|cffffff00"..L_INFO_INVITE..name.."."))
 			AcceptGroup()
-			for i = 1, 4 do
+			for i = 1, STATICPOPUP_NUMDIALOGS do
 				local frame = _G["StaticPopup"..i]
 				if frame:IsVisible() and frame.which == "PARTY_INVITE" then
 					frame.inviteAccepted = 1
 					StaticPopup_Hide("PARTY_INVITE")
+					return
+				elseif frame:IsVisible() and frame.which == "PARTY_INVITE_XREALM" then
+					frame.inviteAccepted = 1
+					StaticPopup_Hide("PARTY_INVITE_XREALM")
 					return
 				end
 			end
@@ -50,12 +54,10 @@ end
 ----------------------------------------------------------------------------------------
 --	Auto invite by whisper(by Tukz)
 ----------------------------------------------------------------------------------------
-local ainvkeyword = C.misc.invite_keyword
-
 local autoinvite = CreateFrame("Frame")
 autoinvite:RegisterEvent("CHAT_MSG_WHISPER")
 autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2)
-	if ((not UnitExists("party1") or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and arg1:lower():match(ainvkeyword)) and SavedOptionsPerChar.AutoInvite == true then
+	if ((not UnitExists("party1") or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and arg1:lower():match(C.misc.invite_keyword)) and SavedOptionsPerChar.AutoInvite == true then
 		InviteUnit(arg2)
 	end
 end)
@@ -66,12 +68,12 @@ SlashCmdList.AUTOINVITE = function(msg)
 		print("|cffffff00"..L_INVITE_DISABLE..".")
 	elseif msg == "" then
 		SavedOptionsPerChar.AutoInvite = true
-		print("|cffffff00"..L_INVITE_ENABLE..ainvkeyword..".")
-		ainvkeyword = C.misc.invite_keyword
+		print("|cffffff00"..L_INVITE_ENABLE..C.misc.invite_keyword..".")
+		C.misc.invite_keyword = C.misc.invite_keyword
 	else
 		SavedOptionsPerChar.AutoInvite = true
 		print("|cffffff00"..L_INVITE_ENABLE..msg..".")
-		ainvkeyword = msg
+		C.misc.invite_keyword = msg
 	end
 end
 SLASH_AUTOINVITE1 = "/ainv"
