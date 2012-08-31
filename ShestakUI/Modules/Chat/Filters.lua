@@ -39,9 +39,6 @@ if C.chat.filter == true then
 	ERR_SPELL_UNLEARNED_S = ""
 	GUILD_REP_WEEKLY_CAPPED = ""
 	ERR_CHAT_THROTTLED = ""
-	if T.author ~= true then
-		INTERFACE_ACTION_BLOCKED = ""
-	end
 end
 
 ----------------------------------------------------------------------------------------
