@@ -26,11 +26,12 @@ local function InstallUI()
 	SetCVar("RotateMinimap", 0)
 	SetCVar("ConsolidateBuffs", 0)
 	SetCVar("autoQuestProgress", 1)
-	SetCVar("scriptErrors", 1)
+	SetCVar("scriptErrors", 0)
 	SetCVar("buffDurations", 1)
 
 	if T.author == true then
 		SetCVar("taintLog", 1)
+		SetCVar("scriptErrors", 1)
 		SetCVar("interactOnLeftClick", 0)
 		SetCVar("displayWorldPVPObjectives", 2)
 		SetCVar("timeMgrUseLocalTime", 1)
