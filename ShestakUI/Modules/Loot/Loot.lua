@@ -4,8 +4,8 @@ if C.loot.lootframe ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Loot frame(Butsu by Haste)
 ----------------------------------------------------------------------------------------
-local _NAME, _NS = ...
-local Butsu = CreateFrame("Button", _NAME)
+local _, _NS = ...
+local Butsu = CreateFrame("Button", "Butsu")
 local lb = CreateFrame("Button", "ButsuAdv", Butsu, "UIPanelScrollDownButtonTemplate")
 local LDD = CreateFrame("Frame", "ButsuLDD", Butsu, "UIDropDownMenuTemplate")
 Butsu:Hide()
