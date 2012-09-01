@@ -7,6 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	QuestFrameGreetingPanel:HookScript("OnShow", function()
 		QuestFrameGreetingPanel:StripTextures()
+		QuestGreetingScrollFrame:StripTextures()
 		QuestFrameGreetingGoodbyeButton:SkinButton()
 		GreetingText:SetTextColor(1, 1, 1)
 		CurrentQuestsText:SetTextColor(1, 0.8, 0)

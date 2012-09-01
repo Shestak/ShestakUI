@@ -18,6 +18,7 @@ local function LoadSkin()
 		"HelpFrameAccountSecurityOpenTicket",
 		"HelpFrameOpenTicketHelpTopIssues",
 		"HelpFrameOpenTicketHelpOpenTicket",
+		"HelpFrameOpenTicketHelpItemRestoration",
 		"HelpFrameKnowledgebaseSearchButton",
 		"HelpFrameKnowledgebaseNavBarHomeButton",
 		"HelpFrameCharacterStuckStuck",
