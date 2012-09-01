@@ -500,7 +500,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
 		},
 	},
 	["HUNTER"] = {
@@ -966,7 +966,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
 		},
 	},
 	["MONK"] = {
@@ -1635,7 +1635,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
 		},
 	},
 	["ROGUE"] = {
@@ -2095,7 +2095,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
 		},
 	},
 	["WARLOCK"] = {
@@ -2316,7 +2316,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
 		},
 	},
 	["WARRIOR"] = {
