@@ -75,6 +75,7 @@ local function InstallUI()
 		SetCVar("ffxNetherWorld", 0)
 		SetCVar("autoOpenLootHistory", 0)
 		SetAutoDeclineGuildInvites(1)
+		ShowAccountAchievements(1)
 	end
 
 	-- Setting chat frames
