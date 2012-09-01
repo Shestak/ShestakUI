@@ -244,7 +244,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(93295),	-- Lightning Rod
 		-- Firelands
 			-- Beth'tilac
-			SpellName(99506),	-- Widows Kiss
+			SpellName(99506),	-- The Widow's Kiss
 			SpellName(97202),	-- Fiery Web Spin
 			SpellName(49026),	-- Fixate
 			SpellName(97079),	-- Seeping Venom
@@ -261,7 +261,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(99837),	-- Crystal Prison
 			SpellName(99937),	-- Jagged Tear
 			-- Baleroc
-			SpellName(99403),	-- Tormented
+			SpellName(99257),	-- Tormented
 			SpellName(99256),	-- Torment
 			SpellName(99252),	-- Blaze of Glory
 			SpellName(99516),	-- Countdown
@@ -270,11 +270,10 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(100210),	-- Burning Orb
 			-- Ragnaros
 			SpellName(99399),	-- Burning Wound
-			SpellName(100293),	-- Lava Wave
+			SpellName(98928),	-- Lava Wave
 			SpellName(98313),	-- Magma Blast
 			SpellName(100675),	-- Dreadflame
 			SpellName(99145),	-- Blazing Heat
-			SpellName(100249),	-- Combustion
 			SpellName(99613),	-- Molten Blast
 			-- Trash
 			SpellName(99532),	-- Melt Armor
@@ -312,8 +311,8 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(106444),	-- Impale
 			SpellName(105841),	-- Degenerative bite
 			SpellName(105445),	-- Blistering heat
-			SpellName(109603),	-- Tetanus
-			SpellName(110141),	-- Shrapnel
+			SpellName(106730),	-- Tetanus
+			SpellName(106794),	-- Shrapnel
 			SpellName(108649),	-- Corrupting Parasite
 		-----------------------------------------------------------------
 		-- PvP
@@ -370,10 +369,8 @@ if C.raidframe.plugins_aura_watch == true then
 
 		T.ReverseTimer = {
 		-- Sinestra
-			--[[[92956] = true,		-- Wrack
 			[89435] = true,		-- Wrack
-			[92955] = true,		-- Wrack
-			[89421] = true,		-- Wrack]]
+			[89421] = true,		-- Wrack
 		}
 
 		ORD:RegisterDebuffs(T.debuffids)
