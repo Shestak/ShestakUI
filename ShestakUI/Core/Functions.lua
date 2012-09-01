@@ -1436,6 +1436,7 @@ T.CreateAuraWatch = function(self, unit)
 			local icon = CreateFrame("Frame", nil, auras)
 			icon.spellID = spell[1]
 			icon.anyUnit = spell[4]
+			icon.strictMatching = spell[5]
 			icon:Width(7)
 			icon:Height(7)
 			icon:Point(spell[2], 0, 0)

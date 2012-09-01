@@ -10,63 +10,63 @@ if C.raidframe.plugins_aura_watch == true then
 		-- Class buffs
 		T.buffids = {
 			DRUID = {
-				{774, "TOPRIGHT", {0.8, 0.4, 0.8}},				-- Rejuvenation
-				{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},			-- Regrowth
-				{94447, "TOPLEFT", {0.4, 0.8, 0.2}},			-- Lifebloom
-				{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},			-- Wild Growth
+				{774, "TOPRIGHT", {0.8, 0.4, 0.8}},						-- Rejuvenation
+				{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},					-- Regrowth
+				{94447, "TOPLEFT", {0.4, 0.8, 0.2}},					-- Lifebloom
+				{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},					-- Wild Growth
 			},
 			MONK = {
-				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},			-- Renewing Mist
-				{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}},		-- Enveloping Mist
-				{124081, "BOTTOMRIGHT", {0.7, 0.4, 0}},			-- Zen Sphere
-				{116849, "LEFT", {0.81, 0.85, 0.1}, true},		-- Life Cocoon
+				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},					-- Renewing Mist
+				{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}},				-- Enveloping Mist
+				{124081, "BOTTOMRIGHT", {0.7, 0.4, 0}},					-- Zen Sphere
+				{116849, "LEFT", {0.81, 0.85, 0.1}, true},				-- Life Cocoon
 			},
 			PALADIN = {
-				{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Beacon of Light
-				{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},			-- Sacred Shield
-				{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},		-- Eternal Flame
-				{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},		-- Hand of Protection
-				{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},	-- Hand of Freedom
-				{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},	-- Hand of Salvation
-				{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},	-- Hand of Sacrifice
-				{114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},	-- Hand of Purity
+				{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},					-- Beacon of Light
+				{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}, false, true},	-- Sacred Shield
+				{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},				-- Eternal Flame
+				{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},				-- Hand of Protection
+				{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},			-- Hand of Freedom
+				{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},			-- Hand of Salvation
+				{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},			-- Hand of Sacrifice
+				{114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},			-- Hand of Purity
 			},
 			PRIEST = {
-				{6788, "TOPRIGHT", {1, 0, 0}, true},			-- Weakened Soul
-				{33076, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},		-- Prayer of Mending
-				{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 			-- Renew
-				{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},		-- Power Word: Shield
-				{33206, "LEFT", {0.89, 0.1, 0.1}, true},		-- Pain Suppress
-				{47788, "LEFT", {0.86, 0.52, 0}, true},			-- Guardian Spirit
+				{6788, "TOPRIGHT", {1, 0, 0}, true},					-- Weakened Soul
+				{33076, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},				-- Prayer of Mending
+				{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 					-- Renew
+				{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},				-- Power Word: Shield
+				{33206, "LEFT", {0.89, 0.1, 0.1}, true},				-- Pain Suppress
+				{47788, "LEFT", {0.86, 0.52, 0}, true},					-- Guardian Spirit
 			},
 			SHAMAN = {
-				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Riptide
-				{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},		-- Earth Shield
-				{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},			-- Earthliving
+				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},					-- Riptide
+				{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},				-- Earth Shield
+				{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},					-- Earthliving
 			},
 			DEATHKNIGHT = {
-				{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},			-- Unholy Frenzy
+				{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},					-- Unholy Frenzy
 			},
 			HUNTER = {
-				{34477, "TOPRIGHT", {0.2, 0.2, 1}},				-- Misdirection
+				{34477, "TOPRIGHT", {0.2, 0.2, 1}},						-- Misdirection
 			},
 			MAGE = {
-				{111264, "TOPRIGHT", {0.2, 0.2, 1}},			-- Ice Ward
+				{111264, "TOPRIGHT", {0.2, 0.2, 1}},					-- Ice Ward
 			},
 			ROGUE = {
-				{57933, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Tricks of the Trade
+				{57933, "TOPRIGHT", {0.89, 0.1, 0.1}},					-- Tricks of the Trade
 			},
 			WARLOCK = {
-				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone
+				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},					-- Soulstone
 			},
 			WARRIOR = {
-				{114030, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
-				{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Intervene
+				{114030, "TOPLEFT", {0.2, 0.2, 1}},						-- Vigilance
+				{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},					-- Intervene
 			},
 			ALL = {
-				{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag, Horde
-				{23335, "LEFT", {0, 0, 1}, true},				-- Warsong flag, Alliance
-				{34976, "LEFT", {1, 0, 0}, true}, 				-- Netherstorm Flag
+				{23333, "LEFT", {1, 0, 0}, true}, 						-- Warsong flag, Horde
+				{23335, "LEFT", {0, 0, 1}, true},						-- Warsong flag, Alliance
+				{34976, "LEFT", {1, 0, 0}, true}, 						-- Netherstorm Flag
 			},
 		}
 	end
