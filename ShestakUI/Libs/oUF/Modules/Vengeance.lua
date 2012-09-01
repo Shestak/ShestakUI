@@ -7,7 +7,7 @@ if C.unitframe.enable ~= true or C.unitframe_class_bar.vengeance ~= true then re
 local _, ns = ...
 local oUF = ns.oUF
 
-local VENGEANCE_ID = 76691
+local VENGEANCE_ID = 132365
 local tooltip = CreateFrame("GameTooltip", "VengeanceTooltip", UIParent, "GameTooltipTemplate")
 
 local Update = function(self, event, unit)
