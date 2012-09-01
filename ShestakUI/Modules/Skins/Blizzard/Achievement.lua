@@ -109,6 +109,7 @@ local function LoadSkin()
 		local frame = _G["AchievementFrameSummaryCategoriesCategory"..i]
 		local button = _G["AchievementFrameSummaryCategoriesCategory"..i.."Button"]
 		local highlight = _G["AchievementFrameSummaryCategoriesCategory"..i.."ButtonHighlight"]
+
 		SkinStatusBar(frame)
 		button:StripTextures()
 		highlight:StripTextures()
@@ -118,14 +119,15 @@ local function LoadSkin()
 	end
 
 	AchievementFrame:HookScript("OnShow", function(self)
-		if self.containerSkined then return; end
 		for i = 1, 20 do
 			local frame = _G["AchievementFrameCategoriesContainerButton"..i]
 
-			frame:StripTextures()
-			frame:StyleButton()
+			if frame and not frame.isSkinned then
+				frame:StripTextures()
+				frame:StyleButton()
+				frame.isSkinned = true
+			end
 		end
-		self.containerSkined = true
 	end)
 
 	hooksecurefunc("AchievementButton_DisplayAchievement", function(frame)
