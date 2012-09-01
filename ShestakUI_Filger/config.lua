@@ -1738,8 +1738,8 @@ Filger_Spells = {
 			{spellID = 703, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Gouge
 			{spellID = 1776, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Expose Armor
-			{spellID = 8647, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Weakened Armor
+			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Dismantle
 			{spellID = 51722, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Revealing Strike
