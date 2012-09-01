@@ -914,8 +914,10 @@ local function Shared(self, unit)
 			self.Trinket:Point("TOPLEFT", self, "TOPRIGHT", 5, 2)
 		end
 		self.Trinket:SetTemplate("Default")
-		self.Trinket.trinketUseAnnounce = T.MOPVersion and false or true
-		self.Trinket.trinketUpAnnounce = T.MOPVersion and false or true
+		if not T.MOPVersion then
+			self.Trinket.trinketUseAnnounce = true
+			self.Trinket.trinketUpAnnounce = true
+		end
 
 		self.AuraTracker = CreateFrame("Frame", nil, self)
 		self.AuraTracker:Width(self.Trinket:GetWidth())
