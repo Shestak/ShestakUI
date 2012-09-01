@@ -1664,8 +1664,6 @@ Filger_Spells = {
 			{spellID = 51713, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recuperate
 			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadowstep
-			{spellID = 36563, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Master of Subtlety
 			{spellID = 31665, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cloak of Shadows
@@ -1747,9 +1745,7 @@ Filger_Spells = {
 			-- Vendetta
 			{spellID = 79140, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hemorrhage
-			{spellID = 16511, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
-			-- Glyph of Hemorrhage
-			{spellID = 89775, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			{spellID = 16511, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Find Weakness
 			{spellID = 91021, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Deadly Poison
