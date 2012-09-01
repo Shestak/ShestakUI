@@ -16,6 +16,7 @@ local function LoadSkin()
 		"RaidFinderFrameRoleInset",
 		"ScenarioFinderFrame",
 		"LFGDungeonReadyDialog",
+		"LFGDungeonReadyStatus",
 		"LFDQueueFrameCooldownFrame"
 	}
 
@@ -28,7 +29,9 @@ local function LoadSkin()
 		"PVEFramePortrait",
 		"ScenarioFinderFrameInset",
 		"LFGDungeonReadyDialogBackground",
-		"RaidFinderQueueFrameBackground"
+		"RaidFinderQueueFrameBackground",
+		"LFGDungeonReadyDialogBottomArt",
+		"LFGDungeonReadyDialogFiligree",
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -223,8 +226,6 @@ local function LoadSkin()
 	LFGInvitePopup:SetTemplate("Transparent")
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
 	LFGDungeonReadyDialog.SetBackdrop = T.dummy
-	LFGDungeonReadyDialog.filigree:SetAlpha(0)
-	LFGDungeonReadyDialog.bottomArt:SetAlpha(0)
 	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
 
 	--LFDQueueFrameRandomScrollFrame:Height(LFDQueueFrameRandomScrollFrame:GetHeight() + 10)
