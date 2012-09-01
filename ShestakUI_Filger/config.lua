@@ -474,6 +474,10 @@ Filger_Spells = {
 			{spellID = 16689, filter = "CD"},
 			-- Incarnation
 			{spellID = 106731, filter = "CD"},
+			-- Force of Nature
+			{spellID = 102693, filter = "CD"},
+			-- Ursol's Vortex
+			{spellID = 102793, filter = "CD"},
 
 			-- Racial
 			-- Shadowmeld (Night Elf)
