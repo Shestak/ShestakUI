@@ -204,7 +204,7 @@ Filger_Spells = {
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -489,7 +489,7 @@ Filger_Spells = {
 			-- Berserking (Troll)
 			{spellID = 26297, filter = "CD", absID = true},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -721,7 +721,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -953,7 +953,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1148,7 +1148,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1370,7 +1370,7 @@ Filger_Spells = {
 			-- Arcane Torrent (Blood Elf)
 			{spellID = 69179, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1624,7 +1624,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1842,7 +1842,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1868,14 +1868,14 @@ Filger_Spells = {
 
 			-- Maelstorm Weapon
 			{spellID = 53817, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shamanistic Rage
-			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightning Shield
 			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shamanistic Rage
+			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental Mastery
 			{spellID = 16166, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ascendance
-			{spellID = 114050, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 114049, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spiritwalker's Grace
 			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Flame
@@ -1966,7 +1966,7 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.target_debuff_icon)},
 
-			-- Storm Strike
+			-- Stormstrike
 			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Shock
 			{spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1976,8 +1976,6 @@ Filger_Spells = {
 			{spellID = 77661, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Earthgrab
 			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Bind Elemental
-			{spellID = 76780, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -2023,40 +2021,42 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
-			-- Earth Shock
-			{spellID = 8042, filter = "CD"},
-			-- Riptide
-			{spellID = 61295, filter = "CD"},
-			-- Thunderstorm
-			{spellID = 51490, filter = "CD"},
-			-- Lava Burst
-			{spellID = 51505, filter = "CD"},
-			-- Lava Lash
-			{spellID = 60103, filter = "CD"},
 			-- Wind Shear
 			{spellID = 57994, filter = "CD"},
+			-- Hex
+			{spellID = 51514, filter = "CD"},
+			-- Earth Shock
+			{spellID = 8042, filter = "CD"},
+			-- Lava Burst
+			{spellID = 51505, filter = "CD"},
+			-- Riptide
+			{spellID = 61295, filter = "CD"},
+			-- Stormstrike
+			{spellID = 17364, filter = "CD"},
+			-- Lava Lash
+			{spellID = 60103, filter = "CD"},
+			-- Healing Rain
+			{spellID = 73920, filter = "CD"},
+			-- Elemental Blast
+			{spellID = 117014, filter = "CD"},
+			-- Unleash Elements
+			{spellID = 73680, filter = "CD"},
+			-- Thunderstorm
+			{spellID = 51490, filter = "CD"},
 			-- Earthbind Totem
 			{spellID = 2484, filter = "CD"},
 			-- Tremor Totem
 			{spellID = 8143, filter = "CD"},
-			-- Feral Spirit
-			{spellID = 51533, filter = "CD"},
 			-- Shamanistic Rage
 			{spellID = 30823, filter = "CD"},
-			-- Stormstrike
-			{spellID = 17364, filter = "CD"},
-			-- Elemental Blast
-			{spellID = 117014, filter = "CD"},
-			-- Spiritwalker's Grace
-			{spellID = 79206, filter = "CD"},
-			-- Healing Rain
-			{spellID = 73920, filter = "CD"},
-			-- Unleash Elements
-			{spellID = 73680, filter = "CD"},
 			-- Stone Bulwark Totem
 			{spellID = 108270, filter = "CD"},
 			-- Ancestral Swiftness
 			{spellID = 16188, filter = "CD"},
+			-- Feral Spirit
+			{spellID = 51533, filter = "CD"},
+			-- Spiritwalker's Grace
+			{spellID = 79206, filter = "CD"},
 			-- Ancestral Guidance
 			{spellID = 108281, filter = "CD"},
 			-- Astral Shift
@@ -2080,7 +2080,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -2301,7 +2301,7 @@ Filger_Spells = {
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -2508,7 +2508,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -3144,6 +3144,8 @@ Filger_Spells = {
 
 			-- Hex
 			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Bind Elemental
+			{spellID = 76780, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Static Charge
 			{spellID = 118905, unitID = "target", caster = "all", filter = "DEBUFF"},
 
