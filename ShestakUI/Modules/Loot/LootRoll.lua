@@ -7,8 +7,10 @@ if C.loot.rolllootframe ~= true then return end
 local pos = "TOP"
 local frames = {}
 local cancelled_rolls = {}
+local rolltypes = {[1] = "need", [2] = "greed", [3] = "disenchant", [0] = "pass"}
+
 local LootRollAnchor = CreateFrame("Frame", "LootRollAnchor", UIParent)
-LootRollAnchor:Size(362, 26)
+LootRollAnchor:Size(361, 26)
 
 local function ClickRoll(frame)
 	RollOnLoot(frame.parent.rollID, frame.rolltype)
@@ -17,12 +19,12 @@ end
 local function HideTip() GameTooltip:Hide() end
 local function HideTip2() GameTooltip:Hide() ResetCursor() end
 
-local rolltypes = {[1] = "need", [2] = "greed", [3] = "disenchant", [0] = "pass"}
-
 local function SetTip(frame)
 	GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
 	GameTooltip:SetText(frame.tiptext)
-	if frame:IsEnabled() == 0 then GameTooltip:AddLine("|cffff3333"..L_LOOT_CANNOT) end
+	if not frame:IsEnabled() then
+		GameTooltip:AddLine(frame.errtext, 1, 0.2, 0.2, 1)
+	end
 	for name, roll in pairs(frame.parent.rolls) do if rolltypes[roll] == rolltypes[frame.rolltype] then GameTooltip:AddLine(name, 1, 1, 1) end end
 	GameTooltip:Show()
 end
@@ -59,9 +61,9 @@ local function StatusUpdate(frame)
 	local t = GetLootRollTimeLeft(frame.parent.rollID)
 	local perc = t / frame.parent.time
 	frame:SetValue(t)
-	if t > 1000000000 then
-		frame:GetParent():Hide()
-	end
+	--if t > 1000000000 then
+	--	frame:GetParent():Hide()
+	--end
 end
 
 local function CreateRollButton(parent, ntex, ptex, htex, rolltype, tiptext, ...)
@@ -157,9 +159,9 @@ local function GetFrame()
 
 	local f = CreateRollFrame()
 	if pos == "TOP" then
-		f:Point("TOPRIGHT", next(frames) and frames[#frames] or LootRollAnchor, "BOTTOMRIGHT", 0, -7)
+		f:Point("TOPRIGHT", next(frames) and frames[#frames] or LootRollAnchor, "BOTTOMRIGHT", next(frames) and 0 or -2, next(frames) and -7 or -5)
 	else
-		f:Point("BOTTOMRIGHT", next(frames) and frames[#frames] or LootRollAnchor, "TOPRIGHT", 0, 7)
+		f:Point("BOTTOMRIGHT", next(frames) and frames[#frames] or LootRollAnchor, "TOPRIGHT", next(frames) and 0 or -2, next(frames) and 7 or 5)
 	end
 	table.insert(frames, f)
 	return f
@@ -177,19 +179,42 @@ local function START_LOOT_ROLL(rollID, time)
 	f.pass:SetText(0)
 	f.disenchant:SetText(0)
 
-	local texture, name, count, quality, bop, canNeed, canGreed, canDisenchant = GetLootRollItemInfo(rollID)
+	local texture, name, count, quality, bop, canNeed, canGreed, canDisenchant, reasonNeed, reasonGreed, reasonDisenchant, deSkillRequired = GetLootRollItemInfo(rollID)
 	f.button.icon:SetTexture(texture)
 	f.button.link = GetLootRollItemLink(rollID)
 
-	if canNeed then f.needbutt:Enable() else f.needbutt:Disable() end
-	if canGreed then f.greedbutt:Enable() else f.greedbutt:Disable() end
-	if canDisenchant then f.disenchantbutt:Enable() else f.disenchantbutt:Disable() end
-	SetDesaturation(f.needbutt:GetNormalTexture(), not canNeed)
-	SetDesaturation(f.greedbutt:GetNormalTexture(), not canGreed)
-	SetDesaturation(f.disenchantbutt:GetNormalTexture(), not canDisenchant)
-	if canNeed then f.needbutt:SetAlpha(1) else f.needbutt:SetAlpha(0.2) end
-	if canGreed then f.greedbutt:SetAlpha(1) else f.greedbutt:SetAlpha(0.2) end
-	if canDisenchant then f.disenchantbutt:SetAlpha(1) else f.disenchantbutt:SetAlpha(0.2) end
+	if canNeed then
+		f.needbutt:Enable()
+		f.needbutt:SetAlpha(1)
+		SetDesaturation(f.needbutt:GetNormalTexture(), false)
+	else
+		f.needbutt:Disable()
+		f.needbutt:SetAlpha(0.2)
+		SetDesaturation(f.needbutt:GetNormalTexture(), true)
+		f.needbutt.errtext = _G["LOOT_ROLL_INELIGIBLE_REASON"..reasonNeed]
+	end
+
+	if canGreed then
+		f.greedbutt:Enable()
+		f.greedbutt:SetAlpha(1)
+		SetDesaturation(f.greedbutt:GetNormalTexture(), false)
+	else
+		f.greedbutt:Disable()
+		f.greedbutt:SetAlpha(0.2)
+		SetDesaturation(f.greedbutt:GetNormalTexture(), true)
+		f.greedbutt.errtext = _G["LOOT_ROLL_INELIGIBLE_REASON"..reasonGreed]
+	end
+
+	if canDisenchant then
+		f.disenchantbutt:Enable()
+		f.disenchantbutt:SetAlpha(1)
+		SetDesaturation(f.disenchantbutt:GetNormalTexture(), false)
+	else
+		f.disenchantbutt:Disable()
+		f.disenchantbutt:SetAlpha(0.2)
+		SetDesaturation(f.disenchantbutt:GetNormalTexture(), true)
+		f.disenchantbutt.errtext = format(_G["LOOT_ROLL_INELIGIBLE_REASON"..reasonDisenchant], deSkillRequired)
+	end
 
 	f.fsbind:SetText(bop and "BoP" or "BoE")
 	f.fsbind:SetVertexColor(bop and 1 or 0.3, bop and 0.3 or 1, bop and 0.1 or 0.3)
@@ -229,8 +254,9 @@ LootRollAnchor:SetScript("OnEvent", function(frame, event, addon)
 	if addon ~= "ShestakUI" then return end
 
 	LootRollAnchor:UnregisterEvent("ADDON_LOADED")
-	LootRollAnchor:RegisterEvent("LOOT_HISTORY_ROLL_CHANGED")
 	LootRollAnchor:RegisterEvent("START_LOOT_ROLL")
+	LootRollAnchor:RegisterEvent("LOOT_HISTORY_ROLL_CHANGED")
+
 	UIParent:UnregisterEvent("START_LOOT_ROLL")
 	UIParent:UnregisterEvent("CANCEL_LOOT_ROLL")
 
