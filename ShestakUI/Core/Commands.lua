@@ -111,7 +111,7 @@ SLASH_GROUPDISBAND2 = "/кв"
 --	Convert party to raid
 ----------------------------------------------------------------------------------------
 SlashCmdList.PARTYTORAID = function()
-	if GetNumSubgroupMembers() > 0 or GetNumGroupMembers() > 0 then
+	if GetNumGroupMembers() > 0 then
 		if UnitInRaid("player") and IsGroupLeader() then
 			ConvertToParty()
 		elseif UnitInParty("player") and IsGroupLeader() then
