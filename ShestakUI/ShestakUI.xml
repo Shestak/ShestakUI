@@ -192,8 +192,9 @@
 
 	<Script file="Modules\Loot\AutoDisenchant.lua"/>
 	<Script file="Modules\Loot\AutoGreed.lua"/>
+	<Script file="Modules\Loot\GroupLoot.lua"/>
 	<Script file="Modules\Loot\Loot.lua"/>
-	<Script file="Modules\Loot\LootRoll.lua"/>
+	<Script file="Modules\Loot\MasterLoot.lua"/>
 
 	<Script file="Modules\DataText\Battleground.lua"/>
 
