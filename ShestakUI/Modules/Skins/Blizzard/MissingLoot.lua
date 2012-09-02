@@ -59,6 +59,7 @@ local function LoadSkin()
 
 			if not frame.isSkinned then
 				local Icon = frame.Icon:GetTexture()
+
 				frame:StripTextures()
 				frame.Icon:SetTexture(Icon)
 				frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -73,6 +74,44 @@ local function LoadSkin()
 		end
 	end
 	hooksecurefunc("LootHistoryFrame_FullUpdate", UpdateLoots)
+
+	-- Master loot frame
+	MasterLooterFrame:StripTextures()
+	MasterLooterFrame:SetTemplate("Transparent")
+
+	hooksecurefunc("MasterLooterFrame_Show", function()
+		local button = MasterLooterFrame.Item
+		if button then
+			local icon = button.Icon
+			local texture = icon:GetTexture()
+			local color = ITEM_QUALITY_COLORS[LootFrame.selectedQuality]
+
+			button:StripTextures()
+
+			icon:SetTexture(texture)
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			button:CreateBackdrop("Default")
+			button.backdrop:Point("TOPLEFT", icon, -2, 2)
+			button.backdrop:Point("BOTTOMRIGHT", icon, 2, -2)
+			button.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
+		end
+
+		for i = 1, MasterLooterFrame:GetNumChildren() do
+			local child = select(i, MasterLooterFrame:GetChildren())
+			if child and not child.isSkinned and not child:GetName() then
+				if child:GetObjectType() == "Button" then
+					if child:GetPushedTexture() then
+						T.SkinCloseButton(child)
+					else
+						child:StripTextures()
+						child:SkinButton()
+					end
+					child.isSkinned = true
+				end
+			end
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
