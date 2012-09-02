@@ -28,6 +28,7 @@ local function InstallUI()
 	SetCVar("autoQuestProgress", 1)
 	SetCVar("scriptErrors", 0)
 	SetCVar("buffDurations", 1)
+	SetCVar("enableCombatText", 1)
 
 	if T.author == true then
 		SetCVar("taintLog", 1)
@@ -74,6 +75,8 @@ local function InstallUI()
 		SetCVar("ffxDeath", 0)
 		SetCVar("ffxNetherWorld", 0)
 		SetCVar("autoOpenLootHistory", 0)
+		SetCVar("fctLowManaHealth", 0)
+		SetCVar("fctReactives", 0)
 		SetAutoDeclineGuildInvites(1)
 		ShowAccountAchievements(1)
 	end
