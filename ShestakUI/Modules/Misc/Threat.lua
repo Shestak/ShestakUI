@@ -15,7 +15,7 @@ local max = math.max
 local timer = 0
 local targeted = false
 
-RAID_CLASS_COLORS["PET"] = {r = 0, g = 0.7, b = 0,}
+RAID_CLASS_COLORS["PET"] = {r = 0, g = 0.7, b = 0}
 
 local CreateFS = function(frame, fsize, fstyle)
 	local fstring = frame:CreateFontString(nil, "OVERLAY")
@@ -103,7 +103,6 @@ local UpdateBars = function()
 		if i > C.threat.bar_rows or not cur or cur.pct == 0 then break end
 		if not bar[i] then
 			bar[i] = CreateBar()
-			--bar[i]:Point("TOP", ThreatMeterAnchor, 0, - (C.threat.height + spacing) * (i-1))
 			if i == 1 then
 				bar[i]:Point("TOP", ThreatMeterAnchor, "TOP", 0, -2)
 			else
@@ -115,19 +114,19 @@ local UpdateBars = function()
 		bar[i]:SetStatusBarColor(color.r, color.g, color.b)
 		bar[i].bg:SetVertexColor(color.r, color.g, color.b, 0.25)
 		bar[i].left:SetText(cur.name)
-		bar[i].right:SetText(string.format("%s [%d%%]", truncate(cur.val/100), cur.pct))
+		bar[i].right:SetText(string.format("%s [%d%%]", truncate(cur.val / 100), cur.pct))
 		bar[i]:Show()
 	end
 end
 
 local UpdateThreat = function()
 	if targeted then
-		if GetNumGroupMembers() > 0 then
+		if GetNumGroupMembers() > 5 then
 			for i = 1, GetNumGroupMembers(), 1 do
 				CheckUnit("raid"..i)
 			end
-		elseif GetNumSubgroupMembers() > 0 then
-			for i = 1, GetNumSubgroupMembers(), 1 do
+		elseif GetNumGroupMembers() > 0 then
+			for i = 1, GetNumGroupMembers(), 1 do
 				CheckUnit("party"..i)
 			end
 		end
@@ -139,7 +138,7 @@ end
 
 local OnEvent = function(self, event, ...)
 	if event == "PLAYER_TARGET_CHANGED" or event == "UNIT_THREAT_LIST_UPDATE" then
-		if C.threat.hide_solo == true and (GetNumGroupMembers() + GetNumSubgroupMembers() == 0) then
+		if C.threat.hide_solo == true and GetNumGroupMembers() == 0 then
 			targeted = false
 		else
 			if UnitExists("target") and not UnitIsDead("target") and not UnitIsPlayer("target") and UnitCanAttack("player", "target") then
