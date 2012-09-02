@@ -61,9 +61,6 @@ local function StatusUpdate(frame)
 	local t = GetLootRollTimeLeft(frame.parent.rollID)
 	local perc = t / frame.parent.time
 	frame:SetValue(t)
-	--if t > 1000000000 then
-	--	frame:GetParent():Hide()
-	--end
 end
 
 local function CreateRollButton(parent, ntex, ptex, htex, rolltype, tiptext, ...)
@@ -182,6 +179,8 @@ local function START_LOOT_ROLL(rollID, time)
 	local texture, name, count, quality, bop, canNeed, canGreed, canDisenchant, reasonNeed, reasonGreed, reasonDisenchant, deSkillRequired = GetLootRollItemInfo(rollID)
 	f.button.icon:SetTexture(texture)
 	f.button.link = GetLootRollItemLink(rollID)
+
+	if C.loot.auto_greed and T.level == MAX_PLAYER_LEVEL and quality == 2 and not bop then return end
 
 	if canNeed then
 		f.needbutt:Enable()
