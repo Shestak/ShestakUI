@@ -735,9 +735,9 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 end
 
 T.PreUpdatePower = function(power, unit)
-	local _, pType = UnitPowerType(unit)
+	local _, pToken = UnitPowerType(unit)
 
-	local color = T.oUF_colors.power[pType]
+	local color = T.oUF_colors.power[pToken]
 	if color then
 		power:SetStatusBarColor(color[1], color[2], color[3])
 	end

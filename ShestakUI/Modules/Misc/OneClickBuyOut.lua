@@ -7,14 +7,14 @@ local LoadOCBO = CreateFrame("Frame")
 LoadOCBO:RegisterEvent("ADDON_LOADED")
 LoadOCBO:SetScript("OnEvent", function(self, event, addon)
 	if addon ~= "Blizzard_AuctionUI" or addon == "OneClickBuyOut" then return end
-	local f, buyoutPrice, index, startingBid, minIncrement, bidAmount, bid, name
+	local f, buyoutPrice, index, minBid, minIncrement, bidAmount, bid, name
 	local gt, buttonNames = GameTooltip, {"BrowseButton"}
 
-	local function DoBid(index, startingBid, minIncrement, buyoutPrice, bidAmount)
+	local function DoBid(index, minBid, minIncrement, buyoutPrice, bidAmount)
 		if buyoutPrice > 0 then
 			bid = buyoutPrice
 		else
-			bid = math.max(startingBid, bidAmount + minIncrement)
+			bid = math.max(minBid, bidAmount + minIncrement)
 			if bid == 0 then
 				bid = buyoutPrice
 			end
@@ -30,9 +30,9 @@ LoadOCBO:SetScript("OnEvent", function(self, event, addon)
 				f:HookScript("OnClick", function(self, button)
 					if button == "RightButton" and IsShiftKeyDown() then
 						index = self:GetID() + FauxScrollFrame_GetOffset(BrowseScrollFrame)
-						name, _, _, _, _, _, _, startingBid, minIncrement, buyoutPrice, bidAmount = GetAuctionItemInfo("list", index)
+						name, _, _, _, _, _, _, minBid, minIncrement, buyoutPrice, bidAmount = GetAuctionItemInfo("list", index)
 						if name then
-							DoBid(index, startingBid, minIncrement, buyoutPrice, bidAmount)
+							DoBid(index, minBid, minIncrement, buyoutPrice, bidAmount)
 						end
 					end
 				end)
