@@ -70,7 +70,7 @@ local function UpdateTab(object, name, rank, texture)
 	if IsAddOnLoaded("Aurora") then
 		tab:SetPoint("TOPLEFT", object, "TOPRIGHT", 11, (-44 * index) + 10)
 
-		tab:StripTextures()
+		tab:DisableDrawLayer("BACKGROUND")
 		tab:SetNormalTexture(texture)
 		tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
@@ -83,7 +83,7 @@ local function UpdateTab(object, name, rank, texture)
 	elseif C.skins.blizzard_frames == true then
 		tab:SetPoint("TOPLEFT", object, "TOPRIGHT", 1, (-44 * index) + 44)
 
-		tab:StripTextures()
+		tab:DisableDrawLayer("BACKGROUND")
 		tab:SetNormalTexture(texture)
 		tab:GetNormalTexture():ClearAllPoints()
 		tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
