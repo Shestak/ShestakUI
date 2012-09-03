@@ -18,11 +18,7 @@ local firstLines = {
 	"^Skada:(.*)來自(.*)，(.*) - (.*):$",					-- Skada zhTW
 	"^(.*) Done for (.*)$"	,								-- TinyDPS
 	"^Numeration: (.*) for (.*)$",							-- Numeration
-	--DAMAGE..":",											-- alDamageMeter
-	--SHOW_COMBAT_HEALING..":",								-- alDamageMeter
-	--COMBAT_TEXT_ABSORB..":",								-- alDamageMeter
-	--DISPELS..":",											-- alDamageMeter
-	--INTERRUPTS..":",										-- alDamageMeter
+	"alDamageMeter : (.*)$",								-- alDamageMeter
 }
 
 local nextLines = {
