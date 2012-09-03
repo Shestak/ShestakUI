@@ -283,10 +283,10 @@ lb:SetScript("OnClick", function(self, button)
 	if button == "RightButton" then
 		OnLinkClick()
 	else
-		if GetNumGroupMembers() > 0 and not UnitInRaid("player") then
-			Announce("PARTY")
-		elseif GetNumGroupMembers() > 0 then
+		if IsInRaid() then
 			Announce("RAID")
+		elseif IsInGroup() then
+			Announce("PARTY")
 		else
 			Announce("SAY")
 		end

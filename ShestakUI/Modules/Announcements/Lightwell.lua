@@ -4,15 +4,12 @@ if C.announcements.lightwell ~= true or T.class ~= "PRIEST" then return end
 ----------------------------------------------------------------------------------------
 --	Announce your Lightwell(Light Well Prout by Rahanprout)
 ----------------------------------------------------------------------------------------
-local whisper_baduser = false
-local baduse_threshold = 100
-
-local lightwell_announce = CreateFrame("Frame")
-lightwell_announce:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-lightwell_announce:SetScript("OnEvent", function(self, _, ...)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+frame:SetScript("OnEvent", function(self, _, ...)
 	local _, event, _, _, sourceName, _, _, _, destName, _, _, spellID = ...
 
-	if sourceName == UnitName("player") then
+	if sourceName == UnitName("player") and (IsInRaid() or IsInGroup()) then
 		if event == "SPELL_AURA_APPLIED" and spellID == 7001 then
 			local santemax = UnitHealthMax(destName)
 			local santecurrent = UnitHealth(destName)
@@ -21,13 +18,10 @@ lightwell_announce:SetScript("OnEvent", function(self, _, ...)
 			if aLw ~= nil then
 				aLw[sourceName] = aLw[sourceName] - 1
 				if UnitInParty(destName) or UnitInRaid(destName) then
-					if sante > baduse_threshold then
+					if sante > 100 then
 						SendChatMessage(destName..L_ANNOUNCE_LA_USE.."("..aLw[sourceName]..L_ANNOUNCE_LA_CHARGE, "SAY")
 					else
 						SendChatMessage(destName..L_ANNOUNCE_LA_USELESS.."("..aLw[sourceName]..L_ANNOUNCE_LA_CHARGE, "SAY")
-						if whisper_baduser then
-							SendChatMessage(L_ANNOUNCE_LA_STOP, "WHISPER", nil, destName)
-						end
 					end
 				end
 			end

@@ -4,9 +4,9 @@ if C.announcements.toy_train ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Announce Toy Train or Direbrew's Remote cast
 ----------------------------------------------------------------------------------------
-local train_announce = CreateFrame("Frame")
-train_announce:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-train_announce:SetScript("OnEvent", function(self, _, ...)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+frame:SetScript("OnEvent", function(self, _, ...)
 	local _, event, _, _, sourceName = ...
 	local inInstance, instanceType = IsInInstance()
 	if not (inInstance and (instanceType == "raid" or instanceType == "party")) then return end

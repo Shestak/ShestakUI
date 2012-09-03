@@ -82,7 +82,7 @@ function DisbandRaidGroup()
 	else
 		SendChatMessage(L_INFO_DISBAND, "PARTY")
 		for i = MAX_PARTY_MEMBERS, 1, -1 do
-			if GetSubgroupMembers(i) then
+			if GetNumGroupMembers(i) then
 				UninviteUnit(UnitName("party"..i))
 			end
 		end
@@ -130,7 +130,7 @@ SLASH_PARTYTORAID4 = "/сщтмуке"
 --	Instance teleport
 ----------------------------------------------------------------------------------------
 SlashCmdList.INSTTELEPORT = function()
-	local inInstance, _ = IsInInstance()
+	local inInstance = IsInInstance()
 	if inInstance then
 		LFGTeleport(true)
 	else
