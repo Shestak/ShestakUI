@@ -8,7 +8,6 @@ if T.client ~= "itIT" then return end
 L_ANNOUNCE_LA_USE = " ha usato il mio Pozzo di Luce. "
 L_ANNOUNCE_LA_CHARGE = " carica (cariche)"
 L_ANNOUNCE_LA_USELESS = " ha usato il mio Pozzo di Luce inutilmente! "
-L_ANNOUNCE_LA_STOP = "Non avresti dovuto utilizzare il Pozzo di Luce!"
 L_ANNOUNCE_LA_PLACED = "Pozzo di Luce posizionato. "
 L_ANNOUNCE_LA_CHARGES = " cariche."
 

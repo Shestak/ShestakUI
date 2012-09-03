@@ -8,7 +8,6 @@ if T.client ~= "ptBR" and T.client ~= "ptPT" then return end
 L_ANNOUNCE_LA_USE = " used my lightwell. "
 L_ANNOUNCE_LA_CHARGE = " charge(s))"
 L_ANNOUNCE_LA_USELESS = " used my lightwell, uselessly. "
-L_ANNOUNCE_LA_STOP = "You shouldn't have used the lightwell."
 L_ANNOUNCE_LA_PLACED = "Lightwell placed. "
 L_ANNOUNCE_LA_CHARGES = " charges."
 

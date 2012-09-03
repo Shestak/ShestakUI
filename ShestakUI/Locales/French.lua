@@ -8,7 +8,6 @@ if T.client ~= "frFR" then return end
 L_ANNOUNCE_LA_USE = " a utilisé mon Puits de lumière. "
 L_ANNOUNCE_LA_CHARGE = " charge(s))"
 L_ANNOUNCE_LA_USELESS = " a utilisé mon Puits de lumière, pour rien. "
-L_ANNOUNCE_LA_STOP = "Vous n'aviez pas besoin d'utiliser le Puits de lumière."
 L_ANNOUNCE_LA_PLACED = "Puits de lumière placé. "
 L_ANNOUNCE_LA_CHARGES = " charges."
 

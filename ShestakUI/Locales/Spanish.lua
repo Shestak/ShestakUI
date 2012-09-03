@@ -8,7 +8,6 @@ if T.client ~= "esES" and T.client ~= "esMX" then return end
 L_ANNOUNCE_LA_USE = " usó mi Pozo de Luz. "
 L_ANNOUNCE_LA_CHARGE = " carga(s))"
 L_ANNOUNCE_LA_USELESS = " usó mi Pozo de Luz inútilmente. "
-L_ANNOUNCE_LA_STOP = "No deberías haber usado el Pozo de Luz."
 L_ANNOUNCE_LA_PLACED = "Pozo de Luz colocado. "
 L_ANNOUNCE_LA_CHARGES = " cargas."
 

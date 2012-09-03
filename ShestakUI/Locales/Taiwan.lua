@@ -8,7 +8,6 @@ if T.client ~= "zhTW" then return end
 L_ANNOUNCE_LA_USE = " 使用我的光束泉. "
 L_ANNOUNCE_LA_CHARGE = " 刷新)"
 L_ANNOUNCE_LA_USELESS = " 盡量少地使用我的光束泉. "
-L_ANNOUNCE_LA_STOP = "你不應該使用光束泉."
 L_ANNOUNCE_LA_PLACED = "光束泉位置. "
 L_ANNOUNCE_LA_CHARGES = " 刷新."
 

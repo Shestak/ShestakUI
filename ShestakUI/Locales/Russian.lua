@@ -8,7 +8,6 @@ if T.client ~= "ruRU" then return end
 L_ANNOUNCE_LA_USE = " выпил из моего колодца. "
 L_ANNOUNCE_LA_CHARGE = " заряд(ов))"
 L_ANNOUNCE_LA_USELESS = " использовал мой колодец впустую! "
-L_ANNOUNCE_LA_STOP = "Прекрати пить из моего колодца!!!"
 L_ANNOUNCE_LA_PLACED = "Колодец Света поставлен. "
 L_ANNOUNCE_LA_CHARGES = " зарядов."
 
