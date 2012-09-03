@@ -118,8 +118,8 @@ local function CheckHealers(self, elapsed)
 			name = name:match("(.+)%-.+") or name
 			if name and t.Healers[talentSpec] and t.factionOpposites[UnitFactionGroup("player")] == faction then
 				heallist[name] = talentSpec
-			elseif name and heallist[name] then
-				heallist[name] = nil
+			--elseif name and heallist[name] then
+			--	heallist[name] = nil
 			end
 		end
 	end

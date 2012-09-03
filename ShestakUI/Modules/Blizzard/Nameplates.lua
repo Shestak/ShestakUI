@@ -299,7 +299,6 @@ end
 -- HealthBar OnShow, use this to set variables for the nameplate
 local function UpdateObjects(frame)
 	local frame = frame:GetParent()
-
 	local r, g, b = frame.hp:GetStatusBarColor()
 
 	-- Have to reposition this here so it doesnt resize after being hidden
