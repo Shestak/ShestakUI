@@ -122,16 +122,16 @@ do
 	if C.actionbar.rightbars_mouseover == true then
 		RightActionBarAnchor:SetAlpha(0)
 		RightActionBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
-		RightActionBarAnchor:SetScript("OnLeave", function() RightBarMouseOver(0) end)
+		RightActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 		if C.actionbar.petbar_horizontal == false then
 			PetActionBarAnchor:SetAlpha(0)
 			PetActionBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
-			PetActionBarAnchor:SetScript("OnLeave", function() RightBarMouseOver(0) end)
+			PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 		end
 	end
 	if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
 		PetActionBarAnchor:SetAlpha(0)
 		PetActionBarAnchor:SetScript("OnEnter", function() PetMouseOver(1) end)
-		PetActionBarAnchor:SetScript("OnLeave", function() PetMouseOver(0) end)
+		PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then PetMouseOver(0) end end)
 	end
 end

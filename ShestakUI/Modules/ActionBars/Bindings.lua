@@ -10,7 +10,6 @@ SlashCmdList.MOUSEOVERBIND = function()
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 	if not bind.loaded then
 		local find = string.find
-		local _G = getfenv(0)
 
 		bind:SetFrameStrata("DIALOG")
 		bind:EnableMouse(true)
@@ -26,10 +25,10 @@ SlashCmdList.MOUSEOVERBIND = function()
 		GameTooltip:HookScript("OnUpdate", function(self, e)
 			elapsed = elapsed + e
 			if elapsed < 0.2 then return else elapsed = 0 end
-			if (not self.comparing and IsModifiedClick("COMPAREITEMS")) then
+			if not self.comparing and IsModifiedClick("COMPAREITEMS") then
 				GameTooltip_ShowCompareItem(self)
 				self.comparing = true
-			elseif (self.comparing and not IsModifiedClick("COMPAREITEMS")) then
+			elseif self.comparing and not IsModifiedClick("COMPAREITEMS") then
 				for _, frame in pairs(self.shoppingTooltips) do
 					frame:Hide()
 				end
@@ -229,6 +228,15 @@ SlashCmdList.MOUSEOVERBIND = function()
 		function bind:Activate()
 			self.enabled = true
 			self:RegisterEvent("PLAYER_REGEN_DISABLED")
+			if C.actionbar.rightbars_mouseover == true then
+				RightBarMouseOver(1)
+			end
+			if C.actionbar.stancebar_mouseover == true then
+				ShapeShiftMouseOver(1)
+			end
+			if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
+				PetMouseOver(1)
+			end
 		end
 
 		function bind:Deactivate(save)
@@ -244,6 +252,15 @@ SlashCmdList.MOUSEOVERBIND = function()
 			self:HideFrame()
 			self:UnregisterEvent("PLAYER_REGEN_DISABLED")
 			StaticPopup_Hide("KEYBIND_MODE")
+			if C.actionbar.rightbars_mouseover == true then
+				RightBarMouseOver(0)
+			end
+			if C.actionbar.stancebar_mouseover == true then
+				ShapeShiftMouseOver(0)
+			end
+			if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
+				PetMouseOver(0)
+			end
 		end
 
 		StaticPopupDialogs.KEYBIND_MODE = {
