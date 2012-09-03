@@ -16,9 +16,9 @@ local function LoadSkin()
 	end
 
 	InspectModelFrame:StripTextures(true)
-	InspectModelFrame:CreateBackdrop("Overlay")
-	InspectModelFrame.backdrop:Point("TOPLEFT", -2, 2)
-	InspectModelFrame.backdrop:Point("BOTTOMRIGHT", 2, -3)
+	InspectModelFrame:CreateBackdrop("Default")
+	InspectModelFrame.backdrop:Point("TOPLEFT", -3, 4)
+	InspectModelFrame.backdrop:Point("BOTTOMRIGHT", 4, 0)
 
 	local slots = {
 		"HeadSlot",
@@ -67,8 +67,6 @@ local function LoadSkin()
 	end
 
 	SpecializationSpecName:SetFont(C.media.normal_font, 20)
-	--SpecializationRing:SetTexture("")
-	--InspectTalentFrame:StripTextures()
 	InspectTalentFrame:DisableDrawLayer("BACKGROUND")
 	InspectTalentFrame:DisableDrawLayer("BORDER")
 
@@ -86,17 +84,17 @@ local function LoadSkin()
 		end
 	end
 
-	for i = 1, 6 do
-		local button = _G["InspectGlyphsGlyph"..i]
-		local icon = _G["InspectGlyphsGlyph"..i.."IconTexture"]
+	-- Unit Background Texture
+	InspectModelFrame.backdrop.BGTopLeft = InspectModelFrame.backdrop:CreateTexture(nil, "ARTWORK")
+	InspectModelFrame.backdrop.BGTopLeft:SetPoint("TOPLEFT", InspectModelFrame.backdrop, "TOPLEFT", 2, -2)
+	InspectModelFrame.backdrop.BGTopLeft:SetPoint("TOPRIGHT", InspectModelFrame.backdrop, "TOPRIGHT", -2, -2)
 
-		--button:StripTextures()
-		--button:CreateBackdrop("Default")
-		--button.backdrop:Point("TOPLEFT", -2, 2)
-		--button.backdrop:Point("BOTTOMRIGHT", 2, -2)
+	InspectModelFrame.backdrop.BGBottomLeft = InspectModelFrame.backdrop:CreateTexture(nil, "ARTWORK")
+	InspectModelFrame.backdrop.BGBottomLeft:SetPoint("BOTTOMLEFT", InspectModelFrame.backdrop, "BOTTOMLEFT", 2, -50)
+	InspectModelFrame.backdrop.BGBottomLeft:SetPoint("BOTTOMRIGHT", InspectModelFrame.backdrop, "BOTTOMRIGHT", -2, -50)
 
-		--button.ring:SetTexCoord(0.1, 0.9, 0.1, 0.9);
-	end
+	local race, fileName = UnitRace("target")
+	SetDressUpBackground(InspectModelFrame.backdrop, fileName)
 end
 
 T.SkinFuncs["Blizzard_InspectUI"] = LoadSkin

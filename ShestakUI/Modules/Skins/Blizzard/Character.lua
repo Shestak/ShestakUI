@@ -93,9 +93,9 @@ local function LoadSkin()
 
 	-- Icon in upper right corner of character frame
 	CharacterFramePortrait:Kill()
-	CharacterModelFrame:CreateBackdrop("Overlay")
-	CharacterModelFrame.backdrop:Point("TOPLEFT", -2, 2)
-	CharacterModelFrame.backdrop:Point("BOTTOMRIGHT", 2, -3)
+	CharacterModelFrame:CreateBackdrop("Default")
+	CharacterModelFrame.backdrop:Point("TOPLEFT", -3, 4)
+	CharacterModelFrame.backdrop:Point("BOTTOMRIGHT", 4, 0)
 
 	local scrollbars = {
 		"PaperDollTitlesPaneScrollBar",
@@ -310,6 +310,18 @@ local function LoadSkin()
 
 	CharacterFrame:SetTemplate("Transparent")
 	CharacterFrame:SetFrameStrata("DIALOG")
+
+	-- Unit Background Texture
+	CharacterModelFrame.backdrop.BGTopLeft = CharacterModelFrame.backdrop:CreateTexture(nil, "ARTWORK")
+	CharacterModelFrame.backdrop.BGTopLeft:SetPoint("TOPLEFT", CharacterModelFrame.backdrop, "TOPLEFT", 2, -2)
+	CharacterModelFrame.backdrop.BGTopLeft:SetPoint("TOPRIGHT", CharacterModelFrame.backdrop, "TOPRIGHT", -2, -2)
+
+	CharacterModelFrame.backdrop.BGBottomLeft = CharacterModelFrame.backdrop:CreateTexture(nil, "ARTWORK")
+	CharacterModelFrame.backdrop.BGBottomLeft:SetPoint("BOTTOMLEFT", CharacterModelFrame.backdrop, "BOTTOMLEFT", 2, -50)
+	CharacterModelFrame.backdrop.BGBottomLeft:SetPoint("BOTTOMRIGHT", CharacterModelFrame.backdrop, "BOTTOMRIGHT", -2, -50)
+
+	local race, fileName = UnitRace("player")
+	SetDressUpBackground(CharacterModelFrame.backdrop, fileName)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
