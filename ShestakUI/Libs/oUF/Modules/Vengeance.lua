@@ -37,10 +37,10 @@ local Update = function(self, event, unit)
 		tooltip:Hide()
 
 		local _, maxHealth = self.Health:GetMinMaxValues()
-		vb.Bar:SetMinMaxValues(0, maxHealth * 1.5)
+		vb.Bar:SetMinMaxValues(0, maxHealth)
 
 		local textValue = text:match("%d+")
-		local maxValue = floor(maxHealth * 1.5)
+		local maxValue = floor(maxHealth)
 
 		if vb.Text then
 			--vb.Text:SetText(textValue.." / "..maxValue)
