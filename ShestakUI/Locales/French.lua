@@ -151,7 +151,6 @@ L_MAIL_MESSAGES = "messages"
 -- Loot
 L_LOOT_RANDOM = "Joueur aléatoire"
 L_LOOT_SELF = "Procurez-vous un"
-L_LOOT_UNKNOWN = "Inconnu"
 L_LOOT_FISH = "Pêche"
 L_LOOT_MONSTER = ">> Extraction avec "
 L_LOOT_CHEST = ">> Extraction du tronc"
@@ -160,7 +159,6 @@ L_LOOT_TO_RAID = "  raid"
 L_LOOT_TO_PARTY = "  groupe"
 L_LOOT_TO_GUILD = "  corps"
 L_LOOT_TO_SAY = "  dire"
-L_LOOT_CANNOT = "Impossible de lancer les dés"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "Tu es AFK !"

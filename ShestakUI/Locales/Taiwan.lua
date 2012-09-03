@@ -151,7 +151,6 @@ L_MAIL_MESSAGES = "新郵件"
 -- Loot
 L_LOOT_RANDOM = "隨機玩家"
 L_LOOT_SELF = "自己拾取"
-L_LOOT_UNKNOWN = "未知"
 L_LOOT_FISH = "釣魚拾取"
 L_LOOT_MONSTER = ">> 撿取自 "
 L_LOOT_CHEST = ">> 撿取自寶箱"
@@ -160,7 +159,6 @@ L_LOOT_TO_RAID = "  團隊"
 L_LOOT_TO_PARTY = "  隊伍"
 L_LOOT_TO_GUILD = "  公會"
 L_LOOT_TO_SAY = "  說"
-L_LOOT_CANNOT = "不能拾取"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "你處于暫離狀態!"

@@ -151,7 +151,6 @@ L_MAIL_MESSAGES = "messaggi"
 -- Loot
 L_LOOT_RANDOM = "Giocatore casuale"
 L_LOOT_SELF = "Bottino personale"
-L_LOOT_UNKNOWN = "Sconosciuto"
 L_LOOT_FISH = "Bottino pescato"
 L_LOOT_MONSTER = ">> Bottino da"
 L_LOOT_CHEST = ">> Bottino nella cassa"
@@ -160,7 +159,6 @@ L_LOOT_TO_RAID = "  incursione"
 L_LOOT_TO_PARTY = "  gruppo"
 L_LOOT_TO_GUILD = "  gilda"
 L_LOOT_TO_SAY = "  dice"
-L_LOOT_CANNOT = "Non puoi partecipare al tiro per il bottino"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "Sei assente!"

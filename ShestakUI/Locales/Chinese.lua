@@ -151,7 +151,6 @@ L_MAIL_MESSAGES = "新邮件"
 -- Loot
 L_LOOT_RANDOM = "随机拾取"
 L_LOOT_SELF = "自由拾取"
-L_LOOT_UNKNOWN = "未知"
 L_LOOT_FISH = "钓鱼拾取"
 L_LOOT_MONSTER = ">> 拾取自 "
 L_LOOT_CHEST = ">> 拾取自宝箱"
@@ -160,7 +159,6 @@ L_LOOT_TO_RAID = "  团队"
 L_LOOT_TO_PARTY = "  队伍"
 L_LOOT_TO_GUILD = "  公会"
 L_LOOT_TO_SAY = "  说"
-L_LOOT_CANNOT = "不能拾取"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "你处于暂离状态!"
@@ -189,7 +187,7 @@ L_PLANNER_DEATHKNIGHT_2 = "冰霜"
 L_PLANNER_DEATHKNIGHT_3 = "邪恶"
 L_PLANNER_DRUID_1 = "平衡"
 L_PLANNER_DRUID_2 = "野性战斗"
-L_PLANNER_DRUID_3 = "Guardian" -- need review
+L_PLANNER_DRUID_3 = "Guardian" -- Needs review
 L_PLANNER_DRUID_4 = "恢复"
 L_PLANNER_HUNTER_1 = "野兽掌握"
 L_PLANNER_HUNTER_2 = "射击"
@@ -197,9 +195,9 @@ L_PLANNER_HUNTER_3 = "生存"
 L_PLANNER_MAGE_1 = "奥术"
 L_PLANNER_MAGE_2 = "火焰"
 L_PLANNER_MAGE_3 = "冰霜"
-L_PLANNER_MONK_1 = "Brewmaster" -- need review
-L_PLANNER_MONK_2 = "Mistweaver" -- need review
-L_PLANNER_MONK_3 = "Windwalker" -- need review
+L_PLANNER_MONK_1 = "Brewmaster" -- Needs review
+L_PLANNER_MONK_2 = "Mistweaver" -- Needs review
+L_PLANNER_MONK_3 = "Windwalker" -- Needs review
 L_PLANNER_PALADIN_1 = "神圣"
 L_PLANNER_PALADIN_2 = "防护"
 L_PLANNER_PALADIN_3 = "惩戒"

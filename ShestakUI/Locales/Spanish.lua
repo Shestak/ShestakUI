@@ -151,7 +151,6 @@ L_MAIL_MESSAGES = "mensajes"
 -- Loot
 L_LOOT_RANDOM = "Jugador aleatorio"
 L_LOOT_SELF = "Despojar automáticamente"
-L_LOOT_UNKNOWN = "Desconocido"
 L_LOOT_FISH = "Despojar pescado"
 L_LOOT_MONSTER = ">> Botín de "
 L_LOOT_CHEST = ">> Botín del cofre"
@@ -160,7 +159,6 @@ L_LOOT_TO_RAID = "  banda"
 L_LOOT_TO_PARTY = "  grupo"
 L_LOOT_TO_GUILD = "  hermandad"
 L_LOOT_TO_SAY = "  decir"
-L_LOOT_CANNOT = "No puedes tirar dados"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "Estas ausente!"
