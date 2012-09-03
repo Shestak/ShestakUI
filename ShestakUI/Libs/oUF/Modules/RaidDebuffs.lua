@@ -93,10 +93,7 @@ do
 	DispellFilter = dispellClasses[select(2, UnitClass("player"))] or {}
 end
 
-local function CheckSpec(self, event, levels)
-	-- Not interested in gained points from leveling
-	if event == "CHARACTER_POINTS_CHANGED" and levels > 0 then return end
-
+local function CheckSpec(self, event)
 	-- Check spec to see if we can dispel magic or not
 	if select(2, UnitClass("player")) == "DRUID" then
 		if T.CheckSpec(4) then
@@ -257,7 +254,6 @@ local function Enable(self)
 		return true
 	end
 	self:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
-	self:RegisterEvent("CHARACTER_POINTS_CHANGED", CheckSpec)
 end
 
 local function Disable(self)
@@ -266,7 +262,6 @@ local function Disable(self)
 		self.RaidDebuffs:Hide()
 	end
 	self:UnregisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
-	self:UnregisterEvent("CHARACTER_POINTS_CHANGED", CheckSpec)
 end
 
 oUF:AddElement("RaidDebuffs", Update, Enable, Disable)

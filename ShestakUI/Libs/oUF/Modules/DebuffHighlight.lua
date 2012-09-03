@@ -34,10 +34,7 @@ local function GetDebuffType(unit, filter)
 	end
 end
 
-local function CheckSpec(self, event, levels)
-	-- Not interested in gained points from leveling
-	if event == "CHARACTER_POINTS_CHANGED" and levels > 0 then return end
-
+local function CheckSpec(self, event)
 	-- Check spec to see if we can dispel magic or not
 	if playerClass == "DRUID" then
 		if T.CheckSpec(4) then
@@ -116,7 +113,6 @@ local function Enable(object)
 	-- make sure aura scanning is active for this object
 	object:RegisterEvent("UNIT_AURA", Update)
 	object:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
-	object:RegisterEvent("CHARACTER_POINTS_CHANGED", CheckSpec)
 
 	if object.DebuffHighlightBackdrop or object.DebuffHighlightBackdropBorder then
 		local r, g, b, a = object:GetBackdropColor()
@@ -136,7 +132,6 @@ local function Disable(object)
 	if object.DebuffHighlightBackdrop or object.DebuffHighlightBackdropBorder or object.DebuffHighlight then
 		object:UnregisterEvent("UNIT_AURA", Update)
 		object:UnregisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
-		object:UnregisterEvent("CHARACTER_POINTS_CHANGED", CheckSpec)
 	end
 end
 

@@ -14,9 +14,9 @@ local check = function(self, event, prefix, message, channel, sender)
 	else
 		if UnitInBattleground("player") and UnitInBattleground("player") > 0 then
 			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "BATTLEGROUND")
-		elseif UnitInRaid("player") and GetNumGroupMembers() > 5 then
+		elseif IsInRaid() then
 			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "RAID")
-		elseif UnitInParty("player") then
+		elseif IsInGroup() then
 			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "PARTY")
 		elseif IsInGuild() then
 			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "GUILD")
