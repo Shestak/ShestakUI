@@ -4,9 +4,6 @@ if C.skins.dxe ~= true or not IsAddOnLoaded("DXE") then return end
 ----------------------------------------------------------------------------------------
 --	DXE skin
 ----------------------------------------------------------------------------------------
-local DXE = DXE
-local _G = getfenv(0)
-
 local movers = {
 	"DXEAlertsCenterStackAnchor",
 	"DXEAlertsWarningStackAnchor",
@@ -47,6 +44,7 @@ local function SkinDXEBar(bar)
 end
 
 -- Kill DXE's skinning
+local DXE = DXE
 DXE.NotifyBarTextureChanged = T.dummy
 DXE.NotifyBorderChanged = T.dummy
 DXE.NotifyBorderColorChanged = T.dummy

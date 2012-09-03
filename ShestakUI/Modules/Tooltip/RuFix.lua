@@ -11,6 +11,7 @@ EMPTY_SOCKET_YELLOW = "|cffffff40"..EMPTY_SOCKET_YELLOW.."|r"
 EMPTY_SOCKET_BLUE = "|cff6060ff"..EMPTY_SOCKET_BLUE.."|r"
 
 if T.client ~= "ruRU" then return end
+local ttext
 local replace = {
 	["красного цвета"] = "|cffFF4040красного цвета|r",
 	["синего цвета"] = "|cff6060ffсинего цвета|r",
@@ -27,9 +28,6 @@ local replace = {
 	["Рыцарь смерти"] = "|cffC41F3BРыцарь смерти|r",
 	["Монах"] = "|cff558A84Монах|r",
 }
-
-local _G = getfenv(0)
-local ttext
 
 local function Translate(text)
 	if text then
