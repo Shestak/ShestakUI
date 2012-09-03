@@ -34,6 +34,8 @@ SlashCmdList.MOUSEOVERBIND = function()
 				end
 				self.comparing = false
 			end
+			self:SetBackdropColor(unpack(C.media.overlay_color))
+			self:SetBackdropBorderColor(unpack(C.media.border_color))
 		end)
 		GameTooltip:SetBackdropColor(unpack(C.media.overlay_color))
 		GameTooltip:SetBackdropBorderColor(unpack(C.media.border_color))
