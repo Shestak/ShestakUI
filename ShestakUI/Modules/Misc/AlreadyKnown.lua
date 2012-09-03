@@ -95,9 +95,11 @@ local function GuildBankFrame_Update()
 	if GuildBankFrame.mode ~= "bank" then return end
 
 	local tab = GetCurrentGuildBankTab()
-
 	for i = 1, MAX_GUILDBANK_SLOTS_PER_TAB do
-		local button = _G["GuildBankColumn" .. math.ceil((i - 0.5) / NUM_SLOTS_PER_GUILDBANK_GROUP) .. "Button" .. math.fmod(i, NUM_SLOTS_PER_GUILDBANK_GROUP)]
+		local index = math.fmod(i, NUM_SLOTS_PER_GUILDBANK_GROUP)
+		if index == 0 then index = 14 end
+		local column = math.ceil((i - 0.5) / NUM_SLOTS_PER_GUILDBANK_GROUP)
+		local button = _G["GuildBankColumn"..column.."Button"..index]
 
 		if button and button:IsShown() then
 			local texture, _, locked = GetGuildBankItemInfo(tab, i)
@@ -172,7 +174,7 @@ local function AuctionFrameAuctions_Update()
 		local texture = _G["AuctionsButton"..i.."ItemIconTexture"]
 
 		if texture and texture:IsShown() then
-			local _, _, _, _, canUse, _, _, _, _, _, _, _, saleStatus = GetAuctionItemInfo("owner", index)
+			local _, _, _, _, canUse, _, _, _, _, _, _, _, _, saleStatus = GetAuctionItemInfo("owner", index)
 
 			if canUse and IsAlreadyKnown(GetAuctionItemLink("owner", index)) then
 				local r, g, b = COLOR.r, COLOR.g, COLOR.b
