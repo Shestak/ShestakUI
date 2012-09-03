@@ -70,9 +70,9 @@ bgframe:SetScript("OnEnter", function(self)
 	end
 end)
 bgframe:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
-bgframe:SetScript("OnMouseUp", function(self)
+bgframe:SetScript("OnMouseUp", function(self, button)
 	if QueueStatusMinimapButton:IsShown() then
-		if IsShiftKeyDown() then
+		if button == "LeftButton" then
 			ToggleBattlefieldMinimap()
 		else
 			ToggleWorldStateScoreFrame()
