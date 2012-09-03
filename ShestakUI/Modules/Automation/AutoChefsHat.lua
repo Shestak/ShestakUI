@@ -17,17 +17,40 @@ local TheChef_Is_InTheKitchen
 local IDoNotCookHere
 local IDoNotCookThere
 
-local function WhereIsThisDamnedHat()
+local function BackInBag()
+	if GetContainerNumFreeSlots(0) > 0 then
+		PickupInventoryItem(1)
+		PutItemInBackpack()
+		return
+	end
+	local hatType = GetItemFamily(GetInventoryItemLink("player", 1))
+	for bag = 1, NUM_BAG_SLOTS do
+		local this = GetInventoryItemLink("player", ContainerIDToInventoryID(bag))
+		if this then
+			local bagType = GetItemFamily(this)
+				if bagType == 0 or bagType == hatType then
+				if GetContainerNumFreeSlots(bag) > 0 then
+					PickupInventoryItem(1)
+					PutItemInBag(bag + CONTAINER_BAG_OFFSET)
+					return
+				end
+			end
+		end
+	end
+end
+
+local function WhereIsThisDamnedHat(ThisHat)
+	local SearchThis = "item:"..ThisHat..":"
 	for SearchHere = 0, 4 do
 		for SearchThere = 1, GetContainerNumSlots(SearchHere) do
 			local OhhhhIFoundSomething = GetContainerItemLink(SearchHere, SearchThere)
-			if OhhhhIFoundSomething and OhhhhIFoundSomething:find(TheChefsHat) then
+			if OhhhhIFoundSomething and OhhhhIFoundSomething:find(SearchThis) then
 				return OhhhhIFoundSomething
 			end
 		end
 	end
 	local OhhhhhTheHatIsOnMyHead = GetInventoryItemLink("player", 1)
-	if OhhhhhTheHatIsOnMyHead and OhhhhhTheHatIsOnMyHead:find(TheChefsHat) then
+	if OhhhhhTheHatIsOnMyHead and OhhhhhTheHatIsOnMyHead:find(SearchThis) then
 		return OhhhhhTheHatIsOnMyHead
 	end
 end
@@ -36,21 +59,36 @@ local function GiveMe_TheOldHat()
 	TheChef_Is_InTheKitchen = false
 	if IDoNotCookHere or IDoNotCookThere then return end
 	if TheChefsHat_Is_OnMyHead then
-		ShowHelm(TheOldHat_Is_LookingGood)
-		EquipItemByName(TheOldHat)
+		if TheOldHat then
+			local ThisIs_TheOldHat = WhereIsThisDamnedHat(TheOldHat)
+			if ThisIs_TheOldHat then
+				ShowHelm(TheOldHat_Is_LookingGood)
+				EquipItemByName(ThisIs_TheOldHat)
+			else
+				ShowHelm(TheOldHat_Is_LookingGood)
+				BackInBag()
+			end
+		else
+			ShowHelm(TheOldHat_Is_LookingGood)
+			BackInBag()
+		end
 		TheChefsHat_Is_OnMyHead = false
 	end
 end
 
 local function GiveMe_TheChefsHat()
 	TheOldHat = GetInventoryItemLink("player", 1)
+	if TheOldHat then
+		TheOldHat = string.match(TheOldHat, "item:(%-?%d+):")
+	end
+
 	if ShowingHelm() then
 		TheOldHat_Is_LookingGood = true
 	else
 		TheOldHat_Is_LookingGood = false
 	end
 
-	local ThisIs_TheChefsHat = WhereIsThisDamnedHat()
+	local ThisIs_TheChefsHat = WhereIsThisDamnedHat(TheChefsHat)
 
 	if ThisIs_TheChefsHat then
 		EquipItemByName(ThisIs_TheChefsHat)
