@@ -121,13 +121,10 @@ end
 
 local UpdateThreat = function()
 	if targeted then
-		if GetNumGroupMembers() > 5 then
+		if GetNumGroupMembers() > 0 then
+			local unit = IsInRaid() and "raid" or "party"
 			for i = 1, GetNumGroupMembers(), 1 do
-				CheckUnit("raid"..i)
-			end
-		elseif GetNumGroupMembers() > 0 then
-			for i = 1, GetNumGroupMembers(), 1 do
-				CheckUnit("party"..i)
+				CheckUnit(unit..i)
 			end
 		end
 		CheckUnit("targettarget")
