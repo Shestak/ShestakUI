@@ -226,7 +226,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(86028),	-- Cho's Blast
 			SpellName(86029),	-- Gall's Blast
 			-- Sinestra
-			SpellName(92956),	-- Wrack
+			SpellName(89421),	-- Wrack
 		-- Throne of the Four Winds
 			-- Conclave of Wind
 			-- Nezir
