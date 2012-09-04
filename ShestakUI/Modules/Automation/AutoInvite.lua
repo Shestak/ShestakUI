@@ -59,9 +59,15 @@ end
 ----------------------------------------------------------------------------------------
 local autoinvite = CreateFrame("Frame")
 autoinvite:RegisterEvent("CHAT_MSG_WHISPER")
-autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2)
+autoinvite:RegisterEvent("CHAT_MSG_BN_WHISPER")
+autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2, ...)
 	if ((not UnitExists("party1") or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and arg1:lower():match(C.misc.invite_keyword)) and SavedOptionsPerChar.AutoInvite == true then
-		InviteUnit(arg2)
+		if event == "CHAT_MSG_WHISPER" then
+			InviteUnit(arg2)
+		elseif event == "CHAT_MSG_BN_WHISPER" then
+			local _, toonName, _, realmName = BNGetToonInfo(select(11, ...))
+			InviteUnit(toonName.."-"..realmName)
+		end
 	end
 end)
 
