@@ -92,6 +92,13 @@ AlertFrame:UnregisterEvent("LOOT_ITEM_ROLL_WON")
 AlertFrame:UnregisterEvent("SHOW_LOOT_TOAST")
 
 ----------------------------------------------------------------------------------------
+--	Hide character controls
+----------------------------------------------------------------------------------------
+CharacterModelFrameControlFrame:HookScript("OnShow", function(self) self:Hide() end)
+DressUpModelControlFrame:HookScript("OnShow", function(self) self:Hide() end)
+SideDressUpModelControlFrame:HookScript("OnShow", function(self) self:Hide() end)
+
+----------------------------------------------------------------------------------------
 --	Auto hide unnecessary stats from CharacterFrame(module from Inomena by p3lim)
 ----------------------------------------------------------------------------------------
 PAPERDOLL_STATCATEGORIES = {
