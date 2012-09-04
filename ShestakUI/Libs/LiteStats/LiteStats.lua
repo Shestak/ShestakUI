@@ -631,8 +631,9 @@ if clock.enabled then
 			end
 
 			local oneraid
+			local heroicDifficulty = {DUNGEON_DIFFICULTY2, DUNGEON_DIFFICULTY_5PLAYER_HEROIC, RAID_DIFFICULTY3, RAID_DIFFICULTY4, RAID_DIFFICULTY_10PLAYER_HEROIC, RAID_DIFFICULTY_25PLAYER_HEROIC}
 			for i = 1, GetNumSavedInstances() do
-				local name, _, reset, difficulty, locked, extended, _, isRaid, maxPlayers = GetSavedInstanceInfo(i)
+				local name, _, reset, _, locked, extended, _, isRaid, maxPlayers, difficulty, numEncounters, encounterProgress  = GetSavedInstanceInfo(i)
 				if isRaid and (locked or extended) then
 					local tr, tg, tb, diff
 					if not oneraid then
@@ -641,8 +642,17 @@ if clock.enabled then
 						oneraid = true
 					end
 					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
-					if difficulty == 3 or difficulty == 4 then diff = "H" else diff = "" end
-					GameTooltip:AddDoubleLine(format("%s |cffaaaaaa(%s%s)", name, maxPlayers, diff), fmttime(reset), 1, 1, 1, tr, tg, tb)
+					for i, value in pairs(heroicDifficulty) do
+						if value == difficulty then
+							diff = "H"
+							break
+						end
+					end
+					if (numEncounters and numEncounters > 0) and (encounterProgress and encounterProgress > 0) then
+						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa(%s%s) (%s/%s)", name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
+					else
+						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa(%s%s)", name, maxPlayers, diff or ""), fmttime(reset), 1, 1, 1, tr, tg, tb)
+					end
 				end
 			end
 			GameTooltip:Show()
