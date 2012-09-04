@@ -7,10 +7,7 @@ if C.announcements.flask_food ~= true then return end
 local noFood, noFlask, unitBuffs = {}, {}, {}
 
 local foods = {
-	104277,	-- Mogu Fish Stew
-	104272,	-- Black Pepper Ribs and Shrimp
-	104283,	-- Chun Tian Spring Rolls
-	104275,	-- Sea Mist Rice Noodles
+	104277,	-- Well Fed
 }
 
 local flasks = {
