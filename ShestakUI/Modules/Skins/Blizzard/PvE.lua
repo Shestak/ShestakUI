@@ -31,7 +31,7 @@ local function LoadSkin()
 		"LFGDungeonReadyDialogBackground",
 		"RaidFinderQueueFrameBackground",
 		"LFGDungeonReadyDialogBottomArt",
-		"LFGDungeonReadyDialogFiligree",
+		"LFGDungeonReadyDialogFiligree"
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -227,8 +227,6 @@ local function LoadSkin()
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
 	LFGDungeonReadyDialog.SetBackdrop = T.dummy
 	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
-
-	--LFDQueueFrameRandomScrollFrame:Height(LFDQueueFrameRandomScrollFrame:GetHeight() + 10)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

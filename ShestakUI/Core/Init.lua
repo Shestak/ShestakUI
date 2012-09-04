@@ -14,5 +14,5 @@ ShestakUI = engine	-- Allow other addons to use Engine
 	local T, C, L, _ = unpack(select(2, ...))
 
 	This is how another addon imports the ShestakUI engine:
-	local T, C, L = unpack(ShestakUI)
+	local T, C, L, _ = unpack(ShestakUI)
 ]]
