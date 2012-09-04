@@ -108,7 +108,15 @@ bar:SetScript("OnEvent", function(self, event, ...)
 end)
 
 -- Mouseover bar
-if C.actionbar.stancebar_mouseover == true then
+if C.actionbar.rightbars_mouseover == true and C.actionbar.stancebar_horizontal == false then
+	for i = 1, NUM_STANCE_SLOTS do
+		local b = _G["StanceButton"..i]
+		b:SetAlpha(0)
+		b:HookScript("OnEnter", function() RightBarMouseOver(1) end)
+		b:HookScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
+	end
+end
+if C.actionbar.stancebar_mouseover == true and C.actionbar.stancebar_horizontal == true then
 	ShapeShiftBarAnchor:SetAlpha(0)
 	ShapeShiftBarAnchor:SetScript("OnEnter", function() ShapeShiftMouseOver(1) end)
 	ShapeShiftBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then ShapeShiftMouseOver(0) end end)

@@ -63,6 +63,7 @@ end
 function RightBarMouseOver(alpha)
 	RightActionBarAnchor:SetAlpha(alpha)
 	PetActionBarAnchor:SetAlpha(alpha)
+	ShapeShiftBarAnchor:SetAlpha(alpha)
 
 	if MultiBarLeft:IsShown() then
 		for i = 1, 12 do
@@ -100,6 +101,17 @@ function RightBarMouseOver(alpha)
 			PetHolder:SetAlpha(alpha)
 		end
 	end
+
+	if C.actionbar.stancebar_horizontal == false then
+		if C.actionbar.stancebar_hide then return end
+		if ShiftHolder:IsShown() then
+			for i = 1, NUM_STANCE_SLOTS do
+				local pb = _G["StanceButton"..i]
+				pb:SetAlpha(alpha)
+			end
+			ShiftHolder:SetAlpha(alpha)
+		end
+	end
 end
 
 function ShapeShiftMouseOver(alpha)
@@ -127,6 +139,11 @@ do
 			PetActionBarAnchor:SetAlpha(0)
 			PetActionBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
 			PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
+		end
+		if C.actionbar.stancebar_horizontal == false then
+			ShapeShiftBarAnchor:SetAlpha(0)
+			ShapeShiftBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
+			ShapeShiftBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 		end
 	end
 	if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
