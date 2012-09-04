@@ -37,6 +37,7 @@ T.black_list = {
 	[SPELL_FAILED_MOVING] = true,
 	[SPELL_FAILED_AURA_BOUNCED] = true,
 	[SPELL_FAILED_CANT_DO_THAT_RIGHT_NOW] = true,
+	[SPELL_FAILED_AFFECTING_COMBAT] = true,
 	[ERR_ATTACK_FLEEING] = true,
 	[ERR_ITEM_COOLDOWN] = true,
 	[ERR_GENERIC_NO_TARGET] = true,
@@ -65,4 +66,5 @@ T.black_list = {
 	[ERR_NOEMOTEWHILERUNNING] = true,
 	[ERR_NOT_EQUIPPABLE] = true,
 	[ERR_NOT_IN_COMBAT] = true,
+	[ERR_MAIL_DATABASE_ERROR] = true,
 }
