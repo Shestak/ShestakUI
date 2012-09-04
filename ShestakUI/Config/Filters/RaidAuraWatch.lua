@@ -9,21 +9,12 @@ if C.raidframe.plugins_aura_watch == true then
 	do
 		-- Class buffs
 		T.buffids = {
-			DEATHKNIGHT = {
-				{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},					-- Unholy Frenzy
-			},
 			DRUID = {
 				{774, "TOPRIGHT", {0.8, 0.4, 0.8}},						-- Rejuvenation
 				{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},					-- Regrowth
 				{94447, "TOPLEFT", {0.4, 0.8, 0.2}},					-- Lifebloom
 				{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},					-- Wild Growth
 				{102342, "LEFT", {0.38, 0.22, 0.1}, true},				-- Ironbark
-			},
-			HUNTER = {
-				{34477, "TOPRIGHT", {0.2, 0.2, 1}},						-- Misdirection
-			},
-			MAGE = {
-				{111264, "TOPRIGHT", {0.2, 0.2, 1}},					-- Ice Ward
 			},
 			MONK = {
 				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},					-- Renewing Mist
@@ -49,13 +40,22 @@ if C.raidframe.plugins_aura_watch == true then
 				{33206, "LEFT", {0.89, 0.1, 0.1}, true},				-- Pain Suppress
 				{47788, "LEFT", {0.86, 0.52, 0}, true},					-- Guardian Spirit
 			},
-			ROGUE = {
-				{57933, "TOPRIGHT", {0.89, 0.1, 0.1}},					-- Tricks of the Trade
-			},
 			SHAMAN = {
 				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},					-- Riptide
 				{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},				-- Earth Shield
 				{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},					-- Earthliving
+			},
+			DEATHKNIGHT = {
+				{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},					-- Unholy Frenzy
+			},
+			HUNTER = {
+				{34477, "TOPRIGHT", {0.2, 0.2, 1}},						-- Misdirection
+			},
+			MAGE = {
+				{111264, "TOPRIGHT", {0.2, 0.2, 1}},					-- Ice Ward
+			},
+			ROGUE = {
+				{57933, "TOPRIGHT", {0.89, 0.1, 0.1}},					-- Tricks of the Trade
 			},
 			WARLOCK = {
 				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},					-- Soulstone
