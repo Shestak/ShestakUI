@@ -46,7 +46,7 @@ local function macroBody(class)
 			body = body.."[help,dead,@mouseover] "..oocspell.."; "
 		end
 
-		if T.class == "WARLOCK" then
+		if class == "WARLOCK" then
 			local spellname = select(1, GetSpellInfo(6203))
 			body = body.."\n/cast "..spellname.."\n "
 		end
@@ -64,6 +64,7 @@ local Enable = function(self)
 	if classList[class] and not IsAddOnLoaded("Clique") then
 		self:SetAttribute("*type3", "macro")
 		self:SetAttribute("macrotext3", macroBody(class))
+		return true
 	end
 end
 
