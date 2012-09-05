@@ -43,7 +43,9 @@ local function LoadSkin()
 		"ScrollOfResurrectionFrame",
 		"ScrollOfResurrectionFrameNoteFrame",
 		"FriendsFrameBattlenetFrame",
-		"BattleTagInviteFrame"
+		"BattleTagInviteFrame",
+		"BNetReportFrame",
+		"BNetReportFrameComment"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -98,7 +100,9 @@ local function LoadSkin()
 		"ScrollOfResurrectionSelectionFrameCancelButton",
 		"ScrollOfResurrectionFrameAcceptButton",
 		"ScrollOfResurrectionFrameCancelButton",
-		"PendingListInfoFrameContinueButton"
+		"PendingListInfoFrameContinueButton",
+		"BNetReportFrameReportButton",
+		"BNetReportFrameCancelButton"
 	}
 
 	for _, button in pairs(buttons) do
@@ -138,18 +142,35 @@ local function LoadSkin()
 	local function UpdateWhoSkins()
 		WhoListScrollFrame:StripTextures()
 	end
+
+	WhoFrame:HookScript("OnShow", UpdateWhoSkins)
+	hooksecurefunc("FriendsFrame_OnEvent", UpdateWhoSkins)
+
+	WhoListScrollFrame:ClearAllPoints()
+	WhoListScrollFrame:SetPoint("TOPRIGHT", WhoFrameListInset, -25, 0)
+
 	-- Channel Frame
 	local function UpdateChannel()
 		ChannelRosterScrollFrame:StripTextures()
 	end
+
+	ChannelFrame:HookScript("OnShow", UpdateChannel)
+	hooksecurefunc("FriendsFrame_OnEvent", UpdateChannel)
+
 	-- BNet Frame
 	FriendsFrameBroadcastInput:CreateBackdrop("Overlay")
 	FriendsFrameBroadcastInput.backdrop:Point("TOPLEFT", -2, 2)
 	FriendsFrameBroadcastInput.backdrop:Point("BOTTOMRIGHT", 0, 1)
+
+	ChannelFrameDaughterFrame:SetTemplate("Transparent")
 	ChannelFrameDaughterFrameChannelName:CreateBackdrop("Overlay")
 	ChannelFrameDaughterFrameChannelPassword:CreateBackdrop("Overlay")
+
 	BNConversationInviteDialog:SetTemplate("Transparent")
 	BNConversationInviteDialogList:SetTemplate("Overlay")
+
+	BNetReportFrame:SetTemplate("Transparent")
+	BNetReportFrameComment:SetTemplate("Overlay")
 
 	FriendsFrameBattlenetFrame.BroadcastButton:SetAlpha(0)
 	FriendsFrameBattlenetFrame.BroadcastButton:ClearAllPoints()
@@ -174,18 +195,7 @@ local function LoadSkin()
 		end
 	end
 
-	ChannelFrame:HookScript("OnShow", UpdateChannel)
-	hooksecurefunc("FriendsFrame_OnEvent", UpdateChannel)
-
-	WhoFrame:HookScript("OnShow", UpdateWhoSkins)
-	hooksecurefunc("FriendsFrame_OnEvent", UpdateWhoSkins)
-
-	ChannelFrameDaughterFrame:SetTemplate("Transparent")
-
 	FriendsFrame:SetTemplate("Transparent")
-
-	WhoListScrollFrame:ClearAllPoints()
-	WhoListScrollFrame:SetPoint("TOPRIGHT", WhoFrameListInset, -25, 0)
 
 	ScrollOfResurrectionSelectionFrame:SetTemplate("Transparent")
 	ScrollOfResurrectionSelectionFrameList:SetTemplate("Overlay")
@@ -216,6 +226,7 @@ local function LoadSkin()
 
 	T.SkinCheckBox(ChannelFrameAutoJoinBattleground)
 	T.SkinCheckBox(ChannelFrameAutoJoinParty)
+
 	hooksecurefunc("BNConversationInvite_Update", function()
 		for i = 1, BN_CONVERSATION_INVITE_NUM_DISPLAYED do
 			local button = _G["BNConversationInviteDialogListFriend"..i]
