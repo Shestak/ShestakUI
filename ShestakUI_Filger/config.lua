@@ -831,6 +831,8 @@ Filger_Spells = {
 			{spellID = 44457, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Nether Tempest
 			{spellID = 114923, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frost Bomb
+			{spellID = 112948, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pyroblast
 			{spellID = 11366, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Combustion
@@ -965,8 +967,6 @@ Filger_Spells = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Cauterize
-			{spellID = 87023, filter = "ICD", trigger = "DEBUFF", duration = 120},
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
@@ -1412,16 +1412,12 @@ Filger_Spells = {
 			--OLD{spellID = 73413, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Archangel
 			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Archangel
-			{spellID = 87153, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Inner Focus
 			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Prayer of Mending
 			{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fade
 			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Holy Walk
-			{spellID = 96219, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
