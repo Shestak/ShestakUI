@@ -872,60 +872,60 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Frostjaw
+			{spellID = 102051, filter = "CD"},
 			-- Counterspell
 			{spellID = 2139, filter = "CD"},
 			-- Blink
 			{spellID = 1953, filter = "CD"},
-			-- Frost Nova
-			{spellID = 11831, filter = "CD"},
-			-- Ice Barrier
-			{spellID = 11426, filter = "CD"},
-			-- Frostjaw
-			{spellID = 102051, filter = "CD"},
-			-- Deep Freeze
-			{spellID = 44572, filter = "CD"},
-			-- Presence of Mind
-			{spellID = 12043, filter = "CD"},
-			-- Arcane Power
-			{spellID = 12042, filter = "CD"},
 			-- Dragon's Breath
 			{spellID = 31661, filter = "CD"},
-			-- Cone of Cold
-			{spellID = 120, filter = "CD"},
-			-- Cold Snap
-			{spellID = 11958, filter = "CD"},
-			-- Ice Block
-			{spellID = 45438, filter = "CD"},
-			-- Evocation
-			{spellID = 12051, filter = "CD"},
-			-- Icy Veins
-			{spellID = 12472, filter = "CD"},
-			-- Fire Blast
-			{spellID = 2136, filter = "CD"},
-			-- Mirror Image
-			{spellID = 55342, filter = "CD"},
+			-- Deep Freeze
+			{spellID = 44572, filter = "CD"},
 			-- Ring of Frost
 			{spellID = 113724, filter = "CD"},
+			-- Ice Ward
+			{spellID = 111264, filter = "CD"},
+			-- Frost Nova
+			{spellID = 122, filter = "CD"},
+			-- Ice Barrier
+			{spellID = 11426, filter = "CD"},
+			-- Temporal Shield
+			{spellID = 115610, filter = "CD"},
+			-- Incanter's Ward
+			{spellID = 1463, filter = "CD"},
+			-- Fire Blast
+			{spellID = 2136, filter = "CD"},
+			-- Frost Bomb
+			{spellID = 112948, filter = "CD"},
+			-- Flamestrike
+			{spellID = 2120, filter = "CD"},
+			-- Cone of Cold
+			{spellID = 120, filter = "CD"},
 			-- Freeze (Pet)
 			{spellID = 33395, filter = "CD"},
 			-- Combustion
 			{spellID = 11129, filter = "CD"},
-			-- Incanter's Ward
-			{spellID = 1463, filter = "CD"},
-			-- Invisibility
-			{spellID = 66, filter = "CD"},
-			-- Temporal Shield
-			{spellID = 115610, filter = "CD"},
-			-- Ice Ward
-			{spellID = 111264, filter = "CD"},
-			-- Ice Floes
-			{spellID = 108839, filter = "CD"},
-			-- Frost Bomb
-			{spellID = 112948, filter = "CD"},
 			-- Frozen Orb
 			{spellID = 84714, filter = "CD"},
-			-- Flamestrike
-			{spellID = 2120, filter = "CD"},
+			-- Ice Floes
+			{spellID = 108839, filter = "CD"},
+			-- Arcane Power
+			{spellID = 12042, filter = "CD"},
+			-- Presence of Mind
+			{spellID = 12043, filter = "CD"},
+			-- Evocation
+			{spellID = 12051, filter = "CD"},
+			-- Icy Veins
+			{spellID = 12472, filter = "CD"},
+			-- Cold Snap
+			{spellID = 11958, filter = "CD"},
+			-- Mirror Image
+			{spellID = 55342, filter = "CD"},
+			-- Ice Block
+			{spellID = 45438, filter = "CD"},
+			-- Invisibility
+			{spellID = 66, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -1404,14 +1404,14 @@ Filger_Spells = {
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fear Ward
 			{spellID = 6346, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Archangel
+			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Borrowed Time
 			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Fire
 			--OLD{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Will
 			--OLD{spellID = 73413, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Archangel
-			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Inner Focus
 			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Prayer of Mending
