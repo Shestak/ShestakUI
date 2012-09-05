@@ -116,4 +116,5 @@ end
 
 if IsAddOnLoaded("RaidSlackCheck") then
 	C.announcements.flask_food = false
+	C.announcements.toy_train = false
 end
