@@ -91,11 +91,18 @@ local function LoadSkin()
 	-- Sub buttons
 	for i = 1, #buttons do
 		local b = _G[buttons[i]]
+		local t = _G[buttons[i].."Selected"]
 
 		b:SkinButton(false)
 
 		if b.text then
 			b.text:SetFont(C.media.normal_font, 13)
+		end
+
+		if t then
+			t:SetTexture(T.color.r, T.color.g, T.color.b, 0.3)
+			t:Point("TOPLEFT", b, 2, -2)
+			t:Point("BOTTOMRIGHT", b, -2, 2)
 		end
 	end
 

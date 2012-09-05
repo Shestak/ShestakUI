@@ -167,7 +167,7 @@ local function LoadSkin()
 
 	BattleTagInviteFrame:SetTemplate("Transparent")
 	T.SkinEditBox(BattleTagInviteFrameScrollFrame)
-	for i=1, BattleTagInviteFrame:GetNumChildren() do
+	for i = 1, BattleTagInviteFrame:GetNumChildren() do
 		local child = select(i, BattleTagInviteFrame:GetChildren())
 		if child:GetObjectType() == "Button" then
 			child:SkinButton()
@@ -204,6 +204,9 @@ local function LoadSkin()
 	FriendsTabHeaderSoRButton.icon:ClearAllPoints()
 	FriendsTabHeaderSoRButton.icon:Point("TOPLEFT", 2, -2)
 	FriendsTabHeaderSoRButton.icon:Point("BOTTOMRIGHT", -2, 2)
+
+	FriendsFrameIgnoreScrollFrame:SetHeight(294)
+	FriendsFrameIgnoreScrollFrameScrollBar:SetPoint("TOPLEFT", FriendsFrameIgnoreScrollFrame, "TOPRIGHT", 39, -3)
 
 	T.SkinCloseButton(ChannelFrameDaughterFrameDetailCloseButton, ChannelFrameDaughterFrame)
 	T.SkinCloseButton(FriendsFrameCloseButton)
