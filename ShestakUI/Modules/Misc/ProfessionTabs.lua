@@ -33,10 +33,10 @@ local defaults = {
 	[197] = {true, false},	-- Tailoring
 
 	-- Secondary Professions
-	[794] = {true, true},	-- Archaeology
+	[794] = {true, false},	-- Archaeology
 	[185] = {true, true},	-- Cooking
 	[129] = {true, false},	-- First Aid
-	[356] = {true, false},	-- Fishing
+	[356] = {false, false},	-- Fishing
 }
 
 if T.class == "DEATHKNIGHT" then spells[#spells + 1] = 53428 end	-- Runeforging
