@@ -113,3 +113,7 @@ end
 if IsAddOnLoaded("Clique") or IsAddOnLoaded("sBinder") then
 	C.misc.click_cast = false
 end
+
+if IsAddOnLoaded("RaidSlackCheck") then
+	C.announcements.flask_food = false
+end
