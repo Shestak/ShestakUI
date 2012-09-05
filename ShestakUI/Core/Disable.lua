@@ -116,5 +116,9 @@ end
 
 if IsAddOnLoaded("RaidSlackCheck") then
 	C.announcements.flask_food = false
+end
+
+if IsAddOnLoaded("PhoenixStyle") then
 	C.announcements.toy_train = false
+	C.announcements.pull_countdown = false
 end
