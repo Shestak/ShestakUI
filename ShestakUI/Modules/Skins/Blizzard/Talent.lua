@@ -134,11 +134,6 @@ local function LoadSkin()
 
 		for i = 1, GetNumSpecializations(nil, self.isPet) do
 			local bu = self["specButton"..i]
-			if bu.learnedTex:IsShown() then
-				--bu:SetBackdropBorderColor(1, 0.82, 0, 1)
-			else
-				--bu:SetBackdropBorderColor(unpack(C.media.border_color))
-			end
 			if bu.selected then
 				bu.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
 				bu.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)

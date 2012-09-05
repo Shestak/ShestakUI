@@ -17,7 +17,7 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	if addon ~= "ShestakUI" or addon == "tekticles" then return end
 
 	local NORMAL = C.media.normal_font
-	local COMBAT = C.media.blank_font
+	local BLANK = C.media.blank_font
 
 	UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 12
 	CHAT_FONT_HEIGHTS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
@@ -27,8 +27,8 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	STANDARD_TEXT_FONT = NORMAL
 
 	if T.author == true then
-		DAMAGE_TEXT_FONT = COMBAT
-		SetFont(CombatTextFont, COMBAT, 100)
+		DAMAGE_TEXT_FONT = BLANK
+		SetFont(CombatTextFont, BLANK, 100)
 	end
 
 	-- Base fonts

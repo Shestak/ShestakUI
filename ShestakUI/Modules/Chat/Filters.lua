@@ -44,23 +44,19 @@ end
 ----------------------------------------------------------------------------------------
 if C.chat.spam == true then
 	-- Repeat spam filter
-	ChatFrame1.repeatFilter = true
-	ChatFrame1:SetTimeVisible(10)
-
 	local lastMessage
-	local repeatMessageFilter = function(self, event, text, sender, ...)
-		if self.repeatFilter and sender ~= T.name then
-			if not self.repeatMessages or self.repeatCount > 100 then
-				self.repeatCount = 0
-				self.repeatMessages = {}
-			end
-			lastMessage = self.repeatMessages[sender]
-			if lastMessage == text then
-				return true
-			end
-			self.repeatMessages[sender] = text
-			self.repeatCount = self.repeatCount + 1
+	local function repeatMessageFilter(self, event, text, sender)
+		if sender == T.name or UnitIsInMyGuild(sender) then return end
+		if not self.repeatMessages or self.repeatCount > 100 then
+			self.repeatCount = 0
+			self.repeatMessages = {}
 		end
+		lastMessage = self.repeatMessages[sender]
+		if lastMessage == text then
+			return true
+		end
+		self.repeatMessages[sender] = text
+		self.repeatCount = self.repeatCount + 1
 	end
 
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", repeatMessageFilter)
@@ -68,16 +64,15 @@ if C.chat.spam == true then
 
 	-- Gold/portals spam filter
 	local SpamList = T.ChatSpamList
-	local function TRADE_FILTER(self, event, arg1, arg2)
-		if SpamList and SpamList[1] then
-			for i, SpamList in pairs(SpamList) do
-				if arg2 == T.name then return end
-				if arg1:lower():match(SpamList) then
-					return true
-				end
+	local function tradeFilter(self, event, text, sender)
+		if sender == T.name or UnitIsInMyGuild(sender) then return end
+		for _, value in pairs(SpamList) do
+			if text:lower():match(value) then
+				return true
 			end
 		end
 	end
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", TRADE_FILTER)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", TRADE_FILTER)
+
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", tradeFilter)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", tradeFilter)
 end
