@@ -26,6 +26,7 @@ local function DropDown_OnClick(self)
 	local spellId = self.arg1
 	local guid = UnitGUID("player"):sub(4)
 	local _, template = GetSpellLink(spellId)
+	if type(template) ~= "string" or template:len() == 0 then return end
 	local chars = template:sub(select(2, template:find(guid)), template:find("|h")):len() - 3
 	local maxed = type(PROFESSION_RANKS) == "table" and select(2, next(PROFESSION_RANKS[#PROFESSION_RANKS])) or 0
 	local suffix = ""

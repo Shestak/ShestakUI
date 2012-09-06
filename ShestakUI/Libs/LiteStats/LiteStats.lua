@@ -838,6 +838,11 @@ if guild.enabled then
 			end
 		end,
 		OnClick = function(self, b)
+			if IsTrialAccount() then
+				UIErrorsFrame:AddMessage(ERR_RESTRICTED_ACCOUNT, 1, 0.1, 0.1)
+				return
+			end
+			if not IsInGuild() then return end
 			if b == "LeftButton" then
 				if IsInGuild() then
 					if not GuildFrame then LoadAddOn("Blizzard_GuildUI") end

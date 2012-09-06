@@ -157,6 +157,7 @@ end)
 --	Right click menu
 ----------------------------------------------------------------------------------------
 local menuFrame = CreateFrame("Frame", "MinimapRightClickMenu", UIParent, "UIDropDownMenuTemplate")
+local guildText = IsInGuild() and ACHIEVEMENTS_GUILD_TAB or LOOKINGFORGUILD
 local micromenu = {
 	{text = CHARACTER_BUTTON, notCheckable = 1, func = function()
 		ToggleCharacter("PaperDollFrame")
@@ -183,7 +184,11 @@ local micromenu = {
 	{text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
 		ToggleFrame(QuestLogFrame)
 	end},
-	{text = ACHIEVEMENTS_GUILD_TAB, notCheckable = 1, func = function()
+	{text = guildText, notCheckable = 1, func = function()
+		if IsTrialAccount() then
+			UIErrorsFrame:AddMessage(ERR_RESTRICTED_ACCOUNT, 1, 0.1, 0.1)
+			return
+		end
 		if IsInGuild() then
 			if not GuildFrame then
 				LoadAddOn("Blizzard_GuildUI")
@@ -205,14 +210,22 @@ local micromenu = {
 		if T.level >= SHOW_PVP_LEVEL then
 			TogglePVPFrame()
 		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
+			if C.error.white == false then
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL), 1, 0.1, 0.1)
+			else
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
+			end
 		end
 	end},
 	{text = DUNGEONS_BUTTON, notCheckable = 1, func = function()
 		if T.level >= SHOW_LFD_LEVEL then
 			PVEFrame_ToggleFrame()
 		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
+			if C.error.white == false then
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL), 1, 0.1, 0.1)
+			else
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
+			end
 		end
 	end},
 	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
