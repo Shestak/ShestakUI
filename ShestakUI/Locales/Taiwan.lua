@@ -12,14 +12,14 @@ L_ANNOUNCE_LA_PLACED = "光束泉位置. "
 L_ANNOUNCE_LA_CHARGES = " 刷新."
 
 -- Announce flasks and food
-L_ANNOUNCE_FF_NOFOOD = "No Food: " -- Needs review
-L_ANNOUNCE_FF_NOFLASK = "No Flask: " -- Needs review
-L_ANNOUNCE_FF_ALLBUFFED = "All Buffed!" -- Needs review
-L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask" -- Needs review
+L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
+L_ANNOUNCE_FF_NOFLASK = "缺少合劑: "
+L_ANNOUNCE_FF_ALLBUFFED = "已獲得所有增益!"
+L_ANNOUNCE_FF_CHECK_BUTTON = "檢查食物和合劑"
 
 -- Says thanks for some spells
-L_ANNOUNCE_SS_THANKS = "Thanks for " -- Needs review
-L_ANNOUNCE_SS_RECEIVED = " received from " -- Needs review
+L_ANNOUNCE_SS_THANKS = "謝謝你的 "
+L_ANNOUNCE_SS_RECEIVED = " 收到來自于 "
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "沒有天賦"
@@ -31,7 +31,7 @@ L_TOOLTIP_SPELL_ID = "法術ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
 L_TOOLTIP_WHO_TARGET = "以其為目標的"
 L_TOOLTIP_ITEM_COUNT = "物品數量:"
-L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
+L_TOOLTIP_INSPECT_OPEN = "檢查框體已打開"
 
 -- Misc
 L_MISC_UNDRESS = "無裝備"
@@ -40,8 +40,8 @@ L_MISC_BUY_STACK = "Alt-右鍵點擊購買一疊"
 L_MISC_ONECLICK_BUYOUT = "Shift-左鍵,不彈出確認窗口直接購買"
 L_MISC_ONECLICK_BID = "Shift-左鍵,不彈出確認窗口直接競標"
 L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
-L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
-L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
+L_MISC_HEADER_MARK = "在鼠標懸停顯示團隊圖標"
+L_MISC_BINDER_OPEN = "一鍵施法"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
@@ -64,7 +64,7 @@ L_TOGGLE_COLLAPSE = "折疊 "
 L_TOGGLE_RCLICK = "右鍵點擊以啟用或禁用 "
 L_TOGGLE_LCLICK = "左鍵點擊來顯示/隱藏窗口 "
 L_TOGGLE_RELOAD = " (需要重載插件)"
-L_TOGGLE_NOT_FOUND = " not found." -- Needs review
+L_TOGGLE_NOT_FOUND = " 未創建."
 
 -- UnitFrame
 L_UF_GHOST = "靈魂"
@@ -85,16 +85,16 @@ L_MINIMAP_CALENDAR = "日曆"
 -- Addons list
 L_ALOAD_RL = "重新加載UI"
 L_ALOAD_DEP = "依賴關係: "
-L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
-L_ALOAD_PROFILES = "Profiles" -- Needs review
+L_ALOAD_OP_DEP = "可選依賴: "
+L_ALOAD_PROFILES = "簡介"
 L_ALOAD_ENABLE_ALL = "全部啟用"
 L_ALOAD_DISABLE_ALL = "全部禁用"
-L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
-L_ALOAD_SET_TO = "Set To.." -- Needs review
-L_ALOAD_ADD_TO = "Add To.." -- Needs review
-L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
-L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
-L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
+L_ALOAD_PROFILE_NAME = "配置文件名稱"
+L_ALOAD_SET_TO = "發送至.."
+L_ALOAD_ADD_TO = "添加至.."
+L_ALOAD_REMOVE_FROM = "移除自.."
+L_ALOAD_DELETE_PROFILE = "刪除配置.."
+L_ALOAD_CONFIRM_DELETE = "確定刪除該配置? 按住shift再次點擊刪除."
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -111,7 +111,7 @@ L_CHAT_RAID_WARNING = "團隊警告"
 L_CHAT_BATTLEGROUND = "戰場"
 L_CHAT_BATTLEGROUND_LEADER = "戰場領袖"
 L_CHAT_OFFICER = "官員"
-L_CHAT_PET_BATTLE = "PB" -- Needs review
+L_CHAT_PET_BATTLE = "寵物戰鬥"
 L_CHAT_COME_ONLINE = "上線了."
 L_CHAT_GONE_OFFLINE = "離線了."
 L_CHAT_COME_ONLINE_COLOR = "|cff298F00上線了|r !"
@@ -228,14 +228,14 @@ L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:"
 L_DATATEXT_DEMOLISHERSDESTROYED = "石毀車摧毀:"
 L_DATATEXT_GATESDESTROYED = "大門摧毀:"
 L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:" -- Needs review
-L_DATATEXT_VICTORY_POINTS = "Victory Points:" -- Needs review
-L_DATATEXT_CARTS_CONTROLLED = "Carts Controlled:" -- Needs review
+L_DATATEXT_VICTORY_POINTS = "勝利點數:"
+L_DATATEXT_CARTS_CONTROLLED = "車輛控制:"
 
 -- Info text
 L_INFO_ERRORS = "目前沒有錯誤."
 L_INFO_INVITE = "接受邀請自: "
 L_INFO_DUEL = "拒絕決鬥請求: "
-L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
+L_INFO_PET_DUEL = "拒絕寵物决鬥請求自: "
 L_INFO_DISBAND = "解散隊伍..."
 L_INFO_SETTINGS_DBM = "鍵入 /settings dbm, 載入 DBM 的設定."
 L_INFO_SETTINGS_DXE = "鍵入 /settings dxe, 載入 DXE 的設定."
@@ -258,7 +258,7 @@ L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素。"
 L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素。"
 L_POPUP_SETTINGS_BW = "需要改變BigWigs描點及風格化元素。"
 L_POPUP_ARMORY = "軍械庫"
-L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
+L_POPUP_TALENT_FIX = "當你查看其它玩家時發生了一個錯誤使你無法更改天賦.很不幸在下個版本修復之前我們無能為力,請重新加載UI并重試."
 
 -- Welcome message
 L_WELCOME_LINE_1 = "歡迎使用ShestakUI "
