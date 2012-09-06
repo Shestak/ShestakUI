@@ -2,7 +2,8 @@
 if T.client ~= "esES" and T.client ~= "esMX" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for esES and esMX client(Thanks to Seal and eXecrate for the translation)
+--	Localization for esES and esMX client
+--	Translation: eXecrate, Seal
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " usó mi Pozo de Luz. "

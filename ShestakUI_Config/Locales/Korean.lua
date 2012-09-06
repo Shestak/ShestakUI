@@ -1,7 +1,8 @@
 ﻿if GetLocale() ~= "koKR" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for koKR client(Need full translation)
+--	Localization for koKR client
+--	Translation: Need full translation
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Total Reset UI"
 L_GUI_SET_SAVED_SETTTINGS = "Set settings Per-Character"

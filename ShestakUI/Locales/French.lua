@@ -2,7 +2,8 @@
 if T.client ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for frFR client(Thanks to Cranan and Puree for the translation)
+--	Localization for frFR client
+--	Translation: Cranan, Puree
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " a utilisé mon Puits de lumière. "

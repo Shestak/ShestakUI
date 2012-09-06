@@ -2,7 +2,8 @@
 if T.client ~= "ptBR" and T.client ~= "ptPT" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for ptBR and ptPT client(Need full translation)
+--	Localization for ptBR and ptPT client
+--	Translation: Need full translation
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " used my lightwell. "

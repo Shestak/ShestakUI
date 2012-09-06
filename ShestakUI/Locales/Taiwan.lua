@@ -2,7 +2,8 @@
 if T.client ~= "zhTW" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for zhTW client(Thanks to Ianchan, Aelb, nanjiqq, Spacedragon, Mania and tat2dawn for the translation)
+--	Localization for zhTW client
+--	Translation: Aelb, Ianchan, Leg883, Mania, Nanjiqq, Spacedragon, Tat2dawn, Tibles
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " 使用我的光束泉. "
@@ -162,7 +163,7 @@ L_LOOT_TO_SAY = "  說"
 -- LitePanels AFK module
 L_PANELS_AFK = "你處于暫離狀態!"
 L_PANELS_AFK_RCLICK = "右鍵點擊隱藏."
-L_PANELS_AFK_LCLICK = "左鍵點擊脫離暫離狀態." 
+L_PANELS_AFK_LCLICK = "左鍵點擊脫離暫離狀態."
 
 -- Cooldowns
 L_COOLDOWNS = "CD: "

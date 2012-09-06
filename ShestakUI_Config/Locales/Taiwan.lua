@@ -1,7 +1,8 @@
 ﻿if GetLocale() ~= "zhTW" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for zhTW client(Thanks to Mania and tat2dawn for the translation)
+--	Localization for zhTW client
+--	Translation: Leg883, Mania, Tat2dawn, Tibles
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "重載UI"
 L_GUI_SET_SAVED_SETTTINGS = "為每個角色分別保存設定"
@@ -207,8 +208,8 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "在鏈接中合併垃圾郵件"
 -- Bag options
 L_GUI_BAGS = "背包"
 L_GUI_BAGS_ENABLE = "開啟背包增強"
-L_GUI_BAGS_BUTTON_SIZE = "空格大小" 
-L_GUI_BAGS_BUTTON_SPACE = "空格間隔" 
+L_GUI_BAGS_BUTTON_SIZE = "空格大小"
+L_GUI_BAGS_BUTTON_SPACE = "空格間隔"
 L_GUI_BAGS_BANK = "銀行背包每行數目"
 L_GUI_BAGS_BAG = "背包每行數目"
 
@@ -269,7 +270,7 @@ L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "滑鼠劃過顯示右側快捷列"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "滑鼠劃過顯示寵物快捷列"
-L_GUI_ACTIONBAR_PETBAR_HIDE = "隱藏寵物快捷列" 
+L_GUI_ACTIONBAR_PETBAR_HIDE = "隱藏寵物快捷列"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "打開橫向寵物快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠劃過顯示變身/姿態/圖騰快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隱藏變身/姿態/圖騰快捷列"

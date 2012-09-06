@@ -1,7 +1,8 @@
 ﻿if GetLocale() ~= "zhCN" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for zhCN client(Thanks to Mania and tat2dawn for the translation)
+--	Localization for zhCN client
+--	Translation: Mania, Tat2dawn
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "重载插件"
 L_GUI_SET_SAVED_SETTTINGS = "为每个角色分别保存设定"
@@ -321,7 +322,7 @@ L_GUI_UF_PORTRAIT_HEIGHT = "头像高度"
 L_GUI_UF_PORTRAIT_WIDTH = "头像宽度"
 L_GUI_UF_PLUGINS_GCD = "公共CD计时"
 L_GUI_UF_PLUGINS_SWING = "普通攻击计时条"
-L_GUI_UF_PLUGINS_NECRO_STRIKE = "开启死疽打击计时条" 
+L_GUI_UF_PLUGINS_NECRO_STRIKE = "开启死疽打击计时条"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "声望条"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "经验条"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "平滑条"

@@ -2,7 +2,8 @@
 if T.client ~= "itIT" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for itIT client(Thanks to Oz for the translation)
+--	Localization for itIT client
+--	Translation: Oz
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " ha usato il mio Pozzo di Luce. "

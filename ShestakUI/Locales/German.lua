@@ -2,7 +2,8 @@
 if T.client ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for deDE client(Thanks to Baine, chubidu, Vienchen and Alwa for the translation)
+--	Localization for deDE client
+--	Translation: Alwa, Baine, Chubidu, Vienchen
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " used my lightwell. " -- Needs review

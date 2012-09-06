@@ -2,7 +2,8 @@
 if T.client ~= "koKR" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for koKR client(Need full translation)
+--	Localization for koKR client
+--	Translation: Need full translation
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " used my lightwell. "

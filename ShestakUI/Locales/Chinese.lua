@@ -2,7 +2,8 @@
 if T.client ~= "zhCN" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for zhCN client(Thanks to Ianchan, nanjiqq, Mania and tat2dawn for the translation)
+--	Localization for zhCN client
+--	Translation: Ianchan, Mania, Nanjiqq, Tat2dawn
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " 使用我的光束泉. "
@@ -217,15 +218,15 @@ L_PLANNER_WARRIOR_2 = "狂怒"
 L_PLANNER_WARRIOR_3 = "防护"
 
 -- BG stats
-L_DATATEXT_BASESASSAULTED = "基地突袭:" 
-L_DATATEXT_BASESDEFENDED = "基地防御:" 
-L_DATATEXT_TOWERSASSAULTED = "哨塔突袭:" 
-L_DATATEXT_TOWERSDEFENDED = "哨塔防御:" 
-L_DATATEXT_FLAGSCAPTURED = "占领旗帜:" 
-L_DATATEXT_FLAGSRETURNED = "交还旗帜:" 
-L_DATATEXT_GRAVEYARDSASSAULTED = "墓地突袭:" 
-L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:" 
-L_DATATEXT_DEMOLISHERSDESTROYED = "石毁车摧毁:" 
+L_DATATEXT_BASESASSAULTED = "基地突袭:"
+L_DATATEXT_BASESDEFENDED = "基地防御:"
+L_DATATEXT_TOWERSASSAULTED = "哨塔突袭:"
+L_DATATEXT_TOWERSDEFENDED = "哨塔防御:"
+L_DATATEXT_FLAGSCAPTURED = "占领旗帜:"
+L_DATATEXT_FLAGSRETURNED = "交还旗帜:"
+L_DATATEXT_GRAVEYARDSASSAULTED = "墓地突袭:"
+L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:"
+L_DATATEXT_DEMOLISHERSDESTROYED = "石毁车摧毁:"
 L_DATATEXT_GATESDESTROYED = "大门摧毁:"
 L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:" -- Needs review
 L_DATATEXT_VICTORY_POINTS = "Victory Points:" -- Needs review

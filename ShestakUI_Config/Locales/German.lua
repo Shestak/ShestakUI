@@ -1,7 +1,8 @@
 ﻿if GetLocale() ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for deDE client(Thanks to Baine, chubidu, Vienchen and Alwa for the translation)
+--	Localization for deDE client
+--	Translation: Alwa, Baine, Chubidu, Vienchen
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Standards wiederherstellen"
 L_GUI_SET_SAVED_SETTTINGS = "Einstellungen für jeden Charakter einzeln vornehmen"

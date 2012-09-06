@@ -1,7 +1,8 @@
 ﻿if GetLocale() ~= "itIT" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for itIT client(Thanks to Oz for the translation)
+--	Localization for itIT client
+--	Translation: Oz
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Ripristino totale IU"
 L_GUI_SET_SAVED_SETTTINGS = "Imposta le impostazioni 'Per-Personaggio'"
