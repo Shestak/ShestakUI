@@ -2,7 +2,7 @@
 if C.tooltip.enable ~= true or C.tooltip.instance_lock ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Your instance lock status in tooltip(Instance Lock Compare by Driizt)
+--	Your instance lock status in tooltip(Instance Lock Compare by Dridzt)
 ----------------------------------------------------------------------------------------
 local myTip = CreateFrame("GameTooltip", "InstanceLockTooltip", nil, "GameTooltipTemplate")
 
