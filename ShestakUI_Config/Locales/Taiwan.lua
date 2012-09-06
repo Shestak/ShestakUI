@@ -200,7 +200,7 @@ L_GUI_CHAT_TIMESTAMP = "時間標籤顏色"
 L_GUI_CHAT_WHISP = "接受密語時聲音提示"
 L_GUI_CHAT_SKIN_BUBBLE = "美化默認聊天泡泡"
 L_GUI_CHAT_CL_TAB = "顯示戰鬥記錄標簽"
-L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
+L_GUI_CHAT_TABS_MOUSEOVER = "鼠標懸停顯示頻道標籤"
 L_GUI_CHAT_STICKY = "記住上一次使用的頻道"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
 
@@ -274,8 +274,8 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "打開橫向寵物快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠劃過顯示變身/姿態/圖騰快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隱藏變身/姿態/圖騰快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "橫向顯示變身/姿態快捷列"
-L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU = "開啟微型菜單"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠標懸停顯示微型菜單"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "玩家Buffs圖示大小"
