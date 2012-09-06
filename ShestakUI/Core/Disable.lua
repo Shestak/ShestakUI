@@ -68,6 +68,7 @@ end
 
 if IsAddOnLoaded("Quartz") or IsAddOnLoaded("AzCastBar") or IsAddOnLoaded("eCastingBar") then
 	C.unitframe.unit_castbar = false
+	C.unitframe.plugins_swing = false
 end
 
 if IsAddOnLoaded("Afflicted3") or IsAddOnLoaded("InterruptBar") or IsAddOnLoaded("alEnemyCD") then
