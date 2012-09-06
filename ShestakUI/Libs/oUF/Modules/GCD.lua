@@ -61,7 +61,7 @@ local Enable = function(self)
 
 	local function UpdateGCD()
 		if spellid then
-			local start, dur = GetSpellCooldown(spellid, "spell")
+			local start, dur = GetSpellCooldown(spellid, BOOKTYPE_SPELL)
 			if dur and dur > 0 and dur <= 2 then
 				usingspell = 1
 				starttime = start
@@ -73,12 +73,14 @@ local Enable = function(self)
 			end
 		else
 			for tab = 2, 4 do
+				if tab <= GetNumSpellTabs() then
 				local _, _, offset, numSpells = GetSpellTabInfo(tab)
-				for i = (1 + offset), (offset+numSpells) do
-					local tempspell = GetSpellBookItemName(i, "spell")
+				for i = offset + 1, offset + numSpells do
+					local tempspell = GetSpellBookItemName(i, BOOKTYPE_SPELL)
 					if tempspell == spell then
 						spellid = i
 					end
+				end
 				end
 			end
 		end
