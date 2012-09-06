@@ -308,12 +308,18 @@ do
 		end
 
 		self.drop:Show()
-		self.drop:SetVertexColor(1, 1, 0)
+		if self.isQuestItem then
+			self.drop:SetVertexColor(0.8, 0.8, 0.2)
+		else
+			self.drop:SetVertexColor(1, 1, 0)
+		end
 	end
 
 	local OnLeave = function(self)
 		local color = ITEM_QUALITY_COLORS[self.quality]
-		if color then
+		if self.isQuestItem then
+			self.drop:SetVertexColor(1, 1, 0.2)
+		elseif color then
 			self.drop:SetVertexColor(color.r, color.g, color.b)
 		end
 
