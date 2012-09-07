@@ -221,7 +221,6 @@ L_GUI_MINIMAP_ICON = "Icona tracciamento"
 L_GUI_MINIMAP_SIZE = "Dimensioni della minimappa"
 L_GUI_MINIMAP_HIDE_COMBAT = "Nascondi la minimappa in combattimento"
 L_GUI_MINIMAP_TOGGLE_MENU = "Mostra il menu a scomparsa"
-L_GUI_MINIMAP_MERGE_MENUS = "Unisci i pulsanti principali e quelli delle AddOns del menu a scomparsa"
 
 -- Map options
 L_GUI_MAP_ENABLE = "Attiva la mappa del mondo"

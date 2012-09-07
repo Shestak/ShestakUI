@@ -221,7 +221,6 @@ L_GUI_MINIMAP_ICON = "Icone de pistage"
 L_GUI_MINIMAP_SIZE = "Taille de la minicarte"
 L_GUI_MINIMAP_HIDE_COMBAT = "Cacher la minimap en combat"
 L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
-L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu"
 
 -- Map options
 L_GUI_MAP_ENABLE = "Activer la carte du monde"

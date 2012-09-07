@@ -4,21 +4,6 @@ if C.minimap.toggle_menu ~= true then return end
 ----------------------------------------------------------------------------------------
 -- Toggle menu(by Hydra, Foof, Gorlasch and HyPeRnIcS)
 ----------------------------------------------------------------------------------------
-C["togglemenu"] = {
-	-- Style
-	["buttonwidth"] = C.minimap.size - 6,	-- Width of menu buttons
-	["buttonheight"] = 20,					-- Height of menu buttons
-	["buttonspacing"] = 3,					-- Spacing of menu buttons
-	-- Menus
-	["defaultIsToggleOnly"] = true,			-- Sets the default value for the addon menu (true - toggle-only, false - enhanced version)
-	["dontShowToggleOnlyMenu"] = false,		-- Always show enhanced addon menu
-	["mergeMenus"] = C.minimap.merge_menus,	-- Merge main and addon menu
-	["maxMenuEntries"] = 30,				-- Maximum number of menu entries per column (0 - unlimited number)
-	-- Access
-	["showByDefault"] = false,				-- Show the menu by default
-	["addOpenMenuButton"] = true,			-- Creates a mouseover button to open the menu
-}
-
 -- Override prefix method to collapse addons
 C["toggleprefix"] = {
 --  prefix            parent addon
@@ -161,13 +146,13 @@ C["toggleaddons"] = {
 
 -- Button size
 local function buttonwidth(num)
-	return num * C.togglemenu.buttonwidth
+	return num * (C.minimap.size - 6)
 end
 local function buttonheight(num)
-	return num * C.togglemenu.buttonheight
+	return num * 20
 end
 local function buttonspacing(num)
-	return num * C.togglemenu.buttonspacing
+	return num * 3
 end
 local function borderwidth(num)
 	return buttonwidth(num) + buttonspacing(num + 1)
@@ -189,21 +174,19 @@ local function updateTextures(button, checkable)
 end
 
 local MenuBG = CreateFrame("Frame", "TTMenuBackground", UIParent)
-local AddonBG = CreateFrame("Frame", "TTMenuAddOnBackground", UIParent)
 MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 3)
-AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", MenuBG, "BOTTOMRIGHT", 0, 0)
 MenuBG:SetFrameLevel(defaultframelevel)
 MenuBG:SetFrameStrata("HIGH")
-if not C.togglemenu.showByDefault or C.togglemenu.mergeMenus then
-	MenuBG:Hide()
-end
+MenuBG:EnableMouse(true)
+MenuBG:Hide()
+
+local AddonBG = CreateFrame("Frame", "TTMenuAddOnBackground", UIParent)
+AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", MenuBG, "BOTTOMRIGHT", 0, 0)
 AddonBG:SetFrameLevel(defaultframelevel)
 AddonBG:SetFrameStrata("HIGH")
-if not C.togglemenu.showByDefault or not C.togglemenu.mergeMenus then
-	AddonBG:Hide()
-end
-MenuBG:EnableMouse(true)
 AddonBG:EnableMouse(true)
+AddonBG:Hide()
+
 tinsert(UISpecialFrames, "TTMenuBackground")
 tinsert(UISpecialFrames, "TTMenuAddOnBackground")
 
@@ -212,14 +195,8 @@ function ToggleMenu_Toggle()
 		TTMenuAddOnBackground:Hide()
 		TTMenuBackground:Hide()
 	else
-		if C.togglemenu.mergeMenus then
-			TTMenuAddOnBackground:Show()
-		else
-			TTMenuBackground:Show()
-		end
-		if C.togglemenu.addOpenMenuButton then
-			TTOpenMenuBackground:FadeOut()
-		end
+		TTMenuAddOnBackground:Show()
+		TTOpenMenuBackground:FadeOut()
 	end
 end
 
@@ -263,7 +240,7 @@ local function addMainMenuButtons(menuItems, menuName, menuBackground)
 			Text:SetPoint("CENTER", menuItems[index], 0, 0)
 			Text:SetText(value.text)
 
-			local hideItem = (C.togglemenu.mergeMenus and (value.text == ADDONS))
+			local hideItem = (value.text == ADDONS)
 			InsertButton(menuItems, index, hideItem)
 			updateTextures(menuItems[index])
 			totalmainmenusize = index
@@ -277,25 +254,7 @@ addMainMenuButtons(menu, "Menu", MenuBG)
 MenuBG:SetHeight(borderheight(mainmenusize))
 
 local addonmenuitems = {}
-if C.togglemenu.mergeMenus then
-	addMainMenuButtons(addonmenuitems, "AddonMenu", AddonBG)
-else
-	mainmenusize = 1
-	lastMainMenuEntryID = 1
-	totalmainmenusize = 1
-	addonmenuitems[1] = CreateFrame("Button", "AddonMenuReturnButton", AddonBG)
-	addonmenuitems[1]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "BOTTOMLEFT", AddonBG, "BOTTOMLEFT", buttonspacing(1), buttonspacing(1))
-	addonmenuitems[1]:EnableMouse(true)
-	addonmenuitems[1]:RegisterForClicks("AnyUp")
-	addonmenuitems[1]:SetFrameLevel(defaultframelevel + 1)
-	addonmenuitems[1]:SetFrameStrata("HIGH")
-	addonmenuitems[1]:SetScript("OnMouseUp", function() ToggleFrame(TTMenuAddOnBackground) ToggleFrame(TTMenuBackground) end)
-	updateTextures(addonmenuitems[1])
-	Text = addonmenuitems[1]:CreateFontString(nil, "OVERLAY")
-	Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-	Text:SetPoint("CENTER", addonmenuitems[1], 0, 0)
-	Text:SetText(BACK)
-end
+addMainMenuButtons(addonmenuitems, "AddonMenu", AddonBG)
 
 local OpenMenuBG = CreateFrame("Button", "TTOpenMenuBackground", UIParent)
 OpenMenuBG:CreatePanel("Overlay", borderwidth(1), buttonheight(1) / 1.3, "BOTTOM", MenuBG, "BOTTOM", 0, 0)
@@ -322,11 +281,7 @@ Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_sty
 Text:SetPoint("CENTER", OpenMenuBG, 0, 0)
 Text:SetText("+ + +")
 Text:SetTextColor(0.3, 0.3, 0.9)
-if not C.togglemenu.addOpenMenuButton then
-	TTOpenMenuBackground:Hide()
-else
-	TTOpenMenuBackground:FadeOut()
-end
+TTOpenMenuBackground:FadeOut()
 
 local expandbutton = CreateFrame("Button", "AddonMenuExpandButton", AddonBG)
 expandbutton:CreatePanel("Overlay", buttonwidth(1), buttonheight(1) / 2, "TOP", AddonBG, "TOP", 0, buttonspacing(-1))
@@ -342,10 +297,6 @@ Text:SetPoint("CENTER", expandbutton, 0, 0)
 Text:SetText("+ + +")
 Text:SetTextColor(0.3, 0.3, 0.9)
 expandbutton.txt = Text
-if C.togglemenu.dontShowToggleOnlyMenu then
-	expandbutton:Hide()
-	C.togglemenu.defaultIsToggleOnly = false
-end
 
 local addonInfo
 local lastMainAddon = "XYZNonExistantDummyAddon"
@@ -416,7 +367,7 @@ local function addonFrameToggle(self, i)
 	end
 end
 
-local addonToggleOnly = C.togglemenu.defaultIsToggleOnly
+local addonToggleOnly = true
 
 local function refreshAddOnMenu()
 	menusize = mainmenusize
@@ -428,11 +379,7 @@ local function refreshAddOnMenu()
 			end
 		end
 	end
-	if C.togglemenu.maxMenuEntries and C.togglemenu.maxMenuEntries > 0 then
-		menuwidth = ceil(menusize / C.togglemenu.maxMenuEntries)
-	else
-		menuwidth = 1
-	end
+	menuwidth = ceil(menusize / 30)
 	menuheight = ceil(menusize / menuwidth)
 
 	local lastMenuEntryID = lastMainMenuEntryID
@@ -462,11 +409,7 @@ local function refreshAddOnMenu()
 			end
 		end
 	end
-	if not C.togglemenu.dontShowToggleOnlyMenu then
-		AddonBG:SetHeight(borderheight(menuheight + 1) - buttonheight(1) / 2)
-	else
-		AddonBG:SetHeight(borderheight(menuheight))
-	end
+	AddonBG:SetHeight(borderheight(menuheight + 1) - buttonheight(1) / 2)
 	AddonBG:SetWidth(borderwidth(menuwidth))
 	expandbutton:SetWidth(buttonwidth(menuwidth) + buttonspacing(menuwidth - 1))
 end

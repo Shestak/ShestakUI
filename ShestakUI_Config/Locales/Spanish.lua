@@ -221,7 +221,6 @@ L_GUI_MINIMAP_ICON = "Icono de seguimiento"
 L_GUI_MINIMAP_SIZE = "Tamaño del minimapa"
 L_GUI_MINIMAP_HIDE_COMBAT = "Ocultar minimapa en combate"
 L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
-L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu"
 
 -- Map options
 L_GUI_MAP_ENABLE = "Activar mapa del mundo"

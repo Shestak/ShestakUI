@@ -287,7 +287,6 @@ C["minimap"] = {
 	["size"] = 130,								-- Minimap size
 	["hide_combat"] = false,					-- Hide minimap in combat
 	["toggle_menu"] = true,						-- Show toggle menu
-	["merge_menus"] = true,						-- Merge main and addon buttons in toggle menu
 }
 
 ----------------------------------------------------------------------------------------

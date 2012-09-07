@@ -221,7 +221,6 @@ L_GUI_MINIMAP_ICON = "追踪类型图示"
 L_GUI_MINIMAP_SIZE = "小地图大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "战斗中隐藏小地图"
 L_GUI_MINIMAP_TOGGLE_MENU = "显示可开/关的菜单"
-L_GUI_MINIMAP_MERGE_MENUS = "将小地图上依附的插件按钮整合到菜单中"
 
 -- Map options
 L_GUI_MAP_ENABLE = "开启世界地图增强"

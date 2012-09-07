@@ -220,7 +220,6 @@ L_GUI_MINIMAP_ICON = "Иконка слежения объектов"
 L_GUI_MINIMAP_SIZE = "Размер миникарты"
 L_GUI_MINIMAP_HIDE_COMBAT = "Скрыть миникарту в бою"
 L_GUI_MINIMAP_TOGGLE_MENU = "Отображать меню над миникартой"
-L_GUI_MINIMAP_MERGE_MENUS = "Объединять общие кнопки и кнопки модификаций в меню миникарты"
 
 -- Map options
 L_GUI_MAP_ENABLE = "Включить карту"
