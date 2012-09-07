@@ -227,6 +227,10 @@ local function LoadSkin()
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
 	LFGDungeonReadyDialog.SetBackdrop = T.dummy
 	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
+
+	T.SkinCheckBox(LFDRoleCheckPopupRoleButtonTank:GetChildren())
+	T.SkinCheckBox(LFDRoleCheckPopupRoleButtonHealer:GetChildren())
+	T.SkinCheckBox(LFDRoleCheckPopupRoleButtonDPS:GetChildren())
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
