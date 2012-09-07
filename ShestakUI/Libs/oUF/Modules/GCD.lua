@@ -15,6 +15,7 @@ local spells = {
 	["DRUID"] = 1126,
 	["HUNTER"] = 1978,
 	["MAGE"] = 133,
+	["MONK"] = 108557,
 	["PALADIN"] = 635,
 	["PRIEST"] = 21562,
 	["ROGUE"] = 1752,
@@ -73,14 +74,12 @@ local Enable = function(self)
 			end
 		else
 			for tab = 2, 4 do
-				if tab <= GetNumSpellTabs() then
 				local _, _, offset, numSpells = GetSpellTabInfo(tab)
 				for i = offset + 1, offset + numSpells do
 					local tempspell = GetSpellBookItemName(i, BOOKTYPE_SPELL)
 					if tempspell == spell then
 						spellid = i
 					end
-				end
 				end
 			end
 		end
