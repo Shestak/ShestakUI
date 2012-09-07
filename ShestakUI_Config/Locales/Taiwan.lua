@@ -227,7 +227,7 @@ L_GUI_MAP_ENABLE = "開啟世界地圖增強"
 L_GUI_MAP_SCALE = "世界地圖縮放"
 L_GUI_MAP_BG_STYLIZATION = "戰場地圖風格"
 L_GUI_MAP_BOSS_COUNT = "在世界地圖顯示boss數據"
-L_GUI_MAP_EXPLORE = "追蹤探索/學識大師成就完成度"
+L_GUI_MAP_EXPLORE = "追蹤世界探險家/博學大師成就"
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "開啟拾取增強"
