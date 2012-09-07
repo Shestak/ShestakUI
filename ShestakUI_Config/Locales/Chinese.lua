@@ -29,12 +29,12 @@ L_GUI_MISC_PROFESSION_TABS = "在专业和商业框体显示专业技能按鈕"
 L_GUI_MISC_PROFESSION_DATABASE = "在专业框体显示专业数据库"
 L_GUI_MISC_DUNGEON_TABS = "在自身框体显示PvP/PvE标签"
 L_GUI_MISC_HIDE_BG_SPAM = "在战场内移除 Boss 表情信息"
-L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons"
+L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_GEM_COUNTER = "在人物介面显示装备的珠宝数量"
 L_GUI_MISC_ALREADY_KNOWN = "彩色显示已学会的食谱/坐骑/宠物"
 L_GUI_MISC_DISENCHANTING = "一键研磨/选矿/分解"
 L_GUI_MISC_SUM_BUYOUTS = "总结目前所有的拍卖"
-L_GUI_MISC_CLICK_CAST = "简单的点击施法绑定" 
+L_GUI_MISC_CLICK_CAST = "简单的点击施法绑定"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
@@ -43,7 +43,7 @@ L_GUI_ANNOUNCEMENTS_INTERRUPTS = "当你成功打断的时候在队伍/团队中
 L_GUI_ANNOUNCEMENTS_SPELLS = "当有人与你使用同一法术的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "检视所有队员的施法"
 L_GUI_ANNOUNCEMENTS_LIGHTWELL = "当你放置光束泉时进行通告"
-L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "使用玩具火车/烈酒的遥控器时进行通告" 
+L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "使用玩具火车/烈酒的遥控器时进行通告"
 L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "感谢buff提供者"
 L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "倒计时通告(/run PullCountdown.Pull(#))"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "通告食物和合剂的用途"
@@ -51,16 +51,16 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "当团队检查就绪时进行通告(如�
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "在团队频道通告"
 
 -- Automation options
-L_GUI_AUTOMATION = "自动设定" 
+L_GUI_AUTOMATION = "自动设定"
 L_GUI_AUTOMATION_RESURRECTION = "在战场中自动释放灵魂"
 L_GUI_AUTOMATION_SCREENSHOT = "当你获得成就的时候自动截屏"
-L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" 
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
 L_GUI_AUTOMATION_CHEFS_HAT = "自动装备大厨的帽子"
 L_GUI_AUTOMATION_ACCEPT_INVITE = "自动接受组队邀请"
 L_GUI_AUTOMATION_DECLINE_DUEL = "自动取消决斗"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "自动接受任务"
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "自动跳过过场动画"
-L_GUI_AUTOMATION_AUTO_ROLE = "自动设定你的角色类型" 
+L_GUI_AUTOMATION_AUTO_ROLE = "自动设定你的角色类型"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "自动取消无用的buffs"
 L_GUI_AUTOMATION_TAB_BINDER = "Tab只选定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "团队副本时自动开启战斗记录"
@@ -83,7 +83,7 @@ L_GUI_SKINS_FLYOUT_BUTTON = "开启FlyoutButtonCustom样式增强"
 L_GUI_SKINS_NUG_RUNNING = "开启NugRunning样式增强"
 L_GUI_SKINS_OVALE = "开启OvaleSpellPriority样式增强"
 L_GUI_SKINS_CLIQUE = "开启Clique样式增强"
-L_GUI_SKINS_ACE3 = "开启Ace3样式增强" 
+L_GUI_SKINS_ACE3 = "开启Ace3样式增强"
 L_GUI_SKINS_PP = "开启PallyPower样式增强"
 L_GUI_SKINS_CAPPING = "开启Capping样式增强"
 L_GUI_SKINS_COOL_LINE = "开启CoolLine样式增强"
@@ -115,7 +115,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "将AOE伤害合并为一条信息"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "AOE伤害合并信息阀值(秒)"
 L_GUI_COMBATTEXT_DISPEL = "当你驱散成功的时候提示"
 L_GUI_COMBATTEXT_INTERRUPT = "当你打断成功的时候提示"
-L_GUI_COMBATTEXT_DIRECTION = "滚动方向('top'(向上) or 'bottom'(向下))" 
+L_GUI_COMBATTEXT_DIRECTION = "滚动方向('top'(向上) or 'bottom'(向下))"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buffs提示"
@@ -185,7 +185,7 @@ L_GUI_TOOLTIP_WHO_TARGETTING = "当你在队伍/团队中时显示谁以目标�
 L_GUI_TOOLTIP_ITEM_COUNT = "叠堆数量"
 L_GUI_TOOLTIP_UNIT_ROLE = "单位角色"
 L_GUI_TOOLTIP_REFORGE = "顯示裝備重鑄信息"
-L_GUI_TOOLTIP_SYMBIOSIS = "顯示共生術信息" 
+L_GUI_TOOLTIP_SYMBIOSIS = "顯示共生術信息"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
 L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
 
@@ -276,7 +276,7 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "打开横向宠物动作条"
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "鼠标划过时显示变身/姿态/图腾快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隐藏变身/姿态/图腾动作条"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "横向显示变身/姿态动作条"
-L_GUI_ACTIONBAR_MICROMENU = "开启微型菜单" 
+L_GUI_ACTIONBAR_MICROMENU = "开启微型菜单"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠标悬停显示微型菜单"
 
 -- Auras/Buffs/Debuffs
