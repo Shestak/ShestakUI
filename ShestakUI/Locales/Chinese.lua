@@ -8,9 +8,9 @@ if T.client ~= "zhCN" then return end
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " 使用我的光束泉. "
 L_ANNOUNCE_LA_CHARGE = " 刷新)"
-L_ANNOUNCE_LA_USELESS = "尽量少地使用我的光束泉. "
+L_ANNOUNCE_LA_USELESS = " 尽量少地使用我的光束泉. "
 L_ANNOUNCE_LA_PLACED = "光束泉位置. "
-L_ANNOUNCE_LA_CHARGES = "刷新."
+L_ANNOUNCE_LA_CHARGES = " 刷新."
 
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
@@ -31,7 +31,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "你的状态: 未完成"
 L_TOOLTIP_SPELL_ID = "法术ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
 L_TOOLTIP_WHO_TARGET = "以其为目标的"
-L_TOOLTIP_ITEM_COUNT = "物品数量: "
+L_TOOLTIP_ITEM_COUNT = "物品数量:"
 L_TOOLTIP_INSPECT_OPEN = "检查框体已打开" 
 
 -- Misc
@@ -65,7 +65,7 @@ L_TOGGLE_COLLAPSE = "折叠 "
 L_TOGGLE_RCLICK = "右键点击以启用或禁用 "
 L_TOGGLE_LCLICK = "左键点击来显示/隐藏窗口 "
 L_TOGGLE_RELOAD = " (需要重载插件)"
-L_TOGGLE_NOT_FOUND = " 未创建"
+L_TOGGLE_NOT_FOUND = " 未创建."
 
 -- UnitFrame
 L_UF_GHOST = "灵魂"
