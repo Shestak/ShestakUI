@@ -36,7 +36,7 @@ L_TOOLTIP_INSPECT_OPEN = "檢查框體已打開"
 
 -- Misc
 L_MISC_UNDRESS = "無裝備"
-L_MISC_DRINKING = " 吃喝中"
+L_MISC_DRINKING = "進食中"
 L_MISC_BUY_STACK = "Alt-右鍵點擊購買一疊"
 L_MISC_ONECLICK_BUYOUT = "Shift-左鍵,不彈出確認窗口直接購買"
 L_MISC_ONECLICK_BID = "Shift-左鍵,不彈出確認窗口直接競標"
