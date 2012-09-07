@@ -26,15 +26,15 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框体解锁"
 L_GUI_MISC_QUEST_AUTOBUTTON = "任务/道具自动按钮"
 L_GUI_MISC_RAID_TOOLS = "团队工具"
 L_GUI_MISC_PROFESSION_TABS = "在专业和商业框体显示专业技能按鈕"
-L_GUI_MISC_PROFESSION_DATABASE = "Professions Database on Professions frame" -- Needs review
-L_GUI_MISC_DUNGEON_TABS = "PvP/PvE tabs on own frames" -- Needs review
+L_GUI_MISC_PROFESSION_DATABASE = "在专业框体显示专业数据库"
+L_GUI_MISC_DUNGEON_TABS = "在自身框体显示PvP/PvE标签"
 L_GUI_MISC_HIDE_BG_SPAM = "在战场内移除 Boss 表情信息"
-L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
-L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
-L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
-L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
-L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
-L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
+L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons"
+L_GUI_MISC_GEM_COUNTER = "在人物介面显示装备的珠宝数量"
+L_GUI_MISC_ALREADY_KNOWN = "彩色显示已学会的食谱/坐骑/宠物"
+L_GUI_MISC_DISENCHANTING = "一键研磨/选矿/分解"
+L_GUI_MISC_SUM_BUYOUTS = "总结目前所有的拍卖"
+L_GUI_MISC_CLICK_CAST = "简单的点击施法绑定" 
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
@@ -42,31 +42,31 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "当敌人在进食喝水的时候在队伍/团�
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "当你成功打断的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS = "当有人与你使用同一法术的时候在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "检视所有队员的施法"
-L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Announce your Lightwell" -- Needs review
-L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Announce Toy Train or Direbrew's Remote cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Says thanks for some spells" -- Needs review
-L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown.Pull(#))" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel" -- Needs review
+L_GUI_ANNOUNCEMENTS_LIGHTWELL = "当你放置光束泉时进行通告"
+L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "使用玩具火车/烈酒的遥控器时进行通告" 
+L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "感谢buff提供者"
+L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "倒计时通告(/run PullCountdown.Pull(#))"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "通告食物和合剂的用途"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "当团队检查就绪时进行通告(如果可能,在团队频道通告)"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "在团队频道通告"
 
 -- Automation options
-L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION = "自动设定" 
 L_GUI_AUTOMATION_RESURRECTION = "在战场中自动释放灵魂"
 L_GUI_AUTOMATION_SCREENSHOT = "当你获得成就的时候自动截屏"
-L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
-L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" 
+L_GUI_AUTOMATION_CHEFS_HAT = "自动装备大厨的帽子"
 L_GUI_AUTOMATION_ACCEPT_INVITE = "自动接受组队邀请"
 L_GUI_AUTOMATION_DECLINE_DUEL = "自动取消决斗"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "自动接受任务"
-L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
-L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
-L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
-L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
-L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
+L_GUI_AUTOMATION_SKIP_CINEMATIC = "自动跳过过场动画"
+L_GUI_AUTOMATION_AUTO_ROLE = "自动设定你的角色类型" 
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "自动取消无用的buffs"
+L_GUI_AUTOMATION_TAB_BINDER = "Tab只选定玩家"
+L_GUI_AUTOMATION_LOGGING_COMBAT = "团队副本时自动开启战斗记录"
 
 -- Skins options
-L_GUI_SKINS = "风格化"
+L_GUI_SKINS = "介面样式"
 L_GUI_SKINS_BLIZZARD = "开启暴风默认界面风格增强"
 L_GUI_SKINS_MINIMAP_BUTTONS = "开启小地图插件图标风格增强"
 L_GUI_SKINS_CLCR = "开启CLCRet样式增强"
@@ -83,7 +83,7 @@ L_GUI_SKINS_FLYOUT_BUTTON = "开启FlyoutButtonCustom样式增强"
 L_GUI_SKINS_NUG_RUNNING = "开启NugRunning样式增强"
 L_GUI_SKINS_OVALE = "开启OvaleSpellPriority样式增强"
 L_GUI_SKINS_CLIQUE = "开启Clique样式增强"
-L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
+L_GUI_SKINS_ACE3 = "开启Ace3样式增强" 
 L_GUI_SKINS_PP = "开启PallyPower样式增强"
 L_GUI_SKINS_CAPPING = "开启Capping样式增强"
 L_GUI_SKINS_COOL_LINE = "开启CoolLine样式增强"
@@ -115,7 +115,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "将AOE伤害合并为一条信息"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "AOE伤害合并信息阀值(秒)"
 L_GUI_COMBATTEXT_DISPEL = "当你驱散成功的时候提示"
 L_GUI_COMBATTEXT_INTERRUPT = "当你打断成功的时候提示"
-L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))" -- Needs review
+L_GUI_COMBATTEXT_DIRECTION = "滚动方向('top'(向上) or 'bottom'(向下))" 
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buffs提示"
@@ -184,8 +184,8 @@ L_GUI_TOOLTIP_RAID_ICON = "团队图标"
 L_GUI_TOOLTIP_WHO_TARGETTING = "当你在队伍/团队中时显示谁以目标为目标的提示"
 L_GUI_TOOLTIP_ITEM_COUNT = "叠堆数量"
 L_GUI_TOOLTIP_UNIT_ROLE = "单位角色"
-L_GUI_TOOLTIP_REFORGE = "Item reforge info" -- Needs review
-L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
+L_GUI_TOOLTIP_REFORGE = "顯示裝備重鑄信息"
+L_GUI_TOOLTIP_SYMBIOSIS = "顯示共生術信息" 
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
 L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
 
@@ -197,15 +197,15 @@ L_GUI_CHAT_SPAM = "屏蔽无用系统信息(*玩家1* 在决斗中战胜了 *玩
 L_GUI_CHAT_GOLD = "屏蔽某些玩家的垃圾信息"
 L_GUI_CHAT_WIDTH = "框体宽度"
 L_GUI_CHAT_HEIGHT = "框体高度"
-L_GUI_CHAT_BAR = "显示频道快捷图示栏"
-L_GUI_CHAT_BAR_MOUSEOVER = "Lite Button Bar on mouseover" -- Needs review
+L_GUI_CHAT_BAR = "开启聊天频道快捷键"
+L_GUI_CHAT_BAR_MOUSEOVER = "鼠标悬停显示聊天频道快捷键"
 L_GUI_CHAT_TIMESTAMP = "时间标签颜色"
 L_GUI_CHAT_WHISP = "接受密语时声音提示"
 L_GUI_CHAT_SKIN_BUBBLE = "美化默认聊天泡泡"
 L_GUI_CHAT_CL_TAB = "显示战斗记录标签"
-L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
+L_GUI_CHAT_TABS_MOUSEOVER = "鼠标悬停显示频道标签"
 L_GUI_CHAT_STICKY = "记住上一次使用的频道"
-L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
+L_GUI_CHAT_DAMAGE_METER_SPAM = "在链接中合并垃圾邮件"
 
 -- Bag options
 L_GUI_BAGS = "背包"
@@ -226,8 +226,8 @@ L_GUI_MINIMAP_TOGGLE_MENU = "显示可开/关的菜单"
 L_GUI_MAP_ENABLE = "开启世界地图增强"
 L_GUI_MAP_SCALE = "世界地图缩放"
 L_GUI_MAP_BG_STYLIZATION = "战场地图风格"
-L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
-L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
+L_GUI_MAP_BOSS_COUNT = "在世界地图显示boss数据"
+L_GUI_MAP_EXPLORE = "追踪世界探索者/博学者成就"
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "开启拾取增强"
@@ -255,7 +255,7 @@ L_GUI_NAMEPLATE_NEAR_COLOR = "显示增加和减少的威胁颜色"
 L_GUI_NAMEPLATE_BAD_COLOR = "依据你的队伍角色(坦克,输出/治疗)显示的威胁颜色"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "显示Debuff (必须关闭名字缩写)"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs大小"
-L_GUI_NAMEPLATE_HEALER_ICON = "Show healer icon on all enemy healers nameplate in battlegrounds" -- Needs review
+L_GUI_NAMEPLATE_HEALER_ICON = "在战场中显示治疗职业图标"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "开启动作条"
@@ -276,8 +276,8 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "打开横向宠物动作条"
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "鼠标划过时显示变身/姿态/图腾快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隐藏变身/姿态/图腾动作条"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "横向显示变身/姿态动作条"
-L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU = "开启微型菜单" 
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠标悬停显示微型菜单"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "玩家Buffs图标大小"
@@ -330,13 +330,13 @@ L_GUI_UF_PLUGINS_SMOOTH_BAR = "平滑条"
 L_GUI_UF_PLUGINS_TALENTS = "显示敌对玩家天赋"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "显示玩家/目标的文字战斗信息"
 L_GUI_UF_PLUGINS_FADER = "头像框体渐隐"
-L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
+L_GUI_UF_PLUGINS_DIMINISHING = "在竞技场框体显示技能递减"
 
 -- Unit Frames Class bar options
-L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars" -- Needs review
+L_GUI_UF_PLUGINS_CLASS_BAR = "职业栏"
 L_GUI_UF_PLUGINS_COMBO_BAR = "潜行者|德鲁伊连击点图示"
-L_GUI_UF_PLUGINS_SHADOW_BAR = "Enable Shadow Orbs bar" -- Needs review
-L_GUI_UF_PLUGINS_CHI_BAR = "Enable Chi bar" -- Needs review
+L_GUI_UF_PLUGINS_SHADOW_BAR = "开启月蚀栏"
+L_GUI_UF_PLUGINS_CHI_BAR = "开启日蚀栏"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "开启仇恨栏"
 L_GUI_UF_PLUGINS_ECLIPSE_BAR = "开启日蚀/月蚀栏"
 L_GUI_UF_PLUGINS_HOLY_BAR = "开启圣光能量栏"
@@ -360,8 +360,7 @@ L_GUI_UF_SHOW_TANK_TT = "显示坦克目标的目标"
 L_GUI_UF_RAID_GROUP = "显示小队数目(ShestakUI_Heal风格)"
 L_GUI_UF_RAID_VERTICAL_GROUP = "竖向显示团队队伍(ShestakUI_Heal风格)"
 L_GUI_UF_ICONS_LEADER = "显示团队队长标识/助手标识/分配者标识"
-L_GUI_UF_ICONS_ROLE = "Role icon on frames" -- Needs review
-L_GUI_UF_ICONS_RAID_MARK = "显示团队标记"
+L_GUI_UF_ICONS_ROLE = "在团队中显示角色类型"
 L_GUI_UF_ICONS_READY_CHECK = "确认就绪情况图示"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff与图示高亮"
 L_GUI_UF_PLUGINS_AURA_WATCH = "团队法术监视"
@@ -391,4 +390,4 @@ L_GUI_STATS_LOCATION = "区域"
 L_GUI_ERROR = "错误收集"
 L_GUI_ERROR_BLACK = "隐藏黑名单错误"
 L_GUI_ERROR_WHITE = "显示白名单错误"
-L_GUI_ERROR_HIDE_COMBAT = "Hide all errors in combat" -- Needs review
+L_GUI_ERROR_HIDE_COMBAT = "战斗中隐藏所有错误提示"
