@@ -13,14 +13,14 @@ L_ANNOUNCE_LA_PLACED = "光束泉位置. "
 L_ANNOUNCE_LA_CHARGES = "刷新."
 
 -- Announce flasks and food
-L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff:"
-L_ANNOUNCE_FF_NOFLASK = "缺少合剂:"
+L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
+L_ANNOUNCE_FF_NOFLASK = "缺少合剂: "
 L_ANNOUNCE_FF_ALLBUFFED = "已获得所有增益!"
 L_ANNOUNCE_FF_CHECK_BUTTON = "检查食物和合剂"
 
 -- Says thanks for some spells
-L_ANNOUNCE_SS_THANKS = "谢谢你的" -- Needs review
-L_ANNOUNCE_SS_RECEIVED = "收到来自于" -- Needs review
+L_ANNOUNCE_SS_THANKS = "谢谢你的 "
+L_ANNOUNCE_SS_RECEIVED = " 收到来自于 "
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "没有天赋"
@@ -65,7 +65,7 @@ L_TOGGLE_COLLAPSE = "折叠 "
 L_TOGGLE_RCLICK = "右键点击以启用或禁用 "
 L_TOGGLE_LCLICK = "左键点击来显示/隐藏窗口 "
 L_TOGGLE_RELOAD = " (需要重载插件)"
-L_TOGGLE_NOT_FOUND = "未创建"
+L_TOGGLE_NOT_FOUND = " 未创建"
 
 -- UnitFrame
 L_UF_GHOST = "灵魂"
@@ -228,7 +228,7 @@ L_DATATEXT_GRAVEYARDSASSAULTED = "墓地突袭:"
 L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:"
 L_DATATEXT_DEMOLISHERSDESTROYED = "石毁车摧毁:"
 L_DATATEXT_GATESDESTROYED = "大门摧毁:"
-L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:"
+L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:" -- Needs review
 L_DATATEXT_VICTORY_POINTS = "胜利点数："
 L_DATATEXT_CARTS_CONTROLLED = "车辆控制："
 
@@ -236,7 +236,7 @@ L_DATATEXT_CARTS_CONTROLLED = "车辆控制："
 L_INFO_ERRORS = "目前没有错误."
 L_INFO_INVITE = "接受邀请: "
 L_INFO_DUEL = "拒绝决斗请求: "
-L_INFO_PET_DUEL = "拒绝宠物对战请求："
+L_INFO_PET_DUEL = "拒绝宠物对战请求： "
 L_INFO_DISBAND = "解散团队..."
 L_INFO_SETTINGS_DBM = "键入 /settings dbm, 载入 DBM 的设定."
 L_INFO_SETTINGS_DXE = "键入 /settings dxe, 载入 DXE 的设定."
@@ -244,7 +244,7 @@ L_INFO_SETTINGS_MSBT = "键入 /settings msbt, 载入 MSBT 的设定."
 L_INFO_SETTINGS_SKADA = "键入 /settings skada, 载入 Skada 的设定."
 L_INFO_SETTINGS_ALL = "键入 /settings all, 载入所有UI设定."
 L_INFO_NOT_INSTALLED = " 没有安装."
-L_INFO_SKIN_DISABLED1 = "介面样式启用."
+L_INFO_SKIN_DISABLED1 = "介面样式启用 "
 L_INFO_SKIN_DISABLED2 = " 已禁用."
 
 -- Popups
@@ -392,30 +392,30 @@ L_EXTRA_ZONEACHID = {
 	["外域"]							= {X =   44, A =    0, H =    0},
 	["诺森德"]							= {X =   45, A =    0, H =    0},
 	["世界地图"]							= {X =  nil, A =    0, H =    0},
-	["潘达利亚"]					        	= {X = 6974, A =    0, H =    0},
+	["潘达利亚"]							= {X = 6974, A =    0, H =    0},
 	-- Eastern Kingdoms 
-	["阿拉希高地"]					         	= {X =  761, A = 4896, H = 4896},
+	["阿拉希高地"]						= {X =  761, A = 4896, H = 4896},
 	["荒芜之地"]							= {X =  765, A = 4900, H = 4900},
 	["诅咒之地"]							= {X =  766, A = 4909, H = 4909},
 	["燃烧平原"]							= {X =  775, A = 4901, H = 4901},
 	["逆风小径"]							= {X =  777, A =    0, H =    0},
 	["丹莫罗"]							= {X =  627, A =    0, H =    0},
 	["暮色森林"]							= {X =  778, A = 4903, H =    0},
-	["东瘟疫之地"]					         	= {X =  771, A = 4892, H = 4892},
-	["艾尔文森林"]					        	= {X =  776, A =    0, H =    0},
+	["东瘟疫之地"]						= {X =  771, A = 4892, H = 4892},
+	["艾尔文森林"]						= {X =  776, A =    0, H =    0},
 	["永歌森林"]							= {X =  859, A =    0, H =    0},
 	["幽魂之地"]							= {X =  858, A =    0, H = 4908},
-	["希尔斯布莱德丘陵"]				        	= {X =  772, A =    0, H = 4895},
+	["希尔斯布莱德丘陵"]					= {X =  772, A =    0, H = 4895},
 	["洛克莫丹"]							= {X =  779, A = 4899, H =    0},
 	["北荆棘谷"]							= {X =  781, A = 4906, H = 4906},
 	["赤脊山"]							= {X =  780, A = 4902, H =    0},
 	["灼热峡谷"]							= {X =  774, A = 4910, H = 4910},
 	["银松森林"]							= {X =  769, A =    0, H = 4894},
 	["悲伤沼泽"]							= {X =  782, A = 4904, H = 4904},
-	["荆棘谷海角"]					        	= {X = 4995, A = 4905, H = 4905},
+	["荆棘谷海角"]						= {X = 4995, A = 4905, H = 4905},
 	["辛特兰"]							= {X =  773, A = 4897, H = 4897},
 	["提瑞斯法林地"]						= {X =  768, A =    0, H =    0},
-	["西瘟疫之地"]					         	= {X =  770, A = 4893, H = 4893},
+	["西瘟疫之地"]						= {X =  770, A = 4893, H = 4893},
 	["西部荒野"]							= {X =  802, A = 4903, H =    0},
 	["湿地"]							= {X =  841, A = 4899, H =    0},
 	-- Kalimdor
@@ -427,13 +427,13 @@ L_EXTRA_ZONEACHID = {
 	["凄凉之地"]							= {X =  848, A = 4930, H = 4930},
 	["杜隆塔尔"]							= {X =  728, A =    0, H =    0},
 	["尘泥沼泽"]							= {X =  850, A = 4929, H = 4978},
-	["费伍德森林"]						        = {X =  853, A = 4931, H = 4931},
+	["费伍德森林"]						= {X =  853, A = 4931, H = 4931},
 	["菲拉斯"]							= {X =  849, A = 4932, H = 4979},
 	["月光林地"]							= {X =  855, A =    0, H =    0},
 	["莫高雷"]							= {X =  736, A =    0, H =    0},
-	["北贫瘠之地"]						        = {X =  750, A =    0, H = 4933},
+	["北贫瘠之地"]						= {X =  750, A =    0, H = 4933},
 	["希利苏斯"]							= {X =  856, A = 4934, H = 4934},
-	["南贫瘠之地"]						        = {X = 4996, A = 4937, H = 4981},
+	["南贫瘠之地"]						= {X = 4996, A = 4937, H = 4981},
 	["石爪山脉"]							= {X =  847, A = 4936, H = 4980},
 	["塔纳利斯"]							= {X =  851, A = 4935, H = 4935},
 	["泰达希尔"]							= {X =  842, A =    0, H =    0},
@@ -442,11 +442,11 @@ L_EXTRA_ZONEACHID = {
 	["冬泉谷"]							= {X =  857, A = 4940, H = 4940},
 	-- Outland
 	["刀锋山"]							= {X =  865, A = 1193, H = 1193},
-	["地狱火半岛"]					        	= {X =  862, A = 1189, H = 1271},
+	["地狱火半岛"]						= {X =  862, A = 1189, H = 1271},
 	["纳格兰"]							= {X =  866, A = 1192, H = 1273},
 	["虚空风暴"]							= {X =  843, A = 1194, H = 1194},
 	["影月谷"]							= {X =  864, A = 1195, H = 1195},
-	["泰罗卡森林"]					        	= {X =  867, A = 1191, H = 1272},
+	["泰罗卡森林"]						= {X =  867, A = 1191, H = 1272},
 	["赞加沼泽"]							= {X =  863, A = 1190, H = 1190},
 	-- Northrend
 	["北风苔原"]							= {X = 1264, A =   33, H = 1358},
@@ -455,7 +455,7 @@ L_EXTRA_ZONEACHID = {
 	["灰熊丘陵"]							= {X = 1266, A =   37, H = 1357},
 	["嚎风峡湾"]							= {X = 1263, A =   34, H = 1356},
 	["冰冠冰川"]					 		= {X = 1270, A =   40, H =   40},
-	["索拉查盆地"]					         	= {X = 1268, A =   39, H =   39},
+	["索拉查盆地"]						= {X = 1268, A =   39, H =   39},
 	["风暴峭壁"]							= {X = 1269, A =   38, H =   38},
 	["祖达克"]							= {X = 1267, A =   36, H =   36},
 	-- Cataclysm
@@ -464,18 +464,18 @@ L_EXTRA_ZONEACHID = {
 	["暮光高地"]							= {X = 4866, A = 4873, H = 5501},
 	["奥丹姆"]							= {X = 4865, A = 4872, H = 4872},
 	["瓦丝琪尔"]							= {X = 4825, A = 4869, H = 4982},
-	["托尔巴拉德"]					        	= {X =    0, A = 4874, H = 4874},
-	["托尔巴拉德半岛"]				  	        = {X =    0, A = 4874, H = 4874},
+	["托尔巴拉德"]						= {X =    0, A = 4874, H = 4874},
+	["托尔巴拉德半岛"]					= {X =    0, A = 4874, H = 4874},
 	-- Pandaria
-	["翡翠林"]			                 		= {X = 6351, A = 6300, H = 6534},
-	["四风谷"]	                              	                = {X = 6969, A = 6301, H = 6301},
-	["卡桑琅丛林"]					                = {X = 6975, A = 6535, H = 6536},
-	["昆莱山"]					                = {X = 6976, A = 6537, H = 6538},
-	["螳螂高原"]				                        = {X = 6977, A = 6539, H = 6539},
-	["恐惧废土"]					                = {X = 6978, A = 6540, H = 6540},
-	["锦绣谷"]	                                        	= {X = 6979, A =    0, H =    0},
+	["翡翠林"]							= {X = 6351, A = 6300, H = 6534},
+	["四风谷"]							= {X = 6969, A = 6301, H = 6301},
+	--["卡桑琅丛林"]						= {X = 6975, A = 6535, H = 6536},
+	["昆莱山"]							= {X = 6976, A = 6537, H = 6538},
+	["螳螂高原"]							= {X = 6977, A = 6539, H = 6539},
+	["恐惧废土"]							= {X = 6978, A = 6540, H = 6540},
+	["锦绣谷"]							= {X = 6979, A =    0, H =    0},
 	-- Boolean Explores
 	["奎尔丹纳斯岛"]						= {X =  868, A =    0, H =    0},
-	["安其拉：堕落王国"]				        	= {X =    0, A =    0, H =    0},
+	["安其拉：堕落王国"]					= {X =    0, A =    0, H =    0},
 	["冬拥湖"]							= {X =    0, A =    0, H =    0},
 }
