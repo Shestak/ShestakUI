@@ -85,6 +85,8 @@ L_GUI_SKINS_OVALE = "Activer la personalisation pour OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Activer la personalisation pour Clique"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
 L_GUI_SKINS_PP = "Activer la personalisation pour PallyPower"
+L_GUI_SKINS_CAPPING = "Activer la personalisation pour Capping"
+L_GUI_SKINS_COOL_LINE = "Activer la personalisation pour CoolLine"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"

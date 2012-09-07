@@ -85,6 +85,8 @@ L_GUI_SKINS_OVALE = "开启OvaleSpellPriority样式增强"
 L_GUI_SKINS_CLIQUE = "开启Clique样式增强"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
 L_GUI_SKINS_PP = "开启PallyPower样式增强"
+L_GUI_SKINS_CAPPING = "开启Capping样式增强"
+L_GUI_SKINS_COOL_LINE = "开启CoolLine样式增强"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "战斗文字"

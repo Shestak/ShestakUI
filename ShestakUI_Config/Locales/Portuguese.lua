@@ -85,6 +85,8 @@ L_GUI_SKINS_OVALE = "Enable styling OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Enable styling Clique"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin"
 L_GUI_SKINS_PP = "Enable styling PallyPower"
+L_GUI_SKINS_CAPPING = "Enable styling Capping"
+L_GUI_SKINS_COOL_LINE = "Enable styling CoolLine"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"

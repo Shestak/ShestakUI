@@ -85,6 +85,8 @@ L_GUI_SKINS_OVALE = "Attiva il restyling di OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Attiva il restyling di Clique"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
 L_GUI_SKINS_PP = "Attiva il restyling di PallyPower"
+L_GUI_SKINS_CAPPING = "Attiva il restyling di Capping"
+L_GUI_SKINS_COOL_LINE = "Attiva il restyling di CoolLine"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"

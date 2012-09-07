@@ -84,6 +84,8 @@ L_GUI_SKINS_OVALE = "Включить стилизацию OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Включить стилизацию Clique"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
 L_GUI_SKINS_PP = "Включить стилизацию PallyPower"
+L_GUI_SKINS_CAPPING = "Включить стилизацию Capping"
+L_GUI_SKINS_COOL_LINE = "Включить стилизацию CoolLine"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"
