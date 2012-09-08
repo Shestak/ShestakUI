@@ -53,10 +53,10 @@ local function UpdateSlot(self, slot)
 	totem[slot]:SetValue(0)
 
 	-- Multipliers
-	if (totem[slot].bg.multiplier) then
+	if totem[slot].bg.multiplier then
 		local mu = totem[slot].bg.multiplier
 		local r, g, b = totem[slot]:GetStatusBarColor()
-		r, g, b = r*mu, g*mu, b*mu
+		r, g, b = r * mu, g * mu, b * mu
 		totem[slot].bg:SetVertexColor(r, g, b)
 	end
 
@@ -119,11 +119,10 @@ local function Enable(self, unit)
 	end
 end
 
-local function Disable(self,unit)
+local function Disable(self, unit)
 	local totem = self.TotemBar
 	if totem then
 		self:UnregisterEvent("PLAYER_TOTEM_UPDATE", Event)
-
 		TotemFrame:Show()
 	end
 end

@@ -128,7 +128,7 @@ local function combat(self, event, unit, eventType, flags, amount, dtype)
 	end
 
 	if text then
-		FeedbackText:SetFont(font,fontHeight,fontFlags)
+		FeedbackText:SetFont(font, fontHeight, fontFlags)
 		FeedbackText:SetFormattedText(text, arg)
 		FeedbackText:SetTextColor(unpack(color))
 		FeedbackText:SetAlpha(0)

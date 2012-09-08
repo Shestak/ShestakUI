@@ -20,7 +20,7 @@ local setupGUID
 do
 	local cache = setmetatable({}, {__type = "k"})
 
-	local frame = CreateFrame"Frame"
+	local frame = CreateFrame("Frame")
 	frame:SetScript("OnEvent", function(self, event)
 		for k,t in pairs(GUIDs) do
 			GUIDs[k] = nil
@@ -30,8 +30,8 @@ do
 			cache[t] = true
 		end
 	end)
-	frame:RegisterEvent"PLAYER_REGEN_ENABLED"
-	frame:RegisterEvent"PLAYER_ENTERING_WORLD"
+	frame:RegisterEvent("PLAYER_REGEN_ENABLED")
+	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 	function setupGUID(guid)
 		local t = next(cache)
