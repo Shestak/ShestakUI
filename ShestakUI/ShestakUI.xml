@@ -107,13 +107,13 @@
 	<Script file="Modules\ActionBars\MicroMenu.lua"/>
 
 	<Script file="Modules\Announcements\Drinking.lua"/>
+	<Script file="Modules\Announcements\FeastsAndPortals.lua"/>
 	<Script file="Modules\Announcements\FlaskAndFood.lua"/>
 	<Script file="Modules\Announcements\Interrupts.lua"/>
 	<Script file="Modules\Announcements\Lightwell.lua"/>
 	<Script file="Modules\Announcements\PullCountdown.lua"/>
 	<Script file="Modules\Announcements\SayThanks.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>
-	<Script file="Modules\Announcements\ToyTrain.lua"/>
 
 	<Script file="Modules\Automation\AchScreens.lua"/>
 	<Script file="Modules\Automation\AutoChefsHat.lua"/>
@@ -200,6 +200,7 @@
 
 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
 	<Script file="Modules\Skins\Ace3.lua"/>
+	<Script file="Modules\Skins\AtlasLoot.lua"/>
 	<Script file="Modules\Skins\Aurora.lua"/>
 	<Script file="Modules\Skins\BigWigs.lua"/>
 	<Script file="Modules\Skins\BloodShieldTracker.lua"/>
@@ -218,6 +219,7 @@
 	<Script file="Modules\Skins\Ovale.lua"/>
 	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
+	<Script file="Modules\Skins\TinyDPS.lua"/>
 
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Core\Movers.lua"/>

@@ -59,6 +59,8 @@ if T.author == true then
 	C["announcements"].flask_food = true
 	C["announcements"].toy_train = true
 	C["announcements"].says_thanks = true
+	C["announcements"].feasts = true
+	C["announcements"].portals = true
 	C["automation"].accept_invite = true
 	C["automation"].accept_quest = true
 	C["automation"].skip_cinematic = true
@@ -232,6 +234,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["automation"].logging_combat = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
+	C["skins"].atlasloot = true
 	C["reminder"].solo_buffs_sound = true
 	C["reminder"].raid_buffs_always = true
 	C["reminder"].raid_buffs_size = 20

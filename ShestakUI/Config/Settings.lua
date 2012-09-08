@@ -62,9 +62,9 @@ C["misc"] = {
 --	Announcements options
 ----------------------------------------------------------------------------------------
 C["announcements"] = {
-	["drinking"] = false,						-- Announce in chat when arena enemy is drinking
-	["interrupts"] = false,						-- Announce in party/raid when you interrupt
-	["spells"] = false,							-- Announce in party/raid when you cast some spell
+	["drinking"] = false,						-- Announce when arena enemy is drinking
+	["interrupts"] = false,						-- Announce when you interrupt
+	["spells"] = false,							-- Announce when you cast some spell
 	["spells_from_all"] = false,				-- Check spells cast from all members
 	["lightwell"] = false,						-- Announce your Lightwell
 	["toy_train"] = false,						-- Announce Toy Train or Direbrew's Remote cast
@@ -73,6 +73,8 @@ C["announcements"] = {
 	["flask_food"] = false,						-- Announce the usage of flasks and food
 	["flask_food_auto"] = false,				-- Auto announce when ReadyCheck(if enable, announce to raid channel)
 	["flask_food_raid"] = false,				-- Announce to raid channel
+	["feasts"] = false,							-- Announce Feasts/Cauldrons/Souls/Repair Bots cast
+	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
 }
 
 ----------------------------------------------------------------------------------------
@@ -117,6 +119,8 @@ C["skins"] = {
 	["pallypower"] = false,						-- PallyPower skin
 	["capping"] = false,						-- Capping skin
 	["cool_line"] = false,						-- CoolLine skin
+	["atlasloot"] = false,						-- AtlasLoot skin
+	["tiny_dps"] = false,						-- TinyDPS skin
 }
 
 ----------------------------------------------------------------------------------------
