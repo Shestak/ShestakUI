@@ -18,6 +18,17 @@ L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask"
 L_ANNOUNCE_SS_THANKS = "Thanks for "
 L_ANNOUNCE_SS_RECEIVED = " received from "
 
+-- Pull countdown announce
+L_ANNOUNCE_PC_GO = "GO!"
+L_ANNOUNCE_PC_MSG = "Pulling %s in %s.."
+L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!"
+
+-- Announce feasts and portals
+L_ANNOUNCE_FP_PRE = "%s has prepared a %s."
+L_ANNOUNCE_FP_PUT = "%s has put down a %s."
+L_ANNOUNCE_FP_CAST = "%s is casting %s."
+L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!"
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "No Talents"
 L_TOOLTIP_LOADING = "Loading..."

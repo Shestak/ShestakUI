@@ -22,6 +22,17 @@ L_ANNOUNCE_FF_CHECK_BUTTON = "检查食物和合剂"
 L_ANNOUNCE_SS_THANKS = "谢谢你的 "
 L_ANNOUNCE_SS_RECEIVED = " 收到来自于 "
 
+-- Pull countdown announce
+L_ANNOUNCE_PC_GO = "GO!" -- Needs review
+L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
+L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
+
+-- Announce feasts and portals
+L_ANNOUNCE_FP_PRE = "%s has prepared a %s." -- Needs review
+L_ANNOUNCE_FP_PUT = "%s has put down a %s." -- Needs review
+L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review
+L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!" -- Needs review
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "没有天赋"
 L_TOOLTIP_LOADING = "读取中..."

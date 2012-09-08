@@ -55,7 +55,7 @@ local function pull(self, elapsed)
 		target = ""
 	end
 	if not firstdone then
-		SendChatMessage("Pulling "..target.."in "..tostring(delay).."..", channel)
+		SendChatMessage(string.format(L_ANNOUNCE_PC_MSG, target, tostring(delay)), channel)
 		firstdone = true
 		delay = delay - 1
 	end
@@ -66,7 +66,7 @@ local function pull(self, elapsed)
 			SendChatMessage(tostring(delay).."..", channel)
 			delay = delay - 1
 		else
-			SendChatMessage("GO!", channel)
+			SendChatMessage(L_ANNOUNCE_PC_GO, channel)
 			reset()
 		end
 	end
@@ -76,7 +76,7 @@ function f.Pull(timer)
 	delay = timer or 3
 	if timerframe:GetScript("OnUpdate") then
 		reset()
-		SendChatMessage("Pull ABORTED!", channel)
+		SendChatMessage(L_ANNOUNCE_PC_ABORTED, channel)
 	else
 		timerframe:SetScript("OnUpdate", pull)
 	end

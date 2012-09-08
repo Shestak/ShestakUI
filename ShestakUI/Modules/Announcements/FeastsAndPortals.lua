@@ -30,31 +30,31 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 	if subEvent == "SPELL_CAST_START" then
 		-- Feasts/Cauldrons
 		if C.announcements.feasts and (T.AnnounceFeasts[spellID] or T.AnnounceCauldrons[spellID]) then
-			SendChatMessage(string.format("%s has prepared a %s.", srcName, GetSpellLink(spellID)), GetChat())
+			SendChatMessage(string.format(L_ANNOUNCE_FP_PRE, srcName, GetSpellLink(spellID)), GetChat())
 		-- Refreshment Table
 		elseif C.announcements.feasts and spellID == 43987 then
-			SendChatMessage(string.format("%s has prepared a %s.", srcName, GetSpellLink(spellID)), GetChat())
+			SendChatMessage(string.format(L_ANNOUNCE_FP_PRE, srcName, GetSpellLink(spellID)), GetChat())
 		end
 	elseif subEvent == "SPELL_SUMMON" then
 		-- Repair Bots
 		if C.announcements.feasts and T.AnnounceBots[spellID] then
-			SendChatMessage(string.format("%s has put down a %s.", srcName, GetSpellLink(spellID)), GetChat())
+			SendChatMessage(string.format(L_ANNOUNCE_FP_PUT, srcName, GetSpellLink(spellID)), GetChat())
 		end
 	elseif subEvent == "SPELL_CREATE" then
 		-- Ritual of Souls
 		if C.announcements.feasts and spellID == 29893 then
-			SendChatMessage(string.format("%s has put down a %s.", srcName, GetSpellLink(spellID)), GetChat())
+			SendChatMessage(string.format(L_ANNOUNCE_FP_PUT, srcName, GetSpellLink(spellID)), GetChat())
 		-- Toys
 		elseif C.announcements.toy_train and T.AnnounceToys[spellID] then
-			SendChatMessage(string.format("%s has put down a %s.", srcName, GetSpellLink(spellID)), GetChat())
+			SendChatMessage(string.format(L_ANNOUNCE_FP_PUT, srcName, GetSpellLink(spellID)), GetChat())
 		-- Portals
 		elseif C.announcements.portals and T.AnnouncePortals[spellID] then
-			SendChatMessage(string.format("%s is casting %s.", srcName, GetSpellLink(spellID)), GetChat())
+			SendChatMessage(string.format(L_ANNOUNCE_FP_CAST, srcName, GetSpellLink(spellID)), GetChat())
 		end
 	elseif subEvent == "SPELL_CAST_SUCCESS" then
 		-- Ritual of Summoning
 		if C.announcements.portals and spellID == 698 then
-			SendChatMessage(string.format("%s is casting %s. Click!", srcName, GetSpellLink(spellID)), GetChat())
+			SendChatMessage(string.format(L_ANNOUNCE_FP_CLICK, srcName, GetSpellLink(spellID)), GetChat())
 		end
 	end
 end)

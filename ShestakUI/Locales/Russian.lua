@@ -21,6 +21,17 @@ L_ANNOUNCE_FF_CHECK_BUTTON = "Проверка еды и настоя"
 L_ANNOUNCE_SS_THANKS = "Спасибо за "
 L_ANNOUNCE_SS_RECEIVED = " получено от "
 
+-- Pull countdown announce
+L_ANNOUNCE_PC_GO = "GO!" -- Needs review
+L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
+L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
+
+-- Announce feasts and portals
+L_ANNOUNCE_FP_PRE = "%s has prepared a %s." -- Needs review
+L_ANNOUNCE_FP_PUT = "%s has put down a %s." -- Needs review
+L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review
+L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!" -- Needs review
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Нет талантов"
 L_TOOLTIP_LOADING = "Загрузка..."
