@@ -46,6 +46,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel"
+L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast"
+L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automation"
@@ -84,6 +86,8 @@ L_GUI_SKINS_ACE3 = "Ace3 options elements skin"
 L_GUI_SKINS_PP = "Enable styling PallyPower"
 L_GUI_SKINS_CAPPING = "Enable styling Capping"
 L_GUI_SKINS_COOL_LINE = "Enable styling CoolLine"
+L_GUI_SKINS_ATLASLOOT = "Enable styling AtlasLoot"
+L_GUI_SKINS_TINY_DPS = "Enable styling TinyDPS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"

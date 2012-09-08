@@ -48,6 +48,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Отсчитывать время до а�
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Сообщать в чат об отсутствующих настоях и еде"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Автоматически сообщать при проверке готовности(если включено: сообщать в рейдовый канал)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Сообщать в рейдовый канал"
+L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Автоматизация"
@@ -86,6 +88,8 @@ L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
 L_GUI_SKINS_PP = "Включить стилизацию PallyPower"
 L_GUI_SKINS_CAPPING = "Включить стилизацию Capping"
 L_GUI_SKINS_COOL_LINE = "Включить стилизацию CoolLine"
+L_GUI_SKINS_ATLASLOOT = "Включить стилизацию AtlasLoot"
+L_GUI_SKINS_TINY_DPS = "Включить стилизацию TinyDPS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"

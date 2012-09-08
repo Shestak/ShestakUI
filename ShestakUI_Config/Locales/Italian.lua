@@ -49,6 +49,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Annuncia il conto alla rovescia di avvio i
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Annuncia l'uso di tonici e cibo"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Annuncia automaticamente l'uso di cibi e tonici all'appello (se attivato, annuncia nel canale incursione)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Annuncia l'uso di cibi e tonici nel canale incursione"
+L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatismi"
@@ -87,6 +89,8 @@ L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
 L_GUI_SKINS_PP = "Attiva il restyling di PallyPower"
 L_GUI_SKINS_CAPPING = "Attiva il restyling di Capping"
 L_GUI_SKINS_COOL_LINE = "Attiva il restyling di CoolLine"
+L_GUI_SKINS_ATLASLOOT = "Attiva il restyling di AtlasLoot"
+L_GUI_SKINS_TINY_DPS = "Attiva il restyling di TinyDPS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"

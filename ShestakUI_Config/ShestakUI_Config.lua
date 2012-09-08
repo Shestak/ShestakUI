@@ -75,6 +75,8 @@ local function Local(o)
 	if o == "UIConfigannouncementsflask_food" then o = L_GUI_ANNOUNCEMENTS_FLASK_FOOD end
 	if o == "UIConfigannouncementsflask_food_auto" then o = L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO end
 	if o == "UIConfigannouncementsflask_food_raid" then o = L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID end
+	if o == "UIConfigannouncementsfeasts" then o = L_GUI_ANNOUNCEMENTS_FEASTS end
+	if o == "UIConfigannouncementsportals" then o = L_GUI_ANNOUNCEMENTS_PORTALS end
 
 	-- Automation options
 	if o == "UIConfigautomation" then o = L_GUI_AUTOMATION end
@@ -113,6 +115,8 @@ local function Local(o)
 	if o == "UIConfigskinspallypower" then o = L_GUI_SKINS_PP end
 	if o == "UIConfigskinscapping" then o = L_GUI_SKINS_CAPPING end
 	if o == "UIConfigskinscool_line" then o = L_GUI_SKINS_COOL_LINE end
+	if o == "UIConfigskinsatlasloot" then o = L_GUI_SKINS_ATLASLOOT end
+	if o == "UIConfigskinstiny_dps" then o = L_GUI_SKINS_TINY_DPS end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end

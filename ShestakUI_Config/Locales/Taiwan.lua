@@ -49,6 +49,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "倒計時通告(/run PullCountdown.Pull(#)
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "通告食物和合劑的用途"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "當團隊檢查就緒時進行通告(如果可能,在團隊頻道通告)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "在團隊頻道通告"
+L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "自動設定"
@@ -87,6 +89,8 @@ L_GUI_SKINS_ACE3 = "開啟Ace3樣式增強"
 L_GUI_SKINS_PP = "開啟PallyPower樣式增強"
 L_GUI_SKINS_CAPPING = "開啟Capping樣式增強"
 L_GUI_SKINS_COOL_LINE = "開啟CoolLine樣式增強"
+L_GUI_SKINS_ATLASLOOT = "開啟AtlasLoot樣式增強"
+L_GUI_SKINS_TINY_DPS = "開啟TinyDPS樣式增強"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"
