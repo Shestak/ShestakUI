@@ -2427,7 +2427,7 @@ Filger_Spells = {
 			-- Weakened Armor
 			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Weakened Blows
-			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF", spec = 3},
 		},
 		{
 			Name = "COOLDOWN",
@@ -2449,30 +2449,30 @@ Filger_Spells = {
 			{spellID = 107570, filter = "CD"},
 			-- Thunder Clap
 			{spellID = 6343, filter = "CD"},
-			-- Charge
-			{spellID = 100, filter = "CD"},
-			-- Intervene
-			{spellID = 3411, filter = "CD"},
-			-- Spell Reflection
-			{spellID = 23920, filter = "CD"},
-			-- Enraged Regeneration
-			{spellID = 55694, filter = "CD"},
-			-- Colossus Smash
-			{spellID = 86346, filter = "CD"},
-			-- Commanding Shout
-			{spellID = 469, filter = "CD"},
 			-- Taunt
 			{spellID = 355, filter = "CD"},
+			-- Colossus Smash
+			{spellID = 86346, filter = "CD"},
+			-- Charge
+			{spellID = 100, filter = "CD"},
+			-- Spell Reflection
+			{spellID = 23920, filter = "CD"},
+			-- Intervene
+			{spellID = 3411, filter = "CD"},
 			-- Berserker Rage
 			{spellID = 18499, filter = "CD"},
 			-- Heroic Leap
 			{spellID = 6544, filter = "CD"},
-			-- Rallying Cry
-			{spellID = 97462, filter = "CD"},
-			-- Disarm
-			{spellID = 676, filter = "CD"},
 			-- Demoralizing Shout
 			{spellID = 1160, filter = "CD"},
+			-- Disarm
+			{spellID = 676, filter = "CD"},
+			-- Enraged Regeneration
+			{spellID = 55694, filter = "CD"},
+			-- Commanding Shout
+			{spellID = 469, filter = "CD"},
+			-- Rallying Cry
+			{spellID = 97462, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
