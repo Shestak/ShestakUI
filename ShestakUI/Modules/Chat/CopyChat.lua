@@ -112,6 +112,8 @@ function T.ChatCopyButtons()
 		button:SetScript("OnMouseUp", function(self, btn)
 			if btn == "RightButton" then
 				ToggleFrame(ChatMenu)
+			elseif btn == "MiddleButton" then
+				RandomRoll(1, 100)
 			else
 				Copy(cf)
 			end
