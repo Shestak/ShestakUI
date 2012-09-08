@@ -1,6 +1,7 @@
 ----------------------------------------------------------------------------------------
 --	Sorts the guild finder list(GuildFinderSorter by Tekkub)
 ----------------------------------------------------------------------------------------
+if IsInGuild() then return end
 local o = GetRecruitingGuildInfo
 local indexmap
 
