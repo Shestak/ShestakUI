@@ -842,7 +842,6 @@ if guild.enabled then
 				UIErrorsFrame:AddMessage(ERR_RESTRICTED_ACCOUNT, 1, 0.1, 0.1)
 				return
 			end
-			if not IsInGuild() then return end
 			if b == "LeftButton" then
 				if IsInGuild() then
 					if not GuildFrame then LoadAddOn("Blizzard_GuildUI") end
@@ -856,7 +855,7 @@ if guild.enabled then
 				local s = CURRENT_GUILD_SORTING
 				SortGuildRoster(IsShiftKeyDown() and s or (IsAltKeyDown() and (s == "rank" and "note" or "rank") or s == "class" and "name" or s == "name" and "level" or s == "level" and "zone" or "class"))
 				self:GetScript("OnEnter")(self)
-			elseif b == "MiddleButton" then
+			elseif b == "MiddleButton" and IsInGuild() then
 				HideTT(self)
 
 				local classc, levelc, grouped
