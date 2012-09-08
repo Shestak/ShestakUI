@@ -66,7 +66,6 @@ T.DiminishingSpells = function()
 		[111397] = {"fear"},		-- Blood Fear
 		[5484] = {"fear"},			-- Howl of Terror
 		[6358] = {"fear"},			-- Seduction (Succubus)
-		[6358] = {"fear"},			-- Seduction (Succubus)
 		[5246] = {"fear"},			-- Intimidating Shout (Main target)
 		[20511] = {"fear"},			-- Intimidating Shout (Secondary targets)
 
