@@ -79,8 +79,8 @@ if C.skins.blizzard_frames == true then
 else
 	button:SetPoint("TOPRIGHT", button:GetParent(), "TOPRIGHT", -26, -3)
 end
-button:SetScript("OnClick", DropDown_Show)
-button:RegisterForClicks("LeftButtonUp")
 button:SetNormalTexture("Interface\\GossipFrame\\DailyActiveQuestIcon")
 button:SetPushedTexture("Interface\\GossipFrame\\DailyActiveQuestIcon")
 button:SetHighlightTexture("Interface\\GossipFrame\\DailyActiveQuestIcon", "ADD")
+button:RegisterForClicks("LeftButtonUp")
+button:SetScript("OnClick", DropDown_Show)

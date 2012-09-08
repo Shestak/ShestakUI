@@ -79,10 +79,11 @@ local function InstallUI()
 		SetCVar("fctReactives", 0)
 		SetAutoDeclineGuildInvites(1)
 		ShowAccountAchievements(1)
+		SetAllowLowLevelRaid(1)
 	end
 
 	-- Setting chat frames
-	if (C.chat.enable == true) and (not IsAddOnLoaded("Prat-3.0") or not IsAddOnLoaded("Chatter")) then
+	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
 		for i = 1, NUM_CHAT_WINDOWS do
 			local frame = _G[format("ChatFrame%s", i)]
 			local chatFrameId = frame:GetID()

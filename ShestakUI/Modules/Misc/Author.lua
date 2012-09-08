@@ -99,6 +99,11 @@ DressUpModelControlFrame:HookScript("OnShow", function(self) self:Hide() end)
 SideDressUpModelControlFrame:HookScript("OnShow", function(self) self:Hide() end)
 
 ----------------------------------------------------------------------------------------
+--	Hide subzone text
+----------------------------------------------------------------------------------------
+SubZoneTextFrame:SetScript("OnShow", function() SubZoneTextFrame:Hide() end)
+
+----------------------------------------------------------------------------------------
 --	Auto hide unnecessary stats from CharacterFrame(module from Inomena by p3lim)
 ----------------------------------------------------------------------------------------
 PAPERDOLL_STATCATEGORIES = {
