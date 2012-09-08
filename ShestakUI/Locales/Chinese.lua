@@ -28,10 +28,10 @@ L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
 L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_PRE = "%s has prepared a %s." -- Needs review
-L_ANNOUNCE_FP_PUT = "%s has put down a %s." -- Needs review
-L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review
-L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!" -- Needs review
+L_ANNOUNCE_FP_PRE = "%s 放置了 %s" -- Needs review
+L_ANNOUNCE_FP_PUT = "%s 放置了 %s" -- Needs review
+L_ANNOUNCE_FP_CAST = "%s 开启了 %s" -- Needs review
+L_ANNOUNCE_FP_CLICK = "%s 正在开启 %s... 请点击！" -- Needs review
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "没有天赋"
