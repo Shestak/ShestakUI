@@ -27,14 +27,17 @@ end
 
 if C.announcements.feasts == true then
 	T.AnnounceFeasts = {
+		-- WotLK
+		[66476] = true,		-- Bountiful Feast
 		[87643] = true,		-- Broiled Dragon Feast
 		[57426] = true,		-- Fish Feast
 		[57301] = true,		-- Great Feast
 		[58474] = true,		-- Small Feast
 		[58465] = true,		-- Gigantic Feast
+		-- Cataclysm
 		[87644] = true,		-- Seafood Magnifique Feast
 		[87915] = true,		-- Goblin Barbecue Feast
-		[66476] = true,		-- Bountiful Feast
+		-- Pandaria
 		[104958] = true,	-- Pandaren Banquet
 		[105193] = true,	-- Great Pandaren Banquet
 		[126492] = true,	-- Banquet of the Grill
@@ -52,6 +55,7 @@ if C.announcements.feasts == true then
 	}
 
 	T.AnnounceCauldrons = {
+		-- Cataclysm
 		[92712] = true,		-- Big Cauldron of Battle
 		[92649] = true,		-- Cauldron of Battle
 	}
