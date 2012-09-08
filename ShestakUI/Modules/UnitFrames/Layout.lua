@@ -557,7 +557,7 @@ local function Shared(self, unit)
 
 		-- GCD spark
 		if C.unitframe.plugins_gcd == true then
-			self.GCD = CreateFrame("Frame", nil, self)
+			self.GCD = CreateFrame("Frame", self:GetName().."_GCD", self)
 			self.GCD:Width(220)
 			self.GCD:Height(3)
 			self.GCD:SetFrameStrata("HIGH")
