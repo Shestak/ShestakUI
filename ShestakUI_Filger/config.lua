@@ -1865,7 +1865,7 @@ Filger_Spells = {
 			-- Maelstorm Weapon
 			{spellID = 53817, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightning Shield
-			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF", spec = 1},
 			-- Shamanistic Rage
 			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental Mastery
