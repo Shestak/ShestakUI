@@ -51,6 +51,7 @@ L_MISC_DRINKING = " 進食中."
 L_MISC_BUY_STACK = "Alt-右鍵點擊購買一疊"
 L_MISC_ONECLICK_BUYOUT = "Shift-左鍵,不彈出確認窗口直接購買"
 L_MISC_ONECLICK_BID = "Shift-左鍵,不彈出確認窗口直接競標"
+L_MISC_ONECLICK_CANCEL = "Shift-Click to cancel on the selected item without confirmation" -- Needs review
 L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
 L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"

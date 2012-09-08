@@ -51,6 +51,7 @@ L_MISC_DRINKING = " esta bebiendo."
 L_MISC_BUY_STACK = "Alt-Click para comprar un lote"
 L_MISC_ONECLICK_BUYOUT = "Shift-Click para comprar el objeto seleccionado sin confirmacion"
 L_MISC_ONECLICK_BID = "Shift-Click para pujar por el objeto seleccionado sin confirmacion"
+L_MISC_ONECLICK_CANCEL = "Shift-Click to cancel on the selected item without confirmation" -- Needs review
 L_MISC_UI_OUTDATED = "Tu versión de ShestakUI no está actualizada. Puedes descargar la última versión de www.shestak.org"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
 L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
