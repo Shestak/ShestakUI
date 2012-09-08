@@ -138,6 +138,7 @@ if T.name == "Oz" then
 	C["misc"].vehicle_mouseover = true
 	C["misc"].item_level = true
 	C["misc"].gem_counter = true
+	C["misc"].move_blizzard = true
 	C["announcements"].flask_food = true
 	C["automation"].resurrection = false
 	C["automation"].screenshot = true
@@ -218,6 +219,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["misc"].gem_counter = true
 	C["misc"].disenchanting = true
 	C["misc"].sum_buyouts = true
+	C["misc"].move_blizzard = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
 	C["announcements"].spells = true
