@@ -22,15 +22,15 @@ L_ANNOUNCE_SS_THANKS = "Спасибо за "
 L_ANNOUNCE_SS_RECEIVED = " получено от "
 
 -- Pull countdown announce
-L_ANNOUNCE_PC_GO = "GO!" -- Needs review
-L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
-L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
+L_ANNOUNCE_PC_GO = "ВЫСТУПАЕМ!"
+L_ANNOUNCE_PC_MSG = "Атакуем %s через %s.."
+L_ANNOUNCE_PC_ABORTED = "Атака ОТМЕНЕНА!"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_PRE = "%s has prepared a %s." -- Needs review
-L_ANNOUNCE_FP_PUT = "%s has put down a %s." -- Needs review
-L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review
-L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!" -- Needs review
+L_ANNOUNCE_FP_PRE = "%s готовит %s."
+L_ANNOUNCE_FP_PUT = "%s ставит %s."
+L_ANNOUNCE_FP_CAST = "%s создает %s."
+L_ANNOUNCE_FP_CLICK = "%s создает %s. Кликаем!"
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Нет талантов"

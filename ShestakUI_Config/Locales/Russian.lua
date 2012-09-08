@@ -25,7 +25,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Индикатор транспорта по н�
 L_GUI_MISC_QUEST_AUTOBUTTON = "Кнопка квестовых(список) предметов над миникартой"
 L_GUI_MISC_RAID_TOOLS = "Инструменты рейда"
 L_GUI_MISC_PROFESSION_TABS = "Закладки всех профессий у окна торговли/профессии"
-L_GUI_MISC_PROFESSION_DATABASE = "Professions Database on Professions frame" -- Needs review
+L_GUI_MISC_PROFESSION_DATABASE = "База данных профессий"
 L_GUI_MISC_DUNGEON_TABS = "Вкладки возле окон PvP/PvE"
 L_GUI_MISC_HIDE_BG_SPAM = "Скрывать сообщения в центре экрана на полях боя"
 L_GUI_MISC_ITEM_LEVEL = "Отображать уровень предметов на экранах персонажа и осмотра"
@@ -48,8 +48,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Отсчитывать время до а�
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Сообщать в чат об отсутствующих настоях и еде"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Автоматически сообщать при проверке готовности(если включено: сообщать в рейдовый канал)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Сообщать в рейдовый канал"
-L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_FEASTS = "Оповещать, когда ставят пир/котел/рем.бота"
+L_GUI_ANNOUNCEMENTS_PORTALS = "Оповещать, когда создают порталы/ритуал призыва"
 
 -- Automation options
 L_GUI_AUTOMATION = "Автоматизация"
@@ -64,7 +64,7 @@ L_GUI_AUTOMATION_SKIP_CINEMATIC = "Пропуск видеороликов(ес�
 L_GUI_AUTOMATION_AUTO_ROLE = "Выбор вашей роли(в группе/рейде)"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Снимать *плохие* баффы"
 L_GUI_AUTOMATION_TAB_BINDER = "Клавиша *Tab* выбирает вражеских игроков"
-L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
+L_GUI_AUTOMATION_LOGGING_COMBAT = "Включать запись журнала боя в рейде"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"
@@ -84,7 +84,7 @@ L_GUI_SKINS_FLYOUT_BUTTON = "Включить стилизацию FlyoutButtonC
 L_GUI_SKINS_NUG_RUNNING = "Включить стилизацию NugRunning"
 L_GUI_SKINS_OVALE = "Включить стилизацию OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Включить стилизацию Clique"
-L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
+L_GUI_SKINS_ACE3 = "Стилизация элементов настроек Ace3"
 L_GUI_SKINS_PP = "Включить стилизацию PallyPower"
 L_GUI_SKINS_CAPPING = "Включить стилизацию Capping"
 L_GUI_SKINS_COOL_LINE = "Включить стилизацию CoolLine"
