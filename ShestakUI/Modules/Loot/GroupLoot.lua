@@ -10,7 +10,7 @@ local cancelled_rolls = {}
 local rolltypes = {[1] = "need", [2] = "greed", [3] = "disenchant", [0] = "pass"}
 
 local LootRollAnchor = CreateFrame("Frame", "LootRollAnchor", UIParent)
-LootRollAnchor:Size(361, 26)
+LootRollAnchor:Size(313, 26)
 
 local function ClickRoll(frame)
 	RollOnLoot(frame.parent.rollID, frame.rolltype)
@@ -87,7 +87,7 @@ end
 local function CreateRollFrame()
 	local frame = CreateFrame("Frame", nil, UIParent)
 	frame:CreateBackdrop("Default")
-	frame:Size(328, 22)
+	frame:Size(280, 22)
 	frame:SetScript("OnEvent", OnEvent)
 	frame:RegisterEvent("CANCEL_LOOT_ROLL")
 	frame:Hide()
