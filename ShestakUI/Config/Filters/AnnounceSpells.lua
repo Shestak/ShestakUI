@@ -27,12 +27,6 @@ end
 
 if C.announcements.feasts == true then
 	T.AnnounceFeasts = {
-		-- WotLK
-		[66476] = true,		-- Bountiful Feast
-		[57426] = true,		-- Fish Feast
-		[57301] = true,		-- Great Feast
-		[58474] = true,		-- Small Feast
-		[58465] = true,		-- Gigantic Feast
 		-- Cataclysm
 		[87643] = true,		-- Broiled Dragon Feast
 		[87915] = true,		-- Goblin Barbecue Feast
