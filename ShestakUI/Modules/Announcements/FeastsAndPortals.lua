@@ -9,9 +9,9 @@ local function CanRaidWarning()
 end
 
 local function GetChat()
-	if GetNumGroupMembers() > 0 then
+	if IsInRaid() then
 		return CanRaidWarning() and "RAID_WARNING" or "RAID"
-	elseif GetNumSubgroupMembers() > 0 then
+	elseif IsInGroup() then
 		return "PARTY"
 	end
 	return "SAY"
