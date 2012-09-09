@@ -1799,3 +1799,5 @@ lpanels:CreateLayout("LiteStats", layout)
 lpanels:ApplyLayout(nil, "LiteStats")
 
 Inject = nil
+
+-- edit by Oz of shestak. org --
