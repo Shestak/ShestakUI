@@ -6,11 +6,11 @@ if T.client ~= "zhTW" then return end
 --	Translation: Aelb, Ianchan, Leg883, Mania, Nanjiqq, Spacedragon, Tat2dawn, Tibles
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " 使用我的光束泉. "
-L_ANNOUNCE_LA_CHARGE = " 刷新)"
-L_ANNOUNCE_LA_USELESS = " 盡量少地使用我的光束泉. "
-L_ANNOUNCE_LA_PLACED = "光束泉位置. "
-L_ANNOUNCE_LA_CHARGES = " 刷新."
+L_ANNOUNCE_LA_USE = " 使用了光束泉！"
+L_ANNOUNCE_LA_CHARGE = " 刷新)"-- Needs review
+L_ANNOUNCE_LA_USELESS = " 使用了光束泉，無效！"
+L_ANNOUNCE_LA_PLACED = "光束泉已放置！ "
+L_ANNOUNCE_LA_CHARGES = " 刷新"-- Needs review
 
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
@@ -23,15 +23,15 @@ L_ANNOUNCE_SS_THANKS = "謝謝你的 "
 L_ANNOUNCE_SS_RECEIVED = " 收到來自于 "
 
 -- Pull countdown announce
-L_ANNOUNCE_PC_GO = "GO!" -- Needs review
-L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
-L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
+L_ANNOUNCE_PC_GO = "開始！" 
+L_ANNOUNCE_PC_MSG = "正在拉: %s, 倒數 %s.."
+L_ANNOUNCE_PC_ABORTED = "取消拉怪！"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_PRE = "%s 放置了 %s" -- Needs review
-L_ANNOUNCE_FP_PUT = "%s 放置了 %s" -- Needs review
-L_ANNOUNCE_FP_CAST = "%s 開啟了 %s" -- Needs review
-L_ANNOUNCE_FP_CLICK = "%s 正在開啟 %s... 請點擊！" -- Needs review
+L_ANNOUNCE_FP_PRE = "%s 放置了 %s"
+L_ANNOUNCE_FP_PUT = "%s 放置了 %s"
+L_ANNOUNCE_FP_CAST = "%s 開啟了 %s"
+L_ANNOUNCE_FP_CLICK = "%s 正在開啟 %s... 請點擊！"
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "沒有天賦"
@@ -47,11 +47,11 @@ L_TOOLTIP_INSPECT_OPEN = "檢查框體已打開"
 
 -- Misc
 L_MISC_UNDRESS = "無裝備"
-L_MISC_DRINKING = " 進食中."
+L_MISC_DRINKING = " 進食中..."
 L_MISC_BUY_STACK = "Alt-右鍵點擊購買一疊"
-L_MISC_ONECLICK_BUYOUT = "Shift-Right-左鍵,不彈出確認窗口直接購買" -- Needs review
-L_MISC_ONECLICK_BID = "Shift-Right-左鍵,不彈出確認窗口直接競標" -- Needs review
-L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item without confirmation" -- Needs review
+L_MISC_ONECLICK_BUYOUT = "Shift+Right+左鍵,不彈出確認窗口直接購買"
+L_MISC_ONECLICK_BID = "Shift+Right+左鍵,不彈出確認窗口直接競標"
+L_MISC_ONECLICK_CANCEL = "Shift+Right+左鍵,不彈出確認窗口直接取消選擇的物品"
 L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
 L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"
@@ -74,7 +74,7 @@ L_TOGGLE_ADDON = "插件 "
 L_TOGGLE_ADDONS = " 插件系列"
 L_TOGGLE_EXPAND = "展開 "
 L_TOGGLE_COLLAPSE = "折疊 "
-L_TOGGLE_RCLICK = "右鍵點擊以啟用或禁用 "
+L_TOGGLE_RCLICK = "右鍵點擊以啟用或禁用"
 L_TOGGLE_LCLICK = "左鍵點擊來顯示/隱藏窗口 "
 L_TOGGLE_RELOAD = " (需要重載插件)"
 L_TOGGLE_NOT_FOUND = " 未創建."
@@ -90,7 +90,7 @@ L_UF_WOTF_USED = "亡靈意志已使用: "
 
 -- Map
 L_MAP_CURSOR = "鼠標: "
-L_MAP_BOUNDS = "超出範圍!"
+L_MAP_BOUNDS = "超出範圍"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日曆"
@@ -131,7 +131,7 @@ L_CHAT_COME_ONLINE_COLOR = "|cff298F00上線了|r !"
 L_CHAT_GONE_OFFLINE_COLOR = "|cffff0000離線了|r !"
 
 -- Errors frame
-L_ERRORFRAME_L = "點擊查看錯誤."
+L_ERRORFRAME_L = "點擊查看錯誤"
 
 -- Bags
 L_BAG_BANK = "銀行"
@@ -156,8 +156,8 @@ L_BAG_RIGHT_CLICK_SEARCH = "點擊右鍵以搜尋物品"
 -- Grab mail
 L_MAIL_STOPPED = "無法拾取, 背囊已滿."
 L_MAIL_UNIQUE = "中止,在背包或銀行發現重複的唯一物品."
-L_MAIL_COMPLETE = "完成."
-L_MAIL_NEED = "需要一個信箱."
+L_MAIL_COMPLETE = "完成"
+L_MAIL_NEED = "需要一個信箱"
 L_MAIL_MESSAGES = "新郵件"
 
 -- Loot
@@ -167,15 +167,15 @@ L_LOOT_FISH = "釣魚拾取"
 L_LOOT_MONSTER = ">> 撿取自 "
 L_LOOT_CHEST = ">> 撿取自寶箱"
 L_LOOT_ANNOUNCE = "向頻道通告"
-L_LOOT_TO_RAID = "  團隊"
-L_LOOT_TO_PARTY = "  隊伍"
-L_LOOT_TO_GUILD = "  公會"
-L_LOOT_TO_SAY = "  說"
+L_LOOT_TO_RAID = " 團隊"
+L_LOOT_TO_PARTY = " 隊伍"
+L_LOOT_TO_GUILD = " 公會"
+L_LOOT_TO_SAY = " 說"
 
 -- LitePanels AFK module
-L_PANELS_AFK = "你處于暫離狀態!"
-L_PANELS_AFK_RCLICK = "右鍵點擊隱藏."
-L_PANELS_AFK_LCLICK = "左鍵點擊脫離暫離狀態."
+L_PANELS_AFK = "你處于暫離狀態"
+L_PANELS_AFK_RCLICK = "右鍵點擊隱藏"
+L_PANELS_AFK_LCLICK = "左鍵點擊脫離暫離狀態"
 
 -- Cooldowns
 L_COOLDOWNS = "CD: "
@@ -185,8 +185,8 @@ L_INVITE_ENABLE = "自動邀請功能已啟用: "
 L_INVITE_DISABLE = "自動邀請功能已關閉"
 
 -- Bind key
-L_BIND_SAVED = "所有快捷鍵設置被保存."
-L_BIND_DISCARD = "所有新的快捷鍵設置被取消."
+L_BIND_SAVED = "所有快捷鍵設置被保存"
+L_BIND_DISCARD = "所有新的快捷鍵設置被取消"
 L_BIND_INSTRUCT = "將滑鼠懸停至任意快捷欄進行綁定. 按ESC或者右鍵點擊以清除當前快捷欄的按鍵綁定."
 L_BIND_CLEARED = "已經清除所有的快捷鍵設置"
 L_BIND_BINDING = "綁定"
@@ -245,19 +245,19 @@ L_DATATEXT_VICTORY_POINTS = "勝利點數:"
 L_DATATEXT_CARTS_CONTROLLED = "車輛控制:"
 
 -- Info text
-L_INFO_ERRORS = "目前沒有錯誤."
+L_INFO_ERRORS = "目前沒有錯誤"
 L_INFO_INVITE = "接受邀請: "
 L_INFO_DUEL = "拒絕決鬥請求: "
 L_INFO_PET_DUEL = "拒絕寵物對戰請求: "
-L_INFO_DISBAND = "解散隊伍..."
-L_INFO_SETTINGS_DBM = "鍵入 /settings dbm, 載入 DBM 的設定."
-L_INFO_SETTINGS_DXE = "鍵入 /settings dxe, 載入 DXE 的設定."
-L_INFO_SETTINGS_MSBT = "鍵入 /settings msbt, 載入 MSBT 的設定."
-L_INFO_SETTINGS_SKADA = "鍵入 /settings skada, 載入 Skada 的設定."
-L_INFO_SETTINGS_ALL = "鍵入 /settings all, 載入所有UI設定."
-L_INFO_NOT_INSTALLED = " 沒有安裝."
-L_INFO_SKIN_DISABLED1 = "介面樣式啟用 "
-L_INFO_SKIN_DISABLED2 = " 已禁用."
+L_INFO_DISBAND = "解散隊伍"
+L_INFO_SETTINGS_DBM = "鍵入 /settings dbm, 載入 DBM 的設定"
+L_INFO_SETTINGS_DXE = "鍵入 /settings dxe, 載入 DXE 的設定"
+L_INFO_SETTINGS_MSBT = "鍵入 /settings msbt, 載入 MSBT 的設定"
+L_INFO_SETTINGS_SKADA = "鍵入 /settings skada, 載入 Skada 的設定"
+L_INFO_SETTINGS_ALL = "鍵入 /settings all, 載入所有UI設定"
+L_INFO_NOT_INSTALLED = " 沒有安裝"
+L_INFO_SKIN_DISABLED1 = "介面樣式啟用"
+L_INFO_SKIN_DISABLED2 = " 已禁用"
 
 -- Popups
 L_POPUP_INSTALLUI = "該角色首次使用ShestakUI.你必須重新加載UI來配置."
@@ -266,17 +266,17 @@ L_POPUP_RESETSTATS = "你確定要重置本次遊戲時間和金幣收益統計�
 L_POPUP_SWITCH_RAID = "多個團隊樣式被加載,請選擇一個樣式."
 L_POPUP_DISBAND_RAID = "你確定要解散團隊?"
 L_POPUP_DISABLEUI = "ShestakUI並不支援此解析度, 你想要停用ShestakUI嗎? (若果您想要嘗試其他解析度, 請按取消)"
-L_POPUP_SETTINGS_ALL = "應用所有的UI設置? (DBM/DXE, Skada and MSBT)"
+L_POPUP_SETTINGS_ALL = "應用所有的UI設置(DBM/DXE, Skada and MSBT)?"
 L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素。"
 L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素。"
 L_POPUP_SETTINGS_BW = "需要改變BigWigs描點及風格化元素。"
 L_POPUP_ARMORY = "查看英雄榜"
-L_POPUP_TALENT_FIX = "當你查看其它玩家時發生了一個錯誤使你無法更改天賦.很不幸在下個版本修復之前我們無能為力,請重新加載UI并重試."
+L_POPUP_TALENT_FIX = "當你查看其它玩家時發生了一個錯誤使你無法更改天賦.很不幸在下個版本修復之前我們無能為力,請重新加載UI并重試."-- Needs review
 
 -- Welcome message
 L_WELCOME_LINE_1 = "歡迎使用ShestakUI "
 L_WELCOME_LINE_2_1 = "輸入/cfg進行UI設置,或者訪問http://shestak.org"
-L_WELCOME_LINE_2_2 = "得到更多信息."
+L_WELCOME_LINE_2_2 = "獲取更多信息"
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "最後一擊"
@@ -309,7 +309,7 @@ L_STATS_MEMORY_USAGE = "内建插件資源耗用:"
 L_STATS_GARBAGE_COLLECTED = "垃圾資源清除"
 L_STATS_CHANGE_SORTING = "(公會)右鍵更改排列方式,SHIFT+右鍵反轉排列方式"
 L_STATS_HIDDEN = "隱藏"
-L_STATS_VIEW_NOTES = "按住ALT鍵檢視公會成員階級.註記.幹部註記"
+L_STATS_VIEW_NOTES = "按住Alt鍵檢視公會成員階級/註記/幹部註記"
 L_STATS_HR = "小时"
 L_STATS_INF = "无限"
 L_STATS_ALREADY_EXCEPTIONS = "物品已在例外名單列表"
@@ -340,14 +340,14 @@ L_STATS_REMOVED_JUNK = "移除自動販售例外名單"
 L_STATS_RESTED_XP = "休息獎勵經驗值"
 L_STATS_RC_COLLECTS_GARBAGE = "右鍵點擊清除插件垃圾資源"
 L_STATS_RC_TIME_MANAGER = "右鍵開啟時間管理器"
-L_STATS_RC_EXPERIENCE = "右鍵切換顯示經驗值.上線時間.角色資訊"
+L_STATS_RC_EXPERIENCE = "右鍵切換顯示經驗值/上線時間/角色資訊"
 L_STATS_RC_AUTO_REPAIRING = "右鍵顯示自動修裝"
 L_STATS_RC_AUTO_SELLING = "右鍵開啟自動販售"
 L_STATS_RC_TALENT = "右鍵切換天賦"
 L_STATS_SERVER_GOLD = "帳號總現金"
-L_STATS_SESSION_GAIN = "此次上線時段 所得/損失 現金"
+L_STATS_SESSION_GAIN = "此次上線時段獲得/損失金額"
 L_STATS_SESSION_XP = "此次上線時段所得經驗值"
-L_STATS_INSERTS_COORDS = "SHIFT+點擊 地名或座標可在對話視窗發佈你所在座標"
+L_STATS_INSERTS_COORDS = "Shift+點擊地名或座標可在對話視窗發佈你所在座標"
 L_STATS_EQUIPMENT_CHANGER = "左鍵或中鍵開啟裝備管理員"
 L_STATS_SORTING_BY = "排列方式："
 L_STATS_TIPS = "提示:"
@@ -362,40 +362,40 @@ L_STATS_TOOLTIP_EXPERIENCE = "未達最高等級時,提示將顯示經驗值訊�
 -- Slash commands
 L_SLASHCMD_HELP = {
 	"可用的斜杠命令:",
-	"/rl - 重載介面.",
-	"/rc - 提出準備就緒的確認.",
-	"/gm - 打開GM面板.",
-	"/dis ADDON_NAME - 禁用 插件名.",
-	"/en ADDON_NAME - 開啟 插件名.",
-	"/rd - 解散隊伍.",
-	"/toraid - 轉換為團隊或隊伍.",
-	"/teleport - 傳出隨機副本的命令.",
-	"/spec - 切換天賦.",
-	"/heal - 載入治療模式介面.",
-	"/dps - 載入傷害輸出模式介面.",
-	"/frame - 在聊天窗口輸出框架名稱.",
-	"/farmmode - 打開/關閉 小地圖採集模式.",
-	"/moveui - 解鎖/鎖定 介面內所有移動的框體.",
-	"/resetui - 重置介面設置到初始狀態.",
-	"/resetuf - 重置頭像面板到初始狀態.",
-	"/resetconfig - 重置已修改的設置.",
-	"/resetstats - 重置人物屬性狀態面板.",
-	"/settings ADDON_NAME - 設置 插件_名.",
-	"/ls - 載入設置.",
-	"/bags - 背包選項.",
-	"/xct - 戰鬥信息選項.",
-	"/raidcd - 團隊技能冷卻監視條選項.",
-	"/enemycd - 敵對技能冷卻監視選項.",
-	"/pulsecd - 冷卻提醒選項.",
-	"/threat - 仇恨條選項.",
-	"/tt - 密語當前所選定的目標.",
-	"/ainv - 打開/關閉 自動接受公會+好友 組隊邀請.",
-	"/testuf - 測試頭像框體位置.",
-	"/cfg - 打開介面設置面板.",
+	"/rl - 重載介面",
+	"/rc - 提出準備就緒的確認",
+	"/gm - 打開GM面板",
+	"/dis ADDON_NAME - 禁用插件",
+	"/en ADDON_NAME - 開啟插件",
+	"/rd - 解散隊伍",
+	"/toraid - 轉換為團隊或隊伍",
+	"/teleport - 傳出隨機副本的命令",
+	"/spec - 切換天賦",
+	"/heal - 載入治療模式介面",
+	"/dps - 載入傷害輸出模式介面",
+	"/frame - 在聊天窗口輸出框架名稱",
+	"/farmmode - 打開/關閉 小地圖採集模式",
+	"/moveui - 解鎖/鎖定 介面內所有移動的框體",
+	"/resetui - 重置介面設置到初始狀態",
+	"/resetuf - 重置頭像面板到初始狀態",
+	"/resetconfig - 重置已修改的設置",
+	"/resetstats - 重置人物屬性狀態面板",
+	"/settings ADDON_NAME - 設置插件",
+	"/ls - 載入設置",
+	"/bags - 背包選項",
+	"/xct - 戰鬥信息選項",
+	"/raidcd - 團隊技能冷卻監視條選項",
+	"/enemycd - 敵對技能冷卻監視選項",
+	"/pulsecd - 冷卻提醒選項",
+	"/threat - 仇恨條選項",
+	"/tt - 密語當前所選定的目標",
+	"/ainv - 打開/關閉 自動接受公會/好友組隊邀請",
+	"/testuf - 測試頭像框體位置",
+	"/cfg - 打開介面設置面板",
 }
 
 -- ExploreMap
-L_EXTRA_EXPLORED = "Explored: " -- Needs review
+L_EXTRA_EXPLORED = "探索: " -- Needs review
 L_EXTRA_ZONEACHID = {
 	-- http://www.wowhead.com/achievement=*
 	-- e(X)plore achievement id, (Q)uest achievement id
@@ -481,7 +481,7 @@ L_EXTRA_ZONEACHID = {
 	-- Pandaria
 	["翠玉林"]							= {X = 6351, A = 6300, H = 6534},
 	["四風峽"]							= {X = 6969, A = 6301, H = 6301},
-	--["喀撒朗蠻荒"]						= {X = 6975, A = 6535, H = 6536},
+	["喀撒朗蠻荒"]						= {X = 6975, A = 6535, H = 6536},
 	["崑萊峰"]							= {X = 6976, A = 6537, H = 6538},
 	["螳螂荒原"]							= {X = 6977, A = 6539, H = 6539},
 	["悚然荒野"]							= {X = 6978, A = 6540, H = 6540},
