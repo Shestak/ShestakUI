@@ -39,9 +39,9 @@ if T.level ~= MAX_PLAYER_LEVEL then
 end
 
 ----------------------------------------------------------------------------------------
---	Oz@Pozzo dell'Etenità Config
+--	Oz@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Oz" and T.realm == "Pozzo dell'Etenità" then
+if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["extra_position"].extra_bar = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -237, 24}
 	C["extra_bar"].enable = true
 	C["extra_bar"].mouseover = true
