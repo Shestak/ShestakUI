@@ -35,7 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "Colora ricette/cavalcature/mascottes possedute"
 L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo click."
 L_GUI_MISC_SUM_BUYOUTS = "Somma assieme tutte le aste correnti"
 L_GUI_MISC_CLICK_CAST = "Scorciatoie da mouse (Click2Cast)"
-L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
+L_GUI_MISC_MOVE_BLIZZARD = "Muovi alcuni riquadri dell'interfaccia Blizzard"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -51,8 +51,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Annuncia il conto alla rovescia di avvio i
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Annuncia l'uso di tonici e cibo"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Annuncia automaticamente l'uso di cibi e tonici all'appello (se attivato, annuncia nel canale incursione)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Annuncia l'uso di cibi e tonici nel canale incursione"
-L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_FEASTS = "Annuncia l'uso di tripudi/calderoni/anime/robots per le riparazioni"
+L_GUI_ANNOUNCEMENTS_PORTALS = "Annuncia l'uso di un portale/Rituale d'Evocazione"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatismi"

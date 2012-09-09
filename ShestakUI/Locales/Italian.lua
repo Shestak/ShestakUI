@@ -23,15 +23,15 @@ L_ANNOUNCE_SS_THANKS = "Grazie per "
 L_ANNOUNCE_SS_RECEIVED = " ricevuto/a da "
 
 -- Pull countdown announce
-L_ANNOUNCE_PC_GO = "GO!" -- Needs review
-L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
-L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
+L_ANNOUNCE_PC_GO = "VIA!"
+L_ANNOUNCE_PC_MSG = "Avvio incontro %s in %s.."
+L_ANNOUNCE_PC_ABORTED = "Avvio incontro ANNULLATO!"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_PRE = "%s has prepared a %s." -- Needs review
-L_ANNOUNCE_FP_PUT = "%s has put down a %s." -- Needs review
-L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review
-L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!" -- Needs review
+L_ANNOUNCE_FP_PRE = "%s ha preparato un/una %s."
+L_ANNOUNCE_FP_PUT = "%s ha messo già un/una %s."
+L_ANNOUNCE_FP_CAST = "%s sta lanciando %s."
+L_ANNOUNCE_FP_CLICK = "%s sta lanciando %s. Cliccate!"
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Nessun talento"
@@ -49,9 +49,9 @@ L_TOOLTIP_INSPECT_OPEN = "Il riquadro 'Ispeziona' è aperto"
 L_MISC_UNDRESS = "Senza vestiti"
 L_MISC_DRINKING = " sta bevendo."
 L_MISC_BUY_STACK = "Alt + click per comprarne una pila"
-L_MISC_ONECLICK_BUYOUT = "Shift + right-click per comprare direttamente l'oggetto selezionato senza conferma" -- Needs review
-L_MISC_ONECLICK_BID = "Shift + right-click per fare una puntata sull'oggetto selezionato senza conferma" -- Needs review
-L_MISC_ONECLICK_CANCEL = "Shift + right-click to cancel on the selected item without confirmation" -- Needs review
+L_MISC_ONECLICK_BUYOUT = "Shift + click sul destro per comprare direttamente l'oggetto selezionato senza conferma"
+L_MISC_ONECLICK_BID = "Shift + click sul destro per fare una puntata sull'oggetto selezionato senza conferma"
+L_MISC_ONECLICK_CANCEL = "Shift + click sul destro per cancellare l'oggetto selezionato senza conferma"
 L_MISC_UI_OUTDATED = "La tua versione della ShestakUI non è aggiornata: puoi scaricare la nuova versione da www.shestak.org."
 L_MISC_HEADER_MARK = "Marchi d'incursione al passaggio del mouse"
 L_MISC_BINDER_OPEN = "Assegnazione pulsanti mouse"
