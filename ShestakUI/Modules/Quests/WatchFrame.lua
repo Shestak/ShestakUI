@@ -82,35 +82,30 @@ end)
 ----------------------------------------------------------------------------------------
 --	Skin item buttons
 ----------------------------------------------------------------------------------------
-hooksecurefunc("SetItemButtonTexture", function(button, texture)
-	if button:GetName():match("WatchFrameItem%d+") and not button.skinned and not InCombatLockdown() then
-		local icon = _G[button:GetName().."IconTexture"]
-		local border = _G[button:GetName().."NormalTexture"]
-		local count = _G[button:GetName().."Count"]
-		local hotkey = _G[button:GetName().."HotKey"]
+hooksecurefunc("WatchFrameItem_UpdateCooldown", function(self)
+	if not self.skinned and not InCombatLockdown() then
+		local icon = _G[self:GetName().."IconTexture"]
+		local border = _G[self:GetName().."NormalTexture"]
+		local count = _G[self:GetName().."Count"]
+		local hotkey = _G[self:GetName().."HotKey"]
 
-		button:Size(C.actionbar.button_size)
-		button:SetTemplate("Default")
+		self:Size(C.actionbar.button_size)
+		self:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		icon:SetPoint("TOPLEFT", button, 2, -2)
-		icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		icon:SetPoint("TOPLEFT", self, 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", self, -2, 2)
 
 		count:ClearAllPoints()
 		count:Point("BOTTOMRIGHT", 0, 2)
 		count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 		count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 
-		hotkey:SetText("")
-		hotkey:Kill()
-
-		border:ClearAllPoints()
-		border:SetAllPoints()
 		border:SetTexture(nil)
 
-		button:StyleButton()
+		self:StyleButton()
 
-		button.skinned = true
+		self.skinned = true
 	end
 end)
 
