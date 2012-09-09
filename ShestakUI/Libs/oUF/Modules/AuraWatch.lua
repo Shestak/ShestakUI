@@ -7,13 +7,16 @@ if C.unitframe.enable ~= true or C.raidframe.plugins_aura_watch ~= true then ret
 local _, ns = ...
 local oUF = ns.oUF
 
-local UnitBuff, UnitDebuff, UnitGUID = UnitBuff, UnitDebuff, UnitGUID
 local GUIDs = {}
 
 local PLAYER_UNITS = {
 	player = true,
 	vehicle = true,
 	pet = true,
+}
+
+local blackList = {
+	[65148] = true,	-- Sacred Shield Proc
 }
 
 local setupGUID
@@ -78,7 +81,7 @@ local function Update(frame, event, unit)
 	if frame.unit ~= unit then return end
 	local watch = frame.AuraWatch
 	local index, icons = 1, watch.watched
-	local _, name, texture, count, duration, remaining, caster, key, icon, spellid
+	local _, name, texture, count, duration, remaining, caster, key, icon, spellID
 	local filter = "HELPFUL"
 	local guid = UnitGUID(unit)
 	if not guid then return end
@@ -89,7 +92,7 @@ local function Update(frame, event, unit)
 	end
 
 	while true do
-		name, _, texture, count, _, duration, remaining, caster, _, _, spellid = UnitAura(unit, index, filter)
+		name, _, texture, count, _, duration, remaining, caster, _, _, spellID = UnitAura(unit, index, filter)
 		if not name then
 			if filter == "HELPFUL" then
 				filter = "HARMFUL"
@@ -104,7 +107,7 @@ local function Update(frame, event, unit)
 				key = name..texture
 			end
 			icon = icons[key]
-			if icon and (icon.anyUnit or (caster and icon.fromUnits and icon.fromUnits[caster])) then
+			if icon and not blackList[spellID] and (icon.anyUnit or (caster and icon.fromUnits and icon.fromUnits[caster])) then
 				resetIcon(icon, watch, count, duration, remaining)
 				GUIDs[guid][key] = true
 				found[key] = true
