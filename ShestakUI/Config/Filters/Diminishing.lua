@@ -72,6 +72,7 @@ T.DiminishingSpells = function()
 		-- Control Stuns
 		[108194] = {"ctrlstun"},	-- Asphyxiate
 		[47481] = {"ctrlstun"},		-- Gnaw (Ghoul)
+		[91797] = {"ctrlstun"},		-- Monstrous Blow (Pet - mutant)
 		[115001] = {"ctrlstun"},	-- Remorseless Winter
 		[22570] = {"ctrlstun"},		-- Maim
 		[9005] = {"ctrlstun"},		-- Pounce
@@ -104,7 +105,6 @@ T.DiminishingSpells = function()
 		[118000] = {"rndstun"},		-- Dragon Roar
 
 		-- Roots
-		[50041] = {"ctrlroot"},		-- Chilblains
 		[339] = {"ctrlroot"},		-- Entangling Roots
 		[19975] = {"ctrlroot"},		-- Nature's Grasp
 		[50245] = {"ctrlroot"},		-- Pin (Crab)
