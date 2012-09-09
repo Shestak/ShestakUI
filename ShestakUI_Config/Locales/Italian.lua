@@ -26,7 +26,7 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Riquadro veicolo al passaggio del mouse"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Pulsante automatico missione/oggetto"
 L_GUI_MISC_RAID_TOOLS = "Strumenti per le incursioni"
 L_GUI_MISC_PROFESSION_TABS = "Visualizza la linguetta delle professioni sul riquadro abilità di commercio/mercante"
-L_GUI_MISC_PROFESSION_DATABASE = "Professions Database on Professions frame" -- Needs review
+L_GUI_MISC_PROFESSION_DATABASE = "Database delle Professioni sul riquadro Professioni"
 L_GUI_MISC_DUNGEON_TABS = "Linguette PvA/PvP sui relativi riquadri"
 L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei bosses durante i Campi di Battaglia"
 L_GUI_MISC_ITEM_LEVEL = "Livello oggetto sugli scomparti della schermata Personaggio"
@@ -35,7 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "Colora ricette/cavalcature/mascottes possedute"
 L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo click."
 L_GUI_MISC_SUM_BUYOUTS = "Somma assieme tutte le aste correnti"
 L_GUI_MISC_CLICK_CAST = "Scorciatoie da mouse (Click2Cast)"
-L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
+L_GUI_MISC_MOVE_BLIZZARD = "Muovi alcuni riquadri dell'interfaccia Blizzard"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -50,8 +50,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Annuncia il conto alla rovescia di avvio i
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Annuncia l'uso di tonici e cibo"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Annuncia automaticamente l'uso di cibi e tonici all'appello (se attivato, annuncia nel canale incursione)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Annuncia l'uso di cibi e tonici nel canale incursione"
-L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_FEASTS = "Annuncia l'uso di tripudi/calderoni/anime/robots per le riparazioni"
+L_GUI_ANNOUNCEMENTS_PORTALS = "Annuncia l'uso di un portale/Rituale d'Evocazione"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatismi"
@@ -66,7 +66,7 @@ L_GUI_AUTOMATION_SKIP_CINEMATIC = "'Auto-salta' i filmati"
 L_GUI_AUTOMATION_AUTO_ROLE = "'Auto-imposta' il tuo ruolo"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "'Auto-cancella' alcuni benefici"
 L_GUI_AUTOMATION_TAB_BINDER = "Usando il tasto TAB, consente di prendere come bersaglio soltanto nemici controllati da altri giocatori (se presenti)"
-L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
+L_GUI_AUTOMATION_LOGGING_COMBAT = "In instances da incursione, 'auto-attiva' la registrazione del Registro di combattimento in un file di testo"
 
 -- Skins options
 L_GUI_SKINS = "Restyling"
@@ -86,7 +86,7 @@ L_GUI_SKINS_FLYOUT_BUTTON = "Attiva il restyling di FlyoutButtonCustom"
 L_GUI_SKINS_NUG_RUNNING = "Attiva il restyling di NugRunning"
 L_GUI_SKINS_OVALE = "Attiva il restyling di OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Attiva il restyling di Clique"
-L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
+L_GUI_SKINS_ACE3 = "Attiva il restyling degli elementi per le opzioni di Ace3"
 L_GUI_SKINS_PP = "Attiva il restyling di PallyPower"
 L_GUI_SKINS_CAPPING = "Attiva il restyling di Capping"
 L_GUI_SKINS_COOL_LINE = "Attiva il restyling di CoolLine"
@@ -365,7 +365,7 @@ L_GUI_UF_SHOW_TANK_TT = "Mostra il bersaglio del bersaglio dei difensori dell'in
 L_GUI_UF_RAID_GROUP = "Numero dei gruppi nell'incursione (solo con ShestakUI_Heal)"
 L_GUI_UF_RAID_VERTICAL_GROUP = "Gruppi dell'incursione verticali (solo con ShestakUI_Heal)"
 L_GUI_UF_ICONS_LEADER = "Icona del capoincursione, dell'assistente e del responsabile del bottino sui riquadri"
-L_GUI_UF_ICONS_ROLE = "Role icon on frames" -- Needs review
+L_GUI_UF_ICONS_ROLE = "Icona del ruolo sui riquadri"
 L_GUI_UF_ICONS_RAID_MARK = "Marchi d'incursione"
 L_GUI_UF_ICONS_READY_CHECK = "Icone dell'appello"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Evidenzia texture + icona delle penalità"
