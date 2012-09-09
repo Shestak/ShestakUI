@@ -125,7 +125,7 @@ local function Enable(self, unit)
 
 		bar:Hide()
 		if bar:IsObjectType("StatusBar") and not bar:GetStatusBarTexture() then
-			bar:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
+			bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
 		end
 
 		return true

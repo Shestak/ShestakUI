@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.misc.profession_database ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -26,6 +26,7 @@ local function DropDown_OnClick(self)
 	local spellId = self.arg1
 	local guid = UnitGUID("player"):sub(4)
 	local _, template = GetSpellLink(spellId)
+	if type(template) ~= "string" or template:len() == 0 then return end
 	local chars = template:sub(select(2, template:find(guid)), template:find("|h")):len() - 3
 	local maxed = type(PROFESSION_RANKS) == "table" and select(2, next(PROFESSION_RANKS[#PROFESSION_RANKS])) or 0
 	local suffix = ""
@@ -67,7 +68,7 @@ UIDropDownMenu_Initialize(dropdown, DropDown_Init, "MENU")
 
 -- Shows the dropdown on said frame
 local function DropDown_Show(self)
-	ToggleDropDownMenu(1, nil, dropdown, self, 0, 0)
+	ToggleDropDownMenu(nil, nil, dropdown, self, 0, 0)
 end
 
 -- Create button in SpellBook
@@ -78,8 +79,8 @@ if C.skins.blizzard_frames == true then
 else
 	button:SetPoint("TOPRIGHT", button:GetParent(), "TOPRIGHT", -26, -3)
 end
-button:SetScript("OnClick", DropDown_Show)
-button:RegisterForClicks("LeftButtonUp")
 button:SetNormalTexture("Interface\\GossipFrame\\DailyActiveQuestIcon")
 button:SetPushedTexture("Interface\\GossipFrame\\DailyActiveQuestIcon")
 button:SetHighlightTexture("Interface\\GossipFrame\\DailyActiveQuestIcon", "ADD")
+button:RegisterForClicks("LeftButtonUp")
+button:SetScript("OnClick", DropDown_Show)

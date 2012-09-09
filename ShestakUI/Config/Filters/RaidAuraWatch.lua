@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
@@ -10,63 +10,64 @@ if C.raidframe.plugins_aura_watch == true then
 		-- Class buffs
 		T.buffids = {
 			DRUID = {
-				{774, "TOPRIGHT", {0.8, 0.4, 0.8}},				-- Rejuvenation
-				{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},			-- Regrowth
-				{94447, "TOPLEFT", {0.4, 0.8, 0.2}},			-- Lifebloom
-				{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},			-- Wild Growth
+				{774, "TOPRIGHT", {0.8, 0.4, 0.8}},						-- Rejuvenation
+				{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},					-- Regrowth
+				{94447, "TOPLEFT", {0.4, 0.8, 0.2}},					-- Lifebloom
+				{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},					-- Wild Growth
+				{102342, "LEFT", {0.38, 0.22, 0.1}, true},				-- Ironbark
 			},
 			MONK = {
-				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},			-- Renewing Mist
-				{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}},		-- Enveloping Mist
-				{124081, "BOTTOMRIGHT", {0.7, 0.4, 0}},			-- Zen Sphere
-				{116849, "LEFT", {0.81, 0.85, 0.1}, true},		-- Life Cocoon
+				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},					-- Renewing Mist
+				{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}},				-- Enveloping Mist
+				{124081, "BOTTOMRIGHT", {0.7, 0.4, 0}},					-- Zen Sphere
+				{116849, "LEFT", {0.81, 0.85, 0.1}, true},				-- Life Cocoon
 			},
 			PALADIN = {
-				{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Beacon of Light
-				{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},			-- Sacred Shield
-				{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},		-- Eternal Flame
-				{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},		-- Hand of Protection
-				{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},	-- Hand of Freedom
-				{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},	-- Hand of Salvation
-				{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},	-- Hand of Sacrifice
-				{114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},	-- Hand of Purity
+				{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},					-- Beacon of Light
+				{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}, false, true},	-- Sacred Shield
+				{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},				-- Eternal Flame
+				{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},				-- Hand of Protection
+				{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},			-- Hand of Freedom
+				{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},			-- Hand of Salvation
+				{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},			-- Hand of Sacrifice
+				{114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},			-- Hand of Purity
 			},
 			PRIEST = {
-				{6788, "TOPRIGHT", {1, 0, 0}, true},			-- Weakened Soul
-				{33076, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},		-- Prayer of Mending
-				{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 			-- Renew
-				{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},		-- Power Word: Shield
-				{33206, "LEFT", {0.89, 0.1, 0.1}, true},		-- Pain Suppress
-				{47788, "LEFT", {0.86, 0.52, 0}, true},			-- Guardian Spirit
+				{6788, "TOPRIGHT", {1, 0, 0}, true},					-- Weakened Soul
+				{33076, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},				-- Prayer of Mending
+				{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 					-- Renew
+				{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},				-- Power Word: Shield
+				{33206, "LEFT", {0.89, 0.1, 0.1}, true},				-- Pain Suppress
+				{47788, "LEFT", {0.86, 0.52, 0}, true},					-- Guardian Spirit
 			},
 			SHAMAN = {
-				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},			-- Riptide
-				{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},		-- Earth Shield
-				{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},			-- Earthliving
+				{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},					-- Riptide
+				{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},				-- Earth Shield
+				{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},					-- Earthliving
 			},
 			DEATHKNIGHT = {
-				{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},			-- Unholy Frenzy
+				{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},					-- Unholy Frenzy
 			},
 			HUNTER = {
-				{34477, "TOPRIGHT", {0.2, 0.2, 1}},				-- Misdirection
+				{34477, "TOPRIGHT", {0.2, 0.2, 1}},						-- Misdirection
 			},
 			MAGE = {
-				{111264, "TOPRIGHT", {0.2, 0.2, 1}},			-- Ice Ward
+				{111264, "TOPRIGHT", {0.2, 0.2, 1}},					-- Ice Ward
 			},
 			ROGUE = {
-				{57933, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Tricks of the Trade
+				{57933, "TOPRIGHT", {0.89, 0.1, 0.1}},					-- Tricks of the Trade
 			},
 			WARLOCK = {
-				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},			-- Soulstone
+				{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},					-- Soulstone
 			},
 			WARRIOR = {
-				{114030, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
-				{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Intervene
+				{114030, "TOPLEFT", {0.2, 0.2, 1}},						-- Vigilance
+				{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},					-- Intervene
 			},
 			ALL = {
-				{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag, Horde
-				{23335, "LEFT", {0, 0, 1}, true},				-- Warsong flag, Alliance
-				{34976, "LEFT", {1, 0, 0}, true}, 				-- Netherstorm Flag
+				{23333, "LEFT", {1, 0, 0}, true}, 						-- Warsong flag, Horde
+				{23335, "LEFT", {0, 0, 1}, true},						-- Warsong flag, Alliance
+				{34976, "LEFT", {1, 0, 0}, true}, 						-- Netherstorm Flag
 			},
 		}
 	end
@@ -153,7 +154,7 @@ if C.raidframe.plugins_aura_watch == true then
 		-----------------------------------------------------------------
 		-- Baradin Hold
 			-- Argaloth
-			--[[SpellName(95173),	-- Consuming Darkness
+			SpellName(95173),	-- Consuming Darkness
 			-- Occu'thar
 			SpellName(96913),	-- Searing Shadows
 			-- Alizabal
@@ -226,7 +227,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(86028),	-- Cho's Blast
 			SpellName(86029),	-- Gall's Blast
 			-- Sinestra
-			SpellName(92956),	-- Wrack
+			SpellName(89421),	-- Wrack
 		-- Throne of the Four Winds
 			-- Conclave of Wind
 			-- Nezir
@@ -244,7 +245,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(93295),	-- Lightning Rod
 		-- Firelands
 			-- Beth'tilac
-			SpellName(99506),	-- Widows Kiss
+			SpellName(99506),	-- The Widow's Kiss
 			SpellName(97202),	-- Fiery Web Spin
 			SpellName(49026),	-- Fixate
 			SpellName(97079),	-- Seeping Venom
@@ -261,7 +262,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(99837),	-- Crystal Prison
 			SpellName(99937),	-- Jagged Tear
 			-- Baleroc
-			SpellName(99403),	-- Tormented
+			SpellName(99257),	-- Tormented
 			SpellName(99256),	-- Torment
 			SpellName(99252),	-- Blaze of Glory
 			SpellName(99516),	-- Countdown
@@ -270,11 +271,10 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(100210),	-- Burning Orb
 			-- Ragnaros
 			SpellName(99399),	-- Burning Wound
-			SpellName(100293),	-- Lava Wave
+			SpellName(98928),	-- Lava Wave
 			SpellName(98313),	-- Magma Blast
 			SpellName(100675),	-- Dreadflame
 			SpellName(99145),	-- Blazing Heat
-			SpellName(100249),	-- Combustion
 			SpellName(99613),	-- Molten Blast
 			-- Trash
 			SpellName(99532),	-- Melt Armor
@@ -312,9 +312,9 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(106444),	-- Impale
 			SpellName(105841),	-- Degenerative bite
 			SpellName(105445),	-- Blistering heat
-			SpellName(109603),	-- Tetanus
-			SpellName(110141),	-- Shrapnel
-			SpellName(108649),	-- Corrupting Parasite]]
+			SpellName(106730),	-- Tetanus
+			SpellName(106794),	-- Shrapnel
+			SpellName(108649),	-- Corrupting Parasite
 		-----------------------------------------------------------------
 		-- PvP
 		-----------------------------------------------------------------
@@ -339,6 +339,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(55021),	-- Improved Counterspell
 			SpellName(122),		-- Frost Nova
 			SpellName(111340),	-- Ice Ward
+			-- Monk
 			-- Paladin
 			SpellName(20066),	-- Repentance
 			SpellName(853),		-- Hammer of Justice
@@ -370,10 +371,8 @@ if C.raidframe.plugins_aura_watch == true then
 
 		T.ReverseTimer = {
 		-- Sinestra
-			--[[[92956] = true,		-- Wrack
 			[89435] = true,		-- Wrack
-			[92955] = true,		-- Wrack
-			[89421] = true,		-- Wrack]]
+			[89421] = true,		-- Wrack
 		}
 
 		ORD:RegisterDebuffs(T.debuffids)

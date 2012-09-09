@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Info text function
@@ -519,14 +519,14 @@ T.SpawnMenu = function(self)
 	if unit == "Targettarget" or unit == "focustarget" or unit == "pettarget" then return end
 
 	if _G[unit.."FrameDropDown"] then
-		ToggleDropDownMenu(1, nil, _G[unit.."FrameDropDown"], "cursor")
+		ToggleDropDownMenu(nil, nil, _G[unit.."FrameDropDown"], "cursor")
 	elseif self.unit:match("party") then
-		ToggleDropDownMenu(1, nil, _G["PartyMemberFrame"..self.id.."DropDown"], "cursor")
+		ToggleDropDownMenu(nil, nil, _G["PartyMemberFrame"..self.id.."DropDown"], "cursor")
 	else
 		FriendsDropDown.unit = self.unit
 		FriendsDropDown.id = self.id
 		FriendsDropDown.initialize = RaidFrameDropDown_Initialize
-		ToggleDropDownMenu(1, nil, FriendsDropDown, "cursor")
+		ToggleDropDownMenu(nil, nil, FriendsDropDown, "cursor")
 	end
 end
 
@@ -735,9 +735,9 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 end
 
 T.PreUpdatePower = function(power, unit)
-	local _, pType = UnitPowerType(unit)
+	local _, pToken = UnitPowerType(unit)
 
-	local color = T.oUF_colors.power[pType]
+	local color = T.oUF_colors.power[pToken]
 	if color then
 		power:SetStatusBarColor(color[1], color[2], color[3])
 	end
@@ -1436,6 +1436,7 @@ T.CreateAuraWatch = function(self, unit)
 			local icon = CreateFrame("Frame", nil, auras)
 			icon.spellID = spell[1]
 			icon.anyUnit = spell[4]
+			icon.strictMatching = spell[5]
 			icon:Width(7)
 			icon:Height(7)
 			icon:Point(spell[2], 0, 0)

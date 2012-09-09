@@ -1,7 +1,7 @@
-local T, C, L = unpack(ShestakUI)
+local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
-if T.name == "Oz" and T.realm == "Runetotem" then
+if T.name == "Oz" and T.realm == "Well of Eternity" then
 	Filger_Settings = {
 	config_mode = false,
 	max_test_icon = 5,
@@ -220,7 +220,7 @@ Filger_Spells = {
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -460,7 +460,7 @@ Filger_Spells = {
 			{spellID = 22812, filter = "CD"},
 			-- Ironbark
 			{spellID = 102342, filter = "CD"},
-			-- Mangle(Bear)
+			-- Mangle
 			{spellID = 33878, filter = "CD"},
 			-- Tiger's Fury
 			{spellID = 5217, filter = "CD"},
@@ -468,7 +468,7 @@ Filger_Spells = {
 			{spellID = 78674, filter = "CD"},
 			-- Typhoon
 			{spellID = 132469, filter = "CD"},
-			-- Solar beam
+			-- Solar Beam
 			{spellID = 78675, filter = "CD"},
 			-- Growl
 			{spellID = 6795, filter = "CD"},
@@ -490,6 +490,10 @@ Filger_Spells = {
 			{spellID = 16689, filter = "CD"},
 			-- Incarnation
 			{spellID = 106731, filter = "CD"},
+			-- Force of Nature
+			{spellID = 102693, filter = "CD"},
+			-- Ursol's Vortex
+			{spellID = 102793, filter = "CD"},
 
 			-- Racial
 			-- Shadowmeld (Night Elf)
@@ -501,7 +505,7 @@ Filger_Spells = {
 			-- Berserking (Troll)
 			{spellID = 26297, filter = "CD", absID = true},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -516,7 +520,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
 		},
 	},
 	["HUNTER"] = {
@@ -733,7 +737,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -843,6 +847,8 @@ Filger_Spells = {
 			{spellID = 44457, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Nether Tempest
 			{spellID = 114923, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frost Bomb
+			{spellID = 112948, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pyroblast
 			{spellID = 11366, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Combustion
@@ -882,60 +888,60 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Frostjaw
+			{spellID = 102051, filter = "CD"},
 			-- Counterspell
 			{spellID = 2139, filter = "CD"},
 			-- Blink
 			{spellID = 1953, filter = "CD"},
-			-- Frost Nova
-			{spellID = 11831, filter = "CD"},
-			-- Ice Barrier
-			{spellID = 11426, filter = "CD"},
-			-- Frostjaw
-			{spellID = 102051, filter = "CD"},
-			-- Deep Freeze
-			{spellID = 44572, filter = "CD"},
-			-- Presence of Mind
-			{spellID = 12043, filter = "CD"},
-			-- Arcane Power
-			{spellID = 12042, filter = "CD"},
 			-- Dragon's Breath
 			{spellID = 31661, filter = "CD"},
-			-- Cone of Cold
-			{spellID = 120, filter = "CD"},
-			-- Cold Snap
-			{spellID = 11958, filter = "CD"},
-			-- Ice Block
-			{spellID = 45438, filter = "CD"},
-			-- Evocation
-			{spellID = 12051, filter = "CD"},
-			-- Icy Veins
-			{spellID = 12472, filter = "CD"},
-			-- Fire Blast
-			{spellID = 2136, filter = "CD"},
-			-- Mirror Image
-			{spellID = 55342, filter = "CD"},
+			-- Deep Freeze
+			{spellID = 44572, filter = "CD"},
 			-- Ring of Frost
 			{spellID = 113724, filter = "CD"},
+			-- Ice Ward
+			{spellID = 111264, filter = "CD"},
+			-- Frost Nova
+			{spellID = 122, filter = "CD"},
+			-- Ice Barrier
+			{spellID = 11426, filter = "CD"},
+			-- Temporal Shield
+			{spellID = 115610, filter = "CD"},
+			-- Incanter's Ward
+			{spellID = 1463, filter = "CD"},
+			-- Fire Blast
+			{spellID = 2136, filter = "CD"},
+			-- Frost Bomb
+			{spellID = 112948, filter = "CD"},
+			-- Flamestrike
+			{spellID = 2120, filter = "CD"},
+			-- Cone of Cold
+			{spellID = 120, filter = "CD"},
 			-- Freeze (Pet)
 			{spellID = 33395, filter = "CD"},
 			-- Combustion
 			{spellID = 11129, filter = "CD"},
-			-- Incanter's Ward
-			{spellID = 1463, filter = "CD"},
-			-- Invisibility
-			{spellID = 66, filter = "CD"},
-			-- Temporal Shield
-			{spellID = 115610, filter = "CD"},
-			-- Ice Ward
-			{spellID = 111264, filter = "CD"},
-			-- Ice Floes
-			{spellID = 108839, filter = "CD"},
-			-- Frost Bomb
-			{spellID = 112948, filter = "CD"},
 			-- Frozen Orb
 			{spellID = 84714, filter = "CD"},
-			-- Flamestrike
-			{spellID = 2120, filter = "CD"},
+			-- Ice Floes
+			{spellID = 108839, filter = "CD"},
+			-- Arcane Power
+			{spellID = 12042, filter = "CD"},
+			-- Presence of Mind
+			{spellID = 12043, filter = "CD"},
+			-- Evocation
+			{spellID = 12051, filter = "CD"},
+			-- Icy Veins
+			{spellID = 12472, filter = "CD"},
+			-- Cold Snap
+			{spellID = 11958, filter = "CD"},
+			-- Mirror Image
+			{spellID = 55342, filter = "CD"},
+			-- Ice Block
+			{spellID = 45438, filter = "CD"},
+			-- Invisibility
+			{spellID = 66, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -965,7 +971,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -977,12 +983,10 @@ Filger_Spells = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Cauterize
-			{spellID = 87023, filter = "ICD", trigger = "DEBUFF", duration = 120},
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
 		},
 	},
 	["MONK"] = {
@@ -1160,7 +1164,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1321,54 +1325,54 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Cleanse
+			{spellID = 4987, filter = "CD"},
 			-- Rebuke
 			{spellID = 96231, filter = "CD"},
 			-- Hammer of Justice
 			{spellID = 853, filter = "CD"},
 			-- Judgement
 			{spellID = 20271, filter = "CD"},
-			-- Exorcism
-			{spellID = 879, filter = "CD"},
-			-- Hand of Freedom
-			{spellID = 1044, filter = "CD"},
-			-- Avenger's Shield
-			{spellID = 31935, filter = "CD"},
-			-- Holy Wrath
-			{spellID = 119072, filter = "CD"},
 			-- Consecration
 			{spellID = 26573, filter = "CD"},
+			-- Holy Wrath
+			{spellID = 119072, filter = "CD"},
+			-- Avenger's Shield
+			{spellID = 31935, filter = "CD"},
+			-- Exorcism
+			{spellID = 879, filter = "CD"},
+			-- Holy Prism
+			{spellID = 114165, filter = "CD"},
+			-- Hand of Freedom
+			{spellID = 1044, filter = "CD"},
+			-- Hand of Purity
+			{spellID = 114039, filter = "CD"},
+			-- Speed of Light
+			{spellID = 85499, filter = "CD"},
 			-- Divine Protection
 			{spellID = 498, filter = "CD"},
-			-- Avenging Wrath
-			{spellID = 31884, filter = "CD"},
-			-- Divine Plea
-			{spellID = 54428, filter = "CD"},
-			-- Hand of Sacrifice
-			{spellID = 6940, filter = "CD"},
-			-- Hand of Salvation
-			{spellID = 1038, filter = "CD"},
-			-- Devotion Aura
-			{spellID = 31821, filter = "CD"},
-			-- Holy Avenger
-			{spellID = 105809, filter = "CD"},
-			-- Ardent Defender
-			{spellID = 31850, filter = "CD"},
-			-- Hand of Protection
-			{spellID = 1022, filter = "CD"},
 			-- Execution Sentence
 			{spellID = 114157, filter = "CD"},
 			-- Light's Hammer
 			{spellID = 114158, filter = "CD"},
-			-- Holy Prism
-			{spellID = 114165, filter = "CD"},
-			-- Hand of Purity
-			{spellID = 114039, filter = "CD"},
 			-- Blinding Light
 			{spellID = 115750, filter = "CD"},
-			-- Speed of Light
-			{spellID = 85499, filter = "CD"},
-			-- Cleanse
-			{spellID = 4987, filter = "CD"},
+			-- Holy Avenger
+			{spellID = 105809, filter = "CD"},
+			-- Devotion Aura
+			{spellID = 31821, filter = "CD"},
+			-- Hand of Sacrifice
+			{spellID = 6940, filter = "CD"},
+			-- Divine Plea
+			{spellID = 54428, filter = "CD"},
+			-- Avenging Wrath
+			{spellID = 31884, filter = "CD"},
+			-- Ardent Defender
+			{spellID = 31850, filter = "CD"},
+			-- Hand of Salvation
+			{spellID = 1038, filter = "CD"},
+			-- Hand of Protection
+			{spellID = 1022, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -1382,7 +1386,7 @@ Filger_Spells = {
 			-- Arcane Torrent (Blood Elf)
 			{spellID = 69179, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1416,24 +1420,20 @@ Filger_Spells = {
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fear Ward
 			{spellID = 6346, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Archangel
+			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Borrowed Time
 			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Fire
 			--OLD{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Will
 			--OLD{spellID = 73413, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Archangel
-			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Archangel
-			{spellID = 87153, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Inner Focus
 			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Prayer of Mending
 			{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fade
 			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Holy Walk
-			{spellID = 96219, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1495,7 +1495,7 @@ Filger_Spells = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 		},
-		{
+		--[[{
 			Name = "T_DEBUFF_ICON",
 			Direction = "RIGHT",
 			Mode = "ICON",
@@ -1504,9 +1504,7 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.target_debuff_icon)},
 
-			-- Mind spike
-			{spellID = 87178, unitID = "target", caster = "player", filter = "DEBUFF"},
-		},
+		},]]
 		{
 			Name = "T_DE/BUFF_BAR",
 			Direction = "UP",
@@ -1522,7 +1520,7 @@ Filger_Spells = {
 			{spellID = 139, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Prayer of Mending
 			{spellID = 41635, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Guardian spirit
+			-- Guardian Spirit
 			{spellID = 47788, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Pain Suppression
 			{spellID = 33206, unitID = "target", caster = "player", filter = "BUFF"},
@@ -1546,7 +1544,7 @@ Filger_Spells = {
 			BarWidth = 189,
 			Position = {unpack(Filger_Settings.pve_cc)},
 
-			-- Shackle undead
+			-- Shackle Undead
 			{spellID = 9484, unitID = "focus", caster = "player", filter = "DEBUFF"},
 			-- Psychic Scream
 			{spellID = 8122, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -1638,7 +1636,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1653,7 +1651,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
 		},
 	},
 	["ROGUE"] = {
@@ -1678,19 +1676,19 @@ Filger_Spells = {
 			{spellID = 58426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Slice and Dice
 			{spellID = 5171, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow dance
+			-- Shadow Dance
 			{spellID = 51713, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recuperate
 			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadowstep
-			{spellID = 36563, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Master of subtlety
+			-- Feint
+			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Master of Subtlety
 			{spellID = 31665, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cloak of Shadows
 			{spellID = 31224, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vanish
 			{spellID = 1856, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cheating death
+			-- Cheating Death
 			{spellID = 45182, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blade Flurry
 			{spellID = 13877, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1715,6 +1713,8 @@ Filger_Spells = {
 			{spellID = 74001, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combat Insight
 			{spellID = 74002, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blindside
+			{spellID = 121153, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -1756,8 +1756,8 @@ Filger_Spells = {
 			{spellID = 703, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Gouge
 			{spellID = 1776, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Expose Armor
-			{spellID = 8647, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Weakened Armor
+			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Dismantle
 			{spellID = 51722, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Revealing Strike
@@ -1765,9 +1765,7 @@ Filger_Spells = {
 			-- Vendetta
 			{spellID = 79140, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hemorrhage
-			{spellID = 16511, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
-			-- Glyph of Hemorrhage
-			{spellID = 89775, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			{spellID = 16511, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Find Weakness
 			{spellID = 91021, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Deadly Poison
@@ -1809,7 +1807,7 @@ Filger_Spells = {
 			{spellID = 1766, filter = "CD"},
 			-- Gouge
 			{spellID = 1776, filter = "CD"},
-			-- Kidney shot
+			-- Kidney Shot
 			{spellID = 408, filter = "CD"},
 			-- Killing Spree
 			{spellID = 51690, filter = "CD"},
@@ -1819,7 +1817,7 @@ Filger_Spells = {
 			{spellID = 1784, filter = "CD"},
 			-- Vanish
 			{spellID = 1856, filter = "CD"},
-			-- Shadow dance
+			-- Shadow Dance
 			{spellID = 51713, filter = "CD"},
 			-- Redirect
 			{spellID = 73981, filter = "CD"},
@@ -1827,8 +1825,6 @@ Filger_Spells = {
 			{spellID = 74001, filter = "CD"},
 			-- Vendetta
 			{spellID = 79140, filter = "CD"},
-			-- Feint
-			{spellID = 1966, filter = "CD"},
 			-- Premiditation
 			{spellID = 14183, filter = "CD"},
 			-- Sprint
@@ -1862,7 +1858,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1888,15 +1884,15 @@ Filger_Spells = {
 
 			-- Maelstorm Weapon
 			{spellID = 53817, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shamanistic rage
-			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightning Shield
-			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Elemental mastery
+			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF", spec = 1},
+			-- Shamanistic Rage
+			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elemental Mastery
 			{spellID = 16166, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ascendance
-			{spellID = 114050, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spiritwalker's grace
+			{spellID = 114049, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spiritwalker's Grace
 			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Flame
 			{spellID = 73683, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1986,7 +1982,7 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.target_debuff_icon)},
 
-			-- Storm Strike
+			-- Stormstrike
 			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Shock
 			{spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1996,8 +1992,6 @@ Filger_Spells = {
 			{spellID = 77661, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Earthgrab
 			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Bind Elemental
-			{spellID = 76780, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -2030,7 +2024,7 @@ Filger_Spells = {
 
 			-- Hex
 			{spellID = 51514, unitID = "focus", caster = "player", filter = "DEBUFF"},
-			-- Bind elemental
+			-- Bind Elemental
 			{spellID = 76780, unitID = "focus", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -2043,40 +2037,42 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
-			-- Earth Shock
-			{spellID = 8042, filter = "CD"},
-			-- Riptide
-			{spellID = 61295, filter = "CD"},
-			-- Thunderstorm
-			{spellID = 51490, filter = "CD"},
-			-- Lava Burst
-			{spellID = 51505, filter = "CD"},
-			-- Lava Lash
-			{spellID = 60103, filter = "CD"},
 			-- Wind Shear
 			{spellID = 57994, filter = "CD"},
-			-- Earthbind Totem
-			{spellID = 2484, filter = "CD"},
-			-- Tremor totem
-			{spellID = 8143, filter = "CD"},
-			-- Feral Spirit
-			{spellID = 51533, filter = "CD"},
-			-- Shamanistic Rage
-			{spellID = 30823, filter = "CD"},
+			-- Hex
+			{spellID = 51514, filter = "CD"},
+			-- Earth Shock
+			{spellID = 8042, filter = "CD"},
+			-- Lava Burst
+			{spellID = 51505, filter = "CD"},
+			-- Riptide
+			{spellID = 61295, filter = "CD"},
 			-- Stormstrike
 			{spellID = 17364, filter = "CD"},
+			-- Lava Lash
+			{spellID = 60103, filter = "CD"},
+			-- Healing Rain
+			{spellID = 73920, filter = "CD"},
 			-- Elemental Blast
 			{spellID = 117014, filter = "CD"},
-			-- Spiritwalker's grace
-			{spellID = 79206, filter = "CD"},
-			-- Healing rain
-			{spellID = 73920, filter = "CD"},
-			-- Unleash weapon
+			-- Unleash Elements
 			{spellID = 73680, filter = "CD"},
+			-- Thunderstorm
+			{spellID = 51490, filter = "CD"},
+			-- Earthbind Totem
+			{spellID = 2484, filter = "CD"},
+			-- Tremor Totem
+			{spellID = 8143, filter = "CD"},
+			-- Shamanistic Rage
+			{spellID = 30823, filter = "CD"},
 			-- Stone Bulwark Totem
 			{spellID = 108270, filter = "CD"},
 			-- Ancestral Swiftness
 			{spellID = 16188, filter = "CD"},
+			-- Feral Spirit
+			{spellID = 51533, filter = "CD"},
+			-- Spiritwalker's Grace
+			{spellID = 79206, filter = "CD"},
 			-- Ancestral Guidance
 			{spellID = 108281, filter = "CD"},
 			-- Astral Shift
@@ -2100,7 +2096,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -2115,7 +2111,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
 		},
 	},
 	["WARLOCK"] = {
@@ -2215,7 +2211,7 @@ Filger_Spells = {
 			{spellID = 63311, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- CoE group
-			-- Master poisoner (Rogue)
+			-- Master Poisoner (Rogue)
 			{spellID = 93068, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Lightning Breath (Wind Serpent)
 			{spellID = 24844, unitID = "target", caster = "all", filter = "DEBUFF"},
@@ -2321,7 +2317,7 @@ Filger_Spells = {
 			-- Rocket Jump (Goblin)
 			{spellID = 69070, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -2336,7 +2332,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, slotID = 16, filter = "ICD", trigger = "BUFF", duration = 45},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
 		},
 	},
 	["WARRIOR"] = {
@@ -2451,7 +2447,7 @@ Filger_Spells = {
 			-- Weakened Armor
 			{spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Weakened Blows
-			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF", spec = 3},
 		},
 		{
 			Name = "COOLDOWN",
@@ -2473,30 +2469,30 @@ Filger_Spells = {
 			{spellID = 107570, filter = "CD"},
 			-- Thunder Clap
 			{spellID = 6343, filter = "CD"},
-			-- Charge
-			{spellID = 100, filter = "CD"},
-			-- Intervene
-			{spellID = 3411, filter = "CD"},
-			-- Spell Reflection
-			{spellID = 23920, filter = "CD"},
-			-- Enraged Regeneration
-			{spellID = 55694, filter = "CD"},
-			-- Colossus Smash
-			{spellID = 86346, filter = "CD"},
-			-- Commanding Shout
-			{spellID = 469, filter = "CD"},
 			-- Taunt
 			{spellID = 355, filter = "CD"},
+			-- Colossus Smash
+			{spellID = 86346, filter = "CD"},
+			-- Charge
+			{spellID = 100, filter = "CD"},
+			-- Spell Reflection
+			{spellID = 23920, filter = "CD"},
+			-- Intervene
+			{spellID = 3411, filter = "CD"},
 			-- Berserker Rage
 			{spellID = 18499, filter = "CD"},
 			-- Heroic Leap
 			{spellID = 6544, filter = "CD"},
-			-- Rallying Cry
-			{spellID = 97462, filter = "CD"},
-			-- Disarm
-			{spellID = 676, filter = "CD"},
 			-- Demoralizing Shout
 			{spellID = 1160, filter = "CD"},
+			-- Disarm
+			{spellID = 676, filter = "CD"},
+			-- Enraged Regeneration
+			{spellID = 55694, filter = "CD"},
+			-- Commanding Shout
+			{spellID = 469, filter = "CD"},
+			-- Rallying Cry
+			{spellID = 97462, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -2528,7 +2524,7 @@ Filger_Spells = {
 			-- Quaking Palm (Pandaren)
 			{spellID = 107079, filter = "CD"},
 
-			-- Other
+			-- Items
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -2712,7 +2708,7 @@ Filger_Spells = {
 			{spellID = 1513, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Scatter Shot
 			{spellID = 19503, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Wyvern sting
+			-- Wyvern Sting
 			{spellID = 19386, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
 			{spellID = 34490, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2923,10 +2919,6 @@ Filger_Spells = {
 			-- Other
 			-- Rocket Fuel Leak
 			{spellID = 94794, unitID = "player", caster = "player", filter = "DEBUFF"},
-			-- Reversed Shield
-			{spellID = 82406, unitID = "player", caster = "player", filter = "DEBUFF"},
-			-- Plasma Misfire!
-			{spellID = 94549, unitID = "player", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_BUFF",
@@ -2971,7 +2963,7 @@ Filger_Spells = {
 			{spellID = 22812, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Ironbark
 			{spellID = 102342, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Nature's grasp
+			-- Nature's Grasp
 			{spellID = 16689, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
 			{spellID = 77764, unitID = "target", caster = "all", filter = "BUFF"},
@@ -3017,7 +3009,7 @@ Filger_Spells = {
 			{spellID = 1513, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Scatter Shot
 			{spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Wyvern sting
+			-- Wyvern Sting
 			{spellID = 19386, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
 			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
@@ -3109,7 +3101,7 @@ Filger_Spells = {
 			-- Priest
 			-- Dispersion
 			{spellID = 47585, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Pain supression
+			-- Pain Suppression
 			{spellID = 33206, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Glyph of Inner Focus
 			{spellID = 96267, unitID = "target", caster = "all", filter = "BUFF"},
@@ -3168,6 +3160,8 @@ Filger_Spells = {
 
 			-- Hex
 			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Bind Elemental
+			{spellID = 76780, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Static Charge
 			{spellID = 118905, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3201,11 +3195,11 @@ Filger_Spells = {
 			-- Warrior
 			-- Spell Reflection
 			{spellID = 23920, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Shield wall
+			-- Shield Wall
 			{spellID = 871, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserker Rage
 			{spellID = 18499, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Last stand
+			-- Last Stand
 			{spellID = 12975, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Bladestorm
 			{spellID = 46924, unitID = "target", caster = "all", filter = "BUFF"},
@@ -3228,10 +3222,10 @@ Filger_Spells = {
 			{spellID = 28730, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- All
-			-- Warsong flag
+			-- Warsong Flag
 			{spellID = 23333, unitID = "target", caster = "all", filter = "BUFF"},
 			{spellID = 23335, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Netherstorm flag
+			-- Netherstorm Flag
 			{spellID = 34976, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Seaforium
 			{spellID = 52418, unitID = "target", caster = "all", filter = "BUFF"},

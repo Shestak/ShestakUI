@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.nameplate.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -299,7 +299,6 @@ end
 -- HealthBar OnShow, use this to set variables for the nameplate
 local function UpdateObjects(frame)
 	local frame = frame:GetParent()
-
 	local r, g, b = frame.hp:GetStatusBarColor()
 
 	-- Have to reposition this here so it doesnt resize after being hidden
@@ -358,7 +357,7 @@ local function UpdateObjects(frame)
 		frame.icons = CreateFrame("Frame", nil, frame)
 		frame.icons:SetPoint("BOTTOMRIGHT", frame.hp, "TOPRIGHT", 0, C.font.nameplates_font_size + 7)
 		frame.icons:SetWidth(20 + C.nameplate.width)
-		frame.icons:SetHeight(25)
+		frame.icons:SetHeight(C.nameplate.auras_size)
 		frame.icons:SetFrameLevel(frame.hp:GetFrameLevel() + 2)
 		frame:RegisterEvent("UNIT_AURA")
 		frame:HookScript("OnEvent", OnAura)

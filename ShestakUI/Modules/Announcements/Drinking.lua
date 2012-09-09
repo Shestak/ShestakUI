@@ -1,12 +1,12 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.announcements.drinking ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Announce enemy drinking in arena(by Duffed)
 ----------------------------------------------------------------------------------------
-local drinking_announce = CreateFrame("Frame")
-drinking_announce:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
-drinking_announce:SetScript("OnEvent", function(self, event, ...)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+frame:SetScript("OnEvent", function(self, event, ...)
 	if not (event == "UNIT_SPELLCAST_SUCCEEDED" and GetZonePVPInfo() == "arena") then return end
 
 	local unit, _, _, _, spellID = ...

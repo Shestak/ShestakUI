@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -16,6 +16,7 @@ local function LoadSkin()
 		"RaidFinderFrameRoleInset",
 		"ScenarioFinderFrame",
 		"LFGDungeonReadyDialog",
+		"LFGDungeonReadyStatus",
 		"LFDQueueFrameCooldownFrame"
 	}
 
@@ -28,7 +29,9 @@ local function LoadSkin()
 		"PVEFramePortrait",
 		"ScenarioFinderFrameInset",
 		"LFGDungeonReadyDialogBackground",
-		"RaidFinderQueueFrameBackground"
+		"RaidFinderQueueFrameBackground",
+		"LFGDungeonReadyDialogBottomArt",
+		"LFGDungeonReadyDialogFiligree"
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -40,7 +43,9 @@ local function LoadSkin()
 		"RaidFinderFrameFindRaidButton",
 		"ScenarioQueueFrameFindGroupButton",
 		"LFGDungeonReadyDialogLeaveQueueButton",
-		"LFGDungeonReadyDialogEnterDungeonButton"
+		"LFGDungeonReadyDialogEnterDungeonButton",
+		"LFDQueueFramePartyBackfillBackfillButton",
+		"LFDQueueFramePartyBackfillNoBackfillButton"
 	}
 
 	for i = 1, #buttons do
@@ -223,11 +228,11 @@ local function LoadSkin()
 	LFGInvitePopup:SetTemplate("Transparent")
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
 	LFGDungeonReadyDialog.SetBackdrop = T.dummy
-	LFGDungeonReadyDialog.filigree:SetAlpha(0)
-	LFGDungeonReadyDialog.bottomArt:SetAlpha(0)
 	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
 
-	--LFDQueueFrameRandomScrollFrame:Height(LFDQueueFrameRandomScrollFrame:GetHeight() + 10)
+	T.SkinCheckBox(LFDRoleCheckPopupRoleButtonTank:GetChildren())
+	T.SkinCheckBox(LFDRoleCheckPopupRoleButtonHealer:GetChildren())
+	T.SkinCheckBox(LFDRoleCheckPopupRoleButtonDPS:GetChildren())
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

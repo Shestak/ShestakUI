@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Prevent users config errors
@@ -68,6 +68,8 @@ end
 
 if IsAddOnLoaded("Quartz") or IsAddOnLoaded("AzCastBar") or IsAddOnLoaded("eCastingBar") then
 	C.unitframe.unit_castbar = false
+	C.unitframe.plugins_swing = false
+	C.unitframe.plugins_gcd = false
 end
 
 if IsAddOnLoaded("Afflicted3") or IsAddOnLoaded("InterruptBar") or IsAddOnLoaded("alEnemyCD") then
@@ -94,7 +96,7 @@ if IsAddOnLoaded("TipTacTalents") then
 	C.tooltip.talents = false
 end
 
-if IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") then
+if IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") or IsAddOnLoaded("TBag") then
 	C.bag.enable = false
 end
 
@@ -112,4 +114,14 @@ end
 
 if IsAddOnLoaded("Clique") or IsAddOnLoaded("sBinder") then
 	C.misc.click_cast = false
+end
+
+if IsAddOnLoaded("RaidSlackCheck") then
+	C.announcements.flask_food = false
+	C.announcements.feasts = false
+end
+
+if IsAddOnLoaded("PhoenixStyle") then
+	C.announcements.toy_train = false
+	C.announcements.pull_countdown = false
 end

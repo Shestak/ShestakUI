@@ -1,26 +1,37 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if T.client ~= "zhCN" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for zhCN client(Thanks to Ianchan, nanjiqq, Mania and tat2dawn for the translation)
+--	Localization for zhCN client
+--	Translation: Ianchan, Mania, Nanjiqq, Tat2dawn
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " 使用我的光束泉. "
 L_ANNOUNCE_LA_CHARGE = " 刷新)"
-L_ANNOUNCE_LA_USELESS = "尽量少地使用我的光束泉. "
-L_ANNOUNCE_LA_STOP = "你不应该使用光束泉."
+L_ANNOUNCE_LA_USELESS = " 尽量少地使用我的光束泉. "
 L_ANNOUNCE_LA_PLACED = "光束泉位置. "
-L_ANNOUNCE_LA_CHARGES = "刷新."
+L_ANNOUNCE_LA_CHARGES = " 刷新."
 
 -- Announce flasks and food
-L_ANNOUNCE_FF_NOFOOD = "No Food: " -- Needs review
-L_ANNOUNCE_FF_NOFLASK = "No Flask: " -- Needs review
-L_ANNOUNCE_FF_ALLBUFFED = "All Buffed!" -- Needs review
-L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask" -- Needs review
+L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
+L_ANNOUNCE_FF_NOFLASK = "缺少合剂: "
+L_ANNOUNCE_FF_ALLBUFFED = "已获得所有增益!"
+L_ANNOUNCE_FF_CHECK_BUTTON = "检查食物和合剂"
 
 -- Says thanks for some spells
-L_ANNOUNCE_SS_THANKS = "Thanks for " -- Needs review
-L_ANNOUNCE_SS_RECEIVED = " received from " -- Needs review
+L_ANNOUNCE_SS_THANKS = "谢谢你的 "
+L_ANNOUNCE_SS_RECEIVED = " 收到来自于 "
+
+-- Pull countdown announce
+L_ANNOUNCE_PC_GO = "GO!" -- Needs review
+L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
+L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
+
+-- Announce feasts and portals
+L_ANNOUNCE_FP_PRE = "%s 放置了 %s" -- Needs review
+L_ANNOUNCE_FP_PUT = "%s 放置了 %s" -- Needs review
+L_ANNOUNCE_FP_CAST = "%s 开启了 %s" -- Needs review
+L_ANNOUNCE_FP_CLICK = "%s 正在开启 %s... 请点击！" -- Needs review
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "没有天赋"
@@ -31,18 +42,19 @@ L_TOOLTIP_ACH_INCOMPLETE = "你的状态: 未完成"
 L_TOOLTIP_SPELL_ID = "法术ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
 L_TOOLTIP_WHO_TARGET = "以其为目标的"
-L_TOOLTIP_ITEM_COUNT = "物品数量: "
-L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
+L_TOOLTIP_ITEM_COUNT = "物品数量:"
+L_TOOLTIP_INSPECT_OPEN = "检查框体已打开" 
 
 -- Misc
 L_MISC_UNDRESS = "无装备"
 L_MISC_DRINKING = " 开始进食."
 L_MISC_BUY_STACK = "Alt-右键点击购买一叠"
-L_MISC_ONECLICK_BUYOUT = "Shift-左键,不弹出确认框体直接购买"
-L_MISC_ONECLICK_BID = "Shift-左鍵,不弹出确认框体直接竞标"
+L_MISC_ONECLICK_BUYOUT = "Shift-Right-左键,不弹出确认框体直接购买" -- Needs review
+L_MISC_ONECLICK_BID = "Shift-Right-左鍵,不弹出确认框体直接竞标" -- Needs review
+L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item without confirmation" -- Needs review
 L_MISC_UI_OUTDATED = "ShestakUI 版本已过期，请至 www.shestak.org 下载最新版"
-L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
-L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
+L_MISC_HEADER_MARK = "鼠标悬停显示团队图标"
+L_MISC_BINDER_OPEN = "鼠标绑定"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"
@@ -65,7 +77,7 @@ L_TOGGLE_COLLAPSE = "折叠 "
 L_TOGGLE_RCLICK = "右键点击以启用或禁用 "
 L_TOGGLE_LCLICK = "左键点击来显示/隐藏窗口 "
 L_TOGGLE_RELOAD = " (需要重载插件)"
-L_TOGGLE_NOT_FOUND = " not found." -- Needs review
+L_TOGGLE_NOT_FOUND = " 未创建."
 
 -- UnitFrame
 L_UF_GHOST = "灵魂"
@@ -86,16 +98,16 @@ L_MINIMAP_CALENDAR = "日历"
 -- Addons list
 L_ALOAD_RL = "重新加载UI"
 L_ALOAD_DEP = "依赖关系: "
-L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
-L_ALOAD_PROFILES = "Profiles" -- Needs review
-L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
-L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
-L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
-L_ALOAD_SET_TO = "Set To.." -- Needs review
-L_ALOAD_ADD_TO = "Add To.." -- Needs review
-L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
-L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
-L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
+L_ALOAD_OP_DEP = "可选依赖: "
+L_ALOAD_PROFILES = "配置文件"
+L_ALOAD_ENABLE_ALL = "全部启用"
+L_ALOAD_DISABLE_ALL = "全部禁用" 
+L_ALOAD_PROFILE_NAME = "配置文件名称"
+L_ALOAD_SET_TO = "发送至.."
+L_ALOAD_ADD_TO = "添加至.."
+L_ALOAD_REMOVE_FROM = "移除自.." 
+L_ALOAD_DELETE_PROFILE = "删除配置文件" 
+L_ALOAD_CONFIRM_DELETE = "确定删除该配置文件？请按住shift再次点击确认删除。" 
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -112,7 +124,7 @@ L_CHAT_RAID_WARNING = "团队警告"
 L_CHAT_BATTLEGROUND = "战场"
 L_CHAT_BATTLEGROUND_LEADER = "战场领袖"
 L_CHAT_OFFICER = "官员"
-L_CHAT_PET_BATTLE = "PB" -- Needs review
+L_CHAT_PET_BATTLE = "宠物对战"
 L_CHAT_COME_ONLINE = "上线了."
 L_CHAT_GONE_OFFLINE = "下线了."
 L_CHAT_COME_ONLINE_COLOR = "|cff298F00上线了|r !"
@@ -151,7 +163,6 @@ L_MAIL_MESSAGES = "新邮件"
 -- Loot
 L_LOOT_RANDOM = "随机拾取"
 L_LOOT_SELF = "自由拾取"
-L_LOOT_UNKNOWN = "未知"
 L_LOOT_FISH = "钓鱼拾取"
 L_LOOT_MONSTER = ">> 拾取自 "
 L_LOOT_CHEST = ">> 拾取自宝箱"
@@ -160,7 +171,6 @@ L_LOOT_TO_RAID = "  团队"
 L_LOOT_TO_PARTY = "  队伍"
 L_LOOT_TO_GUILD = "  公会"
 L_LOOT_TO_SAY = "  说"
-L_LOOT_CANNOT = "不能拾取"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "你处于暂离状态!"
@@ -189,7 +199,7 @@ L_PLANNER_DEATHKNIGHT_2 = "冰霜"
 L_PLANNER_DEATHKNIGHT_3 = "邪恶"
 L_PLANNER_DRUID_1 = "平衡"
 L_PLANNER_DRUID_2 = "野性战斗"
-L_PLANNER_DRUID_3 = "Guardian" -- need review
+L_PLANNER_DRUID_3 = "守护者"
 L_PLANNER_DRUID_4 = "恢复"
 L_PLANNER_HUNTER_1 = "野兽掌握"
 L_PLANNER_HUNTER_2 = "射击"
@@ -197,9 +207,9 @@ L_PLANNER_HUNTER_3 = "生存"
 L_PLANNER_MAGE_1 = "奥术"
 L_PLANNER_MAGE_2 = "火焰"
 L_PLANNER_MAGE_3 = "冰霜"
-L_PLANNER_MONK_1 = "Brewmaster" -- need review
-L_PLANNER_MONK_2 = "Mistweaver" -- need review
-L_PLANNER_MONK_3 = "Windwalker" -- need review
+L_PLANNER_MONK_1 = "酿酒"
+L_PLANNER_MONK_2 = "织雾"
+L_PLANNER_MONK_3 = "风行"
 L_PLANNER_PALADIN_1 = "神圣"
 L_PLANNER_PALADIN_2 = "防护"
 L_PLANNER_PALADIN_3 = "惩戒"
@@ -220,25 +230,25 @@ L_PLANNER_WARRIOR_2 = "狂怒"
 L_PLANNER_WARRIOR_3 = "防护"
 
 -- BG stats
-L_DATATEXT_BASESASSAULTED = "基地突袭:" 
-L_DATATEXT_BASESDEFENDED = "基地防御:" 
-L_DATATEXT_TOWERSASSAULTED = "哨塔突袭:" 
-L_DATATEXT_TOWERSDEFENDED = "哨塔防御:" 
-L_DATATEXT_FLAGSCAPTURED = "占领旗帜:" 
-L_DATATEXT_FLAGSRETURNED = "交还旗帜:" 
-L_DATATEXT_GRAVEYARDSASSAULTED = "墓地突袭:" 
-L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:" 
-L_DATATEXT_DEMOLISHERSDESTROYED = "石毁车摧毁:" 
+L_DATATEXT_BASESASSAULTED = "基地突袭:"
+L_DATATEXT_BASESDEFENDED = "基地防御:"
+L_DATATEXT_TOWERSASSAULTED = "哨塔突袭:"
+L_DATATEXT_TOWERSDEFENDED = "哨塔防御:"
+L_DATATEXT_FLAGSCAPTURED = "占领旗帜:"
+L_DATATEXT_FLAGSRETURNED = "交还旗帜:"
+L_DATATEXT_GRAVEYARDSASSAULTED = "墓地突袭:"
+L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:"
+L_DATATEXT_DEMOLISHERSDESTROYED = "石毁车摧毁:"
 L_DATATEXT_GATESDESTROYED = "大门摧毁:"
 L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:" -- Needs review
-L_DATATEXT_VICTORY_POINTS = "Victory Points:" -- Needs review
-L_DATATEXT_CARTS_CONTROLLED = "Carts Controlled:" -- Needs review
+L_DATATEXT_VICTORY_POINTS = "胜利点数："
+L_DATATEXT_CARTS_CONTROLLED = "车辆控制："
 
 -- Info text
 L_INFO_ERRORS = "目前没有错误."
 L_INFO_INVITE = "接受邀请: "
 L_INFO_DUEL = "拒绝决斗请求: "
-L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
+L_INFO_PET_DUEL = "拒绝宠物对战请求： "
 L_INFO_DISBAND = "解散团队..."
 L_INFO_SETTINGS_DBM = "键入 /settings dbm, 载入 DBM 的设定."
 L_INFO_SETTINGS_DXE = "键入 /settings dxe, 载入 DXE 的设定."
@@ -246,7 +256,7 @@ L_INFO_SETTINGS_MSBT = "键入 /settings msbt, 载入 MSBT 的设定."
 L_INFO_SETTINGS_SKADA = "键入 /settings skada, 载入 Skada 的设定."
 L_INFO_SETTINGS_ALL = "键入 /settings all, 载入所有UI设定."
 L_INFO_NOT_INSTALLED = " 没有安装."
-L_INFO_SKIN_DISABLED1 = "风格化皮肤 "
+L_INFO_SKIN_DISABLED1 = "介面样式启用 "
 L_INFO_SKIN_DISABLED2 = " 已禁用."
 
 -- Popups
@@ -261,6 +271,7 @@ L_POPUP_SETTINGS_DBM = "需要改变DBM描点及风格化元素."
 L_POPUP_SETTINGS_DXE = "需要改变DXE描点及风格化元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
 L_POPUP_ARMORY = "军械库"
+L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
 
 -- Welcome message
 L_WELCOME_LINE_1 = "欢迎使用ShestakUI "
@@ -395,8 +406,8 @@ L_EXTRA_ZONEACHID = {
 	["外域"]							= {X =   44, A =    0, H =    0},
 	["诺森德"]							= {X =   45, A =    0, H =    0},
 	["世界地图"]							= {X =  nil, A =    0, H =    0},
-	["Pandaria"]						= {X = 6974, A =    0, H =    0}, -- Needs review
-	-- Eastern Kingdoms
+	["潘达利亚"]							= {X = 6974, A =    0, H =    0},
+	-- Eastern Kingdoms 
 	["阿拉希高地"]						= {X =  761, A = 4896, H = 4896},
 	["荒芜之地"]							= {X =  765, A = 4900, H = 4900},
 	["诅咒之地"]							= {X =  766, A = 4909, H = 4909},
@@ -457,7 +468,7 @@ L_EXTRA_ZONEACHID = {
 	["龙骨荒野"]							= {X = 1265, A =   35, H = 1356},
 	["灰熊丘陵"]							= {X = 1266, A =   37, H = 1357},
 	["嚎风峡湾"]							= {X = 1263, A =   34, H = 1356},
-	["冰冠冰川"]							= {X = 1270, A =   40, H =   40},
+	["冰冠冰川"]					 		= {X = 1270, A =   40, H =   40},
 	["索拉查盆地"]						= {X = 1268, A =   39, H =   39},
 	["风暴峭壁"]							= {X = 1269, A =   38, H =   38},
 	["祖达克"]							= {X = 1267, A =   36, H =   36},
@@ -470,13 +481,13 @@ L_EXTRA_ZONEACHID = {
 	["托尔巴拉德"]						= {X =    0, A = 4874, H = 4874},
 	["托尔巴拉德半岛"]					= {X =    0, A = 4874, H = 4874},
 	-- Pandaria
-	["The Jade Forest"]					= {X = 6351, A = 6300, H = 6534}, -- Needs review
-	["Valley of the Four Winds"]		= {X = 6969, A = 6301, H = 6301}, -- Needs review
-	--["Krasarang Wilds"]					= {X = 6975, A = 6535, H = 6536}, -- Needs review
-	["Kun-Lai Summit"]					= {X = 6976, A = 6537, H = 6538}, -- Needs review
-	["Townlong Steppes"]				= {X = 6977, A = 6539, H = 6539}, -- Needs review
-	["Dread Wastes"]					= {X = 6978, A = 6540, H = 6540}, -- Needs review
-	["Vale of Eternal Blossoms"]		= {X = 6979, A =    0, H =    0}, -- Needs review
+	["翡翠林"]							= {X = 6351, A = 6300, H = 6534},
+	["四风谷"]							= {X = 6969, A = 6301, H = 6301},
+	--["卡桑琅丛林"]						= {X = 6975, A = 6535, H = 6536},
+	["昆莱山"]							= {X = 6976, A = 6537, H = 6538},
+	["螳螂高原"]							= {X = 6977, A = 6539, H = 6539},
+	["恐惧废土"]							= {X = 6978, A = 6540, H = 6540},
+	["锦绣谷"]							= {X = 6979, A =    0, H =    0},
 	-- Boolean Explores
 	["奎尔丹纳斯岛"]						= {X =  868, A =    0, H =    0},
 	["安其拉：堕落王国"]					= {X =    0, A =    0, H =    0},

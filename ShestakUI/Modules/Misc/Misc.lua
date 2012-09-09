@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Force readycheck warning
@@ -150,26 +150,30 @@ strip:SetText(L_MISC_UNDRESS)
 strip:SetHeight(22)
 strip:SetWidth(strip:GetTextWidth() + 40)
 strip:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
-strip:SetScript("OnClick", function(this)
-	this.model:Undress()
+strip:RegisterForClicks("AnyUp")
+strip:SetScript("OnClick", function(self, button)
+	if button == "RightButton" then
+		self.model:UndressSlot(19)
+	else
+		self.model:Undress()
+	end
 	PlaySound("gsTitleOptionOK")
 end)
 strip.model = DressUpModel
 
 strip:RegisterEvent("AUCTION_HOUSE_SHOW")
 strip:RegisterEvent("AUCTION_HOUSE_CLOSED")
-
-strip:SetScript("OnEvent", function(this)
-	if AuctionFrame:IsVisible() and this.model ~= SideDressUpModel then
-		this:SetParent(SideDressUpModel)
-		this:ClearAllPoints()
-		this:SetPoint("TOP", SideDressUpModelResetButton, "BOTTOM", 0, -3)
-		this.model = SideDressUpModel
-	elseif this.model ~= DressUpModel then
-		this:SetParent(DressUpModel)
-		this:ClearAllPoints()
-		this:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
-		this.model = DressUpModel
+strip:SetScript("OnEvent", function(self)
+	if AuctionFrame:IsVisible() and self.model ~= SideDressUpModel then
+		self:SetParent(SideDressUpModel)
+		self:ClearAllPoints()
+		self:SetPoint("TOP", SideDressUpModelResetButton, "BOTTOM", 0, -3)
+		self.model = SideDressUpModel
+	elseif self.model ~= DressUpModel then
+		self:SetParent(DressUpModel)
+		self:ClearAllPoints()
+		self:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
+		self.model = DressUpModel
 	end
 end)
 
@@ -256,7 +260,7 @@ button:SetScript("OnEvent", function(self)
 end)
 
 ----------------------------------------------------------------------------------------
---	Misclicks for some popup
+--	Misclicks for some popups
 ----------------------------------------------------------------------------------------
 StaticPopupDialogs.RESURRECT.hideOnEscape = nil
 StaticPopupDialogs.PARTY_INVITE.hideOnEscape = nil
@@ -268,23 +272,11 @@ StaticPopupDialogs.ADDON_ACTION_FORBIDDEN.button1 = nil
 StaticPopupDialogs.TOO_MANY_LUA_ERRORS.button1 = nil
 
 ----------------------------------------------------------------------------------------
---	Fix SearchLFGLeave() taint
+--	Honor shown in tooltip
 ----------------------------------------------------------------------------------------
-local TaintFix = CreateFrame("Frame")
-TaintFix:SetScript("OnUpdate", function(self, elapsed)
-	if LFRBrowseFrame.timeToClear then
-		LFRBrowseFrame.timeToClear = nil
-	end
+PVPFrameCurrency:HookScript("OnEnter", function()
+	GameTooltip:AddLine(HONORABLE_KILLS..": |cffffffff"..GetStatistic(588))
+	GameTooltip:Show()
 end)
-
-----------------------------------------------------------------------------------------
---	Fix LFRBrowseFrameList/LFRQueueFrameSpecificList scroll frames
-----------------------------------------------------------------------------------------
-LFRBrowseFrameListScrollFrame:ClearAllPoints()
-LFRBrowseFrameListScrollFrame:SetPoint("TOPLEFT", LFRBrowseFrameListButton1, "TOPLEFT", 0, 0)
-LFRBrowseFrameListScrollFrame:SetPoint("BOTTOMRIGHT", LFRBrowseFrameListButton19, "BOTTOMRIGHT", 5, -2)
-LFRQueueFrameSpecificListScrollFrame:ClearAllPoints()
-LFRQueueFrameSpecificListScrollFrame:SetPoint("TOPLEFT", LFRQueueFrameSpecificListButton1, "TOPLEFT", 0, 0)
-LFRQueueFrameSpecificListScrollFrame:SetPoint("BOTTOMRIGHT", LFRQueueFrameSpecificListButton14, "BOTTOMRIGHT", 0, -2)
 
 -- edit by Oz of shestak. org --

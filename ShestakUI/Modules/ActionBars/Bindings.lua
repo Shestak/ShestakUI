@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if IsAddOnLoaded("ncHoverBind") then return end
 
 ----------------------------------------------------------------------------------------
@@ -10,7 +10,6 @@ SlashCmdList.MOUSEOVERBIND = function()
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 	if not bind.loaded then
 		local find = string.find
-		local _G = getfenv(0)
 
 		bind:SetFrameStrata("DIALOG")
 		bind:EnableMouse(true)
@@ -26,15 +25,17 @@ SlashCmdList.MOUSEOVERBIND = function()
 		GameTooltip:HookScript("OnUpdate", function(self, e)
 			elapsed = elapsed + e
 			if elapsed < 0.2 then return else elapsed = 0 end
-			if (not self.comparing and IsModifiedClick("COMPAREITEMS")) then
+			if not self.comparing and IsModifiedClick("COMPAREITEMS") then
 				GameTooltip_ShowCompareItem(self)
 				self.comparing = true
-			elseif (self.comparing and not IsModifiedClick("COMPAREITEMS")) then
+			elseif self.comparing and not IsModifiedClick("COMPAREITEMS") then
 				for _, frame in pairs(self.shoppingTooltips) do
 					frame:Hide()
 				end
 				self.comparing = false
 			end
+			self:SetBackdropColor(unpack(C.media.overlay_color))
+			self:SetBackdropBorderColor(unpack(C.media.border_color))
 		end)
 		GameTooltip:SetBackdropColor(unpack(C.media.overlay_color))
 		GameTooltip:SetBackdropBorderColor(unpack(C.media.border_color))
@@ -229,6 +230,15 @@ SlashCmdList.MOUSEOVERBIND = function()
 		function bind:Activate()
 			self.enabled = true
 			self:RegisterEvent("PLAYER_REGEN_DISABLED")
+			if C.actionbar.rightbars_mouseover == true then
+				RightBarMouseOver(1)
+			end
+			if C.actionbar.stancebar_mouseover == true then
+				ShapeShiftMouseOver(1)
+			end
+			if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
+				PetMouseOver(1)
+			end
 		end
 
 		function bind:Deactivate(save)
@@ -244,13 +254,22 @@ SlashCmdList.MOUSEOVERBIND = function()
 			self:HideFrame()
 			self:UnregisterEvent("PLAYER_REGEN_DISABLED")
 			StaticPopup_Hide("KEYBIND_MODE")
+			if C.actionbar.rightbars_mouseover == true then
+				RightBarMouseOver(0)
+			end
+			if C.actionbar.stancebar_mouseover == true then
+				ShapeShiftMouseOver(0)
+			end
+			if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
+				PetMouseOver(0)
+			end
 		end
 
 		StaticPopupDialogs.KEYBIND_MODE = {
 			text = L_BIND_INSTRUCT,
 			button1 = APPLY,
 			button2 = CANCEL,
-			OnAccept = function() bind:Deactivate(true) end,
+			OnAccept = function() bind:Deactivate(true) ReloadUI() end,
 			OnCancel = function() bind:Deactivate(false) end,
 			timeout = 0,
 			whileDead = 1,

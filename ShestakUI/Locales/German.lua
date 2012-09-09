@@ -1,14 +1,14 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if T.client ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for deDE client(Thanks to Baine, chubidu, Vienchen and Alwa for the translation)
+--	Localization for deDE client
+--	Translation: Alwa, Baine, Chubidu, Vienchen
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " used my lightwell. " -- Needs review
 L_ANNOUNCE_LA_CHARGE = " charge(s))" -- Needs review
 L_ANNOUNCE_LA_USELESS = " used my lightwell, uselessly. " -- Needs review
-L_ANNOUNCE_LA_STOP = "You shouldn't have used the lightwell." -- Needs review
 L_ANNOUNCE_LA_PLACED = "Lightwell placed. " -- Needs review
 L_ANNOUNCE_LA_CHARGES = " charges." -- Needs review
 
@@ -21,6 +21,17 @@ L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask" -- Needs review
 -- Says thanks for some spells
 L_ANNOUNCE_SS_THANKS = "Thanks for " -- Needs review
 L_ANNOUNCE_SS_RECEIVED = " received from " -- Needs review
+
+-- Pull countdown announce
+L_ANNOUNCE_PC_GO = "GO!" -- Needs review
+L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
+L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
+
+-- Announce feasts and portals
+L_ANNOUNCE_FP_PRE = "%s has prepared a %s." -- Needs review
+L_ANNOUNCE_FP_PUT = "%s has put down a %s." -- Needs review
+L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review
+L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!" -- Needs review
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
@@ -38,8 +49,9 @@ L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
 L_MISC_UNDRESS = "Ausziehen"
 L_MISC_DRINKING = " trinkt."
 L_MISC_BUY_STACK = "Alt-Klick um einen Stapel zu kaufen"
-L_MISC_ONECLICK_BUYOUT = "Shift-Click um den ausgewählten Gegenstand ohne Bestätigung zu kaufen"
-L_MISC_ONECLICK_BID = "Shift-Click um auf den ausgewählten Gegenstand ohne Bestätigung zu bieten"
+L_MISC_ONECLICK_BUYOUT = "Shift-Right-Click um den ausgewählten Gegenstand ohne Bestätigung zu kaufen" -- Needs review
+L_MISC_ONECLICK_BID = "Shift-Right-Click um auf den ausgewählten Gegenstand ohne Bestätigung zu bieten" -- Needs review
+L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item without confirmation" -- Needs review
 L_MISC_UI_OUTDATED = "Deine Version von ShestakUI ist veraltet. Du kannst die aktuelle Version von www.shestak.org laden"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
 L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
@@ -151,7 +163,6 @@ L_MAIL_MESSAGES = "nachrichten"
 -- Loot
 L_LOOT_RANDOM = "Zufälliger Spieler"
 L_LOOT_SELF = "Selbst nehmen"
-L_LOOT_UNKNOWN = "Unbekannt"
 L_LOOT_FISH = "Angeln"
 L_LOOT_MONSTER = ">> Beute von "
 L_LOOT_CHEST = ">> Beute aus Kiste"
@@ -160,7 +171,6 @@ L_LOOT_TO_RAID = "  schlachtzug"
 L_LOOT_TO_PARTY = "  gruppe"
 L_LOOT_TO_GUILD = "  gilde"
 L_LOOT_TO_SAY = "  sagen"
-L_LOOT_CANNOT = "Kann nicht würfeln"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "Du bist AFK!"
@@ -261,6 +271,7 @@ L_POPUP_SETTINGS_DBM = "Die Position der DBM Elemente muss verändert werden."
 L_POPUP_SETTINGS_DXE = "Die Position der DXE Elemente muss verändert werden."
 L_POPUP_SETTINGS_BW = "Die Position der BigWigs Elemente muss verändert werden."
 L_POPUP_ARMORY = "Waffenkammer"
+L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Willkommen bei ShestakUI "

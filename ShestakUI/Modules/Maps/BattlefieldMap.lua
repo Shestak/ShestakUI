@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.map.bg_map_stylization ~= true or IsAddOnLoaded("Capping") or IsAddOnLoaded("Aurora") then return end
 
 ----------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ tinymap:SetScript("OnEvent", function(self, event, addon)
 			self:StopMovingOrSizing()
 			if OpacityFrame:IsShown() then OpacityFrame:Hide() end
 		elseif btn == "RightButton" then
-			ToggleDropDownMenu(1, nil, BattlefieldMinimapTabDropDown, self:GetName(), 0, -4)
+			ToggleDropDownMenu(nil, nil, BattlefieldMinimapTabDropDown, self:GetName(), 0, -4)
 			if OpacityFrame:IsShown() then OpacityFrame:Hide() end
 		end
 	end)

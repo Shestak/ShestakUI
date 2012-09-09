@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Accept invites from guild members or friend list(by ALZA)
@@ -11,9 +11,12 @@ if C.automation.accept_invite == true then
 			end
 		end
 		for i = 1, select(2, BNGetNumFriends()) do
-			local _, _, _, _, toonName, _, client = BNGetFriendInfo(i)
-			if client == "WoW" and toonName == name then
-				return true
+			local presenceID, _, _, _, _, _, client, isOnline = BNGetFriendInfo(i)
+			if client == "WoW" and isOnline then
+				local _, toonName, _, realmName = BNGetToonInfo(presenceID)
+				if name == toonName or name == toonName.."-"..realmName then
+					return true
+				end
 			end
 		end
 		if IsInGuild() then
@@ -56,9 +59,15 @@ end
 ----------------------------------------------------------------------------------------
 local autoinvite = CreateFrame("Frame")
 autoinvite:RegisterEvent("CHAT_MSG_WHISPER")
-autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2)
+autoinvite:RegisterEvent("CHAT_MSG_BN_WHISPER")
+autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2, ...)
 	if ((not UnitExists("party1") or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and arg1:lower():match(C.misc.invite_keyword)) and SavedOptionsPerChar.AutoInvite == true then
-		InviteUnit(arg2)
+		if event == "CHAT_MSG_WHISPER" then
+			InviteUnit(arg2)
+		elseif event == "CHAT_MSG_BN_WHISPER" then
+			local _, toonName, _, realmName = BNGetToonInfo(select(11, ...))
+			InviteUnit(toonName.."-"..realmName)
+		end
 	end
 end)
 

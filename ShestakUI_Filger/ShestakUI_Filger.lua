@@ -265,6 +265,7 @@ end
 
 function Filger:OnEvent(event, unit)
 	if event == "SPELL_UPDATE_COOLDOWN" or event == "PLAYER_TARGET_CHANGED" or event == "PLAYER_FOCUS_CHANGED" or event == "PLAYER_ENTERING_WORLD" or event == "UNIT_AURA" and (unit == "target" or unit == "player" or unit == "pet" or unit == "focus") then
+		local ptt = GetSpecialization()
 		local needUpdate = false
 		local id = self.Id
 
@@ -274,7 +275,7 @@ function Filger:OnEvent(event, unit)
 			local name, icon, count, duration, start, spid
 			spid = 0
 
-			if data.filter == "BUFF" then
+			if data.filter == "BUFF" and (not data.spec or data.spec == ptt) then
 				local caster, spn, expirationTime
 				spn, _, _ = GetSpellInfo(data.spellID)
 				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
@@ -282,7 +283,7 @@ function Filger:OnEvent(event, unit)
 					start = expirationTime - duration
 					found = true
 				end
-			elseif data.filter == "DEBUFF" then
+			elseif data.filter == "DEBUFF" and (not data.spec or data.spec == ptt) then
 				local caster, spn, expirationTime
 				spn, _, _ = GetSpellInfo(data.spellID)
 				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitDebuff(data.unitID, data.spellID, spn, data.absID)
@@ -290,7 +291,7 @@ function Filger:OnEvent(event, unit)
 					start = expirationTime - duration
 					found = true
 				end
-			elseif data.filter == "CD" then
+			elseif data.filter == "CD" and (not data.spec or data.spec == ptt) then
 				if data.spellID then
 					name, _, icon = GetSpellInfo(data.spellID)
 					if data.absID then
@@ -310,7 +311,7 @@ function Filger:OnEvent(event, unit)
 				if name and (duration or 0) > 1.5 then
 					found = true
 				end
-			elseif data.filter == "ICD" then
+			elseif data.filter == "ICD" and (not data.spec or data.spec == ptt) then
 				if data.trigger == "BUFF" then
 					local spn
 					spn, _, icon = GetSpellInfo(data.spellID)

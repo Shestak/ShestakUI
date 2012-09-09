@@ -11,25 +11,25 @@ local classList = {
 	["DEATHKNIGHT"] = {
 		combat = GetSpellInfo(61999),	-- Raise Ally
 	},
-	["WARLOCK"] = {
-		combat = GetSpellInfo(6203),	-- Soulstone
-		ooc = GetSpellInfo(6203),		-- Soulstone
-	},
 	["DRUID"] = {
 		combat = GetSpellInfo(20484),	-- Rebirth
 		ooc = GetSpellInfo(50769),		-- Revive
 	},
-	["PRIEST"] = {
-		ooc = GetSpellInfo(2006),		-- Resurrection
+	["MONK"] = {
+		ooc = GetSpellInfo(115178),		-- Resuscitate
 	},
 	["PALADIN"] = {
 		ooc = GetSpellInfo(7328),		-- Redemption
 	},
+	["PRIEST"] = {
+		ooc = GetSpellInfo(2006),		-- Resurrection
+	},
 	["SHAMAN"] = {
 		ooc = GetSpellInfo(2008),		-- Ancestral Spirit
 	},
-	["MONK"] = {
-		ooc = GetSpellInfo(115178),		-- Resuscitate
+	["WARLOCK"] = {
+		combat = GetSpellInfo(6203),	-- Soulstone
+		ooc = GetSpellInfo(6203),		-- Soulstone
 	},
 }
 
@@ -46,8 +46,8 @@ local function macroBody(class)
 			body = body.."[help,dead,@mouseover] "..oocspell.."; "
 		end
 
-		if T.class == "WARLOCK" then
-			local spellname = select(1, GetSpellInfo(693))
+		if class == "WARLOCK" then
+			local spellname = select(1, GetSpellInfo(6203))
 			body = body.."\n/cast "..spellname.."\n "
 		end
 	elseif oocspell then
@@ -64,6 +64,7 @@ local Enable = function(self)
 	if classList[class] and not IsAddOnLoaded("Clique") then
 		self:SetAttribute("*type3", "macro")
 		self:SetAttribute("macrotext3", macroBody(class))
+		return true
 	end
 end
 

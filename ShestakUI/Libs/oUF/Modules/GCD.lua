@@ -15,6 +15,7 @@ local spells = {
 	["DRUID"] = 1126,
 	["HUNTER"] = 1978,
 	["MAGE"] = 133,
+	["MONK"] = 100780,
 	["PALADIN"] = 635,
 	["PRIEST"] = 21562,
 	["ROGUE"] = 1752,
@@ -22,9 +23,6 @@ local spells = {
 	["WARRIOR"] = 7386,
 	["WARLOCK"] = 686,
 }
-
-local _, class = UnitClass("player")
-local spell = GetSpellInfo(spells[class])
 
 local Enable = function(self)
 	if not self.GCD then return end
@@ -50,6 +48,17 @@ local Enable = function(self)
 		end
 	end
 
+	local function Init()
+		local isKnown = IsSpellKnown(spells[T.class])
+		if isKnown then
+			spellid = spells[T.class]
+		end
+		if spellid == nil then
+			return
+		end
+		return spellid
+	end
+
 	local function OnHide()
 		bar:SetScript("OnUpdate", nil)
 		usingspell = nil
@@ -60,27 +69,20 @@ local Enable = function(self)
 	end
 
 	local function UpdateGCD()
-		if spellid then
-			local start, dur = GetSpellCooldown(spellid, "spell")
-			if dur and dur > 0 and dur <= 2 then
-				usingspell = 1
-				starttime = start
-				duration = dur
-				bar:Show()
+		if spellid == nil then
+			if Init() == nil then
 				return
-			elseif usingspell == 1 and dur == 0 then
-				bar:Hide()
 			end
-		else
-			for tab = 2, 4 do
-				local _, _, offset, numSpells = GetSpellTabInfo(tab)
-				for i = (1 + offset), (offset+numSpells) do
-					local tempspell = GetSpellBookItemName(i, "spell")
-					if tempspell == spell then
-						spellid = i
-					end
-				end
-			end
+		end
+		local start, dur = GetSpellCooldown(spellid)
+		if dur and dur > 0 and dur <= 2 then
+			usingspell = 1
+			starttime = start
+			duration = dur
+			bar:Show()
+			return
+		elseif usingspell == 1 and dur == 0 then
+			bar:Hide()
 		end
 	end
 

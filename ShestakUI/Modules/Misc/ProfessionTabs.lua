@@ -1,167 +1,217 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.misc.profession_tabs ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Professions tabs on tradeskill frame(ProfessionTabs by Beoko)
 ----------------------------------------------------------------------------------------
-local ProfessionTabs = CreateFrame("Frame", "ProfessionTabs")
-ProfessionTabs:SetScript("OnEvent", function(self, Event, ...) self[Event](self, Event, ...) end)
-ProfessionTabs:RegisterEvent("TRADE_SKILL_SHOW")
-ProfessionTabs:RegisterEvent("TRADE_SHOW")
-ProfessionTabs:RegisterEvent("SKILL_LINES_CHANGED")
-
-local __TradeSkillFrame
-local format = string.format
 local IsCurrentSpell = IsCurrentSpell
-local Cache, TradeSkillFrameTabs, TradeFrameTabs = {}, {}, {}
-local TradeSkillFrameTabIndex, TradeFrameTabIndex = 1, 1
-local Professions = {
-	[1] = { 2259, 3101, 3464, 11611, 28596, 51304, 80731 },		-- Alchemy
-	[2] = { 2018, 3100, 3538, 9785, 29844, 51300, 76666 },		-- Blacksmithing
-	[3] = { 7411, 7412, 7413, 13920, 28029, 51313, 74258 },		-- Enchanting
-	[4] = { 4036, 4037, 4038, 12656, 30350, 51306, 82774 },		-- Engineering
-	[5] = { 45357, 45358, 45359, 45360, 45361, 45363, 86008 },	-- Inscription
-	[6] = { 25229, 25230, 28894, 28895, 28897, 51311, 73318 },	-- Jewelcrafting
-	[7] = { 2108, 3104, 3811, 10662, 32549, 51302, 81199 },		-- Leatherworking
-	[8] = { 3908, 3909, 3910, 12180, 26790, 51309, 75156 },		-- Tailoring
-	[9] = { 2550, 3102, 3413, 18260, 33359, 51296, 88053 },		-- Cooking
-	[10] = { 3273, 3274, 7924, 10846, 27028, 45542, 74559 },	-- First Aid
-	[11] = { 53428 },	-- Runeforging
-	[12] = { 2656 },	-- Smelting
-	[13] = { 13262 },	-- Disenchant
-	[14] = { 51005 },	-- Milling
-	[15] = { 31252 },	-- Prospecting
-	[16] = { 818 },		-- Basic Campfire
-	[17] = { 1804 },	-- Pick Lock
-	[18] = { 78670, 88961, 89718, 89719, 89720, 89721, 89722 },	-- Archaeology
-	[19] = { 80451 },	-- Survey
-	[20] = { 74268 },	-- Track Archaeology Chests
+local format = string.format
+local next = next
+local ranks = PROFESSION_RANKS
+local tabs, spells = {}, {}
+
+local handler = CreateFrame("Frame")
+handler:SetScript("OnEvent", function(self, event) self[event](self, event) end)
+handler:RegisterEvent("TRADE_SKILL_SHOW")
+handler:RegisterEvent("TRADE_SKILL_CLOSE")
+handler:RegisterEvent("TRADE_SHOW")
+handler:RegisterEvent("SKILL_LINES_CHANGED")
+handler:RegisterEvent("CURRENT_SPELL_CAST_CHANGED")
+
+local defaults = {
+	-- Primary Professions
+	[171] = {true, false},	-- Alchemy
+	[164] = {true, false},	-- Blacksmithing
+	[333] = {true, true},	-- Enchanting
+	[202] = {true, false},	-- Engineering
+	[182] = {false, false},	-- Herbalism
+	[773] = {true, true},	-- Inscription
+	[755] = {true, true},	-- Jewelcrafting
+	[165] = {true, false},	-- Leatherworking
+	[186] = {true, false},	-- Mining
+	[393] = {false, false},	-- Skinning
+	[197] = {true, false},	-- Tailoring
+
+	-- Secondary Professions
+	[794] = {true, false},	-- Archaeology
+	[185] = {true, true},	-- Cooking
+	[129] = {true, false},	-- First Aid
+	[356] = {false, false},	-- Fishing
 }
 
-function ProfessionTabs:CacheProfessions()
-	wipe(Cache)
+if T.class == "DEATHKNIGHT" then spells[#spells + 1] = 53428 end	-- Runeforging
+if T.class == "ROGUE" then spells[#spells + 1] = 1804 end			-- Pick Lock
 
-	for Index = 1, #Professions do
-		for NewIndex = 1, #Professions[Index] do
-			local Profession = Professions[Index][NewIndex]
-			if IsSpellKnown(Profession) then
-				Cache[#Cache + 1] = Profession
-				break
+local function UpdateSelectedTabs(object)
+	if not handler:IsEventRegistered("CURRENT_SPELL_CAST_CHANGED") then
+		handler:RegisterEvent("CURRENT_SPELL_CAST_CHANGED")
+	end
+
+	for index = 1, #tabs[object] do
+		local tab = tabs[object][index]
+		tab:SetChecked(IsCurrentSpell(tab.name))
+	end
+end
+
+local function ResetTabs(object)
+	for index = 1, #tabs[object] do
+		tabs[object][index]:Hide()
+	end
+
+	tabs[object].index = 0
+end
+
+local function UpdateTab(object, name, rank, texture)
+	local index = tabs[object].index + 1
+	local tab = tabs[object][index] or CreateFrame("CheckButton", "ProTabs"..tabs[object].index, object, "SpellBookSkillLineTabTemplate SecureActionButtonTemplate")
+
+	tab:ClearAllPoints()
+
+	if IsAddOnLoaded("Aurora") then
+		tab:SetPoint("TOPLEFT", object, "TOPRIGHT", 11, (-44 * index) + 10)
+
+		tab:DisableDrawLayer("BACKGROUND")
+		tab:SetNormalTexture(texture)
+		tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		local F, C = unpack(Aurora)
+		tab:SetCheckedTexture(C.media.checked)
+		tab:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+		tab:GetHighlightTexture():SetAllPoints(tab:GetNormalTexture())
+		F.CreateBG(tab)
+		F.CreateSD(tab, 5, 0, 0, 0, 1, 1)
+	elseif C.skins.blizzard_frames == true then
+		tab:SetPoint("TOPLEFT", object, "TOPRIGHT", 1, (-44 * index) + 44)
+
+		tab:DisableDrawLayer("BACKGROUND")
+		tab:SetNormalTexture(texture)
+		tab:GetNormalTexture():ClearAllPoints()
+		tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
+		tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+		tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		tab:CreateBackdrop("Default")
+		tab.backdrop:SetAllPoints()
+		tab:StyleButton()
+	else
+		tab:SetPoint("TOPLEFT", object, "TOPRIGHT", 0, (-44 * index) + 18)
+		tab:SetNormalTexture(texture)
+	end
+
+	tab:SetAttribute("type", "spell")
+	tab:SetAttribute("spell", name)
+	tab:Show()
+
+	tab.name = name
+	tab.tooltip = rank and rank ~= "" and format("%s (%s)", name, rank) or name
+
+	tabs[object][index] = tabs[object][index] or tab
+	tabs[object].index = tabs[object].index + 1
+end
+
+local function GetProfessionRank(currentSkill)
+	for index = 1, #ranks do
+		local requiredSkill, title = ranks[index][1], ranks[index][2]
+
+		if currentSkill <= requiredSkill then
+			return title
+		end
+	end
+end
+
+local function HandleProfession(object, professionID)
+	if professionID then
+		local _, _, currentSkill, _, numAbilities, offset, skillID = GetProfessionInfo(professionID)
+
+		if defaults[skillID] then
+			for index = 1, numAbilities do
+				if defaults[skillID][index] then
+					local name = GetSpellBookItemName(offset + index, "profession")
+					local rank = GetProfessionRank(currentSkill)
+					local texture = GetSpellBookItemTexture(offset + index, "profession")
+
+					if name and rank and texture then
+						UpdateTab(object, name, rank, texture)
+					end
+				end
 			end
 		end
 	end
 end
 
-function ProfessionTabs:TriggerEvents()
-	if TradeFrame and TradeFrame:IsShown() then
-		self:TRADE_SHOW()
-	end
+local function HandleTabs(object)
+	tabs[object] = tabs[object] or {}
 
-	if __TradeSkillFrame and __TradeSkillFrame:IsShown() then
-		self:TRADE_SKILL_SHOW()
-	end
-end
-
-local function Tab_OnEnter(self)
-	GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-	GameTooltip:AddLine(self.SpellRank ~= "" and format("%s (%s)", self.SpellName, self.SpellRank) or self.SpellName, 1, 1, 1)
-	GameTooltip:Show()
-end
-
-local function Tab_OnLeave(self)
-	GameTooltip:Hide()
-end
-
-function ProfessionTabs:CreateTab(Table, Parent)
-	local Tab = CreateFrame("CheckButton", "ProTabs"..#Table, Parent, "SpellBookSkillLineTabTemplate SecureActionButtonTemplate")
-	Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", 0, (-44 * #Table) - 24)
-	Tab:SetScript("OnEnter", Tab_OnEnter)
-	Tab:SetScript("OnLeave", Tab_OnLeave)
-
-	if IsAddOnLoaded("Aurora") then
-		Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", 11, (-44 * #Table) - 35)
-
-		Tab:StripTextures()
-		Tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-		local F, C = unpack(Aurora)
-		Tab:SetCheckedTexture(C.media.checked)
-		Tab:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
-		Tab:GetHighlightTexture():SetAllPoints(Tab:GetNormalTexture())
-		F.CreateBG(Tab)
-		F.CreateSD(Tab, 5, 0, 0, 0, 1, 1)
-	elseif C.skins.blizzard_frames == true then
-		Tab:SetPoint("TOPLEFT", Parent, "TOPRIGHT", 1, -44 * #Table)
-
-		Tab:StripTextures()
-		Tab:GetNormalTexture():ClearAllPoints()
-		Tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
-		Tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
-		Tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-		Tab:CreateBackdrop("Default")
-		Tab.backdrop:SetAllPoints()
-		Tab:StyleButton()
-	end
-
-	Table[#Table + 1] = Tab
-	return Tab
-end
-
-function ProfessionTabs:UpdateTabs(Table)
-	local Combat = InCombatLockdown()
-
-	for Index = 1, #Table do
-		local Tab = Table[Index]
-
-		if Index > #Cache then
-			if not Combat then Tab:Hide() end
-		else
-			if not Combat then Tab:Show() end
-			Tab:SetChecked(IsCurrentSpell(Tab.SpellName))
-		end
-	end
-end
-
-function ProfessionTabs:EventHandler(Table, Parent)
 	if InCombatLockdown() then
-		self:RegisterEvent("PLAYER_REGEN_ENABLED")
+		handler:RegisterEvent("PLAYER_REGEN_ENABLED")
 	else
-		self:CacheProfessions()
+		local firstProfession, secondProfession, archaeology, fishing, cooking, firstAid = GetProfessions()
 
-		for Index = 1, #Cache do
-			local SpellName, SpellRank, SpellTexture = GetSpellInfo(Cache[Index])
-			local Tab = Table[Index] or self:CreateTab(Table, Parent)
+		ResetTabs(object)
 
-			Tab.SpellName = SpellName
-			Tab.SpellRank = SpellRank
-			Tab:SetNormalTexture(SpellTexture)
-			Tab:SetAttribute("type", "spell")
-			Tab:SetAttribute("spell", SpellName)
+		HandleProfession(object, firstProfession)
+		HandleProfession(object, secondProfession)
+		HandleProfession(object, archaeology)
+		HandleProfession(object, fishing)
+		HandleProfession(object, cooking)
+		HandleProfession(object, firstAid)
+
+		for index = 1, #spells do
+			if IsSpellKnown(spells[index]) then
+				local name, rank, texture = GetSpellInfo(spells[index])
+				UpdateTab(object, name, rank, texture)
+			end
 		end
 	end
 
-	self:UpdateTabs(Table)
+	UpdateSelectedTabs(object)
 end
 
-function ProfessionTabs:TRADE_SKILL_SHOW()
-	__TradeSkillFrame = __TradeSkillFrame or MRTSkillFrame or ATSWFrame or SkilletFrame or TradeSkillFrame
-	self:EventHandler(TradeSkillFrameTabs, __TradeSkillFrame)
+function handler:TRADE_SKILL_SHOW(event)
+	local owner = ATSWFrame or MRTSkillFrame or SkilletFrame or TradeSkillFrame
 
-	if TradeFrame:IsShown() then
-		self:EventHandler(TradeFrameTabs, TradeFrame)
+	if IsAddOnLoaded("TradeSkillDW") and owner == TradeSkillFrame then
+		self:UnregisterEvent(event)
+	else
+		HandleTabs(owner)
+		self[event] = function() for object in next, tabs do UpdateSelectedTabs(object) end end
 	end
 end
 
-function ProfessionTabs:TRADE_SHOW()
-	self:EventHandler(TradeFrameTabs, TradeFrame)
+function handler:TRADE_SKILL_CLOSE(event)
+	for object in next, tabs do
+		if object:IsShown() then
+			UpdateSelectedTabs(object)
+		end
+	end
 end
 
-function ProfessionTabs:SKILL_LINES_CHANGED()
-	self:TriggerEvents()
+function handler:TRADE_SHOW(event)
+	local owner = TradeFrame
+
+	HandleTabs(owner)
+	self[event] = function() UpdateSelectedTabs(owner) end
 end
 
-function ProfessionTabs:PLAYER_REGEN_ENABLED(Event)
-	self:UnregisterEvent(Event)
-	self:TriggerEvents()
+function handler:PLAYER_REGEN_ENABLED(event)
+	self:UnregisterEvent(event)
+
+	for object in next, tabs do HandleTabs(object) end
+end
+
+function handler:SKILL_LINES_CHANGED()
+	for object in next, tabs do HandleTabs(object) end
+end
+
+function handler:CURRENT_SPELL_CAST_CHANGED()
+	local numShown = 0
+
+	for object in next, tabs do
+		if object:IsShown() then
+			numShown = numShown + 1
+			UpdateSelectedTabs(object)
+		end
+	end
+
+	if numShown == 0 then self:UnregisterEvent("CURRENT_SPELL_CAST_CHANGED") end
 end

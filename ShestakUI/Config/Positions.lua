@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Position options
@@ -26,6 +26,7 @@ C["position"] = {
 	["enemy_cooldown"] = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 29, 50},			-- Enemy cooldowns
 	["pulse_cooldown"] = {"CENTER", UIParent, "CENTER", 0, 0},						-- Pulse cooldowns
 	["bg_score"] = {"BOTTOMLEFT", ActionButton12, "BOTTOMRIGHT", 10, -2},			-- BG stats
+	["player_buffs"] = {"TOPLEFT", Minimap, "TOPLEFT", -422, 2},					-- Player buffs
 	["self_buffs"] = {"CENTER", UIParent, "CENTER", 0, 190},						-- Self buff reminder
 	["raid_buffs"] = {"BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -24},				-- Raid buff reminder
 	["top_panel"] = {"TOP", UIParent, "TOP", 0, -118},								-- Top panel
@@ -35,11 +36,10 @@ C["position"] = {
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},							-- Bottom bars
 	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 320},			-- Right bars
 	["pet_horizontal"] = {"BOTTOMRIGHT", UIParent, "BOTTOM", -175, 167},			-- Horizontal pet bar
-	["stance_bar"] = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21},						-- Stance/Shift/Totem bars
+	["stance_bar"] = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21},						-- Stance bar
 	["vehicle_bar"] = {"BOTTOMRIGHT", ActionButton1, "BOTTOMLEFT", -3, 0},			-- Vehicle button
 	["micro_menu"] = {"TOPLEFT", UIParent, "TOPLEFT", 2, -2},						-- Micro menu
 	-- UnitFrame positions
-	["player_buffs"] = {"TOPLEFT", Minimap, "TOPLEFT", -422, 2},					-- Player buffs
 	unitframes = {
 		["player"] = {"BOTTOMRIGHT", "ActionBarAnchor", "TOPLEFT", -5, 247},		-- Player frame
 		["target"] = {"BOTTOMLEFT", "ActionBarAnchor", "TOPRIGHT", 5, 247},			-- Target frame
@@ -53,7 +53,6 @@ C["position"] = {
 		["raid_dps"] = {"TOPLEFT", UIParent, "TOPLEFT", 23, -51},					-- DPS layout Raid frames
 		["arena"] = {"BOTTOMRIGHT", UIParent, "RIGHT", -23, -70},					-- Arena frames
 		["boss"] = {"BOTTOMRIGHT", UIParent, "RIGHT", -23, -70},					-- Boss frames
-
 		["tank"] = {"BOTTOM", "UIParent", "BOTTOM", 302, 35},						-- Tank frames
 		["player_portrait"] = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -8, 0},			-- Player Portrait
 		["target_portrait"] = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 6, 0},			-- Target Portrait

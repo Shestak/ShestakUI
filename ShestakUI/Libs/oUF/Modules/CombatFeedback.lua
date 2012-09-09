@@ -15,23 +15,22 @@ local feedback = {}
 local originalHeight = {}
 local color
 local colors = {
-	STANDARD		= { 1, 1, 1 },
+	STANDARD		= {1, 1, 1},
 	-- Damage
-	IMMUNE			= { 1, 1, 1 },
-	DAMAGE			= { 1, 0, 0 },
-	CRUSHING		= { 1, 0, 0 },
-	CRITICAL		= { 1, 0, 0 },
-	GLANCING		= { 1, 0, 0 },
-	ABSORB			= { 1, 1, 1 },
-	BLOCK			= { 1, 1, 1 },
-	RESIST			= { 1, 1, 1 },
-	MISS			= { 1, 1, 1 },
+	IMMUNE			= {1, 1, 1},
+	DAMAGE			= {1, 0, 0},
+	CRUSHING		= {1, 0, 0},
+	CRITICAL		= {1, 0, 0},
+	GLANCING		= {1, 0, 0},
+	ABSORB			= {1, 1, 1},
+	BLOCK			= {1, 1, 1},
+	MISS			= {1, 1, 1},
 	-- Heal
-	HEAL			= { 0, 1, 0 },
-	CRITHEAL		= { 0, 1, 0 },
+	HEAL			= {0, 1, 0},
+	CRITHEAL		= {0, 1, 0},
 	-- Energize
-	ENERGIZE		= { 0.41, 0.8, 0.94 },
-	CRITENERGIZE	= { 0.41, 0.8, 0.94 },
+	ENERGIZE		= {0.41, 0.8, 0.94},
+	CRITENERGIZE	= {0.41, 0.8, 0.94},
 }
 
 local function createUpdateFrame()
@@ -99,10 +98,6 @@ local function combat(self, event, unit, eventType, flags, amount, dtype)
 			color = fColors and fColors.BLOCK or colors.BLOCK
 			fontHeight = fontHeight
 			text = CombatFeedbackText["BLOCK"]
-		elseif flags == "RESIST" then
-			color = fColors and fColors.RESIST or colors.RESIST
-			fontHeight = fontHeight
-			text = CombatFeedbackText["RESIST"]
 		else
 			color = fColors and fColors.MISS or colors.MISS
 			text = CombatFeedbackText["MISS"]
@@ -133,7 +128,7 @@ local function combat(self, event, unit, eventType, flags, amount, dtype)
 	end
 
 	if text then
-		FeedbackText:SetFont(font,fontHeight,fontFlags)
+		FeedbackText:SetFont(font, fontHeight, fontFlags)
 		FeedbackText:SetFormattedText(text, arg)
 		FeedbackText:SetTextColor(unpack(color))
 		FeedbackText:SetAlpha(0)

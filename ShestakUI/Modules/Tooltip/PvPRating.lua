@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.tooltip.enable ~= true or C.tooltip.arena_experience ~= true then return end
 if T.MOPVersion then return end
 

@@ -1,11 +1,11 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.loot.lootframe ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Loot frame(Butsu by Haste)
 ----------------------------------------------------------------------------------------
-local _NAME, _NS = ...
-local Butsu = CreateFrame("Button", _NAME)
+local _, _NS = ...
+local Butsu = CreateFrame("Button", "Butsu")
 local lb = CreateFrame("Button", "ButsuAdv", Butsu, "UIPanelScrollDownButtonTemplate")
 local LDD = CreateFrame("Frame", "ButsuLDD", Butsu, "UIDropDownMenuTemplate")
 Butsu:Hide()
@@ -141,7 +141,7 @@ end
 Butsu:RegisterEvent("LOOT_CLOSED")
 
 function Butsu:OPEN_MASTER_LOOT_LIST()
-	ToggleDropDownMenu(1, nil, GroupLootDropDown, LootFrame.selectedLootButton, 0, 0)
+	ToggleDropDownMenu(nil, nil, GroupLootDropDown, LootFrame.selectedLootButton, 0, 0)
 end
 Butsu:RegisterEvent("OPEN_MASTER_LOOT_LIST")
 
@@ -201,7 +201,7 @@ close:SetScript("OnClick", function() CloseLoot() end)
 --	Announce loot(lcLoot by RustamIrzaev)
 ----------------------------------------------------------------------------------------
 local function OnLinkClick(self)
-	ToggleDropDownMenu(1, nil, LDD, lb, 0, 0)
+	ToggleDropDownMenu(nil, nil, LDD, lb, 0, 0)
 end
 
 local function LDD_OnClick(self)
@@ -283,10 +283,10 @@ lb:SetScript("OnClick", function(self, button)
 	if button == "RightButton" then
 		OnLinkClick()
 	else
-		if GetNumSubgroupMembers() > 0 and not UnitInRaid("player") then
-			Announce("PARTY")
-		elseif GetNumGroupMembers() > 0 then
+		if IsInRaid() then
 			Announce("RAID")
+		elseif IsInGroup() then
+			Announce("PARTY")
 		else
 			Announce("SAY")
 		end
@@ -308,12 +308,18 @@ do
 		end
 
 		self.drop:Show()
-		self.drop:SetVertexColor(1, 1, 0)
+		if self.isQuestItem then
+			self.drop:SetVertexColor(0.8, 0.8, 0.2)
+		else
+			self.drop:SetVertexColor(1, 1, 0)
+		end
 	end
 
 	local OnLeave = function(self)
 		local color = ITEM_QUALITY_COLORS[self.quality]
-		if color then
+		if self.isQuestItem then
+			self.drop:SetVertexColor(1, 1, 0.2)
+		elseif color then
 			self.drop:SetVertexColor(color.r, color.g, color.b)
 		end
 
@@ -440,175 +446,3 @@ LootFrame:UnregisterAllEvents()
 
 -- Escape the dungeon
 table.insert(UISpecialFrames, "Butsu")
-
-----------------------------------------------------------------------------------------
---	MasterLoot by Ammo
-----------------------------------------------------------------------------------------
-local hexColors = {}
-for k, v in pairs(RAID_CLASS_COLORS) do
-	hexColors[k] = string.format("|cff%02x%02x%02x", v.r * 255, v.g * 255, v.b * 255)
-end
-hexColors["UNKNOWN"] = string.format("|cff%02x%02x%02x", 0.6 * 255, 0.6 * 255, 0.6 * 255)
-
-if CUSTOM_CLASS_COLORS then
-	local function update()
-		for k, v in pairs(CUSTOM_CLASS_COLORS) do
-			hexColors[k] = string.format("|cff%02x%02x%02x", v.r * 255, v.g * 255, v.b * 255)
-		end
-	end
-	CUSTOM_CLASS_COLORS:RegisterCallback(update)
-	update()
-end
-
-local playerName = UnitName("player")
-local classesInRaid = {}
-local players, player_indices = {}, {}
-local randoms = {}
-local wipe = table.wipe
-
-local function MasterLoot_RequestRoll(frame)
-	DoMasterLootRoll(frame.value)
-end
-
-local function MasterLoot_GiveLoot(frame)
-	if LootFrame.selectedQuality >= MASTER_LOOT_THREHOLD then
-		StaticPopup_Show("CONFIRM_LOOT_DISTRIBUTION", ITEM_QUALITY_COLORS[LootFrame.selectedQuality].hex..LootFrame.selectedItemName..FONT_COLOR_CODE_CLOSE, frame.text, "LootWindow")
-	else
-		GiveMasterLoot(LootFrame.selectedSlot, frame.value)
-	end
-	CloseDropDownMenus()
-end
-
-local function init()
-	local candidate, color, lclass, className
-	local slot = LootFrame.selectedSlot or 0
-	local info = UIDropDownMenu_CreateInfo()
-
-	if UIDROPDOWNMENU_MENU_LEVEL == 2 then
-		-- Raid class menu
-		wipe(players)
-		wipe(player_indices)
-		local this_class = UIDROPDOWNMENU_MENU_VALUE
-		for i = 1, MAX_RAID_MEMBERS do
-			candidate, lclass, className = GetMasterLootCandidate(slot, i)
-			if candidate and this_class == className then
-				table.insert(players,candidate)
-				player_indices[candidate] = i
-			end
-		end
-		if #players > 0 then
-			table.sort(players)
-			for _, cand in ipairs(players) do
-				-- Add candidate button
-				info.text = cand
-				info.colorCode = hexColors[this_class] or hexColors["UNKOWN"]
-				info.textHeight = 12
-				info.value = player_indices[cand]
-				info.notCheckable = 1
-				info.disabled = nil
-				info.func = MasterLoot_GiveLoot
-				UIDropDownMenu_AddButton(info, UIDROPDOWNMENU_MENU_LEVEL)
-			end
-		end
-		return
-	end
-
-	info.isTitle = 1
-	info.text = GIVE_LOOT
-	info.textHeight = 12
-	info.notCheckable = 1
-	info.disabled = nil
-	info.notClickable = nil
-	UIDropDownMenu_AddButton(info)
-
-	if IsInRaid() then
-		-- In a raid
-		wipe(classesInRaid)
-		for i = 1, MAX_RAID_MEMBERS do
-			candidate, lclass, className = GetMasterLootCandidate(slot, i)
-			if candidate then
-				classesInRaid[className] = lclass
-			end
-		end
-
-		for i, class in ipairs(CLASS_SORT_ORDER) do
-			local cname = classesInRaid[class]
-			if cname then
-				info.isTitle = nil
-				info.text = cname
-				info.colorCode = hexColors[class] or hexColors["UNKOWN"]
-				info.textHeight = 12
-				info.hasArrow = 1
-				info.notCheckable = 1
-				info.value = class
-				info.func = nil
-				info.disabled = nil
-				UIDropDownMenu_AddButton(info)
-			end
-		end
-	else
-		-- In a party
-		for i = 1, MAX_PARTY_MEMBERS + 1, 1 do
-			candidate, lclass, className = GetMasterLootCandidate(slot, i)
-			if candidate then
-				-- Add candidate button
-				info.text = candidate -- coloredNames[candidate]
-				info.colorCode = hexColors[className] or hexColors["UNKOWN"]
-				info.textHeight = 12
-				info.value = i
-				info.notCheckable = 1
-				info.hasArrow = nil
-				info.isTitle = nil
-				info.disabled = nil
-				info.func = MasterLoot_GiveLoot
-				UIDropDownMenu_AddButton(info)
-			end
-		end
-	end
-
-	info.colorCode = "|cffffffff"
-	info.isTitle = nil
-	info.textHeight = 12
-	info.value = slot
-	info.notCheckable = 1
-	info.hasArrow = nil
-	info.text = REQUEST_ROLL
-	info.func = MasterLoot_RequestRoll
-	info.icon = nil
-	UIDropDownMenu_AddButton(info)
-
-	wipe(randoms)
-	for i = 1, MAX_RAID_MEMBERS do
-		candidate,lclass,className = GetMasterLootCandidate(slot,i)
-		if candidate then
-			table.insert(randoms, i)
-		end
-	end
-	if #randoms > 0 then
-		info.colorCode = "|cffffffff"
-		info.isTitle = nil
-		info.textHeight = 12
-		info.value = randoms[math.random(1, #randoms)]
-		info.notCheckable = 1
-		info.text = L_LOOT_RANDOM
-		info.func = MasterLoot_GiveLoot
-		info.icon = "Interface\\Buttons\\UI-GroupLoot-Coin-Up"
-		UIDropDownMenu_AddButton(info)
-	end
-	for i = 1, MAX_RAID_MEMBERS do
-		candidate, lclass, className = GetMasterLootCandidate(slot, i)
-		if candidate and candidate == playerName then
-			info.colorCode = hexColors[className] or hexColors["UNKOWN"]
-			info.isTitle = nil
-			info.textHeight = 12
-			info.value = i
-			info.notCheckable = 1
-			info.text = L_LOOT_SELF
-			info.func = MasterLoot_GiveLoot
-			info.icon = nil
-			UIDropDownMenu_AddButton(info)
-		end
-	end
-end
-
-UIDropDownMenu_Initialize(GroupLootDropDown, init, "MENU")

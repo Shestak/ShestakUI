@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.raidcooldown.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -86,9 +86,9 @@ end
 
 local OnMouseDown = function(self, button)
 	if button == "LeftButton" then
-		if GetNumGroupMembers() > 0 then
+		if IsInRaid() then
 			SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "RAID")
-		elseif GetNumSubgroupMembers() > 0 and not UnitInRaid("player") then
+		elseif IsInGroup() then
 			SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "PARTY")
 		else
 			SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "SAY")

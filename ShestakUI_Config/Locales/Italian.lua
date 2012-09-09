@@ -1,7 +1,8 @@
 ﻿if GetLocale() ~= "itIT" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for itIT client(Thanks to Oz for the translation)
+--	Localization for itIT client
+--	Translation: Oz
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Ripristino totale IU"
 L_GUI_SET_SAVED_SETTTINGS = "Imposta le impostazioni 'Per-Personaggio'"
@@ -34,6 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "Colora ricette/cavalcature/mascottes possedute"
 L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo click."
 L_GUI_MISC_SUM_BUYOUTS = "Somma assieme tutte le aste correnti"
 L_GUI_MISC_CLICK_CAST = "Scorciatoie da mouse (Click2Cast)"
+L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -49,6 +51,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Annuncia il conto alla rovescia di avvio i
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Annuncia l'uso di tonici e cibo"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Annuncia automaticamente l'uso di cibi e tonici all'appello (se attivato, annuncia nel canale incursione)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Annuncia l'uso di cibi e tonici nel canale incursione"
+L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatismi"
@@ -84,6 +88,11 @@ L_GUI_SKINS_NUG_RUNNING = "Attiva il restyling di NugRunning"
 L_GUI_SKINS_OVALE = "Attiva il restyling di OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Attiva il restyling di Clique"
 L_GUI_SKINS_ACE3 = "Attiva il restyling degli elementi per le opzioni di Ace3"
+L_GUI_SKINS_PP = "Attiva il restyling di PallyPower"
+L_GUI_SKINS_CAPPING = "Attiva il restyling di Capping"
+L_GUI_SKINS_COOL_LINE = "Attiva il restyling di CoolLine"
+L_GUI_SKINS_ATLASLOOT = "Attiva il restyling di AtlasLoot"
+L_GUI_SKINS_TINY_DPS = "Attiva il restyling di TinyDPS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"
@@ -226,7 +235,6 @@ L_GUI_MINIMAP_ICON = "Icona tracciamento"
 L_GUI_MINIMAP_SIZE = "Dimensioni della minimappa"
 L_GUI_MINIMAP_HIDE_COMBAT = "Nascondi la minimappa in combattimento"
 L_GUI_MINIMAP_TOGGLE_MENU = "Mostra il menu a scomparsa"
-L_GUI_MINIMAP_MERGE_MENUS = "Unisci i pulsanti principali e quelli delle AddOns del menu a scomparsa"
 
 -- Map options
 L_GUI_MAP_ENABLE = "Attiva la mappa del mondo"

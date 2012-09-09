@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.tooltip.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -137,17 +137,17 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		sh:SetScript("OnEvent", EventShow)
 	else
 		if C.tooltip.cursor == true then
-			hooksecurefunc("GameTooltip_SetDefaultAnchor", function(GameTooltip, parent)
+			hooksecurefunc("GameTooltip_SetDefaultAnchor", function(self, parent)
 				if InCombatLockdown() and C.tooltip.hide_combat and not IsShiftKeyDown() then
-					GameTooltip:Hide()
+					self:Hide()
 				else
-					GameTooltip:SetOwner(parent, "ANCHOR_CURSOR")
+					self:SetOwner(parent, "ANCHOR_CURSOR")
 				end
 			end)
 		else
 			hooksecurefunc("GameTooltip_SetDefaultAnchor", function(self)
 				if InCombatLockdown() and C.tooltip.hide_combat and not IsShiftKeyDown() then
-					GameTooltip:Hide()
+					self:Hide()
 				else
 					self:Point("BOTTOMRIGHT", TooltipAnchor, "BOTTOMRIGHT", 0, 0)
 				end
@@ -167,8 +167,6 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 				if not self.text then
 					self.text = self:CreateFontString(nil, "OVERLAY", "Tooltip_Med")
 					self.text:Point("CENTER", GameTooltipStatusBar, 0, 1.5)
-					self.text:SetShadowColor(0, 0, 0, 1)
-					self.text:SetShadowOffset(1, -1)
 				end
 				self.text:Show()
 				local hp = T.ShortValue(min).." / "..T.ShortValue(max)

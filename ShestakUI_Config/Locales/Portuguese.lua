@@ -1,7 +1,8 @@
 ﻿if GetLocale() ~= "ptBR" and GetLocale() ~= "ptPT" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for ptBR and ptPT client(Need full translation)
+--	Localization for ptBR and ptPT client
+--	Translation: Need full translation
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Total Reset UI"
 L_GUI_SET_SAVED_SETTTINGS = "Set settings Per-Character"
@@ -34,6 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known"
 L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting"
 L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions"
 L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder"
+L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Announcements"
@@ -49,6 +51,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel"
+L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast"
+L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automation"
@@ -84,6 +88,11 @@ L_GUI_SKINS_NUG_RUNNING = "Enable styling NugRunning"
 L_GUI_SKINS_OVALE = "Enable styling OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Enable styling Clique"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin"
+L_GUI_SKINS_PP = "Enable styling PallyPower"
+L_GUI_SKINS_CAPPING = "Enable styling Capping"
+L_GUI_SKINS_COOL_LINE = "Enable styling CoolLine"
+L_GUI_SKINS_ATLASLOOT = "Enable styling AtlasLoot"
+L_GUI_SKINS_TINY_DPS = "Enable styling TinyDPS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"
@@ -226,7 +235,6 @@ L_GUI_MINIMAP_ICON = "Tracking icon"
 L_GUI_MINIMAP_SIZE = "Map size"
 L_GUI_MINIMAP_HIDE_COMBAT = "Hide minimap in combat"
 L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu"
-L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu"
 
 -- Map options
 L_GUI_MAP_ENABLE = "Enable World Map"

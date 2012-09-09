@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.chat.enable ~= true or C.tooltip.enable ~= true or IsAddOnLoaded("tekKompare") then return end
 
 ----------------------------------------------------------------------------------------
@@ -25,14 +25,11 @@ local function OnHyperlinkLeave(frame, ...)
 	if orig2[frame] then return orig2[frame](frame, ...) end
 end
 
-local _G = getfenv(0)
 for i = 1, NUM_CHAT_WINDOWS do
-	if i ~= 2 then
-		local frame = _G["ChatFrame"..i]
-		orig1[frame] = frame:GetScript("OnHyperlinkEnter")
-		frame:SetScript("OnHyperlinkEnter", OnHyperlinkEnter)
+	local frame = _G["ChatFrame"..i]
+	orig1[frame] = frame:GetScript("OnHyperlinkEnter")
+	frame:SetScript("OnHyperlinkEnter", OnHyperlinkEnter)
 
-		orig2[frame] = frame:GetScript("OnHyperlinkLeave")
-		frame:SetScript("OnHyperlinkLeave", OnHyperlinkLeave)
-	end
+	orig2[frame] = frame:GetScript("OnHyperlinkLeave")
+	frame:SetScript("OnHyperlinkLeave", OnHyperlinkLeave)
 end

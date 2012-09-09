@@ -1,14 +1,14 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if T.client ~= "koKR" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for koKR client(Need full translation)
+--	Localization for koKR client
+--	Translation: Need full translation
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " used my lightwell. "
 L_ANNOUNCE_LA_CHARGE = " charge(s))"
 L_ANNOUNCE_LA_USELESS = " used my lightwell, uselessly. "
-L_ANNOUNCE_LA_STOP = "You shouldn't have used the lightwell."
 L_ANNOUNCE_LA_PLACED = "Lightwell placed. "
 L_ANNOUNCE_LA_CHARGES = " charges."
 
@@ -21,6 +21,17 @@ L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask"
 -- Says thanks for some spells
 L_ANNOUNCE_SS_THANKS = "Thanks for "
 L_ANNOUNCE_SS_RECEIVED = " received from "
+
+-- Pull countdown announce
+L_ANNOUNCE_PC_GO = "GO!"
+L_ANNOUNCE_PC_MSG = "Pulling %s in %s.."
+L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!"
+
+-- Announce feasts and portals
+L_ANNOUNCE_FP_PRE = "%s has prepared a %s."
+L_ANNOUNCE_FP_PUT = "%s has put down a %s."
+L_ANNOUNCE_FP_CAST = "%s is casting %s."
+L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!"
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "No Talents"
@@ -38,8 +49,9 @@ L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open"
 L_MISC_UNDRESS = "Undress"
 L_MISC_DRINKING = " is drinking."
 L_MISC_BUY_STACK = "Alt-Click to buy a stack"
-L_MISC_ONECLICK_BUYOUT = "Shift-Click to buyout the selected item without confirmation"
-L_MISC_ONECLICK_BID = "Shift-Click to bid on the selected item without confirmation"
+L_MISC_ONECLICK_BUYOUT = "Shift-Right-Click to buyout the selected item without confirmation"
+L_MISC_ONECLICK_BID = "Shift-Right-Click to bid on the selected item without confirmation"
+L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item without confirmation"
 L_MISC_UI_OUTDATED = "당신의 ShestakUI 버전이 구버전입니다. 당신은 www.shestak.org 에서 최신 버전을 다운로드하실 수 있습니다"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons"
 L_MISC_BINDER_OPEN = "Mouse Bindings"
@@ -151,7 +163,6 @@ L_MAIL_MESSAGES = "messages"
 -- Loot
 L_LOOT_RANDOM = "Random Player"
 L_LOOT_SELF = "Self Loot"
-L_LOOT_UNKNOWN = "Unknown"
 L_LOOT_FISH = "Fishing loot"
 L_LOOT_MONSTER = ">> Loot from "
 L_LOOT_CHEST = ">> Loot from chest"
@@ -160,7 +171,6 @@ L_LOOT_TO_RAID = "  raid"
 L_LOOT_TO_PARTY = "  party"
 L_LOOT_TO_GUILD = "  guild"
 L_LOOT_TO_SAY = "  say"
-L_LOOT_CANNOT = "Cannot roll"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "You are AFK!"
@@ -261,6 +271,7 @@ L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."
 L_POPUP_SETTINGS_DXE = "Need to change the position of elements DXE."
 L_POPUP_SETTINGS_BW = "Need to change the position of elements BigWigs."
 L_POPUP_ARMORY = "무기고"
+L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again."
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Welcome to ShestakUI "

@@ -1,40 +1,13 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.map.enable ~= true or IsAddOnLoaded("Aurora") then return end
 
 ----------------------------------------------------------------------------------------
 --	WorldMap style(m_Map by Monolit)
 ----------------------------------------------------------------------------------------
 WORLDMAP_WINDOWED_SIZE = C.map.scale
-local mapscale = WORLDMAP_WINDOWED_SIZE
 
 local mapbg = CreateFrame("Frame", nil, WorldMapDetailFrame)
 mapbg:SetTemplate("Default")
-
--- Create move button for map
-local movebutton = CreateFrame("Frame", nil, WorldMapFrameSizeUpButton)
-movebutton:Height(32)
-movebutton:Width(32)
-movebutton:Point("TOP", WorldMapFrameSizeUpButton, "BOTTOM", -1, 4)
-movebutton:SetBackdrop({bgFile = "Interface\\AddOns\\ShestakUI\\Media\\Textures\\Cross.tga"})
-movebutton:EnableMouse(true)
-
-movebutton:SetScript("OnMouseDown", function()
-	if InCombatLockdown() then return end
-	WorldMapScreenAnchor:ClearAllPoints()
-	WorldMapFrame:ClearAllPoints()
-	WorldMapFrame:StartMoving()
-	WorldMapBlobFrame:Hide()
-end)
-
-movebutton:SetScript("OnMouseUp", function()
-	if InCombatLockdown() then return end
-	WorldMapFrame:StopMovingOrSizing()
-	WorldMapScreenAnchor:StartMoving()
-	WorldMapScreenAnchor:StopMovingOrSizing()
-	WorldMapBlobFrame:Show()
-	WorldMapFrame:Hide()
-	WorldMapFrame:Show()
-end)
 
 local SmallerMap = GetCVarBool("miniWorldMap")
 if SmallerMap == nil then
@@ -43,7 +16,7 @@ end
 
 -- Styling World Map
 local SmallerMapSkin = function()
-	mapbg:SetScale(1 / mapscale)
+	mapbg:SetScale(1 / WORLDMAP_WINDOWED_SIZE)
 	mapbg:Point("TOPLEFT", WorldMapDetailFrame, -2, 2)
 	mapbg:Point("BOTTOMRIGHT", WorldMapDetailFrame, 2, -2)
 	mapbg:SetFrameStrata("MEDIUM")
@@ -64,42 +37,30 @@ local SmallerMapSkin = function()
 
 	WorldMapFrameMiniBorderLeft:Hide()
 	WorldMapFrameMiniBorderRight:Hide()
-
-	WorldMapFrameSizeUpButton:ClearAllPoints()
-	WorldMapFrameSizeUpButton:Point("TOPRIGHT", WorldMapButton, "TOPRIGHT", 3, -18)
-	WorldMapFrameSizeUpButton:SetFrameStrata("HIGH")
-	WorldMapFrameSizeUpButton:SetFrameLevel(18)
-
-	WorldMapFrameCloseButton:ClearAllPoints()
-	WorldMapFrameCloseButton:Point("TOPRIGHT", WorldMapButton, "TOPRIGHT", 3, 3)
-	WorldMapFrameCloseButton:SetFrameStrata("HIGH")
-
-	WorldMapFrameSizeDownButton:Point("TOPRIGHT", WorldMapFrameMiniBorderRight, "TOPRIGHT", -66, 7)
+	WorldMapFrameCloseButton:Hide()
+	WorldMapFrameSizeUpButton:Hide()
+	WorldMapFrameSizeDownButton:Hide()
 
 	WorldMapFrameTitle:ClearAllPoints()
 	WorldMapFrameTitle:SetParent(WorldMapDetailFrame)
 	WorldMapFrameTitle:Point("TOP", WorldMapDetailFrame, 0, -3)
 	WorldMapFrameTitle:SetFont(C.media.normal_font, 17)
 
-	WorldMapQuestShowObjectivesText:SetFont(C.media.normal_font, 13)
 	WorldMapQuestShowObjectivesText:ClearAllPoints()
 	WorldMapQuestShowObjectivesText:Point("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", 0, 4)
 
+	T.SkinCheckBox(WorldMapQuestShowObjectives)
 	WorldMapQuestShowObjectives:ClearAllPoints()
 	WorldMapQuestShowObjectives:Point("RIGHT", WorldMapQuestShowObjectivesText, "LEFT", 0, 0)
-	WorldMapQuestShowObjectives:SetFrameStrata("HIGH")
 
+	T.SkinCheckBox(WorldMapTrackQuest)
 	WorldMapTrackQuest:ClearAllPoints()
 	WorldMapTrackQuest:Point("BOTTOMLEFT", WorldMapButton, "BOTTOMLEFT", 0, 0)
-	WorldMapTrackQuest:SetFrameStrata("HIGH")
 
-	WorldMapTrackQuestText:SetFont(C.media.normal_font, 13)
-
+	T.SkinCheckBox(WorldMapShowDigSites)
 	WorldMapShowDigSites:ClearAllPoints()
 	WorldMapShowDigSites:Point("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
-	WorldMapShowDigSites:SetFrameStrata("HIGH")
 
-	WorldMapShowDigSitesText:SetFont(C.media.normal_font, 13)
 	WorldMapShowDigSitesText:ClearAllPoints()
 	WorldMapShowDigSitesText:Point("LEFT", WorldMapShowDigSites, "RIGHT", 0, 0)
 
@@ -113,9 +74,9 @@ local SmallerMapSkin = function()
 	WorldMapLevelDropDown:SetAlpha(0)
 	WorldMapLevelDropDown:SetScale(0.00001)
 
-	WorldMapShowDropDown:SetScale(0.85)
+	WorldMapShowDropDown:SetScale(WORLDMAP_WINDOWED_SIZE)
 	WorldMapShowDropDown:ClearAllPoints()
-	WorldMapShowDropDown:Point("TOPRIGHT", WorldMapButton, "TOPRIGHT", -15, -3)
+	WorldMapShowDropDown:Point("TOPRIGHT", WorldMapButton, "TOPRIGHT", 10, -3)
 	WorldMapShowDropDown:SetFrameStrata("HIGH")
 
 	-- Fix tooltip not hidding after leaving quest # tracker icon
@@ -123,66 +84,11 @@ local SmallerMapSkin = function()
 end
 hooksecurefunc("WorldMap_ToggleSizeDown", function() SmallerMapSkin() end)
 
-local BiggerMapSkin = function()
-	WorldMapFrame:EnableKeyboard(nil)
-	WorldMapFrame:EnableMouse(nil)
-
-	UIPanelWindows["WorldMapFrame"].area = "center"
-	WorldMapFrame:SetAttribute("UIPanelLayout-defined", nil)
-
-	WorldMapFrame:ClearAllPoints()
-	WorldMapFrame:SetPoint("CENTER")
-
-	WorldMapLevelDropDown:SetAlpha(1)
-	WorldMapLevelDropDown:SetScale(1)
-
-	WorldMapFrameTitle:SetParent(WorldMapPositioningGuide)
-	WorldMapFrameTitle:SetFont(C.media.normal_font, 13)
-	WorldMapFrameTitle:ClearAllPoints()
-	WorldMapFrameTitle:Point("TOP", WorldMapPositioningGuide, "TOP", 0, -5)
-
-	WorldMapQuestShowObjectivesText:SetFont(C.media.normal_font, 12)
-	WorldMapQuestShowObjectivesText:ClearAllPoints()
-	WorldMapQuestShowObjectivesText:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", -10, 10)
-
-	WorldMapQuestShowObjectives:ClearAllPoints()
-	WorldMapQuestShowObjectives:Point("RIGHT", WorldMapQuestShowObjectivesText, "LEFT", 0, 0)
-	WorldMapQuestShowObjectives:SetFrameStrata("TOOLTIP")
-
-	WorldMapShowDigSitesText:SetFont(C.media.normal_font, 12)
-	WorldMapShowDigSitesText:ClearAllPoints()
-	WorldMapShowDigSitesText:Point("RIGHT", WorldMapQuestShowObjectives, "LEFT", 0, 0)
-
-	WorldMapShowDigSites:ClearAllPoints()
-	WorldMapShowDigSites:Point("RIGHT", WorldMapShowDigSitesText, "LEFT", 0, 0)
-	WorldMapShowDigSites:SetFrameStrata("TOOLTIP")
-
-	WorldMapTrackQuest:ClearAllPoints()
-	WorldMapTrackQuest:Point("BOTTOMLEFT", WorldMapPositioningGuide, "BOTTOMLEFT", 10, 3)
-	WorldMapTrackQuest:SetFrameStrata("HIGH")
-
-	WorldMapTrackQuestText:SetFont(C.media.normal_font, 12)
-
-	WorldMapShowDropDown:SetScale(1)
-	WorldMapShowDropDown:ClearAllPoints()
-	WorldMapShowDropDown:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", 10, -3)
-	WorldMapShowDropDown:SetFrameStrata("HIGH")
-end
-hooksecurefunc("WorldMap_ToggleSizeUp", function() BiggerMapSkin() end)
-
-mapbg:SetScript("OnShow", function(self)
-	local SmallerMap = GetCVarBool("miniWorldMap")
-	if SmallerMap == nil then
-		BiggerMapSkin()
-	end
-	self:SetScript("OnShow", function() end)
-end)
-
-local addon = CreateFrame("Frame")
-addon:RegisterEvent("PLAYER_ENTERING_WORLD")
-addon:RegisterEvent("PLAYER_REGEN_ENABLED")
-addon:RegisterEvent("PLAYER_REGEN_DISABLED")
-addon:SetScript("OnEvent", function(self, event)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:RegisterEvent("PLAYER_REGEN_ENABLED")
+frame:RegisterEvent("PLAYER_REGEN_DISABLED")
+frame:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
 		SetCVar("questPOI", 1)
 		BlackoutWorld:Hide()

@@ -16,7 +16,7 @@ local function Update(object, event, unit)
 	local index = 1
 
 	-- Buffs
-	while ( true ) do
+	while true do
 		local name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable = UnitAura(unit, index, "HELPFUL")
 		if not name then break end
 
@@ -33,7 +33,7 @@ local function Update(object, event, unit)
 	index = 1
 
 	-- Debuffs
-	while ( true ) do
+	while true do
 		local name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable = UnitAura(unit, index, "HARMFUL")
 		if not name then break end
 
@@ -49,7 +49,7 @@ local function Update(object, event, unit)
 
 	if auraName then -- If an aura is found, display it and set the time left!
 		object.AuraTracker.icon:SetTexture(auraIcon)
-		object.AuraTracker.timeleft = (auraExpTime - GetTime())
+		object.AuraTracker.timeleft = auraExpTime - GetTime()
 		object.AuraTracker.active = true
 	elseif not auraName then -- No aura found and one is shown? Kill it since it's no longer active!
 		object.AuraTracker.icon:SetTexture("")
@@ -59,10 +59,10 @@ local function Update(object, event, unit)
 end
 
 local function Enable(object)
-	-- if we're not highlighting this unit return
+	-- If we're not highlighting this unit return
 	if not object.AuraTracker then return end
 
-	-- make sure aura scanning is active for this object
+	-- Make sure aura scanning is active for this object
 	object:RegisterEvent("UNIT_AURA", Update)
 
 	return true

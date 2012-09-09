@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.tooltip.enable ~= true or C.tooltip.unit_role ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ end
 
 GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
 	local name, unit = GameTooltip:GetUnit()
-	if unit and UnitIsPlayer(unit) and ((UnitInParty(unit) and GetNumSubgroupMembers() > 0) or (UnitInRaid(unit) and GetNumGroupMembers() > 0)) then
+	if unit and UnitIsPlayer(unit) and ((UnitInParty(unit) and GetNumGroupMembers() > 0) or (UnitInRaid(unit) and GetNumGroupMembers() > 0)) then
 		GameTooltip:AddLine(ROLE..": "..GetLFDRole(unit))
 	end
 end)

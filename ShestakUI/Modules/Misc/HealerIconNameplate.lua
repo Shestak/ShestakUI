@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.nameplate.enable ~= true or C.nameplate.healer_icon ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -34,17 +34,11 @@ local function IsValidFrame(frame)
 	if not (frame:GetName() and strsub(frame:GetName(), 1, 9 ) == "NamePlate") then
 		return
 	end
-	--if frame.aloftData then
-	--	return true
-	--end
-	--if frame.done then
-	--	return true
-	--end
 	if frame.HPHeal then
 		return true
 	end
 	local overlayRegion = select(2, frame:GetRegions())
-	return overlayRegion and overlayRegion:GetObjectType() == "Texture" --and overlayRegion:GetTexture() == "Interface\\Tooltips\\Nameplate-Border"
+	return overlayRegion and overlayRegion:GetObjectType() == "Texture"
 end
 
 local function CreatePlate(frame)
@@ -108,6 +102,11 @@ t.factionOpposites = {
 	["Horde"] = 1,
 	["Alliance"] = 0,
 }
+t.Healers = {
+	[L_PLANNER_PALADIN_1] = true,
+	[L_PLANNER_PRIEST_1] = true,
+	[L_PLANNER_PRIEST_2] = true,
+}
 
 local function CheckHealers(self, elapsed)
 	lastcheck = lastcheck + elapsed
@@ -115,10 +114,12 @@ local function CheckHealers(self, elapsed)
 		lastcheck = 0
 		heallist = {}
 		for i = 1, GetNumBattlefieldScores() do
-			local name, _, _, _, _, faction, _, _, classToken, damageDone, healingDone = GetBattlefieldScore(i)
-			if (healingDone > damageDone * 1.2) and t.factionOpposites[UnitFactionGroup("player")] == faction then
-				name = name:match("(.+)%-.+") or name
-				heallist[name] = classToken
+			local name, _, _, _, _, faction, _, _, _, _, _, _, _, _, _, talentSpec = GetBattlefieldScore(i)
+			name = name:match("(.+)%-.+") or name
+			if name and t.Healers[talentSpec] and t.factionOpposites[UnitFactionGroup("player")] == faction then
+				heallist[name] = talentSpec
+			--elseif name and heallist[name] then
+			--	heallist[name] = nil
 			end
 		end
 	end

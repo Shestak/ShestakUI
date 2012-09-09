@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	First Time Launch and On Login file
@@ -27,11 +27,14 @@ local function InstallUI()
 	SetCVar("ConsolidateBuffs", 0)
 	SetCVar("autoQuestWatch", 1)
 	SetCVar("autoQuestProgress", 1)
-	SetCVar("scriptErrors", 1)
+	SetCVar("scriptErrors", 0)
 	SetCVar("buffDurations", 1)
+	SetCVar("enableCombatText", 1)
+	SetCVar("autoOpenLootHistory", 0)
 
 	if T.author == true then
 		SetCVar("taintLog", 1)
+		SetCVar("scriptErrors", 1)
 		SetCVar("interactOnLeftClick", 0)
 		SetCVar("displayWorldPVPObjectives", 2)
 		SetCVar("timeMgrUseLocalTime", 1)
@@ -73,12 +76,15 @@ local function InstallUI()
 		SetCVar("shadowMode", 0)
 		SetCVar("ffxDeath", 0)
 		SetCVar("ffxNetherWorld", 0)
-		SetCVar("autoOpenLootHistory", 0)
+		SetCVar("fctLowManaHealth", 0)
+		SetCVar("fctReactives", 0)
 		SetAutoDeclineGuildInvites(1)
+		ShowAccountAchievements(1)
+		SetAllowLowLevelRaid(1)
 	end
 
 	-- Setting chat frames
-	if (C.chat.enable == true) and (not IsAddOnLoaded("Prat-3.0") or not IsAddOnLoaded("Chatter")) then
+	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
 		for i = 1, NUM_CHAT_WINDOWS do
 			local frame = _G[format("ChatFrame%s", i)]
 			local chatFrameId = frame:GetID()
@@ -256,6 +262,12 @@ StaticPopupDialogs.SWITCH_RAID = {
 	preferredIndex = 5,
 }
 
+SLASH_CONFIGURE1 = "/resetui"
+SlashCmdList.CONFIGURE = function() StaticPopup_Show("RESET_UI") end
+
+SLASH_RESETSTATS1 = "/resetstats"
+SlashCmdList.RESETSTATS = function() StaticPopup_Show("RESET_STATS") end
+
 ----------------------------------------------------------------------------------------
 --	On logon function
 ----------------------------------------------------------------------------------------
@@ -328,26 +340,5 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		end
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	Collect garbage function
-----------------------------------------------------------------------------------------
-local eventcount = 0
-local Garbage = CreateFrame("Frame")
-Garbage:RegisterAllEvents()
-Garbage:SetScript("OnEvent", function(self, event)
-	eventcount = eventcount + 1
-
-	if (InCombatLockdown() and eventcount > 25000) or eventcount > 10000 or event == "PLAYER_ENTERING_WORLD" then
-		collectgarbage("collect")
-		eventcount = 0
-	end
-end)
-
-SLASH_CONFIGURE1 = "/resetui"
-SlashCmdList.CONFIGURE = function() StaticPopup_Show("RESET_UI") end
-
-SLASH_RESETSTATS1 = "/resetstats"
-SlashCmdList.RESETSTATS = function() StaticPopup_Show("RESET_STATS") end
 
 -- edit by Oz of shestak. org --

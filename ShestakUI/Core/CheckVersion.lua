@@ -1,24 +1,25 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Check outdated UI version
 ----------------------------------------------------------------------------------------
 local check = function(self, event, prefix, message, channel, sender)
 	if event == "CHAT_MSG_ADDON" then
-		if prefix ~= "ShestakUIVersion" or sender == UnitName("player") then return end
-		if tonumber(message) > tonumber(GetAddOnMetadata("ShestakUI", "Version")) then
-			print("|cffad2424"..L_MISC_UI_OUTDATED.."|r")
+		if prefix ~= "ShestakUIVersion" or sender == T.name then return end
+		if tonumber(message) == nil then return end
+		if tonumber(message) > tonumber(T.version) then
+			print("|cffff0000"..L_MISC_UI_OUTDATED.."|r")
 			self:UnregisterEvent("CHAT_MSG_ADDON")
 		end
 	else
 		if UnitInBattleground("player") and UnitInBattleground("player") > 0 then
-			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "BATTLEGROUND")
-		elseif UnitInRaid("player") then
-			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "RAID")
-		elseif UnitInParty("player") then
-			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "PARTY")
+			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "BATTLEGROUND")
+		elseif IsInRaid() then
+			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "RAID")
+		elseif IsInGroup() then
+			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "PARTY")
 		elseif IsInGuild() then
-			SendAddonMessage("ShestakUIVersion", tonumber(GetAddOnMetadata("ShestakUI", "Version")), "GUILD")
+			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "GUILD")
 		end
 	end
 end
@@ -29,3 +30,19 @@ frame:RegisterEvent("GROUP_ROSTER_UPDATE")
 frame:RegisterEvent("CHAT_MSG_ADDON")
 frame:SetScript("OnEvent", check)
 RegisterAddonMessagePrefix("ShestakUIVersion")
+
+----------------------------------------------------------------------------------------
+--	Whisp UI version
+----------------------------------------------------------------------------------------
+local whisp = CreateFrame("Frame")
+whisp:RegisterEvent("CHAT_MSG_WHISPER")
+whisp:RegisterEvent("CHAT_MSG_BN_WHISPER")
+whisp:SetScript("OnEvent", function(self, event, text, name, ...)
+	if text:lower():match("ui_version") or text:lower():match("уи_версия") then
+		if event == "CHAT_MSG_WHISPER" then
+			SendChatMessage("ShestakUI "..T.version, "WHISPER", nil, name)
+		elseif event == "CHAT_MSG_BN_WHISPER" then
+			BNSendWhisper(select(11, ...), "ShestakUI "..T.version)
+		end
+	end
+end)

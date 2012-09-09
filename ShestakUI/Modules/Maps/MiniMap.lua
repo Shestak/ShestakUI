@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.minimap.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -135,6 +135,7 @@ end)
 --	Right click menu
 ----------------------------------------------------------------------------------------
 local menuFrame = CreateFrame("Frame", "MinimapRightClickMenu", UIParent, "UIDropDownMenuTemplate")
+local guildText = IsInGuild() and ACHIEVEMENTS_GUILD_TAB or LOOKINGFORGUILD
 local micromenu = {
 	{text = CHARACTER_BUTTON, notCheckable = 1, func = function()
 		ToggleCharacter("PaperDollFrame")
@@ -161,7 +162,11 @@ local micromenu = {
 	{text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
 		ToggleFrame(QuestLogFrame)
 	end},
-	{text = ACHIEVEMENTS_GUILD_TAB, notCheckable = 1, func = function()
+	{text = guildText, notCheckable = 1, func = function()
+		if IsTrialAccount() then
+			UIErrorsFrame:AddMessage(ERR_RESTRICTED_ACCOUNT, 1, 0.1, 0.1)
+			return
+		end
 		if IsInGuild() then
 			if not GuildFrame then
 				LoadAddOn("Blizzard_GuildUI")
@@ -183,14 +188,22 @@ local micromenu = {
 		if T.level >= SHOW_PVP_LEVEL then
 			TogglePVPFrame()
 		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
+			if C.error.white == false then
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL), 1, 0.1, 0.1)
+			else
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
+			end
 		end
 	end},
 	{text = DUNGEONS_BUTTON, notCheckable = 1, func = function()
 		if T.level >= SHOW_LFD_LEVEL then
 			PVEFrame_ToggleFrame()
 		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
+			if C.error.white == false then
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL), 1, 0.1, 0.1)
+			else
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
+			end
 		end
 	end},
 	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
@@ -226,15 +239,15 @@ Minimap:SetScript("OnMouseUp", function(self, button)
 	local position = MinimapAnchor:GetPoint()
 	if button == "RightButton" then
 		if position:match("LEFT") then
-			EasyMenu(micromenu, menuFrame, "cursor", 0, 0, "MENU", 2)
+			EasyMenu(micromenu, menuFrame, "cursor", 0, 0, "MENU", nil)
 		else
-			EasyMenu(micromenu, menuFrame, "cursor", -160, 0, "MENU", 2)
+			EasyMenu(micromenu, menuFrame, "cursor", -160, 0, "MENU", nil)
 		end
 	elseif button == "MiddleButton" then
 		if position:match("LEFT") then
-			ToggleDropDownMenu(1, nil, MiniMapTrackingDropDown, "cursor", 0, 0, "MENU", 2)
+			ToggleDropDownMenu(nil, nil, MiniMapTrackingDropDown, "cursor", 0, 0, "MENU", 2)
 		else
-			ToggleDropDownMenu(1, nil, MiniMapTrackingDropDown, "cursor", -160, 0, "MENU", 2)
+			ToggleDropDownMenu(nil, nil, MiniMapTrackingDropDown, "cursor", -160, 0, "MENU", 2)
 		end
 	elseif button == "LeftButton" then
 		Minimap_OnClick(self)

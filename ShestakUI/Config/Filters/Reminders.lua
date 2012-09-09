@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
@@ -261,10 +261,17 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		ROGUE = {
-			[1] = {	-- Poisons group
+			[1] = {	-- Lethal Poisons group
 				["spells"] = {
 					2823,	-- Deadly Poison
 					8679,	-- Wound Poison
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+			[2] = {	--  Non-Lethal Poisons group
+				["spells"] = {
 					5761,	-- Mind-numbing Poison
 					3408,	-- Crippling Poison
 					108211,	-- Leeching Poison
@@ -273,7 +280,6 @@ if C.reminder.solo_buffs_enable == true then
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
-				["level"] = 10,
 			},
 		},
 		SHAMAN = {

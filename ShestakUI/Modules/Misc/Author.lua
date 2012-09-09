@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if T.author ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -84,6 +84,24 @@ LFDParentFrame:HookScript("OnShow", function()
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Unregister some events
+----------------------------------------------------------------------------------------
+AlertFrame:UnregisterEvent("LOOT_ITEM_ROLL_WON")
+AlertFrame:UnregisterEvent("SHOW_LOOT_TOAST")
+
+----------------------------------------------------------------------------------------
+--	Hide character controls
+----------------------------------------------------------------------------------------
+CharacterModelFrameControlFrame:HookScript("OnShow", function(self) self:Hide() end)
+DressUpModelControlFrame:HookScript("OnShow", function(self) self:Hide() end)
+SideDressUpModelControlFrame:HookScript("OnShow", function(self) self:Hide() end)
+
+----------------------------------------------------------------------------------------
+--	Hide subzone text
+----------------------------------------------------------------------------------------
+SubZoneTextFrame:SetScript("OnShow", function() SubZoneTextFrame:Hide() end)
 
 ----------------------------------------------------------------------------------------
 --	Auto hide unnecessary stats from CharacterFrame(module from Inomena by p3lim)

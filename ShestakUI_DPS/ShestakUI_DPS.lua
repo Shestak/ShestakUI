@@ -1,4 +1,4 @@
-local T, C, L = unpack(ShestakUI)
+local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true or IsAddOnLoaded("ShestakUI_Heal") then return end
 
 ----------------------------------------------------------------------------------------

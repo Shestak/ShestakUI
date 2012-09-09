@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -70,7 +70,7 @@ if C.actionbar.rightbars_mouseover == true and C.actionbar.petbar_horizontal == 
 		local b = _G["PetActionButton"..i]
 		b:SetAlpha(0)
 		b:HookScript("OnEnter", function() RightBarMouseOver(1) end)
-		b:HookScript("OnLeave", function() RightBarMouseOver(0) end)
+		b:HookScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 	end
 end
 if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
@@ -78,6 +78,6 @@ if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == tru
 		local b = _G["PetActionButton"..i]
 		b:SetAlpha(0)
 		b:HookScript("OnEnter", function() PetMouseOver(1) end)
-		b:HookScript("OnLeave", function() PetMouseOver(0) end)
+		b:HookScript("OnLeave", function() if not HoverBind.enabled then PetMouseOver(0) end end)
 	end
 end

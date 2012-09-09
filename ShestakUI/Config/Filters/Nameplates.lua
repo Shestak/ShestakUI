@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.nameplate.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -73,6 +73,10 @@ T.DebuffWhiteList = {
 	[SpellName(348)] = true,	-- Immolate
 	-- Warrior
 	[SpellName(20511)] = true,	-- Intimidating Shout
+	[SpellName(115798)] = true,	-- Weakened Blows
+	[SpellName(115767)] = true,	-- Deep Wounds
+	[SpellName(113746)] = true,	-- Weakened Armor
+	[SpellName(132168)] = true,	-- Shockwave
 	-- Racial
 	[SpellName(25046)] = true,	-- Arcane Torrent
 	[SpellName(20549)] = true,	-- War Stomp

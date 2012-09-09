@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.automation.resurrection ~= true then return end
 
 ----------------------------------------------------------------------------------------

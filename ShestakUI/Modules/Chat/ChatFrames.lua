@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.chat.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -31,7 +31,8 @@ _G.CHAT_PARTY_GUIDE_GET = CHAT_PARTY_LEADER_GET
 _G.CHAT_RAID_GET = "|Hchannel:RAID|h["..L_CHAT_RAID.."]|h %s:\32"
 _G.CHAT_RAID_LEADER_GET = "|Hchannel:RAID|h["..L_CHAT_RAID_LEADER.."]|h %s:\32"
 _G.CHAT_RAID_WARNING_GET = "["..L_CHAT_RAID_WARNING.."] %s:\32"
-_G.CHAT_PET_BATTLE_COMBAT_LOG_GET = "|Hchannel:PET_BATTLE_COMBAT_LOG|h["..L_CHAT_PET_BATTLE.."]|h:\32";
+_G.CHAT_PET_BATTLE_COMBAT_LOG_GET = "|Hchannel:PET_BATTLE_COMBAT_LOG|h["..L_CHAT_PET_BATTLE.."]|h:\32"
+_G.CHAT_PET_BATTLE_INFO_GET = "|Hchannel:PET_BATTLE_INFO|h["..L_CHAT_PET_BATTLE.."]|h:\32"
 _G.CHAT_SAY_GET = "%s:\32"
 _G.CHAT_WHISPER_GET = L_CHAT_WHISPER.." %s:\32"
 _G.CHAT_YELL_GET = "%s:\32"
@@ -45,8 +46,8 @@ _G.ACHIEVEMENT_BROADCAST_SELF = "%s!"
 _G.PLAYER_SERVER_FIRST_ACHIEVEMENT = "|Hplayer:%s|h[%s]|h! $a!"
 _G.SERVER_FIRST_ACHIEVEMENT = "%s! $a!"
 if T.client == "ruRU" then
-	_G.FACTION_STANDING_DECREASED = "Отношение %s -%d."
-	_G.FACTION_STANDING_INCREASED = "Отношение %s +%d."
+	_G.FACTION_STANDING_DECREASED = "Отношение |3-7(%s) -%d."
+	_G.FACTION_STANDING_INCREASED = "Отношение |3-7(%s) +%d."
 end
 _G.GUILD_MOTD_TEMPLATE = "|cff40ff40"..GUILD_MOTD_LABEL2..": %s|r"
 
@@ -241,9 +242,9 @@ local function SetupChatPosAndFont(self)
 			FCF_SavePositionAndDimensions(chat)
 		elseif i == 2 then
 			if C.chat.combatlog == true then
-				FCF_DockFrame(ChatFrame2)
+				FCF_DockFrame(chat)
 			else
-				FCF_UnDockFrame(ChatFrame2)
+				FCF_UnDockFrame(chat)
 				chat:ClearAllPoints()
 				chat:Point("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)
 			end

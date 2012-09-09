@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if T.client ~= "ruRU" then return end
 
 ----------------------------------------------------------------------------------------
@@ -8,7 +8,6 @@ if T.client ~= "ruRU" then return end
 L_ANNOUNCE_LA_USE = " выпил из моего колодца. "
 L_ANNOUNCE_LA_CHARGE = " заряд(ов))"
 L_ANNOUNCE_LA_USELESS = " использовал мой колодец впустую! "
-L_ANNOUNCE_LA_STOP = "Прекрати пить из моего колодца!!!"
 L_ANNOUNCE_LA_PLACED = "Колодец Света поставлен. "
 L_ANNOUNCE_LA_CHARGES = " зарядов."
 
@@ -21,6 +20,17 @@ L_ANNOUNCE_FF_CHECK_BUTTON = "Проверка еды и настоя"
 -- Says thanks for some spells
 L_ANNOUNCE_SS_THANKS = "Спасибо за "
 L_ANNOUNCE_SS_RECEIVED = " получено от "
+
+-- Pull countdown announce
+L_ANNOUNCE_PC_GO = "ВЫСТУПАЕМ!"
+L_ANNOUNCE_PC_MSG = "Атакуем %s через %s.."
+L_ANNOUNCE_PC_ABORTED = "Атака ОТМЕНЕНА!"
+
+-- Announce feasts and portals
+L_ANNOUNCE_FP_PRE = "%s готовит %s."
+L_ANNOUNCE_FP_PUT = "%s ставит %s."
+L_ANNOUNCE_FP_CAST = "%s создает %s."
+L_ANNOUNCE_FP_CLICK = "%s создает %s. Кликаем!"
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Нет талантов"
@@ -38,9 +48,10 @@ L_TOOLTIP_INSPECT_OPEN = "Открыто окно осмотра"
 L_MISC_UNDRESS = "Раздеть"
 L_MISC_DRINKING = " пьёт."
 L_MISC_BUY_STACK = "Зажмите Alt и щелкните мышью, чтобы купить связку"
-L_MISC_ONECLICK_BUYOUT = "Зажмите Shift и щелкните мышью, чтобы выкупить выбранный предмет без подтверждения"
-L_MISC_ONECLICK_BID = "Зажмите Shift и щелкните мышью, чтобы сделать ставку на выбранном предмете без подтверждения"
-L_MISC_UI_OUTDATED = "Ваша версия ShestakUI устарела. Вы можете скачать последнюю версию на www.shestak.org"
+L_MISC_ONECLICK_BUYOUT = "Зажмите Shift и щелкните правой кнопкой мыши, чтобы выкупить выбранный предмет без подтверждения"
+L_MISC_ONECLICK_BID = "Зажмите Shift и щелкните правой кнопкой мыши, чтобы сделать ставку на выбранном предмете без подтверждения"
+L_MISC_ONECLICK_CANCEL = "Зажмите Shift и щелкните правой кнопкой мыши, чтобы отменить аукцион выбранного предмета без подтверждения"
+L_MISC_UI_OUTDATED = "Ваша версия ShestakUI устарела. Вы можете скачать последнюю версию с www.shestak.org"
 L_MISC_HEADER_MARK = "Метки по наведению курсора"
 L_MISC_BINDER_OPEN = "Назначения мыши"
 
@@ -151,7 +162,6 @@ L_MAIL_MESSAGES = "сообщений"
 -- Loot
 L_LOOT_RANDOM = "Случайному игроку"
 L_LOOT_SELF = "Забрать себе"
-L_LOOT_UNKNOWN = "Неизвестно"
 L_LOOT_FISH = "Рыбалка"
 L_LOOT_MONSTER = ">> Добыча с "
 L_LOOT_CHEST = ">> Добыча из сундука"
@@ -160,7 +170,6 @@ L_LOOT_TO_RAID = "  рейду"
 L_LOOT_TO_PARTY = "  группе"
 L_LOOT_TO_GUILD = "  гильдии"
 L_LOOT_TO_SAY = "  сказав"
-L_LOOT_CANNOT = "Невозможно выбрать"
 
 -- LitePanels AFK module
 L_PANELS_AFK = "Вы отсутствуете!"
@@ -261,6 +270,7 @@ L_POPUP_SETTINGS_DBM = "Необходимо изменить позиции э�
 L_POPUP_SETTINGS_DXE = "Необходимо изменить позиции элементов DXE."
 L_POPUP_SETTINGS_BW = "Необходимо изменить позиции элементов BigWigs."
 L_POPUP_ARMORY = "Оружейная"
+L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Добро пожаловать в ShestakUI "

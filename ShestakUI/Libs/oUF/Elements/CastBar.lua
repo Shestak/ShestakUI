@@ -1,8 +1,3 @@
---[[
-	Original codebase:
-		oUF_Castbar by Starlon.
-		http://svn.wowace.com/wowace/trunk/oUF_Castbar/
---]]
 local parent, ns = ...
 local oUF = ns.oUF
 

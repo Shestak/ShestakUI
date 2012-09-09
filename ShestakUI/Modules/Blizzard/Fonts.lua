@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Based on tekticles
@@ -17,7 +17,7 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	if addon ~= "ShestakUI" or addon == "tekticles" then return end
 
 	local NORMAL = C.media.normal_font
-	local COMBAT = C.media.blank_font
+	local BLANK = C.media.blank_font
 
 	UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 12
 	CHAT_FONT_HEIGHTS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
@@ -27,8 +27,8 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	STANDARD_TEXT_FONT = NORMAL
 
 	if T.author == true then
-		DAMAGE_TEXT_FONT = COMBAT
-		SetFont(CombatTextFont, COMBAT, 100)
+		DAMAGE_TEXT_FONT = BLANK
+		SetFont(CombatTextFont, BLANK, 100)
 	end
 
 	-- Base fonts
@@ -36,15 +36,15 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	SetFont(InvoiceFont_Med, NORMAL, 13, nil, 0.15, 0.09, 0.04)
 	SetFont(InvoiceFont_Small, NORMAL, 11, nil, 0.15, 0.09, 0.04)
 	SetFont(MailFont_Large, NORMAL, 15, nil, 0.15, 0.09, 0.04, 0.54, 0.4, 0.1, 1, -1)
-	SetFont(NumberFont_OutlineThick_Mono_Small, NORMAL, 12, "OUTLINE")
 	SetFont(NumberFont_Outline_Huge, NORMAL, 30, "THICKOUTLINE", 30)
 	SetFont(NumberFont_Outline_Large, NORMAL, 17, "OUTLINE")
 	SetFont(NumberFont_Outline_Med, NORMAL, 15, "OUTLINE")
 	SetFont(NumberFont_Shadow_Med, NORMAL, 14)
-	SetFont(NumberFont_Shadow_Small, NORMAL, 12)
+	SetFont(NumberFont_Shadow_Small, NORMAL, 12, "OUTLINE", nil, nil, nil, 0, 0, 0, 0, 0)
 	SetFont(QuestFont_Large, NORMAL, 16)
 	SetFont(QuestFont_Shadow_Huge, NORMAL, 19, nil, nil, nil, nil, 0.54, 0.4, 0.1)
 	SetFont(QuestFont_Shadow_Small, NORMAL, 15)
+	SetFont(QuestFont_Super_Huge, NORMAL, 20, nil, nil, nil, nil, 0, 0, 0, 1, -1)
 	SetFont(ReputationDetailFont, NORMAL, 11, nil, nil, nil, nil, 0, 0, 0, 1, -1)
 	SetFont(SpellFont_Small, NORMAL, 11)
 	SetFont(SystemFont_InverseShadow_Small, NORMAL, 11)
@@ -60,6 +60,7 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 	SetFont(SystemFont_Shadow_Huge3, NORMAL, 25)
 	SetFont(SystemFont_Shadow_Large, NORMAL, 17)
 	SetFont(SystemFont_Shadow_Med1, NORMAL, 13)
+	SetFont(SystemFont_Shadow_Med2, NORMAL, 13)
 	SetFont(SystemFont_Shadow_Med3, NORMAL, 15)
 	SetFont(SystemFont_Shadow_Outline_Huge2, NORMAL, 22, "OUTLINE")
 	SetFont(SystemFont_Shadow_Small, NORMAL, 11)

@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	ShestakUI main configuration file
@@ -56,15 +56,16 @@ C["misc"] = {
 	["disenchanting"] = false,					-- One-click Milling, Prospecting and Disenchanting
 	["sum_buyouts"] = false,					-- Sum upp all current auctions
 	["click_cast"] = false,						-- Simple click2cast spell binder
+	["move_blizzard"] = false,					-- Move some Blizzard frames
 }
 
 ----------------------------------------------------------------------------------------
 --	Announcements options
 ----------------------------------------------------------------------------------------
 C["announcements"] = {
-	["drinking"] = false,						-- Announce in chat when arena enemy is drinking
-	["interrupts"] = false,						-- Announce in party/raid when you interrupt
-	["spells"] = false,							-- Announce in party/raid when you cast some spell
+	["drinking"] = false,						-- Announce when arena enemy is drinking
+	["interrupts"] = false,						-- Announce when you interrupt
+	["spells"] = false,							-- Announce when you cast some spell
 	["spells_from_all"] = false,				-- Check spells cast from all members
 	["enemy_trinkets"] = false,					-- Announce the usage of enemy trinkets (only works in arena)
 	["lightwell"] = false,						-- Announce your Lightwell
@@ -74,6 +75,8 @@ C["announcements"] = {
 	["flask_food"] = true,						-- Announce the usage of flasks and food
 	["flask_food_auto"] = false,				-- Auto announce when ReadyCheck(if enable, announce to raid channel)
 	["flask_food_raid"] = false,				-- Announce to raid channel
+	["feasts"] = false,							-- Announce Feasts/Cauldrons/Souls/Repair Bots cast
+	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
 }
 
 ----------------------------------------------------------------------------------------
@@ -115,6 +118,11 @@ C["skins"] = {
 	["ovale"] = true,							-- OvaleSpellPriority skin
 	["clique"] = true,							-- Clique skin
 	["ace3"] = true,							-- Ace3 options elements skin
+	["pallypower"] = true,						-- PallyPower skin
+	["capping"] = true,							-- Capping skin
+	["cool_line"] = true,						-- CoolLine skin
+	["atlasloot"] = true,						-- AtlasLoot skin
+	["tiny_dps"] = true,						-- TinyDPS skin
 }
 
 ----------------------------------------------------------------------------------------
@@ -296,7 +304,6 @@ C["minimap"] = {
 	["size"] = 129,								-- Minimap size
 	["hide_combat"] = false,					-- Hide minimap in combat
 	["toggle_menu"] = true,						-- Show toggle menu
-	["merge_menus"] = true,						-- Merge main and addon buttons in toggle menu
 }
 
 ----------------------------------------------------------------------------------------

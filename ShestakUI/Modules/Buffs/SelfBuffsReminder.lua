@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.reminder.solo_buffs_enable ~= true then return end
 
 ----------------------------------------------------------------------------------------

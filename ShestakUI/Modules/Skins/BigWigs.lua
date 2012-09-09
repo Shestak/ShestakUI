@@ -1,16 +1,9 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.skins.bigwigs ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	BigWigs skin(by Affli)
 ----------------------------------------------------------------------------------------
-local classcolor = true			-- Classcolored bars
-local skinrange = true			-- Skin distance window
-local disablescaling = true		-- Disables bar scaling (including emphasized bars)
-
-local barcolor = classcolor and ((CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[T.class])
-local buttonsize = 21
-
 -- Init some tables to store backgrounds
 local freebg = {}
 
@@ -43,9 +36,7 @@ local function freestyle(bar)
 	-- Replace dummies with original method functions
 	bar.candyBarBar.SetPoint = bar.candyBarBar.OldSetPoint
 	bar.candyBarIconFrame.SetWidth = bar.candyBarIconFrame.OldSetWidth
-	if disablescaling then
-		bar.SetScale = bar.OldSetScale
-	end
+	bar.SetScale = bar.OldSetScale
 
 	--Reset Positions
 	--Icon
@@ -75,11 +66,9 @@ end
 local applystyle = function(bar)
 	-- General bar settings
 	bar:Height(15)
-	if disablescaling then
-		bar:SetScale(1)
-		bar.OldSetScale = bar.SetScale
-		bar.SetScale = T.dummy
-	end
+	bar:SetScale(1)
+	bar.OldSetScale = bar.SetScale
+	bar.SetScale = T.dummy
 
 	-- Create or reparent and use bar background
 	local bg = nil
@@ -132,13 +121,13 @@ local applystyle = function(bar)
 	bar.candyBarBar.OldSetPoint = bar.candyBarBar.SetPoint
 	bar.candyBarBar.SetPoint = T.dummy
 	bar.candyBarBar:SetStatusBarTexture(C.media.texture)
-	if barcolor and not bar.data["bigwigs:emphasized"] == true then bar.candyBarBar:SetStatusBarColor(barcolor.r, barcolor.g, barcolor.b, 1) end
+	if not bar.data["bigwigs:emphasized"] == true then bar.candyBarBar:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1) end
 	bar.candyBarBackground:SetTexture(C.media.texture)
 
 	-- Setup icon positions and other things
 	bar.candyBarIconFrame:ClearAllPoints()
-	bar.candyBarIconFrame:Point("BOTTOMLEFT", bar, "BOTTOMLEFT", -buttonsize - buttonsize/3, 0)
-	bar.candyBarIconFrame:Size(buttonsize)
+	bar.candyBarIconFrame:Point("BOTTOMLEFT", bar, "BOTTOMLEFT", -28, 0)
+	bar.candyBarIconFrame:Size(21)
 	bar.candyBarIconFrame.OldSetWidth = bar.candyBarIconFrame.SetWidth
 	bar.candyBarIconFrame.SetWidth = T.dummy
 	bar.candyBarIconFrame:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -160,7 +149,7 @@ local function registerStyle()
 			GetStyleName = function() return "ShestakUI" end,
 		})
 	end
-	if prox and skinrange and BigWigs.pluginCore.modules.Bars.db.profile.barStyle == "ShestakUI" then
+	if prox and BigWigs.pluginCore.modules.Bars.db.profile.barStyle == "ShestakUI" then
 		hooksecurefunc(BigWigs.pluginCore.modules.Proximity, "RestyleWindow", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
 		end)
@@ -195,6 +184,7 @@ StaticPopupDialogs.BW_TEST = {
 		BigWigs.pluginCore.modules.Messages.db.profile.font = C.media.normal_font
 		BigWigs.pluginCore.modules.Messages.db.profile.outline = "OUTLINE"
 		BigWigs.pluginCore.modules.Proximity.db.profile.font = C.media.normal_font
+		BigWigs.pluginCore.modules.Proximity.db.profile.objects.ability = false
 		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_width = 185
 		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_x = 49
 		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsEmphasizeAnchor_width = 185

@@ -21,7 +21,6 @@ local function GetNecroticAbsorb(unit)
 			end
 			NecroticStrikeTooltip:ClearLines()
 			NecroticStrikeTooltip:SetUnitDebuff(unit, i)
-			--return tonumber(string.match(_G[NecroticStrikeTooltip:GetName() .. "TextLeft2"]:GetText(), ".* (%d+%s?) .*"))
 			return tonumber(string.match(_G[NecroticStrikeTooltip:GetName() .. "TextLeft2"]:GetText(), "%d+"))
 		end
 		i = i + 1
@@ -50,7 +49,7 @@ local function UpdateOverlay(healthFrame)
 			healthFrame.NecroticOverlay:SetVertexColor(0, 0, 0, 0.4)
 		else
 			local r, g, b = healthFrame:GetStatusBarColor()
-			healthFrame.NecroticOverlay:SetVertexColor(1-r, 1-g, 1-b, 0.4)
+			healthFrame.NecroticOverlay:SetVertexColor(1 - r, 1 - g, 1 - b, 0.4)
 		end
 		healthFrame.NecroticOverlay:Show()
 	else

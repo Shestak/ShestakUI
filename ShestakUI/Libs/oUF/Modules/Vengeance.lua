@@ -7,7 +7,7 @@ if C.unitframe.enable ~= true or C.unitframe_class_bar.vengeance ~= true then re
 local _, ns = ...
 local oUF = ns.oUF
 
-local VENGEANCE_ID = 76691
+local VENGEANCE_ID = 132365
 local tooltip = CreateFrame("GameTooltip", "VengeanceTooltip", UIParent, "GameTooltipTemplate")
 
 local Update = function(self, event, unit)
@@ -37,13 +37,14 @@ local Update = function(self, event, unit)
 		tooltip:Hide()
 
 		local _, maxHealth = self.Health:GetMinMaxValues()
-		vb.Bar:SetMinMaxValues(0, maxHealth / 10)
+		vb.Bar:SetMinMaxValues(0, maxHealth / 2)
 
 		local textValue = text:match("%d+")
-		local maxValue = floor(0.1 * UnitHealthMax("player"))
+		local maxValue = floor(maxHealth / 2)
 
 		if vb.Text then
-			vb.Text:SetText(textValue.." / "..maxValue)
+			--vb.Text:SetText(textValue.." / "..maxValue)
+			vb.Text:SetText(textValue)
 		end
 
 		local value = tonumber(textValue)
@@ -103,7 +104,7 @@ local Enable = function(self)
 		self:RegisterEvent("UNIT_MAXHEALTH", Path)
 
 		if vb.Bar:IsObjectType("StatusBar") and not vb.Bar:GetStatusBarTexture() then
-			vb.Bar:SetStatusBarTexture[[Interface\TargetingFrame\UI-StatusBar]]
+			vb.Bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
 		end
 
 		return true

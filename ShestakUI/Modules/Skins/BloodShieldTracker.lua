@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.skins.blood_shield_tracker ~= true or T.class ~= "DEATHKNIGHT" then return end
 
 ----------------------------------------------------------------------------------------
@@ -15,6 +15,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["HealthBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["HealthBar"] = {} end
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["IllumBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["IllumBar"] = {} end
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["EstimateBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["EstimateBar"] = {} end
+	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PurgatoryBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PurgatoryBar"] = {} end
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["TotalAbsorbsBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["TotalAbsorbsBar"] = {} end
 
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PWSBar"]["border"] = false
@@ -32,6 +33,9 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["EstimateBar"]["border"] = false
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["EstimateBar"]["texture"] = "Smooth"
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["EstimateBar"]["scale"] = 1
+	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PurgatoryBar"]["border"] = false
+	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PurgatoryBar"]["texture"] = "Smooth"
+	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PurgatoryBar"]["scale"] = 1
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["TotalAbsorbsBar"]["border"] = false
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["TotalAbsorbsBar"]["texture"] = "Smooth"
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["TotalAbsorbsBar"]["scale"] = 1
@@ -42,7 +46,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		"BloodShieldTracker_ShieldBar",
 		"BloodShieldTracker_TotalAbsorbsBar",
 		"BloodShieldTracker_IllumBar",
-		"BloodShieldTracker_HealthBar"
+		"BloodShieldTracker_HealthBar",
+		"BloodShieldTracker_PurgatoryBar"
 	}
 
 	for i = 1, getn(bars) do

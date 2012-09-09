@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ---------------------------------------------------------------------------
@@ -63,6 +63,7 @@ end
 function RightBarMouseOver(alpha)
 	RightActionBarAnchor:SetAlpha(alpha)
 	PetActionBarAnchor:SetAlpha(alpha)
+	ShapeShiftBarAnchor:SetAlpha(alpha)
 
 	if MultiBarLeft:IsShown() then
 		for i = 1, 12 do
@@ -90,14 +91,23 @@ function RightBarMouseOver(alpha)
 		MultiBarRight:SetAlpha(alpha)
 	end
 
-	if C.actionbar.petbar_horizontal == false then
-		if C.actionbar.petbar_hide then return end
+	if C.actionbar.petbar_horizontal == false and C.actionbar.petbar_hide == false then
 		if PetHolder:IsShown() then
 			for i = 1, NUM_PET_ACTION_SLOTS do
 				local pb = _G["PetActionButton"..i]
 				pb:SetAlpha(alpha)
 			end
 			PetHolder:SetAlpha(alpha)
+		end
+	end
+
+	if C.actionbar.stancebar_horizontal == false and C.actionbar.stancebar_hide == false then
+		if ShiftHolder:IsShown() then
+			for i = 1, NUM_STANCE_SLOTS do
+				local pb = _G["StanceButton"..i]
+				pb:SetAlpha(alpha)
+			end
+			ShiftHolder:SetAlpha(alpha)
 		end
 	end
 end
@@ -122,16 +132,21 @@ do
 	if C.actionbar.rightbars_mouseover == true then
 		RightActionBarAnchor:SetAlpha(0)
 		RightActionBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
-		RightActionBarAnchor:SetScript("OnLeave", function() RightBarMouseOver(0) end)
+		RightActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 		if C.actionbar.petbar_horizontal == false then
 			PetActionBarAnchor:SetAlpha(0)
 			PetActionBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
-			PetActionBarAnchor:SetScript("OnLeave", function() RightBarMouseOver(0) end)
+			PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
+		end
+		if C.actionbar.stancebar_horizontal == false and C.actionbar.stancebar_hide == false then
+			ShapeShiftBarAnchor:SetAlpha(0)
+			ShapeShiftBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
+			ShapeShiftBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 		end
 	end
 	if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
 		PetActionBarAnchor:SetAlpha(0)
 		PetActionBarAnchor:SetScript("OnEnter", function() PetMouseOver(1) end)
-		PetActionBarAnchor:SetScript("OnLeave", function() PetMouseOver(0) end)
+		PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then PetMouseOver(0) end end)
 	end
 end

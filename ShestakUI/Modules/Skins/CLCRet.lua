@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if not IsAddOnLoaded("CLCRet") or C.skins.clcret ~= true or T.class ~= "PALADIN" then return end
 
 ----------------------------------------------------------------------------------------

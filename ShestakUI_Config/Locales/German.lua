@@ -1,7 +1,8 @@
 ﻿if GetLocale() ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for deDE client(Thanks to Baine, chubidu, Vienchen and Alwa for the translation)
+--	Localization for deDE client
+--	Translation: Alwa, Baine, Chubidu, Vienchen
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Standards wiederherstellen"
 L_GUI_SET_SAVED_SETTTINGS = "Einstellungen für jeden Charakter einzeln vornehmen"
@@ -34,6 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known"
 L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
 L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
 L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
+L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -49,6 +51,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food" -- Needs review
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)" -- Needs review
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel" -- Needs review
+L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automation" -- Needs review
@@ -84,6 +88,11 @@ L_GUI_SKINS_NUG_RUNNING = "NugRunning Design aktivieren"
 L_GUI_SKINS_OVALE = "OvaleSpellPriority Design aktivieren"
 L_GUI_SKINS_CLIQUE = "Clique Design aktivieren"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
+L_GUI_SKINS_PP = "PallyPower Design aktivieren"
+L_GUI_SKINS_CAPPING = "Capping Design aktivieren"
+L_GUI_SKINS_COOL_LINE = "CoolLine Design aktivieren"
+L_GUI_SKINS_ATLASLOOT = "AtlasLoot Design aktivieren"
+L_GUI_SKINS_TINY_DPS = "TinyDPS Design aktivieren"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Kampftext"
@@ -226,7 +235,6 @@ L_GUI_MINIMAP_ICON = "Aufspüren-Symbol"
 L_GUI_MINIMAP_SIZE = "Kartengröße"
 L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
 L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
-L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu"
 
 -- Map options
 L_GUI_MAP_ENABLE = "Weltkarte aktivieren"

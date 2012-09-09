@@ -1,12 +1,9 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.tooltip.enable ~= true or C.tooltip.talents ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Target Talents(TipTacTalents by Aezay)
 ----------------------------------------------------------------------------------------
-local gtt = GameTooltip
-local GetTalentTabInfo = GetTalentTabInfo
-
 -- Constants
 local TALENTS_PREFIX = TALENTS..":|cffffffff "
 local CACHE_SIZE = 25
@@ -40,11 +37,11 @@ local function GatherTalents(mouseover)
 		current.tree = currentSpecName
 	end
 
-	-- Set the tips line output, for inspect, only update if the tip is still showing a unit!
+	-- Set the tips line output, for inspect, only update if the tip is still showing a unit
 	if mouseover == 0 then
-		gtt:AddLine(TALENTS_PREFIX..current.tree)
-	elseif gtt:GetUnit() then
-		for i = 2, gtt:NumLines() do
+		GameTooltip:AddLine(TALENTS_PREFIX..current.tree)
+	elseif GameTooltip:GetUnit() then
+		for i = 2, GameTooltip:NumLines() do
 			if (_G["GameTooltipTextLeft"..i]:GetText() or ""):match("^"..TALENTS_PREFIX) then
 				_G["GameTooltipTextLeft"..i]:SetFormattedText("%s%s", TALENTS_PREFIX, current.tree)
 				break
@@ -98,7 +95,7 @@ ttt:SetScript("OnUpdate", function(self, elapsed)
 end)
 
 -- HOOK: OnTooltipSetUnit
-gtt:HookScript("OnTooltipSetUnit", function(self, ...)
+GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
 	-- Abort any delayed inspect in progress
 	ttt:Hide()
 	-- Get the unit -- Check the UnitFrame unit if this tip is from a concated unit, such as "targettarget".

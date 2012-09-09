@@ -1,12 +1,12 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.announcements.spells ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Announce some spells
 ----------------------------------------------------------------------------------------
-local misdir_announce = CreateFrame("Frame")
-misdir_announce:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-misdir_announce:SetScript("OnEvent", function(self, _, ...)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+frame:SetScript("OnEvent", function(self, _, ...)
 	local _, event, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID = ...
 	local inInstance, instanceType = IsInInstance()
 	local spells = T.AnnounceSpells
@@ -18,9 +18,9 @@ misdir_announce:SetScript("OnEvent", function(self, _, ...)
 
 			for i, spells in pairs(spells) do
 				if spellID == spells then
-					if GetNumGroupMembers() > 0 then
+					if IsInRaid() then
 						SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "RAID")
-					elseif GetNumSubgroupMembers() > 0 and not UnitInRaid("player") then
+					elseif IsInGroup() then
 						SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "PARTY")
 					else
 						SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "SAY")
@@ -32,9 +32,9 @@ misdir_announce:SetScript("OnEvent", function(self, _, ...)
 
 			for i, spells in pairs(spells) do
 				if spellID == spells then
-					if GetNumGroupMembers() > 0 then
+					if IsInRaid() then
 						SendChatMessage(GetSpellLink(spellID).." -> "..destName, "RAID")
-					elseif GetNumSubgroupMembers() > 0 and not UnitInRaid("player") then
+					elseif IsInGroup() then
 						SendChatMessage(GetSpellLink(spellID).." -> "..destName, "PARTY")
 					else
 						SendChatMessage(GetSpellLink(spellID).." -> "..destName, "SAY")

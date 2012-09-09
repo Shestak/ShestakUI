@@ -107,13 +107,13 @@
 	<Script file="Modules\ActionBars\MicroMenu.lua"/>
 
 	<Script file="Modules\Announcements\Drinking.lua"/>
+	<Script file="Modules\Announcements\FeastsAndPortals.lua"/>
 	<Script file="Modules\Announcements\FlaskAndFood.lua"/>
 	<Script file="Modules\Announcements\Interrupts.lua"/>
 	<Script file="Modules\Announcements\Lightwell.lua"/>
 	<Script file="Modules\Announcements\PullCountdown.lua"/>
 	<Script file="Modules\Announcements\SayThanks.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>
-	<Script file="Modules\Announcements\ToyTrain.lua"/>
 
 	<Script file="Modules\Automation\AchScreens.lua"/>
 	<Script file="Modules\Automation\AutoChefsHat.lua"/>
@@ -127,26 +127,29 @@
 	<Script file="Modules\Automation\SolveArtifact.lua"/>
 	<Script file="Modules\Automation\TabBinder.lua"/>
 
-	<Script file="Modules\Blizzard\Vehicle.lua"/>
-	<Script file="Modules\Blizzard\CaptureBar.lua"/>
-	<Script file="Modules\Blizzard\MirrorBars.lua"/>
-	<Script file="Modules\Blizzard\Symbols.lua"/>
-	<Script file="Modules\Blizzard\Errors.lua"/>
 	<Script file="Modules\Blizzard\Achievements.lua"/>
-	<Script file="Modules\Blizzard\Durability.lua"/>
-	<Script file="Modules\Blizzard\Mail.lua"/>
-	<Script file="Modules\Blizzard\FriendList.lua"/>
-	<Script file="Modules\Blizzard\Fonts.lua"/>
-	<Script file="Modules\Blizzard\Bags.lua"/>
-	<Script file="Modules\Blizzard\Nameplates.lua"/>
 	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
-	<Script file="Modules\Blizzard\TimerTracker.lua"/>
+	<Script file="Modules\Blizzard\Bags.lua"/>
+	<Script file="Modules\Blizzard\CaptureBar.lua"/>
+	<Script file="Modules\Blizzard\Durability.lua"/>
+	<Script file="Modules\Blizzard\Errors.lua"/>
 	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
+	<Script file="Modules\Blizzard\Fixes.lua"/>
+	<Script file="Modules\Blizzard\Fonts.lua"/>
+	<Script file="Modules\Blizzard\FriendList.lua"/>
+	<Script file="Modules\Blizzard\Mail.lua"/>
+	<Script file="Modules\Blizzard\MirrorBars.lua"/>
+	<Script file="Modules\Blizzard\MoveBlizzFrames.lua"/>
+	<Script file="Modules\Blizzard\Nameplates.lua"/>
 	<Script file="Modules\Blizzard\PetBattle.lua"/>
+	<Script file="Modules\Blizzard\SearchMounts.lua"/>
+	<Script file="Modules\Blizzard\ShiftMark.lua"/>
+	<Script file="Modules\Blizzard\TimerTracker.lua"/>
+	<Script file="Modules\Blizzard\Vehicle.lua"/>
 
 	<Script file="Modules\Buffs\AuraSource.lua"/>
 	<Script file="Modules\Buffs\BuffFrame.lua"/>
-	<Script file="Modules\Buffs\ConsolidatedBuffDuration.lua"/>
+	<Script file="Modules\Buffs\ConsolidatedBuffs.lua"/>
 	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
 	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
 
@@ -191,20 +194,24 @@
 
 	<Script file="Modules\Loot\AutoDisenchant.lua"/>
 	<Script file="Modules\Loot\AutoGreed.lua"/>
+	<Script file="Modules\Loot\GroupLoot.lua"/>
 	<Script file="Modules\Loot\Loot.lua"/>
-	<Script file="Modules\Loot\LootRoll.lua"/>
+	<Script file="Modules\Loot\MasterLoot.lua"/>
 
 	<Script file="Modules\DataText\Battleground.lua"/>
 
 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
 	<Script file="Modules\Skins\Ace3.lua"/>
+	<Script file="Modules\Skins\AtlasLoot.lua"/>
 	<Script file="Modules\Skins\Aurora.lua"/>
 	<Script file="Modules\Skins\BigWigs.lua"/>
 	<Script file="Modules\Skins\BloodShieldTracker.lua"/>
+	<Script file="Modules\Skins\Capping.lua"/>
 	<Script file="Modules\Skins\CLCProt.lua"/>
 	<Script file="Modules\Skins\CLCRet.lua"/>
 	<Script file="Modules\Skins\Clique.lua"/>
 	<Script file="Modules\Skins\CombustionHelper.lua"/>
+	<Script file="Modules\Skins\CoolLine.lua"/>
 	<Script file="Modules\Skins\DBM.lua"/>
 	<Script file="Modules\Skins\Dominos.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>
@@ -212,7 +219,9 @@
 	<Script file="Modules\Skins\NugRunning.lua"/>
 	<Script file="Modules\Skins\Omen.lua"/>
 	<Script file="Modules\Skins\Ovale.lua"/>
+	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
+	<Script file="Modules\Skins\TinyDPS.lua"/>
 
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Core\Movers.lua"/>

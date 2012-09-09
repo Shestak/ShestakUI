@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Slash commands
@@ -82,7 +82,7 @@ function DisbandRaidGroup()
 	else
 		SendChatMessage(L_INFO_DISBAND, "PARTY")
 		for i = MAX_PARTY_MEMBERS, 1, -1 do
-			if GetSubgroupMembers(i) then
+			if GetNumGroupMembers(i) then
 				UninviteUnit(UnitName("party"..i))
 			end
 		end
@@ -111,7 +111,7 @@ SLASH_GROUPDISBAND2 = "/кв"
 --	Convert party to raid
 ----------------------------------------------------------------------------------------
 SlashCmdList.PARTYTORAID = function()
-	if GetNumSubgroupMembers() > 0 or GetNumGroupMembers() > 0 then
+	if GetNumGroupMembers() > 0 then
 		if UnitInRaid("player") and IsGroupLeader() then
 			ConvertToParty()
 		elseif UnitInParty("player") and IsGroupLeader() then
@@ -130,7 +130,7 @@ SLASH_PARTYTORAID4 = "/сщтмуке"
 --	Instance teleport
 ----------------------------------------------------------------------------------------
 SlashCmdList.INSTTELEPORT = function()
-	local inInstance, _ = IsInInstance()
+	local inInstance = IsInInstance()
 	if inInstance then
 		LFGTeleport(true)
 	else
@@ -299,3 +299,41 @@ SlashCmdList.TEST_EXTRABUTTON = function()
 end
 SLASH_TEST_EXTRABUTTON1 = "/teb"
 SLASH_TEST_EXTRABUTTON2 = "/еуи"
+
+----------------------------------------------------------------------------------------
+--	Grid on screen
+----------------------------------------------------------------------------------------
+local grid
+SlashCmdList.GRIDONSCREEN = function()
+	if grid then
+		grid:Hide()
+		grid = nil
+	else
+		grid = CreateFrame("Frame", nil, UIParent)
+		grid:SetAllPoints(UIParent)
+		local width = GetScreenWidth() / 128
+		local height = GetScreenHeight() / 72
+		for i = 0, 128 do
+			local texture = grid:CreateTexture(nil, "BACKGROUND")
+			if i == 64 then
+				texture:SetTexture(1, 0, 0, 0.8)
+			else
+				texture:SetTexture(0, 0, 0, 0.8)
+			end
+			texture:SetPoint("TOPLEFT", grid, "TOPLEFT", i * width - 1, 0)
+			texture:SetPoint("BOTTOMRIGHT", grid, "BOTTOMLEFT", i * width, 0)
+		end
+		for i = 0, 72 do
+			local texture = grid:CreateTexture(nil, "BACKGROUND")
+			if i == 36 then
+				texture:SetTexture(1, 0, 0, 0.8)
+			else
+				texture:SetTexture(0, 0, 0, 0.8)
+			end
+			texture:SetPoint("TOPLEFT", grid, "TOPLEFT", 0, -i * height)
+			texture:SetPoint("BOTTOMRIGHT", grid, "TOPRIGHT", 0, -i * height - 1)
+		end
+	end
+end
+SLASH_GRIDONSCREEN1 = "/align"
+SLASH_GRIDONSCREEN2 = "/фдшпт"

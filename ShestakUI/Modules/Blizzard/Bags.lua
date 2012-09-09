@@ -41,7 +41,7 @@ InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
 Stuffing:SetScript("OnEvent", function(this, event, ...)
-	if IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") then return end
+	if IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") or IsAddOnLoaded("TBag") then return end
 	Stuffing[event](this, ...)
 end)
 
@@ -411,7 +411,7 @@ function Stuffing:CreateBagFrame(w)
 				CloseDropDownMenus()
 				Stuffing_DDMenu.initialize = Stuffing.Menu
 			end
-			ToggleDropDownMenu(1, nil, Stuffing_DDMenu, self:GetName(), 0, 0)
+			ToggleDropDownMenu(nil, nil, Stuffing_DDMenu, self:GetName(), 0, 0)
 			return
 		end
 		self:GetParent():Hide()

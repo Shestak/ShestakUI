@@ -1,7 +1,8 @@
 ﻿if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for esES and esMX client(Thanks to eXecrate for the translation)
+--	Localization for esES and esMX client
+--	Translation: eXecrate
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Reinicio total de la UI"
 L_GUI_SET_SAVED_SETTTINGS = "Cambios aplicables sólo a este PJ"
@@ -34,6 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known"
 L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
 L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
 L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
+L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Anuncios"
@@ -49,6 +51,8 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food" -- Needs review
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)" -- Needs review
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel" -- Needs review
+L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automation" -- Needs review
@@ -84,6 +88,11 @@ L_GUI_SKINS_NUG_RUNNING = "Activar estilo del NugRunning"
 L_GUI_SKINS_OVALE = "Activar estilo del OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Activar estilo del Clique"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
+L_GUI_SKINS_PP = "Activar estilo del PallyPower"
+L_GUI_SKINS_CAPPING = "Activar estilo del Capping"
+L_GUI_SKINS_COOL_LINE = "Activar estilo del CoolLine"
+L_GUI_SKINS_ATLASLOOT = "Activar estilo del AtlasLoot"
+L_GUI_SKINS_TINY_DPS = "Activar estilo del TinyDPS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texto de Combate"
@@ -227,7 +236,6 @@ L_GUI_MINIMAP_ICON = "Icono de seguimiento"
 L_GUI_MINIMAP_SIZE = "Tamaño del minimapa"
 L_GUI_MINIMAP_HIDE_COMBAT = "Ocultar minimapa en combate"
 L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
-L_GUI_MINIMAP_MERGE_MENUS = "Merge main and addon buttons in toggle menu"
 
 -- Map options
 L_GUI_MAP_ENABLE = "Activar mapa del mundo"

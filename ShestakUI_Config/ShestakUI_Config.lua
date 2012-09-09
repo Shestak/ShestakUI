@@ -62,6 +62,7 @@ local function Local(o)
 	if o == "UIConfigmiscdisenchanting" then o = L_GUI_MISC_DISENCHANTING end
 	if o == "UIConfigmiscsum_buyouts" then o = L_GUI_MISC_SUM_BUYOUTS end
 	if o == "UIConfigmiscclick_cast" then o = L_GUI_MISC_CLICK_CAST end
+	if o == "UIConfigmiscmove_blizzard" then o = L_GUI_MISC_MOVE_BLIZZARD end
 
 	-- Announcements options
 	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end
@@ -77,6 +78,8 @@ local function Local(o)
 	if o == "UIConfigannouncementsflask_food" then o = L_GUI_ANNOUNCEMENTS_FLASK_FOOD end
 	if o == "UIConfigannouncementsflask_food_auto" then o = L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO end
 	if o == "UIConfigannouncementsflask_food_raid" then o = L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID end
+	if o == "UIConfigannouncementsfeasts" then o = L_GUI_ANNOUNCEMENTS_FEASTS end
+	if o == "UIConfigannouncementsportals" then o = L_GUI_ANNOUNCEMENTS_PORTALS end
 
 	-- Automation options
 	if o == "UIConfigautomation" then o = L_GUI_AUTOMATION end
@@ -112,6 +115,11 @@ local function Local(o)
 	if o == "UIConfigskinsovale" then o = L_GUI_SKINS_OVALE end
 	if o == "UIConfigskinsclique" then o = L_GUI_SKINS_CLIQUE end
 	if o == "UIConfigskinsace3" then o = L_GUI_SKINS_ACE3 end
+	if o == "UIConfigskinspallypower" then o = L_GUI_SKINS_PP end
+	if o == "UIConfigskinscapping" then o = L_GUI_SKINS_CAPPING end
+	if o == "UIConfigskinscool_line" then o = L_GUI_SKINS_COOL_LINE end
+	if o == "UIConfigskinsatlasloot" then o = L_GUI_SKINS_ATLASLOOT end
+	if o == "UIConfigskinstiny_dps" then o = L_GUI_SKINS_TINY_DPS end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end
@@ -257,7 +265,6 @@ local function Local(o)
 	if o == "UIConfigminimapsize" then o = L_GUI_MINIMAP_SIZE end
 	if o == "UIConfigminimaphide_combat" then o = L_GUI_MINIMAP_HIDE_COMBAT end
 	if o == "UIConfigminimaptoggle_menu" then o = L_GUI_MINIMAP_TOGGLE_MENU end
-	if o == "UIConfigminimapmerge_menus" then o = L_GUI_MINIMAP_MERGE_MENUS end
 
 	-- Map options
 	if o == "UIConfigmap" then o = WORLD_MAP end
@@ -1023,17 +1030,27 @@ do
 		subtitle2:SetWidth(580)
 		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
 		subtitle2:SetJustifyH("LEFT")
-		subtitle2:SetText("AcidWeb, Aezay, Affli, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Chiril, CrusaderHeimdall, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Woffle of Dark Iron, Xuerian, Yleaf, Zork.")
+		subtitle2:SetText("AcidWeb, Aezay, Affli, Ailae, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Camealion, Chiril, CrusaderHeimdall, Cybey, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Woffle of Dark Iron, Wrug, Xuerian, Yleaf, Zork.")
 
 		local title3 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)
-		title3:SetText("Thanks:")
+		title3:SetText("Translation:")
 
 		local subtitle3 = self:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
 		subtitle3:SetWidth(580)
 		subtitle3:SetPoint("TOPLEFT", title3, "BOTTOMLEFT", 0, -8)
 		subtitle3:SetJustifyH("LEFT")
-		subtitle3:SetText("Aelb, Akimba, Antthemage, Baine, Cranan, Crunching, Dandruff, DesFolk, Elfrey, Ente, Erratic, eXecrate, Falchior, Gromcha, Halogen, Homicidal Retribution, ILF7, Ianchan, Illusion, Ipton, k07n, Kazarl, Leots, Mania, MoLLIa, Nanjiqq, Nefrit, Noobolov, Obakol, Oz, PterOs, Puree, Sart, Scorpions, Seal, Sitatunga, Spacedragon, Sw2rT1, tat2dawn, Wetxius, Yakodzuna, UI Users and Russian Community.")
+		subtitle3:SetText("Aelb, Alwa, Baine, Chubidu, Cranan, eXecrate, Ianchan, Leg883, Mania, Nanjiqq, Oz, Puree, Seal, Spacedragon, Tat2dawn, Tibles, Vienchen.")
+
+		local title4 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+		title4:SetPoint("TOPLEFT", subtitle3, "BOTTOMLEFT", 0, -16)
+		title4:SetText("Thanks:")
+
+		local subtitle4 = self:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+		subtitle4:SetWidth(580)
+		subtitle4:SetPoint("TOPLEFT", title4, "BOTTOMLEFT", 0, -8)
+		subtitle4:SetJustifyH("LEFT")
+		subtitle4:SetText("Akimba, Antthemage, Crunching, Dandruff, DesFolk, Elfrey, Ente, Erratic, Falchior, Gromcha, Halogen, Homicidal Retribution, ILF7, Illusion, Ipton, k07n, Kazarl, Leots, MoLLIa, Nefrit, Noobolov, Obakol, Oz, PterOs, Sart, Scorpions, Sitatunga, Sw2rT1, Wetxius, Yakodzuna, UI Users and Russian Community.")
 
 		local version = self:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 		version:SetPoint("BOTTOMRIGHT", -16, 16)

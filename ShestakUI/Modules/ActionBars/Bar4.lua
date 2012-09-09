@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -31,6 +31,6 @@ if C.actionbar.rightbars_mouseover == true then
 		local b = _G["MultiBarRightButton"..i]
 		b:SetAlpha(0)
 		b:HookScript("OnEnter", function() RightBarMouseOver(1) end)
-		b:HookScript("OnLeave", function() RightBarMouseOver(0) end)
+		b:HookScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 	end
 end

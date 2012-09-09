@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.tooltip.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -11,12 +11,14 @@ EMPTY_SOCKET_YELLOW = "|cffffff40"..EMPTY_SOCKET_YELLOW.."|r"
 EMPTY_SOCKET_BLUE = "|cff6060ff"..EMPTY_SOCKET_BLUE.."|r"
 
 if T.client ~= "ruRU" then return end
+local ttext
 local replace = {
 	["красного цвета"] = "|cffFF4040красного цвета|r",
 	["синего цвета"] = "|cff6060ffсинего цвета|r",
 	["желтого цвета"] = "|cffffff40желтого цвета|r",
 	["Требуется хотя бы"] = "Требуется",
 	["Чернокнижник"] = "|cff9482C9Чернокнижник|r",
+	["Жрец"] = "|cffFFFFFFЖрец|r",
 	["Воин"] = "|cffC79C6EВоин|r",
 	["Шаман"] = "|cff0070DEШаман|r",
 	["Разбойник"] = "|cffFFF569Разбойник|r",
@@ -25,11 +27,8 @@ local replace = {
 	["Охотник"] = "|cffABD473Охотник|r",
 	["Друид"] = "|cffFF7D0AДруид|r",
 	["Рыцарь смерти"] = "|cffC41F3BРыцарь смерти|r",
-	["Монах"] = "|cff558A84Монах|r",
+	["Монах"] = "|cff00FF96Монах|r",
 }
-
-local _G = getfenv(0)
-local ttext
 
 local function Translate(text)
 	if text then

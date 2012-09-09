@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.chat.bubbles ~= true or IsAddOnLoaded("BossEncounter2") then return end
 
 ----------------------------------------------------------------------------------------
@@ -35,8 +35,9 @@ end
 
 local function ischatbubble(frame)
 	if frame:GetName() then return end
-	local bg = frame:GetRegions()
-	if bg then return bg:GetTexture() == [[Interface\Tooltips\ChatBubble-Background]] end
+	if not frame:GetRegions() then return end
+	local region = frame:GetRegions()
+	return region:GetTexture() == [[Interface\Tooltips\ChatBubble-Background]]
 end
 
 chatbubblehook:SetScript("OnUpdate", function(chatbubblehook, elapsed)

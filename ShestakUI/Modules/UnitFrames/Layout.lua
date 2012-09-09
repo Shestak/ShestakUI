@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -556,7 +556,7 @@ local function Shared(self, unit)
 
 		-- GCD spark
 		if C.unitframe.plugins_gcd == true then
-			self.GCD = CreateFrame("Frame", nil, self)
+			self.GCD = CreateFrame("Frame", self:GetName().."_GCD", self)
 			self.GCD:Width(220)
 			self.GCD:Height(3)
 			self.GCD:SetFrameStrata("HIGH")
@@ -919,8 +919,10 @@ local function Shared(self, unit)
 			self.Trinket:Point("TOPLEFT", self, "TOPRIGHT", 5, 2)
 		end
 		self.Trinket:SetTemplate("Default")
-		self.Trinket.trinketUseAnnounce = true
-		self.Trinket.trinketUpAnnounce = true
+		if not T.MOPVersion then
+			self.Trinket.trinketUseAnnounce = true
+			self.Trinket.trinketUpAnnounce = true
+		end
 
 		self.AuraTracker = CreateFrame("Frame", nil, self)
 		self.AuraTracker:Width(self.Trinket:GetWidth())

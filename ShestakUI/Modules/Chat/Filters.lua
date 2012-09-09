@@ -1,10 +1,12 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.chat.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Systems spam filter
 ----------------------------------------------------------------------------------------
 if C.chat.filter == true then
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_MONSTER_SAY", function() if IsResting() then return true end end)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_MONSTER_YELL", function() if IsResting() then return true end end)
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", function() return true end)
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", function() return true end)
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_NOTICE", function() return true end)
@@ -28,8 +30,6 @@ if C.chat.filter == true then
 	DRUNK_MESSAGE_SELF2 = ""
 	DRUNK_MESSAGE_SELF3 = ""
 	DRUNK_MESSAGE_SELF4 = ""
-	RAID_MULTI_LEAVE = ""
-	RAID_MULTI_JOIN = ""
 	ERR_PET_LEARN_ABILITY_S = ""
 	ERR_PET_LEARN_SPELL_S = ""
 	ERR_PET_SPELL_UNLEARNED_S = ""
@@ -39,9 +39,6 @@ if C.chat.filter == true then
 	ERR_SPELL_UNLEARNED_S = ""
 	GUILD_REP_WEEKLY_CAPPED = ""
 	ERR_CHAT_THROTTLED = ""
-	if T.author ~= true then
-		INTERFACE_ACTION_BLOCKED = ""
-	end
 end
 
 ----------------------------------------------------------------------------------------
@@ -49,23 +46,19 @@ end
 ----------------------------------------------------------------------------------------
 if C.chat.spam == true then
 	-- Repeat spam filter
-	ChatFrame1.repeatFilter = true
-	ChatFrame1:SetTimeVisible(10)
-
 	local lastMessage
-	local repeatMessageFilter = function(self, event, text, sender, ...)
-		if self.repeatFilter and sender ~= T.name then
-			if not self.repeatMessages or self.repeatCount > 100 then
-				self.repeatCount = 0
-				self.repeatMessages = {}
-			end
-			lastMessage = self.repeatMessages[sender]
-			if lastMessage == text then
-				return true
-			end
-			self.repeatMessages[sender] = text
-			self.repeatCount = self.repeatCount + 1
+	local function repeatMessageFilter(self, event, text, sender)
+		if sender == T.name or UnitIsInMyGuild(sender) then return end
+		if not self.repeatMessages or self.repeatCount > 100 then
+			self.repeatCount = 0
+			self.repeatMessages = {}
 		end
+		lastMessage = self.repeatMessages[sender]
+		if lastMessage == text then
+			return true
+		end
+		self.repeatMessages[sender] = text
+		self.repeatCount = self.repeatCount + 1
 	end
 
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", repeatMessageFilter)
@@ -73,16 +66,15 @@ if C.chat.spam == true then
 
 	-- Gold/portals spam filter
 	local SpamList = T.ChatSpamList
-	local function TRADE_FILTER(self, event, arg1, arg2)
-		if SpamList and SpamList[1] then
-			for i, SpamList in pairs(SpamList) do
-				if arg2 == T.name then return end
-				if arg1:lower():match(SpamList) then
-					return true
-				end
+	local function tradeFilter(self, event, text, sender)
+		if sender == T.name or UnitIsInMyGuild(sender) then return end
+		for _, value in pairs(SpamList) do
+			if text:lower():match(value) then
+				return true
 			end
 		end
 	end
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", TRADE_FILTER)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", TRADE_FILTER)
+
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", tradeFilter)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", tradeFilter)
 end

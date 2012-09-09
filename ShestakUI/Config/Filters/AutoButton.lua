@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.misc.quest_auto_button ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -14,7 +14,6 @@ T.ABItems = {
 	37860,	-- Ruby Drake (Occulus)
 	37815,	-- Emerald Drake (Occulus)
 	37859,	-- Amber Essence (Occulus)
-	46029,	-- Mimiron's Core (Ulduar)
 	38689,	-- Chicken Net (Daily Quest)
 	63351,	-- Tahret Dynasty Mallet (Daily Quest)
 	52507,	-- Stardust No.2 (Daily Quest)
@@ -22,6 +21,7 @@ T.ABItems = {
 	69235,	-- Fang of the Wolf (Daily Quest)
 	71978,	-- Darkmoon Bandage (Daily Quest)
 	69981,	-- Ironforge Rations (Daily Quest)
+	62829,	-- Magnetized Scrap Collector (Daily Quest)
 	45072,	-- Brightly Colored Egg (Noblegarden)
 }
 

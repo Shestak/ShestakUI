@@ -1,12 +1,9 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.skins.dbm ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	DBM skin(by Affli)
 ----------------------------------------------------------------------------------------
-local forcebosshealthclasscolor = false		-- Forces BossHealth to be classcolored. Not recommended.
-local croprwicons = true					-- Crops blizz shitty borders from icons in RaidWarning messages
-local rwiconsize = 13						-- RaidWarning icon size. Works only if croprwicons = true
 local backdrop = {
 	bgFile = C.media.blank,
 	insets = {left = 0, right = 0, top = 0, bottom = 0},
@@ -195,17 +192,6 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 					progress:SetStatusBarTexture(C.media.texture)
 					progress:SetBackdrop(backdrop)
 					progress:SetBackdropColor(T.color.r, T.color.g, T.color.b, 0.15)
-					if forcebosshealthclasscolor then
-						local tslu = 0
-						progress:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1)
-						progress:HookScript("OnUpdate", function(self, elapsed)
-							tslu = tslu+ elapsed
-							if tslu > 0.025 then
-								self:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1)
-								tslu = 0
-							end
-						end)
-					end
 					progress.styled = true
 				end
 				progress:ClearAllPoints()
@@ -248,15 +234,13 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 			DBMInfoFrame:SetTemplate("Transparent")
 		end)
 
-		if croprwicons then
-			local replace = string.gsub
-			local old = RaidNotice_AddMessage
-			RaidNotice_AddMessage = function(noticeFrame, textString, colorInfo)
-				if textString:find(" |T") then
-					textString = replace(textString,"(:12:12)",":"..rwiconsize..":"..rwiconsize..":0:0:64:64:5:59:5:59")
-				end
-				return old(noticeFrame, textString, colorInfo)
+		local replace = string.gsub
+		local old = RaidNotice_AddMessage
+		RaidNotice_AddMessage = function(noticeFrame, textString, colorInfo)
+			if textString:find(" |T") then
+				textString = replace(textString,"(:12:12)",":13:13:0:0:64:64:5:59:5:59")
 			end
+			return old(noticeFrame, textString, colorInfo)
 		end
 	end
 	if IsAddOnLoaded("DBM-GUI") then

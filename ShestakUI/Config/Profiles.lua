@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	ShestakUI personal configuration file
@@ -59,6 +59,8 @@ if T.author == true then
 	C["announcements"].flask_food = true
 	C["announcements"].toy_train = true
 	C["announcements"].says_thanks = true
+	C["announcements"].feasts = true
+	C["announcements"].portals = true
 	C["automation"].accept_invite = true
 	C["automation"].accept_quest = true
 	C["automation"].skip_cinematic = true
@@ -113,9 +115,9 @@ if T.author == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Oz@Runetotem Config
+--	Oz@Well of Eternity Config
 ----------------------------------------------------------------------------------------
-if T.name == "Oz" and T.realm == "Runetotem" then
+if T.name == "Oz" and T.realm == "Well of Eternity" then
 	C["position"].threat_meter = {"BOTTOM", UIParent, "BOTTOM", 0, 294}
 	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -402, 321}
 	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", 0, 388}
@@ -160,23 +162,35 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["media"].pixel_font_style = "OUTLINE"
 	C["media"].pixel_font_size = 14
 	C["general"].custom_lagtolerance = true
-	C["misc"].invite_keyword = "инвайт"
+	C["misc"].invite_keyword = "+"
+	C["misc"].quest_auto_button = true
+	C["misc"].already_known = true
 	C["misc"].item_level = true
 	C["misc"].gem_counter = true
 	C["misc"].disenchanting = true
 	C["misc"].sum_buyouts = true
+	C["misc"].move_blizzard = true
+	C["announcements"].drinking = true
+	C["announcements"].interrupts = true
+	C["announcements"].spells = true
+	C["announcements"].spells_from_all = true
+	C["announcements"].says_thanks = true
 	C["announcements"].flask_food = true
 	C["announcements"].flask_food_auto = true
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
 	C["automation"].decline_duel = false
 	C["automation"].skip_cinematic = true
+	C["automation"].cancel_bad_buffs = true
 	C["automation"].tab_binder = true
+	C["automation"].logging_combat = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
+	C["skins"].atlasloot = true
 	C["reminder"].solo_buffs_sound = true
 	C["reminder"].raid_buffs_always = true
-	C["reminder"].raid_buffs_size = 25
+	C["reminder"].raid_buffs_size = 20
+	C["enemycooldown"].show_always = true
 	C["pulsecooldown"].enable = true
 	C["pulsecooldown"].sound = true
 	C["pulsecooldown"].anim_scale = 2
@@ -185,13 +199,15 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["tooltip"].item_icon = true
 	C["tooltip"].health_value = true
 	C["tooltip"].talents = true
-	C["tooltip"].achievements = false
 	C["tooltip"].title = true
 	C["tooltip"].spell_id = true
 	C["tooltip"].average_lvl = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].who_targetting = true
 	C["tooltip"].item_count = true
+	C["tooltip"].unit_role = true
+	C["tooltip"].reforge = true
+	C["tooltip"].symbiosis = true
 	C["tooltip"].instance_lock = true
 	C["tooltip"].item_transmogrify = true
 	C["chat"].background = true
@@ -202,7 +218,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["bag"].button_size = 35
 	C["bag"].bank_columns = 15
 	C["minimap"].tracking_icon = true
-	C["minimap"].size = 200
 	C["map"].map_boss_count = true
 	C["map"].explore_map = true
 	C["loot"].icon_size = 40
@@ -217,6 +232,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["nameplate"].show_castbar_name = true
 	C["nameplate"].class_icons = true
 	C["nameplate"].track_auras = true
+	C["nameplate"].auras_size = 30
 	C["nameplate"].healer_icon = true
 	C["actionbar"].macro = true
 	C["actionbar"].button_size = 35
@@ -224,6 +240,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["actionbar"].toggle_mode = false
 	C["actionbar"].bottombars = 3
 	C["actionbar"].rightbars = 2
+	C["actionbar"].stancebar_mouseover = false
 	C["aura"].player_buff_size = 35
 	C["aura"].show_spiral = true
 	C["aura"].focus_debuffs = true
@@ -232,8 +249,11 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["aura"].classcolor_border = true
 	C["unitframe"].bar_color_value = true
 	C["unitframe"].castbar_icon = true
+	C["unitframe"].castbar_ticks = true
 	C["unitframe"].icons_pvp = true
 	C["unitframe"].portrait_enable = true
+	C["unitframe"].plugins_gcd = true
+	C["unitframe"].plugins_swing = true
 	C["unitframe"].plugins_reputation_bar = true
 	C["unitframe"].plugins_experience_bar = true
 	C["unitframe"].plugins_talents = true
@@ -243,6 +263,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["raidframe"].plugins_debuffhighlight_icon = true
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].raid_groups = 8
+	C["raidframe"].plugins_auto_resurrection = true
 	C["error"].hide = false
 	C["font"].stats_font = C.media.pixel_font
 	C["font"].stats_font_style = "OUTLINE"
@@ -293,12 +314,11 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -270, -100}
 		C["position"].vehicle_bar = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 440, 175}
 		C["position"].unitframes.tank = {"LEFT", UIParent, "LEFT", 23, 0}
+		C["automation"].accept_quest = true
 		C["automation"].auto_role = true
 		C["combattext"].icon_size = 25
-		C["combattext"].heal_treshold = 1000
+		C["combattext"].heal_treshold = 5000
 		C["chat"].width = 398
-		C["chat"].height = 300
-		C["nameplate"].auras_size = 30
 		C["actionbar"].split_bars = true
 		C["stats"].battleground = true
 	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
@@ -312,10 +332,8 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["position"].quest = {"TOPLEFT", UIParent, "TOPLEFT", 20, -170}
 		C["position"].vehicle_bar = {"BOTTOM", UIParent, "BOTTOM", 200, 120}
 		C["position"].enemy_cooldown = {"BOTTOM", UIParent, "BOTTOM", -140, 185}
-		C["combattext"].enable = false
 		C["chat"].width = 380
 		C["chat"].height = 150
-		C["actionbar"].stancebar_mouseover = false
 		C["unitframe"].show_boss = false
 		C["raidframe"].raid_tanks = false
 		C["stats"].experience = false

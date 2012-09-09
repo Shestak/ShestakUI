@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.announcements.says_thanks ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -9,8 +9,9 @@ local ST_Buffs = {
 	[110309] = true,	-- Symbiosis
 }
 
-local SayThanks = CreateFrame("Frame")
-SayThanks:SetScript("OnEvent", function(_, event, _, applied, _, _, buffer, _, _, _, player, _, _, spell, ...)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+frame:SetScript("OnEvent", function(_, event, _, applied, _, _, buffer, _, _, _, player, _, _, spell, ...)
 	for key, value in pairs(ST_Buffs) do
 		if spell == key and value == true and player == T.name and buffer ~= T.name and applied == "SPELL_AURA_APPLIED" then
 			SendChatMessage(L_ANNOUNCE_SS_THANKS..GetSpellLink(spell)..", "..buffer, "WHISPER", nil, buffer)
@@ -18,4 +19,3 @@ SayThanks:SetScript("OnEvent", function(_, event, _, applied, _, _, buffer, _, _
 		end
 	end
 end)
-SayThanks:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")

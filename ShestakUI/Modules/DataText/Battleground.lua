@@ -1,4 +1,4 @@
-local T, C, L = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.stats.battleground ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -70,9 +70,9 @@ bgframe:SetScript("OnEnter", function(self)
 	end
 end)
 bgframe:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
-bgframe:SetScript("OnMouseUp", function(self)
+bgframe:SetScript("OnMouseUp", function(self, button)
 	if QueueStatusMinimapButton:IsShown() then
-		if IsShiftKeyDown() then
+		if button == "RightButton" then
 			ToggleBattlefieldMinimap()
 		else
 			ToggleWorldStateScoreFrame()

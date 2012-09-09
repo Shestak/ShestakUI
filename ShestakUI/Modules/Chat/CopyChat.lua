@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.chat.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -112,6 +112,8 @@ function T.ChatCopyButtons()
 		button:SetScript("OnMouseUp", function(self, btn)
 			if btn == "RightButton" then
 				ToggleFrame(ChatMenu)
+			elseif btn == "MiddleButton" then
+				RandomRoll(1, 100)
 			else
 				Copy(cf)
 			end

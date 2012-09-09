@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.chat.enable ~= true or C.chat.damage_meter_spam ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -16,13 +16,14 @@ local firstLines = {
 	"^(.*) - (.*)의 Skada 보고, (.*) ~ (.*):$",				-- Skada koKR
 	"^Skada战斗报告：(.*)的(.*), (.*)到(.*):$",				-- Skada zhCN
 	"^Skada:(.*)來自(.*)，(.*) - (.*):$",					-- Skada zhTW
-	"^(.*) Done for (.*)$"	,								-- TinyDPS
+	"^(.*) Done for (.*)$",									-- TinyDPS enUS
+	"^(.*) für (.*)$",										-- TinyDPS deDE
+	"데미지량 -(.*)$",										-- TinyDPS koKR
+	"힐량 -(.*)$",											-- TinyDPS koKR
+	"Урон:(.*)$",											-- TinyDPS ruRU
+	"Исцеление:(.*)$",										-- TinyDPS ruRU
 	"^Numeration: (.*) for (.*)$",							-- Numeration
-	--DAMAGE..":",											-- alDamageMeter
-	--SHOW_COMBAT_HEALING..":",								-- alDamageMeter
-	--COMBAT_TEXT_ABSORB..":",								-- alDamageMeter
-	--DISPELS..":",											-- alDamageMeter
-	--INTERRUPTS..":",										-- alDamageMeter
+	"alDamageMeter : (.*)$",								-- alDamageMeter
 }
 
 local nextLines = {
