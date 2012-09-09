@@ -5,7 +5,7 @@
 ----------------------------------------------------------------------------------------
 local function CanRaidWarning()
 	if GetNumGroupMembers() == 0 or not GetNumGroupMembers() then return false end
-	return (UnitIsGroupLeader("player") or UnitIsRaidOfficer("player")) and true or false
+	return (UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and true or false
 end
 
 local function GetChat()
