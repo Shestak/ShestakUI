@@ -26,7 +26,7 @@ local replace = {
 	["Охотник"] = "|cffABD473Охотник|r",
 	["Друид"] = "|cffFF7D0AДруид|r",
 	["Рыцарь смерти"] = "|cffC41F3BРыцарь смерти|r",
-	["Монах"] = "|cff558A84Монах|r",
+	["Монах"] = "|cff00FF96Монах|r",
 }
 
 local function Translate(text)
