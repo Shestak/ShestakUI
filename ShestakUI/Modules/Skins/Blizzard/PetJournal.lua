@@ -141,7 +141,7 @@ local function LoadSkin()
 			name:SetParent(button.backdrop)
 
 			level:SetParent(button.dragButton.backdrop)
-			level:SetFontObject("NumberFont_OutlineThick_Mono_Small")
+			level:SetFontObject("NumberFont_Shadow_Small")
 
 			button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			button.icon:SetParent(button.dragButton.backdrop)
@@ -203,7 +203,7 @@ local function LoadSkin()
 		icon:Size(36)
 
 		level:SetParent(button.dragButton.backdrop)
-		level:SetFontObject("NumberFont_OutlineThick_Mono_Small")
+		level:SetFontObject("NumberFont_Shadow_Small")
 		level:ClearAllPoints()
 		level:Point("BOTTOMRIGHT", -2, 3)
 
@@ -284,7 +284,7 @@ local function LoadSkin()
 	PetJournalPetCardPetInfoIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	PetJournalPetCardPetInfoLevelBubble:SetTexture(nil)
-	PetJournalPetCardPetInfoLevel:SetFontObject("NumberFont_OutlineThick_Mono_Small")
+	PetJournalPetCardPetInfoLevel:SetFontObject("NumberFont_Shadow_Small")
 
 	PetJournalPrimaryAbilityTooltip.Background:SetTexture(nil)
 	PetJournalPrimaryAbilityTooltip.Delimiter1:SetTexture(nil)
