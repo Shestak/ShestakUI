@@ -26,7 +26,7 @@ LoadOCBO:SetScript("OnEvent", function(self, event, addon)
 		for i = 1, 20 do
 			f = _G[buttonName..i]
 			if f then
-				f:RegisterForClicks("RightButtonUp")
+				f:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 				f:HookScript("OnClick", function(self, button)
 					if button == "RightButton" and IsShiftKeyDown() then
 						index = self:GetID() + FauxScrollFrame_GetOffset(BrowseScrollFrame)
@@ -43,7 +43,7 @@ LoadOCBO:SetScript("OnEvent", function(self, event, addon)
 	for i = 1, 20 do
 		f = _G["AuctionsButton"..i]
 		if f then
-			f:RegisterForClicks("RightButtonUp")
+			f:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 			f:HookScript("OnClick", function(self, button)
 				index = self:GetID() + FauxScrollFrame_GetOffset(AuctionsScrollFrame)
 				if button == "RightButton" and IsShiftKeyDown() then
