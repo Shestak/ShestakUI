@@ -194,12 +194,13 @@ LPSTAT_CONFIG = {
 	Gold = {
 		enabled = true,
 		style = 1, -- Display styles: [1] 55g 21s 11c [2] 8829.4g [3] 823.55.94
-		anchor_frame = C.bag.enable and "StuffingFrameBags" or "Location",
-		anchor_to = "right", anchor_from = C.bag.enable and "topright" or "left",
-		x_off = C.bag.enable and -25 or -9, y_off = C.bag.enable and -13 or 0,
-		tip_frame = C.bag.enable and "StuffingFrameBags" or "UIParent",
-		tip_anchor = C.bag.enable and "TOPRIGHT" or "BOTTOMRIGHT",
-		tip_x = C.bag.enable and -50 or -21, tip_y = C.bag.enable and 0 or 20
+		anchor_frame = "NivayacBniv_Bag",
+		anchor_to = "right",
+		anchor_from = "bottomright",
+		x_off = 0, y_off = 6,
+		tip_frame = "NivayacBniv_Bag",
+		tip_anchor = "BOTTOMRIGHT",
+		tip_x = 3, tip_y = -3
 	},
 }
 
