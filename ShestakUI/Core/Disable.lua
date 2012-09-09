@@ -118,6 +118,7 @@ end
 
 if IsAddOnLoaded("RaidSlackCheck") then
 	C.announcements.flask_food = false
+	C.announcements.feasts = false
 end
 
 if IsAddOnLoaded("PhoenixStyle") then
