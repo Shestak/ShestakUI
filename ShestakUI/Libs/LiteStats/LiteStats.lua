@@ -826,7 +826,7 @@ if guild.enabled then
 		end,
 		OnUpdate = function(self, u)
 			if IsInGuild() then
-				if not GuildFrame then LoadAddOn("Blizzard_GuildUI") UpdateGuildXP() end
+				if not GuildFrame and not InCombatLockdown() then LoadAddOn("Blizzard_GuildUI") UpdateGuildXP() end
 				if u == "GUILD_XP_UPDATE" then UpdateGuildXP() end
 				AltUpdate(self)
 				if not self.gmotd then
