@@ -32,7 +32,7 @@ C["general"] = {
 	["auto_scale"] = true,						-- Autoscale
 	["uiscale"] = 0.96,							-- Your value(between 0.64 and 1) if "auto_scale" is disable
 	["multisampleprotect"] = true,				-- Disable this if you want multisample > 1
-	["welcome_message"] = true,					-- Enable welcome message in chat
+	["welcome_message"] = false,				-- Enable welcome message in chat
 	["custom_lagtolerance"] = false,			-- Custom lag tollerance to your latency
 }
 
@@ -40,34 +40,34 @@ C["general"] = {
 --	Miscellaneous options
 ----------------------------------------------------------------------------------------
 C["misc"] = {
-	["shift_marking"] = true,					-- Marks target when you push "shift"
-	["invite_keyword"] = "invite",				-- Short keyword for invite(for enable - in game type /ainv)
+	["shift_marking"] = false,					-- Marks target when you push "shift"
+	["invite_keyword"] = "инв",					-- Short keyword for invite(for enable - in game type /ainv)
 	["afk_spin_camera"] = false,				-- Spin camera while afk
 	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
 	["quest_auto_button"] = false,				-- Quest auto button
 	["raid_tools"] = true,						-- Raid tools
 	["profession_tabs"] = true,					-- Professions tabs on tradeskill frames
-	["profession_database"] = false,			-- Professions Database on Professions frame
+	["profession_database"] = true,				-- Professions Database on Professions frame
 	["dungeon_tabs"] = true,					-- PvP/PvE tabs on own frames
 	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
-	["item_level"] = false,						-- Item level on character slot buttons
-	["gem_counter"] = false,					-- Displays how many red/blue/yellow gems you have
-	["already_known"] = false,					-- Colorizes recipes/mounts/pets that is already known
-	["disenchanting"] = false,					-- One-click Milling, Prospecting and Disenchanting
+	["item_level"] = true,						-- Item level on character slot buttons
+	["gem_counter"] = true,						-- Displays how many red/blue/yellow gems you have
+	["already_known"] = true,					-- Colorizes recipes/mounts/pets that is already known
+	["disenchanting"] = true,					-- One-click Milling, Prospecting and Disenchanting
 	["sum_buyouts"] = false,					-- Sum upp all current auctions
 	["click_cast"] = false,						-- Simple click2cast spell binder
-	["move_blizzard"] = false,					-- Move some Blizzard frames
+	["move_blizzard"] = true,					-- Move some Blizzard frames
 }
 
 ----------------------------------------------------------------------------------------
 --	Announcements options
 ----------------------------------------------------------------------------------------
 C["announcements"] = {
-	["drinking"] = false,						-- Announce when arena enemy is drinking
-	["interrupts"] = false,						-- Announce when you interrupt
+	["drinking"] = true,						-- Announce when arena enemy is drinking
+	["interrupts"] = true,						-- Announce when you interrupt
 	["spells"] = false,							-- Announce when you cast some spell
 	["spells_from_all"] = false,				-- Check spells cast from all members
-	["lightwell"] = false,						-- Announce your Lightwell
+	["lightwell"] = true,						-- Announce your Lightwell
 	["toy_train"] = false,						-- Announce Toy Train or Direbrew's Remote cast
 	["says_thanks"] = false,					-- Says thanks for some spells
 	["pull_countdown"] = true,					-- Pull countdown announce(/run PullCountdown.Pull(#))
@@ -83,30 +83,30 @@ C["announcements"] = {
 ----------------------------------------------------------------------------------------
 C["automation"] = {
 	["resurrection"] = true,					-- Auto resurrection in Battle Ground
-	["screenshot"] = false,						-- Take screenshot when player get achievement
+	["screenshot"] = true,						-- Take screenshot when player get achievement
 	["solve_artifact"] = true,					-- Auto popup for solve artifact
 	["chefs_hat"] = true,						-- Auto equip Chef's Hat
-	["accept_invite"] = false,					-- Auto accept invite
+	["accept_invite"] = true,					-- Auto accept invite
 	["decline_duel"] = true,					-- Auto decline duel
 	["accept_quest"] = false,					-- Auto accept quests(if hold shift or alt, auto accept is disable)
-	["skip_cinematic"] = false,					-- Auto skip cinematics/movies
-	["auto_role"] = false,						-- Auto set your role
-	["cancel_bad_buffs"] = false,				-- Auto cancel various buffs
+	["skip_cinematic"] = true,					-- Auto skip cinematics/movies
+	["auto_role"] = true,						-- Auto set your role
+	["cancel_bad_buffs"] = true,				-- Auto cancel various buffs
 	["tab_binder"] = false,						-- Auto change Tab key to only target enemy players
-	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
+	["logging_combat"] = true,					-- Auto enables combat log text file in raid instances
 }
 
 ----------------------------------------------------------------------------------------
 --	Skins options
 ----------------------------------------------------------------------------------------
 C["skins"] = {
-	["blizzard_frames"] = false,				-- Blizzard frames skin
-	["minimap_buttons"] = false,				-- Skin addons icons on minimap
+	["blizzard_frames"] = true,					-- Blizzard frames skin
+	["minimap_buttons"] = true,					-- Skin addons icons on minimap
 	["clcprot"] = false,						-- CLCProt skin
 	["clcret"] = false,							-- CLCRet skin
 	["combustion_helper"] = false,				-- CombustionHelper skin
 	["bigwigs"] = false,						-- BigWigs skin
-	["dbm"] = false,							-- DBM skin
+	["dbm"] = true,								-- DBM skin
 	["dxe"] = false,							-- DXE skin
 	["omen"] = false,							-- Omen skin
 	["recount"] = false,						-- Recount skin
@@ -115,12 +115,12 @@ C["skins"] = {
 	["flyout_button"] = false,					-- FlyoutButtonCustom skin
 	["nug_running"] = false,					-- NugRunning skin
 	["ovale"] = false,							-- OvaleSpellPriority skin
-	["clique"] = false,							-- Clique skin
+	["clique"] = true,							-- Clique skin
 	["ace3"] = false,							-- Ace3 options elements skin
 	["pallypower"] = false,						-- PallyPower skin
 	["capping"] = false,						-- Capping skin
 	["cool_line"] = false,						-- CoolLine skin
-	["atlasloot"] = false,						-- AtlasLoot skin
+	["atlasloot"] = true,						-- AtlasLoot skin
 	["tiny_dps"] = false,						-- TinyDPS skin
 }
 
@@ -148,7 +148,7 @@ C["combattext"] = {
 	["max_lines"] = 15,							-- Max lines to keep in scrollable mode(more lines = more memory)
 	["time_visible"] = 3,						-- Time(seconds) a single message will be visible
 	["dk_runes"] = true,						-- Show deathknight rune recharge
-	["killingblow"] = false,					-- Tells you about your killingblows
+	["killingblow"] = true,						-- Tells you about your killingblows
 	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
 	["merge_aoe_spam_time"] = 3,				-- Time in seconds aoe spell will be merged into single message(works only with ["damage"] = true)
 	["dispel"] = true,							-- Tells you about your dispels(works only with ["damage"] = true)
@@ -215,7 +215,7 @@ C["pulsecooldown"] = {
 C["threat"] = {
 	["enable"] = true,							-- Enable threat meter
 	["height"] = 12,							-- Bars height
-	["width"] = 217,							-- Bars width
+	["width"] = 180,							-- Bars width
 	["bar_rows"] = 7,							-- Number of bars
 	["hide_solo"] = false,						-- Show only in party/raid
 }
@@ -227,27 +227,27 @@ C["tooltip"] = {
 	["enable"] = true,							-- Enable tooltip
 	["shift_modifer"] = false,					-- Show tooltip when "shift" is pushed
 	["cursor"] = false,							-- ToolTip under cursor
-	["item_icon"] = false,						-- Item icon in tooltip
+	["item_icon"] = true,						-- Item icon in tooltip
 	["health_value"] = false,					-- Numeral health value
 	["hidebuttons"] = false,					-- Hide tooltip for actions bars
 	["hide_combat"] = false,					-- Hide tooltip in combat
 	-- Plugins
-	["talents"] = false,						-- Show tooltip talents
+	["talents"] = true,							-- Show tooltip talents
 	["achievements"] = true,					-- Comparing achievements in tooltip
 	["target"] = true,							-- Target player in tooltip
-	["title"] = false,							-- Player title in tooltip
+	["title"] = true,							-- Player title in tooltip
 	["rank"] = true,							-- Player guild-rank in tooltip
 	["arena_experience"] = false,				-- Player PVP experience in arena
-	["spell_id"] = false,						-- Id number spells
-	["average_lvl"] = false,					-- Average items level
-	["raid_icon"] = false,						-- Raid icon
+	["spell_id"] = true,						-- Id number spells
+	["average_lvl"] = true,						-- Average items level
+	["raid_icon"] = true,						-- Raid icon
 	["who_targetting"] = false,					-- Show who is targetting the unit(in raid or party)
-	["item_count"] = false,						-- Item count in tooltip
+	["item_count"] = true,						-- Item count in tooltip
 	["unit_role"] = false,						-- Unit role in tooltip
 	["reforge"] = false,						-- Item reforge info
 	["symbiosis"] = false,						-- Symbiosis info
-	["instance_lock"] = false,					-- Your instance lock status in tooltip
-	["item_transmogrify"] = false,				-- Displays items can not be transmogrified
+	["instance_lock"] = true,					-- Your instance lock status in tooltip
+	["item_transmogrify"] = true,				-- Displays items can not be transmogrified
 }
 
 ----------------------------------------------------------------------------------------
@@ -267,9 +267,9 @@ C["chat"] = {
 	["whisp_sound"] = true,						-- Sound when whisper
 	["bubbles"] = true,							-- Skin Blizzard chat bubbles
 	["combatlog"] = true,						-- Show CombatLog tab(need two reloads when false)
-	["tabs_mouseover"] = false,					-- Chat tabs on mouseover
+	["tabs_mouseover"] = true,					-- Chat tabs on mouseover
 	["sticky"] = true,							-- Remember last channel
-	["damage_meter_spam"] = false,				-- Merge damage meter spam in one line-link
+	["damage_meter_spam"] = true,				-- Merge damage meter spam in one line-link
 }
 
 ----------------------------------------------------------------------------------------
@@ -301,7 +301,7 @@ C["map"] = {
 	["enable"] = true,							-- Enable World Map
 	["scale"] = 0.8,							-- World Map scale
 	["bg_map_stylization"] = true,				-- BG map stylization
-	["map_boss_count"] = false,					-- Show boss count in World Map
+	["map_boss_count"] = true,					-- Show boss count in World Map
 	["explore_map"] = false,					-- Tracking Explorer and Lore Master achievements in World Map
 }
 
@@ -335,7 +335,7 @@ C["nameplate"] = {
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
 	["near_color"] = {1, 1, 0},					-- Near threat color
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
-	["track_auras"] = false,					-- Show debuffs
+	["track_auras"] = true,						-- Show debuffs
 	["auras_size"] = 22,						-- Debuffs size
 	["healer_icon"] = false,					-- Show healer icon on all enemy healers nameplate in battlegrounds
 }
@@ -351,13 +351,13 @@ C["actionbar"] = {
 	["show_grid"] = true,						-- Show empty action bar buttons
 	["button_size"] = 25,						-- Buttons size
 	["button_space"] = 3,						-- Buttons space
-	["split_bars"] = false,						-- Split the fifth bar on two bars on 6 buttons
+	["split_bars"] = true,						-- Split the fifth bar on two bars on 6 buttons
 	["classcolor_border"] = false,				-- Enable classcolor border
 	["toggle_mode"] = true,						-- Enable toggle mode
 	-- Bottom bars
-	["bottombars"] = 2,							-- Number of action bars on the bottom
+	["bottombars"] = 3,							-- Number of action bars on the bottom
 	-- Right bars
-	["rightbars"] = 3,							-- Number of action bars on right
+	["rightbars"] = 2,							-- Number of action bars on right
 	["rightbars_mouseover"] = true,				-- Right bars on mouseover
 	-- Pet bar
 	["petbar_mouseover"] = false,				-- Pet bar on mouseover(only for horizontal pet bar)
@@ -388,7 +388,7 @@ C["aura"] = {
 	["boss_buffs"] = true,						-- Buffs on boss frame
 	["player_aura_only"] = false,				-- Only your debuff on target frame
 	["debuff_color_type"] = true,				-- Color debuff by type
-	["cast_by"] = false,						-- Show who cast a buff/debuff in its tooltip
+	["cast_by"] = true,							-- Show who cast a buff/debuff in its tooltip
 	["classcolor_border"] = false,				-- Enable classcolor border for player buffs
 }
 
@@ -406,7 +406,7 @@ C["unitframe"] = {
 	["bar_color_value"] = false,				-- Health bar color by current health remaining
 	-- Cast bars
 	["unit_castbar"] = true,					-- Show castbars
-	["castbar_icon"] = false,					-- Show castbar icons
+	["castbar_icon"] = true,					-- Show castbar icons
 	["castbar_latency"] = true,					-- Castbar latency
 	["castbar_ticks"] = false,					-- Castbar ticks
 	-- Frames
@@ -432,11 +432,11 @@ C["unitframe"] = {
 	["plugins_necro_strike"] = false,			-- Necrotic Strike bar
 	["plugins_reputation_bar"] = false,			-- Reputation bar
 	["plugins_experience_bar"] = false,			-- Experience bar
-	["plugins_smooth_bar"] = false,				-- Smooth bar
+	["plugins_smooth_bar"] = true,				-- Smooth bar
 	["plugins_talents"] = false,				-- Enemy talents spec
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
-	["plugins_fader"] = false,					-- Fade unit frames
-	["plugins_diminishing"] = false,			-- Diminishing Returns icons on arena frames
+	["plugins_fader"] = true,					-- Fade unit frames
+	["plugins_diminishing"] = true,			-- Diminishing Returns icons on arena frames
 }
 
 ----------------------------------------------------------------------------------------
@@ -475,7 +475,7 @@ C["raidframe"] = {
 	["raid_groups"] = 5,						-- Number of groups in raid
 	["raid_groups_vertical"] = false,			-- Vertical raid groups(only for ShestakUI_Heal)
 	-- Icons
-	["icons_role"] = false,						-- Role icon on frames
+	["icons_role"] = true,						-- Role icon on frames
 	["icons_raid_mark"] = true,					-- Raid mark icons on frames
 	["icons_ready_check"] = true,				-- Ready check icons on frames
 	["icons_leader"] = true,					-- Leader icon, assistant icon, master loot icon on frames
@@ -491,7 +491,7 @@ C["raidframe"] = {
 --	Panel options
 ----------------------------------------------------------------------------------------
 C["toppanel"] = {
-	["enable"] = true,							-- Enable top panel
+	["enable"] = false,							-- Enable top panel
 	["mouseover"] = true,						-- Top panel on mouseover
 	["height"] = 55,							-- Panel height
 	["width"] = 250,							-- Panel width
