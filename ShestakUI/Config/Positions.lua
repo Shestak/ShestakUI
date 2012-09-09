@@ -6,34 +6,34 @@
 ----------------------------------------------------------------------------------------
 C["position"] = {
 	-- Miscellaneous positions
-	["minimap"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24},				-- Minimap
+	["minimap"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -21},						-- Minimap
 	["map"] = {"BOTTOM", UIParent, "BOTTOM", -120, 320},							-- Map
 	["chat"] = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 24, 23},						-- Chat
 	["bag"] = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5},							-- Bag
 	["bank"] = {"LEFT", UIParent, "LEFT", 23, 150},									-- Bank
 	["bn_popup"] = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20},					-- Battle.net popup
 	["achievement"] = {"TOP", UIParent, "TOP", 0, -20},								-- Achievements frame
-	["tooltip"] = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5},						-- Tooltip
+	["tooltip"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 157},				-- Tooltip
 	["attempt"] = {"TOP", UIParent, "TOP", -85, -25},								-- Attempts frame
 	["capture_bar"] = {"TOP", UIParent, "TOP", 0, 3},								-- BG capture bars
-	["vehicle"] = {"BOTTOM", Minimap, "TOP", 0, 27},								-- Vehicle frame
+	["vehicle"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 157},				-- Vehicle frame
 	["uierror"] = {"TOP", UIParent, "TOP", 0, -30},									-- Errors frame
 	["quest"] = {"TOPLEFT", UIParent, "TOPLEFT", 21, -4},							-- Quest log
 	["loot"] = {"TOPLEFT", UIParent, "TOPLEFT", 245, -220},							-- Loot
 	["group_loot"] = {"BOTTOM", UIParent, "BOTTOM", -238, 500},						-- Group roll loot
-	["threat_meter"] = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 7, 16},		-- Threat meter
+	["threat_meter"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -208, 24},			-- Threat meter
 	["raid_cooldown"] = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21},					-- Raid cooldowns
 	["enemy_cooldown"] = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 62},			-- Enemy cooldowns
 	["pulse_cooldown"] = {"CENTER", UIParent, "CENTER", 0, 0},						-- Pulse cooldowns
 	["bg_score"] = {"BOTTOMLEFT", ActionButton12, "BOTTOMRIGHT", 10, -2},			-- BG stats
-	["player_buffs"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -21},				-- Player buffs
+	["player_buffs"] = {"TOPRIGHT", Minimap, "TOPLEFT", -5, 2},						-- Player buffs
 	["self_buffs"] = {"CENTER", UIParent, "CENTER", 0, 190},						-- Self buff reminder
-	["raid_buffs"] = {"BOTTOMLEFT", Minimap, "TOPLEFT", -1, 5},						-- Raid buff reminder
+	["raid_buffs"] = {"TOPRIGHT", Minimap, "BOTTOMRIGHT", 2, -5},					-- Raid buff reminder
 	["top_panel"] = {"TOP", UIParent, "TOP", 0, -20},								-- Top panel
 	["raid_utility"] = {"TOP", UIParent, "TOP", -280, 1},							-- Raid utility
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},							-- Bottom bars
-	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 320},			-- Right bars
+	["right_bars"] = {"RIGHT", UIParent, "RIGHT", -21, 0},							-- Right bars
 	["pet_horizontal"] = {"BOTTOMRIGHT", UIParent, "BOTTOM", -175, 167},			-- Horizontal pet bar
 	["stance_bar"] = {"BOTTOMRIGHT", UIParent, "BOTTOM", -202, 167},				-- Stance bar
 	["vehicle_bar"] = {"BOTTOMRIGHT", ActionButton1, "BOTTOMLEFT", -3, 0},			-- Vehicle button
