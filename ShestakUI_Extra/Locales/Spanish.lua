@@ -1,8 +1,9 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if T.client ~= "esES" and T.client ~= "esMX" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for esES and esMX client(Thanks to eXecrate for the translation)
+--	Localization for esES and esMX client
+--	Translation: eXecrate
 ----------------------------------------------------------------------------------------
 -- Key binding Header Name
 L_EXTRA_HEADER_EXTRABAR = "Extra Bar" -- Needs review

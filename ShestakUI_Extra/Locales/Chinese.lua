@@ -1,8 +1,9 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if T.client ~= "zhCN" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for zhCN client(Thanks to tat2dawn for the translation)
+--	Localization for zhCN client
+--	Translation: Tat2dawn
 ----------------------------------------------------------------------------------------
 -- Key binding Header Name
 L_EXTRA_HEADER_EXTRABAR = "Extra Bar" -- Needs review

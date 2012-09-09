@@ -1,12 +1,12 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if C.extra_skins.mog_it ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	MogIt skin
+--	MogIt skin(Not Ready)
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self, event, addon)
+frame:SetScript("OnEvent", function(self, event)
 	if not IsAddOnLoaded("MogIt") then return end
 
 	MogItTooltip:SetBackdrop(nil)

@@ -1,8 +1,9 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if T.client ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for frFR client(Thanks to Puree for the translation)
+--	Localization for frFR client
+--	Translation: Puree
 ----------------------------------------------------------------------------------------
 -- Key binding Header Name
 L_EXTRA_HEADER_EXTRABAR = "Extra Bar" -- Needs review

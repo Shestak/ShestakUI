@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if C.extra_skins.npcscan ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -6,7 +6,7 @@ if C.extra_skins.npcscan ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self, event, addon)
+frame:SetScript("OnEvent", function(self, event)
 	if not IsAddOnLoaded("_NPCScan") then return end
 	_NPCScanButton:StripTextures()
 	_NPCScanButton:SetTemplate("Transparent")

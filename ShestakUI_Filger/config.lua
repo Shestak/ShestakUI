@@ -1,7 +1,7 @@
 local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
-if T.name == "Oz" and T.realm == "Well of Eternity" then
+if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	Filger_Settings = {
 	config_mode = false,
 	max_test_icon = 5,

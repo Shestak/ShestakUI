@@ -16,25 +16,18 @@
 
 	<Script file="Modules\Announcements\BadTank.lua"/>
 	<Script file="Modules\Announcements\FPS.lua"/>
-	<Script file="Modules\Announcements\NickAlert.lua"/>
 
 	<Script file="Modules\ExtraBars\Battleground.lua"/>
 	<Script file="Modules\ExtraBars\CustomActionBar.lua"/>
 	<Script file="Modules\ExtraBars\MarkBar.lua"/>
 	<Script file="Modules\ExtraBars\SwitchSpec.lua"/>
 
-	<Script file="Modules\Misc\Align.lua"/>
 	<Script file="Modules\Misc\Archaeology.lua"/>
-	<Script file="Modules\Misc\ArenaCalc.lua"/>
 	<Script file="Modules\Misc\BuffAutomator.lua"/>
 	<Script file="Modules\Misc\ColorPicker.lua"/>
-	<Script file="Modules\Misc\MoveBlizzard.lua"/>
 	<Script file="Modules\Misc\OneClickEnchantScroll.lua"/>
 
 	<Script file="Modules\Skins\AdiBags.lua"/>
-	<Script file="Modules\Skins\AtlasLoot.lua"/>
-	<Script file="Modules\Skins\Capping.lua"/>
-	<Script file="Modules\Skins\CoolLine.lua"/>
 	<Script file="Modules\Skins\EPGP.lua"/>
 	<Script file="Modules\Skins\FaceShooter.lua"/>
 	<Script file="Modules\Skins\MageManaBar.lua"/>
@@ -43,12 +36,10 @@
 	<Script file="Modules\Skins\MogIt.lua"/>
 	<Script file="Modules\Skins\MyRolePlay.lua"/>
 	<Script file="Modules\Skins\NPCScan.lua"/>
-	<Script file="Modules\Skins\Overachiever.lua"/>
 	<Script file="Modules\Skins\PreformAVEnabler.lua"/>
 	<Script file="Modules\Skins\Quartz.lua"/>
 	<Script file="Modules\Skins\RollTracker.lua"/>
 	<Script file="Modules\Skins\ShieldMonitor.lua"/>
 	<Script file="Modules\Skins\Skada.lua"/>
-	<Script file="Modules\Skins\TinyDPS.lua"/>
 	<Script file="Modules\Skins\VanasKoS.lua"/>
 </Ui>

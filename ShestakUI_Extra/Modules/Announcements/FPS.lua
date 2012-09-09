@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if C.extra_announce.my_fps ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -20,7 +20,6 @@ function FPSAnnounce:CHAT_MSG_GUILD(msg, ...)
 		if (difftime(time(), sentTime) >= throttleSpam) then
 			sentTime = time()
 			SendChatMessage(L_EXTRA_ANNOUNCE_FPS..floor(GetFramerate()), "GUILD")
-			--SendChatMessage(L_EXTRA_ANNOUNCE_FPS..floor(GetFramerate())..", задержка "..select(4, GetNetStats())..MILLISECONDS_ABBR, "GUILD")
 		end
 	end
 end

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿local T, C, L = unpack(ShestakUI)
 if not IsAddOnLoaded("ShestakUI_alDamageMeter") and C.meter.enable ~= true then return end
+=======
+﻿local T, C, L, _ = unpack(ShestakUI)
+>>>>>>> 9924ba2ebe5909eeeda0abf80b466d9f2649c741
 
 -- Config start
 local barheight = C.meter.height
@@ -44,13 +48,12 @@ local AbsorbSpellDuration = {
 	[51271] = 20,	-- Pillar of Frost
 	[77535] = 10,	-- Blood Shield
 	-- Druid
-	[62606] = 10,	-- Savage Defense
+	[62606] = 6,	-- Savage Defense
 	-- Mage
 	[11426] = 60,	-- Ice Barrier
-	[1463] = 60,	-- Mana Shield
-	[543] = 30,		-- Mage Ward
+	[1463] = 8,		-- Mana Shield
 	-- Paladin
-	[85285] = 15,	-- Sacred Shield
+	[65148] = 30,	-- Sacred Shield
 	[76669] = 15,	-- Illuminated Healing
 	-- Priest
 	[17] = 15,		-- Power Word: Shield
@@ -116,7 +119,7 @@ local perSecond = function(cdata)
 end
 
 local report = function(channel, cn)
-	local message = sMode..":"
+	local message = addon_name.." : "..sMode
 	if channel == "Chat" then
 		DEFAULT_CHAT_FRAME:AddMessage(message)
 	else
@@ -258,7 +261,7 @@ local CreateBar = function()
 	newbar:SetScript("OnLeave", OnBarLeave)
 	newbar:SetScript("OnMouseUp", function(self, button)
 		if button == "RightButton" then
-			ToggleDropDownMenu(1, nil, menuFrame, "cursor", 0, 0)
+			ToggleDropDownMenu(nil, nil, menuFrame, "cursor", 0, 0)
 		end
 	end)
 	return newbar
@@ -319,8 +322,13 @@ local UpdateBars = function()
 		bar[i].id = i + offset
 		bar[i]:SetValue(100 * cur[sMode].amount / max[sMode].amount)
 		color = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[cur.class] or RAID_CLASS_COLORS[cur.class]
-		bar[i]:SetStatusBarColor(color.r, color.g, color.b)
-		bar[i].bg:SetVertexColor(color.r, color.g, color.b, 0.25)
+		if color then
+			bar[i]:SetStatusBarColor(color.r, color.g, color.b)
+			bar[i].bg:SetVertexColor(color.r, color.g, color.b, 0.25)
+		else
+			bar[i]:SetStatusBarColor(0, 0.7, 0)
+			bar[i].bg:SetVertexColor(0, 0.7, 0, 0.25)
+		end
 		if sMode == DAMAGE or sMode == SHOW_COMBAT_HEALING then
 			bar[i].right:SetFormattedText("%s [%s]", truncate(cur[sMode].amount), truncate(perSecond(cur)))
 		else
@@ -469,12 +477,9 @@ end
 local CheckRoster = function()
 	wipe(units)
 	if GetNumGroupMembers() > 0 then
+		local unit = IsInRaid() and "raid" or "party"
 		for i = 1, GetNumGroupMembers(), 1 do
-			CheckUnit("raid"..i)
-		end
-	elseif GetNumSubgroupMembers() > 0 then
-		for i = 1, GetNumSubgroupMembers(), 1 do
-			CheckUnit("party"..i)
+			CheckUnit(unit..i)
 		end
 	end
 	CheckUnit("player")
@@ -482,14 +487,9 @@ end
 
 local IsRaidInCombat = function()
 	if GetNumGroupMembers() > 0 then
+		local unit = IsInRaid() and "raid" or "party"
 		for i = 1, GetNumGroupMembers(), 1 do
-			if UnitExists("raid"..i) and UnitAffectingCombat("raid"..i) then
-				return true
-			end
-		end
-	elseif GetNumSubgroupMembers() > 0 then
-		for i = 1, GetNumSubgroupMembers(), 1 do
-			if UnitExists("party"..i) and UnitAffectingCombat("party"..i) then
+			if UnitExists(unit..i) and UnitAffectingCombat(unit..i) then
 				return true
 			end
 		end
@@ -656,7 +656,7 @@ local OnEvent = function(self, event, ...)
 			end)
 			MainFrame:SetScript("OnMouseUp", function(self, button)
 				if button == "RightButton" then
-					ToggleDropDownMenu(1, nil, menuFrame, "cursor", 0, 0)
+					ToggleDropDownMenu(nil, nil, menuFrame, "cursor", 0, 0)
 				end
 				if button == "LeftButton" then
 					self:StopMovingOrSizing()

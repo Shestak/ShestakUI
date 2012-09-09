@@ -1,4 +1,4 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if C.extra_skins.face_shooter ~= true or T.class ~= "HUNTER" or T.level < 80 then return end
 
 ----------------------------------------------------------------------------------------
@@ -6,7 +6,7 @@ if C.extra_skins.face_shooter ~= true or T.class ~= "HUNTER" or T.level < 80 the
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self, event, addon)
+frame:SetScript("OnEvent", function(self, event)
 	if not IsAddOnLoaded("FaceShooter") then return end
 
 	if ttlMover then

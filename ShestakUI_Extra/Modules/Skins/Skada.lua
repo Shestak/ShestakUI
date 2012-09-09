@@ -1,12 +1,12 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if C.extra_skins.skada ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Skada skin
+--	Skada skin(Not Ready)
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self, event, addon)
+frame:SetScript("OnEvent", function(self, event)
 	if not IsAddOnLoaded("Skada") then return end
 
 	local Skada = Skada

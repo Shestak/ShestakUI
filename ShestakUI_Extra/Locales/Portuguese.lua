@@ -1,8 +1,9 @@
-﻿local T, C, L = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if T.client ~= "ptBR" and T.client ~= "ptPT" then return end
 
 ----------------------------------------------------------------------------------------
---	Localization for ptBR and ptPT client(Need full translation)
+--	Localization for ptBR and ptPT client
+--	Translation: Need full translation
 ----------------------------------------------------------------------------------------
 -- Key binding Header Name
 L_EXTRA_HEADER_EXTRABAR = "Extra Bar"
