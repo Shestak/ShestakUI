@@ -1309,54 +1309,54 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Cleanse
+			{spellID = 4987, filter = "CD"},
 			-- Rebuke
 			{spellID = 96231, filter = "CD"},
 			-- Hammer of Justice
 			{spellID = 853, filter = "CD"},
 			-- Judgement
 			{spellID = 20271, filter = "CD"},
-			-- Exorcism
-			{spellID = 879, filter = "CD"},
-			-- Hand of Freedom
-			{spellID = 1044, filter = "CD"},
-			-- Avenger's Shield
-			{spellID = 31935, filter = "CD"},
-			-- Holy Wrath
-			{spellID = 119072, filter = "CD"},
 			-- Consecration
 			{spellID = 26573, filter = "CD"},
+			-- Holy Wrath
+			{spellID = 119072, filter = "CD"},
+			-- Avenger's Shield
+			{spellID = 31935, filter = "CD"},
+			-- Exorcism
+			{spellID = 879, filter = "CD"},
+			-- Holy Prism
+			{spellID = 114165, filter = "CD"},
+			-- Hand of Freedom
+			{spellID = 1044, filter = "CD"},
+			-- Hand of Purity
+			{spellID = 114039, filter = "CD"},
+			-- Speed of Light
+			{spellID = 85499, filter = "CD"},
 			-- Divine Protection
 			{spellID = 498, filter = "CD"},
-			-- Avenging Wrath
-			{spellID = 31884, filter = "CD"},
-			-- Divine Plea
-			{spellID = 54428, filter = "CD"},
-			-- Hand of Sacrifice
-			{spellID = 6940, filter = "CD"},
-			-- Hand of Salvation
-			{spellID = 1038, filter = "CD"},
-			-- Devotion Aura
-			{spellID = 31821, filter = "CD"},
-			-- Holy Avenger
-			{spellID = 105809, filter = "CD"},
-			-- Ardent Defender
-			{spellID = 31850, filter = "CD"},
-			-- Hand of Protection
-			{spellID = 1022, filter = "CD"},
 			-- Execution Sentence
 			{spellID = 114157, filter = "CD"},
 			-- Light's Hammer
 			{spellID = 114158, filter = "CD"},
-			-- Holy Prism
-			{spellID = 114165, filter = "CD"},
-			-- Hand of Purity
-			{spellID = 114039, filter = "CD"},
 			-- Blinding Light
 			{spellID = 115750, filter = "CD"},
-			-- Speed of Light
-			{spellID = 85499, filter = "CD"},
-			-- Cleanse
-			{spellID = 4987, filter = "CD"},
+			-- Holy Avenger
+			{spellID = 105809, filter = "CD"},
+			-- Devotion Aura
+			{spellID = 31821, filter = "CD"},
+			-- Hand of Sacrifice
+			{spellID = 6940, filter = "CD"},
+			-- Divine Plea
+			{spellID = 54428, filter = "CD"},
+			-- Avenging Wrath
+			{spellID = 31884, filter = "CD"},
+			-- Ardent Defender
+			{spellID = 31850, filter = "CD"},
+			-- Hand of Salvation
+			{spellID = 1038, filter = "CD"},
+			-- Hand of Protection
+			{spellID = 1022, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
