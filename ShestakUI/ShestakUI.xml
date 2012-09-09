@@ -215,6 +215,7 @@
 	<Script file="Modules\Skins\DBM.lua"/>
 	<Script file="Modules\Skins\Dominos.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>
+	<Script file="Modules\Skins\FaceShooter.lua"/>
 	<Script file="Modules\Skins\FlyoutButtonCustom.lua"/>
 	<Script file="Modules\Skins\NugRunning.lua"/>
 	<Script file="Modules\Skins\Omen.lua"/>
