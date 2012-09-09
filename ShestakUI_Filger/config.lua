@@ -1648,6 +1648,14 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
+                        -- Subterfuge
+			{spellID = 108208, unitID = "player", caster = "player", filter = "BUFF"},
+                        -- Fury of the Destroyer
+			{spellID = 109949, unitID = "player", caster = "player", filter = "BUFF"},
+                        -- Blindside
+			{spellID = 121152, unitID = "player", caster = "player", filter = "BUFF"},
+                        -- Feint
+			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sprint
 			{spellID = 2983, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Adrenaline Rush
