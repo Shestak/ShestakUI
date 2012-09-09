@@ -35,6 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "彩色显示已学会的食谱/坐骑/宠物"
 L_GUI_MISC_DISENCHANTING = "一键研磨/选矿/分解"
 L_GUI_MISC_SUM_BUYOUTS = "总结目前所有的拍卖"
 L_GUI_MISC_CLICK_CAST = "简单的点击施法绑定"
+L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
