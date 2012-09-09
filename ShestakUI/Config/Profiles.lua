@@ -115,9 +115,9 @@ if T.author == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Oz Config
+--	Oz@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Oz" then
+if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].bn_popup = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5}
 	C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -239, -113}
 	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -69}
@@ -136,13 +136,17 @@ if T.name == "Oz" then
 	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].vehicle_mouseover = true
+	C["misc"].profession_database = true
 	C["misc"].item_level = true
 	C["misc"].gem_counter = true
+	C["misc"].already_known = true
 	C["misc"].move_blizzard = true
 	C["announcements"].flask_food = true
+	C["announcements"].feasts = true
 	C["automation"].resurrection = false
 	C["automation"].screenshot = true
 	C["automation"].decline_duel = false
+	C["automation"].logging_combat = true
 	C["skins"].blizzard_frames = true
 	C["skins"].dbm = true
 	C["skins"].blood_shield_tracker = true
@@ -164,6 +168,8 @@ if T.name == "Oz" then
 	C["tooltip"].symbiosis = true
 	C["tooltip"].item_transmogrify = true
 	C["chat"].filter = false
+	C["chat"].chat_bar = true
+	C["chat"].chat_bar_mouseover = true
 	C["chat"].tabs_mouseover = true
 	C["chat"].damage_meter_spam = true
 	C["minimap"].size = 129
