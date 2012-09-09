@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 ﻿local T, C, L = unpack(ShestakUI)
 if not IsAddOnLoaded("ShestakUI_alDamageMeter") and C.meter.enable ~= true then return end
-=======
-﻿local T, C, L, _ = unpack(ShestakUI)
->>>>>>> 9924ba2ebe5909eeeda0abf80b466d9f2649c741
 
 -- Config start
 local barheight = C.meter.height
