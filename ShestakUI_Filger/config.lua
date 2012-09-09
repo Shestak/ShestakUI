@@ -1664,6 +1664,8 @@ Filger_Spells = {
 			{spellID = 51713, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recuperate
 			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Feint
+			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Master of Subtlety
 			{spellID = 31665, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cloak of Shadows
@@ -1695,6 +1697,8 @@ Filger_Spells = {
 			{spellID = 74001, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combat Insight
 			{spellID = 74002, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blindside
+			{spellID = 121153, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
