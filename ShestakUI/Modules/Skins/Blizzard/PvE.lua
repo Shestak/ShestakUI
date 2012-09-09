@@ -43,7 +43,9 @@ local function LoadSkin()
 		"RaidFinderFrameFindRaidButton",
 		"ScenarioQueueFrameFindGroupButton",
 		"LFGDungeonReadyDialogLeaveQueueButton",
-		"LFGDungeonReadyDialogEnterDungeonButton"
+		"LFGDungeonReadyDialogEnterDungeonButton",
+		"LFDQueueFramePartyBackfillBackfillButton",
+		"LFDQueueFramePartyBackfillNoBackfillButton"
 	}
 
 	for i = 1, #buttons do
