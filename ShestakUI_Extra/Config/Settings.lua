@@ -47,7 +47,6 @@ C["extra_bar"] = {
 C["extra_skins"] = {
 	["adibags"] = true,							-- AdiBags skin(Not Ready)
 	["epgp"] = true,							-- EPGP skin(Not Ready)
-	["face_shooter"] = true,					-- FaceShooter skin
 	["mage_mana_bar"] = true,					-- MageManaBar skin
 	["mage_nuggets"] = true,					-- MageNuggets skin
 	["mfclip"] = true,							-- MFClip skin
