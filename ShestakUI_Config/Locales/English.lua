@@ -400,6 +400,7 @@ L_GUI_STATS_FPS = "FPS"
 L_GUI_STATS_EXPERIENCE = "Experience"
 L_GUI_STATS_COORDS = "Coords"
 L_GUI_STATS_LOCATION = "Location"
+L_GUI_STATS_BAGS = "Bags"
 
 -- Error options
 L_GUI_ERROR = "Errors"

@@ -403,6 +403,7 @@ L_GUI_STATS_FPS = "Frames Per Seconds"
 L_GUI_STATS_EXPERIENCE = "Esperienza"
 L_GUI_STATS_COORDS = "Coordinate"
 L_GUI_STATS_LOCATION = "Località"
+L_GUI_STATS_BAGS = "Sacche"
 
 -- Error options
 L_GUI_ERROR = "Errori"
