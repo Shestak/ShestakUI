@@ -220,6 +220,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["general"].custom_lagtolerance = true
 	C["misc"].invite_keyword = "+"
 	C["misc"].quest_auto_button = true
+	C["misc"].profession_database = true
 	C["misc"].already_known = true
 	C["misc"].item_level = true
 	C["misc"].gem_counter = true
@@ -230,19 +231,22 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["announcements"].interrupts = true
 	C["announcements"].spells = true
 	C["announcements"].spells_from_all = true
+	C["announcements"].toy_train = true
 	C["announcements"].says_thanks = true
 	C["announcements"].flask_food = true
 	C["announcements"].flask_food_auto = true
+	C["announcements"].feasts = true
+	C["announcements"].portals = true
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
 	C["automation"].decline_duel = false
-	C["automation"].skip_cinematic = true
 	C["automation"].cancel_bad_buffs = true
 	C["automation"].tab_binder = true
 	C["automation"].logging_combat = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["skins"].atlasloot = true
+	C["combattext"].blizz_head_numbers = true
 	C["reminder"].solo_buffs_sound = true
 	C["reminder"].raid_buffs_always = true
 	C["reminder"].raid_buffs_size = 20
@@ -268,12 +272,14 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["tooltip"].item_transmogrify = true
 	C["chat"].background = true
 	C["chat"].background_alpha = 0.45
+	C["chat"].height = 165
 	C["chat"].chat_bar = true
 	C["chat"].bubbles = false
 	C["chat"].damage_meter_spam = true
 	C["bag"].button_size = 35
 	C["bag"].bank_columns = 15
 	C["minimap"].tracking_icon = true
+	C["minimap"].size = 165
 	C["map"].map_boss_count = true
 	C["map"].explore_map = true
 	C["loot"].icon_size = 40
@@ -314,12 +320,14 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["unitframe"].plugins_experience_bar = true
 	C["unitframe"].plugins_talents = true
 	C["unitframe"].plugins_combat_feedback = true
+	C["unitframe"].plugins_diminishing = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].icons_role = true
 	C["raidframe"].plugins_debuffhighlight_icon = true
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].raid_groups = 8
 	C["raidframe"].plugins_auto_resurrection = true
+	C["stats"].battleground = true
 	C["error"].hide = false
 	C["font"].stats_font = C.media.pixel_font
 	C["font"].stats_font_style = "OUTLINE"
@@ -376,7 +384,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["combattext"].heal_treshold = 5000
 		C["chat"].width = 398
 		C["actionbar"].split_bars = true
-		C["stats"].battleground = true
 	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
 	or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка" then
 		C["position"].unitframes.player = {"TOPLEFT", UIParent, "TOPLEFT", 90, -60}
@@ -389,12 +396,11 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["position"].vehicle_bar = {"BOTTOM", UIParent, "BOTTOM", 200, 120}
 		C["position"].enemy_cooldown = {"BOTTOM", UIParent, "BOTTOM", -140, 185}
 		C["chat"].width = 380
-		C["chat"].height = 150
 		C["unitframe"].show_boss = false
 		C["raidframe"].raid_tanks = false
 		C["stats"].experience = false
-		if T.name == "Виринеа" then
-			C["announcements"].lightwell = true
-		end
+	end
+	if T.class == "PRIEST" then
+		C["announcements"].lightwell = true
 	end
 end
