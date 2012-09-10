@@ -1650,40 +1650,36 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Sprint
-			{spellID = 2983, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Slice and Dice
+			{spellID = 5171, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Recuperate
+			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Adrenaline Rush
 			{spellID = 13750, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evasion
 			{spellID = 5277, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Envenom
 			{spellID = 32645, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Overkill
-			{spellID = 58426, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Slice and Dice
-			{spellID = 5171, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadow Dance
 			{spellID = 51713, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Recuperate
-			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Feint
-			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Master of Subtlety
 			{spellID = 31665, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cloak of Shadows
 			{spellID = 31224, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vanish
 			{spellID = 1856, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combat Readiness
+			{spellID = 74001, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combat Insight
+			{spellID = 74002, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cheating Death
 			{spellID = 45182, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blade Flurry
 			{spellID = 13877, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shallow Insight
-			{spellID = 84745, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Moderate Insight
-			{spellID = 84746, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Deep Insight
-			{spellID = 84747, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Feint
+			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sprint
+			{spellID = 2983, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1695,10 +1691,12 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
-			-- Combat Readiness
-			{spellID = 74001, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combat Insight
-			{spellID = 74002, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shallow Insight
+			{spellID = 84745, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Moderate Insight
+			{spellID = 84746, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Deep Insight
+			{spellID = 84747, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blindside
 			{spellID = 121153, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1789,34 +1787,34 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Stealth
+			{spellID = 1784, filter = "CD"},
 			-- Kick
 			{spellID = 1766, filter = "CD"},
 			-- Gouge
 			{spellID = 1776, filter = "CD"},
 			-- Kidney Shot
 			{spellID = 408, filter = "CD"},
+			-- Premiditation
+			{spellID = 14183, filter = "CD"},
+			-- Redirect
+			{spellID = 73981, filter = "CD"},
+			-- Dismantle
+			{spellID = 51722, filter = "CD"},
+			-- Sprint
+			{spellID = 2983, filter = "CD"},
 			-- Killing Spree
 			{spellID = 51690, filter = "CD"},
 			-- Adrenaline Rush
 			{spellID = 13750, filter = "CD"},
-			-- Stealth
-			{spellID = 1784, filter = "CD"},
-			-- Vanish
-			{spellID = 1856, filter = "CD"},
-			-- Shadow Dance
-			{spellID = 51713, filter = "CD"},
-			-- Redirect
-			{spellID = 73981, filter = "CD"},
-			-- Combat Readiness
-			{spellID = 74001, filter = "CD"},
 			-- Vendetta
 			{spellID = 79140, filter = "CD"},
-			-- Premiditation
-			{spellID = 14183, filter = "CD"},
-			-- Sprint
-			{spellID = 2983, filter = "CD"},
-			-- Dismantle
-			{spellID = 51722, filter = "CD"},
+			-- Shadow Dance
+			{spellID = 51713, filter = "CD"},
+			-- Combat Readiness
+			{spellID = 74001, filter = "CD"},
+			-- Vanish
+			{spellID = 1856, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
