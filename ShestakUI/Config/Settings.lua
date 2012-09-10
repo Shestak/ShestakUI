@@ -435,8 +435,8 @@ C["unitframe"] = {
 	["plugins_smooth_bar"] = true,				-- Smooth bar
 	["plugins_talents"] = false,				-- Enemy talents spec
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
-	["plugins_fader"] = true,					-- Fade unit frames
-	["plugins_diminishing"] = true,			-- Diminishing Returns icons on arena frames
+	["plugins_fader"] = false,					-- Fade unit frames
+	["plugins_diminishing"] = true,				-- Diminishing Returns icons on arena frames
 }
 
 ----------------------------------------------------------------------------------------
