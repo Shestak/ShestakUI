@@ -82,7 +82,7 @@ L_TOGGLE_NOT_FOUND = " non trovata."
 -- UnitFrame
 L_UF_GHOST = "Spirito"
 L_UF_DEAD = "Morto"
-L_UF_OFFLINE = "Disconnesso/a"
+L_UF_OFFLINE = "Disconnesso"
 L_UF_MANA = "Poco mana"
 L_UF_TRINKET_READY = "Monile pronto all'uso: "
 L_UF_TRINKET_USED = "Monile utilizzato: "

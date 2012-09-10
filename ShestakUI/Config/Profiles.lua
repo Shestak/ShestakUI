@@ -131,8 +131,8 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].unitframes.target_castbar = {"CENTER", UIParent, "CENTER", 11, -179}
 	C["general"].welcome_message = false
 	C["misc"].afk_spin_camera = false
-	C["misc"].ach_screens = true
 	C["misc"].profession_database = true
+	C["automation"].screenshot = true
 	C["automation"].logging_combat = true
 	C["combattext"].scrollable = true
 	C["enemycooldown"].show_always = true

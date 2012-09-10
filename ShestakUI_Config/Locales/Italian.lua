@@ -32,10 +32,10 @@ L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei bosses durante i Cam
 L_GUI_MISC_ITEM_LEVEL = "Livello oggetto sugli scomparti della schermata Personaggio"
 L_GUI_MISC_GEM_COUNTER = "Mostra quante gemme rosse/blu/gialle possiedi"
 L_GUI_MISC_ALREADY_KNOWN = "Colora ricette/cavalcature/mascottes possedute"
-L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo click."
+L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo click"
 L_GUI_MISC_SUM_BUYOUTS = "Somma assieme tutte le aste correnti"
 L_GUI_MISC_CLICK_CAST = "Scorciatoie da mouse (Click2Cast)"
-L_GUI_MISC_MOVE_BLIZZARD = "Muovi alcuni riquadri dell'interfaccia Blizzard"
+L_GUI_MISC_MOVE_BLIZZARD = "Consenti di muovere alcuni riquadri dell'interfaccia Blizzard"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -129,9 +129,9 @@ L_GUI_REMINDER = "Promemoria benefici"
 L_GUI_REMINDER_SOLO_ENABLE = "Mostra i propri benefici mancanti"
 L_GUI_REMINDER_SOLO_SOUND = "Attiva un suono d'avviso per il promemoria dei propri benefici mancanti"
 L_GUI_REMINDER_SOLO_SIZE = "Dimensione dell'icona dei propri benefici"
-L_GUI_REMINDER_RAID_ENABLE = "Mostra i benefici dell'incursione mancanti"
+L_GUI_REMINDER_RAID_ENABLE = "Mostra i benefici d'incursione mancanti"
 L_GUI_REMINDER_RAID_ALWAYS = "Mostra sempre il promemoria benefici"
-L_GUI_REMINDER_RAID_SIZE = "Dimensioni delle icone del promemoria benefici dell'incursione"
+L_GUI_REMINDER_RAID_SIZE = "Dimensioni delle icone del promemoria benefici d'incursione"
 L_GUI_REMINDER_RAID_ALPHA = "Trasparenza icona quando il beneficio è presente"
 
 -- Raid cooldowns options
