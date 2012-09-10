@@ -178,6 +178,9 @@ elseif T.class == "ROGUE" then
 		T.aoespam[5374] = true		-- Mutilate
 		T.aoespam[27576] = 5374		-- Mutilate Off-Hand
 	end
+	if C.combattext.healing then
+		T.healfilter[112974] = true	-- Leeching Poison
+	end
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells

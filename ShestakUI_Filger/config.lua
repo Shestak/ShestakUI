@@ -1208,23 +1208,23 @@ Filger_Spells = {
 
 			-- Buffs
 			-- Infusion of Light
-			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Purpose
+			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Daybreak
 			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Light of the Ancient Kings
-			{spellID = 86678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Ancient Power
+			{spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bastion of Glory
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
-			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Purpose
-			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Light of the Ancient Kings
+			{spellID = 86678, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ancient Power
-			{spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -1294,7 +1294,7 @@ Filger_Spells = {
 			{spellID = 20170, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Denounce
 			{spellID = 2812, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Avenger's Shield with Glyph
+			-- Glyph of Dazing Shield
 			{spellID = 63529, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Burden of Guilt
 			{spellID = 110300, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1313,6 +1313,8 @@ Filger_Spells = {
 			{spellID = 4987, filter = "CD"},
 			-- Rebuke
 			{spellID = 96231, filter = "CD"},
+			-- Repentance
+			{spellID = 20066, filter = "CD"},
 			-- Hammer of Justice
 			{spellID = 853, filter = "CD"},
 			-- Judgement
@@ -1648,40 +1650,36 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
-			-- Sprint
-			{spellID = 2983, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Slice and Dice
+			{spellID = 5171, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Recuperate
+			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Adrenaline Rush
 			{spellID = 13750, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evasion
 			{spellID = 5277, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Envenom
 			{spellID = 32645, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Overkill
-			{spellID = 58426, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Slice and Dice
-			{spellID = 5171, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadow Dance
 			{spellID = 51713, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Recuperate
-			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Feint
-			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Master of Subtlety
 			{spellID = 31665, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cloak of Shadows
 			{spellID = 31224, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vanish
 			{spellID = 1856, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combat Readiness
+			{spellID = 74001, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combat Insight
+			{spellID = 74002, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cheating Death
 			{spellID = 45182, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blade Flurry
 			{spellID = 13877, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shallow Insight
-			{spellID = 84745, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Moderate Insight
-			{spellID = 84746, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Deep Insight
-			{spellID = 84747, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Feint
+			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sprint
+			{spellID = 2983, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1693,10 +1691,12 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
-			-- Combat Readiness
-			{spellID = 74001, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combat Insight
-			{spellID = 74002, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shallow Insight
+			{spellID = 84745, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Moderate Insight
+			{spellID = 84746, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Deep Insight
+			{spellID = 84747, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blindside
 			{spellID = 121153, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1787,34 +1787,34 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Stealth
+			{spellID = 1784, filter = "CD"},
 			-- Kick
 			{spellID = 1766, filter = "CD"},
 			-- Gouge
 			{spellID = 1776, filter = "CD"},
 			-- Kidney Shot
 			{spellID = 408, filter = "CD"},
+			-- Premiditation
+			{spellID = 14183, filter = "CD"},
+			-- Redirect
+			{spellID = 73981, filter = "CD"},
+			-- Dismantle
+			{spellID = 51722, filter = "CD"},
+			-- Sprint
+			{spellID = 2983, filter = "CD"},
 			-- Killing Spree
 			{spellID = 51690, filter = "CD"},
 			-- Adrenaline Rush
 			{spellID = 13750, filter = "CD"},
-			-- Stealth
-			{spellID = 1784, filter = "CD"},
-			-- Vanish
-			{spellID = 1856, filter = "CD"},
-			-- Shadow Dance
-			{spellID = 51713, filter = "CD"},
-			-- Redirect
-			{spellID = 73981, filter = "CD"},
-			-- Combat Readiness
-			{spellID = 74001, filter = "CD"},
 			-- Vendetta
 			{spellID = 79140, filter = "CD"},
-			-- Premiditation
-			{spellID = 14183, filter = "CD"},
-			-- Sprint
-			{spellID = 2983, filter = "CD"},
-			-- Dismantle
-			{spellID = 51722, filter = "CD"},
+			-- Shadow Dance
+			{spellID = 51713, filter = "CD"},
+			-- Combat Readiness
+			{spellID = 74001, filter = "CD"},
+			-- Vanish
+			{spellID = 1856, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -2240,7 +2240,7 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.pve_cc)},
 
 			-- Fear
-			{spellID = 5782, unitID = "focus", caster = "player", filter = "DEBUFF"},
+			{spellID = 118699, unitID = "focus", caster = "player", filter = "DEBUFF"},
 			-- Banish
 			{spellID = 710, unitID = "focus", caster = "player", filter = "DEBUFF"},
 		},
@@ -2785,7 +2785,7 @@ Filger_Spells = {
 			{spellID = 20066, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
 			{spellID = 31935, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Avenger's Shield with Glyph
+			-- Glyph of Dazing Shield
 			{spellID = 63529, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seal of Justice
 			{spellID = 20170, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2856,7 +2856,7 @@ Filger_Spells = {
 			-- Aftermath
 			{spellID = 85387, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Fear
-			{spellID = 5782, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 118699, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
 			{spellID = 5484, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
@@ -2867,6 +2867,8 @@ Filger_Spells = {
 			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spell Lock (Felhunter)
 			{spellID = 24259, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Optical Blast (Observer)
+			{spellID = 115782, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shadowsnare
 			{spellID = 63311, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Curse of Exhaustion
@@ -3164,7 +3166,7 @@ Filger_Spells = {
 			-- Axe Toss (Felguard)
 			{spellID = 89766, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Fear
-			{spellID = 5782, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 118699, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
 			{spellID = 5484, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
@@ -3175,6 +3177,8 @@ Filger_Spells = {
 			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spell Lock (Felhunter)
 			{spellID = 24259, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Optical Blast (Observer)
+			{spellID = 115782, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warrior
 			-- Spell Reflection
