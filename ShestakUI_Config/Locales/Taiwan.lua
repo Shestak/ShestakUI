@@ -402,6 +402,7 @@ L_GUI_STATS_FPS = "幀數"
 L_GUI_STATS_EXPERIENCE = "經驗"
 L_GUI_STATS_COORDS = "座標"
 L_GUI_STATS_LOCATION = "位置"
+L_GUI_STATS_BAGS = "袋"
 
 -- Error options
 L_GUI_ERROR = "錯誤收集"
