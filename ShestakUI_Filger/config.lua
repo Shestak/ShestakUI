@@ -1208,23 +1208,23 @@ Filger_Spells = {
 
 			-- Buffs
 			-- Infusion of Light
-			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Purpose
+			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Daybreak
 			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Light of the Ancient Kings
-			{spellID = 86678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Ancient Power
+			{spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bastion of Glory
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
-			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Purpose
-			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Light of the Ancient Kings
+			{spellID = 86678, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ancient Power
-			{spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -1294,7 +1294,7 @@ Filger_Spells = {
 			{spellID = 20170, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Denounce
 			{spellID = 2812, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Avenger's Shield with Glyph
+			-- Glyph of Dazing Shield
 			{spellID = 63529, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Burden of Guilt
 			{spellID = 110300, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1313,6 +1313,8 @@ Filger_Spells = {
 			{spellID = 4987, filter = "CD"},
 			-- Rebuke
 			{spellID = 96231, filter = "CD"},
+			-- Repentance
+			{spellID = 20066, filter = "CD"},
 			-- Hammer of Justice
 			{spellID = 853, filter = "CD"},
 			-- Judgement
@@ -2785,7 +2787,7 @@ Filger_Spells = {
 			{spellID = 20066, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
 			{spellID = 31935, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Avenger's Shield with Glyph
+			-- Glyph of Dazing Shield
 			{spellID = 63529, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seal of Justice
 			{spellID = 20170, unitID = "player", caster = "all", filter = "DEBUFF"},
