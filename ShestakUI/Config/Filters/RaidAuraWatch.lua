@@ -360,7 +360,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(8056),	-- Frost Shock
 			SpellName(63685),	-- Freeze
 			-- Warlock
-			SpellName(5782),	-- Fear
+			SpellName(118699),	-- Fear
 			SpellName(6789),	-- Mortal Coil
 			SpellName(5484),	-- Howl of Terror
 			SpellName(6358),	-- Seduction

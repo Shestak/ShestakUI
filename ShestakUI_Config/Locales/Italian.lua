@@ -93,6 +93,7 @@ L_GUI_SKINS_CAPPING = "Attiva il restyling di Capping"
 L_GUI_SKINS_COOL_LINE = "Attiva il restyling di CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Attiva il restyling di AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Attiva il restyling di TinyDPS"
+L_GUI_SKINS_FACE_SHOOTER = "Attiva il restyling di FaceShooter"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"

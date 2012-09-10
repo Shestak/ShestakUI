@@ -93,6 +93,7 @@ L_GUI_SKINS_CAPPING = "Activer la personnalisation pour Capping"
 L_GUI_SKINS_COOL_LINE = "Activer la personnalisation pour CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Activer la personnalisation pour AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Activer la personnalisation pour TinyDPS"
+L_GUI_SKINS_FACE_SHOOTER = "Activer la personnalisation pour FaceShooter"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"

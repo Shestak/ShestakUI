@@ -7,10 +7,10 @@ if T.client ~= "zhTW" then return end
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " 使用了光束泉！"
-L_ANNOUNCE_LA_CHARGE = " 刷新)"-- Needs review
+L_ANNOUNCE_LA_CHARGE = "次剩餘)"
 L_ANNOUNCE_LA_USELESS = " 使用了光束泉，無效！"
-L_ANNOUNCE_LA_PLACED = "光束泉已放置！ "
-L_ANNOUNCE_LA_CHARGES = " 刷新"-- Needs review
+L_ANNOUNCE_LA_PLACED = "光束泉已放置！"
+L_ANNOUNCE_LA_CHARGES = "次剩餘."
 
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
@@ -125,10 +125,10 @@ L_CHAT_BATTLEGROUND = "戰場"
 L_CHAT_BATTLEGROUND_LEADER = "戰場領袖"
 L_CHAT_OFFICER = "官員"
 L_CHAT_PET_BATTLE = "寵物戰鬥"
-L_CHAT_COME_ONLINE = "上線了."
-L_CHAT_GONE_OFFLINE = "離線了."
-L_CHAT_COME_ONLINE_COLOR = "|cff298F00上線了|r !"
-L_CHAT_GONE_OFFLINE_COLOR = "|cffff0000離線了|r !"
+L_CHAT_COME_ONLINE = "上線了"
+L_CHAT_GONE_OFFLINE = "離線了"
+L_CHAT_COME_ONLINE_COLOR = "|cff298F00上線了|r"
+L_CHAT_GONE_OFFLINE_COLOR = "|cffff0000離線了|r"
 
 -- Errors frame
 L_ERRORFRAME_L = "點擊查看錯誤"

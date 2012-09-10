@@ -123,6 +123,7 @@ C["skins"] = {
 	["cool_line"] = true,						-- CoolLine skin
 	["atlasloot"] = true,						-- AtlasLoot skin
 	["tiny_dps"] = true,						-- TinyDPS skin
+	["face_shooter"] = true,					-- FaceShooter skin
 }
 
 ----------------------------------------------------------------------------------------

@@ -15,8 +15,6 @@ local function skinbubble(frame)
 		local region = select(i, frame:GetRegions())
 		if region:GetObjectType() == "Texture" then
 			region:SetTexture(nil)
-		elseif region:GetObjectType() == "FontString" then
-			frame.text = region
 		end
 	end
 

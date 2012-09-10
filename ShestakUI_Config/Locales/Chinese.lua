@@ -92,6 +92,7 @@ L_GUI_SKINS_CAPPING = "开启Capping样式增强"
 L_GUI_SKINS_COOL_LINE = "开启CoolLine样式增强"
 L_GUI_SKINS_ATLASLOOT = "开启AtlasLoot样式增强"
 L_GUI_SKINS_TINY_DPS = "开启TinyDPS样式增强"
+L_GUI_SKINS_FACE_SHOOTER = "开启FaceShooter样式增强"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "战斗文字"

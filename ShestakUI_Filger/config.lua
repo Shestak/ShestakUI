@@ -2256,7 +2256,7 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.pve_cc)},
 
 			-- Fear
-			{spellID = 5782, unitID = "focus", caster = "player", filter = "DEBUFF"},
+			{spellID = 118699, unitID = "focus", caster = "player", filter = "DEBUFF"},
 			-- Banish
 			{spellID = 710, unitID = "focus", caster = "player", filter = "DEBUFF"},
 		},
@@ -2872,7 +2872,7 @@ Filger_Spells = {
 			-- Aftermath
 			{spellID = 85387, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Fear
-			{spellID = 5782, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 118699, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
 			{spellID = 5484, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
@@ -2883,6 +2883,8 @@ Filger_Spells = {
 			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spell Lock (Felhunter)
 			{spellID = 24259, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Optical Blast (Observer)
+			{spellID = 115782, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shadowsnare
 			{spellID = 63311, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Curse of Exhaustion
@@ -3180,7 +3182,7 @@ Filger_Spells = {
 			-- Axe Toss (Felguard)
 			{spellID = 89766, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Fear
-			{spellID = 5782, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 118699, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
 			{spellID = 5484, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
@@ -3191,6 +3193,8 @@ Filger_Spells = {
 			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spell Lock (Felhunter)
 			{spellID = 24259, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Optical Blast (Observer)
+			{spellID = 115782, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warrior
 			-- Spell Reflection

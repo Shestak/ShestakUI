@@ -93,6 +93,7 @@ L_GUI_SKINS_CAPPING = "Enable styling Capping"
 L_GUI_SKINS_COOL_LINE = "Enable styling CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Enable styling AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Enable styling TinyDPS"
+L_GUI_SKINS_FACE_SHOOTER = "Enable styling FaceShooter"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"
