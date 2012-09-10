@@ -61,7 +61,7 @@ T.ArenaControl = function()
 		-- Warlock
 		[GetSpellInfo(30283)] = 4,	-- Shadowfury
 		[GetSpellInfo(89766)] = 4,	-- Axe Toss (Felguard)
-		[GetSpellInfo(5782)] = 4,	-- Fear
+		[GetSpellInfo(118699)] = 4,	-- Fear
 		[GetSpellInfo(5484)] = 4,	-- Howl of Terror
 		[GetSpellInfo(6789)] = 4,	-- Mortal Coil
 		[GetSpellInfo(6358)] = 4,	-- Seduction (Succubus)
@@ -81,6 +81,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(15487)] = 4,	-- Silence
 		[GetSpellInfo(1330)] = 4,	-- Garrote - Silence
 		[GetSpellInfo(24259)] = 4,	-- Spell Lock (Felhunter)
+		[GetSpellInfo(115782)] = 4,	-- Optical Blast (Observer)
 
 		-- Roots
 		[GetSpellInfo(339)] = 3,	-- Entangling Roots

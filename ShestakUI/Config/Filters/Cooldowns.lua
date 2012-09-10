@@ -33,6 +33,7 @@ if C.enemycooldown.enable == true then
 		[34490] = 20,	-- Silencing Shot
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
+		[115781] = 24,	-- Optical Blast
 		[15487] = 45,	-- Silence
 		[78675] = 60,	-- Solar Bream
 		[47476] = 120,	-- Strangulate
