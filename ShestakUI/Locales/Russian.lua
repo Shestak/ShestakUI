@@ -3,6 +3,7 @@ if T.client ~= "ruRU" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for ruRU client
+--	Translation: Shestak, Wetxius
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " выпил из моего колодца. "
