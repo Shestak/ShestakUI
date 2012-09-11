@@ -17,10 +17,11 @@ local button = CreateFrame("Frame", "ButtonCollectFrame", UIParent)
 
 local function PositionAndStyle()
 	button:Size(20)
-	button:SetPoint("TOPRIGHT", Minimap, "TOPLEFT", -3, 2)
+	button:SetPoint("BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 3)
 	for i =1, #buttons do
 		buttons[i]:ClearAllPoints()
-		buttons[i]:SetPoint("TOP", button, "TOP", 0, -((i - 1) * 21))
+		buttons[i]:SetPoint("TOP", button, "TOP", -((i - 1) * 21), 0)
+		buttons[i]:SetBackdropBorderColor(unpack(C.media.border_color))
 		buttons[i].ClearAllPoints = T.dummy
 		buttons[i].SetPoint = T.dummy
 	end
