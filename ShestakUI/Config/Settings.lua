@@ -293,6 +293,7 @@ C["minimap"] = {
 	["size"] = 130,								-- Minimap size
 	["hide_combat"] = false,					-- Hide minimap in combat
 	["toggle_menu"] = true,						-- Show toggle menu
+	["toggle_menu_bottom"] = true,				-- Toggle menu on top of minimap
 }
 
 ----------------------------------------------------------------------------------------
