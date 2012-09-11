@@ -392,7 +392,7 @@ local function refreshAddOnMenu()
 			if (not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i))) then
 				addonmenuitems[j]:ClearAllPoints()
 				if menusize % menuheight == 0 then
-					addonmenuitems[j]:SetPoint("BOTTOMLEFT", addonmenuitems[1], "BOTTOMRIGHT", buttonspacing(1), 0)
+					addonmenuitems[j]:SetPoint("BOTTOMLEFT", addonmenuitems[lastMenuEntryID], "BOTTOMRIGHT", buttonspacing(1), (buttonheight(-menuheight + 1) + buttonspacing(-menuheight + 1)))
 				else
 					addonmenuitems[j]:SetPoint("BOTTOM", addonmenuitems[lastMenuEntryID], "TOP", 0, buttonspacing(1))
 				end
