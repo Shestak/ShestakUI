@@ -174,14 +174,14 @@ local function updateTextures(button, checkable)
 end
 
 local MenuBG = CreateFrame("Frame", "TTMenuBackground", UIParent)
-MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 3)
+MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "TOPRIGHT", Minimap, "BOTTOMRIGHT", 2, -3)
 MenuBG:SetFrameLevel(defaultframelevel)
 MenuBG:SetFrameStrata("HIGH")
 MenuBG:EnableMouse(true)
 MenuBG:Hide()
 
 local AddonBG = CreateFrame("Frame", "TTMenuAddOnBackground", UIParent)
-AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", MenuBG, "BOTTOMRIGHT", 0, 0)
+AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "TOPRIGHT", MenuBG, "TOPRIGHT", 0, 0)
 AddonBG:SetFrameLevel(defaultframelevel)
 AddonBG:SetFrameStrata("HIGH")
 AddonBG:EnableMouse(true)
@@ -223,13 +223,13 @@ local function addMainMenuButtons(menuItems, menuName, menuBackground)
 	for index, value in ipairs(C.togglemainmenu) do
 		if value.text then
 			menuItems[index] = CreateFrame("Button", menuName..index, menuBackground)
-			menuItems[index]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "BOTTOM", menuBackground, "BOTTOM", 0, buttonspacing(-1))
+			menuItems[index]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "TOP", menuBackground, "TOP", 0, buttonspacing(-1))
 			menuItems[index]:SetFrameLevel(defaultframelevel + 1)
 			menuItems[index]:SetFrameStrata("HIGH")
 			if mainmenusize == 0 then
-				menuItems[index]:SetPoint("BOTTOMLEFT", menuBackground, "BOTTOMLEFT", buttonspacing(1), buttonspacing(1))
+				menuItems[index]:SetPoint("TOPRIGHT", menuBackground, "TOPRIGHT", buttonspacing(-1), buttonspacing(-1))
 			else
-				menuItems[index]:SetPoint("BOTTOM", menuItems[lastMainMenuEntryID], "TOP", 0, buttonspacing(1))
+				menuItems[index]:SetPoint("TOP", menuItems[lastMainMenuEntryID], "BOTTOM", 0, buttonspacing(-1))
 			end
 			menuItems[index]:EnableMouse(true)
 			menuItems[index]:RegisterForClicks("AnyUp")
@@ -257,7 +257,7 @@ local addonmenuitems = {}
 addMainMenuButtons(addonmenuitems, "AddonMenu", AddonBG)
 
 local OpenMenuBG = CreateFrame("Button", "TTOpenMenuBackground", UIParent)
-OpenMenuBG:CreatePanel("Overlay", borderwidth(1), buttonheight(1) / 1.3, "BOTTOM", MenuBG, "BOTTOM", 0, 0)
+OpenMenuBG:CreatePanel("Overlay", borderwidth(1), buttonheight(1) / 1.3, "TOP", MenuBG, "TOP", 0, 0)
 OpenMenuBG:EnableMouse(true)
 OpenMenuBG:RegisterForClicks("AnyUp")
 OpenMenuBG:SetFrameLevel(defaultframelevel)
@@ -284,7 +284,7 @@ Text:SetTextColor(0.3, 0.3, 0.9)
 TTOpenMenuBackground:FadeOut()
 
 local expandbutton = CreateFrame("Button", "AddonMenuExpandButton", AddonBG)
-expandbutton:CreatePanel("Overlay", buttonwidth(1), buttonheight(1) / 2, "TOP", AddonBG, "TOP", 0, buttonspacing(-1))
+expandbutton:CreatePanel("Overlay", buttonwidth(1), buttonheight(1) / 2, "BOTTOM", AddonBG, "BOTTOM", 0, buttonspacing(1))
 expandbutton:EnableMouse(true)
 expandbutton:RegisterForClicks("AnyUp")
 expandbutton:SetFrameLevel(defaultframelevel + 1)
@@ -379,7 +379,7 @@ local function refreshAddOnMenu()
 			end
 		end
 	end
-	menuwidth = ceil(menusize / 30)
+	menuwidth = ceil(menusize / 25)
 	menuheight = ceil(menusize / menuwidth)
 
 	local lastMenuEntryID = lastMainMenuEntryID
@@ -392,9 +392,9 @@ local function refreshAddOnMenu()
 			if (not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i))) then
 				addonmenuitems[j]:ClearAllPoints()
 				if menusize % menuheight == 0 then
-					addonmenuitems[j]:SetPoint("BOTTOMLEFT", addonmenuitems[lastMenuEntryID], "BOTTOMRIGHT", buttonspacing(1), (buttonheight(-menuheight + 1) + buttonspacing(-menuheight + 1)))
+					addonmenuitems[j]:SetPoint("TOPRIGHT", addonmenuitems[lastMenuEntryID], "TOPLEFT", buttonspacing(-1), (buttonheight(menuheight - 1) + buttonspacing(menuheight - 1)))
 				else
-					addonmenuitems[j]:SetPoint("BOTTOM", addonmenuitems[lastMenuEntryID], "TOP", 0, buttonspacing(1))
+					addonmenuitems[j]:SetPoint("TOP", addonmenuitems[lastMenuEntryID], "BOTTOM", 0, buttonspacing(-1))
 				end
 				addonmenuitems[j]:Show()
 				lastMenuEntryID = j
