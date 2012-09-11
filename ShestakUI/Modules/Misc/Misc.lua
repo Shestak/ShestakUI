@@ -209,7 +209,7 @@ PanelTemplates_EnableTab(FriendsFrame, n)
 ----------------------------------------------------------------------------------------
 local button = CreateFrame("Button", "SwitchLayout", UIParent)
 button:SetTemplate("Transparent")
-button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+button:SetBackdropBorderColor(unpack(C.media.border_color))
 if C.actionbar.toggle_mode == true then
 	button:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -18)
 else

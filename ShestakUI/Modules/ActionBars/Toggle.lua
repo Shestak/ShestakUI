@@ -298,7 +298,7 @@ for i = 1, 5 do
 		end
 	elseif i == 5 then
 		ToggleBar[i]:CreatePanel("Transparent", 19, 19, "TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
-		ToggleBar[i]:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		ToggleBar[i]:SetBackdropBorderColor(unpack(C.media.border_color))
 		ToggleBar[i]:SetFrameStrata("HIGH")
 		ToggleBar[i].Text:Point("CENTER", 1, 0)
 

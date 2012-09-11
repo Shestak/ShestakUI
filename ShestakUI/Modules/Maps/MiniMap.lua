@@ -5,7 +5,7 @@ if C.minimap.enable ~= true then return end
 --	Minimap border
 ----------------------------------------------------------------------------------------
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
-MinimapAnchor:CreatePanel("Overlay", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
+MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
 MinimapAnchor:RegisterEvent("ADDON_LOADED")
 
 ----------------------------------------------------------------------------------------
@@ -309,7 +309,7 @@ if C.minimap.tracking_icon then
 	trackborder:Height(20)
 	trackborder:Width(20)
 	trackborder:Point("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
-	trackborder:SetTemplate("Overlay")
+	trackborder:SetTemplate("Default")
 
 	MiniMapTrackingBackground:Hide()
 	MiniMapTracking:ClearAllPoints()
