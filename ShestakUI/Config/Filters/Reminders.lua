@@ -16,9 +16,6 @@ if C.reminder.raid_buffs_enable == true then
 			105693,	-- Flask of Falling Leaves
 		},
 		BattleElixir = {
-			-- Scrolls
-
-			-- Elixirs
 			105682,	-- Mad Hozen Elixir
 			105683,	-- Elixir of Weaponry
 			105684,	-- Elixir of the Rapids
@@ -44,11 +41,11 @@ if C.reminder.raid_buffs_enable == true then
 			1126,	-- Mark of the Wild
 		},
 		Stamina = {
-			21562,	-- Power Word: Fortitude
+			111922,	-- Runescroll of Fortitude III
 			469,	-- Commanding Shout
 			6307,	-- Blood Pact
 			90364,	-- Qiraji Fortitude
-			111922,	-- Runescroll of Fortitude III
+			21562,	-- Power Word: Fortitude
 		}
 	}
 
@@ -322,9 +319,9 @@ if C.reminder.solo_buffs_enable == true then
 					469,	-- Commanding Shout
 				},
 				["negate_spells"] = {
+					21562,	-- Power Word: Fortitude
 					6307,	-- Blood Pact
 					90364,	-- Qiraji Fortitude
-					21562,	-- Fortitude
 					6673,	-- Battle Shout
 				},
 				["combat"] = true,
@@ -335,8 +332,8 @@ if C.reminder.solo_buffs_enable == true then
 					6673,	-- Battle Shout
 				},
 				["negate_spells"] = {
-					57330,	-- Horn of Winter
 					19506,	-- Trueshot Aura
+					57330,	-- Horn of Winter
 					469,	-- Commanding Shout
 				},
 				["combat"] = true,
