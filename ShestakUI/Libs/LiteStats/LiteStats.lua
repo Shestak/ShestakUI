@@ -970,7 +970,7 @@ if guild.enabled then
 						end
 					end
 					GameTooltip:AddLine(" ")
-					GameTooltip:AddDoubleLine(" ",format("%s %s", L_STATS_SORTING_BY, CURRENT_GUILD_SORTING), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
+					GameTooltip:AddDoubleLine(" ", format("%s %s", L_STATS_SORTING_BY, CURRENT_GUILD_SORTING), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
 				end
 				GameTooltip:Show()
 			end
