@@ -114,6 +114,9 @@ else
 	leftpanel:CreatePanel("Default", 1, C.chat.height - 2, "BOTTOMLEFT", bottompanel, "LEFT", 0, 0)
 end
 
+local rightpanel = CreateFrame("Frame", "RightPanel", UIParent)
+rightpanel:CreatePanel("Default", 1, 133, "BOTTOMRIGHT", bottompanel, "RIGHT", 0, 0)
+
 ----------------------------------------------------------------------------------------
 --	Top panel
 ----------------------------------------------------------------------------------------
