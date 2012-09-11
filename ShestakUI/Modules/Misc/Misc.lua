@@ -211,9 +211,9 @@ local button = CreateFrame("Button", "SwitchLayout", UIParent)
 button:SetTemplate("Transparent")
 button:SetBackdropBorderColor(unpack(C.media.border_color))
 if C.actionbar.toggle_mode == true then
-	button:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -18)
+	button:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 18)
 else
-	button:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
+	button:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
 end
 button:Size(19)
 button:SetAlpha(0)
