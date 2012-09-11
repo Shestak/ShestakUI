@@ -63,6 +63,7 @@ if T.author == true then
 	C["announcements"].portals = true
 	C["automation"].accept_invite = true
 	C["automation"].accept_quest = true
+	C["automation"].auto_collapse = true
 	C["automation"].skip_cinematic = true
 	C["automation"].auto_role = true
 	C["automation"].tab_binder = true

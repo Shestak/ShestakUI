@@ -55,6 +55,7 @@
 
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoButton.lua"/>
+	<Script file="Modules\Quests\AutoCollapse.lua"/>
 	<Script file="Modules\Quests\QuestLevel.lua"/>
 	<Script file="Modules\Quests\WatchFrame.lua"/>
 	<Script file="Modules\Quests\WowheadLink.lua"/>
@@ -64,6 +65,7 @@
 	<Script file="Modules\Maps\ExploreMap.lua"/>
 	<Script file="Modules\Maps\MapBossCount.lua"/>
 	<Script file="Modules\Maps\MiniMap.lua"/>
+	<Script file="Modules\Maps\ToggleMenu.lua"/>
 	<Script file="Modules\Maps\WorldMap.lua"/>
 
 	<Script file="Modules\Misc\Panels.lua"/>
@@ -73,7 +75,6 @@
 	<Script file="Modules\Misc\AddOnsList.lua"/>
 	<Script file="Modules\Misc\Misc.lua"/>
 	<Script file="Modules\Misc\Mounts.lua"/>
-	<Script file="Modules\Misc\ToggleMenu.lua"/>
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
 	<Script file="Modules\Misc\DungeonTabs.lua"/>
 	<Script file="Modules\Misc\OneClickBuyOut.lua"/>

@@ -62,6 +62,7 @@ L_GUI_AUTOMATION_CHEFS_HAT = "'Auto-indossa' il cappello da cuoco"
 L_GUI_AUTOMATION_ACCEPT_INVITE = "'Auto-accetta' gli inviti"
 L_GUI_AUTOMATION_DECLINE_DUEL = "'Auto-declina' i duelli"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "'Auto-accetta' le missioni"
+L_GUI_AUTOMATION_AUTO_COLLAPSE = "Auto collapse WatchFrame in instance" -- Needs review
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "'Auto-salta' i filmati"
 L_GUI_AUTOMATION_AUTO_ROLE = "'Auto-imposta' il tuo ruolo"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "'Auto-cancella' alcuni benefici"
