@@ -529,9 +529,17 @@ local function Shared(self, unit)
 			self.Reputation = CreateFrame("StatusBar", self:GetName().."_Reputation", self)
 			self.Reputation:CreateBackdrop("Default")
 			if C.unitframe.portrait_enable == true then
-				self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+				if T.level == MAX_PLAYER_LEVEL then
+					self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
+				else
+					self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+				end
 			else
-				self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -32, 28)
+				if T.level == MAX_PLAYER_LEVEL then
+					self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -18, 28)
+				else
+					self.Reputation:Point("TOPLEFT", self, "TOPLEFT", -32, 28)
+				end
 			end
 			self.Reputation:Size(7, 94)
 			self.Reputation:SetOrientation("Vertical")
