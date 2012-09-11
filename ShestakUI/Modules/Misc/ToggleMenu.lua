@@ -372,27 +372,27 @@ local addonToggleOnly = true
 local function refreshAddOnMenu()
 	menusize = mainmenusize
 	for i = 1, GetNumAddOns() do
-		local name, _, _, _, _, _, _ = GetAddOnInfo(i)
+		local name = GetAddOnInfo(i)
 		if addonInfo[i].is_main or (addonInfo[i].parent == i) or not addonInfo[addonInfo[i].parent].collapsed then
 			if not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i)) then
 				menusize = menusize + 1
 			end
 		end
 	end
-	menuwidth = ceil(menusize / 30)
+	menuwidth = ceil(menusize / 25)
 	menuheight = ceil(menusize / menuwidth)
 
 	local lastMenuEntryID = lastMainMenuEntryID
 	menusize = mainmenusize
 	for i = 1, GetNumAddOns() do
 		j = totalmainmenusize + i
-		local name, _, _, _, _, _, _ = GetAddOnInfo(i)
+		local name = GetAddOnInfo(i)
 		addonmenuitems[j]:Hide()
 		if addonInfo[i].is_main or addonInfo[i].parent == i or not addonInfo[addonInfo[i].parent].collapsed then
 			if (not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i))) then
 				addonmenuitems[j]:ClearAllPoints()
 				if menusize % menuheight == 0 then
-					addonmenuitems[j]:SetPoint("BOTTOMLEFT", addonmenuitems[1], "BOTTOMRIGHT", buttonspacing(1), 0)
+					addonmenuitems[j]:SetPoint("BOTTOMLEFT", addonmenuitems[lastMenuEntryID], "BOTTOMRIGHT", buttonspacing(1), (buttonheight(-menuheight + 1) + buttonspacing(-menuheight + 1)))
 				else
 					addonmenuitems[j]:SetPoint("BOTTOM", addonmenuitems[lastMenuEntryID], "TOP", 0, buttonspacing(1))
 				end
