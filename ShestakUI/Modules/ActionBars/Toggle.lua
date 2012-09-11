@@ -297,7 +297,7 @@ for i = 1, 5 do
 			ToggleBar[i]:SetFrameLevel(SplitBarLeft:GetFrameLevel() + 1)
 		end
 	elseif i == 5 then
-		ToggleBar[i]:CreatePanel("Transparent", 19, 19, "TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
+		ToggleBar[i]:CreatePanel("Transparent", 19, 19, "BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
 		ToggleBar[i]:SetBackdropBorderColor(unpack(C.media.border_color))
 		ToggleBar[i]:SetFrameStrata("HIGH")
 		ToggleBar[i].Text:Point("CENTER", 1, 0)
