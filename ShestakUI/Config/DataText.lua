@@ -39,28 +39,28 @@ LPSTAT_CONFIG = {
 	Latency = {
 		enabled = C.stats.latency,
 		fmt = "[color]%d|r"..class"ms", -- "77ms", [color] inserts latency color code.
-	 	anchor_frame = "Clock", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.clock and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
+	 	anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
+		x_off = -17, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
 	Memory = {
 		enabled = C.stats.memory,
 		fmt_mb = "%.1f"..class"mb", -- "12.5mb"
 		fmt_kb = "%.0f"..class"kb", -- "256kb" - only shows if memory is under one megabyte
 		--max_addons = 15, -- Set to nil or comment/delete this line to disable. Holding Alt reveals hidden addons.
-		anchor_frame = C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
+		anchor_frame = C.stats.latency and "Latency", anchor_to = "right", anchor_from = "left",
+		x_off = -3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
 	FPS = {
 		enabled = C.stats.fps,
 		fmt = "%d"..class"fps", -- "42fps"
-		anchor_frame = C.stats.memory and "Memory" or "Latency", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0,
+		anchor_frame = C.stats.memory and "Memory" or "Latency", anchor_to = "right", anchor_from = "left",
+		x_off = -3, y_off = 0,
 	},
 	Friends = {
 		enabled = C.stats.friend,
 		fmt = "%d/%d"..class"f", -- "F: 3/40"
 		maxfriends = nil, -- Set max friends listed, nil means no limit.
-		anchor_frame = C.stats.fps and "FPS" or "Memory", anchor_to = "left", anchor_from = "right",
+		anchor_frame = "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Guild = {
@@ -120,8 +120,8 @@ LPSTAT_CONFIG = {
 	Coords = {
 		enabled = C.stats.coords, -- Location tooltip has coords, this module is for displaying it as a separate stat.
 		fmt = "%d,%d", -- "44,19"
-		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
-		x_off = -17, y_off = 11, justify_h = "right",
+		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "topright",
+		x_off = -17, y_off = -11, justify_h = "right",
 	},
 	Location = {
 		enabled = C.stats.location,
