@@ -92,7 +92,7 @@ end
 --	Bottom panel
 ----------------------------------------------------------------------------------------
 local bottompanel = CreateFrame("Frame", "BottomPanel", UIParent)
-bottompanel:CreatePanel("ClassColor", 1, 1, "BOTTOM", UIParent, "BOTTOM", 0, 20)
+bottompanel:CreatePanel("Default", 1, 1, "BOTTOM", UIParent, "BOTTOM", 0, 20)
 bottompanel:Point("LEFT", UIParent, "LEFT", 21, 0)
 bottompanel:Point("RIGHT", UIParent, "RIGHT", -21, 0)
 
@@ -102,16 +102,16 @@ bottompanel:Point("RIGHT", UIParent, "RIGHT", -21, 0)
 if C.chat.background == true then
 	local chatbd = CreateFrame("Frame", "ChatBackground", UIParent)
 	chatbd:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 1)
-	chatbd:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	chatbd:SetBackdropBorderColor(unpack(C.media.border_color))
 	chatbd:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
 
 	local chattabs = CreateFrame("Frame", "ChatTabsPanel", UIParent)
 	chattabs:CreatePanel("Transparent", chatbd:GetWidth(), 20, "BOTTOM", chatbd, "TOP", 0, 3)
-	chattabs:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	chattabs:SetBackdropBorderColor(unpack(C.media.border_color))
 	chattabs:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
 else
 	local leftpanel = CreateFrame("Frame", "LeftPanel", UIParent)
-	leftpanel:CreatePanel("ClassColor", 1, C.chat.height - 2, "BOTTOMLEFT", bottompanel, "LEFT", 0, 0)
+	leftpanel:CreatePanel("Default", 1, C.chat.height - 2, "BOTTOMLEFT", bottompanel, "LEFT", 0, 0)
 end
 
 ----------------------------------------------------------------------------------------
