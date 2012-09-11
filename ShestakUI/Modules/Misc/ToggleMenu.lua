@@ -402,7 +402,7 @@ local addonToggleOnly = true
 local function refreshAddOnMenu()
 	menusize = mainmenusize
 	for i = 1, GetNumAddOns() do
-		local name, _, _, _, _, _, _ = GetAddOnInfo(i)
+		local name = GetAddOnInfo(i)
 		if addonInfo[i].is_main or (addonInfo[i].parent == i) or not addonInfo[addonInfo[i].parent].collapsed then
 			if not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i)) then
 				menusize = menusize + 1
@@ -416,7 +416,7 @@ local function refreshAddOnMenu()
 	menusize = mainmenusize
 	for i = 1, GetNumAddOns() do
 		j = totalmainmenusize + i
-		local name, _, _, _, _, _, _ = GetAddOnInfo(i)
+		local name = GetAddOnInfo(i)
 		addonmenuitems[j]:Hide()
 		if addonInfo[i].is_main or addonInfo[i].parent == i or not addonInfo[addonInfo[i].parent].collapsed then
 			if (not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i))) then

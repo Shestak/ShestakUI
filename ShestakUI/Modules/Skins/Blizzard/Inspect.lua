@@ -95,6 +95,10 @@ local function LoadSkin()
 
 	local race, fileName = UnitRace("target")
 	SetDressUpBackground(InspectModelFrame.backdrop, fileName)
+
+	if T.author == true then
+		InspectModelFrameControlFrame:HookScript("OnShow", function(self) self:Hide() end)
+	end
 end
 
 T.SkinFuncs["Blizzard_InspectUI"] = LoadSkin

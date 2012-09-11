@@ -851,11 +851,11 @@ if guild.enabled then
 					if not LookingForGuildFrame then LoadAddOn("Blizzard_LookingForGuildUI") end
 					if LookingForGuildFrame then LookingForGuildFrame_Toggle() end
 				end
-			elseif b == "RightButton" and IsInGuild() then
+			elseif b == "MiddleButton" and IsInGuild() then
 				local s = CURRENT_GUILD_SORTING
 				SortGuildRoster(IsShiftKeyDown() and s or (IsAltKeyDown() and (s == "rank" and "note" or "rank") or s == "class" and "name" or s == "name" and "level" or s == "level" and "zone" or "class"))
 				self:GetScript("OnEnter")(self)
-			elseif b == "MiddleButton" and IsInGuild() then
+			elseif b == "RightButton" and IsInGuild() then
 				HideTT(self)
 
 				local classc, levelc, grouped
@@ -940,7 +940,7 @@ if guild.enabled then
 						name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, isMobile = GetGuildRosterInfo(i)
 						if connected and level >= guild.threshold then
 							if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
-							if isMobile then zone = "" end
+							if isMobile then zone = "|cffffffff"..REMOTE_CHAT.."|r" end
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
 							grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
 							if self.altdown then
@@ -970,7 +970,7 @@ if guild.enabled then
 						end
 					end
 					GameTooltip:AddLine(" ")
-					GameTooltip:AddDoubleLine(" ",format("%s %s", L_STATS_SORTING_BY, CURRENT_GUILD_SORTING), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
+					GameTooltip:AddDoubleLine(" ", format("%s %s", L_STATS_SORTING_BY, CURRENT_GUILD_SORTING), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
 				end
 				GameTooltip:Show()
 			end

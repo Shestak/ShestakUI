@@ -1912,7 +1912,6 @@ Filger_Spells = {
 
 			-- Trinkets
 			-- General
-			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
@@ -2145,8 +2144,6 @@ Filger_Spells = {
 			{spellID = 34936, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demonic Rebirth
 			{spellID = 108559, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Trance
-			{spellID = 17941, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -2254,26 +2251,26 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Devour Magic (Felhunter)
+			{spellID = 19505, filter = "CD"},
+			-- Spell Lock (Felhunter)
+			{spellID = 19647, filter = "CD"},
+			-- Shadowfury
+			{spellID = 30283, filter = "CD"},
 			-- Howl of Terror
 			{spellID = 5484, filter = "CD"},
 			-- Mortal Coil
 			{spellID = 6789, filter = "CD"},
-			-- Shadowfury
-			{spellID = 30283, filter = "CD"},
-			-- Spell Lock (Felhunter)
-			{spellID = 19647, filter = "CD"},
 			-- Twilight Ward
 			{spellID = 6229, filter = "CD"},
 			-- Sacrifice (Voidwalker)
 			{spellID = 7812, filter = "CD"},
-			-- Devour Magic (Felhunter)
-			{spellID = 19505, filter = "CD"},
+			-- Hand of Gul'dan
+			{spellID = 105174, filter = "CD"},
 			-- Felstorm
 			{spellID = 89751, filter = "CD"},
 			-- Soulburn
 			{spellID = 74434, filter = "CD"},
-			-- Hand of Gul'dan
-			{spellID = 86040, filter = "CD"},
 			-- Demonic Circle: Teleport
 			{spellID = 48020, filter = "CD"},
 			-- Soulshatter
@@ -2371,10 +2368,10 @@ Filger_Spells = {
 			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Taste for Blood
 			{spellID = 125831, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enrage
-			{spellID = 12880, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Enrage
+			{spellID = 12880, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rude Interruption
 			{spellID = 86663, unitID = "player", caster = "player", filter = "BUFF"},
 

@@ -35,7 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "Помечать цветом известные р�
 L_GUI_MISC_DISENCHANTING = "Распылять, измельчать и просеивать одним нажатием"
 L_GUI_MISC_SUM_BUYOUTS = "Выводить сумму ваших аукционов"
 L_GUI_MISC_CLICK_CAST = "Назначение клавиш мыши(click2cast)"
-L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
+L_GUI_MISC_MOVE_BLIZZARD = "Включить перемещение фреймов Blizzard"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"
