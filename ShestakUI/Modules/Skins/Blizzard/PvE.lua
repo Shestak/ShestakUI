@@ -186,9 +186,9 @@ local function LoadSkin()
 		end
 	end
 
-	for i = 1, NUM_LFD_CHOICE_BUTTONS do
-		T.SkinCheckBox(_G["LFDQueueFrameSpecificListButton"..i.."EnableButton"])
-	end
+	hooksecurefunc("LFGDungeonListButton_SetDungeon", function(button, dungeonID)
+		T.SkinCheckBox(button.enableButton)
+	end)
 
 	for i = 1, 2 do
 		T.SkinTab(_G["PVEFrameTab"..i])

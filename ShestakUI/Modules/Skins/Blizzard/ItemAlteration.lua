@@ -54,6 +54,10 @@ local function LoadSkin()
 			icon:Point("BOTTOMRIGHT", -2, 2)
 		end
 	end
+
+	if T.author == true then
+		TransmogrifyModelFrameControlFrame:HookScript("OnShow", function(self) self:Hide() end)
+	end
 end
 
 T.SkinFuncs["Blizzard_ItemAlterationUI"] = LoadSkin
