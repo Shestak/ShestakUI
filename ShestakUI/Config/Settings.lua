@@ -20,7 +20,7 @@ C["media"] = {
 	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for wispers
 	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
 	["proc_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Proc.mp3]],			-- Sound for procs
-	["border_color"] = {0.37, 0.3, 0.3, 1},		-- Color for borders
+	["border_color"] = {0.4, 0.4, 0.4, 1},		-- Color for borders
 	["backdrop_color"] = {0, 0, 0, 1},			-- Color for borders backdrop
 	["overlay_color"] = {0, 0, 0, 0.7},			-- Color for action bars overlay
 }
@@ -215,7 +215,7 @@ C["pulsecooldown"] = {
 --	Threat options
 ----------------------------------------------------------------------------------------
 C["threat"] = {
-	["enable"] = true,							-- Enable threat meter
+	["enable"] = false,							-- Enable threat meter
 	["height"] = 12,							-- Bars height
 	["width"] = 180,							-- Bars width
 	["bar_rows"] = 7,							-- Number of bars
