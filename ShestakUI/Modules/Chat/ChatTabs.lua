@@ -28,7 +28,7 @@ end
 
 local OnEnter = function(self)
 	local emphasis = _G["ChatFrame"..self:GetID().."TabFlash"]:IsShown()
-	updateFS(self, emphasis, C.font.chat_tabs_font_style, T.color.r, T.color.g, T.color.b)
+	updateFS(self, emphasis, C.font.chat_tabs_font_style, 1, 1, 1)
 end
 
 local OnLeave = function(self)
@@ -37,11 +37,11 @@ local OnLeave = function(self)
 	local emphasis = _G["ChatFrame"..id.."TabFlash"]:IsShown()
 
 	if _G["ChatFrame"..id] == SELECTED_CHAT_FRAME then
-		r, g, b = T.color.r, T.color.g, T.color.b
+		r, g, b = 1, 1, 1
 	elseif emphasis then
 		r, g, b = 1, 0, 0
 	else
-		r, g, b = 1, 1, 1
+		r, g, b = unpack(C.unitframe.uf_color)
 	end
 
 	updateFS(self, emphasis, nil, r, g, b)
@@ -88,9 +88,9 @@ local faneifyTab = function(frame, sel)
 
 	-- We can't trust sel
 	if i == SELECTED_CHAT_FRAME:GetID() then
-		updateFS(frame, nil, nil, T.color.r, T.color.g, T.color.b)
-	else
 		updateFS(frame, nil, nil, 1, 1, 1)
+	else
+		updateFS(frame, nil, nil, unpack(C.unitframe.uf_color))
 	end
 end
 
