@@ -125,10 +125,8 @@ L_CHAT_BATTLEGROUND = "战场"
 L_CHAT_BATTLEGROUND_LEADER = "战场领袖"
 L_CHAT_OFFICER = "官员"
 L_CHAT_PET_BATTLE = "宠物对战"
-L_CHAT_COME_ONLINE = "上线了."
-L_CHAT_GONE_OFFLINE = "下线了."
-L_CHAT_COME_ONLINE_COLOR = "|cff298F00上线了|r !"
-L_CHAT_GONE_OFFLINE_COLOR = "|cffff0000下线了|r !"
+L_CHAT_COME_ONLINE = "|cff298F00上线了|r。"
+L_CHAT_GONE_OFFLINE = "|cffff0000下线了|r。"
 
 -- Errors frame
 L_ERRORFRAME_L = "点击查看错误."
