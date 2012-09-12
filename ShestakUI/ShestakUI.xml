@@ -89,6 +89,7 @@
 	<Script file="Modules\Misc\MouseoverMarking.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
 	<Script file="Modules\Misc\ProfessionsDatabase.lua"/>
+	<Script file="Modules\Misc\Majestic.lua"/>
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>
