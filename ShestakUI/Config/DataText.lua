@@ -20,7 +20,7 @@ LTIPICONSIZE = 11							-- Icon sizes in info tips
 local ctab = CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS
 local function class(string)
 	local color = ctab[select(2, UnitClass("player"))]
-	return format("|cff%02x%02x%02x%s|r", color.r * 255, color.g * 255, color.b * 255, string or "")
+	return format("|cff%02x%02x%02x%s|r", 255, 237, 0, string or "")
 end
 
 -- Modules Config. Note: omitting any variable will likely cause errors, check carefully when updating.
@@ -31,7 +31,7 @@ LPSTAT_CONFIG = {
 -- Bottomleft block
 	Clock = {
 		enabled = C.stats.clock, -- Local time and the 24 hour clock can be enabled in-game via time manager (right-click)
-		AM = class"A", PM = class"P", colon = class":", -- These values apply to the displayed clock.
+		AM = "A", PM = class"P", colon = class":", -- These values apply to the displayed clock.
 		anchor_frame = "UIParent", anchor_to = "left", anchor_from = "bottomleft",
 		x_off = 20, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20,
 		justify_h = "left",
