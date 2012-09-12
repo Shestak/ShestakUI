@@ -122,7 +122,7 @@ function Filger:DisplayActives()
 					bar.statusbar:Width(self.BarWidth)
 					bar.statusbar:Height(self.IconSize - 10)
 					bar.statusbar:SetStatusBarTexture(C.media.texture)
-					bar.statusbar:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1)
+					bar.statusbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
 					if self.IconSide == "LEFT" then
 						bar.statusbar:Point("BOTTOMLEFT", bar, "BOTTOMRIGHT", 5, 2)
 					elseif self.IconSide == "RIGHT" then
