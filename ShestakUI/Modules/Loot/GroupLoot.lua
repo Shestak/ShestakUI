@@ -7,7 +7,7 @@ if C.loot.rolllootframe ~= true then return end
 local pos = "TOP"
 local frames = {}
 local cancelled_rolls = {}
-local rolltypes = {[1] = "need", [2] = "greed", [3] = "disenchant", [0] = "pass"}
+local rolltypes = {"need", "greed", "disenchant", [0] = "pass"}
 
 local LootRollAnchor = CreateFrame("Frame", "LootRollAnchor", UIParent)
 LootRollAnchor:Size(313, 26)
@@ -25,7 +25,7 @@ local function SetTip(frame)
 	if not frame:IsEnabled() then
 		GameTooltip:AddLine(frame.errtext, 1, 0.2, 0.2, 1)
 	end
-	for name, roll in pairs(frame.parent.rolls) do if rolltypes[roll] == rolltypes[frame.rolltype] then GameTooltip:AddLine(name, 1, 1, 1) end end
+	for name, roll in pairs(frame.parent.rolls) do if roll == rolltypes[frame.rolltype] then GameTooltip:AddLine(name, 1, 1, 1) end end
 	GameTooltip:Show()
 end
 
@@ -164,6 +164,31 @@ local function GetFrame()
 	return f
 end
 
+local function FindFrame(rollID)
+	for _, f in ipairs(frames) do
+		if f.rollID == rollID then return f end
+	end
+end
+
+local typemap = {[0] = "pass", "need", "greed", "disenchant"}
+local function UpdateRoll(i, rolltype)
+	local num = 0
+	local rollID, itemLink, numPlayers, isDone = C_LootHistory.GetItem(i)
+
+	if isDone or not numPlayers then return end
+
+	local f = FindFrame(rollID)
+	if not f then return end
+
+	for j = 1, numPlayers do
+		local name, class, thisrolltype = C_LootHistory.GetPlayerInfo(i, j)
+		f.rolls[name] = typemap[thisrolltype]
+		if rolltype == thisrolltype then num = num + 1 end
+	end
+
+	f[typemap[rolltype]]:SetText(num)
+end
+
 local function START_LOOT_ROLL(rollID, time)
 	if cancelled_rolls[rollID] then return end
 
@@ -221,8 +246,10 @@ local function START_LOOT_ROLL(rollID, time)
 	local color = ITEM_QUALITY_COLORS[quality]
 	f.fsloot:SetText(name)
 	f.fsloot:SetVertexColor(color.r, color.g, color.b)
+
 	f.status:SetStatusBarColor(color.r, color.g, color.b, 0.7)
 	f.status.bg:SetTexture(color.r, color.g, color.b)
+
 	f.backdrop:SetBackdropBorderColor(color.r, color.g, color.b, 0.7)
 	f.button.backdrop:SetBackdropBorderColor(color.r, color.g, color.b, 0.7)
 
@@ -233,19 +260,9 @@ local function START_LOOT_ROLL(rollID, time)
 	f:Show()
 end
 
-local function LOOT_HISTORY_ROLL_CHANGED(itemIdx, playerIdx)
-	local rollID, itemLink, numPlayers, isDone, winnerIdx, isMasterLoot = C_LootHistory.GetItem(itemIdx)
-	local name, class, rollType, roll, isWinner = C_LootHistory.GetPlayerInfo(itemIdx, playerIdx)
-
-	if name and rollType then
-		for _, f in ipairs(frames) do
-			if f.rollID == rollID then
-				f.rolls[name] = rollType
-				f[rolltypes[rollType]]:SetText(tonumber(f[rolltypes[rollType]]:GetText()) + 1)
-				return
-			end
-		end
-	end
+local function LOOT_HISTORY_ROLL_CHANGED(rollindex, playerindex)
+	local _, _, rolltype = C_LootHistory.GetPlayerInfo(rollindex, playerindex)
+	UpdateRoll(rollindex, rolltype)
 end
 
 LootRollAnchor:RegisterEvent("ADDON_LOADED")
@@ -259,7 +276,13 @@ LootRollAnchor:SetScript("OnEvent", function(frame, event, addon)
 	UIParent:UnregisterEvent("START_LOOT_ROLL")
 	UIParent:UnregisterEvent("CANCEL_LOOT_ROLL")
 
-	LootRollAnchor:SetScript("OnEvent", function(frame, event, ...) if event == "LOOT_HISTORY_ROLL_CHANGED" then return LOOT_HISTORY_ROLL_CHANGED(...) else return START_LOOT_ROLL(...) end end)
+	LootRollAnchor:SetScript("OnEvent", function(frame, event, ...)
+		if event == "LOOT_HISTORY_ROLL_CHANGED" then
+			return LOOT_HISTORY_ROLL_CHANGED(...)
+		else
+			return START_LOOT_ROLL(...)
+		end
+	end)
 
 	LootRollAnchor:Point(unpack(C.position.group_loot))
 end)
@@ -284,6 +307,11 @@ SlashCmdList.TESTROLL = function()
 
 		f.backdrop:SetBackdropBorderColor(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b, 0.7)
 		f.button.backdrop:SetBackdropBorderColor(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b, 0.7)
+
+		f.need:SetText(0)
+		f.greed:SetText(0)
+		f.pass:SetText(0)
+		f.disenchant:SetText(0)
 
 		f:Show()
 	end
