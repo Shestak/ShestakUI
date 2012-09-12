@@ -11,8 +11,8 @@ AlertFrame:UnregisterEvent("CRITERIA_EARNED")
 --	Based on AchievementMover
 ----------------------------------------------------------------------------------------
 local AchievementAnchor = CreateFrame("Frame", "AchievementAnchor", UIParent)
-AchievementAnchor:Width(DungeonCompletionAlertFrame1:GetWidth())
-AchievementAnchor:Height(DungeonCompletionAlertFrame1:GetHeight())
+AchievementAnchor:Width(DungeonCompletionAlertFrame1:GetWidth() - 36)
+AchievementAnchor:Height(DungeonCompletionAlertFrame1:GetHeight() - 4)
 AchievementAnchor:SetPoint(unpack(C.position.achievement))
 
 local pos = "TOP"
@@ -25,15 +25,15 @@ function T.AchievementMove(self, event, ...)
 			aFrame:ClearAllPoints()
 			if pos == "TOP" then
 				if previousFrame and previousFrame:IsShown() then
-					aFrame:SetPoint("TOP", previousFrame, "BOTTOM", 0, 3)
+					aFrame:SetPoint("TOP", previousFrame, "BOTTOM", 0, 9)
 				else
-					aFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+					aFrame:SetPoint("TOP", AchievementAnchor, "TOP", 2, 6)
 				end
 			else
 				if previousFrame and previousFrame:IsShown() then
-					aFrame:SetPoint("BOTTOM", previousFrame, "TOP", 0, -3)
+					aFrame:SetPoint("BOTTOM", previousFrame, "TOP", 0, -9)
 				else
-					aFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+					aFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM", 2 -6)
 				end
 			end
 			previousFrame = aFrame
@@ -51,16 +51,16 @@ hooksecurefunc("AlertFrame_SetDungeonCompletionAnchors", function()
 		if aFrame and aFrame:IsShown() then
 			dFrame:ClearAllPoints()
 			if pos == "TOP" then
-				dFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
+				dFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 9)
 			else
-				dFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+				dFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -9)
 			end
 			return
 		else
 			if pos == "TOP" then
-				dFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+				dFrame:SetPoint("TOP", AchievementAnchor, "TOP", 2, 6)
 			else
-				dFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+				dFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM", 2 -6)
 			end
 		end
 	end
@@ -75,16 +75,16 @@ hooksecurefunc("AlertFrame_SetChallengeModeAnchors", function()
 		if aFrame and aFrame:IsShown() then
 			dFrame:ClearAllPoints()
 			if pos == "TOP" then
-				dFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
+				dFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 9)
 			else
-				dFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+				dFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -9)
 			end
 			return
 		else
 			if pos == "TOP" then
-				dFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+				dFrame:SetPoint("TOP", AchievementAnchor, "TOP", 2, 6)
 			else
-				dFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+				dFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM", 2 -6)
 			end
 		end
 	end
@@ -105,23 +105,23 @@ hooksecurefunc("AlertFrame_SetScenarioAnchors", function()
 		sFrame:ClearAllPoints()
 		if dFrame and dFrame:IsShown() then
 			if pos == "TOP" then
-				sFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
+				sFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 9)
 			else
-				sFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -3)
+				sFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -9)
 			end
 			return
 		elseif aFrame and aFrame:IsShown() then
 			if pos == "TOP" then
-				sFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
+				sFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 9)
 			else
-				sFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+				sFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -9)
 			end
 			return
 		else
 			if pos == "TOP" then
-				sFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+				sFrame:SetPoint("TOP", AchievementAnchor, "TOP", 2, 6)
 			else
-				sFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+				sFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM", 2 -6)
 			end
 		end
 	end
@@ -143,30 +143,30 @@ hooksecurefunc("AlertFrame_SetGuildChallengeAnchors", function()
 		cFrame:ClearAllPoints()
 		if sFrame and sFrame:IsShown() then
 			if pos == "TOP" then
-				cFrame:SetPoint("TOP", sFrame, "BOTTOM", 0, 3)
+				cFrame:SetPoint("TOP", sFrame, "BOTTOM", 0, 9)
 			else
-				cFrame:SetPoint("BOTTOM", sFrame, "TOP", 0, -3)
+				cFrame:SetPoint("BOTTOM", sFrame, "TOP", 0, -9)
 			end
 			return
 		elseif dFrame and dFrame:IsShown() then
 			if pos == "TOP" then
-				cFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
+				cFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 9)
 			else
-				cFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -3)
+				cFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -9)
 			end
 			return
 		elseif aFrame and aFrame:IsShown() then
 			if pos == "TOP" then
-				cFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
+				cFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 9)
 			else
-				cFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+				cFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -9)
 			end
 			return
 		else
 			if pos == "TOP" then
-				cFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+				cFrame:SetPoint("TOP", AchievementAnchor, "TOP", 2, 6)
 			else
-				cFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+				cFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM", 2 -6)
 			end
 		end
 	end
