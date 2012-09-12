@@ -1,7 +1,7 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Based on tekticles
+--	Based on tekticles(by Tekkub)
 ----------------------------------------------------------------------------------------
 local SetFont = function(obj, font, size, style, r, g, b, sr, sg, sb, sox, soy)
 	obj:SetFont(font, size, style)
