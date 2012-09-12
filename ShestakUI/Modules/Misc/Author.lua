@@ -86,12 +86,6 @@ LFDParentFrame:HookScript("OnShow", function()
 end)
 
 ----------------------------------------------------------------------------------------
---	Unregister some events
-----------------------------------------------------------------------------------------
-AlertFrame:UnregisterEvent("LOOT_ITEM_ROLL_WON")
-AlertFrame:UnregisterEvent("SHOW_LOOT_TOAST")
-
-----------------------------------------------------------------------------------------
 --	Hide character controls
 ----------------------------------------------------------------------------------------
 CharacterModelFrameControlFrame:HookScript("OnShow", function(self) self:Hide() end)

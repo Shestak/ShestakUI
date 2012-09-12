@@ -1,8 +1,14 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if T.MOPVersion then return end
 
 ----------------------------------------------------------------------------------------
---	Based on AchievementMover(modified by Tukz)
+--	Unregister some events
+----------------------------------------------------------------------------------------
+AlertFrame:UnregisterEvent("LOOT_ITEM_ROLL_WON")
+AlertFrame:UnregisterEvent("SHOW_LOOT_TOAST")
+AlertFrame:UnregisterEvent("CRITERIA_EARNED")
+
+----------------------------------------------------------------------------------------
+--	Based on AchievementMover
 ----------------------------------------------------------------------------------------
 local AchievementAnchor = CreateFrame("Frame", "AchievementAnchor", UIParent)
 AchievementAnchor:Width(DungeonCompletionAlertFrame1:GetWidth())
@@ -60,14 +66,89 @@ hooksecurefunc("AlertFrame_SetDungeonCompletionAnchors", function()
 	end
 end)
 
+hooksecurefunc("AlertFrame_SetChallengeModeAnchors", function()
+	for i = MAX_ACHIEVEMENT_ALERTS, 1, -1 do
+		local aFrame = _G["AchievementAlertFrame"..i]
+		local dFrame = _G["ChallengeModeAlertFrame1"]
+
+		dFrame:ClearAllPoints()
+		if aFrame and aFrame:IsShown() then
+			dFrame:ClearAllPoints()
+			if pos == "TOP" then
+				dFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
+			else
+				dFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+			end
+			return
+		else
+			if pos == "TOP" then
+				dFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+			else
+				dFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+			end
+		end
+	end
+end)
+
+hooksecurefunc("AlertFrame_SetScenarioAnchors", function()
+	for i = MAX_ACHIEVEMENT_ALERTS, 1, -1 do
+		local aFrame = _G["AchievementAlertFrame"..i]
+		local dFrame = _G["DungeonCompletionAlertFrame1"]
+		local sFrame = _G["ScenarioAlertFrame1"]
+
+		if _G["DungeonCompletionAlertFrame1"] and _G["DungeonCompletionAlertFrame1"]:IsShown() then
+			dFrame = _G["DungeonCompletionAlertFrame1"]
+		elseif _G["ChallengeModeAlertFrame1"] and _G["ChallengeModeAlertFrame1"]:IsShown() then
+			dFrame = _G["ChallengeModeAlertFrame1"]
+		end
+
+		sFrame:ClearAllPoints()
+		if dFrame and dFrame:IsShown() then
+			if pos == "TOP" then
+				sFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
+			else
+				sFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -3)
+			end
+			return
+		elseif aFrame and aFrame:IsShown() then
+			if pos == "TOP" then
+				sFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
+			else
+				sFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
+			end
+			return
+		else
+			if pos == "TOP" then
+				sFrame:SetPoint("TOP", AchievementAnchor, "TOP")
+			else
+				sFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
+			end
+		end
+	end
+end)
+
 hooksecurefunc("AlertFrame_SetGuildChallengeAnchors", function()
 	for i = MAX_ACHIEVEMENT_ALERTS, 1, -1 do
 		local aFrame = _G["AchievementAlertFrame"..i]
 		local dFrame = _G["DungeonCompletionAlertFrame1"]
+		local sFrame = _G["ScenarioAlertFrame1"]
 		local cFrame = _G["GuildChallengeAlertFrame"]
 
+		if _G["DungeonCompletionAlertFrame1"] and _G["DungeonCompletionAlertFrame1"]:IsShown() then
+			dFrame = _G["DungeonCompletionAlertFrame1"]
+		elseif _G["ChallengeModeAlertFrame1"] and _G["ChallengeModeAlertFrame1"]:IsShown() then
+			dFrame = _G["ChallengeModeAlertFrame1"]
+		end
+
 		cFrame:ClearAllPoints()
-		if dFrame and dFrame:IsShown() then
+		if sFrame and sFrame:IsShown() then
+			if pos == "TOP" then
+				cFrame:SetPoint("TOP", sFrame, "BOTTOM", 0, 3)
+			else
+				cFrame:SetPoint("BOTTOM", sFrame, "TOP", 0, -3)
+			end
+			return
+		elseif dFrame and dFrame:IsShown() then
 			if pos == "TOP" then
 				cFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
 			else
@@ -86,45 +167,6 @@ hooksecurefunc("AlertFrame_SetGuildChallengeAnchors", function()
 				cFrame:SetPoint("TOP", AchievementAnchor, "TOP")
 			else
 				cFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
-			end
-		end
-	end
-end)
-
-hooksecurefunc("AlertFrame_SetChallengeModeAnchors", function()
-	for i = MAX_ACHIEVEMENT_ALERTS, 1, -1 do
-		local aFrame = _G["AchievementAlertFrame"..i]
-		local dFrame = _G["DungeonCompletionAlertFrame1"]
-		local cFrame = _G["GuildChallengeAlertFrame"]
-		local cmFrame = _G["ChallengeModeAlertFrame1"]
-
-		cmFrame:ClearAllPoints()
-		if cFrame and cFrame:IsShown() then
-			if pos == "TOP" then
-				cmFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
-			else
-				cmFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -3)
-			end
-			return
-		elseif dFrame and dFrame:IsShown() then
-			if pos == "TOP" then
-				cmFrame:SetPoint("TOP", dFrame, "BOTTOM", 0, 3)
-			else
-				cmFrame:SetPoint("BOTTOM", dFrame, "TOP", 0, -3)
-			end
-			return
-		elseif aFrame and aFrame:IsShown() then
-			if pos == "TOP" then
-				cmFrame:SetPoint("TOP", aFrame, "BOTTOM", 0, 3)
-			else
-				cmFrame:SetPoint("BOTTOM", aFrame, "TOP", 0, -3)
-			end
-			return
-		else
-			if pos == "TOP" then
-				cmFrame:SetPoint("TOP", AchievementAnchor, "TOP")
-			else
-				cmFrame:SetPoint("BOTTOM", AchievementAnchor, "BOTTOM")
 			end
 		end
 	end
