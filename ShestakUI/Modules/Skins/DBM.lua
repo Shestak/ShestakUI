@@ -50,9 +50,9 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						end
 
 						if bar.color then
-							tbar:SetStatusBarColor(bar.color.r, bar.color.g, bar.color.b)
+							tbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
 							tbar:SetBackdrop(backdrop)
-							tbar:SetBackdropColor(bar.color.r, bar.color.g, bar.color.b, 0.15)
+							tbar:SetBackdropColor(unpack(C.unitframe.uf_color), 0.15)
 						else
 							tbar:SetStatusBarColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB)
 							tbar:SetBackdrop(backdrop)
@@ -191,7 +191,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				if not progress.styled then
 					progress:SetStatusBarTexture(C.media.texture)
 					progress:SetBackdrop(backdrop)
-					progress:SetBackdropColor(T.color.r, T.color.g, T.color.b, 0.15)
+					progress:SetBackdropColor(unpack(C.unitframe.uf_color), 0.15)
 					progress.styled = true
 				end
 				progress:ClearAllPoints()
@@ -285,10 +285,10 @@ function T.UploadDBM()
 	DBM_SavedOptions.WarningIconLeft = false
 	DBM_SavedOptions.WarningIconRight = false
 	DBM_SavedOptions["WarningColors"] = {
-		{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
-		{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
-		{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
-		{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
+		{["b"] = 1.0, ["g"] = 1.0, ["r"] = 1.0,},
+		{["b"] = 1.0, ["g"] = 1.0, ["r"] = 1.0,},
+		{["b"] = 1.0, ["g"] = 1.0, ["r"] = 1.0,},
+		{["b"] = 1.0, ["g"] = 1.0, ["r"] = 1.0,},
 	}
 	DBM_SavedOptions.HealthFrameGrowUp = false
 	DBM_SavedOptions.HealthFrameWidth = 218
@@ -302,12 +302,12 @@ function T.UploadDBM()
 	DBM_SavedOptions.SpecialWarningX = 0
 	DBM_SavedOptions.SpecialWarningY = 75
 
-	DBT_SavedOptions["DBM"].StartColorR = T.color.r
-	DBT_SavedOptions["DBM"].StartColorG = T.color.g
-	DBT_SavedOptions["DBM"].StartColorB = T.color.b
-	DBT_SavedOptions["DBM"].EndColorR = T.color.r
-	DBT_SavedOptions["DBM"].EndColorG = T.color.g
-	DBT_SavedOptions["DBM"].EndColorB = T.color.b
+	DBT_SavedOptions["DBM"].StartColorR = 0.4
+	DBT_SavedOptions["DBM"].StartColorG = 0.4
+	DBT_SavedOptions["DBM"].StartColorB = 0.4
+	DBT_SavedOptions["DBM"].EndColorR = 1.0
+	DBT_SavedOptions["DBM"].EndColorG = 0.2
+	DBT_SavedOptions["DBM"].EndColorB = 0.2
 	DBT_SavedOptions["DBM"].Scale = 1
 	DBT_SavedOptions["DBM"].HugeScale = 1
 	DBT_SavedOptions["DBM"].BarXOffset = 0
