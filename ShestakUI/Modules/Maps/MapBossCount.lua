@@ -29,32 +29,14 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("WORLD_MAP_UPDATE")
 frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 frame:SetScript("OnEvent", function(self, event)
-	-- Hide boss icon
-	--[[if event == "ZONE_CHANGED_NEW_AREA" then
-		-- The EJ_X functions don't work until the Encounter Journal has been seen during that session
-		local _, type = GetInstanceInfo()
-		if type == "party" or type == "raid" then
-			if not IsAddOnLoaded("Blizzard_EncounterJournal") then
-				LoadAddOn("Blizzard_EncounterJournal")
-			end
-			EncounterJournal:Show()
-			EncounterJournal:Hide()
-		end
-		return
-	end]]
-
 	if WorldMapFrame:IsShown() then
 		PopulateEncounterInfo()
 
 		local i = 1
 		local button = _G["EJMapButton"..i]
 		while button and button:IsShown() do
-			--button:SetSize(25, 25) -- Hide boss icon
-
 			if not button.label then
-				button.label = button:CreateFontString(nil, "OVERLAY")
-				button.label:SetFont(STANDARD_TEXT_FONT, 15)
-				button.label:SetShadowOffset(1, -1)
+				button.label = button:CreateFontString(nil, "OVERLAY", "MailFont_Large")
 				button.label:SetText(i)
 				button.label:SetPoint("CENTER")
 			end
@@ -64,15 +46,6 @@ frame:SetScript("OnEvent", function(self, event)
 			else
 				button.label:SetTextColor(0, 1, 0)
 			end
-
-			-- Hide boss icon
-			--[[for _, region in pairs{button:GetRegions()} do
-				if region:GetObjectType() ~= 'FontString' then
-					region:Hide()
-					region.Show = function() end
-					if region.SetTexture then region:SetTexture() end
-				end
-			end]]
 
 			i = i + 1
 			button = _G["EJMapButton"..i]

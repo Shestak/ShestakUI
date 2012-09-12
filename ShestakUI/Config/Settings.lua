@@ -89,6 +89,7 @@ C["automation"] = {
 	["accept_invite"] = true,					-- Auto accept invite
 	["decline_duel"] = true,					-- Auto decline duel
 	["accept_quest"] = false,					-- Auto accept quests(if hold shift or alt, auto accept is disable)
+	["auto_collapse"] = false,					-- Auto collapse WatchFrame in instance
 	["skip_cinematic"] = true,					-- Auto skip cinematics/movies
 	["auto_role"] = true,						-- Auto set your role
 	["cancel_bad_buffs"] = true,				-- Auto cancel various buffs
