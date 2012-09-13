@@ -1411,7 +1411,7 @@ if stats.enabled then
 			end
 		elseif sub == "manaregen" then
 			local _, class = UnitClass(P)
-			local I5SR = true -- oo5sr/i5sr swapping NYI
+			local I5SR = true
 			if class == "ROGUE" or class == "WARRIOR" or class == "DEATHKNIGHT" then
 				string, percent = "??"
 			else
