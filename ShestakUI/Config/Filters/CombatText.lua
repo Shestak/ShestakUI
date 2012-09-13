@@ -75,7 +75,9 @@ elseif T.class == "HUNTER" then
 		T.aoespam[118459] = true	-- Beast Cleave
 		T.aoespam[120699] = true	-- Lynx Rush
 		T.aoespam[131900] = true	-- A Murder of Crows
-		T.aoespam[34655] = true		-- Deadly Poison (Snake)
+		T.aoespam[34655] = true		-- Deadly Poison (Trap)
+		T.aoespam[93433] = true		-- Burrow Attack (Worm)
+		T.aoespam[92380] = true		-- Froststorm Breath (Chimaera)
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
