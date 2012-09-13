@@ -2693,6 +2693,8 @@ Filger_Spells = {
 			{spellID = 19386, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
 			{spellID = 34490, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Narrow Escape
+			{spellID = 128405, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entrapment
 			{spellID = 19185, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Barrage
@@ -2800,6 +2802,8 @@ Filger_Spells = {
 			{spellID = 64044, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silence
 			{spellID = 15487, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Void Tendril's Grasp
+			{spellID = 114404, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Mind Blast
 			{spellID = 87194, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mind Flay
@@ -2880,12 +2884,16 @@ Filger_Spells = {
 			{spellID = 46968, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Charge Stun
 			{spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Warbringer
+			{spellID = 105771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
 			{spellID = 20511, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silenced (Gag Order)
 			{spellID = 18498, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Disarm
 			{spellID = 676, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Staggering Shout
+			{spellID = 107566, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hamstring
 			{spellID = 1715, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Piercing Howl
