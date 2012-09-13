@@ -1,0 +1,10 @@
+## Interface: 50001
+## Title: alDamageMeter
+## Notes: Damage meter
+## Author: Allez
+## Version: 50001.11
+## RequiredDeps: ShestakUI
+
+lib\LibStub\LibStub.lua
+lib\LibBossIDs-1.0\LibBossIDs-1.0.lua
+alDamageMeter.lua
