@@ -37,7 +37,11 @@ local function hookSetHyperlink(tooltip, refString)
 	if completed then
 		if year < 10 then year = "0" .. year end
 
+		if T.client == "ruRU" then
+		tooltip:AddLine(L_TOOLTIP_ACH_COMPLETE .. day .. "/" .. month .. "/" .. year, 0, 1, 0)
+		else
 		tooltip:AddLine(L_TOOLTIP_ACH_COMPLETE .. month .. "/" .. day .. "/" .. year, 0, 1, 0)
+		end
 
 		if earnedBy then
 			tooltip:AddLine(format(ACHIEVEMENT_EARNED_BY, earnedBy))
