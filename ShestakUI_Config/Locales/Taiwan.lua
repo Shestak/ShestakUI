@@ -274,6 +274,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "按鈕間隔"
 L_GUI_ACTIONBAR_SPLIT_BARS = "把第五動作條分成兩個有六個位置的小動作條"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "為自己的動作條按鈕邊框也開啟職業邊框染色"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "開啟動作條自由折疊功能(可隨時調節動作條顯示數目)"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGH = "Hide proc highligh" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "滑鼠劃過顯示右側快捷列"

@@ -274,6 +274,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "按钮间隔"
 L_GUI_ACTIONBAR_SPLIT_BARS = "把第五动作条分成两个有六个位置的小动作条"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "给所有的按钮使用职业颜色边框"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "开启动作条切换按钮"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGH = "Hide proc highligh" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部动作条数目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右侧动作条数目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "鼠标划过时显示右侧动作条"

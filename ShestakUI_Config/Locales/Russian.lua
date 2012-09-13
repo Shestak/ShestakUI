@@ -274,6 +274,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "Расстояние между кнопками
 L_GUI_ACTIONBAR_SPLIT_BARS = "Разделить пятую панель на две панели по 6 кнопок"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Окрашивать края кнопок в цвет класса"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Включить режим переключения панелей"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGH = "Hide proc highligh" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Количество нижних панелей (1, 2 или 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Количество правых панелей (0, 1, 2 или 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Правые панели команд по наведению курсора"

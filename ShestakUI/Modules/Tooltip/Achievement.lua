@@ -35,7 +35,7 @@ local function hookSetHyperlink(tooltip, refString)
 	_, _, _, completed, month, day, year, _, _, _, _, _, wasEarnedByMe, earnedBy = GetAchievementInfo(achievementID)
 
 	if completed then
-		if year < 10 then year = "0" .. year end
+		if year < 10 then year = "0"..year end
 
 		if T.client == "ruRU" then
 			tooltip:AddLine(L_TOOLTIP_ACH_COMPLETE..day.."/"..month.."/"..year, 0, 1, 0)
