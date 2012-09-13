@@ -125,10 +125,8 @@ L_CHAT_BATTLEGROUND = "CB"
 L_CHAT_BATTLEGROUND_LEADER = "CDB"
 L_CHAT_OFFICER = "O"
 L_CHAT_PET_BATTLE = "PB" -- Needs review
-L_CHAT_COME_ONLINE = "vient de se connecter."
-L_CHAT_GONE_OFFLINE = "vient de se déconnecter."
-L_CHAT_COME_ONLINE_COLOR = "est maintenant |cff298F00connecté|r !"
-L_CHAT_GONE_OFFLINE_COLOR = "est maintenant |cffff0000déconnecté|r !"
+L_CHAT_COME_ONLINE = "vient de se |cff298F00connecter|r."
+L_CHAT_GONE_OFFLINE = "vient de se |cffff0000déconnecter|r."
 
 -- Errors frame
 L_ERRORFRAME_L = "Clic gauche pour afficher les erreurs."

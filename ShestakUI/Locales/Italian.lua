@@ -125,10 +125,8 @@ L_CHAT_BATTLEGROUND = "CB"
 L_CHAT_BATTLEGROUND_LEADER = "CCB"
 L_CHAT_OFFICER = "UF"
 L_CHAT_PET_BATTLE = "STM"
-L_CHAT_COME_ONLINE = "sì è connesso."
-L_CHAT_GONE_OFFLINE = "si è disconnesso."
-L_CHAT_COME_ONLINE_COLOR = "si è |cff298F00connesso|r!"
-L_CHAT_GONE_OFFLINE_COLOR = "si è |cffff0000disconnesso|r!"
+L_CHAT_COME_ONLINE = "si è |cff298F00connesso|r."
+L_CHAT_GONE_OFFLINE = "si è |cffff0000disconnesso|r."
 
 -- Errors frame
 L_ERRORFRAME_L = "Clicca per vedere gli errori."

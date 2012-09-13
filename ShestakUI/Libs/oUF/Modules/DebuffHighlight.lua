@@ -13,7 +13,7 @@ local CanDispel = {
 	MAGE = {Curse = true},
 	MONK = {Magic = false, Poison = true, Disease = true},
 	PALADIN = {Magic = false, Poison = true, Disease = true},
-	PRIEST = {Magic = true, Disease = true},
+	PRIEST = {Magic = false, Disease = false},
 	SHAMAN = {Magic = false, Curse = true}
 }
 local dispellist = CanDispel[playerClass] or {}
@@ -53,6 +53,14 @@ local function CheckSpec(self, event)
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false
+		end
+	elseif playerClass == "PRIEST" then
+		if T.CheckSpec(3) then
+			dispellist.Magic = false
+			dispellist.Disease = false
+		else
+			dispellist.Magic = true
+			dispellist.Disease = true
 		end
 	elseif playerClass == "SHAMAN" then
 		if T.CheckSpec(3) then

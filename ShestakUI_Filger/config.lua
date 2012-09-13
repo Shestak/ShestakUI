@@ -2792,6 +2792,8 @@ Filger_Spells = {
 			-- Priest
 			-- Psychic Horror
 			{spellID = 64044, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Psychic Terror
+			{spellID = 113792, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dominate Mind
 			{spellID = 605, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Psychic Scream
@@ -3095,6 +3097,8 @@ Filger_Spells = {
 
 			-- Psychic Horror
 			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Psychic Terror
+			{spellID = 113792, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Dominate Mind
 			{spellID = 605, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Psychic Scream

@@ -125,10 +125,8 @@ L_CHAT_BATTLEGROUND = "ПБ"
 L_CHAT_BATTLEGROUND_LEADER = "ЛПБ"
 L_CHAT_OFFICER = "О"
 L_CHAT_PET_BATTLE = "БП"
-L_CHAT_COME_ONLINE = "входит в игровой мир."
-L_CHAT_GONE_OFFLINE = "выходит из игрового мира."
-L_CHAT_COME_ONLINE_COLOR = "|cff298F00входит|r в игровой мир!"
-L_CHAT_GONE_OFFLINE_COLOR = "|cffff0000выходит|r из игрового мира!"
+L_CHAT_COME_ONLINE = "|cff298F00входит|r в игровой мир."
+L_CHAT_GONE_OFFLINE = "|cffff0000выходит|r из игрового мира."
 
 -- Errors frame
 L_ERRORFRAME_L = "Щелкните, чтобы посмотреть ошибки."

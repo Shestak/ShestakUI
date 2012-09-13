@@ -151,8 +151,6 @@ local function LoadSkin()
 				_G["GuildChallengeAlertFrameEmblemIcon"].b:Point("TOPLEFT", _G["GuildChallengeAlertFrameEmblemIcon"], "TOPLEFT", -3, 3)
 				_G["GuildChallengeAlertFrameEmblemIcon"].b:Point("BOTTOMRIGHT", _G["GuildChallengeAlertFrameEmblemIcon"], "BOTTOMRIGHT", 3, -2)
 			end
-
-			--SetLargeGuildTabardTextures("player", GuildChallengeAlertFrameEmblemIcon, nil, nil)
 		end
 	end
 	hooksecurefunc("AlertFrame_SetGuildChallengeAnchors", SkinGuildChallengePopUp)
@@ -166,8 +164,8 @@ local function LoadSkin()
 
 			if not frame.backdrop then
 				frame:CreateBackdrop("Transparent")
-				frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", 19, -6)
-				frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -22, 6)
+				frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", 4, -6)
+				frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -7, 6)
 
 				frame:HookScript("OnEnter", FixBg)
 				frame:HookScript("OnShow", FixBg)
@@ -215,8 +213,8 @@ local function LoadSkin()
 
 			if not frame.backdrop then
 				frame:CreateBackdrop("Transparent")
-				frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", 19, -6)
-				frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -22, 6)
+				frame.backdrop:Point("TOPLEFT", frame, "TOPLEFT", 4, -6)
+				frame.backdrop:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -7, 6)
 
 				frame:HookScript("OnEnter", FixBg)
 				frame:HookScript("OnShow", FixBg)
@@ -236,7 +234,6 @@ local function LoadSkin()
 			_G["ScenarioAlertFrame1Shine"]:Kill()
 			_G["ScenarioAlertFrame1GlowFrame"]:Kill()
 			_G["ScenarioAlertFrame1GlowFrame"].glow:Kill()
-			--_G["ScenarioAlertFrame1Border"]:Kill()
 
 			-- Icon
 			_G["ScenarioAlertFrame1DungeonTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -367,8 +364,6 @@ local function LoadSkin()
 
 				-- Icon
 				frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				--frame.Icon:ClearAllPoints()
-				--frame.Icon:Point("LEFT", frame.backdrop, 9, 0)
 
 				-- Icon border
 				if not frame.Icon.b then

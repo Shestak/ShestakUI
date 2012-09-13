@@ -81,8 +81,8 @@ do
 			["Disease"] = true,
 		},
 		["PRIEST"] = {
-			["Magic"] = true,
-			["Disease"] = true,
+			["Magic"] = false,
+			["Disease"] = false,
 		},
 		["SHAMAN"] = {
 			["Magic"] = false,
@@ -112,6 +112,14 @@ local function CheckSpec(self, event)
 			DispellFilter.Magic = true
 		else
 			DispellFilter.Magic = false
+		end
+	elseif select(2, UnitClass("player")) == "PRIEST" then
+		if T.CheckSpec(3) then
+			DispellFilter.Magic = false
+			DispellFilter.Disease = false
+		else
+			DispellFilter.Magic = true
+			DispellFilter.Disease = true
 		end
 	elseif select(2, UnitClass("player")) == "SHAMAN" then
 		if T.CheckSpec(3) then
