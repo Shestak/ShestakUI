@@ -2790,14 +2790,14 @@ Filger_Spells = {
 			{spellID = 2812, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Priest
-			-- Psychic Horror
-			{spellID = 64044, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Psychic Terror
-			{spellID = 113792, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dominate Mind
 			{spellID = 605, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Psychic Scream
 			{spellID = 8122, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Psychic Terror
+			{spellID = 113792, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Psychic Horror
+			{spellID = 64044, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silence
 			{spellID = 15487, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Mind Blast
@@ -3095,14 +3095,14 @@ Filger_Spells = {
 			-- Fear Ward
 			{spellID = 6346, unitID = "target", caster = "all", filter = "BUFF"},
 
-			-- Psychic Horror
-			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Psychic Terror
-			{spellID = 113792, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Dominate Mind
 			{spellID = 605, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Psychic Scream
 			{spellID = 8122, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Psychic Terror
+			{spellID = 113792, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Psychic Horror
+			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silence
 			{spellID = 15487, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Mind Blast
