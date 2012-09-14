@@ -2713,19 +2713,14 @@ Filger_Spells = {
 			{spellID = 13810, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Freezing Trap
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Pets
-			-- Sonic Blast (Bat)
-			{spellID = 50519, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Sting (Wasp)
-			{spellID = 56626, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)
 			{spellID = 90337, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Pin (Crab)
-			{spellID = 50245, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Venom Web Spray (Silithid)
 			{spellID = 54706, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Web (Spider)
 			{spellID = 4167, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Pin (Crab)
+			{spellID = 50245, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
 			{spellID = 44957, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Clench (Scorpid)
@@ -2736,6 +2731,10 @@ Filger_Spells = {
 			{spellID = 50433, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Time Warp (Warp Stalker)
 			{spellID = 35346, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Sting (Wasp)
+			{spellID = 56626, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Sonic Blast (Bat)
+			{spellID = 50519, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Mage
 			-- Cauterize
@@ -2790,6 +2789,8 @@ Filger_Spells = {
 			{spellID = 105593, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Repentance
 			{spellID = 20066, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Blinding Light
+			{spellID = 105421, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
 			{spellID = 31935, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Dazing Shield
@@ -2945,7 +2946,7 @@ Filger_Spells = {
 			{spellID = 49016, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Death's Advance
 			{spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
-
+			-- Debuffs
 			-- Gnaw (Pet)
 			{spellID = 47481, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Monstrous Blow (Pet - mutant)
@@ -2958,23 +2959,23 @@ Filger_Spells = {
 			{spellID = 47476, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Druid
-			-- Innervate
-			{spellID = 29166, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Survival Instincts
+			{spellID = 61336, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Barkskin
 			{spellID = 22812, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Ironbark
 			{spellID = 102342, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Innervate
+			{spellID = 29166, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Nature's Grasp
 			{spellID = 16689, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
 			{spellID = 77764, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Survival Instincts
-			{spellID = 61336, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Incarnation: Tree of Life
 			{spellID = 117679, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserk
 			{spellID = 50334, unitID = "target", caster = "all", filter = "BUFF"},
-
+			-- Debuffs
 			-- Cyclone
 			{spellID = 33786, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Hibernate
@@ -3001,7 +3002,7 @@ Filger_Spells = {
 			{spellID = 5118, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Deterrence
 			{spellID = 19263, unitID = "target", caster = "all", filter = "BUFF"},
-
+			-- Debuffs
 			-- Intimidation
 			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap
@@ -3014,19 +3015,14 @@ Filger_Spells = {
 			{spellID = 19386, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
 			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
-
-			-- Sonic Blast (Bat)
-			{spellID = 50519, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Sting (Wasp)
-			{spellID = 56626, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)
 			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Pin (Crab)
-			{spellID = 50245, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Venom Web Spray (Silithid)
 			{spellID = 54706, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Web (Spider)
 			{spellID = 4167, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Pin (Crab)
+			{spellID = 50245, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
 			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3039,7 +3035,7 @@ Filger_Spells = {
 			{spellID = 12051, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "target", caster = "all", filter = "BUFF"},
-
+			-- Debuffs
 			-- Cauterize
 			{spellID = 87023, unitID = "target", caster = "target", filter = "DEBUFF"},
 			-- Deep Freeze
@@ -3060,7 +3056,9 @@ Filger_Spells = {
 			-- Monk
 			-- Touch of Karma
 			{spellID = 125174, unitID = "target", caster = "target", filter = "BUFF"},
-
+			-- Diffuse Magic
+			{spellID = 122783, unitID = "target", caster = "target", filter = "BUFF"},
+			-- Debuffs
 			-- Fists of Fury
 			{spellID = 113656, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Leg Sweep
@@ -3089,13 +3087,15 @@ Filger_Spells = {
 			{spellID = 498, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Guardian of Ancient Kings
 			{spellID = 86698, unitID = "target", caster = "all", filter = "BUFF"},
-
+			-- Debuffs
 			-- Hammer of Justice
 			{spellID = 853, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Fist of Justice
 			{spellID = 105593, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Repentance
 			{spellID = 20066, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Blinding Light
+			{spellID = 105421, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
 			{spellID = 31935, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3110,7 +3110,7 @@ Filger_Spells = {
 			{spellID = 47788, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Fear Ward
 			{spellID = 6346, unitID = "target", caster = "all", filter = "BUFF"},
-
+			-- Debuffs
 			-- Dominate Mind
 			{spellID = 605, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Psychic Scream
@@ -3135,7 +3135,7 @@ Filger_Spells = {
 			{spellID = 74002, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Shadow Dance
 			{spellID = 51713, unitID = "target", caster = "all", filter = "BUFF"},
-
+			-- Debuffs
 			-- Kidney Shot
 			{spellID = 408, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Cheap Shot
@@ -3160,7 +3160,7 @@ Filger_Spells = {
 			--OLD{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Mana Tide
 			--OLD{spellID = 16191, unitID = "target", caster = "all", filter = "BUFF"},
-
+			-- Debuffs
 			-- Hex
 			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bind Elemental
@@ -3175,7 +3175,7 @@ Filger_Spells = {
 			{spellID = 110913, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Soulstone
 			{spellID = 20707, unitID = "target", caster = "all", filter = "BUFF"},
-
+			-- Debuffs
 			-- Banish
 			{spellID = 710, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Shadowfury
@@ -3208,7 +3208,7 @@ Filger_Spells = {
 			{spellID = 12975, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Bladestorm
 			{spellID = 46924, unitID = "target", caster = "all", filter = "BUFF"},
-
+			-- Debuffs
 			-- Storm Bolt
 			{spellID = 107570, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Shockwave

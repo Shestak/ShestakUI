@@ -88,10 +88,18 @@ if C.raidframe.plugins_aura_watch == true then
 		-----------------------------------------------------------------
 		-- Pandaria
 		-----------------------------------------------------------------
-		-- Kun-Lai Summit
-			-- Sha of Anger
-			SpellName(119626),	-- Aggressive Behavior
-			SpellName(119488),	-- Unleashed Wrath
+		-- Terrace of Endless Spring
+			-- Protectors of the Endless
+			SpellName(117519),	-- Touch of Sha
+			SpellName(117436),	-- Lightning Prison
+			-- Tsulong
+			SpellName(122752),	-- Shadow Breath
+			SpellName(123011),	-- Terrorize
+			-- Lei Shi
+			SpellName(123121),	-- Spray
+			-- Sha of Fear
+			SpellName(119985),	-- Dread Spray
+			SpellName(119086),	-- Penetrating Bolt
 		-- Heart of Fear
 			-- Imperial Vizier Zor'lok
 			SpellName(122761),	-- Exhale
@@ -110,18 +118,6 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Grand Empress Shek'zeer
 			SpellName(123788),	-- Cry of Terror
 			SpellName(124849),	-- Consuming Terror
-		-- Terrace of Endless Spring
-			-- Protectors of the Endless
-			SpellName(117519),	-- Touch of Sha
-			SpellName(117436),	-- Lightning Prison
-			-- Tsulong
-			SpellName(122752),	-- Shadow Breath
-			SpellName(123011),	-- Terrorize
-			-- Lei Shi
-			SpellName(123121),	-- Spray
-			-- Sha of Fear
-			SpellName(119985),	-- Dread Spray
-			SpellName(119086),	-- Penetrating Bolt
 		-- Mogu'shan Vaults
 			-- The Stone Guard
 			SpellName(125206),	-- Rend Flesh
@@ -149,6 +145,10 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(116835),	-- Devastating Arc
 			SpellName(116778),	-- Focused Defense
 			SpellName(116525),	-- Focused Assault
+		-- Kun-Lai Summit
+			-- Sha of Anger
+			SpellName(119626),	-- Aggressive Behavior
+			SpellName(119488),	-- Unleashed Wrath
 		-----------------------------------------------------------------
 		-- Cataclysm
 		-----------------------------------------------------------------
@@ -320,34 +320,41 @@ if C.raidframe.plugins_aura_watch == true then
 		-----------------------------------------------------------------
 			-- Death Knight
 			--[[SpellName(115001),	-- Remorseless Winter
-			SpellName(47476),	-- Strangulate
 			SpellName(108194),	-- Asphyxiate
+			SpellName(47476),	-- Strangulate
+			SpellName(47481),	-- Gnaw (Pet)
+			SpellName(91797),	-- Monstrous Blow (Pet - mutant)
 			-- Druid
 			SpellName(33786),	-- Cyclone
 			SpellName(2637),	-- Hibernate
 			SpellName(339),		-- Entangling Roots
-			SpellName(80964),	-- Skull Bash
 			SpellName(78675),	-- Solar Beam
 			-- Hunter
 			SpellName(3355),	-- Freezing Trap
 			SpellName(1513),	-- Scare Beast
 			SpellName(19503),	-- Scatter Shot
 			SpellName(34490),	-- Silence Shot
+			SpellName(19386),	-- Wyvern Sting
 			-- Mage
 			SpellName(31661),	-- Dragon's Breath
+			SpellName(82691),	-- Ring of Frost
 			SpellName(61305),	-- Polymorph
+			SpellName(102051),	-- Frostjaw
 			SpellName(55021),	-- Improved Counterspell
 			SpellName(122),		-- Frost Nova
 			SpellName(111340),	-- Ice Ward
 			-- Monk
+			SpellName(115078),	-- Paralysis
 			-- Paladin
 			SpellName(20066),	-- Repentance
 			SpellName(853),		-- Hammer of Justice
 			SpellName(105593),	-- Fist of Justice
+			SpellName(105421),	-- Blinding Light
 			-- Priest
 			SpellName(605),		-- Dominate Mind
-			SpellName(64044),	-- Psychic Horror
 			SpellName(8122),	-- Psychic Scream
+			SpellName(113792),	-- Psychic Terror
+			SpellName(64044),	-- Psychic Horror
 			SpellName(15487),	-- Silence
 			-- Rogue
 			SpellName(2094),	-- Blind
@@ -366,6 +373,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(6358),	-- Seduction
 			SpellName(30283),	-- Shadowfury
 			-- Warrior
+			SpellName(46968),	-- Shockwave
 			SpellName(20511),	-- Intimidating Shout]]
 		}
 

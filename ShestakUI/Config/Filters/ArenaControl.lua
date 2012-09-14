@@ -27,7 +27,6 @@ T.ArenaControl = function()
 		[GetSpellInfo(3355)] = 4,	-- Freezing Trap
 		[GetSpellInfo(19503)] = 4,	-- Scatter Shot
 		[GetSpellInfo(19386)] = 4,	-- Wyvern Sting
-		[GetSpellInfo(50519)] = 4,	-- Sonic Blast (Bat)
 		[GetSpellInfo(90337)] = 4,	-- Bad Manner (Monkey)
 		-- Mage
 		[GetSpellInfo(44572)] = 4,	-- Deep Freeze
@@ -45,6 +44,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(853)] = 4,	-- Hammer of Justice
 		[GetSpellInfo(105593)] = 4,	-- Fist of Justice
 		[GetSpellInfo(20066)] = 4,	-- Repentance
+		[GetSpellInfo(105421)] = 4,	-- Blinding Light
 		-- Priest
 		[GetSpellInfo(605)] = 4,	-- Dominate Mind
 		[GetSpellInfo(8122)] = 4,	-- Psychic Scream
