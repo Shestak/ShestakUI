@@ -52,12 +52,13 @@ if C.enemycooldown.enable == true then
 		[64044] = 45,	-- Psychic Horror
 		[119381] = 45,	-- Leg Sweep
 		[853] = 60,		-- Hammer of Justice
+		[108194] = 60,	-- Asphyxiate
 		[108200] = 60,	-- Remorseless Winter
-		[2094] = 180,	-- Blind
 		-- Defense abilities
 		[48707] = 45,	-- Anti-Magic Shell
 		[8143] = 60,	-- Tremor Totem
-		[22812] = 60,	-- Barkskin
+		[46924] = 90,	-- Bladestorm
+		[19263] = 120,	-- Deterrence
 		[47585] = 120,	-- Dispersion
 		[31224] = 120,	-- Cloak of Shadows
 		[49039] = 120,	-- Lichborne
@@ -66,7 +67,6 @@ if C.enemycooldown.enable == true then
 		-- Other
 		[51722] = 60,	-- Dismantle
 		[676] = 60,		-- Disarm
-		[46924] = 90,	-- Bladestorm
 		[54428] = 120,	-- Divine Plea
 		[29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem
