@@ -45,6 +45,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(853)] = 4,	-- Hammer of Justice
 		[GetSpellInfo(105593)] = 4,	-- Fist of Justice
 		[GetSpellInfo(20066)] = 4,	-- Repentance
+		[GetSpellInfo(105421)] = 4,	-- Blinding Light
 		-- Priest
 		[GetSpellInfo(605)] = 4,	-- Dominate Mind
 		[GetSpellInfo(8122)] = 4,	-- Psychic Scream
