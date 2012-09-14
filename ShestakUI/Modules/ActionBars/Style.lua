@@ -254,6 +254,6 @@ hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
 if C.actionbar.hotkey == true then
 	hooksecurefunc("ActionButton_UpdateHotkeys", UpdateHotkey)
 end
-if C.actionbar.hide_highligh == true then
+if C.actionbar.hide_highlight == true then
 	hooksecurefunc("ActionButton_ShowOverlayGlow", HideHighlightButton)
 end
