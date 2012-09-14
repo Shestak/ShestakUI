@@ -434,6 +434,8 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Nature's Cure
+			{spellID = 88423, filter = "CD"},
 			-- Skull Bash
 			{spellID = 106839, filter = "CD"},
 			-- Wild Growth
@@ -1107,6 +1109,10 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Detox
+			{spellID = 115450, filter = "CD"},
+			-- Spear Hand Strike
+			{spellID = 116705, filter = "CD"},
 			-- Paralysis
 			{spellID = 115078, filter = "CD"},
 			-- Fists of Fury
@@ -1545,6 +1551,10 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Purify
+			{spellID = 527, filter = "CD"},
+			-- Mass Dispel
+			{spellID = 32375, filter = "CD"},
 			-- Dominate Mind
 			{spellID = 605, filter = "CD"},
 			-- Penance
@@ -2020,6 +2030,8 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Cleanse Spirit
+			{spellID = 51886, filter = "CD"},
 			-- Wind Shear
 			{spellID = 57994, filter = "CD"},
 			-- Hex
