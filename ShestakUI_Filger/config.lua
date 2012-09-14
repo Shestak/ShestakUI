@@ -99,7 +99,7 @@ Filger_Spells = {
 			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
-			-- Swordguard Embroidery (AP)
+			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
@@ -344,7 +344,7 @@ Filger_Spells = {
 			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
-			-- Swordguard Embroidery (AP)
+			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
@@ -574,7 +574,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Physical General
-			-- Swordguard Embroidery (AP)
+			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Ranged
 			-- Mirror Scope (Crit)
@@ -1060,7 +1060,7 @@ Filger_Spells = {
 			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
-			-- Swordguard Embroidery (AP)
+			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
@@ -1271,7 +1271,7 @@ Filger_Spells = {
 			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
-			-- Swordguard Embroidery (AP)
+			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
@@ -1296,14 +1296,14 @@ Filger_Spells = {
 			{spellID = 25771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Censure
 			{spellID = 31803, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Burden of Guilt
+			{spellID = 110300, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Glyph of Dazing Shield
+			{spellID = 63529, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Seal of Justice
 			{spellID = 20170, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Denounce
 			{spellID = 2812, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Glyph of Dazing Shield
-			{spellID = 63529, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Burden of Guilt
-			{spellID = 110300, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -1361,8 +1361,6 @@ Filger_Spells = {
 			{spellID = 31884, filter = "CD"},
 			-- Ardent Defender
 			{spellID = 31850, filter = "CD"},
-			-- Hand of Salvation
-			{spellID = 1038, filter = "CD"},
 			-- Hand of Protection
 			{spellID = 1022, filter = "CD"},
 
@@ -1729,7 +1727,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Physical General
-			-- Swordguard Embroidery (AP)
+			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
@@ -1954,7 +1952,7 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Physical General
-			-- Swordguard Embroidery (AP)
+			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
@@ -2416,7 +2414,7 @@ Filger_Spells = {
 			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical General
-			-- Swordguard Embroidery (AP)
+			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
@@ -2549,7 +2547,7 @@ Filger_Spells = {
 			-- Potion of the Jade Serpent
 			{spellID = 105702, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Speed (Potion)
-			{spellID = 2379, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 2379, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Speed (BG)
 			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 
@@ -2596,8 +2594,6 @@ Filger_Spells = {
 			{spellID = 1022, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Freedom
 			{spellID = 1044, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Hand of Salvation
-			{spellID = 1038, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Sacrifice
 			{spellID = 6940, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Purity
@@ -2610,30 +2606,30 @@ Filger_Spells = {
 			{spellID = 47788, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Life Cocoon
 			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Rallying Cry
+			{spellID = 97462, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
 			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Rallying Cry
-			{spellID = 97462, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
 			{spellID = 77764, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Grounding Totem
-			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Innervate
 			{spellID = 29166, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Grounding Totem
+			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Stormlash Totem
+			{spellID = 120676, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Slow Fall
 			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Levitate
 			{spellID = 1706, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Tiger's Lust
+			{spellID = 116841, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Body and Soul
 			{spellID = 65081, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Angelic Feather
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Stormlash Totem
-			{spellID = 120676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Tiger's Lust
-			{spellID = 116841, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
