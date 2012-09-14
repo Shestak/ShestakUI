@@ -1047,11 +1047,11 @@ if friends.enabled then
 		end,
 		OnUpdate = AltUpdate,
 		OnClick = function(self, b)
-			if b == "RightButton" then
+			if b == "MiddleButton" then
 				ToggleIgnorePanel()
 			elseif b == "LeftButton" then
 				ToggleFriendsPanel()
-			elseif b == "MiddleButton" then
+			elseif b == "RightButton" then
 				HideTT(self)
 
 				local BNTotal = BNGetNumFriends()
