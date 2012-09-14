@@ -15,6 +15,8 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 
 	CombuMBTrackerBorderFrame:SetTemplate("Transparent")
 	CombuMBTrackerBorderFrame.SetBackdrop = T.dummy
+	--CombuMBTrackerFrame:SetWidth(CombustionFrame:GetWidth())
+	--CombuMBTrackerBorderFrame:SetWidth(CombustionFrame:GetWidth())
 
 	CombuCautscalevar = 1
 	combusettingstable.combuscale = 1
@@ -46,7 +48,7 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 	--RegLBButton:Hide()
 
 	if CombuCautenablevar == true then
-		CombuCautTimerText:SetFont(C.font.stylization_font, (C.font.stylization_font_size / combusettingstable.combuscale) * 2, C.font.stylization_font_style)
+		CombuCautTimerText:SetFont(C.font.stylization_font, C.font.stylization_font_size * 2, C.font.stylization_font_style)
 		CombuCautTimerText:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 		CombuCautFrame:SetTemplate("Default")
 		CombuCautIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -55,12 +57,26 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 		CombuCautIcon:Point("BOTTOMRIGHT", -2, 2)
 	end
 
-	for _, label in ipairs({RegLBLabel, RegIgniteLabel, RegPyroLabel, RegLBTextFrameLabel, RegIgnTextFrameLabel, RegPyroTextFrameLabel, RegStatusTextFrameLabel}) do
-		label:SetFont(C.font.stylization_font, C.font.stylization_font_size / combusettingstable.combuscale, C.font.stylization_font_style)
+	hooksecurefunc("CombuMBTrackerFrameresize", function()
+		for i = 1, 5 do
+			if _G["CombuMBTrack"..i] then
+				--_G["CombuMBTrack"..i]:SetWidth(CombustionFrame:GetWidth())
+				--_G["CombuMBTrack"..i.."Bar"]:SetWidth(CombustionFrame:GetWidth())
+				--_G["CombuMBTrack"..i.."InfoText"]:SetWidth(CombustionFrame:GetWidth())
+				_G["CombuMBTrack"..i.."InfoText"]:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+				_G["CombuMBTrack"..i.."InfoText"]:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+				_G["CombuMBTrack"..i.."InfoTimer"]:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+				_G["CombuMBTrack"..i.."InfoTimer"]:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
+			end
+		end
+	end)
+
+	for _, label in ipairs({LBLabel, IgniteLabel, PyroLabel, LBTextFrameLabel, IgnTextFrameLabel, PyroTextFrameLabel, StatusTextFrameLabel}) do
+		label:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		label:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 	end
 
-	for _, bar in ipairs({RegLBbar, RegIgnbar, RegPyrobar, RegCombubar}) do
+	for _, bar in ipairs({LBbar, Ignbar, Pyrobar, Combubar}) do
 		bar:SetHeight(C.font.stylization_font_size)
 	end
 
@@ -112,7 +128,10 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 		"CombuMBTrackerButton",
 		"CombuMBTrackerchatButton",
 		"CombuMBTrackerrefreshButton",
-		"CombuMBTrackerTileButton"
+		"CombuMBTrackerTileButton",
+		"CombuPyromaniacButton",
+		"CombuTickPredictButton",
+		"CombuHotStreakButton"
 	}
 
 	for i = 1, getn(checkboxes) do
