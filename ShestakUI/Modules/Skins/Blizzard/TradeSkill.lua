@@ -33,8 +33,13 @@ local function LoadSkin()
 
 	T.SkinEditBox(TradeSkillFrameSearchBox)
 	TradeSkillFrameSearchBox:Height(TradeSkillFrameSearchBox:GetHeight() - 2)
+	TradeSkillFrameSearchBox:Width(TradeSkillFrameSearchBox:GetWidth() + 5)
+	TradeSkillFrameSearchBox:ClearAllPoints()
+	TradeSkillFrameSearchBox:Point("TOPLEFT", TradeSkillRankFrame, "BOTTOMLEFT", 0, -7)
+
 	T.SkinEditBox(TradeSkillInputBox)
 	TradeSkillInputBox:Height(TradeSkillInputBox:GetHeight() - 2)
+
 	T.SkinNextPrevButton(TradeSkillDecrementButton)
 	T.SkinNextPrevButton(TradeSkillIncrementButton)
 	TradeSkillIncrementButton:Point("LEFT", TradeSkillInputBox, "RIGHT", 4, 0)
