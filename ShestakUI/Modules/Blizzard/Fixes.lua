@@ -141,16 +141,3 @@ end
 
 TradeSkillClearButton:RegisterEvent("ADDON_LOADED")
 TradeSkillClearButton:SetScript("OnEvent", OnEvent)
-
-----------------------------------------------------------------------------------------
---	Disable 3D Portraits on DX9
-----------------------------------------------------------------------------------------
-local use_dx11 = GetCVar("gxapi") == "D3D11" or IsMacClient()
-if not use_dx11 and C.unitframe.portrait_enable == true then
-	C.unitframe.portrait_enable = false
-	if C.error.white == false then
-		UIErrorsFrame:AddMessage("Portraits temporarily disabled because of a Blizzard bug when use DX9 and 3D portraits. Disable this option or change video mode to DX11 that would remove this warning.", 1, 0.1, 0.1)
-	else
-		print("Portraits temporarily disabled because of a Blizzard bug when use DX9 and 3D portraits.")
-	end
-end
