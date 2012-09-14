@@ -436,6 +436,8 @@ Filger_Spells = {
 			-- Self
 			-- Nature's Cure
 			{spellID = 88423, filter = "CD"},
+			-- Remove Corruption
+			{spellID = 2782, filter = "CD"},
 			-- Skull Bash
 			{spellID = 106839, filter = "CD"},
 			-- Wild Growth
