@@ -31,6 +31,7 @@ if C.enemycooldown.enable == true then
 		[80965] = 15,	-- Skull Bash
 		[116705] = 15,	-- Spear Hand Strike
 		[34490] = 20,	-- Silencing Shot
+		[102051] = 20,	-- Frostjaw
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
 		[115781] = 24,	-- Optical Blast
