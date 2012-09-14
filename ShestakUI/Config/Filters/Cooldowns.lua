@@ -45,6 +45,7 @@ if C.enemycooldown.enable == true then
 		[1499] = 30,	-- Freezing Trap
 		[107570] = 30,	-- Storm Bolt
 		[44572] = 30,	-- Deep Freeze
+		[113724] = 30,	-- Ring of Frost
 		[105593] = 30,	-- Fist of Justice
 		[5484] = 40,	-- Howl of Terror
 		[51514] = 45,	-- Hex
