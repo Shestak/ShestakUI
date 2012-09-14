@@ -3056,6 +3056,8 @@ Filger_Spells = {
 			-- Monk
 			-- Touch of Karma
 			{spellID = 125174, unitID = "target", caster = "target", filter = "BUFF"},
+			-- Diffuse Magic
+			{spellID = 122783, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Debuffs
 			-- Fists of Fury
 			{spellID = 113656, unitID = "target", caster = "all", filter = "DEBUFF"},
