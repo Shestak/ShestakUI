@@ -234,6 +234,8 @@ Filger_Spells = {
 			{spellID = 774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Regrowth
 			{spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cenarion Ward
+			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Tree of Life
 			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Chosen of Elunee
@@ -405,6 +407,8 @@ Filger_Spells = {
 			{spellID = 8936, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Wild Growth
 			{spellID = 48438, unitID = "target", caster = "player", filter = "BUFF"},
+			-- Cenarion Ward
+			{spellID = 102351, unitID = "target", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
