@@ -2,15 +2,14 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.chat.bubbles ~= true or IsAddOnLoaded("BossEncounter2") then return end
 
 ----------------------------------------------------------------------------------------
---	ChatBubbles skin(by Elv22 or Nightcracker)
+--	ChatBubbles skin(by Haleth)
 ----------------------------------------------------------------------------------------
-local chatbubblehook = CreateFrame("Frame", nil, UIParent)
+local f = CreateFrame("Frame", nil, UIParent)
 local noscalemult = T.mult * C.general.uiscale
-local tslu = 0
-local numkids = 0
-local bubbles = {}
+local total = 0
+local numKids = 0
 
-local function skinbubble(frame)
+local function styleBubble(frame)
 	for i = 1, frame:GetNumRegions() do
 		local region = select(i, frame:GetRegions())
 		if region:GetObjectType() == "Texture" then
@@ -27,37 +26,47 @@ local function skinbubble(frame)
 	frame:SetBackdropColor(unpack(C.media.overlay_color))
 	frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	frame:SetClampedToScreen(false)
-
-	tinsert(bubbles, frame)
 end
 
-local function ischatbubble(frame)
+local function isChatBubble(frame)
 	if frame:GetName() then return end
 	if not frame:GetRegions() then return end
-	local region = frame:GetRegions()
-	return region:GetTexture() == [[Interface\Tooltips\ChatBubble-Background]]
+	return frame:GetRegions():GetTexture() == [[Interface\Tooltips\ChatBubble-Background]]
 end
 
-chatbubblehook:SetScript("OnUpdate", function(chatbubblehook, elapsed)
-	tslu = tslu + elapsed
+local function FindBubble()
+	local newNumKids = WorldFrame:GetNumChildren()
+	if newNumKids ~= numKids then
+		for i = numKids + 1, newNumKids do
+			local frame = select(i, WorldFrame:GetChildren())
 
-	if tslu > 0.05 then
-		tslu = 0
-
-		local newnumkids = WorldFrame:GetNumChildren()
-		if newnumkids ~= numkids then
-			for i = numkids + 1, newnumkids do
-				local frame = select(i, WorldFrame:GetChildren())
-
-				if ischatbubble(frame) then
-					skinbubble(frame)
-				end
-			end
-			numkids = newnumkids
+			if isChatBubble(frame) then return frame end
 		end
+		numKids = newNumKids
+	end
+end
 
-		for i, frame in next, bubbles do
-			frame:SetBackdropBorderColor(unpack(C.media.border_color))
-		end
+local function onUpdate(self, elapsed)
+	total = total + elapsed
+
+	local frame = FindBubble()
+	if frame or total > 0.3 then
+		self:SetScript("OnUpdate", nil)
+		total = 0
+		if frame then styleBubble(frame) end
+	end
+end
+
+local events = {
+	CHAT_MSG_SAY = "chatBubbles", CHAT_MSG_YELL = "chatBubbles",
+	CHAT_MSG_PARTY = "chatBubblesParty", CHAT_MSG_PARTY_LEADER = "chatBubblesParty",
+	CHAT_MSG_MONSTER_SAY = "chatBubbles", CHAT_MSG_MONSTER_YELL = "chatBubbles", CHAT_MSG_MONSTER_PARTY = "chatBubblesParty",
+}
+
+for event in pairs(events) do f:RegisterEvent(event) end
+
+f:SetScript("OnEvent", function(self, event)
+	if GetCVarBool(events[event]) then
+		f:SetScript("OnUpdate", onUpdate)
 	end
 end)
