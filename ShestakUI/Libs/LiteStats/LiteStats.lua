@@ -916,14 +916,14 @@ if guild.enabled then
 				GameTooltip:SetPoint(modules.Guild.tip_anchor, modules.Guild.tip_frame, modules.Guild.tip_x, modules.Guild.tip_y)
 				GameTooltip:ClearLines()
 				GameTooltip:AddDoubleLine(GetGuildInfo(P),format("%s: %d/%d", GUILD_ONLINE_LABEL, online, total), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
-				if gmotd ~= "" then GameTooltip:AddLine(format("  %s |cffaaaaaa- |cffffffff%s", GUILD_MOTD, gmotd), ttsubh.r, ttsubh.g, ttsubh.b, 1) end
-				GameTooltip:AddLine(" ")
+				if gmotd ~= "" then GameTooltip:AddLine(format("%s |cffaaaaaa- |cffffffff%s", GUILD_MOTD, gmotd), ttsubh.r, ttsubh.g, ttsubh.b, 1) end
 				if guild.show_xp then
 					if GetGuildLevel() ~= 25 then
 						local currentXP, nextLevelXP, percentTotal = unpack(guildXP[0])
 						GameTooltip:AddLine(string.format(col..GUILD_EXPERIENCE_CURRENT, "|r |cFFFFFFFF"..ShortValueXP(currentXP), ShortValueXP(nextLevelXP), percentTotal))
 					end
 					if standingID ~= 8 then -- Not Max Rep
+						GameTooltip:AddLine(" ")
 						barMax = barMax - barMin
 						barValue = barValue - barMin
 						barMin = 0
