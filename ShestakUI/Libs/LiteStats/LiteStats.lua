@@ -1112,7 +1112,7 @@ if friends.enabled then
 								notCheckable = true,
 								func = function(self, arg1)
 									menuFrame:Hide()
-									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
+									ChatFrame_SendSmartTell(arg1)
 								end
 							}
 
