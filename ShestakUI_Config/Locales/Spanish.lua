@@ -96,6 +96,8 @@ L_GUI_SKINS_TINY_DPS = "Activar estilo del TinyDPS"
 L_GUI_SKINS_FACE_SHOOTER = "Activar estilo del FaceShooter"
 L_GUI_SKINS_MAGE_NUGGETS = "Activar estilo del MageNuggets"
 L_GUI_SKINS_PREFORM_AV = "Activar estilo del PreformAVEnabler"
+L_GUI_SKINS_NPCSCAN = "Activar estilo del NPCScan"
+L_GUI_SKINS_VANASKOS = "Activar estilo del VanasKoS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texto de Combate"

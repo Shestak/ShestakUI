@@ -96,6 +96,8 @@ L_GUI_SKINS_TINY_DPS = "TinyDPS Design aktivieren"
 L_GUI_SKINS_FACE_SHOOTER = "FaceShooter Design aktivieren"
 L_GUI_SKINS_MAGE_NUGGETS = "MageNuggets Design aktivieren"
 L_GUI_SKINS_PREFORM_AV = "PreformAVEnabler Design aktivieren"
+L_GUI_SKINS_NPCSCAN = "NPCScan Design aktivieren"
+L_GUI_SKINS_VANASKOS = "VanasKoS Design aktivieren"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Kampftext"

@@ -152,6 +152,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["skins"].blizzard_frames = true
 	C["skins"].dbm = true
 	C["skins"].blood_shield_tracker = true
+	C["skins"].npcscan = true
 	C["combattext"].icons = false
 	C["combattext"].scrollable = true
 	C["combattext"].killingblow = true

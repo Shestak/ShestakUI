@@ -96,6 +96,8 @@ L_GUI_SKINS_TINY_DPS = "Attiva il restyling di TinyDPS"
 L_GUI_SKINS_FACE_SHOOTER = "Attiva il restyling di FaceShooter"
 L_GUI_SKINS_MAGE_NUGGETS = "Attiva il restyling di MageNuggets"
 L_GUI_SKINS_PREFORM_AV = "Attiva il restyling di PreformAVEnabler"
+L_GUI_SKINS_NPCSCAN = "Attiva il restyling di NPCScan"
+L_GUI_SKINS_VANASKOS = "Attiva il restyling di VanasKoS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"

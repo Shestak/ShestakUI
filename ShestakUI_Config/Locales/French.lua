@@ -96,6 +96,8 @@ L_GUI_SKINS_TINY_DPS = "Activer la personnalisation pour TinyDPS"
 L_GUI_SKINS_FACE_SHOOTER = "Activer la personnalisation pour FaceShooter"
 L_GUI_SKINS_MAGE_NUGGETS = "Activer la personnalisation pour MageNuggets"
 L_GUI_SKINS_PREFORM_AV = "Activer la personnalisation pour PreformAVEnabler"
+L_GUI_SKINS_NPCSCAN = "Activer la personnalisation pour NPCScan"
+L_GUI_SKINS_VANASKOS = "Activer la personnalisation pour VanasKoS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"

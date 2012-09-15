@@ -122,6 +122,8 @@ local function Local(o)
 	if o == "UIConfigskinsface_shooter" then o = L_GUI_SKINS_FACE_SHOOTER end
 	if o == "UIConfigskinsmage_nuggets" then o = L_GUI_SKINS_MAGE_NUGGETS end
 	if o == "UIConfigskinspreform_av" then o = L_GUI_SKINS_PREFORM_AV end
+	if o == "UIConfigskinsnpcscan" then o = L_GUI_SKINS_NPCSCAN end
+	if o == "UIConfigskinsvanaskos" then o = L_GUI_SKINS_VANASKOS end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end
