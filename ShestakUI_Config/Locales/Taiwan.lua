@@ -94,6 +94,8 @@ L_GUI_SKINS_COOL_LINE = "開啟CoolLine樣式增強"
 L_GUI_SKINS_ATLASLOOT = "開啟AtlasLoot樣式增強"
 L_GUI_SKINS_TINY_DPS = "開啟TinyDPS樣式增強"
 L_GUI_SKINS_FACE_SHOOTER = "開啟FaceShooter樣式增強"
+L_GUI_SKINS_MAGE_NUGGETS = "開啟MageNuggets樣式增強"
+L_GUI_SKINS_PREFORM_AV = "開啟PreformAVEnabler樣式增強"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"

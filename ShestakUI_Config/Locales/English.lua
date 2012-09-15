@@ -91,6 +91,8 @@ L_GUI_SKINS_COOL_LINE = "Enable styling CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Enable styling AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Enable styling TinyDPS"
 L_GUI_SKINS_FACE_SHOOTER = "Enable styling FaceShooter"
+L_GUI_SKINS_MAGE_NUGGETS = "Enable styling MageNuggets"
+L_GUI_SKINS_PREFORM_AV = "Enable styling PreformAVEnabler"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"

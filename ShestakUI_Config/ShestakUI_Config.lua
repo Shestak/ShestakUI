@@ -120,6 +120,8 @@ local function Local(o)
 	if o == "UIConfigskinsatlasloot" then o = L_GUI_SKINS_ATLASLOOT end
 	if o == "UIConfigskinstiny_dps" then o = L_GUI_SKINS_TINY_DPS end
 	if o == "UIConfigskinsface_shooter" then o = L_GUI_SKINS_FACE_SHOOTER end
+	if o == "UIConfigskinsmage_nuggets" then o = L_GUI_SKINS_MAGE_NUGGETS end
+	if o == "UIConfigskinspreform_av" then o = L_GUI_SKINS_PREFORM_AV end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end

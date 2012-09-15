@@ -94,6 +94,8 @@ L_GUI_SKINS_COOL_LINE = "Activer la personnalisation pour CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Activer la personnalisation pour AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Activer la personnalisation pour TinyDPS"
 L_GUI_SKINS_FACE_SHOOTER = "Activer la personnalisation pour FaceShooter"
+L_GUI_SKINS_MAGE_NUGGETS = "Activer la personnalisation pour MageNuggets"
+L_GUI_SKINS_PREFORM_AV = "Activer la personnalisation pour PreformAVEnabler"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"

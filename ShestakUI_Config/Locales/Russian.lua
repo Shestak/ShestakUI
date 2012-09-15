@@ -94,6 +94,8 @@ L_GUI_SKINS_COOL_LINE = "Включить стилизацию CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Включить стилизацию AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Включить стилизацию TinyDPS"
 L_GUI_SKINS_FACE_SHOOTER = "Включить стилизацию FaceShooter"
+L_GUI_SKINS_MAGE_NUGGETS = "Включить стилизацию MageNuggets"
+L_GUI_SKINS_PREFORM_AV = "Включить стилизацию PreformAVEnabler"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"
