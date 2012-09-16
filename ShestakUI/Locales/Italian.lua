@@ -55,10 +55,10 @@ L_MISC_ONECLICK_CANCEL = "Shift + click sul destro per cancellare l'oggetto sele
 L_MISC_UI_OUTDATED = "La tua versione della ShestakUI non è aggiornata: puoi scaricare la nuova versione da www.shestak.org."
 L_MISC_HEADER_MARK = "Marchi d'incursione al passaggio del mouse"
 L_MISC_BINDER_OPEN = "Assegnazione pulsanti mouse"
-L_MISC_MOUNTS_GROUND = "Ground" -- Needs review
-L_MISC_MOUNTS_FLYING = "Flying" -- Needs review
-L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground" -- Needs review
-L_MISC_MOUNTS_SWIMMING = "Swimming" -- Needs review
+L_MISC_MOUNTS_GROUND = "Terrestre"
+L_MISC_MOUNTS_FLYING = "Volante"
+L_MISC_MOUNTS_FLYINGGROUND = "Volante e Terrestre"
+L_MISC_MOUNTS_SWIMMING = "Acquatica"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Sciogli il gruppo"
@@ -331,7 +331,7 @@ L_STATS_IGNORED_ITEMS = "Lista degli oggetti attualmente ignorati."
 L_STATS_TOGGLE_TIME = "L'orario 'locale/reame' e quello '24 ore' possono essere attivati con le impostazioni orologio."
 L_STATS_LOCATION = "Località/Coordinate"
 L_STATS_MEMORY = "Memoria"
-L_STATS_ON = "Attivo"
+L_STATS_ON = "Acceso"
 L_STATS_OTHER_OPTIONS = "Altre opzioni potranno essere configurate tra %s"
 L_STATS_PLAYED_LEVEL = "Tempo giocato a questo livello"
 L_STATS_PLAYED_SESSION = "Tempo giocato in questa sessione"
