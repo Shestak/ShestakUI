@@ -332,6 +332,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(78675),	-- Solar Beam
 			-- Hunter
 			SpellName(3355),	-- Freezing Trap
+			SpellName(117526),	-- Binding Shot
 			SpellName(1513),	-- Scare Beast
 			SpellName(19503),	-- Scatter Shot
 			SpellName(34490),	-- Silence Shot
