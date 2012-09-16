@@ -120,6 +120,10 @@ local function Local(o)
 	if o == "UIConfigskinsatlasloot" then o = L_GUI_SKINS_ATLASLOOT end
 	if o == "UIConfigskinstiny_dps" then o = L_GUI_SKINS_TINY_DPS end
 	if o == "UIConfigskinsface_shooter" then o = L_GUI_SKINS_FACE_SHOOTER end
+	if o == "UIConfigskinsmage_nuggets" then o = L_GUI_SKINS_MAGE_NUGGETS end
+	if o == "UIConfigskinspreform_av" then o = L_GUI_SKINS_PREFORM_AV end
+	if o == "UIConfigskinsnpcscan" then o = L_GUI_SKINS_NPCSCAN end
+	if o == "UIConfigskinsvanaskos" then o = L_GUI_SKINS_VANASKOS end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end
@@ -307,6 +311,7 @@ local function Local(o)
 	if o == "UIConfigactionbarsplit_bars" then o = L_GUI_ACTIONBAR_SPLIT_BARS end
 	if o == "UIConfigactionbarclasscolor_border" then o = L_GUI_ACTIONBAR_CLASSCOLOR_BORDER end
 	if o == "UIConfigactionbartoggle_mode" then o = L_GUI_ACTIONBAR_TOGGLE_MODE end
+	if o == "UIConfigactionbarhide_highlight" then o = L_GUI_ACTIONBAR_HIDE_HIGHLIGHT end
 	if o == "UIConfigactionbarbottombars" then o = L_GUI_ACTIONBAR_BOTTOMBARS end
 	if o == "UIConfigactionbarrightbars" then o = L_GUI_ACTIONBAR_RIGHTBARS end
 	if o == "UIConfigactionbarrightbars_mouseover" then o = L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER end
@@ -1019,7 +1024,7 @@ do
 		subtitle2:SetWidth(580)
 		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
 		subtitle2:SetJustifyH("LEFT")
-		subtitle2:SetText("AcidWeb, Aezay, Affli, Ailae, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Camealion, Chiril, CrusaderHeimdall, Cybey, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Woffle of Dark Iron, Wrug, Xuerian, Yleaf, Zork.")
+		subtitle2:SetText("AcidWeb, Aezay, Affli, Ailae, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Camealion, Chiril, CrusaderHeimdall, Cybey, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haleth, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Woffle of Dark Iron, Wrug, Xuerian, Yleaf, Zork.")
 
 		local title3 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)

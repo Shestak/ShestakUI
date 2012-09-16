@@ -55,6 +55,10 @@ L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item witho
 L_MISC_UI_OUTDATED = "Sua verso do ShestakUI est desatualizada. Voc pode baixar a verso mais recente www.shestak.org"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons"
 L_MISC_BINDER_OPEN = "Mouse Bindings"
+L_MISC_MOUNTS_GROUND = "Ground"
+L_MISC_MOUNTS_FLYING = "Flying"
+L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground"
+L_MISC_MOUNTS_SWIMMING = "Swimming"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disband Group"

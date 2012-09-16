@@ -138,9 +138,9 @@ LPSTAT_CONFIG = {
 			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery [mastery]				Expertise% [expertise]
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
 			--   Ranged Haste% [rangedhaste]	Spell Haste% [spellhaste]		Melee Crit% [meleecrit]			Ranged Crit% [rangedcrit]
-			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]
+			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				MP5 I5SR [manaregen]
 			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Combat table Coverage% [blockcap]
-			--   Avoidance% [avoidance]			MP5 I5SR [manaregen]			Armor Value [armor]				Resilience [resilience]
+			--   Avoidance% [avoidance]			Armor Value [armor]				Resilience [resilience]
 		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
 		spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%", -- Spec #2 string
 		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
@@ -152,7 +152,6 @@ LPSTAT_CONFIG = {
 		anchor_frame = "Stats", anchor_to = "topleft", anchor_from = "bottomleft",
 		x_off = 0, y_off = -5,
 	},
-	-- New block
 	Helm = {
 		enabled = C.toppanel.enable,
 		fmt = class"H: ".."%s", -- "Helm"

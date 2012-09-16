@@ -94,6 +94,10 @@ L_GUI_SKINS_COOL_LINE = "Attiva il restyling di CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Attiva il restyling di AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Attiva il restyling di TinyDPS"
 L_GUI_SKINS_FACE_SHOOTER = "Attiva il restyling di FaceShooter"
+L_GUI_SKINS_MAGE_NUGGETS = "Attiva il restyling di MageNuggets"
+L_GUI_SKINS_PREFORM_AV = "Attiva il restyling di PreformAVEnabler"
+L_GUI_SKINS_NPCSCAN = "Attiva il restyling di NPCScan"
+L_GUI_SKINS_VANASKOS = "Attiva il restyling di VanasKoS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"
@@ -274,6 +278,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "Spazio tra gli scomparti"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Dividi la quinta barra in 2 barre da 6 scomparti ciascuna"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Colora i bordi degli scomparti con i colori delle classi"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Attiva la modalità a scomparsa"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Numero delle barre delle azioni in basso (1, 2 o 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Numero di barre delle azioni sulla destra (0, 1, 2 o 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barre sulla destra al passaggio del mouse"

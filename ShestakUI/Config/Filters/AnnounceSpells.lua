@@ -15,6 +15,7 @@ if C.announcements.spells == true then
 		6199,	-- Raise Ally
 		20707,	-- Soulstone
 		110309,	-- Symbiosis
+		2908,	-- Soothe
 	}
 end
 

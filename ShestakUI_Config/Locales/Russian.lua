@@ -94,6 +94,10 @@ L_GUI_SKINS_COOL_LINE = "Включить стилизацию CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Включить стилизацию AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Включить стилизацию TinyDPS"
 L_GUI_SKINS_FACE_SHOOTER = "Включить стилизацию FaceShooter"
+L_GUI_SKINS_MAGE_NUGGETS = "Включить стилизацию MageNuggets"
+L_GUI_SKINS_PREFORM_AV = "Включить стилизацию PreformAVEnabler"
+L_GUI_SKINS_NPCSCAN = "Включить стилизацию NPCScan"
+L_GUI_SKINS_VANASKOS = "Включить стилизацию VanasKoS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"
@@ -274,6 +278,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "Расстояние между кнопками
 L_GUI_ACTIONBAR_SPLIT_BARS = "Разделить пятую панель на две панели по 6 кнопок"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Окрашивать края кнопок в цвет класса"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Включить режим переключения панелей"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Скрывать подсветку кнопок"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Количество нижних панелей (1, 2 или 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Количество правых панелей (0, 1, 2 или 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Правые панели команд по наведению курсора"

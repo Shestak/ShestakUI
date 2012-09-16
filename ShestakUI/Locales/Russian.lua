@@ -55,6 +55,10 @@ L_MISC_ONECLICK_CANCEL = "Зажмите Shift и щелкните правой 
 L_MISC_UI_OUTDATED = "Ваша версия ShestakUI устарела. Вы можете скачать последнюю версию с www.shestak.org"
 L_MISC_HEADER_MARK = "Метки по наведению курсора"
 L_MISC_BINDER_OPEN = "Назначения мыши"
+L_MISC_MOUNTS_GROUND = "Наземные"
+L_MISC_MOUNTS_FLYING = "Воздушные"
+L_MISC_MOUNTS_FLYINGGROUND = "Наземные и Воздушные"
+L_MISC_MOUNTS_SWIMMING = "Подводные"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"

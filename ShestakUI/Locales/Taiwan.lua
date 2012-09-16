@@ -55,6 +55,10 @@ L_MISC_ONECLICK_CANCEL = "Shift+左鍵,不彈出確認窗口直接取消選擇�
 L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
 L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"
+L_MISC_MOUNTS_GROUND = "Ground" -- Needs review
+L_MISC_MOUNTS_FLYING = "Flying" -- Needs review
+L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground" -- Needs review
+L_MISC_MOUNTS_SWIMMING = "Swimming" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
@@ -479,7 +483,7 @@ L_EXTRA_ZONEACHID = {
 	-- Pandaria
 	["翠玉林"]							= {X = 6351, A = 6300, H = 6534},
 	["四風峽"]							= {X = 6969, A = 6301, H = 6301},
-	["喀撒朗蠻荒"]						= {X = 6975, A = 6535, H = 6536},
+	--["喀撒朗蠻荒"]						= {X = 6975, A = 6535, H = 6536},
 	["崑萊峰"]							= {X = 6976, A = 6537, H = 6538},
 	["螳螂荒原"]							= {X = 6977, A = 6539, H = 6539},
 	["悚然荒野"]							= {X = 6978, A = 6540, H = 6540},

@@ -1,4 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
+if IsAddOnLoaded("MoveAnything") then return end
 
 ----------------------------------------------------------------------------------------
 --	Unregister some events

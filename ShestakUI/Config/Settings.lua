@@ -124,6 +124,10 @@ C["skins"] = {
 	["atlasloot"] = true,						-- AtlasLoot skin
 	["tiny_dps"] = false,						-- TinyDPS skin
 	["face_shooter"] = false,					-- FaceShooter skin
+	["mage_nuggets"] = false,					-- MageNuggets skin
+	["preform_av"] = false,						-- PreformAVEnabler skin
+	["npcscan"] = false,						-- NPCScan skin
+	["vanaskos"] = false,						-- VanasKoS skin
 }
 
 ----------------------------------------------------------------------------------------
@@ -357,6 +361,7 @@ C["actionbar"] = {
 	["split_bars"] = true,						-- Split the fifth bar on two bars on 6 buttons
 	["classcolor_border"] = false,				-- Enable classcolor border
 	["toggle_mode"] = true,						-- Enable toggle mode
+	["hide_highlight"] = false,					-- Hide proc highlight
 	-- Bottom bars
 	["bottombars"] = 3,							-- Number of action bars on the bottom
 	-- Right bars

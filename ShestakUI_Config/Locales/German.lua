@@ -94,6 +94,10 @@ L_GUI_SKINS_COOL_LINE = "CoolLine Design aktivieren"
 L_GUI_SKINS_ATLASLOOT = "AtlasLoot Design aktivieren"
 L_GUI_SKINS_TINY_DPS = "TinyDPS Design aktivieren"
 L_GUI_SKINS_FACE_SHOOTER = "FaceShooter Design aktivieren"
+L_GUI_SKINS_MAGE_NUGGETS = "MageNuggets Design aktivieren"
+L_GUI_SKINS_PREFORM_AV = "PreformAVEnabler Design aktivieren"
+L_GUI_SKINS_NPCSCAN = "NPCScan Design aktivieren"
+L_GUI_SKINS_VANASKOS = "VanasKoS Design aktivieren"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Kampftext"
@@ -274,6 +278,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "Buttonabstand"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Splitte die Fünfte Aktionsleiste im zwei 6 Knöpfe Leisten"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Aktionsleisten"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Aktiviere 'toggle mode'"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Anzahl der Aktionsleisten an der unteren Seite (1, 2 oder 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Anzahl der Aktionsleisten an der rechten Seite (0, 1, 2, oder 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Zeige die rechten Leisten nur bei Mouseover"

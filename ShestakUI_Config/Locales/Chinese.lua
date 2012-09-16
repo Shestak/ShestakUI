@@ -94,6 +94,10 @@ L_GUI_SKINS_COOL_LINE = "开启CoolLine样式增强"
 L_GUI_SKINS_ATLASLOOT = "开启AtlasLoot样式增强"
 L_GUI_SKINS_TINY_DPS = "开启TinyDPS样式增强"
 L_GUI_SKINS_FACE_SHOOTER = "开启FaceShooter样式增强"
+L_GUI_SKINS_MAGE_NUGGETS = "开启MageNuggets样式增强"
+L_GUI_SKINS_PREFORM_AV = "开启PreformAVEnabler样式增强"
+L_GUI_SKINS_NPCSCAN = "开启NPCScan样式增强"
+L_GUI_SKINS_VANASKOS = "开启VanasKoS样式增强"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "战斗文字"
@@ -274,6 +278,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "按钮间隔"
 L_GUI_ACTIONBAR_SPLIT_BARS = "把第五动作条分成两个有六个位置的小动作条"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "给所有的按钮使用职业颜色边框"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "开启动作条切换按钮"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部动作条数目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右侧动作条数目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "鼠标划过时显示右侧动作条"

@@ -75,7 +75,9 @@ elseif T.class == "HUNTER" then
 		T.aoespam[118459] = true	-- Beast Cleave
 		T.aoespam[120699] = true	-- Lynx Rush
 		T.aoespam[131900] = true	-- A Murder of Crows
-		T.aoespam[34655] = true		-- Deadly Poison (Snake)
+		T.aoespam[34655] = true		-- Deadly Poison (Trap)
+		T.aoespam[93433] = true		-- Burrow Attack (Worm)
+		T.aoespam[92380] = true		-- Froststorm Breath (Chimaera)
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
@@ -126,6 +128,9 @@ elseif T.class == "PALADIN" then
 		T.aoespam[85222] = true		-- Light of Dawn
 		T.aoespam[82327] = true		-- Holy Radiance
 		T.aoespam[121129] = true	-- Daybreak
+		T.aoespam[114163] = true	-- Eternal Flame
+		T.aoespam[119952] = true	-- Arcing Light
+		T.aoespam[114852] = true	-- Holy Prism
 		-- Damaging spells
 		T.aoespam[81297] = true		-- Consecration
 		T.aoespam[119072] = true	-- Holy Wrath
@@ -135,7 +140,11 @@ elseif T.class == "PALADIN" then
 		T.aoespam[101423] = true	-- Seal of Righteousness
 		T.aoespam[88263] = true		-- Hammer of the Righteous
 		T.aoespam[31935] = true		-- Avenger's Shield
+		T.aoespam[114916] = true	-- Execution Sentence
 		T.aoespam[96172] = true		-- Hand of Light (Mastery)
+	end
+	if C.combattext.healing then
+		T.healfilter[115547] = true	-- Glyph of Avenging Wrath
 	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then

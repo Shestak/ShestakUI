@@ -219,12 +219,16 @@
 	<Script file="Modules\Skins\DXE.lua"/>
 	<Script file="Modules\Skins\FaceShooter.lua"/>
 	<Script file="Modules\Skins\FlyoutButtonCustom.lua"/>
+	<Script file="Modules\Skins\MageNuggets.lua"/>
+	<Script file="Modules\Skins\NPCScan.lua"/>
 	<Script file="Modules\Skins\NugRunning.lua"/>
 	<Script file="Modules\Skins\Omen.lua"/>
 	<Script file="Modules\Skins\Ovale.lua"/>
 	<Script file="Modules\Skins\PallyPower.lua"/>
+	<Script file="Modules\Skins\PreformAVEnabler.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
 	<Script file="Modules\Skins\TinyDPS.lua"/>
+	<Script file="Modules\Skins\VanasKoS.lua"/>
 
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Core\Movers.lua"/>
