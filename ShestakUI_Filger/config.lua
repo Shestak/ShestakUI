@@ -553,6 +553,8 @@ Filger_Spells = {
 			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spirit Mend
 			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Posthaste
+			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -674,6 +676,8 @@ Filger_Spells = {
 			{spellID = 34490, filter = "CD"},
 			-- Scatter Shot
 			{spellID = 19503, filter = "CD"},
+			-- Binding Shot
+			{spellID = 117526, filter = "CD"},
 			-- Explosive Shot
 			{spellID = 53301, filter = "CD"},
 			-- Kill Shot
@@ -2715,6 +2719,8 @@ Filger_Spells = {
 			{spellID = 13159, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Intimidation
 			{spellID = 24394, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Binding Shot
+			{spellID = 117526, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap
 			{spellID = 3355, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Scare Beast
@@ -3026,9 +3032,13 @@ Filger_Spells = {
 			{spellID = 5118, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Deterrence
 			{spellID = 19263, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Posthaste
+			{spellID = 118922, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Intimidation
 			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Binding Shot
+			{spellID = 117526, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap
 			{spellID = 3355, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Scare Beast

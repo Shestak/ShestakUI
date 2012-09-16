@@ -24,6 +24,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(99)] = 4,		-- Disorienting Roar
 		-- Hunter
 		[GetSpellInfo(24394)] = 4,	-- Intimidation
+		[GetSpellInfo(117526)] = 4,	-- Binding Shot
 		[GetSpellInfo(3355)] = 4,	-- Freezing Trap
 		[GetSpellInfo(19503)] = 4,	-- Scatter Shot
 		[GetSpellInfo(19386)] = 4,	-- Wyvern Sting
