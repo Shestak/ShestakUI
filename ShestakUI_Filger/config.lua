@@ -535,6 +535,8 @@ Filger_Spells = {
 			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spirit Mend
 			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Posthaste
+			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -3012,6 +3014,8 @@ Filger_Spells = {
 			{spellID = 5118, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Deterrence
 			{spellID = 19263, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Posthaste
+			{spellID = 118922, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Intimidation
 			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
