@@ -8,7 +8,8 @@ local buttons = {
 	"QueueStatusMinimapButton",
 	"MiniMapTrackingButton",
 	"MiniMapMailFrame",
-	"HelpOpenTicketButton"
+	"HelpOpenTicketButton",
+	"GatherMatePin"
 }
 
 local function SkinButton(f)
