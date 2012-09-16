@@ -15,6 +15,7 @@ local spells = {
 	-- DRUID
 	[GetSpellInfo(78674)] = L_PLANNER_DRUID_1,			-- Starsurge
 	[GetSpellInfo(5221)] = L_PLANNER_DRUID_2,			-- Shred
+	[GetSpellInfo(102795)] = L_PLANNER_DRUID_3,			-- Bear Hug
 	[GetSpellInfo(8936)] = L_PLANNER_DRUID_4,			-- Regrowth
 	-- HUNTER
 	[GetSpellInfo(34026)] = L_PLANNER_HUNTER_1,			-- Kill Command
@@ -66,10 +67,11 @@ local buffs = { -- Credits: Proditor, Rinu
 	-- DRUID
 	[GetSpellInfo(24858)] = L_PLANNER_DRUID_1,			-- Moonkin Form
 	[GetSpellInfo(52610)] = L_PLANNER_DRUID_2,			-- Savage Roar
-	[GetSpellInfo(62606)] = L_PLANNER_DRUID_3,			-- Savage Defense
+	[GetSpellInfo(132402)] = L_PLANNER_DRUID_3,			-- Savage Defense
+	[GetSpellInfo(33763)] = L_PLANNER_DRUID_4,			-- Lifebloom
 	[GetSpellInfo(48438)] = L_PLANNER_DRUID_4,			-- Wild Growth
 	-- HUNTER
-	[GetSpellInfo(19615)] = L_PLANNER_HUNTER_1,			-- Frenzy
+	[GetSpellInfo(82692)] = L_PLANNER_HUNTER_1,			-- Focus Fire
 	[GetSpellInfo(53220)] = L_PLANNER_HUNTER_2,			-- Steady Focus
 	[GetSpellInfo(56453)] = L_PLANNER_HUNTER_3,			-- Lock and Load
 	-- MAGE

@@ -253,7 +253,7 @@ Filger_Spells = {
 			-- Ironbark
 			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Savage Defense
-			{spellID = 62606, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 132402, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Frenzied Regeneration
 			{spellID = 124769, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Roar
