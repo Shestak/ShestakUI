@@ -250,8 +250,6 @@ Filger_Spells = {
 			{spellID = 106922, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ironbark
-			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Savage Defense
 			{spellID = 132402, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Frenzied Regeneration
@@ -2620,6 +2618,8 @@ Filger_Spells = {
 			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Rallying Cry
 			{spellID = 97462, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Ironbark
+			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
 			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
