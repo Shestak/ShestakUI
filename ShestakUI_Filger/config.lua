@@ -1225,10 +1225,6 @@ Filger_Spells = {
 			-- Buffs
 			-- Infusion of Light
 			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Purpose
-			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Daybreak
-			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ancient Power
 			{spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bastion of Glory
@@ -1237,10 +1233,14 @@ Filger_Spells = {
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Alabaster Shield
 			{spellID = 121467, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Purpose
+			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Ancient Kings
 			{spellID = 86678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Daybreak
+			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
 
