@@ -61,14 +61,13 @@ if T.author == true then
 	C["announcements"].says_thanks = true
 	C["announcements"].feasts = true
 	C["announcements"].portals = true
-	C["automation"].accept_invite = true
 	C["automation"].accept_quest = true
+	C["automation"].auto_collapse = true
 	C["automation"].skip_cinematic = true
 	C["automation"].auto_role = true
 	C["automation"].tab_binder = true
 	C["skins"].blizzard_frames = true
 	C["combattext"].crit_postfix = ""
-	C["combattext"].crit_prefix = ""
 	C["combattext"].dk_runes = false
 	C["combattext"].dispel = false
 	C["combattext"].interrupt = false
@@ -111,6 +110,9 @@ if T.author == true then
 		if T.class == "PRIEST" then
 			C["announcements"].lightwell = true
 		end
+	end
+	if T.realm ~= "Дракономор" then
+		C["automation"].accept_invite = true
 	end
 end
 

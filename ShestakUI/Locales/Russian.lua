@@ -55,6 +55,10 @@ L_MISC_ONECLICK_CANCEL = "Зажмите Shift и щелкните правой 
 L_MISC_UI_OUTDATED = "Ваша версия ShestakUI устарела. Вы можете скачать последнюю версию с www.shestak.org"
 L_MISC_HEADER_MARK = "Метки по наведению курсора"
 L_MISC_BINDER_OPEN = "Назначения мыши"
+L_MISC_MOUNTS_GROUND = "Наземные"
+L_MISC_MOUNTS_FLYING = "Воздушные"
+L_MISC_MOUNTS_FLYINGGROUND = "Наземные и Воздушные"
+L_MISC_MOUNTS_SWIMMING = "Подводные"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"
@@ -125,10 +129,8 @@ L_CHAT_BATTLEGROUND = "ПБ"
 L_CHAT_BATTLEGROUND_LEADER = "ЛПБ"
 L_CHAT_OFFICER = "О"
 L_CHAT_PET_BATTLE = "БП"
-L_CHAT_COME_ONLINE = "входит в игровой мир."
-L_CHAT_GONE_OFFLINE = "выходит из игрового мира."
-L_CHAT_COME_ONLINE_COLOR = "|cff298F00входит|r в игровой мир!"
-L_CHAT_GONE_OFFLINE_COLOR = "|cffff0000выходит|r из игрового мира!"
+L_CHAT_COME_ONLINE = "|cff298F00входит|r в игровой мир."
+L_CHAT_GONE_OFFLINE = "|cffff0000выходит|r из игрового мира."
 
 -- Errors frame
 L_ERRORFRAME_L = "Щелкните, чтобы посмотреть ошибки."
@@ -271,7 +273,7 @@ L_POPUP_SETTINGS_DBM = "Необходимо изменить позиции э�
 L_POPUP_SETTINGS_DXE = "Необходимо изменить позиции элементов DXE."
 L_POPUP_SETTINGS_BW = "Необходимо изменить позиции элементов BigWigs."
 L_POPUP_ARMORY = "Оружейная"
-L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
+L_POPUP_TALENT_FIX = "Произошла ошибка Blizzard, которая препятствует вам сменить таланты. К сожалению, мы не можем ничего сделать для решения проблемы в этом патче; пожалуйста, перезагрузите свой UI и попробуйте ещё раз."
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Добро пожаловать в ShestakUI "

@@ -130,11 +130,24 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc("AchievementButton_DisplayAchievement", function(frame)
-		if frame.accountWide and frame.bg3 then
-			frame.bg3:SetTexture(ACHIEVEMENTUI_BLUEBORDER_R, ACHIEVEMENTUI_BLUEBORDER_G, ACHIEVEMENTUI_BLUEBORDER_B)
-		elseif frame.bg3 then
-			frame.bg3:SetTexture(unpack(C.media.border_color))
+	hooksecurefunc("AchievementButton_DisplayAchievement", function(frame, category, achievement)
+		local _, _, _, completed = GetAchievementInfo(category, achievement)
+		if completed then
+			if frame.accountWide and frame.bg3 then
+				frame.bg3:SetTexture(0.1, 0.6, 0.8)
+				frame.label:SetTextColor(0.1, 0.6, 0.8)
+			elseif frame.bg3 then
+				frame.bg3:SetTexture(unpack(C.media.border_color))
+				frame.label:SetTextColor(1, 0.82, 0)
+			end
+		else
+			if frame.accountWide and frame.bg3 then
+				frame.bg3:SetTexture(0.1, 0.6, 0.8)
+				frame.label:SetTextColor(0.6, 0.6, 0.6)
+			elseif frame.bg3 then
+				frame.bg3:SetTexture(unpack(C.media.border_color))
+				frame.label:SetTextColor(0.6, 0.6, 0.6)
+			end
 		end
 	end)
 

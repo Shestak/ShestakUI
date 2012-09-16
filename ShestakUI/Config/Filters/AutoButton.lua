@@ -7,6 +7,16 @@ if C.misc.quest_auto_button ~= true then return end
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 T.ABItems = {
+	-- Daily Quests
+	38689,	-- Chicken Net
+	63351,	-- Tahret Dynasty Mallet
+	52507,	-- Stardust No.2
+	69240,	-- Enchanted Salve
+	69235,	-- Fang of the Wolf
+	71978,	-- Darkmoon Bandage
+	69981,	-- Ironforge Rations
+	62829,	-- Magnetized Scrap Collector
+	-- Other
 	39213,	-- Massive Seaforium Charge (Strand of the Ancients)
 	46847,	-- Seaforium Bombs (Isle of Conquest)
 	47030,	-- Huge Seaforium Bombs (Isle of Conquest)
@@ -14,14 +24,6 @@ T.ABItems = {
 	37860,	-- Ruby Drake (Occulus)
 	37815,	-- Emerald Drake (Occulus)
 	37859,	-- Amber Essence (Occulus)
-	38689,	-- Chicken Net (Daily Quest)
-	63351,	-- Tahret Dynasty Mallet (Daily Quest)
-	52507,	-- Stardust No.2 (Daily Quest)
-	69240,	-- Enchanted Salve (Daily Quest)
-	69235,	-- Fang of the Wolf (Daily Quest)
-	71978,	-- Darkmoon Bandage (Daily Quest)
-	69981,	-- Ironforge Rations (Daily Quest)
-	62829,	-- Magnetized Scrap Collector (Daily Quest)
 	45072,	-- Brightly Colored Egg (Noblegarden)
 }
 

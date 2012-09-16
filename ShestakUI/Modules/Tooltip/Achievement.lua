@@ -35,9 +35,13 @@ local function hookSetHyperlink(tooltip, refString)
 	_, _, _, completed, month, day, year, _, _, _, _, _, wasEarnedByMe, earnedBy = GetAchievementInfo(achievementID)
 
 	if completed then
-		if year < 10 then year = "0" .. year end
+		if year < 10 then year = "0"..year end
 
-		tooltip:AddLine(L_TOOLTIP_ACH_COMPLETE .. month .. "/" .. day .. "/" .. year, 0, 1, 0)
+		if T.client == "ruRU" then
+			tooltip:AddLine(L_TOOLTIP_ACH_COMPLETE..day.."/"..month.."/"..year, 0, 1, 0)
+		else
+			tooltip:AddLine(L_TOOLTIP_ACH_COMPLETE..month.."/"..day.."/"..year, 0, 1, 0)
+		end
 
 		if earnedBy then
 			tooltip:AddLine(format(ACHIEVEMENT_EARNED_BY, earnedBy))
@@ -62,7 +66,7 @@ local function hookSetHyperlink(tooltip, refString)
 						output[a].color = "GREEN"
 					else
 						if quantity < reqQuantity and reqQuantity > 1 then
-							output[a].text = name .. " (" .. quantity .. "/" .. reqQuantity .. ")"
+							output[a].text = name.." ("..quantity.."/"..reqQuantity..")"
 							output[a].color = "GRAY"
 						else
 							output[a].text = name

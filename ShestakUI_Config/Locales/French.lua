@@ -63,6 +63,7 @@ L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
 L_GUI_AUTOMATION_ACCEPT_INVITE = "Accepter automatiquement les invitations"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Décliner les duels automatiquement"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Accepter les quêtes automatiquement"
+L_GUI_AUTOMATION_AUTO_COLLAPSE = "Auto collapse WatchFrame in instance" -- Needs review
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
@@ -94,6 +95,10 @@ L_GUI_SKINS_COOL_LINE = "Activer la personnalisation pour CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Activer la personnalisation pour AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Activer la personnalisation pour TinyDPS"
 L_GUI_SKINS_FACE_SHOOTER = "Activer la personnalisation pour FaceShooter"
+L_GUI_SKINS_MAGE_NUGGETS = "Activer la personnalisation pour MageNuggets"
+L_GUI_SKINS_PREFORM_AV = "Activer la personnalisation pour PreformAVEnabler"
+L_GUI_SKINS_NPCSCAN = "Activer la personnalisation pour NPCScan"
+L_GUI_SKINS_VANASKOS = "Activer la personnalisation pour VanasKoS"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"
@@ -282,6 +287,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacement des boutons"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordure de boutons"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Active le mode pour bloquer les combinaisons des barres d'action"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Nombre de barres d'action en bas (1, 2 ou 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Nombre de barres d'action à droite (0, 1, 2 ou 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barres de droite en 'mouseover'"

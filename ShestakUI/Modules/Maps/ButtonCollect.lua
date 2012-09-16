@@ -14,13 +14,20 @@ local BlackList = {
 
 local buttons = {}
 local button = CreateFrame("Frame", "ButtonCollectFrame", UIParent)
+local line = math.ceil(C.minimap.size / 20)
 
 local function PositionAndStyle()
 	button:Size(20)
 	button:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
 	for i =1, #buttons do
 		buttons[i]:ClearAllPoints()
-		buttons[i]:SetPoint("TOP", button, "TOP", 0, -((i - 1) * 21))
+		if i == 1 then
+			buttons[i]:SetPoint("TOP", button, "TOP", 0, 0)
+		elseif i == line then
+			buttons[i]:SetPoint("TOPRIGHT", buttons[1], "TOPLEFT", -1, 0)
+		else
+			buttons[i]:SetPoint("TOP", buttons[i-1], "BOTTOM", 0, -1)
+		end
 		buttons[i].ClearAllPoints = T.dummy
 		buttons[i].SetPoint = T.dummy
 	end

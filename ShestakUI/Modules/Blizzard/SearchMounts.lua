@@ -151,7 +151,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			info.keepShownOnClick = true
 			info.isNotRadio = true
 
-			info.text = "Ground"
+			info.text = L_MISC_MOUNTS_GROUND
 			info.checked = filterFlags.ground
 			info.func = function(...)
 				local _, _, _, enabled = ...
@@ -160,7 +160,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			end
 			UIDropDownMenu_AddButton(info)
 
-			info.text = "Flying"
+			info.text = L_MISC_MOUNTS_FLYING
 			info.checked = filterFlags.flying
 			info.func = function(...)
 				local _, _, _, enabled = ...
@@ -169,7 +169,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			end
 			UIDropDownMenu_AddButton(info)
 
-			info.text = "Flying & Ground"
+			info.text = L_MISC_MOUNTS_FLYINGGROUND
 			info.checked = filterFlags.combined
 			info.func = function(...)
 				local _, _, _, enabled = ...
@@ -178,7 +178,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			end
 			UIDropDownMenu_AddButton(info)
 
-			info.text = "Swimming"
+			info.text = L_MISC_MOUNTS_SWIMMING
 			info.checked = filterFlags.swimming
 			info.func = function(...)
 				local _, _, _, enabled = ...

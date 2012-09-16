@@ -55,6 +55,10 @@ L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item witho
 L_MISC_UI_OUTDATED = "당신의 ShestakUI 버전이 구버전입니다. 당신은 www.shestak.org 에서 최신 버전을 다운로드하실 수 있습니다"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons"
 L_MISC_BINDER_OPEN = "Mouse Bindings"
+L_MISC_MOUNTS_GROUND = "Ground"
+L_MISC_MOUNTS_FLYING = "Flying"
+L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground"
+L_MISC_MOUNTS_SWIMMING = "Swimming"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disband Group"
@@ -125,10 +129,8 @@ L_CHAT_BATTLEGROUND = "BG"
 L_CHAT_BATTLEGROUND_LEADER = "BGL"
 L_CHAT_OFFICER = "O"
 L_CHAT_PET_BATTLE = "PB"
-L_CHAT_COME_ONLINE = "has come online."
-L_CHAT_GONE_OFFLINE = "has gone offline."
-L_CHAT_COME_ONLINE_COLOR = "is now |cff298F00online|r!"
-L_CHAT_GONE_OFFLINE_COLOR = "is now |cffff0000offline|r!"
+L_CHAT_COME_ONLINE = "has come |cff298F00online|r."
+L_CHAT_GONE_OFFLINE = "has gone |cffff0000offline|r."
 
 -- Errors frame
 L_ERRORFRAME_L = "Click to view errors."

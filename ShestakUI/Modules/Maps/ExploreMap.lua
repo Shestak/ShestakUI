@@ -122,6 +122,13 @@ function XLM_UD(self, elapsed)
 		GameTooltip:FadeOut()
 	end
 
+	if C.tooltip.shift_modifer ~= true then
+		WorldMapFrame:SetScript("OnHide", function(self)
+			GameTooltip:Hide()
+			CancelEmote()
+		end)
+	end
+
 	if fileName then
 		WorldMapHighlight:SetDesaturated(true)
 		if line1 ~= nil then

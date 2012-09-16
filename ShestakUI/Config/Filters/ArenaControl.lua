@@ -27,7 +27,6 @@ T.ArenaControl = function()
 		[GetSpellInfo(3355)] = 4,	-- Freezing Trap
 		[GetSpellInfo(19503)] = 4,	-- Scatter Shot
 		[GetSpellInfo(19386)] = 4,	-- Wyvern Sting
-		[GetSpellInfo(50519)] = 4,	-- Sonic Blast (Bat)
 		[GetSpellInfo(90337)] = 4,	-- Bad Manner (Monkey)
 		-- Mage
 		[GetSpellInfo(44572)] = 4,	-- Deep Freeze
@@ -45,10 +44,12 @@ T.ArenaControl = function()
 		[GetSpellInfo(853)] = 4,	-- Hammer of Justice
 		[GetSpellInfo(105593)] = 4,	-- Fist of Justice
 		[GetSpellInfo(20066)] = 4,	-- Repentance
+		[GetSpellInfo(105421)] = 4,	-- Blinding Light
 		-- Priest
-		[GetSpellInfo(64044)] = 4,	-- Psychic Horror
 		[GetSpellInfo(605)] = 4,	-- Dominate Mind
 		[GetSpellInfo(8122)] = 4,	-- Psychic Scream
+		[GetSpellInfo(113792)] = 4,	-- Psychic Terror
+		[GetSpellInfo(64044)] = 4,	-- Psychic Horror
 		-- Rogue
 		[GetSpellInfo(408)] = 4,	-- Kidney Shot
 		[GetSpellInfo(1833)] = 4,	-- Cheap Shot
@@ -82,47 +83,60 @@ T.ArenaControl = function()
 		[GetSpellInfo(1330)] = 4,	-- Garrote - Silence
 		[GetSpellInfo(24259)] = 4,	-- Spell Lock (Felhunter)
 		[GetSpellInfo(115782)] = 4,	-- Optical Blast (Observer)
+		[GetSpellInfo(18498)] = 4,	-- Gag Order (Warrior glyph)
 
 		-- Roots
+		[GetSpellInfo(96294)] = 3,	-- Chains of Ice
 		[GetSpellInfo(339)] = 3,	-- Entangling Roots
-		[GetSpellInfo(122)] = 3,	-- Frost Nova
-		[GetSpellInfo(87194)] = 3,	-- Glyph of Mind Blast
-		[GetSpellInfo(33395)] = 3,	-- Freeze
-		[GetSpellInfo(111340)] = 3,	-- Ice Ward
+		[GetSpellInfo(102359)] = 3,	-- Mass Entanglement
 		[GetSpellInfo(45334)] = 3,	-- Immobilized
 		[GetSpellInfo(19185)] = 3,	-- Entrapment
 		[GetSpellInfo(50245)] = 3,	-- Pin (Crab)
-		[GetSpellInfo(54706)] = 3,	-- Venom Web Spray (Silithid)
 		[GetSpellInfo(4167)] = 3,	-- Web (Spider)
+		[GetSpellInfo(54706)] = 3,	-- Venom Web Spray (Silithid)
+		[GetSpellInfo(90327)] = 3,	-- Lock Jaw (Dog)
+		[GetSpellInfo(128405)] = 3,	-- Narrow Escape
+		[GetSpellInfo(122)] = 3,	-- Frost Nova
+		[GetSpellInfo(33395)] = 3,	-- Freeze (Pet)
+		[GetSpellInfo(111340)] = 3,	-- Ice Ward
+		[GetSpellInfo(116706)] = 3,	-- Disable
+		[GetSpellInfo(87194)] = 3,	-- Glyph of Mind Blast
+		[GetSpellInfo(114404)] = 3,	-- Void Tendril's Grasp
 		[GetSpellInfo(63685)] = 3,	-- Freeze (Frozen Power)
+		[GetSpellInfo(64695)] = 3,	-- Earthgrab
+		[GetSpellInfo(107566)] = 3,	-- Staggering Shout
 
 		-- Immunities
+		[GetSpellInfo(19263)] = 2,	-- Deterrence
 		[GetSpellInfo(45438)] = 2,	-- Ice Block
 		[GetSpellInfo(642)] = 2,	-- Divine Shield
 		[GetSpellInfo(46924)] = 2,	-- Bladestorm
-		[GetSpellInfo(19263)] = 2,	-- Deterrence
 
 		-- Disarms
-		[GetSpellInfo(676)] = 1,	-- Disarm
-		[GetSpellInfo(51722)] = 1,	-- Dismantle
 		[GetSpellInfo(50541)] = 1,	-- Clench (Scorpid)
+		[GetSpellInfo(91644)] = 1,	-- Snatch (Bird of Prey)
+		[GetSpellInfo(117368)] = 1,	-- Grapple Weapon
+		[GetSpellInfo(64058)] = 1,	-- Psychic Horror (Disarm effect)
+		[GetSpellInfo(51722)] = 1,	-- Dismantle
+		[GetSpellInfo(118093)] = 1,	-- Disarm (Voidwalker/Voidlord)
+		[GetSpellInfo(676)] = 1,	-- Disarm
 
 		-- Buffs
-		[GetSpellInfo(33206)] = 1,	-- Pain Suppression
+		[GetSpellInfo(49016)] = 1,	-- Unholy Frenzy
+		[GetSpellInfo(29166)] = 1,	-- Innervate
 		[GetSpellInfo(1022)] = 1,	-- Hand of Protection
 		[GetSpellInfo(6940)] = 1,	-- Hand of Sacrifice
 		[GetSpellInfo(1044)] = 1,	-- Hand of Freedom
-		[GetSpellInfo(29166)] = 1,	-- Innervate
-		[GetSpellInfo(54428)] = 1,	-- Divine Plea
 		[GetSpellInfo(31821)] = 1,	-- Devotion Aura
+		[GetSpellInfo(54428)] = 1,	-- Divine Plea
+		[GetSpellInfo(33206)] = 1,	-- Pain Suppression
 		[GetSpellInfo(96267)] = 1,	-- Glyph of Inner Focus
 		[GetSpellInfo(8178)] = 1,	-- Grounding Totem
-		[GetSpellInfo(49016)] = 1,	-- Unholy Frenzy
 
 		-- Defense abilities
-		[GetSpellInfo(871)] = 1,	-- Shield Wall
 		[GetSpellInfo(48707)] = 1,	-- Anti-Magic Shell
-		[GetSpellInfo(31224)] = 1,	-- Cloak of Shadows
 		[GetSpellInfo(48792)] = 1,	-- Icebound Fortitude
+		[GetSpellInfo(31224)] = 1,	-- Cloak of Shadows
+		[GetSpellInfo(871)] = 1,	-- Shield Wall
 	}
 end

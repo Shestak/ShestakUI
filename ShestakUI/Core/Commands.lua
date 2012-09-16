@@ -262,21 +262,17 @@ SLASH_FSTACK3 = "/аы"
 SlashCmdList.TEST_ACHIEVEMENT = function()
 	PlaySound("LFG_Rewards")
 	AchievementFrame_LoadUI()
-	AchievementAlertFrame_ShowAlert(5780)
-	AchievementAlertFrame_ShowAlert(5000)
+	AchievementAlertFrame_ShowAlert(4912)
+	AchievementAlertFrame_ShowAlert(6193)
 	GuildChallengeAlertFrame_ShowAlert(3, 2, 5)
+	if IsAddOnLoaded("MoveAnything") then
+		CriteriaAlertFrame_ShowAlert(6301, 29918)
+		MoneyWonAlertFrame_ShowAlert(9999999)
+		LootWonAlertFrame_ShowAlert(GetItemInfo(6948), -1, 1, 100)
+	end
 	ChallengeModeAlertFrame_ShowAlert()
-	CriteriaAlertFrame_GetAlertFrame()
-	MoneyWonAlertFrame_ShowAlert(9999999)
-	LootWonAlertFrame_ShowAlert(GetItemInfo(6948), -1, 1, 100)
-
-	AlertFrame_AnimateIn(CriteriaAlertFrame1)
-	AlertFrame_AnimateIn(DungeonCompletionAlertFrame1)
 	AlertFrame_AnimateIn(ScenarioAlertFrame1)
-
 	AlertFrame_FixAnchors()
-
-	--CriteriaAlertFrame_ShowAlert(achievementID, criteriaID)
 end
 SLASH_TEST_ACHIEVEMENT1 = "/tach"
 SLASH_TEST_ACHIEVEMENT2 = "/ефср"

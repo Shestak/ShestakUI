@@ -25,7 +25,7 @@ end
 local fontstrings = setmetatable({}, {
 	__index = function(t, i)
 		local gslot = _G["Character"..i.."Slot"]
-		local fstr = gslot:CreateFontString(nil, "OVERLAY", "NumberFont_Shadow_Small")
+		local fstr = gslot:CreateFontString(nil, "OVERLAY", "SystemFont_Outline_Small")
 		fstr:SetPoint("BOTTOM", gslot, "BOTTOM", 0, 1)
 		t[i] = fstr
 		return fstr

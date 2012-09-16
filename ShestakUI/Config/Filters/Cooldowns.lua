@@ -31,6 +31,7 @@ if C.enemycooldown.enable == true then
 		[80965] = 15,	-- Skull Bash
 		[116705] = 15,	-- Spear Hand Strike
 		[34490] = 20,	-- Silencing Shot
+		[102051] = 20,	-- Frostjaw
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
 		[115781] = 24,	-- Optical Blast
@@ -45,6 +46,7 @@ if C.enemycooldown.enable == true then
 		[1499] = 30,	-- Freezing Trap
 		[107570] = 30,	-- Storm Bolt
 		[44572] = 30,	-- Deep Freeze
+		[113724] = 30,	-- Ring of Frost
 		[105593] = 30,	-- Fist of Justice
 		[5484] = 40,	-- Howl of Terror
 		[51514] = 45,	-- Hex
@@ -52,12 +54,13 @@ if C.enemycooldown.enable == true then
 		[64044] = 45,	-- Psychic Horror
 		[119381] = 45,	-- Leg Sweep
 		[853] = 60,		-- Hammer of Justice
+		[108194] = 60,	-- Asphyxiate
 		[108200] = 60,	-- Remorseless Winter
-		[2094] = 180,	-- Blind
 		-- Defense abilities
 		[48707] = 45,	-- Anti-Magic Shell
 		[8143] = 60,	-- Tremor Totem
-		[22812] = 60,	-- Barkskin
+		[46924] = 90,	-- Bladestorm
+		[19263] = 120,	-- Deterrence
 		[47585] = 120,	-- Dispersion
 		[31224] = 120,	-- Cloak of Shadows
 		[49039] = 120,	-- Lichborne
@@ -66,7 +69,6 @@ if C.enemycooldown.enable == true then
 		-- Other
 		[51722] = 60,	-- Dismantle
 		[676] = 60,		-- Disarm
-		[46924] = 90,	-- Bladestorm
 		[54428] = 120,	-- Divine Plea
 		[29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem

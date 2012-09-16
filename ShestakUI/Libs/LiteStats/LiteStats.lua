@@ -916,14 +916,14 @@ if guild.enabled then
 				GameTooltip:SetPoint(modules.Guild.tip_anchor, modules.Guild.tip_frame, modules.Guild.tip_x, modules.Guild.tip_y)
 				GameTooltip:ClearLines()
 				GameTooltip:AddDoubleLine(GetGuildInfo(P),format("%s: %d/%d", GUILD_ONLINE_LABEL, online, total), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
-				if gmotd ~= "" then GameTooltip:AddLine(format("  %s |cffaaaaaa- |cffffffff%s", GUILD_MOTD, gmotd), ttsubh.r, ttsubh.g, ttsubh.b, 1) end
-				GameTooltip:AddLine(" ")
+				if gmotd ~= "" then GameTooltip:AddLine(format("%s |cffaaaaaa- |cffffffff%s", GUILD_MOTD, gmotd), ttsubh.r, ttsubh.g, ttsubh.b, 1) end
 				if guild.show_xp then
 					if GetGuildLevel() ~= 25 then
 						local currentXP, nextLevelXP, percentTotal = unpack(guildXP[0])
 						GameTooltip:AddLine(string.format(col..GUILD_EXPERIENCE_CURRENT, "|r |cFFFFFFFF"..ShortValueXP(currentXP), ShortValueXP(nextLevelXP), percentTotal))
 					end
 					if standingID ~= 8 then -- Not Max Rep
+						GameTooltip:AddLine(" ")
 						barMax = barMax - barMin
 						barValue = barValue - barMin
 						barMin = 0
@@ -1047,11 +1047,11 @@ if friends.enabled then
 		end,
 		OnUpdate = AltUpdate,
 		OnClick = function(self, b)
-			if b == "RightButton" then
+			if b == "MiddleButton" then
 				ToggleIgnorePanel()
 			elseif b == "LeftButton" then
 				ToggleFriendsPanel()
-			elseif b == "MiddleButton" then
+			elseif b == "RightButton" then
 				HideTT(self)
 
 				local BNTotal = BNGetNumFriends()
@@ -1112,7 +1112,7 @@ if friends.enabled then
 								notCheckable = true,
 								func = function(self, arg1)
 									menuFrame:Hide()
-									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
+									ChatFrame_SendSmartTell(arg1)
 								end
 							}
 
@@ -1397,7 +1397,7 @@ if stats.enabled then
 			end
 		elseif sub == "manaregen" then
 			local _, class = UnitClass(P)
-			local I5SR = true -- oo5sr/i5sr swapping NYI
+			local I5SR = true
 			if class == "ROGUE" or class == "WARRIOR" or class == "DEATHKNIGHT" then
 				string, percent = "??"
 			else

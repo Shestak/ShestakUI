@@ -30,8 +30,9 @@ local function LoadSkin()
 				slot.isSkinned = true
 			end
 
-			local quality = select(4, GetMissingLootItemInfo(i))
+			local texture, name, count, quality = GetMissingLootItemInfo(i)
 			local color = (GetItemQualityColor(quality)) or (unpack(C.media.border_color))
+			icon:SetTexture(texture)
 			frame:SetBackdropBorderColor(color)
 		end
 	end

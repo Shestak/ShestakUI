@@ -90,6 +90,7 @@ C["automation"] = {
 	["accept_invite"] = false,					-- Auto accept invite
 	["decline_duel"] = false,					-- Auto decline duel
 	["accept_quest"] = false,					-- Auto accept quests(if hold shift or alt, auto accept is disable)
+	["auto_collapse"] = false,					-- Auto collapse WatchFrame in instance
 	["skip_cinematic"] = false,					-- Auto skip cinematics/movies
 	["auto_role"] = false,						-- Auto set your role
 	["cancel_bad_buffs"] = false,				-- Auto cancel various buffs
@@ -124,6 +125,10 @@ C["skins"] = {
 	["atlasloot"] = true,						-- AtlasLoot skin
 	["tiny_dps"] = true,						-- TinyDPS skin
 	["face_shooter"] = true,					-- FaceShooter skin
+	["mage_nuggets"] = true,					-- MageNuggets skin
+	["preform_av"] = true,						-- PreformAVEnabler skin
+	["npcscan"] = true,							-- NPCScan skin
+	["vanaskos"] = true,						-- VanasKoS skin
 }
 
 ----------------------------------------------------------------------------------------
@@ -367,6 +372,7 @@ C["actionbar"] = {
 	["split_bars"] = false,						-- Split the fifth bar on two bars on 6 buttons
 	["classcolor_border"] = false,				-- Enable classcolor border
 	["toggle_mode"] = true,						-- Enable toggle mode
+	["hide_highlight"] = false,					-- Hide proc highlight
 	-- Bottom bars
 	["bottombars"] = 1,							-- Number of action bars on the bottom
 	-- Right bars

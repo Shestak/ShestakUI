@@ -20,8 +20,8 @@ local spells = {
 	["PRIEST"] = 21562,
 	["ROGUE"] = 1752,
 	["SHAMAN"] = 331,
-	["WARRIOR"] = 7386,
 	["WARLOCK"] = 686,
+	["WARRIOR"] = 7386,
 }
 
 local Enable = function(self)

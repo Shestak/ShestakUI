@@ -80,6 +80,10 @@ local function StyleNormalButton(self)
 		button.isSkinned = true
 	end
 
+	if normal and button:GetChecked() then
+		ActionButton_UpdateState(button)
+	end
+
 	if normal then
 		normal:ClearAllPoints()
 		normal:Point("TOPLEFT")
@@ -223,6 +227,13 @@ local function StyleFlyoutButton(self)
 	end
 end
 
+local function HideHighlightButton(self)
+	if self.overlay then
+		self.overlay:Hide()
+		ActionButton_HideOverlayGlow(self)
+	end
+end
+
 do
 	for i = 1, 12 do
 		_G["ActionButton"..i]:StyleButton()
@@ -242,4 +253,7 @@ hooksecurefunc("ActionButton_Update", StyleNormalButton)
 hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
 if C.actionbar.hotkey == true then
 	hooksecurefunc("ActionButton_UpdateHotkeys", UpdateHotkey)
+end
+if C.actionbar.hide_highlight == true then
+	hooksecurefunc("ActionButton_ShowOverlayGlow", HideHighlightButton)
 end

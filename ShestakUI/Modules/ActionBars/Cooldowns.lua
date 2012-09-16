@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if IsAddOnLoaded("OmniCC") or IsAddOnLoaded("ncCooldown") or IsAddOnLoaded("tullaCC") then return end
 
 ----------------------------------------------------------------------------------------
---	Based on OmniCC
+--	Based on OmniCC(by Tuller)
 ----------------------------------------------------------------------------------------
 local format = string.format
 local floor = math.floor
