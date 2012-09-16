@@ -14,7 +14,7 @@ if C.raidframe.plugins_aura_watch == true then
 				{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},					-- Regrowth
 				{94447, "TOPLEFT", {0.4, 0.8, 0.2}},					-- Lifebloom
 				{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},					-- Wild Growth
-				{102342, "LEFT", {0.38, 0.22, 0.1}, true},				-- Ironbark
+				{102342, "LEFT", {0.45, 0.3, 0.2}, true},				-- Ironbark
 				{102351, "RIGHT", {0.4, 0.9, 0.4}},						-- Cenarion Ward
 			},
 			MONK = {
