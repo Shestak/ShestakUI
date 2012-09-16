@@ -48,17 +48,13 @@ C["extra_skins"] = {
 	["adibags"] = true,							-- AdiBags skin(Not Ready)
 	["epgp"] = true,							-- EPGP skin(Not Ready)
 	["mage_mana_bar"] = true,					-- MageManaBar skin
-	["mage_nuggets"] = true,					-- MageNuggets skin
 	["mfclip"] = true,							-- MFClip skin
 	["mog_it"] = true,							-- MogIt skin(Not Ready)
 	["my_role_play"] = true,					-- MyRolePlay skin
-	["npcscan"] = true,							-- NPCScan skin
-	["preform_av"] = true,						-- PreformAVEnabler skin
 	["quartz"] = true,							-- Quartz skin(Not Ready)
 	["roll_tracker"] = true,					-- RollTracker skin
 	["shield_monitor"] = true,					-- ShieldMonitor skin
 	["skada"] = true,							-- Skada skin(Not Ready)
-	["vanaskos"] = true,						-- VanasKoS skin(Not Ready)
 }
 
 -- edit by Oz of shestak. org --

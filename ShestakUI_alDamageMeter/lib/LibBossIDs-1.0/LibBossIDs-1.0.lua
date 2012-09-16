@@ -1,6 +1,6 @@
 ﻿--[[
 Name: LibBossIDs-1.0
-Revision: $Revision: 79 $
+Revision: $Revision: 81 $
 Author: Elsia
 Website: http://www.wowace.com/addons/libbossids-1-0/
 Documentation:
@@ -10,7 +10,7 @@ Dependencies: LibStub
 License: Public Domain, Absolutely no Warranty.
 ]]
 
-local MAJOR, MINOR = "LibBossIDs-1.0", "$Revision: 79 $"
+local MAJOR, MINOR = "LibBossIDs-1.0", "$Revision: 81 $"
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 
 if not lib then return end
@@ -457,7 +457,12 @@ local BossIDs = {
 	-------------------------------------------------------------------------------
 	-- Heart of Fear
 	-------------------------------------------------------------------------------
-	[62980] = true,	-- Zorlok
+	[62837] = true,	-- Grand Empress Shek'zeer
+	[63664] = true,	-- Blade Lord Ta'yak
+	[63666] = true,	-- Amber-Shaper Un'sok
+	[63667] = true,	-- Garalon
+	[65501] = true,	-- Wind Lord Mel'jarak
+	[66791] = true,	-- Zorlok
 
 	-------------------------------------------------------------------------------
 	-- Hellfire Citadel: Hellfire Ramparts
@@ -567,6 +572,12 @@ local BossIDs = {
 	[17534] = true,	-- Julianne
 
 	-------------------------------------------------------------------------------
+	-- Kun-Lai Summit
+	-------------------------------------------------------------------------------
+	[60491] = true,	-- Sha of Anger
+	[62346] = true,	-- Galleon
+
+	-------------------------------------------------------------------------------
 	-- Lost City of the Tol'vir
 	-------------------------------------------------------------------------------
 	[44577] = true,	-- General Husam
@@ -635,9 +646,19 @@ local BossIDs = {
 	-------------------------------------------------------------------------------
 	-- Mogu'Shan Vault
 	-------------------------------------------------------------------------------
-	[59915]	= true,	-- Jasper, Stone Guard
-	[60043]	= true,	-- Jade, Stone Guard
-	[60051]	= true,	-- Cobalt, Stone Guard
+	[59915] = true,	-- Jasper, Stone Guard
+	[60009] = true,	-- Feng the Accursed
+	[60043] = true,	-- Jade, Stone Guard
+	[60047] = true,	-- Amethyst, Stone Guard
+	[60051] = true,	-- Cobalt, Stone Guard
+	[60143] = true,	-- Gara'jal the Spiritbinder
+	[60399] = true,	-- Qin-xi
+	[60400] = true,	-- Jan-xi
+	[60410] = true,	-- Elegon
+	[61421] = true,	-- Zian of the Endless Shadow
+	[61423] = true,	-- Qiang the Merciless
+	[61427] = true,	-- Subetai the Swift
+	[61429] = true,	-- Meng the Demented
 
 	-------------------------------------------------------------------------------
 	-- Molten Core
@@ -796,6 +817,13 @@ local BossIDs = {
 	[15339] = true,	-- Ossirian the Unscarred
 
 	-------------------------------------------------------------------------------
+	-- Scarlet Halls
+	-------------------------------------------------------------------------------
+	[58632] = true,	-- Armsmaster Harlan
+	[59150] = true,	-- Flameweaver Koegler
+	[59303] = true,	-- Houndmaster Braun
+
+	-------------------------------------------------------------------------------
 	-- Scarlet Monastery: Armory
 	-------------------------------------------------------------------------------
 	[3975] = true,	-- Herod
@@ -806,6 +834,9 @@ local BossIDs = {
 	[4542] = true,	-- High Inquisitor Fairbanks
 	[3976] = true,	-- Scarlet Commander Mograine
 	[3977] = true,	-- High Inquisitor Whitemane
+	[59789] = true,	-- Thalnos the Soulrender
+	[59223] = true,	-- Brother Korlof
+	[60040] = true,	-- Commander Durand
 
 	-------------------------------------------------------------------------------
 	-- Scarlet Monastery: Graveyard
@@ -845,11 +876,21 @@ local BossIDs = {
 	[10504] = true,	-- Lord Alexei Barov
 	[10502] = true,	-- Lady Illucia Barov
 	[1853] = true,	-- Darkmaster Gandling
+	[58633] = true,	-- Instructor Chillheart
+	[59200] = true,	-- Lilian Voss
 
 	-------------------------------------------------------------------------------
 	-- Searing Gorge
 	-------------------------------------------------------------------------------
 	[9026] = true,	-- Overmaster Pyron
+
+	-------------------------------------------------------------------------------
+	-- Shado-Pan Monastery
+	-------------------------------------------------------------------------------
+	[56719] = true,	-- Sha of Violence
+	[56747] = true,	-- Gu Cloudstrike
+	[56884] = true,	-- Taran Zhu
+	[64387] = true,	-- Master Snowdrift
 
 	-------------------------------------------------------------------------------
 	-- Shadowfang Keep
@@ -883,6 +924,13 @@ local BossIDs = {
 	[14454] = true,	-- The Windreaver
 
 	-------------------------------------------------------------------------------
+	-- Stormstout Brewery
+	-------------------------------------------------------------------------------
+	[56717] = true,	-- Hoptallus
+	[57963] = true,	-- Ook-Ook
+	[59479] = true,	-- Yan-Zhu the Unsacked
+
+	-------------------------------------------------------------------------------
 	-- Stormwind Stockade
 	-------------------------------------------------------------------------------
 	[1716] = true,	-- Bazil Thredd
@@ -891,7 +939,6 @@ local BossIDs = {
 	[1666] = true,	-- Kam Deepfury
 	[1696] = true,	-- Targorr the Dread
 	[1720] = true,	-- Bruegal Ironknuckle
-	-- Cata:
 	[46383] = true,	-- Randolph Moloch
 	[46264] = true,	-- Lord Overheat
 	[46254] = true,	-- Hogger
@@ -1040,12 +1087,22 @@ local BossIDs = {
 	-------------------------------------------------------------------------------
 	-- Temple of the Jade Serpent
 	-------------------------------------------------------------------------------
-	[56448] = true, -- Wise Mari
-	[58826] = true, -- Zao Sunseeker / Library Event
-	[59051] = true, -- Strife / Library Event
-	[59726] = true, -- Anger / Library Event
-	[56732] = true, -- Liu Flameheart
-	[56439] = true, -- Sha of Doubt
+	[56448] = true,	-- Wise Mari
+	[58826] = true,	-- Zao Sunseeker / Library Event
+	[59051] = true,	-- Strife / Library Event
+	[59726] = true,	-- Anger / Library Event
+	[56732] = true,	-- Liu Flameheart
+	[56439] = true,	-- Sha of Doubt
+
+	-------------------------------------------------------------------------------
+	-- Terrace of Endless Spring
+	-------------------------------------------------------------------------------
+	[60583] = true,	-- Protector Kaolan
+	[60585] = true,	-- Elder Regail
+	[60586] = true,	-- Elder Asani
+	[60999] = true,	-- Sha of Fear
+	[62442] = true,	-- Tsulong
+	[63099] = true,	-- Lei Shi
 
 	-------------------------------------------------------------------------------
 	-- The Bastion of Twilight
@@ -1058,8 +1115,8 @@ local BossIDs = {
 	[43688] = true,	-- Arion
 	[43689] = true,	-- Terrastra
 	[43735] = true,	-- Elementium Monstrosity
-	[43324] = true, -- Cho'gall
-	[45213] = true,	-- Sinestra (heroic) drycoded from http://db.mmo-champion.com/c/45213/sinestra/
+	[43324] = true,	-- Cho'gall
+	[45213] = true,	-- Sinestra
 
 	-------------------------------------------------------------------------------
 	-- The Deadmines
@@ -1353,7 +1410,7 @@ local BossIDs = {
 	[38433] = true,	-- Toravon the Ice Watcher
 
 	-------------------------------------------------------------------------------
-	-- Pozzo dell'Eternità
+	-- Well of Eternity
 	-------------------------------------------------------------------------------
 	[55085] = true,	-- Peroth'arn
 	[54853] = true,	-- Queen Azshara
