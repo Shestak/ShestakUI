@@ -210,12 +210,21 @@ local function update()
 					end
 				end
 			else
-				local name, rank, rankIndex, level, _, zone, _, _, _, _, classFileName = GetGuildRosterInfo(button.guildIndex)
+				local name, rank, rankIndex, level, _, zone, _, _, _, isAway, classFileName, _, _, isMobile = GetGuildRosterInfo(button.guildIndex)
 				local displayedName = classColor[classFileName]..name
+				if isMobile then
+					if isAway == 2 then
+						displayedName = "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat-BusyMobile:14:14:0:0:16:16:0:16:0:16|t"..name
+					elseif isAway == 1 then
+						displayedName = "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat-AwayMobile:14:14:0:0:16:16:0:16:0:16|t"..name
+					else
+						name = ChatFrame_GetMobileEmbeddedTexture(73/255, 177/255, 73/255)..name
+					end
+				end
 				if _VIEW == "playerStatus" then
 					button.string1:SetText(diffColor[level]..level)
 					button.string2:SetText(displayedName)
-					if zone == playerArea then
+					if not isMobile and zone == playerArea then
 						button.string3:SetText("|cff00ff00"..zone)
 					end
 				elseif _VIEW == "guildStatus" then
@@ -266,7 +275,7 @@ local function friendsFrame()
 		index = offset + i
 		if button:IsShown() then
 			if button.buttonType == FRIENDS_BUTTON_TYPE_WOW then
-				local name, level, class, area, connected, status, note = GetFriendInfo(button.id)
+				local name, level, class, area, connected = GetFriendInfo(button.id)
 				if connected then
 					nameText = classColor[class]..name.."|r, "..format(FRIENDS_LEVEL_TEMPLATE, diffColor[level]..level.."|r", class)
 					if areaName == playerArea then
