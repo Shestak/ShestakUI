@@ -1253,6 +1253,8 @@ Filger_Spells = {
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Alabaster Shield
+			{spellID = 121467, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Ancient Kings
