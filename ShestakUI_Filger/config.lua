@@ -779,7 +779,6 @@ Filger_Spells = {
 			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
-
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -853,11 +852,11 @@ Filger_Spells = {
 			-- Combustion
 			{spellID = 83853, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Freeze (Pet)
-			{spellID = 33395, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
-			{spellID = 122, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 122, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Ice Ward
-			{spellID = 111340, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 111340, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frostfire Bolt
