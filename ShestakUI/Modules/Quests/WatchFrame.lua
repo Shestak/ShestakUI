@@ -24,7 +24,7 @@ hooksecurefunc(WatchFrame, "SetPoint", function(_, _, parent)
 end)
 
 ----------------------------------------------------------------------------------------
---	Skin item buttons
+--	Skin WatchFrame item buttons
 ----------------------------------------------------------------------------------------
 hooksecurefunc("WatchFrameItem_UpdateCooldown", function(self)
 	if not self.skinned and not InCombatLockdown() then
@@ -54,7 +54,7 @@ hooksecurefunc("WatchFrameItem_UpdateCooldown", function(self)
 end)
 
 ----------------------------------------------------------------------------------------
---	Difficulty color for watchframe lines
+--	Difficulty color for WatchFrame lines
 ----------------------------------------------------------------------------------------
 hooksecurefunc("WatchFrame_Update", function()
 	local questIndex
