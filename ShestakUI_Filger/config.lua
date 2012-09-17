@@ -2632,6 +2632,8 @@ Filger_Spells = {
 			{spellID = 77764, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Innervate
 			{spellID = 29166, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mass Spell Reflection
+			{spellID = 114028, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Grounding Totem
 			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightwell Renew
@@ -3224,6 +3226,8 @@ Filger_Spells = {
 			-- Warrior
 			-- Spell Reflection
 			{spellID = 23920, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Mass Spell Reflection
+			{spellID = 114028, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Shield Wall
 			{spellID = 871, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserker Rage
