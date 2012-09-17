@@ -28,7 +28,6 @@ UIFonts:SetScript("OnEvent", function(self, event, addon)
 
 	if T.author == true then
 		DAMAGE_TEXT_FONT = BLANK
-		SetFont(CombatTextFont, BLANK, 100)
 	end
 
 	-- Base fonts

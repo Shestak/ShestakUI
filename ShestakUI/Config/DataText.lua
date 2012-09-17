@@ -227,8 +227,8 @@ LPSTAT_PROFILES = {
 	},
 	PALADIN = {
 		Stats = {
-			spec1fmt = "Mastery: ".."[mastery]".." BlockCap: ".."[blockcap]%".." Avoid: ".."[avoidance]%",
-			spec1fmt = "Mastery: ".."[mastery]".." BlockCap: ".."[blockcap]%".." Avoid: ".."[avoidance]%",
+			spec1fmt = "Mastery: ".."[mastery]".." Block: ".."[block]%".." Avoid: ".."[avoidance]%",
+			spec1fmt = "Mastery: ".."[mastery]".." Block: ".."[block]%".." Avoid: ".."[avoidance]%",
 		}
 	},
 	PRIEST = {
@@ -251,7 +251,7 @@ LPSTAT_PROFILES = {
 	},
 	WARRIOR = {
 		Stats = {
-			spec1fmt = "Armor: ".."[armor]".." BlockCap: ".."[blockcap]%".." Avoid: ".."[avoidance]%",
+			spec1fmt = "Armor: ".."[armor]".." Block: ".."[block]%".." Avoid: ".."[avoidance]%",
 			spec2fmt = "AP: ".."[ap]".." Crit: ".."[meleecrit]%".." Hit: ".."[meleehit]%",
 		}
 	},

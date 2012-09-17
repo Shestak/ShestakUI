@@ -268,8 +268,6 @@ Filger_Spells = {
 			{spellID = 106922, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ironbark
-			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Savage Defense
 			{spellID = 132402, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Frenzied Regeneration
@@ -672,24 +670,28 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Concussive Shot
+			{spellID = 5116, filter = "CD"},
 			-- Silencing Shot
 			{spellID = 34490, filter = "CD"},
 			-- Scatter Shot
 			{spellID = 19503, filter = "CD"},
 			-- Binding Shot
 			{spellID = 117526, filter = "CD"},
+			-- Kill Command
+			{spellID = 34026, filter = "CD"},
 			-- Explosive Shot
 			{spellID = 53301, filter = "CD"},
+			-- Chimera Shot
+			{spellID = 53209, filter = "CD"},
 			-- Kill Shot
 			{spellID = 53351, filter = "CD"},
 			-- Disengage
 			{spellID = 781, filter = "CD"},
 			-- Misdirection
 			{spellID = 34477, filter = "CD"},
-			-- Kill Command
-			{spellID = 34026, filter = "CD"},
-			-- Chimera Shot
-			{spellID = 53209, filter = "CD"},
+			-- Fervor
+			{spellID = 82726, filter = "CD"},
 			-- Feign Death
 			{spellID = 5384, filter = "CD"},
 			-- Snake Trap
@@ -698,18 +700,16 @@ Filger_Spells = {
 			{spellID = 13813, filter = "CD"},
 			-- Ice Trap
 			{spellID = 13809, filter = "CD"},
-			-- Wyvern Sting
-			{spellID = 19386, filter = "CD"},
 			-- Master's Call
 			{spellID = 53271, filter = "CD"},
-			-- Deterrence
-			{spellID = 19263, filter = "CD"},
-			-- Concussive Shot
-			{spellID = 5116, filter = "CD"},
 			-- Intimidation
 			{spellID = 19577, filter = "CD"},
-			-- Fervor
-			{spellID = 82726, filter = "CD"},
+			-- Wyvern Sting
+			{spellID = 19386, filter = "CD"},
+			-- Bestial Wrath
+			{spellID = 19574, filter = "CD"},
+			-- Deterrence
+			{spellID = 19263, filter = "CD"},
 			-- Rapid Fire
 			{spellID = 3045, filter = "CD"},
 			-- Readiness
@@ -1243,10 +1243,6 @@ Filger_Spells = {
 			-- Buffs
 			-- Infusion of Light
 			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Purpose
-			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Daybreak
-			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ancient Power
 			{spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bastion of Glory
@@ -1255,10 +1251,14 @@ Filger_Spells = {
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Alabaster Shield
 			{spellID = 121467, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Purpose
+			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Ancient Kings
 			{spellID = 86678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Daybreak
+			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -2638,6 +2638,8 @@ Filger_Spells = {
 			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Rallying Cry
 			{spellID = 97462, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Ironbark
+			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
 			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
@@ -2648,8 +2650,6 @@ Filger_Spells = {
 			{spellID = 29166, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Grounding Totem
 			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Stormlash Totem
-			{spellID = 120676, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Slow Fall
 			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Levitate
