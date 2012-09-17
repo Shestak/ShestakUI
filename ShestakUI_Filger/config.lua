@@ -250,10 +250,8 @@ Filger_Spells = {
 			{spellID = 106922, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ironbark
-			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Savage Defense
-			{spellID = 62606, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 132402, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Frenzied Regeneration
 			{spellID = 124769, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Roar
@@ -535,6 +533,8 @@ Filger_Spells = {
 			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spirit Mend
 			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Posthaste
+			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -656,6 +656,8 @@ Filger_Spells = {
 			{spellID = 34490, filter = "CD"},
 			-- Scatter Shot
 			{spellID = 19503, filter = "CD"},
+			-- Binding Shot
+			{spellID = 117526, filter = "CD"},
 			-- Explosive Shot
 			{spellID = 53301, filter = "CD"},
 			-- Kill Shot
@@ -1221,20 +1223,22 @@ Filger_Spells = {
 			-- Buffs
 			-- Infusion of Light
 			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Purpose
-			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Daybreak
-			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ancient Power
 			{spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bastion of Glory
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Alabaster Shield
+			{spellID = 121467, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Purpose
+			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Ancient Kings
 			{spellID = 86678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Daybreak
+			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -2614,6 +2618,8 @@ Filger_Spells = {
 			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Rallying Cry
 			{spellID = 97462, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Ironbark
+			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
 			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
@@ -2697,6 +2703,8 @@ Filger_Spells = {
 			{spellID = 13159, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Intimidation
 			{spellID = 24394, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Binding Shot
+			{spellID = 117526, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap
 			{spellID = 3355, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Scare Beast
@@ -3008,9 +3016,13 @@ Filger_Spells = {
 			{spellID = 5118, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Deterrence
 			{spellID = 19263, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Posthaste
+			{spellID = 118922, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Intimidation
 			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Binding Shot
+			{spellID = 117526, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap
 			{spellID = 3355, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Scare Beast

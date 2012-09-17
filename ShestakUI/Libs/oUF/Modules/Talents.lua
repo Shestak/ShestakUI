@@ -15,6 +15,7 @@ local spells = {
 	-- DRUID
 	[GetSpellInfo(78674)] = L_PLANNER_DRUID_1,			-- Starsurge
 	[GetSpellInfo(5221)] = L_PLANNER_DRUID_2,			-- Shred
+	[GetSpellInfo(102795)] = L_PLANNER_DRUID_3,			-- Bear Hug
 	[GetSpellInfo(8936)] = L_PLANNER_DRUID_4,			-- Regrowth
 	-- HUNTER
 	[GetSpellInfo(34026)] = L_PLANNER_HUNTER_1,			-- Kill Command
@@ -32,11 +33,11 @@ local spells = {
 	-- PALADIN
 	[GetSpellInfo(20473)] = L_PLANNER_PALADIN_1,		-- Holy Shock
 	[GetSpellInfo(31935)] = L_PLANNER_PALADIN_2,		-- Avenger's Shield
+	[GetSpellInfo(879)] = L_PLANNER_PALADIN_3,			-- Exorcism
 	[GetSpellInfo(85256)] = L_PLANNER_PALADIN_3,		-- Templar's Verdict
 	-- PRIEST
 	[GetSpellInfo(47540)] = L_PLANNER_PRIEST_1,			-- Penance
 	[GetSpellInfo(34861)] = L_PLANNER_PRIEST_2,			-- Circle of Healing
-	[GetSpellInfo(88684)] = L_PLANNER_PRIEST_2,			-- Holy Word: Serenity
 	[GetSpellInfo(15407)] = L_PLANNER_PRIEST_3,			-- Mind Flay
 	-- ROGUE
 	[GetSpellInfo(1329)] = L_PLANNER_ROGUE_1,			-- Mutilate
@@ -66,15 +67,16 @@ local buffs = { -- Credits: Proditor, Rinu
 	-- DRUID
 	[GetSpellInfo(24858)] = L_PLANNER_DRUID_1,			-- Moonkin Form
 	[GetSpellInfo(52610)] = L_PLANNER_DRUID_2,			-- Savage Roar
-	[GetSpellInfo(62606)] = L_PLANNER_DRUID_3,			-- Savage Defense
+	[GetSpellInfo(132402)] = L_PLANNER_DRUID_3,			-- Savage Defense
+	[GetSpellInfo(33763)] = L_PLANNER_DRUID_4,			-- Lifebloom
 	[GetSpellInfo(48438)] = L_PLANNER_DRUID_4,			-- Wild Growth
 	-- HUNTER
-	[GetSpellInfo(19615)] = L_PLANNER_HUNTER_1,			-- Frenzy
+	[GetSpellInfo(82692)] = L_PLANNER_HUNTER_1,			-- Focus Fire
 	[GetSpellInfo(53220)] = L_PLANNER_HUNTER_2,			-- Steady Focus
 	[GetSpellInfo(56453)] = L_PLANNER_HUNTER_3,			-- Lock and Load
 	-- MAGE
-	[GetSpellInfo(12042)] = L_PLANNER_MAGE_1,			-- Arcane Power
-	[GetSpellInfo(48108)] = L_PLANNER_MAGE_2,			-- Pyroblast!
+	[GetSpellInfo(79683)] = L_PLANNER_MAGE_1,			-- Arcane Missiles!
+	[GetSpellInfo(48107)] = L_PLANNER_MAGE_2,			-- Heating Up
 	[GetSpellInfo(44544)] = L_PLANNER_MAGE_3,			-- Fingers of Frost
 	-- MONK
 	[GetSpellInfo(128939)] = L_PLANNER_MONK_1,			-- Elusive Brew

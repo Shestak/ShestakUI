@@ -1,86 +1,30 @@
 local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Move WatchFrame by Tukz
+--	Move WatchFrame
 ----------------------------------------------------------------------------------------
-local UIWatchFrame = CreateFrame("Frame", "UIWatchFrame", UIParent)
-UIWatchFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
-
--- Compatible with Blizzard option
-local wideFrame = GetCVar("watchFrameWidth")
-
--- Create our moving area
 local WatchFrameAnchor = CreateFrame("Frame", "WatchFrameAnchor", UIParent)
-WatchFrameAnchor:Height(150)
-
--- Set default position
 WatchFrameAnchor:Point(unpack(C.position.quest))
-
--- Width of the watchframe according to our Blizzard cVar
-if wideFrame == "1" then
-	UIWatchFrame:Width(350)
-	WatchFrameAnchor:Width(350)
+WatchFrameAnchor:Height(150)
+if GetCVar("watchFrameWidth") == "1" then
+	WatchFrameAnchor:Width(326)
 else
-	UIWatchFrame:Width(250)
-	WatchFrameAnchor:Width(250)
+	WatchFrameAnchor:Width(224)
 end
 
-UIWatchFrame:SetParent(WatchFrameAnchor)
-UIWatchFrame:Height(T.getscreenheight / 1.6)
-UIWatchFrame:ClearAllPoints()
-UIWatchFrame:Point("TOP", WatchFrameAnchor, "TOP", 0, 0)
+WatchFrame:ClearAllPoints()
+WatchFrame:SetPoint("TOPLEFT", WatchFrameAnchor, "TOPLEFT", 20, 0)
+WatchFrame:Height(T.getscreenheight / 1.6)
 
-local function init()
-	UIWatchFrame:UnregisterEvent("PLAYER_ENTERING_WORLD")
-	UIWatchFrame:RegisterEvent("CVAR_UPDATE")
-	UIWatchFrame:SetScript("OnEvent", function(_, _, cvar, value)
-		if cvar == "WATCH_FRAME_WIDTH_TEXT" then
-			if not WatchFrame.userCollapsed then
-				if value == "1" then
-					UIWatchFrame:Width(350)
-					WatchFrameAnchor:Width(350)
-				else
-					UIWatchFrame:Width(250)
-					WatchFrameAnchor:Width(250)
-				end
-			end
-			wideFrame = value
-		end
-	end)
-end
-
-local function setup()
-	WatchFrame:SetParent(UIWatchFrame)
-	WatchFrame:SetFrameStrata("MEDIUM")
-	WatchFrame:SetFrameLevel(3)
-	WatchFrame:SetClampedToScreen(true)
-	WatchFrame:ClearAllPoints()
-	WatchFrame.ClearAllPoints = function() end
-	WatchFrame:Point("TOPLEFT", 25, 2)
-	WatchFrame:Point("BOTTOMRIGHT", 0, 0)
-	WatchFrame.SetPoint = T.dummy
-end
-
--- Execute setup after we enter world
-local frame = CreateFrame("Frame")
-frame:Hide()
-frame.elapsed = 0
-frame:SetScript("OnUpdate", function(self, elapsed)
-	frame.elapsed = frame.elapsed + elapsed
-	if frame.elapsed > 0.5 then
-		setup()
-		frame:Hide()
-	end
-end)
-UIWatchFrame:SetScript("OnEvent", function()
-	if not IsAddOnLoaded("Who Framed Watcher Wabbit") or not IsAddOnLoaded("Fux") then
-		init()
-		frame:Show()
+hooksecurefunc(WatchFrame, "SetPoint", function(_, _, parent)
+	if parent ~= WatchFrameAnchor then
+		WatchFrame:ClearAllPoints()
+		WatchFrame:SetPoint("TOPLEFT", WatchFrameAnchor, "TOPLEFT", 20, 0)
 	end
 end)
 
 ----------------------------------------------------------------------------------------
---	Skin item buttons
+--	Skin WatchFrame item buttons
 ----------------------------------------------------------------------------------------
 hooksecurefunc("WatchFrameItem_UpdateCooldown", function(self)
 	if not self.skinned and not InCombatLockdown() then
@@ -110,7 +54,7 @@ hooksecurefunc("WatchFrameItem_UpdateCooldown", function(self)
 end)
 
 ----------------------------------------------------------------------------------------
---	Difficulty color for watchframe lines
+--	Difficulty color for WatchFrame lines
 ----------------------------------------------------------------------------------------
 hooksecurefunc("WatchFrame_Update", function()
 	local questIndex

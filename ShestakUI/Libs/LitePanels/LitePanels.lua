@@ -41,7 +41,7 @@ local hooksecurefunc = hooksecurefunc
 local r, is = function(n, dec) return floor(n * (10 ^ (dec or 0)) + 0.5) end, function(v, t) return type(v) == t end
 local dummy, d = function() end, lpanels.defaults
 
-local class = RAID_CLASS_COLORS[strupper(lpanels.cinfo.c)]
+local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[strupper(lpanels.cinfo.c)]
 local function setcolor(color)
 	if color == "CLASS" then
 		return class.r, class.g, class.b

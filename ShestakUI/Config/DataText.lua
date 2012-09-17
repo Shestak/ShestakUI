@@ -139,8 +139,8 @@ LPSTAT_CONFIG = {
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
 			--   Ranged Haste% [rangedhaste]	Spell Haste% [spellhaste]		Melee Crit% [meleecrit]			Ranged Crit% [rangedcrit]
 			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				MP5 I5SR [manaregen]
-			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Combat table Coverage% [blockcap]
-			--   Avoidance% [avoidance]			Armor Value [armor]				Resilience [resilience]
+			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Avoidance% [avoidance]
+			--   Armor Value [armor]			Resilience [resilience]
 		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
 		spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%", -- Spec #2 string
 		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
@@ -224,8 +224,8 @@ LPSTAT_PROFILES = {
 	},
 	PALADIN = {
 		Stats = {
-			spec1fmt = class"Mastery: ".."[mastery]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
-			spec1fmt = class"Mastery: ".."[mastery]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
+			spec1fmt = class"Mastery: ".."[mastery]"..class" Block: ".."[block]%"..class" Avoid: ".."[avoidance]%",
+			spec1fmt = class"Mastery: ".."[mastery]"..class" Block: ".."[block]%"..class" Avoid: ".."[avoidance]%",
 		}
 	},
 	PRIEST = {
@@ -248,7 +248,7 @@ LPSTAT_PROFILES = {
 	},
 	WARRIOR = {
 		Stats = {
-			spec1fmt = class"Armor: ".."[armor]"..class" BlockCap: ".."[blockcap]%"..class" Avoid: ".."[avoidance]%",
+			spec1fmt = class"Armor: ".."[armor]"..class" Block: ".."[block]%"..class" Avoid: ".."[avoidance]%",
 			spec2fmt = class"AP: ".."[ap]"..class" Crit: ".."[meleecrit]%"..class" Hit: ".."[meleehit]%",
 		}
 	},

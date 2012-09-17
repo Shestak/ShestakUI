@@ -1403,12 +1403,6 @@ if stats.enabled then
 			else
 				string = GetDodgeChance() + GetParryChance()
 			end
-		elseif sub == "blockcap" then
-			if T.race == "NightElf" then
-				string = GetDodgeChance() + GetParryChance() + GetBlockChance() + 7
-			else
-				string = GetDodgeChance() + GetParryChance() + GetBlockChance() + 5
-			end
 		elseif sub == "manaregen" then
 			local _, class = UnitClass(P)
 			local I5SR = true
