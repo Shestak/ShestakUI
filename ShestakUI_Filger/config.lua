@@ -765,18 +765,21 @@ Filger_Spells = {
 			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Icy Veins
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Incanter's Ward
-			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Temporal Shield
-			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Power
+			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Ward
 			{spellID = 111264, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Floes
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Arcane Power
-			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Incanter's Ward
+			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Alter Time
+			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Temporal Shield
+			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
+
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1696,10 +1699,12 @@ Filger_Spells = {
 			{spellID = 45182, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blade Flurry
 			{spellID = 13877, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Feint
-			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sprint
 			{spellID = 2983, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Feint
+			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Walk
+			{spellID = 114842, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2573,7 +2578,7 @@ Filger_Spells = {
 			-- Ancient Hysteria
 			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Engineering
+			-- Engineering and Herbalism
 			-- Synapse Springs
 			{spellID = 126734, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Phase Fingers
@@ -2582,6 +2587,8 @@ Filger_Spells = {
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Parachute
 			{spellID = 55001, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lifeblood
+			{spellID = 74497, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -2598,10 +2605,6 @@ Filger_Spells = {
 			{spellID = 28880, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Other
-			-- Lifeblood
-			{spellID = 74497, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lightwell Renew
-			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Protection
 			{spellID = 1022, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Freedom
@@ -2610,18 +2613,18 @@ Filger_Spells = {
 			{spellID = 6940, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Purity
 			{spellID = 114039, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Devotion Aura
-			{spellID = 31821, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Pain Suppression
-			{spellID = 33206, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Guardian Spirit
-			{spellID = 47788, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Life Cocoon
 			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Rallying Cry
-			{spellID = 97462, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Guardian Spirit
+			{spellID = 47788, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Pain Suppression
+			{spellID = 33206, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Ironbark
 			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Devotion Aura
+			{spellID = 31821, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Rallying Cry
+			{spellID = 97463, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
 			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
@@ -2632,6 +2635,8 @@ Filger_Spells = {
 			{spellID = 29166, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Grounding Totem
 			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Lightwell Renew
+			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Slow Fall
 			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Levitate
@@ -3053,6 +3058,8 @@ Filger_Spells = {
 			{spellID = 12051, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Alter Time
+			{spellID = 110909, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Cauterize
 			{spellID = 87023, unitID = "target", caster = "target", filter = "DEBUFF"},
