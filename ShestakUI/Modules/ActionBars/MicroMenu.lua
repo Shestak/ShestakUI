@@ -77,7 +77,7 @@ for i, button in pairs(microbuttons) do
 	f:SetFrameStrata("BACKGROUND")
 	f:Point("BOTTOMLEFT", m, "BOTTOMLEFT", 2, 0)
 	f:Point("TOPRIGHT", m, "TOPRIGHT", -2, -28)
-	f:SetTemplate("Default", true)
+	f:SetTemplate("Default")
 	m.frame = f
 
 	pushed:SetTexCoord(0.17, 0.87, 0.5, 0.908)
@@ -113,12 +113,12 @@ do
 	MicroButtonPortrait:ClearAllPoints()
 	MicroButtonPortrait:Point("TOPLEFT", CharacterMicroButton.frame, "TOPLEFT", 2, -2)
 	MicroButtonPortrait:Point("BOTTOMRIGHT", CharacterMicroButton.frame, "BOTTOMRIGHT", -2, 2)
+end
 
+hooksecurefunc("UpdateMicroButtons", function()
 	GuildMicroButtonTabard:ClearAllPoints()
 	GuildMicroButtonTabard:Point("TOP", GuildMicroButton.frame, "TOP", 0, 25)
-	GuildMicroButtonTabard.SetPoint = T.dummy
-	GuildMicroButtonTabard.ClearAllPoints = T.dummy
-end
+end)
 
 CharacterMicroButton:ClearAllPoints()
 CharacterMicroButton:Point("BOTTOMLEFT", frame, "BOTTOMLEFT", -2, 0)
