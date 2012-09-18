@@ -93,7 +93,7 @@ local function LoadSkin()
 
 	AuctionsItemButton:StripTextures()
 	AuctionsItemButton:StyleButton()
-	AuctionsItemButton:SetTemplate("Default", true)
+	AuctionsItemButton:SetTemplate("Default")
 
 	AuctionsItemButton:SetScript("OnUpdate", function()
 		if AuctionsItemButton:GetNormalTexture() then
