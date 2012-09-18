@@ -115,8 +115,8 @@ L_GUI_COMBATTEXT_CRIT_PREFIX = "Символ, добавляемый перед 
 L_GUI_COMBATTEXT_CRIT_POSTFIX = "Символ, добавляемый после критических значений"
 L_GUI_COMBATTEXT_ICONS = "Отображать иконки исходящего лечения и урона"
 L_GUI_COMBATTEXT_ICON_SIZE = "Размер иконок в блоке исходящего лечения и урона"
-L_GUI_COMBATTEXT_TRESHOLD = "Минимальное отображаемое значение урона"
-L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Минимальное отображаемое значение лечения"
+L_GUI_COMBATTEXT_TRESHOLD = "Минимально отображаемое значение урона"
+L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Минимально отображаемое значение лечения"
 L_GUI_COMBATTEXT_SCROLLABLE = "Включить прокручивание текста в блоках колесом мыши"
 L_GUI_COMBATTEXT_MAX_LINES = "Количество линий для прокручиваемого блока"
 L_GUI_COMBATTEXT_TIME_VISIBLE = "Время (в секундах) до исчезновения текста"
@@ -130,13 +130,13 @@ L_GUI_COMBATTEXT_DIRECTION = "Направление прокрутки текс
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Напоминания"
-L_GUI_REMINDER_SOLO_ENABLE = "Включить предупреждение об отсутствие аур игрока"
-L_GUI_REMINDER_SOLO_SOUND = "Добавить звуковое предупреждение для отсутствия аур игрока"
-L_GUI_REMINDER_SOLO_SIZE = "Размер иконки отсутствующей ауры игрока"
-L_GUI_REMINDER_RAID_ENABLE = "Включить предупреждение об отсутствие рейдовых аур"
-L_GUI_REMINDER_RAID_ALWAYS = "Всегда отображать отсутствующие рейдовые ауры"
-L_GUI_REMINDER_RAID_SIZE = "Размер иконок отсутствующих рейдовых аур"
-L_GUI_REMINDER_RAID_ALPHA = "Прозрачность иконок отсутствующих рейдовых аур"
+L_GUI_REMINDER_SOLO_ENABLE = "Показать пропущенные ауры игрока"
+L_GUI_REMINDER_SOLO_SOUND = "Добавить звуковое предупреждение, если пропущена аура игрока"
+L_GUI_REMINDER_SOLO_SIZE = "Размер иконки ауры игрока"
+L_GUI_REMINDER_RAID_ENABLE = "Показать пропущенные рейдовые ауры"
+L_GUI_REMINDER_RAID_ALWAYS = "Всегда показывать пропущенные рейдовые ауры"
+L_GUI_REMINDER_RAID_SIZE = "Размер иконок рейдовых аур"
+L_GUI_REMINDER_RAID_ALPHA = "Прозрачность иконок рейдовых аур"
 
 -- Raid cooldowns options
 L_GUI_COOLDOWN_RAID = "Перезарядки рейда"
