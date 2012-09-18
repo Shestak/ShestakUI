@@ -236,6 +236,8 @@ Filger_Spells = {
 			{spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cenarion Ward
 			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nature's Vigil
+			{spellID = 124974, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Tree of Life
 			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Chosen of Elunee
@@ -2366,6 +2368,8 @@ Filger_Spells = {
 			{spellID = 23920, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Berserker Rage
 			{spellID = 18499, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Avatar
+			{spellID = 107574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bloodbath
 			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recklesness
@@ -2954,6 +2958,8 @@ Filger_Spells = {
 			-- Death knight
 			-- Anti-Magic Shell
 			{spellID = 48707, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Desecrated Ground
+			{spellID = 115018, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Lichborne
 			{spellID = 49039, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Bone shield
