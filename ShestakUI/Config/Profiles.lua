@@ -468,6 +468,46 @@ end
 --	Majestic Config
 ----------------------------------------------------------------------------------------
 if T.soauthor == true then
+	C["general"].welcome_message = false
+	C["misc"].shift_marking = false
+	C["misc"].invite_keyword = "инв"
+	C["misc"].profession_database = true
+	C["misc"].item_level = true
+	C["misc"].gem_counter = true
+	C["misc"].already_known = true
+	C["misc"].disenchanting = true
+	C["misc"].move_blizzard = true
+	C["announcements"].drinking = true
+	C["announcements"].interrupts = true
+	C["announcements"].lightwell = true
+	C["automation"].screenshot = true
+	C["automation"].accept_invite = true
+	C["automation"].skip_cinematic = true
+	C["automation"].auto_role = true
+	C["automation"].cancel_bad_buffs = true
+	C["skins"].blizzard_frames = true
+	C["skins"].minimap_buttons = true
+	C["skins"].dbm = true
+	C["skins"].clique = true
+	C["skins"].atlasloot = true
+	C["combattext"].killingblow = true
+	C["threat"].enable = false
+	C["tooltip"].item_icon = true
+	C["tooltip"].rank = false
+	C["tooltip"].spell_id = true
+	C["tooltip"].raid_icon = true
+	C["tooltip"].item_count = true
+	C["tooltip"].reforge = true
+	C["tooltip"].instance_lock = true
+	C["tooltip"].item_transmogrify = true
+	C["chat"].tabs_mouseover = true
+	C["chat"].damage_meter_spam = true
+	C["map"].map_boss_count = true
+	C["nameplate"].track_auras = true
+	C["unitframe"].castbar_icon = true
+	C["unitframe"].plugins_smooth_bar = true
+	C["unitframe"].plugins_diminishing = true
+	C["raidframe"].icons_role = true
 	if T.name ~= "Занштек" then
 		C["automation"].logging_combat = true
 	end
