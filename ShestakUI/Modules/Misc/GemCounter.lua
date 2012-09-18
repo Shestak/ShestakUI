@@ -8,12 +8,12 @@ local GemCounter = {}
 local addon = GemCounter
 local RedGems, BlueGems, YellowGems, GreenGems, PurpleGems, OrangeGems, PrismaticGems
 local Red_localized, Blue_localized, Yellow_localized, Green_localized, Purple_localized, Orange_localized
-local BlueTexture = "Interface\\Icons\\inv_misc_cutgemsuperior2"
-local RedTexture = "Interface\\Icons\\inv_misc_cutgemsuperior6"
-local YellowTexture = "Interface\\Icons\\inv_misc_cutgemsuperior"
-local GreenTexture = "Interface\\Icons\\inv_misc_cutgemsuperior5"
-local PurpleTexture = "Interface\\Icons\\inv_misc_cutgemsuperior3"
-local OrangeTexture = "Interface\\Icons\\inv_misc_cutgemsuperior4"
+local BlueTexture = "Interface\\Icons\\inv_misc_gem_x4_rare_cut_blue"
+local RedTexture = "Interface\\Icons\\inv_misc_gem_x4_rare_cut_red"
+local YellowTexture = "Interface\\Icons\\inv_misc_gem_x4_rare_cut_yellow"
+local GreenTexture = "Interface\\Icons\\inv_misc_gem_x4_rare_cut_green"
+local PurpleTexture = "Interface\\Icons\\inv_misc_gem_x4_rare_cut_purple"
+local OrangeTexture = "Interface\\Icons\\inv_misc_gem_x4_rare_cut_orange"
 local PrismaticTexture = "Interface\\Icons\\INV_Jewelcrafting_DragonsEye02"
 
 addon.f = CreateFrame("Frame", "GCmain", CharacterFrame)
@@ -53,7 +53,7 @@ for i = 1, 7 do
 	frame.text:SetPoint("LEFT", frame, "RIGHT", 5, -1)
 	frame.text:SetText("")
 	if i == 1 then
-		frame:SetPoint("BOTTOMLEFT", CharacterFrame, "BOTTOMLEFT", 55, 40)
+		frame:SetPoint("BOTTOMLEFT", CharacterFrame, "BOTTOMLEFT", 53, 41)
 	else
 		frame:SetPoint("BOTTOM", addon["button"..(i-1)], "TOP", 0, 5)
 	end
