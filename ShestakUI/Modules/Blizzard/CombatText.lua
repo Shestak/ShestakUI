@@ -344,7 +344,9 @@ for i = 1, numf do
 		if C.combattext.icons then
 			f:SetHeight(150)
 		end
-		if C.unitframe.enable == true and _G.oUF_Target then
+		if C.unitframe.enable == true and _G.oUF_Player and T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+			f:SetPoint("BOTTOMRIGHT", "oUF_Target", "TOPRIGHT", -44, 278)
+		elseif C.unitframe.enable == true and _G.oUF_Target then
 			f:SetPoint("BOTTOMRIGHT", "oUF_Target", "TOPRIGHT", 2, 278)
 		else
 			f:SetPoint("CENTER", 330, 205)
