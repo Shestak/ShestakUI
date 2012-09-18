@@ -446,48 +446,48 @@ Filger_Spells = {
 			{spellID = 2782, filter = "CD"},
 			-- Skull Bash
 			{spellID = 106839, filter = "CD"},
+			-- Mangle
+			{spellID = 33878, filter = "CD"},
 			-- Wild Growth
 			{spellID = 48438, filter = "CD"},
 			-- Swiftmend
 			{spellID = 18562, filter = "CD"},
-			-- Barkskin
-			{spellID = 22812, filter = "CD"},
-			-- Ironbark
-			{spellID = 102342, filter = "CD"},
-			-- Mangle
-			{spellID = 33878, filter = "CD"},
-			-- Tiger's Fury
-			{spellID = 5217, filter = "CD"},
-			-- Starsurge
-			{spellID = 78674, filter = "CD"},
-			-- Typhoon
-			{spellID = 132469, filter = "CD"},
-			-- Solar Beam
-			{spellID = 78675, filter = "CD"},
 			-- Growl
 			{spellID = 6795, filter = "CD"},
 			-- Maim
 			{spellID = 22570, filter = "CD"},
-			-- Faerie Fire
-			{spellID = 770, filter = "CD"},
+			-- Starsurge
+			{spellID = 78674, filter = "CD"},
 			-- Wild Charge
 			{spellID = 102401, filter = "CD"},
+			-- Faerie Fire
+			{spellID = 770, filter = "CD"},
+			-- Tiger's Fury
+			{spellID = 5217, filter = "CD"},
 			-- Disorienting Roar
 			{spellID = 99, filter = "CD"},
+			-- Typhoon
+			{spellID = 132469, filter = "CD"},
 			-- Mighty Bash
 			{spellID = 5211, filter = "CD"},
 			-- Bear Hug
 			{spellID = 102795, filter = "CD"},
+			-- Solar Beam
+			{spellID = 78675, filter = "CD"},
+			-- Barkskin
+			{spellID = 22812, filter = "CD"},
+			-- Ironbark
+			{spellID = 102342, filter = "CD"},
+			-- Ursol's Vortex
+			{spellID = 102793, filter = "CD"},
 			-- Enrage
 			{spellID = 5229, filter = "CD"},
+			-- Force of Nature
+			{spellID = 106737, filter = "CD"},
 			-- Nature's Grasp
 			{spellID = 16689, filter = "CD"},
 			-- Incarnation
 			{spellID = 106731, filter = "CD"},
-			-- Force of Nature
-			{spellID = 102693, filter = "CD"},
-			-- Ursol's Vortex
-			{spellID = 102793, filter = "CD"},
 
 			-- Racial
 			-- Shadowmeld (Night Elf)
