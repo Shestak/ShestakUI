@@ -38,7 +38,7 @@ C["position"] = {
 	["pet_horizontal"] = {"BOTTOMRIGHT", UIParent, "BOTTOM", -175, 167},			-- Horizontal pet bar
 	["stance_bar"] = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21},						-- Stance bar
 	["vehicle_bar"] = {"BOTTOMRIGHT", ActionButton1, "BOTTOMLEFT", -3, 0},			-- Vehicle button
-	["micro_menu"] = {"TOPLEFT", UIParent, "TOPLEFT", 2, -2},						-- Micro menu
+	["micro_menu"] = {"TOPLEFT", UIParent, "TOPLEFT", 217, -16},					-- Micro menu
 	-- UnitFrame positions
 	unitframes = {
 		["player"] = {"BOTTOMRIGHT", "ActionBarAnchor", "TOPLEFT", -5, 247},		-- Player frame
