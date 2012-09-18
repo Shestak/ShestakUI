@@ -109,18 +109,16 @@ for i, button in pairs(microbuttons) do
 end
 
 -- Fix/Create textures for buttons
-do
+hooksecurefunc("UpdateMicroButtons", function()
 	MicroButtonPortrait:ClearAllPoints()
 	MicroButtonPortrait:Point("TOPLEFT", CharacterMicroButton.frame, "TOPLEFT", 2, -2)
 	MicroButtonPortrait:Point("BOTTOMRIGHT", CharacterMicroButton.frame, "BOTTOMRIGHT", -2, 2)
-end
 
-hooksecurefunc("UpdateMicroButtons", function()
+	CharacterMicroButton:ClearAllPoints()
+	CharacterMicroButton:Point("BOTTOMLEFT", frame, "BOTTOMLEFT", -2, 0)
+
 	GuildMicroButtonTabard:ClearAllPoints()
 	GuildMicroButtonTabard:Point("TOP", GuildMicroButton.frame, "TOP", 0, 25)
-end)
 
-CharacterMicroButton:ClearAllPoints()
-CharacterMicroButton:Point("BOTTOMLEFT", frame, "BOTTOMLEFT", -2, 0)
-CharacterMicroButton.SetPoint = T.dummy
-CharacterMicroButton.ClearAllPoints = T.dummy
+	MainMenuBarPerformanceBar:SetPoint("TOPLEFT", MainMenuMicroButton, "TOPLEFT", 9, -36)
+end)
