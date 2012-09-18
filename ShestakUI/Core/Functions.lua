@@ -569,6 +569,10 @@ T.PostUpdateHealth = function(health, unit, min, max)
 			else
 				if b then
 					health:SetStatusBarColor(r, g, b)
+					if health.bg and health.bg.multiplier then
+						local mu = health.bg.multiplier
+						health.bg:SetVertexColor(r * mu, g * mu, b * mu)
+					end
 				end
 			end
 		end
