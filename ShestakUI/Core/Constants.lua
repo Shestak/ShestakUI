@@ -30,5 +30,5 @@ or T.name == "Женишок" then
 end
 
 if T.name == "Занштек" or T.name == "Гранн" or T.name == "Тёми" or T.name == "Палтасар" or T.name == "Ллевалалуз" or T.name == "Сиамад" then 
-	T.soauthor = true 
+	T.coauthor = true 
 end
