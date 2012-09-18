@@ -234,6 +234,8 @@ Filger_Spells = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
+			-- Shroud of Purgatory
+			{spellID = 116888, filter = "ICD", trigger = "BUFF", duration = 180},
 		},
 	},
 	["DRUID"] = {
@@ -254,6 +256,8 @@ Filger_Spells = {
 			{spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cenarion Ward
 			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nature's Vigil
+			{spellID = 124974, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Tree of Life
 			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Chosen of Elunee
@@ -460,48 +464,48 @@ Filger_Spells = {
 			{spellID = 2782, filter = "CD"},
 			-- Skull Bash
 			{spellID = 106839, filter = "CD"},
+			-- Mangle
+			{spellID = 33878, filter = "CD"},
 			-- Wild Growth
 			{spellID = 48438, filter = "CD"},
 			-- Swiftmend
 			{spellID = 18562, filter = "CD"},
-			-- Barkskin
-			{spellID = 22812, filter = "CD"},
-			-- Ironbark
-			{spellID = 102342, filter = "CD"},
-			-- Mangle
-			{spellID = 33878, filter = "CD"},
-			-- Tiger's Fury
-			{spellID = 5217, filter = "CD"},
-			-- Starsurge
-			{spellID = 78674, filter = "CD"},
-			-- Typhoon
-			{spellID = 132469, filter = "CD"},
-			-- Solar Beam
-			{spellID = 78675, filter = "CD"},
 			-- Growl
 			{spellID = 6795, filter = "CD"},
 			-- Maim
 			{spellID = 22570, filter = "CD"},
-			-- Faerie Fire
-			{spellID = 770, filter = "CD"},
+			-- Starsurge
+			{spellID = 78674, filter = "CD"},
 			-- Wild Charge
 			{spellID = 102401, filter = "CD"},
+			-- Faerie Fire
+			{spellID = 770, filter = "CD"},
+			-- Tiger's Fury
+			{spellID = 5217, filter = "CD"},
 			-- Disorienting Roar
 			{spellID = 99, filter = "CD"},
+			-- Typhoon
+			{spellID = 132469, filter = "CD"},
 			-- Mighty Bash
 			{spellID = 5211, filter = "CD"},
 			-- Bear Hug
 			{spellID = 102795, filter = "CD"},
+			-- Solar Beam
+			{spellID = 78675, filter = "CD"},
+			-- Barkskin
+			{spellID = 22812, filter = "CD"},
+			-- Ironbark
+			{spellID = 102342, filter = "CD"},
+			-- Ursol's Vortex
+			{spellID = 102793, filter = "CD"},
 			-- Enrage
 			{spellID = 5229, filter = "CD"},
+			-- Force of Nature
+			{spellID = 106737, filter = "CD"},
 			-- Nature's Grasp
 			{spellID = 16689, filter = "CD"},
 			-- Incarnation
 			{spellID = 106731, filter = "CD"},
-			-- Force of Nature
-			{spellID = 102693, filter = "CD"},
-			-- Ursol's Vortex
-			{spellID = 102793, filter = "CD"},
 
 			-- Racial
 			-- Shadowmeld (Night Elf)
@@ -783,18 +787,20 @@ Filger_Spells = {
 			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Icy Veins
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Incanter's Ward
-			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Temporal Shield
-			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Power
+			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Ward
 			{spellID = 111264, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Floes
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Arcane Power
-			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Incanter's Ward
+			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Alter Time
+			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Temporal Shield
+			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -868,11 +874,11 @@ Filger_Spells = {
 			-- Combustion
 			{spellID = 83853, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Freeze (Pet)
-			{spellID = 33395, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
-			{spellID = 122, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 122, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Ice Ward
-			{spellID = 111340, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 111340, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frostfire Bolt
@@ -1694,6 +1700,8 @@ Filger_Spells = {
 			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Adrenaline Rush
 			{spellID = 13750, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Blades
+			{spellID = 121471, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evasion
 			{spellID = 5277, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Envenom
@@ -1714,10 +1722,12 @@ Filger_Spells = {
 			{spellID = 45182, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blade Flurry
 			{spellID = 13877, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Feint
-			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sprint
 			{spellID = 2983, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Feint
+			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Walk
+			{spellID = 114842, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2380,6 +2390,8 @@ Filger_Spells = {
 			{spellID = 23920, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Berserker Rage
 			{spellID = 18499, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Avatar
+			{spellID = 107574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bloodbath
 			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recklesness
@@ -2591,7 +2603,7 @@ Filger_Spells = {
 			-- Ancient Hysteria
 			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Engineering
+			-- Engineering and Herbalism
 			-- Synapse Springs
 			{spellID = 126734, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Phase Fingers
@@ -2600,6 +2612,8 @@ Filger_Spells = {
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Parachute
 			{spellID = 55001, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lifeblood
+			{spellID = 74497, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -2616,10 +2630,6 @@ Filger_Spells = {
 			{spellID = 28880, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Other
-			-- Lifeblood
-			{spellID = 74497, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lightwell Renew
-			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Protection
 			{spellID = 1022, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Freedom
@@ -2628,18 +2638,18 @@ Filger_Spells = {
 			{spellID = 6940, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Purity
 			{spellID = 114039, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Devotion Aura
-			{spellID = 31821, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Pain Suppression
-			{spellID = 33206, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Guardian Spirit
-			{spellID = 47788, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Life Cocoon
 			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Rallying Cry
-			{spellID = 97462, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Guardian Spirit
+			{spellID = 47788, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Pain Suppression
+			{spellID = 33206, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Ironbark
 			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Devotion Aura
+			{spellID = 31821, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Rallying Cry
+			{spellID = 97463, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
 			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
@@ -2648,8 +2658,12 @@ Filger_Spells = {
 			{spellID = 77764, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Innervate
 			{spellID = 29166, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mass Spell Reflection
+			{spellID = 114028, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Grounding Totem
 			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Lightwell Renew
+			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Slow Fall
 			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Levitate
@@ -2966,6 +2980,8 @@ Filger_Spells = {
 			-- Death knight
 			-- Anti-Magic Shell
 			{spellID = 48707, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Desecrated Ground
+			{spellID = 115018, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Lichborne
 			{spellID = 49039, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Bone shield
@@ -3071,6 +3087,8 @@ Filger_Spells = {
 			{spellID = 12051, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Alter Time
+			{spellID = 110909, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Cauterize
 			{spellID = 87023, unitID = "target", caster = "target", filter = "DEBUFF"},
@@ -3236,6 +3254,8 @@ Filger_Spells = {
 			-- Warrior
 			-- Spell Reflection
 			{spellID = 23920, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Mass Spell Reflection
+			{spellID = 114028, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Shield Wall
 			{spellID = 871, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserker Rage
