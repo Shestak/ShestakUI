@@ -463,3 +463,15 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["announcements"].lightwell = true
 	end
 end
+
+----------------------------------------------------------------------------------------
+--	Majestic Config
+----------------------------------------------------------------------------------------
+if T.soauthor == true then
+	if T.name ~= "Занштек" then
+		C["automation"].logging_combat = true
+	end
+	if T.name == "Тёми" then
+		C["reminder"].solo_buffs_enable = false
+	end
+end
