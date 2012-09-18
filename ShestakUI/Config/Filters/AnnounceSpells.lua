@@ -16,6 +16,7 @@ if C.announcements.spells == true then
 		20707,	-- Soulstone
 		110309,	-- Symbiosis
 		2908,	-- Soothe
+		120668,	-- Stormlash Totem
 	}
 end
 
