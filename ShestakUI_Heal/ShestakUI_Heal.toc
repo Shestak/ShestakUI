@@ -2,10 +2,10 @@
 ## Title: ShestakUI Heal
 ## Notes: Raid layout for ShestakUI
 ## Author: Shestak
-## Version: 4.12
+## Version: 4.13
 ## Credits: ALZA, Caellian, Tukz
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 4.12
+## X-Curse-Packaged-Version: 4.13
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
