@@ -28,3 +28,7 @@ or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торг
 or T.name == "Женишок" then
 	T.author = true
 end
+
+if T.name == "Занштек" or T.name == "Гранн" or T.name == "Тёми" or T.name == "Палтасар" or T.name == "Ллевалалуз" or T.name == "Сиамад" then 
+	T.soauthor = true 
+end
