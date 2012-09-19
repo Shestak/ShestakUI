@@ -201,31 +201,43 @@ local function update()
 	for i, button in ipairs(buttons) do
 		if button:IsShown() and button.online and button.guildIndex then
 			if _VIEW == "tradeskill" then
-				local _, _, _, headerName, _, _, _, playerName, _, _, zone, _, classFileName = GetGuildTradeSkillInfo(button.guildIndex)
+				local _, _, _, headerName, _, _, _, playerName, _, _, zone, _, classFileName, isMobile = GetGuildTradeSkillInfo(button.guildIndex)
 				if not headerName and playerName then
 					local c = classColorRaw[classFileName]
 					button.string1:SetTextColor(c.r, c.g, c.b)
-					if zone == playerArea then
+					if not isMobile and zone == playerArea then
 						button.string2:SetText("|cff00ff00"..zone)
+					elseif isMobile then
+						button.string2:SetText("|cffa5a5a5"..REMOTE_CHAT)
 					end
 				end
 			else
 				local name, rank, rankIndex, level, _, zone, _, _, _, isAway, classFileName, _, _, isMobile = GetGuildRosterInfo(button.guildIndex)
 				local displayedName = classColor[classFileName]..name
 				if isMobile then
-					if isAway == 2 then
-						displayedName = "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat-BusyMobile:14:14:0:0:16:16:0:16:0:16|t"..displayedName
-					elseif isAway == 1 then
-						displayedName = "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat-AwayMobile:14:14:0:0:16:16:0:16:0:16|t"..displayedName
+					if isAway == 1 then
+						displayedName = "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat-AwayMobile:14:14:0:0:16:16:0:16:0:16|t"..displayedName.." |cffE7E716"..L_CHAT_AFK.."|r"
+					elseif isAway == 2 then
+						displayedName = "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat-BusyMobile:14:14:0:0:16:16:0:16:0:16|t"..displayedName.." |cffff0000"..L_CHAT_DND.."|r"
 					else
-						name = ChatFrame_GetMobileEmbeddedTexture(73/255, 177/255, 73/255)..displayedName
+						displayedName = ChatFrame_GetMobileEmbeddedTexture(0.3, 1, 0.3)..displayedName
+					end
+				else
+					if isAway == 1 then
+						displayedName = displayedName.." |cffE7E716"..L_CHAT_AFK.."|r"
+					elseif isAway == 2 then
+						displayedName = displayedName.." |cffff0000"..L_CHAT_DND.."|r"
+					else
+						displayedName = displayedName
 					end
 				end
 				if _VIEW == "playerStatus" then
 					button.string1:SetText(diffColor[level]..level)
 					button.string2:SetText(displayedName)
 					if not isMobile and zone == playerArea then
-						button.string3:SetText("|cff00ff00"..zone)
+						button.string3:SetText("|cff4cff4c"..zone)
+					elseif isMobile then
+						button.string3:SetText("|cffa5a5a5"..REMOTE_CHAT)
 					end
 				elseif _VIEW == "guildStatus" then
 					button.string1:SetText(displayedName)
