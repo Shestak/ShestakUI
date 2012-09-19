@@ -17,7 +17,7 @@ local function LoadSkin()
 	ReforgingFrameReforgeButton:SkinButton(true)
 
 	ReforgingFrame.ItemButton:StripTextures()
-	ReforgingFrame.ItemButton:SetTemplate("Default", true)
+	ReforgingFrame.ItemButton:SetTemplate("Default")
 	ReforgingFrame.ItemButton.IconTexture:ClearAllPoints()
 	ReforgingFrame.ItemButton.IconTexture:Point("TOPLEFT", 2, -2)
 	ReforgingFrame.ItemButton.IconTexture:Point("BOTTOMRIGHT", -2, 2)

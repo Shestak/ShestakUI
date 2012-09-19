@@ -17,7 +17,7 @@ local function LoadSkin()
 
 		b:StripTextures()
 		b:StyleButton()
-		b:SetTemplate("Default", true)
+		b:SetTemplate("Default")
 	end
 
 	for i = 1, 3 do

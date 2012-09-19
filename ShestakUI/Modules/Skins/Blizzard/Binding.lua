@@ -31,11 +31,11 @@ local function LoadSkin()
 
 		button1:StripTextures(true)
 		button1:StyleButton()
-		button1:SetTemplate("Overlay", true)
+		button1:SetTemplate("Overlay")
 
 		button2:StripTextures(true)
 		button2:StyleButton()
-		button2:SetTemplate("Overlay", true)
+		button2:SetTemplate("Overlay")
 		button2:Point("LEFT", button1, "RIGHT", 1, 0)
 	end
 

@@ -3,23 +3,23 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Move WatchFrame
 ----------------------------------------------------------------------------------------
-local WatchFrameAnchor = CreateFrame("Frame", "WatchFrameAnchor", UIParent)
-WatchFrameAnchor:Point(unpack(C.position.quest))
-WatchFrameAnchor:Height(150)
+local frame = CreateFrame("Frame", "WatchFrameAnchor", UIParent)
+frame:Point(unpack(C.position.quest))
+frame:Height(150)
 if GetCVar("watchFrameWidth") == "1" then
-	WatchFrameAnchor:Width(326)
+	frame:Width(326)
 else
-	WatchFrameAnchor:Width(224)
+	frame:Width(224)
 end
 
 WatchFrame:ClearAllPoints()
-WatchFrame:SetPoint("TOPLEFT", WatchFrameAnchor, "TOPLEFT", 20, 0)
+WatchFrame:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, 0)
 WatchFrame:Height(T.getscreenheight / 1.6)
 
 hooksecurefunc(WatchFrame, "SetPoint", function(_, _, parent)
-	if parent ~= WatchFrameAnchor then
+	if parent ~= frame then
 		WatchFrame:ClearAllPoints()
-		WatchFrame:SetPoint("TOPLEFT", WatchFrameAnchor, "TOPLEFT", 20, 0)
+		WatchFrame:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, 0)
 	end
 end)
 

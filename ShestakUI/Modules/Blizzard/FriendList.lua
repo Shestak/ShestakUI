@@ -214,11 +214,11 @@ local function update()
 				local displayedName = classColor[classFileName]..name
 				if isMobile then
 					if isAway == 2 then
-						displayedName = "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat-BusyMobile:14:14:0:0:16:16:0:16:0:16|t"..name
+						displayedName = "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat-BusyMobile:14:14:0:0:16:16:0:16:0:16|t"..displayedName
 					elseif isAway == 1 then
-						displayedName = "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat-AwayMobile:14:14:0:0:16:16:0:16:0:16|t"..name
+						displayedName = "|TInterface\\ChatFrame\\UI-ChatIcon-ArmoryChat-AwayMobile:14:14:0:0:16:16:0:16:0:16|t"..displayedName
 					else
-						name = ChatFrame_GetMobileEmbeddedTexture(73/255, 177/255, 73/255)..name
+						name = ChatFrame_GetMobileEmbeddedTexture(73/255, 177/255, 73/255)..displayedName
 					end
 				end
 				if _VIEW == "playerStatus" then
