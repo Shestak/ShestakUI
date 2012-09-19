@@ -6,15 +6,11 @@ if C.automation.logging_combat ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:SetScript("OnEvent", function ()
-	local _, instanceType = IsInInstance()
-	if instanceType == "raid" then
-		if not LoggingCombat() then
-			LoggingCombat(1)
-		end
+frame:SetScript("OnEvent", function()
+	local inInstance, instanceType = IsInInstance()
+	if inInstance and instanceType == "raid" and not LoggingCombat() then
+		LoggingCombat(1)
 	else
-		if LoggingCombat() then
-			LoggingCombat(0)
-		end
+		LoggingCombat(0)
 	end
 end)
