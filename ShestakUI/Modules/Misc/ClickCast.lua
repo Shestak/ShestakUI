@@ -180,7 +180,7 @@ end
 hooksecurefunc("SpellBookFrame_Update", function() if SpellBinder.sbOpen then SpellBinder:ToggleButtons() end end)
 
 SpellBinder.OpenButton = CreateFrame("CheckButton", "SpellBinderOpenButton", _G["SpellBookSkillLineTab1"], "SpellBookSkillLineTabTemplate")
-SpellBinder.OpenButton:SetNormalTexture("Interface\\ICONS\\INV_Mushroom_08")
+SpellBinder.OpenButton:SetNormalTexture("Interface\\ICONS\\Achievement_Guild_Doctorisin")
 
 SpellBinder.OpenButton:SetScript("OnShow", function(self)
 	if SpellBinder:IsVisible() then self:SetChecked(true) end
@@ -346,7 +346,7 @@ if IsAddOnLoaded("Aurora") then
 	SpellBinderInset:StripTextures()
 
 	SpellBinder.OpenButton:StripTextures()
-	SpellBinder.OpenButton:SetNormalTexture("Interface\\ICONS\\INV_Mushroom_08")
+	SpellBinder.OpenButton:SetNormalTexture("Interface\\ICONS\\Achievement_Guild_Doctorisin")
 	SpellBinder.OpenButton:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	SpellBinder.OpenButton:SetCheckedTexture(C.media.checked)
@@ -368,7 +368,7 @@ elseif C.skins.blizzard_frames == true then
 	SpellBinder.backdrop:Point("BOTTOMRIGHT", 0, 9)
 
 	SpellBinder.OpenButton:StripTextures()
-	SpellBinder.OpenButton:SetNormalTexture("Interface\\ICONS\\INV_Mushroom_08")
+	SpellBinder.OpenButton:SetNormalTexture("Interface\\ICONS\\Achievement_Guild_Doctorisin")
 	SpellBinder.OpenButton:GetNormalTexture():ClearAllPoints()
 	SpellBinder.OpenButton:GetNormalTexture():Point("TOPLEFT", 2, -2)
 	SpellBinder.OpenButton:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
