@@ -408,4 +408,23 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	end
 end
 
+----------------------------------------------------------------------------------------
+--	Nagiko@Pozzo dell'Eternità Config
+----------------------------------------------------------------------------------------
+if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
+	C["position"].micro_menu = {"TOPLEFT", UIParent, "TOPLEFT", 21, -16}
+	C["media"].border_color = {0.2, 0, 0.2, 1}
+	C["misc"].profession_database = true
+	C["automation"].screenshot = true
+	C["chat"].background = true
+	C["chat"].tabs_mouseover = false
+	C["actionbar"].split_bars = true
+	C["actionbar"].bottonbars = 2
+	C["actionbar"].rightbars_mouseover = false
+	C["actionbar"].micromenu = true	
+	C["aura"].focus_debuffs = true
+	C["aura"].pet_debuffs = true
+	C["unitframe"].alternative_portraits = true
+end
+
 -- edit by Oz of shestak. org --

@@ -62,4 +62,12 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	end
 end
 
+----------------------------------------------------------------------------------------
+--	Nagiko@Pozzo dell'Eternità Config
+----------------------------------------------------------------------------------------
+if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
+	C["extra_position"].extra_bar = {"CENTER", oUF_Target, "CENTER", 56, 251}
+	C["extra_bar"].enable = true
+end
+
 -- edit by Oz of shestak. org --
