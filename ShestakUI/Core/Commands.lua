@@ -24,6 +24,16 @@ SlashCmdList.ROLECHECK = function() InitiateRolePoll() end
 SLASH_ROLECHECK1 = "/role"
 SLASH_ROLECHECK2 = "/кщду"
 
+SlashCmdList.SHOWCLOAK = function() if ShowingCloak() then ShowCloak(false) else ShowCloak() end end
+SLASH_SHOWCLOAK1 = "/showcloak"
+SLASH_SHOWCLOAK2 = "/sc"
+SLASH_SHOWCLOAK3 = "/ыс"
+
+SlashCmdList.SHOWHELM = function() if ShowingHelm() then ShowHelm(false) else ShowHelm() end end
+SLASH_SHOWHELM1 = "/showhelm"
+SLASH_SHOWHELM2 = "/sh"
+SLASH_SHOWHELM3 = "/ыр"
+
 ----------------------------------------------------------------------------------------
 --	Description of the slash commands
 ----------------------------------------------------------------------------------------

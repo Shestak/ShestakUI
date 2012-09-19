@@ -52,7 +52,7 @@ L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automation"
-L_GUI_AUTOMATION_RESURRECTION = "Auto resurrection in Battle Ground"
+L_GUI_AUTOMATION_RESURRECTION = "Auto resurrection in battlegrounds"
 L_GUI_AUTOMATION_SCREENSHOT = "Take screenshot when player get achievement"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact"
 L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat"

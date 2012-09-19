@@ -11,8 +11,7 @@ local function LoadSkin()
 	T.SkinCloseButton(MissingLootFramePassButton)
 
 	local function SkinButton()
-		local number = GetNumMissingLootItems()
-		for i = 1, number do
+		for i = 1, GetNumMissingLootItems() do
 			local slot = _G["MissingLootFrameItem"..i]
 			local icon = slot.icon
 

@@ -261,9 +261,9 @@ Minimap:SetScript("OnMouseUp", function(self, button)
 	local position = MinimapAnchor:GetPoint()
 	if button == "RightButton" then
 		if position:match("LEFT") then
-			EasyMenu(micromenu, menuFrame, "cursor", 0, 0, "MENU", nil)
+			EasyMenu(micromenu, menuFrame, "cursor", 0, 0, "MENU")
 		else
-			EasyMenu(micromenu, menuFrame, "cursor", -160, 0, "MENU", nil)
+			EasyMenu(micromenu, menuFrame, "cursor", -160, 0, "MENU")
 		end
 	elseif button == "MiddleButton" then
 		if position:match("LEFT") then
