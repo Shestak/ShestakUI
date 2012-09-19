@@ -83,7 +83,7 @@ C["announcements"] = {
 --	Automation options
 ----------------------------------------------------------------------------------------
 C["automation"] = {
-	["resurrection"] = false,					-- Auto resurrection in Battle Ground
+	["resurrection"] = false,					-- Auto resurrection in battlegrounds
 	["screenshot"] = false,						-- Take screenshot when player get achievement
 	["solve_artifact"] = false,					-- Auto popup for solve artifact
 	["chefs_hat"] = true,						-- Auto equip Chef's Hat

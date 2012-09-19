@@ -765,8 +765,8 @@ if guild.enabled then
 		totalGuildOnline = 0
 		wipe(guildTable)
 		for i = 1, GetNumGuildMembers() do
-			local name, rank, _, level, _, zone, note, officernote, connected, status, class = GetGuildRosterInfo(i)
-			guildTable[i] = {name, rank, level, zone, note, officernote, connected, status, class}
+			local name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, mobile = GetGuildRosterInfo(i)
+			guildTable[i] = {name, rank, level, zone, note, officernote, connected, status, class, mobile}
 			if connected then
 				totalGuildOnline = totalGuildOnline + 1
 			end
@@ -830,7 +830,6 @@ if guild.enabled then
 				if u == "GUILD_XP_UPDATE" then UpdateGuildXP() end
 				AltUpdate(self)
 				if not self.gmotd then
-					-- Give me the GMOTD *today* pls.
 					if self.elapsed > 1 then GuildRoster(); self.elapsed = 0 end
 					if GetGuildRosterMOTD() ~= "" then self.gmotd = true; if self.hovered then self:GetScript("OnEnter")(self) end end
 					self.elapsed = self.elapsed + u
@@ -939,8 +938,8 @@ if guild.enabled then
 						end
 						name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, isMobile = GetGuildRosterInfo(i)
 						if connected and level >= guild.threshold then
-							if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
-							if isMobile then zone = "|cffffffff"..REMOTE_CHAT.."|r" end
+							if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1, 0.3 else zone_r, zone_g, zone_b = 1, 1, 1 end
+							if isMobile then zone = "|cffa5a5a5"..REMOTE_CHAT.."|r" end
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
 							grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
 							if self.altdown then

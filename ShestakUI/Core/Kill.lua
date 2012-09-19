@@ -32,10 +32,8 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	CompanionsMicroButtonAlert:Kill()
 
 	if C.chat.enable then
+		InterfaceOptionsSocialPanelChatStyle:Kill()
 		InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
-		InterfaceOptionsSocialPanelConversationMode:Kill()
-		InterfaceOptionsSocialPanelBnWhisperMode:Kill()
-		InterfaceOptionsSocialPanelWhisperMode:Kill()
 	end
 
 	if C.unitframe.enable then
