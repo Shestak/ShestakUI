@@ -27,6 +27,9 @@ end
 -- * More tip_anchor strings: http://www.wowwiki.com/API_GameTooltip_SetOwner
 -- * To color any of your "fmt" strings, use hex format ("|cffFFFF55*string*|r") or the class format described above.
 -- * You can start a new line by using "\n" in your format strings.
+
+local _, _, _, cBN = GetAddOnInfo("cargBags_Nivaya") -- For Gold block (by m2jest1c)
+
 LPSTAT_CONFIG = {
 -- Bottomleft block
 	Clock = {
@@ -193,13 +196,15 @@ LPSTAT_CONFIG = {
 	Gold = {
 		enabled = true,
 		style = 1, -- Display styles: [1] 55g 21s 11c [2] 8829.4g [3] 823.55.94
-		anchor_frame = "NivayacBniv_Bag",
+		anchor_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "FPS",
 		anchor_to = "right",
-		anchor_from = "bottomright",
-		x_off = 0, y_off = 6,
-		tip_frame = "NivayacBniv_Bag",
-		tip_anchor = "BOTTOMRIGHT",
-		tip_x = 3, tip_y = -3
+		anchor_from = cBN and "bottomright" or C.bag.enable and "topright" or "left",
+		x_off = cBN and 0 or C.bag.enable and -25 or -3,
+		y_off = cBN and 6 or C.bag.enable and -13 or 0,
+		tip_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "UIParent",
+		tip_anchor = cBN and "BOTTOMRIGHT" or C.bag.enable and "TOPRIGHT" or "BOTTOMRIGHT",
+		tip_x = cBN and 3 or C.bag.enable and -50 or -21,
+		tip_y = cBN and -3 or C.bag.enable and 0 or 20
 	},
 }
 
