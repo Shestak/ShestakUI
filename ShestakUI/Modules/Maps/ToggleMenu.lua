@@ -234,7 +234,7 @@ local function addMainMenuButtons(menuItems, menuName, menuBackground)
 				if C.minimap.toggle_menu_bottom == true then
 					menuItems[index]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "TOP", menuBackground, "TOP", 0, buttonspacing(-1))
 				else
-					menuItems[index]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "BOTTOM", menuBackground, "BOTTOM", 0, buttonspacing(-1))
+					menuItems[index]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "BOTTOM", menuBackground, "BOTTOM", 0, buttonspacing(1))
 				end
 			menuItems[index]:SetFrameLevel(defaultframelevel + 1)
 			menuItems[index]:SetFrameStrata("HIGH")
@@ -242,7 +242,7 @@ local function addMainMenuButtons(menuItems, menuName, menuBackground)
 				if C.minimap.toggle_menu_bottom == true then
 					menuItems[index]:SetPoint("TOPRIGHT", menuBackground, "TOPRIGHT", buttonspacing(-1), buttonspacing(-1))
 				else
-					menuItems[index]:SetPoint("BOTTOMLEFT", menuBackground, "BOTTOMLEFT", buttonspacing(1), buttonspacing(1))
+					menuItems[index]:SetPoint("BOTTOMRIGHT", menuBackground, "BOTTOMRIGHT", buttonspacing(-1), buttonspacing(-1))
 				end
 			else
 				if C.minimap.toggle_menu_bottom == true then
@@ -425,7 +425,7 @@ local function refreshAddOnMenu()
 					if C.minimap.toggle_menu_bottom == true then
 						addonmenuitems[j]:SetPoint("TOPRIGHT", addonmenuitems[lastMenuEntryID], "TOPLEFT", buttonspacing(-1), (buttonheight(menuheight - 1) + buttonspacing(menuheight - 1)))
 					else
-						addonmenuitems[j]:SetPoint("BOTTOMLEFT", addonmenuitems[lastMenuEntryID], "BOTTOMRIGHT", buttonspacing(1), (buttonheight(-menuheight + 1) + buttonspacing(-menuheight + 1)))
+						addonmenuitems[j]:SetPoint("BOTTOMRIGHT", addonmenuitems[lastMenuEntryID], "BOTTOMLEFT", buttonspacing(-1), (buttonheight(-menuheight + 1) + buttonspacing(-menuheight + 1)))
 					end
 				else
 					if C.minimap.toggle_menu_bottom == true then
