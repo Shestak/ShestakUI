@@ -511,7 +511,7 @@ if T.coauthor == true then
 	if T.name ~= "Занштек" then
 		C["automation"].logging_combat = true
 	end
-	if T.name == "Тёми" then
-		C["reminder"].solo_buffs_enable = false
+	if T.class == "WARRIOR" then
+		C["actionbar"].stancebar_mouseover = false
 	end
 end
