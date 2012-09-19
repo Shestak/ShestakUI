@@ -5,7 +5,7 @@ if C.minimap.enable ~= true then return end
 --	Minimap border
 ----------------------------------------------------------------------------------------
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
-MinimapAnchor:CreatePanel("ClassColor", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
+MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
 MinimapAnchor:RegisterEvent("ADDON_LOADED")
 
 ----------------------------------------------------------------------------------------
@@ -57,7 +57,7 @@ MiniMapMailIcon:Size(16)
 
 -- Move QueueStatus icon
 QueueStatusMinimapButton:ClearAllPoints()
-QueueStatusMinimapButton:Point("TOP", Minimap, "TOP", 1, 6)
+QueueStatusMinimapButton:Point("BOTTOM", Minimap, "BOTTOM", 1, -6)
 QueueStatusMinimapButton:SetHighlightTexture(nil)
 QueueStatusMinimapButtonBorder:Hide()
 
@@ -118,7 +118,7 @@ end
 -- Ticket icon
 HelpOpenTicketButton:SetParent(Minimap)
 HelpOpenTicketButton:ClearAllPoints()
-HelpOpenTicketButton:Point("BOTTOM", Minimap, "BOTTOM", 0, -5)
+HelpOpenTicketButton:Point("TOP", Minimap, "TOP", 1, 6)
 HelpOpenTicketButton:SetHighlightTexture(nil)
 
 -- GhostFrame
@@ -126,7 +126,7 @@ GhostFrame:StripTextures()
 GhostFrame:SetTemplate("Overlay")
 GhostFrame:StyleButton()
 GhostFrame:ClearAllPoints()
-GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
+GhostFrame:SetPoint("BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -51)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 GhostFrameContentsFrameIcon:Size(34)
 GhostFrameContentsFrame:SetFrameLevel(GhostFrameContentsFrame:GetFrameLevel() + 2)
@@ -309,7 +309,7 @@ if C.minimap.tracking_icon then
 	trackborder:Height(20)
 	trackborder:Width(20)
 	trackborder:Point("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
-	trackborder:SetTemplate("ClassColor")
+	trackborder:SetTemplate("Default")
 
 	MiniMapTrackingBackground:Hide()
 	MiniMapTracking:ClearAllPoints()
