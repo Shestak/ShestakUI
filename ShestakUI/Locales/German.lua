@@ -3,29 +3,29 @@ if T.client ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for deDE client
---	Translation: Alwa, Baine, Chubidu, Vienchen
+--	Translation: Alwa, Baine, Chubidu, Sinaris, Vienchen
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " used my lightwell. " -- Needs review
-L_ANNOUNCE_LA_CHARGE = " charge(s))" -- Needs review
-L_ANNOUNCE_LA_USELESS = " used my lightwell, uselessly. " -- Needs review
-L_ANNOUNCE_LA_PLACED = "Lightwell placed. " -- Needs review
-L_ANNOUNCE_LA_CHARGES = " charges." -- Needs review
+L_ANNOUNCE_LA_USE = " benutzte meinen Lichtbrunnen. "
+L_ANNOUNCE_LA_CHARGE = " aufladung(en)"
+L_ANNOUNCE_LA_USELESS = " benutzte meinen Lichtbrunnen, nutzlos. "
+L_ANNOUNCE_LA_PLACED = "Lichtbrunnen gesetzt. "
+L_ANNOUNCE_LA_CHARGES = " aufladungen."
 
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "Kein Essen: "
 L_ANNOUNCE_FF_NOFLASK = "Kein Fläschchen: "
 L_ANNOUNCE_FF_ALLBUFFED = "Alles drin!"
-L_ANNOUNCE_FF_CHECK_BUTTON = "Check food and flask" -- Needs review
+L_ANNOUNCE_FF_CHECK_BUTTON = "Überprüfe Food und Flask"
 
 -- Says thanks for some spells
-L_ANNOUNCE_SS_THANKS = "Thanks for " -- Needs review
-L_ANNOUNCE_SS_RECEIVED = " received from " -- Needs review
+L_ANNOUNCE_SS_THANKS = "Danke für "
+L_ANNOUNCE_SS_RECEIVED = " erhalten von "
 
 -- Pull countdown announce
-L_ANNOUNCE_PC_GO = "GO!" -- Needs review
-L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
-L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
+L_ANNOUNCE_PC_GO = "GO!"
+L_ANNOUNCE_PC_MSG = "Pull %s in %s.."
+L_ANNOUNCE_PC_ABORTED = "Pull ABGEBROCHEN!"
 
 -- Announce feasts and portals
 L_ANNOUNCE_FP_PRE = "%s has prepared a %s." -- Needs review
@@ -81,7 +81,7 @@ L_TOGGLE_COLLAPSE = "schließen "
 L_TOGGLE_RCLICK = "Rechtsklick zum Aktivieren oder Deaktiveren "
 L_TOGGLE_LCLICK = "Links klicken um Fenster aktiv zu halten "
 L_TOGGLE_RELOAD = " (benötigt UI neustart)"
-L_TOGGLE_NOT_FOUND = " not found." -- Needs review
+L_TOGGLE_NOT_FOUND = " nicht gefunden."
 
 -- UnitFrame
 L_UF_GHOST = "Geist"
@@ -102,16 +102,16 @@ L_MINIMAP_CALENDAR = "Kalender"
 -- Addons list
 L_ALOAD_RL = "Interface Neuladen"
 L_ALOAD_DEP = "Abhängigkeiten: "
-L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
-L_ALOAD_PROFILES = "Profiles" -- Needs review
-L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
-L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
-L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
-L_ALOAD_SET_TO = "Set To.." -- Needs review
-L_ALOAD_ADD_TO = "Add To.." -- Needs review
-L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
-L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
-L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
+L_ALOAD_OP_DEP = "Optionale Abhängigkeit: "
+L_ALOAD_PROFILES = "Profile"
+L_ALOAD_ENABLE_ALL = "Alle aktivieren"
+L_ALOAD_DISABLE_ALL = "Alle deaktivieren"
+L_ALOAD_PROFILE_NAME = "Profil Name"
+L_ALOAD_SET_TO = "Setzen auf.."
+L_ALOAD_ADD_TO = "Hinzufügen zu.."
+L_ALOAD_REMOVE_FROM = "Entfernen von.."
+L_ALOAD_DELETE_PROFILE = "Profil entfernen.."
+L_ALOAD_CONFIRM_DELETE = "Möchtest du dieses Profil wirklich entfernen? Wenn du dir sicher bist, halte Shift gedrückt und klicke erneut."
 
 -- Chat
 L_CHAT_WHISPER = "Von"

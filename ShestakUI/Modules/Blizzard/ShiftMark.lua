@@ -30,7 +30,7 @@ local menuList = {
 WorldFrame:HookScript("OnMouseDown", function(self, button)
 	if button == "LeftButton" and IsShiftKeyDown() and UnitExists("mouseover") then
 		if (GetNumGroupMembers() > 0 and not UnitInRaid("player")) or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player") then
-			EasyMenu(menuList, menuFrame, "cursor", 0, 0, "MENU", nil)
+			EasyMenu(menuList, menuFrame, "cursor", 0, 0, "MENU")
 		end
 	end
 end)

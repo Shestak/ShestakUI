@@ -51,35 +51,27 @@ local function print(text)
 	_G.print("|cffffff00"..text.."|r")
 end
 
--- Workaround the "bug" of GetInstanceDifficulty returning 1 when outside the instance
-local function getDiff()
-	if IsInInstance() then
-		return GetInstanceDifficulty()
-	else
-		return select(1, GetRaidDifficulty())
-	end
-end
-
 -- The Main function to run a check
 local function run(autoreport)
-	local num = GetNumGroupMembers()
-	local diff = getDiff()
-	local checkType = "raid"
+	local checkType
+	local output
 
 	if C.announcements.flask_food_auto == true then C.announcements.flask_food_raid = true end
 
 	table.wipe(noFood)
 	table.wipe(noFlask)
-	if not UnitInRaid("player") then
-		if num > 0 and num <= 4 then
-			checkType = "party"
-		end
+
+	if UnitInRaid("player") then
+		checkType = "raid"
+	else
+		checkType = "party"
 		checkUnit("player")
 	end
-	for i = 1, num do
+
+	for i = 1, GetNumGroupMembers() do
 		if checkType == "raid" then
-			local _, _, subGroup, _, _, _, _, online = GetRaidRosterInfo(i)
-			if ((diff == 4 or diff == 6) and subGroup < 3) or ((diff == 5 or diff == 7) and subGroup < 6) and online then
+			local online = select(8, GetRaidRosterInfo(i))
+			if online then
 				local unit = checkType..i
 				checkUnit(unit)
 			end
@@ -90,7 +82,7 @@ local function run(autoreport)
 			end
 		end
 	end
-	local output
+
 	if #noFlask > 0 then
 		table.sort(noFlask)
 		output = L_ANNOUNCE_FF_NOFLASK..table.concat(noFlask, ", ")
@@ -100,6 +92,7 @@ local function run(autoreport)
 			print(output)
 		end
 	end
+
 	if #noFood > 0 then
 		table.sort(noFood)
 		output = L_ANNOUNCE_FF_NOFOOD..table.concat(noFood, ", ")
@@ -109,6 +102,7 @@ local function run(autoreport)
 			print(output)
 		end
 	end
+
 	if #noFood == 0 and #noFlask == 0 then
 		if C.announcements.flask_food_raid then
 			SendChatMessage(L_ANNOUNCE_FF_ALLBUFFED, checkType)
@@ -118,38 +112,38 @@ local function run(autoreport)
 	end
 end
 
--- Create the slash command
-SlashCmdList.FFCHECK = run
-SLASH_FFCHECK1 = "/ffcheck"
-SLASH_FFCHECK2 = "/аасрусл"
-
 -- Event Handler
-local f = CreateFrame("Frame")
-f:RegisterEvent("READY_CHECK")
-f:SetScript("OnEvent", function(self, event, ...)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("READY_CHECK")
+frame:SetScript("OnEvent", function(self, event, ...)
 	if C.announcements.flask_food_auto then
 		run(true)
 	end
 end)
 
+-- Slash command
+SlashCmdList.FFCHECK = run
+SLASH_FFCHECK1 = "/ffcheck"
+SLASH_FFCHECK2 = "/аасрусл"
+
 -- Check button
 if C.misc.raid_tools == true then
 	RaidUtilityPanel:Height(168)
 
-	local b = CreateFrame("Button", "FoodFlaskCheckButton", RaidUtilityPanel, "UIPanelButtonTemplate")
-	b:Width(RaidUtilityRoleButton:GetWidth())
-	b:Height(18)
-	b:Point("TOP", RaidUtilityRaidControlButton, "BOTTOM", 0, -5)
+	local button = CreateFrame("Button", "FoodFlaskCheckButton", RaidUtilityPanel, "UIPanelButtonTemplate")
+	button:Width(RaidUtilityRoleButton:GetWidth())
+	button:Height(18)
+	button:Point("TOP", RaidUtilityRaidControlButton, "BOTTOM", 0, -5)
 	if IsAddOnLoaded("Aurora") then
 		local F = unpack(Aurora)
-		F.Reskin(b)
+		F.Reskin(button)
 	else
-		b:SkinButton()
+		button:SkinButton()
 	end
-	b:EnableMouse(true)
-	b:SetScript("OnMouseUp", function(self) run() end)
+	button:EnableMouse(true)
+	button:SetScript("OnMouseUp", function(self) run() end)
 
-	local t = b:CreateFontString(nil, "OVERLAY", b)
+	local t = button:CreateFontString(nil, "OVERLAY", button)
 	t:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	t:SetPoint("CENTER")
 	t:SetJustifyH("CENTER")
