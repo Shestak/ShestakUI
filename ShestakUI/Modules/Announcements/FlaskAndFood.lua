@@ -5,18 +5,8 @@ if C.announcements.flask_food ~= true then return end
 --	Checks the usage of flasks and food of your party/raid members(ffCheck by Silverwind)
 ----------------------------------------------------------------------------------------
 local noFood, noFlask, unitBuffs = {}, {}, {}
-
-local foods = {
-	104277,	-- Well Fed
-}
-
-local flasks = {
-	105689,	-- Flask of Spring Blossoms
-	105694,	-- Flask of the Earth
-	105691,	-- Flask of the Warm Sun
-	105696,	-- Flask of Winter's Bite
-	105693,	-- Flask of Falling Leaves
-}
+local foods = T.ReminderBuffs["Food"]
+local flasks = T.ReminderBuffs["Flask"]
 
 local function scan(unit)
 	table.wipe(unitBuffs)
@@ -89,7 +79,7 @@ local function run(autoreport)
 	for i = 1, num do
 		if checkType == "raid" then
 			local _, _, subGroup, _, _, _, _, online = GetRaidRosterInfo(i)
-			if (((diff == 1) or (diff == 3)) and subGroup < 3) or (((diff == 2) or (diff == 4)) and subGroup < 6) and online then
+			if ((diff == 4 or diff == 6) and subGroup < 3) or ((diff == 5 or diff == 7) and subGroup < 6) and online then
 				local unit = checkType..i
 				checkUnit(unit)
 			end
