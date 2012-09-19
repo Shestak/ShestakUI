@@ -504,6 +504,7 @@ if T.coauthor == true then
 	C["chat"].damage_meter_spam = true
 	C["map"].map_boss_count = true
 	C["nameplate"].track_auras = true
+	C["aura"].cast_by = true
 	C["unitframe"].castbar_icon = true
 	C["unitframe"].plugins_smooth_bar = true
 	C["unitframe"].plugins_diminishing = true
