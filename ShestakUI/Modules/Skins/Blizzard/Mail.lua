@@ -25,7 +25,7 @@ local function LoadSkin()
 
 		local b = _G["MailItem"..i.."Button"]
 		b:StripTextures()
-		b:SetTemplate("Default", true)
+		b:SetTemplate("Default")
 		b:StyleButton()
 
 		local t = _G["MailItem"..i.."ButtonIcon"]
@@ -69,7 +69,7 @@ local function LoadSkin()
 
 			if not b.skinned then
 				b:StripTextures()
-				b:SetTemplate("Default", true)
+				b:SetTemplate("Default")
 				b:StyleButton()
 				b.skinned = true
 			end
@@ -117,7 +117,7 @@ local function LoadSkin()
 	OpenMailArithmeticLine:Kill()
 
 	OpenMailLetterButton:StripTextures()
-	OpenMailLetterButton:SetTemplate("Default", true)
+	OpenMailLetterButton:SetTemplate("Default")
 	OpenMailLetterButton:StyleButton()
 	OpenMailLetterButtonIconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	OpenMailLetterButtonIconTexture:ClearAllPoints()
@@ -125,7 +125,7 @@ local function LoadSkin()
 	OpenMailLetterButtonIconTexture:Point("BOTTOMRIGHT", -2, 2)
 
 	OpenMailMoneyButton:StripTextures()
-	OpenMailMoneyButton:SetTemplate("Default", true)
+	OpenMailMoneyButton:SetTemplate("Default")
 	OpenMailMoneyButton:StyleButton()
 	OpenMailMoneyButtonIconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	OpenMailMoneyButtonIconTexture:ClearAllPoints()
@@ -137,7 +137,7 @@ local function LoadSkin()
 		local t = _G["OpenMailAttachmentButton"..i.."IconTexture"]
 
 		b:StripTextures()
-		b:SetTemplate("Default", true)
+		b:SetTemplate("Default")
 		b:StyleButton()
 
 		if t then

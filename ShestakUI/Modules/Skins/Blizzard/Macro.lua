@@ -99,7 +99,7 @@ local function LoadSkin()
 		if b then
 			b:StripTextures()
 			b:StyleButton()
-			b:SetTemplate("Default", true)
+			b:SetTemplate("Default")
 		end
 
 		if t then

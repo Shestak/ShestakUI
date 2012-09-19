@@ -50,7 +50,7 @@ local function LoadSkin()
 
 			player_button_count:SetDrawLayer("OVERLAY")
 
-			player_button:SetTemplate("Overlay", true)
+			player_button:SetTemplate("Overlay")
 			player_button:StyleButton()
 
 			player_button.bg = CreateFrame("Frame", nil, player_button)
@@ -67,7 +67,7 @@ local function LoadSkin()
 
 			recipient_button_count:SetDrawLayer("OVERLAY")
 
-			recipient_button:SetTemplate("Overlay", true)
+			recipient_button:SetTemplate("Overlay")
 			recipient_button:StyleButton()
 
 			recipient_button.bg = CreateFrame("Frame", nil, recipient_button)

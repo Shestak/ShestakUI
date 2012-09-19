@@ -1167,7 +1167,7 @@ if friends.enabled then
 				GameTooltip:AddDoubleLine(FRIENDS_LIST, format("%s: %s/%s", GUILD_ONLINE_LABEL, totalonline, totalfriends), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 				if online > 0 then
 					GameTooltip:AddLine(" ")
-					GameTooltip:AddLine(CHARACTER_FRIEND)
+					GameTooltip:AddLine(WOW_FRIEND)
 					for i = 1, total do
 						name, level, class, zone, connected, status, note = GetFriendInfo(i)
 						if not connected then break end
@@ -1184,7 +1184,7 @@ if friends.enabled then
 				end
 				if BNonline > 0 then
 					GameTooltip:AddLine(" ")
-					GameTooltip:AddLine(BATTLENET_OPTIONS_LABEL)
+					GameTooltip:AddLine(BATTLENET_FRIEND)
 					for i = 1, BNtotal do
 						_, presenceName, _, _, toonName, toonID, client, isOnline, _, isAFK, isDND = BNGetFriendInfo(i)
 						if not isOnline then break end

@@ -21,7 +21,7 @@ local function LoadSkin()
 
 		button:StripTextures()
 		button:StyleButton()
-		button:SetTemplate("Overlay", true)
+		button:SetTemplate("Overlay")
 		button_bracket:Kill()
 		button_bg:Kill()
 

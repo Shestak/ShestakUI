@@ -48,7 +48,6 @@ local function LoadSkin()
 
 	T.SkinCloseButton(TradeSkillFrameCloseButton)
 
-	local once = false
 	hooksecurefunc("TradeSkillFrame_SetSelection", function(id)
 		TradeSkillSkillIcon:StyleButton()
 		if TradeSkillSkillIcon:GetNormalTexture() then
@@ -82,17 +81,6 @@ local function LoadSkin()
 			count:SetFont(C.media.normal_font, 12, "OUTLINE")
 			count:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 			count:SetDrawLayer("OVERLAY")
-
-			--[[if i > 2 and once == false then
-				local point, anchoredto, point2, x, y = button:GetPoint()
-				button:ClearAllPoints()
-				if i == 5 then
-					button:Point(point, anchoredto, point2, x, y - 10)
-				else
-					button:Point(point, anchoredto, point2, x, y - 3)
-				end
-				once = true
-			end]]
 
 			_G["TradeSkillReagent"..i.."NameFrame"]:Kill()
 		end

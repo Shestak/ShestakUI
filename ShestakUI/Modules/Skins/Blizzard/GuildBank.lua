@@ -46,7 +46,7 @@ local function LoadSkin()
 
 			button:SetNormalTexture(nil)
 			button:StyleButton()
-			button:SetTemplate("Default", true)
+			button:SetTemplate("Default")
 
 			icon:ClearAllPoints()
 			icon:Point("TOPLEFT", 2, -2)
@@ -62,7 +62,7 @@ local function LoadSkin()
 
 		button:StripTextures()
 		button:StyleButton()
-		button:SetTemplate("Default", true)
+		button:SetTemplate("Default")
 
 		-- Reposition tabs
 		button:ClearAllPoints()
@@ -107,7 +107,7 @@ local function LoadSkin()
 
 		button:StripTextures()
 		button:StyleButton()
-		button:SetTemplate("Default", true)
+		button:SetTemplate("Default")
 
 		texture:ClearAllPoints()
 		texture:Point("TOPLEFT", 2, -2)
