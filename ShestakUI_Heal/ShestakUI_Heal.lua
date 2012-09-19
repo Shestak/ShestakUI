@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(ShestakUI)
-if C.unitframe.enable ~= true or IsAddOnLoaded("ShestakUI_DPS") then return end
+if C.unitframe.enable ~= true or (IsAddOnLoaded("ShestakUI_DPS") and T.coauthor ~= true) then return end
 
 ----------------------------------------------------------------------------------------
 --	UnitFrames based on oUF_Caellian(by Caellian)
