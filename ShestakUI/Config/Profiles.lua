@@ -205,6 +205,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["unitframe"].plugins_gcd = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].raid_groups = 8
+	C["raidframe"].raid_groups_vertical = true
 	C["raidframe"].raid_portraits = true
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].plugins_auto_resurrection = true

@@ -5,7 +5,7 @@ if C.minimap.enable ~= true then return end
 --	Minimap border
 ----------------------------------------------------------------------------------------
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
-MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
+MinimapAnchor:CreatePanel("ClassColor", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
 MinimapAnchor:RegisterEvent("ADDON_LOADED")
 
 ----------------------------------------------------------------------------------------
@@ -54,6 +54,28 @@ MiniMapMailFrame:Point("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
 MiniMapMailBorder:Hide()
 MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
 MiniMapMailIcon:Size(16)
+
+-- Move QueueStatus icon
+QueueStatusMinimapButton:ClearAllPoints()
+QueueStatusMinimapButton:Point("TOP", Minimap, "TOP", 1, 6)
+QueueStatusMinimapButton:SetHighlightTexture(nil)
+QueueStatusMinimapButtonBorder:Hide()
+
+local function UpdateLFGTooltip()
+	local position = MinimapAnchor:GetPoint()
+	QueueStatusFrame:ClearAllPoints()
+	if position:match("BOTTOMRIGHT") then
+		QueueStatusFrame:Point("BOTTOMRIGHT", QueueStatusMinimapButton, "BOTTOMLEFT", 0, 0)
+	elseif position:match("BOTTOM") then
+		QueueStatusFrame:Point("BOTTOMLEFT", QueueStatusMinimapButton, "BOTTOMRIGHT", 4, 0)
+	elseif position:match("LEFT") then
+		QueueStatusFrame:Point("TOPLEFT", QueueStatusMinimapButton, "TOPRIGHT", 4, 0)
+	else
+		QueueStatusFrame:Point("TOPRIGHT", QueueStatusMinimapButton, "TOPLEFT", 0, 0)
+	end
+end
+QueueStatusFrame:HookScript("OnShow", UpdateLFGTooltip)
+QueueStatusFrame:SetFrameStrata("TOOLTIP")
 
 -- Hide world map button
 MiniMapWorldMapButton:Hide()
@@ -104,7 +126,7 @@ GhostFrame:StripTextures()
 GhostFrame:SetTemplate("Overlay")
 GhostFrame:StyleButton()
 GhostFrame:ClearAllPoints()
-GhostFrame:SetPoint("BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -51)
+GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 GhostFrameContentsFrameIcon:Size(34)
 GhostFrameContentsFrame:SetFrameLevel(GhostFrameContentsFrame:GetFrameLevel() + 2)
@@ -287,7 +309,7 @@ if C.minimap.tracking_icon then
 	trackborder:Height(20)
 	trackborder:Width(20)
 	trackborder:Point("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
-	trackborder:SetTemplate("Default")
+	trackborder:SetTemplate("ClassColor")
 
 	MiniMapTrackingBackground:Hide()
 	MiniMapTracking:ClearAllPoints()
@@ -300,5 +322,3 @@ if C.minimap.tracking_icon then
 else
 	MiniMapTracking:Hide()
 end
-
--- edit by Oz of shestak. org --
