@@ -181,7 +181,7 @@ local function LoadSkin()
 			frame = _G[frameName]
 			frame:SetScale(1)
 			if index == 1 then
-				frame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 22)
+				frame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -25, 22)
 				bagsPerColumn = bagsPerColumn + 1
 			elseif freeScreenHeight < frame:GetHeight() then
 				column = column + 1
