@@ -138,10 +138,10 @@ LPSTAT_CONFIG = {
 	Stats = {
 		enabled = C.toppanel.enable,
 			-- Available stat tags...
-			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery [mastery]				Expertise% [expertise]
+			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery% [mastery]				Expertise% [expertise]
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
 			--   Ranged Haste% [rangedhaste]	Spell Haste% [spellhaste]		Melee Crit% [meleecrit]			Ranged Crit% [rangedcrit]
-			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				MP5 I5SR [manaregen]
+			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				MP5 [manaregen]
 			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Avoidance% [avoidance]
 			--   Armor Value [armor]			Resilience [resilience]
 		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
@@ -211,50 +211,50 @@ LPSTAT_CONFIG = {
 LPSTAT_PROFILES = {
 	DEATHKNIGHT = {
 		Stats = {
-			spec1fmt = class"Mastery: ".."[mastery]"..class" Armor: ".."[armor]"..class" Avoid: ".."[avoidance]%",
-			spec2fmt = class"Mastery: ".."[mastery]"..class" Hit: ".."[meleehit]%"..class" Haste: ".."[meleehaste]%",
+			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Armor: ".."[armor]"..class"  Avoid: ".."[avoidance]%",
+			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
 		}
 	},
 	HUNTER = {
 		Stats = {
-			spec1fmt = class"AP: ".."[rangedap]"..class" Crit: ".."[rangedcrit]%"..class" Hit: ".."[rangedhit]%",
-			spec2fmt = class"AP: ".."[rangedap]"..class" Crit: ".."[rangedcrit]%"..class" Hit: ".."[rangedhit]%",
+			spec1fmt = class"AP: ".."[rangedap]"..class"  Crit: ".."[rangedcrit]%"..class"  Hit: ".."[rangedhit]%",
+			spec2fmt = class"AP: ".."[rangedap]"..class"  Crit: ".."[rangedcrit]%"..class"  Hit: ".."[rangedhit]%",
 		}
 	},
 	MAGE = {
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+			spec1fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
+			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
 		}
 	},
 	PALADIN = {
 		Stats = {
-			spec1fmt = class"Mastery: ".."[mastery]"..class" Block: ".."[block]%"..class" Avoid: ".."[avoidance]%",
-			spec1fmt = class"Mastery: ".."[mastery]"..class" Block: ".."[block]%"..class" Avoid: ".."[avoidance]%",
+			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
+			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
 		}
 	},
 	PRIEST = {
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+			spec1fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
+			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
 		}
 	},
 	ROGUE = {
 		Stats = {
-			spec1fmt = class"AP: ".."[ap]"..class" Exp: ".."[expertise]%"..class" Hit: ".."[meleehit]%",
-			spec2fmt = class"AP: ".."[ap]"..class" Exp: ".."[expertise]%"..class" Hit: ".."[meleehit]%",
+			spec1fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
+			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
 		}
 	},
 	WARLOCK = {
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class" Crit: ".."[spellcrit]%"..class" Hit: ".."[spellhit]%",
+			spec1fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
+			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
 		}
 	},
 	WARRIOR = {
 		Stats = {
-			spec1fmt = class"Armor: ".."[armor]"..class" Block: ".."[block]%"..class" Avoid: ".."[avoidance]%",
-			spec2fmt = class"AP: ".."[ap]"..class" Crit: ".."[meleecrit]%"..class" Hit: ".."[meleehit]%",
+			spec1fmt = class"Armor: ".."[armor]"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
+			spec2fmt = class"AP: ".."[ap]"..class"  Crit: ".."[meleecrit]%"..class"  Hit: ".."[meleehit]%",
 		}
 	},
 }

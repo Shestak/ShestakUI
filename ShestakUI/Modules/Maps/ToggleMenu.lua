@@ -121,9 +121,6 @@ C["toggleaddons"] = {
 	["ScrollMaster"] = function()
 		LibStub("AceAddon-3.0"):GetAddon("ScrollMaster").GUI:OpenFrame(1)
 	end,
-	["PugLax"] = function()
-		T.RunSlashCmd("/puglax")
-	end,
 	["epgp"] = function()
 		EPGP:ToggleUI()
 	end,
@@ -133,11 +130,8 @@ C["toggleaddons"] = {
 	["!BaudErrorFrame"] = function()
 		SlashCmdList.BaudErrorFrame()
 	end,
-	["RollTracker"] = function()
-		T.RunSlashCmd("/rolltracker")
-	end,
 	["CoolLine"] = function()
-		T.RunSlashCmd("/coolline")
+		SlashCmdList.COOLLINE()
 	end,
 	["PreformAVEnabler"] = function()
 		SlashCmdList.PREFORMAV()
@@ -465,7 +459,7 @@ expandbutton:SetScript("OnMouseUp", function(self)
 end)
 
 for i = 1, GetNumAddOns() do
-	j = totalmainmenusize+i
+	j = totalmainmenusize + i
 	local name, _, _, _, _, _, _ = GetAddOnInfo(i)
 	addonmenuitems[j] = CreateFrame("CheckButton", "AddonMenu"..j, AddonBG)
 	addonmenuitems[j]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "BOTTOM", AddonBG, "BOTTOM", 0, buttonspacing(1))

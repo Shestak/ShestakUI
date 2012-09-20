@@ -1,42 +1,6 @@
 local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Info text function
-----------------------------------------------------------------------------------------
-local InfoFrame = CreateFrame("Frame", nil, UIParent)
-InfoFrame:SetScript("OnUpdate", FadingFrame_OnUpdate)
-InfoFrame.fadeInTime = 0.5
-InfoFrame.fadeOutTime = 2
-InfoFrame.holdTime = 3
-InfoFrame:Hide()
-
-local InfoText = InfoFrame:CreateFontString("InfoText", "OVERLAY")
-InfoText:SetFont(C.media.normal_font, 25, "OUTLINE")
-InfoText:Point("CENTER", UIParent, "CENTER", 0, 90)
-InfoText:SetTextColor(0.41, 0.8, 0.94)
-
-T.InfoTextShow = function(s)
-	InfoText:SetText(s)
-	FadingFrame_Show(InfoFrame)
-end
-
-----------------------------------------------------------------------------------------
---	Run slash command function
-----------------------------------------------------------------------------------------
-T.RunSlashCmd = function(cmd)
-	local slash, rest = cmd:match("^(%S+)%s*(.-)$")
-	for name, func in pairs(SlashCmdList) do
-		local i, slashCmd = 1
-		repeat
-		slashCmd, i = _G["SLASH_"..name..i], i + 1
-		if slashCmd == slash then
-			return true, func(rest)
-		end
-		until not slashCmd
-	end
-end
-
-----------------------------------------------------------------------------------------
 --	Number value function
 ----------------------------------------------------------------------------------------
 T.Round = function(number, decimals)
@@ -135,39 +99,6 @@ T.UTF = function(string, i, dots)
 			return string
 		end
 	end
-end
-
-----------------------------------------------------------------------------------------
---	Add time before calling a function
-----------------------------------------------------------------------------------------
-local waitTable = {}
-local waitFrame
-function T.Delay(delay, func, ...)
-	if type(delay) ~= "number" or type(func) ~= "function" then
-		return false
-	end
-	if waitFrame == nil then
-		waitFrame = CreateFrame("Frame", "WaitFrame", UIParent)
-		waitFrame:SetScript("onUpdate", function(self, elapse)
-			local count = #waitTable
-			local i = 1
-			while (i <= count) do
-				local waitRecord = tremove(waitTable, i)
-				local d = tremove(waitRecord, 1)
-				local f = tremove(waitRecord, 1)
-				local p = tremove(waitRecord, 1)
-				if d > elapse then
-					tinsert(waitTable, i, {d-elapse, f, p})
-					i = i + 1
-				else
-					count = count - 1
-					f(unpack(p))
-				end
-			end
-		end)
-	end
-	tinsert(waitTable, {delay, func, {...}})
-	return true
 end
 
 ----------------------------------------------------------------------------------------
