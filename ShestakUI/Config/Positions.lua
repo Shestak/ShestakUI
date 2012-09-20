@@ -6,7 +6,7 @@
 ----------------------------------------------------------------------------------------
 C["position"] = {
 	-- Miscellaneous positions
-	["minimap"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -21},						-- Minimap
+	["minimap"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -36},						-- Minimap
 	["map"] = {"BOTTOM", UIParent, "BOTTOM", -120, 320},							-- Map
 	["chat"] = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 24, 23},						-- Chat
 	["bag"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24},					-- Bag
@@ -18,7 +18,7 @@ C["position"] = {
 	["capture_bar"] = {"TOP", UIParent, "TOP", 0, 3},								-- BG capture bars
 	["vehicle"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -245, 160},				-- Vehicle frame
 	["uierror"] = {"TOP", UIParent, "TOP", 0, -30},									-- Errors frame
-	["quest"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -389, -167},						-- Quest log
+	["quest"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -389, -165},						-- Quest log
 	["loot"] = {"TOPLEFT", UIParent, "TOPLEFT", 245, -220},							-- Loot
 	["group_loot"] = {"BOTTOM", UIParent, "BOTTOM", -210, 500},						-- Group roll loot
 	["threat_meter"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -245, 24},			-- Threat meter

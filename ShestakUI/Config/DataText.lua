@@ -120,16 +120,16 @@ LPSTAT_CONFIG = {
 	Coords = {
 		enabled = C.stats.coords, -- Location tooltip has coords, this module is for displaying it as a separate stat.
 		fmt = "%d,%d", -- "44,19"
-		anchor_frame = "Minimap", anchor_to = "right", anchor_from = "topright",
-		x_off = 3, y_off = -4, justify_h = "right",
+		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "topright",
+		x_off = -17, y_off = -24, justify_h = "right",
 	},
 	Location = {
 		enabled = C.stats.location,
 		subzone = true, -- Set to false to display the main zone's name instead of the subzone.
-		truncate = 16, -- Max number of letters for location text, set to 0 to disable.
+		truncate = 0, -- Max number of letters for location text, set to 0 to disable.
 		coord_fmt = "%d,%d", -- "44,19", to add tenths, use "%.1f" (digit determines decimal)
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
-		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "TOPRIGHT", tip_x = -21, tip_y = -153
+		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "TOPRIGHT", tip_x = -21, tip_y = -168
 	},
 -- Bottomright block 3
 	Stats = {
