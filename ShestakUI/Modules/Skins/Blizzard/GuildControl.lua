@@ -30,9 +30,6 @@ local function LoadSkin()
 		end
 	end
 	hooksecurefunc("GuildControlUI_RankOrder_Update", SkinGuildRanks)
-	GuildControlUIRankOrderFrameNewButton:HookScript("OnClick", function()
-		T.Delay(1, SkinGuildRanks)
-	end)
 
 	T.SkinDropDownBox(GuildControlUINavigationDropDown)
 	T.SkinDropDownBox(GuildControlUIRankSettingsFrameRankDropDown, 180)

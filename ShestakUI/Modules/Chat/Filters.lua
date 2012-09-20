@@ -37,7 +37,6 @@ if C.chat.filter == true then
 	ERR_LEARN_SPELL_S = ""
 	ERR_LEARN_PASSIVE_S = ""
 	ERR_SPELL_UNLEARNED_S = ""
-	GUILD_REP_WEEKLY_CAPPED = ""
 	ERR_CHAT_THROTTLED = ""
 end
 
