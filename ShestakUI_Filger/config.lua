@@ -35,7 +35,7 @@ Filger_Spells = {
 			-- Anti-Magic Shell
 			{spellID = 48707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dancing Rune Weapon
-			{spellID = 49028, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 81256, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lichborne
 			{spellID = 49039, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pillar of Frost
