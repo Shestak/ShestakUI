@@ -1,7 +1,7 @@
 local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
-if T.name == "Oz" and T.client == "itIT" then
+if T.oz == true then
 	Filger_Settings = {
 	config_mode = false,
 	max_test_icon = 5,

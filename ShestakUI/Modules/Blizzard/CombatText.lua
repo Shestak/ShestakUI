@@ -318,7 +318,7 @@ for i = 1, numf do
 	f:SetInsertMode(C.combattext.direction or "bottom")
 	if i == 1 then
 		f:SetJustifyH(ct.justify_1)
-		if C.unitframe.enable == true and _G.oUF_Player and T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+		if C.unitframe.enable == true and _G.oUF_Player and T.oz == true then
 			f:SetPoint("CENTER", -330, 205)
 		elseif C.unitframe.enable == true and _G.oUF_Player then
 			f:SetPoint("BOTTOMLEFT", "oUF_Player", "TOPLEFT", -3, 60)
@@ -327,7 +327,7 @@ for i = 1, numf do
 		end
 	elseif i == 2 then
 		f:SetJustifyH(ct.justify_2)
-		if C.unitframe.enable == true and _G.oUF_Player and T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+		if C.unitframe.enable == true and _G.oUF_Player and T.oz == true then
 			f:SetPoint("CENTER", -330, 90)
 		elseif C.unitframe.enable == true and _G.oUF_Player then
 			f:SetPoint("BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 5, 60)
@@ -344,7 +344,7 @@ for i = 1, numf do
 		if C.combattext.icons then
 			f:SetHeight(150)
 		end
-		if C.unitframe.enable == true and _G.oUF_Player and T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+		if C.unitframe.enable == true and _G.oUF_Player and T.oz == true then
 			f:SetPoint("BOTTOMRIGHT", "oUF_Target", "TOPRIGHT", -44, 278)
 		elseif C.unitframe.enable == true and _G.oUF_Target then
 			f:SetPoint("BOTTOMRIGHT", "oUF_Target", "TOPRIGHT", 2, 278)

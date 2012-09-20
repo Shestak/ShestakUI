@@ -175,7 +175,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Oz@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+if T.oz == true then
 	C["position"].threat_meter = {"BOTTOM", UIParent, "BOTTOM", 0, 294}
 	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -402, 321}
 	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", 0, 388}

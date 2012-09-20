@@ -28,3 +28,7 @@ or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торг
 or T.name == "Женишок" then
 	T.author = true
 end
+
+if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+	T.oz = true
+end
