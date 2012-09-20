@@ -9,7 +9,7 @@ C["extra_position"] = {
 	["mark_bar"] = {"CENTER", UIParent, "CENTER", 100, 50},					-- Mark bar
 	["extra_bar"] = {"BOTTOM", ActionBarAnchor, "TOP", 0, 3},				-- Extra bar
 	["archaeology"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 157},	-- Archaeology frame
-	["bg_announce"] = {"CENTER", UIParent, "CENTER", 0, 0},					-- BG announce panel
+	["bg_announce"] = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 192},		-- BG announce panel
 	["tank_announce"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 157},	-- Tank announce panel
 }
 
