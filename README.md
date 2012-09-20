@@ -6,4 +6,4 @@ Compared to the original ShestakUI, I just changed a bit of things to better fit
 
 More details [here](http://shestak.org/forum/showthread.php?t=835) and a big thank to Shestak for his amazing work (all credits go out to him) and to all his contributors!
 
-![placeholder img](http://i.imgur.com/niGth.jpg "ShestakUI_OzEdit")
+![placeholder img](http://i.imgur.com/5FjXo.jpg "ShestakUI_OzEdit")
