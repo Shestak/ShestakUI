@@ -412,7 +412,41 @@ end
 --	Nagiko@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
 if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
+	C["font"].stats_font_style = "OUTLINE"
+	C["font"].stats_font_size = 14
+	C["font"].combat_text_font_style = "OUTLINE"
+	C["font"].combat_text_font_size = 18
+	C["font"].chat_tabs_font_size = 12
+	C["font"].action_bars_font_style = "OUTLINE"
+	C["font"].action_bars_font_size = 12
+	C["font"].raid_cooldowns_font_style = ""
+	C["font"].raid_cooldowns_font_shadow = true
+	C["font"].raid_cooldowns_font_size = 14
+	C["font"].threat_meter_font_style = "OUTLINE"
+	C["font"].threat_meter_font_shadow = true
+	C["font"].threat_meter_font_size = 14
+	C["font"].cooldown_timers_font_style = "OUTLINE"
+	C["font"].cooldown_timers_font_size = 22
+	C["font"].loot_font = C.media.pixel_font
+	C["font"].loot_font_style = "OUTLINE"
+	C["font"].loot_font_size = 14
+	C["font"].nameplates_font_style = "OUTLINE"
+	C["font"].nameplates_font_size = 14
+	C["font"].unit_frames_font_style = ""
+	C["font"].unit_frames_font_shadow = true
+	C["font"].unit_frames_font_size = 14
+	C["font"].auras_font_style = "OUTLINE"
+	C["font"].auras_font_size = 16
+	C["font"].filger_font_style = "OUTLINE"
+	C["font"].filger_font_size = 16
+	C["font"].stylization_font_style = "OUTLINE"
+	C["font"].stylization_font_size = 14
+	C["font"].bags_font_style = "OUTLINE"
+	C["font"].bags_font_size = 14
+	C["position"].player_buffs = {"TOPLEFT", Minimap, "TOPLEFT", -422, -40}
 	C["position"].micro_menu = {"TOPLEFT", UIParent, "TOPLEFT", 21, -16}
+	C["position"].unitframes.arena = {"RIGHT", oUF_Target, "RIGHT", -242, 7}
+	C["position"].unitframes.boss = {"RIGHT", oUF_Target, "RIGHT", -242, 7}
 	C["media"].border_color = {0.2, 0, 0.2, 1}
 	C["misc"].profession_database = true
 	C["automation"].screenshot = true
