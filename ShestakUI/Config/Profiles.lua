@@ -500,7 +500,6 @@ if T.coauthor == true then
 	C["tooltip"].reforge = true
 	C["tooltip"].instance_lock = true
 	C["tooltip"].item_transmogrify = true
-	C["chat"].tabs_mouseover = true
 	C["chat"].damage_meter_spam = true
 	C["map"].map_boss_count = true
 	C["nameplate"].track_auras = true
