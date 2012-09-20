@@ -2510,6 +2510,8 @@ Filger_Spells = {
 			{spellID = 55694, filter = "CD"},
 			-- Commanding Shout
 			{spellID = 469, filter = "CD"},
+			-- Last Stand
+			{spellID = 12975, filter = "CD"},
 			-- Rallying Cry
 			{spellID = 97462, filter = "CD"},
 
