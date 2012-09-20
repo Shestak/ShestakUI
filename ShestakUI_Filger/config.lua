@@ -35,7 +35,7 @@ Filger_Spells = {
 			-- Anti-Magic Shell
 			{spellID = 48707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dancing Rune Weapon
-			{spellID = 49028, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 81256, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lichborne
 			{spellID = 49039, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pillar of Frost
@@ -301,6 +301,8 @@ Filger_Spells = {
 			{spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
 			{spellID = 16870, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Soul of the Forest
+			{spellID = 114108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Predator's Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 

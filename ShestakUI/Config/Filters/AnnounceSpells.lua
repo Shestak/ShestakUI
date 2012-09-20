@@ -67,20 +67,21 @@ end
 
 if C.announcements.portals == true then
 	T.AnnouncePortals = {
-		[11419] = true,		-- Portal: Darnassus (Alliance)
-		[32266] = true,		-- Portal: Exodar (Alliance)
-		[11416] = true,		-- Portal: Ironforge (Alliance)
-		[33691] = true,		-- Portal: Shattrath (Alliance)
-		[10059] = true,		-- Portal: Stormwind (Alliance)
-		[49360] = true,		-- Portal: Theramore (Alliance)
-		[88345] = true,		-- Portal: Tol Barad (Alliance)
-		[53142] = true,		-- Portal: Dalaran (Alliance/Horde)
-		[11417] = true,		-- Portal: Orgrimmar (Horde)
-		[35717] = true,		-- Portal: Shattrath (Horde)
-		[32267] = true,		-- Portal: Silvermoon (Horde)
-		[49361] = true,		-- Portal: Stonard (Horde)
-		[11420] = true,		-- Portal: Thunder Bluff (Horde)
-		[88346] = true,		-- Portal: Tol Barad (Horde)
-		[11418] = true,		-- Portal: Undercity (Horde)
+		-- Portals
+		[11419] = true,		-- Darnassus (Alliance)
+		[32266] = true,		-- Exodar (Alliance)
+		[11416] = true,		-- Ironforge (Alliance)
+		[33691] = true,		-- Shattrath (Alliance)
+		[10059] = true,		-- Stormwind (Alliance)
+		[49360] = true,		-- Theramore (Alliance)
+		[88345] = true,		-- Tol Barad (Alliance)
+		[53142] = true,		-- Dalaran (Alliance/Horde)
+		[11417] = true,		-- Orgrimmar (Horde)
+		[35717] = true,		-- Shattrath (Horde)
+		[32267] = true,		-- Silvermoon (Horde)
+		[49361] = true,		-- Stonard (Horde)
+		[11420] = true,		-- Thunder Bluff (Horde)
+		[88346] = true,		-- Tol Barad (Horde)
+		[11418] = true,		-- Undercity (Horde)
 	}
 end
