@@ -134,6 +134,7 @@ local function LoadSkin()
 	GuildNextPerkButton:CreateBackdrop("Default")
 	GuildNextPerkButton.backdrop:Point("TOPLEFT", GuildNextPerkButtonIconTexture, "TOPLEFT", -2, 2)
 	GuildNextPerkButton.backdrop:Point("BOTTOMRIGHT", GuildNextPerkButtonIconTexture, "BOTTOMRIGHT", 2, -2)
+	GuildNextPerkButtonLockTexture:SetTexture("Interface\\GuildFrame\\GuildFrame")
 
 	-- Guild Perk buttons list
 	for i = 1, 8 do
@@ -149,6 +150,8 @@ local function LoadSkin()
 			button.backdrop:Point("TOPLEFT", button.icon, "TOPLEFT", -2, 2)
 			button.backdrop:Point("BOTTOMRIGHT", button.icon, "BOTTOMRIGHT", 2, -2)
 			button.icon:SetParent(button.backdrop)
+			button.lock:SetTexture("Interface\\GuildFrame\\GuildFrame")
+			button.lock:SetParent(button.backdrop)
 		end
 	end
 
