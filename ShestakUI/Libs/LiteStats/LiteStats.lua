@@ -1357,7 +1357,7 @@ if stats.enabled then
 			local base, pos, neg = UnitRangedAttackPower(P)
 			string, percent = base + neg + pos
 		elseif sub == "mastery" then
-			string = GetMastery()
+			string = GetMasteryEffect()
 		elseif sub == "expertise" then
 			string = GetExpertise()
 		elseif strmatch(sub, "hit$") then
