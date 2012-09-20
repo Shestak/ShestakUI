@@ -57,7 +57,7 @@ MiniMapMailIcon:Size(16)
 
 -- Move QueueStatus icon
 QueueStatusMinimapButton:ClearAllPoints()
-QueueStatusMinimapButton:Point("BOTTOM", Minimap, "BOTTOM", 1, -4)
+QueueStatusMinimapButton:Point("BOTTOM", Minimap, "BOTTOM", 0, -4)
 QueueStatusMinimapButton:SetHighlightTexture(nil)
 QueueStatusMinimapButtonBorder:Hide()
 
@@ -118,7 +118,7 @@ end
 -- Ticket icon
 HelpOpenTicketButton:SetParent(Minimap)
 HelpOpenTicketButton:ClearAllPoints()
-HelpOpenTicketButton:Point("TOP", Minimap, "TOP", 1, 4)
+HelpOpenTicketButton:Point("TOP", Minimap, "TOP", 0, 4)
 HelpOpenTicketButton:SetHighlightTexture(nil)
 
 -- GhostFrame
