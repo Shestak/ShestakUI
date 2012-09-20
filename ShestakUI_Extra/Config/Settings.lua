@@ -45,16 +45,16 @@ C["extra_bar"] = {
 --	Skins options(Maybe not work correctly!!!)
 ----------------------------------------------------------------------------------------
 C["extra_skins"] = {
-	["adibags"] = true,							-- AdiBags skin(Not Ready)
-	["epgp"] = true,							-- EPGP skin(Not Ready)
+	["adibags"] = false,						-- AdiBags skin(Not Ready)
+	["epgp"] = false,							-- EPGP skin(Not Ready)
 	["mage_mana_bar"] = true,					-- MageManaBar skin
 	["mfclip"] = true,							-- MFClip skin
-	["mog_it"] = true,							-- MogIt skin(Not Ready)
+	["mog_it"] = false,							-- MogIt skin(Not Ready)
 	["my_role_play"] = true,					-- MyRolePlay skin
-	["quartz"] = true,							-- Quartz skin(Not Ready)
+	["quartz"] = false,							-- Quartz skin(Not Ready)
 	["roll_tracker"] = true,					-- RollTracker skin
 	["shield_monitor"] = true,					-- ShieldMonitor skin
-	["skada"] = true,							-- Skada skin(Not Ready)
+	["skada"] = false,							-- Skada skin(Not Ready)
 }
 
 -- edit by Oz of shestak. org --

@@ -15,27 +15,21 @@ local defaults = {
 }
 
 local spellList = {
-	-- Warrior
-	355,	-- Taunt
-	--MOP--1161,	-- Challenging Shout
-	--MOP--694,	-- Mocking Blow
-	-- Paladin
-	31789,	-- Rghteous Defense
-	62124,	-- Hand of Reckoning
 	-- Death Knight
 	49576,	-- Death Grip
 	56222,	-- Dark Command
 	-- Druid
 	6795,	-- Growl
-	--MOP--5209,	-- Challenging Roar
 	-- Hunter
 	20736,	-- Distracting Shot
-	-- Hunter's pet
-	--2649,	-- Growl (Stupid hunters will never turn off this ability)
+	-- Paladin
+	31789,	-- Rghteous Defense
+	62124,	-- Hand of Reckoning
 	-- Warlock's pets
-	--MOP--33698,	-- Anguish
 	3716,	-- Torment
 	17735,	-- Suffering
+	-- Warrior
+	355,	-- Taunt
 }
 
 local badAuras = {
@@ -357,19 +351,9 @@ BadGroupMenu.text:SetPoint("TOP", BadGroupMenu, "TOP", 0, -6)
 BadGroupMenu.text:SetText("BadGroup")
 
 local BadGroupClose = CreateFrame("Button", "BadGroupClose", BadGroupMenu)
+T.SkinCloseButton(BadGroupClose, nil, nil, true)
 BadGroupClose:SetWidth(12)
 BadGroupClose:SetHeight(12)
-BadGroupClose:SetPoint("TOPRIGHT", BadGroupMenu,"TOPRIGHT", 0, -4)
-BadGroupClose:EnableMouse(true)
-BadGroupClose:SetFrameLevel(BadGroupMenu:GetFrameLevel() + 1)
-
-BadGroupClose.text = BadGroupClose:CreateFontString(nil, "OVERLAY")
-BadGroupClose.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-BadGroupClose.text:SetPoint("CENTER")
-BadGroupClose.text:SetText("x")
-
-BadGroupClose:HookScript("OnEnter", function(self) BadGroupClose.text:SetTextColor(T.color.r, T.color.g, T.color.b) end)
-BadGroupClose:HookScript("OnLeave", function(self) BadGroupClose.text:SetTextColor(1, 1, 1) end)
 BadGroupClose:SetScript("OnMouseUp", function() BadGroupMenu:Hide() ExtraTanksDB.WasShown = false end)
 
 local AddButton = CreateFrame("Button", "BGAddButton", BadGroupMenu)
