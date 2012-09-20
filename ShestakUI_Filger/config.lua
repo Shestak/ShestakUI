@@ -1432,6 +1432,8 @@ Filger_Spells = {
 			{spellID = 6346, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Archangel
 			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vampiric Embrace
+			{spellID = 15286, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Borrowed Time
 			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Fire
