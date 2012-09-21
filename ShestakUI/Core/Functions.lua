@@ -622,7 +622,7 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 		end
 		if min ~= max then
 			r, g, b = oUF.ColorGradient(min, max, 0.69, 0.31, 0.31, 0.65, 0.63, 0.35, 0.33, 0.59, 0.33)
-			if self:GetParent():GetName():match"oUF_PartyDPS" then
+			if self:GetParent():GetName():match("oUF_PartyDPS") then
 				if C.unitframe.color_value == true then
 					health.value:SetFormattedText("|cffAF5050%s|r |cffD7BEA5-|r |cff%02x%02x%02x%d%%|r", T.ShortValue(min), r * 255, g * 255, b * 255, floor(min / max * 100))
 				else
@@ -692,7 +692,7 @@ T.PostUpdatePower = function(power, unit, min, max)
 		power:SetValue(0)
 	end
 
-	if unit == "focus" or unit == "focustarget" or unit == "targettarget" or (self:GetParent():GetName():match"oUF_RaidDPS") then return end
+	if unit == "focus" or unit == "focustarget" or unit == "targettarget" or (self:GetParent():GetName():match("oUF_RaidDPS")) then return end
 
 	if not UnitIsConnected(unit) then
 		power.value:SetText()
@@ -735,7 +735,7 @@ T.PostUpdatePower = function(power, unit, min, max)
 					else
 						power.value:SetFormattedText("|cffffffff%d%% - %s|r", floor(min / max * 100), T.ShortValue(max - (max - min)))
 					end
-				elseif self:GetParent():GetName():match"oUF_PartyDPS" then
+				elseif self:GetParent():GetName():match("oUF_PartyDPS") then
 					if C.unitframe.color_value == true then
 						power.value:SetFormattedText("%s |cffD7BEA5-|r %d%%", T.ShortValue(max - (max - min)), floor(min / max * 100))
 					else
@@ -764,7 +764,7 @@ T.PostUpdatePower = function(power, unit, min, max)
 				end
 			end
 		else
-			if unit == "pet" or unit == "target" or (unit and unit:find("arena%d")) or (self:GetParent():GetName():match"oUF_PartyDPS") then
+			if unit == "pet" or unit == "target" or (unit and unit:find("arena%d")) or (self:GetParent():GetName():match("oUF_PartyDPS")) then
 				if C.unitframe.color_value == true then
 					power.value:SetText(T.ShortValue(min))
 				else
