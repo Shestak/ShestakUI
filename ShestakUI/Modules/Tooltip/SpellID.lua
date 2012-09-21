@@ -9,9 +9,7 @@ local function addLine(self, id, isItem)
 		local line = _G["GameTooltipTextLeft"..i]
 		if not line then break end
 		local text = line:GetText()
-		if text and (text:match(L_TOOLTIP_ITEM_ID) or text:match(L_TOOLTIP_SPELL_ID)) then
-			return
-		end
+		if text and (text:match(L_TOOLTIP_ITEM_ID) or text:match(L_TOOLTIP_SPELL_ID)) then return end
 	end
 	if isItem then
 		self:AddLine("|cffffffff"..L_TOOLTIP_ITEM_ID.." "..id)
