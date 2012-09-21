@@ -36,7 +36,7 @@ L_GUI_MISC_DISENCHANTING = "一鍵研磨/選礦/分解(Alt+點擊)"
 L_GUI_MISC_SUM_BUYOUTS = "結算拍賣物品的總金額"
 L_GUI_MISC_CLICK_CAST = "簡單的點擊施法綁定"
 L_GUI_MISC_MOVE_BLIZZARD = "移動暴雪默認介面框架"
-L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
+L_GUI_MISC_COLOR_PICKER = "改進型顏色選擇器"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
@@ -69,7 +69,7 @@ L_GUI_AUTOMATION_AUTO_ROLE = "自動設定你的角色類型"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "自動取消無用的buffs"
 L_GUI_AUTOMATION_TAB_BINDER = "Tab只選定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "團隊副本時自動開啟戰鬥記錄"
-L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
+L_GUI_AUTOMATION_CURRENCY_CAP = "自動彈出貨幣提示框"
 
 -- Skins options
 L_GUI_SKINS = "介面樣式"
