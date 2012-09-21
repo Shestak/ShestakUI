@@ -1507,7 +1507,7 @@ Filger_Spells = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 		},
-		--[[{
+		{
 			Name = "T_DEBUFF_ICON",
 			Direction = "RIGHT",
 			Mode = "ICON",
@@ -1516,7 +1516,9 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.target_debuff_icon)},
 
-		},]]
+			-- Glyph of Mind Blast
+			{spellID = 87194, unitID = "target", caster = "player", filter = "DEBUFF"},
+		},
 		{
 			Name = "T_DE/BUFF_BAR",
 			Direction = "UP",
@@ -3165,8 +3167,6 @@ Filger_Spells = {
 			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silence
 			{spellID = 15487, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Glyph of Mind Blast
-			{spellID = 87194, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Rogue
 			-- Cloak of Shadows
