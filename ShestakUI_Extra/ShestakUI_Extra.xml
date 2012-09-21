@@ -24,7 +24,6 @@
 
 	<Script file="Modules\Misc\Archaeology.lua"/>
 	<Script file="Modules\Misc\BuffAutomator.lua"/>
-	<Script file="Modules\Misc\ColorPicker.lua"/>
 	<Script file="Modules\Misc\OneClickEnchantScroll.lua"/>
 
 	<Script file="Modules\Skins\AdiBags.lua"/>

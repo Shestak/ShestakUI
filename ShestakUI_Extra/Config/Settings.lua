@@ -10,7 +10,6 @@
 ----------------------------------------------------------------------------------------
 C["extra_general"] = {
 	["buff_automator"] = false,					-- Personal buff automator
-	["color_picker"] = false,					-- Improved ColorPickerFrame
 	["archaeology"] = false,					-- Archaeology artifacts and cooldown
 }
 
