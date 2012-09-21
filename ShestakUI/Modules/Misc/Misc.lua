@@ -278,3 +278,43 @@ PVPFrameCurrency:HookScript("OnEnter", function()
 	GameTooltip:AddLine(HONORABLE_KILLS..": |cffffffff"..GetStatistic(588))
 	GameTooltip:Show()
 end)
+
+----------------------------------------------------------------------------------------
+--	Farm mode mouseover button on minimap
+----------------------------------------------------------------------------------------
+local button = CreateFrame("Button", "Farmmode", UIParent)
+button:SetTemplate("Transparent")
+button:SetBackdropBorderColor(unpack(C.media.border_color))
+if C.actionbar.toggle_mode == true then
+	button:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 38)
+else
+	button:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 18)
+end
+button:Size(19)
+button:SetAlpha(0)
+
+local texture = button:CreateTexture(nil, "OVERLAY")
+texture:SetTexture("INTERFACE\\MINIMAP\\TRACKING\\None")
+texture:SetPoint("TOPLEFT", button, 1, -1)
+texture:SetPoint("BOTTOMRIGHT", button, -1, 1)
+
+button:SetScript("OnClick", function()
+	if farm == false then
+		MinimapAnchor:Size(C.minimap.size * 1.65)
+		Minimap:Size(MinimapAnchor:GetWidth())
+		farm = true
+	else
+		MinimapAnchor:Size(C.minimap.size)
+		Minimap:Size(MinimapAnchor:GetWidth())
+		farm = false
+	end
+end)
+
+button:SetScript("OnEnter", function()
+	if InCombatLockdown() then return end
+	button:FadeIn()
+end)
+
+button:SetScript("OnLeave", function()
+	button:FadeOut()
+end)
