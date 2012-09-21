@@ -29,14 +29,14 @@ L_GUI_MISC_PROFESSION_TABS = "在专业和商业框体显示专业技能按鈕"
 L_GUI_MISC_PROFESSION_DATABASE = "在专业框体显示专业数据库"
 L_GUI_MISC_DUNGEON_TABS = "在自身框体显示PvP/PvE标签"
 L_GUI_MISC_HIDE_BG_SPAM = "在战场内移除 Boss 表情信息"
-L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
+L_GUI_MISC_ITEM_LEVEL = "在人物介面显示装备的物品等级"
 L_GUI_MISC_GEM_COUNTER = "在人物介面显示装备的珠宝数量"
 L_GUI_MISC_ALREADY_KNOWN = "彩色显示已学会的食谱/坐骑/宠物"
 L_GUI_MISC_DISENCHANTING = "一键研磨/选矿/分解"
 L_GUI_MISC_SUM_BUYOUTS = "总结目前所有的拍卖"
 L_GUI_MISC_CLICK_CAST = "简单的点击施法绑定"
-L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
-L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
+L_GUI_MISC_MOVE_BLIZZARD = "移动暴雪默认介面框架"
+L_GUI_MISC_COLOR_PICKER = "改进型颜色选择器"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
@@ -63,13 +63,13 @@ L_GUI_AUTOMATION_CHEFS_HAT = "自动装备大厨的帽子"
 L_GUI_AUTOMATION_ACCEPT_INVITE = "自动接受组队邀请"
 L_GUI_AUTOMATION_DECLINE_DUEL = "自动取消决斗"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "自动接受任务"
-L_GUI_AUTOMATION_AUTO_COLLAPSE = "Auto collapse WatchFrame in instance" -- Needs review
+L_GUI_AUTOMATION_AUTO_COLLAPSE = "副本时自动关闭任务追踪框体"
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "自动跳过过场动画"
 L_GUI_AUTOMATION_AUTO_ROLE = "自动设定你的角色类型"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "自动取消无用的buffs"
 L_GUI_AUTOMATION_TAB_BINDER = "Tab只选定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "团队副本时自动开启战斗记录"
-L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
+L_GUI_AUTOMATION_CURRENCY_CAP = "自动弹出货币提示框"
 
 -- Skins options
 L_GUI_SKINS = "介面样式"
@@ -206,8 +206,8 @@ L_GUI_TOOLTIP_ITEM_COUNT = "叠堆数量"
 L_GUI_TOOLTIP_UNIT_ROLE = "单位角色"
 L_GUI_TOOLTIP_REFORGE = "顯示裝備重鑄信息"
 L_GUI_TOOLTIP_SYMBIOSIS = "顯示共生術信息"
-L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
-L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
+L_GUI_TOOLTIP_INSTANCE_LOCK = "自身信息提示"
+L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "提示不能幻化的装备"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "开启聊天框增强"
@@ -287,7 +287,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "按钮间隔"
 L_GUI_ACTIONBAR_SPLIT_BARS = "把第五动作条分成两个有六个位置的小动作条"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "给所有的按钮使用职业颜色边框"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "开启动作条切换按钮"
-L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "关闭动作条技能特效高亮"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部动作条数目 (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右侧动作条数目 (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "鼠标划过时显示右侧动作条"

@@ -49,16 +49,16 @@ L_TOOLTIP_INSPECT_OPEN = "檢查框體已打開"
 L_MISC_UNDRESS = "無裝備"
 L_MISC_DRINKING = " 進食中..."
 L_MISC_BUY_STACK = "Alt-右鍵點擊購買一疊"
-L_MISC_ONECLICK_BUYOUT = "Shift+左鍵,不彈出確認窗口直接購買"
-L_MISC_ONECLICK_BID = "Shift+左鍵,不彈出確認窗口直接競標"
-L_MISC_ONECLICK_CANCEL = "Shift+左鍵,不彈出確認窗口直接取消選擇的物品"
+L_MISC_ONECLICK_BUYOUT = "Shift+右鍵,不彈出確認窗口直接購買"
+L_MISC_ONECLICK_BID = "Shift+右鍵,不彈出確認窗口直接競標"
+L_MISC_ONECLICK_CANCEL = "Shift+右鍵,不彈出確認窗口直接取消選擇的物品"
 L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
 L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"
-L_MISC_MOUNTS_GROUND = "Ground" -- Needs review
-L_MISC_MOUNTS_FLYING = "Flying" -- Needs review
-L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground" -- Needs review
-L_MISC_MOUNTS_SWIMMING = "Swimming" -- Needs review
+L_MISC_MOUNTS_GROUND = "地面坐騎"
+L_MISC_MOUNTS_FLYING = "飛行坐騎"
+L_MISC_MOUNTS_FLYINGGROUND = "飛行/地面坐騎" 
+L_MISC_MOUNTS_SWIMMING = "水中坐騎"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
@@ -274,7 +274,7 @@ L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素。"
 L_POPUP_SETTINGS_BW = "需要改變BigWigs描點及風格化元素。"
 L_POPUP_ARMORY = "查看英雄榜"
 L_POPUP_TALENT_FIX = "當你查看其它玩家時發生了一個錯誤使你無法更改天賦.很不幸在下個版本修復之前我們無能為力,請重新加載UI并重試." -- Needs review
-L_POPUP_CURRENCY_CAP = "You get maximum value of" -- Needs review
+L_POPUP_CURRENCY_CAP = "您擁有的最高級貨幣為"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "歡迎使用ShestakUI "
@@ -399,7 +399,7 @@ L_SLASHCMD_HELP = {
 }
 
 -- ExploreMap
-L_EXTRA_EXPLORED = "探索: " -- Needs review
+L_EXTRA_EXPLORED = "探索: "
 L_EXTRA_ZONEACHID = {
 	-- http://www.wowhead.com/achievement=*
 	-- e(X)plore achievement id, (Q)uest achievement id
@@ -485,7 +485,6 @@ L_EXTRA_ZONEACHID = {
 	-- Pandaria
 	["翠玉林"]							= {X = 6351, A = 6300, H = 6534},
 	["四風峽"]							= {X = 6969, A = 6301, H = 6301},
-	--["喀撒朗蠻荒"]						= {X = 6975, A = 6535, H = 6536},
 	["崑萊峰"]							= {X = 6976, A = 6537, H = 6538},
 	["螳螂荒原"]							= {X = 6977, A = 6539, H = 6539},
 	["悚然荒野"]							= {X = 6978, A = 6540, H = 6540},
