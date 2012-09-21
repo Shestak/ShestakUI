@@ -299,14 +299,14 @@ texture:SetPoint("TOPLEFT", button, 1, -1)
 texture:SetPoint("BOTTOMRIGHT", button, -1, 1)
 
 button:SetScript("OnClick", function()
-	if farm == false then
+	if farmmode == false then
 		MinimapAnchor:Size(C.minimap.size * 1.65)
 		Minimap:Size(MinimapAnchor:GetWidth())
-		farm = true
+		farmmode = true
 	else
 		MinimapAnchor:Size(C.minimap.size)
 		Minimap:Size(MinimapAnchor:GetWidth())
-		farm = false
+		farmmode = false
 	end
 end)
 

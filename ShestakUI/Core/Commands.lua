@@ -239,16 +239,16 @@ SLASH_FRAME2 = "/акфьу"
 ----------------------------------------------------------------------------------------
 --	Farm mode for minimap(by Elv22)
 ----------------------------------------------------------------------------------------
-farm = false
+farmmode = false
 SlashCmdList.FARMMODE = function()
-	if farm == false then
+	if farmmode == false then
 		MinimapAnchor:Size(C.minimap.size * 1.65)
 		Minimap:Size(MinimapAnchor:GetWidth())
-		farm = true
+		farmmode = true
 	else
 		MinimapAnchor:Size(C.minimap.size)
 		Minimap:Size(MinimapAnchor:GetWidth())
-		farm = false
+		farmmode = false
 	end
 end
 SLASH_FARMMODE1 = "/farmmode"
