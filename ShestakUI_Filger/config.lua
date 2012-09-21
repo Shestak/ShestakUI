@@ -3150,6 +3150,8 @@ Filger_Spells = {
 			{spellID = 96267, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Guardian Spirit
 			{spellID = 47788, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Phantasm
+			{spellID = 114239, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Fear Ward
 			{spellID = 6346, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
