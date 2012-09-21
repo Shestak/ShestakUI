@@ -13,24 +13,24 @@ MinimapAnchor:RegisterEvent("ADDON_LOADED")
 ----------------------------------------------------------------------------------------
 local _, _, position, xpos, ypos = unpack(C.position.minimap)
 	-- TOP of BOTTOM
-	if (position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT") and abs(ypos) <= T.getscreenheight / 2 then
-		MinimapAnchorOnTop = true
-	elseif (position == "BOTTOMLEFT" or position == "BOTTOM" or position == "BOTTOMRIGHT") and abs(ypos) <= T.getscreenheight / 2 then		
-		MinimapAnchorOnTop = false
-	elseif position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT" then
-		MinimapAnchorOnTop = false
+	if position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT" then
+		MinimapAnchorVertical = "TOP"
+		MinimapAnchorVerticalReverse = "BOTTOM"
+		MinimapAnchorVerticalFactor = -1
 	else
-		MinimapAnchorOnTop = true
+		MinimapAnchorVertical = "BOTTOM"
+		MinimapAnchorVerticalReverse = "TOP"
+		MinimapAnchorVerticalFactor = 1
 	end
 	-- LEFT or RIGHT
-	if (position == "TOPLEFT" or position == "LEFT" or position == "BOTTOMLEFT") and abs(xpos) <= T.getscreenwidth / 2 then
-		MinimapAnchorOnLeft = true
-	elseif (position == "TOPRIGHT" or position == "RIGHT" or position == "BOTTOMRIGHT") and abs(xpos) <= T.getscreenwidth / 2 then		
-		MinimapAnchorOnLeft = false
-	elseif position == "TOPLEFT" or position == "LEFT" or position == "BOTTOMLEFT" then
-		MinimapAnchorOnLeft = false
+	if position == "TOPLEFT" or position == "LEFT" or position == "BOTTOMLEFT"then
+		MinimapAnchorHorizontal = "LEFT"
+		MinimapAnchorHorizontalReverse = "RIGHT"
+		MinimapAnchorHorizontalFactor = 1
 	else
-		MinimapAnchorOnLeft = true
+		MinimapAnchorHorizontal = "RIGHT"
+		MinimapAnchorHorizontalReverse = "LEFT"
+		MinimapAnchorHorizontalFactor = -1
 	end
 
 ----------------------------------------------------------------------------------------
@@ -151,11 +151,7 @@ GhostFrame:StripTextures()
 GhostFrame:SetTemplate("Overlay")
 GhostFrame:StyleButton()
 GhostFrame:ClearAllPoints()
-if MinimapAnchorOnTop == true then
-	GhostFrame:SetPoint("TOP", Minimap, "BOTTOM", 0, -5)
-else
-	GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
-end
+GhostFrame:SetPoint(MinimapAnchorVertical, Minimap, MinimapAnchorVerticalReverse, 0, 5 * MinimapAnchorVerticalFactor)
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 GhostFrameContentsFrameIcon:Size(34)
 GhostFrameContentsFrame:SetFrameLevel(GhostFrameContentsFrame:GetFrameLevel() + 2)
