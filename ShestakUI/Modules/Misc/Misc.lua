@@ -280,6 +280,35 @@ PVPFrameCurrency:HookScript("OnEnter", function()
 end)
 
 ----------------------------------------------------------------------------------------
+--	Old achievements filter
+----------------------------------------------------------------------------------------
+function AchievementFrame_GetCategoryNumAchievements_OldIncomplete(categoryID)
+	local numAchievements, numCompleted = GetCategoryNumAchievements(categoryID)
+	return numAchievements - numCompleted, 0, numCompleted
+end
+
+function old_nocomplete_filter_init()
+	AchievementFrameFilters = {
+		{text = ACHIEVEMENTFRAME_FILTER_ALL, func = AchievementFrame_GetCategoryNumAchievements_All},
+		{text = ACHIEVEMENTFRAME_FILTER_COMPLETED, func = AchievementFrame_GetCategoryNumAchievements_Complete},
+		{text = ACHIEVEMENTFRAME_FILTER_INCOMPLETE, func = AchievementFrame_GetCategoryNumAchievements_Incomplete},
+		{text = ACHIEVEMENTFRAME_FILTER_INCOMPLETE.." ("..ALL.." )", func = AchievementFrame_GetCategoryNumAchievements_OldIncomplete}
+	}
+end
+
+local filter = CreateFrame("Frame")
+filter:RegisterEvent("ADDON_LOADED")
+filter:SetScript("OnEvent", function(self, event, addon, ...)
+	if addon == "Blizzard_AchievementUI" then
+		if AchievementFrame then
+			old_nocomplete_filter_init()
+			AchievementFrameFilterDropDown:SetWidth(AchievementFrameFilterDropDown:GetWidth() + 20)
+			filter:UnregisterEvent("ADDON_LOADED")
+		end
+	end
+end)
+
+----------------------------------------------------------------------------------------
 --	Farm mode mouseover button on minimap
 ----------------------------------------------------------------------------------------
 local button = CreateFrame("Button", "Farmmode", UIParent)

@@ -484,7 +484,6 @@ L_EXTRA_ZONEACHID = { -- Needs review
 	-- Pandaria
 	["Foresta di Giada"]				= {X = 6351, A = 6300, H = 6534},
 	["Valle dei Quattro Venti"]			= {X = 6969, A = 6301, H = 6301},
-	--["Giungla di Krasarang"]			= {X = 6975, A = 6535, H = 6536},
 	["Massiccio del Kun-Lai"]			= {X = 6976, A = 6537, H = 6538},
 	["Steppe di Tong Long"]				= {X = 6977, A = 6539, H = 6539},
 	["Distese del Terrore"]				= {X = 6978, A = 6540, H = 6540},

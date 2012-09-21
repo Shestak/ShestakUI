@@ -17,9 +17,9 @@ local unit_height = 17
 
 -- Create layout
 local function Shared(self, unit)
-	local unit = (self:GetParent():GetName():match"oUF_PartyDPS") and "party"
-	or (self:GetParent():GetName():match"oUF_RaidDPS") and "raid"
-	or (self:GetParent():GetName():match"oUF_MainTank") and "tank" or unit
+	local unit = (self:GetParent():GetName():match("oUF_PartyDPS")) and "party"
+	or (self:GetParent():GetName():match("oUF_RaidDPS")) and "raid"
+	or (self:GetParent():GetName():match("oUF_MainTank")) and "tank" or unit
 
 	-- Set our own colors
 	self.colors = T.oUF_colors

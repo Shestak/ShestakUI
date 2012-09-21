@@ -23,15 +23,15 @@ L_ANNOUNCE_SS_THANKS = "谢谢你的 "
 L_ANNOUNCE_SS_RECEIVED = " 收到来自于 "
 
 -- Pull countdown announce
-L_ANNOUNCE_PC_GO = "GO!" -- Needs review
-L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
-L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
+L_ANNOUNCE_PC_GO = "开始!"
+L_ANNOUNCE_PC_MSG = "正在拉: %s,倒數 %s.."
+L_ANNOUNCE_PC_ABORTED = "取消拉怪!"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_PRE = "%s 放置了 %s" -- Needs review
-L_ANNOUNCE_FP_PUT = "%s 放置了 %s" -- Needs review
-L_ANNOUNCE_FP_CAST = "%s 开启了 %s" -- Needs review
-L_ANNOUNCE_FP_CLICK = "%s 正在开启 %s... 请点击！" -- Needs review
+L_ANNOUNCE_FP_PRE = "%s 放置了 %s"
+L_ANNOUNCE_FP_PUT = "%s 放置了 %s"
+L_ANNOUNCE_FP_CAST = "%s 开启了 %s"
+L_ANNOUNCE_FP_CLICK = "%s 正在开启 %s... 请点击！"
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "没有天赋"
@@ -48,17 +48,17 @@ L_TOOLTIP_INSPECT_OPEN = "检查框体已打开"
 -- Misc
 L_MISC_UNDRESS = "无装备"
 L_MISC_DRINKING = " 开始进食."
-L_MISC_BUY_STACK = "Alt-右键点击购买一叠"
-L_MISC_ONECLICK_BUYOUT = "Shift-Right-左键,不弹出确认框体直接购买" -- Needs review
-L_MISC_ONECLICK_BID = "Shift-Right-左鍵,不弹出确认框体直接竞标" -- Needs review
-L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item without confirmation" -- Needs review
+L_MISC_BUY_STACK = "Alt+右键点击购买一叠"
+L_MISC_ONECLICK_BUYOUT = "Shift+右键,不弹出确认框体直接购买"
+L_MISC_ONECLICK_BID = "Shift+右鍵,不弹出确认框体直接竞标"
+L_MISC_ONECLICK_CANCEL = "Shift+右键,不弹出确认框体直接取消选择的物品"
 L_MISC_UI_OUTDATED = "ShestakUI 版本已过期，请至 www.shestak.org 下载最新版"
 L_MISC_HEADER_MARK = "鼠标悬停显示团队图标"
 L_MISC_BINDER_OPEN = "鼠标绑定"
-L_MISC_MOUNTS_GROUND = "Ground" -- Needs review
-L_MISC_MOUNTS_FLYING = "Flying" -- Needs review
-L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground" -- Needs review
-L_MISC_MOUNTS_SWIMMING = "Swimming" -- Needs review
+L_MISC_MOUNTS_GROUND = "地面坐骑"
+L_MISC_MOUNTS_FLYING = "飞行坐骑"
+L_MISC_MOUNTS_FLYINGGROUND = "飞行/地面坐骑"
+L_MISC_MOUNTS_SWIMMING = "水中坐骑"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"
@@ -274,7 +274,7 @@ L_POPUP_SETTINGS_DXE = "需要改变DXE描点及风格化元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
 L_POPUP_ARMORY = "军械库"
 L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
-L_POPUP_CURRENCY_CAP = "You get maximum value of" -- Needs review
+L_POPUP_CURRENCY_CAP = "你拥有的最高级货币为"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "欢迎使用ShestakUI "
@@ -398,7 +398,7 @@ L_SLASHCMD_HELP = {
 }
 
 -- ExploreMap
-L_EXTRA_EXPLORED = "Explored: " -- Needs review
+L_EXTRA_EXPLORED = "探索: "
 L_EXTRA_ZONEACHID = {
 	-- http://www.wowhead.com/achievement=*
 	-- e(X)plore achievement id, (Q)uest achievement id
@@ -484,7 +484,6 @@ L_EXTRA_ZONEACHID = {
 	-- Pandaria
 	["翡翠林"]							= {X = 6351, A = 6300, H = 6534},
 	["四风谷"]							= {X = 6969, A = 6301, H = 6301},
-	--["卡桑琅丛林"]						= {X = 6975, A = 6535, H = 6536},
 	["昆莱山"]							= {X = 6976, A = 6537, H = 6538},
 	["螳螂高原"]							= {X = 6977, A = 6539, H = 6539},
 	["恐惧废土"]							= {X = 6978, A = 6540, H = 6540},

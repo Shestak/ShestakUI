@@ -484,7 +484,6 @@ L_EXTRA_ZONEACHID = {
 	-- Pandaria
 	["La forêt de Jade"]				= {X = 6351, A = 6300, H = 6534},
 	["Vallée des Quatre vents"]			= {X = 6969, A = 6301, H = 6301},
-	--["Étendues sauvages de Krasaran"]	= {X = 6975, A = 6535, H = 6536},
 	["Sommet de Kun-Lai"]				= {X = 6976, A = 6537, H = 6538},
 	["Steppes de Tanglong"]				= {X = 6977, A = 6539, H = 6539},
 	["Terres de l’Angoisse"]			= {X = 6978, A = 6540, H = 6540},

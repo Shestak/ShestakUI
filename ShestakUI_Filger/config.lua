@@ -611,6 +611,12 @@ Filger_Spells = {
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Web (Spider)
+			{spellID = 4167, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Venom Web Spray (Silithid)
+			{spellID = 54706, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Pin (Crab)
+			{spellID = 50245, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
@@ -777,6 +783,8 @@ Filger_Spells = {
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Ward
 			{spellID = 111264, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Heating Up
+			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Floes
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incanter's Ward
@@ -802,8 +810,6 @@ Filger_Spells = {
 			{spellID = 57761, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Missiles!
 			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Heating Up
-			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyroblast!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1003,10 +1009,10 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.player_buff_icon)},
 
+			-- Guard
+			{spellID = 115295, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fortifying Brew
 			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Energizing Brew
-			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elusive Brew
 			{spellID = 115308, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Tigereye Brew
@@ -1017,6 +1023,8 @@ Filger_Spells = {
 			{spellID = 115213, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Energizing Brew
+			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Momentum
 			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -1133,18 +1141,26 @@ Filger_Spells = {
 			{spellID = 116705, filter = "CD"},
 			-- Paralysis
 			{spellID = 115078, filter = "CD"},
+			-- Expel Harm
+			{spellID = 115072, filter = "CD"},
 			-- Fists of Fury
 			{spellID = 113656, filter = "CD"},
+			-- Guard
+			{spellID = 115295, filter = "CD"},
 			-- Charging Ox Wave
 			{spellID = 119392, filter = "CD"},
 			-- Dampen Harm
 			{spellID = 122278, filter = "CD"},
 			-- Flying Serpent Kick
 			{spellID = 101545, filter = "CD"},
+			-- Energizing Brew
+			{spellID = 115288, filter = "CD"},
 			-- Touch of Karma
 			{spellID = 122470, filter = "CD"},
 			-- Touch of Death
 			{spellID = 115080, filter = "CD"},
+			-- Life Cocoon
+			{spellID = 116849, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -1507,7 +1523,7 @@ Filger_Spells = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 		},
-		--[[{
+		{
 			Name = "T_DEBUFF_ICON",
 			Direction = "RIGHT",
 			Mode = "ICON",
@@ -1516,7 +1532,9 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.target_debuff_icon)},
 
-		},]]
+			-- Glyph of Mind Blast
+			{spellID = 87194, unitID = "target", caster = "player", filter = "DEBUFF"},
+		},
 		{
 			Name = "T_DE/BUFF_BAR",
 			Direction = "UP",
@@ -3057,12 +3075,6 @@ Filger_Spells = {
 			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)
 			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Venom Web Spray (Silithid)
-			{spellID = 54706, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Web (Spider)
-			{spellID = 4167, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Pin (Crab)
-			{spellID = 50245, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
 			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3165,8 +3177,6 @@ Filger_Spells = {
 			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silence
 			{spellID = 15487, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Glyph of Mind Blast
-			{spellID = 87194, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Rogue
 			-- Cloak of Shadows

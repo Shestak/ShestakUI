@@ -140,6 +140,7 @@ or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупая
 	C["automation"].skip_cinematic = true
 	C["automation"].auto_role = true
 	C["automation"].cancel_bad_buffs = true
+	C["automation"].currency_cap = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["skins"].combustion_helper = true

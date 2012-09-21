@@ -484,7 +484,6 @@ L_EXTRA_ZONEACHID = {
 	-- Pandaria
 	["Der Jadewald"]					= {X = 6351, A = 6300, H = 6534},
 	["Tal der Vier Winde"]				= {X = 6969, A = 6301, H = 6301},
-	--["Krasarangwildnis"]				= {X = 6975, A = 6535, H = 6536},
 	["Kun-Lai-Gipfel"]					= {X = 6976, A = 6537, H = 6538},
 	["Tonlongsteppe"]					= {X = 6977, A = 6539, H = 6539},
 	["Schreckensöde"]					= {X = 6978, A = 6540, H = 6540},
