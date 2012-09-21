@@ -36,6 +36,7 @@ L_GUI_MISC_DISENCHANTING = "一键研磨/选矿/分解"
 L_GUI_MISC_SUM_BUYOUTS = "总结目前所有的拍卖"
 L_GUI_MISC_CLICK_CAST = "简单的点击施法绑定"
 L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
+L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
@@ -68,6 +69,7 @@ L_GUI_AUTOMATION_AUTO_ROLE = "自动设定你的角色类型"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "自动取消无用的buffs"
 L_GUI_AUTOMATION_TAB_BINDER = "Tab只选定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "团队副本时自动开启战斗记录"
+L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "介面样式"
