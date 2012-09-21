@@ -323,24 +323,15 @@ button:Size(19)
 button:SetAlpha(0)
 
 local texture = button:CreateTexture(nil, "OVERLAY")
-texture:SetTexture("INTERFACE\\MINIMAP\\TRACKING\\None")
+texture:SetTexture("Interface\\Icons\\inv_misc_map_01")
 texture:SetPoint("TOPLEFT", button, 1, -1)
 texture:SetPoint("BOTTOMRIGHT", button, -1, 1)
 
 button:SetScript("OnClick", function()
-	if farmmode == false then
-		MinimapAnchor:Size(C.minimap.size * 1.65)
-		Minimap:Size(MinimapAnchor:GetWidth())
-		farmmode = true
-	else
-		MinimapAnchor:Size(C.minimap.size)
-		Minimap:Size(MinimapAnchor:GetWidth())
-		farmmode = false
-	end
+	SlashCmdList.FARMMODE() 
 end)
 
 button:SetScript("OnEnter", function()
-	if InCombatLockdown() then return end
 	button:FadeIn()
 end)
 
