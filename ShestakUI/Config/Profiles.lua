@@ -287,6 +287,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["misc"].disenchanting = true
 	C["misc"].sum_buyouts = true
 	C["misc"].move_blizzard = true
+	C["misc"].color_picker = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
 	C["announcements"].spells = true

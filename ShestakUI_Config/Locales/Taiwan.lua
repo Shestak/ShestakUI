@@ -36,6 +36,7 @@ L_GUI_MISC_DISENCHANTING = "一鍵研磨/選礦/分解(Alt+點擊)"
 L_GUI_MISC_SUM_BUYOUTS = "結算拍賣物品的總金額"
 L_GUI_MISC_CLICK_CAST = "簡單的點擊施法綁定"
 L_GUI_MISC_MOVE_BLIZZARD = "移動暴雪默認介面框架"
+L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"

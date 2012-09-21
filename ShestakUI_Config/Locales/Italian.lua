@@ -36,6 +36,7 @@ L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo 
 L_GUI_MISC_SUM_BUYOUTS = "Somma assieme tutte le aste correnti"
 L_GUI_MISC_CLICK_CAST = "Scorciatoie da mouse (Click2Cast)"
 L_GUI_MISC_MOVE_BLIZZARD = "Consenti di muovere alcuni riquadri dell'interfaccia Blizzard"
+L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"

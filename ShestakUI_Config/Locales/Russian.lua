@@ -36,6 +36,7 @@ L_GUI_MISC_DISENCHANTING = "Распылять, измельчать и прос
 L_GUI_MISC_SUM_BUYOUTS = "Выводить сумму ваших аукционов"
 L_GUI_MISC_CLICK_CAST = "Назначение клавиш мыши (click2cast)"
 L_GUI_MISC_MOVE_BLIZZARD = "Включить перемещение фреймов Blizzard"
+L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"
@@ -68,7 +69,7 @@ L_GUI_AUTOMATION_AUTO_ROLE = "Выбор вашей роли (в группе/р
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Снимать *плохие* баффы"
 L_GUI_AUTOMATION_TAB_BINDER = "Клавиша *Tab* выбирает вражеских игроков"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Включать запись журнала боя в рейде"
-L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
+L_GUI_AUTOMATION_CURRENCY_CAP = "Окно лимита валюты (Доблесть/Честь)"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

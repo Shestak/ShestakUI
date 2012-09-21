@@ -36,6 +36,7 @@ L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" --
 L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
 L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
 L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
+L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"

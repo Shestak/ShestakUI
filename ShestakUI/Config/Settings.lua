@@ -57,6 +57,7 @@ C["misc"] = {
 	["sum_buyouts"] = false,					-- Sum upp all current auctions
 	["click_cast"] = false,						-- Simple click2cast spell binder
 	["move_blizzard"] = false,					-- Move some Blizzard frames
+	["color_picker"] = false,					-- Improved ColorPicker
 }
 
 ----------------------------------------------------------------------------------------
