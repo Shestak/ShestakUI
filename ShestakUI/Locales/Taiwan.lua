@@ -55,10 +55,10 @@ L_MISC_ONECLICK_CANCEL = "Shift+左鍵,不彈出確認窗口直接取消選擇�
 L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
 L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"
-L_MISC_MOUNTS_GROUND = "Ground" -- Needs review
-L_MISC_MOUNTS_FLYING = "Flying" -- Needs review
-L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground" -- Needs review
-L_MISC_MOUNTS_SWIMMING = "Swimming" -- Needs review
+L_MISC_MOUNTS_GROUND = "地面坐騎"
+L_MISC_MOUNTS_FLYING = "飛行坐騎"
+L_MISC_MOUNTS_FLYINGGROUND = "飛行/地面坐騎" 
+L_MISC_MOUNTS_SWIMMING = "水中坐騎"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
@@ -398,7 +398,7 @@ L_SLASHCMD_HELP = {
 }
 
 -- ExploreMap
-L_EXTRA_EXPLORED = "探索: " -- Needs review
+L_EXTRA_EXPLORED = "探索: "
 L_EXTRA_ZONEACHID = {
 	-- http://www.wowhead.com/achievement=*
 	-- e(X)plore achievement id, (Q)uest achievement id
