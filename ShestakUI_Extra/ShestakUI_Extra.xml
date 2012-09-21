@@ -19,6 +19,7 @@
 
 	<Script file="Modules\ExtraBars\Battleground.lua"/>
 	<Script file="Modules\ExtraBars\CustomActionBar.lua"/>
+	<Script file="Modules\ExtraBars\CustomActionBarTwo.lua"/>
 	<Script file="Modules\ExtraBars\MarkBar.lua"/>
 	<Script file="Modules\ExtraBars\SwitchSpec.lua"/>
 
@@ -37,3 +38,5 @@
 	<Script file="Modules\Skins\ShieldMonitor.lua"/>
 	<Script file="Modules\Skins\Skada.lua"/>
 </Ui>
+
+<!-- Editing by Oz of shestak.org -->
