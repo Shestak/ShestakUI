@@ -274,6 +274,7 @@ L_POPUP_SETTINGS_DXE = "Necesito cambiar la posición de los elementos del DXE."
 L_POPUP_SETTINGS_BW = "Necesito cambiar la posición de los elementos del BigWigs."
 L_POPUP_ARMORY = "Arsenal"
 L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
+L_POPUP_CURRENCY_CAP = "You get maximum value of" -- Needs review
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Bienvenido a ShestakUI "

@@ -2510,6 +2510,8 @@ Filger_Spells = {
 			{spellID = 55694, filter = "CD"},
 			-- Commanding Shout
 			{spellID = 469, filter = "CD"},
+			-- Last Stand
+			{spellID = 12975, filter = "CD"},
 			-- Rallying Cry
 			{spellID = 97462, filter = "CD"},
 
@@ -3148,6 +3150,8 @@ Filger_Spells = {
 			{spellID = 96267, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Guardian Spirit
 			{spellID = 47788, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Phantasm
+			{spellID = 114239, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Fear Ward
 			{spellID = 6346, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs

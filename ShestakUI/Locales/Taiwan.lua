@@ -273,7 +273,8 @@ L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素。"
 L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素。"
 L_POPUP_SETTINGS_BW = "需要改變BigWigs描點及風格化元素。"
 L_POPUP_ARMORY = "查看英雄榜"
-L_POPUP_TALENT_FIX = "當你查看其它玩家時發生了一個錯誤使你無法更改天賦.很不幸在下個版本修復之前我們無能為力,請重新加載UI并重試."-- Needs review
+L_POPUP_TALENT_FIX = "當你查看其它玩家時發生了一個錯誤使你無法更改天賦.很不幸在下個版本修復之前我們無能為力,請重新加載UI并重試." -- Needs review
+L_POPUP_CURRENCY_CAP = "You get maximum value of" -- Needs review
 
 -- Welcome message
 L_WELCOME_LINE_1 = "歡迎使用ShestakUI "
