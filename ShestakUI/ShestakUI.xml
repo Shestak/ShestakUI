@@ -121,6 +121,7 @@
 	<Script file="Modules\Automation\AutoInvite.lua"/>
 	<Script file="Modules\Automation\AutoRelease.lua"/>
 	<Script file="Modules\Automation\CancelBadBuffs.lua"/>
+	<Script file="Modules\Automation\CurrencyCap.lua"/>
 	<Script file="Modules\Automation\DeclineDuel.lua"/>
 	<Script file="Modules\Automation\LoggingCombat.lua"/>
 	<Script file="Modules\Automation\SetRole.lua"/>

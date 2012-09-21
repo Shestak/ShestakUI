@@ -94,6 +94,7 @@ local function Local(o)
 	if o == "UIConfigautomationcancel_bad_buffs" then o = L_GUI_AUTOMATION_CANCEL_BAD_BUFFS end
 	if o == "UIConfigautomationtab_binder" then o = L_GUI_AUTOMATION_TAB_BINDER end
 	if o == "UIConfigautomationlogging_combat" then o = L_GUI_AUTOMATION_LOGGING_COMBAT end
+	if o == "UIConfigautomationcurrency_cap" then o = L_GUI_AUTOMATION_CURRENCY_CAP end
 
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
@@ -1024,7 +1025,7 @@ do
 		subtitle2:SetWidth(580)
 		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
 		subtitle2:SetJustifyH("LEFT")
-		subtitle2:SetText("AcidWeb, Aezay, Affli, Ailae, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Camealion, Chiril, CrusaderHeimdall, Cybey, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gorlasch, Haleth, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Woffle of Dark Iron, Wrug, Xuerian, Yleaf, Zork.")
+		subtitle2:SetText("AcidWeb, Aezay, Affli, Ailae, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Camealion, Chiril, CrusaderHeimdall, Cybey, Dawn, Don Kaban, Dridzt, Duffed, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, gi2k15, Gorlasch, Haleth, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Woffle of Dark Iron, Wrug, Xuerian, Yleaf, Zork.")
 
 		local title3 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)

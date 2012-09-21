@@ -68,6 +68,7 @@ L_GUI_AUTOMATION_AUTO_ROLE = "'Auto-imposta' il tuo ruolo"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "'Auto-cancella' alcuni benefici"
 L_GUI_AUTOMATION_TAB_BINDER = "Usando il tasto TAB, consente di prendere come bersaglio soltanto nemici controllati da altri giocatori (se presenti)"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "In instances da incursione, 'auto-attiva' la registrazione del Registro di combattimento in un file di testo"
+L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Restyling"

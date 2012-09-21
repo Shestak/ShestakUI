@@ -68,6 +68,7 @@ L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
 L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
+L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Personnalisation d'addon"

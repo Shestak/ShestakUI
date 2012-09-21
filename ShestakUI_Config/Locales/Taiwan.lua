@@ -68,6 +68,7 @@ L_GUI_AUTOMATION_AUTO_ROLE = "自動設定你的角色類型"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "自動取消無用的buffs"
 L_GUI_AUTOMATION_TAB_BINDER = "Tab只選定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "團隊副本時自動開啟戰鬥記錄"
+L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "介面樣式"

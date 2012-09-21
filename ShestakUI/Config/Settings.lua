@@ -95,6 +95,7 @@ C["automation"] = {
 	["cancel_bad_buffs"] = false,				-- Auto cancel various buffs
 	["tab_binder"] = false,						-- Auto change Tab key to only target enemy players
 	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
+	["currency_cap"] = false,					-- Auto popup for currency cap
 }
 
 ----------------------------------------------------------------------------------------
