@@ -445,7 +445,6 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["font"].stylization_font_size = 14
 	C["font"].bags_font_style = "OUTLINE"
 	C["font"].bags_font_size = 14
-	C["position"].player_buffs = {"TOPLEFT", Minimap, "TOPLEFT", -422, -40}
 	C["position"].micro_menu = {"TOPLEFT", UIParent, "TOPLEFT", 21, -16}
 	C["position"].unitframes.arena = {"RIGHT", oUF_Target, "RIGHT", -242, 7}
 	C["position"].unitframes.boss = {"RIGHT", oUF_Target, "RIGHT", -242, 7}
