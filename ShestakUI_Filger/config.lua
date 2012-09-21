@@ -611,6 +611,12 @@ Filger_Spells = {
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Web (Spider)
+			{spellID = 4167, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Venom Web Spray (Silithid)
+			{spellID = 54706, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Pin (Crab)
+			{spellID = 50245, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
@@ -3069,12 +3075,6 @@ Filger_Spells = {
 			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)
 			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Venom Web Spray (Silithid)
-			{spellID = 54706, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Web (Spider)
-			{spellID = 4167, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Pin (Crab)
-			{spellID = 50245, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
 			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
 
