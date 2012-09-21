@@ -484,7 +484,6 @@ L_EXTRA_ZONEACHID = {
 	-- Pandaria
 	["The Jade Forest"]					= {X = 6351, A = 6300, H = 6534},
 	["Valley of the Four Winds"]		= {X = 6969, A = 6301, H = 6301},
-	--["Krasarang Wilds"]					= {X = 6975, A = 6535, H = 6536},
 	["Kun-Lai Summit"]					= {X = 6976, A = 6537, H = 6538},
 	["Townlong Steppes"]				= {X = 6977, A = 6539, H = 6539},
 	["Dread Wastes"]					= {X = 6978, A = 6540, H = 6540},

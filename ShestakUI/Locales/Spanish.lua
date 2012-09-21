@@ -484,7 +484,6 @@ L_EXTRA_ZONEACHID = {
 	-- Pandaria
 	["El Bosque de Jade"]				= {X = 6351, A = 6300, H = 6534},
 	["Valle de los Cuatro Vientos"]		= {X = 6969, A = 6301, H = 6301},
-	--["Espesura Krasarang"]				= {X = 6975, A = 6535, H = 6536},
 	["Cima Kun-Lai"]					= {X = 6976, A = 6537, H = 6538},
 	["Estepas de Tong Long"]			= {X = 6977, A = 6539, H = 6539},
 	["Desierto del Pavor"]				= {X = 6978, A = 6540, H = 6540},
