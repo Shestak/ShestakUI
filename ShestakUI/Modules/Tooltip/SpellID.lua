@@ -5,6 +5,14 @@ if C.tooltip.enable ~= true or C.tooltip.spell_id ~= true then return end
 --	Spell/Item IDs(idTip by Silverwind)
 ----------------------------------------------------------------------------------------
 local function addLine(self, id, isItem)
+	for i = 1, self:NumLines() do
+		local line = _G["GameTooltipTextLeft"..i]
+		if not line then break end
+		local text = line:GetText()
+		if text and (text:match(L_TOOLTIP_ITEM_ID) or text:match(L_TOOLTIP_SPELL_ID)) then
+			return
+		end
+	end
 	if isItem then
 		self:AddLine("|cffffffff"..L_TOOLTIP_ITEM_ID.." "..id)
 	else
@@ -12,16 +20,6 @@ local function addLine(self, id, isItem)
 	end
 	self:Show()
 end
-
-hooksecurefunc(GameTooltip, "SetUnitBuff", function(self, ...)
-	local id = select(11, UnitBuff(...))
-	if id then addLine(self, id) end
-end)
-
-hooksecurefunc(GameTooltip, "SetUnitDebuff", function(self, ...)
-	local id = select(11, UnitDebuff(...))
-	if id then addLine(self, id) end
-end)
 
 hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
 	local id = select(11, UnitAura(...))
