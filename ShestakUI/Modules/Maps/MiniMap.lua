@@ -11,7 +11,8 @@ MinimapAnchor:RegisterEvent("ADDON_LOADED")
 ----------------------------------------------------------------------------------------
 --	Anchor for ToggleMinimap and GhostFrame
 ----------------------------------------------------------------------------------------
-local _, _, position, _, ypos = unpack(C.position.minimap)
+local _, _, position, xpos, ypos = unpack(C.position.minimap)
+	-- TOP of BOTTOM
 	if (position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT") and abs(ypos) <= T.getscreenheight / 2 then
 		MinimapAnchorOnTop = true
 	elseif (position == "BOTTOMLEFT" or position == "BOTTOM" or position == "BOTTOMRIGHT") and abs(ypos) <= T.getscreenheight / 2 then		
@@ -20,6 +21,16 @@ local _, _, position, _, ypos = unpack(C.position.minimap)
 		MinimapAnchorOnTop = false
 	else
 		MinimapAnchorOnTop = true
+	end
+	-- LEFT or RIGHT
+	if (position == "TOPLEFT" or position == "LEFT" or position == "BOTTOMLEFT") and abs(xpos) <= T.getscreenwidth / 2 then
+		MinimapAnchorOnLeft = true
+	elseif (position == "TOPRIGHT" or position == "RIGHT" or position == "BOTTOMRIGHT") and abs(xpos) <= T.getscreenwidth / 2 then		
+		MinimapAnchorOnLeft = false
+	elseif position == "TOPLEFT" or position == "LEFT" or position == "BOTTOMLEFT" then
+		MinimapAnchorOnLeft = false
+	else
+		MinimapAnchorOnLeft = true
 	end
 
 ----------------------------------------------------------------------------------------
