@@ -429,7 +429,6 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["font"].threat_meter_font_size = 14
 	C["font"].cooldown_timers_font_style = "OUTLINE"
 	C["font"].cooldown_timers_font_size = 22
-	C["font"].loot_font = C.media.pixel_font
 	C["font"].loot_font_style = "OUTLINE"
 	C["font"].loot_font_size = 14
 	C["font"].nameplates_font_style = "OUTLINE"
@@ -459,7 +458,8 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["actionbar"].micromenu = true	
 	C["aura"].focus_debuffs = true
 	C["aura"].pet_debuffs = true
-	C["unitframe"].alternative_portraits = true
+	C["unitframe"].own_color = false
+	C["unitframe"].portrait_enable = true
 end
 
 -- edit by Oz of shestak. org --
