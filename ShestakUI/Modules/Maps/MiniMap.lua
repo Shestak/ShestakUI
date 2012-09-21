@@ -9,6 +9,20 @@ MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, unpack(C.po
 MinimapAnchor:RegisterEvent("ADDON_LOADED")
 
 ----------------------------------------------------------------------------------------
+--	Anchor for ToggleMinimap and GhostFrame
+----------------------------------------------------------------------------------------
+local _, _, position, _, ypos = unpack(C.position.minimap)
+	if (position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT") and abs(ypos) <= T.getscreenheight / 2 then
+		MinimapAnchorOnTop = true
+	elseif (position == "BOTTOMLEFT" or position == "BOTTOM" or position == "BOTTOMRIGHT") and abs(ypos) <= T.getscreenheight / 2 then		
+		MinimapAnchorOnTop = false
+	elseif position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT" then
+		MinimapAnchorOnTop = false
+	else
+		MinimapAnchorOnTop = true
+	end
+
+----------------------------------------------------------------------------------------
 --	Shape, location and scale
 ----------------------------------------------------------------------------------------
 -- Kill Minimap Cluster
@@ -126,7 +140,11 @@ GhostFrame:StripTextures()
 GhostFrame:SetTemplate("Overlay")
 GhostFrame:StyleButton()
 GhostFrame:ClearAllPoints()
-GhostFrame:SetPoint("TOP", Minimap, "BOTTOM", 0, -5)
+if MinimapAnchorOnTop == true then
+	GhostFrame:SetPoint("TOP", Minimap, "BOTTOM", 0, -5)
+else
+	GhostFrame:SetPoint("BOTTOM", Minimap, "TOP", 0, 5)
+end
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 GhostFrameContentsFrameIcon:Size(34)
 GhostFrameContentsFrame:SetFrameLevel(GhostFrameContentsFrame:GetFrameLevel() + 2)
