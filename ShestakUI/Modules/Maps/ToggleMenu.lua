@@ -167,8 +167,16 @@ local function updateTextures(button, checkable)
 	button:HookScript("OnLeave", T.SetOriginalBackdrop)
 end
 
+-- Menu position 
+local _, _, position = MinimapAnchor:GetPoint()
+	if position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT" then
+		ToggleMenuAnchorBottom = true
+	else
+		ToggleMenuAnchorBottom = false
+	end
+	
 local MenuBG = CreateFrame("Frame", "TTMenuBackground", UIParent)
-	if C.minimap.toggle_menu_bottom == true then
+	if ToggleMenuAnchorBottom == true then
 		MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "TOPRIGHT", Minimap, "BOTTOMRIGHT", 2, -3)
 	else
 		MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 3)
@@ -179,7 +187,7 @@ MenuBG:EnableMouse(true)
 MenuBG:Hide()
 
 local AddonBG = CreateFrame("Frame", "TTMenuAddOnBackground", UIParent)
-	if C.minimap.toggle_menu_bottom == true then
+	if ToggleMenuAnchorBottom == true then
 		AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "TOPRIGHT", MenuBG, "TOPRIGHT", 0, 0)
 	else
 		AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", MenuBG, "BOTTOMRIGHT", 0, 0)
@@ -225,7 +233,7 @@ local function addMainMenuButtons(menuItems, menuName, menuBackground)
 	for index, value in ipairs(C.togglemainmenu) do
 		if value.text then
 			menuItems[index] = CreateFrame("Button", menuName..index, menuBackground)
-				if C.minimap.toggle_menu_bottom == true then
+				if ToggleMenuAnchorBottom == true then
 					menuItems[index]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "TOP", menuBackground, "TOP", 0, buttonspacing(-1))
 				else
 					menuItems[index]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "BOTTOM", menuBackground, "BOTTOM", 0, buttonspacing(1))
@@ -233,13 +241,13 @@ local function addMainMenuButtons(menuItems, menuName, menuBackground)
 			menuItems[index]:SetFrameLevel(defaultframelevel + 1)
 			menuItems[index]:SetFrameStrata("HIGH")
 			if mainmenusize == 0 then
-				if C.minimap.toggle_menu_bottom == true then
+				if ToggleMenuAnchorBottom == true then
 					menuItems[index]:SetPoint("TOPRIGHT", menuBackground, "TOPRIGHT", buttonspacing(-1), buttonspacing(-1))
 				else
 					menuItems[index]:SetPoint("BOTTOMRIGHT", menuBackground, "BOTTOMRIGHT", buttonspacing(-1), buttonspacing(-1))
 				end
 			else
-				if C.minimap.toggle_menu_bottom == true then
+				if ToggleMenuAnchorBottom == true then
 					menuItems[index]:SetPoint("TOP", menuItems[lastMainMenuEntryID], "BOTTOM", 0, buttonspacing(-1))
 				else
 					menuItems[index]:SetPoint("BOTTOM", menuItems[lastMainMenuEntryID], "TOP", 0, buttonspacing(1))
@@ -271,7 +279,7 @@ local addonmenuitems = {}
 addMainMenuButtons(addonmenuitems, "AddonMenu", AddonBG)
 
 local OpenMenuBG = CreateFrame("Button", "TTOpenMenuBackground", UIParent)
-	if C.minimap.toggle_menu_bottom == true then
+	if ToggleMenuAnchorBottom == true then
 		OpenMenuBG:CreatePanel("Overlay", borderwidth(1), buttonheight(1) / 1.3, "TOP", MenuBG, "TOP", 0, 0)
 	else
 		OpenMenuBG:CreatePanel("Overlay", borderwidth(1), buttonheight(1) / 1.3, "BOTTOM", MenuBG, "BOTTOM", 0, 0)
@@ -302,9 +310,7 @@ Text:SetTextColor(0.3, 0.3, 0.9)
 TTOpenMenuBackground:FadeOut()
 
 local expandbutton = CreateFrame("Button", "AddonMenuExpandButton", AddonBG)
-C.misc.toggle_menu_top = "TOP"
-C.misc.toggle_menu_bottom = "BOTTOM"
-	if C.minimap.toggle_menu_bottom == true then
+	if ToggleMenuAnchorBottom == true then
 		expandbutton:CreatePanel("Overlay", buttonwidth(1), buttonheight(1) / 2, "BOTTOM", AddonBG, "BOTTOM", 0, buttonspacing(1))
 	else
 		expandbutton:CreatePanel("Overlay", buttonwidth(1), buttonheight(1) / 2, "TOP", AddonBG, "TOP", 0, buttonspacing(-1))
@@ -416,13 +422,13 @@ local function refreshAddOnMenu()
 			if (not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i))) then
 				addonmenuitems[j]:ClearAllPoints()
 				if menusize % menuheight == 0 then
-					if C.minimap.toggle_menu_bottom == true then
+					if ToggleMenuAnchorBottom == true then
 						addonmenuitems[j]:SetPoint("TOPRIGHT", addonmenuitems[lastMenuEntryID], "TOPLEFT", buttonspacing(-1), (buttonheight(menuheight - 1) + buttonspacing(menuheight - 1)))
 					else
 						addonmenuitems[j]:SetPoint("BOTTOMRIGHT", addonmenuitems[lastMenuEntryID], "BOTTOMLEFT", buttonspacing(-1), (buttonheight(-menuheight + 1) + buttonspacing(-menuheight + 1)))
 					end
 				else
-					if C.minimap.toggle_menu_bottom == true then
+					if ToggleMenuAnchorBottom == true then
 						addonmenuitems[j]:SetPoint("TOP", addonmenuitems[lastMenuEntryID], "BOTTOM", 0, buttonspacing(-1))
 					else
 						addonmenuitems[j]:SetPoint("BOTTOM", addonmenuitems[lastMenuEntryID], "TOP", 0, buttonspacing(1))
