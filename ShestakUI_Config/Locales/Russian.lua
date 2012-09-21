@@ -68,7 +68,7 @@ L_GUI_AUTOMATION_AUTO_ROLE = "Выбор вашей роли (в группе/р
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Снимать *плохие* баффы"
 L_GUI_AUTOMATION_TAB_BINDER = "Клавиша *Tab* выбирает вражеских игроков"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Включать запись журнала боя в рейде"
-L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
+L_GUI_AUTOMATION_CURRENCY_CAP = "Окно лимита валюты (Доблесть/Честь)"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"
