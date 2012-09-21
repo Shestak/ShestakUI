@@ -324,6 +324,7 @@ button:SetAlpha(0)
 
 local texture = button:CreateTexture(nil, "OVERLAY")
 texture:SetTexture("Interface\\Icons\\inv_misc_map_01")
+texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 texture:SetPoint("TOPLEFT", button, 1, -1)
 texture:SetPoint("BOTTOMRIGHT", button, -1, 1)
 
