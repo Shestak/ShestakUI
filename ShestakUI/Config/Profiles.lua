@@ -510,9 +510,6 @@ if T.coauthor == true then
 	C["unitframe"].plugins_smooth_bar = true
 	C["unitframe"].plugins_diminishing = true
 	C["raidframe"].icons_role = true
-	if T.name ~= "Занштек" then
-		C["automation"].logging_combat = true
-	end
 	if T.class == "WARRIOR" then
 		C["actionbar"].stancebar_mouseover = false
 	end
