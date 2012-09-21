@@ -236,7 +236,7 @@ local function Shared(self, unit)
 		if C.unitframe.icons_resting == true and T.level ~= MAX_PLAYER_LEVEL then
 			self.Resting = self.Power:CreateTexture(nil, "OVERLAY")
 			self.Resting:Size(18)
-			self.Resting:Point("BOTTOMLEFT", -8, -8)
+			self.Resting:Point("BOTTOMLEFT", -6, -1)
 		end
 
 		-- Leader/Assistant/ML icons
