@@ -451,7 +451,7 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].unitframes.boss = {"RIGHT", oUF_Target, "RIGHT", -242, 7}
 	C["media"].border_color = {0.2, 0, 0.2, 1}
 	C["misc"].profession_database = true
-	C["automation"].screenshot = true
+	C["combattext"].enable = false
 	C["chat"].background = true
 	C["chat"].tabs_mouseover = false
 	C["actionbar"].split_bars = true
