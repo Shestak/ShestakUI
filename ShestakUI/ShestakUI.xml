@@ -65,6 +65,7 @@
 	<Script file="Modules\Maps\ExploreMap.lua"/>
 	<Script file="Modules\Maps\MapBossCount.lua"/>
 	<Script file="Modules\Maps\MiniMap.lua"/>
+	<Script file="Modules\Maps\MiniMapButtons.lua"/>
 	<Script file="Modules\Maps\ToggleMenu.lua"/>
 	<Script file="Modules\Maps\WorldMap.lua"/>
 
