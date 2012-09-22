@@ -159,7 +159,7 @@ L_BAG_RIGHT_CLICK_SEARCH = "Clicca col destro per cercare"
 L_MAIL_STOPPED = "Interrotto, l'inventario è pieno."
 L_MAIL_UNIQUE = "Interrotto. È stato rinvenuto il duplicato di un oggetto unico in una sacca o in banca."
 L_MAIL_COMPLETE = "Completato."
-L_MAIL_NEED = "Hai bisogno della buca per le lettere."
+L_MAIL_NEED = "Hai bisogno della cassetta per le lettere."
 L_MAIL_MESSAGES = "messaggi"
 
 -- Loot
@@ -274,7 +274,7 @@ L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DX
 L_POPUP_SETTINGS_BW = "È necessario cambiare la posizione degli elementi di BigWigs."
 L_POPUP_ARMORY = "Armeria"
 L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
-L_POPUP_CURRENCY_CAP = "You get maximum value of" -- Needs review
+L_POPUP_CURRENCY_CAP = "Hai raggiunto il valore massimo di"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Benvenuto/a in ShestakUI "
@@ -282,7 +282,7 @@ L_WELCOME_LINE_2_1 = "Digita /cfg per configurare l'interfaccia oppure visita ht
 L_WELCOME_LINE_2_2 = "per maggiori informazioni."
 
 -- Combat text
-L_COMBATTEXT_KILLING_BLOW = "Colpo mortale"
+L_COMBATTEXT_KILLING_BLOW = "Colpo di grazia"
 L_COMBATTEXT_ALREADY_UNLOCKED = "Testo di combattimento già sbloccato."
 L_COMBATTEXT_ALREADY_LOCKED = "Testo di combattimento già bloccato."
 L_COMBATTEXT_TEST_DISABLED = "Modalità 'prova' del testo di combattimento disabilitata."
@@ -310,9 +310,9 @@ L_STATS_WORLD_MAP = "Clicca per aprire la mappa del mondo."
 L_STATS_CURRENT_XP = "PE attuali/massimi"
 L_STATS_MEMORY_USAGE = "Utilizzo memoria interfaccia:"
 L_STATS_GARBAGE_COLLECTED = "Spazzatura raccolta"
-L_STATS_CHANGE_SORTING = "[Gilda] Clicca col destro per cambiare l'ordine, clicca Shift + tasto destro per invertirlo."
+L_STATS_CHANGE_SORTING = "[Gilda] Clicca col destro per invitare e sussurrare, clicca col tasto centrale per cambiare l'ordine, clicca Shift + tasto centrale per invertirlo."
 L_STATS_HIDDEN = "Nascosto/a"
-L_STATS_VIEW_NOTES = "Tieni premuto il tasto Alt per visualizzare gradi, note e note degli ufficiali."
+L_STATS_VIEW_NOTES = "Tieni premuto il tasto Alt per visualizzare ranghi, note e note degli ufficiali."
 L_STATS_HR = "o"
 L_STATS_INF = "inf"
 L_STATS_ALREADY_EXCEPTIONS = "è già nell'elenco delle eccezioni."

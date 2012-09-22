@@ -36,7 +36,7 @@ L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo 
 L_GUI_MISC_SUM_BUYOUTS = "Somma assieme tutte le aste correnti"
 L_GUI_MISC_CLICK_CAST = "Scorciatoie da mouse (Click2Cast)"
 L_GUI_MISC_MOVE_BLIZZARD = "Consenti di muovere alcuni riquadri dell'interfaccia Blizzard"
-L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
+L_GUI_MISC_COLOR_PICKER = "Selezionatore colore migliorato"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -69,7 +69,7 @@ L_GUI_AUTOMATION_AUTO_ROLE = "'Auto-imposta' il tuo ruolo"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "'Auto-cancella' alcuni benefici"
 L_GUI_AUTOMATION_TAB_BINDER = "Usando il tasto TAB, consente di prendere come bersaglio soltanto nemici controllati da altri giocatori (se presenti)"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "In instances da incursione, 'auto-attiva' la registrazione del Registro di combattimento in un file di testo"
-L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
+L_GUI_AUTOMATION_CURRENCY_CAP = "Popup automatico valuta massima raggiunta"
 
 -- Skins options
 L_GUI_SKINS = "Restyling"
@@ -123,7 +123,7 @@ L_GUI_COMBATTEXT_SCROLLABLE = "Attiva la 'modalità scorrimento': consente di sc
 L_GUI_COMBATTEXT_MAX_LINES = "Massimo numero righe da ricordare in 'scorrimento' (più righe = più memoria)"
 L_GUI_COMBATTEXT_TIME_VISIBLE = "Tempo (in secondi) in cui un singolo messaggio sarà visibile"
 L_GUI_COMBATTEXT_DK_RUNES = "Mostra la ricarica delle rune dei cavalieri della morte"
-L_GUI_COMBATTEXT_KILLINGBLOW = "Ti comunica i tuoi colpi mortali"
+L_GUI_COMBATTEXT_KILLINGBLOW = "Ti comunica i tuoi colpi di grazia"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unisce lo spam per danni multipli a più bersagli in un singolo messaggio"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Secondi in cui l'incantesimo/abilità più bersagli è unito in un solo messaggio"
 L_GUI_COMBATTEXT_DISPEL = "Ti comunica le tue dissoluzioni (dispels)"
@@ -190,7 +190,7 @@ L_GUI_TOOLTIP_TALENTS = "Mostra i talenti nei suggerimenti"
 L_GUI_TOOLTIP_ACHIEVEMENTS = "Mostra il paragone delle imprese nei suggerimenti"
 L_GUI_TOOLTIP_TARGET = "Mostra nei suggerimenti chi ha il giocatore come bersaglio"
 L_GUI_TOOLTIP_TITLE = "Titolo dei giocatori nei suggerimenti"
-L_GUI_TOOLTIP_RANK = "Grado in gilda nei suggerimenti"
+L_GUI_TOOLTIP_RANK = "Rango in gilda nei suggerimenti"
 L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Esperienza PvP del giocatore in arena"
 L_GUI_TOOLTIP_SPELL_ID = "ID Incantesimo/Abilità"
 L_GUI_TOOLTIP_RAID_ICON = "Visualizza i marchi d'incursione nei suggerimenti"
@@ -290,8 +290,8 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Rendi orizzontale la barra famiglio"
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barra postura al passaggio del mouse"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Nascondi barra postura"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Rendi orizzontale la barra postura"
-L_GUI_ACTIONBAR_MICROMENU = "Attiva il micro menu"
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu al passaggio del mouse"
+L_GUI_ACTIONBAR_MICROMENU = "Attiva il micromenu"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenu al passaggio del mouse"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Dimensione benefici giocatore"
