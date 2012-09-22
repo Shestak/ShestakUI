@@ -68,7 +68,6 @@ hooksecurefunc("WatchFrame_Update", function()
 
 			for j = 1, #WATCHFRAME_QUESTLINES do
 				if WATCHFRAME_QUESTLINES[j].text:GetText() == title then
-					WATCHFRAME_QUESTLINES[j].text:SetText("["..level.."] "..title)
 					WATCHFRAME_QUESTLINES[j].text:SetTextColor(col.r, col.g, col.b)
 					WATCHFRAME_QUESTLINES[j].col = col
 				end
