@@ -11,5 +11,6 @@
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
 
-config.lua
+Config\Positions.lua
+Config\Settings.lua
 ShestakUI_Filger.lua
