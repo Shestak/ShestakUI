@@ -95,6 +95,7 @@ L_UF_WOTF_USED = "WdV benutzt: "
 -- Map
 L_MAP_CURSOR = "Mauszeiger: "
 L_MAP_BOUNDS = "Außerhalb der Begrenzung!"
+L_MAP_FOG = "Fog of War" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Kalender"
@@ -103,6 +104,7 @@ L_MINIMAP_CALENDAR = "Kalender"
 L_ALOAD_RL = "Interface Neuladen"
 L_ALOAD_DEP = "Abhängigkeiten: "
 L_ALOAD_OP_DEP = "Optionale Abhängigkeit: "
+L_ALOAD_AUTHOR = "Author: " -- Needs review
 L_ALOAD_PROFILES = "Profile"
 L_ALOAD_ENABLE_ALL = "Alle aktivieren"
 L_ALOAD_DISABLE_ALL = "Alle deaktivieren"

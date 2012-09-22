@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.skins.minimap_buttons ~= true or C.minimap.enable ~= true then return end
+if C.minimap.enable ~= true or C.skins.minimap_buttons ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Collect minimap buttons in one line
@@ -18,8 +18,8 @@ local line = math.ceil(C.minimap.size / 20)
 
 local function PositionAndStyle()
 	button:Size(20)
-	button:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
-	for i =1, #buttons do
+	button:SetPoint(unpack(C.position.minimap_buttons))
+	for i = 1, #buttons do
 		buttons[i]:ClearAllPoints()
 		if i == 1 then
 			buttons[i]:SetPoint("TOP", button, "TOP", 0, 0)
@@ -49,5 +49,3 @@ collect:SetScript("OnEvent", function(self)
 	end
 	PositionAndStyle()
 end)
-
--- edit by Oz of shestak. org --

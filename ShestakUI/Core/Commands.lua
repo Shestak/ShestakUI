@@ -237,26 +237,6 @@ SLASH_FRAME1 = "/frame"
 SLASH_FRAME2 = "/акфьу"
 
 ----------------------------------------------------------------------------------------
---	Farm mode for minimap(by Elv22)
-----------------------------------------------------------------------------------------
-local farm = false
-SlashCmdList.FARMMODE = function()
-	if farm == false then
-		MinimapAnchor:Size(C.minimap.size * 1.65)
-		Minimap:Size(MinimapAnchor:GetWidth())
-		farm = true
-	else
-		MinimapAnchor:Size(C.minimap.size)
-		Minimap:Size(MinimapAnchor:GetWidth())
-		farm = false
-	end
-end
-SLASH_FARMMODE1 = "/farmmode"
-SLASH_FARMMODE2 = "/афкььщву"
-SLASH_FARMMODE3 = "/fm"
-SLASH_FARMMODE4 = "/аь"
-
-----------------------------------------------------------------------------------------
 --	Frame Stack on Cyrillic
 ----------------------------------------------------------------------------------------
 SlashCmdList.FSTACK = function()

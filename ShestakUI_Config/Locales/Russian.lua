@@ -250,6 +250,7 @@ L_GUI_MAP_SCALE = "Масштаб карты"
 L_GUI_MAP_BG_STYLIZATION = "Стилизация карты полей боя"
 L_GUI_MAP_BOSS_COUNT = "Отображать номера боссов на карте"
 L_GUI_MAP_EXPLORE = "Отслеживать на карте достижения Первооткрыватель и Хранитель мудрости"
+L_GUI_MAP_FOG_OF_WAR = "Убрать туман войны с карты"
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Включить окно добычи"

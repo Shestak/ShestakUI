@@ -19,7 +19,7 @@ if C.raidframe.plugins_aura_watch == true then
 			},
 			MONK = {
 				{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},					-- Renewing Mist
-				{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}},				-- Enveloping Mist
+				{132120, "BOTTOMLEFT", {0.4, 0.8, 0.2}},				-- Enveloping Mist
 				{124081, "BOTTOMRIGHT", {0.7, 0.4, 0}},					-- Zen Sphere
 				{116849, "LEFT", {0.81, 0.85, 0.1}, true},				-- Life Cocoon
 			},
@@ -35,7 +35,7 @@ if C.raidframe.plugins_aura_watch == true then
 			},
 			PRIEST = {
 				{6788, "TOPRIGHT", {1, 0, 0}, true},					-- Weakened Soul
-				{33076, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},				-- Prayer of Mending
+				{41635, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},				-- Prayer of Mending
 				{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 					-- Renew
 				{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},				-- Power Word: Shield
 				{33206, "LEFT", {0.89, 0.1, 0.1}, true},				-- Pain Suppress
@@ -50,7 +50,7 @@ if C.raidframe.plugins_aura_watch == true then
 				{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},					-- Unholy Frenzy
 			},
 			HUNTER = {
-				{34477, "TOPRIGHT", {0.2, 0.2, 1}},						-- Misdirection
+				{35079, "TOPRIGHT", {0.2, 0.2, 1}},						-- Misdirection
 			},
 			MAGE = {
 				{111264, "TOPRIGHT", {0.2, 0.2, 1}},					-- Ice Ward
@@ -148,6 +148,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(116525),	-- Focused Assault
 		-- Kun-Lai Summit
 			-- Sha of Anger
+			SpellName(119622),	-- Growing Anger
 			SpellName(119626),	-- Aggressive Behavior
 			SpellName(119488),	-- Unleashed Wrath
 		-----------------------------------------------------------------

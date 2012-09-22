@@ -205,61 +205,6 @@ PanelTemplates_SetNumTabs(FriendsFrame, n)
 PanelTemplates_EnableTab(FriendsFrame, n)
 
 ----------------------------------------------------------------------------------------
---	Switch layout mouseover button on minimap
-----------------------------------------------------------------------------------------
-local button = CreateFrame("Button", "SwitchLayout", UIParent)
-button:SetTemplate("Transparent")
-button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-if C.actionbar.toggle_mode == true then
-	button:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
-else
-	button:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 18)
-end
-button:Size(19)
-button:SetAlpha(0)
-
-local texture = button:CreateTexture(nil, "OVERLAY")
-texture:SetTexture("Interface\\LFGFrame\\LFGROLE")
-texture:SetPoint("TOPLEFT", button, 2, -2)
-texture:SetPoint("BOTTOMRIGHT", button, -2, 2)
-
-button:SetScript("OnClick", function()
-	if IsAddOnLoaded("ShestakUI_DPS") then
-		DisableAddOn("ShestakUI_DPS")
-		EnableAddOn("ShestakUI_Heal")
-		ReloadUI()
-	elseif IsAddOnLoaded("ShestakUI_Heal") then
-		DisableAddOn("ShestakUI_Heal")
-		EnableAddOn("ShestakUI_DPS")
-		ReloadUI()
-	elseif not IsAddOnLoaded("ShestakUI_Heal") and not IsAddOnLoaded("ShestakUI_DPS") then
-		EnableAddOn("ShestakUI_Heal")
-		ReloadUI()
-	end
-end)
-
-button:SetScript("OnEnter", function()
-	if InCombatLockdown() then return end
-	button:FadeIn()
-end)
-
-button:SetScript("OnLeave", function()
-	button:FadeOut()
-end)
-
-button:RegisterEvent("PLAYER_LOGIN")
-button:SetScript("OnEvent", function(self)
-	if IsAddOnLoaded("ShestakUI_DPS") then
-		texture:SetTexCoord(0.25, 0.5, 0, 1)
-	elseif IsAddOnLoaded("ShestakUI_Heal") then
-		texture:SetTexCoord(0.75, 1, 0, 1)
-	elseif not IsAddOnLoaded("ShestakUI_Heal") and not IsAddOnLoaded("ShestakUI_DPS") then
-		texture:SetTexture("Interface\\InventoryItems\\WoWUnknownItem01")
-		texture:SetTexCoord(0.2, 0.8, 0.2, 0.8)
-	end
-end)
-
-----------------------------------------------------------------------------------------
 --	Misclicks for some popups
 ----------------------------------------------------------------------------------------
 StaticPopupDialogs.RESURRECT.hideOnEscape = nil
@@ -307,5 +252,3 @@ filter:SetScript("OnEvent", function(self, event, addon, ...)
 		end
 	end
 end)
-
--- edit by Oz of shestak. org --

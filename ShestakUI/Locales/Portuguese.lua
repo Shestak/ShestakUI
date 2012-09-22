@@ -95,6 +95,7 @@ L_UF_WOTF_USED = "WotF used: "
 -- Map
 L_MAP_CURSOR = "Cursor: "
 L_MAP_BOUNDS = "Out of bounds!"
+L_MAP_FOG = "Fog of War"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendar"
@@ -103,6 +104,7 @@ L_MINIMAP_CALENDAR = "Calendar"
 L_ALOAD_RL = "Reload UI"
 L_ALOAD_DEP = "Dependencies: "
 L_ALOAD_OP_DEP = "Optional Dependencies: "
+L_ALOAD_AUTHOR = "Author: "
 L_ALOAD_PROFILES = "Profiles"
 L_ALOAD_ENABLE_ALL = "Enable All"
 L_ALOAD_DISABLE_ALL = "Disable All"

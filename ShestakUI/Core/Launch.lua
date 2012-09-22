@@ -183,6 +183,7 @@ local function InstallUI()
 	SavedOptionsPerChar = {}
 
 	SavedOptionsPerChar.Install = true
+	SavedOptionsPerChar.FogOfWar = false
 	SavedOptionsPerChar.AutoInvite = false
 	SavedOptionsPerChar.BarsLocked = false
 	SavedOptionsPerChar.SplitBars = true
@@ -280,6 +281,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if SavedPositions == nil then SavedPositions = {} end
 	if SavedAddonProfiles == nil then SavedAddonProfiles = {} end
 	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
+	if SavedOptionsPerChar.FogOfWar == nil then SavedOptionsPerChar.FogOfWar = false end
 	if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
 	if SavedOptionsPerChar.BarsLocked == nil then SavedOptionsPerChar.BarsLocked = false end
 	if SavedOptionsPerChar.SplitBars == nil then SavedOptionsPerChar.SplitBars = true end

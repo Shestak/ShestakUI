@@ -6,6 +6,7 @@
 ----------------------------------------------------------------------------------------
 C["position"] = {
 	-- Miscellaneous positions
+	["minimap_buttons"] = ("TOPLEFT", Minimap, "TOPRIGHT", 3, 2),					-- Minimap buttons
 	["minimap"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -36},						-- Minimap
 	["map"] = {"BOTTOM", UIParent, "BOTTOM", -120, 320},							-- Map
 	["chat"] = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 24, 23},						-- Chat
@@ -17,6 +18,7 @@ C["position"] = {
 	["attempt"] = {"TOP", UIParent, "TOP", -85, -25},								-- Attempts frame
 	["capture_bar"] = {"TOP", UIParent, "TOP", 0, 3},								-- BG capture bars
 	["vehicle"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -245, 160},				-- Vehicle frame
+	["ghost"] = ("BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -51),						-- Ghost frame
 	["uierror"] = {"TOP", UIParent, "TOP", 0, -30},									-- Errors frame
 	["quest"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -389, -165},						-- Quest log
 	["loot"] = {"TOPLEFT", UIParent, "TOPLEFT", 245, -220},							-- Loot
