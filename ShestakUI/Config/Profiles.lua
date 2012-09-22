@@ -414,7 +414,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Nagiko@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
+if T.name == "Ozzolo" and T.realm == "Pozzo dell'Eternità" then
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 14
 	C["font"].combat_text_font_style = "OUTLINE"
@@ -434,29 +434,36 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["font"].loot_font_size = 14
 	C["font"].nameplates_font_style = "OUTLINE"
 	C["font"].nameplates_font_size = 14
-	C["font"].unit_frames_font_style = ""
-	C["font"].unit_frames_font_shadow = true
-	C["font"].unit_frames_font_size = 14
-	C["font"].auras_font_style = "OUTLINE"
-	C["font"].auras_font_size = 16
-	C["font"].filger_font_style = "OUTLINE"
-	C["font"].filger_font_size = 16
 	C["font"].stylization_font_style = "OUTLINE"
 	C["font"].stylization_font_size = 14
 	C["font"].bags_font_style = "OUTLINE"
 	C["font"].bags_font_size = 14
-	C["position"].micro_menu = {"TOPLEFT", UIParent, "TOPLEFT", 21, -16}
+	C["position"].player_buffs = {"TOPLEFT", Minimap, "TOPLEFT", -572, 2}
+	C["position"].stance_bar = {"TOPLEFT", UIParent, "TOPLEFT", 323, -21}
+	C["position"].micro_menu = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21}
 	C["position"].unitframes.arena = {"RIGHT", oUF_Target, "RIGHT", -242, 7}
 	C["position"].unitframes.boss = {"RIGHT", oUF_Target, "RIGHT", -242, 7}
 	C["media"].border_color = {0.2, 0, 0.2, 1}
 	C["misc"].profession_database = true
 	C["combattext"].enable = false
+	C["pulsecooldown"].enable = true
+	C["pulsecooldown"].sound = true
+	C["pulsecooldown"].anim_scale = 2
+	C["pulsecooldown"].threshold = 5
 	C["chat"].background = true
 	C["chat"].tabs_mouseover = false
+	C["bag"].button_size = 35
+	C["minimap"].tracking_icon = true
+	C["nameplate"].height = 12
+	C["nameplate"].ad_height = 20
+	C["nameplate"].ad_width = 50
+	C["nameplate"].track_auras = true
+	C["nameplate"].auras_size = 30
+	C["actionbar"].button_size = 35
 	C["actionbar"].split_bars = true
-	C["actionbar"].bottonbars = 2
 	C["actionbar"].rightbars_mouseover = false
-	C["actionbar"].micromenu = true	
+	C["actionbar"].micromenu = true
+	C["aura"].player_buff_size = 35	
 	C["aura"].focus_debuffs = true
 	C["aura"].pet_debuffs = true
 	C["unitframe"].own_color = false

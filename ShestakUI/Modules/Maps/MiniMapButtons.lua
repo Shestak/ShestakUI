@@ -8,9 +8,9 @@ local switch = CreateFrame("Button", "SwitchLayout", UIParent)
 switch:SetTemplate("Transparent")
 switch:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 if C.actionbar.toggle_mode == true then
-	button:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
+	switch:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
 else
-	button:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 18)
+	switch:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 18)
 end
 switch:Size(19)
 switch:SetAlpha(0)

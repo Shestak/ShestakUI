@@ -6,7 +6,7 @@
 ----------------------------------------------------------------------------------------
 C["position"] = {
 	-- Miscellaneous positions
-	["minimap_buttons"] = ("TOPLEFT", Minimap, "TOPRIGHT", 3, 2),					-- Minimap buttons
+	["minimap_buttons"] = {"TOPLEFT", Minimap, "TOPRIGHT", 3, 2},					-- Minimap buttons
 	["minimap"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -36},						-- Minimap
 	["map"] = {"BOTTOM", UIParent, "BOTTOM", -120, 320},							-- Map
 	["chat"] = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 24, 23},						-- Chat
@@ -18,7 +18,7 @@ C["position"] = {
 	["attempt"] = {"TOP", UIParent, "TOP", -85, -25},								-- Attempts frame
 	["capture_bar"] = {"TOP", UIParent, "TOP", 0, 3},								-- BG capture bars
 	["vehicle"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -245, 160},				-- Vehicle frame
-	["ghost"] = ("BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -51),						-- Ghost frame
+	["ghost"] = {"BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -51},						-- Ghost frame
 	["uierror"] = {"TOP", UIParent, "TOP", 0, -30},									-- Errors frame
 	["quest"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -389, -165},						-- Quest log
 	["loot"] = {"TOPLEFT", UIParent, "TOPLEFT", 245, -220},							-- Loot
@@ -56,8 +56,8 @@ C["position"] = {
 		["arena"] = {"BOTTOMRIGHT", UIParent, "RIGHT", -23, -70},					-- Arena frames
 		["boss"] = {"BOTTOMRIGHT", UIParent, "RIGHT", -23, -70},					-- Boss frames
 		["tank"] = {"BOTTOM", "UIParent", "BOTTOM", 302, 35},						-- Tank frames
-		["player_portrait"] = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -8, 0},			-- Player Portrait
-		["target_portrait"] = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 6, 0},			-- Target Portrait
+		["player_portrait"] = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -8, -1},			-- Player Portrait
+		["target_portrait"] = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 6, -1},			-- Target Portrait
 		["player_castbar"] = {"BOTTOM", "ActionBarAnchor", "TOP", 0, 235},			-- Player Castbar
 		["target_castbar"] = {"BOTTOM", "oUF_Player_Castbar", "TOP", 0, 7},			-- Target Castbar
 		["focus_castbar"] = {"CENTER", UIParent, "CENTER", 0, 250},					-- Focus Castbar icon
