@@ -95,6 +95,7 @@ L_UF_WOTF_USED = "Volontà dei Reietti utilizzata: "
 -- Map
 L_MAP_CURSOR = "Cursore: "
 L_MAP_BOUNDS = "Fuori i confini!"
+L_MAP_FOG = "Fog of War" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendario"

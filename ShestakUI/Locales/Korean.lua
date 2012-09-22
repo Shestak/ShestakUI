@@ -95,6 +95,7 @@ L_UF_WOTF_USED = "WotF used: "
 -- Map
 L_MAP_CURSOR = "Cursor: "
 L_MAP_BOUNDS = "Out of bounds!"
+L_MAP_FOG = "Fog of War"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendar"

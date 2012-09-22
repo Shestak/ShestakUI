@@ -95,6 +95,7 @@ L_UF_WOTF_USED = "WdV benutzt: "
 -- Map
 L_MAP_CURSOR = "Mauszeiger: "
 L_MAP_BOUNDS = "Außerhalb der Begrenzung!"
+L_MAP_FOG = "Fog of War" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Kalender"

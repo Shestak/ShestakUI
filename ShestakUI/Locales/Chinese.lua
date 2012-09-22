@@ -95,6 +95,7 @@ L_UF_WOTF_USED = "被遗忘者的意志使用: "
 -- Map
 L_MAP_CURSOR = "指针: "
 L_MAP_BOUNDS = "超出范围!"
+L_MAP_FOG = "Fog of War" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日历"

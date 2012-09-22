@@ -241,6 +241,7 @@ L_GUI_MAP_SCALE = "世界地圖縮放"
 L_GUI_MAP_BG_STYLIZATION = "戰場地圖樣式"
 L_GUI_MAP_BOSS_COUNT = "在世界地圖顯示boss數據"
 L_GUI_MAP_EXPLORE = "追蹤世界探險家/博學大師成就"
+L_GUI_MAP_FOG_OF_WAR = "Fog of war on World Map" -- Needs review
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "開啟拾取增強"
