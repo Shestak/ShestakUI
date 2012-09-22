@@ -66,9 +66,7 @@ end
 ----------------------------------------------------------------------------------------
 if T.name == "Ozzolo" and T.realm == "Pozzo dell'Eternità" then
 	C["extra_position"].extra_bar = {"CENTER", oUF_Target, "CENTER", 56, 251}
-	C["extra_position"].extra_bar_two = {"CENTER", oUF_Target, "CENTER", 56, 365}
 	C["extra_bar"].enable = true
-	C["extra_bar_two"].enable = true	
 end
 
 -- edit by Oz of shestak. org --

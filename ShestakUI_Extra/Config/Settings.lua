@@ -25,7 +25,7 @@ C["extra_announce"] = {
 --	Extra Bars options
 ----------------------------------------------------------------------------------------
 C["extra_bar"] = {
-	-- ActionBar 1
+	-- ActionBar
 	["enable"] = false,							-- Enable extra action bar
 	["show_grid"] = true,						-- Show empty action bar buttons
 	["button_size"] = 30,						-- Buttons size
@@ -38,16 +38,6 @@ C["extra_bar"] = {
 	-- Other
 	["mark_bar"] = false,						-- Mark bar
 	["switch_spec"] = false,					-- Talent spec bar
-}
-
-	-- ActionBar 2
-C["extra_bar_two"] = {
-	["enable"] = false,							-- Enable a second extra action bar
-	["show_grid"] = true,						-- Show empty action bar buttons
-	["button_size"] = 30,						-- Buttons size
-	["button_space"] = 3,						-- Buttons space
-	["style"] = "4*3",							-- Buttons style(1*12|12*1|6*2|4*3)
-	["mouseover"] = false,						-- Show bar on mouseover
 }
 
 ----------------------------------------------------------------------------------------
