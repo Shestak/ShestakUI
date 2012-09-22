@@ -56,6 +56,7 @@ end
 
 if IsAddOnLoaded("Dominos") or IsAddOnLoaded("Bartender4") or IsAddOnLoaded("RazerNaga") then
 	C.actionbar.enable = false
+	C.actionbar.toggle_mode = false
 end
 
 if IsAddOnLoaded("Mapster") then
