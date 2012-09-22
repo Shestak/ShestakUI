@@ -414,7 +414,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Nagiko@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Ozzolo" and T.realm == "Pozzo dell'Eternità" then
+if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 14
 	C["font"].combat_text_font_style = "OUTLINE"
@@ -432,8 +432,6 @@ if T.name == "Ozzolo" and T.realm == "Pozzo dell'Eternità" then
 	C["font"].cooldown_timers_font_size = 22
 	C["font"].loot_font_style = "OUTLINE"
 	C["font"].loot_font_size = 14
-	C["font"].nameplates_font_style = "OUTLINE"
-	C["font"].nameplates_font_size = 14
 	C["font"].stylization_font_style = "OUTLINE"
 	C["font"].stylization_font_size = 14
 	C["font"].bags_font_style = "OUTLINE"
@@ -454,11 +452,6 @@ if T.name == "Ozzolo" and T.realm == "Pozzo dell'Eternità" then
 	C["chat"].tabs_mouseover = false
 	C["bag"].button_size = 35
 	C["minimap"].tracking_icon = true
-	C["nameplate"].height = 12
-	C["nameplate"].ad_height = 20
-	C["nameplate"].ad_width = 50
-	C["nameplate"].track_auras = true
-	C["nameplate"].auras_size = 30
 	C["actionbar"].button_size = 35
 	C["actionbar"].split_bars = true
 	C["actionbar"].rightbars_mouseover = false
