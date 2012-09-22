@@ -288,3 +288,18 @@ local function SetupTempChat()
 	SetChatStyle(frame)
 end
 hooksecurefunc("FCF_OpenTemporaryWindow", SetupTempChat)
+
+----------------------------------------------------------------------------------------
+--	Save slash command typo
+----------------------------------------------------------------------------------------
+function TypoHistory_Posthook_AddMessage(chat, text)
+	if strfind(text, HELP_TEXT_SIMPLE) then
+		ChatEdit_AddHistory(chat.editBox)
+	end
+end
+
+for i = 1, NUM_CHAT_WINDOWS do
+	if i ~= 2 then
+		hooksecurefunc(_G["ChatFrame"..i], "AddMessage", TypoHistory_Posthook_AddMessage)
+	end
+end
