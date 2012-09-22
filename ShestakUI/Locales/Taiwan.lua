@@ -103,6 +103,7 @@ L_MINIMAP_CALENDAR = "日曆"
 L_ALOAD_RL = "重新加載UI"
 L_ALOAD_DEP = "依賴關係: "
 L_ALOAD_OP_DEP = "可選依賴: "
+L_ALOAD_AUTHOR = "Author: " -- Needs review
 L_ALOAD_PROFILES = "設定檔"
 L_ALOAD_ENABLE_ALL = "全部啟用"
 L_ALOAD_DISABLE_ALL = "全部禁用"

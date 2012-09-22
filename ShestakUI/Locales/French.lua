@@ -103,6 +103,7 @@ L_MINIMAP_CALENDAR = "Calendrier"
 L_ALOAD_RL = "Recharger l'interface"
 L_ALOAD_DEP = "Dépendances: "
 L_ALOAD_OP_DEP = "Dépendances Optionnelles: "
+L_ALOAD_AUTHOR = "Author: " -- Needs review
 L_ALOAD_PROFILES = "Profils"
 L_ALOAD_ENABLE_ALL = "Tout activer"
 L_ALOAD_DISABLE_ALL = "Tout désactiver"
