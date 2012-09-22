@@ -7,7 +7,6 @@ if T.client ~= "itIT" then return end
 ----------------------------------------------------------------------------------------
 -- Key binding Header Name
 L_EXTRA_HEADER_EXTRABAR = "Barra aggiuntiva"
-L_EXTRA_HEADER_EXTRABARTWO = "Seconda barra aggiuntiva"
 
 -- Announce fps
 L_EXTRA_ANNOUNCE_FPS = "I miei attuali FPS sono "
