@@ -626,11 +626,11 @@ Filger_Spells = {
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Web (Spider)
-			{spellID = 4167, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 4167, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Venom Web Spray (Silithid)
-			{spellID = 54706, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 54706, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pin (Crab)
-			{spellID = 50245, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 50245, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
@@ -1544,6 +1544,8 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Settings.target_debuff_icon)},
 
+			-- Void Tendril's Grasp
+			{spellID = 114404, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Glyph of Mind Blast
 			{spellID = 87194, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
