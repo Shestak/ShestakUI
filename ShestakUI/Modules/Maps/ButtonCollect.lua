@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.skins.minimap_buttons ~= true or C.minimap.enable ~= true then return end
+if C.minimap.enable ~= true or C.skins.minimap_buttons ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Collect minimap buttons in one line
