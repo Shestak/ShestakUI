@@ -18,7 +18,7 @@ local line = math.ceil(C.minimap.size / 20)
 
 local function PositionAndStyle()
 	button:Size(20)
-	button:SetPoint("TOPRIGHT", Minimap, "TOPLEFT", -3, 2)
+	button:SetPoint(unpack(C.position.minimap_buttons))
 	for i = 1, #buttons do
 		buttons[i]:ClearAllPoints()
 		if i == 1 then
