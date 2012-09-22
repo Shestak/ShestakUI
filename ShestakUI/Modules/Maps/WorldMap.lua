@@ -168,3 +168,14 @@ coords:SetScript("OnUpdate", function(self, elapsed)
 		int = 0
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Floors scroll
+----------------------------------------------------------------------------------------
+WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
+	local level = GetCurrentMapDungeonLevel() - delta
+	if level >= 1 and level <= GetNumDungeonMapLevels() then
+		SetDungeonMapLevel(level)
+		PlaySound("UChatScrollButton")
+	end
+end)
