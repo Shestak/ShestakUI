@@ -46,12 +46,9 @@ local SmallerMapSkin = function()
 	WorldMapFrameTitle:Point("TOP", WorldMapDetailFrame, 0, -3)
 	WorldMapFrameTitle:SetFont(C.media.normal_font, 17)
 
-	WorldMapQuestShowObjectivesText:ClearAllPoints()
-	WorldMapQuestShowObjectivesText:Point("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", 0, 4)
-
 	T.SkinCheckBox(WorldMapQuestShowObjectives)
 	WorldMapQuestShowObjectives:ClearAllPoints()
-	WorldMapQuestShowObjectives:Point("RIGHT", WorldMapQuestShowObjectivesText, "LEFT", 0, 0)
+	WorldMapQuestShowObjectives:Point("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", -3 - WorldMapQuestShowObjectivesText:GetWidth(), 0)
 
 	T.SkinCheckBox(WorldMapTrackQuest)
 	WorldMapTrackQuest:ClearAllPoints()
