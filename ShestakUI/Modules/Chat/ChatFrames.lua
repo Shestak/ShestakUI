@@ -131,7 +131,7 @@ local function SetChatStyle(frame)
 	_G[chat.."Tab"]:HookScript("OnClick", function() _G[chat.."EditBox"]:Hide() end)
 
 	-- Create our own texture for edit box
-	if C.chat.background == true then
+	if C.chat.background == true and C.chat.tabs_mouseover ~= true then
 		local EditBoxBackground = CreateFrame("Frame", "ChatEditBoxBackground", _G[chat.."EditBox"])
 		EditBoxBackground:CreatePanel("Transparent", 1, 1, "LEFT", _G[chat.."EditBox"], "LEFT", 0, 0)
 		EditBoxBackground:ClearAllPoints()
