@@ -6,11 +6,11 @@ if C.minimap.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local switch = CreateFrame("Button", "SwitchLayout", UIParent)
 switch:SetTemplate("Transparent")
-switch:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+switch:SetBackdropBorderColor(unpack(C.media.border_color))
 if C.actionbar.toggle_mode == true then
-	switch:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -18)
+	switch:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 18)
 else
-	switch:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
+	switch:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
 end
 switch:Size(19)
 switch:SetAlpha(0)
@@ -80,8 +80,8 @@ SLASH_FARMMODE4 = "/аь"
 --	Farm mode mouseover button(by m2jest1c)
 ----------------------------------------------------------------------------------------
 local farm = CreateFrame("Button", "FarmMode", UIParent)
-farm:SetTemplate("ClassColor")
-farm:Point("TOP", switch, "BOTTOM", 0, -1)
+farm:SetTemplate("Default")
+farm:Point("BOTTOM", switch, "TOP", 0, 1)
 farm:Size(19)
 farm:SetAlpha(0)
 
