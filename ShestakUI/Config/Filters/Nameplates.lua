@@ -38,6 +38,7 @@ T.DebuffWhiteList = {
 	[SpellName(55021)] = true,	-- Improved Counterspell
 	[SpellName(122)] = true,	-- Frost Nova
 	[SpellName(111340)] = true,	-- Ice Ward
+	[SpellName(44457)] = true,	-- Living Bomb
 	-- Paladin
 	[SpellName(20066)] = true,	-- Repentance
 	[SpellName(10326)] = true,	-- Turn Evil
