@@ -1,12 +1,11 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.minimap.toggle_menu ~= true then return end
+if C.minimap.enable ~= true or C.minimap.toggle_menu ~= true then return end
 
 ----------------------------------------------------------------------------------------
--- Toggle menu(by Hydra, Foof, Gorlasch and HyPeRnIcS)
+--	Toggle menu(by Hydra, Foof, Gorlasch and HyPeRnIcS)
 ----------------------------------------------------------------------------------------
 -- Override prefix method to collapse addons
 C["toggleprefix"] = {
---  prefix            parent addon
 	["DBM"]			= "DBM-Core",
 	["ShestakUI"]	= "ShestakUI",
 	["Auc-"]		= "Auc-Advanced",
@@ -20,28 +19,33 @@ C["toggleprefix"] = {
 
 -- Define buttons in main menu and corresponding functions
 C["togglemainmenu"] = {
-	{	["text"] = CLOSE,
+	{
+		["text"] = CLOSE,
 		["function"] = function()
 			ToggleMenu_Toggle()
 		end
 	},
-	{	["text"] = ADDONS,
+	{
+		["text"] = ADDONS,
 		["function"] = function()
 			ToggleFrame(TTMenuAddOnBackground)
 			ToggleFrame(TTMenuBackground)
 		end
 	},
-	{	["text"] = HELP_LABEL,
+	{
+		["text"] = HELP_LABEL,
 		["function"] = function()
 			SlashCmdList.UIHELP()
 		end
 	},
-	{	["text"] = L_ALOAD_RL,
+	{
+		["text"] = L_ALOAD_RL,
 		["function"] = function()
 			ReloadUI()
 		end
 	},
-	{	["text"] = "Move UI",
+	{
+		["text"] = "Move UI",
 		["function"] = function()
 			SlashCmdList.MOVING()
 		end
@@ -299,7 +303,7 @@ local lastMainAddonID = 0
 if not addonInfo then
 	addonInfo = {{}}
 	for i = 1, GetNumAddOns() do
-		name, title, _, enabled, _, _, _ = GetAddOnInfo(i)
+		local name, title, _, enabled = GetAddOnInfo(i)
 		if name and enabled then
 			addonInfo[i] = {["enabled"] = true, ["is_main"] = false, collapsed = true, ["parent"] = i}
 		else
@@ -317,7 +321,7 @@ if not addonInfo then
 				else
 					addonInfo[i].parent = lastMainAddonID
 					for j = 1, GetNumAddOns() do
-						name_j, _, _, _, _, _, _ = GetAddOnInfo(j)
+						local name_j = GetAddOnInfo(j)
 						if name_j == value then
 							addonInfo[i].parent = j
 						end
@@ -353,7 +357,7 @@ local function addonEnableToggle(self, i)
 end
 
 local function addonFrameToggle(self, i)
-	local name, _, _, _, _, _, _ = GetAddOnInfo(i)
+	local name = GetAddOnInfo(i)
 	if C.toggleaddons[name] then
 		if IsAddOnLoaded(i) then
 			C.toggleaddons[name]()
@@ -422,7 +426,7 @@ end)
 
 for i = 1, GetNumAddOns() do
 	j = totalmainmenusize + i
-	local name, _, _, _, _, _, _ = GetAddOnInfo(i)
+	local name = GetAddOnInfo(i)
 	addonmenuitems[j] = CreateFrame("CheckButton", "AddonMenu"..j, AddonBG)
 	addonmenuitems[j]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "BOTTOM", AddonBG, "BOTTOM", 0, buttonspacing(1))
 	addonmenuitems[j]:EnableMouse(true)
@@ -484,7 +488,7 @@ for i = 1, GetNumAddOns() do
 
 		Text = expandAddonButton:CreateFontString(nil, "OVERLAY")
 		Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-		Text:SetPoint("CENTER", expandAddonButton, 1, 0)
+		Text:SetPoint("CENTER", expandAddonButton, 2, 0)
 		Text:SetText("+")
 		Text:SetTextColor(0.3, 0.3, 0.9)
 		expandAddonButton.txt = Text

@@ -2,14 +2,15 @@
 ## Title: ShestakUI Filger
 ## Notes: Class timers for ShestakUI (Oz of shestak.org Edit)
 ## Author: Nils Ruesch
-## Version: 4.13
+## Version: 4.14
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 4.13
+## X-Curse-Packaged-Version: 4.14
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
 
-config.lua
+Config\Positions.lua
+Config\Settings.lua
 ShestakUI_Filger.lua
