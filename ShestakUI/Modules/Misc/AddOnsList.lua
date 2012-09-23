@@ -5,6 +5,7 @@
 ----------------------------------------------------------------------------------------
 local AddonManager = CreateFrame("Frame", "AddonManager", UIParent)
 AddonManager:SetFrameStrata("HIGH")
+AddonManager:Hide()
 
 AddonManager.header = CreateFrame("Frame", "AddonManagerHeader", AddonManager)
 AddonManager.header:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 317)
@@ -269,6 +270,7 @@ function AddonManager:LoadWindow()
 
 	tinsert(UISpecialFrames, window:GetName())
 
+	window:Show()
 	window:SetSize(350, 400)
 	window:CreateBackdrop("Transparent")
 	window.backdrop:SetPoint("TOPLEFT", -2, 2)
@@ -465,9 +467,15 @@ function AddonManager:LoadWindow()
 end
 
 -- Slash command
+SlashCmdList.ADDONMANAGER = function()
+	if AddonManager:IsShown() then
+		AddonManager:Hide()
+	else
+		AddonManager:LoadWindow()
+	end
+end
 SLASH_ADDONMANAGER1 = "/aload"
 SLASH_ADDONMANAGER2 = "/фдщфв"
-SlashCmdList.ADDONMANAGER = function() AddonManager:LoadWindow() end
 
 -- Game menu buttons
 local gmbAddOns = CreateFrame("Button", "GameMenuButtonAddonManager", GameMenuFrame, "GameMenuButtonTemplate")

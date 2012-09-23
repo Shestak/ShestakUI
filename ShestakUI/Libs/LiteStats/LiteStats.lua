@@ -346,6 +346,8 @@ if memory.enabled then
 				print(format("|cff66C6FF%s:|r %s", L_STATS_GARBAGE_COLLECTED,formatmem(before - gcinfo())))
 				self.timer, self.text.elapsed = nil, 5
 				self:GetScript("OnEnter")(self)
+			elseif button == "LeftButton" then
+				SlashCmdList.ADDONMANAGER()
 			end
 		end
 	})
