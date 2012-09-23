@@ -13,7 +13,7 @@ if T.oz == true then
 	pve_debuff = {"BOTTOMRIGHT", UIParent, "BOTTOM", -173, 560},			-- "PVE/PVP_DEBUFF"
 	pve_cc = {"BOTTOMRIGHT", UIParent, "BOTTOM", -364, 310},				-- "PVE/PVP_CC"
 	cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOM", -364, 386},				-- "COOLDOWN"
-	target_bar = {"BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_Portrait" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 3 or 5, C.unitframe.portrait_enable and 0 or -14},	-- "T_DE/BUFF_BAR"
+	target_bar = {"BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_Portrait" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 6 or 5, C.unitframe.portrait_enable and -3 or -14},	-- "T_DE/BUFF_BAR"
 	}
 else
 	Filger_Settings = {
