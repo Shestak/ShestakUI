@@ -46,12 +46,9 @@ local SmallerMapSkin = function()
 	WorldMapFrameTitle:Point("TOP", WorldMapDetailFrame, 0, -3)
 	WorldMapFrameTitle:SetFont(C.media.normal_font, 17)
 
-	WorldMapQuestShowObjectivesText:ClearAllPoints()
-	WorldMapQuestShowObjectivesText:Point("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", 0, 4)
-
 	T.SkinCheckBox(WorldMapQuestShowObjectives)
 	WorldMapQuestShowObjectives:ClearAllPoints()
-	WorldMapQuestShowObjectives:Point("RIGHT", WorldMapQuestShowObjectivesText, "LEFT", 0, 0)
+	WorldMapQuestShowObjectives:Point("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", -3 - WorldMapQuestShowObjectivesText:GetWidth(), 0)
 
 	T.SkinCheckBox(WorldMapTrackQuest)
 	WorldMapTrackQuest:ClearAllPoints()
@@ -166,5 +163,16 @@ coords:SetScript("OnUpdate", function(self, elapsed)
 		end
 
 		int = 0
+	end
+end)
+
+----------------------------------------------------------------------------------------
+--	Floors scroll
+----------------------------------------------------------------------------------------
+WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
+	local level = GetCurrentMapDungeonLevel() - delta
+	if level >= 1 and level <= GetNumDungeonMapLevels() then
+		SetDungeonMapLevel(level)
+		PlaySound("UChatScrollButton")
 	end
 end)

@@ -95,6 +95,7 @@ L_UF_WOTF_USED = "WotF задействован: "
 -- Map
 L_MAP_CURSOR = "Курсор: "
 L_MAP_BOUNDS = "Вне карты!"
+L_MAP_FOG = "Туман войны"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Календарь"
@@ -103,6 +104,7 @@ L_MINIMAP_CALENDAR = "Календарь"
 L_ALOAD_RL = "Перезагрузить"
 L_ALOAD_DEP = "Зависимые ресурсы: "
 L_ALOAD_OP_DEP = "Доп. зависимости: "
+L_ALOAD_AUTHOR = "Автор: "
 L_ALOAD_PROFILES = "Профили"
 L_ALOAD_ENABLE_ALL = "Вкл. все"
 L_ALOAD_DISABLE_ALL = "Выкл. все"

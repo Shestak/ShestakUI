@@ -15,7 +15,7 @@ local function questlevel()
 		if questIndex <= numEntries then
 			local title, level, questTag, suggestedGroup, isHeader, isCollapsed, isComplete, isDaily = GetQuestLogTitle(questIndex)
 			if not isHeader then
-				questLogTitle:SetText("[" .. level .. "] " .. title)
+				questLogTitle:SetText("["..level.."] "..title)
 				QuestLogTitleButton_Resize(questLogTitle)
 			end
 		end

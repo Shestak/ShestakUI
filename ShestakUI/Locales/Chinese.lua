@@ -95,6 +95,7 @@ L_UF_WOTF_USED = "被遗忘者的意志使用: "
 -- Map
 L_MAP_CURSOR = "指针: "
 L_MAP_BOUNDS = "超出范围!"
+L_MAP_FOG = "Fog of War" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日历"
@@ -103,6 +104,7 @@ L_MINIMAP_CALENDAR = "日历"
 L_ALOAD_RL = "重新加载UI"
 L_ALOAD_DEP = "依赖关系: "
 L_ALOAD_OP_DEP = "可选依赖: "
+L_ALOAD_AUTHOR = "作者: "
 L_ALOAD_PROFILES = "配置文件"
 L_ALOAD_ENABLE_ALL = "全部启用"
 L_ALOAD_DISABLE_ALL = "全部禁用" 

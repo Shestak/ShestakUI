@@ -26,6 +26,7 @@ if T.class == "DEATHKNIGHT" then
 		T.aoespam[49184] = true		-- Howling Blast
 		T.aoespam[52212] = true		-- Death and Decay
 		T.aoespam[55050] = true		-- Heart Strike
+		T.aoespam[50401] = true		-- Razor Frost
 		T.aoespam[119980] = true	-- Conversion
 		-- Merging mh/oh strikes(by Bozo)
 		T.aoespam[49020] = true		-- Obliterate MH

@@ -124,7 +124,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 					button.additionalText = nil
 					button.icon:SetDesaturated(lowbie)
 					button.icon:SetAlpha(1)
-					--button.name:SetFontObject("GameFontNormal")
 
 					if button.showingTooltip then
 						MountJournalMountButton_UpdateTooltip(button)

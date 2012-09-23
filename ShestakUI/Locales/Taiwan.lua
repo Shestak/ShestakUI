@@ -95,6 +95,7 @@ L_UF_WOTF_USED = "亡靈意志已使用: "
 -- Map
 L_MAP_CURSOR = "鼠標: "
 L_MAP_BOUNDS = "超出範圍"
+L_MAP_FOG = "Fog of War" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日曆"
@@ -103,6 +104,7 @@ L_MINIMAP_CALENDAR = "日曆"
 L_ALOAD_RL = "重新加載UI"
 L_ALOAD_DEP = "依賴關係: "
 L_ALOAD_OP_DEP = "可選依賴: "
+L_ALOAD_AUTHOR = "作者: "
 L_ALOAD_PROFILES = "設定檔"
 L_ALOAD_ENABLE_ALL = "全部啟用"
 L_ALOAD_DISABLE_ALL = "全部禁用"

@@ -51,6 +51,9 @@ function AddonManager:UpdateAddonList(query)
 			if GetAddOnOptionalDependencies(i) then
 				addons[i].optionaldependencies = {GetAddOnOptionalDependencies(i)}
 			end
+			if GetAddOnMetadata(i, "author") then
+				addons[i].author = GetAddOnMetadata(i, "author")
+			end
 		end
 	end
 	return addons
@@ -316,6 +319,7 @@ function AddonManager:LoadWindow()
 		button:SetFrameLevel(scrollFrame.Anchor:GetFrameLevel() + 1)
 		button:SetSize(15.5, 15.5)
 		button:SkinButton()
+		button:SetHitRectInsets(0, -250, 0, 0)
 		if addon.enabled then
 			if button.overlay then
 				button.overlay:SetVertexColor(1, 0.82, 0, 0.8)
@@ -355,6 +359,9 @@ function AddonManager:LoadWindow()
 			end
 			if addon.optionaldependencies then
 				GameTooltip:AddLine(L_ALOAD_OP_DEP..unpack(addon.optionaldependencies), 1, 0.5, 0, true)
+			end
+			if addon.author then
+				GameTooltip:AddLine(L_ALOAD_AUTHOR..addon.author, 1, 0.2, 0, true)
 			end
 			GameTooltip:Show()
 		end)

@@ -48,6 +48,7 @@ if C.enemycooldown.enable == true then
 		[44572] = 30,	-- Deep Freeze
 		[113724] = 30,	-- Ring of Frost
 		[105593] = 30,	-- Fist of Justice
+		[30283] = 30,	-- Shadowfury
 		[5484] = 40,	-- Howl of Terror
 		[51514] = 45,	-- Hex
 		[6789] = 45,	-- Mortal Coil
