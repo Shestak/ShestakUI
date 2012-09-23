@@ -315,7 +315,7 @@ function T.UploadDBM()
 	DBT_SavedOptions["DBM"].Font = C.font.stylization_font
 	DBT_SavedOptions["DBM"].FontSize = C.font.stylization_font_size
 	DBT_SavedOptions["DBM"].Width = 189
-	DBT_SavedOptions["DBM"].TimerX = 96
+	DBT_SavedOptions["DBM"].TimerX = 123
 	DBT_SavedOptions["DBM"].TimerPoint = "BOTTOMLEFT"
 	DBT_SavedOptions["DBM"].FillUpBars = true
 	DBT_SavedOptions["DBM"].IconLeft = false
@@ -330,19 +330,19 @@ function T.UploadDBM()
 	DBT_SavedOptions["DBM"].HugeBarYOffset = 7
 
 	if C.actionbar.bottombars == 1 then
-		DBM_SavedOptions.HPFrameY = 237
+		DBM_SavedOptions.HPFrameY = 238
 		DBM_SavedOptions.RangeFrameY = 212
 		DBT_SavedOptions["DBM"].TimerY = 250
 		DBT_SavedOptions["DBM"].HugeTimerY = -25
 	elseif C.actionbar.bottombars == 2 then
-		DBM_SavedOptions.HPFrameY = 265
+		DBM_SavedOptions.HPFrameY = 266
 		DBM_SavedOptions.RangeFrameY = 240
 		DBT_SavedOptions["DBM"].TimerY = 278
 		DBT_SavedOptions["DBM"].HugeTimerY = 3
 	elseif C.actionbar.bottombars == 3 then
-		DBM_SavedOptions.HPFrameY = 293
-		DBM_SavedOptions.RangeFrameY = 268
-		DBT_SavedOptions["DBM"].TimerY = 306
+		DBM_SavedOptions.HPFrameY = 294
+		DBM_SavedOptions.RangeFrameY = 306
+		DBT_SavedOptions["DBM"].TimerY = 294
 		DBT_SavedOptions["DBM"].HugeTimerY = 31
 	end
 	DBM_SavedOptions.InstalledBars = C.actionbar.bottombars
