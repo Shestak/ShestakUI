@@ -64,7 +64,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Nagiko@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Ozzolo" and T.realm == "Pozzo dell'Eternità" then
+if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["extra_position"].extra_bar = {"CENTER", oUF_Target, "CENTER", -36, 128}
 	C["extra_bar"].enable = true
 end
