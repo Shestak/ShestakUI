@@ -1123,7 +1123,7 @@ if C.unitframe.show_boss == true then
 			if C.unitframe.boss_on_right == true then
 				boss[i]:Point(unpack(C.position.unitframes.boss))
 			else
-				boss[i]:Point("BOTTOMLEFT", C.position.unitframes.boss[2], "LEFT", C.position.unitframes.boss[4] + 38, C.position.unitframes.boss[5])
+				boss[i]:Point("BOTTOMLEFT", C.position.unitframes.boss[2], "LEFT", C.position.unitframes.boss[4] + 46, C.position.unitframes.boss[5])
 			end
 		else
 			boss[i]:Point("BOTTOM", boss[i-1], "TOP", 0, 30)
@@ -1140,7 +1140,7 @@ if C.unitframe.show_arena == true then
 			if C.unitframe.arena_on_right == true then
 				arena[i]:Point(unpack(C.position.unitframes.arena))
 			else
-				arena[i]:Point("BOTTOMLEFT", C.position.unitframes.arena[2], "LEFT", C.position.unitframes.arena[4] + 83, C.position.unitframes.arena[5])
+				arena[i]:Point("BOTTOMLEFT", C.position.unitframes.arena[2], "LEFT", C.position.unitframes.arena[4] + 120, C.position.unitframes.arena[5])
 			end
 		else
 			arena[i]:Point("BOTTOM", arena[i-1], "TOP", 0, 30)
@@ -1153,7 +1153,7 @@ if C.unitframe.show_arena == true then
 		arenatarget[i] = oUF:Spawn("arena"..i.."target", "oUF_Arena"..i.."Target")
 		if i == 1 then
 			if C.unitframe.arena_on_right == true then
-				arenatarget[i]:Point("TOPRIGHT", arena[i], "TOPLEFT", -41, 0)
+				arenatarget[i]:Point("TOPLEFT", arena[i], "TOPRIGHT", 7, 0)
 			else
 				arenatarget[i]:Point("TOPRIGHT", arena[i], "TOPLEFT", -7, 0)
 			end
