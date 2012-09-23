@@ -459,6 +459,7 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["aura"].player_buff_size = 35	
 	C["aura"].focus_debuffs = true
 	C["aura"].pet_debuffs = true
+	C["aura"].player_aura_only = true
 	C["unitframe"].own_color = false
 	C["unitframe"].portrait_enable = true
 end

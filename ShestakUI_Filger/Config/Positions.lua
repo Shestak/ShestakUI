@@ -17,7 +17,7 @@ if T.oz == true then
 	}
 else
 	Filger_Settings = {
-	config_mode = true,
+	config_mode = false,
 	max_test_icon = 5,
 	player_buff_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173},	-- "P_BUFF_ICON"
 	player_proc_icon = {"BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173},	-- "P_PROC_ICON"
