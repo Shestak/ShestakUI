@@ -71,9 +71,11 @@ Filger_Spells = {
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lei Shin's Final Orders (Strength, Proc)
-			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 126582, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Charioteer Figurine (Strength, Use)
 			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Iron Belly Wok (Haste, Use)
+			{spellID = 129812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
@@ -1269,9 +1271,11 @@ Filger_Spells = {
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lei Shin's Final Orders (Strength, Proc)
-			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 126582, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Charioteer Figurine (Strength, Use)
 			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Iron Belly Wok (Haste, Use)
+			{spellID = 129812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
@@ -2434,9 +2438,11 @@ Filger_Spells = {
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lei Shin's Final Orders (Strength, Proc)
-			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 126582, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Charioteer Figurine (Strength, Use)
 			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Iron Belly Wok (Haste, Use)
+			{spellID = 129812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
