@@ -60,11 +60,11 @@ L_MISC_ONECLICK_BID = "Shift-Right-Click um auf den ausgewählten Gegenstand ohn
 L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item without confirmation" -- Needs review
 L_MISC_UI_OUTDATED = "Deine Version von ShestakUI ist veraltet. Du kannst die aktuelle Version von www.shestak.org laden"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
-L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
-L_MISC_MOUNTS_GROUND = "Ground" -- Needs review
-L_MISC_MOUNTS_FLYING = "Flying" -- Needs review
-L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground" -- Needs review
-L_MISC_MOUNTS_SWIMMING = "Swimming" -- Needs review
+L_MISC_BINDER_OPEN = "Maus gebunden"
+L_MISC_MOUNTS_GROUND = "Boden"
+L_MISC_MOUNTS_FLYING = "Fliegen"
+L_MISC_MOUNTS_FLYINGGROUND = "Fliegen&Boden"
+L_MISC_MOUNTS_SWIMMING = "Schwimmen"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"
@@ -101,7 +101,7 @@ L_UF_WOTF_USED = "WdV benutzt: "
 -- Map
 L_MAP_CURSOR = "Mauszeiger: "
 L_MAP_BOUNDS = "Außerhalb der Begrenzung!"
-L_MAP_FOG = "Fog of War" -- Needs review
+L_MAP_FOG = "Nebel des Krieges"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Kalender"
@@ -258,7 +258,7 @@ L_DATATEXT_CARTS_CONTROLLED = "Kontrollierte Loren:"
 L_INFO_ERRORS = "Noch keine Fehler."
 L_INFO_INVITE = "Gruppeneinladung akzeptiert von: "
 L_INFO_DUEL = "Duellanfrage Ignoriert von: "
-L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
+L_INFO_PET_DUEL = "Haustier Duellanfrage Ignoriert von: "
 L_INFO_DISBAND = "Löse Gruppe auf..."
 L_INFO_SETTINGS_DBM = "Gebe /settings dbm ein, um DBM Einstellungen zu laden."
 L_INFO_SETTINGS_DXE = "Gebe /settings dxe ein, um DXE Einstellungen zu laden."
@@ -281,8 +281,8 @@ L_POPUP_SETTINGS_DBM = "Die Position der DBM Elemente muss verändert werden."
 L_POPUP_SETTINGS_DXE = "Die Position der DXE Elemente muss verändert werden."
 L_POPUP_SETTINGS_BW = "Die Position der BigWigs Elemente muss verändert werden."
 L_POPUP_ARMORY = "Waffenkammer"
-L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
-L_POPUP_CURRENCY_CAP = "You get maximum value of" -- Needs review
+L_POPUP_TALENT_FIX = "Ein Fehler ist aufgetreten, der verhindert das Du jemanden betrachten kannst. Leider gibt es nichts was wir tun können, um das Problem zu beheben. Lade bitte Deine UI neu und versuche es erneut."
+L_POPUP_CURRENCY_CAP = "Maximalwert erreicht"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Willkommen bei ShestakUI "
