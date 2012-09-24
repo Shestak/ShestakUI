@@ -129,40 +129,40 @@ Filger_Spells = {
 			{spellID = 47476, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
-			-- Anti-Magic Shell
-			{spellID = 48707, filter = "CD"},
-			-- Death Pact
-			{spellID = 48743, filter = "CD"},
-			-- Icebound Fortitude
-			{spellID = 48792, filter = "CD"},
-			-- Death and Decay
-			{spellID = 43265, filter = "CD"},
-			-- Raise Dead
-			{spellID = 46584, filter = "CD"},
-			-- Summon Gargoyle
-			{spellID = 49206, filter = "CD"},
-			-- Rune Tap
-			{spellID = 48982, filter = "CD"},
-			-- Vampiric Blood
-			{spellID = 55233, filter = "CD"},
-			-- Lichborne
-			{spellID = 49039, filter = "CD"},
-			-- Dancing Rune Weapon
-			{spellID = 49028, filter = "CD"},
-			-- Pillar of Frost
-			{spellID = 51271, filter = "CD"},
-			-- Unholy Frenzy
-			{spellID = 49016, filter = "CD"},
-			-- Anti-Magic Zone
-			{spellID = 51052, filter = "CD"},
-			-- Outbreak
-			{spellID = 77575, filter = "CD"},
-			-- Death's Advance
-			{spellID = 96268, filter = "CD"},
 			-- Plague Leech
 			{spellID = 123693, filter = "CD"},
+			-- Rune Tap
+			{spellID = 48982, filter = "CD"},
+			-- Death and Decay
+			{spellID = 43265, filter = "CD"},
+			-- Death's Advance
+			{spellID = 96268, filter = "CD"},
+			-- Anti-Magic Shell
+			{spellID = 48707, filter = "CD"},
+			-- Vampiric Blood
+			{spellID = 55233, filter = "CD"},
+			-- Outbreak
+			{spellID = 77575, filter = "CD"},
+			-- Pillar of Frost
+			{spellID = 51271, filter = "CD"},
+			-- Dancing Rune Weapon
+			{spellID = 49028, filter = "CD"},
 			-- Unholy Blight
 			{spellID = 115989, filter = "CD"},
+			-- Lichborne
+			{spellID = 49039, filter = "CD"},
+			-- Death Pact
+			{spellID = 48743, filter = "CD"},
+			-- Raise Dead
+			{spellID = 46584, filter = "CD"},
+			-- Anti-Magic Zone
+			{spellID = 51052, filter = "CD"},
+			-- Icebound Fortitude
+			{spellID = 48792, filter = "CD"},
+			-- Unholy Frenzy
+			{spellID = 49016, filter = "CD"},
+			-- Summon Gargoyle
+			{spellID = 49206, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
