@@ -216,7 +216,7 @@ local function SetupChat(self)
 end
 
 local function SetupChatPosAndFont(self)
-	for i = 1, NUM_CHAT_WINDOWS do
+	for i = 1, NUM_CHAT_WINDOWS do		
 		local chat = _G[format("ChatFrame%s", i)]
 		local id = chat:GetID()
 		local _, fontSize = FCF_GetChatWindowInfo(id)
@@ -252,6 +252,14 @@ local function SetupChatPosAndFont(self)
 				chat:ClearAllPoints()
 				chat:Point("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)
 			end
+		elseif i == 3 then
+			chat:ClearAllPoints()
+			chat:Size(C.chat.width, C.chat.height)
+			if C.chat.background == true then
+				chat:Point("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5] + 4)
+			else
+				chat:Point("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5])
+			end			
 		end
 	end
 
