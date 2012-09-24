@@ -3,7 +3,7 @@ if T.client ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for deDE client
---	Translation: Alwa, Baine, Chubidu, Sinaris, Vienchen
+--	Translation: Alwa, Baine, Chubidu, F5Hellbound, Sinaris, Vienchen
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " benutzte meinen Lichtbrunnen. "
