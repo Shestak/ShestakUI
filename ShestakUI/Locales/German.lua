@@ -28,10 +28,10 @@ L_ANNOUNCE_PC_MSG = "Pull %s in %s.."
 L_ANNOUNCE_PC_ABORTED = "Pull ABGEBROCHEN!"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_PRE = "%s has prepared a %s." -- Needs review
-L_ANNOUNCE_FP_PUT = "%s has put down a %s." -- Needs review
-L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review
-L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!" -- Needs review
+L_ANNOUNCE_FP_PRE = "%s bereitet ein %s vor."
+L_ANNOUNCE_FP_PUT = "%s stellt ein %s."
+L_ANNOUNCE_FP_CAST = "%s zaubert %s."
+L_ANNOUNCE_FP_CLICK = "%s zaubert %s. Klick!"
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
@@ -39,17 +39,17 @@ L_TOOLTIP_LOADING = "Lade..."
 L_TOOLTIP_ACH_STATUS = "Dein Fortschritt:"
 L_TOOLTIP_ACH_COMPLETE = "Dein Status: Fertig gestellt am "
 L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
-L_TOOLTIP_ACH_NOT_EAT = "Not Eaten" -- Needs review
-L_TOOLTIP_ACH_EAT = "Eaten" -- Needs review
-L_TOOLTIP_ACH_NOT_DRINK = "Not Consumed" -- Needs review
-L_TOOLTIP_ACH_DRINK = "Consumed" -- Needs review
-L_TOOLTIP_ACH_NOT_EQUIP = "Not Equipped" -- Needs review
-L_TOOLTIP_ACH_EQUIP = "Equipped" -- Needs review
+L_TOOLTIP_ACH_NOT_EAT = "nicht gegessen"
+L_TOOLTIP_ACH_EAT = "gegessen"
+L_TOOLTIP_ACH_NOT_DRINK = "nicht Konsumiert"
+L_TOOLTIP_ACH_DRINK = "Konsumiert"
+L_TOOLTIP_ACH_NOT_EQUIP = "nicht Ausgestattet"
+L_TOOLTIP_ACH_EQUIP = "Ausgestattet"
 L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
 L_TOOLTIP_WHO_TARGET = "Anvisiert von"
 L_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe:"
-L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
+L_TOOLTIP_INSPECT_OPEN = "Betrachtungsfenster offen"
 
 -- Misc
 L_MISC_UNDRESS = "Ausziehen"
