@@ -104,18 +104,30 @@ if C.chat.background == true then
 	chatbd:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 1)
 	chatbd:SetBackdropBorderColor(unpack(C.media.border_color))
 	chatbd:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
-
-	local chattabs = CreateFrame("Frame", "ChatTabsPanel", UIParent)
-	chattabs:CreatePanel("Transparent", chatbd:GetWidth(), 20, "BOTTOM", chatbd, "TOP", 0, 3)
-	chattabs:SetBackdropBorderColor(unpack(C.media.border_color))
-	chattabs:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
+	
+	local chatbdright = CreateFrame("Frame", "ChatBackgroundRight", UIParent)
+	chatbdright:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame3, "TOPLEFT", -3, 1)
+	chatbdright:SetBackdropBorderColor(unpack(C.media.border_color))
+	chatbdright:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
+	
+	if C.chat.tabs_mouseover ~= true then
+		local chattabs = CreateFrame("Frame", "ChatTabsPanel", UIParent)
+		chattabs:CreatePanel("Transparent", chatbd:GetWidth(), 20, "BOTTOM", chatbd, "TOP", 0, 3)
+		chattabs:SetBackdropBorderColor(unpack(C.media.border_color))
+		chattabs:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
+		
+		local chattabsright = CreateFrame("Frame", "ChatTabsPanelRight", UIParent)
+		chattabsright:CreatePanel("Transparent", chatbdright:GetWidth(), 20, "BOTTOM", chatbdright, "TOP", 0, 3)
+		chattabsright:SetBackdropBorderColor(unpack(C.media.border_color))
+		chattabsright:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
+	end
 else
 	local leftpanel = CreateFrame("Frame", "LeftPanel", UIParent)
 	leftpanel:CreatePanel("Default", 1, C.chat.height - 2, "BOTTOMLEFT", bottompanel, "LEFT", 0, 0)
+	
+	local rightpanel = CreateFrame("Frame", "RightPanel", UIParent)
+	rightpanel:CreatePanel("Default", 1, C.chat.height - 2, "BOTTOMRIGHT", bottompanel, "RIGHT", 0, 0)
 end
-
-local rightpanel = CreateFrame("Frame", "RightPanel", UIParent)
-rightpanel:CreatePanel("Default", 1, 133, "BOTTOMRIGHT", bottompanel, "RIGHT", 0, 0)
 
 ----------------------------------------------------------------------------------------
 --	Top panel
