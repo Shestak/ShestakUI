@@ -165,10 +165,10 @@ local StartTimer = function(name, spellId)
 	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(name))]
 	if color then
 		bar:SetStatusBarColor(color.r, color.g, color.b)
-		bar.bg:SetVertexColor(color.r, color.g, color.b, 0.25)
+		bar.bg:SetVertexColor(color.r, color.g, color.b, 0.2)
 	else
 		bar:SetStatusBarColor(0.3, 0.7, 0.3)
-		bar.bg:SetVertexColor(0.3, 0.7, 0.3, 0.25)
+		bar.bg:SetVertexColor(0.3, 0.7, 0.3, 0.2)
 	end
 	bar:SetScript("OnUpdate", BarUpdate)
 	bar:EnableMouse(true)

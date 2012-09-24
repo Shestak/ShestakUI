@@ -71,9 +71,11 @@ Filger_Spells = {
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lei Shin's Final Orders (Strength, Proc)
-			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 126582, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Charioteer Figurine (Strength, Use)
 			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Iron Belly Wok (Haste, Use)
+			{spellID = 129812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
@@ -127,40 +129,40 @@ Filger_Spells = {
 			{spellID = 47476, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
-			-- Anti-Magic Shell
-			{spellID = 48707, filter = "CD"},
-			-- Death Pact
-			{spellID = 48743, filter = "CD"},
-			-- Icebound Fortitude
-			{spellID = 48792, filter = "CD"},
-			-- Death and Decay
-			{spellID = 43265, filter = "CD"},
-			-- Raise Dead
-			{spellID = 46584, filter = "CD"},
-			-- Summon Gargoyle
-			{spellID = 49206, filter = "CD"},
-			-- Rune Tap
-			{spellID = 48982, filter = "CD"},
-			-- Vampiric Blood
-			{spellID = 55233, filter = "CD"},
-			-- Lichborne
-			{spellID = 49039, filter = "CD"},
-			-- Dancing Rune Weapon
-			{spellID = 49028, filter = "CD"},
-			-- Pillar of Frost
-			{spellID = 51271, filter = "CD"},
-			-- Unholy Frenzy
-			{spellID = 49016, filter = "CD"},
-			-- Anti-Magic Zone
-			{spellID = 51052, filter = "CD"},
-			-- Outbreak
-			{spellID = 77575, filter = "CD"},
-			-- Death's Advance
-			{spellID = 96268, filter = "CD"},
 			-- Plague Leech
 			{spellID = 123693, filter = "CD"},
+			-- Rune Tap
+			{spellID = 48982, filter = "CD"},
+			-- Death and Decay
+			{spellID = 43265, filter = "CD"},
+			-- Death's Advance
+			{spellID = 96268, filter = "CD"},
+			-- Anti-Magic Shell
+			{spellID = 48707, filter = "CD"},
+			-- Vampiric Blood
+			{spellID = 55233, filter = "CD"},
+			-- Outbreak
+			{spellID = 77575, filter = "CD"},
+			-- Pillar of Frost
+			{spellID = 51271, filter = "CD"},
+			-- Dancing Rune Weapon
+			{spellID = 49028, filter = "CD"},
 			-- Unholy Blight
 			{spellID = 115989, filter = "CD"},
+			-- Lichborne
+			{spellID = 49039, filter = "CD"},
+			-- Death Pact
+			{spellID = 48743, filter = "CD"},
+			-- Raise Dead
+			{spellID = 46584, filter = "CD"},
+			-- Anti-Magic Zone
+			{spellID = 51052, filter = "CD"},
+			-- Icebound Fortitude
+			{spellID = 48792, filter = "CD"},
+			-- Unholy Frenzy
+			{spellID = 49016, filter = "CD"},
+			-- Summon Gargoyle
+			{spellID = 49206, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -1269,9 +1271,11 @@ Filger_Spells = {
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lei Shin's Final Orders (Strength, Proc)
-			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 126582, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Charioteer Figurine (Strength, Use)
 			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Iron Belly Wok (Haste, Use)
+			{spellID = 129812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
@@ -2434,9 +2438,11 @@ Filger_Spells = {
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lei Shin's Final Orders (Strength, Proc)
-			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 126582, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Charioteer Figurine (Strength, Use)
 			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Iron Belly Wok (Haste, Use)
+			{spellID = 129812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Use)
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
@@ -2693,6 +2699,8 @@ Filger_Spells = {
 			{spellID = 77606, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Necrotic Strike
 			{spellID = 73975, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Chains of Ice (root)
+			{spellID = 96294, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Chains of Ice
 			{spellID = 45524, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Chilblains
@@ -2821,6 +2829,8 @@ Filger_Spells = {
 			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Clash
 			{spellID = 122242, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Spear Hand Strike
+			{spellID = 116709, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Hammer of Justice
@@ -2915,6 +2925,8 @@ Filger_Spells = {
 			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mesmerize (Shivarra)
+			{spellID = 115268, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spell Lock (Felhunter)
@@ -2957,6 +2969,10 @@ Filger_Spells = {
 			{spellID = 107079, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Arcane Torrent
 			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Mogu'shan Vaults
+			-- Wildfire Spark (Feng the Accursed)
+			{spellID = 116784, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Other
 			-- Rocket Fuel Leak
@@ -3111,6 +3127,8 @@ Filger_Spells = {
 			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Clash
 			{spellID = 122242, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Spear Hand Strike
+			{spellID = 116709, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Divine Shield
@@ -3232,6 +3250,8 @@ Filger_Spells = {
 			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Mesmerize (Shivarra)
+			{spellID = 115268, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spell Lock (Felhunter)

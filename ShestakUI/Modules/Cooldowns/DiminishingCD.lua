@@ -6,7 +6,7 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true or C.unitframe.p
 ----------------------------------------------------------------------------------------
 local frameposition
 if C.unitframe.arena_on_right == true then
-	frameposition = {"TOPRIGHT", "TOPLEFT", -76, 2, "RIGHT", "LEFT", -3, 0}
+	frameposition = {"TOPRIGHT", "TOPLEFT", -39, 2, "RIGHT", "LEFT", -3, 0}
 else
 	frameposition = {"TOPLEFT", "TOPRIGHT", 39, 2, "LEFT", "RIGHT", 3, 0}
 end

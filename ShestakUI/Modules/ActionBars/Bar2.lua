@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Setup MultiBarBottomLeft as bar #2 by Tukz
+--	MultiBarBottomLeft(by Tukz)
 ----------------------------------------------------------------------------------------
 local bar = CreateFrame("Frame", "Bar2Holder", UIParent)
 bar:SetAllPoints(ActionBarAnchor)

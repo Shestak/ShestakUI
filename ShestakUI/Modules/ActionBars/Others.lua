@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ------------------------------------------------------------------------------------------
---	Manage all others stuff for actionbars by Tukz
+--	Manage others stuff for ActionBars(by Tukz)
 ------------------------------------------------------------------------------------------
 local OnLogon = CreateFrame("Frame")
 OnLogon:RegisterEvent("PLAYER_ENTERING_WORLD")

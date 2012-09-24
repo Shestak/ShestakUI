@@ -75,9 +75,9 @@ local function Shared(self, unit)
 	self.Health.bg:SetAllPoints()
 	self.Health.bg:SetTexture(C.media.texture)
 	if C.unitframe.own_color == true then
-		self.Health.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
+		self.Health.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
 	else
-		self.Health.bg.multiplier = 0.25
+		self.Health.bg.multiplier = 0.2
 	end
 
 	self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
@@ -135,9 +135,9 @@ local function Shared(self, unit)
 	self.Power.bg:SetAllPoints()
 	self.Power.bg:SetTexture(C.media.texture)
 	if C.unitframe.own_color == true and unit == "pet" then
-		self.Power.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
+		self.Power.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
 	else
-		self.Power.bg.multiplier = 0.3
+		self.Power.bg.multiplier = 0.2
 	end
 
 	self.Power.value = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
@@ -281,7 +281,7 @@ local function Shared(self, unit)
 				self.Runes[i].bg = self.Runes[i]:CreateTexture(nil, "BORDER")
 				self.Runes[i].bg:SetAllPoints()
 				self.Runes[i].bg:SetTexture(C.media.texture)
-				self.Runes[i].bg.multiplier = 0.25
+				self.Runes[i].bg.multiplier = 0.2
 			end
 		end
 
@@ -306,7 +306,7 @@ local function Shared(self, unit)
 				self.HarmonyBar[i].bg = self.HarmonyBar[i]:CreateTexture(nil, "BORDER")
 				self.HarmonyBar[i].bg:SetAllPoints()
 				self.HarmonyBar[i].bg:SetTexture(C.media.texture)
-				self.HarmonyBar[i].bg:SetVertexColor(0.33, 0.63, 0.33, 0.25)
+				self.HarmonyBar[i].bg:SetVertexColor(0.33, 0.63, 0.33, 0.2)
 			end
 		end
 
@@ -331,7 +331,7 @@ local function Shared(self, unit)
 				self.ShadowOrbsBar[i].bg = self.ShadowOrbsBar[i]:CreateTexture(nil, "BORDER")
 				self.ShadowOrbsBar[i].bg:SetAllPoints()
 				self.ShadowOrbsBar[i].bg:SetTexture(C.media.texture)
-				self.ShadowOrbsBar[i].bg:SetVertexColor(0.70, 0.32, 0.75, 0.25)
+				self.ShadowOrbsBar[i].bg:SetVertexColor(0.70, 0.32, 0.75, 0.2)
 			end
 		end
 
@@ -356,7 +356,7 @@ local function Shared(self, unit)
 				self.HolyPower[i].bg = self.HolyPower[i]:CreateTexture(nil, "BORDER")
 				self.HolyPower[i].bg:SetAllPoints()
 				self.HolyPower[i].bg:SetTexture(C.media.texture)
-				self.HolyPower[i].bg:SetVertexColor(0.89, 0.88, 0.1, 0.25)
+				self.HolyPower[i].bg:SetVertexColor(0.89, 0.88, 0.1, 0.2)
 
 				self.HolyPower[i].width = self.HolyPower[i]:GetWidth()
 			end
@@ -385,7 +385,7 @@ local function Shared(self, unit)
 				self.WarlockSpecBars[i].bg = self.WarlockSpecBars[i]:CreateTexture(nil, "BORDER")
 				self.WarlockSpecBars[i].bg:SetAllPoints()
 				self.WarlockSpecBars[i].bg:SetTexture(C.media.texture)
-				self.WarlockSpecBars[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.25)
+				self.WarlockSpecBars[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.2)
 			end
 		end
 
@@ -417,7 +417,7 @@ local function Shared(self, unit)
 				self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
 				self.TotemBar[i].bg:SetAllPoints()
 				self.TotemBar[i].bg:SetTexture(C.media.texture)
-				self.TotemBar[i].bg.multiplier = 0.25
+				self.TotemBar[i].bg.multiplier = 0.2
 			end
 		end
 
@@ -482,7 +482,7 @@ local function Shared(self, unit)
 			self.VengeanceBar.bg = self.VengeanceBar.Bar:CreateTexture(nil, "BORDER")
 			self.VengeanceBar.bg:SetAllPoints()
 			self.VengeanceBar.bg:SetTexture(C.media.texture)
-			self.VengeanceBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
+			self.VengeanceBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
 
 			self.VengeanceBar.Text = T.SetFontString(self.VengeanceBar.Bar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.VengeanceBar.Text:Point("CENTER", self.VengeanceBar.Bar, "CENTER", 0, 0)
@@ -506,7 +506,7 @@ local function Shared(self, unit)
 			self.Experience.bg = self.Experience:CreateTexture(nil, "BORDER")
 			self.Experience.bg:SetAllPoints()
 			self.Experience.bg:SetTexture(C.media.texture)
-			self.Experience.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
+			self.Experience.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
 
 			self.Experience.Rested = CreateFrame("StatusBar", nil, self.Experience)
 			self.Experience.Rested:SetParent(self.Experience)
@@ -898,9 +898,9 @@ local function Shared(self, unit)
 		self.Swing.bg:SetAllPoints(self.Swing)
 		self.Swing.bg:SetTexture(C.media.texture)
 		if C.unitframe.own_color == true then
-			self.Swing.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
+			self.Swing.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
 		else
-			self.Swing.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.25)
+			self.Swing.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
 		end
 
 		self.Swing.Text = T.SetFontString(self.Swing, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
@@ -1040,7 +1040,7 @@ local function Shared(self, unit)
 			mhpb:Width(150)
 		end
 		mhpb:SetStatusBarTexture(C.media.texture)
-		mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
+		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
 		mhpb:SetMinMaxValues(0, 1)
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
@@ -1048,7 +1048,7 @@ local function Shared(self, unit)
 		ohpb:Point("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		ohpb:Width(mhpb:GetWidth())
 		ohpb:SetStatusBarTexture(C.media.texture)
-		ohpb:SetStatusBarColor(0, 1, 0, 0.25)
+		ohpb:SetStatusBarColor(0, 1, 0, 0.2)
 
 		self.HealPrediction = {
 			myBar = mhpb,
@@ -1119,7 +1119,7 @@ if C.unitframe.show_boss == true then
 			if C.unitframe.boss_on_right == true then
 				boss[i]:Point(unpack(C.position.unitframes.boss))
 			else
-				boss[i]:Point("BOTTOMLEFT", C.position.unitframes.boss[2], "LEFT", C.position.unitframes.boss[4] + 38, C.position.unitframes.boss[5])
+				boss[i]:Point("BOTTOMLEFT", C.position.unitframes.boss[2], "LEFT", C.position.unitframes.boss[4] + 46, C.position.unitframes.boss[5])
 			end
 		else
 			boss[i]:Point("BOTTOM", boss[i-1], "TOP", 0, 30)
@@ -1136,7 +1136,7 @@ if C.unitframe.show_arena == true then
 			if C.unitframe.arena_on_right == true then
 				arena[i]:Point(unpack(C.position.unitframes.arena))
 			else
-				arena[i]:Point("BOTTOMLEFT", C.position.unitframes.arena[2], "LEFT", C.position.unitframes.arena[4] + 83, C.position.unitframes.arena[5])
+				arena[i]:Point("BOTTOMLEFT", C.position.unitframes.arena[2], "LEFT", C.position.unitframes.arena[4] + 120, C.position.unitframes.arena[5])
 			end
 		else
 			arena[i]:Point("BOTTOM", arena[i-1], "TOP", 0, 30)
@@ -1149,7 +1149,7 @@ if C.unitframe.show_arena == true then
 		arenatarget[i] = oUF:Spawn("arena"..i.."target", "oUF_Arena"..i.."Target")
 		if i == 1 then
 			if C.unitframe.arena_on_right == true then
-				arenatarget[i]:Point("TOPRIGHT", arena[i], "TOPLEFT", -41, 0)
+				arenatarget[i]:Point("TOPLEFT", arena[i], "TOPRIGHT", 7, 0)
 			else
 				arenatarget[i]:Point("TOPRIGHT", arena[i], "TOPLEFT", -7, 0)
 			end

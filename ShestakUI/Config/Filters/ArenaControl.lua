@@ -67,6 +67,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(5484)] = 4,	-- Howl of Terror
 		[GetSpellInfo(6789)] = 4,	-- Mortal Coil
 		[GetSpellInfo(6358)] = 4,	-- Seduction (Succubus)
+		[GetSpellInfo(115268)] = 4,	-- Mesmerize (Shivarra)
 		-- Warrior
 		[GetSpellInfo(107570)] = 4,	-- Storm Bolt
 		[GetSpellInfo(46968)] = 4,	-- Shockwave

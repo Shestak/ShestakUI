@@ -346,6 +346,8 @@ if memory.enabled then
 				print(format("|cff66C6FF%s:|r %s", L_STATS_GARBAGE_COLLECTED,formatmem(before - gcinfo())))
 				self.timer, self.text.elapsed = nil, 5
 				self:GetScript("OnEnter")(self)
+			elseif button == "LeftButton" then
+				SlashCmdList.ADDONMANAGER()
 			end
 		end
 	})
@@ -1130,11 +1132,11 @@ if friends.enabled then
 								menuCountInvites = menuCountInvites + 1
 								menuList[2].menuList[menuCountInvites] = {
 									text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, BNTable[i][16], classc.r * 255, classc.g * 255, classc.b * 255, BNTable[i][4]),
-									arg1 = BNTable[i][4],
+									arg1 = BNTable[i][5],
 									notCheckable = true,
 									func = function(self, arg1)
 										menuFrame:Hide()
-										InviteUnit(arg1)
+										BNInviteFriend(arg1)
 									end
 								}
 							end

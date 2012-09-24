@@ -374,6 +374,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(6789),	-- Mortal Coil
 			SpellName(5484),	-- Howl of Terror
 			SpellName(6358),	-- Seduction
+			SpellName(115268),	-- Mesmerize
 			SpellName(30283),	-- Shadowfury
 			-- Warrior
 			SpellName(46968),	-- Shockwave

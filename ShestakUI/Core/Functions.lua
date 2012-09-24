@@ -933,7 +933,7 @@ end
 T.UpdateReputationColor = function(self, event, unit, bar)
 	local name, id = GetWatchedFactionInfo()
 	bar:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
-	bar.bg:SetVertexColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b, 0.25)
+	bar.bg:SetVertexColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b, 0.2)
 end
 
 T.UpdateComboPoint = function(self, event, unit)
@@ -1037,7 +1037,7 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 
 	if Castbar.interrupt and UnitCanAttack("player", unit) then
 		Castbar:SetStatusBarColor(0.8, 0, 0)
-		Castbar.bg:SetVertexColor(0.8, 0, 0, 0.25)
+		Castbar.bg:SetVertexColor(0.8, 0, 0, 0.2)
 		Castbar.Overlay:SetBackdropBorderColor(0.8, 0, 0)
 		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
 			Castbar.Button:SetBackdropBorderColor(0.8, 0, 0)
@@ -1048,20 +1048,20 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 			local r, g, b = unpack(T.oUF_colors.class[class])
 			if C.unitframe.own_color == true then
 				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
+				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
 			else
 				if b then
 					Castbar:SetStatusBarColor(r, g, b)
-					Castbar.bg:SetVertexColor(r, g, b, 0.25)
+					Castbar.bg:SetVertexColor(r, g, b, 0.2)
 				end
 			end
 		else
 			if C.unitframe.own_color == true then
 				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
+				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
 			else
 				Castbar:SetStatusBarColor(r, g, b)
-				Castbar.bg:SetVertexColor(r, g, b, 0.25)
+				Castbar.bg:SetVertexColor(r, g, b, 0.2)
 			end
 		end
 		Castbar.Overlay:SetBackdropBorderColor(unpack(C.media.border_color))
@@ -1110,7 +1110,7 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 
 	if Castbar.interrupt and UnitCanAttack("player", unit) then
 		Castbar:SetStatusBarColor(0.8, 0, 0)
-		Castbar.bg:SetVertexColor(0.8, 0, 0, 0.25)
+		Castbar.bg:SetVertexColor(0.8, 0, 0, 0.2)
 		Castbar.Overlay:SetBackdropBorderColor(0.8, 0, 0)
 		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
 			Castbar.Button:SetBackdropBorderColor(0.8, 0, 0)
@@ -1121,20 +1121,20 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 			local r, g, b = unpack(T.oUF_colors.class[class])
 			if C.unitframe.own_color == true then
 				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
+				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
 			else
 				if b then
 					Castbar:SetStatusBarColor(r, g, b)
-					Castbar.bg:SetVertexColor(r, g, b, 0.25)
+					Castbar.bg:SetVertexColor(r, g, b, 0.2)
 				end
 			end
 		else
 			if C.unitframe.own_color == true then
 				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
+				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
 			else
 				Castbar:SetStatusBarColor(r, g, b)
-				Castbar.bg:SetVertexColor(r, g, b, 0.25)
+				Castbar.bg:SetVertexColor(r, g, b, 0.2)
 			end
 		end
 		Castbar.Overlay:SetBackdropBorderColor(unpack(C.media.border_color))

@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Setup MultiBarBottomRight as bar #5 by Tukz
+--	MultiBarBottomRight(by Tukz)
 ----------------------------------------------------------------------------------------
 local bar = CreateFrame("Frame", "Bar5Holder", UIParent)
 if C.actionbar.rightbars < 3 then

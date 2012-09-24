@@ -17,7 +17,7 @@ local colors = {
 	},
 }
 
-local function hookSetHyperlink(tooltip, refString)
+local function SetHyperlink(tooltip, refString)
 	local achievementID, numCriteria, GUID, name, completed, quantity, reqQuantity, month, day, year
 	local output = {[0] = {}, [1] = {}}
 	if select(3, string.find(refString, "(%a-):")) ~= "achievement" then return end
@@ -88,5 +88,54 @@ local function hookSetHyperlink(tooltip, refString)
 	tooltip:Show()
 end
 
-hooksecurefunc(GameTooltip, "SetHyperlink", hookSetHyperlink)
-hooksecurefunc(ItemRefTooltip, "SetHyperlink", hookSetHyperlink)
+hooksecurefunc(GameTooltip, "SetHyperlink", SetHyperlink)
+hooksecurefunc(ItemRefTooltip, "SetHyperlink", SetHyperlink)
+
+----------------------------------------------------------------------------------------
+--	Criteria status for some Achievements(Achievement Helper by Timmy2250)
+----------------------------------------------------------------------------------------
+local AchData = {}
+local AchString = {}
+AchString[347] = {}
+AchString[347][0] = L_TOOLTIP_ACH_EAT
+AchString[347][1] = L_TOOLTIP_ACH_NOT_EAT
+AchString[346] = {}
+AchString[346][0] = L_TOOLTIP_ACH_DRINK
+AchString[346][1] = L_TOOLTIP_ACH_NOT_DRINK
+AchString[621] = {}
+AchString[621][0] = L_TOOLTIP_ACH_EQUIP
+AchString[621][1] = L_TOOLTIP_ACH_NOT_EQUIP
+
+local function GetServerData(achievementID, maxCriterias)
+	for i = 0, maxCriterias do
+		local criteriaID = select(10, GetAchievementCriteriaInfo(achievementID, i))
+		local itemID = select(8, GetAchievementCriteriaInfoByID(achievementID, criteriaID))
+		AchData[itemID] = {}
+		AchData[itemID][0] = criteriaID
+		AchData[itemID][1] = achievementID
+	end
+end
+
+GetServerData(347, 513)
+GetServerData(621, 89)
+GetServerData(346, 221)
+
+local function FindItem(tooltip)
+	local _, itemLink = tooltip:GetItem()
+	if itemLink ~= nil then
+		local id = select(5, string.find(itemLink, "|?c?f?f?(%x*)|?H?([^:]*):?(%d+)"))
+		id = tonumber(id)
+		if AchData[id] ~= nil then
+			local _, _, completed = GetAchievementCriteriaInfoByID(AchData[id][1], AchData[id][0])
+			local text = AchString[AchData[id][1]]
+			if completed then
+				tooltip:AddLine(L_TOOLTIP_ACH_STATUS.." "..text[0], 0, 1, 0)
+			else
+				tooltip:AddLine(L_TOOLTIP_ACH_STATUS.." "..text[1], 1, 0, 0)
+			end
+		end
+	end
+end
+
+GameTooltip:HookScript("OnTooltipSetItem", FindItem)
+ItemRefTooltip:HookScript("OnTooltipSetItem", FindItem)

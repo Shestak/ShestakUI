@@ -2,7 +2,7 @@
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	By Tukz
+--	Style ActionBars buttons(by Tukz)
 ----------------------------------------------------------------------------------------
 local function StyleNormalButton(self)
 	local name = self:GetName()
