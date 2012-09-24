@@ -253,3 +253,112 @@ filter:SetScript("OnEvent", function(self, event, addon, ...)
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Loot/Damage/LootHistory frames toggle button
+----------------------------------------------------------------------------------------
+if C.chat.enable ~= true then return end
+local LootButton = CreateFrame("Frame", "LootDamageToggleButton", UIParent)
+LootButton:EnableMouse(true)
+LootButton:SetAlpha(0)
+
+LootButton.Text = LootButton:CreateFontString(nil, "OVERLAY")
+LootButton.Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+LootButton.Text:Point("CENTER", 2, 0)
+local LootButtonText = function(text, loot, damage)
+	if damage then
+		LootButton.Text:SetText(text)
+		LootButton.Text:SetTextColor(0.9, 0.3, 0.3)
+	elseif loot then
+		LootButton.Text:SetText(text)
+		LootButton.Text:SetTextColor(0.3, 0.3, 0.9)
+	end
+end
+LootButton:CreatePanel("Transparent", 17, C.chat.height - 1, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -1, 20)
+
+local LootShow = function ()
+	alDamageMeterFrame:Hide()
+	ChatFrame3:Show()
+	ChatFrame3Tab:Show()
+end
+
+local DamageShow = function ()
+	alDamageMeterFrame:Show()
+	ChatFrame3:Hide()
+	ChatFrame3Tab:Hide()
+end
+
+local ChatBackgroundToggle = function()
+	if C.chat.background == true then
+		if ChatFrame3:IsShown() then
+			ChatBackgroundRight:Show()
+			ChatTabsPanelRight:Show()
+			TooltipAnchor:SetPoint("BOTTOMRIGHT", ChatTabsPanelRight, "TOPRIGHT", 0, 3)
+		else
+			ChatBackgroundRight:Hide()
+			ChatTabsPanelRight:Hide()
+			TooltipAnchor:SetPoint("BOTTOMRIGHT", alDamageMeterFrame, "TOPRIGHT", 2, 5)
+		end
+	else
+		if ChatFrame3:IsShown() then
+			RightPanel:Show()
+			TooltipAnchor:SetPoint("BOTTOMRIGHT", RightPanel, "TOPRIGHT", 0, 3)
+		else
+			RightPanel:Hide()
+			TooltipAnchor:SetPoint("BOTTOMRIGHT", alDamageMeterFrame, "TOPRIGHT", 2, 5)
+		end
+	end
+end
+
+LootButton:SetScript("OnEnter", function()
+	LootButton:FadeIn()
+end)
+
+LootButton:SetScript("OnLeave", function()
+	LootButton:FadeOut()
+end)
+
+ChatFrame3:RegisterEvent("PLAYER_ENTERING_WORLD")
+ChatFrame3:HookScript("OnEvent", function(_, event)
+	if event == "PLAYER_ENTERING_WORLD" then
+		_, _, _, alDamageMeterEnabled = GetAddOnInfo("alDamageMeter")
+		if SavedOptionsPerChar.LootFrameIsShown == true and alDamageMeterEnabled ~= nil then
+			LootShow()
+			ChatBackgroundToggle()
+			LootButtonText("D\n\nA\n\nM\n\nA\n\nG\n\nE", false, true)
+		elseif SavedOptionsPerChar.LootFrameIsShown == false and alDamageMeterEnabled ~= nil then
+			DamageShow()
+			ChatBackgroundToggle()
+			LootButtonText("L\n\nO\n\nO\n\nT", true, false)
+		else
+			ChatFrame3:Show()
+			ChatFrame3Tab:Show()
+			ChatBackgroundToggle()
+			LootButtonText("L\nO\nO\nT\n\nH\nI\nS\nT\nO\nR\nY", true, false)
+			SavedOptionsPerChar.LootFrameIsShown = true
+			TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 137)
+		end
+	end
+end)
+
+LootButton:SetScript("OnMouseDown", function(_, button)
+	if button == "RightButton" then 
+		ToggleLootHistoryFrame()
+	else
+		if alDamageMeterEnabled ~= nil then
+			if SavedOptionsPerChar.LootFrameIsShown == true then
+				DamageShow()
+				ChatBackgroundToggle()
+				LootButtonText("L\n\nO\n\nO\n\nT", true, false)
+				SavedOptionsPerChar.LootFrameIsShown = false
+			else
+				LootShow()
+				ChatBackgroundToggle()
+				LootButtonText("D\n\nA\n\nM\n\nA\n\nG\n\nE", false, true)
+				SavedOptionsPerChar.LootFrameIsShown = true
+			end
+		else
+			ToggleLootHistoryFrame()
+		end
+	end
+end)
