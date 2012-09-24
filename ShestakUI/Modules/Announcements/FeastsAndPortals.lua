@@ -3,28 +3,23 @@
 ----------------------------------------------------------------------------------------
 --	Announce Feasts/Cauldrons/Souls/Repair Bots/Portals/Ritual of Summoning
 ----------------------------------------------------------------------------------------
-local function CanRaidWarning()
-	if GetNumGroupMembers() == 0 or not GetNumGroupMembers() then return false end
-	return (UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and true or false
-end
-
 local function GetChat()
 	if IsInRaid() then
-		return CanRaidWarning() and "RAID_WARNING" or "RAID"
+		if UnitIsGroupLeader("player") or UnitIsGroupAssistant("player") then
+			return "RAID_WARNING"
+		else
+			return "RAID"
+		end
 	elseif IsInGroup() then
 		return "PARTY"
 	end
 	return "SAY"
 end
 
-local function InGroup()
-	return (GetNumSubgroupMembers() > 0 or GetNumGroupMembers() > 0) and true or false
-end
-
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, _, _, _, _, _, spellID, ...)
-	if not InGroup() or InCombatLockdown() or not subEvent or not spellID or not srcName then return end
+	if not (IsInRaid() or IsInGroup()) or InCombatLockdown() or not subEvent or not spellID or not srcName then return end
 	if not UnitInRaid(srcName) and not UnitInParty(srcName) then return end
 
 	if subEvent == "SPELL_CAST_START" then
