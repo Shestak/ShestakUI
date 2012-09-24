@@ -83,6 +83,10 @@ local function InstallUI()
 
 	-- Setting chat frames
 	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
+		FCF_ResetChatWindows()
+		FCF_OpenNewWindow(LOOT)
+		FCF_SetLocked(ChatFrame3, 1)
+		FCF_UnDockFrame(ChatFrame3)
 		for i = 1, NUM_CHAT_WINDOWS do
 			local frame = _G[format("ChatFrame%s", i)]
 			local chatFrameId = frame:GetID()
@@ -112,7 +116,16 @@ local function InstallUI()
 			-- Lock them if unlocked
 			if not frame.isLocked then FCF_SetLocked(frame, 1) end
 		end
-
+		
+		ChatFrame_RemoveAllMessageGroups(ChatFrame3)	
+		ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_FACTION_CHANGE")
+		ChatFrame_AddMessageGroup(ChatFrame3, "SKILL")
+		ChatFrame_AddMessageGroup(ChatFrame3, "LOOT")
+		ChatFrame_AddMessageGroup(ChatFrame3, "MONEY")
+		ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_XP_GAIN")
+		ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_HONOR_GAIN")
+		ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_GUILD_XP_GAIN")	
+		
 		if T.author == true then
 			FCF_ResetChatWindows()
 			FCF_OpenNewWindow(GUILD)
@@ -151,7 +164,51 @@ local function InstallUI()
 			ChatFrame_AddMessageGroup(ChatFrame4, "LOOT")
 			ChatFrame_AddMessageGroup(ChatFrame4, "CURRENCY")
 			ChatFrame_AddMessageGroup(ChatFrame4, "MONEY")
-			ChatFrame_AddMessageGroup(ChatFrame4, "SKILL")
+			ChatFrame_AddMessageGroup(ChatFrame4, "SKILL")	
+		elseif T.coauthor == true then
+			FCF_OpenNewWindow("Spam")
+			FCF_SetLocked(ChatFrame4, 1)
+			FCF_DockFrame(ChatFrame4)
+			FCF_OpenNewWindow("Whisp")
+			FCF_SetLocked(ChatFrame5, 1)
+			FCF_DockFrame(ChatFrame5)
+			
+			-- Setup main tab
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "LOOT")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "CURRENCY")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "CHANNEL")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "YELL")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "MONEY")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "COMBAT_FACTION_CHANGE")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "SKILL")
+			ChatFrame_RemoveChannel(ChatFrame1, "Общий")
+			ChatFrame_RemoveChannel(ChatFrame1, "Торговля")
+			ChatFrame_RemoveChannel(ChatFrame1, "ОборонаЛокальный")
+			ChatFrame_RemoveChannel(ChatFrame1, "ПоискСпутников")
+
+			-- Setup spam tab
+			ChatFrame_RemoveAllMessageGroups(ChatFrame4)
+			ChatFrame_AddMessageGroup(ChatFrame4, "YELL")
+			ChatFrame_AddMessageGroup(ChatFrame4, "CHANNEL")
+			ChatFrame_AddChannel(ChatFrame4, "Общий")
+			ChatFrame_AddChannel(ChatFrame4, "Торговля")
+			ChatFrame_AddChannel(ChatFrame4, "ОборонаЛокальный")
+			ChatFrame_AddChannel(ChatFrame4, "ПоискСпутников")
+		
+			-- Setup whisper tab
+			ChatFrame_RemoveAllMessageGroups(ChatFrame5)
+			ChatFrame_AddMessageGroup(ChatFrame5, "GUILD")
+			ChatFrame_AddMessageGroup(ChatFrame5, "OFFICER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "WHISPER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "PARTY")
+			ChatFrame_AddMessageGroup(ChatFrame5, "PARTY_LEADER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "RAID")
+			ChatFrame_AddMessageGroup(ChatFrame5, "RAID_LEADER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "RAID_WARNING")
+			ChatFrame_AddMessageGroup(ChatFrame5, "BATTLEGROUND")
+			ChatFrame_AddMessageGroup(ChatFrame5, "BATTLEGROUND_LEADER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "BN_WHISPER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "BN_CONVERSATION")
 		end
 
 		-- Enable classcolor automatically on login and on each character without doing /configure each time
@@ -187,6 +244,7 @@ local function InstallUI()
 	SavedOptionsPerChar.AutoInvite = false
 	SavedOptionsPerChar.BarsLocked = false
 	SavedOptionsPerChar.SplitBars = true
+	SavedOptionsPerChar.LootFrameIsShown = true
 	SavedOptionsPerChar.RightBars = C.actionbar.rightbars
 	SavedOptionsPerChar.BottomBars = C.actionbar.bottombars
 
