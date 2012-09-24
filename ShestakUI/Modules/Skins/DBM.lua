@@ -52,11 +52,11 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						if bar.color then
 							tbar:SetStatusBarColor(bar.color.r, bar.color.g, bar.color.b)
 							tbar:SetBackdrop(backdrop)
-							tbar:SetBackdropColor(bar.color.r, bar.color.g, bar.color.b, 0.15)
+							tbar:SetBackdropColor(bar.color.r, bar.color.g, bar.color.b, 0.2)
 						else
 							tbar:SetStatusBarColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB)
 							tbar:SetBackdrop(backdrop)
-							tbar:SetBackdropColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB, 0.15)
+							tbar:SetBackdropColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB, 0.2)
 						end
 
 						if bar.enlarged then frame:Width(bar.owner.options.HugeWidth) else frame:Width(bar.owner.options.Width) end
@@ -191,7 +191,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				if not progress.styled then
 					progress:SetStatusBarTexture(C.media.texture)
 					progress:SetBackdrop(backdrop)
-					progress:SetBackdropColor(T.color.r, T.color.g, T.color.b, 0.15)
+					progress:SetBackdropColor(T.color.r, T.color.g, T.color.b, 0.2)
 					progress.styled = true
 				end
 				progress:ClearAllPoints()
