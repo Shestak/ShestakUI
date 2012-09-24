@@ -2699,6 +2699,8 @@ Filger_Spells = {
 			{spellID = 77606, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Necrotic Strike
 			{spellID = 73975, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Chains of Ice (root)
+			{spellID = 96294, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Chains of Ice
 			{spellID = 45524, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Chilblains
