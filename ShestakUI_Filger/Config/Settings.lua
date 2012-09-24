@@ -2970,6 +2970,10 @@ Filger_Spells = {
 			-- Arcane Torrent
 			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
 
+			-- Mogu'shan Vaults
+			-- Wildfire Spark (Feng the Accursed)
+			{spellID = 116784, unitID = "player", caster = "all", filter = "DEBUFF"},
+
 			-- Other
 			-- Rocket Fuel Leak
 			{spellID = 94794, unitID = "player", caster = "player", filter = "DEBUFF"},
