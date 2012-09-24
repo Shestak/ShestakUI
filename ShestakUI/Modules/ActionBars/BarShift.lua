@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Setup Stance Bar by Tukz
+--	StanceBar(by Tukz)
 ----------------------------------------------------------------------------------------
 local ShiftHolder = CreateFrame("Frame", "ShiftHolder", UIParent)
 if C.actionbar.stancebar_horizontal == true then
