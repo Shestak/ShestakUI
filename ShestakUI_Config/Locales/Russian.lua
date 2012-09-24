@@ -416,14 +416,8 @@ L_GUI_STATS_BAGS = "Сумки"
 
 -- Error options
 L_GUI_ERROR = "Ошибки боя"
-<<<<<<< HEAD
-L_GUI_ERROR_BLACK = "Спрятать ошибки из *черного* списка"
-L_GUI_ERROR_WHITE = "Показывать ошибки из *белого* списка"
-L_GUI_ERROR_HIDE_COMBAT = "Спрятать все ошибки во время боя"
-
--- edit by Oz of shestak. org --
-=======
 L_GUI_ERROR_BLACK = "Спрятать ошибки из 'черного' списка"
 L_GUI_ERROR_WHITE = "Показывать ошибки из 'белого' списка"
 L_GUI_ERROR_HIDE_COMBAT = "Спрятать все ошибки во время боя"
->>>>>>> 3d97ca9d8dc4ba67db15b568b551daae033aa72c
+
+-- edit by Oz of shestak. org --
