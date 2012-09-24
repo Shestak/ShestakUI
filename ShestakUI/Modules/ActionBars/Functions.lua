@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Pet and stance bars style function
+--	Pet/StanceBar style functions
 ----------------------------------------------------------------------------------------
 T.ShiftBarUpdate = function()
 	local numForms = GetNumShapeshiftForms()

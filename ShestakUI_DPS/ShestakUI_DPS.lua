@@ -66,9 +66,9 @@ local function Shared(self, unit)
 	self.Health.bg:SetAllPoints(self.Health)
 	self.Health.bg:SetTexture(C.media.texture)
 	if C.unitframe.own_color == true then
-		self.Health.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.25)
+		self.Health.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
 	else
-		self.Health.bg.multiplier = 0.25
+		self.Health.bg.multiplier = 0.2
 	end
 
 	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank")) then
@@ -112,7 +112,7 @@ local function Shared(self, unit)
 		self.Power.bg:SetAllPoints(self.Power)
 		self.Power.bg:SetTexture(C.media.texture)
 		self.Power.bg:SetAlpha(1)
-		self.Power.bg.multiplier = 0.3
+		self.Power.bg.multiplier = 0.2
 
 		self.Power.value = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
@@ -232,14 +232,14 @@ local function Shared(self, unit)
 			mhpb:Width(partytarget_width)
 		end
 		mhpb:SetStatusBarTexture(C.media.texture)
-		mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
+		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		ohpb:Point("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		ohpb:Point("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		ohpb:Width(mhpb:GetWidth())
 		ohpb:SetStatusBarTexture(C.media.texture)
-		ohpb:SetStatusBarColor(0, 1, 0, 0.25)
+		ohpb:SetStatusBarColor(0, 1, 0, 0.2)
 
 		self.HealPrediction = {
 			myBar = mhpb,

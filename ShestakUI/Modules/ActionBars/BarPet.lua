@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Setup PetActionBar by Tukz
+--	PetActionBar(by Tukz)
 ----------------------------------------------------------------------------------------
 -- Hide bar
 if C.actionbar.petbar_hide then PetActionBarAnchor:Hide() return end

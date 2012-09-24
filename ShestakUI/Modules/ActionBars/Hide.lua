@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ---------------------------------------------------------------------------
---	Hide all Blizzard stuff that we don't need by Tukz
+--	Hide Blizzard ActionBars stuff(by Tukz)
 ---------------------------------------------------------------------------
 do
 	MainMenuBar:SetScale(0.00001)

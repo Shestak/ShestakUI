@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Based on tullaRange(by Tuller)
+--	Out of range check(tullaRange by Tuller)
 ----------------------------------------------------------------------------------------
 -- Locals and speed
 local _G = _G

@@ -37,6 +37,7 @@ T.DiminishingSpells = function()
 		[50479] = {"silence"},		-- Nether Shock (Nether ray)
 		[55021] = {"silence"},		-- Improved Counterspell
 		[102051] = {"silence"},		-- Frostjaw
+		[116709] = {"silence"},		-- Spear Hand Strike
 		[31935] = {"silence"},		-- Avenger's Shield
 		[15487] = {"silence"},		-- Silence
 		[1330] = {"silence"},		-- Garrote
@@ -67,6 +68,7 @@ T.DiminishingSpells = function()
 		[118699] = {"fear"},		-- Fear
 		[5484] = {"fear"},			-- Howl of Terror
 		[6358] = {"fear"},			-- Seduction (Succubus)
+		[115268] = {"fear"},		-- Mesmerize (Shivarra)
 		[5246] = {"fear"},			-- Intimidating Shout (Main target)
 		[20511] = {"fear"},			-- Intimidating Shout (Secondary targets)
 
@@ -107,6 +109,7 @@ T.DiminishingSpells = function()
 
 		-- Random Stuns
 		[113953] = {"rndstun"},		-- Paralysis (Poison)
+		[85387] = {"rndstun"},		-- Aftermath
 		[118895] = {"rndstun"},		-- Dragon Roar
 
 		-- Roots
@@ -133,27 +136,26 @@ T.DiminishingSpells = function()
 
 		-- Misc
 		[33786] = {"cyclone"},		-- Cyclone
-		[19503] = {"scatter"},		-- Scatter Shot
 		[19185] = {"entrapment"},	-- Entrapment
-		[31661] = {"dragon"},		-- Dragon's Breath
+		[31661] = {"ds"},			-- Dragon's Breath
+		[19503] = {"ds"},			-- Scatter Shot
 		[605] = {"mind"},			-- Dominate Mind
 	}
 end
 
 T.DiminishingIcons = function()
 	return {
-		["ctrlstun"] = select(3, GetSpellInfo(44572)),
+		["ctrlstun"] = select(3, GetSpellInfo(408)),
 		["ctrlroot"] = select(3, GetSpellInfo(122)),
 		["cyclone"] = select(3, GetSpellInfo(33786)),
 		["disarm"] = select(3, GetSpellInfo(676)),
 		["disorient"] = select(3, GetSpellInfo(118)),
-		["dragon"] = select(3, GetSpellInfo(31661)),
+		["ds"] = select(3, GetSpellInfo(31661)),
 		["entrapment"] = select(3, GetSpellInfo(19185)),
 		["fear"] = select(3, GetSpellInfo(8122)),
 		["horror"] = select(3, GetSpellInfo(64044)),
 		["mind"] = select(3, GetSpellInfo(605)),
-		["rndstun"] = select(3, GetSpellInfo(64343)),
-		["scatter"] = select(3, GetSpellInfo(19503)),
+		["rndstun"] = select(3, GetSpellInfo(118895)),
 		["silence"] = select(3, GetSpellInfo(55021)),
 	}
 end

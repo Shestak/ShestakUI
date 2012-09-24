@@ -97,10 +97,13 @@ if C.chat.background == true then
 	chatbd:SetBackdropBorderColor(unpack(C["media"].border_color))
 	chatbd:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
 
-	local chattabs = CreateFrame("Frame", "ChatTabsPanel", UIParent)
-	chattabs:CreatePanel("Transparent", chatbd:GetWidth(), 20, "BOTTOM", chatbd, "TOP", 0, 3)
-	chattabs:SetBackdropBorderColor(unpack(C["media"].border_color))
-	chattabs:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
+	if C.chat.tabs_mouseover ~= true then
+		local chattabs = CreateFrame("Frame", "ChatTabsPanel", UIParent)
+		chattabs:CreatePanel("Transparent", chatbd:GetWidth(), 20, "BOTTOM", chatbd, "TOP", 0, 3)
+		chattabs:SetBackdropBorderColor(unpack(C["media"].border_color))
+		chattabs:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
+	end
+
 else
 	local leftpanel = CreateFrame("Frame", "LeftPanel", UIParent)
 	leftpanel:CreatePanel("ClassColor", 1, C.chat.height - 2, "BOTTOMLEFT", bottompanel, "LEFT", 0, 0)

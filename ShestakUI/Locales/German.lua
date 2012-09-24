@@ -3,7 +3,7 @@ if T.client ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for deDE client
---	Translation: Alwa, Baine, Chubidu, Sinaris, Vienchen
+--	Translation: Alwa, Baine, Chubidu, F5Hellbound, Sinaris, Vienchen
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " benutzte meinen Lichtbrunnen. "
@@ -28,10 +28,10 @@ L_ANNOUNCE_PC_MSG = "Pull %s in %s.."
 L_ANNOUNCE_PC_ABORTED = "Pull ABGEBROCHEN!"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_PRE = "%s has prepared a %s." -- Needs review
-L_ANNOUNCE_FP_PUT = "%s has put down a %s." -- Needs review
-L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review
-L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!" -- Needs review
+L_ANNOUNCE_FP_PRE = "%s bereitet ein %s vor."
+L_ANNOUNCE_FP_PUT = "%s stellt ein %s."
+L_ANNOUNCE_FP_CAST = "%s zaubert %s."
+L_ANNOUNCE_FP_CLICK = "%s zaubert %s. Klick!"
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
@@ -39,11 +39,17 @@ L_TOOLTIP_LOADING = "Lade..."
 L_TOOLTIP_ACH_STATUS = "Dein Fortschritt:"
 L_TOOLTIP_ACH_COMPLETE = "Dein Status: Fertig gestellt am "
 L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
+L_TOOLTIP_ACH_NOT_EAT = "nicht gegessen"
+L_TOOLTIP_ACH_EAT = "gegessen"
+L_TOOLTIP_ACH_NOT_DRINK = "nicht Konsumiert"
+L_TOOLTIP_ACH_DRINK = "Konsumiert"
+L_TOOLTIP_ACH_NOT_EQUIP = "nicht Ausgestattet"
+L_TOOLTIP_ACH_EQUIP = "Ausgestattet"
 L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
 L_TOOLTIP_WHO_TARGET = "Anvisiert von"
 L_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe:"
-L_TOOLTIP_INSPECT_OPEN = "Inspect Frame is open" -- Needs review
+L_TOOLTIP_INSPECT_OPEN = "Betrachtungsfenster offen"
 
 -- Misc
 L_MISC_UNDRESS = "Ausziehen"
@@ -54,11 +60,11 @@ L_MISC_ONECLICK_BID = "Shift-Right-Click um auf den ausgewählten Gegenstand ohn
 L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item without confirmation" -- Needs review
 L_MISC_UI_OUTDATED = "Deine Version von ShestakUI ist veraltet. Du kannst die aktuelle Version von www.shestak.org laden"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
-L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
-L_MISC_MOUNTS_GROUND = "Ground" -- Needs review
-L_MISC_MOUNTS_FLYING = "Flying" -- Needs review
-L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground" -- Needs review
-L_MISC_MOUNTS_SWIMMING = "Swimming" -- Needs review
+L_MISC_BINDER_OPEN = "Maus gebunden"
+L_MISC_MOUNTS_GROUND = "Boden"
+L_MISC_MOUNTS_FLYING = "Fliegen"
+L_MISC_MOUNTS_FLYINGGROUND = "Fliegen&Boden"
+L_MISC_MOUNTS_SWIMMING = "Schwimmen"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"
@@ -95,7 +101,7 @@ L_UF_WOTF_USED = "WdV benutzt: "
 -- Map
 L_MAP_CURSOR = "Mauszeiger: "
 L_MAP_BOUNDS = "Außerhalb der Begrenzung!"
-L_MAP_FOG = "Fog of War" -- Needs review
+L_MAP_FOG = "Nebel des Krieges"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Kalender"
@@ -104,7 +110,7 @@ L_MINIMAP_CALENDAR = "Kalender"
 L_ALOAD_RL = "Interface Neuladen"
 L_ALOAD_DEP = "Abhängigkeiten: "
 L_ALOAD_OP_DEP = "Optionale Abhängigkeit: "
-L_ALOAD_AUTHOR = "Author: "
+L_ALOAD_AUTHOR = "Autor: "
 L_ALOAD_PROFILES = "Profile"
 L_ALOAD_ENABLE_ALL = "Alle aktivieren"
 L_ALOAD_DISABLE_ALL = "Alle deaktivieren"
@@ -252,7 +258,7 @@ L_DATATEXT_CARTS_CONTROLLED = "Kontrollierte Loren:"
 L_INFO_ERRORS = "Noch keine Fehler."
 L_INFO_INVITE = "Gruppeneinladung akzeptiert von: "
 L_INFO_DUEL = "Duellanfrage Ignoriert von: "
-L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
+L_INFO_PET_DUEL = "Haustier Duellanfrage Ignoriert von: "
 L_INFO_DISBAND = "Löse Gruppe auf..."
 L_INFO_SETTINGS_DBM = "Gebe /settings dbm ein, um DBM Einstellungen zu laden."
 L_INFO_SETTINGS_DXE = "Gebe /settings dxe ein, um DXE Einstellungen zu laden."
@@ -275,8 +281,8 @@ L_POPUP_SETTINGS_DBM = "Die Position der DBM Elemente muss verändert werden."
 L_POPUP_SETTINGS_DXE = "Die Position der DXE Elemente muss verändert werden."
 L_POPUP_SETTINGS_BW = "Die Position der BigWigs Elemente muss verändert werden."
 L_POPUP_ARMORY = "Waffenkammer"
-L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
-L_POPUP_CURRENCY_CAP = "You get maximum value of" -- Needs review
+L_POPUP_TALENT_FIX = "Ein Fehler ist aufgetreten, der verhindert das Du jemanden betrachten kannst. Leider gibt es nichts was wir tun können, um das Problem zu beheben. Lade bitte Deine UI neu und versuche es erneut."
+L_POPUP_CURRENCY_CAP = "Maximalwert erreicht"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Willkommen bei ShestakUI "

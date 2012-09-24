@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Setup Main Action Bar by Tukz
+--	ActionBar(by Tukz)
 ----------------------------------------------------------------------------------------
 local bar = CreateFrame("Frame", "Bar1Holder", ActionBarAnchor, "SecureHandlerStateTemplate")
 bar:SetAllPoints(ActionBarAnchor)
