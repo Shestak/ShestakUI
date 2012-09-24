@@ -2829,6 +2829,8 @@ Filger_Spells = {
 			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Clash
 			{spellID = 122242, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Spear Hand Strike
+			{spellID = 116709, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Hammer of Justice
@@ -2923,6 +2925,8 @@ Filger_Spells = {
 			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mesmerize (Shivarra)
+			{spellID = 115268, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spell Lock (Felhunter)
@@ -3119,6 +3123,8 @@ Filger_Spells = {
 			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Clash
 			{spellID = 122242, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Spear Hand Strike
+			{spellID = 116709, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Divine Shield
@@ -3240,6 +3246,8 @@ Filger_Spells = {
 			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Mesmerize (Shivarra)
+			{spellID = 115268, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spell Lock (Felhunter)
