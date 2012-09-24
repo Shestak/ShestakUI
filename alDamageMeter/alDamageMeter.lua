@@ -2,7 +2,7 @@
 
 -- Config start
 local anchor = "BOTTOMRIGHT"
-local x, y = -27, 26
+local x, y = -23, 26
 local barheight = 12
 local spacing = 7
 local maxbars = 7
