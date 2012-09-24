@@ -180,7 +180,7 @@ L_GUI_THREAT_HIDE_SOLO = "Afficher la menace seulement en groupe/raid"
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"
 L_GUI_TOOLTIP_ENABLE = "Activer les tooltips"
-L_GUI_TOOLTIP_SHIFT = "Afficher le tooltip quand *MAJ* est appuyée"
+L_GUI_TOOLTIP_SHIFT = "Afficher le tooltip quand 'MAJ' est appuyée"
 L_GUI_TOOLTIP_CURSOR = "Tooltip sous le curseur"
 L_GUI_TOOLTIP_ICON = "Icone de l'objet dans le tooltip"
 L_GUI_TOOLTIP_HEALTH = "Valeur de point de vie"
