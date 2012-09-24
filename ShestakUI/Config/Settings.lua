@@ -221,7 +221,7 @@ C["pulsecooldown"] = {
 --	Threat options
 ----------------------------------------------------------------------------------------
 C["threat"] = {
-	["enable"] = true,							-- Enable threat meter
+	["enable"] = false,							-- Enable threat meter
 	["height"] = 12,							-- Bars height
 	["width"] = 180,							-- Bars width
 	["bar_rows"] = 7,							-- Number of bars
