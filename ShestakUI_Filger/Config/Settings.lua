@@ -468,6 +468,8 @@ Filger_Spells = {
 			{spellID = 22812, filter = "CD"},
 			-- Ironbark
 			{spellID = 102342, filter = "CD"},
+			-- Nature's Swiftness
+			{spellID = 132158, filter = "CD"},
 			-- Ursol's Vortex
 			{spellID = 102793, filter = "CD"},
 			-- Enrage
