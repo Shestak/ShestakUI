@@ -241,7 +241,7 @@ L_GUI_MAP_SCALE = "世界地图缩放"
 L_GUI_MAP_BG_STYLIZATION = "战场地图风格"
 L_GUI_MAP_BOSS_COUNT = "在世界地图显示boss数据"
 L_GUI_MAP_EXPLORE = "追踪世界探索者/博学者成就"
-L_GUI_MAP_FOG_OF_WAR = "Fog of war on World Map" -- Needs review
+L_GUI_MAP_FOG_OF_WAR = "在世界地图显示地图全亮选项"
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "开启拾取增强"
