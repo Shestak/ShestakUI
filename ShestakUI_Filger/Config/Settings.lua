@@ -3155,7 +3155,7 @@ Filger_Spells = {
 			-- Repentance
 			{spellID = 20066, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Blinding Light
-			{spellID = 105421, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 105421, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
 			{spellID = 31935, unitID = "target", caster = "all", filter = "DEBUFF"},
 
