@@ -199,10 +199,10 @@ local function InstallUI()
 			ChatFrame_AddMessageGroup(ChatFrame4, "MONEY")
 			ChatFrame_AddMessageGroup(ChatFrame4, "SKILL")	
 		elseif T.coauthor == true then
-			FCF_OpenNewWindow("Spam")
+			FCF_OpenNewWindow(CHANNELS)
 			FCF_SetLocked(ChatFrame4, 1)
 			FCF_DockFrame(ChatFrame4)
-			FCF_OpenNewWindow("Whisp")
+			FCF_OpenNewWindow(WHISPER)
 			FCF_SetLocked(ChatFrame5, 1)
 			FCF_DockFrame(ChatFrame5)
 			
@@ -210,7 +210,6 @@ local function InstallUI()
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "LOOT")
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "CURRENCY")
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "CHANNEL")
-			ChatFrame_RemoveMessageGroup(ChatFrame1, "YELL")
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "MONEY")
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "COMBAT_FACTION_CHANGE")
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "SKILL")
@@ -219,7 +218,7 @@ local function InstallUI()
 			ChatFrame_RemoveChannel(ChatFrame1, "ОборонаЛокальный")
 			ChatFrame_RemoveChannel(ChatFrame1, "ПоискСпутников")
 
-			-- Setup spam tab
+			-- Setup channels tab
 			ChatFrame_RemoveAllMessageGroups(ChatFrame4)
 			ChatFrame_AddMessageGroup(ChatFrame4, "YELL")
 			ChatFrame_AddMessageGroup(ChatFrame4, "CHANNEL")
@@ -230,6 +229,7 @@ local function InstallUI()
 		
 			-- Setup whisper tab
 			ChatFrame_RemoveAllMessageGroups(ChatFrame5)
+			ChatFrame_AddMessageGroup(ChatFrame5, "SAY")
 			ChatFrame_AddMessageGroup(ChatFrame5, "GUILD")
 			ChatFrame_AddMessageGroup(ChatFrame5, "OFFICER")
 			ChatFrame_AddMessageGroup(ChatFrame5, "WHISPER")
