@@ -259,7 +259,8 @@ local function SetupChatPosAndFont(self)
 				chat:Point("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5] + 4)
 			else
 				chat:Point("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5])
-			end			
+			end
+			FCF_SavePositionAndDimensions(chat)			
 		end
 	end
 
