@@ -485,7 +485,6 @@ if T.coauthor == true then
 	C["announcements"].lightwell = true
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
-	C["automation"].skip_cinematic = true
 	C["automation"].auto_role = true
 	C["automation"].cancel_bad_buffs = true
 	C["skins"].blizzard_frames = true
@@ -511,6 +510,9 @@ if T.coauthor == true then
 	C["unitframe"].plugins_smooth_bar = true
 	C["unitframe"].plugins_diminishing = true
 	C["raidframe"].icons_role = true
+	if T.name == "Занштек" then
+		C["automation"].skip_cinematic = true
+	end
 	if T.class == "WARRIOR" then
 		C["actionbar"].stancebar_mouseover = false
 	end
