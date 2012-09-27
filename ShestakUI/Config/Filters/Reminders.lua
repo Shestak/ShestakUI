@@ -254,6 +254,16 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["combat"] = true,
 				["instance"] = true,
+				["spec"] = 3,
+				["pvp"] = true
+			},
+			[2] = {	-- Inner Fire/Will group
+				["spells"] = {
+					588,	-- Inner Fire
+					73413,	-- Inner Will
+				},
+				["combat"] = true,
+				["instance"] = true,
 				["pvp"] = true
 			},
 		},
