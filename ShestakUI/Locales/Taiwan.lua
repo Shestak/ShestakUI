@@ -39,12 +39,12 @@ L_TOOLTIP_LOADING = "讀取中..."
 L_TOOLTIP_ACH_STATUS = "你的狀態:"
 L_TOOLTIP_ACH_COMPLETE = "你的狀態: 完成 "
 L_TOOLTIP_ACH_INCOMPLETE = "你的狀態: 未完成"
-L_TOOLTIP_ACH_NOT_EAT = "Not Eaten" -- Needs review
-L_TOOLTIP_ACH_EAT = "Eaten" -- Needs review
-L_TOOLTIP_ACH_NOT_DRINK = "Not Consumed" -- Needs review
-L_TOOLTIP_ACH_DRINK = "Consumed" -- Needs review
-L_TOOLTIP_ACH_NOT_EQUIP = "Not Equipped" -- Needs review
-L_TOOLTIP_ACH_EQUIP = "Equipped" -- Needs review
+L_TOOLTIP_ACH_NOT_EAT = "未食用"
+L_TOOLTIP_ACH_EAT = "已食用"
+L_TOOLTIP_ACH_NOT_DRINK = "未飲用"
+L_TOOLTIP_ACH_DRINK = "已飲用"
+L_TOOLTIP_ACH_NOT_EQUIP = "未裝備"
+L_TOOLTIP_ACH_EQUIP = "已裝備"
 L_TOOLTIP_SPELL_ID = "法術ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
 L_TOOLTIP_WHO_TARGET = "以其為目標的"
@@ -54,7 +54,7 @@ L_TOOLTIP_INSPECT_OPEN = "檢查框體已打開"
 -- Misc
 L_MISC_UNDRESS = "無裝備"
 L_MISC_DRINKING = " 進食中..."
-L_MISC_BUY_STACK = "Alt-右鍵點擊購買一疊"
+L_MISC_BUY_STACK = "Alt+右鍵點擊購買一疊"
 L_MISC_ONECLICK_BUYOUT = "Shift+右鍵,不彈出確認窗口直接購買"
 L_MISC_ONECLICK_BID = "Shift+右鍵,不彈出確認窗口直接競標"
 L_MISC_ONECLICK_CANCEL = "Shift+右鍵,不彈出確認窗口直接取消選擇的物品"
@@ -101,7 +101,7 @@ L_UF_WOTF_USED = "亡靈意志已使用: "
 -- Map
 L_MAP_CURSOR = "鼠標: "
 L_MAP_BOUNDS = "超出範圍"
-L_MAP_FOG = "Fog of War" -- Needs review
+L_MAP_FOG = "地圖全亮"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日曆"
