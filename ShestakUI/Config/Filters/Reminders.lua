@@ -250,7 +250,7 @@ if C.reminder.solo_buffs_enable == true then
 			[1] = {	-- Inner Fire/Will group
 				["spells"] = {
 					588,	-- Inner Fire
-					73413,	-- Inner Will
+					--73413,	-- Inner Will
 				},
 				["combat"] = true,
 				["instance"] = true,
