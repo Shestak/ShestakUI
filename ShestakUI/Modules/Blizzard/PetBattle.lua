@@ -235,22 +235,30 @@ bar:SetSize(((C.actionbar.button_size * 1.5) * 6) + (C.actionbar.button_space * 
 bar:EnableMouse(true)
 bar:SetFrameStrata("HIGH")
 bar:SetPoint(unpack(C.position.bottom_bars))
-bar:RegisterEvent("PET_BATTLE_OPENING_DONE")
+bar:RegisterEvent("PET_BATTLE_OPENING_START")
 bar:RegisterEvent("PET_BATTLE_CLOSE")
 bar:Hide()
 bar:SetScript("OnEvent", function(self, event)
-	if event == "PET_BATTLE_OPENING_DONE" then
+	if event == "PET_BATTLE_OPENING_START" then
 		if C.unitframe.enable == true then
 			oUF_Player:SetAlpha(0)
-			oUF_Pet:SetAlpha(0)
-			oUF_Focus:SetAlpha(0)
+			if C.unitframe.show_pet == true then
+				oUF_Pet:SetAlpha(0)
+			end
+			if C.unitframe.show_focus == true then
+				oUF_Focus:SetAlpha(0)
+			end
 		end
 		self:Show()
 	else
 		if C.unitframe.enable == true then
 			oUF_Player:SetAlpha(1)
-			oUF_Pet:SetAlpha(1)
-			oUF_Focus:SetAlpha(1)
+			if C.unitframe.show_pet == true then
+				oUF_Pet:SetAlpha(1)
+			end
+			if C.unitframe.show_focus == true then
+				oUF_Focus:SetAlpha(1)
+			end
 		end
 		self:Hide()
 	end

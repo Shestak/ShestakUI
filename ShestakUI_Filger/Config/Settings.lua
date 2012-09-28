@@ -468,6 +468,8 @@ Filger_Spells = {
 			{spellID = 22812, filter = "CD"},
 			-- Ironbark
 			{spellID = 102342, filter = "CD"},
+			-- Nature's Swiftness
+			{spellID = 132158, filter = "CD"},
 			-- Ursol's Vortex
 			{spellID = 102793, filter = "CD"},
 			-- Enrage
@@ -1243,8 +1245,6 @@ Filger_Spells = {
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Alabaster Shield
-			{spellID = 121467, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Purpose
 			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
@@ -3155,7 +3155,7 @@ Filger_Spells = {
 			-- Repentance
 			{spellID = 20066, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Blinding Light
-			{spellID = 105421, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 105421, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
 			{spellID = 31935, unitID = "target", caster = "all", filter = "DEBUFF"},
 
