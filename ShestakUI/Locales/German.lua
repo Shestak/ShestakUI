@@ -29,9 +29,9 @@ L_ANNOUNCE_PC_ABORTED = "Pull ABGEBROCHEN!"
 
 -- Announce feasts and portals
 L_ANNOUNCE_FP_PRE = "%s bereitet ein %s vor."
-L_ANNOUNCE_FP_PUT = "%s stellt ein %s."
-L_ANNOUNCE_FP_CAST = "%s zaubert %s."
-L_ANNOUNCE_FP_CLICK = "%s zaubert %s. Klick!"
+L_ANNOUNCE_FP_PUT = "%s stellt ein %s auf."
+L_ANNOUNCE_FP_CAST = "%s zaubert ein %s."
+L_ANNOUNCE_FP_CLICK = "%s zaubert ein %s. Klick!"
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
@@ -59,7 +59,7 @@ L_MISC_ONECLICK_BUYOUT = "Shift-Right-Click um den ausgewählten Gegenstand ohne
 L_MISC_ONECLICK_BID = "Shift-Right-Click um auf den ausgewählten Gegenstand ohne Bestätigung zu bieten" -- Needs review
 L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item without confirmation" -- Needs review
 L_MISC_UI_OUTDATED = "Deine Version von ShestakUI ist veraltet. Du kannst die aktuelle Version von www.shestak.org laden"
-L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
+L_MISC_HEADER_MARK = "Mausdrüber Raid Icon"
 L_MISC_BINDER_OPEN = "Maus gebunden"
 L_MISC_MOUNTS_GROUND = "Boden"
 L_MISC_MOUNTS_FLYING = "Fliegen"
@@ -136,7 +136,7 @@ L_CHAT_RAID_WARNING = "RW"
 L_CHAT_BATTLEGROUND = "BG"
 L_CHAT_BATTLEGROUND_LEADER = "BGL"
 L_CHAT_OFFICER = "O"
-L_CHAT_PET_BATTLE = "PB" -- Needs review
+L_CHAT_PET_BATTLE = "PB"
 L_CHAT_COME_ONLINE = "ist jetzt |cff298F00online|r."
 L_CHAT_GONE_OFFLINE = "ist jetzt |cffff0000offline|r."
 
@@ -407,7 +407,7 @@ L_SLASHCMD_HELP = {
 }
 
 -- ExploreMap
-L_EXTRA_EXPLORED = "Explored: " -- Needs review
+L_EXTRA_EXPLORED = "Erforscht: "
 L_EXTRA_ZONEACHID = {
 	-- http://www.wowhead.com/achievement=*
 	-- e(X)plore achievement id, (Q)uest achievement id
