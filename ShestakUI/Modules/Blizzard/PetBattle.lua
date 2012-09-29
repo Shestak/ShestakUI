@@ -491,8 +491,10 @@ hooksecurefunc("PetBattleUnitFrame_UpdateDisplay", function(self)
 
 	-- Color the non-active Health Bars with the Quality color
 	if self.ActualHealthBar and not isTooltip then
-		--if self.petIndex ~= 1 then
+		if self.petIndex ~= C_PetBattles.GetActivePet(self.petOwner) then
 			self.ActualHealthBar:SetVertexColor(r, g, b)
-		--end
+		else
+			self.ActualHealthBar:SetVertexColor(0, 1, 0)
+		end
 	end
 end)
