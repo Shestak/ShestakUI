@@ -130,8 +130,9 @@ elseif T.class == "PALADIN" then
 		T.aoespam[82327] = true		-- Holy Radiance
 		T.aoespam[121129] = true	-- Daybreak
 		T.aoespam[114163] = true	-- Eternal Flame
-		T.aoespam[119952] = true	-- Arcing Light
 		T.aoespam[114852] = true	-- Holy Prism
+		T.aoespam[119952] = true	-- Arcing Light
+		T.aoespam[114917] = true	-- Stay of Execution
 		-- Damaging spells
 		T.aoespam[81297] = true		-- Consecration
 		T.aoespam[119072] = true	-- Holy Wrath
@@ -140,9 +141,11 @@ elseif T.class == "PALADIN" then
 		T.aoespam[42463] = true		-- Seal of Truth
 		T.aoespam[101423] = true	-- Seal of Righteousness
 		T.aoespam[88263] = true		-- Hammer of the Righteous
-		T.aoespam[31935] = true		-- Avenger's Shield
-		T.aoespam[114916] = true	-- Execution Sentence
 		T.aoespam[96172] = true		-- Hand of Light (Mastery)
+		T.aoespam[31935] = true		-- Avenger's Shield
+		T.aoespam[114871] = true	-- Holy Prism
+		T.aoespam[114919] = true	-- Arcing Light
+		T.aoespam[114916] = true	-- Execution Sentence
 	end
 	if C.combattext.healing then
 		T.healfilter[115547] = true	-- Glyph of Avenging Wrath
