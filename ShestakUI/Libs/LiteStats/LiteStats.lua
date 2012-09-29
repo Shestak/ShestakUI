@@ -343,7 +343,7 @@ if memory.enabled then
 				local before = gcinfo()
 				collectgarbage()
 				UpdateMemUse()
-				print(format("|cff66C6FF%s:|r %s", L_STATS_GARBAGE_COLLECTED,formatmem(before - gcinfo())))
+				print(format("|cff66C6FF%s:|r %s", L_STATS_GARBAGE_COLLECTED, formatmem(before - gcinfo())))
 				self.timer, self.text.elapsed = nil, 5
 				self:GetScript("OnEnter")(self)
 			elseif button == "LeftButton" then

@@ -17,6 +17,16 @@ local function LoadSkin()
 	TradeSkillRankFrame:CreateBackdrop("Overlay")
 	TradeSkillRankFrame:SetStatusBarTexture(C.media.texture)
 
+	for i = 1, TRADE_SKILLS_DISPLAYED do
+		local bar = _G["TradeSkillSkill"..i.."SubSkillRankBar"]
+		if bar then
+			bar:StripTextures()
+			bar:CreateBackdrop("Overlay")
+			bar:SetStatusBarTexture(C.media.texture)
+			bar:SetHeight(9)
+		end
+	end
+
 	TradeSkillFilterButton:StripTextures(true)
 	TradeSkillFilterButton:SkinButton(true)
 	TradeSkillCreateButton:SkinButton(true)

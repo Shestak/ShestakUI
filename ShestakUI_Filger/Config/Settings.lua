@@ -938,6 +938,8 @@ Filger_Spells = {
 			{spellID = 11958, filter = "CD"},
 			-- Mirror Image
 			{spellID = 55342, filter = "CD"},
+			-- Alter Time
+			{spellID = 108978, filter = "CD"},
 			-- Ice Block
 			{spellID = 45438, filter = "CD"},
 			-- Invisibility
