@@ -389,6 +389,17 @@ hooksecurefunc("PetBattleFrame_UpdateActionBarLayout", function(self)
 end)
 
 -- Tooltips skinning
+BattlePetTooltip.Background:SetTexture(nil)
+BattlePetTooltip.BorderTop:SetTexture(nil)
+BattlePetTooltip.BorderTopLeft:SetTexture(nil)
+BattlePetTooltip.BorderTopRight:SetTexture(nil)
+BattlePetTooltip.BorderLeft:SetTexture(nil)
+BattlePetTooltip.BorderRight:SetTexture(nil)
+BattlePetTooltip.BorderBottom:SetTexture(nil)
+BattlePetTooltip.BorderBottomRight:SetTexture(nil)
+BattlePetTooltip.BorderBottomLeft:SetTexture(nil)
+BattlePetTooltip:SetTemplate("Transparent")
+
 PetBattlePrimaryAbilityTooltip.Delimiter1:SetTexture(nil)
 PetBattlePrimaryAbilityTooltip.Delimiter2:SetTexture(nil)
 PetBattlePrimaryAbilityTooltip.Background:SetTexture(nil)
