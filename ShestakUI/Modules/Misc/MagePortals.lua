@@ -14,7 +14,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[7] = {53140,53142},	-- Dalaran
 	[8] = {88344,88346},	-- Tol Barad
 	[9] = {132621,132620},	-- Vale of Eternal Blossoms
-} or { -- ALLIANCE
+} or { -- Alliance
 	[1] = {3561,10059},		-- Stormwind
 	[2] = {3562,11416},		-- Ironforge
 	[3] = {3565,11419},		-- Darnassus
