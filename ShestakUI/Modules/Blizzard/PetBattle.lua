@@ -344,7 +344,7 @@ local function SkinPetButton(self)
 		self.HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 		self.HotKey:Width((C.actionbar.button_size * 1.5) - 1)
 	else
-		hotkey:Kill()
+		self.HotKey:Kill()
 	end
 end
 
