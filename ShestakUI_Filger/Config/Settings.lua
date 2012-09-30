@@ -890,6 +890,8 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Remove Curse
+			{spellID = 475, filter = "CD"},
 			-- Frostjaw
 			{spellID = 102051, filter = "CD"},
 			-- Counterspell
@@ -2927,6 +2929,8 @@ Filger_Spells = {
 			{spellID = 5484, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
 			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Sleep
+			{spellID = 104045, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mesmerize (Shivarra)
@@ -3252,6 +3256,8 @@ Filger_Spells = {
 			{spellID = 5484, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
 			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Sleep
+			{spellID = 104045, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mesmerize (Shivarra)
