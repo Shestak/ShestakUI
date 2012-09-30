@@ -277,7 +277,8 @@ local function InstallUI()
 	SavedOptionsPerChar.AutoInvite = false
 	SavedOptionsPerChar.BarsLocked = false
 	SavedOptionsPerChar.SplitBars = true
-	SavedOptionsPerChar.LootFrameIsShown = true
+	SavedOptionsPerChar.LootFrame = true
+	SavedOptionsPerChar.DamageMeter = false
 	SavedOptionsPerChar.RightBars = C.actionbar.rightbars
 	SavedOptionsPerChar.BottomBars = C.actionbar.bottombars
 
