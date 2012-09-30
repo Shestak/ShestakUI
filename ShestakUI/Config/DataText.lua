@@ -136,7 +136,7 @@ LPSTAT_CONFIG = {
 	},
 -- Top block
 	Stats = {
-		enabled = true,
+		enabled = C.toppanel.enable,
 			-- Available stat tags...
 			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery% [mastery]				Expertise% [expertise]
 			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
@@ -146,8 +146,8 @@ LPSTAT_CONFIG = {
 			--   Armor Value [armor]			Resilience [resilience]
 		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
 		spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%", -- Spec #2 string
-		anchor_frame =  "MultiBarBottomRightButton12", anchor_to = "bottomleft", anchor_from = "bottomright",
-		x_off = 5, y_off = -1,
+		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
+		x_off = -20, y_off = 6,
 	},
 	Bags = {
 		enabled = C.toppanel.enable,
