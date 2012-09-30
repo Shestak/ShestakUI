@@ -765,6 +765,8 @@ Filger_Spells = {
 			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Greater Invisibility
 			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Invoker's Energy
+			{spellID = 116257, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Icy Veins
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Power
