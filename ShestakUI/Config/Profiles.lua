@@ -66,7 +66,6 @@ if T.author == true then
 	C["automation"].skip_cinematic = true
 	C["automation"].auto_role = true
 	C["automation"].tab_binder = true
-	C["automation"].currency_cap = true
 	C["skins"].blizzard_frames = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].dk_runes = false
