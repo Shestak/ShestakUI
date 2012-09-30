@@ -13,6 +13,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[6] = {35715,35717},	-- Shattrath
 	[7] = {53140,53142},	-- Dalaran
 	[8] = {88344,88346},	-- Tol Barad
+	[9] = {132621,132620},	-- Vale of Eternal Blossoms
 } or { -- ALLIANCE
 	[1] = {3561,10059},		-- Stormwind
 	[2] = {3562,11416},		-- Ironforge
@@ -22,6 +23,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[6] = {33690,33691},	-- Shattrath
 	[7] = {53140,53142},	-- Dalaran
 	[8] = {88342,88345},	-- Tol Barad
+	[9] = {132621,132620},	-- Vale of Eternal Blossoms
 }
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)
