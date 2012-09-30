@@ -112,7 +112,6 @@ local function LoadSkin()
 	hooksecurefunc("LFDQueueFrameRandom_UpdateFrame", function()
 		local dungeonID = LFDQueueFrame.type
 		if type(dungeonID) == "string" then return end
-		local _, _, _, _, _, numRewards = GetLFGDungeonRewards(dungeonID)
 
 		for i = 1, LFD_MAX_REWARDS do
 			local button = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i]
@@ -125,16 +124,19 @@ local function LoadSkin()
 			if button then
 				local texture = _G[button:GetName().."IconTexture"]:GetTexture()
 				button:StripTextures()
+
 				icon:SetTexture(texture)
 				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				icon:Point("TOPLEFT", 2, -2)
 				icon:SetDrawLayer("OVERLAY")
+
 				count:SetDrawLayer("OVERLAY")
 
 				if not button.backdrop then
 					button:CreateBackdrop("Default")
 					button.backdrop:Point("TOPLEFT", icon, "TOPLEFT", -2, 2)
 					button.backdrop:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+
 					icon:SetParent(button.backdrop)
 					icon.SetPoint = T.dummy
 
@@ -176,6 +178,7 @@ local function LoadSkin()
 				button:CreateBackdrop("Default")
 				button.backdrop:Point("TOPLEFT", icon, "TOPLEFT", -2, 2)
 				button.backdrop:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+
 				icon:SetParent(button.backdrop)
 				icon.SetPoint = T.dummy
 
@@ -185,6 +188,35 @@ local function LoadSkin()
 			end
 		end
 	end
+
+	hooksecurefunc("ScenarioQueueFrameRandom_UpdateFrame", function()
+		for i = 1, 2 do
+			local button = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i]
+			local icon = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i.."IconTexture"]
+			local count = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i.."Count"]
+
+			if button then
+				button:StripTextures()
+
+				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				icon:SetDrawLayer("OVERLAY")
+
+				count:SetDrawLayer("OVERLAY")
+
+				if not button.backdrop then
+					button:CreateBackdrop("Default")
+					button.backdrop:Point("TOPLEFT", icon, "TOPLEFT", -2, 2)
+					button.backdrop:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+
+					icon:SetParent(button.backdrop)
+
+					if count then
+						count:SetParent(button.backdrop)
+					end
+				end
+			end
+		end
+	end)
 
 	hooksecurefunc("LFGDungeonListButton_SetDungeon", function(button, dungeonID)
 		T.SkinCheckBox(button.enableButton)
