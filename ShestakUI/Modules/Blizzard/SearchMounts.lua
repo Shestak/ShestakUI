@@ -14,6 +14,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			["flying"] = true,
 			["ground"] = true,
 			["combined"] = true,
+			["unknown"] = true,
 		}
 
 		local Search = CreateFrame("EditBox", "MountSearch", MountJournal, "SearchBoxTemplate")
@@ -32,7 +33,9 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		end)
 
 		local mounts = {}
-		local function BuildMounts()
+		local function BuildMounts(self, event)
+			if event and event ~= "COMPANION_LEARNED" then return end
+
 			for index = 1, GetNumCompanions("MOUNT") do
 				local id, name, _, _, _, flag = GetCompanionInfo("MOUNT", index)
 
@@ -44,6 +47,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 					mounts[index] = "ground"
 				elseif flag == 31 then
 					mounts[index] = "combined"
+				else
+					mounts[index] = "unknown"
 				end
 
 				if id == 34187 then
@@ -179,6 +184,15 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			info.func = function(...)
 				local _, _, _, enabled = ...
 				filterFlags.swimming = enabled
+				MountJournal_UpdateMountList()
+			end
+			UIDropDownMenu_AddButton(info)
+
+			info.text = UNKNOWN
+			info.checked = filterFlags.unknown
+			info.func = function(...)
+				local _, _, _, enabled = ...
+				filterFlags.unknown = enabled
 				MountJournal_UpdateMountList()
 			end
 			UIDropDownMenu_AddButton(info)
