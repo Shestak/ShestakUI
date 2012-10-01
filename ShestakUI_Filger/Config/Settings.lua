@@ -765,6 +765,8 @@ Filger_Spells = {
 			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Greater Invisibility
 			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Invoker's Energy
+			{spellID = 116257, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Icy Veins
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Power
@@ -888,6 +890,8 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.cooldown)},
 
 			-- Self
+			-- Remove Curse
+			{spellID = 475, filter = "CD"},
 			-- Frostjaw
 			{spellID = 102051, filter = "CD"},
 			-- Counterspell
@@ -938,6 +942,8 @@ Filger_Spells = {
 			{spellID = 11958, filter = "CD"},
 			-- Mirror Image
 			{spellID = 55342, filter = "CD"},
+			-- Alter Time
+			{spellID = 108978, filter = "CD"},
 			-- Ice Block
 			{spellID = 45438, filter = "CD"},
 			-- Invisibility
@@ -2923,6 +2929,8 @@ Filger_Spells = {
 			{spellID = 5484, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
 			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Sleep
+			{spellID = 104045, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mesmerize (Shivarra)
@@ -3248,6 +3256,8 @@ Filger_Spells = {
 			{spellID = 5484, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
 			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Sleep
+			{spellID = 104045, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mesmerize (Shivarra)

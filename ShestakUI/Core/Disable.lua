@@ -126,3 +126,7 @@ if IsAddOnLoaded("PhoenixStyle") then
 	C.announcements.toy_train = false
 	C.announcements.pull_countdown = false
 end
+
+if IsAddOnLoaded("Overachiever") then
+	C.tooltip.achievements = false
+end

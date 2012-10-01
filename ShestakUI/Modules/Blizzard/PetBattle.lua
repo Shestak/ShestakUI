@@ -229,6 +229,7 @@ FRAMELOCK_STATES.PETBATTLES["Bar3Holder"] = "hidden"
 FRAMELOCK_STATES.PETBATTLES["Bar4Holder"] = "hidden"
 FRAMELOCK_STATES.PETBATTLES["Bar5Holder"] = "hidden"
 FRAMELOCK_STATES.PETBATTLES["ShiftHolder"] = "hidden"
+FRAMELOCK_STATES.PETBATTLES["MicroAnchor"] = "hidden"
 
 local bar = CreateFrame("Frame", "PetBattleBarHolder", UIParent)
 bar:SetSize(((C.actionbar.button_size * 1.5) * 6) + (C.actionbar.button_space * 5), C.actionbar.button_size * 1.5)
@@ -343,7 +344,7 @@ local function SkinPetButton(self)
 		self.HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 		self.HotKey:Width((C.actionbar.button_size * 1.5) - 1)
 	else
-		hotkey:Kill()
+		self.HotKey:Kill()
 	end
 end
 
@@ -389,6 +390,17 @@ hooksecurefunc("PetBattleFrame_UpdateActionBarLayout", function(self)
 end)
 
 -- Tooltips skinning
+BattlePetTooltip.Background:SetTexture(nil)
+BattlePetTooltip.BorderTop:SetTexture(nil)
+BattlePetTooltip.BorderTopLeft:SetTexture(nil)
+BattlePetTooltip.BorderTopRight:SetTexture(nil)
+BattlePetTooltip.BorderLeft:SetTexture(nil)
+BattlePetTooltip.BorderRight:SetTexture(nil)
+BattlePetTooltip.BorderBottom:SetTexture(nil)
+BattlePetTooltip.BorderBottomRight:SetTexture(nil)
+BattlePetTooltip.BorderBottomLeft:SetTexture(nil)
+BattlePetTooltip:SetTemplate("Transparent")
+
 PetBattlePrimaryAbilityTooltip.Delimiter1:SetTexture(nil)
 PetBattlePrimaryAbilityTooltip.Delimiter2:SetTexture(nil)
 PetBattlePrimaryAbilityTooltip.Background:SetTexture(nil)
@@ -491,8 +503,10 @@ hooksecurefunc("PetBattleUnitFrame_UpdateDisplay", function(self)
 
 	-- Color the non-active Health Bars with the Quality color
 	if self.ActualHealthBar and not isTooltip then
-		--if self.petIndex ~= 1 then
+		if self.petIndex ~= C_PetBattles.GetActivePet(self.petOwner) then
 			self.ActualHealthBar:SetVertexColor(r, g, b)
-		--end
+		else
+			self.ActualHealthBar:SetVertexColor(0, 1, 0)
+		end
 	end
 end)
