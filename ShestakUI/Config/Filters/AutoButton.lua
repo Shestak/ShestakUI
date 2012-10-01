@@ -16,6 +16,9 @@ T.ABItems = {
 	71978,	-- Darkmoon Bandage
 	69981,	-- Ironforge Rations
 	62829,	-- Magnetized Scrap Collector
+	79885,	-- Barrel of Fireworks
+	80599,	-- Goblin Fishing Bomb
+	87841,	-- Korven's Experimental Grenades
 	-- Other
 	39213,	-- Massive Seaforium Charge (Strand of the Ancients)
 	46847,	-- Seaforium Bombs (Isle of Conquest)
