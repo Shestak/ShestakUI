@@ -204,6 +204,7 @@ local function LoadSkin()
 	for i = 1, #COMBAT_CONFIG_TABS do
 		local tab = _G["CombatConfigTab"..i]
 		if tab then
+			tab:StripTextures()
 			tab:SkinButton()
 			tab:SetHeight(tab:GetHeight() - 9)
 			tab:ClearAllPoints()
@@ -220,6 +221,8 @@ local function LoadSkin()
 	_G["CombatConfigSettingsNameEditBox"]:Height(_G["CombatConfigSettingsNameEditBox"]:GetHeight() - 2)
 	T.SkinNextPrevButton(_G["ChatConfigMoveFilterUpButton"], true)
 	T.SkinNextPrevButton(_G["ChatConfigMoveFilterDownButton"], true)
+	_G["ChatConfigMoveFilterUpButton"]:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up")
+	_G["ChatConfigMoveFilterUpButton"]:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down")
 	_G["ChatConfigFrameDefaultButton"]:Width(125)
 	_G["CombatLogDefaultButton"]:Width(125)
 
