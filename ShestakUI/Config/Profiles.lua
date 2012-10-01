@@ -159,7 +159,6 @@ if T.oz == true then
 	C["threat"].width = 128
 	C["threat"].bar_rows = 3
 	C["actionbar"].hotkey = false
-	C["aura"].focus_debuffs = true
 	C["aura"].fot_debuffs = true
 	C["aura"].pet_debuffs = true
 	C["aura"].tot_debuffs = true
@@ -244,7 +243,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["actionbar"].rightbars = 2
 	C["actionbar"].stancebar_mouseover = false
 	C["aura"].player_buff_size = 35
-	C["aura"].focus_debuffs = true
 	C["aura"].tot_debuffs = true
 	C["aura"].classcolor_border = true
 	C["unitframe"].bar_color_value = true
@@ -375,13 +373,13 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["chat"].tabs_mouseover = false
 	C["bag"].button_size = 35
 	C["minimap"].tracking_icon = true
+	C["nameplate"].track_auras = true
 	C["actionbar"].button_size = 35
 	C["actionbar"].split_bars = true
 	C["actionbar"].toggle_mode = false
 	C["actionbar"].rightbars_mouseover = false
 	C["actionbar"].micromenu = true
 	C["aura"].player_buff_size = 35	
-	C["aura"].focus_debuffs = true
 	C["aura"].pet_debuffs = true
 	C["aura"].player_aura_only = true
 	C["unitframe"].own_color = false
