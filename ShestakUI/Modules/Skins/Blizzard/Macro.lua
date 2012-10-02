@@ -87,7 +87,7 @@ local function LoadSkin()
 
 	-- Moving text
 	MacroFrameCharLimitText:ClearAllPoints()
-	MacroFrameCharLimitText:Point("BOTTOM", MacroFrameTextBackground, 0, -70)
+	MacroFrameCharLimitText:Point("BOTTOM", MacroFrameTextBackground, 0, -12)
 
 	-- Skin all buttons
 	for i = 1, MAX_ACCOUNT_MACROS do

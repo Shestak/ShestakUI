@@ -19,14 +19,19 @@ T.ABItems = {
 	79885,	-- Barrel of Fireworks
 	80599,	-- Goblin Fishing Bomb
 	87841,	-- Korven's Experimental Grenades
-	-- Other
+	82807,	-- Shado-Pan Dragon Gun
+	85261,	-- Shado-Pan Torch
+	79344,	-- Pomharvest Firework
+	-- PvP
 	39213,	-- Massive Seaforium Charge (Strand of the Ancients)
 	46847,	-- Seaforium Bombs (Isle of Conquest)
 	47030,	-- Huge Seaforium Bombs (Isle of Conquest)
 	42986,	-- The RP-GG (Wintergrasp)
-	37860,	-- Ruby Drake (Occulus)
-	37815,	-- Emerald Drake (Occulus)
-	37859,	-- Amber Essence (Occulus)
+	-- Occulus
+	37860,	-- Ruby Drake
+	37815,	-- Emerald Drake
+	37859,	-- Amber Essence
+	-- Other
 	45072,	-- Brightly Colored Egg (Noblegarden)
 }
 
