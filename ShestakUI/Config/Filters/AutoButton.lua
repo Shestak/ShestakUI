@@ -19,6 +19,9 @@ T.ABItems = {
 	79885,	-- Barrel of Fireworks
 	80599,	-- Goblin Fishing Bomb
 	87841,	-- Korven's Experimental Grenades
+	82807,	-- Shado-Pan Dragon Gun
+	85261,	-- Shado-Pan Torch
+	79344,	-- Pomharvest Firework
 	-- Other
 	39213,	-- Massive Seaforium Charge (Strand of the Ancients)
 	46847,	-- Seaforium Bombs (Isle of Conquest)
