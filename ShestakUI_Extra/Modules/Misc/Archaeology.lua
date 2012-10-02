@@ -40,7 +40,7 @@ function stArch:OnLoad(self)
 	progressBars["frame"]:SetWidth(self:GetWidth() - 8)
 	progressBars["frame"]:SetPoint("TOP", stArch["title"], "BOTTOM", 0, 0)
 	progressBars["frame"]:SetTemplate("Overlay")
-	for i = 1, 9 do
+	for i = 1, 12 do
 		-- Fill Table
 		progressBars[i] = {}
 		progressBars[i]["border"] = CreateFrame("Frame", "ArchBar"..i.."Border", progressBars["frame"])
@@ -146,7 +146,7 @@ function stArch:OnLoad(self)
 	progressBars["solveFrame"]:SetPoint("TOP", progressBars["frame"], "TOP", 0, 0)
 	progressBars["solveFrame"]:SetTemplate("Transparent")
 	progressBars["solveFrame"]:Hide()
-	for i = 1, 9 do progressBars[i]["solve"]:Hide() end
+	for i = 1, 12 do progressBars[i]["solve"]:Hide() end
 
 	-- Solve Toggle
 	progressBars["solveToggle"] = CreateFrame("Frame", "ArchSolveToggle", self)
@@ -177,14 +177,14 @@ function stArch:OnLoad(self)
 	progressBars["solveToggle"]:SetScript("OnMouseUp", function()
 		if progressBars["solveFrame"]:IsShown() then
 			progressBars["solveFrame"]:Hide()
-			for i = 1, 9 do progressBars[i]["solve"]:Hide() end
+			for i = 1, 12 do progressBars[i]["solve"]:Hide() end
 			progressBars["solveToggle"]["text"]:SetText(progressBars["solveToggle"]["openDirection"])
 			progressBars["solveToggle"]:ClearAllPoints()
 			progressBars["solveToggle"]:SetPoint(unpack(progressBars["solveToggle"]["openPoint1"]))
 			progressBars["solveToggle"]:SetPoint(unpack(progressBars["solveToggle"]["openPoint2"]))
 		else
 			progressBars["solveFrame"]:Show()
-			for i = 1, 9 do progressBars[i]["solve"]:Show() end
+			for i = 1, 12 do progressBars[i]["solve"]:Show() end
 			progressBars["solveToggle"]["text"]:SetText(progressBars["solveToggle"]["closeDirection"])
 			progressBars["solveToggle"]:ClearAllPoints()
 			progressBars["solveToggle"]:SetPoint(unpack(progressBars["solveToggle"]["closePoint"]))
@@ -192,7 +192,7 @@ function stArch:OnLoad(self)
 	end)
 
 	local solveFrame = stArch["progressBars"]
-	for i = 1, 9 do
+	for i = 1, 12 do
 		-- Button
 		solveFrame[i]["solve"]:SetHeight(progressBars[i]["border"]:GetHeight())
 		solveFrame[i]["solve"]:SetWidth(progressBars["solveFrame"]:GetWidth() - 10)
@@ -209,7 +209,7 @@ function stArch:OnLoad(self)
 
 	-------------------------------------------------------------
 	-- Construct artifact info table
-	for i = 1, 9 do
+	for i = 1, 12 do
 		stArch["artifactInfo"][i] = { }
 	end
 
@@ -219,7 +219,7 @@ end
 function stArch:UpdateFrameHeight(self)
 	if not InCombatLockdown() then
 		-- Update frame Sizes to fit correctly
-		stArch["progressBars"]["frame"]:SetHeight(stArch["progressBars"][1]["border"]:GetHeight() * 9 + 50)
+		stArch["progressBars"]["frame"]:SetHeight(stArch["progressBars"][1]["border"]:GetHeight() * 12 + 65)
 		stArch["progressBars"]["solveFrame"]:SetHeight(stArch["progressBars"]["frame"]:GetHeight())
 		stArch["progressBars"]["solveToggle"]:SetHeight(stArch["progressBars"]["frame"]:GetHeight())
 		if stArch["archSkill"]["frame"]:IsShown() then
@@ -292,11 +292,11 @@ function stArch:updateArtifact(index)
 		artifact["total"] = numFragmentsRequired
 		artifact["canSolve"] = CanSolveArtifact()
 
-		for c = 0, 4 do
-			for s = 1, GetContainerNumSlots(c) do
-				local slotID = GetContainerItemID(c,s)
+		for i = 0, 4 do
+			for j = 1, GetContainerNumSlots(i) do
+				local slotID = GetContainerItemID(i, j)
 				if slotID == artifact["keyID"] then
-					local _, count = GetContainerItemInfo(c,s)
+					local _, count = GetContainerItemInfo(i, j)
 					if artifact["numKeystones"] < artifact["numKeysockets"] then
 						artifact["numKeystones"] = artifact["numKeystones"] + count
 					end
@@ -326,7 +326,7 @@ function stArch:updateArtifactBar(index)
 		bar["bar"]:SetValue(min(artifact["progress"] + keystoneBonus, artifact["total"]))
 
 		if artifact["numKeysockets"] and artifact["numKeysockets"] > 0 then
-			bar["solve"]["text"]:SetText(SOLVE.." ("..artifact["numKeystones"].."/"..artifact["numKeysockets"]..")")
+			bar["solve"]["text"]:SetText(SOLVE.." ["..artifact["numKeystones"].."/"..artifact["numKeysockets"].."]")
 		else
 			bar["solve"]["text"]:SetText(SOLVE)
 		end
@@ -402,10 +402,10 @@ function stArch:DisableSolve(button)
 end
 
 function stArch:OnEvent()
-	for i = 1, 9 do
+	for i = 1, 12 do
 		stArch:updateArtifact(i)
 	end
-	for i = 1, 9 do
+	for i = 1, 12 do
 		stArch:updateArtifactBar(i)
 	end
 	stArch:updateSkillLevel()
@@ -507,13 +507,13 @@ local b = CreateFrame("Button", "SwitchArch", UIParent)
 b:SetTemplate("ClassColor")
 if C.actionbar.toggle_mode == true then
 	if _G["SwitchLayout"] and _G["SwitchLayout"]:IsShown() then
-		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
+		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -58)
 	else
-		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -18)
+		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
 	end
 else
 	if _G["SwitchLayout"] and _G["SwitchLayout"]:IsShown() then
-		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -18)
+		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
 	else
 		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
 	end
@@ -578,7 +578,7 @@ f:SetScript("OnEvent", function(self, event, unit, _, _, _, spellid)
 			if last > 1 then
 				time = time - 1
 				text:SetText(time)
-					if time <=0 then
+					if time <= 0 then
 						f:SetScript("OnUpdate", nil)
 						text:SetText("")
 						time = 3
@@ -586,7 +586,5 @@ f:SetScript("OnEvent", function(self, event, unit, _, _, _, spellid)
 				last = 0
 			end
 		end)
-	else
-		return
 	end
 end)
