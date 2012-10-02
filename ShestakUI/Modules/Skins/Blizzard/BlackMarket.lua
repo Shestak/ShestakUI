@@ -12,11 +12,20 @@ local function LoadSkin()
 	T.SkinScrollBar(BlackMarketScrollFrameScrollBar)
 	BlackMarketFrame.MoneyFrameBorder:StripTextures()
 	T.SkinEditBox(BlackMarketBidPriceGold)
+	T.SkinEditBox(BlackMarketHotItemBidPriceGold)
 	BlackMarketBidPriceGold:Height(18)
-	BlackMarketFrame.HotDeal.Item.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
 	BlackMarketFrame.BidButton:SkinButton()
 	BlackMarketFrame.BidButton:Height(20)
+
+	BlackMarketFrame.HotDeal:StripTextures()
+	BlackMarketFrame.HotDeal.Item.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	BlackMarketFrame.HotDeal.Item:CreateBackdrop()
+	BlackMarketFrame.HotDeal.Item:StyleButton()
+	BlackMarketFrame.HotDeal.Item.hover:SetAllPoints()
+	BlackMarketFrame.HotDeal.Item.pushed:SetAllPoints()
 	BlackMarketFrame.HotDeal.BidButton:SkinButton()
+
 	T.SkinCloseButton(BlackMarketFrame.CloseButton)
 
 	local tabs = {"ColumnName", "ColumnLevel", "ColumnType", "ColumnDuration", "ColumnHighBidder", "ColumnCurrentBid"}
@@ -25,6 +34,46 @@ local function LoadSkin()
 
 		tab:StripTextures()
 	end
+
+	hooksecurefunc("BlackMarketScrollFrame_Update", function()
+		local buttons = BlackMarketScrollFrame.buttons
+		local numButtons = #buttons
+		local offset = HybridScrollFrame_GetOffset(BlackMarketScrollFrame)
+		local numItems = C_BlackMarket.GetNumItems()
+
+		for i = 1, numButtons do
+			local button = buttons[i]
+			local index = offset + i
+
+			if not button.skinned then
+				button:StripTextures()
+
+				button.Item:StripTextures()
+				button.Item:SetTemplate()
+				button.Item.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				button.Item.IconTexture:ClearAllPoints()
+				button.Item.IconTexture:Point("TOPLEFT", 2, -2)
+				button.Item.IconTexture:Point("BOTTOMRIGHT", -2, 2)
+				button.Item:StyleButton()
+
+				button.skinned = true
+			end
+
+			if index <= numItems then
+				local name, texture = C_BlackMarket.GetItemInfoByIndex(index)
+				if name then
+					button.Item.IconTexture:SetTexture(texture)
+				end
+			end
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_BlackMarketUI"] = LoadSkin
+
+
+
+
+
+
+
