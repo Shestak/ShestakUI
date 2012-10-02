@@ -49,7 +49,7 @@ local function LoadSkin()
 
 	NPCFriendshipStatusBar:StripTextures()
 	NPCFriendshipStatusBar:SetStatusBarTexture(C.media.texture)
-	NPCFriendshipStatusBar:CreateBackdrop("Default")
+	NPCFriendshipStatusBar:CreateBackdrop("Overlay")
 
 	-- Extreme hackage, blizzard makes button text on quest frame use hex color codes for some reason
 	hooksecurefunc("GossipFrameUpdate", function()
