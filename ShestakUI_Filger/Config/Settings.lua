@@ -2985,6 +2985,8 @@ Filger_Spells = {
 			-- Mogu'shan Vaults
 			-- Wildfire Spark (Feng the Accursed)
 			{spellID = 116784, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Arcane Resonance (Feng the Accursed)
+			{spellID = 116417, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Other
 			-- Rocket Fuel Leak
