@@ -2613,11 +2613,11 @@ Filger_Spells = {
 			-- Ancient Hysteria
 			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Engineering and Herbalism
+			-- Professions
 			-- Synapse Springs
 			{spellID = 126734, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Phase Fingers
-			{spellID = 108789, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 108788, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nitro Boosts
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Parachute
