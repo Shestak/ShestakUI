@@ -341,7 +341,7 @@ ChatFrame3:HookScript("OnEvent", function(_, event, addon)
 		_, _, _, alDamageMeterEnabled = GetAddOnInfo("alDamageMeter")
 		if SavedOptionsPerChar.LootFrame == nil then SavedOptionsPerChar.LootFrame = true end
 		if SavedOptionsPerChar.DamageMeter == nil then SavedOptionsPerChar.DamageMeter = false end
-		if SavedOptionsPerChar.LootFrame == true and SavedOptionsPerChar.DamageMeter == false and alDamageMeterEnabled ~= nil then
+		if SavedOptionsPerChar.LootFrame == true and alDamageMeterEnabled ~= nil then
 			LootShow()
 			DamageHide()
 		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == true and alDamageMeterEnabled ~= nil then
@@ -361,14 +361,23 @@ ChatFrame3:HookScript("OnEvent", function(_, event, addon)
 end)
 
 LootButton:SetScript("OnMouseDown", function()
-	if SavedOptionsPerChar.LootFrame == true and SavedOptionsPerChar.DamageMeter == false then
-		LootHide()
-		TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
-	elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == true then
-		LootShow()
-		DamageHide()
+	if alDamageMeterEnabled ~= nil then
+		if SavedOptionsPerChar.LootFrame == true and SavedOptionsPerChar.DamageMeter == false then
+			LootHide()
+			TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
+		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == true then
+			LootShow()
+			DamageHide()
+		else
+			LootShow()
+		end
 	else
-		LootShow()
+		if SavedOptionsPerChar.LootFrame == true then
+			LootHide()
+			TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
+		else
+			LootShow()
+		end
 	end
 end)
 
