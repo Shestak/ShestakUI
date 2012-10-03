@@ -771,6 +771,8 @@ Filger_Spells = {
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Power
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Incanter's Absorption
+			{spellID = 116267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Ward
@@ -1857,6 +1859,8 @@ Filger_Spells = {
 			{spellID = 51690, filter = "CD"},
 			-- Adrenaline Rush
 			{spellID = 13750, filter = "CD"},
+			-- Shadow Blades
+			{spellID = 121471, filter = "CD"},
 			-- Vendetta
 			{spellID = 79140, filter = "CD"},
 			-- Shadow Dance
@@ -2609,11 +2613,11 @@ Filger_Spells = {
 			-- Ancient Hysteria
 			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Engineering and Herbalism
+			-- Professions
 			-- Synapse Springs
 			{spellID = 126734, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Phase Fingers
-			{spellID = 108789, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 108788, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nitro Boosts
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Parachute
@@ -3071,18 +3075,18 @@ Filger_Spells = {
 			-- Posthaste
 			{spellID = 118922, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
-			-- Intimidation
-			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Binding Shot
-			{spellID = 117526, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap
 			{spellID = 3355, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Scare Beast
-			{spellID = 1513, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Scatter Shot
-			{spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Wyvern Sting
 			{spellID = 19386, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Scare Beast
+			{spellID = 1513, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Binding Shot
+			{spellID = 117526, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
+			-- Intimidation
+			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Scatter Shot
+			{spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
 			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)

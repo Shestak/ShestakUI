@@ -70,10 +70,3 @@ local function LoadSkin()
 end
 
 T.SkinFuncs["Blizzard_BlackMarketUI"] = LoadSkin
-
-
-
-
-
-
-

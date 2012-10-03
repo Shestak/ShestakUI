@@ -29,11 +29,6 @@ end
 
 if C.announcements.feasts == true then
 	T.AnnounceFeasts = {
-		-- Cataclysm
-		[87643] = true,		-- Broiled Dragon Feast
-		[87915] = true,		-- Goblin Barbecue Feast
-		[87644] = true,		-- Seafood Magnifique Feast
-		-- Pandaria
 		[104958] = true,	-- Pandaren Banquet
 		[105193] = true,	-- Great Pandaren Banquet
 		[126492] = true,	-- Banquet of the Grill
@@ -50,11 +45,9 @@ if C.announcements.feasts == true then
 		[126504] = true,	-- Great Banquet of the Brew
 	}
 
-	T.AnnounceCauldrons = {
-		-- Cataclysm
-		[92712] = true,		-- Big Cauldron of Battle
-		[92649] = true,		-- Cauldron of Battle
-	}
+	--T.AnnounceCauldrons = {
+
+	--}
 
 	T.AnnounceBots = {
 		[22700] = true,		-- Field Repair Bot 74A
