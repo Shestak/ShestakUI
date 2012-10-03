@@ -1859,6 +1859,8 @@ Filger_Spells = {
 			{spellID = 51690, filter = "CD"},
 			-- Adrenaline Rush
 			{spellID = 13750, filter = "CD"},
+			-- Shadow Blades
+			{spellID = 121471, filter = "CD"},
 			-- Vendetta
 			{spellID = 79140, filter = "CD"},
 			-- Shadow Dance
