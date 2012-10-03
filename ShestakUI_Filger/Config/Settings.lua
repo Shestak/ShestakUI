@@ -1506,6 +1506,10 @@ Filger_Spells = {
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Cosmos (Intellect, Proc)
 			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mithril Wristwatch (Spell Power, Proc)
+			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Flashfrozen Resin Globule (Intellect, Use)
+			{spellID = 126478, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Qin-xi's Polarizing Seal (Intellect, Proc)
 			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1513,6 +1517,8 @@ Filger_Spells = {
 			-- Enchants
 			-- General
 			-- Caster General
+			-- Windsong
+			{spellID = 104509, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightweave (Intellect)
