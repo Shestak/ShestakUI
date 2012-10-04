@@ -54,7 +54,6 @@ if T.author == true then
 	C["misc"].already_known = true
 	C["misc"].disenchanting = true
 	C["misc"].sum_buyouts = true
-	C["misc"].profession_database = true
 	C["announcements"].spells = true
 	C["announcements"].flask_food = true
 	C["announcements"].toy_train = true
@@ -100,7 +99,6 @@ if T.author == true then
 	C["stats"].battleground = true
 	C["toppanel"].enable = false
 	if T.level == MAX_PLAYER_LEVEL then
-		C["automation"].screenshot = true
 		C["stats"].experience = false
 		C["combattext"].heal_treshold = 500
 	else
