@@ -45,9 +45,8 @@ if C.announcements.feasts == true then
 		[126504] = true,	-- Great Banquet of the Brew
 	}
 
-	--T.AnnounceCauldrons = {
-
-	--}
+	T.AnnounceCauldrons = {
+	}
 
 	T.AnnounceBots = {
 		[22700] = true,		-- Field Repair Bot 74A
