@@ -23,12 +23,10 @@ AltPowerBarStatus:SetStatusBarTexture(C.media.texture)
 AltPowerBarStatus:SetMinMaxValues(0, 100)
 AltPowerBarStatus:Point("TOPLEFT", AltPowerBar, "TOPLEFT", 2, -2)
 AltPowerBarStatus:Point("BOTTOMRIGHT", AltPowerBar, "BOTTOMRIGHT", -2, 2)
-AltPowerBarStatus:SetStatusBarColor(0.3, 0.7, 0.3)
 
 AltPowerBarStatus.bg = AltPowerBarStatus:CreateTexture(nil, "BACKGROUND")
 AltPowerBarStatus.bg:SetAllPoints(AltPowerBarStatus)
 AltPowerBarStatus.bg:SetTexture(C.media.texture)
-AltPowerBarStatus.bg:SetVertexColor(0.3, 0.7, 0.3, 0.25)
 
 local AltPowerText = AltPowerBarStatus:CreateFontString(nil, "OVERLAY")
 AltPowerText:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
@@ -72,7 +70,10 @@ AltPowerBarStatus:SetScript("OnUpdate", function(self, elapsed)
 		self:SetMinMaxValues(0, UnitPowerMax("player", ALTERNATE_POWER_INDEX))
 		local power = UnitPower("player", ALTERNATE_POWER_INDEX)
 		local mpower = UnitPowerMax("player", ALTERNATE_POWER_INDEX)
+		local _, r, g, b = UnitAlternatePowerTextureInfo("player", 2)
 		self:SetValue(power)
+		self:SetStatusBarColor(r, g, b)
+		self.bg:SetVertexColor(r, g, b, 0.2)
 		AltPowerText:SetText(power.."/"..mpower)
 		self.TimeSinceLastUpdate = 0
 	end
