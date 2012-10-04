@@ -32,6 +32,7 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("CHAT_MSG_CURRENCY")
 frame:SetScript("OnEvent", function(self, event, message)
 	local link = string.match(message, _CURRENCY)
+	if not link then return end
 	local id = string.match(link, ":(%d+)|h")
 
 	local race = fragment[id]

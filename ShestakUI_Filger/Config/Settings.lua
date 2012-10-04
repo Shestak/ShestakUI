@@ -145,12 +145,16 @@ Filger_Spells = {
 			{spellID = 77575, filter = "CD"},
 			-- Pillar of Frost
 			{spellID = 51271, filter = "CD"},
+			-- Gorefiend's Grasp
+			{spellID = 108199, filter = "CD"},
 			-- Dancing Rune Weapon
 			{spellID = 49028, filter = "CD"},
 			-- Unholy Blight
 			{spellID = 115989, filter = "CD"},
 			-- Lichborne
 			{spellID = 49039, filter = "CD"},
+			-- Desecrated Ground
+			{spellID = 108201, filter = "CD"},
 			-- Death Pact
 			{spellID = 48743, filter = "CD"},
 			-- Raise Dead
@@ -670,12 +674,20 @@ Filger_Spells = {
 			{spellID = 53209, filter = "CD"},
 			-- Kill Shot
 			{spellID = 53351, filter = "CD"},
+			-- Glaive Toss
+			{spellID = 117050, filter = "CD"},
+			-- Blink Strike
+			{spellID = 130392, filter = "CD"},
 			-- Disengage
 			{spellID = 781, filter = "CD"},
-			-- Misdirection
-			{spellID = 34477, filter = "CD"},
+			-- Dire Beast
+			{spellID = 120679, filter = "CD"},
 			-- Fervor
 			{spellID = 82726, filter = "CD"},
+			-- Barrage
+			{spellID = 120360, filter = "CD"},
+			-- Misdirection
+			{spellID = 34477, filter = "CD"},
 			-- Feign Death
 			{spellID = 5384, filter = "CD"},
 			-- Snake Trap
@@ -686,12 +698,20 @@ Filger_Spells = {
 			{spellID = 13809, filter = "CD"},
 			-- Master's Call
 			{spellID = 53271, filter = "CD"},
+			-- Powershot
+			{spellID = 109259, filter = "CD"},
 			-- Intimidation
 			{spellID = 19577, filter = "CD"},
 			-- Wyvern Sting
 			{spellID = 19386, filter = "CD"},
 			-- Bestial Wrath
 			{spellID = 19574, filter = "CD"},
+			-- Lynx Rush
+			{spellID = 120697, filter = "CD"},
+			-- A Murder of Crows
+			{spellID = 131894, filter = "CD"},
+			-- Exhilaration
+			{spellID = 109304, filter = "CD"},
 			-- Deterrence
 			{spellID = 19263, filter = "CD"},
 			-- Rapid Fire
@@ -2329,6 +2349,8 @@ Filger_Spells = {
 			{spellID = 74434, filter = "CD"},
 			-- Demonic Circle: Teleport
 			{spellID = 48020, filter = "CD"},
+			-- Grimoire of Service
+			{spellID = 108501, filter = "CD"},
 			-- Soulshatter
 			{spellID = 29858, filter = "CD"},
 
@@ -2985,6 +3007,8 @@ Filger_Spells = {
 			-- Mogu'shan Vaults
 			-- Wildfire Spark (Feng the Accursed)
 			{spellID = 116784, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Arcane Resonance (Feng the Accursed)
+			{spellID = 116417, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Other
 			-- Rocket Fuel Leak
