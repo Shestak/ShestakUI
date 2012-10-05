@@ -19,6 +19,7 @@ T.ABItems = {
 	80599,	-- Goblin Fishing Bomb
 	87841,	-- Korven's Experimental Grenades
 	82807,	-- Shado-Pan Dragon Gun
+	84242,	-- Shado-Pan Bandages
 	85261,	-- Shado-Pan Torch
 	79344,	-- Pomharvest Firework
 	-- Seaforium
