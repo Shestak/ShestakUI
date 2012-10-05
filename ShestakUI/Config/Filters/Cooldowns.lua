@@ -35,6 +35,7 @@ if C.enemycooldown.enable == true then
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
 		[115781] = 24,	-- Optical Blast
+		[102060] = 40,	-- Disrupting Shout
 		[15487] = 45,	-- Silence
 		[78675] = 60,	-- Solar Bream
 		[47476] = 120,	-- Strangulate
