@@ -6,7 +6,7 @@ if T.client ~= "deDE" then return end
 --	Translation: Vienchen
 ----------------------------------------------------------------------------------------
 -- Key binding Header Name
-L_EXTRA_HEADER_EXTRABAR = "Extra Bar" -- Needs review
+L_EXTRA_HEADER_EXTRABAR = "Extra Leiste"
 
 -- Announce fps
 L_EXTRA_ANNOUNCE_FPS = "Meine FPS sind "
@@ -23,15 +23,15 @@ L_EXTRA_ANNOUNCE_BG_STEALTH = "Unsichtbarer Gegner in der Nähe"
 L_EXTRA_SCROLL = "Rolle"
 
 -- Taunt announce
-L_EXTRA_TAUNT_UNKNOWN = "Unknown command:" -- Needs review
-L_EXTRA_TAUNT_ADD = "Add tank" -- Needs review
-L_EXTRA_TAUNT_DEL = "Delete tank" -- Needs review
-L_EXTRA_TAUNT_DEL_ALL = "Delete all tanks" -- Needs review
-L_EXTRA_TAUNT_TANK_LIST = "List of tanks" -- Needs review
-L_EXTRA_TAUNT_AURA = "Auras check" -- Needs review
-L_EXTRA_TAUNT_AURA_CHECK = "Auras check done." -- Needs review
-L_EXTRA_TAUNT_ALREADY_LIST = " is already in the list." -- Needs review
-L_EXTRA_TAUNT_ADDED_TANK = "Added tank " -- Needs review
-L_EXTRA_TAUNT_REMOVED_TANK = "Removed tank " -- Needs review
-L_EXTRA_TAUNT_TARGET_FIRST = "You have to target a group member first." -- Needs review
-L_EXTRA_TAUNT_ALL_REMOVED = "All custom tanks removed." -- Needs review
+L_EXTRA_TAUNT_UNKNOWN = "Unbekannter Befehl:"
+L_EXTRA_TAUNT_ADD = "Tank hinzufügen"
+L_EXTRA_TAUNT_DEL = "Tank entfernen"
+L_EXTRA_TAUNT_DEL_ALL = "Alle Tanks entfernen"
+L_EXTRA_TAUNT_TANK_LIST = "Liste aller Tanks"
+L_EXTRA_TAUNT_AURA = "Auras prüfen"
+L_EXTRA_TAUNT_AURA_CHECK = "Auras geprüft."
+L_EXTRA_TAUNT_ALREADY_LIST = " ist bereits in der Liste."
+L_EXTRA_TAUNT_ADDED_TANK = "Hinzugefügter Tank: "
+L_EXTRA_TAUNT_REMOVED_TANK = "Entfernter Tank: "
+L_EXTRA_TAUNT_TARGET_FIRST = "Du musst erst ein Gruppenmitglied auswählen."
+L_EXTRA_TAUNT_ALL_REMOVED = "Alle zusätzlichen Tanks entfernt."
