@@ -243,9 +243,12 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
 	C["automation"].decline_duel = false
+	C["automation"].accept_quest = true
+	C["automation"].skip_cinematic = true
 	C["automation"].cancel_bad_buffs = true
 	C["automation"].tab_binder = true
 	C["automation"].logging_combat = true
+	C["automation"].currency_cap = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["skins"].atlasloot = true
@@ -378,10 +381,9 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -345, 166}
 		C["position"].group_loot = {"RIGHT", UIParent, "RIGHT", -331, -24}
 		C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 285, -20}
-		C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -270, -100}
+		C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -150, -100}
 		C["position"].vehicle_bar = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 440, 175}
 		C["position"].unitframes.tank = {"LEFT", UIParent, "LEFT", 23, 0}
-		C["automation"].accept_quest = true
 		C["automation"].auto_role = true
 		C["combattext"].icon_size = 25
 		C["combattext"].heal_treshold = 5000
