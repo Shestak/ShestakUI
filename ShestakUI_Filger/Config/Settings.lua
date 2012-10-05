@@ -3009,6 +3009,8 @@ Filger_Spells = {
 			{spellID = 116784, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Arcane Resonance (Feng the Accursed)
 			{spellID = 116417, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Voodoo Doll (Gara'jal the Spiritbinder)
+			{spellID = 122151, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Other
 			-- Rocket Fuel Leak

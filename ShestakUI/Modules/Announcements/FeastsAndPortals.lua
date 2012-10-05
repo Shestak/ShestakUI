@@ -24,7 +24,7 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 
 	if subEvent == "SPELL_CAST_START" then
 		-- Feasts/Cauldrons
-		if C.announcements.feasts and (T.AnnounceFeasts[spellID] or T.AnnounceCauldrons[spellID]) then
+		if C.announcements.feasts and T.AnnounceFeasts[spellID] then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PRE, srcName, GetSpellLink(spellID)), GetChat())
 		-- Refreshment Table
 		elseif C.announcements.feasts and spellID == 43987 then
