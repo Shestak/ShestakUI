@@ -26,17 +26,17 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Fahrzeugfenster bei mouseover anzeigen"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/Gegenstand auto Taste"
 L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
 L_GUI_MISC_PROFESSION_TABS = "Berufereiter an Handelsfähigkeiten und Handelsfenstern anzeigen"
-L_GUI_MISC_PROFESSION_DATABASE = "Professions Database on Professions frame" -- Needs review
-L_GUI_MISC_DUNGEON_TABS = "PvP/PvE tabs on own frames" -- Needs review
+L_GUI_MISC_PROFESSION_DATABASE = "Berufsdatenbank an Berufsfenster"
+L_GUI_MISC_DUNGEON_TABS = "PvP/PvE Tabs an eigenen Fenster"
 L_GUI_MISC_HIDE_BG_SPAM = "In Schlachtfeldern Bossemotes im Chat unterbinden"
-L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
-L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
-L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
-L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
-L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
-L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
-L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
-L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
+L_GUI_MISC_ITEM_LEVEL = "Item level im Karakterfenster auf Items anzeigen"
+L_GUI_MISC_GEM_COUNTER = "Anzeigen wieviele rote/blaue/gelbe Edelsteine man hat"
+L_GUI_MISC_ALREADY_KNOWN = "Bekannte Rezepte/Reittiere/Begleiter farblich hervorheben"
+L_GUI_MISC_DISENCHANTING = "Sondieren, Mahlen and Entzaubern mit einem Klick"
+L_GUI_MISC_SUM_BUYOUTS = "Alle Auktionen aufsummieren"
+L_GUI_MISC_CLICK_CAST = "Simpler 'click2cast' spell binder"
+L_GUI_MISC_MOVE_BLIZZARD = "Einige Blizzardfenster frei bewegbar machen"
+L_GUI_MISC_COLOR_PICKER = "Verbesserte Farbauswahl"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -44,32 +44,32 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Sage im Chat an wenn ein Arenagegener trinkt"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Sage deine Unterbrechungen im Raid oder Schlachtzugschat an"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Sage im Raid / Schachtzugschat an, wenn du den selben Zauber castest"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Prüfe Zauber von allen Spielern"
-L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Announce your Lightwell" -- Needs review
-L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Announce Toy Train or Direbrew's Remote cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Says thanks for some spells" -- Needs review
-L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce(/run PullCountdown.Pull(#))" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck(if enable, announce to raid channel)" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel" -- Needs review
-L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
+L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Benachrichtigung über Lichtbrunnen"
+L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Benachrichtigung über Spielzeugzug oder Düsterbräu's Fernbedienung"
+L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Bedanke dich für einige Zauber"
+L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull cuntdown Benachrichtigung (/run PullCountdown.Pull(#))"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Benachrichtigung über Fläschchen und Bufffood"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Automatische Benachrichtigung beim ReadyCheck(fals aktiviert, Benachrichtigung an den Raid-Channel)"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Benachrichtigung an den Raid Channel"
+L_GUI_ANNOUNCEMENTS_FEASTS = "Benachrichtigung wenn Festmahl/Kessel/Seelensteine/Reparatur Bots aufgestellt wurden"
+L_GUI_ANNOUNCEMENTS_PORTALS = "Benachrichtigung über Portale/Ritual der Beschwörung"
 
 -- Automation options
-L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION = "Automatisierung"
 L_GUI_AUTOMATION_RESURRECTION = "Automatisch im Schlachtfeld wiederbeleben"
 L_GUI_AUTOMATION_SCREENSHOT = "Speicher einen Screenshot wenn ein Achivment errungen wird"
-L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
-L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto Popup für gelöste Artefakte"
+L_GUI_AUTOMATION_CHEFS_HAT = "Automatisch Kochmütze anlegen"
 L_GUI_AUTOMATION_ACCEPT_INVITE = "Einladungen automatisch annehmen"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Duell automatisch ablehnen"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Quests automatisch annehmen"
-L_GUI_AUTOMATION_AUTO_COLLAPSE = "Auto collapse WatchFrame in instance" -- Needs review
-L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
-L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
-L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
-L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
-L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
-L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
+L_GUI_AUTOMATION_AUTO_COLLAPSE = "WatchFrame Automatisch in Instanzen reduzuieren"
+L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto Cinematics/Filme überspringen"
+L_GUI_AUTOMATION_AUTO_ROLE = "AAutomatisch die eigene Rolle wählen"
+L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Automatisch einige Buffs abbrechen"
+L_GUI_AUTOMATION_TAB_BINDER = "Automatisch nur feindliche Spieler mit der TAB Taste anvisieren"
+L_GUI_AUTOMATION_LOGGING_COMBAT = "Automatisch Kampflog in Raids als Textdatei mitschreiben"
+L_GUI_AUTOMATION_CURRENCY_CAP = "Auto Popup beim Marken Limit"
 
 -- Skins options
 L_GUI_SKINS = "Stilisierung"
@@ -89,7 +89,7 @@ L_GUI_SKINS_FLYOUT_BUTTON = "FlyoutButtonCustom Design aktivieren"
 L_GUI_SKINS_NUG_RUNNING = "NugRunning Design aktivieren"
 L_GUI_SKINS_OVALE = "OvaleSpellPriority Design aktivieren"
 L_GUI_SKINS_CLIQUE = "Clique Design aktivieren"
-L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
+L_GUI_SKINS_ACE3 = "Ace3-Optionen skin"
 L_GUI_SKINS_PP = "PallyPower Design aktivieren"
 L_GUI_SKINS_CAPPING = "Capping Design aktivieren"
 L_GUI_SKINS_COOL_LINE = "CoolLine Design aktivieren"
@@ -128,7 +128,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Vereint mehrfachen Flächenschaden in eine ei
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Zeit in Sekunden in der ein Flächenzauber in eine Nachricht vereint wird"
 L_GUI_COMBATTEXT_DISPEL = "Informiert dich über deine Bannungen"
 L_GUI_COMBATTEXT_INTERRUPT = "Informiert dich über deine Unterbrechungen"
-L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))" -- Needs review
+L_GUI_COMBATTEXT_DIRECTION = "Bildlaufrichtung('top'(geht hoch) or 'bottom'(goes runter))"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Erinnerungen für Buffs"
@@ -167,7 +167,7 @@ L_GUI_COOLDOWN_PULSE_SIZE = "Abklingzeitimpuls Symbolgröße"
 L_GUI_COOLDOWN_PULSE_SOUND = "Akustische Warnungen"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Animationen Skalieren"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Maximale Zeit in der die Anzeige aktiv ist"
-L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimal threshold time" -- Needs review
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "Minimale Zeitschwälle"
 
 -- Threat options
 L_GUI_THREAT = "Bedrohungsleisten"
@@ -197,10 +197,10 @@ L_GUI_TOOLTIP_RAID_ICON = "Raidsymbol"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Zeige an, wer die Eihneit, die in deiner Gruppe/Raid ist, ins Ziel nimmt"
 L_GUI_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe"
 L_GUI_TOOLTIP_UNIT_ROLE = "Klassenrolle"
-L_GUI_TOOLTIP_REFORGE = "Item reforge info" -- Needs review
-L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
-L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
-L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
+L_GUI_TOOLTIP_REFORGE = "Info über umgeschmiedete Gegenstänfe"
+L_GUI_TOOLTIP_SYMBIOSIS = "Symbiose informationen"
+L_GUI_TOOLTIP_INSTANCE_LOCK = "Deine abgeschlossenen Instanzen im Tooltip"
+L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Zeige an wenn Gegenstände nicht Transmorgifiziert werden können"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Chat aktivieren"
@@ -211,14 +211,14 @@ L_GUI_CHAT_GOLD = "Entferne einigen Spam vom Server"
 L_GUI_CHAT_WIDTH = "Breite des Chatfensters"
 L_GUI_CHAT_HEIGHT = "Höhe desChatfensters"
 L_GUI_CHAT_BAR = "Kleine Leiste um den Chatchannel zu wechseln"
-L_GUI_CHAT_BAR_MOUSEOVER = "Lite Button Bar on mouseover" -- Needs review
+L_GUI_CHAT_BAR_MOUSEOVER = "Aktionsleiste bei Mousover hervorheben"
 L_GUI_CHAT_TIMESTAMP = "Farbe des Zeitstempels"
 L_GUI_CHAT_WHISP = "Geräusch abspielen wenn eine private Nachricht empfangen wird"
 L_GUI_CHAT_SKIN_BUBBLE = "Blizzard Chat Blasen verändern"
 L_GUI_CHAT_CL_TAB = "Kampflog Reiter anzeigen"
-L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
+L_GUI_CHAT_TABS_MOUSEOVER = "Zeige Chat-Reiter bei Mouseover"
 L_GUI_CHAT_STICKY = "Behalte den letzen Channel"
-L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
+L_GUI_CHAT_DAMAGE_METER_SPAM = "Fasse DMG-Meterspam in einer Zeile zusammen"
 
 -- Bag options
 L_GUI_BAGS = "Taschen"
@@ -233,15 +233,15 @@ L_GUI_MINIMAP_ENABLE = "Minimap aktivieren"
 L_GUI_MINIMAP_ICON = "Aufspüren-Symbol"
 L_GUI_MINIMAP_SIZE = "Kartengröße"
 L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
-L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
+L_GUI_MINIMAP_TOGGLE_MENU = "Zeige Toggle Menü"
 
 -- Map options
 L_GUI_MAP_ENABLE = "Weltkarte aktivieren"
 L_GUI_MAP_SCALE = "Skalierung der Weltkarte"
 L_GUI_MAP_BG_STYLIZATION = "Schlachtfeldkarte Aussehn"
-L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
-L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
-L_GUI_MAP_FOG_OF_WAR = "Fog of war on World Map" -- Needs review
+L_GUI_MAP_BOSS_COUNT = "Zeige BossCount in der Weltkarte"
+L_GUI_MAP_EXPLORE = "Tracking Explorer und Meister der Lehren Achievement in World Map"
+L_GUI_MAP_FOG_OF_WAR = "Nebel des Krieges auf der Weltkarte"
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Plünderfenster aktivieren"
@@ -269,7 +269,7 @@ L_GUI_NAMEPLATE_NEAR_COLOR = "Verlust oder Zuwachs der Bedrohung farbig kennzeic
 L_GUI_NAMEPLATE_BAD_COLOR = "Negative Bedrohungsfarbe. Variiert abhängig ob Tank oder dps/heal"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Zeige Schwächungszauber (Abgekürzte Namen müssen deaktiviert sein)"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Größe der Debuffs"
-L_GUI_NAMEPLATE_HEALER_ICON = "Show healer icon on all enemy healers nameplate in battlegrounds" -- Needs review
+L_GUI_NAMEPLATE_HEALER_ICON = "Zeige Heilersymbol auf allen gegnerischen Heiler-Nameplates im BG"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
@@ -281,7 +281,7 @@ L_GUI_ACTIONBAR_BUTTON_SPACE = "Buttonabstand"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Splitte die Fünfte Aktionsleiste im zwei 6 Knöpfe Leisten"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Aktionsleisten"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Aktiviere 'toggle mode'"
-L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "hebe keine Procs hervor"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Anzahl der Aktionsleisten an der unteren Seite (1, 2 oder 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Anzahl der Aktionsleisten an der rechten Seite (0, 1, 2, oder 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Zeige die rechten Leisten nur bei Mouseover"
@@ -291,8 +291,8 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Aktiviere horizontale Begleiterleiste"
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Zeige Haltungsleiste/Gestaltenleiste nur bei Mouseover"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Gestaltenleiste verstecken"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Horizontale Haltungsleiste aktivieren"
-L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU = "Zeige Micromenü"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenü bei MouseOver"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Größe der Spielerbuffs"
@@ -321,7 +321,7 @@ L_GUI_UF_BAR_COLOR_VALUE = "Lebensbalken nach vorhandenem Leben einfärben"
 L_GUI_UF_UNIT_CASTBAR = "Zeige Zauberleisten"
 L_GUI_UF_CASTBAR_ICON = "Zeige Symbole der Zauberleisten an"
 L_GUI_UF_CASTBAR_LATENCY = "Latenz in Zauberleiste anzeigen"
-L_GUI_UF_CASTBAR_TICKS = "Castbar ticks" -- Needs review
+L_GUI_UF_CASTBAR_TICKS = "Castbar Ticks"
 L_GUI_UF_SHOW_PET = "Zeige Begleiterfenster an"
 L_GUI_UF_SHOW_FOCUS = "Zeige Fokusfenster an"
 L_GUI_UF_SHOW_TOT = "Zeige 'Ziel des Ziels' Fenster an"
@@ -345,13 +345,13 @@ L_GUI_UF_PLUGINS_SMOOTH_BAR = "Weichgezeichnete Leisten"
 L_GUI_UF_PLUGINS_TALENTS = "Zeige gegnerische Talente"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"
 L_GUI_UF_PLUGINS_FADER = "Blende Einheitenfenster aus"
-L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
+L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns Symbole auf Arena Fenstern"
 
 -- Unit Frames Class bar options
-L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars" -- Needs review
+L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Klassenleisten"
 L_GUI_UF_PLUGINS_COMBO_BAR = "Symbole für Schurke/Druide Kombopunkte"
-L_GUI_UF_PLUGINS_SHADOW_BAR = "Enable Shadow Orbs bar" -- Needs review
-L_GUI_UF_PLUGINS_CHI_BAR = "Enable Chi bar" -- Needs review
+L_GUI_UF_PLUGINS_SHADOW_BAR = "Aktiviere Schattenkugel Leiste"
+L_GUI_UF_PLUGINS_CHI_BAR = "Ativiere Chi Leiste"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Zeige Rachebar an"
 L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Aktiviere Eclipseleiste"
 L_GUI_UF_PLUGINS_HOLY_BAR = "Aktivere Heilige Kraft Leiste"
@@ -375,7 +375,7 @@ L_GUI_UF_SHOW_TANK_TT = "Zeige Ziel des Raid Tank Ziels (Ziel des Ziels)"
 L_GUI_UF_RAID_GROUP = "Anzahl der Gruppen im Raid(nur für ShestakUI_Heal)"
 L_GUI_UF_RAID_VERTICAL_GROUP = "Vertikale Raidgruppen(nur für ShestakUI_Heal)"
 L_GUI_UF_ICONS_LEADER = "Anführer/Assistent/Plündermeister-Symbole an den Fenstern anzeigen"
-L_GUI_UF_ICONS_ROLE = "Role icon on frames" -- Needs review
+L_GUI_UF_ICONS_ROLE = "Rollensymbol auf den Unit Frames"
 L_GUI_UF_ICONS_RAID_MARK = "Raidsymbole"
 L_GUI_UF_ICONS_READY_CHECK = "Bereitschaftschecksymbole"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debufftextur und Symbol hervorheben"
@@ -406,4 +406,4 @@ L_GUI_STATS_LOCATION = "Ort"
 L_GUI_ERROR = "Fehler"
 L_GUI_ERROR_BLACK = "Verstecke Fehler der Schwarzen Liste"
 L_GUI_ERROR_WHITE = "Zeige Fehler der Weißen Liste"
-L_GUI_ERROR_HIDE_COMBAT = "Hide all errors in combat" -- Needs review
+L_GUI_ERROR_HIDE_COMBAT = "Verberge alle Fehlermeldungen im Kampf"
