@@ -96,6 +96,12 @@ SideDressUpModelControlFrame:HookScript("OnShow", function(self) self:Hide() end
 SubZoneTextFrame:SetScript("OnShow", function() SubZoneTextFrame:Hide() end)
 
 ----------------------------------------------------------------------------------------
+--	Disable flash tab
+----------------------------------------------------------------------------------------
+ChatTypeInfo["WHISPER"] = {sticky = 1, flashTab = false, flashTabOnGeneral = false}
+ChatTypeInfo["BN_WHISPER"] = {sticky = 1, flashTab = false, flashTabOnGeneral = false}
+
+----------------------------------------------------------------------------------------
 --	Auto hide unnecessary stats from CharacterFrame(module from Inomena by p3lim)
 ----------------------------------------------------------------------------------------
 PAPERDOLL_STATCATEGORIES = {
