@@ -132,7 +132,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(116417),	-- Arcane Resonance
 			-- Gara'jal the Spiritbinder
 			SpellName(116161),	-- Crossed Over
-			SpellName(122151),	-- Voodoo Dolls
+			SpellName(122151),	-- Voodoo Doll
 			-- The Spirit Kings
 			SpellName(117708),	-- Maddening Shout
 			SpellName(118303),	-- Fixate
@@ -216,7 +216,6 @@ if C.raidframe.plugins_aura_watch == true then
 		}
 
 		T.ReverseTimer = {
-
 		}
 
 		ORD:RegisterDebuffs(T.debuffids)
