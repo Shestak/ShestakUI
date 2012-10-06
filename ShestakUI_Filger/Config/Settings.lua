@@ -121,7 +121,7 @@ Filger_Spells = {
 			-- Self
 			-- Mind Freeze
 			{spellID = 47528, filter = "CD"},
-			-- Gnaw
+			-- Gnaw (Ghoul)
 			{spellID = 47481, filter = "CD"},
 			-- Remorseless Winter
 			{spellID = 108200, filter = "CD"},
@@ -2717,9 +2717,9 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.pve_debuff)},
 
 			-- Death Knight
-			-- Gnaw (Pet)
+			-- Gnaw (Ghoul)
 			{spellID = 47481, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Monstrous Blow (Pet - mutant)
+			-- Monstrous Blow (Mutated Ghoul)
 			{spellID = 91797, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -3043,9 +3043,9 @@ Filger_Spells = {
 			-- Death's Advance
 			{spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
-			-- Gnaw (Pet)
+			-- Gnaw (Ghoul)
 			{spellID = 47481, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Monstrous Blow (Pet - mutant)
+			-- Monstrous Blow (Mutated Ghoul)
 			{spellID = 91797, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},

@@ -8,20 +8,20 @@ if C.misc.quest_auto_button ~= true then return end
 ----------------------------------------------------------------------------------------
 T.ABItems = {
 	-- Daily Quests
-	63351,	-- Tahret Dynasty Mallet
 	52507,	-- Stardust No.2
 	69981,	-- Ironforge Rations
 	69240,	-- Enchanted Salve
 	69235,	-- Fang of the Wolf
 	71978,	-- Darkmoon Bandage
 	62829,	-- Magnetized Scrap Collector
+	79344,	-- Pomharvest Firework
 	79885,	-- Barrel of Fireworks
 	80599,	-- Goblin Fishing Bomb
 	87841,	-- Korven's Experimental Grenades
 	82807,	-- Shado-Pan Dragon Gun
 	84242,	-- Shado-Pan Bandages
 	85261,	-- Shado-Pan Torch
-	79344,	-- Pomharvest Firework
+	89123,	-- Wu Kao Explosive
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
