@@ -2974,7 +2974,7 @@ Filger_Spells = {
 
 			-- Warrior
 			-- Storm Bolt
-			{spellID = 107570, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 132169, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Charge Stun
@@ -3314,7 +3314,7 @@ Filger_Spells = {
 			{spellID = 46924, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Storm Bolt
-			{spellID = 107570, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 132169, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout

@@ -70,7 +70,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(6358)] = 4,	-- Seduction (Succubus)
 		[GetSpellInfo(115268)] = 4,	-- Mesmerize (Shivarra)
 		-- Warrior
-		[GetSpellInfo(107570)] = 4,	-- Storm Bolt
+		[GetSpellInfo(132169)] = 4,	-- Storm Bolt
 		[GetSpellInfo(46968)] = 4,	-- Shockwave
 		[GetSpellInfo(5246)] = 4,	-- Intimidating Shout
 
