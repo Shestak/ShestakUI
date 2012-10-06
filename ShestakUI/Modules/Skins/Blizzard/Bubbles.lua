@@ -34,39 +34,19 @@ local function isChatBubble(frame)
 	return frame:GetRegions():GetTexture() == [[Interface\Tooltips\ChatBubble-Background]]
 end
 
-local function FindBubble()
-	local newNumKids = WorldFrame:GetNumChildren()
-	if newNumKids ~= numKids then
-		for i = numKids + 1, newNumKids do
-			local frame = select(i, WorldFrame:GetChildren())
-
-			if isChatBubble(frame) then return frame end
-		end
-		numKids = newNumKids
-	end
-end
-
-local function onUpdate(self, elapsed)
+f:SetScript("OnUpdate", function(self, elapsed)
 	total = total + elapsed
-
-	local frame = FindBubble()
-	if frame or total > 0.3 then
-		self:SetScript("OnUpdate", nil)
+	if total > 0.1 then
 		total = 0
-		if frame then styleBubble(frame) end
-	end
-end
-
-local events = {
-	CHAT_MSG_SAY = "chatBubbles", CHAT_MSG_YELL = "chatBubbles",
-	CHAT_MSG_PARTY = "chatBubblesParty", CHAT_MSG_PARTY_LEADER = "chatBubblesParty",
-	CHAT_MSG_MONSTER_SAY = "chatBubbles", CHAT_MSG_MONSTER_YELL = "chatBubbles", CHAT_MSG_MONSTER_PARTY = "chatBubblesParty",
-}
-
-for event in pairs(events) do f:RegisterEvent(event) end
-
-f:SetScript("OnEvent", function(self, event)
-	if GetCVarBool(events[event]) then
-		f:SetScript("OnUpdate", onUpdate)
+		local newNumKids = WorldFrame:GetNumChildren()
+		if newNumKids ~= numKids then
+			for i = numKids + 1, newNumKids do
+				local frame = select(i, WorldFrame:GetChildren())
+				if isChatBubble(frame) then
+					styleBubble(frame)
+				end
+			end
+			numKids = newNumKids
+		end
 	end
 end)
