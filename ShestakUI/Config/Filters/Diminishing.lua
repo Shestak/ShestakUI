@@ -94,6 +94,7 @@ T.DiminishingSpells = function()
 		[120086] = {"ctrlstun"},	-- Fists of Fury
 		[853] = {"ctrlstun"},		-- Hammer of Justice
 		[105593] = {"ctrlstun"},	-- Fist of Justice
+		[115752] = {"ctrlstun"},	-- Blinding Light
 		[119072] = {"ctrlstun"},	-- Holy Wrath
 		--[88625] = {"ctrlstun"},		-- Holy Word: Chastise
 		[1833] = {"ctrlstun"},		-- Cheap Shot
@@ -103,7 +104,7 @@ T.DiminishingSpells = function()
 		[89766] = {"ctrlstun"},		-- Axe Toss (Felguard)
 		[22703] = {"ctrlstun"},		-- Infernal Awakening
 		[132168] = {"ctrlstun"},	-- Shockwave
-		[107570] = {"ctrlstun"},	-- Storm Bolt
+		[132169] = {"ctrlstun"},	-- Storm Bolt
 		[105771] = {"ctrlstun"},	-- Warbringer
 		[20549] = {"ctrlstun"},		-- War Stomp
 
