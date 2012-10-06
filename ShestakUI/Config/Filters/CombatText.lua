@@ -208,7 +208,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[114942] = true	-- Healing Tide
 		-- Damaging spells
 		T.aoespam[421] = true		-- Chain Lightning
-		T.aoespam[45297] = true		-- Chain Lightning (Mastery proc)
+		T.aoespam[45297] = true		-- Chain Lightning (Mastery)
 		T.aoespam[8349] = true		-- Fire Nova
 		T.aoespam[77478] = true		-- Earhquake
 		T.aoespam[51490] = true		-- Thunderstorm

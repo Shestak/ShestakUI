@@ -28,11 +28,7 @@ if C.reminder.raid_buffs_enable == true then
 			105687,	-- Elixir of Mirrors
 		},
 		Food = {
-			104280,	-- Steamed Crab Surprise
-			104277,	-- Mogu Fish Stew
-			104272,	-- Black Pepper Ribs and Shrimp
-			104283,	-- Chun Tian Spring Rolls
-			104275,	-- Sea Mist Rice Noodles
+			104280,	-- Well Fed
 		},
 		Stat = {
 			20217,	-- Blessing of Kings
