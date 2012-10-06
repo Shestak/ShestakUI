@@ -10,8 +10,8 @@ T.ArenaControl = function()
 	return {
 		-- Crowd Controls
 		-- Death Knight
-		[GetSpellInfo(47481)] = 4,	-- Gnaw (Pet)
-		[GetSpellInfo(91797)] = 4,	-- Monstrous Blow (Pet - mutant)
+		[GetSpellInfo(47481)] = 4,	-- Gnaw (Ghoul)
+		[GetSpellInfo(91797)] = 4,	-- Monstrous Blow (Mutated Ghoul)
 		[GetSpellInfo(108194)] = 4,	-- Asphyxiate
 		[GetSpellInfo(115001)] = 4,	-- Remorseless Winter
 		-- Druid
@@ -64,6 +64,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(30283)] = 4,	-- Shadowfury
 		[GetSpellInfo(89766)] = 4,	-- Axe Toss (Felguard)
 		[GetSpellInfo(118699)] = 4,	-- Fear
+		[GetSpellInfo(104045)] = 4,	-- Sleep
 		[GetSpellInfo(5484)] = 4,	-- Howl of Terror
 		[GetSpellInfo(6789)] = 4,	-- Mortal Coil
 		[GetSpellInfo(6358)] = 4,	-- Seduction (Succubus)

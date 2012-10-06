@@ -158,8 +158,8 @@ if C.raidframe.plugins_aura_watch == true then
 			--[[SpellName(115001),	-- Remorseless Winter
 			SpellName(108194),	-- Asphyxiate
 			SpellName(47476),	-- Strangulate
-			SpellName(47481),	-- Gnaw (Pet)
-			SpellName(91797),	-- Monstrous Blow (Pet - mutant)
+			SpellName(47481),	-- Gnaw (Ghoul)
+			SpellName(91797),	-- Monstrous Blow (Mutated Ghoul)
 			-- Druid
 			SpellName(33786),	-- Cyclone
 			SpellName(2637),	-- Hibernate
@@ -205,10 +205,11 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(63685),	-- Freeze
 			-- Warlock
 			SpellName(118699),	-- Fear
+			SpellName(104045),	-- Sleep
 			SpellName(6789),	-- Mortal Coil
 			SpellName(5484),	-- Howl of Terror
-			SpellName(6358),	-- Seduction
-			SpellName(115268),	-- Mesmerize
+			SpellName(6358),	-- Seduction (Succubus)
+			SpellName(115268),	-- Mesmerize (Shivarra)
 			SpellName(30283),	-- Shadowfury
 			-- Warrior
 			SpellName(46968),	-- Shockwave
