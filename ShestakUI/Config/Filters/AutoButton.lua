@@ -22,6 +22,7 @@ T.ABItems = {
 	84242,	-- Shado-Pan Bandages
 	85261,	-- Shado-Pan Torch
 	89123,	-- Wu Kao Explosive
+	85950,	-- Mistfall Water Bucket
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
