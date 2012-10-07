@@ -59,12 +59,10 @@ end)
 ----------------------------------------------------------------------------------------
 local EnchantPopup = CreateFrame("Frame")
 EnchantPopup:RegisterEvent("REPLACE_ENCHANT")
-EnchantPopup:SetScript("OnEvent", function(...)
-	for i = 1, STATICPOPUP_NUMDIALOGS do
-		local popup = _G["StaticPopup"..i]
-		if popup.which == "REPLACE_ENCHANT" then
-			StaticPopup_OnClick(popup, 1)
-		end
+EnchantPopup:SetScript("OnEvent", function(self, event)
+	if event == "REPLACE_ENCHANT" then
+		ReplaceEnchant()
+		StaticPopup_Hide("REPLACE_ENCHANT")
 	end
 end)
 
@@ -96,6 +94,12 @@ SideDressUpModelControlFrame:HookScript("OnShow", function(self) self:Hide() end
 --	Hide subzone text
 ----------------------------------------------------------------------------------------
 SubZoneTextFrame:SetScript("OnShow", function() SubZoneTextFrame:Hide() end)
+
+----------------------------------------------------------------------------------------
+--	Disable flash tab
+----------------------------------------------------------------------------------------
+ChatTypeInfo["WHISPER"] = {sticky = 1, flashTab = false, flashTabOnGeneral = false}
+ChatTypeInfo["BN_WHISPER"] = {sticky = 1, flashTab = false, flashTabOnGeneral = false}
 
 ----------------------------------------------------------------------------------------
 --	Auto hide unnecessary stats from CharacterFrame(module from Inomena by p3lim)

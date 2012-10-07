@@ -10,8 +10,8 @@ T.ArenaControl = function()
 	return {
 		-- Crowd Controls
 		-- Death Knight
-		[GetSpellInfo(47481)] = 4,	-- Gnaw (Pet)
-		[GetSpellInfo(91797)] = 4,	-- Monstrous Blow (Pet - mutant)
+		[GetSpellInfo(47481)] = 4,	-- Gnaw (Ghoul)
+		[GetSpellInfo(91797)] = 4,	-- Monstrous Blow (Mutated Ghoul)
 		[GetSpellInfo(108194)] = 4,	-- Asphyxiate
 		[GetSpellInfo(115001)] = 4,	-- Remorseless Winter
 		-- Druid
@@ -64,12 +64,13 @@ T.ArenaControl = function()
 		[GetSpellInfo(30283)] = 4,	-- Shadowfury
 		[GetSpellInfo(89766)] = 4,	-- Axe Toss (Felguard)
 		[GetSpellInfo(118699)] = 4,	-- Fear
+		[GetSpellInfo(104045)] = 4,	-- Sleep
 		[GetSpellInfo(5484)] = 4,	-- Howl of Terror
 		[GetSpellInfo(6789)] = 4,	-- Mortal Coil
 		[GetSpellInfo(6358)] = 4,	-- Seduction (Succubus)
 		[GetSpellInfo(115268)] = 4,	-- Mesmerize (Shivarra)
 		-- Warrior
-		[GetSpellInfo(107570)] = 4,	-- Storm Bolt
+		[GetSpellInfo(132169)] = 4,	-- Storm Bolt
 		[GetSpellInfo(46968)] = 4,	-- Shockwave
 		[GetSpellInfo(5246)] = 4,	-- Intimidating Shout
 
@@ -118,9 +119,8 @@ T.ArenaControl = function()
 		[GetSpellInfo(50541)] = 1,	-- Clench (Scorpid)
 		[GetSpellInfo(91644)] = 1,	-- Snatch (Bird of Prey)
 		[GetSpellInfo(117368)] = 1,	-- Grapple Weapon
-		[GetSpellInfo(64058)] = 1,	-- Psychic Horror (Disarm effect)
+		[GetSpellInfo(64058)] = 1,	-- Psychic Horror
 		[GetSpellInfo(51722)] = 1,	-- Dismantle
-		[GetSpellInfo(118093)] = 1,	-- Disarm (Voidwalker/Voidlord)
 		[GetSpellInfo(676)] = 1,	-- Disarm
 
 		-- Buffs

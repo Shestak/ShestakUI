@@ -54,7 +54,6 @@ if T.author == true then
 	C["misc"].already_known = true
 	C["misc"].disenchanting = true
 	C["misc"].sum_buyouts = true
-	C["misc"].profession_database = true
 	C["announcements"].spells = true
 	C["announcements"].flask_food = true
 	C["announcements"].toy_train = true
@@ -67,6 +66,7 @@ if T.author == true then
 	C["automation"].auto_role = true
 	C["automation"].tab_binder = true
 	C["skins"].blizzard_frames = true
+	C["skins"].dbm = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].dk_runes = false
 	C["combattext"].dispel = false
@@ -99,7 +99,6 @@ if T.author == true then
 	C["stats"].battleground = true
 	C["toppanel"].enable = false
 	if T.level == MAX_PLAYER_LEVEL then
-		C["automation"].screenshot = true
 		C["stats"].experience = false
 		C["combattext"].heal_treshold = 500
 	else
@@ -113,63 +112,6 @@ if T.author == true then
 	end
 	if T.realm ~= "Дракономор" then
 		C["automation"].accept_invite = true
-	end
-end
-
-----------------------------------------------------------------------------------------
---	Sw2rT1 Config
-----------------------------------------------------------------------------------------
-if T.name == "Чаккноррис" or T.name == "Нупачимучка" or T.name == "Пратифный"
-or T.name == "Рукалицо" or T.name == "Трольпаладин" or T.name == "Чаккерс"
-or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупаяшколота" then
-	C["media"].texture = "Interface\\AddOns\\Media_texture\\TextureTuk.tga"
-	C["general"].welcome_message = false
-	C["general"].custom_lagtolerance = true
-	C["misc"].shift_marking = false
-	C["misc"].raid_tools = false
-	C["misc"].already_known = true
-	C["misc"].disenchanting = true
-	C["announcements"].drinking = true
-	C["announcements"].interrupts = true
-	C["announcements"].says_thanks = true
-	C["announcements"].pull_countdown = false
-	C["automation"].accept_invite = true
-	C["automation"].accept_quest = true
-	C["automation"].auto_collapse = true
-	C["automation"].skip_cinematic = true
-	C["automation"].auto_role = true
-	C["automation"].cancel_bad_buffs = true
-	C["automation"].currency_cap = true
-	C["skins"].blizzard_frames = true
-	C["skins"].minimap_buttons = true
-	C["skins"].combustion_helper = true
-	C["skins"].dbm = true
-	C["combattext"].crit_prefix = ""
-	C["combattext"].crit_postfix = ""
-	C["combattext"].merge_aoe_spam_time = 1
-	C["raidcooldown"].enable = false
-	C["enemycooldown"].show_inpvp = true
-	C["threat"].enable = false
-	C["tooltip"].item_icon = true
-	C["tooltip"].title = true
-	C["tooltip"].raid_icon = true
-	C["tooltip"].who_targetting = true
-	C["tooltip"].hide_combat = true
-	C["tooltip"].item_count = true
-	C["tooltip"].reforge = true
-	C["tooltip"].instance_lock = true
-	C["chat"].combatlog = false
-	C["chat"].damage_meter_spam = true
-	C["nameplate"].combat = true
-	C["aura"].focus_debuffs = true
-	C["unitframe"].castbar_latency = false
-	C["unitframe"].enemy_health_color = false
-	C["raidframe"].icons_role = true
-	if T.name ~= "Релика" then
-		C["raidframe"].plugins_healcomm = false
-	end
-	if T.name == "Чаккноррис" then
-		C["actionbar"].show_grid = false
 	end
 end
 
@@ -301,9 +243,12 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
 	C["automation"].decline_duel = false
+	C["automation"].accept_quest = true
+	C["automation"].skip_cinematic = true
 	C["automation"].cancel_bad_buffs = true
 	C["automation"].tab_binder = true
 	C["automation"].logging_combat = true
+	C["automation"].currency_cap = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["skins"].atlasloot = true
@@ -436,10 +381,9 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -345, 166}
 		C["position"].group_loot = {"RIGHT", UIParent, "RIGHT", -331, -24}
 		C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 285, -20}
-		C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -270, -100}
+		C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -150, -100}
 		C["position"].vehicle_bar = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 440, 175}
 		C["position"].unitframes.tank = {"LEFT", UIParent, "LEFT", 23, 0}
-		C["automation"].accept_quest = true
 		C["automation"].auto_role = true
 		C["combattext"].icon_size = 25
 		C["combattext"].heal_treshold = 5000

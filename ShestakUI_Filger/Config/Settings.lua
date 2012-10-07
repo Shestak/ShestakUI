@@ -121,7 +121,7 @@ Filger_Spells = {
 			-- Self
 			-- Mind Freeze
 			{spellID = 47528, filter = "CD"},
-			-- Gnaw
+			-- Gnaw (Ghoul)
 			{spellID = 47481, filter = "CD"},
 			-- Remorseless Winter
 			{spellID = 108200, filter = "CD"},
@@ -145,12 +145,16 @@ Filger_Spells = {
 			{spellID = 77575, filter = "CD"},
 			-- Pillar of Frost
 			{spellID = 51271, filter = "CD"},
+			-- Gorefiend's Grasp
+			{spellID = 108199, filter = "CD"},
 			-- Dancing Rune Weapon
 			{spellID = 49028, filter = "CD"},
 			-- Unholy Blight
 			{spellID = 115989, filter = "CD"},
 			-- Lichborne
 			{spellID = 49039, filter = "CD"},
+			-- Desecrated Ground
+			{spellID = 108201, filter = "CD"},
 			-- Death Pact
 			{spellID = 48743, filter = "CD"},
 			-- Raise Dead
@@ -670,12 +674,20 @@ Filger_Spells = {
 			{spellID = 53209, filter = "CD"},
 			-- Kill Shot
 			{spellID = 53351, filter = "CD"},
+			-- Glaive Toss
+			{spellID = 117050, filter = "CD"},
+			-- Blink Strike
+			{spellID = 130392, filter = "CD"},
 			-- Disengage
 			{spellID = 781, filter = "CD"},
-			-- Misdirection
-			{spellID = 34477, filter = "CD"},
+			-- Dire Beast
+			{spellID = 120679, filter = "CD"},
 			-- Fervor
 			{spellID = 82726, filter = "CD"},
+			-- Barrage
+			{spellID = 120360, filter = "CD"},
+			-- Misdirection
+			{spellID = 34477, filter = "CD"},
 			-- Feign Death
 			{spellID = 5384, filter = "CD"},
 			-- Snake Trap
@@ -686,12 +698,20 @@ Filger_Spells = {
 			{spellID = 13809, filter = "CD"},
 			-- Master's Call
 			{spellID = 53271, filter = "CD"},
+			-- Powershot
+			{spellID = 109259, filter = "CD"},
 			-- Intimidation
 			{spellID = 19577, filter = "CD"},
 			-- Wyvern Sting
 			{spellID = 19386, filter = "CD"},
 			-- Bestial Wrath
 			{spellID = 19574, filter = "CD"},
+			-- Lynx Rush
+			{spellID = 120697, filter = "CD"},
+			-- A Murder of Crows
+			{spellID = 131894, filter = "CD"},
+			-- Exhilaration
+			{spellID = 109304, filter = "CD"},
 			-- Deterrence
 			{spellID = 19263, filter = "CD"},
 			-- Rapid Fire
@@ -1749,6 +1769,8 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
+			-- Anticipation
+			{spellID = 115189, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shallow Insight
 			{spellID = 84745, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Moderate Insight
@@ -2335,6 +2357,8 @@ Filger_Spells = {
 			{spellID = 74434, filter = "CD"},
 			-- Demonic Circle: Teleport
 			{spellID = 48020, filter = "CD"},
+			-- Grimoire of Service
+			{spellID = 108501, filter = "CD"},
 			-- Soulshatter
 			{spellID = 29858, filter = "CD"},
 
@@ -2701,9 +2725,9 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.pve_debuff)},
 
 			-- Death Knight
-			-- Gnaw (Pet)
+			-- Gnaw (Ghoul)
 			{spellID = 47481, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Monstrous Blow (Pet - mutant)
+			-- Monstrous Blow (Mutated Ghoul)
 			{spellID = 91797, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2958,7 +2982,7 @@ Filger_Spells = {
 
 			-- Warrior
 			-- Storm Bolt
-			{spellID = 107570, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 132169, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Charge Stun
@@ -2991,6 +3015,10 @@ Filger_Spells = {
 			-- Mogu'shan Vaults
 			-- Wildfire Spark (Feng the Accursed)
 			{spellID = 116784, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Arcane Resonance (Feng the Accursed)
+			{spellID = 116417, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Voodoo Doll (Gara'jal the Spiritbinder)
+			{spellID = 122151, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Other
 			-- Rocket Fuel Leak
@@ -3023,9 +3051,9 @@ Filger_Spells = {
 			-- Death's Advance
 			{spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
-			-- Gnaw (Pet)
+			-- Gnaw (Ghoul)
 			{spellID = 47481, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Monstrous Blow (Pet - mutant)
+			-- Monstrous Blow (Mutated Ghoul)
 			{spellID = 91797, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},
@@ -3294,7 +3322,7 @@ Filger_Spells = {
 			{spellID = 46924, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Storm Bolt
-			{spellID = 107570, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 132169, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Shockwave
 			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
