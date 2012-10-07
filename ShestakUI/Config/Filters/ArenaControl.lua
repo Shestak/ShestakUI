@@ -119,9 +119,8 @@ T.ArenaControl = function()
 		[GetSpellInfo(50541)] = 1,	-- Clench (Scorpid)
 		[GetSpellInfo(91644)] = 1,	-- Snatch (Bird of Prey)
 		[GetSpellInfo(117368)] = 1,	-- Grapple Weapon
-		[GetSpellInfo(64058)] = 1,	-- Psychic Horror (Disarm effect)
+		[GetSpellInfo(64058)] = 1,	-- Psychic Horror
 		[GetSpellInfo(51722)] = 1,	-- Dismantle
-		[GetSpellInfo(118093)] = 1,	-- Disarm (Voidwalker/Voidlord)
 		[GetSpellInfo(676)] = 1,	-- Disarm
 
 		-- Buffs
