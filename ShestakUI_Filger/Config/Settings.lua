@@ -1763,6 +1763,8 @@ Filger_Spells = {
 			Position = {unpack(Filger_Settings.player_proc_icon)},
 
 			-- Buffs
+			-- Anticipation
+			{spellID = 115189, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shallow Insight
 			{spellID = 84745, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Moderate Insight
