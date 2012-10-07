@@ -34,7 +34,7 @@ elseif C.actionbar.rightbars == 3 then
 else
 	rightbaranchor:Hide()
 end
-rightbaranchor:SetFrameStrata("BACKGROUND")
+rightbaranchor:SetFrameStrata("LOW")
 
 ----------------------------------------------------------------------------------------
 --	Split bar panels
@@ -53,11 +53,12 @@ end
 --	Pet bar panel
 ----------------------------------------------------------------------------------------
 local petbaranchor = CreateFrame("Frame", "PetActionBarAnchor", UIParent)
+petbaranchor:SetFrameStrata("LOW")
 if C.actionbar.rightbars > 0 then
 	if C.actionbar.petbar_horizontal == true then
 		petbaranchor:CreatePanel("Invisible", (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), (C.actionbar.button_size + C.actionbar.button_space), unpack(C.position.pet_horizontal))
 	else
-		petbaranchor:CreatePanel("Invisible", (C.actionbar.button_size + C.actionbar.button_space), (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), "RIGHT", rightbaranchor, "LEFT", 0, 0)
+		petbaranchor:CreatePanel("Invisible", C.actionbar.button_size + 3, (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), "RIGHT", rightbaranchor, "LEFT", 0, 0)
 	end
 else
 	petbaranchor:CreatePanel("Invisible", (C.actionbar.button_size + C.actionbar.button_space), (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), unpack(C.position.right_bars))
@@ -76,8 +77,8 @@ if C.actionbar.stancebar_hide ~= true then
 		local forms = GetNumShapeshiftForms()
 		if forms > 0 then
 			if C.actionbar.stancebar_horizontal ~= true then
-				shiftanchor:Width(C.actionbar.button_size)
-				shiftanchor:Height((C.actionbar.button_size * forms) + ((C.actionbar.button_space * forms) - 3 ))
+				shiftanchor:Width(C.actionbar.button_size + 3)
+				shiftanchor:Height((C.actionbar.button_size * forms) + ((C.actionbar.button_space * forms) - 3))
 				shiftanchor:Point("TOPLEFT", _G["StanceButton1"], "TOPLEFT")
 			else
 				shiftanchor:Width((C.actionbar.button_size * forms) + ((C.actionbar.button_space * forms) - 3))

@@ -37,6 +37,7 @@ local function Shared(self, unit)
 
 	-- Backdrop for every units
 	self:CreateBackdrop("Default")
+	self:SetFrameStrata("BACKGROUND")
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", self:GetName().."_Health", self)
