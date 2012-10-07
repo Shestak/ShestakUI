@@ -2854,7 +2854,7 @@ Filger_Spells = {
 
 			-- Monk
 			-- Fists of Fury
-			{spellID = 113656, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 120086, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Leg Sweep
 			{spellID = 119381, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
@@ -3158,7 +3158,7 @@ Filger_Spells = {
 			{spellID = 122783, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Debuffs
 			-- Fists of Fury
-			{spellID = 113656, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 120086, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Leg Sweep
 			{spellID = 119381, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
