@@ -511,6 +511,7 @@ if T.coauthor == true then
 	C["raidframe"].icons_role = true
 	if T.name == "Занштек" then
 		C["automation"].skip_cinematic = true
+		C["raidframe"].deficit_health = true
 	end
 	if T.class == "WARRIOR" then
 		C["actionbar"].stancebar_mouseover = false
