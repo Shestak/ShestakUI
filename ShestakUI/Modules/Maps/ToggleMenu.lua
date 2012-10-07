@@ -466,11 +466,7 @@ for i = 1, GetNumAddOns() do
 	Text:SetHeight(C.media.pixel_font_size)
 	if addonInfo[i].is_main then
 		local expandAddonButton = CreateFrame("Button", "AddonMenuExpand"..j, addonmenuitems[j])	
-		if MinimapAnchorHorizontal == "LEFT" then
-			expandAddonButton:CreatePanel("Overlay", buttonheight(1) - 4, buttonheight(1) - 4, "TOPRIGHT", addonmenuitems[j], "TOPRIGHT", -2, -2)
-		else
-			expandAddonButton:CreatePanel("Overlay", buttonheight(1) - 4, buttonheight(1) - 4, "TOPLEFT", addonmenuitems[j], "TOPLEFT", 2, -2)
-		end
+		expandAddonButton:CreatePanel("Overlay", buttonheight(1) - 4, buttonheight(1) - 4, "TOP"..MinimapAnchorHorizontalReverse, addonmenuitems[j], "TOP"..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor * -1, -2)
 		expandAddonButton:SetFrameLevel(defaultframelevel + 2)
 		expandAddonButton:SetFrameStrata("HIGH")
 		expandAddonButton:EnableMouse(true)
