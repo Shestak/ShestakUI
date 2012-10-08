@@ -28,12 +28,9 @@
 
 	<Script file="Modules\Skins\AdiBags.lua"/>
 	<Script file="Modules\Skins\EPGP.lua"/>
-	<Script file="Modules\Skins\MageManaBar.lua"/>
-	<Script file="Modules\Skins\MFClip.lua"/>
 	<Script file="Modules\Skins\MogIt.lua"/>
 	<Script file="Modules\Skins\MyRolePlay.lua"/>
 	<Script file="Modules\Skins\Quartz.lua"/>
-	<Script file="Modules\Skins\RollTracker.lua"/>
 	<Script file="Modules\Skins\ShieldMonitor.lua"/>
 	<Script file="Modules\Skins\Skada.lua"/>
 </Ui>
