@@ -11,7 +11,6 @@ if C.actionbar.petbar_hide then PetActionBarAnchor:Hide() return end
 local bar = CreateFrame("Frame", "PetHolder", UIParent, "SecureHandlerStateTemplate")
 bar:ClearAllPoints()
 bar:SetAllPoints(PetActionBarAnchor)
-bar:SetFrameStrata("BACKGROUND")
 
 bar:RegisterEvent("PLAYER_LOGIN")
 bar:RegisterEvent("PLAYER_CONTROL_LOST")
@@ -33,8 +32,6 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 			button:ClearAllPoints()
 			button:SetParent(PetHolder)
 			PetActionBarAnchor:SetParent(PetHolder)
-			PetActionBarAnchor:SetFrameStrata("BACKGROUND")
-			PetActionBarAnchor:SetFrameLevel(1)
 			button:Size(C.actionbar.button_size)
 			if i == 1 then
 				if C.actionbar.petbar_horizontal == true then

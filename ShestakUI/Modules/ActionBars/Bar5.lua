@@ -11,10 +11,8 @@ if C.actionbar.rightbars < 3 then
 	else
 		bar:SetAllPoints(ActionBarAnchor)
 	end
-	bar:SetFrameStrata("LOW")
 else
 	bar:SetAllPoints(RightActionBarAnchor)
-	bar:SetFrameStrata("BACKGROUND")
 end
 MultiBarBottomRight:SetParent(bar)
 

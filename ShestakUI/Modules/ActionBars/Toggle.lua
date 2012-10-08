@@ -259,6 +259,7 @@ for i = 1, 5 do
 		ToggleBar[i]:SetScript("OnEvent", MainBars)
 	elseif i == 2 then
 		ToggleBar[i]:CreatePanel("Transparent", RightActionBarAnchor:GetWidth(), C.actionbar.button_size / 1.5, "TOPRIGHT", RightActionBarAnchor, "BOTTOMRIGHT", 0, -C.actionbar.button_space)
+		ToggleBar[i]:SetFrameStrata("LOW")
 		ToggleBarText(i, "> > >", false, true)
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
@@ -299,7 +300,6 @@ for i = 1, 5 do
 	elseif i == 5 then
 		ToggleBar[i]:CreatePanel("Transparent", 19, 19, "BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
 		ToggleBar[i]:SetBackdropBorderColor(unpack(C.media.border_color))
-		ToggleBar[i]:SetFrameStrata("HIGH")
 		ToggleBar[i].Text:Point("CENTER", 1, 0)
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()

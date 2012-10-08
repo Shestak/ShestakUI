@@ -11,7 +11,7 @@ MinimapAnchor:RegisterEvent("ADDON_LOADED")
 ----------------------------------------------------------------------------------------
 --	Anchor for ToggleMinimap and GhostFrame
 ----------------------------------------------------------------------------------------
-local _, _, position, xpos, ypos = unpack(C.position.minimap)
+local _, _, position = unpack(C.position.minimap)
 	-- TOP of BOTTOM
 	if position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT" then
 		MinimapAnchorVertical = "TOP"
