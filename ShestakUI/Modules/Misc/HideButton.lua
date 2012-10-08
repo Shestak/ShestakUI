@@ -9,7 +9,7 @@ anchor:CreatePanel("Invisible", 128, 16, unpack(C.position.hide_button))
 anchor:SetFrameLevel(0)
 
 local HideB = CreateFrame("Frame", "HideB", UIParent)
-HideB:CreatePanel("Default", 9, 9, "BOTTOM", anchor, "TOP", 0, -7)
+HideB:CreatePanel("Default", 9, 9, "BOTTOM", anchor, "TOP", 0, -9)
 
 local Line = CreateFrame("Frame", "Line", HideB)
 Line:CreatePanel("Default", 36, 1, "TOP", HideB, "BOTTOM", 0, -3)
