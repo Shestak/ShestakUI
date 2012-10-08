@@ -50,6 +50,8 @@ local UpdateRune = function(self, event, rid)
 		rune:SetScript('OnUpdate', OnUpdate)
 	end
 
+	UpdateType(self, event, rid)
+
 	if(runes.PostUpdateRune) then
 		return runes:PostUpdateRune(rune, rid, start, duration, runeReady)
 	end
