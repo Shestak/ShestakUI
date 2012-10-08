@@ -503,4 +503,8 @@ L_EXTRA_ZONEACHID = {
 	["冬拥湖"]							= {X =    0, A =    0, H =    0},
 }
 
+-- Hide Button
+L_HIDE_BUTTON_1 = "点击鼠标左键=隐藏聊天"
+L_HIDE_BUTTON_2 = "点击毁灭=隐藏小地图（仅战斗）"
+
 -- edit by Oz of shestak. org --

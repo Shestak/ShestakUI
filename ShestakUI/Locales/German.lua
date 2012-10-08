@@ -503,4 +503,8 @@ L_EXTRA_ZONEACHID = {
 	["Tausendwintersee"]				= {X =    0, A =    0, H =    0},
 }
 
+--Hide Button
+L_HIDE_BUTTON_1 = "Linksklick = hide chat"
+L_HIDE_BUTTON_2 = "Right click = hide Minikarte (nur außerhalb des Kampfes)"
+
 -- edit by Oz of shestak. org --

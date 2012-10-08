@@ -19,6 +19,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Mensaje de bienvenida en el chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Actualizar automaticamente la opción de Tolerancia al Lag Personalizada de Blizzard a tu latencia"
 
 -- Miscellaneous options
+L_GUI_MISC_HIDE_BUTTON = "Botón para ocultar el chat y el minimapa"
 L_GUI_MISC_MARKING = "Marca el objetivo cuando pulsas 'shift'"
 L_GUI_MISC_INVKEYWORD = "Acrónimo para invitaciones (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"

@@ -46,6 +46,8 @@ local function Local(o)
 
 	-- Miscellaneous options
 	if o == "UIConfigmisc" then o = OTHER end
+	if o == "UIConfigmischide_button" then o = L_GUI_MISC_HIDE_BUTTON end
+	if o == "UIConfigmischide_button_mouseover" then o = L_GUI_MISC_HIDE_BUTTON_MOUSEOVER end	
 	if o == "UIConfigmiscshift_marking" then o = L_GUI_MISC_MARKING end
 	if o == "UIConfigmiscinvite_keyword" then o = L_GUI_MISC_INVKEYWORD end
 	if o == "UIConfigmiscafk_spin_camera" then o = L_GUI_MISC_SPIN_CAMERA end

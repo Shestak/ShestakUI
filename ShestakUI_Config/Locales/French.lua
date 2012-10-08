@@ -19,6 +19,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Message de bienvenue pour le chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Ajuste automatiquement la barre de latence Blizzard avec votre propre latence"
 
 -- Miscellaneous options
+L_GUI_MISC_HIDE_BUTTON = "Bouton pour masquer le chat et minicarte"
 L_GUI_MISC_MARKING = "Marque la cible quand vous appuyez sur MAJ"
 L_GUI_MISC_INVKEYWORD = "Mot clé pour inviter (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Faire tourner la caméra quand absent"

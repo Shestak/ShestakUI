@@ -19,6 +19,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "顯示歡迎信息"
 L_GUI_GENERAL_LAG_TOLERANCE = "自動更新自訂延遲容許值"
 
 -- Miscellaneous options
+L_GUI_MISC_HIDE_BUTTON = "按鈕，隱藏聊天和小地圖"
 L_GUI_MISC_MARKING = "點擊Shift顯示團隊標記圖示菜單"
 L_GUI_MISC_INVKEYWORD = "自動邀請關鍵字 (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "AFK時旋轉鏡頭"

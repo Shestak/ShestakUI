@@ -6,6 +6,7 @@
 ----------------------------------------------------------------------------------------
 C["position"] = {
 	-- Miscellaneous positions
+	["hide_button"] = {"TOP", UIParent, "TOP", 0, -3},								-- Hide button
 	["minimap_buttons"] = {"TOPLEFT", Minimap, "TOPRIGHT", 3, 2},					-- Minimap buttons
 	["minimap"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -36},						-- Minimap
 	["map"] = {"BOTTOM", UIParent, "BOTTOM", -120, 320},							-- Map

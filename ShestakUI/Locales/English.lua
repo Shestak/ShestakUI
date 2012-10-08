@@ -499,4 +499,8 @@ L_EXTRA_ZONEACHID = {
 	["Wintergrasp"]						= {X =    0, A =    0, H =    0},
 }
 
+-- Hide Button
+L_HIDE_BUTTON_1 = "Left click = hide chat"
+L_HIDE_BUTTON_2 = "Right click = hide minimap (only out of combat)"
+
 -- edit by Oz of shestak. org --

@@ -503,4 +503,8 @@ L_EXTRA_ZONEACHID = {
 	["Conquista del Invierno"]			= {X =    0, A =    0, H =    0},
 }
 
+-- Hide Button
+L_HIDE_BUTTON_1 = "Clic izquierdo = ocultar chat"
+L_HIDE_BUTTON_2 = "Haga clic derecho = ocultar minimapa (sólo fuera de combate)"
+
 -- edit by Oz of shestak. org --

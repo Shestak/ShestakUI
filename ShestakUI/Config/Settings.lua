@@ -40,6 +40,7 @@ C["general"] = {
 --	Miscellaneous options
 ----------------------------------------------------------------------------------------
 C["misc"] = {
+	["hide_button"] = true,						-- Button to hide chat and minimap
 	["shift_marking"] = true,					-- Marks target when you push "shift"
 	["invite_keyword"] = "inv",					-- Short keyword for invite(for enable - in game type /ainv)
 	["afk_spin_camera"] = true,					-- Spin camera while afk

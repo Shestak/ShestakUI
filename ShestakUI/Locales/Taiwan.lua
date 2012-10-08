@@ -503,4 +503,8 @@ L_EXTRA_ZONEACHID = {
 	["冬握湖"]							= {X =    0, A =    0, H =    0},
 }
 
+-- Hide Button
+L_HIDE_BUTTON_1 = "點擊鼠標左鍵=隱藏聊天"
+L_HIDE_BUTTON_2 = "單擊鼠標右鍵=隱藏（只出戰鬥）"
+
 -- edit by Oz of shestak. org --

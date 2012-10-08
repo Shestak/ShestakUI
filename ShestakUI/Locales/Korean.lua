@@ -503,4 +503,8 @@ L_EXTRA_ZONEACHID = {
 	["Wintergrasp"]						= {X =    0, A =    0, H =    0},
 }
 
+-- Hide Button
+L_HIDE_BUTTON_1 = "왼쪽 버튼을 클릭 = 숨기기 채팅"
+L_HIDE_BUTTON_2 = "마우스 오른쪽 버튼으로 클릭 = 숨기기 minimap (단 아웃 전투의)"
+
 -- edit by Oz of shestak. org --

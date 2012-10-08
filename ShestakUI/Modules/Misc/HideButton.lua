@@ -1,14 +1,14 @@
 ﻿local T, C, L = unpack(select(2, ...))
+if C.misc.hide_button ~= true then return end
 
 ----------------------------------------------------------------------------------------
---  HideButton : a button to hide your chat and minimap
+--  HideButton: a button to hide your chat and minimap
 ----------------------------------------------------------------------------------------
 local HideB = CreateFrame("Frame", "HideB", UIParent)
-HideB:CreatePanel("ClassColor", 18, 18, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -1, 0)
+HideB:CreatePanel("Default", 9, 9, unpack(C.position.hide_button))
 
-HideB:SetAlpha(0)
-HideB:SetScript("OnEnter", function() HideB:SetAlpha(1) end)
-HideB:SetScript("OnLeave", function() HideB:SetAlpha(0) end)
+local Line = CreateFrame("Frame", "Line", HideB)
+Line:CreatePanel("Default", 36, 1, "TOP", HideB, "BOTTOM", 0, -3)
 
 HideB.ChatIsShown = true
 HideB.MinimapIsShown = true
@@ -139,3 +139,22 @@ HideB:SetScript("OnMouseUp", function(frame, button)
         HideB:MapT()
     end
 end)
+
+-- Tooltip
+
+local tooltip_hide = function()
+	GameTooltip:Hide()
+end
+
+local tooltip_show = function(self)
+	GameTooltip:SetOwner(HideB, "ANCHOR_BOTTOM", 0, -7)
+	GameTooltip:ClearLines()
+	GameTooltip:AddLine(L_HIDE_BUTTON_1)
+	GameTooltip:AddLine(L_HIDE_BUTTON_2)
+	GameTooltip:Show()
+end
+
+HideB:SetScript("OnEnter", tooltip_show)
+HideB:SetScript("OnLeave", tooltip_hide)
+
+-- Edit by Oz of shestak.org --

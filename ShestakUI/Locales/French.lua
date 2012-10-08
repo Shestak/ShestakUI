@@ -503,4 +503,8 @@ L_EXTRA_ZONEACHID = {
 	["Joug-d'hiver"]					= {X =    0, A =    0, H =    0},
 }
 
+-- Hide Button
+L_HIDE_BUTTON_1 = "clic gauche = peau de chat"
+L_HIDE_BUTTON_2 = "Clic droit = peau minicarte (uniquement hors combat)"
+
 -- edit by Oz of shestak. org --

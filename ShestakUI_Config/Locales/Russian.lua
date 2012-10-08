@@ -19,6 +19,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Приветственное сообщение
 L_GUI_GENERAL_LAG_TOLERANCE = "Автоматическое обновление допустимой задержки"
 
 -- Miscellaneous options
+L_GUI_MISC_HIDE_BUTTON = "Кнопка для скрытия чата и миникарты"
 L_GUI_MISC_MARKING = "Меню с метками при нажатии 'shift'"
 L_GUI_MISC_INVKEYWORD = "Ключевое слово для автоматического приглашения (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Вращать камеру во время афк"

@@ -503,4 +503,8 @@ L_EXTRA_ZONEACHID = { -- Needs review
 	["Lungoinverno"]					= {X =    0, A =    0, H =    0},
 }
 
+-- Hide Button
+L_HIDE_BUTTON_1 = "Click sinistro = nascondi chat"
+L_HIDE_BUTTON_2 = "Click destro = nascondi minimappa (solo fuori dal combattimento)"
+
 -- edit by Oz of shestak. org --
