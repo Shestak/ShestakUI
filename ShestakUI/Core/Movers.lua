@@ -29,6 +29,7 @@ T.MoverFrames = {
 	oUF_Target_Castbar,
 	oUF_Player_Portrait,
 	oUF_Target_Portrait,
+	HideB_Anchor
 }
 
 local moving = false
@@ -137,3 +138,5 @@ SLASH_MOVING1 = "/moveui"
 SLASH_MOVING2 = "/ьщмугш"
 SLASH_MOVING3 = "/ui"
 SLASH_MOVING4 = "/гш"
+
+-- edit by Oz of shestak. org --
