@@ -469,9 +469,10 @@ stArchFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 stArchFrame:SetWidth(C.minimap.size)
 stArchFrame:SetHeight(15)
-stArchFrame:SetPoint(unpack(C.extra_position.archaeology))
+stArchFrame:SetPoint(unpack(C.position.archaeology))
 stArchFrame:SetTemplate("Transparent")
 stArchFrame:SetFrameLevel(1)
+stArchFrame:SetFrameStrata("HIGH")
 
 stArchFrame:EnableMouse(true)
 stArchFrame:SetMovable(true)

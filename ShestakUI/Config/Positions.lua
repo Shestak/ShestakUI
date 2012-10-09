@@ -33,6 +33,7 @@ C["position"] = {
 	["raid_buffs"] = {"BOTTOMLEFT", Minimap, "TOPLEFT", -1, 5},						-- Raid buff reminder
 	["top_panel"] = {"TOP", UIParent, "TOP", 0, -20},								-- Top panel
 	["raid_utility"] = {"TOP", UIParent, "TOP", -280, 1},							-- Raid utility
+	["archaeology"] = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5},					-- Archaeology frame
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},							-- Bottom bars
 	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 330},			-- Right bars
