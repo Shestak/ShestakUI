@@ -92,6 +92,7 @@
 	<Script file="Modules\Misc\ClickCast.lua"/>
 	<Script file="Modules\Misc\ProfessionsDatabase.lua"/>
 	<Script file="Modules\Misc\OneClickEnchantScroll.lua"/>
+	<Script file="Modules\Misc\Archaeology.lua"/>
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>

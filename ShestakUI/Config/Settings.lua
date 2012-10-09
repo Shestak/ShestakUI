@@ -59,6 +59,7 @@ C["misc"] = {
 	["move_blizzard"] = false,					-- Move some Blizzard frames
 	["color_picker"] = false,					-- Improved ColorPicker
 	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
+	["archaeology"] = false,					-- Archaeology artifacts and cooldown
 }
 
 ----------------------------------------------------------------------------------------
