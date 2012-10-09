@@ -46,7 +46,7 @@ C["misc"] = {
 	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
 	["quest_auto_button"] = false,				-- Quest auto button
 	["raid_tools"] = true,						-- Raid tools
-	["profession_tabs"] = true,					-- Professions tabs on tradeskill frames
+	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
 	["profession_database"] = false,			-- Professions Database on Professions frame
 	["dungeon_tabs"] = true,					-- PvP/PvE tabs on own frames
 	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
@@ -58,6 +58,7 @@ C["misc"] = {
 	["click_cast"] = false,						-- Simple click2cast spell binder
 	["move_blizzard"] = false,					-- Move some Blizzard frames
 	["color_picker"] = false,					-- Improved ColorPicker
+	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
 }
 
 ----------------------------------------------------------------------------------------
@@ -97,6 +98,7 @@ C["automation"] = {
 	["tab_binder"] = false,						-- Auto change Tab key to only target enemy players
 	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
 	["currency_cap"] = false,					-- Auto popup for currency cap
+	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll
 }
 
 ----------------------------------------------------------------------------------------

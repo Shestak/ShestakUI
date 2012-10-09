@@ -91,6 +91,7 @@
 	<Script file="Modules\Misc\MouseoverMarking.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
 	<Script file="Modules\Misc\ProfessionsDatabase.lua"/>
+	<Script file="Modules\Misc\OneClickEnchantScroll.lua"/>
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>
@@ -122,6 +123,7 @@
 	<Script file="Modules\Automation\AutoChefsHat.lua"/>
 	<Script file="Modules\Automation\AutoInvite.lua"/>
 	<Script file="Modules\Automation\AutoRelease.lua"/>
+	<Script file="Modules\Automation\BuffOnScroll.lua"/>
 	<Script file="Modules\Automation\CancelBadBuffs.lua"/>
 	<Script file="Modules\Automation\CurrencyCap.lua"/>
 	<Script file="Modules\Automation\DeclineDuel.lua"/>
