@@ -22,10 +22,6 @@
 	<Script file="Modules\ExtraBars\MarkBar.lua"/>
 	<Script file="Modules\ExtraBars\SwitchSpec.lua"/>
 
-	<Script file="Modules\Misc\Archaeology.lua"/>
-	<Script file="Modules\Misc\BuffAutomator.lua"/>
-	<Script file="Modules\Misc\OneClickEnchantScroll.lua"/>
-
 	<Script file="Modules\Skins\AdiBags.lua"/>
 	<Script file="Modules\Skins\EPGP.lua"/>
 	<Script file="Modules\Skins\MogIt.lua"/>

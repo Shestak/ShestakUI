@@ -57,7 +57,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	if T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Мейнрейн" or T.name == "Мейнгрейв" then
 		C["extra_position"].mark_bar = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -225, 160}
 		C["extra_bar"].mark_bar = true
-		C["extra_general"].buff_automator = true
 	end
 end
 
