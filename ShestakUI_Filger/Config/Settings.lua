@@ -2895,6 +2895,8 @@ Filger_Spells = {
 			{spellID = 113792, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Psychic Horror
 			{spellID = 64044, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Sin and Punishment
+			{spellID = 87204, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silence
 			{spellID = 15487, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Void Tendril's Grasp
