@@ -334,10 +334,10 @@ DamageButton:SetScript("OnLeave", function()
 	DamageButton:FadeOut()
 end)
 
-ChatFrame3:RegisterEvent("PLAYER_ENTERING_WORLD")
-ChatFrame3:HookScript("OnEvent", function(_, event, addon)
-	if event == "PLAYER_ENTERING_WORLD" then
-		ChatFrame3:UnregisterEvent("PLAYER_ENTERING_WORLD")
+ChatFrame3:RegisterEvent("PLAYER_LOGIN")
+ChatFrame3:HookScript("OnEvent", function(self, event, addon)
+	if event == "PLAYER_LOGIN" then
+		self:UnregisterEvent(event)
 		_, _, _, alDamageMeterEnabled = GetAddOnInfo("alDamageMeter")
 		if SavedOptionsPerChar.LootFrame == nil then SavedOptionsPerChar.LootFrame = true end
 		if SavedOptionsPerChar.DamageMeter == nil then SavedOptionsPerChar.DamageMeter = false end
