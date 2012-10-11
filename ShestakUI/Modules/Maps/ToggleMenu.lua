@@ -170,7 +170,38 @@ local function updateTextures(button, checkable)
 	button:HookScript("OnEnter", T.SetModifiedBackdrop)
 	button:HookScript("OnLeave", T.SetOriginalBackdrop)
 end
-	
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:HookScript("OnEvent", function(self, event)
+self:UnregisterEvent(event)
+local position
+if SavedPositions.MinimapAnchor == nil then
+	position = C.position.minimap[3]
+else
+	position = SavedPositions.MinimapAnchor[3]
+end
+-- TOP or BOTTOM
+if position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT" then
+	MinimapAnchorVertical = "TOP"
+	MinimapAnchorVerticalReverse = "BOTTOM"
+	MinimapAnchorVerticalFactor = -1
+else
+	MinimapAnchorVertical = "BOTTOM"
+	MinimapAnchorVerticalReverse = "TOP"
+	MinimapAnchorVerticalFactor = 1
+end
+-- LEFT or RIGHT
+if position == "TOPLEFT" or position == "LEFT" or position == "BOTTOMLEFT"then
+	MinimapAnchorHorizontal = "LEFT"
+	MinimapAnchorHorizontalReverse = "RIGHT"
+	MinimapAnchorHorizontalFactor = 1
+else
+	MinimapAnchorHorizontal = "RIGHT"
+	MinimapAnchorHorizontalReverse = "LEFT"
+	MinimapAnchorHorizontalFactor = -1
+end
+
 local MenuBG = CreateFrame("Frame", "TTMenuBackground", UIParent)
 MenuBG:CreatePanel("Transparent", borderwidth(1), 1, MinimapAnchorVertical..MinimapAnchorHorizontalReverse, Minimap, MinimapAnchorVerticalReverse..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor, 3 * MinimapAnchorVerticalFactor)
 MenuBG:SetFrameLevel(defaultframelevel)
@@ -509,38 +540,4 @@ for i = 1, GetNumAddOns() do
 end
 
 refreshAddOnMenu()
---[[
-MinimapAnchor:RegisterEvent("PLAYER_ENTERING_WORLD")
-MinimapAnchor:HookScript("OnEvent", function(_, event)
-	if event == "PLAYER_ENTERING_WORLD" and SavedPositions.MinimapAnchor ~= nil then
-		local _, _, position = unpack(SavedPositions.MinimapAnchor)
-	else
-		local _, _, position = unpack(C.position.minimap)
-	end
-	-- TOP of BOTTOM
-	if position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT" then
-		MinimapAnchorVertical = "TOP"
-		MinimapAnchorVerticalReverse = "BOTTOM"
-		MinimapAnchorVerticalFactor = -1
-	else
-		MinimapAnchorVertical = "BOTTOM"
-		MinimapAnchorVerticalReverse = "TOP"
-		MinimapAnchorVerticalFactor = 1
-	end
-	-- LEFT or RIGHT
-	if position == "TOPLEFT" or position == "LEFT" or position == "BOTTOMLEFT"then
-		MinimapAnchorHorizontal = "LEFT"
-		MinimapAnchorHorizontalReverse = "RIGHT"
-		MinimapAnchorHorizontalFactor = 1
-	else
-		MinimapAnchorHorizontal = "RIGHT"
-		MinimapAnchorHorizontalReverse = "LEFT"
-		MinimapAnchorHorizontalFactor = -1
-	end
-	MenuBG:ClearAllPoints()
-	MenuBG:Point(MinimapAnchorVertical..MinimapAnchorHorizontalReverse, Minimap, MinimapAnchorVerticalReverse..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor, 3 * MinimapAnchorVerticalFactor)
-	AddonBG:ClearAllPoints()
-	AddonBG:Point(MinimapAnchorVertical..MinimapAnchorHorizontal, MenuBG, MinimapAnchorVertical..MinimapAnchorHorizontal, 0, 0)
-	OpenMenuBG:ClearAllPoints()
-	OpenMenuBG:Point(MinimapAnchorVertical, MenuBG, MinimapAnchorVertical, 0, 0)
-end)]]--
+end)
