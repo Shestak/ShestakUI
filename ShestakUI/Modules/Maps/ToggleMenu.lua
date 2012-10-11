@@ -171,36 +171,32 @@ local function updateTextures(button, checkable)
 	button:HookScript("OnLeave", T.SetOriginalBackdrop)
 end
 
-local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_LOGIN")
-frame:HookScript("OnEvent", function(self, event)
-self:UnregisterEvent(event)
-local position
-if SavedPositions.MinimapAnchor == nil then
-	position = C.position.minimap[3]
-else
-	position = SavedPositions.MinimapAnchor[3]
+local position = C.position.minimap[3]
+
+local UpdateAnchor = function()
+	-- TOP or BOTTOM
+	if position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT" then
+		MinimapAnchorVertical = "TOP"
+		MinimapAnchorVerticalReverse = "BOTTOM"
+		MinimapAnchorVerticalFactor = -1
+	else
+		MinimapAnchorVertical = "BOTTOM"
+		MinimapAnchorVerticalReverse = "TOP"
+		MinimapAnchorVerticalFactor = 1
+	end
+	-- LEFT or RIGHT
+	if position == "TOPLEFT" or position == "LEFT" or position == "BOTTOMLEFT"then
+		MinimapAnchorHorizontal = "LEFT"
+		MinimapAnchorHorizontalReverse = "RIGHT"
+		MinimapAnchorHorizontalFactor = 1
+	else
+		MinimapAnchorHorizontal = "RIGHT"
+		MinimapAnchorHorizontalReverse = "LEFT"
+		MinimapAnchorHorizontalFactor = -1
+	end
 end
--- TOP or BOTTOM
-if position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT" then
-	MinimapAnchorVertical = "TOP"
-	MinimapAnchorVerticalReverse = "BOTTOM"
-	MinimapAnchorVerticalFactor = -1
-else
-	MinimapAnchorVertical = "BOTTOM"
-	MinimapAnchorVerticalReverse = "TOP"
-	MinimapAnchorVerticalFactor = 1
-end
--- LEFT or RIGHT
-if position == "TOPLEFT" or position == "LEFT" or position == "BOTTOMLEFT"then
-	MinimapAnchorHorizontal = "LEFT"
-	MinimapAnchorHorizontalReverse = "RIGHT"
-	MinimapAnchorHorizontalFactor = 1
-else
-	MinimapAnchorHorizontal = "RIGHT"
-	MinimapAnchorHorizontalReverse = "LEFT"
-	MinimapAnchorHorizontalFactor = -1
-end
+
+UpdateAnchor()
 
 local MenuBG = CreateFrame("Frame", "TTMenuBackground", UIParent)
 MenuBG:CreatePanel("Transparent", borderwidth(1), 1, MinimapAnchorVertical..MinimapAnchorHorizontalReverse, Minimap, MinimapAnchorVerticalReverse..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor, 3 * MinimapAnchorVerticalFactor)
@@ -540,4 +536,43 @@ for i = 1, GetNumAddOns() do
 end
 
 refreshAddOnMenu()
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:HookScript("OnEvent", function(self, event)
+	self:UnregisterEvent(event)
+	if SavedPositions.MinimapAnchor == nil then return end
+	position = SavedPositions.MinimapAnchor[3]
+	UpdateAnchor()
+	MenuBG:ClearAllPoints()
+	MenuBG:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontalReverse, Minimap, MinimapAnchorVerticalReverse..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor, 3 * MinimapAnchorVerticalFactor)
+	AddonBG:ClearAllPoints()
+	AddonBG:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontal, MenuBG, MinimapAnchorVertical..MinimapAnchorHorizontal, 0, 0)
+	OpenMenuBG:ClearAllPoints()
+	OpenMenuBG:SetPoint(MinimapAnchorVertical, MenuBG, MinimapAnchorVertical, 0, 0)
+	expandbutton:ClearAllPoints()
+	expandbutton:SetPoint(MinimapAnchorVerticalReverse, AddonBG, MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor * -1)
+	lastMainMenuEntryID = 0
+	for index, value in ipairs(C.togglemainmenu) do
+		if addonmenuitems[index]:IsShown() then
+			addonmenuitems[index]:ClearAllPoints()
+			if lastMainMenuEntryID == 0 then
+				addonmenuitems[index]:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontal, AddonBG, MinimapAnchorVertical..MinimapAnchorHorizontal, buttonspacing(1) * MinimapAnchorHorizontalFactor, buttonspacing(1) * MinimapAnchorVerticalFactor)
+			else
+				addonmenuitems[index]:SetPoint(MinimapAnchorVertical, addonmenuitems[lastMainMenuEntryID], MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor)
+			end
+			lastMainMenuEntryID = index
+		end
+	end
+	--[[lastMainMenuEntryID = lastMainMenuEntryID - 1
+	for i = 1, GetNumAddOns() do
+		j = lastMainMenuEntryID + i
+		DEFAULT_CHAT_FRAME:AddMessage(i)
+		if addonInfo[i].is_main then
+			DEFAULT_CHAT_FRAME:AddMessage(j)
+			AddonMenuExpand[j]:ClearAllPoints()
+			AddonMenuExpand[j]:SetPoint("TOP"..MinimapAnchorHorizontalReverse, addonmenuitems[j], "TOP"..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor * -1, -2)
+		end
+	end]]--
+	refreshAddOnMenu()
 end)
