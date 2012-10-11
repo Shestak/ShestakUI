@@ -11,9 +11,6 @@ anchor:SetFrameLevel(0)
 local HideB = CreateFrame("Frame", "HideB", UIParent)
 HideB:CreatePanel("Default", 9, 9, "BOTTOM", anchor, "TOP", 0, -9)
 
-local Line = CreateFrame("Frame", "Line", HideB)
-Line:CreatePanel("Default", 36, 1, "TOP", HideB, "BOTTOM", 0, -3)
-
 HideB.ChatIsShown = true
 HideB.MinimapIsShown = true
 HideB.ActiveTabs = {[1] = true}

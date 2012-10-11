@@ -94,7 +94,7 @@ end
 ----------------------------------------------------------------------------------------
 if C.chat.background == true then
 	local chatbd = CreateFrame("Frame", "ChatBackground", UIParent)
-	chatbd:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 2)
+	chatbd:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 1)
 	chatbd:SetBackdropBorderColor(unpack(C["media"].border_color))
 	chatbd:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
 
