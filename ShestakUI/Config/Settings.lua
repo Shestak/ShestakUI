@@ -459,6 +459,7 @@ C["unitframe"] = {
 	["plugins_necro_strike"] = true,			-- Necrotic Strike bar
 	["plugins_reputation_bar"] = true,			-- Reputation bar
 	["plugins_experience_bar"] = true,			-- Experience bar
+	["plugins_friendship_bar"] = true,			-- Friendship bar
 	["plugins_smooth_bar"] = true,				-- Smooth bar
 	["plugins_talents"] = true,					-- Enemy specialization
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame

@@ -60,13 +60,13 @@ local function LoadSkin()
 
 	hooksecurefunc("TradeSkillFrame_SetSelection", function(id)
 		TradeSkillSkillIcon:StyleButton()
+		TradeSkillSkillIcon:SetTemplate("Default")
 		if TradeSkillSkillIcon:GetNormalTexture() then
 			TradeSkillSkillIcon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			TradeSkillSkillIcon:GetNormalTexture():ClearAllPoints()
 			TradeSkillSkillIcon:GetNormalTexture():Point("TOPLEFT", 2, -2)
 			TradeSkillSkillIcon:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
 		end
-		TradeSkillSkillIcon:SetTemplate("Default")
 
 		for i = 1, MAX_TRADE_SKILL_REAGENTS do
 			local button = _G["TradeSkillReagent"..i]
@@ -78,7 +78,7 @@ local function LoadSkin()
 
 			if not icon.backdrop then
 				icon.backdrop = CreateFrame("Frame", nil, button)
-				icon.backdrop:SetFrameLevel(button:GetFrameLevel() - 1)
+				icon.backdrop:SetFrameStrata("BACKGROUND")
 				icon.backdrop:SetTemplate("Default")
 				icon.backdrop:Point("TOPLEFT", button, "TOPLEFT", 1, -1)
 				icon.backdrop:Point("BOTTOMRIGHT", button, "BOTTOMLEFT", 42, 1)

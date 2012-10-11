@@ -6,8 +6,6 @@ if C.automation.buff_on_scroll ~= true or T.level ~= MAX_PLAYER_LEVEL then retur
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame", "AutomatorFrame")
 
--- Settings for each class and spec in the format of : Class'TalentTree'
--- PRIEST1 is Disc Priest while MAGE2 is Fire Mage
 DEATHKNIGHT1 = {
 	49222,	-- Bone Shield
 	57330,	-- Horn of Winter

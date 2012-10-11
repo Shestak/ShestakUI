@@ -63,8 +63,8 @@ local borderDisplay = function(frame, color)
 		if rgb then
 			if C.skins.blizzard_frames == true or IsAddOnLoaded("Aurora") then
 				bc:SetBackdropBorderColor(rgb[1], rgb[2], rgb[3])
-				if frame.backdrop then
-					frame.backdrop:SetBackdropBorderColor(rgb[1], rgb[2], rgb[3])
+				if bc.backdrop then
+					bc.backdrop:SetBackdropBorderColor(rgb[1], rgb[2], rgb[3])
 				end
 			else
 				bc:SetVertexColor(rgb[1], rgb[2], rgb[3])
