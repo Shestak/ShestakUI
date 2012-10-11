@@ -23,6 +23,11 @@ T.ABItems = {
 	85261,	-- Shado-Pan Torch
 	89123,	-- Wu Kao Explosive
 	85950,	-- Mistfall Water Bucket
+	86532,	-- Bag of Shado-Pan Gas Bombs
+	77475,	-- Stack of Mantras
+	80403,	-- Angler's Fishing Spear
+	80127,	-- Shadelight Truffle Spores
+	87394,	-- Sonic Disruption Fork
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
