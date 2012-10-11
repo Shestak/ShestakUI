@@ -451,6 +451,8 @@ expandbutton:SetScript("OnMouseUp", function(self)
 	refreshAddOnMenu()
 end)
 
+local expandAddonButton = {}
+
 for i = 1, GetNumAddOns() do
 	j = totalmainmenusize + i
 	local name = GetAddOnInfo(i)
@@ -492,15 +494,15 @@ for i = 1, GetNumAddOns() do
 	Text:SetWidth(buttonwidth(1) - buttonspacing(1))
 	Text:SetHeight(C.media.pixel_font_size)
 	if addonInfo[i].is_main then
-		local expandAddonButton = CreateFrame("Button", "AddonMenuExpand"..j, addonmenuitems[j])	
-		expandAddonButton:CreatePanel("Overlay", buttonheight(1) - 4, buttonheight(1) - 4, "TOP"..MinimapAnchorHorizontalReverse, addonmenuitems[j], "TOP"..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor * -1, -2)
-		expandAddonButton:SetFrameLevel(defaultframelevel + 2)
-		expandAddonButton:SetFrameStrata("HIGH")
-		expandAddonButton:EnableMouse(true)
-		expandAddonButton:RegisterForClicks("AnyUp")
-		updateTextures(expandAddonButton)
+		expandAddonButton[j] = CreateFrame("Button", "AddonMenuExpand"..j, addonmenuitems[j])	
+		expandAddonButton[j]:CreatePanel("Overlay", buttonheight(1) - 4, buttonheight(1) - 4, "TOP"..MinimapAnchorHorizontalReverse, addonmenuitems[j], "TOP"..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor * -1, -2)
+		expandAddonButton[j]:SetFrameLevel(defaultframelevel + 2)
+		expandAddonButton[j]:SetFrameStrata("HIGH")
+		expandAddonButton[j]:EnableMouse(true)
+		expandAddonButton[j]:RegisterForClicks("AnyUp")
+		updateTextures(expandAddonButton[j])
 
-		expandAddonButton:HookScript("OnEnter", function(self)
+		expandAddonButton[j]:HookScript("OnEnter", function(self)
 			GameTooltip:SetOwner(self, "ANCHOR_LEFT")
 			if addonInfo[i].collapsed then
 				GameTooltip:AddLine(L_TOGGLE_EXPAND..name..L_TOGGLE_ADDONS)
@@ -509,17 +511,17 @@ for i = 1, GetNumAddOns() do
 			end
 			GameTooltip:Show()
 		end)
-		expandAddonButton:HookScript("OnLeave", function(self)
+		expandAddonButton[j]:HookScript("OnLeave", function(self)
 			GameTooltip:Hide()
 		end)
 
-		Text = expandAddonButton:CreateFontString(nil, "OVERLAY")
+		Text = expandAddonButton[j]:CreateFontString(nil, "OVERLAY")
 		Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-		Text:SetPoint("CENTER", expandAddonButton, 2, 0)
+		Text:SetPoint("CENTER", expandAddonButton[j], 2, 0)
 		Text:SetText("+")
 		Text:SetTextColor(0.3, 0.3, 0.9)
-		expandAddonButton.txt = Text
-		expandAddonButton:SetScript("OnMouseUp", function(self)
+		expandAddonButton[j].txt = Text
+		expandAddonButton[j]:SetScript("OnMouseUp", function(self)
 			addonInfo[i].collapsed = not addonInfo[i].collapsed
 			if addonInfo[i].collapsed then
 				self.txt:SetText("+")
@@ -530,7 +532,7 @@ for i = 1, GetNumAddOns() do
 			end
 			refreshAddOnMenu()
 		end)
-		addonmenuitems[j].expandbtn = expandAddonButton
+		addonmenuitems[j].expandbtn = expandAddonButton[j]
 	end
 	addonmenuitems[j]:Hide()
 end
@@ -564,15 +566,12 @@ frame:HookScript("OnEvent", function(self, event)
 			lastMainMenuEntryID = index
 		end
 	end
-	--[[lastMainMenuEntryID = lastMainMenuEntryID - 1
 	for i = 1, GetNumAddOns() do
 		j = lastMainMenuEntryID + i
-		DEFAULT_CHAT_FRAME:AddMessage(i)
 		if addonInfo[i].is_main then
-			DEFAULT_CHAT_FRAME:AddMessage(j)
-			AddonMenuExpand[j]:ClearAllPoints()
-			AddonMenuExpand[j]:SetPoint("TOP"..MinimapAnchorHorizontalReverse, addonmenuitems[j], "TOP"..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor * -1, -2)
+			expandAddonButton[j]:ClearAllPoints()
+			expandAddonButton[j]:SetPoint("TOP"..MinimapAnchorHorizontalReverse, addonmenuitems[j], "TOP"..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor * -1, -2)
 		end
-	end]]--
+	end
 	refreshAddOnMenu()
 end)
