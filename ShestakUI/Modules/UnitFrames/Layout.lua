@@ -699,15 +699,44 @@ local function Shared(self, unit)
 				self.CPoints.Override = T.UpdateComboPoint
 			end
 
+			-- Talent spec
 			if C.unitframe.plugins_talents == true then
 				self.Talents = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 				self.Talents:SetTextColor(1, 0, 0)
 				self.Talents:Point("BOTTOM", self.Power, "BOTTOM", 0, -1)
 			end
 
+			-- Quest icon
 			self.QuestIcon = self.Health:CreateTexture(nil, "OVERLAY")
 			self.QuestIcon:Size(20)
 			self.QuestIcon:Point("RIGHT", self.Info, "LEFT", -10, 0)
+
+			-- Friendship bar
+			if C.unitframe.plugins_friendship_bar == true then
+				self.Friendship = CreateFrame('StatusBar', nil, self.Health)
+				self.Friendship:SetFrameLevel(self.Health:GetFrameLevel() + 1)
+				self.Friendship:Height(3)
+				self.Friendship:SetStatusBarTexture(C.media.texture)
+				self.Friendship:SetStatusBarColor(1, 0, 0)
+				self.Friendship:SetPoint("LEFT")
+				self.Friendship:SetPoint("RIGHT")
+				self.Friendship:SetPoint("TOP", self.Health, "TOP")
+				self.Friendship:SetBackdrop({
+					bgFile = C.media.blank,
+					edgeFile = C.media.blank,
+					tile = false, tileSize = 0, edgeSize = T.Scale(1),
+					insets = { left = 0, right = 0, top = 0, bottom = T.Scale(-1)}
+				})
+				self.Friendship:SetBackdropColor(0, 0, 0)
+				self.Friendship:SetBackdropBorderColor(0, 0, 0)
+
+				self.Friendship.Tooltip = true
+
+				self.Friendship.Value = T.SetFontString(self.Friendship, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+				self.Friendship.Value:Point("RIGHT", self.Info, "LEFT", 0, 0)
+				self.Friendship.Value:SetTextColor(0.33, 0.59, 0.33)
+				self:Tag(self.Friendship.Value, "[friendshipstanding] -")
+			end
 		end
 
 		if C.unitframe.plugins_combat_feedback == true then

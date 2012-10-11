@@ -105,7 +105,8 @@ t.factionOpposites = {
 t.Healers = {
 	[L_PLANNER_PALADIN_1] = true,
 	[L_PLANNER_PRIEST_1] = true,
-	[L_PLANNER_PRIEST_2] = true,
+	[L_PLANNER_DRUID_4] = true,
+	[L_PLANNER_MONK_2] = true,
 }
 
 local function CheckHealers(self, elapsed)

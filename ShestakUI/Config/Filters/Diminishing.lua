@@ -8,69 +8,23 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true or C.unitframe.p
 ----------------------------------------------------------------------------------------
 T.DiminishingSpells = function()
 	return {
-		-- Disorients
-		[2637] = {"disorient"},		-- Hibernate
-		[99] = {"disorient"},		-- Disorienting Roar
-		[3355] = {"disorient"},		-- Freezing Trap
-		[19386] = {"disorient"},	-- Wyvern Sting
-		[118] = {"disorient"},		-- Polymorph
-		[28272] = {"disorient"},	-- Polymorph (Pig)
-		[28271] = {"disorient"},	-- Polymorph (Turtle)
-		[61305] = {"disorient"},	-- Polymorph (Black Cat)
-		[61025] = {"disorient"},	-- Polymorph (Serpent)
-		[61721] = {"disorient"},	-- Polymorph (Rabbit)
-		[61780] = {"disorient"},	-- Polymorph (Turkey)
-		[82691] = {"disorient"},	-- Ring of Frost
-		[115078] = {"disorient"},	-- Paralysis
-		[105421] = {"disorient"},	-- Blinding Light
-		[20066] = {"disorient"},	-- Repentance
-		[9484] = {"disorient"},		-- Shackle Undead
-		[1776] = {"disorient"},		-- Gouge
-		[6770] = {"disorient"},		-- Sap
-		[51514] = {"disorient"},	-- Hex
-		[107079] = {"disorient"},	-- Quaking Palm
-
-		-- Silences
-		[47476] = {"silence"},		-- Strangulate
-		[81261] = {"silence"},		-- Solar Beam
-		[34490] = {"silence"},		-- Silencing Shot
-		[50479] = {"silence"},		-- Nether Shock (Nether Ray)
-		[55021] = {"silence"},		-- Improved Counterspell
-		[102051] = {"silence"},		-- Frostjaw
-		[116709] = {"silence"},		-- Spear Hand Strike
-		[31935] = {"silence"},		-- Avenger's Shield
-		[15487] = {"silence"},		-- Silence
-		[1330] = {"silence"},		-- Garrote
-		[24259] = {"silence"},		-- Spell Lock (Felhunter)
-		[115782] = {"silence"},		-- Optical Blast (Observer)
-		[18498] = {"silence"},		-- Gag Order (Warrior glyph)
-		[25046] = {"silence"},		-- Arcane Torrent (Energy version)
-		[28730] = {"silence"},		-- Arcane Torrent (Mana version)
-		[50613] = {"silence"},		-- Arcane Torrent (Runic power version)
-		[69179] = {"silence"},		-- Arcane Torrent (Rage version)
-		[80483] = {"silence"},		-- Arcane Torrent (Focus version)
-
-		-- Disarms
-		[50541] = {"disarm"},		-- Clench (Scorpid)
-		[91644] = {"disarm"},		-- Snatch (Bird of Prey)
-		[117368] = {"disarm"},		-- Grapple Weapon
-		[64058] = {"disarm"},		-- Psychic Horror
-		[51722] = {"disarm"},		-- Dismantle
-		[118093] = {"disarm"},		-- Disarm (Voidwalker/Voidlord)
-		[676] = {"disarm"},			-- Disarm
-
-		-- Fears
-		[1513] = {"fear"},			-- Scare Beast
-		[10326] = {"fear"},			-- Turn Evil
-		[8122] = {"fear"},			-- Psychic Scream
-		[113792] = {"fear"},		-- Psychic Terror
-		[2094] = {"fear"},			-- Blind
-		[118699] = {"fear"},		-- Fear
-		[5484] = {"fear"},			-- Howl of Terror
-		[6358] = {"fear"},			-- Seduction (Succubus)
-		[115268] = {"fear"},		-- Mesmerize (Shivarra)
-		[5246] = {"fear"},			-- Intimidating Shout (Main target)
-		[20511] = {"fear"},			-- Intimidating Shout (Secondary targets)
+		-- Control Roots
+		[96294] = {"ctrlroot"},		-- Chains of Ice
+		[339] = {"ctrlroot"},		-- Entangling Roots
+		[19975] = {"ctrlroot"},		-- Nature's Grasp
+		[102359] = {"ctrlroot"},	-- Mass Entanglement
+		[50245] = {"ctrlroot"},		-- Pin (Crab)
+		[4167] = {"ctrlroot"},		-- Web (Spider)
+		[54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
+		[90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
+		[128405] = {"ctrlroot"},	-- Narrow Escape
+		[122] = {"ctrlroot"},		-- Frost Nova
+		[33395] = {"ctrlroot"},		-- Freeze (Water Elemental)
+		[116706] = {"ctrlroot"},	-- Disable
+		[114404] = {"ctrlroot"},	-- Void Tendril's Grasp
+		[64695] = {"ctrlroot"},		-- Earthgrab
+		[63685] = {"ctrlroot"},		-- Freeze
+		[107566] = {"ctrlroot"},	-- Staggering Shout
 
 		-- Control Stuns
 		[108194] = {"ctrlstun"},	-- Asphyxiate
@@ -102,38 +56,85 @@ T.DiminishingSpells = function()
 		[118905] = {"ctrlstun"},	-- Static Charge
 		[30283] = {"ctrlstun"},		-- Shadowfury
 		[89766] = {"ctrlstun"},		-- Axe Toss (Felguard)
-		[22703] = {"ctrlstun"},		-- Infernal Awakening
 		[132168] = {"ctrlstun"},	-- Shockwave
 		[132169] = {"ctrlstun"},	-- Storm Bolt
 		[105771] = {"ctrlstun"},	-- Warbringer
 		[20549] = {"ctrlstun"},		-- War Stomp
 
+		-- Disarms
+		[50541] = {"disarm"},		-- Clench (Scorpid)
+		[91644] = {"disarm"},		-- Snatch (Bird of Prey)
+		[117368] = {"disarm"},		-- Grapple Weapon
+		[64058] = {"disarm"},		-- Psychic Horror
+		[51722] = {"disarm"},		-- Dismantle
+		[118093] = {"disarm"},		-- Disarm (Voidwalker/Voidlord)
+		[676] = {"disarm"},			-- Disarm
+
+		-- Disorients
+		[2637] = {"disorient"},		-- Hibernate
+		[99] = {"disorient"},		-- Disorienting Roar
+		[3355] = {"disorient"},		-- Freezing Trap
+		[19386] = {"disorient"},	-- Wyvern Sting
+		[118] = {"disorient"},		-- Polymorph
+		[28272] = {"disorient"},	-- Polymorph (Pig)
+		[28271] = {"disorient"},	-- Polymorph (Turtle)
+		[61305] = {"disorient"},	-- Polymorph (Black Cat)
+		[61025] = {"disorient"},	-- Polymorph (Serpent)
+		[61721] = {"disorient"},	-- Polymorph (Rabbit)
+		[61780] = {"disorient"},	-- Polymorph (Turkey)
+		[82691] = {"disorient"},	-- Ring of Frost
+		[115078] = {"disorient"},	-- Paralysis
+		[105421] = {"disorient"},	-- Blinding Light
+		[20066] = {"disorient"},	-- Repentance
+		[9484] = {"disorient"},		-- Shackle Undead
+		[1776] = {"disorient"},		-- Gouge
+		[6770] = {"disorient"},		-- Sap
+		[51514] = {"disorient"},	-- Hex
+		[107079] = {"disorient"},	-- Quaking Palm
+
+		-- Fears
+		[1513] = {"fear"},			-- Scare Beast
+		[10326] = {"fear"},			-- Turn Evil
+		[8122] = {"fear"},			-- Psychic Scream
+		[113792] = {"fear"},		-- Psychic Terror
+		[2094] = {"fear"},			-- Blind
+		[118699] = {"fear"},		-- Fear
+		[5484] = {"fear"},			-- Howl of Terror
+		[6358] = {"fear"},			-- Seduction (Succubus)
+		[115268] = {"fear"},		-- Mesmerize (Shivarra)
+		[5246] = {"fear"},			-- Intimidating Shout (Main target)
+		[20511] = {"fear"},			-- Intimidating Shout (Secondary targets)
+
+		-- Horrors
+		[64044] = {"horror"},		-- Psychic Horror
+		[87204] = {"horror"},		-- Sin and Punishment
+		[6789] = {"horror"},		-- Mortal Coil
+
 		-- Random Stuns
 		[113953] = {"rndstun"},		-- Paralysis (Poison)
+		[77505] = {"rndstun"},		-- Earthquake
 		[85387] = {"rndstun"},		-- Aftermath
 		[118895] = {"rndstun"},		-- Dragon Roar
 
-		-- Roots
-		[96294] = {"ctrlroot"},		-- Chains of Ice
-		[339] = {"ctrlroot"},		-- Entangling Roots
-		[19975] = {"ctrlroot"},		-- Nature's Grasp
-		[102359] = {"ctrlroot"},	-- Mass Entanglement
-		[50245] = {"ctrlroot"},		-- Pin (Crab)
-		[4167] = {"ctrlroot"},		-- Web (Spider)
-		[54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
-		[90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
-		[128405] = {"ctrlroot"},	-- Narrow Escape
-		[122] = {"ctrlroot"},		-- Frost Nova
-		[33395] = {"ctrlroot"},		-- Freeze (Water Elemental)
-		[116706] = {"ctrlroot"},	-- Disable
-		[114404] = {"ctrlroot"},	-- Void Tendril's Grasp
-		[64695] = {"ctrlroot"},		-- Earthgrab
-		[63685] = {"ctrlroot"},		-- Freeze
-		[107566] = {"ctrlroot"},	-- Staggering Shout
-
-		-- Horror
-		[64044] = {"horror"},		-- Psychic Horror
-		[6789] = {"horror"},		-- Mortal Coil
+		-- Silences
+		[47476] = {"silence"},		-- Strangulate
+		[81261] = {"silence"},		-- Solar Beam
+		[34490] = {"silence"},		-- Silencing Shot
+		[50479] = {"silence"},		-- Nether Shock (Nether Ray)
+		[55021] = {"silence"},		-- Improved Counterspell
+		[102051] = {"silence"},		-- Frostjaw
+		[116709] = {"silence"},		-- Spear Hand Strike
+		[31935] = {"silence"},		-- Avenger's Shield
+		[15487] = {"silence"},		-- Silence
+		[1330] = {"silence"},		-- Garrote
+		[24259] = {"silence"},		-- Spell Lock (Felhunter)
+		[115782] = {"silence"},		-- Optical Blast (Observer)
+		[18498] = {"silence"},		-- Gag Order (Warrior glyph)
+		[25046] = {"silence"},		-- Arcane Torrent (Energy version)
+		[28730] = {"silence"},		-- Arcane Torrent (Mana version)
+		[50613] = {"silence"},		-- Arcane Torrent (Runic power version)
+		[69179] = {"silence"},		-- Arcane Torrent (Rage version)
+		[80483] = {"silence"},		-- Arcane Torrent (Focus version)
 
 		-- Misc
 		[33786] = {"cyclone"},		-- Cyclone

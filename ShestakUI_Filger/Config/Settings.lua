@@ -807,6 +807,8 @@ Filger_Spells = {
 			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rune of Power
+			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2899,6 +2901,8 @@ Filger_Spells = {
 			{spellID = 113792, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Psychic Horror
 			{spellID = 64044, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Sin and Punishment
+			{spellID = 87204, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silence
 			{spellID = 15487, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Void Tendril's Grasp
@@ -2982,7 +2986,7 @@ Filger_Spells = {
 
 			-- Warrior
 			-- Storm Bolt
-			{spellID = 132169, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 132169, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Shockwave
 			{spellID = 46968, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Charge Stun
@@ -3322,7 +3326,7 @@ Filger_Spells = {
 			{spellID = 46924, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Storm Bolt
-			{spellID = 132169, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 132169, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Shockwave
 			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout

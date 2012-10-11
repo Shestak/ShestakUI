@@ -252,8 +252,6 @@ local function LoadSkin()
 	end
 	hooksecurefunc("AlertFrame_SetScenarioAnchors", SkinScenarioPopUp)
 
-	if not IsAddOnLoaded("MoveAnything") then return end
-
 	local function SkinCriteriaPopUp()
 		for i = 1, MAX_ACHIEVEMENT_ALERTS do
 			local frame = _G["CriteriaAlertFrame"..i]
@@ -284,6 +282,7 @@ local function LoadSkin()
 				_G["CriteriaAlertFrame"..i.."Name"]:SetTextColor(1, 1, 0)
 
 				-- Icon
+				_G["CriteriaAlertFrame"..i.."IconTexture"]:Size(28)
 				_G["CriteriaAlertFrame"..i.."IconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				_G["CriteriaAlertFrame"..i.."IconTexture"]:ClearAllPoints()
 				_G["CriteriaAlertFrame"..i.."IconTexture"]:Point("LEFT", frame.backdrop, 9, 0)

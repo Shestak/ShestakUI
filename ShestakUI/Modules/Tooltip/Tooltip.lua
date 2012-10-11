@@ -212,12 +212,12 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 				self:AppendText((" %s"):format("|cffFF0000"..L_CHAT_DND.."|r"))
 			end
 
-			if UnitIsPlayer(unit) and englishRace == "Pandaren" and faction ~= "" and faction ~= playerFaction then
+			if UnitIsPlayer(unit) and englishRace == "Pandaren" and faction ~= nil and faction ~= playerFaction then
 				local hex = "cffff3333"
 				if faction == "Alliance" then
 					hex = "cff69ccf0"
 				end
-				self:AppendText((" [|%s%s|r]"):format(hex, faction:sub(1, 1)))
+				self:AppendText((" [|%s%s|r]"):format(hex, faction:sub(1, 2)))
 			end
 
 			if GetGuildInfo(unit) then
