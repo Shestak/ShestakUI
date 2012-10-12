@@ -88,12 +88,12 @@ f:RegisterEvent("MERCHANT_CLOSED")
 local btn = CreateFrame("Button", "GroceryListFrame", MerchantFrame, "UIPanelButtonTemplate")
 btn:SetText(L_MISC_GROCERY_BUY)
 if C.skins.blizzard_frames == true then
-	btn:SetSize(btn:GetTextWidth() + 15, 21)
-	btn:SetPoint("RIGHT", MerchantFrameLootFilter, "LEFT", -5, 3)
+	btn:SetSize(btn:GetTextWidth() + 15, 18)
+	btn:SetPoint("TOPRIGHT", MerchantFrameCloseButton, "TOPLEFT", -3, 0)
 	btn:SkinButton()
 else
-	btn:SetSize(btn:GetTextWidth() + 15, 27)
-	btn:SetPoint("RIGHT", MerchantFrameLootFilter, "LEFT", -5, 2)
+	btn:SetSize(btn:GetTextWidth() + 15, 19)
+	btn:SetPoint("TOPRIGHT", MerchantFrameCloseButton, "TOPLEFT", 3, -6)
 end
 btn:HookScript("OnEnter", function(self)
 	GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT")
