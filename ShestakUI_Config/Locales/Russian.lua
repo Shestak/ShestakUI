@@ -37,6 +37,8 @@ L_GUI_MISC_SUM_BUYOUTS = "Выводить сумму ваших аукцион�
 L_GUI_MISC_CLICK_CAST = "Назначение клавиш мыши (click2cast)"
 L_GUI_MISC_MOVE_BLIZZARD = "Включить перемещение фреймов Blizzard"
 L_GUI_MISC_COLOR_PICKER = "Улучшенный подбор цвета"
+L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame" -- Needs review
+L_GUI_MISC_ARCHAEOLOGY = "Archaeology artifacts and cooldown" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"
@@ -70,6 +72,7 @@ L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Снимать 'плохие' баффы"
 L_GUI_AUTOMATION_TAB_BINDER = "Клавиша 'Tab' выбирает вражеских игроков"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Включать запись журнала боя в рейде"
 L_GUI_AUTOMATION_CURRENCY_CAP = "Окно лимита валюты (Доблесть/Честь)"
+L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"
@@ -341,6 +344,7 @@ L_GUI_UF_PLUGINS_SWING = "Отображать индикатор автомат
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Включить индикатор некротического удара"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Включить индикатор репутации"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Включить индикатор опыта"
+L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Friendship bar" -- Needs review
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Плавное изменение полос"
 L_GUI_UF_PLUGINS_TALENTS = "Отображать специализацию врага"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Текст боя на рамках игрока и цели"

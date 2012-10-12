@@ -63,6 +63,8 @@ local function Local(o)
 	if o == "UIConfigmiscclick_cast" then o = L_GUI_MISC_CLICK_CAST end
 	if o == "UIConfigmiscmove_blizzard" then o = L_GUI_MISC_MOVE_BLIZZARD end
 	if o == "UIConfigmisccolor_picker" then o = L_GUI_MISC_COLOR_PICKER end
+	if o == "UIConfigmiscenchantment_scroll" then o = L_GUI_MISC_ENCHANTMENT_SCROLL end
+	if o == "UIConfigmiscarchaeology" then o = L_GUI_MISC_ARCHAEOLOGY end
 
 	-- Announcements options
 	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end
@@ -96,6 +98,7 @@ local function Local(o)
 	if o == "UIConfigautomationtab_binder" then o = L_GUI_AUTOMATION_TAB_BINDER end
 	if o == "UIConfigautomationlogging_combat" then o = L_GUI_AUTOMATION_LOGGING_COMBAT end
 	if o == "UIConfigautomationcurrency_cap" then o = L_GUI_AUTOMATION_CURRENCY_CAP end
+	if o == "UIConfigautomationbuff_on_scroll" then o = L_GUI_AUTOMATION_BUFF_ON_SCROLL end
 
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
@@ -376,6 +379,7 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_necro_strike" then o = L_GUI_UF_PLUGINS_NECRO_STRIKE end
 	if o == "UIConfigunitframeplugins_reputation_bar" then o = L_GUI_UF_PLUGINS_REPUTATION_BAR end
 	if o == "UIConfigunitframeplugins_experience_bar" then o = L_GUI_UF_PLUGINS_EXPERIENCE_BAR end
+	if o == "UIConfigunitframeplugins_friendship_bar" then o = L_GUI_UF_PLUGINS_FRIENDSHIP_BAR end
 	if o == "UIConfigunitframeplugins_smooth_bar" then o = L_GUI_UF_PLUGINS_SMOOTH_BAR end
 	if o == "UIConfigunitframeplugins_talents" then o = L_GUI_UF_PLUGINS_TALENTS end
 	if o == "UIConfigunitframeplugins_combat_feedback" then o = L_GUI_UF_PLUGINS_COMBAT_FEEDBACK end
