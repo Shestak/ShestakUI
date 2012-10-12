@@ -29,6 +29,8 @@ T.ABItems = {
 	80127,	-- Shadelight Truffle Spores
 	87394,	-- Sonic Disruption Fork
 	84781,	-- Shado-Pan Torch
+	82381,	-- Yak's Milk Flask
+	84762,	-- Highly Explosive Yaungol Oil
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
