@@ -48,7 +48,7 @@ SLASH_UIHELP3 = "/гшрудз"
 --	Enable/Disable addons
 ----------------------------------------------------------------------------------------
 SlashCmdList.DISABLE_ADDON = function(addon)
-	local _, _, _, _, _, reason, _ = GetAddOnInfo(addon)
+	local _, _, _, _, _, reason = GetAddOnInfo(addon)
 	if reason ~= "MISSING" then
 		DisableAddOn(addon)
 		ReloadUI()
@@ -60,7 +60,7 @@ SLASH_DISABLE_ADDON1 = "/dis"
 SLASH_DISABLE_ADDON2 = "/disable"
 
 SlashCmdList.ENABLE_ADDON = function(addon)
-	local _, _, _, _, _, reason, _ = GetAddOnInfo(addon)
+	local _, _, _, _, _, reason = GetAddOnInfo(addon)
 	if reason ~= "MISSING" then
 		EnableAddOn(addon)
 		LoadAddOn(addon)
@@ -265,7 +265,6 @@ SlashCmdList.TEST_ACHIEVEMENT = function()
 	CriteriaAlertFrame_ShowAlert(6301, 29918)
 	MoneyWonAlertFrame_ShowAlert(9999999)
 	LootWonAlertFrame_ShowAlert(GetItemInfo(6948), -1, 1, 100)
-	--BonusRollFrame_StartBonusRoll(89424, nil, 120)
 	ChallengeModeAlertFrame_ShowAlert()
 	AlertFrame_AnimateIn(ScenarioAlertFrame1)
 	AlertFrame_FixAnchors()
