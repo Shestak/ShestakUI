@@ -65,6 +65,9 @@ L_MISC_MOUNTS_GROUND = "Ground" -- Needs review
 L_MISC_MOUNTS_FLYING = "Flying" -- Needs review
 L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground" -- Needs review
 L_MISC_MOUNTS_SWIMMING = "Swimming" -- Needs review
+L_MISC_GROCERY_BUY = "Buy" -- Needs review
+L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
+L_MISC_GROCERY_ERROR = "Not have the necessary items." -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disolver grupo"

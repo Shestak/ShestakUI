@@ -65,6 +65,9 @@ L_MISC_MOUNTS_GROUND = "Boden"
 L_MISC_MOUNTS_FLYING = "Fliegen"
 L_MISC_MOUNTS_FLYINGGROUND = "Fliegen&Boden"
 L_MISC_MOUNTS_SWIMMING = "Schwimmen"
+L_MISC_GROCERY_BUY = "Buy" -- Needs review
+L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
+L_MISC_GROCERY_ERROR = "Not have the necessary items." -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"
