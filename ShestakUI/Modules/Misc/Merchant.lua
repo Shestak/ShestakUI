@@ -146,7 +146,8 @@ end)
 
 function f:MERCHANT_SHOW()
 	local first = select(3, GetMerchantItemInfo(1))
-	if first == 13500 then btn:Show() end
+	local name = select(1, GetMerchantItemInfo(1))
+	if first == 13500 and name == GetItemInfo(87658) then btn:Show() end
 end
 
 function f:MERCHANT_CLOSED()
