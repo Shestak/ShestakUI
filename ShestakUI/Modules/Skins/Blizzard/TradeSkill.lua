@@ -67,34 +67,34 @@ local function LoadSkin()
 			TradeSkillSkillIcon:GetNormalTexture():Point("TOPLEFT", 2, -2)
 			TradeSkillSkillIcon:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
 		end
-
-		for i = 1, MAX_TRADE_SKILL_REAGENTS do
-			local button = _G["TradeSkillReagent"..i]
-			local icon = _G["TradeSkillReagent"..i.."IconTexture"]
-			local count = _G["TradeSkillReagent"..i.."Count"]
-
-			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			icon:SetDrawLayer("OVERLAY")
-
-			if not icon.backdrop then
-				icon.backdrop = CreateFrame("Frame", nil, button)
-				icon.backdrop:SetFrameStrata("BACKGROUND")
-				icon.backdrop:SetTemplate("Default")
-				icon.backdrop:Point("TOPLEFT", button, "TOPLEFT", 1, -1)
-				icon.backdrop:Point("BOTTOMRIGHT", button, "BOTTOMLEFT", 42, 1)
-			end
-			icon:SetParent(icon.backdrop)
-			icon:Point("TOPLEFT", icon.backdrop, "TOPLEFT", 2, -2)
-			icon:Point("BOTTOMRIGHT", icon.backdrop, "BOTTOMRIGHT", -2, 2)
-
-			count:SetParent(icon.backdrop)
-			count:SetFont(C.media.normal_font, 12, "OUTLINE")
-			count:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
-			count:SetDrawLayer("OVERLAY")
-
-			_G["TradeSkillReagent"..i.."NameFrame"]:Kill()
-		end
 	end)
+
+	for i = 1, MAX_TRADE_SKILL_REAGENTS do
+		local button = _G["TradeSkillReagent"..i]
+		local icon = _G["TradeSkillReagent"..i.."IconTexture"]
+		local count = _G["TradeSkillReagent"..i.."Count"]
+
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:SetDrawLayer("OVERLAY")
+
+		if not icon.backdrop then
+			icon.backdrop = CreateFrame("Frame", nil, button)
+			icon.backdrop:SetFrameStrata("BACKGROUND")
+			icon.backdrop:SetTemplate("Default")
+			icon.backdrop:Point("TOPLEFT", button, "TOPLEFT", 1, -1)
+			icon.backdrop:Point("BOTTOMRIGHT", button, "BOTTOMLEFT", 42, 1)
+		end
+		icon:SetParent(icon.backdrop)
+		icon:Point("TOPLEFT", icon.backdrop, "TOPLEFT", 2, -2)
+		icon:Point("BOTTOMRIGHT", icon.backdrop, "BOTTOMRIGHT", -2, 2)
+
+		count:SetParent(icon.backdrop)
+		count:SetFont(C.media.normal_font, 12, "OUTLINE")
+		count:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+		count:SetDrawLayer("OVERLAY")
+
+		_G["TradeSkillReagent"..i.."NameFrame"]:Kill()
+	end
 
 	-- Guild Crafters
 	TradeSkillGuildFrame:StripTextures()
