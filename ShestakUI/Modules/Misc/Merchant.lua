@@ -80,6 +80,8 @@ local items = {
 	[75014] = {bag = 87687, count = 20},	-- Raw Crocolisk Belly
 }
 
+local throttle = false
+
 local f = CreateFrame("Frame")
 f:SetScript("OnEvent", function(frame, event, ...) if f[event] then f[event](frame, event, ...) end end)
 f:RegisterEvent("MERCHANT_SHOW")
@@ -103,6 +105,7 @@ end)
 btn:HookScript("OnLeave", function() GameTooltip:Hide() end)
 
 btn:SetScript("OnClick", function()
+	if throttle then return end
 	local groceries = {}
 	local havebags = {}
 	for bag = 0, 4 do
@@ -126,8 +129,8 @@ btn:SetScript("OnClick", function()
 				local need = floor(count / data.count)
 				local have = havebags[data.bag] or 0
 				shopping[data.bag] = need - have
-			else
-				return print("|cffffff00"..L_MISC_GROCERY_ERROR.."|r")
+			--else
+			--	return print("|cffffff00"..L_MISC_GROCERY_ERROR.."|r")
 			end
 		end
 	end
@@ -142,6 +145,8 @@ btn:SetScript("OnClick", function()
 			end
 		end
 	end
+	throttle = true
+	f:RegisterEvent("BAG_UPDATE")
 end)
 
 function f:MERCHANT_SHOW()
@@ -152,4 +157,9 @@ end
 
 function f:MERCHANT_CLOSED()
 	btn:Hide()
+end
+
+function f:BAG_UPDATE()
+	f:UnregisterEvent("BAG_UPDATE")
+	throttle = false
 end
