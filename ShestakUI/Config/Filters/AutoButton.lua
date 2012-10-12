@@ -28,6 +28,7 @@ T.ABItems = {
 	80403,	-- Angler's Fishing Spear
 	80127,	-- Shadelight Truffle Spores
 	87394,	-- Sonic Disruption Fork
+	84781,	-- Shado-Pan Torch
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
