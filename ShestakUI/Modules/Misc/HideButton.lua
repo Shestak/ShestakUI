@@ -5,7 +5,7 @@ if C.misc.hide_button ~= true then return end
 --  HideButton: a button to hide your chat and minimap
 ----------------------------------------------------------------------------------------
 local anchor = CreateFrame("Frame", "HideB_Anchor", UIParent)
-anchor:CreatePanel("Invisible", 128, 16, unpack(C.position.hide_button))
+anchor:CreatePanel("Invisible", 5, 5, unpack(C.position.hide_button))
 anchor:SetFrameLevel(0)
 
 local HideB = CreateFrame("Frame", "HideB", UIParent)
