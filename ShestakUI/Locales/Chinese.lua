@@ -65,6 +65,9 @@ L_MISC_MOUNTS_GROUND = "地面坐骑"
 L_MISC_MOUNTS_FLYING = "飞行坐骑"
 L_MISC_MOUNTS_FLYINGGROUND = "飞行/地面坐骑"
 L_MISC_MOUNTS_SWIMMING = "水中坐骑"
+L_MISC_GROCERY_BUY = "Buy" -- Needs review
+L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
+L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"

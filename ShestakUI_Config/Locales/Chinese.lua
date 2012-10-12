@@ -38,6 +38,8 @@ L_GUI_MISC_SUM_BUYOUTS = "总结目前所有的拍卖"
 L_GUI_MISC_CLICK_CAST = "简单的点击施法绑定"
 L_GUI_MISC_MOVE_BLIZZARD = "移动暴雪默认介面框架"
 L_GUI_MISC_COLOR_PICKER = "改进型颜色选择器"
+L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame" -- Needs review
+L_GUI_MISC_ARCHAEOLOGY = "Archaeology artifacts and cooldown" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
@@ -71,6 +73,7 @@ L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "自动取消无用的buffs"
 L_GUI_AUTOMATION_TAB_BINDER = "Tab只选定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "团队副本时自动开启战斗记录"
 L_GUI_AUTOMATION_CURRENCY_CAP = "自动弹出货币提示框"
+L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "介面样式"
@@ -350,6 +353,7 @@ L_GUI_UF_PLUGINS_SWING = "普通攻击计时条"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "开启死疽打击计时条"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "声望条"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "经验条"
+L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Friendship bar" -- Needs review
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "平滑条"
 L_GUI_UF_PLUGINS_TALENTS = "显示敌对玩家天赋"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "显示玩家/目标的文字战斗信息"

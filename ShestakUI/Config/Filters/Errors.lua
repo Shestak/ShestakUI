@@ -62,6 +62,7 @@ T.black_list = {
 	[ERR_OUT_OF_RUNIC_POWER] = true,
 	[ERR_OUT_OF_MANA] = true,
 	[ERR_OUT_OF_POWER_DISPLAY] = true,
+	[ERR_OUT_OF_RANGE] = true,
 	[ERR_BADATTACKPOS] = true,
 	[ERR_INVALID_ATTACK_TARGET] = true,
 	[ERR_NOEMOTEWHILERUNNING] = true,
@@ -74,4 +75,6 @@ T.black_list = {
 	[OUT_OF_MANA] = true,
 	[OUT_OF_POWER_DISPLAY] = true,
 	[OUT_OF_RAGE] = true,
+	[ERR_SPELL_OUT_OF_RANGE] = true,
+	[ERR_TOO_FAR_TO_INTERACT] = true,
 }

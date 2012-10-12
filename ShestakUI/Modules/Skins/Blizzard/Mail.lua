@@ -104,10 +104,8 @@ local function LoadSkin()
 
 	OpenMailScrollFrame:StripTextures(true)
 	OpenMailScrollFrame:CreateBackdrop("Overlay")
-	OpenMailScrollFrame.backdrop:Point("TOPLEFT", 12, 0)
-	OpenMailScrollFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
-
-	OpenMailScrollChildFrame:Point("TOPLEFT", 10, 0)
+	OpenMailScrollFrame.backdrop:Point("TOPLEFT", 5, 5)
+	OpenMailScrollFrame.backdrop:Point("BOTTOMRIGHT", 0, -5)
 
 	T.SkinScrollBar(OpenMailScrollFrameScrollBar)
 

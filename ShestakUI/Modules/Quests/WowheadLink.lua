@@ -66,9 +66,9 @@ hooksecurefunc("WatchFrameDropDown_Initialize", function(self)
 end)
 UIDropDownMenu_Initialize(WatchFrameDropDown, WatchFrameDropDown_Initialize, "MENU")
 
-local LoDA = CreateFrame("Frame")
-LoDA:RegisterEvent("ADDON_LOADED")
-LoDA:SetScript("OnEvent", function(self, event, addon)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("ADDON_LOADED")
+frame:SetScript("OnEvent", function(self, event, addon)
 	if addon == "Blizzard_AchievementUI" then
 		hooksecurefunc("AchievementButton_OnClick", function(self)
 			if self.id and IsControlKeyDown() then

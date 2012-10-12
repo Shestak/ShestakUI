@@ -38,6 +38,8 @@ L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
 L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
 L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
 L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
+L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame" -- Needs review
+L_GUI_MISC_ARCHAEOLOGY = "Archaeology artifacts and cooldown" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
@@ -72,6 +74,7 @@ L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
 L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
 L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
+L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Personnalisation d'addon"
@@ -352,6 +355,7 @@ L_GUI_UF_PLUGINS_SWING = "Barre d'attaque automatique / tir automatique"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Active une barre pour la Frappe nécrotique"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Barre de réputation"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Barre d'expérience"
+L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Friendship bar" -- Needs review
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Barre lisse"
 L_GUI_UF_PLUGINS_TALENTS = "Afficher les talent de l'ennemi"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texte de combat sur les barres du joueur et de la cible"

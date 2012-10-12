@@ -37,12 +37,8 @@ SLASH_SHOWHELM3 = "/ыр"
 ----------------------------------------------------------------------------------------
 --	Description of the slash commands
 ----------------------------------------------------------------------------------------
-local function Print(text)
-	DEFAULT_CHAT_FRAME:AddMessage(("%s"):format(tostring(text)), 1, 1, 0)
-end
-
 SlashCmdList.UIHELP = function()
-	for i, v in ipairs(L_SLASHCMD_HELP) do Print(v) end
+	for i, v in ipairs(L_SLASHCMD_HELP) do DEFAULT_CHAT_FRAME:AddMessage(("%s"):format(tostring(v)), 1, 1, 0) end
 end
 SLASH_UIHELP1 = "/uihelp"
 SLASH_UIHELP2 = "/helpui"
@@ -245,6 +241,17 @@ end
 SLASH_FSTACK1 = "/аыефсл"
 SLASH_FSTACK2 = "/fs"
 SLASH_FSTACK3 = "/аы"
+
+----------------------------------------------------------------------------------------
+--	Clear chat
+----------------------------------------------------------------------------------------
+SlashCmdList.CLEAR_CHAT = function()
+	for i = 1, NUM_CHAT_WINDOWS do
+		_G[format("ChatFrame%d", i)]:Clear()
+	end
+end
+SLASH_CLEAR_CHAT1 = "/clear"
+SLASH_CLEAR_CHAT2 = "/сдуфк"
 
 ----------------------------------------------------------------------------------------
 --	Test Blizzard Alerts
