@@ -5,8 +5,8 @@ if not IsAddOnLoaded("ShestakUI_Config") then return end
 --	This Module loads new user settings if ShestakUI_Config is loaded
 ----------------------------------------------------------------------------------------
 if not GUIConfigAll then GUIConfigAll = {} end
-if (GUIConfigAll[T.realm] == nil) then GUIConfigAll[T.realm] = {} end
-if (GUIConfigAll[T.realm][T.name] == nil) then GUIConfigAll[T.realm][T.name] = false end
+if GUIConfigAll[T.realm] == nil then GUIConfigAll[T.realm] = {} end
+if GUIConfigAll[T.realm][T.name] == nil then GUIConfigAll[T.realm][T.name] = false end
 
 if GUIConfigAll[T.realm][T.name] == true and not GUIConfig then return end
 if GUIConfigAll[T.realm][T.name] == false and not GUIConfigSettings then return end

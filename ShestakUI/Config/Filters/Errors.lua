@@ -74,4 +74,6 @@ T.black_list = {
 	[OUT_OF_MANA] = true,
 	[OUT_OF_POWER_DISPLAY] = true,
 	[OUT_OF_RAGE] = true,
+	[ERR_SPELL_OUT_OF_RANGE] = true,
+	[ERR_TOO_FAR_TO_INTERACT] = true,
 }

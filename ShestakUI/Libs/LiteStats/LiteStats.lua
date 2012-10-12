@@ -84,7 +84,7 @@ if modules and ((coords and coords.enabled) or (location and location.enabled)) 
 	ls:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 	ls:SetScript("OnUpdate", function() coordX, coordY = GetPlayerMapPosition(P) end)
 	WorldMapFrame:HookScript("OnHide", SetMapToCurrentZone)
-	function Coords() return format(coords and coords.fmt or "%d,%d", coordX * 100, coordY * 100) end
+	function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
 end
 
 -- Set profile
@@ -101,8 +101,8 @@ local function zsub(s, ...) local t = {...} for i = 1, #t, 2 do s = gsub(s, t[i]
 local function formatgold(style, amount)
 	local gold, silver, copper = floor(amount * 0.0001), floor(mod(amount * 0.01, 100)), floor(mod(amount, 100))
 	if style == 1 then
-		return (gold > 0 and format("%s|cffffd700%s|r ", gold,GOLD_AMOUNT_SYMBOL) or "")
-			.. (silver > 0 and format("%s|cffc7c7cf%s|r ", silver,SILVER_AMOUNT_SYMBOL) or "")
+		return (gold > 0 and format("%s|cffffd700%s|r ", gold, GOLD_AMOUNT_SYMBOL) or "")
+			.. (silver > 0 and format("%s|cffc7c7cf%s|r ", silver, SILVER_AMOUNT_SYMBOL) or "")
 			.. ((copper > 0 or (gold == 0 and silver == 0)) and format("%s|cffeda55f%s|r", copper, COPPER_AMOUNT_SYMBOL) or "")
 	elseif style == 2 or not style then
 		return format("%.1f|cffffd700%s|r", amount * 0.0001, GOLD_AMOUNT_SYMBOL)

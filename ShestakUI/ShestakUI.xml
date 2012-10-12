@@ -56,7 +56,7 @@
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoButton.lua"/>
 	<Script file="Modules\Quests\AutoCollapse.lua"/>
-	<Script file="Modules\Quests\QuestLevel.lua"/>
+	<Script file="Modules\Quests\QuestLog.lua"/>
 	<Script file="Modules\Quests\WatchFrame.lua"/>
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
@@ -93,6 +93,7 @@
 	<Script file="Modules\Misc\ProfessionsDatabase.lua"/>
 	<Script file="Modules\Misc\OneClickEnchantScroll.lua"/>
 	<Script file="Modules\Misc\Archaeology.lua"/>
+	<Script file="Modules\Misc\Merchant.lua"/>
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>
