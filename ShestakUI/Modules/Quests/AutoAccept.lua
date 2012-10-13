@@ -7,7 +7,7 @@ if C.automation.accept_quest ~= true then return end
 local Monomyth = CreateFrame("Frame")
 Monomyth:SetScript("OnEvent", function(self, event, ...) self[event](...) end)
 
-local atBank, atMail
+local atBank, atMail, atMerchant
 
 function Monomyth:Register(event, func)
 	self:RegisterEvent(event)
@@ -121,15 +121,21 @@ Monomyth:Register("QUEST_DETAIL", function()
 	end
 end)
 
-Monomyth:Register("QUEST_ACCEPTED", function()
+Monomyth:Register("QUEST_ACCEPT_CONFIRM", AcceptQuest)
+
+Monomyth:Register("QUEST_ACCEPTED", function(id)
 	if GossipFrame:IsShown() and GetNumGossipAvailableQuests() == 0 and GetNumGossipCompletedQuests() == 0 then
 		CloseGossip()
 	elseif QuestFrame:IsShown() then
 		HideUIPanel(QuestFrame)
 	end
+	if not GetCVarBool("autoQuestWatch") then return end
+	if not IsQuestWatched(id) and GetNumQuestWatches() < MAX_WATCHABLE_QUESTS then
+		AddQuestWatch(id)
+	end
 end)
 
-Monomyth:Register("QUEST_ACCEPT_CONFIRM", AcceptQuest)
+
 
 Monomyth:Register("QUEST_PROGRESS", function()
 	if IsQuestCompletable() then
@@ -217,19 +223,45 @@ Monomyth:Register("MAIL_CLOSED", function()
 	atMail = false
 end)
 
+Monomyth:Register("MERCHANT_SHOW", function()
+	atMerchant = true
+end)
+
+Monomyth:Register("MERCHANT_CLOSED", function()
+	atMerchant = false
+end)
+
+local ignoredItems = {
+	-- Inscription weapons
+	[31690] = true,	-- Inscribed Tiger Staff
+	[31691] = true,	-- Inscribed Crane Staff
+	[31692] = true,	-- Inscribed Serpent Staff
+
+	-- Darkmoon Faire artifacts
+	[29443] = true,	-- Imbued Crystal
+	[29444] = true,	-- Monstrous Egg
+	[29445] = true,	-- Mysterious Grimoire
+	[29446] = true,	-- Ornate Weapon
+	[29451] = true,	-- A Treatise on Strategy
+	[29456] = true,	-- Banner of the Fallen
+	[29457] = true,	-- Captured Insignia
+	[29458] = true,	-- Fallen Adventurer's Journal
+	[29464] = true,	-- Soothsayer's Runes
+}
+
 Monomyth:Register("BAG_UPDATE", function(bag)
-	if atBank or atMail then return end
+	if atBank or atMail or atMerchant then return end
 
 	for slot = 1, GetContainerNumSlots(bag) do
 		local _, id, active = GetContainerItemQuestInfo(bag, slot)
-		if id and not active and not IsQuestFlaggedCompleted(id) then
+		if id and not active and not IsQuestFlaggedCompleted(id) and not ignoredItems[id] then
 			UseContainerItem(bag, slot)
 		end
 	end
 end)
 
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(self, event, message)
-	if message == ERR_QUEST_ALREADY_DONE then
+	if message == ERR_QUEST_ALREADY_DONE or message == ERR_QUEST_FAILED_LOW_LEVEL then
 		return true
 	end
 end)
