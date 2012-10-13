@@ -39,12 +39,12 @@ L_TOOLTIP_LOADING = "Caricamento..."
 L_TOOLTIP_ACH_STATUS = "Il tuo status è:"
 L_TOOLTIP_ACH_COMPLETE = "Il tuo status è: completato "
 L_TOOLTIP_ACH_INCOMPLETE = "Il tuo status è: incompleto"
-L_TOOLTIP_ACH_NOT_EAT = "Not Eaten" -- Needs review
-L_TOOLTIP_ACH_EAT = "Eaten" -- Needs review
-L_TOOLTIP_ACH_NOT_DRINK = "Not Consumed" -- Needs review
-L_TOOLTIP_ACH_DRINK = "Consumed" -- Needs review
-L_TOOLTIP_ACH_NOT_EQUIP = "Not Equipped" -- Needs review
-L_TOOLTIP_ACH_EQUIP = "Equipped" -- Needs review
+L_TOOLTIP_ACH_NOT_EAT = "Mangiato/a"
+L_TOOLTIP_ACH_EAT = "Mangiato/a"
+L_TOOLTIP_ACH_NOT_DRINK = "Non consumato/a"
+L_TOOLTIP_ACH_DRINK = "Consumato/a"
+L_TOOLTIP_ACH_NOT_EQUIP = "Non indossato/a"
+L_TOOLTIP_ACH_EQUIP = "Indossato/a"
 L_TOOLTIP_SPELL_ID = "ID incantesimo/abilità:"
 L_TOOLTIP_ITEM_ID = "ID oggetto:"
 L_TOOLTIP_WHO_TARGET = "Bersaglio di"
@@ -65,9 +65,9 @@ L_MISC_MOUNTS_GROUND = "Terrestre"
 L_MISC_MOUNTS_FLYING = "Volante"
 L_MISC_MOUNTS_FLYINGGROUND = "Volante e Terrestre"
 L_MISC_MOUNTS_SWIMMING = "Acquatica"
-L_MISC_GROCERY_BUY = "Buy" -- Needs review
-L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
-L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
+L_MISC_GROCERY_BUY = "Compra"
+L_MISC_GROCERY_DESC = "Compra automaticamente i sacchetti di alimenti"
+L_MISC_GROCERY_ERROR = "Oggetti non sufficienti."
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Sciogli il gruppo"
@@ -140,8 +140,8 @@ L_CHAT_BATTLEGROUND = "CB"
 L_CHAT_BATTLEGROUND_LEADER = "CCB"
 L_CHAT_OFFICER = "UF"
 L_CHAT_PET_BATTLE = "STM"
-L_CHAT_COME_ONLINE = "si è |cff298F00connesso|r."
-L_CHAT_GONE_OFFLINE = "si è |cffff0000disconnesso|r."
+L_CHAT_COME_ONLINE = "si è |cff298F00connesso/a|r."
+L_CHAT_GONE_OFFLINE = "si è |cffff0000disconnesso/a|r."
 
 -- Errors frame
 L_ERRORFRAME_L = "Clicca per vedere gli errori."
@@ -170,7 +170,7 @@ L_BAG_RIGHT_CLICK_SEARCH = "Clicca col destro per cercare"
 L_MAIL_STOPPED = "Interrotto, l'inventario è pieno."
 L_MAIL_UNIQUE = "Interrotto. È stato rinvenuto il duplicato di un oggetto unico in una sacca o in banca."
 L_MAIL_COMPLETE = "Completato."
-L_MAIL_NEED = "Hai bisogno della cassetta per le lettere."
+L_MAIL_NEED = "Hai bisogno della cassetta delle lettere."
 L_MAIL_MESSAGES = "messaggi"
 
 -- Loot
@@ -188,7 +188,7 @@ L_LOOT_TO_SAY = "  dice"
 -- LitePanels AFK module
 L_PANELS_AFK = "Sei assente!"
 L_PANELS_AFK_RCLICK = "Click destro = nascondi pannello."
-L_PANELS_AFK_LCLICK = "Clicca sinistro = non più assente."
+L_PANELS_AFK_LCLICK = "Click sinistro = non più assente."
 
 -- Cooldowns
 L_COOLDOWNS = "RC: "
@@ -284,7 +284,7 @@ L_POPUP_SETTINGS_DBM = "È necessario cambiare la posizione degli elementi di DB
 L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DXE."
 L_POPUP_SETTINGS_BW = "È necessario cambiare la posizione degli elementi di BigWigs."
 L_POPUP_ARMORY = "Armeria"
-L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
+L_POPUP_TALENT_FIX = "Si è verificato un bug della Blizzard, il quale t'impedisce di cambiare i talenti; questo accade quando ispezioni qualcuno. Sfortunatamente non c'è nulla che noi possiamo fare durante questa patch di WoW: per favore, riavvia la tua Interfaccia Utente e riprova."
 L_POPUP_CURRENCY_CAP = "Hai raggiunto il valore massimo di"
 
 -- Welcome message
