@@ -97,7 +97,7 @@ local buffs = { -- Credits: Proditor, Rinu
 	[GetSpellInfo(31665)] = L_PLANNER_ROGUE_3,			-- Master of Subtlety
 	-- SHAMAN
 	[GetSpellInfo(51470)] = L_PLANNER_SHAMAN_1,			-- Elemental Oath
-	[GetSpellInfo(53817)] = L_PLANNER_SHAMAN_2,			-- Maelstrom Weapon
+	[GetSpellInfo(30809)] = L_PLANNER_SHAMAN_2,			-- Unleashed Rage
 	[GetSpellInfo(974)] = L_PLANNER_SHAMAN_3,			-- Earth Shield
 	-- WARLOCK
 	[GetSpellInfo(122355)] = L_PLANNER_WARLOCK_2,		-- Molten Core
