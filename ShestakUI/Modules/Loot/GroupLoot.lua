@@ -292,27 +292,32 @@ SlashCmdList.TESTROLL = function()
 	if f:IsShown() then
 		f:Hide()
 	else
-		local texture = select(10, GetItemInfo(32837))
+		local items = {32837, 34196, 33820, 84004}
+		local item = items[math.random(1, #items)]
+		local quality = select(3, GetItemInfo(item))
+		local texture = select(10, GetItemInfo(item))
+		local r, g, b = GetItemQualityColor(quality)
 
 		f.button.icon:SetTexture(texture)
 		f.button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-		f.fsloot:SetText(GetItemInfo(32837))
-		f.fsloot:SetVertexColor(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b)
+		f.fsloot:SetText(GetItemInfo(item))
+		f.fsloot:SetVertexColor(r, g, b)
 
 		f.status:SetMinMaxValues(0, 100)
-		f.status:SetValue(70)
-		f.status:SetStatusBarColor(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b, 0.7)
-		f.status.bg:SetTexture(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b)
+		f.status:SetValue(math.random(50, 90))
+		f.status:SetStatusBarColor(r, g, b, 0.7)
+		f.status.bg:SetTexture(r, g, b)
 
-		f.backdrop:SetBackdropBorderColor(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b, 0.7)
-		f.button.backdrop:SetBackdropBorderColor(ITEM_QUALITY_COLORS[5].r, ITEM_QUALITY_COLORS[5].g, ITEM_QUALITY_COLORS[5].b, 0.7)
+		f.backdrop:SetBackdropBorderColor(r, g, b, 0.7)
+		f.button.backdrop:SetBackdropBorderColor(r, g, b, 0.7)
 
 		f.need:SetText(0)
 		f.greed:SetText(0)
 		f.pass:SetText(0)
 		f.disenchant:SetText(0)
 
+		f.button.link = "item:"..item..":0:0:0:0:0:0:0"
 		f:Show()
 	end
 end

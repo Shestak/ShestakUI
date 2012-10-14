@@ -31,7 +31,7 @@ local function fixAnchors()
 	GroupLootContainer:SetPoint(POSITION, AlertFrame, ANCHOR_POINT, 0, YOFFSET)
 
 	MissingLootFrame:ClearAllPoints()
-	MissingLootFrame:SetPoint(POSITION, AlertFrame, ANCHOR_POINT)
+	MissingLootFrame:SetPoint(POSITION, AlertFrame, ANCHOR_POINT, 0, YOFFSET)
 
 	--AlertFrame_FixAnchors()
 end
@@ -124,3 +124,9 @@ local function AlertFrame_SetGuildChallengeAnchors(alertAnchor)
 	end
 end
 hooksecurefunc("AlertFrame_SetGuildChallengeAnchors", AlertFrame_SetGuildChallengeAnchors)
+
+hooksecurefunc(GroupLootContainer, "SetPoint", function(self, point, anchorTo, attachPoint, xOffset, yOffset)
+	if _G[anchorTo] == UIParent then
+		fixAnchors()
+	end
+end)
