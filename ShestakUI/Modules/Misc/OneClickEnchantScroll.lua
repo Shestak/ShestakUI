@@ -33,7 +33,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 					creatable = nil
 				end
 				local scrollnum = GetItemCount(38682)
-				TradeSkillCreateScrollButton:SetText(L_EXTRA_SCROLL.." ("..scrollnum..")")
+				TradeSkillCreateScrollButton:SetText(L_MISC_SCROLL.." ("..scrollnum..")")
 				if scrollnum == 0 then
 					creatable = nil
 				end
