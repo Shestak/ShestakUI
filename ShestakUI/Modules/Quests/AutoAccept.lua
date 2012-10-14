@@ -261,7 +261,7 @@ Monomyth:Register("BAG_UPDATE", function(bag)
 end)
 
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(self, event, message)
-	if message == ERR_QUEST_ALREADY_DONE or message == ERR_QUEST_FAILED_LOW_LEVEL then
+	if message == ERR_QUEST_ALREADY_DONE or message == ERR_QUEST_FAILED_LOW_LEVEL or meddage == ERR_QUEST_ALREADY_DONE_DAILY then
 		return true
 	end
 end)
