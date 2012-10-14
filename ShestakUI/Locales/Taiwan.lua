@@ -65,9 +65,9 @@ L_MISC_MOUNTS_GROUND = "地面坐騎"
 L_MISC_MOUNTS_FLYING = "飛行坐騎"
 L_MISC_MOUNTS_FLYINGGROUND = "飛行/地面坐騎"
 L_MISC_MOUNTS_SWIMMING = "水中坐騎"
-L_MISC_GROCERY_BUY = "Buy" -- Needs review
-L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
-L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
+L_MISC_GROCERY_BUY = "購買"
+L_MISC_GROCERY_DESC = "雜貨商自動購買"
+L_MISC_GROCERY_ERROR = "沒有足夠的物品."
 L_MISC_SCROLL = "附魔卷軸"
 
 -- Raid Utility
