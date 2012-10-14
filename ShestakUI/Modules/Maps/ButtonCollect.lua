@@ -23,8 +23,6 @@ local function PositionAndStyle()
 		buttons[i]:ClearAllPoints()
 		if i == 1 then
 			buttons[i]:SetPoint("TOP", button, "TOP", 0, 0)
-		elseif i == line then
-			buttons[i]:SetPoint("TOPRIGHT", buttons[1], "TOPLEFT", -1, 0)
 		else
 			buttons[i]:SetPoint("TOP", buttons[i-1], "BOTTOM", 0, -1)
 		end
