@@ -26,7 +26,7 @@ local function OnEvent(self, event, arg1, arg2)
 	end
 
 	local hasOffhandWeapon = OffhandHasWeapon()
-	local hasMainHandEnchant, _, _, hasOffHandEnchant, _, _ = GetWeaponEnchantInfo()
+	local hasMainHandEnchant, _, _, hasOffHandEnchant = GetWeaponEnchantInfo()
 	if not group.weapon then
 		for _, buff in pairs(group.spells) do
 			local name = GetSpellInfo(buff)
@@ -133,14 +133,14 @@ local function OnEvent(self, event, arg1, arg2)
 		specpass == true and rolepass == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
 			for _, buff in pairs(group.spells) do
 				local name = GetSpellInfo(buff)
-				local _, _, icon, _, _, _, _, unitCaster, _, _, _ = UnitBuff("player", name)
+				local _, _, icon, _, _, _, _, unitCaster = UnitBuff("player", name)
 				if personal and personal == true then
-					if (name and icon and unitCaster == "player") then
+					if name and icon and unitCaster == "player" then
 						self:Hide()
 						return
 					end
 				else
-					if (name and icon) then
+					if name and icon then
 						self:Hide()
 						return
 					end
@@ -153,7 +153,7 @@ local function OnEvent(self, event, arg1, arg2)
 			if negate_reversecheck and negate_reversecheck == GetSpecialization() then self:Hide() return end
 			for _, buff in pairs(group.spells) do
 				local name = GetSpellInfo(buff)
-				local _, _, icon, _, _, _, _, unitCaster, _, _, _ = UnitBuff("player", name)
+				local _, _, icon, _, _, _, _, unitCaster = UnitBuff("player", name)
 				if name and icon and unitCaster == "player" then
 					self:Show()
 					if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end

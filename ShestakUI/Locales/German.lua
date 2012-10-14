@@ -68,6 +68,7 @@ L_MISC_MOUNTS_SWIMMING = "Schwimmen"
 L_MISC_GROCERY_BUY = "Buy" -- Needs review
 L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
 L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
+L_MISC_SCROLL = "Rolle"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"

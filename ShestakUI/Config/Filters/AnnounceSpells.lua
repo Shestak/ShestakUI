@@ -48,9 +48,8 @@ if C.announcements.feasts == true then
 	T.AnnounceBots = {
 		[22700] = true,		-- Field Repair Bot 74A
 		[44389] = true,		-- Field Repair Bot 110G
-		[67826] = true,		-- Jeeves
 		[54711] = true,		-- Scrapbot
-		[54710] = true,		-- MOLL-E
+		[67826] = true,		-- Jeeves
 	}
 end
 

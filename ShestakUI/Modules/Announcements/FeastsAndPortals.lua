@@ -1,7 +1,7 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Announce Feasts/Cauldrons/Souls/Repair Bots/Portals/Ritual of Summoning
+--	Announce Feasts/Souls/Repair Bots/Portals/Ritual of Summoning
 ----------------------------------------------------------------------------------------
 local function GetChat()
 	if IsInRaid() then
@@ -23,7 +23,7 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 	if not UnitInRaid(srcName) and not UnitInParty(srcName) then return end
 
 	if subEvent == "SPELL_CAST_START" then
-		-- Feasts/Cauldrons
+		-- Feasts
 		if C.announcements.feasts and T.AnnounceFeasts[spellID] then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PRE, srcName, GetSpellLink(spellID)), GetChat())
 		-- Refreshment Table
@@ -36,8 +36,8 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PUT, srcName, GetSpellLink(spellID)), GetChat())
 		end
 	elseif subEvent == "SPELL_CREATE" then
-		-- Ritual of Souls
-		if C.announcements.feasts and spellID == 29893 then
+		-- Ritual of Souls and MOLL-E
+		if C.announcements.feasts and spellID == 29893 or spellID == 54710 then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PUT, srcName, GetSpellLink(spellID)), GetChat())
 		-- Toys
 		elseif C.announcements.toy_train and T.AnnounceToys[spellID] then

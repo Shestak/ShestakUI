@@ -23,7 +23,7 @@ L_ANNOUNCE_SS_THANKS = "謝謝你的 "
 L_ANNOUNCE_SS_RECEIVED = " 收到來自于 "
 
 -- Pull countdown announce
-L_ANNOUNCE_PC_GO = "開始！" 
+L_ANNOUNCE_PC_GO = "開始！"
 L_ANNOUNCE_PC_MSG = "正在拉: %s, 倒數 %s.."
 L_ANNOUNCE_PC_ABORTED = "取消拉怪！"
 
@@ -63,11 +63,12 @@ L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"
 L_MISC_MOUNTS_GROUND = "地面坐騎"
 L_MISC_MOUNTS_FLYING = "飛行坐騎"
-L_MISC_MOUNTS_FLYINGGROUND = "飛行/地面坐騎" 
+L_MISC_MOUNTS_FLYINGGROUND = "飛行/地面坐騎"
 L_MISC_MOUNTS_SWIMMING = "水中坐騎"
 L_MISC_GROCERY_BUY = "Buy" -- Needs review
 L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
 L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
+L_MISC_SCROLL = "附魔卷軸"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"

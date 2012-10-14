@@ -1625,6 +1625,8 @@ Filger_Spells = {
 			{spellID = 605, filter = "CD"},
 			-- Penance
 			{spellID = 47540, filter = "CD"},
+			-- Mind Blast
+			{spellID = 8092, filter = "CD"},
 			-- Holy Fire
 			{spellID = 14914, filter = "CD"},
 			-- Circle of Healing

@@ -65,9 +65,10 @@ L_MISC_MOUNTS_GROUND = "Наземные"
 L_MISC_MOUNTS_FLYING = "Воздушные"
 L_MISC_MOUNTS_FLYINGGROUND = "Наземные и Воздушные"
 L_MISC_MOUNTS_SWIMMING = "Подводные"
-L_MISC_GROCERY_BUY = "Buy" -- Needs review
-L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
-L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
+L_MISC_GROCERY_BUY = "Купить"
+L_MISC_GROCERY_DESC = "Автоматически покупать продовольственные сумки"
+L_MISC_GROCERY_ERROR = "Не хватает предметов."
+L_MISC_SCROLL = "Свиток"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"
