@@ -39,6 +39,7 @@ L_GUI_MISC_MOVE_BLIZZARD = "Consenti di muovere alcuni riquadri dell'interfaccia
 L_GUI_MISC_COLOR_PICKER = "Selezionatore colore migliorato"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Pergamena Incantamento sul riquadro sul riquadro abilità di commercio"
 L_GUI_MISC_ARCHAEOLOGY = "Archeologia: reliquie e recuperi"
+L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple characters" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"

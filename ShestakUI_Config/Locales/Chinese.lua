@@ -39,6 +39,7 @@ L_GUI_MISC_MOVE_BLIZZARD = "移动暴雪默认介面框架"
 L_GUI_MISC_COLOR_PICKER = "改进型颜色选择器"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame" -- Needs review
 L_GUI_MISC_ARCHAEOLOGY = "Archaeology artifacts and cooldown" -- Needs review
+L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple characters" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
