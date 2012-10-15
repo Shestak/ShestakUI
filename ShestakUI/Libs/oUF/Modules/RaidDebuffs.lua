@@ -90,30 +90,30 @@ do
 		},
 	}
 
-	DispellFilter = dispellClasses[select(2, UnitClass("player"))] or {}
+	DispellFilter = dispellClasses[T.class] or {}
 end
 
 local function CheckSpec(self, event)
 	-- Check spec to see if we can dispel magic or not
-	if select(2, UnitClass("player")) == "DRUID" then
+	if T.class == "DRUID" then
 		if T.CheckSpec(4) then
 			DispellFilter.Magic = true
 		else
 			DispellFilter.Magic = false
 		end
-	elseif select(2, UnitClass("player")) == "MONK" then
+	elseif T.class == "MONK" then
 		if T.CheckSpec(2) then
 			DispellFilter.Magic = true
 		else
 			DispellFilter.Magic = false
 		end
-	elseif select(2, UnitClass("player")) == "PALADIN" then
+	elseif T.class == "PALADIN" then
 		if T.CheckSpec(1) then
 			DispellFilter.Magic = true
 		else
 			DispellFilter.Magic = false
 		end
-	elseif select(2, UnitClass("player")) == "PRIEST" then
+	elseif T.class == "PRIEST" then
 		if T.CheckSpec(3) then
 			DispellFilter.Magic = false
 			DispellFilter.Disease = false
@@ -121,7 +121,7 @@ local function CheckSpec(self, event)
 			DispellFilter.Magic = true
 			DispellFilter.Disease = true
 		end
-	elseif select(2, UnitClass("player")) == "SHAMAN" then
+	elseif T.class == "SHAMAN" then
 		if T.CheckSpec(3) then
 			DispellFilter.Magic = true
 		else
