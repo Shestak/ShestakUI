@@ -392,6 +392,10 @@ local function Shared(self, unit)
 				self.WarlockSpecBars[i].bg:SetTexture(C.media.texture)
 				self.WarlockSpecBars[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.2)
 			end
+
+			self.WarlockSpecBars.text = T.SetFontString(self.WarlockSpecBars[1], C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.WarlockSpecBars.text:Point("CENTER", self.WarlockSpecBars, "CENTER", 0, 0)
+			self:Tag(self.WarlockSpecBars.text, "[DemonicFury]")
 		end
 
 		-- Totem bar
