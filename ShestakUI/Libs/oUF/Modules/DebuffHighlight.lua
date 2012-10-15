@@ -36,25 +36,25 @@ end
 local function CheckSpec(self, event)
 	-- Check spec to see if we can dispel magic or not
 	if T.class == "DRUID" then
-		if T.CheckSpec(4) then
+		if T.spec == 4 then
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false
 		end
 	elseif T.class == "MONK" then
-		if T.CheckSpec(2) then
+		if T.spec == 2 then
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false
 		end
 	elseif T.class == "PALADIN" then
-		if T.CheckSpec(1) then
+		if T.spec == 1 then
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false
 		end
 	elseif T.class == "PRIEST" then
-		if T.CheckSpec(3) then
+		if T.spec == 3 then
 			dispellist.Magic = false
 			dispellist.Disease = false
 		else
@@ -62,7 +62,7 @@ local function CheckSpec(self, event)
 			dispellist.Disease = true
 		end
 	elseif T.class == "SHAMAN" then
-		if T.CheckSpec(3) then
+		if T.spec == 3 then
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false

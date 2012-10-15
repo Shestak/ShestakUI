@@ -6,6 +6,7 @@
 T.dummy = function() return end
 T.name = select(1, UnitName("player"))
 T.class = select(2, UnitClass("player"))
+T.spec = GetSpecialization()
 T.race = select(2, UnitRace("player"))
 T.level = UnitLevel("player")
 T.client = GetLocale()
