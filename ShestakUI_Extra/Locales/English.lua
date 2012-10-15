@@ -15,9 +15,6 @@ L_EXTRA_ANNOUNCE_BG_CLEAR = "All clear at "
 L_EXTRA_ANNOUNCE_BG_FOCUS = "Focus Damage on "
 L_EXTRA_ANNOUNCE_BG_STEALTH = "Stealthed Enemies Nearby"
 
--- EnchantScroll
-L_EXTRA_SCROLL = "Scroll"
-
 -- Taunt announce
 L_EXTRA_TAUNT_UNKNOWN = "Unknown command:"
 L_EXTRA_TAUNT_ADD = "Add tank"

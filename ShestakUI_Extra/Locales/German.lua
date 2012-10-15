@@ -19,9 +19,6 @@ L_EXTRA_ANNOUNCE_BG_CLEAR = "alles klar auf "
 L_EXTRA_ANNOUNCE_BG_FOCUS = "Fokusschaden auf "
 L_EXTRA_ANNOUNCE_BG_STEALTH = "Unsichtbarer Gegner in der Nähe"
 
--- EnchantScroll
-L_EXTRA_SCROLL = "Rolle"
-
 -- Taunt announce
 L_EXTRA_TAUNT_UNKNOWN = "Unbekannter Befehl:"
 L_EXTRA_TAUNT_ADD = "Tank hinzufügen"

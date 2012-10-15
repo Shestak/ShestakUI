@@ -19,9 +19,6 @@ L_EXTRA_ANNOUNCE_BG_CLEAR = "Tutto calmo: "
 L_EXTRA_ANNOUNCE_BG_FOCUS = "Concentrate il danno su "
 L_EXTRA_ANNOUNCE_BG_STEALTH = "Nemici furtivi nei paraggi."
 
--- EnchantScroll
-L_EXTRA_SCROLL = "Pergamena"
-
 -- Taunt announce
 L_EXTRA_TAUNT_UNKNOWN = "Comando sconociuto:"
 L_EXTRA_TAUNT_ADD = "Aggiungi difensore"

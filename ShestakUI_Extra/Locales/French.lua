@@ -19,9 +19,6 @@ L_EXTRA_ANNOUNCE_BG_CLEAR = "Tout est Ok à "
 L_EXTRA_ANNOUNCE_BG_FOCUS = "Focus dégats sur "
 L_EXTRA_ANNOUNCE_BG_STEALTH = "Ennemi furtif proche détecté"
 
--- EnchantScroll
-L_EXTRA_SCROLL = "Parchemin"
-
 -- Taunt announce
 L_EXTRA_TAUNT_UNKNOWN = "Unknown command:" -- Needs review
 L_EXTRA_TAUNT_ADD = "Add tank" -- Needs review

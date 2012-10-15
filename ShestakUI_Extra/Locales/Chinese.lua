@@ -19,9 +19,6 @@ L_EXTRA_ANNOUNCE_BG_CLEAR = " 这边已经清掉所有敌人"
 L_EXTRA_ANNOUNCE_BG_FOCUS = "集火目标 "
 L_EXTRA_ANNOUNCE_BG_STEALTH = "敌方潜行在我们旁边"
 
--- EnchantScroll
-L_EXTRA_SCROLL = "附魔卷轴"
-
 -- Taunt announce
 L_EXTRA_TAUNT_UNKNOWN = "未知命令:"
 L_EXTRA_TAUNT_ADD = "添加坦克 "

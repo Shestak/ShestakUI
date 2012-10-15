@@ -3,6 +3,7 @@ if T.client ~= "ruRU" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for ruRU client
+--	Translation: Shestak, Wetxius
 ----------------------------------------------------------------------------------------
 -- Key binding Header Name
 L_EXTRA_HEADER_EXTRABAR = "Дополнительная панель команд"
@@ -17,9 +18,6 @@ L_EXTRA_ANNOUNCE_BG_HEAVY = "Тяжелая атака на "
 L_EXTRA_ANNOUNCE_BG_CLEAR = "Все чисто у "
 L_EXTRA_ANNOUNCE_BG_FOCUS = "Фокусная атака на "
 L_EXTRA_ANNOUNCE_BG_STEALTH = "Рядом враг в невидимости"
-
--- EnchantScroll
-L_EXTRA_SCROLL = "Свиток"
 
 -- Taunt announce
 L_EXTRA_TAUNT_UNKNOWN = "Неизвестная команда:"

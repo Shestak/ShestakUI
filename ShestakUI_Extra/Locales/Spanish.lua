@@ -19,9 +19,6 @@ L_EXTRA_ANNOUNCE_BG_CLEAR = "Todo despejado en "
 L_EXTRA_ANNOUNCE_BG_FOCUS = "Centrar daño en "
 L_EXTRA_ANNOUNCE_BG_STEALTH = "Enemigos en sigilo en las inmediaciones"
 
--- EnchantScroll
-L_EXTRA_SCROLL = "Pergamino"
-
 -- Taunt announce
 L_EXTRA_TAUNT_UNKNOWN = "Unknown command:" -- Needs review
 L_EXTRA_TAUNT_ADD = "Add tank" -- Needs review
