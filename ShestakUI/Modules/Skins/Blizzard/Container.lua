@@ -10,16 +10,16 @@ local function LoadSkin()
 	-- Container Frame
 	BagItemSearchBox:StripTextures(true)
 	BagItemSearchBox:CreateBackdrop("Overlay")
-	BagItemSearchBox.backdrop:Point("TOPLEFT", 13, -2)
-	BagItemSearchBox.backdrop:Point("BOTTOMRIGHT", -2, 2)
+	BagItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, -2)
+	BagItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 
 	for i = 1, NUM_CONTAINER_FRAMES do
 		local frame = _G["ContainerFrame"..i]
 		local close = _G["ContainerFrame"..i.."CloseButton"]
 		frame:StripTextures(true)
 		frame:CreateBackdrop("Transparent")
-		frame.backdrop:Point("TOPLEFT", 4, -2)
-		frame.backdrop:Point("BOTTOMRIGHT", 0, 2)
+		frame.backdrop:SetPoint("TOPLEFT", 4, -2)
+		frame.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
 
 		T.SkinCloseButton(close, frame.backdrop)
 
@@ -33,8 +33,8 @@ local function LoadSkin()
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:ClearAllPoints()
-			icon:Point("TOPLEFT", 2, -2)
-			icon:Point("BOTTOMRIGHT", -2, 2)
+			icon:SetPoint("TOPLEFT", 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 			quest:SetAlpha(0)
 		end
@@ -44,9 +44,9 @@ local function LoadSkin()
 			for i = 1, MAX_WATCHED_TOKENS do
 				_G["BackpackTokenFrameToken"..i].icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				_G["BackpackTokenFrameToken"..i]:CreateBackdrop("Default")
-				_G["BackpackTokenFrameToken"..i].backdrop:Point("TOPLEFT", _G["BackpackTokenFrameToken"..i].icon, "TOPLEFT", -2, 2)
-				_G["BackpackTokenFrameToken"..i].backdrop:Point("BOTTOMRIGHT", _G["BackpackTokenFrameToken"..i].icon, "BOTTOMRIGHT", 2, -2)
-				_G["BackpackTokenFrameToken"..i].icon:Point("LEFT", _G["BackpackTokenFrameToken"..i].count, "RIGHT", 2, 0)
+				_G["BackpackTokenFrameToken"..i].backdrop:SetPoint("TOPLEFT", _G["BackpackTokenFrameToken"..i].icon, "TOPLEFT", -2, 2)
+				_G["BackpackTokenFrameToken"..i].backdrop:SetPoint("BOTTOMRIGHT", _G["BackpackTokenFrameToken"..i].icon, "BOTTOMRIGHT", 2, -2)
+				_G["BackpackTokenFrameToken"..i].icon:SetPoint("LEFT", _G["BackpackTokenFrameToken"..i].count, "RIGHT", 2, 0)
 			end
 		end
 	end
@@ -58,8 +58,8 @@ local function LoadSkin()
 
 	BankItemSearchBox:StripTextures(true)
 	BankItemSearchBox:CreateBackdrop("Overlay")
-	BankItemSearchBox.backdrop:Point("TOPLEFT", 13, -2)
-	BankItemSearchBox.backdrop:Point("BOTTOMRIGHT", -2, 2)
+	BankItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, -2)
+	BankItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 
 	BankFrameMoneyFrameInset:StripTextures()
 	BankFrameMoneyFrameBorder:StripTextures()
@@ -77,8 +77,8 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 		quest:SetAlpha(0)
 	end
@@ -94,15 +94,15 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 		if highlight and not highlight.skinned then
 			highlight:SetTexture(1, 1, 1, 0.3)
 			highlight.SetTexture = T.dummy
 			highlight:ClearAllPoints()
-			highlight:Point("TOPLEFT", 2, -2)
-			highlight:Point("BOTTOMRIGHT", -2, 2)
+			highlight:SetPoint("TOPLEFT", 2, -2)
+			highlight:SetPoint("BOTTOMRIGHT", -2, 2)
 			highlight.skinned = true
 		end
 	end

@@ -32,12 +32,12 @@ local function LoadSkin()
 
 	T.SkinCloseButton(VoidStorageBorderFrame.CloseButton)
 	VoidItemSearchBox:CreateBackdrop("Overlay")
-	VoidItemSearchBox.backdrop:Point("TOPLEFT", 10, -1)
-	VoidItemSearchBox.backdrop:Point("BOTTOMRIGHT", 4, 1)
+	VoidItemSearchBox.backdrop:SetPoint("TOPLEFT", 10, -1)
+	VoidItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", 4, 1)
 
 	VoidStorageFrame:HookScript("OnShow", function()
 		SideDressUpFrame:ClearAllPoints()
-		SideDressUpFrame:Point("TOPLEFT", VoidStorageFrame, "TOPRIGHT", 3, 0)
+		SideDressUpFrame:SetPoint("TOPLEFT", VoidStorageFrame, "TOPRIGHT", 3, 0)
 	end)
 
 	for i = 1, 9 do
@@ -57,13 +57,13 @@ local function LoadSkin()
 
 		icon_d:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon_d:ClearAllPoints()
-		icon_d:Point("TOPLEFT", 2, -2)
-		icon_d:Point("BOTTOMRIGHT", -2, 2)
+		icon_d:SetPoint("TOPLEFT", 2, -2)
+		icon_d:SetPoint("BOTTOMRIGHT", -2, 2)
 
 		icon_w:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon_w:ClearAllPoints()
-		icon_w:Point("TOPLEFT", 2, -2)
-		icon_w:Point("BOTTOMRIGHT", -2, 2)
+		icon_w:SetPoint("TOPLEFT", 2, -2)
+		icon_w:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
 
 	for i = 1, 80 do
@@ -77,8 +77,8 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
 end
 

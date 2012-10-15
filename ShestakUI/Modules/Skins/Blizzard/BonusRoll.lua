@@ -7,8 +7,8 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	BonusRollFrame:StripTextures()
 	BonusRollFrame:CreateBackdrop("Transparent")
-	BonusRollFrame.backdrop:Point("TOPLEFT", BonusRollFrame, "TOPLEFT", -9, 6)
-	BonusRollFrame.backdrop:Point("BOTTOMRIGHT", BonusRollFrame, "BOTTOMRIGHT", 5, -6)
+	BonusRollFrame.backdrop:SetPoint("TOPLEFT", BonusRollFrame, "TOPLEFT", -9, 6)
+	BonusRollFrame.backdrop:SetPoint("BOTTOMRIGHT", BonusRollFrame, "BOTTOMRIGHT", 5, -6)
 
 	BonusRollFrame.PromptFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	BonusRollFrame.PromptFrame.IconBackdrop = CreateFrame("Frame", nil, BonusRollFrame.PromptFrame)
@@ -21,8 +21,8 @@ local function LoadSkin()
 
 	BonusRollMoneyWonFrame:StripTextures()
 	BonusRollMoneyWonFrame:CreateBackdrop("Transparent")
-	BonusRollMoneyWonFrame.backdrop:Point("TOPLEFT", BonusRollMoneyWonFrame, "TOPLEFT", -9, 6)
-	BonusRollMoneyWonFrame.backdrop:Point("BOTTOMRIGHT", BonusRollMoneyWonFrame, "BOTTOMRIGHT", 5, -6)
+	BonusRollMoneyWonFrame.backdrop:SetPoint("TOPLEFT", BonusRollMoneyWonFrame, "TOPLEFT", -9, 6)
+	BonusRollMoneyWonFrame.backdrop:SetPoint("BOTTOMRIGHT", BonusRollMoneyWonFrame, "BOTTOMRIGHT", 5, -6)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

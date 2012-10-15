@@ -89,8 +89,8 @@ local function LoadSkin()
 
 		button.border = CreateFrame("Frame", nil, button)
 		button.border:CreateBackdrop("Default")
-		button.border.backdrop:Point("TOPLEFT", button.icon, -2, 2)
-		button.border.backdrop:Point("BOTTOMRIGHT", button.icon, 2, -2)
+		button.border.backdrop:SetPoint("TOPLEFT", button.icon, -2, 2)
+		button.border.backdrop:SetPoint("BOTTOMRIGHT", button.icon, 2, -2)
 	end
 
 	hooksecurefunc("GroupFinderFrame_SelectGroupButton", function(index)
@@ -127,15 +127,15 @@ local function LoadSkin()
 
 				icon:SetTexture(texture)
 				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				icon:Point("TOPLEFT", 2, -2)
+				icon:SetPoint("TOPLEFT", 2, -2)
 				icon:SetDrawLayer("OVERLAY")
 
 				count:SetDrawLayer("OVERLAY")
 
 				if not button.backdrop then
 					button:CreateBackdrop("Default")
-					button.backdrop:Point("TOPLEFT", icon, "TOPLEFT", -2, 2)
-					button.backdrop:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+					button.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+					button.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 
 					icon:SetParent(button.backdrop)
 					icon.SetPoint = T.dummy
@@ -169,15 +169,15 @@ local function LoadSkin()
 
 			icon:SetTexture(texture)
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			icon:Point("TOPLEFT", 2, -2)
+			icon:SetPoint("TOPLEFT", 2, -2)
 			icon:SetDrawLayer("OVERLAY")
 
 			count:SetDrawLayer("OVERLAY")
 
 			if not button.backdrop then
 				button:CreateBackdrop("Default")
-				button.backdrop:Point("TOPLEFT", icon, "TOPLEFT", -2, 2)
-				button.backdrop:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+				button.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+				button.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 
 				icon:SetParent(button.backdrop)
 				icon.SetPoint = T.dummy
@@ -205,8 +205,8 @@ local function LoadSkin()
 
 				if not button.backdrop then
 					button:CreateBackdrop("Default")
-					button.backdrop:Point("TOPLEFT", icon, "TOPLEFT", -2, 2)
-					button.backdrop:Point("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+					button.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+					button.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 
 					icon:SetParent(button.backdrop)
 
@@ -232,21 +232,21 @@ local function LoadSkin()
 	ScenarioQueueFrame.Bg:Hide()
 
 	LFDQueueFrameNoLFDWhileLFR:CreateBackdrop("Overlay")
-	LFDQueueFrameNoLFDWhileLFR.backdrop:Point("TOPLEFT", 2, 5)
-	LFDQueueFrameNoLFDWhileLFR.backdrop:Point("BOTTOMRIGHT", 0, 6)
+	LFDQueueFrameNoLFDWhileLFR.backdrop:SetPoint("TOPLEFT", 2, 5)
+	LFDQueueFrameNoLFDWhileLFR.backdrop:SetPoint("BOTTOMRIGHT", 0, 6)
 
 	LFDQueueFrameCooldownFrame:CreateBackdrop("Overlay")
-	LFDQueueFrameCooldownFrame.backdrop:Point("TOPLEFT", 2, 4)
-	LFDQueueFrameCooldownFrame.backdrop:Point("BOTTOMRIGHT", 0, 6)
+	LFDQueueFrameCooldownFrame.backdrop:SetPoint("TOPLEFT", 2, 4)
+	LFDQueueFrameCooldownFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 6)
 
 	T.SkinDropDownBox(LFDQueueFrameTypeDropDown, 300)
-	LFDQueueFrameTypeDropDown:Point("RIGHT", -10, 0)
+	LFDQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
 
 	T.SkinDropDownBox(RaidFinderQueueFrameSelectionDropDown, 300)
-	RaidFinderQueueFrameSelectionDropDown:Point("RIGHT", -10, 0)
+	RaidFinderQueueFrameSelectionDropDown:SetPoint("RIGHT", -10, 0)
 
 	T.SkinDropDownBox(ScenarioQueueFrameTypeDropDown, 300)
-	ScenarioQueueFrameTypeDropDown:Point("RIGHT", -10, 0)
+	ScenarioQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
 
 	T.SkinCloseButton(PVEFrameCloseButton)
 

@@ -68,6 +68,7 @@ L_MISC_MOUNTS_SWIMMING = "Acquatica"
 L_MISC_GROCERY_BUY = "Compra"
 L_MISC_GROCERY_DESC = "Compra automaticamente i sacchetti di alimenti"
 L_MISC_GROCERY_ERROR = "Oggetti non sufficienti."
+L_MISC_SCROLL = "Pergamena"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Sciogli il gruppo"

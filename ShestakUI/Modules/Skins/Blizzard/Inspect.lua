@@ -17,8 +17,8 @@ local function LoadSkin()
 
 	InspectModelFrame:StripTextures(true)
 	InspectModelFrame:CreateBackdrop("Default")
-	InspectModelFrame.backdrop:Point("TOPLEFT", -3, 4)
-	InspectModelFrame.backdrop:Point("BOTTOMRIGHT", 4, 0)
+	InspectModelFrame.backdrop:SetPoint("TOPLEFT", -3, 4)
+	InspectModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
 
 	local slots = {
 		"HeadSlot",
@@ -50,8 +50,8 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
 		slot:CreateBackdrop("Default")
@@ -77,8 +77,8 @@ local function LoadSkin()
 
 			button:StripTextures()
 			button:CreateBackdrop("Default")
-			button.backdrop:Point("TOPLEFT", icon, -2, 2)
-			button.backdrop:Point("BOTTOMRIGHT", icon, 2, -2)
+			button.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
+			button.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		end

@@ -7,8 +7,8 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	-- Glyph Tab
 	GlyphFrame:CreateBackdrop("Default")
-	GlyphFrame.backdrop:Point("TOPLEFT", GlyphFrame, "TOPLEFT", 3, 2)
-	GlyphFrame.backdrop:Point("BOTTOMRIGHT", GlyphFrame, "BOTTOMRIGHT", -3, 0)
+	GlyphFrame.backdrop:SetPoint("TOPLEFT", GlyphFrame, "TOPLEFT", 3, 2)
+	GlyphFrame.backdrop:SetPoint("BOTTOMRIGHT", GlyphFrame, "BOTTOMRIGHT", -3, 0)
 	T.SkinEditBox(GlyphFrameSearchBox)
 	T.SkinDropDownBox(GlyphFrameFilterDropDown, 212)
 
@@ -44,8 +44,8 @@ local function LoadSkin()
 
 	GlyphFrameClearInfoFrame:SetTemplate("Default")
 	GlyphFrameClearInfoFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	GlyphFrameClearInfoFrameIcon:Point("TOPLEFT", 2, -2)
-	GlyphFrameClearInfoFrameIcon:Point("BOTTOMRIGHT", -2, 2)
+	GlyphFrameClearInfoFrameIcon:SetPoint("TOPLEFT", 2, -2)
+	GlyphFrameClearInfoFrameIcon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 	GlyphFrameLevelOverlay1:SetParent(GlyphFrame.backdrop)
 	GlyphFrameLevelOverlayText1:SetParent(GlyphFrame.backdrop)

@@ -3,43 +3,38 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Skin AltPowerBar(by Tukz)
 ----------------------------------------------------------------------------------------
--- Get rid of old Alt Power Bar
+-- Get rid of old AltPowerBar
 PlayerPowerBarAlt:UnregisterEvent("UNIT_POWER_BAR_SHOW")
 PlayerPowerBarAlt:UnregisterEvent("UNIT_POWER_BAR_HIDE")
 PlayerPowerBarAlt:UnregisterEvent("PLAYER_ENTERING_WORLD")
 
--- Create the new bar
-local AltPowerBar = CreateFrame("Frame", "UIAltPowerBar", UIParent)
-AltPowerBar:Width(221)
-AltPowerBar:Height(25)
-AltPowerBar:Point("TOP", UIParent, "TOP", 0, -21)
-AltPowerBar:EnableMouse(true)
-AltPowerBar:SetTemplate("Default")
+-- AltPowerBar
+local bar = CreateFrame("Frame", "UIAltPowerBar", UIParent)
+bar:SetSize(221, 25)
+bar:SetPoint("TOP", UIParent, "TOP", 0, -21)
+bar:SetTemplate("Default")
 
--- Create Status Bar and Text
-local AltPowerBarStatus = CreateFrame("StatusBar", "UIAltPowerBarStatus", AltPowerBar)
-AltPowerBarStatus:SetFrameLevel(AltPowerBar:GetFrameLevel() + 1)
-AltPowerBarStatus:SetStatusBarTexture(C.media.texture)
-AltPowerBarStatus:SetMinMaxValues(0, 100)
-AltPowerBarStatus:Point("TOPLEFT", AltPowerBar, "TOPLEFT", 2, -2)
-AltPowerBarStatus:Point("BOTTOMRIGHT", AltPowerBar, "BOTTOMRIGHT", -2, 2)
-AltPowerBarStatus:SetStatusBarColor(0.3, 0.7, 0.3)
-
-AltPowerBarStatus.bg = AltPowerBarStatus:CreateTexture(nil, "BACKGROUND")
-AltPowerBarStatus.bg:SetAllPoints(AltPowerBarStatus)
-AltPowerBarStatus.bg:SetTexture(C.media.texture)
-AltPowerBarStatus.bg:SetVertexColor(0.3, 0.7, 0.3, 0.25)
-
-local AltPowerText = AltPowerBarStatus:CreateFontString(nil, "OVERLAY")
-AltPowerText:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-AltPowerText:Point("CENTER", AltPowerBar, "CENTER", 0, 0)
+-- Make moveable
+bar:EnableMouse(true)
+bar:SetMovable(true)
+bar:SetUserPlaced(true)
+bar:SetFrameStrata("HIGH")
+bar:SetScript("OnMouseDown", function()
+	if IsAltKeyDown() or IsShiftKeyDown() then
+		bar:ClearAllPoints()
+		bar:StartMoving()
+	end
+end)
+bar:SetScript("OnMouseUp", function()
+	bar:StopMovingOrSizing()
+end)
 
 -- Event handling
-AltPowerBar:RegisterEvent("UNIT_POWER")
-AltPowerBar:RegisterEvent("UNIT_POWER_BAR_SHOW")
-AltPowerBar:RegisterEvent("UNIT_POWER_BAR_HIDE")
-AltPowerBar:RegisterEvent("PLAYER_ENTERING_WORLD")
-AltPowerBar:SetScript("OnEvent", function(self)
+bar:RegisterEvent("UNIT_POWER")
+bar:RegisterEvent("UNIT_POWER_BAR_SHOW")
+bar:RegisterEvent("UNIT_POWER_BAR_HIDE")
+bar:RegisterEvent("PLAYER_ENTERING_WORLD")
+bar:SetScript("OnEvent", function(self)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	if UnitAlternatePowerInfo("player") then
 		self:Show()
@@ -48,32 +43,50 @@ AltPowerBar:SetScript("OnEvent", function(self)
 	end
 end)
 
--- Make moveable
-AltPowerBar:SetMovable(true)
-AltPowerBar:SetUserPlaced(true)
-AltPowerBar:SetFrameStrata("HIGH")
-AltPowerBar:SetScript("OnMouseDown", function()
-	if IsAltKeyDown() or IsShiftKeyDown() then
-		AltPowerBar:ClearAllPoints()
-		AltPowerBar:StartMoving()
-	end
-end)
-AltPowerBar:SetScript("OnMouseUp", function()
-	AltPowerBar:StopMovingOrSizing()
-end)
+-- Tooltip
+bar:SetScript("OnEnter", function(self)
+	local name = select(10, UnitAlternatePowerInfo("player"))
+	local tooltip = select(11, UnitAlternatePowerInfo("player"))
 
--- Update Functions
-local TimeSinceLastUpdate = 1
-AltPowerBarStatus:SetScript("OnUpdate", function(self, elapsed)
-	if not AltPowerBar:IsShown() then return end
-	TimeSinceLastUpdate = TimeSinceLastUpdate + elapsed
+	GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
+	GameTooltip:AddLine(name, 1, 1, 1)
+	GameTooltip:AddLine(tooltip, nil, nil, nil, true)
 
-	if TimeSinceLastUpdate >= 1 then
-		self:SetMinMaxValues(0, UnitPowerMax("player", ALTERNATE_POWER_INDEX))
+	GameTooltip:Show()
+end)
+bar:SetScript("OnLeave", GameTooltip_Hide)
+
+-- StatusBar
+local status = CreateFrame("StatusBar", "UIAltPowerBarStatus", bar)
+status:SetFrameLevel(bar:GetFrameLevel() + 1)
+status:SetStatusBarTexture(C.media.texture)
+status:SetMinMaxValues(0, 100)
+status:SetPoint("TOPLEFT", bar, "TOPLEFT", 2, -2)
+status:SetPoint("BOTTOMRIGHT", bar, "BOTTOMRIGHT", -2, 2)
+status:SetStatusBarColor(0.3, 0.7, 0.3)
+
+status.bg = status:CreateTexture(nil, "BACKGROUND")
+status.bg:SetAllPoints(status)
+status.bg:SetTexture(C.media.texture)
+status.bg:SetVertexColor(0.3, 0.7, 0.3, 0.25)
+
+status.text = status:CreateFontString(nil, "OVERLAY")
+status.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+status.text:SetPoint("CENTER", bar, "CENTER", 0, 0)
+
+-- Update Function
+local update = 1
+status:SetScript("OnUpdate", function(self, elapsed)
+	if not bar:IsShown() then return end
+	update = update + elapsed
+
+	if update >= 1 then
 		local power = UnitPower("player", ALTERNATE_POWER_INDEX)
 		local mpower = UnitPowerMax("player", ALTERNATE_POWER_INDEX)
+
+		self:SetMinMaxValues(0, mpower)
 		self:SetValue(power)
-		AltPowerText:SetText(power.."/"..mpower)
-		self.TimeSinceLastUpdate = 0
+		self.text:SetText(power.."/"..mpower)
+		update = 0
 	end
 end)

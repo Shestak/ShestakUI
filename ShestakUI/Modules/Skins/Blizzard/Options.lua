@@ -10,7 +10,7 @@ local function LoadSkin()
 
 	VideoOptionsFrameHeader:SetTexture(nil)
 	VideoOptionsFrameHeader:ClearAllPoints()
-	VideoOptionsFrameHeader:Point("TOP", VideoOptionsFrame, 0, 0)
+	VideoOptionsFrameHeader:SetPoint("TOP", VideoOptionsFrame, 0, 0)
 
 	local frames = {
 		"VideoOptionsFrameCategoryFrame",
@@ -147,17 +147,17 @@ local function LoadSkin()
 	_G["Graphics_RightQuality"]:StripTextures()
 
 	_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
-	_G["VideoOptionsFrameDefaults"]:Point("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
+	_G["VideoOptionsFrameDefaults"]:SetPoint("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
 	_G["VideoOptionsFrameCancel"]:ClearAllPoints()
-	_G["VideoOptionsFrameCancel"]:Point("TOPRIGHT", _G["VideoOptionsFramePanelContainer"], "BOTTOMRIGHT", 0, -14)
+	_G["VideoOptionsFrameCancel"]:SetPoint("TOPRIGHT", _G["VideoOptionsFramePanelContainer"], "BOTTOMRIGHT", 0, -14)
 	_G["VideoOptionsFrameOkay"]:ClearAllPoints()
-	_G["VideoOptionsFrameOkay"]:Point("RIGHT", _G["VideoOptionsFrameCancel"], "LEFT", -4, 0)
+	_G["VideoOptionsFrameOkay"]:SetPoint("RIGHT", _G["VideoOptionsFrameCancel"], "LEFT", -4, 0)
 	_G["VideoOptionsFrameApply"]:ClearAllPoints()
-	_G["VideoOptionsFrameApply"]:Point("RIGHT", _G["VideoOptionsFrameOkay"], "LEFT", -4, 0)
+	_G["VideoOptionsFrameApply"]:SetPoint("RIGHT", _G["VideoOptionsFrameOkay"], "LEFT", -4, 0)
 	_G["AudioOptionsVoicePanelPushToTalkSound"]:ClearAllPoints()
-	_G["AudioOptionsVoicePanelPushToTalkSound"]:Point("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", 0, 0)
+	_G["AudioOptionsVoicePanelPushToTalkSound"]:SetPoint("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", 0, 0)
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:ClearAllPoints()
-	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:Point("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
+	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:SetPoint("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
 
 	_G["AudioOptionsSoundPanel"]:SetFrameLevel(1)
 	_G["AudioOptionsVoicePanel"]:SetFrameLevel(1)

@@ -49,7 +49,7 @@ L_TOOLTIP_SPELL_ID = "法术ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
 L_TOOLTIP_WHO_TARGET = "以其为目标的"
 L_TOOLTIP_ITEM_COUNT = "物品数量:"
-L_TOOLTIP_INSPECT_OPEN = "检查框体已打开" 
+L_TOOLTIP_INSPECT_OPEN = "检查框体已打开"
 
 -- Misc
 L_MISC_UNDRESS = "无装备"
@@ -68,6 +68,7 @@ L_MISC_MOUNTS_SWIMMING = "水中坐骑"
 L_MISC_GROCERY_BUY = "Buy" -- Needs review
 L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
 L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
+L_MISC_SCROLL = "附魔卷轴"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"
@@ -116,13 +117,13 @@ L_ALOAD_OP_DEP = "可选依赖: "
 L_ALOAD_AUTHOR = "作者: "
 L_ALOAD_PROFILES = "配置文件"
 L_ALOAD_ENABLE_ALL = "全部启用"
-L_ALOAD_DISABLE_ALL = "全部禁用" 
+L_ALOAD_DISABLE_ALL = "全部禁用"
 L_ALOAD_PROFILE_NAME = "配置文件名称"
 L_ALOAD_SET_TO = "发送至.."
 L_ALOAD_ADD_TO = "添加至.."
-L_ALOAD_REMOVE_FROM = "移除自.." 
-L_ALOAD_DELETE_PROFILE = "删除配置文件" 
-L_ALOAD_CONFIRM_DELETE = "确定删除该配置文件？请按住shift再次点击确认删除。" 
+L_ALOAD_REMOVE_FROM = "移除自.."
+L_ALOAD_DELETE_PROFILE = "删除配置文件"
+L_ALOAD_CONFIRM_DELETE = "确定删除该配置文件？请按住shift再次点击确认删除。"
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -420,7 +421,7 @@ L_EXTRA_ZONEACHID = {
 	["诺森德"]							= {X =   45, A =    0, H =    0},
 	["世界地图"]							= {X =  nil, A =    0, H =    0},
 	["潘达利亚"]							= {X = 6974, A =    0, H =    0},
-	-- Eastern Kingdoms 
+	-- Eastern Kingdoms
 	["阿拉希高地"]						= {X =  761, A = 4896, H = 4896},
 	["荒芜之地"]							= {X =  765, A = 4900, H = 4900},
 	["诅咒之地"]							= {X =  766, A = 4909, H = 4909},

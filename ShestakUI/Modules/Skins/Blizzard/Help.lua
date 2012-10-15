@@ -50,8 +50,8 @@ local function LoadSkin()
 
 	HelpFrameTicketScrollFrame:StripTextures()
 	HelpFrameTicketScrollFrame:CreateBackdrop("Overlay")
-	HelpFrameTicketScrollFrame.backdrop:Point("TOPLEFT", -4, 4)
-	HelpFrameTicketScrollFrame.backdrop:Point("BOTTOMRIGHT", 6, -4)
+	HelpFrameTicketScrollFrame.backdrop:SetPoint("TOPLEFT", -4, 4)
+	HelpFrameTicketScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 6, -4)
 
 	for i = 1, HelpFrameTicket:GetNumChildren() do
 		local child = select(i, HelpFrameTicket:GetChildren())
@@ -62,10 +62,10 @@ local function LoadSkin()
 
 	HelpFrameReportBugScrollFrame:StripTextures()
 	HelpFrameReportBugScrollFrame:CreateBackdrop("Overlay")
-	HelpFrameReportBugScrollFrame.backdrop:Point("TOPLEFT", -4, 4)
-	HelpFrameReportBugScrollFrame.backdrop:Point("BOTTOMRIGHT", 6, -4)
+	HelpFrameReportBugScrollFrame.backdrop:SetPoint("TOPLEFT", -4, 4)
+	HelpFrameReportBugScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 6, -4)
 	HelpFrameReportBugScrollFrame:ClearAllPoints()
-	HelpFrameReportBugScrollFrame:Point("BOTTOM", HelpFrameReportBugSubmit, "TOP", 0, 10)
+	HelpFrameReportBugScrollFrame:SetPoint("BOTTOM", HelpFrameReportBugSubmit, "TOP", 0, 10)
 
 	for i = 1, HelpFrameReportBug:GetNumChildren() do
 		local child = select(i, HelpFrameReportBug:GetChildren())
@@ -76,8 +76,8 @@ local function LoadSkin()
 
 	HelpFrameSubmitSuggestionScrollFrame:StripTextures()
 	HelpFrameSubmitSuggestionScrollFrame:CreateBackdrop("Overlay")
-	HelpFrameSubmitSuggestionScrollFrame.backdrop:Point("TOPLEFT", -4, 4)
-	HelpFrameSubmitSuggestionScrollFrame.backdrop:Point("BOTTOMRIGHT", 6, -4)
+	HelpFrameSubmitSuggestionScrollFrame.backdrop:SetPoint("TOPLEFT", -4, 4)
+	HelpFrameSubmitSuggestionScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 6, -4)
 
 	for i = 1, HelpFrameSubmitSuggestion:GetNumChildren() do
 		local child = select(i, HelpFrameSubmitSuggestion:GetChildren())
@@ -101,8 +101,8 @@ local function LoadSkin()
 
 		if t then
 			t:SetTexture(T.color.r, T.color.g, T.color.b, 0.3)
-			t:Point("TOPLEFT", b, 2, -2)
-			t:Point("BOTTOMRIGHT", b, -2, 2)
+			t:SetPoint("TOPLEFT", b, 2, -2)
+			t:SetPoint("BOTTOMRIGHT", b, -2, 2)
 		end
 	end
 
@@ -117,8 +117,8 @@ local function LoadSkin()
 
 		if t then
 			t:SetTexture(T.color.r, T.color.g, T.color.b, 0.3)
-			t:Point("TOPLEFT", b, 2, -2)
-			t:Point("BOTTOMRIGHT", b, -2, 2)
+			t:SetPoint("TOPLEFT", b, 2, -2)
+			t:SetPoint("BOTTOMRIGHT", b, -2, 2)
 		end
 	end
 
@@ -132,9 +132,9 @@ local function LoadSkin()
 
 	-- Misc items
 	HelpFrameKnowledgebaseSearchBox:ClearAllPoints()
-	HelpFrameKnowledgebaseSearchBox:Point("TOPLEFT", HelpFrameMainInset, "TOPLEFT", 13, -10)
+	HelpFrameKnowledgebaseSearchBox:SetPoint("TOPLEFT", HelpFrameMainInset, "TOPLEFT", 13, -10)
 	HelpFrameKnowledgebaseNavBarHomeButton:ClearAllPoints()
-	HelpFrameKnowledgebaseNavBarHomeButton:Point("TOPLEFT", HelpFrameKnowledgebaseSearchBox, "BOTTOMLEFT", -2, -10)
+	HelpFrameKnowledgebaseNavBarHomeButton:SetPoint("TOPLEFT", HelpFrameKnowledgebaseSearchBox, "BOTTOMLEFT", -2, -10)
 	HelpFrameKnowledgebaseNavBarOverlay:Kill()
 	HelpFrameKnowledgebaseNavBar:StripTextures()
 	HelpFrame:StripTextures(true)
@@ -149,8 +149,8 @@ local function LoadSkin()
 	HelpFrameCharacterStuckHearthstone:StyleButton()
 	HelpFrameCharacterStuckHearthstone:SetTemplate("Default")
 	HelpFrameCharacterStuckHearthstone.IconTexture:ClearAllPoints()
-	HelpFrameCharacterStuckHearthstone.IconTexture:Point("TOPLEFT", 2, -2)
-	HelpFrameCharacterStuckHearthstone.IconTexture:Point("BOTTOMRIGHT", -2, 2)
+	HelpFrameCharacterStuckHearthstone.IconTexture:SetPoint("TOPLEFT", 2, -2)
+	HelpFrameCharacterStuckHearthstone.IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 	HelpFrameCharacterStuckHearthstone.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	-- Report frames
@@ -167,7 +167,7 @@ local function LoadSkin()
 			if navButton and lastNav then
 				navButton:SetFrameLevel(lastNav:GetFrameLevel() - 2)
 				navButton:ClearAllPoints()
-				navButton:Point("LEFT", lastNav, "RIGHT", 3, 0)
+				navButton:SetPoint("LEFT", lastNav, "RIGHT", 3, 0)
 			end
 		end
 	end

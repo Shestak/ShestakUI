@@ -40,9 +40,9 @@ local function LoadSkin()
 	end
 
 	RaidInfoFrame:CreateBackdrop("Transparent")
-	RaidInfoFrame.backdrop:Point("TOPLEFT", RaidInfoFrame, "TOPLEFT")
-	RaidInfoFrame.backdrop:Point("BOTTOMRIGHT", RaidInfoFrame, "BOTTOMRIGHT")
-	RaidInfoFrame:Point("TOPLEFT", FriendsFrame, "TOPRIGHT", 3, 0)
+	RaidInfoFrame.backdrop:SetPoint("TOPLEFT", RaidInfoFrame, "TOPLEFT")
+	RaidInfoFrame.backdrop:SetPoint("BOTTOMRIGHT", RaidInfoFrame, "BOTTOMRIGHT")
+	RaidInfoFrame:SetPoint("TOPLEFT", FriendsFrame, "TOPRIGHT", 3, 0)
 	T.SkinCloseButton(RaidInfoCloseButton, RaidInfoFrame)
 	T.SkinCheckBox(RaidFrameAllAssistCheckButton)
 end
