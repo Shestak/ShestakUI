@@ -35,7 +35,7 @@ local function LoadSkin()
 		button:StripTextures()
 		button:StyleButton()
 		button:SetTemplate("Overlay")
-		button:Width(_G["QuestProgressItem"..i]:GetWidth() - 4)
+		button:SetWidth(_G["QuestProgressItem"..i]:GetWidth() - 4)
 		button:SetFrameLevel(button:GetFrameLevel() + 2)
 
 		texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)

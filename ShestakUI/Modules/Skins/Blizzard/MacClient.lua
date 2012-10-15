@@ -35,28 +35,28 @@ local function LoadSkin()
 
 		-- Reposition and resize buttons
 		local tPoint, tRTo, tRP, tX, tY = _G["MacOptionsButtonCompress"]:GetPoint()
-		_G["MacOptionsButtonCompress"]:Width(136)
+		_G["MacOptionsButtonCompress"]:SetWidth(136)
 		_G["MacOptionsButtonCompress"]:ClearAllPoints()
 		_G["MacOptionsButtonCompress"]:SetPoint(tPoint, tRTo, tRP, 4, tY)
 
-		_G["MacOptionsFrameCancel"]:Width(96)
-		_G["MacOptionsFrameCancel"]:Height(22)
+		_G["MacOptionsFrameCancel"]:SetWidth(96)
+		_G["MacOptionsFrameCancel"]:SetHeight(22)
 		tPoint, tRTo, tRP, tX, tY = _G["MacOptionsFrameCancel"]:GetPoint()
 		_G["MacOptionsFrameCancel"]:ClearAllPoints()
 		_G["MacOptionsFrameCancel"]:SetPoint(tPoint, tRTo, tRP, -14, tY)
 
 		_G["MacOptionsFrameOkay"]:ClearAllPoints()
-		_G["MacOptionsFrameOkay"]:Width(96)
-		_G["MacOptionsFrameOkay"]:Height(22)
+		_G["MacOptionsFrameOkay"]:SetWidth(96)
+		_G["MacOptionsFrameOkay"]:SetHeight(22)
 		_G["MacOptionsFrameOkay"]:SetPoint("LEFT", _G["MacOptionsFrameCancel"], -99, 0)
 
 		_G["MacOptionsButtonKeybindings"]:ClearAllPoints()
-		_G["MacOptionsButtonKeybindings"]:Width(96)
-		_G["MacOptionsButtonKeybindings"]:Height(22)
+		_G["MacOptionsButtonKeybindings"]:SetWidth(96)
+		_G["MacOptionsButtonKeybindings"]:SetHeight(22)
 		_G["MacOptionsButtonKeybindings"]:SetPoint("LEFT", _G["MacOptionsFrameOkay"], -99, 0)
 
-		_G["MacOptionsFrameDefaults"]:Width(96)
-		_G["MacOptionsFrameDefaults"]:Height(22)
+		_G["MacOptionsFrameDefaults"]:SetWidth(96)
+		_G["MacOptionsFrameDefaults"]:SetHeight(22)
 
 		T.SkinSlider(_G["MacOptionsFrameQualitySlider"])
 	end

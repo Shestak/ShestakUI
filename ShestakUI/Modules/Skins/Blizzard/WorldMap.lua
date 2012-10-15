@@ -89,7 +89,7 @@ local function LoadSkin()
 		WorldMapFrame.backdrop:SetPoint("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 65)
 		WorldMapFrame.backdrop:SetPoint("BOTTOMRIGHT", WorldMapDetailFrame, "BOTTOMRIGHT", 334, -234)
 
-		WorldMapQuestDetailScrollFrame:Width(332)
+		WorldMapQuestDetailScrollFrame:SetWidth(332)
 		WorldMapQuestDetailScrollFrame:ClearAllPoints()
 		WorldMapQuestDetailScrollFrame:SetPoint("TOPLEFT", WorldMapDetailFrame.backdrop, "BOTTOMLEFT", 0, -5)
 

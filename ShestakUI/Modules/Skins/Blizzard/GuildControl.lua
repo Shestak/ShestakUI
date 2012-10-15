@@ -33,8 +33,8 @@ local function LoadSkin()
 
 	T.SkinDropDownBox(GuildControlUINavigationDropDown)
 	T.SkinDropDownBox(GuildControlUIRankSettingsFrameRankDropDown, 180)
-	GuildControlUINavigationDropDownButton:Width(20)
-	GuildControlUIRankSettingsFrameRankDropDownButton:Width(20)
+	GuildControlUINavigationDropDownButton:SetWidth(20)
+	GuildControlUIRankSettingsFrameRankDropDownButton:SetWidth(20)
 
 	for i = 1, NUM_RANK_FLAGS do
 		if _G["GuildControlUIRankSettingsFrameCheckbox"..i] then
@@ -74,7 +74,7 @@ local function LoadSkin()
 	end)
 
 	T.SkinDropDownBox(GuildControlUIRankBankFrameRankDropDown, 180)
-	GuildControlUIRankBankFrameRankDropDownButton:Width(20)
+	GuildControlUIRankBankFrameRankDropDownButton:SetWidth(20)
 
 	T.SkinCloseButton(GuildControlUICloseButton)
 end

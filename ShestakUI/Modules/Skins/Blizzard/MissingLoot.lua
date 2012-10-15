@@ -47,8 +47,8 @@ local function LoadSkin()
 	T.SkinScrollBar(LootHistoryFrameScrollFrameScrollBar)
 
 	LootHistoryFrame.ResizeButton:SetTemplate("Default")
-	LootHistoryFrame.ResizeButton:Width(LootHistoryFrame:GetWidth())
-	LootHistoryFrame.ResizeButton:Height(19)
+	LootHistoryFrame.ResizeButton:SetWidth(LootHistoryFrame:GetWidth())
+	LootHistoryFrame.ResizeButton:SetHeight(19)
 	LootHistoryFrame.ResizeButton:ClearAllPoints()
 	LootHistoryFrame.ResizeButton:SetPoint("TOP", LootHistoryFrame, "BOTTOM", 0, -1)
 

@@ -47,7 +47,7 @@ local function LoadSkin()
 		local button = CalendarFilterButton
 
 		frame:StripTextures()
-		frame:Width(155)
+		frame:SetWidth(155)
 
 		_G[frame:GetName().."Text"]:ClearAllPoints()
 		_G[frame:GetName().."Text"]:SetPoint("RIGHT", button, "LEFT", -2, 0)
@@ -87,8 +87,8 @@ local function LoadSkin()
 	CalendarCreateEventMassInviteButton:SkinButton(true)
 	CalendarCreateEventInviteButton:SkinButton(true)
 	CalendarCreateEventInviteButton:SetPoint("TOPLEFT", CalendarCreateEventInviteEdit, "TOPRIGHT", 4, 2)
-	CalendarCreateEventInviteEdit:Width(CalendarCreateEventInviteEdit:GetWidth() - 2)
-	CalendarCreateEventInviteEdit:Height(CalendarCreateEventInviteEdit:GetHeight() - 2)
+	CalendarCreateEventInviteEdit:SetWidth(CalendarCreateEventInviteEdit:GetWidth() - 2)
+	CalendarCreateEventInviteEdit:SetHeight(CalendarCreateEventInviteEdit:GetHeight() - 2)
 	CalendarCreateEventInviteEdit:SetPoint("TOPLEFT", CalendarCreateEventInviteList, "BOTTOMLEFT", 2, -3)
 
 	CalendarCreateEventInviteList:SetTemplate("Overlay")

@@ -295,11 +295,11 @@ local function LoadSkin()
 	_G["ColorPickerOkayButton"]:ClearAllPoints()
 	_G["InterfaceOptionsFrameTab1"]:ClearAllPoints()
 	_G["InterfaceOptionsFrameTab1"]:SetPoint("TOPLEFT", _G["InterfaceOptionsFrameCategories"], "TOPLEFT", 0, 27)
-	_G["InterfaceOptionsFrameTab1"]:Width(60)
+	_G["InterfaceOptionsFrameTab1"]:SetWidth(60)
 	_G["InterfaceOptionsFrameTab1"].SetWidth = T.dummy
 	_G["InterfaceOptionsFrameTab2"]:ClearAllPoints()
 	_G["InterfaceOptionsFrameTab2"]:SetPoint("TOPLEFT", _G["InterfaceOptionsFrameTab1"], "TOPRIGHT", 3, 0)
-	_G["InterfaceOptionsFrameTab2"]:Width(112)
+	_G["InterfaceOptionsFrameTab2"]:SetWidth(112)
 	_G["InterfaceOptionsFrameTab2"].SetWidth = T.dummy
 	_G["InterfaceOptionsFrameTab1TabSpacer"]:Kill()
 	_G["InterfaceOptionsFrameTab2TabSpacer1"]:Kill()

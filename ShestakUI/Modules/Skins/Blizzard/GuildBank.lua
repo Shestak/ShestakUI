@@ -99,7 +99,7 @@ local function LoadSkin()
 	GuildBankPopupScrollFrame:StripTextures()
 	GuildBankPopupEditBox:StripTextures(true)
 	T.SkinEditBox(GuildBankPopupEditBox)
-	GuildBankPopupEditBox:Height(GuildBankPopupEditBox:GetHeight() - 5)
+	GuildBankPopupEditBox:SetHeight(GuildBankPopupEditBox:GetHeight() - 5)
 
 	for i = 1, 16 do
 		local button = _G["GuildBankPopupButton"..i]
