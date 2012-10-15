@@ -39,7 +39,7 @@ L_GUI_MISC_MOVE_BLIZZARD = "Перемещение рамок Blizzard"
 L_GUI_MISC_COLOR_PICKER = "Улучшенный подбор цвета"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Свиток наложения чар в окне профессии"
 L_GUI_MISC_ARCHAEOLOGY = "Археологические артефакты и перезарядка"
-L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple characters" -- Needs review
+L_GUI_MISC_CHARS_CURRENCY = "Отслеживать валюту на других персонажах"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"
