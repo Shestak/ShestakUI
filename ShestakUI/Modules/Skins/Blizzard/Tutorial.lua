@@ -7,13 +7,13 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	TutorialFrame:StripTextures()
 	TutorialFrame:CreateBackdrop("Transparent")
-	TutorialFrame.backdrop:Point("TOPLEFT", 6, 0)
-	TutorialFrame.backdrop:Point("BOTTOMRIGHT", 0, -6)
+	TutorialFrame.backdrop:SetPoint("TOPLEFT", 6, 0)
+	TutorialFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, -6)
 	T.SkinNextPrevButton(TutorialFrameNextButton)
 	T.SkinNextPrevButton(TutorialFramePrevButton)
 	TutorialFrameOkayButton:SkinButton()
 	TutorialFrameOkayButton:ClearAllPoints()
-	TutorialFrameOkayButton:Point("LEFT", TutorialFrameNextButton, "RIGHT", 10, 0)
+	TutorialFrameOkayButton:SetPoint("LEFT", TutorialFrameNextButton, "RIGHT", 10, 0)
 	T.SkinCloseButton(TutorialFrameCloseButton, TutorialFrame.backdrop)
 end
 

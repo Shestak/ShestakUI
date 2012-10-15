@@ -19,11 +19,11 @@ local function LoadSkin()
 
 	T.SkinCheckBox(KeyBindingFrameCharacterButton)
 	KeyBindingFrameHeaderText:ClearAllPoints()
-	KeyBindingFrameHeaderText:Point("TOP", KeyBindingFrame, "TOP", 0, -4)
+	KeyBindingFrameHeaderText:SetPoint("TOP", KeyBindingFrame, "TOP", 0, -4)
 	KeyBindingFrame:StripTextures()
 	KeyBindingFrame:CreateBackdrop("Transparent")
-	KeyBindingFrame.backdrop:Point("TOPLEFT", 0, 0)
-	KeyBindingFrame.backdrop:Point("BOTTOMRIGHT", -40, 10)
+	KeyBindingFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
+	KeyBindingFrame.backdrop:SetPoint("BOTTOMRIGHT", -40, 10)
 
 	for i = 1, KEY_BINDINGS_DISPLAYED do
 		local button1 = _G["KeyBindingFrameBinding"..i.."Key1Button"]
@@ -36,11 +36,11 @@ local function LoadSkin()
 		button2:StripTextures(true)
 		button2:StyleButton()
 		button2:SetTemplate("Overlay")
-		button2:Point("LEFT", button1, "RIGHT", 1, 0)
+		button2:SetPoint("LEFT", button1, "RIGHT", 1, 0)
 	end
 
-	KeyBindingFrameUnbindButton:Point("RIGHT", KeyBindingFrameOkayButton, "LEFT", -3, 0)
-	KeyBindingFrameOkayButton:Point("RIGHT", KeyBindingFrameCancelButton, "LEFT", -3, 0)
+	KeyBindingFrameUnbindButton:SetPoint("RIGHT", KeyBindingFrameOkayButton, "LEFT", -3, 0)
+	KeyBindingFrameOkayButton:SetPoint("RIGHT", KeyBindingFrameCancelButton, "LEFT", -3, 0)
 end
 
 T.SkinFuncs["Blizzard_BindingUI"] = LoadSkin

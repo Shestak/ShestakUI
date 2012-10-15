@@ -22,20 +22,20 @@ local function LoadSkin()
 	GuildBankInfoSaveButton:SkinButton(true)
 	GuildBankFramePurchaseButton:SkinButton(true)
 
-	GuildBankFrameWithdrawButton:Point("RIGHT", GuildBankFrameDepositButton, "LEFT", -2, 0)
+	GuildBankFrameWithdrawButton:SetPoint("RIGHT", GuildBankFrameDepositButton, "LEFT", -2, 0)
 
 	GuildBankInfoScrollFrame:StripTextures()
 	GuildBankTransactionsScrollFrame:StripTextures()
 
 	GuildBankFrame.inset = CreateFrame("Frame", nil, GuildBankFrame)
 	GuildBankFrame.inset:SetTemplate("Overlay")
-	GuildBankFrame.inset:Point("TOPLEFT", 21, -58)
-	GuildBankFrame.inset:Point("BOTTOMRIGHT", -17, 61)
+	GuildBankFrame.inset:SetPoint("TOPLEFT", 21, -58)
+	GuildBankFrame.inset:SetPoint("BOTTOMRIGHT", -17, 61)
 
 	GuildItemSearchBox:StripTextures(true)
 	GuildItemSearchBox:CreateBackdrop("Overlay")
-	GuildItemSearchBox.backdrop:Point("TOPLEFT", 13, -2)
-	GuildItemSearchBox.backdrop:Point("BOTTOMRIGHT", -5, 2)
+	GuildItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, -2)
+	GuildItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -5, 2)
 
 	for i = 1, NUM_GUILDBANK_COLUMNS do
 		_G["GuildBankColumn"..i]:StripTextures()
@@ -49,8 +49,8 @@ local function LoadSkin()
 			button:SetTemplate("Default")
 
 			icon:ClearAllPoints()
-			icon:Point("TOPLEFT", 2, -2)
-			icon:Point("BOTTOMRIGHT", -2, 2)
+			icon:SetPoint("TOPLEFT", 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", -2, 2)
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		end
 	end
@@ -74,8 +74,8 @@ local function LoadSkin()
 		end
 
 		texture:ClearAllPoints()
-		texture:Point("TOPLEFT", 2, -2)
-		texture:Point("BOTTOMRIGHT", -2, 2)
+		texture:SetPoint("TOPLEFT", 2, -2)
+		texture:SetPoint("BOTTOMRIGHT", -2, 2)
 		texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
@@ -89,10 +89,10 @@ local function LoadSkin()
 
 	-- Popup
 	GuildBankPopupFrame:CreateBackdrop("Transparent")
-	GuildBankPopupFrame.backdrop:Point("TOPLEFT", 5, 0)
-	GuildBankPopupFrame.backdrop:Point("BOTTOMRIGHT", -25, 23)
+	GuildBankPopupFrame.backdrop:SetPoint("TOPLEFT", 5, 0)
+	GuildBankPopupFrame.backdrop:SetPoint("BOTTOMRIGHT", -25, 23)
 	GuildBankPopupFrame:StripTextures()
-	GuildBankPopupFrame:Point("TOPLEFT", GuildBankFrame, "TOPRIGHT", -4, 0)
+	GuildBankPopupFrame:SetPoint("TOPLEFT", GuildBankFrame, "TOPRIGHT", -4, 0)
 
 	GuildBankPopupCancelButton:SkinButton(true)
 	GuildBankPopupOkayButton:SkinButton(true)
@@ -110,8 +110,8 @@ local function LoadSkin()
 		button:SetTemplate("Default")
 
 		texture:ClearAllPoints()
-		texture:Point("TOPLEFT", 2, -2)
-		texture:Point("BOTTOMRIGHT", -2, 2)
+		texture:SetPoint("TOPLEFT", 2, -2)
+		texture:SetPoint("BOTTOMRIGHT", -2, 2)
 		texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 end

@@ -28,13 +28,13 @@ local function LoadSkin()
 
 	local pagebackdrop = CreateFrame("Frame", nil, SpellBookPage1:GetParent())
 	pagebackdrop:SetTemplate("Overlay")
-	pagebackdrop:Point("TOPLEFT", SpellBookFrame, "TOPLEFT", 50, -50)
-	pagebackdrop:Point("BOTTOMRIGHT", SpellBookFrame, "BOTTOMRIGHT", -26, 23)
+	pagebackdrop:SetPoint("TOPLEFT", SpellBookFrame, "TOPLEFT", 50, -50)
+	pagebackdrop:SetPoint("BOTTOMRIGHT", SpellBookFrame, "BOTTOMRIGHT", -26, 23)
 
 	T.SkinNextPrevButton(SpellBookPrevPageButton)
 	T.SkinNextPrevButton(SpellBookNextPageButton)
-	SpellBookNextPageButton:Point("BOTTOMRIGHT", pagebackdrop, "BOTTOMRIGHT", -15, 10)
-	SpellBookPrevPageButton:Point("BOTTOMRIGHT", SpellBookNextPageButton, "BOTTOMLEFT", -6, 0)
+	SpellBookNextPageButton:SetPoint("BOTTOMRIGHT", pagebackdrop, "BOTTOMRIGHT", -15, 10)
+	SpellBookPrevPageButton:SetPoint("BOTTOMRIGHT", SpellBookNextPageButton, "BOTTOMLEFT", -6, 0)
 
 	SpellBookFrameTutorialButton.Ring:Hide()
 	SpellBookFrameTutorialButton:SetPoint("TOPLEFT", SpellBookFrame, "TOPLEFT", -5, 10)
@@ -94,8 +94,8 @@ local function LoadSkin()
 		if tab then
 			tab:StripTextures()
 			tab:GetNormalTexture():ClearAllPoints()
-			tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
-			tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+			tab:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+			tab:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 			tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 			tab:CreateBackdrop("Default")
@@ -103,7 +103,7 @@ local function LoadSkin()
 			tab:StyleButton()
 
 			local point, relatedTo, point2, x, y = tab:GetPoint()
-			tab:Point(point, relatedTo, point2, 16, -1)
+			tab:SetPoint(point, relatedTo, point2, 16, -1)
 		end
 	end
 
@@ -113,8 +113,8 @@ local function LoadSkin()
 			local _, _, _, _, isGuild = GetSpellTabInfo(i)
 			if isGuild then
 				tab:GetNormalTexture():ClearAllPoints()
-				tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
-				tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+				tab:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+				tab:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 				tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			end
 		end
@@ -122,8 +122,8 @@ local function LoadSkin()
 	hooksecurefunc("SpellBookFrame_UpdateSkillLineTabs", SkinSkillLine)
 
 	SpellBookFrame:CreateBackdrop("Transparent")
-	SpellBookFrame.backdrop:Point("TOPLEFT", 5, -1)
-	SpellBookFrame.backdrop:Point("BOTTOMRIGHT", 15, -1)
+	SpellBookFrame.backdrop:SetPoint("TOPLEFT", 5, -1)
+	SpellBookFrame.backdrop:SetPoint("BOTTOMRIGHT", 15, -1)
 
 	T.SkinCloseButton(SpellBookFrameCloseButton, SpellBookFrame.backdrop)
 
@@ -172,14 +172,14 @@ local function LoadSkin()
 		if icon then
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:ClearAllPoints()
-			icon:Point("TOPLEFT", 4, -4)
-			icon:Point("BOTTOMRIGHT", -4, 4)
+			icon:SetPoint("TOPLEFT", 4, -4)
+			icon:SetPoint("BOTTOMRIGHT", -4, 4)
 
 			if not button.backdrop then
 				button:SetFrameLevel(button:GetFrameLevel() + 2)
 				button:CreateBackdrop("Default")
-				button.backdrop:Point("TOPLEFT", 2, -2)
-				button.backdrop:Point("BOTTOMRIGHT", -2, 2)
+				button.backdrop:SetPoint("TOPLEFT", 2, -2)
+				button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 			end
 		end
 	end
@@ -209,7 +209,7 @@ local function LoadSkin()
 		T.SkinTab(_G["SpellBookFrameTabButton"..i])
 	end
 	_G["SpellBookFrameTabButton1"]:ClearAllPoints()
-	_G["SpellBookFrameTabButton1"]:Point("TOPLEFT", _G["SpellBookFrame"], "BOTTOMLEFT", -5, 1)
+	_G["SpellBookFrameTabButton1"]:SetPoint("TOPLEFT", _G["SpellBookFrame"], "BOTTOMLEFT", -5, 1)
 
 	-- Core Ability Tab
 	local function SkinCoreTabs()
@@ -221,8 +221,8 @@ local function LoadSkin()
 				tab:StripTextures()
 				tab:SetNormalTexture(icon)
 				tab:GetNormalTexture():ClearAllPoints()
-				tab:GetNormalTexture():Point("TOPLEFT", 2, -2)
-				tab:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+				tab:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+				tab:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 				tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 				tab:CreateBackdrop("Default")
@@ -249,8 +249,8 @@ local function LoadSkin()
 				button.ActiveTexture:SetAlpha(0)
 				button.FutureTexture:SetAlpha(0)
 
-				button.iconTexture:Point("TOPLEFT", 2, -2)
-				button.iconTexture:Point("BOTTOMRIGHT", -2, 2)
+				button.iconTexture:SetPoint("TOPLEFT", 2, -2)
+				button.iconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 				button.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 				if button.highlightTexture then

@@ -40,8 +40,8 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
 
 	select(8, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
@@ -75,8 +75,8 @@ local function LoadSkin()
 				button:GetNormalTexture():SetTexture(nil)
 
 				icon:ClearAllPoints()
-				icon:Point("TOPLEFT", 2, -2)
-				icon:Point("BOTTOMRIGHT", -2, 2)
+				icon:SetPoint("TOPLEFT", 2, -2)
+				icon:SetPoint("BOTTOMRIGHT", -2, 2)
 				button:SetFrameLevel(button:GetFrameLevel() + 2)
 				button:SetFrameStrata("DIALOG")
 				if not button.backdrop then
@@ -94,8 +94,8 @@ local function LoadSkin()
 	-- Icon in upper right corner of character frame
 	CharacterFramePortrait:Kill()
 	CharacterModelFrame:CreateBackdrop("Default")
-	CharacterModelFrame.backdrop:Point("TOPLEFT", -3, 4)
-	CharacterModelFrame.backdrop:Point("BOTTOMRIGHT", 4, 0)
+	CharacterModelFrame.backdrop:SetPoint("TOPLEFT", -3, 4)
+	CharacterModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
 
 	local scrollbars = {
 		"PaperDollTitlesPaneScrollBar",
@@ -126,8 +126,8 @@ local function LoadSkin()
 	PaperDollEquipmentManagerPaneSaveSet:SkinButton()
 	PaperDollEquipmentManagerPaneEquipSet:Width(PaperDollEquipmentManagerPaneEquipSet:GetWidth() - 8)
 	PaperDollEquipmentManagerPaneSaveSet:Width(PaperDollEquipmentManagerPaneSaveSet:GetWidth() - 8)
-	PaperDollEquipmentManagerPaneEquipSet:Point("TOPLEFT", PaperDollEquipmentManagerPane, "TOPLEFT", 8, 0)
-	PaperDollEquipmentManagerPaneSaveSet:Point("LEFT", PaperDollEquipmentManagerPaneEquipSet, "RIGHT", 4, 0)
+	PaperDollEquipmentManagerPaneEquipSet:SetPoint("TOPLEFT", PaperDollEquipmentManagerPane, "TOPLEFT", 8, 0)
+	PaperDollEquipmentManagerPaneSaveSet:SetPoint("LEFT", PaperDollEquipmentManagerPaneEquipSet, "RIGHT", 4, 0)
 	PaperDollEquipmentManagerPaneEquipSet.ButtonBackground:SetTexture(nil)
 	PaperDollEquipmentManagerPane:HookScript("OnShow", function(self)
 		for x, object in pairs(PaperDollEquipmentManagerPane.buttons) do
@@ -142,8 +142,8 @@ local function LoadSkin()
 				object:CreateBackdrop("Default")
 			end
 
-			object.backdrop:Point("TOPLEFT", object.icon, "TOPLEFT", -2, 2)
-			object.backdrop:Point("BOTTOMRIGHT", object.icon, "BOTTOMRIGHT", 2, -2)
+			object.backdrop:SetPoint("TOPLEFT", object.icon, "TOPLEFT", -2, 2)
+			object.backdrop:SetPoint("BOTTOMRIGHT", object.icon, "BOTTOMRIGHT", 2, -2)
 			object.icon:SetParent(object.backdrop)
 
 			-- Making all icons the same size and position because otherwise BlizzardUI tries to attach itself to itself when it refreshes
@@ -154,7 +154,7 @@ local function LoadSkin()
 		end
 		GearManagerDialogPopup:StripTextures()
 		GearManagerDialogPopup:SetTemplate("Transparent")
-		GearManagerDialogPopup:Point("TOPLEFT", PaperDollFrame, "TOPRIGHT", 3, 0)
+		GearManagerDialogPopup:SetPoint("TOPLEFT", PaperDollFrame, "TOPRIGHT", 3, 0)
 		GearManagerDialogPopupScrollFrame:StripTextures()
 		GearManagerDialogPopupEditBox:StripTextures(true)
 		GearManagerDialogPopupEditBox:SetTemplate("Overlay")
@@ -174,8 +174,8 @@ local function LoadSkin()
 				_G["GearManagerDialogPopupButton"..i.."Icon"]:SetTexture(nil)
 
 				icon:ClearAllPoints()
-				icon:Point("TOPLEFT", 2, -2)
-				icon:Point("BOTTOMRIGHT", -2, 2)
+				icon:SetPoint("TOPLEFT", 2, -2)
+				icon:SetPoint("BOTTOMRIGHT", -2, 2)
 				button:SetFrameLevel(button:GetFrameLevel() + 2)
 				if not button.backdrop then
 					button:CreateBackdrop("Default")
@@ -196,11 +196,11 @@ local function LoadSkin()
 			local tab = _G["PaperDollSidebarTab"..i]
 			if tab then
 				tab.Highlight:SetTexture(1, 1, 1, 0.3)
-				tab.Highlight:Point("TOPLEFT", 3, -4)
-				tab.Highlight:Point("BOTTOMRIGHT", -1, 0)
+				tab.Highlight:SetPoint("TOPLEFT", 3, -4)
+				tab.Highlight:SetPoint("BOTTOMRIGHT", -1, 0)
 				tab.Hider:SetTexture(0.4, 0.4, 0.4, 0.4)
-				tab.Hider:Point("TOPLEFT", 3, -4)
-				tab.Hider:Point("BOTTOMRIGHT", -1, 0)
+				tab.Hider:SetPoint("TOPLEFT", 3, -4)
+				tab.Hider:SetPoint("BOTTOMRIGHT", -1, 0)
 				tab.TabBg:Kill()
 
 				if i == 1 then
@@ -211,8 +211,8 @@ local function LoadSkin()
 					end
 				end
 				tab:CreateBackdrop("Default")
-				tab.backdrop:Point("TOPLEFT", 1, -2)
-				tab.backdrop:Point("BOTTOMRIGHT", 1, -2)
+				tab.backdrop:SetPoint("TOPLEFT", 1, -2)
+				tab.backdrop:SetPoint("BOTTOMRIGHT", 1, -2)
 			end
 		end
 	end
@@ -255,7 +255,7 @@ local function LoadSkin()
 		end
 		ReputationDetailFrame:StripTextures()
 		ReputationDetailFrame:SetTemplate("Transparent")
-		ReputationDetailFrame:Point("TOPLEFT", ReputationFrame, "TOPRIGHT", 3, 0)
+		ReputationDetailFrame:SetPoint("TOPLEFT", ReputationFrame, "TOPRIGHT", 3, 0)
 		T.SkinCloseButton(ReputationDetailCloseButton)
 		T.SkinCheckBox(ReputationDetailMainScreenCheckBox)
 		T.SkinCheckBox(ReputationDetailInactiveCheckBox)
@@ -283,7 +283,7 @@ local function LoadSkin()
 		end
 		TokenFramePopup:StripTextures()
 		TokenFramePopup:SetTemplate("Transparent")
-		TokenFramePopup:Point("TOPLEFT", TokenFrame, "TOPRIGHT", 3, 0)
+		TokenFramePopup:SetPoint("TOPLEFT", TokenFrame, "TOPRIGHT", 3, 0)
 		T.SkinCloseButton(TokenFramePopupCloseButton)
 		T.SkinCheckBox(TokenFramePopupBackpackCheckBox)
 		T.SkinCheckBox(TokenFramePopupInactiveCheckBox)
@@ -291,17 +291,17 @@ local function LoadSkin()
 
 	-- Pet
 	PetModelFrame:CreateBackdrop("Default")
-	PetModelFrame.backdrop:Point("TOPLEFT", -2, 2)
-	PetModelFrame.backdrop:Point("BOTTOMRIGHT", 1, -2)
+	PetModelFrame.backdrop:SetPoint("TOPLEFT", -2, 2)
+	PetModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 1, -2)
 	PetPaperDollFrameExpBar:StripTextures()
 	PetPaperDollFrameExpBar:SetStatusBarTexture(C.media.texture)
 	PetPaperDollFrameExpBar:CreateBackdrop("Overlay")
 	T.SkinRotateButton(PetModelFrameRotateRightButton)
 	T.SkinRotateButton(PetModelFrameRotateLeftButton)
 	PetModelFrameRotateLeftButton:ClearAllPoints()
-	PetModelFrameRotateLeftButton:Point("TOPLEFT", PetModelFrame.backdrop, "TOPLEFT", 6, -6)
+	PetModelFrameRotateLeftButton:SetPoint("TOPLEFT", PetModelFrame.backdrop, "TOPLEFT", 6, -6)
 	PetModelFrameRotateRightButton:ClearAllPoints()
-	PetModelFrameRotateRightButton:Point("LEFT", PetModelFrameRotateLeftButton, "RIGHT", 4, 0)
+	PetModelFrameRotateRightButton:SetPoint("LEFT", PetModelFrameRotateLeftButton, "RIGHT", 4, 0)
 
 	local xtex = PetPaperDollPetInfo:GetRegions()
 	xtex:SetTexCoord(0.12, 0.63, 0.15, 0.55)

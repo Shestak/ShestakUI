@@ -9,7 +9,7 @@ local function LoadSkin()
 	GuildControlUIHbar:StripTextures()
 	GuildControlUI:SetTemplate("Transparent")
 	GuildControlUI:ClearAllPoints()
-	GuildControlUI:Point("TOPLEFT", GuildFrame, "TOPRIGHT", 3, 0)
+	GuildControlUI:SetPoint("TOPLEFT", GuildFrame, "TOPRIGHT", 3, 0)
 	GuildControlUI:SetFrameLevel(GuildControlUI:GetFrameLevel() + 2)
 
 	local function SkinGuildRanks()
@@ -24,8 +24,8 @@ local function LoadSkin()
 					T.SkinEditBox(rankFrame.nameBox)
 				end
 
-				rankFrame.nameBox.backdrop:Point("TOPLEFT", -2, -4)
-				rankFrame.nameBox.backdrop:Point("BOTTOMRIGHT", -4, 4)
+				rankFrame.nameBox.backdrop:SetPoint("TOPLEFT", -2, -4)
+				rankFrame.nameBox.backdrop:SetPoint("BOTTOMRIGHT", -4, 4)
 			end
 		end
 	end
@@ -45,8 +45,8 @@ local function LoadSkin()
 	GuildControlUIRankOrderFrameNewButton:SkinButton()
 
 	T.SkinEditBox(GuildControlUIRankSettingsFrameGoldBox)
-	GuildControlUIRankSettingsFrameGoldBox.backdrop:Point("TOPLEFT", -2, -4)
-	GuildControlUIRankSettingsFrameGoldBox.backdrop:Point("BOTTOMRIGHT", 2, 4)
+	GuildControlUIRankSettingsFrameGoldBox.backdrop:SetPoint("TOPLEFT", -2, -4)
+	GuildControlUIRankSettingsFrameGoldBox.backdrop:SetPoint("BOTTOMRIGHT", 2, 4)
 	GuildControlUIRankSettingsFrameGoldBox:StripTextures()
 
 	GuildControlUIRankBankFrameInset:StripTextures()

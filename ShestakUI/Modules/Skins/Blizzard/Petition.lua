@@ -31,9 +31,9 @@ local function LoadSkin()
 
 	PetitionFrameInstructions:SetTextColor(1, 1, 1)
 
-	PetitionFrameRenameButton:Point("LEFT", PetitionFrameRequestButton, "RIGHT", 3, 0)
-	PetitionFrameRenameButton:Point("RIGHT", PetitionFrameCancelButton, "LEFT", -3, 0)
-	PetitionFrameCancelButton:Point("BOTTOMRIGHT", PetitionFrame, "BOTTOMRIGHT", -5, 4)
+	PetitionFrameRenameButton:SetPoint("LEFT", PetitionFrameRequestButton, "RIGHT", 3, 0)
+	PetitionFrameRenameButton:SetPoint("RIGHT", PetitionFrameCancelButton, "LEFT", -3, 0)
+	PetitionFrameCancelButton:SetPoint("BOTTOMRIGHT", PetitionFrame, "BOTTOMRIGHT", -5, 4)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

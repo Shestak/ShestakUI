@@ -10,7 +10,7 @@ local function LoadSkin()
 		"BarberShopFrameCancelButton",
 		"BarberShopFrameResetButton"
 	}
-	BarberShopFrameOkayButton:Point("RIGHT", BarberShopFrameSelector4, "BOTTOM", 2, -50)
+	BarberShopFrameOkayButton:SetPoint("RIGHT", BarberShopFrameSelector4, "BOTTOM", 2, -50)
 
 	for i = 1, #buttons do
 		_G[buttons[i]]:StripTextures()
@@ -25,7 +25,7 @@ local function LoadSkin()
 
 		if i ~= 1 then
 			f:ClearAllPoints()
-			f:Point("TOP", f2, "BOTTOM", 0, -3)
+			f:SetPoint("TOP", f2, "BOTTOM", 0, -3)
 		end
 
 		if f then
@@ -34,10 +34,10 @@ local function LoadSkin()
 	end
 
 	BarberShopFrameSelector1:ClearAllPoints()
-	BarberShopFrameSelector1:Point("TOP", 0, -12)
+	BarberShopFrameSelector1:SetPoint("TOP", 0, -12)
 
 	BarberShopFrameResetButton:ClearAllPoints()
-	BarberShopFrameResetButton:Point("BOTTOM", 0, 12)
+	BarberShopFrameResetButton:SetPoint("BOTTOM", 0, 12)
 
 	BarberShopFrame:StripTextures()
 	BarberShopFrame:SetTemplate("Transparent")
@@ -51,7 +51,7 @@ local function LoadSkin()
 	BarberShopBannerFrame:Kill()
 
 	BarberShopAltFormFrameBorder:StripTextures()
-	BarberShopAltFormFrame:Point("BOTTOM", BarberShopFrame, "TOP", 0, 5)
+	BarberShopAltFormFrame:SetPoint("BOTTOM", BarberShopFrame, "TOP", 0, 5)
 	BarberShopAltFormFrame:StripTextures()
 	BarberShopAltFormFrame:CreateBackdrop("Transparent")
 end

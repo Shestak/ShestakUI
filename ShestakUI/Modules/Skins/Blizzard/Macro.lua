@@ -27,20 +27,20 @@ local function LoadSkin()
 		tab = _G[format("MacroFrameTab%s", i)]
 		tab:Height(22)
 	end
-	MacroFrameTab1:Point("TOPLEFT", MacroFrame, "TOPLEFT", 10, -39)
-	MacroFrameTab2:Point("LEFT", MacroFrameTab1, "RIGHT", 4, 0)
+	MacroFrameTab1:SetPoint("TOPLEFT", MacroFrame, "TOPLEFT", 10, -39)
+	MacroFrameTab2:SetPoint("LEFT", MacroFrameTab1, "RIGHT", 4, 0)
 
 	-- General
 	MacroFrame:StripTextures()
 	MacroFrame:CreateBackdrop("Transparent")
-	MacroFrame.backdrop:Point("TOPLEFT", 0, 0)
-	MacroFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+	MacroFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
+	MacroFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 	MacroFrameInset:StripTextures()
 
 	MacroFrameTextBackground:StripTextures()
 	MacroFrameTextBackground:CreateBackdrop("Overlay")
-	MacroFrameTextBackground.backdrop:Point("TOPLEFT", 4, -3)
-	MacroFrameTextBackground.backdrop:Point("BOTTOMRIGHT", -23, 0)
+	MacroFrameTextBackground.backdrop:SetPoint("TOPLEFT", 4, -3)
+	MacroFrameTextBackground.backdrop:SetPoint("BOTTOMRIGHT", -23, 0)
 
 	MacroButtonScrollFrame:CreateBackdrop("Overlay")
 
@@ -49,30 +49,30 @@ local function LoadSkin()
 
 	MacroPopupScrollFrame:StripTextures()
 	MacroPopupScrollFrame:CreateBackdrop("Overlay")
-	MacroPopupScrollFrame.backdrop:Point("TOPLEFT", 51, 2)
-	MacroPopupScrollFrame.backdrop:Point("BOTTOMRIGHT", -4, 4)
+	MacroPopupScrollFrame.backdrop:SetPoint("TOPLEFT", 51, 2)
+	MacroPopupScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", -4, 4)
 
 	MacroPopupEditBox:StripTextures(true)
 	MacroPopupEditBox:CreateBackdrop("Overlay")
-	MacroPopupEditBox.backdrop:Point("TOPLEFT", -3, 0)
-	MacroPopupEditBox.backdrop:Point("BOTTOMRIGHT", 0, 0)
+	MacroPopupEditBox.backdrop:SetPoint("TOPLEFT", -3, 0)
+	MacroPopupEditBox.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 
 	T.SkinCloseButton(MacroFrameCloseButton, MacroFrame.backdrop)
 
 	-- Reposition buttons
 	MacroEditButton:ClearAllPoints()
-	MacroEditButton:Point("BOTTOMLEFT", MacroFrameSelectedMacroButton, "BOTTOMRIGHT", 10, 0)
+	MacroEditButton:SetPoint("BOTTOMLEFT", MacroFrameSelectedMacroButton, "BOTTOMRIGHT", 10, 0)
 	MacroDeleteButton:ClearAllPoints()
-	MacroDeleteButton:Point("BOTTOMLEFT", MacroFrame.backdrop, "BOTTOMLEFT", 9, 4)
+	MacroDeleteButton:SetPoint("BOTTOMLEFT", MacroFrame.backdrop, "BOTTOMLEFT", 9, 4)
 	MacroNewButton:ClearAllPoints()
-	MacroNewButton:Point("RIGHT", MacroExitButton, "LEFT", -3, 0)
+	MacroNewButton:SetPoint("RIGHT", MacroExitButton, "LEFT", -3, 0)
 
 	-- Regular scroll bar
 	T.SkinScrollBar(MacroButtonScrollFrame)
 
 	MacroPopupFrame:HookScript("OnShow", function(self)
 		self:ClearAllPoints()
-		self:Point("TOPLEFT", MacroFrame, "TOPRIGHT", 3, 0)
+		self:SetPoint("TOPLEFT", MacroFrame, "TOPRIGHT", 3, 0)
 	end)
 
 	-- Big icon
@@ -82,12 +82,12 @@ local function LoadSkin()
 	MacroFrameSelectedMacroButton:SetTemplate("Default")
 	MacroFrameSelectedMacroButtonIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	MacroFrameSelectedMacroButtonIcon:ClearAllPoints()
-	MacroFrameSelectedMacroButtonIcon:Point("TOPLEFT", 2, -2)
-	MacroFrameSelectedMacroButtonIcon:Point("BOTTOMRIGHT", -2, 2)
+	MacroFrameSelectedMacroButtonIcon:SetPoint("TOPLEFT", 2, -2)
+	MacroFrameSelectedMacroButtonIcon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 	-- Moving text
 	MacroFrameCharLimitText:ClearAllPoints()
-	MacroFrameCharLimitText:Point("BOTTOM", MacroFrameTextBackground, 0, -12)
+	MacroFrameCharLimitText:SetPoint("BOTTOM", MacroFrameTextBackground, 0, -12)
 
 	-- Skin all buttons
 	for i = 1, MAX_ACCOUNT_MACROS do
@@ -105,8 +105,8 @@ local function LoadSkin()
 		if t then
 			t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			t:ClearAllPoints()
-			t:Point("TOPLEFT", 2, -2)
-			t:Point("BOTTOMRIGHT", -2, 2)
+			t:SetPoint("TOPLEFT", 2, -2)
+			t:SetPoint("BOTTOMRIGHT", -2, 2)
 		end
 
 		if pb then
@@ -118,8 +118,8 @@ local function LoadSkin()
 		if pt then
 			pt:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			pt:ClearAllPoints()
-			pt:Point("TOPLEFT", 2, -2)
-			pt:Point("BOTTOMRIGHT", -2, 2)
+			pt:SetPoint("TOPLEFT", 2, -2)
+			pt:SetPoint("BOTTOMRIGHT", -2, 2)
 		end
 	end
 end

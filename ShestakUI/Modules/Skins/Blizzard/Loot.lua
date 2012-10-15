@@ -28,14 +28,14 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 		name:Hide()
 		name.border = CreateFrame("Frame", nil, slot)
 		name.border:CreateBackdrop("Overlay")
-		name.border.backdrop:Point("TOPLEFT", name, 11, -13)
-		name.border.backdrop:Point("BOTTOMRIGHT", name, -8, 12)
+		name.border.backdrop:SetPoint("TOPLEFT", name, 11, -13)
+		name.border.backdrop:SetPoint("BOTTOMRIGHT", name, -8, 12)
 	end
 end
 

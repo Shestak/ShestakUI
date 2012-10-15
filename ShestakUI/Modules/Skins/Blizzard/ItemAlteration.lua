@@ -27,7 +27,7 @@ local function LoadSkin()
 	TransmogrifyFrameButtonFrame:GetRegions():Kill()
 
 	TransmogrifyApplyButton:SkinButton(true)
-	TransmogrifyApplyButton:Point("BOTTOMRIGHT", TransmogrifyFrame, "BOTTOMRIGHT", -4, 4)
+	TransmogrifyApplyButton:SetPoint("BOTTOMRIGHT", TransmogrifyFrame, "BOTTOMRIGHT", -4, 4)
 	T.SkinCloseButton(TransmogrifyArtFrameCloseButton)
 
 	local slots = {"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet",
@@ -50,8 +50,8 @@ local function LoadSkin()
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:ClearAllPoints()
-			icon:Point("TOPLEFT", 2, -2)
-			icon:Point("BOTTOMRIGHT", -2, 2)
+			icon:SetPoint("TOPLEFT", 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", -2, 2)
 		end
 	end
 
