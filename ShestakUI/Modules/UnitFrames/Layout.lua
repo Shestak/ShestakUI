@@ -1001,7 +1001,7 @@ local function Shared(self, unit)
 			bgFile = C.media.blank,
 			edgeFile = C.media.blank,
 			tile = false, tileSize = 0, edgeSize = T.Scale(1),
-			insets = { left = 0, right = 0, top = 0, bottom = T.Scale(-1)}
+			insets = {left = 0, right = 0, top = 0, bottom = T.Scale(-1)}
 		})
 		self.AltPowerBar:SetBackdropColor(0, 0, 0)
 		self.AltPowerBar:SetBackdropBorderColor(0, 0, 0)
