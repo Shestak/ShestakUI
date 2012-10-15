@@ -158,4 +158,4 @@ end
 HideB:SetScript("OnEnter", tooltip_show)
 HideB:SetScript("OnLeave", tooltip_hide)
 
--- Edit by Oz of shestak.org --
+-- edit by Oz of shestak.org --

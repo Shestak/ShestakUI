@@ -1,6 +1,6 @@
 ## Interface: 50001
 ## Title: ShestakUI alDamageMeter
-## Notes: Damage meter. Edit by Oz of shestak.org
+## Notes: Damage meter. edit by Oz of shestak.org
 ## Author: Allez
 ## Version: 50001.11
 ## RequiredDeps: ShestakUI

@@ -45,8 +45,13 @@ oUF.TagEvents["PetNameColor"] = "UNIT_POWER"
 
 oUF.Tags["GetNameColor"] = function(unit)
 	local reaction = UnitReaction(unit, "player")
+	local tapped = UnitIsTapped(unit)
+	local tappedbyplayer = UnitIsTappedByPlayer(unit)
 	if UnitIsPlayer(unit) then
 		return _TAGS["raidcolor"](unit)
+	elseif tapped and not tappedbyplayer then
+		local c = T.oUF_colors.tapped
+		return string.format("|cff%02x%02x%02x", c[1] * 255, c[2] * 255, c[3] * 255)
 	elseif reaction then
 		local c = T.oUF_colors.reaction[reaction]
 		return string.format("|cff%02x%02x%02x", c[1] * 255, c[2] * 255, c[3] * 255)
@@ -55,7 +60,7 @@ oUF.Tags["GetNameColor"] = function(unit)
 		return string.format("|cff%02x%02x%02x", r * 255, g * 255, b * 255)
 	end
 end
-oUF.TagEvents["GetNameColor"] = "UNIT_POWER"
+oUF.TagEvents["GetNameColor"] = "UNIT_HEALTH"
 
 oUF.Tags["NameArena"] = function(unit)
 	local name = UnitName(unit)
@@ -126,3 +131,5 @@ oUF.Tags["IncHeal"] = function(u)
 	end
 end
 oUF.TagEvents["IncHeal"] = "UNIT_HEAL_PREDICTION"
+
+-- edit by Oz of shestak.org --

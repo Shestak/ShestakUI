@@ -1078,4 +1078,4 @@ do
 	InterfaceOptions_AddCategory(frame)
 end
 
--- Edit by Oz of shestak.org --
+-- edit by Oz of shestak.org --
