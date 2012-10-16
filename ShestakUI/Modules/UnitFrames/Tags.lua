@@ -99,13 +99,23 @@ end
 oUF.TagEvents["LFD"] = "PLAYER_ROLES_ASSIGNED GROUP_ROSTER_UPDATE"
 
 oUF.Tags["AltPower"] = function(unit)
-	local cur = UnitPower(unit, ALTERNATE_POWER_INDEX)
+	local min = UnitPower(unit, ALTERNATE_POWER_INDEX)
 	local max = UnitPowerMax(unit, ALTERNATE_POWER_INDEX)
 	if max > 0 and not UnitIsDeadOrGhost(unit) then
-		return ("%s%%"):format(math.floor(cur / max * 100 + 0.5))
+		return ("%s%%"):format(math.floor(min / max * 100 + 0.5))
 	end
 end
 oUF.TagEvents["AltPower"] = "UNIT_POWER"
+
+oUF.Tags["IncHeal"] = function(unit)
+	local incheal = UnitGetIncomingHeals(unit) or 0
+	local player = UnitGetIncomingHeals(unit, "player") or 0
+	incheal = incheal - player
+	if incheal > 0 then
+		return "|cff00FF00+"..T.ShortValue(incheal).."|r"
+	end
+end
+oUF.TagEvents["IncHeal"] = "UNIT_HEAL_PREDICTION"
 
 if T.class == "DRUID" then
 	for i = 1, 3 do
@@ -120,15 +130,15 @@ if T.class == "DRUID" then
 	end
 end
 
-oUF.Tags["IncHeal"] = function(u)
-	local incheal = UnitGetIncomingHeals(u) or 0
-	local player = UnitGetIncomingHeals(u, "player") or 0
-
-	incheal = incheal - player
-
-	if incheal > 0 then
-		return "|cff00FF00+"..T.ShortValue(incheal).."|r"
+if T.class == "WARLOCK" then
+	oUF.Tags["DemonicFury"] = function(unit)
+		local min = UnitPower("player", SPELL_POWER_DEMONIC_FURY)
+		local max = UnitPowerMax("player", SPELL_POWER_DEMONIC_FURY)
+		if max > 0 then
+			return ("%s%%"):format(math.floor(min / max * 100 + 0.5))
+		end
 	end
+	oUF.TagEvents["DemonicFury"] = "UNIT_POWER PLAYER_TALENT_UPDATE"
 end
 oUF.TagEvents["IncHeal"] = "UNIT_HEAL_PREDICTION"
 
