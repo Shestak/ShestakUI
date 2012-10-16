@@ -90,3 +90,5 @@ status:SetScript("OnUpdate", function(self, elapsed)
 		update = 0
 	end
 end)
+
+-- edit by Oz of shestak. org --

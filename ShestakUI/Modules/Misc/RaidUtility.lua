@@ -4,10 +4,9 @@ if C.misc.raid_tools ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Raid Utility(by Elv22)
 ----------------------------------------------------------------------------------------
-local width = (C.minimap.size)
 -- Create main frame
 local RaidUtilityPanel = CreateFrame("Frame", "RaidUtilityPanel", UIParent)
-RaidUtilityPanel:CreatePanel("Transparent", 167, 145, unpack(C.position.raid_utility))
+RaidUtilityPanel:CreatePanel("Transparent", 297, 145, unpack(C.position.raid_utility))
 if GetCVarBool("watchFrameWidth") then
 	RaidUtilityPanel:Point(C.position.raid_utility[1], C.position.raid_utility[2], C.position.raid_utility[3], C.position.raid_utility[4] + 100, C.position.raid_utility[5])
 end
@@ -40,7 +39,7 @@ local function CreateButton(name, parent, template, width, height, point, relati
 end
 
 -- Show button
-CreateButton("RaidUtilityShowButton", UIParent, "UIPanelButtonTemplate, SecureHandlerClickTemplate", width, 18, "TOP", RaidUtilityPanel, "TOP", 0, 0, RAID_CONTROL)
+CreateButton("RaidUtilityShowButton", UIParent, "UIPanelButtonTemplate, SecureHandlerClickTemplate", RaidUtilityPanel:GetWidth() / 1.5, 18, "TOP", RaidUtilityPanel, "TOP", 0, 0, RAID_CONTROL)
 RaidUtilityShowButton:SetFrameRef("RaidUtilityPanel", RaidUtilityPanel)
 RaidUtilityShowButton:SetAttribute("_onclick", [=[self:Hide(); self:GetFrameRef("RaidUtilityPanel"):Show();]=])
 RaidUtilityShowButton:SetScript("OnMouseUp", function(self, button)

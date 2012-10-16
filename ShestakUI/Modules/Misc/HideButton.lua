@@ -150,6 +150,7 @@ end
 local tooltip_show = function(self)
 	GameTooltip:SetOwner(HideB, "ANCHOR_BOTTOM", 0, -7)
 	GameTooltip:ClearLines()
+	GameTooltip:SetText("HideButton")
 	GameTooltip:AddLine(L_HIDE_BUTTON_1)
 	GameTooltip:AddLine(L_HIDE_BUTTON_2)
 	GameTooltip:Show()

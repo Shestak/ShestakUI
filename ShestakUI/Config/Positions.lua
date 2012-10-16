@@ -19,7 +19,7 @@ C["position"] = {
 	["attempt"] = {"TOP", UIParent, "TOP", -85, -25},								-- Attempts frame
 	["capture_bar"] = {"TOP", UIParent, "TOP", 140, 3},								-- BG capture bars
 	["vehicle"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -245, 160},				-- Vehicle frame
-	["ghost"] = {"BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -51},						-- Ghost frame
+	["ghost"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 157},					-- Ghost frame
 	["uierror"] = {"TOP", UIParent, "TOP", 0, -30},									-- Errors frame
 	["quest"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -389, -165},						-- Quest log
 	["loot"] = {"TOPLEFT", UIParent, "TOPLEFT", 245, -220},							-- Loot
@@ -33,7 +33,7 @@ C["position"] = {
 	["self_buffs"] = {"CENTER", UIParent, "CENTER", 0, 190},						-- Self buff reminder
 	["raid_buffs"] = {"BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -24},				-- Raid buff reminder
 	["top_panel"] = {"TOP", UIParent, "TOP", 0, -118},								-- Top panel
-	["raid_utility"] = {"BOTTOMLEFT", Minimap, "BOTTOMLEFT", -21, -195},			-- Raid utility
+	["raid_utility"] = {"TOP", UIParent, "TOP", 0, -15},							-- Raid utility
 	["archaeology"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 157},			-- Archaeology frame
 	["damage_meter"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26},			-- Damage meter
 	-- ActionBar positions
