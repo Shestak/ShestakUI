@@ -702,5 +702,6 @@ SlashCmdList["alDamage"] = function(msg)
 end
 SLASH_alDamage1 = "/aldmg"
 SLASH_alDamage2 = "/фдвьп"
+SLASH_alDamage3 = "/dmeter"
 
 -- edit by Oz of shestak. org --
