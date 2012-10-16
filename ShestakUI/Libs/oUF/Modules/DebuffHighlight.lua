@@ -7,7 +7,6 @@ if C.unitframe.enable ~= true then return end
 local _, ns = ...
 local oUF = ns.oUF
 
-local playerClass = select(2, UnitClass("player"))
 local CanDispel = {
 	DRUID = {Magic = false, Curse = true, Poison = true},
 	MAGE = {Curse = true},
@@ -16,7 +15,7 @@ local CanDispel = {
 	PRIEST = {Magic = false, Disease = false},
 	SHAMAN = {Magic = false, Curse = true}
 }
-local dispellist = CanDispel[playerClass] or {}
+local dispellist = CanDispel[T.class] or {}
 local origColors = {}
 local origBorderColors = {}
 local origPostUpdateAura = {}
@@ -36,34 +35,34 @@ end
 
 local function CheckSpec(self, event)
 	-- Check spec to see if we can dispel magic or not
-	if playerClass == "DRUID" then
-		if T.CheckSpec(4) then
+	if T.class == "DRUID" then
+		if T.spec == 4 then
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false
 		end
-	elseif playerClass == "MONK" then
-		if T.CheckSpec(2) then
+	elseif T.class == "MONK" then
+		if T.spec == 2 then
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false
 		end
-	elseif playerClass == "PALADIN" then
-		if T.CheckSpec(1) then
+	elseif T.class == "PALADIN" then
+		if T.spec == 1 then
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false
 		end
-	elseif playerClass == "PRIEST" then
-		if T.CheckSpec(3) then
+	elseif T.class == "PRIEST" then
+		if T.spec == 3 then
 			dispellist.Magic = false
 			dispellist.Disease = false
 		else
 			dispellist.Magic = true
 			dispellist.Disease = true
 		end
-	elseif playerClass == "SHAMAN" then
-		if T.CheckSpec(3) then
+	elseif T.class == "SHAMAN" then
+		if T.spec == 3 then
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false
@@ -114,7 +113,7 @@ local function Enable(object)
 		return
 	end
 	-- If we're filtering highlights and we're not of the dispelling type, return
-	if object.DebuffHighlightFilter and not CanDispel[playerClass] then
+	if object.DebuffHighlightFilter and not CanDispel[T.class] then
 		return
 	end
 

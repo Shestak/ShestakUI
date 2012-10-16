@@ -28,18 +28,10 @@ local function HideObjects(parent)
 	for object in pairs(parent.queue) do
 		if object:GetObjectType() == "Texture" then
 			object:SetTexture(nil)
-			object.SetTexture = T.dummy
 		elseif object:GetObjectType() == "FontString" then
-			object.ClearAllPoints = T.dummy
-			object.SetFont = T.dummy
-			object.SetPoint = T.dummy
-			object:Hide()
-			object.Show = T.dummy
-			object.SetText = T.dummy
-			object.SetShadowOffset = T.dummy
+			object:SetWidth(0.001)
 		else
 			object:Hide()
-			object.Show = T.dummy
 		end
 	end
 end
@@ -249,6 +241,9 @@ local function Colorize(frame)
 
 	for class, color in pairs(RAID_CLASS_COLORS) do
 		local r, g, b = floor(r * 100 + 0.5) / 100, floor(g * 100 + 0.5) / 100, floor(b * 100 + 0.5) / 100
+		if class == "MONK" then
+			b = b - 0.01
+		end
 		if RAID_CLASS_COLORS[class].r == r and RAID_CLASS_COLORS[class].g == g and RAID_CLASS_COLORS[class].b == b then
 			frame.hasClass = true
 			frame.isFriendly = false

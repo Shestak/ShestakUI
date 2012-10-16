@@ -16,7 +16,7 @@ local function LoadSkin()
 	T.SkinRotateButton(PetStableModelRotateLeftButton)
 	T.SkinRotateButton(PetStableModelRotateRightButton)
 	PetStableModelRotateRightButton:ClearAllPoints()
-	PetStableModelRotateRightButton:Point("LEFT", PetStableModelRotateLeftButton, "RIGHT", 3, 0)
+	PetStableModelRotateRightButton:SetPoint("LEFT", PetStableModelRotateLeftButton, "RIGHT", 3, 0)
 
 	T.SkinNextPrevButton(PetStablePrevPageButton)
 	T.SkinNextPrevButton(PetStableNextPageButton)
@@ -33,8 +33,8 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
 
 	for i = 1, NUM_PET_STABLE_SLOTS do
@@ -47,8 +47,8 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
 
 	PetStableSelectedPetIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

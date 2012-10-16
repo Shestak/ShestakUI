@@ -1064,6 +1064,8 @@ Filger_Spells = {
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Breaker: Tiger Palm
 			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Power Guard
+			{spellID = 118636, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shuffle
 			{spellID = 115307, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1163,10 +1165,14 @@ Filger_Spells = {
 			{spellID = 115078, filter = "CD"},
 			-- Expel Harm
 			{spellID = 115072, filter = "CD"},
+			-- Provoke
+			{spellID = 115546, filter = "CD"},
 			-- Fists of Fury
 			{spellID = 113656, filter = "CD"},
 			-- Guard
 			{spellID = 115295, filter = "CD"},
+			-- Clash
+			{spellID = 122057, filter = "CD"},
 			-- Charging Ox Wave
 			{spellID = 119392, filter = "CD"},
 			-- Dampen Harm

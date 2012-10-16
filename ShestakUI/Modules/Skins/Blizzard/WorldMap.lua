@@ -10,8 +10,8 @@ local function LoadSkin()
 	WorldMapFrame:CreateBackdrop("Transparent")
 	WorldMapDetailFrame.backdrop = CreateFrame("Frame", nil, WorldMapFrame)
 	WorldMapDetailFrame.backdrop:SetTemplate("Default")
-	WorldMapDetailFrame.backdrop:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -2, 2)
-	WorldMapDetailFrame.backdrop:Point("BOTTOMRIGHT", WorldMapDetailFrame, "BOTTOMRIGHT", 2, -2)
+	WorldMapDetailFrame.backdrop:SetPoint("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -2, 2)
+	WorldMapDetailFrame.backdrop:SetPoint("BOTTOMRIGHT", WorldMapDetailFrame, "BOTTOMRIGHT", 2, -2)
 	WorldMapDetailFrame.backdrop:SetFrameLevel(WorldMapDetailFrame:GetFrameLevel() - 2)
 
 	T.SkinCloseButton(WorldMapFrameCloseButton)
@@ -25,9 +25,9 @@ local function LoadSkin()
 	T.SkinDropDownBox(WorldMapShowDropDown)
 
 	WorldMapZoomOutButton:SkinButton()
-	WorldMapZoomOutButton:Point("LEFT", WorldMapZoneDropDown, "RIGHT", 0, 4)
-	WorldMapLevelUpButton:Point("TOPLEFT", WorldMapLevelDropDown, "TOPRIGHT", -2, 8)
-	WorldMapLevelDownButton:Point("BOTTOMLEFT", WorldMapLevelDropDown, "BOTTOMRIGHT", -2, 2)
+	WorldMapZoomOutButton:SetPoint("LEFT", WorldMapZoneDropDown, "RIGHT", 0, 4)
+	WorldMapLevelUpButton:SetPoint("TOPLEFT", WorldMapLevelDropDown, "TOPRIGHT", -2, 8)
+	WorldMapLevelDownButton:SetPoint("BOTTOMLEFT", WorldMapLevelDropDown, "BOTTOMRIGHT", -2, 2)
 
 	T.SkinCheckBox(WorldMapTrackQuest)
 	T.SkinCheckBox(WorldMapQuestShowObjectives)
@@ -40,18 +40,18 @@ local function LoadSkin()
 	-- MiniMap
 	local function SmallSkin()
 		WorldMapLevelDropDown:ClearAllPoints()
-		WorldMapLevelDropDown:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -10, -4)
+		WorldMapLevelDropDown:SetPoint("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -10, -4)
 
 		WorldMapFrame.backdrop:ClearAllPoints()
-		WorldMapFrame.backdrop:Point("TOPLEFT", 2, 3)
-		WorldMapFrame.backdrop:Point("BOTTOMRIGHT", 2, 0)
+		WorldMapFrame.backdrop:SetPoint("TOPLEFT", 2, 3)
+		WorldMapFrame.backdrop:SetPoint("BOTTOMRIGHT", 2, 0)
 
-		WorldMapFrameCloseButton:Point("TOPRIGHT", WorldMapFrame.backdrop, "TOPRIGHT", -4, -4)
+		WorldMapFrameCloseButton:SetPoint("TOPRIGHT", WorldMapFrame.backdrop, "TOPRIGHT", -4, -4)
 		WorldMapFrameSizeUpButton:ClearAllPoints()
-		WorldMapFrameSizeUpButton:Point("TOPRIGHT", WorldMapFrameCloseButton, "TOPLEFT", -4, 0)
-		WorldMapFrameSizeUpButton:Point("BOTTOMRIGHT", WorldMapFrameCloseButton, "BOTTOMLEFT", -4, 0)
+		WorldMapFrameSizeUpButton:SetPoint("TOPRIGHT", WorldMapFrameCloseButton, "TOPLEFT", -4, 0)
+		WorldMapFrameSizeUpButton:SetPoint("BOTTOMRIGHT", WorldMapFrameCloseButton, "BOTTOMLEFT", -4, 0)
 
-		WorldMapShowDropDown:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", 2, -5)
+		WorldMapShowDropDown:SetPoint("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", 2, -5)
 	end
 
 	-- LargeMap
@@ -65,15 +65,15 @@ local function LoadSkin()
 		end
 
 		WorldMapFrame.backdrop:ClearAllPoints()
-		WorldMapFrame.backdrop:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 66)
-		WorldMapFrame.backdrop:Point("BOTTOMRIGHT", WorldMapDetailFrame, "BOTTOMRIGHT", 25, -27)
+		WorldMapFrame.backdrop:SetPoint("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 66)
+		WorldMapFrame.backdrop:SetPoint("BOTTOMRIGHT", WorldMapDetailFrame, "BOTTOMRIGHT", 25, -27)
 
-		WorldMapFrameCloseButton:Point("TOPRIGHT", WorldMapFrame.backdrop, "TOPRIGHT", -4, -4)
+		WorldMapFrameCloseButton:SetPoint("TOPRIGHT", WorldMapFrame.backdrop, "TOPRIGHT", -4, -4)
 		WorldMapFrameSizeDownButton:ClearAllPoints()
-		WorldMapFrameSizeDownButton:Point("TOPRIGHT", WorldMapFrameCloseButton, "TOPLEFT", -4, 0)
-		WorldMapFrameSizeDownButton:Point("BOTTOMRIGHT", WorldMapFrameCloseButton, "BOTTOMLEFT", -4, 0)
+		WorldMapFrameSizeDownButton:SetPoint("TOPRIGHT", WorldMapFrameCloseButton, "TOPLEFT", -4, 0)
+		WorldMapFrameSizeDownButton:SetPoint("BOTTOMRIGHT", WorldMapFrameCloseButton, "BOTTOMLEFT", -4, 0)
 
-		WorldMapShowDropDown:Point("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", -2, -3)
+		WorldMapShowDropDown:SetPoint("BOTTOMRIGHT", WorldMapPositioningGuide, "BOTTOMRIGHT", -2, -3)
 	end
 
 	local function QuestSkin()
@@ -86,34 +86,34 @@ local function LoadSkin()
 		end
 
 		WorldMapFrame.backdrop:ClearAllPoints()
-		WorldMapFrame.backdrop:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 65)
-		WorldMapFrame.backdrop:Point("BOTTOMRIGHT", WorldMapDetailFrame, "BOTTOMRIGHT", 334, -234)
+		WorldMapFrame.backdrop:SetPoint("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 65)
+		WorldMapFrame.backdrop:SetPoint("BOTTOMRIGHT", WorldMapDetailFrame, "BOTTOMRIGHT", 334, -234)
 
-		WorldMapQuestDetailScrollFrame:Width(332)
+		WorldMapQuestDetailScrollFrame:SetWidth(332)
 		WorldMapQuestDetailScrollFrame:ClearAllPoints()
-		WorldMapQuestDetailScrollFrame:Point("TOPLEFT", WorldMapDetailFrame.backdrop, "BOTTOMLEFT", 0, -5)
+		WorldMapQuestDetailScrollFrame:SetPoint("TOPLEFT", WorldMapDetailFrame.backdrop, "BOTTOMLEFT", 0, -5)
 
 		if not WorldMapQuestDetailScrollFrame.backdrop then
 			WorldMapQuestDetailScrollFrame:CreateBackdrop("Overlay")
-			WorldMapQuestDetailScrollFrame.backdrop:Point("TOPLEFT", 0, 2)
-			WorldMapQuestDetailScrollFrame.backdrop:Point("BOTTOMRIGHT", 23, -5)
+			WorldMapQuestDetailScrollFrame.backdrop:SetPoint("TOPLEFT", 0, 2)
+			WorldMapQuestDetailScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 23, -5)
 		end
 
 		if not WorldMapQuestRewardScrollFrame.backdrop then
 			WorldMapQuestRewardScrollFrame:CreateBackdrop("Overlay")
-			WorldMapQuestRewardScrollFrame.backdrop:Point("BOTTOMRIGHT", 14, -5)
+			WorldMapQuestRewardScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 14, -5)
 		end
 
 		if not WorldMapQuestScrollFrame.backdrop then
 			WorldMapQuestScrollFrame:CreateBackdrop("Overlay")
-			WorldMapQuestScrollFrame.backdrop:Point("TOPLEFT", 0, 2)
-			WorldMapQuestScrollFrame.backdrop:Point("BOTTOMRIGHT", 24, -3)
+			WorldMapQuestScrollFrame.backdrop:SetPoint("TOPLEFT", 0, 2)
+			WorldMapQuestScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 24, -3)
 		end
 
-		WorldMapFrameCloseButton:Point("TOPRIGHT", WorldMapFrame.backdrop, "TOPRIGHT", -4, -4)
+		WorldMapFrameCloseButton:SetPoint("TOPRIGHT", WorldMapFrame.backdrop, "TOPRIGHT", -4, -4)
 		WorldMapFrameSizeDownButton:ClearAllPoints()
-		WorldMapFrameSizeDownButton:Point("TOPRIGHT", WorldMapFrameCloseButton, "TOPLEFT", -4, 0)
-		WorldMapFrameSizeDownButton:Point("BOTTOMRIGHT", WorldMapFrameCloseButton, "BOTTOMLEFT", -4, 0)
+		WorldMapFrameSizeDownButton:SetPoint("TOPRIGHT", WorldMapFrameCloseButton, "TOPLEFT", -4, 0)
+		WorldMapFrameSizeDownButton:SetPoint("BOTTOMRIGHT", WorldMapFrameCloseButton, "BOTTOMLEFT", -4, 0)
 	end
 
 	local function FixSkin()
@@ -253,7 +253,7 @@ local function LoadSkin()
 	WorldMapZoneDropDownButton:HookScript("OnClick", function(self)
 		DropDownList1:SetScale(C.general.uiscale)
 		DropDownList1:ClearAllPoints()
-		DropDownList1:Point("TOPRIGHT", self, "BOTTOMRIGHT", 2, -4)
+		DropDownList1:SetPoint("TOPRIGHT", self, "BOTTOMRIGHT", 2, -4)
 	end)
 end
 

@@ -7,14 +7,14 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	EncounterJournal:StripTextures(true)
 	EncounterJournal:CreateBackdrop("Transparent")
-	EncounterJournal.backdrop:Point("TOPLEFT", -3, 0)
+	EncounterJournal.backdrop:SetPoint("TOPLEFT", -3, 0)
 	EncounterJournal.backdrop:SetPoint("BOTTOMRIGHT", 0, -2)
 
 	EncounterJournalNavBar:StripTextures(true)
 	EncounterJournalNavBarOverlay:StripTextures(true)
 
 	EncounterJournalNavBar:CreateBackdrop("Transparent")
-	EncounterJournalNavBar.backdrop:Point("TOPLEFT", -2, 0)
+	EncounterJournalNavBar.backdrop:SetPoint("TOPLEFT", -2, 0)
 	EncounterJournalNavBar.backdrop:SetPoint("BOTTOMRIGHT")
 	EncounterJournalNavBarHomeButton:SkinButton(true)
 
@@ -32,9 +32,9 @@ local function LoadSkin()
 		end
 
 		EncounterJournalEncounterFrameInfoBossTab:ClearAllPoints()
-		EncounterJournalEncounterFrameInfoBossTab:Point("RIGHT", EncounterJournalEncounterFrameInfoResetButton, "LEFT", 10, 0)
+		EncounterJournalEncounterFrameInfoBossTab:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoResetButton, "LEFT", 10, 0)
 		EncounterJournalEncounterFrameInfoLootTab:ClearAllPoints()
-		EncounterJournalEncounterFrameInfoLootTab:Point("RIGHT", EncounterJournalEncounterFrameInfoBossTab, "LEFT", 20, 0)
+		EncounterJournalEncounterFrameInfoLootTab:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoBossTab, "LEFT", 20, 0)
 
 		EncounterJournalEncounterFrameInfoBossTab:SetFrameStrata("HIGH")
 		EncounterJournalEncounterFrameInfoLootTab:SetFrameStrata("HIGH")

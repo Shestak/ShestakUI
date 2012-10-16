@@ -14,8 +14,8 @@ end
 T.DebuffWhiteList = {
 	-- Death Knight
 	[SpellName(115001)] = true,	-- Remorseless Winter
-	[SpellName(47476)] = true,	-- Strangulate
 	[SpellName(108194)] = true,	-- Asphyxiate
+	[SpellName(47476)] = true,	-- Strangulate
 	-- Druid
 	[SpellName(33786)] = true,	-- Cyclone
 	[SpellName(2637)] = true,	-- Hibernate
@@ -33,28 +33,31 @@ T.DebuffWhiteList = {
 	[SpellName(19503)] = true,	-- Scatter Shot
 	[SpellName(34490)] = true,	-- Silencing Shot
 	-- Mage
-	[SpellName(31661)] = true,	-- Dragon's Breath
 	[SpellName(118)] = true,	-- Polymorph
+	[SpellName(31661)] = true,	-- Dragon's Breath
 	[SpellName(55021)] = true,	-- Improved Counterspell
 	[SpellName(122)] = true,	-- Frost Nova
 	[SpellName(111340)] = true,	-- Ice Ward
 	[SpellName(44457)] = true,	-- Living Bomb
+	[SpellName(114923)] = true,	-- Nether Tempest
+	[SpellName(112948)] = true,	-- Frost Bomb
+	[SpellName(83853)] = true,	-- Combustion
 	-- Paladin
 	[SpellName(20066)] = true,	-- Repentance
 	[SpellName(10326)] = true,	-- Turn Evil
 	[SpellName(853)] = true,	-- Hammer of Justice
 	[SpellName(105593)] = true,	-- Fist of Justice
 	-- Priest
-	[SpellName(64044)] = true,	-- Psychic Horror
-	[SpellName(8122)] = true,	-- Psychic Scream
 	[SpellName(9484)] = true,	-- Shackle Undead
+	[SpellName(8122)] = true,	-- Psychic Scream
+	[SpellName(64044)] = true,	-- Psychic Horror
 	[SpellName(15487)] = true,	-- Silence
 	[SpellName(589)] = true,	-- Shadow Word: Pain
 	[SpellName(34914)] = true,	-- Vampiric Touch
 	-- Rogue
+	[SpellName(6770)] = true,	-- Sap
 	[SpellName(2094)] = true,	-- Blind
 	[SpellName(1776)] = true,	-- Gouge
-	[SpellName(6770)] = true,	-- Sap
 	-- Shaman
 	[SpellName(51514)] = true,	-- Hex
 	[SpellName(3600)] = true,	-- Earthbind

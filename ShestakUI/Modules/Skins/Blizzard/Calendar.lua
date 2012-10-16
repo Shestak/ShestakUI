@@ -33,8 +33,8 @@ local function LoadSkin()
 	end
 
 	CalendarFrame:CreateBackdrop("Transparent")
-	CalendarFrame.backdrop:Point("TOPLEFT", 0, 0)
-	CalendarFrame.backdrop:Point("BOTTOMRIGHT", 0, -5)
+	CalendarFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
+	CalendarFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, -5)
 
 	T.SkinCloseButton(CalendarCloseButton)
 
@@ -47,27 +47,27 @@ local function LoadSkin()
 		local button = CalendarFilterButton
 
 		frame:StripTextures()
-		frame:Width(155)
+		frame:SetWidth(155)
 
 		_G[frame:GetName().."Text"]:ClearAllPoints()
-		_G[frame:GetName().."Text"]:Point("RIGHT", button, "LEFT", -2, 0)
+		_G[frame:GetName().."Text"]:SetPoint("RIGHT", button, "LEFT", -2, 0)
 
 		button:ClearAllPoints()
-		button:Point("RIGHT", frame, "RIGHT", -10, 3)
+		button:SetPoint("RIGHT", frame, "RIGHT", -10, 3)
 		button.SetPoint = T.dummy
 
 		T.SkinNextPrevButton(button, true)
 
 		frame:CreateBackdrop("Default")
-		frame.backdrop:Point("TOPLEFT", 20, 2)
-		frame.backdrop:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
+		frame.backdrop:SetPoint("TOPLEFT", 20, 2)
+		frame.backdrop:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
 	end
 
 	-- Backdrop
 	local bg = CreateFrame("Frame", "CalendarFrameBackdrop", CalendarFrame)
 	bg:SetTemplate("Default")
-	bg:Point("TOPLEFT", 10, -72)
-	bg:Point("BOTTOMRIGHT", -8, 3)
+	bg:SetPoint("TOPLEFT", 10, -72)
+	bg:SetPoint("BOTTOMRIGHT", -8, 3)
 
 	CalendarContextMenu:SetTemplate("Transparent")
 	CalendarContextMenu.SetBackdropColor = T.dummy
@@ -81,22 +81,22 @@ local function LoadSkin()
 
 	-- CreateEventFrame
 	CalendarCreateEventFrame:SetTemplate("Transparent")
-	CalendarCreateEventFrame:Point("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
+	CalendarCreateEventFrame:SetPoint("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
 
 	CalendarCreateEventCreateButton:SkinButton(true)
 	CalendarCreateEventMassInviteButton:SkinButton(true)
 	CalendarCreateEventInviteButton:SkinButton(true)
-	CalendarCreateEventInviteButton:Point("TOPLEFT", CalendarCreateEventInviteEdit, "TOPRIGHT", 4, 2)
-	CalendarCreateEventInviteEdit:Width(CalendarCreateEventInviteEdit:GetWidth() - 2)
-	CalendarCreateEventInviteEdit:Height(CalendarCreateEventInviteEdit:GetHeight() - 2)
-	CalendarCreateEventInviteEdit:Point("TOPLEFT", CalendarCreateEventInviteList, "BOTTOMLEFT", 2, -3)
+	CalendarCreateEventInviteButton:SetPoint("TOPLEFT", CalendarCreateEventInviteEdit, "TOPRIGHT", 4, 2)
+	CalendarCreateEventInviteEdit:SetWidth(CalendarCreateEventInviteEdit:GetWidth() - 2)
+	CalendarCreateEventInviteEdit:SetHeight(CalendarCreateEventInviteEdit:GetHeight() - 2)
+	CalendarCreateEventInviteEdit:SetPoint("TOPLEFT", CalendarCreateEventInviteList, "BOTTOMLEFT", 2, -3)
 
 	CalendarCreateEventInviteList:SetTemplate("Overlay")
 
 	T.SkinEditBox(CalendarCreateEventInviteEdit)
 	T.SkinEditBox(CalendarCreateEventTitleEdit)
-	CalendarCreateEventTitleEdit.backdrop:Point("TOPLEFT", -3, 1)
-	CalendarCreateEventTitleEdit.backdrop:Point("BOTTOMRIGHT", -3, -1)
+	CalendarCreateEventTitleEdit.backdrop:SetPoint("TOPLEFT", -3, 1)
+	CalendarCreateEventTitleEdit.backdrop:SetPoint("BOTTOMRIGHT", -3, -1)
 	T.SkinDropDownBox(CalendarCreateEventTypeDropDown, 120)
 
 	CalendarCreateEventDescriptionContainer:SetTemplate("Overlay")
@@ -124,7 +124,7 @@ local function LoadSkin()
 			buttonIcon:SetTexCoord(tcoords[1] + 0.015, tcoords[2] - 0.02, tcoords[3] + 0.018, tcoords[4] - 0.02)
 		end
 
-		CalendarClassButton1:Point("TOPLEFT", CalendarClassButtonContainer, "TOPLEFT", 5, 0)
+		CalendarClassButton1:SetPoint("TOPLEFT", CalendarClassButtonContainer, "TOPLEFT", 5, 0)
 
 		CalendarClassTotalsButton:StripTextures()
 		CalendarClassTotalsButton:CreateBackdrop("Default")
@@ -154,18 +154,18 @@ local function LoadSkin()
 
 	-- Raid View
 	CalendarViewRaidFrame:SetTemplate("Transparent")
-	CalendarViewRaidFrame:Point("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
+	CalendarViewRaidFrame:SetPoint("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
 	T.SkinCloseButton(CalendarViewRaidCloseButton)
 
 	-- Holiday View
 	CalendarViewHolidayFrame:StripTextures(true)
 	CalendarViewHolidayFrame:SetTemplate("Transparent")
-	CalendarViewHolidayFrame:Point("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
+	CalendarViewHolidayFrame:SetPoint("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
 	T.SkinCloseButton(CalendarViewHolidayCloseButton)
 
 	-- Event View
 	CalendarViewEventFrame:SetTemplate("Transparent")
-	CalendarViewEventFrame:Point("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
+	CalendarViewEventFrame:SetPoint("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
 	CalendarViewEventDescriptionContainer:SetTemplate("Overlay")
 	CalendarViewEventInviteList:SetTemplate("Overlay")
 	T.SkinCloseButton(CalendarViewEventCloseButton)

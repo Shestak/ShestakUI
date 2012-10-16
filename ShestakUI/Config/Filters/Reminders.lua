@@ -9,19 +9,19 @@ if C.reminder.raid_buffs_enable == true then
 	-- General buffs
 	T.ReminderBuffs = {
 		Flask = {
-			105689,	-- Flask of Spring Blossoms
 			105694,	-- Flask of the Earth
 			105691,	-- Flask of the Warm Sun
 			105696,	-- Flask of Winter's Bite
 			105693,	-- Flask of Falling Leaves
+			105689,	-- Flask of Spring Blossoms
 		},
 		BattleElixir = {
+			105688,	-- Monk's Elixir
+			105685,	-- Elixir of Peace
 			105682,	-- Mad Hozen Elixir
 			105683,	-- Elixir of Weaponry
 			105684,	-- Elixir of the Rapids
-			105685,	-- Elixir of Peace
 			105686,	-- Elixir of Perfection
-			105688,	-- Monk's Elixir
 		},
 		GuardianElixir = {
 			105681,	-- Mantid Elixir
@@ -37,10 +37,10 @@ if C.reminder.raid_buffs_enable == true then
 			1126,	-- Mark of the Wild
 		},
 		Stamina = {
-			111922,	-- Runescroll of Fortitude III
-			469,	-- Commanding Shout
 			6307,	-- Blood Pact
+			469,	-- Commanding Shout
 			90364,	-- Qiraji Fortitude
+			111922,	-- Runescroll of Fortitude III
 			21562,	-- Power Word: Fortitude
 		}
 	}

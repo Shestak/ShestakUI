@@ -19,16 +19,16 @@ local function LoadSkin()
 
 	RaidBrowserFrame:StripTextures()
 	RaidBrowserFrame:CreateBackdrop("Transparent")
-	RaidBrowserFrame.backdrop:Point("TOPLEFT", 0, 0)
-	RaidBrowserFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+	RaidBrowserFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
+	RaidBrowserFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 
 	LFRBrowseFrame:StripTextures()
 	LFRBrowseFrameRoleInset:StripTextures()
 
-	LFRQueueFrameFindGroupButton:Point("BOTTOMLEFT", RaidBrowserFrame, "BOTTOMLEFT", 9, 4)
-	LFRQueueFrameAcceptCommentButton:Point("BOTTOMRIGHT", RaidBrowserFrame, "BOTTOMRIGHT", -9, 4)
-	LFRBrowseFrameSendMessageButton:Point("BOTTOMLEFT", LFRBrowseFrame, "BOTTOMLEFT", 9, 4)
-	LFRBrowseFrameRefreshButton:Point("BOTTOMRIGHT", LFRBrowseFrame, "BOTTOMRIGHT", -9, 4)
+	LFRQueueFrameFindGroupButton:SetPoint("BOTTOMLEFT", RaidBrowserFrame, "BOTTOMLEFT", 9, 4)
+	LFRQueueFrameAcceptCommentButton:SetPoint("BOTTOMRIGHT", RaidBrowserFrame, "BOTTOMRIGHT", -9, 4)
+	LFRBrowseFrameSendMessageButton:SetPoint("BOTTOMLEFT", LFRBrowseFrame, "BOTTOMLEFT", 9, 4)
+	LFRBrowseFrameRefreshButton:SetPoint("BOTTOMRIGHT", LFRBrowseFrame, "BOTTOMRIGHT", -9, 4)
 
 	T.SkinCloseButton(RaidBrowserFrameCloseButton)
 
@@ -36,8 +36,8 @@ local function LoadSkin()
 	LFRQueueFrameSpecificListScrollFrame:StripTextures()
 
 	LFRQueueFrameCommentTextButton:CreateBackdrop("Overlay")
-	LFRQueueFrameCommentTextButton.backdrop:Point("TOPLEFT", -4, 2)
-	LFRQueueFrameCommentTextButton.backdrop:Point("BOTTOMRIGHT", 15, 2)
+	LFRQueueFrameCommentTextButton.backdrop:SetPoint("TOPLEFT", -4, 2)
+	LFRQueueFrameCommentTextButton.backdrop:SetPoint("BOTTOMRIGHT", 15, 2)
 
 	for i = 1, 7 do
 		local button = "LFRBrowseFrameColumnHeader"..i
@@ -68,10 +68,10 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
-		LFRParentFrameSideTab1:Point("TOPLEFT", RaidBrowserFrame, "TOPRIGHT", 1, 0)
+		LFRParentFrameSideTab1:SetPoint("TOPLEFT", RaidBrowserFrame, "TOPRIGHT", 1, 0)
 	end
 end
 

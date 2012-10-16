@@ -22,8 +22,8 @@ local function LoadSkin()
 
 				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				icon:ClearAllPoints()
-				icon:Point("TOPLEFT", 2, -2)
-				icon:Point("BOTTOMRIGHT", -2, 2)
+				icon:SetPoint("TOPLEFT", 2, -2)
+				icon:SetPoint("BOTTOMRIGHT", -2, 2)
 				icon:SetDrawLayer("ARTWORK")
 
 				slot.isSkinned = true
@@ -47,10 +47,10 @@ local function LoadSkin()
 	T.SkinScrollBar(LootHistoryFrameScrollFrameScrollBar)
 
 	LootHistoryFrame.ResizeButton:SetTemplate("Default")
-	LootHistoryFrame.ResizeButton:Width(LootHistoryFrame:GetWidth())
-	LootHistoryFrame.ResizeButton:Height(19)
+	LootHistoryFrame.ResizeButton:SetWidth(LootHistoryFrame:GetWidth())
+	LootHistoryFrame.ResizeButton:SetHeight(19)
 	LootHistoryFrame.ResizeButton:ClearAllPoints()
-	LootHistoryFrame.ResizeButton:Point("TOP", LootHistoryFrame, "BOTTOM", 0, -1)
+	LootHistoryFrame.ResizeButton:SetPoint("TOP", LootHistoryFrame, "BOTTOM", 0, -1)
 
 	local function UpdateLoots(self)
 		local numItems = C_LootHistory.GetNumItems()
@@ -65,8 +65,8 @@ local function LoadSkin()
 				frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 				frame:CreateBackdrop("Default")
-				frame.backdrop:Point("TOPLEFT", frame.Icon, -2, 2)
-				frame.backdrop:Point("BOTTOMRIGHT", frame.Icon, 2, -2)
+				frame.backdrop:SetPoint("TOPLEFT", frame.Icon, -2, 2)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Icon, 2, -2)
 				frame.backdrop:SetBackdropColor(0, 0, 0, 0)
 
 				frame.isSkinned = true
@@ -92,8 +92,8 @@ local function LoadSkin()
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 			button:CreateBackdrop("Default")
-			button.backdrop:Point("TOPLEFT", icon, -2, 2)
-			button.backdrop:Point("BOTTOMRIGHT", icon, 2, -2)
+			button.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
+			button.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
 			button.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
 		end
 

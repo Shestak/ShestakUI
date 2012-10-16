@@ -13,10 +13,10 @@ local function LoadSkin()
 	BlackMarketFrame.MoneyFrameBorder:StripTextures()
 	T.SkinEditBox(BlackMarketBidPriceGold)
 	T.SkinEditBox(BlackMarketHotItemBidPriceGold)
-	BlackMarketBidPriceGold:Height(18)
+	BlackMarketBidPriceGold:SetHeight(18)
 
 	BlackMarketFrame.BidButton:SkinButton()
-	BlackMarketFrame.BidButton:Height(20)
+	BlackMarketFrame.BidButton:SetHeight(20)
 
 	BlackMarketFrame.HotDeal:StripTextures()
 	BlackMarketFrame.HotDeal.Item.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -52,8 +52,8 @@ local function LoadSkin()
 				button.Item:SetTemplate()
 				button.Item.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				button.Item.IconTexture:ClearAllPoints()
-				button.Item.IconTexture:Point("TOPLEFT", 2, -2)
-				button.Item.IconTexture:Point("BOTTOMRIGHT", -2, 2)
+				button.Item.IconTexture:SetPoint("TOPLEFT", 2, -2)
+				button.Item.IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 				button.Item:StyleButton()
 
 				button.skinned = true
