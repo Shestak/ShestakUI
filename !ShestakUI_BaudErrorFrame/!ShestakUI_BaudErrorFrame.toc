@@ -1,0 +1,7 @@
+## Interface: 50001
+## Title: ShestakUI Baud Error Frame
+## Notes: Improved error reporting. Edit by Oz of shestak.org
+## Author: Baudzilla, wolftankk, Affli
+## Version: 1.5
+
+ShestakUI_BaudErrorFrame.xml
