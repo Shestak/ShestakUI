@@ -1534,6 +1534,8 @@ Filger_Spells = {
 			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Flashfrozen Resin Globule (Intellect, Use)
 			{spellID = 126478, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vision of the Predator (Crit, Proc)
+			{spellID = 126476, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Qin-xi's Polarizing Seal (Intellect, Proc)
 			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
