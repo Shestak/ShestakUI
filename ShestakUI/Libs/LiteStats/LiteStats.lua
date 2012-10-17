@@ -1246,7 +1246,7 @@ if bags.enabled then
 			end
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
-			GameTooltip:Point(bags.tip_anchor, bags.tip_frame, bags.tip_x, bags.tip_y)
+			GameTooltip:SetPoint(bags.tip_anchor, bags.tip_frame, bags.tip_x, bags.tip_y)
 			GameTooltip:ClearLines()
 			if GetBindingKey("TOGGLEBACKPACK") then
 				GameTooltip:AddLine(BACKPACK_TOOLTIP.." ("..GetBindingKey("TOGGLEBACKPACK")..")", tthead.r, tthead.g, tthead.b)
@@ -1301,7 +1301,7 @@ if talents.enabled then
 			if UnitLevel(P) >= 10 then
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
-			GameTooltip:Point(talents.tip_anchor, talents.tip_frame, talents.tip_x, talents.tip_y)
+			GameTooltip:SetPoint(talents.tip_anchor, talents.tip_frame, talents.tip_x, talents.tip_y)
 				GameTooltip:ClearLines()
 				GameTooltip:AddLine(SPECIALIZATION, tthead.r, tthead.g, tthead.b)
 				GameTooltip:AddLine(" ")
