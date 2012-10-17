@@ -24,7 +24,7 @@ local function SkinButton(f)
 	f:SetPushedTexture(nil)
 	f:SetHighlightTexture(nil)
 	f:SetDisabledTexture(nil)
-	f:Size(20)
+	f:SetSize(20, 20)
 
 	for i = 1, f:GetNumRegions() do
 		local region = select(i, f:GetRegions())

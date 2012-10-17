@@ -21,8 +21,8 @@ for i, unit in pairs(units) do
 
 	unit.IconBackdrop = CreateFrame("Frame", nil, unit)
 	unit.IconBackdrop:SetFrameLevel(unit:GetFrameLevel() - 1)
-	unit.IconBackdrop:Point("TOPLEFT", unit.Icon, -2, 2)
-	unit.IconBackdrop:Point("BOTTOMRIGHT", unit.Icon, 2, -2)
+	unit.IconBackdrop:SetPoint("TOPLEFT", unit.Icon, -2, 2)
+	unit.IconBackdrop:SetPoint("BOTTOMRIGHT", unit.Icon, 2, -2)
 	unit.IconBackdrop:SetTemplate()
 
 	unit.HealthBarBG:Kill()
@@ -30,14 +30,14 @@ for i, unit in pairs(units) do
 	unit.HealthBarBackdrop = CreateFrame("Frame", nil, unit)
 	unit.HealthBarBackdrop:SetFrameLevel(unit:GetFrameLevel() - 1)
 	unit.HealthBarBackdrop:SetTemplate("Transparent")
-	unit.HealthBarBackdrop:Width(unit.healthBarWidth + 4)
+	unit.HealthBarBackdrop:SetWidth(unit.healthBarWidth + 4)
 	unit.ActualHealthBar:SetTexture(C.media.texture)
 
 	unit.ActualHealthBar:ClearAllPoints()
 	unit.Name:ClearAllPoints()
 
 	unit.PetTypeFrame = CreateFrame("Frame", nil, unit)
-	unit.PetTypeFrame:Size(100, 23)
+	unit.PetTypeFrame:SetSize(100, 23)
 	unit.PetTypeFrame:FontString("text", C.media.normal_font, 12)
 	unit.PetTypeFrame.text:SetShadowOffset(1, -1)
 	unit.PetTypeFrame.text:SetText("")
@@ -46,18 +46,18 @@ for i, unit in pairs(units) do
 	unit.SpeedUnderlay:SetAlpha(0)
 
 	unit.FirstAttack = unit:CreateTexture(nil, "ARTWORK")
-	unit.FirstAttack:Size(20)
+	unit.FirstAttack:SetSize(20, 20)
 	unit.FirstAttack:SetTexture("Interface\\PetBattles\\PetBattle-StatIcons")
 	unit.FirstAttack:Hide()
 
 	if i == 1 then
-		unit.HealthBarBackdrop:Point("TOPLEFT", unit.ActualHealthBar, "TOPLEFT", -2, 2)
-		unit.HealthBarBackdrop:Point("BOTTOMLEFT", unit.ActualHealthBar, "BOTTOMLEFT", -2, -2)
+		unit.HealthBarBackdrop:SetPoint("TOPLEFT", unit.ActualHealthBar, "TOPLEFT", -2, 2)
+		unit.HealthBarBackdrop:SetPoint("BOTTOMLEFT", unit.ActualHealthBar, "BOTTOMLEFT", -2, -2)
 		f.Ally2.iconPoint = unit.IconBackdrop
 		f.Ally3.iconPoint = unit.IconBackdrop
 
-		unit.ActualHealthBar:Point("BOTTOMLEFT", unit.Icon, "BOTTOMRIGHT", 10, 0)
-		unit.Name:Point("BOTTOMLEFT", unit.ActualHealthBar, "TOPLEFT", 0, 10)
+		unit.ActualHealthBar:SetPoint("BOTTOMLEFT", unit.Icon, "BOTTOMRIGHT", 10, 0)
+		unit.Name:SetPoint("BOTTOMLEFT", unit.ActualHealthBar, "TOPLEFT", 0, 10)
 
 		unit.PetTypeFrame:SetPoint("BOTTOMRIGHT", unit.HealthBarBackdrop, "TOPRIGHT", 4, 4)
 		unit.PetTypeFrame.text:SetPoint("RIGHT")
@@ -66,13 +66,13 @@ for i, unit in pairs(units) do
 		unit.FirstAttack:SetTexCoord(unit.SpeedIcon:GetTexCoord())
 		unit.FirstAttack:SetVertexColor(0.1, 0.1, 0.1, 1)
 	else
-		unit.HealthBarBackdrop:Point("TOPRIGHT", unit.ActualHealthBar, "TOPRIGHT", 2, 2)
-		unit.HealthBarBackdrop:Point("BOTTOMRIGHT", unit.ActualHealthBar, "BOTTOMRIGHT", 2, -2)
+		unit.HealthBarBackdrop:SetPoint("TOPRIGHT", unit.ActualHealthBar, "TOPRIGHT", 2, 2)
+		unit.HealthBarBackdrop:SetPoint("BOTTOMRIGHT", unit.ActualHealthBar, "BOTTOMRIGHT", 2, -2)
 		f.Enemy2.iconPoint = unit.IconBackdrop
 		f.Enemy3.iconPoint = unit.IconBackdrop
 
-		unit.ActualHealthBar:Point("BOTTOMRIGHT", unit.Icon, "BOTTOMLEFT", -10, 0)
-		unit.Name:Point("BOTTOMRIGHT", unit.ActualHealthBar, "TOPRIGHT", 0, 10)
+		unit.ActualHealthBar:SetPoint("BOTTOMRIGHT", unit.Icon, "BOTTOMLEFT", -10, 0)
+		unit.Name:SetPoint("BOTTOMRIGHT", unit.ActualHealthBar, "TOPRIGHT", 0, 10)
 
 		unit.PetTypeFrame:SetPoint("BOTTOMLEFT", unit.HealthBarBackdrop, "TOPLEFT", -2, 4)
 		unit.PetTypeFrame.text:SetPoint("LEFT")
@@ -93,7 +93,7 @@ for i, unit in pairs(units) do
 	unit.LevelUnderlay:SetAlpha(0)
 	unit.Level:SetFontObject(SystemFont_Large)
 	unit.Level:ClearAllPoints()
-	unit.Level:Point("BOTTOMLEFT", unit.Icon, "BOTTOMLEFT", 2, 2)
+	unit.Level:SetPoint("BOTTOMLEFT", unit.Icon, "BOTTOMLEFT", 2, 2)
 
 	unit.BorderFlash:Kill()
 end
@@ -136,19 +136,19 @@ hooksecurefunc("PetBattleAuraHolder_Update", function(self)
 		if (isBuff and self.displayBuffs) or (not isBuff and self.displayDebuffs) then
 			local frame = self.frames[nextFrame]
 
-			frame:Width(frame:GetHeight())
+			frame:SetWidth(frame:GetHeight())
 
 			-- Always hide the border
 			frame.DebuffBorder:Hide()
 
 			if not frame.isSkinned then
 				frame:CreateBackdrop()
-				frame.backdrop:Point("TOPLEFT", frame, 2, -2)
-				frame.backdrop:Point("BOTTOMRIGHT", frame, -2, 2)
+				frame.backdrop:SetPoint("TOPLEFT", frame, 2, -2)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, -2, 2)
 
 				frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				frame.Icon:Point("TOPLEFT", frame.backdrop, 2, -2)
-				frame.Icon:Point("BOTTOMRIGHT", frame.backdrop, -2, 2)
+				frame.Icon:SetPoint("TOPLEFT", frame.backdrop, 2, -2)
+				frame.Icon:SetPoint("BOTTOMRIGHT", frame.backdrop, -2, 2)
 			end
 
 			if isBuff then
@@ -187,7 +187,7 @@ for i, unit in pairs(extraUnits) do
 	unit.BorderAlive:SetAlpha(0)
 	unit.HealthBarBG:SetAlpha(0)
 	unit.HealthDivider:SetAlpha(0)
-	unit:Size(40)
+	unit:SetSize(40, 40)
 	unit:CreateBackdrop()
 	unit:ClearAllPoints()
 
@@ -198,9 +198,9 @@ for i, unit in pairs(extraUnits) do
 	unit.HealthBarBackdrop = CreateFrame("Frame", nil, unit)
 	unit.HealthBarBackdrop:SetFrameLevel(unit:GetFrameLevel() - 1)
 	unit.HealthBarBackdrop:SetTemplate("Default")
-	unit.HealthBarBackdrop:Width(unit.healthBarWidth + 4)
-	unit.HealthBarBackdrop:Point("TOPLEFT", unit.ActualHealthBar, "TOPLEFT", -2, 2)
-	unit.HealthBarBackdrop:Point("BOTTOMLEFT", unit.ActualHealthBar, "BOTTOMLEFT", -2, -1)
+	unit.HealthBarBackdrop:SetWidth(unit.healthBarWidth + 4)
+	unit.HealthBarBackdrop:SetPoint("TOPLEFT", unit.ActualHealthBar, "TOPLEFT", -2, 2)
+	unit.HealthBarBackdrop:SetPoint("BOTTOMLEFT", unit.ActualHealthBar, "BOTTOMLEFT", -2, -1)
 end
 
 f.Ally2:SetPoint("TOPRIGHT", f.Ally2.iconPoint, "TOPLEFT", -6, -2)
@@ -251,22 +251,22 @@ bf:StripTextures()
 bf.TurnTimer:StripTextures()
 bf.TurnTimer.SkipButton:SetParent(bar)
 bf.TurnTimer.SkipButton:SkinButton()
-bf.TurnTimer.SkipButton:Width(bar:GetWidth())
-bf.TurnTimer.SkipButton:Height(21)
+bf.TurnTimer.SkipButton:SetWidth(bar:GetWidth())
+bf.TurnTimer.SkipButton:SetHeight(21)
 bf.TurnTimer.SkipButton:ClearAllPoints()
 bf.TurnTimer.SkipButton:SetPoint("BOTTOM", bar, "TOP", 0, 3)
 bf.TurnTimer.SkipButton.ClearAllPoints = T.dummy
 bf.TurnTimer.SkipButton.SetPoint = T.dummy
 
 bf.xpBar:SetParent(bar)
-bf.xpBar:Width(bar:GetWidth() - 4)
+bf.xpBar:SetWidth(bar:GetWidth() - 4)
 bf.xpBar:CreateBackdrop("Overlay")
 bf.xpBar:ClearAllPoints()
 bf.xpBar:SetPoint("BOTTOM", bf.TurnTimer.SkipButton, "TOP", 0, 5)
 bf.xpBar:SetScript("OnShow", function(self) self:StripTextures() self:SetStatusBarTexture(C.media.texture) end)
 
 bf.TurnTimer:SetParent(bar)
-bf.TurnTimer:Size(bf.TurnTimer.SkipButton:GetWidth(), bf.TurnTimer.SkipButton:GetHeight())
+bf.TurnTimer:SetSize(bf.TurnTimer.SkipButton:GetWidth(), bf.TurnTimer.SkipButton:GetHeight())
 bf.TurnTimer:ClearAllPoints()
 bf.TurnTimer:SetPoint("BOTTOM", bf.xpBar, "TOP", 0, 5)
 bf.TurnTimer.TimerText:SetPoint("CENTER")
@@ -310,8 +310,8 @@ local function SkinPetButton(self)
 	end
 
 	self.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	self.Icon:Point("TOPLEFT", self, 2, -2)
-	self.Icon:Point("BOTTOMRIGHT", self, -2, 2)
+	self.Icon:SetPoint("TOPLEFT", self, 2, -2)
+	self.Icon:SetPoint("BOTTOMRIGHT", self, -2, 2)
 
 	self.checked = true
 	self:StyleButton()
@@ -321,10 +321,10 @@ local function SkinPetButton(self)
 	self.CooldownFlash:SetAllPoints()
 
 	if C.actionbar.hotkey == true then
-		self.HotKey:Point("TOPRIGHT", 0, 0)
+		self.HotKey:SetPoint("TOPRIGHT", 0, 0)
 		self.HotKey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 		self.HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-		self.HotKey:Width((C.actionbar.button_size * 1.5) - 1)
+		self.HotKey:SetWidth((C.actionbar.button_size * 1.5) - 1)
 	else
 		self.HotKey:Kill()
 	end

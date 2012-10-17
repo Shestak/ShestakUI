@@ -42,19 +42,19 @@ function DisplayDrActives(self)
 		local aura = self.auras[index]
 		if not aura then
 			aura = CreateFrame("Frame", "DrFrame"..self.target..index, self)
-			aura:Width(self.size)
-			aura:Height(self.size)
+			aura:SetWidth(self.size)
+			aura:SetHeight(self.size)
 			aura:SetScale(1)
 			aura:SetTemplate("Default")
 			if index == 1 then
-				aura:Point(self.anchor, self:GetParent().Health, self.anchorframe, self.x, self.y)
+				aura:SetPoint(self.anchor, self:GetParent().Health, self.anchorframe, self.x, self.y)
 			else
-				aura:Point(self.nextanchor, previous, self.nextanchorframe, self.nextx, self.nexty)
+				aura:SetPoint(self.nextanchor, previous, self.nextanchorframe, self.nextx, self.nexty)
 			end
 
 			aura.icon = aura:CreateTexture("$parenticon", "ARTWORK")
-			aura.icon:Point("TOPLEFT", 2, -2)
-			aura.icon:Point("BOTTOMRIGHT", -2, 2)
+			aura.icon:SetPoint("TOPLEFT", 2, -2)
+			aura.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 			aura.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 			aura.cooldown = CreateFrame("Cooldown", "$parentCD", aura, "CooldownFrameTemplate")
@@ -63,7 +63,7 @@ function DisplayDrActives(self)
 
 			aura.count = aura:CreateFontString("$parentCount", "OVERLAY")
 			aura.count:SetFont(C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
-			aura.count:Point("BOTTOMRIGHT", -1, 1)
+			aura.count:SetPoint("BOTTOMRIGHT", -1, 1)
 			aura.count:SetJustifyH("CENTER")
 			aura.cat = "cat"
 			aura.start = 0

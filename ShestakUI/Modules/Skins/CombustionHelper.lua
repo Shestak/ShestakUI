@@ -53,8 +53,8 @@ CBHSkin:SetScript("OnEvent", function(self, event, addon)
 		CombuCautFrame:SetTemplate("Default")
 		CombuCautIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		CombuCautIcon:ClearAllPoints()
-		CombuCautIcon:Point("TOPLEFT", 2, -2)
-		CombuCautIcon:Point("BOTTOMRIGHT", -2, 2)
+		CombuCautIcon:SetPoint("TOPLEFT", 2, -2)
+		CombuCautIcon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
 
 	hooksecurefunc("CombuMBTrackerFrameresize", function()

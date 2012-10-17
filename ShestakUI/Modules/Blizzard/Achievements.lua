@@ -5,8 +5,8 @@ if IsAddOnLoaded("MoveAnything") then return end
 --	Based on AchievementMover
 ----------------------------------------------------------------------------------------
 local AchievementAnchor = CreateFrame("Frame", "AchievementAnchor", UIParent)
-AchievementAnchor:Width(DungeonCompletionAlertFrame1:GetWidth() - 36)
-AchievementAnchor:Height(DungeonCompletionAlertFrame1:GetHeight() - 4)
+AchievementAnchor:SetWidth(DungeonCompletionAlertFrame1:GetWidth() - 36)
+AchievementAnchor:SetHeight(DungeonCompletionAlertFrame1:GetHeight() - 4)
 AchievementAnchor:SetPoint(unpack(C.position.achievement))
 
 local POSITION, ANCHOR_POINT, YOFFSET = "TOP", "BOTTOM", 9

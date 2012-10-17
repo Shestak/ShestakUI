@@ -202,10 +202,10 @@ for i = 1, #tab do
 
 	frame.icon = frame:CreateTexture(nil, "OVERLAY")
 	frame.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	frame.icon:Point("TOPLEFT", frame, "TOPLEFT", 2, -2)
-	frame.icon:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
-	frame.icon:Width(C.reminder.solo_buffs_size)
-	frame.icon:Height(C.reminder.solo_buffs_size)
+	frame.icon:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, -2)
+	frame.icon:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
+	frame.icon:SetWidth(C.reminder.solo_buffs_size)
+	frame.icon:SetHeight(C.reminder.solo_buffs_size)
 
 	frame:Hide()
 

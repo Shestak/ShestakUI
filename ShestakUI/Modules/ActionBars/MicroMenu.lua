@@ -20,9 +20,9 @@ local microbuttons = {
 }
 
 local frame = CreateFrame("Frame", "MicroAnchor", UIParent)
-frame:Point(unpack(C.position.micro_menu))
-frame:Width(((CharacterMicroButton:GetWidth() + 4) * 9) + 12)
-frame:Height(CharacterMicroButton:GetHeight() - 28)
+frame:SetPoint(unpack(C.position.micro_menu))
+frame:SetWidth(((CharacterMicroButton:GetWidth() + 4) * 9) + 12)
+frame:SetHeight(CharacterMicroButton:GetHeight() - 28)
 frame.shown = false
 if C.actionbar.micromenu_mouseover == true then frame:SetAlpha(0) end
 
@@ -75,26 +75,26 @@ for i, button in pairs(microbuttons) do
 	local f = CreateFrame("Frame", nil, m)
 	f:SetFrameLevel(1)
 	f:SetFrameStrata("BACKGROUND")
-	f:Point("BOTTOMLEFT", m, "BOTTOMLEFT", 2, 0)
-	f:Point("TOPRIGHT", m, "TOPRIGHT", -2, -28)
+	f:SetPoint("BOTTOMLEFT", m, "BOTTOMLEFT", 2, 0)
+	f:SetPoint("TOPRIGHT", m, "TOPRIGHT", -2, -28)
 	f:SetTemplate("Default")
 	m.frame = f
 
 	pushed:SetTexCoord(0.17, 0.87, 0.5, 0.908)
 	pushed:ClearAllPoints()
-	pushed:Point("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
-	pushed:Point("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
+	pushed:SetPoint("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
+	pushed:SetPoint("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
 
 	normal:SetTexCoord(0.17, 0.87, 0.5, 0.908)
 	normal:ClearAllPoints()
-	normal:Point("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
-	normal:Point("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
+	normal:SetPoint("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
+	normal:SetPoint("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
 
 	if disabled then
 		disabled:SetTexCoord(0.17, 0.87, 0.5, 0.908)
 		disabled:ClearAllPoints()
-		disabled:Point("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
-		disabled:Point("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
+		disabled:SetPoint("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
+		disabled:SetPoint("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
 	end
 
 	m.mouseover = false
@@ -111,14 +111,14 @@ end
 -- Fix/Create textures for buttons
 hooksecurefunc("UpdateMicroButtons", function()
 	MicroButtonPortrait:ClearAllPoints()
-	MicroButtonPortrait:Point("TOPLEFT", CharacterMicroButton.frame, "TOPLEFT", 2, -2)
-	MicroButtonPortrait:Point("BOTTOMRIGHT", CharacterMicroButton.frame, "BOTTOMRIGHT", -2, 2)
+	MicroButtonPortrait:SetPoint("TOPLEFT", CharacterMicroButton.frame, "TOPLEFT", 2, -2)
+	MicroButtonPortrait:SetPoint("BOTTOMRIGHT", CharacterMicroButton.frame, "BOTTOMRIGHT", -2, 2)
 
 	CharacterMicroButton:ClearAllPoints()
-	CharacterMicroButton:Point("BOTTOMLEFT", frame, "BOTTOMLEFT", -2, 0)
+	CharacterMicroButton:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", -2, 0)
 
 	GuildMicroButtonTabard:ClearAllPoints()
-	GuildMicroButtonTabard:Point("TOP", GuildMicroButton.frame, "TOP", 0, 25)
+	GuildMicroButtonTabard:SetPoint("TOP", GuildMicroButton.frame, "TOP", 0, 25)
 
 	MainMenuBarPerformanceBar:SetPoint("TOPLEFT", MainMenuMicroButton, "TOPLEFT", 9, -36)
 end)

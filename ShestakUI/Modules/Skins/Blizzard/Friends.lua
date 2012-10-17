@@ -122,9 +122,9 @@ local function LoadSkin()
 	FriendsFrameMutePlayerButton:SetPoint("RIGHT", FriendsFrameUnsquelchButton, "LEFT", -3, 0)
 
 	-- Resize Buttons
-	WhoFrameWhoButton:Size(WhoFrameWhoButton:GetWidth() + 7, WhoFrameWhoButton:GetHeight())
-	WhoFrameAddFriendButton:Size(WhoFrameAddFriendButton:GetWidth() - 4, WhoFrameAddFriendButton:GetHeight())
-	WhoFrameGroupInviteButton:Size(WhoFrameGroupInviteButton:GetWidth() - 4, WhoFrameGroupInviteButton:GetHeight())
+	WhoFrameWhoButton:SetSize(WhoFrameWhoButton:GetWidth() + 7, WhoFrameWhoButton:GetHeight())
+	WhoFrameAddFriendButton:SetSize(WhoFrameAddFriendButton:GetWidth() - 4, WhoFrameAddFriendButton:GetHeight())
+	WhoFrameGroupInviteButton:SetSize(WhoFrameGroupInviteButton:GetWidth() - 4, WhoFrameGroupInviteButton:GetHeight())
 	T.SkinEditBox(WhoFrameEditBox)
 	WhoFrameEditBox:SetHeight(WhoFrameEditBox:GetHeight() - 15)
 	WhoFrameEditBox:SetWidth(WhoFrameEditBox:GetWidth() + 30)

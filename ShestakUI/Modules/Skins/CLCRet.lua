@@ -23,11 +23,11 @@ function clcret:CreateButton(name, size, point, parent, pointParent, offsetx, of
 		button:SetTemplate("Default")
 	end
 	button:EnableMouse(false)
-	button:Size(size)
+	button:SetSize(size, size)
 
 	button.texture = button:CreateTexture("$parentIcon", "OVERLAY")
-	button.texture:Point("TOPLEFT", 2, -2)
-	button.texture:Point("BOTTOMRIGHT", -2, 2)
+	button.texture:SetPoint("TOPLEFT", 2, -2)
+	button.texture:SetPoint("BOTTOMRIGHT", -2, 2)
 	button.texture:SetTexture(BGTEX)
 	button.texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	button.texture.SetTexCoord = T.dummy
@@ -36,8 +36,8 @@ function clcret:CreateButton(name, size, point, parent, pointParent, offsetx, of
 	button.border:Kill()
 
 	button.cooldown = CreateFrame("Cooldown", "$parentCooldown", button)
-	button.cooldown:Point("TOPLEFT", 2, -2)
-	button.cooldown:Point("BOTTOMRIGHT", -2, 2)
+	button.cooldown:SetPoint("TOPLEFT", 2, -2)
+	button.cooldown:SetPoint("BOTTOMRIGHT", -2, 2)
 
 	button.stack = button:CreateFontString("$parentCount", "OVERLAY", "TextStatusBarText")
 
@@ -62,7 +62,7 @@ function clcret:CreateButton(name, size, point, parent, pointParent, offsetx, of
 end
 
 function clcret:UpdateButtonLayout(button, opt)
-	button:Size(opt.size)
+	button:SetSize(opt.size, opt.size)
 	button:ClearAllPoints()
 	button:SetPoint(opt.point, clcretFrame, opt.pointParent, opt.x, opt.y)
 	button:SetAlpha(opt.alpha)

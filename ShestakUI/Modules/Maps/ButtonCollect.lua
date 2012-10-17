@@ -17,7 +17,7 @@ local button = CreateFrame("Frame", "ButtonCollectFrame", UIParent)
 local line = math.ceil(C.minimap.size / 20)
 
 local function PositionAndStyle()
-	button:Size(20)
+	button:SetSize(20, 20)
 	button:SetPoint(unpack(C.position.minimap_buttons))
 	for i = 1, #buttons do
 		buttons[i]:ClearAllPoints()

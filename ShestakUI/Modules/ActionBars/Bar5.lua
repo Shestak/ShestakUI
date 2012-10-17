@@ -22,28 +22,28 @@ for i = 1, 12 do
 	b:ClearAllPoints()
 	if C.actionbar.split_bars == true and C.actionbar.rightbars < 3 then
 		if i == 1 then
-			b:Point("TOPLEFT", SplitBarLeft, "TOPLEFT", 0, 0)
+			b:SetPoint("TOPLEFT", SplitBarLeft, "TOPLEFT", 0, 0)
 		elseif i == 4 then
-			b:Point("BOTTOMLEFT", SplitBarLeft, "BOTTOMLEFT", 0, 0)
+			b:SetPoint("BOTTOMLEFT", SplitBarLeft, "BOTTOMLEFT", 0, 0)
 		elseif i == 7 then
-			b:Point("TOPLEFT", SplitBarRight, "TOPLEFT", 0, 0)
+			b:SetPoint("TOPLEFT", SplitBarRight, "TOPLEFT", 0, 0)
 		elseif i == 10 then
-			b:Point("BOTTOMLEFT", SplitBarRight, "BOTTOMLEFT", 0, 0)
+			b:SetPoint("BOTTOMLEFT", SplitBarRight, "BOTTOMLEFT", 0, 0)
 		else
-			b:Point("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
+			b:SetPoint("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
 		end
 	else
 		if i == 1 then
 			if C.actionbar.rightbars < 3 then
-				b:Point("BOTTOM", ActionButton1, "TOP", 0, C.actionbar.button_size + (C.actionbar.button_space * 2))
+				b:SetPoint("BOTTOM", ActionButton1, "TOP", 0, C.actionbar.button_size + (C.actionbar.button_space * 2))
 			else
-				b:Point("TOPLEFT", RightActionBarAnchor, "TOPLEFT", 0, 0)
+				b:SetPoint("TOPLEFT", RightActionBarAnchor, "TOPLEFT", 0, 0)
 			end
 		else
 			if C.actionbar.rightbars < 3 then
-				b:Point("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
+				b:SetPoint("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
 			else
-				b:Point("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
+				b:SetPoint("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
 			end
 		end
 	end

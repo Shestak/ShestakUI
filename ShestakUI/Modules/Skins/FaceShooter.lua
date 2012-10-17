@@ -26,8 +26,8 @@ frame:SetScript("OnEvent", function(self, event)
 		button1Button.b = CreateFrame("Frame", nil, button1Button)
 		button1Button.b:SetTemplate("Default")
 		button1Button.b:SetFrameStrata("BACKGROUND")
-		button1Button.b:Point("TOPLEFT", button1Button, "TOPLEFT", -2, 2)
-		button1Button.b:Point("BOTTOMRIGHT", button1Button, "BOTTOMRIGHT", 2, -2)
+		button1Button.b:SetPoint("TOPLEFT", button1Button, "TOPLEFT", -2, 2)
+		button1Button.b:SetPoint("BOTTOMRIGHT", button1Button, "BOTTOMRIGHT", 2, -2)
 	end
 
 	if button2Mover then
@@ -41,8 +41,8 @@ frame:SetScript("OnEvent", function(self, event)
 			button2Button.b = CreateFrame("Frame", nil, button2Button)
 			button2Button.b:SetTemplate("Default")
 			button2Button.b:SetFrameStrata("BACKGROUND")
-			button2Button.b:Point("TOPLEFT", button2Button, "TOPLEFT", -2, 2)
-			button2Button.b:Point("BOTTOMRIGHT", button2Button, "BOTTOMRIGHT", 2, -2)
+			button2Button.b:SetPoint("TOPLEFT", button2Button, "TOPLEFT", -2, 2)
+			button2Button.b:SetPoint("BOTTOMRIGHT", button2Button, "BOTTOMRIGHT", 2, -2)
 		end
 	end
 end)

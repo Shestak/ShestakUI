@@ -146,8 +146,8 @@ function T.SkinTab(tab)
 	tab.backdrop = CreateFrame("Frame", nil, tab)
 	tab.backdrop:SetTemplate("Transparent")
 	tab.backdrop:SetFrameLevel(tab:GetFrameLevel() - 1)
-	tab.backdrop:Point("TOPLEFT", 10, -3)
-	tab.backdrop:Point("BOTTOMRIGHT", -10, 3)
+	tab.backdrop:SetPoint("TOPLEFT", 10, -3)
+	tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 3)
 end
 
 function T.SkinNextPrevButton(btn, horizonal)
@@ -191,7 +191,7 @@ function T.SkinNextPrevButton(btn, horizonal)
 	btn:SetDisabledTexture(disabled)
 
 	btn:SetTemplate("Overlay")
-	btn:Size(btn:GetWidth() - 7, btn:GetHeight() - 7)
+	btn:SetSize(btn:GetWidth() - 7, btn:GetHeight() - 7)
 
 	if normal and pushed and disabled then
 		if horizonal then
@@ -216,8 +216,8 @@ function T.SkinNextPrevButton(btn, horizonal)
 		end
 
 		btn:GetNormalTexture():ClearAllPoints()
-		btn:GetNormalTexture():Point("TOPLEFT", 2, -2)
-		btn:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+		btn:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+		btn:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 		if btn:GetDisabledTexture() then
 			btn:GetDisabledTexture():SetAllPoints(btn:GetNormalTexture())
 		end
@@ -231,7 +231,7 @@ end
 
 function T.SkinRotateButton(btn)
 	btn:SetTemplate("Default")
-	btn:Size(btn:GetWidth() - 14, btn:GetHeight() - 14)
+	btn:SetSize(btn:GetWidth() - 14, btn:GetHeight() - 14)
 
 	btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.65, 0.69, 0.29, 0.69, 0.65)
 	btn:GetPushedTexture():SetTexCoord(0.3, 0.29, 0.3, 0.65, 0.69, 0.29, 0.69, 0.65)
@@ -239,8 +239,8 @@ function T.SkinRotateButton(btn)
 	btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
 
 	btn:GetNormalTexture():ClearAllPoints()
-	btn:GetNormalTexture():Point("TOPLEFT", 2, -2)
-	btn:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+	btn:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+	btn:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 	btn:GetPushedTexture():SetAllPoints(btn:GetNormalTexture())
 	btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
 end
@@ -254,11 +254,11 @@ function T.SkinEditBox(frame)
 
 	if frame:GetName() and (frame:GetName():find("Gold") or frame:GetName():find("Silver") or frame:GetName():find("Copper")) then
 		if frame:GetName():find("Gold") then
-			frame.backdrop:Point("TOPLEFT", -3, 1)
-			frame.backdrop:Point("BOTTOMRIGHT", -3, 0)
+			frame.backdrop:SetPoint("TOPLEFT", -3, 1)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", -3, 0)
 		else
-			frame.backdrop:Point("TOPLEFT", -3, 1)
-			frame.backdrop:Point("BOTTOMRIGHT", -13, 0)
+			frame.backdrop:SetPoint("TOPLEFT", -3, 1)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", -13, 0)
 		end
 	end
 end
@@ -268,53 +268,53 @@ function T.SkinDropDownBox(frame, width)
 	if not width then width = 155 end
 
 	frame:StripTextures()
-	frame:Width(width)
+	frame:SetWidth(width)
 
 	if _G[frame:GetName().."Text"] then
 		_G[frame:GetName().."Text"]:ClearAllPoints()
-		_G[frame:GetName().."Text"]:Point("RIGHT", button, "LEFT", -2, 0)
+		_G[frame:GetName().."Text"]:SetPoint("RIGHT", button, "LEFT", -2, 0)
 	end
 
 	button:ClearAllPoints()
-	button:Point("RIGHT", frame, "RIGHT", -10, 3)
+	button:SetPoint("RIGHT", frame, "RIGHT", -10, 3)
 	button.SetPoint = T.dummy
 
 	T.SkinNextPrevButton(button, true)
 
 	frame:CreateBackdrop("Overlay")
 	frame:SetFrameLevel(frame:GetFrameLevel() + 2)
-	frame.backdrop:Point("TOPLEFT", 20, -2)
-	frame.backdrop:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
+	frame.backdrop:SetPoint("TOPLEFT", 20, -2)
+	frame.backdrop:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
 end
 
 function T.SkinCheckBox(frame)
 	frame:StripTextures()
 	frame:CreateBackdrop("Overlay")
 	frame:SetFrameLevel(frame:GetFrameLevel() + 2)
-	frame.backdrop:Point("TOPLEFT", 4, -4)
-	frame.backdrop:Point("BOTTOMRIGHT", -4, 4)
+	frame.backdrop:SetPoint("TOPLEFT", 4, -4)
+	frame.backdrop:SetPoint("BOTTOMRIGHT", -4, 4)
 
 	if frame.SetHighlightTexture then
 		local highligh = frame:CreateTexture("Frame", nil, self)
 		highligh:SetTexture(1, 1, 1, 0.3)
-		highligh:Point("TOPLEFT", frame, 6, -6)
-		highligh:Point("BOTTOMRIGHT", frame, -6, 6)
+		highligh:SetPoint("TOPLEFT", frame, 6, -6)
+		highligh:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetHighlightTexture(highligh)
 	end
 
 	if frame.SetCheckedTexture then
 		local checked = frame:CreateTexture("Frame", nil, self)
 		checked:SetTexture(1, 0.82, 0, 0.8)
-		checked:Point("TOPLEFT", frame, 6, -6)
-		checked:Point("BOTTOMRIGHT", frame, -6, 6)
+		checked:SetPoint("TOPLEFT", frame, 6, -6)
+		checked:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetCheckedTexture(checked)
 	end
 
 	if frame.SetDisabledCheckedTexture then
 		local disabled = frame:CreateTexture("Frame", nil, self)
 		disabled:SetTexture(0.6, 0.6, 0.6, 0.75)
-		disabled:Point("TOPLEFT", frame, 6, -6)
-		disabled:Point("BOTTOMRIGHT", frame, -6, 6)
+		disabled:SetPoint("TOPLEFT", frame, 6, -6)
+		disabled:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetDisabledCheckedTexture(disabled)
 	end
 
@@ -331,7 +331,7 @@ end
 function T.SkinCloseButton(f, point, text, pixel)
 	f:StripTextures()
 	f:SetTemplate("Overlay")
-	f:Size(18)
+	f:SetSize(18, 18)
 
 	if not text then text = "x" end
 	if not f.text then
@@ -346,9 +346,9 @@ function T.SkinCloseButton(f, point, text, pixel)
 	end
 
 	if point then
-		f:Point("TOPRIGHT", point, "TOPRIGHT", -4, -4)
+		f:SetPoint("TOPRIGHT", point, "TOPRIGHT", -4, -4)
 	else
-		f:Point("TOPRIGHT", -4, -4)
+		f:SetPoint("TOPRIGHT", -4, -4)
 	end
 
 	f:HookScript("OnEnter", T.SetModifiedBackdrop)
@@ -809,11 +809,11 @@ T.UpdateClassMana = function(self)
 
 		if min ~= max then
 			if self.Power.value:GetText() then
-				self.ClassMana:Point("RIGHT", self.Power.value, "LEFT", -1, 0)
+				self.ClassMana:SetPoint("RIGHT", self.Power.value, "LEFT", -1, 0)
 				self.ClassMana:SetFormattedText("%d%%|r |cffD7BEA5-|r", floor(min / max * 100))
 				self.ClassMana:SetJustifyH("RIGHT")
 			else
-				self.ClassMana:Point("LEFT", self.Power, "LEFT", 4, 1)
+				self.ClassMana:SetPoint("LEFT", self.Power, "LEFT", 4, 1)
 				self.ClassMana:SetFormattedText("%d%%", floor(min / max * 100))
 			end
 		else
@@ -916,10 +916,10 @@ T.UpdateEclipse = function(self, login)
 
 	if eb:IsShown() then
 		txt:Show()
-		if self.Debuffs then self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 	else
 		txt:Hide()
-		if self.Debuffs then self.Debuffs:Point("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 	end
 end
 
@@ -1219,19 +1219,19 @@ T.PostCreateAura = function(element, button)
 
 	button.remaining = T.SetFontString(button, C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 	button.remaining:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
-	button.remaining:Point("CENTER", button, "CENTER", 1, 1)
+	button.remaining:SetPoint("CENTER", button, "CENTER", 1, 1)
 	button.remaining:SetJustifyH("CENTER")
 	button.remaining:SetTextColor(1, 1, 1)
 
 	button.cd.noOCC = true
 	button.cd.noCooldownCount = true
 
-	button.icon:Point("TOPLEFT", 2, -2)
-	button.icon:Point("BOTTOMRIGHT", -2, 2)
+	button.icon:SetPoint("TOPLEFT", 2, -2)
+	button.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	button.icon:SetDrawLayer("ARTWORK")
 
-	button.count:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", 0, 1)
+	button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 0, 1)
 	button.count:SetJustifyH("RIGHT")
 	button.count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 	button.count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
@@ -1243,8 +1243,8 @@ T.PostCreateAura = function(element, button)
 		button.overlayFrame = CreateFrame("Frame", nil, button, nil)
 		button.cd:SetFrameLevel(button:GetFrameLevel() + 1)
 		button.cd:ClearAllPoints()
-		button.cd:Point("TOPLEFT", button, "TOPLEFT", 2, -2)
-		button.cd:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
+		button.cd:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
+		button.cd:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
 		button.overlayFrame:SetFrameLevel(button.cd:GetFrameLevel() + 1)
 		button.count:SetParent(button.overlayFrame)
 		button.remaining:SetParent(button.overlayFrame)
@@ -1324,8 +1324,8 @@ T.CountOffsets = {
 
 T.CreateAuraWatchIcon = function(self, icon)
 	icon:SetTemplate("Default")
-	icon.icon:Point("TOPLEFT", icon, 1, -1)
-	icon.icon:Point("BOTTOMRIGHT", icon, -1, 1)
+	icon.icon:SetPoint("TOPLEFT", icon, 1, -1)
+	icon.icon:SetPoint("BOTTOMRIGHT", icon, -1, 1)
 	icon.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	icon.icon:SetDrawLayer("ARTWORK")
 	if icon.cd then
@@ -1336,8 +1336,8 @@ end
 
 T.CreateAuraWatch = function(self, unit)
 	local auras = CreateFrame("Frame", nil, self)
-	auras:Point("TOPLEFT", self.Health, 0, 0)
-	auras:Point("BOTTOMRIGHT", self.Health, 0, 0)
+	auras:SetPoint("TOPLEFT", self.Health, 0, 0)
+	auras:SetPoint("BOTTOMRIGHT", self.Health, 0, 0)
 	auras.icons = {}
 	auras.PostCreateIcon = T.CreateAuraWatchIcon
 
@@ -1365,9 +1365,9 @@ T.CreateAuraWatch = function(self, unit)
 			icon.spellID = spell[1]
 			icon.anyUnit = spell[4]
 			icon.strictMatching = spell[5]
-			icon:Width(7)
-			icon:Height(7)
-			icon:Point(spell[2], 0, 0)
+			icon:SetWidth(7)
+			icon:SetHeight(7)
+			icon:SetPoint(spell[2], 0, 0)
 
 			local tex = icon:CreateTexture(nil, "OVERLAY")
 			tex:SetAllPoints(icon)
@@ -1379,7 +1379,7 @@ T.CreateAuraWatch = function(self, unit)
 			end
 
 			local count = T.SetFontString(icon, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			count:Point("CENTER", unpack(T.CountOffsets[spell[2]]))
+			count:SetPoint("CENTER", unpack(T.CountOffsets[spell[2]]))
 			icon.count = count
 
 			auras.icons[spell[1]] = icon

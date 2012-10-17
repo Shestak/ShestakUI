@@ -364,14 +364,14 @@ elseif C.skins.blizzard_frames == true then
 	SpellBinderInset:StripTextures()
 
 	SpellBinder:CreateBackdrop("Transparent")
-	SpellBinder.backdrop:Point("TOPLEFT", -18, 0)
-	SpellBinder.backdrop:Point("BOTTOMRIGHT", 0, 9)
+	SpellBinder.backdrop:SetPoint("TOPLEFT", -18, 0)
+	SpellBinder.backdrop:SetPoint("BOTTOMRIGHT", 0, 9)
 
 	SpellBinder.OpenButton:StripTextures()
 	SpellBinder.OpenButton:SetNormalTexture("Interface\\ICONS\\Achievement_Guild_Doctorisin")
 	SpellBinder.OpenButton:GetNormalTexture():ClearAllPoints()
-	SpellBinder.OpenButton:GetNormalTexture():Point("TOPLEFT", 2, -2)
-	SpellBinder.OpenButton:GetNormalTexture():Point("BOTTOMRIGHT", -2, 2)
+	SpellBinder.OpenButton:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+	SpellBinder.OpenButton:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 	SpellBinder.OpenButton:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	SpellBinder.OpenButton:CreateBackdrop("Default")

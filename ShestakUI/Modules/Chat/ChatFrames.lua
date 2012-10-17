@@ -70,8 +70,8 @@ local function SetChatStyle(frame)
 
 	-- Move the chat edit box
 	_G[chat.."EditBox"]:ClearAllPoints()
-	_G[chat.."EditBox"]:Point("BOTTOMLEFT", ChatFrame1, "TOPLEFT", -10, 23)
-	_G[chat.."EditBox"]:Point("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 11, 23)
+	_G[chat.."EditBox"]:SetPoint("BOTTOMLEFT", ChatFrame1, "TOPLEFT", -10, 23)
+	_G[chat.."EditBox"]:SetPoint("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 11, 23)
 
 	-- Hide textures
 	for j = 1, #CHAT_FRAME_TEXTURES do
@@ -135,8 +135,8 @@ local function SetChatStyle(frame)
 		local EditBoxBackground = CreateFrame("Frame", "ChatEditBoxBackground", _G[chat.."EditBox"])
 		EditBoxBackground:CreatePanel("Transparent", 1, 1, "LEFT", _G[chat.."EditBox"], "LEFT", 0, 0)
 		EditBoxBackground:ClearAllPoints()
-		EditBoxBackground:Point("TOPLEFT", _G[chat.."EditBox"], "TOPLEFT", 7, -5)
-		EditBoxBackground:Point("BOTTOMRIGHT", _G[chat.."EditBox"], "BOTTOMRIGHT", -7, 4)
+		EditBoxBackground:SetPoint("TOPLEFT", _G[chat.."EditBox"], "TOPLEFT", 7, -5)
+		EditBoxBackground:SetPoint("BOTTOMRIGHT", _G[chat.."EditBox"], "BOTTOMRIGHT", -7, 4)
 		EditBoxBackground:SetFrameStrata("LOW")
 		EditBoxBackground:SetFrameLevel(1)
 
@@ -165,8 +165,8 @@ local function SetChatStyle(frame)
 		FCF_SetWindowName(_G[chat], GUILD_BANK_LOG)
 		CombatLogQuickButtonFrame_Custom:StripTextures()
 		CombatLogQuickButtonFrame_Custom:CreateBackdrop("Transparent")
-		CombatLogQuickButtonFrame_Custom.backdrop:Point("TOPLEFT", 1, -2)
-		CombatLogQuickButtonFrame_Custom.backdrop:Point("BOTTOMRIGHT", 0, -4)
+		CombatLogQuickButtonFrame_Custom.backdrop:SetPoint("TOPLEFT", 1, -2)
+		CombatLogQuickButtonFrame_Custom.backdrop:SetPoint("BOTTOMRIGHT", 0, -4)
 		T.SkinCloseButton(CombatLogQuickButtonFrame_CustomAdditionalFilterButton, CombatLogQuickButtonFrame_Custom.backdrop, "+")
 		CombatLogQuickButtonFrame_CustomProgressBar:ClearAllPoints()
 		CombatLogQuickButtonFrame_CustomProgressBar:SetPoint("TOPLEFT", CombatLogQuickButtonFrame_Custom.backdrop, 2, -2)
@@ -237,11 +237,11 @@ local function SetupChatPosAndFont(self)
 		-- Force chat position
 		if i == 1 then
 			chat:ClearAllPoints()
-			chat:Size(C.chat.width, C.chat.height)
+			chat:SetSize(C.chat.width, C.chat.height)
 			if C.chat.background == true then
-				chat:Point(C.position.chat[1], C.position.chat[2], C.position.chat[3], C.position.chat[4], C.position.chat[5] + 4)
+				chat:SetPoint(C.position.chat[1], C.position.chat[2], C.position.chat[3], C.position.chat[4], C.position.chat[5] + 4)
 			else
-				chat:Point(C.position.chat[1], C.position.chat[2], C.position.chat[3], C.position.chat[4], C.position.chat[5])
+				chat:SetPoint(C.position.chat[1], C.position.chat[2], C.position.chat[3], C.position.chat[4], C.position.chat[5])
 			end
 			FCF_SavePositionAndDimensions(chat)
 		elseif i == 2 then
@@ -250,7 +250,7 @@ local function SetupChatPosAndFont(self)
 			else
 				FCF_UnDockFrame(chat)
 				chat:ClearAllPoints()
-				chat:Point("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)
+				chat:SetPoint("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)
 			end
 		end
 	end
@@ -258,7 +258,7 @@ local function SetupChatPosAndFont(self)
 	-- Reposition battle.net popup over chat #1
 	BNToastFrame:HookScript("OnShow", function(self)
 		self:ClearAllPoints()
-		self:Point(unpack(C.position.bn_popup))
+		self:SetPoint(unpack(C.position.bn_popup))
 	end)
 end
 

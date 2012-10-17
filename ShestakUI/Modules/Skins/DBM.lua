@@ -31,10 +31,10 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							icon1.overlay = _G[icon1.overlay:GetName()]
 						else
 							icon1.overlay = CreateFrame("Frame", "$parentIcon1Overlay", tbar)
-							icon1.overlay:Width(25)
-							icon1.overlay:Height(25)
+							icon1.overlay:SetWidth(25)
+							icon1.overlay:SetHeight(25)
 							icon1.overlay:SetFrameStrata("BACKGROUND")
-							icon1.overlay:Point("BOTTOMRIGHT", tbar, "BOTTOMLEFT", -5, -2)
+							icon1.overlay:SetPoint("BOTTOMRIGHT", tbar, "BOTTOMLEFT", -5, -2)
 							icon1.overlay:SetTemplate("Transparent")
 						end
 
@@ -42,10 +42,10 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							icon2.overlay = _G[icon2.overlay:GetName()]
 						else
 							icon2.overlay = CreateFrame("Frame", "$parentIcon2Overlay", tbar)
-							icon2.overlay:Width(25)
-							icon2.overlay:Height(25)
+							icon2.overlay:SetWidth(25)
+							icon2.overlay:SetHeight(25)
 							icon2.overlay:SetFrameStrata("BACKGROUND")
-							icon2.overlay:Point("BOTTOMLEFT", tbar, "BOTTOMRIGHT", 5, -2)
+							icon2.overlay:SetPoint("BOTTOMLEFT", tbar, "BOTTOMRIGHT", 5, -2)
 							icon2.overlay:SetTemplate("Transparent")
 						end
 
@@ -59,12 +59,12 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 							tbar:SetBackdropColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB, 0.2)
 						end
 
-						if bar.enlarged then frame:Width(bar.owner.options.HugeWidth) else frame:Width(bar.owner.options.Width) end
-						if bar.enlarged then tbar:Width(bar.owner.options.HugeWidth) else tbar:Width(bar.owner.options.Width) end
+						if bar.enlarged then frame:SetWidth(bar.owner.options.HugeWidth) else frame:SetWidth(bar.owner.options.Width) end
+						if bar.enlarged then tbar:SetWidth(bar.owner.options.HugeWidth) else tbar:SetWidth(bar.owner.options.Width) end
 
 						frame:SetScale(1)
 						if not frame.styled then
-							frame:Height(19)
+							frame:SetHeight(19)
 							frame:SetTemplate("Default")
 							frame.styled = true
 						end
@@ -78,16 +78,16 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						if not icon1.styled then
 							icon1:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 							icon1:ClearAllPoints()
-							icon1:Point("TOPLEFT", icon1.overlay, 2, -2)
-							icon1:Point("BOTTOMRIGHT", icon1.overlay, -2, 2)
+							icon1:SetPoint("TOPLEFT", icon1.overlay, 2, -2)
+							icon1:SetPoint("BOTTOMRIGHT", icon1.overlay, -2, 2)
 							icon1.styled = true
 						end
 
 						if not icon2.styled then
 							icon2:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 							icon2:ClearAllPoints()
-							icon2:Point("TOPLEFT", icon2.overlay, 2, -2)
-							icon2:Point("BOTTOMRIGHT", icon2.overlay, -2, 2)
+							icon2:SetPoint("TOPLEFT", icon2.overlay, 2, -2)
+							icon2:SetPoint("BOTTOMRIGHT", icon2.overlay, -2, 2)
 							icon2.styled = true
 						end
 
@@ -97,16 +97,16 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						end
 
 						if not tbar.styled then
-							tbar:Point("TOPLEFT", frame, "TOPLEFT", 2, -2)
-							tbar:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
+							tbar:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, -2)
+							tbar:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
 							tbar.styled = true
 						end
 
 						if not name.styled then
 							name:ClearAllPoints()
-							name:Point("LEFT", frame, "LEFT", 4, 0)
-							name:Width(165)
-							name:Height(8)
+							name:SetPoint("LEFT", frame, "LEFT", 4, 0)
+							name:SetWidth(165)
+							name:SetHeight(8)
 							name:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 							name:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 							name:SetJustifyH("LEFT")
@@ -116,7 +116,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 
 						if not timer.styled then
 							timer:ClearAllPoints()
-							timer:Point("RIGHT", frame, "RIGHT", -1, 0)
+							timer:SetPoint("RIGHT", frame, "RIGHT", -1, 0)
 							timer:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 							timer:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 							timer:SetJustifyH("RIGHT")
@@ -167,22 +167,22 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 					local _, anch, _ , _, _ = bar:GetPoint()
 					bar:ClearAllPoints()
 					if DBM_SavedOptions.HealthFrameGrowUp then
-						bar:Point("BOTTOM", anch, "TOP", 0, 3)
+						bar:SetPoint("BOTTOM", anch, "TOP", 0, 3)
 					else
-						bar:Point("TOP", anch, "BOTTOM", 0, -3)
+						bar:SetPoint("TOP", anch, "BOTTOM", 0, -3)
 					end
 				else
 					bar:ClearAllPoints()
 					if DBM_SavedOptions.HealthFrameGrowUp then
-						bar:Point("BOTTOMLEFT", prev, "TOPLEFT", 0, 3)
+						bar:SetPoint("BOTTOMLEFT", prev, "TOPLEFT", 0, 3)
 					else
-						bar:Point("TOPLEFT", prev, "BOTTOMLEFT", 0, -3)
+						bar:SetPoint("TOPLEFT", prev, "BOTTOMLEFT", 0, -3)
 					end
 				end
 
 				if not bar.styled then
 					bar:SetScale(1)
-					bar:Height(19)
+					bar:SetHeight(19)
 					bar:SetTemplate("Default")
 					background:SetNormalTexture(nil)
 					bar.styled = true
@@ -195,12 +195,12 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 					progress.styled = true
 				end
 				progress:ClearAllPoints()
-				progress:Point("TOPLEFT", bar, "TOPLEFT", 2, -2)
-				progress:Point("BOTTOMRIGHT", bar, "BOTTOMRIGHT", -2, 2)
+				progress:SetPoint("TOPLEFT", bar, "TOPLEFT", 2, -2)
+				progress:SetPoint("BOTTOMRIGHT", bar, "BOTTOMRIGHT", -2, 2)
 
 				if not name.styled then
 					name:ClearAllPoints()
-					name:Point("LEFT", bar, "LEFT", 4, 0)
+					name:SetPoint("LEFT", bar, "LEFT", 4, 0)
 					name:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 					name:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 					name:SetJustifyH("LEFT")
@@ -209,7 +209,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 
 				if not timer.styled then
 					timer:ClearAllPoints()
-					timer:Point("RIGHT", bar, "RIGHT", -1, 0)
+					timer:SetPoint("RIGHT", bar, "RIGHT", -1, 0)
 					timer:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 					timer:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 					timer:SetJustifyH("RIGHT")
@@ -250,16 +250,16 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 
 		_G["DBM_GUI_OptionsFrameTab1"]:StripTextures()
 		_G["DBM_GUI_OptionsFrameTab1"]:ClearAllPoints()
-		_G["DBM_GUI_OptionsFrameTab1"]:Point("TOPLEFT", _G["DBM_GUI_OptionsFrameBossMods"], "TOPLEFT", 10, 27)
+		_G["DBM_GUI_OptionsFrameTab1"]:SetPoint("TOPLEFT", _G["DBM_GUI_OptionsFrameBossMods"], "TOPLEFT", 10, 27)
 		_G["DBM_GUI_OptionsFrameTab2"]:StripTextures()
 		_G["DBM_GUI_OptionsFrameTab2"]:ClearAllPoints()
-		_G["DBM_GUI_OptionsFrameTab2"]:Point("TOPLEFT", _G["DBM_GUI_OptionsFrameTab1"], "TOPRIGHT", 6, 0)
+		_G["DBM_GUI_OptionsFrameTab2"]:SetPoint("TOPLEFT", _G["DBM_GUI_OptionsFrameTab1"], "TOPRIGHT", 6, 0)
 
 		_G["DBM_GUI_OptionsFrameBossMods"]:HookScript("OnShow", function(self) self:SetTemplate("Overlay") end)
 		_G["DBM_GUI_OptionsFrameDBMOptions"]:HookScript("OnShow", function(self) self:SetTemplate("Overlay") end)
 		_G["DBM_GUI_OptionsFrameHeader"]:SetTexture("")
 		_G["DBM_GUI_OptionsFrameHeader"]:ClearAllPoints()
-		_G["DBM_GUI_OptionsFrameHeader"]:Point("TOP", DBM_GUI_OptionsFrame, 0, 7)
+		_G["DBM_GUI_OptionsFrameHeader"]:SetPoint("TOP", DBM_GUI_OptionsFrame, 0, 7)
 
 		local dbmbskins = {
 			"DBM_GUI_OptionsFrameOkay",

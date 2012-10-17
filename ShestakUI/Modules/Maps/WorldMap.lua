@@ -17,8 +17,8 @@ end
 -- Styling World Map
 local SmallerMapSkin = function()
 	mapbg:SetScale(1 / WORLDMAP_WINDOWED_SIZE)
-	mapbg:Point("TOPLEFT", WorldMapDetailFrame, -2, 2)
-	mapbg:Point("BOTTOMRIGHT", WorldMapDetailFrame, 2, -2)
+	mapbg:SetPoint("TOPLEFT", WorldMapDetailFrame, -2, 2)
+	mapbg:SetPoint("BOTTOMRIGHT", WorldMapDetailFrame, 2, -2)
 	mapbg:SetFrameStrata("MEDIUM")
 	mapbg:SetFrameLevel(20)
 
@@ -43,23 +43,23 @@ local SmallerMapSkin = function()
 
 	WorldMapFrameTitle:ClearAllPoints()
 	WorldMapFrameTitle:SetParent(WorldMapDetailFrame)
-	WorldMapFrameTitle:Point("TOP", WorldMapDetailFrame, 0, -3)
+	WorldMapFrameTitle:SetPoint("TOP", WorldMapDetailFrame, 0, -3)
 	WorldMapFrameTitle:SetFont(C.media.normal_font, 17)
 
 	T.SkinCheckBox(WorldMapQuestShowObjectives)
 	WorldMapQuestShowObjectives:ClearAllPoints()
-	WorldMapQuestShowObjectives:Point("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", -3 - WorldMapQuestShowObjectivesText:GetWidth(), 0)
+	WorldMapQuestShowObjectives:SetPoint("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", -3 - WorldMapQuestShowObjectivesText:GetWidth(), 0)
 
 	T.SkinCheckBox(WorldMapTrackQuest)
 	WorldMapTrackQuest:ClearAllPoints()
-	WorldMapTrackQuest:Point("BOTTOMLEFT", WorldMapButton, "BOTTOMLEFT", 0, 0)
+	WorldMapTrackQuest:SetPoint("BOTTOMLEFT", WorldMapButton, "BOTTOMLEFT", 0, 0)
 
 	T.SkinCheckBox(WorldMapShowDigSites)
 	WorldMapShowDigSites:ClearAllPoints()
-	WorldMapShowDigSites:Point("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
+	WorldMapShowDigSites:SetPoint("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
 
 	WorldMapShowDigSitesText:ClearAllPoints()
-	WorldMapShowDigSitesText:Point("LEFT", WorldMapShowDigSites, "RIGHT", 0, 0)
+	WorldMapShowDigSitesText:SetPoint("LEFT", WorldMapShowDigSites, "RIGHT", 0, 0)
 
 	WorldMapFrameAreaLabel:SetFont(C.media.normal_font, 40)
 	WorldMapFrameAreaLabel:SetShadowOffset(2, -2)
@@ -73,7 +73,7 @@ local SmallerMapSkin = function()
 
 	WorldMapShowDropDown:SetScale(WORLDMAP_WINDOWED_SIZE)
 	WorldMapShowDropDown:ClearAllPoints()
-	WorldMapShowDropDown:Point("TOPRIGHT", WorldMapButton, "TOPRIGHT", 10, -3)
+	WorldMapShowDropDown:SetPoint("TOPRIGHT", WorldMapButton, "TOPRIGHT", 10, -3)
 	WorldMapShowDropDown:SetFrameStrata("HIGH")
 
 	-- Fix tooltip not hidding after leaving quest # tracker icon
@@ -120,15 +120,15 @@ coords.PlayerText:SetFont(C.media.normal_font, 17)
 coords.PlayerText:SetJustifyH("LEFT")
 coords.PlayerText:SetText(UnitName("player")..": 0,0")
 if IsAddOnLoaded("_NPCScan.Overlay") then
-	coords.PlayerText:Point("TOPLEFT", WorldMapButton, "TOPLEFT", 3, -50)
+	coords.PlayerText:SetPoint("TOPLEFT", WorldMapButton, "TOPLEFT", 3, -50)
 else
-	coords.PlayerText:Point("TOPLEFT", WorldMapButton, "TOPLEFT", 3, -3)
+	coords.PlayerText:SetPoint("TOPLEFT", WorldMapButton, "TOPLEFT", 3, -3)
 end
 
 coords.MouseText = WorldMapButton:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 coords.MouseText:SetFont(C.media.normal_font, 17)
 coords.MouseText:SetJustifyH("LEFT")
-coords.MouseText:Point("TOPLEFT", coords.PlayerText, "BOTTOMLEFT", 0, -3)
+coords.MouseText:SetPoint("TOPLEFT", coords.PlayerText, "BOTTOMLEFT", 0, -3)
 coords.MouseText:SetText(L_MAP_CURSOR..": 0,0")
 
 local int = 0

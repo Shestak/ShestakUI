@@ -30,17 +30,17 @@ local function StyleNormalButton(self)
 	end
 
 	count:ClearAllPoints()
-	count:Point("BOTTOMRIGHT", 0, 2)
+	count:SetPoint("BOTTOMRIGHT", 0, 2)
 	count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 	count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 
 	if btname then
 		if C.actionbar.macro == true then
 			btname:ClearAllPoints()
-			btname:Point("BOTTOM", 0, 0)
+			btname:SetPoint("BOTTOM", 0, 0)
 			btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-			--btname:Width(C.actionbar.button_size - 1)
+			--btname:SetWidth(C.actionbar.button_size - 1)
 		else
 			btname:Kill()
 		end
@@ -48,10 +48,10 @@ local function StyleNormalButton(self)
 
 	if C.actionbar.hotkey == true then
 		hotkey:ClearAllPoints()
-		hotkey:Point("TOPRIGHT", 0, 0)
+		hotkey:SetPoint("TOPRIGHT", 0, 0)
 		hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 		hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-		hotkey:Width(C.actionbar.button_size - 1)
+		hotkey:SetWidth(C.actionbar.button_size - 1)
 		hotkey.ClearAllPoints = T.dummy
 		hotkey.SetPoint = T.dummy
 	else
@@ -60,7 +60,7 @@ local function StyleNormalButton(self)
 
 	if not button.isSkinned then
 		if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not name:match("Extra") then
-			self:Size(C.actionbar.button_size)
+			self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
 		if name:match("Extra") then
 			button:SetTemplate("Default")
@@ -74,8 +74,8 @@ local function StyleNormalButton(self)
 		end
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		icon:Point("TOPLEFT", button, 2, -2)
-		icon:Point("BOTTOMRIGHT", button, -2, 2)
+		icon:SetPoint("TOPLEFT", button, 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
 
 		button.isSkinned = true
 	end
@@ -86,8 +86,8 @@ local function StyleNormalButton(self)
 
 	if normal then
 		normal:ClearAllPoints()
-		normal:Point("TOPLEFT")
-		normal:Point("BOTTOMRIGHT")
+		normal:SetPoint("TOPLEFT")
+		normal:SetPoint("BOTTOMRIGHT")
 	end
 end
 
@@ -97,11 +97,11 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 	button.SetNormalTexture = T.dummy
 
 	flash:SetTexture(0.8, 0.8, 0.8, 0.5)
-	flash:Point("TOPLEFT", button, 2, -2)
-	flash:Point("BOTTOMRIGHT", button, -2, 2)
+	flash:SetPoint("TOPLEFT", button, 2, -2)
+	flash:SetPoint("BOTTOMRIGHT", button, -2, 2)
 
 	if not button.isSkinned then
-		button:Size(C.actionbar.button_size)
+		button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		button:CreateBackdrop("Transparent")
 		button.backdrop:SetAllPoints()
 		if C.actionbar.classcolor_border == true then
@@ -110,20 +110,20 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
-		icon:Point("TOPLEFT", button, 2, -2)
-		icon:Point("BOTTOMRIGHT", button, -2, 2)
+		icon:SetPoint("TOPLEFT", button, 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
 
 		if pet then
 			local autocast = _G[name.."AutoCastable"]
-			autocast:Size((C.actionbar.button_size * 2) - 10)
+			autocast:SetSize((C.actionbar.button_size * 2) - 10, (C.actionbar.button_size * 2) - 10)
 			autocast:ClearAllPoints()
-			autocast:Point("CENTER", button, 0, 0)
+			autocast:SetPoint("CENTER", button, 0, 0)
 
 			local shine = _G[name.."Shine"]
-			shine:Size(C.actionbar.button_size)
+			shine:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 
 			local cooldown = _G[name.."Cooldown"]
-			cooldown:Size(C.actionbar.button_size - 2)
+			cooldown:SetSize(C.actionbar.button_size - 2, C.actionbar.button_size - 2)
 		end
 
 		button.isSkinned = true
@@ -131,8 +131,8 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 
 	if normal then
 		normal:ClearAllPoints()
-		normal:Point("TOPLEFT")
-		normal:Point("BOTTOMRIGHT")
+		normal:SetPoint("TOPLEFT")
+		normal:SetPoint("BOTTOMRIGHT")
 	end
 end
 

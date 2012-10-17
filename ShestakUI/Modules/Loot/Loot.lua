@@ -37,7 +37,7 @@ function Butsu:LOOT_OPENED(event, autoloot)
 		y = y / self:GetEffectiveScale()
 
 		self:ClearAllPoints()
-		self:Point("TOPLEFT", nil, "BOTTOMLEFT", x - 40, y + 20)
+		self:SetPoint("TOPLEFT", nil, "BOTTOMLEFT", x - 40, y + 20)
 		self:GetCenter()
 		self:Raise()
 	end
@@ -115,9 +115,9 @@ function Butsu:LOOT_OPENED(event, autoloot)
 	local color = ITEM_QUALITY_COLORS[m]
 	self:SetBackdropBorderColor(color.r, color.g, color.b, 0.8)
 
-	self:Width(C.loot.width)
-	self.title:Width(C.loot.width - 45)
-	self.title:Height(C.font.loot_font_size)
+	self:SetWidth(C.loot.width)
+	self.title:SetWidth(C.loot.width - 45)
+	self.title:SetHeight(C.font.loot_font_size)
 end
 Butsu:RegisterEvent("LOOT_OPENED")
 
@@ -155,7 +155,7 @@ do
 	title:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 	title:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
 	title:SetJustifyH("LEFT")
-	title:Point("TOPLEFT", Butsu, "TOPLEFT", 8, -7)
+	title:SetPoint("TOPLEFT", Butsu, "TOPLEFT", 8, -7)
 	Butsu.title = title
 end
 
@@ -178,7 +178,7 @@ Butsu:SetMovable(true)
 Butsu:RegisterForClicks("anyup")
 Butsu:SetParent(UIParent)
 Butsu:SetUserPlaced(true)
-Butsu:Point(unpack(C.position.loot))
+Butsu:SetPoint(unpack(C.position.loot))
 Butsu:SetTemplate("Transparent")
 Butsu:SetClampedToScreen(true)
 Butsu:SetFrameStrata("DIALOG")
@@ -188,12 +188,12 @@ Butsu:SetFrameLevel(10)
 local close = CreateFrame("Button", "LootCloseButton", Butsu, "UIPanelCloseButton")
 if C.skins.blizzard_frames == true then
 	T.SkinCloseButton(close, nil, nil, true)
-	close:Width(14)
-	close:Height(14)
+	close:SetWidth(14)
+	close:SetHeight(14)
 else
-	close:Width(25)
-	close:Height(25)
-	close:Point("TOPRIGHT", 0, 1)
+	close:SetWidth(25)
+	close:SetHeight(25)
+	close:SetPoint("TOPRIGHT", 0, 1)
 end
 close:SetScript("OnClick", function() CloseLoot() end)
 
@@ -269,14 +269,14 @@ end
 
 if C.skins.blizzard_frames == true then
 	T.SkinCloseButton(lb, LootCloseButton, "-", true)
-	lb:Width(14)
-	lb:Height(14)
+	lb:SetWidth(14)
+	lb:SetHeight(14)
 else
-	lb:Width(15)
-	lb:Height(13)
+	lb:SetWidth(15)
+	lb:SetHeight(13)
 end
 lb:ClearAllPoints()
-lb:Point("BOTTOMRIGHT", Butsu, "TOPRIGHT", -21, -18)
+lb:SetPoint("BOTTOMRIGHT", Butsu, "TOPRIGHT", -21, -18)
 lb:SetFrameStrata("DIALOG")
 lb:RegisterForClicks("RightButtonUp", "LeftButtonUp")
 lb:SetScript("OnClick", function(self, button)
@@ -352,7 +352,7 @@ do
 
 	function _NS.CreateSlot(id)
 		local frame = CreateFrame("Button", "ButsuSlot"..id, Butsu)
-		frame:Height(math.max(C.font.loot_font_size, C.loot.icon_size))
+		frame:SetHeight(math.max(C.font.loot_font_size, C.loot.icon_size))
 		frame:SetID(id)
 
 		frame:RegisterForClicks("LeftButtonUp", "RightButtonUp")
@@ -363,27 +363,27 @@ do
 		frame:SetScript("OnUpdate", OnUpdate)
 
 		local iconFrame = CreateFrame("Frame", nil, frame)
-		iconFrame:Size(C.loot.icon_size)
+		iconFrame:SetSize(C.loot.icon_size, C.loot.icon_size)
 		iconFrame:SetTemplate("Default")
-		iconFrame:Point("LEFT", frame)
+		iconFrame:SetPoint("LEFT", frame)
 		frame.iconFrame = iconFrame
 
 		local icon = iconFrame:CreateTexture(nil, "ARTWORK")
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		icon:Point("TOPLEFT", 2, -2)
-		icon:Point("BOTTOMRIGHT", -2, 2)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 		frame.icon = icon
 
 		local quest = iconFrame:CreateTexture(nil, "OVERLAY")
 		quest:SetTexture("Interface\\Minimap\\ObjectIcons")
 		quest:SetTexCoord(1/8, 2/8, 1/8, 2/8)
-		quest:Size(C.loot.icon_size * 0.8)
+		quest:SetSize(C.loot.icon_size * 0.8, C.loot.icon_size * 0.8)
 		quest:SetPoint("BOTTOMLEFT", -C.loot.icon_size * 0.15, 0)
 		frame.quest = quest
 
 		local count = iconFrame:CreateFontString(nil, "OVERLAY")
 		count:SetJustifyH("RIGHT")
-		count:Point("BOTTOMRIGHT", iconFrame, "BOTTOMRIGHT", 1, 1)
+		count:SetPoint("BOTTOMRIGHT", iconFrame, "BOTTOMRIGHT", 1, 1)
 		count:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 		count:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
 		count:SetText(1)
@@ -391,23 +391,23 @@ do
 
 		local name = frame:CreateFontString(nil, "OVERLAY")
 		name:SetJustifyH("LEFT")
-		name:Point("LEFT", icon, "RIGHT", 10, 0)
+		name:SetPoint("LEFT", icon, "RIGHT", 10, 0)
 		name:SetNonSpaceWrap(true)
 		name:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 		name:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
-		name:Width(C.loot.width - C.loot.icon_size - 20)
-		name:Height(C.font.loot_font_size)
+		name:SetWidth(C.loot.width - C.loot.icon_size - 20)
+		name:SetHeight(C.font.loot_font_size)
 		frame.name = name
 
 		local drop = frame:CreateTexture(nil, "ARTWORK")
 		drop:SetTexture(C.media.blank)
-		drop:Point("TOPLEFT", C.loot.icon_size + 5, -2)
-		drop:Point("BOTTOMRIGHT", -2, 2)
+		drop:SetPoint("TOPLEFT", C.loot.icon_size + 5, -2)
+		drop:SetPoint("BOTTOMRIGHT", -2, 2)
 		drop:SetAlpha(0.5)
 		frame.drop = drop
 
 		frame:CreateBackdrop("Default")
-		frame.backdrop:Point("TOPLEFT", C.loot.icon_size + 3, 0)
+		frame.backdrop:SetPoint("TOPLEFT", C.loot.icon_size + 3, 0)
 		frame.backdrop:SetPoint("BOTTOMRIGHT")
 
 		slots[id] = frame
@@ -423,21 +423,21 @@ do
 			local frame = slots[i]
 			if frame:IsShown() then
 				frame:ClearAllPoints()
-				frame:Point("LEFT", 8, 0)
-				frame:Point("RIGHT", -8, 0)
+				frame:SetPoint("LEFT", 8, 0)
+				frame:SetPoint("RIGHT", -8, 0)
 				if not prevShown then
-					frame:Point("TOPLEFT", self, 8, -25)
+					frame:SetPoint("TOPLEFT", self, 8, -25)
 				else
-					frame:Point("TOP", prevShown, "BOTTOM", 0, -3)
+					frame:SetPoint("TOP", prevShown, "BOTTOM", 0, -3)
 				end
 
-				frame:Height(frameSize)
+				frame:SetHeight(frameSize)
 				shownSlots = shownSlots + 1
 				prevShown = frame
 			end
 		end
 
-		self:Height((shownSlots * (frameSize + 3)) + 30)
+		self:SetHeight((shownSlots * (frameSize + 3)) + 30)
 	end
 end
 

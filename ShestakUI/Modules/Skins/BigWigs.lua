@@ -65,7 +65,7 @@ end
 
 local applystyle = function(bar)
 	-- General bar settings
-	bar:Height(15)
+	bar:SetHeight(15)
 	bar:SetScale(1)
 	bar.OldSetScale = bar.SetScale
 	bar.SetScale = T.dummy
@@ -79,8 +79,8 @@ local applystyle = function(bar)
 	end
 	bg:SetParent(bar)
 	bg:ClearAllPoints()
-	bg:Point("TOPLEFT", bar, "TOPLEFT", -2, 2)
-	bg:Point("BOTTOMRIGHT", bar, "BOTTOMRIGHT", 2, -2)
+	bg:SetPoint("TOPLEFT", bar, "TOPLEFT", -2, 2)
+	bg:SetPoint("BOTTOMRIGHT", bar, "BOTTOMRIGHT", 2, -2)
 	bg:SetFrameStrata("BACKGROUND")
 	bg:Show()
 	bar:Set("bigwigs:shestakui:bg", bg)
@@ -95,8 +95,8 @@ local applystyle = function(bar)
 		end
 		ibg:SetParent(bar)
 		ibg:ClearAllPoints()
-		ibg:Point("TOPLEFT", bar.candyBarIconFrame, "TOPLEFT", -2, 2)
-		ibg:Point("BOTTOMRIGHT", bar.candyBarIconFrame, "BOTTOMRIGHT", 2, -2)
+		ibg:SetPoint("TOPLEFT", bar.candyBarIconFrame, "TOPLEFT", -2, 2)
+		ibg:SetPoint("BOTTOMRIGHT", bar.candyBarIconFrame, "BOTTOMRIGHT", 2, -2)
 		ibg:SetFrameStrata("BACKGROUND")
 		ibg:Show()
 		bar:Set("bigwigs:shestakui:ibg", ibg)
@@ -107,13 +107,13 @@ local applystyle = function(bar)
 	bar.candyBarLabel:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 	bar.candyBarLabel:SetJustifyH("LEFT")
 	bar.candyBarLabel:ClearAllPoints()
-	bar.candyBarLabel:Point("LEFT", bar, "LEFT", 2, 0)
+	bar.candyBarLabel:SetPoint("LEFT", bar, "LEFT", 2, 0)
 
 	bar.candyBarDuration:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 	bar.candyBarDuration:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 	bar.candyBarDuration:SetJustifyH("RIGHT")
 	bar.candyBarDuration:ClearAllPoints()
-	bar.candyBarDuration:Point("RIGHT", bar, "RIGHT", 1, 0)
+	bar.candyBarDuration:SetPoint("RIGHT", bar, "RIGHT", 1, 0)
 
 	-- Setup bar positions and look
 	bar.candyBarBar:ClearAllPoints()
@@ -126,8 +126,8 @@ local applystyle = function(bar)
 
 	-- Setup icon positions and other things
 	bar.candyBarIconFrame:ClearAllPoints()
-	bar.candyBarIconFrame:Point("BOTTOMLEFT", bar, "BOTTOMLEFT", -28, 0)
-	bar.candyBarIconFrame:Size(21)
+	bar.candyBarIconFrame:SetPoint("BOTTOMLEFT", bar, "BOTTOMLEFT", -28, 0)
+	bar.candyBarIconFrame:SetSize(21, 21)
 	bar.candyBarIconFrame.OldSetWidth = bar.candyBarIconFrame.SetWidth
 	bar.candyBarIconFrame.SetWidth = T.dummy
 	bar.candyBarIconFrame:SetTexCoord(0.1, 0.9, 0.1, 0.9)
