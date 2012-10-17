@@ -138,7 +138,7 @@ local function Shared(self, unit)
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
-		self.ReadyCheck:SetSize(12)
+		self.ReadyCheck:SetSize(12, 12)
 		self.ReadyCheck:SetPoint("BOTTOMRIGHT", self.Health, 2, 2)
 	end
 
@@ -164,7 +164,7 @@ local function Shared(self, unit)
 	self.ResurrectIcon = self.Health:CreateTexture(nil, "OVERLAY")
 	--self.ResurrectIcon:SetTexture("Interface\\Icons\\Spell_Holy_Resurrection")
 	--self.ResurrectIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	self.ResurrectIcon:SetSize(13)
+	self.ResurrectIcon:SetSize(13, 13)
 	self.ResurrectIcon:SetPoint("BOTTOMRIGHT", self.Health, 2, 3)
 
 	-- Debuff highlight

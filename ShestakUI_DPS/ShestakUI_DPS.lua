@@ -191,7 +191,7 @@ local function Shared(self, unit)
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
-		self.ReadyCheck:SetSize(12)
+		self.ReadyCheck:SetSize(12, 12)
 		self.ReadyCheck:SetPoint("TOP", self.Health, "TOP", 5, -3)
 	end
 
