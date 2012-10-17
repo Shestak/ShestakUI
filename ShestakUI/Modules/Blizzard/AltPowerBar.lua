@@ -83,10 +83,9 @@ status:SetScript("OnUpdate", function(self, elapsed)
 	if update >= 1 then
 		local power = UnitPower("player", ALTERNATE_POWER_INDEX)
 		local mpower = UnitPowerMax("player", ALTERNATE_POWER_INDEX)
-
 		self:SetMinMaxValues(0, mpower)
 		self:SetValue(power)
-		self.text:SetText(power.."/"..mpower)
+		self.text:SetText(power.."/"..mpower.." - "..floor(power / mpower * 100).."%")
 		update = 0
 	end
 end)
