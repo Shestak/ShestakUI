@@ -419,6 +419,7 @@ if T.coauthor == true then
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
 	C["misc"].invite_keyword = "инв"
+	C["misc"].quest_auto_button = true
 	C["misc"].profession_database = true
 	C["misc"].item_level = true
 	C["misc"].gem_counter = true

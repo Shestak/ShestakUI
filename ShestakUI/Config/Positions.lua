@@ -34,7 +34,7 @@ C["position"] = {
 	["top_panel"] = {"TOP", UIParent, "TOP", 0, -20},								-- Top panel
 	["raid_utility"] = {"TOP", UIParent, "TOP", -280, 1},							-- Raid utility
 	["archaeology"] = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5},					-- Archaeology frame
-	["auto_button"] = {"BOTTOMLEFT", Minimap, "TOPLEFT", -2, 27},					-- Auto button
+	["auto_button"] = {"TOPLEFT", Minimap, "BOTTOMLEFT", -2, -27},					-- Auto button
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},							-- Bottom bars
 	["right_bars"] = {"RIGHT", UIParent, "RIGHT", -21, 0},							-- Right bars
