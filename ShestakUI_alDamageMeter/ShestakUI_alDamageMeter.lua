@@ -66,8 +66,6 @@ local shields = {}
 
 local menuFrame = CreateFrame("Frame", "alDamageMeterMenu", UIParent, "UIDropDownMenuTemplate")
 
-local dummy = function() return end
-
 local truncate = function(value)
 	if value >= 1e6 then
 		return string.format("%.2fm", value / 1e6)
@@ -180,7 +178,7 @@ local reportList = {
 		end,
 	},
 	{
-		text = PLAYER.."..",
+		text = STATUS_TEXT_PLAYER.."..",
 		func = function()
 			StaticPopupDialogs[addon_name.."ReportDialog"].OnAccept = function(self)
 				report("WHISPER", _G[self:GetName().."EditBox"]:GetText())
@@ -246,11 +244,11 @@ local CreateBar = function()
 	newbar.backgdrop:SetPoint("BOTTOMRIGHT", 2, -2)
 
 	newbar.left = CreateFS(newbar)
-	newbar.left:SetPoint("LEFT", 3, (0.5 * UIParent:GetEffectiveScale())-1)
+	newbar.left:SetPoint("LEFT", 3, (0.5 * UIParent:GetEffectiveScale()) - 1)
 	newbar.left:SetJustifyH("LEFT")
 
 	newbar.right = CreateFS(newbar)
-	newbar.right:SetPoint("RIGHT", 1, (0.5 * UIParent:GetEffectiveScale())-1)
+	newbar.right:SetPoint("RIGHT", 1, (0.5 * UIParent:GetEffectiveScale()) - 1)
 	newbar.right:SetJustifyH("RIGHT")
 
 	newbar:SetScript("OnEnter", OnBarEnter)
@@ -307,7 +305,7 @@ local UpdateBars = function()
 	table.sort(barguids, SortMethod)
 	local color, cur, max
 	for i = 1, #barguids do
-		cur = display[barguids[i+offset]]
+		cur = display[barguids[i + offset]]
 		max = display[barguids[1]]
 		if i > maxbars or not cur then break end
 		if cur[sMode].amount == 0 then break end
@@ -465,7 +463,7 @@ local CheckUnit = function(unit)
 			class = select(2, UnitClass(unit)),
 			unit = unit,
 		}
-		pet = unit .. "pet"
+		pet = unit.."pet"
 		CheckPet(unit, pet)
 	end
 end
@@ -676,7 +674,7 @@ local OnEvent = function(self, event, ...)
 		end
 	elseif event == "UNIT_PET" then
 		local unit = ...
-		local pet = unit .. "pet"
+		local pet = unit.."pet"
 		CheckPet(unit, pet)
 	end
 end
@@ -702,6 +700,6 @@ SlashCmdList["alDamage"] = function(msg)
 end
 SLASH_alDamage1 = "/aldmg"
 SLASH_alDamage2 = "/фдвьп"
-SLASH_alDamage3 = "/dmeter"
+SLASH_alDamage3 = "danni"
 
 -- edit by Oz of shestak. org --
