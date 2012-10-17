@@ -1,7 +1,7 @@
 local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Bottom bars panel
+--	Bottom bars anchor
 ----------------------------------------------------------------------------------------
 local bottombaranchor = CreateFrame("Frame", "ActionBarAnchor", UIParent)
 bottombaranchor:CreatePanel("Invisible", 1, 1, unpack(C.position.bottom_bars))
@@ -20,7 +20,7 @@ end
 bottombaranchor:SetFrameStrata("LOW")
 
 ----------------------------------------------------------------------------------------
---	Right bars panel
+--	Right bars anchor
 ----------------------------------------------------------------------------------------
 local rightbaranchor = CreateFrame("Frame", "RightActionBarAnchor", UIParent)
 rightbaranchor:CreatePanel("Invisible", 1, 1, unpack(C.position.right_bars))
@@ -37,7 +37,7 @@ end
 rightbaranchor:SetFrameStrata("LOW")
 
 ----------------------------------------------------------------------------------------
---	Split bar panels
+--	Split bar anchor
 ----------------------------------------------------------------------------------------
 if C.actionbar.split_bars == true then
 	local SplitBarLeft = CreateFrame("Frame", "SplitBarLeft", UIParent)
@@ -50,7 +50,7 @@ if C.actionbar.split_bars == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Pet bar panel
+--	Pet bar anchor
 ----------------------------------------------------------------------------------------
 local petbaranchor = CreateFrame("Frame", "PetActionBarAnchor", UIParent)
 petbaranchor:SetFrameStrata("LOW")
@@ -65,7 +65,7 @@ else
 end
 
 ----------------------------------------------------------------------------------------
---	Stance bar panel
+--	Stance bar anchor
 ----------------------------------------------------------------------------------------
 if C.actionbar.stancebar_hide ~= true then
 	local shiftanchor = CreateFrame("Frame", "ShapeShiftBarAnchor", UIParent)
@@ -90,7 +90,7 @@ if C.actionbar.stancebar_hide ~= true then
 end
 
 ----------------------------------------------------------------------------------------
---	Bottom panel
+--	Bottom line
 ----------------------------------------------------------------------------------------
 local bottompanel = CreateFrame("Frame", "BottomPanel", UIParent)
 bottompanel:CreatePanel("ClassColor", 1, 1, "BOTTOM", UIParent, "BOTTOM", 0, 20)
@@ -122,7 +122,6 @@ end
 ----------------------------------------------------------------------------------------
 if C.toppanel.enable ~= true then return end
 
--- Create anchor
 local toppanelanchor = CreateFrame("Frame", "TopPanelAnchor", UIParent)
 toppanelanchor:SetPoint(unpack(C.position.top_panel))
 toppanelanchor:SetSize(C.toppanel.width, C.toppanel.height / 2)
