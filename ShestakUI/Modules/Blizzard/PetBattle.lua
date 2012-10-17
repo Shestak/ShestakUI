@@ -46,7 +46,7 @@ for i, unit in pairs(units) do
 	unit.SpeedUnderlay:SetAlpha(0)
 
 	unit.FirstAttack = unit:CreateTexture(nil, "ARTWORK")
-	unit.FirstAttack:Size(20)
+	unit.FirstAttack:SetSize(20, 20)
 	unit.FirstAttack:SetTexture("Interface\\PetBattles\\PetBattle-StatIcons")
 	unit.FirstAttack:Hide()
 
@@ -187,7 +187,7 @@ for i, unit in pairs(extraUnits) do
 	unit.BorderAlive:SetAlpha(0)
 	unit.HealthBarBG:SetAlpha(0)
 	unit.HealthDivider:SetAlpha(0)
-	unit:Size(40)
+	unit:SetSize(40, 40)
 	unit:CreateBackdrop()
 	unit:ClearAllPoints()
 

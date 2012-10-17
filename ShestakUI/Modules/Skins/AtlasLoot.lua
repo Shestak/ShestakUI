@@ -203,7 +203,7 @@ frame:SetScript("OnEvent", function(self, event)
 	T.SkinNextPrevButton(AtlasLootItemsFrame_NEXT)
 	T.SkinNextPrevButton(AtlasLootItemsFrame_PREV)
 	T.SkinNextPrevButton(AtlasLootPanelSearch_SelectModuel)
-	AtlasLootPanelSearch_SelectModuel:Size(CharacterFrameExpandButton:GetWidth() + 2)
+	AtlasLootPanelSearch_SelectModuel:SetSize(CharacterFrameExpandButton:GetWidth() + 2, CharacterFrameExpandButton:GetWidth() + 2)
 	T.SkinNextPrevButton(AtlasLootCompareFrameSearch_SelectModuel)
 
 	T.SkinDropDownBox(AtlasLootDefaultFrame_ModuleSelect, 225)

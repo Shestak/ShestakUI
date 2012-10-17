@@ -67,7 +67,7 @@ end
 
 local CreateIcon = function()
 	local icon = CreateFrame("Frame", nil, UIParent)
-	icon:Size(C.enemycooldown.size)
+	icon:SetSize(C.enemycooldown.size, C.enemycooldown.size)
 	icon:SetTemplate("Default")
 	icon.Cooldown = CreateFrame("Cooldown", nil, icon)
 	icon.Cooldown:SetPoint("TOPLEFT", 2, -2)

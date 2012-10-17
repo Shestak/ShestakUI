@@ -100,15 +100,15 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 			if pet then
 				local autocast = _G[name.."AutoCastable"]
-				autocast:Size((button:GetWidth() * 2) - 10)
+				autocast:SetSize((button:GetWidth() * 2) - 10, (button:GetWidth() * 2) - 10)
 				autocast:ClearAllPoints()
 				autocast:SetPoint("CENTER", button, 0, 0)
 
 				local shine = _G[name.."Shine"]
-				shine:Size(button:GetWidth())
+				shine:SetSize(button:GetWidth(), button:GetWidth())
 
 				local cooldown = _G[name.."Cooldown"]
-				cooldown:Size(button:GetWidth() - 2)
+				cooldown:SetSize(button:GetWidth() - 2, button:GetWidth() - 2)
 			end
 
 			button.isSkinned = true

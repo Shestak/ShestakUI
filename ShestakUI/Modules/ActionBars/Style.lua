@@ -60,7 +60,7 @@ local function StyleNormalButton(self)
 
 	if not button.isSkinned then
 		if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not name:match("Extra") then
-			self:Size(C.actionbar.button_size)
+			self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
 		if name:match("Extra") then
 			button:SetTemplate("Default")
@@ -101,7 +101,7 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 	flash:SetPoint("BOTTOMRIGHT", button, -2, 2)
 
 	if not button.isSkinned then
-		button:Size(C.actionbar.button_size)
+		button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		button:CreateBackdrop("Transparent")
 		button.backdrop:SetAllPoints()
 		if C.actionbar.classcolor_border == true then
@@ -115,15 +115,15 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 
 		if pet then
 			local autocast = _G[name.."AutoCastable"]
-			autocast:Size((C.actionbar.button_size * 2) - 10)
+			autocast:SetSize((C.actionbar.button_size * 2) - 10, (C.actionbar.button_size * 2) - 10)
 			autocast:ClearAllPoints()
 			autocast:SetPoint("CENTER", button, 0, 0)
 
 			local shine = _G[name.."Shine"]
-			shine:Size(C.actionbar.button_size)
+			shine:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 
 			local cooldown = _G[name.."Cooldown"]
-			cooldown:Size(C.actionbar.button_size - 2)
+			cooldown:SetSize(C.actionbar.button_size - 2, C.actionbar.button_size - 2)
 		end
 
 		button.isSkinned = true

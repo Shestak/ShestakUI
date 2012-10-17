@@ -79,7 +79,7 @@ do
 		text:SetPoint("TOP", frame, 0, 1)
 		text:SetPoint("BOTTOM", frame)
 
-		frame:Size(281, 16)
+		frame:SetSize(281, 16)
 
 		frame:SetStatusBarTexture(C.media.texture)
 		frame:SetStatusBarColor(r, g, b)

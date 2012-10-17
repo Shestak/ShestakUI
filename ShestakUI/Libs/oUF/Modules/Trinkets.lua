@@ -103,11 +103,11 @@ frame:SetScript("OnEvent", Update)
 local Enable = function(self)
 	if self.Trinket then
 		self.Trinket.cooldownFrame = CreateFrame("Cooldown", nil, self.Trinket)
-		self.Trinket.cooldownFrame:Point("TOPLEFT", self.Trinket, 2, -2)
-		self.Trinket.cooldownFrame:Point("BOTTOMRIGHT", self.Trinket, -2, 2)
+		self.Trinket.cooldownFrame:SetPoint("TOPLEFT", self.Trinket, 2, -2)
+		self.Trinket.cooldownFrame:SetPoint("BOTTOMRIGHT", self.Trinket, -2, 2)
 		self.Trinket.Icon = self.Trinket:CreateTexture(nil, "BORDER")
-		self.Trinket.Icon:Point("TOPLEFT", self.Trinket, 2, -2)
-		self.Trinket.Icon:Point("BOTTOMRIGHT", self.Trinket, -2, 2)
+		self.Trinket.Icon:SetPoint("TOPLEFT", self.Trinket, 2, -2)
+		self.Trinket.Icon:SetPoint("BOTTOMRIGHT", self.Trinket, -2, 2)
 		self.Trinket.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		arenaFrame[self.unit] = self
 	end

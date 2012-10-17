@@ -363,7 +363,7 @@ do
 		frame:SetScript("OnUpdate", OnUpdate)
 
 		local iconFrame = CreateFrame("Frame", nil, frame)
-		iconFrame:Size(C.loot.icon_size)
+		iconFrame:SetSize(C.loot.icon_size, C.loot.icon_size)
 		iconFrame:SetTemplate("Default")
 		iconFrame:SetPoint("LEFT", frame)
 		frame.iconFrame = iconFrame
@@ -377,7 +377,7 @@ do
 		local quest = iconFrame:CreateTexture(nil, "OVERLAY")
 		quest:SetTexture("Interface\\Minimap\\ObjectIcons")
 		quest:SetTexCoord(1/8, 2/8, 1/8, 2/8)
-		quest:Size(C.loot.icon_size * 0.8)
+		quest:SetSize(C.loot.icon_size * 0.8, C.loot.icon_size * 0.8)
 		quest:SetPoint("BOTTOMLEFT", -C.loot.icon_size * 0.15, 0)
 		frame.quest = quest
 

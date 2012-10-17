@@ -378,7 +378,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MNarcanepower_FrameText:SetPoint("CENTER", MNarcanepower_Frame, "CENTER", 0, 0)
 
 	-- MageNugMI_Frame
-	MageNugMI_FrameTexture1:Size(21)
+	MageNugMI_FrameTexture1:SetSize(21, 21)
 
 	MageNugMI_Frame:CreateBackdrop("Default")
 	MageNugMI_Frame.backdrop:SetPoint("TOPLEFT", MageNugMI_FrameTexture1, -2, 2)
@@ -397,7 +397,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugMI_Frame_MIText1:SetPoint("RIGHT", MageNugMI_Frame_MiBar, "RIGHT", 0, 0)
 
 	-- MageNugCauterize_Frame
-	MageNugCauterize_FrameTexture1:Size(21)
+	MageNugCauterize_FrameTexture1:SetSize(21, 21)
 
 	MageNugCauterize_Frame:CreateBackdrop("Default")
 	MageNugCauterize_Frame.backdrop:SetPoint("TOPLEFT", MageNugCauterize_FrameTexture1, -2, 2)
@@ -416,7 +416,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugCauterize_Frame_Text1:SetPoint("RIGHT", MageNugCauterize_Frame_Bar, "RIGHT", 0, 0)
 
 	-- MageNugMBProcFrame
-	MageNugMBProcFrameTexture:Size(21)
+	MageNugMBProcFrameTexture:SetSize(21, 21)
 
 	MageNugMBProcFrame:CreateBackdrop("Default")
 	MageNugMBProcFrame.backdrop:SetPoint("TOPLEFT", MageNugMBProcFrameTexture, -2, 2)
@@ -436,7 +436,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugMBProcFrameText2:SetPoint("RIGHT", MageNugMBProcFrame_ProcBar, "RIGHT", 0, 0)
 
 	-- MageNugPolyFrame
-	MageNugPolyFrameTexture:Size(21)
+	MageNugPolyFrameTexture:SetSize(21, 21)
 
 	MageNugPolyFrame:CreateBackdrop("Default")
 	MageNugPolyFrame.backdrop:SetPoint("TOPLEFT", MageNugPolyFrameTexture, -2, 2)
@@ -456,7 +456,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugPolyFrameTimerText:SetPoint("RIGHT", MageNugPolyFrame_Bar, "RIGHT", 0, 0)
 
 	-- MageNugFoFProcFrame
-	MageNugFoFProcFrameTexture:Size(21)
+	MageNugFoFProcFrameTexture:SetSize(21, 21)
 
 	MageNugFoFProcFrame:CreateBackdrop("Default")
 	MageNugFoFProcFrame.backdrop:SetPoint("TOPLEFT", MageNugFoFProcFrameTexture, -2, 2)
@@ -479,7 +479,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugFoFProcFrameText2:SetPoint("RIGHT", MageNugFoFProcFrame_ProcBar, "RIGHT", 0, 0)
 
 	-- MageNugImpactProcFrame
-	MageNugImpactProcFrameTexture:Size(21)
+	MageNugImpactProcFrameTexture:SetSize(21, 21)
 
 	MageNugImpactProcFrame:CreateBackdrop("Default")
 	MageNugImpactProcFrame.backdrop:SetPoint("TOPLEFT", MageNugImpactProcFrameTexture, -2, 2)
@@ -499,7 +499,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugImpactProcFrameText2:SetPoint("RIGHT", MageNugImpactProcFrame_ProcBar, "RIGHT", 0, 0)
 
 	-- MageNugBFProcFrame
-	MageNugBFProcFrameTexture:Size(21)
+	MageNugBFProcFrameTexture:SetSize(21, 21)
 
 	MageNugBFProcFrame:CreateBackdrop("Default")
 	MageNugBFProcFrame.backdrop:SetPoint("TOPLEFT", MageNugBFProcFrameTexture, -2, 2)
@@ -519,7 +519,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugBFProcFrameText2:SetPoint("RIGHT", MageNugBFProcFrame_ProcBar, "RIGHT", 0, 0)
 
 	-- MageNugProcFrame
-	MageNugProcFrameTexture:Size(21)
+	MageNugProcFrameTexture:SetSize(21, 21)
 
 	MageNugProcFrame:CreateBackdrop("Default")
 	MageNugProcFrame.backdrop:SetPoint("TOPLEFT", MageNugProcFrameTexture, -2, 2)
@@ -546,7 +546,7 @@ frame:SetScript("OnEvent", function(self, event)
 	for i = 1, MageNugCauterizeFrame:GetNumRegions() do
 		local region = select(i, MageNugCauterizeFrame:GetRegions())
 		if region:GetObjectType() == "Texture" then
-			region:Size(30)
+			region:SetSize(30, 30)
 			region:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		end
 		if region:GetObjectType() == "FontString" then
@@ -729,7 +729,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugCastStarsurgeFrame.backdrop:SetPoint("BOTTOMRIGHT", MageNugCastStarsurgeFrameTexture, 2, -2)
 
 	-- MageNugSSProcFrame
-	MageNugSSProcFrameTexture:Size(21)
+	MageNugSSProcFrameTexture:SetSize(21, 21)
 
 	MageNugSSProcFrame:CreateBackdrop("Default")
 	MageNugSSProcFrame.backdrop:SetPoint("TOPLEFT", MageNugSSProcFrameTexture, -2, 2)

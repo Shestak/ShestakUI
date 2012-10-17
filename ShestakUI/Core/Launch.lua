@@ -96,7 +96,7 @@ local function InstallUI()
 			-- Move general chat to bottom left
 			if i == 1 then
 				frame:ClearAllPoints()
-				frame:Point(unpack(C.position.chat))
+				frame:SetPoint(unpack(C.position.chat))
 			end
 
 			-- Save new default position and dimension

@@ -85,7 +85,7 @@ local function LoadSkin()
 		button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		button.icon:SetPoint("LEFT", button, "LEFT", 10, 0)
 		button.icon:SetDrawLayer("OVERLAY")
-		button.icon:Size(40)
+		button.icon:SetSize(40, 40)
 
 		button.border = CreateFrame("Frame", nil, button)
 		button.border:CreateBackdrop("Default")

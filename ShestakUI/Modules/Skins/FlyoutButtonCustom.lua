@@ -66,7 +66,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 		if not button.isSkinned then
 			if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() then
-				self:Size(C.actionbar.button_size)
+				self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 			end
 
 			button:CreateBackdrop("Transparent")

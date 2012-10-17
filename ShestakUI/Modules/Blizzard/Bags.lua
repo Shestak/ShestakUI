@@ -378,7 +378,7 @@ function Stuffing:CreateBagFrame(w)
 	-- Buy button
 	if w == "Bank" then
 		f.b_purchase = CreateFrame("Button", "Stuffing_PurchaseButton"..w, f)
-		f.b_purchase:Size(80, 20)
+		f.b_purchase:SetSize(80, 20)
 		f.b_purchase:SetPoint("TOPLEFT", 10, -4)
 		f.b_purchase:RegisterForClicks("AnyUp")
 		f.b_purchase:SkinButton()
@@ -399,7 +399,7 @@ function Stuffing:CreateBagFrame(w)
 	-- Close button
 	f.b_close = CreateFrame("Button", "Stuffing_CloseButton"..w, f, "UIPanelCloseButton")
 	T.SkinCloseButton(f.b_close, nil, nil, true)
-	f.b_close:Size(15)
+	f.b_close:SetSize(15, 15)
 	f.b_close:SetScript("OnClick", function(self, btn)
 		if self:GetParent():GetName() == "StuffingFrameBags" and btn == "RightButton" then
 			if Stuffing_DDMenu.initialize ~= Stuffing.Menu then
@@ -583,7 +583,7 @@ function Stuffing:Layout(isBank)
 
 			b.frame:ClearAllPoints()
 			b.frame:SetPoint("LEFT", fb, "LEFT", xoff, 0)
-			b.frame:Size(bsize)
+			b.frame:SetSize(bsize, bsize)
 
 			local btns = self.buttons
 			b.frame:HookScript("OnEnter", function(self)
@@ -656,7 +656,7 @@ function Stuffing:Layout(isBank)
 
 				b.frame:ClearAllPoints()
 				b.frame:SetPoint("TOPLEFT", f, "TOPLEFT", xoff, yoff)
-				b.frame:Size(C.bag.button_size)
+				b.frame:SetSize(C.bag.button_size, C.bag.button_size)
 				b.frame.lock = false
 				b.frame:SetAlpha(1)
 

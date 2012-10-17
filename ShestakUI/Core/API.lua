@@ -4,39 +4,14 @@ local backdropr, backdropg, backdropb, backdropa = unpack(C.media.backdrop_color
 local borderr, borderg, borderb, bordera = unpack(C.media.border_color)
 
 ----------------------------------------------------------------------------------------
---	Pixel perfect size/width/height functions
-----------------------------------------------------------------------------------------
-local function Size(frame, width, height)
-	frame:SetSize(T.Scale(width), T.Scale(height or width))
-end
-
-local function Width(frame, width)
-	frame:SetWidth(T.Scale(width))
-end
-
-local function Height(frame, height)
-	frame:SetHeight(T.Scale(height))
-end
-
-local function Point(obj, arg1, arg2, arg3, arg4, arg5)
-	if type(arg1) == "number" then arg1 = T.Scale(arg1) end
-	if type(arg2) == "number" then arg2 = T.Scale(arg2) end
-	if type(arg3) == "number" then arg3 = T.Scale(arg3) end
-	if type(arg4) == "number" then arg4 = T.Scale(arg4) end
-	if type(arg5) == "number" then arg5 = T.Scale(arg5) end
-
-	obj:SetPoint(arg1, arg2, arg3, arg4, arg5)
-end
-
-----------------------------------------------------------------------------------------
 --	Template functions
 ----------------------------------------------------------------------------------------
 local function CreateOverlay(f)
 	if f.overlay then return end
 
 	local overlay = f:CreateTexture("$parentOverlay", "BORDER", f)
-	overlay:Point("TOPLEFT", 2, -2)
-	overlay:Point("BOTTOMRIGHT", -2, 2)
+	overlay:SetPoint("TOPLEFT", 2, -2)
+	overlay:SetPoint("BOTTOMRIGHT", -2, 2)
 	overlay:SetTexture(C.media.blank)
 	overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
 	f.overlay = overlay
@@ -46,8 +21,8 @@ local function CreateBorder(f, i, o)
 	if i then
 		if f.iborder then return end
 		local border = CreateFrame("Frame", "$parentInnerBorder", f)
-		border:Point("TOPLEFT", T.mult, -T.mult)
-		border:Point("BOTTOMRIGHT", -T.mult, T.mult)
+		border:SetPoint("TOPLEFT", T.mult, -T.mult)
+		border:SetPoint("BOTTOMRIGHT", -T.mult, T.mult)
 		border:SetBackdrop({
 			edgeFile = C.media.blank, edgeSize = T.mult,
 			insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult}
@@ -59,8 +34,8 @@ local function CreateBorder(f, i, o)
 	if o then
 		if f.oborder then return end
 		local border = CreateFrame("Frame", "$parentOuterBorder", f)
-		border:Point("TOPLEFT", -T.mult, T.mult)
-		border:Point("BOTTOMRIGHT", T.mult, -T.mult)
+		border:SetPoint("TOPLEFT", -T.mult, T.mult)
+		border:SetPoint("BOTTOMRIGHT", T.mult, -T.mult)
 		border:SetFrameLevel(f:GetFrameLevel() + 1)
 		border:SetBackdrop({
 			edgeFile = C.media.blank, edgeSize = T.mult,
@@ -109,11 +84,11 @@ end
 local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	GetTemplate(t)
 
-	f:Width(w)
-	f:Height(h)
+	f:SetWidth(w)
+	f:SetHeight(h)
 	f:SetFrameLevel(1)
 	f:SetFrameStrata("BACKGROUND")
-	f:Point(a1, p, a2, x, y)
+	f:SetPoint(a1, p, a2, x, y)
 	f:SetBackdrop({
 		bgFile = C.media.blank,
 		edgeFile = C.media.blank,
@@ -142,8 +117,8 @@ local function CreateBackdrop(f, t)
 	if not t then t = "Default" end
 
 	local b = CreateFrame("Frame", "$parentBackdrop", f)
-	b:Point("TOPLEFT", -2, 2)
-	b:Point("BOTTOMRIGHT", 2, -2)
+	b:SetPoint("TOPLEFT", -2, 2)
+	b:SetPoint("BOTTOMRIGHT", 2, -2)
 	b:SetTemplate(t)
 
 	if f:GetFrameLevel() - 1 >= 0 then
@@ -190,8 +165,8 @@ local function StyleButton(button)
 	if button.SetHighlightTexture and not button.hover then
 		local hover = button:CreateTexture("Frame", nil, self)
 		hover:SetTexture(1, 1, 1, 0.3)
-		hover:Point("TOPLEFT", button, 2, -2)
-		hover:Point("BOTTOMRIGHT", button, -2, 2)
+		hover:SetPoint("TOPLEFT", button, 2, -2)
+		hover:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		button.hover = hover
 		button:SetHighlightTexture(hover)
 	end
@@ -199,8 +174,8 @@ local function StyleButton(button)
 	if button.SetPushedTexture and not button.pushed then
 		local pushed = button:CreateTexture("Frame", nil, self)
 		pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
-		pushed:Point("TOPLEFT", button, 2, -2)
-		pushed:Point("BOTTOMRIGHT", button, -2, 2)
+		pushed:SetPoint("TOPLEFT", button, 2, -2)
+		pushed:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		button.pushed = pushed
 		button:SetPushedTexture(pushed)
 	end
@@ -208,8 +183,8 @@ local function StyleButton(button)
 	if button.SetCheckedTexture and not button.checked then
 		local checked = button:CreateTexture("Frame", nil, self)
 		checked:SetTexture(0, 1, 0, 0.3)
-		checked:Point("TOPLEFT", button, 2, -2)
-		checked:Point("BOTTOMRIGHT", button, -2, 2)
+		checked:SetPoint("TOPLEFT", button, 2, -2)
+		checked:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		button.checked = checked
 		button:SetCheckedTexture(checked)
 	end
@@ -217,8 +192,8 @@ local function StyleButton(button)
 	local cooldown = button:GetName() and _G[button:GetName().."Cooldown"]
 	if cooldown then
 		cooldown:ClearAllPoints()
-		cooldown:Point("TOPLEFT", button, 2, -2)
-		cooldown:Point("BOTTOMRIGHT", button, -2, 2)
+		cooldown:SetPoint("TOPLEFT", button, 2, -2)
+		cooldown:SetPoint("BOTTOMRIGHT", button, -2, 2)
 	end
 end
 

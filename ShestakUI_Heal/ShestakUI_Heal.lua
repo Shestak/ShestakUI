@@ -36,11 +36,11 @@ local function Shared(self, unit)
 	self.Health:SetPoint("TOPLEFT")
 	self.Health:SetPoint("TOPRIGHT")
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Health:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
-		self.Health:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
+		self.Health:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
+		self.Health:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
 	else
-		self.Health:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 3)
-		self.Health:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 3)
+		self.Health:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 3)
+		self.Health:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 3)
 	end
 	self.Health:SetStatusBarTexture(C.media.texture)
 
@@ -74,24 +74,24 @@ local function Shared(self, unit)
 	-- Names
 	self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Info:Point("CENTER", self.Health, "CENTER", 0, 0)
+		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, 0)
 	else
-		self.Info:Point("TOP", self.Health, "TOP", 0, -4)
+		self.Info:SetPoint("TOP", self.Health, "TOP", 0, -4)
 	end
 	self:Tag(self.Info, "[GetNameColor][NameShort]")
 
 	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank")) then
 		self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-		self.Health.value:Point("TOP", self.Info, "BOTTOM", 0, -1)
+		self.Health.value:SetPoint("TOP", self.Info, "BOTTOM", 0, -1)
 		self.Health.value:SetTextColor(1, 1, 1)
 
 		self.Health.PostUpdate = T.PostUpdateRaidHealth
 
 		-- Power bar
 		self.Power = CreateFrame("StatusBar", nil, self)
-		self.Power:Point("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
-		self.Power:Point("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
-		self.Power:Point("TOP", self, "BOTTOM", 0, 2)
+		self.Power:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
+		self.Power:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
+		self.Power:SetPoint("TOP", self, "BOTTOM", 0, 2)
 		self.Power:SetStatusBarTexture(C.media.texture)
 
 		self.Power.frequentUpdates = true
@@ -121,48 +121,48 @@ local function Shared(self, unit)
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
-		self.RaidIcon:Size(12)
-		self.RaidIcon:Point("BOTTOMLEFT", self.Health, -2, -5)
+		self.RaidIcon:SetSize(12)
+		self.RaidIcon:SetPoint("BOTTOMLEFT", self.Health, -2, -5)
 	end
 
 	-- LFD role icons
 	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
-		self.LFDRole:Size(12)
-		self.LFDRole:Point("TOP", self.Health, 0, 8)
+		self.LFDRole:SetSize(12)
+		self.LFDRole:SetPoint("TOP", self.Health, 0, 8)
 	end
 
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
-		self.ReadyCheck:Size(12)
-		self.ReadyCheck:Point("BOTTOMRIGHT", self.Health, 2, 1)
+		self.ReadyCheck:SetSize(12)
+		self.ReadyCheck:SetPoint("BOTTOMRIGHT", self.Health, 2, 1)
 	end
 
 	-- Leader/Assistant/ML icons
 	if C.raidframe.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		-- Leader icon
 		self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Leader:Size(12)
-		self.Leader:Point("TOPLEFT", self.Health, -3, 8)
+		self.Leader:SetSize(12)
+		self.Leader:SetPoint("TOPLEFT", self.Health, -3, 8)
 
 		-- Assistant icon
 		self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Assistant:Size(12)
-		self.Assistant:Point("TOPLEFT", self.Health, -3, 8)
+		self.Assistant:SetSize(12)
+		self.Assistant:SetPoint("TOPLEFT", self.Health, -3, 8)
 
 		-- Master looter icon
 		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
-		self.MasterLooter:Size(12)
-		self.MasterLooter:Point("TOPRIGHT", self.Health, 3, 8)
+		self.MasterLooter:SetSize(12)
+		self.MasterLooter:SetPoint("TOPRIGHT", self.Health, 3, 8)
 	end
 
 	-- Resurrect icon
 	self.ResurrectIcon = self.Health:CreateTexture(nil, "OVERLAY")
 	--self.ResurrectIcon:SetTexture("Interface\\Icons\\Spell_Holy_Resurrection")
 	--self.ResurrectIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	self.ResurrectIcon:Size(13)
-	self.ResurrectIcon:Point("BOTTOMRIGHT", self.Health, 2, -7)
+	self.ResurrectIcon:SetSize(13, 13)
+	self.ResurrectIcon:SetPoint("BOTTOMRIGHT", self.Health, 2, -7)
 
 	-- Debuff highlight
 	if not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
@@ -180,26 +180,26 @@ local function Shared(self, unit)
 		local mhpb = CreateFrame("StatusBar", nil, self.Health)
 		if C.raidframe.vertical_health == true then
 			mhpb:SetOrientation("VERTICAL")
-			mhpb:Point("BOTTOM", self.Health:GetStatusBarTexture(), "TOP", 0, 0)
-			mhpb:Height(unit_height)
+			mhpb:SetPoint("BOTTOM", self.Health:GetStatusBarTexture(), "TOP", 0, 0)
+			mhpb:SetHeight(unit_height)
 		else
-			mhpb:Point("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
-			mhpb:Point("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
+			mhpb:SetPoint("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
+			mhpb:SetPoint("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		end
-		mhpb:Width(unit_width)
+		mhpb:SetWidth(unit_width)
 		mhpb:SetStatusBarTexture(C.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		if C.raidframe.vertical_health == true then
 			ohpb:SetOrientation("VERTICAL")
-			ohpb:Point("BOTTOM", mhpb:GetStatusBarTexture(), "TOP", 0, 0)
-			ohpb:Height(unit_height)
+			ohpb:SetPoint("BOTTOM", mhpb:GetStatusBarTexture(), "TOP", 0, 0)
+			ohpb:SetHeight(unit_height)
 		else
-			ohpb:Point("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
-			ohpb:Point("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
+			ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
+			ohpb:SetPoint("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		end
-		ohpb:Width(unit_width)
+		ohpb:SetWidth(unit_width)
 		ohpb:SetStatusBarTexture(C.media.texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.2)
 
@@ -210,7 +210,7 @@ local function Shared(self, unit)
 		}
 
 		--self.IncHeal = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-		--self.IncHeal:Point("CENTER", self.Health, "TOP", 0, 0)
+		--self.IncHeal:SetPoint("CENTER", self.Health, "TOP", 0, 0)
 		--self:Tag(self.IncHeal, "[IncHeal]")
 	end
 
@@ -233,22 +233,22 @@ local function Shared(self, unit)
 
 		-- Raid debuffs
 		self.RaidDebuffs = CreateFrame("Frame", nil, self)
-		self.RaidDebuffs:Height(19)
-		self.RaidDebuffs:Width(19)
-		self.RaidDebuffs:Point("CENTER", self, 0, 1)
+		self.RaidDebuffs:SetHeight(19)
+		self.RaidDebuffs:SetWidth(19)
+		self.RaidDebuffs:SetPoint("CENTER", self, 0, 1)
 		self.RaidDebuffs:SetFrameStrata("MEDIUM")
 		self.RaidDebuffs:SetFrameLevel(10)
 		self.RaidDebuffs:SetTemplate("Default")
 
 		self.RaidDebuffs.icon = self.RaidDebuffs:CreateTexture(nil, "OVERLAY")
 		self.RaidDebuffs.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		self.RaidDebuffs.icon:Point("TOPLEFT", 2, -2)
-		self.RaidDebuffs.icon:Point("BOTTOMRIGHT", -2, 2)
+		self.RaidDebuffs.icon:SetPoint("TOPLEFT", 2, -2)
+		self.RaidDebuffs.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 		if C.aura.show_spiral == true then
 			self.RaidDebuffs.cd = CreateFrame("Cooldown", nil, self.RaidDebuffs)
-			self.RaidDebuffs.cd:Point("TOPLEFT", 2, -2)
-			self.RaidDebuffs.cd:Point("BOTTOMRIGHT", -2, 2)
+			self.RaidDebuffs.cd:SetPoint("TOPLEFT", 2, -2)
+			self.RaidDebuffs.cd:SetPoint("BOTTOMRIGHT", -2, 2)
 			self.RaidDebuffs.cd:SetReverse()
 			self.RaidDebuffs.cd.noOCC = true
 		end
@@ -260,7 +260,7 @@ local function Shared(self, unit)
 		end
 
 		self.RaidDebuffs.count = T.SetFontString(self.RaidDebuffs, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-		self.RaidDebuffs.count:Point("BOTTOMRIGHT", self.RaidDebuffs, "BOTTOMRIGHT", 2, 0)
+		self.RaidDebuffs.count:SetPoint("BOTTOMRIGHT", self.RaidDebuffs, "BOTTOMRIGHT", 2, 0)
 		self.RaidDebuffs.count:SetTextColor(1, 1, 1)
 
 		if C.aura.show_spiral == true then
@@ -301,9 +301,9 @@ oUF:Factory(function(self)
 			"point", "LEFT"
 		)
 		if C.raidframe.player_in_party == true then
-			party:Point(unpack(C.position.unitframes.party_heal))
+			party:SetPoint(unpack(C.position.unitframes.party_heal))
 		else
-			party:Point(C.position.unitframes.party_heal[1], C.position.unitframes.party_heal[2], C.position.unitframes.party_heal[3], C.position.unitframes.party_heal[4] + 32, C.position.unitframes.party_heal[5])
+			party:SetPoint(C.position.unitframes.party_heal[1], C.position.unitframes.party_heal[2], C.position.unitframes.party_heal[3], C.position.unitframes.party_heal[4] + 32, C.position.unitframes.party_heal[5])
 		end
 
 		-- Party targets
@@ -323,7 +323,7 @@ oUF:Factory(function(self)
 			"xOffset", T.Scale(7),
 			"point", "LEFT"
 		)
-		partytarget:Point("TOPLEFT", party, "BOTTOMLEFT", 0, -7)
+		partytarget:SetPoint("TOPLEFT", party, "BOTTOMLEFT", 0, -7)
 
 		-- Party pets
 		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists][petbattle] hide;show",
@@ -358,7 +358,7 @@ oUF:Factory(function(self)
 				end
 			end
 
-			partypet:Point("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, -((unit_height / 2) + 14.5))
+			partypet:SetPoint("TOPLEFT", party[lastGroup], "BOTTOMLEFT", 0, -((unit_height / 2) + 14.5))
 		end)
 		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
 		partypetupdate:RegisterEvent("PLAYER_REGEN_ENABLED")
@@ -390,9 +390,9 @@ oUF:Factory(function(self)
 					"columnAnchorPoint", "TOP"
 				)
 				if i == 1 then
-					raidgroup:Point(unpack(C.position.unitframes.raid_heal))
+					raidgroup:SetPoint(unpack(C.position.unitframes.raid_heal))
 				else
-					raidgroup:Point("TOPLEFT", raid[i-1], "TOPRIGHT", 7, 0)
+					raidgroup:SetPoint("TOPLEFT", raid[i-1], "TOPRIGHT", 7, 0)
 				end
 				raid[i] = raidgroup
 			end
@@ -417,9 +417,9 @@ oUF:Factory(function(self)
 					"columnAnchorPoint", "LEFT"
 				)
 				if i == 1 then
-					raidgroup:Point(unpack(C.position.unitframes.raid_heal))
+					raidgroup:SetPoint(unpack(C.position.unitframes.raid_heal))
 				else
-					raidgroup:Point("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -7)
+					raidgroup:SetPoint("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -7)
 				end
 				raid[i] = raidgroup
 			end
@@ -442,7 +442,7 @@ oUF:Factory(function(self)
 				"groupFilter", "MAINTANK",
 				"template", mt_template
 			)
-			raidtank:Point(unpack(C.position.unitframes.tank))
+			raidtank:SetPoint(unpack(C.position.unitframes.tank))
 		end
 	end
 end)

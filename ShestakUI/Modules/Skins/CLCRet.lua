@@ -23,7 +23,7 @@ function clcret:CreateButton(name, size, point, parent, pointParent, offsetx, of
 		button:SetTemplate("Default")
 	end
 	button:EnableMouse(false)
-	button:Size(size)
+	button:SetSize(size, size)
 
 	button.texture = button:CreateTexture("$parentIcon", "OVERLAY")
 	button.texture:SetPoint("TOPLEFT", 2, -2)
@@ -62,7 +62,7 @@ function clcret:CreateButton(name, size, point, parent, pointParent, offsetx, of
 end
 
 function clcret:UpdateButtonLayout(button, opt)
-	button:Size(opt.size)
+	button:SetSize(opt.size, opt.size)
 	button:ClearAllPoints()
 	button:SetPoint(opt.point, clcretFrame, opt.pointParent, opt.x, opt.y)
 	button:SetAlpha(opt.alpha)

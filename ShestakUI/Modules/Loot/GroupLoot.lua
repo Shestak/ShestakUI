@@ -94,7 +94,7 @@ local function CreateRollFrame()
 
 	local button = CreateFrame("Button", nil, frame)
 	button:SetPoint("LEFT", -29, 0)
-	button:Size(22)
+	button:SetSize(22, 22)
 	button:CreateBackdrop("Default")
 	button:SetScript("OnEnter", SetItemTip)
 	button:SetScript("OnLeave", HideTip2)

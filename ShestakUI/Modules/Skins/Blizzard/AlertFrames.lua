@@ -282,7 +282,7 @@ local function LoadSkin()
 				_G["CriteriaAlertFrame"..i.."Name"]:SetTextColor(1, 1, 0)
 
 				-- Icon
-				_G["CriteriaAlertFrame"..i.."IconTexture"]:Size(28)
+				_G["CriteriaAlertFrame"..i.."IconTexture"]:SetSize(28, 28)
 				_G["CriteriaAlertFrame"..i.."IconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				_G["CriteriaAlertFrame"..i.."IconTexture"]:ClearAllPoints()
 				_G["CriteriaAlertFrame"..i.."IconTexture"]:SetPoint("LEFT", frame.backdrop, 9, 0)

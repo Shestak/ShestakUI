@@ -519,7 +519,7 @@ else
 		b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
 	end
 end
-b:Size(19)
+b:SetSize(19, 19)
 b:SetAlpha(0)
 
 b:SetScript("OnClick", function(self)

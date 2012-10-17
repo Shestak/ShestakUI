@@ -46,11 +46,11 @@ end
 -- Create anchor
 local AutoButtonAnchor = CreateFrame("Frame", "AutoButtonAnchor", UIParent)
 AutoButtonAnchor:SetPoint("BOTTOMLEFT", Minimap, "TOPLEFT", -2, 27)
-AutoButtonAnchor:Size(40)
+AutoButtonAnchor:SetSize(40, 40)
 
 -- Create button
 local AutoButton = CreateFrame("Button", "AutoButton", UIParent, "SecureActionButtonTemplate")
-AutoButton:Size(40)
+AutoButton:SetSize(40, 40)
 AutoButton:SetPoint("CENTER", AutoButtonAnchor, "CENTER", 0, 0)
 AutoButton:SetTemplate("Default")
 AutoButton:StyleButton()

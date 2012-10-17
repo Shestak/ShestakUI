@@ -53,8 +53,8 @@ local function LoadSkin()
 	T.SkinNextPrevButton(TradeSkillDecrementButton)
 	T.SkinNextPrevButton(TradeSkillIncrementButton)
 	TradeSkillIncrementButton:SetPoint("LEFT", TradeSkillInputBox, "RIGHT", 4, 0)
-	TradeSkillIncrementButton:Size(22)
-	TradeSkillDecrementButton:Size(22)
+	TradeSkillIncrementButton:SetSize(22, 22)
+	TradeSkillDecrementButton:SetSize(22, 22)
 
 	T.SkinCloseButton(TradeSkillFrameCloseButton)
 

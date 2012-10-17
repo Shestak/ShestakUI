@@ -23,7 +23,7 @@ function clcprot:CreateButton(name, size, point, parent, pointParent, offsetx, o
 		button:SetTemplate("Default")
 	end
 	button:EnableMouse(false)
-	button:Size(size)
+	button:SetSize(size, size)
 
 	button.texture = button:CreateTexture("$parentIcon", "OVERLAY")
 	button.texture:SetPoint("TOPLEFT", 2, -2)
@@ -62,7 +62,7 @@ function clcprot:CreateButton(name, size, point, parent, pointParent, offsetx, o
 end
 
 function clcprot:UpdateButtonLayout(button, opt)
-	button:Size(opt.size)
+	button:SetSize(opt.size, opt.size)
 	button:ClearAllPoints()
 	button:SetPoint(opt.point, clcprotFrame, opt.pointParent, opt.x, opt.y)
 	button:SetAlpha(opt.alpha)

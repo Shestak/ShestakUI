@@ -239,7 +239,7 @@ local function LoadSkin()
 		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:StripTextures()
 		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetTemplate("Default")
 		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:Size(12)
+		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetSize(12, 12)
 		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:GetCheckedTexture():SetPoint("TOPLEFT", -4, 4)
 		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:GetCheckedTexture():SetPoint("BOTTOMRIGHT", 4, -4)
 

@@ -24,7 +24,7 @@ BuffsAnchor:SetSize((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_siz
 
 ConsolidatedBuffs:ClearAllPoints()
 ConsolidatedBuffs:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
-ConsolidatedBuffs:Size(C.aura.player_buff_size)
+ConsolidatedBuffs:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 ConsolidatedBuffs.SetPoint = T.dummy
 ConsolidatedBuffs:CreateBackdrop("Default")
 ConsolidatedBuffs.backdrop:SetAllPoints()
@@ -34,7 +34,7 @@ end
 
 ConsolidatedBuffsIcon:SetTexture("Interface\\Icons\\Spell_ChargePositive")
 ConsolidatedBuffsIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-ConsolidatedBuffsIcon:Size(C.aura.player_buff_size - 4)
+ConsolidatedBuffsIcon:SetSize(C.aura.player_buff_size - 4, C.aura.player_buff_size - 4)
 
 ConsolidatedBuffsCount:SetPoint("BOTTOMRIGHT", 0, 1)
 ConsolidatedBuffsCount:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
@@ -48,7 +48,7 @@ for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 
 	if border then border:Hide() end
 
-	buff:Size(C.aura.player_buff_size)
+	buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 	if i ~= 3 then
 		buff:CreateBackdrop("Default")
 		buff.backdrop:SetAllPoints()
@@ -80,7 +80,7 @@ local function StyleBuffs(buttonName, index, debuff)
 	if border then border:Hide() end
 
 	if icon and not buff.isSkinned then
-		buff:Size(C.aura.player_buff_size)
+		buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 		buff:CreateBackdrop("Default")
 		buff.backdrop:SetAllPoints()
 		if C.aura.classcolor_border == true then
