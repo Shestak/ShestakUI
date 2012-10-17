@@ -721,7 +721,7 @@ local function Shared(self, unit)
 
 			-- Friendship bar
 			if C.unitframe.plugins_friendship_bar == true then
-				self.Friendship = CreateFrame('StatusBar', nil, self.Health)
+				self.Friendship = CreateFrame("StatusBar", nil, self.Health)
 				self.Friendship:SetFrameLevel(self.Health:GetFrameLevel() + 1)
 				self.Friendship:SetHeight(3)
 				self.Friendship:SetStatusBarTexture(C.media.texture)
