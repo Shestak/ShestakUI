@@ -12,7 +12,7 @@ if C.actionbar.toggle_mode == true then
 else
 	switch:Point("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 18)
 end
-switch:Size(19)
+switch:SetSize(19, 19)
 switch:SetAlpha(0)
 
 switch.t = switch:CreateTexture(nil, "OVERLAY")
@@ -62,12 +62,12 @@ end)
 local show = false
 SlashCmdList.FARMMODE = function()
 	if show == false then
-		MinimapAnchor:Size(C.minimap.size * 1.65)
-		Minimap:Size(MinimapAnchor:GetWidth())
+		MinimapAnchor:SetSize(C.minimap.size * 1.65, C.minimap.size * 1.65)
+		Minimap:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
 		show = true
 	else
-		MinimapAnchor:Size(C.minimap.size)
-		Minimap:Size(MinimapAnchor:GetWidth())
+		MinimapAnchor:SetSize(C.minimap.size, C.minimap.size)
+		Minimap:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
 		show = false
 	end
 end
@@ -81,8 +81,8 @@ SLASH_FARMMODE4 = "/аь"
 ----------------------------------------------------------------------------------------
 local farm = CreateFrame("Button", "FarmMode", UIParent)
 farm:SetTemplate("ClassColor")
-farm:Point("TOP", switch, "BOTTOM", 0, -1)
-farm:Size(19)
+farm:SetPoint("TOP", switch, "BOTTOM", 0, -1)
+farm:SetSize(19, 19)
 farm:SetAlpha(0)
 
 farm.t = farm:CreateTexture(nil, "OVERLAY")

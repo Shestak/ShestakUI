@@ -37,14 +37,14 @@ local function Shared(self, unit)
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", nil, self)
-	self.Health:Point("TOPLEFT", self, "TOPLEFT", 0, 0)
-	self.Health:Point("TOPRIGHT", self, "TOPRIGHT", 0, 0)
+	self.Health:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+	self.Health:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" or unit == "party" then
-		self.Health:Height(27)
+		self.Health:SetHeight(27)
 	elseif unit == "tank" then
-		self.Health:Height(26)
+		self.Health:SetHeight(26)
 	else
-		self.Health:Height(17)
+		self.Health:SetHeight(17)
 	end
 	self.Health:SetStatusBarTexture(C.media.texture)
 
@@ -74,9 +74,9 @@ local function Shared(self, unit)
 	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank")) then
 		self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		if unit == "tank" then
-			self.Health.value:Point("CENTER", self.Health, "CENTER", 0, -5)
+			self.Health.value:SetPoint("CENTER", self.Health, "CENTER", 0, -5)
 		else
-			self.Health.value:Point("RIGHT", self.Health, "RIGHT", 1, 0)
+			self.Health.value:SetPoint("RIGHT", self.Health, "RIGHT", 1, 0)
 		end
 		self.Health.value:SetTextColor(1, 1, 1)
 
@@ -85,15 +85,15 @@ local function Shared(self, unit)
 		-- Power bar
 		self.Power = CreateFrame("StatusBar", nil, self)
 		if unit == "raid" then
-			self.Power:Height(1)
+			self.Power:SetHeight(1)
 		elseif unit == "party" then
-			self.Power:Height(5)
+			self.Power:SetHeight(5)
 		else
-			self.Power:Height(2)
+			self.Power:SetHeight(2)
 		end
 		self.Power:CreateBackdrop()
-		self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -7)
-		self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, 7)
+		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -7)
+		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, 7)
 		self.Power:SetStatusBarTexture(C.media.texture)
 
 		self.Power.frequentUpdates = true
@@ -116,7 +116,7 @@ local function Shared(self, unit)
 
 		self.Power.value = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-			self.Power.value:Point("RIGHT", self.Power, "RIGHT", 0, 0)
+			self.Power.value:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
 			self.Power.value:SetJustifyH("RIGHT")
 		end
 	end
@@ -124,11 +124,11 @@ local function Shared(self, unit)
 	-- Names
 	self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Info:Point("CENTER", self.Health, "CENTER", 2, 0)
+		self.Info:SetPoint("CENTER", self.Health, "CENTER", 2, 0)
 	elseif unit == "tank" then
-		self.Info:Point("CENTER", self.Health, "CENTER", 0, 4)
+		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, 4)
 	else
-		self.Info:Point("LEFT", self.Health, "LEFT", 3, 0)
+		self.Info:SetPoint("LEFT", self.Health, "LEFT", 3, 0)
 		self.Info:SetJustifyH("LEFT")
 	end
 	if self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank") then
@@ -144,26 +144,26 @@ local function Shared(self, unit)
 	-- LFD role icons
 	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
-		self.LFDRole:Size(12)
-		self.LFDRole:Point("TOPRIGHT", self.Health, 2, 5)
+		self.LFDRole:SetSize(12, 12)
+		self.LFDRole:SetPoint("TOPRIGHT", self.Health, 2, 5)
 	end
 
 	-- Leader/Assistant/ML icons
 	if C.raidframe.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target") then
 		-- Leader icon
 		self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Leader:Size(12)
-		self.Leader:Point("TOPLEFT", self.Health, -3, 8)
+		self.Leader:SetSize(12, 12)
+		self.Leader:SetPoint("TOPLEFT", self.Health, -3, 8)
 
 		-- Assistant icon
 		self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Assistant:Size(12)
-		self.Assistant:Point("TOPLEFT", self.Health, -3, 8)
+		self.Assistant:SetSize(12, 12)
+		self.Assistant:SetPoint("TOPLEFT", self.Health, -3, 8)
 
 		-- Master looter
 		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
-		self.MasterLooter:Size(12)
-		self.MasterLooter:Point("TOPRIGHT", self.Health, 3, 8)
+		self.MasterLooter:SetSize(12, 12)
+		self.MasterLooter:SetPoint("TOPRIGHT", self.Health, 3, 8)
 	end
 
 	-- Agro border
@@ -184,22 +184,22 @@ local function Shared(self, unit)
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
-		self.RaidIcon:Size(12)
-		self.RaidIcon:Point("CENTER", self.Health, "TOP")
+		self.RaidIcon:SetSize(12, 12)
+		self.RaidIcon:SetPoint("CENTER", self.Health, "TOP")
 	end
 
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
-		self.ReadyCheck:Size(12)
-		self.ReadyCheck:Point("TOP", self.Health, "TOP", 5, -3)
+		self.ReadyCheck:SetSize(12)
+		self.ReadyCheck:SetPoint("TOP", self.Health, "TOP", 5, -3)
 	end
 
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then
 		self.Debuffs = CreateFrame("Frame", nil, self)
-		self.Debuffs:Point("TOPLEFT", self, "BOTTOMLEFT", -2, -17)
-		self.Debuffs:Height(18)
-		self.Debuffs:Width(144)
+		self.Debuffs:SetPoint("TOPLEFT", self, "BOTTOMLEFT", -2, -17)
+		self.Debuffs:SetHeight(18)
+		self.Debuffs:SetWidth(144)
 		self.Debuffs.size = T.Scale(18)
 		self.Debuffs.spacing = T.Scale(3)
 		self.Debuffs.initialAnchor = "LEFT"
@@ -222,22 +222,22 @@ local function Shared(self, unit)
 	-- Incoming heal text/bar
 	if C.raidframe.plugins_healcomm == true then
 		local mhpb = CreateFrame("StatusBar", nil, self.Health)
-		mhpb:Point("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
-		mhpb:Point("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
+		mhpb:SetPoint("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
+		mhpb:SetPoint("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		if unit == "party" then
-			mhpb:Width(party_width)
+			mhpb:SetWidth(party_width)
 		elseif unit == "raid" then
-			mhpb:Width(unit_width)
+			mhpb:SetWidth(unit_width)
 		else
-			mhpb:Width(partytarget_width)
+			mhpb:SetWidth(partytarget_width)
 		end
 		mhpb:SetStatusBarTexture(C.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
-		ohpb:Point("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
-		ohpb:Point("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-		ohpb:Width(mhpb:GetWidth())
+		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
+		ohpb:SetPoint("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
+		ohpb:SetWidth(mhpb:GetWidth())
 		ohpb:SetStatusBarTexture(C.media.texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.2)
 
@@ -287,7 +287,7 @@ oUF:Factory(function(self)
 			"yOffset", T.Scale(40),
 			"point", "BOTTOM"
 		)
-		party:Point(unpack(C.position.unitframes.party_dps))
+		party:SetPoint(unpack(C.position.unitframes.party_dps))
 
 		-- Party targets
 		local partytarget = self:SpawnHeader("oUF_PartyTargetDPS", nil, "custom [@raid6,exists][petbattle] hide;show",
@@ -306,7 +306,7 @@ oUF:Factory(function(self)
 			"yOffset", T.Scale(19),
 			"point", "BOTTOM"
 		)
-		partytarget:Point("TOPLEFT", party, "TOPRIGHT", 7, 0)
+		partytarget:SetPoint("TOPLEFT", party, "TOPRIGHT", 7, 0)
 
 		-- Party pets
 		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists][petbattle] hide;show",
@@ -341,7 +341,7 @@ oUF:Factory(function(self)
 				end
 			end
 
-			partypet:Point("BOTTOMLEFT", party[lastGroup], "BOTTOMRIGHT", 44, 0)
+			partypet:SetPoint("BOTTOMLEFT", party[lastGroup], "BOTTOMRIGHT", 44, 0)
 		end)
 		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
 		partypetupdate:RegisterEvent("PLAYER_REGEN_ENABLED")
@@ -372,11 +372,11 @@ oUF:Factory(function(self)
 				"columnAnchorPoint", "TOP"
 			)
 			if i == 1 then
-				raidgroup:Point(unpack(C.position.unitframes.raid_dps))
+				raidgroup:SetPoint(unpack(C.position.unitframes.raid_dps))
 			elseif i == 5 then
-				raidgroup:Point("TOPLEFT", raid[1], "TOPRIGHT", 7, 0)
+				raidgroup:SetPoint("TOPLEFT", raid[1], "TOPRIGHT", 7, 0)
 			else
-				raidgroup:Point("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -15)
+				raidgroup:SetPoint("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -15)
 			end
 			raid[i] = raidgroup
 		end
@@ -399,7 +399,7 @@ oUF:Factory(function(self)
 			"groupFilter", "MAINTANK",
 			"template", mt_template
 		)
-		raidtank:Point(unpack(C.position.unitframes.tank))
+		raidtank:SetPoint(unpack(C.position.unitframes.tank))
 	end
 end)
 

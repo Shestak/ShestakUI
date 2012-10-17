@@ -17,14 +17,14 @@ MinimapCluster:Kill()
 -- Parent Minimap into our frame
 Minimap:SetParent(MinimapAnchor)
 Minimap:ClearAllPoints()
-Minimap:Point("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
-Minimap:Point("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
-Minimap:Size(MinimapAnchor:GetWidth())
+Minimap:SetPoint("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
+Minimap:SetPoint("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
+Minimap:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
 
 MinimapBackdrop:ClearAllPoints()
-MinimapBackdrop:Point("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
-MinimapBackdrop:Point("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
-MinimapBackdrop:Size(MinimapAnchor:GetWidth())
+MinimapBackdrop:SetPoint("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
+MinimapBackdrop:SetPoint("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
+MinimapBackdrop:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
 
 -- Hide Border
 MinimapBorder:Hide()
@@ -50,14 +50,14 @@ GameTimeFrame:Hide()
 
 -- Hide Mail Button
 MiniMapMailFrame:ClearAllPoints()
-MiniMapMailFrame:Point("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
+MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
 MiniMapMailBorder:Hide()
 MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
-MiniMapMailIcon:Size(16)
+MiniMapMailIcon:SetSize(16, 16)
 
 -- Move QueueStatus icon
 QueueStatusMinimapButton:ClearAllPoints()
-QueueStatusMinimapButton:Point("BOTTOM", Minimap, "BOTTOM", 0, -4)
+QueueStatusMinimapButton:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, -4)
 QueueStatusMinimapButton:SetHighlightTexture(nil)
 QueueStatusMinimapButtonBorder:Hide()
 
@@ -65,13 +65,13 @@ local function UpdateLFGTooltip()
 	local position = MinimapAnchor:GetPoint()
 	QueueStatusFrame:ClearAllPoints()
 	if position:match("BOTTOMRIGHT") then
-		QueueStatusFrame:Point("BOTTOMRIGHT", QueueStatusMinimapButton, "BOTTOMLEFT", 0, 0)
+		QueueStatusFrame:SetPoint("BOTTOMRIGHT", QueueStatusMinimapButton, "BOTTOMLEFT", 0, 0)
 	elseif position:match("BOTTOM") then
-		QueueStatusFrame:Point("BOTTOMLEFT", QueueStatusMinimapButton, "BOTTOMRIGHT", 4, 0)
+		QueueStatusFrame:SetPoint("BOTTOMLEFT", QueueStatusMinimapButton, "BOTTOMRIGHT", 4, 0)
 	elseif position:match("LEFT") then
-		QueueStatusFrame:Point("TOPLEFT", QueueStatusMinimapButton, "TOPRIGHT", 4, 0)
+		QueueStatusFrame:SetPoint("TOPLEFT", QueueStatusMinimapButton, "TOPRIGHT", 4, 0)
 	else
-		QueueStatusFrame:Point("TOPRIGHT", QueueStatusMinimapButton, "TOPLEFT", 0, 0)
+		QueueStatusFrame:SetPoint("TOPRIGHT", QueueStatusMinimapButton, "TOPLEFT", 0, 0)
 	end
 end
 QueueStatusFrame:HookScript("OnShow", UpdateLFGTooltip)
@@ -83,25 +83,25 @@ MiniMapWorldMapButton:Hide()
 -- Instance Difficulty icon
 MiniMapInstanceDifficulty:SetParent(Minimap)
 MiniMapInstanceDifficulty:ClearAllPoints()
-MiniMapInstanceDifficulty:Point("TOPRIGHT", Minimap, "TOPRIGHT", 3, 2)
+MiniMapInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 3, 2)
 MiniMapInstanceDifficulty:SetScale(0.75)
 
 -- Guild Instance Difficulty icon
 GuildInstanceDifficulty:SetParent(Minimap)
 GuildInstanceDifficulty:ClearAllPoints()
-GuildInstanceDifficulty:Point("TOPRIGHT", Minimap, "TOPRIGHT", -2, 2)
+GuildInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, 2)
 GuildInstanceDifficulty:SetScale(0.75)
 
 -- Challenge Mode icon
 MiniMapChallengeMode:SetParent(Minimap)
 MiniMapChallengeMode:ClearAllPoints()
-MiniMapChallengeMode:Point("TOPRIGHT", Minimap, "TOPRIGHT", -2, 2)
+MiniMapChallengeMode:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, 2)
 MiniMapChallengeMode:SetScale(0.75)
 
 -- Invites icon
 GameTimeCalendarInvitesTexture:ClearAllPoints()
 GameTimeCalendarInvitesTexture:SetParent(Minimap)
-GameTimeCalendarInvitesTexture:Point("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
+GameTimeCalendarInvitesTexture:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
 
 -- Default LFG icon
 LFG_EYE_TEXTURES.raid = LFG_EYE_TEXTURES.default
@@ -110,21 +110,21 @@ LFG_EYE_TEXTURES.unknown = LFG_EYE_TEXTURES.default
 -- Feedback icon
 if FeedbackUIButton then
 	FeedbackUIButton:ClearAllPoints()
-	FeedbackUIButton:Point("BOTTOM", Minimap, "BOTTOM", 0, 0)
+	FeedbackUIButton:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, 0)
 	FeedbackUIButton:SetScale(0.8)
 end
 
 -- Streaming icon
 if StreamingIcon then
 	StreamingIcon:ClearAllPoints()
-	StreamingIcon:Point("BOTTOM", Minimap, "BOTTOM", 0, -10)
+	StreamingIcon:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, -10)
 	StreamingIcon:SetScale(0.8)
 end
 
 -- Ticket icon
 HelpOpenTicketButton:SetParent(Minimap)
 HelpOpenTicketButton:ClearAllPoints()
-HelpOpenTicketButton:Point("TOP", Minimap, "TOP", 0, 4)
+HelpOpenTicketButton:SetPoint("TOP", Minimap, "TOP", 0, 4)
 HelpOpenTicketButton:SetHighlightTexture(nil)
 
 -- GhostFrame
@@ -134,11 +134,11 @@ GhostFrame:StyleButton()
 GhostFrame:ClearAllPoints()
 GhostFrame:SetPoint(unpack(C.position.ghost))
 GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-GhostFrameContentsFrameIcon:Size(34)
+GhostFrameContentsFrameIcon:SetSize(34, 34)
 GhostFrameContentsFrame:SetFrameLevel(GhostFrameContentsFrame:GetFrameLevel() + 2)
 GhostFrameContentsFrame:CreateBackdrop("Overlay")
-GhostFrameContentsFrame.backdrop:Point("TOPLEFT", GhostFrameContentsFrameIcon, -2, 2)
-GhostFrameContentsFrame.backdrop:Point("BOTTOMRIGHT", GhostFrameContentsFrameIcon, 2, -2)
+GhostFrameContentsFrame.backdrop:SetPoint("TOPLEFT", GhostFrameContentsFrameIcon, -2, 2)
+GhostFrameContentsFrame.backdrop:SetPoint("BOTTOMRIGHT", GhostFrameContentsFrameIcon, 2, -2)
 
 -- Enable mouse scrolling
 Minimap:EnableMouseWheel(true)
@@ -314,17 +314,17 @@ if C.minimap.tracking_icon then
 	trackborder:SetFrameStrata("BACKGROUND")
 	trackborder:Height(20)
 	trackborder:Width(20)
-	trackborder:Point("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
+	trackborder:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
 	trackborder:SetTemplate("Default")
 
 	MiniMapTrackingBackground:Hide()
 	MiniMapTracking:ClearAllPoints()
-	MiniMapTracking:Point("CENTER", trackborder, 2, -2)
+	MiniMapTracking:SetPoint("CENTER", trackborder, 2, -2)
 	MiniMapTrackingButton:SetHighlightTexture(nil)
 	MiniMapTrackingButtonBorder:Hide()
 	MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	MiniMapTrackingIcon:Width(16)
-	MiniMapTrackingIcon:Height(16)
+	MiniMapTrackingIcon:SetWidth(16)
+	MiniMapTrackingIcon:SetHeight(16)
 else
 	MiniMapTracking:Hide()
 end

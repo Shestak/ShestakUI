@@ -31,8 +31,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 				button.backdrop:SetAllPoints()
 
 				button.icone:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				button.icone:Point("TOPLEFT", button, 2, -2)
-				button.icone:Point("BOTTOMRIGHT", button, -2, 2)
+				button.icone:SetPoint("TOPLEFT", button, 2, -2)
+				button.icone:SetPoint("BOTTOMRIGHT", button, -2, 2)
 
 				button.remains:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 				button.remains:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)

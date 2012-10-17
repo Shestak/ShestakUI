@@ -30,18 +30,18 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 			local button button = _G["PetActionButton"..i]
 			button:ClearAllPoints()
 			button:SetParent(PetHolder)
-			button:Size(C.actionbar.button_size)
+			button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 			if i == 1 then
 				if C.actionbar.petbar_horizontal == true then
-					button:Point("BOTTOMLEFT", 0, 0)
+					button:SetPoint("BOTTOMLEFT", 0, 0)
 				else
-					button:Point("TOPLEFT", 0, 0)
+					button:SetPoint("TOPLEFT", 0, 0)
 				end
 			else
 				if C.actionbar.petbar_horizontal == true then
-					button:Point("LEFT", _G["PetActionButton"..(i - 1)], "RIGHT", C.actionbar.button_space, 0)
+					button:SetPoint("LEFT", _G["PetActionButton"..(i - 1)], "RIGHT", C.actionbar.button_space, 0)
 				else
-					button:Point("TOP", _G["PetActionButton"..(i - 1)], "BOTTOM", 0, -C.actionbar.button_space)
+					button:SetPoint("TOP", _G["PetActionButton"..(i - 1)], "BOTTOM", 0, -C.actionbar.button_space)
 				end
 			end
 			button:Show()

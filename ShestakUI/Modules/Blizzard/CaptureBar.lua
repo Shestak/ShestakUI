@@ -12,9 +12,9 @@ local function CaptureUpdate()
 		if bar and bar:IsVisible() then
 			bar:ClearAllPoints()
 			if i == 1 then
-				bar:Point(unpack(C.position.capture_bar))
+				bar:SetPoint(unpack(C.position.capture_bar))
 			else
-				bar:Point("TOPLEFT", _G["WorldStateCaptureBar"..i-1], "BOTTOMLEFT", 0, -7)
+				bar:SetPoint("TOPLEFT", _G["WorldStateCaptureBar"..i-1], "BOTTOMLEFT", 0, -7)
 			end
 			if not bar.skinned then
 				local left = _G[barname.."LeftBar"]
@@ -35,8 +35,8 @@ local function CaptureUpdate()
 				middle:SetVertexColor(0.8, 0.8, 0.8)
 
 				bar:CreateBackdrop("Default")
-				bar.backdrop:Point("TOPLEFT", left, -2, 2)
-				bar.backdrop:Point("BOTTOMRIGHT", right, 2, -2)
+				bar.backdrop:SetPoint("TOPLEFT", left, -2, 2)
+				bar.backdrop:SetPoint("BOTTOMRIGHT", right, 2, -2)
 
 				bar.skinned = true
 			end
@@ -57,9 +57,9 @@ local function StateUpdate()
 			f:ClearAllPoints()
 			f:SetFrameStrata("BACKGROUND")
 			if i == 1 then
-				f:Point(unpack(C.position.attempt))
+				f:SetPoint(unpack(C.position.attempt))
 			else
-				f:Point("TOPLEFT", _G["AlwaysUpFrame"..i-1], "BOTTOMLEFT", 0, 0)
+				f:SetPoint("TOPLEFT", _G["AlwaysUpFrame"..i-1], "BOTTOMLEFT", 0, 0)
 			end
 		end
 	end

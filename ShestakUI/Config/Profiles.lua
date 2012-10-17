@@ -94,6 +94,7 @@ if T.author == true then
 	if T.realm ~= "Дракономор" then
 		C["automation"].accept_invite = true
 	end
+	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
 end
 
 ----------------------------------------------------------------------------------------

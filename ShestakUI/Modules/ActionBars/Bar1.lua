@@ -58,14 +58,14 @@ bar:SetScript("OnEvent", function(self, event, ...)
 	elseif event == "PLAYER_ENTERING_WORLD" then
 		for i = 1, 12 do
 			local button = _G["ActionButton"..i]
-			button:Size(C.actionbar.button_size)
+			button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 			button:ClearAllPoints()
 			button:SetParent(Bar1Holder)
 			if i == 1 then
-				button:Point("BOTTOMLEFT", Bar1Holder, 0, 0)
+				button:SetPoint("BOTTOMLEFT", Bar1Holder, 0, 0)
 			else
 				local previous = _G["ActionButton"..i-1]
-				button:Point("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
+				button:SetPoint("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
 			end
 		end
 	else

@@ -36,17 +36,17 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		end
 
 		count:ClearAllPoints()
-		count:Point("BOTTOMRIGHT", 0, 2)
+		count:SetPoint("BOTTOMRIGHT", 0, 2)
 		count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 		count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 
 		if btname then
 			if C.actionbar.macro == true then
 				btname:ClearAllPoints()
-				btname:Point("BOTTOM", 0, 0)
+				btname:SetPoint("BOTTOM", 0, 0)
 				btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 				btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-				--btname:Width(C.actionbar.button_size - 1)
+				--btname:SetWidth(C.actionbar.button_size - 1)
 			else
 				btname:Kill()
 			end
@@ -54,10 +54,10 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 		if C.actionbar.hotkey == true then
 			hotkey:ClearAllPoints()
-			hotkey:Point("TOPRIGHT", 0, 0)
+			hotkey:SetPoint("TOPRIGHT", 0, 0)
 			hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-			hotkey:Width(C.actionbar.button_size - 1)
+			hotkey:SetWidth(C.actionbar.button_size - 1)
 			hotkey.ClearAllPoints = T.dummy
 			hotkey.SetPoint = T.dummy
 		else
@@ -66,7 +66,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 		if not button.isSkinned then
 			if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() then
-				self:Size(C.actionbar.button_size)
+				self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 			end
 
 			button:CreateBackdrop("Transparent")

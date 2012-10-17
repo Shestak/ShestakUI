@@ -497,7 +497,7 @@ if gold.enabled then
 			conf.Gold = curgold
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
-			GameTooltip:Point(gold.tip_anchor, gold.tip_frame, gold.tip_x, gold.tip_y)
+			GameTooltip:SetPoint(gold.tip_anchor, gold.tip_frame, gold.tip_x, gold.tip_y)
 			GameTooltip:ClearLines()
 			GameTooltip:AddLine(CURRENCY, tthead.r, tthead.g, tthead.b)
 			GameTooltip:AddLine(" ")
@@ -523,7 +523,7 @@ if gold.enabled then
 			for i = 1, GetCurrencyListSize() do
 				local name, _, _, _, watched, count, icon = GetCurrencyListInfo(i)
 				if watched then
-					if currencies == 0 then GameTooltip:AddLine(format("%s %s", PLAYER,CURRENCY), ttsubh.r, ttsubh.g, ttsubh.b) end
+					if currencies == 0 then GameTooltip:AddLine(format("%s %s", STATUS_TEXT_PLAYER, CURRENCY), ttsubh.r, ttsubh.g, ttsubh.b) end
 					local r, g, b
 					if count > 0 then r, g, b = 1, 1, 1 else r, g, b = 0.5, 0.5, 0.5 end
 					GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", count, icon, t_icon), r, g, b, r, g, b)
@@ -568,7 +568,7 @@ if gold.enabled then
 						end
 					else print(format("|cff66C6FF", link, L_STATS_NOT_JUNK)) end
 				elseif strfind(action, "^del") or strfind(action, "^rem") then
-					tDeleteItem(SavedStats.JunkIgnore,id)
+					tDeleteItem(SavedStats.JunkIgnore, id)
 					print(format("|cff66C6FF%s:|r %s", L_STATS_REMOVED_JUNK, link))
 				end
 			end
@@ -597,7 +597,7 @@ if clock.enabled then
 			if not self.hovered then RequestRaidInfo() self.hovered = true end
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
-			GameTooltip:Point(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
+			GameTooltip:SetPoint(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
 			GameTooltip:ClearLines()
 			GameTooltip:AddLine(date"%A, %B %d %Y", tthead.r, tthead.g, tthead.b)
 			GameTooltip:AddLine(" ")

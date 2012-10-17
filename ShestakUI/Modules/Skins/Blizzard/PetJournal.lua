@@ -200,7 +200,7 @@ local function LoadSkin()
 		button.dragButton:StyleButton()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		icon:Size(36)
+		icon:SetSize(36, 36)
 
 		level:SetParent(button.dragButton.backdrop)
 		level:SetFontObject("SystemFont_Outline_Small")

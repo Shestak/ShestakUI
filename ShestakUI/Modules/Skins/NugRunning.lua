@@ -48,21 +48,21 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 		local ic = f.icon:GetParent()
 		ic:ClearAllPoints()
-		ic:Point("TOPLEFT", f, 1, -1)
-		ic:Point("BOTTOMLEFT", f, 1, 0)
+		ic:SetPoint("TOPLEFT", f, 1, -1)
+		ic:SetPoint("BOTTOMLEFT", f, 1, 0)
 
 		f.bar:ClearAllPoints()
-		f.bar:Point("TOPRIGHT", f, -1, -1)
-		f.bar:Point("BOTTOMRIGHT", f, -1, 0)
-		f.bar:Point("LEFT", ic, "RIGHT", 5, 0)
+		f.bar:SetPoint("TOPRIGHT", f, -1, -1)
+		f.bar:SetPoint("BOTTOMRIGHT", f, -1, 0)
+		f.bar:SetPoint("LEFT", ic, "RIGHT", 5, 0)
 
 		f.timeText:SetJustifyH("RIGHT")
 		f.timeText:ClearAllPoints()
-		f.timeText:Point("RIGHT", 1, 0)
+		f.timeText:SetPoint("RIGHT", 1, 0)
 
 		f.spellText:SetJustifyH("LEFT")
 		f.spellText:ClearAllPoints()
-		f.spellText:Point("LEFT", 2, 0)
+		f.spellText:SetPoint("LEFT", 2, 0)
 		f.spellText:SetWidth(f.bar:GetWidth() - 10)
 	end
 end)

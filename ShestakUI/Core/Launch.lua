@@ -89,7 +89,7 @@ local function InstallUI()
 			local chatFrameId = frame:GetID()
 			local chatName = FCF_GetChatWindowInfo(chatFrameId)
 
-			frame:Size(C.chat.width, C.chat.height)
+			frame:SetSize(C.chat.width, C.chat.height)
 
 			-- Default width and height of chats
 			SetChatWindowSavedDimensions(chatFrameId, T.Scale(C.chat.width), T.Scale(C.chat.height))
@@ -97,7 +97,7 @@ local function InstallUI()
 			-- Move general chat to bottom left
 			if i == 1 then
 				frame:ClearAllPoints()
-				frame:Point(unpack(C.position.chat))
+				frame:SetPoint(unpack(C.position.chat))
 			end
 
 			-- Save new default position and dimension

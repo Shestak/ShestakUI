@@ -44,16 +44,16 @@ PVP_ENABLED = ""
 
 -- Statusbar
 GameTooltipStatusBar:SetStatusBarTexture(C.media.texture)
-GameTooltipStatusBar:Height(4)
+GameTooltipStatusBar:SetHeight(4)
 GameTooltipStatusBar:ClearAllPoints()
-GameTooltipStatusBar:Point("TOPLEFT", GameTooltip, "BOTTOMLEFT", 2, 6)
-GameTooltipStatusBar:Point("TOPRIGHT", GameTooltip, "BOTTOMRIGHT", -2, 6)
+GameTooltipStatusBar:SetPoint("TOPLEFT", GameTooltip, "BOTTOMLEFT", 2, 6)
+GameTooltipStatusBar:SetPoint("TOPRIGHT", GameTooltip, "BOTTOMRIGHT", -2, 6)
 
 -- Raid icon
 local ricon = GameTooltip:CreateTexture("GameTooltipRaidIcon", "OVERLAY")
-ricon:Height(18)
-ricon:Width(18)
-ricon:Point("BOTTOM", "GameTooltip", "TOP", 0, 5)
+ricon:SetHeight(18)
+ricon:SetWidth(18)
+ricon:SetPoint("BOTTOM", "GameTooltip", "TOP", 0, 5)
 
 GameTooltip:HookScript("OnHide", function(self)
 	ricon:SetTexture(nil)
@@ -104,7 +104,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		else
 			tooltip:SetOwner(parent, "ANCHOR_NONE")
 			tooltip:ClearAllPoints()
-			tooltip:Point("BOTTOMRIGHT", TooltipAnchor, "BOTTOMRIGHT", 0, 0)
+			tooltip:SetPoint("BOTTOMRIGHT", TooltipAnchor, "BOTTOMRIGHT", 0, 0)
 			tooltip.default = 1
 		end
 	end
@@ -149,7 +149,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 				if InCombatLockdown() and C.tooltip.hide_combat and not IsShiftKeyDown() then
 					self:Hide()
 				else
-					self:Point("BOTTOMRIGHT", TooltipAnchor, "BOTTOMRIGHT", 0, 0)
+					self:SetPoint("BOTTOMRIGHT", TooltipAnchor, "BOTTOMRIGHT", 0, 0)
 				end
 			end)
 		end
@@ -166,7 +166,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 				min, max = UnitHealth(unit), UnitHealthMax(unit)
 				if not self.text then
 					self.text = self:CreateFontString(nil, "OVERLAY", "Tooltip_Med")
-					self.text:Point("CENTER", GameTooltipStatusBar, 0, 1.5)
+					self.text:SetPoint("CENTER", GameTooltipStatusBar, 0, 1.5)
 				end
 				self.text:Show()
 				local hp = T.ShortValue(min).." / "..T.ShortValue(max)
@@ -421,9 +421,9 @@ hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 		shoppingTooltip3:SetOwner(self, "ANCHOR_NONE")
 		shoppingTooltip3:ClearAllPoints()
 		if side and side == "left" then
-			shoppingTooltip3:Point("TOPRIGHT", self, "TOPLEFT", -3, -10)
+			shoppingTooltip3:SetPoint("TOPRIGHT", self, "TOPLEFT", -3, -10)
 		else
-			shoppingTooltip3:Point("TOPLEFT", self, "TOPRIGHT", 3, -10)
+			shoppingTooltip3:SetPoint("TOPLEFT", self, "TOPRIGHT", 3, -10)
 		end
 		shoppingTooltip3:SetHyperlinkCompareItem(link, 3, shift, self)
 		shoppingTooltip3:Show()
@@ -438,15 +438,15 @@ hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 		shoppingTooltip1:ClearAllPoints()
 		if side and side == "left" then
 			if item3 then
-				shoppingTooltip1:Point("TOPRIGHT", shoppingTooltip3, "TOPLEFT", -3, 0)
+				shoppingTooltip1:SetPoint("TOPRIGHT", shoppingTooltip3, "TOPLEFT", -3, 0)
 			else
-				shoppingTooltip1:Point("TOPRIGHT", self, "TOPLEFT", -3, -10)
+				shoppingTooltip1:SetPoint("TOPRIGHT", self, "TOPLEFT", -3, -10)
 			end
 		else
 			if item3 then
-				shoppingTooltip1:Point("TOPLEFT", shoppingTooltip3, "TOPRIGHT", 3, 0)
+				shoppingTooltip1:SetPoint("TOPLEFT", shoppingTooltip3, "TOPRIGHT", 3, 0)
 			else
-				shoppingTooltip1:Point("TOPLEFT", self, "TOPRIGHT", 3, -10)
+				shoppingTooltip1:SetPoint("TOPLEFT", self, "TOPRIGHT", 3, -10)
 			end
 		end
 		shoppingTooltip1:SetHyperlinkCompareItem(link, 1, shift, self)
@@ -456,9 +456,9 @@ hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 			shoppingTooltip2:SetOwner(shoppingTooltip1, "ANCHOR_NONE")
 			shoppingTooltip2:ClearAllPoints()
 			if side and side == "left" then
-				shoppingTooltip2:Point("TOPRIGHT", shoppingTooltip1, "TOPLEFT", -3, 0)
+				shoppingTooltip2:SetPoint("TOPRIGHT", shoppingTooltip1, "TOPLEFT", -3, 0)
 			else
-				shoppingTooltip2:Point("TOPLEFT", shoppingTooltip1, "TOPRIGHT", 3, 0)
+				shoppingTooltip2:SetPoint("TOPLEFT", shoppingTooltip1, "TOPRIGHT", 3, 0)
 			end
 			shoppingTooltip2:SetHyperlinkCompareItem(link, 2, shift, self)
 			shoppingTooltip2:Show()

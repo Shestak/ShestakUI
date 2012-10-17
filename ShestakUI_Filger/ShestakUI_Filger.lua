@@ -73,16 +73,16 @@ function Filger:DisplayActives()
 			bar:SetTemplate("Default")
 
 			if index == 1 then
-				bar:Point(unpack(self.Position))
+				bar:SetPoint(unpack(self.Position))
 			else
 				if self.Direction == "UP" then
-					bar:Point("BOTTOM", previous, "TOP", 0, self.Interval)
+					bar:SetPoint("BOTTOM", previous, "TOP", 0, self.Interval)
 				elseif self.Direction == "RIGHT" then
-					bar:Point("LEFT", previous, "RIGHT", self.Mode == "ICON" and self.Interval or (self.BarWidth + self.Interval + 7), 0)
+					bar:SetPoint("LEFT", previous, "RIGHT", self.Mode == "ICON" and self.Interval or (self.BarWidth + self.Interval + 7), 0)
 				elseif self.Direction == "LEFT" then
-					bar:Point("RIGHT", previous, "LEFT", self.Mode == "ICON" and -self.Interval or -(self.BarWidth + self.Interval + 7), 0)
+					bar:SetPoint("RIGHT", previous, "LEFT", self.Mode == "ICON" and -self.Interval or -(self.BarWidth + self.Interval + 7), 0)
 				else
-					bar:Point("TOP", previous, "BOTTOM", 0, -self.Interval)
+					bar:SetPoint("TOP", previous, "BOTTOM", 0, -self.Interval)
 				end
 			end
 
@@ -90,8 +90,8 @@ function Filger:DisplayActives()
 				bar.icon = _G[bar.icon:GetName()]
 			else
 				bar.icon = bar:CreateTexture("$parentIcon", "BORDER")
-				bar.icon:Point("TOPLEFT", 2, -2)
-				bar.icon:Point("BOTTOMRIGHT", -2, 2)
+				bar.icon:SetPoint("TOPLEFT", 2, -2)
+				bar.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 				bar.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			end
 
@@ -111,7 +111,7 @@ function Filger:DisplayActives()
 					bar.count = bar:CreateFontString("$parentCount", "OVERLAY")
 					bar.count:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
 					bar.count:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
-					bar.count:Point("BOTTOMRIGHT", 1, -1)
+					bar.count:SetPoint("BOTTOMRIGHT", 1, -1)
 					bar.count:SetJustifyH("CENTER")
 				end
 			else
@@ -119,14 +119,14 @@ function Filger:DisplayActives()
 					bar.statusbar = _G[bar.statusbar:GetName()]
 				else
 					bar.statusbar = CreateFrame("StatusBar", "$parentStatusBar", bar)
-					bar.statusbar:Width(self.BarWidth)
-					bar.statusbar:Height(self.IconSize - 10)
+					bar.statusbar:SetWidth(self.BarWidth)
+					bar.statusbar:SetHeight(self.IconSize - 10)
 					bar.statusbar:SetStatusBarTexture(C.media.texture)
 					bar.statusbar:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1)
 					if self.IconSide == "LEFT" then
-						bar.statusbar:Point("BOTTOMLEFT", bar, "BOTTOMRIGHT", 5, 2)
+						bar.statusbar:SetPoint("BOTTOMLEFT", bar, "BOTTOMRIGHT", 5, 2)
 					elseif self.IconSide == "RIGHT" then
-						bar.statusbar:Point("BOTTOMRIGHT", bar, "BOTTOMLEFT", -5, 2)
+						bar.statusbar:SetPoint("BOTTOMRIGHT", bar, "BOTTOMLEFT", -5, 2)
 					end
 				end
 				bar.statusbar:SetMinMaxValues(0, 1)
@@ -136,8 +136,8 @@ function Filger:DisplayActives()
 					bar.bg = _G[bar.bg:GetName()]
 				else
 					bar.bg = CreateFrame("Frame", "$parentBG", bar.statusbar)
-					bar.bg:Point("TOPLEFT", -2, 2)
-					bar.bg:Point("BOTTOMRIGHT", 2, -2)
+					bar.bg:SetPoint("TOPLEFT", -2, 2)
+					bar.bg:SetPoint("BOTTOMRIGHT", 2, -2)
 					bar.bg:SetFrameStrata("BACKGROUND")
 					bar.bg:SetTemplate("Default")
 				end
@@ -157,7 +157,7 @@ function Filger:DisplayActives()
 					bar.time = bar.statusbar:CreateFontString("$parentTime", "OVERLAY")
 					bar.time:SetFont(C.font.filger_font, C.font.filger_font_size, C.font.filger_font_style)
 					bar.time:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
-					bar.time:Point("RIGHT", bar.statusbar, 0, 0)
+					bar.time:SetPoint("RIGHT", bar.statusbar, 0, 0)
 					bar.time:SetJustifyH("RIGHT")
 				end
 
@@ -167,7 +167,7 @@ function Filger:DisplayActives()
 					bar.count = bar:CreateFontString("$parentCount", "OVERLAY")
 					bar.count:SetFont(C.font.filger_font, C.font.filger_font_size, C.font.filger_font_style)
 					bar.count:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
-					bar.count:Point("BOTTOMRIGHT", 1, 0)
+					bar.count:SetPoint("BOTTOMRIGHT", 1, 0)
 					bar.count:SetJustifyH("CENTER")
 				end
 
@@ -177,8 +177,8 @@ function Filger:DisplayActives()
 					bar.spellname = bar.statusbar:CreateFontString("$parentSpellName", "OVERLAY")
 					bar.spellname:SetFont(C.font.filger_font, C.font.filger_font_size, C.font.filger_font_style)
 					bar.spellname:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
-					bar.spellname:Point("LEFT", bar.statusbar, 2, 0)
-					bar.spellname:Point("RIGHT", bar.time, "LEFT")
+					bar.spellname:SetPoint("LEFT", bar.statusbar, 2, 0)
+					bar.spellname:SetPoint("RIGHT", bar.time, "LEFT")
 					bar.spellname:SetJustifyH("LEFT")
 				end
 			end
@@ -250,8 +250,8 @@ function Filger:DisplayActives()
 			bar:SetScript("OnUpdate", nil)
 		end
 		bar.spellID = value.spid
-		bar:Width(self.IconSize or 37)
-		bar:Height(self.IconSize or 37)
+		bar:SetWidth(self.IconSize or 37)
+		bar:SetHeight(self.IconSize or 37)
 		bar:SetAlpha(value.data.opacity or 1)
 		bar:Show()
 		index = index + 1
@@ -442,7 +442,7 @@ if Filger_Spells and Filger_Spells[T.class] then
 		frame.IconSize = data.IconSize or 37
 		frame.BarWidth = data.BarWidth or 186
 		frame.Position = data.Position or "CENTER"
-		frame:Point(unpack(data.Position))
+		frame:SetPoint(unpack(data.Position))
 
 		if Filger_Settings.config_mode then
 			frame.actives = {}

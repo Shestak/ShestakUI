@@ -4,17 +4,17 @@ local T, C, L, _ = unpack(select(2, ...))
 --	Move WatchFrame
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame", "WatchFrameAnchor", UIParent)
-frame:Point(unpack(C.position.quest))
-frame:Height(150)
+frame:SetPoint(unpack(C.position.quest))
+frame:SetHeight(150)
 if GetCVar("watchFrameWidth") == "1" then
-	frame:Width(326)
+	frame:SetWidth(326)
 else
-	frame:Width(224)
+	frame:SetWidth(224)
 end
 
 WatchFrame:ClearAllPoints()
 WatchFrame:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, 0)
-WatchFrame:Height(T.getscreenheight / 1.6)
+WatchFrame:SetHeight(T.getscreenheight / 1.6)
 
 hooksecurefunc(WatchFrame, "SetPoint", function(_, _, parent)
 	if parent ~= frame then
@@ -33,7 +33,7 @@ hooksecurefunc("WatchFrameItem_UpdateCooldown", function(self)
 		local count = _G[self:GetName().."Count"]
 		local hotkey = _G[self:GetName().."HotKey"]
 
-		self:Size(C.actionbar.button_size)
+		self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		self:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -41,7 +41,7 @@ hooksecurefunc("WatchFrameItem_UpdateCooldown", function(self)
 		icon:SetPoint("BOTTOMRIGHT", self, -2, 2)
 
 		count:ClearAllPoints()
-		count:Point("BOTTOMRIGHT", 0, 2)
+		count:SetPoint("BOTTOMRIGHT", 0, 2)
 		count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 		count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 

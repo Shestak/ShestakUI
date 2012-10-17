@@ -8,7 +8,7 @@ if C.misc.raid_tools ~= true then return end
 local RaidUtilityPanel = CreateFrame("Frame", "RaidUtilityPanel", UIParent)
 RaidUtilityPanel:CreatePanel("Transparent", 297, 145, unpack(C.position.raid_utility))
 if GetCVarBool("watchFrameWidth") then
-	RaidUtilityPanel:Point(C.position.raid_utility[1], C.position.raid_utility[2], C.position.raid_utility[3], C.position.raid_utility[4] + 100, C.position.raid_utility[5])
+	RaidUtilityPanel:SetPoint(C.position.raid_utility[1], C.position.raid_utility[2], C.position.raid_utility[3], C.position.raid_utility[4] + 100, C.position.raid_utility[5])
 end
 RaidUtilityPanel.toggled = false
 
@@ -25,9 +25,9 @@ end
 -- Function to create buttons in this module
 local function CreateButton(name, parent, template, width, height, point, relativeto, point2, xOfs, yOfs, text)
 	local b = CreateFrame("Button", name, parent, template)
-	b:Width(width)
-	b:Height(height)
-	b:Point(point, relativeto, point2, xOfs, yOfs)
+	b:SetWidth(width)
+	b:SetHeight(height)
+	b:SetPoint(point, relativeto, point2, xOfs, yOfs)
 	b:EnableMouse(true)
 	if text then
 		local t = b:CreateFontString(nil, "OVERLAY", b)
@@ -98,15 +98,15 @@ RaidUtilityReadyCheckButton:SetScript("OnMouseUp", function(self) DoReadyCheck()
 
 -- World Marker button
 CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:ClearAllPoints()
-CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:Point("TOPRIGHT", RaidUtilityMainAssistButton, "BOTTOMRIGHT", 0, -5)
+CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:SetPoint("TOPRIGHT", RaidUtilityMainAssistButton, "BOTTOMRIGHT", 0, -5)
 CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:SetParent("RaidUtilityPanel")
-CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:Height(18)
-CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:Width(RaidUtilityRoleButton:GetWidth() * 0.22)
+CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:SetHeight(18)
+CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:SetWidth(RaidUtilityRoleButton:GetWidth() * 0.22)
 CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:StripTextures(true)
 
 local MarkTexture = CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton:CreateTexture(nil, "OVERLAY")
 MarkTexture:SetTexture("Interface\\RaidFrame\\Raid-WorldPing")
-MarkTexture:Point("CENTER", 0, -1)
+MarkTexture:SetPoint("CENTER", 0, -1)
 
 -- Raid Control Panel
 CreateButton("RaidUtilityRaidControlButton", RaidUtilityPanel, "UIPanelButtonTemplate", RaidUtilityRoleButton:GetWidth(), 18, "TOPLEFT", RaidUtilityReadyCheckButton, "BOTTOMLEFT", 0, -5, RAID_CONTROL)

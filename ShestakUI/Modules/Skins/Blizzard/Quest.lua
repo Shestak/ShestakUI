@@ -41,7 +41,7 @@ local function LoadSkin()
 		texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		texture:SetDrawLayer("OVERLAY")
 		texture:SetPoint("TOPLEFT", 2, -2)
-		texture:Size(texture:GetWidth() - 2, texture:GetHeight() - 2)
+		texture:SetSize(texture:GetWidth() - 2, texture:GetHeight() - 2)
 
 		_G["QuestProgressItem"..i.."Count"]:SetDrawLayer("OVERLAY")
 		_G["QuestProgressItem"..i.."Name"]:SetFont(C.media.normal_font, 12)

@@ -25,8 +25,8 @@ local function SkinIt(bar)
 	bar.backdrop = CreateFrame("Frame", nil, bar)
 	bar.backdrop:SetFrameLevel(0)
 	bar.backdrop:SetTemplate("Default")
-	bar.backdrop:Point("TOPLEFT", bar, "TOPLEFT", -2, 2)
-	bar.backdrop:Point("BOTTOMRIGHT", bar, "BOTTOMRIGHT", 2, -2)
+	bar.backdrop:SetPoint("TOPLEFT", bar, "TOPLEFT", -2, 2)
+	bar.backdrop:SetPoint("BOTTOMRIGHT", bar, "BOTTOMRIGHT", 2, -2)
 end
 
 local function SkinBlizzTimer(self, event, timerType, timeSeconds, totalTime)

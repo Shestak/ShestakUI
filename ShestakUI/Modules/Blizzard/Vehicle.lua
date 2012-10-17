@@ -4,13 +4,13 @@ local T, C, L, _ = unpack(select(2, ...))
 --	Move vehicle indicator
 ----------------------------------------------------------------------------------------
 local VehicleAnchor = CreateFrame("Frame", "VehicleAnchor", UIParent)
-VehicleAnchor:Point(unpack(C.position.vehicle))
-VehicleAnchor:Size(VehicleSeatIndicator:GetWidth(), VehicleSeatIndicator:GetHeight())
+VehicleAnchor:SetPoint(unpack(C.position.vehicle))
+VehicleAnchor:SetSize(VehicleSeatIndicator:GetWidth(), VehicleSeatIndicator:GetHeight())
 
 hooksecurefunc(VehicleSeatIndicator, "SetPoint", function(_, _, parent)
 	if parent == "MinimapCluster" or parent == _G["MinimapCluster"] then
 		VehicleSeatIndicator:ClearAllPoints()
-		VehicleSeatIndicator:Point("BOTTOM", VehicleAnchor, "BOTTOM", 0, 24)
+		VehicleSeatIndicator:SetPoint("BOTTOM", VehicleAnchor, "BOTTOM", 0, 24)
 		VehicleSeatIndicator:SetFrameStrata("LOW")
 	end
 end)

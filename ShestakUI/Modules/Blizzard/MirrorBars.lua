@@ -25,7 +25,7 @@ do
 		local pos = position[self.type]
 		local p1, frame, p2, x, y = strsplit("#", pos)
 
-		return self:Point(p1, frame, p2, x, y)
+		return self:SetPoint(p1, frame, p2, x, y)
 	end
 
 	local OnUpdate = function(self, elapsed)
@@ -63,8 +63,8 @@ do
 		bg:SetVertexColor(r * 0.3, g * 0.3, b * 0.3)
 
 		local border = CreateFrame("Frame", nil, frame)
-		border:Point("TOPLEFT", frame, -2, 2)
-		border:Point("BOTTOMRIGHT", frame, 2, -2)
+		border:SetPoint("TOPLEFT", frame, -2, 2)
+		border:SetPoint("BOTTOMRIGHT", frame, 2, -2)
 		border:SetTemplate("Default")
 		border:SetFrameLevel(0)
 
@@ -74,12 +74,12 @@ do
 		text:SetShadowOffset(0, 0)
 		text:SetTextColor(1, 1, 1)
 
-		text:Point("LEFT", frame)
-		text:Point("RIGHT", frame)
-		text:Point("TOP", frame, 0, 1)
-		text:Point("BOTTOM", frame)
+		text:SetPoint("LEFT", frame)
+		text:SetPoint("RIGHT", frame)
+		text:SetPoint("TOP", frame, 0, 1)
+		text:SetPoint("BOTTOM", frame)
 
-		frame:Size(281, 16)
+		frame:SetSize(281, 16)
 
 		frame:SetStatusBarTexture(C.media.texture)
 		frame:SetStatusBarColor(r, g, b)
