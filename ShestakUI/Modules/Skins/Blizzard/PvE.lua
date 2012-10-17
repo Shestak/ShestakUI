@@ -17,7 +17,8 @@ local function LoadSkin()
 		"ScenarioFinderFrame",
 		"LFGDungeonReadyDialog",
 		"LFGDungeonReadyStatus",
-		"LFDQueueFrameCooldownFrame"
+		"LFDQueueFrameCooldownFrame",
+		"RaidFinderQueueFrameCooldownFrame"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -238,6 +239,10 @@ local function LoadSkin()
 	LFDQueueFrameCooldownFrame:CreateBackdrop("Overlay")
 	LFDQueueFrameCooldownFrame.backdrop:SetPoint("TOPLEFT", 2, 4)
 	LFDQueueFrameCooldownFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 6)
+
+	RaidFinderQueueFrameCooldownFrame:CreateBackdrop("Overlay")
+	RaidFinderQueueFrameCooldownFrame.backdrop:SetPoint("TOPLEFT", 2, 6)
+	RaidFinderQueueFrameCooldownFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 8)
 
 	T.SkinDropDownBox(LFDQueueFrameTypeDropDown, 300)
 	LFDQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
