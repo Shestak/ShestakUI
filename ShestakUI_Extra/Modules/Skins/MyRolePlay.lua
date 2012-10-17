@@ -87,9 +87,9 @@ hooksecurefunc(mrp, "CreateEditFrames", function()
 	T.SkinDropDownBox(MyRolePlayCharacterFrame_ProfileComboBox)
 	T.SkinDropDownBox(MyRolePlayComboEditFrameComboBox)
 
-	MyRolePlayCharacterFrame_RenProfileButton:Size(21)
-	MyRolePlayCharacterFrame_DelProfileButton:Size(21)
-	MyRolePlayCharacterFrame_NewProfileButton:Size(21)
+	MyRolePlayCharacterFrame_RenProfileButton:SetSize(21, 21)
+	MyRolePlayCharacterFrame_DelProfileButton:SetSize(21, 21)
+	MyRolePlayCharacterFrame_NewProfileButton:SetSize(21, 21)
 	MyRolePlayCharacterFrame_NewProfileButton:ClearAllPoints()
 	MyRolePlayCharacterFrame_NewProfileButton:SetPoint("LEFT", MyRolePlayCharacterFrame_ProfileComboBox.backdrop, "RIGHT", 1, 0)
 

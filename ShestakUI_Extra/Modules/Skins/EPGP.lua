@@ -23,20 +23,20 @@ frame:SetScript("OnEvent", function(self, event)
 	end
 
 	EPGPFrame:CreateBackdrop("Transparent")
-	EPGPFrame.backdrop:Point("TOPLEFT", 10, 0)
-	EPGPFrame.backdrop:Point("BOTTOMRIGHT", -35, 70)
+	EPGPFrame.backdrop:SetPoint("TOPLEFT", 10, 0)
+	EPGPFrame.backdrop:SetPoint("BOTTOMRIGHT", -35, 70)
 
 	EPGPLogFrame:CreateBackdrop("Transparent")
-	EPGPLogFrame.backdrop:Point("TOPLEFT", 5, 6)
-	EPGPLogFrame.backdrop:Point("BOTTOMRIGHT", 0, -1)
+	EPGPLogFrame.backdrop:SetPoint("TOPLEFT", 5, 6)
+	EPGPLogFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, -1)
 
 	EPGPSideFrame:CreateBackdrop("Transparent")
-	EPGPSideFrame.backdrop:Point("TOPLEFT", 1, 0)
-	EPGPSideFrame.backdrop:Point("BOTTOMRIGHT", 0, 0)
+	EPGPSideFrame.backdrop:SetPoint("TOPLEFT", 1, 0)
+	EPGPSideFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 
 	EPGPSideFrame2:CreateBackdrop("Transparent")
-	EPGPSideFrame2.backdrop:Point("TOPLEFT", 1, 0)
-	EPGPSideFrame2.backdrop:Point("BOTTOMRIGHT", 0, -2)
+	EPGPSideFrame2.backdrop:SetPoint("TOPLEFT", 1, 0)
+	EPGPSideFrame2.backdrop:SetPoint("BOTTOMRIGHT", 0, -2)
 
 	EPGPExportImportFrame:SetTemplate("Transparent")
 

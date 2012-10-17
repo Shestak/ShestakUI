@@ -48,8 +48,8 @@ tinsert(T.MoverFrames, SpecAnchor)
 
 spec.t = spec:CreateFontString(spec, "OVERLAY")
 spec.t:SetPoint("CENTER")
-spec.t:Width(SpecAnchor:GetWidth() - 4)
-spec.t:Height(C.media.pixel_font_size)
+spec.t:SetWidth(SpecAnchor:GetWidth() - 4)
+spec.t:SetHeight(C.media.pixel_font_size)
 spec.t:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 
 spec:RegisterEvent("PLAYER_TALENT_UPDATE")
@@ -149,9 +149,9 @@ for i = 1, 10 do
 	gearSets[i]:CreatePanel("Transparent", 19, 19, "CENTER", HEAL, "CENTER", 0, 0)
 
 	if i == 1 then
-		gearSets[i]:Point("BOTTOMRIGHT", HEAL, "BOTTOMLEFT", -3, 0)
+		gearSets[i]:SetPoint("BOTTOMRIGHT", HEAL, "BOTTOMLEFT", -3, 0)
 	elseif i == 5 then
-		gearSets[i]:Point("BOTTOMRIGHT", DPS, "TOPRIGHT", 0, 3)
+		gearSets[i]:SetPoint("BOTTOMRIGHT", DPS, "TOPRIGHT", 0, 3)
 	else
 		gearSets[i]:SetPoint("BOTTOMRIGHT", gearSets[i-1], "BOTTOMLEFT", -3, 0)
 	end

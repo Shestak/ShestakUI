@@ -73,11 +73,11 @@ frame:SetScript("OnEvent", function(self, event)
 		end
 		skada.backdrop:ClearAllPoints()
 		if win.db.enabletitle then
-			skada.backdrop:Point("TOPLEFT", win.bargroup.button, "TOPLEFT", -2, 2)
+			skada.backdrop:SetPoint("TOPLEFT", win.bargroup.button, "TOPLEFT", -2, 2)
 		else
-			skada.backdrop:Point("TOPLEFT", win.bargroup, "TOPLEFT", -2, 2)
+			skada.backdrop:SetPoint("TOPLEFT", win.bargroup, "TOPLEFT", -2, 2)
 		end
-		skada.backdrop:Point("BOTTOMRIGHT", win.bargroup, "BOTTOMRIGHT", 2, -2)
+		skada.backdrop:SetPoint("BOTTOMRIGHT", win.bargroup, "BOTTOMRIGHT", 2, -2)
 	end
 
 	-- Update pre-existing displays

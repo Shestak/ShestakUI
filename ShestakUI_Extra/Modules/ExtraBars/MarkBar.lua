@@ -35,8 +35,8 @@ for i = 0, 8 do
 	else
 		icon[i]:SetNormalTexture("Interface\\TargetingFrame\\UI-RaidTargetingIcons")
 	end
-	icon[i]:Size(button_size - 5, button_size - 5)
-	icon[i]:Point("CENTER", mark[i])
+	icon[i]:SetSize(button_size - 5, button_size - 5)
+	icon[i]:SetPoint("CENTER", mark[i])
 
 	-- Set up each button
 	if i == 1 then
@@ -78,12 +78,12 @@ WorldMarkButton:SetAttribute("type1", "macro")
 WorldMarkButton:SetAttribute("macrotext1", "/click CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton")
 WorldMarkButton:HookScript("OnClick", function(self)
 	DropDownList1:ClearAllPoints()
-	DropDownList1:Point("TOPRIGHT", self, "BOTTOMRIGHT", 2, -4)
+	DropDownList1:SetPoint("TOPRIGHT", self, "BOTTOMRIGHT", 2, -4)
 end)
 
 local WorldMarkButtonTexture = WorldMarkButton:CreateTexture(nil, "OVERLAY")
 WorldMarkButtonTexture:SetTexture("Interface\\RaidFrame\\Raid-WorldPing")
-WorldMarkButtonTexture:Point("CENTER", 0, 0)
+WorldMarkButtonTexture:SetPoint("CENTER", 0, 0)
 WorldMarkButtonTexture:SetHeight(23)
 WorldMarkButtonTexture:SetWidth(23)
 
@@ -103,8 +103,8 @@ end)
 local PullTargetButtonTexture = PullTargetButton:CreateTexture(nil, "OVERLAY")
 PullTargetButtonTexture:SetTexture("Interface\\Icons\\Ability_Hunter_Beastcall")
 PullTargetButtonTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-PullTargetButtonTexture:Point("TOPLEFT", PullTargetButton, 2, -2)
-PullTargetButtonTexture:Point("BOTTOMRIGHT", PullTargetButton, -2, 2)
+PullTargetButtonTexture:SetPoint("TOPLEFT", PullTargetButton, 2, -2)
+PullTargetButtonTexture:SetPoint("BOTTOMRIGHT", PullTargetButton, -2, 2)
 
 -- Check if we are Raid Leader/Officer or in Party
 local function CheckRaidStatus()

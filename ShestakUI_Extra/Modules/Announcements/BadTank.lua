@@ -484,19 +484,19 @@ InfoButton.text:SetText(INFO)
 
 local b = CreateFrame("Button", nil, UIParent)
 b:SetTemplate("ClassColor")
-b:Size(19)
+b:SetSize(19, 19)
 b:SetAlpha(0)
 if C.extra_general.archaeology == true then
-	b:Point("TOP", SwitchLayout, "BOTTOM", 0, -21)
+	b:SetPoint("TOP", SwitchLayout, "BOTTOM", 0, -21)
 else
-	b:Point("TOP", SwitchLayout, "BOTTOM", 0, -1)
+	b:SetPoint("TOP", SwitchLayout, "BOTTOM", 0, -1)
 end
 
 local bt = b:CreateTexture(nil, "OVERLAY")
 bt:SetTexture("Interface\\Icons\\Ability_Hunter_Beastcall")
 bt:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-bt:Point("TOPLEFT", b, 2, -2)
-bt:Point("BOTTOMRIGHT", b, -2, 2)
+bt:SetPoint("TOPLEFT", b, 2, -2)
+bt:SetPoint("BOTTOMRIGHT", b, -2, 2)
 
 b:SetScript("OnClick", function(self)
 	if not InCombatLockdown() then

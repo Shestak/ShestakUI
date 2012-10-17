@@ -8,7 +8,7 @@ if C.extra_bar.battleground ~= true then return end
 local buttonframe = CreateFrame("Frame", "BGAnnouncerButtonFrame", UIParent)
 buttonframe:CreatePanel("Invisible", 313, 20, unpack(C.extra_position.bg_announce))
 if C.extra_bar.battleground_two_row == true then
-	buttonframe:Size(156, 43)
+	buttonframe:SetSize(156, 43)
 end
 buttonframe:Hide()
 buttonframe:SetFrameStrata("BACKGROUND")
@@ -25,7 +25,7 @@ end)
 
 button1.t = button1:CreateFontString(nil, "OVERLAY")
 button1.t:SetFont(C.font.stats_font, C.font.stats_font_size, C.font.stats_font_style)
-button1.t:Point("CENTER", 0, 0)
+button1.t:SetPoint("CENTER", 0, 0)
 button1.t:SetText("Low")
 
 -- Button 2
@@ -39,7 +39,7 @@ end)
 
 button2.t = button2:CreateFontString(nil, "OVERLAY")
 button2.t:SetFont(C.font.stats_font, C.font.stats_font_size, C.font.stats_font_style)
-button2.t:Point("CENTER", 0, 0)
+button2.t:SetPoint("CENTER", 0, 0)
 button2.t:SetText("Med")
 
 -- Button 3
@@ -53,14 +53,14 @@ end)
 
 button3.t = button3:CreateFontString(nil, "OVERLAY")
 button3.t:SetFont(C.font.stats_font, C.font.stats_font_size, C.font.stats_font_style)
-button3.t:Point("CENTER", 0, 0)
+button3.t:SetPoint("CENTER", 0, 0)
 button3.t:SetText("High")
 
 -- Button 4
 local button4 = CreateFrame("Button", "BGAnnouncerButton4", buttonframe)
 button4:CreatePanel("Transparent", 50, 20, "LEFT", button3, "RIGHT", 3, 0)
 if C.extra_bar.battleground_two_row == true then
-	button4:Point("TOPLEFT", button1, "BOTTOMLEFT", 0, -3)
+	button4:SetPoint("TOPLEFT", button1, "BOTTOMLEFT", 0, -3)
 end
 button4:SetScript("OnEnter", T.SetModifiedBackdrop)
 button4:SetScript("OnLeave", T.SetOriginalBackdrop)
@@ -70,7 +70,7 @@ end)
 
 button4.t = button4:CreateFontString(nil, "OVERLAY")
 button4.t:SetFont(C.font.stats_font, C.font.stats_font_size, C.font.stats_font_style)
-button4.t:Point("CENTER", 0, 0)
+button4.t:SetPoint("CENTER", 0, 0)
 button4.t:SetText("Focus")
 
 -- Button 5
@@ -84,7 +84,7 @@ end)
 
 button5.t = button5:CreateFontString(nil, "OVERLAY")
 button5.t:SetFont(C.font.stats_font, C.font.stats_font_size, C.font.stats_font_style)
-button5.t:Point("CENTER", 0, 0)
+button5.t:SetPoint("CENTER", 0, 0)
 button5.t:SetText("Hidden")
 
 -- Button 6
@@ -98,7 +98,7 @@ end)
 
 button6.t = button6:CreateFontString(nil, "OVERLAY")
 button6.t:SetFont(C.font.stats_font, C.font.stats_font_size, C.font.stats_font_style)
-button6.t:Point("CENTER", 0, 0)
+button6.t:SetPoint("CENTER", 0, 0)
 button6.t:SetText("Secure")
 
 local UpdateZone = CreateFrame("Frame")
