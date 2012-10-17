@@ -192,8 +192,8 @@ function Stuffing:BagFrameSlotNew(p, slot)
 
 	local t = _G[ret.frame:GetName().."IconTexture"]
 	t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	t:Point("TOPLEFT", ret.frame, 2, -2)
-	t:Point("BOTTOMRIGHT", ret.frame, -2, 2)
+	t:SetPoint("TOPLEFT", ret.frame, 2, -2)
+	t:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
 
 	return ret
 end
@@ -246,13 +246,13 @@ function Stuffing:SlotNew(bag, slot)
 
 		local t = _G[ret.frame:GetName().."IconTexture"]
 		t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		t:Point("TOPLEFT", ret.frame, 2, -2)
-		t:Point("BOTTOMRIGHT", ret.frame, -2, 2)
+		t:SetPoint("TOPLEFT", ret.frame, 2, -2)
+		t:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
 
 		local c = _G[ret.frame:GetName().."Count"]
 		c:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		c:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
-		c:Point("BOTTOMRIGHT", 1, 1)
+		c:SetPoint("BOTTOMRIGHT", 1, 1)
 	end
 
 	ret.bag = bag
@@ -370,16 +370,16 @@ function Stuffing:CreateBagFrame(w)
 	f:SetScript("OnMouseUp", f.StopMovingOrSizing)
 
 	if w == "Bank" then
-		f:Point(unpack(C.position.bank))
+		f:SetPoint(unpack(C.position.bank))
 	else
-		f:Point(unpack(C.position.bag))
+		f:SetPoint(unpack(C.position.bag))
 	end
 
 	-- Buy button
 	if w == "Bank" then
 		f.b_purchase = CreateFrame("Button", "Stuffing_PurchaseButton"..w, f)
 		f.b_purchase:Size(80, 20)
-		f.b_purchase:Point("TOPLEFT", 10, -4)
+		f.b_purchase:SetPoint("TOPLEFT", 10, -4)
 		f.b_purchase:RegisterForClicks("AnyUp")
 		f.b_purchase:SkinButton()
 		f.b_purchase:SetScript("OnClick", function(self, btn)
@@ -415,7 +415,7 @@ function Stuffing:CreateBagFrame(w)
 
 	-- Create the bags frame
 	local fb = CreateFrame("Frame", n.."BagsFrame", f)
-	fb:Point("BOTTOMLEFT", f, "TOPLEFT", 0, 3)
+	fb:SetPoint("BOTTOMLEFT", f, "TOPLEFT", 0, 3)
 	fb:SetFrameStrata("MEDIUM")
 	f.bags_frame = fb
 
@@ -449,10 +449,10 @@ function Stuffing:InitBags()
 	local editbox = CreateFrame("EditBox", nil, f)
 	editbox:Hide()
 	editbox:SetAutoFocus(true)
-	editbox:Height(32)
+	editbox:SetHeight(32)
 	editbox:CreateBackdrop("Default")
-	editbox.backdrop:Point("TOPLEFT", -2, 1)
-	editbox.backdrop:Point("BOTTOMRIGHT", 2, -1)
+	editbox.backdrop:SetPoint("TOPLEFT", -2, 1)
+	editbox.backdrop:SetPoint("BOTTOMRIGHT", 2, -1)
 
 	local resetAndClear = function(self)
 		self:GetParent().detail:Show()
@@ -474,9 +474,9 @@ function Stuffing:InitBags()
 	editbox:SetText(SEARCH)
 
 	local detail = f:CreateFontString(nil, "ARTWORK", "GameFontHighlightLarge")
-	detail:Point("TOPLEFT", f, 11, -10)
-	detail:Point("RIGHT", f, -140, -10)
-	detail:Height(13)
+	detail:SetPoint("TOPLEFT", f, 11, -10)
+	detail:SetPoint("RIGHT", f, -140, -10)
+	detail:SetHeight(13)
 	detail:SetShadowColor(0, 0, 0, 0)
 	detail:SetJustifyH("LEFT")
 	detail:SetText("|cff9999ff"..SEARCH.."|r")
@@ -545,8 +545,8 @@ function Stuffing:Layout(isBank)
 		f.detail:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
 
 		f.detail:ClearAllPoints()
-		f.detail:Point("TOPLEFT", f, 12, -8)
-		f.detail:Point("RIGHT", f, -140, 0)
+		f.detail:SetPoint("TOPLEFT", f, 12, -8)
+		f.detail:SetPoint("RIGHT", f, -140, 0)
 	end
 
 	f:SetClampedToScreen(1)
@@ -564,8 +564,8 @@ function Stuffing:Layout(isBank)
 		w = w + ((#bs - 1) * bsize)
 		w = w + ((#bs - 2) * 4)
 
-		fb:Height(2 * 10 + bsize)
-		fb:Width(w)
+		fb:SetHeight(2 * 10 + bsize)
+		fb:SetWidth(w)
 		fb:Show()
 	else
 		fb:Hide()
@@ -582,7 +582,7 @@ function Stuffing:Layout(isBank)
 			xoff = xoff + (idx * 4)
 
 			b.frame:ClearAllPoints()
-			b.frame:Point("LEFT", fb, "LEFT", xoff, 0)
+			b.frame:SetPoint("LEFT", fb, "LEFT", xoff, 0)
 			b.frame:Size(bsize)
 
 			local btns = self.buttons
@@ -627,8 +627,8 @@ function Stuffing:Layout(isBank)
 		rows = rows + 1
 	end
 
-	f:Width(cols * C.bag.button_size + (cols - 1) * C.bag.button_space + 10 * 2)
-	f:Height(rows * C.bag.button_size + (rows - 1) * C.bag.button_space + off + 10 * 2)
+	f:SetWidth(cols * C.bag.button_size + (cols - 1) * C.bag.button_space + 10 * 2)
+	f:SetHeight(rows * C.bag.button_size + (rows - 1) * C.bag.button_space + off + 10 * 2)
 
 	local idx = 0
 	for _, i in ipairs(bs) do
@@ -655,7 +655,7 @@ function Stuffing:Layout(isBank)
 				yoff = yoff * -1
 
 				b.frame:ClearAllPoints()
-				b.frame:Point("TOPLEFT", f, "TOPLEFT", xoff, yoff)
+				b.frame:SetPoint("TOPLEFT", f, "TOPLEFT", xoff, yoff)
 				b.frame:Size(C.bag.button_size)
 				b.frame.lock = false
 				b.frame:SetAlpha(1)

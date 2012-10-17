@@ -330,8 +330,8 @@ function AddonManager:LoadWindow()
 
 		local highligh = button:CreateTexture("Frame", nil, self)
 		highligh:SetTexture(1, 1, 1, 0.3)
-		highligh:Point("TOPLEFT", button, 2, -2)
-		highligh:Point("BOTTOMRIGHT", button, -2, 2)
+		highligh:SetPoint("TOPLEFT", button, 2, -2)
+		highligh:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		button:SetHighlightTexture(highligh)
 
 		if i == 1 then
@@ -499,7 +499,7 @@ local guib = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "G
 guib:SetText("ShestakUI")
 guib:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -23)
 
-GameMenuFrame:Height(GameMenuFrame:GetHeight() + guib:GetHeight())
+GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + guib:GetHeight())
 if IsMacClient() then
 	GameMenuButtonMacOptions:SetPoint("TOP", guib, "BOTTOM", 0, -1)
 else

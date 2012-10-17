@@ -32,12 +32,12 @@ frame:SetScript("OnEvent", function(self, event)
 		local close = select(i, _NPCScanButton:GetChildren())
 		if close.GetPushedTexture and close:GetPushedTexture() and not close:GetName() then
 			close:StripTextures()
-			close:Point("TOPRIGHT", 4, 4)
+			close:SetPoint("TOPRIGHT", 4, 4)
 			close:SetScale(1)
 
 			close:CreateBackdrop("Overlay")
-			close.backdrop:Point("TOPLEFT", 8, -8)
-			close.backdrop:Point("BOTTOMRIGHT", -8, 8)
+			close.backdrop:SetPoint("TOPLEFT", 8, -8)
+			close.backdrop:SetPoint("BOTTOMRIGHT", -8, 8)
 
 			close.text = close:FontString(nil, C.media.normal_font, 17)
 			close.text:SetPoint("CENTER", 0, 1)

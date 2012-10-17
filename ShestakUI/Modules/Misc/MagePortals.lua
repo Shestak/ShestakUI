@@ -59,15 +59,15 @@ end
 
 local button = CreateFrame("Button", nil, UIParent)
 button:SetTemplate("ClassColor")
-button:Point("TOPLEFT", Minimap, "TOPLEFT")
+button:SetPoint("TOPLEFT", Minimap, "TOPLEFT")
 button:Size(20)
 button:SetAlpha(0)
 
 button.t = button:CreateTexture(nil, "OVERLAY")
 button.t:SetTexture("Interface\\Icons\\Spell_Arcane_TeleportStormwind")
 button.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-button.t:Point("TOPLEFT", button, 2, -2)
-button.t:Point("BOTTOMRIGHT", button, -2, 2)
+button.t:SetPoint("TOPLEFT", button, 2, -2)
+button.t:SetPoint("BOTTOMRIGHT", button, -2, 2)
 
 button:SetScript("OnClick", function(self)
 	if not InCombatLockdown() then

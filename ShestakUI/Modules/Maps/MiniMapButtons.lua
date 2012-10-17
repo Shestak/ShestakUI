@@ -8,9 +8,9 @@ local switch = CreateFrame("Button", "SwitchLayout", UIParent)
 switch:SetTemplate("Transparent")
 switch:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 if C.actionbar.toggle_mode == true then
-	switch:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -18)
+	switch:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -18)
 else
-	switch:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
+	switch:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
 end
 switch:Size(19)
 switch:SetAlpha(0)
@@ -81,7 +81,7 @@ SLASH_FARMMODE4 = "/аь"
 ----------------------------------------------------------------------------------------
 local farm = CreateFrame("Button", "FarmMode", UIParent)
 farm:SetTemplate("ClassColor")
-farm:Point("TOP", switch, "BOTTOM", 0, -1)
+farm:SetPoint("TOP", switch, "BOTTOM", 0, -1)
 farm:Size(19)
 farm:SetAlpha(0)
 

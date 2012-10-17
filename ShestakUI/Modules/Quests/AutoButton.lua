@@ -45,13 +45,13 @@ end
 
 -- Create anchor
 local AutoButtonAnchor = CreateFrame("Frame", "AutoButtonAnchor", UIParent)
-AutoButtonAnchor:Point("BOTTOMLEFT", Minimap, "TOPLEFT", -2, 27)
+AutoButtonAnchor:SetPoint("BOTTOMLEFT", Minimap, "TOPLEFT", -2, 27)
 AutoButtonAnchor:Size(40)
 
 -- Create button
 local AutoButton = CreateFrame("Button", "AutoButton", UIParent, "SecureActionButtonTemplate")
 AutoButton:Size(40)
-AutoButton:Point("CENTER", AutoButtonAnchor, "CENTER", 0, 0)
+AutoButton:SetPoint("CENTER", AutoButtonAnchor, "CENTER", 0, 0)
 AutoButton:SetTemplate("Default")
 AutoButton:StyleButton()
 AutoButton:SetAttribute("type", "item")
@@ -59,21 +59,21 @@ AutoButtonHide()
 
 -- Texture for our button
 AutoButton.t = AutoButton:CreateTexture(nil, "OVERLAY", nil)
-AutoButton.t:Point("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
-AutoButton.t:Point("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
+AutoButton.t:SetPoint("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
+AutoButton.t:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
 AutoButton.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 -- Count text for our button
 AutoButton.c = AutoButton:CreateFontString(nil, "OVERLAY", f)
 AutoButton.c:SetFont(C.media.pixel_font, C.media.pixel_font_size * 2, C.media.pixel_font_style)
 AutoButton.c:SetTextColor(1, 1, 1, 1)
-AutoButton.c:Point("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", 0.5, 0)
+AutoButton.c:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", 0.5, 0)
 AutoButton.c:SetJustifyH("CENTER")
 
 -- Cooldown
 AutoButton.Cooldown = CreateFrame("Cooldown", nil, AutoButton)
-AutoButton.Cooldown:Point("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
-AutoButton.Cooldown:Point("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
+AutoButton.Cooldown:SetPoint("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
+AutoButton.Cooldown:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
 
 local Scanner = CreateFrame("Frame")
 Scanner:RegisterEvent("BAG_UPDATE")

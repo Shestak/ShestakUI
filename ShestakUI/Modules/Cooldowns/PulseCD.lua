@@ -10,8 +10,8 @@ local cooldowns, animating, watching = { }, { }, { }
 local GetTime = GetTime
 
 local DCPAnchor = CreateFrame("Frame", "DCPAnchor", UIParent)
-DCPAnchor:Width(C.pulsecooldown.size)
-DCPAnchor:Height(C.pulsecooldown.size)
+DCPAnchor:SetWidth(C.pulsecooldown.size)
+DCPAnchor:SetHeight(C.pulsecooldown.size)
 DCPAnchor:SetPoint(unpack(C.position.pulse_cooldown))
 
 local DCP = CreateFrame("Frame")
@@ -149,7 +149,7 @@ end
 -- Event Handlers
 function DCP:ADDON_LOADED(addon)
 	RefreshLocals()
-	self:Point("CENTER", DCPAnchor, "CENTER", 0, 0)
+	self:SetPoint("CENTER", DCPAnchor, "CENTER", 0, 0)
 	self:UnregisterEvent("ADDON_LOADED")
 end
 DCP:RegisterEvent("ADDON_LOADED")

@@ -21,8 +21,8 @@ frame:SetScript("OnEvent", function(self, event)
 
 	VanasKoSFrame:StripTextures(true)
 	VanasKoSFrame:CreateBackdrop("Transparent")
-	VanasKoSFrame.backdrop:Point("TOPLEFT", 16, -12)
-	VanasKoSFrame.backdrop:Point("BOTTOMRIGHT", -30, 75)
+	VanasKoSFrame.backdrop:SetPoint("TOPLEFT", 16, -12)
+	VanasKoSFrame.backdrop:SetPoint("BOTTOMRIGHT", -30, 75)
 
 	VanasKoSListFrameChangeButton:SkinButton()
 	VanasKoSListFrameRemoveButton:SkinButton()

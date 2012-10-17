@@ -80,7 +80,7 @@ local function CreateRollButton(parent, ntex, ptex, htex, rolltype, tiptext, ...
 	local txt = f:CreateFontString(nil, nil)
 	txt:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 	txt:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
-	txt:Point("CENTER", 0, rolltype == 2 and 1 or rolltype == 0 and -1.2 or 0)
+	txt:SetPoint("CENTER", 0, rolltype == 2 and 1 or rolltype == 0 and -1.2 or 0)
 	return f, txt
 end
 
@@ -93,7 +93,7 @@ local function CreateRollFrame()
 	frame:Hide()
 
 	local button = CreateFrame("Button", nil, frame)
-	button:Point("LEFT", -29, 0)
+	button:SetPoint("LEFT", -29, 0)
 	button:Size(22)
 	button:CreateBackdrop("Default")
 	button:SetScript("OnEnter", SetItemTip)
@@ -108,8 +108,8 @@ local function CreateRollFrame()
 
 	local status = CreateFrame("StatusBar", nil, frame)
 	status:Size(326, 20)
-	status:Point("TOPLEFT", 0, 0)
-	status:Point("BOTTOMRIGHT", 0, 0)
+	status:SetPoint("TOPLEFT", 0, 0)
+	status:SetPoint("BOTTOMRIGHT", 0, 0)
 	status:SetScript("OnUpdate", StatusUpdate)
 	status:SetFrameLevel(status:GetFrameLevel() - 1)
 	status:SetStatusBarTexture(C.media.texture)
@@ -130,7 +130,7 @@ local function CreateRollFrame()
 	frame.need, frame.greed, frame.pass, frame.disenchant = needtext, greedtext, passtext, detext
 
 	local bind = frame:CreateFontString()
-	bind:Point("LEFT", pass, "RIGHT", 3, 1)
+	bind:SetPoint("LEFT", pass, "RIGHT", 3, 1)
 	bind:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 	bind:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
 	frame.fsbind = bind
@@ -138,8 +138,8 @@ local function CreateRollFrame()
 	local loot = frame:CreateFontString(nil, "ARTWORK")
 	loot:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 	loot:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
-	loot:Point("LEFT", bind, "RIGHT", 0, 0)
-	loot:Point("RIGHT", frame, "RIGHT", -5, 0)
+	loot:SetPoint("LEFT", bind, "RIGHT", 0, 0)
+	loot:SetPoint("RIGHT", frame, "RIGHT", -5, 0)
 	loot:Size(200, 10)
 	loot:SetJustifyH("LEFT")
 	frame.fsloot = loot
@@ -156,9 +156,9 @@ local function GetFrame()
 
 	local f = CreateRollFrame()
 	if pos == "TOP" then
-		f:Point("TOPRIGHT", next(frames) and frames[#frames] or LootRollAnchor, "BOTTOMRIGHT", next(frames) and 0 or -2, next(frames) and -7 or -5)
+		f:SetPoint("TOPRIGHT", next(frames) and frames[#frames] or LootRollAnchor, "BOTTOMRIGHT", next(frames) and 0 or -2, next(frames) and -7 or -5)
 	else
-		f:Point("BOTTOMRIGHT", next(frames) and frames[#frames] or LootRollAnchor, "TOPRIGHT", next(frames) and 0 or -2, next(frames) and 7 or 5)
+		f:SetPoint("BOTTOMRIGHT", next(frames) and frames[#frames] or LootRollAnchor, "TOPRIGHT", next(frames) and 0 or -2, next(frames) and 7 or 5)
 	end
 	table.insert(frames, f)
 	return f
@@ -256,7 +256,7 @@ local function START_LOOT_ROLL(rollID, time)
 	f.status:SetMinMaxValues(0, time)
 	f.status:SetValue(time)
 
-	f:Point("CENTER", WorldFrame, "CENTER")
+	f:SetPoint("CENTER", WorldFrame, "CENTER")
 	f:Show()
 end
 
@@ -284,7 +284,7 @@ LootRollAnchor:SetScript("OnEvent", function(frame, event, addon)
 		end
 	end)
 
-	LootRollAnchor:Point(unpack(C.position.group_loot))
+	LootRollAnchor:SetPoint(unpack(C.position.group_loot))
 end)
 
 SlashCmdList.TESTROLL = function()

@@ -23,7 +23,7 @@ BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
 BuffsAnchor:Size((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size * 2) + 3)
 
 ConsolidatedBuffs:ClearAllPoints()
-ConsolidatedBuffs:Point("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
+ConsolidatedBuffs:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
 ConsolidatedBuffs:Size(C.aura.player_buff_size)
 ConsolidatedBuffs.SetPoint = T.dummy
 ConsolidatedBuffs:CreateBackdrop("Default")
@@ -36,7 +36,7 @@ ConsolidatedBuffsIcon:SetTexture("Interface\\Icons\\Spell_ChargePositive")
 ConsolidatedBuffsIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 ConsolidatedBuffsIcon:Size(C.aura.player_buff_size - 4)
 
-ConsolidatedBuffsCount:Point("BOTTOMRIGHT", 0, 1)
+ConsolidatedBuffsCount:SetPoint("BOTTOMRIGHT", 0, 1)
 ConsolidatedBuffsCount:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 ConsolidatedBuffsCount:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
@@ -58,16 +58,16 @@ for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 	end
 
 	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	icon:Point("TOPLEFT", buff, 2, -2)
-	icon:Point("BOTTOMRIGHT", buff, -2, 2)
+	icon:SetPoint("TOPLEFT", buff, 2, -2)
+	icon:SetPoint("BOTTOMRIGHT", buff, -2, 2)
 
 	duration:ClearAllPoints()
-	duration:Point("CENTER", 2, 1)
+	duration:SetPoint("CENTER", 2, 1)
 	duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 	duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
 	_G["TempEnchant2"]:ClearAllPoints()
-	_G["TempEnchant2"]:Point("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
+	_G["TempEnchant2"]:SetPoint("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
 end
 
 local function StyleBuffs(buttonName, index, debuff)
@@ -88,16 +88,16 @@ local function StyleBuffs(buttonName, index, debuff)
 		end
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		icon:Point("TOPLEFT", buff, 2, -2)
-		icon:Point("BOTTOMRIGHT", buff, -2, 2)
+		icon:SetPoint("TOPLEFT", buff, 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", buff, -2, 2)
 
 		duration:ClearAllPoints()
-		duration:Point("CENTER", 2, 1)
+		duration:SetPoint("CENTER", 2, 1)
 		duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 		duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
 		count:ClearAllPoints()
-		count:Point("BOTTOMRIGHT", 0, 1)
+		count:SetPoint("BOTTOMRIGHT", 0, 1)
 		count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 		count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
@@ -143,25 +143,25 @@ local function UpdateBuffAnchors()
 			if (index > 1) and (mod(index, rowbuffs) == 1) then
 				numAuraRows = numAuraRows + 1
 				if index == rowbuffs + 1 then
-					buff:Point("TOP", ConsolidatedBuffs, "BOTTOM", 0, -3)
+					buff:SetPoint("TOP", ConsolidatedBuffs, "BOTTOM", 0, -3)
 				else
-					buff:Point("TOP", aboveBuff, "BOTTOM", 0, -3)
+					buff:SetPoint("TOP", aboveBuff, "BOTTOM", 0, -3)
 				end
 				aboveBuff = buff
 			elseif index == 1 then
 				numAuraRows = 1
-				buff:Point("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
+				buff:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
 			else
 				if numBuffs == 1 then
 					if mainhand and offhand and not UnitHasVehicleUI("player") then
-						buff:Point("RIGHT", TempEnchant2, "LEFT", -3, 0)
+						buff:SetPoint("RIGHT", TempEnchant2, "LEFT", -3, 0)
 					elseif ((mainhand and not offhand) or (offhand and not mainhand)) and not UnitHasVehicleUI("player") then
-						buff:Point("RIGHT", TempEnchant1, "LEFT", -3, 0)
+						buff:SetPoint("RIGHT", TempEnchant1, "LEFT", -3, 0)
 					else
-						buff:Point("TOPRIGHT", ConsolidatedBuffs, "TOPLEFT", -3, 0)
+						buff:SetPoint("TOPRIGHT", ConsolidatedBuffs, "TOPLEFT", -3, 0)
 					end
 				else
-					buff:Point("RIGHT", previousBuff, "LEFT", -3, 0)
+					buff:SetPoint("RIGHT", previousBuff, "LEFT", -3, 0)
 				end
 			end
 			previousBuff = buff

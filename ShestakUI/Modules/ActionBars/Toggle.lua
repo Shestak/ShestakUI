@@ -19,38 +19,38 @@ end
 local MainBars = function()
 	if C.actionbar.rightbars > 2 then
 		if SavedOptionsPerChar.BottomBars == 1 then
-			ActionBarAnchor:Height(C.actionbar.button_size)
+			ActionBarAnchor:SetHeight(C.actionbar.button_size)
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Hide()
 		elseif SavedOptionsPerChar.BottomBars == 2 then
-			ActionBarAnchor:Height(C.actionbar.button_size * 2 + C.actionbar.button_space)
+			ActionBarAnchor:SetHeight(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(1, "- - -", false, true)
 			Bar2Holder:Show()
 		end
 	elseif C.actionbar.rightbars < 3 and C.actionbar.split_bars ~= true then
 		if SavedOptionsPerChar.BottomBars == 1 then
-			ActionBarAnchor:Height(C.actionbar.button_size)
+			ActionBarAnchor:SetHeight(C.actionbar.button_size)
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Hide()
 			Bar5Holder:Hide()
 		elseif SavedOptionsPerChar.BottomBars == 2 then
-			ActionBarAnchor:Height(C.actionbar.button_size * 2 + C.actionbar.button_space)
+			ActionBarAnchor:SetHeight(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Show()
 			Bar5Holder:Hide()
 		elseif SavedOptionsPerChar.BottomBars == 3 then
-			ActionBarAnchor:Height((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
+			ActionBarAnchor:SetHeight((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
 			ToggleBarText(1, "- - -", false, true)
 			Bar2Holder:Show()
 			Bar5Holder:Show()
 		end
 	elseif C.actionbar.rightbars < 3 and C.actionbar.split_bars == true then
 		if SavedOptionsPerChar.BottomBars == 1 then
-			ActionBarAnchor:Height(C.actionbar.button_size)
+			ActionBarAnchor:SetHeight(C.actionbar.button_size)
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Hide()
-			ToggleBar[3]:Height(C.actionbar.button_size)
-			ToggleBar[4]:Height(C.actionbar.button_size)
+			ToggleBar[3]:SetHeight(C.actionbar.button_size)
+			ToggleBar[4]:SetHeight(C.actionbar.button_size)
 			for i = 1, 3 do
 				local b = _G["MultiBarBottomRightButton"..i]
 				b:SetAlpha(0)
@@ -62,11 +62,11 @@ local MainBars = function()
 				b:SetScale(0.000001)
 			end
 		elseif SavedOptionsPerChar.BottomBars == 2 then
-			ActionBarAnchor:Height(C.actionbar.button_size * 2 + C.actionbar.button_space)
+			ActionBarAnchor:SetHeight(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(1, "- - -", false, true)
 			Bar2Holder:Show()
-			ToggleBar[3]:Height(C.actionbar.button_size * 2 + C.actionbar.button_space)
-			ToggleBar[4]:Height(C.actionbar.button_size * 2 + C.actionbar.button_space)
+			ToggleBar[3]:SetHeight(C.actionbar.button_size * 2 + C.actionbar.button_space)
+			ToggleBar[4]:SetHeight(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			for i = 1, 3 do
 				local b = _G["MultiBarBottomRightButton"..i]
 				b:SetAlpha(1)
@@ -84,32 +84,32 @@ end
 local RightBars = function()
 	if C.actionbar.rightbars > 2 then
 		if SavedOptionsPerChar.RightBars == 1 then
-			RightActionBarAnchor:Width(C.actionbar.button_size)
+			RightActionBarAnchor:SetWidth(C.actionbar.button_size)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+				PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
 			end
-			ToggleBar[2]:Width(C.actionbar.button_size)
+			ToggleBar[2]:SetWidth(C.actionbar.button_size)
 			ToggleBarText(2, "> > >", false, true)
 			Bar3Holder:Hide()
 			Bar4Holder:Hide()
 		elseif SavedOptionsPerChar.RightBars == 2 then
-			RightActionBarAnchor:Width(C.actionbar.button_size * 2 + C.actionbar.button_space)
+			RightActionBarAnchor:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+				PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
 			end
-			ToggleBar[2]:Width(C.actionbar.button_size * 2 + C.actionbar.button_space)
+			ToggleBar[2]:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(2, "> > >", false, true)
 			Bar3Holder:Hide()
 			Bar4Holder:Show()
 		elseif SavedOptionsPerChar.RightBars == 3 then
-			RightActionBarAnchor:Width((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
+			RightActionBarAnchor:SetWidth((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+				PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
 			end
-			ToggleBar[2]:Width((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
+			ToggleBar[2]:SetWidth((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
 			ToggleBarText(2, "> > >", false, true)
 			Bar3Holder:Show()
 			Bar4Holder:Show()
@@ -119,9 +119,9 @@ local RightBars = function()
 		elseif SavedOptionsPerChar.RightBars == 0 then
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:Point("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
+				PetActionBarAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
 			end
-			ToggleBar[2]:Width(C.actionbar.button_size)
+			ToggleBar[2]:SetWidth(C.actionbar.button_size)
 			ToggleBarText(2, "< < <", true)
 			RightActionBarAnchor:Hide()
 			Bar3Holder:Hide()
@@ -132,31 +132,31 @@ local RightBars = function()
 		end
 	elseif C.actionbar.rightbars < 3 then
 		if SavedOptionsPerChar.RightBars == 1 then
-			RightActionBarAnchor:Width(C.actionbar.button_size)
+			RightActionBarAnchor:SetWidth(C.actionbar.button_size)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+				PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
 			end
-			ToggleBar[2]:Width(C.actionbar.button_size)
+			ToggleBar[2]:SetWidth(C.actionbar.button_size)
 			ToggleBarText(2, "> > >", false, true)
 			Bar3Holder:Show()
 			Bar4Holder:Hide()
 		elseif SavedOptionsPerChar.RightBars == 2 then
-			RightActionBarAnchor:Width(C.actionbar.button_size * 2 + C.actionbar.button_space)
+			RightActionBarAnchor:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:Point("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+				PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
 			end
-			ToggleBar[2]:Width(C.actionbar.button_size * 2 + C.actionbar.button_space)
+			ToggleBar[2]:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(2, "> > >", false, true)
 			Bar3Holder:Show()
 			Bar4Holder:Show()
 		elseif SavedOptionsPerChar.RightBars == 0 then
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:Point("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
+				PetActionBarAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
 			end
-			ToggleBar[2]:Width(C.actionbar.button_size)
+			ToggleBar[2]:SetWidth(C.actionbar.button_size)
 			ToggleBarText(2, "< < <", true)
 			RightActionBarAnchor:Hide()
 			Bar3Holder:Hide()
@@ -172,11 +172,11 @@ local SplitBars = function()
 	if C.actionbar.split_bars == true and C.actionbar.rightbars ~= 3 then
 		if SavedOptionsPerChar.SplitBars == true then
 			ToggleBar[3]:ClearAllPoints()
-			ToggleBar[3]:Point("BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", C.actionbar.button_space, 0)
+			ToggleBar[3]:SetPoint("BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", C.actionbar.button_space, 0)
 			ToggleBar[4]:ClearAllPoints()
-			ToggleBar[4]:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			ToggleBar[4]:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			VehicleButtonAnchor:ClearAllPoints()
-			VehicleButtonAnchor:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			if SavedOptionsPerChar.BottomBars == 2 then
 				ToggleBarText(3, "<\n<\n<", false, true)
 				ToggleBarText(4, ">\n>\n>", false, true)
@@ -187,11 +187,11 @@ local SplitBars = function()
 			Bar5Holder:Show()
 		elseif SavedOptionsPerChar.SplitBars == false then
 			ToggleBar[3]:ClearAllPoints()
-			ToggleBar[3]:Point("BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", C.actionbar.button_space, 0)
+			ToggleBar[3]:SetPoint("BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", C.actionbar.button_space, 0)
 			ToggleBar[4]:ClearAllPoints()
-			ToggleBar[4]:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			ToggleBar[4]:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			VehicleButtonAnchor:ClearAllPoints()
-			VehicleButtonAnchor:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			if SavedOptionsPerChar.BottomBars == 2 then
 				ToggleBarText(3, ">\n>\n>", true)
 				ToggleBarText(4, "<\n<\n<", true)
@@ -226,7 +226,7 @@ for i = 1, 5 do
 
 	ToggleBar[i].Text = ToggleBar[i]:CreateFontString(nil, "OVERLAY")
 	ToggleBar[i].Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-	ToggleBar[i].Text:Point("CENTER", 2, 0)
+	ToggleBar[i].Text:SetPoint("CENTER", 2, 0)
 
 	if i == 1 then
 		ToggleBar[i]:CreatePanel("Transparent", ActionBarAnchor:GetWidth(), C.actionbar.button_size / 1.5, "BOTTOM", ActionBarAnchor, "TOP", 0, C.actionbar.button_space)
@@ -300,7 +300,7 @@ for i = 1, 5 do
 	elseif i == 5 then
 		ToggleBar[i]:CreatePanel("Transparent", 19, 19, "TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
 		ToggleBar[i]:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-		ToggleBar[i].Text:Point("CENTER", 1, 0)
+		ToggleBar[i].Text:SetPoint("CENTER", 1, 0)
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then return end
@@ -347,7 +347,7 @@ for i = 1, 5 do
 			ToggleBar[3]:FadeIn()
 			ToggleBar[4]:FadeIn()
 			VehicleButtonAnchor:ClearAllPoints()
-			VehicleButtonAnchor:Point("BOTTOMRIGHT", ToggleBar[4], "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ToggleBar[4], "BOTTOMLEFT", -C.actionbar.button_space, 0)
 		else
 			ToggleBar[i]:FadeIn()
 		end
@@ -367,9 +367,9 @@ for i = 1, 5 do
 			ToggleBar[4]:FadeOut()
 			VehicleButtonAnchor:ClearAllPoints()
 			if SavedOptionsPerChar.SplitBars == true then
-				VehicleButtonAnchor:Point("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			else
-				VehicleButtonAnchor:Point("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			end
 		else
 			ToggleBar[i]:FadeOut()

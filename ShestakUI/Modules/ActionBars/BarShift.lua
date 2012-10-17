@@ -6,17 +6,17 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local ShiftHolder = CreateFrame("Frame", "ShiftHolder", UIParent)
 if C.actionbar.stancebar_horizontal == true then
-	ShiftHolder:Point(unpack(C.position.stance_bar))
-	ShiftHolder:Width((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
-	ShiftHolder:Height(C.actionbar.button_size)
+	ShiftHolder:SetPoint(unpack(C.position.stance_bar))
+	ShiftHolder:SetWidth((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
+	ShiftHolder:SetHeight(C.actionbar.button_size)
 else
 	if (PetActionBarFrame:IsShown() or PetHolder) and C.actionbar.petbar_horizontal ~= true then
-		ShiftHolder:Point("RIGHT", "PetHolder", "LEFT", -C.actionbar.button_space, (C.actionbar.button_size / 2) + 1)
+		ShiftHolder:SetPoint("RIGHT", "PetHolder", "LEFT", -C.actionbar.button_space, (C.actionbar.button_size / 2) + 1)
 	else
-		ShiftHolder:Point("RIGHT", "RightActionBarAnchor", "LEFT", -C.actionbar.button_space, (C.actionbar.button_size / 2) + 1)
+		ShiftHolder:SetPoint("RIGHT", "RightActionBarAnchor", "LEFT", -C.actionbar.button_space, (C.actionbar.button_size / 2) + 1)
 	end
-	ShiftHolder:Width(C.actionbar.button_size)
-	ShiftHolder:Height((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
+	ShiftHolder:SetWidth(C.actionbar.button_size)
+	ShiftHolder:SetHeight((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
 end
 
 -- Stance command to move totem or stance in-game
@@ -58,16 +58,16 @@ bar:SetScript("OnEvent", function(self, event, ...)
 			button:SetParent(self)
 			if i == 1 then
 				if C.actionbar.stancebar_horizontal == true then
-					button:Point("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
+					button:SetPoint("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
 				else
-					button:Point("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
+					button:SetPoint("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
 				end
 			else
 				local previous = _G["StanceButton"..i-1]
 				if C.actionbar.stancebar_horizontal == true then
-					button:Point("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
+					button:SetPoint("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
 				else
-					button:Point("TOP", previous, "BOTTOM", 0, -C.actionbar.button_space)
+					button:SetPoint("TOP", previous, "BOTTOM", 0, -C.actionbar.button_space)
 				end
 			end
 			local _, name = GetShapeshiftFormInfo(i)
@@ -81,9 +81,9 @@ bar:SetScript("OnEvent", function(self, event, ...)
 		local function movestance()
 			if not InCombatLockdown() then
 				if C.actionbar.stancebar_horizontal == true then
-					StanceButton1:Point("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
+					StanceButton1:SetPoint("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
 				else
-					StanceButton1:Point("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
+					StanceButton1:SetPoint("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
 				end
 			end
 		end

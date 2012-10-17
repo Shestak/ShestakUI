@@ -8,7 +8,7 @@ local spacing = 7
 
 local ThreatMeterAnchor = CreateFrame("Frame", "ThreatMeterAnchor", UIParent)
 ThreatMeterAnchor:Size(C.threat.width + 4, (C.threat.height * C.threat.bar_rows) + (spacing * (C.threat.bar_rows - 1)) + 4)
-ThreatMeterAnchor:Point(unpack(C.position.threat_meter))
+ThreatMeterAnchor:SetPoint(unpack(C.position.threat_meter))
 
 local bar, tList, barList = {}, {}, {}
 local max = math.max
@@ -67,8 +67,8 @@ local CreateBar = function()
 	bar:SetMinMaxValues(0, 100)
 
 	bar.backdrop = CreateFrame("Frame", nil, bar)
-	bar.backdrop:Point("TOPLEFT", -2, 2)
-	bar.backdrop:Point("BOTTOMRIGHT", 2, -2)
+	bar.backdrop:SetPoint("TOPLEFT", -2, 2)
+	bar.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
 	bar.backdrop:SetTemplate("Default")
 	bar.backdrop:SetFrameStrata("BACKGROUND")
 
@@ -77,11 +77,11 @@ local CreateBar = function()
 	bar.bg:SetTexture(C.media.texture)
 
 	bar.left = CreateFS(bar)
-	bar.left:Point("LEFT", 2, 0)
+	bar.left:SetPoint("LEFT", 2, 0)
 	bar.left:SetJustifyH("LEFT")
 
 	bar.right = CreateFS(bar)
-	bar.right:Point("RIGHT", 1, 0)
+	bar.right:SetPoint("RIGHT", 1, 0)
 	bar.right:SetJustifyH("RIGHT")
 
 	bar:Hide()
@@ -104,9 +104,9 @@ local UpdateBars = function()
 		if not bar[i] then
 			bar[i] = CreateBar()
 			if i == 1 then
-				bar[i]:Point("TOP", ThreatMeterAnchor, "TOP", 0, -2)
+				bar[i]:SetPoint("TOP", ThreatMeterAnchor, "TOP", 0, -2)
 			else
-				bar[i]:Point("TOPLEFT", bar[i-1], "BOTTOMLEFT", 0, -spacing)
+				bar[i]:SetPoint("TOPLEFT", bar[i-1], "BOTTOMLEFT", 0, -spacing)
 			end
 		end
 		bar[i]:SetValue(100 * cur.pct / max.pct)

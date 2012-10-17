@@ -175,9 +175,9 @@ end
 
 -- Create Anchor
 local RaidBuffsAnchor = CreateFrame("Button", "RaidBuffsAnchor", UIParent)
-RaidBuffsAnchor:Width((C.reminder.raid_buffs_size * 6) + 15)
-RaidBuffsAnchor:Height(C.reminder.raid_buffs_size)
-RaidBuffsAnchor:Point(unpack(C.position.raid_buffs))
+RaidBuffsAnchor:SetWidth((C.reminder.raid_buffs_size * 6) + 15)
+RaidBuffsAnchor:SetHeight(C.reminder.raid_buffs_size)
+RaidBuffsAnchor:SetPoint(unpack(C.position.raid_buffs))
 
 -- Create Main bar
 local raidbuff_reminder = CreateFrame("Frame", "RaidBuffReminder", UIParent)
@@ -203,8 +203,8 @@ local function CreateButton(name, relativeTo, firstbutton)
 
 	button.t = button:CreateTexture(name..".t", "OVERLAY")
 	button.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	button.t:Point("TOPLEFT", 2, -2)
-	button.t:Point("BOTTOMRIGHT", -2, 2)
+	button.t:SetPoint("TOPLEFT", 2, -2)
+	button.t:SetPoint("BOTTOMRIGHT", -2, 2)
 end
 
 -- Create Buttons

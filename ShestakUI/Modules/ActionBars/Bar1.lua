@@ -62,10 +62,10 @@ bar:SetScript("OnEvent", function(self, event, ...)
 			button:ClearAllPoints()
 			button:SetParent(Bar1Holder)
 			if i == 1 then
-				button:Point("BOTTOMLEFT", Bar1Holder, 0, 0)
+				button:SetPoint("BOTTOMLEFT", Bar1Holder, 0, 0)
 			else
 				local previous = _G["ActionButton"..i-1]
-				button:Point("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
+				button:SetPoint("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
 			end
 		end
 	else

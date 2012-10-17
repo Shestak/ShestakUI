@@ -16,12 +16,12 @@ local pos = C.position.enemy_cooldown
 
 local EnemyCDAnchor = CreateFrame("Frame", "EnemyCDAnchor", UIParent)
 if C.unitframe.enable ~= true then
-	EnemyCDAnchor:Point("CENTER", UIParent, "CENTER", 0, 0)
+	EnemyCDAnchor:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 else
 	if C.unitframe.plugins_swing == true then
-		EnemyCDAnchor:Point(unpack(C.position.enemy_cooldown))
+		EnemyCDAnchor:SetPoint(unpack(C.position.enemy_cooldown))
 	else
-		EnemyCDAnchor:Point(pos[1], pos[2], pos[3], pos[4], pos[5] - 12)
+		EnemyCDAnchor:SetPoint(pos[1], pos[2], pos[3], pos[4], pos[5] - 12)
 	end
 end
 if direction == "UP" or direction == "DOWN" then
@@ -34,18 +34,18 @@ local UpdatePositions = function()
 	for i = 1, #icons do
 		icons[i]:ClearAllPoints()
 		if i == 1 then
-			icons[i]:Point("BOTTOMLEFT", EnemyCDAnchor, "BOTTOMLEFT", 0, 0)
+			icons[i]:SetPoint("BOTTOMLEFT", EnemyCDAnchor, "BOTTOMLEFT", 0, 0)
 		else
 			if direction == "UP" then
-				icons[i]:Point("BOTTOM", icons[i-1], "TOP", 0, 3)
+				icons[i]:SetPoint("BOTTOM", icons[i-1], "TOP", 0, 3)
 			elseif direction == "DOWN" then
-				icons[i]:Point("TOP", icons[i-1], "BOTTOM", 0, -3)
+				icons[i]:SetPoint("TOP", icons[i-1], "BOTTOM", 0, -3)
 			elseif direction == "RIGHT" then
-				icons[i]:Point("LEFT", icons[i-1], "RIGHT", 3, 0)
+				icons[i]:SetPoint("LEFT", icons[i-1], "RIGHT", 3, 0)
 			elseif direction == "LEFT" then
-				icons[i]:Point("RIGHT", icons[i-1], "LEFT", -3, 0)
+				icons[i]:SetPoint("RIGHT", icons[i-1], "LEFT", -3, 0)
 			else
-				icons[i]:Point("LEFT", icons[i-1], "RIGHT", 3, 0)
+				icons[i]:SetPoint("LEFT", icons[i-1], "RIGHT", 3, 0)
 			end
 		end
 		icons[i].id = i
@@ -70,12 +70,12 @@ local CreateIcon = function()
 	icon:Size(C.enemycooldown.size)
 	icon:SetTemplate("Default")
 	icon.Cooldown = CreateFrame("Cooldown", nil, icon)
-	icon.Cooldown:Point("TOPLEFT", 2, -2)
-	icon.Cooldown:Point("BOTTOMRIGHT", -2, 2)
+	icon.Cooldown:SetPoint("TOPLEFT", 2, -2)
+	icon.Cooldown:SetPoint("BOTTOMRIGHT", -2, 2)
 	icon.Cooldown:SetReverse()
 	icon.Texture = icon:CreateTexture(nil, "BORDER")
-	icon.Texture:Point("TOPLEFT", 2, -2)
-	icon.Texture:Point("BOTTOMRIGHT", -2, 2)
+	icon.Texture:SetPoint("TOPLEFT", 2, -2)
+	icon.Texture:SetPoint("BOTTOMRIGHT", -2, 2)
 	return icon
 end
 

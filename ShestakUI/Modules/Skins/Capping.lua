@@ -56,25 +56,25 @@ function self:PosBar(b)
 	b.displaytext:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 
 	if db.iconpos == "<-" then
-		b.barback:Point("LEFT", b.icon, "RIGHT", 7, 0)
-		tb.icon:Point("CENTER", b.icon, "CENTER", 0, 0)
-		tb.frame:Point("LEFT", b.icon, "RIGHT", 7, 0)
-		tb.frame:Point("RIGHT", b.barback, "RIGHT", 0, 0)
+		b.barback:SetPoint("LEFT", b.icon, "RIGHT", 7, 0)
+		tb.icon:SetPoint("CENTER", b.icon, "CENTER", 0, 0)
+		tb.frame:SetPoint("LEFT", b.icon, "RIGHT", 7, 0)
+		tb.frame:SetPoint("RIGHT", b.barback, "RIGHT", 0, 0)
 	elseif db.iconpos == "->" then
-		b.barback:Point("RIGHT", b.icon, "LEFT", -7, 0)
-		tb.icon:Point("CENTER", b.icon, "CENTER", 0, 0)
-		tb.frame:Point("RIGHT", b.icon, "LEFT", -7, 0)
-		tb.frame:Point("LEFT", b.barback, "LEFT", 0, 0)
+		b.barback:SetPoint("RIGHT", b.icon, "LEFT", -7, 0)
+		tb.icon:SetPoint("CENTER", b.icon, "CENTER", 0, 0)
+		tb.frame:SetPoint("RIGHT", b.icon, "LEFT", -7, 0)
+		tb.frame:SetPoint("LEFT", b.barback, "LEFT", 0, 0)
 	else
-		b.barback:Point("LEFT", b, 0, 0)
-		b.barback:Point("RIGHT", b, 0, 0)
+		b.barback:SetPoint("LEFT", b, 0, 0)
+		b.barback:SetPoint("RIGHT", b, 0, 0)
 		tb.icon:Hide()
 	end
 
 	if db.reverse == true then
-		b.bar:Point("RIGHT", tb.frame, "RIGHT", 0, 0)
+		b.bar:SetPoint("RIGHT", tb.frame, "RIGHT", 0, 0)
 	else
-		b.bar:Point("LEFT", tb.frame, "LEFT", 0, 0)
+		b.bar:SetPoint("LEFT", tb.frame, "LEFT", 0, 0)
 	end
 end
 

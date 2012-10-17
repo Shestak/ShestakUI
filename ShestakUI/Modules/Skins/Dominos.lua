@@ -31,24 +31,24 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 		if count then
 			count:ClearAllPoints()
-			count:Point("BOTTOMRIGHT", 0, 2)
+			count:SetPoint("BOTTOMRIGHT", 0, 2)
 			count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 		end
 
 		if btname then
 			btname:ClearAllPoints()
-			btname:Point("BOTTOM", 0, 0)
+			btname:SetPoint("BOTTOM", 0, 0)
 			btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 		end
 
 		if hotkey then
 			hotkey:ClearAllPoints()
-			hotkey:Point("TOPRIGHT", 0, 0)
+			hotkey:SetPoint("TOPRIGHT", 0, 0)
 			hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-			hotkey:Width(button:GetWidth() - 1)
+			hotkey:SetWidth(button:GetWidth() - 1)
 		end
 
 		if not button.isSkinned then
@@ -77,16 +77,16 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 		if flash then
 			flash:SetTexture(0.8, 0.8, 0.8, 0.5)
-			flash:Point("TOPLEFT", button, 2, -2)
-			flash:Point("BOTTOMRIGHT", button, -2, 2)
+			flash:SetPoint("TOPLEFT", button, 2, -2)
+			flash:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		end
 
 		if hotkey then
 			hotkey:ClearAllPoints()
-			hotkey:Point("TOPRIGHT", 0, 0)
+			hotkey:SetPoint("TOPRIGHT", 0, 0)
 			hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-			hotkey:Width(button:GetWidth() - 1)
+			hotkey:SetWidth(button:GetWidth() - 1)
 		end
 
 		if not button.isSkinned then
@@ -95,14 +95,14 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:ClearAllPoints()
-			icon:Point("TOPLEFT", button, 2, -2)
-			icon:Point("BOTTOMRIGHT", button, -2, 2)
+			icon:SetPoint("TOPLEFT", button, 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
 
 			if pet then
 				local autocast = _G[name.."AutoCastable"]
 				autocast:Size((button:GetWidth() * 2) - 10)
 				autocast:ClearAllPoints()
-				autocast:Point("CENTER", button, 0, 0)
+				autocast:SetPoint("CENTER", button, 0, 0)
 
 				local shine = _G[name.."Shine"]
 				shine:Size(button:GetWidth())

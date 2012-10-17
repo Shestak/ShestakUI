@@ -73,15 +73,15 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 						-- Swap seal and RF icon
 						if fname == "PallyPowerAuraBtn" then
 							if tex == "IconSeal" then
-								oldicon:Point("LEFT", four, 0)
+								oldicon:SetPoint("LEFT", four, 0)
 							else
-								oldicon:Point("LEFT", thirty + four, 0)
+								oldicon:SetPoint("LEFT", thirty + four, 0)
 							end
 						-- Aura icon / Auto icon
 						elseif fname:find("(Au[rt][ao])$") then
-							oldicon:Point("LEFT", four, 0)
+							oldicon:SetPoint("LEFT", four, 0)
 						else
-							oldicon:Point("TOPLEFT", four, -four)
+							oldicon:SetPoint("TOPLEFT", four, -four)
 						end
 
 						local panel = CreateFrame("Frame", fname.."New"..tex, frame)
@@ -90,8 +90,8 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 
 						local icon = panel:CreateTexture()
 						panel.icon = panel
-						icon:Point("TOPLEFT", panel, 2, -2)
-						icon:Point("BOTTOMRIGHT", panel, -2, 2)
+						icon:SetPoint("TOPLEFT", panel, 2, -2)
+						icon:SetPoint("BOTTOMRIGHT", panel, -2, 2)
 						icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 						icon:SetTexture(oldicon:GetTexture())
 
@@ -122,7 +122,7 @@ PPSkin:SetScript("OnEvent", function(self, event, addon)
 				y = y + three
 
 				if not InCombatLockdown() then
-					button:Point(a, p, b, x, y)
+					button:SetPoint(a, p, b, x, y)
 				end
 			end
 		end

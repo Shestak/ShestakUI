@@ -119,11 +119,11 @@ load:SetScript("OnEvent", function(self, event)
 	end)
 
 	-- Make the Color Picker dialog a bit taller, to make room for edit boxes
-	ColorPickerFrame:Height(ColorPickerFrame:GetHeight() + 40)
+	ColorPickerFrame:SetHeight(ColorPickerFrame:GetHeight() + 40)
 
 	-- Move the Color Swatch
 	ColorSwatch:ClearAllPoints()
-	ColorSwatch:Point("TOPLEFT", ColorPickerFrame, "TOPLEFT", 230, -45)
+	ColorSwatch:SetPoint("TOPLEFT", ColorPickerFrame, "TOPLEFT", 230, -45)
 
 	-- Add Color Swatch for original color
 	local t = ColorPickerFrame:CreateTexture("ColorPPOldColorSwatch")
@@ -133,7 +133,7 @@ load:SetScript("OnEvent", function(self, event)
 
 	-- OldColorSwatch to appear beneath ColorSwatch
 	t:SetDrawLayer("BORDER")
-	t:Point("BOTTOMLEFT", "ColorSwatch", "TOPRIGHT", -(w / 2), -(h / 3))
+	t:SetPoint("BOTTOMLEFT", "ColorSwatch", "TOPRIGHT", -(w / 2), -(h / 3))
 
 	-- Add Color Swatch for the copied color
 	t = ColorPickerFrame:CreateTexture("ColorPPCopyColorSwatch")
@@ -145,8 +145,8 @@ load:SetScript("OnEvent", function(self, event)
 	local b = CreateFrame("Button", "ColorPPCopy", ColorPickerFrame, "UIPanelButtonTemplate")
 	b:SkinButton()
 	b:SetText(CALENDAR_COPY_EVENT)
-	b:Width(85)
-	b:Height(22)
+	b:SetWidth(85)
+	b:SetHeight(22)
 	b:SetPoint("TOPLEFT", "ColorSwatch", "BOTTOMLEFT", -15, -5)
 
 	-- Copy color into buffer on button click
@@ -170,9 +170,9 @@ load:SetScript("OnEvent", function(self, event)
 	b = CreateFrame("Button", "ColorPPPaste", ColorPickerFrame, "UIPanelButtonTemplate")
 	b:SetText(CALENDAR_PASTE_EVENT)
 	b:SkinButton()
-	b:Width(85)
-	b:Height(22)
-	b:Point("TOPLEFT", "ColorPPCopy", "BOTTOMLEFT", 0, -7)
+	b:SetWidth(85)
+	b:SetHeight(22)
+	b:SetPoint("TOPLEFT", "ColorPPCopy", "BOTTOMLEFT", 0, -7)
 	b:Disable()
 
 	-- Paste color on button click, updating frame components
@@ -190,9 +190,9 @@ load:SetScript("OnEvent", function(self, event)
 	b = CreateFrame("Button", "ColorPPClass", ColorPickerFrame, "UIPanelButtonTemplate")
 	b:SkinButton()
 	b:SetText("C")
-	b:Width(18)
-	b:Height(22)
-	b:Point("TOPRIGHT", "ColorPPPaste", "BOTTOMRIGHT", 0, -7)
+	b:SetWidth(18)
+	b:SetHeight(22)
+	b:SetPoint("TOPRIGHT", "ColorPPPaste", "BOTTOMRIGHT", 0, -7)
 
 	b:SetScript("OnClick", function()
 		local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[T.class]
@@ -205,12 +205,12 @@ load:SetScript("OnEvent", function(self, event)
 
 	-- Locate Color Swatch for copy color
 	ColorPPCopyColorSwatch:SetPoint("LEFT", "ColorSwatch", "LEFT")
-	ColorPPCopyColorSwatch:Point("TOP", "ColorPPPaste", "BOTTOM", 0, -5)
+	ColorPPCopyColorSwatch:SetPoint("TOP", "ColorPPPaste", "BOTTOM", 0, -5)
 
 	-- Move the Opacity Slider Frame to align with bottom of Copy ColorSwatch
 	OpacitySliderFrame:ClearAllPoints()
-	OpacitySliderFrame:Point("BOTTOM", "ColorPPCopyColorSwatch", "BOTTOM", 0, 23)
-	OpacitySliderFrame:Point("RIGHT", "ColorPickerFrame", "RIGHT", -35, 18)
+	OpacitySliderFrame:SetPoint("BOTTOM", "ColorPPCopyColorSwatch", "BOTTOM", 0, 23)
+	OpacitySliderFrame:SetPoint("RIGHT", "ColorPickerFrame", "RIGHT", -35, 18)
 
 	-- Set up edit box frames and interior label and text areas
 	local boxes = {"R", "G", "B", "H", "A"}
@@ -223,16 +223,16 @@ load:SetScript("OnEvent", function(self, event)
 		box:SetAutoFocus(false)
 		box:SetTextInsets(0, 7, 1, 0)
 		box:SetJustifyH("RIGHT")
-		box:Height(14)
+		box:SetHeight(14)
 
 		if i == 4 then
 			-- Hex entry box
 			box:SetMaxLetters(6)
-			box:Width(60)
+			box:SetWidth(60)
 			box:SetNumeric(false)
 		else
 			box:SetMaxLetters(3)
-			box:Width(40)
+			box:SetWidth(40)
 			box:SetNumeric(true)
 		end
 		box:SetPoint("TOP", "ColorPickerWheel", "BOTTOM", 0, -15)
@@ -240,7 +240,7 @@ load:SetScript("OnEvent", function(self, event)
 		-- Label
 		local label = box:CreateFontString("ColorPPBoxLabel"..rgb, "ARTWORK", "GameFontNormalSmall")
 		label:SetTextColor(1, 1, 1)
-		label:Point("RIGHT", "ColorPPBox"..rgb, "LEFT", -5, 0)
+		label:SetPoint("RIGHT", "ColorPPBox"..rgb, "LEFT", -5, 0)
 		if i == 4 then
 			label:SetText("#")
 		else
@@ -265,11 +265,11 @@ load:SetScript("OnEvent", function(self, event)
 	end
 
 	-- Finish up with placement
-	ColorPPBoxR:Point("BOTTOMLEFT", "ColorPickerOkayButton", "TOPLEFT", 13, 24)
-	ColorPPBoxG:Point("LEFT", "ColorPPBoxR", "RIGHT", 18, 0)
-	ColorPPBoxB:Point("LEFT", "ColorPPBoxG", "RIGHT", 18, 0)
-	ColorPPBoxH:Point("LEFT", "ColorPPBoxB", "RIGHT", 18, 0)
-	ColorPPBoxA:Point("LEFT", "ColorPPBoxH", "RIGHT", 18, 0)
+	ColorPPBoxR:SetPoint("BOTTOMLEFT", "ColorPickerOkayButton", "TOPLEFT", 13, 24)
+	ColorPPBoxG:SetPoint("LEFT", "ColorPPBoxR", "RIGHT", 18, 0)
+	ColorPPBoxB:SetPoint("LEFT", "ColorPPBoxG", "RIGHT", 18, 0)
+	ColorPPBoxH:SetPoint("LEFT", "ColorPPBoxB", "RIGHT", 18, 0)
+	ColorPPBoxA:SetPoint("LEFT", "ColorPPBoxH", "RIGHT", 18, 0)
 
 	-- Define the order of tab cursor movement
 	ColorPPBoxR:SetScript("OnTabPressed", function(self) ColorPPBoxG:SetFocus() end)

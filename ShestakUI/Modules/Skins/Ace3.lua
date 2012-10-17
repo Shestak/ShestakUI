@@ -18,8 +18,8 @@ AceGUI.RegisterAsWidget = function(self, widget)
 		if not widget.skinnedCheckBG then
 			widget.skinnedCheckBG = CreateFrame("Frame", nil, widget.frame)
 			widget.skinnedCheckBG:SetTemplate("Overlay")
-			widget.skinnedCheckBG:Point("TOPLEFT", widget.checkbg, "TOPLEFT", 4, -4)
-			widget.skinnedCheckBG:Point("BOTTOMRIGHT", widget.checkbg, "BOTTOMRIGHT", -4, 4)
+			widget.skinnedCheckBG:SetPoint("TOPLEFT", widget.checkbg, "TOPLEFT", 4, -4)
+			widget.skinnedCheckBG:SetPoint("BOTTOMRIGHT", widget.checkbg, "BOTTOMRIGHT", -4, 4)
 		end
 
 		if widget.skinnedCheckBG.oborder then
@@ -34,14 +34,14 @@ AceGUI.RegisterAsWidget = function(self, widget)
 		frame:StripTextures()
 
 		button:ClearAllPoints()
-		button:Point("RIGHT", frame, "RIGHT", -20, 0)
+		button:SetPoint("RIGHT", frame, "RIGHT", -20, 0)
 
 		T.SkinNextPrevButton(button, true)
 
 		if not frame.backdrop then
 			frame:CreateBackdrop("Overlay")
-			frame.backdrop:Point("TOPLEFT", 20, -2)
-			frame.backdrop:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
+			frame.backdrop:SetPoint("TOPLEFT", 20, -2)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
 		end
 		button:SetParent(frame.backdrop)
 		text:SetParent(frame.backdrop)
@@ -57,31 +57,31 @@ AceGUI.RegisterAsWidget = function(self, widget)
 
 		T.SkinNextPrevButton(button, true)
 		frame.text:ClearAllPoints()
-		frame.text:Point("RIGHT", button, "LEFT", -2, 0)
+		frame.text:SetPoint("RIGHT", button, "LEFT", -2, 0)
 
 		button:ClearAllPoints()
-		button:Point("RIGHT", frame, "RIGHT", -10, -6)
+		button:SetPoint("RIGHT", frame, "RIGHT", -10, -6)
 
 		if not frame.backdrop then
 			frame:CreateBackdrop("Overlay")
 			if TYPE == "LSM30_Font" then
-				frame.backdrop:Point("TOPLEFT", 20, -17)
+				frame.backdrop:SetPoint("TOPLEFT", 20, -17)
 			elseif TYPE == "LSM30_Sound" then
-				frame.backdrop:Point("TOPLEFT", 20, -17)
+				frame.backdrop:SetPoint("TOPLEFT", 20, -17)
 				widget.soundbutton:SetParent(frame.backdrop)
 				widget.soundbutton:ClearAllPoints()
-				widget.soundbutton:Point("LEFT", frame.backdrop, "LEFT", 2, 0)
+				widget.soundbutton:SetPoint("LEFT", frame.backdrop, "LEFT", 2, 0)
 			elseif TYPE == "LSM30_Statusbar" then
-				frame.backdrop:Point("TOPLEFT", 20, -17)
+				frame.backdrop:SetPoint("TOPLEFT", 20, -17)
 				widget.bar:ClearAllPoints()
-				widget.bar:Point("TOPLEFT", frame.backdrop, "TOPLEFT", 2, -2)
-				widget.bar:Point("BOTTOMRIGHT", frame.backdrop, "BOTTOMRIGHT", -2, 2)
+				widget.bar:SetPoint("TOPLEFT", frame.backdrop, "TOPLEFT", 2, -2)
+				widget.bar:SetPoint("BOTTOMRIGHT", frame.backdrop, "BOTTOMRIGHT", -2, 2)
 				widget.bar:SetParent(frame.backdrop)
 			elseif TYPE == "LSM30_Border" or TYPE == "LSM30_Background" then
-				frame.backdrop:Point("TOPLEFT", 42, -16)
+				frame.backdrop:SetPoint("TOPLEFT", 42, -16)
 			end
 
-			frame.backdrop:Point("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
 		end
 		button:SetParent(frame.backdrop)
 		text:SetParent(frame.backdrop)
@@ -97,10 +97,10 @@ AceGUI.RegisterAsWidget = function(self, widget)
 		_G[frame:GetName().."Left"]:Kill()
 		_G[frame:GetName().."Middle"]:Kill()
 		_G[frame:GetName().."Right"]:Kill()
-		frame:Height(17)
+		frame:SetHeight(17)
 		frame:CreateBackdrop("Overlay")
-		frame.backdrop:Point("TOPLEFT", -2, 0)
-		frame.backdrop:Point("BOTTOMRIGHT", 2, 0)
+		frame.backdrop:SetPoint("TOPLEFT", -2, 0)
+		frame.backdrop:SetPoint("BOTTOMRIGHT", 2, 0)
 		frame.backdrop:SetParent(widget.frame)
 		frame:SetParent(frame.backdrop)
 		button:SkinButton()
@@ -108,8 +108,8 @@ AceGUI.RegisterAsWidget = function(self, widget)
 		local frame = widget.frame
 		frame:StripTextures(true)
 		frame:CreateBackdrop("Overlay")
-		frame.backdrop:Point("TOPLEFT", 2, -2)
-		frame.backdrop:Point("BOTTOMRIGHT", -2, 1)
+		frame.backdrop:SetPoint("TOPLEFT", 2, -2)
+		frame.backdrop:SetPoint("BOTTOMRIGHT", -2, 1)
 		widget.text:SetParent(frame.backdrop)
 		frame:HookScript("OnEnter", function()
 			frame.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
@@ -132,14 +132,14 @@ AceGUI.RegisterAsWidget = function(self, widget)
 
 		frame:StripTextures()
 		frame:SetTemplate("Overlay")
-		frame:Height(HEIGHT)
+		frame:SetHeight(HEIGHT)
 		frame:SetThumbTexture(C.media.blank)
 		frame:GetThumbTexture():SetVertexColor(unpack(C.media.border_color))
 		frame:GetThumbTexture():Size(HEIGHT - 2, HEIGHT - 4)
 
 		editbox:SetTemplate("Overlay")
-		editbox:Height(15)
-		editbox:Point("TOP", frame, "BOTTOM", 0, -1)
+		editbox:SetHeight(15)
+		editbox:SetPoint("TOP", frame, "BOTTOM", 0, -1)
 
 		lowtext:SetPoint("TOPLEFT", frame, "BOTTOMLEFT", 2, -2)
 		hightext:SetPoint("TOPRIGHT", frame, "BOTTOMRIGHT", -2, -2)
@@ -161,7 +161,7 @@ AceGUI.RegisterAsContainer = function(self, widget)
 
 		if widget.treeframe then
 			widget.treeframe:SetTemplate("Overlay")
-			frame:Point("TOPLEFT", widget.treeframe, "TOPRIGHT", 1, 0)
+			frame:SetPoint("TOPLEFT", widget.treeframe, "TOPRIGHT", 1, 0)
 		end
 
 		if TYPE == "TabGroup" then

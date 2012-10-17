@@ -128,12 +128,12 @@ SLASH_FFCHECK2 = "/аасрусл"
 
 -- Check button
 if C.misc.raid_tools == true then
-	RaidUtilityPanel:Height(168)
+	RaidUtilityPanel:SetHeight(168)
 
 	local button = CreateFrame("Button", "FoodFlaskCheckButton", RaidUtilityPanel, "UIPanelButtonTemplate")
-	button:Width(RaidUtilityRoleButton:GetWidth())
-	button:Height(18)
-	button:Point("TOP", RaidUtilityRaidControlButton, "BOTTOM", 0, -5)
+	button:SetWidth(RaidUtilityRoleButton:GetWidth())
+	button:SetHeight(18)
+	button:SetPoint("TOP", RaidUtilityRaidControlButton, "BOTTOM", 0, -5)
 	if IsAddOnLoaded("Aurora") then
 		local F = unpack(Aurora)
 		F.Reskin(button)

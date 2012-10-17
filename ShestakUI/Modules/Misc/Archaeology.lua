@@ -508,15 +508,15 @@ local b = CreateFrame("Button", "SwitchArch", UIParent)
 b:SetTemplate("ClassColor")
 if C.actionbar.toggle_mode == true then
 	if _G["SwitchLayout"] and _G["SwitchLayout"]:IsShown() then
-		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -58)
+		b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -58)
 	else
-		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
+		b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
 	end
 else
 	if _G["SwitchLayout"] and _G["SwitchLayout"]:IsShown() then
-		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
+		b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
 	else
-		b:Point("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
+		b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
 	end
 end
 b:Size(19)
@@ -552,8 +552,8 @@ end)
 local bt = b:CreateTexture(nil, "OVERLAY")
 bt:SetTexture("Interface\\Icons\\Trade_Archaeology")
 bt:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-bt:Point("TOPLEFT", b, 2, -2)
-bt:Point("BOTTOMRIGHT", b, -2, 2)
+bt:SetPoint("TOPLEFT", b, 2, -2)
+bt:SetPoint("BOTTOMRIGHT", b, -2, 2)
 
 ----------------------------------------------------------------------------------------
 --	Survey cooldown timer

@@ -13,9 +13,9 @@ for i = 1, 12 do
 	local b2 = _G["MultiBarRightButton"..i-1]
 	b:ClearAllPoints()
 	if i == 1 then
-		b:Point("TOPRIGHT", RightActionBarAnchor, "TOPRIGHT", 0, 0)
+		b:SetPoint("TOPRIGHT", RightActionBarAnchor, "TOPRIGHT", 0, 0)
 	else
-		b:Point("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
+		b:SetPoint("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
 	end
 end
 
