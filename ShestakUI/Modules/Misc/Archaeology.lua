@@ -300,7 +300,7 @@ function stArch:updateArtifact(index)
 					if artifact["numKeystones"] < artifact["numKeysockets"] then
 						artifact["numKeystones"] = artifact["numKeystones"] + count
 					end
-					if min(artifact["numKeystones"],artifact["numKeysockets"]) * 12 + artifact["progress"] >= artifact["total"] then
+					if min(artifact["numKeystones"], artifact["numKeysockets"]) * 12 + artifact["progress"] >= artifact["total"] then
 						artifact["canSolve"] = true
 					end
 				end
