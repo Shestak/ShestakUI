@@ -507,17 +507,9 @@ end)
 local b = CreateFrame("Button", "SwitchArch", UIParent)
 b:SetTemplate("ClassColor")
 if C.actionbar.toggle_mode == true then
-	if _G["SwitchLayout"] and _G["SwitchLayout"]:IsShown() then
-		b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -58)
-	else
-		b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
-	end
+	b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -58)
 else
-	if _G["SwitchLayout"] and _G["SwitchLayout"]:IsShown() then
-		b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
-	else
-		b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, 2)
-	end
+	b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
 end
 b:SetSize(19, 19)
 b:SetAlpha(0)
