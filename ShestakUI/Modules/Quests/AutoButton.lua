@@ -46,11 +46,11 @@ end
 -- Create anchor
 local AutoButtonAnchor = CreateFrame("Frame", "AutoButtonAnchor", UIParent)
 AutoButtonAnchor:SetPoint(unpack(C.position.auto_button))
-AutoButtonAnchor:SetSize(40, 40)
+AutoButtonAnchor:SetSize(41, 41)
 
 -- Create button
 local AutoButton = CreateFrame("Button", "AutoButton", UIParent, "SecureActionButtonTemplate")
-AutoButton:SetSize(40, 40)
+AutoButton:SetSize(41, 41)
 AutoButton:SetPoint("CENTER", AutoButtonAnchor, "CENTER", 0, 0)
 AutoButton:SetTemplate("Default")
 AutoButton:StyleButton()
@@ -131,3 +131,5 @@ Scanner:SetScript("OnEvent", function()
 		end
 	end
 end)
+
+-- edit by Oz of shestak. org --
