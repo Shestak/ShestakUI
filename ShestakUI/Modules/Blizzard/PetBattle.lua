@@ -37,7 +37,7 @@ for i, unit in pairs(units) do
 	unit.Name:ClearAllPoints()
 
 	unit.PetTypeFrame = CreateFrame("Frame", nil, unit)
-	unit.PetTypeFrame:Size(100, 23)
+	unit.PetTypeFrame:SetSize(100, 23)
 	unit.PetTypeFrame:FontString("text", C.media.normal_font, 12)
 	unit.PetTypeFrame.text:SetShadowOffset(1, -1)
 	unit.PetTypeFrame.text:SetText("")
@@ -266,7 +266,7 @@ bf.xpBar:SetPoint("BOTTOM", bf.TurnTimer.SkipButton, "TOP", 0, 5)
 bf.xpBar:SetScript("OnShow", function(self) self:StripTextures() self:SetStatusBarTexture(C.media.texture) end)
 
 bf.TurnTimer:SetParent(bar)
-bf.TurnTimer:Size(bf.TurnTimer.SkipButton:GetWidth(), bf.TurnTimer.SkipButton:GetHeight())
+bf.TurnTimer:SetSize(bf.TurnTimer.SkipButton:GetWidth(), bf.TurnTimer.SkipButton:GetHeight())
 bf.TurnTimer:ClearAllPoints()
 bf.TurnTimer:SetPoint("BOTTOM", bf.xpBar, "TOP", 0, 5)
 bf.TurnTimer.TimerText:SetPoint("CENTER")

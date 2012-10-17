@@ -25,9 +25,9 @@ else
 	end
 end
 if direction == "UP" or direction == "DOWN" then
-	EnemyCDAnchor:Size(C.enemycooldown.size, (C.enemycooldown.size * 5) + 12)
+	EnemyCDAnchor:SetSize(C.enemycooldown.size, (C.enemycooldown.size * 5) + 12)
 else
-	EnemyCDAnchor:Size((C.enemycooldown.size * 5) + 12, C.enemycooldown.size)
+	EnemyCDAnchor:SetSize((C.enemycooldown.size * 5) + 12, C.enemycooldown.size)
 end
 
 local UpdatePositions = function()

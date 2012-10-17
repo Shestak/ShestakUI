@@ -58,7 +58,7 @@ local function LoadSkin()
 		"PaperDollEquipmentManagerPane"
 	}
 
-	CharacterFrameExpandButton:Size(CharacterFrameExpandButton:GetWidth() - 7, CharacterFrameExpandButton:GetHeight() - 7)
+	CharacterFrameExpandButton:SetSize(CharacterFrameExpandButton:GetWidth() - 7, CharacterFrameExpandButton:GetHeight() - 7)
 	T.SkinNextPrevButton(CharacterFrameExpandButton)
 
 	EquipmentFlyoutFrameHighlight:Kill()

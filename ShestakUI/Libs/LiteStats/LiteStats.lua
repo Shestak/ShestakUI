@@ -497,7 +497,7 @@ if gold.enabled then
 			conf.Gold = curgold
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
-			GameTooltip:Point(gold.tip_anchor, gold.tip_frame, gold.tip_x, gold.tip_y)
+			GameTooltip:SetPoint(gold.tip_anchor, gold.tip_frame, gold.tip_x, gold.tip_y)
 			GameTooltip:ClearLines()
 			GameTooltip:AddLine(CURRENCY, tthead.r, tthead.g, tthead.b)
 			GameTooltip:AddLine(" ")
@@ -597,7 +597,7 @@ if clock.enabled then
 			if not self.hovered then RequestRaidInfo() self.hovered = true end
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
-			GameTooltip:Point(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
+			GameTooltip:SetPoint(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
 			GameTooltip:ClearLines()
 			GameTooltip:AddLine(date"%A, %B %d %Y", tthead.r, tthead.g, tthead.b)
 			GameTooltip:AddLine(" ")

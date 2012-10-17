@@ -10,7 +10,7 @@ local cancelled_rolls = {}
 local rolltypes = {"need", "greed", "disenchant", [0] = "pass"}
 
 local LootRollAnchor = CreateFrame("Frame", "LootRollAnchor", UIParent)
-LootRollAnchor:Size(313, 26)
+LootRollAnchor:SetSize(313, 26)
 
 local function ClickRoll(frame)
 	RollOnLoot(frame.parent.rollID, frame.rolltype)
@@ -87,7 +87,7 @@ end
 local function CreateRollFrame()
 	local frame = CreateFrame("Frame", nil, UIParent)
 	frame:CreateBackdrop("Default")
-	frame:Size(280, 22)
+	frame:SetSize(280, 22)
 	frame:SetScript("OnEvent", OnEvent)
 	frame:RegisterEvent("CANCEL_LOOT_ROLL")
 	frame:Hide()
@@ -107,7 +107,7 @@ local function CreateRollFrame()
 	button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	local status = CreateFrame("StatusBar", nil, frame)
-	status:Size(326, 20)
+	status:SetSize(326, 20)
 	status:SetPoint("TOPLEFT", 0, 0)
 	status:SetPoint("BOTTOMRIGHT", 0, 0)
 	status:SetScript("OnUpdate", StatusUpdate)
@@ -140,7 +140,7 @@ local function CreateRollFrame()
 	loot:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
 	loot:SetPoint("LEFT", bind, "RIGHT", 0, 0)
 	loot:SetPoint("RIGHT", frame, "RIGHT", -5, 0)
-	loot:Size(200, 10)
+	loot:SetSize(200, 10)
 	loot:SetJustifyH("LEFT")
 	frame.fsloot = loot
 

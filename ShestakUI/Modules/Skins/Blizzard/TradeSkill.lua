@@ -38,7 +38,7 @@ local function LoadSkin()
 	TradeSkillLinkButton:GetPushedTexture():SetTexCoord(0.25, 0.7, 0.45, 0.8)
 	TradeSkillLinkButton:GetHighlightTexture():Kill()
 	TradeSkillLinkButton:CreateBackdrop("Overlay")
-	TradeSkillLinkButton:Size(17, 14)
+	TradeSkillLinkButton:SetSize(17, 14)
 	TradeSkillLinkButton:SetPoint("LEFT", TradeSkillLinkFrame, "LEFT", 5, -1)
 
 	T.SkinEditBox(TradeSkillFrameSearchBox)

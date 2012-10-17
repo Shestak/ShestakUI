@@ -39,7 +39,7 @@ end)
 -- Vehicle button anchor
 local VehicleButtonAnchor = CreateFrame("Frame", "VehicleButtonAnchor", UIParent)
 VehicleButtonAnchor:SetPoint(unpack(C.position.vehicle_bar))
-VehicleButtonAnchor:Size(C.actionbar.button_size)
+VehicleButtonAnchor:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 
 -- Vehicle button
 local vehicle = CreateFrame("BUTTON", "VehicleButton", UIParent, "SecureActionButtonTemplate")

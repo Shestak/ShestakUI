@@ -135,7 +135,7 @@ AceGUI.RegisterAsWidget = function(self, widget)
 		frame:SetHeight(HEIGHT)
 		frame:SetThumbTexture(C.media.blank)
 		frame:GetThumbTexture():SetVertexColor(unpack(C.media.border_color))
-		frame:GetThumbTexture():Size(HEIGHT - 2, HEIGHT - 4)
+		frame:GetThumbTexture():SetSize(HEIGHT - 2, HEIGHT - 4)
 
 		editbox:SetTemplate("Overlay")
 		editbox:SetHeight(15)

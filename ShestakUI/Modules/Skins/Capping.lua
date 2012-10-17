@@ -46,8 +46,8 @@ end
 
 function self:PosBar(b)
 	local tb = bar[b]
-	tb.frame:Size(db.width, db.height)
-	tb.icon:Size(db.height, db.height)
+	tb.frame:SetSize(db.width, db.height)
+	tb.icon:SetSize(db.height, db.height)
 	b.spark:Hide()
 
 	b.timetext:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)

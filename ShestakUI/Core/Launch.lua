@@ -88,7 +88,7 @@ local function InstallUI()
 			local chatFrameId = frame:GetID()
 			local chatName = FCF_GetChatWindowInfo(chatFrameId)
 
-			frame:Size(C.chat.width, C.chat.height)
+			frame:SetSize(C.chat.width, C.chat.height)
 
 			-- Default width and height of chats
 			SetChatWindowSavedDimensions(chatFrameId, T.Scale(C.chat.width), T.Scale(C.chat.height))

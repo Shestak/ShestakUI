@@ -128,7 +128,7 @@ load:SetScript("OnEvent", function(self, event)
 	-- Add Color Swatch for original color
 	local t = ColorPickerFrame:CreateTexture("ColorPPOldColorSwatch")
 	local w, h = ColorSwatch:GetSize()
-	t:Size(w * 0.75, h * 0.75)
+	t:SetSize(w * 0.75, h * 0.75)
 	t:SetTexture(0, 0, 0)
 
 	-- OldColorSwatch to appear beneath ColorSwatch

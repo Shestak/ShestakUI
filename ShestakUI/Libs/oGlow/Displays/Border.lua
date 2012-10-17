@@ -45,7 +45,7 @@ local createBorder = function(self, point)
 			bc:SetBlendMode("ADD")
 			bc:SetAlpha(0.8)
 
-			bc:Size(70)
+			bc:SetSize(70, 70)
 
 			bc:SetPoint("CENTER", point or self)
 		end

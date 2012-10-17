@@ -7,7 +7,7 @@ if C.threat.enable ~= true then return end
 local spacing = 7
 
 local ThreatMeterAnchor = CreateFrame("Frame", "ThreatMeterAnchor", UIParent)
-ThreatMeterAnchor:Size(C.threat.width + 4, (C.threat.height * C.threat.bar_rows) + (spacing * (C.threat.bar_rows - 1)) + 4)
+ThreatMeterAnchor:SetSize(C.threat.width + 4, (C.threat.height * C.threat.bar_rows) + (spacing * (C.threat.bar_rows - 1)) + 4)
 ThreatMeterAnchor:SetPoint(unpack(C.position.threat_meter))
 
 local bar, tList, barList = {}, {}, {}
@@ -62,7 +62,7 @@ end
 
 local CreateBar = function()
 	local bar = CreateFrame("Statusbar", nil, UIParent)
-	bar:Size(C.threat.width, C.threat.height)
+	bar:SetSize(C.threat.width, C.threat.height)
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetMinMaxValues(0, 100)
 

@@ -237,7 +237,7 @@ local function SetupChatPosAndFont(self)
 		-- Force chat position
 		if i == 1 then
 			chat:ClearAllPoints()
-			chat:Size(C.chat.width, C.chat.height)
+			chat:SetSize(C.chat.width, C.chat.height)
 			if C.chat.background == true then
 				chat:SetPoint(C.position.chat[1], C.position.chat[2], C.position.chat[3], C.position.chat[4], C.position.chat[5] + 4)
 			else

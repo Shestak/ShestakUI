@@ -30,7 +30,7 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 			local button = _G["PetActionButton"..i]
 			button:ClearAllPoints()
 			button:SetParent(PetHolder)
-			button:Size(C.actionbar.button_size)
+			button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 			if i == 1 then
 				if C.actionbar.petbar_horizontal == true then
 					button:SetPoint("BOTTOMLEFT", 0, 0)

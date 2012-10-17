@@ -268,7 +268,7 @@ function T.SkinDropDownBox(frame, width)
 	if not width then width = 155 end
 
 	frame:StripTextures()
-	frame:Width(width)
+	frame:SetWidth(width)
 
 	if _G[frame:GetName().."Text"] then
 		_G[frame:GetName().."Text"]:ClearAllPoints()
