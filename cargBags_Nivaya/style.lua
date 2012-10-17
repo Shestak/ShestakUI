@@ -268,8 +268,8 @@ function MyContainer:OnCreate(name, settings)
 			if C.skins.blizzard_frames == true then
 				T.SkinCloseButton(close, nil, nil, true)
 				close:SetPoint("TOPRIGHT", -1, 2)
-				close:Width(14)
-				close:Height(14)
+				close:SetWidth(14)
+				close:SetHeight(14)
 			else
 				close:SetPoint("TOPRIGHT", 5, 7)
 				close:SetWidth(24)

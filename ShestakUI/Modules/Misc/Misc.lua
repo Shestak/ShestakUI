@@ -215,7 +215,7 @@ LootButton:SetAlpha(0)
 
 LootButton.Text = LootButton:CreateFontString(nil, "OVERLAY")
 LootButton.Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-LootButton.Text:Point("CENTER", 2, 0)
+LootButton.Text:SetPoint("CENTER", 2, 0)
 LootButton.Text:SetTextColor(0.3, 0.3, 0.9)
 LootButton:CreatePanel("Transparent", 17, (C.chat.height - 20) / 2, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -1, 20)
 
@@ -225,18 +225,18 @@ DamageButton:SetAlpha(0)
 
 DamageButton.Text = DamageButton:CreateFontString(nil, "OVERLAY")
 DamageButton.Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-DamageButton.Text:Point("CENTER", 2, 0)
+DamageButton.Text:SetPoint("CENTER", 2, 0)
 DamageButton.Text:SetTextColor(0.9, 0.3, 0.3)
 DamageButton:CreatePanel("Transparent", 17, (C.chat.height - 20) / 2, "BOTTOM", LootToggleButton, "TOP", 0, 1)
 
 local LootShow = function()
 	ChatFrame3:ClearAllPoints()
-	ChatFrame3:Size(C.chat.width, C.chat.height)
+	ChatFrame3:SetSize(C.chat.width, C.chat.height)
 	if C.chat.background == true then
-		ChatFrame3:Point("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5] + 4)
+		ChatFrame3:SetPoint("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5] + 4)
 		TooltipAnchor:SetPoint("BOTTOMRIGHT", ChatTabsPanelRight, "TOPRIGHT", 0, 3)
 	else
-		ChatFrame3:Point("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5])
+		ChatFrame3:SetPoint("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5])
 		TooltipAnchor:SetPoint("BOTTOMRIGHT", RightPanel, "TOPRIGHT", 0, 3)
 		RightPanel:Show()
 	end
@@ -247,7 +247,7 @@ end
 
 local LootHide = function()
 	ChatFrame3:ClearAllPoints()
-	ChatFrame3:Point("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 200, 0)
+	ChatFrame3:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 200, 0)
 	if C.chat.background ~= true then RightPanel:Hide() end
 	FCF_SavePositionAndDimensions(ChatFrame3)
 	LootButton.Text:SetText("<\n<\n<")
@@ -256,7 +256,7 @@ end
 
 local DamageShow = function()
 	alDamageMeterFrame:ClearAllPoints()
-	alDamageMeterFrame:Point("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26)
+	alDamageMeterFrame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26)
 	TooltipAnchor:SetPoint("BOTTOMRIGHT", alDamageMeterFrame, "TOPRIGHT", 2, 5)
 	DamageButton.Text:SetText(">\n>\n>")
 	SavedOptionsPerChar.DamageMeter = true
@@ -264,7 +264,7 @@ end
 
 local DamageHide = function()
 	alDamageMeterFrame:ClearAllPoints()
-	alDamageMeterFrame:Point("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 23, 26)
+	alDamageMeterFrame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 23, 26)
 	DamageButton.Text:SetText("<\n<\n<")
 	SavedOptionsPerChar.DamageMeter = false
 end
@@ -353,7 +353,7 @@ LootHistoryButton:SetAlpha(0)
 
 LootHistoryButton.Text = LootHistoryButton:CreateFontString(nil, "OVERLAY")
 LootHistoryButton.Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-LootHistoryButton.Text:Point("CENTER", 2, 0)
+LootHistoryButton.Text:SetPoint("CENTER", 2, 0)
 LootHistoryButton.Text:SetText("L")
 LootHistoryButton.Text:SetTextColor(0.3, 0.3, 0.9)
 

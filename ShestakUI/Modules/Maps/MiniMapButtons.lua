@@ -82,7 +82,7 @@ SLASH_FARMMODE4 = "/аь"
 local farm = CreateFrame("Button", "FarmMode", UIParent)
 farm:SetTemplate("Default")
 farm:SetPoint("BOTTOM", switch, "TOP", 0, 1)
-farm:Size(19, 19)
+farm:SetSize(19, 19)
 farm:SetAlpha(0)
 
 farm.t = farm:CreateTexture(nil, "OVERLAY")
