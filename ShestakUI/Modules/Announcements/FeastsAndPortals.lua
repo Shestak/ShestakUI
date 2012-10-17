@@ -37,7 +37,7 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 		end
 	elseif subEvent == "SPELL_CREATE" then
 		-- Ritual of Souls and MOLL-E
-		if C.announcements.feasts and (spellID == 29893 or spellID == 54710) and T.coauthor ~= true then
+		if C.announcements.feasts and (spellID == 29893 or spellID == 54710) then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PUT, srcName, GetSpellLink(spellID)), GetChat())
 		-- Toys
 		elseif C.announcements.toy_train and T.AnnounceToys[spellID] then
