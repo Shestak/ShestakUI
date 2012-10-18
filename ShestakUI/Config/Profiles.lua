@@ -428,7 +428,7 @@ if T.coauthor == true then
 	C["misc"].move_blizzard = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
-	C["announcements"].lightwell = true
+	C["announcements"].portals = true
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
 	C["automation"].auto_role = true
@@ -457,6 +457,7 @@ if T.coauthor == true then
 	C["unitframe"].plugins_diminishing = true
 	C["raidframe"].icons_role = true
 	if T.name == "Занштек" then
+		C["announcements"].lightwell = true
 		C["automation"].skip_cinematic = true
 		C["raidframe"].deficit_health = true
 	end
