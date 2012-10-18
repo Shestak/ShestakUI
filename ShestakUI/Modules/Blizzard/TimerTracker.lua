@@ -14,6 +14,7 @@ local function SkinIt(bar)
 		end
 	end
 
+	bar:CreateBackdrop("Default")
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetStatusBarColor(0.7, 0, 0)
 
@@ -21,15 +22,9 @@ local function SkinIt(bar)
 	bar.bg:SetAllPoints(bar)
 	bar.bg:SetTexture(C.media.texture)
 	bar.bg:SetVertexColor(0.7, 0, 0, 0.3)
-
-	bar.backdrop = CreateFrame("Frame", nil, bar)
-	bar.backdrop:SetFrameLevel(0)
-	bar.backdrop:SetTemplate("Default")
-	bar.backdrop:SetPoint("TOPLEFT", bar, "TOPLEFT", -2, 2)
-	bar.backdrop:SetPoint("BOTTOMRIGHT", bar, "BOTTOMRIGHT", 2, -2)
 end
 
-local function SkinBlizzTimer(self, event, timerType, timeSeconds, totalTime)
+local function SkinBlizzTimer()
 	for _, b in pairs(TimerTracker.timerList) do
 		if b["bar"] and not b["bar"].skinned then
 			SkinIt(b["bar"])
@@ -38,6 +33,6 @@ local function SkinBlizzTimer(self, event, timerType, timeSeconds, totalTime)
 	end
 end
 
-local load = CreateFrame("Frame")
-load:RegisterEvent("START_TIMER")
-load:SetScript("OnEvent", SkinBlizzTimer)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("START_TIMER")
+frame:SetScript("OnEvent", SkinBlizzTimer)

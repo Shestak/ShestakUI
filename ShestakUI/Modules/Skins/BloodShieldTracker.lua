@@ -17,7 +17,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["EstimateBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["EstimateBar"] = {} end
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PurgatoryBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PurgatoryBar"] = {} end
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["TotalAbsorbsBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["TotalAbsorbsBar"] = {} end
-	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["BloodChargeBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["BloodChargeBar"] = {} end	
+	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["BloodChargeBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["BloodChargeBar"] = {} end
 
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PWSBar"]["border"] = false
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PWSBar"]["texture"] = "Smooth"
@@ -47,12 +47,12 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	local bars = {
 		"BloodShieldTracker_PWSBar",
 		"BloodShieldTracker_EstimateBar",
-		"BloodShieldTracker_BloodChargeBar",
 		"BloodShieldTracker_ShieldBar",
 		"BloodShieldTracker_TotalAbsorbsBar",
 		"BloodShieldTracker_IllumBar",
 		"BloodShieldTracker_HealthBar",
-		"BloodShieldTracker_PurgatoryBar"
+		"BloodShieldTracker_PurgatoryBar",
+		"BloodShieldTracker_BloodChargeBar"
 	}
 
 	for i = 1, getn(bars) do
