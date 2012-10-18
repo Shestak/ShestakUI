@@ -51,11 +51,11 @@ L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Сообщать в чат о вашем Кол
 L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Сообщать в чат о применении Игрушечной ж/д или Пульта Худовара"
 L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Благодарить за полезные заклинания"
 L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Отсчитывать время до атаки (/run PullCountdown.Pull(#))"
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Сообщать в чат об отсутствующих настоях и еде"
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Cообщать при проверке готовности (если вкл. 'сообщать в рейдовый канал')"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Сообщать об отсутствующих настоях и еде"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Cообщать в чат при проверке готовности"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Сообщать в рейдовый канал"
-L_GUI_ANNOUNCEMENTS_FEASTS = "Оповещать, когда ставят пир/почту/рем.бота"
-L_GUI_ANNOUNCEMENTS_PORTALS = "Оповещать, когда создают порталы/ритуал призыва"
+L_GUI_ANNOUNCEMENTS_FEASTS = "Сообщать, когда ставят пир/почту/рем.бота"
+L_GUI_ANNOUNCEMENTS_PORTALS = "Сообщать, когда создают порталы/ритуал призыва"
 
 -- Automation options
 L_GUI_AUTOMATION = "Автоматизация"

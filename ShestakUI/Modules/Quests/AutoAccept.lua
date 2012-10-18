@@ -70,6 +70,10 @@ local function GetNumGossipCompletedQuests()
 	return completed
 end
 
+local function GetCreatureID()
+	return tonumber(string.sub(UnitGUID("npc") or "", -12, -9), 16)
+end
+
 Monomyth:Register("GOSSIP_SHOW", function()
 	local active = GetNumGossipActiveQuests()
 	if active > 0 then
@@ -97,6 +101,11 @@ Monomyth:Register("GOSSIP_SHOW", function()
 			return
 		end
 	end
+
+	local creatureID = GetCreatureID()
+	if creatureID and creatureID == 57850 then
+		SelectGossipOption(1)
+	end
 end)
 
 local darkmoonNPC = {
@@ -106,9 +115,7 @@ local darkmoonNPC = {
 }
 
 Monomyth:Register("GOSSIP_CONFIRM", function(index)
-	local GUID = UnitGUID("target") or ""
-	local creatureID = tonumber(string.sub(GUID, -12, -9), 16)
-
+	local creatureID = GetCreatureID()
 	if creatureID and darkmoonNPC[creatureID] then
 		SelectGossipOption(index, "", true)
 		StaticPopup_Hide("GOSSIP_CONFIRM")
@@ -134,8 +141,6 @@ Monomyth:Register("QUEST_ACCEPTED", function(id)
 		AddQuestWatch(id)
 	end
 end)
-
-
 
 Monomyth:Register("QUEST_PROGRESS", function()
 	if IsQuestCompletable() then
@@ -260,10 +265,15 @@ Monomyth:Register("BAG_UPDATE", function(bag)
 	end
 end)
 
+local errors = {
+	[ERR_QUEST_ALREADY_DONE] = true,
+	[ERR_QUEST_FAILED_LOW_LEVEL] = true,
+	[ERR_QUEST_ALREADY_DONE_DAILY] = true,
+	[ERR_QUEST_NEED_PREREQS] = true,
+}
+
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", function(self, event, message)
-	if message == ERR_QUEST_ALREADY_DONE or message == ERR_QUEST_FAILED_LOW_LEVEL or meddage == ERR_QUEST_ALREADY_DONE_DAILY then
-		return true
-	end
+	return errors[message]
 end)
 
 QuestInfoDescriptionText.SetAlphaGradient = function() end

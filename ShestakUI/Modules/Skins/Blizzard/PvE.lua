@@ -18,7 +18,8 @@ local function LoadSkin()
 		"LFGDungeonReadyDialog",
 		"LFGDungeonReadyStatus",
 		"LFDQueueFrameCooldownFrame",
-		"RaidFinderQueueFrameCooldownFrame"
+		"RaidFinderQueueFrameCooldownFrame",
+		"RaidFinderQueueFramePartyBackfill"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -46,7 +47,9 @@ local function LoadSkin()
 		"LFGDungeonReadyDialogLeaveQueueButton",
 		"LFGDungeonReadyDialogEnterDungeonButton",
 		"LFDQueueFramePartyBackfillBackfillButton",
-		"LFDQueueFramePartyBackfillNoBackfillButton"
+		"LFDQueueFramePartyBackfillNoBackfillButton",
+		"RaidFinderQueueFramePartyBackfillBackfillButton",
+		"RaidFinderQueueFramePartyBackfillNoBackfillButton"
 	}
 
 	for i = 1, #buttons do
@@ -243,6 +246,10 @@ local function LoadSkin()
 	RaidFinderQueueFrameCooldownFrame:CreateBackdrop("Overlay")
 	RaidFinderQueueFrameCooldownFrame.backdrop:SetPoint("TOPLEFT", 2, 6)
 	RaidFinderQueueFrameCooldownFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 8)
+
+	RaidFinderQueueFramePartyBackfill:CreateBackdrop("Overlay")
+	RaidFinderQueueFramePartyBackfill.backdrop:SetPoint("TOPLEFT", 2, 6)
+	RaidFinderQueueFramePartyBackfill.backdrop:SetPoint("BOTTOMRIGHT", 0, 8)
 
 	T.SkinDropDownBox(LFDQueueFrameTypeDropDown, 300)
 	LFDQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
