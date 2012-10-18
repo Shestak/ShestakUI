@@ -22,7 +22,7 @@ RaidCDAnchor:SetPoint(unpack(C.position.raid_cooldown))
 if C.raidcooldown.show_icon == true then
 	RaidCDAnchor:SetSize(C.raidcooldown.width + 32, C.raidcooldown.height + 10)
 else
-	RaidCDAnchor:SetSize(C.raidcooldown.width + 32, C.raidcooldown.height + 10)
+	RaidCDAnchor:SetSize(C.raidcooldown.width + 32, C.raidcooldown.height + 4)
 end
 
 local FormatTime = function(time)
