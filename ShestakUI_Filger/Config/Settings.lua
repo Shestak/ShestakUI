@@ -127,6 +127,8 @@ Filger_Spells = {
 			{spellID = 108200, filter = "CD"},
 			-- Strangulate
 			{spellID = 47476, filter = "CD"},
+			-- Soul Reaper
+			{spellID = 130736, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Plague Leech
