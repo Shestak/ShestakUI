@@ -134,7 +134,7 @@ PAPERDOLL_STATCATEGORIES = {
 			"RANGED_AP",
 			"RANGED_HASTE",
 			"FOCUS_REGEN",
-			"RANGED_CRITCHANCE",
+			"CRITCHANCE",
 			"RANGED_HITCHANCE",
 			"MASTERY",
 		},
@@ -148,7 +148,7 @@ PAPERDOLL_STATCATEGORIES = {
 			"SPELLHEALING",
 			"SPELL_HASTE",
 			"MANAREGEN",
-			"SPELL_CRITCHANCE",
+			"SPELLCRIT",
 			"SPELL_HITCHANCE",
 			"MASTERY",
 		},
@@ -168,7 +168,7 @@ PAPERDOLL_STATCATEGORIES = {
 }
 
 local orig = PaperDoll_InitStatCategories
-local class = select(2, UnitClass("player"))
+local class = select(3, UnitClass("player"))
 
 local sort = {
 	{
@@ -189,30 +189,29 @@ local sort = {
 }
 
 local spec
-local classes = {
-	DEATHKNIGHT = {1, 1, 1},
-	DRUID = {3, 1, 1, 3},
-	HUNTER = {2, 2, 2},
-	MAGE = {3, 3, 3},
-	PALADIN = {3, 1, 1},
-	PRIEST = {3, 3, 3},
-	ROGUE = {1, 1, 1},
-	SHAMAN = {3, 1, 3},
-	WARLOCK = {3, 3, 3},
-	WARRIOR = {1, 1, 1},
-	MONK = {1, 1, 1},
+local specs = {
+	{1, 1, 1},
+	{3, 1, 1},
+	{2, 2, 2},
+	{1, 1, 1},
+	{3, 3, 3},
+	{1, 1, 1},
+	{3, 1, 3},
+	{3, 3, 3},
+	{3, 3, 3},
+	{1, 3, 1},
+	{3, 1, 1, 3},
 }
 
 local handler = CreateFrame("Frame")
 handler:RegisterEvent("PLAYER_TALENT_UPDATE")
 handler:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 handler:SetScript("OnEvent", function()
-	local spec = GetSpecialization()
-	if spec == 0 then return end
+	spec = GetSpecialization()
 
 	if spec then
 		PaperDoll_InitStatCategories = function()
-			orig(sort[classes[class][spec]], nil, nil, "player")
+			orig(sort[specs[class][spec]], nil, nil, "player")
 			PaperDollFrame_CollapseStatCategory(CharacterStatsPaneCategory4)
 		end
 	end
@@ -227,36 +226,40 @@ end
 
 do
 	local setStat = PaperDollFrame_SetStat
-	function PaperDollFrame_SetStat(self, unit, index)
-		if index == 1 and class ~= "DEATHKNIGHT" and class ~= "PALADIN" and class ~= "WARRIOR" then
+	function PaperDollFrame_SetStat(self, ...)
+		if index == 1 and class ~= 6 and class ~= 2 and class ~= 1 then
 			return self:Hide()
 		end
 
-		setStat(self, unit, index)
+		setStat(self, ...)
 	end
 
 	local setSpellHit = PaperDollFrame_SetSpellHitChance
-	function PaperDollFrame_SetSpellHitChance(self, unit)
-		if class == "PRIEST" and spec ~= 3 then
+	function PaperDollFrame_SetSpellHitChance(self, ...)
+		if class == 5 and spec ~= 3 then
 			return self:Hide()
-		elseif (class == "DRUID" or class == "SHAMAN") and spec == 3 then
+		elseif (class == 11 or class == 7) and spec == 3 then
 			return self:Hide()
 		end
 
-		setSpellHit(self, unit)
+		setSpellHit(self, ...)
 	end
 
 	local setParry = PaperDollFrame_SetParry
-	function PaperDollFrame_SetParry(self, unit)
-		if class ~= "PALADIN" and class ~= "WARRIOR" and class ~= "DEATHKNIGHT" then
+	function PaperDollFrame_SetParry(self, ...)
+		if class ~= 2 and class ~= 1 and class ~= 6 and not (class == 10 and spec == 2) then
 			return self:Hide()
 		end
+
+		setParry(self, ...)
 	end
 
 	local setBlock = PaperDollFrame_SetBlock
-	function PaperDollFrame_SetBlock(self, unit)
-		if class ~= "PALADIN" and class ~= "WARRIOR" then
+	function PaperDollFrame_SetBlock(self, ...)
+		if class ~= 2 and class ~= 1 then
 			return self:Hide()
 		end
+
+		setBlock(self, ...)
 	end
 end
