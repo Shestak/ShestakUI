@@ -30,8 +30,15 @@ T.RGBToHex = function(r, g, b)
 end
 
 ----------------------------------------------------------------------------------------
---	Player's Role check
+--	Player's Role and Specialization check
 ----------------------------------------------------------------------------------------
+T.CheckSpec = function(tree)
+	local activeGroup = GetActiveSpecGroup()
+	if activeGroup and GetSpecialization(false, false, activeGroup) then
+		return tree == GetSpecialization(false, false, activeGroup)
+	end
+end
+
 local function CheckRole(self, event, unit)
 	local tree = GetSpecialization()
 	local role = tree and select(6, GetSpecializationInfo(tree))
