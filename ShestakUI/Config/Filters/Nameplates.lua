@@ -52,6 +52,8 @@ T.DebuffWhiteList = {
 	[SpellName(8122)] = true,	-- Psychic Scream
 	[SpellName(64044)] = true,	-- Psychic Horror
 	[SpellName(15487)] = true,	-- Silence
+	[SpellName(589)] = true,    -- Shadow Word: Pain
+	[SpellName(34914)] = true,  -- Vampiric Touch
 	-- Rogue
 	[SpellName(6770)] = true,	-- Sap
 	[SpellName(2094)] = true,	-- Blind
