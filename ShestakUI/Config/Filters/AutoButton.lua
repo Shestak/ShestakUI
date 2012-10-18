@@ -31,6 +31,7 @@ T.ABItems = {
 	84781,	-- Shado-Pan Torch
 	82381,	-- Yak's Milk Flask
 	84762,	-- Highly Explosive Yaungol Oil
+	32971,	-- Water Bucket
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
