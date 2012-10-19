@@ -6,7 +6,6 @@ if C.minimap.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
 MinimapAnchor:CreatePanel("ClassColor", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
-MinimapAnchor:RegisterEvent("ADDON_LOADED")
 
 ----------------------------------------------------------------------------------------
 --	Shape, location and scale

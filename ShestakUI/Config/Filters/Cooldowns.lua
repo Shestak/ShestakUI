@@ -80,6 +80,7 @@ end
 
 if C.pulsecooldown.enable == true then
 	T.pulse_ignored_spells = {
-		--"Spell name",	-- Example
+		--GetSpellInfo(779),	-- Swipe
+		--GetSpellInfo(6807),	-- Maul
 	}
 end

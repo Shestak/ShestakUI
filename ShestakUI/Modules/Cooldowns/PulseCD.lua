@@ -6,7 +6,7 @@ if C.pulsecooldown.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local noscalemult = T.mult * C.general.uiscale
 local fadeInTime, fadeOutTime, maxAlpha, animScale, iconSize, holdTime, threshold
-local cooldowns, animating, watching = { }, { }, { }
+local cooldowns, animating, watching = {}, {}, {}
 local GetTime = GetTime
 
 local DCPAnchor = CreateFrame("Frame", "DCPAnchor", UIParent)
@@ -154,9 +154,9 @@ function DCP:ADDON_LOADED(addon)
 end
 DCP:RegisterEvent("ADDON_LOADED")
 
-function DCP:UNIT_SPELLCAST_SUCCEEDED(unit, spell, rank)
+function DCP:UNIT_SPELLCAST_SUCCEEDED(unit, spell)
 	if unit == "player" then
-		watching[spell] = {GetTime(), "spell", spell.."("..rank..")"}
+		watching[spell] = {GetTime(), "spell", spell}
 		if not self:IsMouseEnabled() then
 			self:SetScript("OnUpdate", OnUpdate)
 		end
