@@ -6,7 +6,7 @@ if C.actionbar.enable ~= true then return end
 ------------------------------------------------------------------------------------------
 ExtraActionBarFrame:SetParent(UIParent)
 ExtraActionBarFrame:ClearAllPoints()
-ExtraActionBarFrame:SetPoint("BOTTOM", 0, 350)
+ExtraActionBarFrame:SetPoint(unpack(C.position.extra_button))
 ExtraActionBarFrame:SetMovable(true)
 ExtraActionBarFrame:SetUserPlaced(true)
 ExtraActionBarFrame:SetFrameStrata("MEDIUM")
