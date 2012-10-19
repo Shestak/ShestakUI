@@ -115,6 +115,8 @@ local eventRegistered = {
 }
 
 local function CombatLogCheck(self, ...)
+	local _, instanceType = IsInInstance()
+	if instanceType ~= "arena" then return end
 	local _, _, eventType, _, _, _, _, _, destGUID, _, _, _, spellID, _, _, auraType, _ = ...
 	if not eventRegistered[eventType] then return end
 	if destGUID ~= UnitGUID(self.target) then return end
