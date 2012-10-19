@@ -98,7 +98,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 					else
 						GameTooltip:AddDoubleLine(L_BIND_BINDING, L_BIND_KEY, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6)
 						for i = 1, #bind.button.bindings do
-							GameTooltip:AddDoubleLine(L_BIND_BINDING..i, bind.button.bindings[i], 1, 1, 1)
+							GameTooltip:AddDoubleLine(i, bind.button.bindings[i], 1, 1, 1)
 						end
 					end
 				GameTooltip:Show()
@@ -203,9 +203,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 			if key == "LSHIFT" or key == "RSHIFT" or key == "LCTRL" or key == "RCTRL" or key == "LALT"
 			or key == "RALT" or key == "UNKNOWN" or key == "LeftButton" then return end
 			if key == "MiddleButton" then key = "BUTTON3" end
-			if key:find("Button%d") then
-				key = key:upper()
-			end
+			if key:find("Button%d") then key = key:upper() end
 
 			local alt = IsAltKeyDown() and "ALT-" or ""
 			local ctrl = IsControlKeyDown() and "CTRL-" or ""
@@ -234,10 +232,10 @@ SlashCmdList.MOUSEOVERBIND = function()
 				RightBarMouseOver(1)
 			end
 			if C.actionbar.stancebar_mouseover == true then
-				ShapeShiftMouseOver(1)
+				StanceBarMouseOver(1)
 			end
 			if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
-				PetMouseOver(1)
+				PetBarMouseOver(1)
 			end
 		end
 
@@ -258,10 +256,10 @@ SlashCmdList.MOUSEOVERBIND = function()
 				RightBarMouseOver(0)
 			end
 			if C.actionbar.stancebar_mouseover == true then
-				ShapeShiftMouseOver(0)
+				StanceBarMouseOver(0)
 			end
 			if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
-				PetMouseOver(0)
+				PetBarMouseOver(0)
 			end
 		end
 

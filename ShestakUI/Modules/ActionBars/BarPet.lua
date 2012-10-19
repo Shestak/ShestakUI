@@ -39,9 +39,9 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 				end
 			else
 				if C.actionbar.petbar_horizontal == true then
-					button:SetPoint("LEFT", _G["PetActionButton"..(i - 1)], "RIGHT", C.actionbar.button_space, 0)
+					button:SetPoint("LEFT", _G["PetActionButton"..i-1], "RIGHT", C.actionbar.button_space, 0)
 				else
-					button:SetPoint("TOP", _G["PetActionButton"..(i - 1)], "BOTTOM", 0, -C.actionbar.button_space)
+					button:SetPoint("TOP", _G["PetActionButton"..i-1], "BOTTOM", 0, -C.actionbar.button_space)
 				end
 			end
 			button:Show()
@@ -72,7 +72,7 @@ if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == tru
 	for i = 1, NUM_PET_ACTION_SLOTS do
 		local b = _G["PetActionButton"..i]
 		b:SetAlpha(0)
-		b:HookScript("OnEnter", function() PetMouseOver(1) end)
-		b:HookScript("OnLeave", function() if not HoverBind.enabled then PetMouseOver(0) end end)
+		b:HookScript("OnEnter", function() PetBarMouseOver(1) end)
+		b:HookScript("OnLeave", function() if not HoverBind.enabled then PetBarMouseOver(0) end end)
 	end
 end
