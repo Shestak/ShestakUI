@@ -32,6 +32,9 @@ function UpdateDRTracker(self)
 end
 
 function DisplayDrActives(self)
+	local _, instanceType = IsInInstance()
+	if instanceType ~= "arena" then return end
+
 	if not self.actives then return end
 	if not self.auras then self.auras = {} end
 	local index
@@ -42,17 +45,15 @@ function DisplayDrActives(self)
 		local aura = self.auras[index]
 		if not aura then
 			aura = CreateFrame("Frame", "DrFrame"..self.target..index, self)
-			aura:SetWidth(self.size)
-			aura:SetHeight(self.size)
-			aura:SetScale(1)
 			aura:SetTemplate("Default")
+			aura:SetSize(self.size, self.size)
 			if index == 1 then
 				aura:SetPoint(self.anchor, self:GetParent().Health, self.anchorframe, self.x, self.y)
 			else
 				aura:SetPoint(self.nextanchor, previous, self.nextanchorframe, self.nextx, self.nexty)
 			end
 
-			aura.icon = aura:CreateTexture("$parenticon", "ARTWORK")
+			aura.icon = aura:CreateTexture("$parentIcon", "ARTWORK")
 			aura.icon:SetPoint("TOPLEFT", 2, -2)
 			aura.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 			aura.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
