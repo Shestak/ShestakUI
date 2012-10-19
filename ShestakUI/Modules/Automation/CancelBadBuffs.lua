@@ -31,7 +31,7 @@ f:SetScript("OnEvent", function(self, event, unit)
 		for buff, enabled in next, blacklist do
 			if UnitAura(unit, buff) and enabled and not InCombatLockdown() then
 				CancelUnitBuff(unit, buff)
-				print(ACTION_SPELL_AURA_REMOVED.." "..(GetSpellLink(buff) or UNKNOWN)..".")
+				print(ACTION_SPELL_AURA_REMOVED.." "..(GetSpellLink(buff) or buff)..".")
 			end
 		end
 	end
