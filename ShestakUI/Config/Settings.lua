@@ -72,7 +72,6 @@ C["announcements"] = {
 	["interrupts"] = false,						-- Announce when you interrupt
 	["spells"] = false,							-- Announce when you cast some spell
 	["spells_from_all"] = false,				-- Check spells cast from all members
-	["enemy_trinkets"] = false,					-- Announce the usage of enemy trinkets (only works in arena)
 	["lightwell"] = false,						-- Announce your Lightwell
 	["toy_train"] = false,						-- Announce Toy Train or Direbrew's Remote cast
 	["says_thanks"] = false,					-- Says thanks for some spells

@@ -11,7 +11,7 @@ PlayerPowerBarAlt:UnregisterEvent("PLAYER_ENTERING_WORLD")
 -- AltPowerBar
 local bar = CreateFrame("Frame", "UIAltPowerBar", UIParent)
 bar:SetSize(221, 25)
-bar:SetPoint("TOP", UIParent, "TOP", 0, -21)
+bar:SetPoint(unpack(C.position.alt_power_bar))
 bar:SetTemplate("Default")
 
 -- Make moveable
@@ -89,5 +89,3 @@ status:SetScript("OnUpdate", function(self, elapsed)
 		update = 0
 	end
 end)
-
--- edit by Oz of shestak. org --

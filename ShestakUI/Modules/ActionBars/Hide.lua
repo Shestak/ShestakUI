@@ -112,7 +112,7 @@ function RightBarMouseOver(alpha)
 	end
 end
 
-function ShapeShiftMouseOver(alpha)
+function StanceBarMouseOver(alpha)
 	for i = 1, NUM_STANCE_SLOTS do
 		local pb = _G["StanceButton"..i]
 		pb:SetAlpha(alpha)
@@ -120,7 +120,7 @@ function ShapeShiftMouseOver(alpha)
 	ShapeShiftBarAnchor:SetAlpha(alpha)
 end
 
-function PetMouseOver(alpha)
+function PetBarMouseOver(alpha)
 	for i = 1, NUM_PET_ACTION_SLOTS do
 		local pb = _G["PetActionButton"..i]
 		pb:SetAlpha(alpha)
@@ -146,7 +146,7 @@ do
 	end
 	if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
 		PetActionBarAnchor:SetAlpha(0)
-		PetActionBarAnchor:SetScript("OnEnter", function() PetMouseOver(1) end)
-		PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then PetMouseOver(0) end end)
+		PetActionBarAnchor:SetScript("OnEnter", function() PetBarMouseOver(1) end)
+		PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then PetBarMouseOver(0) end end)
 	end
 end

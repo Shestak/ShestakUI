@@ -22,16 +22,16 @@ local blacklist = {
 	[SpellName(61734)] = true,	-- Noblegarden Bunny
 }
 
-local f = CreateFrame("Frame")
-f:RegisterEvent("UNIT_AURA")
-f:SetScript("OnEvent", function(self, event, unit)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("UNIT_AURA")
+frame:SetScript("OnEvent", function(self, event, unit)
 	if unit ~= "player" then return end
 
 	if event == "UNIT_AURA" then
 		for buff, enabled in next, blacklist do
 			if UnitAura(unit, buff) and enabled and not InCombatLockdown() then
 				CancelUnitBuff(unit, buff)
-				print(ACTION_SPELL_AURA_REMOVED.." "..(GetSpellLink(buff) or UNKNOWN)..".")
+				print(ACTION_SPELL_AURA_REMOVED.." "..(GetSpellLink(buff) or buff)..".")
 			end
 		end
 	end

@@ -19,10 +19,6 @@ else
 	ShiftHolder:SetHeight((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
 end
 
--- Stance command to move totem or stance in-game
-local ShapeShiftAnchor = CreateFrame("Frame", "ShapeShiftAnchor", UIParent)
-ShapeShiftAnchor:SetAllPoints(ShiftHolder)
-
 -- Hide bar
 if C.actionbar.stancebar_hide then ShiftHolder:Hide() return end
 
@@ -118,12 +114,12 @@ if C.actionbar.rightbars_mouseover == true and C.actionbar.stancebar_horizontal 
 end
 if C.actionbar.stancebar_mouseover == true and C.actionbar.stancebar_horizontal == true then
 	ShapeShiftBarAnchor:SetAlpha(0)
-	ShapeShiftBarAnchor:SetScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-	ShapeShiftBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then ShapeShiftMouseOver(0) end end)
+	ShapeShiftBarAnchor:SetScript("OnEnter", function() StanceBarMouseOver(1) end)
+	ShapeShiftBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then StanceBarMouseOver(0) end end)
 	for i = 1, NUM_STANCE_SLOTS do
 		local b = _G["StanceButton"..i]
 		b:SetAlpha(0)
-		b:HookScript("OnEnter", function() ShapeShiftMouseOver(1) end)
-		b:HookScript("OnLeave", function() if not HoverBind.enabled then ShapeShiftMouseOver(0) end end)
+		b:HookScript("OnEnter", function() StanceBarMouseOver(1) end)
+		b:HookScript("OnLeave", function() if not HoverBind.enabled then StanceBarMouseOver(0) end end)
 	end
 end

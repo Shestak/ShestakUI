@@ -6,7 +6,6 @@ if C.minimap.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
 MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
-MinimapAnchor:RegisterEvent("ADDON_LOADED")
 
 ----------------------------------------------------------------------------------------
 --	Shape, location and scale
@@ -328,3 +327,5 @@ if C.minimap.tracking_icon then
 else
 	MiniMapTracking:Hide()
 end
+
+-- edit by Oz of shestak. org --

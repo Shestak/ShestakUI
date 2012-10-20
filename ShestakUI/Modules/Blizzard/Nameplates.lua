@@ -147,16 +147,14 @@ end
 
 -- Filter auras on nameplate, and determine if we need to update them or not
 local function OnAura(frame, unit)
-	if not frame.icons or not frame.unit then return end
+	if not frame.icons or not frame.unit or not C.nameplate.track_auras then return end
 	local i = 1
 	for index = 1, 40 do
 		if i > C.nameplate.width / C.nameplate.auras_size then return end
 		local match
 		local name, _, _, _, _, duration, _, caster, _, _, spellid = UnitAura(frame.unit, index, "HARMFUL")
 
-		if C.nameplate.track_auras == true then
-			if T.DebuffWhiteList[name] and caster == "player" then match = true end
-		end
+		if T.DebuffWhiteList[name] and caster == "player" then match = true end
 
 		if duration and match == true then
 			if not frame.icons[i] then frame.icons[i] = CreateAuraIcon(frame) end
@@ -694,7 +692,7 @@ function NamePlates:COMBAT_LOG_EVENT_UNFILTERED(_, event, ...)
 	if event == "SPELL_AURA_REMOVED" then
 		local _, sourceGUID, _, _, _, destGUID, _, _, _, spellID = ...
 
-		if sourceGUID == UnitGUID("player") then
+		if sourceGUID == UnitGUID("player") or arg4 == UnitGUID("pet") then
 			ForEachPlate(MatchGUID, destGUID, spellID)
 		end
 	end
