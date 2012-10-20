@@ -114,6 +114,8 @@ if T.author == true then
 		C["automation"].accept_invite = true
 	end
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
+	C["position"].bag = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 20}
+	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
 end
 
 ----------------------------------------------------------------------------------------
