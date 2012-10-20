@@ -31,7 +31,7 @@ frame:SetScript("OnEvent", function(self, event, unit)
 		for buff, enabled in next, blacklist do
 			if UnitAura(unit, buff) and enabled and not InCombatLockdown() then
 				CancelUnitBuff(unit, buff)
-				print(ACTION_SPELL_AURA_REMOVED.." "..(GetSpellLink(buff) or buff)..".")
+				print("|cffffff00"..ACTION_SPELL_AURA_REMOVED.."|r "..(GetSpellLink(buff) or ("|cffffff00["..buff.."]|r")).."|cffffff00.|r")
 			end
 		end
 	end
