@@ -431,7 +431,7 @@ if Filger_Spells and Filger_Spells[T.class] then
 
 	for i = 1, #Filger_Spells[T.class], 1 do
 		local data = Filger_Spells[T.class][i]
-		local frame = CreateFrame("Frame", "FilgerFrame"..i.."_"..data.Name, UIParent)
+		local frame = CreateFrame("Frame", "FilgerFrame"..i.."_"..data.Name, oUF_PetBattleFrameHider)
 		frame.Id = i
 		frame.Name = data.Name
 		frame.Direction = data.Direction or "DOWN"

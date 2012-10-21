@@ -4,7 +4,7 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	MultiBarRight(by Tukz)
 ----------------------------------------------------------------------------------------
-local bar = CreateFrame("Frame", "Bar4Holder", UIParent)
+local bar = CreateFrame("Frame", "Bar4Holder", RightActionBarAnchor)
 bar:SetAllPoints(RightActionBarAnchor)
 MultiBarRight:SetParent(bar)
 

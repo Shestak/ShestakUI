@@ -19,7 +19,7 @@ local microbuttons = {
 	"HelpMicroButton"
 }
 
-local frame = CreateFrame("Frame", "MicroAnchor", UIParent)
+local frame = CreateFrame("Frame", "MicroAnchor", oUF_PetBattleFrameHider)
 frame:SetPoint(unpack(C.position.micro_menu))
 frame:SetWidth(((CharacterMicroButton:GetWidth() + 4) * 9) + 12)
 frame:SetHeight(CharacterMicroButton:GetHeight() - 28)
@@ -108,7 +108,7 @@ for i, button in pairs(microbuttons) do
 	end)
 end
 
--- Fix/Create textures for buttons
+-- Fix textures for buttons
 hooksecurefunc("UpdateMicroButtons", function()
 	MicroButtonPortrait:ClearAllPoints()
 	MicroButtonPortrait:SetPoint("TOPLEFT", CharacterMicroButton.frame, "TOPLEFT", 2, -2)
