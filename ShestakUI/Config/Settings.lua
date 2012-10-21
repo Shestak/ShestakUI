@@ -135,6 +135,7 @@ C["skins"] = {
 	["preform_av"] = true,						-- PreformAVEnabler skin
 	["npcscan"] = true,							-- NPCScan skin
 	["vanaskos"] = true,						-- VanasKoS skin
+	["weak_auras"] = true,						-- WeakAuras skin
 }
 
 ----------------------------------------------------------------------------------------

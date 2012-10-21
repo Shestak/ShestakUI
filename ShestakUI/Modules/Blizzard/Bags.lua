@@ -154,7 +154,6 @@ local function Stuffing_Toggle()
 end
 
 -- Bag slot stuff
-local trashParent = CreateFrame("Frame", nil, UIParent)
 local trashButton = {}
 local trashBag = {}
 
@@ -174,9 +173,9 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	if clink then
-		b.name, _, b.rarity = GetItemInfo(clink)
+		b.name, _, b.rarity, _, b.level = GetItemInfo(clink)
 
-		if IsItemUnusable(clink) and not locked then
+		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
 			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
 		else
 			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 1, 1)
@@ -189,7 +188,7 @@ function Stuffing:SlotUpdate(b)
 			b.frame:SetBackdropBorderColor(1, 1, 0)
 		end
 	else
-		b.name, b.rarity = nil, nil
+		b.name, b.rarity, b.level = nil, nil, nil
 	end
 
 	SetItemButtonTexture(b.frame, texture)
@@ -384,15 +383,16 @@ function Stuffing:SearchUpdate(str, frameMatch)
 			setName = setName or ""
 			local ilink = GetContainerItemLink(b.bag, b.slot)
 			local class, subclass, _, equipSlot = select(6, GetItemInfo(ilink))
+			local minLevel = select(5, GetItemInfo(ilink))
 			equipSlot = _G[equipSlot] or ""
 			if (not string.find (string.lower(b.name), str) and not string.find (string.lower(setName), str) and not string.find (string.lower(class), str) and not string.find (string.lower(subclass), str) and not string.find (string.lower(equipSlot), str)) and b.frame:GetParent():GetParent() == frameMatch then
-				if IsItemUnusable(b.name) then
+				if IsItemUnusable(b.name) or minLevel > T.level then
 					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
 				end
 				SetItemButtonDesaturated(b.frame, 1, 1, 1, 1)
 				b.frame:SetAlpha(0.2)
 			else
-				if IsItemUnusable(b.name) and not locked then
+				if IsItemUnusable(b.name) or minLevel > T.level then
 					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
 				end
 				SetItemButtonDesaturated(b.frame, 0, 1, 1, 1)
@@ -404,7 +404,7 @@ end
 
 function Stuffing:SearchReset()
 	for _, b in ipairs(self.buttons) do
-		if IsItemUnusable(b.name) then
+		if IsItemUnusable(b.name) or (b.level and b.level > T.level) then
 			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
 		end
 		b.frame:SetAlpha(1)
@@ -501,9 +501,7 @@ function Stuffing:InitBank()
 end
 
 function Stuffing:InitBags()
-	if self.frame then
-		return
-	end
+	if self.frame then return end
 
 	self.buttons = {}
 	self.bags = {}

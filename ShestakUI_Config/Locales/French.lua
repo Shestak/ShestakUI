@@ -105,6 +105,7 @@ L_GUI_SKINS_MAGE_NUGGETS = "Activer la personnalisation pour MageNuggets"
 L_GUI_SKINS_PREFORM_AV = "Activer la personnalisation pour PreformAVEnabler"
 L_GUI_SKINS_NPCSCAN = "Activer la personnalisation pour NPCScan"
 L_GUI_SKINS_VANASKOS = "Activer la personnalisation pour VanasKoS"
+L_GUI_SKINS_WEAK_AURAS = "Activer la personnalisation pour WeakAuras"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"

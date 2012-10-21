@@ -102,6 +102,7 @@ L_GUI_SKINS_MAGE_NUGGETS = "Enable styling MageNuggets"
 L_GUI_SKINS_PREFORM_AV = "Enable styling PreformAVEnabler"
 L_GUI_SKINS_NPCSCAN = "Enable styling NPCScan"
 L_GUI_SKINS_VANASKOS = "Enable styling VanasKoS"
+L_GUI_SKINS_WEAK_AURAS = "Enable styling WeakAuras"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"

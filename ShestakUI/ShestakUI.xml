@@ -223,6 +223,7 @@
 	<Script file="Modules\Skins\Recount.lua"/>
 	<Script file="Modules\Skins\TinyDPS.lua"/>
 	<Script file="Modules\Skins\VanasKoS.lua"/>
+	<Script file="Modules\Skins\WeakAuras.lua"/>
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
