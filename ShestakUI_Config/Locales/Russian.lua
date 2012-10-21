@@ -104,6 +104,7 @@ L_GUI_SKINS_MAGE_NUGGETS = "Стилизация MageNuggets"
 L_GUI_SKINS_PREFORM_AV = "Стилизация PreformAVEnabler"
 L_GUI_SKINS_NPCSCAN = "Стилизация NPCScan"
 L_GUI_SKINS_VANASKOS = "Стилизация VanasKoS"
+L_GUI_SKINS_WEAK_AURAS = "Стилизация WeakAuras"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"
