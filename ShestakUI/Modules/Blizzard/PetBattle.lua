@@ -3,6 +3,13 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Pet Battles UI
 ----------------------------------------------------------------------------------------
+local bar = CreateFrame("Frame", "PetBattleBarHolder", UIParent, "SecureHandlerStateTemplate")
+bar:SetSize(((C.actionbar.button_size * 1.5) * 6) + (C.actionbar.button_space * 5), C.actionbar.button_size * 1.5)
+bar:EnableMouse(true)
+bar:SetFrameStrata("LOW")
+bar:SetPoint(unpack(C.position.bottom_bars))
+RegisterStateDriver(bar, "visibility", "[petbattle] show; hide")
+
 local f = PetBattleFrame
 local bf = f.BottomFrame
 local units = {
@@ -219,31 +226,6 @@ hooksecurefunc("PetBattleWeatherFrame_Update", function(self)
 		self.Duration:SetPoint("CENTER", self, 0, 8)
 		self:ClearAllPoints()
 		self:SetPoint("TOP", UIParent, 0, -15)
-	end
-end)
-
---- Frames to hide while going into Pet Battle UI
-FRAMELOCK_STATES.PETBATTLES["Bar1Holder"] = "hidden"
-FRAMELOCK_STATES.PETBATTLES["Bar2Holder"] = "hidden"
-FRAMELOCK_STATES.PETBATTLES["Bar3Holder"] = "hidden"
-FRAMELOCK_STATES.PETBATTLES["Bar4Holder"] = "hidden"
-FRAMELOCK_STATES.PETBATTLES["Bar5Holder"] = "hidden"
-FRAMELOCK_STATES.PETBATTLES["ShiftHolder"] = "hidden"
-FRAMELOCK_STATES.PETBATTLES["MicroAnchor"] = "hidden"
-
-local bar = CreateFrame("Frame", "PetBattleBarHolder", UIParent)
-bar:SetSize(((C.actionbar.button_size * 1.5) * 6) + (C.actionbar.button_space * 5), C.actionbar.button_size * 1.5)
-bar:EnableMouse(true)
-bar:SetFrameStrata("LOW")
-bar:SetPoint(unpack(C.position.bottom_bars))
-bar:RegisterEvent("PET_BATTLE_OPENING_START")
-bar:RegisterEvent("PET_BATTLE_CLOSE")
-bar:Hide()
-bar:SetScript("OnEvent", function(self, event)
-	if event == "PET_BATTLE_OPENING_START" then
-		self:Show()
-	else
-		self:Hide()
 	end
 end)
 

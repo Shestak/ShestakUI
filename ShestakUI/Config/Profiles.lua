@@ -61,6 +61,7 @@ if T.author == true then
 	C["automation"].auto_role = true
 	C["automation"].tab_binder = true
 	C["automation"].currency_cap = true
+	C["automation"].cancel_bad_buffs = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].dk_runes = false
 	C["combattext"].dispel = false
@@ -97,6 +98,7 @@ if T.author == true then
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
 	C["position"].bag = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 20}
 	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
+	C["position"].extra_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 27, 120}
 end
 
 ----------------------------------------------------------------------------------------

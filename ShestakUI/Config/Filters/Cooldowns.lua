@@ -17,6 +17,7 @@ if C.raidcooldown.enable == true then
 		[6346] = 180,	-- Fear Ward
 		[29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem
+		[64901] = 360,	-- Hymn of Hope
 	}
 end
 
