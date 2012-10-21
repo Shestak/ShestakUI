@@ -176,7 +176,7 @@ function Stuffing:SlotUpdate(b)
 	if clink then
 		b.name, _, b.rarity, _, b.level = GetItemInfo(clink)
 
-		if (IsItemUnusable(clink) or b.level > T.level) and not locked then
+		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
 			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
 		else
 			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 1, 1)
