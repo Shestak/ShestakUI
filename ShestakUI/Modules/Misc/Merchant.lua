@@ -97,11 +97,14 @@ else
 	btn:SetSize(btn:GetTextWidth() + 15, 19)
 	btn:SetPoint("TOPRIGHT", MerchantFrameCloseButton, "TOPLEFT", 3, -6)
 end
+btn:Hide()
+
 btn:HookScript("OnEnter", function(self)
 	GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT")
 	GameTooltip:SetText(L_MISC_GROCERY_DESC)
 	GameTooltip:Show()
 end)
+
 btn:HookScript("OnLeave", function() GameTooltip:Hide() end)
 
 btn:SetScript("OnClick", function()
