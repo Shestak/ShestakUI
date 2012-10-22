@@ -154,7 +154,6 @@ local function Stuffing_Toggle()
 end
 
 -- Bag slot stuff
-local trashParent = CreateFrame("Frame", nil, UIParent)
 local trashButton = {}
 local trashBag = {}
 
@@ -502,9 +501,7 @@ function Stuffing:InitBank()
 end
 
 function Stuffing:InitBags()
-	if self.frame then
-		return
-	end
+	if self.frame then return end
 
 	self.buttons = {}
 	self.bags = {}

@@ -130,6 +130,7 @@ local function Local(o)
 	if o == "UIConfigskinspreform_av" then o = L_GUI_SKINS_PREFORM_AV end
 	if o == "UIConfigskinsnpcscan" then o = L_GUI_SKINS_NPCSCAN end
 	if o == "UIConfigskinsvanaskos" then o = L_GUI_SKINS_VANASKOS end
+	if o == "UIConfigskinsweak_auras" then o = L_GUI_SKINS_WEAK_AURAS end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end

@@ -39,7 +39,7 @@ L_GUI_MISC_MOVE_BLIZZARD = "移動暴雪默認介面框架"
 L_GUI_MISC_COLOR_PICKER = "改進型顏色選擇器"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "在附魔介面顯示擁有的附魔卷軸數量"
 L_GUI_MISC_ARCHAEOLOGY = "提示考古學文物辨識及冷卻"
-L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple characters" -- Needs review
+L_GUI_MISC_CHARS_CURRENCY = "追蹤各種對換貨幣"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
@@ -104,6 +104,7 @@ L_GUI_SKINS_MAGE_NUGGETS = "開啟MageNuggets樣式增強"
 L_GUI_SKINS_PREFORM_AV = "開啟PreformAVEnabler樣式增強"
 L_GUI_SKINS_NPCSCAN = "開啟NPCScan樣式增強"
 L_GUI_SKINS_VANASKOS = "開啟VanasKoS樣式增強"
+L_GUI_SKINS_WEAK_AURAS = "開啟WeakAuras樣式增強"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"
