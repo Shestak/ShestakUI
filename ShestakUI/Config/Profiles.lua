@@ -65,6 +65,7 @@ if T.author == true then
 	C["automation"].skip_cinematic = true
 	C["automation"].auto_role = true
 	C["automation"].tab_binder = true
+	C["automation"].cancel_bad_buffs = true
 	C["skins"].blizzard_frames = true
 	C["skins"].dbm = true
 	C["combattext"].crit_postfix = ""
@@ -114,6 +115,9 @@ if T.author == true then
 		C["automation"].accept_invite = true
 	end
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
+	C["position"].bag = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 20}
+	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
+	C["position"].extra_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 27, 120}
 end
 
 ----------------------------------------------------------------------------------------

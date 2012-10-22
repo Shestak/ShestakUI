@@ -17,6 +17,7 @@ if C.raidcooldown.enable == true then
 		[6346] = 180,	-- Fear Ward
 		[29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem
+		[64901] = 360,	-- Hymn of Hope
 	}
 end
 
@@ -80,6 +81,7 @@ end
 
 if C.pulsecooldown.enable == true then
 	T.pulse_ignored_spells = {
-		--"Spell name",	-- Example
+		--GetSpellInfo(779),	-- Swipe
+		--GetSpellInfo(6807),	-- Maul
 	}
 end

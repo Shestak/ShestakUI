@@ -4,7 +4,7 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	MultiBarBottomLeft(by Tukz)
 ----------------------------------------------------------------------------------------
-local bar = CreateFrame("Frame", "Bar2Holder", UIParent)
+local bar = CreateFrame("Frame", "Bar2Holder", ActionBarAnchor)
 bar:SetAllPoints(ActionBarAnchor)
 MultiBarBottomLeft:SetParent(bar)
 

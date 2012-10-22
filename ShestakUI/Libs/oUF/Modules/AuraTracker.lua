@@ -8,6 +8,14 @@ local _, ns = ...
 local oUF = ns.oUF
 
 local function Update(object, event, unit)
+	local _, instanceType = IsInInstance()
+	if instanceType ~= "arena" then
+		object.AuraTracker:Hide()
+		return
+	else
+		object.AuraTracker:Show()
+	end
+
 	if object.unit ~= unit then return end
 
 	local auraList = T.ArenaControl()

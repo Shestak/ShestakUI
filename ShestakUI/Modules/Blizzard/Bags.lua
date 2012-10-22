@@ -10,6 +10,53 @@ local ST_NORMAL = 1
 local ST_FISHBAG = 2
 local ST_SPECIAL = 3
 local bag_bars = 0
+local unusable
+
+if T.class == "DEATHKNIGHT" then
+	unusable = {{3, 4, 10, 11, 13, 14, 15, 16}, {6}}
+elseif T.class == "DRUID" then
+	unusable = {{1, 2, 3, 4, 8, 9, 14, 15, 16}, {4, 5, 6}, true}
+elseif T.class == "HUNTER" then
+	unusable = {{5, 6, 16}, {5, 6, 7}}
+elseif T.class == "MAGE" then
+	unusable = {{1, 2, 3, 4, 5, 6, 7, 9, 11, 14, 15}, {3, 4, 5, 6, 7}, true}
+elseif T.class == "PALADIN" then
+	unusable = {{3, 4, 10, 11, 13, 14, 15, 16}, {}, true}
+elseif T.class == "PRIEST" then
+	unusable = {{1, 2, 3, 4, 6, 7, 8, 9, 11, 14, 15}, {3, 4, 5, 6, 7}, true}
+elseif T.class == "ROGUE" then
+	unusable = {{2, 6, 7, 9, 10, 16}, {4, 5, 6, 7}}
+elseif T.class == "SHAMAN" then
+	unusable = {{3, 4, 7, 8, 9, 14, 15, 16}, {5}}
+elseif T.class == "WARLOCK" then
+	unusable = {{1, 2, 3, 4, 5, 6, 7, 9, 11, 14, 15}, {3, 4, 5, 6, 7}, true}
+elseif T.class == "WARRIOR" then
+	unusable = {{16}, {7}}
+elseif T.class == "MONK" then
+	unusable = {{2, 3, 4, 6, 9, 13, 14, 15, 16}, {4, 5, 6, 7}}
+end
+
+for class = 1, 2 do
+	local subs = {GetAuctionItemSubClasses(class)}
+	for i, subclass in ipairs(unusable[class]) do
+		unusable[subs[subclass]] = true
+	end
+	unusable[class] = nil
+	subs = nil
+end
+
+local function IsClassUnusable(subclass, slot)
+	if subclass then
+		return unusable[subclass] or slot == "INVTYPE_WEAPONOFFHAND" and unusable[3]
+	end
+end
+
+local function IsItemUnusable(...)
+	if ... then
+		local subclass, _, slot = select(7, GetItemInfo(...))
+		return IsClassUnusable(subclass, slot)
+	end
+end
 
 StaticPopupDialogs.BUY_BANK_SLOT = {
 	text = CONFIRM_BUY_BANK_SLOT,
@@ -127,16 +174,22 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	if clink then
-		b.name, _, b.rarity = GetItemInfo(clink)
+		b.name, _, b.rarity, _, b.level = GetItemInfo(clink)
+
+		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
+			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
+		else
+			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 1, 1)
+		end
 
 		-- Color slot according to item quality
 		if not b.frame.lock and b.rarity and b.rarity > 1 and not (isQuestItem or questId) then
 			b.frame:SetBackdropBorderColor(GetItemQualityColor(b.rarity))
-		elseif (isQuestItem or questId) then
+		elseif isQuestItem or questId then
 			b.frame:SetBackdropBorderColor(1, 1, 0)
 		end
 	else
-		b.name, b.rarity = nil, nil
+		b.name, b.rarity, b.level = nil, nil, nil
 	end
 
 	SetItemButtonTexture(b.frame, texture)
@@ -319,7 +372,7 @@ function Stuffing:BagNew(bag, f)
 	return ret
 end
 
-function Stuffing:SearchUpdate(str)
+function Stuffing:SearchUpdate(str, frameMatch)
 	str = string.lower(str)
 
 	for _, b in ipairs(self.buttons) do
@@ -327,10 +380,22 @@ function Stuffing:SearchUpdate(str)
 			b.frame:SetAlpha(0.2)
 		end
 		if b.name then
-			if not string.find(string.lower(b.name), str, 1, true) then
+			local _, setName = GetContainerItemEquipmentSetInfo(b.bag, b.slot)
+			setName = setName or ""
+			local ilink = GetContainerItemLink(b.bag, b.slot)
+			local class, subclass, _, equipSlot = select(6, GetItemInfo(ilink))
+			local minLevel = select(5, GetItemInfo(ilink))
+			equipSlot = _G[equipSlot] or ""
+			if (not string.find (string.lower(b.name), str) and not string.find (string.lower(setName), str) and not string.find (string.lower(class), str) and not string.find (string.lower(subclass), str) and not string.find (string.lower(equipSlot), str)) and b.frame:GetParent():GetParent() == frameMatch then
+				if IsItemUnusable(b.name) or minLevel > T.level then
+					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
+				end
 				SetItemButtonDesaturated(b.frame, 1, 1, 1, 1)
 				b.frame:SetAlpha(0.2)
 			else
+				if IsItemUnusable(b.name) or minLevel > T.level then
+					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
+				end
 				SetItemButtonDesaturated(b.frame, 0, 1, 1, 1)
 				b.frame:SetAlpha(1)
 			end
@@ -340,6 +405,9 @@ end
 
 function Stuffing:SearchReset()
 	for _, b in ipairs(self.buttons) do
+		if IsItemUnusable(b.name) or (b.level and b.level > T.level) then
+			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
+		end
 		b.frame:SetAlpha(1)
 		SetItemButtonDesaturated(b.frame, 0, 1, 1, 1)
 	end
@@ -463,7 +531,7 @@ function Stuffing:InitBags()
 
 	local updateSearch = function(self, t)
 		if t == true then
-			Stuffing:SearchUpdate(self:GetText())
+			Stuffing:SearchUpdate(self:GetText(), self:GetParent())
 		end
 	end
 
@@ -999,8 +1067,8 @@ function Stuffing:SortOnUpdate(e)
 				if v.srcSlot.name ~= v.dstSlot.name then
 					v.srcSlot.block = true
 					v.dstSlot.block = true
-					PickupContainerItem (v.sbag, v.sslot)
-					PickupContainerItem (v.dbag, v.dslot)
+					PickupContainerItem(v.sbag, v.sslot)
+					PickupContainerItem(v.dbag, v.dslot)
 					changed = true
 					break
 				end
@@ -1124,7 +1192,7 @@ function Stuffing:SortBags()
 		changed = false
 		-- XXX why doesn't this remove all x->x moves in one pass?
 
-		for i, v in ipairs (st) do
+		for i, v in ipairs(st) do
 			-- Source is same as destination
 			if (v.sslot == v.dslot) and (v.sbag == v.dbag) then
 				table.remove(st, i)

@@ -130,14 +130,17 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(131790),	-- Arcane Shock
 			SpellName(116784),	-- Wildfire Spark
 			SpellName(116417),	-- Arcane Resonance
+			SpellName(131792),	-- Shadowburn
 			-- Gara'jal the Spiritbinder
-			SpellName(116161),	-- Crossed Over
 			SpellName(122151),	-- Voodoo Doll
+			SpellName(116161),	-- Crossed Over
+			SpellName(117723),	-- Frail Soul
 			-- The Spirit Kings
 			SpellName(117708),	-- Maddening Shout
 			SpellName(118303),	-- Fixate
 			SpellName(118048),	-- Pillaged
 			SpellName(118135),	-- Pinned Down
+			SpellName(118163),	-- Robbed Blind
 			-- Elegon
 			SpellName(117878),	-- Overcharged
 			SpellName(117949),	-- Closed Circuit

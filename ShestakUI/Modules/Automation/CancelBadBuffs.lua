@@ -14,24 +14,24 @@ local blacklist = {
 	[SpellName(44212)] = true,	-- Jack-o'-Lanterned!
 	[SpellName(61716)] = true,	-- Rabbit Costume
 	[SpellName(24724)] = true,	-- Skeleton Costume
-	[SpellName(24733)] = true,	-- Bat Costume
+	[SpellName(24732)] = true,	-- Bat Costume
 	[SpellName(24741)] = true,	-- Wisp Costume
 	[SpellName(24737)] = true,	-- Ghost Costume
-	[SpellName(24717)] = true,	-- Pirate Costume
+	[SpellName(24711)] = true,	-- Pirate Costume
 	[SpellName(61781)] = true,	-- Turkey Feathers
 	[SpellName(61734)] = true,	-- Noblegarden Bunny
 }
 
-local f = CreateFrame("Frame")
-f:RegisterEvent("UNIT_AURA")
-f:SetScript("OnEvent", function(self, event, unit)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("UNIT_AURA")
+frame:SetScript("OnEvent", function(self, event, unit)
 	if unit ~= "player" then return end
 
 	if event == "UNIT_AURA" then
 		for buff, enabled in next, blacklist do
 			if UnitAura(unit, buff) and enabled and not InCombatLockdown() then
 				CancelUnitBuff(unit, buff)
-				print(ACTION_SPELL_AURA_REMOVED.." "..(GetSpellLink(buff) or UNKNOWN)..".")
+				print("|cffffff00"..ACTION_SPELL_AURA_REMOVED.."|r "..(GetSpellLink(buff) or ("|cffffff00["..buff.."]|r")).."|cffffff00.|r")
 			end
 		end
 	end
