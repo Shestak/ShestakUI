@@ -721,29 +721,24 @@ local function Shared(self, unit)
 
 			-- Friendship bar
 			if C.unitframe.plugins_friendship_bar == true then
-				self.Friendship = CreateFrame("StatusBar", nil, self.Health)
-				self.Friendship:SetFrameLevel(self.Health:GetFrameLevel() + 1)
-				self.Friendship:SetHeight(3)
+				self.Friendship = CreateFrame("StatusBar", self:GetName().."_Friendship", self)
+				self.Friendship:CreateBackdrop("Default")
+				self.Friendship:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.Friendship:SetSize(217, 7)
 				self.Friendship:SetStatusBarTexture(C.media.texture)
 				self.Friendship:SetStatusBarColor(1, 0, 0)
-				self.Friendship:SetPoint("LEFT")
-				self.Friendship:SetPoint("RIGHT")
-				self.Friendship:SetPoint("TOP", self.Health, "TOP")
-				self.Friendship:SetBackdrop({
-					bgFile = C.media.blank,
-					edgeFile = C.media.blank,
-					tile = false, tileSize = 0, edgeSize = T.Scale(1),
-					insets = {left = 0, right = 0, top = 0, bottom = T.Scale(-1)}
-				})
-				self.Friendship:SetBackdropColor(0, 0, 0)
-				self.Friendship:SetBackdropBorderColor(0, 0, 0)
+
+				self.Friendship.bg = self.Friendship:CreateTexture(nil, "BORDER")
+				self.Friendship.bg:SetAllPoints()
+				self.Friendship.bg:SetTexture(C.media.texture)
+				self.Friendship.bg:SetVertexColor(1, 0, 0, 0.2)
 
 				self.Friendship.Tooltip = true
 
 				self.Friendship.Value = T.SetFontString(self.Friendship, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				self.Friendship.Value:SetPoint("RIGHT", self.Info, "LEFT", 0, 0)
-				self.Friendship.Value:SetTextColor(0.33, 0.59, 0.33)
-				self:Tag(self.Friendship.Value, "[friendshipstanding] -")
+				self.Friendship.Value:SetPoint("CENTER")
+				self.Friendship.Value:SetTextColor(1, 1, 1)
+				self:Tag(self.Friendship.Value, "[friendshipstanding] - [curfriendship]/8400")
 			end
 		end
 

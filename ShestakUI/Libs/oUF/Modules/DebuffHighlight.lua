@@ -126,8 +126,7 @@ local function Enable(object)
 		origColors[object] = {r = r, g = g, b = b, a = a}
 		r, g, b, a = object:GetBackdropBorderColor()
 		origBorderColors[object] = {r = r, g = g, b = b, a = a}
-	elseif not object.DebuffHighlightUseTexture then -- Color debuffs
-		-- object.DebuffHighlight
+	elseif not object.DebuffHighlightUseTexture then
 		local r, g, b, a = object.DebuffHighlight:GetVertexColor()
 		origColors[object] = {r = r, g = g, b = b, a = a}
 	end
