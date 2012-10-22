@@ -33,6 +33,8 @@ T.ABItems = {
 	84762,	-- Highly Explosive Yaungol Oil
 	32971,	-- Water Bucket
 	85581,	-- Shado-Pan Torch
+	85884,	-- Sonic Emitter
+	82346,	-- Pot of Fire
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
