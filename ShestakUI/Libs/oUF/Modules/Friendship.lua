@@ -23,59 +23,59 @@ local friendships = {
 }
 
 local function GetFriendshipID()
-	if(not UnitExists('target')) then return end
-	if(UnitIsPlayer('target')) then return end
+	if not UnitExists("target") then return end
+	if UnitIsPlayer("target") then return end
 
-	return friendships[UnitName('target')]
+	return friendships[UnitName("target")]
 end
 
 for tag, func in pairs({
-	['curfriendship'] = function()
+	["curfriendship"] = function()
 		local id = GetFriendshipID()
-		if(id) then
+		if id then
 			local _, cur, _, _, _, _, threshold = GetFriendshipReputationByID(id)
 			return cur - threshold
 		end
 	end,
-	['currawfriendship'] = function()
+	["currawfriendship"] = function()
 		local id = GetFriendshipID()
-		if(id) then
+		if id then
 			local _, cur = GetFriendshipReputationByID(id)
 			return cur
 		end
 	end,
-	['perfriendship'] = function()
+	["perfriendship"] = function()
 		local id = GetFriendshipID()
-		if(id) then
+		if id then
 			local _, cur, _, _, _, _, threshold = GetFriendshipReputationByID(id)
 			return math.floor((cur - threshold) / 8400 * 100)
 		end
 	end,
-	['perfullfriendship'] = function()
+	["perfullfriendship"] = function()
 		local id = GetFriendshipID()
-		if(id) then
+		if id then
 			local _, cur = GetFriendshipReputationByID(id)
 			return math.floor(cur / 42999 * 100)
 		end
 	end,
-	['friendshipstanding'] = function()
+	["friendshipstanding"] = function()
 		local id = GetFriendshipID()
-		if(id) then
+		if id then
 			local _, _, _, _, _, standing = GetFriendshipReputationByID(id)
 			return standing
 		end
 	end,
 }) do
 	oUF.Tags[tag] = func
-	oUF.TagEvents[tag] = 'PLAYER_TARGET_CHANGED'
+	oUF.TagEvents[tag] = "PLAYER_TARGET_CHANGED"
 end
 
 local function OnEnter(self)
 	local _, cur, _, details, _, standing, threshold = GetFriendshipReputationByID(GetFriendshipID())
-	GameTooltip:SetOwner(self, 'ANCHOR_TOPRIGHT')
-	GameTooltip:SetText(UnitName('target'), 1, 1, 1)
+	GameTooltip:SetOwner(self, "ANCHOR_TOPRIGHT")
+	GameTooltip:SetText(UnitName("target"), 1, 1, 1)
 	GameTooltip:AddLine(details, nil, nil, nil, true)
-	GameTooltip:AddLine((cur - threshold) .. ' / 8400 (' .. standing .. ')', 1, 1, 1, true)
+	GameTooltip:AddLine(standing.." ("..(cur - threshold) .. " / 8400)", 1, 1, 1, true)
 	GameTooltip:Show()
 end
 
@@ -83,16 +83,22 @@ local function Update(self)
 	local friendship = self.Friendship
 
 	local id = GetFriendshipID()
-	if(id) then
+	if id then
 		local _, cur, _, _, _, _, threshold = GetFriendshipReputationByID(id)
 		friendship:SetMinMaxValues(0, 8400)
 		friendship:SetValue(cur - threshold)
 		friendship:Show()
+		if self.Auras then
+			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19)
+		end
 	else
 		friendship:Hide()
+		if self.Auras then
+			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5)
+		end
 	end
 
-	if(friendship.PostUpdate) then
+	if friendship.PostUpdate then
 		return friendship:PostUpdate(id)
 	end
 end
@@ -102,24 +108,24 @@ local function Path(self, ...)
 end
 
 local function ForceUpdate(element)
-	return Path(element.__owner, 'ForceUpdate')
+	return Path(element.__owner, "ForceUpdate")
 end
 
 local function Enable(self, unit)
 	local friendship = self.Friendship
-	if(friendship) then
+	if friendship then
 		friendship.__owner = self
 		friendship.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('PLAYER_TARGET_CHANGED', Path)
+		self:RegisterEvent("PLAYER_TARGET_CHANGED", Path)
 
-		if(friendship.Tooltip) then
+		if friendship.Tooltip then
 			friendship:EnableMouse(true)
-			friendship:HookScript('OnEnter', OnEnter)
-			friendship:HookScript('OnLeave', GameTooltip_Hide)
+			friendship:HookScript("OnEnter", OnEnter)
+			friendship:HookScript("OnLeave", GameTooltip_Hide)
 		end
 
-		if(not friendship:GetStatusBarTexture()) then
+		if not friendship:GetStatusBarTexture() then
 			friendship:SetStatusBarTexture([=[Interface\TargetingFrame\UI-StatusBar]=])
 		end
 
@@ -128,9 +134,9 @@ local function Enable(self, unit)
 end
 
 local function Disable(self)
-	if(self.Friendship) then
-		self:UnregisterEvent('PLAYER_TARGET_CHANGED', Path)
+	if self.Friendship then
+		self:UnregisterEvent("PLAYER_TARGET_CHANGED", Path)
 	end
 end
 
-oUF:AddElement('Friendship', Path, Enable, Disable)
+oUF:AddElement("Friendship", Path, Enable, Disable)
