@@ -4,10 +4,10 @@ if C.announcements.pull_countdown ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Pull Countdown(by Dridzt) /run PullCountdown.Pull(#)
 ----------------------------------------------------------------------------------------
-local f = CreateFrame("Frame", "PullCountdown")
-f:SetScript("OnEvent", function(self, event, ...) if self[event] then return self[event](...) end end)
-f:RegisterEvent("PLAYER_ENTERING_WORLD")
-f:RegisterEvent("GROUP_ROSTER_UPDATE")
+local frame = CreateFrame("Frame", "PullCountdown")
+frame:SetScript("OnEvent", function(self, event, ...) if self[event] then return self[event](...) end end)
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:RegisterEvent("GROUP_ROSTER_UPDATE")
 
 local channel, delay, target
 local INTERVAL = 1.5
@@ -29,11 +29,11 @@ local function getChannel()
 	return ch or "SAY"
 end
 
-function f.PLAYER_ENTERING_WORLD()
+function frame.PLAYER_ENTERING_WORLD()
 	channel = getChannel()
 end
 
-function f.GROUP_ROSTER_UPDATE()
+function frame.GROUP_ROSTER_UPDATE()
 	channel = getChannel()
 end
 
@@ -68,7 +68,7 @@ local function pull(self, elapsed)
 	end
 end
 
-function f.Pull(timer)
+function frame.Pull(timer)
 	delay = timer or 3
 	if timerframe:GetScript("OnUpdate") then
 		reset()
@@ -80,9 +80,9 @@ end
 
 SlashCmdList.PULLCOUNTDOWN = function(msg)
 	if tonumber(msg) ~= nil then
-		f.Pull(msg)
+		frame.Pull(msg)
 	else
-		f.Pull()
+		frame.Pull()
 	end
 end
 SLASH_PULLCOUNTDOWN1 = "/pc"
