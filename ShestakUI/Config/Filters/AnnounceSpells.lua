@@ -20,7 +20,7 @@ if C.announcements.spells == true then
 	}
 end
 
-if C.announcements.toy_train == true then
+if C.announcements.toys == true then
 	T.AnnounceToys = {
 		[61031] = true,		-- Toy Train Set
 		[49844] = true,		-- Direbrew's Remote

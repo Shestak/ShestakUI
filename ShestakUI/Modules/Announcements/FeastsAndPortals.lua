@@ -40,7 +40,7 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 		if C.announcements.feasts and (spellID == 29893 or spellID == 54710) then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PUT, srcName, GetSpellLink(spellID)), GetChat())
 		-- Toys
-		elseif C.announcements.toy_train and T.AnnounceToys[spellID] then
+		elseif C.announcements.toys and T.AnnounceToys[spellID] then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PUT, srcName, GetSpellLink(spellID)), GetChat())
 		-- Portals
 		elseif C.announcements.portals and T.AnnouncePortals[spellID] then
@@ -52,12 +52,12 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 			SendChatMessage(string.format(L_ANNOUNCE_FP_CLICK, srcName, GetSpellLink(spellID)), GetChat())
 		end
 		-- Piccolo of the Flaming Fire
-		if C.announcements.toy_train and spellID == 18400 then
+		if C.announcements.toys and spellID == 18400 then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_USE, srcName, GetSpellLink(spellID)), GetChat())
 		end
 	elseif subEvent == "SPELL_AURA_APPLIED" then
 		-- Turkey Feathers and Party G.R.E.N.A.D.E.
-		if C.announcements.toy_train and (spellID == 61781 or (spellID == 51508 or spellID == 51510)) then
+		if C.announcements.toys and (spellID == 61781 or (spellID == 51508 or spellID == 51510)) then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_USE, srcName, GetSpellLink(spellID)), GetChat())
 		end
 	end

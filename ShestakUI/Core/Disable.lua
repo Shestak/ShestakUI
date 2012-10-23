@@ -123,7 +123,7 @@ if IsAddOnLoaded("RaidSlackCheck") then
 end
 
 if IsAddOnLoaded("PhoenixStyle") then
-	C.announcements.toy_train = false
+	C.announcements.toys = false
 	C.announcements.pull_countdown = false
 end
 
