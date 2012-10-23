@@ -2,7 +2,7 @@
 if C.announcements.pull_countdown ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Pull Countdown(by Dridzt) /run PullCountdown.Pull(#)
+--	Pull Countdown(by Dridzt)
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame", "PullCountdown")
 frame:SetScript("OnEvent", function(self, event, ...) if self[event] then return self[event](...) end end)
