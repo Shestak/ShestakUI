@@ -4,12 +4,8 @@ if C.announcements.pull_countdown ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Pull Countdown(by Dridzt) /run PullCountdown.Pull(#)
 ----------------------------------------------------------------------------------------
-local f = CreateFrame("Frame")
-f:SetScript("OnEvent", function(self, event, ...)
-	if self[event] then
-		return self[event](...)
-	end
-end)
+local f = CreateFrame("Frame", "PullCountdown")
+f:SetScript("OnEvent", function(self, event, ...) if self[event] then return self[event](...) end end)
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:RegisterEvent("GROUP_ROSTER_UPDATE")
 
@@ -82,4 +78,12 @@ function f.Pull(timer)
 	end
 end
 
-_G["PullCountdown"] = f
+SlashCmdList.PULLCOUNTDOWN = function(msg)
+	if tonumber(msg) ~= nil then
+		f.Pull(msg)
+	else
+		f.Pull()
+	end
+end
+SLASH_PULLCOUNTDOWN1 = "/pc"
+SLASH_PULLCOUNTDOWN2 = "/зс"
