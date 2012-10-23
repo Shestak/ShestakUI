@@ -51,5 +51,14 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 		if C.announcements.portals and spellID == 698 then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_CLICK, srcName, GetSpellLink(spellID)), GetChat())
 		end
+		-- Piccolo of the Flaming Fire
+		if C.announcements.toy_train and spellID == 18400 then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_USE, srcName, GetSpellLink(spellID)), GetChat())
+		end
+	elseif subEvent == "SPELL_AURA_APPLIED" then
+		-- Turkey Feathers and Party G.R.E.N.A.D.E.
+		if C.announcements.toy_train and (spellID == 61781 or (spellID == 51508 or spellID == 51510)) then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_USE, srcName, GetSpellLink(spellID)), GetChat())
+		end
 	end
 end)

@@ -32,6 +32,7 @@ L_ANNOUNCE_FP_PRE = "%s готовит %s."
 L_ANNOUNCE_FP_PUT = "%s ставит %s."
 L_ANNOUNCE_FP_CAST = "%s создает %s."
 L_ANNOUNCE_FP_CLICK = "%s создает %s. Кликаем!"
+L_ANNOUNCE_FP_USE = "%s использует %s."
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Нет талантов"
