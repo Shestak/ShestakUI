@@ -111,13 +111,6 @@ local function Enable(self)
 		eb.__owner = self
 		eb.ForceUpdate = ForceUpdate
 
-		if(eb.LunarBar and eb.LunarBar:IsObjectType('StatusBar') and not eb.LunarBar:GetStatusBarTexture()) then
-			eb.LunarBar:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
-		end
-		if(eb.SolarBar and eb.SolarBar:IsObjectType('StatusBar') and not eb.SolarBar:GetStatusBarTexture()) then
-			eb.SolarBar:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
-		end
-
 		self:RegisterEvent('ECLIPSE_DIRECTION_CHANGE', ECLIPSE_DIRECTION_CHANGE)
 		self:RegisterEvent('PLAYER_TALENT_UPDATE', UPDATE_VISIBILITY)
 		self:RegisterEvent('UNIT_AURA', UNIT_AURA)
