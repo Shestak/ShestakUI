@@ -101,10 +101,6 @@ local Enable = function(self)
 		self:RegisterEvent("UNIT_AURA", Path)
 		self:RegisterEvent("UNIT_MAXHEALTH", Path)
 
-		if vb.Bar:IsObjectType("StatusBar") and not vb.Bar:GetStatusBarTexture() then
-			vb.Bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
-		end
-
 		return true
 	end
 end

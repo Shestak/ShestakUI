@@ -220,7 +220,7 @@ hooksecurefunc("UseContainerItem", function(bag, slot)
 	end
 end)
 
-SlashCmdList.PulseCD = function(msg)
+SlashCmdList.PulseCD = function()
 	RefreshLocals()
 	tinsert(animating, {"Interface\\Icons\\Inv_Misc_Tournaments_Banner_Human"})
 	DCP:SetScript("OnUpdate", OnUpdate)

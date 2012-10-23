@@ -32,6 +32,7 @@ L_ANNOUNCE_FP_PRE = "%s a préparé un %s."
 L_ANNOUNCE_FP_PUT = "%s a déposé au sol un %s."
 L_ANNOUNCE_FP_CAST = "%s lance le sort %s."
 L_ANNOUNCE_FP_CLICK = "%s invoque %s. Click!"
+L_ANNOUNCE_FP_USE = "%s used a %s." -- Needs review
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Aucun talent"

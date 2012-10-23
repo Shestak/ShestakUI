@@ -74,11 +74,6 @@ local Enable = function(self, unit)
 		runes.ForceUpdate = ForceUpdate
 
 		for i=1, 6 do
-			local rune = runes[runemap[i]]
-			if(rune:IsObjectType'StatusBar' and not rune:GetStatusBarTexture()) then
-				rune:SetStatusBarTexture[[Interface\TargetingFrame\UI-StatusBar]]
-			end
-
 			-- From my minor testing this is a okey solution. A full login always remove
 			-- the death runes, or at least the clients knowledge about them.
 			UpdateType(self, nil, i, math.floor((i + 1) / 2))

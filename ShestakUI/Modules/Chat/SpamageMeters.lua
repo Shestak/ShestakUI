@@ -30,6 +30,7 @@ local nextLines = {
 	"^(%d+). (.*)$",										-- Recount and Skada
 	"^ (%d+). (.*)$", 										-- Skada, Numeration
 	"^.*%%%)$", 											-- Skada player details
+	"^[+-]%d+.%d",											-- Numeration deathlog details
 	"^(%d+). (.*):(.*)(%d+)(.*)(%d+)%%(.*)%((%d+)%)$",		-- TinyDPS
 }
 

@@ -205,7 +205,7 @@ addon:SetScript("OnEvent", OnEvent)
 addon:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 
-SlashCmdList.RaidCD = function(msg)
+SlashCmdList.RaidCD = function()
 	StartTimer(UnitName("player"), 20484)	-- Rebirth
 	StartTimer(UnitName("player"), 20707)	-- Soulstone
 	StartTimer(UnitName("player"), 6346)	-- Fear Ward

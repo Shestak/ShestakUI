@@ -74,7 +74,7 @@ local function Local(o)
 	if o == "UIConfigannouncementsspells" then o = L_GUI_ANNOUNCEMENTS_SPELLS end
 	if o == "UIConfigannouncementsspells_from_all" then o = L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL end
 	if o == "UIConfigannouncementslightwell" then o = L_GUI_ANNOUNCEMENTS_LIGHTWELL end
-	if o == "UIConfigannouncementstoy_train" then o = L_GUI_ANNOUNCEMENTS_TOY_TRAIN end
+	if o == "UIConfigannouncementstoys" then o = L_GUI_ANNOUNCEMENTS_TOY_TRAIN end
 	if o == "UIConfigannouncementssays_thanks" then o = L_GUI_ANNOUNCEMENTS_SAYS_THANKS end
 	if o == "UIConfigannouncementspull_countdown" then o = L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN end
 	if o == "UIConfigannouncementsflask_food" then o = L_GUI_ANNOUNCEMENTS_FLASK_FOOD end
