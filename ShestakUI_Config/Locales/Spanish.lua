@@ -19,7 +19,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Mensaje de bienvenida en el chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Actualizar automaticamente la opción de Tolerancia al Lag Personalizada de Blizzard a tu latencia"
 
 -- Miscellaneous options
-L_GUI_MISC_HIDE_BUTTON = "Botón para ocultar el chat y el minimapa"
+L_GUI_MISC_HIDE_BUTTON = "Botón para ocultar el chat y el minimapa" -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "Marca el objetivo cuando pulsas 'shift'"
 L_GUI_MISC_INVKEYWORD = "Acrónimo para invitaciones (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"
@@ -184,12 +184,12 @@ L_GUI_THREAT_ROWS = "Número de barras de amenaza"
 L_GUI_THREAT_HIDE_SOLO = "Mostrar solo en grupo/raid"
 
 -- Meter options
-L_GUI_METER = "Contador de daños"
-L_GUI_METER_ENABLE = "Habilitar el contador de daños (sólo para ShestakUI_alDamageMeter)"
-L_GUI_METER_SPACING = "Espacio entre las barras"
-L_GUI_METER_HEIGHT = "Altura de las barras"
-L_GUI_METER_WIDTH = "Ancho de las barras"
-L_GUI_METER_MAXBARS = "Número de barras"
+L_GUI_METER = "Contador de daños" -- Goooooooooogle translated
+L_GUI_METER_ENABLE = "Habilitar el contador de daños (sólo para ShestakUI_alDamageMeter)" -- Goooooooooogle translated
+L_GUI_METER_SPACING = "Espacio entre las barras" -- Goooooooooogle translated
+L_GUI_METER_HEIGHT = "Altura de las barras" -- Goooooooooogle translated
+L_GUI_METER_WIDTH = "Ancho de las barras" -- Goooooooooogle translated
+L_GUI_METER_MAXBARS = "Número de barras" -- Goooooooooogle translated
 
 
 -- Tooltip options
@@ -351,7 +351,7 @@ L_GUI_UF_PORTRAIT_ENABLE = "Activar retratos del jugador/objetivo"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Borde de color de clase para los retratos"
 L_GUI_UF_PORTRAIT_HEIGHT = "Altura del retrato"
 L_GUI_UF_PORTRAIT_WIDTH = "Anchura del retrato"
-L_GUI_UF_ALTERNATIVE_PORTRAITS = "Activar los retratos de las barras de salud (es necesario deshabilitar la opción de imágenes de los jugadores/objetivo)"
+L_GUI_UF_ALTERNATIVE_PORTRAITS = "Activar los retratos de las barras de salud (es necesario deshabilitar la opción de imágenes de los jugadores/objetivo)" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Brillo de tiempo de reutilización global"
 L_GUI_UF_PLUGINS_SWING = "Activar barra de oscilación"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Activar barra para Golpe Necrótico"
@@ -391,7 +391,7 @@ L_GUI_UF_SHOW_TANK = "Mostrar tanques de la banda"
 L_GUI_UF_SHOW_TANK_TT = "Mostrar el objetivo del objetivo de los tanques de la banda"
 L_GUI_UF_RAID_GROUP = "Número de grupos en la banda"
 L_GUI_UF_RAID_VERTICAL_GROUP = "Grupos de la banda en vertical (Sólo para ShestakUI_Heal)"
-L_GUI_UF_RAID_PORTRAITS = "Habilitar los retratos en los marcos de banda"
+L_GUI_UF_RAID_PORTRAITS = "Habilitar los retratos en los marcos de banda" -- Goooooooooogle translated
 L_GUI_UF_ICONS_LEADER = "Iconos de líder, ayudantes y maestro despojador en los marcos"
 L_GUI_UF_ICONS_ROLE = "Role icon on frames" -- Needs review
 L_GUI_UF_ICONS_RAID_MARK = "Marcas de banda"
@@ -419,7 +419,7 @@ L_GUI_STATS_FPS = "FPS (Marcos por segundo)"
 L_GUI_STATS_EXPERIENCE = "Experiencia"
 L_GUI_STATS_COORDS = "Coordenadas"
 L_GUI_STATS_LOCATION = "Localización"
-L_GUI_STATS_BAGS = "Bolsas"
+L_GUI_STATS_BAGS = "Bolsas" -- Goooooooooogle translated
 
 -- Error options
 L_GUI_ERROR = "Errores"

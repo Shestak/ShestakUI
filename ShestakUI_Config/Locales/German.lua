@@ -19,7 +19,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Automatische Anpassung der Blizzard Custom Lag Toleranz an deine Latenz"
 
 -- Miscellaneous options
-L_GUI_MISC_HIDE_BUTTON = "Taste, um Chat und Minimap ausgeblendet"
+L_GUI_MISC_HIDE_BUTTON = "Taste, um Chat und Minimap ausgeblendet" -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "Ziele markieren wenn 'Umschalttaste' gedürckt wird"
 L_GUI_MISC_INVKEYWORD = "Kurzes Schlüsselwort für Einladungen (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Kamera drehen während du afk bist"
@@ -184,12 +184,12 @@ L_GUI_THREAT_ROWS = "Anzahl der Bedrohungsleisten"
 L_GUI_THREAT_HIDE_SOLO = "Nur in Gruppen oder Schlachtzügen anzeigen"
 
 -- Meter options
-L_GUI_METER = "Zähler Schaden"
-L_GUI_METER_ENABLE = "Aktivieren Sie den Zähler für Schäden (nur für ShestakUI_alDamageMeter)"
-L_GUI_METER_SPACING = "Abstand zwischen den Balken"
-L_GUI_METER_HEIGHT = "Höhe der Balken"
-L_GUI_METER_WIDTH = "Stegbreite"
-L_GUI_METER_MAXBARS = "Anzahl der Bars"
+L_GUI_METER = "Zähler Schaden" -- Goooooooooogle translated
+L_GUI_METER_ENABLE = "Aktivieren Sie den Zähler für Schäden (nur für ShestakUI_alDamageMeter)" -- Goooooooooogle translated
+L_GUI_METER_SPACING = "Abstand zwischen den Balken" -- Goooooooooogle translated
+L_GUI_METER_HEIGHT = "Höhe der Balken" -- Goooooooooogle translated
+L_GUI_METER_WIDTH = "Stegbreite" -- Goooooooooogle translated
+L_GUI_METER_MAXBARS = "Anzahl der Bars" -- Goooooooooogle translated
 
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"
@@ -350,7 +350,7 @@ L_GUI_UF_PORTRAIT_ENABLE = "Aktiviere Spieler/Ziel Portraits"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Aktiviere Rahmen in Klassenfarbe"
 L_GUI_UF_PORTRAIT_HEIGHT = "Portraithöhe"
 L_GUI_UF_PORTRAIT_WIDTH = "Portraitbreite"
-L_GUI_UF_ALTERNATIVE_PORTRAITS = "Aktiviere Sie die Portraits an den Gesundheits-Bars (Sie brauchen, um die Option für Spieler/target Portraits deaktivieren)"
+L_GUI_UF_ALTERNATIVE_PORTRAITS = "Aktiviere Sie die Portraits an den Gesundheits-Bars (Sie brauchen, um die Option für Spieler/target Portraits deaktivieren)" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Blitz für globalen Cooldown"
 L_GUI_UF_PLUGINS_SWING = "Swingleiste"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Aktiviere Leiste für Nekrotischer Stoß"
@@ -390,7 +390,7 @@ L_GUI_UF_SHOW_TANK = "Zeige Raid Tanks an"
 L_GUI_UF_SHOW_TANK_TT = "Zeige Ziel des Raid Tank Ziels (Ziel des Ziels)"
 L_GUI_UF_RAID_GROUP = "Anzahl der Gruppen im Raid"
 L_GUI_UF_RAID_VERTICAL_GROUP = "Vertikale Raidgruppen(nur für ShestakUI_Heal)"
-_GUI_UF_RAID_PORTRAITS = "Aktivieren Porträts auf RAID-Frames"
+_GUI_UF_RAID_PORTRAITS = "Aktivieren Porträts auf RAID-Frames" -- Goooooooooogle translated
 L_GUI_UF_ICONS_LEADER = "Anführer/Assistent/Plündermeister-Symbole an den Fenstern anzeigen"
 L_GUI_UF_ICONS_ROLE = "Rollensymbol auf den Unit Frames"
 L_GUI_UF_ICONS_RAID_MARK = "Raidsymbole"
@@ -418,7 +418,7 @@ L_GUI_STATS_FPS = "BPS"
 L_GUI_STATS_EXPERIENCE = "Erfahrung"
 L_GUI_STATS_COORDS = "Koordinaten"
 L_GUI_STATS_LOCATION = "Ort"
-L_GUI_STATS_BAGS = "Taschen"
+L_GUI_STATS_BAGS = "Taschen" -- Goooooooooogle translated
 
 -- Error options
 L_GUI_ERROR = "Fehler"

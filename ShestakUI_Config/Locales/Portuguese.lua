@@ -19,7 +19,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tolerance option to your latency"
 
 -- Miscellaneous options
-L_GUI_MISC_HIDE_BUTTON = "Botão para ocultar chat e minimap"
+L_GUI_MISC_HIDE_BUTTON = "Botão para ocultar chat e minimap" -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "Marks target when you push 'shift'"
 L_GUI_MISC_INVKEYWORD = "Short keyword for invite (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Spin camera while afk"
@@ -184,12 +184,12 @@ L_GUI_THREAT_ROWS = "Number of threat bars"
 L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid"
 
 -- Meter options
-L_GUI_METER = "Contador por danos"
-L_GUI_METER_ENABLE = "Habilitar o contador por danos (apenas para ShestakUI_alDamageMeter)"
-L_GUI_METER_SPACING = "Espaço entre as barras"
-L_GUI_METER_HEIGHT = "Altura das barras"
-L_GUI_METER_WIDTH = "Largura das barras"
-L_GUI_METER_MAXBARS = "Número de barras"
+L_GUI_METER = "Contador por danos" -- Goooooooooogle translated
+L_GUI_METER_ENABLE = "Habilitar o contador por danos (apenas para ShestakUI_alDamageMeter)" -- Goooooooooogle translated
+L_GUI_METER_SPACING = "Espaço entre as barras" -- Goooooooooogle translated
+L_GUI_METER_HEIGHT = "Altura das barras" -- Goooooooooogle translated
+L_GUI_METER_WIDTH = "Largura das barras" -- Goooooooooogle translated
+L_GUI_METER_MAXBARS = "Número de barras" -- Goooooooooogle translated
 
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"
@@ -350,7 +350,7 @@ L_GUI_UF_PORTRAIT_ENABLE = "Enable player/target portraits"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Classcolor border for portraits"
 L_GUI_UF_PORTRAIT_HEIGHT = "Portrait height"
 L_GUI_UF_PORTRAIT_WIDTH = "Portrait width"
-L_GUI_UF_ALTERNATIVE_PORTRAITS= "Habilitar os retratos nas barras de saúde (você precisa desativar a opção para o jogador/target retratos)"
+L_GUI_UF_ALTERNATIVE_PORTRAITS= "Habilitar os retratos nas barras de saúde (você precisa desativar a opção para o jogador/target retratos)" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Global cooldown spark"
 L_GUI_UF_PLUGINS_SWING = "Enable swing bar"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar"
@@ -390,7 +390,7 @@ L_GUI_UF_SHOW_TANK = "Show raid tanks"
 L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target"
 L_GUI_UF_RAID_GROUP = "Number of groups in raid"
 L_GUI_UF_RAID_VERTICAL_GROUP = "Vertical raid groups (only for ShestakUI_Heal)"
-L_GUI_UF_RAID_PORTRAITS = "Habilitar retratos em quadros de raid"
+L_GUI_UF_RAID_PORTRAITS = "Habilitar retratos em quadros de raid" -- Goooooooooogle translated
 L_GUI_UF_ICONS_LEADER = "Leader icon, assistant icon, master loot icon on frames"
 L_GUI_UF_ICONS_ROLE = "Role icon on frames"
 L_GUI_UF_ICONS_RAID_MARK = "Raid marks"
@@ -418,7 +418,7 @@ L_GUI_STATS_FPS = "FPS"
 L_GUI_STATS_EXPERIENCE = "Experience"
 L_GUI_STATS_COORDS = "Coords"
 L_GUI_STATS_LOCATION = "Location"
-L_GUI_STATS_BAGS = "Bolsas"
+L_GUI_STATS_BAGS = "Bolsas" -- Goooooooooogle translated
 
 -- Error options
 L_GUI_ERROR = "Errors"

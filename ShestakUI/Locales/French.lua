@@ -292,7 +292,7 @@ L_POPUP_CURRENCY_CAP = "You get maximum value of" -- Needs review
 L_WELCOME_LINE_1 = "Bienvenue sur ShestakUI "
 L_WELCOME_LINE_2_1 = "Tapez /cfg pour configurer l'interface, ou visitez http://shestak.org"
 L_WELCOME_LINE_2_2 = "pour plus d'informations"
-L_WELCOME_LINE_3 = "Note: cette version de ShestakUI est édité par Oz de shestak.org."
+L_WELCOME_LINE_3 = "Note: cette version de ShestakUI est édité par Oz de shestak.org." -- Goooooooooogle translated
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Coup Fatal"
@@ -508,7 +508,7 @@ L_EXTRA_ZONEACHID = {
 }
 
 -- Hide Button
-L_HIDE_BUTTON_1 = "clic gauche = peau de chat"
-L_HIDE_BUTTON_2 = "Clic droit = peau minicarte (uniquement hors combat)"
+L_HIDE_BUTTON_1 = "clic gauche = peau de chat" -- Goooooooooogle translated
+L_HIDE_BUTTON_2 = "Clic droit = peau minicarte (uniquement hors combat)" -- Goooooooooogle translated
 
 -- edit by Oz of shestak. org --

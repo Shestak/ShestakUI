@@ -7,7 +7,6 @@ if C.loot.auto_greed ~= true then return end
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 T.NeedLoot = {
-	33865,	-- Amani Hex Stick
-	68729,	-- Elementium Lockbox
-	88567,	-- Ghost Iron Lockbox
 }
+
+-- edit by Oz of shestak. org --

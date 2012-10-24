@@ -14,7 +14,6 @@ end
 local AddMessage = function(self, text, ...)
 	if type(text) == "string" then
 		text = text:gsub("|h%[(%d+)%. .-%]|h", "|h[%1]|h")
-		text = text:gsub("|Hplayer:(.-)|h%[(.-)%]|h", Strip)
 	end
 	return origs[self](self, text, ...)
 end

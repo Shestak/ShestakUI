@@ -19,7 +19,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "显示欢迎信息"
 L_GUI_GENERAL_LAG_TOLERANCE = "自动更新自定延迟容许值"
 
 -- Miscellaneous options
-L_GUI_MISC_HIDE_BUTTON = "按钮，隐藏聊天和小地图"
+L_GUI_MISC_HIDE_BUTTON = "按钮，隐藏聊天和小地图"  -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "点击shift显示团队标记图示菜单"
 L_GUI_MISC_INVKEYWORD = "自动邀请关键字(/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "afk时旋转镜头"
@@ -183,12 +183,12 @@ L_GUI_THREAT_WIDTH = "仇恨栏宽度"
 L_GUI_THREAT_ROWS = "仇恨栏数目"
 L_GUI_THREAT_HIDE_SOLO = "只在队伍或团队中开启"
 
-L_GUI_METER = "损坏米"
-L_GUI_METER_ENABLE = "启用的损失计 （只為ShestakUI_alDamageMeter）"
-L_GUI_METER_SPACING = "条纹之间的间距"
-L_GUI_METER_HEIGHT = "酒吧的高度"
-L_GUI_METER_WIDTH = "酒吧的宽度"
-L_GUI_METER_MAXBARS = "酒吧的数量"
+L_GUI_METER = "损坏米" -- Goooooooooogle translated
+L_GUI_METER_ENABLE = "启用的损失计 （只為ShestakUI_alDamageMeter）" -- Goooooooooogle translated
+L_GUI_METER_SPACING = "条纹之间的间距" -- Goooooooooogle translated
+L_GUI_METER_HEIGHT = "酒吧的高度" -- Goooooooooogle translated
+L_GUI_METER_WIDTH = "酒吧的宽度" -- Goooooooooogle translated
+L_GUI_METER_MAXBARS = "酒吧的数量" -- Goooooooooogle translated
 
 -- Tooltip options
 L_GUI_TOOLTIP = "提示资讯"
@@ -349,7 +349,7 @@ L_GUI_UF_PORTRAIT_ENABLE = "开启玩家/目标头像"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "开启职业颜色边框"
 L_GUI_UF_PORTRAIT_HEIGHT = "头像高度"
 L_GUI_UF_PORTRAIT_WIDTH = "头像宽度"
-L_GUI_UF_ALTERNATIVE_PORTRAITS = "启用对健康酒吧的画像（你需要禁用的选项，播放/目标画像）"
+L_GUI_UF_ALTERNATIVE_PORTRAITS = "启用对健康酒吧的画像（你需要禁用的选项，播放/目标画像）" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "公共CD计时"
 L_GUI_UF_PLUGINS_SWING = "普通攻击计时条"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "开启死疽打击计时条"
@@ -389,7 +389,7 @@ L_GUI_UF_SHOW_TANK = "显示团队主坦克框体"
 L_GUI_UF_SHOW_TANK_TT = "显示坦克目标的目标"
 L_GUI_UF_RAID_GROUP = "显示小队数目"
 L_GUI_UF_RAID_VERTICAL_GROUP = "竖向显示团队队伍(ShestakUI_Heal风格)"
-L_GUI_UF_RAID_PORTRAITS = "启用RAID帧上的肖像"
+L_GUI_UF_RAID_PORTRAITS = "启用RAID帧上的肖像" -- Goooooooooogle translated
 L_GUI_UF_ICONS_LEADER = "显示团队队长标识/助手标识/分配者标识"
 L_GUI_UF_ICONS_ROLE = "在团队中显示角色类型"
 L_GUI_UF_ICONS_READY_CHECK = "确认就绪情况图示"
@@ -416,7 +416,7 @@ L_GUI_STATS_FPS = "帧数"
 L_GUI_STATS_EXPERIENCE = "经验"
 L_GUI_STATS_COORDS = "坐标"
 L_GUI_STATS_LOCATION = "区域"
-L_GUI_STATS_BAGS = "袋"
+L_GUI_STATS_BAGS = "袋" -- Goooooooooogle translated
 
 -- Error options
 L_GUI_ERROR = "错误收集"

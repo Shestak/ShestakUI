@@ -19,7 +19,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tolerance option to your latency"
 
 -- Miscellaneous options
-L_GUI_MISC_HIDE_BUTTON = "채팅과 minimap을 숨길 버튼"
+L_GUI_MISC_HIDE_BUTTON = "채팅과 minimap을 숨길 버튼" -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "Marks target when you push 'shift'"
 L_GUI_MISC_INVKEYWORD = "Short keyword for invite (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Spin camera while afk"
@@ -184,12 +184,12 @@ L_GUI_THREAT_ROWS = "Number of threat bars"
 L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid"
 
 -- Meter options
-L_GUI_METER = "카운터 손상"
-L_GUI_METER_ENABLE = "손해 카운터 사용 (단 ShestakUI_alDamageMeter 용)"
-L_GUI_METER_SPACING = "막대 사이의 공간"
-L_GUI_METER_HEIGHT = "막대의 높이"
-L_GUI_METER_WIDTH = "막대의 폭"
-L_GUI_METER_MAXBARS = "막대의 개수"
+L_GUI_METER = "카운터 손상" -- Goooooooooogle translated
+L_GUI_METER_ENABLE = "손해 카운터 사용 (단 ShestakUI_alDamageMeter 용)" -- Goooooooooogle translated
+L_GUI_METER_SPACING = "막대 사이의 공간" -- Goooooooooogle translated
+L_GUI_METER_HEIGHT = "막대의 높이" -- Goooooooooogle translated
+L_GUI_METER_WIDTH = "막대의 폭" -- Goooooooooogle translated
+L_GUI_METER_MAXBARS = "막대의 개수" -- Goooooooooogle translated
 
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"
@@ -350,7 +350,7 @@ L_GUI_UF_PORTRAIT_ENABLE = "Enable player/target portraits"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Classcolor border for portraits"
 L_GUI_UF_PORTRAIT_HEIGHT = "Portrait height"
 L_GUI_UF_PORTRAIT_WIDTH = "Portrait width"
-L_GUI_UF_ALTERNATIVE_PORTRAITS = "건강 막대의 초상화를 활성화 (이 플레이어/대상 인물에 대한 옵션을 해제해야합니다)"
+L_GUI_UF_ALTERNATIVE_PORTRAITS = "건강 막대의 초상화를 활성화 (이 플레이어/대상 인물에 대한 옵션을 해제해야합니다)" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Global cooldown spark"
 L_GUI_UF_PLUGINS_SWING = "Enable swing bar"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar"
@@ -390,7 +390,7 @@ L_GUI_UF_SHOW_TANK = "Show raid tanks"
 L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target"
 L_GUI_UF_RAID_GROUP = "Number of groups in raid"
 L_GUI_UF_RAID_VERTICAL_GROUP = "Vertical raid groups (only for ShestakUI_Heal)"
-L_GUI_UF_RAID_PORTRAITS = "RAID 프레임에 초상화를 활성화"
+L_GUI_UF_RAID_PORTRAITS = "RAID 프레임에 초상화를 활성화" -- Goooooooooogle translated
 L_GUI_UF_ICONS_LEADER = "Leader icon, assistant icon, master loot icon on frames"
 L_GUI_UF_ICONS_ROLE = "Role icon on frames"
 L_GUI_UF_ICONS_RAID_MARK = "Raid marks"
@@ -418,7 +418,7 @@ L_GUI_STATS_FPS = "FPS"
 L_GUI_STATS_EXPERIENCE = "Experience"
 L_GUI_STATS_COORDS = "Coords"
 L_GUI_STATS_LOCATION = "Location"
-L_GUI_STATS_BAGS = "가방"
+L_GUI_STATS_BAGS = "가방" -- Goooooooooogle translated
 
 -- Error options
 L_GUI_ERROR = "Errors"
