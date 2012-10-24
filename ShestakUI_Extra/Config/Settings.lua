@@ -26,7 +26,7 @@ C["extra_bar"] = {
 	["mouseover"] = false,						-- Show bar on mouseover
 	-- Battleground
 	["battleground"] = false,					-- Battleground defence bar for for announce
-	["battleground_two_row"] = false,			-- Two row for BG bar
+	["battleground_two_row"] = true,			-- Two row for BG bar
 	-- Other
 	["mark_bar"] = false,						-- Mark bar
 	["switch_spec"] = false,					-- Talent spec bar

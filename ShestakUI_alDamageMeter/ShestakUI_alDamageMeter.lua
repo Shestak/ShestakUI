@@ -41,26 +41,28 @@ local AbsorbSpellDuration = {
 	-- Death Knight
 	[48707] = 5,	-- Anti-Magic Shell
 	[51052] = 10,	-- Anti-Magic Zone
-	[51271] = 20,	-- Pillar of Frost
 	[77535] = 10,	-- Blood Shield
-	-- Druid
-	[62606] = 6,	-- Savage Defense
 	-- Mage
 	[11426] = 60,	-- Ice Barrier
-	[1463] = 8,		-- Mana Shield
+	[1463] = 8,		-- Incanter's Ward
+	-- Monk
+	[115295] = 30,	-- Guard
+	[116849] = 12,	-- Life Cocoon
 	-- Paladin
-	[65148] = 30,	-- Sacred Shield
-	[76669] = 15,	-- Illuminated Healing
+	[65148] = 6,	-- Sacred Shield
+	[86273] = 15,	-- Illuminated Healing
 	-- Priest
 	[17] = 15,		-- Power Word: Shield
-	[47515] = 15,	-- Divine Aegis
+	[47753] = 15,	-- Divine Aegis
 	[47788] = 10,	-- Guardian Spirit
+	[114908] = 15,	-- Spirit Shell
+	-- Shaman
+	[114893] = 10,	-- Stone Bulwark
 	-- Warlock
 	[7812] = 30,	-- Sacrifice
-	[6229] = 30,	-- Shadow Ward
-	-- Item procs
-	[64411] = 15,	-- Blessing of Ancient Kings
-	[64413] = 8,	-- Protection of Ancient Kings
+	[6229] = 30,	-- Twilight Ward
+	-- Enchants
+	[116631] = 10,	-- Colossus
 }
 local shields = {}
 
@@ -689,7 +691,7 @@ addon:RegisterEvent("PLAYER_ENTERING_WORLD")
 addon:RegisterEvent("PLAYER_REGEN_DISABLED")
 addon:RegisterEvent("UNIT_PET")
 
-SlashCmdList["alDamage"] = function(msg)
+SlashCmdList["alDamage"] = function()
 	for i = 1, 20 do
 		units[i] = {name = UnitName("player"), class = select(2, UnitClass("player")), unit = "1"}
 		Add(i, i * 10000, DAMAGE)
