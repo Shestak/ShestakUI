@@ -17,14 +17,8 @@ local OrangeTexture = "Interface\\Icons\\inv_misc_gem_x4_rare_cut_orange"
 local PrismaticTexture = "Interface\\Icons\\INV_Jewelcrafting_DragonsEye02"
 
 addon.f = CreateFrame("Frame", "GCmain", CharacterFrame)
-addon.f:SetScript("OnShow", function(self)
-	addon.GetGems()
-end)
-addon.f:SetScript("OnEvent", function(self, event, ...)
-	if addon[event] then
-		return addon[event](addon, event, ...)
-	end
-end)
+addon.f:SetScript("OnShow", function(self) addon.GetGems() end)
+addon.f:SetScript("OnEvent", function(self, event, ...) if addon[event] then return addon[event](addon, event, ...) end end)
 addon.f:RegisterEvent("UNIT_INVENTORY_CHANGED")
 addon.f:RegisterEvent("PLAYER_LOGIN")
 

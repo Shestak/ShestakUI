@@ -113,9 +113,9 @@ btn:SetScript("OnClick", function()
 	local havebags = {}
 	for bag = 0, 4 do
 		local slots = GetContainerNumSlots(bag)
-		for slot = 1, slots do
-			local id = GetContainerItemID(bag, slot)
-			local count = select(2, GetContainerItemInfo(bag, slot))
+		for i = 1, slots do
+			local id = GetContainerItemID(bag, i)
+			local count = select(2, GetContainerItemInfo(bag, i))
 			if id and count then
 				for k, v in pairs(items) do
 					if k == id then groceries[id] = groceries[id] and groceries[id] + count or count end
@@ -139,12 +139,12 @@ btn:SetScript("OnClick", function()
 	end
 
 	local merchitems = GetMerchantNumItems()
-	for merchitem = 1, merchitems do
-		local link = GetMerchantItemLink(merchitem)
+	for i = 1, merchitems do
+		local link = GetMerchantItemLink(i)
 		local id = tonumber(string.match(link, "item:(%d+):"))
 		for bag, count in pairs(shopping) do
 			if id == bag and count > 0 then
-				BuyMerchantItem(merchitem, count)
+				BuyMerchantItem(i, count)
 			end
 		end
 	end
