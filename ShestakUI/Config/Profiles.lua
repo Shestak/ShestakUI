@@ -433,6 +433,7 @@ if T.coauthor == true then
 	C["misc"].move_blizzard = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
+	C["announcements"].toys = true
 	C["announcements"].portals = true
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
