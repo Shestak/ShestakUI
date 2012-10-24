@@ -38,10 +38,6 @@ end
 local function enable(self, unit)
 	local bar = self.Reputation
 	if bar and unit == "player" then
-		if bar:IsObjectType("StatusBar") and not bar:GetStatusBarTexture() then
-			bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
-		end
-
 		self:RegisterEvent("UPDATE_FACTION", update)
 
 		if bar.Tooltip then

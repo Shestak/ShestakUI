@@ -51,7 +51,7 @@ if T.author == true then
 	C["misc"].disenchanting = true
 	C["misc"].sum_buyouts = true
 	C["announcements"].spells = true
-	C["announcements"].toy_train = true
+	C["announcements"].toys = true
 	C["announcements"].says_thanks = true
 	C["announcements"].feasts = true
 	C["announcements"].portals = true
@@ -160,7 +160,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["announcements"].interrupts = true
 	C["announcements"].spells = true
 	C["announcements"].spells_from_all = true
-	C["announcements"].toy_train = true
+	C["announcements"].toys = true
 	C["announcements"].says_thanks = true
 	C["announcements"].flask_food_auto = true
 	C["announcements"].feasts = true

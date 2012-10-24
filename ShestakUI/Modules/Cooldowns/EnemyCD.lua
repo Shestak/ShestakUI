@@ -115,7 +115,7 @@ addon:SetScript("OnEvent", OnEvent)
 addon:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 
-SlashCmdList.EnemyCD = function(msg)
+SlashCmdList.EnemyCD = function()
 	StartTimer(47528)
 	StartTimer(19647)
 	StartTimer(47476)

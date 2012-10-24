@@ -125,10 +125,6 @@ local function Enable(self, unit)
 			friendship:HookScript("OnLeave", GameTooltip_Hide)
 		end
 
-		if not friendship:GetStatusBarTexture() then
-			friendship:SetStatusBarTexture([=[Interface\TargetingFrame\UI-StatusBar]=])
-		end
-
 		return true
 	end
 end

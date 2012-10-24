@@ -9,19 +9,15 @@ AchievementAnchor:SetWidth(DungeonCompletionAlertFrame1:GetWidth() - 36)
 AchievementAnchor:SetHeight(DungeonCompletionAlertFrame1:GetHeight() - 4)
 AchievementAnchor:SetPoint(unpack(C.position.achievement))
 
-local POSITION, ANCHOR_POINT, YOFFSET = "TOP", "BOTTOM", 9
+local POSITION, ANCHOR_POINT, YOFFSET = "BOTTOM", "TOP", -9
 
 local function fixAnchors()
 	local point = select(1, AchievementAnchor:GetPoint())
 
 	if string.find(point, "TOP") or point == "CENTER" or point == "LEFT" or point == "RIGHT" then
 		POSITION = "TOP"
-		ANCHOR_POINT = 'BOTTOM'
+		ANCHOR_POINT = "BOTTOM"
 		YOFFSET = 9
-	else
-		POSITION = "BOTTOM"
-		ANCHOR_POINT = 'TOP'
-		YOFFSET = -9
 	end
 
 	AlertFrame:ClearAllPoints()
@@ -32,8 +28,6 @@ local function fixAnchors()
 
 	MissingLootFrame:ClearAllPoints()
 	MissingLootFrame:SetPoint(POSITION, AlertFrame, ANCHOR_POINT, 0, YOFFSET)
-
-	--AlertFrame_FixAnchors()
 end
 hooksecurefunc("AlertFrame_FixAnchors", fixAnchors)
 
@@ -126,7 +120,7 @@ end
 hooksecurefunc("AlertFrame_SetGuildChallengeAnchors", AlertFrame_SetGuildChallengeAnchors)
 
 hooksecurefunc(GroupLootContainer, "SetPoint", function(self, point, anchorTo, attachPoint, xOffset, yOffset)
-	if _G[anchorTo] == UIParent then
+	if _G[anchorTo] == UIParent or _G[anchorTo] == AchievementAnchor then
 		fixAnchors()
 	end
 end)

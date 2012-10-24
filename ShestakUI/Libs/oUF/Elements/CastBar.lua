@@ -385,10 +385,6 @@ local Enable = function(object, unit)
 			PetCastingBarFrame:Hide()
 		end
 
-		if(castbar:IsObjectType'StatusBar' and not castbar:GetStatusBarTexture()) then
-			castbar:SetStatusBarTexture[[Interface\TargetingFrame\UI-StatusBar]]
-		end
-
 		local spark = castbar.Spark
 		if(spark and spark:IsObjectType'Texture' and not spark:GetTexture()) then
 			spark:SetTexture[[Interface\CastingBar\UI-CastingBar-Spark]]

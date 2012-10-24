@@ -32,6 +32,7 @@ L_ANNOUNCE_FP_PRE = "%s 放置了 %s"
 L_ANNOUNCE_FP_PUT = "%s 放置了 %s"
 L_ANNOUNCE_FP_CAST = "%s 開啟了 %s"
 L_ANNOUNCE_FP_CLICK = "%s 正在開啟 %s... 請點擊！"
+L_ANNOUNCE_FP_USE = "%s used a %s." -- Needs review
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "沒有天賦"

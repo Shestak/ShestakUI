@@ -32,6 +32,7 @@ L_ANNOUNCE_FP_PRE = "%s bereitet ein %s vor."
 L_ANNOUNCE_FP_PUT = "%s stellt ein %s auf."
 L_ANNOUNCE_FP_CAST = "%s zaubert ein %s."
 L_ANNOUNCE_FP_CLICK = "%s zaubert ein %s. Klick!"
+L_ANNOUNCE_FP_USE = "%s used a %s." -- Needs review
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"

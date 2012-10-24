@@ -158,7 +158,7 @@ addon:RegisterEvent("PLAYER_TARGET_CHANGED")
 addon:RegisterEvent("UNIT_THREAT_LIST_UPDATE")
 addon:RegisterEvent("PLAYER_REGEN_ENABLED")
 
-SlashCmdList.alThreat = function(msg)
+SlashCmdList.alThreat = function()
 	for i = 1, C.threat.bar_rows do
 		tList[i] = {
 			name = UnitName("player"),
