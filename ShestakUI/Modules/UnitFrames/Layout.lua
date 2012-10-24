@@ -1039,7 +1039,7 @@ local function Shared(self, unit)
 		self:HookScript("OnShow", T.UpdateAllElements)
 	end
 
-	-- Agro border
+	-- Aggro border
 	if C.raidframe.aggro_border == true and unit ~= "arenatarget" then
 		table.insert(self.__elements, T.UpdateThreat)
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateThreat)

@@ -106,7 +106,7 @@ local function Shared(self, unit)
 		self.Power.bg.multiplier = 0.2
 	end
 
-	-- Agro border
+	-- Aggro border
 	if C.raidframe.aggro_border == true then
 		table.insert(self.__elements, T.UpdateThreat)
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateThreat)

@@ -166,7 +166,7 @@ local function Shared(self, unit)
 		self.MasterLooter:SetPoint("TOPRIGHT", self.Health, 3, 8)
 	end
 
-	-- Agro border
+	-- Aggro border
 	if C.raidframe.aggro_border == true then
 		table.insert(self.__elements, T.UpdateThreat)
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateThreat)
