@@ -422,3 +422,42 @@ LootHistoryButton:SetScript("OnMouseDown", function()
 	end
 	ToggleLootHistoryFrame()
 end)
+
+----------------------------------------------------------------------------------------
+--	RangeDisplay
+----------------------------------------------------------------------------------------
+local RangeDisplayText = UIParent:CreateFontString(nil, "OVERLAY")
+RangeDisplayText:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+RangeDisplayText:SetPoint("CENTER", 0, -100)
+local RangeDisplay = CreateFrame("Frame", nil, UIParent)
+RangeDisplay:SetScript("OnUpdate", function()
+	local item30, item40
+	if UnitCanAssist("player", "target") then
+		item25 = 31463
+		item30 = 1180
+		item40 = 34471
+	elseif UnitCanAttack("player", "target") then
+		item25 = 31463
+		item30 = 835
+		item40 = 28767
+	end
+	if IsItemInRange(item40, "target") == 0 then
+		RangeDisplayText:Show()
+		RangeDisplayText:SetText("> 40")
+		RangeDisplayText:SetTextColor(0.9, 0.3, 0.3)
+	elseif IsItemInRange(item40, "target") == 1 and  IsItemInRange(item30, "target") == 0 then
+		RangeDisplayText:Show()
+		RangeDisplayText:SetText("30-40")
+		RangeDisplayText:SetTextColor(0.9, 0.9, 0.3)
+	elseif IsItemInRange(item30, "target") == 1 and IsItemInRange(item25, "target") == 0 then
+		RangeDisplayText:Show()
+		RangeDisplayText:SetText("25-30")
+		RangeDisplayText:SetTextColor(0.3, 0.9, 0.3)
+	elseif IsItemInRange(item25, "target") == 1 then
+		RangeDisplayText:Show()
+		RangeDisplayText:SetText("< 25")
+		RangeDisplayText:SetTextColor(0.3, 0.3, 0.9)
+	else
+		RangeDisplayText:Hide()
+	end
+end)
