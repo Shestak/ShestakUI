@@ -122,9 +122,16 @@ end
 
 -- Ticket icon
 HelpOpenTicketButton:SetParent(Minimap)
+HelpOpenTicketButton:CreateBackdrop("ClassColor")
+HelpOpenTicketButton:SetFrameLevel(4)
 HelpOpenTicketButton:ClearAllPoints()
-HelpOpenTicketButton:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, -5)
+HelpOpenTicketButton:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, 2)
 HelpOpenTicketButton:SetHighlightTexture(nil)
+HelpOpenTicketButton:SetPushedTexture("Interface\\Icons\\inv_misc_note_03")
+HelpOpenTicketButton:SetNormalTexture("Interface\\Icons\\inv_misc_note_03")
+HelpOpenTicketButton:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+HelpOpenTicketButton:GetPushedTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+HelpOpenTicketButton:SetSize(16, 16)
 
 -- GhostFrame
 GhostFrame:StripTextures()
