@@ -36,6 +36,7 @@ T.ABItems = {
 	85884,	-- Sonic Emitter
 	82346,	-- Pot of Fire
 	78947,	-- Silken Rope
+	83134,	-- Bronze Claws
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
