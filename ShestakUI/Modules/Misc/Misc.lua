@@ -431,7 +431,7 @@ RangeDisplayText:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pi
 RangeDisplayText:SetPoint("CENTER", 0, -100)
 local RangeDisplay = CreateFrame("Frame", nil, UIParent)
 RangeDisplay:SetScript("OnUpdate", function()
-	local item30, item40
+	local item25, item30, item40
 	if UnitCanAssist("player", "target") then
 		item25 = 31463
 		item30 = 1180
@@ -445,7 +445,7 @@ RangeDisplay:SetScript("OnUpdate", function()
 		RangeDisplayText:Show()
 		RangeDisplayText:SetText("> 40")
 		RangeDisplayText:SetTextColor(0.9, 0.3, 0.3)
-	elseif IsItemInRange(item40, "target") == 1 and  IsItemInRange(item30, "target") == 0 then
+	elseif IsItemInRange(item40, "target") == 1 and IsItemInRange(item30, "target") == 0 then
 		RangeDisplayText:Show()
 		RangeDisplayText:SetText("30-40")
 		RangeDisplayText:SetTextColor(0.9, 0.9, 0.3)
