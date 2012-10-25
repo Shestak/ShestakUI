@@ -84,7 +84,6 @@ T.DiminishingSpells = function()
 		[61780] = {"disorient"},	-- Polymorph (Turkey)
 		[82691] = {"disorient"},	-- Ring of Frost
 		[115078] = {"disorient"},	-- Paralysis
-		[105421] = {"disorient"},	-- Blinding Light
 		[20066] = {"disorient"},	-- Repentance
 		[9484] = {"disorient"},		-- Shackle Undead
 		[1776] = {"disorient"},		-- Gouge
@@ -95,6 +94,7 @@ T.DiminishingSpells = function()
 		-- Fears
 		[1513] = {"fear"},			-- Scare Beast
 		[10326] = {"fear"},			-- Turn Evil
+		[105421] = {"fear"},		-- Blinding Light
 		[8122] = {"fear"},			-- Psychic Scream
 		[113792] = {"fear"},		-- Psychic Terror
 		[2094] = {"fear"},			-- Blind

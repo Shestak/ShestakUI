@@ -141,10 +141,3 @@ end
 
 TradeSkillClearButton:RegisterEvent("ADDON_LOADED")
 TradeSkillClearButton:SetScript("OnEvent", OnEvent)
-
-----------------------------------------------------------------------------------------
---	Fix Combat Text number seperator
-----------------------------------------------------------------------------------------
-if T.client == "ruRU" then
-	LARGE_NUMBER_SEPERATOR = ","
-end

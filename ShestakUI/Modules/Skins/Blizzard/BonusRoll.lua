@@ -7,6 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	BonusRollFrame:StripTextures()
 	BonusRollFrame:CreateBackdrop("Transparent")
+	BonusRollFrame.backdrop:SetFrameLevel(0)
 	BonusRollFrame.backdrop:SetPoint("TOPLEFT", BonusRollFrame, "TOPLEFT", -9, 6)
 	BonusRollFrame.backdrop:SetPoint("BOTTOMRIGHT", BonusRollFrame, "BOTTOMRIGHT", 5, -6)
 
@@ -17,6 +18,7 @@ local function LoadSkin()
 	BonusRollFrame.PromptFrame.IconBackdrop:SetPoint("TOPLEFT", BonusRollFrame.PromptFrame.Icon, -2, 2)
 	BonusRollFrame.PromptFrame.IconBackdrop:SetPoint("BOTTOMRIGHT", BonusRollFrame.PromptFrame.Icon, 2, -2)
 
+	BonusRollFrame.PromptFrame.Timer:CreateBackdrop("Default")
 	BonusRollFrame.PromptFrame.Timer.Bar:SetTexture(1, 1, 1)
 
 	BonusRollMoneyWonFrame:StripTextures()
