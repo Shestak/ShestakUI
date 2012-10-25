@@ -12,9 +12,7 @@ local PENDING = CONTINUED..CONTINUED
 local PREFIX = STAT_FORMAT:format(STAT_AVERAGE_ITEM_LEVEL).."|Heqppditmlvl|h |h"..HIGHLIGHT_FONT_COLOR_CODE
 
 local f = CreateFrame("Frame")
-f:SetScript("OnEvent", function(self, event, ...)
-	return self[event](self, event, ...)
-end)
+f:SetScript("OnEvent", function(self, event, ...)	return self[event](self, event, ...)end)
 f:Hide()
 
 local playerGUID, inCombat, updateTimer
@@ -91,7 +89,7 @@ do
 			return formatString:format(total / (twoHanded and count - 1 or count)), incomplete
 		end
 
-		if slot == INVSLOT_BODY or slot == INVSLOT_TABARD then
+		if slot == INVSLOT_BODY or slot == INVSLOT_RANGED or slot == INVSLOT_TABARD then
 			return scan(unit, slot + 1, total, count, twoHanded, incomplete)
 		end
 
