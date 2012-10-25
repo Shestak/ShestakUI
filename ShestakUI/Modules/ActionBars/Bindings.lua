@@ -5,6 +5,7 @@ if IsAddOnLoaded("ncHoverBind") then return end
 --	Binding buttons(ncHoverBind by Nightcracker)
 ----------------------------------------------------------------------------------------
 local bind = CreateFrame("Frame", "HoverBind", UIParent)
+local oneBind = true
 
 SlashCmdList.MOUSEOVERBIND = function()
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
@@ -63,7 +64,6 @@ SlashCmdList.MOUSEOVERBIND = function()
 				self.button.id = SpellBook_GetSpellBookSlot(self.button)
 				self.button.name = GetSpellBookItemName(self.button.id, SpellBookFrame.bookType)
 
-				GameTooltip:AddLine("Trigger")
 				GameTooltip:Show()
 				GameTooltip:SetScript("OnHide", function(self)
 					self:SetOwner(bind, "ANCHOR_NONE")
@@ -114,7 +114,6 @@ SlashCmdList.MOUSEOVERBIND = function()
 					self.button.bindstring = (spellmacro == "STANCE" and "STANCEBUTTON" or "BONUSACTIONBUTTON")..self.button.id
 				end
 
-				GameTooltip:AddLine("Trigger")
 				GameTooltip:Show()
 				GameTooltip:SetScript("OnHide", function(self)
 					self:SetOwner(bind, "ANCHOR_NONE")
@@ -157,7 +156,6 @@ SlashCmdList.MOUSEOVERBIND = function()
 					end
 				end
 
-				GameTooltip:AddLine("Trigger")
 				GameTooltip:Show()
 				bind.button.bindings = {GetBindingKey(bind.button.bindstring)}
 				GameTooltip:SetScript("OnHide", function(self)
@@ -183,7 +181,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 				RunBinding("SCREENSHOT")
 				return
 			end
-			if #self.button.bindings > 0 then
+			if #self.button.bindings > 0 and oneBind then
 				for i = 1, #self.button.bindings do
 					SetBinding(self.button.bindings[i])
 				end
