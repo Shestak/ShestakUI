@@ -426,10 +426,11 @@ end)
 ----------------------------------------------------------------------------------------
 --	RangeDisplay
 ----------------------------------------------------------------------------------------
+if T.class ~= "PRIEST" then return end
 local RangeDisplayText = UIParent:CreateFontString(nil, "OVERLAY")
 RangeDisplayText:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 RangeDisplayText:SetPoint("CENTER", 0, -100)
-local RangeDisplay = CreateFrame("Frame", nil, UIParent)
+local RangeDisplay = CreateFrame("Frame")
 RangeDisplay:SetScript("OnUpdate", function()
 	local item25, item30, item40
 	if UnitCanAssist("player", "target") then
