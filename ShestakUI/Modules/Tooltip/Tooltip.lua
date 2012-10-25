@@ -259,7 +259,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			local text = ""
 
 			if UnitIsEnemy("player", unit.."target") then
-				r, g, b = 1, 0, 0
+				r, g, b = 0.85, 0.27, 0.27
 			elseif not UnitIsFriend("player", unit.."target") then
 				r, g, b = 1, 1, 0
 			end
