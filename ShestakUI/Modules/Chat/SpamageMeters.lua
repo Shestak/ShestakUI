@@ -22,7 +22,7 @@ local firstLines = {
 	"힐량 -(.*)$",											-- TinyDPS koKR
 	"Урон:(.*)$",											-- TinyDPS ruRU
 	"Исцеление:(.*)$",										-- TinyDPS ruRU
-	"^Numeration: (.*) for (.*)$",							-- Numeration
+	"^Numeration: (.*) - (.*)$",							-- Numeration
 	"alDamageMeter : (.*)$",								-- alDamageMeter
 }
 
