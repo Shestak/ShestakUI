@@ -35,7 +35,6 @@ local function PositionAndStyle()
 			if InCombatLockdown() then return end
 			buttons[i]:FadeIn()
 		end)
-
 		buttons[i]:HookScript("OnLeave", function()
 			buttons[i]:FadeOut()
 		end)
