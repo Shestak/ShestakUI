@@ -14,9 +14,9 @@ if C.announcements.spells == true then
 		20484,	-- Rebirth
 		6199,	-- Raise Ally
 		20707,	-- Soulstone
-		110309,	-- Symbiosis
 		2908,	-- Soothe
 		120668,	-- Stormlash Totem
+		16190,	-- Mana Tide Totem
 	}
 end
 
