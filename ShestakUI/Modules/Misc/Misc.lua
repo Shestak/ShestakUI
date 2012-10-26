@@ -449,7 +449,7 @@ local EnemyItems = {
 	10645,	-- 20
 	31463,	-- 25
 	835,	-- 30
-	24269,	-- 35
+	18904,	-- 35
 	28767,	-- 40
 	}
 local Target = nil
@@ -480,9 +480,9 @@ RangeDisplay:SetScript("OnUpdate", function()
 		RangeDisplayText:SetText("5-8")
 	elseif Distance == 2 then
 		RangeDisplayText:SetText("8-10")
-	elseif Distance <= 8 then
-		minDistance = Distance * 5 - 5
-		maxDistance = Distance * 5
+	elseif Distance < 9 then
+		local minDistance = Distance * 5 - 5
+		local maxDistance = Distance * 5
 		RangeDisplayText:SetText(minDistance.."-"..maxDistance)
 		RangeDisplayText:SetTextColor(0.9, 0.9, 0.3)
 	else
