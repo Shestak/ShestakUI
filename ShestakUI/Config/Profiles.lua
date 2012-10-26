@@ -67,6 +67,7 @@ if T.author == true then
 	C["automation"].tab_binder = true
 	C["automation"].cancel_bad_buffs = true
 	C["skins"].blizzard_frames = true
+	C["skins"].minimap_buttons = true
 	C["skins"].dbm = true
 	C["combattext"].crit_postfix = ""
 	C["combattext"].dk_runes = false
@@ -236,6 +237,8 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["misc"].sum_buyouts = true
 	C["misc"].move_blizzard = true
 	C["misc"].color_picker = true
+	C["misc"].enchantment_scroll = true
+	C["misc"].archaeology = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
 	C["announcements"].spells = true
@@ -255,6 +258,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["automation"].tab_binder = true
 	C["automation"].logging_combat = true
 	C["automation"].currency_cap = true
+	C["automation"].buff_on_scroll = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["skins"].atlasloot = true
