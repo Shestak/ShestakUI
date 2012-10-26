@@ -426,7 +426,7 @@ end)
 ----------------------------------------------------------------------------------------
 --	RangeDisplay
 ----------------------------------------------------------------------------------------
---if T.class ~= "PRIEST" then return end
+if T.class ~= "PRIEST" then return end
 local RangeDisplayText = UIParent:CreateFontString(nil, "OVERLAY")
 RangeDisplayText:SetFont(C.media.pixel_font, C.media.pixel_font_size * 2, C.media.pixel_font_style)
 RangeDisplayText:SetPoint("CENTER", 0, -100)
