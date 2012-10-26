@@ -14,30 +14,26 @@ frame:SetScript("OnEvent", function(self, _, ...)
 
 	if event == "SPELL_CAST_SUCCESS" or event == "SPELL_RESURRECT" then
 		if C.announcements.spells_from_all == true then
-			if not (destName and sourceName) then return end
+			if not sourceName then return end
 
 			for i, spells in pairs(spells) do
 				if spellID == spells then
-					if IsInRaid() then
-						SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "RAID")
-					elseif IsInGroup() then
-						SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "PARTY")
+					if destName == nil then
+						SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID)), T.CheckChat())
 					else
-						SendChatMessage(GetSpellLink(spellID)..": "..sourceName.." -> "..destName, "SAY")
+						SendChatMessage(GetSpellLink(spellID).." -> "..destName, T.CheckChat())
 					end
 				end
 			end
 		else
-			if not (sourceGUID == UnitGUID("player") and destName) then return end
+			if not sourceGUID == UnitGUID("player") then return end
 
 			for i, spells in pairs(spells) do
 				if spellID == spells then
-					if IsInRaid() then
-						SendChatMessage(GetSpellLink(spellID).." -> "..destName, "RAID")
-					elseif IsInGroup() then
-						SendChatMessage(GetSpellLink(spellID).." -> "..destName, "PARTY")
+					if destName == nil then
+						SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID)), T.CheckChat())
 					else
-						SendChatMessage(GetSpellLink(spellID).." -> "..destName, "SAY")
+						SendChatMessage(GetSpellLink(spellID).." -> "..destName, T.CheckChat())
 					end
 				end
 			end
