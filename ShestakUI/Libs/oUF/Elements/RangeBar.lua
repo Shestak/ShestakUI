@@ -56,7 +56,9 @@ local Update = function(self, event, unit)
 	rb:SetScript("OnUpdate", function(self, elapsed)	
 		timer = timer + elapsed
 		if timer >= .20 then
+		
 			local Distance = 0
+			
 			for key, item in pairs(Target) do
 				if IsItemInRange(item, "target") == 0 then
 					Distance = key

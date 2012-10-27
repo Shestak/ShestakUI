@@ -710,6 +710,8 @@ local function Shared(self, unit)
 				self.RangeBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.RangeBar:SetSize(217, 7)
 				self.RangeBar:SetStatusBarTexture(C.media.texture)
+				self.RangeBar:SetScript("OnShow", function() T.UpdateDistance(self) end)
+				self.RangeBar:SetScript("OnHide", function() T.UpdateDistance(self) end)
 			end
 
 			-- Talent spec
