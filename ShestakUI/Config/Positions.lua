@@ -36,9 +36,9 @@ C["position"] = {
 	["raid_utility"] = {"TOP", UIParent, "TOP", 0, -15},							-- Raid utility
 	["archaeology"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 157},			-- Archaeology frame
 	["auto_button"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -190},				-- Auto button
-	["damage_meter"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26},			-- Damage meter
-	["extra_button"] = {"BOTTOM", UIParent, "BOTTOM", 0, 350},						-- Extra action button
+	["extra_button"] = {"CENTER", UIParent, "CENTER", 0, -108},						-- Extra action button
 	["alt_power_bar"] = {"TOP", UIParent, "TOP", 0, -36},							-- Alt power bar
+	["damage_meter"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26},			-- Damage meter
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},							-- Bottom bars
 	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 330},			-- Right bars

@@ -107,6 +107,7 @@ end
 if T.oz == true then
 	C["position"].threat_meter = {"BOTTOM", UIParent, "BOTTOM", 0, 294}
 	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -402, 321}
+	C["position"].extra_button = {"BOTTOM", UIParent, "BOTTOM", 0, 350}
 	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", 0, 388}
 	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 388}
 	C["position"].unitframes.pet = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 379, 75}
