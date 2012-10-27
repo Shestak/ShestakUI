@@ -255,6 +255,7 @@ end)
 ----------------------------------------------------------------------------------------
 --  RangeDisplay
 ----------------------------------------------------------------------------------------
+if C.unitframe.enable ~= true then return end
 local RangeDisplayText = UIParent:CreateFontString(nil, "OVERLAY")
 RangeDisplayText:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 RangeDisplayText:SetPoint("CENTER", oUF_Target, "CENTER", 0, -9)
