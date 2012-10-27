@@ -8,8 +8,8 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 frame:SetScript("OnEvent", function(self, _, ...)
 	local _, event, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID = ...
-	local inInstance, instanceType = IsInInstance()
 	local spells = T.AnnounceSpells
+	local inInstance, instanceType = IsInInstance()
 	if not (inInstance and (instanceType == "raid" or instanceType == "party")) then return end
 
 	if event == "SPELL_CAST_SUCCESS" or event == "SPELL_RESURRECT" then
@@ -26,7 +26,7 @@ frame:SetScript("OnEvent", function(self, _, ...)
 				end
 			end
 		else
-			if not sourceGUID == UnitGUID("player") then return end
+			if not (sourceGUID == UnitGUID("player") and sourceName == T.name) then return end
 
 			for i, spells in pairs(spells) do
 				if spellID == spells then
