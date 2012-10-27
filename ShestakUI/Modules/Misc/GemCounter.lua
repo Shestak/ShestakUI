@@ -112,27 +112,27 @@ function addon.GetGems()
 end
 
 function addon.GetPrismatic(gem)
-	local testGem = (select(10, GetItemInfo(gem)))
-	if testGem then
-		if testGem:find("dragonseye") then
+	local item = select(10, GetItemInfo(gem))
+	if item then
+		if item:find("dragonseye") then
 			PrismaticGems = PrismaticGems + 1
 		end
 	end
 end
 
 function addon.GetGemColors(gem)
-	local testGem = (select(7, GetItemInfo(gem)))
-	if testGem == Red_localized then
+	local item = select(7, GetItemInfo(gem))
+	if item == Red_localized then
 		RedGems = RedGems + 1
-	elseif testGem == Blue_localized then
+	elseif item == Blue_localized then
 		BlueGems = BlueGems + 1
-	elseif testGem == Yellow_localized then
+	elseif item == Yellow_localized then
 		YellowGems = YellowGems + 1
-	elseif testGem == Green_localized then
+	elseif item == Green_localized then
 		GreenGems = GreenGems + 1
-	elseif testGem == Purple_localized then
+	elseif item == Purple_localized then
 		PurpleGems = PurpleGems + 1
-	elseif testGem == Orange_localized then
+	elseif item == Orange_localized then
 		OrangeGems = OrangeGems + 1
 	else
 		return

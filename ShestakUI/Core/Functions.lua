@@ -30,6 +30,22 @@ T.RGBToHex = function(r, g, b)
 end
 
 ----------------------------------------------------------------------------------------
+--	Chat channel check
+----------------------------------------------------------------------------------------
+T.CheckChat = function(warning)
+	if IsInRaid() then
+		if warning and (UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) then
+			return "RAID_WARNING"
+		else
+			return "RAID"
+		end
+	elseif IsInGroup() then
+		return "PARTY"
+	end
+	return "SAY"
+end
+
+----------------------------------------------------------------------------------------
 --	Player's Role and Specialization check
 ----------------------------------------------------------------------------------------
 T.CheckSpec = function(tree)
