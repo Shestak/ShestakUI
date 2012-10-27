@@ -712,6 +712,9 @@ local function Shared(self, unit)
 				self.RangeBar:SetStatusBarTexture(C.media.texture)
 				self.RangeBar:SetScript("OnShow", function() T.UpdateDistance(self) end)
 				self.RangeBar:SetScript("OnHide", function() T.UpdateDistance(self) end)
+				self.RangeBar.bg = self.RangeBar:CreateTexture(nil, "BORDER")
+				self.RangeBar.bg:SetAllPoints()
+				self.RangeBar.bg:SetTexture(C.media.texture)
 			end
 
 			-- Talent spec

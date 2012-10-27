@@ -67,10 +67,13 @@ local Update = function(self, event, unit)
 
 			if Distance == 5 then
 				rb:SetStatusBarColor(0.3, 0.9, 0.3)
+				if rb.bg then rb.bg:SetVertexColor(0.3, 0.9, 0.3, 0.2) end
 			elseif Distance == 8 then
 				rb:SetStatusBarColor(0.9, 0.3, 0.3)
+				if rb.bg then rb.bg:SetVertexColor(0.9, 0.3, 0.3, 0.2) end
 			else	
 				rb:SetStatusBarColor(0.9, 0.9, 0.3)
+				if rb.bg then rb.bg:SetVertexColor(0.9, 0.9, 0.3, 0.2) end
 			end
 
 			rb:SetValue(Distance)
