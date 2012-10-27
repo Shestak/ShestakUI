@@ -61,7 +61,7 @@ local function init()
 			for _, cand in ipairs(players) do
 				-- Add candidate button
 				info.text = cand
-				info.colorCode = hexColors[this_class] or hexColors["UNKOWN"]
+				info.colorCode = hexColors[this_class] or hexColors["UNKNOWN"]
 				info.textHeight = 12
 				info.value = player_indices[cand]
 				info.notCheckable = 1
@@ -96,7 +96,7 @@ local function init()
 			if cname then
 				info.isTitle = nil
 				info.text = cname
-				info.colorCode = hexColors[class] or hexColors["UNKOWN"]
+				info.colorCode = hexColors[class] or hexColors["UNKNOWN"]
 				info.textHeight = 12
 				info.hasArrow = 1
 				info.notCheckable = 1
@@ -113,7 +113,7 @@ local function init()
 			if candidate then
 				-- Add candidate button
 				info.text = candidate -- coloredNames[candidate]
-				info.colorCode = hexColors[className] or hexColors["UNKOWN"]
+				info.colorCode = hexColors[className] or hexColors["UNKNOWN"]
 				info.textHeight = 12
 				info.value = i
 				info.notCheckable = 1
@@ -158,7 +158,7 @@ local function init()
 	for i = 1, MAX_RAID_MEMBERS do
 		candidate, lclass, className = GetMasterLootCandidate(slot, i)
 		if candidate and candidate == playerName then
-			info.colorCode = hexColors[className] or hexColors["UNKOWN"]
+			info.colorCode = hexColors[className] or hexColors["UNKNOWN"]
 			info.isTitle = nil
 			info.textHeight = 12
 			info.value = i
