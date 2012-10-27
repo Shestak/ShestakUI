@@ -22,7 +22,7 @@ local firstLines = {
 	"힐량 -(.*)$",											-- TinyDPS koKR
 	"Урон:(.*)$",											-- TinyDPS ruRU
 	"Исцеление:(.*)$",										-- TinyDPS ruRU
-	"^Numeration: (.*) for (.*)$",							-- Numeration
+	"^Numeration: (.*) - (.*)$",							-- Numeration
 	"alDamageMeter : (.*)$",								-- alDamageMeter
 }
 
@@ -46,6 +46,7 @@ local events = {
 	"CHAT_MSG_RAID_LEADER",
 	"CHAT_MSG_SAY",
 	"CHAT_MSG_WHISPER",
+	"CHAT_MSG_WHISPER_INFORM",
 	"CHAT_MSG_YELL",
 }
 

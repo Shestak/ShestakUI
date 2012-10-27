@@ -177,6 +177,10 @@ SlashCmdList.MOUSEOVERBIND = function()
 		end
 
 		function bind:Listener(key)
+			if GetBindingKey(key) == "OPENCHAT" then
+				DEFAULT_CHAT_FRAME.editBox:Show()
+				return
+			end
 			if GetBindingByKey(key) == "SCREENSHOT" then
 				RunBinding("SCREENSHOT")
 				return

@@ -84,6 +84,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 
 		-- Cinematic popup
 		_G["CinematicFrameCloseDialog"]:SetTemplate("Transparent")
+		_G["CinematicFrameCloseDialog"]:SetScale(C.general.uiscale)
 		_G["CinematicFrameCloseDialogConfirmButton"]:SkinButton()
 		_G["CinematicFrameCloseDialogResumeButton"]:SkinButton()
 
@@ -221,6 +222,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		T.SkinCloseButton(_G["ChannelPulloutCloseButton"])
 		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 		T.SkinCloseButton(_G["ItemRefCloseButton"])
+		T.SkinCloseButton(_G["BNToastFrameCloseButton"])
 		if C.skins.blizzard_frames == true then
 			if T.client == "ruRU" then
 				_G["DeclensionFrame"]:SetTemplate("Transparent")

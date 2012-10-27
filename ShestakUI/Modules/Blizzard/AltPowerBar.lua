@@ -3,6 +3,14 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Skin AltPowerBar(by Tukz)
 ----------------------------------------------------------------------------------------
+local blizzColors = {
+	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDAMETHYST_HORIZONTAL_FILL.BLP"] = {r = 0.50, g = 0.45, b = 0.75},
+	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDCOBALT_HORIZONTAL_FILL.BLP"] = {r = 0.09, g = 0.26, b = 0.57},
+	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDJADE_HORIZONTAL_FILL.BLP"] = {r = 0.09, g = 0.34, b = 0.26},
+	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDJASPER_HORIZONTAL_FILL.BLP"] = {r = 0.59, g = 0.18, b = 0},
+	["INTERFACE\\UNITPOWERBARALT\\MAP_HORIZONTAL_FILL.BLP"] = {r = 0.97, g = 0.81, b = 0}
+}
+
 -- Get rid of old AltPowerBar
 PlayerPowerBarAlt:UnregisterEvent("UNIT_POWER_BAR_SHOW")
 PlayerPowerBarAlt:UnregisterEvent("UNIT_POWER_BAR_HIDE")
@@ -63,12 +71,10 @@ status:SetStatusBarTexture(C.media.texture)
 status:SetMinMaxValues(0, 100)
 status:SetPoint("TOPLEFT", bar, "TOPLEFT", 2, -2)
 status:SetPoint("BOTTOMRIGHT", bar, "BOTTOMRIGHT", -2, 2)
-status:SetStatusBarColor(0.3, 0.7, 0.3)
 
 status.bg = status:CreateTexture(nil, "BACKGROUND")
 status.bg:SetAllPoints(status)
 status.bg:SetTexture(C.media.texture)
-status.bg:SetVertexColor(0.3, 0.7, 0.3, 0.25)
 
 status.text = status:CreateFontString(nil, "OVERLAY")
 status.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
@@ -83,9 +89,15 @@ status:SetScript("OnUpdate", function(self, elapsed)
 	if update >= 1 then
 		local power = UnitPower("player", ALTERNATE_POWER_INDEX)
 		local mpower = UnitPowerMax("player", ALTERNATE_POWER_INDEX)
+		local texture, r, g, b = UnitAlternatePowerTextureInfo("player", 2, 0)
+		if blizzColors[texture] then
+			r, g, b = blizzColors[texture].r, blizzColors[texture].g, blizzColors[texture].b
+		end
 		self:SetMinMaxValues(0, mpower)
 		self:SetValue(power)
-		self.text:SetText(power.."/"..mpower.." - "..floor(power / mpower * 100).."%")
+		self.text:SetText(power.."/"..mpower)
+		self:SetStatusBarColor(r, g, b)
+		self.bg:SetVertexColor(r, g, b, 0.25)
 		update = 0
 	end
 end)

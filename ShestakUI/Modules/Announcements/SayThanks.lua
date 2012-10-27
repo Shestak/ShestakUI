@@ -6,7 +6,6 @@ if C.announcements.says_thanks ~= true then return end
 ----------------------------------------------------------------------------------------
 local ST_Buffs = {
 	[29166] = true,		-- Innervate
-	[110309] = true,	-- Symbiosis
 }
 
 local frame = CreateFrame("Frame")
