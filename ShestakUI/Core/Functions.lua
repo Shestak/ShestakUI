@@ -984,89 +984,11 @@ T.UpdateComboPoint = function(self, event, unit)
 		end
 	end
 	
-	if T.class ~= "PRIEST" or UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") or T.level ~= 90 then rb.Bar:Hide() end
-	if cpoints[1]:IsShown() or rb.Bar:IsShown() then
+	if cpoints[1]:IsShown() then
 		if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
 	else
 		if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
 	end
-end
-
-T.UpdateDistance = function(self, event, unit)
-	if UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") then return end
-	local RangeUpdateFrame
-	
-	local FriendItems = {
-		37727,	-- 5
-		32321,	-- 10
-		1251,	-- 15
-		21519,	-- 20
-		31463,	-- 25
-		1180,	-- 30
-		18904,	-- 35
-		34471,	-- 40
-		}
-	local EnemyItems = {
-		37727,	-- 5
-		32321,	-- 10
-		33069,	-- 15
-		10645,	-- 20
-		31463,	-- 25
-		835,	-- 30
-		18904,	-- 35
-		28767,	-- 40
-		}
-	
-	local Target = nil
-	local Distance = 0
-	
-	local rb = self.RangeBar
-	
-	rb.Bar:SetMinMaxValues(0, 7)
-	
-	if T.class ~= "PRIEST" or UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") or T.level ~= 90 then rb:Hide() end
-	
-	local timer = 0
-	local UpdateDistance = function(self, elapsed)
-		timer = timer + elapsed
-		if timer >= .20 then
-			if UnitCanAssist("player", "target") and UnitName("target") ~= T.name then
-				Target = FriendItems
-				if T.class == "PRIEST" and not(UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and T.level == 90 then rb:Show() end
-			elseif UnitCanAttack("player", "target") then
-				Target = EnemyItems
-				if T.class == "PRIEST" and not(UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and T.level == 90 then rb:Show() end
-			else
-				rb:Hide()
-			end
-			
-			if Target ~= nil then
-				for key, item in pairs(Target) do
-					if IsItemInRange(item, "target") == 0 then
-						Distance = key
-					end
-				end
-			end
-			
-			if Distance == 5 then
-				rb.Bar:SetStatusBarColor(0.3, 0.9, 0.3)
-			elseif Distance == 8 then
-				rb.Bar:SetStatusBarColor(0.9, 0.3, 0.3)
-			else	
-				rb.Bar:SetStatusBarColor(0.9, 0.9, 0.3)
-			end
-			
-			rb.Bar:SetValue(Distance)
-			
-			Distance = 0
-			timer = 0
-		end
-	end
-	
-	RangeUpdateFrame = CreateFrame("FRAME")
-	RangeUpdateFrame:SetScript("OnUpdate", UpdateDistance)
-	
-	Target = nil
 end
 
 local ticks = {}

@@ -705,17 +705,11 @@ local function Shared(self, unit)
 			
 			-- Priest Range bar
 			if C.unitframe_class_bar.range == true then
-				self.RangeBar = CreateFrame("Frame", nil, self)
+				self.RangeBar = CreateFrame("StatusBar", self:GetName().."_RangeBar", self)
 				self.RangeBar:CreateBackdrop("Default")
 				self.RangeBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.RangeBar:SetSize(217, 7)
-				
-				self.RangeBar.Bar = CreateFrame("StatusBar", nil, self.RangeBar)
-				self.RangeBar.Bar:SetPoint("LEFT", self.RangeBar, "LEFT", 0, 0)
-				self.RangeBar.Bar:SetSize(217, 7)
-				self.RangeBar.Bar:SetStatusBarTexture(C.media.texture)
-				
-				self.RangeBar.Override = T.UpdateDistance
+				self.RangeBar:SetStatusBarTexture(C.media.texture)
 			end
 
 			-- Talent spec
