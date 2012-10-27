@@ -13,6 +13,7 @@
 	<Script file="Elements\Aura.lua"/>
 	<Script file="Elements\Health.lua"/>
 	<Script file="Elements\CPoints.lua"/>
+	<Script file="Elements\RangeBar.lua"/>
 	<Script file="Elements\RIcons.lua"/>
 	<Script file="Elements\Leader.lua"/>
 	<Script file="Elements\Combat.lua"/>
@@ -37,7 +38,6 @@
 	<Script file="Elements\Resurrect.lua"/>
 	<Script file="Elements\HarmonyOrbs.lua"/>
 	<Script file="Elements\ShadowOrbs.lua"/>
-	<Script file="Elements\RangeBar.lua"/>
 
 	<Script file="Modules\AuraTracker.lua"/>
 	<Script file="Modules\AuraWatch.lua"/>
