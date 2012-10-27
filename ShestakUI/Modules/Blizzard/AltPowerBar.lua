@@ -5,9 +5,9 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 local blizzColors = {
 	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDAMETHYST_HORIZONTAL_FILL.BLP"] = {r = 0.50, g = 0.45, b = 0.75},
-	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDCOBALT_HORIZONTAL_FILL.BLP"] = {r = 0.35, g = 0.66, b = 0.78},
-	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDJADE_HORIZONTAL_FILL.BLP"] = {r = 0.48, g = 0.75, b = 0.47},
-	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDJASPER_HORIZONTAL_FILL.BLP"] = {r = 0.72, g = 0.48, b = 0.48},
+	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDCOBALT_HORIZONTAL_FILL.BLP"] = {r = 0.12, g = 0.56, b = 1},
+	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDJADE_HORIZONTAL_FILL.BLP"] = {r = 0.13, g = 0.55, b = 0.13},
+	["INTERFACE\\UNITPOWERBARALT\\STONEGUARDJASPER_HORIZONTAL_FILL.BLP"] = {r = 1, g = 0.4, b = 0},
 	["INTERFACE\\UNITPOWERBARALT\\MAP_HORIZONTAL_FILL.BLP"] = {r = 0.97, g = 0.81, b = 0}
 }
 
@@ -95,7 +95,7 @@ status:SetScript("OnUpdate", function(self, elapsed)
 		end
 		self:SetMinMaxValues(0, mpower)
 		self:SetValue(power)
-		self.text:SetText(power.."/"..mpower.." - "..floor(power / mpower * 100).."%")
+		self.text:SetText(power.."/"..mpower)
 		self:SetStatusBarColor(r, g, b)
 		self.bg:SetVertexColor(r, g, b, 0.25)
 		update = 0
