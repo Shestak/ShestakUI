@@ -50,9 +50,9 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						end
 
 						if bar.color then
-							tbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
+							tbar:SetStatusBarColor(bar.color.r, bar.color.g, bar.color.b)
 							tbar:SetBackdrop(backdrop)
-							tbar:SetBackdropColor(unpack(C.unitframe.uf_color), 0.2)
+							tbar:SetBackdropColor(bar.color.r, bar.color.g, bar.color.b, 0.15)
 						else
 							tbar:SetStatusBarColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB)
 							tbar:SetBackdrop(backdrop)
@@ -320,12 +320,12 @@ function T.UploadDBM()
 	DBM_SavedOptions.SpecialWarningX = 0
 	DBM_SavedOptions.SpecialWarningY = 75
 
-	DBT_SavedOptions["DBM"].StartColorR = 0.4
-	DBT_SavedOptions["DBM"].StartColorG = 0.4
-	DBT_SavedOptions["DBM"].StartColorB = 0.4
-	DBT_SavedOptions["DBM"].EndColorR = 1.0
-	DBT_SavedOptions["DBM"].EndColorG = 0.2
-	DBT_SavedOptions["DBM"].EndColorB = 0.2
+	DBT_SavedOptions["DBM"].StartColorR = 0.25
+	DBT_SavedOptions["DBM"].StartColorG = 0.25
+	DBT_SavedOptions["DBM"].StartColorB = 0.25
+	DBT_SavedOptions["DBM"].EndColorR = 0.25
+	DBT_SavedOptions["DBM"].EndColorG = 0.25
+	DBT_SavedOptions["DBM"].EndColorB = 0.25
 	DBT_SavedOptions["DBM"].Scale = 1
 	DBT_SavedOptions["DBM"].HugeScale = 1
 	DBT_SavedOptions["DBM"].BarXOffset = 0
