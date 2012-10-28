@@ -1002,14 +1002,6 @@ T.UpdateComboPoint = function(self, event, unit)
 			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
 		end
 	end
-
-T.UpdateDistance = function(self)
-	if self.CPoints then return end
-	if self.RangeBar:IsShown() then
-		if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-	else
-		if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
-	end
 end
 
 local ticks = {}
