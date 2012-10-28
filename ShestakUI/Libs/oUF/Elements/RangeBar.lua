@@ -7,8 +7,6 @@ if C.unitframe.enable ~= true or C.unitframe_class_bar.range ~= true then return
 local parent, ns = ...
 local oUF = ns.oUF
 
-local RangeUpdateFrame
-
 local Items = {
 	["Friend"] = {
 		37727,	-- 5
@@ -30,6 +28,18 @@ local Items = {
 		18904,	-- 35
 		28767,	-- 40
 		},
+	}
+	
+local Colors = {
+	{0.3, 0.3, 0.9},	-- 0-5
+	{0.3, 0.9, 0.9},	-- 5-10
+	{0.3, 0.9, 0.9},	-- 10-15
+	{0.9, 0.9, 0.3},	-- 15-20
+	{0.9, 0.9, 0.3},	-- 20-25
+	{0.3, 0.9, 0.3},	-- 25-30
+	{0.9, 0.9, 0.3},	-- 30-35
+	{0.9, 0.9, 0.3},	-- 35-40
+	{0.9, 0.3, 0.3},	-- >40
 	}
 
 local Update = function(self, event, unit)
@@ -65,20 +75,12 @@ local Update = function(self, event, unit)
 				end
 			end
 			
-			if Distance == 0 then
-				if rb.bg then rb.bg:SetVertexColor(0.3, 0.3, 0.9, 0.2) end
-			elseif Distance > 0 and Distance < 3 then
-				rb:SetStatusBarColor(0.3, 0.9, 0.9)
-				if rb.bg then rb.bg:SetVertexColor(0.3, 0.9, 0.9, 0.2) end
-			elseif Distance == 5 then
-				rb:SetStatusBarColor(0.3, 0.9, 0.3)
-				if rb.bg then rb.bg:SetVertexColor(0.3, 0.9, 0.3, 0.2) end
-			elseif Distance == 8 then
-				rb:SetStatusBarColor(0.9, 0.3, 0.3)
-				if rb.bg then rb.bg:SetVertexColor(0.9, 0.3, 0.3, 0.2) end
-			else	
-				rb:SetStatusBarColor(0.9, 0.9, 0.3)
-				if rb.bg then rb.bg:SetVertexColor(0.9, 0.9, 0.3, 0.2) end
+			for key, color in pairs(Colors) do
+				local r, g, b = unpack(color)
+				if Distance == key - 1 then
+					rb:SetStatusBarColor(r, g, b)
+					if rb.bg then rb.bg:SetVertexColor(r, g, b, 0.2) end
+				end
 			end
 
 			rb:SetValue(Distance)
