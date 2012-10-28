@@ -134,6 +134,24 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						bar.injected = true
 					end
 					bar:ApplyStyle()
+					bar.ApplyPosition = function()
+						if C.unitframe.enable ~= true then return end
+						self.mainAnchor:ClearAllPoints()
+						if C.unitframe.portrait_enable == true then
+							if bar.owner.options.IconRight then
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(138 + C.unitframe.portrait_width), -69)
+							else
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(110 + C.unitframe.portrait_width), -69)
+							end
+						else
+							if bar.owner.options.IconRight then
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -131, -69)
+							else
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -103, -69)
+							end
+						end
+					end
+					bar:ApplyPosition()
 				end
 			end
 		end
