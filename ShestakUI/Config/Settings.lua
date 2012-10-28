@@ -20,8 +20,8 @@ C["media"] = {
 	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for wispers
 	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
 	["proc_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Proc.mp3]],			-- Sound for procs
-	["border_color"] = {0.3, 0.3, 0.3, 1},		-- Color for borders
-	["backdrop_color"] = {0, 0, 0, 1},		-- Color for borders backdrop
+	["border_color"] = {0.2, 0.2, 0.2, 1},		-- Color for borders
+	["backdrop_color"] = {0, 0, 0, 1},			-- Color for borders backdrop
 	["overlay_color"] = {0, 0, 0, 0.7},			-- Color for action bars overlay
 }
 
@@ -107,8 +107,8 @@ C["automation"] = {
 --	Skins options
 ----------------------------------------------------------------------------------------
 C["skins"] = {
-	["blizzard_frames"] = false,				-- Blizzard frames skin
-	["minimap_buttons"] = false,				-- Skin addons icons on minimap
+	["blizzard_frames"] = true,					-- Blizzard frames skin
+	["minimap_buttons"] = true,					-- Skin addons icons on minimap
 	["clcprot"] = false,						-- CLCProt skin
 	["clcret"] = false,							-- CLCRet skin
 	["combustion_helper"] = false,				-- CombustionHelper skin
@@ -414,7 +414,7 @@ C["unitframe"] = {
 	-- Main
 	["enable"] = true,							-- Enable unit frames
 	["own_color"] = true,						-- Set your color for health bars
-	["uf_color"] = {0.3, 0.3, 0.3, 1},			-- Color for UF if ["own_color"] = true
+	["uf_color"] = {0.25, 0.25, 0.25},			-- Color for UF if ["own_color"] = true
 	["enemy_health_color"] = true,				-- If enable, enemy target color is red
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
 	["color_value"] = false,					-- Health/mana value is colored
