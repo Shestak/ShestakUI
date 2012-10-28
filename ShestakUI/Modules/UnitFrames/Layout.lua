@@ -717,6 +717,19 @@ local function Shared(self, unit)
 				self.RangeBar.bg:SetTexture(C.media.texture)
 			end
 
+			-- Priest Range bar
+			if C.unitframe_class_bar.range == true and T.class == "PRIEST" then
+				self.RangeBar = CreateFrame("StatusBar", self:GetName().."_RangeBar", self)
+				self.RangeBar:CreateBackdrop("Default")
+				self.RangeBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.RangeBar:SetSize(217, 7)
+				self.RangeBar:SetStatusBarTexture(C.media.texture)
+
+				self.RangeBar.bg = self.RangeBar:CreateTexture(nil, "BORDER")
+				self.RangeBar.bg:SetAllPoints()
+				self.RangeBar.bg:SetTexture(C.media.texture)
+			end
+
 			-- Talent spec
 			if C.unitframe.plugins_talents == true then
 				self.Talents = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
@@ -748,7 +761,7 @@ local function Shared(self, unit)
 				self.Friendship.Value = T.SetFontString(self.Friendship, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 				self.Friendship.Value:SetPoint("CENTER")
 				self.Friendship.Value:SetTextColor(1, 1, 1)
-				self:Tag(self.Friendship.Value, "[friendshipstanding] - [curfriendship]/8400")
+				self:Tag(self.Friendship.Value, "[friendshipstanding] - [curfriendship]/[maxfriendship]")
 			end
 		end
 

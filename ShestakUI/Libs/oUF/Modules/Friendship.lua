@@ -30,6 +30,17 @@ local function GetFriendshipID()
 end
 
 for tag, func in pairs({
+	["maxfriendship"] = function()
+		local id = GetFriendshipID()
+		if id then
+			local _, cur, max = GetFriendshipReputationByID(id)
+			if cur == max then
+				return "999"
+			else
+				return "8400"
+			end
+		end
+	end,
 	["curfriendship"] = function()
 		local id = GetFriendshipID()
 		if id then
@@ -71,11 +82,15 @@ for tag, func in pairs({
 end
 
 local function OnEnter(self)
-	local _, cur, _, details, _, standing, threshold = GetFriendshipReputationByID(GetFriendshipID())
+	local _, cur, max, details, _, standing, threshold = GetFriendshipReputationByID(GetFriendshipID())
 	GameTooltip:SetOwner(self, "ANCHOR_TOPRIGHT")
 	GameTooltip:SetText(UnitName("target"), 1, 1, 1)
 	GameTooltip:AddLine(details, nil, nil, nil, true)
-	GameTooltip:AddLine(standing.." ("..(cur - threshold) .. " / 8400)", 1, 1, 1, true)
+	if cur == max then
+		GameTooltip:AddLine(standing.." ("..(cur - threshold).." / 999)", 1, 1, 1, true)
+	else
+		GameTooltip:AddLine(standing.." ("..(cur - threshold).." / 8400)", 1, 1, 1, true)
+	end
 	GameTooltip:Show()
 end
 
@@ -84,9 +99,9 @@ local function Update(self)
 
 	local id = GetFriendshipID()
 	if id then
-		local _, cur, _, _, _, _, threshold = GetFriendshipReputationByID(id)
-		friendship:SetMinMaxValues(0, 8400)
-		friendship:SetValue(cur - threshold)
+		local _, cur, max = GetFriendshipReputationByID(id)
+		friendship:SetMinMaxValues(0, max)
+		friendship:SetValue(cur)
 		friendship:Show()
 		if self.Auras then
 			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19)

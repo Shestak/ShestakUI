@@ -956,7 +956,6 @@ T.UpdateComboPoint = function(self, event, unit)
 	if unit == "pet" then return end
 
 	local cpoints = self.CPoints
-	local rb = self.RangeBar
 	local cp
 	if UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") then
 		cp = GetComboPoints("vehicle", "target")
@@ -991,17 +990,18 @@ T.UpdateComboPoint = function(self, event, unit)
 		elseif cpoints[1]:IsShown() or self.RangeBar:IsShown() then
 			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+		elseif self.Friendship:IsShown() then
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
 		else
 			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
 		end
 	else
-		if cpoints[1]:IsShown() then
+		if cpoints[1]:IsShown() or self.Friendship:IsShown() then
 			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
 		else
 			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
 		end
 	end
-end
 
 T.UpdateDistance = function(self)
 	if self.CPoints then return end
