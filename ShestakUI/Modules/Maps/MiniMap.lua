@@ -94,7 +94,7 @@ GuildInstanceDifficulty:SetScale(0.75)
 -- Challenge Mode icon
 MiniMapChallengeMode:SetParent(Minimap)
 MiniMapChallengeMode:ClearAllPoints()
-MiniMapChallengeMode:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, 2)
+MiniMapChallengeMode:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, -2)
 MiniMapChallengeMode:SetScale(0.75)
 
 -- Invites icon
