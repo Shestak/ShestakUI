@@ -49,7 +49,7 @@ lpanels:CreateLayout("Load For All", {
 			self:Hide()
 			if b == "LeftButton" then SendChatMessage("", "AFK") end
 		end,
-		OnEnter = function(self) self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b) end,
+		OnEnter = function(self) self:SetBackdropBorderColor(1, 0.82, 0) end,
 		OnLeave = function(self) self:SetBackdropBorderColor(unpack(C.media.border_color)) end
 	},
 })
