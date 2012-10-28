@@ -201,9 +201,9 @@ end
 --	Style buttons function
 ----------------------------------------------------------------------------------------
 T.SetModifiedBackdrop = function(self)
-	self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	self:SetBackdropBorderColor(1, 0.82, 0)
 	if self.overlay then
-		self.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
+		self.overlay:SetVertexColor(1, 0.82, 0, 0.3)
 	end
 end
 
