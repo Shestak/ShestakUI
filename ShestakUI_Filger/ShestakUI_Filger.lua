@@ -142,15 +142,6 @@ function Filger:DisplayActives()
 					bar.bg:SetTemplate("Default")
 				end
 
-				if bar.background then
-					bar.background = _G[bar.background:GetName()]
-				else
-					bar.background = bar.statusbar:CreateTexture(nil, "BACKGROUND")
-					bar.background:SetAllPoints()
-					bar.background:SetTexture(C.media.texture)
-					bar.background:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
-				end
-
 				if bar.time then
 					bar.time = _G[bar.time:GetName()]
 				else
