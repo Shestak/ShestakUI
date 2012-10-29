@@ -411,6 +411,7 @@ local function Local(o)
 	if o == "UIConfigunitframe_class_barshard" then o = L_GUI_UF_PLUGINS_SHARD_BAR end
 	if o == "UIConfigunitframe_class_barrune" then o = L_GUI_UF_PLUGINS_RUNE_BAR end
 	if o == "UIConfigunitframe_class_bartotem" then o = L_GUI_UF_PLUGINS_TOTEM_BAR end
+	if o == "UIConfigunitframe_class_barrange" then o = L_GUI_UF_PLUGINS_RANGE_BAR end
 
 	-- Raid Frames options
 	if o == "UIConfigraidframe" then o = RAID_FRAMES_LABEL end

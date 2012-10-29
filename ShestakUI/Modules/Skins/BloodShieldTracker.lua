@@ -10,6 +10,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	if not IsAddOnLoaded("BloodShieldTracker") then return end
 
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"] = {} end
+	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["AMSBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["AMSBar"] = {} end
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PWSBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PWSBar"] = {} end
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["ShieldBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["ShieldBar"] = {} end
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["HealthBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["HealthBar"] = {} end
@@ -19,6 +20,9 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["TotalAbsorbsBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["TotalAbsorbsBar"] = {} end
 	if not BloodShieldTrackerDB["profiles"]["Default"]["bars"]["BloodChargeBar"] then BloodShieldTrackerDB["profiles"]["Default"]["bars"]["BloodChargeBar"] = {} end
 
+	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["AMSBar"]["border"] = false
+	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["AMSBar"]["texture"] = "Smooth"
+	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["AMSBar"]["scale"] = 1
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PWSBar"]["border"] = false
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PWSBar"]["texture"] = "Smooth"
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["PWSBar"]["scale"] = 1
@@ -45,6 +49,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	BloodShieldTrackerDB["profiles"]["Default"]["bars"]["BloodChargeBar"]["scale"] = 1
 
 	local bars = {
+		"BloodShieldTracker_AMSBar",
 		"BloodShieldTracker_PWSBar",
 		"BloodShieldTracker_EstimateBar",
 		"BloodShieldTracker_ShieldBar",

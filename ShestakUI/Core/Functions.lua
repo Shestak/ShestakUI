@@ -983,10 +983,24 @@ T.UpdateComboPoint = function(self, event, unit)
 		end
 	end
 
-	if cpoints[1]:IsShown() then
-		if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+	if self.RangeBar then
+		if cpoints[1]:IsShown() and self.RangeBar:IsShown() then
+			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 33) end
+		elseif cpoints[1]:IsShown() or self.RangeBar:IsShown() then
+			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+		elseif self.Friendship and self.Friendship:IsShown() then
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+		else
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
+		end
 	else
-		if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
+		if cpoints[1]:IsShown() or (self.Friendship and self.Friendship:IsShown()) then
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+		else
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
+		end
 	end
 end
 

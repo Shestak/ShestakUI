@@ -32,7 +32,7 @@ L_ANNOUNCE_FP_PRE = "%s ha preparato un/una %s."
 L_ANNOUNCE_FP_PUT = "%s ha messo già un/una %s."
 L_ANNOUNCE_FP_CAST = "%s sta lanciando %s."
 L_ANNOUNCE_FP_CLICK = "%s sta lanciando %s. Cliccate!"
-L_ANNOUNCE_FP_USE = "%s used a %s." -- Needs review
+L_ANNOUNCE_FP_USE = "%s ha utilizzato un/una %s."
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Nessun talento"
@@ -413,7 +413,7 @@ L_SLASHCMD_HELP = {
 
 -- ExploreMap
 L_EXTRA_EXPLORED = "Esplorato/a: "
-L_EXTRA_ZONEACHID = { -- Needs review
+L_EXTRA_ZONEACHID = {
 	-- http://www.wowhead.com/achievement=*
 	-- e(X)plore achievement id, (Q)uest achievement id
 	["Regni Orientali"]					= {X =   42, A =    0, H =    0},

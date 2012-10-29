@@ -374,6 +374,7 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "開啟聖光能量欄"
 L_GUI_UF_PLUGINS_SHARD_BAR = "開啟靈魂碎片欄"
 L_GUI_UF_PLUGINS_RUNE_BAR = "符文條"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "圖騰欄"
+L_GUI_UF_PLUGINS_RANGE_BAR = "開啟距離欄"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "仇恨邊框"
