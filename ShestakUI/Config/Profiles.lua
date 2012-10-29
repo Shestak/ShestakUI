@@ -425,6 +425,8 @@ end
 --	Majestic Config
 ----------------------------------------------------------------------------------------
 if T.coauthor == true then
+	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
+	C["position"].extra_button = {"CENTER", UIParent, "CENTER", -74, -12}
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
 	C["misc"].invite_keyword = "инв"
