@@ -540,38 +540,40 @@ end
 refreshAddOnMenu()
 
 local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_LOGIN")
-frame:HookScript("OnEvent", function(self, event)
-	self:UnregisterEvent(event)
-	if SavedPositions.MinimapAnchor == nil then return end
-	position = SavedPositions.MinimapAnchor[3]
-	UpdateAnchor()
-	MenuBG:ClearAllPoints()
-	MenuBG:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontalReverse, Minimap, MinimapAnchorVerticalReverse..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor, 3 * MinimapAnchorVerticalFactor)
-	AddonBG:ClearAllPoints()
-	AddonBG:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontal, MenuBG, MinimapAnchorVertical..MinimapAnchorHorizontal, 0, 0)
-	OpenMenuBG:ClearAllPoints()
-	OpenMenuBG:SetPoint(MinimapAnchorVertical, MenuBG, MinimapAnchorVertical, 0, 0)
-	expandbutton:ClearAllPoints()
-	expandbutton:SetPoint(MinimapAnchorVerticalReverse, AddonBG, MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor * -1)
-	lastMainMenuEntryID = 0
-	for index, value in ipairs(C.togglemainmenu) do
-		if addonmenuitems[index]:IsShown() then
-			addonmenuitems[index]:ClearAllPoints()
-			if lastMainMenuEntryID == 0 then
-				addonmenuitems[index]:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontal, AddonBG, MinimapAnchorVertical..MinimapAnchorHorizontal, buttonspacing(1) * MinimapAnchorHorizontalFactor, buttonspacing(1) * MinimapAnchorVerticalFactor)
-			else
-				addonmenuitems[index]:SetPoint(MinimapAnchorVertical, addonmenuitems[lastMainMenuEntryID], MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor)
+local timer = 0
+frame:HookScript("OnUpdate", function(self, elapsed)
+	timer = timer + elapsed
+	if timer >= 0.4 and SavedPositions.MinimapAnchor and SavedPositions.MinimapAnchor[3] ~= position then
+		position = SavedPositions.MinimapAnchor[3]
+		UpdateAnchor()
+		MenuBG:ClearAllPoints()
+		MenuBG:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontalReverse, Minimap, MinimapAnchorVerticalReverse..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor, 3 * MinimapAnchorVerticalFactor)
+		AddonBG:ClearAllPoints()
+		AddonBG:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontal, MenuBG, MinimapAnchorVertical..MinimapAnchorHorizontal, 0, 0)
+		OpenMenuBG:ClearAllPoints()
+		OpenMenuBG:SetPoint(MinimapAnchorVertical, MenuBG, MinimapAnchorVertical, 0, 0)
+		expandbutton:ClearAllPoints()
+		expandbutton:SetPoint(MinimapAnchorVerticalReverse, AddonBG, MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor * -1)
+		lastMainMenuEntryID = 0
+		for index, value in ipairs(C.togglemainmenu) do
+			if addonmenuitems[index]:IsShown() then
+				addonmenuitems[index]:ClearAllPoints()
+				if lastMainMenuEntryID == 0 then
+					addonmenuitems[index]:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontal, AddonBG, MinimapAnchorVertical..MinimapAnchorHorizontal, buttonspacing(1) * MinimapAnchorHorizontalFactor, buttonspacing(1) * MinimapAnchorVerticalFactor)
+				else
+					addonmenuitems[index]:SetPoint(MinimapAnchorVertical, addonmenuitems[lastMainMenuEntryID], MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor)
+				end
+				lastMainMenuEntryID = index
 			end
-			lastMainMenuEntryID = index
+		end	
+		for i = 1, GetNumAddOns() do
+			j = lastMainMenuEntryID + i
+			if addonInfo[i].is_main then
+				expandAddonButton[j]:ClearAllPoints()
+				expandAddonButton[j]:SetPoint("TOP"..MinimapAnchorHorizontalReverse, addonmenuitems[j], "TOP"..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor * -1, -2)
+			end
 		end
+		timer = 0
+		refreshAddOnMenu()
 	end
-	for i = 1, GetNumAddOns() do
-		j = lastMainMenuEntryID + i
-		if addonInfo[i].is_main then
-			expandAddonButton[j]:ClearAllPoints()
-			expandAddonButton[j]:SetPoint("TOP"..MinimapAnchorHorizontalReverse, addonmenuitems[j], "TOP"..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor * -1, -2)
-		end
-	end
-	refreshAddOnMenu()
 end)
