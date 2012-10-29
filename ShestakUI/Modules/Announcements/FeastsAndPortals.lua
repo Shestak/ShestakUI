@@ -39,12 +39,12 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 			SendChatMessage(string.format(L_ANNOUNCE_FP_CLICK, srcName, GetSpellLink(spellID)), T.CheckChat(true))
 		end
 		-- Piccolo of the Flaming Fire
-		if C.announcements.toys and spellID == 18400 then
+		if C.announcements.toys and (spellID == 18400 or spellID == 51508) then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_USE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
 		end
 	elseif subEvent == "SPELL_AURA_APPLIED" then
 		-- Turkey Feathers and Party G.R.E.N.A.D.E.
-		if C.announcements.toys and (spellID == 61781 or (spellID == 51508 or spellID == 51510)) then
+		if C.announcements.toys and spellID == 61781 then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_USE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
 		end
 	end
