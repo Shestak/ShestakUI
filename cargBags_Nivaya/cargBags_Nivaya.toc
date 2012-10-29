@@ -1,4 +1,4 @@
-## Interface: 40300
+## Interface: 50001
 ## Title: cargBags_Nivaya
 ## Author: Luzzifus
 ## RequiredDeps: ShestakUI
