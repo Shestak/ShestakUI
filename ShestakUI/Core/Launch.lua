@@ -402,7 +402,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		end
 	end
 
-	if IsAddOnLoaded("ShestakUI_DPS") and IsAddOnLoaded("ShestakUI_Heal") and T.coauthor ~= true then
+	if IsAddOnLoaded("ShestakUI_DPS") and IsAddOnLoaded("ShestakUI_Heal") then
 		StaticPopup_Show("SWITCH_RAID")
 	end
 
