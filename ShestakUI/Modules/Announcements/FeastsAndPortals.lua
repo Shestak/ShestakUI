@@ -44,7 +44,8 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 		end
 	elseif subEvent == "SPELL_AURA_APPLIED" then
 		-- Turkey Feathers and Party G.R.E.N.A.D.E.
-		if C.announcements.toys and (spellID == 61781 or (spellID == 51508 or spellID == 51510)) then
+		--if C.announcements.toys and (spellID == 61781 or (spellID == 51508 or spellID == 51510)) then
+		if C.announcements.toys and spellID == 61781 then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_USE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
 		end
 	end
