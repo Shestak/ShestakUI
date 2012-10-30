@@ -137,17 +137,33 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 					bar.ApplyPosition = function()
 						if C.unitframe.enable ~= true then return end
 						self.mainAnchor:ClearAllPoints()
-						if C.unitframe.portrait_enable == true then
-							if bar.owner.options.IconRight then
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(134 + C.unitframe.portrait_width), -30)
+						if T.oz == true then
+							if C.unitframe.portrait_enable == true then
+								if bar.owner.options.IconRight then
+									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(417 + C.unitframe.portrait_width), -30)
+								else
+									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(389 + C.unitframe.portrait_width), -30)
+								end
 							else
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(106 + C.unitframe.portrait_width), -30)
+								if bar.owner.options.IconRight then
+									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -410, -30)
+								else
+									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -382, -30)
+								end
 							end
 						else
-							if bar.owner.options.IconRight then
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -127, -30)
+							if C.unitframe.portrait_enable == true then
+								if bar.owner.options.IconRight then
+									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(134 + C.unitframe.portrait_width), -30)
+								else
+									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(106 + C.unitframe.portrait_width), -30)
+								end
 							else
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -99, -30)
+								if bar.owner.options.IconRight then
+									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -127, -30)
+								else
+									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -99, -30)
+								end
 							end
 						end
 					end
