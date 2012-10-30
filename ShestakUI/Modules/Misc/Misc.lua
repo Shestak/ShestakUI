@@ -255,26 +255,28 @@ end)
 ----------------------------------------------------------------------------------------
 --	Loot frame and DamageMeter toggle button
 ----------------------------------------------------------------------------------------
-if C.chat.enable ~= true then return end
-local LootButton = CreateFrame("Frame", "LootToggleButton", UIParent)
+if C.chat.enable ~= true or not ChatFrame3 then return end
+local LootButton = CreateFrame("Button", "LootToggleButton", UIParent)
 LootButton:EnableMouse(true)
-LootButton:SetAlpha(0)
-
 LootButton.Text = LootButton:CreateFontString(nil, "OVERLAY")
 LootButton.Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 LootButton.Text:SetPoint("CENTER", 2, 0)
-LootButton.Text:SetTextColor(0.3, 0.3, 0.9)
-LootButton:CreatePanel("Transparent", 17, (C.chat.height - 20) / 2, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -1, 20)
+LootButton.Text:SetText("L")
+LootButton:CreatePanel("Default", 19, 19, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -1, 20)
+LootButton:SetFrameStrata("HIGH")
+LootButton:HookScript("OnEnter", T.SetModifiedBackdrop)
+LootButton:HookScript("OnLeave", T.SetOriginalBackdrop)
 
-local DamageButton = CreateFrame("Frame", "DamageToggleButton", UIParent)
+local DamageButton = CreateFrame("Button", "DamageToggleButton", UIParent)
 DamageButton:EnableMouse(true)
-DamageButton:SetAlpha(0)
-
 DamageButton.Text = DamageButton:CreateFontString(nil, "OVERLAY")
 DamageButton.Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 DamageButton.Text:SetPoint("CENTER", 2, 0)
-DamageButton.Text:SetTextColor(0.9, 0.3, 0.3)
-DamageButton:CreatePanel("Transparent", 17, (C.chat.height - 20) / 2, "BOTTOM", LootToggleButton, "TOP", 0, 1)
+DamageButton.Text:SetText("D")
+DamageButton:CreatePanel("Default", 19, 19, "BOTTOM", LootToggleButton, "TOP", 0, 1)
+DamageButton:SetFrameStrata("HIGH")
+DamageButton:HookScript("OnEnter", T.SetModifiedBackdrop)
+DamageButton:HookScript("OnLeave", T.SetOriginalBackdrop)
 
 local LootShow = function()
 	ChatFrame3:ClearAllPoints()
@@ -288,7 +290,7 @@ local LootShow = function()
 		RightPanel:Show()
 	end
 	FCF_SavePositionAndDimensions(ChatFrame3)
-	LootButton.Text:SetText(">\n>\n>")
+	LootButton.Text:SetTextColor(1, 0.82, 0)
 	SavedOptionsPerChar.LootFrame = true
 end
 
@@ -297,7 +299,7 @@ local LootHide = function()
 	ChatFrame3:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 200, 0)
 	if C.chat.background ~= true then RightPanel:Hide() end
 	FCF_SavePositionAndDimensions(ChatFrame3)
-	LootButton.Text:SetText("<\n<\n<")
+	LootButton.Text:SetTextColor(0.2, 0.2, 0.2)
 	SavedOptionsPerChar.LootFrame = false
 end
 
@@ -305,17 +307,17 @@ local DamageShow = function()
 	alDamageMeterFrame:ClearAllPoints()
 	alDamageMeterFrame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26)
 	TooltipAnchor:SetPoint("BOTTOMRIGHT", alDamageMeterFrame, "TOPRIGHT", 2, 5)
-	DamageButton.Text:SetText(">\n>\n>")
+	DamageButton.Text:SetTextColor(1, 0.82, 0)
 	SavedOptionsPerChar.DamageMeter = true
 end
 
 local DamageHide = function()
 	alDamageMeterFrame:ClearAllPoints()
 	alDamageMeterFrame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 23, 26)
-	DamageButton.Text:SetText("<\n<\n<")
+	DamageButton.Text:SetTextColor(0.2, 0.2, 0.2)
 	SavedOptionsPerChar.DamageMeter = false
 end
-
+--[[
 LootButton:SetScript("OnEnter", function()
 	LootButton:FadeIn()
 end)
@@ -331,7 +333,7 @@ end)
 DamageButton:SetScript("OnLeave", function()
 	DamageButton:FadeOut()
 end)
-
+]]--
 ChatFrame3:RegisterEvent("PLAYER_LOGIN")
 ChatFrame3:HookScript("OnEvent", function(self, event, addon)
 	if event == "PLAYER_LOGIN" then
@@ -358,23 +360,27 @@ ChatFrame3:HookScript("OnEvent", function(self, event, addon)
 	end
 end)
 
-LootButton:SetScript("OnMouseDown", function()
-	if alDamageMeterEnabled ~= nil then
-		if SavedOptionsPerChar.LootFrame == true and SavedOptionsPerChar.DamageMeter == false then
-			LootHide()
-			TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
-		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == true then
-			LootShow()
-			DamageHide()
-		else
-			LootShow()
-		end
+LootButton:SetScript("OnMouseDown", function(self, button)
+	if button == "RightButton" then
+		ToggleLootHistoryFrame()
 	else
-		if SavedOptionsPerChar.LootFrame == true then
-			LootHide()
-			TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
+		if alDamageMeterEnabled ~= nil then
+			if SavedOptionsPerChar.LootFrame == true and SavedOptionsPerChar.DamageMeter == false then
+				LootHide()
+				TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
+			elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == true then
+				LootShow()
+				DamageHide()
+			else
+				LootShow()
+			end
 		else
-			LootShow()
+			if SavedOptionsPerChar.LootFrame == true then
+				LootHide()
+				TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
+			else
+				LootShow()
+			end
 		end
 	end
 end)
@@ -389,36 +395,4 @@ DamageButton:SetScript("OnMouseDown", function()
 	else
 		DamageShow()
 	end
-end)
-
-----------------------------------------------------------------------------------------
---	LootHistory toggle button
-----------------------------------------------------------------------------------------
-local LootHistoryButton = CreateFrame("Button", "LootHistoryButton", UIParent)
-LootHistoryButton:EnableMouse(true)
-LootHistoryButton:SetAlpha(0)
-
-LootHistoryButton.Text = LootHistoryButton:CreateFontString(nil, "OVERLAY")
-LootHistoryButton.Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-LootHistoryButton.Text:SetPoint("CENTER", 2, 0)
-LootHistoryButton.Text:SetText("L")
-LootHistoryButton.Text:SetTextColor(0.3, 0.3, 0.9)
-
-LootHistoryButton:CreatePanel("Transparent", 17, 17, "BOTTOM", DamageToggleButton, "TOP", 0, 1)
-
-LootHistoryButton:SetScript("OnEnter", function()
-	LootHistoryButton:FadeIn()
-end)
-
-LootHistoryButton:SetScript("OnLeave", function()
-	LootHistoryButton:FadeOut()
-end)
-
-LootHistoryButton:SetScript("OnMouseDown", function()
-	if LootHistoryFrame:IsShown() then
-		LootHistoryButton.Text:SetTextColor(0.3, 0.3, 0.9)
-	else
-		LootHistoryButton.Text:SetTextColor(0.9, 0.3, 0.3)
-	end
-	ToggleLootHistoryFrame()
 end)
