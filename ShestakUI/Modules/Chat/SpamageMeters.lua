@@ -47,7 +47,7 @@ local events = {
 	"CHAT_MSG_SAY",
 	"CHAT_MSG_WHISPER",
 	"CHAT_MSG_WHISPER_INFORM",
-	"CHAT_MSG_YELL",
+	"CHAT_MSG_YELL"
 }
 
 local function FilterLine(event, source, message, ...)

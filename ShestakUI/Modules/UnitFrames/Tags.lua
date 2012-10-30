@@ -129,7 +129,7 @@ if T.class == "WARLOCK" then
 	oUF.Tags["DemonicFury"] = function(unit)
 		local min = UnitPower("player", SPELL_POWER_DEMONIC_FURY)
 		local max = UnitPowerMax("player", SPELL_POWER_DEMONIC_FURY)
-		if max > 0 then
+		if T.CheckSpec(2) and max > 0 then
 			return ("%s%%"):format(math.floor(min / max * 100 + 0.5))
 		end
 	end
