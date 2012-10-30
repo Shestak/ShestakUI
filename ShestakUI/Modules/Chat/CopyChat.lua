@@ -101,7 +101,7 @@ function T.ChatCopyButtons()
 		button:SetWidth(20)
 		button:SetAlpha(0)
 		button:SetTemplate("Transparent")
-		button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		button:SetBackdropBorderColor(1, 0.82, 0)
 
 		local buttontexture = button:CreateTexture(nil, "BORDER")
 		buttontexture:SetPoint("CENTER")
