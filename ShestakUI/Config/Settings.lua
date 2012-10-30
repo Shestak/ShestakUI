@@ -455,7 +455,7 @@ C["unitframe"] = {
 	["portrait_width"] = 20,					-- Portrait width
 	["alternative_portraits"] = false,			-- Enable the portraits on the health bars (you need to disable the option for player/target portraits)
 	-- Plugins
-	["plugins_gcd"] = false,					-- Global cooldown spark
+	["plugins_gcd"] = true,						-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar
 	["plugins_necro_strike"] = true,			-- Necrotic Strike bar
 	["plugins_reputation_bar"] = true,			-- Reputation bar

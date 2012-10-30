@@ -139,15 +139,15 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						self.mainAnchor:ClearAllPoints()
 						if C.unitframe.portrait_enable == true then
 							if bar.owner.options.IconRight then
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(138 + C.unitframe.portrait_width), -69)
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(134 + C.unitframe.portrait_width), -30)
 							else
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(110 + C.unitframe.portrait_width), -69)
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(106 + C.unitframe.portrait_width), -30)
 							end
 						else
 							if bar.owner.options.IconRight then
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -131, -69)
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -127, -30)
 							else
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -103, -69)
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -99, -30)
 							end
 						end
 					end
@@ -299,7 +299,7 @@ end)
 ----------------------------------------------------------------------------------------
 function T.UploadDBM()
 	DBM_SavedOptions.Enabled = true
-	DBM_SavedOptions.ShowMinimapButton = false
+	DBM_SavedOptions.ShowMinimapButton = C.skins.minimap_buttons and true or false
 	DBM_SavedOptions.WarningIconLeft = false
 	DBM_SavedOptions.WarningIconRight = false
 	DBM_SavedOptions["WarningColors"] = {

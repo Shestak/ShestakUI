@@ -786,7 +786,11 @@ local function Shared(self, unit)
 	end
 
 	if C.unitframe.unit_castbar == true and unit ~= "arenatarget" then
-		self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", self)
+		if unit == "player" then
+			self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", UIParent)
+		else
+			self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", self)
+		end
 		self.Castbar:SetStatusBarTexture(C.media.texture, "OVERLAY")
 
 		self.Castbar.bg = self.Castbar:CreateTexture(nil, "BORDER")

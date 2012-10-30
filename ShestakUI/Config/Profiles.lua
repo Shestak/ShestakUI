@@ -132,7 +132,7 @@ if T.oz == true then
 	C["aura"].pet_debuffs = true
 	C["aura"].tot_debuffs = true
 	C["unitframe"].alternative_portraits = true
-	C["unitframe"].plugins_gcd = true
+	C["unitframe"].plugins_fader = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].raid_groups = 8
 	C["raidframe"].raid_groups_vertical = true
@@ -221,7 +221,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["aura"].classcolor_border = true
 	C["unitframe"].bar_color_value = true
 	C["unitframe"].portrait_enable = true
-	C["unitframe"].plugins_gcd = true
 	C["unitframe"].plugins_swing = true
 	C["unitframe"].plugins_combat_feedback = true
 	C["raidframe"].raid_tanks_tt = true
