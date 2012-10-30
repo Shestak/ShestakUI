@@ -274,7 +274,7 @@ C["chat"] = {
 	["spam"] = false,							-- Removing some players spam(gold/portals/etc)
 	["width"] = 350,							-- Chat width
 	["height"] = 112,							-- Chat height
-	["chat_bar"] = false,						-- Lite Button Bar for switch chat channel
+	["chat_bar"] = true,						-- Lite Button Bar for switch chat channel
 	["chat_bar_mouseover"] = false,				-- Lite Button Bar on mouseover
 	["time_color"] = {1, 1, 0},					-- Timestamp coloring(http://www.december.com/html/spec/colorcodes.html)
 	["whisp_sound"] = true,						-- Sound when whisper
@@ -283,6 +283,8 @@ C["chat"] = {
 	["tabs_mouseover"] = false,					-- Chat tabs on mouseover
 	["sticky"] = true,							-- Remember last channel
 	["damage_meter_spam"] = false,				-- Merge damage meter spam in one line-link
+	["tool_bar"] = true,						-- Lite Button Bar for switch Loot and DamageMeter frames
+	["tool_bar_mouseover"] = false,				-- Lite Button Bar on mouseover
 }
 
 ----------------------------------------------------------------------------------------
@@ -341,7 +343,7 @@ C["nameplate"] = {
 	["ad_height"] = 0,							-- Additional height for selected nameplate
 	["ad_width"] = 0,							-- Additional width for selected nameplate
 	["combat"] = false,							-- Automatically show nameplate in combat
-	["health_value"] = false,					-- Numeral health value
+	["health_value"] = true,					-- Numeral health value
 	["show_castbar_name"] = false,				-- Show castbar name
 	["enhance_threat"] = true,					-- If tank good aggro = green, bad = red
 	["class_icons"] = false,					-- Icons by class in pvp
