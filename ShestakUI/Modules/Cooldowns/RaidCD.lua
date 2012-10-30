@@ -164,8 +164,8 @@ local StartTimer = function(name, spellId)
 	bar:Show()
 	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(name))]
 	if color then
-		bar:SetStatusBarColor(color.r, color.g, color.b)
-		bar.bg:SetVertexColor(color.r, color.g, color.b, 0.2)
+		bar:SetStatusBarColor(unpack(C.unitframe.uf_color))
+		bar.bg:SetVertexColor(unpack(C.media.backdrop_color))
 	else
 		bar:SetStatusBarColor(0.3, 0.7, 0.3)
 		bar.bg:SetVertexColor(0.3, 0.7, 0.3, 0.2)
