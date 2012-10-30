@@ -61,7 +61,7 @@ hooksecurefunc("QuestLog_UpdateQuestCount", function()
 
 	if not QuestLogDailyQuestCountMouseOverFrame then
 		QuestLogDailyQuestCountMouseOverFrame = CreateFrame("Frame", "QuestLogDailyQuestCountMouseOverFrame", QuestLogCount)
-		QuestLogDailyQuestCountMouseOverFrame:SetAllPoints(QuestLogDailyQuestCount)
+		QuestLogDailyQuestCountMouseOverFrame:SetAllPoints(QuestLogCount)
 		QuestLogDailyQuestCountMouseOverFrame:SetScript("OnEnter", function(self)
 			GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
 			GameTooltip:SetText(format(QUEST_LOG_DAILY_TOOLTIP, GetDailyQuestsCompleted(), SecondsToTime(GetQuestResetTime(), nil, 1)))
@@ -72,7 +72,6 @@ hooksecurefunc("QuestLog_UpdateQuestCount", function()
 	if dailyQuestsComplete > 0 then
 		QuestLogDailyQuestCount:SetFormattedText(QUEST_LOG_DAILY_COUNT_TEMPLATE, dailyQuestsComplete)
 		QuestLogDailyQuestCount:Show()
-		QuestLogDailyQuestCountMouseOverFrame:Show()
 		if QuestLogDailyQuestCount:GetWidth() > width then
 			width = QuestLogDailyQuestCount:GetWidth()
 		end
@@ -80,7 +79,6 @@ hooksecurefunc("QuestLog_UpdateQuestCount", function()
 		QuestLogCount:SetPoint("TOPLEFT", parent, "TOPLEFT", 70, -26)
 	else
 		QuestLogDailyQuestCount:Hide()
-		QuestLogDailyQuestCountMouseOverFrame:Hide()
 		QuestLogCount:SetHeight(20)
 		QuestLogCount:SetPoint("TOPLEFT", parent, "TOPLEFT", 70, -33)
 	end

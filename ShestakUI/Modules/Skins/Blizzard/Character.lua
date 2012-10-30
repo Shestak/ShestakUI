@@ -100,7 +100,8 @@ local function LoadSkin()
 	local scrollbars = {
 		"PaperDollTitlesPaneScrollBar",
 		"PaperDollEquipmentManagerPaneScrollBar",
-		"CharacterStatsPaneScrollBar"
+		"CharacterStatsPaneScrollBar",
+		"TokenFrameContainerScrollBar"
 	}
 
 	for _, scrollbar in pairs(scrollbars) do

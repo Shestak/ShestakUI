@@ -34,7 +34,7 @@ end
 ----------------------------------------------------------------------------------------
 T.CheckChat = function(warning)
 	if IsInRaid() then
-		if warning and (UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) then
+		if warning and (UnitIsGroupLeader("player") or UnitIsGroupAssistant("player") or IsEveryoneAssistant()) then
 			return "RAID_WARNING"
 		else
 			return "RAID"
