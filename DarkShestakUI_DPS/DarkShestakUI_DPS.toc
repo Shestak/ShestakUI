@@ -2,10 +2,10 @@
 ## Title: Dark ShestakUI DPS
 ## Notes: Raid layout for Dark ShestakUI
 ## Author: Shestak
-## Version: 0.3.1
+## Version: 0.40
 ## Credits: ALZA, Caellian, Tukz
 ## RequiredDeps: DarkShestakUI
-## X-Curse-Packaged-Version: 0.3.1
+## X-Curse-Packaged-Version: 0.40
 ## X-Curse-Project-Name: DarkShestakUI
 ## X-Curse-Project-ID: darkshestakui
 ## Website: http://shestak.org

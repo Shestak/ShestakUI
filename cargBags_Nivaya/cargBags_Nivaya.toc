@@ -1,10 +1,14 @@
 ## Interface: 50001
 ## Title: cargBags_Nivaya
 ## Author: Luzzifus
+## Version: r41
 ## RequiredDeps: DarkShestakUI
 ## OptionalDeps: ItemRack, Outfitter
 ## SavedVariables: cBnivCfg, cB_CustomBags, cBniv_CatInfo
 ## SavedVariablesPerCharacter: cB_KnownItems, cBniv
+## X-Curse-Packaged-Version: 0.40
+## X-Curse-Project-Name: DarkShestakUI
+## X-Curse-Project-ID: darkshestakui
 
 cargBags\embed.xml
 localization.lua
