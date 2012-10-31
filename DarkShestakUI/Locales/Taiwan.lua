@@ -59,7 +59,7 @@ L_MISC_BUY_STACK = "Alt+右鍵點擊購買一疊"
 L_MISC_ONECLICK_BUYOUT = "Shift+右鍵,不彈出確認窗口直接購買"
 L_MISC_ONECLICK_BID = "Shift+右鍵,不彈出確認窗口直接競標"
 L_MISC_ONECLICK_CANCEL = "Shift+右鍵,不彈出確認窗口直接取消選擇的物品"
-L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
+L_MISC_UI_OUTDATED = "Dark ShestakUI 版本已過期，請至 www.wowinterface.com 下載最新版"
 L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"
 L_MISC_MOUNTS_GROUND = "地面坐騎"
@@ -275,12 +275,12 @@ L_INFO_SKIN_DISABLED1 = "介面樣式啟用"
 L_INFO_SKIN_DISABLED2 = " 已禁用"
 
 -- Popups
-L_POPUP_INSTALLUI = "該角色首次使用ShestakUI.你必須重新加載UI來配置."
-L_POPUP_RESETUI = "你確定要重新加載ShestakUI?"
+L_POPUP_INSTALLUI = "該角色首次使用Dark ShestakUI.你必須重新加載UI來配置."
+L_POPUP_RESETUI = "你確定要重新加載Dark ShestakUI?"
 L_POPUP_RESETSTATS = "你確定要重置本次遊戲時間和金幣收益統計數據嗎?"
 L_POPUP_SWITCH_RAID = "多個團隊樣式被加載,請選擇一個樣式."
 L_POPUP_DISBAND_RAID = "你確定要解散團隊?"
-L_POPUP_DISABLEUI = "ShestakUI並不支援此解析度, 你想要停用ShestakUI嗎? (若果您想要嘗試其他解析度, 請按取消)"
+L_POPUP_DISABLEUI = "Dark ShestakUI並不支援此解析度, 你想要停用Dark ShestakUI嗎? (若果您想要嘗試其他解析度, 請按取消)"
 L_POPUP_SETTINGS_ALL = "應用所有的UI設置(DBM/DXE, Skada and MSBT)?"
 L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素。"
 L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素。"
@@ -290,7 +290,7 @@ L_POPUP_TALENT_FIX = "當你查看其它玩家時發生了一個錯誤使你無�
 L_POPUP_CURRENCY_CAP = "您擁有的最高級貨幣為"
 
 -- Welcome message
-L_WELCOME_LINE_1 = "歡迎使用ShestakUI "
+L_WELCOME_LINE_1 = "歡迎使用Dark ShestakUI "
 L_WELCOME_LINE_2_1 = "輸入/cfg進行UI設置,或者訪問http://shestak.org"
 L_WELCOME_LINE_2_2 = "獲取更多信息"
 

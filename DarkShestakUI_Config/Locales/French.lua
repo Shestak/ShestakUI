@@ -6,8 +6,8 @@
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Réinitialisation totale de l'UI"
 L_GUI_SET_SAVED_SETTTINGS = "Sauvegarder la configuration par personnage"
-L_GUI_RESET_CHAR = "Réinitialiser les paramètres de votre personnage sur ShestakUI ?"
-L_GUI_RESET_ALL = "Réinitialiser tous les paramètres de ShestakUI ?"
+L_GUI_RESET_CHAR = "Réinitialiser les paramètres de votre personnage sur Dark ShestakUI ?"
+L_GUI_RESET_ALL = "Réinitialiser tous les paramètres de Dark ShestakUI ?"
 L_GUI_PER_CHAR = "Modifier la configuration du personnage ?"
 L_GUI_MAKE_SELECTION = "Choisir une configuration avant de continuer."
 
@@ -380,7 +380,7 @@ L_GUI_UF_PLAYER_PARTY = "Afficher la barre du joueur en groupe"
 L_GUI_UF_SHOW_TANK = "Afficher les tanks de raid"
 L_GUI_UF_SHOW_TANK_TT = "Afficher la cible de la cible des tanks"
 L_GUI_UF_RAID_GROUP = "Nombre de groupe dans le raid"
-L_GUI_UF_RAID_VERTICAL_GROUP = "Groupe de raid verticaux(Seulement pour ShestakUI_Heal)"
+L_GUI_UF_RAID_VERTICAL_GROUP = "Groupe de raid verticaux(Seulement pour DarkShestakUI_Heal)"
 L_GUI_UF_ICONS_LEADER = "Icone du Chef de raid, icone de l'assistant, icone du maоtre du butin"
 L_GUI_UF_ICONS_ROLE = "Role icon on frames" -- Needs review
 L_GUI_UF_ICONS_RAID_MARK = "Signe de raid"

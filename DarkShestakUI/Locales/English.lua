@@ -55,7 +55,7 @@ L_MISC_BUY_STACK = "Alt-Click to buy a stack"
 L_MISC_ONECLICK_BUYOUT = "Shift-Right-Click to buyout the selected item without confirmation"
 L_MISC_ONECLICK_BID = "Shift-Right-Click to bid on the selected item without confirmation"
 L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item without confirmation"
-L_MISC_UI_OUTDATED = "Your version of ShestakUI is out of date. You can download the latest version from www.shestak.org"
+L_MISC_UI_OUTDATED = "Your version of Dark ShestakUI is out of date. You can download the latest version from www.wowinterface.com"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons"
 L_MISC_BINDER_OPEN = "Mouse Bindings"
 L_MISC_MOUNTS_GROUND = "Ground"
@@ -271,12 +271,12 @@ L_INFO_SKIN_DISABLED1 = "Stylization for "
 L_INFO_SKIN_DISABLED2 = " is disabled."
 
 -- Popups
-L_POPUP_INSTALLUI = "First time on ShestakUI with this Character. You must reload UI to configure it."
-L_POPUP_RESETUI = "Are you sure you want to reset all settings for ShestakUI?"
+L_POPUP_INSTALLUI = "First time on Dark ShestakUI with this Character. You must reload UI to configure it."
+L_POPUP_RESETUI = "Are you sure you want to reset all settings for Dark ShestakUI?"
 L_POPUP_RESETSTATS = "Are you sure you want to reset statistics for time spent in game and gold."
 L_POPUP_SWITCH_RAID = "2 raid layouts are active, please select a layout."
 L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?"
-L_POPUP_DISABLEUI = "ShestakUI doesn't work for this resolution, do you want to disable ShestakUI? (Cancel if you want to try another resolution)"
+L_POPUP_DISABLEUI = "Dark ShestakUI doesn't work for this resolution, do you want to disable Dark ShestakUI? (Cancel if you want to try another resolution)"
 L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM/DXE, Skada and MSBT)"
 L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."
 L_POPUP_SETTINGS_DXE = "Need to change the position of elements DXE."
@@ -286,7 +286,7 @@ L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from ch
 L_POPUP_CURRENCY_CAP = "You get maximum value of"
 
 -- Welcome message
-L_WELCOME_LINE_1 = "Welcome to ShestakUI "
+L_WELCOME_LINE_1 = "Welcome to Dark ShestakUI "
 L_WELCOME_LINE_2_1 = "Type /cfg to config interface, or visit http://shestak.org"
 L_WELCOME_LINE_2_2 = "for more informations."
 
@@ -390,7 +390,7 @@ L_SLASHCMD_HELP = {
 	"/moveui - Allows the movement of interface elements.",
 	"/resetui - Resets general settings to default.",
 	"/resetuf - Resets the unit frames to their default position.",
-	"/resetconfig - Resets ShestakUI_Config settings.",
+	"/resetconfig - Resets DarkShestakUI_Config settings.",
 	"/resetstats - Resets the statistics of gold and time spent.",
 	"/settings ADDON_NAME - Applies settings to msbt, dbm, skada, or all addons.",
 	"/ls, /litestats - Help for LiteStats.",
