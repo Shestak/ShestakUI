@@ -1,43 +1,55 @@
 local T, C, L, _ = unpack(select(2, ...))
 if C.misc.bad_gear ~= true then return end
 
-----------------------------------------------------------------------------------------
---	Bad Gear Check(by Shestak)
-----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 frame:SetScript("OnEvent", function(self, event)
-    if event == "ZONE_CHANGED_NEW_AREA" then
-        if not IsInInstance() then return end
+	if event == "ZONE_CHANGED_NEW_AREA" then
+		if not IsInInstance() then return end
+		local baditem = {
+			[1] = {
+				88710,	-- Nat's Hat
+				33820,	-- Weather-Beaten Fishing Hat
+				19972,	-- Lucky Fishing Hat
+				46349,	-- Chef's Hat
+				},
+			[8] = {
+				50287,	-- Boots of the Bay
+				19969,	-- Nat Pagle's Extreme Anglin' Boots
+				},
+			[15] = {
+				65360,	-- Cloak of Coordination
+				65274,	-- Cloak of Coordination
+				},
+			[16] = {
+				44050,	-- Mastercraft Kalu'ak Fishing Pole
+				19970,	-- Arcanite Fishing Pole
+				84660,	-- Pandaren Fishing Pole
+				84661,	-- Dragon Fishing Pole
+				45992,	-- Jeweled Fishing Pole
+				86559,	-- Frying Pan
+				},
+			[17] = {
+				86558,	-- Rolling Pin
+				},
+			}
 
-        local head = GetItemInfo(GetInventoryItemLink("player", 1) or 0)
-        local feet = GetItemInfo(GetInventoryItemLink("player", 8) or 0)
-        local back = GetItemInfo(GetInventoryItemLink("player", 15) or 0)
-        local hand = GetItemInfo(GetInventoryItemLink("player", 16) or 0)
-        local hand2 = GetItemInfo(GetInventoryItemLink("player", 17) or 0)
+		local function warning(slot)
+			RaidNotice_AddMessage(RaidWarningFrame, string.format("%s %s", slot, "equiped!!!"), ChatTypeInfo["RAID_WARNING"])
+			PlaySound("RaidWarning", "master")
+		end
 
-        if head == GetItemInfo(88710) or head == GetItemInfo(33820) or head == GetItemInfo(19972) then
-            RaidNotice_AddMessage(RaidWarningFrame, "Fishing Hat equipped!!!", ChatTypeInfo["RAID_WARNING"])
-        elseif head == GetItemInfo(46349) then
-            RaidNotice_AddMessage(RaidWarningFrame, "Chef's Hat equipped!!!", ChatTypeInfo["RAID_WARNING"])
-        end
+		local item = {}
 
-        if feet == GetItemInfo(50287) or feet == GetItemInfo(19969) then
-            RaidNotice_AddMessage(RaidWarningFrame, "Fishing Boots equipped!!!", ChatTypeInfo["RAID_WARNING"])
-        end
-
-        if back == GetItemInfo(65360) or back == GetItemInfo(65274) then
-            RaidNotice_AddMessage(RaidWarningFrame, "Cloak of Coordination equipped!!!", ChatTypeInfo["RAID_WARNING"])
-        end
-
-        if hand == GetItemInfo(44050) or hand == GetItemInfo(19970) or hand == GetItemInfo(84661) or hand == GetItemInfo(45992) then
-            RaidNotice_AddMessage(RaidWarningFrame, "Pole equipped!!!", ChatTypeInfo["RAID_WARNING"])
-        elseif hand == GetItemInfo(86559) then
-            RaidNotice_AddMessage(RaidWarningFrame, "Frying Pan equipped!!!", ChatTypeInfo["RAID_WARNING"])
-        end
-
-        if hand2 == GetItemInfo(86558) then
-            RaidNotice_AddMessage(RaidWarningFrame, "Rolling Pin equipped!!!", ChatTypeInfo["RAID_WARNING"])
-        end
-    end
+		for id = 1, 17 do
+		if baditem[id] ~= nil then
+			item[id] = GetItemInfo(GetInventoryItemLink("player", id) or 0)
+				for key, baditemid in pairs(baditem[id]) do
+					if item[id] == GetItemInfo(baditemid) then
+						warning(item[id])
+					end
+				end
+			end
+		end
+	end
 end)
