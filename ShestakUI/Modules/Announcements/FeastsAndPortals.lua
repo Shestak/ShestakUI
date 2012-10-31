@@ -5,7 +5,7 @@
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, _, _, _, _, _, spellID, ...)
+frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, _, _, destName, _, _, spellID, ...)
 	if not (IsInRaid() or IsInGroup()) or InCombatLockdown() or not subEvent or not spellID or not srcName then return end
 	if not UnitInRaid(srcName) and not UnitInParty(srcName) then return end
 
@@ -44,8 +44,7 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 		end
 	elseif subEvent == "SPELL_AURA_APPLIED" then
 		-- Turkey Feathers and Party G.R.E.N.A.D.E.
-		--if C.announcements.toys and (spellID == 61781 or (spellID == 51508 or spellID == 51510)) then
-		if C.announcements.toys and spellID == 61781 then
+		if C.announcements.toys and (spellID == 61781 or ((spellID == 51508 or spellID == 51510) and destName == T.name)) then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_USE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
 		end
 	end
