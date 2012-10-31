@@ -7,4 +7,4 @@
 
 lib\LibStub\LibStub.lua
 lib\LibBossIDs-1.0\LibBossIDs-1.0.lua
-alDamageMeter.lua
+DarkShestakUI_alDamageMeter.lua
