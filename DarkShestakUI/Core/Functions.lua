@@ -34,7 +34,7 @@ end
 ----------------------------------------------------------------------------------------
 T.CheckChat = function(warning)
 	if IsInRaid() then
-		if warning and (UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) then
+		if warning and (UnitIsGroupLeader("player") or UnitIsGroupAssistant("player") or IsEveryoneAssistant()) then
 			return "RAID_WARNING"
 		else
 			return "RAID"
@@ -1348,7 +1348,7 @@ T.UpdateThreat = function(self, event, unit)
 	end
 end
 
-T.CountOffsets = {
+local CountOffSets = {
 	TOPLEFT = {9, 0},
 	TOPRIGHT = {-8, 0},
 	BOTTOMLEFT = {9, 0},
@@ -1416,7 +1416,7 @@ T.CreateAuraWatch = function(self, unit)
 			end
 
 			local count = T.SetFontString(icon, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			count:SetPoint("CENTER", unpack(T.CountOffsets[spell[2]]))
+			count:SetPoint("CENTER", unpack(CountOffSets[spell[2]]))
 			icon.count = count
 
 			auras.icons[spell[1]] = icon

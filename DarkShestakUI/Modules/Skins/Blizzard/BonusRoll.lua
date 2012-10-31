@@ -25,6 +25,11 @@ local function LoadSkin()
 	BonusRollMoneyWonFrame:CreateBackdrop("Transparent")
 	BonusRollMoneyWonFrame.backdrop:SetPoint("TOPLEFT", BonusRollMoneyWonFrame, "TOPLEFT", -9, 6)
 	BonusRollMoneyWonFrame.backdrop:SetPoint("BOTTOMRIGHT", BonusRollMoneyWonFrame, "BOTTOMRIGHT", 5, -6)
+
+	BonusRollLootWonFrame:StripTextures()
+	BonusRollLootWonFrame:CreateBackdrop("Transparent")
+	BonusRollLootWonFrame.backdrop:SetPoint("TOPLEFT", BonusRollLootWonFrame, "TOPLEFT", -9, 6)
+	BonusRollLootWonFrame.backdrop:SetPoint("BOTTOMRIGHT", BonusRollLootWonFrame, "BOTTOMRIGHT", 5, -6)
 end
 
 tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

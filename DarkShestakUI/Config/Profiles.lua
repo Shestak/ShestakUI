@@ -96,7 +96,6 @@ if T.author == true then
 	C["unitframe"].arena_on_right = false
 	C["unitframe"].plugins_talents = true
 	C["unitframe"].plugins_diminishing = true
-	C["unitframe"].plugins_friendship_bar = true
 	C["unitframe_class_bar"].vengeance = false
 	C["stats"].fps = false
 	C["stats"].battleground = true

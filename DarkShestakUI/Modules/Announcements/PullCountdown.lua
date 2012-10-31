@@ -19,7 +19,7 @@ end
 local function pull(self, elapsed)
 	local tname = UnitName("target")
 	if tname then
-		target = tname.." "
+		target = tname
 	else
 		target = ""
 	end
