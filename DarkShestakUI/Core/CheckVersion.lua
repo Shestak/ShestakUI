@@ -5,20 +5,20 @@
 ----------------------------------------------------------------------------------------
 local check = function(self, event, prefix, message, channel, sender)
 	if event == "CHAT_MSG_ADDON" then
-		if prefix ~= "DarkShestakUIVersion" or sender == T.name then return end
+		if prefix ~= "DarkShestakUIVer" or sender == T.name then return end
 		if tonumber(message) ~= nil and tonumber(message) > tonumber(T.version) then
 			print("|cffff0000"..L_MISC_UI_OUTDATED.."|r")
 			self:UnregisterEvent("CHAT_MSG_ADDON")
 		end
 	else
 		if UnitInBattleground("player") and UnitInBattleground("player") > 0 then
-			SendAddonMessage("DarkShestakUIVersion", tonumber(T.version), "BATTLEGROUND")
+			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "BATTLEGROUND")
 		elseif IsInRaid() then
-			SendAddonMessage("DarkShestakUIVersion", tonumber(T.version), "RAID")
+			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "RAID")
 		elseif IsInGroup() then
-			SendAddonMessage("DarkShestakUIVersion", tonumber(T.version), "PARTY")
+			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "PARTY")
 		elseif IsInGuild() then
-			SendAddonMessage("DarkShestakUIVersion", tonumber(T.version), "GUILD")
+			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "GUILD")
 		end
 	end
 end
@@ -28,7 +28,7 @@ frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:RegisterEvent("GROUP_ROSTER_UPDATE")
 frame:RegisterEvent("CHAT_MSG_ADDON")
 frame:SetScript("OnEvent", check)
-RegisterAddonMessagePrefix("DarkShestakUIVersion")
+RegisterAddonMessagePrefix("DarkShestakUIVer")
 
 ----------------------------------------------------------------------------------------
 --	Whisp UI version
