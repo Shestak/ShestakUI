@@ -256,11 +256,11 @@ end)
 --  RangeDisplay
 ----------------------------------------------------------------------------------------
 if C.unitframe.enable ~= true or C.unitframe.enable == true and C.unitframe_class_bar.range == true and T.class == "PRIEST" then return end
-local RangeDisplayText = UIParent:CreateFontString(nil, "OVERLAY")
-RangeDisplayText:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-RangeDisplayText:SetPoint("CENTER", oUF_Target, "CENTER", 0, -9)
+local RangeDisplay = UIParent:CreateFontString(nil, "OVERLAY")
+RangeDisplay:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+RangeDisplay:SetPoint("CENTER", oUF_Target, "CENTER", 0, -9)
 local Items = {
-    ["Friend"] = {
+["Friend"] = {
         37727,  -- 5
         34368,  -- 8
         32321,  -- 10
@@ -285,7 +285,7 @@ local Items = {
 }
 local Colors = {
     {0.3, 0.3, 0.9},    -- 0-5
-    {0.3, 0.9, 0.9}  -- 5-8
+    {0.3, 0.9, 0.9},    -- 5-8
     {0.3, 0.9, 0.9},    -- 5-10
     {0.3, 0.9, 0.9},    -- 10-15
     {0.9, 0.9, 0.1},    -- 15-20
