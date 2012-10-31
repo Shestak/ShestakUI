@@ -1,16 +1,16 @@
 ## Interface: 50001
-## Title: ShestakUI Filger
-## Notes: Class timers for ShestakUI
+## Title: Dark ShestakUI Filger
+## Notes: Class timers for Dark ShestakUI
 ## Author: Nils Ruesch
-## Version: 4.20
+## Version: 0.3.1
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
-## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 4.20
-## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestakui
+## RequiredDeps: DarkShestakUI
+## X-Curse-Packaged-Version: 0.3.1
+## X-Curse-Project-Name: DarkShestakUI
+## X-Curse-Project-ID: darkshestakui
 ## Website: http://shestak.org
 
 Config\Positions.lua
 Config\Settings.lua
-ShestakUI_Filger.lua
+DarkShestakUI_Filger.lua
