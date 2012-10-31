@@ -3,7 +3,7 @@
 ## Notes: Damage meter
 ## Author: Allez
 ## Version: 50001.11
-## RequiredDeps: ShestakUI
+## RequiredDeps: DarkShestakUI
 
 lib\LibStub\LibStub.lua
 lib\LibBossIDs-1.0\LibBossIDs-1.0.lua
