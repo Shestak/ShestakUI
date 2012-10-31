@@ -21,16 +21,16 @@ switch.t:SetPoint("TOPLEFT", switch, 2, -2)
 switch.t:SetPoint("BOTTOMRIGHT", switch, -2, 2)
 
 switch:SetScript("OnClick", function()
-	if IsAddOnLoaded("ShestakUI_DPS") then
-		DisableAddOn("ShestakUI_DPS")
-		EnableAddOn("ShestakUI_Heal")
+	if IsAddOnLoaded("DarkShestakUI_DPS") then
+		DisableAddOn("DarkShestakUI_DPS")
+		EnableAddOn("DarkShestakUI_Heal")
 		ReloadUI()
-	elseif IsAddOnLoaded("ShestakUI_Heal") then
-		DisableAddOn("ShestakUI_Heal")
-		EnableAddOn("ShestakUI_DPS")
+	elseif IsAddOnLoaded("DarkShestakUI_Heal") then
+		DisableAddOn("DarkShestakUI_Heal")
+		EnableAddOn("DarkShestakUI_DPS")
 		ReloadUI()
-	elseif not IsAddOnLoaded("ShestakUI_Heal") and not IsAddOnLoaded("ShestakUI_DPS") then
-		EnableAddOn("ShestakUI_Heal")
+	elseif not IsAddOnLoaded("DarkShestakUI_Heal") and not IsAddOnLoaded("DarkShestakUI_DPS") then
+		EnableAddOn("DarkShestakUI_Heal")
 		ReloadUI()
 	end
 end)
@@ -46,11 +46,11 @@ end)
 
 switch:RegisterEvent("PLAYER_LOGIN")
 switch:SetScript("OnEvent", function(self)
-	if IsAddOnLoaded("ShestakUI_DPS") then
+	if IsAddOnLoaded("DarkShestakUI_DPS") then
 		switch.t:SetTexCoord(0.25, 0.5, 0, 1)
-	elseif IsAddOnLoaded("ShestakUI_Heal") then
+	elseif IsAddOnLoaded("DarkShestakUI_Heal") then
 		switch.t:SetTexCoord(0.75, 1, 0, 1)
-	elseif not IsAddOnLoaded("ShestakUI_Heal") and not IsAddOnLoaded("ShestakUI_DPS") then
+	elseif not IsAddOnLoaded("DarkShestakUI_Heal") and not IsAddOnLoaded("DarkShestakUI_DPS") then
 		switch.t:SetTexture("Interface\\InventoryItems\\WoWUnknownItem01")
 		switch.t:SetTexCoord(0.2, 0.8, 0.2, 0.8)
 	end

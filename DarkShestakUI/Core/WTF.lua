@@ -205,7 +205,7 @@ local UploadMSBT = function()
 					},
 				},
 				["regenAbilitiesDisabled"] = true,
-				["critFontName"] = "ShestakUI",
+				["critFontName"] = "DarkShestakUI",
 				["hotThrottleDuration"] = 5,
 				["critOutlineIndex"] = 2,
 				["animationSpeed"] = 140,
@@ -319,7 +319,7 @@ local UploadMSBT = function()
 				},
 				["cooldownThreshold"] = 60,
 				["hideNames"] = true,
-				["normalFontName"] = "ShestakUI",
+				["normalFontName"] = "DarkShestakUI",
 				["healThreshold"] = 1000,
 				["qualityExclusions"] = {
 					true, -- [1]
@@ -329,7 +329,7 @@ local UploadMSBT = function()
 	}
 	MSBT_SavedMedia = {
 		["fonts"] = {
-			["ShestakUI"] = "Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf",
+			["DarkShestakUI"] = "Interface\\AddOns\\DarkShestakUI\\Media\\Fonts\\Pixel.ttf",
 		},
 		["sounds"] = {
 		},

@@ -14,7 +14,7 @@ end
 local UIFonts = CreateFrame("Frame", nil, UIParent)
 UIFonts:RegisterEvent("ADDON_LOADED")
 UIFonts:SetScript("OnEvent", function(self, event, addon)
-	if addon ~= "ShestakUI" or addon == "tekticles" then return end
+	if addon ~= "DarkShestakUI" or addon == "tekticles" then return end
 
 	local NORMAL = C.media.normal_font
 	local BLANK = C.media.blank_font

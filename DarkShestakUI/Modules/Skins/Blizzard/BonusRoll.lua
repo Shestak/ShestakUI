@@ -27,4 +27,4 @@ local function LoadSkin()
 	BonusRollMoneyWonFrame.backdrop:SetPoint("BOTTOMRIGHT", BonusRollMoneyWonFrame, "BOTTOMRIGHT", 5, -6)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

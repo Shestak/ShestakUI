@@ -36,4 +36,4 @@ local function LoadSkin()
 	PetitionFrameCancelButton:SetPoint("BOTTOMRIGHT", PetitionFrame, "BOTTOMRIGHT", -5, 4)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

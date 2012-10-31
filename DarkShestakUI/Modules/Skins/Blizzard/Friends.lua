@@ -260,4 +260,4 @@ local function LoadSkin()
 	hooksecurefunc("ChannelList_Update", Channel)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

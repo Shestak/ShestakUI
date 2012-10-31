@@ -846,7 +846,7 @@ local function StuffingSlashCmd(Cmd)
 end
 
 function Stuffing:ADDON_LOADED(addon)
-	if addon ~= "ShestakUI" then return nil end
+	if addon ~= "DarkShestakUI" then return nil end
 
 	self:RegisterEvent("BAG_UPDATE")
 	self:RegisterEvent("ITEM_LOCK_CHANGED")

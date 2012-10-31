@@ -168,4 +168,4 @@ local function LoadSkin()
 	_G["AudioOptionsVoicePanelBinding"]:SetFrameLevel(2)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

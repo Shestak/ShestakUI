@@ -324,4 +324,4 @@ local function LoadSkin()
 	SetDressUpBackground(CharacterModelFrame.backdrop, fileName)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

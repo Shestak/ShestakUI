@@ -160,7 +160,7 @@ local function InitSocialTabs()
 end
 
 SocialTabs:SetScript("OnEvent", function(self, event, addon)
-	if event == "ADDON_LOADED" and addon == "ShestakUI" then
+	if event == "ADDON_LOADED" and addon == "DarkShestakUI" then
 		InitSocialTabs()
 	end
 end)

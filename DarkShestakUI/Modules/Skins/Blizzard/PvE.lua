@@ -284,7 +284,7 @@ local function LoadSkin()
 	T.SkinCheckBox(LFDRoleCheckPopupRoleButtonDPS:GetChildren())
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)
 
 local function LoadSecondarySkin()
 	ChallengesFrameInset:StripTextures()

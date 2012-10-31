@@ -121,7 +121,7 @@ end
 --	Style functions
 ----------------------------------------------------------------------------------------
 T.SkinFuncs = {}
-T.SkinFuncs["ShestakUI"] = {}
+T.SkinFuncs["DarkShestakUI"] = {}
 
 function T.SkinScrollBar(frame)
 	if _G[frame:GetName().."BG"] then

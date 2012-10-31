@@ -12,7 +12,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		end
 	end
 
-	if C.unitframe.enable and (addon == "ShestakUI_DPS" or addon == "ShestakUI_Heal") then
+	if C.unitframe.enable and (addon == "DarkShestakUI_DPS" or addon == "DarkShestakUI_Heal") then
 		InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
 		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
 		CompactRaidFrameManager:Kill()
@@ -22,7 +22,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		CompactUnitFrameProfiles_ApplyProfile = T.dummy
 	end
 
-	if addon ~= "ShestakUI" then return end
+	if addon ~= "DarkShestakUI" then return end
 
 	Advanced_UseUIScale:Kill()
 	Advanced_UIScaleSlider:Kill()

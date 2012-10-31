@@ -55,4 +55,4 @@ local function LoadSkin()
 	--PetStableDietTexture:SetTexCoord(0.08593750, 0.13476563, 0.73437500, 0.77929688)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

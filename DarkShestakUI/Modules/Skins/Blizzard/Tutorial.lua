@@ -17,4 +17,4 @@ local function LoadSkin()
 	T.SkinCloseButton(TutorialFrameCloseButton, TutorialFrame.backdrop)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

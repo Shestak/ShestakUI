@@ -91,7 +91,7 @@ function AddonManager:LoadProfileWindow()
 	local DisableAll = CreateMenuButton(window, EnableAll:GetWidth(), EnableAll:GetHeight(), L_ALOAD_DISABLE_ALL, "TOPRIGHT", window, "BOTTOMRIGHT", -5, -5)
 	DisableAll:SetScript("OnClick", function(self)
 		for i, addon in pairs(AddonManager.AllAddons) do
-			if addon.name ~= "ShestakUI" then
+			if addon.name ~= "DarkShestakUI" then
 				DisableAddOn(addon.name)
 				if AddonManager.Buttons[i].overlay then
 					AddonManager.Buttons[i].overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
@@ -212,7 +212,7 @@ function AddonManager:LoadProfileWindow()
 			local overlay2 = buttons[i].overlay2
 			overlay2.set:SetScript("OnClick", function(self)
 				DisableAllAddOns()
-				EnableAddOn("ShestakUI")
+				EnableAddOn("DarkShestakUI")
 				for i, name in pairs(addonList) do EnableAddOn(name) end
 				AddonManager.AllAddons = AddonManager:UpdateAddonList()
 				AddonManager:UpdateList(AddonManager.AllAddons)
@@ -225,7 +225,7 @@ function AddonManager:LoadProfileWindow()
 				CollapseAllProfiles()
 			end)
 			overlay2.remove:SetScript("OnClick", function(self)
-				for i, name in pairs(addonList) do if name ~= "ShestakUI" then DisableAddOn(name) end end
+				for i, name in pairs(addonList) do if name ~= "DarkShestakUI" then DisableAddOn(name) end end
 				AddonManager.AllAddons = AddonManager:UpdateAddonList()
 				AddonManager:UpdateList(AddonManager.AllAddons)
 				CollapseAllProfiles()
@@ -494,9 +494,9 @@ gmbAddOns:SetScript("OnClick", function()
 	AddonManager:LoadWindow()
 end)
 
-if not IsAddOnLoaded("ShestakUI_Config") then return end
+if not IsAddOnLoaded("DarkShestakUI_Config") then return end
 local guib = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "GameMenuButtonTemplate")
-guib:SetText("ShestakUI")
+guib:SetText("Dark ShestakUI")
 guib:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -23)
 
 GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + guib:GetHeight())

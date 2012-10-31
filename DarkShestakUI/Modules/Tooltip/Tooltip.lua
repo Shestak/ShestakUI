@@ -96,7 +96,7 @@ end
 aTooltip = CreateFrame("Frame", "aTooltip", UIParent)
 aTooltip:RegisterEvent("ADDON_LOADED")
 aTooltip:SetScript("OnEvent", function(self, event, addon)
-	if addon ~= "ShestakUI" then return end
+	if addon ~= "DarkShestakUI" then return end
 
 	local function GameTooltipDefault(tooltip, parent)
 		if C.tooltip.cursor == true then

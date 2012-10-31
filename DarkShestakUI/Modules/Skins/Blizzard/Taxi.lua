@@ -14,4 +14,4 @@ local function LoadSkin()
 	TaxiFrame.CloseButton:SetPoint("TOPRIGHT", -4, -1)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

@@ -669,7 +669,7 @@ if C.combattext.damage then
 		ct.dmgcolor[64] = {1, 0.5, 1}	-- Arcane
 	end
 	if C.combattext.icons then
-		ct.blank = "Interface\\AddOns\\ShestakUI\\Media\\Textures\\Blank.tga"
+		ct.blank = "Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\Blank.tga"
 	end
 	local misstypes = {ABSORB = ABSORB, BLOCK = BLOCK, DODGE = DODGE, EVADE = EVADE, IMMUNE = IMMUNE, MISS = MISS, PARRY = PARRY, REFLECT = REFLECT, RESIST = RESIST, DEFLECT = DEFLECT}
 	local dmg = function(self, event, ...)
@@ -832,7 +832,7 @@ if C.combattext.healing then
 	local unpack, select, time = unpack, select, time
 	local xCTh = CreateFrame("Frame")
 	if C.combattext.icons then
-		ct.blank = "Interface\\AddOns\\ShestakUI\\Media\\Textures\\Blank.tga"
+		ct.blank = "Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\Blank.tga"
 	end
 	local heal = function(self, event, ...)
 		local msg, icon

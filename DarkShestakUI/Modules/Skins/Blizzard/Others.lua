@@ -9,7 +9,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") then return end
 
 	-- Stuff not in Blizzard load-on-demand
-	if addon == "ShestakUI" then
+	if addon == "DarkShestakUI" then
 		-- Blizzard Frame reskin
 		local bgskins = {
 			"GameMenuFrame",

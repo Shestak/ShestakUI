@@ -44,7 +44,7 @@ frame:SetScript("OnEvent", function(self, event, ...) self[event](self, event, .
 frame:RegisterEvent("ADDON_LOADED")
 
 function frame:ADDON_LOADED(event, name)
-	if name == "ShestakUI" then
+	if name == "DarkShestakUI" then
 		self:RegisterEvent("PLAYER_LOGIN")
 		self:RegisterEvent("PLAYER_ENTERING_WORLD")
 		self:RegisterEvent("LFG_UPDATE")

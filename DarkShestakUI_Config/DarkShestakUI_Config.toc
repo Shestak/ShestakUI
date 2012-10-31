@@ -1,15 +1,15 @@
 ## Interface: 50001
-## Title: ShestakUI Config
-## Notes: In-game configuration for ShestakUI
+## Title: Dark ShestakUI Config
+## Notes: In-game configuration for Dark ShestakUI
 ## Author: Tohveli
-## Version: 4.20
+## Version: 0.3.1
 ## Credits: Elv22, Fernir, Tukz
-## RequiredDeps: ShestakUI
+## RequiredDeps: DarkShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
-## X-Curse-Packaged-Version: 4.20
-## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestakui
+## X-Curse-Packaged-Version: 0.3.1
+## X-Curse-Project-Name: DarkShestakUI
+## X-Curse-Project-ID: darkshestakui
 ## Website: http://shestak.org
 
 Locales\English.lua
@@ -23,4 +23,4 @@ Locales\Russian.lua
 Locales\Spanish.lua
 Locales\Taiwan.lua
 
-ShestakUI_Config.lua
+DarkShestakUI_Config.lua

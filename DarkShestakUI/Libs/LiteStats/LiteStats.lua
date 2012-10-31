@@ -61,7 +61,7 @@ local function RegEvents(f, l) for _, e in ipairs{strsplit(" ", l)} do f:Registe
 local ls, coordX, coordY, conf, Coords = CreateFrame("Frame"), 0, 0, {}
 RegEvents(ls, "ADDON_LOADED PLAYER_REGEN_DISABLED PLAYER_REGEN_ENABLED")
 ls:SetScript("OnEvent", function(_, event, addon)
-	if event == "ADDON_LOADED" and addon == "ShestakUI" then
+	if event == "ADDON_LOADED" and addon == "DarkShestakUI" then
 		if not SavedStats then SavedStats = {} end
 		if not SavedStats[realm] then SavedStats[realm] = {} end
 		if not SavedStats[realm][char] then SavedStats[realm][char] = {} end
@@ -219,7 +219,7 @@ function SlashCmdList.LSTATS()
 	if experience.enabled then
 		slprint(format("%s/%s/%s", COMBAT_XP_GAIN, TIME_PLAYED_MSG, FACTION), L_STATS_RC_EXPERIENCE, L_STATS_WATCH_FACTIONS)
 	end
-	print("|cffBCEE68", format(L_STATS_OTHER_OPTIONS, "|cff66C6FFShestakUI\\Config\\DataText.lua"))
+	print("|cffBCEE68", format(L_STATS_OTHER_OPTIONS, "|cff66C6FFDarkShestakUI\\Config\\DataText.lua"))
 end
 
 CreateFrame("Frame", "LSMenus", UIParent, "UIDropDownMenuTemplate")

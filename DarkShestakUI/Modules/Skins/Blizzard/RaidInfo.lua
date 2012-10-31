@@ -47,4 +47,4 @@ local function LoadSkin()
 	T.SkinCheckBox(RaidFrameAllAssistCheckButton)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

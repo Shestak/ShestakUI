@@ -662,7 +662,7 @@ function CreateUIConfig()
 
 	local TitleBoxVerText = TitleBoxVer:CreateFontString("UIConfigTitleVer", "OVERLAY", "GameFontNormal")
 	TitleBoxVerText:SetPoint("CENTER")
-	TitleBoxVerText:SetText("ShestakUI "..T.version)
+	TitleBoxVerText:SetText("Dark ShestakUI "..T.version)
 
 	-- Main Frame Title
 	local TitleBox = CreateFrame("Frame", "TitleBox", UIConfigMain)
@@ -1012,7 +1012,7 @@ do
 	local frame = CreateFrame("Frame", nil, InterfaceOptionsFramePanelContainer)
 	frame:Hide()
 
-	frame.name = "ShestakUI"
+	frame.name = "Dark ShestakUI"
 	frame:SetScript("OnShow", function(self)
 		if self.show then return end
 		local T, C, L = unpack(ShestakUI)

@@ -23,4 +23,4 @@ local function LoadSkin()
 	T.SkinCloseButton(SideDressUpModelCloseButton, SideDressUpFrame)
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

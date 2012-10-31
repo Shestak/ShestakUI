@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if not IsAddOnLoaded("ShestakUI_Config") then return end
+if not IsAddOnLoaded("DarkShestakUI_Config") then return end
 
 ----------------------------------------------------------------------------------------
 --	This Module loads new user settings if ShestakUI_Config is loaded

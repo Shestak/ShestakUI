@@ -172,8 +172,8 @@ SLASH_DBMTEST2 = "/виьеуые"
 --	Switch to heal layout
 ----------------------------------------------------------------------------------------
 SlashCmdList.HEAL = function()
-	DisableAddOn("ShestakUI_DPS")
-	EnableAddOn("ShestakUI_Heal")
+	DisableAddOn("DarkShestakUI_DPS")
+	EnableAddOn("DarkShestakUI_Heal")
 	ReloadUI()
 end
 SLASH_HEAL1 = "/heal"
@@ -183,8 +183,8 @@ SLASH_HEAL2 = "/руфд"
 --	Switch to dps layout
 ----------------------------------------------------------------------------------------
 SlashCmdList.DPS = function()
-	DisableAddOn("ShestakUI_Heal")
-	EnableAddOn("ShestakUI_DPS")
+	DisableAddOn("DarkShestakUI_Heal")
+	EnableAddOn("DarkShestakUI_DPS")
 	ReloadUI()
 end
 SLASH_DPS1 = "/dps"

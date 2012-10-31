@@ -287,7 +287,7 @@ local function InstallUI()
 end
 
 local function DisableUI()
-	DisableAddOn("ShestakUI")
+	DisableAddOn("DarkShestakUI")
 	ReloadUI()
 end
 
@@ -347,8 +347,8 @@ StaticPopupDialogs.SWITCH_RAID = {
 	text = L_POPUP_SWITCH_RAID,
 	button1 = DAMAGER,
 	button2 = HEALER,
-	OnAccept = function() DisableAddOn("ShestakUI_Heal") EnableAddOn("ShestakUI_DPS") ReloadUI() end,
-	OnCancel = function() EnableAddOn("ShestakUI_Heal") DisableAddOn("ShestakUI_DPS") ReloadUI() end,
+	OnAccept = function() DisableAddOn("DarkShestakUI_Heal") EnableAddOn("DarkShestakUI_DPS") ReloadUI() end,
+	OnCancel = function() EnableAddOn("DarkShestakUI_Heal") DisableAddOn("DarkShestakUI_DPS") ReloadUI() end,
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
@@ -402,7 +402,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		end
 	end
 
-	if IsAddOnLoaded("ShestakUI_DPS") and IsAddOnLoaded("ShestakUI_Heal") then
+	if IsAddOnLoaded("DarkShestakUI_DPS") and IsAddOnLoaded("DarkShestakUI_Heal") then
 		StaticPopup_Show("SWITCH_RAID")
 	end
 
