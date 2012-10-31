@@ -259,72 +259,90 @@ if C.unitframe.enable ~= true or C.unitframe.enable == true and C.unitframe_clas
 local RangeDisplayText = UIParent:CreateFontString(nil, "OVERLAY")
 RangeDisplayText:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 RangeDisplayText:SetPoint("CENTER", oUF_Target, "CENTER", 0, -9)
-local FriendItems = {
-    37727,  -- 5
-    34368,  -- 8
-    32321,  -- 10
-    1251,   -- 15
-    21519,  -- 20
-    31463,  -- 25
-    1180,   -- 30
-    18904,  -- 35
-    34471,  -- 40
-    }
-local EnemyItems = {
-    37727,  -- 5
-    34368,  -- 8
-    32321,  -- 10
-    33069,  -- 15
-    10645,  -- 20
-    31463,  -- 25
-    835,    -- 30
-    18904,  -- 35
-    28767,  -- 40
-    }
-local Target = nil
-local Distance = 0
-local RangeDisplay = CreateFrame("Frame")
-RangeDisplay:SetScript("OnUpdate", function()
-    if UnitCanAssist("player", "target") and UnitName("target") ~= T.name then
-        Target = FriendItems
-    elseif UnitCanAttack("player", "target") then
-        Target = EnemyItems
-    end
-    if Target ~= nil then
-        for key, item in pairs(Target) do
-            if IsItemInRange(item, "target") == 0 then
-                Distance = key
-            end
+local Items = {
+    ["Friend"] = {
+        37727,  -- 5
+        34368,  -- 8
+        32321,  -- 10
+        1251,   -- 15
+        21519,  -- 20
+        31463,  -- 25
+        1180,   -- 30
+        18904,  -- 35
+        34471,  -- 40
+    },
+    ["Enemy"] = {
+        37727,  -- 5
+        34368,  -- 8
+        32321,  -- 10
+        33069,  -- 15
+        10645,  -- 20
+        31463,  -- 25
+        835,    -- 30
+        18904,  -- 35
+        28767,  -- 40
+    },
+}
+local Colors = {
+    {0.3, 0.3, 0.9},    -- 0-5
+    {0.3, 0.9, 0.9}  -- 5-8
+    {0.3, 0.9, 0.9},    -- 5-10
+    {0.3, 0.9, 0.9},    -- 10-15
+    {0.9, 0.9, 0.1},    -- 15-20
+    {0.9, 0.9, 0.1},    -- 20-25
+    {0.1, 0.9, 0.1},    -- 25-30
+    {0.9, 0.9, 0.1},    -- 30-35
+    {0.9, 0.9, 0.1},    -- 35-40
+    {0.9, 0.1, 0.1},    -- >40
+}
+
+local timer = 0
+local f = CreateFrame("Frame")
+f:SetScript("OnUpdate", function(self, elapsed)
+    timer = timer + elapsed
+    if timer >= 0.2 then
+        local distance = 0
+        local target = nil
+        
+        if UnitCanAssist("player", "target") and UnitIsUnit("target", "player") == nil then
+            target = Items.Friend
+        elseif UnitCanAttack("player", "target") then
+            target = Items.Enemy
         end
+        
+        if target ~= nil then
+            RangeDisplay:Show()
+            for key, item in pairs(target) do
+                if IsItemInRange(item, "target") == 0 then
+                    distance = key
+                end
+            end
+            for key, color in pairs(Colors) do
+                local r, g, b = unpack(color)
+                if distance == key - 1 then
+                    RangeDisplay:SetTextColor(r, g, b)
+                end
+            end
+        else
+            RangeDisplay:Hide()
+        end
+        
+        if distance == 0 then
+            RangeDisplay:SetText("< 5")
+        elseif distance == 1 then
+            RangeDisplay:SetText("5-8")
+        elseif distance == 2 then
+            RangeDisplay:SetText("8-10")
+        elseif distance < 9 then
+            local minDistance = distance * 5 - 5
+            local maxDistance = distance * 5
+            RangeDisplay:SetText(minDistance.."-"..maxDistance)
+        else
+            RangeDisplay:SetText("> 40")
+        end
+        
+        timer = 0
     end
-    if Target == nil then
-        RangeDisplayText:Hide()
-    else
-        RangeDisplayText:Show()
-    end
-    if Distance == 0 then
-        RangeDisplayText:SetText("< 5")
-        RangeDisplayText:SetTextColor(0.9, 0.9, 0.9)
-    elseif Distance == 1 then
-        RangeDisplayText:SetText("5-8")
-    elseif Distance == 2 then
-        RangeDisplayText:SetText("8-10")
-    elseif Distance < 9 then
-        local minDistance = Distance * 5 - 5
-        local maxDistance = Distance * 5
-        RangeDisplayText:SetText(minDistance.."-"..maxDistance)
-        RangeDisplayText:SetTextColor(0.9, 0.9, 0.3)
-    else
-        RangeDisplayText:SetTextColor(0.9, 0.2, 0.2)
-        RangeDisplayText:SetText("> 40")
-    end
-    if Distance > 0 and Distance <= 4 then
-        RangeDisplayText:SetTextColor(0.3, 0.9, 0.9)
-    elseif Distance ~= 0 and Distance <= 6 then
-        RangeDisplayText:SetTextColor(0.3, 0.9, 0.3)
-    end
-    Distance = 0
-    Target = nil
 end)
 
 -- edit by Oz of shestak. org --
