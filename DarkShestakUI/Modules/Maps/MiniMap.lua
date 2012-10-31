@@ -51,7 +51,7 @@ GameTimeFrame:Hide()
 MiniMapMailFrame:ClearAllPoints()
 MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
 MiniMapMailBorder:Hide()
-MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
+MiniMapMailIcon:SetTexture("Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\Mail.tga")
 MiniMapMailIcon:SetSize(16, 16)
 
 -- Move QueueStatus icon
