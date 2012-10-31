@@ -421,7 +421,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 end
 
 ----------------------------------------------------------------------------------------
---	Majestic Config
+--	m2jest1c Config
 ----------------------------------------------------------------------------------------
 if T.coauthor == true then
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
@@ -436,6 +436,7 @@ if T.coauthor == true then
 	C["misc"].already_known = true
 	C["misc"].disenchanting = true
 	C["misc"].move_blizzard = true
+	C["misc"].enchantment_scroll = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
 	C["announcements"].toys = true
