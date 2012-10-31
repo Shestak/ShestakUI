@@ -1,7 +1,7 @@
 ## Interface: 50001
 ## Title: cargBags_Nivaya
 ## Author: Luzzifus
-## RequiredDeps: ShestakUI
+## RequiredDeps: DarkShestakUI
 ## OptionalDeps: ItemRack, Outfitter
 ## SavedVariables: cBnivCfg, cB_CustomBags, cBniv_CatInfo
 ## SavedVariablesPerCharacter: cB_KnownItems, cBniv
