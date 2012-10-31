@@ -29,14 +29,16 @@ local function PositionAndStyle()
 		buttons[i]:SetBackdropBorderColor(unpack(C.media.border_color))
 		buttons[i].ClearAllPoints = T.dummy
 		buttons[i].SetPoint = T.dummy
-		buttons[i]:SetAlpha(0)
-		buttons[i]:HookScript("OnEnter", function()
-			if InCombatLockdown() then return end
-			buttons[i]:FadeIn()
-		end)
-		buttons[i]:HookScript("OnLeave", function()
-			buttons[i]:FadeOut()
-		end)
+		if C.skins.minimap_buttons_mouseover == true then
+			buttons[i]:SetAlpha(0)
+			buttons[i]:HookScript("OnEnter", function()
+				if InCombatLockdown() then return end
+				buttons[i]:FadeIn()
+			end)
+			buttons[i]:HookScript("OnLeave", function()
+				buttons[i]:FadeOut()
+			end)
+		end
 	end
 end
 

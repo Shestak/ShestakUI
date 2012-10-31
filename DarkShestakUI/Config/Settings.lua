@@ -109,6 +109,7 @@ C["automation"] = {
 C["skins"] = {
 	["blizzard_frames"] = true,					-- Blizzard frames skin
 	["minimap_buttons"] = true,					-- Skin addons icons on minimap
+	["minimap_buttons_mouseover"] = false,		-- Minimap buttons on mouseover
 	["clcprot"] = false,						-- CLCProt skin
 	["clcret"] = false,							-- CLCRet skin
 	["combustion_helper"] = false,				-- CombustionHelper skin
