@@ -7,8 +7,8 @@
 ## SavedVariables: cBnivCfg, cB_CustomBags, cBniv_CatInfo
 ## SavedVariablesPerCharacter: cB_KnownItems, cBniv
 ## X-Curse-Packaged-Version: 0.40
-## X-Curse-Project-Name: DarkShestakUI
-## X-Curse-Project-ID: darkshestakui
+## X-Curse-Project-Name: Dark ShestakUI
+## X-Curse-Project-ID: dark-shestakui
 
 cargBags\embed.xml
 localization.lua
