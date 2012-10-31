@@ -4,6 +4,7 @@ if C.chat.enable ~= true or C.chat.tool_bar ~= true then return end
 ----------------------------------------------------------------------------------------
 --	ToolBar(by m2jest1c for Dark ShestakUI)
 ----------------------------------------------------------------------------------------
+local damagemeter
 local tbar = CreateFrame("Frame", "ToolBar", UIParent)
 tbar:CreatePanel("Invisible", 16, C.chat.background and C.chat.height + 5 or C.chat.height + 1, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -2, C.chat.background and 25 or 20)
 if C.chat.tool_bar_mouseover == true then
@@ -42,16 +43,16 @@ local LootHide = function()
 end
 
 local DamageShow = function()
-	alDamageMeterFrame:ClearAllPoints()
-	alDamageMeterFrame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26)
-	TooltipAnchor:SetPoint("BOTTOMRIGHT", alDamageMeterFrame, "TOPRIGHT", 2, 5)
+	DarkShestakUI_alDamageMeterFrame:ClearAllPoints()
+	DarkShestakUI_alDamageMeterFrame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26)
+	TooltipAnchor:SetPoint("BOTTOMRIGHT", DarkShestakUI_alDamageMeterFrame, "TOPRIGHT", 2, 5)
 	DB.t:SetAlpha(1)
 	SavedOptionsPerChar.DamageMeter = true
 end
 
 local DamageHide = function()
-	alDamageMeterFrame:ClearAllPoints()
-	alDamageMeterFrame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 23, 26)
+	DarkShestakUI_alDamageMeterFrame:ClearAllPoints()
+	DarkShestakUI_alDamageMeterFrame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 23, 26)
 	DB.t:SetAlpha(0)
 	SavedOptionsPerChar.DamageMeter = false
 end
@@ -60,7 +61,7 @@ function tbar:LB(button)
 	if button == "RightButton" then
 		ToggleLootHistoryFrame()
 	else
-		if alDamageMeterEnabled ~= nil then
+		if damagemeter ~= nil then
 			if SavedOptionsPerChar.LootFrame == true and SavedOptionsPerChar.DamageMeter == false then
 				LootHide()
 				TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
@@ -131,16 +132,16 @@ tbar:RegisterEvent("PLAYER_LOGIN")
 tbar:HookScript("OnEvent", function(self, event, addon)
 	if event == "PLAYER_LOGIN" then
 		self:UnregisterEvent(event)
-		_, _, _, alDamageMeterEnabled = GetAddOnInfo("alDamageMeter")
+		_, _, _, damagemeter = GetAddOnInfo("DarkShestakUI_alDamageMeter")
 		if SavedOptionsPerChar.LootFrame == nil then SavedOptionsPerChar.LootFrame = true end
 		if SavedOptionsPerChar.DamageMeter == nil then SavedOptionsPerChar.DamageMeter = false end
-		if SavedOptionsPerChar.LootFrame == true and alDamageMeterEnabled ~= nil then
+		if SavedOptionsPerChar.LootFrame == true and damagemeter ~= nil then
 			LootShow()
 			DamageHide()
-		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == true and alDamageMeterEnabled ~= nil then
+		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == true and damagemeter ~= nil then
 			LootHide()
 			DamageShow()
-		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == false and alDamageMeterEnabled ~= nil then
+		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == false and damagemeter ~= nil then
 			LootHide()
 			DamageHide()
 			TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
