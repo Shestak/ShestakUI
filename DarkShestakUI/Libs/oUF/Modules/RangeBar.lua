@@ -58,7 +58,7 @@ local Update = function(self, event, unit)
 		if self.Auras then
 			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19)
 		end
-	elseif UnitCanAttack("player", "target") then
+	elseif UnitCanAttack("player", "target") and UnitIsDead("target") == nil then
 		Target = Items.Enemy
 		rb:Show()
 		if self.Auras then
@@ -113,6 +113,7 @@ local Enable = function(self)
 		rb.ForceUpdate = ForceUpdate
 
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", Path)
+		self:RegisterEvent("UNIT_DYNAMIC_FLAGS", Path)
 
 		return true
 	end
@@ -122,6 +123,7 @@ local Disable = function(self)
 	local rb = self.RangeBar
 	if rb then
 		self:UnregisterEvent("PLAYER_TARGET_CHANGED", Path)
+		self:UnregisterEvent("UNIT_DYNAMIC_FLAGS", Path)
 	end
 end
 
