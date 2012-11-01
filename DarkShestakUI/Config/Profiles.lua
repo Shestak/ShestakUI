@@ -440,7 +440,9 @@ if T.coauthor == true then
 	C["misc"].enchantment_scroll = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
+	C["announcements"].spells = true
 	C["announcements"].toys = true
+	C["announcements"].feasts = true
 	C["announcements"].portals = true
 	C["announcements"].bad_gear = true
 	C["automation"].screenshot = true
