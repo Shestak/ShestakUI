@@ -2,10 +2,10 @@
 ## Title: Dark ShestakUI Heal
 ## Notes: Raid layout for Dark ShestakUI
 ## Author: Shestak
-## Version: 0.40
+## Version: 0.41
 ## Credits: ALZA, Caellian, Tukz
 ## RequiredDeps: DarkShestakUI
-## X-Curse-Packaged-Version: 0.40
+## X-Curse-Packaged-Version: 0.41
 ## X-Curse-Project-Name: Dark ShestakUI
 ## X-Curse-Project-ID: dark-shestakui
 ## Website: http://shestak.org

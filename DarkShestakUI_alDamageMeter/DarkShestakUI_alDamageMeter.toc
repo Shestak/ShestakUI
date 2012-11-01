@@ -4,7 +4,7 @@
 ## Author: Allez
 ## Version: 50001.11
 ## RequiredDeps: DarkShestakUI
-## X-Curse-Packaged-Version: 0.40
+## X-Curse-Packaged-Version: 0.41
 ## X-Curse-Project-Name: Dark ShestakUI
 ## X-Curse-Project-ID: dark-shestakui
 
