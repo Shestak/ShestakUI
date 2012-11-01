@@ -17,6 +17,8 @@ if C.announcements.spells == true then
 		2908,	-- Soothe
 		120668,	-- Stormlash Totem
 		16190,	-- Mana Tide Totem
+		64901,	-- Hymn of Hope
+		108968, -- Void Shift
 	}
 end
 
