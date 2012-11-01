@@ -447,9 +447,6 @@ if T.coauthor == true then
 	C["automation"].accept_invite = true
 	C["automation"].auto_role = true
 	C["automation"].cancel_bad_buffs = true
-	C["skins"].blizzard_frames = true
-	C["skins"].minimap_buttons = true
-	C["skins"].dbm = true
 	C["skins"].clique = true
 	C["skins"].atlasloot = true
 	C["combattext"].killingblow = true
