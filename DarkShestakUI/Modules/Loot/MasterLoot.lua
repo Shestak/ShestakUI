@@ -6,14 +6,14 @@ if C.loot.lootframe ~= true then return end
 ----------------------------------------------------------------------------------------
 local hexColors = {}
 for k, v in pairs(RAID_CLASS_COLORS) do
-	hexColors[k] = string.format("|cff%02x%02x%02x", v.r * 255, v.g * 255, v.b * 255)
+	hexColors[k] = "|c"..v.colorStr
 end
 hexColors["UNKNOWN"] = string.format("|cff%02x%02x%02x", 0.6 * 255, 0.6 * 255, 0.6 * 255)
 
 if CUSTOM_CLASS_COLORS then
 	local function update()
 		for k, v in pairs(CUSTOM_CLASS_COLORS) do
-			hexColors[k] = string.format("|cff%02x%02x%02x", v.r * 255, v.g * 255, v.b * 255)
+			hexColors[k] = "|c"..v.colorStr
 		end
 	end
 	CUSTOM_CLASS_COLORS:RegisterCallback(update)
@@ -58,6 +58,7 @@ local function init()
 		end
 		if #players > 0 then
 			table.sort(players)
+			local _, cand
 			for _, cand in ipairs(players) do
 				-- Add candidate button
 				info.text = cand
@@ -139,7 +140,7 @@ local function init()
 
 	wipe(randoms)
 	for i = 1, MAX_RAID_MEMBERS do
-		candidate,lclass,className = GetMasterLootCandidate(slot,i)
+		candidate, lclass, className = GetMasterLootCandidate(slot, i)
 		if candidate then
 			table.insert(randoms, i)
 		end

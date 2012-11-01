@@ -18,7 +18,7 @@ if C.announcements.spells == true then
 		120668,	-- Stormlash Totem
 		16190,	-- Mana Tide Totem
 		64901,	-- Hymn of Hope
-		108968, -- Void Shift
+		108968,	-- Void Shift
 	}
 end
 
@@ -80,6 +80,7 @@ if C.announcements.portals == true then
 	}
 end
 
+
 if C.announcements.bad_gear == true then
 	T.AnnounceBadGear = {
 		-- Head
@@ -99,7 +100,7 @@ if C.announcements.bad_gear == true then
 			65360,	-- Cloak of Coordination
 			65274,	-- Cloak of Coordination
 		},
-		-- Hands
+		-- Hand
 		[16] = {
 			44050,	-- Mastercraft Kalu'ak Fishing Pole
 			19970,	-- Arcanite Fishing Pole
