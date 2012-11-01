@@ -60,6 +60,7 @@ if T.author == true then
 	C["announcements"].says_thanks = true
 	C["announcements"].feasts = true
 	C["announcements"].portals = true
+	C["announcements"].bad_gear = true
 	C["automation"].accept_quest = true
 	C["automation"].auto_collapse = true
 	C["automation"].skip_cinematic = true
@@ -437,11 +438,11 @@ if T.coauthor == true then
 	C["misc"].disenchanting = true
 	C["misc"].move_blizzard = true
 	C["misc"].enchantment_scroll = true
-	C["misc"].bad_gear = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
 	C["announcements"].toys = true
 	C["announcements"].portals = true
+	C["announcements"].bad_gear = true
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
 	C["automation"].auto_role = true

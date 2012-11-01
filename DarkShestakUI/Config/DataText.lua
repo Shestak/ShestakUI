@@ -4,52 +4,43 @@
 --	LiteStats configuration file
 --	BACKUP THIS FILE BEFORE UPDATING!
 ----------------------------------------------------------------------------------------
-LPSTAT_FONT = {
-	font = C.font.stats_font,				-- Path to your font
-	color = {1, 1, 1},						-- {red,green,blue} or "CLASS"
-	size = C.font.stats_font_size,			-- Point font size
-	alpha = 1,								-- Alpha transparency
-	outline = 3,							-- Thin outline. 0 = no outline.
-	shadow = {alpha=C.font.stats_font_shadow and 1 or 0, x=1, y=-1},	-- Font shadow = 1
-}
-LTIPICONSIZE = 11							-- Icon sizes in info tips
-
--- Player class coloring function for optional use with fmt strings config.
--- Example use: fmt = class"G:".." %d"..class"/".."%d" (colors "G:" and "/" and numbers retain the default text color)
--- Example2: fmt = class"%d".."fps" (colors the fps number and "fps" retains the default text color)
+local cBN = select(4, GetAddOnInfo("cargBags_Nivaya"))
 local ctab = CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS
 local function class(string)
 	local color = ctab[select(2, UnitClass("player"))]
-	return format("|cff%02x%02x%02x%s|r", 255, 237, 0, string or "")
+	return format("|cff%02x%02x%02x%s|r", color.r * 255, color.g * 255, color.b * 255, string or "")
 end
 
--- Modules Config. Note: omitting any variable will likely cause errors, check carefully when updating.
--- * More tip_anchor strings: http://www.wowwiki.com/API_GameTooltip_SetOwner
--- * To color any of your "fmt" strings, use hex format ("|cffFFFF55*string*|r") or the class format described above.
--- * You can start a new line by using "\n" in your format strings.
+LPSTAT_FONT = {
+	font = C.font.stats_font,				-- Path to your font
+	color = {1, 1, 1},						-- {red, green, blue} or "CLASS"
+	size = C.font.stats_font_size,			-- Point font size
+	alpha = 1,								-- Alpha transparency
+	outline = 3,							-- Thin outline. 0 = no outline.
+	shadow = {alpha = C.font.stats_font_shadow and 1 or 0, x = 1, y = -1},	-- Font shadow = 1
+}
 
-local _, _, _, cBN = GetAddOnInfo("cargBags_Nivaya") -- For Gold block (by m2jest1c)
+LTIPICONSIZE = 14							-- Icon sizes in info tips
 
 LPSTAT_CONFIG = {
 -- Bottomleft block
 	Clock = {
 		enabled = C.stats.clock, -- Local time and the 24 hour clock can be enabled in-game via time manager (right-click)
-		AM = "A", PM = class"P", colon = class":", -- These values apply to the displayed clock.
+		AM = class"A", PM = class"P", colon = class":", -- These values apply to the displayed clock
 		anchor_frame = "UIParent", anchor_to = "left", anchor_from = "bottomleft",
-		x_off = 20, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20,
-		justify_h = "left",
+		x_off = 20, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Latency = {
 		enabled = C.stats.latency,
-		fmt = "[color]%d|r"..class"ms", -- "77ms", [color] inserts latency color code.
+		fmt = "[color]%d|r"..class"ms", -- "77ms", [color] inserts latency color code
 	 	anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
 		x_off = -17, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
 	Memory = {
 		enabled = C.stats.memory,
 		fmt_mb = "%.1f"..class"mb", -- "12.5mb"
-		fmt_kb = "%.0f"..class"kb", -- "256kb" - only shows if memory is under one megabyte
-		--max_addons = 15, -- Set to nil or comment/delete this line to disable. Holding Alt reveals hidden addons.
+		fmt_kb = "%.0f"..class"kb", -- "256kb"
+		max_addons = nil, -- Holding Alt reveals hidden addons
 		anchor_frame = C.stats.latency and "Latency", anchor_to = "right", anchor_from = "left",
 		x_off = -3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
@@ -61,33 +52,33 @@ LPSTAT_CONFIG = {
 	},
 	Friends = {
 		enabled = C.stats.friend,
-		fmt = "%d/%d"..class"f", -- "F: 3/40"
-		maxfriends = nil, -- Set max friends listed, nil means no limit.
+		fmt = "%d/%d"..class"f", -- "3/40F"
+		maxfriends = nil, -- Set max friends listed, nil means no limit
 		anchor_frame = "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Guild = {
 		enabled = C.stats.guild,
-		fmt = "%d/%d"..class"g", -- "G: 5/114"
-		maxguild = nil, -- Set max members listed, nil means no limit. Alt-key reveals hidden members.
-		threshold = 1, -- Minimum level displayed (1-80).
-		show_xp = true, -- Show guild experience.
-		sorting = "class", -- Default roster sorting: name, level, class, zone, rank, note.
+		fmt = "%d/%d"..class"g", -- "5/114G"
+		maxguild = nil, -- Set max members listed, nil means no limit. Alt-key reveals hidden members
+		threshold = 1, -- Minimum level displayed (1-90)
+		show_xp = true, -- Show guild experience
+		sorting = "class", -- Default roster sorting: name, level, class, zone, rank, note
 		anchor_frame = "Friends", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.friend and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Durability = {
 		enabled = C.stats.durability,
-		fmt = "[color]%d|r%%"..class"d",-- "54%D" -- %% outputs %, [color] inserts durability color code.
-		man = true, -- Hide bliz durability man.
-		ignore_inventory = false, -- Ignore inventory gear when auto-repairing.
-		gear_icons = false, -- Show your gear icons in the tooltip.
+		fmt = "[color]%d|r%%"..class"d", -- "54%D", [color] inserts durability color code
+		man = true, -- Hide bliz durability man
+		ignore_inventory = false, -- Ignore inventory gear when auto-repairing
+		gear_icons = false, -- Show your gear icons in the tooltip
 		anchor_frame = "Guild", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.guild and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Experience = {
 		enabled = C.stats.experience,
-			-- Experience & Played tags...
+			-- Experience & Played tags:
 			--	Player Level [level]
 			--	Current XP [curxp]				Max XP [totalxp]				Current/Max% [cur%]
 			--	Remaining XP [remainingxp]		Remaining% [remaining%]
@@ -97,11 +88,10 @@ LPSTAT_CONFIG = {
 			--	Quests To Level [questsleft]	Kills To Level [killsleft]
 			--	Total Played [playedtotal]		Level Played [playedlevel]		Session Played [playedsession]
 		xp_normal_fmt = "[curxp]([cur%]%)"..class"XP", -- XP string used when not rested.
-		xp_rested_fmt = "[curxp]([cur%]%)"..class"XP ".." [restxp]([rest%]%)"..class"R", -- XP string used when rested.
-		played_fmt = class"Online: ".."|r".."[playedsession]", -- Played time format.
+		xp_rested_fmt = "[curxp]([cur%]%)"..class"XP ".." [restxp]([rest%]%)"..class"R", -- XP string used when rested
+		played_fmt = class"Online: ".."|r".."[playedsession]", -- Played time format
 		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")
-			-- day = "d", hour = "h", minute = "m", second = "s", -- Customizable time labels. Will localize by default.
-			-- Faction tags...
+			-- Faction tags:
 			--	Faction name [repname]
 			--	Standing Color Code [repcolor]	Standing Name [standing]
 			--	Current Rep [currep]			Current Rep Percent [rep%]
@@ -114,36 +104,35 @@ LPSTAT_CONFIG = {
 			["Клан Громового Молота"] = "Громовой Молот",
 			["Защитники Тол Барада"] = "Тол Барад",
 			["Гидраксианские Повелители Вод"] = "Повелители Вод",
-			["Комсомольский Авангард"] = "КМ",
 		},
 		anchor_frame = "Durability", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.durability and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 -- Bottomright block
 	Coords = {
-		enabled = C.stats.coords, -- Location tooltip has coords, this module is for displaying it as a separate stat.
-		fmt = "%d,%d", -- "44,19"
+		enabled = C.stats.coords,
+		fmt = "%d,%d",
 		anchor_frame = "UIParent", anchor_to = "right", anchor_from = "topright",
-		x_off = -17, y_off = -11, justify_h = "right",
+		x_off = -17, y_off = -11
 	},
 	Location = {
 		enabled = C.stats.location,
-		subzone = true, -- Set to false to display the main zone's name instead of the subzone.
-		truncate = 0, -- Max number of letters for location text, set to 0 to disable.
-		coord_fmt = "%d,%d", -- "44,19", to add tenths, use "%.1f" (digit determines decimal)
+		subzone = true, -- Set to false to display the main zone's name instead of the subzone
+		truncate = 0, -- Max number of letters for location text, set to 0 to disable
+		coord_fmt = "%d,%d",
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
 		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
 -- Top block
 	Stats = {
 		enabled = C.toppanel.enable,
-			-- Available stat tags...
-			--   Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery% [mastery]				Expertise% [expertise]
-			--   Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]			Melee Haste [meleehaste]
-			--   Ranged Haste% [rangedhaste]	Spell Haste% [spellhaste]		Melee Crit% [meleecrit]			Ranged Crit% [rangedcrit]
-			--   Spell Crit% [spellcrit]		Spellpower [spellpower]			Healing [healing]				MP5 [manaregen]
-			--   Dodge% [dodge]					Parry% [parry]					Block% [block]					Avoidance% [avoidance]
-			--   Armor Value [armor]			Resilience [resilience]
+			-- Available stat tags:
+			--	Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery% [mastery]			Expertise% [expertise]
+			--	Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]		Melee Haste [meleehaste]
+			--	Ranged Haste% [rangedhaste]		Spell Haste% [spellhaste]		Melee Crit% [meleecrit]		Ranged Crit% [rangedcrit]
+			--	Spell Crit% [spellcrit]			Spellpower [spellpower]			Healing [healing]			MP5 [manaregen]
+			--	Dodge% [dodge]					Parry% [parry]					Block% [block]				Avoidance% [avoidance]
+			--	Armor Value [armor]				Resilience [resilience]
 		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
 		spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%", -- Spec #2 string
 		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
@@ -151,31 +140,31 @@ LPSTAT_CONFIG = {
 	},
 	Bags = {
 		enabled = C.toppanel.enable,
-		fmt = class"B: ".."%d/%d", -- "B: 24/98"
+		fmt = class"B: ".."%d/%d",
 		anchor_frame = "Stats", anchor_to = "topleft", anchor_from = "bottomleft",
 		x_off = 0, y_off = -5,
 	},
 	Helm = {
 		enabled = C.toppanel.enable,
-		fmt = class"H: ".."%s", -- "Helm"
+		fmt = class"H: ".."%s",
 		anchor_frame = "Bags", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Cloak = {
 		enabled = C.toppanel.enable,
-		fmt = class"C: ".."%s", -- "Cloak"
+		fmt = class"C: ".."%s",
 		anchor_frame = "Helm", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Loot = {
 		enabled = C.toppanel.enable,
-		fmt = class"L: ".."%s", -- "Loot"
+		fmt = class"L: ".."%s",
 		anchor_frame = "Cloak", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Nameplates = {
 		enabled = C.toppanel.enable,
-		fmt = class"N: ".."%s", -- "Nameplates"
+		fmt = class"N: ".."%s",
 		anchor_frame = "Loot", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
@@ -187,8 +176,8 @@ LPSTAT_CONFIG = {
 -- MiniMap block
 	Ping = {
 		enabled = true,
-		fmt = "|cffff5555*|r %s |cffff5555*|r", -- "* Katae *"
-		hide_self = false, -- Hide player's ping.
+		fmt = "|cffff5555*|r %s |cffff5555*|r", -- "* PlayerName *"
+		hide_self = true, -- Hide player's ping
 		anchor_frame = "Minimap", anchor_to = "bottom", anchor_from = "bottom",
 		x_off = 0, y_off = 25,
 	},
@@ -197,8 +186,7 @@ LPSTAT_CONFIG = {
 		enabled = true,
 		style = 1, -- Display styles: [1] 55g 21s 11c [2] 8829.4g [3] 823.55.94
 		anchor_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "FPS",
-		anchor_to = "right",
-		anchor_from = cBN and "bottomright" or C.bag.enable and "topright" or "left",
+		anchor_to = "right", anchor_from = cBN and "bottomright" or C.bag.enable and "topright" or "left",
 		x_off = cBN and 0 or C.bag.enable and -25 or -3,
 		y_off = cBN and 6 or C.bag.enable and -13 or 0,
 		tip_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "UIParent",
@@ -235,7 +223,7 @@ LPSTAT_PROFILES = {
 	},
 	PRIEST = {
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  MP5: ".."[manaregen]",
+			spec1fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
 			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
 		}
 	},

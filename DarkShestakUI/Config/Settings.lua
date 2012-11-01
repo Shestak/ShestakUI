@@ -61,7 +61,6 @@ C["misc"] = {
 	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
 	["archaeology"] = false,					-- Archaeology artifacts and cooldown
 	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
-	["bad_gear"] = false,						-- Warning if equiped Fishing Pole/Fishing Hat/etc. in Instance
 }
 
 ----------------------------------------------------------------------------------------
@@ -81,6 +80,7 @@ C["announcements"] = {
 	["flask_food_raid"] = false,				-- Announce to raid channel
 	["feasts"] = false,							-- Announce Feasts/Cauldrons/Souls/Repair Bots cast
 	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
+	["bad_gear"] = false,						-- Check bad gear in instance
 }
 
 ----------------------------------------------------------------------------------------
