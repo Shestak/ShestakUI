@@ -29,7 +29,7 @@
 	<Script file="Libs\LiteStats\LiteStats.lua"/>
 	<Script file="Modules\UnitFrames\Colors.lua"/>
 
-	<Script file="Config\Filters\AnnounceSpells.lua"/>
+	<Script file="Config\Filters\Announcements.lua"/>
 	<Script file="Config\Filters\ArenaControl.lua"/>
 	<Script file="Config\Filters\AutoButton.lua"/>
 	<Script file="Config\Filters\ChannelingTicks.lua"/>
