@@ -173,40 +173,40 @@ end
 
 local position = C.position.minimap[3]
 
-local UpdateAnchor = function()
-	-- TOP or BOTTOM
+local v, vr, vf, h, hr, hf
+
+local updposition = function()
 	if position == "TOPLEFT" or position == "TOP" or position == "TOPRIGHT" then
-		MinimapAnchorVertical = "TOP"
-		MinimapAnchorVerticalReverse = "BOTTOM"
-		MinimapAnchorVerticalFactor = -1
+		v = "TOP"
+		vr = "BOTTOM"
+		vf = -1
 	else
-		MinimapAnchorVertical = "BOTTOM"
-		MinimapAnchorVerticalReverse = "TOP"
-		MinimapAnchorVerticalFactor = 1
+		v = "BOTTOM"
+		vr = "TOP"
+		vf = 1
 	end
-	-- LEFT or RIGHT
 	if position == "TOPLEFT" or position == "LEFT" or position == "BOTTOMLEFT"then
-		MinimapAnchorHorizontal = "LEFT"
-		MinimapAnchorHorizontalReverse = "RIGHT"
-		MinimapAnchorHorizontalFactor = 1
+		h = "LEFT"
+		hr = "RIGHT"
+		hf = 1
 	else
-		MinimapAnchorHorizontal = "RIGHT"
-		MinimapAnchorHorizontalReverse = "LEFT"
-		MinimapAnchorHorizontalFactor = -1
+		h = "RIGHT"
+		hr = "LEFT"
+		hf = -1
 	end
 end
 
-UpdateAnchor()
+updposition()
 
 local MenuBG = CreateFrame("Frame", "TTMenuBackground", UIParent)
-MenuBG:CreatePanel("Transparent", borderwidth(1), 1, MinimapAnchorVertical..MinimapAnchorHorizontalReverse, Minimap, MinimapAnchorVerticalReverse..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor, 3 * MinimapAnchorVerticalFactor)
+MenuBG:CreatePanel("Transparent", borderwidth(1), 1, v..hr, Minimap, vr..hr, 2 * hf, 3 * vf)
 MenuBG:SetFrameLevel(defaultframelevel)
 MenuBG:SetFrameStrata("HIGH")
 MenuBG:EnableMouse(true)
 MenuBG:Hide()
 
 local AddonBG = CreateFrame("Frame", "TTMenuAddOnBackground", UIParent)
-AddonBG:CreatePanel("Transparent", borderwidth(1), 1, MinimapAnchorVertical..MinimapAnchorHorizontal, MenuBG, MinimapAnchorVertical..MinimapAnchorHorizontal, 0, 0)
+AddonBG:CreatePanel("Transparent", borderwidth(1), 1, v..h, MenuBG, v..h, 0, 0)
 AddonBG:SetFrameLevel(defaultframelevel)
 AddonBG:SetFrameStrata("HIGH")
 AddonBG:EnableMouse(true)
@@ -248,13 +248,13 @@ local function addMainMenuButtons(menuItems, menuName, menuBackground)
 	for index, value in ipairs(C.togglemainmenu) do
 		if value.text then
 			menuItems[index] = CreateFrame("Button", menuName..index, menuBackground)
-			menuItems[index]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), MinimapAnchorVertical, menuBackground, MinimapAnchorVertical, 0, buttonspacing(1) * MinimapAnchorVerticalFactor)
+			menuItems[index]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), v, menuBackground, v, 0, buttonspacing(1) * vf)
 			menuItems[index]:SetFrameLevel(defaultframelevel + 1)
 			menuItems[index]:SetFrameStrata("HIGH")
 			if mainmenusize == 0 then
-				menuItems[index]:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontal, menuBackground, MinimapAnchorVertical..MinimapAnchorHorizontal, buttonspacing(1) * MinimapAnchorHorizontalFactor, buttonspacing(1) * MinimapAnchorVerticalFactor)
+				menuItems[index]:SetPoint(v..h, menuBackground, v..h, buttonspacing(1) * hf, buttonspacing(1) * vf)
 			else
-				menuItems[index]:SetPoint(MinimapAnchorVertical, menuItems[lastMainMenuEntryID], MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor)
+				menuItems[index]:SetPoint(v, menuItems[lastMainMenuEntryID], vr, 0, buttonspacing(1) * vf)
 			end
 			menuItems[index]:EnableMouse(true)
 			menuItems[index]:RegisterForClicks("AnyUp")
@@ -282,7 +282,7 @@ local addonmenuitems = {}
 addMainMenuButtons(addonmenuitems, "AddonMenu", AddonBG)
 
 local OpenMenuBG = CreateFrame("Button", "TTOpenMenuBackground", UIParent)
-OpenMenuBG:CreatePanel("Overlay", borderwidth(1), buttonheight(1) / 1.3, MinimapAnchorVertical, MenuBG, MinimapAnchorVertical, 0, 0)
+OpenMenuBG:CreatePanel("Overlay", borderwidth(1), buttonheight(1) / 1.3, v, MenuBG, v, 0, 0)
 OpenMenuBG:EnableMouse(true)
 OpenMenuBG:RegisterForClicks("AnyUp")
 OpenMenuBG:SetFrameLevel(defaultframelevel)
@@ -309,7 +309,7 @@ Text:SetTextColor(0.3, 0.3, 0.9)
 TTOpenMenuBackground:FadeOut()
 
 local expandbutton = CreateFrame("Button", "AddonMenuExpandButton", AddonBG)
-expandbutton:CreatePanel("Overlay", buttonwidth(1), buttonheight(1) / 2, MinimapAnchorVerticalReverse, AddonBG, MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor * -1)
+expandbutton:CreatePanel("Overlay", buttonwidth(1), buttonheight(1) / 2, vr, AddonBG, vr, 0, buttonspacing(1) * vf * -1)
 expandbutton:EnableMouse(true)
 expandbutton:RegisterForClicks("AnyUp")
 expandbutton:SetFrameLevel(defaultframelevel + 1)
@@ -417,9 +417,9 @@ local function refreshAddOnMenu()
 			if (not addonToggleOnly or (C.toggleaddons[name] and IsAddOnLoaded(i))) then
 				addonmenuitems[j]:ClearAllPoints()
 				if menusize % menuheight == 0 then
-					addonmenuitems[j]:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontal, addonmenuitems[lastMenuEntryID], MinimapAnchorVertical..MinimapAnchorHorizontalReverse, buttonspacing(1) * MinimapAnchorHorizontalFactor, (buttonheight(-1 * MinimapAnchorVerticalFactor * menuheight + 1 * MinimapAnchorVerticalFactor) + buttonspacing(-1 * MinimapAnchorVerticalFactor * menuheight + 1 * MinimapAnchorVerticalFactor)))
+					addonmenuitems[j]:SetPoint(v..h, addonmenuitems[lastMenuEntryID], v..hr, buttonspacing(1) * hf, (buttonheight(-1 * vf * menuheight + 1 * vf) + buttonspacing(-1 * vf * menuheight + 1 * vf)))
 				else
-					addonmenuitems[j]:SetPoint(MinimapAnchorVertical, addonmenuitems[lastMenuEntryID], MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor)
+					addonmenuitems[j]:SetPoint(v, addonmenuitems[lastMenuEntryID], vr, 0, buttonspacing(1) * vf)
 				end
 				addonmenuitems[j]:Show()
 				lastMenuEntryID = j
@@ -495,7 +495,7 @@ for i = 1, GetNumAddOns() do
 	Text:SetHeight(C.media.pixel_font_size)
 	if addonInfo[i].is_main then
 		expandAddonButton[j] = CreateFrame("Button", "AddonMenuExpand"..j, addonmenuitems[j])	
-		expandAddonButton[j]:CreatePanel("Overlay", buttonheight(1) - 4, buttonheight(1) - 4, "TOP"..MinimapAnchorHorizontalReverse, addonmenuitems[j], "TOP"..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor * -1, -2)
+		expandAddonButton[j]:CreatePanel("Overlay", buttonheight(1) - 4, buttonheight(1) - 4, "TOP"..hr, addonmenuitems[j], "TOP"..hr, 2 * hf * -1, -2)
 		expandAddonButton[j]:SetFrameLevel(defaultframelevel + 2)
 		expandAddonButton[j]:SetFrameStrata("HIGH")
 		expandAddonButton[j]:EnableMouse(true)
@@ -545,23 +545,23 @@ frame:HookScript("OnUpdate", function(self, elapsed)
 	timer = timer + elapsed
 	if timer >= 0.4 and SavedPositions.MinimapAnchor and SavedPositions.MinimapAnchor[3] ~= position then
 		position = SavedPositions.MinimapAnchor[3]
-		UpdateAnchor()
+		updposition()
 		MenuBG:ClearAllPoints()
-		MenuBG:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontalReverse, Minimap, MinimapAnchorVerticalReverse..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor, 3 * MinimapAnchorVerticalFactor)
+		MenuBG:SetPoint(v..hr, Minimap, vr..hr, 2 * hf, 3 * vf)
 		AddonBG:ClearAllPoints()
-		AddonBG:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontal, MenuBG, MinimapAnchorVertical..MinimapAnchorHorizontal, 0, 0)
+		AddonBG:SetPoint(v..h, MenuBG, v..h, 0, 0)
 		OpenMenuBG:ClearAllPoints()
-		OpenMenuBG:SetPoint(MinimapAnchorVertical, MenuBG, MinimapAnchorVertical, 0, 0)
+		OpenMenuBG:SetPoint(v, MenuBG, v, 0, 0)
 		expandbutton:ClearAllPoints()
-		expandbutton:SetPoint(MinimapAnchorVerticalReverse, AddonBG, MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor * -1)
+		expandbutton:SetPoint(vr, AddonBG, vr, 0, buttonspacing(1) * vf * -1)
 		lastMainMenuEntryID = 0
 		for index, value in ipairs(C.togglemainmenu) do
 			if addonmenuitems[index]:IsShown() then
 				addonmenuitems[index]:ClearAllPoints()
 				if lastMainMenuEntryID == 0 then
-					addonmenuitems[index]:SetPoint(MinimapAnchorVertical..MinimapAnchorHorizontal, AddonBG, MinimapAnchorVertical..MinimapAnchorHorizontal, buttonspacing(1) * MinimapAnchorHorizontalFactor, buttonspacing(1) * MinimapAnchorVerticalFactor)
+					addonmenuitems[index]:SetPoint(v..h, AddonBG, v..h, buttonspacing(1) * hf, buttonspacing(1) * vf)
 				else
-					addonmenuitems[index]:SetPoint(MinimapAnchorVertical, addonmenuitems[lastMainMenuEntryID], MinimapAnchorVerticalReverse, 0, buttonspacing(1) * MinimapAnchorVerticalFactor)
+					addonmenuitems[index]:SetPoint(v, addonmenuitems[lastMainMenuEntryID], vr, 0, buttonspacing(1) * vf)
 				end
 				lastMainMenuEntryID = index
 			end
@@ -570,7 +570,7 @@ frame:HookScript("OnUpdate", function(self, elapsed)
 			j = lastMainMenuEntryID + i
 			if addonInfo[i].is_main then
 				expandAddonButton[j]:ClearAllPoints()
-				expandAddonButton[j]:SetPoint("TOP"..MinimapAnchorHorizontalReverse, addonmenuitems[j], "TOP"..MinimapAnchorHorizontalReverse, 2 * MinimapAnchorHorizontalFactor * -1, -2)
+				expandAddonButton[j]:SetPoint("TOP"..hr, addonmenuitems[j], "TOP"..hr, 2 * hf * -1, -2)
 			end
 		end
 		timer = 0
