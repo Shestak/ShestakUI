@@ -77,3 +77,38 @@ if C.announcements.portals == true then
 		[53142] = true,		-- Dalaran
 	}
 end
+
+if C.announcements.bad_gear == true then
+	T.AnnounceBadGear = {
+		-- Head
+		[1] = {
+			88710,	-- Nat's Hat
+			33820,	-- Weather-Beaten Fishing Hat
+			19972,	-- Lucky Fishing Hat
+			46349,	-- Chef's Hat
+		},
+		-- Boots
+		[8] = {
+			50287,	-- Boots of the Bay
+			19969,	-- Nat Pagle's Extreme Anglin' Boots
+		},
+		-- Back
+		[15] = {
+			65360,	-- Cloak of Coordination
+			65274,	-- Cloak of Coordination
+		},
+		-- Hands
+		[16] = {
+			44050,	-- Mastercraft Kalu'ak Fishing Pole
+			19970,	-- Arcanite Fishing Pole
+			84660,	-- Pandaren Fishing Pole
+			84661,	-- Dragon Fishing Pole
+			45992,	-- Jeweled Fishing Pole
+			86559,	-- Frying Pan
+		},
+		-- Offhand
+		[17] = {
+			86558,	-- Rolling Pin
+		},
+	}
+end
