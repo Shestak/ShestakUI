@@ -41,12 +41,12 @@ frame:SetScript("OnEvent", function(self, event)
 
 		for i = 1, 17 do
 			if baditem[i] ~= nil then
-				item[i] = GetItemInfo(GetInventoryItemLink("player", i) or 0)
+				item[i] = GetInventoryItemID("player", i) or 0
 				for j, baditemid in pairs(baditem[i]) do
-					if item[i] == GetItemInfo(baditemid) then
+					if item[i] == baditemid then
 						PlaySound("RaidWarning", "master")
-						RaidNotice_AddMessage(RaidWarningFrame, string.format("%s %s", CURRENTLY_EQUIPPED, item[i].."!!!"), ChatTypeInfo["RAID_WARNING"])
-						print(string.format("|cffffff00%s %s", CURRENTLY_EQUIPPED, item[i].."!!!|r"))
+						RaidNotice_AddMessage(RaidWarningFrame, string.format("%s %s", CURRENTLY_EQUIPPED, GetItemInfo(item[i]).."!!!"), ChatTypeInfo["RAID_WARNING"])
+						print(string.format("|cffffff00%s %s", CURRENTLY_EQUIPPED, GetItemInfo(item[i]).."!!!|r"))
 					end
 				end
 			end
