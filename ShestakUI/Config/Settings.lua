@@ -81,6 +81,7 @@ C["announcements"] = {
 	["flask_food_raid"] = false,				-- Announce to raid channel
 	["feasts"] = false,							-- Announce Feasts/Cauldrons/Souls/Repair Bots cast
 	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
+	["bad_gear"] = false,						-- Check bad gear in instance
 }
 
 ----------------------------------------------------------------------------------------

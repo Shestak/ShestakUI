@@ -55,6 +55,7 @@ if T.author == true then
 	C["announcements"].says_thanks = true
 	C["announcements"].feasts = true
 	C["announcements"].portals = true
+	C["announcements"].bad_gear = true
 	C["automation"].accept_quest = true
 	C["automation"].auto_collapse = true
 	C["automation"].skip_cinematic = true
