@@ -32,7 +32,7 @@ L_ANNOUNCE_FP_PRE = "%s 放置了 %s"
 L_ANNOUNCE_FP_PUT = "%s 放置了 %s"
 L_ANNOUNCE_FP_CAST = "%s 开启了 %s"
 L_ANNOUNCE_FP_CLICK = "%s 正在开启 %s... 请点击！"
-L_ANNOUNCE_FP_USE = "%s used a %s." -- Needs review
+L_ANNOUNCE_FP_USE = "%s 使用了一個 %s."
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "没有天赋"
@@ -66,9 +66,9 @@ L_MISC_MOUNTS_GROUND = "地面坐骑"
 L_MISC_MOUNTS_FLYING = "飞行坐骑"
 L_MISC_MOUNTS_FLYINGGROUND = "飞行/地面坐骑"
 L_MISC_MOUNTS_SWIMMING = "水中坐骑"
-L_MISC_GROCERY_BUY = "Buy" -- Needs review
-L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
-L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
+L_MISC_GROCERY_BUY = "購買"
+L_MISC_GROCERY_DESC = "自動購買雜貨背包" 
+L_MISC_GROCERY_ERROR = "物品不夠."
 L_MISC_SCROLL = "附魔卷轴"
 
 -- Raid Utility
@@ -255,7 +255,7 @@ L_DATATEXT_GRAVEYARDSASSAULTED = "墓地突袭:"
 L_DATATEXT_GRAVEYARDSDEFENDED = "墓地防守:"
 L_DATATEXT_DEMOLISHERSDESTROYED = "石毁车摧毁:"
 L_DATATEXT_GATESDESTROYED = "大门摧毁:"
-L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:" -- Needs review
+L_DATATEXT_ORB_POSSESSIONS = "已佔領的Orb:"
 L_DATATEXT_VICTORY_POINTS = "胜利点数："
 L_DATATEXT_CARTS_CONTROLLED = "车辆控制："
 
@@ -286,7 +286,7 @@ L_POPUP_SETTINGS_DBM = "需要改变DBM描点及风格化元素."
 L_POPUP_SETTINGS_DXE = "需要改变DXE描点及风格化元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
 L_POPUP_ARMORY = "军械库"
-L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again." -- Needs review
+L_POPUP_TALENT_FIX = "當你查看其他玩家的時候,遊戲內部功能出現了一個問題,它使你不能改變你的天賦. 很遺憾在這個版本的wow裏面我們不能修理這個問題, 請重載你的UI再試試."
 L_POPUP_CURRENCY_CAP = "你拥有的最高级货币为"
 
 -- Welcome message
