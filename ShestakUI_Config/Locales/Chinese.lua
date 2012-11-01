@@ -39,7 +39,7 @@ L_GUI_MISC_MOVE_BLIZZARD = "移动暴雪默认介面框架"
 L_GUI_MISC_COLOR_PICKER = "改进型颜色选择器"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "商业技能窗口上显示附魔卷轴"
 L_GUI_MISC_ARCHAEOLOGY = "考古学的物品和冷却时间"
-L_GUI_MISC_CHARS_CURRENCY = "记录你其他人物下的金钱信息" 
+L_GUI_MISC_CHARS_CURRENCY = "记录你其他人物下的金钱信息"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
