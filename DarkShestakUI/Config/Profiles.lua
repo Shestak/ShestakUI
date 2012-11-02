@@ -456,6 +456,7 @@ if T.coauthor == true then
 	C["tooltip"].item_icon = true
 	C["tooltip"].rank = false
 	C["tooltip"].spell_id = true
+	C["tooltip"].average_lvl = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].item_count = true
 	C["tooltip"].reforge = true
@@ -463,6 +464,7 @@ if T.coauthor == true then
 	C["tooltip"].item_transmogrify = true
 	C["chat"].damage_meter_spam = true
 	C["map"].map_boss_count = true
+	C["map"].explore_map = false
 	C["nameplate"].track_auras = true
 	C["aura"].cast_by = true
 	C["unitframe"].castbar_icon = true
