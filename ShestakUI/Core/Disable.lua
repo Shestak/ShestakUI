@@ -130,3 +130,9 @@ end
 if IsAddOnLoaded("Overachiever") then
 	C.tooltip.achievements = false
 end
+
+if IsAddOnLoaded("alDamageMeter") or IsAddOnLoaded("Numeration") or IsAddOnLoaded("Recount") or IsAddOnLoaded("Skada") or IsAddOnLoaded("TinyDPS") then
+	C.meter.enable = false
+end
+
+-- edit by Oz of shestak. org --
