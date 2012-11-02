@@ -15,7 +15,7 @@ local max = math.max
 local timer = 0
 local targeted = false
 
-RAID_CLASS_COLORS["PET"] = {r = 0, g = 0.7, b = 0}
+RAID_CLASS_COLORS["PET"] = {r = 0, g = 0.7, b = 0, colorStr = "ff00b200"}
 
 local CreateFS = function(frame, fsize, fstyle)
 	local fstring = frame:CreateFontString(nil, "OVERLAY")
@@ -65,12 +65,7 @@ local CreateBar = function()
 	bar:SetSize(C.threat.width, C.threat.height)
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetMinMaxValues(0, 100)
-
-	bar.backdrop = CreateFrame("Frame", nil, bar)
-	bar.backdrop:SetPoint("TOPLEFT", -2, 2)
-	bar.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
-	bar.backdrop:SetTemplate("Default")
-	bar.backdrop:SetFrameStrata("BACKGROUND")
+	bar:CreateBackdrop("Default")
 
 	bar.bg = bar:CreateTexture(nil, "BACKGROUND")
 	bar.bg:SetAllPoints(bar)
@@ -112,7 +107,7 @@ local UpdateBars = function()
 		bar[i]:SetValue(100 * cur.pct / max.pct)
 		local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[cur.class]
 		bar[i]:SetStatusBarColor(color.r, color.g, color.b)
-		bar[i].bg:SetVertexColor(color.r, color.g, color.b, 0.25)
+		bar[i].bg:SetVertexColor(color.r, color.g, color.b, 0.2)
 		bar[i].left:SetText(cur.name)
 		bar[i].right:SetText(string.format("%s [%d%%]", truncate(cur.val / 100), cur.pct))
 		bar[i]:Show()

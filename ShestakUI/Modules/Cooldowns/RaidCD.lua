@@ -108,12 +108,7 @@ local CreateBar = function()
 	end
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetMinMaxValues(0, 100)
-
-	bar.backdrop = CreateFrame("Frame", nil, bar)
-	bar.backdrop:SetPoint("TOPLEFT", -2, 2)
-	bar.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
-	bar.backdrop:SetTemplate("Default")
-	bar.backdrop:SetFrameStrata("BACKGROUND")
+	bar:CreateBackdrop("Default")
 
 	bar.bg = bar:CreateTexture(nil, "BACKGROUND")
 	bar.bg:SetAllPoints(bar)
@@ -133,12 +128,7 @@ local CreateBar = function()
 		bar.icon:SetWidth(bar:GetHeight() + 6)
 		bar.icon:SetHeight(bar.icon:GetWidth())
 		bar.icon:SetPoint("BOTTOMRIGHT", bar, "BOTTOMLEFT", -7, 0)
-
-		bar.icon.backdrop = CreateFrame("Frame", nil, bar.icon)
-		bar.icon.backdrop:SetPoint("TOPLEFT", -2, 2)
-		bar.icon.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
-		bar.icon.backdrop:SetTemplate("Default")
-		bar.icon.backdrop:SetFrameStrata("BACKGROUND")
+		bar.icon:CreateBackdrop("Default")
 	end
 	return bar
 end
