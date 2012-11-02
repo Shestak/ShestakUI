@@ -16,7 +16,7 @@ end
 
 local function freestyle(bar)
 	-- Reparent and hide bar background
-	local bg = bar:Get("bigwigs:shestakui:bg")
+	local bg = bar:Get("bigwigs:darkshestakui:bg")
 	if bg then
 		bg:ClearAllPoints()
 		bg:SetParent(UIParent)
@@ -25,7 +25,7 @@ local function freestyle(bar)
 	end
 
 	-- Reparent and hide icon background
-	local ibg = bar:Get("bigwigs:shestakui:ibg")
+	local ibg = bar:Get("bigwigs:darkshestakui:ibg")
 	if ibg then
 		ibg:ClearAllPoints()
 		ibg:SetParent(UIParent)
@@ -83,7 +83,7 @@ local applystyle = function(bar)
 	bg:SetPoint("BOTTOMRIGHT", bar, "BOTTOMRIGHT", 2, -2)
 	bg:SetFrameStrata("BACKGROUND")
 	bg:Show()
-	bar:Set("bigwigs:shestakui:bg", bg)
+	bar:Set("bigwigs:darkshestakui:bg", bg)
 
 	-- Create or reparent and use icon background
 	local ibg = nil
@@ -99,7 +99,7 @@ local applystyle = function(bar)
 		ibg:SetPoint("BOTTOMRIGHT", bar.candyBarIconFrame, "BOTTOMRIGHT", 2, -2)
 		ibg:SetFrameStrata("BACKGROUND")
 		ibg:Show()
-		bar:Set("bigwigs:shestakui:ibg", ibg)
+		bar:Set("bigwigs:darkshestakui:ibg", ibg)
 	end
 
 	-- Setup timer and bar name fonts and positions
@@ -121,7 +121,7 @@ local applystyle = function(bar)
 	bar.candyBarBar.OldSetPoint = bar.candyBarBar.SetPoint
 	bar.candyBarBar.SetPoint = T.dummy
 	bar.candyBarBar:SetStatusBarTexture(C.media.texture)
-	if not bar.data["bigwigs:emphasized"] == true then bar.candyBarBar:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1) end
+	if not bar.data["bigwigs:emphasized"] == true then bar.candyBarBar:SetStatusBarColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 1) end
 	bar.candyBarBackground:SetTexture(C.media.texture)
 
 	-- Setup icon positions and other things
@@ -140,16 +140,16 @@ local function registerStyle()
 	local bars = BigWigs:GetPlugin("Bars", true)
 	local prox = BigWigs:GetPlugin("Proximity", true)
 	if bars then
-		bars:RegisterBarStyle("ShestakUI", {
+		bars:RegisterBarStyle("DarkShestakUI", {
 			apiVersion = 1,
 			version = 1,
 			GetSpacing = function(bar) return T.Scale(13) end,
 			ApplyStyle = applystyle,
 			BarStopped = freestyle,
-			GetStyleName = function() return "ShestakUI" end,
+			GetStyleName = function() return "DarkShestakUI" end,
 		})
 	end
-	if prox and BigWigs.pluginCore.modules.Bars.db.profile.barStyle == "ShestakUI" then
+	if prox and BigWigs.pluginCore.modules.Bars.db.profile.barStyle == "DarkShestakUI" then
 		hooksecurefunc(BigWigs.pluginCore.modules.Proximity, "RestyleWindow", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
 		end)
@@ -163,7 +163,7 @@ f:SetScript("OnEvent", function(self, event, addon)
 			if BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.InstalledBars ~= C.actionbar.bottombars then
 				StaticPopup_Show("BW_TEST")
 			end
-			BigWigs.pluginCore.modules.Bars.db.profile.barStyle = "ShestakUI"
+			BigWigs.pluginCore.modules.Bars.db.profile.barStyle = "DarkShestakUI"
 			registerStyle()
 			f:UnregisterEvent("ADDON_LOADED")
 		end
@@ -179,7 +179,7 @@ StaticPopupDialogs.BW_TEST = {
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = function()
-		BigWigs.pluginCore.modules.Bars.db.profile.barStyle = "ShestakUI"
+		BigWigs.pluginCore.modules.Bars.db.profile.barStyle = "DarkShestakUI"
 		BigWigs.pluginCore.modules.Bars.db.profile.font = C.font.stylization_font
 		BigWigs.pluginCore.modules.Messages.db.profile.font = C.media.normal_font
 		BigWigs.pluginCore.modules.Messages.db.profile.outline = "OUTLINE"
