@@ -131,7 +131,7 @@ local function Shared(self, unit)
 	-- LFD role icons
 	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
-		self.LFDRole:SetSize(12)
+		self.LFDRole:SetSize(12, 12)
 		self.LFDRole:SetPoint("TOPLEFT", self.Health, 0, 0)
 	end
 

@@ -508,7 +508,7 @@ C["raidframe"] = {
 	-- Portraits
 	["raid_portraits"] = false,					-- Enable portraits on raid frames
 	-- Icons
-	["icons_role"] = false,						-- Role icon on frames
+	["icons_role"] = true,						-- Role icon on frames
 	["icons_raid_mark"] = true,					-- Raid mark icons on frames
 	["icons_ready_check"] = true,				-- Ready check icons on frames
 	["icons_leader"] = true,					-- Leader icon, assistant icon, master loot icon on frames
