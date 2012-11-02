@@ -47,7 +47,7 @@ local DamageShow = function()
 	elseif damagemeter == "alDamageMeter" then
 		DarkShestakUI_alDamageMeterFrame:ClearAllPoints()
 		DarkShestakUI_alDamageMeterFrame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26)
-		TooltipAnchor:SetPoint("BOTTOMRIGHT", DarkShestakUI_alDamageMeter, "TOPRIGHT", 2, 5)
+		TooltipAnchor:SetPoint("BOTTOMRIGHT", DarkShestakUI_alDamageMeterFrame, "TOPRIGHT", 2, 5)
 	end
 	DB.t:SetAlpha(1)
 	SavedOptionsPerChar.DamageMeter = true
