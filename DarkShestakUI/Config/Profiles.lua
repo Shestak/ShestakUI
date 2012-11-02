@@ -470,6 +470,7 @@ if T.coauthor == true then
 	C["unitframe"].castbar_icon = true
 	C["unitframe"].plugins_smooth_bar = true
 	C["unitframe"].plugins_diminishing = true
+	C["unitframe_class_bar"].vengeance = false
 	C["raidframe"].icons_role = true
 	if T.name == "Занштек" then
 		C["announcements"].lightwell = true
