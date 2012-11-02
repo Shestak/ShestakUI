@@ -92,6 +92,8 @@ status:SetScript("OnUpdate", function(self, elapsed)
 		local texture, r, g, b = UnitAlternatePowerTextureInfo("player", 2, 0)
 		if blizzColors[texture] then
 			r, g, b = blizzColors[texture].r, blizzColors[texture].g, blizzColors[texture].b
+		elseif not texture then
+			r, g, b = 0.3, 0.7, 0.3
 		end
 		self:SetMinMaxValues(0, mpower)
 		self:SetValue(power)

@@ -30,9 +30,9 @@ local function LoadSkin()
 			end
 
 			local texture, name, count, quality = GetMissingLootItemInfo(i)
-			local color = (GetItemQualityColor(quality)) or (unpack(C.media.border_color))
+			local color = ITEM_QUALITY_COLORS[quality] or unpack(C.media.border_color)
 			icon:SetTexture(texture)
-			slot:SetBackdropBorderColor(color)
+			slot:SetBackdropBorderColor(color.r, color.g, color.b)
 		end
 	end
 	hooksecurefunc("MissingLootFrame_Show", SkinButton)
