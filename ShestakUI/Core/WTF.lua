@@ -354,11 +354,11 @@ local UploadSkada = function()
 							["color"] = {
 								["a"] = 0,
 							},
-							["height"] = 132,
+							["height"] = 114,
 						},
 						["point"] = "BOTTOMRIGHT",
-						["x"] = -247,
-						["y"] = 1,
+						["x"] = -23,
+						["y"] = 26,
 						["title"] = {
 							["height"] = 12,
 						},
@@ -435,3 +435,5 @@ SlashCmdList.SETTINGS = function(msg)
 	end
 end
 SLASH_SETTINGS1 = "/settings"
+
+-- edit by Oz of shestak. org --
