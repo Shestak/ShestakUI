@@ -4,7 +4,8 @@ if C.chat.enable ~= true or C.chat.tool_bar ~= true then return end
 ----------------------------------------------------------------------------------------
 --	ToolBar(by m2jest1c for Dark ShestakUI)
 ----------------------------------------------------------------------------------------
-local damagemeter
+local damagemeter = false
+
 local tbar = CreateFrame("Frame", "ToolBar", UIParent)
 tbar:CreatePanel("Invisible", 16, C.chat.background and C.chat.height + 5 or C.chat.height + 1, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -2, C.chat.background and 25 or 20)
 if C.chat.tool_bar_mouseover == true then
@@ -19,7 +20,6 @@ end
 
 local LootShow = function()
 	ChatFrame3:ClearAllPoints()
-	ChatFrame3:SetSize(C.chat.width, C.chat.height)
 	if C.chat.background == true then
 		ChatFrame3:SetPoint("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5] + 4)
 		TooltipAnchor:SetPoint("BOTTOMRIGHT", ChatTabsPanelRight, "TOPRIGHT", 0, 3)
@@ -28,31 +28,38 @@ local LootShow = function()
 		TooltipAnchor:SetPoint("BOTTOMRIGHT", RightPanel, "TOPRIGHT", 0, 3)
 		RightPanel:Show()
 	end
-	FCF_SavePositionAndDimensions(ChatFrame3)
 	LB.t:SetAlpha(1)
 	SavedOptionsPerChar.LootFrame = true
 end
 
 local LootHide = function()
 	ChatFrame3:ClearAllPoints()
-	ChatFrame3:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 200, 0)
+	ChatFrame3:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 20, 0)
 	if C.chat.background ~= true then RightPanel:Hide() end
-	FCF_SavePositionAndDimensions(ChatFrame3)
 	LB.t:SetAlpha(0)
 	SavedOptionsPerChar.LootFrame = false
 end
 
 local DamageShow = function()
-	DarkShestakUI_alDamageMeterFrame:ClearAllPoints()
-	DarkShestakUI_alDamageMeterFrame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26)
-	TooltipAnchor:SetPoint("BOTTOMRIGHT", DarkShestakUI_alDamageMeterFrame, "TOPRIGHT", 2, 5)
+	if damagemeter == "Recount" then
+		Recount_MainWindow:Show()
+		TooltipAnchor:SetPoint("BOTTOMRIGHT", Recount_MainWindow, "TOPRIGHT", 2, 5)
+	elseif damagemeter == "alDamageMeter" then
+		DarkShestakUI_alDamageMeterFrame:ClearAllPoints()
+		DarkShestakUI_alDamageMeterFrame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26)
+		TooltipAnchor:SetPoint("BOTTOMRIGHT", DarkShestakUI_alDamageMeter, "TOPRIGHT", 2, 5)
+	end
 	DB.t:SetAlpha(1)
 	SavedOptionsPerChar.DamageMeter = true
 end
 
 local DamageHide = function()
-	DarkShestakUI_alDamageMeterFrame:ClearAllPoints()
-	DarkShestakUI_alDamageMeterFrame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 23, 26)
+	if damagemeter == "Recount" then
+		Recount_MainWindow:Hide()
+	elseif damagemeter == "alDamageMeter" then
+		DarkShestakUI_alDamageMeterFrame:ClearAllPoints()
+		DarkShestakUI_alDamageMeterFrame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 23, 26)
+	end
 	DB.t:SetAlpha(0)
 	SavedOptionsPerChar.DamageMeter = false
 end
@@ -129,19 +136,27 @@ db:SetBackdropColor(unpack(C.media.overlay_color))
 db:SetBackdropBorderColor(0.9, 0.1, 0.1, 1)
 
 tbar:RegisterEvent("PLAYER_LOGIN")
-tbar:HookScript("OnEvent", function(self, event, addon)
+tbar:HookScript("OnEvent", function(self, event)
 	if event == "PLAYER_LOGIN" then
 		self:UnregisterEvent(event)
-		_, _, _, damagemeter = GetAddOnInfo("DarkShestakUI_alDamageMeter")
+		if IsAddOnLoaded("DarkShestakUI_alDamageMeter") then
+			damagemeter = "alDamageMeter"
+		elseif IsAddOnLoaded("Recount") then
+			damagemeter = "Recount"
+			Recount_MainWindow:ClearAllPoints()
+			Recount_MainWindow:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 18)
+		else
+			damagemeter = false
+		end
 		if SavedOptionsPerChar.LootFrame == nil then SavedOptionsPerChar.LootFrame = true end
 		if SavedOptionsPerChar.DamageMeter == nil then SavedOptionsPerChar.DamageMeter = false end
-		if SavedOptionsPerChar.LootFrame == true and damagemeter ~= nil then
+		if SavedOptionsPerChar.LootFrame == true and damagemeter ~= false then
 			LootShow()
 			DamageHide()
-		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == true and damagemeter ~= nil then
+		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == true and damagemeter ~= false then
 			LootHide()
 			DamageShow()
-		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == false and damagemeter ~= nil then
+		elseif SavedOptionsPerChar.LootFrame == false and SavedOptionsPerChar.DamageMeter == false and damagemeter ~= false then
 			LootHide()
 			DamageHide()
 			TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
