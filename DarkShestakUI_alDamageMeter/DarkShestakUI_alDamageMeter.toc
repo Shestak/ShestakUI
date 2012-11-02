@@ -1,5 +1,5 @@
 ## Interface: 50001
-## Title: alDamageMeter
+## Title: Dark ShestakUI alDamageMeter
 ## Notes: Damage meter
 ## Author: Allez
 ## Version: 50001.11
