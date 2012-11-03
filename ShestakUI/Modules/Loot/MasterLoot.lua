@@ -32,7 +32,7 @@ end
 
 local function MasterLoot_GiveLoot(frame)
 	if LootFrame.selectedQuality >= MASTER_LOOT_THREHOLD then
-		StaticPopup_Show("CONFIRM_LOOT_DISTRIBUTION", ITEM_QUALITY_COLORS[LootFrame.selectedQuality].hex..LootFrame.selectedItemName..FONT_COLOR_CODE_CLOSE, frame.text or UNKNOWN, "LootWindow")
+		StaticPopup_Show("CONFIRM_LOOT_DISTRIBUTION", ITEM_QUALITY_COLORS[LootFrame.selectedQuality].hex..LootFrame.selectedItemName..FONT_COLOR_CODE_CLOSE, frame:GetText() or UNKNOWN, "LootWindow")
 	else
 		GiveMasterLoot(LootFrame.selectedSlot, frame.value)
 	end
