@@ -32,7 +32,7 @@ end
 
 local function MasterLoot_GiveLoot(frame)
 	if LootFrame.selectedQuality >= MASTER_LOOT_THREHOLD then
-		StaticPopup_Show("CONFIRM_LOOT_DISTRIBUTION", ITEM_QUALITY_COLORS[LootFrame.selectedQuality].hex..LootFrame.selectedItemName..FONT_COLOR_CODE_CLOSE, frame.text, "LootWindow")
+		StaticPopup_Show("CONFIRM_LOOT_DISTRIBUTION", ITEM_QUALITY_COLORS[LootFrame.selectedQuality].hex..LootFrame.selectedItemName..FONT_COLOR_CODE_CLOSE, frame.text or UNKNOWN, "LootWindow")
 	else
 		GiveMasterLoot(LootFrame.selectedSlot, frame.value)
 	end
@@ -40,7 +40,7 @@ local function MasterLoot_GiveLoot(frame)
 end
 
 local function init()
-	local candidate, color, lclass, className
+	local candidate, lclass, className, cand
 	local slot = LootFrame.selectedSlot or 0
 	local info = UIDropDownMenu_CreateInfo()
 
@@ -52,13 +52,12 @@ local function init()
 		for i = 1, MAX_RAID_MEMBERS do
 			candidate, lclass, className = GetMasterLootCandidate(slot, i)
 			if candidate and this_class == className then
-				table.insert(players,candidate)
+				table.insert(players, candidate)
 				player_indices[candidate] = i
 			end
 		end
 		if #players > 0 then
 			table.sort(players)
-			local _, cand
 			for _, cand in ipairs(players) do
 				-- Add candidate button
 				info.text = cand
@@ -113,7 +112,7 @@ local function init()
 			candidate, lclass, className = GetMasterLootCandidate(slot, i)
 			if candidate then
 				-- Add candidate button
-				info.text = candidate -- coloredNames[candidate]
+				info.text = candidate
 				info.colorCode = hexColors[className] or hexColors["UNKNOWN"]
 				info.textHeight = 12
 				info.value = i
