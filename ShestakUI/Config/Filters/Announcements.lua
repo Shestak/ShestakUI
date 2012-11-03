@@ -17,6 +17,8 @@ if C.announcements.spells == true then
 		2908,	-- Soothe
 		120668,	-- Stormlash Totem
 		16190,	-- Mana Tide Totem
+		64901,	-- Hymn of Hope
+		108968,	-- Void Shift
 	}
 end
 
@@ -75,5 +77,41 @@ if C.announcements.portals == true then
 		[132626] = true,	-- Vale of Eternal Blossoms
 		-- Alliance/Horde
 		[53142] = true,		-- Dalaran
+	}
+end
+
+
+if C.announcements.bad_gear == true then
+	T.AnnounceBadGear = {
+		-- Head
+		[1] = {
+			88710,	-- Nat's Hat
+			33820,	-- Weather-Beaten Fishing Hat
+			19972,	-- Lucky Fishing Hat
+			46349,	-- Chef's Hat
+		},
+		-- Boots
+		[8] = {
+			50287,	-- Boots of the Bay
+			19969,	-- Nat Pagle's Extreme Anglin' Boots
+		},
+		-- Back
+		[15] = {
+			65360,	-- Cloak of Coordination
+			65274,	-- Cloak of Coordination
+		},
+		-- Hand
+		[16] = {
+			44050,	-- Mastercraft Kalu'ak Fishing Pole
+			19970,	-- Arcanite Fishing Pole
+			84660,	-- Pandaren Fishing Pole
+			84661,	-- Dragon Fishing Pole
+			45992,	-- Jeweled Fishing Pole
+			86559,	-- Frying Pan
+		},
+		-- Offhand
+		[17] = {
+			86558,	-- Rolling Pin
+		},
 	}
 end

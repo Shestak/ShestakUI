@@ -5,10 +5,13 @@ if C.skins.blizzard_frames ~= true then return end
 --	MissingLoot skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	MissingLootFrame:SetTemplate("Transparent")
 	MissingLootFrameCorner:Kill()
+	MissingLootFrame:StripTextures()
+	MissingLootFrame:CreateBackdrop("Transparent")
+	MissingLootFrame.backdrop:SetPoint("TOPLEFT", 2, -8)
+	MissingLootFrame.backdrop:SetPoint("BOTTOMRIGHT", -2, 6)
 
-	T.SkinCloseButton(MissingLootFramePassButton)
+	T.SkinCloseButton(MissingLootFramePassButton, MissingLootFrame.backdrop)
 
 	local function SkinButton()
 		for i = 1, GetNumMissingLootItems() do
@@ -30,9 +33,9 @@ local function LoadSkin()
 			end
 
 			local texture, name, count, quality = GetMissingLootItemInfo(i)
-			local color = (GetItemQualityColor(quality)) or (unpack(C.media.border_color))
+			local color = ITEM_QUALITY_COLORS[quality] or unpack(C.media.border_color)
 			icon:SetTexture(texture)
-			slot:SetBackdropBorderColor(color)
+			slot:SetBackdropBorderColor(color.r, color.g, color.b)
 		end
 	end
 	hooksecurefunc("MissingLootFrame_Show", SkinButton)

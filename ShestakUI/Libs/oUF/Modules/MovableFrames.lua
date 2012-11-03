@@ -341,9 +341,6 @@ do
 		backdrop:SetFrameLevel(20)
 		backdrop:SetAllPoints(target)
 		backdrop:CreateBackdrop("Transparent")
-		backdrop.backdrop:SetPoint("TOPLEFT", -2, 2)
-		backdrop.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
-
 		backdrop:EnableMouse(true)
 		backdrop:SetMovable(true)
 		backdrop:RegisterForDrag("LeftButton")
