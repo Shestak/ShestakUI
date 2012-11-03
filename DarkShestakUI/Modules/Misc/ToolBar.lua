@@ -45,9 +45,9 @@ local DamageShow = function()
 		Recount_MainWindow:Show()
 		TooltipAnchor:SetPoint("BOTTOMRIGHT", Recount_MainWindow, "TOPRIGHT", 2, 5)
 	elseif damagemeter == "alDamageMeter" then
-		DarkShestakUI_alDamageMeterFrame:ClearAllPoints()
-		DarkShestakUI_alDamageMeterFrame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26)
-		TooltipAnchor:SetPoint("BOTTOMRIGHT", DarkShestakUI_alDamageMeterFrame, "TOPRIGHT", 2, 5)
+		alDamageMeterFrame:ClearAllPoints()
+		alDamageMeterFrame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26)
+		TooltipAnchor:SetPoint("BOTTOMRIGHT", alDamageMeterFrame, "TOPRIGHT", 2, 5)
 	end
 	DB.t:SetAlpha(1)
 	SavedOptionsPerChar.DamageMeter = true
@@ -57,8 +57,8 @@ local DamageHide = function()
 	if damagemeter == "Recount" then
 		Recount_MainWindow:Hide()
 	elseif damagemeter == "alDamageMeter" then
-		DarkShestakUI_alDamageMeterFrame:ClearAllPoints()
-		DarkShestakUI_alDamageMeterFrame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 23, 26)
+		alDamageMeterFrame:ClearAllPoints()
+		alDamageMeterFrame:SetPoint("BOTTOMLEFT", UIParent, "BOTTOMRIGHT", 23, 26)
 	end
 	DB.t:SetAlpha(0)
 	SavedOptionsPerChar.DamageMeter = false
@@ -139,7 +139,7 @@ tbar:RegisterEvent("PLAYER_LOGIN")
 tbar:HookScript("OnEvent", function(self, event)
 	if event == "PLAYER_LOGIN" then
 		self:UnregisterEvent(event)
-		if IsAddOnLoaded("DarkShestakUI_alDamageMeter") then
+		if IsAddOnLoaded("alDamageMeter") then
 			damagemeter = "alDamageMeter"
 		elseif IsAddOnLoaded("Recount") then
 			damagemeter = "Recount"
@@ -160,6 +160,9 @@ tbar:HookScript("OnEvent", function(self, event)
 			LootHide()
 			DamageHide()
 			TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24)
+		elseif SavedOptionsPerChar.LootFrame == false then
+			LootHide()
+			DB:Hide()
 		else
 			LootShow()
 			DB:Hide()
