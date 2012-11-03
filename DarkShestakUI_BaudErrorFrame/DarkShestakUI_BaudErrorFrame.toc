@@ -1,8 +1,0 @@
-## Interface: 50001
-## Title: Dark ShestakUI Baud Error Frame
-## Notes: Improved error reporting
-## Author: Baudzilla, wolftankk, Affli
-## Version: 1.5
-## RequiredDeps: DarkShestakUI
-
-DarkShestakUI_BaudErrorFrame.xml
