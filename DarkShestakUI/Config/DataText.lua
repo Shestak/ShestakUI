@@ -119,7 +119,7 @@ LPSTAT_CONFIG = {
 		truncate = 0, -- Max number of letters for location text, set to 0 to disable
 		coord_fmt = "%d,%d",
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
-		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
+		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "TOPRIGHT", tip_x = -21, tip_y = -21
 	},
 -- Top block
 	Stats = {

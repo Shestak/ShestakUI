@@ -474,6 +474,7 @@ if T.coauthor == true then
 	C["raidframe"].icons_role = true
 	if T.name == "Занштек" then
 		C["announcements"].lightwell = true
+		C["automation"].accept_quest = true
 		C["automation"].skip_cinematic = true
 		C["unitframe_class_bar"].range = true
 		C["raidframe"].deficit_health = true
