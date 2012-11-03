@@ -4,9 +4,6 @@
 ## Author: Allez
 ## Version: 50001.11
 ## RequiredDeps: DarkShestakUI
-## X-Curse-Packaged-Version: 0.41
-## X-Curse-Project-Name: Dark ShestakUI
-## X-Curse-Project-ID: dark-shestakui
 
 lib\LibStub\LibStub.lua
 lib\LibBossIDs-1.0\LibBossIDs-1.0.lua
