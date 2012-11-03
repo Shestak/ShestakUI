@@ -451,6 +451,7 @@ if T.coauthor == true then
 	C["automation"].cancel_bad_buffs = true
 	C["skins"].clique = true
 	C["skins"].atlasloot = true
+	C["skins"].npcscan = true
 	C["combattext"].killingblow = true
 	C["threat"].enable = false
 	C["tooltip"].item_icon = true
