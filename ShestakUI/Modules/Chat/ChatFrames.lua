@@ -205,6 +205,7 @@ local function SetupChat(self)
 	end
 	ChatTypeInfo.SAY.sticky = var
 	ChatTypeInfo.PARTY.sticky = var
+	ChatTypeInfo.PARTY_LEADER.sticky = var
 	ChatTypeInfo.GUILD.sticky = var
 	ChatTypeInfo.OFFICER.sticky = var
 	ChatTypeInfo.RAID.sticky = var
