@@ -113,7 +113,7 @@ local Enable = function(self)
 		rb.ForceUpdate = ForceUpdate
 
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", Path)
-		self:RegisterEvent("UNIT_DYNAMIC_FLAGS", Path)
+		self:RegisterEvent("UNIT_FLAGS", Path)
 
 		return true
 	end
@@ -123,7 +123,7 @@ local Disable = function(self)
 	local rb = self.RangeBar
 	if rb then
 		self:UnregisterEvent("PLAYER_TARGET_CHANGED", Path)
-		self:UnregisterEvent("UNIT_DYNAMIC_FLAGS", Path)
+		self:UnregisterEvent("UNIT_FLAGS", Path)
 	end
 end
 
