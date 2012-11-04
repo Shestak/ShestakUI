@@ -143,7 +143,12 @@ local StartTimer = function(name, spellId)
 	local bar = CreateBar()
 	bar.endTime = GetTime() + T.raid_spells[spellId]
 	bar.startTime = GetTime()
-	bar.left:SetText(format("|cff%02x%02x%02x%s|r - %s", 255 * T.color.r, 255 * T.color.g, 255 * T.color.b, name, spell))
+	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(name))]
+	if color then
+		bar.left:SetText(format("|cff%02x%02x%02x%s|r - %s", 255 * color.r, 255 * color.g, 255 * color.b, name, spell))
+	else
+		bar.left:SetText(format("|cff%02x%02x%02x%s|r - %s", 255 * 0.3, 255 * 0.7, 255 * 0.3, name, spell))
+	end
 	bar.name = name
 	bar.right:SetText(FormatTime(T.raid_spells[spellId]))
 	if C.raidcooldown.show_icon == true then
