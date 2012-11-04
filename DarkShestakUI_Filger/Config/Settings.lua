@@ -60,6 +60,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Stuff of Nightmares (Dodge, Proc)
 			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
@@ -304,6 +306,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Stuff of Nightmares (Dodge, Proc)
 			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
@@ -567,6 +571,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
@@ -835,6 +841,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Magistrate Figurine (Crit, Use)
 			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1075,6 +1083,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Stuff of Nightmares (Dodge, Proc)
 			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1298,6 +1308,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Stuff of Nightmares (Dodge, Proc)
 			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1526,6 +1538,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Magistrate Figurine (Crit, Use)
 			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1800,6 +1814,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2012,6 +2028,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2249,6 +2267,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Magistrate Figurine (Crit, Use)
 			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2483,6 +2503,8 @@ Filger_Spells = {
 			-- General
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkmoon Cards (Proc)
+			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Stuff of Nightmares (Dodge, Proc)
 			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
