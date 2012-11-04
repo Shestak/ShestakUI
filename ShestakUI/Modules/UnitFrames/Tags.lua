@@ -55,7 +55,7 @@ oUF.Tags["GetNameColor"] = function(unit)
 		return string.format("|cff%02x%02x%02x", r * 255, g * 255, b * 255)
 	end
 end
-oUF.TagEvents["GetNameColor"] = "UNIT_POWER"
+oUF.TagEvents["GetNameColor"] = "UNIT_POWER UNIT_FLAGS"
 
 oUF.Tags["NameArena"] = function(unit)
 	local name = UnitName(unit)
