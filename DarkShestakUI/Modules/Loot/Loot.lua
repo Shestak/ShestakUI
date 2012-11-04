@@ -395,7 +395,7 @@ do
 		name:SetNonSpaceWrap(true)
 		name:SetFont(C.font.loot_font, C.font.loot_font_size, C.font.loot_font_style)
 		name:SetShadowOffset(C.font.loot_font_shadow and 1 or 0, C.font.loot_font_shadow and -1 or 0)
-		name:SetWidth(C.loot.width - C.loot.icon_size - 20)
+		name:SetWidth(C.loot.width - C.loot.icon_size - 25)
 		name:SetHeight(C.font.loot_font_size)
 		frame.name = name
 
