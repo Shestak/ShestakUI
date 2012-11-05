@@ -520,3 +520,5 @@ end)
 b:SetScript("OnLeave", function()
 	b:FadeOut()
 end)
+
+-- edit by Oz of shestak. org --
