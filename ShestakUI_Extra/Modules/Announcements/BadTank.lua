@@ -486,11 +486,7 @@ local b = CreateFrame("Button", nil, UIParent)
 b:SetTemplate("ClassColor")
 b:SetSize(19, 19)
 b:SetAlpha(0)
-if C.extra_general.archaeology == true then
-	b:SetPoint("TOP", SwitchLayout, "BOTTOM", 0, -21)
-else
-	b:SetPoint("TOP", SwitchLayout, "BOTTOM", 0, -1)
-end
+b:SetPoint("TOP", SwitchLayout, "BOTTOM", 0, YOUR_Y_COORD)
 
 local bt = b:CreateTexture(nil, "OVERLAY")
 bt:SetTexture("Interface\\Icons\\Ability_Hunter_Beastcall")
