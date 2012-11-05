@@ -60,7 +60,8 @@ oUF.Tags["GetNameColor"] = function(unit)
 		return string.format("|cff%02x%02x%02x", r * 255, g * 255, b * 255)
 	end
 end
-oUF.TagEvents["GetNameColor"] = "UNIT_HEALTH"
+
+oUF.TagEvents["GetNameColor"] = "UNIT_POWER UNIT_FLAGS UNIT_DYNAMIC_FLAGS"
 
 oUF.Tags["NameArena"] = function(unit)
 	local name = UnitName(unit)
@@ -140,6 +141,5 @@ if T.class == "WARLOCK" then
 	end
 	oUF.TagEvents["DemonicFury"] = "UNIT_POWER PLAYER_TALENT_UPDATE"
 end
-oUF.TagEvents["IncHeal"] = "UNIT_HEAL_PREDICTION"
 
 -- edit by Oz of shestak.org --
