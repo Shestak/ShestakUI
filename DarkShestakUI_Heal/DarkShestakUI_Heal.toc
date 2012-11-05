@@ -2,7 +2,7 @@
 ## Title: Dark ShestakUI Heal
 ## Notes: Raid layout for Dark ShestakUI
 ## Author: Shestak
-## Version: 0.42
+## Version: 0.43
 ## Credits: ALZA, Caellian, Tukz
 ## RequiredDeps: DarkShestakUI
 ## Website: http://shestak.org
