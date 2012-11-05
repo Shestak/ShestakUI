@@ -50,10 +50,10 @@ local function LoadSkin()
 		_G["VoidStorageWithdrawButton"..i.."Bg"]:Hide()
 
 		button_d:StyleButton()
-		button_d:SetTemplate()
+		button_d:SetTemplate("Default")
 
 		button_w:StyleButton()
-		button_w:SetTemplate()
+		button_w:SetTemplate("Default")
 
 		icon_d:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon_d:ClearAllPoints()
@@ -73,7 +73,7 @@ local function LoadSkin()
 		_G["VoidStorageStorageButton"..i.."Bg"]:Hide()
 
 		button:StyleButton()
-		button:SetTemplate()
+		button:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()

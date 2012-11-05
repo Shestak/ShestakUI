@@ -29,7 +29,7 @@ local function LoadSkin()
 			local quest = _G["ContainerFrame"..i.."Item"..j.."IconQuestTexture"]
 			item:SetNormalTexture(nil)
 			item:StyleButton()
-			item:SetTemplate()
+			item:SetTemplate("Default")
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:ClearAllPoints()
@@ -73,7 +73,7 @@ local function LoadSkin()
 		local quest = _G["BankFrame".."Item"..i.."IconQuestTexture"]
 		item:SetNormalTexture(nil)
 		item:StyleButton()
-		item:SetTemplate()
+		item:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
@@ -90,7 +90,7 @@ local function LoadSkin()
 
 		bag:SetNormalTexture(nil)
 		bag:StyleButton()
-		bag:SetTemplate()
+		bag:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
