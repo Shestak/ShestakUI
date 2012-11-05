@@ -486,7 +486,7 @@ local b = CreateFrame("Button", nil, UIParent)
 b:SetTemplate("ClassColor")
 b:SetSize(19, 19)
 b:SetAlpha(0)
-b:SetPoint("TOP", SwitchLayout, "BOTTOM", 0, YOUR_Y_COORD)
+b:SetPoint("TOP", SwitchLayout, "BOTTOM", 0, -21)
 
 local bt = b:CreateTexture(nil, "OVERLAY")
 bt:SetTexture("Interface\\Icons\\Ability_Hunter_Beastcall")
