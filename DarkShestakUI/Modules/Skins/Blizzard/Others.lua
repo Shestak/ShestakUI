@@ -37,6 +37,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			local frame = _G[bgskins[i]]
 			if frame then
 				frame:SetTemplate("Transparent")
+				T.CreateShadow(frame)
 			end
 		end
 
