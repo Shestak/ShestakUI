@@ -6,3 +6,5 @@ Filger_Settings = {
 	max_test_icon = 5,
 	show_tooltip = true,
 }
+
+-- edit by Oz of shestak. org --

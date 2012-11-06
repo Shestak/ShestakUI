@@ -334,7 +334,7 @@ function BadGroup.Command(str, editbox)
 end
 
 local BadGroupMenu = CreateFrame("Frame", "BadGroupMenu", UIParent)
-BadGroupMenu:SetWidth(C.minimap.size)
+BadGroupMenu:SetWidth(C.minimap.size+20)
 BadGroupMenu:SetHeight(181)
 BadGroupMenu:SetPoint(unpack(C.extra_position.tank_announce))
 BadGroupMenu:SetTemplate("Transparent")
