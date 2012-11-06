@@ -8,6 +8,7 @@ local function LoadSkin()
 	ArchaeologyFrame:StripTextures(true)
 	ArchaeologyFrameInset:StripTextures(true)
 	ArchaeologyFrame:SetTemplate("Transparent")
+	T.CreateShadow(ArchaeologyFrame)
 
 	ArchaeologyFrameArtifactPageSolveFrameSolveButton:SkinButton(true)
 	ArchaeologyFrameArtifactPageBackButton:SkinButton(true)

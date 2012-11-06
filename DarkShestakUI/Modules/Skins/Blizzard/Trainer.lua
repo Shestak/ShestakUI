@@ -53,7 +53,7 @@ local function LoadSkin()
 		_G[buttons[i]]:SkinButton()
 	end
 
-	ClassTrainerFrame:CreateBackdrop("Transparent")
+	ClassTrainerFrame:CreateBackdrop("Transparent", "Shadow")
 	ClassTrainerFrame.backdrop:SetPoint("TOPLEFT", ClassTrainerFrame, "TOPLEFT")
 	ClassTrainerFrame.backdrop:SetPoint("BOTTOMRIGHT", ClassTrainerFrame, "BOTTOMRIGHT")
 

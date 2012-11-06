@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	TabardFrame:StripTextures()
-	TabardFrame:CreateBackdrop("Transparent")
+	TabardFrame:CreateBackdrop("Transparent", "Shadow")
 	TabardFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	TabardFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 

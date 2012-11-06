@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	BonusRollFrame:StripTextures()
-	BonusRollFrame:CreateBackdrop("Transparent")
+	BonusRollFrame:CreateBackdrop("Transparent", "Shadow")
 	BonusRollFrame.backdrop:SetFrameLevel(0)
 	BonusRollFrame.backdrop:SetPoint("TOPLEFT", BonusRollFrame, "TOPLEFT", -9, 6)
 	BonusRollFrame.backdrop:SetPoint("BOTTOMRIGHT", BonusRollFrame, "BOTTOMRIGHT", 5, -6)

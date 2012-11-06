@@ -21,7 +21,7 @@ local function LoadSkin()
 	KeyBindingFrameHeaderText:ClearAllPoints()
 	KeyBindingFrameHeaderText:SetPoint("TOP", KeyBindingFrame, "TOP", 0, -4)
 	KeyBindingFrame:StripTextures()
-	KeyBindingFrame:CreateBackdrop("Transparent")
+	KeyBindingFrame:CreateBackdrop("Transparent", "Shadow")
 	KeyBindingFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	KeyBindingFrame.backdrop:SetPoint("BOTTOMRIGHT", -40, 10)
 

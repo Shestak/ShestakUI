@@ -21,7 +21,7 @@ local function LoadSkin()
 				frame.SetAlpha = T.dummy
 
 				if not frame.backdrop then
-					frame:CreateBackdrop("Transparent")
+					frame:CreateBackdrop("Transparent", "Shadow")
 					frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -2, -6)
 					frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 6)
 
@@ -72,7 +72,7 @@ local function LoadSkin()
 				frame.SetAlpha = T.dummy
 
 				if not frame.backdrop then
-					frame:CreateBackdrop("Transparent")
+					frame:CreateBackdrop("Transparent", "Shadow")
 					frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 31, -6)
 					frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -35, 6)
 
@@ -122,7 +122,7 @@ local function LoadSkin()
 			frame.SetAlpha = T.dummy
 
 			if not frame.backdrop then
-				frame:CreateBackdrop("Transparent")
+				frame:CreateBackdrop("Transparent", "Shadow")
 				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -2, -6)
 				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 6)
 
@@ -163,7 +163,7 @@ local function LoadSkin()
 			frame.SetAlpha = T.dummy
 
 			if not frame.backdrop then
-				frame:CreateBackdrop("Transparent")
+				frame:CreateBackdrop("Transparent", "Shadow")
 				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -6)
 				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -7, 6)
 
@@ -212,7 +212,7 @@ local function LoadSkin()
 			frame.SetAlpha = T.dummy
 
 			if not frame.backdrop then
-				frame:CreateBackdrop("Transparent")
+				frame:CreateBackdrop("Transparent", "Shadow")
 				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -6)
 				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -7, 6)
 
@@ -261,7 +261,7 @@ local function LoadSkin()
 				frame.SetAlpha = T.dummy
 
 				if not frame.backdrop then
-					frame:CreateBackdrop("Transparent")
+					frame:CreateBackdrop("Transparent", "Shadow")
 					frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -9, -6)
 					frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 5, 6)
 
@@ -309,7 +309,7 @@ local function LoadSkin()
 				frame.SetAlpha = T.dummy
 
 				if not frame.backdrop then
-					frame:CreateBackdrop("Transparent")
+					frame:CreateBackdrop("Transparent", "Shadow")
 					frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -6)
 					frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 6)
 
@@ -350,7 +350,7 @@ local function LoadSkin()
 				frame.SetAlpha = T.dummy
 
 				if not frame.backdrop then
-					frame:CreateBackdrop("Transparent")
+					frame:CreateBackdrop("Transparent", "Shadow")
 					frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -12, -6)
 					frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 9, 6)
 

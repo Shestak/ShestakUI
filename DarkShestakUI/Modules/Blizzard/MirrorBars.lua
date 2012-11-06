@@ -67,6 +67,7 @@ do
 		border:SetPoint("BOTTOMRIGHT", frame, 2, -2)
 		border:SetTemplate("Default")
 		border:SetFrameLevel(0)
+		T.CreateShadow(border)
 
 		local text = frame:CreateFontString(nil, "OVERLAY")
 		text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)

@@ -11,6 +11,7 @@ local function LoadSkin()
 	CliqueConfig:ClearAllPoints()
 	CliqueConfig:SetPoint("TOPLEFT", SpellBookFrame.backdrop, "TOPRIGHT", 42, 0)
 	CliqueConfig.SetPoint = T.dummy
+	T.CreateShadow(CliqueConfig)
 
 	CliqueConfigPage1Column1:StripTextures()
 	CliqueConfigPage1Column2:StripTextures()

@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	EncounterJournal:StripTextures(true)
-	EncounterJournal:CreateBackdrop("Transparent")
+	EncounterJournal:CreateBackdrop("Transparent", "Shadow")
 	EncounterJournal.backdrop:SetPoint("TOPLEFT", -3, 0)
 	EncounterJournal.backdrop:SetPoint("BOTTOMRIGHT", 0, -2)
 

@@ -18,7 +18,7 @@ local function LoadSkin()
 	end
 
 	RaidBrowserFrame:StripTextures()
-	RaidBrowserFrame:CreateBackdrop("Transparent")
+	RaidBrowserFrame:CreateBackdrop("Transparent", "Shadow")
 	RaidBrowserFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	RaidBrowserFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 

@@ -13,6 +13,7 @@ tinymap:RegisterEvent("ADDON_LOADED")
 tinymap:SetPoint("CENTER", UIParent, 0, 0)
 tinymap:SetFrameLevel(7)
 tinymap:Hide()
+T.CreateShadow(tinymap)
 
 local tinymapbg = CreateFrame("Frame", nil, tinymap)
 tinymapbg:SetAllPoints()

@@ -14,7 +14,7 @@ local function SkinIt(bar)
 		end
 	end
 
-	bar:CreateBackdrop("Default")
+	bar:CreateBackdrop("Default", "Shadow")
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetStatusBarColor(0.7, 0, 0)
 

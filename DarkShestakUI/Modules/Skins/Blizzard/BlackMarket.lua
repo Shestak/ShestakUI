@@ -8,6 +8,7 @@ local function LoadSkin()
 	BlackMarketFrame:StripTextures()
 	BlackMarketFrame.Inset:StripTextures()
 	BlackMarketFrame:SetTemplate("Transparent")
+	T.CreateShadow(BlackMarketFrame)
 
 	T.SkinScrollBar(BlackMarketScrollFrameScrollBar)
 	BlackMarketFrame.MoneyFrameBorder:StripTextures()

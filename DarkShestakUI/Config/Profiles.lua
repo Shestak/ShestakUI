@@ -468,7 +468,6 @@ if T.coauthor == true then
 	C["map"].explore_map = false
 	C["nameplate"].track_auras = true
 	C["aura"].cast_by = true
-	C["unitframe"].castbar_icon = true
 	C["unitframe"].castbar_ticks = true
 	C["unitframe"].plugins_smooth_bar = true
 	C["unitframe"].plugins_diminishing = true
@@ -478,7 +477,7 @@ if T.coauthor == true then
 		C["announcements"].lightwell = true
 		C["automation"].accept_quest = true
 		C["automation"].skip_cinematic = true
-		C["automation"].logging_combat = false
+		C["automation"].logging_combat = true
 		C["unitframe_class_bar"].range = true
 		C["raidframe"].deficit_health = true
 	end

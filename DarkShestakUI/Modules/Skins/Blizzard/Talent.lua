@@ -25,7 +25,7 @@ local function LoadSkin()
 
 	PlayerTalentFrame:StripTextures()
 	PlayerTalentFrameInset:StripTextures()
-	PlayerTalentFrame:CreateBackdrop("Transparent")
+	PlayerTalentFrame:CreateBackdrop("Transparent", "Shadow")
 	PlayerTalentFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	PlayerTalentFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, -1)
 

@@ -113,7 +113,7 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	f:SetBackdropBorderColor(borderr, borderg, borderb, bordera)
 end
 
-local function CreateBackdrop(f, t)
+local function CreateBackdrop(f, t, s)
 	if not t then t = "Default" end
 
 	local b = CreateFrame("Frame", "$parentBackdrop", f)
@@ -128,6 +128,8 @@ local function CreateBackdrop(f, t)
 	end
 
 	f.backdrop = b
+	
+	if s == "Shadow" and C.skins.shadow == true then T.CreateShadow(b) end
 end
 
 local function StripTextures(object, kill)

@@ -8,6 +8,7 @@ local function LoadSkin()
 	if IsMacClient() then
 		-- Skin main frame and reposition the header
 		MacOptionsFrame:SetTemplate("Transparent")
+		T.CreateShadow(MacOptionsFrame)
 		MacOptionsFrameHeader:SetTexture("")
 		MacOptionsFrameHeader:ClearAllPoints()
 		MacOptionsFrameHeader:SetPoint("TOP", MacOptionsFrame, 0, 0)

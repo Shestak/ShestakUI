@@ -7,7 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	MissingLootFrameCorner:Kill()
 	MissingLootFrame:StripTextures()
-	MissingLootFrame:CreateBackdrop("Transparent")
+	MissingLootFrame:CreateBackdrop("Transparent", "Shadow")
 	MissingLootFrame.backdrop:SetPoint("TOPLEFT", 2, -8)
 	MissingLootFrame.backdrop:SetPoint("BOTTOMRIGHT", -2, 6)
 

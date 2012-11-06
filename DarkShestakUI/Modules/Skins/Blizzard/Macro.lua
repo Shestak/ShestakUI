@@ -32,7 +32,7 @@ local function LoadSkin()
 
 	-- General
 	MacroFrame:StripTextures()
-	MacroFrame:CreateBackdrop("Transparent")
+	MacroFrame:CreateBackdrop("Transparent", "Shadow")
 	MacroFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	MacroFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 	MacroFrameInset:StripTextures()

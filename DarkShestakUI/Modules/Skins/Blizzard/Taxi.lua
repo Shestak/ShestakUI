@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	TaxiFrame:StripTextures()
-	TaxiFrame:CreateBackdrop("Transparent")
+	TaxiFrame:CreateBackdrop("Transparent", "Shadow")
 	TaxiFrame.backdrop:SetPoint("TOPLEFT", -5, 3)
 	TaxiFrame.backdrop:SetPoint("BOTTOMRIGHT", 5, -7)
 	TaxiRouteMap:CreateBackdrop("Default")

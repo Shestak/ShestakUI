@@ -32,7 +32,7 @@ local function LoadSkin()
 		_G[frame]:StripTextures()
 	end
 
-	CalendarFrame:CreateBackdrop("Transparent")
+	CalendarFrame:CreateBackdrop("Transparent", "Shadow")
 	CalendarFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	CalendarFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, -5)
 
@@ -156,12 +156,14 @@ local function LoadSkin()
 	CalendarViewRaidFrame:SetTemplate("Transparent")
 	CalendarViewRaidFrame:SetPoint("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
 	T.SkinCloseButton(CalendarViewRaidCloseButton)
+	T.CreateShadow(CalendarViewRaidFrame)
 
 	-- Holiday View
 	CalendarViewHolidayFrame:StripTextures(true)
 	CalendarViewHolidayFrame:SetTemplate("Transparent")
 	CalendarViewHolidayFrame:SetPoint("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
 	T.SkinCloseButton(CalendarViewHolidayCloseButton)
+	T.CreateShadow(CalendarViewHolidayFrame)
 
 	-- Event View
 	CalendarViewEventFrame:SetTemplate("Transparent")
@@ -169,10 +171,12 @@ local function LoadSkin()
 	CalendarViewEventDescriptionContainer:SetTemplate("Overlay")
 	CalendarViewEventInviteList:SetTemplate("Overlay")
 	T.SkinCloseButton(CalendarViewEventCloseButton)
+	T.CreateShadow(CalendarViewEventFrame)
 
 	CalendarEventPickerFrame:SetTemplate("Transparent")
 	T.SkinScrollBar(CalendarEventPickerScrollBar)
 	CalendarEventPickerCloseButton:SkinButton(true)
+	T.CreateShadow(CalendarEventPickerFrame)
 
 	local buttons = {
 		"CalendarViewEventAcceptButton",

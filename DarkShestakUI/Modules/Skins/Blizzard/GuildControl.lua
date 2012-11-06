@@ -11,6 +11,7 @@ local function LoadSkin()
 	GuildControlUI:ClearAllPoints()
 	GuildControlUI:SetPoint("TOPLEFT", GuildFrame, "TOPRIGHT", 3, 0)
 	GuildControlUI:SetFrameLevel(GuildControlUI:GetFrameLevel() + 2)
+	T.CreateShadow(GuildControlUI)
 
 	local function SkinGuildRanks()
 		for i = 1, GuildControlGetNumRanks() do

@@ -20,6 +20,7 @@ local function LoadSkin()
 	end
 
 	VoidStorageFrame:SetTemplate("Transparent")
+	T.CreateShadow(VoidStorageFrame)
 	VoidStoragePurchaseFrame:SetTemplate("Overlay")
 	VoidStoragePurchaseFrame:SetFrameLevel(VoidStorageFrame:GetFrameLevel() + 2)
 	VoidStorageFrameMarbleBg:Kill()

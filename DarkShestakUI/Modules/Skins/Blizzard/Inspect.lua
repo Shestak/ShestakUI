@@ -7,7 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	InspectFrame:StripTextures(true)
 	InspectFrameInset:StripTextures(true)
-	InspectFrame:CreateBackdrop("Transparent")
+	InspectFrame:CreateBackdrop("Transparent", "Shadow")
 	InspectFrame.backdrop:SetAllPoints()
 	T.SkinCloseButton(InspectFrameCloseButton)
 

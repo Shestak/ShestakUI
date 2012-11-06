@@ -311,6 +311,7 @@ local function LoadSkin()
 
 	CharacterFrame:SetTemplate("Transparent")
 	CharacterFrame:SetFrameStrata("DIALOG")
+	T.CreateShadow(CharacterFrame)
 
 	-- Unit Background Texture
 	CharacterModelFrame.backdrop.BGTopLeft = CharacterModelFrame.backdrop:CreateTexture(nil, "ARTWORK")

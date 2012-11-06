@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	QuestLogFrame:StripTextures()
-	QuestLogFrame:CreateBackdrop("Transparent")
+	QuestLogFrame:CreateBackdrop("Transparent", "Shadow")
 	QuestLogFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	QuestLogFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 	T.SkinCloseButton(QuestLogFrameCloseButton, QuestLogFrame.backdrop)

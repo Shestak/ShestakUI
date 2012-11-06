@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	MailFrame:StripTextures()
-	MailFrame:CreateBackdrop("Transparent")
+	MailFrame:CreateBackdrop("Transparent", "Shadow")
 	MailFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	MailFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 

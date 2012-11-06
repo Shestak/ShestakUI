@@ -7,6 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	ReforgingFrame:StripTextures()
 	ReforgingFrame:SetTemplate("Transparent")
+	T.CreateShadow(ReforgingFrame)
 
 	ReforgingFrameMoneyFrame:StripTextures()
 	ReforgingFrame.ButtonFrame:StripTextures()

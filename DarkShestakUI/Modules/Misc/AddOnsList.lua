@@ -67,7 +67,7 @@ function AddonManager:LoadProfileWindow()
 	local window = CreateFrame("Frame", "AddonManagerProfileWindow", self)
 	window:SetPoint("TOPLEFT", self, "TOPRIGHT", 5, 0)
 	window:SetSize(175, 20)
-	window:CreateBackdrop("Transparent")
+	window:CreateBackdrop("Transparent", "Shadow")
 	window.backdrop:SetPoint("TOPLEFT", 0, 2)
 	window.backdrop:SetPoint("BOTTOMRIGHT", 0, -2)
 
@@ -272,7 +272,7 @@ function AddonManager:LoadWindow()
 
 	window:Show()
 	window:SetSize(350, 400)
-	window:CreateBackdrop("Transparent")
+	window:CreateBackdrop("Transparent", "Shadow")
 	window.backdrop:SetPoint("TOPLEFT", -2, 2)
 	window.backdrop:SetPoint("BOTTOMRIGHT", 2, -19)
 

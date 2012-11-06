@@ -231,7 +231,7 @@ local function LoadSkin()
 		T.SkinTab(_G["PVEFrameTab"..i])
 	end
 
-	PVEFrame:CreateBackdrop("Transparent")
+	PVEFrame:CreateBackdrop("Transparent", "Shadow")
 	PVEFrame.backdrop:SetAllPoints()
 	PVEFrame.shadows:Hide()
 	ScenarioQueueFrame.Bg:Hide()

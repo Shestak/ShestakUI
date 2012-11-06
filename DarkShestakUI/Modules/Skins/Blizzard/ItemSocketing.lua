@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	ItemSocketingFrame:StripTextures()
-	ItemSocketingFrame:CreateBackdrop("Transparent")
+	ItemSocketingFrame:CreateBackdrop("Transparent", "Shadow")
 	ItemSocketingFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	ItemSocketingFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 	ItemSocketingFrameInset:StripTextures()

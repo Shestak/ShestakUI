@@ -7,6 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	ChatConfigFrame:StripTextures()
 	ChatConfigFrame:SetTemplate("Transparent")
+	T.CreateShadow(ChatConfigFrame)
 
 	ChatConfigFrameHeader:SetTexture(nil)
 	ChatConfigFrameHeader:ClearAllPoints()

@@ -7,7 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	GMSurveyHeader:StripTextures()
 	GMSurveyFrame:StripTextures()
-	GMSurveyFrame:CreateBackdrop("Transparent")
+	GMSurveyFrame:CreateBackdrop("Transparent", "Shadow")
 	GMSurveyFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	GMSurveyFrame.backdrop:SetPoint("BOTTOMRIGHT", -44, 10)
 

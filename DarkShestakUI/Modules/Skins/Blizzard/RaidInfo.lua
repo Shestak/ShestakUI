@@ -39,7 +39,7 @@ local function LoadSkin()
 		_G[buttons[i]]:SkinButton()
 	end
 
-	RaidInfoFrame:CreateBackdrop("Transparent")
+	RaidInfoFrame:CreateBackdrop("Transparent", "Shadow")
 	RaidInfoFrame.backdrop:SetPoint("TOPLEFT", RaidInfoFrame, "TOPLEFT")
 	RaidInfoFrame.backdrop:SetPoint("BOTTOMRIGHT", RaidInfoFrame, "BOTTOMRIGHT")
 	RaidInfoFrame:SetPoint("TOPLEFT", FriendsFrame, "TOPRIGHT", 3, 0)

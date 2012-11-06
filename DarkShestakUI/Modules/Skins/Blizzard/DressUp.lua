@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	DressUpFrame:StripTextures(true)
-	DressUpFrame:CreateBackdrop("Transparent")
+	DressUpFrame:CreateBackdrop("Transparent", "Shadow")
 	DressUpFrame.backdrop:SetPoint("TOPLEFT", 16, -12)
 	DressUpFrame.backdrop:SetPoint("BOTTOMRIGHT", -30, 76)
 

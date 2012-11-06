@@ -11,6 +11,7 @@ frame:SetScript("OnEvent", function(self, event)
 	_NPCScanButton:StripTextures()
 	_NPCScanButton:SetTemplate("Transparent")
 	_NPCScanButton:SetScale(1)
+	T.CreateShadow(_NPCScanButton)
 
 	_NPCScanTest:SkinButton()
 

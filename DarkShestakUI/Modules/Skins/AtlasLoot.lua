@@ -164,6 +164,10 @@ frame:SetScript("OnEvent", function(self, event)
 	for _, object in pairs(SetTemplate) do
 		_G[object]:SetTemplate("Transparent")
 	end
+	
+	T.CreateShadow(_G["AtlasLootDefaultFrame"])
+	T.CreateShadow(_G["AtlasLootCompareFrame"])
+	T.CreateShadow(_G["AtlasLootItemsFrame"])
 
 	for _, button in pairs(buttons) do
 		_G[button]:SkinButton()
@@ -188,7 +192,7 @@ frame:SetScript("OnEvent", function(self, event)
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
-	AtlasLootPanel:CreateBackdrop("Transparent")
+	AtlasLootPanel:CreateBackdrop("Transparent", "Shadow")
 	AtlasLootPanel.backdrop:SetPoint("TOPLEFT", AtlasLootPanel, "TOPLEFT", 0, 0)
 	AtlasLootPanel.backdrop:SetPoint("BOTTOMRIGHT", AtlasLootPanel, "BOTTOMRIGHT", 0, -3)
 

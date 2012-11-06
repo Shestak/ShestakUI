@@ -16,7 +16,7 @@ local function LoadSkin()
 	QuestFrameProgressPanel:StripTextures(true)
 	QuestFrameRewardPanel:StripTextures(true)
 
-	QuestFrame:CreateBackdrop("Transparent")
+	QuestFrame:CreateBackdrop("Transparent", "Shadow")
 	QuestFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	QuestFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 
@@ -64,7 +64,7 @@ local function LoadSkin()
 	QuestNPCModelTextFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModel.backdrop, "BOTTOMLEFT", 0, -1)
 
 	QuestLogDetailFrame:StripTextures()
-	QuestLogDetailFrame:CreateBackdrop("Transparent")
+	QuestLogDetailFrame:CreateBackdrop("Transparent", "Shadow")
 	QuestLogDetailFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	QuestLogDetailFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 	QuestLogDetailScrollFrame:StripTextures()

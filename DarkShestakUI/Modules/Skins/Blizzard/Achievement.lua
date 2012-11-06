@@ -40,7 +40,7 @@ local function LoadSkin()
 		end
 	end
 
-	AchievementFrame:CreateBackdrop("Transparent")
+	AchievementFrame:CreateBackdrop("Transparent", "Shadow")
 	AchievementFrame.backdrop:SetPoint("TOPLEFT", 0, 6)
 	AchievementFrame.backdrop:SetPoint("BOTTOMRIGHT")
 	AchievementFrameHeaderTitle:ClearAllPoints()

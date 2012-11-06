@@ -108,7 +108,7 @@ local CreateBar = function()
 	end
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetMinMaxValues(0, 100)
-	bar:CreateBackdrop("Default")
+	bar:CreateBackdrop("Default", "Shadow")
 
 	bar.bg = bar:CreateTexture(nil, "BACKGROUND")
 	bar.bg:SetAllPoints(bar)
@@ -128,7 +128,7 @@ local CreateBar = function()
 		bar.icon:SetWidth(bar:GetHeight() + 6)
 		bar.icon:SetHeight(bar.icon:GetWidth())
 		bar.icon:SetPoint("BOTTOMRIGHT", bar, "BOTTOMLEFT", -7, 0)
-		bar.icon:CreateBackdrop("Default")
+		bar.icon:CreateBackdrop("Default", "Shadow")
 	end
 	return bar
 end

@@ -36,7 +36,7 @@ local function Shared(self, unit)
 	end
 
 	-- Backdrop for every units
-	self:CreateBackdrop("Default")
+	self:CreateBackdrop("Default", "Shadow")
 	self:SetFrameStrata("BACKGROUND")
 
 	-- Health bar
@@ -265,7 +265,7 @@ local function Shared(self, unit)
 		-- Rune bar
 		if C.unitframe_class_bar.rune == true and T.class == "DEATHKNIGHT" then
 			self.Runes = CreateFrame("Frame", self:GetName().."_RuneBar", self)
-			self.Runes:CreateBackdrop("Default")
+			self.Runes:CreateBackdrop("Default", "Shadow")
 			self.Runes:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.Runes:SetSize(217, 7)
 
@@ -289,7 +289,7 @@ local function Shared(self, unit)
 		-- Chi bar
 		if C.unitframe_class_bar.chi == true and T.class == "MONK" then
 			self.HarmonyBar = CreateFrame("Frame", self:GetName().."_HarmonyBar", self)
-			self.HarmonyBar:CreateBackdrop("Default")
+			self.HarmonyBar:CreateBackdrop("Default", "Shadow")
 			self.HarmonyBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.HarmonyBar:SetSize(217, 7)
 
@@ -314,7 +314,7 @@ local function Shared(self, unit)
 		-- Shadow Orbs bar
 		if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
 			self.ShadowOrbsBar = CreateFrame("Frame", self:GetName().."_ShadowOrbsBar", self)
-			self.ShadowOrbsBar:CreateBackdrop("Default")
+			self.ShadowOrbsBar:CreateBackdrop("Default", "Shadow")
 			self.ShadowOrbsBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.ShadowOrbsBar:SetSize(217, 7)
 
@@ -339,7 +339,7 @@ local function Shared(self, unit)
 		-- Holy Power bar
 		if C.unitframe_class_bar.holy == true and T.class == "PALADIN" then
 			self.HolyPower = CreateFrame("Frame", self:GetName().."_HolyPowerBar", self)
-			self.HolyPower:CreateBackdrop("Default")
+			self.HolyPower:CreateBackdrop("Default", "Shadow")
 			self.HolyPower:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.HolyPower:SetSize(217, 7)
 
@@ -368,7 +368,7 @@ local function Shared(self, unit)
 		-- Shard/Burning bar
 		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
 			self.WarlockSpecBars = CreateFrame("Frame", self:GetName().."_WarlockSpecBar", self)
-			self.WarlockSpecBars:CreateBackdrop("Default")
+			self.WarlockSpecBars:CreateBackdrop("Default", "Shadow")
 			self.WarlockSpecBars:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.WarlockSpecBars:SetSize(217, 7)
 
@@ -401,7 +401,7 @@ local function Shared(self, unit)
 
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self)
-				self.TotemBar[i]:CreateBackdrop("Default")
+				self.TotemBar[i]:CreateBackdrop("Default", "Shadow")
 				self.TotemBar[i]:SetSize((i == 1 and 210 or 214) / 4, 7)
 
 				local fixpos
@@ -435,7 +435,7 @@ local function Shared(self, unit)
 			-- Eclipse bar
 			if C.unitframe_class_bar.eclipse == true then
 				self.EclipseBar = CreateFrame("Frame", self:GetName().."_EclipseBar", self)
-				self.EclipseBar:CreateBackdrop("Default")
+				self.EclipseBar:CreateBackdrop("Default", "Shadow")
 				self.EclipseBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.EclipseBar:SetSize(217, 7)
 
@@ -468,7 +468,7 @@ local function Shared(self, unit)
 		-- Vengeance bar
 		if C.unitframe_class_bar.vengeance == true then
 			self.VengeanceBar = CreateFrame("Frame", self:GetName().."_VengeanceBar", self)
-			self.VengeanceBar:CreateBackdrop("Default")
+			self.VengeanceBar:CreateBackdrop("Default", "Shadow")
 			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
 			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
@@ -496,7 +496,7 @@ local function Shared(self, unit)
 		-- Experience bar
 		if T.level ~= MAX_PLAYER_LEVEL and C.unitframe.plugins_experience_bar == true then
 			self.Experience = CreateFrame("StatusBar", self:GetName().."_Experience", self)
-			self.Experience:CreateBackdrop("Default")
+			self.Experience:CreateBackdrop("Default", "Shadow")
 			if C.unitframe.portrait_enable == true then
 				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
 			else
@@ -528,7 +528,7 @@ local function Shared(self, unit)
 		-- Reputation bar
 		if C.unitframe.plugins_reputation_bar == true then
 			self.Reputation = CreateFrame("StatusBar", self:GetName().."_Reputation", self)
-			self.Reputation:CreateBackdrop("Default")
+			self.Reputation:CreateBackdrop("Default", "Shadow")
 			if C.unitframe.portrait_enable == true then
 				if T.level == MAX_PLAYER_LEVEL then
 					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
@@ -614,7 +614,7 @@ local function Shared(self, unit)
 				self.Portrait:SetPoint(unpack(C.position.unitframes.target_portrait))
 			end
 
-			self.Portrait:CreateBackdrop("Transparent")
+			self.Portrait:CreateBackdrop("Transparent", "Shadow")
 			self.Portrait.backdrop:SetPoint("TOPLEFT", -2 + T.mult, 2 + T.mult)
 			self.Portrait.backdrop:SetPoint("BOTTOMRIGHT", 2 + T.mult, -2 - T.mult)
 
@@ -679,7 +679,7 @@ local function Shared(self, unit)
 			-- Rogue/Druid Combo bar
 			if C.unitframe_class_bar.combo == true then
 				self.CPoints = CreateFrame("Frame", nil, self)
-				self.CPoints:CreateBackdrop("Default")
+				self.CPoints:CreateBackdrop("Default", "Shadow")
 				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.CPoints:SetSize(217, 7)
 
@@ -706,7 +706,7 @@ local function Shared(self, unit)
 			-- Priest Range bar
 			if C.unitframe_class_bar.range == true and T.class == "PRIEST" then
 				self.RangeBar = CreateFrame("StatusBar", self:GetName().."_RangeBar", self)
-				self.RangeBar:CreateBackdrop("Default")
+				self.RangeBar:CreateBackdrop("Default", "Shadow")
 				self.RangeBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.RangeBar:SetSize(217, 7)
 				self.RangeBar:SetStatusBarTexture(C.media.texture)
@@ -731,7 +731,7 @@ local function Shared(self, unit)
 			-- Friendship bar
 			if C.unitframe.plugins_friendship_bar == true then
 				self.Friendship = CreateFrame("StatusBar", self:GetName().."_Friendship", self)
-				self.Friendship:CreateBackdrop("Default")
+				self.Friendship:CreateBackdrop("Default", "Shadow")
 				self.Friendship:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.Friendship:SetSize(217, 7)
 				self.Friendship:SetStatusBarTexture(C.media.texture)
@@ -790,6 +790,7 @@ local function Shared(self, unit)
 		self.Castbar.Overlay:SetFrameStrata("BACKGROUND")
 		self.Castbar.Overlay:SetPoint("TOPLEFT", -2, 2)
 		self.Castbar.Overlay:SetPoint("BOTTOMRIGHT", 2, -2)
+		T.CreateShadow(self.Castbar.Overlay)
 
 		self.Castbar.PostCastStart = T.PostCastStart
 		self.Castbar.PostChannelStart = T.PostChannelStart
@@ -871,6 +872,7 @@ local function Shared(self, unit)
 				self.Castbar.Button:SetHeight(20)
 				self.Castbar.Button:SetWidth(20)
 				self.Castbar.Button:SetTemplate("Default")
+				T.CreateShadow(self.Castbar.Button)
 
 				self.Castbar.Icon = self.Castbar.Button:CreateTexture(nil, "ARTWORK")
 				self.Castbar.Icon:SetPoint("TOPLEFT", self.Castbar.Button, 2, -2)
@@ -889,6 +891,7 @@ local function Shared(self, unit)
 				self.Castbar.Button:SetHeight(20)
 				self.Castbar.Button:SetWidth(20)
 				self.Castbar.Button:SetTemplate("Default")
+				T.CreateShadow(self.Castbar.Button)
 				if unit == "boss" then
 					if C.unitframe.boss_on_right == true then
 						self.Castbar.Button:SetPoint("TOPRIGHT", self.Castbar, "TOPLEFT", -5, 2)
@@ -927,7 +930,7 @@ local function Shared(self, unit)
 	-- Swing bar
 	if C.unitframe.plugins_swing == true and unit == "player" then
 		self.Swing = CreateFrame("StatusBar", self:GetName().."_Swing", self)
-		self.Swing:CreateBackdrop("Default")
+		self.Swing:CreateBackdrop("Default", "Shadow")
 		self.Swing:SetPoint("BOTTOMRIGHT", "oUF_Player_Castbar", "TOPRIGHT", 0, 7)
 		self.Swing:SetSize(281, 5)
 		self.Swing:SetStatusBarTexture(C.media.texture)
@@ -1120,7 +1123,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Default position of ShestakUI unitframes
 ----------------------------------------------------------------------------------------
-oUF:RegisterStyle("Shestak", Shared)
+oUF:RegisterStyle("DarkShestak", Shared)
 
 local player = oUF:Spawn("player", "oUF_Player")
 player:SetPoint(unpack(C.position.unitframes.player))
@@ -1133,17 +1136,17 @@ target:SetSize(217, 27)
 if C.unitframe.show_pet == true then
 	local pet = oUF:Spawn("pet", "oUF_Pet")
 	pet:SetPoint(unpack(C.position.unitframes.pet))
-	pet:SetSize(105, 16)
+	pet:SetSize(103, 16)
 end
 
 if C.unitframe.show_focus == true then
 	local focus = oUF:Spawn("focus", "oUF_Focus")
 	focus:SetPoint(unpack(C.position.unitframes.focus))
-	focus:SetSize(105, 16)
+	focus:SetSize(103, 16)
 
 	local focustarget = oUF:Spawn("focustarget", "oUF_FocusTarget")
 	focustarget:SetPoint(unpack(C.position.unitframes.focus_target))
-	focustarget:SetSize(105, 16)
+	focustarget:SetSize(103, 16)
 else
 	local focus = oUF:Spawn("focus", "oUF_Focus")
 end
@@ -1151,7 +1154,7 @@ end
 if C.unitframe.show_target_target == true then
 	local targettarget = oUF:Spawn("targettarget", "oUF_TargetTarget")
 	targettarget:SetPoint(unpack(C.position.unitframes.target_target))
-	targettarget:SetSize(105, 16)
+	targettarget:SetSize(103, 16)
 end
 
 if C.unitframe.show_boss == true then
@@ -1211,7 +1214,7 @@ if C.unitframe.show_arena == true then
 	for i = 1, 5 do
 		arenaprep[i] = CreateFrame("Frame", "oUF_ArenaPrep"..i, UIParent)
 		arenaprep[i]:SetAllPoints(_G["oUF_Arena"..i])
-		arenaprep[i]:CreateBackdrop("Default")
+		arenaprep[i]:CreateBackdrop("Default", "Shadow")
 		arenaprep[i]:SetFrameStrata("BACKGROUND")
 
 		arenaprep[i].Health = CreateFrame("StatusBar", nil, arenaprep[i])
@@ -1350,19 +1353,19 @@ SLASH_TEST_UF4 = "/еуыега"
 --	Player line
 ----------------------------------------------------------------------------------------
 local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", oUF_Player)
-HorizontalPlayerLine:CreatePanel("Default", 228, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -5, -5)
+HorizontalPlayerLine:CreatePanel("Default", 224, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -1, -5)
 
 local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", oUF_Player)
-VerticalPlayerLine:CreatePanel("Default", 1, 98, "RIGHT", HorizontalPlayerLine, "LEFT", 0, 13)
+VerticalPlayerLine:CreatePanel("Default", 1, 36, "TOPRIGHT", HorizontalPlayerLine, "LEFT", 0, 0)
 
 ----------------------------------------------------------------------------------------
 --	Target line
 ----------------------------------------------------------------------------------------
 local HorizontalTargetLine = CreateFrame("Frame", "HorizontalTargetLine", oUF_Target)
-HorizontalTargetLine:CreatePanel("Default", 228, 1, "TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 5, -5)
+HorizontalTargetLine:CreatePanel("Default", 224, 1, "TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 1, -5)
 
 local VerticalTargetLine = CreateFrame("Frame", "VerticalTargetLine", oUF_Target)
-VerticalTargetLine:CreatePanel("Default", 1, 98, "LEFT", HorizontalTargetLine, "RIGHT", 0, 13)
+VerticalTargetLine:CreatePanel("Default", 1, 36, "TOPLEFT", HorizontalTargetLine, "RIGHT", 0, 0)
 
 ----------------------------------------------------------------------------------------
 --	Delete some lines from unit dropdown menu

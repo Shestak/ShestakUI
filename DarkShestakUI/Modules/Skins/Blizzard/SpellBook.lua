@@ -121,7 +121,7 @@ local function LoadSkin()
 	end
 	hooksecurefunc("SpellBookFrame_UpdateSkillLineTabs", SkinSkillLine)
 
-	SpellBookFrame:CreateBackdrop("Transparent")
+	SpellBookFrame:CreateBackdrop("Transparent", "Shadow")
 	SpellBookFrame.backdrop:SetPoint("TOPLEFT", 5, -1)
 	SpellBookFrame.backdrop:SetPoint("BOTTOMRIGHT", 15, -1)
 

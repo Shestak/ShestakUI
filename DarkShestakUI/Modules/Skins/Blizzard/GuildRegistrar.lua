@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	GuildRegistrarFrame:StripTextures(true)
-	GuildRegistrarFrame:CreateBackdrop("Transparent")
+	GuildRegistrarFrame:CreateBackdrop("Transparent", "Shadow")
 	GuildRegistrarFrame.backdrop:SetAllPoints()
 	GuildRegistrarGreetingFrame:StripTextures()
 	GuildRegistrarFrameInset:StripTextures()

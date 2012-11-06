@@ -37,6 +37,7 @@ local function LoadSkin()
 	end
 
 	PetJournalParent:SetTemplate("Transparent")
+	T.CreateShadow(PetJournalParent)
 	PetJournalParentPortrait:Hide()
 	T.SkinTab(PetJournalParentTab1)
 	T.SkinTab(PetJournalParentTab2)

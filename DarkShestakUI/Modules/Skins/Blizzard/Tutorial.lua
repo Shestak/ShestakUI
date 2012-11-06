@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	TutorialFrame:StripTextures()
-	TutorialFrame:CreateBackdrop("Transparent")
+	TutorialFrame:CreateBackdrop("Transparent", "Shadow")
 	TutorialFrame.backdrop:SetPoint("TOPLEFT", 6, 0)
 	TutorialFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, -6)
 	T.SkinNextPrevButton(TutorialFrameNextButton)

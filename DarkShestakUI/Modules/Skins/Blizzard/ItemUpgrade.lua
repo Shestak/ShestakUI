@@ -7,6 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	ItemUpgradeFrame:StripTextures()
 	ItemUpgradeFrame:SetTemplate("Transparent")
+	T.CreateShadow(ItemUpgradeFrame)
 	ItemUpgradeFrameShadows:Kill()
 	ItemUpgradeFrameInset:Kill()
 

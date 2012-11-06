@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	TimeManagerFrame:StripTextures()
-	TimeManagerFrame:CreateBackdrop("Transparent")
+	TimeManagerFrame:CreateBackdrop("Transparent", "Shadow")
 	TimeManagerFrame.backdrop:SetPoint("TOPLEFT", -3, 0)
 	TimeManagerFrame.backdrop:SetPoint("BOTTOMRIGHT", -3, 3)
 	TimeManagerFrameInset:StripTextures()
@@ -44,7 +44,7 @@ local function LoadSkin()
 	TimeManagerStopwatchCheck:SetCheckedTexture(checked)
 
 	StopwatchFrame:StripTextures()
-	StopwatchFrame:CreateBackdrop("Transparent")
+	StopwatchFrame:CreateBackdrop("Transparent", "Shadow")
 	StopwatchFrame.backdrop:SetPoint("TOPLEFT", 2, -15)
 	StopwatchFrame.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 

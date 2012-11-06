@@ -125,7 +125,7 @@ local function LoadSkin()
 	T.SkinNextPrevButton(PVPBannerFrameCustomization2RightButton)
 
 	PVPBannerFrameCustomization2RightButton:SetHeight(PVPBannerFrameCustomization1:GetHeight())
-	PVPFrame:CreateBackdrop("Transparent")
+	PVPFrame:CreateBackdrop("Transparent", "Shadow")
 	PVPFrame.backdrop:SetPoint("TOPLEFT", PVPFrame, "TOPLEFT")
 	PVPFrame.backdrop:SetPoint("BOTTOMRIGHT", PVPFrame, "BOTTOMRIGHT")
 	T.SkinCloseButton(PVPFrameCloseButton, PVPFrame)

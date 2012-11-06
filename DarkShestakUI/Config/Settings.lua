@@ -109,6 +109,7 @@ C["automation"] = {
 ----------------------------------------------------------------------------------------
 C["skins"] = {
 	["blizzard_frames"] = true,					-- Blizzard frames skin
+	["shadow"] = true,							-- Shadow on frames
 	["minimap_buttons"] = true,					-- Skin addons icons on minimap
 	["minimap_buttons_mouseover"] = false,		-- Minimap buttons on mouseover
 	["clcprot"] = false,						-- CLCProt skin
@@ -425,7 +426,7 @@ C["unitframe"] = {
 	["bar_color_value"] = false,				-- Health bar color by current health remaining
 	-- Cast bars
 	["unit_castbar"] = true,					-- Show castbars
-	["castbar_icon"] = false,					-- Show castbar icons
+	["castbar_icon"] = true,					-- Show castbar icons
 	["castbar_latency"] = true,					-- Castbar latency
 	["castbar_ticks"] = false,					-- Castbar ticks
 	-- Frames
@@ -442,7 +443,7 @@ C["unitframe"] = {
 	["icons_resting"] = true,					-- Resting icon for low lvl chars
 	-- Portraits
 	["portrait_enable"] = false,				-- Enable player/target portraits
-	["portrait_classcolor_border"] = true,		-- Enable classcolor border
+	["portrait_classcolor_border"] = false,		-- Enable classcolor border
 	["portrait_height"] = 92,					-- Portrait height
 	["portrait_width"] = 67,					-- Portrait width
 	-- Plugins

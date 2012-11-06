@@ -15,7 +15,7 @@ local function LoadSkin()
 	TradeRecipientMoneyInset:StripTextures()
 	TradeRecipientMoneyBg:StripTextures()
 
-	TradeFrame:CreateBackdrop("Transparent")
+	TradeFrame:CreateBackdrop("Transparent", "Shadow")
 	TradeFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	TradeFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 	TradeFrameTradeButton:SkinButton(true)

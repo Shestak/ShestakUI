@@ -17,7 +17,7 @@ local function LoadSkin()
 		local frame = _G["ContainerFrame"..i]
 		local close = _G["ContainerFrame"..i.."CloseButton"]
 		frame:StripTextures(true)
-		frame:CreateBackdrop("Transparent")
+		frame:CreateBackdrop("Transparent", "Shadow")
 		frame.backdrop:SetPoint("TOPLEFT", 4, -2)
 		frame.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
 
@@ -54,6 +54,7 @@ local function LoadSkin()
 	-- Bank Frame
 	BankFrame:StripTextures(true)
 	BankFrame:CreateBackdrop("Transparent")
+	T.CreateShadow(BankFrame)
 	BankFrame.backdrop:SetAllPoints()
 
 	BankItemSearchBox:StripTextures(true)

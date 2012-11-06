@@ -7,6 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	TransmogrifyArtFrame:StripTextures()
 	TransmogrifyArtFrame:SetTemplate("Transparent")
+	T.CreateShadow(TransmogrifyArtFrame)
 	TransmogrifyModelFrame:SetFrameLevel(TransmogrifyArtFrame:GetFrameLevel() + 2)
 
 	local KillTextures = {

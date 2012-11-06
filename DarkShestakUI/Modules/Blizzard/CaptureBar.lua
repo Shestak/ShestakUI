@@ -34,7 +34,7 @@ local function CaptureUpdate()
 				right:SetVertexColor(0.9, 0.2, 0.2)
 				middle:SetVertexColor(0.8, 0.8, 0.8)
 
-				bar:CreateBackdrop("Default")
+				bar:CreateBackdrop("Default", "Shadow")
 				bar.backdrop:SetPoint("TOPLEFT", left, -2, 2)
 				bar.backdrop:SetPoint("BOTTOMRIGHT", right, 2, -2)
 

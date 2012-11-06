@@ -617,6 +617,7 @@ function Stuffing:Layout(isBank)
 
 	f:SetClampedToScreen(1)
 	f:SetTemplate("Transparent")
+	T.CreateShadow(f)
 
 	-- Bag frame stuff
 	local fb = f.bags_frame

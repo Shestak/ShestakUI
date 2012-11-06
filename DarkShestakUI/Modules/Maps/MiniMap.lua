@@ -6,6 +6,7 @@ if C.minimap.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
 MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
+T.CreateShadow(MinimapAnchor)
 
 ----------------------------------------------------------------------------------------
 --	Shape, location and scale
@@ -122,7 +123,7 @@ end
 
 -- Ticket icon
 HelpOpenTicketButton:SetParent(Minimap)
-HelpOpenTicketButton:CreateBackdrop("ClassColor")
+HelpOpenTicketButton:CreateBackdrop("Overlay")
 HelpOpenTicketButton:SetFrameLevel(4)
 HelpOpenTicketButton:ClearAllPoints()
 HelpOpenTicketButton:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, 2)

@@ -7,7 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	-- Main frames
 	MerchantFrame:StripTextures(true)
-	MerchantFrame:CreateBackdrop("Transparent")
+	MerchantFrame:CreateBackdrop("Transparent", "Shadow")
 	MerchantFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	MerchantFrame.backdrop:SetPoint("BOTTOMRIGHT", 2, 0)
 

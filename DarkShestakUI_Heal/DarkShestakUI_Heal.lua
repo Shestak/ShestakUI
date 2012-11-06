@@ -5,7 +5,7 @@ if C.unitframe.enable ~= true or IsAddOnLoaded("DarkShestakUI_DPS") then return 
 --	UnitFrames based on oUF_Caellian(by Caellian)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = oUFShestakUI or ShestakUI.oUF
+local oUF = oUFDarkShestakUI or DarkShestakUI.oUF
 
 -- Frame size
 local unit_width = 60.2
@@ -29,7 +29,7 @@ local function Shared(self, unit)
 	self.menu = T.SpawnMenu
 
 	-- Backdrop for every units
-	self:CreateBackdrop("Default")
+	self:CreateBackdrop("Default", "Shadow")
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", nil, self)
@@ -280,9 +280,9 @@ end
 ----------------------------------------------------------------------------------------
 --	Default position of ShestakUI unitframes
 ----------------------------------------------------------------------------------------
-oUF:RegisterStyle("ShestakHeal", Shared)
+oUF:RegisterStyle("DarkShestakHeal", Shared)
 oUF:Factory(function(self)
-	oUF:SetActiveStyle("ShestakHeal")
+	oUF:SetActiveStyle("DarkShestakHeal")
 	if C.raidframe.show_party == true then
 		-- Party
 		local party = self:SpawnHeader("oUF_Party", nil, "custom [@raid6,exists][petbattle] hide;show",

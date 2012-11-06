@@ -8,6 +8,7 @@ WORLDMAP_WINDOWED_SIZE = C.map.scale
 
 local mapbg = CreateFrame("Frame", nil, WorldMapDetailFrame)
 mapbg:SetTemplate("Default")
+T.CreateShadow(mapbg)
 
 local SmallerMap = GetCVarBool("miniWorldMap")
 if SmallerMap == nil then

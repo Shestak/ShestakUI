@@ -7,7 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	if C.map.enable == true or IsAddOnLoaded("Mapster") then return end
 
-	WorldMapFrame:CreateBackdrop("Transparent")
+	WorldMapFrame:CreateBackdrop("Transparent", "Shadow")
 	WorldMapDetailFrame.backdrop = CreateFrame("Frame", nil, WorldMapFrame)
 	WorldMapDetailFrame.backdrop:SetTemplate("Default")
 	WorldMapDetailFrame.backdrop:SetPoint("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -2, 2)

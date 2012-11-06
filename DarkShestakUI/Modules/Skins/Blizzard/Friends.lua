@@ -51,7 +51,9 @@ local function LoadSkin()
 	for _, object in pairs(StripAllTextures) do
 		_G[object]:StripTextures()
 	end
-
+	
+	T.CreateShadow(FriendsFrame)
+	
 	local KillTextures = {
 		"FriendsFrameIcon",
 		"FriendsFrameBroadcastInputLeft",
