@@ -56,6 +56,7 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Automatische Benachrichtigung beim ReadyC
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Benachrichtigung an den Raid Channel"
 L_GUI_ANNOUNCEMENTS_FEASTS = "Benachrichtigung wenn Festmahl/Kessel/Seelensteine/Reparatur Bots aufgestellt wurden"
 L_GUI_ANNOUNCEMENTS_PORTALS = "Benachrichtigung über Portale/Ritual der Beschwörung"
+L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Check bad gear in instance" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatisierung"
