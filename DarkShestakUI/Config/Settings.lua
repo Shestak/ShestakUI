@@ -442,10 +442,7 @@ C["unitframe"] = {
 	["icons_combat"] = true,					-- Combat icon
 	["icons_resting"] = true,					-- Resting icon for low lvl chars
 	-- Portraits
-	["portrait_enable"] = false,				-- Enable player/target portraits
-	["portrait_classcolor_border"] = false,		-- Enable classcolor border
-	["portrait_height"] = 92,					-- Portrait height
-	["portrait_width"] = 67,					-- Portrait width
+	["portrait_enable"] = false,					-- Enable player/target portraits
 	-- Plugins
 	["plugins_gcd"] = false,					-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar

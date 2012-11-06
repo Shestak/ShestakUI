@@ -379,9 +379,6 @@ local function Local(o)
 	if o == "UIConfigunitframeicons_combat" then o = L_GUI_UF_ICONS_COMBAT end
 	if o == "UIConfigunitframeicons_resting" then o = L_GUI_UF_ICONS_RESTING end
 	if o == "UIConfigunitframeportrait_enable" then o = L_GUI_UF_PORTRAIT_ENABLE end
-	if o == "UIConfigunitframeportrait_classcolor_border" then o = L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER end
-	if o == "UIConfigunitframeportrait_height" then o = L_GUI_UF_PORTRAIT_HEIGHT end
-	if o == "UIConfigunitframeportrait_width" then o = L_GUI_UF_PORTRAIT_WIDTH end
 	if o == "UIConfigunitframeplugins_gcd" then o = L_GUI_UF_PLUGINS_GCD end
 	if o == "UIConfigunitframeplugins_swing" then o = L_GUI_UF_PLUGINS_SWING end
 	if o == "UIConfigunitframeplugins_necro_strike" then o = L_GUI_UF_PLUGINS_NECRO_STRIKE end

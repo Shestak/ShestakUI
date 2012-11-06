@@ -514,11 +514,7 @@ local function Shared(self, unit)
 		if T.level ~= MAX_PLAYER_LEVEL and C.unitframe.plugins_experience_bar == true then
 			self.Experience = CreateFrame("StatusBar", self:GetName().."_Experience", self)
 			self.Experience:CreateBackdrop("Default", "Shadow")
-			if C.unitframe.portrait_enable == true then
-				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
-			else
-				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
-			end
+			self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
 			self.Experience:SetSize(7, 94)
 			self.Experience:SetOrientation("Vertical")
 			self.Experience:SetStatusBarTexture(C.media.texture)
@@ -546,18 +542,10 @@ local function Shared(self, unit)
 		if C.unitframe.plugins_reputation_bar == true then
 			self.Reputation = CreateFrame("StatusBar", self:GetName().."_Reputation", self)
 			self.Reputation:CreateBackdrop("Default", "Shadow")
-			if C.unitframe.portrait_enable == true then
-				if T.level == MAX_PLAYER_LEVEL then
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
-				else
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
-				end
+			if T.level == MAX_PLAYER_LEVEL then
+				self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
 			else
-				if T.level == MAX_PLAYER_LEVEL then
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
-				else
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
-				end
+				self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
 			end
 			self.Reputation:SetSize(7, 94)
 			self.Reputation:SetOrientation("Vertical")
@@ -627,34 +615,9 @@ local function Shared(self, unit)
 	if unit == "player" or unit == "target" then
 		if C.unitframe.portrait_enable == true then
 			self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self)
-			self.Portrait:SetHeight(C.unitframe.portrait_height)
-			self.Portrait:SetWidth(C.unitframe.portrait_width)
-			if unit == "player" then
-				self.Portrait:SetPoint(unpack(C.position.unitframes.player_portrait))
-			elseif unit == "target" then
-				self.Portrait:SetPoint(unpack(C.position.unitframes.target_portrait))
-			end
-
-			self.Portrait:CreateBackdrop("Transparent", "Shadow")
-			self.Portrait.backdrop:SetPoint("TOPLEFT", -2 + T.mult, 2 + T.mult)
-			self.Portrait.backdrop:SetPoint("BOTTOMRIGHT", 2 + T.mult, -2 - T.mult)
-
-			if C.unitframe.portrait_classcolor_border == true then
-				if unit == "player" then
-					self.Portrait.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-				elseif unit == "target" then
-					self.Portrait.backdrop:RegisterEvent("PLAYER_TARGET_CHANGED")
-					self.Portrait.backdrop:SetScript("OnEvent", function()
-						local _, class = UnitClass("target")
-						local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
-						if color then
-							self.Portrait.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
-						else
-							self.Portrait.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-						end
-					end)
-				end
-			end
+			self.Portrait:SetPoint("TOPLEFT", self, "TOPLEFT", 1, -1)
+			self.Portrait:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", -1, 1)
+			self.Portrait:SetAlpha(0.1)
 		end
 
 		if unit == "player" then
@@ -776,12 +739,7 @@ local function Shared(self, unit)
 
 		if C.unitframe.plugins_combat_feedback == true then
 			self.CombatFeedbackText = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
-			if C.unitframe.portrait_enable == true then
-				self.CombatFeedbackText:SetPoint("BOTTOM", self.Portrait, "BOTTOM", 0, 0)
-				self.CombatFeedbackText:SetParent(self.Portrait)
-			else
-				self.CombatFeedbackText:SetPoint("CENTER", 0, 1)
-			end
+			self.CombatFeedbackText:SetPoint("CENTER", 0, 1)
 		end
 
 		if C.unitframe.icons_pvp == true then
