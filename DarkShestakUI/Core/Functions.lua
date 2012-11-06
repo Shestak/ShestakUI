@@ -1427,7 +1427,7 @@ T.CreateAuraWatch = function(self, unit)
 end
 
 function T.CreateShadow(f)
-    if f.shadow then return end
+    if f.shadow or C.skins.shadow ~= true then return end
 
     local shadow = CreateFrame("Frame", nil, f)
     shadow:SetFrameLevel(1)

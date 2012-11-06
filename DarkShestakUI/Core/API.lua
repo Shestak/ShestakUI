@@ -129,7 +129,7 @@ local function CreateBackdrop(f, t, s)
 
 	f.backdrop = b
 	
-	if s == "Shadow" and C.skins.shadow == true then T.CreateShadow(b) end
+	if s == "Shadow" then T.CreateShadow(b) end
 end
 
 local function StripTextures(object, kill)
