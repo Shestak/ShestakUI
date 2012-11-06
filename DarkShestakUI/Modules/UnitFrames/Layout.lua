@@ -423,7 +423,7 @@ local function Shared(self, unit)
 				if i == 2 then
 					self.TotemBar[i]:SetPoint("RIGHT", self.TotemBar[1], "LEFT", -1, 0)
 				elseif i == 1 then
-					self.TotemBar[i]:SetPoint("BOTTOM", self, "TOP", 0, -1)
+					self.TotemBar[i]:SetPoint("BOTTOMRIGHT", self, "TOP", 0, -1)
 				else
 					fixpos = i
 					if i == 3 then fixpos = i-1 end
