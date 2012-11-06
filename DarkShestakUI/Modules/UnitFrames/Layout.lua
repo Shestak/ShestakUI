@@ -417,7 +417,7 @@ local function Shared(self, unit)
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self)
 				self.TotemBar[i]:CreateBackdrop("Default", "Shadow")
-				self.TotemBar[i]:SetSize((i == 1 and 173 or 177) / 4, 7)
+				self.TotemBar[i]:SetSize(177 / 4, 7)
 				self.TotemBar[i]:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 				local fixpos
 				if i == 2 then
