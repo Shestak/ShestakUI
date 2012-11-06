@@ -32,7 +32,7 @@ L_ANNOUNCE_FP_PRE = "%s bereitet ein %s vor."
 L_ANNOUNCE_FP_PUT = "%s stellt ein %s auf."
 L_ANNOUNCE_FP_CAST = "%s zaubert ein %s."
 L_ANNOUNCE_FP_CLICK = "%s zaubert ein %s. Klick!"
-L_ANNOUNCE_FP_USE = "%s used a %s." -- Needs review
+L_ANNOUNCE_FP_USE = "%s nahm %s."
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
@@ -66,9 +66,9 @@ L_MISC_MOUNTS_GROUND = "Boden"
 L_MISC_MOUNTS_FLYING = "Fliegen"
 L_MISC_MOUNTS_FLYINGGROUND = "Fliegen&Boden"
 L_MISC_MOUNTS_SWIMMING = "Schwimmen"
-L_MISC_GROCERY_BUY = "Buy" -- Needs review
-L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
-L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
+L_MISC_GROCERY_BUY = "Kaufen"
+L_MISC_GROCERY_DESC = "Kaufe Lebensmittelaschen automatisch"
+L_MISC_GROCERY_ERROR = "Nicht genügend Gegenstände vorhanden."
 L_MISC_SCROLL = "Rolle"
 
 -- Raid Utility
