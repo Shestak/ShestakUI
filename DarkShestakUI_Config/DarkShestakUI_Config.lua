@@ -106,7 +106,9 @@ local function Local(o)
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
 	if o == "UIConfigskinsblizzard_frames" then o = L_GUI_SKINS_BLIZZARD end
+	if o == "UIConfigskinsshadow" then o = L_GUI_SKINS_SHADOW end
 	if o == "UIConfigskinsminimap_buttons" then o = L_GUI_SKINS_MINIMAP_BUTTONS end
+	if o == "UIConfigskinsminimap_buttons_mouseover" then o = L_GUI_SKINS_MINIMAP_BUTTONS_MOUSEOVER end
 	if o == "UIConfigskinsclcret" then o = L_GUI_SKINS_CLCR end
 	if o == "UIConfigskinsclcprot" then o = L_GUI_SKINS_CLCP end
 	if o == "UIConfigskinscombustion_helper" then o = L_GUI_SKINS_COMBUSTION_HELPER end
@@ -254,6 +256,8 @@ local function Local(o)
 	if o == "UIConfigchattabs_mouseover" then o = L_GUI_CHAT_TABS_MOUSEOVER end
 	if o == "UIConfigchatsticky" then o = L_GUI_CHAT_STICKY end
 	if o == "UIConfigchatdamage_meter_spam" then o = L_GUI_CHAT_DAMAGE_METER_SPAM end
+	if o == "UIConfigchattool_bar" then o = L_GUI_CHAT_TOOL_BAR end
+	if o == "UIConfigchattool_bar_mouseover" then o = L_GUI_CHAT_TOOL_BAR_MOUSEOVER end
 
 	-- Bag options
 	if o == "UIConfigbag" then o = L_GUI_BAGS end

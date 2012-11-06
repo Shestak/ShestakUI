@@ -79,7 +79,9 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll" -- Needs review
 -- Skins options
 L_GUI_SKINS = "Stilisierung"
 L_GUI_SKINS_BLIZZARD = "Aktiviere Styles für Blizzardfenster"
+L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "Aktiviere styling Addonincons an der Minimap"
+L_GUI_SKINS_MINIMAP_BUTTONS_MOUSEOVER = "Addons icons on mouseover" -- Need review
 L_GUI_SKINS_CLCR = "CLCRet Design aktivieren"
 L_GUI_SKINS_CLCP = "CLCProt Design aktivieren"
 L_GUI_SKINS_COMBUSTION_HELPER = "CombustionHelper Design aktivieren"
@@ -225,6 +227,8 @@ L_GUI_CHAT_CL_TAB = "Kampflog Reiter anzeigen"
 L_GUI_CHAT_TABS_MOUSEOVER = "Zeige Chat-Reiter bei Mouseover"
 L_GUI_CHAT_STICKY = "Behalte den letzen Channel"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Fasse DMG-Meterspam in einer Zeile zusammen"
+L_GUI_CHAT_TOOL_BAR = "Lite Button Bar for switch Loot and DamageMeter frames" -- Needs review
+L_GUI_CHAT_TOOL_BAR_MOUSEOVER =  "Lite Button Bar on mouseover" -- Needs review
 
 -- Bag options
 L_GUI_BAGS = "Taschen"

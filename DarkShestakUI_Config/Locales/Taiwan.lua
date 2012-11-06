@@ -79,7 +79,9 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用鼠標滾輪施放Buff"
 -- Skins options
 L_GUI_SKINS = "介面樣式"
 L_GUI_SKINS_BLIZZARD = "開啟暴雪默認介面風格增強"
+L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "開啟小地圖插件圖標風格增強"
+L_GUI_SKINS_MINIMAP_BUTTONS_MOUSEOVER = "Addons icons on mouseover" -- Need review
 L_GUI_SKINS_CLCR = "開啟CLCRet樣式增強"
 L_GUI_SKINS_CLCP = "開啟CLCProt樣式增強"
 L_GUI_SKINS_COMBUSTION_HELPER = "開啟CombustionHelper樣式增強"
@@ -225,6 +227,8 @@ L_GUI_CHAT_CL_TAB = "顯示戰鬥記錄標簽"
 L_GUI_CHAT_TABS_MOUSEOVER = "鼠標懸停顯示頻道標籤"
 L_GUI_CHAT_STICKY = "記住上一次使用的頻道"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "在鏈接中合併垃圾郵件"
+L_GUI_CHAT_TOOL_BAR = "Lite Button Bar for switch Loot and DamageMeter frames" -- Needs review
+L_GUI_CHAT_TOOL_BAR_MOUSEOVER =  "Lite Button Bar on mouseover" -- Needs review
 
 -- Bag options
 L_GUI_BAGS = "背包"

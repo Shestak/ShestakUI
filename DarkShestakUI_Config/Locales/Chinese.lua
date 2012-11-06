@@ -79,7 +79,9 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "滚动鼠标滚轮自动上buff"
 -- Skins options
 L_GUI_SKINS = "介面样式"
 L_GUI_SKINS_BLIZZARD = "开启暴风默认界面风格增强"
+L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "开启小地图插件图标风格增强"
+L_GUI_SKINS_MINIMAP_BUTTONS_MOUSEOVER = "Addons icons on mouseover" -- Need review
 L_GUI_SKINS_CLCR = "开启CLCRet样式增强"
 L_GUI_SKINS_CLCP = "开启CLCProt样式增强"
 L_GUI_SKINS_COMBUSTION_HELPER = "开启CombustionHelper样式增强"
@@ -225,6 +227,8 @@ L_GUI_CHAT_CL_TAB = "显示战斗记录标签"
 L_GUI_CHAT_TABS_MOUSEOVER = "鼠标悬停显示频道标签"
 L_GUI_CHAT_STICKY = "记住上一次使用的频道"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "在链接中合并垃圾邮件"
+L_GUI_CHAT_TOOL_BAR = "Lite Button Bar for switch Loot and DamageMeter frames" -- Needs review
+L_GUI_CHAT_TOOL_BAR_MOUSEOVER =  "Lite Button Bar on mouseover" -- Needs review
 
 -- Bag options
 L_GUI_BAGS = "背包"
