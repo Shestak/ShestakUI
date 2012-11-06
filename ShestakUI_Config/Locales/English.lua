@@ -54,6 +54,7 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel"
 L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast"
 L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast"
+L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Check bad gear in instance"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automation"

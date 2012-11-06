@@ -8,6 +8,29 @@ SpellActivationOverlayFrame:SetFrameStrata("BACKGROUND")
 local Filger = {}
 local MyUnits = {player = true, vehicle = true, pet = true}
 
+function Filger:TooltipOnEnter()
+	if self.spellID > 20 then
+		local str = "spell:%s"
+		local BadTotems = {
+			[8076] = 8075,
+			[8972] = 8071,
+			[5677] = 5675,
+		}
+		GameTooltip:ClearLines()
+		GameTooltip:SetOwner(self, "ANCHOR_TOPRIGHT", 0, 3)
+		if BadTotems[self.spell] then
+			GameTooltip:SetHyperlink(format(str, BadTotems[self.spellID]))
+		else
+			GameTooltip:SetHyperlink(format(str, self.spellID))
+		end
+		GameTooltip:Show()
+	end
+end
+
+function Filger:TooltipOnLeave()
+	GameTooltip:Hide()
+end
+
 function Filger:UnitBuff(unitID, inSpellID, spn, absID)
 	if absID then
 		for i = 1, 40, 1 do
@@ -250,6 +273,11 @@ function Filger:DisplayActives()
 			bar:SetScript("OnUpdate", nil)
 		end
 		bar.spellID = value.spid
+		if Filger_Settings.show_tooltip then
+			bar:EnableMouse(true)
+			bar:SetScript("OnEnter", Filger.TooltipOnEnter)
+			bar:SetScript("OnLeave", Filger.TooltipOnLeave)
+		end
 		bar:SetWidth(self.IconSize or 37)
 		bar:SetHeight(self.IconSize or 37)
 		bar:SetAlpha(value.data.opacity or 1)

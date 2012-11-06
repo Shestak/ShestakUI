@@ -69,7 +69,7 @@ end
 local function CreateButton(b, f)
 	b:SetWidth(16)
 	b:SetHeight(16)
-	b:SetTemplate()
+	b:SetTemplate("Default")
 	b:RegisterForClicks("AnyUp")
 	b:SetScript("OnClick", f)
 	if C.chat.chat_bar_mouseover == true then

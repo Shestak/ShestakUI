@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
 if T.oz == true then
-	Filger_Settings = {
+	Filger_Positions = {
 	config_mode = false,
 	max_test_icon = 5,
 	player_buff_icon = {"BOTTOMRIGHT", UIParent, "BOTTOM", -173, 520},		-- "P_BUFF_ICON"
@@ -16,9 +16,7 @@ if T.oz == true then
 	target_bar = {"BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_Portrait" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 6 or 5, C.unitframe.portrait_enable and -3 or -2},	-- "T_DE/BUFF_BAR"
 	}
 else
-	Filger_Settings = {
-	config_mode = false,
-	max_test_icon = 5,
+	Filger_Positions = {
 	player_buff_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173},	-- "P_BUFF_ICON"
 	player_proc_icon = {"BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173},	-- "P_PROC_ICON"
 	special_proc_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 213},	-- "SPECIAL_P_BUFF_ICON"
