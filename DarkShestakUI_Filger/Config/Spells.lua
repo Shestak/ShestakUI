@@ -1633,6 +1633,8 @@ Filger_Spells = {
 			Position = {unpack(Filger_Positions.cooldown)},
 
 			-- Self
+			-- Void Shift
+			{spellID = 108968, filter = "CD"},
 			-- Purify
 			{spellID = 527, filter = "CD"},
 			-- Mass Dispel
