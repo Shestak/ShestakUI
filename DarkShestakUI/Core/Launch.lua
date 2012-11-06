@@ -81,6 +81,7 @@ local function InstallUI()
 		ShowAccountAchievements(1)
 		SetAllowLowLevelRaid(1)
 	elseif T.coauthor == true then
+		SetCVar("ConsolidateBuffs", 1)
 		SetCVar("scriptErrors", 0)
 		SetCVar("profanityFilter", 0)
 		SetCVar("Sound_EnableErrorSpeech", 0)

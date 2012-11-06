@@ -41,6 +41,23 @@ local function CreateVirtualFrame(parent, point)
 	if point == nil then point = parent end
 
 	if point.backdrop then return end
+	
+	if C.skins.shadow == true then
+		local shadow = CreateFrame("Frame", nil, parent)
+		shadow:SetFrameLevel(1)
+		shadow:SetFrameStrata(parent:GetFrameStrata())
+		shadow:SetPoint("TOPLEFT", -5, 5)
+		shadow:SetPoint("BOTTOMLEFT", -5, -5)
+		shadow:SetPoint("TOPRIGHT", 5, 5)
+		shadow:SetPoint("BOTTOMRIGHT", 5, -5)
+		shadow:SetBackdrop({ 
+			edgeFile = "Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\Glow.tga", edgeSize = 3,
+			insets = {left = 5, right = 5, top = 5, bottom = 5},
+		})
+		shadow:SetBackdropColor(0, 0, 0, 0)
+		shadow:SetBackdropBorderColor(0, 0, 0, 0.8)
+	end
+	
 	parent.backdrop = parent:CreateTexture(nil, "BORDER")
 	parent.backdrop:SetDrawLayer("BORDER", -8)
 	parent.backdrop:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult * 3, noscalemult * 3)
