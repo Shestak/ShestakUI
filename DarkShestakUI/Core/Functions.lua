@@ -939,7 +939,7 @@ T.UpdateEclipse = function(self, login)
 
 	if eb:IsShown() then
 		txt:Show()
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 11) end
 	else
 		txt:Hide()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
@@ -986,18 +986,18 @@ T.UpdateComboPoint = function(self, event, unit)
 	if self.RangeBar then
 		if cpoints[1]:IsShown() and self.RangeBar:IsShown() then
 			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 33) end
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 25) end
 		elseif cpoints[1]:IsShown() or self.RangeBar:IsShown() then
 			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 11) end
 		elseif self.Friendship and self.Friendship:IsShown() then
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 11) end
 		else
 			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
 		end
 	else
 		if cpoints[1]:IsShown() or (self.Friendship and self.Friendship:IsShown()) then
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 11) end
 		else
 			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
 		end

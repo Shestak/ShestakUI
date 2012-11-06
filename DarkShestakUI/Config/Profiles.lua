@@ -425,6 +425,7 @@ end
 --	m2jest1c Config
 ----------------------------------------------------------------------------------------
 if T.coauthor == true then
+	C["position"].pulse_cooldown = {"CENTER", UIParent, "CENTER", 0, 200}
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
 	C["position"].extra_button = {"CENTER", UIParent, "CENTER", -74, -12}
 	C["general"].welcome_message = false
@@ -453,7 +454,7 @@ if T.coauthor == true then
 	C["skins"].atlasloot = true
 	C["skins"].npcscan = true
 	C["combattext"].killingblow = true
-	C["threat"].enable = false
+	C["pulsecooldown"].enable = true
 	C["tooltip"].item_icon = true
 	C["tooltip"].rank = false
 	C["tooltip"].spell_id = true
@@ -465,7 +466,7 @@ if T.coauthor == true then
 	C["tooltip"].item_transmogrify = true
 	C["chat"].damage_meter_spam = true
 	C["map"].map_boss_count = true
-	C["map"].explore_map = false
+	C["map"].explore_map = true
 	C["nameplate"].track_auras = true
 	C["aura"].cast_by = true
 	C["unitframe"].castbar_ticks = true

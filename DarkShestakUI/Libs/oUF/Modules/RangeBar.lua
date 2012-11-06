@@ -56,13 +56,13 @@ local Update = function(self, event, unit)
 		Target = Items.Friend
 		rb:Show()
 		if self.Auras then
-			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19)
+			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 11)
 		end
 	elseif UnitCanAttack("player", "target") and UnitIsDead("target") == nil then
 		Target = Items.Enemy
 		rb:Show()
 		if self.Auras then
-			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19)
+			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 11)
 		end
 	else
 		rb:Hide()

@@ -41,9 +41,7 @@ local function Shared(self, unit)
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", self:GetName().."_Health", self)
-	if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
-		self.Health:SetHeight(21)
-	elseif unit == "arenatarget" then
+	if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" or unit == "arenatarget" then
 		self.Health:SetHeight(27)
 	else
 		self.Health:SetHeight(13)
@@ -111,14 +109,26 @@ local function Shared(self, unit)
 	-- Power bar
 	self.Power = CreateFrame("StatusBar", self:GetName().."_Power", self)
 	if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
-		self.Power:SetHeight(5)
+		self.Power:SetHeight(7)
 	elseif unit == "arenatarget" then
 		self.Power:SetHeight(0)
 	else
 		self.Power:SetHeight(2)
 	end
-	self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
-	self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
+	if unit == "player" or unit == "target" then
+		self.Power:CreateBackdrop("Default", "Shadow")
+		self.Power:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+	end
+	if unit == "player" then
+		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOM", -5, 1)
+		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", -5, 1)
+	elseif unit == "target" then
+		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 5, 1)
+		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOM", 5, 1)
+	else
+		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
+		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
+	end
 	self.Power:SetStatusBarTexture(C.media.texture)
 
 	self.Power.frequentUpdates = true
@@ -176,9 +186,9 @@ local function Shared(self, unit)
 		end
 		if unit == "target" then
 			self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
-			self:Tag(self.Info, "[GetNameColor][NameLong]")
+			self:Tag(self.Info, "[GetNameColor][NameLong] [DiffColor][level][shortclassification]")
 			self.Level:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
-			self:Tag(self.Level, "[cpoints] [Threat] [DiffColor][level][shortclassification]")
+			self:Tag(self.Level, "[Threat]")
 		elseif unit == "focus" or unit == "pet" then
 			self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
 			if unit == "pet" then
@@ -232,7 +242,7 @@ local function Shared(self, unit)
 
 		-- Resting icon
 		if C.unitframe.icons_resting == true and T.level ~= MAX_PLAYER_LEVEL then
-			self.Resting = self.Power:CreateTexture(nil, "OVERLAY")
+			self.Resting = self.Health:CreateTexture(nil, "OVERLAY")
 			self.Resting:SetSize(18, 18)
 			self.Resting:SetPoint("BOTTOMLEFT", -8, -8)
 		end
@@ -266,14 +276,15 @@ local function Shared(self, unit)
 		if C.unitframe_class_bar.rune == true and T.class == "DEATHKNIGHT" then
 			self.Runes = CreateFrame("Frame", self:GetName().."_RuneBar", self)
 			self.Runes:CreateBackdrop("Default", "Shadow")
-			self.Runes:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.Runes:SetSize(217, 7)
+			self.Runes:SetPoint("BOTTOM", self, "TOP", 0, -1)
+			self.Runes:SetSize(180, 7)
+			self.Runes:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 			for i = 1, 6 do
 				self.Runes[i] = CreateFrame("StatusBar", nil, self.Runes)
-				self.Runes[i]:SetSize(212 / 6, 7)
+				self.Runes[i]:SetSize(175 / 6, 7)
 				if i == 1 then
-					self.Runes[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					self.Runes[i]:SetPoint("LEFT", self.Runes, "LEFT", 0, 0)
 				else
 					self.Runes[i]:SetPoint("TOPLEFT", self.Runes[i-1], "TOPRIGHT", 1, 0)
 				end
@@ -290,14 +301,15 @@ local function Shared(self, unit)
 		if C.unitframe_class_bar.chi == true and T.class == "MONK" then
 			self.HarmonyBar = CreateFrame("Frame", self:GetName().."_HarmonyBar", self)
 			self.HarmonyBar:CreateBackdrop("Default", "Shadow")
-			self.HarmonyBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.HarmonyBar:SetSize(217, 7)
+			self.HarmonyBar:SetPoint("BOTTOM", self, "TOP", 0, -1)
+			self.HarmonyBar:SetSize(180, 7)
+			self.HarmonyBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 			for i = 1, 5 do
 				self.HarmonyBar[i] = CreateFrame("StatusBar", nil, self.HarmonyBar)
-				self.HarmonyBar[i]:SetSize(213 / 5, 7)
+				self.HarmonyBar[i]:SetSize(176 / 5, 7)
 				if i == 1 then
-					self.HarmonyBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					self.HarmonyBar[i]:SetPoint("LEFT", self.HarmonyBar, "LEFT", 0, 0)
 				else
 					self.HarmonyBar[i]:SetPoint("TOPLEFT", self.HarmonyBar[i-1], "TOPRIGHT", 1, 0)
 				end
@@ -315,16 +327,17 @@ local function Shared(self, unit)
 		if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
 			self.ShadowOrbsBar = CreateFrame("Frame", self:GetName().."_ShadowOrbsBar", self)
 			self.ShadowOrbsBar:CreateBackdrop("Default", "Shadow")
-			self.ShadowOrbsBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.ShadowOrbsBar:SetSize(217, 7)
+			self.ShadowOrbsBar:SetPoint("BOTTOM", self, "TOP", 0, -1)
+			self.ShadowOrbsBar:SetSize(180, 7)
+			self.ShadowOrbsBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 			for i = 1, 3 do
 				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", nil, self.ShadowOrbsBar)
-				self.ShadowOrbsBar[i]:SetSize(215 / 3, 7)
+				self.ShadowOrbsBar[i]:SetSize(178 / 3, 7)
 				if i == 1 then
-					self.ShadowOrbsBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					self.ShadowOrbsBar[i]:SetPoint("LEFT", self.ShadowOrbsBar, "LEFT", 0, 0)
 				else
-					self.ShadowOrbsBar[i]:SetPoint("TOPLEFT", self.ShadowOrbsBar[i-1], "TOPRIGHT", 1, 0)
+					self.ShadowOrbsBar[i]:SetPoint("LEFT", self.ShadowOrbsBar[i-1], "RIGHT", 1, 0)
 				end
 				self.ShadowOrbsBar[i]:SetStatusBarTexture(C.media.texture)
 				self.ShadowOrbsBar[i]:SetStatusBarColor(0.70, 0.32, 0.75)
@@ -340,14 +353,15 @@ local function Shared(self, unit)
 		if C.unitframe_class_bar.holy == true and T.class == "PALADIN" then
 			self.HolyPower = CreateFrame("Frame", self:GetName().."_HolyPowerBar", self)
 			self.HolyPower:CreateBackdrop("Default", "Shadow")
-			self.HolyPower:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.HolyPower:SetSize(217, 7)
+			self.HolyPower:SetPoint("BOTTOM", self, "TOP", 0, -1)
+			self.HolyPower:SetSize(180, 7)
+			self.HolyPower:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 			for i = 1, 5 do
 				self.HolyPower[i] = CreateFrame("StatusBar", nil, self.HolyPower)
-				self.HolyPower[i]:SetSize(213 / 5, 7)
+				self.HolyPower[i]:SetSize(176 / 5, 7)
 				if i == 1 then
-					self.HolyPower[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					self.HolyPower[i]:SetPoint("LEFT", self.HolyPower, "LEFT", 0, 0)
 				else
 					self.HolyPower[i]:SetPoint("TOPLEFT", self.HolyPower[i-1], "TOPRIGHT", 1, 0)
 				end
@@ -369,14 +383,15 @@ local function Shared(self, unit)
 		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
 			self.WarlockSpecBars = CreateFrame("Frame", self:GetName().."_WarlockSpecBar", self)
 			self.WarlockSpecBars:CreateBackdrop("Default", "Shadow")
-			self.WarlockSpecBars:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.WarlockSpecBars:SetSize(217, 7)
+			self.WarlockSpecBars:SetPoint("BOTTOM", self, "TOP", 0, -1)
+			self.WarlockSpecBars:SetSize(180, 7)
+			self.WarlockSpecBars:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 			for i = 1, 4 do
 				self.WarlockSpecBars[i] = CreateFrame("StatusBar", nil, self.WarlockSpecBars)
-				self.WarlockSpecBars[i]:SetSize(214 / 4, 7)
+				self.WarlockSpecBars[i]:SetSize(177 / 4, 7)
 				if i == 1 then
-					self.WarlockSpecBars[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					self.WarlockSpecBars[i]:SetPoint("LEFT", self.WarlockSpecBars, "LEFT", 0, 0)
 				else
 					self.WarlockSpecBars[i]:SetPoint("TOPLEFT", self.WarlockSpecBars[i-1], "TOPRIGHT", 1, 0)
 				end
@@ -402,17 +417,17 @@ local function Shared(self, unit)
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self)
 				self.TotemBar[i]:CreateBackdrop("Default", "Shadow")
-				self.TotemBar[i]:SetSize((i == 1 and 210 or 214) / 4, 7)
-
+				self.TotemBar[i]:SetSize((i == 1 and 173 or 177) / 4, 7)
+				self.TotemBar[i]:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 				local fixpos
 				if i == 2 then
-					self.TotemBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					self.TotemBar[i]:SetPoint("RIGHT", self.TotemBar[1], "LEFT", -1, 0)
 				elseif i == 1 then
-					self.TotemBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 55, 7)
+					self.TotemBar[i]:SetPoint("BOTTOM", self, "TOP", 0, -1)
 				else
 					fixpos = i
 					if i == 3 then fixpos = i-1 end
-					self.TotemBar[i]:SetPoint("TOPLEFT", self.TotemBar[fixpos-1], "TOPRIGHT", 1, 0)
+					self.TotemBar[i]:SetPoint("LEFT", self.TotemBar[fixpos-1], "RIGHT", 1, 0)
 				end
 				self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
 				self.TotemBar[i]:SetMinMaxValues(0, 1)
@@ -436,8 +451,9 @@ local function Shared(self, unit)
 			if C.unitframe_class_bar.eclipse == true then
 				self.EclipseBar = CreateFrame("Frame", self:GetName().."_EclipseBar", self)
 				self.EclipseBar:CreateBackdrop("Default", "Shadow")
-				self.EclipseBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.EclipseBar:SetSize(217, 7)
+				self.EclipseBar:SetPoint("BOTTOM", self, "TOP", 0, -1)
+				self.EclipseBar:SetSize(180, 7)
+				self.EclipseBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 				self.EclipseBar.LunarBar= CreateFrame("StatusBar", nil, self.EclipseBar)
 				self.EclipseBar.LunarBar:SetPoint("LEFT", self.EclipseBar, "LEFT", 0, 0)
@@ -469,18 +485,19 @@ local function Shared(self, unit)
 		if C.unitframe_class_bar.vengeance == true then
 			self.VengeanceBar = CreateFrame("Frame", self:GetName().."_VengeanceBar", self)
 			self.VengeanceBar:CreateBackdrop("Default", "Shadow")
+			self.VengeanceBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
 			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
-				self.VengeanceBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
+				self.VengeanceBar:SetPoint("BOTTOM", self, "TOP", 0, 13)
 			else
-				self.VengeanceBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.VengeanceBar:SetPoint("BOTTOM", self, "TOP", 0, -1)
 			end
-			self.VengeanceBar:SetSize(217, 7)
+			self.VengeanceBar:SetSize(180, 7)
 
 			self.VengeanceBar.Bar = CreateFrame("StatusBar", nil, self.VengeanceBar)
 			self.VengeanceBar.Bar:SetPoint("LEFT", self.VengeanceBar, "LEFT", 0, 0)
-			self.VengeanceBar.Bar:SetSize(217, 7)
+			self.VengeanceBar.Bar:SetSize(180, 7)
 			self.VengeanceBar.Bar:SetStatusBarTexture(C.media.texture)
 			self.VengeanceBar.Bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 
@@ -567,11 +584,15 @@ local function Shared(self, unit)
 		-- GCD spark
 		if C.unitframe.plugins_gcd == true then
 			self.GCD = CreateFrame("Frame", self:GetName().."_GCD", self)
-			self.GCD:SetWidth(220)
 			self.GCD:SetHeight(3)
 			self.GCD:SetFrameStrata("HIGH")
-			self.GCD:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 0)
-
+			if C.unitframe.unit_castbar == true then
+				self.GCD:SetWidth(281)
+				self.GCD:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4], C.position.unitframes.player_castbar[5] - 7)
+			else
+				self.GCD:SetWidth(217)
+				self.GCD:SetPoint("BOTTOM", self, "TOP", 0, 1)
+			end
 			self.GCD.Color = {1, 1, 1}
 			self.GCD.Height = T.Scale(3)
 			self.GCD.Width = T.Scale(4)
@@ -651,7 +672,7 @@ local function Shared(self, unit)
 			or (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			or (T.class == "WARLOCK" and C.unitframe_class_bar.shard == true)
 			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
-				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
+				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 11)
 			else
 				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
 			end
@@ -680,12 +701,13 @@ local function Shared(self, unit)
 			if C.unitframe_class_bar.combo == true then
 				self.CPoints = CreateFrame("Frame", nil, self)
 				self.CPoints:CreateBackdrop("Default", "Shadow")
-				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.CPoints:SetSize(217, 7)
+				self.CPoints:SetPoint("BOTTOM", self, "TOP", 0, -1)
+				self.CPoints:SetSize(180, 7)
+				self.CPoints:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 				for i = 1, 5 do
 					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_Combo"..i, self.CPoints)
-					self.CPoints[i]:SetSize(213 / 5, 7)
+					self.CPoints[i]:SetSize(176 / 5, 7)
 					if i == 1 then
 						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
 					else
@@ -707,9 +729,10 @@ local function Shared(self, unit)
 			if C.unitframe_class_bar.range == true and T.class == "PRIEST" then
 				self.RangeBar = CreateFrame("StatusBar", self:GetName().."_RangeBar", self)
 				self.RangeBar:CreateBackdrop("Default", "Shadow")
-				self.RangeBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.RangeBar:SetSize(217, 7)
+				self.RangeBar:SetPoint("BOTTOM", self, "TOP", 0, -1)
+				self.RangeBar:SetSize(180, 7)
 				self.RangeBar:SetStatusBarTexture(C.media.texture)
+				self.RangeBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 				self.RangeBar.bg = self.RangeBar:CreateTexture(nil, "BORDER")
 				self.RangeBar.bg:SetAllPoints()
@@ -1136,17 +1159,17 @@ target:SetSize(217, 27)
 if C.unitframe.show_pet == true then
 	local pet = oUF:Spawn("pet", "oUF_Pet")
 	pet:SetPoint(unpack(C.position.unitframes.pet))
-	pet:SetSize(103, 16)
+	pet:SetSize(105, 16)
 end
 
 if C.unitframe.show_focus == true then
 	local focus = oUF:Spawn("focus", "oUF_Focus")
 	focus:SetPoint(unpack(C.position.unitframes.focus))
-	focus:SetSize(103, 16)
+	focus:SetSize(105, 16)
 
 	local focustarget = oUF:Spawn("focustarget", "oUF_FocusTarget")
 	focustarget:SetPoint(unpack(C.position.unitframes.focus_target))
-	focustarget:SetSize(103, 16)
+	focustarget:SetSize(105, 16)
 else
 	local focus = oUF:Spawn("focus", "oUF_Focus")
 end
@@ -1154,7 +1177,7 @@ end
 if C.unitframe.show_target_target == true then
 	local targettarget = oUF:Spawn("targettarget", "oUF_TargetTarget")
 	targettarget:SetPoint(unpack(C.position.unitframes.target_target))
-	targettarget:SetSize(103, 16)
+	targettarget:SetSize(105, 16)
 end
 
 if C.unitframe.show_boss == true then
@@ -1348,24 +1371,6 @@ SLASH_TEST_UF1 = "/testui"
 SLASH_TEST_UF2 = "/еуыегш"
 SLASH_TEST_UF3 = "/testuf"
 SLASH_TEST_UF4 = "/еуыега"
-
-----------------------------------------------------------------------------------------
---	Player line
-----------------------------------------------------------------------------------------
-local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", oUF_Player)
-HorizontalPlayerLine:CreatePanel("Default", 224, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -1, -5)
-
-local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", oUF_Player)
-VerticalPlayerLine:CreatePanel("Default", 1, 36, "TOPRIGHT", HorizontalPlayerLine, "LEFT", 0, 0)
-
-----------------------------------------------------------------------------------------
---	Target line
-----------------------------------------------------------------------------------------
-local HorizontalTargetLine = CreateFrame("Frame", "HorizontalTargetLine", oUF_Target)
-HorizontalTargetLine:CreatePanel("Default", 224, 1, "TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 1, -5)
-
-local VerticalTargetLine = CreateFrame("Frame", "VerticalTargetLine", oUF_Target)
-VerticalTargetLine:CreatePanel("Default", 1, 36, "TOPLEFT", HorizontalTargetLine, "RIGHT", 0, 0)
 
 ----------------------------------------------------------------------------------------
 --	Delete some lines from unit dropdown menu

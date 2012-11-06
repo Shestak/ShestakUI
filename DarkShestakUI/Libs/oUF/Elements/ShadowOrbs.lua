@@ -44,7 +44,7 @@ local function Visibility(self, event, unit)
 
 	if spec == SPEC_PRIEST_SHADOW then
 		sb:Show()
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 11) end
 	else
 		sb:Hide()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
