@@ -1069,6 +1069,7 @@ local function Shared(self, unit)
 		mhpb:SetStatusBarTexture(C.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
 		mhpb:SetMinMaxValues(0, 1)
+		mhpb:SetFrameLevel(self.Health:GetFrameLevel())
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
