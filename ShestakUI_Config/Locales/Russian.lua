@@ -56,7 +56,7 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Cообщать в чат при пров
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Сообщать в рейдовый канал"
 L_GUI_ANNOUNCEMENTS_FEASTS = "Сообщать, когда ставят пир/почту/рем.бота"
 L_GUI_ANNOUNCEMENTS_PORTALS = "Сообщать, когда создают порталы/ритуал призыва"
-L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Check bad gear in instance" -- Needs review
+L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Проверять 'плохое' снаряжение в подземельях"
 
 -- Automation options
 L_GUI_AUTOMATION = "Автоматизация"
