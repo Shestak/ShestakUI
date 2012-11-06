@@ -14,7 +14,7 @@ local function LoadSkin()
 	T.SkinCloseButton(ItemUpgradeFrameCloseButton)
 
 	ItemUpgradeFrame.ItemButton:StripTextures()
-	ItemUpgradeFrame.ItemButton:SetTemplate()
+	ItemUpgradeFrame.ItemButton:SetTemplate("Default")
 	ItemUpgradeFrame.ItemButton:StyleButton()
 
 	hooksecurefunc("ItemUpgradeFrame_Update", function()

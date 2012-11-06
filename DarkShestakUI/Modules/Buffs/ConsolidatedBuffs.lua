@@ -43,5 +43,5 @@ for i = 1, NUM_LE_RAID_BUFF_TYPES do
 	bg:SetPoint("TOPLEFT", buff.icon, -2, 2)
 	bg:SetPoint("BOTTOMRIGHT", buff.icon, 2, -2)
 	bg:SetFrameLevel(buff:GetFrameLevel() - 1)
-	bg:SetTemplate()
+	bg:SetTemplate("Default")
 end

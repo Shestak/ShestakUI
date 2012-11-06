@@ -38,11 +38,10 @@ local function LoadSkin()
 
 	hooksecurefunc("BlackMarketScrollFrame_Update", function()
 		local buttons = BlackMarketScrollFrame.buttons
-		local numButtons = #buttons
 		local offset = HybridScrollFrame_GetOffset(BlackMarketScrollFrame)
 		local numItems = C_BlackMarket.GetNumItems()
 
-		for i = 1, numButtons do
+		for i = 1, #buttons do
 			local button = buttons[i]
 			local index = offset + i
 
@@ -50,7 +49,7 @@ local function LoadSkin()
 				button:StripTextures()
 
 				button.Item:StripTextures()
-				button.Item:SetTemplate()
+				button.Item:SetTemplate("Default")
 				button.Item.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				button.Item.IconTexture:ClearAllPoints()
 				button.Item.IconTexture:SetPoint("TOPLEFT", 2, -2)
@@ -60,12 +59,25 @@ local function LoadSkin()
 				button.skinned = true
 			end
 
+			if button:IsShown() and button.itemLink then
+				local _, _, quality = GetItemInfo(button.itemLink)
+				button.Name:SetTextColor(GetItemQualityColor(quality))
+			end
+
 			if index <= numItems then
 				local name, texture = C_BlackMarket.GetItemInfoByIndex(index)
 				if name then
 					button.Item.IconTexture:SetTexture(texture)
 				end
 			end
+		end
+	end)
+
+	hooksecurefunc("BlackMarketFrame_UpdateHotItem", function(self)
+		local hotDeal = self.HotDeal
+		if hotDeal:IsShown() and hotDeal.itemLink then
+			local _, _, quality = GetItemInfo(hotDeal.itemLink)
+			hotDeal.Name:SetTextColor(GetItemQualityColor(quality))
 		end
 	end)
 end

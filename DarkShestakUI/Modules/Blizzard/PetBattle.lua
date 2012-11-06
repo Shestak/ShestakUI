@@ -30,7 +30,7 @@ for i, unit in pairs(units) do
 	unit.IconBackdrop:SetFrameLevel(unit:GetFrameLevel() - 1)
 	unit.IconBackdrop:SetPoint("TOPLEFT", unit.Icon, -2, 2)
 	unit.IconBackdrop:SetPoint("BOTTOMRIGHT", unit.Icon, 2, -2)
-	unit.IconBackdrop:SetTemplate()
+	unit.IconBackdrop:SetTemplate("Default")
 
 	unit.HealthBarBG:Kill()
 	unit.HealthBarFrame:Kill()
