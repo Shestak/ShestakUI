@@ -125,6 +125,7 @@ elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		T.aoespam[20167] = true		-- Seal of Insight
+		T.aoespam[123530] = true	-- Battle Insight
 		T.aoespam[53652] = true		-- Beacon of Light
 		T.aoespam[85222] = true		-- Light of Dawn
 		T.aoespam[82327] = true		-- Holy Radiance
