@@ -1,0 +1,17 @@
+## Interface: 50001
+## Title: ShestakUI Filger
+## Notes: Class timers for ShestakUI
+## Author: Nils Ruesch
+## Version: 4.21
+## Credits: Affli, Ildyria, SinaC
+## Thanks: Erratic, Wetxius
+## RequiredDeps: ShestakUI
+## X-Curse-Packaged-Version: 4.21
+## X-Curse-Project-Name: ShestakUI
+## X-Curse-Project-ID: shestakui
+## Website: http://shestak.org
+
+Config\Settings.lua
+Config\Positions.lua
+Config\Spells.lua
+ShestakUI_Filger.lua

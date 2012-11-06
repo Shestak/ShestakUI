@@ -37,9 +37,9 @@ L_GUI_MISC_SUM_BUYOUTS = "Alle Auktionen aufsummieren"
 L_GUI_MISC_CLICK_CAST = "Simpler 'click2cast' spell binder"
 L_GUI_MISC_MOVE_BLIZZARD = "Einige Blizzardfenster frei bewegbar machen"
 L_GUI_MISC_COLOR_PICKER = "Verbesserte Farbauswahl"
-L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame" -- Needs review
-L_GUI_MISC_ARCHAEOLOGY = "Archaeology artifacts and cooldown" -- Needs review
-L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple characters" -- Needs review
+L_GUI_MISC_ENCHANTMENT_SCROLL = "Verzauberung auf Rolle im Beruffenster"
+L_GUI_MISC_ARCHAEOLOGY = "Archäologie Artifakte und Abklingzeit"
+L_GUI_MISC_CHARS_CURRENCY = "Zeige deine Währungstoken über diverse Karaktere"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -56,7 +56,7 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Automatische Benachrichtigung beim ReadyC
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Benachrichtigung an den Raid Channel"
 L_GUI_ANNOUNCEMENTS_FEASTS = "Benachrichtigung wenn Festmahl/Kessel/Seelensteine/Reparatur Bots aufgestellt wurden"
 L_GUI_ANNOUNCEMENTS_PORTALS = "Benachrichtigung über Portale/Ritual der Beschwörung"
-L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Check bad gear in instance" -- Needs review
+L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Überprüfe auf schlechte Ausrüstung in Instanzen"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatisierung"
@@ -74,7 +74,7 @@ L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Automatisch einige Buffs abbrechen"
 L_GUI_AUTOMATION_TAB_BINDER = "Automatisch nur feindliche Spieler mit der TAB Taste anvisieren"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Automatisch Kampflog in Raids als Textdatei mitschreiben"
 L_GUI_AUTOMATION_CURRENCY_CAP = "Auto Popup beim Marken Limit"
-L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll" -- Needs review
+L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Wirke Stärkungszauber mit Mausrad"
 
 -- Skins options
 L_GUI_SKINS = "Stilisierung"
@@ -348,7 +348,7 @@ L_GUI_UF_PLUGINS_SWING = "Swingleiste"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Aktiviere Leiste für Nekrotischer Stoß"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Rufleiste"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Erfahrungsleiste"
-L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Friendship bar" -- Needs review
+L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Freundschaftsleiste"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Weichgezeichnete Leisten"
 L_GUI_UF_PLUGINS_TALENTS = "Zeige gegnerische Talente"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"
@@ -366,7 +366,7 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Aktivere Heilige Kraft Leiste"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Aktiviere Splitter Leiste"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Runenleiste"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Totemleiste"
-L_GUI_UF_PLUGINS_RANGE_BAR = "Enable Range bar" -- Needs review
+L_GUI_UF_PLUGINS_RANGE_BAR = "Aktiviere Abstandsleiste"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"
