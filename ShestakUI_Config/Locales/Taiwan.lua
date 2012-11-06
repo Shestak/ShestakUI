@@ -56,7 +56,7 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "當團隊檢查就緒時進行通告"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "在團隊頻道通告"
 L_GUI_ANNOUNCEMENTS_FEASTS = "放置食物/大鍋/靈魂井/修理機器人時進行通告"
 L_GUI_ANNOUNCEMENTS_PORTALS = "開啟傳送門/召喚儀式時進行通告"
-L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Check bad gear in instance" -- Needs review
+L_GUI_ANNOUNCEMENTS_BAD_GEAR = "使用錯誤的裝備時進行提醒"
 
 -- Automation options
 L_GUI_AUTOMATION = "自動設定"
