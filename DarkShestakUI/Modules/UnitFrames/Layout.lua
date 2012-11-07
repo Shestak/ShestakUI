@@ -41,8 +41,10 @@ local function Shared(self, unit)
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", self:GetName().."_Health", self)
-	if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" or unit == "arenatarget" then
+	if unit == "player" or unit == "target" or unit == "arenatarget" then
 		self.Health:SetHeight(27)
+	elseif unit == "boss" or unit == "arena" then
+		self.Health:SetHeight(21)
 	else
 		self.Health:SetHeight(13)
 	end
@@ -108,10 +110,12 @@ local function Shared(self, unit)
 
 	-- Power bar
 	self.Power = CreateFrame("StatusBar", self:GetName().."_Power", self)
-	if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
-		self.Power:SetHeight(7)
+	if unit == "player" or unit == "target" then
+		self.Power:SetHeight(9)
 	elseif unit == "arenatarget" then
 		self.Power:SetHeight(0)
+	elseif unit == "arena" or unit == "boss" then
+		self.Power:SetHeight(5)
 	else
 		self.Power:SetHeight(2)
 	end
@@ -263,13 +267,6 @@ local function Shared(self, unit)
 			self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
 			self.MasterLooter:SetSize(12, 12)
 			self.MasterLooter:SetPoint("TOPRIGHT", 3, 8)
-		end
-
-		-- LFD role icons
-		if C.raidframe.icons_role == true then
-			self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
-			self.LFDRole:SetSize(12, 12)
-			self.LFDRole:SetPoint("TOPLEFT", 10, 8)
 		end
 
 		-- Rune bar
@@ -1040,7 +1037,7 @@ local function Shared(self, unit)
 		self.RaidIcon = self:CreateTexture(nil, "OVERLAY")
 		self.RaidIcon:SetParent(self.Health)
 		self.RaidIcon:SetSize((unit == "player" or unit == "target") and 15 or 12, (unit == "player" or unit == "target") and 15 or 12)
-		self.RaidIcon:SetPoint("TOP", self.Health, 0, 0)
+		self.RaidIcon:SetPoint("CENTER", self.Health, 0, 0)
 	end
 
 	-- Debuff highlight
@@ -1077,6 +1074,7 @@ local function Shared(self, unit)
 		ohpb:SetWidth(mhpb:GetWidth())
 		ohpb:SetStatusBarTexture(C.media.texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.2)
+		ohpb:SetFrameLevel(self.Health:GetFrameLevel())
 
 		self.HealPrediction = {
 			myBar = mhpb,
