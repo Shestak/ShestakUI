@@ -41,9 +41,9 @@ local function Shared(self, unit)
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", self:GetName().."_Health", self)
-	if unit == "player" or unit == "target" or unit == "arenatarget" then
+	if unit == "player" or unit == "target" then
 		self.Health:SetHeight(27)
-	elseif unit == "boss" or unit == "arena" then
+	elseif unit == "boss" or unit == "arena" or unit == "arenatarget" then
 		self.Health:SetHeight(21)
 	else
 		self.Health:SetHeight(13)
@@ -119,10 +119,10 @@ local function Shared(self, unit)
 	else
 		self.Power:SetHeight(2)
 	end
-	if unit == "player" or unit == "target" then
-		self.Power:CreateBackdrop("Default", "Shadow")
-		self.Power:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-	end
+
+	self.Power:CreateBackdrop("Default", "Shadow")
+	self.Power:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+		
 	if unit == "player" then
 		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOM", -5, 1)
 		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", -5, 1)
@@ -130,8 +130,8 @@ local function Shared(self, unit)
 		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 5, 1)
 		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOM", 5, 1)
 	else
-		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
-		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
+		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 5, -1)
+		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", -5, -1)
 	end
 	self.Power:SetStatusBarTexture(C.media.texture)
 
@@ -800,11 +800,11 @@ local function Shared(self, unit)
 			end
 			self.Castbar:SetHeight(16)
 		elseif unit == "arena" or unit == "boss" then
-			self.Castbar:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -7)
+			self.Castbar:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -13)
 			self.Castbar:SetWidth(150)
-			self.Castbar:SetHeight(16)
+			self.Castbar:SetHeight(12)
 		else
-			self.Castbar:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -7)
+			self.Castbar:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -5)
 			self.Castbar:SetWidth(105)
 			self.Castbar:SetHeight(5)
 		end
@@ -866,8 +866,8 @@ local function Shared(self, unit)
 
 			if unit == "arena" or unit == "boss" then
 				self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
-				self.Castbar.Button:SetHeight(20)
-				self.Castbar.Button:SetWidth(20)
+				self.Castbar.Button:SetHeight(16)
+				self.Castbar.Button:SetWidth(16)
 				self.Castbar.Button:SetTemplate("Default")
 				T.CreateShadow(self.Castbar.Button)
 				if unit == "boss" then
@@ -1002,11 +1002,11 @@ local function Shared(self, unit)
 		if C.aura.boss_buffs == true then
 			self.Auras = CreateFrame("Frame", nil, self)
 			if C.unitframe.boss_on_right == true then
-				self.Auras:SetPoint("RIGHT", self, "LEFT", -5, 0)
+				self.Auras:SetPoint("TOPRIGHT", self, "TOPLEFT", -5, 2)
 				self.Auras.initialAnchor = "RIGHT"
 				self.Auras["growth-x"] = "LEFT"
 			else
-				self.Auras:SetPoint("LEFT", self, "RIGHT", 5, 0)
+				self.Auras:SetPoint("TOPLEFT", self, "TOPRIGHT", 5, 2)
 				self.Auras.initialAnchor = "LEFT"
 				self.Auras["growth-x"] = "RIGHT"
 			end
@@ -1116,17 +1116,17 @@ target:SetSize(217, 27)
 if C.unitframe.show_pet == true then
 	local pet = oUF:Spawn("pet", "oUF_Pet")
 	pet:SetPoint(unpack(C.position.unitframes.pet))
-	pet:SetSize(105, 16)
+	pet:SetSize(105, 13)
 end
 
 if C.unitframe.show_focus == true then
 	local focus = oUF:Spawn("focus", "oUF_Focus")
 	focus:SetPoint(unpack(C.position.unitframes.focus))
-	focus:SetSize(105, 16)
+	focus:SetSize(105, 13)
 
 	local focustarget = oUF:Spawn("focustarget", "oUF_FocusTarget")
 	focustarget:SetPoint(unpack(C.position.unitframes.focus_target))
-	focustarget:SetSize(105, 16)
+	focustarget:SetSize(105, 13)
 else
 	local focus = oUF:Spawn("focus", "oUF_Focus")
 end
@@ -1134,7 +1134,7 @@ end
 if C.unitframe.show_target_target == true then
 	local targettarget = oUF:Spawn("targettarget", "oUF_TargetTarget")
 	targettarget:SetPoint(unpack(C.position.unitframes.target_target))
-	targettarget:SetSize(105, 16)
+	targettarget:SetSize(105, 13)
 end
 
 if C.unitframe.show_boss == true then
@@ -1148,9 +1148,9 @@ if C.unitframe.show_boss == true then
 				boss[i]:SetPoint("BOTTOMLEFT", C.position.unitframes.boss[2], "LEFT", C.position.unitframes.boss[4] + 46, C.position.unitframes.boss[5])
 			end
 		else
-			boss[i]:SetPoint("BOTTOM", boss[i-1], "TOP", 0, 30)
+			boss[i]:SetPoint("BOTTOM", boss[i-1], "TOP", 0, 33)
 		end
-		boss[i]:SetSize(150, 27)
+		boss[i]:SetSize(150, 21)
 	end
 end
 
@@ -1165,9 +1165,9 @@ if C.unitframe.show_arena == true then
 				arena[i]:SetPoint("BOTTOMLEFT", C.position.unitframes.arena[2], "LEFT", C.position.unitframes.arena[4] + 120, C.position.unitframes.arena[5])
 			end
 		else
-			arena[i]:SetPoint("BOTTOM", arena[i-1], "TOP", 0, 30)
+			arena[i]:SetPoint("BOTTOM", arena[i-1], "TOP", 0, 33)
 		end
-		arena[i]:SetSize(150, 27)
+		arena[i]:SetSize(150, 21)
 	end
 
 	local arenatarget = {}
@@ -1180,9 +1180,9 @@ if C.unitframe.show_arena == true then
 				arenatarget[i]:SetPoint("TOPRIGHT", arena[i], "TOPLEFT", -7, 0)
 			end
 		else
-			arenatarget[i]:SetPoint("BOTTOM", arenatarget[i-1], "TOP", 0, 30)
+			arenatarget[i]:SetPoint("BOTTOM", arenatarget[i-1], "TOP", 0, 33)
 		end
-		arenatarget[i]:SetSize(30, 27)
+		arenatarget[i]:SetSize(30, 21)
 	end
 end
 
