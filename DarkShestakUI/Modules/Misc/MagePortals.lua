@@ -41,10 +41,12 @@ for i, spell in pairs(spells) do
 	local teleport = GetSpellInfo(spell[1])
 
 	local b = CreateFrame("Button", nil, frame, "SecureActionButtonTemplate")
-	b:CreatePanel("Transparent", C.minimap.size, 20, "BOTTOMLEFT", frame, "BOTTOMLEFT", 0, ((i - 1) * 21))
+	b:CreatePanel("Overlay", C.minimap.size, 20, "BOTTOMLEFT", frame, "BOTTOMLEFT", 0, ((i - 1) * 21))
 	b:SetBackdropBorderColor(C.media.border_color[1], C.media.border_color[2], C.media.border_color[3])
 	b:SetFrameStrata("HIGH")
-
+	b:HookScript("OnEnter", T.SetModifiedBackdrop)
+	b:HookScript("OnLeave", T.SetOriginalBackdrop)
+	
 	local l = b:CreateFontString(nil, "OVERLAY")
 	l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	l:SetText(string.sub(teleport, string.find(teleport, ":") + 1))
