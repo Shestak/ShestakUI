@@ -44,7 +44,7 @@ local function CreateVirtualFrame(parent, point)
 	
 	if C.skins.shadow == true then
 		local shadow = CreateFrame("Frame", nil, parent)
-		shadow:SetFrameLevel(1)
+		shadow:SetFrameLevel(0)
 		shadow:SetFrameStrata(parent:GetFrameStrata())
 		shadow:SetPoint("TOPLEFT", -5, 5)
 		shadow:SetPoint("BOTTOMLEFT", -5, -5)
