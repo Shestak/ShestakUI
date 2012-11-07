@@ -27,7 +27,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 }
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)
-frame:CreatePanel("Invisible", C.minimap.size, (#spells) * 20 + 4, "TOPLEFT", Minimap, "BOTTOMLEFT", -2, -3)
+frame:CreatePanel("Invisible", C.minimap.size, (#spells) * 20 + 4, "TOPLEFT", Minimap, "BOTTOMLEFT", -2, -8)
 frame:RegisterEvent("UNIT_SPELLCAST_START")
 frame:SetScript("OnEvent", function(self)
 	if self:IsShown() then
@@ -42,7 +42,7 @@ for i, spell in pairs(spells) do
 
 	local b = CreateFrame("Button", nil, frame, "SecureActionButtonTemplate")
 	b:CreatePanel("Transparent", C.minimap.size, 20, "BOTTOMLEFT", frame, "BOTTOMLEFT", 0, ((i - 1) * 21))
-	b:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	b:SetBackdropBorderColor(C.media.border_color[1], C.media.border_color[2], C.media.border_color[3])
 	b:SetFrameStrata("HIGH")
 
 	local l = b:CreateFontString(nil, "OVERLAY")
@@ -58,8 +58,8 @@ for i, spell in pairs(spells) do
 end
 
 local button = CreateFrame("Button", nil, UIParent)
-button:SetTemplate("ClassColor")
-button:SetPoint("TOPLEFT", Minimap, "TOPLEFT")
+button:SetTemplate("Default")
+button:SetPoint("BOTTOMLEFT", Minimap, "BOTTOMLEFT")
 button:SetSize(20, 20)
 button:SetAlpha(0)
 
