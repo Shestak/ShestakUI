@@ -18,7 +18,7 @@ local function LoadSkin()
 	DressUpFrameResetButton:SetPoint("RIGHT", DressUpFrameCancelButton, "LEFT", -2, 0)
 
 	SideDressUpFrame:StripTextures(true)
-	SideDressUpFrame:SetTemplate("Transparent")
+	SideDressUpFrame:SetTemplate("Transparent", "Shadow")
 	SideDressUpModelResetButton:SkinButton()
 	T.SkinCloseButton(SideDressUpModelCloseButton, SideDressUpFrame)
 end

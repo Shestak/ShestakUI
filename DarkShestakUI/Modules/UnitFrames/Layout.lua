@@ -763,12 +763,11 @@ local function Shared(self, unit)
 		self.Castbar.bg:SetTexture(C.media.texture)
 
 		self.Castbar.Overlay = CreateFrame("Frame", nil, self.Castbar)
-		self.Castbar.Overlay:SetTemplate("Default")
+		self.Castbar.Overlay:SetTemplate("Default", "Shadow")
 		self.Castbar.Overlay:SetFrameLevel(1)
 		self.Castbar.Overlay:SetFrameStrata("BACKGROUND")
 		self.Castbar.Overlay:SetPoint("TOPLEFT", -2, 2)
 		self.Castbar.Overlay:SetPoint("BOTTOMRIGHT", 2, -2)
-		T.CreateShadow(self.Castbar.Overlay)
 
 		self.Castbar.PostCastStart = T.PostCastStart
 		self.Castbar.PostChannelStart = T.PostChannelStart
@@ -814,7 +813,7 @@ local function Shared(self, unit)
 			self.Castbar.Button:SetHeight(65)
 			self.Castbar.Button:SetWidth(65)
 			self.Castbar.Button:SetPoint(unpack(C.position.unitframes.focus_castbar))
-			self.Castbar.Button:SetTemplate("Default")
+			self.Castbar.Button:SetTemplate("Default", "Shadow")
 
 			self.Castbar.Icon = self.Castbar.Button:CreateTexture(nil, "ARTWORK")
 			self.Castbar.Icon:SetPoint("TOPLEFT", self.Castbar.Button, 2, -2)
@@ -849,8 +848,7 @@ local function Shared(self, unit)
 				self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
 				self.Castbar.Button:SetHeight(20)
 				self.Castbar.Button:SetWidth(20)
-				self.Castbar.Button:SetTemplate("Default")
-				T.CreateShadow(self.Castbar.Button)
+				self.Castbar.Button:SetTemplate("Default", "Shadow")
 
 				self.Castbar.Icon = self.Castbar.Button:CreateTexture(nil, "ARTWORK")
 				self.Castbar.Icon:SetPoint("TOPLEFT", self.Castbar.Button, 2, -2)
@@ -868,8 +866,7 @@ local function Shared(self, unit)
 				self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
 				self.Castbar.Button:SetHeight(16)
 				self.Castbar.Button:SetWidth(16)
-				self.Castbar.Button:SetTemplate("Default")
-				T.CreateShadow(self.Castbar.Button)
+				self.Castbar.Button:SetTemplate("Default", "Shadow")
 				if unit == "boss" then
 					if C.unitframe.boss_on_right == true then
 						self.Castbar.Button:SetPoint("TOPRIGHT", self.Castbar, "TOPLEFT", -5, 2)

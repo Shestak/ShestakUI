@@ -7,11 +7,10 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	GuildControlUI:StripTextures()
 	GuildControlUIHbar:StripTextures()
-	GuildControlUI:SetTemplate("Transparent")
+	GuildControlUI:SetTemplate("Transparent", "Shadow")
 	GuildControlUI:ClearAllPoints()
 	GuildControlUI:SetPoint("TOPLEFT", GuildFrame, "TOPRIGHT", 3, 0)
 	GuildControlUI:SetFrameLevel(GuildControlUI:GetFrameLevel() + 2)
-	T.CreateShadow(GuildControlUI)
 
 	local function SkinGuildRanks()
 		for i = 1, GuildControlGetNumRanks() do

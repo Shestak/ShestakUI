@@ -7,8 +7,7 @@ if C.map.enable ~= true or IsAddOnLoaded("Aurora") then return end
 WORLDMAP_WINDOWED_SIZE = C.map.scale
 
 local mapbg = CreateFrame("Frame", nil, WorldMapDetailFrame)
-mapbg:SetTemplate("Default")
-T.CreateShadow(mapbg)
+mapbg:SetTemplate("Default", "Shadow")
 
 local SmallerMap = GetCVarBool("miniWorldMap")
 if SmallerMap == nil then

@@ -57,7 +57,26 @@ local function GetTemplate(t)
 	end
 end
 
-local function SetTemplate(f, t)
+local function CreateShadow(f)
+    if f.shadow or C.skins.shadow ~= true then return end
+
+    local shadow = CreateFrame("Frame", nil, f)
+    shadow:SetFrameLevel(1)
+    shadow:SetFrameStrata(f:GetFrameStrata())
+    shadow:SetPoint("TOPLEFT", -3, 3)
+    shadow:SetPoint("BOTTOMLEFT", -3, -3)
+    shadow:SetPoint("TOPRIGHT", 3, 3)
+    shadow:SetPoint("BOTTOMRIGHT", 3, -3)
+    shadow:SetBackdrop({ 
+        edgeFile = "Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\Glow.tga", edgeSize = 3,
+        insets = {left = 5, right = 5, top = 5, bottom = 5},
+    })
+    shadow:SetBackdropColor(0, 0, 0, 0)
+    shadow:SetBackdropBorderColor(0, 0, 0, 0.8)
+    f.shadow = shadow
+end
+
+local function SetTemplate(f, t, s)
 	GetTemplate(t)
 
 	f:SetBackdrop({
@@ -79,9 +98,11 @@ local function SetTemplate(f, t)
 
 	f:SetBackdropColor(backdropr, backdropg, backdropb, backdropa)
 	f:SetBackdropBorderColor(borderr, borderg, borderb, bordera)
+	
+	if s == "Shadow" then CreateShadow(f) end
 end
 
-local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
+local function CreatePanel(f, t, w, h, a1, p, a2, x, y, s)
 	GetTemplate(t)
 
 	f:SetWidth(w)
@@ -111,6 +132,8 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 
 	f:SetBackdropColor(backdropr, backdropg, backdropb, backdropa)
 	f:SetBackdropBorderColor(borderr, borderg, borderb, bordera)
+	
+	if s == "Shadow" then CreateShadow(f) end
 end
 
 local function CreateBackdrop(f, t, s)
@@ -119,7 +142,7 @@ local function CreateBackdrop(f, t, s)
 	local b = CreateFrame("Frame", "$parentBackdrop", f)
 	b:SetPoint("TOPLEFT", -2, 2)
 	b:SetPoint("BOTTOMRIGHT", 2, -2)
-	b:SetTemplate(t)
+	b:SetTemplate(t, s)
 
 	if f:GetFrameLevel() - 1 >= 0 then
 		b:SetFrameLevel(f:GetFrameLevel() - 1)
@@ -128,8 +151,6 @@ local function CreateBackdrop(f, t, s)
 	end
 
 	f.backdrop = b
-	
-	if s == "Shadow" then T.CreateShadow(b) end
 end
 
 local function StripTextures(object, kill)

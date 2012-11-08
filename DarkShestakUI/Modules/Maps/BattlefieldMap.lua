@@ -13,12 +13,11 @@ tinymap:RegisterEvent("ADDON_LOADED")
 tinymap:SetPoint("CENTER", UIParent, 0, 0)
 tinymap:SetFrameLevel(7)
 tinymap:Hide()
-T.CreateShadow(tinymap)
 
 local tinymapbg = CreateFrame("Frame", nil, tinymap)
 tinymapbg:SetAllPoints()
 tinymapbg:SetFrameLevel(0)
-tinymapbg:SetTemplate("Default")
+tinymapbg:SetTemplate("Default", "Shadow")
 
 tinymap:SetScript("OnEvent", function(self, event, addon)
 	if addon ~= "Blizzard_BattlefieldMinimap" then return end

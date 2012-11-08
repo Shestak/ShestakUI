@@ -40,9 +40,8 @@ local function LoadSkin()
 	BarberShopFrameResetButton:SetPoint("BOTTOM", 0, 12)
 
 	BarberShopFrame:StripTextures()
-	BarberShopFrame:SetTemplate("Transparent")
+	BarberShopFrame:SetTemplate("Transparent", "Shadow")
 	BarberShopFrame:SetSize(BarberShopFrame:GetWidth() - 30, BarberShopFrame:GetHeight() - 56)
-	T.CreateShadow(BarberShopFrame)
 
 	BarberShopFrameMoneyFrame:StripTextures()
 	BarberShopFrameMoneyFrame:CreateBackdrop("Overlay")

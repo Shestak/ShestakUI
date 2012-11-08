@@ -6,10 +6,8 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	ScriptErrorsFrame:SetParent(UIParent)
-	ScriptErrorsFrame:SetTemplate("Transparent")
-	T.CreateShadow(ScriptErrorsFrame)
-	EventTraceFrame:SetTemplate("Transparent")
-	T.CreateShadow(EventTraceFrame)
+	ScriptErrorsFrame:SetTemplate("Transparent", "Shadow")
+	EventTraceFrame:SetTemplate("Transparent", "Shadow")
 	T.SkinCloseButton(ScriptErrorsFrameClose)
 	T.SkinCloseButton(EventTraceFrameCloseButton)
 	EventTraceFrameScrollBG:SetTexture(nil)

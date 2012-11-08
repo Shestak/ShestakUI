@@ -20,8 +20,7 @@ PlayerPowerBarAlt:UnregisterEvent("PLAYER_ENTERING_WORLD")
 local bar = CreateFrame("Frame", "UIAltPowerBar", UIParent)
 bar:SetSize(221, 25)
 bar:SetPoint(unpack(C.position.alt_power_bar))
-bar:SetTemplate("Default")
-T.CreateShadow(bar)
+bar:SetTemplate("Default", "Shadow")
 
 -- Make moveable
 bar:EnableMouse(true)

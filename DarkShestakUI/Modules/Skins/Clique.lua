@@ -7,11 +7,10 @@ if C.skins.blizzard_frames ~= true or C.skins.clique ~= true then return end
 local function LoadSkin()
 	if not IsAddOnLoaded("Clique") then return end
 	CliqueConfig:StripTextures()
-	CliqueConfig:SetTemplate("Transparent")
+	CliqueConfig:SetTemplate("Transparent", "Shadow")
 	CliqueConfig:ClearAllPoints()
 	CliqueConfig:SetPoint("TOPLEFT", SpellBookFrame.backdrop, "TOPRIGHT", 42, 0)
 	CliqueConfig.SetPoint = T.dummy
-	T.CreateShadow(CliqueConfig)
 
 	CliqueConfigPage1Column1:StripTextures()
 	CliqueConfigPage1Column2:StripTextures()

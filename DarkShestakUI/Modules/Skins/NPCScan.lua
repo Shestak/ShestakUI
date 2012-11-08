@@ -9,9 +9,8 @@ frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", function(self, event)
 	if not IsAddOnLoaded("_NPCScan") then return end
 	_NPCScanButton:StripTextures()
-	_NPCScanButton:SetTemplate("Transparent")
+	_NPCScanButton:SetTemplate("Transparent", "Shadow")
 	_NPCScanButton:SetScale(1)
-	T.CreateShadow(_NPCScanButton)
 
 	_NPCScanTest:SkinButton()
 

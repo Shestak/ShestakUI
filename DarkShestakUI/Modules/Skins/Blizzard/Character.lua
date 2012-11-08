@@ -309,9 +309,8 @@ local function LoadSkin()
 	PetPaperDollPetInfo:CreateBackdrop("Default")
 	PetPaperDollPetInfo:SetSize(24, 24)
 
-	CharacterFrame:SetTemplate("Transparent")
+	CharacterFrame:SetTemplate("Transparent", "Shadow")
 	CharacterFrame:SetFrameStrata("DIALOG")
-	T.CreateShadow(CharacterFrame)
 
 	-- Unit Background Texture
 	CharacterModelFrame.backdrop.BGTopLeft = CharacterModelFrame.backdrop:CreateTexture(nil, "ARTWORK")

@@ -5,8 +5,7 @@ if C.minimap.enable ~= true then return end
 --	Minimap border
 ----------------------------------------------------------------------------------------
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
-MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
-T.CreateShadow(MinimapAnchor)
+MinimapAnchor:CreatePanel("Default", C.minimap.size, C.minimap.size, C.position.minimap[1], C.position.minimap[2], C.position.minimap[3], C.position.minimap[4], C.position.minimap[5], "Shadow")
 
 ----------------------------------------------------------------------------------------
 --	Shape, location and scale
@@ -123,7 +122,7 @@ end
 
 -- Ticket icon
 HelpOpenTicketButton:SetParent(Minimap)
-HelpOpenTicketButton:CreateBackdrop("Overlay")
+HelpOpenTicketButton:CreateBackdrop("Default")
 HelpOpenTicketButton:SetFrameLevel(4)
 HelpOpenTicketButton:ClearAllPoints()
 HelpOpenTicketButton:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, 2)

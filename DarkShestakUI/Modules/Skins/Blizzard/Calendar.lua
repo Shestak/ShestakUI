@@ -153,30 +153,26 @@ local function LoadSkin()
 	T.SkinEditBox(CalendarMassInviteGuildMaxLevelEdit)
 
 	-- Raid View
-	CalendarViewRaidFrame:SetTemplate("Transparent")
+	CalendarViewRaidFrame:SetTemplate("Transparent", "Shadow")
 	CalendarViewRaidFrame:SetPoint("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
 	T.SkinCloseButton(CalendarViewRaidCloseButton)
-	T.CreateShadow(CalendarViewRaidFrame)
 
 	-- Holiday View
 	CalendarViewHolidayFrame:StripTextures(true)
-	CalendarViewHolidayFrame:SetTemplate("Transparent")
+	CalendarViewHolidayFrame:SetTemplate("Transparent", "Shadow")
 	CalendarViewHolidayFrame:SetPoint("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
 	T.SkinCloseButton(CalendarViewHolidayCloseButton)
-	T.CreateShadow(CalendarViewHolidayFrame)
 
 	-- Event View
-	CalendarViewEventFrame:SetTemplate("Transparent")
+	CalendarViewEventFrame:SetTemplate("Transparent", "Shadow")
 	CalendarViewEventFrame:SetPoint("TOPLEFT", CalendarFrame, "TOPRIGHT", 3, 0)
 	CalendarViewEventDescriptionContainer:SetTemplate("Overlay")
 	CalendarViewEventInviteList:SetTemplate("Overlay")
 	T.SkinCloseButton(CalendarViewEventCloseButton)
-	T.CreateShadow(CalendarViewEventFrame)
 
-	CalendarEventPickerFrame:SetTemplate("Transparent")
+	CalendarEventPickerFrame:SetTemplate("Transparent", "Shadow")
 	T.SkinScrollBar(CalendarEventPickerScrollBar)
 	CalendarEventPickerCloseButton:SkinButton(true)
-	T.CreateShadow(CalendarEventPickerFrame)
 
 	local buttons = {
 		"CalendarViewEventAcceptButton",

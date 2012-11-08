@@ -7,8 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	T.SkinCloseButton(AuctionFrameCloseButton)
 	AuctionFrame:StripTextures(true)
-	AuctionFrame:SetTemplate("Transparent")
-	T.CreateShadow(AuctionFrame)
+	AuctionFrame:SetTemplate("Transparent", "Shadow")
 
 	BrowseFilterScrollFrame:StripTextures()
 	BrowseScrollFrame:StripTextures()
@@ -26,7 +25,6 @@ local function LoadSkin()
 	AuctionFrame:HookScript("OnShow", function()
 		SideDressUpFrame:ClearAllPoints()
 		SideDressUpFrame:SetPoint("TOPLEFT", AuctionFrame, "TOPRIGHT", 3, 0)
-		T.CreateShadow(SideDressUpFrame)
 	end)
 
 	-- Progress Frame

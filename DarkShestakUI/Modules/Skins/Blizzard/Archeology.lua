@@ -7,8 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	ArchaeologyFrame:StripTextures(true)
 	ArchaeologyFrameInset:StripTextures(true)
-	ArchaeologyFrame:SetTemplate("Transparent")
-	T.CreateShadow(ArchaeologyFrame)
+	ArchaeologyFrame:SetTemplate("Transparent", "Shadow")
 
 	ArchaeologyFrameArtifactPageSolveFrameSolveButton:SkinButton(true)
 	ArchaeologyFrameArtifactPageBackButton:SkinButton(true)

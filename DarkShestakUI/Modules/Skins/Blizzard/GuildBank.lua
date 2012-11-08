@@ -6,8 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	GuildBankFrame:StripTextures()
-	GuildBankFrame:SetTemplate("Transparent")
-	T.CreateShadow(GuildBankFrame)
+	GuildBankFrame:SetTemplate("Transparent", "Shadow")
 	GuildBankEmblemFrame:StripTextures(true)
 	GuildBankMoneyFrameBackground:StripTextures()
 

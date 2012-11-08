@@ -19,8 +19,7 @@ local function LoadSkin()
 		_G[object]:StripTextures()
 	end
 
-	VoidStorageFrame:SetTemplate("Transparent")
-	T.CreateShadow(VoidStorageFrame)
+	VoidStorageFrame:SetTemplate("Transparent", "Shadow")
 	VoidStoragePurchaseFrame:SetTemplate("Overlay")
 	VoidStoragePurchaseFrame:SetFrameLevel(VoidStorageFrame:GetFrameLevel() + 2)
 	VoidStorageFrameMarbleBg:Kill()

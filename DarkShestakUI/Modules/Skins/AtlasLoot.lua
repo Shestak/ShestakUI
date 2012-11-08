@@ -161,13 +161,13 @@ frame:SetScript("OnEvent", function(self, event)
 		_G[object]:StripTextures()
 	end
 
-	for _, object in pairs(SetTemplate) do
-		_G[object]:SetTemplate("Transparent")
+	for k, object in pairs(SetTemplate) do
+		if k < 4 then
+			_G[object]:SetTemplate("Transparent", "Shadow")
+		else
+			_G[object]:SetTemplate("Transparent")
+		end
 	end
-	
-	T.CreateShadow(_G["AtlasLootDefaultFrame"])
-	T.CreateShadow(_G["AtlasLootCompareFrame"])
-	T.CreateShadow(_G["AtlasLootItemsFrame"])
 
 	for _, button in pairs(buttons) do
 		_G[button]:SkinButton()

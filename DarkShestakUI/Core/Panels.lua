@@ -102,29 +102,25 @@ bottompanel:SetPoint("RIGHT", UIParent, "RIGHT", -21, 0)
 ----------------------------------------------------------------------------------------
 if C.chat.enable == true and C.chat.background == true then
 	local chatbd = CreateFrame("Frame", "ChatBackground", ChatFrame1)
-	chatbd:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 1)
+	chatbd:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 1, "Shadow")
 	chatbd:SetBackdropBorderColor(unpack(C.media.border_color))
 	chatbd:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
-	T.CreateShadow(chatbd)
 	
 	local chatbdright = CreateFrame("Frame", "ChatBackgroundRight", ChatFrame3)
-	chatbdright:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame3, "TOPLEFT", -3, 1)
+	chatbdright:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame3, "TOPLEFT", -3, 1, "Shadow")
 	chatbdright:SetBackdropBorderColor(unpack(C.media.border_color))
 	chatbdright:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
-	T.CreateShadow(chatbdright)
 	
 	if C.chat.tabs_mouseover ~= true then
 		local chattabs = CreateFrame("Frame", "ChatTabsPanel", chatbd)
-		chattabs:CreatePanel("Transparent", chatbd:GetWidth(), 20, "BOTTOM", chatbd, "TOP", 0, 3)
+		chattabs:CreatePanel("Transparent", chatbd:GetWidth(), 20, "BOTTOM", chatbd, "TOP", 0, 3, "Shadow")
 		chattabs:SetBackdropBorderColor(unpack(C.media.border_color))
 		chattabs:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
-		T.CreateShadow(chattabs)
 		
 		local chattabsright = CreateFrame("Frame", "ChatTabsPanelRight", chatbdright)
-		chattabsright:CreatePanel("Transparent", chatbdright:GetWidth(), 20, "BOTTOM", chatbdright, "TOP", 0, 3)
+		chattabsright:CreatePanel("Transparent", chatbdright:GetWidth(), 20, "BOTTOM", chatbdright, "TOP", 0, 3, "Shadow")
 		chattabsright:SetBackdropBorderColor(unpack(C.media.border_color))
 		chattabsright:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
-		T.CreateShadow(chattabsright)
 	end
 else
 	local leftpanel = CreateFrame("Frame", "LeftPanel", UIParent)

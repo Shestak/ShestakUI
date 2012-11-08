@@ -52,8 +52,6 @@ local function LoadSkin()
 		_G[object]:StripTextures()
 	end
 	
-	T.CreateShadow(FriendsFrame)
-	
 	local KillTextures = {
 		"FriendsFrameIcon",
 		"FriendsFrameBroadcastInputLeft",
@@ -197,7 +195,7 @@ local function LoadSkin()
 		end
 	end
 
-	FriendsFrame:SetTemplate("Transparent")
+	FriendsFrame:SetTemplate("Transparent", "Shadow")
 
 	ScrollOfResurrectionSelectionFrame:SetTemplate("Transparent")
 	ScrollOfResurrectionSelectionFrameList:SetTemplate("Overlay")

@@ -53,8 +53,7 @@ local function LoadSkin()
 
 	-- Bank Frame
 	BankFrame:StripTextures(true)
-	BankFrame:CreateBackdrop("Transparent")
-	T.CreateShadow(BankFrame)
+	BankFrame:CreateBackdrop("Transparent", "Shadow")
 	BankFrame.backdrop:SetAllPoints()
 
 	BankItemSearchBox:StripTextures(true)
