@@ -149,11 +149,9 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(116835),	-- Devastating Arc
 			SpellName(116778),	-- Focused Defense
 			SpellName(116525),	-- Focused Assault
-		-- Kun-Lai Summit
-			-- Sha of Anger
+		-- Sha of Anger
 			SpellName(119622),	-- Growing Anger
 			SpellName(119626),	-- Aggressive Behavior
-			SpellName(119488),	-- Unleashed Wrath
 		-----------------------------------------------------------------
 		-- PvP
 		-----------------------------------------------------------------
