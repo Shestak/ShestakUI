@@ -593,11 +593,11 @@ local function Shared(self, unit)
 		self.Debuffs.num = 4
 		self.Debuffs["growth-y"] = "DOWN"
 		if unit == "pet" or unit == "focus" then
-			self.Debuffs:SetPoint("TOPRIGHT", self, "BOTTOMRIGHT", 2, -17)
+			self.Debuffs:SetPoint("TOPRIGHT", self, "BOTTOMRIGHT", 2, -15)
 			self.Debuffs.initialAnchor = "TOPRIGHT"
 			self.Debuffs["growth-x"] = "LEFT"
 		else
-			self.Debuffs:SetPoint("TOPLEFT", self, "BOTTOMLEFT", -2, -17)
+			self.Debuffs:SetPoint("TOPLEFT", self, "BOTTOMLEFT", -2, -15)
 			self.Debuffs.initialAnchor = "TOPLEFT"
 			self.Debuffs["growth-x"] = "RIGHT"
 		end
