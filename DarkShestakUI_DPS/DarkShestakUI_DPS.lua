@@ -9,9 +9,9 @@ local oUF = oUFDarkShestakUI or DarkShestakUI.oUF
 
 -- Frame size
 local party_width = 140
-local party_height = 27
+local party_height = 21
 local partytarget_width = 30
-local partytarget_height = 27
+local partytarget_height = 21
 local unit_width = 104
 local unit_height = 17
 
@@ -40,7 +40,7 @@ local function Shared(self, unit)
 	self.Health:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 	self.Health:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Health:SetHeight(27)
+		self.Health:SetHeight(21)
 	elseif unit == "tank" then
 		self.Health:SetHeight(23)
 	elseif unit == "raid" then
@@ -95,8 +95,15 @@ local function Shared(self, unit)
 		else
 			self.Power:SetHeight(2)
 		end
-		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
-		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
+		if unit == "party" then
+			self.Power:CreateBackdrop("Default", "Shadow")
+			self.Power:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+			self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 5, -1)
+			self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", -5, -1)
+		else
+			self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
+			self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
+		end
 		self.Power:SetStatusBarTexture(C.media.texture)
 
 		self.Power.frequentUpdates = true
@@ -193,7 +200,7 @@ local function Shared(self, unit)
 
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then
 		self.Debuffs = CreateFrame("Frame", nil, self)
-		self.Debuffs:SetPoint("TOPLEFT", self, "BOTTOMLEFT", -2, -5)
+		self.Debuffs:SetPoint("TOPLEFT", self, "BOTTOMLEFT", -2, -11)
 		self.Debuffs:SetHeight(18)
 		self.Debuffs:SetWidth(144)
 		self.Debuffs.size = T.Scale(18)
@@ -229,6 +236,7 @@ local function Shared(self, unit)
 		end
 		mhpb:SetStatusBarTexture(C.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
+		mhpb:SetFrameLevel(self.Health:GetFrameLevel())
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
@@ -236,6 +244,7 @@ local function Shared(self, unit)
 		ohpb:SetWidth(mhpb:GetWidth())
 		ohpb:SetStatusBarTexture(C.media.texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.2)
+		ohpb:SetFrameLevel(self.Health:GetFrameLevel())
 
 		self.HealPrediction = {
 			myBar = mhpb,
@@ -280,7 +289,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(28),
+			"yOffset", T.Scale(34),
 			"point", "BOTTOM"
 		)
 		party:SetPoint(unpack(C.position.unitframes.party_dps))
@@ -299,7 +308,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(28),
+			"yOffset", T.Scale(34),
 			"point", "BOTTOM"
 		)
 		partytarget:SetPoint("TOPLEFT", party, "TOPRIGHT", 7, 0)
@@ -319,7 +328,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(28),
+			"yOffset", T.Scale(34),
 			"point", "BOTTOM"
 		)
 
