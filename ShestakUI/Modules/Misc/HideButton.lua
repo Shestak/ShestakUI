@@ -135,14 +135,10 @@ HideB:SetScript("OnMouseUp", function(frame, button)
         HideB:ChatT()
     elseif button == "RightButton" then
         HideB:MapT()
-    elseif button == "MiddleButton" then
-        HideB:ChatT()
-        HideB:MapT()
     end
 end)
 
 -- Tooltip
-
 local tooltip_hide = function()
 	GameTooltip:Hide()
 end
