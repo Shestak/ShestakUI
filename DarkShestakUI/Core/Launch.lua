@@ -120,8 +120,6 @@ local function InstallUI()
 	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
 		FCF_ResetChatWindows()
 		FCF_OpenNewWindow(LOOT)
-		FCF_SetLocked(ChatFrame3, 1)
-		FCF_UnDockFrame(ChatFrame3)
 		for i = 1, NUM_CHAT_WINDOWS do
 			local frame = _G[format("ChatFrame%s", i)]
 			local chatFrameId = frame:GetID()
@@ -136,6 +134,10 @@ local function InstallUI()
 			if i == 1 then
 				frame:ClearAllPoints()
 				frame:SetPoint(unpack(C.position.chat))
+			elseif i == 3 then
+				FCF_UnDockFrame(frame)
+				frame:ClearAllPoints()
+				frame:SetPoint("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5])
 			end
 
 			-- Save new default position and dimension

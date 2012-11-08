@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.chat.enable ~= true or C.chat.tool_bar ~= true then return end
+if C.chat.enable ~= true or C.chat.tool_bar ~= true or not ChatFrame3:IsShown() then return end
 
 ----------------------------------------------------------------------------------------
 --	ToolBar(by m2jest1c for Dark ShestakUI)
@@ -119,9 +119,9 @@ db:SetScript("OnMouseUp", function()
 	end
 end)
 
-tbar:RegisterEvent("PLAYER_LOGIN")
+tbar:RegisterEvent("PLAYER_ENTERING_WORLD")
 tbar:HookScript("OnEvent", function(self, event)
-	if event == "PLAYER_LOGIN" then
+	if event == "PLAYER_ENTERING_WORLD" then
 		self:UnregisterEvent(event)
 		if IsAddOnLoaded("alDamageMeter") then
 			damagemeter = "alDamageMeter"

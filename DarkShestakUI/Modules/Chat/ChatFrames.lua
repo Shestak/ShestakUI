@@ -253,6 +253,15 @@ local function SetupChatPosAndFont(self)
 				chat:ClearAllPoints()
 				chat:SetPoint("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)
 			end
+		elseif i == 3 then
+			chat:ClearAllPoints()
+			chat:SetSize(C.chat.width, C.chat.height)
+			if C.chat.background == true then
+				chat:SetPoint("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5] + 4)
+			else
+				chat:SetPoint("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5])
+			end
+			FCF_SavePositionAndDimensions(chat)
 		end
 	end
 
@@ -265,15 +274,15 @@ end
 
 local UIChat = CreateFrame("Frame")
 UIChat:RegisterEvent("ADDON_LOADED")
-UIChat:RegisterEvent("PLAYER_ENTERING_WORLD")
+UIChat:RegisterEvent("PLAYER_LOGIN")
 UIChat:SetScript("OnEvent", function(self, event, addon)
 	if event == "ADDON_LOADED" then
 		if addon == "Blizzard_CombatLog" then
-			self:UnregisterEvent("ADDON_LOADED")
+			self:UnregisterEvent(event)
 			SetupChat(self)
 		end
-	elseif event == "PLAYER_ENTERING_WORLD" then
-		self:UnregisterEvent("PLAYER_ENTERING_WORLD")
+	elseif event == "PLAYER_LOGIN" then
+		self:UnregisterEvent(event)
 		SetupChatPosAndFont(self)
 	end
 end)
