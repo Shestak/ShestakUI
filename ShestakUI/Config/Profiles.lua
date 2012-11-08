@@ -169,6 +169,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["announcements"].flask_food_auto = true
 	C["announcements"].feasts = true
 	C["announcements"].portals = true
+	C["announcements"].bad_gear = true
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
 	C["automation"].accept_quest = true
@@ -179,6 +180,8 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["automation"].currency_cap = true
 	C["automation"].buff_on_scroll = true
 	C["combattext"].blizz_head_numbers = true
+	C["combattext"].pet_damage = false
+	C["combattext"].merge_aoe_spam = false
 	C["reminder"].solo_buffs_sound = true
 	C["reminder"].raid_buffs_always = true
 	C["reminder"].raid_buffs_size = 20
@@ -192,13 +195,13 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["tooltip"].unit_role = true
 	C["chat"].background = true
 	C["chat"].background_alpha = 0.45
-	C["chat"].height = 165
+	C["chat"].height = 162
 	C["chat"].chat_bar_mouseover = false
 	C["chat"].bubbles = false
 	C["bag"].button_size = 35
 	C["bag"].bank_columns = 15
 	C["minimap"].tracking_icon = true
-	C["minimap"].size = 165
+	C["minimap"].size = 162
 	C["map"].explore_map = true
 	C["loot"].icon_size = 40
 	C["loot"].width = 300
@@ -224,10 +227,10 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["unitframe"].portrait_enable = true
 	C["unitframe"].plugins_swing = true
 	C["unitframe"].plugins_combat_feedback = true
+	C["unitframe_class_bar"].range = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].plugins_debuffhighlight_icon = true
 	C["raidframe"].plugins_aura_watch_timer = true
-	C["raidframe"].raid_groups = 8
 	C["raidframe"].plugins_auto_resurrection = true
 	C["error"].hide = false
 	C["font"].stats_font = C.media.pixel_font
@@ -273,29 +276,34 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["font"].bags_font_style = "OUTLINE"
 	C["font"].bags_font_size = 14
 	if T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Мейнрейн" or T.name == "Мейнгрейв" then
-		C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -345, 166}
+		C["position"].auto_button = {"BOTTOM", UIParent, "BOTTOM", 0, 335}
+		C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -330, 175}
 		C["position"].group_loot = {"RIGHT", UIParent, "RIGHT", -331, -24}
-		C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 285, -20}
+		C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 500, -21}
 		C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -150, -100}
-		C["position"].vehicle_bar = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 440, 175}
-		C["position"].unitframes.tank = {"LEFT", UIParent, "LEFT", 23, 0}
+		C["position"].vehicle_bar = {"TOPRIGHT", "oUF_Player", "TOPRIGHT", 45, 2}
+		C["position"].unitframes.party_heal = {"TOPLEFT", UIParent, "TOPLEFT", 23, -21}
+		C["position"].unitframes.raid_heal = {"TOPLEFT", UIParent, "TOPLEFT", 23, -21}
+		C["position"].unitframes.tank = {"LEFT", UIParent, "LEFT", 23, 115}
 		C["automation"].auto_role = true
 		C["automation"].buff_on_scroll = true
-		C["combattext"].icon_size = 25
+		C["skins"].dbm = true
 		C["combattext"].heal_treshold = 5000
 		C["chat"].width = 398
 		C["actionbar"].split_bars = true
+		C["raidframe"].solo_mode = true
+		C["raidframe"].raid_groups = 8
 	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
 	or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка" then
 		C["position"].unitframes.player = {"TOPLEFT", UIParent, "TOPLEFT", 90, -60}
 		C["position"].unitframes.target = {"TOP", UIParent, "TOP", -200, -60}
 		C["position"].achievement = {"TOP", UIParent, "TOP", 0, -170}
 		C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -95, 120}
-		C["position"].group_loot = {"CENTER", UIParent, "CENTER", 0, -235}
-		C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 285, -20}
+		C["position"].group_loot = {"BOTTOM", UIParent, "BOTTOM", 0, 300}
 		C["position"].quest = {"TOPLEFT", UIParent, "TOPLEFT", 20, -170}
 		C["position"].vehicle_bar = {"BOTTOM", UIParent, "BOTTOM", 200, 120}
 		C["position"].enemy_cooldown = {"BOTTOM", UIParent, "BOTTOM", -140, 185}
+		C["raidcooldown"].enable = false
 		C["chat"].width = 380
 		C["unitframe"].show_boss = false
 		C["raidframe"].raid_tanks = false

@@ -87,7 +87,7 @@ LPSTAT_CONFIG = {
 			--	Rested XP [rest]				Rested/Level% [rest%]
 			--	Quests To Level [questsleft]	Kills To Level [killsleft]
 			--	Total Played [playedtotal]		Level Played [playedlevel]		Session Played [playedsession]
-		xp_normal_fmt = "[curxp]([cur%]%)".."XP", -- XP string used when not rested.
+		xp_normal_fmt = "[curxp]([cur%]%)".."XP", -- XP string used when not rested
 		xp_rested_fmt = "[curxp]([cur%]%)".."XP ".." [restxp]([rest%]%)".."R", -- XP string used when rested
 		played_fmt = "Online: ".."|r".."[playedsession]", -- Played time format
 		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")

@@ -113,6 +113,9 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(122835),	-- Pheromones
 			SpellName(123081),	-- Pungency
 			-- Wind Lord Mel'jarak
+			SpellName(129078),	-- Amber Prison
+			SpellName(122055),	-- Residue
+			SpellName(122064),	-- Corrosive Resin
 			SpellName(122125),	-- Corrosive Resin Pool
 			-- Amber-Shaper Un'sok
 			SpellName(121949),	-- Parasitic Growth
@@ -149,11 +152,9 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(116835),	-- Devastating Arc
 			SpellName(116778),	-- Focused Defense
 			SpellName(116525),	-- Focused Assault
-		-- Kun-Lai Summit
-			-- Sha of Anger
+		-- Sha of Anger
 			SpellName(119622),	-- Growing Anger
 			SpellName(119626),	-- Aggressive Behavior
-			SpellName(119488),	-- Unleashed Wrath
 		-----------------------------------------------------------------
 		-- PvP
 		-----------------------------------------------------------------

@@ -90,7 +90,7 @@ if C.announcements.bad_gear == true then
 			19972,	-- Lucky Fishing Hat
 			46349,	-- Chef's Hat
 		},
-		-- Boots
+		-- Feet
 		[8] = {
 			50287,	-- Boots of the Bay
 			19969,	-- Nat Pagle's Extreme Anglin' Boots
@@ -100,7 +100,7 @@ if C.announcements.bad_gear == true then
 			65360,	-- Cloak of Coordination
 			65274,	-- Cloak of Coordination
 		},
-		-- Hand
+		-- Main-Hand
 		[16] = {
 			44050,	-- Mastercraft Kalu'ak Fishing Pole
 			19970,	-- Arcanite Fishing Pole
@@ -109,7 +109,7 @@ if C.announcements.bad_gear == true then
 			45992,	-- Jeweled Fishing Pole
 			86559,	-- Frying Pan
 		},
-		-- Offhand
+		-- Off-hand
 		[17] = {
 			86558,	-- Rolling Pin
 		},
