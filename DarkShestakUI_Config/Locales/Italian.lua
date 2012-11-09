@@ -303,6 +303,7 @@ L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Nascondi barra postura"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Rendi orizzontale la barra postura"
 L_GUI_ACTIONBAR_MICROMENU = "Attiva il micromenu"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenu al passaggio del mouse"
+L_GUI_ACTIONBAR_PANELS = "Panels under bars" -- Need review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Dimensione benefici giocatore"

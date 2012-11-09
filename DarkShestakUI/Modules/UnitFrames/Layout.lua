@@ -565,23 +565,6 @@ local function Shared(self, unit)
 			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.ClassMana:SetTextColor(0.0, 1, 0.59)
 		end
-
-		-- GCD spark
-		if C.unitframe.plugins_gcd == true then
-			self.GCD = CreateFrame("Frame", self:GetName().."_GCD", self)
-			self.GCD:SetHeight(3)
-			self.GCD:SetFrameStrata("HIGH")
-			if C.unitframe.unit_castbar == true then
-				self.GCD:SetWidth(281)
-				self.GCD:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4], C.position.unitframes.player_castbar[5] - 7)
-			else
-				self.GCD:SetWidth(217)
-				self.GCD:SetPoint("BOTTOM", self, "TOP", 0, 1)
-			end
-			self.GCD.Color = {1, 1, 1}
-			self.GCD.Height = T.Scale(3)
-			self.GCD.Width = T.Scale(4)
-		end
 	end
 
 	if unit == "pet" or unit == "targettarget" or unit == "focus" or unit == "focustarget" then
@@ -774,26 +757,50 @@ local function Shared(self, unit)
 
 		if unit == "player" then
 			if C.unitframe.castbar_icon == true then
-				self.Castbar:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4] + 11, C.position.unitframes.player_castbar[5])
+				if C.actionbar.panels == true then
+					self.Castbar:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4] + 11, C.position.unitframes.player_castbar[5] + 3)
+				else
+					self.Castbar:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4] + 11, C.position.unitframes.player_castbar[5])
+				end
 				self.Castbar:SetWidth(258)
 			else
-				self.Castbar:SetPoint(unpack(C.position.unitframes.player_castbar))
+				if C.actionbar.panels == true then
+					self.Castbar:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4], C.position.unitframes.player_castbar[5] + 3)
+				else
+					self.Castbar:SetPoint(unpack(C.position.unitframes.player_castbar))
+				end
 				self.Castbar:SetWidth(281)
 			end
 			self.Castbar:SetHeight(16)
 		elseif unit == "target" then
 			if C.unitframe.castbar_icon == true then
 				if C.unitframe.plugins_swing == true then
-					self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - 23, C.position.unitframes.target_castbar[5] + 12)
+					if C.actionbar.panels == true then
+						self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - 23, C.position.unitframes.target_castbar[5] + 15)
+					else
+						self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - 23, C.position.unitframes.target_castbar[5] + 12)
+					end
 				else
-					self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - 23, C.position.unitframes.target_castbar[5])
+					if C.actionbar.panels == true then
+						self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - 23, C.position.unitframes.target_castbar[5] + 3)
+					else
+						self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - 23, C.position.unitframes.target_castbar[5])
+					end
 				end
 				self.Castbar:SetWidth(258)
 			else
 				if C.unitframe.plugins_swing == true then
-					self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4], C.position.unitframes.target_castbar[5] + 12)
+					if C.actionbar.panels == true then
+						self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4], C.position.unitframes.target_castbar[5] + 15)
+					else
+						self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4], C.position.unitframes.target_castbar[5] + 12)
+					end
 				else
-					self.Castbar:SetPoint(unpack(C.position.unitframes.target_castbar))
+					if C.actionbar.panels == true then
+						self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4], C.position.unitframes.target_castbar[5] + 3)
+					else
+						self.Castbar:SetPoint(unpack(C.position.unitframes.target_castbar))
+					end
 				end
 				self.Castbar:SetWidth(281)
 			end
@@ -927,6 +934,23 @@ local function Shared(self, unit)
 		self.Swing.Text = T.SetFontString(self.Swing, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.Swing.Text:SetPoint("CENTER", 0, 0)
 		self.Swing.Text:SetTextColor(1, 1, 1)
+	end
+	
+	-- GCD spark
+	if C.unitframe.plugins_gcd == true and unit == "player" then
+		self.GCD = CreateFrame("Frame", self:GetName().."_GCD", self)
+		self.GCD:SetHeight(3)
+		self.GCD:SetFrameStrata("HIGH")
+		if C.unitframe.unit_castbar == true then
+			self.GCD:SetWidth(281)
+			self.GCD:SetPoint("TOPRIGHT", "oUF_Player_Castbar", "BOTTOMRIGHT", 0, -7)
+		else
+			self.GCD:SetWidth(217)
+			self.GCD:SetPoint("BOTTOM", self, "TOP", 0, 1)
+		end
+		self.GCD.Color = {1, 1, 1}
+		self.GCD.Height = T.Scale(3)
+		self.GCD.Width = T.Scale(4)
 	end
 
 	if C.unitframe.show_arena and unit == "arena" then
@@ -1103,11 +1127,19 @@ end
 oUF:RegisterStyle("DarkShestak", Shared)
 
 local player = oUF:Spawn("player", "oUF_Player")
-player:SetPoint(unpack(C.position.unitframes.player))
+if C.actionbar.panels == true then
+	player:SetPoint(C.position.unitframes.player[1], C.position.unitframes.player[2], C.position.unitframes.player[3], C.position.unitframes.player[4], C.position.unitframes.player[5] + 3)
+else
+	player:SetPoint(unpack(C.position.unitframes.player))
+end
 player:SetSize(217, 27)
 
 local target = oUF:Spawn("target", "oUF_Target")
-target:SetPoint(unpack(C.position.unitframes.target))
+if C.actionbar.panels == true then
+	target:SetPoint(C.position.unitframes.target[1], C.position.unitframes.target[2], C.position.unitframes.target[3], C.position.unitframes.target[4], C.position.unitframes.target[5] + 3)
+else
+	target:SetPoint(unpack(C.position.unitframes.target))
+end
 target:SetSize(217, 27)
 
 if C.unitframe.show_pet == true then

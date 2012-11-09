@@ -303,6 +303,7 @@ L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Скрыть панель стоек"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Переключиться на горизонтальную панель стоек"
 L_GUI_ACTIONBAR_MICROMENU = "Включить микроменю"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Микроменю по наведению курсора"
+L_GUI_ACTIONBAR_PANELS = "Подложка под панелями команд"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Размер положительных эффектов игрока"

@@ -303,6 +303,7 @@ L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Cacher changeforme"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Activer la barre de posture horizontale"
 L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
+L_GUI_ACTIONBAR_PANELS = "Panels under bars" -- Need review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Taille des buffs du joueur"

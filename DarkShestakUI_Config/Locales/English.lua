@@ -300,6 +300,7 @@ L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Hide stance bar"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Enable horizontal stance bar"
 L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover"
+L_GUI_ACTIONBAR_PANELS = "Panels under bars"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Player buffs size"

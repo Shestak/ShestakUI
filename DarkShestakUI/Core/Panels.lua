@@ -131,6 +131,21 @@ else
 end
 
 ----------------------------------------------------------------------------------------
+--	ActionBar panel
+----------------------------------------------------------------------------------------
+if C.actionbar.panels == true then
+	local bpanel = CreateFrame("Frame", "ActionBarPanel", ActionBarAnchor)
+	bpanel:SetTemplate("Transperent", "Shadow")
+	bpanel:SetPoint("TOP", ActionBarAnchor, "TOP", 0, 3)
+	bpanel:SetPoint("BOTTOMLEFT", ActionBarAnchor, "BOTTOMLEFT", -3, -3)
+	bpanel:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMRIGHT", 3, -3)
+
+	local rpanel = CreateFrame("Frame", nil, RightActionBarAnchor)
+	rpanel:SetTemplate("Transperent", "Shadow")
+	rpanel:SetPoint("BOTTOMLEFT", RightActionBarAnchor, "BOTTOMLEFT", -3, -3)
+	rpanel:SetPoint("TOPRIGHT", RightActionBarAnchor, "TOPRIGHT", 3, 3)
+end
+----------------------------------------------------------------------------------------
 --	Top panel
 ----------------------------------------------------------------------------------------
 if C.toppanel.enable ~= true then return end

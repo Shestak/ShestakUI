@@ -337,6 +337,7 @@ local function Local(o)
 	if o == "UIConfigactionbarstancebar_horizontal" then o = L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL end
 	if o == "UIConfigactionbarmicromenu" then o = L_GUI_ACTIONBAR_MICROMENU end
 	if o == "UIConfigactionbarmicromenu_mouseover" then o = L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER end
+	if o == "UIConfigactionbarpanels" then o = L_GUI_ACTIONBAR_PANELS end
 
 	-- Auras/Buffs/Debuffs
 	if o == "UIConfigaura" then o = BUFFOPTIONS_LABEL end

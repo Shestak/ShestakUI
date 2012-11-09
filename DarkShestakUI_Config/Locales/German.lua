@@ -303,6 +303,7 @@ L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Gestaltenleiste verstecken"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Horizontale Haltungsleiste aktivieren"
 L_GUI_ACTIONBAR_MICROMENU = "Zeige Micromenü"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenü bei MouseOver"
+L_GUI_ACTIONBAR_PANELS = "Panels under bars" -- Need review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Größe der Spielerbuffs"

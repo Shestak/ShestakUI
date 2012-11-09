@@ -442,7 +442,11 @@ oUF:Factory(function(self)
 				"groupFilter", "MAINTANK",
 				"template", mt_template
 			)
-			raidtank:SetPoint(unpack(C.position.unitframes.tank))
+			if C.actionbar.panels == true then
+				raidtank:SetPoint(C.position.unitframes.tank[1], C.position.unitframes.tank[2], C.position.unitframes.tank[3], C.position.unitframes.tank[4], C.position.unitframes.tank[5] + 3)
+			else
+				raidtank:SetPoint(unpack(C.position.unitframes.tank))
+			end
 		end
 	end
 end)

@@ -390,6 +390,8 @@ C["actionbar"] = {
 	-- MicroMenu
 	["micromenu"] = false,						-- Enable micro menu
 	["micromenu_mouseover"] = false,			-- Micro menu on mouseover
+	-- Panels
+	["panels"] = true,							-- Panels under bars
 }
 
 ----------------------------------------------------------------------------------------

@@ -303,6 +303,7 @@ L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隱藏變身/姿態/圖騰快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "橫向顯示變身/姿態快捷列"
 L_GUI_ACTIONBAR_MICROMENU = "開啟微型菜單"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠標懸停顯示微型菜單"
+L_GUI_ACTIONBAR_PANELS = "Panels under bars" -- Need review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "玩家Buffs圖示大小"
