@@ -163,7 +163,7 @@ hooksecurefunc("PetBattleAuraHolder_Update", function(self)
 			frame.DebuffBorder:Hide()
 
 			if not frame.isSkinned then
-				frame:CreateBackdrop()
+				frame:CreateBackdrop("Default")
 				frame.backdrop:SetPoint("TOPLEFT", frame, 2, -2)
 				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, -2, 2)
 
@@ -209,7 +209,7 @@ for i, unit in pairs(extraUnits) do
 	unit.HealthBarBG:SetAlpha(0)
 	unit.HealthDivider:SetAlpha(0)
 	unit:SetSize(40, 40)
-	unit:CreateBackdrop()
+	unit:CreateBackdrop("Default")
 	unit:ClearAllPoints()
 
 	unit.healthBarWidth = 40
