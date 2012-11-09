@@ -105,21 +105,25 @@ elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		T.aoespam[115175] = true	-- Soothing Mist
-		T.aoespam[125953] = 115175	-- Soothing Mist
+		T.aoespam[125953] = 115175	-- Soothing Mist (Statue)
 		T.aoespam[126890] = true	-- Eminence
 		T.aoespam[117640] = true	-- Spinning Crane Kick
 		T.aoespam[132463] = true	-- Chi Wave
 		T.aoespam[124101] = true	-- Zen Sphere: Detonate
+		T.aoespam[116670] = true	-- Uplift
+		T.aoespam[132120] = true	-- Enveloping Mist
+		T.aoespam[119611] = true	-- Renewing Mist
 		-- Damaging spells
 		T.aoespam[117952] = true	-- Crackling Jade Lightning
 		T.aoespam[117418] = true	-- Fists of Fury
 		T.aoespam[120274] = true	-- Tiger Strikes
-		T.aoespam[128531] = true	-- Blackout Kick
+		T.aoespam[128531] = true	-- Blackout Kick (DoT)
 		T.aoespam[123725] = true	-- Breath of Fire
 		T.aoespam[107270] = true	-- Spinning Crane Kick
 		T.aoespam[132467] = true	-- Chi Wave
 		T.aoespam[125033] = true	-- Zen Sphere: Detonate
 		T.aoespam[123586] = true	-- Flying Serpent Kick
+		T.aoespam[121253] = true	-- Keg Smash
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
