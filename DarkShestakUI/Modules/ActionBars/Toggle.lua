@@ -125,6 +125,7 @@ local RightBars = function()
 			end
 			ToggleBar[2]:SetWidth((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
 			ToggleBarText(2, "> > >", false, true)
+			RightActionBarAnchor:Show()
 			Bar3Holder:Show()
 			Bar4Holder:Show()
 			if C.actionbar.rightbars > 2 then
@@ -163,6 +164,7 @@ local RightBars = function()
 			end
 			ToggleBar[2]:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(2, "> > >", false, true)
+			RightActionBarAnchor:Show()
 			Bar3Holder:Show()
 			Bar4Holder:Show()
 		elseif SavedOptionsPerChar.RightBars == 0 then
