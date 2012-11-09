@@ -105,7 +105,6 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Imperial Vizier Zor'lok
 			SpellName(122761),	-- Exhale
 			SpellName(122740),	-- Convert
-			SpellName(123812),	-- Pheromones of Zeal
 			-- Blade Lord Ta'yak
 			SpellName(123180),	-- Wind Step
 			SpellName(123474),	-- Overwhelming Assault
