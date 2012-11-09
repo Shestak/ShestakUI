@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.chat.enable ~= true or C.chat.tool_bar ~= true or not ChatFrame3:IsShown() then return end
+if C.chat.enable ~= true or C.chat.tool_bar ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	ToolBar(by m2jest1c for Dark ShestakUI)
@@ -35,6 +35,15 @@ db.t:SetTexture(C.media.blank)
 db.t:SetVertexColor(1, 0.82, 0, 1)
 db.t:SetPoint("TOPLEFT", db, "TOPLEFT", 2, -2)
 db.t:SetPoint("BOTTOMRIGHT", db, "BOTTOMRIGHT", -2, 2)
+
+local cb = CreateFrame("Button", nil, tbar)
+cb:CreatePanel("Transparent", 16, 16, "BOTTOM", db, "TOP", 0, C.chat.background and 4 or 3)
+cb:SetBackdropBorderColor(1, 0.82, 0)
+cb.t = cb:CreateTexture(nil, "ARTWORK")
+cb.t:SetTexture(C.media.blank)
+cb.t:SetVertexColor(0.9, 0.1, 0.1, 0.8)
+cb.t:SetPoint("TOPLEFT", cb, "TOPLEFT", 2, -2)
+cb.t:SetPoint("BOTTOMRIGHT", cb, "BOTTOMRIGHT", -2, 2)
 
 local LootShow = function()
 	ChatFrame3:ClearAllPoints()
@@ -119,6 +128,16 @@ db:SetScript("OnMouseUp", function()
 	end
 end)
 
+cb:SetScript("OnMouseUp", function()
+	if LoggingCombat() then
+		cb.t:SetVertexColor(0.9, 0.1, 0.1, 0.8)
+		LoggingCombat(0)
+	else
+		cb.t:SetVertexColor(0.1, 0.9, 0.1, 0.8)
+		LoggingCombat(1)
+	end
+end)
+
 tbar:RegisterEvent("PLAYER_ENTERING_WORLD")
 tbar:HookScript("OnEvent", function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
@@ -147,9 +166,11 @@ tbar:HookScript("OnEvent", function(self, event)
 		elseif SavedOptionsPerChar.LootFrame == false then
 			LootHide()
 			db:Hide()
+			cb:SetPoint("BOTTOM", lb, "TOP", 0, C.chat.background and 4 or 3)
 		else
 			LootShow()
 			db:Hide()
+			cb:SetPoint("BOTTOM", lb, "TOP", 0, C.chat.background and 4 or 3)
 		end
 	end
 end)

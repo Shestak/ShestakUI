@@ -433,12 +433,10 @@ if T.coauthor == true then
 	C["misc"].shift_marking = false
 	C["misc"].invite_keyword = "инв"
 	C["misc"].quest_auto_button = true
-	C["misc"].profession_database = true
 	C["misc"].item_level = true
 	C["misc"].gem_counter = true
 	C["misc"].already_known = true
 	C["misc"].disenchanting = true
-	C["misc"].move_blizzard = true
 	C["misc"].enchantment_scroll = true
 	C["announcements"].drinking = true
 	C["announcements"].interrupts = true
@@ -466,7 +464,6 @@ if T.coauthor == true then
 	C["tooltip"].instance_lock = true
 	C["tooltip"].item_transmogrify = true
 	C["chat"].damage_meter_spam = true
-	C["map"].map_boss_count = true
 	C["map"].explore_map = true
 	C["nameplate"].track_auras = true
 	C["aura"].cast_by = true
@@ -479,11 +476,10 @@ if T.coauthor == true then
 		C["announcements"].lightwell = true
 		C["automation"].accept_quest = true
 		C["automation"].skip_cinematic = true
-		C["automation"].logging_combat = true
 		C["unitframe_class_bar"].range = true
 		C["raidframe"].deficit_health = true
 	end
-	if T.class == "WARRIOR" then
+	if T.class == "WARRIOR" or T.class == "PALADIN" then
 		C["actionbar"].stancebar_mouseover = false
 	end
 end
