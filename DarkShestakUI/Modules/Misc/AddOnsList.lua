@@ -91,7 +91,7 @@ function AddonManager:LoadProfileWindow()
 	local DisableAll = CreateMenuButton(window, EnableAll:GetWidth(), EnableAll:GetHeight(), L_ALOAD_DISABLE_ALL, "TOPRIGHT", window, "BOTTOMRIGHT", -5, -5)
 	DisableAll:SetScript("OnClick", function(self)
 		for i, addon in pairs(AddonManager.AllAddons) do
-			if addon.name ~= "DarkShestakUI" and addon.name ~= "DarkShestakUI_BaudErrorFrame" then
+			if addon.name ~= "DarkShestakUI" and addon.name ~= "!BaudErrorFrame" then
 				DisableAddOn(addon.name)
 				if AddonManager.Buttons[i].overlay then
 					AddonManager.Buttons[i].overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
