@@ -9,7 +9,7 @@ local Recount = _G.Recount
 local function SkinFrame(frame)
 	frame.bgMain = CreateFrame("Frame", nil, frame)
 	if frame ~= Recount.MainWindow then
-		frame.bgMain:SetTemplate("Transparent")
+		frame.bgMain:SetTemplate("Transparent", "Shadow")
 		T.SkinCloseButton(frame.CloseButton)
 		frame.CloseButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -11)
 	end
@@ -54,7 +54,7 @@ Recount.UpdateBarTextures = function(self)
 		v.background:SetVertexColor(0.15, 0.15, 0.15, 0.75)
 
 		v.overlay = CreateFrame("Frame", nil, v.StatusBar)
-		v.overlay:SetTemplate("Default")
+		v.overlay:SetTemplate("Default", "Shadow")
 		v.overlay:SetFrameStrata("BACKGROUND")
 		v.overlay:SetPoint("TOPLEFT", -2, 2)
 		v.overlay:SetPoint("BOTTOMRIGHT", 2, -2)
