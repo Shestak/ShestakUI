@@ -91,15 +91,6 @@ local DamageHide = function()
 	SavedOptionsPerChar.DamageMeter = false
 end
 
-local CombatLog = function()
-	if LoggingCombat() then
-		cb.t:SetAlpha(0)
-	else
-		cb.t:SetAlpha(1)
-	end
-	SlashCmdList.COMBATLOG()
-end
-
 lb:SetScript("OnMouseUp", function(_, button)
 	if button == "RightButton" then
 		ToggleLootHistoryFrame()
@@ -138,14 +129,23 @@ db:SetScript("OnMouseUp", function()
 end)
 
 cb:SetScript("OnMouseUp", function()
-	CombatLog()
+	if LoggingCombat() then
+		cb.t:SetAlpha(0)
+	else
+		cb.t:SetAlpha(1)
+	end
+	SlashCmdList.COMBATLOG()
 end)
 
 tbar:RegisterEvent("PLAYER_ENTERING_WORLD")
 tbar:HookScript("OnEvent", function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
 		self:UnregisterEvent(event)
-		CombatLog()
+		if LoggingCombat() then
+			cb.t:SetAlpha(1)
+		else
+			cb.t:SetAlpha(0)
+		end
 		if IsAddOnLoaded("alDamageMeter") then
 			damagemeter = "alDamageMeter"
 		elseif IsAddOnLoaded("Recount") then
