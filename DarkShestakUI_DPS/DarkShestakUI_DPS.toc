@@ -2,7 +2,7 @@
 ## Title: Dark ShestakUI DPS
 ## Notes: Raid layout for Dark ShestakUI
 ## Author: Shestak
-## Version: 0.51
+## Version: 0.52
 ## Credits: ALZA, Caellian, Tukz
 ## RequiredDeps: DarkShestakUI
 ## Website: http://shestak.org
