@@ -262,6 +262,8 @@ Filger_Spells = {
 			{spellID = 5217, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Celestial Alignment
 			{spellID = 112071, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Heart of the Wild
+			{spellID = 108294, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Starfall
 			{spellID = 48505, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Grasp
