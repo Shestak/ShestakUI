@@ -262,6 +262,8 @@ Filger_Spells = {
 			{spellID = 5217, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Celestial Alignment
 			{spellID = 112071, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Heart of the Wild
+			{spellID = 108294, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Starfall
 			{spellID = 48505, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Grasp
@@ -1484,6 +1486,8 @@ Filger_Spells = {
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Infusion
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit Shell
+			{spellID = 109964, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fear Ward
 			{spellID = 6346, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Archangel
