@@ -38,10 +38,10 @@ db.t:SetPoint("BOTTOMRIGHT", db, "BOTTOMRIGHT", -2, 2)
 
 local cb = CreateFrame("Button", nil, tbar)
 cb:CreatePanel("Transparent", 16, 16, "BOTTOM", db, "TOP", 0, C.chat.background and 4 or 3)
-cb:SetBackdropBorderColor(1, 0.82, 0)
+cb:SetBackdropBorderColor(0.3, 0.9, 0.3)
 cb.t = cb:CreateTexture(nil, "ARTWORK")
 cb.t:SetTexture(C.media.blank)
-cb.t:SetVertexColor(0.9, 0.1, 0.1, 0.8)
+cb.t:SetVertexColor(1, 0.82, 0, 1)
 cb.t:SetPoint("TOPLEFT", cb, "TOPLEFT", 2, -2)
 cb.t:SetPoint("BOTTOMRIGHT", cb, "BOTTOMRIGHT", -2, 2)
 
@@ -91,6 +91,15 @@ local DamageHide = function()
 	SavedOptionsPerChar.DamageMeter = false
 end
 
+local CombatLog = function()
+	if LoggingCombat() then
+		cb.t:SetAlpha(0)
+	else
+		cb.t:SetAlpha(1)
+	end
+	SlashCmdList.COMBATLOG()
+end
+
 lb:SetScript("OnMouseUp", function(_, button)
 	if button == "RightButton" then
 		ToggleLootHistoryFrame()
@@ -129,19 +138,14 @@ db:SetScript("OnMouseUp", function()
 end)
 
 cb:SetScript("OnMouseUp", function()
-	if LoggingCombat() then
-		cb.t:SetVertexColor(0.9, 0.1, 0.1, 0.8)
-		LoggingCombat(0)
-	else
-		cb.t:SetVertexColor(0.1, 0.9, 0.1, 0.8)
-		LoggingCombat(1)
-	end
+	CombatLog()
 end)
 
 tbar:RegisterEvent("PLAYER_ENTERING_WORLD")
 tbar:HookScript("OnEvent", function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
 		self:UnregisterEvent(event)
+		CombatLog()
 		if IsAddOnLoaded("alDamageMeter") then
 			damagemeter = "alDamageMeter"
 		elseif IsAddOnLoaded("Recount") then
