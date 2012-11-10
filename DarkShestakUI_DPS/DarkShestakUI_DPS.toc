@@ -1,5 +1,5 @@
 ## Interface: 50001
-## Title: Dark ShestakUI DPS
+## Title: |cff1784d1Dark ShestakUI DPS|r
 ## Notes: Raid layout for Dark ShestakUI
 ## Author: Shestak
 ## Version: 0.52

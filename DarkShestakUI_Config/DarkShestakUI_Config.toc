@@ -1,5 +1,5 @@
 ## Interface: 50001
-## Title: Dark ShestakUI Config
+## Title: |cff1784d1Dark ShestakUI Config|r
 ## Notes: In-game configuration for Dark ShestakUI
 ## Author: Tohveli
 ## Version: 0.52
