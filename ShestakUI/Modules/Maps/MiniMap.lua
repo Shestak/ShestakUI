@@ -318,8 +318,8 @@ if C.minimap.tracking_icon then
 	local trackborder = CreateFrame("Frame", nil, UIParent)
 	trackborder:SetFrameLevel(4)
 	trackborder:SetFrameStrata("BACKGROUND")
-	trackborder:Height(20)
-	trackborder:Width(20)
+	trackborder:SetHeight(20)
+	trackborder:SetWidth(20)
 	trackborder:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
 	trackborder:SetTemplate("Default")
 
