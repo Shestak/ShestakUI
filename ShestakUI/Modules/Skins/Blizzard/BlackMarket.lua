@@ -20,7 +20,7 @@ local function LoadSkin()
 
 	BlackMarketFrame.HotDeal:StripTextures()
 	BlackMarketFrame.HotDeal.Item.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	BlackMarketFrame.HotDeal.Item:CreateBackdrop()
+	BlackMarketFrame.HotDeal.Item:CreateBackdrop("Default")
 	BlackMarketFrame.HotDeal.Item:StyleButton()
 	BlackMarketFrame.HotDeal.Item.hover:SetAllPoints()
 	BlackMarketFrame.HotDeal.Item.pushed:SetAllPoints()

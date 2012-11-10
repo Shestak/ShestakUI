@@ -70,9 +70,10 @@ if C.enemycooldown.enable == true then
 		[1856] = 180,	-- Vanish
 		[33206] = 180,	-- Pain Suppression
 		[108978] = 180,	-- Alter Time
-		-- Other
+		-- Disarms
 		[51722] = 60,	-- Dismantle
 		[676] = 60,		-- Disarm
+		-- Mana regen
 		[54428] = 120,	-- Divine Plea
 		[29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem

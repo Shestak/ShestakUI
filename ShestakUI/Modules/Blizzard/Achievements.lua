@@ -25,11 +25,16 @@ local function fixAnchors()
 
 	GroupLootContainer:ClearAllPoints()
 	GroupLootContainer:SetPoint(POSITION, AlertFrame, ANCHOR_POINT, 0, YOFFSET)
-
-	MissingLootFrame:ClearAllPoints()
-	MissingLootFrame:SetPoint(POSITION, AlertFrame, ANCHOR_POINT, 0, YOFFSET)
 end
 hooksecurefunc("AlertFrame_FixAnchors", fixAnchors)
+
+local function AlertFrame_SetLootAnchors(alertAnchor)
+	if GroupLootContainer:IsShown() then
+		GroupLootContainer:ClearAllPoints()
+		GroupLootContainer:SetPoint(POSITION, alertAnchor, ANCHOR_POINT, 0, YOFFSET)
+	end
+end
+hooksecurefunc("AlertFrame_SetLootAnchors", AlertFrame_SetLootAnchors)
 
 local function AlertFrame_SetLootWonAnchors(alertAnchor)
 	for i = 1, #LOOT_WON_ALERT_FRAMES do
