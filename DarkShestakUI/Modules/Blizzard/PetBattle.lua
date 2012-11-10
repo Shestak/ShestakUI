@@ -123,12 +123,26 @@ hooksecurefunc("PetBattleFrame_UpdateSpeedIndicators", function(self)
 	end
 end)
 
+-- Localized pets type
+local pet_type = {
+	[1] = BATTLE_PET_DAMAGE_NAME_1,
+	[2] = BATTLE_PET_DAMAGE_NAME_2,
+	[3] = BATTLE_PET_DAMAGE_NAME_3,
+	[4] = BATTLE_PET_DAMAGE_NAME_4,
+	[5] = BATTLE_PET_DAMAGE_NAME_5,
+	[6] = BATTLE_PET_DAMAGE_NAME_6,
+	[7] = BATTLE_PET_DAMAGE_NAME_7,
+	[8] = BATTLE_PET_DAMAGE_NAME_8,
+	[9] = BATTLE_PET_DAMAGE_NAME_9,
+	[10] = BATTLE_PET_DAMAGE_NAME_10,
+}
+
 -- Pets unitframes pet type update
 hooksecurefunc("PetBattleUnitFrame_UpdatePetType", function(self)
 	if self.PetType then
 		local petType = C_PetBattles.GetPetType(self.petOwner, self.petIndex)
 		if self.PetTypeFrame then
-			self.PetTypeFrame.text:SetText(PET_TYPE_SUFFIX[petType])
+			self.PetTypeFrame.text:SetText(pet_type[petType])
 		end
 	end
 end)
@@ -149,7 +163,7 @@ hooksecurefunc("PetBattleAuraHolder_Update", function(self)
 			frame.DebuffBorder:Hide()
 
 			if not frame.isSkinned then
-				frame:CreateBackdrop()
+				frame:CreateBackdrop("Default")
 				frame.backdrop:SetPoint("TOPLEFT", frame, 2, -2)
 				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, -2, 2)
 
@@ -195,7 +209,7 @@ for i, unit in pairs(extraUnits) do
 	unit.HealthBarBG:SetAlpha(0)
 	unit.HealthDivider:SetAlpha(0)
 	unit:SetSize(40, 40)
-	unit:CreateBackdrop()
+	unit:CreateBackdrop("Default")
 	unit:ClearAllPoints()
 
 	unit.healthBarWidth = 40

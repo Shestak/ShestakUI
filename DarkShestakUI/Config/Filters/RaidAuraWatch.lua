@@ -105,7 +105,6 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Imperial Vizier Zor'lok
 			SpellName(122761),	-- Exhale
 			SpellName(122740),	-- Convert
-			SpellName(123812),	-- Pheromones of Zeal
 			-- Blade Lord Ta'yak
 			SpellName(123180),	-- Wind Step
 			SpellName(123474),	-- Overwhelming Assault
@@ -120,8 +119,10 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Amber-Shaper Un'sok
 			SpellName(121949),	-- Parasitic Growth
 			-- Grand Empress Shek'zeer
+			SpellName(123707),	-- Eyes of the Empress
 			SpellName(123788),	-- Cry of Terror
 			SpellName(124849),	-- Consuming Terror
+			SpellName(124863),	-- Visions of Demise
 		-- Mogu'shan Vaults
 			-- The Stone Guard
 			SpellName(125206),	-- Rend Flesh

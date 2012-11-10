@@ -312,7 +312,7 @@ local function LoadSecondarySkin()
 		local rewardsRow = ChallengesFrame["RewardRow"..i]
 		for j = 1, 2 do
 			local bu = rewardsRow["Reward"..j]
-			bu:CreateBackdrop()
+			bu:CreateBackdrop("Default")
 			bu.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		end
 	end

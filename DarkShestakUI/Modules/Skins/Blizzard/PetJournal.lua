@@ -175,7 +175,7 @@ local function LoadSkin()
 
 	PetJournalAchievementStatus:DisableDrawLayer("BACKGROUND")
 
-	PetJournalHealPetButton:CreateBackdrop()
+	PetJournalHealPetButton:CreateBackdrop("Default")
 	PetJournalHealPetButton.backdrop:SetAllPoints()
 	PetJournalHealPetButton:StyleButton()
 
