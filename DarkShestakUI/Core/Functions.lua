@@ -1343,8 +1343,10 @@ T.UpdateThreat = function(self, event, unit)
 	if threat and threat > 1 then
 		r, g, b = GetThreatStatusColor(threat)
 		self.backdrop:SetBackdropBorderColor(r, g, b)
+		self.Power.backdrop:SetBackdropBorderColor(r, g, b)
 	else
 		self.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+		self.Power.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
 end
 
