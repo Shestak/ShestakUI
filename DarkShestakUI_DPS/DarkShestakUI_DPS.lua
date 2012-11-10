@@ -156,6 +156,8 @@ local function Shared(self, unit)
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:SetSize(12, 12)
 		self.LFDRole:SetPoint("TOPRIGHT", self.Health, 2, 5)
+		
+		self.LFDRole.Override = T.UpdateLFDRole
 	end
 
 	-- Leader/Assistant/ML icons

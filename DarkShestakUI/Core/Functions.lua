@@ -1350,6 +1350,23 @@ T.UpdateThreat = function(self, event, unit)
 	end
 end
 
+T.UpdateLFDRole = function(self, event)
+	local lfdrole = self.LFDRole
+	local role = UnitGroupRolesAssigned(self.unit)
+	if role == "TANK" then
+		lfdrole:SetTexture(C.media.tank)
+		lfdrole:Show()
+	elseif role == "HEALER" then
+		lfdrole:SetTexture(C.media.healer)
+		lfdrole:Show()
+	elseif role == "DAMAGER" then
+		lfdrole:SetTexture(C.media.dps)
+		lfdrole:Show()
+	else
+		lfdrole:Hide()
+	end
+end
+
 local CountOffSets = {
 	TOPLEFT = {9, 0},
 	TOPRIGHT = {-8, 0},

@@ -130,6 +130,8 @@ local function Shared(self, unit)
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:SetSize(12, 12)
 		self.LFDRole:SetPoint("TOP", self.Health, 0, 8)
+		
+		if C.media.tank and C.media.healer and C.media.dps then self.LFDRole.Override = T.UpdateLFDRole end
 	end
 
 	-- Ready check icons
