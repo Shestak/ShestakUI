@@ -223,7 +223,7 @@ end
 ----------------------------------------------------------------------------------------
 if (T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Мейнрейн" or T.name == "Мейнгрейв"
 or T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
-or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка") and T.realm == "Азурегос" then
+or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка" or T.name == "Виришка") and T.realm == "Азурегос" then
 	C["media"].pixel_font = C.media.normal_font
 	C["media"].pixel_font_style = "OUTLINE"
 	C["media"].pixel_font_size = 14
@@ -410,7 +410,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["raidframe"].solo_mode = true
 		C["raidframe"].raid_groups = 8
 	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
-	or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка" then
+	or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка" or T.name == "Виришка" then
 		C["position"].achievement = {"TOP", UIParent, "TOP", 0, -170}
 		C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -95, 120}
 		C["position"].group_loot = {"BOTTOM", UIParent, "BOTTOM", 0, 350}
