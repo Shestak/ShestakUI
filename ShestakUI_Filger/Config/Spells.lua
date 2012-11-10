@@ -1478,34 +1478,32 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Positions.player_buff_icon)},
 
-			-- Power Word: Shield
-			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Renew
-			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dispersion
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Infusion
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spirit Shell
-			{spellID = 109964, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fear Ward
-			{spellID = 6346, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 109964, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Archangel
 			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Embrace
 			{spellID = 15286, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Borrowed Time
 			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Inner Fire
-			--OLD{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Inner Will
-			--OLD{spellID = 73413, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Inner Focus
 			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Power Word: Shield
+			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Renew
+			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Prayer of Mending
 			{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fade
 			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Inner Fire
+			--OLD{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Inner Will
+			--OLD{spellID = 73413, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2746,6 +2744,8 @@ Filger_Spells = {
 			{spellID = 65081, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Angelic Feather
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Fear Ward
+			{spellID = 6346, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
