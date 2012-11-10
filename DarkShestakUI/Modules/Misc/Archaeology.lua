@@ -505,11 +505,11 @@ stArchFrame:HookScript("OnEvent", function(self)
 end)
 
 local b = CreateFrame("Button", "SwitchArch", UIParent)
-b:SetTemplate("ClassColor")
+b:SetTemplate("Default")
 if C.actionbar.toggle_mode == true then
-	b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -58)
+	b:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 58)
 else
-	b:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -38)
+	b:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 38)
 end
 b:SetSize(19, 19)
 b:SetAlpha(0)
