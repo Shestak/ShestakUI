@@ -427,7 +427,7 @@ C["unitframe"] = {
 	-- Main
 	["enable"] = true,							-- Enable unit frames
 	["own_color"] = true,						-- Set your color for health bars
-	["uf_color"] = {0.2, 0.2, 0.2},				-- Color for UF if ["own_color"] = true
+	["uf_color"] = {0.1, 0.1, 0.1},				-- Color for UF if ["own_color"] = true
 	["enemy_health_color"] = false,				-- If enable, enemy target color is red
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
 	["color_value"] = true,						-- Health/mana value is colored
