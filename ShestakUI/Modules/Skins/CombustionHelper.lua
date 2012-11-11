@@ -26,8 +26,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	combusettingstable.combuignitereport = false
 	combusettingstable.combureportmunching = false
 	combusettingstable.combureportthreshold = false
-	combusettingstable.combutexturename = "Smooth"
-	combusettingstable.combumbtrackertexturename = "Smooth"
+	combusettingstable.combutexturename = "rwk1"
+	combusettingstable.combumbtrackertexturename = "rwk1"
 	combusettingstable.combufontname = "Hooge"
 	combusettingstable.combumbtrackerfontname = "Hooge"
 	combusettingstable.bgcolornormal = {unpack(C.media.overlay_color)}
@@ -39,7 +39,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	combumbtrackersettingstable.combumbtrackerchat = false
 	combumbtrackersettingstable.combumbtrackerrefreshmode = false
 	combumbtrackersettingstable.combumbtrackerfontname = "Hooge"
-	combumbtrackersettingstable.combumbtrackertexturename = "Smooth"
+	combumbtrackersettingstable.combumbtrackertexturename = "rwk1"
 	combumbtrackersettingstable.bgcolornormal = {unpack(C.media.overlay_color)}
 	combumbtrackersettingstable.edgecolornormal = {unpack(C.media.border_color)}
 
@@ -138,3 +138,5 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		T.SkinCheckBox(_G[checkboxes[i]])
 	end
 end)
+
+-- edit by Oz of shestak. org --

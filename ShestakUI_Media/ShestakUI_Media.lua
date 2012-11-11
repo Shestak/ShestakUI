@@ -46,6 +46,9 @@ LSM:Register("statusbar", "Hatched", "Interface\\AddOns\\ShestakUI_Media\\Media\
 LSM:Register("statusbar", "Minimalist", "Interface\\AddOns\\ShestakUI_Media\\Media\\Statusbars\\Minimalist.tga")
 LSM:Register("statusbar", "Rain", "Interface\\AddOns\\ShestakUI_Media\\Media\\Statusbars\\Rain.tga")
 LSM:Register("statusbar", "Ruben", "Interface\\AddOns\\ShestakUI_Media\\Media\\Statusbars\\Ruben.tga")
+LSM:Register("statusbar", "rwk1", "Interface\\AddOns\\ShestakUI_Media\\Media\\Statusbars\\rwk1.tga")
 LSM:Register("statusbar", "Smooth", "Interface\\AddOns\\ShestakUI_Media\\Media\\Statusbars\\Smooth.tga")
 LSM:Register("statusbar", "Striped", "Interface\\AddOns\\ShestakUI_Media\\Media\\Statusbars\\Striped.tga")
 LSM:Register("statusbar", "Tukz", "Interface\\AddOns\\ShestakUI_Media\\Media\\Statusbars\\Tukz.tga")
+
+-- edit of Oz of shestak.org --
