@@ -48,6 +48,7 @@ elseif T.class == "DRUID" then
 		T.aoespam[44203] = true		-- Tranquility
 		T.aoespam[81269] = true		-- Swiftmend
 		T.aoespam[102792] = true	-- Wild Mushroom: Bloom
+		T.aoespam[124988] = true	-- Nature's Vigil
 		-- Damaging spells
 		T.aoespam[8921] = true		-- Moonfire
 		T.aoespam[93402] = true		-- Sunfire
@@ -64,6 +65,7 @@ elseif T.class == "DRUID" then
 		T.aoespam[33745] = true		-- Lacerate
 		T.aoespam[77758] = true		-- Thrash
 		T.aoespam[1079] = true		-- Rip
+		T.aoespam[124991] = true	-- Nature's Vigil
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
