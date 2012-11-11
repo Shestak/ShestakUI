@@ -88,11 +88,7 @@ local faneifyTab = function(frame, sel)
 
 	-- We can't trust sel
 	if i == SELECTED_CHAT_FRAME:GetID() then
-<<<<<<< HEAD
 		updateFS(frame, nil, nil, 255, 255, 0)
-=======
-		updateFS(frame, nil, T.color.r, T.color.g, T.color.b)
->>>>>>> 941e4894795bf478108fb46e1fda81c1d8b2da80
 	else
 		updateFS(frame, nil, 1, 1, 1)
 	end
