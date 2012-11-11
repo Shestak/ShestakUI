@@ -234,8 +234,6 @@ Filger_Spells = {
 			{spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cenarion Ward
 			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nature's Vigil
-			{spellID = 124974, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Tree of Life
 			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Chosen of Elunee
@@ -244,6 +242,8 @@ Filger_Spells = {
 			{spellID = 102543, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Son of Ursoc
 			{spellID = 102558, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nature's Vigil
+			{spellID = 124974, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Survival Instincts
 			{spellID = 61336, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Might of Ursoc
@@ -1478,32 +1478,30 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Positions.player_buff_icon)},
 
-			-- Power Word: Shield
-			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Renew
-			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dispersion
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Infusion
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fear Ward
-			{spellID = 6346, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit Shell
+			{spellID = 109964, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Archangel
 			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Embrace
 			{spellID = 15286, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Borrowed Time
-			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Glyph of Inner Focus
+			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Power Word: Shield
+			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Renew
+			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Prayer of Mending
+			--OLD{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fade
+			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Fire
 			--OLD{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Will
 			--OLD{spellID = 73413, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Glyph of Inner Focus
-			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Prayer of Mending
-			{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fade
-			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1515,18 +1513,20 @@ Filger_Spells = {
 			Position = {unpack(Filger_Positions.player_proc_icon)},
 
 			-- Buffs
+			-- Divine Insight
+			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Light
 			{spellID = 114255, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Darkness
 			{spellID = 87160, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Serendipity
 			{spellID = 63735, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Insight
-			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Twist of Fate
-			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Mind Spike
 			{spellID = 81292, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Borrowed Time
+			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Twist of Fate
+			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evangelism
 			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Sanctuary
@@ -2744,6 +2744,8 @@ Filger_Spells = {
 			{spellID = 65081, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Angelic Feather
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Fear Ward
+			{spellID = 6346, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",

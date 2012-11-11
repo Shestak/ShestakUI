@@ -147,7 +147,7 @@ end
 ----------------------------------------------------------------------------------------
 if (T.name == "Мейнстрим" or T.name == "Мейнвульф" or T.name == "Мейнрейн" or T.name == "Мейнгрейв"
 or T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
-or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка") and T.realm == "Азурегос" then
+or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка" or T.name == "Виришка") and T.realm == "Азурегос" then
 	C["media"].pixel_font = C.media.normal_font
 	C["media"].pixel_font_style = "OUTLINE"
 	C["media"].pixel_font_size = 14
@@ -294,18 +294,16 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 		C["raidframe"].solo_mode = true
 		C["raidframe"].raid_groups = 8
 	elseif T.name == "Виринейка" or T.name == "Вирин" or T.name == "Вириней" or T.name == "Виринеа"
-	or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка" then
-		C["position"].unitframes.player = {"TOPLEFT", UIParent, "TOPLEFT", 90, -60}
-		C["position"].unitframes.target = {"TOP", UIParent, "TOP", -200, -60}
+	or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Виринка" or T.name == "Виришка" then
 		C["position"].achievement = {"TOP", UIParent, "TOP", 0, -170}
 		C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -95, 120}
-		C["position"].group_loot = {"BOTTOM", UIParent, "BOTTOM", 0, 300}
-		C["position"].quest = {"TOPLEFT", UIParent, "TOPLEFT", 20, -170}
+		C["position"].group_loot = {"BOTTOM", UIParent, "BOTTOM", 0, 350}
 		C["position"].vehicle_bar = {"BOTTOM", UIParent, "BOTTOM", 200, 120}
-		C["position"].enemy_cooldown = {"BOTTOM", UIParent, "BOTTOM", -140, 185}
 		C["raidcooldown"].enable = false
+		C["enemycooldown"].enable = false
 		C["chat"].width = 380
-		C["unitframe"].show_boss = false
+		C["raidframe"].show_party = false
+		C["raidframe"].show_raid = false
 		C["raidframe"].raid_tanks = false
 		C["stats"].experience = false
 	end

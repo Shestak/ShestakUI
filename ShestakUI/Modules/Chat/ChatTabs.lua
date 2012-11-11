@@ -15,7 +15,7 @@ end
 
 local Fane = CreateFrame("Frame")
 
-local updateFS = function(self, inc, flags, ...)
+local updateFS = function(self, inc, ...)
 	local fstring = self:GetFontString()
 
 	fstring:SetFont(C.font.chat_tabs_font, C.font.chat_tabs_font_size, C.font.chat_tabs_font_style)
@@ -28,7 +28,7 @@ end
 
 local OnEnter = function(self)
 	local emphasis = _G["ChatFrame"..self:GetID().."TabFlash"]:IsShown()
-	updateFS(self, emphasis, C.font.chat_tabs_font_style, 255, 255, 0)
+	updateFS(self, emphasis, 255, 255, 0)
 end
 
 local OnLeave = function(self)
@@ -44,7 +44,7 @@ local OnLeave = function(self)
 		r, g, b = 1, 1, 1
 	end
 
-	updateFS(self, emphasis, nil, r, g, b)
+	updateFS(self, emphasis, r, g, b)
 end
 
 local ChatFrame2_SetAlpha = function(self, alpha)
@@ -88,21 +88,25 @@ local faneifyTab = function(frame, sel)
 
 	-- We can't trust sel
 	if i == SELECTED_CHAT_FRAME:GetID() then
+<<<<<<< HEAD
 		updateFS(frame, nil, nil, 255, 255, 0)
+=======
+		updateFS(frame, nil, T.color.r, T.color.g, T.color.b)
+>>>>>>> 941e4894795bf478108fb46e1fda81c1d8b2da80
 	else
-		updateFS(frame, nil, nil, 1, 1, 1)
+		updateFS(frame, nil, 1, 1, 1)
 	end
 end
 
 hooksecurefunc("FCF_StartAlertFlash", function(frame)
-	local tab = _G["ChatFrame" .. frame:GetID() .. "Tab"]
-	updateFS(tab, true, nil, 1, 0, 0)
+	local tab = _G["ChatFrame"..frame:GetID().."Tab"]
+	updateFS(tab, true, 1, 0, 0)
 end)
 
 hooksecurefunc("FCFTab_UpdateColors", faneifyTab)
 
 for i = 1, NUM_CHAT_WINDOWS do
-	faneifyTab(_G["ChatFrame" .. i .. "Tab"])
+	faneifyTab(_G["ChatFrame"..i.."Tab"])
 end
 
 function Fane:ADDON_LOADED(event, addon)
