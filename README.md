@@ -8,4 +8,4 @@ Compared to the original ShestakUI, I just changed a bit of things to better fit
 
 More details [here](http://shestak.org/forum/showthread.php?t=835) and a big thank to Shestak for his amazing work (all credits go out to him) and to all his contributors!
 
-![placeholder img](http://i.imgur.com/XWSGQ.jpg "Testing the default settings")
+![placeholder img](http://i.imgur.com/XdF7z.jpg "Testing the default settings")

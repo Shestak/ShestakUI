@@ -26,7 +26,7 @@ LPSTAT_CONFIG = {
 -- Bottomleft block
 	Clock = {
 		enabled = C.stats.clock, -- Local time and the 24 hour clock can be enabled in-game via time manager (right-click)
-		AM = "A", PM = "P", colon = ":", -- These values apply to the displayed clock
+		AM = "AM", PM = "PM", colon = ":", -- These values apply to the displayed clock
 		anchor_frame = "UIParent", anchor_to = "left", anchor_from = "bottomleft",
 		x_off = 20, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
