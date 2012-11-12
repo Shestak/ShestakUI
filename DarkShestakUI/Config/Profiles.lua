@@ -453,6 +453,7 @@ if T.coauthor == true then
 	C["announcements"].bad_gear = true
 	C["automation"].screenshot = true
 	C["automation"].accept_invite = true
+	C["automation"].accept_quest = true
 	C["automation"].auto_role = true
 	C["automation"].cancel_bad_buffs = true
 	C["skins"].clique = true
@@ -478,9 +479,11 @@ if T.coauthor == true then
 	C["unitframe"].plugins_diminishing = true
 	C["unitframe_class_bar"].vengeance = false
 	C["raidframe"].icons_role = true
+	if T.name == "Тёми" then
+		C["automation"].accept_quest = false
+	end
 	if T.name == "Занштек" then
 		C["announcements"].lightwell = true
-		C["automation"].accept_quest = true
 		C["automation"].skip_cinematic = true
 		C["unitframe_class_bar"].range = true
 		C["raidframe"].deficit_health = true
