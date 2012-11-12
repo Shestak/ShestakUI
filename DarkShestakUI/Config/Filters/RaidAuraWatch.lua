@@ -115,7 +115,6 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(129078),	-- Amber Prison
 			SpellName(122055),	-- Residue
 			SpellName(122064),	-- Corrosive Resin
-			SpellName(122125),	-- Corrosive Resin Pool
 			-- Amber-Shaper Un'sok
 			SpellName(121949),	-- Parasitic Growth
 			-- Grand Empress Shek'zeer

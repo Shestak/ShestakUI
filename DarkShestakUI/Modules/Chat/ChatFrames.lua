@@ -302,7 +302,7 @@ hooksecurefunc("FCF_OpenTemporaryWindow", SetupTempChat)
 ----------------------------------------------------------------------------------------
 --	Save slash command typo
 ----------------------------------------------------------------------------------------
-function TypoHistory_Posthook_AddMessage(chat, text)
+local function TypoHistory_Posthook_AddMessage(chat, text)
 	if strfind(text, HELP_TEXT_SIMPLE) then
 		ChatEdit_AddHistory(chat.editBox)
 	end
