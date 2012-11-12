@@ -7,6 +7,9 @@
 ## RequiredDeps: DarkShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
+## X-Curse-Packaged-Version: 0.52
+## X-Curse-Project-Name: Dark ShestakUI
+## X-Curse-Project-ID: dark-shestakui
 ## Website: http://shestak.org
 
 Locales\English.lua

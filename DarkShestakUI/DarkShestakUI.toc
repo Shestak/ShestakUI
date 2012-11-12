@@ -10,6 +10,9 @@
 ## SavedVariables: SavedOptions, SavedStats, SavedAddonProfiles, SavedBindings, SavedCurrency
 ## SavedVariablesPerCharacter: SavedOptionsPerChar, SavedPositions
 ## X-oUF: oUFDarkShestakUI
+## X-Curse-Packaged-Version: 0.52
+## X-Curse-Project-Name: Dark ShestakUI
+## X-Curse-Project-ID: dark-shestakui
 ## Website: http://shestak.org
 
 DarkShestakUI.xml

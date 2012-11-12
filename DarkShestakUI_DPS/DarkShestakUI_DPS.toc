@@ -5,6 +5,9 @@
 ## Version: 0.52
 ## Credits: ALZA, Caellian, Tukz
 ## RequiredDeps: DarkShestakUI
+## X-Curse-Packaged-Version: 0.52
+## X-Curse-Project-Name: Dark ShestakUI
+## X-Curse-Project-ID: dark-shestakui
 ## Website: http://shestak.org
 
 DarkShestakUI_DPS.lua

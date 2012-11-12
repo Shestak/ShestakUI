@@ -6,6 +6,9 @@
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: DarkShestakUI
+## X-Curse-Packaged-Version: 0.52
+## X-Curse-Project-Name: Dark ShestakUI
+## X-Curse-Project-ID: dark-shestakui
 ## Website: http://shestak.org
 
 Config\Settings.lua
