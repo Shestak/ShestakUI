@@ -1,0 +1,13 @@
+## Interface: 50001
+## Title: ShestakUI Heal
+## Notes: Raid layout for ShestakUI
+## Author: Shestak
+## Version: 4.22
+## Credits: ALZA, Caellian, Tukz
+## RequiredDeps: ShestakUI
+## X-Curse-Packaged-Version: 4.22
+## X-Curse-Project-Name: ShestakUI
+## X-Curse-Project-ID: shestakui
+## Website: http://shestak.org
+
+ShestakUI_Heal.lua

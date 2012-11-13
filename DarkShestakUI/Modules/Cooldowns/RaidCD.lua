@@ -75,7 +75,9 @@ end
 
 local OnEnter = function(self)
 	GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-	GameTooltip:AddDoubleLine(self.spell, self.right:GetText())
+	GameTooltip:SetSpellByID(self.spellId)
+	GameTooltip:AddLine(" ")
+	GameTooltip:AddDoubleLine(self.left:GetText(), self.right:GetText())
 	GameTooltip:SetClampedToScreen(true)
 	GameTooltip:Show()
 end
@@ -86,13 +88,7 @@ end
 
 local OnMouseDown = function(self, button)
 	if button == "LeftButton" then
-		if IsInRaid() then
-			SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "RAID")
-		elseif IsInGroup() then
-			SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "PARTY")
-		else
-			SendChatMessage(sformat(L_COOLDOWNS.." %s: %s", self.left:GetText(), self.right:GetText()), "SAY")
-		end
+		SendChatMessage(sformat(L_COOLDOWNS.."%s - %s: %s", self.name, GetSpellLink(self.spellId), self.right:GetText()), T.CheckChat())
 	elseif button == "RightButton" then
 		StopTimer(self)
 	end
@@ -156,6 +152,7 @@ local StartTimer = function(name, spellId)
 		bar.icon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 	bar.spell = spell
+	bar.spellId = spellId
 	bar:Show()
 	bar:SetStatusBarColor(unpack(C.unitframe.uf_color))
 	bar.bg:SetVertexColor(unpack(C.media.backdrop_color))

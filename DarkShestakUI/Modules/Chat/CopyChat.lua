@@ -89,7 +89,7 @@ local function Copy(cf)
 	if not isf then CreatCopyFrame() end
 	if frame:IsShown() then frame:Hide() return end
 	frame:Show()
-	editBox:SetText(text)
+	editBox:SetText(text:gsub("|[Tt]Interface\\TargetingFrame\\UI%-RaidTargetingIcon_(%d):0|[Tt]", "{rt%1}"))
 end
 
 function T.ChatCopyButtons()

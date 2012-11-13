@@ -575,13 +575,6 @@ local function CheckBlacklist(frame, ...)
 	end
 end
 
--- When becoming intoxicated blizzard likes to re-show the old level text, this should fix that
-local function HideDrunkenText(frame, ...)
-	if frame and frame.hp.oldlevel and frame.hp.oldlevel:IsShown() then
-		frame.hp.oldlevel:Hide()
-	end
-end
-
 -- Force the name text of a nameplate to be behind other nameplates unless it is our target
 local function AdjustNameLevel(frame, ...)
 	if UnitName("target") == frame.hp.name:GetText() and frame:GetAlpha() == 1 then
@@ -661,7 +654,7 @@ end
 -- Run a function for all visible nameplates, we use this for the blacklist, to check unitguid, and to hide drunken text
 local function ForEachPlate(functionToRun, ...)
 	for frame in pairs(frames) do
-		if frame:IsShown() then
+		if frame and frame:IsShown() then
 			functionToRun(frame, ...)
 		end
 	end
@@ -674,7 +667,7 @@ local function HookFrames(...)
 		local frame = select(index, ...)
 		local region = frame:GetRegions()
 
-		if (not frames[frame] and (frame:GetName() and not frame.isSkinned and frame:GetName():find("NamePlate%d")) and region and region:GetObjectType() == "Texture") then
+		if not frames[frame] and (frame:GetName() and not frame.isSkinned and frame:GetName():find("NamePlate%d")) then
 			SkinObjects(frame)
 			frame.region = region
 			frame.isSkinned = true
@@ -690,7 +683,9 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 	end
 
 	if self.elapsed and self.elapsed > 0.2 then
-		ForEachPlate(UpdateThreat, self.elapsed)
+		if C.nameplate.enhance_threat == true then
+			ForEachPlate(UpdateThreat, self.elapsed)
+		end
 		ForEachPlate(AdjustNameLevel)
 		self.elapsed = 0
 	else
@@ -699,7 +694,6 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 
 	ForEachPlate(ShowHealth)
 	ForEachPlate(CheckBlacklist)
-	ForEachPlate(HideDrunkenText)
 	ForEachPlate(CheckUnit_Guid)
 end)
 
