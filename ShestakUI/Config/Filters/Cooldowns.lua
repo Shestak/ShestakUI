@@ -18,6 +18,7 @@ if C.raidcooldown.enable == true then
 		[29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem
 		[64901] = 360,	-- Hymn of Hope
+		[108280] = 180,	-- Healing Tide Totem
 	}
 end
 
