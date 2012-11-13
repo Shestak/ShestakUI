@@ -412,7 +412,7 @@ local function Shared(self, unit)
 
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
-				self.TotemBar[i]:SetSize(176 / 4, 7)
+				self.TotemBar[i]:SetSize(177 / 4, 7)
 
 				local fixpos
 				if i == 2 then
