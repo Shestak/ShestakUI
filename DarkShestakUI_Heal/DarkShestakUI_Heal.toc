@@ -1,13 +1,13 @@
 ## Interface: 50001
-## Title: ShestakUI Heal
-## Notes: Raid layout for ShestakUI
+## Title: |cff1784d1Dark ShestakUI Heal|r
+## Notes: Raid layout for Dark ShestakUI
 ## Author: Shestak
-## Version: 4.22
+## Version: 0.52
 ## Credits: ALZA, Caellian, Tukz
-## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 4.22
-## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestakui
+## RequiredDeps: DarkShestakUI
+## X-Curse-Packaged-Version: 0.52
+## X-Curse-Project-Name: Dark ShestakUI
+## X-Curse-Project-ID: dark-shestakui
 ## Website: http://shestak.org
 
-ShestakUI_Heal.lua
+DarkShestakUI_Heal.lua
