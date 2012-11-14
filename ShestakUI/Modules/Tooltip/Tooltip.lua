@@ -295,7 +295,11 @@ function GameTooltip_UnitColor(unit)
 	if UnitIsPlayer(unit) then
 		local _, class = UnitClass(unit)
 		local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
-		r, g, b = color.r, color.g, color.b
+		if color then
+			r, g, b = color.r, color.g, color.b
+		else
+			r, g, b = 1, 1, 1
+		end
 	elseif UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit) or UnitIsDead(unit) then
 		r, g, b = 0.6, 0.6, 0.6
 	else
