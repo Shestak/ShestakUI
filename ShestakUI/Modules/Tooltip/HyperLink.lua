@@ -4,14 +4,17 @@ if C.chat.enable ~= true or C.tooltip.enable ~= true or IsAddOnLoaded("tekKompar
 ----------------------------------------------------------------------------------------
 --	Based on tekKompare(by Tekkub)
 ----------------------------------------------------------------------------------------
-local orig1, orig2 = {}, {}
-local GameTooltip = GameTooltip
-
+local orig1, orig2, GameTooltip = {}, {}, GameTooltip
 local linktypes = {item = true, enchant = true, spell = true, quest = true, unit = true, talent = true, achievement = true, glyph = true, instancelock = true, currency = true}
 
 local function OnHyperlinkEnter(frame, link, ...)
 	local linktype = link:match("^([^:]+)")
-	if linktype and linktypes[linktype] then
+	if linktype and linktype == "battlepet" then
+		local _, speciesID, level, breedQuality, maxHealth, power, speed = strsplit(":", link)
+		BattlePetToolTip_Show(tonumber(speciesID), tonumber(level), tonumber(breedQuality), tonumber(maxHealth), tonumber(power), tonumber(speed))
+		BattlePetTooltip:ClearAllPoints()
+		BattlePetTooltip:SetPoint("BOTTOMLEFT", frame, "TOPLEFT", -3, 0)
+	elseif linktype and linktypes[linktype] then
 		GameTooltip:SetOwner(frame, "ANCHOR_TOPLEFT", -3, 0)
 		GameTooltip:SetHyperlink(link)
 		GameTooltip:Show()
@@ -20,9 +23,15 @@ local function OnHyperlinkEnter(frame, link, ...)
 	if orig1[frame] then return orig1[frame](frame, link, ...) end
 end
 
-local function OnHyperlinkLeave(frame, ...)
-	GameTooltip:Hide()
-	if orig2[frame] then return orig2[frame](frame, ...) end
+local function OnHyperlinkLeave(frame, link, ...)
+	local linktype = link:match("^([^:]+)")
+	if linktype and linktype == "battlepet" then
+		BattlePetTooltip:Hide()
+	elseif linktype and linktypes[linktype] then
+		GameTooltip:Hide()
+	end
+
+	if orig1[frame] then return orig1[frame](frame, link, ...) end
 end
 
 for i = 1, NUM_CHAT_WINDOWS do
