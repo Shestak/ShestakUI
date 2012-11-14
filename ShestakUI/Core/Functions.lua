@@ -1179,7 +1179,7 @@ T.CustomCastTimeText = function(self, duration)
 end
 
 T.CustomCastDelayText = function(self, duration)
-	self.Time:SetText(("%.1f |cffaf5050%s %.1f|r"):format(self.channeling and duration or self.max - duration, self.channeling and "- " or "+", self.delay))
+	self.Time:SetText(("%.1f |cffaf5050%s %.1f|r"):format(self.channeling and duration or self.max - duration, self.channeling and "-" or "+", abs(self.delay)))
 end
 
 local FormatTime = function(s)

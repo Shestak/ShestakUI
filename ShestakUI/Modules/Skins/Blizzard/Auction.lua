@@ -396,7 +396,7 @@ local function LoadSkin()
 	Atr_Adv_Search_Dialog:SetTemplate("Transparent")
 	Atr_FullScanFrame:SetTemplate("Overlay")
 	Atr_Buy_Confirm_Frame:SetTemplate("Default")
-	Atr_CheckActives_Frame:SetTemplate("Default")
+	Atr_CheckActives_Frame:SetTemplate("Transparent")
 	Atr_Error_Frame:SetTemplate("Transparent")
 	Atr_LUA_Error:SetTemplate("Transparent")
 
