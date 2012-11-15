@@ -94,10 +94,12 @@ if T.author == true then
 	C["nameplate"].track_auras = true
 	C["nameplate"].healer_icon = true
 	C["actionbar"].toggle_mode = false
+	C["unitframe"].castbar_icon = true
 	C["unitframe"].arena_on_right = false
 	C["unitframe"].plugins_talents = true
 	C["unitframe"].plugins_diminishing = true
 	C["unitframe_class_bar"].vengeance = false
+	C["raidframe"].plugins_aura_watch_timer = true
 	C["stats"].fps = false
 	C["stats"].battleground = true
 	C["toppanel"].enable = false
