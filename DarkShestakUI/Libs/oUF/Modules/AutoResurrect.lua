@@ -38,20 +38,20 @@ local function macroBody(class)
 	local combatspell = classList[class].combat
 	local oocspell = classList[class].ooc
 
-	body = "/stopmacro [nodead,@mouseover]\n"
+	body = "/stopmacro [@mouseover,nodead]\n"
 	if combatspell then
-		body = body.."/cast [combat,help,dead,@mouseover] "..combatspell.."; "
+		body = body.."/use [combat,@mouseover,help,dead] "..combatspell.."; "
 
 		if oocspell then
-			body = body.."[help,dead,@mouseover] "..oocspell.."; "
+			body = body.."[@mouseover,help,dead] "..oocspell.."; "
 		end
 
 		if class == "WARLOCK" then
 			local spellname = select(1, GetSpellInfo(6203))
-			body = body.."\n/cast "..spellname.."\n "
+			body = body.."\n/use "..spellname.."\n "
 		end
 	elseif oocspell then
-		body = body.."/cast [help,dead,@mouseover] "..oocspell.."; "
+		body = body.."/use [@mouseover,help,dead] "..oocspell.."; "
 	end
 
 	return body

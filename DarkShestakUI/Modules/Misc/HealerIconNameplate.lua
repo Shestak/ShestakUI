@@ -2,7 +2,7 @@
 if C.nameplate.enable ~= true or C.nameplate.healer_icon ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Show healer icon on all enemy healers nameplate in battlegrounds(KillTheHealer by Kraftman)
+--	Show icon above enemy healers nameplate in battlegrounds(KillTheHealer by Kraftman)
 ----------------------------------------------------------------------------------------
 local heallist = {}
 local exclass = {}
