@@ -165,13 +165,16 @@ local function SetChatStyle(frame)
 		FCF_SetWindowName(_G[chat], GUILD_BANK_LOG)
 		CombatLogQuickButtonFrame_Custom:StripTextures()
 		CombatLogQuickButtonFrame_Custom:CreateBackdrop("Transparent")
-		CombatLogQuickButtonFrame_Custom.backdrop:SetPoint("TOPLEFT", 1, -2)
-		CombatLogQuickButtonFrame_Custom.backdrop:SetPoint("BOTTOMRIGHT", 0, -4)
-		T.SkinCloseButton(CombatLogQuickButtonFrame_CustomAdditionalFilterButton, CombatLogQuickButtonFrame_Custom.backdrop, "+")
+		CombatLogQuickButtonFrame_Custom.backdrop:SetPoint("TOPLEFT", 1, -4)
+		CombatLogQuickButtonFrame_Custom.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+		T.SkinCloseButton(CombatLogQuickButtonFrame_CustomAdditionalFilterButton, CombatLogQuickButtonFrame_Custom.backdrop, " ", true)
+		CombatLogQuickButtonFrame_CustomAdditionalFilterButton:SetSize(12, 12)
+		CombatLogQuickButtonFrame_CustomAdditionalFilterButton:SetHitRectInsets (0, 0, 0, 0)
 		CombatLogQuickButtonFrame_CustomProgressBar:ClearAllPoints()
 		CombatLogQuickButtonFrame_CustomProgressBar:SetPoint("TOPLEFT", CombatLogQuickButtonFrame_Custom.backdrop, 2, -2)
 		CombatLogQuickButtonFrame_CustomProgressBar:SetPoint("BOTTOMRIGHT", CombatLogQuickButtonFrame_Custom.backdrop, -2, 2)
 		CombatLogQuickButtonFrame_CustomProgressBar:SetStatusBarTexture(C.media.texture)
+		CombatLogQuickButtonFrameButton1:SetPoint("BOTTOM", 0, 0) -- Fix
 	end
 
 	if _G[chat] ~= _G["ChatFrame2"] then

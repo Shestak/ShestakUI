@@ -92,34 +92,31 @@ local function Copy(cf)
 	editBox:SetText(text:gsub("|[Tt]Interface\\TargetingFrame\\UI%-RaidTargetingIcon_(%d):0|[Tt]", "{rt%1}"))
 end
 
-function T.ChatCopyButtons()
-	for i = 1, NUM_CHAT_WINDOWS do
-		local cf = _G[format("ChatFrame%d", i)]
-		local button = CreateFrame("Button", format("ButtonCF%d", i), cf)
-		button:SetPoint("BOTTOMRIGHT", 0, 1)
-		button:SetHeight(20)
-		button:SetWidth(20)
-		button:SetAlpha(0)
-		button:SetTemplate("Transparent")
-		button:SetBackdropBorderColor(1, 0.82, 0)
+for i = 1, NUM_CHAT_WINDOWS do
+	local cf = _G[format("ChatFrame%d", i)]
+	local button = CreateFrame("Button", format("ButtonCF%d", i), cf)
+	button:SetPoint("BOTTOMRIGHT", 0, 1)
+	button:SetHeight(20)
+	button:SetWidth(20)
+	button:SetAlpha(0)
+	button:SetTemplate("Transparent")
+	button:SetBackdropBorderColor(1, 0.82, 0)
 
-		local buttontexture = button:CreateTexture(nil, "BORDER")
-		buttontexture:SetPoint("CENTER")
-		buttontexture:SetTexture("Interface\\BUTTONS\\UI-GuildButton-PublicNote-Up")
-		buttontexture:SetHeight(16)
-		buttontexture:SetWidth(16)
+	local buttontexture = button:CreateTexture(nil, "BORDER")
+	buttontexture:SetPoint("CENTER")
+	buttontexture:SetTexture("Interface\\BUTTONS\\UI-GuildButton-PublicNote-Up")
+	buttontexture:SetHeight(16)
+	buttontexture:SetWidth(16)
 
-		button:SetScript("OnMouseUp", function(self, btn)
-			if btn == "RightButton" then
-				ToggleFrame(ChatMenu)
-			elseif btn == "MiddleButton" then
-				RandomRoll(1, 100)
-			else
-				Copy(cf)
-			end
-		end)
-		button:SetScript("OnEnter", function() button:FadeIn() end)
-		button:SetScript("OnLeave", function() button:FadeOut() end)
-	end
+	button:SetScript("OnMouseUp", function(self, btn)
+		if btn == "RightButton" then
+			ToggleFrame(ChatMenu)
+		elseif btn == "MiddleButton" then
+			RandomRoll(1, 100)
+		else
+			Copy(cf)
+		end
+	end)
+	button:SetScript("OnEnter", function() button:FadeIn() end)
+	button:SetScript("OnLeave", function() button:FadeOut() end)
 end
-T.ChatCopyButtons()
