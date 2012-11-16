@@ -23,8 +23,6 @@ T.CastBarTicks = {
 	[GetSpellInfo(47540)] = 2,	-- Penance
 	[GetSpellInfo(64901)] = 4,	-- Hymn of Hope
 	[GetSpellInfo(64843)] = 4,	-- Divine Hymn
-	-- Shaman
-	[GetSpellInfo(61882)] = 8,	-- Earthquake
 	-- Warlock
 	[GetSpellInfo(689)] = 6,	-- Drain Life
 	[GetSpellInfo(108371)] = 6, -- Harvest Life
