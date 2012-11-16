@@ -49,7 +49,11 @@ local LootShow = function()
 	ChatFrame3:ClearAllPoints()
 	if C.chat.background == true then
 		ChatFrame3:SetPoint("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5] + 4)
-		TooltipAnchor:SetPoint("BOTTOMRIGHT", ChatTabsPanelRight, "TOPRIGHT", 0, 3)
+		if C.chat.tabs_mouseover == true then
+			TooltipAnchor:SetPoint("BOTTOMRIGHT", ChatBackgroundRight, "TOPRIGHT", 0, 3)
+		else
+			TooltipAnchor:SetPoint("BOTTOMRIGHT", ChatTabsPanelRight, "TOPRIGHT", 0, 3)
+		end
 	else
 		ChatFrame3:SetPoint("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5])
 		TooltipAnchor:SetPoint("BOTTOMRIGHT", RightPanel, "TOPRIGHT", 0, 3)
