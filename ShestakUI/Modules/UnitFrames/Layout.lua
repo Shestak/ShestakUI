@@ -7,11 +7,6 @@ if C.unitframe.enable ~= true then return end
 local _, ns = ...
 local oUF = ns.oUF
 
-local backdrop = {
-	bgFile = C.media.blank,
-	insets = {top = -T.mult, left = -T.mult, bottom = -T.mult, right = -T.mult},
-}
-
 -- Create layout
 local function Shared(self, unit)
 	-- Set our own colors
@@ -399,13 +394,15 @@ local function Shared(self, unit)
 
 		-- Totem bar
 		if C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
-			self.TotemBar = {}
+			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+			self.TotemBar:CreateBackdrop("Default")
+			self.TotemBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.TotemBar:SetSize(217, 7)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 4 do
-				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self)
-				self.TotemBar[i]:CreateBackdrop("Default")
-				self.TotemBar[i]:SetSize((i == 1 and 210 or 214) / 4, 7)
+				self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+				self.TotemBar[i]:SetSize(213 / 4, 7)
 
 				local fixpos
 				if i == 2 then
@@ -419,8 +416,6 @@ local function Shared(self, unit)
 				end
 				self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
 				self.TotemBar[i]:SetMinMaxValues(0, 1)
-				self.TotemBar[i]:SetBackdrop(backdrop)
-				self.TotemBar[i]:SetBackdropColor(0, 0, 0)
 
 				self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
 				self.TotemBar[i].bg:SetAllPoints()
@@ -687,13 +682,13 @@ local function Shared(self, unit)
 
 			-- Rogue/Druid Combo bar
 			if C.unitframe_class_bar.combo == true then
-				self.CPoints = CreateFrame("Frame", nil, self)
+				self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
 				self.CPoints:CreateBackdrop("Default")
 				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.CPoints:SetSize(217, 7)
 
 				for i = 1, 5 do
-					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_Combo"..i, self.CPoints)
+					self.CPoints[i] = CreateFrame("StatusBar", nil, self.CPoints)
 					self.CPoints[i]:SetSize(213 / 5, 7)
 					if i == 1 then
 						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
@@ -875,9 +870,6 @@ local function Shared(self, unit)
 			self.Castbar.Text:SetPoint("RIGHT", self.Castbar.Time, "LEFT", -1, 0)
 			self.Castbar.Text:SetTextColor(1, 1, 1)
 			self.Castbar.Text:SetJustifyH("LEFT")
-
-			self.Castbar:HookScript("OnShow", function() self.Castbar.Text:Show(); self.Castbar.Time:Show() end)
-			self.Castbar:HookScript("OnHide", function() self.Castbar.Text:Hide(); self.Castbar.Time:Hide() end)
 
 			if C.unitframe.castbar_icon == true and unit ~= "arena" then
 				self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
@@ -1097,7 +1089,6 @@ local function Shared(self, unit)
 		end
 		mhpb:SetStatusBarTexture(C.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
-		mhpb:SetMinMaxValues(0, 1)
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
@@ -1110,6 +1101,10 @@ local function Shared(self, unit)
 			myBar = mhpb,
 			otherBar = ohpb,
 			maxOverflow = 1,
+			PostUpdate = function(frame)
+				if frame.myBar:GetValue() == 0 then frame.myBar:SetAlpha(0) else frame.myBar:SetAlpha(1) end
+				if frame.otherBar:GetValue() == 0 then frame.otherBar:SetAlpha(0) else frame.otherBar:SetAlpha(1) end
+			end
 		}
 	end
 

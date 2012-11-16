@@ -33,7 +33,8 @@ local function LoadSkin()
 	T.SkinCloseButton(RaidBrowserFrameCloseButton)
 
 	T.SkinDropDownBox(LFRBrowseFrameRaidDropDown)
-	LFRQueueFrameSpecificListScrollFrame:StripTextures()
+	T.SkinScrollBar(LFRQueueFrameSpecificListScrollFrame)
+	T.SkinScrollBar(LFRBrowseFrameListScrollFrame)
 
 	LFRQueueFrameCommentTextButton:CreateBackdrop("Overlay")
 	LFRQueueFrameCommentTextButton.backdrop:SetPoint("TOPLEFT", -4, 2)

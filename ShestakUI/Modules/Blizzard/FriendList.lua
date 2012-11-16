@@ -142,6 +142,7 @@ hooksecurefunc("LFRBrowseFrameListButton_SetData", function(button, index)
 		button.name:SetText(classColor[class]..name)
 		button.class:SetText(classColor[class]..className)
 		button.level:SetText(diffColor[level]..level)
+		button.level:SetWidth(30)
 	end
 end)
 

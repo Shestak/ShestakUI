@@ -42,6 +42,11 @@ T.DebuffWhiteList = {
 	[SpellName(114923)] = true,	-- Nether Tempest
 	[SpellName(112948)] = true,	-- Frost Bomb
 	[SpellName(83853)] = true,	-- Combustion
+	[SpellName(44572)] = true,	-- Deep Freeze
+	[SpellName(120)] = true,	-- Cone of Cold
+	[SpellName(102051)] = true,	-- Frostjaw
+	-- Monk
+	[SpellName(115078)] = true,	-- Paralysis
 	-- Paladin
 	[SpellName(20066)] = true,	-- Repentance
 	[SpellName(10326)] = true,	-- Turn Evil
@@ -52,8 +57,8 @@ T.DebuffWhiteList = {
 	[SpellName(8122)] = true,	-- Psychic Scream
 	[SpellName(64044)] = true,	-- Psychic Horror
 	[SpellName(15487)] = true,	-- Silence
-	[SpellName(589)] = true,    -- Shadow Word: Pain
-	[SpellName(34914)] = true,  -- Vampiric Touch
+	[SpellName(589)] = true,	-- Shadow Word: Pain
+	[SpellName(34914)] = true,	-- Vampiric Touch
 	-- Rogue
 	[SpellName(6770)] = true,	-- Sap
 	[SpellName(2094)] = true,	-- Blind

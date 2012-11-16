@@ -121,7 +121,7 @@ oUF.TagEvents["IncHeal"] = "UNIT_HEAL_PREDICTION"
 if T.class == "DRUID" then
 	for i = 1, 3 do
 		oUF.Tags["WM"..i] = function(unit)
-			_, _, _, dur = GetTotemInfo(i)
+			local _, _, _, dur = GetTotemInfo(i)
 			if dur > 0 then
 				return "|cffFF2222_|r"
 			end

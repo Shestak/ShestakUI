@@ -440,6 +440,7 @@ for i = 1, FloatingBattlePetTooltip:GetNumChildren() do
 		T.SkinCloseButton(child)
 	end
 end
+table.insert(UISpecialFrames, "FloatingBattlePetTooltip")
 
 ----------------------------------------------------------------------------------------
 --	Coloring borders/names by pets quality(PetBattleQualityGlow by Tia Lynn)

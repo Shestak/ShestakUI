@@ -77,8 +77,10 @@ if T.author == true then
 	C["minimap"].toggle_menu = false
 	C["nameplate"].track_auras = true
 	C["actionbar"].toggle_mode = false
+	C["unitframe"].castbar_icon = true
 	C["unitframe"].arena_on_right = false
 	C["unitframe_class_bar"].vengeance = false
+	C["raidframe"].plugins_aura_watch_timer = true
 	C["stats"].fps = false
 	C["toppanel"].enable = false
 	if T.level == MAX_PLAYER_LEVEL then
