@@ -101,7 +101,7 @@ bottompanel:SetPoint("RIGHT", UIParent, "RIGHT", -21, 0)
 --	Chat background
 ----------------------------------------------------------------------------------------
 if C.chat.enable == true and C.chat.background == true then
-	local chatbd = CreateFrame("Frame", "ChatBackground", ChatFrame1)
+	local chatbd = CreateFrame("Frame", "ChatBackground", UIParent)
 	chatbd:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 1, "Shadow")
 	chatbd:SetBackdropBorderColor(unpack(C.media.border_color))
 	chatbd:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
