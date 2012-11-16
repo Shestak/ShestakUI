@@ -352,7 +352,7 @@ C["nameplate"] = {
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
 	["track_auras"] = false,					-- Show debuffs
 	["auras_size"] = 22,						-- Debuffs size
-	["healer_icon"] = false,					-- Show healer icon on all enemy healers nameplate in battlegrounds
+	["healer_icon"] = false,					-- Show icon above enemy healers nameplate in battlegrounds
 }
 
 ----------------------------------------------------------------------------------------
