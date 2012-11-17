@@ -23,6 +23,7 @@ function BaudErrorFrame_OnLoad(self)
 		end
 	end
 	SLASH_BaudErrorFrame1 = "/bauderror"
+	SLASH_BaudErrorFrame1 = "/er"
 
 	seterrorhandler(BaudErrorFrameHandler)
 end
