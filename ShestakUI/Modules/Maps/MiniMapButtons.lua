@@ -37,10 +37,18 @@ end)
 switch:SetScript("OnEnter", function()
 	if InCombatLockdown() then return end
 	switch:FadeIn()
+	GameTooltip:SetOwner(switch, "ANCHOR_LEFT")
+	GameTooltip:AddLine(RAID_FRAMES_LABEL)
+	GameTooltip:AddLine(" ")
+	GameTooltip:AddLine(L_MINIMAP_HEAL_LAYOUT)
+	GameTooltip:AddLine(L_MINIMAP_DPS_LAYOUT)
+	GameTooltip:AddLine(L_MINIMAP_BLIZZ_LAYOUT)
+	GameTooltip:Show()
 end)
 
 switch:SetScript("OnLeave", function()
 	switch:FadeOut()
+	GameTooltip:Hide()
 end)
 
 switch:RegisterEvent("PLAYER_LOGIN")
