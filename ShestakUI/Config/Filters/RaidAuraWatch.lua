@@ -117,6 +117,7 @@ if C.raidframe.plugins_aura_watch == true then
 			SpellName(122064),	-- Corrosive Resin
 			-- Amber-Shaper Un'sok
 			SpellName(121949),	-- Parasitic Growth
+			SpellName(122370),	-- Reshape Life
 			-- Grand Empress Shek'zeer
 			SpellName(123707),	-- Eyes of the Empress
 			SpellName(123788),	-- Cry of Terror
