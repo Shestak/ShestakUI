@@ -62,8 +62,8 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						if bar.enlarged then frame:SetWidth(bar.owner.options.HugeWidth) else frame:SetWidth(bar.owner.options.Width) end
 						if bar.enlarged then tbar:SetWidth(bar.owner.options.HugeWidth) else tbar:SetWidth(bar.owner.options.Width) end
 
-						frame:SetScale(1)
 						if not frame.styled then
+							frame:SetScale(1)
 							frame:SetHeight(19)
 							frame:SetTemplate("Default")
 							frame.styled = true
@@ -198,7 +198,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				local prev = _G[format("DBM_BossHealth_Bar_%d", count-1)]
 
 				if count == 1 then
-					local _, anch, _ , _, _ = bar:GetPoint()
+					local _, anch = bar:GetPoint()
 					bar:ClearAllPoints()
 					if DBM_SavedOptions.HealthFrameGrowUp then
 						bar:SetPoint("BOTTOM", anch, "TOP", 0, 3)
@@ -256,6 +256,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 		hooksecurefunc(DBT, "CreateBar", SkinBars)
 		hooksecurefunc(DBM.BossHealth, "Show", SkinBossTitle)
 		hooksecurefunc(DBM.BossHealth, "AddBoss", SkinBoss)
+		hooksecurefunc(DBM.BossHealth, "UpdateSettings", SkinBoss)
 
 		hooksecurefunc(DBM.RangeCheck, "Show", function()
 			DBMRangeCheck:SetTemplate("Transparent")

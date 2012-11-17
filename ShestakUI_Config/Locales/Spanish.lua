@@ -285,7 +285,7 @@ L_GUI_NAMEPLATE_NEAR_COLOR = "Color de perdiendo/ganando amenaza"
 L_GUI_NAMEPLATE_BAD_COLOR = "Color de baja amenaza, varía dependiendo si eres tanque o dps/sanador"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Mostrar perjuicios (Nombres abreviados debe ser desactivado)"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Tamaño de los perjuicios"
-L_GUI_NAMEPLATE_HEALER_ICON = "Show healer icon on all enemy healers nameplate in battlegrounds" -- Needs review
+L_GUI_NAMEPLATE_HEALER_ICON = "Show icon above enemy healers nameplate in battlegrounds" -- Needs review
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Activar barras de acción"
@@ -392,8 +392,8 @@ L_GUI_UF_PLAYER_PARTY = "Mostrar marco del jugador en grupo"
 L_GUI_UF_SHOW_TANK = "Mostrar tanques de la banda"
 L_GUI_UF_SHOW_TANK_TT = "Mostrar el objetivo del objetivo de los tanques de la banda"
 L_GUI_UF_RAID_GROUP = "Número de grupos en la banda"
-L_GUI_UF_RAID_VERTICAL_GROUP = "Grupos de la banda en vertical (Sólo para ShestakUI_Heal)"
 L_GUI_UF_RAID_PORTRAITS = "Habilitar los retratos en los marcos de banda" -- Goooooooooogle translated
+L_GUI_UF_RAID_VERTICAL_GROUP = "Grupos de la banda en vertical (only for heal layout)" -- Needs review
 L_GUI_UF_ICONS_LEADER = "Iconos de líder, ayudantes y maestro despojador en los marcos"
 L_GUI_UF_ICONS_ROLE = "Role icon on frames" -- Needs review
 L_GUI_UF_ICONS_RAID_MARK = "Marcas de banda"

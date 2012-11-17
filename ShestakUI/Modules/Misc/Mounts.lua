@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------------
 --	Universal Mount macro(by Monolit)
---	/script Mountz("your_ground_mount","your_flying_mount")
+--	/run Mountz("your_ground_mount","your_flying_mount")
 ----------------------------------------------------------------------------------------
 function Mountz(groundmount, flyingmount, underwatermount)
 	local flyablex, swimablex, vjswim, underwater, InVj, nofly

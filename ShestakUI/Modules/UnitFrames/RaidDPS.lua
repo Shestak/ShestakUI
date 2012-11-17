@@ -1,11 +1,11 @@
-local T, C, L, _ = unpack(ShestakUI)
-if C.unitframe.enable ~= true or IsAddOnLoaded("ShestakUI_Heal") then return end
+local T, C, L, _ = unpack(select(2, ...))
+if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	UnitFrames based on oUF_Caellian(by Caellian)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = oUFShestakUI or ShestakUI.oUF
+local oUF = ns.oUF
 
 -- Frame size
 local party_width = 140
@@ -267,8 +267,10 @@ end
 ----------------------------------------------------------------------------------------
 --	Default position of ShestakUI unitframes
 ----------------------------------------------------------------------------------------
-oUF:RegisterStyle("ShestakDPS", Shared)
 oUF:Factory(function(self)
+	if SavedOptions.RaidLayout ~= "DPS" then return end
+
+	oUF:RegisterStyle("ShestakDPS", Shared)
 	oUF:SetActiveStyle("ShestakDPS")
 	if C.raidframe.show_party == true then
 		-- Party

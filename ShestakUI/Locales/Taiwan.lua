@@ -110,6 +110,9 @@ L_MAP_FOG = "地圖全亮"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日曆"
+L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
+L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
+L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
 
 -- Addons list
 L_ALOAD_RL = "重新加載UI"
@@ -278,7 +281,7 @@ L_INFO_SKIN_DISABLED2 = " 已禁用"
 L_POPUP_INSTALLUI = "該角色首次使用ShestakUI.你必須重新加載UI來配置."
 L_POPUP_RESETUI = "你確定要重新加載ShestakUI?"
 L_POPUP_RESETSTATS = "你確定要重置本次遊戲時間和金幣收益統計數據嗎?"
-L_POPUP_SWITCH_RAID = "多個團隊樣式被加載,請選擇一個樣式."
+L_POPUP_SWITCH_RAID = "Select Raid layout." -- Needs review
 L_POPUP_DISBAND_RAID = "你確定要解散團隊?"
 L_POPUP_DISABLEUI = "ShestakUI並不支援此解析度, 你想要停用ShestakUI嗎? (若果您想要嘗試其他解析度, 請按取消)"
 L_POPUP_SETTINGS_ALL = "應用所有的UI設置(DBM/DXE, Skada and MSBT)?"

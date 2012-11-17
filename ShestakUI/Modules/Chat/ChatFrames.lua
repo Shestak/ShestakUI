@@ -182,7 +182,7 @@ local function SetChatStyle(frame)
 		CombatLogQuickButtonFrame_CustomProgressBar:SetPoint("TOPLEFT", CombatLogQuickButtonFrame_Custom.backdrop, 2, -2)
 		CombatLogQuickButtonFrame_CustomProgressBar:SetPoint("BOTTOMRIGHT", CombatLogQuickButtonFrame_Custom.backdrop, -2, 2)
 		CombatLogQuickButtonFrame_CustomProgressBar:SetStatusBarTexture(C.media.texture)
-		CombatLogQuickButtonFrameButton1:SetPoint("BOTTOM", 0, 0) -- Fix
+		CombatLogQuickButtonFrameButton1:SetPoint("BOTTOM", 0, 0)
 	end
 
 	if _G[chat] ~= _G["ChatFrame2"] then

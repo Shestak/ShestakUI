@@ -284,7 +284,7 @@ L_GUI_NAMEPLATE_NEAR_COLOR = "Losing/Gaining threat color"
 L_GUI_NAMEPLATE_BAD_COLOR = "Bad threat color, varies depending if your a tank or dps/heal"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Show debuffs (Abbreviated names must be turned off)"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Debuffs size"
-L_GUI_NAMEPLATE_HEALER_ICON = "Show healer icon on all enemy healers nameplate in battlegrounds"
+L_GUI_NAMEPLATE_HEALER_ICON = "Show icon above enemy healers nameplate in battlegrounds"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Enable action bars"
@@ -391,8 +391,8 @@ L_GUI_UF_PLAYER_PARTY = "Show player frame in party"
 L_GUI_UF_SHOW_TANK = "Show raid tanks"
 L_GUI_UF_SHOW_TANK_TT = "Show raid tanks target target"
 L_GUI_UF_RAID_GROUP = "Number of groups in raid"
-L_GUI_UF_RAID_VERTICAL_GROUP = "Vertical raid groups (only for ShestakUI_Heal)"
 L_GUI_UF_RAID_PORTRAITS = "RAID 프레임에 초상화를 활성화" -- Goooooooooogle translated
+L_GUI_UF_RAID_VERTICAL_GROUP = "Vertical raid groups (only for heal layout)"
 L_GUI_UF_ICONS_LEADER = "Leader icon, assistant icon, master loot icon on frames"
 L_GUI_UF_ICONS_ROLE = "Role icon on frames"
 L_GUI_UF_ICONS_RAID_MARK = "Raid marks"

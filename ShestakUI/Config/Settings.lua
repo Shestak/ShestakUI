@@ -364,7 +364,7 @@ C["nameplate"] = {
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
 	["track_auras"] = false,					-- Show debuffs
 	["auras_size"] = 22,						-- Debuffs size
-	["healer_icon"] = true,						-- Show healer icon on all enemy healers nameplate in battlegrounds
+	["healer_icon"] = true,						-- Show icon above enemy healers nameplate in battlegrounds
 }
 
 ----------------------------------------------------------------------------------------
@@ -442,9 +442,9 @@ C["unitframe"] = {
 	["show_focus"] = true,						-- Show focus frame
 	["show_target_target"] = true,				-- Show target target frame
 	["show_boss"] = true,						-- Show boss frames
-	["boss_on_right"] = true,					-- Set true for ShestakUI_DPS
+	["boss_on_right"] = true,					-- Boss frames on the right
 	["show_arena"] = true,						-- Show arena frames
-	["arena_on_right"] = true,					-- Set true for ShestakUI_DPS
+	["arena_on_right"] = true,					-- Arena frames on the right
 	-- Icons
 	["icons_pvp"] = true,						-- Mouseover pvp text(not icons) on player and target frames
 	["icons_combat"] = true,					-- Combat icon
@@ -504,9 +504,9 @@ C["raidframe"] = {
 	["raid_tanks"] = true,						-- Show raid tanks
 	["raid_tanks_tt"] = false,					-- Show raid tanks target target
 	["raid_groups"] = 5,						-- Number of groups in raid
-	["raid_groups_vertical"] = false,			-- Vertical raid groups(only for ShestakUI_Heal)
 	-- Portraits
 	["raid_portraits"] = false,					-- Enable portraits on raid frames
+	["raid_groups_vertical"] = false,			-- Vertical raid groups(only for heal layout)
 	-- Icons
 	["icons_role"] = true,						-- Role icon on frames
 	["icons_raid_mark"] = true,					-- Raid mark icons on frames

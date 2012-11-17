@@ -110,6 +110,9 @@ L_MAP_FOG = "Fog of War" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendario"
+L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
+L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
+L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
 
 -- Addons list
 L_ALOAD_RL = "Recargar UI"
@@ -278,7 +281,7 @@ L_INFO_SKIN_DISABLED2 = " esta desactivado."
 L_POPUP_INSTALLUI = "Es la primera vez que usas ShestakUI con este personaje. Usted debe volver a cargar la interfaz de usuario para configurarlo."
 L_POPUP_RESETUI = "¿Estás seguro de que desea restablecer ShestakUI?"
 L_POPUP_RESETSTATS = "¿Estás seguro de que quieres reiniciar las estadísticas de tiempo empleado en el juego y oro adquirido?"
-L_POPUP_SWITCH_RAID = "Hay activos 2 estilos para banda, por favor selecciona uno."
+L_POPUP_SWITCH_RAID = "Select Raid layout." -- Needs review
 L_POPUP_DISBAND_RAID = "¿Estás seguro de que quieres disolver el grupo?"
 L_POPUP_DISABLEUI = "ShestakUI no funciona con esta resolución, ¿Quieres desactivar ShestakUI? (Pulsa cancelar si quieres probar otra resolución)"
 L_POPUP_SETTINGS_ALL = "¿Aplicar modificaciones para todos los addons? (DBM/DXE, Skada o MSBT)"

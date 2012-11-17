@@ -5,8 +5,7 @@ if C.minimap.enable ~= true then return end
 --	Switch layout mouseover button on minimap
 ----------------------------------------------------------------------------------------
 local switch = CreateFrame("Button", "SwitchLayout", UIParent)
-switch:SetTemplate("Transparent")
-switch:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+switch:SetTemplate("ClassColor")
 if C.actionbar.toggle_mode == true then
 	switch:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
 else
@@ -20,17 +19,17 @@ switch.t:SetTexture("Interface\\LFGFrame\\LFGROLE")
 switch.t:SetPoint("TOPLEFT", switch, 2, -2)
 switch.t:SetPoint("BOTTOMRIGHT", switch, -2, 2)
 
-switch:SetScript("OnClick", function()
-	if IsAddOnLoaded("ShestakUI_DPS") then
-		DisableAddOn("ShestakUI_DPS")
-		EnableAddOn("ShestakUI_Heal")
+switch:EnableMouse(true)
+switch:RegisterForClicks("AnyUp")
+switch:SetScript("OnClick", function(self, button)
+	if button == "LeftButton" then
+		SavedOptions.RaidLayout = "HEAL"
 		ReloadUI()
-	elseif IsAddOnLoaded("ShestakUI_Heal") then
-		DisableAddOn("ShestakUI_Heal")
-		EnableAddOn("ShestakUI_DPS")
+	elseif button == "RightButton" then
+		SavedOptions.RaidLayout = "DPS"
 		ReloadUI()
-	elseif not IsAddOnLoaded("ShestakUI_Heal") and not IsAddOnLoaded("ShestakUI_DPS") then
-		EnableAddOn("ShestakUI_Heal")
+	elseif button == "MiddleButton" then
+		SavedOptions.RaidLayout = "NONE"
 		ReloadUI()
 	end
 end)
@@ -38,19 +37,30 @@ end)
 switch:SetScript("OnEnter", function()
 	if InCombatLockdown() then return end
 	switch:FadeIn()
+	GameTooltip:SetOwner(switch, "ANCHOR_LEFT")
+	GameTooltip:AddLine(RAID_FRAMES_LABEL)
+	GameTooltip:AddLine(" ")
+	GameTooltip:AddLine(L_MINIMAP_HEAL_LAYOUT)
+	GameTooltip:AddLine(L_MINIMAP_DPS_LAYOUT)
+	GameTooltip:AddLine(L_MINIMAP_BLIZZ_LAYOUT)
+	GameTooltip:Show()
 end)
 
 switch:SetScript("OnLeave", function()
 	switch:FadeOut()
+	GameTooltip:Hide()
 end)
 
 switch:RegisterEvent("PLAYER_LOGIN")
 switch:SetScript("OnEvent", function(self)
-	if IsAddOnLoaded("ShestakUI_DPS") then
+	if SavedOptions.RaidLayout == "DPS" then
 		switch.t:SetTexCoord(0.25, 0.5, 0, 1)
-	elseif IsAddOnLoaded("ShestakUI_Heal") then
+	elseif SavedOptions.RaidLayout == "HEAL" then
 		switch.t:SetTexCoord(0.75, 1, 0, 1)
-	elseif not IsAddOnLoaded("ShestakUI_Heal") and not IsAddOnLoaded("ShestakUI_DPS") then
+	elseif SavedOptions.RaidLayout == "NONE" then
+		switch.t:SetTexture("Interface\\ChatFrame\\UI-ChatIcon-Blizz")
+		switch.t:SetTexCoord(0.2, 0.8, -0.1, 1.1)
+	elseif SavedOptions.RaidLayout == "UNKNOWN" then
 		switch.t:SetTexture("Interface\\InventoryItems\\WoWUnknownItem01")
 		switch.t:SetTexCoord(0.2, 0.8, 0.2, 0.8)
 	end

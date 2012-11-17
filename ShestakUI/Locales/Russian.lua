@@ -110,6 +110,9 @@ L_MAP_FOG = "Туман войны"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Календарь"
+L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
+L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
+L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
 
 -- Addons list
 L_ALOAD_RL = "Перезагрузить"
@@ -278,7 +281,7 @@ L_INFO_SKIN_DISABLED2 = " выключена."
 L_POPUP_INSTALLUI = "Это первый запуск ShestakUI для этого персонажа. Необходимо перезагрузить интерфейс для его настройки."
 L_POPUP_RESETUI = "Вы уверены, что хотите сбросить настройки ShestakUI?"
 L_POPUP_RESETSTATS = "Вы уверены, что хотите сбросить статистику золота и проведенного времени в игре?"
-L_POPUP_SWITCH_RAID = "Обе рейдовые раскладки активны, пожалуйста, выберите одну."
+L_POPUP_SWITCH_RAID = "Выберите рейдовую раскладку."
 L_POPUP_DISBAND_RAID = "Вы уверены, что хотите распустить группу?"
 L_POPUP_DISABLEUI = "ShestakUI не работает на этом разрешении, хотите отключить ShestakUI? (Отмена, если хотите попробовать другое разрешение)"
 L_POPUP_SETTINGS_ALL = "Применить настройки для всех модификаций? (DBM/DXE, Skada и MSBT)"
