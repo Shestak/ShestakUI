@@ -183,6 +183,7 @@ local function InstallUI()
 	SavedPositions = {}
 	SavedOptionsPerChar = {}
 
+	SavedOptions.RaidLayout = "UNKNOWN"
 	SavedOptionsPerChar.Install = true
 	SavedOptionsPerChar.FogOfWar = false
 	SavedOptionsPerChar.AutoInvite = false
@@ -220,9 +221,9 @@ StaticPopupDialogs.DISABLE_UI = {
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = DisableUI,
+	showAlert = true,
 	timeout = 0,
 	whileDead = 1,
-	showAlert = true,
 	hideOnEscape = true,
 	preferredIndex = 5,
 }
@@ -233,9 +234,9 @@ StaticPopupDialogs.RESET_UI = {
 	button2 = CANCEL,
 	OnAccept = InstallUI,
 	OnCancel = function() SavedOptionsPerChar.Install = true end,
+	showAlert = true,
 	timeout = 0,
 	whileDead = 1,
-	showAlert = true,
 	hideOnEscape = true,
 	preferredIndex = 5,
 }
@@ -245,9 +246,9 @@ StaticPopupDialogs.RESET_STATS = {
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = function() SavedStats = {} ReloadUI() end,
+	showAlert = true,
 	timeout = 0,
 	whileDead = 1,
-	showAlert = true,
 	hideOnEscape = true,
 	preferredIndex = 5,
 }
@@ -256,8 +257,10 @@ StaticPopupDialogs.SWITCH_RAID = {
 	text = L_POPUP_SWITCH_RAID,
 	button1 = DAMAGER,
 	button2 = HEALER,
-	OnAccept = function() DisableAddOn("ShestakUI_Heal") EnableAddOn("ShestakUI_DPS") ReloadUI() end,
-	OnCancel = function() EnableAddOn("ShestakUI_Heal") DisableAddOn("ShestakUI_DPS") ReloadUI() end,
+	button3 = "Blizzard",
+	OnAccept = function() SavedOptions.RaidLayout = "DPS" ReloadUI() end,
+	OnCancel = function() SavedOptions.RaidLayout = "HEAL" ReloadUI() end,
+	OnAlt = function() SavedOptions.RaidLayout = "NONE" ReloadUI() end,
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
@@ -283,6 +286,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if SavedPositions == nil then SavedPositions = {} end
 	if SavedAddonProfiles == nil then SavedAddonProfiles = {} end
 	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
+	if SavedOptions.RaidLayout == nil then SavedOptions.RaidLayout = "UNKNOWN" end
 	if SavedOptionsPerChar.FogOfWar == nil then SavedOptionsPerChar.FogOfWar = false end
 	if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
 	if SavedOptionsPerChar.Archaeology == nil then SavedOptionsPerChar.Archaeology = false end
@@ -311,7 +315,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		end
 	end
 
-	if IsAddOnLoaded("ShestakUI_DPS") and IsAddOnLoaded("ShestakUI_Heal") then
+	if SavedOptions.RaidLayout == "UNKNOWN" then
 		StaticPopup_Show("SWITCH_RAID")
 	end
 

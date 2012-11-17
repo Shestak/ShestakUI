@@ -16,21 +16,22 @@ switch:SetSize(19, 19)
 switch:SetAlpha(0)
 
 switch.t = switch:CreateTexture(nil, "OVERLAY")
-switch.t:SetTexture("Interface\\LFGFrame\\LFGROLE")
+switch.t:SetTexture("Interface\\Icons\\achievement_guildperk_quick and dead")
+switch.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 switch.t:SetPoint("TOPLEFT", switch, 2, -2)
 switch.t:SetPoint("BOTTOMRIGHT", switch, -2, 2)
 
-switch:SetScript("OnClick", function()
-	if IsAddOnLoaded("ShestakUI_DPS") then
-		DisableAddOn("ShestakUI_DPS")
-		EnableAddOn("ShestakUI_Heal")
+switch:EnableMouse(true)
+switch:RegisterForClicks("AnyUp")
+switch:SetScript("OnClick", function(self, button)
+	if button == "LeftButton" then
+		SavedOptions.RaidLayout = "HEAL"
 		ReloadUI()
-	elseif IsAddOnLoaded("ShestakUI_Heal") then
-		DisableAddOn("ShestakUI_Heal")
-		EnableAddOn("ShestakUI_DPS")
+	elseif button == "RightButton" then
+		SavedOptions.RaidLayout = "DPS"
 		ReloadUI()
-	elseif not IsAddOnLoaded("ShestakUI_Heal") and not IsAddOnLoaded("ShestakUI_DPS") then
-		EnableAddOn("ShestakUI_Heal")
+	elseif button == "MiddleButton" then
+		SavedOptions.RaidLayout = "NONE"
 		ReloadUI()
 	end
 end)
@@ -42,18 +43,6 @@ end)
 
 switch:SetScript("OnLeave", function()
 	switch:FadeOut()
-end)
-
-switch:RegisterEvent("PLAYER_LOGIN")
-switch:SetScript("OnEvent", function(self)
-	if IsAddOnLoaded("ShestakUI_DPS") then
-		switch.t:SetTexCoord(0.25, 0.5, 0, 1)
-	elseif IsAddOnLoaded("ShestakUI_Heal") then
-		switch.t:SetTexCoord(0.75, 1, 0, 1)
-	elseif not IsAddOnLoaded("ShestakUI_Heal") and not IsAddOnLoaded("ShestakUI_DPS") then
-		switch.t:SetTexture("Interface\\InventoryItems\\WoWUnknownItem01")
-		switch.t:SetTexCoord(0.2, 0.8, 0.2, 0.8)
-	end
 end)
 
 ----------------------------------------------------------------------------------------
