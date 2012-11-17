@@ -110,6 +110,9 @@ L_MAP_FOG = "Fog of War" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendrier"
+L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
+L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
+L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
 
 -- Addons list
 L_ALOAD_RL = "Recharger l'interface"
