@@ -29,7 +29,7 @@ local function Shared(self, unit)
 	self.menu = T.SpawnMenu
 
 	-- Backdrop for every units
-	self:CreateBackdrop("Default")
+	self:CreateBackdrop("Default", "Shadow")
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", nil, self)
@@ -130,6 +130,8 @@ local function Shared(self, unit)
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:SetSize(12, 12)
 		self.LFDRole:SetPoint("TOP", self.Health, 0, 8)
+		
+		if C.media.tank and C.media.healer and C.media.dps then self.LFDRole.Override = T.UpdateLFDRole end
 	end
 
 	-- Ready check icons
@@ -283,8 +285,8 @@ end
 oUF:Factory(function(self)
 	if SavedOptions.RaidLayout ~= "HEAL" then return end
 
-	oUF:RegisterStyle("ShestakHeal", Shared)
-	oUF:SetActiveStyle("ShestakHeal")
+	oUF:RegisterStyle("DarkShestakHeal", Shared)
+	oUF:SetActiveStyle("DarkShestakHeal")
 	if C.raidframe.show_party == true then
 		-- Party
 		local party = self:SpawnHeader("oUF_Party", nil, "custom [@raid6,exists][petbattle] hide;show",
@@ -444,7 +446,11 @@ oUF:Factory(function(self)
 				"groupFilter", "MAINTANK",
 				"template", mt_template
 			)
-			raidtank:SetPoint(unpack(C.position.unitframes.tank))
+			if C.actionbar.panels == true then
+				raidtank:SetPoint(C.position.unitframes.tank[1], C.position.unitframes.tank[2], C.position.unitframes.tank[3], C.position.unitframes.tank[4], C.position.unitframes.tank[5] + 3)
+			else
+				raidtank:SetPoint(unpack(C.position.unitframes.tank))
+			end
 		end
 	end
 end)
