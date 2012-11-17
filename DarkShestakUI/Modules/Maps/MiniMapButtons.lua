@@ -16,21 +16,22 @@ switch:SetSize(19, 19)
 switch:SetAlpha(0)
 
 switch.t = switch:CreateTexture(nil, "OVERLAY")
-switch.t:SetTexture("Interface\\LFGFrame\\LFGROLE")
+switch.t:SetTexture("Interface\\Icons\\achievement_guildperk_quick and dead")
+switch.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 switch.t:SetPoint("TOPLEFT", switch, 2, -2)
 switch.t:SetPoint("BOTTOMRIGHT", switch, -2, 2)
 
-switch:SetScript("OnClick", function()
-	if IsAddOnLoaded("DarkShestakUI_DPS") then
-		DisableAddOn("DarkShestakUI_DPS")
-		EnableAddOn("DarkShestakUI_Heal")
+switch:EnableMouse(true)
+switch:RegisterForClicks("AnyUp")
+switch:SetScript("OnClick", function(self, button)
+	if button == "LeftButton" then
+		SavedOptions.RaidLayout = "HEAL"
 		ReloadUI()
-	elseif IsAddOnLoaded("DarkShestakUI_Heal") then
-		DisableAddOn("DarkShestakUI_Heal")
-		EnableAddOn("DarkShestakUI_DPS")
+	elseif button == "RightButton" then
+		SavedOptions.RaidLayout = "DPS"
 		ReloadUI()
-	elseif not IsAddOnLoaded("DarkShestakUI_Heal") and not IsAddOnLoaded("DarkShestakUI_DPS") then
-		EnableAddOn("DarkShestakUI_Heal")
+	elseif button == "MiddleButton" then
+		SavedOptions.RaidLayout = "NONE"
 		ReloadUI()
 	end
 end)
@@ -44,17 +45,6 @@ switch:SetScript("OnLeave", function()
 	switch:FadeOut()
 end)
 
-switch:RegisterEvent("PLAYER_LOGIN")
-switch:SetScript("OnEvent", function(self)
-	if IsAddOnLoaded("DarkShestakUI_DPS") then
-		switch.t:SetTexCoord(0.25, 0.5, 0, 1)
-	elseif IsAddOnLoaded("DarkShestakUI_Heal") then
-		switch.t:SetTexCoord(0.75, 1, 0, 1)
-	elseif not IsAddOnLoaded("DarkShestakUI_Heal") and not IsAddOnLoaded("DarkShestakUI_DPS") then
-		switch.t:SetTexture("Interface\\InventoryItems\\WoWUnknownItem01")
-		switch.t:SetTexCoord(0.2, 0.8, 0.2, 0.8)
-	end
-end)
 
 ----------------------------------------------------------------------------------------
 --	Farm mode for minimap(by Elv22)

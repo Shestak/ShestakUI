@@ -1,17 +1,17 @@
-local T, C, L, _ = unpack(ShestakUI)
-if C.unitframe.enable ~= true or IsAddOnLoaded("DarkShestakUI_Heal") then return end
+local T, C, L, _ = unpack(select(2, ...))
+if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	UnitFrames based on oUF_Caellian(by Caellian)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = oUFDarkShestakUI or DarkShestakUI.oUF
+local oUF = ns.oUF
 
 -- Frame size
 local party_width = 140
-local party_height = 21
+local party_height = 27
 local partytarget_width = 30
-local partytarget_height = 21
+local partytarget_height = 27
 local unit_width = 104
 local unit_height = 17
 
@@ -33,14 +33,14 @@ local function Shared(self, unit)
 	self.menu = T.SpawnMenu
 
 	-- Backdrop for every units
-	self:CreateBackdrop("Default", "Shadow")
+	self:CreateBackdrop("Default")
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", nil, self)
 	self.Health:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 	self.Health:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Health:SetHeight(21)
+		self.Health:SetHeight(27)
 	elseif unit == "tank" then
 		self.Health:SetHeight(23)
 	elseif unit == "raid" then
@@ -95,15 +95,8 @@ local function Shared(self, unit)
 		else
 			self.Power:SetHeight(2)
 		end
-		if unit == "party" then
-			self.Power:CreateBackdrop("Default", "Shadow")
-			self.Power:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-			self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 5, -1)
-			self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", -5, -1)
-		else
-			self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
-			self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
-		end
+		self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
+		self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
 		self.Power:SetStatusBarTexture(C.media.texture)
 
 		self.Power.frequentUpdates = true
@@ -156,8 +149,6 @@ local function Shared(self, unit)
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:SetSize(12, 12)
 		self.LFDRole:SetPoint("TOPRIGHT", self.Health, 2, 5)
-		
-		self.LFDRole.Override = T.UpdateLFDRole
 	end
 
 	-- Leader/Assistant/ML icons
@@ -202,7 +193,7 @@ local function Shared(self, unit)
 
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then
 		self.Debuffs = CreateFrame("Frame", nil, self)
-		self.Debuffs:SetPoint("TOPLEFT", self, "BOTTOMLEFT", -2, -11)
+		self.Debuffs:SetPoint("TOPLEFT", self, "BOTTOMLEFT", -2, -5)
 		self.Debuffs:SetHeight(18)
 		self.Debuffs:SetWidth(144)
 		self.Debuffs.size = T.Scale(18)
@@ -238,7 +229,6 @@ local function Shared(self, unit)
 		end
 		mhpb:SetStatusBarTexture(C.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
-		mhpb:SetFrameLevel(self.Health:GetFrameLevel())
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
@@ -246,7 +236,6 @@ local function Shared(self, unit)
 		ohpb:SetWidth(mhpb:GetWidth())
 		ohpb:SetStatusBarTexture(C.media.texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.2)
-		ohpb:SetFrameLevel(self.Health:GetFrameLevel())
 
 		self.HealPrediction = {
 			myBar = mhpb,
@@ -274,9 +263,11 @@ end
 ----------------------------------------------------------------------------------------
 --	Default position of ShestakUI unitframes
 ----------------------------------------------------------------------------------------
-oUF:RegisterStyle("DarkShestakDPS", Shared)
 oUF:Factory(function(self)
-	oUF:SetActiveStyle("DarkShestakDPS")
+	if SavedOptions.RaidLayout ~= "DPS" then return end
+
+	oUF:RegisterStyle("ShestakDPS", Shared)
+	oUF:SetActiveStyle("ShestakDPS")
 	if C.raidframe.show_party == true then
 		-- Party
 		local party = self:SpawnHeader("oUF_PartyDPS", nil, "custom [@raid6,exists][petbattle] hide;show",
@@ -291,7 +282,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(34),
+			"yOffset", T.Scale(28),
 			"point", "BOTTOM"
 		)
 		party:SetPoint(unpack(C.position.unitframes.party_dps))
@@ -310,7 +301,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(34),
+			"yOffset", T.Scale(28),
 			"point", "BOTTOM"
 		)
 		partytarget:SetPoint("TOPLEFT", party, "TOPRIGHT", 7, 0)
@@ -330,7 +321,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(34),
+			"yOffset", T.Scale(28),
 			"point", "BOTTOM"
 		)
 
@@ -406,10 +397,6 @@ oUF:Factory(function(self)
 			"groupFilter", "MAINTANK",
 			"template", mt_template
 		)
-		if C.actionbar.panels == true then
-			raidtank:SetPoint(C.position.unitframes.tank[1], C.position.unitframes.tank[2], C.position.unitframes.tank[3], C.position.unitframes.tank[4], C.position.unitframes.tank[5] + 3)
-		else
-			raidtank:SetPoint(unpack(C.position.unitframes.tank))
-		end
+		raidtank:SetPoint(unpack(C.position.unitframes.tank))
 	end
 end)
