@@ -6,7 +6,6 @@ if C.minimap.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local switch = CreateFrame("Button", "SwitchLayout", UIParent)
 switch:SetTemplate("Transparent")
-switch:SetBackdropBorderColor(unpack(C.media.border_color))
 if C.actionbar.toggle_mode == true then
 	switch:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 18)
 else
@@ -16,8 +15,7 @@ switch:SetSize(19, 19)
 switch:SetAlpha(0)
 
 switch.t = switch:CreateTexture(nil, "OVERLAY")
-switch.t:SetTexture("Interface\\Icons\\achievement_guildperk_quick and dead")
-switch.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+switch.t:SetTexture("Interface\\LFGFrame\\LFGROLE")
 switch.t:SetPoint("TOPLEFT", switch, 2, -2)
 switch.t:SetPoint("BOTTOMRIGHT", switch, -2, 2)
 
@@ -39,12 +37,34 @@ end)
 switch:SetScript("OnEnter", function()
 	if InCombatLockdown() then return end
 	switch:FadeIn()
+	GameTooltip:SetOwner(switch, "ANCHOR_LEFT")
+	GameTooltip:AddLine(RAID_FRAMES_LABEL)
+	GameTooltip:AddLine(" ")
+	GameTooltip:AddLine(L_MINIMAP_HEAL_LAYOUT)
+	GameTooltip:AddLine(L_MINIMAP_DPS_LAYOUT)
+	GameTooltip:AddLine(L_MINIMAP_BLIZZ_LAYOUT)
+	GameTooltip:Show()
 end)
 
 switch:SetScript("OnLeave", function()
 	switch:FadeOut()
+	GameTooltip:Hide()
 end)
 
+switch:RegisterEvent("PLAYER_LOGIN")
+switch:SetScript("OnEvent", function(self)
+	if SavedOptions.RaidLayout == "DPS" then
+		switch.t:SetTexCoord(0.25, 0.5, 0, 1)
+	elseif SavedOptions.RaidLayout == "HEAL" then
+		switch.t:SetTexCoord(0.75, 1, 0, 1)
+	elseif SavedOptions.RaidLayout == "NONE" then
+		switch.t:SetTexture("Interface\\ChatFrame\\UI-ChatIcon-Blizz")
+		switch.t:SetTexCoord(0.2, 0.8, -0.1, 1.1)
+	elseif SavedOptions.RaidLayout == "UNKNOWN" then
+		switch.t:SetTexture("Interface\\InventoryItems\\WoWUnknownItem01")
+		switch.t:SetTexCoord(0.2, 0.8, 0.2, 0.8)
+	end
+end)
 
 ----------------------------------------------------------------------------------------
 --	Farm mode for minimap(by Elv22)
