@@ -318,7 +318,7 @@ function T.SkinCheckBox(frame)
 	frame.backdrop:SetPoint("BOTTOMRIGHT", -4, 4)
 
 	if frame.SetHighlightTexture then
-		local highligh = frame:CreateTexture("Frame", nil, self)
+		local highligh = frame:CreateTexture(nil, nil, self)
 		highligh:SetTexture(1, 1, 1, 0.3)
 		highligh:SetPoint("TOPLEFT", frame, 6, -6)
 		highligh:SetPoint("BOTTOMRIGHT", frame, -6, 6)
@@ -326,7 +326,7 @@ function T.SkinCheckBox(frame)
 	end
 
 	if frame.SetCheckedTexture then
-		local checked = frame:CreateTexture("Frame", nil, self)
+		local checked = frame:CreateTexture(nil, nil, self)
 		checked:SetTexture(1, 0.82, 0, 0.8)
 		checked:SetPoint("TOPLEFT", frame, 6, -6)
 		checked:SetPoint("BOTTOMRIGHT", frame, -6, 6)
@@ -334,7 +334,7 @@ function T.SkinCheckBox(frame)
 	end
 
 	if frame.SetDisabledCheckedTexture then
-		local disabled = frame:CreateTexture("Frame", nil, self)
+		local disabled = frame:CreateTexture(nil, nil, self)
 		disabled:SetTexture(0.6, 0.6, 0.6, 0.75)
 		disabled:SetPoint("TOPLEFT", frame, 6, -6)
 		disabled:SetPoint("BOTTOMRIGHT", frame, -6, 6)

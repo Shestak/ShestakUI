@@ -22,7 +22,7 @@ local function LoadSkin()
 	ReforgingFrame.ItemButton.IconTexture:SetPoint("TOPLEFT", 2, -2)
 	ReforgingFrame.ItemButton.IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 
-	local hover = ReforgingFrame.ItemButton:CreateTexture("Frame", nil, self)
+	local hover = ReforgingFrame.ItemButton:CreateTexture(nil, nil, self)
 	hover:SetTexture(1, 1, 1, 0.3)
 	hover:SetSize(ReforgingFrame.ItemButton:GetWidth(), ReforgingFrame.ItemButton:GetHeight())
 	hover:SetPoint("TOPLEFT", ReforgingFrame.ItemButton, 2, -2)

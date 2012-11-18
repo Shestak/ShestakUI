@@ -272,11 +272,9 @@ local function InstallUI()
 	end
 
 	-- Reset saved variables on char
-	SavedOptions = {}
 	SavedPositions = {}
 	SavedOptionsPerChar = {}
 
-	SavedOptions.RaidLayout = "UNKNOWN"
 	SavedOptionsPerChar.Install = true
 	SavedOptionsPerChar.FogOfWar = false
 	SavedOptionsPerChar.AutoInvite = false

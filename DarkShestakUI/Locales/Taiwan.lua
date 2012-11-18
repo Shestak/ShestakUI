@@ -110,9 +110,9 @@ L_MAP_FOG = "地圖全亮"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日曆"
-L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
-L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
-L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
+L_MINIMAP_HEAL_LAYOUT = "左鍵 - 治療 佈局"
+L_MINIMAP_DPS_LAYOUT = "右鍵 - DPS 佈局"
+L_MINIMAP_BLIZZ_LAYOUT = "中鍵 - 默認 佈局"
 
 -- Addons list
 L_ALOAD_RL = "重新加載UI"
