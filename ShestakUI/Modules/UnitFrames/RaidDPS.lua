@@ -305,7 +305,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(19),
+			"yOffset", T.Scale(40),
 			"point", "BOTTOM"
 		)
 		partytarget:SetPoint("TOPLEFT", party, "TOPRIGHT", 7, 0)
@@ -325,7 +325,7 @@ oUF:Factory(function(self)
 			"showPlayer", C.raidframe.player_in_party,
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(19),
+			"yOffset", T.Scale(40),
 			"point", "BOTTOM"
 		)
 

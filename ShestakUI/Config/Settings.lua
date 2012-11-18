@@ -192,9 +192,9 @@ C["reminder"] = {
 C["raidcooldown"] = {
 	["enable"] = true,							-- Enable raid cooldowns
 	["height"] = 15,							-- Bars height
-	["width"] = 186,							-- Bars width(if show_icon = false, bar width+28)
+	["width"] = 130,							-- Bars width(if show_icon = false, bar width+28)
 	["upwards"] = false,						-- Sort upwards bars
-	["show_icon"] = true,						-- Show icons
+	["show_icon"] = false,						-- Show icons
 	["show_inraid"] = true,						-- Show in raid zone
 	["show_inparty"] = true,					-- Show in party zone
 	["show_inarena"] = true,					-- Show in arena zone
