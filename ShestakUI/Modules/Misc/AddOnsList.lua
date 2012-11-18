@@ -328,7 +328,7 @@ function AddonManager:LoadWindow()
 			end
 		end
 
-		local highligh = button:CreateTexture("Frame", nil, self)
+		local highligh = button:CreateTexture(nil, nil, self)
 		highligh:SetTexture(1, 1, 1, 0.3)
 		highligh:SetPoint("TOPLEFT", button, 2, -2)
 		highligh:SetPoint("BOTTOMRIGHT", button, -2, 2)

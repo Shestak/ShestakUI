@@ -12,7 +12,7 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 		end
 	end
 
-	if C.unitframe.enable and (SavedOptions.RaidLayout == "HEAL" or SavedOptions.RaidLayout == "DPS") then
+	if C.unitframe.enable and (SavedOptions and (SavedOptions.RaidLayout == "HEAL" or SavedOptions.RaidLayout == "DPS")) then
 		InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
 		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
 		CompactRaidFrameManager:Kill()

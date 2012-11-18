@@ -268,7 +268,7 @@ end
 --	Default position of ShestakUI unitframes
 ----------------------------------------------------------------------------------------
 oUF:Factory(function(self)
-	if SavedOptions.RaidLayout ~= "DPS" then return end
+	if SavedOptions == nil or SavedOptions.RaidLayout ~= "DPS" then return end
 
 	oUF:RegisterStyle("ShestakDPS", Shared)
 	oUF:SetActiveStyle("ShestakDPS")

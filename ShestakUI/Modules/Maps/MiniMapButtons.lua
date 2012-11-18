@@ -53,14 +53,14 @@ end)
 
 switch:RegisterEvent("PLAYER_LOGIN")
 switch:SetScript("OnEvent", function(self)
-	if SavedOptions.RaidLayout == "DPS" then
+	if SavedOptions and SavedOptions.RaidLayout == "DPS" then
 		switch.t:SetTexCoord(0.25, 0.5, 0, 1)
-	elseif SavedOptions.RaidLayout == "HEAL" then
+	elseif SavedOptions and SavedOptions.RaidLayout == "HEAL" then
 		switch.t:SetTexCoord(0.75, 1, 0, 1)
-	elseif SavedOptions.RaidLayout == "NONE" then
+	elseif SavedOptions and SavedOptions.RaidLayout == "NONE" then
 		switch.t:SetTexture("Interface\\ChatFrame\\UI-ChatIcon-Blizz")
 		switch.t:SetTexCoord(0.2, 0.8, -0.1, 1.1)
-	elseif SavedOptions.RaidLayout == "UNKNOWN" then
+	elseif SavedOptions and SavedOptions.RaidLayout == "UNKNOWN" or SavedOptions == nil then
 		switch.t:SetTexture("Interface\\InventoryItems\\WoWUnknownItem01")
 		switch.t:SetTexCoord(0.2, 0.8, 0.2, 0.8)
 	end

@@ -163,7 +163,7 @@ end
 ----------------------------------------------------------------------------------------
 local function StyleButton(button)
 	if button.SetHighlightTexture and not button.hover then
-		local hover = button:CreateTexture("Frame", nil, self)
+		local hover = button:CreateTexture(nil, nil, self)
 		hover:SetTexture(1, 1, 1, 0.3)
 		hover:SetPoint("TOPLEFT", button, 2, -2)
 		hover:SetPoint("BOTTOMRIGHT", button, -2, 2)
@@ -172,7 +172,7 @@ local function StyleButton(button)
 	end
 
 	if button.SetPushedTexture and not button.pushed then
-		local pushed = button:CreateTexture("Frame", nil, self)
+		local pushed = button:CreateTexture(nil, nil, self)
 		pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
 		pushed:SetPoint("TOPLEFT", button, 2, -2)
 		pushed:SetPoint("BOTTOMRIGHT", button, -2, 2)
@@ -181,7 +181,7 @@ local function StyleButton(button)
 	end
 
 	if button.SetCheckedTexture and not button.checked then
-		local checked = button:CreateTexture("Frame", nil, self)
+		local checked = button:CreateTexture(nil, nil, self)
 		checked:SetTexture(0, 1, 0, 0.3)
 		checked:SetPoint("TOPLEFT", button, 2, -2)
 		checked:SetPoint("BOTTOMRIGHT", button, -2, 2)
