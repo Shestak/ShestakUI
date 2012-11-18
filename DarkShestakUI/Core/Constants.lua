@@ -29,7 +29,7 @@ or T.name == "Шестак" or T.name == "Дефляция" then
 	T.author = true
 end
 
-if (T.name == "Занштек" or T.name == "Гранн" or T.name == "Тёми" or T.name == "Палтасар" or T.name == "Ллевалалуз" or T.name == "Сиамад")
+if (T.name == "Занштек" or T.name == "Гранн" or T.name == "Тёми" or T.name == "Палтасар" or T.name == "Ллевалалуз" or T.name == "Сиамад" or T.name == "Квилинир")
 and T.realm == "Ясеневый лес" then 
 	T.coauthor = true 
 end

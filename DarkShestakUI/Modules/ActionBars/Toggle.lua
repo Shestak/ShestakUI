@@ -405,9 +405,17 @@ for i = 1, 5 do
 			ToggleBar[4]:FadeOut()
 			VehicleButtonAnchor:ClearAllPoints()
 			if SavedOptionsPerChar.SplitBars == true then
-				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+				if C.actionbar.panels == true then
+					VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space - 3, 0)
+				else
+					VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+				end
 			else
-				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+				if C.actionbar.panels == true then
+					VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space - 3, 0)
+				else
+					VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+				end
 			end
 		else
 			ToggleBar[i]:FadeOut()
