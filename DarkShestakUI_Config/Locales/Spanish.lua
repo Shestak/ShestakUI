@@ -323,9 +323,8 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Activar borde por color de clase para los benefi
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Activar marcos de unidades"
-L_GUI_UF_OWN_COLOR = "Color para las barras de vida"
-L_GUI_UF_UF_COLOR = "Color de las Barras de vida (si color para las barras de vida está activo)"
-L_GUI_UF_ENEMY_HEALTH_COLOR = "Barra de vida del enemigo objetivo en rojo"
+L_GUI_UF_UF_COLOR = "Color de las Barras de vida (si color para las barras de vida está activo)" -- Need review
+L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background" -- Need review
 L_GUI_UF_TOTAL_VALUE = "Mostrar vida restante en jugador y objetivo con XXXX/Total"
 L_GUI_UF_COLOR_VALUE = "Colorear valor de Vida/Maná"
 L_GUI_UF_BAR_COLOR_VALUE = "Color de la barra de vida dependiendo de la vida restante"

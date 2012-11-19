@@ -56,7 +56,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						else
 							tbar:SetStatusBarColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB)
 							tbar:SetBackdrop(backdrop)
-							tbar:SetBackdropColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB, 0.2)
+							tbar:SetBackdropColor(unpack(C.unitframe.uf_bgcolor))
 						end
 
 						if bar.enlarged then frame:SetWidth(bar.owner.options.HugeWidth) else frame:SetWidth(bar.owner.options.Width) end
@@ -201,7 +201,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				if not progress.styled then
 					progress:SetStatusBarTexture(C.media.texture)
 					progress:SetBackdrop(backdrop)
-					progress:SetBackdropColor(unpack(C.unitframe.uf_color), 0.2)
+					progress:SetBackdropColor(T.color.r, T.color.g, T.color.b, 0.2)
 					progress.styled = true
 				end
 				progress:ClearAllPoints()
@@ -313,12 +313,12 @@ function T.UploadDBM()
 	DBM_SavedOptions.SpecialWarningX = 0
 	DBM_SavedOptions.SpecialWarningY = 75
 
-	DBT_SavedOptions["DBM"].StartColorR = 0.25
-	DBT_SavedOptions["DBM"].StartColorG = 0.25
-	DBT_SavedOptions["DBM"].StartColorB = 0.25
-	DBT_SavedOptions["DBM"].EndColorR = 0.25
-	DBT_SavedOptions["DBM"].EndColorG = 0.25
-	DBT_SavedOptions["DBM"].EndColorB = 0.25
+	DBT_SavedOptions["DBM"].StartColorR = C.unitframe.uf_color[1]
+	DBT_SavedOptions["DBM"].StartColorG = C.unitframe.uf_color[2]
+	DBT_SavedOptions["DBM"].StartColorB = C.unitframe.uf_color[3]
+	DBT_SavedOptions["DBM"].EndColorR = C.unitframe.uf_color[1]
+	DBT_SavedOptions["DBM"].EndColorG = C.unitframe.uf_color[2]
+	DBT_SavedOptions["DBM"].EndColorB = C.unitframe.uf_color[3]
 	DBT_SavedOptions["DBM"].Scale = 1
 	DBT_SavedOptions["DBM"].HugeScale = 1
 	DBT_SavedOptions["DBM"].BarXOffset = 0

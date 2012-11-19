@@ -323,9 +323,8 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordur
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Activer les barres d'unité"
-L_GUI_UF_OWN_COLOR = "Mettre la couleur de classe comme couleur pour la barre de vie"
-L_GUI_UF_UF_COLOR = "Couleur de la barre de vie"
-L_GUI_UF_ENEMY_HEALTH_COLOR = "Si activée, la couleur des cibles ennemi est rouge"
+L_GUI_UF_UF_COLOR = "Couleur de la barre de vie" -- Need review
+L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background" -- Need review
 L_GUI_UF_TOTAL_VALUE = "Afficher la vie des joueur/cible avec XXXX/Total"
 L_GUI_UF_COLOR_VALUE = "Valeur de vie/mana colorée"
 L_GUI_UF_BAR_COLOR_VALUE = "Couleur de barre de vie en fonction des points de vie"

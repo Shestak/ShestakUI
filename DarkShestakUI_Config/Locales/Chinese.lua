@@ -323,9 +323,8 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "给玩家自身BUFF图标使用职业颜色边�
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "开启单位框架"
-L_GUI_UF_OWN_COLOR = "在预测治疗中显示你的治疗量"
-L_GUI_UF_UF_COLOR = "血量条的颜色 (如果已使用自定义颜色)"
-L_GUI_UF_ENEMY_HEALTH_COLOR = "敌对目标生命条以红色着色"
+L_GUI_UF_UF_COLOR = "血量条的颜色 (如果已使用自定义颜色)" -- Need review
+L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background" -- Need review
 L_GUI_UF_TOTAL_VALUE = "在玩家与目标框体显示详细的文字变化"
 L_GUI_UF_COLOR_VALUE = "生命值与魔法值以职业颜色着色"
 L_GUI_UF_BAR_COLOR_VALUE = "血量条的颜色以目前剩余血量着色"

@@ -142,6 +142,7 @@ function Filger:DisplayActives()
 					bar.statusbar = _G[bar.statusbar:GetName()]
 				else
 					bar.statusbar = CreateFrame("StatusBar", "$parentStatusBar", bar)
+					bar.statusbar:CreateBackdrop("Default")
 					bar.statusbar:SetWidth(self.BarWidth)
 					bar.statusbar:SetHeight(self.IconSize - 10)
 					bar.statusbar:SetStatusBarTexture(C.media.texture)
@@ -158,11 +159,10 @@ function Filger:DisplayActives()
 				if bar.bg then
 					bar.bg = _G[bar.bg:GetName()]
 				else
-					bar.bg = CreateFrame("Frame", "$parentBG", bar.statusbar)
-					bar.bg:SetPoint("TOPLEFT", -2, 2)
-					bar.bg:SetPoint("BOTTOMRIGHT", 2, -2)
-					bar.bg:SetFrameStrata("BACKGROUND")
-					bar.bg:SetTemplate("Default")
+					bar.bg = bar.statusbar:CreateTexture(nil, "BORDER")
+					bar.bg:SetAllPoints()
+					bar.bg:SetTexture(C.media.texture)
+					bar.bg:SetVertexColor(unpack(C.unitframe.uf_bgcolor))
 				end
 
 				if bar.time then

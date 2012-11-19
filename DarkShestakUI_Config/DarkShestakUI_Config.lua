@@ -359,9 +359,8 @@ local function Local(o)
 	-- Unit Frames options
 	if o == "UIConfigunitframe" then o = UNITFRAME_LABEL end
 	if o == "UIConfigunitframeenable" then o = L_GUI_UF_ENABLE end
-	if o == "UIConfigunitframeown_color" then o = L_GUI_UF_OWN_COLOR end
 	if o == "UIConfigunitframeuf_color" then o = L_GUI_UF_UF_COLOR end
-	if o == "UIConfigunitframeenemy_health_color" then o = L_GUI_UF_ENEMY_HEALTH_COLOR end
+	if o == "UIConfigunitframeuf_bgcolor" then o = L_GUI_UF_UF_BGCOLOR end
 	if o == "UIConfigunitframeshow_total_value" then o = L_GUI_UF_TOTAL_VALUE end
 	if o == "UIConfigunitframecolor_value" then o = L_GUI_UF_COLOR_VALUE end
 	if o == "UIConfigunitframebar_color_value" then o = L_GUI_UF_BAR_COLOR_VALUE end

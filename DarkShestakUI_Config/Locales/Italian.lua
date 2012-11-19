@@ -323,9 +323,8 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Colora i bordi dei benefici del giocatore in bas
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Abilita i riquadri delle unità"
-L_GUI_UF_OWN_COLOR = "Scegli il colore per la tua barra della salute"
-L_GUI_UF_UF_COLOR = "Colore barre salute (se è attivo il colore per la tua barra della salute)"
-L_GUI_UF_ENEMY_HEALTH_COLOR = "Colora di rosso la barra della salute dei nemici"
+L_GUI_UF_UF_COLOR = "Colore barre salute (se è attivo il colore per la tua barra della salute)" -- Need review
+L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background" -- Need review
 L_GUI_UF_TOTAL_VALUE = "Visualizza un testo sui riquadri di giocatore e bersaglio con i valori XXXX/Totale"
 L_GUI_UF_COLOR_VALUE = "Valori di salute e mana colorati"
 L_GUI_UF_BAR_COLOR_VALUE = "Barra della salute colorata in base alla salute restante"

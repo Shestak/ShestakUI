@@ -497,44 +497,12 @@ T.PostUpdateHealth = function(health, unit, min, max)
 		end
 	else
 		local r, g, b
-		if (C.unitframe.own_color ~= true and C.unitframe.enemy_health_color and unit == "target" and UnitIsEnemy(unit, "player") and UnitIsPlayer(unit)) or (C.unitframe.own_color ~= true and unit == "target" and not UnitIsPlayer(unit) and UnitIsFriend(unit, "player")) then
-			local c = T.oUF_colors.reaction[UnitReaction(unit, "player")]
-			if c then
-				r, g, b = c[1], c[2], c[3]
-				health:SetStatusBarColor(r, g, b)
-			else
-				r, g, b = 0.3, 0.7, 0.3
-				health:SetStatusBarColor(r, g, b)
-			end
-		end
-		if unit == "pet" or unit == "vehicle" then
-			local _, class = UnitClass("player")
-			local r, g, b = unpack(T.oUF_colors.class[class])
-			if C.unitframe.own_color == true then
-				health:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				health.bg:SetVertexColor(0.1, 0.1, 0.1)
-			else
-				if b then
-					health:SetStatusBarColor(r, g, b)
-					if health.bg and health.bg.multiplier then
-						local mu = health.bg.multiplier
-						health.bg:SetVertexColor(r * mu, g * mu, b * mu)
-					end
-				end
-			end
-		end
 		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
-			if C.unitframe.own_color == true then
-				r, g, b = C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3]
-			else
-				r, g, b = health:GetStatusBarColor()
-			end
+			r, g, b = unpack(C.unitframe.uf_color)
 			local newr, newg, newb = oUF.ColorGradient(min, max, 1, 0, 0, 1, 1, 0, r, g, b)
-
 			health:SetStatusBarColor(newr, newg, newb)
-			if health.bg and health.bg.multiplier then
-				local mu = health.bg.multiplier
-				health.bg:SetVertexColor(newr * mu, newg * mu, newb * mu)
+			if health.bg then
+				health.bg:SetVertexColor(newr, newg, newb, 0.2)
 			end
 		end
 		if min ~= max then
@@ -613,27 +581,12 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 		end
 	else
 		local r, g, b
-		if not UnitIsPlayer(unit) and UnitIsFriend(unit, "player") and C.unitframe.own_color ~= true then
-			local c = T.oUF_colors.reaction[5]
-			local r, g, b = c[1], c[2], c[3]
-			health:SetStatusBarColor(r, g, b)
-			if health.bg and health.bg.multiplier then
-				local mu = health.bg.multiplier
-				health.bg:SetVertexColor(r * mu, g * mu, b * mu)
-			end
-		end
 		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
-			if C.unitframe.own_color == true then
-				r, g, b = C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3]
-			else
-				r, g, b = health:GetStatusBarColor()
-			end
+			r, g, b = unpack(C.unitframe.uf_color)
 			local newr, newg, newb = oUF.ColorGradient(min, max, 1, 0, 0, 1, 1, 0, r, g, b)
-
 			health:SetStatusBarColor(newr, newg, newb)
-			if health.bg and health.bg.multiplier then
-				local mu = health.bg.multiplier
-				health.bg:SetVertexColor(newr * mu, newg * mu, newb * mu)
+			if health.bg then
+				health.bg:SetVertexColor(newr, newg, newb, 0.2)
 			end
 		end
 		if min ~= max then
@@ -1014,7 +967,7 @@ local setBarTicks = function(Castbar, ticknum)
 			if not ticks[k] then
 				ticks[k] = Castbar:CreateTexture(nil, "OVERLAY")
 				ticks[k]:SetTexture(C.media.texture)
-				ticks[k]:SetVertexColor(unpack(C.media.border_color))
+				ticks[k]:SetVertexColor(unpack(C.unitframe.uf_bgcolor))
 				ticks[k]:SetWidth(1)
 				ticks[k]:SetHeight(Castbar:GetHeight())
 				ticks[k]:SetDrawLayer("OVERLAY", 7)
@@ -1073,27 +1026,8 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 			Castbar.Button:SetBackdropBorderColor(0.8, 0, 0)
 		end
 	else
-		if unit == "pet" or unit == "vehicle" then
-			local _, class = UnitClass("player")
-			local r, g, b = unpack(T.oUF_colors.class[class])
-			if C.unitframe.own_color == true then
-				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
-			else
-				if b then
-					Castbar:SetStatusBarColor(r, g, b)
-					Castbar.bg:SetVertexColor(r, g, b, 0.2)
-				end
-			end
-		else
-			if C.unitframe.own_color == true then
-				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
-			else
-				Castbar:SetStatusBarColor(r, g, b)
-				Castbar.bg:SetVertexColor(r, g, b, 0.2)
-			end
-		end
+		Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
+		Castbar.bg:SetVertexColor(unpack(C.unitframe.uf_bgcolor))
 		Castbar.Overlay:SetBackdropBorderColor(unpack(C.media.border_color))
 		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
 			Castbar.Button:SetBackdropBorderColor(unpack(C.media.border_color))
@@ -1146,27 +1080,8 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 			Castbar.Button:SetBackdropBorderColor(0.8, 0, 0)
 		end
 	else
-		if unit == "pet" or unit == "vehicle" then
-			local _, class = UnitClass("player")
-			local r, g, b = unpack(T.oUF_colors.class[class])
-			if C.unitframe.own_color == true then
-				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
-			else
-				if b then
-					Castbar:SetStatusBarColor(r, g, b)
-					Castbar.bg:SetVertexColor(r, g, b, 0.2)
-				end
-			end
-		else
-			if C.unitframe.own_color == true then
-				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
-			else
-				Castbar:SetStatusBarColor(r, g, b)
-				Castbar.bg:SetVertexColor(r, g, b, 0.2)
-			end
-		end
+		Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
+		Castbar.bg:SetVertexColor(unpack(C.unitframe.uf_bgcolor))
 		Castbar.Overlay:SetBackdropBorderColor(unpack(C.media.border_color))
 		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
 			Castbar.Button:SetBackdropBorderColor(unpack(C.media.border_color))

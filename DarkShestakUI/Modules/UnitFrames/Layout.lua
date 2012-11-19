@@ -48,18 +48,11 @@ local function Shared(self, unit)
 	self.Health:SetStatusBarTexture(C.media.texture)
 
 	self.Health.frequentUpdates = true
-	if C.unitframe.own_color == true then
-		self.Health.colorTapping = false
-		self.Health.colorDisconnected = false
-		self.Health.colorClass = false
-		self.Health.colorReaction = false
-		self.Health:SetStatusBarColor(unpack(C.unitframe.uf_color))
-	else
-		self.Health.colorTapping = true
-		self.Health.colorDisconnected = true
-		self.Health.colorClass = true
-		self.Health.colorReaction = true
-	end
+	self.Health.colorTapping = false
+	self.Health.colorDisconnected = false
+	self.Health.colorClass = false
+	self.Health.colorReaction = false
+	self.Health:SetStatusBarColor(unpack(C.unitframe.uf_color))
 	if C.unitframe.plugins_smooth_bar == true then
 		self.Health.Smooth = true
 	end
@@ -70,11 +63,7 @@ local function Shared(self, unit)
 	self.Health.bg = self.Health:CreateTexture(nil, "BORDER")
 	self.Health.bg:SetAllPoints()
 	self.Health.bg:SetTexture(C.media.texture)
-	if C.unitframe.own_color == true then
-		self.Health.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
-	else
-		self.Health.bg.multiplier = 0.2
-	end
+	self.Health.bg:SetVertexColor(unpack(C.unitframe.uf_bgcolor))
 
 	self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 	if unit == "player" or unit == "pet" or unit == "focus" then
@@ -144,8 +133,8 @@ local function Shared(self, unit)
 	self.Power.bg = self.Power:CreateTexture(nil, "BORDER")
 	self.Power.bg:SetAllPoints()
 	self.Power.bg:SetTexture(C.media.texture)
-	if C.unitframe.own_color == true and unit == "pet" then
-		self.Power.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
+	if unit == "pet" then
+		self.Power.bg:SetVertexColor(unpack(C.unitframe.uf_bgcolor))
 	else
 		self.Power.bg.multiplier = 0.2
 	end
@@ -893,20 +882,12 @@ local function Shared(self, unit)
 		self.Swing:SetPoint("BOTTOMRIGHT", "oUF_Player_Castbar", "TOPRIGHT", 0, 7)
 		self.Swing:SetSize(281, 5)
 		self.Swing:SetStatusBarTexture(C.media.texture)
-		if C.unitframe.own_color == true then
-			self.Swing:SetStatusBarColor(unpack(C.unitframe.uf_color))
-		else
-			self.Swing:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-		end
+		self.Swing:SetStatusBarColor(unpack(C.unitframe.uf_color))
 
 		self.Swing.bg = self.Swing:CreateTexture(nil, "BORDER")
 		self.Swing.bg:SetAllPoints(self.Swing)
 		self.Swing.bg:SetTexture(C.media.texture)
-		if C.unitframe.own_color == true then
-			self.Swing.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
-		else
-			self.Swing.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
-		end
+		self.Swing.bg:SetVertexColor(unpack(C.unitframe.uf_bgcolor))
 
 		self.Swing.Text = T.SetFontString(self.Swing, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.Swing.Text:SetPoint("CENTER", 0, 0)
@@ -1246,16 +1227,7 @@ if C.unitframe.show_arena == true then
 						end
 
 						if class and spec then
-							local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
-							if C.unitframe.own_color == true then
-								f.Health:SetStatusBarColor(unpack(C.unitframe.uf_color))
-							else
-								if color then
-									f.Health:SetStatusBarColor(color.r, color.g, color.b)
-								else
-									f.Health:SetStatusBarColor(unpack(C.unitframe.uf_color))
-								end
-							end
+							f.Health:SetStatusBarColor(unpack(C.unitframe.uf_color))
 							f.Spec:SetText(spec.."  -  "..LOCALIZED_CLASS_NAMES_MALE[class])
 							f:Show()
 						end

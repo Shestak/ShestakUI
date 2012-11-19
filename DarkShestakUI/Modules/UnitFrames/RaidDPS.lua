@@ -56,24 +56,15 @@ local function Shared(self, unit)
 	self.Health.colorTapping = true
 	self.Health.colorDisconnected = true
 	self.Health.colorClassPet = false
-	if C.unitframe.own_color == true then
-		self.Health.colorReaction = false
-		self.Health.colorClass = false
-		self.Health:SetStatusBarColor(unpack(C.unitframe.uf_color))
-	else
-		self.Health.colorReaction = true
-		self.Health.colorClass = true
-	end
+	self.Health.colorReaction = false
+	self.Health.colorClass = false
+	self.Health:SetStatusBarColor(unpack(C.unitframe.uf_color))
 
 	-- Health bar background
 	self.Health.bg = self.Health:CreateTexture(nil, "BORDER")
 	self.Health.bg:SetAllPoints(self.Health)
 	self.Health.bg:SetTexture(C.media.texture)
-	if C.unitframe.own_color == true then
-		self.Health.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
-	else
-		self.Health.bg.multiplier = 0.2
-	end
+	self.Health.bg:SetVertexColor(unpack(C.unitframe.uf_bgcolor))
 
 	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank")) then
 		self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
@@ -108,11 +99,7 @@ local function Shared(self, unit)
 
 		self.Power.frequentUpdates = true
 		self.Power.colorDisconnected = true
-		if C.unitframe.own_color == true then
-			self.Power.colorClass = true
-		else
-			self.Power.colorPower = true
-		end
+		self.Power.colorClass = true
 
 		self.Power.PreUpdate = T.PreUpdatePower
 		self.Power.PostUpdate = T.PostUpdatePower

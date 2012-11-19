@@ -323,9 +323,8 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Окрашивать края положител
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Включить рамки портретов"
-L_GUI_UF_OWN_COLOR = "Использовать свой цвет для полос здоровья"
-L_GUI_UF_UF_COLOR = "Цвет полос здоровья (если включена соответствующая опция)"
-L_GUI_UF_ENEMY_HEALTH_COLOR = "Окрашивать полосу здоровья вражеского игрока в красный"
+L_GUI_UF_UF_COLOR = "Цвет полос здоровья"
+L_GUI_UF_UF_BGCOLOR = "Цвет фона полос здоровья"
 L_GUI_UF_TOTAL_VALUE = "Отображать общее здоровье/энергию"
 L_GUI_UF_COLOR_VALUE = "Цветное значение здоровья/энергии"
 L_GUI_UF_BAR_COLOR_VALUE = "Цвет полосы здоровья по его значению"

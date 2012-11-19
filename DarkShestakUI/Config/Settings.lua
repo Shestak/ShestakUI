@@ -23,7 +23,7 @@ C["media"] = {
 	["whisp_sound"] = [[Interface\AddOns\DarkShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for wispers
 	["warning_sound"] = [[Interface\AddOns\DarkShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
 	["proc_sound"] = [[Interface\AddOns\DarkShestakUI\Media\Sounds\Proc.mp3]],			-- Sound for procs
-	["border_color"] = {0.2, 0.2, 0.2, 1},		-- Color for borders
+	["border_color"] = {0.1, 0.1, 0.1, 1},		-- Color for borders
 	["backdrop_color"] = {0, 0, 0, 1},			-- Color for borders backdrop
 	["overlay_color"] = {0, 0, 0, 0.7},			-- Color for action bars overlay
 }
@@ -423,9 +423,8 @@ C["aura"] = {
 C["unitframe"] = {
 	-- Main
 	["enable"] = true,							-- Enable unit frames
-	["own_color"] = true,						-- Set your color for health bars
-	["uf_color"] = {0.25, 0.25, 0.25},			-- Color for UF if ["own_color"] = true
-	["enemy_health_color"] = true,				-- If enable, enemy target color is red
+	["uf_color"] = {0.1, 0.1, 0.1},				-- Color for UF
+	["uf_bgcolor"] = {0.1, 0.5, 0.9, 0.4},		-- Color for UF background
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
 	["color_value"] = false,					-- Health/mana value is colored
 	["bar_color_value"] = false,				-- Health bar color by current health remaining

@@ -323,9 +323,8 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Enable unit frames"
-L_GUI_UF_OWN_COLOR = "Set your color for health bars"
-L_GUI_UF_UF_COLOR = "Color of Health Bars (if own color is enabled)"
-L_GUI_UF_ENEMY_HEALTH_COLOR = "Enemy target healthbar is red"
+L_GUI_UF_UF_COLOR = "Color of Health Bars"
+L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background"
 L_GUI_UF_TOTAL_VALUE = "Display of info text on player and target with XXXX/Total"
 L_GUI_UF_COLOR_VALUE = "Health/mana value is colored"
 L_GUI_UF_BAR_COLOR_VALUE = "Health bar color by current health remaining"
