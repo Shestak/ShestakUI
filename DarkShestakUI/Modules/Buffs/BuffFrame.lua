@@ -32,8 +32,7 @@ if C.aura.classcolor_border == true then
 	ConsolidatedBuffs.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 end
 
-ConsolidatedBuffsIcon:SetTexture("Interface\\Icons\\Spell_ChargePositive")
-ConsolidatedBuffsIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+ConsolidatedBuffsIcon:SetTexCoord(0.16, 0.34, 0.29, 0.7)
 ConsolidatedBuffsIcon:SetSize(C.aura.player_buff_size - 4, C.aura.player_buff_size - 4)
 
 ConsolidatedBuffsCount:SetPoint("BOTTOMRIGHT", 0, 1)

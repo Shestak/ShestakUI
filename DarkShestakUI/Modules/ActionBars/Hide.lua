@@ -13,7 +13,7 @@ do
 	StanceBarFrame:EnableMouse(false)
 
 	local elements = {
-		MainMenuBar, MainMenuBarArtFrame, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame
+		MainMenuBar, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame
 	}
 	for _, element in pairs(elements) do
 		if element:GetObjectType() == "Frame" then
