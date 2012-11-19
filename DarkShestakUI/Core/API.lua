@@ -12,7 +12,7 @@ local function CreateOverlay(f)
 	local overlay = f:CreateTexture("$parentOverlay", "BORDER", f)
 	overlay:SetPoint("TOPLEFT", 2, -2)
 	overlay:SetPoint("BOTTOMRIGHT", -2, 2)
-	overlay:SetTexture(C.media.blank)
+	overlay:SetTexture(C.media.texture)
 	overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
 	f.overlay = overlay
 end
