@@ -41,7 +41,7 @@ local OnLeave = function(self)
 	elseif emphasis then
 		r, g, b = 1, 0, 0
 	else
-		r, g, b = unpack(C.unitframe.uf_color)
+		r, g, b = 0.2, 0.2, 0.2
 	end
 
 	updateFS(self, emphasis, r, g, b)
@@ -90,7 +90,7 @@ local faneifyTab = function(frame, sel)
 	if i == SELECTED_CHAT_FRAME:GetID() then
 		updateFS(frame, nil, 1, 1, 1)
 	else
-		updateFS(frame, nil, unpack(C.unitframe.uf_color))
+		updateFS(frame, nil, 0.2, 0.2, 0.2)
 	end
 end
 
