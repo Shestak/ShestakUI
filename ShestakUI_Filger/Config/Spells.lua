@@ -1376,6 +1376,8 @@ Filger_Spells = {
 			{spellID = 31803, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Burden of Guilt
 			{spellID = 110300, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Weakened Blows
+			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF", spec = 2},
 			-- Glyph of Dazing Shield
 			{spellID = 63529, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Seal of Justice

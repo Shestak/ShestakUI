@@ -36,7 +36,7 @@ end
 local function InitDestroy(self)
 	local totem = self.TotemBar
 	for i = 1, 4 do
-		local Destroy = CreateFrame("Button",nil, totem[i])
+		local Destroy = CreateFrame("Button", nil, totem[i])
 		Destroy:SetAllPoints(totem[i])
 		Destroy:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 		Destroy.ID = i

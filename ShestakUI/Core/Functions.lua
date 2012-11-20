@@ -1020,7 +1020,7 @@ local setBarTicks = function(Castbar, ticknum)
 				ticks[k]:SetDrawLayer("OVERLAY", 7)
 			end
 			ticks[k]:ClearAllPoints()
-			ticks[k]:SetPoint("CENTER", Castbar, "LEFT", delta * k, 0)
+			ticks[k]:SetPoint("CENTER", Castbar, "RIGHT", -delta * k, 0)
 			ticks[k]:Show()
 		end
 	else

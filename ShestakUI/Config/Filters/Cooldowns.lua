@@ -8,8 +8,10 @@
 if C.raidcooldown.enable == true then
 	T.raid_spells = {
 		[20484] = 600,	-- Rebirth
+		[113269] = 600,	-- Rebirth (Symbiosis)
 		[61999] = 600,	-- Raise Ally
 		[20707] = 600,	-- Soulstone
+		[126393] = 600,	-- Eternal Guardian
 		[90355] = 360,	-- Ancient Hysteria
 		[32182] = 300,	-- Heroism
 		[2825] = 300,	-- Bloodlust
