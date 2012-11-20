@@ -481,6 +481,7 @@ if T.coauthor == true then
 	C["unitframe"].plugins_diminishing = true
 	C["unitframe_class_bar"].vengeance = false
 	C["raidframe"].icons_role = true
+	C["toppanel"].enable = false
 	if T.name == "Тёми" then
 		C["automation"].accept_quest = false
 	end
