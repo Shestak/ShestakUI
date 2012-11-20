@@ -4,8 +4,8 @@ if not IsAddOnLoaded("DarkShestakUI_Config") then return end
 ----------------------------------------------------------------------------------------
 --	Dark ShetakUI color theme
 ----------------------------------------------------------------------------------------
-if GUIConfigAll[T.realm][T.name] == true and not GUIConfig then return end
-if GUIConfigAll[T.realm][T.name] == false and not GUIConfigSettings then return end
+if GUIConfigAll[T.realm][T.name] == true and not GUIConfig then GUIConfig = {} end
+if GUIConfigAll[T.realm][T.name] == false and not GUIConfigSettings then GUIConfigSettings = {} end
 
 
 if GUIConfigAll[T.realm][T.name] == true then
