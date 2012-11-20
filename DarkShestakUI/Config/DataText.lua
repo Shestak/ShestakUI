@@ -5,8 +5,9 @@
 --	BACKUP THIS FILE BEFORE UPDATING!
 ----------------------------------------------------------------------------------------
 local cBN = select(4, GetAddOnInfo("cargBags_Nivaya"))
+local r, g, b = unpack(C.skins.color_theme)
 local function class(string)
-	return format("|cff%02x%02x%02x%s|r", 255 * 1, 255 * 0.82, 255 * 0, string or "")
+	return format("|cff%02x%02x%02x%s|r", 255 * r, 255 * g, 255 * b, string or "")
 end
 
 LPSTAT_FONT = {
