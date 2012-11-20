@@ -111,6 +111,7 @@ C["automation"] = {
 --	Skins options
 ----------------------------------------------------------------------------------------
 C["skins"] = {
+	["color_theme"] = {0.1, 0.5, 0.9, 0.4},		-- Color theme
 	["blizzard_frames"] = true,					-- Blizzard frames skin
 	["shadow"] = true,							-- Shadow on frames
 	["minimap_buttons"] = true,					-- Skin addons icons on minimap
@@ -424,7 +425,6 @@ C["unitframe"] = {
 	-- Main
 	["enable"] = true,							-- Enable unit frames
 	["uf_color"] = {0.1, 0.1, 0.1},				-- Color for UF
-	["uf_bgcolor"] = {0.1, 0.5, 0.9, 0.4},		-- Color for UF background
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
 	["color_value"] = false,					-- Health/mana value is colored
 	["bar_color_value"] = false,				-- Health bar color by current health remaining

@@ -78,6 +78,7 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Lancia benefici con la rotellina del mouse"
 
 -- Skins options
 L_GUI_SKINS = "Restyling"
+L_GUI_SKINS_COLOR_THEME = "Color theme" -- Need review
 L_GUI_SKINS_BLIZZARD = "Attiva il restyling dei riquadri Blizzard"
 L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "Attiva il restyling dei pulsanti delle AddOns sulla minimappa"
@@ -324,7 +325,6 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Colora i bordi dei benefici del giocatore in bas
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Abilita i riquadri delle unità"
 L_GUI_UF_UF_COLOR = "Colore barre salute (se è attivo il colore per la tua barra della salute)" -- Need review
-L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background" -- Need review
 L_GUI_UF_TOTAL_VALUE = "Visualizza un testo sui riquadri di giocatore e bersaglio con i valori XXXX/Totale"
 L_GUI_UF_COLOR_VALUE = "Valori di salute e mana colorati"
 L_GUI_UF_BAR_COLOR_VALUE = "Barra della salute colorata in base alla salute restante"

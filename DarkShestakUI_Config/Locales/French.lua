@@ -78,6 +78,7 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Personnalisation d'addon"
+L_GUI_SKINS_COLOR_THEME = "Color theme" -- Need review
 L_GUI_SKINS_BLIZZARD = "Activer la personnalisation des fenêtres Blizzard"
 L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "Activer la personnalisation des icônes de la minimap"
@@ -324,7 +325,6 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordur
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Activer les barres d'unité"
 L_GUI_UF_UF_COLOR = "Couleur de la barre de vie" -- Need review
-L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background" -- Need review
 L_GUI_UF_TOTAL_VALUE = "Afficher la vie des joueur/cible avec XXXX/Total"
 L_GUI_UF_COLOR_VALUE = "Valeur de vie/mana colorée"
 L_GUI_UF_BAR_COLOR_VALUE = "Couleur de barre de vie en fonction des points de vie"

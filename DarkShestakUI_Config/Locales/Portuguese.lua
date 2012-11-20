@@ -78,6 +78,7 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll"
 
 -- Skins options
 L_GUI_SKINS = "Stylization"
+L_GUI_SKINS_COLOR_THEME = "Color theme" -- Need review
 L_GUI_SKINS_BLIZZARD = "Enable styling Blizzard frames"
 L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "Enable styling addons icons on minimap"
@@ -324,7 +325,6 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs"
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Enable unit frames"
 L_GUI_UF_UF_COLOR = "Color of Health Bars"
-L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background" -- Need review
 L_GUI_UF_TOTAL_VALUE = "Display of info text on player and target with XXXX/Total"
 L_GUI_UF_COLOR_VALUE = "Health/mana value is colored"
 L_GUI_UF_BAR_COLOR_VALUE = "Health bar color by current health remaining"

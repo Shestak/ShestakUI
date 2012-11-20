@@ -78,6 +78,7 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Wirke Stärkungszauber mit Mausrad"
 
 -- Skins options
 L_GUI_SKINS = "Stilisierung"
+L_GUI_SKINS_COLOR_THEME = "Color theme" -- Need review
 L_GUI_SKINS_BLIZZARD = "Aktiviere Styles für Blizzardfenster"
 L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "Aktiviere styling Addonincons an der Minimap"
@@ -324,7 +325,6 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Spielerbuffs"
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Unitframes aktivieren"
 L_GUI_UF_UF_COLOR = "Farbe der Gesundheitsleiste (falls eigene Farbe verwender wird)" -- Need review
-L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background" -- Need review
 L_GUI_UF_TOTAL_VALUE = "Zeige Infotext auf Spieler und Ziel mit XXX/Gesamt"
 L_GUI_UF_COLOR_VALUE = "Lebens/Mana Werte einfärben"
 L_GUI_UF_BAR_COLOR_VALUE = "Lebensbalken nach vorhandenem Leben einfärben"

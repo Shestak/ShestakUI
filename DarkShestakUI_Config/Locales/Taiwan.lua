@@ -78,6 +78,7 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用鼠標滾輪施放Buff"
 
 -- Skins options
 L_GUI_SKINS = "介面樣式"
+L_GUI_SKINS_COLOR_THEME = "Color theme" -- Need review
 L_GUI_SKINS_BLIZZARD = "開啟暴雪默認介面風格增強"
 L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "開啟小地圖插件圖標風格增強"
@@ -324,7 +325,6 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "為自己的BUFF圖標邊框也開啟職業邊�
 -- Unit Frames options
 L_GUI_UF_ENABLE = "開啟單位框架"
 L_GUI_UF_UF_COLOR = "治療條職業著色" -- Need review
-L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background" -- Need review
 L_GUI_UF_TOTAL_VALUE = "在玩家與目標框體顯示詳細的文字變化"
 L_GUI_UF_COLOR_VALUE = "生命值與魔法值以職業顏色著色"
 L_GUI_UF_BAR_COLOR_VALUE = "生命值以現在剩餘生命著色"

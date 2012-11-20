@@ -78,6 +78,7 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "滚动鼠标滚轮自动上buff"
 
 -- Skins options
 L_GUI_SKINS = "介面样式"
+L_GUI_SKINS_COLOR_THEME = "Color theme" -- Need review
 L_GUI_SKINS_BLIZZARD = "开启暴风默认界面风格增强"
 L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "开启小地图插件图标风格增强"
@@ -324,7 +325,6 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "给玩家自身BUFF图标使用职业颜色边�
 -- Unit Frames options
 L_GUI_UF_ENABLE = "开启单位框架"
 L_GUI_UF_UF_COLOR = "血量条的颜色 (如果已使用自定义颜色)" -- Need review
-L_GUI_UF_UF_BGCOLOR = "Color of Health Bars background" -- Need review
 L_GUI_UF_TOTAL_VALUE = "在玩家与目标框体显示详细的文字变化"
 L_GUI_UF_COLOR_VALUE = "生命值与魔法值以职业颜色着色"
 L_GUI_UF_BAR_COLOR_VALUE = "血量条的颜色以目前剩余血量着色"

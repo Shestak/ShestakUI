@@ -162,7 +162,7 @@ function Filger:DisplayActives()
 					bar.bg = bar.statusbar:CreateTexture(nil, "BORDER")
 					bar.bg:SetAllPoints()
 					bar.bg:SetTexture(C.media.texture)
-					bar.bg:SetVertexColor(unpack(C.unitframe.uf_bgcolor))
+					bar.bg:SetVertexColor(unpack(C.skins.color_theme))
 				end
 
 				if bar.time then

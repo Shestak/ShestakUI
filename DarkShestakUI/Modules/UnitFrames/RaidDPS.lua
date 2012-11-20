@@ -64,7 +64,7 @@ local function Shared(self, unit)
 	self.Health.bg = self.Health:CreateTexture(nil, "BORDER")
 	self.Health.bg:SetAllPoints(self.Health)
 	self.Health.bg:SetTexture(C.media.texture)
-	self.Health.bg:SetVertexColor(unpack(C.unitframe.uf_bgcolor))
+	self.Health.bg:SetVertexColor(unpack(C.skins.color_theme))
 
 	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank")) then
 		self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)

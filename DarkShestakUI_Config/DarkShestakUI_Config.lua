@@ -105,6 +105,7 @@ local function Local(o)
 
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
+	if o == "UIConfigskinscolor_theme" then o = L_GUI_SKINS_COLOR_THEME end
 	if o == "UIConfigskinsblizzard_frames" then o = L_GUI_SKINS_BLIZZARD end
 	if o == "UIConfigskinsshadow" then o = L_GUI_SKINS_SHADOW end
 	if o == "UIConfigskinsminimap_buttons" then o = L_GUI_SKINS_MINIMAP_BUTTONS end
@@ -360,7 +361,6 @@ local function Local(o)
 	if o == "UIConfigunitframe" then o = UNITFRAME_LABEL end
 	if o == "UIConfigunitframeenable" then o = L_GUI_UF_ENABLE end
 	if o == "UIConfigunitframeuf_color" then o = L_GUI_UF_UF_COLOR end
-	if o == "UIConfigunitframeuf_bgcolor" then o = L_GUI_UF_UF_BGCOLOR end
 	if o == "UIConfigunitframeshow_total_value" then o = L_GUI_UF_TOTAL_VALUE end
 	if o == "UIConfigunitframecolor_value" then o = L_GUI_UF_COLOR_VALUE end
 	if o == "UIConfigunitframebar_color_value" then o = L_GUI_UF_BAR_COLOR_VALUE end
