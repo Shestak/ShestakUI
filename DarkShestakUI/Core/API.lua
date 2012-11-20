@@ -224,9 +224,9 @@ end
 --	Style buttons function
 ----------------------------------------------------------------------------------------
 T.SetModifiedBackdrop = function(self)
-	self:SetBackdropBorderColor(1, 0.82, 0)
+	self:SetBackdropBorderColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3])
 	if self.overlay then
-		self.overlay:SetVertexColor(1, 0.82, 0, 0.3)
+		self.overlay:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.3)
 	end
 end
 

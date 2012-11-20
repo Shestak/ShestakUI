@@ -135,9 +135,9 @@ local function LoadSkin()
 		for i = 1, GetNumSpecializations(nil, self.isPet) do
 			local bu = self["specButton"..i]
 			if bu.selected then
-				bu.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
-				bu.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
-				bu.border.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
+				bu.backdrop:SetBackdropBorderColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 1)
+				bu.backdrop.overlay:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.3)
+				bu.border.backdrop:SetBackdropBorderColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 1)
 			else
 				bu.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 				bu.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
@@ -216,18 +216,18 @@ local function LoadSkin()
 			for j = 1, NUM_TALENT_COLUMNS do
 				local bu = _G["PlayerTalentFrameTalentsTalentRow"..i.."Talent"..j]
 				if bu.knownSelection:IsShown() then
-					bu.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
-					bu.bg.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
-					bu.bg.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
+					bu.backdrop:SetBackdropBorderColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 1)
+					bu.bg.backdrop:SetBackdropBorderColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 1)
+					bu.bg.backdrop.overlay:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.3)
 				else
 					bu.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 					bu.bg.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 					bu.bg.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
 				end
 				if bu.learnSelection:IsShown() then
-					bu.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
-					bu.bg.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
-					bu.bg.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
+					bu.backdrop:SetBackdropBorderColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 1)
+					bu.bg.backdrop:SetBackdropBorderColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 1)
+					bu.bg.backdrop.overlay:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.3)
 				end
 			end
 		end
