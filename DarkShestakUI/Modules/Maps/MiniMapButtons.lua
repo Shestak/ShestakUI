@@ -54,9 +54,19 @@ end)
 switch:RegisterEvent("PLAYER_LOGIN")
 switch:SetScript("OnEvent", function(self)
 	if SavedOptions and SavedOptions.RaidLayout == "DPS" then
-		switch.t:SetTexCoord(0.25, 0.5, 0, 1)
+		if C.media.dps then
+			switch.t:SetTexture(C.media.dps)
+			switch.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		else
+			switch.t:SetTexCoord(0.25, 0.5, 0, 1)
+		end
 	elseif SavedOptions and SavedOptions.RaidLayout == "HEAL" then
-		switch.t:SetTexCoord(0.75, 1, 0, 1)
+		if C.media.healer then
+			switch.t:SetTexture(C.media.healer)
+			switch.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		else
+			switch.t:SetTexCoord(0.75, 1, 0, 1)
+		end
 	elseif SavedOptions and SavedOptions.RaidLayout == "NONE" then
 		switch.t:SetTexture("Interface\\ChatFrame\\UI-ChatIcon-Blizz")
 		switch.t:SetTexCoord(0.2, 0.8, -0.1, 1.1)
