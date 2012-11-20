@@ -67,6 +67,35 @@ switch:SetScript("OnEvent", function(self)
 end)
 
 ----------------------------------------------------------------------------------------
+--	Switch theme mouseover button on minimap
+----------------------------------------------------------------------------------------
+local theme = CreateFrame("Button", "SwitchTheme", UIParent)
+theme:SetTemplate("Transparent")
+theme:SetPoint("BOTTOM", switch, "TOP", 0, 1)
+theme:SetSize(19, 19)
+theme:SetAlpha(0)
+
+theme.t = theme:CreateTexture(nil, "OVERLAY")
+theme.t:SetTexture(C.media.blank)
+theme.t:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3])
+theme.t:SetPoint("TOPLEFT", theme, 2, -2)
+theme.t:SetPoint("BOTTOMRIGHT", theme, -2, 2)
+
+theme:EnableMouse(true)
+theme:SetScript("OnClick", function(self, button)
+	StaticPopup_Show("SWITCH_THEME")
+end)
+
+theme:SetScript("OnEnter", function()
+	if InCombatLockdown() then return end
+	theme:FadeIn()
+end)
+
+theme:SetScript("OnLeave", function()
+	theme:FadeOut()
+end)
+
+----------------------------------------------------------------------------------------
 --	Farm mode for minimap(by Elv22)
 ----------------------------------------------------------------------------------------
 local show = false
@@ -91,7 +120,7 @@ SLASH_FARMMODE4 = "/аь"
 ----------------------------------------------------------------------------------------
 local farm = CreateFrame("Button", "FarmMode", UIParent)
 farm:SetTemplate("Default")
-farm:SetPoint("BOTTOM", switch, "TOP", 0, 1)
+farm:SetPoint("BOTTOM", theme, "TOP", 0, 1)
 farm:SetSize(19, 19)
 farm:SetAlpha(0)
 

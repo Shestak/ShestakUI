@@ -507,9 +507,9 @@ end)
 local b = CreateFrame("Button", "SwitchArch", UIParent)
 b:SetTemplate("Default")
 if C.actionbar.toggle_mode == true then
-	b:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 58)
+	b:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 78)
 else
-	b:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 38)
+	b:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 58)
 end
 b:SetSize(19, 19)
 b:SetAlpha(0)
