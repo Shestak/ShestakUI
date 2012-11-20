@@ -110,9 +110,9 @@ L_MAP_FOG = "Туман войны"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Календарь"
-L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
-L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
-L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
+L_MINIMAP_HEAL_LAYOUT = "Левый клик - Лекарь"
+L_MINIMAP_DPS_LAYOUT = "Правый клик - Боец"
+L_MINIMAP_BLIZZ_LAYOUT = "Средний клик - Blizzard"
 
 -- Addons list
 L_ALOAD_RL = "Перезагрузить"
