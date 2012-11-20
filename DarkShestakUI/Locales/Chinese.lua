@@ -288,6 +288,7 @@ L_POPUP_SWITCH_THEME_BLUE = "|cff1A80E6Blue|r" -- Need review
 L_POPUP_SWITCH_THEME_GREEN = "|cff4DE64DGreen|r" -- Need review
 L_POPUP_DISBAND_RAID = "你确定要解散团队?"
 L_POPUP_DISABLEUI = "Dark ShestakUI并不支援此分辨率, 你想要停用Dark ShestakUI吗? (若果您想要尝试其他分辨率, 请按取消)"
+L_POPUP_DISABLE_OLD_ADDONS = "You must disable our old raid frames addons to use Dark ShestakUI now." -- Need review
 L_POPUP_SETTINGS_ALL = "应用所有的插件设置? (DBM/DXE, Skada and MSBT)"
 L_POPUP_SETTINGS_DBM = "需要改变DBM描点及风格化元素."
 L_POPUP_SETTINGS_DXE = "需要改变DXE描点及风格化元素."

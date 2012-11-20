@@ -321,6 +321,17 @@ StaticPopupDialogs.DISABLE_UI = {
 	preferredIndex = 5,
 }
 
+StaticPopupDialogs.DISABLE_OLD_ADDONS = {
+	text = L_POPUP_DISABLE_OLD_ADDONS,
+	button1 = ACCEPT,
+	OnAccept = ReloadUI,
+	showAlert = true,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = false,
+	preferredIndex = 5,
+}
+
 StaticPopupDialogs.RESET_UI = {
 	text = L_POPUP_RESETUI,
 	button1 = ACCEPT,
@@ -405,6 +416,18 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		-- Install default if we never ran ShestakUI on this character
 		if not SavedOptionsPerChar.Install then
 			StaticPopup_Show("INSTALL_UI")
+		end
+		
+		if IsAddOnLoaded("DarkShestakUI_Heal") or IsAddOnLoaded("DarkShestakUI_DPS") then
+			if IsAddOnLoaded("DarkShestakUI_Heal") then
+				DisableAddOn("DarkShestakUI_Heal")
+			end
+		
+			if IsAddOnLoaded("DarkShestakUI_DPS") then
+				DisableAddOn("DarkShestakUI_DPS")
+			end
+		
+			StaticPopup_Show("DISABLE_OLD_ADDONS")
 		end
 	end
 

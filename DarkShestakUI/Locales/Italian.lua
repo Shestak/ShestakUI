@@ -288,6 +288,7 @@ L_POPUP_SWITCH_THEME_BLUE = "|cff1A80E6Blue|r" -- Need review
 L_POPUP_SWITCH_THEME_GREEN = "|cff4DE64DGreen|r" -- Need review
 L_POPUP_DISBAND_RAID = "Vuoi davvero sciogliere il gruppo?"
 L_POPUP_DISABLEUI = "A questa risoluzione la Dark ShestakUI non funziona correttamente, vuoi disabilitare l'AddOn (clicca 'Cancella' se vuoi provare con un'altra risoluzione)?"
+L_POPUP_DISABLE_OLD_ADDONS = "You must disable our old raid frames addons to use Dark ShestakUI now." -- Need review
 L_POPUP_SETTINGS_ALL = "Applica le impostazioni per tutte le AddOns (DBM/DXE, Skada e MSBT)?"
 L_POPUP_SETTINGS_DBM = "È necessario cambiare la posizione degli elementi di DBM."
 L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DXE."
