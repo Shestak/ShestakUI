@@ -12,7 +12,7 @@ local PENDING = CONTINUED..CONTINUED
 local PREFIX = STAT_FORMAT:format(STAT_AVERAGE_ITEM_LEVEL).."|Heqppditmlvl|h |h"..HIGHLIGHT_FONT_COLOR_CODE
 
 local f = CreateFrame("Frame")
-f:SetScript("OnEvent", function(self, event, ...)	return self[event](self, event, ...)end)
+f:SetScript("OnEvent", function(self, event, ...) return self[event](self, event, ...)end)
 f:Hide()
 
 local playerGUID, inCombat, updateTimer
