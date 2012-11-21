@@ -207,7 +207,7 @@ local function Shared(self, unit)
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		end
 	elseif unit == "player" and T.class == "DRUID" then
-		self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size*4, C.font.unit_frames_font_style)
+		self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size * 4, C.font.unit_frames_font_style)
 		self.Info:SetPoint("BOTTOM", self.Health, "TOP", 0, -10.5)
 		self:Tag(self.Info, "[WM1][WM2][WM3]")
 	end
@@ -438,7 +438,7 @@ local function Shared(self, unit)
 				self.EclipseBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.EclipseBar:SetSize(217, 7)
 
-				self.EclipseBar.LunarBar= CreateFrame("StatusBar", nil, self.EclipseBar)
+				self.EclipseBar.LunarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
 				self.EclipseBar.LunarBar:SetPoint("LEFT", self.EclipseBar, "LEFT", 0, 0)
 				self.EclipseBar.LunarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
 				self.EclipseBar.LunarBar:SetStatusBarTexture(C.media.texture)
