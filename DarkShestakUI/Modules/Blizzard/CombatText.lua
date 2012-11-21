@@ -671,7 +671,7 @@ if C.combattext.damage then
 	if C.combattext.icons then
 		ct.blank = "Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\Blank.tga"
 	end
-	local misstypes = {ABSORB = ABSORB, BLOCK = BLOCK, DODGE = DODGE, EVADE = EVADE, IMMUNE = IMMUNE, MISS = MISS, PARRY = PARRY, REFLECT = REFLECT, RESIST = RESIST, DEFLECT = DEFLECT}
+	local misstypes = {ABSORB = ABSORB, BLOCK = BLOCK, DEFLECT = DEFLECT, DODGE = DODGE, EVADE = EVADE, IMMUNE = IMMUNE, MISS = MISS, PARRY = PARRY, REFLECT = REFLECT, RESIST = RESIST}
 	local dmg = function(self, event, ...)
 		local msg, icon
 		local timestamp, eventType, hideCaster, sourceGUID, sourceName, sourceFlags, srcFlags2, destGUID, destName, destFlags, destFlags2 = select(1, ...)

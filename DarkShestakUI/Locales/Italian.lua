@@ -128,9 +128,9 @@ L_MAP_FOG = "Nebbia della guerra"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendario"
-L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
-L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
-L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
+L_MINIMAP_HEAL_LAYOUT = "Click-Sinistro - Disposizione da Guaritore"
+L_MINIMAP_DPS_LAYOUT = "Click-Destro - Disposizione d'Assaltatore"
+L_MINIMAP_BLIZZ_LAYOUT = "Click-Centrale - Disposizione Blizzard"
 L_MINIMAP_THEME = "Color theme:" -- Need review
 
 -- Addons list
