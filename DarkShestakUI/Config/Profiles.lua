@@ -43,7 +43,9 @@ end
 ----------------------------------------------------------------------------------------
 --	Shestak Config
 ----------------------------------------------------------------------------------------
-if T.author == true then
+if (T.name == "Вершок" or T.name == "Вещмешок" or T.name == "Гребешок" or T.name == "Кулешок" or T.name == "Лапушок"  	
+or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торгашок" or T.name == "Черешок"
+or T.name == "Женишок" or T.name == "Шестак" or T.name == "Дефляция") then
 	C["general"].welcome_message = false
 	C["general"].custom_lagtolerance = true
 	C["misc"].vehicle_mouseover = true
