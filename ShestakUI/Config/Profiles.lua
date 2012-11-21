@@ -75,9 +75,7 @@ if T.author == true then
 	C["chat"].combatlog = false
 	C["chat"].spam = true
 	C["minimap"].toggle_menu = false
-	C["nameplate"].track_auras = true
 	C["actionbar"].toggle_mode = false
-	C["unitframe"].castbar_icon = true
 	C["unitframe"].arena_on_right = false
 	C["unitframe_class_bar"].vengeance = false
 	C["raidframe"].plugins_aura_watch_timer = true
@@ -213,7 +211,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["nameplate"].combat = true
 	C["nameplate"].health_value = true
 	C["nameplate"].show_castbar_name = true
-	C["nameplate"].track_auras = true
 	C["nameplate"].auras_size = 30
 	C["actionbar"].macro = true
 	C["actionbar"].button_size = 35
@@ -225,7 +222,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["aura"].player_buff_size = 35
 	C["aura"].tot_debuffs = true
 	C["aura"].classcolor_border = true
-	C["unitframe"].bar_color_value = true
 	C["unitframe"].portrait_enable = true
 	C["unitframe"].plugins_swing = true
 	C["unitframe"].plugins_combat_feedback = true
@@ -234,7 +230,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["raidframe"].plugins_debuffhighlight_icon = true
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].plugins_auto_resurrection = true
-	C["error"].hide = false
 	C["font"].stats_font = C.media.pixel_font
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 14
@@ -355,7 +350,6 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["chat"].tabs_mouseover = false
 	C["bag"].button_size = 35
 	C["minimap"].tracking_icon = true
-	C["nameplate"].track_auras = true
 	C["actionbar"].button_size = 35
 	C["actionbar"].split_bars = true
 	C["actionbar"].toggle_mode = false
