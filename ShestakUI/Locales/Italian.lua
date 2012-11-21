@@ -110,9 +110,9 @@ L_MAP_FOG = "Nebbia della guerra"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendario"
-L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
-L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
-L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
+L_MINIMAP_HEAL_LAYOUT = "Click-Sinistro - Disposizione da Guaritore"
+L_MINIMAP_DPS_LAYOUT = "Click-Destro - Disposizione d'Assaltatore"
+L_MINIMAP_BLIZZ_LAYOUT = "Click-Centrale - Disposizione Blizzard"
 
 -- Addons list
 L_ALOAD_RL = "Ricarica l'interfaccia"
@@ -281,7 +281,7 @@ L_INFO_SKIN_DISABLED2 = " è disabilitato."
 L_POPUP_INSTALLUI = "È la prima volta che utilizzi la ShestakUI con questo personaggio. Devi riavviare l'interfaccia utente per configurarla."
 L_POPUP_RESETUI = "Vuoi davvero ripristinare tutte le impostazioni iniziali della ShestakUI?"
 L_POPUP_RESETSTATS = "Vuoi davvero riazzerare tutte le statistiche relative a tempo trascorso in gioco e oro?"
-L_POPUP_SWITCH_RAID = "Select Raid layout." -- Needs review
+L_POPUP_SWITCH_RAID = "Scegli la disposizione per le incursioni."
 L_POPUP_DISBAND_RAID = "Vuoi davvero sciogliere il gruppo?"
 L_POPUP_DISABLEUI = "A questa risoluzione la ShestakUI non funziona correttamente, vuoi disabilitare l'AddOn (clicca 'Cancella' se vuoi provare con un'altra risoluzione)?"
 L_POPUP_SETTINGS_ALL = "Applica le impostazioni per tutte le AddOns (DBM/DXE, Skada e MSBT)?"
