@@ -28,7 +28,7 @@ end
 
 local OnEnter = function(self)
 	local emphasis = _G["ChatFrame"..self:GetID().."TabFlash"]:IsShown()
-	updateFS(self, emphasis, 1, 1, 1)
+	updateFS(self, emphasis, C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3])
 end
 
 local OnLeave = function(self)

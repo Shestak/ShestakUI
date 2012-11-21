@@ -504,8 +504,12 @@ StaticPopupDialogs.PERCHAR = {
 	OnAccept = function()
 		if UIConfigAllCharacters:GetChecked() then
 			GUIConfigAll[myPlayerRealm][myPlayerName] = true
+			SavedOptions.PerChar = true
+			SavedOptionsPerChar.RaidLayout = SavedOptions.RaidLayout
 		else
 			GUIConfigAll[myPlayerRealm][myPlayerName] = false
+			SavedOptions.PerChar = false
+			SavedOptions.RaidLayout = SavedOptionsPerChar.RaidLayout
 		end
 		ReloadUI()
 	end,

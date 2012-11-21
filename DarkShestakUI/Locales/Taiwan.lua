@@ -5,6 +5,24 @@ if T.client ~= "zhTW" then return end
 --	Localization for zhTW client
 --	Translation: Aelb, Ianchan, Leg883, Mania, Nanjiqq, Spacedragon, Tat2dawn, Tibles
 ----------------------------------------------------------------------------------------
+-- Installation
+L_INSTALL_HEADER = "Dark ShestakUI"
+L_INSTALL_WELCOME = "Welcome to Dark ShestakUI Setup Wizard, will do some important installation steps. Press" -- Need review
+L_INSTALL_CONTINUE = "Continue" -- Need review
+L_INSTALL_STEP1 = "Saving settings for:" -- Need review
+L_INSTALL_STEP1_ACC = "Account" -- Need review
+L_INSTALL_STEP1_CHAR = "Character" -- Need review
+L_INSTALL_STEP2 = "Select Raid layout." -- Need review
+L_INSTALL_STEP2_HEAL = "Heal" -- Need review
+L_INSTALL_STEP2_DPS = "DPS" -- Need review
+L_INSTALL_STEP3 = "Select Color theme." -- Need review
+L_INSTALL_STEP3_RED = "|cffE63333Red|r" -- Need review
+L_INSTALL_STEP3_GREEN = "|cff4DE64DGreen|r" -- Need review
+L_INSTALL_STEP3_BLUE = "|cff1A80E6Blue|r" -- Need review
+L_INSTALL_STEP3_CLASS = "Classcolor" -- Need review
+L_INSTALL_STEP4 = "Congratulations!\nInstallation completed successfully, you must reload UI." -- Need review
+L_INSTALL_STEP4_RELOAD = "Reload" -- Need review
+
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " 使用了光束泉！"
 L_ANNOUNCE_LA_CHARGE = "次剩餘)"
@@ -113,6 +131,7 @@ L_MINIMAP_CALENDAR = "日曆"
 L_MINIMAP_HEAL_LAYOUT = "左鍵 - 治療 佈局"
 L_MINIMAP_DPS_LAYOUT = "右鍵 - DPS 佈局"
 L_MINIMAP_BLIZZ_LAYOUT = "中鍵 - 默認 佈局"
+L_MINIMAP_THEME = "Color theme:" -- Need review
 
 -- Addons list
 L_ALOAD_RL = "重新加載UI"
@@ -278,14 +297,8 @@ L_INFO_SKIN_DISABLED1 = "介面樣式啟用"
 L_INFO_SKIN_DISABLED2 = " 已禁用"
 
 -- Popups
-L_POPUP_INSTALLUI = "該角色首次使用Dark ShestakUI.你必須重新加載UI來配置."
 L_POPUP_RESETUI = "你確定要重新加載Dark ShestakUI?"
 L_POPUP_RESETSTATS = "你確定要重置本次遊戲時間和金幣收益統計數據嗎?"
-L_POPUP_SWITCH_RAID = "Select Raid layout." -- Needs review
-L_POPUP_SWITCH_THEME = "Select color theme." -- Need review
-L_POPUP_SWITCH_THEME_RED = "|cffE63333Red|r" -- Need review
-L_POPUP_SWITCH_THEME_BLUE = "|cff1A80E6Blue|r" -- Need review
-L_POPUP_SWITCH_THEME_GREEN = "|cff4DE64DGreen|r" -- Need review
 L_POPUP_DISBAND_RAID = "你確定要解散團隊?"
 L_POPUP_DISABLEUI = "Dark ShestakUI並不支援此解析度, 你想要停用Dark ShestakUI嗎? (若果您想要嘗試其他解析度, 請按取消)"
 L_POPUP_DISABLE_OLD_ADDONS = "You must disable our old raid frames addons to use Dark ShestakUI now." -- Need review

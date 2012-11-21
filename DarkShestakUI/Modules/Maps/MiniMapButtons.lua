@@ -23,13 +23,25 @@ switch:EnableMouse(true)
 switch:RegisterForClicks("AnyUp")
 switch:SetScript("OnClick", function(self, button)
 	if button == "LeftButton" then
-		SavedOptions.RaidLayout = "HEAL"
+		if SavedOptions.PerChar == true then
+			SavedOptionsPerChar.RaidLayout = "HEAL"
+		else
+			SavedOptions.RaidLayout = "HEAL"
+		end
 		ReloadUI()
 	elseif button == "RightButton" then
-		SavedOptions.RaidLayout = "DPS"
+		if SavedOptions.PerChar == true then
+			SavedOptionsPerChar.RaidLayout = "DPS"
+		else
+			SavedOptions.RaidLayout = "DPS"
+		end
 		ReloadUI()
 	elseif button == "MiddleButton" then
-		SavedOptions.RaidLayout = "NONE"
+		if SavedOptions.PerChar == true then
+			SavedOptionsPerChar.RaidLayout = "NONE"
+		else
+			SavedOptions.RaidLayout = "NONE"
+		end
 		ReloadUI()
 	end
 end)
@@ -53,24 +65,24 @@ end)
 
 switch:RegisterEvent("PLAYER_LOGIN")
 switch:SetScript("OnEvent", function(self)
-	if SavedOptions and SavedOptions.RaidLayout == "DPS" then
+	if (SavedOptions and SavedOptions.PerChar == false and SavedOptions.RaidLayout == "DPS") or (SavedOptionsPerChar and SavedOptions.PerChar == true and SavedOptionsPerChar.RaidLayout == "DPS") then
 		if C.media.dps then
 			switch.t:SetTexture(C.media.dps)
 			switch.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		else
 			switch.t:SetTexCoord(0.25, 0.5, 0, 1)
 		end
-	elseif SavedOptions and SavedOptions.RaidLayout == "HEAL" then
+	elseif (SavedOptions and SavedOptions.PerChar == false and SavedOptions.RaidLayout == "HEAL") or (SavedOptionsPerChar and SavedOptions.PerChar == true and SavedOptionsPerChar.RaidLayout == "HEAL") then
 		if C.media.healer then
 			switch.t:SetTexture(C.media.healer)
 			switch.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		else
 			switch.t:SetTexCoord(0.75, 1, 0, 1)
 		end
-	elseif SavedOptions and SavedOptions.RaidLayout == "NONE" then
+	elseif (SavedOptions and SavedOptions.PerChar == false and SavedOptions.RaidLayout == "NONE") or (SavedOptionsPerChar and SavedOptions.PerChar == true and SavedOptionsPerChar.RaidLayout == "NONE") then
 		switch.t:SetTexture("Interface\\ChatFrame\\UI-ChatIcon-Blizz")
 		switch.t:SetTexCoord(0.2, 0.8, -0.1, 1.1)
-	elseif SavedOptions and SavedOptions.RaidLayout == "UNKNOWN" or SavedOptions == nil then
+	else
 		switch.t:SetTexture("Interface\\InventoryItems\\WoWUnknownItem01")
 		switch.t:SetTexCoord(0.2, 0.8, 0.2, 0.8)
 	end
@@ -91,9 +103,43 @@ theme.t:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.c
 theme.t:SetPoint("TOPLEFT", theme, 2, -2)
 theme.t:SetPoint("BOTTOMRIGHT", theme, -2, 2)
 
+local function ThemeSetup(r, g, b)
+	if not GUIConfigAll then return end
+	if GUIConfigAll[T.realm][T.name] == true then
+		if GUIConfig == nil then GUIConfig = {} end
+		if GUIConfig["skins"] == nil then GUIConfig["skins"] = {} end
+		GUIConfig["skins"]["color_theme"] = {r, g, b, 0.4}
+	else
+		if GUIConfigSettings == nil then GUIConfigSettings = {} end
+		if GUIConfigSettings["skins"] == nil then GUIConfigSettings["skins"] = {} end
+		GUIConfigSettings["skins"]["color_theme"] = {r, g, b, 0.4}
+	end
+end
+
+local menuFrame = CreateFrame("Frame", "MinimapSwitchThemeButton", UIParent, "UIDropDownMenuTemplate")
+local thememenu = {
+	{text = L_MINIMAP_THEME, isTitle = 1, notCheckable = 1, notClickable = 1},
+	{text = L_INSTALL_STEP3_RED, notCheckable = 1, func = function()
+		ThemeSetup(0.9, 0.2, 0.2)
+		ReloadUI()
+	end},
+	{text = L_INSTALL_STEP3_GREEN, notCheckable = 1, func = function()
+		ThemeSetup(0.3, 0.9, 0.3)
+		ReloadUI()
+	end},
+	{text = L_INSTALL_STEP3_BLUE, notCheckable = 1, func = function()
+		ThemeSetup(0.1, 0.5, 0.9)
+		ReloadUI()
+	end},
+	{text = format("|cff%02x%02x%02x%s|r", 255 * T.color.r, 255 * T.color.g, 255 * T.color.b, L_INSTALL_STEP3_CLASS), notCheckable = 1, func = function()
+		ThemeSetup(T.color.r, T.color.g, T.color.b)
+		ReloadUI()
+	end},
+}
+
 theme:EnableMouse(true)
-theme:SetScript("OnClick", function(self, button)
-	StaticPopup_Show("SWITCH_THEME")
+theme:SetScript("OnClick", function()
+	EasyMenu(thememenu, menuFrame, "cursor", 0, 0, "MENU")
 end)
 
 theme:SetScript("OnEnter", function()

@@ -172,7 +172,11 @@ SLASH_DBMTEST2 = "/виьеуые"
 --	Switch to heal layout
 ----------------------------------------------------------------------------------------
 SlashCmdList.HEAL = function()
-	SavedOptions.RaidLayout = "HEAL"
+	if SavedOptions.PerChar == true then
+		SavedOptionsPerChar.RaidLayout = "HEAL"
+	else
+		SavedOptions.RaidLayout = "HEAL"
+	end
 	ReloadUI()
 end
 SLASH_HEAL1 = "/heal"
@@ -182,7 +186,11 @@ SLASH_HEAL2 = "/руфд"
 --	Switch to dps layout
 ----------------------------------------------------------------------------------------
 SlashCmdList.DPS = function()
-	SavedOptions.RaidLayout = "DPS"
+	if SavedOptions.PerChar == true then
+		SavedOptionsPerChar.RaidLayout = "DPS"
+	else
+		SavedOptions.RaidLayout = "DPS"
+	end
 	ReloadUI()
 end
 SLASH_DPS1 = "/dps"

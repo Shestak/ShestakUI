@@ -19,7 +19,6 @@
 	<Script file="Config\Profiles.lua"/>
 
 	<Script file="Core\GUI.lua"/>
-	<Script file="Core\Theme.lua"/>
 	<Script file="Core\PixelPerfect.lua"/>
 
 	<Include file="Libs\oUF\oUF.xml"/>

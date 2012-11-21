@@ -5,6 +5,24 @@ if T.client ~= "ruRU" then return end
 --	Localization for ruRU client
 --	Translation: Shestak, Wetxius
 ----------------------------------------------------------------------------------------
+-- Installation
+L_INSTALL_HEADER = "Dark ShestakUI"
+L_INSTALL_WELCOME = "Добро пожаловать в мастер установки Dark ShestakUI, будет выполнено несколько важных шагов установки. Нажмите"
+L_INSTALL_CONTINUE = "Продолжить"
+L_INSTALL_STEP1 = "Сохранение настроек для:"
+L_INSTALL_STEP1_ACC = "Аккаунта"
+L_INSTALL_STEP1_CHAR = "Персонажа"
+L_INSTALL_STEP2 = "Выберите рейдовую раскладку."
+L_INSTALL_STEP2_HEAL = "Лекарь"
+L_INSTALL_STEP2_DPS = "Боец"
+L_INSTALL_STEP3 = "Выберите цветовую схему."
+L_INSTALL_STEP3_RED = "|cffE63333Красная|r"
+L_INSTALL_STEP3_GREEN = "|cff4DE64DЗеленая|r"
+L_INSTALL_STEP3_BLUE = "|cff1A80E6Голубая|r"
+L_INSTALL_STEP3_CLASS = "Цвет класса"
+L_INSTALL_STEP4 = "Поздравляю!\nУстановка успешно завершена, необходимо перезагрузить интерфейс."
+L_INSTALL_STEP4_RELOAD = "Перезагрузить"
+
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " выпил из моего колодца. "
 L_ANNOUNCE_LA_CHARGE = " заряд(ов))"
@@ -113,6 +131,7 @@ L_MINIMAP_CALENDAR = "Календарь"
 L_MINIMAP_HEAL_LAYOUT = "Левый клик - Лекарь"
 L_MINIMAP_DPS_LAYOUT = "Правый клик - Боец"
 L_MINIMAP_BLIZZ_LAYOUT = "Средний клик - Blizzard"
+L_MINIMAP_THEME = "Цветовая схема:"
 
 -- Addons list
 L_ALOAD_RL = "Перезагрузить"
@@ -278,14 +297,8 @@ L_INFO_SKIN_DISABLED1 = "Стилизация для "
 L_INFO_SKIN_DISABLED2 = " выключена."
 
 -- Popups
-L_POPUP_INSTALLUI = "Это первый запуск Dark ShestakUI для этого персонажа. Необходимо перезагрузить интерфейс для его настройки."
 L_POPUP_RESETUI = "Вы уверены, что хотите сбросить настройки Dark ShestakUI?"
 L_POPUP_RESETSTATS = "Вы уверены, что хотите сбросить статистику золота и проведенного времени в игре?"
-L_POPUP_SWITCH_RAID = "Выберите рейдовую раскладку."
-L_POPUP_SWITCH_THEME = "Выберите цветовую схему."
-L_POPUP_SWITCH_THEME_RED = "|cffE63333Красная|r"
-L_POPUP_SWITCH_THEME_BLUE = "|cff1A80E6Голубая|r"
-L_POPUP_SWITCH_THEME_GREEN = "|cff4DE64DЗеленая|r"
 L_POPUP_DISBAND_RAID = "Вы уверены, что хотите распустить группу?"
 L_POPUP_DISABLEUI = "Dark ShestakUI не работает на этом разрешении, хотите отключить Dark ShestakUI? (Отмена, если хотите попробовать другое разрешение)"
 L_POPUP_DISABLE_OLD_ADDONS = "Необходимо отключить некоторые старые дополнения."

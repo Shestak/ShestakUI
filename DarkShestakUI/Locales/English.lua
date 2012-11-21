@@ -1,6 +1,24 @@
 ﻿----------------------------------------------------------------------------------------
 --	Localization for enUS and enGB client
 ----------------------------------------------------------------------------------------
+-- Installation
+L_INSTALL_HEADER = "Dark ShestakUI"
+L_INSTALL_WELCOME = "Welcome to Dark ShestakUI Setup Wizard, will do some important installation steps. Press"
+L_INSTALL_CONTINUE = "Continue"
+L_INSTALL_STEP1 = "Saving settings for:"
+L_INSTALL_STEP1_ACC = "Account"
+L_INSTALL_STEP1_CHAR = "Character"
+L_INSTALL_STEP2 = "Select Raid layout."
+L_INSTALL_STEP2_HEAL = "Heal"
+L_INSTALL_STEP2_DPS = "DPS"
+L_INSTALL_STEP3 = "Select Color theme."
+L_INSTALL_STEP3_RED = "|cffE63333Red|r"
+L_INSTALL_STEP3_GREEN = "|cff4DE64DGreen|r"
+L_INSTALL_STEP3_BLUE = "|cff1A80E6Blue|r"
+L_INSTALL_STEP3_CLASS = "Classcolor"
+L_INSTALL_STEP4 = "Congratulations!\nInstallation completed successfully, you must reload UI."
+L_INSTALL_STEP4_RELOAD = "Reload"
+
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " used my lightwell. "
 L_ANNOUNCE_LA_CHARGE = " charge(s))"
@@ -109,6 +127,7 @@ L_MINIMAP_CALENDAR = "Calendar"
 L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout"
 L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout"
 L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout"
+L_MINIMAP_THEME = "Color theme:"
 
 -- Addons list
 L_ALOAD_RL = "Reload UI"
@@ -274,14 +293,8 @@ L_INFO_SKIN_DISABLED1 = "Stylization for "
 L_INFO_SKIN_DISABLED2 = " is disabled."
 
 -- Popups
-L_POPUP_INSTALLUI = "First time on Dark ShestakUI with this Character. You must reload UI to configure it."
 L_POPUP_RESETUI = "Are you sure you want to reset all settings for Dark ShestakUI?"
 L_POPUP_RESETSTATS = "Are you sure you want to reset statistics for time spent in game and gold."
-L_POPUP_SWITCH_RAID = "Select Raid layout."
-L_POPUP_SWITCH_THEME = "Select color theme."
-L_POPUP_SWITCH_THEME_RED = "|cffE63333Red|r"
-L_POPUP_SWITCH_THEME_BLUE = "|cff1A80E6Blue|r"
-L_POPUP_SWITCH_THEME_GREEN = "|cff4DE64DGreen|r"
 L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?"
 L_POPUP_DISABLEUI = "Dark ShestakUI doesn't work for this resolution, do you want to disable Dark ShestakUI? (Cancel if you want to try another resolution)"
 L_POPUP_DISABLE_OLD_ADDONS = "You must disable our old raid frames addons to use Dark ShestakUI now."

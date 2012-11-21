@@ -5,6 +5,24 @@ if T.client ~= "esES" and T.client ~= "esMX" then return end
 --	Localization for esES and esMX client
 --	Translation: eXecrate, Seal
 ----------------------------------------------------------------------------------------
+-- Installation
+L_INSTALL_HEADER = "Dark ShestakUI"
+L_INSTALL_WELCOME = "Welcome to Dark ShestakUI Setup Wizard, will do some important installation steps. Press" -- Need review
+L_INSTALL_CONTINUE = "Continue" -- Need review
+L_INSTALL_STEP1 = "Saving settings for:" -- Need review
+L_INSTALL_STEP1_ACC = "Account" -- Need review
+L_INSTALL_STEP1_CHAR = "Character" -- Need review
+L_INSTALL_STEP2 = "Select Raid layout." -- Need review
+L_INSTALL_STEP2_HEAL = "Heal" -- Need review
+L_INSTALL_STEP2_DPS = "DPS" -- Need review
+L_INSTALL_STEP3 = "Select Color theme." -- Need review
+L_INSTALL_STEP3_RED = "|cffE63333Red|r" -- Need review
+L_INSTALL_STEP3_GREEN = "|cff4DE64DGreen|r" -- Need review
+L_INSTALL_STEP3_BLUE = "|cff1A80E6Blue|r" -- Need review
+L_INSTALL_STEP3_CLASS = "Classcolor" -- Need review
+L_INSTALL_STEP4 = "Congratulations!\nInstallation completed successfully, you must reload UI." -- Need review
+L_INSTALL_STEP4_RELOAD = "Reload" -- Need review
+
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " usó mi Pozo de Luz. "
 L_ANNOUNCE_LA_CHARGE = " carga(s))"
@@ -113,6 +131,7 @@ L_MINIMAP_CALENDAR = "Calendario"
 L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
 L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
 L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
+L_MINIMAP_THEME = "Color theme:" -- Need review
 
 -- Addons list
 L_ALOAD_RL = "Recargar UI"
@@ -278,14 +297,8 @@ L_INFO_SKIN_DISABLED1 = "Estilizacion para "
 L_INFO_SKIN_DISABLED2 = " esta desactivado."
 
 -- Popups
-L_POPUP_INSTALLUI = "Es la primera vez que usas Dark ShestakUI con este personaje. Usted debe volver a cargar la interfaz de usuario para configurarlo."
 L_POPUP_RESETUI = "¿Estás seguro de que desea restablecer Dark ShestakUI?"
 L_POPUP_RESETSTATS = "¿Estás seguro de que quieres reiniciar las estadísticas de tiempo empleado en el juego y oro adquirido?"
-L_POPUP_SWITCH_RAID = "Select Raid layout." -- Needs review
-L_POPUP_SWITCH_THEME = "Select color theme." -- Need review
-L_POPUP_SWITCH_THEME_RED = "|cffE63333Red|r" -- Need review
-L_POPUP_SWITCH_THEME_BLUE = "|cff1A80E6Blue|r" -- Need review
-L_POPUP_SWITCH_THEME_GREEN = "|cff4DE64DGreen|r" -- Need review
 L_POPUP_DISBAND_RAID = "¿Estás seguro de que quieres disolver el grupo?"
 L_POPUP_DISABLEUI = "Dark ShestakUI no funciona con esta resolución, ¿Quieres desactivar Dark ShestakUI? (Pulsa cancelar si quieres probar otra resolución)"
 L_POPUP_DISABLE_OLD_ADDONS = "You must disable our old raid frames addons to use Dark ShestakUI now." -- Need review

@@ -23,12 +23,6 @@ T.MOPVersion = function()
 	end
 end
 
-if T.name == "Вершок" or T.name == "Вещмешок" or T.name == "Гребешок" or T.name == "Кулешок" or T.name == "Лапушок"
-or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торгашок" or T.name == "Черешок" or T.name == "Женишок"
-or T.name == "Шестак" or T.name == "Дефляция" then
-	T.author = true
-end
-
 if (T.name == "Занштек" or T.name == "Гранн" or T.name == "Тёми" or T.name == "Палтасар" or T.name == "Ллевалалуз" or T.name == "Сиамад" or T.name == "Квилинир")
 and T.realm == "Ясеневый лес" then 
 	T.coauthor = true 
