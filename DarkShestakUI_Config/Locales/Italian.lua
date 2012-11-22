@@ -329,7 +329,7 @@ L_GUI_UF_TOTAL_VALUE = "Visualizza un testo sui riquadri di giocatore e bersagli
 L_GUI_UF_COLOR_VALUE = "Valori di salute e mana colorati"
 L_GUI_UF_BAR_COLOR_VALUE = "Barra della salute colorata in base alla salute restante"
 L_GUI_UF_UNIT_CASTBAR = "Mostra le barre incantesimi"
-L_GUI_UF_CASTBAR_ICON = "Mostra le icone della barra dincantesimi"
+L_GUI_UF_CASTBAR_ICON = "Mostra le icone della barra incantesimi"
 L_GUI_UF_CASTBAR_LATENCY = "Latenza della barra incantesimi"
 L_GUI_UF_CASTBAR_TICKS = "Mostra le tacchette (ticks) sulla barra incantesimi"
 L_GUI_UF_SHOW_PET = "Mostra il riquadro per il famiglio"
@@ -353,7 +353,7 @@ L_GUI_UF_PLUGINS_SMOOTH_BAR = "Barra a cambiamento graduale"
 L_GUI_UF_PLUGINS_TALENTS = "Mostra la specializzazione dei talenti del nemico"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Testo di combattimento sul riquadro del giocatore/bersaglio"
 L_GUI_UF_PLUGINS_FADER = "Sfuma i riquadri delle unità"
-L_GUI_UF_PLUGINS_DIMINISHING = "Rendimenti Decrescenti (Diminishing Returns) sulle icone dei riquadri d'arena"
+L_GUI_UF_PLUGINS_DIMINISHING = "Diminuzione dell'effetto (diminishing return) sulle icone dei riquadri d'arena"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Barre di classe"
