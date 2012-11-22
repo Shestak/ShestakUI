@@ -56,9 +56,13 @@ local petbaranchor = CreateFrame("Frame", "PetActionBarAnchor", oUF_PetBattleFra
 petbaranchor:SetFrameStrata("LOW")
 if C.actionbar.rightbars > 0 then
 	if C.actionbar.petbar_horizontal == true then
-		petbaranchor:CreatePanel("Invisible", (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), (C.actionbar.button_size + C.actionbar.button_space), unpack(C.position.pet_horizontal))
+		petbaranchor:CreatePanel("Invisible", (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), C.actionbar.button_size, unpack(C.position.pet_horizontal))
 	else
-		petbaranchor:CreatePanel("Invisible", C.actionbar.button_size + 3, (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), "RIGHT", rightbaranchor, "LEFT", 0, 0)
+		if C.actionbar.panels == true then
+			petbaranchor:CreatePanel("Invisible", C.actionbar.button_size, (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), "RIGHT", rightbaranchor, "LEFT", -5, 0)
+		else
+			petbaranchor:CreatePanel("Invisible", C.actionbar.button_size, (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), "RIGHT", rightbaranchor, "LEFT", -3, 0)
+		end
 	end
 else
 	petbaranchor:CreatePanel("Invisible", (C.actionbar.button_size + C.actionbar.button_space), (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), unpack(C.position.right_bars))
@@ -134,16 +138,21 @@ end
 --	ActionBar panel
 ----------------------------------------------------------------------------------------
 if C.actionbar.panels == true then
-	local bpanel = CreateFrame("Frame", "ActionBarPanel", ActionBarAnchor)
-	bpanel:SetTemplate("Transperent", "Shadow")
-	bpanel:SetPoint("TOP", ActionBarAnchor, "TOP", 0, 3)
-	bpanel:SetPoint("BOTTOMLEFT", ActionBarAnchor, "BOTTOMLEFT", -3, -3)
-	bpanel:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMRIGHT", 3, -3)
+	local bpanel = CreateFrame("Frame", "ActionBarPanel", bottombaranchor)
+	bpanel:SetTemplate("Default", "Shadow")
+	bpanel:SetPoint("TOP", bottombaranchor, "TOP", 0, 3)
+	bpanel:SetPoint("BOTTOMLEFT", bottombaranchor, "BOTTOMLEFT", -3, -3)
+	bpanel:SetPoint("BOTTOMRIGHT", bottombaranchor, "BOTTOMRIGHT", 3, -3)
 
-	local rpanel = CreateFrame("Frame", nil, RightActionBarAnchor)
-	rpanel:SetTemplate("Transperent", "Shadow")
-	rpanel:SetPoint("BOTTOMLEFT", RightActionBarAnchor, "BOTTOMLEFT", -3, -3)
-	rpanel:SetPoint("TOPRIGHT", RightActionBarAnchor, "TOPRIGHT", 3, 3)
+	local rpanel = CreateFrame("Frame", nil, rightbaranchor)
+	rpanel:CreatePanel("Default", 0, 0, "CENTER", rightbaranchor, "CENTER")
+	rpanel:SetPoint("BOTTOMLEFT", rightbaranchor, "BOTTOMLEFT", -3, -3)
+	rpanel:SetPoint("TOPRIGHT", rightbaranchor, "TOPRIGHT", 3, 3)
+	
+	local ppanel = CreateFrame("Frame", nil, petbaranchor)
+	ppanel:CreatePanel("Default", 0, 0, "CENTER", petbaranchor, "CENTER")
+	ppanel:SetPoint("BOTTOMLEFT", petbaranchor, "BOTTOMLEFT", -3, -3)
+	ppanel:SetPoint("TOPRIGHT", petbaranchor, "TOPRIGHT", 3, 3)
 end
 ----------------------------------------------------------------------------------------
 --	Top panel

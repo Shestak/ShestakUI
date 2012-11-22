@@ -101,7 +101,11 @@ local RightBars = function()
 			RightActionBarAnchor:SetWidth(C.actionbar.button_size)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+				if C.actionbar.panels == true then
+					PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", -5, 0)
+				else
+					PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", -3, 0)
+				end
 			end
 			ToggleBar[2]:SetWidth(C.actionbar.button_size)
 			ToggleBarText(2, "> > >", false, true)
@@ -111,7 +115,11 @@ local RightBars = function()
 			RightActionBarAnchor:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+				if C.actionbar.panels == true then
+					PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", -5, 0)
+				else
+					PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", -3, 0)
+				end
 			end
 			ToggleBar[2]:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(2, "> > >", false, true)
@@ -121,7 +129,11 @@ local RightBars = function()
 			RightActionBarAnchor:SetWidth((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+				if C.actionbar.panels == true then
+					PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", -5, 0)
+				else
+					PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", -3, 0)
+				end
 			end
 			ToggleBar[2]:SetWidth((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
 			ToggleBarText(2, "> > >", false, true)
@@ -134,7 +146,7 @@ local RightBars = function()
 		elseif SavedOptionsPerChar.RightBars == 0 then
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
+				PetActionBarAnchor:SetPoint(unpack(C.position.right_bars))
 			end
 			ToggleBar[2]:SetWidth(C.actionbar.button_size)
 			ToggleBarText(2, "< < <", true)
@@ -150,7 +162,11 @@ local RightBars = function()
 			RightActionBarAnchor:SetWidth(C.actionbar.button_size)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+				if C.actionbar.panels == true then
+					PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", -5, 0)
+				else
+					PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", -3, 0)
+				end
 			end
 			ToggleBar[2]:SetWidth(C.actionbar.button_size)
 			ToggleBarText(2, "> > >", false, true)
@@ -160,7 +176,11 @@ local RightBars = function()
 			RightActionBarAnchor:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", 0, 0)
+				if C.actionbar.panels == true then
+					PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", -5, 0)
+				else
+					PetActionBarAnchor:SetPoint("RIGHT", RightActionBarAnchor, "LEFT", -3, 0)
+				end
 			end
 			ToggleBar[2]:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(2, "> > >", false, true)
@@ -170,7 +190,7 @@ local RightBars = function()
 		elseif SavedOptionsPerChar.RightBars == 0 then
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
+				PetActionBarAnchor:SetPoint(unpack(C.position.right_bars))
 			end
 			ToggleBar[2]:SetWidth(C.actionbar.button_size)
 			ToggleBarText(2, "< < <", true)
