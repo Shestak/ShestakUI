@@ -141,9 +141,9 @@ local StartTimer = function(name, spellId)
 	bar.startTime = GetTime()
 	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(name))]
 	if color then
-		bar.left:SetText(format("|cff%02x%02x%02x%s|r - %s", 255 * color.r, 255 * color.g, 255 * color.b, name, spell))
+		bar.left:SetText(format("|cff%02x%02x%02x%s|r - %s", 255 * color.r, 255 * color.g, 255 * color.b, name:gsub("%-[^|]+", ""), spell))
 	else
-		bar.left:SetText(format("|cff%02x%02x%02x%s|r - %s", 255 * 0.3, 255 * 0.7, 255 * 0.3, name, spell))
+		bar.left:SetText(format("|cff%02x%02x%02x%s|r - %s", 255 * 0.3, 255 * 0.7, 255 * 0.3, name:gsub("%-[^|]+", ""), spell))
 	end
 	bar.name = name
 	bar.right:SetText(FormatTime(T.raid_spells[spellId]))
