@@ -474,7 +474,7 @@ C["unitframe_class_bar"] = {
 	["shard"] = true,							-- Shard/Burning bar
 	["rune"] = true,							-- Rune bar
 	["totem"] = true,							-- Totem bar
-	["range"] = false,							-- Range bar
+	["range"] = true,							-- Range bar
 }
 
 ----------------------------------------------------------------------------------------
