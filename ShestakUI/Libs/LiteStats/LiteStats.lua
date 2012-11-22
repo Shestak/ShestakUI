@@ -747,7 +747,11 @@ if ping.enabled then
 			if (unit == P and self.timer and time() - self.timer > 1) or not self.timer or unit ~= P then
 				local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(unit))]
 				self.text:SetText(format(ping.fmt, UnitName(unit)))
-				self.text:SetTextColor(class.r, class.g, class.b, 1)
+				if class then
+					self.text:SetTextColor(class.r, class.g, class.b, 1)
+				else
+					self.text:SetTextColor(1, 1, 1, 1)
+				end
 	 			if UIFrameIsFading(self) then UIFrameFlashRemoveFrame(self) end
 				UIFrameFlash(self, 0.2, 2.8, 8, false, 0, 5)
 				self.timer = time()
