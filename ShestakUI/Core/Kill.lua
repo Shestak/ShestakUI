@@ -3,9 +3,9 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Kill all shit stuff on default UI that we don't need
 ----------------------------------------------------------------------------------------
-local Kill = CreateFrame("Frame")
-Kill:RegisterEvent("ADDON_LOADED")
-Kill:SetScript("OnEvent", function(self, event, addon)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("ADDON_LOADED")
+frame:SetScript("OnEvent", function(self, event, addon)
 	if addon == "Blizzard_AchievementUI" then
 		if C.tooltip.enable then
 			hooksecurefunc("AchievementFrameCategories_DisplayButton", function(button) button.showTooltipFunc = nil end)
@@ -15,8 +15,10 @@ Kill:SetScript("OnEvent", function(self, event, addon)
 	if C.unitframe.enable and (SavedOptions and (SavedOptions.RaidLayout == "HEAL" or SavedOptions.RaidLayout == "DPS")) then
 		InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
 		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
-		CompactRaidFrameManager:Kill()
-		CompactRaidFrameContainer:Kill()
+		if not InCombatLockdown() then
+			CompactRaidFrameManager:Kill()
+			CompactRaidFrameContainer:Kill()
+		end
 		CompactUnitFrame_UpateVisible = T.dummy
 		CompactUnitFrame_UpdateAll = T.dummy
 		CompactUnitFrameProfiles_ApplyProfile = T.dummy
