@@ -111,7 +111,7 @@ C["automation"] = {
 --	Skins options
 ----------------------------------------------------------------------------------------
 C["skins"] = {
-	["color_theme"] = {0.1, 0.5, 0.9, 0.4},		-- Color theme
+	["color_theme"] = {0.1, 0.5, 0.9, 0.4},		-- Color theme (R, G, B, alpha)
 	["blizzard_frames"] = true,					-- Blizzard frames skin
 	["shadow"] = true,							-- Shadow on frames
 	["minimap_buttons"] = true,					-- Skin addons icons on minimap
@@ -120,7 +120,7 @@ C["skins"] = {
 	["clcret"] = false,							-- CLCRet skin
 	["combustion_helper"] = false,				-- CombustionHelper skin
 	["bigwigs"] = false,						-- BigWigs skin
-	["dbm"] = true,								-- DBM skin
+	["dbm"] = false,							-- DBM skin
 	["dxe"] = false,							-- DXE skin
 	["omen"] = false,							-- Omen skin
 	["recount"] = false,						-- Recount skin
