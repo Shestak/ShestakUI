@@ -31,11 +31,11 @@ local function CreateButton(name, parent, template, width, height, point, relati
 	b:SetPoint(point, relativeto, point2, xOfs, yOfs)
 	b:EnableMouse(true)
 	if text then
-		local t = b:CreateFontString(nil, "OVERLAY", b)
-		t:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-		t:SetPoint("CENTER")
-		t:SetJustifyH("CENTER")
-		t:SetText(text)
+		b.t = b:CreateFontString(nil, "OVERLAY")
+		b.t:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+		b.t:SetPoint("CENTER")
+		b.t:SetJustifyH("CENTER")
+		b.t:SetText(text)
 	end
 end
 
@@ -68,12 +68,14 @@ CreateButton("RaidUtilityDisbandButton", RaidUtilityPanel, "UIPanelButtonTemplat
 RaidUtilityDisbandButton:SetScript("OnMouseUp", function(self) StaticPopup_Show("DISBAND_RAID") end)
 
 -- Convert Group button
-CreateButton("RaidUtilityConvertButton", RaidUtilityPanel, "UIPanelButtonTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", RaidUtilityDisbandButton, "BOTTOM", 0, -5, CONVERT_TO_PARTY)
+CreateButton("RaidUtilityConvertButton", RaidUtilityPanel, "UIPanelButtonTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", RaidUtilityDisbandButton, "BOTTOM", 0, -5, UnitInRaid("player") and CONVERT_TO_PARTY or CONVERT_TO_RAID)
 RaidUtilityConvertButton:SetScript("OnMouseUp", function(self)
 	if UnitInRaid("player") then
 		ConvertToParty()
+		RaidUtilityConvertButton.t:SetText(CONVERT_TO_RAID)
 	elseif UnitInParty("player") then
 		ConvertToRaid()
+		RaidUtilityConvertButton.t:SetText(CONVERT_TO_PARTY)
 	end
 end)
 

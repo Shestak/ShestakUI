@@ -139,7 +139,7 @@ local StartTimer = function(name, spellId)
 	local bar = CreateBar()
 	bar.endTime = GetTime() + T.raid_spells[spellId]
 	bar.startTime = GetTime()
-	bar.left:SetText(name.." - "..spell)
+	bar.left:SetText(format("%s - %s", name:gsub("%-[^|]+", ""), spell))
 	bar.name = name
 	bar.right:SetText(FormatTime(T.raid_spells[spellId]))
 	if C.raidcooldown.show_icon == true then

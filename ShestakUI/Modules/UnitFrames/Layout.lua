@@ -1305,7 +1305,7 @@ SlashCmdList.TEST_UF = function(msg)
 		end
 
 		if C.unitframe.show_boss == true then
-			for i = 1, 4 do
+			for i = 1, MAX_BOSS_FRAMES do
 				_G["oUF_Boss"..i].Hide = nil
 			end
 		end
@@ -1340,7 +1340,7 @@ SlashCmdList.TEST_UF = function(msg)
 		end
 
 		if C.unitframe.show_boss == true then
-			for i = 1, 4 do
+			for i = 1, MAX_BOSS_FRAMES do
 				_G["oUF_Boss"..i].Hide = function() end
 				_G["oUF_Boss"..i].unit = "player"
 				_G["oUF_Boss"..i]:Show()

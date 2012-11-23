@@ -120,7 +120,8 @@ elseif T.class == "MONK" then
 		T.aoespam[117418] = true	-- Fists of Fury
 		T.aoespam[120274] = true	-- Tiger Strikes
 		T.aoespam[128531] = true	-- Blackout Kick (DoT)
-		T.aoespam[123725] = true	-- Breath of Fire
+		T.aoespam[115181] = true	-- Breath of Fire
+		T.aoespam[123725] = true	-- Breath of Fire (DoT)
 		T.aoespam[107270] = true	-- Spinning Crane Kick
 		T.aoespam[132467] = true	-- Chi Wave
 		T.aoespam[125033] = true	-- Zen Sphere: Detonate

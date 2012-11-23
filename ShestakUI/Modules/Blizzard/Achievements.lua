@@ -18,6 +18,10 @@ local function fixAnchors()
 		POSITION = "TOP"
 		ANCHOR_POINT = "BOTTOM"
 		YOFFSET = 9
+	else
+		POSITION = "BOTTOM"
+		ANCHOR_POINT = "TOP"
+		YOFFSET = -9
 	end
 
 	AlertFrame:ClearAllPoints()
@@ -29,7 +33,14 @@ end
 hooksecurefunc("AlertFrame_FixAnchors", fixAnchors)
 
 local function AlertFrame_SetLootAnchors(alertAnchor)
-	if GroupLootContainer:IsShown() then
+	if MissingLootFrame:IsShown() then
+		MissingLootFrame:ClearAllPoints()
+		MissingLootFrame:SetPoint(POSITION, alertAnchor, ANCHOR_POINT, 0, YOFFSET)
+		if GroupLootContainer:IsShown() then
+			GroupLootContainer:ClearAllPoints()
+			GroupLootContainer:SetPoint(POSITION, MissingLootFrame, ANCHOR_POINT, 0, YOFFSET)
+		end
+	elseif GroupLootContainer:IsShown() then
 		GroupLootContainer:ClearAllPoints()
 		GroupLootContainer:SetPoint(POSITION, alertAnchor, ANCHOR_POINT, 0, YOFFSET)
 	end
