@@ -1143,11 +1143,10 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Positions.target_debuff_icon)},
 
-			-- Breath of Fire
-			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Dizzying Haze
 			{spellID = 116330, unitID = "target", caster = "player", filter = "DEBUFF"},
-
+			-- Breath of Fire
+			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		--[[{
 			Name = "T_DE/BUFF_BAR",
@@ -3048,6 +3047,9 @@ Filger_Spells = {
 			-- Arcane Torrent
 			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
 
+			-- Heart of Fear
+			-- Corrosive Resin (Wind Lord Mel'jarak)
+			{spellID = 122064, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mogu'shan Vaults
 			-- Wildfire Spark (Feng the Accursed)
 			{spellID = 116784, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -3386,6 +3388,10 @@ Filger_Spells = {
 
 			-- Drink
 			{spellID = 80167, unitID = "target", caster = "all", filter = "BUFF"},
+
+			-- Heart of Fear
+			-- Impaling Spear (Wind Lord Mel'jarak)
+			{spellID = 122224, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 	},
 }
