@@ -187,7 +187,7 @@ end
 local function StyleButton(button)
 	if button.SetHighlightTexture and not button.hover then
 		local hover = button:CreateTexture(nil, nil, self)
-		hover:SetTexture(1, 1, 1, 0.3)
+		hover:SetTexture(unpack(C.skins.color_theme))
 		hover:SetPoint("TOPLEFT", button, 2, -2)
 		hover:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		button.hover = hover
