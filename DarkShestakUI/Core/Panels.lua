@@ -145,12 +145,16 @@ if C.actionbar.panels == true then
 	bpanel:SetPoint("BOTTOMRIGHT", bottombaranchor, "BOTTOMRIGHT", 3, -3)
 
 	local rpanel = CreateFrame("Frame", nil, rightbaranchor)
-	rpanel:CreatePanel("Default", 0, 0, "CENTER", rightbaranchor, "CENTER")
+	rpanel:SetTemplate("Default", "Shadow")
+	rpanel:SetFrameLevel(1)
+	rpanel:SetFrameStrata("BACKGROUND")
 	rpanel:SetPoint("BOTTOMLEFT", rightbaranchor, "BOTTOMLEFT", -3, -3)
 	rpanel:SetPoint("TOPRIGHT", rightbaranchor, "TOPRIGHT", 3, 3)
 	
 	local ppanel = CreateFrame("Frame", nil, PetActionButton1)
-	ppanel:CreatePanel("Default", 0, 0, "CENTER", petbaranchor, "CENTER")
+	ppanel:SetTemplate("Default", "Shadow")
+	ppanel:SetFrameLevel(1)
+	ppanel:SetFrameStrata("BACKGROUND")
 	ppanel:SetPoint("BOTTOMLEFT", petbaranchor, "BOTTOMLEFT", -3, -3)
 	ppanel:SetPoint("TOPRIGHT", petbaranchor, "TOPRIGHT", 3, 3)
 end
