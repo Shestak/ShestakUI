@@ -23,7 +23,8 @@ T.MOPVersion = function()
 	end
 end
 
-if (T.name == "Занштек" or T.name == "Гранн" or T.name == "Тёми" or T.name == "Палтасар" or T.name == "Ллевалалуз" or T.name == "Сиамад" or T.name == "Квилинир")
+if (T.name == "Занштек" or T.name == "Гранн" or T.name == "Тёми" or T.name == "Палтасар" or T.name == "Ллевалалуз"
+or T.name == "Сиамад" or T.name == "Квилинир" or T.name == "Нариэтта" or T.name == "Белонри")
 and T.realm == "Ясеневый лес" then 
 	T.coauthor = true 
 end

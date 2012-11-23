@@ -149,7 +149,7 @@ if C.actionbar.panels == true then
 	rpanel:SetPoint("BOTTOMLEFT", rightbaranchor, "BOTTOMLEFT", -3, -3)
 	rpanel:SetPoint("TOPRIGHT", rightbaranchor, "TOPRIGHT", 3, 3)
 	
-	local ppanel = CreateFrame("Frame", nil, petbaranchor)
+	local ppanel = CreateFrame("Frame", nil, PetActionButton1)
 	ppanel:CreatePanel("Default", 0, 0, "CENTER", petbaranchor, "CENTER")
 	ppanel:SetPoint("BOTTOMLEFT", petbaranchor, "BOTTOMLEFT", -3, -3)
 	ppanel:SetPoint("TOPRIGHT", petbaranchor, "TOPRIGHT", 3, 3)
