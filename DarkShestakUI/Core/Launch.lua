@@ -189,7 +189,8 @@ local function InstallUI()
 	-- Reset saved variables on char
 	SavedPositions = {}
 	SavedOptionsPerChar = {}
-
+	
+	SavedOptions.Version = "0.60"
 	SavedOptionsPerChar.FogOfWar = false
 	SavedOptionsPerChar.AutoInvite = false
 	SavedOptionsPerChar.Archaeology = false
@@ -204,6 +205,16 @@ end
 local function DisableUI()
 	DisableAddOn("DarkShestakUI")
 	ReloadUI()
+end
+
+local function PerChar(v)
+	if GUIConfigAll then
+		for realm, name in pairs(GUIConfigAll) do
+			for name, value in pairs(GUIConfigAll[realm]) do
+				GUIConfigAll[realm][name] = v
+			end
+		end
+	end
 end
 
 local function SwitchLayout(layout)
@@ -258,6 +269,7 @@ option1:SetPoint("BOTTOM", f, "BOTTOM", 0, 7)
 option1:SetSize(128, 25)
 option1:SetTemplate("Overlay")
 option1:FontString("Text", C.media.normal_font, 12)
+option1.Text:SetTextColor(1, 0.82, 0)
 option1.Text:SetPoint("CENTER")
 option1:HookScript("OnEnter", T.SetModifiedBackdrop)
 option1:HookScript("OnLeave", T.SetOriginalBackdrop)
@@ -267,6 +279,7 @@ option2:SetPoint("LEFT", option1, "RIGHT", 4, 0)
 option2:SetSize(128, 25)
 option2:SetTemplate("Overlay")
 option2:FontString("Text", C.media.normal_font, 12)
+option2.Text:SetTextColor(1, 0.82, 0)
 option2.Text:SetPoint("CENTER")
 option2:HookScript("OnEnter", T.SetModifiedBackdrop)
 option2:HookScript("OnLeave", T.SetOriginalBackdrop)
@@ -276,6 +289,7 @@ option3:SetPoint("RIGHT", option1, "LEFT", -4, 0)
 option3:SetSize(128, 25)
 option3:SetTemplate("Overlay")
 option3:FontString("Text", C.media.normal_font, 12)
+option3.Text:SetTextColor(1, 0.82, 0)
 option3.Text:SetPoint("CENTER")
 option3:HookScript("OnEnter", T.SetModifiedBackdrop)
 option3:HookScript("OnLeave", T.SetOriginalBackdrop)
@@ -285,6 +299,7 @@ option4:SetPoint("LEFT", option2, "RIGHT", 4, 0)
 option4:SetSize(128, 25)
 option4:SetTemplate("Overlay")
 option4:FontString("Text", C.media.normal_font, 12)
+option4.Text:SetTextColor(1, 0.82, 0)
 option4.Text:SetPoint("CENTER")
 option4:HookScript("OnEnter", T.SetModifiedBackdrop)
 option4:HookScript("OnLeave", T.SetOriginalBackdrop)
@@ -397,24 +412,12 @@ local step1 = function()
 
 	option1:SetScript("OnClick", function()
 		SavedOptions.PerChar = false
-		if GUIConfigAll then
-			for realm, name in pairs(GUIConfigAll) do
-				for name, value in pairs(GUIConfigAll[realm]) do
-					GUIConfigAll[realm][name] = false
-				end
-			end
-		end
+		PerChar(false)
 		step2()
 	end)
 	option2:SetScript("OnClick", function()
 		SavedOptions.PerChar = true
-		if GUIConfigAll then
-			for realm, name in pairs(GUIConfigAll) do
-				for name, value in pairs(GUIConfigAll[realm]) do
-					GUIConfigAll[realm][name] = true
-				end
-			end
-		end
+		PerChar(true)
 		step2()
 	end)
 end
@@ -427,7 +430,7 @@ local function Setup()
 	option4:Hide()
 	close:Show()
 	
-	text:SetText(format("%s %q%c", L_INSTALL_WELCOME, L_INSTALL_CONTINUE, 46))
+	text:SetText(L_INSTALL_WELCOME.." \""..L_INSTALL_CONTINUE.."\".")
 	option1.Text:SetText(L_INSTALL_CONTINUE)
 
 	option1:SetScript("OnClick", function()
@@ -435,9 +438,10 @@ local function Setup()
 		if SavedOptions.PerChar == nil then
 			step1()
 		elseif SavedOptions.PerChar == true then
-			if GUIConfigAll then GUIConfigAll[T.realm][T.name] = true end
+			PerChar(true)
 			step2()
 		else
+			PerChar(false)
 			step4()
 		end
 	end)
@@ -514,7 +518,6 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if SavedPositions == nil then SavedPositions = {} end
 	if SavedAddonProfiles == nil then SavedAddonProfiles = {} end
 	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
-	if SavedOptions.Version == nil then SavedOptions.Version = T.version end
 	if SavedOptionsPerChar.FogOfWar == nil then SavedOptionsPerChar.FogOfWar = false end
 	if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
 	if SavedOptionsPerChar.Archaeology == nil then SavedOptionsPerChar.Archaeology = false end
@@ -538,7 +541,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		SetCVar("uiScale", C.general.uiscale)
 
 		-- Install default if we never ran ShestakUI on this character
-		if not SavedOptionsPerChar.Install or SavedOptions.PerChar == nil then
+		if not SavedOptionsPerChar.Install or SavedOptions.Version == nil or tonumber(SavedOptions.Version) < tonumber(T.version) then
 			Setup()
 		end
 		
