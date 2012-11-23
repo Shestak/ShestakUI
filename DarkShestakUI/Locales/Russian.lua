@@ -7,8 +7,8 @@ if T.client ~= "ruRU" then return end
 ----------------------------------------------------------------------------------------
 -- Installation
 L_INSTALL_HEADER = "Dark ShestakUI"
-L_INSTALL_WELCOME = "Добро пожаловать в мастер установки Dark ShestakUI, будет выполнено несколько важных шагов установки. Нажмите"
-L_INSTALL_CONTINUE = "Продолжить"
+L_INSTALL_WELCOME = "Добро пожаловать в мастер установки Dark ShestakUI, будет выполнено несколько важных шагов установки. Нажмите "
+L_INSTALL_CONFIG = "Для более удобной настройки рекомендуется включить Dark ShestakUI Config.\nВ случае отказа будут пропущены некоторые шаги установки."
 L_INSTALL_STEP1 = "Сохранение настроек для:"
 L_INSTALL_STEP1_ACC = "Аккаунта"
 L_INSTALL_STEP1_CHAR = "Персонажа"

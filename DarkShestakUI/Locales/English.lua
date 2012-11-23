@@ -3,8 +3,8 @@
 ----------------------------------------------------------------------------------------
 -- Installation
 L_INSTALL_HEADER = "Dark ShestakUI"
-L_INSTALL_WELCOME = "Welcome to Dark ShestakUI Setup Wizard, will do some important installation steps. Press"
-L_INSTALL_CONTINUE = "Continue"
+L_INSTALL_WELCOME = "Welcome to Dark ShestakUI Setup Wizard, will do some important installation steps. Press "
+L_INSTALL_CONFIG = "For a more comfortable settings recommended turn on Dark ShestakUI Config.\nIf decline will be missed some installation steps."
 L_INSTALL_STEP1 = "Saving settings for:"
 L_INSTALL_STEP1_ACC = "Account"
 L_INSTALL_STEP1_CHAR = "Character"

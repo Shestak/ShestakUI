@@ -422,6 +422,34 @@ local step1 = function()
 	end)
 end
 
+local config = function()
+	close:Hide()
+	option2:Show()
+	
+	option1:ClearAllPoints()
+	option1:SetPoint("BOTTOMRIGHT", f, "BOTTOM", -2, 7)
+	text:SetText(L_INSTALL_CONFIG)
+	
+	option1.Text:SetText(ACCEPT)
+	option2.Text:SetText(DECLINE)
+
+	option1:SetScript("OnClick", function()
+		EnableAddOn("DarkShestakUI_Config")
+		ReloadUI()
+	end)
+	option2:SetScript("OnClick", function()
+		if SavedOptions.PerChar == nil then
+			step1()
+		elseif SavedOptions.PerChar == true then
+			PerChar(true)
+			step2()
+		else
+			PerChar(false)
+			step4()
+		end
+	end)
+end
+
 local function Setup()
 	f:Show()
 	option1:Show()
@@ -430,12 +458,14 @@ local function Setup()
 	option4:Hide()
 	close:Show()
 	
-	text:SetText(L_INSTALL_WELCOME.." \""..L_INSTALL_CONTINUE.."\".")
-	option1.Text:SetText(L_INSTALL_CONTINUE)
+	text:SetText(L_INSTALL_WELCOME.."\""..CONTINUE.."\".")
+	option1.Text:SetText(CONTINUE)
 
 	option1:SetScript("OnClick", function()
 		InstallUI()
-		if SavedOptions.PerChar == nil then
+		if not IsAddOnLoaded("DarkShestakUI_Config") then
+			config()
+		elseif SavedOptions.PerChar == nil then
 			step1()
 		elseif SavedOptions.PerChar == true then
 			PerChar(true)
