@@ -132,6 +132,7 @@ if T.oz == true then
 	C["aura"].fot_debuffs = true
 	C["aura"].pet_debuffs = true
 	C["aura"].tot_debuffs = true
+	C["unitframe"].own_color = true
 	C["unitframe"].alternative_portraits = true
 	C["unitframe"].plugins_fader = true
 	C["raidframe"].raid_tanks_tt = true
@@ -358,7 +359,6 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["aura"].player_buff_size = 35	
 	C["aura"].pet_debuffs = true
 	C["aura"].player_aura_only = true
-	C["unitframe"].own_color = false
 	C["unitframe"].portrait_enable = true
 end
 

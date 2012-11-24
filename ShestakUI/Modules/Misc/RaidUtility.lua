@@ -6,7 +6,7 @@ if C.misc.raid_tools ~= true then return end
 ----------------------------------------------------------------------------------------
 -- Create main frame
 local RaidUtilityPanel = CreateFrame("Frame", "RaidUtilityPanel", oUF_PetBattleFrameHider)
-RaidUtilityPanel:CreatePanel("Transparent", 297, 145, unpack(C.position.raid_utility))
+RaidUtilityPanel:CreatePanel("Transparent", 210, 145, unpack(C.position.raid_utility))
 
 if GetCVarBool("watchFrameWidth") then
 	RaidUtilityPanel:SetPoint(C.position.raid_utility[1], C.position.raid_utility[2], C.position.raid_utility[3], C.position.raid_utility[4] + 100, C.position.raid_utility[5])
