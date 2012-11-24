@@ -1143,6 +1143,8 @@ Filger_Spells = {
 			IconSize = 37,
 			Position = {unpack(Filger_Positions.target_debuff_icon)},
 
+			-- Heavy Stagger
+			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF"},
 			-- Dizzying Haze
 			{spellID = 116330, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Breath of Fire
