@@ -35,7 +35,7 @@ for i = 1, 12 do
 	else
 		if i == 1 then
 			if C.actionbar.rightbars < 3 then
-				b:SetPoint("BOTTOM", ActionButton1, "TOP", 0, C.actionbar.button_size + (C.actionbar.button_space * 2))
+				b:SetPoint("TOPLEFT", Bar1Holder, 0, 0)
 			else
 				b:SetPoint("TOPLEFT", RightActionBarAnchor, "TOPLEFT", 0, 0)
 			end

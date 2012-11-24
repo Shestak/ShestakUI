@@ -56,6 +56,10 @@ local function DropDown_Init()
 			info.notCheckable = 1
 			info.text, _, info.icon = GetSpellInfo(spellId)
 			info.arg1 = spellId
+			info.tCoordLeft = 0.1
+			info.tCoordRight = 0.9
+			info.tCoordTop = 0.1
+			info.tCoordBottom = 0.9
 			info.func = DropDown_OnClick
 			UIDropDownMenu_AddButton(info)
 		end
