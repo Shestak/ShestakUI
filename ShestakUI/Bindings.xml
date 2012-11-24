@@ -1,24 +1,24 @@
 ﻿<Bindings>
 	<Binding name="RW_MESSAGE" header="CHATKEY">
-		ChatKey_Chat("/rw ")
+		ChatKey_Chat("/rw")
 	</Binding>
 	<Binding name="RAID_MESSAGE">
-		ChatKey_Chat("/ra ")
+		ChatKey_Chat("/ra")
 	</Binding>
 	<Binding name="GUILD_MESSAGE">
-		ChatKey_Chat("/g ")
+		ChatKey_Chat("/g")
 	</Binding>
 	<Binding name="PARTY_MESSAGE">
-		ChatKey_Chat("/p ")
+		ChatKey_Chat("/p")
 	</Binding>
 	<Binding name="BG_MESSAGE">
-		ChatKey_Chat("/bg ")
+		ChatKey_Chat("/bg")
 	</Binding>
 	<Binding name="TARGET_MESSAGE">
 		ChatKey_Chat("/tt ")
 	</Binding>
 	<Binding name="SAY_MESSAGE">
-		ChatKey_Chat("/s ")
+		ChatKey_Chat("/s")
 	</Binding>
 	<Binding name="TAR_MARK_1" header="TAR_MARK_HEADER">
 		if UnitExists("mouseover") then SetRaidTarget("mouseover", 1) else SetRaidTarget("target", 1) end
