@@ -265,7 +265,9 @@ SLASH_CLEAR_CHAT2 = "/сдуфк"
 ----------------------------------------------------------------------------------------
 SlashCmdList.TEST_ACHIEVEMENT = function()
 	PlaySound("LFG_Rewards")
-	AchievementFrame_LoadUI()
+	if not AchievementFrame then
+		AchievementFrame_LoadUI()
+	end
 	AchievementAlertFrame_ShowAlert(4912)
 	AchievementAlertFrame_ShowAlert(6193)
 	GuildChallengeAlertFrame_ShowAlert(3, 2, 5)
