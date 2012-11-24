@@ -20,49 +20,49 @@ function cbar:SW(button)
 	if button == "RightButton" then
 		ChatFrame_OpenChat("/w ", SELECTED_DOCK_FRAME)
 	elseif button == "MiddleButton" then
-		ChatFrame_OpenChat("/y ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/y", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/s ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/s", SELECTED_DOCK_FRAME)
 	end
 end
 
 function cbar:GO(button)
 	if button == "RightButton" then
-		ChatFrame_OpenChat("/o ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/o", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/g ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/g", SELECTED_DOCK_FRAME)
 	end
 end
 
 function cbar:RP(button)
 	if button == "RightButton" then
-		ChatFrame_OpenChat("/bg ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/bg", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/p ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/p", SELECTED_DOCK_FRAME)
 	end
 end
 
 function cbar:GT(button)
 	if button == "RightButton" then
-		ChatFrame_OpenChat("/2 ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/2", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/1 ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/1", SELECTED_DOCK_FRAME)
 	end
 end
 
 function cbar:LG(button)
 	if button == "RightButton" then
-		ChatFrame_OpenChat("/4 ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/4", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/3 ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/3", SELECTED_DOCK_FRAME)
 	end
 end
 
 function cbar:YR(button)
 	if button == "RightButton" then
-		ChatFrame_OpenChat("/rw ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/rw", SELECTED_DOCK_FRAME)
 	else
-		ChatFrame_OpenChat("/raid ", SELECTED_DOCK_FRAME)
+		ChatFrame_OpenChat("/ra", SELECTED_DOCK_FRAME)
 	end
 end
 
