@@ -460,6 +460,7 @@ if T.coauthor == true then
 	C["automation"].accept_quest = true
 	C["automation"].auto_role = true
 	C["automation"].cancel_bad_buffs = true
+	C["skins"].dbm = true
 	C["skins"].clique = true
 	C["skins"].atlasloot = true
 	C["skins"].npcscan = true
