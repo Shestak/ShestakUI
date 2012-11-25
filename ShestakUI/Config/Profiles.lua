@@ -114,8 +114,8 @@ if T.oz == true then
 	C["position"].unitframes.pet = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 379, 75}
 	C["position"].unitframes.focus = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 379, 238}
 	C["position"].unitframes.focus_target = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 379, 166}
-	C["position"].unitframes.party_heal = {"BOTTOM", UIParent, "BOTTOM", -235, 253}
-	C["position"].unitframes.raid_heal = {"BOTTOM", UIParent, "BOTTOM", -235, 95}
+	C["position"].unitframes.party_heal = {"TOPLEFT", "oUF_Player", "BOTTOMRIGHT", -374, -99}
+	C["position"].unitframes.raid_heal = {"TOPLEFT", "oUF_Player", "BOTTOMRIGHT", -374, -99}
 	C["position"].unitframes.player_castbar = {"CENTER", UIParent, "CENTER", 0, -202}
 	C["position"].unitframes.target_castbar = {"CENTER", UIParent, "CENTER", 11, -179}
 	C["media"].border_color = {0.1, 0.1, 0.1, 1}
