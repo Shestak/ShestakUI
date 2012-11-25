@@ -112,9 +112,9 @@ local function CreateButton()
 	end)
 end
 
-local function OnEvent(self, event, arg1)
+local function OnEvent(self, event, addon)
 	if event == "ADDON_LOADED" then
-		if arg1 == "Blizzard_TradeSkillUI" then
+		if addon == "Blizzard_TradeSkillUI" then
 			CreateButton()
 			TradeSkillFrame:HookScript("OnHide", function()
 				TradeSkillClearButton:Hide()
