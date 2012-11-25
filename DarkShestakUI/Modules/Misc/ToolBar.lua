@@ -4,22 +4,20 @@ if C.chat.enable ~= true or C.chat.tool_bar ~= true then return end
 ----------------------------------------------------------------------------------------
 --	ToolBar(by m2jest1c for Dark ShestakUI)
 ----------------------------------------------------------------------------------------
-local damagemeter = false
-
-local tbar = CreateFrame("Frame", "ToolBar", UIParent)
-tbar:CreatePanel("Invisible", 16, C.chat.background and C.chat.height + 5 or C.chat.height + 1, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -2, C.chat.background and 25 or 20)
+local frame = CreateFrame("Frame", "ToolBar", UIParent)
+frame:CreatePanel("Invisible", 16, C.chat.background and C.chat.height + 5 or C.chat.height + 1, "BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -2, C.chat.background and 25 or 20)
 if C.chat.tool_bar_mouseover == true then
-	tbar:SetAlpha(0)
-	tbar:SetScript("OnEnter", function()
-		tbar:FadeIn()
+	frame:SetAlpha(0)
+	frame:SetScript("OnEnter", function()
+		frame:FadeIn()
 	end)
-	tbar:SetScript("OnLeave", function()
-		tbar:FadeOut()
+	frame:SetScript("OnLeave", function()
+		frame:FadeOut()
 	end)
 end
 
-local lb = CreateFrame("Button", nil, tbar)
-lb:CreatePanel("Transparent", 16, 16, "BOTTOM", tbar, "BOTTOM", 0, 0)
+local lb = CreateFrame("Button", "$parentLootButton", frame)
+lb:CreatePanel("Transparent", 16, 16, "BOTTOM", frame, "BOTTOM", 0, 0)
 lb:SetBackdropBorderColor(0.3, 0.3, 0.9)
 lb.t = lb:CreateTexture(nil, "ARTWORK")
 lb.t:SetTexture(C.media.blank)
@@ -27,7 +25,7 @@ lb.t:SetVertexColor(1, 0.82, 0, 1)
 lb.t:SetPoint("TOPLEFT", lb, "TOPLEFT", 2, -2)
 lb.t:SetPoint("BOTTOMRIGHT", lb, "BOTTOMRIGHT", -2, 2)
 
-local db = CreateFrame("Button", nil, tbar)
+local db = CreateFrame("Button", "$parentDamageButton", frame)
 db:CreatePanel("Transparent", 16, 16, "BOTTOM", lb, "TOP", 0, C.chat.background and 4 or 3)
 db:SetBackdropBorderColor(0.9, 0.1, 0.1)
 db.t = db:CreateTexture(nil, "ARTWORK")
@@ -36,7 +34,7 @@ db.t:SetVertexColor(1, 0.82, 0, 1)
 db.t:SetPoint("TOPLEFT", db, "TOPLEFT", 2, -2)
 db.t:SetPoint("BOTTOMRIGHT", db, "BOTTOMRIGHT", -2, 2)
 
-local cb = CreateFrame("Button", nil, tbar)
+local cb = CreateFrame("Button", "$parentCombatLogButton", frame)
 cb:CreatePanel("Transparent", 16, 16, "BOTTOM", db, "TOP", 0, C.chat.background and 4 or 3)
 cb:SetBackdropBorderColor(0.3, 0.9, 0.3)
 cb.t = cb:CreateTexture(nil, "ARTWORK")
@@ -44,6 +42,8 @@ cb.t:SetTexture(C.media.blank)
 cb.t:SetVertexColor(1, 0.82, 0, 1)
 cb.t:SetPoint("TOPLEFT", cb, "TOPLEFT", 2, -2)
 cb.t:SetPoint("BOTTOMRIGHT", cb, "BOTTOMRIGHT", -2, 2)
+
+local damagemeter = false
 
 local LootShow = function()
 	ChatFrame3:ClearAllPoints()
@@ -141,8 +141,8 @@ cb:SetScript("OnMouseUp", function()
 	SlashCmdList.COMBATLOG()
 end)
 
-tbar:RegisterEvent("PLAYER_ENTERING_WORLD")
-tbar:HookScript("OnEvent", function(self, event)
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:HookScript("OnEvent", function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
 		self:UnregisterEvent(event)
 		if LoggingCombat() then
