@@ -4,80 +4,40 @@ if C.chat.enable ~= true or C.chat.chat_bar ~= true then return end
 ----------------------------------------------------------------------------------------
 --	ChatBar(FavChatBar by Favorit)
 ----------------------------------------------------------------------------------------
-local cbar = CreateFrame("Frame", "ChatBar", UIParent)
-cbar:CreatePanel("Invisible", 16, C.chat.background and C.chat.height + 5 or C.chat.height + 1, "BOTTOMLEFT", UIParent, "BOTTOMLEFT", 2, C.chat.background and 23 or 18)
+local frame = CreateFrame("Frame", "ChatBar", UIParent)
+frame:CreatePanel("Invisible", 16, C.chat.background and C.chat.height + 4 or C.chat.height - 1, "BOTTOMLEFT", UIParent, "BOTTOMLEFT", 2, C.chat.background and 24 or 20)
 if C.chat.chat_bar_mouseover == true then
-	cbar:SetAlpha(0)
-	cbar:SetScript("OnEnter", function()
-		cbar:FadeIn()
+	frame:SetAlpha(0)
+	frame:SetScript("OnEnter", function()
+		frame:FadeIn()
 	end)
-	cbar:SetScript("OnLeave", function()
-		cbar:FadeOut()
+	frame:SetScript("OnLeave", function()
+		frame:FadeOut()
 	end)
 end
 
-function cbar:SW(button)
-	if button == "RightButton" then
-		ChatFrame_OpenChat("/w ", SELECTED_DOCK_FRAME)
-	elseif button == "MiddleButton" then
-		ChatFrame_OpenChat("/y", SELECTED_DOCK_FRAME)
-	else
-		ChatFrame_OpenChat("/s", SELECTED_DOCK_FRAME)
-	end
-end
-
-function cbar:GO(button)
-	if button == "RightButton" then
-		ChatFrame_OpenChat("/o", SELECTED_DOCK_FRAME)
-	else
-		ChatFrame_OpenChat("/g", SELECTED_DOCK_FRAME)
-	end
-end
-
-function cbar:RP(button)
-	if button == "RightButton" then
-		ChatFrame_OpenChat("/bg", SELECTED_DOCK_FRAME)
-	else
-		ChatFrame_OpenChat("/p", SELECTED_DOCK_FRAME)
-	end
-end
-
-function cbar:GT(button)
-	if button == "RightButton" then
-		ChatFrame_OpenChat("/2", SELECTED_DOCK_FRAME)
-	else
-		ChatFrame_OpenChat("/1", SELECTED_DOCK_FRAME)
-	end
-end
-
-function cbar:LG(button)
-	if button == "RightButton" then
-		ChatFrame_OpenChat("/4", SELECTED_DOCK_FRAME)
-	else
-		ChatFrame_OpenChat("/3", SELECTED_DOCK_FRAME)
-	end
-end
-
-function cbar:YR(button)
-	if button == "RightButton" then
-		ChatFrame_OpenChat("/rw", SELECTED_DOCK_FRAME)
-	else
-		ChatFrame_OpenChat("/ra", SELECTED_DOCK_FRAME)
-	end
-end
-
-local function CreateButton(b, f)
+local function CreateButton(b, l, r, m)
 	b:SetWidth(16)
 	b:SetHeight(16)
 	b:SetTemplate("Default")
+
 	b:RegisterForClicks("AnyUp")
-	b:SetScript("OnClick", f)
+	b:SetScript("OnClick", function(self, b)
+		if b == "LeftButton" then
+			ChatFrame_OpenChat(l, SELECTED_DOCK_FRAME)
+		elseif b == "RightButton" then
+			ChatFrame_OpenChat(r, SELECTED_DOCK_FRAME)
+		elseif m and b == "MiddleButton" then
+			ChatFrame_OpenChat(m, SELECTED_DOCK_FRAME)
+		end
+	end)
+
 	if C.chat.chat_bar_mouseover == true then
 		b:SetScript("OnEnter", function()
-			cbar:FadeIn()
+			frame:FadeIn()
 		end)
 		b:SetScript("OnLeave", function()
-			cbar:FadeOut()
+			frame:FadeOut()
 		end)
 	end
 
@@ -87,38 +47,38 @@ local function CreateButton(b, f)
 	b.t:SetPoint("BOTTOMRIGHT", b, "BOTTOMRIGHT", -2, 2)
 end
 
-local sw = CreateFrame("Button", "sw", ChatBar)
-CreateButton(sw, cbar.SW)
-sw:SetPoint("TOP", ChatBar, "TOP", 0, 0)
-sw:SetBackdropBorderColor(0.7, 0.33, 0.82, 1)
-sw.t:SetVertexColor(0.8, 0.8, 0.8, 1)
+local b1 = CreateFrame("Button", "$parentButton1", frame)
+CreateButton(b1, "/s", "/w ", "/y")
+b1:SetPoint("TOP", frame, "TOP", 0, 0)
+b1:SetBackdropBorderColor(0.7, 0.33, 0.82, 1)
+b1.t:SetVertexColor(0.8, 0.8, 0.8, 1)
 
-local go = CreateFrame("Button", "go", ChatBar)
-CreateButton(go, cbar.GO)
-go:SetPoint("TOP", sw, "BOTTOM", 0, C.chat.background and -4 or -3)
-go:SetBackdropBorderColor(0, 0.54, 0, 1)
-go.t:SetVertexColor(0, 0.8, 0, 1)
+local b2 = CreateFrame("Button", "$parentButton2", frame)
+CreateButton(b2, "/g", "/o")
+b2:SetPoint("TOP", b1, "BOTTOM", 0, C.chat.background and -4 or -3)
+b2:SetBackdropBorderColor(0, 0.54, 0, 1)
+b2.t:SetVertexColor(0, 0.8, 0, 1)
 
-local rp = CreateFrame("Button", "rp", ChatBar)
-CreateButton(rp, cbar.RP)
-rp:SetPoint("TOP", go, "BOTTOM", 0, C.chat.background and -4 or -3)
-rp:SetBackdropBorderColor(0.8, 0.4, 0.1, 1)
-rp.t:SetVertexColor(0.11, 0.5, 0.7, 1)
+local b3 = CreateFrame("Button", "$parentButton3", frame)
+CreateButton(b3, "/p", "/bg")
+b3:SetPoint("TOP", b2, "BOTTOM", 0, C.chat.background and -4 or -3)
+b3:SetBackdropBorderColor(0.8, 0.4, 0.1, 1)
+b3.t:SetVertexColor(0.11, 0.5, 0.7, 1)
 
-local yr = CreateFrame("Button", "yr", ChatBar)
-CreateButton(yr, cbar.YR)
-yr:SetPoint("TOP", rp, "BOTTOM", 0, C.chat.background and -4 or -3)
-yr:SetBackdropBorderColor(0.96, 0.2, 0.2, 1)
-yr.t:SetVertexColor(1, 0.3, 0, 1)
+local b4 = CreateFrame("Button", "$parentButton4", frame)
+CreateButton(b4, "/ra", "/rw")
+b4:SetPoint("TOP", b3, "BOTTOM", 0, C.chat.background and -4 or -3)
+b4:SetBackdropBorderColor(0.96, 0.2, 0.2, 1)
+b4.t:SetVertexColor(1, 0.3, 0, 1)
 
-local gt = CreateFrame("Button", "gt", ChatBar)
-CreateButton(gt, cbar.GT)
-gt:SetPoint("TOP", yr, "BOTTOM", 0, C.chat.background and -4 or -3)
-gt:SetBackdropBorderColor(0.7, 0.7, 0, 1)
-gt.t:SetVertexColor(0.93, 0.8, 0.8, 1)
+local b5 = CreateFrame("Button", "$parentButton5", frame)
+CreateButton(b5, "/1", "/2")
+b5:SetPoint("TOP", b4, "BOTTOM", 0, C.chat.background and -4 or -3)
+b5:SetBackdropBorderColor(0.7, 0.7, 0, 1)
+b5.t:SetVertexColor(0.93, 0.8, 0.8, 1)
 
-local lg = CreateFrame("Button", "lg", ChatBar)
-CreateButton(lg, cbar.LG)
-lg:SetPoint("TOP", gt, "BOTTOM", 0, C.chat.background and -4 or -3)
-lg:SetBackdropBorderColor(0.5, 1, 0.83, 1)
-lg.t:SetVertexColor(1, 0.75, 0.75, 1)
+local b6 = CreateFrame("Button", "$parentButton6", frame)
+CreateButton(b6, "/3", "/4")
+b6:SetPoint("TOP", b5, "BOTTOM", 0, C.chat.background and -4 or -3)
+b6:SetBackdropBorderColor(0.5, 1, 0.83, 1)
+b6.t:SetVertexColor(1, 0.75, 0.75, 1)
