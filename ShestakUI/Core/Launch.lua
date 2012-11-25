@@ -34,7 +34,6 @@ local function InstallUI()
 	SetCVar("autoOpenLootHistory", 0)
 
 	if T.author == true then
-		SetCVar("taintLog", 1)
 		SetCVar("scriptErrors", 1)
 		SetCVar("interactOnLeftClick", 0)
 		SetCVar("displayWorldPVPObjectives", 2)
@@ -322,28 +321,6 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		print("|cffffff00"..L_WELCOME_LINE_1..T.version.." "..T.client..", "..T.name..".|r")
 		print("|cffffff00"..L_WELCOME_LINE_2_1.." |cffffff00"..L_WELCOME_LINE_2_2)
 		print("|cffffff00"..L_WELCOME_LINE_3)
-	end
-
-	-- Fix Blizzard UIDROPDOWNMENU_MENU_LEVEL error
-	function UIDropDownMenu_ClearAll(frame)
-		frame.selectedID = nil
-		frame.selectedName = nil
-		frame.selectedValue = nil
-		UIDropDownMenu_SetText(frame, "")
-
-		local button, checkImage, uncheckImage
-		for i = 1, UIDROPDOWNMENU_MAXBUTTONS do
-			local level = UIDROPDOWNMENU_MENU_LEVEL
-			if level then
-				button = _G["DropDownList"..UIDROPDOWNMENU_MENU_LEVEL.."Button"..i]
-				button:UnlockHighlight()
-
-				checkImage = _G["DropDownList"..UIDROPDOWNMENU_MENU_LEVEL.."Button"..i.."Check"]
-				checkImage:Hide()
-				uncheckImage = _G["DropDownList"..UIDROPDOWNMENU_MENU_LEVEL.."Button"..i.."UnCheck"]
-				uncheckImage:Hide()
-			end
-		end
 	end
 end)
 
