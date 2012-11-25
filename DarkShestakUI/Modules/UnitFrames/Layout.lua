@@ -801,6 +801,7 @@ local function Shared(self, unit)
 			self.Castbar.Time:SetPoint("CENTER", self.Castbar.Icon, "CENTER", 0, 0)
 			self.Castbar.Time:SetTextColor(1, 1, 1)
 			self.Castbar.CustomTimeText = T.CustomCastTimeText
+			self.Castbar.CustomDelayText = T.CustomCastDelayText
 		end
 
 		if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
