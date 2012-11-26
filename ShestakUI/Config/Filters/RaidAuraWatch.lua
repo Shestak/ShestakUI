@@ -108,7 +108,7 @@ T.RaidDebuffs = {
 	[SpellName(122835)] = 3,	-- Pheromones
 	[SpellName(123081)] = 3,	-- Pungency
 	-- Wind Lord Mel'jarak
-	[SpellName(129078)] = 3,	-- Amber Prison
+	[SpellName(129078)] = 4,	-- Amber Prison
 	[SpellName(122055)] = 3,	-- Residue
 	[SpellName(122064)] = 3,	-- Corrosive Resin
 	-- Amber-Shaper Un'sok
@@ -133,7 +133,7 @@ T.RaidDebuffs = {
 	[SpellName(116417)] = 3,	-- Arcane Resonance
 	[SpellName(131792)] = 3,	-- Shadowburn
 	-- Gara'jal the Spiritbinder
-	[SpellName(122151)] = 3,	-- Voodoo Doll
+	[SpellName(122151)] = 4,	-- Voodoo Doll
 	[SpellName(116161)] = 3,	-- Crossed Over
 	[SpellName(117723)] = 3,	-- Frail Soul
 	-- The Spirit Kings
