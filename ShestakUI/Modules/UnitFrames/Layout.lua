@@ -786,7 +786,7 @@ local function Shared(self, unit)
 		else
 			self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", self)
 		end
-		self.Castbar:SetStatusBarTexture(C.media.texture, "OVERLAY")
+		self.Castbar:SetStatusBarTexture(C.media.texture, "ARTWORK")
 
 		self.Castbar.bg = self.Castbar:CreateTexture(nil, "BORDER")
 		self.Castbar.bg:SetAllPoints()
@@ -855,6 +855,7 @@ local function Shared(self, unit)
 			self.Castbar.Time:SetPoint("CENTER", self.Castbar.Icon, "CENTER", 0, 0)
 			self.Castbar.Time:SetTextColor(1, 1, 1)
 			self.Castbar.CustomTimeText = T.CustomCastTimeText
+			self.Castbar.CustomDelayText = T.CustomCastDelayText
 		end
 
 		if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
@@ -911,7 +912,7 @@ local function Shared(self, unit)
 			end
 
 			if unit == "player" and C.unitframe.castbar_latency == true then
-				self.Castbar.SafeZone = self.Castbar:CreateTexture(nil, "ARTWORK")
+				self.Castbar.SafeZone = self.Castbar:CreateTexture(nil, "BORDER")
 				self.Castbar.SafeZone:SetTexture(C.media.texture)
 				self.Castbar.SafeZone:SetVertexColor(0.69, 0.31, 0.31)
 

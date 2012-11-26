@@ -525,7 +525,7 @@ C["raidframe"] = {
 ----------------------------------------------------------------------------------------
 C["toppanel"] = {
 	["enable"] = false,							-- Enable top panel
-	["mouseover"] = true,						-- Top panel on mouseover
+	["mouseover"] = false,						-- Top panel on mouseover
 	["height"] = 55,							-- Panel height
 	["width"] = 250,							-- Panel width
 }
