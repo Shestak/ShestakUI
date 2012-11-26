@@ -232,7 +232,7 @@ local Update = function(self, event, unit)
 			end
 
 			local prio = rd.Debuffs and rd.Debuffs[rd.MatchBySpellName and name or spellId]
-			if not T.RaidDebuffsBlack[spellId] and prio and (prio > rd.priority) then
+			if not T.RaidDebuffsIgnore[spellId] and prio and (prio > rd.priority) then
 				rd.priority = prio
 				rd.index = i
 				rd.type = "Custom"

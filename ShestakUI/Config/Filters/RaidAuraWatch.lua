@@ -70,7 +70,7 @@ T.RaidBuffs = {
 	},
 }
 
-T.RaidBuffsBlack = {
+T.RaidBuffsIgnore = {
 	[65148] = true,		-- Sacred Shield (Proc)
 }
 
@@ -226,6 +226,6 @@ T.RaidDebuffsReverse = {
 	--[spellID] = true,			-- Spell name
 }
 
-T.RaidDebuffsBlack = {
+T.RaidDebuffsIgnore = {
 	--[spellID] = true,			-- Spell name
 }
