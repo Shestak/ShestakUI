@@ -214,7 +214,7 @@ local Update = function(self, event, unit)
 
 			if rd.ShowDispellableDebuff and debuffType then
 				local disPrio = rd.DispellPriority or DispellPriority
-				local disFilter = rd.DispelFilter or DispellFilter
+				local disFilter = rd.DispellFilter or DispellFilter
 				local prio
 
 				if rd.FilterDispellableDebuff and disFilter then
