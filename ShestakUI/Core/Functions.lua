@@ -478,7 +478,7 @@ T.SpawnMenu = function(self)
 end
 
 T.SetFontString = function(parent, fontName, fontHeight, fontStyle)
-	local fs = parent:CreateFontString(nil, "OVERLAY")
+	local fs = parent:CreateFontString(nil, "ARTWORK")
 	fs:SetFont(fontName, fontHeight, fontStyle)
 	fs:SetShadowOffset(C.font.unit_frames_font_shadow and 1 or 0, C.font.unit_frames_font_shadow and -1 or 0)
 	return fs
