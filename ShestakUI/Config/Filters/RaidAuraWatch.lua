@@ -132,9 +132,10 @@ T.RaidDebuffs = {
 	[SpellName(131788)] = 3,	-- Lightning Lash
 	[SpellName(116942)] = 3,	-- Flaming Spear
 	[SpellName(131790)] = 3,	-- Arcane Shock
+	[SpellName(131792)] = 3,	-- Shadowburn
+	[SpellName(116374)] = 3,	-- Lightning Charge
 	[SpellName(116784)] = 3,	-- Wildfire Spark
 	[SpellName(116417)] = 3,	-- Arcane Resonance
-	[SpellName(131792)] = 3,	-- Shadowburn
 	-- Gara'jal the Spiritbinder
 	[SpellName(122151)] = 4,	-- Voodoo Doll
 	[SpellName(116161)] = 3,	-- Crossed Over
