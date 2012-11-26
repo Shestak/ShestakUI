@@ -7,7 +7,7 @@ if C.raidframe.plugins_aura_watch ~= true then return end
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 -- Class buffs
-T.buffids = {
+T.RaidBuffs = {
 	DRUID = {
 		{774, "TOPRIGHT", {0.8, 0.4, 0.8}},						-- Rejuvenation
 		{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},					-- Regrowth
@@ -69,6 +69,10 @@ T.buffids = {
 		{23335, "LEFT", {0, 0, 1}, true},						-- Warsong flag, Alliance
 		{34976, "LEFT", {1, 0, 0}, true}, 						-- Netherstorm Flag
 	},
+}
+
+T.RaidBuffsBlack = {
+	[65148] = true,		-- Sacred Shield Proc
 }
 
 local function SpellName(id)

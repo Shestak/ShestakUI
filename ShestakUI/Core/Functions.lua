@@ -1384,14 +1384,14 @@ T.CreateAuraWatch = function(self, unit)
 
 	local buffs = {}
 
-	if T.buffids["ALL"] then
-		for key, value in pairs(T.buffids["ALL"]) do
+	if T.RaidBuffs["ALL"] then
+		for key, value in pairs(T.RaidBuffs["ALL"]) do
 			tinsert(buffs, value)
 		end
 	end
 
-	if T.buffids[T.class] then
-		for key, value in pairs(T.buffids[T.class]) do
+	if T.RaidBuffs[T.class] then
+		for key, value in pairs(T.RaidBuffs[T.class]) do
 			tinsert(buffs, value)
 		end
 	end
