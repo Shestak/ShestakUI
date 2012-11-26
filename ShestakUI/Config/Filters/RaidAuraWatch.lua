@@ -24,7 +24,7 @@ T.RaidBuffs = {
 	},
 	PALADIN = {
 		{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},					-- Beacon of Light
-		{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}, false, true},	-- Sacred Shield
+		{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},					-- Sacred Shield
 		{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},				-- Eternal Flame
 		{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},				-- Hand of Protection
 		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},			-- Hand of Freedom
