@@ -101,6 +101,8 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Sha of Fear
 			SpellName(119985),	-- Dread Spray
 			SpellName(119086),	-- Penetrating Bolt
+			SpellName(120669),	-- Naked and Afraid
+			SpellName(120629),	-- Huddle in Terror
 		-- Heart of Fear
 			-- Imperial Vizier Zor'lok
 			SpellName(122761),	-- Exhale
