@@ -96,8 +96,11 @@ if C.raidframe.plugins_aura_watch == true then
 			-- Tsulong
 			SpellName(122752),	-- Shadow Breath
 			SpellName(123011),	-- Terrorize
+			SpellName(122777),	-- Nightmares
+			SpellName(123036),	-- Fright
 			-- Lei Shi
 			SpellName(123121),	-- Spray
+			SpellName(123705),	-- Scary Fog
 			-- Sha of Fear
 			SpellName(119985),	-- Dread Spray
 			SpellName(119086),	-- Penetrating Bolt
