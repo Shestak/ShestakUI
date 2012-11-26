@@ -6,7 +6,6 @@ if C.raidframe.plugins_aura_watch ~= true then return end
 --	Example: Weakened Soul -> http://www.wowhead.com/spell=6788
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
--- Class buffs
 T.RaidBuffs = {
 	DRUID = {
 		{774, "TOPRIGHT", {0.8, 0.4, 0.8}},					-- Rejuvenation
@@ -72,7 +71,7 @@ T.RaidBuffs = {
 }
 
 T.RaidBuffsBlack = {
-	[65148] = true,		-- Sacred Shield Proc
+	[65148] = true,		-- Sacred Shield (Proc)
 }
 
 local function SpellName(id)
@@ -196,7 +195,7 @@ T.RaidDebuffs = {
 	-- Priest
 	[SpellName(605)] = 3,		-- Dominate Mind
 	[SpellName(8122)] = 3,		-- Psychic Scream
-	[SpellName(113792)] = 3,		-- Psychic Terror
+	[SpellName(113792)] = 3,	-- Psychic Terror
 	[SpellName(64044)] = 3,		-- Psychic Horror
 	[SpellName(15487)] = 3,		-- Silence
 	-- Rogue
@@ -223,9 +222,9 @@ T.RaidDebuffs = {
 }
 
 T.RaidDebuffsReverse = {
-	--[spellID] = true,			-- 
+	--[spellID] = true,			-- Spell name
 }
 
 T.RaidDebuffsBlack = {
-	--[spellID] = true,			-- 
+	--[spellID] = true,			-- Spell name
 }
