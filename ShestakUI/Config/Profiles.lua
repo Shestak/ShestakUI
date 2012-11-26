@@ -80,7 +80,6 @@ if T.author == true then
 	C["unitframe_class_bar"].vengeance = false
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["stats"].fps = false
-	C["toppanel"].enable = false
 	if T.level == MAX_PLAYER_LEVEL then
 		C["stats"].experience = false
 		C["combattext"].heal_treshold = 500
