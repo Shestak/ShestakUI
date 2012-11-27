@@ -169,7 +169,7 @@ T.RaidDebuffs = {
 	-- Druid
 	[SpellName(33786)] = 3,		-- Cyclone
 	[SpellName(2637)] = 3,		-- Hibernate
-	[SpellName(339)] = 3,		-- Entangling Roots
+	[SpellName(339)] = 2,		-- Entangling Roots
 	[SpellName(78675)] = 3,		-- Solar Beam
 	-- Hunter
 	[SpellName(3355)] = 3,		-- Freezing Trap
@@ -184,8 +184,8 @@ T.RaidDebuffs = {
 	[SpellName(61305)] = 3,		-- Polymorph
 	[SpellName(102051)] = 3,	-- Frostjaw
 	[SpellName(55021)] = 3,		-- Improved Counterspell
-	[SpellName(122)] = 3,		-- Frost Nova
-	[SpellName(111340)] = 3,	-- Ice Ward
+	[SpellName(122)] = 2,		-- Frost Nova
+	[SpellName(111340)] = 2,	-- Ice Ward
 	-- Monk
 	[SpellName(115078)] = 3,	-- Paralysis
 	-- Paladin
@@ -200,15 +200,13 @@ T.RaidDebuffs = {
 	[SpellName(64044)] = 3,		-- Psychic Horror
 	[SpellName(15487)] = 3,		-- Silence
 	-- Rogue
+	[SpellName(6770)] = 3,		-- Sap
 	[SpellName(2094)] = 3,		-- Blind
 	[SpellName(1776)] = 3,		-- Gouge
-	[SpellName(6770)] = 3,		-- Sap
 	-- Shaman
 	[SpellName(51514)] = 3,		-- Hex
 	[SpellName(118905)] = 3,	-- Static Charge
-	[SpellName(3600)] = 3,		-- Earthbind
-	[SpellName(8056)] = 3,		-- Frost Shock
-	[SpellName(63685)] = 3,		-- Freeze
+	[SpellName(63685)] = 2,		-- Freeze
 	-- Warlock
 	[SpellName(118699)] = 3,	-- Fear
 	[SpellName(104045)] = 3,	-- Sleep
