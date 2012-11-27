@@ -724,7 +724,7 @@ local function Shared(self, unit)
 
 	if C.unitframe.unit_castbar == true and unit ~= "arenatarget" then
 		self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", self)
-		self.Castbar:SetStatusBarTexture(C.media.texture, "OVERLAY")
+		self.Castbar:SetStatusBarTexture(C.media.texture, "ARTWORK")
 
 		self.Castbar.bg = self.Castbar:CreateTexture(nil, "BORDER")
 		self.Castbar.bg:SetAllPoints()
@@ -858,7 +858,7 @@ local function Shared(self, unit)
 			end
 
 			if unit == "player" and C.unitframe.castbar_latency == true then
-				self.Castbar.SafeZone = self.Castbar:CreateTexture(nil, "ARTWORK")
+				self.Castbar.SafeZone = self.Castbar:CreateTexture(nil, "BORDER")
 				self.Castbar.SafeZone:SetTexture(C.media.texture)
 				self.Castbar.SafeZone:SetVertexColor(0.69, 0.31, 0.31)
 

@@ -15,10 +15,6 @@ local PLAYER_UNITS = {
 	pet = true,
 }
 
-local blackList = {
-	[65148] = true,	-- Sacred Shield Proc
-}
-
 local setupGUID
 do
 	local cache = setmetatable({}, {__type = "k"})
@@ -107,7 +103,7 @@ local function Update(frame, event, unit)
 				key = name..texture
 			end
 			icon = icons[key]
-			if icon and not blackList[spellID] and (icon.anyUnit or (caster and icon.fromUnits and icon.fromUnits[caster])) then
+			if icon and not T.RaidBuffsIgnore[spellID] and (icon.anyUnit or (caster and icon.fromUnits and icon.fromUnits[caster])) then
 				resetIcon(icon, watch, count, duration, remaining)
 				GUIDs[guid][key] = true
 				found[key] = true

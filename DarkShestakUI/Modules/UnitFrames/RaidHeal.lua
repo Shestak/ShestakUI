@@ -259,6 +259,11 @@ local function Shared(self, unit)
 			end
 			self.RaidDebuffs.count:SetParent(self.RaidDebuffs.overlay)
 		end
+
+		self.RaidDebuffs.ShowDispellableDebuff = C.raidframe.plugins_debuffhighlight_icon
+		self.RaidDebuffs.FilterDispellableDebuff = true
+		self.RaidDebuffs.MatchBySpellName = true
+		self.RaidDebuffs.Debuffs = T.RaidDebuffs
 	end
 
 	return self
