@@ -207,6 +207,7 @@ end)
 ----------------------------------------------------------------------------------------
 --	Queue timer on LFGDungeonReadyDialog
 ----------------------------------------------------------------------------------------
+if C.skins.blizzard_frames ~= true then return end
 local queue = CreateFrame("Frame", nil, LFGDungeonReadyDialog)
 queue:SetPoint("TOPLEFT", LFGDungeonReadyDialogEnterDungeonButton, "BOTTOMLEFT", 2, -7)
 queue:CreateBackdrop("Overlay")
@@ -216,7 +217,7 @@ queue.bar = CreateFrame("StatusBar", nil, queue)
 queue.bar:SetStatusBarTexture(C.media.texture)
 queue.bar:SetAllPoints()
 queue.bar:SetFrameLevel(LFGDungeonReadyDialog:GetFrameLevel() + 1)
-queue.bar:SetStatusBarColor(1, 0.7, 0)
+queue.bar:SetStatusBarColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3])
 
 LFGDungeonReadyDialog.nextUpdate = 0
 
