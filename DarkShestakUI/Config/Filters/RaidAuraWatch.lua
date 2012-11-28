@@ -133,7 +133,7 @@ T.RaidDebuffs = {
 	[SpellName(116942)] = 3,	-- Flaming Spear
 	[SpellName(131790)] = 3,	-- Arcane Shock
 	[SpellName(131792)] = 3,	-- Shadowburn
-	[SpellName(116374)] = 3,	-- Lightning Charge
+	[SpellName(116374)] = 4,	-- Lightning Charge
 	[SpellName(116784)] = 3,	-- Wildfire Spark
 	[SpellName(116417)] = 3,	-- Arcane Resonance
 	-- Gara'jal the Spiritbinder
@@ -155,7 +155,6 @@ T.RaidDebuffs = {
 	[SpellName(116778)] = 3,	-- Focused Defense
 	[SpellName(116525)] = 3,	-- Focused Assault
 -- Sha of Anger
-	[SpellName(119622)] = 3,	-- Growing Anger
 	[SpellName(119626)] = 3,	-- Aggressive Behavior
 -----------------------------------------------------------------
 -- PvP
@@ -181,6 +180,7 @@ T.RaidDebuffs = {
 	-- Mage
 	[SpellName(31661)] = 3,		-- Dragon's Breath
 	[SpellName(82691)] = 3,		-- Ring of Frost
+	[SpellName(44572)] = 3,		-- Deep Freeze
 	[SpellName(61305)] = 3,		-- Polymorph
 	[SpellName(102051)] = 3,	-- Frostjaw
 	[SpellName(55021)] = 3,		-- Improved Counterspell
@@ -188,6 +188,7 @@ T.RaidDebuffs = {
 	[SpellName(111340)] = 2,	-- Ice Ward
 	-- Monk
 	[SpellName(115078)] = 3,	-- Paralysis
+	[SpellName(119381)] = 3,	-- Leg Sweep
 	-- Paladin
 	[SpellName(20066)] = 3,		-- Repentance
 	[SpellName(853)] = 3,		-- Hammer of Justice
@@ -217,6 +218,7 @@ T.RaidDebuffs = {
 	[SpellName(30283)] = 3,		-- Shadowfury
 	-- Warrior
 	[SpellName(46968)] = 3,		-- Shockwave
+	[SpellName(132169)] = 3,	-- Storm Bolt
 	[SpellName(20511)] = 3,		-- Intimidating Shout]]
 }
 

@@ -12,7 +12,7 @@ local check = function(self, event, prefix, message, channel, sender)
 		end
 	else
 		if UnitInBattleground("player") and UnitInBattleground("player") > 0 then
-			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "BATTLEGROUND")
+			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "INSTANCE_CHAT")
 		elseif IsInRaid() then
 			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "RAID")
 		elseif IsInGroup() then

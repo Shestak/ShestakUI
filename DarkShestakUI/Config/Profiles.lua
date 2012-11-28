@@ -85,7 +85,6 @@ or T.name == "Женишок" or T.name == "Шестак" or T.name == "Дефл
 	C["tooltip"].who_targetting = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].unit_role = true
-	C["tooltip"].reforge = true
 	C["tooltip"].symbiosis = true
 	C["tooltip"].instance_lock = true
 	C["chat"].combatlog = false
@@ -178,7 +177,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["tooltip"].average_lvl = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].who_targetting = true
-	C["tooltip"].reforge = true
 	C["tooltip"].symbiosis = true
 	C["tooltip"].item_transmogrify = true
 	C["chat"].filter = false
@@ -290,7 +288,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["tooltip"].who_targetting = true
 	C["tooltip"].item_count = true
 	C["tooltip"].unit_role = true
-	C["tooltip"].reforge = true
 	C["tooltip"].symbiosis = true
 	C["tooltip"].instance_lock = true
 	C["tooltip"].item_transmogrify = true

@@ -36,11 +36,11 @@ T.ArenaControl = function()
 		[GetSpellInfo(31661)] = 4,	-- Dragon's Breath
 		[GetSpellInfo(118271)] = 4,	-- Combustion Impact
 		-- Monk
-		[GetSpellInfo(120086)] = 4,	-- Fists of Fury
-		[GetSpellInfo(119381)] = 4,	-- Leg Sweep
 		[GetSpellInfo(115078)] = 4,	-- Paralysis
-		[GetSpellInfo(119392)] = 4,	-- Charging Ox Wave
+		[GetSpellInfo(119381)] = 4,	-- Leg Sweep
+		[GetSpellInfo(120086)] = 4,	-- Fists of Fury
 		[GetSpellInfo(122242)] = 4,	-- Clash
+		[GetSpellInfo(119392)] = 4,	-- Charging Ox Wave
 		-- Paladin
 		[GetSpellInfo(853)] = 4,	-- Hammer of Justice
 		[GetSpellInfo(105593)] = 4,	-- Fist of Justice
@@ -86,7 +86,6 @@ T.ArenaControl = function()
 		[GetSpellInfo(1330)] = 4,	-- Garrote - Silence
 		[GetSpellInfo(24259)] = 4,	-- Spell Lock (Felhunter)
 		[GetSpellInfo(115782)] = 4,	-- Optical Blast (Observer)
-		[GetSpellInfo(18498)] = 4,	-- Gag Order (Warrior glyph)
 
 		-- Roots
 		[GetSpellInfo(96294)] = 3,	-- Chains of Ice

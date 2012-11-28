@@ -7,28 +7,32 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	ItemUpgradeFrame:StripTextures()
 	ItemUpgradeFrame:SetTemplate("Transparent", "Shadow")
-	ItemUpgradeFrameShadows:Kill()
-	ItemUpgradeFrameInset:Kill()
 
-	T.SkinCloseButton(ItemUpgradeFrameCloseButton)
+	ItemUpgradeFrameMoneyFrame:StripTextures()
+	ItemUpgradeFrame.ButtonFrame:StripTextures()
+
+	ItemUpgradeFrameUpgradeButton:ClearAllPoints()
+	ItemUpgradeFrameUpgradeButton:SetPoint("BOTTOMRIGHT", ItemUpgradeFrame, "BOTTOMRIGHT", -3, 3)
+	ItemUpgradeFrameUpgradeButton:SkinButton(true)
 
 	ItemUpgradeFrame.ItemButton:StripTextures()
 	ItemUpgradeFrame.ItemButton:SetTemplate("Default")
 	ItemUpgradeFrame.ItemButton:StyleButton()
+	ItemUpgradeFrame.ItemButton.IconTexture:ClearAllPoints()
+	ItemUpgradeFrame.ItemButton.IconTexture:SetPoint("TOPLEFT", 2, -2)
+	ItemUpgradeFrame.ItemButton.IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 
 	hooksecurefunc("ItemUpgradeFrame_Update", function()
 		if GetItemUpgradeItemInfo() then
-			ItemUpgradeFrame.ItemButton.IconTexture:SetAlpha(1)
 			ItemUpgradeFrame.ItemButton.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		else
-			ItemUpgradeFrame.ItemButton.IconTexture:SetAlpha(0)
+			ItemUpgradeFrame.ItemButton.IconTexture:SetTexture(nil)
 		end
 	end)
 
-	ItemUpgradeFrameMoneyFrame:StripTextures()
-	ItemUpgradeFrameUpgradeButton:StripTextures()
-	ItemUpgradeFrameUpgradeButton:SkinButton()
 	ItemUpgradeFrame.FinishedGlow:Kill()
+
+	T.SkinCloseButton(ItemUpgradeFrameCloseButton)
 end
 
 T.SkinFuncs["Blizzard_ItemUpgradeUI"] = LoadSkin

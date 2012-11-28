@@ -36,6 +36,7 @@
 	<Script file="LFG.lua"/>
 	<Script file="LFR.lua"/>
 	<Script file="Loot.lua"/>
+	<Script file="LossOfControl.lua"/>
 	<Script file="MacClient.lua"/>
 	<Script file="Macro.lua"/>
 	<Script file="Mail.lua"/>

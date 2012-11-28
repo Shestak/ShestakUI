@@ -10,6 +10,7 @@ local function LoadSkin()
 
 	ReforgingFrameMoneyFrame:StripTextures()
 	ReforgingFrame.ButtonFrame:StripTextures()
+
 	ReforgingFrameReforgeButton:ClearAllPoints()
 	ReforgingFrameReforgeButton:SetPoint("LEFT", ReforgingFrameRestoreButton, "RIGHT", 2, 0)
 	ReforgingFrameReforgeButton:SetPoint("BOTTOMRIGHT", -3, 3)
@@ -18,16 +19,10 @@ local function LoadSkin()
 
 	ReforgingFrame.ItemButton:StripTextures()
 	ReforgingFrame.ItemButton:SetTemplate("Default")
+	ReforgingFrame.ItemButton:StyleButton()
 	ReforgingFrame.ItemButton.IconTexture:ClearAllPoints()
 	ReforgingFrame.ItemButton.IconTexture:SetPoint("TOPLEFT", 2, -2)
 	ReforgingFrame.ItemButton.IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
-
-	local hover = ReforgingFrame.ItemButton:CreateTexture(nil, nil, self)
-	hover:SetTexture(1, 1, 1, 0.3)
-	hover:SetSize(ReforgingFrame.ItemButton:GetWidth(), ReforgingFrame.ItemButton:GetHeight())
-	hover:SetPoint("TOPLEFT", ReforgingFrame.ItemButton, 2, -2)
-	hover:SetPoint("BOTTOMRIGHT", ReforgingFrame.ItemButton, -2, 2)
-	ReforgingFrame.ItemButton:SetHighlightTexture(hover)
 
 	hooksecurefunc("ReforgingFrame_Update", function(self)
 		local _, icon = GetReforgeItemInfo()

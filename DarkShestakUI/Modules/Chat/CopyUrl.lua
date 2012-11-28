@@ -21,8 +21,8 @@ for _, event in pairs({
 	"CHAT_MSG_WHISPER",
 	"CHAT_MSG_BN_WHISPER",
 	"CHAT_MSG_SAY",
-	"CHAT_MSG_BATTLEGROUND",
-	"CHAT_MSG_BATTLEGROUND_LEADER"
+	"CHAT_MSG_INSTANCE_CHAT",
+	"CHAT_MSG_INSTANCE_CHAT_LEADER"
 }) do
 	ChatFrame_AddMessageEventFilter(event, function(self, event, str, ...)
 		for _, pattern in pairs(patterns) do

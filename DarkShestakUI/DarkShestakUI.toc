@@ -1,4 +1,4 @@
-﻿## Interface: 50001
+﻿## Interface: 50100
 ## Title: |cff1784d1Dark ShestakUI|r
 ## Notes: A total UI overhaul for World of Warcraft
 ## Author: Shestak (modified by m2jest1c)
