@@ -240,7 +240,7 @@ local function Shared(self, unit)
 		self.RaidDebuffs:SetFrameLevel(10)
 		self.RaidDebuffs:SetTemplate("Default")
 
-		self.RaidDebuffs.icon = self.RaidDebuffs:CreateTexture(nil, "OVERLAY")
+		self.RaidDebuffs.icon = self.RaidDebuffs:CreateTexture(nil, "ARTWORK")
 		self.RaidDebuffs.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		self.RaidDebuffs.icon:SetPoint("TOPLEFT", 2, -2)
 		self.RaidDebuffs.icon:SetPoint("BOTTOMRIGHT", -2, 2)
@@ -255,12 +255,12 @@ local function Shared(self, unit)
 
 		if C.raidframe.plugins_aura_watch_timer == true then
 			self.RaidDebuffs.time = T.SetFontString(self.RaidDebuffs, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.RaidDebuffs.time:SetPoint("CENTER", 1, 0)
+			self.RaidDebuffs.time:SetPoint("CENTER", 1, 1)
 			self.RaidDebuffs.time:SetTextColor(1, 1, 1)
 		end
 
 		self.RaidDebuffs.count = T.SetFontString(self.RaidDebuffs, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-		self.RaidDebuffs.count:SetPoint("BOTTOMRIGHT", self.RaidDebuffs, "BOTTOMRIGHT", 2, 0)
+		self.RaidDebuffs.count:SetPoint("BOTTOMRIGHT", self.RaidDebuffs, "BOTTOMRIGHT", 3, -1)
 		self.RaidDebuffs.count:SetTextColor(1, 1, 1)
 
 		if C.aura.show_spiral == true then
