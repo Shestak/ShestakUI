@@ -940,12 +940,12 @@ Filger_Spells = {
 			{spellID = 31661, filter = "CD"},
 			-- Deep Freeze
 			{spellID = 44572, filter = "CD"},
-			-- Ring of Frost
-			{spellID = 113724, filter = "CD"},
-			-- Ice Ward
-			{spellID = 111264, filter = "CD"},
 			-- Frost Nova
 			{spellID = 122, filter = "CD"},
+			-- Ice Ward
+			{spellID = 111264, filter = "CD"},
+			-- Ring of Frost
+			{spellID = 113724, filter = "CD"},
 			-- Ice Barrier
 			{spellID = 11426, filter = "CD"},
 			-- Temporal Shield

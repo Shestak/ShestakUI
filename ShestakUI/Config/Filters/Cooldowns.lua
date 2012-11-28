@@ -44,17 +44,17 @@ if C.enemycooldown.enable == true then
 		[78675] = 60,	-- Solar Bream
 		[47476] = 120,	-- Strangulate
 		-- Crowd Controls
-		[20066] = 15,	-- Repentance
 		[115078] = 15,	-- Paralysis
-		[8122] = 30,	-- Psychic Scream
+		[20066] = 15,	-- Repentance
 		[19503] = 30,	-- Scatter Shot
 		[1499] = 30,	-- Freezing Trap
-		[107570] = 30,	-- Storm Bolt
 		[44572] = 30,	-- Deep Freeze
-		[113724] = 30,	-- Ring of Frost
 		[105593] = 30,	-- Fist of Justice
+		[8122] = 30,	-- Psychic Scream
 		[30283] = 30,	-- Shadowfury
+		[107570] = 30,	-- Storm Bolt
 		[5484] = 40,	-- Howl of Terror
+		[113724] = 45,	-- Ring of Frost
 		[51514] = 45,	-- Hex
 		[6789] = 45,	-- Mortal Coil
 		[64044] = 45,	-- Psychic Horror
@@ -70,7 +70,7 @@ if C.enemycooldown.enable == true then
 		[47585] = 120,	-- Dispersion
 		[31224] = 120,	-- Cloak of Shadows
 		[49039] = 120,	-- Lichborne
-		[1856] = 180,	-- Vanish
+		[1856] = 120,	-- Vanish
 		[33206] = 180,	-- Pain Suppression
 		[108978] = 180,	-- Alter Time
 		-- Disarms

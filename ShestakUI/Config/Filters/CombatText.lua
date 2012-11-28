@@ -249,7 +249,6 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[30213] = true		-- Legion Strike (Felguard)
 		T.aoespam[89753] = true		-- Felstorm (Felguard)
 		T.aoespam[20153] = true		-- Immolation (Infrenal)
-		T.aoespam[103988] = true	-- Melee
 		T.aoespam[108371] = true	-- Harvest Life
 		T.aoespam[115707] = true	-- Harvest Life (Soulburn)
 	end
