@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(ShestakUI)
+local T, C, L, _ = unpack(ShestakUI)
 if C.extra_skins.quartz ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -31,7 +31,9 @@ frame:SetScript("OnEvent", function(self)
 		else
 			self.IconBorder:Show()
 		end
-		self.Bar:CreateBackdrop("Transparent")
+		if not self.Bar.backdrop then
+			self.Bar:CreateBackdrop("Transparent")
+		end
 		self.Bar:SetStatusBarTexture(C.media.texture)
 		self.TimeText:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		self.TimeText:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)

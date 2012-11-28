@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(ShestakUI)
+local T, C, L, _ = unpack(ShestakUI)
 if C.extra_announce.bad_tank ~= true then return end
 
 ----------------------------------------------------------------------------------------

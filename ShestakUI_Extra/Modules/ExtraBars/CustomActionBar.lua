@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(ShestakUI)
+local T, C, L, _ = unpack(ShestakUI)
 if C.extra_bar.enable ~= true or C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -40,19 +40,19 @@ for i = 13, 24 do
 	f:ClearAllPoints()
 	if C.extra_bar.style == "1*12" then
 		if i == 13 then
-			f:SetPoint("TOPLEFT", ExtraBarAnchor, "TOPLEFT", 0, 0)
+			f:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
 		else
 			f:SetPoint("TOP", "ExtraBarButton"..i-13, "BOTTOM", 0, -C.actionbar.button_space)
 		end
 	elseif C.extra_bar.style == "12*1" then
 		if i == 13 then
-			f:SetPoint("TOPLEFT", ExtraBarAnchor, "TOPLEFT", 0, 0)
+			f:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
 		else
 			f:SetPoint("LEFT", "ExtraBarButton"..i-13, "RIGHT", C.actionbar.button_space, 0)
 		end
 	elseif C.extra_bar.style == "6*2" then
 		if i == 13 then
-			f:SetPoint("TOPLEFT", ExtraBarAnchor, "TOPLEFT", 0, 0)
+			f:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
 		elseif i == 19 then
 			f:SetPoint("TOPLEFT", "ExtraBarButton1", "BOTTOMLEFT", 0, -C.actionbar.button_space)
 		else
@@ -60,7 +60,7 @@ for i = 13, 24 do
 		end
 	elseif C.extra_bar.style == "4*3" then
 		if i == 13 then
-			f:SetPoint("TOPLEFT", ExtraBarAnchor, "TOPLEFT", 0, 0)
+			f:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
 		elseif i == 17 then
 			f:SetPoint("TOPLEFT", "ExtraBarButton1", "BOTTOMLEFT", 0, -C.actionbar.button_space)
 		elseif i == 21 then
@@ -70,7 +70,7 @@ for i = 13, 24 do
 		end
 	elseif C.extra_bar.style == "3*4" then
 		if i == 13 then
-			f:SetPoint("TOPLEFT", ExtraBarAnchor, "TOPLEFT", 0, 0)
+			f:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
 		elseif i == 16 then
 			f:SetPoint("TOPLEFT", "ExtraBarButton1", "BOTTOMLEFT", 0, -C.actionbar.button_space)
 		elseif i == 19 then
@@ -82,7 +82,7 @@ for i = 13, 24 do
 		end
 	else
 		if i == 13 then
-			f:SetPoint("TOPLEFT", ExtraBarAnchor, "TOPLEFT", 0, 0)
+			f:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
 		else
 			f:SetPoint("LEFT", "ExtraBarButton"..i-13, "RIGHT", C.actionbar.button_space, 0)
 		end

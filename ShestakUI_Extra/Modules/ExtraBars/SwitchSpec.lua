@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(ShestakUI)
+local T, C, L, _ = unpack(ShestakUI)
 if C.extra_bar.switch_spec ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -29,26 +29,14 @@ local function GetSecondarySpec()
 	return index, name
 end
 
-local function enableDPS()
-	DisableAddOn("ShestakUI_Heal")
-	EnableAddOn("ShestakUI_DPS")
-	ReloadUI()
-end
-
-local function enableHeal()
-	DisableAddOn("ShestakUI_DPS")
-	EnableAddOn("ShestakUI_Heal")
-	ReloadUI()
-end
-
 -- Spec
-local spec = CreateFrame("Button", "SpecAnchor", UIParent)
-spec:CreatePanel("Transparent", 128, 20, unpack(C.extra_position.switch_spec))
-tinsert(T.MoverFrames, SpecAnchor)
+local spec = CreateFrame("Button", "SwitchSpecBar", UIParent)
+spec:CreatePanel("Transparent", 135, 20, unpack(C.extra_position.switch_spec))
+tinsert(T.MoverFrames, SwitchSpecBar)
 
-spec.t = spec:CreateFontString(spec, "OVERLAY")
+spec.t = spec:CreateFontString(nil, "OVERLAY")
 spec.t:SetPoint("CENTER")
-spec.t:SetWidth(SpecAnchor:GetWidth() - 4)
+spec.t:SetWidth(spec:GetWidth() - 4)
 spec.t:SetHeight(C.media.pixel_font_size)
 spec.t:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 
@@ -94,8 +82,8 @@ spec:SetScript("OnClick", function(self)
 end)
 
 -- Toggle Button
-local toggle = CreateFrame("Button", "Toggle", SpecAnchor)
-toggle:CreatePanel("Transparent", 20, 20, "TOPLEFT", SpecAnchor, "TOPRIGHT", 3, 0)
+local toggle = CreateFrame("Button", "$parentToggle", spec)
+toggle:CreatePanel("Transparent", 20, 20, "TOPLEFT", spec, "TOPRIGHT", 3, 0)
 
 toggle.t = toggle:CreateFontString(nil, "OVERLAY")
 toggle.t:SetPoint("CENTER", 2, 0)
@@ -106,52 +94,65 @@ toggle:SetScript("OnEnter", T.SetModifiedBackdrop)
 toggle:SetScript("OnLeave", T.SetOriginalBackdrop)
 toggle:SetScript("OnClick", function(self)
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
-	if DPS:IsShown() then
-		DPS:Hide()
+	if SwitchSpecBarToggleDPS:IsShown() then
+		SwitchSpecBarToggleDPS:Hide()
 		toggle.t:SetText(cp.."+|r")
 	else
-		DPS:Show()
+		SwitchSpecBarToggleDPS:Show()
 		toggle.t:SetText(cm.."-|r")
 	end
 end)
 
 -- DPS layout
-local dps = CreateFrame("Button", "DPS", Toggle)
-dps:CreatePanel("Transparent", 30, 19, "BOTTOMRIGHT", Toggle, "TOPRIGHT", 0, 3)
-dps:Hide()
-
-dps.t = dps:CreateFontString(nil, "OVERLAY")
-dps.t:SetPoint("CENTER", 1, 0)
-dps.t:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-dps.t:SetText("DPS")
-
+local dps = CreateFrame("Button", "$parentDPS", toggle)
+dps:CreatePanel("Transparent", 20, 20, "BOTTOMRIGHT", toggle, "TOPRIGHT", 0, 3)
 dps:SetScript("OnEnter", T.SetModifiedBackdrop)
 dps:SetScript("OnLeave", T.SetOriginalBackdrop)
-dps:SetScript("OnClick", function(self) enableDPS() end)
+dps:SetScript("OnClick", function() SavedOptions.RaidLayout = "DPS" ReloadUI() end)
+dps:Hide()
+
+dps.t = dps:CreateTexture(nil, "OVERLAY")
+dps.t:SetTexture("Interface\\LFGFrame\\LFGROLE")
+dps.t:SetTexCoord(0.25, 0.5, 0, 1)
+dps.t:SetPoint("TOPLEFT", dps, 2, -2)
+dps.t:SetPoint("BOTTOMRIGHT", dps, -2, 2)
 
 -- Heal layout
-local heal = CreateFrame("Button", "HEAL", DPS)
-heal:CreatePanel("Transparent", 30, 19, "RIGHT", DPS, "LEFT", -3, 0)
-
-heal.t = heal:CreateFontString(nil, "OVERLAY")
-heal.t:SetPoint("CENTER", 1, 0)
-heal.t:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-heal.t:SetText("HEAL")
-
+local heal = CreateFrame("Button", nil, dps)
+heal:CreatePanel("Transparent", 20, 20, "RIGHT", dps, "LEFT", -3, 0)
 heal:SetScript("OnEnter", T.SetModifiedBackdrop)
 heal:SetScript("OnLeave", T.SetOriginalBackdrop)
-heal:SetScript("OnClick", function(self) enableHeal() end)
+heal:SetScript("OnClick", function() SavedOptions.RaidLayout = "HEAL" ReloadUI() end)
+
+heal.t = heal:CreateTexture(nil, "OVERLAY")
+heal.t:SetTexture("Interface\\LFGFrame\\LFGROLE")
+heal.t:SetTexCoord(0.75, 1, 0, 1)
+heal.t:SetPoint("TOPLEFT", heal, 2, -2)
+heal.t:SetPoint("BOTTOMRIGHT", heal, -2, 2)
+
+-- Blizzard layout
+local bliz = CreateFrame("Button", nil, dps)
+bliz:CreatePanel("Transparent", 20, 20, "RIGHT", heal, "LEFT", -3, 0)
+bliz:SetScript("OnEnter", T.SetModifiedBackdrop)
+bliz:SetScript("OnLeave", T.SetOriginalBackdrop)
+bliz:SetScript("OnClick", function() SavedOptions.RaidLayout = "HEAL" ReloadUI() end)
+
+bliz.t = bliz:CreateTexture(nil, "OVERLAY")
+bliz.t:SetTexture("Interface\\ChatFrame\\UI-ChatIcon-Blizz")
+bliz.t:SetTexCoord(0.2, 0.8, -0.1, 1.1)
+bliz.t:SetPoint("TOPLEFT", bliz, 2, -2)
+bliz.t:SetPoint("BOTTOMRIGHT", bliz, -2, 2)
 
 -- Gear switching
-local gearSets = CreateFrame("Frame", "gearSets", HEAL)
+local gearSets = CreateFrame("Frame", nil, dps)
 for i = 1, 10 do
-	gearSets[i] = CreateFrame("Button", "gearSets"..i, HEAL)
-	gearSets[i]:CreatePanel("Transparent", 19, 19, "CENTER", HEAL, "CENTER", 0, 0)
+	gearSets[i] = CreateFrame("Button", nil, gearSets)
+	gearSets[i]:CreatePanel("Transparent", 20, 20, "CENTER", bliz, "CENTER", 0, 0)
 
 	if i == 1 then
-		gearSets[i]:SetPoint("BOTTOMRIGHT", HEAL, "BOTTOMLEFT", -3, 0)
+		gearSets[i]:SetPoint("BOTTOMRIGHT", bliz, "BOTTOMLEFT", -3, 0)
 	elseif i == 5 then
-		gearSets[i]:SetPoint("BOTTOMRIGHT", DPS, "TOPRIGHT", 0, 3)
+		gearSets[i]:SetPoint("BOTTOMRIGHT", dps, "TOPRIGHT", 0, 3)
 	else
 		gearSets[i]:SetPoint("BOTTOMRIGHT", gearSets[i-1], "BOTTOMLEFT", -3, 0)
 	end
@@ -183,14 +184,9 @@ for i = 1, 10 do
 			gearSets[pt + 1]:Hide()
 		end
 
-		gearSets[i].texture = gearSets[i]:CreateTexture(nil, "BORDER")
-		gearSets[i].texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		gearSets[i].texture:SetPoint("TOPLEFT", gearSets[i], "TOPLEFT", 2, -2)
-		gearSets[i].texture:SetPoint("BOTTOMRIGHT", gearSets[i], "BOTTOMRIGHT", -2, 2)
 		gearSets[i].texture:SetTexture(select(2, GetEquipmentSetInfo(i)))
-
-		gearSets[i]:SetScript("OnEnter", T.SetModifiedBackdrop)
-		gearSets[i]:SetScript("OnLeave", T.SetOriginalBackdrop)
-		gearSets[i]:SetScript("OnClick", function(self) UseEquipmentSet(GetEquipmentSetInfo(i)) end)
 	end)
+	gearSets[i]:SetScript("OnEnter", T.SetModifiedBackdrop)
+	gearSets[i]:SetScript("OnLeave", T.SetOriginalBackdrop)
+	gearSets[i]:SetScript("OnClick", function(self) UseEquipmentSet(GetEquipmentSetInfo(i)) end)
 end
