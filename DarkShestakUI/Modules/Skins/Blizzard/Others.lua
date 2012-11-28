@@ -88,6 +88,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["CinematicFrameCloseDialogConfirmButton"]:SkinButton()
 		_G["CinematicFrameCloseDialogResumeButton"]:SkinButton()
 
+		-- PetBattle popup
+		_G["PetBattleQueueReadyFrame"]:SetTemplate("Transparent")
+		_G["PetBattleQueueReadyFrame"].AcceptButton:SkinButton()
+		_G["PetBattleQueueReadyFrame"].DeclineButton:SkinButton()
+
 		-- Reskin Dropdown menu
 		hooksecurefunc("UIDropDownMenu_InitializeHelper", function(frame)
 			for i = 1, UIDROPDOWNMENU_MAXLEVELS do
