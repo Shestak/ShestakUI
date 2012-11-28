@@ -4,9 +4,9 @@ if C.actionbar.enable ~= true then return end
 ------------------------------------------------------------------------------------------
 --	Manage others stuff for ActionBars(by Tukz)
 ------------------------------------------------------------------------------------------
-local OnLogon = CreateFrame("Frame")
-OnLogon:RegisterEvent("PLAYER_ENTERING_WORLD")
-OnLogon:SetScript("OnEvent", function(self, event)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	SetActionBarToggles(1, 1, 1, 1, 0)
 	SetCVar("alwaysShowActionBars", 0)
@@ -37,15 +37,15 @@ OnLogon:SetScript("OnEvent", function(self, event)
 end)
 
 -- Vehicle button anchor
-local VehicleButtonAnchor = CreateFrame("Frame", "VehicleButtonAnchor", UIParent)
-VehicleButtonAnchor:SetPoint(unpack(C.position.vehicle_bar))
-VehicleButtonAnchor:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+local anchor = CreateFrame("Frame", "VehicleButtonAnchor", UIParent)
+anchor:SetPoint(unpack(C.position.vehicle_bar))
+anchor:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 
 -- Vehicle button
-local vehicle = CreateFrame("BUTTON", "VehicleButton", UIParent, "SecureActionButtonTemplate")
+local vehicle = CreateFrame("Button", "VehicleButton", UIParent, "SecureActionButtonTemplate")
 vehicle:SetWidth(C.actionbar.button_size)
 vehicle:SetHeight(C.actionbar.button_size)
-vehicle:SetPoint("BOTTOMLEFT", VehicleButtonAnchor, "BOTTOMLEFT", 0, 0)
+vehicle:SetPoint("BOTTOMLEFT", anchor, "BOTTOMLEFT", 0, 0)
 vehicle:SetNormalTexture("Interface\\Vehicles\\UI-Vehicles-Button-Exit-Up")
 vehicle:GetNormalTexture():SetTexCoord(0.2, 0.8, 0.2, 0.8)
 vehicle:GetNormalTexture():ClearAllPoints()
