@@ -301,6 +301,8 @@ Filger_Spells = {
 			{spellID = 16870, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul of the Forest
 			{spellID = 114108, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tooth and Claw
+			{spellID = 135286, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Predator's Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -518,7 +520,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 30},
 		},
 	},
 	["HUNTER"] = {
@@ -818,7 +820,7 @@ Filger_Spells = {
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Power
-			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -938,12 +940,12 @@ Filger_Spells = {
 			{spellID = 31661, filter = "CD"},
 			-- Deep Freeze
 			{spellID = 44572, filter = "CD"},
-			-- Ring of Frost
-			{spellID = 113724, filter = "CD"},
-			-- Ice Ward
-			{spellID = 111264, filter = "CD"},
 			-- Frost Nova
 			{spellID = 122, filter = "CD"},
+			-- Ice Ward
+			{spellID = 111264, filter = "CD"},
+			-- Ring of Frost
+			{spellID = 113724, filter = "CD"},
 			-- Ice Barrier
 			{spellID = 11426, filter = "CD"},
 			-- Temporal Shield
@@ -1028,7 +1030,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 30},
 		},
 	},
 	["MONK"] = {
@@ -1497,10 +1499,12 @@ Filger_Spells = {
 			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Renew
 			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Prayer of Mending
-			--OLD{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fade
 			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focused Will
+			{spellID = 45242, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Prayer of Mending
+			--OLD{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Fire
 			--OLD{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Will
@@ -1533,11 +1537,11 @@ Filger_Spells = {
 			-- Evangelism
 			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Sanctuary
-			{spellID = 81206, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 81206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Serenity
-			{spellID = 81208, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 81208, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Chastise
-			{spellID = 81209, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 81209, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -1642,8 +1646,6 @@ Filger_Spells = {
 			{spellID = 527, filter = "CD"},
 			-- Mass Dispel
 			{spellID = 32375, filter = "CD"},
-			-- Dominate Mind
-			{spellID = 605, filter = "CD"},
 			-- Penance
 			{spellID = 47540, filter = "CD"},
 			-- Mind Blast
@@ -1736,7 +1738,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 30},
 		},
 	},
 	["ROGUE"] = {
@@ -2207,7 +2209,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 30},
 		},
 	},
 	["WARLOCK"] = {
@@ -2430,7 +2432,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 30},
 		},
 	},
 	["WARRIOR"] = {
@@ -2894,16 +2896,16 @@ Filger_Spells = {
 			{spellID = 7321, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Monk
-			-- Fists of Fury
-			{spellID = 120086, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Leg Sweep
-			{spellID = 119381, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
 			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Charging Ox Wave
-			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Leg Sweep
+			{spellID = 119381, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Fists of Fury
+			{spellID = 120086, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Clash
 			{spellID = 122242, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Spear Hand Strike
 			{spellID = 116709, unitID = "player", caster = "all", filter = "DEBUFF"},
 
@@ -3028,8 +3030,6 @@ Filger_Spells = {
 			{spellID = 105771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
 			{spellID = 20511, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Silenced (Gag Order)
-			{spellID = 18498, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Disarm
 			{spellID = 676, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Staggering Shout
@@ -3203,16 +3203,16 @@ Filger_Spells = {
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Debuffs
-			-- Fists of Fury
-			{spellID = 120086, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Leg Sweep
-			{spellID = 119381, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
 			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Charging Ox Wave
-			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Leg Sweep
+			{spellID = 119381, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Fists of Fury
+			{spellID = 120086, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Clash
 			{spellID = 122242, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Spear Hand Strike
 			{spellID = 116709, unitID = "target", caster = "all", filter = "DEBUFF"},
 

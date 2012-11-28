@@ -133,7 +133,7 @@ T.RaidDebuffs = {
 	[SpellName(116942)] = 3,	-- Flaming Spear
 	[SpellName(131790)] = 3,	-- Arcane Shock
 	[SpellName(131792)] = 3,	-- Shadowburn
-	[SpellName(116374)] = 3,	-- Lightning Charge
+	[SpellName(116374)] = 4,	-- Lightning Charge
 	[SpellName(116784)] = 3,	-- Wildfire Spark
 	[SpellName(116417)] = 3,	-- Arcane Resonance
 	-- Gara'jal the Spiritbinder
@@ -155,7 +155,6 @@ T.RaidDebuffs = {
 	[SpellName(116778)] = 3,	-- Focused Defense
 	[SpellName(116525)] = 3,	-- Focused Assault
 -- Sha of Anger
-	[SpellName(119622)] = 3,	-- Growing Anger
 	[SpellName(119626)] = 3,	-- Aggressive Behavior
 -----------------------------------------------------------------
 -- PvP
@@ -169,7 +168,7 @@ T.RaidDebuffs = {
 	-- Druid
 	[SpellName(33786)] = 3,		-- Cyclone
 	[SpellName(2637)] = 3,		-- Hibernate
-	[SpellName(339)] = 3,		-- Entangling Roots
+	[SpellName(339)] = 2,		-- Entangling Roots
 	[SpellName(78675)] = 3,		-- Solar Beam
 	-- Hunter
 	[SpellName(3355)] = 3,		-- Freezing Trap
@@ -181,13 +180,15 @@ T.RaidDebuffs = {
 	-- Mage
 	[SpellName(31661)] = 3,		-- Dragon's Breath
 	[SpellName(82691)] = 3,		-- Ring of Frost
+	[SpellName(44572)] = 3,		-- Deep Freeze
 	[SpellName(61305)] = 3,		-- Polymorph
 	[SpellName(102051)] = 3,	-- Frostjaw
 	[SpellName(55021)] = 3,		-- Improved Counterspell
-	[SpellName(122)] = 3,		-- Frost Nova
-	[SpellName(111340)] = 3,	-- Ice Ward
+	[SpellName(122)] = 2,		-- Frost Nova
+	[SpellName(111340)] = 2,	-- Ice Ward
 	-- Monk
 	[SpellName(115078)] = 3,	-- Paralysis
+	[SpellName(119381)] = 3,	-- Leg Sweep
 	-- Paladin
 	[SpellName(20066)] = 3,		-- Repentance
 	[SpellName(853)] = 3,		-- Hammer of Justice
@@ -200,15 +201,13 @@ T.RaidDebuffs = {
 	[SpellName(64044)] = 3,		-- Psychic Horror
 	[SpellName(15487)] = 3,		-- Silence
 	-- Rogue
+	[SpellName(6770)] = 3,		-- Sap
 	[SpellName(2094)] = 3,		-- Blind
 	[SpellName(1776)] = 3,		-- Gouge
-	[SpellName(6770)] = 3,		-- Sap
 	-- Shaman
 	[SpellName(51514)] = 3,		-- Hex
 	[SpellName(118905)] = 3,	-- Static Charge
-	[SpellName(3600)] = 3,		-- Earthbind
-	[SpellName(8056)] = 3,		-- Frost Shock
-	[SpellName(63685)] = 3,		-- Freeze
+	[SpellName(63685)] = 2,		-- Freeze
 	-- Warlock
 	[SpellName(118699)] = 3,	-- Fear
 	[SpellName(104045)] = 3,	-- Sleep
@@ -219,6 +218,7 @@ T.RaidDebuffs = {
 	[SpellName(30283)] = 3,		-- Shadowfury
 	-- Warrior
 	[SpellName(46968)] = 3,		-- Shockwave
+	[SpellName(132169)] = 3,	-- Storm Bolt
 	[SpellName(20511)] = 3,		-- Intimidating Shout]]
 }
 

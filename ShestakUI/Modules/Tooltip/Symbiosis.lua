@@ -6,16 +6,16 @@ if C.tooltip.enable ~= true or C.tooltip.symbiosis ~= true then return end
 ----------------------------------------------------------------------------------------
 local symbiosis = {
 	gain = {
-		["DEATHKNIGHT"] = {["DK_BLOOD"] = 113516, ["DK_FROST"] = 113516, ["DK_UNHOLY"] = 113516},
+		["DEATHKNIGHT"] = {["DK_BLOOD"] = 113072, ["DK_FROST"] = 113516, ["DK_UNHOLY"] = 113516},
 		["HUNTER"] = {["HUNTER_BM"] = 113073, ["HUNTER_MM"] = 113073, ["HUNTER_SV"] = 113073},
 		["MAGE"] = {["MAGE_ARCANE"] = 113074, ["MAGE_FIRE"] = 113074, ["MAGE_FROST"] = 113074},
-		["MONK"] = {["MONK_BREW"] = 127361, ["MONK_MIST"] = 127361, ["MONK_WIND"] = 113275},
-		["PALADIN"] = {["PALADIN_HOLY"] = 113269, ["PALADIN_PROT"] = 113269, ["PALADIN_RET"] = 122287},
+		["MONK"] = {["MONK_BREW"] = 113306, ["MONK_MIST"] = 127361, ["MONK_WIND"] = 113275},
+		["PALADIN"] = {["PALADIN_HOLY"] = 113269, ["PALADIN_PROT"] = 113075, ["PALADIN_RET"] = 122287},
 		["PRIEST"] = {["PRIEST_DISC"] = 113506, ["PRIEST_HOLY"] = 113506, ["PRIEST_SHADOW"] = 113277},
 		["ROGUE"] = {["ROGUE_ASS"] = 113613, ["ROGUE_COMBAT"] = 113613, ["ROGUE_SUB"] = 113613},
 		["SHAMAN"] = {["SHAMAN_ELE"] = 113286, ["SHAMAN_ENHANCE"] = 113286, ["SHAMAN_RESTO"] = 113289},
 		["WARLOCK"] = {["WARLOCK_AFFLICTION"] = 113295, ["WARLOCK_DEMO"] = 113295, ["WARLOCK_DESTRO"] = 113295},
-		["WARRIOR"] = {["WARRIOR_ARMS"] = 122294, ["WARRIOR_FURY"] = 122294, ["WARRIOR_PROT"] = 122294}
+		["WARRIOR"] = {["WARRIOR_ARMS"] = 122294, ["WARRIOR_FURY"] = 122294, ["WARRIOR_PROT"] = 122286}
 	},
 	grant = {
 		["DEATHKNIGHT"] = {["DRUID_BALANCE"] = 110570, ["DRUID_FERAL"] = 122282, ["DRUID_GUARDIAN"] = 122285, ["DRUID_RESTO"] = 110575},
