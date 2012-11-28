@@ -140,6 +140,9 @@ local function LoadSkin()
 		WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 40)
 		WorldMapFrameAreaDescription:SetShadowOffset(1, -1)
 
+		WorldMapFrameAreaPetLevels:SetFont(C.media.normal_font, 32)
+		WorldMapFrameAreaPetLevels:SetShadowOffset(2, -2)
+
 		WorldMapZoneInfo:SetFont(C.media.normal_font, 27)
 		WorldMapZoneInfo:SetShadowOffset(1, -1)
 	end
