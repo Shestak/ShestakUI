@@ -11,8 +11,8 @@
 	<Binding name="PARTY_MESSAGE">
 		ChatKey_Chat("/p")
 	</Binding>
-	<Binding name="BG_MESSAGE">
-		ChatKey_Chat("/bg")
+	<Binding name="IC_MESSAGE">
+		ChatKey_Chat("/i")
 	</Binding>
 	<Binding name="TARGET_MESSAGE">
 		ChatKey_Chat("/tt ")
