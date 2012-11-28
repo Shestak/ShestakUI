@@ -520,7 +520,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 30},
 		},
 	},
 	["HUNTER"] = {
@@ -820,7 +820,7 @@ Filger_Spells = {
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Power
-			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1030,7 +1030,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 30},
 		},
 	},
 	["MONK"] = {
@@ -1499,10 +1499,12 @@ Filger_Spells = {
 			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Renew
 			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Prayer of Mending
-			--OLD{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fade
 			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focused Will
+			{spellID = 45242, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Prayer of Mending
+			--OLD{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Fire
 			--OLD{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Inner Will
@@ -1535,11 +1537,11 @@ Filger_Spells = {
 			-- Evangelism
 			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Sanctuary
-			{spellID = 81206, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 81206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Serenity
-			{spellID = 81208, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 81208, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chakra: Chastise
-			{spellID = 81209, unitID = "player", caster = "player", filter = "BUFF"},
+			--OLD{spellID = 81209, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -1736,7 +1738,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 30},
 		},
 	},
 	["ROGUE"] = {
@@ -2207,7 +2209,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 30},
 		},
 	},
 	["WARLOCK"] = {
@@ -2430,7 +2432,7 @@ Filger_Spells = {
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Jade Spirit
-			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 50},
+			{spellID = 104993, filter = "ICD", trigger = "BUFF", duration = 30},
 		},
 	},
 	["WARRIOR"] = {
