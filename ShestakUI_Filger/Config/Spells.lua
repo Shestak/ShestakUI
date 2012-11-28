@@ -2896,16 +2896,16 @@ Filger_Spells = {
 			{spellID = 7321, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Monk
-			-- Fists of Fury
-			{spellID = 120086, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Leg Sweep
-			{spellID = 119381, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
 			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Charging Ox Wave
-			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Leg Sweep
+			{spellID = 119381, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Fists of Fury
+			{spellID = 120086, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Clash
 			{spellID = 122242, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Spear Hand Strike
 			{spellID = 116709, unitID = "player", caster = "all", filter = "DEBUFF"},
 
@@ -3203,16 +3203,16 @@ Filger_Spells = {
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Debuffs
-			-- Fists of Fury
-			{spellID = 120086, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Leg Sweep
-			{spellID = 119381, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Paralysis
 			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Charging Ox Wave
-			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Leg Sweep
+			{spellID = 119381, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Fists of Fury
+			{spellID = 120086, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Clash
 			{spellID = 122242, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Spear Hand Strike
 			{spellID = 116709, unitID = "target", caster = "all", filter = "DEBUFF"},
 
