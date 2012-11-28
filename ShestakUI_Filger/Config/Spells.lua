@@ -301,6 +301,8 @@ Filger_Spells = {
 			{spellID = 16870, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul of the Forest
 			{spellID = 114108, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tooth and Claw
+			{spellID = 135286, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Predator's Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1642,8 +1644,6 @@ Filger_Spells = {
 			{spellID = 527, filter = "CD"},
 			-- Mass Dispel
 			{spellID = 32375, filter = "CD"},
-			-- Dominate Mind
-			{spellID = 605, filter = "CD"},
 			-- Penance
 			{spellID = 47540, filter = "CD"},
 			-- Mind Blast
@@ -3028,8 +3028,6 @@ Filger_Spells = {
 			{spellID = 105771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
 			{spellID = 20511, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Silenced (Gag Order)
-			{spellID = 18498, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Disarm
 			{spellID = 676, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Staggering Shout

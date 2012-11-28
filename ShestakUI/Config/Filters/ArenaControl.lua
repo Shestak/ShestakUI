@@ -86,7 +86,6 @@ T.ArenaControl = function()
 		[GetSpellInfo(1330)] = 4,	-- Garrote - Silence
 		[GetSpellInfo(24259)] = 4,	-- Spell Lock (Felhunter)
 		[GetSpellInfo(115782)] = 4,	-- Optical Blast (Observer)
-		[GetSpellInfo(18498)] = 4,	-- Gag Order (Warrior glyph)
 
 		-- Roots
 		[GetSpellInfo(96294)] = 3,	-- Chains of Ice
