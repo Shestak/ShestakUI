@@ -6,7 +6,7 @@ local oUF = ns.oUF
 local SPELL_POWER_CHI = SPELL_POWER_CHI
 
 local function Update(self, event, unit, powerType)
-	if(self.unit ~= unit or (powerType and powerType ~= 'LIGHT_FORCE')) then return end
+	if(self.unit ~= unit and (powerType and (powerType ~= 'CHI' and powerType ~= 'DARK_FORCE'))) then return end
 
 	local hb = self.HarmonyBar
 
@@ -57,7 +57,7 @@ local Path = function(self, ...)
 end
 
 local ForceUpdate = function(element)
-	return Path(element.__owner, 'ForceUpdate', element.__owner.unit, 'LIGHT_FORCE')
+	return Path(element.__owner, 'ForceUpdate', element.__owner.unit, 'CHI')
 end
 
 local function Enable(self, unit)

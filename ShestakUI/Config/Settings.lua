@@ -270,7 +270,6 @@ C["tooltip"] = {
 	["who_targetting"] = true,					-- Show who is targetting the unit(in raid or party)
 	["item_count"] = true,						-- Item count in tooltip
 	["unit_role"] = false,						-- Unit role in tooltip
-	["reforge"] = true,							-- Item reforge info
 	["symbiosis"] = true,						-- Symbiosis info
 	["instance_lock"] = false,					-- Your instance lock status in tooltip
 	["item_transmogrify"] = true,				-- Displays items can not be transmogrified
