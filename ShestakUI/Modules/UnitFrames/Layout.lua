@@ -601,6 +601,7 @@ local function Shared(self, unit)
 		end
 	end
 
+	-- Portraits on health bars
 	if C.unitframe.portrait_enable ~= true and C.unitframe.alternative_portraits == true then
 		self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self.Health)
 		self.Portrait:SetAllPoints(self.Health)
@@ -639,6 +640,26 @@ local function Shared(self, unit)
 				end
 			end
 		end
+
+	-- Class icons portraits
+	if unit == "player" or unit == "target" then
+		if C.unitframe.portrait_enable ~= true and C.unitframe.class_icons_portraits == true then
+			local classicon = CreateFrame("Frame", self:GetName() .. "_ClassIconBorder", self)
+			classicon:SetTemplate("Default")
+			classicon:SetHeight(C.unitframe.class_icons_portraits_height)
+			classicon:SetWidth(C.unitframe.class_icons_portraits_width)
+			if unit == "player"	then		
+				classicon:SetPoint(unpack(C.position.unitframes.player_class_icon))
+			elseif unit == "target" then
+				classicon:SetPoint(unpack(C.position.unitframes.target_class_icon))
+			end
+			local class = classicon:CreateTexture(self:GetName() .. "_ClassIcon", "ARTWORK")
+			class:SetPoint("TOPLEFT", 2, -2)
+			class:SetPoint("BOTTOMRIGHT", -2, 2)
+			self.ClassIcon = class
+			self:EnableElement("ClassIcon")
+		end
+	end
 
 		if unit == "player" then
 			self.Debuffs = CreateFrame("Frame", nil, self)

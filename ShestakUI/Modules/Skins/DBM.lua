@@ -144,6 +144,12 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 								else
 									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(389 + C.unitframe.portrait_width), -30)
 								end
+							elseif C.unitframe.portrait_enable ~= true and C.unitframe.class_icons_portraits == true then
+								if bar.owner.options.IconRight then
+									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(413 + C.unitframe.class_icons_portraits_width), -42)
+								else
+									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(385 + C.unitframe.class_icons_portraits_width), -42)
+								end
 							else
 								if bar.owner.options.IconRight then
 									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -410, -30)
@@ -151,19 +157,23 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -382, -30)
 								end
 							end
-						else
-							if C.unitframe.portrait_enable == true then
-								if bar.owner.options.IconRight then
-									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(134 + C.unitframe.portrait_width), -30)
-								else
-									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(106 + C.unitframe.portrait_width), -30)
-								end
+						elseif C.unitframe.portrait_enable == true then
+							if bar.owner.options.IconRight then
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(134 + C.unitframe.portrait_width), -30)
 							else
-								if bar.owner.options.IconRight then
-									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -127, -30)
-								else
-									self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -99, -30)
-								end
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(106 + C.unitframe.portrait_width), -30)
+							end
+						elseif C.unitframe.portrait_enable ~= true and C.unitframe.class_icons_portraits == true then
+							if bar.owner.options.IconRight then
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(130 + C.unitframe.class_icons_portraits_width), -42)
+							else
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(102 + C.unitframe.class_icons_portraits_width), -42)
+							end
+						else
+							if bar.owner.options.IconRight then
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -127, -30)
+							else
+								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -99, -30)
 							end
 						end
 					end

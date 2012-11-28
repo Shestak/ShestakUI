@@ -37,6 +37,7 @@
 	<Script file="Elements\Resurrect.lua"/>
 	<Script file="Elements\HarmonyOrbs.lua"/>
 	<Script file="Elements\ShadowOrbs.lua"/>
+	<Script file="Elements\ClassIcons.lua"/>
 
 	<Script file="Modules\AuraTracker.lua"/>
 	<Script file="Modules\AuraWatch.lua"/>
@@ -131,3 +132,5 @@
 		</Frames>
 	</Button>
 </Ui>
+
+<!-- edit by Oz of shestak.org -->

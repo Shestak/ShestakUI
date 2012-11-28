@@ -429,7 +429,7 @@ C["unitframe"] = {
 	["uf_color"] = {0.1, 0.1, 0.1},				-- Color for UF if ["own_color"] = true
 	["enemy_health_color"] = false,				-- If enable, enemy target color is red
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
-	["color_value"] = true,						-- Health/mana value is colored
+	["color_value"] = false,					-- Health/mana value is colored
 	["bar_color_value"] = true,					-- Health bar color by current health remaining
 	-- Cast bars
 	["unit_castbar"] = true,					-- Show castbars
@@ -448,12 +448,16 @@ C["unitframe"] = {
 	["icons_pvp"] = true,						-- Mouseover pvp text(not icons) on player and target frames
 	["icons_combat"] = true,					-- Combat icon
 	["icons_resting"] = true,					-- Resting icon for low lvl chars
+
 	-- Portraits
 	["portrait_enable"] = false,				-- Enable player/target portraits
 	["portrait_classcolor_border"] = false,		-- Enable classcolor border
 	["portrait_height"] = 25,					-- Portrait height
 	["portrait_width"] = 20,					-- Portrait width
 	["alternative_portraits"] = false,			-- Enable the portraits on the health bars (you need to disable the option for player/target portraits)
+	["class_icons_portraits"] = true,			-- Class icon portraits for player/target (you need to disable the option for player/target portraits)
+	["class_icons_portraits_height"] = 43,		-- Class icon portrait height
+	["class_icons_portraits_width"] = 43,		-- Class icon portrait width
 	-- Plugins
 	["plugins_gcd"] = true,						-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar

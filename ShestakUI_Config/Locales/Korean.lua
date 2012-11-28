@@ -351,6 +351,7 @@ L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Classcolor border for portraits"
 L_GUI_UF_PORTRAIT_HEIGHT = "Portrait height"
 L_GUI_UF_PORTRAIT_WIDTH = "Portrait width"
 L_GUI_UF_ALTERNATIVE_PORTRAITS = "건강 막대의 초상화를 활성화 (이 플레이어/대상 인물에 대한 옵션을 해제해야합니다)" -- Goooooooooogle translated
+L_GUI_UF_CLASS_ICONS_PORTRAITS = "플레이어 / 대상 (당신은 플레이어 / 대상 인물에 대한 옵션을 해제해야합니다)에 대한 클래스 아이콘의 초상화" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Global cooldown spark"
 L_GUI_UF_PLUGINS_SWING = "Enable swing bar"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar"

@@ -352,6 +352,7 @@ L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Borde de color de clase para los retratos
 L_GUI_UF_PORTRAIT_HEIGHT = "Altura del retrato"
 L_GUI_UF_PORTRAIT_WIDTH = "Anchura del retrato"
 L_GUI_UF_ALTERNATIVE_PORTRAITS = "Activar los retratos de las barras de salud (es necesario deshabilitar la opción de imágenes de los jugadores/objetivo)" -- Goooooooooogle translated
+L_GUI_UF_CLASS_ICONS_PORTRAITS = "Clase retratos de iconos para reproductor / target (es necesario desactivar la opción para retratos jugador / destino)" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Brillo de tiempo de reutilización global"
 L_GUI_UF_PLUGINS_SWING = "Activar barra de oscilación"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Activar barra para Golpe Necrótico"

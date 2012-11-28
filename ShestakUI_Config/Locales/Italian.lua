@@ -351,6 +351,7 @@ L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Bordi dei ritratti colorati in base alla 
 L_GUI_UF_PORTRAIT_HEIGHT = "Altezza del ritratto"
 L_GUI_UF_PORTRAIT_WIDTH = "Larghezza del ritratto"
 L_GUI_UF_ALTERNATIVE_PORTRAITS = "Attiva i ritratti sulle barre della salute (è necessario disattivare l'opzione per i ritratti giocatore/bersaglio)"
+L_GUI_UF_CLASS_ICONS_PORTRAITS = "Icona della classe come ritratto per giocatore/bersaglio (è necessario disattivare l'opzione per i ritratti giocatore/bersaglio)"
 L_GUI_UF_PLUGINS_GCD = "Scintilla del recupero globale"
 L_GUI_UF_PLUGINS_SWING = "Attiva la barra dei fendenti"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Attiva la barra per l'Assalto Necrotico"

@@ -351,6 +351,7 @@ L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "開啟職業顏色邊框"
 L_GUI_UF_PORTRAIT_HEIGHT = "頭像高度"
 L_GUI_UF_PORTRAIT_WIDTH = "頭像寬度"
 L_GUI_UF_ALTERNATIVE_PORTRAITS = "啟用對健康酒吧的畫像（你需要禁用的選項，播放/目標畫像）" -- Goooooooooogle translated
+L_GUI_UF_CLASS_ICONS_PORTRAITS = "類圖標播放器/目標（你需要禁用該選項，播放/目標肖像的肖像）" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "公共CD計時"
 L_GUI_UF_PLUGINS_SWING = "普通攻擊計時條"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "開啟亡域打擊計時條"

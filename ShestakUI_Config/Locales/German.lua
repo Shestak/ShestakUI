@@ -351,6 +351,7 @@ L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Aktiviere Rahmen in Klassenfarbe"
 L_GUI_UF_PORTRAIT_HEIGHT = "Portraithöhe"
 L_GUI_UF_PORTRAIT_WIDTH = "Portraitbreite"
 L_GUI_UF_ALTERNATIVE_PORTRAITS = "Aktiviere Sie die Portraits an den Gesundheits-Bars (Sie brauchen, um die Option für Spieler/target Portraits deaktivieren)" -- Goooooooooogle translated
+L_GUI_UF_CLASS_ICONS_PORTRAITS = "Class-Symbol Portraits für Spieler / target (Sie müssen die Option für Spieler / target Porträts deaktivieren)" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Blitz für globalen Cooldown"
 L_GUI_UF_PLUGINS_SWING = "Swingleiste"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Aktiviere Leiste für Nekrotischer Stoß"

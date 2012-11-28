@@ -351,6 +351,7 @@ L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Classcolor border for portraits"
 L_GUI_UF_PORTRAIT_HEIGHT = "Portrait height"
 L_GUI_UF_PORTRAIT_WIDTH = "Portrait width"
 L_GUI_UF_ALTERNATIVE_PORTRAITS= "Habilitar os retratos nas barras de saúde (você precisa desativar a opção para o jogador/target retratos)" -- Goooooooooogle translated
+L_GUI_UF_CLASS_ICONS_PORTRAITS = "Classe retratos do ícone para o jogador / target (você precisa desativar a opção para o jogador / target retratos)" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Global cooldown spark"
 L_GUI_UF_PLUGINS_SWING = "Enable swing bar"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar"
