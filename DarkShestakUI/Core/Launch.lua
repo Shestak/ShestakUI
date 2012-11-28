@@ -571,7 +571,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		SetCVar("uiScale", C.general.uiscale)
 
 		-- Install default if we never ran ShestakUI on this character
-		if not SavedOptionsPerChar.Install or SavedOptions.Version == nil or tonumber(SavedOptions.Version) < tonumber(T.version) then
+		if not SavedOptionsPerChar.Install or SavedOptions.Version == nil then
 			Setup()
 		end
 		
