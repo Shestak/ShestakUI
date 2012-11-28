@@ -307,19 +307,12 @@ local function LoadSkin()
 	PetPaperDollPetInfo:SetSize(24, 24)
 
 	CharacterFrame:SetTemplate("Transparent")
-	CharacterFrame:SetFrameStrata("DIALOG")
 
 	-- Unit Background Texture
-	CharacterModelFrame.backdrop.BGTopLeft = CharacterModelFrame.backdrop:CreateTexture(nil, "ARTWORK")
-	CharacterModelFrame.backdrop.BGTopLeft:SetPoint("TOPLEFT", CharacterModelFrame.backdrop, "TOPLEFT", 2, -2)
-	CharacterModelFrame.backdrop.BGTopLeft:SetPoint("TOPRIGHT", CharacterModelFrame.backdrop, "TOPRIGHT", -2, -2)
-
-	CharacterModelFrame.backdrop.BGBottomLeft = CharacterModelFrame.backdrop:CreateTexture(nil, "ARTWORK")
-	CharacterModelFrame.backdrop.BGBottomLeft:SetPoint("BOTTOMLEFT", CharacterModelFrame.backdrop, "BOTTOMLEFT", 2, -50)
-	CharacterModelFrame.backdrop.BGBottomLeft:SetPoint("BOTTOMRIGHT", CharacterModelFrame.backdrop, "BOTTOMRIGHT", -2, -50)
-
-	local race, fileName = UnitRace("player")
-	SetDressUpBackground(CharacterModelFrame.backdrop, fileName)
+	CharacterModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", CharacterModelFrame.backdrop, "TOPLEFT", 2, -2)
+	CharacterModelFrameBackgroundTopRight:SetPoint("TOPRIGHT", CharacterModelFrame.backdrop, "TOPRIGHT", -2, -2)
+	CharacterModelFrameBackgroundBotLeft:SetPoint("BOTTOMLEFT", CharacterModelFrame.backdrop, "BOTTOMLEFT", 2, -50)
+	CharacterModelFrameBackgroundBotRight:SetPoint("BOTTOMRIGHT", CharacterModelFrame.backdrop, "BOTTOMRIGHT", -2, -50)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
