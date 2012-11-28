@@ -15,7 +15,7 @@ local function LoadSkin()
 		T.SkinTab(_G["InspectFrameTab"..i])
 	end
 
-	InspectModelFrame:StripTextures(true)
+	InspectModelFrame:StripTextures()
 	InspectModelFrame:CreateBackdrop("Default")
 	InspectModelFrame.backdrop:SetPoint("TOPLEFT", -3, 4)
 	InspectModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
@@ -85,16 +85,10 @@ local function LoadSkin()
 	end
 
 	-- Unit Background Texture
-	InspectModelFrame.backdrop.BGTopLeft = InspectModelFrame.backdrop:CreateTexture(nil, "ARTWORK")
-	InspectModelFrame.backdrop.BGTopLeft:SetPoint("TOPLEFT", InspectModelFrame.backdrop, "TOPLEFT", 2, -2)
-	InspectModelFrame.backdrop.BGTopLeft:SetPoint("TOPRIGHT", InspectModelFrame.backdrop, "TOPRIGHT", -2, -2)
-
-	InspectModelFrame.backdrop.BGBottomLeft = InspectModelFrame.backdrop:CreateTexture(nil, "ARTWORK")
-	InspectModelFrame.backdrop.BGBottomLeft:SetPoint("BOTTOMLEFT", InspectModelFrame.backdrop, "BOTTOMLEFT", 2, -50)
-	InspectModelFrame.backdrop.BGBottomLeft:SetPoint("BOTTOMRIGHT", InspectModelFrame.backdrop, "BOTTOMRIGHT", -2, -50)
-
-	local race, fileName = UnitRace("target")
-	SetDressUpBackground(InspectModelFrame.backdrop, fileName)
+	InspectModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", InspectModelFrame.backdrop, "TOPLEFT", 2, -2)
+	InspectModelFrameBackgroundTopRight:SetPoint("TOPRIGHT", InspectModelFrame.backdrop, "TOPRIGHT", -2, -2)
+	InspectModelFrameBackgroundBotLeft:SetPoint("BOTTOMLEFT", InspectModelFrame.backdrop, "BOTTOMLEFT", 2, -50)
+	InspectModelFrameBackgroundBotRight:SetPoint("BOTTOMRIGHT", InspectModelFrame.backdrop, "BOTTOMRIGHT", -2, -50)
 
 	if T.author == true then
 		InspectModelFrameControlFrame:HookScript("OnShow", function(self) self:Hide() end)
