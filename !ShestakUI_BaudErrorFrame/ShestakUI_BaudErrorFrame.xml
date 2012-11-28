@@ -1,4 +1,4 @@
-<Ui xmlns="http://www.blizzard.com/wow/ui/"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   xsi:schemaLocation="http://www.blizzard.com/wow/ui/">
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/">
 	<Script file="ShestakUI_BaudErrorFrame.lua"/>
 	<Button name="BaudErrorFrameEntryTemplate" virtual="true">
 		<Size>
@@ -81,7 +81,11 @@
 				BaudErrorFrameMinimapButton_OnLeave(self)
 			</OnLeave>
 			<OnClick>
-				BaudErrorFrame:Show()
+				if BaudErrorFrame:IsShown() then
+					BaudErrorFrame:Hide()
+				else
+					BaudErrorFrame:Show()
+				end
 			</OnClick>
 			<OnUpdate>
 				BaudErrorFrameMinimapButton_OnUpdate(self)
@@ -109,21 +113,9 @@
 		</Backdrop>
 		<Layers>
 			<Layer level="ARTWORK">
-				<Texture name="$parentHeader" file="">
-					<Size>
-						<AbsDimension x="300" y="64"/>
-					</Size>
-					<Anchors>
-						<Anchor point="TOP">
-							<Offset>
-								<AbsDimension y="5"/>
-							</Offset>
-						</Anchor>
-					</Anchors>
-				</Texture>
 				<FontString inherits="GameFontNormal" text="SHOW_LUA_ERRORS">
 					<Anchors>
-						<Anchor point="TOP" relativeTo="$parentHeader">
+						<Anchor point="TOP" relativeTo="$parent">
 							<Offset>
 								<AbsDimension y="-14"/>
 							</Offset>

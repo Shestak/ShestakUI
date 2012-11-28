@@ -13,7 +13,7 @@ function BaudErrorFrame_OnLoad(self)
 	self:RegisterEvent("MACRO_ACTION_FORBIDDEN")
 	UIParent:UnregisterEvent("MACRO_ACTION_FORBIDDEN")
 
-	tinsert(UISpecialFrames,self:GetName())
+	tinsert(UISpecialFrames, self:GetName())
 
 	SlashCmdList["BaudErrorFrame"] = function()
 		if BaudErrorFrame:IsShown() then
@@ -23,7 +23,7 @@ function BaudErrorFrame_OnLoad(self)
 		end
 	end
 	SLASH_BaudErrorFrame1 = "/bauderror"
-	SLASH_BaudErrorFrame1 = "/er"
+	SLASH_BaudErrorFrame2 = "/er"
 
 	seterrorhandler(BaudErrorFrameHandler)
 end
