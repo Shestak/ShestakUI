@@ -14,6 +14,8 @@ local function styleBubble(frame)
 		local region = select(i, frame:GetRegions())
 		if region:GetObjectType() == "Texture" then
 			region:SetTexture(nil)
+		elseif region:GetObjectType() == "FontString" then
+			frame.text = region
 		end
 	end
 
@@ -26,6 +28,8 @@ local function styleBubble(frame)
 	frame:SetBackdropColor(unpack(C.media.overlay_color))
 	frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	frame:SetClampedToScreen(false)
+
+	frame.text:SetFont(C.media.normal_font, 14)
 end
 
 local function isChatBubble(frame)
