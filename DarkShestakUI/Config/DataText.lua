@@ -6,7 +6,7 @@
 ----------------------------------------------------------------------------------------
 local cBN = select(4, GetAddOnInfo("cargBags_Nivaya"))
 local r, g, b = unpack(C.skins.color_theme)
-local function class(string)
+local function theme(string)
 	return format("|cff%02x%02x%02x%s|r", 255 * r, 255 * g, 255 * b, string or "")
 end
 
@@ -25,40 +25,40 @@ LPSTAT_CONFIG = {
 -- Bottomleft block
 	Clock = {
 		enabled = C.stats.clock, -- Local time and the 24 hour clock can be enabled in-game via time manager (right-click)
-		AM = class"A", PM = class"P", colon = class":", -- These values apply to the displayed clock
+		AM = theme"A", PM = theme"P", colon = theme":", -- These values apply to the displayed clock
 		anchor_frame = "UIParent", anchor_to = "left", anchor_from = "bottomleft",
 		x_off = 20, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Latency = {
 		enabled = C.stats.latency,
-		fmt = "[color]%d|r"..class"ms", -- "77ms", [color] inserts latency color code
+		fmt = "[color]%d|r"..theme"ms", -- "77ms", [color] inserts latency color code
 	 	anchor_frame = "UIParent", anchor_to = "right", anchor_from = "bottomright",
 		x_off = -17, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
 	Memory = {
 		enabled = C.stats.memory,
-		fmt_mb = "%.1f"..class"mb", -- "12.5mb"
-		fmt_kb = "%.0f"..class"kb", -- "256kb"
+		fmt_mb = "%.1f"..theme"mb", -- "12.5mb"
+		fmt_kb = "%.0f"..theme"kb", -- "256kb"
 		max_addons = nil, -- Holding Alt reveals hidden addons
 		anchor_frame = C.stats.latency and "Latency", anchor_to = "right", anchor_from = "left",
 		x_off = -3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
 	FPS = {
 		enabled = C.stats.fps,
-		fmt = "%d"..class"fps", -- "42fps"
+		fmt = "%d"..theme"fps", -- "42fps"
 		anchor_frame = C.stats.memory and "Memory" or "Latency", anchor_to = "right", anchor_from = "left",
 		x_off = -3, y_off = 0,
 	},
 	Friends = {
 		enabled = C.stats.friend,
-		fmt = "%d/%d"..class"f", -- "3/40F"
+		fmt = "%d/%d"..theme"f", -- "3/40F"
 		maxfriends = nil, -- Set max friends listed, nil means no limit
 		anchor_frame = "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Guild = {
 		enabled = C.stats.guild,
-		fmt = "%d/%d"..class"g", -- "5/114G"
+		fmt = "%d/%d"..theme"g", -- "5/114G"
 		maxguild = nil, -- Set max members listed, nil means no limit. Alt-key reveals hidden members
 		threshold = 1, -- Minimum level displayed (1-90)
 		show_xp = true, -- Show guild experience
@@ -68,7 +68,7 @@ LPSTAT_CONFIG = {
 	},
 	Durability = {
 		enabled = C.stats.durability,
-		fmt = "[color]%d|r%%"..class"d", -- "54%D", [color] inserts durability color code
+		fmt = "[color]%d|r%%"..theme"d", -- "54%D", [color] inserts durability color code
 		man = true, -- Hide bliz durability man
 		ignore_inventory = false, -- Ignore inventory gear when auto-repairing
 		gear_icons = false, -- Show your gear icons in the tooltip
@@ -86,9 +86,9 @@ LPSTAT_CONFIG = {
 			--	Rested XP [rest]				Rested/Level% [rest%]
 			--	Quests To Level [questsleft]	Kills To Level [killsleft]
 			--	Total Played [playedtotal]		Level Played [playedlevel]		Session Played [playedsession]
-		xp_normal_fmt = "[curxp]([cur%]%)"..class"XP", -- XP string used when not rested
-		xp_rested_fmt = "[curxp]([cur%]%)"..class"XP ".." [restxp]([rest%]%)"..class"R", -- XP string used when rested
-		played_fmt = class"Online: ".."|r".."[playedsession]", -- Played time format
+		xp_normal_fmt = "[curxp]([cur%]%)"..theme"XP", -- XP string used when not rested
+		xp_rested_fmt = "[curxp]([cur%]%)"..theme"XP ".." [restxp]([rest%]%)"..theme"R", -- XP string used when rested
+		played_fmt = theme"Online: ".."|r".."[playedsession]", -- Played time format
 		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")
 			-- Faction tags:
 			--	Faction name [repname]
@@ -132,38 +132,38 @@ LPSTAT_CONFIG = {
 			--	Spell Crit% [spellcrit]			Spellpower [spellpower]			Healing [healing]			MP5 [manaregen]
 			--	Dodge% [dodge]					Parry% [parry]					Block% [block]				Avoidance% [avoidance]
 			--	Armor Value [armor]				Resilience [resilience]
-		spec1fmt = class"SP: ".."[healing]"..class"  Crit: ".."[spellcrit]%"..class"  Haste: ".."[spellhaste]%", -- Spec #1 string
-		spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%", -- Spec #2 string
+		spec1fmt = theme"SP: ".."[healing]"..theme"  Crit: ".."[spellcrit]%"..theme"  Haste: ".."[spellhaste]%", -- Spec #1 string
+		spec2fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%", -- Spec #2 string
 		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
 		x_off = -20, y_off = 6,
 	},
 	Bags = {
 		enabled = C.toppanel.enable,
-		fmt = class"B: ".."%d/%d",
+		fmt = theme"B: ".."%d/%d",
 		anchor_frame = "Stats", anchor_to = "topleft", anchor_from = "bottomleft",
 		x_off = 0, y_off = -5,
 	},
 	Helm = {
 		enabled = C.toppanel.enable,
-		fmt = class"H: ".."%s",
+		fmt = theme"H: ".."%s",
 		anchor_frame = "Bags", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Cloak = {
 		enabled = C.toppanel.enable,
-		fmt = class"C: ".."%s",
+		fmt = theme"C: ".."%s",
 		anchor_frame = "Helm", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Loot = {
 		enabled = C.toppanel.enable,
-		fmt = class"L: ".."%s",
+		fmt = theme"L: ".."%s",
 		anchor_frame = "Cloak", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Nameplates = {
 		enabled = C.toppanel.enable,
-		fmt = class"N: ".."%s",
+		fmt = theme"N: ".."%s",
 		anchor_frame = "Loot", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
@@ -198,50 +198,50 @@ LPSTAT_CONFIG = {
 LPSTAT_PROFILES = {
 	DEATHKNIGHT = {
 		Stats = {
-			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Armor: ".."[armor]"..class"  Avoid: ".."[avoidance]%",
-			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
+			spec1fmt = theme"Mastery: ".."[mastery]%"..theme"  Armor: ".."[armor]"..theme"  Avoid: ".."[avoidance]%",
+			spec2fmt = theme"AP: ".."[ap]"..theme"  Exp: ".."[expertise]%"..theme"  Hit: ".."[meleehit]%",
 		}
 	},
 	HUNTER = {
 		Stats = {
-			spec1fmt = class"AP: ".."[rangedap]"..class"  Crit: ".."[rangedcrit]%"..class"  Hit: ".."[rangedhit]%",
-			spec2fmt = class"AP: ".."[rangedap]"..class"  Crit: ".."[rangedcrit]%"..class"  Hit: ".."[rangedhit]%",
+			spec1fmt = theme"AP: ".."[rangedap]"..theme"  Crit: ".."[rangedcrit]%"..theme"  Hit: ".."[rangedhit]%",
+			spec2fmt = theme"AP: ".."[rangedap]"..theme"  Crit: ".."[rangedcrit]%"..theme"  Hit: ".."[rangedhit]%",
 		}
 	},
 	MAGE = {
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
+			spec1fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
+			spec2fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
 		}
 	},
 	PALADIN = {
 		Stats = {
-			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
-			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
+			spec1fmt = theme"Mastery: ".."[mastery]%"..theme"  Block: ".."[block]%"..theme"  Avoid: ".."[avoidance]%",
+			spec1fmt = theme"Mastery: ".."[mastery]%"..theme"  Block: ".."[block]%"..theme"  Avoid: ".."[avoidance]%",
 		}
 	},
 	PRIEST = {
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
+			spec1fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
+			spec2fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
 		}
 	},
 	ROGUE = {
 		Stats = {
-			spec1fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
-			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
+			spec1fmt = theme"AP: ".."[ap]"..theme"  Exp: ".."[expertise]%"..theme"  Hit: ".."[meleehit]%",
+			spec2fmt = theme"AP: ".."[ap]"..theme"  Exp: ".."[expertise]%"..theme"  Hit: ".."[meleehit]%",
 		}
 	},
 	WARLOCK = {
 		Stats = {
-			spec1fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
+			spec1fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
+			spec2fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
 		}
 	},
 	WARRIOR = {
 		Stats = {
-			spec1fmt = class"Armor: ".."[armor]"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
-			spec2fmt = class"AP: ".."[ap]"..class"  Crit: ".."[meleecrit]%"..class"  Hit: ".."[meleehit]%",
+			spec1fmt = theme"Armor: ".."[armor]"..theme"  Block: ".."[block]%"..theme"  Avoid: ".."[avoidance]%",
+			spec2fmt = theme"AP: ".."[ap]"..theme"  Crit: ".."[meleecrit]%"..theme"  Hit: ".."[meleehit]%",
 		}
 	},
 }

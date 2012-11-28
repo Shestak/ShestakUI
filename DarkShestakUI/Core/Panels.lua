@@ -135,7 +135,7 @@ else
 end
 
 ----------------------------------------------------------------------------------------
---	ActionBar panel
+--	ActionBar panels
 ----------------------------------------------------------------------------------------
 if C.actionbar.panels == true then
 	local bpanel = CreateFrame("Frame", "ActionBarPanel", bottombaranchor)
