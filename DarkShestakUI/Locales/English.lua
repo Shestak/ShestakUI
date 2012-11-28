@@ -2,7 +2,6 @@
 --	Localization for enUS and enGB client
 ----------------------------------------------------------------------------------------
 -- Installation
-L_INSTALL_HEADER = "Dark ShestakUI"
 L_INSTALL_WELCOME = "Welcome to Dark ShestakUI Setup Wizard, will do some important installation steps. Press "
 L_INSTALL_CONFIG = "For a more comfortable settings recommended turn on Dark ShestakUI Config.\nIf decline will be missed some installation steps."
 L_INSTALL_STEP1 = "Saving settings for:"

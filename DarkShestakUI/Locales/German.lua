@@ -6,7 +6,6 @@ if T.client ~= "deDE" then return end
 --	Translation: Alwa, Baine, Chubidu, F5Hellbound, Sinaris, Vienchen
 ----------------------------------------------------------------------------------------
 -- Installation
-L_INSTALL_HEADER = "Dark ShestakUI"
 L_INSTALL_WELCOME = "Welcome to Dark ShestakUI Setup Wizard, will do some important installation steps. Press " -- Need review
 L_INSTALL_CONFIG = "For a more comfortable settings recommended turn on Dark ShestakUI Config.\nIf decline will be missed some installation steps." -- Need review
 L_INSTALL_STEP1 = "Saving settings for:" -- Need review

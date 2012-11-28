@@ -257,7 +257,7 @@ local header = head:CreateFontString(nil, "OVERLAY")
 header:SetFont(C.media.normal_font, 13, "OUTLINE")
 header:SetPoint("CENTER", head, "CENTER", 0, 0)
 local r, g, b = unpack(C.skins.color_theme)
-header:SetText(format("|cff%02x%02x%02x%s %s|r", 255 * r, 255 * g, 255 * b, L_INSTALL_HEADER, T.version))
+header:SetText(format("|cff%02x%02x%02x%s %s|r", 255 * r, 255 * g, 255 * b, "Dark ShestakUI", T.version))
 
 local text = f:CreateFontString(nil, "OVERLAY")
 text:SetFont(C.media.normal_font, 13)
