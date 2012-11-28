@@ -94,6 +94,7 @@ hooksecurefunc(ItemRefTooltip, "SetHyperlink", SetHyperlink)
 ----------------------------------------------------------------------------------------
 --	Criteria status for some Achievements(Achievement Helper by Timmy2250)
 ----------------------------------------------------------------------------------------
+if C.tooltip.ptr ~= true then return end -- PTR
 local AchData = {}
 local AchString = {}
 AchString[347] = {}
