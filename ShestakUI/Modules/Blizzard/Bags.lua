@@ -17,23 +17,23 @@ if T.class == "DEATHKNIGHT" then
 elseif T.class == "DRUID" then
 	unusable = {{1, 2, 3, 4, 8, 9, 14, 15, 16}, {4, 5, 6}, true}
 elseif T.class == "HUNTER" then
-	unusable = {{5, 6, 16}, {5, 6, 7}}
+	unusable = {{5, 6, 16}, {5, 6}}
 elseif T.class == "MAGE" then
-	unusable = {{1, 2, 3, 4, 5, 6, 7, 9, 11, 14, 15}, {3, 4, 5, 6, 7}, true}
+	unusable = {{1, 2, 3, 4, 5, 6, 7, 9, 11, 14, 15}, {3, 4, 5, 6}, true}
 elseif T.class == "PALADIN" then
 	unusable = {{3, 4, 10, 11, 13, 14, 15, 16}, {}, true}
 elseif T.class == "PRIEST" then
-	unusable = {{1, 2, 3, 4, 6, 7, 8, 9, 11, 14, 15}, {3, 4, 5, 6, 7}, true}
+	unusable = {{1, 2, 3, 4, 6, 7, 8, 9, 11, 14, 15}, {3, 4, 5, 6}, true}
 elseif T.class == "ROGUE" then
-	unusable = {{2, 6, 7, 9, 10, 16}, {4, 5, 6, 7}}
+	unusable = {{2, 6, 7, 9, 10, 16}, {4, 5, 6}}
 elseif T.class == "SHAMAN" then
 	unusable = {{3, 4, 7, 8, 9, 14, 15, 16}, {5}}
 elseif T.class == "WARLOCK" then
-	unusable = {{1, 2, 3, 4, 5, 6, 7, 9, 11, 14, 15}, {3, 4, 5, 6, 7}, true}
+	unusable = {{1, 2, 3, 4, 5, 6, 7, 9, 11, 14, 15}, {3, 4, 5, 6}, true}
 elseif T.class == "WARRIOR" then
-	unusable = {{16}, {7}}
+	unusable = {{16}, {}}
 elseif T.class == "MONK" then
-	unusable = {{2, 3, 4, 6, 9, 13, 14, 15, 16}, {4, 5, 6, 7}}
+	unusable = {{2, 3, 4, 6, 9, 13, 14, 15, 16}, {4, 5, 6}}
 end
 
 for class = 1, 2 do
