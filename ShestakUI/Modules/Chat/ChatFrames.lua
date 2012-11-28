@@ -214,6 +214,7 @@ local function SetupChat(self)
 	ChatTypeInfo.RAID.sticky = var
 	ChatTypeInfo.RAID_WARNING.sticky = var
 	ChatTypeInfo.INSTANCE_CHAT.sticky = var
+	ChatTypeInfo.INSTANCE_CHAT_LEADER.sticky = var
 	ChatTypeInfo.WHISPER.sticky = var
 	ChatTypeInfo.BN_WHISPER.sticky = var
 	ChatTypeInfo.CHANNEL.sticky = var
