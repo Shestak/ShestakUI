@@ -215,13 +215,14 @@ end
 -- We need to reset everything when a nameplate it hidden
 local function OnHide(frame)
 	frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
-	--frame.hp:SetScale(1)
+	frame.hp:SetScale(1)
 	frame.overlay:Hide()
 	frame.cb:Hide()
 	frame.unit = nil
 	frame.guid = nil
 	frame.hasClass = nil
 	frame.isFriendly = nil
+	frame.isTagged = nil
 	frame.hp.rcolor = nil
 	frame.hp.gcolor = nil
 	frame.hp.bcolor = nil
@@ -256,9 +257,12 @@ local function Colorize(frame)
 		end
 	end
 
+	frame.isTagged = nil
+
 	if r + b + b > 2 then	-- Tapped
 		r, g, b = 0.6, 0.6, 0.6
 		frame.isFriendly = false
+		frame.isTagged = true
 		texcoord = {0, 0, 0, 0}
 	elseif g + b == 0 then	-- Hostile
 		r, g, b = unpack(T.oUF_colors.reaction[1])
@@ -301,9 +305,9 @@ local function UpdateObjects(frame)
 	local r, g, b = frame.hp:GetStatusBarColor()
 
 	-- Set scale
-	--while frame.hp:GetEffectiveScale() < 1 do
-	--	frame.hp:SetScale(frame.hp:GetScale() + 0.01)
-	--end
+	while frame.hp:GetEffectiveScale() < 1 do
+		frame.hp:SetScale(frame.hp:GetScale() + 0.01)
+	end
 
 	-- Have to reposition this here so it doesnt resize after being hidden
 	frame.hp:ClearAllPoints()
@@ -514,7 +518,7 @@ local badR, badG, badB = unpack(C.nameplate.bad_color)
 local transitionR, transitionG, transitionB = unpack(C.nameplate.near_color)
 local function UpdateThreat(frame, elapsed)
 	frame.hp:Show()
-	if frame.hasClass == true then return end
+	if frame.hasClass or frame.isTagged then return end
 
 	if C.nameplate.enhance_threat ~= true then
 		if frame.threat:IsShown() then
