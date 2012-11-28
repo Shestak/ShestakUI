@@ -82,4 +82,14 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			InterfaceOptionsCombatTextPanelHealing:Kill()
 		end
 	end
+
+	if IsAddOnLoaded("ShestakUI_Filger") then
+		SetCVar("lossOfControl", 0)
+		InterfaceOptionsCombatPanelLossOfControl:Kill()
+		InterfaceOptionsCombatPanelLossOfControlFullDropDown:Kill()
+		InterfaceOptionsCombatPanelLossOfControlSilenceDropDown:Kill()
+		InterfaceOptionsCombatPanelLossOfControlInterruptDropDown:Kill()
+		InterfaceOptionsCombatPanelLossOfControlDisarmDropDown:Kill()
+		InterfaceOptionsCombatPanelLossOfControlRootDropDown:Kill()
+	end
 end)
