@@ -20,8 +20,8 @@ local AddMessage = function(self, text, ...)
 end
 
 -- Global strings
-_G.CHAT_BATTLEGROUND_GET = "|Hchannel:BATTLEGROUND|h["..L_CHAT_BATTLEGROUND.."]|h %s:\32"
-_G.CHAT_BATTLEGROUND_LEADER_GET = "|Hchannel:BATTLEGROUND|h["..L_CHAT_BATTLEGROUND_LEADER.."]|h %s:\32"
+_G.CHAT_INSTANCE_CHAT_GET = "|Hchannel:INSTANCE|h["..L_CHAT_INSTANCE_CHAT.."]|h %s:\32"
+_G.CHAT_INSTANCE_CHAT_LEADER_GET = "|Hchannel:INSTANCE|h["..L_CHAT_INSTANCE_CHAT_LEADER.."]|h %s:\32"
 _G.CHAT_BN_WHISPER_GET = L_CHAT_BN_WHISPER.." %s:\32"
 _G.CHAT_GUILD_GET = "|Hchannel:GUILD|h["..L_CHAT_GUILD.."]|h %s:\32"
 _G.CHAT_OFFICER_GET = "|Hchannel:OFFICER|h["..L_CHAT_OFFICER.."]|h %s:\32"
@@ -213,7 +213,7 @@ local function SetupChat(self)
 	ChatTypeInfo.OFFICER.sticky = var
 	ChatTypeInfo.RAID.sticky = var
 	ChatTypeInfo.RAID_WARNING.sticky = var
-	ChatTypeInfo.BATTLEGROUND.sticky = var
+	ChatTypeInfo.INSTANCE_CHAT.sticky = var
 	ChatTypeInfo.WHISPER.sticky = var
 	ChatTypeInfo.BN_WHISPER.sticky = var
 	ChatTypeInfo.CHANNEL.sticky = var
