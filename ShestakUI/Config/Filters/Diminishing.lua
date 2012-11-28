@@ -129,7 +129,6 @@ T.DiminishingSpells = function()
 		[1330] = {"silence"},		-- Garrote
 		[24259] = {"silence"},		-- Spell Lock (Felhunter)
 		[115782] = {"silence"},		-- Optical Blast (Observer)
-		[18498] = {"silence"},		-- Gag Order (Warrior glyph)
 		[25046] = {"silence"},		-- Arcane Torrent (Energy version)
 		[28730] = {"silence"},		-- Arcane Torrent (Mana version)
 		[50613] = {"silence"},		-- Arcane Torrent (Runic power version)
