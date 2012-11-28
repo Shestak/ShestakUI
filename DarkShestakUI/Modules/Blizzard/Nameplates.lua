@@ -39,8 +39,8 @@ end
 -- Create a fake backdrop frame using textures
 local function CreateVirtualFrame(parent, point)
 	if point == nil then point = parent end
-
 	if point.backdrop then return end
+
 	
 	if C.skins.shadow == true then
 		local shadow = CreateFrame("Frame", nil, parent)
@@ -198,7 +198,7 @@ end
 
 -- Determine whether or not the cast is Channelled or a Regular cast so we can grab the proper Cast Name
 local function UpdateCastText(frame, curValue)
-	local minValue, maxValue = frame:GetMinMaxValues()
+	local _, maxValue = frame:GetMinMaxValues()
 
 	if UnitChannelInfo("target") then
 		frame.time:SetFormattedText("%.1f ", curValue)
@@ -232,6 +232,7 @@ end
 -- We need to reset everything when a nameplate it hidden
 local function OnHide(frame)
 	frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
+	--frame.hp:SetScale(1)
 	frame.overlay:Hide()
 	frame.cb:Hide()
 	frame.unit = nil
@@ -272,7 +273,11 @@ local function Colorize(frame)
 		end
 	end
 
-	if g + b == 0 then	-- Hostile
+	if r + b + b > 2 then	-- Tapped
+		r, g, b = 0.6, 0.6, 0.6
+		frame.isFriendly = false
+		texcoord = {0, 0, 0, 0}
+	elseif g + b == 0 then	-- Hostile
 		r, g, b = unpack(T.oUF_colors.reaction[1])
 		frame.isFriendly = false
 		texcoord = {0, 0, 0, 0}
@@ -304,12 +309,18 @@ local function Colorize(frame)
 	end
 
 	frame.hp:SetStatusBarColor(r, g, b)
+	frame.hp.hpbg:SetTexture(r, g, b, 0.25)
 end
 
 -- HealthBar OnShow, use this to set variables for the nameplate
 local function UpdateObjects(frame)
 	local frame = frame:GetParent()
 	local r, g, b = frame.hp:GetStatusBarColor()
+
+	-- Set scale
+	--while frame.hp:GetEffectiveScale() < 1 do
+	--	frame.hp:SetScale(frame.hp:GetScale() + 0.01)
+	--end
 
 	-- Have to reposition this here so it doesnt resize after being hidden
 	frame.hp:ClearAllPoints()
@@ -375,9 +386,10 @@ local function UpdateObjects(frame)
 end
 
 -- This is where we create most 'Static' objects for the nameplate
-local function SkinObjects(frame)
+local function SkinObjects(frame, nameFrame)
 	local oldhp, cb = frame:GetChildren()
-	local threat, hpborder, overlay, oldname, oldlevel, bossicon, raidicon, elite = frame:GetRegions()
+	local threat, hpborder, overlay, oldlevel, bossicon, raidicon, elite = frame:GetRegions()
+	local oldname = nameFrame:GetRegions()
 	local _, cbborder, cbshield, cbicon = cb:GetRegions()
 
 	-- Health Bar
@@ -420,6 +432,10 @@ local function SkinObjects(frame)
 
 	hp:HookScript("OnShow", UpdateObjects)
 	frame.hp = hp
+
+	if not frame.threat then
+		frame.threat = threat
+	end
 
 	-- Create Cast Bar
 	cb:SetStatusBarTexture(C.media.texture)
@@ -516,8 +532,8 @@ local function UpdateThreat(frame, elapsed)
 	if frame.hasClass == true then return end
 
 	if C.nameplate.enhance_threat ~= true then
-		if frame.region:IsShown() then
-			local _, val = frame.region:GetVertexColor()
+		if frame.threat:IsShown() then
+			local _, val = frame.threat:GetVertexColor()
 			if val > 0.7 then
 				SetVirtualBorder(frame.hp, transitionR, transitionG, transitionB)
 			else
@@ -527,7 +543,7 @@ local function UpdateThreat(frame, elapsed)
 			SetVirtualBorder(frame.hp, unpack(C.media.border_color))
 		end
 	else
-		if not frame.region:IsShown() then
+		if not frame.threat:IsShown() then
 			if InCombatLockdown() and frame.isFriendly ~= true then
 				-- No Threat
 				if T.Role == "Tank" then
@@ -544,7 +560,7 @@ local function UpdateThreat(frame, elapsed)
 			end
 		else
 			-- Ok we either have threat or we're losing/gaining it
-			local r, g, b = frame.region:GetVertexColor()
+			local r, g, b = frame.threat:GetVertexColor()
 			if g + b == 0 then
 				-- Have Threat
 				if T.Role == "Tank" then
@@ -625,7 +641,7 @@ end
 
 -- Scan all visible nameplate for a known unit
 local function CheckUnit_Guid(frame, ...)
-	if UnitExists("target") and frame:GetAlpha() == 1 and UnitName("target") == frame.hp.name:GetText() then
+	if UnitExists("target") and frame:GetParent():GetAlpha() == 1 and UnitName("target") == frame.hp.name:GetText() then
 		frame.guid = UnitGUID("target")
 		frame.unit = "target"
 		OnAura(frame, "target")
@@ -665,11 +681,9 @@ local select = select
 local function HookFrames(...)
 	for index = 1, select("#", ...) do
 		local frame = select(index, ...)
-		local region = frame:GetRegions()
 
 		if not frames[frame] and (frame:GetName() and not frame.isSkinned and frame:GetName():find("NamePlate%d")) then
-			SkinObjects(frame)
-			frame.region = region
+			SkinObjects(frame:GetChildren())
 			frame.isSkinned = true
 		end
 	end
@@ -695,6 +709,7 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 	ForEachPlate(ShowHealth)
 	ForEachPlate(CheckBlacklist)
 	ForEachPlate(CheckUnit_Guid)
+	--ForEachPlate(Colorize)
 end)
 
 function NamePlates:COMBAT_LOG_EVENT_UNFILTERED(_, event, ...)
@@ -729,5 +744,8 @@ function NamePlates:PLAYER_ENTERING_WORLD()
 		else
 			SetCVar("nameplateShowEnemies", 0)
 		end
+	end
+	if C.nameplate.enhance_threat == true then
+		SetCVar("threatWarning", 3)
 	end
 end
