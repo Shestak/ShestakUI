@@ -1008,6 +1008,9 @@ local ticks = {}
 local channelingTicks = T.CastBarTicks
 
 local setBarTicks = function(Castbar, ticknum)
+	for k, v in pairs(ticks) do
+		v:Hide()
+	end
 	if ticknum and ticknum > 0 then
 		local delta = Castbar:GetWidth() / ticknum
 		for k = 1, ticknum do
@@ -1022,10 +1025,6 @@ local setBarTicks = function(Castbar, ticknum)
 			ticks[k]:ClearAllPoints()
 			ticks[k]:SetPoint("CENTER", Castbar, "RIGHT", -delta * k, 0)
 			ticks[k]:Show()
-		end
-	else
-		for k, v in pairs(ticks) do
-			v:Hide()
 		end
 	end
 end
