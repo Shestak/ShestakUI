@@ -20,30 +20,6 @@ local colors = {
 
 local GetTotemInfo, SetValue, GetTime = GetTotemInfo, SetValue, GetTime
 
-local function TotemOnClick(self, ...)
-	local id = self.ID
-	local mouse = ...
-
-	if IsShiftKeyDown() then
-		for j = 1, 4 do
-			DestroyTotem(j)
-		end
-	else
-		DestroyTotem(id)
-	end
-end
-
-local function InitDestroy(self)
-	local totem = self.TotemBar
-	for i = 1, 4 do
-		local Destroy = CreateFrame("Button", nil, totem[i])
-		Destroy:SetAllPoints(totem[i])
-		Destroy:RegisterForClicks("LeftButtonUp", "RightButtonUp")
-		Destroy.ID = i
-		Destroy:SetScript("OnClick", TotemOnClick)
-	end
-end
-
 local function UpdateSlot(self, slot)
 	local totem = self.TotemBar
 	if not totem[slot] then return end
@@ -112,9 +88,25 @@ local function Enable(self, unit)
 		totem.colors = setmetatable(totem.colors or {}, {__index = colors})
 		delay = totem.delay or delay
 		if totem.Destroy then
-			InitDestroy(self)
+			for i = 1, 4 do
+				if totem[i] then
+					local t
+					if i == 1 then
+						t = _G["TotemFrameTotem"..i + 1]
+					elseif i == 2 then
+						t = _G["TotemFrameTotem"..i - 1]
+					else
+						t = _G["TotemFrameTotem"..i]
+					end
+					t:ClearAllPoints()
+					t:SetParent(totem[i])
+					t:SetAllPoints(totem[i])
+					t:SetFrameLevel(totem[i]:GetFrameLevel() + 1)
+					t:SetFrameStrata(totem[i]:GetFrameStrata())
+					t:SetAlpha(0)
+				end
+			end
 		end
-		TotemFrame:UnregisterAllEvents()
 		return true
 	end
 end

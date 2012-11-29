@@ -60,7 +60,7 @@ b2:SetBackdropBorderColor(0, 0.54, 0, 1)
 b2.t:SetVertexColor(0, 0.8, 0, 1)
 
 local b3 = CreateFrame("Button", "$parentButton3", frame)
-CreateButton(b3, "/p", "/bg")
+CreateButton(b3, "/p", "/i")
 b3:SetPoint("TOP", b2, "BOTTOM", 0, C.chat.background and -4 or -3)
 b3:SetBackdropBorderColor(0.8, 0.4, 0.1, 1)
 b3.t:SetVertexColor(0.11, 0.5, 0.7, 1)
