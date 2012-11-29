@@ -458,6 +458,7 @@ if T.coauthor == true then
 	C["automation"].auto_role = true
 	C["automation"].cancel_bad_buffs = true
 	C["skins"].dbm = true
+	C["skins"].nug_running = true
 	C["skins"].clique = true
 	C["skins"].atlasloot = true
 	C["skins"].npcscan = true

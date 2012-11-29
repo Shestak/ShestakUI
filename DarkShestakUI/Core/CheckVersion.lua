@@ -11,7 +11,7 @@ local check = function(self, event, prefix, message, channel, sender)
 			self:UnregisterEvent("CHAT_MSG_ADDON")
 		end
 	else
-		if UnitInBattleground("player") and UnitInBattleground("player") > 0 then
+		if not IsInGroup(LE_PARTY_CATEGORY_HOME) and IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
 			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "INSTANCE_CHAT")
 		elseif IsInRaid() then
 			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "RAID")
