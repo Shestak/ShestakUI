@@ -45,9 +45,13 @@ local function LoadSkin()
 	end
 
 	PlayerTalentFrameTalentsClearInfoFrame:SetTemplate("Default")
+
 	PlayerTalentFrameTalentsClearInfoFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	PlayerTalentFrameTalentsClearInfoFrameIcon:SetPoint("TOPLEFT", 2, -2)
 	PlayerTalentFrameTalentsClearInfoFrameIcon:SetPoint("BOTTOMRIGHT", -2, 2)
+
+	PlayerTalentFrameTalentsClearInfoFrameCount:SetFont(C.media.normal_font, 11, "OUTLINE")
+	PlayerTalentFrameTalentsClearInfoFrameCount:SetPoint("BOTTOMRIGHT", 2, 0)
 
 	PlayerTalentFrameSpecializationSpellScrollFrameScrollChild.Seperator:SetTexture(1, 1, 1)
 	PlayerTalentFrameSpecializationSpellScrollFrameScrollChild.Seperator:SetAlpha(0.2)

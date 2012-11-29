@@ -33,47 +33,26 @@ for tag, func in pairs({
 	["maxfriendship"] = function()
 		local id = GetFriendshipID()
 		if id then
-			local _, cur, max = GetFriendshipReputationByID(id)
-			if cur == max then
-				return "999"
+			local _, rep, _, _, _, _, _, threshold, nextThreshold = GetFriendshipReputation(id)
+			if nextThreshold then
+				return nextThreshold - threshold
 			else
-				return "8400"
+				return rep - threshold
 			end
 		end
 	end,
 	["curfriendship"] = function()
 		local id = GetFriendshipID()
 		if id then
-			local _, cur, _, _, _, _, threshold = GetFriendshipReputationByID(id)
-			return cur - threshold
-		end
-	end,
-	["currawfriendship"] = function()
-		local id = GetFriendshipID()
-		if id then
-			local _, cur = GetFriendshipReputationByID(id)
-			return cur
-		end
-	end,
-	["perfriendship"] = function()
-		local id = GetFriendshipID()
-		if id then
-			local _, cur, _, _, _, _, threshold = GetFriendshipReputationByID(id)
-			return math.floor((cur - threshold) / 8400 * 100)
-		end
-	end,
-	["perfullfriendship"] = function()
-		local id = GetFriendshipID()
-		if id then
-			local _, cur = GetFriendshipReputationByID(id)
-			return math.floor(cur / 42999 * 100)
+			local _, rep, _, _, _, _, _, threshold = GetFriendshipReputation(id)
+			return rep - threshold
 		end
 	end,
 	["friendshipstanding"] = function()
 		local id = GetFriendshipID()
 		if id then
-			local _, _, _, _, _, standing = GetFriendshipReputationByID(id)
-			return standing
+			local _, _, _, _, _, _, reaction = GetFriendshipReputation(id)
+			return reaction
 		end
 	end,
 }) do
@@ -82,14 +61,21 @@ for tag, func in pairs({
 end
 
 local function OnEnter(self)
-	local _, cur, max, details, _, standing, threshold = GetFriendshipReputationByID(GetFriendshipID())
+	local id, rep, _, name, text, _, reaction, threshold, nextThreshold = GetFriendshipReputation(GetFriendshipID())
+	local currentRank, maxRank = GetFriendshipReputationRanks(id)
 	GameTooltip:SetOwner(self, "ANCHOR_TOPRIGHT")
-	GameTooltip:SetText(UnitName("target"), 1, 1, 1)
-	GameTooltip:AddLine(details, nil, nil, nil, true)
-	if cur == max then
-		GameTooltip:AddLine(standing.." ("..(cur - threshold).." / 999)", 1, 1, 1, true)
+	if maxRank > 0 then
+		GameTooltip:SetText(name.." ("..currentRank.." / "..maxRank..")", 1, 1, 1, true)
 	else
-		GameTooltip:AddLine(standing.." ("..(cur - threshold).." / 8400)", 1, 1, 1, true)
+		GameTooltip:SetText(name, 1, 1, 1, true)
+	end
+	GameTooltip:AddLine(text, nil, nil, nil, true)
+	if nextThreshold then
+		local current = rep - threshold
+		local max = nextThreshold - threshold
+		GameTooltip:AddLine(reaction.." ("..current.." / "..max..")", 1, 1, 1, true)
+	else
+		GameTooltip:AddLine(reaction)
 	end
 	GameTooltip:Show()
 end
@@ -99,7 +85,7 @@ local function Update(self)
 
 	local id = GetFriendshipID()
 	if id then
-		local _, cur, max = GetFriendshipReputationByID(id)
+		local _, cur, max = GetFriendshipReputation(id)
 		friendship:SetMinMaxValues(0, max)
 		friendship:SetValue(cur)
 		friendship:Show()

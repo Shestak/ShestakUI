@@ -68,6 +68,9 @@ local SmallerMapSkin = function()
 	WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 40)
 	WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
 
+	WorldMapFrameAreaPetLevels:SetFont(C.media.normal_font, 32)
+	WorldMapFrameAreaPetLevels:SetShadowOffset(2, -2)
+
 	WorldMapLevelDropDown:SetAlpha(0)
 	WorldMapLevelDropDown:SetScale(0.00001)
 

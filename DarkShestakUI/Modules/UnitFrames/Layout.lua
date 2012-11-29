@@ -726,7 +726,7 @@ local function Shared(self, unit)
 		self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", self)
 		self.Castbar:SetStatusBarTexture(C.media.texture, "ARTWORK")
 
-		self.Castbar.bg = self.Castbar:CreateTexture(nil, "BORDER")
+		self.Castbar.bg = self.Castbar:CreateTexture(nil, "BACKGROUND")
 		self.Castbar.bg:SetAllPoints()
 		self.Castbar.bg:SetTexture(C.media.texture)
 
