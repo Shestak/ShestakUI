@@ -82,32 +82,32 @@ local items = {
 
 local throttle = false
 
-local f = CreateFrame("Frame")
-f:SetScript("OnEvent", function(frame, event, ...) if f[event] then f[event](frame, event, ...) end end)
-f:RegisterEvent("MERCHANT_SHOW")
-f:RegisterEvent("MERCHANT_CLOSED")
+local frame = CreateFrame("Frame")
+frame:SetScript("OnEvent", function(f, event, ...) if frame[event] then frame[event](f, event, ...) end end)
+frame:RegisterEvent("MERCHANT_SHOW")
+frame:RegisterEvent("MERCHANT_CLOSED")
 
-local btn = CreateFrame("Button", "GroceryListFrame", MerchantFrame, "UIPanelButtonTemplate")
-btn:SetText(L_MISC_GROCERY_BUY)
+local button = CreateFrame("Button", "GroceryListFrame", MerchantFrame, "UIPanelButtonTemplate")
+button:SetText(L_MISC_GROCERY_BUY)
 if C.skins.blizzard_frames == true then
-	btn:SetSize(btn:GetTextWidth() + 15, 18)
-	btn:SetPoint("TOPRIGHT", MerchantFrameCloseButton, "TOPLEFT", -3, 0)
-	btn:SkinButton()
+	button:SetSize(button:GetTextWidth() + 15, 18)
+	button:SetPoint("TOPRIGHT", MerchantFrameCloseButton, "TOPLEFT", -3, 0)
+	button:SkinButton()
 else
-	btn:SetSize(btn:GetTextWidth() + 15, 19)
-	btn:SetPoint("TOPRIGHT", MerchantFrameCloseButton, "TOPLEFT", 3, -6)
+	button:SetSize(button:GetTextWidth() + 15, 19)
+	button:SetPoint("TOPRIGHT", MerchantFrameCloseButton, "TOPLEFT", 3, -6)
 end
-btn:Hide()
+button:Hide()
 
-btn:HookScript("OnEnter", function(self)
+button:HookScript("OnEnter", function(self)
 	GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT")
 	GameTooltip:SetText(L_MISC_GROCERY_DESC)
 	GameTooltip:Show()
 end)
 
-btn:HookScript("OnLeave", function() GameTooltip:Hide() end)
+button:HookScript("OnLeave", function() GameTooltip:Hide() end)
 
-btn:SetScript("OnClick", function()
+button:SetScript("OnClick", function()
 	if throttle then return end
 	local groceries = {}
 	local havebags = {}
@@ -149,20 +149,20 @@ btn:SetScript("OnClick", function()
 		end
 	end
 	throttle = true
-	f:RegisterEvent("BAG_UPDATE")
+	frame:RegisterEvent("BAG_UPDATE")
 end)
 
-function f:MERCHANT_SHOW()
-	local first = select(3, GetMerchantItemInfo(1))
+function frame:MERCHANT_SHOW()
+	local price = select(3, GetMerchantItemInfo(1))
 	local name = select(1, GetMerchantItemInfo(1))
-	if first == 13500 and name == GetItemInfo(87658) then btn:Show() end
+	if (price == 13500 or price == 15000) and name == GetItemInfo(87658) then button:Show() end
 end
 
-function f:MERCHANT_CLOSED()
-	btn:Hide()
+function frame:MERCHANT_CLOSED()
+	button:Hide()
 end
 
-function f:BAG_UPDATE()
-	f:UnregisterEvent("BAG_UPDATE")
+function frame:BAG_UPDATE()
+	frame:UnregisterEvent("BAG_UPDATE")
 	throttle = false
 end

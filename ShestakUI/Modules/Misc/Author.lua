@@ -29,19 +29,6 @@ AchFilter:SetScript("OnEvent", function(self, event, addon)
 end)
 
 ----------------------------------------------------------------------------------------
---	Auto SetFilter for PetJournal
-----------------------------------------------------------------------------------------
-local PetFilter = CreateFrame("Frame")
-PetFilter:RegisterEvent("ADDON_LOADED")
-PetFilter:SetScript("OnEvent", function(self, event, addon)
-	if addon == "Blizzard_PetJournal" then
-		C_PetJournal.SetFlagFilter(LE_PET_JOURNAL_FLAG_COLLECTED, true)
-		C_PetJournal.SetFlagFilter(LE_PET_JOURNAL_FLAG_FAVORITES, true)
-		C_PetJournal.SetFlagFilter(LE_PET_JOURNAL_FLAG_NOT_COLLECTED, false)
-	end
-end)
-
-----------------------------------------------------------------------------------------
 --	Force quit
 ----------------------------------------------------------------------------------------
 local CloseWoW = CreateFrame("Frame")

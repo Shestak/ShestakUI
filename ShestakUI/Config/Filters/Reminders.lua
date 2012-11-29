@@ -147,7 +147,6 @@ if C.reminder.solo_buffs_enable == true then
 				["spells"] = {
 					13165,	-- Aspect of the Hawk
 					109260,	-- Aspect of the Iron Hawk
-					82661,	-- Aspect of the Fox
 				},
 				["instance"] = true,
 				["personal"] = true,

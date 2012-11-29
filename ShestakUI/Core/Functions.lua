@@ -33,7 +33,13 @@ end
 --	Chat channel check
 ----------------------------------------------------------------------------------------
 T.CheckChat = function(warning)
-	if IsInRaid() then
+	if not IsInGroup(LE_PARTY_CATEGORY_HOME) and IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
+		if warning and (UnitIsGroupLeader("player") or UnitIsGroupAssistant("player") or IsEveryoneAssistant()) then
+			return "INSTANCE_CHAT_LEADER"
+		else
+			return "INSTANCE_CHAT"
+		end
+	elseif IsInRaid() then
 		if warning and (UnitIsGroupLeader("player") or UnitIsGroupAssistant("player") or IsEveryoneAssistant()) then
 			return "RAID_WARNING"
 		else

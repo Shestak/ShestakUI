@@ -37,6 +37,7 @@ T.ABItems = {
 	82346,	-- Pot of Fire
 	78947,	-- Silken Rope
 	83134,	-- Bronze Claws
+	93180,	-- Re-Configured Remote
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs

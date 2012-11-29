@@ -93,7 +93,7 @@ Filger_Spells = {
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
-			{spellID = 118335, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -356,7 +356,7 @@ Filger_Spells = {
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
-			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1124,7 +1124,7 @@ Filger_Spells = {
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
-			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1352,7 +1352,7 @@ Filger_Spells = {
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
-			{spellID = 118335, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1826,7 +1826,7 @@ Filger_Spells = {
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
-			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2055,7 +2055,7 @@ Filger_Spells = {
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
-			{spellID = 118334, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2523,7 +2523,7 @@ Filger_Spells = {
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
-			{spellID = 118335, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",

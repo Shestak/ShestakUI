@@ -1,19 +1,18 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
 if C.tooltip.enable ~= true or C.tooltip.arena_experience ~= true then return end
-if T.MOPVersion then return end
 
 ----------------------------------------------------------------------------------------
 --	Arena function(ArenaExp by Fernir)
 ----------------------------------------------------------------------------------------
-local isGTTActive = false
-local GTT = _G["GameTooltip"]
-local needStatistic = {
+local active = false
+local tooltip = _G["GameTooltip"]
+local statistic = {
 	370,	-- Highest 2 man personal rating
 	595,	-- Highest 3 man personal rating
 	596,	-- Highest 5 man personal rating
 }
 
-strGradient = function(val, low, high)
+local gradient = function(val, low, high)
 	local percent, r, g
 	if high > low then
 		percent = val / (high - low)
@@ -30,53 +29,53 @@ strGradient = function(val, low, high)
 	return format("|cff%02x%02x%02x%s|r", r * 255, g * 255, 0, val)
 end
 
-local skillf = CreateFrame("Frame")
-skillf:RegisterEvent("ADDON_LOADED")
-skillf:SetScript("OnEvent", function(self, event, ...)
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("ADDON_LOADED")
+frame:SetScript("OnEvent", function(self, event, ...)
 	if event == "ADDON_LOADED" then
 		if ... then
-			skillf:UnregisterEvent("ADDON_LOADED")
-			GTT:HookScript("OnTooltipSetUnit", function()
+			frame:UnregisterEvent("ADDON_LOADED")
+			tooltip:HookScript("OnTooltipSetUnit", function()
 				if InCombatLockdown() and InCombatLockdown() == 1 then return end
 				if AchievementFrame and AchievementFrame:IsShown() then return end
 
-				self.unit = select(2, GTT:GetUnit())
+				self.unit = select(2, tooltip:GetUnit())
 				if not UnitIsPlayer(self.unit) then return end
 
 				if _G.GearScore then
 					_G.GearScore:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
 				end
 				ClearAchievementComparisonUnit()
-				skillf:RegisterEvent("INSPECT_ACHIEVEMENT_READY")
+				frame:RegisterEvent("INSPECT_ACHIEVEMENT_READY")
 				SetAchievementComparisonUnit(self.unit)
 			end)
-			GTT:HookScript("OnTooltipCleared", function()
-				if skillf:IsEventRegistered("INSPECT_ACHIEVEMENT_READY") and skillf:IsEventRegistered("INSPECT_ACHIEVEMENT_READY") then
-					skillf:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
+			tooltip:HookScript("OnTooltipCleared", function()
+				if frame:IsEventRegistered("INSPECT_ACHIEVEMENT_READY") and frame:IsEventRegistered("INSPECT_ACHIEVEMENT_READY") then
+					frame:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
 					ClearAchievementComparisonUnit()
 				end
-				isGTTActive = false
+				active = false
 			end)
 		end
 	elseif event == "INSPECT_ACHIEVEMENT_READY" then
 		if not GetComparisonAchievementPoints() then return end
 
-		isGTTActive = false
+		active = false
 
-		for index, Achievement in pairs(needStatistic) do
+		for index, Achievement in pairs(statistic) do
 			if tonumber(GetComparisonStatistic(Achievement)) and tonumber(GetComparisonStatistic(Achievement)) > 0 then
-				GTT:AddDoubleLine(select(2, GetAchievementInfo(Achievement)), strGradient(tonumber(GetComparisonStatistic(Achievement)), 0, 100))
-				isGTTActive = true
+				tooltip:AddDoubleLine(select(2, GetAchievementInfo(Achievement)), gradient(tonumber(GetComparisonStatistic(Achievement)), 0, 100))
+				active = true
 			end
 		end
 
-		if isGTTActive then GTT:Show() end
+		if active then tooltip:Show() end
 
 		if _G.GearScore then
 			_G.GearScore:RegisterEvent("INSPECT_ACHIEVEMENT_READY")
 		end
 
-		skillf:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
+		frame:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
 		ClearAchievementComparisonUnit()
 	end
 end)

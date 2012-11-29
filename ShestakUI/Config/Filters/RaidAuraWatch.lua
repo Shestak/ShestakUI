@@ -86,7 +86,7 @@ T.RaidDebuffs = {
 -- Terrace of Endless Spring
 	-- Protectors of the Endless
 	[SpellName(117519)] = 3,	-- Touch of Sha
-	[SpellName(117436)] = 3,	-- Lightning Prison
+	[SpellName(117436)] = 4,	-- Lightning Prison
 	-- Tsulong
 	[SpellName(122752)] = 3,	-- Shadow Breath
 	[SpellName(123011)] = 3,	-- Terrorize
