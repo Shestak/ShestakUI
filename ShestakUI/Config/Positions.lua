@@ -66,8 +66,8 @@ C["position"] = {
 		["player_castbar"] = {"BOTTOM", "ActionBarAnchor", "TOP", 0, 235},			-- Player Castbar
 		["target_castbar"] = {"BOTTOM", "oUF_Player_Castbar", "TOP", 0, 7},			-- Target Castbar
 		["focus_castbar"] = {"CENTER", UIParent, "CENTER", 0, 250},					-- Focus Castbar icon
-		["player_class_icon"] = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -5, 2},		-- Player class icon portrait
-		["target_class_icon"] = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 5, 2},		-- Target class icon portrait
+		["player_class_icons_portrait"] = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -5, 2},		-- Player class icon portrait
+		["target_class_icons_portrait"] = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 5, 2},		-- Target class icon portrait
 	},
 }
 

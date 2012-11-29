@@ -387,6 +387,8 @@ local function Local(o)
 	if o == "UIConfigunitframeportrait_classcolor_border" then o = L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER end
 	if o == "UIConfigunitframeportrait_height" then o = L_GUI_UF_PORTRAIT_HEIGHT end
 	if o == "UIConfigunitframeportrait_width" then o = L_GUI_UF_PORTRAIT_WIDTH end
+	if o == "UIConfigunitframeclass_icons_portrait_height" then o = L_GUI_UF_CLASS_ICONS_PORTRAIT_HEIGHT end
+	if o == "UIConfigunitframeclass_icons_portrait_width" then o = L_GUI_UF_CLASS_ICONS_PORTRAIT_WIDTH end
 	if o == "UIConfigunitframealternative_portraits" then o = L_GUI_UF_ALTERNATIVE_PORTRAITS end
 	if o == "UIConfigunitframeclass_icons_portraits" then o = L_GUI_UF_CLASS_ICONS_PORTRAITS end
 	if o == "UIConfigunitframeplugins_gcd" then o = L_GUI_UF_PLUGINS_GCD end

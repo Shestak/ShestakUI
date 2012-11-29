@@ -456,8 +456,8 @@ C["unitframe"] = {
 	["portrait_width"] = 20,					-- Portrait width
 	["alternative_portraits"] = false,			-- Enable the portraits on the health bars (you need to disable the option for player/target portraits)
 	["class_icons_portraits"] = true,			-- Class icon portraits for player/target (you need to disable the option for player/target portraits)
-	["class_icons_portraits_height"] = 43,		-- Class icon portrait height
-	["class_icons_portraits_width"] = 43,		-- Class icon portrait width
+	["class_icons_portrait_height"] = 43,		-- Class icon portrait height
+	["class_icons_portrait_width"] = 43,		-- Class icon portrait width
 	-- Plugins
 	["plugins_gcd"] = true,						-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar

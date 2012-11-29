@@ -646,12 +646,12 @@ local function Shared(self, unit)
 		if C.unitframe.portrait_enable ~= true and C.unitframe.class_icons_portraits == true then
 			local classicon = CreateFrame("Frame", self:GetName() .. "_ClassIconBorder", self)
 			classicon:SetTemplate("Default")
-			classicon:SetHeight(C.unitframe.class_icons_portraits_height)
-			classicon:SetWidth(C.unitframe.class_icons_portraits_width)
+			classicon:SetHeight(C.unitframe.class_icons_portrait_height)
+			classicon:SetWidth(C.unitframe.class_icons_portrait_width)
 			if unit == "player"	then		
-				classicon:SetPoint(unpack(C.position.unitframes.player_class_icon))
+				classicon:SetPoint(unpack(C.position.unitframes.player_class_icons_portrait))
 			elseif unit == "target" then
-				classicon:SetPoint(unpack(C.position.unitframes.target_class_icon))
+				classicon:SetPoint(unpack(C.position.unitframes.target_class_icons_portrait))
 			end
 			local class = classicon:CreateTexture(self:GetName() .. "_ClassIcon", "ARTWORK")
 			class:SetPoint("TOPLEFT", 2, -2)
