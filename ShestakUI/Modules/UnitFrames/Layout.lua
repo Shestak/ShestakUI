@@ -497,6 +497,8 @@ local function Shared(self, unit)
 			self.Experience:CreateBackdrop("Default")
 			if C.unitframe.portrait_enable == true then
 				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
+			elseif C.unitframe.portrait_enable ~= true and C.unitframe.class_icons_portraits == true then
+				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.class_icons_portrait_width, 28)
 			else
 				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
 			end
@@ -532,6 +534,12 @@ local function Shared(self, unit)
 					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
 				else
 					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+				end
+			elseif C.unitframe.portrait_enable ~= true and C.unitframe.class_icons_portraits == true then
+				if T.level == MAX_PLAYER_LEVEL then
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.class_icons_portrait_width, 28)
+				else
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.class_icons_portrait_width, 28)
 				end
 			else
 				if T.level == MAX_PLAYER_LEVEL then
