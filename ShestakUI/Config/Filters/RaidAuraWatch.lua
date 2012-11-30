@@ -109,7 +109,7 @@ T.RaidDebuffs = {
 	[SpellName(123474)] = 3,	-- Overwhelming Assault
 	-- Garalon
 	[SpellName(122835)] = 3,	-- Pheromones
-	[SpellName(123081)] = 3,	-- Pungency
+	[SpellName(123081)] = 4,	-- Pungency
 	-- Wind Lord Mel'jarak
 	[SpellName(129078)] = 4,	-- Amber Prison
 	[SpellName(122055)] = 3,	-- Residue

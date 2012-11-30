@@ -137,24 +137,3 @@ end
 
 TradeSkillClearButton:RegisterEvent("ADDON_LOADED")
 TradeSkillClearButton:SetScript("OnEvent", OnEvent)
-
-----------------------------------------------------------------------------------------
---	Fix WorldMapRaid icons
-----------------------------------------------------------------------------------------
-local WorldMapRaidFix = CreateFrame("Frame")
-WorldMapRaidFix:RegisterEvent("WORLD_MAP_UPDATE")
-WorldMapRaidFix:SetScript("OnEvent", function()
-	if IsInRaid() then
-		local count = 0
-		for i = 1, MAX_RAID_MEMBERS do
-			local unit = "raid"..i
-			local partyX, partyY = GetPlayerMapPosition(unit)
-			if not ((partyX == 0 and partyY == 0) or UnitIsUnit(unit, "player")) then
-				count = count + 1
-			end
-		end
-		for i = count + 1, MAX_RAID_MEMBERS do
-			_G["WorldMapRaid"..i]:Hide()
-		end
-	end
-end)
