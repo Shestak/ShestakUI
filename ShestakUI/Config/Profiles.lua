@@ -76,6 +76,7 @@ if T.author == true then
 	C["chat"].spam = true
 	C["minimap"].toggle_menu = false
 	C["actionbar"].toggle_mode = false
+	C["unitframe"].player_name_level = false
 	C["unitframe"].arena_on_right = false
 	C["unitframe_class_bar"].vengeance = false
 	C["raidframe"].plugins_aura_watch_timer = true
@@ -225,6 +226,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["aura"].tot_debuffs = true
 	C["aura"].classcolor_border = true
 	C["unitframe"].bar_color_value = true
+	C["unitframe"].player_name_level = false
 	C["unitframe"].portrait_enable = true
 	C["unitframe"].class_icons_portraits = false
 	C["unitframe"].plugins_swing = true
