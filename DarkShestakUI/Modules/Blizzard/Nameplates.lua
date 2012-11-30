@@ -311,6 +311,7 @@ local function Colorize(frame)
 
 	frame.hp:SetStatusBarColor(r, g, b)
 	frame.hp.hpbg:SetTexture(r, g, b, 0.25)
+	frame.hp.name:SetTextColor(r, g, b)
 end
 
 -- HealthBar OnShow, use this to set variables for the nameplate
@@ -336,12 +337,7 @@ local function UpdateObjects(frame)
 	-- Colorize Plate
 	Colorize(frame)
 	frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor = frame.hp:GetStatusBarColor()
-	frame.hp.hpbg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.25)
 	SetVirtualBorder(frame.hp, unpack(C.media.border_color))
-
-	if C.nameplate.enhance_threat == true then
-		frame.hp.name:SetTextColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
-	end
 
 	-- Set the name text
 	if C.nameplate.name_abbrev == true and C.nameplate.track_auras ~= true then
@@ -529,8 +525,12 @@ local function SkinObjects(frame, nameFrame)
 	frames[frame] = true
 end
 
+
 local function UpdateThreat(frame, elapsed)
 	frame.hp:Show()
+
+	Colorize(frame)
+
 	if frame.hasClass or frame.isTagged then return end
 
 	if C.nameplate.enhance_threat ~= true then
@@ -699,9 +699,7 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 	end
 
 	if self.elapsed and self.elapsed > 0.2 then
-		if C.nameplate.enhance_threat == true then
-			ForEachPlate(UpdateThreat, self.elapsed)
-		end
+		ForEachPlate(UpdateThreat, self.elapsed)
 		ForEachPlate(AdjustNameLevel)
 		self.elapsed = 0
 	else
@@ -711,7 +709,6 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 	ForEachPlate(ShowHealth)
 	ForEachPlate(CheckBlacklist)
 	ForEachPlate(CheckUnit_Guid)
-	--ForEachPlate(Colorize)
 end)
 
 function NamePlates:COMBAT_LOG_EVENT_UNFILTERED(_, event, ...)

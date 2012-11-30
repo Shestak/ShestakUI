@@ -368,79 +368,41 @@ hooksecurefunc("PetBattleFrame_UpdateActionBarLayout", function(self)
 end)
 
 -- Tooltips skinning
-BattlePetTooltip.Background:SetTexture(nil)
-BattlePetTooltip.BorderTop:SetTexture(nil)
-BattlePetTooltip.BorderTopLeft:SetTexture(nil)
-BattlePetTooltip.BorderTopRight:SetTexture(nil)
-BattlePetTooltip.BorderLeft:SetTexture(nil)
-BattlePetTooltip.BorderRight:SetTexture(nil)
-BattlePetTooltip.BorderBottom:SetTexture(nil)
-BattlePetTooltip.BorderBottomRight:SetTexture(nil)
-BattlePetTooltip.BorderBottomLeft:SetTexture(nil)
-BattlePetTooltip:SetTemplate("Transparent")
+local tooltips = {BattlePetTooltip, PetBattlePrimaryAbilityTooltip, PetBattlePrimaryUnitTooltip, FloatingPetBattleAbilityTooltip, FloatingBattlePetTooltip}
 
-PetBattlePrimaryAbilityTooltip.Delimiter1:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip.Delimiter2:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip.Background:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip.BorderTop:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip.BorderTopLeft:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip.BorderTopRight:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip.BorderLeft:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip.BorderRight:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip.BorderBottom:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip.BorderBottomRight:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip.BorderBottomLeft:SetTexture(nil)
-PetBattlePrimaryAbilityTooltip:SetTemplate("Transparent")
+for i, tt in pairs(tooltips) do
+	tt:SetTemplate("Transparent")
 
-PetBattlePrimaryUnitTooltip.Delimiter:SetTexture(nil)
-PetBattlePrimaryUnitTooltip.Background:SetTexture(nil)
-PetBattlePrimaryUnitTooltip.BorderTop:SetTexture(nil)
-PetBattlePrimaryUnitTooltip.BorderTopLeft:SetTexture(nil)
-PetBattlePrimaryUnitTooltip.BorderTopRight:SetTexture(nil)
-PetBattlePrimaryUnitTooltip.BorderLeft:SetTexture(nil)
-PetBattlePrimaryUnitTooltip.BorderRight:SetTexture(nil)
-PetBattlePrimaryUnitTooltip.BorderBottom:SetTexture(nil)
-PetBattlePrimaryUnitTooltip.BorderBottomRight:SetTexture(nil)
-PetBattlePrimaryUnitTooltip.BorderBottomLeft:SetTexture(nil)
-PetBattlePrimaryUnitTooltip:SetTemplate("Transparent")
+	tt.Background:SetTexture(nil)
 
-FloatingPetBattleAbilityTooltip.Delimiter1:SetTexture(nil)
-FloatingPetBattleAbilityTooltip.Delimiter2:SetTexture(nil)
-FloatingPetBattleAbilityTooltip.Background:SetTexture(nil)
-FloatingPetBattleAbilityTooltip.BorderTop:SetTexture(nil)
-FloatingPetBattleAbilityTooltip.BorderTopLeft:SetTexture(nil)
-FloatingPetBattleAbilityTooltip.BorderTopRight:SetTexture(nil)
-FloatingPetBattleAbilityTooltip.BorderLeft:SetTexture(nil)
-FloatingPetBattleAbilityTooltip.BorderRight:SetTexture(nil)
-FloatingPetBattleAbilityTooltip.BorderBottom:SetTexture(nil)
-FloatingPetBattleAbilityTooltip.BorderBottomRight:SetTexture(nil)
-FloatingPetBattleAbilityTooltip.BorderBottomLeft:SetTexture(nil)
-FloatingPetBattleAbilityTooltip:SetTemplate("Transparent")
-for i = 1, FloatingPetBattleAbilityTooltip:GetNumChildren() do
-	local child = select(i, FloatingPetBattleAbilityTooltip:GetChildren())
-	if child:GetObjectType() == "Button" and not child:GetName() then
-		T.SkinCloseButton(child)
+	tt.BorderLeft:SetTexture(nil)
+	tt.BorderRight:SetTexture(nil)
+	tt.BorderTop:SetTexture(nil)
+	tt.BorderTopLeft:SetTexture(nil)
+	tt.BorderTopRight:SetTexture(nil)
+	tt.BorderBottom:SetTexture(nil)
+	tt.BorderBottomLeft:SetTexture(nil)
+	tt.BorderBottomRight:SetTexture(nil)
+
+	if tt.CloseButton then
+		T.SkinCloseButton(tt.CloseButton)
+	end
+
+	if tt.Delimiter1 then
+		tt.Delimiter1:SetTexture(nil)
+		tt.Delimiter2:SetTexture(nil)
+	elseif tt.Delimiter then
+		tt.Delimiter:SetTexture(nil)
 	end
 end
 
-FloatingBattlePetTooltip.Delimiter:SetTexture(nil)
-FloatingBattlePetTooltip.Background:SetTexture(nil)
-FloatingBattlePetTooltip.BorderTop:SetTexture(nil)
-FloatingBattlePetTooltip.BorderTopLeft:SetTexture(nil)
-FloatingBattlePetTooltip.BorderTopRight:SetTexture(nil)
-FloatingBattlePetTooltip.BorderLeft:SetTexture(nil)
-FloatingBattlePetTooltip.BorderRight:SetTexture(nil)
-FloatingBattlePetTooltip.BorderBottom:SetTexture(nil)
-FloatingBattlePetTooltip.BorderBottomRight:SetTexture(nil)
-FloatingBattlePetTooltip.BorderBottomLeft:SetTexture(nil)
-FloatingBattlePetTooltip:SetTemplate("Transparent")
-for i = 1, FloatingBattlePetTooltip:GetNumChildren() do
-	local child = select(i, FloatingBattlePetTooltip:GetChildren())
-	if child:GetObjectType() == "Button" and not child:GetName() and child:GetWidth() < 50 then
-		T.SkinCloseButton(child)
-	end
-end
 table.insert(UISpecialFrames, "FloatingBattlePetTooltip")
+
+-- Tooltip position
+hooksecurefunc("PetBattleAbilityTooltip_Show", function()
+	PetBattlePrimaryAbilityTooltip:ClearAllPoints()
+	PetBattlePrimaryAbilityTooltip:SetPoint(unpack(C.position.tooltip))
+end)
 
 ----------------------------------------------------------------------------------------
 --	Coloring borders/names by pets quality(PetBattleQualityGlow by Tia Lynn)

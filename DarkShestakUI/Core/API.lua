@@ -68,7 +68,7 @@ local function CreateShadow(f)
     shadow:SetPoint("TOPRIGHT", 3, 3)
     shadow:SetPoint("BOTTOMRIGHT", 3, -3)
     shadow:SetBackdrop({ 
-        edgeFile = "Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\Glow.tga", edgeSize = 3,
+        edgeFile = "Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\White.tga", edgeSize = 3,
         insets = {left = 5, right = 5, top = 5, bottom = 5},
     })
     shadow:SetBackdropColor(0, 0, 0, 0)

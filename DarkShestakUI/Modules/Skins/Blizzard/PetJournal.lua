@@ -156,15 +156,25 @@ local function LoadSkin()
 		for i = 1, #PetJournal.listScroll.buttons do
 			local button = _G["PetJournalListScrollFrameButton"..i]
 			local name = _G["PetJournalListScrollFrameButton"..i.."Name"]
+			local petID = C_PetJournal.GetPetInfoByIndex(PetJournal.listScroll.buttons[i].index)
 
-			if button.selectedTexture:IsShown() then
-				name:SetTextColor(1, 1, 0)
-				button.backdrop:SetBackdropBorderColor(1, 1, 0)
-				button.dragButton.backdrop:SetBackdropBorderColor(1, 1, 0)
-			else
-				name:SetTextColor(1, 1, 1)
-				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-				button.dragButton.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			if petID then
+				local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
+
+				if button.selectedTexture:IsShown() then
+					name:SetTextColor(1, 1, 0)
+					button.backdrop:SetBackdropBorderColor(1, 1, 0)
+					button.dragButton.backdrop:SetBackdropBorderColor(1, 1, 0)
+				else
+					name:SetTextColor(1, 1, 1)
+					button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+					button.dragButton.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				end
+
+				if rarity then
+					local color = ITEM_QUALITY_COLORS[rarity-1]
+					button.dragButton.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
+				end
 			end
 		end
 	end
@@ -230,6 +240,7 @@ local function LoadSkin()
 		_G["PetJournalLoadoutPet"..i.."Shadows"]:SetTexture(nil)
 		_G["PetJournalLoadoutPet"..i.."IconBorder"]:SetTexture(nil)
 		_G["PetJournalLoadoutPet"..i.."LevelBG"]:SetTexture(nil)
+		_G["PetJournalLoadoutPet"..i.."QualityBorder"]:SetTexture(nil)
 
 		_G["PetJournalLoadoutPet"..i.."PetTypeIcon"]:ClearAllPoints()
 		_G["PetJournalLoadoutPet"..i.."PetTypeIcon"]:SetPoint("BOTTOMLEFT", button.backdrop, 2, 2)
@@ -285,6 +296,8 @@ local function LoadSkin()
 
 	PetJournalPetCardPetInfoLevelBubble:SetTexture(nil)
 	PetJournalPetCardPetInfoLevel:SetFontObject("SystemFont_Outline_Small")
+
+	PetJournalPetCardPetInfoQualityBorder:SetTexture(nil)
 
 	PetJournalPrimaryAbilityTooltip.Background:SetTexture(nil)
 	PetJournalPrimaryAbilityTooltip.Delimiter1:SetTexture(nil)
