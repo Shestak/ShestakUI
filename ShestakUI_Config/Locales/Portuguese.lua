@@ -354,6 +354,7 @@ L_GUI_UF_CLASS_ICONS_PORTRAIT_HEIGHT = "Ícones de classe retrato altura" -- Goo
 L_GUI_UF_CLASS_ICONS_PORTRAIT_WIDTH = "Ícones de classe retrato largura" -- Goooooooooogle translated
 L_GUI_UF_ALTERNATIVE_PORTRAITS= "Habilitar os retratos nas barras de saúde (você precisa desativar a opção para o jogador/target retratos)" -- Goooooooooogle translated
 L_GUI_UF_CLASS_ICONS_PORTRAITS = "Classe retratos do ícone para o jogador / target (você precisa desativar a opção para o jogador / target retratos)" -- Goooooooooogle translated
+L_GUI_UF_PLAYER_NAME_LEVEL = "Exibir o nome eo nível de jogador" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Global cooldown spark"
 L_GUI_UF_PLUGINS_SWING = "Enable swing bar"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar"

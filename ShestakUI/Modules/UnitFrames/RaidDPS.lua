@@ -132,12 +132,24 @@ local function Shared(self, unit)
 		self.Info:SetJustifyH("LEFT")
 	end
 	if self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank") then
-		self:Tag(self.Info, "[GetNameColor][NameArena]")
+		if C.unitframe.own_color == true then
+			self:Tag(self.Info, "[GetNameColor][NameArena]")
+		else
+			self:Tag(self.Info, "[NameArena]")
+		end
 	else
 		if unit == "party" and C.raidframe.icons_role ~= true then
-			self:Tag(self.Info, "[LFD] [GetNameColor][NameShort]")
+			if C.unitframe.own_color == true then
+				self:Tag(self.Info, "[LFD] [GetNameColor][NameShort]")
+			else
+				self:Tag(self.Info, "[LFD] [NameShort]")
+			end
 		else
-			self:Tag(self.Info, "[GetNameColor][NameShort]")
+			if C.unitframe.own_color == true then
+				self:Tag(self.Info, "[GetNameColor][NameShort]")
+			else
+				self:Tag(self.Info, "[NameShort]")
+			end
 		end
 	end
 

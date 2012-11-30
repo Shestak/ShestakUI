@@ -354,6 +354,7 @@ L_GUI_UF_CLASS_ICONS_PORTRAIT_HEIGHT = "높이 세로 클래스 아이콘" -- Go
 L_GUI_UF_CLASS_ICONS_PORTRAIT_WIDTH = "폭 세로 클래스 아이콘" -- Goooooooooogle translated
 L_GUI_UF_ALTERNATIVE_PORTRAITS = "건강 막대의 초상화를 활성화 (이 플레이어/대상 인물에 대한 옵션을 해제해야합니다)" -- Goooooooooogle translated
 L_GUI_UF_CLASS_ICONS_PORTRAITS = "플레이어 / 대상 (당신은 플레이어 / 대상 인물에 대한 옵션을 해제해야합니다)에 대한 클래스 아이콘의 초상화" -- Goooooooooogle translated
+L_GUI_UF_PLAYER_NAME_LEVEL = "플레이어의 이름과 레벨을 표시" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Global cooldown spark"
 L_GUI_UF_PLUGINS_SWING = "Enable swing bar"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Enable necrotic strike bar"

@@ -354,6 +354,7 @@ L_GUI_UF_CLASS_ICONS_PORTRAIT_HEIGHT = "Icônes de classe portrait hauteur" -- G
 L_GUI_UF_CLASS_ICONS_PORTRAIT_WIDTH = "Icônes de classe portrait largeur" -- Goooooooooogle translated
 L_GUI_UF_ALTERNATIVE_PORTRAITS = "Active les portraits sur les barres de santé (vous devez désactiver l'option pour le joueur / cible portraits)" -- Goooooooooogle translated
 L_GUI_UF_CLASS_ICONS_PORTRAITS = "Portraits icône de classe pour le joueur / cible (vous devez désactiver l'option de joueur / cible portraits)" -- Goooooooooogle translated
+L_GUI_UF_PLAYER_NAME_LEVEL = "u nom d'affichage et le niveau du joueur" -- Goooooooooogle translated
 L_GUI_UF_PLUGINS_GCD = "Scintillement du GCD"
 L_GUI_UF_PLUGINS_SWING = "Barre d'attaque automatique / tir automatique"
 L_GUI_UF_PLUGINS_NECRO_STRIKE = "Active une barre pour la Frappe nécrotique"

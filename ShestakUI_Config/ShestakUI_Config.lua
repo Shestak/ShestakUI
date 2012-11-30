@@ -391,6 +391,7 @@ local function Local(o)
 	if o == "UIConfigunitframeclass_icons_portrait_width" then o = L_GUI_UF_CLASS_ICONS_PORTRAIT_WIDTH end
 	if o == "UIConfigunitframealternative_portraits" then o = L_GUI_UF_ALTERNATIVE_PORTRAITS end
 	if o == "UIConfigunitframeclass_icons_portraits" then o = L_GUI_UF_CLASS_ICONS_PORTRAITS end
+	if o == "UIConfigunitframeplayer_name_level" then o = L_GUI_UF_PLAYER_NAME_LEVEL end
 	if o == "UIConfigunitframeplugins_gcd" then o = L_GUI_UF_PLUGINS_GCD end
 	if o == "UIConfigunitframeplugins_swing" then o = L_GUI_UF_PLUGINS_SWING end
 	if o == "UIConfigunitframeplugins_necro_strike" then o = L_GUI_UF_PLUGINS_NECRO_STRIKE end

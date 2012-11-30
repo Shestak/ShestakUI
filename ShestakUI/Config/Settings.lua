@@ -194,7 +194,7 @@ C["raidcooldown"] = {
 	["height"] = 15,							-- Bars height
 	["width"] = 130,							-- Bars width(if show_icon = false, bar width+28)
 	["upwards"] = false,						-- Sort upwards bars
-	["show_icon"] = false,						-- Show icons
+	["show_icon"] = true,						-- Show icons
 	["show_inraid"] = true,						-- Show in raid zone
 	["show_inparty"] = true,					-- Show in party zone
 	["show_inarena"] = true,					-- Show in arena zone
@@ -431,6 +431,7 @@ C["unitframe"] = {
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
 	["color_value"] = false,					-- Health/mana value is colored
 	["bar_color_value"] = true,					-- Health bar color by current health remaining
+	["player_name_level"] = true,				-- Display name and level of player
 	-- Cast bars
 	["unit_castbar"] = true,					-- Show castbars
 	["castbar_icon"] = true,					-- Show castbar icons
