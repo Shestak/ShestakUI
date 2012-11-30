@@ -58,7 +58,7 @@ local function CreateVirtualFrame(frame, point)
 		shadow:SetPoint("TOPRIGHT", 5, 5)
 		shadow:SetPoint("BOTTOMRIGHT", 5, -5)
 		shadow:SetBackdrop({ 
-			edgeFile = "Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\Glow.tga", edgeSize = 3,
+			edgeFile = "Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\Shadow.tga", edgeSize = 3,
 			insets = {left = 5, right = 5, top = 5, bottom = 5},
 		})
 		shadow:SetBackdropColor(0, 0, 0, 0)
