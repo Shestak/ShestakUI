@@ -119,7 +119,6 @@ if T.oz == true then
 	C["position"].unitframes.target_castbar = {"CENTER", UIParent, "CENTER", 11, -179}
 	C["media"].border_color = {0.1, 0.1, 0.1, 1}
 	C["general"].welcome_message = false
-	C["misc"].afk_spin_camera = false
 	C["misc"].profession_database = true
 	C["automation"].screenshot = true
 	C["automation"].logging_combat = true
@@ -133,7 +132,9 @@ if T.oz == true then
 	C["aura"].tot_debuffs = true
 	C["unitframe"].own_color = true
 	C["unitframe"].color_value = true
+	C["unitframe"].player_name_level = false
 	C["unitframe"].alternative_portraits = true
+	C["unitframe"].class_icons_portraits = false
 	C["unitframe"].plugins_fader = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].raid_groups = 8
@@ -225,6 +226,7 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["aura"].classcolor_border = true
 	C["unitframe"].bar_color_value = true
 	C["unitframe"].portrait_enable = true
+	C["unitframe"].class_icons_portraits = false
 	C["unitframe"].plugins_swing = true
 	C["unitframe"].plugins_combat_feedback = true
 	C["unitframe_class_bar"].range = true
@@ -360,7 +362,7 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["aura"].player_buff_size = 35	
 	C["aura"].pet_debuffs = true
 	C["aura"].player_aura_only = true
-	C["unitframe"].portrait_enable = true
+	C["unitframe"].alternative_portraits = true
 end
 
 -- edit by Oz of shestak. org --
