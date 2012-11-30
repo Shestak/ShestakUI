@@ -64,7 +64,6 @@ local function UpdateSlot(self, slot)
 	else
 		totem[slot]:SetValue(0)
 	end
-
 end
 
 local function Update(self, unit)
@@ -90,14 +89,7 @@ local function Enable(self, unit)
 		if totem.Destroy then
 			for i = 1, 4 do
 				if totem[i] then
-					local t
-					if i == 1 then
-						t = _G["TotemFrameTotem"..i + 1]
-					elseif i == 2 then
-						t = _G["TotemFrameTotem"..i - 1]
-					else
-						t = _G["TotemFrameTotem"..i]
-					end
+					local t = _G["TotemFrameTotem"..i]
 					t:ClearAllPoints()
 					t:SetParent(totem[i])
 					t:SetAllPoints(totem[i])
@@ -106,6 +98,16 @@ local function Enable(self, unit)
 					t:SetAlpha(0)
 				end
 			end
+			hooksecurefunc("TotemFrame_Update", function()
+				for i = 1, MAX_TOTEMS do
+					local t = _G["TotemFrameTotem"..i]
+					local slot = t.slot
+					if slot and slot > 0 then
+						t:ClearAllPoints()
+						t:SetAllPoints(totem[slot])
+					end
+				end
+			end)
 		end
 		return true
 	end

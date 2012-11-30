@@ -948,6 +948,7 @@ function CreateUIConfig()
 		local button = CreateFrame("CheckButton", "UIConfigAllCharacters", TitleBox, "InterfaceOptionsCheckButtonTemplate")
 		button:SetScript("OnClick", function(self) StaticPopup_Show("PERCHAR") UIConfigCover:Show() end)
 		button:SetPoint("RIGHT", TitleBox, "RIGHT", -3, 0)
+		button:SetHitRectInsets(0, 0, 0, 0)
 		if IsAddOnLoaded("Aurora") then
 			local F = unpack(Aurora)
 			F.ReskinCheck(button)
