@@ -59,10 +59,10 @@ local function StyleNormalButton(self)
 	end
 
 	if not button.isSkinned then
-		if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not name:match("Extra") then
+		if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not name:match("ExtraAction") then
 			self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
-		if name:match("Extra") then
+		if name:match("ExtraAction") then
 			button:SetTemplate("Default")
 			icon:SetDrawLayer("ARTWORK")
 		else
