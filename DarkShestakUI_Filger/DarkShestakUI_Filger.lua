@@ -264,7 +264,7 @@ function Filger:DisplayActives()
 			bar:SetScript("OnUpdate", nil)
 		end
 		bar.spellID = value.spid
-		if Filger_Settings.show_tooltip then
+		if F["settings"].show_tooltip then
 			bar:EnableMouse(true)
 			bar:SetScript("OnEnter", Filger.TooltipOnEnter)
 			bar:SetScript("OnLeave", Filger.TooltipOnLeave)
@@ -288,8 +288,8 @@ function Filger:OnEvent(event, unit)
 		local needUpdate = false
 		local id = self.Id
 
-		for i = 1, #Filger_Spells[T.class][id], 1 do
-			local data = Filger_Spells[T.class][id][i]
+		for i = 1, #F["spells"][T.class][id], 1 do
+			local data = F["spells"][T.class][id][i]
 			local found = false
 			local name, icon, count, duration, start, spid
 			spid = 0
@@ -378,17 +378,17 @@ function Filger:OnEvent(event, unit)
 	end
 end
 
-if Filger_Spells and Filger_Spells["ALL"] then
-	if not Filger_Spells[T.class] then
-		Filger_Spells[T.class] = {}
+if F["spells"] and F["spells"]["ALL"] then
+	if not F["spells"][T.class] then
+		F["spells"][T.class] = {}
 	end
 
-	for i = 1, #Filger_Spells["ALL"], 1 do
+	for i = 1, #F["spells"]["ALL"], 1 do
 		local merge = false
-		local spellListAll = Filger_Spells["ALL"][i]
+		local spellListAll = F["spells"]["ALL"][i]
 		local spellListClass = nil
-		for j = 1, #Filger_Spells[T.class], 1 do
-			spellListClass = Filger_Spells[T.class][j]
+		for j = 1, #F["spells"][T.class], 1 do
+			spellListClass = F["spells"][T.class][j]
 			local mergeAll = spellListAll.Merge or false
 			local mergeClass = spellListClass.Merge or false
 			if spellListClass.Name == spellListAll.Name and (mergeAll or mergeClass) then
@@ -397,7 +397,7 @@ if Filger_Spells and Filger_Spells["ALL"] then
 			end
 		end
 		if not merge or not spellListClass then
-			table.insert(Filger_Spells[T.class], Filger_Spells["ALL"][i])
+			table.insert(F["spells"][T.class], F["spells"]["ALL"][i])
 		else
 			for j = 1, #spellListAll, 1 do
 				table.insert(spellListClass, spellListAll[j])
@@ -406,17 +406,17 @@ if Filger_Spells and Filger_Spells["ALL"] then
 	end
 end
 
-if Filger_Spells and Filger_Spells[T.class] then
-	for index in pairs(Filger_Spells) do
+if F["spells"] and F["spells"][T.class] then
+	for index in pairs(F["spells"]) do
 		if index ~= T.class then
-			Filger_Spells[index] = nil
+			F["spells"][index] = nil
 		end
 	end
 
 	local idx = {}
-	for i = 1, #Filger_Spells[T.class], 1 do
+	for i = 1, #F["spells"][T.class], 1 do
 		local jdx = {}
-		local data = Filger_Spells[T.class][i]
+		local data = F["spells"][T.class][i]
 
 		for j = 1, #data, 1 do
 			local spn
@@ -445,11 +445,11 @@ if Filger_Spells and Filger_Spells[T.class] then
 	end
 
 	for _, v in ipairs(idx) do
-		table.remove(Filger_Spells[T.class], v)
+		table.remove(F["spells"][T.class], v)
 	end
 
-	for i = 1, #Filger_Spells[T.class], 1 do
-		local data = Filger_Spells[T.class][i]
+	for i = 1, #F["spells"][T.class], 1 do
+		local data = F["spells"][T.class][i]
 		local frame = CreateFrame("Frame", "FilgerFrame"..i.."_"..data.Name, oUF_PetBattleFrameHider)
 		frame.Id = i
 		frame.Name = data.Name
@@ -463,10 +463,10 @@ if Filger_Spells and Filger_Spells[T.class] then
 		frame.Position = data.Position or "CENTER"
 		frame:SetPoint(unpack(data.Position))
 
-		if Filger_Settings.config_mode then
+		if F["settings"].config_mode then
 			frame.actives = {}
-			for j = 1, math.min(Filger_Settings.max_test_icon, #Filger_Spells[T.class][i]), 1 do
-				local data = Filger_Spells[T.class][i][j]
+			for j = 1, math.min(F["settings"].max_test_icon, #F["spells"][T.class][i]), 1 do
+				local data = F["spells"][T.class][i][j]
 				local name, icon
 				if data.spellID then
 					name, _, icon = GetSpellInfo(data.spellID)
@@ -480,8 +480,8 @@ if Filger_Spells and Filger_Spells[T.class] then
 			end
 			Filger.DisplayActives(frame)
 		else
-			for j = 1, #Filger_Spells[T.class][i], 1 do
-				local data = Filger_Spells[T.class][i][j]
+			for j = 1, #F["spells"][T.class][i], 1 do
+				local data = F["spells"][T.class][i][j]
 				if data.filter == "CD" then
 					frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 					break

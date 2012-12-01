@@ -463,6 +463,7 @@ if T.coauthor == true then
 	C["skins"].atlasloot = true
 	C["skins"].npcscan = true
 	C["combattext"].killingblow = true
+	C["combattext"].merge_aoe_spam = false
 	C["pulsecooldown"].enable = true
 	C["tooltip"].item_icon = true
 	C["tooltip"].rank = false

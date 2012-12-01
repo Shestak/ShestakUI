@@ -1,7 +1,7 @@
 local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
-Filger_Positions = {
+F["positions"] = {
 	player_buff_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173},	-- "P_BUFF_ICON"
 	player_proc_icon = {"BOTTOMLEFT", "oUF_Target", "TOPLEFT", -2, 173},	-- "P_PROC_ICON"
 	special_proc_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 213},	-- "SPECIAL_P_BUFF_ICON"
