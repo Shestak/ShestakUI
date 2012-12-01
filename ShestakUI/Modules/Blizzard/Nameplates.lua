@@ -258,7 +258,7 @@ local function Colorize(frame)
 			end
 			frame.hp.name:SetTextColor(unpack(T.oUF_colors.class[class]))
 			frame.hp:SetStatusBarColor(unpack(T.oUF_colors.class[class]))
-			frame.hp.hpbg:SetTexture(T.oUF_colors.class[class].r, T.oUF_colors.class[class].g, T.oUF_colors.class[class].b, 0.2)
+			frame.hp.hpbg:SetTexture(T.oUF_colors.class[class][1], T.oUF_colors.class[class][2], T.oUF_colors.class[class][3], 0.2)
 			return
 		end
 	end
