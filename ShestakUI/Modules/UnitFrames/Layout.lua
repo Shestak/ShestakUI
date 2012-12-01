@@ -904,7 +904,7 @@ local function Shared(self, unit)
 			if unit == "player" and C.unitframe.castbar_latency == true then
 				self.Castbar.SafeZone = self.Castbar:CreateTexture(nil, "BORDER")
 				self.Castbar.SafeZone:SetTexture(C.media.texture)
-				self.Castbar.SafeZone:SetVertexColor(0.69, 0.31, 0.31)
+				self.Castbar.SafeZone:SetVertexColor(0.85, 0.27, 0.27)
 
 				self.Castbar.Latency = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 				self.Castbar.Latency:SetTextColor(1, 1, 1)
