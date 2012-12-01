@@ -28,7 +28,7 @@ end
 
 local OnEnter = function(self)
 	local emphasis = _G["ChatFrame"..self:GetID().."TabFlash"]:IsShown()
-	updateFS(self, emphasis, 255, 255, 0)
+	updateFS(self, emphasis, T.color.r, T.color.g, T.color.b)
 end
 
 local OnLeave = function(self)
@@ -37,7 +37,7 @@ local OnLeave = function(self)
 	local emphasis = _G["ChatFrame"..id.."TabFlash"]:IsShown()
 
 	if _G["ChatFrame"..id] == SELECTED_CHAT_FRAME then
-		r, g, b = 255, 255, 0
+		r, g, b = T.color.r, T.color.g, T.color.b
 	elseif emphasis then
 		r, g, b = 1, 0, 0
 	else
@@ -88,7 +88,7 @@ local faneifyTab = function(frame, sel)
 
 	-- We can't trust sel
 	if i == SELECTED_CHAT_FRAME:GetID() then
-		updateFS(frame, nil, 255, 255, 0)
+		updateFS(frame, nil, T.color.r, T.color.g, T.color.b)
 	else
 		updateFS(frame, nil, 1, 1, 1)
 	end
@@ -114,5 +114,3 @@ function Fane:ADDON_LOADED(event, addon)
 	end
 end
 Fane:RegisterEvent("ADDON_LOADED")
-
--- edit by Oz of shestak. org --
