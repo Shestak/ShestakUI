@@ -52,7 +52,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			end
 		end
 
-		-- Reskin popup
+		-- Reskin popups
 		for i = 1, 4 do
 			for j = 1, 3 do
 				_G["StaticPopup"..i.."Button"..j]:SkinButton()
@@ -176,9 +176,12 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"RaidUtilityCloseButton",
 			"RaidUtilityDisbandButton",
 			"RaidUtilityRaidControlButton",
-			"CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton",
 			"BasicScriptErrorsButton"
 		}
+
+		if C.misc.raid_tools == true then
+			tinsert(BlizzardButtons, "CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton")
+		end
 
 		for i = 1, getn(BlizzardButtons) do
 			local buttons = _G[BlizzardButtons[i]]
