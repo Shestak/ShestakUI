@@ -108,6 +108,8 @@ if C.announcements.bad_gear == true then
 			84661,	-- Dragon Fishing Pole
 			45992,	-- Jeweled Fishing Pole
 			86559,	-- Frying Pan
+			45991,	-- Bone Fishing Pole
+			19970,	-- Arcanite Fishing Pole
 		},
 		-- Off-hand
 		[17] = {
