@@ -226,12 +226,6 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].player_buff_icon)},
 
-			-- Lifebloom
-			{spellID = 33763, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rejuvenation
-			{spellID = 774, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Regrowth
-			{spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cenarion Ward
 			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Tree of Life
