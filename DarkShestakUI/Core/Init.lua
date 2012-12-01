@@ -6,7 +6,6 @@ local addon, engine = ...
 engine[1] = {}	-- T, Functions
 engine[2] = {}	-- C, Config
 engine[3] = {}	-- L, Localization
-engine[4] = {}	-- F, Filger
 
 ShestakUI = engine	-- Allow other addons to use Engine
 

@@ -9,8 +9,8 @@ if C.unitframe.enable ~= true then return end
 --	Configuration example:
 ----------------------------------------------------------------------------------------
 -- if T.name == "MegaChar" then
---		F["settings"].show_tooltip = true
---		F["positions"].player_buff_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173}
+--		C["settings_filger"].show_tooltip = true
+--		C["positions_filger"].player_buff_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173}
 --		add("T_DEBUFF_ICON", {spellID = 115767, unitID = "target", caster = "player", filter = "DEBUFF"})
 -- end
 ----------------------------------------------------------------------------------------
@@ -42,11 +42,11 @@ end
 --	Function for insert spell
 ----------------------------------------------------------------------------------------
 local add = function(place, spell)
-	for class, _ in pairs(F["spells"]) do
+	for class, _ in pairs(C["spells_filger"]) do
 		if class == T.class then
-			for i = 1, #F["spells"][class], 1 do
-				if F["spells"][class][i]["Name"] == place then
-					table.insert(F["spells"][class][i], spell)
+			for i = 1, #C["spells_filger"][class], 1 do
+				if C["spells_filger"][class][i]["Name"] == place then
+					table.insert(C["spells_filger"][class][i], spell)
 				end
 			end
 		end
@@ -57,7 +57,7 @@ end
 --	m2jest1c Config
 ----------------------------------------------------------------------------------------
 if T.coauthor == true then
-	F["settings"].show_tooltip = true
+	C["settings_filger"].show_tooltip = true
 	if T.class == "WARRIOR" then
 		add("T_DEBUFF_ICON", {spellID = 115767, unitID = "target", caster = "player", filter = "DEBUFF"}) -- Deep Wounds
 	end
@@ -66,5 +66,6 @@ if T.coauthor == true then
 	end
 	if T.class == "WARLOCK" then
 		add("P_BUFF_ICON", {spellID = 116202, unitID = "player", caster = "player", filter = "BUFF"}) -- Aura of the Elements
+		add("P_BUFF_ICON", {spellID = 119839, unitID = "player", caster = "player", filter = "BUFF"}) -- Fury Ward
 	end
 end
