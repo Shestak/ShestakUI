@@ -9,20 +9,21 @@ if C.unitframe.enable ~= true then return end
 --	Configuration example:
 ----------------------------------------------------------------------------------------
 -- if T.name == "MegaChar" then
---		F["settings"].show_tooltip = true
---		F["positions"].player_buff_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173}
+--		C["filger_settings"].show_tooltip = true
+--		C["filger_position"].player_buff_icon = {"BOTTOMRIGHT", "oUF_Player", "TOPRIGHT", 2, 173}
 --		add("T_DEBUFF_ICON", {spellID = 115767, unitID = "target", caster = "player", filter = "DEBUFF"})
 -- end
 ----------------------------------------------------------------------------------------
+
 ----------------------------------------------------------------------------------------
 --	Function for insert spell
 ----------------------------------------------------------------------------------------
 local add = function(place, spell)
-	for class, _ in pairs(F["spells"]) do
+	for class, _ in pairs(C["filger_spells"]) do
 		if class == T.class then
-			for i = 1, #F["spells"][class], 1 do
-				if F["spells"][class][i]["Name"] == place then
-					table.insert(F["spells"][class][i], spell)
+			for i = 1, #C["filger_spells"][class], 1 do
+				if C["filger_spells"][class][i]["Name"] == place then
+					table.insert(C["filger_spells"][class][i], spell)
 				end
 			end
 		end
