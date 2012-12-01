@@ -42,6 +42,20 @@ do
 	end
 end
 
+-- Mail frame
+local function OpenMailFrame_UpdateButtonPositions()
+	for i = 1, ATTACHMENTS_MAX_RECEIVE do
+		local button = _G["OpenMailAttachmentButton"..i]
+		if button then
+			local name, _, _, _, canUse = GetInboxItem(InboxFrame.openMailID, i)
+			if name and canUse and IsAlreadyKnown(GetInboxItemLink(InboxFrame.openMailID, i)) then
+				SetItemButtonTextureVertexColor(button, COLOR.r, COLOR.g, COLOR.b)
+			end
+		end
+	end
+end
+hooksecurefunc("OpenMailFrame_UpdateButtonPositions", OpenMailFrame_UpdateButtonPositions)
+
 -- Loot frame
 local function LootFrame_UpdateButton(index)
 	local numLootItems = LootFrame.numLootItems
@@ -232,7 +246,7 @@ end
 
 -- LoD addons
 if not (isBlizzard_GuildUILoaded and isBlizzard_GuildBankUILoaded and isBlizzard_AuctionUILoaded) then
-	local function OnEvent (self, event, addonName)
+	local function OnEvent(self, event, addonName)
 		if addonName == "Blizzard_GuildUI" then
 			isBlizzard_GuildUILoaded = true
 			hooksecurefunc("GuildRewards_Update", GuildRewards_Update)
