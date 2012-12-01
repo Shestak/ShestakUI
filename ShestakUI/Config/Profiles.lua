@@ -133,9 +133,7 @@ if T.oz == true then
 	C["aura"].tot_debuffs = true
 	C["unitframe"].own_color = true
 	C["unitframe"].color_value = true
-	C["unitframe"].player_name_level = false
 	C["unitframe"].alternative_portraits = true
-	C["unitframe"].class_icons_portraits = false
 	C["unitframe"].plugins_fader = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].raid_groups = 8
