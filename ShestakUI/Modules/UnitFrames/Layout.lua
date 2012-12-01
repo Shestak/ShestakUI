@@ -215,7 +215,6 @@ local function Shared(self, unit)
 	if unit == "player" then
 		self.FlashInfo = CreateFrame("Frame", "FlashInfo", self)
 		self.FlashInfo:SetScript("OnUpdate", T.UpdateManaLevel)
-		self.FlashInfo.parent = self
 		self.FlashInfo:SetToplevel(true)
 		self.FlashInfo:SetAllPoints(self.Health)
 
@@ -949,19 +948,14 @@ local function Shared(self, unit)
 	end
 
 	if C.unitframe.show_arena and unit == "arena" then
-		self.Trinket = CreateFrame("Frame", nil, self)
-		self.Trinket:SetHeight(31)
-		self.Trinket:SetWidth(31)
+		self.Trinket = CreateFrame("Frame", self:GetName().."_Trinket", self)
+		self.Trinket:SetSize(31, 31)
 		if C.unitframe.arena_on_right == true then
 			self.Trinket:SetPoint("TOPRIGHT", self, "TOPLEFT", -5, 2)
 		else
 			self.Trinket:SetPoint("TOPLEFT", self, "TOPRIGHT", 5, 2)
 		end
 		self.Trinket:SetTemplate("Default")
-		if not T.MOPVersion then
-			self.Trinket.trinketUseAnnounce = true
-			self.Trinket.trinketUpAnnounce = true
-		end
 
 		self.AuraTracker = CreateFrame("Frame", nil, self)
 		self.AuraTracker:SetWidth(self.Trinket:GetWidth())
