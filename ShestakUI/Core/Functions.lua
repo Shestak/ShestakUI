@@ -824,7 +824,7 @@ T.UpdateClassMana = function(self)
 		local max = UnitPowerMax("player", 0)
 
 		local percMana = min / max * 100
-		if percMana <= 20 then
+		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 			self.FlashInfo.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
 			Flash(self.FlashInfo, 0.3)
 		else
@@ -838,7 +838,7 @@ T.UpdateClassMana = function(self)
 				self.ClassMana:SetFormattedText("%d%%|r |cffD7BEA5-|r", floor(min / max * 100))
 				self.ClassMana:SetJustifyH("RIGHT")
 			else
-				self.ClassMana:SetPoint("LEFT", self.Power, "LEFT", 4, 1)
+				self.ClassMana:SetPoint("LEFT", self.Power, "LEFT", 4, 0)
 				self.ClassMana:SetFormattedText("%d%%", floor(min / max * 100))
 			end
 		else
