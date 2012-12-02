@@ -357,26 +357,6 @@ function T.UploadDBM()
 		DBT_SavedOptions["DBM"].HugeTimerY = -80
 	end
 	DBM_SavedOptions.InstalledBars = C.actionbar.bottombars
-
-	if T.author == true then
-		DBM_SavedOptions.CountdownPullTimer = false
-		DBM_SavedOptions.StatusEnabled = false
-		DBM_SavedOptions.AlwaysShowSpeedKillTimer = false
-		DBM_SavedOptions.EnableModels = false
-		DBM_SavedOptions.ShowKillMessage = false
-		DBM_SavedOptions.DontSetIcons = true
-		DBM_SavedOptions.HideBossEmoteFrame = true
-		DBM_SavedOptions.BlockVersionUpdateNotice = true
-		DBM_SavedOptions.DontSendBossWhispers = true
-		DBM_SavedOptions.DontSendBossAnnounces = true
-		DBM_SavedOptions.ShowLHFrame = false
-		DBM_SavedOptions.DontShowBossAnnounces = true
-		DBM_SavedOptions.ShowWipeMessage = false
-		DBM_SavedOptions.AutoRespond = false
-		DBM_SavedOptions.SpamBlockBossWhispers = true
-		DBM_SavedOptions.ShowRecoveryMessage = false
-		DBM_SavedOptions.ShowEngageMessage = false
-	end
 end
 
 StaticPopupDialogs.SETTINGS_DBM = {

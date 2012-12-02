@@ -145,7 +145,7 @@ function Filger:DisplayActives()
 					bar.statusbar:SetWidth(self.BarWidth)
 					bar.statusbar:SetHeight(self.IconSize - 10)
 					bar.statusbar:SetStatusBarTexture(C.media.texture)
-					bar.statusbar:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1)
+					bar.statusbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
 					if self.IconSide == "LEFT" then
 						bar.statusbar:SetPoint("BOTTOMLEFT", bar, "BOTTOMRIGHT", 5, 2)
 					elseif self.IconSide == "RIGHT" then
@@ -171,7 +171,7 @@ function Filger:DisplayActives()
 					bar.background = bar.statusbar:CreateTexture(nil, "BACKGROUND")
 					bar.background:SetAllPoints()
 					bar.background:SetTexture(C.media.texture)
-					bar.background:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
+					bar.background:SetVertexColor(unpack(C.skins.color_theme))
 				end
 
 				if bar.time then
