@@ -11,12 +11,10 @@ tooltip:SetOwner(WorldFrame, "ANCHOR_NONE")
 
 local IsAlreadyKnown
 do
-	local knowns = {}
-
-	local weapon, armor, container, consumable, glyph, trade_goods, recipe, gem, miscallaneous, quest = GetAuctionItemClasses()
+	local knowns, lines = {}, {}
+	local _, _, _, consumable, glyph, _, recipe, _, miscallaneous = GetAuctionItemClasses()
 	local knowables = {[consumable] = true, [glyph] = true, [recipe] = true, [miscallaneous] = true}
 
-	local lines = {}
 	for i = 1, 40 do
 		lines[i] = tooltip:CreateFontString()
 		tooltip:AddFontStrings(lines[i], tooltip:CreateFontString())
@@ -33,6 +31,7 @@ do
 
 		tooltip:ClearLines()
 		tooltip:SetHyperlink(itemLink)
+
 		for i = 1, tooltip:NumLines() do
 			if lines[i]:GetText() == ITEM_SPELL_KNOWN then
 				knowns[itemID] = true
