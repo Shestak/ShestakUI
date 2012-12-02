@@ -55,6 +55,20 @@ local function LoadSkin()
 		end
 	end
 
+	-- Transmogrify popup
+	TransmogrifyConfirmationPopup:SetTemplate("Transparent")
+	TransmogrifyConfirmationPopup.Button1:SkinButton()
+	TransmogrifyConfirmationPopup.Button2:SkinButton()
+
+	TransmogrifyConfirmationPopupItemFrame1:StripTextures()
+	TransmogrifyConfirmationPopupItemFrame1:SetTemplate("Default")
+	TransmogrifyConfirmationPopupItemFrame1:StyleButton()
+
+	TransmogrifyConfirmationPopupItemFrame1IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	TransmogrifyConfirmationPopupItemFrame1IconTexture:ClearAllPoints()
+	TransmogrifyConfirmationPopupItemFrame1IconTexture:SetPoint("TOPLEFT", 2, -2)
+	TransmogrifyConfirmationPopupItemFrame1IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
+
 	if T.author == true then
 		TransmogrifyModelFrameControlFrame:HookScript("OnShow", function(self) self:Hide() end)
 	end
