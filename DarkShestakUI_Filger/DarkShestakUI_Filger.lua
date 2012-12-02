@@ -1,4 +1,4 @@
-local T, C, L, F = unpack(ShestakUI)
+local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -142,11 +142,10 @@ function Filger:DisplayActives()
 					bar.statusbar = _G[bar.statusbar:GetName()]
 				else
 					bar.statusbar = CreateFrame("StatusBar", "$parentStatusBar", bar)
-					bar.statusbar:CreateBackdrop("Default")
 					bar.statusbar:SetWidth(self.BarWidth)
 					bar.statusbar:SetHeight(self.IconSize - 10)
 					bar.statusbar:SetStatusBarTexture(C.media.texture)
-					bar.statusbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
+					bar.statusbar:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1)
 					if self.IconSide == "LEFT" then
 						bar.statusbar:SetPoint("BOTTOMLEFT", bar, "BOTTOMRIGHT", 5, 2)
 					elseif self.IconSide == "RIGHT" then
@@ -159,10 +158,20 @@ function Filger:DisplayActives()
 				if bar.bg then
 					bar.bg = _G[bar.bg:GetName()]
 				else
-					bar.bg = bar.statusbar:CreateTexture(nil, "BORDER")
-					bar.bg:SetAllPoints()
-					bar.bg:SetTexture(C.media.texture)
-					bar.bg:SetVertexColor(unpack(C.skins.color_theme))
+					bar.bg = CreateFrame("Frame", "$parentBG", bar.statusbar)
+					bar.bg:SetPoint("TOPLEFT", -2, 2)
+					bar.bg:SetPoint("BOTTOMRIGHT", 2, -2)
+					bar.bg:SetFrameStrata("BACKGROUND")
+					bar.bg:SetTemplate("Default")
+				end
+
+				if bar.background then
+					bar.background = _G[bar.background:GetName()]
+				else
+					bar.background = bar.statusbar:CreateTexture(nil, "BACKGROUND")
+					bar.background:SetAllPoints()
+					bar.background:SetTexture(C.media.texture)
+					bar.background:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
 				end
 
 				if bar.time then
@@ -264,7 +273,7 @@ function Filger:DisplayActives()
 			bar:SetScript("OnUpdate", nil)
 		end
 		bar.spellID = value.spid
-		if C["settings_filger"].show_tooltip then
+		if C["filger_settings"].show_tooltip then
 			bar:EnableMouse(true)
 			bar:SetScript("OnEnter", Filger.TooltipOnEnter)
 			bar:SetScript("OnLeave", Filger.TooltipOnLeave)
@@ -288,8 +297,8 @@ function Filger:OnEvent(event, unit)
 		local needUpdate = false
 		local id = self.Id
 
-		for i = 1, #C["spells_filger"][T.class][id], 1 do
-			local data = C["spells_filger"][T.class][id][i]
+		for i = 1, #C["filger_spells"][T.class][id], 1 do
+			local data = C["filger_spells"][T.class][id][i]
 			local found = false
 			local name, icon, count, duration, start, spid
 			spid = 0
@@ -378,17 +387,17 @@ function Filger:OnEvent(event, unit)
 	end
 end
 
-if C["spells_filger"] and C["spells_filger"]["ALL"] then
-	if not C["spells_filger"][T.class] then
-		C["spells_filger"][T.class] = {}
+if C["filger_spells"] and C["filger_spells"]["ALL"] then
+	if not C["filger_spells"][T.class] then
+		C["filger_spells"][T.class] = {}
 	end
 
-	for i = 1, #C["spells_filger"]["ALL"], 1 do
+	for i = 1, #C["filger_spells"]["ALL"], 1 do
 		local merge = false
-		local spellListAll = C["spells_filger"]["ALL"][i]
+		local spellListAll = C["filger_spells"]["ALL"][i]
 		local spellListClass = nil
-		for j = 1, #C["spells_filger"][T.class], 1 do
-			spellListClass = C["spells_filger"][T.class][j]
+		for j = 1, #C["filger_spells"][T.class], 1 do
+			spellListClass = C["filger_spells"][T.class][j]
 			local mergeAll = spellListAll.Merge or false
 			local mergeClass = spellListClass.Merge or false
 			if spellListClass.Name == spellListAll.Name and (mergeAll or mergeClass) then
@@ -397,7 +406,7 @@ if C["spells_filger"] and C["spells_filger"]["ALL"] then
 			end
 		end
 		if not merge or not spellListClass then
-			table.insert(C["spells_filger"][T.class], C["spells_filger"]["ALL"][i])
+			table.insert(C["filger_spells"][T.class], C["filger_spells"]["ALL"][i])
 		else
 			for j = 1, #spellListAll, 1 do
 				table.insert(spellListClass, spellListAll[j])
@@ -406,17 +415,17 @@ if C["spells_filger"] and C["spells_filger"]["ALL"] then
 	end
 end
 
-if C["spells_filger"] and C["spells_filger"][T.class] then
-	for index in pairs(C["spells_filger"]) do
+if C["filger_spells"] and C["filger_spells"][T.class] then
+	for index in pairs(C["filger_spells"]) do
 		if index ~= T.class then
-			C["spells_filger"][index] = nil
+			C["filger_spells"][index] = nil
 		end
 	end
 
 	local idx = {}
-	for i = 1, #C["spells_filger"][T.class], 1 do
+	for i = 1, #C["filger_spells"][T.class], 1 do
 		local jdx = {}
-		local data = C["spells_filger"][T.class][i]
+		local data = C["filger_spells"][T.class][i]
 
 		for j = 1, #data, 1 do
 			local spn
@@ -445,11 +454,11 @@ if C["spells_filger"] and C["spells_filger"][T.class] then
 	end
 
 	for _, v in ipairs(idx) do
-		table.remove(C["spells_filger"][T.class], v)
+		table.remove(C["filger_spells"][T.class], v)
 	end
 
-	for i = 1, #C["spells_filger"][T.class], 1 do
-		local data = C["spells_filger"][T.class][i]
+	for i = 1, #C["filger_spells"][T.class], 1 do
+		local data = C["filger_spells"][T.class][i]
 		local frame = CreateFrame("Frame", "FilgerFrame"..i.."_"..data.Name, oUF_PetBattleFrameHider)
 		frame.Id = i
 		frame.Name = data.Name
@@ -463,10 +472,10 @@ if C["spells_filger"] and C["spells_filger"][T.class] then
 		frame.Position = data.Position or "CENTER"
 		frame:SetPoint(unpack(data.Position))
 
-		if C["settings_filger"].config_mode then
+		if C["filger_settings"].config_mode then
 			frame.actives = {}
-			for j = 1, math.min(C["settings_filger"].max_test_icon, #C["spells_filger"][T.class][i]), 1 do
-				local data = C["spells_filger"][T.class][i][j]
+			for j = 1, math.min(C["filger_settings"].max_test_icon, #C["filger_spells"][T.class][i]), 1 do
+				local data = C["filger_spells"][T.class][i][j]
 				local name, icon
 				if data.spellID then
 					name, _, icon = GetSpellInfo(data.spellID)
@@ -480,8 +489,8 @@ if C["spells_filger"] and C["spells_filger"][T.class] then
 			end
 			Filger.DisplayActives(frame)
 		else
-			for j = 1, #C["spells_filger"][T.class][i], 1 do
-				local data = C["spells_filger"][T.class][i][j]
+			for j = 1, #C["filger_spells"][T.class][i], 1 do
+				local data = C["filger_spells"][T.class][i][j]
 				if data.filter == "CD" then
 					frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 					break

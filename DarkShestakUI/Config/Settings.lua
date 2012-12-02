@@ -138,7 +138,6 @@ C["skins"] = {
 	["tiny_dps"] = false,						-- TinyDPS skin
 	["face_shooter"] = false,					-- FaceShooter skin
 	["mage_nuggets"] = false,					-- MageNuggets skin
-	["preform_av"] = false,						-- PreformAVEnabler skin
 	["npcscan"] = false,						-- NPCScan skin
 	["vanaskos"] = false,						-- VanasKoS skin
 	["weak_auras"] = false,						-- WeakAuras skin

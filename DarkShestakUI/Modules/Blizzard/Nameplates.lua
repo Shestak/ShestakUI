@@ -272,7 +272,9 @@ local function Colorize(frame)
 				frame.class.Glow:Show()
 				frame.class:SetTexCoord(texcoord[1], texcoord[2], texcoord[3], texcoord[4])
 			end
+			frame.hp.name:SetTextColor(unpack(T.oUF_colors.class[class]))
 			frame.hp:SetStatusBarColor(unpack(T.oUF_colors.class[class]))
+			frame.hp.hpbg:SetTexture(T.oUF_colors.class[class][1], T.oUF_colors.class[class][2], T.oUF_colors.class[class][3], 0.2)
 			return
 		end
 	end
@@ -310,7 +312,7 @@ local function Colorize(frame)
 	end
 
 	frame.hp:SetStatusBarColor(r, g, b)
-	frame.hp.hpbg:SetTexture(r, g, b, 0.25)
+	frame.hp.hpbg:SetTexture(r, g, b, 0.2)
 	frame.hp.name:SetTextColor(r, g, b)
 end
 
@@ -410,7 +412,7 @@ local function SkinObjects(frame, nameFrame)
 
 	hp.hpbg = hp:CreateTexture(nil, "BORDER")
 	hp.hpbg:SetAllPoints(hp)
-	hp.hpbg:SetTexture(1, 1, 1, 0.25)
+	hp.hpbg:SetTexture(1, 1, 1, 0.2)
 
 	hp:HookScript("OnShow", UpdateObjects)
 	frame.hp = hp
@@ -425,7 +427,7 @@ local function SkinObjects(frame, nameFrame)
 
 	cb.cbbg = cb:CreateTexture(nil, "BORDER")
 	cb.cbbg:SetAllPoints(cb)
-	cb.cbbg:SetTexture(0.75, 0.75, 0.25, 0.15)
+	cb.cbbg:SetTexture(0.75, 0.75, 0.25, 0.2)
 
 	-- Create Cast Time Text
 	cb.time = cb:CreateFontString(nil, "ARTWORK")
@@ -550,15 +552,15 @@ local function UpdateThreat(frame, elapsed)
 				-- No Threat
 				if T.Role == "Tank" then
 					frame.hp:SetStatusBarColor(badR, badG, badB)
-					frame.hp.hpbg:SetTexture(badR, badG, badB, 0.25)
+					frame.hp.hpbg:SetTexture(badR, badG, badB, 0.2)
 				else
 					frame.hp:SetStatusBarColor(goodR, goodG, goodB)
-					frame.hp.hpbg:SetTexture(goodR, goodG, goodB, 0.25)
+					frame.hp.hpbg:SetTexture(goodR, goodG, goodB, 0.2)
 				end
 			else
 				-- Set colors to their original, not in combat
 				frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
-				frame.hp.hpbg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.25)
+				frame.hp.hpbg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.2)
 			end
 		else
 			-- Ok we either have threat or we're losing/gaining it
@@ -567,15 +569,15 @@ local function UpdateThreat(frame, elapsed)
 				-- Have Threat
 				if T.Role == "Tank" then
 					frame.hp:SetStatusBarColor(goodR, goodG, goodB)
-					frame.hp.hpbg:SetTexture(goodR, goodG, goodB, 0.25)
+					frame.hp.hpbg:SetTexture(goodR, goodG, goodB, 0.2)
 				else
 					frame.hp:SetStatusBarColor(badR, badG, badB)
-					frame.hp.hpbg:SetTexture(badR, badG, badB, 0.25)
+					frame.hp.hpbg:SetTexture(badR, badG, badB, 0.2)
 				end
 			else
 				-- Losing/Gaining Threat
 				frame.hp:SetStatusBarColor(transitionR, transitionG, transitionB)
-				frame.hp.hpbg:SetTexture(transitionR, transitionG, transitionB, 0.25)
+				frame.hp.hpbg:SetTexture(transitionR, transitionG, transitionB, 0.2)
 			end
 		end
 	end

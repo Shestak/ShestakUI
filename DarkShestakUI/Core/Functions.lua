@@ -23,9 +23,9 @@ T.ShortValue = function(value)
 end
 
 T.RGBToHex = function(r, g, b)
-	r = r <= 1 and r >= 0 and r or 0
-	g = g <= 1 and g >= 0 and g or 0
-	b = b <= 1 and b >= 0 and b or 0
+	r = tonumber(r) <= 1 and tonumber(r) >= 0 and tonumber(r) or 0
+	g = tonumber(g) <= tonumber(g) and tonumber(g) >= 0 and tonumber(g) or 0
+	b = tonumber(b) <= 1 and tonumber(b) >= 0 and tonumber(b) or 0
 	return string.format("|cff%02x%02x%02x", r * 255, g * 255, b * 255)
 end
 
@@ -755,7 +755,7 @@ end
 local UpdateManaLevelDelay = 0
 T.UpdateManaLevel = function(self, elapsed)
 	UpdateManaLevelDelay = UpdateManaLevelDelay + elapsed
-	if self.parent.unit ~= "player" or UpdateManaLevelDelay < 0.2 or UnitPowerType("player") ~= 0 then return end
+	if UpdateManaLevelDelay < 0.2 or UnitPowerType("player") ~= 0 then return end
 	UpdateManaLevelDelay = 0
 
 	local percMana = UnitMana("player") / UnitManaMax("player") * 100
@@ -777,7 +777,7 @@ T.UpdateClassMana = function(self)
 		local max = UnitPowerMax("player", 0)
 
 		local percMana = min / max * 100
-		if percMana <= 20 then
+		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 			self.FlashInfo.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
 			Flash(self.FlashInfo, 0.3)
 		else
@@ -791,7 +791,7 @@ T.UpdateClassMana = function(self)
 				self.ClassMana:SetFormattedText("%d%%|r |cffD7BEA5-|r", floor(min / max * 100))
 				self.ClassMana:SetJustifyH("RIGHT")
 			else
-				self.ClassMana:SetPoint("LEFT", self.Power, "LEFT", 4, 1)
+				self.ClassMana:SetPoint("LEFT", self.Power, "LEFT", 4, 0)
 				self.ClassMana:SetFormattedText("%d%%", floor(min / max * 100))
 			end
 		else

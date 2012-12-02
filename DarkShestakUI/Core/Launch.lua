@@ -245,6 +245,7 @@ local f = CreateFrame("Frame", "DarkShestakUIInstallFrame", UIParent)
 f:SetSize(540, 95)
 f:SetPoint("CENTER", 0, 200)
 f:SetTemplate("Transparent", "Shadow")
+f:SetFrameStrata("FULLSCREEN_DIALOG")
 f:Hide()
 
 local head = CreateFrame("Frame", "DarkShestakUIInstallFrameHead", f)
