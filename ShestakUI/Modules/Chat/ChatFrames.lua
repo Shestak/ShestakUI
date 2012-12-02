@@ -61,7 +61,6 @@ if T.client == "ruRU" then
 	_G.FACTION_STANDING_DECREASED = "Отношение |3-7(%s) -%d."
 	_G.FACTION_STANDING_INCREASED = "Отношение |3-7(%s) +%d."
 end
-_G.GUILD_MOTD_TEMPLATE = "|cff40ff40"..GUILD_MOTD_LABEL2..": %s|r"
 
 -- Hide friends micro button
 FriendsMicroButton:Kill()

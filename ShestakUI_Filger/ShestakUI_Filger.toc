@@ -14,4 +14,5 @@
 Config\Settings.lua
 Config\Positions.lua
 Config\Spells.lua
+Config\Profiles.lua
 ShestakUI_Filger.lua

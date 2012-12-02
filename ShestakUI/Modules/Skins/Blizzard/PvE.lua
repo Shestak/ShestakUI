@@ -266,6 +266,8 @@ local function LoadSkin()
 	ScenarioQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
 
 	T.SkinCloseButton(PVEFrameCloseButton)
+	T.SkinCloseButton(LFGDungeonReadyStatusCloseButton, nil, "-")
+	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
 
 	T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
 	LFDQueueFrameSpecificListScrollFrameScrollBackgroundTopLeft:SetTexture(nil)
@@ -277,7 +279,6 @@ local function LoadSkin()
 	LFGInvitePopup:SetTemplate("Transparent")
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
 	LFGDungeonReadyDialog.SetBackdrop = T.dummy
-	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
 
 	T.SkinCheckBox(LFDRoleCheckPopupRoleButtonTank:GetChildren())
 	T.SkinCheckBox(LFDRoleCheckPopupRoleButtonHealer:GetChildren())

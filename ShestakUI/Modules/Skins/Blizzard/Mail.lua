@@ -130,7 +130,7 @@ local function LoadSkin()
 	OpenMailMoneyButtonIconTexture:SetPoint("TOPLEFT", 2, -2)
 	OpenMailMoneyButtonIconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 
-	for i = 1, ATTACHMENTS_MAX_SEND do
+	for i = 1, ATTACHMENTS_MAX_RECEIVE do
 		local b = _G["OpenMailAttachmentButton"..i]
 		local t = _G["OpenMailAttachmentButton"..i.."IconTexture"]
 
