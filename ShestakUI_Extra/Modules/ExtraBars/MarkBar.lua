@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(ShestakUI)
+local T, C, L, _ = unpack(ShestakUI)
 if C.extra_bar.mark_bar ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -6,18 +6,18 @@ if C.extra_bar.mark_bar ~= true then return end
 ----------------------------------------------------------------------------------------
 local button_size = 30
 
-local MarkBarBG = CreateFrame("Frame", "MarkBarAnchor", UIParent)
-MarkBarBG:CreatePanel("Invisible", (button_size * 6) + 15, (button_size * 2) + 3, unpack(C.extra_position.mark_bar))
-MarkBarBG:SetFrameLevel(0)
-tinsert(T.MoverFrames, MarkBarAnchor)
+local bar = CreateFrame("Frame", "ExtraMarkBar", UIParent)
+bar:CreatePanel("Invisible", (button_size * 6) + 15, (button_size * 2) + 3, unpack(C.extra_position.mark_bar))
+bar:SetFrameLevel(0)
+tinsert(T.MoverFrames, bar)
 
 local icon = {}
 local mark = {}
 for i = 0, 8 do
-	mark[i] = CreateFrame("Button", "mark"..i, MarkBarBG)
-	mark[i]:CreatePanel("Transparent", button_size, button_size, "LEFT", MarkBarBG, "LEFT", 0, 0)
+	mark[i] = CreateFrame("Button", "$parentButton"..i, bar)
+	mark[i]:CreatePanel("Transparent", button_size, button_size, "LEFT", bar, "LEFT", 0, 0)
 	if i == 1 then
-		mark[i]:SetPoint("TOPLEFT", MarkBarBG, "TOPLEFT", 0, 0)
+		mark[i]:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
 	elseif i == 5 then
 		mark[i]:SetPoint("TOP", mark[1], "BOTTOM", 0, -3)
 	else
@@ -27,39 +27,39 @@ for i = 0, 8 do
 	mark[i]:EnableMouse(true)
 	mark[i]:SetScript("OnEnter", T.SetModifiedBackdrop)
 	mark[i]:SetScript("OnLeave", T.SetOriginalBackdrop)
-	mark[i]:SetScript("OnMouseUp", function() SetRaidTarget("target", i) end)
+	mark[i]:SetScript("OnMouseUp", function() SetRaidTarget("target", i) PlaySound("igMainMenuOptionCheckBoxOn") end)
 
-	icon[i] = CreateFrame("Button", "icon"..i, MarkBarBG)
+	icon[i] = mark[i]:CreateTexture(nil, "OVERLAY")
 	if i == 0 then
-		icon[i]:SetNormalTexture("Interface\\Buttons\\UI-GroupLoot-Pass-Up")
+		icon[i]:SetTexture("Interface\\Buttons\\UI-GroupLoot-Pass-Up")
 	else
-		icon[i]:SetNormalTexture("Interface\\TargetingFrame\\UI-RaidTargetingIcons")
+		icon[i]:SetTexture("Interface\\TargetingFrame\\UI-RaidTargetingIcons")
 	end
 	icon[i]:SetSize(button_size - 5, button_size - 5)
 	icon[i]:SetPoint("CENTER", mark[i])
 
 	-- Set up each button
 	if i == 1 then
-		icon[i]:GetNormalTexture():SetTexCoord(0, 0.25, 0, 0.25)
+		icon[i]:SetTexCoord(0, 0.25, 0, 0.25)
 	elseif i == 2 then
-		icon[i]:GetNormalTexture():SetTexCoord(0.25, 0.5, 0, 0.25)
+		icon[i]:SetTexCoord(0.25, 0.5, 0, 0.25)
 	elseif i == 3 then
-		icon[i]:GetNormalTexture():SetTexCoord(0.5, 0.75, 0, 0.25)
+		icon[i]:SetTexCoord(0.5, 0.75, 0, 0.25)
 	elseif i == 4 then
-		icon[i]:GetNormalTexture():SetTexCoord(0.75, 1, 0, 0.25)
+		icon[i]:SetTexCoord(0.75, 1, 0, 0.25)
 	elseif i == 5 then
-		icon[i]:GetNormalTexture():SetTexCoord(0, 0.25, 0.25, 0.5)
+		icon[i]:SetTexCoord(0, 0.25, 0.25, 0.5)
 	elseif i == 6 then
-		icon[i]:GetNormalTexture():SetTexCoord(0.25, 0.5, 0.25, 0.5)
+		icon[i]:SetTexCoord(0.25, 0.5, 0.25, 0.5)
 	elseif i == 7 then
-		icon[i]:GetNormalTexture():SetTexCoord(0.5, 0.75, 0.25, 0.5)
+		icon[i]:SetTexCoord(0.5, 0.75, 0.25, 0.5)
 	elseif i == 8 then
-		icon[i]:GetNormalTexture():SetTexCoord(0.75, 1, 0.25, 0.5)
+		icon[i]:SetTexCoord(0.75, 1, 0.25, 0.5)
 	end
 end
 
 -- Create ReadyCheck Button
-local ReadyCheckButton = CreateFrame("Button", "ReadyCheckButton", MarkBarAnchor)
+local ReadyCheckButton = CreateFrame("Button", "ReadyCheckButton", bar)
 ReadyCheckButton:CreatePanel("Transparent", button_size, button_size, "TOPLEFT", mark[8], "TOPRIGHT", 3, 0)
 ReadyCheckButton:SetScript("OnEnter", T.SetModifiedBackdrop)
 ReadyCheckButton:SetScript("OnLeave", T.SetOriginalBackdrop)
@@ -70,7 +70,7 @@ ReadyCheckButtonTexture:SetTexture(READY_CHECK_READY_TEXTURE)
 ReadyCheckButtonTexture:SetAllPoints(ReadyCheckButton)
 
 -- Create WorldMark Button
-local WorldMarkButton = CreateFrame("Button", "WorldMarkButton", MarkBarAnchor, "SecureActionButtonTemplate")
+local WorldMarkButton = CreateFrame("Button", "WorldMarkButton", bar, "SecureActionButtonTemplate")
 WorldMarkButton:CreatePanel("Transparent", button_size, button_size, "TOPLEFT", mark[0], "TOPRIGHT", 3, 0)
 WorldMarkButton:SetScript("OnEnter", T.SetModifiedBackdrop)
 WorldMarkButton:SetScript("OnLeave", T.SetOriginalBackdrop)
@@ -88,13 +88,13 @@ WorldMarkButtonTexture:SetHeight(23)
 WorldMarkButtonTexture:SetWidth(23)
 
 -- Create Pull Button
-local PullTargetButton = CreateFrame("Frame", "PullTargetButton", MarkBarAnchor)
+local PullTargetButton = CreateFrame("Frame", "PullTargetButton", bar)
 PullTargetButton:CreatePanel("Transparent", button_size, button_size, "TOP", WorldMarkButton, "BOTTOM", 0, -3)
 PullTargetButton:SetScript("OnEnter", T.SetModifiedBackdrop)
 PullTargetButton:SetScript("OnLeave", T.SetOriginalBackdrop)
 PullTargetButton:SetScript("OnMouseUp", function()
 	if C.announcements.pull_countdown then
-		PullCountdown.Pull(3)
+		PullCountdown.Pull()
 	else
 		print("|cffffff00Enable 'Pull countdown announce' option.|r")
 	end
@@ -127,9 +127,9 @@ LeadershipCheck:SetScript("OnEvent", function(self, event)
 	end
 
 	if CheckRaidStatus() then
-		MarkBarAnchor:Show()
+		bar:Show()
 	else
-		MarkBarAnchor:Hide()
+		bar:Hide()
 	end
 
 	if event == "PLAYER_REGEN_ENABLED" then

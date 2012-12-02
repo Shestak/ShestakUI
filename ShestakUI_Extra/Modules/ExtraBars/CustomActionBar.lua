@@ -116,17 +116,17 @@ function ExtraBarMouseOver(alpha)
 		local b = _G["ExtraBarButton"..i]
 		b:SetAlpha(alpha)
 	end
-	ExtraBarAnchor:SetAlpha(alpha)
+	bar:SetAlpha(alpha)
 end
 
 do
-	ExtraBarAnchor:SetAlpha(0)
-	ExtraBarAnchor:SetScript("OnEnter", function() ExtraBarMouseOver(1) end)
-	ExtraBarAnchor:SetScript("OnLeave", function() ExtraBarMouseOver(0) end)
+	bar:SetAlpha(0)
+	bar:SetScript("OnEnter", function() ExtraBarMouseOver(1) end)
+	bar:SetScript("OnLeave", function() if not HoverBind.enabled then ExtraBarMouseOver(0) end end)
 	for i = 1, 12 do
 		local b = _G["ExtraBarButton"..i]
 		b:SetAlpha(0)
 		b:HookScript("OnEnter", function() ExtraBarMouseOver(1) end)
-		b:HookScript("OnLeave", function() ExtraBarMouseOver(0) end)
+		b:HookScript("OnLeave", function() if not HoverBind.enabled then ExtraBarMouseOver(0) end end)
 	end
 end
