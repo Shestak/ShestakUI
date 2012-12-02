@@ -68,9 +68,6 @@ local function StyleNormalButton(self)
 		else
 			button:CreateBackdrop("Transparent")
 			button.backdrop:SetAllPoints()
-			if C.actionbar.classcolor_border == true then
-				button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-			end
 		end
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -104,9 +101,6 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 		button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		button:CreateBackdrop("Transparent")
 		button.backdrop:SetAllPoints()
-		if C.actionbar.classcolor_border == true then
-			button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-		end
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()

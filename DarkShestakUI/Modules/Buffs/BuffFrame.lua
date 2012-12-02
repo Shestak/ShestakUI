@@ -28,9 +28,6 @@ ConsolidatedBuffs:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 ConsolidatedBuffs.SetPoint = T.dummy
 ConsolidatedBuffs:CreateBackdrop("Default")
 ConsolidatedBuffs.backdrop:SetAllPoints()
-if C.aura.classcolor_border == true then
-	ConsolidatedBuffs.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-end
 
 ConsolidatedBuffsIcon:SetTexCoord(0.16, 0.34, 0.29, 0.7)
 ConsolidatedBuffsIcon:SetSize(C.aura.player_buff_size - 4, C.aura.player_buff_size - 4)
@@ -51,9 +48,6 @@ for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 	if i ~= 3 then
 		buff:CreateBackdrop("Default")
 		buff.backdrop:SetAllPoints()
-		if C.aura.classcolor_border == true then
-			buff.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-		end
 	end
 
 	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -82,9 +76,6 @@ local function StyleBuffs(buttonName, index, debuff)
 		buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 		buff:CreateBackdrop("Default")
 		buff.backdrop:SetAllPoints()
-		if C.aura.classcolor_border == true then
-			buff.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-		end
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:SetPoint("TOPLEFT", buff, 2, -2)

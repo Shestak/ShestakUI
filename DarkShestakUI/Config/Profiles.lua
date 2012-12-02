@@ -476,6 +476,7 @@ if T.coauthor == true then
 	C["chat"].damage_meter_spam = true
 	C["map"].explore_map = true
 	C["nameplate"].track_auras = true
+	C["aura"].focus_debuffs = true
 	C["aura"].cast_by = true
 	C["unitframe"].castbar_ticks = true
 	C["unitframe"].plugins_smooth_bar = true

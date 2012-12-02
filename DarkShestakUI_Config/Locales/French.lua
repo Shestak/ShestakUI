@@ -288,7 +288,6 @@ L_GUI_ACTIONBAR_GRID = "Afficher les boutons vides"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Taille des boutons"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacement des boutons"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Split the fifth bar on two bars on 6 buttons"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordure de boutons"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Active le mode pour bloquer les combinaisons des barres d'action"
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Nombre de barres d'action en bas (1, 2 ou 3)"
@@ -318,7 +317,6 @@ L_GUI_AURA_BOSS_BUFFS = "Afficher les améliorations sur le cadre du Boss"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Afficher seulement ses propres debuffs sur la cible"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Coleur de debuff par type"
 L_GUI_AURA_CAST_BY = "Voir qui a jeté un buff / debuff sur son tooltip"
-L_GUI_AURA_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordure de vos buffs"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Activer les barres d'unité"

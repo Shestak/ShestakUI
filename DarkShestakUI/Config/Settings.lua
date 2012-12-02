@@ -373,7 +373,6 @@ C["actionbar"] = {
 	["button_size"] = 25,						-- Buttons size
 	["button_space"] = 3,						-- Buttons space
 	["split_bars"] = true,						-- Split the fifth bar on two bars on 6 buttons
-	["classcolor_border"] = false,				-- Enable classcolor border
 	["toggle_mode"] = true,						-- Enable toggle mode
 	["hide_highlight"] = false,					-- Hide proc highlight
 	-- Bottom bars
@@ -413,7 +412,6 @@ C["aura"] = {
 	["player_aura_only"] = false,				-- Only your debuff on target frame
 	["debuff_color_type"] = true,				-- Color debuff by type
 	["cast_by"] = false,						-- Show who cast a buff/debuff in its tooltip
-	["classcolor_border"] = false,				-- Enable classcolor border for player buffs
 }
 
 ----------------------------------------------------------------------------------------

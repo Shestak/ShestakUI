@@ -288,7 +288,6 @@ L_GUI_ACTIONBAR_GRID = "Mostra lo sfondo degli scomparti vuoti sulle barre delle
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Dimensioni degli scomparti"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "Spazio tra gli scomparti"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Dividi la quinta barra in 2 barre da 6 scomparti ciascuna"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Colora i bordi degli scomparti con i colori delle classi"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Attiva la modalità a scomparsa"
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Nascondi il lumeggiare (highlight) di un proc."
 L_GUI_ACTIONBAR_BOTTOMBARS = "Numero delle barre delle azioni in basso (1, 2 o 3)"
@@ -318,7 +317,6 @@ L_GUI_AURA_BOSS_BUFFS = "Benefici sul riquadro del boss"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Mostra solo le tue penalità sul riquadro del bersaglio"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Colora le penalità a seconda del tipo"
 L_GUI_AURA_CAST_BY = "Mostra chi ha lanciato un beneficio o una penalità nei suggerimenti"
-L_GUI_AURA_CLASSCOLOR_BORDER = "Colora i bordi dei benefici del giocatore in base al colore della classi"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Abilita i riquadri delle unità"

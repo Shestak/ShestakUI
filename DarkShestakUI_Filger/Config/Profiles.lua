@@ -67,5 +67,6 @@ if T.coauthor == true then
 	if T.class == "WARLOCK" then
 		add("P_BUFF_ICON", {spellID = 116202, unitID = "player", caster = "player", filter = "BUFF"}) -- Aura of the Elements
 		add("P_BUFF_ICON", {spellID = 119839, unitID = "player", caster = "player", filter = "BUFF"}) -- Fury Ward
+		add("P_BUFF_ICON", {spellID = 104025, unitID = "player", caster = "player", filter = "BUFF"}) -- Immolation Aura
 	end
 end
