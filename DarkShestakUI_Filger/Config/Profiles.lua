@@ -42,11 +42,11 @@ end
 --	Function for insert spell
 ----------------------------------------------------------------------------------------
 local add = function(place, spell)
-	for class, _ in pairs(C["spells_filger"]) do
+	for class, _ in pairs(C["filger_spells"]) do
 		if class == T.class then
-			for i = 1, #C["spells_filger"][class], 1 do
-				if C["spells_filger"][class][i]["Name"] == place then
-					table.insert(C["spells_filger"][class][i], spell)
+			for i = 1, #C["filger_spells"][class], 1 do
+				if C["filger_spells"][class][i]["Name"] == place then
+					table.insert(C["filger_spells"][class][i], spell)
 				end
 			end
 		end
@@ -57,7 +57,7 @@ end
 --	m2jest1c Config
 ----------------------------------------------------------------------------------------
 if T.coauthor == true then
-	C["settings_filger"].show_tooltip = true
+	C["filger_settings"].show_tooltip = true
 	if T.class == "WARRIOR" then
 		add("T_DEBUFF_ICON", {spellID = 115767, unitID = "target", caster = "player", filter = "DEBUFF"}) -- Deep Wounds
 	end
