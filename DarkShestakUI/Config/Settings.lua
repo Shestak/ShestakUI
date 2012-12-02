@@ -442,7 +442,7 @@ C["unitframe"] = {
 	["icons_combat"] = true,					-- Combat icon
 	["icons_resting"] = true,					-- Resting icon for low lvl chars
 	-- Portraits
-	["portrait_enable"] = false,					-- Enable player/target portraits
+	["portrait_enable"] = false,				-- Enable player/target portraits
 	-- Plugins
 	["plugins_gcd"] = false,					-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar
@@ -450,7 +450,7 @@ C["unitframe"] = {
 	["plugins_reputation_bar"] = false,			-- Reputation bar
 	["plugins_experience_bar"] = false,			-- Experience bar
 	["plugins_friendship_bar"] = false,			-- Friendship bar
-	["plugins_smooth_bar"] = false,				-- Smooth bar
+	["plugins_smooth_bar"] = true,				-- Smooth bar
 	["plugins_talents"] = false,				-- Enemy specialization
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
 	["plugins_fader"] = false,					-- Fade unit frames

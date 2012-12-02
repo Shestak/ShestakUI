@@ -579,7 +579,7 @@ local function Shared(self, unit)
 	if unit == "player" or unit == "target" then
 		if C.unitframe.portrait_enable == true then
 			self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self)
-			self.Portrait:SetPoint("TOPLEFT", self, "TOPLEFT", 1, -1)
+			self.Portrait:SetPoint("TOPLEFT", self, "TOPLEFT", -1, 0)
 			self.Portrait:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", -1, 1)
 			self.Portrait:SetAlpha(0.1)
 		end

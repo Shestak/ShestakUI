@@ -140,23 +140,23 @@ end
 if C.actionbar.panels == true then
 	local bpanel = CreateFrame("Frame", "ActionBarPanel", bottombaranchor)
 	bpanel:SetTemplate("Default", "Shadow")
-	bpanel:SetPoint("TOP", bottombaranchor, "TOP", 0, 3)
-	bpanel:SetPoint("BOTTOMLEFT", bottombaranchor, "BOTTOMLEFT", -3, -3)
-	bpanel:SetPoint("BOTTOMRIGHT", bottombaranchor, "BOTTOMRIGHT", 3, -3)
+	bpanel:SetPoint("TOP", bottombaranchor, "TOP", 0, C.actionbar.button_space)
+	bpanel:SetPoint("BOTTOMLEFT", bottombaranchor, "BOTTOMLEFT", -C.actionbar.button_space, -C.actionbar.button_space)
+	bpanel:SetPoint("BOTTOMRIGHT", bottombaranchor, "BOTTOMRIGHT", C.actionbar.button_space, -C.actionbar.button_space)
 
 	local rpanel = CreateFrame("Frame", nil, rightbaranchor)
 	rpanel:SetTemplate("Default", "Shadow")
 	rpanel:SetFrameLevel(1)
 	rpanel:SetFrameStrata("BACKGROUND")
-	rpanel:SetPoint("BOTTOMLEFT", rightbaranchor, "BOTTOMLEFT", -3, -3)
-	rpanel:SetPoint("TOPRIGHT", rightbaranchor, "TOPRIGHT", 3, 3)
+	rpanel:SetPoint("BOTTOMLEFT", rightbaranchor, "BOTTOMLEFT", -C.actionbar.button_space, -C.actionbar.button_space)
+	rpanel:SetPoint("TOPRIGHT", rightbaranchor, "TOPRIGHT", C.actionbar.button_space, C.actionbar.button_space)
 	
 	local ppanel = CreateFrame("Frame", nil, PetActionButton1)
 	ppanel:SetTemplate("Default", "Shadow")
 	ppanel:SetFrameLevel(1)
 	ppanel:SetFrameStrata("BACKGROUND")
-	ppanel:SetPoint("BOTTOMLEFT", petbaranchor, "BOTTOMLEFT", -3, -3)
-	ppanel:SetPoint("TOPRIGHT", petbaranchor, "TOPRIGHT", 3, 3)
+	ppanel:SetPoint("BOTTOMLEFT", petbaranchor, "BOTTOMLEFT", -C.actionbar.button_space, -C.actionbar.button_space)
+	ppanel:SetPoint("TOPRIGHT", petbaranchor, "TOPRIGHT", C.actionbar.button_space, C.actionbar.button_space)
 end
 ----------------------------------------------------------------------------------------
 --	Top panel
