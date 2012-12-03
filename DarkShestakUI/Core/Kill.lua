@@ -88,7 +88,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		end
 	end
 
-	if IsAddOnLoaded("ShestakUI_Filger") then
+	if IsAddOnLoaded("DarkShestakUI_Filger") then
 		SetCVar("lossOfControl", 0)
 		InterfaceOptionsCombatPanelLossOfControl:Kill()
 		InterfaceOptionsCombatPanelLossOfControlFullDropDown:Kill()
