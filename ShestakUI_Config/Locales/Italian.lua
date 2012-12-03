@@ -128,11 +128,11 @@ L_GUI_COMBATTEXT_SCROLLABLE = "Attiva la 'modalità scorrimento': consente di sc
 L_GUI_COMBATTEXT_MAX_LINES = "Massimo numero righe da ricordare in 'scorrimento' (più righe = più memoria)"
 L_GUI_COMBATTEXT_TIME_VISIBLE = "Tempo (in secondi) in cui un singolo messaggio sarà visibile"
 L_GUI_COMBATTEXT_DK_RUNES = "Mostra la ricarica delle rune dei cavalieri della morte"
-L_GUI_COMBATTEXT_KILLINGBLOW = "Ti comunica i tuoi colpi di grazia"
+L_GUI_COMBATTEXT_KILLINGBLOW = "Comunica i tuoi colpi di grazia"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unisce lo spam per danni multipli a più bersagli in un singolo messaggio"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Secondi in cui l'incantesimo/abilità più bersagli è unito in un solo messaggio"
 L_GUI_COMBATTEXT_DISPEL = "Ti comunica le tue dissoluzioni (dispels)"
-L_GUI_COMBATTEXT_INTERRUPT = "Ti comunica le tue interruzioni (interrupts)"
+L_GUI_COMBATTEXT_INTERRUPT = "Comunica le tue interruzioni (interrupts)"
 L_GUI_COMBATTEXT_DIRECTION = "Direzione di scorrimento ('sù' (vai in basso) o 'giù' (vai in alto))"
 
 -- Buffs reminder options
