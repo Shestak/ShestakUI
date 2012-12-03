@@ -57,6 +57,7 @@ end
 --	Shestak Config
 ----------------------------------------------------------------------------------------
 if T.author == true then
+	C["filger_settings"].show_tooltip = false
 	if T.class == "DRUID" then
 		add("P_BUFF_ICON", {spellID = 100977, unitID = "player", caster = "player", filter = "BUFF"})
 		add("P_BUFF_ICON", {spellID = 33763, unitID = "player", caster = "player", filter = "BUFF"})
@@ -65,9 +66,4 @@ if T.author == true then
 	end
 end
 
-----------------------------------------------------------------------------------------
---	Oz@Pozzo dell'Eternità Config
-----------------------------------------------------------------------------------------
-if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
-	C["filger_settings"].show_tooltip = true
-end
+-- Edit by Oz of shestakdotorg --

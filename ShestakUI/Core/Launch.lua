@@ -150,8 +150,10 @@ local function InstallUI()
 			ChatFrame_AddMessageGroup(ChatFrame4, "SKILL")
 		end
 
-		-- Show Target Icons
+		-- Show pet battle stuff & target icons 
 		ChatFrame_AddMessageGroup(ChatFrame1, "TARGETICONS")
+		ChatFrame_AddMessageGroup(ChatFrame1, "PET_BATTLE_COMBAT_LOG")
+		ChatFrame_AddMessageGroup(ChatFrame1, "PET_BATTLE_INFO")
 
 		-- Enable classcolor automatically on login and on each character without doing /configure each time
 		ToggleChatColorNamesByClassGroup(true, "SAY")
