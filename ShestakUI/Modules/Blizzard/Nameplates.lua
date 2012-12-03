@@ -177,8 +177,10 @@ local function UpdateCastbar(frame)
 	frame:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
 	frame:SetPoint("TOP", frame:GetParent().hp, "BOTTOM", 0, -8)
 	frame:GetStatusBarTexture():SetHorizTile(true)
+	frame.cbbg:SetTexture(0.75, 0.75, 0.25, 0.2)
 	if frame.shield:IsShown() then
-		frame:SetStatusBarColor(0.78, 0.25, 0.25, 1)
+		frame:SetStatusBarColor(0.78, 0.25, 0.25)
+		frame.cbbg:SetTexture(0.78, 0.25, 0.25, 0.2)
 	end
 end
 
@@ -512,7 +514,6 @@ local function SkinObjects(frame, nameFrame)
 	frame:HookScript("OnHide", OnHide)
 	frames[frame] = true
 end
-
 
 local function UpdateThreat(frame, elapsed)
 	frame.hp:Show()

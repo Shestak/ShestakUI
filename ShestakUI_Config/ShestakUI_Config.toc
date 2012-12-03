@@ -2,12 +2,12 @@
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI (Oz of Pozzo dell'Eternità Edit)
 ## Author: Tohveli
-## Version: 4.25
+## Version: 4.26
 ## Credits: Elv22, Fernir, Tukz
 ## RequiredDeps: ShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
-## X-Curse-Packaged-Version: 4.25
+## X-Curse-Packaged-Version: 4.26
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
@@ -17,8 +17,6 @@ Locales\Chinese.lua
 Locales\French.lua
 Locales\German.lua
 Locales\Italian.lua
-Locales\Korean.lua
-Locales\Portuguese.lua
 Locales\Russian.lua
 Locales\Spanish.lua
 Locales\Taiwan.lua

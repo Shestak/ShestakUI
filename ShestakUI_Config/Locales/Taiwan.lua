@@ -185,7 +185,7 @@ L_GUI_THREAT_HIDE_SOLO = "僅在隊伍/團隊中使用"
 
 -- Meter options
 L_GUI_METER = "計數器損壞" -- Goooooooooogle translated
-L_GUI_METER_ENABLE = "使損害賠償的計數器 （只為ShestakUI_alDamageMeter）" -- Goooooooooogle translated
+L_GUI_METER_ENABLE = "使損害賠償的計數器 （只為ShestakUI alDamageMeter）" -- Goooooooooogle translated
 L_GUI_METER_SPACING = "酒吧之間的空間" -- Goooooooooogle translated
 L_GUI_METER_HEIGHT = "酒吧的高度" -- Goooooooooogle translated
 L_GUI_METER_WIDTH = "酒吧的寬度" -- Goooooooooogle translated

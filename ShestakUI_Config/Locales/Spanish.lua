@@ -185,7 +185,7 @@ L_GUI_THREAT_HIDE_SOLO = "Mostrar solo en grupo/raid"
 
 -- Meter options
 L_GUI_METER = "Contador de daños" -- Goooooooooogle translated
-L_GUI_METER_ENABLE = "Habilitar el contador de daños (sólo para ShestakUI_alDamageMeter)" -- Goooooooooogle translated
+L_GUI_METER_ENABLE = "Habilitar el contador de daños (sólo para ShestakUI alDamageMeter)" -- Goooooooooogle translated
 L_GUI_METER_SPACING = "Espacio entre las barras" -- Goooooooooogle translated
 L_GUI_METER_HEIGHT = "Altura de las barras" -- Goooooooooogle translated
 L_GUI_METER_WIDTH = "Ancho de las barras" -- Goooooooooogle translated

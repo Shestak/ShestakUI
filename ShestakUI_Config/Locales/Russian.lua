@@ -185,7 +185,7 @@ L_GUI_THREAT_HIDE_SOLO = "Отображать только в группе/ре
 
 -- Meter options
 L_GUI_METER = "Счетчик ущерб" -- Goooooooooogle translated
-L_GUI_METER_ENABLE = "Включить счетчик убытков (только для ShestakUI_alDamageMeter)" -- Goooooooooogle translated
+L_GUI_METER_ENABLE = "Включить счетчик убытков (только для ShestakUI alDamageMeter)" -- Goooooooooogle translated
 L_GUI_METER_SPACING = "Расстояние между барами" -- Goooooooooogle translated
 L_GUI_METER_HEIGHT = "Высота баров" -- Goooooooooogle translated
 L_GUI_METER_WIDTH = "Ширина баров" -- Goooooooooogle translated

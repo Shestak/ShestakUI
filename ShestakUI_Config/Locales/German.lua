@@ -185,7 +185,7 @@ L_GUI_THREAT_HIDE_SOLO = "Nur in Gruppen oder Schlachtzügen anzeigen"
 
 -- Meter options
 L_GUI_METER = "Zähler Schaden" -- Goooooooooogle translated
-L_GUI_METER_ENABLE = "Aktivieren Sie den Zähler für Schäden (nur für ShestakUI_alDamageMeter)" -- Goooooooooogle translated
+L_GUI_METER_ENABLE = "Aktivieren Sie den Zähler für Schäden (nur für ShestakUI alDamageMeter)" -- Goooooooooogle translated
 L_GUI_METER_SPACING = "Abstand zwischen den Balken" -- Goooooooooogle translated
 L_GUI_METER_HEIGHT = "Höhe der Balken" -- Goooooooooogle translated
 L_GUI_METER_WIDTH = "Stegbreite" -- Goooooooooogle translated

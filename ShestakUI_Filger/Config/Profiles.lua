@@ -1,4 +1,4 @@
-local T, C, L, _ = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -63,4 +63,11 @@ if T.author == true then
 		add("P_BUFF_ICON", {spellID = 774, unitID = "player", caster = "player", filter = "BUFF"})
 		add("P_BUFF_ICON", {spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"})
 	end
+end
+
+----------------------------------------------------------------------------------------
+--	Oz@Pozzo dell'Eternità Config
+----------------------------------------------------------------------------------------
+if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+	C["filger_settings"].show_tooltip = true
 end

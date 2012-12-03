@@ -184,7 +184,7 @@ L_GUI_THREAT_ROWS = "仇恨栏数目"
 L_GUI_THREAT_HIDE_SOLO = "只在队伍或团队中开启"
 
 L_GUI_METER = "损坏米" -- Goooooooooogle translated
-L_GUI_METER_ENABLE = "启用的损失计 （只為ShestakUI_alDamageMeter）" -- Goooooooooogle translated
+L_GUI_METER_ENABLE = "启用的损失计 （只為ShestakUI alDamageMeter）" -- Goooooooooogle translated
 L_GUI_METER_SPACING = "条纹之间的间距" -- Goooooooooogle translated
 L_GUI_METER_HEIGHT = "酒吧的高度" -- Goooooooooogle translated
 L_GUI_METER_WIDTH = "酒吧的宽度" -- Goooooooooogle translated
