@@ -1,6 +1,6 @@
 ## Interface: 50100
 ## Title: ShestakUI alDamageMeter
-## Notes: Damage meter. Edit by Oz of shestak.org
+## Notes: Damage meter. Edit by Oz of Pozzo dell'Eternità
 ## Author: Allez
 ## Version: 50001.11
 ## RequiredDeps: ShestakUI

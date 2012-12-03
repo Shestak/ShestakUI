@@ -25,4 +25,4 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	T.oz = true
 end
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

@@ -132,4 +132,4 @@ Scanner:SetScript("OnEvent", function()
 	end
 end)
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

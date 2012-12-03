@@ -521,4 +521,4 @@ b:SetScript("OnLeave", function()
 	b:FadeOut()
 end)
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

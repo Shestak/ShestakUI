@@ -703,4 +703,4 @@ end
 SLASH_alDamage1 = "/aldmg"
 SLASH_alDamage2 = "/фдвьп"
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

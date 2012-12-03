@@ -436,4 +436,4 @@ SlashCmdList.SETTINGS = function(msg)
 end
 SLASH_SETTINGS1 = "/settings"
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

@@ -895,4 +895,4 @@ if C.combattext.healing then
 	xCTh:SetScript("OnEvent", heal)
 end
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

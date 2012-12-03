@@ -176,3 +176,6 @@ function BaudErrorFrameEditBox_OnTextChanged(self)
 end
 
 function BaudErrorFrameEditBox_OnTextSet() end
+
+ -- Edit by Oz of Pozzo dell'Eternità --
+ 

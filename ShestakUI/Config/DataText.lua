@@ -252,4 +252,4 @@ LPSTAT_PROFILES = {
 	},
 }
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

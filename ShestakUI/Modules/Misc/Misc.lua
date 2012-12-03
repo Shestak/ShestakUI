@@ -297,4 +297,4 @@ f:SetScript("OnUpdate", function(self, elapsed)
     end
 end)
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

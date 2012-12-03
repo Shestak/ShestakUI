@@ -68,4 +68,4 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["extra_bar"].enable = true
 end
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

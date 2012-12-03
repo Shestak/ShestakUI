@@ -560,4 +560,4 @@ C["error"] = {
 	["combat"] = false,							-- Hide errors in combat
 }
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

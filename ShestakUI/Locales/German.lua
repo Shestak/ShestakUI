@@ -296,7 +296,7 @@ L_POPUP_CURRENCY_CAP = "Maximalwert erreicht"
 L_WELCOME_LINE_1 = "Willkommen bei ShestakUI "
 L_WELCOME_LINE_2_1 = "Gebe /cfg ein um das Interface zu konfigurieren, oder besuche http://shestak.org"
 L_WELCOME_LINE_2_2 = "für weitere Informationen."
-L_WELCOME_LINE_3 = "Hinweis: Diese Version von ShestakUI wird von Oz von shestak.org bearbeitet." -- Goooooooooogle translated
+L_WELCOME_LINE_3 = "Hinweis: Diese Version von ShestakUI wird von Oz von Pozzo dell'Eternità bearbeitet." -- Goooooooooogle translated
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Todesstoß"
@@ -515,4 +515,4 @@ L_EXTRA_ZONEACHID = {
 L_HIDE_BUTTON_1 = "Linksklick = hide chat" -- Goooooooooogle translated
 L_HIDE_BUTTON_2 = "Right click = hide Minikarte (nur außerhalb des Kampfes)" -- Goooooooooogle translated
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

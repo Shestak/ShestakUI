@@ -66,4 +66,4 @@ tinymap:SetScript("OnEvent", function(self, event, addon)
 	end)
 end)
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

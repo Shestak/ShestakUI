@@ -1,6 +1,6 @@
 ## Interface: 50100
 ## Title: ShestakUI Media
-## Notes: Extra media for ShestakUI. Edit by Oz of shestak.org
+## Notes: Extra media for ShestakUI. Edit by Oz of Pozzo dell'Eternità
 ## Author: Shestak
 ## Version: 0.0.2
 ## Credits: Nevcairiel, mikk, Elkano, Kaelten, Ammo, Cladhaire

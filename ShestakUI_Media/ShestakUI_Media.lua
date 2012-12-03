@@ -51,4 +51,4 @@ LSM:Register("statusbar", "Smooth", "Interface\\AddOns\\ShestakUI_Media\\Media\\
 LSM:Register("statusbar", "Striped", "Interface\\AddOns\\ShestakUI_Media\\Media\\Statusbars\\Striped.tga")
 LSM:Register("statusbar", "Tukz", "Interface\\AddOns\\ShestakUI_Media\\Media\\Statusbars\\Tukz.tga")
 
--- edit of Oz of shestak.org --
+-- Edit by Oz of Pozzo dell'Eternità --

@@ -428,4 +428,4 @@ L_GUI_ERROR_BLACK = "隐藏黑名单错误"
 L_GUI_ERROR_WHITE = "显示白名单错误"
 L_GUI_ERROR_HIDE_COMBAT = "战斗中隐藏所有错误提示"
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

@@ -155,4 +155,4 @@ end
 HideB:SetScript("OnEnter", tooltip_show)
 HideB:SetScript("OnLeave", tooltip_hide)
 
--- edit by Oz of shestak.org --
+-- Edit by Oz of Pozzo dell'Eternità --

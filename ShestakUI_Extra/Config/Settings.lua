@@ -45,4 +45,4 @@ C["extra_skins"] = {
 	["skada"] = false,							-- Skada skin(Not Ready)
 }
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

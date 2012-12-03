@@ -365,4 +365,4 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["unitframe"].alternative_portraits = true
 end
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

@@ -335,4 +335,4 @@ else
 	MiniMapTracking:Hide()
 end
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

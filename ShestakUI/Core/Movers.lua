@@ -139,4 +139,4 @@ SLASH_MOVING2 = "/ьщмугш"
 SLASH_MOVING3 = "/ui"
 SLASH_MOVING4 = "/гш"
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

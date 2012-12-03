@@ -195,4 +195,4 @@ toppanel.bcr:SetSize(C.toppanel.width / 2, 1)
 toppanel.bcr:SetTexture(C.media.blank)
 toppanel.bcr:SetGradientAlpha("HORIZONTAL", borderr, borderg, borderb, 1, borderr, borderg, borderb, 0)
 
--- edit by Oz of shestak. org --
+-- Edit by Oz of Pozzo dell'Eternità --

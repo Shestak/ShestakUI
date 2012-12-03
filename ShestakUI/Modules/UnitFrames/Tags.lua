@@ -142,4 +142,4 @@ if T.class == "WARLOCK" then
 	oUF.TagEvents["DemonicFury"] = "UNIT_POWER PLAYER_TALENT_UPDATE"
 end
 
--- edit by Oz of shestak.org --
+-- Edit by Oz of Pozzo dell'Eternità --
