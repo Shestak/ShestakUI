@@ -40,7 +40,7 @@ local function StyleNormalButton(self)
 			btname:SetPoint("BOTTOM", 0, 0)
 			btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-			--btname:SetWidth(C.actionbar.button_size - 1)
+			btname:SetWidth(C.actionbar.button_size - 1)
 		else
 			btname:Kill()
 		end
