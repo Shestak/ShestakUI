@@ -515,7 +515,6 @@ local function SkinObjects(frame, nameFrame)
 	frames[frame] = true
 end
 
-
 local function UpdateThreat(frame, elapsed)
 	frame.hp:Show()
 
