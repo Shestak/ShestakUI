@@ -515,4 +515,4 @@ L_EXTRA_ZONEACHID = {
 L_HIDE_BUTTON_1 = "clic gauche = peau de chat" -- Goooooooooogle translated
 L_HIDE_BUTTON_2 = "Clic droit = peau minicarte (uniquement hors combat)" -- Goooooooooogle translated
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

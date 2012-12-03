@@ -59,4 +59,4 @@ frame:SetScript("OnEvent", function(self, event)
 	self = nil
 end)
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

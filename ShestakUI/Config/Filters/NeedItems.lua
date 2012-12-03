@@ -9,4 +9,4 @@ if C.loot.auto_greed ~= true then return end
 T.NeedLoot = {
 }
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

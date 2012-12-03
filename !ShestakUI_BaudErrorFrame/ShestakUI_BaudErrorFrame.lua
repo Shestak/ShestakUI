@@ -177,5 +177,5 @@ end
 
 function BaudErrorFrameEditBox_OnTextSet() end
 
- -- Edit by Oz of Pozzo dell'Eternità --
+ -- Edit by Oz of shestakdotorg --
  

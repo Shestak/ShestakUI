@@ -515,4 +515,4 @@ L_EXTRA_ZONEACHID = {
 L_HIDE_BUTTON_1 = "Linksklick = hide chat" -- Goooooooooogle translated
 L_HIDE_BUTTON_2 = "Right click = hide Minikarte (nur außerhalb des Kampfes)" -- Goooooooooogle translated
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

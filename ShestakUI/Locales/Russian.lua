@@ -515,4 +515,4 @@ L_EXTRA_ZONEACHID = {
 L_HIDE_BUTTON_1 = "Щелкните левой кнопкой мыши = скрыть чат" -- Goooooooooogle translated
 L_HIDE_BUTTON_2 = "Щелкните правой кнопкой мыши = скрыть миникарта (только вне боя)" -- Goooooooooogle translated
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

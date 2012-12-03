@@ -431,4 +431,4 @@ L_GUI_ERROR_BLACK = "Ocultar errores de la lista negra"
 L_GUI_ERROR_WHITE = "Mostrar errores de la lista blanca"
 L_GUI_ERROR_HIDE_COMBAT = "Hide all errors in combat" -- Needs review
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

@@ -37,4 +37,4 @@ T.oUF_colors = setmetatable({
 	}, {__index = oUF.colors.reaction}),
 }, {__index = oUF.colors})
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

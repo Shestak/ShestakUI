@@ -147,4 +147,4 @@ Stat:SetScript("OnEvent", OnEvent)
 Stat:SetScript("OnUpdate", Update)
 Update(Stat, 2)
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

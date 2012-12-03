@@ -12,4 +12,4 @@ C["extra_position"] = {
 	["tank_announce"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 157},	-- Tank announce panel
 }
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

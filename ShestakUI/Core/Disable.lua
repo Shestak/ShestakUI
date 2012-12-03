@@ -135,4 +135,4 @@ if IsAddOnLoaded("alDamageMeter") or IsAddOnLoaded("Numeration") or IsAddOnLoade
 	C.meter.enable = false
 end
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

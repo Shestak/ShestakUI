@@ -180,4 +180,4 @@ WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
 	end
 end)
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

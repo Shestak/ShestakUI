@@ -94,4 +94,4 @@ Omen:UpdateBackdrop()
 Omen:ReAnchorBars()
 Omen:ResizeBars()
 
--- edit by Oz of Pozzo dell'Eternità
+-- Edit by Oz of shestakdotorg --

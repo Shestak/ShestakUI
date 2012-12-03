@@ -515,4 +515,4 @@ L_EXTRA_ZONEACHID = {
 L_HIDE_BUTTON_1 = "Left click = esconder chat" -- Goooooooooogle translated
 L_HIDE_BUTTON_2 = "Clique direito = esconder minimap (apenas fora de combate)" -- Goooooooooogle translated
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

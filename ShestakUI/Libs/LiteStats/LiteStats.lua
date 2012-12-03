@@ -1799,4 +1799,4 @@ lpanels:ApplyLayout(nil, "LiteStats")
 
 Inject = nil
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

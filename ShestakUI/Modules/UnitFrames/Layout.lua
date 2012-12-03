@@ -1516,4 +1516,4 @@ do
 	UnitPopupMenus["BOSS"] = {"RAID_TARGET_ICON", "CANCEL"}
 end
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

@@ -318,4 +318,4 @@ for i = 1, NUM_CHAT_WINDOWS do
 	end
 end
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

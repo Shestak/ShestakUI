@@ -430,4 +430,4 @@ L_GUI_ERROR_BLACK = "Verstecke Fehler der Schwarzen Liste"
 L_GUI_ERROR_WHITE = "Zeige Fehler der Weißen Liste"
 L_GUI_ERROR_HIDE_COMBAT = "Verberge alle Fehlermeldungen im Kampf"
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

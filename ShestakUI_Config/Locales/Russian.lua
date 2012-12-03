@@ -430,4 +430,4 @@ L_GUI_ERROR_BLACK = "Спрятать ошибки из 'черного' спи�
 L_GUI_ERROR_WHITE = "Показывать ошибки из 'белого' списка"
 L_GUI_ERROR_HIDE_COMBAT = "Спрятать все ошибки во время боя"
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

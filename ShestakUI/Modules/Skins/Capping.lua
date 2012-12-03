@@ -112,4 +112,4 @@ end
 self:RegisterEvent("ADDON_LOADED")
 self:SetScript("OnEvent", OnEvent)
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

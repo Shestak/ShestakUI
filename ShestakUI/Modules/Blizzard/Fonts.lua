@@ -118,4 +118,4 @@ if LSM then
 	LSM:Register(LSM.MediaType.STATUSBAR, "rwk1", C.media.texture)
 end
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --

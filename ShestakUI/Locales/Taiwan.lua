@@ -515,4 +515,4 @@ L_EXTRA_ZONEACHID = {
 L_HIDE_BUTTON_1 = "點擊鼠標左鍵=隱藏聊天" -- Goooooooooogle translated
 L_HIDE_BUTTON_2 = "單擊鼠標右鍵=隱藏（只出戰鬥）" -- Goooooooooogle translated
 
--- Edit by Oz of Pozzo dell'Eternità --
+-- Edit by Oz of shestakdotorg --
