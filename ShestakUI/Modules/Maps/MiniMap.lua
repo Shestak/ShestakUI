@@ -267,6 +267,9 @@ local micromenu = {
 	{text = BATTLEFIELD_MINIMAP, notCheckable = true, func = function()
 		ToggleBattlefieldMinimap()
 	end},
+	{text = LOOT_ROLLS, notCheckable = true, func = function()
+		ToggleFrame(LootHistoryFrame)
+	end},
 }
 
 Minimap:SetScript("OnMouseUp", function(self, button)
