@@ -136,7 +136,7 @@ local function Shared(self, unit)
 	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:SetSize(12, 12)
-		self.LFDRole:SetPoint("TOPLEFT", self.Health, 0, 0)
+		self.LFDRole:SetPoint("TOPLEFT", self.Health, 0, -14)
 	end
 
 	-- Ready check icons
