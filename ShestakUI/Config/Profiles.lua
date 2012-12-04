@@ -70,7 +70,6 @@ if T.author == true then
 	C["threat"].enable = false
 	C["tooltip"].shift_modifer = true
 	C["tooltip"].cursor = true
-	C["tooltip"].unit_role = true
 	C["tooltip"].instance_lock = true
 	C["chat"].combatlog = false
 	C["chat"].spam = true
@@ -193,7 +192,6 @@ or T.name == "Лунорог" or T.name == "Вирка" or T.name == "Вирин
 	C["pulsecooldown"].threshold = 5
 	C["threat"].enable = false
 	C["tooltip"].health_value = true
-	C["tooltip"].unit_role = true
 	C["chat"].background = true
 	C["chat"].background_alpha = 0.45
 	C["chat"].height = 162
