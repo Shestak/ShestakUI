@@ -355,7 +355,7 @@ if C.tooltip.hidebuttons == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Fix compare tooltips(by Elv22)
+--	Fix compare tooltips(by Blizzard)(../FrameXML/GameTooltip.lua)
 ----------------------------------------------------------------------------------------
 hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 	if not self then

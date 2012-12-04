@@ -394,7 +394,8 @@ L_GUI_UF_SHOW_TANK = "顯示團隊主坦克框體"
 L_GUI_UF_SHOW_TANK_TT = "顯示坦克目標的目標"
 L_GUI_UF_RAID_GROUP = "顯示小隊數目"
 L_GUI_UF_RAID_PORTRAITS = "啟用RAID幀上的肖像" -- Goooooooooogle translated
-L_GUI_UF_RAID_VERTICAL_GROUP = "竪向排列團隊隊伍(only for heal layout)" -- Needs review
+L_GUI_UF_RAID_VERTICAL_GROUP = "竪向排列團隊隊伍(只在治療佈局啟用)"
+
 L_GUI_UF_ICONS_LEADER = "顯示團隊隊長標識/助手標識/分配者標識"
 L_GUI_UF_ICONS_ROLE = "在團隊中顯示角色類型"
 L_GUI_UF_ICONS_RAID_MARK = "顯示團隊標記"
