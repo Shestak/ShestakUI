@@ -221,7 +221,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	if slot > 3 then
 		ret.slot = slot
 		slot = slot - 4
-		ret.frame = CreateFrame("CheckButton", "StuffingBBag"..slot, p, "BankItemButtonBagTemplate")
+		ret.frame = CreateFrame("Button", "StuffingBBag"..slot, p, "BankItemButtonBagTemplate")
 		ret.frame:SetID(slot + 4)
 		table.insert(self.bagframe_buttons, ret)
 
@@ -232,7 +232,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 			ret.frame.tooltipText = ""
 		end
 	else
-		ret.frame = CreateFrame("CheckButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
+		ret.frame = CreateFrame("Button", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
 		ret.slot = slot
 		table.insert(self.bagframe_buttons, ret)
 	end
@@ -240,8 +240,6 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	ret.frame:SetTemplate("Default")
 	ret.frame:StyleButton()
 	ret.frame:SetNormalTexture("")
-	ret.frame:SetPushedTexture("")
-	ret.frame:SetCheckedTexture(nil)
 
 	local t = _G[ret.frame:GetName().."IconTexture"]
 	t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -291,11 +289,10 @@ function Stuffing:SlotNew(bag, slot)
 	end
 
 	if not ret.frame then
-		ret.frame = CreateFrame("CheckButton", "StuffingBag"..bag.."_"..slot, self.bags[bag], tpl)
+		ret.frame = CreateFrame("Button", "StuffingBag"..bag.."_"..slot, self.bags[bag], tpl)
 		ret.frame:StyleButton()
 		ret.frame:SetTemplate("Default")
 		ret.frame:SetNormalTexture(nil)
-		ret.frame:SetCheckedTexture(nil)
 
 		local t = _G[ret.frame:GetName().."IconTexture"]
 		t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
