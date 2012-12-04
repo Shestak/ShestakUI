@@ -20,7 +20,7 @@ local function HideTip() GameTooltip:Hide() end
 local function HideTip2() GameTooltip:Hide() ResetCursor() end
 
 local function SetTip(frame)
-	GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
+	GameTooltip:SetOwner(frame, "ANCHOR_TOPLEFT")
 	GameTooltip:SetText(frame.tiptext)
 	if not frame:IsEnabled() then
 		GameTooltip:AddLine(frame.errtext, 1, 0.2, 0.2, 1)
@@ -37,14 +37,35 @@ local function SetItemTip(frame)
 	if IsModifiedClick("DRESSUP") then ShowInspectCursor() else ResetCursor() end
 end
 
-local function ItemOnUpdate(self)
-	if IsShiftKeyDown() then GameTooltip_ShowCompareItem() end
-	CursorOnUpdate(self)
+local function ItemOnUpdate(frame)
+	if GameTooltip:IsOwned(frame) then
+		if IsShiftKeyDown() then
+			GameTooltip_ShowCompareItem()
+		else
+			ShoppingTooltip1:Hide()
+			ShoppingTooltip2:Hide()
+			ShoppingTooltip3:Hide()
+		end
+
+		if IsControlKeyDown() then
+			ShowInspectCursor()
+		else
+			ResetCursor()
+		end
+	end
 end
 
 local function LootClick(frame)
-	if IsControlKeyDown() then DressUpItemLink(frame.link)
-	elseif IsShiftKeyDown() then ChatEdit_InsertLink(frame.link) end
+	if IsControlKeyDown() then
+		DressUpItemLink(frame.link)
+	elseif IsShiftKeyDown() then
+		local item = select(2, GetItemInfo(frame.link))
+		if ChatEdit_GetActiveWindow() then
+			ChatEdit_InsertLink(item)
+		else
+			ChatFrame_OpenChat(item)
+		end
+	end
 end
 
 local function OnEvent(frame, event, rollID)
@@ -296,7 +317,7 @@ SlashCmdList.TESTROLL = function()
 		local item = items[math.random(1, #items)]
 		local quality = select(3, GetItemInfo(item))
 		local texture = select(10, GetItemInfo(item))
-		local r, g, b = GetItemQualityColor(quality)
+		local r, g, b = GetItemQualityColor(quality or 1)
 
 		f.button.icon:SetTexture(texture)
 		f.button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
