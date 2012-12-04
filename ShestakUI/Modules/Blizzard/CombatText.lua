@@ -95,7 +95,7 @@ local function OnEvent(self, event, subevent, ...)
 				if arg3 >= C.combattext.heal_treshold then
 					xCT2:AddMessage("+"..arg3, 0.1, 0.5, 0.1)
 				end
-			elseif subevent == "SPELL_CAST" and COMBAT_TEXT_SHOW_REACTIVES == "1" then
+			elseif subevent == "SPELL_CAST" then
 				xCT3:AddMessage(arg2, 1, 0.82, 0)
 			elseif subevent == "MISS" and COMBAT_TEXT_SHOW_DODGE_PARRY_MISS == "1" then
 				xCT1:AddMessage(MISS, 0.5, 0.5, 0.5)
