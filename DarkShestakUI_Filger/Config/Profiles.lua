@@ -1,4 +1,4 @@
-local T, C, L, F = unpack(ShestakUI)
+local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -51,6 +51,27 @@ local add = function(place, spell)
 			end
 		end
 	end
+end
+
+----------------------------------------------------------------------------------------
+--	Shestak Config
+----------------------------------------------------------------------------------------
+if (T.name == "Вершок" or T.name == "Вещмешок" or T.name == "Гребешок" or T.name == "Кулешок" or T.name == "Лапушок"  	
+or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торгашок" or T.name == "Черешок"
+or T.name == "Женишок" or T.name == "Шестак" or T.name == "Дефляция") then
+	if T.class == "DRUID" then
+		add("P_BUFF_ICON", {spellID = 100977, unitID = "player", caster = "player", filter = "BUFF"})
+		add("P_BUFF_ICON", {spellID = 33763, unitID = "player", caster = "player", filter = "BUFF"})
+		add("P_BUFF_ICON", {spellID = 774, unitID = "player", caster = "player", filter = "BUFF"})
+		add("P_BUFF_ICON", {spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"})
+	end
+end
+
+----------------------------------------------------------------------------------------
+--	Oz@Pozzo dell'Eternita Config
+----------------------------------------------------------------------------------------
+if T.name == "Oz" and T.realm == "Pozzo dell'Eternita" then
+	C["filger_settings"].show_tooltip = true
 end
 
 ----------------------------------------------------------------------------------------

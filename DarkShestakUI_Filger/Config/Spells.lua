@@ -353,7 +353,7 @@ C["filger_spells"] = {
 			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
@@ -856,7 +856,7 @@ C["filger_spells"] = {
 			-- General
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -1121,7 +1121,7 @@ C["filger_spells"] = {
 			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
@@ -1349,7 +1349,7 @@ C["filger_spells"] = {
 			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
@@ -1559,7 +1559,7 @@ C["filger_spells"] = {
 			-- General
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
@@ -2052,7 +2052,7 @@ C["filger_spells"] = {
 			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
@@ -2269,7 +2269,7 @@ C["filger_spells"] = {
 			-- General
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 		},

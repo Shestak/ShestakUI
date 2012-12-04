@@ -48,12 +48,16 @@ local function LoadSkin()
 				button:StripTextures()
 
 				button.Item:StripTextures()
+				button.Item:StyleButton()
 				button.Item:SetTemplate("Default")
+
 				button.Item.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				button.Item.IconTexture:ClearAllPoints()
 				button.Item.IconTexture:SetPoint("TOPLEFT", 2, -2)
 				button.Item.IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
-				button.Item:StyleButton()
+
+				button:SetHighlightTexture(C.media.texture)
+				button:GetHighlightTexture():SetVertexColor(0.243, 0.570, 1, 0.2)
 
 				button.skinned = true
 			end
