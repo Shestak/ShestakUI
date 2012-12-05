@@ -370,8 +370,8 @@ local step2 = function()
 	option1:SetPoint("BOTTOM", f, "BOTTOM", 0, 7)
 	
 	text:SetText(L_INSTALL_STEP2)
-	option1.Text:SetText(L_INSTALL_STEP2_HEAL)
-	option2.Text:SetText(L_INSTALL_STEP2_DPS)
+	option1.Text:SetText(HEALER)
+	option2.Text:SetText(TANK.."/"..DAMAGER)
 	option3.Text:SetText("Blizzard")
 
 	option1:SetScript("OnClick", function()

@@ -78,7 +78,6 @@ end
 --	m2jest1c Config
 ----------------------------------------------------------------------------------------
 if T.coauthor == true then
-	C["filger_settings"].show_tooltip = true
 	if T.class == "WARRIOR" then
 		add("T_DEBUFF_ICON", {spellID = 115767, unitID = "target", caster = "player", filter = "DEBUFF"}) -- Deep Wounds
 	end
