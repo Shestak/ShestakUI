@@ -2190,20 +2190,20 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].player_buff_icon)},
 
-			-- Burning Soul
-			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Bargain
+			{spellID = 110913, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unending Resolve
+			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Knowledge
 			{spellID = 113861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Misery
 			{spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Instability
 			{spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unending Resolve
-			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Bargain
-			{spellID = 110913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Twilight Ward
 			{spellID = 6229, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Soulburn
+			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burning Rush
@@ -2360,8 +2360,6 @@ C["filger_spells"] = {
 			{spellID = 48020, filter = "CD"},
 			-- Grimoire of Service
 			{spellID = 108501, filter = "CD"},
-			-- Soulshatter
-			{spellID = 29858, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -2423,6 +2421,8 @@ C["filger_spells"] = {
 			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spell Reflection
 			{spellID = 23920, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Die by the Sword
+			{spellID = 118038, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Berserker Rage
 			{spellID = 18499, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Avatar
@@ -3275,10 +3275,10 @@ C["filger_spells"] = {
 			{spellID = 118905, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warlock
-			-- Unending Resolve
-			{spellID = 104773, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Dark Bargain
 			{spellID = 110913, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Unending Resolve
+			{spellID = 104773, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Soulstone
 			{spellID = 20707, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
@@ -3312,6 +3312,8 @@ C["filger_spells"] = {
 			{spellID = 23920, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Mass Spell Reflection
 			{spellID = 114028, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Die by the Sword
+			{spellID = 118038, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Shield Wall
 			{spellID = 871, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserker Rage

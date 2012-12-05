@@ -113,6 +113,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(45438)] = 2,	-- Ice Block
 		[GetSpellInfo(642)] = 2,	-- Divine Shield
 		[GetSpellInfo(46924)] = 2,	-- Bladestorm
+		[GetSpellInfo(118038)] = 2,	-- Die by the Sword
 
 		-- Disarms
 		[GetSpellInfo(50541)] = 1,	-- Clench (Scorpid)
