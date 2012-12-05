@@ -973,27 +973,31 @@ local function Shared(self, unit)
 		self.AltPowerBar.text:SetPoint("CENTER", self.AltPowerBar, "CENTER", 0, 0)
 		self:Tag(self.AltPowerBar.text, "[AltPower]")
 
+		
+		self.Auras = CreateFrame("Frame", nil, self)
+		if C.unitframe.boss_on_right == true then
+			self.Auras:SetPoint("TOPRIGHT", self, "TOPLEFT", -5, 2)
+			self.Auras.initialAnchor = "RIGHT"
+			self.Auras["growth-x"] = "LEFT"
+		else
+			self.Auras:SetPoint("TOPLEFT", self, "TOPRIGHT", 5, 2)
+			self.Auras.initialAnchor = "LEFT"
+			self.Auras["growth-x"] = "RIGHT"
+		end
 		if C.aura.boss_buffs == true then
-			self.Auras = CreateFrame("Frame", nil, self)
-			if C.unitframe.boss_on_right == true then
-				self.Auras:SetPoint("TOPRIGHT", self, "TOPLEFT", -5, 2)
-				self.Auras.initialAnchor = "RIGHT"
-				self.Auras["growth-x"] = "LEFT"
-			else
-				self.Auras:SetPoint("TOPLEFT", self, "TOPRIGHT", 5, 2)
-				self.Auras.initialAnchor = "LEFT"
-				self.Auras["growth-x"] = "RIGHT"
-			end
 			self.Auras.numDebuffs = 0
 			self.Auras.numBuffs = 3
-			self.Auras:SetHeight(31)
-			self.Auras:SetWidth(87)
-			self.Auras.spacing = T.Scale(3)
-			self.Auras.size = T.Scale(31)
-			self.Auras.gap = true
-			self.Auras.PostCreateIcon = T.PostCreateAura
-			self.Auras.PostUpdateIcon = T.PostUpdateIcon
+		else
+			self.Auras.numDebuffs = 3
+			self.Auras.numBuffs = 0
 		end
+		self.Auras:SetHeight(31)
+		self.Auras:SetWidth(87)
+		self.Auras.spacing = T.Scale(3)
+		self.Auras.size = T.Scale(31)
+		self.Auras.gap = true
+		self.Auras.PostCreateIcon = T.PostCreateAura
+		self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
 		self:HookScript("OnShow", T.UpdateAllElements)
 	end
