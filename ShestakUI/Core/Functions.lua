@@ -1259,7 +1259,6 @@ T.PostCreateAura = function(element, button)
 	button.remaining:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 	button.remaining:SetPoint("CENTER", button, "CENTER", 1, 1)
 	button.remaining:SetJustifyH("CENTER")
-	button.remaining:SetTextColor(1, 1, 1)
 
 	button.cd.noOCC = true
 	button.cd.noCooldownCount = true
@@ -1267,25 +1266,19 @@ T.PostCreateAura = function(element, button)
 	button.icon:SetPoint("TOPLEFT", 2, -2)
 	button.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	button.icon:SetDrawLayer("ARTWORK")
 
-	button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 0, 1)
+	button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, 0)
 	button.count:SetJustifyH("RIGHT")
 	button.count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 	button.count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
-	button.count:SetTextColor(1, 1, 1)
 
 	if C.aura.show_spiral == true then
 		element.disableCooldown = false
 		button.cd:SetReverse()
-		button.overlayFrame = CreateFrame("Frame", nil, button, nil)
-		button.cd:SetFrameLevel(button:GetFrameLevel() + 1)
-		button.cd:ClearAllPoints()
 		button.cd:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
 		button.cd:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
-		button.overlayFrame:SetFrameLevel(button.cd:GetFrameLevel() + 1)
-		button.count:SetParent(button.overlayFrame)
-		button.remaining:SetParent(button.overlayFrame)
+		button.count:SetParent(button.cd)
+		button.remaining:SetParent(button.cd)
 	else
 		element.disableCooldown = true
 	end

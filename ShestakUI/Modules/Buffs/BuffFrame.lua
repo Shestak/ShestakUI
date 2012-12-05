@@ -47,21 +47,23 @@ for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 
 	if border then border:Hide() end
 
-	buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 	if i ~= 3 then
-		buff:CreateBackdrop("Default")
-		buff.backdrop:SetAllPoints()
+		buff:SetTemplate("Default")
 		if C.aura.classcolor_border == true then
-			buff.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			buff:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 		end
 	end
+
+	buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 
 	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	icon:SetPoint("TOPLEFT", buff, 2, -2)
 	icon:SetPoint("BOTTOMRIGHT", buff, -2, 2)
+	icon:SetDrawLayer("BORDER")
 
 	duration:ClearAllPoints()
 	duration:SetPoint("CENTER", 2, 1)
+	duration:SetDrawLayer("ARTWORK")
 	duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 	duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
@@ -69,7 +71,7 @@ for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 	_G["TempEnchant2"]:SetPoint("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
 end
 
-local function StyleBuffs(buttonName, index, debuff)
+local function StyleBuffs(buttonName, index)
 	local buff = _G[buttonName..index]
 	local icon = _G[buttonName..index.."Icon"]
 	local border = _G[buttonName..index.."Border"]
@@ -79,24 +81,27 @@ local function StyleBuffs(buttonName, index, debuff)
 	if border then border:Hide() end
 
 	if icon and not buff.isSkinned then
-		buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
-		buff:CreateBackdrop("Default")
-		buff.backdrop:SetAllPoints()
+		buff:SetTemplate("Default")
 		if C.aura.classcolor_border == true then
-			buff.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			buff:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 		end
+
+		buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:SetPoint("TOPLEFT", buff, 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", buff, -2, 2)
+		icon:SetDrawLayer("BORDER")
 
 		duration:ClearAllPoints()
 		duration:SetPoint("CENTER", 2, 1)
+		duration:SetDrawLayer("ARTWORK")
 		duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 		duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
 		count:ClearAllPoints()
-		count:SetPoint("BOTTOMRIGHT", 0, 1)
+		count:SetPoint("BOTTOMRIGHT", 2, 0)
+		count:SetDrawLayer("ARTWORK")
 		count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 		count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
@@ -133,7 +138,7 @@ local function UpdateBuffAnchors()
 	end
 
 	for index = 1, BUFF_ACTUAL_DISPLAY do
-		StyleBuffs(buttonName, index, false)
+		StyleBuffs(buttonName, index)
 		local buff = _G[buttonName..index]
 		if not buff.consolidated then
 			numBuffs = numBuffs + 1
