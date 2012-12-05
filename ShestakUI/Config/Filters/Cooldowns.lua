@@ -16,7 +16,6 @@ if C.raidcooldown.enable == true then
 		[32182] = 300,	-- Heroism
 		[2825] = 300,	-- Bloodlust
 		[80353] = 300,	-- Time Warp
-		[6346] = 180,	-- Fear Ward
 		[29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem
 		[64901] = 360,	-- Hymn of Hope
