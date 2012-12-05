@@ -175,7 +175,6 @@ local UpdateDebuffFrame = function(rd)
 		end
 
 		local c = DispellColor[debuffType] or DispellColor.none
-		rd:SetBackdropColor(unpack(C.media.backdrop_color))
 		if C.aura.debuff_color_type == true then
 			rd:SetBackdropBorderColor(c[1], c[2], c[3])
 		end

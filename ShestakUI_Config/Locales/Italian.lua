@@ -132,7 +132,7 @@ L_GUI_COMBATTEXT_DK_RUNES = "Mostra la ricarica delle rune dei cavalieri della m
 L_GUI_COMBATTEXT_KILLINGBLOW = "Comunica i tuoi colpi di grazia"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unisce lo spam per danni multipli a più bersagli in un singolo messaggio"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Secondi in cui l'incantesimo/abilità più bersagli è unito in un solo messaggio"
-L_GUI_COMBATTEXT_DISPEL = "Ti comunica le tue dissoluzioni (dispels)"
+L_GUI_COMBATTEXT_DISPEL = "Comunica le tue dissoluzioni (dispels)"
 L_GUI_COMBATTEXT_INTERRUPT = "Comunica le tue interruzioni (interrupts)"
 L_GUI_COMBATTEXT_DIRECTION = "Direzione di scorrimento ('sù' (vai in basso) o 'giù' (vai in alto))"
 

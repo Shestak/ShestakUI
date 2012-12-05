@@ -35,7 +35,7 @@ local function LoadSkin()
 		tab:StripTextures()
 	end
 
-	hooksecurefunc("BlackMarketScrollFrame_Update", function()
+	local function ColorItemName()
 		local buttons = BlackMarketScrollFrame.buttons
 		local offset = HybridScrollFrame_GetOffset(BlackMarketScrollFrame)
 		local numItems = C_BlackMarket.GetNumItems()
@@ -74,7 +74,10 @@ local function LoadSkin()
 				end
 			end
 		end
-	end)
+	end
+	hooksecurefunc("BlackMarketScrollFrame_Update", ColorItemName)
+	BlackMarketScrollFrame:HookScript("OnVerticalScroll", ColorItemName)
+	BlackMarketScrollFrame:HookScript("OnMouseWheel", ColorItemName)
 
 	hooksecurefunc("BlackMarketFrame_UpdateHotItem", function(self)
 		local hotDeal = self.HotDeal
