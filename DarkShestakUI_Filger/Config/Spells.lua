@@ -279,10 +279,6 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
 			-- Buffs
-			-- Eclipse (Lunar)
-			--OLD{spellID = 48518, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Eclipse (Solar)
-			--OLD{spellID = 48517, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shooting Stars
 			{spellID = 93400, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lunar Shower
@@ -812,7 +808,7 @@ C["filger_spells"] = {
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Power
-			--OLD{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1493,12 +1489,6 @@ C["filger_spells"] = {
 			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Focused Will
 			{spellID = 45242, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Prayer of Mending
-			--OLD{spellID = 41635, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Inner Fire
-			--OLD{spellID = 588, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Inner Will
-			--OLD{spellID = 73413, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1526,12 +1516,6 @@ C["filger_spells"] = {
 			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evangelism
 			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Chakra: Sanctuary
-			--OLD{spellID = 81206, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Chakra: Serenity
-			--OLD{spellID = 81208, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Chakra: Chastise
-			--OLD{spellID = 81209, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -1654,8 +1638,6 @@ C["filger_spells"] = {
 			{spellID = 81700, filter = "CD"},
 			-- Holy Word: Chastise
 			{spellID = 88625, filter = "CD"},
-			-- Chakra
-			{spellID = 81206, filter = "CD"},
 			-- Halo
 			{spellID = 120517, filter = "CD"},
 			-- Inner Focus
@@ -3064,8 +3046,6 @@ C["filger_spells"] = {
 			{spellID = 115018, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Lichborne
 			{spellID = 49039, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Bone shield
-			--OLD{spellID = 49222, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Icebound Fortitude
 			{spellID = 48792, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pillar of Frost
@@ -3286,10 +3266,6 @@ C["filger_spells"] = {
 			{spellID = 30823, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Spiritwalker's Grace
 			{spellID = 79206, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Earth Shield
-			--OLD{spellID = 974, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Mana Tide
-			--OLD{spellID = 16191, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Hex
 			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},

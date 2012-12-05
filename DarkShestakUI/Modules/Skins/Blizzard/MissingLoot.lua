@@ -44,14 +44,13 @@ local function LoadSkin()
 	LootHistoryFrame:SetTemplate("Transparent")
 
 	T.SkinCloseButton(LootHistoryFrame.CloseButton)
-	T.SkinCloseButton(LootHistoryFrame.ResizeButton, nil, "v v v v")
+	T.SkinCloseButton(LootHistoryFrame.ResizeButton, nil, " ")
 
 	LootHistoryFrameScrollFrame:GetRegions():Hide()
 	T.SkinScrollBar(LootHistoryFrameScrollFrameScrollBar)
 
 	LootHistoryFrame.ResizeButton:SetTemplate("Default")
 	LootHistoryFrame.ResizeButton:SetWidth(LootHistoryFrame:GetWidth())
-	LootHistoryFrame.ResizeButton:SetHeight(19)
 	LootHistoryFrame.ResizeButton:ClearAllPoints()
 	LootHistoryFrame.ResizeButton:SetPoint("TOP", LootHistoryFrame, "BOTTOM", 0, -1)
 
@@ -64,19 +63,21 @@ local function LoadSkin()
 				local Icon = frame.Icon:GetTexture()
 
 				frame:StripTextures()
-				frame.Icon:SetTexture(Icon)
-				frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 				frame:CreateBackdrop("Default")
 				frame.backdrop:SetPoint("TOPLEFT", frame.Icon, -2, 2)
 				frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Icon, 2, -2)
-				frame.backdrop:SetBackdropColor(0, 0, 0, 0)
+
+				frame.Icon:SetTexture(Icon)
+				frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				frame.Icon:SetParent(frame.backdrop)
 
 				frame.isSkinned = true
 			end
 		end
 	end
 	hooksecurefunc("LootHistoryFrame_FullUpdate", UpdateLoots)
+	LootHistoryFrame:HookScript("OnShow", UpdateLoots)
 
 	-- Master loot frame
 	MasterLooterFrame:StripTextures()

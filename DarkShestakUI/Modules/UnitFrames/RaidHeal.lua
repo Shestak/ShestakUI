@@ -227,18 +227,10 @@ local function Shared(self, unit)
 		self.RaidDebuffs:SetFrameLevel(10)
 		self.RaidDebuffs:SetTemplate("Default")
 
-		self.RaidDebuffs.icon = self.RaidDebuffs:CreateTexture(nil, "ARTWORK")
+		self.RaidDebuffs.icon = self.RaidDebuffs:CreateTexture(nil, "BORDER")
 		self.RaidDebuffs.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		self.RaidDebuffs.icon:SetPoint("TOPLEFT", 2, -2)
 		self.RaidDebuffs.icon:SetPoint("BOTTOMRIGHT", -2, 2)
-
-		if C.aura.show_spiral == true then
-			self.RaidDebuffs.cd = CreateFrame("Cooldown", nil, self.RaidDebuffs)
-			self.RaidDebuffs.cd:SetPoint("TOPLEFT", 2, -2)
-			self.RaidDebuffs.cd:SetPoint("BOTTOMRIGHT", -2, 2)
-			self.RaidDebuffs.cd:SetReverse()
-			self.RaidDebuffs.cd.noOCC = true
-		end
 
 		if C.raidframe.plugins_aura_watch_timer == true then
 			self.RaidDebuffs.time = T.SetFontString(self.RaidDebuffs, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
@@ -251,13 +243,15 @@ local function Shared(self, unit)
 		self.RaidDebuffs.count:SetTextColor(1, 1, 1)
 
 		if C.aura.show_spiral == true then
-			self.RaidDebuffs.overlay = CreateFrame("Frame", nil, self.RaidDebuffs)
-			self.RaidDebuffs.cd:SetFrameLevel(self.RaidDebuffs:GetFrameLevel() + 1)
-			self.RaidDebuffs.overlay:SetFrameLevel(self.RaidDebuffs.cd:GetFrameLevel() + 1)
+			self.RaidDebuffs.cd = CreateFrame("Cooldown", nil, self.RaidDebuffs)
+			self.RaidDebuffs.cd:SetPoint("TOPLEFT", 2, -2)
+			self.RaidDebuffs.cd:SetPoint("BOTTOMRIGHT", -2, 2)
+			self.RaidDebuffs.cd:SetReverse()
+			self.RaidDebuffs.cd.noOCC = true
 			if C.raidframe.plugins_aura_watch_timer == true then
-				self.RaidDebuffs.time:SetParent(self.RaidDebuffs.overlay)
+				self.RaidDebuffs.time:SetParent(self.RaidDebuffs.cd)
 			end
-			self.RaidDebuffs.count:SetParent(self.RaidDebuffs.overlay)
+			self.RaidDebuffs.count:SetParent(self.RaidDebuffs.cd)
 		end
 
 		self.RaidDebuffs.ShowDispellableDebuff = C.raidframe.plugins_debuffhighlight_icon
