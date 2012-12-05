@@ -40,7 +40,7 @@ if C.enemycooldown.enable == true then
 		[115781] = 24,	-- Optical Blast
 		[102060] = 40,	-- Disrupting Shout
 		[15487] = 45,	-- Silence
-		[78675] = 60,	-- Solar Bream
+		[78675] = 60,	-- Solar Beam
 		[47476] = 120,	-- Strangulate
 		-- Crowd Controls
 		[115078] = 15,	-- Paralysis
