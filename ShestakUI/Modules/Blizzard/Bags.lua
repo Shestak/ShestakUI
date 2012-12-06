@@ -167,7 +167,7 @@ function Stuffing:SlotUpdate(b)
 		b.frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
 
-	if b.Cooldown then
+	if b.Cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
 		local start, duration, enable = GetContainerItemCooldown(b.bag, b.slot)
 		CooldownFrame_SetTimer(b.Cooldown, start, duration, enable)
 	end
@@ -221,7 +221,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	if slot > 3 then
 		ret.slot = slot
 		slot = slot - 4
-		ret.frame = CreateFrame("Button", "StuffingBBag"..slot, p, "BankItemButtonBagTemplate")
+		ret.frame = CreateFrame("CheckButton", "StuffingBBag"..slot, p, "BankItemButtonBagTemplate")
 		ret.frame:SetID(slot + 4)
 		table.insert(self.bagframe_buttons, ret)
 
@@ -232,7 +232,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 			ret.frame.tooltipText = ""
 		end
 	else
-		ret.frame = CreateFrame("Button", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
+		ret.frame = CreateFrame("CheckButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
 		ret.slot = slot
 		table.insert(self.bagframe_buttons, ret)
 	end
@@ -240,6 +240,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	ret.frame:SetTemplate("Default")
 	ret.frame:StyleButton()
 	ret.frame:SetNormalTexture("")
+	ret.frame:SetCheckedTexture("")
 
 	local t = _G[ret.frame:GetName().."IconTexture"]
 	t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
