@@ -70,6 +70,8 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Helmbreaker Medallion (Crit, Use)
+			{spellID = 136084, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lei Shin's Final Orders (Strength, Proc)
@@ -310,6 +312,8 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Arrowflight Medallion (Crit, Use)
+			{spellID = 136086, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Bandit Figurine (Haste, Use)
@@ -321,6 +325,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Agility, Proc)
 			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Shock-Charger Medallion Figurine (Intellect, Use)
+			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Magistrate Figurine (Crit, Use)
 			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
@@ -566,6 +572,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Arrowflight Medallion (Crit, Use)
+			{spellID = 136086, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Bandit Figurine (Haste, Use)
@@ -836,6 +844,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Shock-Charger Medallion Figurine (Intellect, Use)
+			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Magistrate Figurine (Crit, Use)
 			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
@@ -1083,6 +1093,8 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Arrowflight Medallion (Crit, Use)
+			{spellID = 136086, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Bandit Figurine (Haste, Use)
@@ -1094,6 +1106,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Agility, Proc)
 			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Shock-Charger Medallion Figurine (Intellect, Use)
+			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Magistrate Figurine (Crit, Use)
 			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
@@ -1309,6 +1323,8 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Helmbreaker Medallion (Crit, Use)
+			{spellID = 136084, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lei Shin's Final Orders (Strength, Proc)
@@ -1322,6 +1338,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Strength, Proc)
 			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Shock-Charger Medallion Figurine (Intellect, Use)
+			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Magistrate Figurine (Crit, Use)
 			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
@@ -1524,6 +1542,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Shock-Charger Medallion Figurine (Intellect, Use)
+			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Magistrate Figurine (Crit, Use)
 			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
@@ -1784,6 +1804,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Arrowflight Medallion (Crit, Use)
+			{spellID = 136086, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Bandit Figurine (Haste, Use)
@@ -1998,6 +2020,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Arrowflight Medallion (Crit, Use)
+			{spellID = 136086, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Terror in the Mists (Crit, Proc)
 			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Bandit Figurine (Haste, Use)
@@ -2009,6 +2033,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Agility, Proc)
 			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Shock-Charger Medallion Figurine (Intellect, Use)
+			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Magistrate Figurine (Crit, Use)
 			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
@@ -2235,6 +2261,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
+			-- Shock-Charger Medallion Figurine (Intellect, Use)
+			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jade Magistrate Figurine (Crit, Use)
 			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Spell Power, Use)
@@ -2476,6 +2504,8 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Helmbreaker Medallion (Crit, Use)
+			{spellID = 136084, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmist Vortex (Haste, Proc)
 			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lei Shin's Final Orders (Strength, Proc)

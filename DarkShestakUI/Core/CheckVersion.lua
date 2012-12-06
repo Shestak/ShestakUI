@@ -11,11 +11,11 @@ local check = function(self, event, prefix, message, channel, sender)
 			self:UnregisterEvent("CHAT_MSG_ADDON")
 		end
 	else
-		if not IsInGroup(LE_PARTY_CATEGORY_HOME) and IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
+		if (not IsInGroup(LE_PARTY_CATEGORY_HOME) or not IsInRaid(LE_PARTY_CATEGORY_HOME)) and IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
 			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "INSTANCE_CHAT")
-		elseif IsInRaid() then
+		elseif IsInRaid(LE_PARTY_CATEGORY_HOME) then
 			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "RAID")
-		elseif IsInGroup() then
+		elseif IsInGroup(LE_PARTY_CATEGORY_HOME) then
 			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "PARTY")
 		elseif IsInGuild() then
 			SendAddonMessage("DarkShestakUIVer", tonumber(T.version), "GUILD")
