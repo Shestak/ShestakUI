@@ -41,14 +41,6 @@ _G.CHAT_FLAG_DND = "|cffFF0000"..L_CHAT_DND.."|r "
 _G.CHAT_FLAG_GM = "|cff4154F5"..L_CHAT_GM.."|r "
 _G.ERR_FRIEND_ONLINE_SS = "|Hplayer:%s|h[%s]|h "..L_CHAT_COME_ONLINE
 _G.ERR_FRIEND_OFFLINE_S = "[%s] "..L_CHAT_GONE_OFFLINE
-_G.ACHIEVEMENT_BROADCAST = "%s! %s!"
-_G.ACHIEVEMENT_BROADCAST_SELF = "%s!"
-_G.PLAYER_SERVER_FIRST_ACHIEVEMENT = "|Hplayer:%s|h[%s]|h! $a!"
-_G.SERVER_FIRST_ACHIEVEMENT = "%s! $a!"
-if T.client == "ruRU" then
-	_G.FACTION_STANDING_DECREASED = "Отношение |3-7(%s) -%d."
-	_G.FACTION_STANDING_INCREASED = "Отношение |3-7(%s) +%d."
-end
 
 -- Hide friends micro button
 FriendsMicroButton:Kill()
