@@ -33,6 +33,15 @@ T.MoverFrames = {
 
 local moving = false
 local movers = {}
+local placed = {
+	"Butsu",
+	"UIAltPowerBar",
+	"LootHistoryFrame",
+	"stArchaeologyFrame",
+	"StuffingFrameBags",
+	"StuffingFrameBank",
+	"ExtraActionBarFrame",
+}
 
 local SetPosition = function(mover)
 	local ap, _, rp, x, y = mover:GetPoint()
@@ -88,6 +97,11 @@ local InitMove = function(msg)
 	if msg and (msg == "reset" or msg == "куыуе") then
 		SavedPositions = {}
 		SavedOptionsPerChar.UFPos = {}
+		for i, v in pairs(placed) do
+			if _G[v] then
+				_G[v]:SetUserPlaced(false)
+			end
+		end
 		ReloadUI()
 		return
 	end
