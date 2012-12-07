@@ -130,7 +130,7 @@ local CreateBar = function()
 end
 
 local StartTimer = function(name, spellId)
-	local spell, rank, icon = GetSpellInfo(spellId)
+	local spell, _, icon = GetSpellInfo(spellId)
 	for _, v in pairs(bars) do
 		if v.name == name and v.spell == spell then
 			return
@@ -157,8 +157,8 @@ local StartTimer = function(name, spellId)
 		bar:SetStatusBarColor(0.3, 0.7, 0.3)
 		bar.bg:SetVertexColor(0.3, 0.7, 0.3, 0.2)
 	end
-	bar:SetScript("OnUpdate", BarUpdate)
 	bar:EnableMouse(true)
+	bar:SetScript("OnUpdate", BarUpdate)
 	bar:SetScript("OnEnter", OnEnter)
 	bar:SetScript("OnLeave", OnLeave)
 	bar:SetScript("OnMouseDown", OnMouseDown)
@@ -195,7 +195,6 @@ addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 SlashCmdList.RaidCD = function()
 	StartTimer(UnitName("player"), 20484)	-- Rebirth
 	StartTimer(UnitName("player"), 20707)	-- Soulstone
-	StartTimer(UnitName("player"), 6346)	-- Fear Ward
 	StartTimer(UnitName("player"), 29166)	-- Innervate
 	StartTimer(UnitName("player"), 32182)	-- Heroism
 	StartTimer(UnitName("player"), 2825)	-- Bloodlust
