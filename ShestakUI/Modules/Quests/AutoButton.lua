@@ -67,13 +67,13 @@ AutoButton.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 AutoButton.c = AutoButton:CreateFontString(nil, "OVERLAY")
 AutoButton.c:SetFont(C.media.pixel_font, C.media.pixel_font_size * 2, C.media.pixel_font_style)
 AutoButton.c:SetTextColor(1, 1, 1, 1)
-AutoButton.c:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", 0.5, 0)
+AutoButton.c:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", 1, -2)
 AutoButton.c:SetJustifyH("CENTER")
 
 -- Cooldown
-AutoButton.Cooldown = CreateFrame("Cooldown", nil, AutoButton)
-AutoButton.Cooldown:SetPoint("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
-AutoButton.Cooldown:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
+AutoButton.cd = CreateFrame("Cooldown", nil, AutoButton)
+AutoButton.cd:SetPoint("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
+AutoButton.cd:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
 
 local Scanner = CreateFrame("Frame")
 Scanner:RegisterEvent("BAG_UPDATE")
@@ -95,7 +95,7 @@ Scanner:SetScript("OnEvent", function()
 					AutoButton.t:SetTexture(itemIcon)
 
 					-- Get the count if there is one
-					if count and count ~= 1 then
+					if count and count > 1 then
 						AutoButton.c:SetText(count)
 					else
 						AutoButton.c:SetText("")
@@ -103,8 +103,17 @@ Scanner:SetScript("OnEvent", function()
 
 					AutoButton:SetScript("OnUpdate", function(self, elapsed)
 						local cd_start, cd_finish, cd_enable = GetContainerItemCooldown(b, s)
-						CooldownFrame_SetTimer(AutoButton.Cooldown, cd_start, cd_finish, cd_enable)
+						CooldownFrame_SetTimer(AutoButton.cd, cd_start, cd_finish, cd_enable)
 					end)
+
+					AutoButton:SetScript("OnEnter", function(self)
+						GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
+						GameTooltip:SetHyperlink(format("item:%s", itemID))
+						GameTooltip:Show()
+					end)
+
+					AutoButton:SetScript("OnLeave", GameTooltip_Hide)
+
 					AutoButtonShow(itemName)
 				end
 			end
@@ -124,8 +133,17 @@ Scanner:SetScript("OnEvent", function()
 
 				AutoButton:SetScript("OnUpdate", function(self, elapsed)
 					local cd_start, cd_finish, cd_enable = GetInventoryItemCooldown("player", w)
-					CooldownFrame_SetTimer(AutoButton.Cooldown, cd_start, cd_finish, cd_enable)
+					CooldownFrame_SetTimer(AutoButton.cd, cd_start, cd_finish, cd_enable)
 				end)
+
+				AutoButton:SetScript("OnEnter", function(self)
+					GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
+					GameTooltip:SetHyperlink(format("item:%s", EquipedItems))
+					GameTooltip:Show()
+				end)
+
+				AutoButton:SetScript("OnLeave", GameTooltip_Hide)
+
 				AutoButtonShow(itemName)
 			end
 		end
