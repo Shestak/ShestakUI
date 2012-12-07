@@ -2,11 +2,11 @@
 ## Title: |cff1784d1Dark ShestakUI Filger|r
 ## Notes: Class timers for ShestakUI
 ## Author: Nils Ruesch
-## Version: 0.62
+## Version: 0.63
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: DarkShestakUI
-## X-Curse-Packaged-Version: 0.62
+## X-Curse-Packaged-Version: 0.63
 ## X-Curse-Project-Name: Dark ShestakUI
 ## X-Curse-Project-ID: dark-shestakui
 ## Website: http://shestak.org

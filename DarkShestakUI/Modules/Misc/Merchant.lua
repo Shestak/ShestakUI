@@ -144,6 +144,12 @@ button:SetScript("OnClick", function()
 		local id = tonumber(string.match(link, "item:(%d+):"))
 		for bag, count in pairs(shopping) do
 			if id == bag and count > 0 then
+				if count > 20 then
+					while count > 20 do
+						BuyMerchantItem(i, 20)
+						count = count - 20
+					end
+				end
 				BuyMerchantItem(i, count)
 			end
 		end
