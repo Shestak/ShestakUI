@@ -38,6 +38,7 @@ T.ABItems = {
 	78947,	-- Silken Rope
 	83134,	-- Bronze Claws
 	93180,	-- Re-Configured Remote
+	92019,	-- The Bilgewater Molotov
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
