@@ -133,10 +133,8 @@ end)
 ----------------------------------------------------------------------------------------
 local n = FriendsFrame.numTabs + 1
 local gtframe = CreateFrame("Button", "FriendsFrameTab"..n, FriendsFrame, "FriendsFrameTabTemplate")
-gtframe:SetID(n)
 gtframe:SetText(GUILD)
 gtframe:SetPoint("LEFT", _G["FriendsFrameTab"..n - 1], "RIGHT", -15, 0)
-gtframe:RegisterForClicks("AnyUp")
 gtframe:SetScript("OnClick", function()
 	if IsInGuild() then
 		if not GuildFrame then
@@ -152,8 +150,6 @@ gtframe:SetScript("OnClick", function()
 		LookingForGuildFrame_Toggle()
 	end
 end)
-PanelTemplates_SetNumTabs(FriendsFrame, n)
-PanelTemplates_EnableTab(FriendsFrame, n)
 
 ----------------------------------------------------------------------------------------
 --	Misclicks for some popups

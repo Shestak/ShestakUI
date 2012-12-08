@@ -67,6 +67,7 @@
 	<Script file="Modules\Misc\GemCounter.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\HealerIconNameplate.lua"/>
+	<Script file="Modules\Misc\HideButton.lua"/>
 	<Script file="Modules\Misc\LFGQueueTimer.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
 	<Script file="Modules\Misc\Merchant.lua"/>
@@ -82,7 +83,7 @@
 	<Script file="Modules\Misc\SlotItemLevel.lua"/>
 	<Script file="Modules\Misc\SumAucBuyouts.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
-	<Script file="Modules\Misc\HideButton.lua"/>
+	<Script file="Modules\Misc\TrainAll.lua"/>
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>

@@ -11,6 +11,13 @@ local slots = {
 	"LegsSlot", "FeetSlot", "Finger0Slot", "Finger1Slot", "Trinket0Slot", "Trinket1Slot"
 }
 
+local upgrades = {
+	["0"] = 0, ["1"] = 8, ["373"] = 4, ["374"] = 8, ["375"] = 4, ["376"] = 4,
+	["377"] = 4, ["379"] = 4, ["380"] = 4, ["445"] = 0, ["446"] = 4, ["447"] = 8,
+	["451"] = 0, ["452"] = 8, ["453"] = 0, ["454"] = 4, ["455"] = 8, ["456"] = 0,
+	["457"] = 8, ["458"] = 0, ["459"] = 4, ["460"] = 8, ["461"] = 12, ["462"] = 16
+}
+
 local function CreateButtonsText(frame)
 	for _, slot in pairs(slots) do
 		local button = _G[frame..slot]
@@ -40,13 +47,14 @@ local function UpdateButtonsText(frame)
 			local oldilevel = text:GetText()
 			local ilevel = select(4, GetItemInfo(item))
 			local heirloom = select(3, GetItemInfo(item))
+			local upgrade = item:match(":(%d+)\124h%[")
 
 			if ilevel then
 				if ilevel ~= oldilevel then
 					if heirloom == 7 then
 						text:SetText("")
 					else
-						text:SetText("|cFFFFFF00"..ilevel)
+						text:SetText("|cFFFFFF00"..ilevel + upgrades[upgrade])
 					end
 				end
 			else
