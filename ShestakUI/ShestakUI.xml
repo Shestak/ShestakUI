@@ -82,6 +82,7 @@
 	<Script file="Modules\Misc\SlotItemLevel.lua"/>
 	<Script file="Modules\Misc\SumAucBuyouts.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
+	<Script file="Modules\Misc\TrainAll.lua"/>
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>
