@@ -36,7 +36,7 @@ MinimapZoomOut:Hide()
 -- Hide Voice Chat Frame
 MiniMapVoiceChatFrame:Kill()
 VoiceChatTalkers:Kill()
-VoiceChat_Toggle = T.dummy
+ChannelFrameAutoJoin:Kill()
 
 -- Hide North texture at top
 MinimapNorthTag:SetTexture(nil)

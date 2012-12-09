@@ -110,10 +110,10 @@ local function UpdateTab(object, name, rank, texture)
 end
 
 local function GetProfessionRank(currentSkill)
-	for index = 1, #ranks do
+	for index = #ranks, 1, -1 do
 		local requiredSkill, title = ranks[index][1], ranks[index][2]
 
-		if currentSkill <= requiredSkill then
+		if currentSkill >= requiredSkill then
 			return title
 		end
 	end

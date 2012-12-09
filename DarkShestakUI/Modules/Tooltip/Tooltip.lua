@@ -53,7 +53,7 @@ GameTooltipStatusBar:SetPoint("TOPRIGHT", GameTooltip, "BOTTOMRIGHT", -2, 6)
 local ricon = GameTooltip:CreateTexture("GameTooltipRaidIcon", "OVERLAY")
 ricon:SetHeight(18)
 ricon:SetWidth(18)
-ricon:SetPoint("BOTTOM", "GameTooltip", "TOP", 0, 5)
+ricon:SetPoint("BOTTOM", GameTooltip, "TOP", 0, 5)
 
 GameTooltip:HookScript("OnHide", function(self)
 	ricon:SetTexture(nil)
@@ -93,7 +93,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Unit tooltip styling
 ----------------------------------------------------------------------------------------
-aTooltip = CreateFrame("Frame", "aTooltip", UIParent)
+local aTooltip = CreateFrame("Frame", "aTooltip", UIParent)
 aTooltip:RegisterEvent("ADDON_LOADED")
 aTooltip:SetScript("OnEvent", function(self, event, addon)
 	if addon ~= "DarkShestakUI" then return end
@@ -318,9 +318,7 @@ end
 --	Adds guild rank to tooltips(GuildRank by Meurtcriss)
 ----------------------------------------------------------------------------------------
 if C.tooltip.rank == true then
-	local GTT = GameTooltip
-	-- HOOK: OnTooltipSetUnit
-	GTT:HookScript("OnTooltipSetUnit", function(self, ...)
+	GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
 		-- Get the unit
 		local _, unit = self:GetUnit()
 		if not unit then
