@@ -2990,8 +2990,6 @@ C["filger_spells"] = {
 			{spellID = 30283, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Axe Toss (Felguard)
 			{spellID = 89766, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Aftermath
-			{spellID = 85387, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 118699, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
