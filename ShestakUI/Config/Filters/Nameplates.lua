@@ -16,6 +16,8 @@ T.DebuffWhiteList = {
 	[SpellName(115001)] = true,	-- Remorseless Winter
 	[SpellName(108194)] = true,	-- Asphyxiate
 	[SpellName(47476)] = true,	-- Strangulate
+	[SpellName(59879)] = true,	-- Blood Plague
+	[SpellName(59921)] = true,	-- Frost Fever
 	-- Druid
 	[SpellName(33786)] = true,	-- Cyclone
 	[SpellName(2637)] = true,	-- Hibernate
