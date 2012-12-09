@@ -87,8 +87,7 @@ end
 
 -- Create aura icons
 local function CreateAuraIcon(frame)
-	local button = CreateFrame("Frame", nil, frame)
-	button:SetParent(frame.hp)
+	local button = CreateFrame("Frame", nil, frame.hp)
 	button:SetWidth(C.nameplate.auras_size)
 	button:SetHeight(C.nameplate.auras_size)
 
@@ -177,10 +176,10 @@ local function UpdateCastbar(frame)
 	frame:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
 	frame:SetPoint("TOP", frame:GetParent().hp, "BOTTOM", 0, -8)
 	frame:GetStatusBarTexture():SetHorizTile(true)
-	frame.cbbg:SetTexture(0.75, 0.75, 0.25, 0.2)
+	frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
 	if frame.shield:IsShown() then
 		frame:SetStatusBarColor(0.78, 0.25, 0.25)
-		frame.cbbg:SetTexture(0.78, 0.25, 0.25, 0.2)
+		frame.bg:SetTexture(0.78, 0.25, 0.25, 0.2)
 	end
 end
 
@@ -223,11 +222,12 @@ local function OnHide(frame)
 	frame.hp:SetScale(1)
 	frame.overlay:Hide()
 	frame.cb:Hide()
+	frame.cb:SetScale(1)
 	frame.unit = nil
 	frame.guid = nil
-	frame.hasClass = nil
+	frame.isClass = nil
 	frame.isFriendly = nil
-	frame.isTagged = nil
+	frame.isTapped = nil
 	frame.hp.rcolor = nil
 	frame.hp.gcolor = nil
 	frame.hp.bcolor = nil
@@ -236,7 +236,6 @@ local function OnHide(frame)
 			icon:Hide()
 		end
 	end
-
 	frame:SetScript("OnUpdate", nil)
 end
 
@@ -251,7 +250,7 @@ local function Colorize(frame)
 			b = b - 0.01
 		end
 		if RAID_CLASS_COLORS[class].r == r and RAID_CLASS_COLORS[class].g == g and RAID_CLASS_COLORS[class].b == b then
-			frame.hasClass = true
+			frame.isClass = true
 			frame.isFriendly = false
 			if C.nameplate.class_icons == true then
 				texcoord = CLASS_BUTTONS[class]
@@ -260,18 +259,18 @@ local function Colorize(frame)
 			end
 			frame.hp.name:SetTextColor(unpack(T.oUF_colors.class[class]))
 			frame.hp:SetStatusBarColor(unpack(T.oUF_colors.class[class]))
-			frame.hp.hpbg:SetTexture(T.oUF_colors.class[class][1], T.oUF_colors.class[class][2], T.oUF_colors.class[class][3], 0.2)
+			frame.hp.bg:SetTexture(T.oUF_colors.class[class][1], T.oUF_colors.class[class][2], T.oUF_colors.class[class][3], 0.2)
 			return
 		end
 	end
 
-	frame.isTagged = false
-	frame.hasClass = false
+	frame.isTapped = false
+	frame.isClass = false
 
 	if r + b + b > 2 then	-- Tapped
 		r, g, b = 0.6, 0.6, 0.6
 		frame.isFriendly = false
-		frame.isTagged = true
+		frame.isTapped = true
 	elseif g + b == 0 then	-- Hostile
 		r, g, b = unpack(T.oUF_colors.reaction[1])
 		frame.isFriendly = false
@@ -289,7 +288,7 @@ local function Colorize(frame)
 	end
 
 	if C.nameplate.class_icons == true then
-		if frame.hasClass == true then
+		if frame.isClass == true then
 			frame.class.Glow:Show()
 		else
 			frame.class.Glow:Hide()
@@ -298,7 +297,7 @@ local function Colorize(frame)
 	end
 
 	frame.hp:SetStatusBarColor(r, g, b)
-	frame.hp.hpbg:SetTexture(r, g, b, 0.2)
+	frame.hp.bg:SetTexture(r, g, b, 0.2)
 	frame.hp.name:SetTextColor(r, g, b)
 end
 
@@ -309,6 +308,10 @@ local function UpdateObjects(frame)
 	-- Set scale
 	while frame.hp:GetEffectiveScale() < 1 do
 		frame.hp:SetScale(frame.hp:GetScale() + 0.01)
+	end
+
+	while frame.cb:GetEffectiveScale() < 1 do
+		frame.cb:SetScale(frame.cb:GetScale() + 0.01)
 	end
 
 	-- Have to reposition this here so it doesnt resize after being hidden
@@ -337,7 +340,7 @@ local function UpdateObjects(frame)
 	-- Setup level text
 	local level, elite, mylevel = tonumber(frame.hp.oldlevel:GetText()), frame.hp.elite:IsShown(), UnitLevel("player")
 	frame.hp.level:ClearAllPoints()
-	if C.nameplate.class_icons == true and frame.hasClass == true then
+	if C.nameplate.class_icons == true and frame.isClass == true then
 		frame.hp.level:SetPoint("RIGHT", frame.hp.name, "LEFT", -2, 0)
 	else
 		frame.hp.level:SetPoint("RIGHT", frame.hp, "LEFT", -2, 0)
@@ -398,9 +401,9 @@ local function SkinObjects(frame, nameFrame)
 	hp.name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 	hp.oldname = oldname
 
-	hp.hpbg = hp:CreateTexture(nil, "BORDER")
-	hp.hpbg:SetAllPoints(hp)
-	hp.hpbg:SetTexture(1, 1, 1, 0.2)
+	hp.bg = hp:CreateTexture(nil, "BORDER")
+	hp.bg:SetAllPoints(hp)
+	hp.bg:SetTexture(1, 1, 1, 0.2)
 
 	hp:HookScript("OnShow", UpdateObjects)
 	frame.hp = hp
@@ -413,9 +416,9 @@ local function SkinObjects(frame, nameFrame)
 	cb:SetStatusBarTexture(C.media.texture)
 	CreateVirtualFrame(cb)
 
-	cb.cbbg = cb:CreateTexture(nil, "BORDER")
-	cb.cbbg:SetAllPoints(cb)
-	cb.cbbg:SetTexture(0.75, 0.75, 0.25, 0.2)
+	cb.bg = cb:CreateTexture(nil, "BORDER")
+	cb.bg:SetAllPoints(cb)
+	cb.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
 
 	-- Create Cast Time Text
 	cb.time = cb:CreateFontString(nil, "ARTWORK")
@@ -460,8 +463,6 @@ local function SkinObjects(frame, nameFrame)
 	CreateVirtualFrame(cb, cb.icon)
 
 	cb.shield = cbshield
-	cbshield:ClearAllPoints()
-	cbshield:SetPoint("TOP", cb, "BOTTOM")
 	cb:HookScript("OnShow", UpdateCastbar)
 	cb:HookScript("OnSizeChanged", OnSizeChanged)
 	cb:HookScript("OnValueChanged", OnValueChanged)
@@ -516,11 +517,9 @@ local function SkinObjects(frame, nameFrame)
 end
 
 local function UpdateThreat(frame, elapsed)
-	frame.hp:Show()
-
 	Colorize(frame)
 
-	if frame.hasClass or frame.isTagged then return end
+	if frame.isClass or frame.isTapped then return end
 
 	if C.nameplate.enhance_threat ~= true then
 		if frame.threat:IsShown() then
@@ -539,15 +538,15 @@ local function UpdateThreat(frame, elapsed)
 				-- No Threat
 				if T.Role == "Tank" then
 					frame.hp:SetStatusBarColor(badR, badG, badB)
-					frame.hp.hpbg:SetTexture(badR, badG, badB, 0.2)
+					frame.hp.bg:SetTexture(badR, badG, badB, 0.2)
 				else
 					frame.hp:SetStatusBarColor(goodR, goodG, goodB)
-					frame.hp.hpbg:SetTexture(goodR, goodG, goodB, 0.2)
+					frame.hp.bg:SetTexture(goodR, goodG, goodB, 0.2)
 				end
 			else
 				-- Set colors to their original, not in combat
 				frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
-				frame.hp.hpbg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.2)
+				frame.hp.bg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.2)
 			end
 		else
 			-- Ok we either have threat or we're losing/gaining it
@@ -556,15 +555,15 @@ local function UpdateThreat(frame, elapsed)
 				-- Have Threat
 				if T.Role == "Tank" then
 					frame.hp:SetStatusBarColor(goodR, goodG, goodB)
-					frame.hp.hpbg:SetTexture(goodR, goodG, goodB, 0.2)
+					frame.hp.bg:SetTexture(goodR, goodG, goodB, 0.2)
 				else
 					frame.hp:SetStatusBarColor(badR, badG, badB)
-					frame.hp.hpbg:SetTexture(badR, badG, badB, 0.2)
+					frame.hp.bg:SetTexture(badR, badG, badB, 0.2)
 				end
 			else
 				-- Losing/Gaining Threat
 				frame.hp:SetStatusBarColor(transitionR, transitionG, transitionB)
-				frame.hp.hpbg:SetTexture(transitionR, transitionG, transitionB, 0.2)
+				frame.hp.bg:SetTexture(transitionR, transitionG, transitionB, 0.2)
 			end
 		end
 	end
@@ -607,7 +606,7 @@ local function ShowHealth(frame, ...)
 	end
 
 	-- Setup frame shadow to change depending on enemy players health, also setup targetted unit to have white shadow
-	if frame.hasClass == true or frame.isFriendly == true then
+	if frame.isClass == true or frame.isFriendly == true then
 		if d <= 50 and d >= 20 then
 			SetVirtualBorder(frame.hp, 1, 1, 0)
 		elseif d < 20 then
@@ -615,7 +614,7 @@ local function ShowHealth(frame, ...)
 		else
 			SetVirtualBorder(frame.hp, unpack(C.media.border_color))
 		end
-	elseif (frame.hasClass ~= true and frame.isFriendly ~= true) and C.nameplate.enhance_threat == true then
+	elseif (frame.isClass ~= true and frame.isFriendly ~= true) and C.nameplate.enhance_threat == true then
 		SetVirtualBorder(frame.hp, unpack(C.media.border_color))
 	end
 
