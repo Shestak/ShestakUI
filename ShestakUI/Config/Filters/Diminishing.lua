@@ -113,7 +113,6 @@ T.DiminishingSpells = function()
 		-- Random Stuns
 		[113953] = {"rndstun"},		-- Paralysis (Poison)
 		[77505] = {"rndstun"},		-- Earthquake
-		[85387] = {"rndstun"},		-- Aftermath
 		[118895] = {"rndstun"},		-- Dragon Roar
 
 		-- Silences
