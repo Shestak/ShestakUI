@@ -12,7 +12,7 @@ function clcprot:CreateButton(name, size, point, parent, pointParent, offsetx, o
 	clcprotFrame:SetScale(1)
 	clcprotFrame.SetScale = T.dummy
 
-	name = "clcprot" .. name
+	name = "clcprot"..name
 	local button
 	if isChecked then
 		button = CreateFrame("CheckButton", name, parent)

@@ -210,7 +210,7 @@ function stArch:OnLoad(self)
 	-------------------------------------------------------------
 	-- Construct artifact info table
 	for i = 1, 12 do
-		stArch["artifactInfo"][i] = { }
+		stArch["artifactInfo"][i] = {}
 	end
 
 	Loaded = true

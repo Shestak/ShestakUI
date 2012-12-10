@@ -12,7 +12,7 @@ function clcret:CreateButton(name, size, point, parent, pointParent, offsetx, of
 	clcretFrame:SetScale(1)
 	clcretFrame.SetScale = T.dummy
 
-	name = "clcret" .. name
+	name = "clcret"..name
 	local button
 	if isChecked then
 		button = CreateFrame("CheckButton", name, parent)

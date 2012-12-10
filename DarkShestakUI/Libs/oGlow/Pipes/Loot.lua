@@ -35,4 +35,4 @@ local disable = function(self)
 	self:UnregisterEvent("LOOT_SLOT_CHANGED", update)
 end
 
-oGlow:RegisterPipe("loot", enable, disable, update, "Loot frame", nil)
+oGlow:RegisterPipe("loot", enable, disable, update, "Loot frame")

@@ -17,7 +17,7 @@ local function GetLinkColor(data)
 	elseif type == "battlepet" then
 		if arg3 ~= -1 then
 			local _, _, _, hex = GetItemQualityColor(arg3)
-			return "|c" .. hex
+			return "|c"..hex
 		else
 			return "|cffffd200"
 		end
@@ -46,7 +46,7 @@ end
 local function AddLinkColors(self, event, msg, ...)
 	local data = string.match(msg, "|H(.-)|h(.-)|h")
 	if data then
-		local newmsg = string.gsub(msg, "|H(.-)|h(.-)|h", GetLinkColor(data) .. "|H%1|h%2|h|r")
+		local newmsg = string.gsub(msg, "|H(.-)|h(.-)|h", GetLinkColor(data).."|H%1|h%2|h|r")
 		return false, newmsg, ...
 	else
 		return false, msg, ...

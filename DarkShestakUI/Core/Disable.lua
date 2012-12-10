@@ -109,7 +109,7 @@ if IsAddOnLoaded("Doom_CooldownPulse") then
 	C.pulsecooldown.enable = false
 end
 
-if IsAddOnLoaded("GnomishVendorShrinker") then
+if IsAddOnLoaded("GnomishVendorShrinker") or IsAddOnLoaded("AlreadyKnown") then
 	C.misc.already_known = false
 end
 

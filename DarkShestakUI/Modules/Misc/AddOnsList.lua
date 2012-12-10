@@ -264,7 +264,7 @@ function AddonManager:LoadProfileWindow()
 end
 
 function AddonManager:LoadWindow()
-	if AddonManager.Loaded then AddonManager:Show() return  end
+	if AddonManager.Loaded then AddonManager:Show() return end
 	local window = AddonManager
 	local header = window.header
 

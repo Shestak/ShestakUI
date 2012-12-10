@@ -1,16 +1,3 @@
-local function argcheck(value, num, ...)
-	assert(type(num) == "number", "Bad argument #2 to 'argcheck' (number expected, got "..type(num)..")")
-
-	for i = 1, select("#", ...) do
-		if type(value) == select(i, ...) then return end
-	end
-
-	local types = strjoin(", ", ...)
-	local name = string.match(debugstack(2,2,0), ": in function [`<](.-)['>]")
-	error(("Bad argument #%d to '%s' (%s expected, got %s"):format(num, name, types, type(value)), 3)
-end
-
-local print = function(...) print("|cff33ff99oGlow:|r ", ...) end
 local error = function(...) print("|cffff0000Error:|r "..string.format(...)) end
 
 local pipesTable = {}
@@ -49,8 +36,6 @@ end
 -- Event API
 local RegisterEvent = oGlow.RegisterEvent
 function oGlow:RegisterEvent(event, func)
-	argcheck(event, 2, "string")
-
 	if type(func) == "string" and type(self[func]) == "function" then
 		func = self[func]
 	end
@@ -81,8 +66,6 @@ end
 
 local UnregisterEvent = oGlow.UnregisterEvent
 function oGlow:UnregisterEvent(event, func)
-	argcheck(event, 2, "string")
-
 	local curev = self[event]
 	if type(curev) == "table" and func then
 		for k, infunc in next, curev do
@@ -108,14 +91,7 @@ oGlow:SetScript("OnEvent", function(self, event, ...)
 end)
 
 -- Pipe API
-function oGlow:RegisterPipe(pipe, enable, disable, update, name, desc)
-	argcheck(pipe, 2, "string")
-	argcheck(enable, 3, "function")
-	argcheck(disable, 4, "function", "nil")
-	argcheck(update, 5, "function")
-	argcheck(name, 6, "string", "nil")
-	argcheck(desc, 7, "string", "nil")
-
+function oGlow:RegisterPipe(pipe, enable, disable, update, name)
 	if pipesTable[pipe] then
 		return nil, string.format("Pipe [%s] is already registered.")
 	else
@@ -126,7 +102,6 @@ function oGlow:RegisterPipe(pipe, enable, disable, update, name, desc)
 			disable = disable;
 			name = name;
 			update = update;
-			desc = desc;
 		}
 	end
 
@@ -137,7 +112,7 @@ do
 	local function iter(_, n)
 		local n, t = next(pipesTable, n)
 		if t then
-			return n, t.isActive, t.name, t.desc
+			return n, t.isActive, t.name
 		end
 	end
 
@@ -147,8 +122,6 @@ do
 end
 
 function oGlow:EnablePipe(pipe)
-	argcheck(pipe, 2, "string")
-
 	local ref = pipesTable[pipe]
 	if ref and not ref.isActive then
 		ref.enable(self)
@@ -159,8 +132,6 @@ function oGlow:EnablePipe(pipe)
 end
 
 function oGlow:DisablePipe(pipe)
-	argcheck(pipe, 2, "string")
-
 	local ref = pipesTable[pipe]
 	if ref and ref.isActive then
 		if ref.disable then ref.disable(self) end
@@ -171,14 +142,10 @@ function oGlow:DisablePipe(pipe)
 end
 
 function oGlow:IsPipeEnabled(pipe)
-	argcheck(pipe, 2, "string")
-
 	return pipesTable[pipe].isActive
 end
 
 function oGlow:UpdatePipe(pipe)
-	argcheck(pipe, 2, "string")
-
 	local ref = pipesTable[pipe]
 	if ref and ref.isActive then
 		ref.update(self)
@@ -192,14 +159,9 @@ function oGlow:GetNumPipes()
 end
 
 -- Filter API
-function oGlow:RegisterFilter(name, type, filter, desc)
-	argcheck(name, 2, "string")
-	argcheck(type, 3, "string")
-	argcheck(filter, 4, "function")
-	argcheck(desc, 5, "string", "nil")
-
+function oGlow:RegisterFilter(name, type, filter)
 	if filtersTable[name] then return nil, "Filter function is already registered." end
-	filtersTable[name] = {type, filter, name, desc}
+	filtersTable[name] = {type, filter, name}
 
 	numFilters = numFilters + 1
 
@@ -220,9 +182,6 @@ do
 end
 
 function oGlow:RegisterFilterOnPipe(pipe, filter)
-	argcheck(pipe, 2, "string")
-	argcheck(filter, 3, "string")
-
 	if not pipesTable[pipe] then return nil, "Pipe does not exist." end
 	if not filtersTable[filter] then return nil, "Filter does not exist." end
 
@@ -246,53 +205,13 @@ function oGlow:RegisterFilterOnPipe(pipe, filter)
 	return true
 end
 
-oGlow.IterateFiltersOnPipe = function(pipe)
-	local t = activeFilters[pipe]
-	return coroutine.wrap(function()
-		for _, sub in next, t do
-			for k, v in next, sub do
-				coroutine.yield(v[3], v[1], v[4])
-			end
-		end
-	end)
-end
-
-function oGlow:UnregisterFilterOnPipe(pipe, filter)
-	argcheck(pipe, 2, "string")
-	argcheck(filter, 3, "string")
-
-	if not pipesTable[pipe] then return nil, "Pipe does not exist." end
-	if not filtersTable[filter] then return nil, "Filter does not exist." end
-
-	local filterTable = filtersTable[filter]
-	local ref = activeFilters[pipe][filterTable[1]]
-	if ref then
-		for k, func in next, ref do
-			if func == filterTable then
-				table.remove(ref, k)
-				return true
-			end
-		end
-	end
-end
-
-function oGlow:GetNumFilters()
-	return numFilters
-end
-
 -- Display API
-
 function oGlow:RegisterDisplay(name, display)
-	argcheck(name, 2, "string")
-	argcheck(display, 3, "function")
-
 	displaysTable[name] = display
 end
 
 -- General API
 function oGlow:CallFilters(pipe, frame, ...)
-	argcheck(pipe, 2, "string")
-
 	if not pipesTable[pipe] then return nil, "Pipe does not exist." end
 
 	local ref = activeFilters[pipe]
@@ -310,5 +229,3 @@ function oGlow:CallFilters(pipe, frame, ...)
 end
 
 oGlow:RegisterEvent("ADDON_LOADED")
-
-oGlow.argcheck = argcheck

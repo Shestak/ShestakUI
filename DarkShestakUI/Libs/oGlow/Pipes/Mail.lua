@@ -83,4 +83,4 @@ local disable = function(self)
 	self:UnregisterEvent("MAIL_SEND_SUCCESS", send)
 end
 
-oGlow:RegisterPipe("mail", enable, disable, update, "Mail frame", nil)
+oGlow:RegisterPipe("mail", enable, disable, update, "Mail frame")

@@ -90,4 +90,4 @@ local disable = function(self)
 	self:UnregisterEvent("INSPECT_READY", update)
 end
 
-oGlow:RegisterPipe("inspect", enable, disable, update, "Inspect frame", nil)
+oGlow:RegisterPipe("inspect", enable, disable, update, "Inspect frame")
