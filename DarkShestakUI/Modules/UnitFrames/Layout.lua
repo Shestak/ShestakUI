@@ -63,7 +63,7 @@ local function Shared(self, unit)
 	self.Health.bg = self.Health:CreateTexture(nil, "BORDER")
 	self.Health.bg:SetAllPoints()
 	self.Health.bg:SetTexture(C.media.texture)
-	self.Health.bg:SetVertexColor(unpack(C.skins.color_theme))
+	self.Health.bg:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.4)
 
 	self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 	if unit == "player" or unit == "pet" or unit == "focus" then
@@ -134,7 +134,7 @@ local function Shared(self, unit)
 	self.Power.bg:SetAllPoints()
 	self.Power.bg:SetTexture(C.media.texture)
 	if unit == "pet" then
-		self.Power.bg:SetVertexColor(unpack(C.skins.color_theme))
+		self.Power.bg:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.4)
 	else
 		self.Power.bg.multiplier = 0.2
 	end
@@ -887,7 +887,7 @@ local function Shared(self, unit)
 		self.Swing.bg = self.Swing:CreateTexture(nil, "BORDER")
 		self.Swing.bg:SetAllPoints(self.Swing)
 		self.Swing.bg:SetTexture(C.media.texture)
-		self.Swing.bg:SetVertexColor(unpack(C.skins.color_theme))
+		self.Swing.bg:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.4)
 
 		self.Swing.Text = T.SetFontString(self.Swing, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.Swing.Text:SetPoint("CENTER", 0, 0)

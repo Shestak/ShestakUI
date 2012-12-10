@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if IsAddOnLoaded("DBM-Core") or C.skins.blizzard_frames ~= true then return end
+if IsAddOnLoaded("DBM-Core") then return end
 
 ----------------------------------------------------------------------------------------
 --	Queue timer on LFGDungeonReadyDialog
@@ -22,7 +22,7 @@ frame.bar = CreateFrame("StatusBar", nil, frame)
 frame.bar:SetStatusBarTexture(C.media.texture)
 frame.bar:SetAllPoints()
 frame.bar:SetFrameLevel(LFGDungeonReadyDialog:GetFrameLevel() + 1)
-frame.bar:SetStatusBarColor(1, 0.7, 0)
+frame.bar:SetStatusBarColor(unpack(C.skins.color_theme))
 
 LFGDungeonReadyDialog.nextUpdate = 0
 

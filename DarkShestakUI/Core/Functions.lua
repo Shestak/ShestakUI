@@ -972,7 +972,7 @@ local setBarTicks = function(Castbar, ticknum)
 			if not ticks[k] then
 				ticks[k] = Castbar:CreateTexture(nil, "OVERLAY")
 				ticks[k]:SetTexture(C.media.texture)
-				ticks[k]:SetVertexColor(unpack(C.skins.color_theme))
+				ticks[k]:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.4)
 				ticks[k]:SetWidth(1)
 				ticks[k]:SetHeight(Castbar:GetHeight())
 				ticks[k]:SetDrawLayer("OVERLAY", 7)
@@ -1028,7 +1028,7 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 		end
 	else
 		Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-		Castbar.bg:SetVertexColor(unpack(C.skins.color_theme))
+		Castbar.bg:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.4)
 		Castbar.Overlay:SetBackdropBorderColor(unpack(C.media.border_color))
 		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
 			Castbar.Button:SetBackdropBorderColor(unpack(C.media.border_color))
@@ -1082,7 +1082,7 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 		end
 	else
 		Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-		Castbar.bg:SetVertexColor(unpack(C.skins.color_theme))
+		Castbar.bg:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.4)
 		Castbar.Overlay:SetBackdropBorderColor(unpack(C.media.border_color))
 		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
 			Castbar.Button:SetBackdropBorderColor(unpack(C.media.border_color))

@@ -183,7 +183,7 @@ end
 local function StyleButton(button)
 	if button.SetHighlightTexture and not button.hover then
 		local hover = button:CreateTexture(nil, nil, self)
-		hover:SetTexture(unpack(C.skins.color_theme))
+		hover:SetTexture(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.4)
 		hover:SetPoint("TOPLEFT", button, 2, -2)
 		hover:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		button.hover = hover
@@ -220,7 +220,7 @@ end
 --	Style buttons function
 ----------------------------------------------------------------------------------------
 T.SetModifiedBackdrop = function(self)
-	self:SetBackdropBorderColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3])
+	self:SetBackdropBorderColor(unpack(C.skins.color_theme))
 	if self.overlay then
 		self.overlay:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.3)
 	end

@@ -155,7 +155,7 @@ local StartTimer = function(name, spellId)
 	bar.spellId = spellId
 	bar:Show()
 	bar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-	bar.bg:SetVertexColor(unpack(C.skins.color_theme))
+	bar.bg:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.4)
 	bar:EnableMouse(true)
 	bar:SetScript("OnUpdate", BarUpdate)
 	bar:SetScript("OnEnter", OnEnter)

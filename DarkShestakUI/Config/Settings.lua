@@ -111,7 +111,7 @@ C["automation"] = {
 --	Skins options
 ----------------------------------------------------------------------------------------
 C["skins"] = {
-	["color_theme"] = {0.1, 0.5, 0.9, 0.4},		-- Color theme (R, G, B, alpha)
+	["color_theme"] = {0.1, 0.5, 0.9},			-- Color theme (R, G, B)
 	["blizzard_frames"] = true,					-- Blizzard frames skin
 	["shadow"] = true,							-- Shadow on frames
 	["minimap_buttons"] = true,					-- Skin addons icons on minimap

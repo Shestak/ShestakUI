@@ -56,7 +56,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 						else
 							tbar:SetStatusBarColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB)
 							tbar:SetBackdrop(backdrop)
-							tbar:SetBackdropColor(unpack(C.skins.color_theme))
+							tbar:SetBackdropColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.4)
 						end
 
 						if bar.enlarged then frame:SetWidth(bar.owner.options.HugeWidth) else frame:SetWidth(bar.owner.options.Width) end

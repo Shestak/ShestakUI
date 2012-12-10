@@ -230,11 +230,11 @@ local function ThemeSetup(r, g, b)
 	if GUIConfigAll[T.realm][T.name] == true then
 		if GUIConfig == nil then GUIConfig = {} end
 		if GUIConfig["skins"] == nil then GUIConfig["skins"] = {} end
-		GUIConfig["skins"]["color_theme"] = {r, g, b, 0.4}
+		GUIConfig["skins"]["color_theme"] = {r, g, b}
 	else
 		if GUIConfigSettings == nil then GUIConfigSettings = {} end
 		if GUIConfigSettings["skins"] == nil then GUIConfigSettings["skins"] = {} end
-		GUIConfigSettings["skins"]["color_theme"] = {r, g, b, 0.4}
+		GUIConfigSettings["skins"]["color_theme"] = {r, g, b}
 	end
 end
 

@@ -99,7 +99,7 @@ theme:SetAlpha(0)
 
 theme.t = theme:CreateTexture(nil, "OVERLAY")
 theme.t:SetTexture(C.media.blank)
-theme.t:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3])
+theme.t:SetVertexColor(unpack(C.skins.color_theme))
 theme.t:SetPoint("TOPLEFT", theme, 2, -2)
 theme.t:SetPoint("BOTTOMRIGHT", theme, -2, 2)
 
@@ -108,11 +108,11 @@ local function ThemeSetup(r, g, b)
 	if GUIConfigAll[T.realm][T.name] == true then
 		if GUIConfig == nil then GUIConfig = {} end
 		if GUIConfig["skins"] == nil then GUIConfig["skins"] = {} end
-		GUIConfig["skins"]["color_theme"] = {r, g, b, 0.4}
+		GUIConfig["skins"]["color_theme"] = {r, g, b}
 	else
 		if GUIConfigSettings == nil then GUIConfigSettings = {} end
 		if GUIConfigSettings["skins"] == nil then GUIConfigSettings["skins"] = {} end
-		GUIConfigSettings["skins"]["color_theme"] = {r, g, b, 0.4}
+		GUIConfigSettings["skins"]["color_theme"] = {r, g, b}
 	end
 end
 

@@ -171,7 +171,7 @@ function Filger:DisplayActives()
 					bar.background = bar.statusbar:CreateTexture(nil, "BACKGROUND")
 					bar.background:SetAllPoints()
 					bar.background:SetTexture(C.media.texture)
-					bar.background:SetVertexColor(unpack(C.skins.color_theme))
+					bar.background:SetVertexColor(C.skins.color_theme[1], C.skins.color_theme[2], C.skins.color_theme[3], 0.4)
 				end
 
 				if bar.time then
