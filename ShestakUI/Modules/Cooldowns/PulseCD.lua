@@ -82,7 +82,7 @@ local function OnUpdate(_, update)
 		for i, v in pairs(cooldowns) do
 			local remaining = v[2] - (GetTime() - v[1])
 			if remaining <= 0 then
-				tinsert(animating, {v[3],v[4]})
+				tinsert(animating, {v[3], v[4]})
 				cooldowns[i] = nil
 			end
 		end
@@ -196,7 +196,7 @@ hooksecurefunc("UseContainerItem", function(bag, slot)
 end)
 
 SlashCmdList.PulseCD = function()
-	tinsert(animating, {"Interface\\Icons\\Inv_Misc_Tournaments_Banner_Human"})
+	tinsert(animating, {GetSpellTexture(87214)})
 	frame:SetScript("OnUpdate", OnUpdate)
 end
 SLASH_PulseCD1 = "/pulsecd"
