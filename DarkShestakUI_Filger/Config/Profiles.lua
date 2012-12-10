@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	ShestakUI_Filger personal configuration file
+--	DarkShestakUI_Filger personal configuration file
 --	BACKUP THIS FILE BEFORE UPDATING!
 --	ATTENTION: When saving changes to a file encoded file should be in UTF8
 ----------------------------------------------------------------------------------------

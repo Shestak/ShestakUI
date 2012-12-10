@@ -1,7 +1,7 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	ShestakUI personal configuration file
+--	DarkShestakUI personal configuration file
 --	BACKUP THIS FILE BEFORE UPDATING!
 --	ATTENTION: When saving changes to a file encoded file should be in UTF8
 ----------------------------------------------------------------------------------------
