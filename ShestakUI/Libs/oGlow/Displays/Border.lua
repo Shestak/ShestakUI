@@ -1,10 +1,8 @@
 local T, C, L, _ = unpack(select(2, ...))
-local argcheck = oGlow.argcheck
 
 local colorTable = setmetatable(
 	{},
 	{__index = function(self, val)
-		argcheck(val, 2, "number")
 		local r, g, b = GetItemQualityColor(val)
 		rawset(self, val, {r, g, b})
 
@@ -79,11 +77,6 @@ local borderDisplay = function(frame, color)
 end
 
 function oGlow:RegisterColor(name, r, g, b)
-	argcheck(name, 2, "string", "number")
-	argcheck(r, 3, "number")
-	argcheck(g, 4, "number")
-	argcheck(b, 5, "number")
-
 	if(rawget(colorTable, name)) then
 		return nil, string.format("Color [%s] is already registered.", name)
 	else

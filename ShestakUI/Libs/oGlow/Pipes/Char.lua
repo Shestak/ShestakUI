@@ -43,4 +43,4 @@ local disable = function(self)
 	self:UnregisterEvent("UNIT_INVENTORY_CHANGED", UNIT_INVENTORY_CHANGED)
 end
 
-oGlow:RegisterPipe("char", enable, disable, update, "Character frame", nil)
+oGlow:RegisterPipe("char", enable, disable, update, "Character frame")

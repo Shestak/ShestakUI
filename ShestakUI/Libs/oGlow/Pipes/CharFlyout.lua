@@ -44,4 +44,4 @@ local disable = function(self)
 	_E = nil
 end
 
-oGlow:RegisterPipe("char-flyout", enable, disable, update, "Character equipment flyout frame", nil)
+oGlow:RegisterPipe("char-flyout", enable, disable, update, "Character equipment flyout frame")
