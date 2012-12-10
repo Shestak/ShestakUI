@@ -4,31 +4,30 @@ if C.pulsecooldown.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Based on Doom Cooldown Pulse(by Woffle of Dark Iron, editor Affli)
 ----------------------------------------------------------------------------------------
-local noscalemult = T.mult * C.general.uiscale
-local fadeInTime, fadeOutTime, maxAlpha, animScale, iconSize, holdTime, threshold
+local noscalemult, GetTime = T.mult * C.general.uiscale, GetTime
+local fadeInTime, fadeOutTime, maxAlpha, elapsed, runtimer = 0.5, 0.7, 1, 0, 0
+local animScale, iconSize, holdTime, threshold = C.pulsecooldown.anim_scale, C.pulsecooldown.size, C.pulsecooldown.hold_time, C.pulsecooldown.threshold
 local cooldowns, animating, watching = {}, {}, {}
-local GetTime = GetTime
 
-local DCPAnchor = CreateFrame("Frame", "DCPAnchor", UIParent)
-DCPAnchor:SetWidth(C.pulsecooldown.size)
-DCPAnchor:SetHeight(C.pulsecooldown.size)
-DCPAnchor:SetPoint(unpack(C.position.pulse_cooldown))
+local anchor = CreateFrame("Frame", "DCPAnchor", UIParent)
+anchor:SetWidth(C.pulsecooldown.size)
+anchor:SetHeight(C.pulsecooldown.size)
+anchor:SetPoint(unpack(C.position.pulse_cooldown))
 
-local DCP = CreateFrame("Frame")
-DCP:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
-DCP:SetBackdrop({
-	bgFile = C.media.blank,
-	edgeFile = C.media.blank,
-	tile = false, tileSize = 0, edgeSize = noscalemult,
+local frame = CreateFrame("Frame", "DCPFrame", anchor)
+frame:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
+frame:SetBackdrop({
+	bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = noscalemult,
 	insets = {left = -noscalemult, right = -noscalemult, top = -noscalemult, bottom = -noscalemult}
 })
-DCP:SetBackdropBorderColor(unpack(C.media.border_color))
-DCP:SetBackdropColor(unpack(C.media.backdrop_color))
+frame:SetBackdropBorderColor(unpack(C.media.border_color))
+frame:SetBackdropColor(unpack(C.media.backdrop_color))
+frame:SetPoint("CENTER", anchor, "CENTER", 0, 0)
 
-local DCPT = DCP:CreateTexture(nil, "ARTWORK")
-DCPT:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-DCPT:SetPoint("TOPLEFT", DCP, "TOPLEFT", noscalemult * 2, -noscalemult * 2)
-DCPT:SetPoint("BOTTOMRIGHT", DCP, "BOTTOMRIGHT", -noscalemult * 2, noscalemult * 2)
+local icon = frame:CreateTexture(nil, "ARTWORK")
+icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+icon:SetPoint("TOPLEFT", frame, "TOPLEFT", noscalemult * 2, -noscalemult * 2)
+icon:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -noscalemult * 2, noscalemult * 2)
 
 -- Utility Functions
 local function tcount(tab)
@@ -48,23 +47,7 @@ local function GetPetActionIndexByName(name)
 	return nil
 end
 
-local function RefreshLocals()
-	fadeInTime = 0.5
-	fadeOutTime = 0.7
-	maxAlpha = 1
-	animScale = C.pulsecooldown.anim_scale
-	iconSize = C.pulsecooldown.size
-	holdTime = C.pulsecooldown.hold_time
-	threshold = C.pulsecooldown.threshold
-
-	for _, v in pairs(T.pulse_ignored_spells) do
-		T.pulse_ignored_spells[v] = true
-	end
-end
-
 -- Cooldown/Animation
-local elapsed = 0
-local runtimer = 0
 local function OnUpdate(_, update)
 	elapsed = elapsed + update
 	if elapsed > 0.05 then
@@ -99,14 +82,14 @@ local function OnUpdate(_, update)
 		for i, v in pairs(cooldowns) do
 			local remaining = v[2] - (GetTime() - v[1])
 			if remaining <= 0 then
-				tinsert(animating, {v[3],v[4]})
+				tinsert(animating, {v[3], v[4]})
 				cooldowns[i] = nil
 			end
 		end
 
 		elapsed = 0
 		if #animating == 0 and tcount(watching) == 0 and tcount(cooldowns) == 0 then
-			DCP:SetScript("OnUpdate", nil)
+			frame:SetScript("OnUpdate", nil)
 			return
 		end
 	end
@@ -116,16 +99,12 @@ local function OnUpdate(_, update)
 		if runtimer > (fadeInTime + holdTime + fadeOutTime) then
 			tremove(animating, 1)
 			runtimer = 0
-			DCPT:SetTexture(nil)
-			DCPT:SetVertexColor(1, 1, 1)
-			DCP:SetBackdropBorderColor(0, 0, 0, 0)
-			DCP:SetBackdropColor(0, 0, 0, 0)
+			icon:SetTexture(nil)
+			frame:SetBackdropBorderColor(0, 0, 0, 0)
+			frame:SetBackdropColor(0, 0, 0, 0)
 		else
-			if not DCPT:GetTexture() then
-				DCPT:SetTexture(animating[1][1])
-				if animating[1][2] then
-					DCPT:SetVertexColor(1, 1, 1)
-				end
+			if not icon:GetTexture() then
+				icon:SetTexture(animating[1][1])
 				if C.pulsecooldown.sound == true then
 					PlaySoundFile(C.media.proc_sound, "Master")
 				end
@@ -136,35 +115,34 @@ local function OnUpdate(_, update)
 			elseif runtimer >= fadeInTime + holdTime then
 				alpha = maxAlpha - (maxAlpha * ((runtimer - holdTime - fadeInTime) / fadeOutTime))
 			end
-			DCP:SetAlpha(alpha)
+			frame:SetAlpha(alpha)
 			local scale = iconSize + (iconSize * ((animScale - 1) * (runtimer / (fadeInTime + holdTime + fadeOutTime))))
-			DCP:SetWidth(scale)
-			DCP:SetHeight(scale)
-			DCP:SetBackdropBorderColor(unpack(C.media.border_color))
-			DCP:SetBackdropColor(unpack(C.media.backdrop_color))
+			frame:SetWidth(scale)
+			frame:SetHeight(scale)
+			frame:SetBackdropBorderColor(unpack(C.media.border_color))
+			frame:SetBackdropColor(unpack(C.media.backdrop_color))
 		end
 	end
 end
 
 -- Event Handlers
-function DCP:ADDON_LOADED(addon)
-	RefreshLocals()
-	self:SetPoint("CENTER", DCPAnchor, "CENTER", 0, 0)
+function frame:ADDON_LOADED(addon)
+	for _, v in pairs(T.pulse_ignored_spells) do
+		T.pulse_ignored_spells[v] = true
+	end
 	self:UnregisterEvent("ADDON_LOADED")
 end
-DCP:RegisterEvent("ADDON_LOADED")
+frame:RegisterEvent("ADDON_LOADED")
 
-function DCP:UNIT_SPELLCAST_SUCCEEDED(unit, spell)
+function frame:UNIT_SPELLCAST_SUCCEEDED(unit, spell)
 	if unit == "player" then
 		watching[spell] = {GetTime(), "spell", spell}
-		if not self:IsMouseEnabled() then
-			self:SetScript("OnUpdate", OnUpdate)
-		end
+		self:SetScript("OnUpdate", OnUpdate)
 	end
 end
-DCP:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 
-function DCP:COMBAT_LOG_EVENT_UNFILTERED(...)
+function frame:COMBAT_LOG_EVENT_UNFILTERED(...)
 	local _, eventType, _, _, _, sourceFlags, _, _, _, _, _, spellID = ...
 	if eventType == "SPELL_CAST_SUCCESS" then
 		if (bit.band(sourceFlags, COMBATLOG_OBJECT_TYPE_PET) == COMBATLOG_OBJECT_TYPE_PET and bit.band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_MINE) == COMBATLOG_OBJECT_AFFILIATION_MINE) then
@@ -177,16 +155,13 @@ function DCP:COMBAT_LOG_EVENT_UNFILTERED(...)
 			else
 				return
 			end
-			if not self:IsMouseEnabled() then
-				self:SetScript("OnUpdate", OnUpdate)
-			end
+			self:SetScript("OnUpdate", OnUpdate)
 		end
 	end
 end
-PetActionButton1:HookScript("OnShow", function() DCP:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED") end)
-PetActionButton1:HookScript("OnHide", function() DCP:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED") end)
+frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 
-function DCP:PLAYER_ENTERING_WORLD()
+function frame:PLAYER_ENTERING_WORLD()
 	local inInstance, instanceType = IsInInstance()
 	if inInstance and instanceType == "arena" then
 		self:SetScript("OnUpdate", nil)
@@ -194,7 +169,7 @@ function DCP:PLAYER_ENTERING_WORLD()
 		wipe(watching)
 	end
 end
-DCP:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 hooksecurefunc("UseAction", function(slot)
 	local actionType, itemID = GetActionInfo(slot)
@@ -221,9 +196,8 @@ hooksecurefunc("UseContainerItem", function(bag, slot)
 end)
 
 SlashCmdList.PulseCD = function()
-	RefreshLocals()
-	tinsert(animating, {"Interface\\Icons\\Inv_Misc_Tournaments_Banner_Human"})
-	DCP:SetScript("OnUpdate", OnUpdate)
+	tinsert(animating, {GetSpellTexture(87214)})
+	frame:SetScript("OnUpdate", OnUpdate)
 end
 SLASH_PulseCD1 = "/pulsecd"
 SLASH_PulseCD2 = "/згдыусв"
