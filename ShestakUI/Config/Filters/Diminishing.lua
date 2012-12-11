@@ -89,6 +89,8 @@ T.DiminishingSpells = function()
 		[1776] = {"disorient"},		-- Gouge
 		[6770] = {"disorient"},		-- Sap
 		[51514] = {"disorient"},	-- Hex
+		[6358] = {"disorient"},		-- Seduction (Succubus)
+		[115268] = {"disorient"},	-- Mesmerize (Shivarra)
 		[107079] = {"disorient"},	-- Quaking Palm
 
 		-- Fears
@@ -100,8 +102,6 @@ T.DiminishingSpells = function()
 		[2094] = {"fear"},			-- Blind
 		[118699] = {"fear"},		-- Fear
 		[5484] = {"fear"},			-- Howl of Terror
-		[6358] = {"fear"},			-- Seduction (Succubus)
-		[115268] = {"fear"},		-- Mesmerize (Shivarra)
 		[5246] = {"fear"},			-- Intimidating Shout (Main target)
 		[20511] = {"fear"},			-- Intimidating Shout (Secondary targets)
 
