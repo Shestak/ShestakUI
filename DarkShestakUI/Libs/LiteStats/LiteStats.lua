@@ -764,18 +764,13 @@ end
 --	Guild
 ----------------------------------------------------------------------------------------
 if guild.enabled then
-	local totalGuildOnline = 0
 	local guildXP = {}
 	local guildTable = {}
 	local function BuildGuildTable()
-		totalGuildOnline = 0
 		wipe(guildTable)
 		for i = 1, GetNumGuildMembers() do
 			local name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, mobile = GetGuildRosterInfo(i)
 			guildTable[i] = {name, rank, level, zone, note, officernote, connected, status, class, mobile}
-			if connected then
-				totalGuildOnline = totalGuildOnline + 1
-			end
 		end
 		table.sort(guildTable, function(a, b)
 			if (a and b) then
@@ -804,8 +799,7 @@ if guild.enabled then
 		text = {
 			string = function()
 				if IsInGuild() then
-					local online, total = 0, GetNumGuildMembers(true)
-					for i = 0, total do if select(9, GetGuildRosterInfo(i)) then online = online + 1 end end
+					local total, _, online = GetNumGuildMembers()
 					return format(guild.fmt, online, total)
 				else return LOOKINGFORGUILD end
 			end, update = 5
@@ -871,7 +865,7 @@ if guild.enabled then
 				menuList[3].menuList = {}
 
 				for i = 1, #guildTable do
-					if guildTable[i][7] and guildTable[i][1] ~= select(1, UnitName("player")) then
+					if (guildTable[i][7] or guildTable[i][10]) and guildTable[i][1] ~= select(1, UnitName("player")) then
 						local classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[guildTable[i][9]], GetQuestDifficultyColor(guildTable[i][3])
 						if UnitInParty(guildTable[i][1]) or UnitInRaid(guildTable[i][1]) then
 							grouped = "|cffaaaaaa*|r"
@@ -911,10 +905,10 @@ if guild.enabled then
 				self.hovered = true
 				GuildRoster()
 				local name, rank, level, zone, note, officernote, connected, status, class, isMobile, zone_r, zone_g, zone_b, classc, levelc, grouped
-				local online, total, gmotd = 0, GetNumGuildMembers(true), GetGuildRosterMOTD()
+				local total, _, online = GetNumGuildMembers()
+				local gmotd = GetGuildRosterMOTD()
 				local _, _, standingID, barMin, barMax, barValue = GetGuildFactionInfo()
 				local col = T.RGBToHex(ttsubh.r, ttsubh.g, ttsubh.b)
-				for i = 0, total do if select(9, GetGuildRosterInfo(i)) then online = online + 1 end end
 
 				GameTooltip:SetOwner(self, "ANCHOR_NONE")
 				GameTooltip:ClearAllPoints()
@@ -943,7 +937,7 @@ if guild.enabled then
 							break
 						end
 						name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, isMobile = GetGuildRosterInfo(i)
-						if connected and level >= guild.threshold then
+						if (connected or isMobile) and level >= guild.threshold then
 							if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1, 0.3 else zone_r, zone_g, zone_b = 1, 1, 1 end
 							if isMobile then zone = "|cffa5a5a5"..REMOTE_CHAT.."|r" end
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
@@ -1064,9 +1058,9 @@ if friends.enabled then
 				BuildBNTable(BNTotal)
 				BuildFriendTable(total)
 
+				local classc, levelc, grouped
 				local menuCountWhispers = 0
 				local menuCountInvites = 0
-				local classc, levelc
 
 				menuList[2].menuList = {}
 				menuList[3].menuList = {}
@@ -1082,18 +1076,23 @@ if friends.enabled then
 								classc = GetQuestDifficultyColor(friendTable[i][2])
 							end
 
-							menuList[2].menuList[menuCountInvites] = {
-								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
-								arg1 = friendTable[i][1],
-								notCheckable = true,
-								func = function(self, arg1)
-									menuFrame:Hide()
-									InviteUnit(arg1)
-								end
-							}
+							if UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1]) then
+								grouped = " |cffaaaaaa*|r"
+							else
+								grouped = ""
+								menuList[2].menuList[menuCountInvites] = {
+									text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
+									arg1 = friendTable[i][1],
+									notCheckable = true,
+									func = function(self, arg1)
+										menuFrame:Hide()
+										InviteUnit(arg1)
+									end
+								}
+							end
 
 							menuList[3].menuList[menuCountWhispers] = {
-								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
+								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1], grouped),
 								arg1 = friendTable[i][1],
 								notCheckable = true,
 								func = function(self, arg1)
@@ -1106,14 +1105,18 @@ if friends.enabled then
 				end
 
 				if totalBattleNetOnline > 0 then
-					local realID, grouped
+					local grouped
 					for i = 1, #BNTable do
 						if BNTable[i][7] then
-							realID = BNTable[i][2]
+							if UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4]) then
+								grouped = " |cffaaaaaa*|r"
+							else
+								grouped = ""
+							end
 							menuCountWhispers = menuCountWhispers + 1
 							menuList[3].menuList[menuCountWhispers] = {
-								text = realID,
-								arg1 = realID,
+								text = BNTable[i][2]..grouped,
+								arg1 = BNTable[i][2],
 								notCheckable = true,
 								func = function(self, arg1)
 									menuFrame:Hide()
@@ -1127,22 +1130,18 @@ if friends.enabled then
 									classc = GetQuestDifficultyColor(BNTable[i][16])
 								end
 
-								if UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4]) then
-									grouped = 1
-								else
-									grouped = 2
+								if not (UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4])) then
+									menuCountInvites = menuCountInvites + 1
+									menuList[2].menuList[menuCountInvites] = {
+										text = BNTable[i][2],
+										arg1 = BNTable[i][5],
+										notCheckable = true,
+										func = function(self, arg1)
+											menuFrame:Hide()
+											BNInviteFriend(arg1)
+										end
+									}
 								end
-
-								menuCountInvites = menuCountInvites + 1
-								menuList[2].menuList[menuCountInvites] = {
-									text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, BNTable[i][16], classc.r * 255, classc.g * 255, classc.b * 255, BNTable[i][4]),
-									arg1 = BNTable[i][5],
-									notCheckable = true,
-									func = function(self, arg1)
-										menuFrame:Hide()
-										BNInviteFriend(arg1)
-									end
-								}
 							end
 						end
 					end
@@ -1209,7 +1208,7 @@ if friends.enabled then
 								for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 							end
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
-							if UnitInParty(toonName) or UnitInRaid(toonName) then grouped = "|cffaaaaaa*|r" else grouped = "" end
+							if UnitInParty(toonName) or UnitInRaid(toonName) then grouped = " |cffaaaaaa*|r" else grouped = "" end
 							GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), presenceName, 238, 238, 238, 238, 238, 238)
 							if self.altdown then
 								if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
