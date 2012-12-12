@@ -87,7 +87,7 @@ local function run(autoreport)
 		table.sort(noFlask)
 		output = L_ANNOUNCE_FF_NOFLASK..table.concat(noFlask, ", ")
 		if C.announcements.flask_food_raid then
-			SendChatMessage(output, checkType)
+			SendChatMessage(output, T.CheckChat())
 		else
 			print(output)
 		end
@@ -97,7 +97,7 @@ local function run(autoreport)
 		table.sort(noFood)
 		output = L_ANNOUNCE_FF_NOFOOD..table.concat(noFood, ", ")
 		if C.announcements.flask_food_raid then
-			SendChatMessage(output, checkType)
+			SendChatMessage(output, T.CheckChat())
 		else
 			print(output)
 		end
@@ -105,7 +105,7 @@ local function run(autoreport)
 
 	if #noFood == 0 and #noFlask == 0 then
 		if C.announcements.flask_food_raid then
-			SendChatMessage(L_ANNOUNCE_FF_ALLBUFFED, checkType)
+			SendChatMessage(L_ANNOUNCE_FF_ALLBUFFED, T.CheckChat())
 		else
 			print(L_ANNOUNCE_FF_ALLBUFFED)
 		end

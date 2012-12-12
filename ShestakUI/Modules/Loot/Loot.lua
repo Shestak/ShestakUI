@@ -200,16 +200,7 @@ close:SetScript("OnClick", function() CloseLoot() end)
 ----------------------------------------------------------------------------------------
 --	Announce loot(lcLoot by RustamIrzaev)
 ----------------------------------------------------------------------------------------
-local function OnLinkClick(self)
-	ToggleDropDownMenu(nil, nil, LDD, lb, 0, 0)
-end
-
-local function LDD_OnClick(self)
-	local val = self.value
-	Announce(val)
-end
-
-function Announce(chn)
+local function Announce(chn)
 	local nums = GetNumLootItems()
 	if nums == 0 then return end
 	if UnitIsPlayer("target") or not UnitExists("target") then
@@ -226,6 +217,11 @@ function Announce(chn)
 			end
 		end
 	end
+end
+
+local function LDD_OnClick(self)
+	local val = self.value
+	Announce(val)
 end
 
 local function LDD_Initialize()
@@ -281,15 +277,9 @@ lb:SetFrameStrata("DIALOG")
 lb:RegisterForClicks("RightButtonUp", "LeftButtonUp")
 lb:SetScript("OnClick", function(self, button)
 	if button == "RightButton" then
-		OnLinkClick()
+		ToggleDropDownMenu(nil, nil, LDD, lb, 0, 0)
 	else
-		if IsInRaid() then
-			Announce("RAID")
-		elseif IsInGroup() then
-			Announce("PARTY")
-		else
-			Announce("SAY")
-		end
+		Announce(T.CheckChat())
 	end
 end)
 lb:Hide()
