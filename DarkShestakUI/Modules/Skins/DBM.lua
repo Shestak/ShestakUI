@@ -357,9 +357,10 @@ function T.UploadDBM()
 		DBT_SavedOptions["DBM"].HugeTimerY = -80
 	end
 	DBM_SavedOptions.InstalledBars = C.actionbar.bottombars
-if T.coauthor == true then
-	DBT_SavedOptions["DBM"].HugeBarsEnabled = true
-end
+	
+	if T.coauthor == true then
+		DBT_SavedOptions["DBM"].HugeBarsEnabled = true
+	end
 end
 
 StaticPopupDialogs.SETTINGS_DBM = {
