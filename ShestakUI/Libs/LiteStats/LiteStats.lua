@@ -1068,18 +1068,30 @@ if friends.enabled then
 				if totalFriendsOnline > 0 then
 					for i = 1, #friendTable do
 						if friendTable[i][5] then
-							menuCountInvites = menuCountInvites + 1
-							menuCountWhispers = menuCountWhispers + 1
+							if UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1]) then
+								grouped = " |cffaaaaaa*|r"
+							else
+								grouped = ""
+							end
 
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
 							if classc == nil then
 								classc = GetQuestDifficultyColor(friendTable[i][2])
 							end
 
-							if UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1]) then
-								grouped = " |cffaaaaaa*|r"
-							else
-								grouped = ""
+							menuCountWhispers = menuCountWhispers + 1
+							menuList[3].menuList[menuCountWhispers] = {
+								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1], grouped),
+								arg1 = friendTable[i][1],
+								notCheckable = true,
+								func = function(self, arg1)
+									menuFrame:Hide()
+									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
+								end
+							}
+
+							if not (UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1])) then
+								menuCountInvites = menuCountInvites + 1
 								menuList[2].menuList[menuCountInvites] = {
 									text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
 									arg1 = friendTable[i][1],
@@ -1090,22 +1102,11 @@ if friends.enabled then
 									end
 								}
 							end
-
-							menuList[3].menuList[menuCountWhispers] = {
-								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1], grouped),
-								arg1 = friendTable[i][1],
-								notCheckable = true,
-								func = function(self, arg1)
-									menuFrame:Hide()
-									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
-								end
-							}
 						end
 					end
 				end
 
 				if totalBattleNetOnline > 0 then
-					local grouped
 					for i = 1, #BNTable do
 						if BNTable[i][7] then
 							if UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4]) then
@@ -1113,6 +1114,7 @@ if friends.enabled then
 							else
 								grouped = ""
 							end
+
 							menuCountWhispers = menuCountWhispers + 1
 							menuList[3].menuList[menuCountWhispers] = {
 								text = BNTable[i][2]..grouped,
@@ -1125,11 +1127,6 @@ if friends.enabled then
 							}
 
 							if BNTable[i][6] == "WoW" and UnitFactionGroup("player") == BNTable[i][12] then
-								classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
-								if classc == nil then
-									classc = GetQuestDifficultyColor(BNTable[i][16])
-								end
-
 								if not (UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4])) then
 									menuCountInvites = menuCountInvites + 1
 									menuList[2].menuList[menuCountInvites] = {
