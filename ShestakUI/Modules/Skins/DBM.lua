@@ -257,7 +257,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 		local old = RaidNotice_AddMessage
 		RaidNotice_AddMessage = function(noticeFrame, textString, colorInfo)
 			if textString:find(" |T") then
-				textString = replace(textString,"(:12:12)",":13:13:0:0:64:64:5:59:5:59")
+				textString = replace(textString, "(:12:12)", ":13:13:0:0:64:64:5:59:5:59")
 			end
 			return old(noticeFrame, textString, colorInfo)
 		end
@@ -384,6 +384,7 @@ function T.UploadDBM()
 		DBM_SavedOptions.SpamBlockBossWhispers = true
 		DBM_SavedOptions.ShowRecoveryMessage = false
 		DBM_SavedOptions.ShowEngageMessage = false
+		DBM_SavedOptions.ShowPizzaMessage = false
 	end
 end
 
