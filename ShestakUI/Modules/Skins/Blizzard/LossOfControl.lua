@@ -12,8 +12,8 @@ local function LoadSkin()
 	IconBackdrop:SetPoint("BOTTOMRIGHT", LossOfControlFrame.Icon, 2, -2)
 	IconBackdrop:SetFrameLevel(LossOfControlFrame:GetFrameLevel() - 1)
 
-	LossOfControlFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	LossOfControlFrame:StripTextures()
+	LossOfControlFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	LossOfControlFrame.AbilityName:ClearAllPoints()
 
 	hooksecurefunc("LossOfControlFrame_SetUpDisplay", function(self)
