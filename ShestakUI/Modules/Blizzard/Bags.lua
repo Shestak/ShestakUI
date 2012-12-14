@@ -383,7 +383,7 @@ function Stuffing:SearchUpdate(str)
 			local class, subclass, _, equipSlot = select(6, GetItemInfo(ilink))
 			local minLevel = select(5, GetItemInfo(ilink))
 			equipSlot = _G[equipSlot] or ""
-			if not string.find (string.lower(b.name), str) and not string.find (string.lower(setName), str) and not string.find (string.lower(class), str) and not string.find (string.lower(subclass), str) and not string.find (string.lower(equipSlot), str) then
+			if not string.find(string.lower(b.name), str) and not string.find(string.lower(setName), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) and not string.find(string.lower(equipSlot), str) then
 				if IsItemUnusable(b.name) or minLevel > T.level then
 					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
 				end
