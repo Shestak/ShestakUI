@@ -369,7 +369,7 @@ function Stuffing:BagNew(bag, f)
 	return ret
 end
 
-function Stuffing:SearchUpdate(str, frameMatch)
+function Stuffing:SearchUpdate(str)
 	str = string.lower(str)
 
 	for _, b in ipairs(self.buttons) do
@@ -383,7 +383,7 @@ function Stuffing:SearchUpdate(str, frameMatch)
 			local class, subclass, _, equipSlot = select(6, GetItemInfo(ilink))
 			local minLevel = select(5, GetItemInfo(ilink))
 			equipSlot = _G[equipSlot] or ""
-			if (not string.find (string.lower(b.name), str) and not string.find (string.lower(setName), str) and not string.find (string.lower(class), str) and not string.find (string.lower(subclass), str) and not string.find (string.lower(equipSlot), str)) and b.frame:GetParent():GetParent() == frameMatch then
+			if not string.find (string.lower(b.name), str) and not string.find (string.lower(setName), str) and not string.find (string.lower(class), str) and not string.find (string.lower(subclass), str) and not string.find (string.lower(equipSlot), str) then
 				if IsItemUnusable(b.name) or minLevel > T.level then
 					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
 				end
@@ -525,7 +525,7 @@ function Stuffing:InitBags()
 
 	local updateSearch = function(self, t)
 		if t == true then
-			Stuffing:SearchUpdate(self:GetText(), self:GetParent())
+			Stuffing:SearchUpdate(self:GetText())
 		end
 	end
 
