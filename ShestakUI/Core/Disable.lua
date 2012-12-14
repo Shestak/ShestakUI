@@ -130,3 +130,7 @@ end
 if IsAddOnLoaded("Overachiever") then
 	C.tooltip.achievements = false
 end
+
+if IsAddOnLoaded("ChatSounds") then
+	C.chat.whisp_sound = false
+end
