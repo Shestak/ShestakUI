@@ -55,26 +55,11 @@ MiniMapMailIcon:SetTexture("Interface\\AddOns\\DarkShestakUI\\Media\\Textures\\M
 MiniMapMailIcon:SetSize(16, 16)
 
 -- Move QueueStatus icon
+QueueStatusFrame:SetClampedToScreen(true)
 QueueStatusMinimapButton:ClearAllPoints()
 QueueStatusMinimapButton:SetPoint("TOP", Minimap, "TOP", 1, 6)
 QueueStatusMinimapButton:SetHighlightTexture(nil)
 QueueStatusMinimapButtonBorder:Hide()
-
-local function UpdateLFGTooltip()
-	local position = MinimapAnchor:GetPoint()
-	QueueStatusFrame:ClearAllPoints()
-	if position:match("BOTTOMRIGHT") then
-		QueueStatusFrame:SetPoint("BOTTOMRIGHT", QueueStatusMinimapButton, "BOTTOMLEFT", 0, 0)
-	elseif position:match("BOTTOM") then
-		QueueStatusFrame:SetPoint("BOTTOMLEFT", QueueStatusMinimapButton, "BOTTOMRIGHT", 4, 0)
-	elseif position:match("LEFT") then
-		QueueStatusFrame:SetPoint("TOPLEFT", QueueStatusMinimapButton, "TOPRIGHT", 4, 0)
-	else
-		QueueStatusFrame:SetPoint("TOPRIGHT", QueueStatusMinimapButton, "TOPLEFT", 0, 0)
-	end
-end
-QueueStatusFrame:HookScript("OnShow", UpdateLFGTooltip)
-QueueStatusFrame:SetFrameStrata("TOOLTIP")
 
 -- Hide world map button
 MiniMapWorldMapButton:Hide()

@@ -41,7 +41,6 @@ local placed = {
 	"StuffingFrameBags",
 	"StuffingFrameBank",
 	"ExtraActionBarFrame",
-	"NumerationFrame",
 	"alDamageMeterFrame"
 }
 
