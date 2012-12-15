@@ -66,7 +66,7 @@ local AbsorbSpellDuration = {
 }
 local shields = {}
 
-local menuFrame = CreateFrame("Frame", "alDamageMeterMenu", UIParent, "UIDropDownMenuTemplate")
+local menuFrame = CreateFrame("Frame", "ShestakUI_alDamageMeterMenu", UIParent, "UIDropDownMenuTemplate")
 
 local truncate = function(value)
 	if value >= 1e6 then
