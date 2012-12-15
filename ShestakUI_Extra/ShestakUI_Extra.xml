@@ -28,5 +28,4 @@
 	<Script file="Modules\Skins\MyRolePlay.lua"/>
 	<Script file="Modules\Skins\Quartz.lua"/>
 	<Script file="Modules\Skins\ShieldMonitor.lua"/>
-	<Script file="Modules\Skins\Skada.lua"/>
 </Ui>

@@ -1,6 +1,6 @@
 ## Interface: 50100
 ## Title: ShestakUI Extra
-## Notes: Extra mods for ShestakUI. Edit of Oz of Pozzo dell'Eternità
+## Notes: Extra mods for ShestakUI. Edit by Oz of Pozzo dell'Eternità
 ## Author: Shestak
 ## Version: 4.25
 ## Credits: Azmara, Cowmonster, Epic, Rainrider, Slushe, Smelly
