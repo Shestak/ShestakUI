@@ -22,7 +22,7 @@ local OnEvent = function(obj, event, ...)
 end
 
 function self:SortBars()
-	local temp = { }
+	local temp = {}
 	local pdown, pup = -1, -1
 	local spacing = db.spacing + 7
 	for i = 1, #bars, 1 do temp[i] = i end

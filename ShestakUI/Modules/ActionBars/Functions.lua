@@ -45,7 +45,7 @@ end
 T.PetBarUpdate = function(self, event)
 	local petActionButton, petActionIcon, petAutoCastableTexture, petAutoCastShine
 	for i = 1, NUM_PET_ACTION_SLOTS, 1 do
-		local buttonName = "PetActionButton" .. i
+		local buttonName = "PetActionButton"..i
 		petActionButton = _G[buttonName]
 		petActionIcon = _G[buttonName.."Icon"]
 		petAutoCastableTexture = _G[buttonName.."AutoCastable"]

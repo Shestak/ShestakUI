@@ -109,7 +109,7 @@ if IsAddOnLoaded("Doom_CooldownPulse") then
 	C.pulsecooldown.enable = false
 end
 
-if IsAddOnLoaded("GnomishVendorShrinker") then
+if IsAddOnLoaded("GnomishVendorShrinker") or IsAddOnLoaded("AlreadyKnown") then
 	C.misc.already_known = false
 end
 
@@ -129,6 +129,10 @@ end
 
 if IsAddOnLoaded("Overachiever") then
 	C.tooltip.achievements = false
+end
+
+if IsAddOnLoaded("ChatSounds") then
+	C.chat.whisp_sound = false
 end
 
 if IsAddOnLoaded("alDamageMeter") or IsAddOnLoaded("Numeration") or IsAddOnLoaded("Recount") or IsAddOnLoaded("Skada") or IsAddOnLoaded("TinyDPS") then

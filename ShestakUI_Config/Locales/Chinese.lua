@@ -106,6 +106,7 @@ L_GUI_SKINS_MAGE_NUGGETS = "开启MageNuggets样式增强"
 L_GUI_SKINS_NPCSCAN = "开启NPCScan样式增强"
 L_GUI_SKINS_VANASKOS = "开启VanasKoS样式增强"
 L_GUI_SKINS_WEAK_AURAS = "开启WeakAuras样式增强"
+L_GUI_SKINS_SKADA = "开启Skada样式增强"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "战斗文字"

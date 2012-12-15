@@ -136,6 +136,7 @@ C["skins"] = {
 	["npcscan"] = true,							-- NPCScan skin
 	["vanaskos"] = true,						-- VanasKoS skin
 	["weak_auras"] = true,						-- WeakAuras skin
+	["skada"] = true,							-- Skada skin
 }
 
 ----------------------------------------------------------------------------------------

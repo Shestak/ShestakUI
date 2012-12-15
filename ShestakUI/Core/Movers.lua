@@ -42,6 +42,7 @@ local placed = {
 	"StuffingFrameBags",
 	"StuffingFrameBank",
 	"ExtraActionBarFrame",
+	"alDamageMeterFrame"
 }
 
 local SetPosition = function(mover)

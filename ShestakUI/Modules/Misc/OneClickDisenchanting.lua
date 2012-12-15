@@ -10,7 +10,7 @@ button:RegisterEvent("PLAYER_LOGIN")
 
 local function ScanTooltip(self, spells)
 	for index = 1, self:NumLines() do
-		local info = spells[_G["GameTooltipTextLeft" .. index]:GetText()]
+		local info = spells[_G["GameTooltipTextLeft"..index]:GetText()]
 		if info then
 			return unpack(info)
 		end
@@ -48,7 +48,7 @@ function button:PLAYER_LOGIN()
 				spell, r, g, b = GetSpellInfo(13262), 0.5, 0.5, 1
 			elseif not spell and rogue then
 				for index = 1, self:NumLines() do
-					if string.match(_G['GameTooltipTextLeft' .. index]:GetText() or '', rogue) then
+					if string.match(_G["GameTooltipTextLeft"..index]:GetText() or "", rogue) then
 						spell, r, g, b = GetSpellInfo(1804), 0, 1, 1
 					end
 				end

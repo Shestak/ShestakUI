@@ -289,7 +289,6 @@ L_POPUP_SETTINGS_DBM = "需要改变DBM描点及风格化元素."
 L_POPUP_SETTINGS_DXE = "需要改变DXE描点及风格化元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
 L_POPUP_ARMORY = "军械库"
-L_POPUP_TALENT_FIX = "当你查看其他玩家的时候,游戏内部功能出现了一个问题,它使你不能改变你的天赋. 很遗憾在这个版本的wow里,我们处理不了这个问题, 请重新载入你的UI再试试."
 L_POPUP_CURRENCY_CAP = "你拥有的最高级货币为"
 
 -- Welcome message

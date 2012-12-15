@@ -41,4 +41,4 @@ local disable = function(self)
 	_E = nil
 end
 
-oGlow:RegisterPipe("merchant", enable, disable, update, "Vendor frame", nil)
+oGlow:RegisterPipe("merchant", enable, disable, update, "Vendor frame")

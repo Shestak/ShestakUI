@@ -8,9 +8,15 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function()
 	local inInstance, instanceType = IsInInstance()
-	if inInstance and instanceType == "raid" and not LoggingCombat() then
-		LoggingCombat(1)
+	if inInstance and instanceType == "raid" then
+		if not LoggingCombat() then
+			LoggingCombat(1)
+			print("|cffffff00"..COMBATLOGENABLED.."|r")
+		end
 	else
-		LoggingCombat(0)
+		if LoggingCombat() then
+			LoggingCombat(0)
+			print("|cffffff00"..COMBATLOGDISABLED.."|r")
+		end
 	end
 end)

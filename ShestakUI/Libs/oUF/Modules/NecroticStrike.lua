@@ -21,7 +21,7 @@ local function GetNecroticAbsorb(unit)
 			end
 			NecroticStrikeTooltip:ClearLines()
 			NecroticStrikeTooltip:SetUnitDebuff(unit, i)
-			return tonumber(string.match(_G[NecroticStrikeTooltip:GetName() .. "TextLeft2"]:GetText(), "%d+"))
+			return tonumber(string.match(_G[NecroticStrikeTooltip:GetName().."TextLeft2"]:GetText(), "%d+"))
 		end
 		i = i + 1
 	end

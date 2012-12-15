@@ -5,35 +5,57 @@ if C.misc.chars_currency ~= true then return end
 --	Tracks your currency tokens across multiple characters(Exonumist by Phanx)
 ----------------------------------------------------------------------------------------
 local realmDB, charDB
+local faction = UnitFactionGroup("player")
 local playerList = {}
 local classColor = {}
+local nameToID = {}
+local collapsed = {}
 
 local function UpdateData()
-	for i = 1, GetCurrencyListSize() do
-		local tokenID
-		local name, isHeader, _, _, _, count = GetCurrencyListInfo(i)
-		if name and not isHeader then
+	if TokenFrame:IsVisible() then
+		return
+	end
+	local i, limit = 1, GetCurrencyListSize()
+	while i <= limit do
+		local name, isHeader, isExpanded, isUnused, isWatched, count, icon = GetCurrencyListInfo(i)
+		if isHeader then
+			if not isExpanded then
+				collapsed[name] = true
+				ExpandCurrencyList(i, 1)
+				limit = GetCurrencyListSize()
+			end
+		else
+			local link = GetCurrencyListLink(i)
+			local id = tonumber(strmatch(link, "currency:(%d+)"))
+			nameToID[name] = id
 			if count > 0 then
-				charDB[name] = count
+				charDB[id] = count
 			else
-				charDB[name] = nil
+				charDB[id] = nil
 			end
 		end
+		i = i + 1
 	end
+	while i > 0 do
+		local name, isHeader, isExpanded, isUnused, isWatched, count, icon = GetCurrencyListInfo(i)
+		if isHeader and isExpanded and collapsed[name] then
+			ExpandCurrencyList(i, 0)
+		end
+		i = i - 1
+	end
+	wipe(collapsed)
 end
 hooksecurefunc("BackpackTokenFrame_Update", UpdateData)
+hooksecurefunc("TokenFrame_Update", UpdateData)
 
-local function CurrencyButton_OnEnter(self)
-	local i = self:GetParent().index
-	local currency, isHeader, _, _, _, count = GetCurrencyListInfo(i)
-	if isHeader then return end
-
+local function AddTooltipInfo(tooltip, currency, includePlayer)
 	local spaced
-	for _, name in ipairs(playerList) do
+	for i = (includePlayer and 1 or 2), #playerList do
+		local name = playerList[i]
 		local n = realmDB[name][currency]
 		if n then
 			if not spaced then
-				GameTooltip:AddLine(" ")
+				tooltip:AddLine(" ")
 				spaced = true
 			end
 			local r, g, b
@@ -41,63 +63,72 @@ local function CurrencyButton_OnEnter(self)
 			if class then
 				r, g, b = unpack(classColor[class])
 			else
-				r, g, b = 0, 1, 1
+				r, g, b = 1, 1, 1
 			end
-			GameTooltip:AddLine(name..": "..n, r, g, b)
+			tooltip:AddLine(name..": "..n, r, g, b)
 		end
 	end
 	if spaced then
-		GameTooltip:Show()
+		tooltip:Show()
 	end
 end
 
-hooksecurefunc("TokenFrame_Update", function()
-	local i = 1
-	while true do
-		local button = _G["TokenFrameContainerButton"..i]
-		if not button then return end
+hooksecurefunc(GameTooltip, "SetCurrencyByID", function(tooltip, id)
+	AddTooltipInfo(tooltip, id, not MerchantMoneyInset:IsMouseOver())
+end)
 
-		if not button.hookedOnEnter then
-			button.LinkButton:HookScript("OnEnter", CurrencyButton_OnEnter)
-			button.hookedOnEnter = true
-		end
+hooksecurefunc(GameTooltip, "SetCurrencyToken", function(tooltip, i)
+	local name, isHeader, isExpanded, isUnused, isWatched, count, icon = GetCurrencyListInfo(i)
+	AddTooltipInfo(GameTooltip, nameToID[name], not TokenFrame:IsMouseOver())
+end)
 
-		i = i + 1
+hooksecurefunc(GameTooltip, "SetHyperlink", function(tooltip, link)
+	local id = strmatch(link, "currency:(%d+)")
+	if id then
+		AddTooltipInfo(tooltip, tonumber(id), true)
 	end
-	UpdateData()
+end)
+
+hooksecurefunc(GameTooltip, "SetMerchantCostItem", function(tooltip, item, currency)
+	local icon, _, _, name = GetMerchantItemCostItem(item, currency)
+	AddTooltipInfo(tooltip, nameToID[name], true)
 end)
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function(self, event, addon)
 	if event == "ADDON_LOADED" then
-		if addon == "ShestakUI" then return end
+		if addon ~= "ShestakUI" then return end
 
 		if not SavedCurrency then SavedCurrency = {} end
 		if not SavedCurrency[T.realm] then SavedCurrency[T.realm] = {} end
-		if not SavedCurrency[T.realm][T.name] then SavedCurrency[T.realm][T.name] = {} end
+		if not SavedCurrency[T.realm][faction] then SavedCurrency[T.realm][faction] = {} end
+		if not SavedCurrency[T.realm][faction][T.name] then SavedCurrency[T.realm][faction][T.name] = {} end
 
-		local now = time()
-
-		SavedCurrency[T.realm][T.name].class = T.class
-		SavedCurrency[T.realm][T.name].lastSeen = now
-
-		charDB = SavedCurrency[T.realm][T.name]
-		realmDB = SavedCurrency[T.realm]
-
-		for k, v in pairs(charDB) do
-			if type(k) == "number" then
-				charDB[k] = nil
+		for k, v in pairs(SavedCurrency[T.realm]) do
+			if k ~= "Alliance" and k ~= "Horde" then
+				SavedCurrency[T.realm][k] = nil
 			end
 		end
 
+		local now = time()
+
+		realmDB = SavedCurrency[T.realm][faction]
+		charDB = realmDB[T.name]
+
+		charDB.class = select(2, UnitClass("player"))
+		charDB.lastSeen = now
+
 		local cutoff = now - (60 * 60 * 24 * 30)
 		for name, data in pairs(realmDB) do
-			if (data.lastSeen or now) > cutoff and name ~= T.name then
+			if data.lastSeen and data.lastSeen < cutoff then
+				realmDB[name] = nil
+			elseif name ~= T.name then
 				tinsert(playerList, name)
 			end
 		end
 		sort(playerList)
+		tinsert(playerList, 1, T.name)
 
 		self:UnregisterEvent("ADDON_LOADED")
 
@@ -119,7 +150,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 				end
 			end)
 		end
-
 		self:UnregisterEvent("PLAYER_LOGIN")
 	end
 end)

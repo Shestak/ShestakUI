@@ -285,7 +285,6 @@ L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."
 L_POPUP_SETTINGS_DXE = "Need to change the position of elements DXE."
 L_POPUP_SETTINGS_BW = "Need to change the position of elements BigWigs."
 L_POPUP_ARMORY = "Armory"
-L_POPUP_TALENT_FIX = "A Blizzard bug has occured which is preventing you from changing your talents, this happen when you've inspected someone. Unfortunatly there is nothing we can do in this WoW Patch to fix it, please reload your UI and try again."
 L_POPUP_CURRENCY_CAP = "You get maximum value of"
 
 -- Welcome message

@@ -185,7 +185,7 @@ Monomyth:Register("QUEST_COMPLETE", function()
 
 		if bestIndex then
 			choiceFinished = true
-			_G["QuestInfoItem" .. bestIndex]:Click()
+			_G["QuestInfoItem"..bestIndex]:Click()
 		end
 	end
 end)

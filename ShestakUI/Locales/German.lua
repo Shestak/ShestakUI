@@ -289,7 +289,6 @@ L_POPUP_SETTINGS_DBM = "Die Position der DBM Elemente muss verändert werden."
 L_POPUP_SETTINGS_DXE = "Die Position der DXE Elemente muss verändert werden."
 L_POPUP_SETTINGS_BW = "Die Position der BigWigs Elemente muss verändert werden."
 L_POPUP_ARMORY = "Waffenkammer"
-L_POPUP_TALENT_FIX = "Ein Fehler ist aufgetreten, der verhindert das Du jemanden betrachten kannst. Leider gibt es nichts was wir tun können, um das Problem zu beheben. Lade bitte Deine UI neu und versuche es erneut."
 L_POPUP_CURRENCY_CAP = "Maximalwert erreicht"
 
 -- Welcome message

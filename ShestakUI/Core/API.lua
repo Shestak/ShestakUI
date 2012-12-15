@@ -61,9 +61,7 @@ local function SetTemplate(f, t)
 	GetTemplate(t)
 
 	f:SetBackdrop({
-		bgFile = C.media.blank,
-		edgeFile = C.media.blank,
-		tile = false, tileSize = 0, edgeSize = T.mult,
+		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.mult,
 		insets = {left = -T.mult, right = -T.mult, top = -T.mult, bottom = -T.mult}
 	})
 
@@ -90,9 +88,7 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	f:SetFrameStrata("BACKGROUND")
 	f:SetPoint(a1, p, a2, x, y)
 	f:SetBackdrop({
-		bgFile = C.media.blank,
-		edgeFile = C.media.blank,
-		tile = false, tileSize = 0, edgeSize = T.mult,
+		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.mult,
 		insets = {left = -T.mult, right = -T.mult, top = -T.mult, bottom = -T.mult}
 	})
 

@@ -211,7 +211,7 @@ function tullaRange.SetButtonColor(button, colorType)
 		button.tullaRangeColor = colorType
 
 		local r, g, b = tullaRange:GetColor(colorType)
-		local icon =  _G[button:GetName() .. "Icon"]
+		local icon = _G[button:GetName().."Icon"]
 		icon:SetVertexColor(r, g, b)
 	end
 end
@@ -227,7 +227,7 @@ function tullaRange.UpdateFlash(button, elapsed)
 			end
 			flashtime = ATTACK_BUTTON_FLASH_TIME - overtime
 
-			local flashTexture = _G[button:GetName() .. "Flash"]
+			local flashTexture = _G[button:GetName().."Flash"]
 			if flashTexture:IsShown() then
 				flashTexture:Hide()
 			else

@@ -27,7 +27,7 @@ local locs = {
 	["INVTYPE_RANGEDRIGHT"] = 1,
 }
 
---  White items that are a source for Transmogrify
+-- White items that are a source for Transmogrify
 local wx = {
 	[41746] = 1,
 	[43600] = 1,

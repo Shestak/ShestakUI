@@ -106,6 +106,7 @@ L_GUI_SKINS_MAGE_NUGGETS = "Attiva il restyling di MageNuggets"
 L_GUI_SKINS_NPCSCAN = "Attiva il restyling di NPCScan"
 L_GUI_SKINS_VANASKOS = "Attiva il restyling di VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "Attiva il restyling di WeakAuras"
+L_GUI_SKINS_SKADA = "Attiva il restyling di Skada"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"
