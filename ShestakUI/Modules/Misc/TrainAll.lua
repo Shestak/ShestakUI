@@ -25,14 +25,12 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		end)
 		hooksecurefunc("ClassTrainerFrame_Update", function()
 			for i = 1, GetNumTrainerServices() do
-				if select(3, GetTrainerServiceInfo(i)) == "available" then
+				if ClassTrainerTrainButton:IsEnabled() and select(3, GetTrainerServiceInfo(i)) == "available" then
 					button:Enable()
-					--button:Show()
 					return
 				end
 			end
 			button:Disable()
-			--button:Hide()
 		end)
 	end
 end)
