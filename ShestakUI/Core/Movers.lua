@@ -35,6 +35,7 @@ T.MoverFrames = {
 local moving = false
 local movers = {}
 local placed = {
+	"ShestakUI_alDamageMeterFrame",
 	"Butsu",
 	"UIAltPowerBar",
 	"LootHistoryFrame",
