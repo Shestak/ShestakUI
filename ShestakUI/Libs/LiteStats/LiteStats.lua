@@ -321,7 +321,7 @@ if memory.enabled then
 				end
 				if exmem > 0 and not IsAltKeyDown() then
 					local more = #memoryt - memory.max_addons
-					GameTooltip:AddDoubleLine(format("%d %s (%s)", more, L_STATS_HIDDEN, L_STATS_ALT), formatmem(exmem), ttsubh.r, ttsubh.g, ttsubh.b, ttsubh.r, ttsubh.g, ttsubh.b)
+					GameTooltip:AddDoubleLine(format("%d %s (%s)", more, L_STATS_HIDDEN, ALT_KEY), formatmem(exmem), ttsubh.r, ttsubh.g, ttsubh.b, ttsubh.r, ttsubh.g, ttsubh.b)
 				end
 				GameTooltip:AddDoubleLine(" ", "--------------", 1, 1, 1, 0.5, 0.5, 0.5)
 			end
@@ -516,7 +516,7 @@ if gold.enabled then
 				end
 			end
 			GameTooltip:AddDoubleLine(" ", "-----------------", 1, 1, 1, 0.5, 0.5, 0.5)
-			GameTooltip:AddDoubleLine(L_STATS_TOTAL, formatgold(1, total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddDoubleLine(TOTAL, formatgold(1, total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:AddLine(" ")
 
 			local currencies = 0
@@ -933,7 +933,7 @@ if guild.enabled then
 					GameTooltip:AddLine(" ")
 					for i = 1, total do
 						if guild.maxguild and i > guild.maxguild then
-							if online > 2 then GameTooltip:AddLine(format("%d %s (%s)", online - guild.maxguild, L_STATS_HIDDEN, L_STATS_ALT), ttsubh.r, ttsubh.g, ttsubh.b) end
+							if online > 2 then GameTooltip:AddLine(format("%d %s (%s)", online - guild.maxguild, L_STATS_HIDDEN, ALT_KEY), ttsubh.r, ttsubh.g, ttsubh.b) end
 							break
 						end
 						name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, isMobile = GetGuildRosterInfo(i)
@@ -1565,7 +1565,7 @@ if experience.enabled then
 					end
 				end
 				GameTooltip:AddDoubleLine(" ", "------------------", 1, 1, 1, 0.5, 0.5, 0.5)
-				GameTooltip:AddDoubleLine(L_STATS_TOTAL, fmttime(total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(TOTAL, fmttime(total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			elseif conf.ExpMode == "xp" then
 				GameTooltip:AddDoubleLine(COMBAT_XP_GAIN, format(LEVEL_GAINED, UnitLevel(P)), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 				GameTooltip:AddLine(" ")
