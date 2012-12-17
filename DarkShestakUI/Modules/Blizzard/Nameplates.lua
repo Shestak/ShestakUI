@@ -232,6 +232,13 @@ local OnSizeChanged = function(self)
 	self.needFix = true
 end
 
+local function HealthBar_ValueChanged(frame)
+	frame = frame:GetParent()
+	frame.hp:SetMinMaxValues(frame.healthOriginal:GetMinMaxValues())
+	frame.hp:SetValue(frame.healthOriginal:GetValue() - 1) -- Blizzard bug fix
+	frame.hp:SetValue(frame.healthOriginal:GetValue())
+end
+
 -- We need to reset everything when a nameplate it hidden
 local function OnHide(frame)
 	frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
@@ -337,9 +344,7 @@ local function UpdateObjects(frame)
 	frame.hp:GetStatusBarTexture():SetHorizTile(true)
 
 	-- Match values
-	frame.hp:SetMinMaxValues(frame.healthOriginal:GetMinMaxValues())
-	frame.hp:SetValue(frame.healthOriginal:GetValue() - 1) -- Blizzard bug fix
-	frame.hp:SetValue(frame.healthOriginal:GetValue())
+	HealthBar_ValueChanged(frame.hp)
 
 	-- Colorize Plate
 	Colorize(frame)
@@ -606,14 +611,13 @@ end
 
 -- Health Text, also border coloring for certain plates depending on health
 local function ShowHealth(frame, ...)
+	-- Match values
+	HealthBar_ValueChanged(frame.hp)
+
 	-- Show current health value
 	local _, maxHealth = frame.healthOriginal:GetMinMaxValues()
 	local valueHealth = frame.healthOriginal:GetValue()
 	local d = (valueHealth / maxHealth) * 100
-
-	-- Match values
-	frame.hp:SetValue(valueHealth - 1)
-	frame.hp:SetValue(valueHealth)
 
 	if C.nameplate.health_value == true then
 		frame.hp.value:SetText(T.ShortValue(valueHealth).." - "..(string.format("%d%%", math.floor((valueHealth / maxHealth) * 100))))
