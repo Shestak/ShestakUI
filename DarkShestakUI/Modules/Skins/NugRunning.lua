@@ -42,7 +42,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	-- Resizes timerbar
-	local _Resize = TimerBar.Resize
+	local _Resize = TimerBar.VScale
 	function TimerBar.Resize(f, w, h)
 		_Resize(f, w, h)
 
