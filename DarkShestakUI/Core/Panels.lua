@@ -141,8 +141,13 @@ if C.actionbar.panels == true then
 	local bpanel = CreateFrame("Frame", "ActionBarPanel", bottombaranchor)
 	bpanel:SetTemplate("Default", "Shadow")
 	bpanel:SetPoint("TOP", bottombaranchor, "TOP", 0, C.actionbar.button_space)
-	bpanel:SetPoint("BOTTOMLEFT", bottombaranchor, "BOTTOMLEFT", -C.actionbar.button_space, -C.actionbar.button_space)
-	bpanel:SetPoint("BOTTOMRIGHT", bottombaranchor, "BOTTOMRIGHT", C.actionbar.button_space, -C.actionbar.button_space)
+	if C.actionbar.split_bars == true then
+		bpanel:SetPoint("BOTTOMLEFT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, -C.actionbar.button_space)
+		bpanel:SetPoint("BOTTOMRIGHT", SplitBarRight, "BOTTOMRIGHT", C.actionbar.button_space, -C.actionbar.button_space)
+	else
+		bpanel:SetPoint("BOTTOMLEFT", bottombaranchor, "BOTTOMLEFT", -C.actionbar.button_space, -C.actionbar.button_space)
+		bpanel:SetPoint("BOTTOMRIGHT", bottombaranchor, "BOTTOMRIGHT", C.actionbar.button_space, -C.actionbar.button_space)
+	end
 
 	local rpanel = CreateFrame("Frame", nil, rightbaranchor)
 	rpanel:SetTemplate("Default", "Shadow")
