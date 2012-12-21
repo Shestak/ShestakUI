@@ -56,6 +56,7 @@ MiniMapMailIcon:SetSize(16, 16)
 
 -- Move QueueStatus icon
 QueueStatusFrame:SetClampedToScreen(true)
+QueueStatusFrame:SetFrameStrata("TOOLTIP")
 QueueStatusMinimapButton:ClearAllPoints()
 QueueStatusMinimapButton:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, -4)
 QueueStatusMinimapButton:SetHighlightTexture(nil)
