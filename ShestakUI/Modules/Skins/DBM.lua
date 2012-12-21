@@ -362,7 +362,7 @@ function T.UploadDBM()
 	DBT_SavedOptions["DBM"].Width = 189
 	DBT_SavedOptions["DBM"].TimerX = 123
 	DBT_SavedOptions["DBM"].TimerPoint = "BOTTOMLEFT"
-	DBT_SavedOptions["DBM"].FillUpBars = true
+	DBT_SavedOptions["DBM"].FillUpBars = false
 	DBT_SavedOptions["DBM"].IconLeft = false
 	DBT_SavedOptions["DBM"].ExpandUpwards = true
 	DBT_SavedOptions["DBM"].Texture = C.media.texture
