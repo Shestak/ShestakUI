@@ -131,7 +131,9 @@ L_ALOAD_CONFIRM_DELETE = "確定刪除該設定檔？請按住shift再次點擊�
 
 -- Chat
 L_CHAT_WHISPER = "From"
+L_CHAT_WHISPER_INFORM_GET = "To"
 L_CHAT_BN_WHISPER = "From"
+L_CHAT_BN_WHISPER_INFORM_GET = "To"
 L_CHAT_AFK = "[AFK]"
 L_CHAT_DND = "[DND]"
 L_CHAT_GM = "[GM]"
