@@ -78,6 +78,7 @@ end
 --	m2jest1c Config
 ----------------------------------------------------------------------------------------
 if T.coauthor == true then
+	add("T_DEBUFF_ICON", {spellID = 123712, unitID = "target", caster = "all", filter = "DEBUFF"}) -- Scary Fog (Lei Shi HM)
 	if T.class == "WARRIOR" then
 		add("T_DEBUFF_ICON", {spellID = 115767, unitID = "target", caster = "player", filter = "DEBUFF"}) -- Deep Wounds
 	end
