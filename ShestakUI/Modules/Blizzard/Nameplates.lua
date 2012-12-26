@@ -211,11 +211,11 @@ local OnValueChanged = function(self, curValue)
 	end
 end
 
--- Sometimes castbar likes to randomly resize
 local OnSizeChanged = function(self)
 	self.needFix = true
 end
 
+-- 
 local function HealthBar_ValueChanged(frame)
 	frame = frame:GetParent()
 	frame.hp:SetMinMaxValues(frame.healthOriginal:GetMinMaxValues())
