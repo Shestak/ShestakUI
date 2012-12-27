@@ -86,8 +86,24 @@ SubZoneTextFrame:SetScript("OnShow", function() SubZoneTextFrame:Hide() end)
 ----------------------------------------------------------------------------------------
 --	Disable flash tab
 ----------------------------------------------------------------------------------------
-ChatTypeInfo["WHISPER"] = {sticky = 1, flashTab = false, flashTabOnGeneral = false}
-ChatTypeInfo["BN_WHISPER"] = {sticky = 1, flashTab = false, flashTabOnGeneral = false}
+ChatTypeInfo.WHISPER = {sticky = 1, flashTab = false, flashTabOnGeneral = false}
+ChatTypeInfo.BN_WHISPER = {sticky = 1, flashTab = false, flashTabOnGeneral = false}
+
+----------------------------------------------------------------------------------------
+--	Switch resolution
+----------------------------------------------------------------------------------------
+SlashCmdList.SWITCHRESO = function()
+	if ({GetScreenResolutions()})[GetCurrentResolution()] == "1366x768" then
+		SetCVar("gxWindow", 1)
+		SetCVar("gxResolution", "1280x600")
+	else
+		SetCVar("gxWindow", 0)
+		SetCVar("gxResolution", "1366x768")
+	end
+	RestartGx()
+end
+SLASH_SWITCHRESO1 = "/sr"
+SLASH_SWITCHRESO2 = "/ык"
 
 ----------------------------------------------------------------------------------------
 --	Auto hide unnecessary stats from CharacterFrame(module from Inomena by p3lim)

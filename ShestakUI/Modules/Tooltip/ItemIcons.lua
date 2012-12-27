@@ -29,14 +29,14 @@ local function newTooltipHooker(method, func)
 end
 
 local hookItem = newTooltipHooker("OnTooltipSetItem", function(self, ...)
-	local name, link = self:GetItem()
+	local _, link = self:GetItem()
 	if link then
 		setTooltipIcon(self, GetItemIcon(link))
 	end
 end)
 
 local hookSpell = newTooltipHooker("OnTooltipSetSpell", function(self, ...)
-	local name, rank, id = self:GetSpell()
+	local _, _, id = self:GetSpell()
 	if id then
 		setTooltipIcon(self, select(3, GetSpellInfo(id)))
 	end

@@ -34,6 +34,10 @@ SLASH_SHOWHELM1 = "/showhelm"
 SLASH_SHOWHELM2 = "/sh"
 SLASH_SHOWHELM3 = "/ыр"
 
+SlashCmdList.CLEARCOMBAT = function() CombatLogClearEntries() end
+SLASH_CLEARCOMBAT1 = "/clc"
+SLASH_CLEARCOMBAT2 = "/сдс"
+
 ----------------------------------------------------------------------------------------
 --	Description of the slash commands
 ----------------------------------------------------------------------------------------
