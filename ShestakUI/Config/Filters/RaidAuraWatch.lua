@@ -114,6 +114,7 @@ T.RaidDebuffs = {
 	[SpellName(129078)] = 4,	-- Amber Prison
 	[SpellName(122055)] = 3,	-- Residue
 	[SpellName(122064)] = 3,	-- Corrosive Resin
+	[SpellName(123963)] = 4,	-- Kor'thik Strike
 	-- Amber-Shaper Un'sok
 	[SpellName(121949)] = 3,	-- Parasitic Growth
 	[SpellName(122370)] = 3,	-- Reshape Life
