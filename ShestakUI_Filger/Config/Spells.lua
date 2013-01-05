@@ -89,13 +89,13 @@ C["filger_spells"] = {
 			-- General
 			-- Tank
 			-- River's Song (Dodge)
-			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
-			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -346,13 +346,13 @@ C["filger_spells"] = {
 			-- General
 			-- Tank
 			-- River's Song (Dodge)
-			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
-			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
@@ -1122,13 +1122,13 @@ C["filger_spells"] = {
 			-- General
 			-- Tank
 			-- River's Song (Dodge)
-			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
-			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
@@ -1354,13 +1354,13 @@ C["filger_spells"] = {
 			-- General
 			-- Tank
 			-- River's Song (Dodge)
-			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
-			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
@@ -1824,7 +1824,7 @@ C["filger_spells"] = {
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
-			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2057,7 +2057,7 @@ C["filger_spells"] = {
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
-			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2523,13 +2523,13 @@ C["filger_spells"] = {
 			-- General
 			-- Tank
 			-- River's Song (Dodge)
-			{spellID = 116660, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
 			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
-			{spellID = 120032, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
