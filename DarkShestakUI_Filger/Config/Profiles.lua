@@ -89,5 +89,7 @@ if T.coauthor == true then
 		add("P_BUFF_ICON", {spellID = 116202, unitID = "player", caster = "player", filter = "BUFF"}) -- Aura of the Elements
 		add("P_BUFF_ICON", {spellID = 119839, unitID = "player", caster = "player", filter = "BUFF"}) -- Fury Ward
 		add("P_BUFF_ICON", {spellID = 104025, unitID = "player", caster = "player", filter = "BUFF"}) -- Immolation Aura
+		add("P_PROC_ICON", {spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"}) -- Zen Alchemist Stone (Int)
+		add("P_PROC_ICON", {spellID = 104510, unitID = "player", caster = "player", filter = "BUFF"}) -- Windsong
 	end
 end
