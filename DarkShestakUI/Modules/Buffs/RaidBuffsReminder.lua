@@ -187,7 +187,6 @@ raidbuff_reminder:RegisterEvent("UNIT_INVENTORY_CHANGED")
 raidbuff_reminder:RegisterEvent("UNIT_AURA")
 raidbuff_reminder:RegisterEvent("PLAYER_ENTERING_WORLD")
 raidbuff_reminder:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
-raidbuff_reminder:RegisterEvent("CHARACTER_POINTS_CHANGED")
 raidbuff_reminder:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 raidbuff_reminder:SetScript("OnEvent", OnAuraChange)
 
