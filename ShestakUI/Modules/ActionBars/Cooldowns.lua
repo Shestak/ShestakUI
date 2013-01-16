@@ -96,9 +96,10 @@ local function Timer_Create(self)
 	return timer
 end
 
-local function Timer_Start(self, start, duration)
-	if self.noOCC then return end
-	if start > 0 and duration > 2 then
+local function Timer_Start(self, start, duration, charges, maxCharges)
+	local remainingCharges = charges or 0
+
+	if start > 0 and duration > 2 and remainingCharges == 0 and (not self.noOCC) then
 		local timer = self.timer or Timer_Create(self)
 		timer.start = start
 		timer.duration = duration
@@ -113,7 +114,9 @@ local function Timer_Start(self, start, duration)
 	end
 end
 
-hooksecurefunc(getmetatable(ActionButton1Cooldown).__index, "SetCooldown", Timer_Start)
+hooksecurefunc(getmetatable(_G["ActionButton1Cooldown"]).__index, "SetCooldown", Timer_Start)
+
+if not _G["ActionBarButtonEventsFrame"] then return end
 
 local active = {}
 local hooked = {}
@@ -126,12 +129,12 @@ local function cooldown_OnHide(self)
 	active[self] = nil
 end
 
-local function cooldown_ShouldUpdateTimer(self, start, duration)
+local function cooldown_ShouldUpdateTimer(self, start, duration, charges, maxCharges)
 	local timer = self.timer
 	if not timer then
 		return true
 	end
-	return timer.start ~= start
+	return not(timer.start == start or timer.charges == charges or timer.maxCharges == maxCharges)
 end
 
 local function cooldown_Update(self)
@@ -139,8 +142,8 @@ local function cooldown_Update(self)
 	local start, duration, enable = GetActionCooldown(button.action)
 	local charges, maxCharges, chargeStart, chargeDuration = GetActionCharges(button.action)
 
-	if charges == 0 and cooldown_ShouldUpdateTimer(self, start, duration) then
-		Timer_Start(self, start, duration)
+	if cooldown_ShouldUpdateTimer(self, start, duration, charges, maxCharges) then
+		Timer_Start(self, start, duration, charges, maxCharges)
 	end
 end
 

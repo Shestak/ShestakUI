@@ -1266,7 +1266,7 @@ end
 if talents.enabled then
 	Inject("Talents", {
 		OnLoad = function(self)
-			RegEvents(self, "PLAYER_LOGIN PLAYER_TALENT_UPDATE CHARACTER_POINTS_CHANGED PLAYER_ENTERING_WORLD PLAYER_LEAVING_WORLD")
+			RegEvents(self, "PLAYER_LOGIN PLAYER_TALENT_UPDATE PLAYER_ENTERING_WORLD PLAYER_LEAVING_WORLD")
 		end,
 		OnEvent = function(self, event, ...)
 			if event == "PLAYER_ENTERING_WORLD" then
