@@ -128,12 +128,13 @@ end
 if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].bn_popup = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5}
 	C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -239, -113}
-	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -69}
+	C["position"].threat_meter = {"CENTER", UIParent, "CENTER", 0, -91}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -115}
 	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -398, 293}
 	C["position"].top_panel = {"TOP", UIParent, "TOP", 0, -118}
 	C["position"].raid_buffs = {"BOTTOMLEFT", Minimap, "TOPLEFT", -2, 5}
 	C["position"].raid_utility = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 210}
+	C["position"].extra_button = {"BOTTOM", UIParent, "BOTTOM", -369, 197}
 	C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", -298, 258}
 	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", -284, 355}
 	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 355}
@@ -150,14 +151,14 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["misc"].already_known = true
 	C["misc"].move_blizzard = true
 	C["announcements"].flask_food = true
-	C["announcements"].feasts = true
+	C["announcements"].pull_countdown = false
 	C["automation"].resurrection = false
 	C["automation"].screenshot = true
 	C["automation"].decline_duel = false
 	C["automation"].logging_combat = true
+	C["automation"].solve_artifact = false
 	C["skins"].blizzard_frames = true
 	C["skins"].dbm = true
-	C["skins"].blood_shield_tracker = true
 	C["skins"].npcscan = true
 	C["skins"].weak_auras = true
 	C["combattext"].icons = false
