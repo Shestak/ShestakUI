@@ -9,6 +9,7 @@ local format = string.format
 local next = next
 local ranks = PROFESSION_RANKS
 local tabs, spells = {}, {}
+local APPRENTICE = "Apprentice"
 
 local handler = CreateFrame("Frame")
 handler:SetScript("OnEvent", function(self, event) self[event](self, event) end)
@@ -111,7 +112,7 @@ end
 
 local function GetProfessionRank(currentSkill)
 	if currentSkill <= 74 then
-		return "Apprentice"
+		return APPRENTICE
 	end
 	
 	for index = #ranks, 1, -1 do
