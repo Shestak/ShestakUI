@@ -110,6 +110,10 @@ local function UpdateTab(object, name, rank, texture)
 end
 
 local function GetProfessionRank(currentSkill)
+	if currentSkill <= 74 then
+		return "Apprentice"
+	end
+	
 	for index = #ranks, 1, -1 do
 		local requiredSkill, title = ranks[index][1], ranks[index][2]
 
