@@ -149,6 +149,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[81297] = true		-- Consecration
 		T.aoespam[119072] = true	-- Holy Wrath
 		T.aoespam[53385] = true		-- Divine Storm
+		T.aoespam[122032] = true	-- Exorcism (Glyph)
 		T.aoespam[31803] = true		-- Censure
 		T.aoespam[42463] = true		-- Seal of Truth
 		T.aoespam[101423] = true	-- Seal of Righteousness
