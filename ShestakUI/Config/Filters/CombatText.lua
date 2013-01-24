@@ -77,6 +77,7 @@ elseif T.class == "HUNTER" then
 		T.aoespam[63468] = true		-- Piercing Shots
 		T.aoespam[118459] = true	-- Beast Cleave
 		T.aoespam[120699] = true	-- Lynx Rush
+		T.aoespam[120361] = true	-- Barrage
 		T.aoespam[131900] = true	-- A Murder of Crows
 		T.aoespam[34655] = true		-- Deadly Poison (Trap)
 		T.aoespam[93433] = true		-- Burrow Attack (Worm)
@@ -222,6 +223,7 @@ elseif T.class == "SHAMAN" then
 		-- Damaging spells
 		T.aoespam[421] = true		-- Chain Lightning
 		T.aoespam[45297] = true		-- Chain Lightning (Mastery)
+		T.aoespam[114738] = true	-- Lava Beam (Mastery)
 		T.aoespam[8349] = true		-- Fire Nova
 		T.aoespam[77478] = true		-- Earhquake
 		T.aoespam[51490] = true		-- Thunderstorm
@@ -270,11 +272,13 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[46968] = true		-- Shockwave
 		T.aoespam[6343] = true		-- Thunder Clap
 		T.aoespam[1680] = true		-- Whirlwind
+		T.aoespam[44949] = true		-- Whirlwind Off-Hand
 		T.aoespam[115767] = true	-- Deep Wounds
 		T.aoespam[50622] = true		-- Bladestorm
 		T.aoespam[52174] = true		-- Heroic Leap
 		T.aoespam[118000] = true	-- Dragon Roar
 		T.aoespam[76858] = true		-- Opportunity Strike
+		T.aoespam[113344] = true	-- Bloodbath
 	end
 	if C.combattext.healing then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
