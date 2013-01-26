@@ -77,6 +77,7 @@ elseif T.class == "HUNTER" then
 		T.aoespam[63468] = true		-- Piercing Shots
 		T.aoespam[118459] = true	-- Beast Cleave
 		T.aoespam[120699] = true	-- Lynx Rush
+		T.aoespam[120361] = true	-- Barrage
 		T.aoespam[131900] = true	-- A Murder of Crows
 		T.aoespam[34655] = true		-- Deadly Poison (Trap)
 		T.aoespam[93433] = true		-- Burrow Attack (Worm)
@@ -106,27 +107,31 @@ elseif T.class == "MAGE" then
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
+		T.aoespam[119611] = true	-- Renewing Mist
+		T.aoespam[132120] = true	-- Enveloping Mist
 		T.aoespam[115175] = true	-- Soothing Mist
 		T.aoespam[125953] = 115175	-- Soothing Mist (Statue)
 		T.aoespam[126890] = true	-- Eminence
 		T.aoespam[117640] = true	-- Spinning Crane Kick
 		T.aoespam[132463] = true	-- Chi Wave
+		T.aoespam[130654] = true	-- Chi Burst
+		T.aoespam[124081] = true	-- Zen Sphere
 		T.aoespam[124101] = true	-- Zen Sphere: Detonate
 		T.aoespam[116670] = true	-- Uplift
-		T.aoespam[132120] = true	-- Enveloping Mist
-		T.aoespam[119611] = true	-- Renewing Mist
 		-- Damaging spells
 		T.aoespam[117952] = true	-- Crackling Jade Lightning
 		T.aoespam[117418] = true	-- Fists of Fury
 		T.aoespam[120274] = true	-- Tiger Strikes
 		T.aoespam[128531] = true	-- Blackout Kick (DoT)
+		T.aoespam[121253] = true	-- Keg Smash
 		T.aoespam[115181] = true	-- Breath of Fire
 		T.aoespam[123725] = true	-- Breath of Fire (DoT)
 		T.aoespam[107270] = true	-- Spinning Crane Kick
-		T.aoespam[132467] = true	-- Chi Wave
-		T.aoespam[125033] = true	-- Zen Sphere: Detonate
 		T.aoespam[123586] = true	-- Flying Serpent Kick
-		T.aoespam[121253] = true	-- Keg Smash
+		T.aoespam[132467] = true	-- Chi Wave
+		T.aoespam[130651] = true	-- Chi Burst
+		T.aoespam[124098] = true	-- Zen Sphere
+		T.aoespam[125033] = true	-- Zen Sphere: Detonate
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
@@ -145,6 +150,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[81297] = true		-- Consecration
 		T.aoespam[119072] = true	-- Holy Wrath
 		T.aoespam[53385] = true		-- Divine Storm
+		T.aoespam[122032] = true	-- Exorcism (Glyph)
 		T.aoespam[31803] = true		-- Censure
 		T.aoespam[42463] = true		-- Seal of Truth
 		T.aoespam[101423] = true	-- Seal of Righteousness
@@ -217,6 +223,7 @@ elseif T.class == "SHAMAN" then
 		-- Damaging spells
 		T.aoespam[421] = true		-- Chain Lightning
 		T.aoespam[45297] = true		-- Chain Lightning (Mastery)
+		T.aoespam[114738] = true	-- Lava Beam (Mastery)
 		T.aoespam[8349] = true		-- Fire Nova
 		T.aoespam[77478] = true		-- Earhquake
 		T.aoespam[51490] = true		-- Thunderstorm
@@ -265,11 +272,13 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[46968] = true		-- Shockwave
 		T.aoespam[6343] = true		-- Thunder Clap
 		T.aoespam[1680] = true		-- Whirlwind
+		T.aoespam[44949] = true		-- Whirlwind Off-Hand
 		T.aoespam[115767] = true	-- Deep Wounds
 		T.aoespam[50622] = true		-- Bladestorm
 		T.aoespam[52174] = true		-- Heroic Leap
 		T.aoespam[118000] = true	-- Dragon Roar
 		T.aoespam[76858] = true		-- Opportunity Strike
+		T.aoespam[113344] = true	-- Bloodbath
 	end
 	if C.combattext.healing then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
