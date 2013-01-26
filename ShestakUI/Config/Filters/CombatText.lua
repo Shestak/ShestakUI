@@ -275,6 +275,7 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[44949] = true		-- Whirlwind Off-Hand
 		T.aoespam[115767] = true	-- Deep Wounds
 		T.aoespam[50622] = true		-- Bladestorm
+		T.aoespam[95738] = true		-- Bladestorm Off-Hand
 		T.aoespam[52174] = true		-- Heroic Leap
 		T.aoespam[118000] = true	-- Dragon Roar
 		T.aoespam[76858] = true		-- Opportunity Strike
