@@ -12,7 +12,7 @@ local bars = {}
 local OnEvent = function(obj, event, ...)
 	if event == "ADDON_LOADED" and IsAddOnLoaded("Capping") then
 		db = CappingDB
-		db.texture = "rwk1"
+		db.texture = "Smooth"
 		db.altstyle = false
 		db.inset = 0
 		hooksecurefunc(Capping, "StartBar", function(...) self:StyleBar(...) end)

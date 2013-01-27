@@ -141,8 +141,8 @@ function T.UploadDXE()
 	if not DXEDB["profiles"][T.name.." - "..GetRealmName()]["AlternatePower"] then DXEDB["profiles"][T.name.." - "..T.realm]["AlternatePower"] = {} end
 	if not DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..GetRealmName()] then DXEDB["namespaces"]["Alerts"]["profiles"][T.name.." - "..T.realm] = {} end
 
-	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BackgroundTexture"] = "rwk1"
-	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BarTexture"] = "rwk1"
+	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BackgroundTexture"] = "Smooth"
+	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["BarTexture"] = "Smooth"
 	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["Border"] = "None"
 	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["Font"] = "Hooge"
 	DXEDB["profiles"][T.name.." - "..T.realm]["Globals"]["TimerFont"] = "Hooge"

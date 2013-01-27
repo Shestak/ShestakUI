@@ -114,7 +114,7 @@ end
 if LSM then
 	LSM:Register(LSM.MediaType.FONT, "Calibri", C.media.normal_font, LOCALE_MASK)
 	LSM:Register(LSM.MediaType.FONT, "Hooge", C.media.pixel_font, LOCALE_MASK)
-	LSM:Register(LSM.MediaType.STATUSBAR, "rwk1", C.media.texture)
+	LSM:Register(LSM.MediaType.STATUSBAR, "Smooth", C.media.texture)
 end
 
 -- Edit by Oz of shestakdotorg --
