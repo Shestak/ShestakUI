@@ -1078,6 +1078,10 @@ C["filger_spells"] = {
 			{spellID = 118636, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shuffle
 			{spellID = 115307, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vital Mists
+			{spellID = 118674, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Serpent's Zeal
+			{spellID = 127722, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General

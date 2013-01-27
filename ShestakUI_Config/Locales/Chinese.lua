@@ -57,7 +57,7 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "当团队检查就绪时进行通告"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "在团队频道通告"
 L_GUI_ANNOUNCEMENTS_FEASTS = "放置食物/大锅/灵魂井/修理机器人时进行通告"
 L_GUI_ANNOUNCEMENTS_PORTALS = "开启传送门/召唤仪式时进行通告"
-L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Check bad gear in instance" -- Needs review
+L_GUI_ANNOUNCEMENTS_BAD_GEAR = "进入副本时检查并警报非副本装备"
 
 -- Automation options
 L_GUI_AUTOMATION = "自动设定"
@@ -393,8 +393,12 @@ L_GUI_UF_PLAYER_PARTY = "在小队中显示玩家框体"
 L_GUI_UF_SHOW_TANK = "显示团队主坦克框体"
 L_GUI_UF_SHOW_TANK_TT = "显示坦克目标的目标"
 L_GUI_UF_RAID_GROUP = "显示小队数目"
+<<<<<<< HEAD
 L_GUI_UF_RAID_PORTRAITS = "启用RAID帧上的肖像" -- Goooooooooogle translated
 L_GUI_UF_RAID_VERTICAL_GROUP = "竖向显示团队队伍(only for heal layout)" -- Needs review
+=======
+L_GUI_UF_RAID_VERTICAL_GROUP = "竖向显示团队队伍(只在治疗模式可用)"
+>>>>>>> db9757c82ead796ce96e60f44872555f1d341f40
 L_GUI_UF_ICONS_LEADER = "显示团队队长标识/助手标识/分配者标识"
 L_GUI_UF_ICONS_ROLE = "在团队中显示角色类型"
 L_GUI_UF_ICONS_READY_CHECK = "确认就绪情况图示"
@@ -428,5 +432,8 @@ L_GUI_ERROR = "错误收集"
 L_GUI_ERROR_BLACK = "隐藏黑名单错误"
 L_GUI_ERROR_WHITE = "显示白名单错误"
 L_GUI_ERROR_HIDE_COMBAT = "战斗中隐藏所有错误提示"
+<<<<<<< HEAD
 
 -- Edit by Oz of shestakdotorg --
+=======
+>>>>>>> db9757c82ead796ce96e60f44872555f1d341f40

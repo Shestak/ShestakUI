@@ -110,9 +110,9 @@ L_MAP_FOG = "地图全亮"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日历"
-L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
-L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
-L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
+L_MINIMAP_HEAL_LAYOUT = "左鍵单击 - 治疗模式团队框架"
+L_MINIMAP_DPS_LAYOUT = "右键单击 - 输出模式团队框架"
+L_MINIMAP_BLIZZ_LAYOUT = "鼠标中键 - 默认暴雪模式团队框架"
 
 -- Addons list
 L_ALOAD_RL = "重新加载UI"
@@ -141,8 +141,8 @@ L_CHAT_PARTY_LEADER = "队长"
 L_CHAT_RAID = "团队"
 L_CHAT_RAID_LEADER = "团长"
 L_CHAT_RAID_WARNING = "团队警告"
-L_CHAT_INSTANCE_CHAT = "I" -- Needs review
-L_CHAT_INSTANCE_CHAT_LEADER = "IL" -- Needs review
+L_CHAT_INSTANCE_CHAT = "副本"
+L_CHAT_INSTANCE_CHAT_LEADER = "副本领袖"
 L_CHAT_OFFICER = "官员"
 L_CHAT_PET_BATTLE = "宠物对战"
 L_CHAT_COME_ONLINE = "|cff298F00上线了|r。"
@@ -323,7 +323,7 @@ L_STATS_CLEARED_JUNK = "清除自动出售例外名单列表"
 L_STATS_CLEAR_EXCEPTIONS = "清除例外名单列表"
 L_STATS_WORLD_MAP = "点击开启世界地图"
 L_STATS_CURRENT_XP = "目前/升级所需经验值"
-L_STATS_MEMORY_USAGE = "Blizzard UI Memory Usage:" -- Needs review
+L_STATS_MEMORY_USAGE = "暴雪插件内存占用量:"
 L_STATS_GARBAGE_COLLECTED = "垃圾资源清除"
 L_STATS_CHANGE_SORTING = "[公会]右键更改排列方式,SHIFT+右键反转排列方式"
 L_STATS_HIDDEN = "隐藏"
