@@ -314,7 +314,7 @@ C["bag"] = {
 C["minimap"] = {
 	["enable"] = true,							-- Enable minimap
 	["tracking_icon"] = false,					-- Tracking icon
-	["size"] = 129,								-- Minimap size
+	["size"] = 130,								-- Minimap size
 	["hide_combat"] = false,					-- Hide minimap in combat
 	["toggle_menu"] = true,						-- Show toggle menu
 }

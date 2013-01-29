@@ -208,6 +208,12 @@ LPSTAT_PROFILES = {
 			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
 		}
 	},
+	DRUID = {
+		Stats = {
+			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
+			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
+		}
+	},
 	HUNTER = {
 		Stats = {
 			spec1fmt = class"AP: ".."[rangedap]"..class"  Crit: ".."[rangedcrit]%"..class"  Hit: ".."[rangedhit]%",
@@ -220,10 +226,16 @@ LPSTAT_PROFILES = {
 			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
 		}
 	},
+	MONK = {
+		Stats = {
+			spec1fmt = class"  Exp: ".."[expertise]%"..class"  Haste: ".."[meleehaste]%"..class"  Hit: ".."[meleehit]%",
+			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"Mastery: ".."[mastery]%",
+		}
+	},
 	PALADIN = {
 		Stats = {
 			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
-			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
+			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
 		}
 	},
 	PRIEST = {
