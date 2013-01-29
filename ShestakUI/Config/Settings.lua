@@ -521,7 +521,7 @@ C["raidframe"] = {
 	["plugins_aura_watch"] = true,				-- Raid debuff icons
 	["plugins_aura_watch_timer"] = false,		-- Timer on raid debuff icons
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
-	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle click when the unit is dead(does not work with Clique enabled)
+	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle click when the unit is dead(doesn't work with Clique enabled)
 }
 
 ----------------------------------------------------------------------------------------
