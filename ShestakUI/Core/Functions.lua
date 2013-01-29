@@ -1276,8 +1276,10 @@ T.PostCreateAura = function(element, button)
 		button.cd:SetReverse()
 		button.cd:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
 		button.cd:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
-		button.count:SetParent(button.cd)
-		button.remaining:SetParent(button.cd)
+		button.parent = CreateFrame("Frame", nil, button)
+		button.parent:SetFrameLevel(button.cd:GetFrameLevel() + 1)
+		button.count:SetParent(button.parent)
+		button.remaining:SetParent(button.parent)
 	else
 		element.disableCooldown = true
 	end
