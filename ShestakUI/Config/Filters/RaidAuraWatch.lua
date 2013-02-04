@@ -96,7 +96,6 @@ T.RaidDebuffs = {
 	[SpellName(123121)] = 3,	-- Spray
 	[SpellName(123705)] = 3,	-- Scary Fog
 	-- Sha of Fear
-	[SpellName(119985)] = 3,	-- Dread Spray
 	[SpellName(119086)] = 3,	-- Penetrating Bolt
 	[SpellName(120669)] = 3,	-- Naked and Afraid
 	[SpellName(120629)] = 3,	-- Huddle in Terror
