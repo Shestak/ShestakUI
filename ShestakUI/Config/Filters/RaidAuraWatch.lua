@@ -36,7 +36,7 @@ T.RaidBuffs = {
 		{41635, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},			-- Prayer of Mending
 		{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 				-- Renew
 		{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},			-- Power Word: Shield
-		{33206, "LEFT", {0.89, 0.1, 0.1}, true},			-- Pain Suppress
+		{33206, "LEFT", {0.89, 0.1, 0.1}, true},			-- Pain Suppression
 		{47788, "LEFT", {0.86, 0.52, 0}, true},				-- Guardian Spirit
 	},
 	SHAMAN = {
