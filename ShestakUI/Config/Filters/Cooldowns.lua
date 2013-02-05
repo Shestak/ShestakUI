@@ -12,13 +12,9 @@ if C.raidcooldown.enable == true then
 		[61999] = 600,	-- Raise Ally
 		[20707] = 600,	-- Soulstone
 		[126393] = 600,	-- Eternal Guardian
-		[90355] = 360,	-- Ancient Hysteria
-		[32182] = 300,	-- Heroism
-		[2825] = 300,	-- Bloodlust
-		[80353] = 300,	-- Time Warp
+		[64901] = 360,	-- Hymn of Hope
 		[29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem
-		[64901] = 360,	-- Hymn of Hope
 		[108280] = 180,	-- Healing Tide Totem
 	}
 end
