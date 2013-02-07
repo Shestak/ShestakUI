@@ -36,7 +36,7 @@ T.RaidBuffs = {
 		{41635, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},			-- Prayer of Mending
 		{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 				-- Renew
 		{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},			-- Power Word: Shield
-		{33206, "LEFT", {0.89, 0.1, 0.1}, true},			-- Pain Suppress
+		{33206, "LEFT", {0.89, 0.1, 0.1}, true},			-- Pain Suppression
 		{47788, "LEFT", {0.86, 0.52, 0}, true},				-- Guardian Spirit
 	},
 	SHAMAN = {
@@ -96,7 +96,6 @@ T.RaidDebuffs = {
 	[SpellName(123121)] = 3,	-- Spray
 	[SpellName(123705)] = 3,	-- Scary Fog
 	-- Sha of Fear
-	[SpellName(119985)] = 3,	-- Dread Spray
 	[SpellName(119086)] = 3,	-- Penetrating Bolt
 	[SpellName(120669)] = 3,	-- Naked and Afraid
 	[SpellName(120629)] = 3,	-- Huddle in Terror
