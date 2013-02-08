@@ -134,9 +134,3 @@ end
 if IsAddOnLoaded("ChatSounds") then
 	C.chat.whisp_sound = false
 end
-
-if IsAddOnLoaded("alDamageMeter") or IsAddOnLoaded("Numeration") or IsAddOnLoaded("Recount") or IsAddOnLoaded("Skada") or IsAddOnLoaded("TinyDPS") then
-	C.meter.enable = false
-end
-
--- Edit by Oz of shestakdotorg --
