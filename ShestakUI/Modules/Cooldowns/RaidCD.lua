@@ -196,8 +196,6 @@ SlashCmdList.RaidCD = function()
 	StartTimer(UnitName("player"), 20484)	-- Rebirth
 	StartTimer(UnitName("player"), 20707)	-- Soulstone
 	StartTimer(UnitName("player"), 29166)	-- Innervate
-	StartTimer(UnitName("player"), 32182)	-- Heroism
-	StartTimer(UnitName("player"), 2825)	-- Bloodlust
 end
 SLASH_RaidCD1 = "/raidcd"
 SLASH_RaidCD2 = "/кфшвсв"
