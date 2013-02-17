@@ -3048,6 +3048,10 @@ C["filger_spells"] = {
 			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Heart of Fear
+			-- Unseen Strike (Blade Lord Ta'yak)
+			{spellID = 123017, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Kor'thik Strike (Wind Lord Mel'jarak)
+			{spellID = 123963, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Corrosive Resin (Wind Lord Mel'jarak)
 			{spellID = 122064, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mogu'shan Vaults
