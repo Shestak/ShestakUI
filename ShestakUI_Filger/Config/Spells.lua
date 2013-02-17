@@ -387,8 +387,6 @@ C["filger_spells"] = {
 			{spellID = 82365, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Immobilized
 			{spellID = 45334, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Infected Wounds
-			{spellID = 58180, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
