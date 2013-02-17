@@ -67,7 +67,7 @@ for i, unit in pairs(units) do
 		unit.Name:SetPoint("BOTTOMLEFT", unit.ActualHealthBar, "TOPLEFT", 0, 10)
 
 		unit.PetTypeFrame:SetPoint("BOTTOMRIGHT", unit.HealthBarBackdrop, "TOPRIGHT", 4, 4)
-		unit.PetTypeFrame.text:SetPoint("RIGHT")
+		unit.PetTypeFrame.text:SetPoint("RIGHT", -3, 0)
 
 		unit.FirstAttack:SetPoint("LEFT", unit.HealthBarBackdrop, "RIGHT", 5, 0)
 		unit.FirstAttack:SetTexCoord(unit.SpeedIcon:GetTexCoord())
@@ -82,7 +82,7 @@ for i, unit in pairs(units) do
 		unit.Name:SetPoint("BOTTOMRIGHT", unit.ActualHealthBar, "TOPRIGHT", 0, 10)
 
 		unit.PetTypeFrame:SetPoint("BOTTOMLEFT", unit.HealthBarBackdrop, "TOPLEFT", -2, 4)
-		unit.PetTypeFrame.text:SetPoint("LEFT")
+		unit.PetTypeFrame.text:SetPoint("LEFT", 3, 0)
 
 		unit.FirstAttack:SetPoint("RIGHT", unit.HealthBarBackdrop, "LEFT", -5, 0)
 		unit.FirstAttack:SetTexCoord(0.5, 0, 0.5, 1)
