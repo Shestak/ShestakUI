@@ -208,7 +208,7 @@ C["enemycooldown"] = {
 	["size"] = 30,								-- Icon size
 	["direction"] = "RIGHT",					-- Icon direction
 	["show_always"] = false,					-- Show everywhere
-	["show_inpvp"] = false,						-- Show in bg zone
+	["show_inpvp"] = true,						-- Show in bg zone
 	["show_inarena"] = true,					-- Show in arena zone
 }
 
