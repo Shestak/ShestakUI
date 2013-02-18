@@ -191,8 +191,8 @@ local function LoadSkin()
 		_G["PlayerTalentFrameTalentsTalentRow"..i.."Bg"]:Hide()
 		row:DisableDrawLayer("BORDER")
 
-		row.TopLine:SetPoint("TOP", 0, 4)
-		row.BottomLine:SetPoint("BOTTOM", 0, -4)
+		row.TopLine:SetAlpha(0)
+		row.BottomLine:SetAlpha(0)
 
 		for j = 1, NUM_TALENT_COLUMNS do
 			local bu = _G["PlayerTalentFrameTalentsTalentRow"..i.."Talent"..j]

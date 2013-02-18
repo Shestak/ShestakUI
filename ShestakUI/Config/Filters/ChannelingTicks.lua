@@ -17,6 +17,8 @@ T.CastBarTicks = {
 	[GetSpellInfo(12051)] = 4,	-- Evocation
 	-- Monk
 	[GetSpellInfo(115175)] = 9,	-- Soothing Mist
+	[GetSpellInfo(117952)] = 6,	-- Crackling Jade Lightning
+	[GetSpellInfo(113656)] = 4,	-- Fists of Fury
 	-- Priest
 	[GetSpellInfo(15407)] = 3,	-- Mind Flay
 	[GetSpellInfo(48045)] = 5,	-- Mind Sear

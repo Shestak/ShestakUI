@@ -63,7 +63,8 @@ elseif T.class == "DRUID" then
 		T.aoespam[62078] = true		-- Swipe (Cat Form)
 		T.aoespam[779] = true		-- Swipe (Bear Form)
 		T.aoespam[33745] = true		-- Lacerate
-		T.aoespam[77758] = true		-- Thrash
+		T.aoespam[77758] = true		-- Thrash (Bear Form)
+		T.aoespam[106830] = true	-- Thrash (Cat Form)
 		T.aoespam[1079] = true		-- Rip
 		T.aoespam[124991] = true	-- Nature's Vigil
 	end
