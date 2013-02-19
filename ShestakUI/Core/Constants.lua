@@ -21,7 +21,7 @@ or T.name == "Шестак" or T.name == "Дефляция" then
 	T.author = true
 end
 
-if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+if T.name == "Oz" and T.realm == "Nemesis" then
 	T.oz = true
 end
 

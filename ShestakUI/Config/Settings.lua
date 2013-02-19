@@ -426,7 +426,7 @@ C["unitframe"] = {
 	-- Main
 	["enable"] = true,							-- Enable unit frames
 	["own_color"] = false,						-- Set your color for health bars
-	["uf_color"] = {0.1, 0.1, 0.1},				-- Color for UF if ["own_color"] = true
+	["uf_color"] = {0.15, 0.15, 0.15},			-- Color for UF if ["own_color"] = true
 	["enemy_health_color"] = false,				-- If enable, enemy target color is red
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
 	["color_value"] = false,					-- Health/mana value is colored
@@ -454,7 +454,7 @@ C["unitframe"] = {
 	["portrait_enable"] = false,				-- Enable player/target portraits
 	["portrait_classcolor_border"] = false,		-- Enable classcolor border
 	["portrait_height"] = 25,					-- Portrait height
-	["portrait_width"] = 20,					-- Portrait width
+	["portrait_width"] = 25,					-- Portrait width
 	["alternative_portraits"] = false,			-- Enable the portraits on the health bars (you need to disable the option for player/target portraits)
 	["class_icons_portraits"] = true,			-- Class icon portraits for player/target (you need to disable the option for player/target portraits)
 	["class_icons_portrait_height"] = 43,		-- Class icon portrait height
