@@ -104,39 +104,40 @@ end
 ----------------------------------------------------------------------------------------
 --	Oz@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.oz == true then
-	C["position"].threat_meter = {"BOTTOM", UIParent, "BOTTOM", 0, 294}
-	C["position"].enemy_cooldown = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -402, 321}
-	C["position"].extra_button = {"BOTTOM", UIParent, "BOTTOM", 0, 350}
-	C["position"].unitframes.player = {"BOTTOM", UIParent, "BOTTOM", 0, 388}
-	C["position"].unitframes.target = {"BOTTOM", UIParent, "BOTTOM", 283, 388}
-	C["position"].unitframes.pet = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 379, 75}
-	C["position"].unitframes.focus = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 379, 238}
-	C["position"].unitframes.focus_target = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 379, 166}
-	C["position"].unitframes.party_heal = {"TOPLEFT", "oUF_Player", "BOTTOMRIGHT", -374, -99}
-	C["position"].unitframes.raid_heal = {"TOPLEFT", "oUF_Player", "BOTTOMRIGHT", -374, -99}
-	C["position"].unitframes.player_castbar = {"CENTER", UIParent, "CENTER", 0, -202}
-	C["position"].unitframes.target_castbar = {"CENTER", UIParent, "CENTER", 11, -179}
-	C["media"].border_color = {0.1, 0.1, 0.1, 1}
+if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+	C["position"].vehicle = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 109, 100}
+	C["position"].ghost = {"TOPLEFT", "oUF_Player", "TOPLEFT", -2, 65}
+	C["position"].loot = {"TOPLEFT", UIParent, "TOPLEFT", 21, -532}
+	C["position"].group_loot = {"TOPLEFT", UIParent, "TOPLEFT", 241, -211}
+	C["position"].enemy_cooldown = {"BOTTOMLEFT", "oUF_Target", "BOTTOMRIGHT", 9, -62}
+	C["position"].raid_utility = {"TOPLEFT", UIParent, "TOPLEFT", 241, -21}
+	C["position"].extra_button = {"RIGHT", "oUF_Player", "BOTTOM", -53, -126}
+	C["position"].unitframes.player = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -558, 373}
+	C["position"].unitframes.target = {"TOPRIGHT", "ActionBarAnchor", "BOTTOMLEFT", 558, 373}
+	C["position"].unitframes.tank = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 5, 18}
+	C["position"].unitframes.player_castbar = {"CENTER", UIParent, "CENTER", 0, 136}
+	C["position"].unitframes.target_castbar = {"BOTTOM", "oUF_Target", "BOTTOM", -272, -4}
+	C["position"].unitframes.raid_heal = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -331, 335}
+ 	C["media"].border_color = {0.1, 0.1, 0.1, 1}
+	C["media"].overlay_color = {0, 0, 0, 0.5}
 	C["general"].welcome_message = false
 	C["misc"].profession_database = true
 	C["automation"].screenshot = true
 	C["automation"].logging_combat = true
 	C["combattext"].scrollable = true
-	C["enemycooldown"].show_always = true
-	C["threat"].width = 128
-	C["threat"].bar_rows = 3
+	C["reminder"].raid_buffs_size = 19
+	C["reminder"].raid_buffs_always = true
+	C["minimap"].size = 129
+	C["minimap"].toggle_menu = false
 	C["actionbar"].hotkey = false
 	C["aura"].fot_debuffs = true
 	C["aura"].pet_debuffs = true
 	C["aura"].tot_debuffs = true
 	C["unitframe"].own_color = true
-	C["unitframe"].color_value = true
 	C["unitframe"].alternative_portraits = true
-	C["unitframe"].plugins_fader = true
+	C["unitframe"].color_value = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].raid_groups = 8
-	C["raidframe"].raid_groups_vertical = true
 	C["raidframe"].raid_portraits = true
 	C["raidframe"].plugins_aura_watch_timer = true
 	C["raidframe"].plugins_auto_resurrection = true
