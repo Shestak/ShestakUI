@@ -216,8 +216,8 @@ LPSTAT_PROFILES = {
 	},
 	PALADIN = {
 		Stats = {
-			spec1fmt = theme"Mastery: ".."[mastery]%"..theme"  Block: ".."[block]%"..theme"  Avoid: ".."[avoidance]%",
-			spec1fmt = theme"Mastery: ".."[mastery]%"..theme"  Block: ".."[block]%"..theme"  Avoid: ".."[avoidance]%",
+			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
+			spec2fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
 		}
 	},
 	PRIEST = {
