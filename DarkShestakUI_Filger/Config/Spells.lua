@@ -387,8 +387,6 @@ C["filger_spells"] = {
 			{spellID = 82365, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Immobilized
 			{spellID = 45334, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Infected Wounds
-			{spellID = 58180, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -486,6 +484,8 @@ C["filger_spells"] = {
 			{spellID = 5229, filter = "CD"},
 			-- Force of Nature
 			{spellID = 106737, filter = "CD"},
+			-- Might of Ursoc
+			{spellID = 106922, filter = "CD"},
 			-- Nature's Grasp
 			{spellID = 16689, filter = "CD"},
 			-- Incarnation
@@ -3048,6 +3048,10 @@ C["filger_spells"] = {
 			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Heart of Fear
+			-- Unseen Strike (Blade Lord Ta'yak)
+			{spellID = 123017, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Kor'thik Strike (Wind Lord Mel'jarak)
+			{spellID = 123963, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Corrosive Resin (Wind Lord Mel'jarak)
 			{spellID = 122064, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mogu'shan Vaults
