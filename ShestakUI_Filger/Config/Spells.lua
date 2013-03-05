@@ -3047,6 +3047,17 @@ C["filger_spells"] = {
 			-- Arcane Torrent
 			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
 
+			-- Throne of Thunder
+			-- Focused Lightning (Jin'rokh the Breaker)
+			{spellID = 137422, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Marked Soul (Council of Elders)
+			{spellID = 137359, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Torrent of Ice (Megaera)
+			{spellID = 139857, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Cinder (Megaera)
+			{spellID = 134391, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Static Shock (Lei Shen)
+			{spellID = 135695, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Heart of Fear
 			-- Unseen Strike (Blade Lord Ta'yak)
 			{spellID = 123017, unitID = "player", caster = "all", filter = "DEBUFF"},
