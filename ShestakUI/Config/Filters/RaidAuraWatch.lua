@@ -83,6 +83,68 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Pandaria
 -----------------------------------------------------------------
+-- Throne of Thunder
+	-- Jin'rokh the Breaker
+	[SpellName(138349)] = 3,	-- Static Wound (Tank stacks)
+	[SpellName(138349)] = 3,	-- Thundering Throw (Tank stun)
+	[SpellName(138732)] = 3,	-- Ionization (Heroic-Dispel)
+	[SpellName(137422)] = 3,	-- Focused Lightning (Fixated - Kiting)
+	[SpellName(138006)] = 3,	-- Electrified Waters (Pool)
+	-- Horridon
+	[SpellName(136767)] = 3,	-- Triple Puncture (Tank stacks)
+	[SpellName(136654)] = 3,	-- Rending Charge (DoT)
+	[SpellName(136708)] = 3,	-- Stone Gaze (Stun)
+	[SpellName(136723)] = 3,	-- Sand Trap (Pool)
+	[SpellName(136710)] = 3,	-- Deadly Plague (Dispel)
+	[SpellName(136719)] = 3,	-- Blazing Sunlight (Dispel)
+	[SpellName(136587)] = 3,	-- Venom Bolt Volley (Dispel)
+	[SpellName(136512)] = 3,	-- Hex of Confusion (Dispel)
+	-- Council of Elders
+	[SpellName(136903)] = 3,	-- Frigid Assault (Tank stacks)
+	[SpellName(136922)] = 3,	-- Frostbite (DoT + stun)
+	[SpellName(136857)] = 3,	-- Entrapped (Dispel)
+	[SpellName(137359)] = 3,	-- Marked Soul (Fixated - Kiting)
+	[SpellName(137641)] = 3,	-- Soul Fragment (Heroic)
+	-- Tortos
+	[SpellName(136753)] = 3,	-- Slashing Talons (Tank DoT)
+	[SpellName(137633)] = 3,	-- Crystal Shell (Heroic)
+	-- Megaera
+	[SpellName(137731)] = 3,	-- Ignite Flesh (Tank DoT)
+	[SpellName(139843)] = 3,	-- Arctic Freeze (Tank Stun)
+	[SpellName(139840)] = 3,	-- Rot Armor (Tank stacks)
+	[SpellName(134391)] = 3,	-- Cinder (DoT Dispell)
+	[SpellName(139857)] = 3,	-- Torrent of Ice (Fixated - Kiting)
+	[SpellName(140179)] = 3,	-- Suppression (Heroic Dispell)
+	[SpellName(139909)] = 3,	-- Icy Ground (Pool)
+	-- Ji-Kun
+	[SpellName(140092)] = 3,	-- Infected Talons (Tank DoT)
+	[SpellName(134256)] = 3,	-- Slimed (DoT)
+	-- Durumu the Forgotten
+	[SpellName(133768)] = 4,	-- Arterial Cut (Tank stacks)
+	[SpellName(133767)] = 3,	-- Serious Wound (Tank only)
+	[SpellName(133798)] = 3,	-- Life Drain (Stun)
+	[SpellName(133597)] = 3,	-- Dark Parasite (Heroic Dispel)
+	-- Primordius
+	[SpellName(136050)] = 3,	-- Malformed Blood (Tank stacks)
+	[SpellName(136228)] = 3,	-- Volatile Pathogen (DoT)
+	-- Dark Animus
+	[SpellName(138569)] = 3,	-- Explosive Slam (Tank stacks)
+	[SpellName(138659)] = 3,	-- Touch of the Animus (DoT)
+	-- Iron Qon
+	[SpellName(134691)] = 3,	-- Impale (Tank stacks)
+	[SpellName(134628)] = 3,	-- Unleashed Flame (Damage staks)
+	[SpellName(136192)] = 3,	-- Lightning Storm (Stun)
+	-- Twin Consorts
+	[SpellName(137408)] = 3,	-- Fan of Flames (Tank stacks)
+	[SpellName(136722)] = 3,	-- Slumber Spores (Dispel)
+	[SpellName(137341)] = 3,	-- Beast of Nightmares (Fixate)
+	[SpellName(137360)] = 3,	-- Corrupted Healing (Healer stacks)
+	-- Lei Shen
+	[SpellName(135000)] = 3,	-- Decapitate (Tank only)
+	[SpellName(136478)] = 3,	-- Fusion Slash (Tank only)
+	[SpellName(136914)] = 3,	-- Electrical Shock (Tank only)
+	[SpellName(135695)] = 3,	-- Static Shock (Damage Split)
+	-- Ra-den
 -- Terrace of Endless Spring
 	-- Protectors of the Endless
 	[SpellName(117519)] = 3,	-- Touch of Sha
