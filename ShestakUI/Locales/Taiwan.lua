@@ -14,9 +14,9 @@ L_ANNOUNCE_LA_CHARGES = "次剩餘."
 
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
-L_ANNOUNCE_FF_NOFLASK = "缺少合劑: "
+L_ANNOUNCE_FF_NOFLASK = "缺少精煉藥劑: "
 L_ANNOUNCE_FF_ALLBUFFED = "已獲得所有增益!"
-L_ANNOUNCE_FF_CHECK_BUTTON = "檢查食物和合劑"
+L_ANNOUNCE_FF_CHECK_BUTTON = "檢查食物和精煉"
 
 -- Says thanks for some spells
 L_ANNOUNCE_SS_THANKS = "謝謝你的 "

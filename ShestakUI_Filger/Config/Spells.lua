@@ -484,6 +484,8 @@ C["filger_spells"] = {
 			{spellID = 5229, filter = "CD"},
 			-- Force of Nature
 			{spellID = 106737, filter = "CD"},
+			-- Might of Ursoc
+			{spellID = 106922, filter = "CD"},
 			-- Nature's Grasp
 			{spellID = 16689, filter = "CD"},
 			-- Incarnation
