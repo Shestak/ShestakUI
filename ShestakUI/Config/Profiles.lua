@@ -112,13 +112,13 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].enemy_cooldown = {"BOTTOMLEFT", "oUF_Target", "BOTTOMRIGHT", 9, -62}
 	C["position"].raid_utility = {"TOPLEFT", UIParent, "TOPLEFT", 241, -21}
 	C["position"].extra_button = {"RIGHT", "oUF_Player", "BOTTOM", -53, -126}
-	C["position"].unitframes.player = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -558, 373}
-	C["position"].unitframes.target = {"TOPRIGHT", "ActionBarAnchor", "BOTTOMLEFT", 558, 373}
+	C["position"].unitframes.player = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -558, 407}
+	C["position"].unitframes.target = {"TOPRIGHT", "ActionBarAnchor", "BOTTOMLEFT", 558, 407}
 	C["position"].unitframes.tank = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 5, 18}
 	C["position"].unitframes.player_castbar = {"CENTER", UIParent, "CENTER", 0, 136}
 	C["position"].unitframes.target_castbar = {"BOTTOM", "oUF_Target", "BOTTOM", -272, -4}
-	C["position"].unitframes.raid_heal = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -331, 335}
- 	C["media"].border_color = {0.1, 0.1, 0.1, 1}
+	C["position"].unitframes.raid_heal = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -331, 407}
+	C["media"].border_color = {0.1, 0.1, 0.1, 1}
 	C["media"].overlay_color = {0, 0, 0, 0.5}
 	C["general"].welcome_message = false
 	C["misc"].profession_database = true
@@ -127,6 +127,8 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["combattext"].scrollable = true
 	C["reminder"].raid_buffs_size = 19
 	C["reminder"].raid_buffs_always = true
+	C["chat"].background = true
+	C["chat"].background_alpha = 0.5
 	C["minimap"].size = 129
 	C["minimap"].toggle_menu = false
 	C["actionbar"].hotkey = false
