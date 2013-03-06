@@ -166,10 +166,10 @@ PetBattleQueueReadyFrame.hideOnEscape = nil
 ----------------------------------------------------------------------------------------
 --	Honor shown in tooltip
 ----------------------------------------------------------------------------------------
-PVPFrameCurrency:HookScript("OnEnter", function()
+--[[5.2 PVPFrameCurrency:HookScript("OnEnter", function()
 	GameTooltip:AddLine(HONORABLE_KILLS..": |cffffffff"..GetStatistic(588))
 	GameTooltip:Show()
-end)
+end)]]
 
 ----------------------------------------------------------------------------------------
 --	Old achievements filter

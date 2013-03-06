@@ -4,7 +4,7 @@ if C.misc.dungeon_tabs ~= true then return end
 ----------------------------------------------------------------------------------------
 --	PvP/PvE tabs on own frame(SocialTabs by Califpornia)
 ----------------------------------------------------------------------------------------
-local hookAtLoad = {"PVEFrame", "RaidBrowserFrame", "PVPFrame"}
+local hookAtLoad = {"PVEFrame", "RaidBrowserFrame", --[[5.2"PVPFrame"]]}
 local SocialTabs = CreateFrame("Frame")
 local TabRefArray = {}
 local VisibleFrames = {}
@@ -127,7 +127,7 @@ local function STHookFrame(fname)
 	prevtab = frametabs["RaidBrowserFrame"]
 
 	-- PVP tab
-	frametabs["PVPFrame"] = CreateFrame("CheckButton", "PVPSideTab", frame, "SpellBookSkillLineTabTemplate")
+	--[[frametabs["PVPFrame"] = CreateFrame("CheckButton", "PVPSideTab", frame, "SpellBookSkillLineTabTemplate")
 	SkinTab(frametabs["PVPFrame"], "Interface\\BattlefieldFrame\\UI-Battlefield-Icon")
 	frametabs["PVPFrame"]:SetPoint("TOPLEFT", prevtab, "BOTTOMLEFT", 0, -15)
 	frametabs["PVPFrame"].tooltip = PLAYER_V_PLAYER
@@ -137,7 +137,7 @@ local function STHookFrame(fname)
 
 	if fname == "RaidBrowserFrame" then
 		LFRParentFrameSideTab1:SetPoint("TOPLEFT", frametabs["PVPFrame"], "BOTTOMLEFT", 0, -15)
-	end
+	end]]
 
 	TabRefArray[fname] = frametabs
 
