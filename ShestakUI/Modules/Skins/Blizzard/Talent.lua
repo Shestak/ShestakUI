@@ -32,6 +32,11 @@ local function LoadSkin()
 	PlayerTalentFrameTalentsBg:Hide()
 	PlayerTalentFrameTalents:DisableDrawLayer("BORDER")
 
+	PlayerTalentFrameSpecializationLearnButton.FlashAnim.Play = T.dummy
+	PlayerTalentFrameSpecializationLearnButton.Flash:SetTexture("")
+	PlayerTalentFrameTalentsLearnButton.FlashAnim.Play = T.dummy
+	PlayerTalentFrameTalentsLearnButton.Flash:SetTexture("")
+
 	T.SkinCloseButton(PlayerTalentFrameCloseButton)
 
 	for i = 1, 6 do
