@@ -37,7 +37,7 @@ if C.enemycooldown.enable == true then
 		[102060] = 40,	-- Disrupting Shout
 		[15487] = 45,	-- Silence
 		[78675] = 60,	-- Solar Beam
-		[47476] = 120,	-- Strangulate
+		[47476] = 60,	-- Strangulate
 		-- Crowd Controls
 		[115078] = 15,	-- Paralysis
 		[20066] = 15,	-- Repentance
