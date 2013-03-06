@@ -2463,8 +2463,6 @@ C["filger_spells"] = {
 			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recklesness
 			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Deadly Calm
-			{spellID = 85730, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sweeping Strikes
 			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Victorious
