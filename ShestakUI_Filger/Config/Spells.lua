@@ -815,6 +815,8 @@ C["filger_spells"] = {
 			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blazing Speed
+			{spellID = 108843, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Power
 			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -934,6 +936,8 @@ C["filger_spells"] = {
 			{spellID = 2139, filter = "CD"},
 			-- Blink
 			{spellID = 1953, filter = "CD"},
+			-- Blazing Speed
+			{spellID = 108843, filter = "CD"},
 			-- Dragon's Breath
 			{spellID = 31661, filter = "CD"},
 			-- Deep Freeze
