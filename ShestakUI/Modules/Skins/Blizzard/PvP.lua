@@ -45,6 +45,22 @@ local function LoadSkin()
 		button:StyleButton()
 	end
 
+	hooksecurefunc("PVPQueueFrame_SelectButton", function(index)
+		local self = PVPQueueFrame
+		for i = 1, 3 do
+			local button = self["CategoryButton"..i]
+			if i == index then
+				button.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
+				button.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
+				button.border.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
+			else
+				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				button.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+				button.border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
+		end
+	end)
+
 	-- HonorFrame
 	T.SkinDropDownBox(HonorFrameTypeDropDown)
 
