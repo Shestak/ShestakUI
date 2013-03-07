@@ -103,7 +103,7 @@ local buffs = { -- Credits: Proditor, Rinu
 	[GetSpellInfo(122355)] = L_PLANNER_WARLOCK_2,		-- Molten Core
 	[GetSpellInfo(117828)] = L_PLANNER_WARLOCK_3,		-- Backdraft
 	-- WARRIOR
-	[GetSpellInfo(56636)] = L_PLANNER_WARRIOR_1,		-- Taste for Blood
+	[GetSpellInfo(60503)] = L_PLANNER_WARRIOR_1,		-- Taste for Blood
 	[GetSpellInfo(46916)] = L_PLANNER_WARRIOR_2,		-- Bloodsurge
 	[GetSpellInfo(50227)] = L_PLANNER_WARRIOR_3,		-- Sword and Board
 }
