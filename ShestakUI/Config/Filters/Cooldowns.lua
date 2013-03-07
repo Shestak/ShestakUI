@@ -29,7 +29,7 @@ if C.enemycooldown.enable == true then
 		[96231] = 15,	-- Rebuke
 		[80965] = 15,	-- Skull Bash
 		[116705] = 15,	-- Spear Hand Strike
-		[34490] = 20,	-- Silencing Shot
+		[34490] = 24,	-- Silencing Shot
 		[102051] = 20,	-- Frostjaw
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
@@ -55,6 +55,7 @@ if C.enemycooldown.enable == true then
 		[6789] = 45,	-- Mortal Coil
 		[64044] = 45,	-- Psychic Horror
 		[119381] = 45,	-- Leg Sweep
+		[19386] = 45,	-- Wyvern Sting
 		[853] = 60,		-- Hammer of Justice
 		[108200] = 60,	-- Remorseless Winter
 		-- Defense abilities

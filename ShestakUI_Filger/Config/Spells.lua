@@ -714,10 +714,10 @@ C["filger_spells"] = {
 			{spellID = 53271, filter = "CD"},
 			-- Powershot
 			{spellID = 109259, filter = "CD"},
-			-- Intimidation
-			{spellID = 19577, filter = "CD"},
 			-- Wyvern Sting
 			{spellID = 19386, filter = "CD"},
+			-- Intimidation
+			{spellID = 19577, filter = "CD"},
 			-- Bestial Wrath
 			{spellID = 19574, filter = "CD"},
 			-- Lynx Rush
