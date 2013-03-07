@@ -2669,7 +2669,7 @@ C["filger_spells"] = {
 			-- Primordius' Talisman of Rage (Strength, Proc)
 			{spellID = 138870, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Gaze of the Twins (Crit, Proc)
-			{spellID = 139170, unitID = "player", caster = "player", filter = "BUFF"},-
+			{spellID = 139170, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Helmbreaker Medallion (Crit, Use)
 			{spellID = 136084, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmist Vortex (Haste, Proc)
