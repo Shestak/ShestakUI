@@ -96,8 +96,6 @@ local function Visibility(self, event, unit)
 					wsb[i]:SetWidth(w - s)
 				end
 			end
-
-			if maxembers == 3 then wsb[4]:Hide() else wsb[4]:Show() end
 		elseif spec == SPEC_WARLOCK_AFFLICTION then
 			local maxshards = 4
 
@@ -109,8 +107,6 @@ local function Visibility(self, event, unit)
 					wsb[i]:SetWidth(w - s)
 				end
 			end
-
-			if maxshards == 3 then wsb[4]:Hide() else wsb[4]:Show() end
 		elseif spec == SPEC_WARLOCK_DEMONOLOGY then
 			wsb[2]:Hide()
 			wsb[3]:Hide()
