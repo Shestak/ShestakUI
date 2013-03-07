@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
@@ -41,6 +41,7 @@ if C.enemycooldown.enable == true then
 		-- Crowd Controls
 		[115078] = 15,	-- Paralysis
 		[20066] = 15,	-- Repentance
+		[108194] = 30,	-- Asphyxiate
 		[19503] = 30,	-- Scatter Shot
 		[1499] = 30,	-- Freezing Trap
 		[44572] = 30,	-- Deep Freeze
@@ -55,7 +56,6 @@ if C.enemycooldown.enable == true then
 		[64044] = 45,	-- Psychic Horror
 		[119381] = 45,	-- Leg Sweep
 		[853] = 60,		-- Hammer of Justice
-		[108194] = 60,	-- Asphyxiate
 		[108200] = 60,	-- Remorseless Winter
 		-- Defense abilities
 		[48707] = 45,	-- Anti-Magic Shell
