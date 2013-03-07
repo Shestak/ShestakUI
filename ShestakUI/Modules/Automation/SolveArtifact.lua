@@ -25,6 +25,7 @@ local fragment = {
 	["401"] = 7,	-- Tol'vir
 	["676"] = 10,	-- Pandaren
 	["677"] = 11,	-- Mogu
+	["754"] = 12,	-- Mantid
 }
 
 local _CURRENCY = string.gsub(string.gsub(CURRENCY_GAINED_MULTIPLE, "%%s", "(.+)"), "%%d", "(.+)")

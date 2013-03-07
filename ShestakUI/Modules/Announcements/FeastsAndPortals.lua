@@ -11,7 +11,17 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 
 	if subEvent == "SPELL_CAST_START" then
 		-- Feasts
-		if C.announcements.feasts and T.AnnounceFeasts[spellID] then
+		if C.announcements.feasts and (spellID == 126492 or spellID == 126494) then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_STAT, srcName, GetSpellLink(spellID), SPELL_STAT1_NAME), T.CheckChat(true))
+		elseif C.announcements.feasts and (spellID == 126495 or spellID == 126496) then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_STAT, srcName, GetSpellLink(spellID), SPELL_STAT2_NAME), T.CheckChat(true))
+		elseif C.announcements.feasts and (spellID == 126501 or spellID == 126502) then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_STAT, srcName, GetSpellLink(spellID), SPELL_STAT3_NAME), T.CheckChat(true))
+		elseif C.announcements.feasts and (spellID == 126497 or spellID == 126498) then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_STAT, srcName, GetSpellLink(spellID), SPELL_STAT4_NAME), T.CheckChat(true))
+		elseif C.announcements.feasts and (spellID == 126499 or spellID == 126500) then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_STAT, srcName, GetSpellLink(spellID), SPELL_STAT5_NAME), T.CheckChat(true))
+		elseif C.announcements.feasts and (spellID == 104958 or spellID == 105193 or spellID == 126503 or spellID == 126504) then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PRE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
 		-- Refreshment Table
 		elseif C.announcements.feasts and spellID == 43987 then

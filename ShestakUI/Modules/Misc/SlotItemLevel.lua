@@ -54,6 +54,7 @@ local function UpdateButtonsText(frame)
 					if heirloom == 7 then
 						text:SetText("")
 					else
+						if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
 						if upgrades[upgrade] > 0 then
 							text:SetText("|cffffd200"..ilevel + upgrades[upgrade])
 						else

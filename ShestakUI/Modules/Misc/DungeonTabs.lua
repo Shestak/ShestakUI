@@ -4,7 +4,7 @@ if C.misc.dungeon_tabs ~= true then return end
 ----------------------------------------------------------------------------------------
 --	PvP/PvE tabs on own frame(SocialTabs by Califpornia)
 ----------------------------------------------------------------------------------------
-local hookAtLoad = {"PVEFrame", "RaidBrowserFrame", "PVPFrame"}
+local hookAtLoad = {"PVEFrame", "RaidBrowserFrame"}
 local SocialTabs = CreateFrame("Frame")
 local TabRefArray = {}
 local VisibleFrames = {}
@@ -53,6 +53,9 @@ local function SetTabVisibleState(fname, isVisible)
 end
 
 local function Tab_OnClick(self)
+	if self.ToggleFrame == "PVPUIFrame" then
+		PVP_LoadUI()
+	end
 	local frame = _G[self.ToggleFrame]
 	if frame:IsShown() then
 		HideUIPanel(frame)
@@ -127,16 +130,16 @@ local function STHookFrame(fname)
 	prevtab = frametabs["RaidBrowserFrame"]
 
 	-- PVP tab
-	frametabs["PVPFrame"] = CreateFrame("CheckButton", "PVPSideTab", frame, "SpellBookSkillLineTabTemplate")
-	SkinTab(frametabs["PVPFrame"], "Interface\\BattlefieldFrame\\UI-Battlefield-Icon")
-	frametabs["PVPFrame"]:SetPoint("TOPLEFT", prevtab, "BOTTOMLEFT", 0, -15)
-	frametabs["PVPFrame"].tooltip = PLAYER_V_PLAYER
-	frametabs["PVPFrame"].ToggleFrame = "PVPFrame"
-	frametabs["PVPFrame"]:SetScript("OnClick", Tab_OnClick)
-	prevtab = frametabs["PVPFrame"]
+	frametabs["PVPUIFrame"] = CreateFrame("CheckButton", "PVPSideTab", frame, "SpellBookSkillLineTabTemplate")
+	SkinTab(frametabs["PVPUIFrame"], "Interface\\BattlefieldFrame\\UI-Battlefield-Icon")
+	frametabs["PVPUIFrame"]:SetPoint("TOPLEFT", prevtab, "BOTTOMLEFT", 0, -15)
+	frametabs["PVPUIFrame"].tooltip = PLAYER_V_PLAYER
+	frametabs["PVPUIFrame"].ToggleFrame = "PVPUIFrame"
+	frametabs["PVPUIFrame"]:SetScript("OnClick", Tab_OnClick)
+	prevtab = frametabs["PVPUIFrame"]
 
 	if fname == "RaidBrowserFrame" then
-		LFRParentFrameSideTab1:SetPoint("TOPLEFT", frametabs["PVPFrame"], "BOTTOMLEFT", 0, -15)
+		LFRParentFrameSideTab1:SetPoint("TOPLEFT", frametabs["PVPUIFrame"], "BOTTOMLEFT", 0, -15)
 	end
 
 	TabRefArray[fname] = frametabs
@@ -160,8 +163,12 @@ local function InitSocialTabs()
 end
 
 SocialTabs:SetScript("OnEvent", function(self, event, addon)
-	if event == "ADDON_LOADED" and addon == "ShestakUI" then
-		InitSocialTabs()
+	if event == "ADDON_LOADED" then
+		if addon == "ShestakUI" then
+			InitSocialTabs()
+		elseif addon == "Blizzard_PVPUI" then
+			STHookFrame("PVPUIFrame")
+		end
 	end
 end)
 SocialTabs:RegisterEvent("ADDON_LOADED")

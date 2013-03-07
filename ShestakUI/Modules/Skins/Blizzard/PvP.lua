@@ -5,173 +5,191 @@ if C.skins.blizzard_frames ~= true then return end
 --	PvP skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	local buttons = {
-		"PVPFrameLeftButton",
-		"PVPFrameRightButton",
-		"PVPColorPickerButton1",
-		"PVPColorPickerButton2",
-		"PVPColorPickerButton3",
-		"PVPBannerFrameAcceptButton"
-	}
+	PVPUIFrame:StripTextures()
+	PVPUIFrame:SetTemplate("Transparent")
+	PVPUIFrame.LeftInset:StripTextures()
+	PVPUIFrame.Shadows:StripTextures()
 
-	for i = 1, #buttons do
-		_G[buttons[i]]:StripTextures()
-		_G[buttons[i]]:SkinButton()
-	end
-
-	local KillTextures = {
-		"PVPHonorFrameBGTex",
-		"PVPHonorFrameInfoScrollFrameScrollBar",
-		"PVPConquestFrameInfoButtonInfoBG",
-		"PVPConquestFrameInfoButtonInfoBGOff",
-		"PVPTeamManagementFrameFlag2GlowBG",
-		"PVPTeamManagementFrameFlag3GlowBG",
-		"PVPTeamManagementFrameFlag5GlowBG",
-		"PVPTeamManagementFrameFlag2HeaderSelected",
-		"PVPTeamManagementFrameFlag3HeaderSelected",
-		"PVPTeamManagementFrameFlag5HeaderSelected",
-		"PVPTeamManagementFrameFlag2Header",
-		"PVPTeamManagementFrameFlag3Header",
-		"PVPTeamManagementFrameFlag5Header",
-		"PVPTeamManagementFrameWeeklyDisplayLeft",
-		"PVPTeamManagementFrameWeeklyDisplayRight",
-		"PVPTeamManagementFrameWeeklyDisplayMiddle",
-		"PVPBannerFramePortrait",
-		"PVPBannerFramePortraitFrame",
-		"PVPBannerFrameInset",
-		"PVPBannerFrameEditBoxLeft",
-		"PVPBannerFrameEditBoxRight",
-		"PVPBannerFrameEditBoxMiddle",
-		"PVPBannerFrameCancelButton_LeftSeparator"
-	}
-
-	for _, texture in pairs(KillTextures) do
-		_G[texture]:Kill()
-	end
-
-	local StripAllTextures = {
-		"PVPFrame",
-		"PVPFrameInset",
-		"PVPHonorFrame",
-		"PVPConquestFrame",
-		"PVPTeamManagementFrame",
-		"PVPHonorFrameTypeScrollFrame",
-		"PVPFrameTopInset",
-		"PVPTeamManagementFrameInvalidTeamFrame",
-		"PVPBannerFrame",
-		"PVPBannerFrameCustomization1",
-		"PVPBannerFrameCustomization2",
-		"PVPBannerFrameCustomizationFrame"
-	}
-
-	for _, object in pairs(StripAllTextures) do
-		_G[object]:StripTextures()
-	end
-
-	local function ArenaHeader(self, first, i)
-		local button = _G["PVPTeamManagementFrameHeader"..i]
-
-		if first then
-			button:StripTextures()
-		end
-	end
-
-	for i = 1, 4 do
-		ArenaHeader(nil, true, i)
-	end
-
-	PVPBannerFrameEditBox:CreateBackdrop("Overlay")
-	PVPBannerFrameEditBox.backdrop:SetPoint("TOPLEFT", PVPBannerFrameEditBox, "TOPLEFT" , -5, -5)
-	PVPBannerFrameEditBox.backdrop:SetPoint("BOTTOMRIGHT", PVPBannerFrameEditBox, "BOTTOMRIGHT", 5, 5)
-	PVPHonorFrameInfoScrollFrameChildFrameDescription:SetTextColor(1, 1, 1)
-	PVPHonorFrameInfoScrollFrameChildFrameDescription:SetFont(C.media.normal_font, 14)
-	PVPHonorFrameInfoScrollFrameChildFrameRewardsInfo.description:SetTextColor(1, 1, 1)
-	PVPTeamManagementFrameInvalidTeamFrame:CreateBackdrop("Overlay")
-	PVPTeamManagementFrameInvalidTeamFrame:SetFrameLevel(PVPTeamManagementFrameInvalidTeamFrame:GetFrameLevel() + 1)
-	PVPTeamManagementFrameInvalidTeamFrame.backdrop:SetPoint("TOPLEFT", PVPTeamManagementFrameInvalidTeamFrame, "TOPLEFT")
-	PVPTeamManagementFrameInvalidTeamFrame.backdrop:SetPoint("BOTTOMRIGHT", PVPTeamManagementFrameInvalidTeamFrame, "BOTTOMRIGHT")
-	PVPTeamManagementFrameInvalidTeamFrame.backdrop:SetFrameLevel(PVPTeamManagementFrameInvalidTeamFrame:GetFrameLevel())
-
-	PVPFrameConquestBarLeft:Kill()
-	PVPFrameConquestBarRight:Kill()
-	PVPFrameConquestBarMiddle:Kill()
-	PVPFrameConquestBarBG:Kill()
-	PVPFrameConquestBarShadow:Kill()
-
-	PVPFrameConquestBarProgress:SetTexture(C.media.texture)
-	PVPFrameConquestBar:CreateBackdrop("Overlay")
-	PVPFrameConquestBar.backdrop:SetPoint("TOPLEFT", PVPFrameConquestBar, "TOPLEFT", -2, -1)
-	PVPFrameConquestBar.backdrop:SetPoint("BOTTOMRIGHT", PVPFrameConquestBar, "BOTTOMRIGHT", 2, 1)
-	PVPFrameConquestBar.backdrop:SetFrameLevel(PVPFrameConquestBar:GetFrameLevel() - 1)
-
-	PVPBannerFrame:CreateBackdrop("Transparent")
-	PVPBannerFrame.backdrop:SetPoint("TOPLEFT", PVPBannerFrame, "TOPLEFT")
-	PVPBannerFrame.backdrop:SetPoint("BOTTOMRIGHT", PVPBannerFrame, "BOTTOMRIGHT")
-
-	PVPBannerFrameCustomization1:CreateBackdrop("Overlay")
-	PVPBannerFrameCustomization1.backdrop:SetPoint("TOPLEFT", PVPBannerFrameCustomization1LeftButton, "TOPRIGHT" , 2, 0)
-	PVPBannerFrameCustomization1.backdrop:SetPoint("BOTTOMRIGHT", PVPBannerFrameCustomization1RightButton, "BOTTOMLEFT", -2, 0)
-	PVPBannerFrameCustomization2:CreateBackdrop("Overlay")
-	PVPBannerFrameCustomization2.backdrop:SetPoint("TOPLEFT", PVPBannerFrameCustomization2LeftButton, "TOPRIGHT", 2, 0)
-	PVPBannerFrameCustomization2.backdrop:SetPoint("BOTTOMRIGHT", PVPBannerFrameCustomization2RightButton, "BOTTOMLEFT", -2, 0)
-
-	T.SkinCloseButton(PVPBannerFrameCloseButton, PVPBannerFrame)
-	T.SkinNextPrevButton(PVPBannerFrameCustomization1LeftButton)
-	PVPBannerFrameCustomization1LeftButton:SetHeight(PVPBannerFrameCustomization1:GetHeight())
-	T.SkinNextPrevButton(PVPBannerFrameCustomization1RightButton)
-	PVPBannerFrameCustomization1RightButton:SetHeight(PVPBannerFrameCustomization1:GetHeight())
-	T.SkinNextPrevButton(PVPBannerFrameCustomization2LeftButton)
-	PVPBannerFrameCustomization2LeftButton:SetHeight(PVPBannerFrameCustomization1:GetHeight())
-	T.SkinNextPrevButton(PVPBannerFrameCustomization2RightButton)
-
-	PVPBannerFrameCustomization2RightButton:SetHeight(PVPBannerFrameCustomization1:GetHeight())
-	PVPFrame:CreateBackdrop("Transparent")
-	PVPFrame.backdrop:SetPoint("TOPLEFT", PVPFrame, "TOPLEFT")
-	PVPFrame.backdrop:SetPoint("BOTTOMRIGHT", PVPFrame, "BOTTOMRIGHT")
-	T.SkinCloseButton(PVPFrameCloseButton, PVPFrame)
-	T.SkinNextPrevButton(PVPTeamManagementFrameWeeklyToggleLeft)
-	T.SkinNextPrevButton(PVPTeamManagementFrameWeeklyToggleRight)
-	PVPColorPickerButton1:SetHeight(PVPColorPickerButton1:GetHeight() - 5)
-	PVPColorPickerButton2:SetHeight(PVPColorPickerButton1:GetHeight())
-	PVPColorPickerButton3:SetHeight(PVPColorPickerButton1:GetHeight())
-
-	-- War Games
-	WarGameStartButton:SkinButton(true)
-	WarGamesFrame:StripTextures()
-	WarGamesFrameInfoScrollFrameScrollBar:StripTextures()
-	T.SkinScrollBar(WarGamesFrameScrollFrameScrollBar)
-
-	WarGameStartButton:ClearAllPoints()
-	WarGameStartButton:SetPoint("LEFT", PVPFrameLeftButton, "RIGHT", 2, 0)
-
-	WarGamesFrameDescription:SetTextColor(1, 1, 1)
-	WarGamesFrameDescription:SetFont(C.media.normal_font, 14)
-
-	-- Cancel PVPBanner Button
-	for i = 1, PVPBannerFrame:GetNumChildren() do
-		local child = select(i, PVPBannerFrame:GetChildren())
-		if child:GetObjectType() == "Button" then
-			local name = child:GetName()
-			if name ~= "PVPBannerFrameCloseButton" then child:SkinButton() end
-		end
-	end
+	T.SkinCloseButton(PVPUIFrameCloseButton)
 
 	-- Bottom Tabs
-	for i = 1, 4 do
-		T.SkinTab(_G["PVPFrameTab"..i])
+	for i = 1, 2 do
+		T.SkinTab(_G["PVPUIFrameTab"..i])
 	end
 
-	-- Reposition tabs
-	if IsAddOnLoaded("OhNoesQueues") then
-		PVPFrame:SetScript("OnShow", function()
-			T.SkinTab(_G["PVPFrameTab5"])
-			PVPFrameTab5:ClearAllPoints()
-			PVPFrameTab5:SetPoint("TOPLEFT", PVPFrame, "BOTTOMLEFT", -10, 1)
-		end)
-	else
-		PVPFrameTab1:ClearAllPoints()
-		PVPFrameTab1:SetPoint("TOPLEFT", PVPFrame, "BOTTOMLEFT", 0, 2)
+	for i = 1, 3 do
+		local button = _G["PVPQueueFrameCategoryButton"..i]
+
+		button.Ring:Kill()
+		button:CreateBackdrop("Overlay")
+		button.backdrop:SetAllPoints()
+		button:StyleButton()
+
+		button.Background:Kill()
+
+		button.Icon:SetTexCoord(0.15, 0.85, 0.15, 0.85)
+		button.Icon:SetPoint("LEFT", button, "LEFT", 10, 0)
+		button.Icon:SetDrawLayer("OVERLAY")
+		button.Icon:SetSize(40, 40)
+
+		button.border = CreateFrame("Frame", nil, button)
+		button.border:CreateBackdrop("Default")
+		button.border.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
+		button.border.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
+	end
+
+	for i = 1, 3 do
+		local button = _G["PVPArenaTeamsFrameTeam"..i]
+		button:SetTemplate("Overlay")
+		button.Background:Kill()
+		button:StyleButton()
+	end
+
+	hooksecurefunc("PVPQueueFrame_SelectButton", function(index)
+		local self = PVPQueueFrame
+		for i = 1, 3 do
+			local button = self["CategoryButton"..i]
+			if i == index then
+				button.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
+				button.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
+				button.border.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
+			else
+				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				button.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+				button.border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
+		end
+	end)
+
+	-- HonorFrame
+	T.SkinDropDownBox(HonorFrameTypeDropDown)
+
+	HonorFrame.Inset:StripTextures()
+	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
+	HonorFrameSoloQueueButton:SkinButton(true)
+	HonorFrameGroupQueueButton:SkinButton(true)
+	HonorFrame.BonusFrame:StripTextures()
+	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
+	HonorFrame.BonusFrame.RandomBGButton:StripTextures()
+	HonorFrame.BonusFrame.RandomBGButton:CreateBackdrop("Overlay")
+	HonorFrame.BonusFrame.RandomBGButton.backdrop:SetPoint("TOPLEFT", 2, -2)
+	HonorFrame.BonusFrame.RandomBGButton.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:ClearAllPoints()
+	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:SetPoint("TOPLEFT", 4, -4)
+	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:SetPoint("BOTTOMRIGHT", -4, 4)
+	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:SetTexture(0, 1, 0, 0.1)
+	HonorFrame.BonusFrame.CallToArmsButton:StripTextures()
+	HonorFrame.BonusFrame.CallToArmsButton:CreateBackdrop("Overlay")
+	HonorFrame.BonusFrame.CallToArmsButton.backdrop:SetPoint("TOPLEFT", 2, -2)
+	HonorFrame.BonusFrame.CallToArmsButton.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:ClearAllPoints()
+	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetPoint("TOPLEFT", 4, -4)
+	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetPoint("BOTTOMRIGHT", -4, 4)
+	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetTexture(0, 1, 0, 0.1)
+
+	for i = 1, 2 do
+		local b = HonorFrame.BonusFrame["WorldPVP"..i.."Button"]
+		b:StripTextures()
+		b:CreateBackdrop("Overlay")
+		b.backdrop:SetPoint("TOPLEFT", 2, -3)
+		b.backdrop:SetPoint("BOTTOMRIGHT", -2, 3)
+		b.SelectedTexture:ClearAllPoints()
+		b.SelectedTexture:SetPoint("TOPLEFT", 4, -5)
+		b.SelectedTexture:SetPoint("BOTTOMRIGHT", -4, 5)
+		b.SelectedTexture:SetTexture(0, 1, 0, 0.1)
+	end
+
+	-- ConquestFrame
+	ConquestFrame.Inset:StripTextures()
+	ConquestPointsBarLeft:Kill()
+	ConquestPointsBarRight:Kill()
+	ConquestPointsBarMiddle:Kill()
+	ConquestPointsBarBG:Kill()
+	ConquestPointsBarShadow:Kill()
+	ConquestPointsBar.progress:SetTexture(C.media.texture)
+	ConquestPointsBar:CreateBackdrop("Default")
+	ConquestPointsBar.backdrop:SetPoint("TOPLEFT", ConquestPointsBar, "TOPLEFT", -2, -1)
+	ConquestPointsBar.backdrop:SetPoint("BOTTOMRIGHT", ConquestPointsBar, "BOTTOMRIGHT", 2, 1)
+	ConquestFrame:StripTextures()
+	ConquestFrame.ShadowOverlay:StripTextures()
+	ConquestFrame.RatedBG:StripTextures()
+	ConquestFrame.RatedBG:SkinButton()
+	ConquestFrame.RatedBG.SelectedTexture:ClearAllPoints()
+	ConquestFrame.RatedBG.SelectedTexture:SetAllPoints()
+	ConquestFrame.RatedBG.SelectedTexture:SetTexture(0, 1, 0, 0.1)
+	ConquestJoinButton:SkinButton(true)
+
+	-- WarGamesFrame
+	WarGamesFrame:StripTextures()
+	WarGamesFrame.RightInset:StripTextures()
+	WarGameStartButton:SkinButton(true)
+	T.SkinScrollBar(WarGamesFrameScrollFrameScrollBar)
+	WarGamesFrameInfoScrollFrameScrollBar:StripTextures()
+	WarGamesFrame.HorizontalBar:StripTextures()
+	WarGamesFrameDescription:SetTextColor(1, 1, 1)
+	WarGamesFrameDescription:SetFont(C.media.normal_font, 13)
+	WarGamesFrameDescription:SetShadowOffset(1, -1)
+
+	-- ArenaTeamFrame
+	PVPArenaTeamsFrame:StripTextures()
+	ArenaTeamFrame.TopInset:StripTextures()
+	ArenaTeamFrame.BottomInset:StripTextures()
+	ArenaTeamFrame.WeeklyDisplay:StripTextures()
+	T.SkinNextPrevButton(ArenaTeamFrame.weeklyToggleRight)
+	T.SkinNextPrevButton(ArenaTeamFrame.weeklyToggleLeft)
+	ArenaTeamFrame:StripTextures()
+	ArenaTeamFrame.TopShadowOverlay:StripTextures()
+
+	for i = 1, 4 do
+		_G["ArenaTeamFrameHeader"..i.."Left"]:Kill()
+		_G["ArenaTeamFrameHeader"..i.."Middle"]:Kill()
+		_G["ArenaTeamFrameHeader"..i.."Right"]:Kill()
+		_G["ArenaTeamFrameHeader"..i]:SetHighlightTexture(nil)
+	end
+
+	for i = 1, 3 do
+		local b = ARENA_BUTTONS[i]
+		b:StripTextures()
+		b:SkinButton()
+		b.SelectedTexture:ClearAllPoints()
+		b.SelectedTexture:SetAllPoints()
+		b.SelectedTexture:SetTexture(0, 1, 0, 0.1)
+	end
+
+	ArenaTeamFrame.AddMemberButton:SkinButton(true)
+
+	-- PVP Banners
+	PVPBannerFrame:StripTextures()
+	PVPBannerFramePortrait:SetAlpha(0)
+	PVPBannerFrame:SetTemplate("Default")
+	T.SkinCloseButton(PVPBannerFrameCloseButton)
+	--PVPBannerFrameEditBox:SkinEditBox()
+	--PVPBannerFrameEditBox.backdrop:SetOutside(PVPBannerFrameEditBox, 2, -5)
+	PVPBannerFrame.Inset:StripTextures()
+
+	PVPBannerFrameAcceptButton:SkinButton(true)
+	PVPBannerFrameCancelButton:SkinButton(true)
+
+	-- Duplicate button name
+	for i = 1, PVPBannerFrame:GetNumChildren() do
+		local child = select(i, PVPBannerFrame:GetChildren())
+		if child and child:GetObjectType() == "Button" and child:GetWidth() == 80 then
+			child:SkinButton(true)
+		end
+	end
+
+	for i = 1, 3 do
+		_G["PVPColorPickerButton"..i]:SkinButton(true)
+		_G["PVPColorPickerButton"..i]:SetHeight(_G["PVPColorPickerButton"..i]:GetHeight() - 2)
+	end
+
+	PVPBannerFrameCustomizationFrame:StripTextures()
+
+	for i = 1, 2 do
+		_G["PVPBannerFrameCustomization"..i]:StripTextures()
+		T.SkinNextPrevButton(_G["PVPBannerFrameCustomization"..i.."RightButton"])
+		T.SkinNextPrevButton(_G["PVPBannerFrameCustomization"..i.."LeftButton"])
 	end
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+T.SkinFuncs["Blizzard_PVPUI"] = LoadSkin

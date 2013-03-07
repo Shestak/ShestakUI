@@ -30,23 +30,6 @@ if C.announcements.toys == true then
 end
 
 if C.announcements.feasts == true then
-	T.AnnounceFeasts = {
-		[104958] = true,	-- Pandaren Banquet
-		[105193] = true,	-- Great Pandaren Banquet
-		[126492] = true,	-- Banquet of the Grill
-		[126494] = true,	-- Great Banquet of the Grill
-		[126495] = true,	-- Banquet of the Wok
-		[126496] = true,	-- Great Banquet of the Wok
-		[126497] = true,	-- Banquet of the Pot
-		[126498] = true,	-- Great Banquet of the Pot
-		[126499] = true,	-- Banquet of the Steamer
-		[126500] = true,	-- Great Banquet of the Steamer
-		[126501] = true,	-- Banquet of the Oven
-		[126502] = true,	-- Great Banquet of the Oven
-		[126503] = true,	-- Banquet of the Brew
-		[126504] = true,	-- Great Banquet of the Brew
-	}
-
 	T.AnnounceBots = {
 		[22700] = true,		-- Field Repair Bot 74A
 		[44389] = true,		-- Field Repair Bot 110G

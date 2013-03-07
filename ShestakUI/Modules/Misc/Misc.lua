@@ -164,14 +164,6 @@ StaticPopupDialogs.TOO_MANY_LUA_ERRORS.button1 = nil
 PetBattleQueueReadyFrame.hideOnEscape = nil
 
 ----------------------------------------------------------------------------------------
---	Honor shown in tooltip
-----------------------------------------------------------------------------------------
-PVPFrameCurrency:HookScript("OnEnter", function()
-	GameTooltip:AddLine(HONORABLE_KILLS..": |cffffffff"..GetStatistic(588))
-	GameTooltip:Show()
-end)
-
-----------------------------------------------------------------------------------------
 --	Old achievements filter
 ----------------------------------------------------------------------------------------
 function AchievementFrame_GetCategoryNumAchievements_OldIncomplete(categoryID)
