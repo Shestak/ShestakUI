@@ -86,19 +86,19 @@ T.RaidDebuffs = {
 -- Throne of Thunder
 	-- Jin'rokh the Breaker
 	[SpellName(138349)] = 3,	-- Static Wound (Tank stacks)
-	[SpellName(138349)] = 3,	-- Thundering Throw (Tank stun)
-	[SpellName(138732)] = 3,	-- Ionization (Heroic-Dispel)
+	[SpellName(137371)] = 3,	-- Thundering Throw (Tank stun)
+	[SpellName(138732)] = 3,	-- Ionization (Heroic - Dispel)
 	[SpellName(137422)] = 3,	-- Focused Lightning (Fixated - Kiting)
 	[SpellName(138006)] = 3,	-- Electrified Waters (Pool)
 	-- Horridon
 	[SpellName(136767)] = 3,	-- Triple Puncture (Tank stacks)
+	[SpellName(136708)] = 4,	-- Stone Gaze (Stun)
 	[SpellName(136654)] = 3,	-- Rending Charge (DoT)
-	[SpellName(136708)] = 3,	-- Stone Gaze (Stun)
-	[SpellName(136723)] = 3,	-- Sand Trap (Pool)
-	[SpellName(136710)] = 3,	-- Deadly Plague (Dispel)
 	[SpellName(136719)] = 3,	-- Blazing Sunlight (Dispel)
 	[SpellName(136587)] = 3,	-- Venom Bolt Volley (Dispel)
+	[SpellName(136710)] = 3,	-- Deadly Plague (Dispel)
 	[SpellName(136512)] = 3,	-- Hex of Confusion (Dispel)
+	-- [SpellName(136723)] = 3,	-- Sand Trap (Pool)
 	-- Council of Elders
 	[SpellName(136903)] = 3,	-- Frigid Assault (Tank stacks)
 	[SpellName(136922)] = 3,	-- Frostbite (DoT + stun)
