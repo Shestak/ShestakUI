@@ -1202,10 +1202,10 @@ C["filger_spells"] = {
 			{spellID = 113656, filter = "CD"},
 			-- Guard
 			{spellID = 115295, filter = "CD"},
-			-- Clash
-			{spellID = 122057, filter = "CD"},
 			-- Charging Ox Wave
 			{spellID = 119392, filter = "CD"},
+			-- Clash
+			{spellID = 122057, filter = "CD"},
 			-- Ring of Peace
 			{spellID = 116844, filter = "CD"},
 			-- Dampen Harm
@@ -2498,7 +2498,7 @@ C["filger_spells"] = {
 			-- Ultimatum
 			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Taste for Blood
-			{spellID = 125831, unitID = "player", caster = "player", filter = "BUFF"},
+			-- {spellID = 125831, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage

@@ -61,10 +61,10 @@ if C.enemycooldown.enable == true then
 		-- Defense abilities
 		[48707] = 45,	-- Anti-Magic Shell
 		[8143] = 60,	-- Tremor Totem
+		[31224] = 60,	-- Cloak of Shadows
 		[46924] = 90,	-- Bladestorm
 		[19263] = 120,	-- Deterrence
 		[47585] = 120,	-- Dispersion
-		[31224] = 120,	-- Cloak of Shadows
 		[49039] = 120,	-- Lichborne
 		[1856] = 120,	-- Vanish
 		[137562] = 120,	-- Nimble Brew
