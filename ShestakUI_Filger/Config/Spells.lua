@@ -466,6 +466,8 @@ C["filger_spells"] = {
 			{spellID = 5217, filter = "CD"},
 			-- Disorienting Roar
 			{spellID = 99, filter = "CD"},
+			-- Mass Entanglement
+			{spellID = 102359, filter = "CD"},
 			-- Typhoon
 			{spellID = 132469, filter = "CD"},
 			-- Mighty Bash
@@ -486,6 +488,8 @@ C["filger_spells"] = {
 			{spellID = 5229, filter = "CD"},
 			-- Force of Nature
 			{spellID = 106737, filter = "CD"},
+			-- Nature's Vigil
+			{spellID = 124974, filter = "CD"},
 			-- Might of Ursoc
 			{spellID = 106922, filter = "CD"},
 			-- Nature's Grasp
