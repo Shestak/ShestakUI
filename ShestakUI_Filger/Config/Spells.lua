@@ -63,6 +63,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
+			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fortitude of the Zandalari (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
@@ -74,6 +76,8 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
+			{spellID = 138702, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fabled Feather of Ji-Kun (Strength, Proc)
 			{spellID = 138759, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spark of Zandalar (Strength, Proc)
@@ -317,6 +321,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
+			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fortitude of the Zandalari (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
@@ -328,6 +334,8 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
+			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bad Juju (Agility, Proc)
 			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Talisman of Bloodlust (Haste, Proc)
@@ -358,6 +366,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
+			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
 			{spellID = 139133, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Breath of the Hydra (Intellect, Proc)
@@ -608,6 +618,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
+			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bad Juju (Agility, Proc)
 			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Talisman of Bloodlust (Haste, Proc)
@@ -899,6 +911,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
+			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
 			{spellID = 139133, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Breath of the Hydra (Intellect, Proc)
@@ -1144,6 +1158,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
+			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fortitude of the Zandalari (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
@@ -1155,6 +1171,8 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
+			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bad Juju (Agility, Proc)
 			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Talisman of Bloodlust (Haste, Proc)
@@ -1390,6 +1408,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
+			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fortitude of the Zandalari (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
@@ -1401,6 +1421,8 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
+			{spellID = 138702, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fabled Feather of Ji-Kun (Strength, Proc)
 			{spellID = 138759, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spark of Zandalar (Strength, Proc)
@@ -1637,6 +1659,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
+			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
 			{spellID = 139133, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Breath of the Hydra (Intellect, Proc)
@@ -1896,6 +1920,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
+			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bad Juju (Agility, Proc)
 			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Talisman of Bloodlust (Haste, Proc)
@@ -2120,6 +2146,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
+			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bad Juju (Agility, Proc)
 			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Talisman of Bloodlust (Haste, Proc)
@@ -2150,6 +2178,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
+			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
 			{spellID = 139133, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Breath of the Hydra (Intellect, Proc)
@@ -2384,6 +2414,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
+			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
 			{spellID = 139133, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Breath of the Hydra (Intellect, Proc)
@@ -2615,6 +2647,8 @@ C["filger_spells"] = {
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
+			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fortitude of the Zandalari (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
@@ -2626,6 +2660,8 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
+			{spellID = 138702, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fabled Feather of Ji-Kun (Strength, Proc)
 			{spellID = 138759, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spark of Zandalar (Strength, Proc)
