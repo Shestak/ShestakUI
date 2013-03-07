@@ -612,7 +612,7 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].target_debuff_icon)},
 
 			-- Hunter's Mark
-			{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--OLD{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 1978, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Black Arrow
