@@ -67,6 +67,7 @@ if C.enemycooldown.enable == true then
 		[31224] = 120,	-- Cloak of Shadows
 		[49039] = 120,	-- Lichborne
 		[1856] = 120,	-- Vanish
+		[137562] = 120,	-- Nimble Brew
 		[33206] = 180,	-- Pain Suppression
 		[108978] = 180,	-- Alter Time
 		-- Disarms
