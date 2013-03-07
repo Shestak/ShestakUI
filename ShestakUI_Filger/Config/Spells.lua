@@ -1206,6 +1206,8 @@ C["filger_spells"] = {
 			{spellID = 122057, filter = "CD"},
 			-- Charging Ox Wave
 			{spellID = 119392, filter = "CD"},
+			-- Ring of Peace
+			{spellID = 116844, filter = "CD"},
 			-- Dampen Harm
 			{spellID = 122278, filter = "CD"},
 			-- Flying Serpent Kick
@@ -3219,6 +3221,8 @@ C["filger_spells"] = {
 			-- Monk
 			-- Touch of Karma
 			{spellID = 125174, unitID = "target", caster = "target", filter = "BUFF"},
+			-- Ring of Peace
+			{spellID = 116844, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Debuffs
