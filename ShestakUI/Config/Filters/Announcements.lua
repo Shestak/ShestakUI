@@ -35,6 +35,7 @@ if C.announcements.feasts == true then
 		[44389] = true,		-- Field Repair Bot 110G
 		[54711] = true,		-- Scrapbot
 		[67826] = true,		-- Jeeves
+		[126459] = true,	-- Blingtron 4000
 	}
 end
 
