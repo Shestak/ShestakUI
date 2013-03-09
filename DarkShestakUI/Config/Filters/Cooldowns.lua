@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
@@ -29,7 +29,7 @@ if C.enemycooldown.enable == true then
 		[96231] = 15,	-- Rebuke
 		[80965] = 15,	-- Skull Bash
 		[116705] = 15,	-- Spear Hand Strike
-		[34490] = 20,	-- Silencing Shot
+		[34490] = 24,	-- Silencing Shot
 		[102051] = 20,	-- Frostjaw
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
@@ -37,10 +37,11 @@ if C.enemycooldown.enable == true then
 		[102060] = 40,	-- Disrupting Shout
 		[15487] = 45,	-- Silence
 		[78675] = 60,	-- Solar Beam
-		[47476] = 120,	-- Strangulate
+		[47476] = 60,	-- Strangulate
 		-- Crowd Controls
 		[115078] = 15,	-- Paralysis
 		[20066] = 15,	-- Repentance
+		[108194] = 30,	-- Asphyxiate
 		[19503] = 30,	-- Scatter Shot
 		[1499] = 30,	-- Freezing Trap
 		[44572] = 30,	-- Deep Freeze
@@ -54,18 +55,19 @@ if C.enemycooldown.enable == true then
 		[6789] = 45,	-- Mortal Coil
 		[64044] = 45,	-- Psychic Horror
 		[119381] = 45,	-- Leg Sweep
+		[19386] = 45,	-- Wyvern Sting
 		[853] = 60,		-- Hammer of Justice
-		[108194] = 60,	-- Asphyxiate
 		[108200] = 60,	-- Remorseless Winter
 		-- Defense abilities
 		[48707] = 45,	-- Anti-Magic Shell
 		[8143] = 60,	-- Tremor Totem
+		[31224] = 60,	-- Cloak of Shadows
 		[46924] = 90,	-- Bladestorm
 		[19263] = 120,	-- Deterrence
 		[47585] = 120,	-- Dispersion
-		[31224] = 120,	-- Cloak of Shadows
 		[49039] = 120,	-- Lichborne
 		[1856] = 120,	-- Vanish
+		[137562] = 120,	-- Nimble Brew
 		[33206] = 180,	-- Pain Suppression
 		[108978] = 180,	-- Alter Time
 		-- Disarms

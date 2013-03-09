@@ -37,7 +37,7 @@ if C.reminder.raid_buffs_enable == true then
 			1126,	-- Mark of the Wild
 		},
 		Stamina = {
-			6307,	-- Blood Pact
+			109773,	-- Dark Intent
 			469,	-- Commanding Shout
 			90364,	-- Qiraji Fortitude
 			111922,	-- Runescroll of Fortitude III
@@ -326,7 +326,7 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					21562,	-- Power Word: Fortitude
-					6307,	-- Blood Pact
+					109773,	-- Dark Intent
 					90364,	-- Qiraji Fortitude
 					6673,	-- Battle Shout
 				},

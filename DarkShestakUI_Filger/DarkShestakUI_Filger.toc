@@ -1,8 +1,8 @@
-## Interface: 50100
+## Interface: 50200
 ## Title: |cff1784d1Dark ShestakUI Filger|r
 ## Notes: Class timers for ShestakUI
 ## Author: Nils Ruesch
-## Version: 0.67
+## Version: 0.70
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: DarkShestakUI

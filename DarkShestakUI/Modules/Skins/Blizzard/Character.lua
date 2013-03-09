@@ -244,8 +244,6 @@ local function LoadSkin()
 				end
 
 				_G["ReputationBar"..i.."Background"]:SetTexture(nil)
-				_G["ReputationBar"..i.."LeftLine"]:Kill()
-				_G["ReputationBar"..i.."BottomLine"]:Kill()
 				_G["ReputationBar"..i.."ReputationBarHighlight1"]:SetTexture(nil)
 				_G["ReputationBar"..i.."ReputationBarHighlight2"]:SetTexture(nil)
 				_G["ReputationBar"..i.."ReputationBarAtWarHighlight1"]:SetTexture(nil)

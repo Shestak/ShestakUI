@@ -34,7 +34,10 @@ local function LoadSkin()
 		"LFGDungeonReadyDialogBackground",
 		"RaidFinderQueueFrameBackground",
 		"LFGDungeonReadyDialogBottomArt",
-		"LFGDungeonReadyDialogFiligree"
+		"LFGDungeonReadyDialogFiligree",
+		"ScenarioQueueFrameRandomScrollFrameScrollBackground",
+		"ScenarioQueueFrameRandomScrollFrameScrollBackgroundTopLeft",
+		"ScenarioQueueFrameRandomScrollFrameScrollBackgroundBottomRight"
 	}
 
 	for _, texture in pairs(KillTextures) do

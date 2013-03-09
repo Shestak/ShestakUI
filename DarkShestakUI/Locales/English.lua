@@ -39,6 +39,7 @@ L_ANNOUNCE_PC_MSG = "Pulling %s in %s.."
 L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!"
 
 -- Announce feasts and portals
+L_ANNOUNCE_FP_STAT = "%s has prepared a %s - [%s]."
 L_ANNOUNCE_FP_PRE = "%s has prepared a %s."
 L_ANNOUNCE_FP_PUT = "%s has put down a %s."
 L_ANNOUNCE_FP_CAST = "%s is casting %s."
