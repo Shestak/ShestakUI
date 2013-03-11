@@ -101,6 +101,7 @@ T.RaidDebuffs = {
 	-- Council of Elders
 	[SpellName(136903)] = 3,	-- Frigid Assault (Tank stacks)
 	[SpellName(136922)] = 3,	-- Frostbite (DoT)
+	[SpellName(136992)] = 3,	-- Biting Cold (DoT)
 	[SpellName(136857)] = 3,	-- Entrapped (Dispel)
 	[SpellName(137359)] = 3,	-- Marked Soul (Fixated - Kiting)
 	[SpellName(137641)] = 3,	-- Soul Fragment (Heroic)
