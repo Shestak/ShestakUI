@@ -57,7 +57,7 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 		end
 	end
 
-	F.CreateTab(_G["FriendsFrameTab5"])
+	F.ReskinTab(_G["FriendsFrameTab5"])
 	if IsAddOnLoaded("!BaudErrorFrame") then
 		F.ReskinScroll(_G["BaudErrorFrameListScrollBoxScrollBarScrollBar"])
 		F.ReskinScroll(_G["BaudErrorFrameDetailScrollFrameScrollBar"])
