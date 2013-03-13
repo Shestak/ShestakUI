@@ -3214,6 +3214,10 @@ C["filger_spells"] = {
 			{spellID = 137422, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Marked Soul (Council of Elders)
 			{spellID = 137359, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Frostbite (Council of Elders)
+			{spellID = 136922, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Biting Cold (Council of Elders)
+			{spellID = 136992, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Torrent of Ice (Megaera)
 			{spellID = 139857, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cinder (Megaera)

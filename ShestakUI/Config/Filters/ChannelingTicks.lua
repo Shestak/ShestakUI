@@ -25,6 +25,7 @@ T.CastBarTicks = {
 	[GetSpellInfo(47540)] = 2,	-- Penance
 	[GetSpellInfo(64901)] = 4,	-- Hymn of Hope
 	[GetSpellInfo(64843)] = 4,	-- Divine Hymn
+	[GetSpellInfo(129197)] = 3,	-- Mind Flay (Insanity)
 	-- Warlock
 	[GetSpellInfo(689)] = 6,	-- Drain Life
 	[GetSpellInfo(108371)] = 6, -- Harvest Life
