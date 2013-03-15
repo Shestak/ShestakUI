@@ -6,15 +6,13 @@ if C.automation.auto_role ~= true then return end
 ----------------------------------------------------------------------------------------
 local function SetRole()
 	local spec = GetSpecialization()
-	if not InCombatLockdown() then
-		if T.level >= 10 then
-			if spec == nil then
-				UnitSetRole("player", "No Role")
-			elseif spec ~= nil then
-				if GetNumGroupMembers() > 0 then
-					local role = GetSpecializationRole(spec)
-					UnitSetRole("player", role)
-				end
+	if T.level >= 10 and not InCombatLockdown() then
+		if spec == nil then
+			UnitSetRole("player", "No Role")
+		elseif spec ~= nil then
+			if GetNumGroupMembers() > 0 then
+				local role = GetSpecializationRole(spec)
+				UnitSetRole("player", role)
 			end
 		end
 	end

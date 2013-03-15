@@ -607,7 +607,7 @@ C["filger_spells"] = {
 			-- Thrill of the Hunt
 			{spellID = 34720, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Frenzy
-			{spellID = 19623, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 19615, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Mend Pet
 			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
 
@@ -623,7 +623,7 @@ C["filger_spells"] = {
 			-- Bad Juju (Agility, Proc)
 			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Talisman of Bloodlust (Haste, Proc)
-			{spellID = 138895, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 138895, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Rune of Re-Origination (Convert, Proc)
 			{spellID = 139120, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Renataki's Soul Charm (Agility, Proc)
