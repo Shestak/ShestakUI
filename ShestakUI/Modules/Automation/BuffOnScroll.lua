@@ -64,12 +64,10 @@ MAGE3 = {
 
 MONK1 = {
 	117666,	-- Legacy of the Emperor
-	116781,	-- Legacy of the White Tiger
 }
 
 MONK2 = {
 	117666,	-- Legacy of the Emperor
-	116781,	-- Legacy of the White Tiger
 }
 
 MONK3 = {
