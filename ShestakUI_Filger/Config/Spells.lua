@@ -782,14 +782,18 @@ C["filger_spells"] = {
 			{spellID = 3045, filter = "CD"},
 			-- Readiness
 			{spellID = 23989, filter = "CD"},
-			-- Spirit Mend (exotic)
+			-- Spirit Mend (Pet)
 			{spellID = 90361, filter = "CD"},
-			-- Web
+			-- Web (Pet)
 			{spellID = 4167, filter = "CD"},
-			-- Venom Web Spray (exotic)
+			-- Venom Web Spray (Pet)
 			{spellID = 54706, filter = "CD"},
-			-- Web Wrap (exotic)
+			-- Web Wrap (Pet)
 			{spellID = 96201, filter = "CD"},
+			-- Bad Manner (Pet)
+			{spellID = 90337, filter = "CD"},
+			-- Lullaby (Pet)
+			{spellID = 126246, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -2964,6 +2968,8 @@ C["filger_spells"] = {
 			{spellID = 99, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
 			{spellID = 78675, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Fae Silence
+			{spellID = 114238, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entangling Roots
 			{spellID = 339, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Immobilized
@@ -3004,6 +3010,10 @@ C["filger_spells"] = {
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)
 			{spellID = 90337, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Lullaby (Crane)
+			{spellID = 126246, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Web Wrap (Shale Spider)
+			{spellID = 96201, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Venom Web Spray (Silithid)
 			{spellID = 54706, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Web (Spider)
@@ -3140,6 +3150,8 @@ C["filger_spells"] = {
 			{spellID = 51514, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Static Charge
 			{spellID = 118905, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Pulverize (Earth Elemental)
+			{spellID = 118345, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthquake
 			{spellID = 77505, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthgrab
@@ -3162,6 +3174,8 @@ C["filger_spells"] = {
 			{spellID = 118699, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
 			{spellID = 5484, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Blood Horror
+			{spellID = 137143, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
 			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Sleep
@@ -3315,6 +3329,8 @@ C["filger_spells"] = {
 			{spellID = 99, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
 			{spellID = 78675, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Fae Silence
+			{spellID = 114238, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Entangling Roots
 			{spellID = 339, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3344,6 +3360,8 @@ C["filger_spells"] = {
 			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)
 			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Lullaby (Crane)
+			{spellID = 126246, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
 			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3490,6 +3508,8 @@ C["filger_spells"] = {
 			{spellID = 76780, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Static Charge
 			{spellID = 118905, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Pulverize (Earth Elemental)
+			{spellID = 118345, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warlock
 			-- Dark Bargain
@@ -3509,6 +3529,8 @@ C["filger_spells"] = {
 			{spellID = 118699, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
 			{spellID = 5484, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Blood Horror
+			{spellID = 137143, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
 			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Sleep

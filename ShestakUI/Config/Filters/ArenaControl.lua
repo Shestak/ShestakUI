@@ -29,6 +29,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(19503)] = 4,	-- Scatter Shot
 		[GetSpellInfo(19386)] = 4,	-- Wyvern Sting
 		[GetSpellInfo(90337)] = 4,	-- Bad Manner (Monkey)
+		[GetSpellInfo(126246)] = 4,	-- Lullaby (Crane)
 		-- Mage
 		[GetSpellInfo(44572)] = 4,	-- Deep Freeze
 		[GetSpellInfo(118)] = 4,	-- Polymorph
