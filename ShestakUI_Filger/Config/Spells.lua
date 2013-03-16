@@ -3586,3 +3586,5 @@ C["filger_spells"] = {
 		},
 	},
 }
+
+-- Edit by Oz of shestakdotorg --
