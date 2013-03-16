@@ -1752,6 +1752,14 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].cooldown)},
 
 			-- Self
+			-- Mindbender
+			{spellID = 123040, filter = "CD"},
+			-- Fade
+			{spellID = 586, filter = "CD"},
+			-- Power Word: Barrier
+			{spellID = 17, filter = "CD"},
+			-- Vampiric Embrace
+			{spellID = 15286, filter = "CD"},
 			-- Purify
 			{spellID = 527, filter = "CD"},
 			-- Mass Dispel
