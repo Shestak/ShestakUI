@@ -215,7 +215,7 @@ local OnSizeChanged = function(self)
 	self.needFix = true
 end
 
--- 
+--
 local function HealthBar_ValueChanged(frame)
 	frame = frame:GetParent()
 	frame.hp:SetMinMaxValues(frame.healthOriginal:GetMinMaxValues())
@@ -548,10 +548,10 @@ local function UpdateThreat(frame, elapsed)
 					frame.hp:SetStatusBarColor(goodR, goodG, goodB)
 					frame.hp.bg:SetTexture(goodR, goodG, goodB, 0.2)
 				end
-			else
+			-- else
 				-- Set colors to their original, not in combat
-				frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
-				frame.hp.bg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.2)
+				-- frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
+				-- frame.hp.bg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.2)
 			end
 		else
 			-- Ok we either have threat or we're losing/gaining it
