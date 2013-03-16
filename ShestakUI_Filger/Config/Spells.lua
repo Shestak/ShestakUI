@@ -30,6 +30,10 @@ C["filger_spells"] = {
 			{spellID = 96268, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unholy Blight
 			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blood Charge
+			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Infusion
+			{spellID = 91342, unitID = "pet", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -607,7 +611,7 @@ C["filger_spells"] = {
 			-- Thrill of the Hunt
 			{spellID = 34720, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Frenzy
-			{spellID = 19615, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 19623, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mend Pet
 			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
 
@@ -623,7 +627,7 @@ C["filger_spells"] = {
 			-- Bad Juju (Agility, Proc)
 			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Talisman of Bloodlust (Haste, Proc)
-			{spellID = 138895, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 138895, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Re-Origination (Convert, Proc)
 			{spellID = 139120, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Renataki's Soul Charm (Agility, Proc)
@@ -1752,10 +1756,10 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].cooldown)},
 
 			-- Self
-			-- Mindbender
-			{spellID = 123040, filter = "CD"},
 			-- Fade
 			{spellID = 586, filter = "CD"},
+			-- Mindbender
+			{spellID = 123040, filter = "CD"},
 			-- Power Word: Barrier
 			{spellID = 17, filter = "CD"},
 			-- Vampiric Embrace
@@ -1899,8 +1903,6 @@ C["filger_spells"] = {
 			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadow Walk
 			{spellID = 114842, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Subterfuge
-			{spellID = 115192, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
