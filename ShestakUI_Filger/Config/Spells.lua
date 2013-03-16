@@ -1758,12 +1758,16 @@ C["filger_spells"] = {
 			-- Self
 			-- Fade
 			{spellID = 586, filter = "CD"},
+			-- Fear Ward
+			{spellID = 6346, filter = "CD"},
 			-- Mindbender
 			{spellID = 123040, filter = "CD"},
 			-- Power Word: Barrier
 			{spellID = 17, filter = "CD"},
 			-- Vampiric Embrace
 			{spellID = 15286, filter = "CD"},
+			-- Void Shift
+			{spellID = 108968, filter = "CD"},
 			-- Purify
 			{spellID = 527, filter = "CD"},
 			-- Mass Dispel
