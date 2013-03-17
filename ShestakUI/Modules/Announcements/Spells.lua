@@ -12,7 +12,7 @@ frame:SetScript("OnEvent", function(self, _, ...)
 	local inInstance, instanceType = IsInInstance()
 	if not (inInstance and (instanceType == "raid" or instanceType == "party")) then return end
 
-	if event == "SPELL_CAST_SUCCESS" or event == "SPELL_RESURRECT" then
+	if event == "SPELL_CAST_SUCCESS" then
 		if C.announcements.spells_from_all == true then
 			if not sourceName then return end
 
