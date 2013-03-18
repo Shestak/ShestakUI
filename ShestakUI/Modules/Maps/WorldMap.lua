@@ -30,6 +30,8 @@ local SmallerMapSkin = function()
 	WorldMapFrame:SetPoint(unpack(C.position.map))
 
 	WorldMapDetailFrame:SetFrameStrata("MEDIUM")
+	WorldMapPlayerUpper:SetFrameStrata("LOW")
+	-- WorldMapPing:SetAlpha(0)
 
 	WorldMapTitleButton:Show()
 	WorldMapTitleButton:SetFrameStrata("MEDIUM")
