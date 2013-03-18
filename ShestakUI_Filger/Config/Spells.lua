@@ -1276,8 +1276,14 @@ C["filger_spells"] = {
 			{spellID = 115072, filter = "CD"},
 			-- Provoke
 			{spellID = 115546, filter = "CD"},
+			-- Zen Sphere
+			{spellID = 124081, filter = "CD"},
+			-- Chi Wave
+			{spellID = 115098, filter = "CD"},
 			-- Fists of Fury
 			{spellID = 113656, filter = "CD"},
+			-- Chi Burst
+			{spellID = 123986, filter = "CD"},
 			-- Guard
 			{spellID = 115295, filter = "CD"},
 			-- Charging Ox Wave
