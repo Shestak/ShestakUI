@@ -8,7 +8,7 @@ local _, ns = ...
 local oUF = ns.oUF
 
 local CanDispel = {
-	DRUID = {Magic = false, Curse = true, Poison = true},
+	DRUID = {Magic = false, Curse = true, Poison = true, Disease = false},
 	MAGE = {Curse = true},
 	MONK = {Magic = false, Poison = true, Disease = true},
 	PALADIN = {Magic = false, Poison = true, Disease = true},
@@ -40,6 +40,11 @@ local function CheckSpec(self, event)
 			dispellist.Magic = true
 		else
 			dispellist.Magic = false
+		end
+		if IsUsableSpell(122288) then
+			dispellist.Disease = true
+		else
+			dispellist.Disease = false
 		end
 	elseif T.class == "MONK" then
 		if T.CheckSpec(2) then
