@@ -60,7 +60,7 @@ C["position"] = {
 		["raid_dps"] = {"TOPLEFT", UIParent, "TOPLEFT", 23, -51},					-- DPS layout Raid frames
 		["arena"] = {"BOTTOMRIGHT", UIParent, "RIGHT", -60, -102},					-- Arena frames
 		["boss"] = {"BOTTOMRIGHT", UIParent, "RIGHT", -23, -102},					-- Boss frames
-		["tank"] = {"BOTTOM", UIParent, "BOTTOM", 302, 35},							-- Tank frames
+		{"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 5, 11},					-- Tank frames
 		["player_portrait"] = {"TOPRIGHT", "oUF_Player", "TOPLEFT", -8, -1},		-- Player Portrait
 		["target_portrait"] = {"TOPLEFT", "oUF_Target", "TOPRIGHT", 6, -1},			-- Target Portrait
 		["player_castbar"] = {"BOTTOM", "ActionBarAnchor", "TOP", 0, 235},			-- Player Castbar
