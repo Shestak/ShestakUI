@@ -182,7 +182,7 @@ L_GUI_THREAT_HEIGHT = "Threat bars height"
 L_GUI_THREAT_WIDTH = "Threat bars width"
 L_GUI_THREAT_ROWS = "Number of threat bars"
 L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid"
-
+--[[
 -- Meter options
 L_GUI_METER = "Contador por danos" -- Goooooooooogle translated
 L_GUI_METER_ENABLE = "Habilitar o contador por danos (apenas para ShestakUI alDamageMeter)" -- Goooooooooogle translated
@@ -190,7 +190,7 @@ L_GUI_METER_SPACING = "Espaço entre as barras" -- Goooooooooogle translated
 L_GUI_METER_HEIGHT = "Altura das barras" -- Goooooooooogle translated
 L_GUI_METER_WIDTH = "Largura das barras" -- Goooooooooogle translated
 L_GUI_METER_MAXBARS = "Número de barras" -- Goooooooooogle translated
-
+--]]
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"
 L_GUI_TOOLTIP_ENABLE = "Enable tooltip"

@@ -183,7 +183,7 @@ L_GUI_THREAT_HEIGHT = "Altezza delle barre di minaccia"
 L_GUI_THREAT_WIDTH = "Larghezza delle barre di minaccia"
 L_GUI_THREAT_ROWS = "Numero delle barre di minaccia"
 L_GUI_THREAT_HIDE_SOLO = "Mostra soltanto in gruppo/incursione"
-
+--[[
 -- Meter options
 L_GUI_METER = "Contatore dei danni"
 L_GUI_METER_ENABLE = "Attiva il contatore dei danni (solo per ShestakUI alDamageMeter)"
@@ -191,7 +191,7 @@ L_GUI_METER_SPACING = "Spazio tra le barre"
 L_GUI_METER_HEIGHT = "Altezza delle barre"
 L_GUI_METER_WIDTH = "Larghezza delle barre"
 L_GUI_METER_MAXBARS = "Numero delle barre"
-
+--]]
 -- Tooltip options
 L_GUI_TOOLTIP = "Suggerimenti"
 L_GUI_TOOLTIP_ENABLE = "Attiva i suggerimenti"

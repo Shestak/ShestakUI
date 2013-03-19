@@ -16,7 +16,7 @@ local ALLOWED_GROUPS = {
 	["enemycooldown"] = 1,
 	["pulsecooldown"] = 1,
 	["threat"] = 1,
-	["meter"] = 1,
+--	["meter"] = 1,
 	["tooltip"] = 1,
 	["chat"] = 1,
 	["bag"] = 1,
@@ -211,7 +211,7 @@ local function Local(o)
 	if o == "UIConfigthreatwidth" then o = L_GUI_THREAT_WIDTH end
 	if o == "UIConfigthreatbar_rows" then o = L_GUI_THREAT_ROWS end
 	if o == "UIConfigthreathide_solo" then o = L_GUI_THREAT_HIDE_SOLO end
-
+--[[
 	-- Meter options
 	if o == "UIConfigmeter" then o = L_GUI_METER end
 	if o == "UIConfigmeterenable" then o = L_GUI_METER_ENABLE end
@@ -219,7 +219,7 @@ local function Local(o)
 	if o == "UIConfigmeterheight" then o = L_GUI_METER_HEIGHT end
 	if o == "UIConfigmeterwidth" then o = L_GUI_METER_WIDTH end
 	if o == "UIConfigmetermaxbars" then o = L_GUI_METER_MAXBARS end
-
+--]]
 	-- Tooltip options
 	if o == "UIConfigtooltip" then o = L_GUI_TOOLTIP end
 	if o == "UIConfigtooltipenable" then o = L_GUI_TOOLTIP_ENABLE end

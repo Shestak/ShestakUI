@@ -182,7 +182,7 @@ L_GUI_THREAT_HEIGHT = "Threat bars height"
 L_GUI_THREAT_WIDTH = "Threat bars width"
 L_GUI_THREAT_ROWS = "Number of threat bars"
 L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid"
-
+--[[
 -- Meter options
 L_GUI_METER = "카운터 손상" -- Goooooooooogle translated
 L_GUI_METER_ENABLE = "손해 카운터 사용 (단 ShestakUI alDamageMeter 용)" -- Goooooooooogle translated
@@ -190,7 +190,7 @@ L_GUI_METER_SPACING = "막대 사이의 공간" -- Goooooooooogle translated
 L_GUI_METER_HEIGHT = "막대의 높이" -- Goooooooooogle translated
 L_GUI_METER_WIDTH = "막대의 폭" -- Goooooooooogle translated
 L_GUI_METER_MAXBARS = "막대의 개수" -- Goooooooooogle translated
-
+--]]
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"
 L_GUI_TOOLTIP_ENABLE = "Enable tooltip"

@@ -24,7 +24,7 @@ C["position"] = {
 	["quest"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -339, -165},						-- Quest log
 	["loot"] = {"TOPLEFT", UIParent, "TOPLEFT", 245, -220},							-- Loot
 	["group_loot"] = {"BOTTOM", UIParent, "BOTTOM", -210, 500},						-- Group roll loot
-	["threat_meter"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -245, 24},			-- Threat meter
+	["threat_meter"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24},			-- Threat meter
 	["raid_cooldown"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -178, -169},				-- Raid cooldowns
 	["enemy_cooldown"] = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 29, 50},			-- Enemy cooldowns
 	["pulse_cooldown"] = {"CENTER", UIParent, "CENTER", 0, 0},						-- Pulse cooldowns
@@ -38,7 +38,7 @@ C["position"] = {
 	["auto_button"] = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -190},				-- Auto button
 	["extra_button"] = {"CENTER", UIParent, "CENTER", 0, -108},						-- Extra action button
 	["alt_power_bar"] = {"TOP", UIParent, "TOP", 0, -36},							-- Alt power bar
-	["damage_meter"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26},			-- Damage meter
+--	["damage_meter"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -23, 26},			-- Damage meter
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},							-- Bottom bars
 	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 330},			-- Right bars

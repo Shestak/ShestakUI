@@ -183,7 +183,7 @@ L_GUI_THREAT_HEIGHT = "Высота полос"
 L_GUI_THREAT_WIDTH = "Ширина полос"
 L_GUI_THREAT_ROWS = "Количество полос"
 L_GUI_THREAT_HIDE_SOLO = "Отображать только в группе/рейде"
-
+--[[
 -- Meter options
 L_GUI_METER = "Счетчик ущерб" -- Goooooooooogle translated
 L_GUI_METER_ENABLE = "Включить счетчик убытков (только для ShestakUI alDamageMeter)" -- Goooooooooogle translated
@@ -191,7 +191,7 @@ L_GUI_METER_SPACING = "Расстояние между барами" -- Gooooooo
 L_GUI_METER_HEIGHT = "Высота баров" -- Goooooooooogle translated
 L_GUI_METER_WIDTH = "Ширина баров" -- Goooooooooogle translated
 L_GUI_METER_MAXBARS = "Количество баров" -- Goooooooooogle translated
-
+--]]
 -- Tooltip options
 L_GUI_TOOLTIP = "Подсказки"
 L_GUI_TOOLTIP_ENABLE = "Включить подсказки"

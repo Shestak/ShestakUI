@@ -1,7 +1,0 @@
-## Interface: 50200
-## Title: ShestakUI Baud Error Frame
-## Notes: Improved error reporting. Edit by Oz of Pozzo dell'Eternità
-## Author: Baudzilla, wolftankk, Affli
-## Version: 1.5
-
-ShestakUI_BaudErrorFrame.xml
