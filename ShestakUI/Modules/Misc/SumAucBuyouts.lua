@@ -2,7 +2,7 @@
 if C.misc.sum_buyouts ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Sum upp all current auctions(Sigma by Ailae)
+--	Sum up all current auctions(Sigma by Ailae)
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")

@@ -39,6 +39,7 @@ do
 			["Magic"] = false,
 			["Curse"] = true,
 			["Poison"] = true,
+			['Disease'] = false,
 		},
 		["MAGE"] = {
 			["Curse"] = true,
@@ -73,6 +74,11 @@ local function CheckSpec(self, event)
 			DispellFilter.Magic = true
 		else
 			DispellFilter.Magic = false
+		end
+		if IsUsableSpell(122288) then
+			DispellFilter.Disease = true
+		else
+			DispellFilter.Disease = false
 		end
 	elseif T.class == "MONK" then
 		if T.CheckSpec(2) then
