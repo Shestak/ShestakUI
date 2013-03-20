@@ -21,7 +21,7 @@ frame:SetScript("OnEvent", function(self, _, ...)
 					if destName == nil then
 						SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID)), T.CheckChat())
 					else
-						SendChatMessage(GetSpellLink(spellID).." -> "..destName, T.CheckChat())
+						SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID).." -> "..destName), T.CheckChat())
 					end
 				end
 			end
