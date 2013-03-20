@@ -252,5 +252,3 @@ DXE_Skin:SetScript("OnEvent", function(self, event)
 		end
 	end
 end)
-
--- Edit by Oz of shestakdotorg --
