@@ -357,8 +357,8 @@ local UploadSkada = function()
 							["height"] = 114,
 						},
 						["point"] = "BOTTOMRIGHT",
-						["x"] = -23,
-						["y"] = 26,
+						["x"] = -247,
+						["y"] = 19,
 						["title"] = {
 							["height"] = 12,
 						},
