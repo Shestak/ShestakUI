@@ -3430,6 +3430,8 @@ C["filger_spells"] = {
 			{spellID = 6940, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Hand of Freedom
 			{spellID = 1044, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Hand of Purity
+			{spellID = 114039, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Devotion Aura
 			{spellID = 31821, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Ardent Defender
