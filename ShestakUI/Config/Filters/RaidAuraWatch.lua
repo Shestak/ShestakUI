@@ -224,7 +224,7 @@ T.RaidDebuffs = {
 	--[[[SpellName(115001)] = 3,	-- Remorseless Winter
 	[SpellName(108194)] = 3,	-- Asphyxiate
 	[SpellName(47476)] = 3,		-- Strangulate
-	[SpellName(47481)] = 3,		-- Gnaw (Ghoul)
+	[SpellName(91800)] = 3,		-- Gnaw (Ghoul)
 	[SpellName(91797)] = 3,		-- Monstrous Blow (Mutated Ghoul)
 	-- Druid
 	[SpellName(33786)] = 3,		-- Cyclone

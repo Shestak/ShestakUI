@@ -2937,7 +2937,7 @@ C["filger_spells"] = {
 
 			-- Death Knight
 			-- Gnaw (Ghoul)
-			{spellID = 47481, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 91800, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Monstrous Blow (Mutated Ghoul)
 			{spellID = 91797, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
@@ -3290,14 +3290,14 @@ C["filger_spells"] = {
 			-- Death's Advance
 			{spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
-			-- Gnaw (Ghoul)
-			{spellID = 47481, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Monstrous Blow (Mutated Ghoul)
-			{spellID = 91797, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Asphyxiate
-			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Remorseless Winter
 			{spellID = 115001, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
+			-- Asphyxiate
+			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Gnaw (Ghoul)
+			{spellID = 91800, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Monstrous Blow (Mutated Ghoul)
+			{spellID = 91797, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Strangulate
 			{spellID = 47476, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3385,10 +3385,10 @@ C["filger_spells"] = {
 			-- Debuffs
 			-- Cauterize
 			{spellID = 87023, unitID = "target", caster = "target", filter = "DEBUFF"},
-			-- Deep Freeze
-			{spellID = 44572, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Polymorph
 			{spellID = 118, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Deep Freeze
+			{spellID = 44572, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Ring of Frost
 			{spellID = 82691, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Dragon's Breath

@@ -28,7 +28,7 @@ T.DiminishingSpells = function()
 
 		-- Control Stuns
 		[108194] = {"ctrlstun"},	-- Asphyxiate
-		[47481] = {"ctrlstun"},		-- Gnaw (Ghoul)
+		[91800] = {"ctrlstun"},		-- Gnaw (Ghoul)
 		[91797] = {"ctrlstun"},		-- Monstrous Blow (Mutated Ghoul)
 		[115001] = {"ctrlstun"},	-- Remorseless Winter
 		[22570] = {"ctrlstun"},		-- Maim
