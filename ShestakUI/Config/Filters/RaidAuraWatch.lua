@@ -85,6 +85,7 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Throne of Thunder
 	-- Jin'rokh the Breaker
+	[SpellName(137162)] = 3,	-- Static Burst (Tank switch)
 	[SpellName(138349)] = 3,	-- Static Wound (Tank stacks)
 	[SpellName(137371)] = 3,	-- Thundering Throw (Tank stun)
 	[SpellName(138732)] = 3,	-- Ionization (Heroic - Dispel)
