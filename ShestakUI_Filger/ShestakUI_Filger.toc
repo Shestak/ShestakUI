@@ -1,14 +1,11 @@
 ## Interface: 50200
-## Title: ShestakUI Filger
-## Notes: Class timers for ShestakUI. Edit by Oz of Pozzo dell'Eternità
+## Title: |cff00FFFFShestakUI Filger|r
+## Notes: Class timers for ShestakUI. Edit 1.1.6 by Oz of Pozzo dell'Eternità
 ## Author: Nils Ruesch
 ## Version: 4.34
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 4.34
-## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
 
 Config\Settings.lua

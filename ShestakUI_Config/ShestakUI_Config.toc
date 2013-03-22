@@ -1,15 +1,12 @@
 ## Interface: 50200
-## Title: ShestakUI Config
-## Notes: In-game configuration for ShestakUI. Edit by Oz of Pozzo dell'Eternità
+## Title: |cff00FFFFShestakUI Config|r
+## Notes: In-game configuration for ShestakUI. Edit 1.1.6 by Oz of Pozzo dell'Eternità
 ## Author: Tohveli
 ## Version: 4.34
 ## Credits: Elv22, Fernir, Tukz
 ## RequiredDeps: ShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
-## X-Curse-Packaged-Version: 4.34
-## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
 
 Locales\English.lua
@@ -17,6 +14,8 @@ Locales\Chinese.lua
 Locales\French.lua
 Locales\German.lua
 Locales\Italian.lua
+Locales\Korean.lua
+Locales\Portuguese.lua
 Locales\Russian.lua
 Locales\Spanish.lua
 Locales\Taiwan.lua

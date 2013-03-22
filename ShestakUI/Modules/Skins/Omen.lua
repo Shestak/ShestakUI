@@ -93,5 +93,3 @@ Omen:UpdateTitleBar()
 Omen:UpdateBackdrop()
 Omen:ReAnchorBars()
 Omen:ResizeBars()
-
--- Edit by Oz of shestakdotorg --

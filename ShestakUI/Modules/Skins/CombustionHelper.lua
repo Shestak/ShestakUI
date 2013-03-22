@@ -138,5 +138,3 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		T.SkinCheckBox(_G[checkboxes[i]])
 	end
 end)
-
--- Edit by Oz of shestakdotorg --
