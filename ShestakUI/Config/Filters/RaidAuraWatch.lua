@@ -85,6 +85,7 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Throne of Thunder
 	-- Jin'rokh the Breaker
+	[SpellName(137162)] = 3,	-- Static Burst (Tank switch)
 	[SpellName(138349)] = 3,	-- Static Wound (Tank stacks)
 	[SpellName(137371)] = 3,	-- Thundering Throw (Tank stun)
 	[SpellName(138732)] = 3,	-- Ionization (Heroic - Dispel)
@@ -224,7 +225,7 @@ T.RaidDebuffs = {
 	--[[[SpellName(115001)] = 3,	-- Remorseless Winter
 	[SpellName(108194)] = 3,	-- Asphyxiate
 	[SpellName(47476)] = 3,		-- Strangulate
-	[SpellName(47481)] = 3,		-- Gnaw (Ghoul)
+	[SpellName(91800)] = 3,		-- Gnaw (Ghoul)
 	[SpellName(91797)] = 3,		-- Monstrous Blow (Mutated Ghoul)
 	-- Druid
 	[SpellName(33786)] = 3,		-- Cyclone

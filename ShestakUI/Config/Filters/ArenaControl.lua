@@ -10,7 +10,7 @@ T.ArenaControl = function()
 	return {
 		-- Crowd Controls
 		-- Death Knight
-		[GetSpellInfo(47481)] = 4,	-- Gnaw (Ghoul)
+		[GetSpellInfo(91800)] = 4,	-- Gnaw (Ghoul)
 		[GetSpellInfo(91797)] = 4,	-- Monstrous Blow (Mutated Ghoul)
 		[GetSpellInfo(108194)] = 4,	-- Asphyxiate
 		[GetSpellInfo(115001)] = 4,	-- Remorseless Winter
