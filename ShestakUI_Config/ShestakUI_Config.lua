@@ -680,7 +680,7 @@ function CreateUIConfig()
 
 	local TitleBoxVerText = TitleBoxVer:CreateFontString("UIConfigTitleVer", "OVERLAY", "GameFontNormal")
 	TitleBoxVerText:SetPoint("CENTER")
-	TitleBoxVerText:SetText("ShestakUI "..T.version)
+	TitleBoxVerText:SetText("ShestakUI "..T.version.." (OzEdit 1.1.6)")
 
 	-- Main Frame Title
 	local TitleBox = CreateFrame("Frame", "TitleBox", UIConfigMain)
@@ -1029,7 +1029,7 @@ do
 	local frame = CreateFrame("Frame", nil, InterfaceOptionsFramePanelContainer)
 	frame:Hide()
 
-	frame.name = "ShestakUI"
+	frame.name = "|cff00FFFFShestakUI_OzEdit|r"
 	frame:SetScript("OnShow", function(self)
 		if self.show then return end
 		local T, C, L = unpack(ShestakUI)
@@ -1041,7 +1041,7 @@ do
 		subtitle:SetWidth(580)
 		subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
 		subtitle:SetJustifyH("LEFT")
-		subtitle:SetText("UI Site: |cff298F00http//shestak.org|r\nGitHub: |cff298F00https://github.com/Shestak/ShestakUI|r\nCurse: |cff298F00http://wow.curseforge.com/addons/shestakui/|r\nWoWInterface: |cff298F00http://www.wowinterface.com/downloads/info19033-ShestakUI.html|r\nChange Log: |cff298F00https://github.com/Shestak/ShestakUI/commits/master/|r")
+		subtitle:SetText("UI Site: |cff298F00http://shestak.org/forum/showthread.php?t=835|r\nGitHub: |cff298F00https://github.com/Medusa/ShestakUI|r\nWoWInterface: |cff298F00http://www.wowinterface.com/downloads/info21840-ShestakUI_OzEdit.html|r\nChange Log: |cff298F00https://github.com/Medusa/ShestakUI/commits/master|r")
 
 		local title2 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title2:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -16)

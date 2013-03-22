@@ -496,7 +496,7 @@ end)
 
 if not IsAddOnLoaded("ShestakUI_Config") then return end
 local guib = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "GameMenuButtonTemplate")
-guib:SetText("ShestakUI")
+guib:SetText("ShestakUI_OzEdit")
 guib:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -23)
 
 GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + guib:GetHeight())
@@ -515,3 +515,5 @@ guib:SetScript("OnClick", function()
 		UIConfigMain:Hide()
 	end
 end)
+
+-- Edit by Oz of shestakdotorg --
