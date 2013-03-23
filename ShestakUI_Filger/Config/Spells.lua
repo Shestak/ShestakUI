@@ -2962,6 +2962,8 @@ C["filger_spells"] = {
 			{spellID = 33786, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hibernate
 			{spellID = 2637, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Intimidating Roar (Symbiosis)
+			{spellID = 113004, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Bear Hug
@@ -3206,8 +3208,6 @@ C["filger_spells"] = {
 			{spellID = 132169, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Shockwave
 			{spellID = 46968, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Charge Stun
-			{spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Warbringer
 			{spellID = 105771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
@@ -3222,6 +3222,8 @@ C["filger_spells"] = {
 			{spellID = 12323, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Colossus Smash
 			{spellID = 86346, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Charge Stun
+			{spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Racial
 			-- War Stomp
@@ -3323,6 +3325,8 @@ C["filger_spells"] = {
 			{spellID = 33786, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Hibernate
 			{spellID = 2637, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Intimidating Roar (Symbiosis)
+			{spellID = 113004, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bear Hug
