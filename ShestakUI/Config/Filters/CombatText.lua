@@ -202,6 +202,7 @@ elseif T.class == "ROGUE" then
 		T.aoespam[122233] = true	-- Crimson Tempest (DoT)
 		T.aoespam[2818] = true		-- Deadly Poison
 		T.aoespam[8680] = true		-- Wound Poison
+		T.aoespam[22482] = true		-- Blade Flurry
 		-- Merging mh/oh strikes
 		T.aoespam[5374] = true		-- Mutilate
 		T.aoespam[27576] = 5374		-- Mutilate Off-Hand
