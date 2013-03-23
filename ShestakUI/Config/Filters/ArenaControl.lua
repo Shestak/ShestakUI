@@ -22,6 +22,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(22570)] = 4,	-- Maim
 		[GetSpellInfo(9005)] = 4,	-- Pounce
 		[GetSpellInfo(99)] = 4,		-- Disorienting Roar
+		[GetSpellInfo(113004)] = 4,	-- Intimidating Roar
 		-- Hunter
 		[GetSpellInfo(24394)] = 4,	-- Intimidation
 		[GetSpellInfo(117526)] = 4,	-- Binding Shot

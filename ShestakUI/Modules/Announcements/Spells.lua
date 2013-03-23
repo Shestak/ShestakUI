@@ -10,6 +10,7 @@ frame:SetScript("OnEvent", function(self, _, ...)
 	local _, event, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID = ...
 	local spells = T.AnnounceSpells
 	local inInstance, instanceType = IsInInstance()
+	local srcName = format(srcName:gsub("%-[^|]+", ""))
 	if not (inInstance and (instanceType == "raid" or instanceType == "party")) then return end
 
 	if event == "SPELL_CAST_SUCCESS" then
