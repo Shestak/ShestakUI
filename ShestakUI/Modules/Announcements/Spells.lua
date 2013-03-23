@@ -6,10 +6,10 @@ if C.announcements.spells ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-frame:SetScript("OnEvent", function(self, _, _, event, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID, ...)
+frame:SetScript("OnEvent", function(self, _, ...)
+	local _, event, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID = ...
 	local spells = T.AnnounceSpells
 	local inInstance, instanceType = IsInInstance()
-	local sourceName = format(sourceName:gsub("%-[^|]+", ""))
 	if not (inInstance and (instanceType == "raid" or instanceType == "party")) then return end
 
 	if event == "SPELL_CAST_SUCCESS" then
