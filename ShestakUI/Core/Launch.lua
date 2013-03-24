@@ -81,6 +81,10 @@ local function InstallUI()
 		SetAllowLowLevelRaid(1)
 	end
 
+	if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+		SetCVar("scriptErrors", 1)
+	end
+
 	-- Setting chat frames
 	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
 		for i = 1, NUM_CHAT_WINDOWS do
