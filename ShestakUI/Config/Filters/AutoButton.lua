@@ -40,6 +40,7 @@ T.ABItems = {
 	93180,	-- Re-Configured Remote
 	92019,	-- The Bilgewater Molotov
 	93751,	-- Blessed Torch
+	93668,	-- Saur Fetish
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
