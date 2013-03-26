@@ -13,7 +13,7 @@ frame:SetScript("OnEvent", function(self, _, ...)
 	if not (inInstance and (instanceType == "raid" or instanceType == "party")) then return end
 
 	if event == "SPELL_CAST_SUCCESS" then
-		if C.announcements.spells_from_all == true then
+		if C.announcements.spells_from_all == true and not (sourceGUID == UnitGUID("player") and sourceName == T.name) then
 			if not sourceName then return end
 
 			for i, spells in pairs(spells) do
