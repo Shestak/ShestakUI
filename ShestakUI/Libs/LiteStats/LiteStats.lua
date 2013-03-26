@@ -651,9 +651,9 @@ if clock.enabled then
 						end
 					end
 					if (numEncounters and numEncounters > 0) and (encounterProgress and encounterProgress > 0) then
-						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa(%s%s) (%s/%s)", name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
+						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
 					else
-						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa(%s%s)", name, maxPlayers, diff or ""), fmttime(reset), 1, 1, 1, tr, tg, tb)
+						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s]", name, maxPlayers, diff or ""), fmttime(reset), 1, 1, 1, tr, tg, tb)
 					end
 				end
 			end
