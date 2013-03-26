@@ -673,6 +673,8 @@ C["filger_spells"] = {
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Narrow Escape
+			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Web (Spider)
 			{spellID = 4167, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Venom Web Spray (Silithid)
@@ -3019,17 +3021,17 @@ C["filger_spells"] = {
 			-- Silencing Shot
 			{spellID = 34490, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Narrow Escape
-			{spellID = 128405, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 136634, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entrapment
 			{spellID = 19185, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Concussive Barrage
-			{spellID = 35101, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Shot
 			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Ice Trap
-			{spellID = 13810, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Concussive Barrage
+			{spellID = 35101, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Freezing Trap
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Ice Trap
+			{spellID = 135382, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)
 			{spellID = 90337, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Lullaby (Crane)
@@ -3223,7 +3225,7 @@ C["filger_spells"] = {
 			-- Storm Bolt
 			{spellID = 132169, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Shockwave
-			{spellID = 46968, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 132168, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Warbringer
 			{spellID = 105771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
@@ -3593,7 +3595,7 @@ C["filger_spells"] = {
 			-- Storm Bolt
 			{spellID = 132169, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Shockwave
-			{spellID = 46968, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 132168, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
 			{spellID = 20511, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silenced (Gag Order)

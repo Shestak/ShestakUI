@@ -107,6 +107,7 @@ L_GUI_SKINS_NPCSCAN = "Activer la personnalisation pour NPCScan"
 L_GUI_SKINS_VANASKOS = "Activer la personnalisation pour VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "Activer la personnalisation pour WeakAuras"
 L_GUI_SKINS_SKADA = "Activer la personnalisation pour Skada"
+L_GUI_SKINS_MY_ROLE_PLAY = "Activer la personnalisation pour MyRolePlay"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"

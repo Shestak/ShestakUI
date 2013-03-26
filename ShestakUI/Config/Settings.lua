@@ -137,6 +137,7 @@ C["skins"] = {
 	["vanaskos"] = true,						-- VanasKoS skin
 	["weak_auras"] = true,						-- WeakAuras skin
 	["skada"] = true,							-- Skada skin
+	["my_role_play"] = true,					-- MyRolePlay skin
 }
 
 ----------------------------------------------------------------------------------------

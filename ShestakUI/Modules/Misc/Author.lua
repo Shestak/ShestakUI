@@ -209,7 +209,6 @@ local specs = {
 
 local handler = CreateFrame("Frame")
 handler:RegisterEvent("PLAYER_TALENT_UPDATE")
-handler:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 handler:SetScript("OnEvent", function()
 	spec = GetSpecialization()
 

@@ -73,7 +73,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(115268)] = 4,	-- Mesmerize (Shivarra)
 		-- Warrior
 		[GetSpellInfo(132169)] = 4,	-- Storm Bolt
-		[GetSpellInfo(46968)] = 4,	-- Shockwave
+		[GetSpellInfo(132168)] = 4,	-- Shockwave
 		[GetSpellInfo(5246)] = 4,	-- Intimidating Shout
 
 		-- Silences
@@ -99,7 +99,7 @@ T.ArenaControl = function()
 		[GetSpellInfo(4167)] = 3,	-- Web (Spider)
 		[GetSpellInfo(54706)] = 3,	-- Venom Web Spray (Silithid)
 		[GetSpellInfo(90327)] = 3,	-- Lock Jaw (Dog)
-		[GetSpellInfo(128405)] = 3,	-- Narrow Escape
+		[GetSpellInfo(136634)] = 3,	-- Narrow Escape
 		[GetSpellInfo(122)] = 3,	-- Frost Nova
 		[GetSpellInfo(33395)] = 3,	-- Freeze (Pet)
 		[GetSpellInfo(111340)] = 3,	-- Ice Ward

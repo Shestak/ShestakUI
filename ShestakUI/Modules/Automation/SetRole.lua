@@ -19,10 +19,10 @@ local function SetRole()
 end
 
 local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_ENTERING_BATTLEGROUND")
-frame:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
-frame:RegisterEvent("GROUP_ROSTER_UPDATE")
 frame:RegisterEvent("PLAYER_TALENT_UPDATE")
+frame:RegisterEvent("GROUP_ROSTER_UPDATE")
+frame:RegisterEvent("PLAYER_ENTERING_BATTLEGROUND")
+
 frame:SetScript("OnEvent", SetRole)
 
 RolePollPopup:SetScript("OnShow", function() RolePollPopupAcceptButton:Click() end)

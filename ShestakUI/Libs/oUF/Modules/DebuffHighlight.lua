@@ -130,6 +130,7 @@ local function Enable(object)
 	-- Make sure aura scanning is active for this object
 	object:RegisterEvent("UNIT_AURA", Update)
 	object:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
+	CheckSpec(object)
 	if T.class == "DRUID" then
 		object:RegisterEvent("SPELLS_CHANGED", CheckSymbiosis)
 	end

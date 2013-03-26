@@ -117,7 +117,8 @@ T.RaidDebuffs = {
 	[SpellName(139857)] = 3,	-- Torrent of Ice (Fixated - Kiting)
 	[SpellName(140179)] = 3,	-- Suppression (Heroic - Dispell)
 	-- Ji-Kun
-	[SpellName(140092)] = 3,	-- Infected Talons (Tank DoT)
+	[SpellName(134366)] = 3,	-- Talon Rake (Tank stacks)
+	[SpellName(140092)] = 4,	-- Infected Talons (Tank DoT)
 	[SpellName(134256)] = 3,	-- Slimed (DoT)
 	-- Durumu the Forgotten
 	[SpellName(133768)] = 4,	-- Arterial Cut (Tank DoT)
