@@ -106,6 +106,7 @@ L_GUI_SKINS_NPCSCAN = "Activar estilo del NPCScan"
 L_GUI_SKINS_VANASKOS = "Activar estilo del VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "Activar estilo del WeakAuras"
 L_GUI_SKINS_SKADA = "Activar estilo del Skada"
+L_GUI_SKINS_MY_ROLE_PLAY = "Activar estilo del MyRolePlay"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texto de Combate"
