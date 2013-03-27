@@ -41,6 +41,7 @@ T.ABItems = {
 	92019,	-- The Bilgewater Molotov
 	93751,	-- Blessed Torch
 	93668,	-- Saur Fetish
+	93806,	-- Resonance Siphon
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
