@@ -2481,8 +2481,6 @@ C["filger_spells"] = {
 			{spellID = 109466, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Enslave Demon
 			{spellID = 1098, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Shadowsnare
-			{spellID = 63311, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- CoE group
 			-- Master Poisoner (Rogue)
@@ -2966,8 +2964,6 @@ C["filger_spells"] = {
 			{spellID = 77606, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Necrotic Strike
 			{spellID = 73975, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Chains of Ice (root)
-			{spellID = 96294, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Chains of Ice
 			{spellID = 45524, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Chilblains
@@ -3104,8 +3100,12 @@ C["filger_spells"] = {
 			{spellID = 122242, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Charging Ox Wave
 			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Disable
+			{spellID = 116706, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spear Hand Strike
 			{spellID = 116709, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Grapple Weapon
+			{spellID = 117368, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Hammer of Justice
@@ -3160,10 +3160,10 @@ C["filger_spells"] = {
 			{spellID = 1776, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Garrote - Silence
 			{spellID = 1330, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Smoke Bomb
-			{spellID = 76577, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dismantle
 			{spellID = 51722, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Smoke Bomb
+			{spellID = 76577, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Deadly Throw
 			{spellID = 26679, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Crippling Poison
@@ -3216,10 +3216,12 @@ C["filger_spells"] = {
 			{spellID = 24259, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Optical Blast (Observer)
 			{spellID = 115782, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Shadowsnare
-			{spellID = 63311, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Curse of Exhaustion
 			{spellID = 18223, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Conflagrate
+			{spellID = 17962, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowflame
+			{spellID = 47960, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Warrior
 			-- Storm Bolt
