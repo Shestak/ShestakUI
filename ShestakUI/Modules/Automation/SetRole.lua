@@ -25,4 +25,4 @@ frame:RegisterEvent("PLAYER_ENTERING_BATTLEGROUND")
 
 frame:SetScript("OnEvent", SetRole)
 
-RolePollPopup:SetScript("OnShow", function() RolePollPopupAcceptButton:Click() end)
+RolePollPopup:SetScript("OnShow", function() StaticPopupSpecial_Hide(RolePollPopup) end)
