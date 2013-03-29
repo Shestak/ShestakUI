@@ -1,6 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.skins.blizzard_frames ~= true then return end
-if C.skins.ace3 ~= true then return end
+if C.skins.blizzard_frames ~= true or C.skins.ace3 ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Ace3 options skin
@@ -13,7 +12,7 @@ local oldRegisterAsWidget = AceGUI.RegisterAsWidget
 AceGUI.RegisterAsWidget = function(self, widget)
 	local TYPE = widget.type
 	if TYPE == "CheckBox" then
-		widget.checkbg:Kill()
+		-- widget.checkbg:Kill()
 		widget.highlight:Kill()
 
 		if not widget.skinnedCheckBG then
