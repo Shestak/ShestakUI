@@ -6,7 +6,7 @@ if C.skins.my_role_play ~= true or not IsAddOnLoaded("MyRolePlay") then return e
 ----------------------------------------------------------------------------------------
 hooksecurefunc(mrp, "AddMRPTab", function()
 	T.SkinTab(CharacterFrameTab5)
-	CharacterFrameTab5:SetText("Profile")
+	CharacterFrameTab5:SetText(L_MRP)
 end)
 
 hooksecurefunc(mrp, "CreateOptionsPanel", function()
@@ -94,3 +94,5 @@ hooksecurefunc(mrp, "CreateEditFrames", function()
 	MyRolePlayCharacterFrame_NewProfileButton:SetPoint("LEFT", MyRolePlayCharacterFrame_ProfileComboBox.backdrop, "RIGHT", 1, 0)
 
 end)
+
+-- Edit by Oz of shestakdotorg --

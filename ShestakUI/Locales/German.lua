@@ -513,4 +513,7 @@ L_EXTRA_ZONEACHID = {
 L_HIDE_BUTTON_1 = "Linksklick = hide chat" -- Goooooooooogle translated
 L_HIDE_BUTTON_2 = "Right click = hide Minikarte (nur außerhalb des Kampfes)" -- Goooooooooogle translated
 
+-- MyRolePlay
+L_MRP = "Profil"  -- Goooooooooogle translated
+
 -- Edit by Oz of shestakdotorg --

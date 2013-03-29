@@ -513,4 +513,7 @@ L_EXTRA_ZONEACHID = {
 L_HIDE_BUTTON_1 = "Щелкните левой кнопкой мыши = скрыть чат" -- Goooooooooogle translated
 L_HIDE_BUTTON_2 = "Щелкните правой кнопкой мыши = скрыть миникарта (только вне боя)" -- Goooooooooogle translated
 
+-- MyRolePlay
+L_MRP = "Профиль"  -- Goooooooooogle translated
+
 -- Edit by Oz of shestakdotorg --

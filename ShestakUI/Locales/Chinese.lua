@@ -513,4 +513,7 @@ L_EXTRA_ZONEACHID = {
 L_HIDE_BUTTON_1 = "点击鼠标左键=隐藏聊天" -- Goooooooooogle translated
 L_HIDE_BUTTON_2 = "点击毁灭=隐藏小地图（仅战斗）" -- Goooooooooogle translated
 
+-- MyRolePlay
+L_MRP = "剖面"  -- Goooooooooogle translated
+
 -- Edit by Oz of shestakdotorg --

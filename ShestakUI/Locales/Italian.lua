@@ -513,4 +513,7 @@ L_EXTRA_ZONEACHID = {
 L_HIDE_BUTTON_1 = "Click sinistro = nascondi chat"
 L_HIDE_BUTTON_2 = "Click destro = nascondi minimappa (solo fuori dal combattimento)"
 
+-- MyRolePlay
+L_MRP = "Profilo"
+
 -- Edit by Oz of shestakdotorg --
