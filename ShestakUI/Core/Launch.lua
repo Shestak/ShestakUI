@@ -31,6 +31,7 @@ local function InstallUI()
 	SetCVar("buffDurations", 1)
 	SetCVar("enableCombatText", 1)
 	SetCVar("autoOpenLootHistory", 0)
+	SetCVar("lossOfControl", 0)
 
 	if T.author == true then
 		SetCVar("scriptErrors", 1)
