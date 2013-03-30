@@ -136,6 +136,7 @@ local function Local(o)
 	if o == "UIConfigskinsvanaskos" then o = L_GUI_SKINS_VANASKOS end
 	if o == "UIConfigskinsweak_auras" then o = L_GUI_SKINS_WEAK_AURAS end
 	if o == "UIConfigskinsskada" then o = L_GUI_SKINS_SKADA end
+	if o == "UIConfigskinsmy_role_play" then o = L_GUI_SKINS_MY_ROLE_PLAY end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end

@@ -7,7 +7,7 @@ local _, ns = ...
 local oUF = ns.oUF
 
 T.oUF_colors = setmetatable({
-	tapped = {0.55, 0.57, 0.61},
+	tapped = {0.6, 0.6, 0.6},
 	disconnected = {0.84, 0.75, 0.65},
 	power = setmetatable({
 		["MANA"] = {0.31, 0.45, 0.63},

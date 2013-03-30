@@ -6,7 +6,7 @@ if C.automation.auto_role ~= true then return end
 ----------------------------------------------------------------------------------------
 local function SetRole()
 	local spec = GetSpecialization()
-	if T.level >= 10 then
+	if T.level >= 10 and not InCombatLockdown() then
 		if spec == nil then
 			UnitSetRole("player", "No Role")
 		elseif spec ~= nil then
@@ -19,10 +19,10 @@ local function SetRole()
 end
 
 local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_ENTERING_BATTLEGROUND")
-frame:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
-frame:RegisterEvent("GROUP_ROSTER_UPDATE")
 frame:RegisterEvent("PLAYER_TALENT_UPDATE")
+frame:RegisterEvent("GROUP_ROSTER_UPDATE")
+frame:RegisterEvent("PLAYER_ENTERING_BATTLEGROUND")
+
 frame:SetScript("OnEvent", SetRole)
 
-RolePollPopup:SetScript("OnShow", function() RolePollPopupAcceptButton:Click() end)
+RolePollPopup:SetScript("OnShow", function() StaticPopupSpecial_Hide(RolePollPopup) end)

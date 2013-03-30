@@ -33,7 +33,7 @@ L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
 L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
-L_GUI_MISC_SUM_BUYOUTS = "Sum upp all current auctions" -- Needs review
+L_GUI_MISC_SUM_BUYOUTS = "Sum up all current auctions" -- Needs review
 L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
 L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
 L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
@@ -109,6 +109,7 @@ L_GUI_SKINS_NPCSCAN = "Activer la personnalisation pour NPCScan"
 L_GUI_SKINS_VANASKOS = "Activer la personnalisation pour VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "Activer la personnalisation pour WeakAuras"
 L_GUI_SKINS_SKADA = "Activer la personnalisation pour Skada"
+L_GUI_SKINS_MY_ROLE_PLAY = "Activer la personnalisation pour MyRolePlay"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"

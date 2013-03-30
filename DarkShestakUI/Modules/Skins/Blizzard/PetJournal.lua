@@ -114,6 +114,9 @@ local function LoadSkin()
 
 	PetJournalFilterButton:SetPoint("TOPLEFT", PetJournalSearchBox, "TOPRIGHT", 5, 2)
 
+	PetJournalLoadoutBorderSlotHeaderText:SetParent(PetJournal)
+	PetJournalLoadoutBorderSlotHeaderText:SetPoint("CENTER", PetJournalLoadoutBorderTop, "TOP", 0, 4)
+
 	T.SkinScrollBar(PetJournalListScrollFrameScrollBar)
 
 	for i = 1, #PetJournal.listScroll.buttons do

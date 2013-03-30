@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.chat.bubbles ~= true or IsAddOnLoaded("BossEncounter2") then return end
+if C.chat.bubbles ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	ChatBubbles skin(by Haleth)

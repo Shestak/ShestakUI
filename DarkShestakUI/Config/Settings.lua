@@ -57,7 +57,7 @@ C["misc"] = {
 	["gem_counter"] = false,					-- Displays how many red/blue/yellow gems you have
 	["already_known"] = false,					-- Colorizes recipes/mounts/pets that is already known
 	["disenchanting"] = false,					-- One-click Milling, Prospecting and Disenchanting
-	["sum_buyouts"] = false,					-- Sum upp all current auctions
+	["sum_buyouts"] = false,					-- Sum up all current auctions
 	["click_cast"] = false,						-- Simple click2cast spell binder
 	["move_blizzard"] = false,					-- Move some Blizzard frames
 	["color_picker"] = false,					-- Improved ColorPicker
@@ -142,6 +142,7 @@ C["skins"] = {
 	["vanaskos"] = false,						-- VanasKoS skin
 	["weak_auras"] = false,						-- WeakAuras skin
 	["skada"] = false,							-- Skada skin
+	["my_role_play"] = false,					-- MyRolePlay skin
 }
 
 ----------------------------------------------------------------------------------------

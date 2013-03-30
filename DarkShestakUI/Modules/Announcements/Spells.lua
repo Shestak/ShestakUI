@@ -12,8 +12,8 @@ frame:SetScript("OnEvent", function(self, _, ...)
 	local inInstance, instanceType = IsInInstance()
 	if not (inInstance and (instanceType == "raid" or instanceType == "party")) then return end
 
-	if event == "SPELL_CAST_SUCCESS" or event == "SPELL_RESURRECT" then
-		if C.announcements.spells_from_all == true then
+	if event == "SPELL_CAST_SUCCESS" then
+		if C.announcements.spells_from_all == true and not (sourceGUID == UnitGUID("player") and sourceName == T.name) then
 			if not sourceName then return end
 
 			for i, spells in pairs(spells) do
@@ -21,7 +21,7 @@ frame:SetScript("OnEvent", function(self, _, ...)
 					if destName == nil then
 						SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID)), T.CheckChat())
 					else
-						SendChatMessage(GetSpellLink(spellID).." -> "..destName, T.CheckChat())
+						SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID).." -> "..destName), T.CheckChat())
 					end
 				end
 			end

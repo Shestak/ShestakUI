@@ -12,7 +12,9 @@ ExtraActionBarFrame:SetUserPlaced(true)
 ExtraActionBarFrame:SetFrameStrata("MEDIUM")
 ExtraActionBarFrame:SetScript("OnMouseDown", function()
 	if IsAltKeyDown() or IsShiftKeyDown() then
-		ExtraActionBarFrame:ClearAllPoints()
+		if not InCombatLockdown() then
+			ExtraActionBarFrame:ClearAllPoints()
+		end
 		ExtraActionBarFrame:StartMoving()
 	end
 end)

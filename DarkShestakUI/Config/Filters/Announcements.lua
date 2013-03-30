@@ -12,6 +12,7 @@ if C.announcements.spells == true then
 		57934,	-- Tricks of the Trade
 		633,	-- Lay on Hands
 		20484,	-- Rebirth
+		113269,	-- Rebirth (Symbiosis)
 		61999,	-- Raise Ally
 		20707,	-- Soulstone
 		2908,	-- Soothe
@@ -35,6 +36,7 @@ if C.announcements.feasts == true then
 		[44389] = true,		-- Field Repair Bot 110G
 		[54711] = true,		-- Scrapbot
 		[67826] = true,		-- Jeeves
+		[126459] = true,	-- Blingtron 4000
 	}
 end
 
@@ -72,6 +74,11 @@ if C.announcements.bad_gear == true then
 			33820,	-- Weather-Beaten Fishing Hat
 			19972,	-- Lucky Fishing Hat
 			46349,	-- Chef's Hat
+			92738,	-- Safari Hat
+		},
+		-- Neck
+		[2] = {
+			32757,	-- Blessed Medallion of Karabor
 		},
 		-- Feet
 		[8] = {

@@ -109,6 +109,7 @@ L_GUI_SKINS_NPCSCAN = "Attiva il restyling di NPCScan"
 L_GUI_SKINS_VANASKOS = "Attiva il restyling di VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "Attiva il restyling di WeakAuras"
 L_GUI_SKINS_SKADA = "Attiva il restyling di Skada"
+L_GUI_SKINS_MY_ROLE_PLAY = "Attiva il restyling di MyRolePlay"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"
@@ -133,7 +134,7 @@ L_GUI_COMBATTEXT_MAX_LINES = "Massimo numero righe da ricordare in 'scorrimento'
 L_GUI_COMBATTEXT_TIME_VISIBLE = "Tempo (in secondi) in cui un singolo messaggio sarà visibile"
 L_GUI_COMBATTEXT_DK_RUNES = "Mostra la ricarica delle rune dei cavalieri della morte"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Comunica i tuoi colpi di grazia"
-L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unisce lo spam per danni multipli a più bersagli in un singolo messaggio"
+L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unisci lo spam per danni multipli a più bersagli in un singolo messaggio"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Secondi in cui l'incantesimo/abilità più bersagli è unito in un solo messaggio"
 L_GUI_COMBATTEXT_DISPEL = "Comunica le tue dissoluzioni (dispels)"
 L_GUI_COMBATTEXT_INTERRUPT = "Comunica le tue interruzioni (interrupts)"

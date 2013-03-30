@@ -17,7 +17,7 @@ T.DiminishingSpells = function()
 		[4167] = {"ctrlroot"},		-- Web (Spider)
 		[54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
 		[90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
-		[128405] = {"ctrlroot"},	-- Narrow Escape
+		[136634] = {"ctrlroot"},	-- Narrow Escape
 		[122] = {"ctrlroot"},		-- Frost Nova
 		[33395] = {"ctrlroot"},		-- Freeze (Water Elemental)
 		[116706] = {"ctrlroot"},	-- Disable
@@ -28,7 +28,7 @@ T.DiminishingSpells = function()
 
 		-- Control Stuns
 		[108194] = {"ctrlstun"},	-- Asphyxiate
-		[47481] = {"ctrlstun"},		-- Gnaw (Ghoul)
+		[91800] = {"ctrlstun"},		-- Gnaw (Ghoul)
 		[91797] = {"ctrlstun"},		-- Monstrous Blow (Mutated Ghoul)
 		[115001] = {"ctrlstun"},	-- Remorseless Winter
 		[22570] = {"ctrlstun"},		-- Maim
