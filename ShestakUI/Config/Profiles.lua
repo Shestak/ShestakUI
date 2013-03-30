@@ -104,7 +104,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Oz@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Ozd" and T.realm == "Pozzo dell'Eternità" then
+if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].vehicle = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 109, 100}
 	C["position"].ghost = {"TOPLEFT", "oUF_Player", "TOPLEFT", -2, 65}
 	C["position"].loot = {"TOPLEFT", UIParent, "TOPLEFT", 21, -532}
@@ -316,7 +316,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Nagiko@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["font"].stats_font = C.media.normal_font
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 14
