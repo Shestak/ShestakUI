@@ -78,11 +78,11 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Lancia benefici con la rotellina del mouse"
 
 -- Skins options
 L_GUI_SKINS = "Restyling"
-L_GUI_SKINS_COLOR_THEME = "Color theme" -- Need review
+L_GUI_SKINS_COLOR_THEME = "Coloro del tema" -- Need review
 L_GUI_SKINS_BLIZZARD = "Attiva il restyling dei riquadri Blizzard"
-L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
+L_GUI_SKINS_SHADOW = "Ombre sui riquadri" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "Attiva il restyling dei pulsanti delle AddOns sulla minimappa"
-L_GUI_SKINS_MINIMAP_BUTTONS_MOUSEOVER = "Addons icons on mouseover" -- Need review
+L_GUI_SKINS_MINIMAP_BUTTONS_MOUSEOVER = "Icone delle AddOns al passaggio del mouse" -- Need review
 L_GUI_SKINS_CLCR = "Attiva il restyling di CLCRet"
 L_GUI_SKINS_CLCP = "Attiva il restyling di CLCProt"
 L_GUI_SKINS_COMBUSTION_HELPER = "Attiva il restyling di CombustionHelper"
@@ -227,8 +227,8 @@ L_GUI_CHAT_CL_TAB = "Mostra la linguetta del Registro di combattimento"
 L_GUI_CHAT_TABS_MOUSEOVER = "Linguette delle chats al passaggio del mouse"
 L_GUI_CHAT_STICKY = "Ricorda l'ultimo canale"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Riunisce lo spam di un contatore dei danni in un singolo link"
-L_GUI_CHAT_TOOL_BAR = "Lite Button Bar for switch Loot and DamageMeter frames" -- Needs review
-L_GUI_CHAT_TOOL_BAR_MOUSEOVER =  "Lite Button Bar on mouseover" -- Needs review
+L_GUI_CHAT_TOOL_BAR = "'Barra strumenti' per passare dal riquadro del bottino al contatore dei danni" -- Needs review
+L_GUI_CHAT_TOOL_BAR_MOUSEOVER =  "'Barra strumenti' al passaggio del mouse" -- Needs review
 
 -- Bag options
 L_GUI_BAGS = "Sacche"
@@ -302,7 +302,7 @@ L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Nascondi barra postura"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Rendi orizzontale la barra postura"
 L_GUI_ACTIONBAR_MICROMENU = "Attiva il micromenu"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenu al passaggio del mouse"
-L_GUI_ACTIONBAR_PANELS = "Panels under bars" -- Need review
+L_GUI_ACTIONBAR_PANELS = "Pannelli sotto le barre" -- Need review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Dimensione benefici giocatore"

@@ -6,19 +6,19 @@ if T.client ~= "itIT" then return end
 --	Translation: Oz
 ----------------------------------------------------------------------------------------
 -- Installation
-L_INSTALL_WELCOME = "Welcome to Dark ShestakUI Setup Wizard, will do some important installation steps. Press " -- Need review
-L_INSTALL_CONFIG = "For a more comfortable settings recommended turn on Dark ShestakUI Config.\nIf decline will be missed some installation steps." -- Need review
-L_INSTALL_STEP1 = "Saving settings for:" -- Need review
+L_INSTALL_WELCOME = "Benvenuto/a al Dark ShestakUI Setup Wizard: procederemo con alcuni imporatanti passaggi d'installazione. Premi " -- Need review
+L_INSTALL_CONFIG = "Per un'installazione completa si consiglia di caricare Dark ShestakUI Config.\nIn caso contrario, alcuni passaggi dell'installazione saranno saltati." -- Need review
+L_INSTALL_STEP1 = "Salvatggio impostazioni per:" -- Need review
 L_INSTALL_STEP1_ACC = "Account" -- Need review
-L_INSTALL_STEP1_CHAR = "Character" -- Need review
-L_INSTALL_STEP2 = "Select Raid layout." -- Need review
-L_INSTALL_STEP3 = "Select Color theme." -- Need review
-L_INSTALL_STEP3_RED = "|cffE63333Red|r" -- Need review
-L_INSTALL_STEP3_GREEN = "|cff4DE64DGreen|r" -- Need review
+L_INSTALL_STEP1_CHAR = "Personaggio" -- Need review
+L_INSTALL_STEP2 = "Selezione la disposione per le incursioni." -- Need review
+L_INSTALL_STEP3 = "Seleziona il colore del tema." -- Need review
+L_INSTALL_STEP3_RED = "|cffE63333Rosso|r" -- Need review
+L_INSTALL_STEP3_GREEN = "|cff4DE64DVerde|r" -- Need review
 L_INSTALL_STEP3_BLUE = "|cff1A80E6Blue|r" -- Need review
-L_INSTALL_STEP3_CLASS = "Classcolor" -- Need review
-L_INSTALL_STEP4 = "Congratulations!\nInstallation completed successfully, you must reload UI." -- Need review
-L_INSTALL_STEP4_RELOAD = "Reload" -- Need review
+L_INSTALL_STEP3_CLASS = "Colore della classe" -- Need review
+L_INSTALL_STEP4 = "Congratulazione!\nL'installazione è stata completata con successo: devi ricaricare la UI." -- Need review
+L_INSTALL_STEP4_RELOAD = "Ricarica" -- Need review
 
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " ha usato il mio Pozzo di Luce. "
@@ -299,7 +299,7 @@ L_POPUP_RESETUI = "Vuoi davvero ripristinare tutte le impostazioni iniziali dell
 L_POPUP_RESETSTATS = "Vuoi davvero riazzerare tutte le statistiche relative a tempo trascorso in gioco e oro?"
 L_POPUP_DISBAND_RAID = "Vuoi davvero sciogliere il gruppo?"
 L_POPUP_DISABLEUI = "A questa risoluzione la Dark ShestakUI non funziona correttamente, vuoi disabilitare l'AddOn (clicca 'Cancella' se vuoi provare con un'altra risoluzione)?"
-L_POPUP_DISABLE_OLD_ADDONS = "You must disable our old raid frames addons to use Dark ShestakUI now." -- Need review
+L_POPUP_DISABLE_OLD_ADDONS = "Devi disabilitare le tue vecchie AddOns per i riquadri d'incursione se vuoi utilizzare adesso la Dark ShestakUI." -- Need review
 L_POPUP_SETTINGS_ALL = "Applica le impostazioni per tutte le AddOns (DBM/DXE, Skada e MSBT)?"
 L_POPUP_SETTINGS_DBM = "È necessario cambiare la posizione degli elementi di DBM."
 L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DXE."
