@@ -104,7 +104,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Oz@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+if T.name == "Ozd" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].vehicle = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 109, 100}
 	C["position"].ghost = {"TOPLEFT", "oUF_Player", "TOPLEFT", -2, 65}
 	C["position"].loot = {"TOPLEFT", UIParent, "TOPLEFT", 21, -532}
@@ -316,26 +316,37 @@ end
 ----------------------------------------------------------------------------------------
 --	Nagiko@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
+if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+	C["font"].stats_font = C.media.normal_font
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 14
+	C["font"].combat_text_font = C.media.normal_font
 	C["font"].combat_text_font_style = "OUTLINE"
 	C["font"].combat_text_font_size = 18
+	C["font"].chat_tabs_font = C.media.normal_font
+	C["font"].chat_tabs_font_style = "OUTLINE"
 	C["font"].chat_tabs_font_size = 12
+	C["font"].action_bars_font = C.media.normal_font
 	C["font"].action_bars_font_style = "OUTLINE"
 	C["font"].action_bars_font_size = 12
-	C["font"].raid_cooldowns_font_style = ""
+	C["font"].raid_cooldowns_font = C.media.normal_font
+	C["font"].raid_cooldowns_font_style = "OUTLINE"
 	C["font"].raid_cooldowns_font_shadow = true
 	C["font"].raid_cooldowns_font_size = 14
+	C["font"].threat_meter_font = C.media.normal_font
 	C["font"].threat_meter_font_style = "OUTLINE"
 	C["font"].threat_meter_font_shadow = true
 	C["font"].threat_meter_font_size = 14
+	C["font"].cooldown_timers_font = C.media.normal_font
 	C["font"].cooldown_timers_font_style = "OUTLINE"
 	C["font"].cooldown_timers_font_size = 22
+	C["font"].loot_font = C.media.normal_font
 	C["font"].loot_font_style = "OUTLINE"
 	C["font"].loot_font_size = 14
+	C["font"].stylization_font = C.media.normal_font
 	C["font"].stylization_font_style = "OUTLINE"
 	C["font"].stylization_font_size = 14
+	C["font"].bags_font = C.media.normal_font
 	C["font"].bags_font_style = "OUTLINE"
 	C["font"].bags_font_size = 14
 	C["position"].threat_meter = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -245, 24}
