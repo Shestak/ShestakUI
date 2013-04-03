@@ -161,7 +161,7 @@ local function LoadSkin()
 	-- PVP Banners
 	PVPBannerFrame:StripTextures()
 	PVPBannerFramePortrait:SetAlpha(0)
-	PVPBannerFrame:SetTemplate("Default")
+	PVPBannerFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(PVPBannerFrameCloseButton)
 	--PVPBannerFrameEditBox:SkinEditBox()
 	--PVPBannerFrameEditBox.backdrop:SetOutside(PVPBannerFrameEditBox, 2, -5)
@@ -169,6 +169,22 @@ local function LoadSkin()
 
 	PVPBannerFrameAcceptButton:SkinButton(true)
 	PVPBannerFrameCancelButton:SkinButton(true)
+
+	for i = 1, PVPBannerFrame:GetNumChildren() do
+		local child = select(i, PVPBannerFrame:GetChildren())
+		if child:GetObjectType() == "Button" then
+			local name = child:GetName()
+			if name ~= "PVPBannerFrameCloseButton" then child:SkinButton() end
+		end
+	end
+
+	PVPBannerFrameEditBoxLeft:Kill()
+	PVPBannerFrameEditBoxRight:Kill()
+	PVPBannerFrameEditBoxMiddle:Kill()
+
+	PVPBannerFrameEditBox:CreateBackdrop("Overlay")
+	PVPBannerFrameEditBox.backdrop:SetPoint("TOPLEFT", PVPBannerFrameEditBox, "TOPLEFT" , -3, -6)
+	PVPBannerFrameEditBox.backdrop:SetPoint("BOTTOMRIGHT", PVPBannerFrameEditBox, "BOTTOMRIGHT", 3, 6)
 
 	-- Duplicate button name
 	for i = 1, PVPBannerFrame:GetNumChildren() do
