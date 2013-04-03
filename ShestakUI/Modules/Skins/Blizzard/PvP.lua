@@ -163,8 +163,6 @@ local function LoadSkin()
 	PVPBannerFramePortrait:SetAlpha(0)
 	PVPBannerFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(PVPBannerFrameCloseButton)
-	--PVPBannerFrameEditBox:SkinEditBox()
-	--PVPBannerFrameEditBox.backdrop:SetOutside(PVPBannerFrameEditBox, 2, -5)
 	PVPBannerFrame.Inset:StripTextures()
 
 	PVPBannerFrameAcceptButton:SkinButton(true)
