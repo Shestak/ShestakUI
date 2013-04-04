@@ -124,11 +124,8 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["automation"].screenshot = true
 	C["automation"].logging_combat = true
 	C["combattext"].scrollable = true
-	C["reminder"].raid_buffs_size = 19
-	C["reminder"].raid_buffs_always = true
 	C["chat"].background = true
 	C["chat"].background_alpha = 0.5
-	C["minimap"].size = 129
 	C["minimap"].toggle_menu = false
 	C["actionbar"].hotkey = false
 	C["aura"].fot_debuffs = true
