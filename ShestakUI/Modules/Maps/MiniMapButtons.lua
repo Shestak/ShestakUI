@@ -91,7 +91,7 @@ SLASH_FARMMODE4 = "/аь"
 ----------------------------------------------------------------------------------------
 local farm = CreateFrame("Button", "FarmMode", UIParent)
 farm:SetTemplate("ClassColor")
-farm:SetPoint("TOP", switch, "BOTTOM", 0, -1)
+farm:SetPoint("TOP", switch, "BOTTOM", 0, -3)
 farm:SetSize(19, 19)
 farm:SetAlpha(0)
 
