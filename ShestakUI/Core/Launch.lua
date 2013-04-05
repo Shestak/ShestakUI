@@ -82,7 +82,7 @@ local function InstallUI()
 		SetAllowLowLevelRaid(1)
 	end
 
-	if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+	if T.name == "Oz" or T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
 		SetCVar("scriptErrors", 1)
 	end
 
