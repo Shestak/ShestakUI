@@ -1,6 +1,6 @@
 ## Interface: 50200
 ## Title: |cff00FFFFShestakUI Config|r
-## Notes: In-game configuration for ShestakUI. Edit 1.1.7 by Oz of Pozzo dell'Eternità
+## Notes: In-game configuration for ShestakUI. Edit 1.1.8 by Oz of Pozzo dell'Eternità
 ## Author: Tohveli
 ## Version: 4.34
 ## Credits: Elv22, Fernir, Tukz
