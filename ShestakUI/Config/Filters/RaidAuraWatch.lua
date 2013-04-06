@@ -103,7 +103,7 @@ T.RaidDebuffs = {
 	[SpellName(136903)] = 3,	-- Frigid Assault (Tank stacks)
 	[SpellName(136922)] = 3,	-- Frostbite (DoT)
 	[SpellName(136992)] = 3,	-- Biting Cold (DoT)
-	[SpellName(136857)] = 3,	-- Entrapped (Dispel)
+	[SpellName(136857)] = 4,	-- Entrapped (Dispel)
 	[SpellName(137359)] = 3,	-- Marked Soul (Fixated - Kiting)
 	[SpellName(137641)] = 3,	-- Soul Fragment (Heroic)
 	-- Tortos
@@ -133,8 +133,8 @@ T.RaidDebuffs = {
 	[SpellName(138659)] = 3,	-- Touch of the Animus (DoT)
 	-- Iron Qon
 	[SpellName(134691)] = 3,	-- Impale (Tank stacks)
-	[SpellName(134628)] = 3,	-- Unleashed Flame (Damage staks)
-	[SpellName(136192)] = 3,	-- Lightning Storm (Stun)
+	[SpellName(136192)] = 4,	-- Lightning Storm (Stun)
+	[SpellName(136193)] = 3,	-- Arcing Lightning
 	-- Twin Consorts
 	[SpellName(137408)] = 3,	-- Fan of Flames (Tank stacks)
 	[SpellName(136722)] = 3,	-- Slumber Spores (Dispel)
