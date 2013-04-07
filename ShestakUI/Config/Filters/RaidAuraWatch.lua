@@ -109,6 +109,7 @@ T.RaidDebuffs = {
 	-- Tortos
 	[SpellName(136753)] = 3,	-- Slashing Talons (Tank DoT)
 	[SpellName(137633)] = 3,	-- Crystal Shell (Heroic)
+	[SpellName(140701)] = 4,	-- Crystal Shell: Full Capacity! (Heroic)
 	-- Megaera
 	[SpellName(137731)] = 3,	-- Ignite Flesh (Tank stacks)
 	[SpellName(139843)] = 3,	-- Arctic Freeze (Tank stacks)
