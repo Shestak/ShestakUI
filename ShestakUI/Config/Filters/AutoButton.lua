@@ -42,6 +42,7 @@ T.ABItems = {
 	93751,	-- Blessed Torch
 	93668,	-- Saur Fetish
 	93806,	-- Resonance Siphon
+	93761,	-- Arcane Emancipator
 	-- Seaforium
 	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
