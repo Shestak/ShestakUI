@@ -96,6 +96,7 @@ if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
 	C["automation"].logging_combat = true
 	C["combattext"].scrollable = true
 	C["minimap"].toggle_menu = false
+	C["nameplate"].health_value = true
 	C["aura"].fot_debuffs = true
 	C["aura"].pet_debuffs = true
 	C["aura"].tot_debuffs = true
