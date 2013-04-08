@@ -12,7 +12,6 @@ local function LoadSkin()
 	T.SkinScrollBar(BlackMarketScrollFrameScrollBar)
 	BlackMarketFrame.MoneyFrameBorder:StripTextures()
 	T.SkinEditBox(BlackMarketBidPriceGold)
-	T.SkinEditBox(BlackMarketHotItemBidPriceGold)
 	BlackMarketBidPriceGold:SetHeight(18)
 
 	BlackMarketFrame.BidButton:SkinButton()
@@ -24,7 +23,6 @@ local function LoadSkin()
 	BlackMarketFrame.HotDeal.Item:StyleButton()
 	BlackMarketFrame.HotDeal.Item.hover:SetAllPoints()
 	BlackMarketFrame.HotDeal.Item.pushed:SetAllPoints()
-	BlackMarketFrame.HotDeal.BidButton:SkinButton()
 
 	T.SkinCloseButton(BlackMarketFrame.CloseButton)
 

@@ -3597,6 +3597,10 @@ C["filger_spells"] = {
 			-- Arcane Torrent
 			{spellID = 28730, unitID = "target", caster = "all", filter = "DEBUFF"},
 
+			-- Heart of Fear
+			-- Impaling Spear (Wind Lord Mel'jarak)
+			{spellID = 122224, unitID = "target", caster = "all", filter = "DEBUFF"},
+
 			-- All
 			-- Warsong Flag
 			{spellID = 23333, unitID = "target", caster = "all", filter = "BUFF"},
@@ -3606,13 +3610,8 @@ C["filger_spells"] = {
 			-- Seaforium
 			{spellID = 52418, unitID = "target", caster = "all", filter = "BUFF"},
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
-
 			-- Drink
 			{spellID = 80167, unitID = "target", caster = "all", filter = "BUFF"},
-
-			-- Heart of Fear
-			-- Impaling Spear (Wind Lord Mel'jarak)
-			{spellID = 122224, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 	},
 }

@@ -100,7 +100,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 
 	local function GameTooltipDefault(tooltip, parent)
 		if C.tooltip.cursor == true then
-			tooltip:SetOwner(parent, "ANCHOR_CURSOR")
+			tooltip:SetOwner(parent, "ANCHOR_CURSOR_RIGHT", 20, 20)
 		else
 			tooltip:SetOwner(parent, "ANCHOR_NONE")
 			tooltip:ClearAllPoints()
@@ -141,7 +141,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 				if InCombatLockdown() and C.tooltip.hide_combat and not IsShiftKeyDown() then
 					self:Hide()
 				else
-					self:SetOwner(parent, "ANCHOR_CURSOR")
+					self:SetOwner(parent, "ANCHOR_CURSOR_RIGHT", 20, 20)
 				end
 			end)
 		else
