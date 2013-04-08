@@ -93,12 +93,12 @@ function stArch:OnLoad(self)
 
 		-- Race Text
 		progressBars[i]["race"]:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-		progressBars[i]["race"]:SetText("Race")
-		progressBars[i]["race"]:SetPoint("LEFT", progressBars[i]["bar"], "LEFT", 3, 0)
+		progressBars[i]["race"]:SetText(RACE)
+		progressBars[i]["race"]:SetPoint("LEFT", progressBars[i]["bar"], "LEFT", 2, 0)
 
 		-- Progress Text
 		progressBars[i]["progress"]:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-		progressBars[i]["progress"]:SetText(" ")
+		progressBars[i]["progress"]:SetText("")
 		progressBars[i]["progress"]:SetPoint("RIGHT", progressBars[i]["bar"], "RIGHT", 1, 0)
 	end
 
@@ -204,7 +204,7 @@ function stArch:OnLoad(self)
 		solveFrame[i]["solve"]["text"] = solveFrame[i]["solve"]:CreateFontString()
 		solveFrame[i]["solve"]["text"]:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 		solveFrame[i]["solve"]["text"]:SetText(SOLVE)
-		solveFrame[i]["solve"]["text"]:SetPoint("CENTER", solveFrame[i]["solve"], "CENTER", 0, 0)
+		solveFrame[i]["solve"]["text"]:SetPoint("CENTER", solveFrame[i]["solve"], "CENTER", 2, 0)
 	end
 
 	-------------------------------------------------------------
@@ -334,7 +334,11 @@ function stArch:updateArtifactBar(index)
 		if keystoneBonus > 0 then
 			bar["progress"]:SetText(format("|cff00c1ea%d|r/%d", artifact["progress"] + keystoneBonus, artifact["total"]))
 		else
-			bar["progress"]:SetText(format("%d/%d", artifact["progress"], artifact["total"]))
+			if artifact["total"] > 65 then
+				bar["progress"]:SetText(format("%d/|cff00c1ea%d|r", artifact["progress"], artifact["total"]))
+			else
+				bar["progress"]:SetText(format("%d/%d", artifact["progress"], artifact["total"]))
+			end
 		end
 		if artifact["canSolve"] then
 			bar["bar"]:SetStatusBarColor(0.2, 0.8, 0.2)
@@ -348,8 +352,8 @@ function stArch:updateArtifactBar(index)
 		bar["solve"]:SetAlpha(1)
 	else
 		-- Empty information, sometimes tries to falsely update
-		bar["solve"]["text"]:SetText(" ")
-		bar["progress"]:SetText(" ")
+		bar["solve"]["text"]:SetText("")
+		bar["progress"]:SetText("")
 		stArch:DisableSolve(bar["solve"])
 		bar["bar"]:SetStatusBarColor(0.4, 0.4, 0.4)
 

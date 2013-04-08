@@ -17,17 +17,17 @@ local replace = {
 	["синего цвета"] = "|cff6060ffсинего цвета|r",
 	["желтого цвета"] = "|cffffff40желтого цвета|r",
 	["Требуется хотя бы"] = "Требуется",
-	["Чернокнижник"] = "|cff9482C9Чернокнижник|r",
-	["Жрец"] = "|cffFFFFFFЖрец|r",
 	["Воин"] = "|cffC79C6EВоин|r",
-	["Шаман"] = "|cff0070DEШаман|r",
-	["Разбойник"] = "|cffFFF569Разбойник|r",
-	["Паладин"] = "|cffF58CBAПаладин|r",
-	["Маг"] = "|cff69CCF0Маг|r",
-	["Охотник"] = "|cffABD473Охотник|r",
 	["Друид"] = "|cffFF7D0AДруид|r",
-	["Рыцарь смерти"] = "|cffC41F3BРыцарь смерти|r",
+	["Жрец"] = "|cffFFFFFFЖрец|r",
+	["Маг"] = "|cff69CCF0Маг|r",
 	["Монах"] = "|cff00FF96Монах|r",
+	["Охотник"] = "|cffABD473Охотник|r",
+	["Паладин"] = "|cffF58CBAПаладин|r",
+	["Разбойник"] = "|cffFFF569Разбойник|r",
+	["Рыцарь смерти"] = "|cffC41F3BРыцарь смерти|r",
+	["Чернокнижник"] = "|cff9482C9Чернокнижник|r",
+	["Шаман"] = "|cff0070DEШаман|r",
 }
 
 local function Translate(text)
@@ -42,7 +42,7 @@ end
 local function UpdateTooltip(self)
 	if not self:GetItem() then return end
 	local tname = self:GetName()
-	for i = 3, 15 do
+	for i = 3, 30 do
 		ttext = _G[tname.."TextLeft"..i]
 		if ttext then ttext:SetText(Translate(ttext:GetText())) end
 		ttext = _G[tname.."TextRight"..i]

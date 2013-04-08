@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.loot.auto_greed ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Auto greed on green items(by Tekkub) and NeedTheOrb(by Myrilandell of Lothar)
+--	Auto greed/disenchant on green items(by Tekkub) and NeedTheOrb(by Myrilandell of Lothar)
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("START_LOOT_ROLL")

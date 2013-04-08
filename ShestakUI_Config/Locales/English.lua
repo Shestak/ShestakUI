@@ -260,7 +260,7 @@ L_GUI_LOOT_ENABLE = "Enable loot frame"
 L_GUI_LOOT_ROLL_ENABLE = "Enable group loot frame"
 L_GUI_LOOT_ICON_SIZE = "Icon size"
 L_GUI_LOOT_WIDTH = "Loot frame width"
-L_GUI_LOOT_AUTOGREED = "Enable auto-greed for green item at max level"
+L_GUI_LOOT_AUTOGREED = "Enable auto-greed/disenchant for green item at max level"
 L_GUI_LOOT_AUTODE = "Auto confirm disenchant"
 
 -- Nameplate options
