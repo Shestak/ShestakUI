@@ -31,27 +31,19 @@ local function InstallUI()
 	SetCVar("buffDurations", 1)
 	SetCVar("enableCombatText", 1)
 	SetCVar("autoOpenLootHistory", 0)
-	SetCVar("lossOfControl", 0)
 
-	if T.author == true then
-		SetCVar("scriptErrors", 1)
-		SetCVar("interactOnLeftClick", 0)
-		SetCVar("timeMgrUseLocalTime", 1)
+	if T.coauthor == true then
+		SetCVar("ConsolidateBuffs", 1)
+		SetCVar("scriptErrors", 0)
 		SetCVar("profanityFilter", 0)
 		SetCVar("Sound_EnableErrorSpeech", 0)
-		SetCVar("Sound_EnableEmoteSounds", 0)
-		SetCVar("Sound_EnablePetSounds", 0)
 		SetCVar("Sound_EnableMusic", 0)
 		SetCVar("Sound_EnableSoundWhenGameIsInBG", 1)
-		SetCVar("showToastWindow", 0)
-		SetCVar("cameraSmoothStyle", 1)
-		SetCVar("displaySpellActivationOverlays", 0)
-		SetCVar("ConsolidateBuffs", 1)
 		SetCVar("autoDismountFlying", 1)
 		SetCVar("autoSelfCast", 1)
 		SetCVar("guildMemberNotify", 1)
 		SetCVar("UnitNameOwn", 0)
-		SetCVar("UnitNameNPC", 0)
+		SetCVar("UnitNameNPC", 1)
 		SetCVar("UnitNameNonCombatCreatureName", 0)
 		SetCVar("UnitNamePlayerGuild", 1)
 		SetCVar("UnitNamePlayerPVPTitle", 0)
@@ -71,11 +63,6 @@ local function InstallUI()
 		SetCVar("nameplateShowEnemyPets", 0)
 		SetCVar("nameplateShowEnemyGuardians", 0)
 		SetCVar("nameplateShowEnemyTotems", 0)
-		SetCVar("shadowMode", 0)
-		SetCVar("ffxDeath", 0)
-		SetCVar("ffxNetherWorld", 0)
-		SetCVar("fctLowManaHealth", 0)
-		SetCVar("fctReactives", 0)
 		SetAutoDeclineGuildInvites(1)
 		ShowAccountAchievements(1)
 		SetAllowLowLevelRaid(1)
@@ -83,6 +70,10 @@ local function InstallUI()
 
 	-- Setting chat frames
 	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
+		FCF_ResetChatWindows()
+		FCF_OpenNewWindow(LOOT)
+		FCF_SetLocked(ChatFrame3, 1)
+		FCF_UnDockFrame(ChatFrame3)
 		for i = 1, NUM_CHAT_WINDOWS do
 			local frame = _G[format("ChatFrame%s", i)]
 			local chatFrameId = frame:GetID()
@@ -97,8 +88,12 @@ local function InstallUI()
 			if i == 1 then
 				frame:ClearAllPoints()
 				frame:SetPoint(unpack(C.position.chat))
+			elseif i == 3 then
+				frame:ClearAllPoints()
+				frame:SetPoint("BOTTOMRIGHT", C.position.chat[2], "BOTTOMRIGHT", -C.position.chat[4] - 1, C.position.chat[5])
+				frame:SetJustifyH("RIGHT")
 			end
-
+			
 			-- Save new default position and dimension
 			FCF_SavePositionAndDimensions(frame)
 
@@ -112,46 +107,60 @@ local function InstallUI()
 			-- Lock them if unlocked
 			if not frame.isLocked then FCF_SetLocked(frame, 1) end
 		end
-
-		if T.author == true then
-			FCF_ResetChatWindows()
-			FCF_OpenNewWindow(GUILD)
-			FCF_SetLocked(ChatFrame3, 1)
-			FCF_DockFrame(ChatFrame3)
-			FCF_OpenNewWindow(LOOT)
+		
+		ChatFrame_RemoveAllMessageGroups(ChatFrame3)	
+		ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_FACTION_CHANGE")
+		ChatFrame_AddMessageGroup(ChatFrame3, "SKILL")
+		ChatFrame_AddMessageGroup(ChatFrame3, "LOOT")
+		ChatFrame_AddMessageGroup(ChatFrame3, "MONEY")
+		ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_XP_GAIN")
+		ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_HONOR_GAIN")
+		ChatFrame_AddMessageGroup(ChatFrame3, "COMBAT_GUILD_XP_GAIN")
+		
+		if T.coauthor == true then
+			FCF_OpenNewWindow(CHANNELS)
 			FCF_SetLocked(ChatFrame4, 1)
 			FCF_DockFrame(ChatFrame4)
-
+			FCF_OpenNewWindow(WHISPER)
+			FCF_SetLocked(ChatFrame5, 1)
+			FCF_DockFrame(ChatFrame5)
+			
 			-- Setup main tab
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "LOOT")
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "CURRENCY")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "CHANNEL")
 			ChatFrame_RemoveMessageGroup(ChatFrame1, "MONEY")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "COMBAT_FACTION_CHANGE")
+			ChatFrame_RemoveMessageGroup(ChatFrame1, "SKILL")
+			ChatFrame_RemoveChannel(ChatFrame1, "Общий")
+			ChatFrame_RemoveChannel(ChatFrame1, "Торговля")
+			ChatFrame_RemoveChannel(ChatFrame1, "ОборонаЛокальный")
+			ChatFrame_RemoveChannel(ChatFrame1, "ПоискСпутников")
 
-			-- Setup guild tab
-			ChatFrame_RemoveAllMessageGroups(ChatFrame3)
-			ChatFrame_AddMessageGroup(ChatFrame3, "GUILD")
-			ChatFrame_AddMessageGroup(ChatFrame3, "OFFICER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "WHISPER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "PARTY")
-			ChatFrame_AddMessageGroup(ChatFrame3, "PARTY_LEADER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "RAID")
-			ChatFrame_AddMessageGroup(ChatFrame3, "RAID_LEADER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "RAID_WARNING")
-			ChatFrame_AddMessageGroup(ChatFrame3, "INSTANCE_CHAT")
-			ChatFrame_AddMessageGroup(ChatFrame3, "INSTANCE_CHAT_LEADER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "BN_WHISPER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "BN_CONVERSATION")
-
-			-- Setup loot tab
+			-- Setup channels tab
 			ChatFrame_RemoveAllMessageGroups(ChatFrame4)
-			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_XP_GAIN")
-			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_GUILD_XP_GAIN")
-			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_HONOR_GAIN")
-			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_FACTION_CHANGE")
-			ChatFrame_AddMessageGroup(ChatFrame4, "LOOT")
-			ChatFrame_AddMessageGroup(ChatFrame4, "CURRENCY")
-			ChatFrame_AddMessageGroup(ChatFrame4, "MONEY")
-			ChatFrame_AddMessageGroup(ChatFrame4, "SKILL")
+			ChatFrame_AddMessageGroup(ChatFrame4, "YELL")
+			ChatFrame_AddMessageGroup(ChatFrame4, "CHANNEL")
+			ChatFrame_AddChannel(ChatFrame4, "Общий")
+			ChatFrame_AddChannel(ChatFrame4, "Торговля")
+			ChatFrame_AddChannel(ChatFrame4, "ОборонаЛокальный")
+			ChatFrame_AddChannel(ChatFrame4, "ПоискСпутников")
+		
+			-- Setup whisper tab
+			ChatFrame_RemoveAllMessageGroups(ChatFrame5)
+			ChatFrame_AddMessageGroup(ChatFrame5, "SAY")
+			ChatFrame_AddMessageGroup(ChatFrame5, "GUILD")
+			ChatFrame_AddMessageGroup(ChatFrame5, "OFFICER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "WHISPER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "PARTY")
+			ChatFrame_AddMessageGroup(ChatFrame5, "PARTY_LEADER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "RAID")
+			ChatFrame_AddMessageGroup(ChatFrame5, "RAID_LEADER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "RAID_WARNING")
+			ChatFrame_AddMessageGroup(ChatFrame5, "INSTANCE_CHAT")
+			ChatFrame_AddMessageGroup(ChatFrame5, "INSTANCE_CHAT_LEADER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "BN_WHISPER")
+			ChatFrame_AddMessageGroup(ChatFrame5, "BN_CONVERSATION")
 		end
 
 		-- Enable classcolor automatically on login and on each character without doing /configure each time
@@ -180,38 +189,298 @@ local function InstallUI()
 	-- Reset saved variables on char
 	SavedPositions = {}
 	SavedOptionsPerChar = {}
-
-	SavedOptionsPerChar.Install = true
+	
+	SavedOptions.Version = "0.60"
 	SavedOptionsPerChar.FogOfWar = false
 	SavedOptionsPerChar.AutoInvite = false
 	SavedOptionsPerChar.Archaeology = false
 	SavedOptionsPerChar.BarsLocked = false
 	SavedOptionsPerChar.SplitBars = true
+	SavedOptionsPerChar.LootFrame = true
+	SavedOptionsPerChar.DamageMeter = false
 	SavedOptionsPerChar.RightBars = C.actionbar.rightbars
 	SavedOptionsPerChar.BottomBars = C.actionbar.bottombars
-
-	ReloadUI()
 end
 
 local function DisableUI()
-	DisableAddOn("ShestakUI")
+	DisableAddOn("DarkShestakUI")
 	ReloadUI()
+end
+
+local function PerChar(v)
+	if GUIConfigAll then
+		for realm, name in pairs(GUIConfigAll) do
+			for name, value in pairs(GUIConfigAll[realm]) do
+				GUIConfigAll[realm][name] = v
+			end
+		end
+	end
+end
+
+local function SwitchLayout(layout)
+	if SavedOptions.PerChar == true then
+		SavedOptionsPerChar.RaidLayout = layout
+	else
+		SavedOptions.RaidLayout = layout
+	end
+end
+
+local function ThemeSetup(r, g, b)
+	if not GUIConfigAll then return end
+	if GUIConfigAll[T.realm][T.name] == true then
+		if GUIConfig == nil then GUIConfig = {} end
+		if GUIConfig["skins"] == nil then GUIConfig["skins"] = {} end
+		GUIConfig["skins"]["color_theme"] = {r, g, b}
+	else
+		if GUIConfigSettings == nil then GUIConfigSettings = {} end
+		if GUIConfigSettings["skins"] == nil then GUIConfigSettings["skins"] = {} end
+		GUIConfigSettings["skins"]["color_theme"] = {r, g, b}
+	end
+end
+
+----------------------------------------------------------------------------------------
+--	Setup Wizard(by Tukz)
+----------------------------------------------------------------------------------------
+local f = CreateFrame("Frame", "DarkShestakUIInstallFrame", UIParent)
+f:SetSize(540, 95)
+f:SetPoint("CENTER", 0, 200)
+f:SetTemplate("Transparent", "Shadow")
+f:SetFrameStrata("FULLSCREEN_DIALOG")
+f:Hide()
+
+local head = CreateFrame("Frame", "DarkShestakUIInstallFrameHead", f)
+head:SetSize(250, 30)
+head:SetPoint("BOTTOM", f, "TOP", 0, -20)
+head:SetTemplate("Default", "Shadow")
+head:SetFrameLevel(f:GetFrameLevel() + 1)
+
+local header = head:CreateFontString(nil, "OVERLAY")
+header:SetFont(C.media.normal_font, 13, "OUTLINE")
+header:SetPoint("CENTER", head, "CENTER", 0, 0)
+local r, g, b = unpack(C.skins.color_theme)
+header:SetText(format("|cff%02x%02x%02x%s %s|r", 255 * r, 255 * g, 255 * b, "Dark ShestakUI", T.version))
+
+local text = f:CreateFontString(nil, "OVERLAY")
+text:SetFont(C.media.normal_font, 13)
+text:SetWidth(f:GetWidth() - 40)
+text:SetPoint("CENTER", f, "CENTER", 0, 5)
+
+local option1 = CreateFrame("Button", "DarkShestakUIInstallOption1", f)
+option1:SetPoint("BOTTOM", f, "BOTTOM", 0, 7)
+option1:SetSize(128, 25)
+option1:SetTemplate("Overlay")
+option1:FontString("Text", C.media.normal_font, 12)
+option1.Text:SetTextColor(1, 0.82, 0)
+option1.Text:SetPoint("CENTER")
+option1:HookScript("OnEnter", T.SetModifiedBackdrop)
+option1:HookScript("OnLeave", T.SetOriginalBackdrop)
+
+local option2 = CreateFrame("Button", "DarkShestakUIInstallOption2", f)
+option2:SetPoint("LEFT", option1, "RIGHT", 4, 0)
+option2:SetSize(128, 25)
+option2:SetTemplate("Overlay")
+option2:FontString("Text", C.media.normal_font, 12)
+option2.Text:SetTextColor(1, 0.82, 0)
+option2.Text:SetPoint("CENTER")
+option2:HookScript("OnEnter", T.SetModifiedBackdrop)
+option2:HookScript("OnLeave", T.SetOriginalBackdrop)
+
+local option3 = CreateFrame("Button", "DarkShestakUIInstallOption1", f)
+option3:SetPoint("RIGHT", option1, "LEFT", -4, 0)
+option3:SetSize(128, 25)
+option3:SetTemplate("Overlay")
+option3:FontString("Text", C.media.normal_font, 12)
+option3.Text:SetTextColor(1, 0.82, 0)
+option3.Text:SetPoint("CENTER")
+option3:HookScript("OnEnter", T.SetModifiedBackdrop)
+option3:HookScript("OnLeave", T.SetOriginalBackdrop)
+
+local option4 = CreateFrame("Button", "DarkShestakUIInstallOption2", f)
+option4:SetPoint("LEFT", option2, "RIGHT", 4, 0)
+option4:SetSize(128, 25)
+option4:SetTemplate("Overlay")
+option4:FontString("Text", C.media.normal_font, 12)
+option4.Text:SetTextColor(1, 0.82, 0)
+option4.Text:SetPoint("CENTER")
+option4:HookScript("OnEnter", T.SetModifiedBackdrop)
+option4:HookScript("OnLeave", T.SetOriginalBackdrop)
+
+local close = CreateFrame("Button", "DarkShestakUIInstallCloseButton", f, "UIPanelCloseButton")
+close:SetPoint("TOPRIGHT", f, "TOPRIGHT")
+T.SkinCloseButton(close)
+close:SetScript("OnClick", function()
+	SavedOptionsPerChar.Install = false
+	f:Hide()
+end)
+
+local step4 = function()
+	option2:Hide()
+	option3:Hide()
+	option4:Hide()
+	
+	option1:ClearAllPoints()
+	option1:SetPoint("BOTTOM", f, "BOTTOM", 0, 7)
+	
+	text:SetText(L_INSTALL_STEP4)
+	option1.Text:SetText(L_INSTALL_STEP4_RELOAD)
+	
+	option1:SetScript("OnClick", function()
+		SavedOptionsPerChar.Install = true
+		PlaySoundFile("Sound\\interface\\LevelUp.wav")
+		ReloadUI()
+	end)
+end
+
+local step3 = function()
+	text:SetText(L_INSTALL_STEP3)
+	option1.Text:SetText(L_INSTALL_STEP3_GREEN)
+	option2.Text:SetText(L_INSTALL_STEP3_BLUE)
+	option3.Text:SetText(L_INSTALL_STEP3_RED)
+	
+	if GUIConfigAll and GUIConfigAll[T.realm][T.name] == true then
+		option4:Show()
+		option1:ClearAllPoints()
+		option1:SetPoint("BOTTOMRIGHT", f, "BOTTOM", -2, 7)
+		option4.Text:SetText(format("|cff%02x%02x%02x%s|r", 255 * T.color.r, 255 * T.color.g, 255 * T.color.b, L_INSTALL_STEP3_CLASS))
+		option4:SetScript("OnClick", function()
+			ThemeSetup(T.color.r, T.color.g, T.color.b)
+			step4()
+		end)
+	end
+	
+	option1:SetScript("OnClick", function()
+		ThemeSetup(0.3, 0.9, 0.3)
+		step4()
+	end)
+	option2:SetScript("OnClick", function()
+		ThemeSetup(0.1, 0.5, 0.9)
+		step4()
+	end)
+	option3:SetScript("OnClick", function()
+		ThemeSetup(0.9, 0.2, 0.2)
+		step4()
+	end)
+end
+
+local step2 = function()
+	option2:Show()
+	option3:Show()
+	
+	option1:ClearAllPoints()
+	option1:SetPoint("BOTTOM", f, "BOTTOM", 0, 7)
+	
+	text:SetText(L_INSTALL_STEP2)
+	option1.Text:SetText(HEALER)
+	option2.Text:SetText(TANK.."/"..DAMAGER)
+	option3.Text:SetText("Blizzard")
+
+	option1:SetScript("OnClick", function()
+		SwitchLayout("HEAL")
+		if IsAddOnLoaded("DarkShestakUI_Config") then
+			step3()
+		else
+			step4()
+		end
+	end)
+	option2:SetScript("OnClick", function()
+		SwitchLayout("DPS")
+		if IsAddOnLoaded("DarkShestakUI_Config") then
+			step3()
+		else
+			step4()
+		end
+	end)
+	option3:SetScript("OnClick", function()
+		SwitchLayout("NONE")
+		if IsAddOnLoaded("DarkShestakUI_Config") then
+			step3()
+		else
+			step4()
+		end
+	end)
+end
+
+local step1 = function()
+	close:Hide()
+	option2:Show()
+	
+	option1:ClearAllPoints()
+	option1:SetPoint("BOTTOMRIGHT", f, "BOTTOM", -2, 7)
+	text:SetText(L_INSTALL_STEP1)
+	
+	option1.Text:SetText(L_INSTALL_STEP1_ACC)
+	option2.Text:SetText(L_INSTALL_STEP1_CHAR)
+
+	option1:SetScript("OnClick", function()
+		SavedOptions.PerChar = false
+		PerChar(false)
+		step2()
+	end)
+	option2:SetScript("OnClick", function()
+		SavedOptions.PerChar = true
+		PerChar(true)
+		step2()
+	end)
+end
+
+local config = function()
+	close:Hide()
+	option2:Show()
+	
+	option1:ClearAllPoints()
+	option1:SetPoint("BOTTOMRIGHT", f, "BOTTOM", -2, 7)
+	text:SetText(L_INSTALL_CONFIG)
+	
+	option1.Text:SetText(ACCEPT)
+	option2.Text:SetText(DECLINE)
+
+	option1:SetScript("OnClick", function()
+		EnableAddOn("DarkShestakUI_Config")
+		ReloadUI()
+	end)
+	option2:SetScript("OnClick", function()
+		if SavedOptions.PerChar == nil then
+			step1()
+		elseif SavedOptions.PerChar == true then
+			PerChar(true)
+			step2()
+		else
+			PerChar(false)
+			step4()
+		end
+	end)
+end
+
+local function Setup()
+	f:Show()
+	option1:Show()
+	option2:Hide()
+	option3:Hide()
+	option4:Hide()
+	close:Show()
+	
+	text:SetText(L_INSTALL_WELCOME.."\""..CONTINUE.."\".")
+	option1.Text:SetText(CONTINUE)
+
+	option1:SetScript("OnClick", function()
+		InstallUI()
+		if not IsAddOnLoaded("DarkShestakUI_Config") then
+			config()
+		elseif SavedOptions.PerChar == nil then
+			step1()
+		elseif SavedOptions.PerChar == true then
+			PerChar(true)
+			step2()
+		else
+			PerChar(false)
+			step4()
+		end
+	end)
 end
 
 ----------------------------------------------------------------------------------------
 --	Popups
 ----------------------------------------------------------------------------------------
-StaticPopupDialogs.INSTALL_UI = {
-	text = L_POPUP_INSTALLUI,
-	button1 = ACCEPT,
-	button2 = CANCEL,
-	OnAccept = InstallUI,
-	OnCancel = function() SavedOptionsPerChar.Install = false end,
-	timeout = 0,
-	whileDead = 1,
-	hideOnEscape = false,
-	preferredIndex = 5,
-}
 
 StaticPopupDialogs.DISABLE_UI = {
 	text = L_POPUP_DISABLEUI,
@@ -225,11 +494,22 @@ StaticPopupDialogs.DISABLE_UI = {
 	preferredIndex = 5,
 }
 
+StaticPopupDialogs.DISABLE_OLD_ADDONS = {
+	text = L_POPUP_DISABLE_OLD_ADDONS,
+	button1 = ACCEPT,
+	OnAccept = ReloadUI,
+	showAlert = true,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = false,
+	preferredIndex = 5,
+}
+
 StaticPopupDialogs.RESET_UI = {
 	text = L_POPUP_RESETUI,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-	OnAccept = InstallUI,
+	OnAccept = function() SavedOptionsPerChar.Install = false SavedOptions.PerChar = nil Setup() end,
 	OnCancel = function() SavedOptionsPerChar.Install = true end,
 	showAlert = true,
 	timeout = 0,
@@ -247,20 +527,6 @@ StaticPopupDialogs.RESET_STATS = {
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
-	preferredIndex = 5,
-}
-
-StaticPopupDialogs.SWITCH_RAID = {
-	text = L_POPUP_SWITCH_RAID,
-	button1 = DAMAGER,
-	button2 = HEALER,
-	button3 = "Blizzard",
-	OnAccept = function() SavedOptions.RaidLayout = "DPS" ReloadUI() end,
-	OnCancel = function() SavedOptions.RaidLayout = "HEAL" ReloadUI() end,
-	OnAlt = function() SavedOptions.RaidLayout = "NONE" ReloadUI() end,
-	timeout = 0,
-	whileDead = 1,
-	hideOnEscape = false,
 	preferredIndex = 5,
 }
 
@@ -283,7 +549,6 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if SavedPositions == nil then SavedPositions = {} end
 	if SavedAddonProfiles == nil then SavedAddonProfiles = {} end
 	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
-	if SavedOptions.RaidLayout == nil then SavedOptions.RaidLayout = "UNKNOWN" end
 	if SavedOptionsPerChar.FogOfWar == nil then SavedOptionsPerChar.FogOfWar = false end
 	if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
 	if SavedOptionsPerChar.Archaeology == nil then SavedOptionsPerChar.Archaeology = false end
@@ -307,15 +572,23 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		SetCVar("uiScale", C.general.uiscale)
 
 		-- Install default if we never ran ShestakUI on this character
-		if not SavedOptionsPerChar.Install then
-			StaticPopup_Show("INSTALL_UI")
+		if not SavedOptionsPerChar.Install or SavedOptions.Version == nil then
+			Setup()
+		end
+		
+		if IsAddOnLoaded("DarkShestakUI_Heal") or IsAddOnLoaded("DarkShestakUI_DPS") then
+			if IsAddOnLoaded("DarkShestakUI_Heal") then
+				DisableAddOn("DarkShestakUI_Heal")
+			end
+		
+			if IsAddOnLoaded("DarkShestakUI_DPS") then
+				DisableAddOn("DarkShestakUI_DPS")
+			end
+		
+			StaticPopup_Show("DISABLE_OLD_ADDONS")
 		end
 	end
-
-	if SavedOptions.RaidLayout == "UNKNOWN" then
-		StaticPopup_Show("SWITCH_RAID")
-	end
-
+	
 	-- Welcome message
 	if C.general.welcome_message == true then
 		print("|cffffff00"..L_WELCOME_LINE_1..T.version.." "..T.client..", "..T.name..".|r")
