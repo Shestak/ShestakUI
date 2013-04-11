@@ -118,8 +118,8 @@ T.RaidDebuffs = {
 	[SpellName(139857)] = 3,	-- Torrent of Ice (Fixated - Kiting)
 	[SpellName(140179)] = 3,	-- Suppression (Heroic - Dispell)
 	-- Ji-Kun
-	[SpellName(134366)] = 3,	-- Talon Rake (Tank stacks)
-	[SpellName(140092)] = 4,	-- Infected Talons (Tank DoT)
+	[SpellName(134366)] = 4,	-- Talon Rake (Tank stacks)
+	[SpellName(140092)] = 3,	-- Infected Talons (Tank DoT)
 	[SpellName(134256)] = 3,	-- Slimed (DoT)
 	-- Durumu the Forgotten
 	[SpellName(133768)] = 4,	-- Arterial Cut (Tank DoT)
@@ -130,7 +130,7 @@ T.RaidDebuffs = {
 	[SpellName(136050)] = 3,	-- Malformed Blood (Tank stacks)
 	[SpellName(136228)] = 3,	-- Volatile Pathogen (DoT)
 	-- Dark Animus
-	[SpellName(138569)] = 3,	-- Explosive Slam (Tank stacks)
+	[SpellName(138569)] = 4,	-- Explosive Slam (Tank stacks)
 	[SpellName(138659)] = 3,	-- Touch of the Animus (DoT)
 	-- Iron Qon
 	[SpellName(134691)] = 3,	-- Impale (Tank stacks)
@@ -291,5 +291,5 @@ T.RaidDebuffsReverse = {
 }
 
 T.RaidDebuffsIgnore = {
-	--[spellID] = true,			-- Spell name
+	[138309] = true,			-- Slimed
 }
