@@ -146,6 +146,8 @@ T.RaidDebuffs = {
 	[SpellName(136478)] = 3,	-- Fusion Slash (Tank only)
 	[SpellName(136914)] = 3,	-- Electrical Shock (Tank staks)
 	[SpellName(135695)] = 3,	-- Static Shock (Damage Split)
+	[SpellName(136295)] = 3,	-- Overcharged
+	[SpellName(139011)] = 3,	-- Helm of Command (Heroic)
 	-- Ra-den
 -- Terrace of Endless Spring
 	-- Protectors of the Endless
