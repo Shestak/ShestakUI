@@ -114,9 +114,9 @@ T.RaidDebuffs = {
 	[SpellName(137731)] = 3,	-- Ignite Flesh (Tank stacks)
 	[SpellName(139843)] = 3,	-- Arctic Freeze (Tank stacks)
 	[SpellName(139840)] = 3,	-- Rot Armor (Tank stacks)
-	[SpellName(134391)] = 3,	-- Cinder (DoT - Dispell)
-	[SpellName(139857)] = 3,	-- Torrent of Ice (Fixated - Kiting)
-	[SpellName(140179)] = 3,	-- Suppression (Heroic - Dispell)
+	[SpellName(134391)] = 4,	-- Cinder (DoT - Dispell)
+	[SpellName(139857)] = 4,	-- Torrent of Ice (Fixated - Kiting)
+	[SpellName(140179)] = 4,	-- Suppression (Heroic - Dispell)
 	-- Ji-Kun
 	[SpellName(134366)] = 4,	-- Talon Rake (Tank stacks)
 	[SpellName(140092)] = 3,	-- Infected Talons (Tank DoT)
