@@ -79,7 +79,7 @@ C["announcements"] = {
 	["flask_food"] = true,						-- Announce the usage of flasks and food
 	["flask_food_auto"] = false,				-- Auto announce when ReadyCheck(if enable, announce to raid channel)
 	["flask_food_raid"] = false,				-- Announce to raid channel
-	["feasts"] = false,							-- Announce Feasts/Cauldrons/Souls/Repair Bots cast
+	["feasts"] = false,							-- Announce Feasts/Souls/Repair Bots cast
 	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
 	["bad_gear"] = false,						-- Check bad gear in instance
 }
@@ -164,7 +164,7 @@ C["combattext"] = {
 	["max_lines"] = 15,							-- Max lines to keep in scrollable mode(more lines = more memory)
 	["time_visible"] = 3,						-- Time(seconds) a single message will be visible
 	["dk_runes"] = true,						-- Show deathknight rune recharge
-	["killingblow"] = true,					-- Tells you about your killingblows
+	["killingblow"] = true,						-- Tells you about your killingblows
 	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
 	["merge_aoe_spam_time"] = 3,				-- Time in seconds aoe spell will be merged into single message(works only with ["damage"] = true)
 	["dispel"] = true,							-- Tells you about your dispels(works only with ["damage"] = true)
@@ -289,7 +289,7 @@ C["chat"] = {
 	["height"] = 112,							-- Chat height
 	["chat_bar"] = true,						-- Lite Button Bar for switch chat channel
 	["chat_bar_mouseover"] = true,				-- Lite Button Bar on mouseover
-	["time_color"] = {1, 1, 0},					-- Timestamp coloring(http://www.december.com/html/spec/colorcodes.html)
+	["time_color"] = {1, 1, 0},					-- Timestamp coloring(http://www.december.com/html/spec/colorcodescompact.html)
 	["whisp_sound"] = true,						-- Sound when whisper
 	["bubbles"] = true,							-- Skin Blizzard chat bubbles
 	["combatlog"] = true,						-- Show CombatLog tab(need two reloads when false)
@@ -522,7 +522,7 @@ C["raidframe"] = {
 	["plugins_aura_watch"] = true,				-- Raid debuff icons
 	["plugins_aura_watch_timer"] = false,		-- Timer on raid debuff icons
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
-	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle click when the unit is dead(doesn't work with Clique enabled)
+	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click(doesn't work with Clique)
 }
 
 ----------------------------------------------------------------------------------------

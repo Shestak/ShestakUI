@@ -2,11 +2,11 @@
 ## Title: |cff00FFFFShestakUI Filger|r
 ## Notes: Class timers for ShestakUI. Edit 1.1.8 by Oz of Pozzo dell'Eternità
 ## Author: Nils Ruesch
-## Version: 4.34
+## Version: 4.35
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: ShestakUI
-## Website: http://shestak.org
+## Website: http://shestak.org/forum/showthread.php?t=835
 
 Config\Settings.lua
 Config\Positions.lua

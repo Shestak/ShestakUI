@@ -52,7 +52,7 @@ L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce'/pc #'"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce when ReadyCheck"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel"
-L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Cauldrons/Souls/Repair Bots cast"
+L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Souls/Repair Bots cast"
 L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast"
 L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Check bad gear in instance"
 
@@ -402,7 +402,7 @@ L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Debuff highlight texture + icon"
 L_GUI_UF_PLUGINS_AURA_WATCH = "Raid debuff icons"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons"
 L_GUI_UF_PLUGINS_HEALCOMM = "Show incoming heal on frame"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle click when the unit is dead (doesn't work with Clique enabled)"
+L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle-click (doesn't work with Clique)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Top panel"

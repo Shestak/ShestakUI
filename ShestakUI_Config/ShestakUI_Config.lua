@@ -1072,7 +1072,7 @@ do
 		subtitle4:SetWidth(580)
 		subtitle4:SetPoint("TOPLEFT", title4, "BOTTOMLEFT", 0, -8)
 		subtitle4:SetJustifyH("LEFT")
-		subtitle4:SetText("Akimba, Antthemage, Crunching, Dandruff, DesFolk, Elfrey, Ente, Erratic, Falchior, Gromcha, Halogen, Homicidal Retribution, ILF7, Illusion, Ipton, k07n, Kazarl, Leots, m2jest1c, MoLLIa, Nefrit, Noobolov, Obakol, Oz, PterOs, Sart, Scorpions, Sitatunga, Sw2rT1, Wetxius, Yakodzuna, UI Users and Russian Community. ShestakUI_OzEdit additional thanks: anj, Italian Community, Ombre Guild of Pozzo dell'Eternità, rwk, Sinaris.")
+		subtitle4:SetText("Akimba, Antthemage, Crunching, Dandruff, DesFolk, Elfrey, Ente, Erratic, Falchior, Gromcha, Halogen, Homicidal Retribution, ILF7, Illusion, Ipton, k07n, Kazarl, Leots, m2jest1c, MoLLIa, Nefrit, Noobolov, Obakol, Oz, PterOs, Sart, Scorpions, Sitatunga, Sw2rT1, Wetxius, Yakodzuna, UI Users and Russian Community. ShestakUI_OzEdit additional thanks: anj, Baine, Italian Community, Nagiko, Ombre Guild of Pozzo dell'Eternità, rwk, Sinaris.")
 
 		local version = self:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 		version:SetPoint("BOTTOMRIGHT", -16, 16)

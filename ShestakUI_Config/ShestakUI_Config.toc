@@ -2,12 +2,12 @@
 ## Title: |cff00FFFFShestakUI Config|r
 ## Notes: In-game configuration for ShestakUI. Edit 1.1.8 by Oz of Pozzo dell'Eternità
 ## Author: Tohveli
-## Version: 4.34
+## Version: 4.35
 ## Credits: Elv22, Fernir, Tukz
 ## RequiredDeps: ShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
-## Website: http://shestak.org
+## Website: http://shestak.org/forum/showthread.php?t=835
 
 Locales\English.lua
 Locales\Chinese.lua
