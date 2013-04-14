@@ -98,7 +98,6 @@ frame:RegisterEvent("PLAYER_REGEN_ENABLED")
 frame:RegisterEvent("PLAYER_REGEN_DISABLED")
 frame:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
-		SetCVar("questPOI", 1)
 		BlackoutWorld:Hide()
 		BlackoutWorld.Show = function() end
 		BlackoutWorld.Hide = function() end
