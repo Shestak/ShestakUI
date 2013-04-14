@@ -46,7 +46,7 @@ local function SkinButton(f)
 		end
 	end
 
-	f:SetTemplate("ClassColor")
+	f:SetTemplate("Default")
 end
 
 local frame = CreateFrame("Frame")

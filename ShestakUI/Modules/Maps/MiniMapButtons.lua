@@ -5,7 +5,7 @@ if C.minimap.enable ~= true then return end
 --	Switch layout mouseover button on minimap
 ----------------------------------------------------------------------------------------
 local switch = CreateFrame("Button", "SwitchLayout", UIParent)
-switch:SetTemplate("ClassColor")
+switch:SetTemplate("default")
 if C.actionbar.toggle_mode == true then
 	switch:SetPoint("TOPLEFT", Minimap, "TOPRIGHT", 3, -18)
 else
@@ -90,7 +90,7 @@ SLASH_FARMMODE4 = "/аь"
 --	Farm mode mouseover button(by m2jest1c)
 ----------------------------------------------------------------------------------------
 local farm = CreateFrame("Button", "FarmMode", UIParent)
-farm:SetTemplate("ClassColor")
+farm:SetTemplate("default")
 farm:SetPoint("TOP", switch, "BOTTOM", 0, -1)
 farm:SetSize(19, 19)
 farm:SetAlpha(0)
