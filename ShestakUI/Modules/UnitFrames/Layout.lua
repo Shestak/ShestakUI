@@ -1087,10 +1087,10 @@ local function Shared(self, unit)
 			myBar = mhpb,
 			otherBar = ohpb,
 			maxOverflow = 1,
-			-- PostUpdate = function(frame)
-				-- if frame.myBar:GetValue() == 0 then frame.myBar:SetAlpha(0) else frame.myBar:SetAlpha(1) end
-				-- if frame.otherBar:GetValue() == 0 then frame.otherBar:SetAlpha(0) else frame.otherBar:SetAlpha(1) end
-			-- end
+			PostUpdate = function(frame)
+				if frame.myBar:GetValue() == 0 then frame.myBar:SetAlpha(0) else frame.myBar:SetAlpha(1) end
+				if frame.otherBar:GetValue() == 0 then frame.otherBar:SetAlpha(0) else frame.otherBar:SetAlpha(1) end
+			end
 		}
 	end
 
