@@ -419,7 +419,7 @@ C["unitframe"] = {
 	["enemy_health_color"] = true,				-- If enable, enemy target color is red
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
 	["color_value"] = false,					-- Health/mana value is colored
-	["bar_color_value"] = false,				-- Health bar color by current health remaining
+	["bar_color_value"] = true,				-- Health bar color by current health remaining
 	-- Cast bars
 	["unit_castbar"] = true,					-- Show castbars
 	["castbar_icon"] = true,					-- Show castbar icons
