@@ -4,7 +4,7 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	StanceBar(by Tukz)
 ----------------------------------------------------------------------------------------
-local ShiftHolder = CreateFrame("Frame", "ShiftHolder", UIParent)
+local ShiftHolder = CreateFrame("Frame", "ShiftHolder", oUF_PetBattleFrameHider)
 if C.actionbar.stancebar_horizontal == true then
 	ShiftHolder:SetPoint(unpack(C.position.stance_bar))
 	ShiftHolder:SetWidth((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
@@ -28,15 +28,15 @@ bar:ClearAllPoints()
 bar:SetAllPoints(ShiftHolder)
 
 local States = {
-	["DRUID"] = "show",
-	["WARRIOR"] = "show",
-	["PALADIN"] = "show",
 	["DEATHKNIGHT"] = "show",
-	["ROGUE"] = "show",
-	["PRIEST"] = "show",
+	["DRUID"] = "show",
 	["HUNTER"] = "show",
-	["WARLOCK"] = "show",
 	["MONK"] = "show",
+	["PALADIN"] = "show",
+	["PRIEST"] = "show",
+	["ROGUE"] = "show",
+	["WARLOCK"] = "show",
+	["WARRIOR"] = "show",
 }
 
 bar:RegisterEvent("PLAYER_LOGIN")
