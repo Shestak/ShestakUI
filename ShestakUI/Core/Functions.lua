@@ -1035,12 +1035,12 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 
 	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
 		local latency
-        local _, _, _, lag = GetNetStats()
-        if Castbar.castSent then
-            latency = GetTime() - Castbar.castSent
-        else
-            latency = lag / 1e3
-        end
+		local _, _, _, lag = GetNetStats()
+		if Castbar.castSent then
+			latency = GetTime() - Castbar.castSent
+		else
+			latency = lag / 1e3
+		end
 		latency = latency > Castbar.max and Castbar.max or latency
 		Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
 		Castbar.SafeZone:SetWidth(Castbar:GetWidth() * latency / Castbar.max)
@@ -1112,12 +1112,12 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 
 	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
 		local latency
-        local _, _, _, lag = GetNetStats()
-        if Castbar.castSent then
-            latency = GetTime() - Castbar.castSent
-        else
-            latency = lag / 1e3
-        end
+		local _, _, _, lag = GetNetStats()
+		if Castbar.castSent then
+			latency = GetTime() - Castbar.castSent
+		else
+			latency = lag / 1e3
+		end
 		latency = latency > Castbar.max and Castbar.max or latency
 		Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
 		Castbar.SafeZone:SetWidth(Castbar:GetWidth() * latency / Castbar.max)
