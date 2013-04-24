@@ -3,8 +3,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Add quest/achievement wowhead link
 ----------------------------------------------------------------------------------------
-local linkQuest
-local linkAchievement
+local linkQuest, linkAchievement
 if T.client == "ruRU" then
 	linkQuest = "http://ru.wowhead.com/quest=%d"
 	linkAchievement = "http://ru.wowhead.com/achievement=%d"
