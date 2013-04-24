@@ -29,9 +29,11 @@ end
 local function HideObjects(frame)
 	for object in pairs(frame.queue) do
 		if object:GetObjectType() == "Texture" then
-			object:SetTexture(nil)
+			object:SetTexture('')
 		elseif object:GetObjectType() == "FontString" then
 			object:SetWidth(0.001)
+		elseif object:GetObjectType() == "StatusBar" then
+			object:SetStatusBarTexture('')
 		else
 			object:Hide()
 		end
@@ -503,14 +505,12 @@ local function SkinObjects(frame, nameFrame)
 	-- Highlight texture
 	if not frame.overlay then
 		overlay:SetTexture(1, 1, 1, 0.15)
-		overlay:SetParent(frame.hp)
-		overlay:SetAllPoints()
+		overlay:SetAllPoints(frame.hp)
 		frame.overlay = overlay
 	end
 
 	-- Raid icon
 	if not frame.raidicon then
-		raidicon:SetParent(frame.hp)
 		raidicon:ClearAllPoints()
 		raidicon:SetPoint("BOTTOM", hp, "TOP", 0, C.nameplate.track_auras == true and 38 or 16)
 		raidicon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)

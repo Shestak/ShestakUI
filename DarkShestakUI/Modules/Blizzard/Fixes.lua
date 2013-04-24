@@ -11,6 +11,49 @@ TaintFix:SetScript("OnUpdate", function(self, elapsed)
 end)
 
 ----------------------------------------------------------------------------------------
+--	Fix for unclickable reagents in tradeskill UI (by Phanx)
+----------------------------------------------------------------------------------------
+do
+	local function FixTradeSkillReagents()
+		local function TradeSkillReagent_OnClick(self)
+			local link, name = GetTradeSkillReagentItemLink(TradeSkillFrame.selectedSkill, self:GetID())
+			if not link then
+				name, link = GameTooltip:GetItem()
+				if name ~= self.name:GetText() then
+					return
+				end
+			end
+			HandleModifiedItemClick(link)
+		end
+		for i = 1, 8 do
+			_G["TradeSkillReagent"..i]:SetScript("OnClick", TradeSkillReagent_OnClick)
+		end
+	end
+	if TradeSkillReagent1 then
+		FixTradeSkillReagents()
+	else
+		local f = CreateFrame("Frame")
+		f:RegisterEvent("ADDON_LOADED")
+		f:SetScript("OnEvent", function(f, e, a)
+			if a == "Blizzard_TradeSkillUI" then
+				FixTradeSkillReagents()
+				f:UnregisterAllEvents()
+				f:SetScript("OnEvent", nil)
+			end
+		end)
+	end
+end
+
+----------------------------------------------------------------------------------------
+--	Blocks the Release Spirit popup if you are alive (by Haleth)
+----------------------------------------------------------------------------------------
+hooksecurefunc("StaticPopup_Show", function(arg)
+	if arg == "DEATH" and not UnitIsDead("PLAYER") then
+		StaticPopup_Hide("DEATH")
+	end
+end)
+
+----------------------------------------------------------------------------------------
 --	Fix LFRBrowseFrameList/LFRQueueFrameSpecificList scroll frames
 ----------------------------------------------------------------------------------------
 LFRBrowseFrameListScrollFrame:ClearAllPoints()

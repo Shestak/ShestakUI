@@ -98,10 +98,16 @@ end profiles = nil end
 ------------------------------------------
 local function zsub(s, ...) local t = {...} for i = 1, #t, 2 do s = gsub(s, t[i], t[i + 1]) end return s end
 
+
+local function comma_value(n) -- credit http://richard.warburton.it
+	local left, num, right = string.match(n,"^([^%d]*%d)(%d*)(.-)$")
+	return left..(num:reverse():gsub("(%d%d%d)","%1,"):reverse())..right
+end
+
 local function formatgold(style, amount)
 	local gold, silver, copper = floor(amount * 0.0001), floor(mod(amount * 0.01, 100)), floor(mod(amount, 100))
 	if style == 1 then
-		return (gold > 0 and format("%s|cffffd700%s|r ", gold, GOLD_AMOUNT_SYMBOL) or "")
+		return (gold > 0 and format("%s|cffffd700%s|r ", comma_value(gold), GOLD_AMOUNT_SYMBOL) or "")
 			.. (silver > 0 and format("%s|cffc7c7cf%s|r ", silver, SILVER_AMOUNT_SYMBOL) or "")
 			.. ((copper > 0 or (gold == 0 and silver == 0)) and format("%s|cffeda55f%s|r", copper, COPPER_AMOUNT_SYMBOL) or "")
 	elseif style == 2 or not style then

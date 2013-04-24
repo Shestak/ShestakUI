@@ -987,8 +987,10 @@ T.PostCastStart = function(Castbar, unit, name, rank, text, castid)
 	if unit == "vehicle" then unit = "player" end
 
 	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
+		local _, _, _, lag = GetNetStats()
 		local latency = GetTime() - (Castbar.castSent or 0)
-		latency = latency > Castbar.max and Castbar.max or latency
+		lag = lag / 1e3 > Castbar.max and Castbar.max or lag / 1e3
+		latency = latency > Castbar.max and lag or latency
 		Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
 		Castbar.SafeZone:SetWidth(Castbar:GetWidth() * latency / Castbar.max)
 		Castbar.SafeZone:ClearAllPoints()
@@ -1039,8 +1041,10 @@ T.PostChannelStart = function(Castbar, unit, name, rank, text)
 	if unit == "vehicle" then unit = "player" end
 
 	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
+		local _, _, _, lag = GetNetStats()
 		local latency = GetTime() - (Castbar.castSent or 0)
-		latency = latency > Castbar.max and Castbar.max or latency
+		lag = lag / 1e3 > Castbar.max and Castbar.max or lag / 1e3
+		latency = latency > Castbar.max and lag or latency
 		Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
 		Castbar.SafeZone:SetWidth(Castbar:GetWidth() * latency / Castbar.max)
 		Castbar.SafeZone:ClearAllPoints()
