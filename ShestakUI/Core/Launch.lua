@@ -7,7 +7,6 @@ local function InstallUI()
 	-- Don't need to set CVar multiple time
 	SetCVar("screenshotQuality", 10)
 	SetCVar("cameraDistanceMax", 50)
-	SetCVar("cameraDistanceMaxFactor", 5)
 	SetCVar("ShowClassColorInNameplate", 1)
 	SetCVar("mapQuestDifficulty", 1)
 	SetCVar("showTutorials", 0)

@@ -148,6 +148,9 @@ T.RaidDebuffs = {
 	[SpellName(136295)] = 3,	-- Overcharged
 	[SpellName(139011)] = 3,	-- Helm of Command (Heroic)
 	-- Ra-den
+	[SpellName(138297)] = 3,	-- Unstable Vita
+	[SpellName(138329)] = 3,	-- Unleashed Anima
+	[SpellName(138372)] = 4,	-- Vita Sensitivity
 -- Terrace of Endless Spring
 	-- Protectors of the Endless
 	[SpellName(117519)] = 3,	-- Touch of Sha
