@@ -3040,6 +3040,10 @@ C["filger_spells"] = {
 			{spellID = 56626, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Sonic Blast (Bat)
 			{spellID = 50519, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Paralyzing Quill (Porcupine)
+			{spellID = 126355, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Petrifying Gaze (Basilisk)
+			{spellID = 126423, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Mage
 			-- Cauterize

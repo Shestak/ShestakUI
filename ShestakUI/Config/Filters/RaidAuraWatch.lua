@@ -230,9 +230,9 @@ T.RaidDebuffs = {
 	-- Death Knight
 	--[[[SpellName(115001)] = 3,	-- Remorseless Winter
 	[SpellName(108194)] = 3,	-- Asphyxiate
-	[SpellName(47476)] = 3,		-- Strangulate
-	[SpellName(91800)] = 3,		-- Gnaw (Ghoul)
 	[SpellName(91797)] = 3,		-- Monstrous Blow (Mutated Ghoul)
+	[SpellName(91800)] = 3,		-- Gnaw (Ghoul)
+	[SpellName(47476)] = 3,		-- Strangulate
 	-- Druid
 	[SpellName(33786)] = 3,		-- Cyclone
 	[SpellName(2637)] = 3,		-- Hibernate
@@ -240,16 +240,17 @@ T.RaidDebuffs = {
 	[SpellName(78675)] = 3,		-- Solar Beam
 	-- Hunter
 	[SpellName(3355)] = 3,		-- Freezing Trap
+	[SpellName(19386)] = 3,		-- Wyvern Sting
 	[SpellName(117526)] = 3,	-- Binding Shot
+	[SpellName(24394)] = 3,		-- Intimidation
 	[SpellName(1513)] = 3,		-- Scare Beast
 	[SpellName(19503)] = 3,		-- Scatter Shot
 	[SpellName(34490)] = 3,		-- Silence Shot
-	[SpellName(19386)] = 3,		-- Wyvern Sting
 	-- Mage
-	[SpellName(31661)] = 3,		-- Dragon's Breath
+	[SpellName(61305)] = 3,		-- Polymorph
 	[SpellName(82691)] = 3,		-- Ring of Frost
 	[SpellName(44572)] = 3,		-- Deep Freeze
-	[SpellName(61305)] = 3,		-- Polymorph
+	[SpellName(31661)] = 3,		-- Dragon's Breath
 	[SpellName(102051)] = 3,	-- Frostjaw
 	[SpellName(55021)] = 3,		-- Improved Counterspell
 	[SpellName(122)] = 2,		-- Frost Nova
