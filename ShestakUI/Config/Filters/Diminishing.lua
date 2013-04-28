@@ -8,24 +8,6 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true or C.unitframe.p
 ----------------------------------------------------------------------------------------
 T.DiminishingSpells = function()
 	return {
-		-- Control Roots
-		[96294] = {"ctrlroot"},		-- Chains of Ice
-		[339] = {"ctrlroot"},		-- Entangling Roots
-		[19975] = {"ctrlroot"},		-- Nature's Grasp
-		[102359] = {"ctrlroot"},	-- Mass Entanglement
-		[50245] = {"ctrlroot"},		-- Pin (Crab)
-		[4167] = {"ctrlroot"},		-- Web (Spider)
-		[54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
-		[90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
-		[136634] = {"ctrlroot"},	-- Narrow Escape
-		[122] = {"ctrlroot"},		-- Frost Nova
-		[33395] = {"ctrlroot"},		-- Freeze (Water Elemental)
-		[116706] = {"ctrlroot"},	-- Disable
-		[114404] = {"ctrlroot"},	-- Void Tendril's Grasp
-		[64695] = {"ctrlroot"},		-- Earthgrab
-		[63685] = {"ctrlroot"},		-- Freeze
-		[107566] = {"ctrlroot"},	-- Staggering Shout
-
 		-- Control Stuns
 		[108194] = {"ctrlstun"},	-- Asphyxiate
 		[91800] = {"ctrlstun"},		-- Gnaw (Ghoul)
@@ -39,6 +21,8 @@ T.DiminishingSpells = function()
 		[90337] = {"disorient"},	-- Bad Manner (Monkey)
 		[50519] = {"ctrlstun"},		-- Sonic Blast (Bat)
 		--[56626] = {"ctrlstun"},		-- Sting (Wasp)
+		--[126355] = {"ctrlstun"},		-- Paralyzing Quill (Porcupine)
+		--[96201] = {"ctrlstun"},		-- Web Wrap (Shale Spider)
 		[117526] = {"ctrlstun"},	-- Binding Shot
 		[44572] = {"ctrlstun"},		-- Deep Freeze
 		[118271] = {"ctrlstun"},	-- Combustion Impact
@@ -60,6 +44,24 @@ T.DiminishingSpells = function()
 		[132169] = {"ctrlstun"},	-- Storm Bolt
 		[105771] = {"ctrlstun"},	-- Warbringer
 		[20549] = {"ctrlstun"},		-- War Stomp
+
+		-- Control Roots
+		[96294] = {"ctrlroot"},		-- Chains of Ice
+		[339] = {"ctrlroot"},		-- Entangling Roots
+		[19975] = {"ctrlroot"},		-- Nature's Grasp
+		[102359] = {"ctrlroot"},	-- Mass Entanglement
+		[50245] = {"ctrlroot"},		-- Pin (Crab)
+		[4167] = {"ctrlroot"},		-- Web (Spider)
+		[54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
+		[90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
+		[136634] = {"ctrlroot"},	-- Narrow Escape
+		[122] = {"ctrlroot"},		-- Frost Nova
+		[33395] = {"ctrlroot"},		-- Freeze (Water Elemental)
+		[116706] = {"ctrlroot"},	-- Disable
+		[114404] = {"ctrlroot"},	-- Void Tendril's Grasp
+		[64695] = {"ctrlroot"},		-- Earthgrab
+		[63685] = {"ctrlroot"},		-- Freeze
+		[107566] = {"ctrlroot"},	-- Staggering Shout
 
 		-- Disarms
 		[50541] = {"disarm"},		-- Clench (Scorpid)

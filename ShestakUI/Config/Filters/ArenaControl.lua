@@ -24,16 +24,17 @@ T.ArenaControl = function()
 		[GetSpellInfo(99)] = 4,		-- Disorienting Roar
 		[GetSpellInfo(113004)] = 4,	-- Intimidating Roar
 		-- Hunter
-		[GetSpellInfo(24394)] = 4,	-- Intimidation
-		[GetSpellInfo(117526)] = 4,	-- Binding Shot
 		[GetSpellInfo(3355)] = 4,	-- Freezing Trap
-		[GetSpellInfo(19503)] = 4,	-- Scatter Shot
 		[GetSpellInfo(19386)] = 4,	-- Wyvern Sting
+		[GetSpellInfo(117526)] = 4,	-- Binding Shot
+		[GetSpellInfo(24394)] = 4,	-- Intimidation
+		[GetSpellInfo(19503)] = 4,	-- Scatter Shot
 		[GetSpellInfo(90337)] = 4,	-- Bad Manner (Monkey)
 		[GetSpellInfo(126246)] = 4,	-- Lullaby (Crane)
+		[GetSpellInfo(96201)] = 4,	-- Web Wrap (Shale Spider)
 		-- Mage
-		[GetSpellInfo(44572)] = 4,	-- Deep Freeze
 		[GetSpellInfo(118)] = 4,	-- Polymorph
+		[GetSpellInfo(44572)] = 4,	-- Deep Freeze
 		[GetSpellInfo(82691)] = 4,	-- Ring of Frost
 		[GetSpellInfo(31661)] = 4,	-- Dragon's Breath
 		[GetSpellInfo(118271)] = 4,	-- Combustion Impact
@@ -54,18 +55,18 @@ T.ArenaControl = function()
 		[GetSpellInfo(113792)] = 4,	-- Psychic Terror
 		[GetSpellInfo(64044)] = 4,	-- Psychic Horror
 		-- Rogue
-		[GetSpellInfo(408)] = 4,	-- Kidney Shot
-		[GetSpellInfo(1833)] = 4,	-- Cheap Shot
 		[GetSpellInfo(6770)] = 4,	-- Sap
 		[GetSpellInfo(2094)] = 4,	-- Blind
+		[GetSpellInfo(408)] = 4,	-- Kidney Shot
+		[GetSpellInfo(1833)] = 4,	-- Cheap Shot
 		[GetSpellInfo(1776)] = 4,	-- Gouge
 		-- Shaman
 		[GetSpellInfo(51514)] = 4,	-- Hex
 		[GetSpellInfo(118905)] = 4,	-- Static Charge
 		-- Warlock
+		[GetSpellInfo(118699)] = 4,	-- Fear
 		[GetSpellInfo(30283)] = 4,	-- Shadowfury
 		[GetSpellInfo(89766)] = 4,	-- Axe Toss (Felguard)
-		[GetSpellInfo(118699)] = 4,	-- Fear
 		[GetSpellInfo(104045)] = 4,	-- Sleep
 		[GetSpellInfo(5484)] = 4,	-- Howl of Terror
 		[GetSpellInfo(6789)] = 4,	-- Mortal Coil
@@ -95,11 +96,11 @@ T.ArenaControl = function()
 		[GetSpellInfo(102359)] = 3,	-- Mass Entanglement
 		[GetSpellInfo(45334)] = 3,	-- Immobilized
 		[GetSpellInfo(19185)] = 3,	-- Entrapment
+		[GetSpellInfo(136634)] = 3,	-- Narrow Escape
 		[GetSpellInfo(50245)] = 3,	-- Pin (Crab)
 		[GetSpellInfo(4167)] = 3,	-- Web (Spider)
 		[GetSpellInfo(54706)] = 3,	-- Venom Web Spray (Silithid)
 		[GetSpellInfo(90327)] = 3,	-- Lock Jaw (Dog)
-		[GetSpellInfo(136634)] = 3,	-- Narrow Escape
 		[GetSpellInfo(122)] = 3,	-- Frost Nova
 		[GetSpellInfo(33395)] = 3,	-- Freeze (Pet)
 		[GetSpellInfo(111340)] = 3,	-- Ice Ward
