@@ -47,8 +47,8 @@ local function macroBody(class)
 		end
 
 		if class == "WARLOCK" then
-			local spellname = select(1, GetSpellInfo(6203))
-			body = body.."\n/use "..spellname.."\n "
+			local name = GetSpellInfo(6203)
+			body = body.."\n/use "..name.."\n "
 		end
 	elseif oocspell then
 		body = body.."/use [@mouseover,help,dead] "..oocspell.."; "

@@ -4,7 +4,7 @@
 --	ShestakUI variables
 ----------------------------------------------------------------------------------------
 T.dummy = function() return end
-T.name = select(1, UnitName("player"))
+T.name = UnitName("player")
 T.class = select(2, UnitClass("player"))
 T.race = select(2, UnitRace("player"))
 T.level = UnitLevel("player")

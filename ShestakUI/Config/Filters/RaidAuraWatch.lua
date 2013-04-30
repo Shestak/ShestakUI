@@ -75,7 +75,7 @@ T.RaidBuffsIgnore = {
 }
 
 local function SpellName(id)
-	local name = select(1, GetSpellInfo(id))
+	local name = GetSpellInfo(id)
 	return name
 end
 

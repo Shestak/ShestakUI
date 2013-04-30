@@ -159,8 +159,7 @@ button:SetScript("OnClick", function()
 end)
 
 function frame:MERCHANT_SHOW()
-	local price = select(3, GetMerchantItemInfo(1))
-	local name = select(1, GetMerchantItemInfo(1))
+	local name, _, price = GetMerchantItemInfo(1)
 	if (price == 13500 or price == 15000) and name == GetItemInfo(87658) then button:Show() end
 end
 

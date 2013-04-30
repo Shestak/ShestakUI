@@ -163,14 +163,14 @@ function CheckBuffs()
 	ClearOverrideBindings(btn)
 	btn:SetAttribute("spell", nil)
 	for i, v in pairs(_G[T.class..tree]) do
-		local spellname = select(1, GetSpellInfo(v))
-		if not UnitAura("player", spellname) then
-			if GetSpellCooldown(spellname) == 0 then
-				btn:SetAttribute("spell", spellname)
+		local name = GetSpellInfo(v)
+		if not UnitAura("player", name) then
+			if GetSpellCooldown(name) == 0 then
+				btn:SetAttribute("spell", name)
 				SetOverrideBindingClick(btn, true, "MOUSEWHEELUP", "AutoBuffButton")
 				SetOverrideBindingClick(btn, true, "MOUSEWHEELDOWN", "AutoBuffButton")
 			else
-				local start, duration, enabled = GetSpellCooldown(spellname)
+				local _, duration = GetSpellCooldown(name)
 				if duration == nil or duration > 1.5 then return end
 				frame:SetScript("OnUpdate", WaitForGC)
 			end
