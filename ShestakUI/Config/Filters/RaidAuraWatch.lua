@@ -127,9 +127,10 @@ T.RaidDebuffs = {
 	[SpellName(133597)] = 3,	-- Dark Parasite (Heroic - Dispel)
 	-- Primordius
 	[SpellName(136050)] = 3,	-- Malformed Blood (Tank stacks)
-	[SpellName(136228)] = 3,	-- Volatile Pathogen (DoT)
+	[SpellName(136228)] = 4,	-- Volatile Pathogen (DoT)
 	-- Dark Animus
 	[SpellName(138569)] = 4,	-- Explosive Slam (Tank stacks)
+	[SpellName(138609)] = 4,	-- Matter Swap (Dispel)
 	[SpellName(138659)] = 3,	-- Touch of the Animus (DoT)
 	-- Iron Qon
 	[SpellName(134691)] = 3,	-- Impale (Tank stacks)

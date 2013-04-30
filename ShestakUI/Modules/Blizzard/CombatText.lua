@@ -773,7 +773,7 @@ if C.combattext.damage then
 					missType = misstypes[missType].." \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 				else
 					missType = misstypes[missType]
-				end 
+				end
 				xCT4:AddMessage(missType)
 			elseif eventType == "SPELL_DISPEL" and C.combattext.dispel then
 				local target, _, _, id, effect, _, etype = select(12, ...)
@@ -861,7 +861,7 @@ if C.combattext.healing then
 							color = {0.1, 1, 0.1}
 						else
 							color = {0.1, 0.65, 0.1}
-						end 
+						end
 						if C.combattext.icons then
 							icon = GetSpellTexture(spellId)
 						else
@@ -883,7 +883,7 @@ if C.combattext.healing then
 							end
 							SQ[spellId]["locked"] = false
 							return
-						end 
+						end
 						xCT4:AddMessage(amount..""..msg, unpack(color))
 					end
 				end
