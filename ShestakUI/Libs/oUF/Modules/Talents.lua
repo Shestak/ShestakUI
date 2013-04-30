@@ -110,10 +110,10 @@ local buffs = { -- Credits: Proditor, Rinu
 
 local function Update(object, event, unit)
 	if object.unit ~= unit or unit == "player" or unit:find("pet") then return end
+	if UnitIsFriend("player", unit) or not UnitIsPlayer(unit) then return end
 	object.Talents:SetText("")
 	for index = 1, 40 do
 		local name, _, _, _, _, _, _, unitCaster = UnitAura(unit, index, "HELPFUL")
-		if UnitIsFriend("player", unit) or not UnitIsPlayer(unit) then return end
 		if name ~= nil and unitCaster == unit then
 			if buffs[name] then
 				object.Talents:SetText(buffs[name])
@@ -121,8 +121,7 @@ local function Update(object, event, unit)
 			end
 		end
 	end
-	local spell = select(1, UnitCastingInfo(unit))
-	if UnitIsFriend("player", unit) or not UnitIsPlayer(unit) then return end
+	local spell = UnitCastingInfo(unit)
 	if spell then
 		if spells[spell] then
 			object.Talents:SetText(spells[spell])
