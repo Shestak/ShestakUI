@@ -23,7 +23,7 @@ frame:SetScript("OnEvent", function(self, event)
 	tdps.swapColor = true
 	tdps.showMinimapRaidBuffsReminder = false
 	tdps.layout = 11
-	tdpsVisibleBars = 10
+	tdpsVisibleBars = 5
 	tdpsFont.name = C.font.stylization_font
 	tdpsFont.size = C.font.stylization_font_size
 	tdpsFont.outline = C.font.stylization_font_style
