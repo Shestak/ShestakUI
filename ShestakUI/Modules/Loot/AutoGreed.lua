@@ -7,10 +7,11 @@ if C.loot.auto_greed ~= true or T.level ~= MAX_PLAYER_LEVEL then return end
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("START_LOOT_ROLL")
 frame:SetScript("OnEvent", function(self, event, id)
-	local name = select(2, GetLootRollItemInfo(id))
-	if id and select(4, GetLootRollItemInfo(id)) == 2 and not select(5, GetLootRollItemInfo(id)) then
+	local _, name, _, quality, BoP = GetLootRollItemInfo(id)
+	if id and quality == 2 and not BoP then
 		for i in pairs(T.NeedLoot) do
-			if name == select(1, GetItemInfo(T.NeedLoot[i])) and RollOnLoot(id, 1) then
+			local itemName = GetItemInfo(T.NeedLoot[i])
+			if name == itemName and RollOnLoot(id, 1) then
 				RollOnLoot(id, 1)
 				return
 			end
