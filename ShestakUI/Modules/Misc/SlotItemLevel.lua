@@ -45,8 +45,7 @@ local function UpdateButtonsText(frame)
 			text:SetText("")
 		elseif item then
 			local oldilevel = text:GetText()
-			local ilevel = select(4, GetItemInfo(item))
-			local heirloom = select(3, GetItemInfo(item))
+			local _, _, heirloom, ilevel = GetItemInfo(item)
 			local upgrade = item:match(":(%d+)\124h%[")
 
 			if ilevel then
