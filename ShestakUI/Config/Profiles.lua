@@ -78,6 +78,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["aura"].pet_debuffs = true
 	C["aura"].tot_debuffs = true
 	C["unitframe"].own_color = true
+	C["unitframe"].color_value = true
 	C["unitframe"].alternative_portraits = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].raid_groups = 8

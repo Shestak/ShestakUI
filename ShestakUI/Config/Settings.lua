@@ -430,7 +430,7 @@ C["unitframe"] = {
 	["uf_color"] = {0.15, 0.15, 0.15},			-- Color for UF if ["own_color"] = true
 	["enemy_health_color"] = false,				-- If enable, enemy target color is red
 	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
-	["color_value"] = true,						-- Health/mana value is colored
+	["color_value"] = false,					-- Health/mana value is colored
 	["bar_color_value"] = true,					-- Health bar color by current health remaining
 	["player_name_level"] = true,				-- Display name and level of player
 	-- Cast bars
