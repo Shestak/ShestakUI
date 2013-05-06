@@ -79,7 +79,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["aura"].tot_debuffs = true
 	C["unitframe"].own_color = true
 	C["unitframe"].alternative_portraits = true
-	C["unitframe"].color_value = true
 	C["raidframe"].raid_tanks_tt = true
 	C["raidframe"].raid_groups = 8
 	C["raidframe"].raid_portraits = true
@@ -105,9 +104,9 @@ if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
 end
 
 ----------------------------------------------------------------------------------------
---	Nagiko@Pozzo dell'Eternità Config
+--	Lunamorta & Nagiko@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
+if T.name == "Lunamorta" or T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["font"].stats_font = C.media.normal_font
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 14
@@ -146,7 +145,7 @@ if T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].micro_menu = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21}
 	C["position"].unitframes.arena = {"RIGHT", oUF_Target, "RIGHT", -242, 7}
 	C["position"].unitframes.boss = {"RIGHT", oUF_Target, "RIGHT", -242, 7}
-	C["media"].border_color = {0.2, 0, 0.2, 1}
+	C["media"].border_color = {0.1, 0.1, 0.1, 1}
 	C["misc"].profession_database = true
 	C["combattext"].enable = false
 	C["pulsecooldown"].enable = true
