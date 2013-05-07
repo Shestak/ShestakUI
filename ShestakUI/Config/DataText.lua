@@ -215,10 +215,16 @@ LPSTAT_PROFILES = {
 			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"  Hit: ".."[spellhit]%",
 		}
 	},
+	MONK = {
+		Stats = {
+			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Armor: ".."[armor]"..class"  Avoid: ".."[avoidance]%",
+			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
+		}
+	},
 	PALADIN = {
 		Stats = {
 			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
-			spec2fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
+			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
 		}
 	},
 	PRIEST = {
