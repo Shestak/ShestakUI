@@ -366,6 +366,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Unerring Vision of Lei-Shen (Crit, Proc)
+			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
 			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
@@ -917,6 +919,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Unerring Vision of Lei-Shen (Crit, Proc)
+			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
 			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
@@ -1671,6 +1675,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Unerring Vision of Lei-Shen (Crit, Proc)
+			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
 			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
@@ -2192,6 +2198,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Unerring Vision of Lei-Shen (Crit, Proc)
+			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
 			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
@@ -2428,6 +2436,8 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Unerring Vision of Lei-Shen (Crit, Proc)
+			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
 			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
