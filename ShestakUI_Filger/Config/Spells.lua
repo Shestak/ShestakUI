@@ -112,6 +112,16 @@ C["filger_spells"] = {
 			-- Physical Melee
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -401,6 +411,16 @@ C["filger_spells"] = {
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -653,6 +673,16 @@ C["filger_spells"] = {
 			{spellID = 109092, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lord Blastington's Scope of Doom (Agility)
 			{spellID = 109085, unitID = "player", caster = "player", filter = "BUFF"},
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -941,6 +971,16 @@ C["filger_spells"] = {
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1233,6 +1273,16 @@ C["filger_spells"] = {
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1491,6 +1541,16 @@ C["filger_spells"] = {
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1701,6 +1761,16 @@ C["filger_spells"] = {
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1971,6 +2041,16 @@ C["filger_spells"] = {
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2230,6 +2310,16 @@ C["filger_spells"] = {
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2458,6 +2548,16 @@ C["filger_spells"] = {
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2718,6 +2818,16 @@ C["filger_spells"] = {
 			-- Physical Melee
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary meta gems
+			-- Indomitable Primal Diamond (Tank)
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Capacitive Primal Diamond (Physical General)
+			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sinister Primal Diamond (Caster DPS)
+			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Courageous Primal Diamond (Caster Heal)
+			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
