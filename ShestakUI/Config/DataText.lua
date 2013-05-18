@@ -228,6 +228,7 @@ LPSTAT_PROFILES = {
 		},
 		Location = {
 			truncate = 18, -- Max number of letters for location text, set to 0 to disable
+			x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "Minimap", tip_anchor = "TOPLEFT", tip_x = 135, tip_y = 2
 		}	
 	},
 	DEATHKNIGHT = {
