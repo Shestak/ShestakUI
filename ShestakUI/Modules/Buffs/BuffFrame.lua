@@ -4,7 +4,6 @@ if C.aura.player_auras ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Style player buff(by Tukz)
 ----------------------------------------------------------------------------------------
-local mainhand, _, _, offhand = GetWeaponEnchantInfo()
 local rowbuffs = 16
 
 local GetFormattedTime = function(s)
