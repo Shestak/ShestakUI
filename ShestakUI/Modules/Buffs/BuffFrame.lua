@@ -19,7 +19,11 @@ local GetFormattedTime = function(s)
 end
 
 local BuffsAnchor = CreateFrame("Frame", "BuffsAnchor", UIParent)
-BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
+if C.skins.tiny_dps_layout_two == true then
+	BuffsAnchor:SetPoint(unpack(C.position.player_buffs_tiny_dps_layout_two))
+else
+	BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
+end
 BuffsAnchor:SetSize((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size * 2) + 3)
 
 ConsolidatedBuffs:ClearAllPoints()
@@ -181,3 +185,5 @@ hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
 hooksecurefunc("DebuffButton_UpdateAnchors", UpdateDebuffAnchors)
 hooksecurefunc("AuraButton_UpdateDuration", UpdateDuration)
 hooksecurefunc("AuraButton_OnUpdate", UpdateFlash)
+
+-- Edit by Oz of shestakdotorg --

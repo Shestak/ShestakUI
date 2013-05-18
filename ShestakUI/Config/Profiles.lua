@@ -91,17 +91,55 @@ end
 --	Medusa@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
 if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
+	C["position"].minimap = {"BOTTOM", UIParent, "BOTTOM", 200, 52}
+	C["position"].chat = {"BOTTOM", Minimap, "BOTTOM", -338, -26}
+	C["position"].ghost = {"TOPLEFT", "oUF_Player", "TOPLEFT", -2, 65}
+	C["position"].quest = {"TOPLEFT", UIParent, "TOPLEFT", 21, -165}
+	C["position"].enemy_cooldown = {"BOTTOMLEFT", "oUF_Target", "BOTTOMRIGHT", 5, -66}
+	C["position"].bg_score = {"BOTTOMLEFT", ActionButton12, "BOTTOMRIGHT", -540, 25}
+	C["position"].player_buffs_tiny_dps_layout_two = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -21}
+	C["position"].raid_buffs = {"BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -25}
+	C["position"].top_panel = {"BOTTOM", Minimap, "BOTTOM", -365, 141}
+	C["position"].extra_button = {"RIGHT", "oUF_Player", "BOTTOM", -53, -126}
+	C["position"].bottom_bars = {"BOTTOMRIGHT", Minimap, "TOPLEFT", 132, 5}
+	C["position"].vehicle_bar = {"BOTTOMRIGHT", ActionButton1, "BOTTOMLEFT", -212, 0}
+	C["position"].unitframes.player = {"BOTTOMRIGHT", Minimap, "TOPLEFT", -408, 276}
+	C["position"].unitframes.player_castbar = {"CENTER", UIParent, "CENTER", 0, -84}
 	C["general"].welcome_message = false
 	C["automation"].screenshot = true
 	C["automation"].logging_combat = true
+	C["skins"].tiny_dps = false
+	C["skins"].tiny_dps_layout_two = true
 	C["combattext"].scrollable = true
+	C["reminder"].raid_buffs_size = 19.8
+	C["chat"].top_editbox = false
+	C["chat"].background = true
+	C["chat"].width = 254
+	C["chat"].height = 130
+	C["chat"].chat_bar = false
+	C["chat"].tabs_mouseover = false
+	C["minimap"].size = 134
 	C["minimap"].toggle_menu = false
 	C["nameplate"].health_value = true
+	C["actionbar"].button_size = 24.4
+	C["actionbar"].toggle_mode = false
+	C["aura"].player_buff_size = 24.4
 	C["aura"].fot_debuffs = true
 	C["aura"].pet_debuffs = true
 	C["aura"].tot_debuffs = true
+	C["unitframe"].plugins_fader = true
+	C["raidframe"].deficit_health = true
 	C["raidframe"].raid_tanks_tt = true
+	C["raidframe"].raid_groups = 8
+	C["raidframe"].raid_groups_vertical = true
 	C["raidframe"].plugins_aura_watch_timer = true
+	C["toppanel"].enable = true
+	C["toppanel"].mouseover = false
+	C["toppanel"].height = 24
+	C["toppanel"].width = 206
+	C["stats"].friend = false
+	C["stats"].bags = false
+	C["stats"].experience = false	
 end
 
 ----------------------------------------------------------------------------------------

@@ -101,6 +101,7 @@ L_GUI_SKINS_CAPPING = "Attiva il restyling di Capping"
 L_GUI_SKINS_COOL_LINE = "Attiva il restyling di CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Attiva il restyling di AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Attiva il restyling di TinyDPS"
+L_GUI_SKINS_TINY_DPS_LAYOUT_TWO = "Attiva il restyling di TinyDPS - disposizione 2"
 L_GUI_SKINS_FACE_SHOOTER = "Attiva il restyling di FaceShooter"
 L_GUI_SKINS_MAGE_NUGGETS = "Attiva il restyling di MageNuggets"
 L_GUI_SKINS_NPCSCAN = "Attiva il restyling di NPCScan"
@@ -219,6 +220,7 @@ L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Mostra gli oggetti che non possono essere tra
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Attiva chat"
+L_GUI_CHAT_TOP_EDITBOX = "Casella di modifica in alto"
 L_GUI_CHAT_BACKGROUND = "Attiva lo sfondo della chat"
 L_GUI_CHAT_BACKGROUND_ALPHA = "Trasparenza sfondo della chat"
 L_GUI_CHAT_SPAM = "Rimozione di un po' di spam di sistema ('Giocatore1' sconfigge 'Giocatore2' in un duello.)"

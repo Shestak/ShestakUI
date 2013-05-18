@@ -867,7 +867,7 @@ local function Shared(self, unit)
 			if C.unitframe.plugins_talents == true then
 				self.Talents = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 				self.Talents:SetTextColor(1, 0, 0)
-				self.Talents:SetPoint("BOTTOM", self.Power, "BOTTOM", 0, -1)
+				self.Talents:SetPoint("BOTTOM", self.Power, "BOTTOM", 0, 0)
 			end
 
 			-- Quest icon

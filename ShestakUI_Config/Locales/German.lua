@@ -101,6 +101,7 @@ L_GUI_SKINS_CAPPING = "Capping Design aktivieren"
 L_GUI_SKINS_COOL_LINE = "CoolLine Design aktivieren"
 L_GUI_SKINS_ATLASLOOT = "AtlasLoot Design aktivieren"
 L_GUI_SKINS_TINY_DPS = "TinyDPS Design aktivieren"
+L_GUI_SKINS_TINY_DPS_LAYOUT_TWO = "TinyDPS Design aktivieren - layout 2" -- Goooooooooogle translated
 L_GUI_SKINS_FACE_SHOOTER = "FaceShooter Design aktivieren"
 L_GUI_SKINS_MAGE_NUGGETS = "MageNuggets Design aktivieren"
 L_GUI_SKINS_NPCSCAN = "NPCScan Design aktivieren"
@@ -219,6 +220,7 @@ L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Zeige an wenn Gegenstände nicht Transmorgifi
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Chat aktivieren"
+L_GUI_CHAT_TOP_EDITBOX = "Bearbeiten-Box oben" -- Goooooooooogle translated
 L_GUI_CHAT_BACKGROUND = "Chathintergrund aktivieren"
 L_GUI_CHAT_BACKGROUND_ALPHA = "Transparenz des Hintergrunds"
 L_GUI_CHAT_SPAM = "Entferne Systemspam ('Player1' gewinnt Duell 'Player2')"

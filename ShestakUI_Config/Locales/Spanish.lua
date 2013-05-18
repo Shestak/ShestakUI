@@ -101,6 +101,7 @@ L_GUI_SKINS_CAPPING = "Activar estilo del Capping"
 L_GUI_SKINS_COOL_LINE = "Activar estilo del CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Activar estilo del AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Activar estilo del TinyDPS"
+L_GUI_SKINS_TINY_DPS_LAYOUT_TWO = "Activar estilo del TinyDPS - diseño 2" -- Goooooooooogle translated
 L_GUI_SKINS_FACE_SHOOTER = "Activar estilo del FaceShooter"
 L_GUI_SKINS_MAGE_NUGGETS = "Activar estilo del MageNuggets"
 L_GUI_SKINS_NPCSCAN = "Activar estilo del NPCScan"
@@ -219,6 +220,7 @@ L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- 
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activar chat"
+L_GUI_CHAT_TOP_EDITBOX = "Editar cuadro en la parte superior" -- Goooooooooogle translated
 L_GUI_CHAT_BACKGROUND = "Activar fondo del chat"
 L_GUI_CHAT_BACKGROUND_ALPHA = "Opacidad del fondo del chat"
 L_GUI_CHAT_SPAM = "Remover ciertos mensajes de spam ('Jugador1' ha ganado un duelo a 'Jugador2')"

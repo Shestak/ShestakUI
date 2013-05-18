@@ -101,6 +101,7 @@ L_GUI_SKINS_CAPPING = "Стилизация Capping"
 L_GUI_SKINS_COOL_LINE = "Стилизация CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Стилизация AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Стилизация TinyDPS"
+L_GUI_SKINS_TINY_DPS_LAYOUT_TWO = "Стилизация TinyDPS - макет 2" -- Goooooooooogle translated
 L_GUI_SKINS_FACE_SHOOTER = "Стилизация FaceShooter"
 L_GUI_SKINS_MAGE_NUGGETS = "Стилизация MageNuggets"
 L_GUI_SKINS_NPCSCAN = "Стилизация NPCScan"
@@ -219,6 +220,7 @@ L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Отображать, если предмет
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Включить чат"
+L_GUI_CHAT_TOP_EDITBOX = "Редактировать окно на вершине" -- Goooooooooogle translated
 L_GUI_CHAT_BACKGROUND = "Включить фон чата"
 L_GUI_CHAT_BACKGROUND_ALPHA = "Прозрачность фона чата"
 L_GUI_CHAT_SPAM = "Удаление системного спама в чате ('Игрок1' выиграл дуэль у 'Игрока2')"

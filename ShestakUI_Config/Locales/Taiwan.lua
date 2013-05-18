@@ -101,6 +101,7 @@ L_GUI_SKINS_CAPPING = "開啟Capping樣式增強"
 L_GUI_SKINS_COOL_LINE = "開啟CoolLine樣式增強"
 L_GUI_SKINS_ATLASLOOT = "開啟AtlasLoot樣式增強"
 L_GUI_SKINS_TINY_DPS = "開啟TinyDPS樣式增強"
+L_GUI_SKINS_TINY_DPS_LAYOUT_TWO = "開啟TinyDPS樣式增強 - 佈局2" -- Goooooooooogle translated
 L_GUI_SKINS_FACE_SHOOTER = "開啟FaceShooter樣式增強"
 L_GUI_SKINS_MAGE_NUGGETS = "開啟MageNuggets樣式增強"
 L_GUI_SKINS_NPCSCAN = "開啟NPCScan樣式增強"
@@ -219,6 +220,7 @@ L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "提示不能幻化的裝備"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "開啟聊天框增強"
+L_GUI_CHAT_TOP_EDITBOX = "編輯框頂部" -- Goooooooooogle translated
 L_GUI_CHAT_BACKGROUND = "開啟聊天框背景"
 L_GUI_CHAT_BACKGROUND_ALPHA = "聊天背景透明度"
 L_GUI_CHAT_SPAM = "屏蔽無用系統信息('玩家1' 在決鬥中戰勝了 '玩家2')"

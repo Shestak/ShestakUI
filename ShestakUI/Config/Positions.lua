@@ -30,6 +30,7 @@ C["position"] = {
 	["pulse_cooldown"] = {"CENTER", UIParent, "CENTER", 0, 0},						-- Pulse cooldowns
 	["bg_score"] = {"BOTTOMLEFT", ActionButton12, "BOTTOMRIGHT", 10, -2},			-- BG stats
 	["player_buffs"] = {"TOPLEFT", Minimap, "TOPLEFT", -422, 2},					-- Player buffs
+	["player_buffs_tiny_dps_layout_two"] = {"TOPLEFT", Minimap, "TOPLEFT", -559, 6},-- Player buffs with the TinyDPS layout 2 enabled
 	["self_buffs"] = {"CENTER", UIParent, "CENTER", 0, 190},						-- Self buff reminder
 	["raid_buffs"] = {"BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -24},				-- Raid buff reminder
 	["top_panel"] = {"TOP", UIParent, "TOP", 0, -206},								-- Top panel

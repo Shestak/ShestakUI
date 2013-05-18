@@ -18,14 +18,14 @@ local function Update(object, event, unit)
 
 	if object.unit ~= unit then return end
 
-	local auraList = T.ArenaControl
+	local auraList = T.ArenaControl()
 	local priority = 0
 	local auraName, auraIcon, auraExpTime
 	local index = 1
 
 	-- Buffs
 	while true do
-		local name, _, icon, _, _, _, expirationTime = UnitAura(unit, index, "HELPFUL")
+		local name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable = UnitAura(unit, index, "HELPFUL")
 		if not name then break end
 
 		if auraList[name] and auraList[name] >= priority then
@@ -42,7 +42,7 @@ local function Update(object, event, unit)
 
 	-- Debuffs
 	while true do
-		local name, _, icon, _, _, _, expirationTime = UnitAura(unit, index, "HARMFUL")
+		local name, rank, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable = UnitAura(unit, index, "HARMFUL")
 		if not name then break end
 
 		if auraList[name] and auraList[name] >= priority then

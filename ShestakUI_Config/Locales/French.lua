@@ -101,6 +101,7 @@ L_GUI_SKINS_CAPPING = "Activer la personnalisation pour Capping"
 L_GUI_SKINS_COOL_LINE = "Activer la personnalisation pour CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Activer la personnalisation pour AtlasLoot"
 L_GUI_SKINS_TINY_DPS = "Activer la personnalisation pour TinyDPS"
+L_GUI_SKINS_TINY_DPS_LAYOUT_TWO = "Activer la personnalisation pour TinyDPS - mise en page 2" -- Goooooooooogle translated
 L_GUI_SKINS_FACE_SHOOTER = "Activer la personnalisation pour FaceShooter"
 L_GUI_SKINS_MAGE_NUGGETS = "Activer la personnalisation pour MageNuggets"
 L_GUI_SKINS_NPCSCAN = "Activer la personnalisation pour NPCScan"
@@ -219,6 +220,7 @@ L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- 
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activer le chat"
+L_GUI_CHAT_TOP_EDITBOX = "Zone d'édition sur le dessus" -- Goooooooooogle translated
 L_GUI_CHAT_BACKGROUND = "Activer l'arrière plan du chat"
 L_GUI_CHAT_BACKGROUND_ALPHA = "Transparence de l'arrière plan du chat"
 L_GUI_CHAT_SPAM = "Supprime certain spam(Player1 gagme contre Player2)"

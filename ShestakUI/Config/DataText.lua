@@ -146,39 +146,38 @@ LPSTAT_CONFIG = {
 		x_off = -16, y_off = 11, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20,
 		justify_h = "right",
 	},
-	-- Top block
+-- Top block
 	Helm = {
 		enabled = C.toppanel.enable,
 		fmt = "H: ".."%s",
 		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
-		x_off = -69, y_off = 0,
+		x_off = -74, y_off = 0,
 	},
 	Cloak = {
 		enabled = C.toppanel.enable,
 		fmt = "C: ".."%s",
-		fmt = "H: ".."%s",
 		anchor_frame = "Helm", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0,
+		x_off = 1, y_off = 0,
 	},
 	Loot = {
 		enabled = C.toppanel.enable,
 		fmt = "L: ".."%s",
 		anchor_frame = "Cloak", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0,
+		x_off = 6, y_off = 0,
 	},
 	Nameplates = {
 		enabled = C.toppanel.enable,
 		fmt = "N: ".."%s",
 		anchor_frame = "Loot", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0,
+		x_off = 5, y_off = 0,
 	},
--- Bottomleft block 2
+-- Bottomright block 2
 	Talents = {
 		enabled = C.stats.bags,
 		anchor_frame = "Bags", anchor_to = "right", anchor_from = "left", tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20,
 		x_off = 0, y_off = 0,
 	},
--- MiniMap block
+-- Minimap block
 	Ping = {
 		enabled = true,
 		fmt = "|cffff5555*|r %s |cffff5555*|r", -- "* PlayerName *"
@@ -202,6 +201,35 @@ LPSTAT_CONFIG = {
 }
 
 LPSTAT_PROFILES = {
+	["Medusa - Pozzo dell'Eternità"] = {
+		Helm = {
+			enabled = false
+		},
+		Cloak = {
+			enabled = false
+		},
+		Loot = {
+			enabled = false
+		},
+		Nameplates = {
+			enabled = false
+		},
+		Clock = {
+			enabled = C.stats.clock and C.toppanel.enable,
+			anchor_frame = "TopPanel", anchor_to = "left", anchor_from = "bottomleft",
+		},
+		Durability = {
+			anchor_frame = "FPS", anchor_to = "left", anchor_from = "right",
+			x_off = C.stats.fps and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
+		},
+		Coords = {
+			anchor_frame = "Minimap", anchor_to = "right", anchor_from = "topright",
+			x_off = 3, y_off = -5, justify_h = "right",
+		},
+		Location = {
+			truncate = 18, -- Max number of letters for location text, set to 0 to disable
+		}	
+	},
 	DEATHKNIGHT = {
 		Stats = {
 			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Armor: ".."[armor]"..class"  Avoid: ".."[avoidance]%",

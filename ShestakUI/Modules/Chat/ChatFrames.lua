@@ -69,9 +69,11 @@ local function SetChatStyle(frame)
 	_G[chat]:SetClampedToScreen(false)
 
 	-- Move the chat edit box
-	_G[chat.."EditBox"]:ClearAllPoints()
-	_G[chat.."EditBox"]:SetPoint("BOTTOMLEFT", ChatFrame1, "TOPLEFT", -10, 23)
-	_G[chat.."EditBox"]:SetPoint("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 11, 23)
+	if C.skins.tiny_dps_layout_two ~= true then
+		_G[chat.."EditBox"]:ClearAllPoints()
+		_G[chat.."EditBox"]:SetPoint("BOTTOMLEFT", ChatFrame1, "TOPLEFT", -10, 23)
+		_G[chat.."EditBox"]:SetPoint("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 11, 23)
+	end
 
 	-- Hide textures
 	for j = 1, #CHAT_FRAME_TEXTURES do
@@ -230,7 +232,7 @@ local function SetupChatPosAndFont(self)
 			FCF_SetChatWindowFontSize(nil, chat, 11)
 		elseif T.author == true then
 			FCF_SetChatWindowFontSize(nil, chat, 11)
-		elseif T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
+		elseif T.name == "Lunamorta" or T.name == "Nagiko" and T.realm == "Pozzo dell'Eternità" then
 			FCF_SetChatWindowFontSize(nil, chat, 12)
 		else
 			FCF_SetChatWindowFontSize(nil, chat, fontSize)

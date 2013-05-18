@@ -129,6 +129,7 @@ local function Local(o)
 	if o == "UIConfigskinscool_line" then o = L_GUI_SKINS_COOL_LINE end
 	if o == "UIConfigskinsatlasloot" then o = L_GUI_SKINS_ATLASLOOT end
 	if o == "UIConfigskinstiny_dps" then o = L_GUI_SKINS_TINY_DPS end
+	if o == "UIConfigskinstiny_dps_layout_two" then o = L_GUI_SKINS_TINY_DPS_LAYOUT_TWO end
 	if o == "UIConfigskinsface_shooter" then o = L_GUI_SKINS_FACE_SHOOTER end
 	if o == "UIConfigskinsmage_nuggets" then o = L_GUI_SKINS_MAGE_NUGGETS end
 	if o == "UIConfigskinsnpcscan" then o = L_GUI_SKINS_NPCSCAN end
@@ -249,6 +250,7 @@ local function Local(o)
 	-- Chat options
 	if o == "UIConfigchat" then o = SOCIALS end
 	if o == "UIConfigchatenable" then o = L_GUI_CHAT_ENABLE end
+	if o == "UIConfigchattop_editbox" then o = L_GUI_CHAT_TOP_EDITBOX end
 	if o == "UIConfigchatbackground" then o = L_GUI_CHAT_BACKGROUND end
 	if o == "UIConfigchatbackground_alpha" then o = L_GUI_CHAT_BACKGROUND_ALPHA end
 	if o == "UIConfigchatfilter" then o = L_GUI_CHAT_SPAM end

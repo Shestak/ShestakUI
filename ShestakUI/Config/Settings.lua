@@ -131,6 +131,7 @@ C["skins"] = {
 	["cool_line"] = true,						-- CoolLine skin
 	["atlasloot"] = true,						-- AtlasLoot skin
 	["tiny_dps"] = true,						-- TinyDPS skin
+	["tiny_dps_layout_two"] = false,			-- TinyDPS skin alternative layout
 	["face_shooter"] = true,					-- FaceShooter skin
 	["mage_nuggets"] = true,					-- MageNuggets skin
 	["npcscan"] = true,							-- NPCScan skin
@@ -184,7 +185,7 @@ C["reminder"] = {
 	["raid_buffs_enable"] = true,				-- Show missing raid buffs
 	["raid_buffs_always"] = true,				-- Show frame always
 	["raid_buffs_size"] = 19.2,					-- Icon size
-	["raid_buffs_alpha"] = 0,					-- Transparent icons when the buff is present
+	["raid_buffs_alpha"] = 0.5,					-- Transparent icons when the buff is present
 }
 
 ----------------------------------------------------------------------------------------
@@ -281,6 +282,7 @@ C["tooltip"] = {
 ----------------------------------------------------------------------------------------
 C["chat"] = {
 	["enable"] = true,							-- Enable chat
+	["top_editbox"] = true,						-- Edit box on top
 	["background"] = false,						-- Enable background for chat
 	["background_alpha"] = 0.7,					-- Background alpha
 	["filter"] = false,							-- Removing some systems spam("Player1" won duel "Player2")
@@ -530,7 +532,7 @@ C["raidframe"] = {
 ----------------------------------------------------------------------------------------
 C["toppanel"] = {
 	["enable"] = false,							-- Enable top panel
-	["mouseover"] = false,						-- Top panel on mouseover
+	["mouseover"] = true,						-- Top panel on mouseover
 	["height"] = 55,							-- Panel height
 	["width"] = 250,							-- Panel width
 }

@@ -19,7 +19,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "显示欢迎信息"
 L_GUI_GENERAL_LAG_TOLERANCE = "自动更新自定延迟容许值"
 
 -- Miscellaneous options
-L_GUI_MISC_HIDE_BUTTON = "按钮，隐藏聊天和小地图"  -- Goooooooooogle translated
+L_GUI_MISC_HIDE_BUTTON = "按钮，隐藏聊天和小地图" -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "点击shift显示团队标记图示菜单"
 L_GUI_MISC_INVKEYWORD = "自动邀请关键字(/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "afk时旋转镜头"
@@ -101,6 +101,7 @@ L_GUI_SKINS_CAPPING = "开启Capping样式增强"
 L_GUI_SKINS_COOL_LINE = "开启CoolLine样式增强"
 L_GUI_SKINS_ATLASLOOT = "开启AtlasLoot样式增强"
 L_GUI_SKINS_TINY_DPS = "开启TinyDPS样式增强"
+L_GUI_SKINS_TINY_DPS_LAYOUT_TWO = "开启TinyDPS样式增强 - 布局2" -- Goooooooooogle translated
 L_GUI_SKINS_FACE_SHOOTER = "开启FaceShooter样式增强"
 L_GUI_SKINS_MAGE_NUGGETS = "开启MageNuggets样式增强"
 L_GUI_SKINS_NPCSCAN = "开启NPCScan样式增强"
@@ -219,6 +220,7 @@ L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "提示不能幻化的装备"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "开启聊天框增强"
+L_GUI_CHAT_TOP_EDITBOX = "编辑框顶部" -- Goooooooooogle translated
 L_GUI_CHAT_BACKGROUND = "开启聊天框背景"
 L_GUI_CHAT_BACKGROUND_ALPHA = "聊天背景透明度"
 L_GUI_CHAT_SPAM = "屏蔽无用系统信息('玩家1' 在决斗中战胜了 '玩家2')"
