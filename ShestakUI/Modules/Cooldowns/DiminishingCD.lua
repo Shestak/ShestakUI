@@ -106,8 +106,8 @@ function DisplayDrActives(self)
 	end
 end
 
-local spell = T.DiminishingSpells()
-local icon = T.DiminishingIcons()
+local spell = T.DiminishingSpells
+local icon = T.DiminishingIcons
 local eventRegistered = {
 	["SPELL_AURA_APPLIED"] = true,
 	["SPELL_AURA_REFRESH"] = true,
