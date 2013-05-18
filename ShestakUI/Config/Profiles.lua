@@ -106,6 +106,7 @@ if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].unitframes.player = {"BOTTOMRIGHT", Minimap, "TOPLEFT", -408, 276}
 	C["position"].unitframes.player_castbar = {"CENTER", UIParent, "CENTER", 0, -84}
 	C["general"].welcome_message = false
+	C["misc"].hide_button = false
 	C["automation"].screenshot = true
 	C["automation"].logging_combat = true
 	C["skins"].tiny_dps = false
@@ -123,6 +124,7 @@ if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
 	C["nameplate"].health_value = true
 	C["actionbar"].button_size = 24.4
 	C["actionbar"].toggle_mode = false
+	C["actionbar"].stancebar_mouseover = true
 	C["aura"].player_buff_size = 24.4
 	C["aura"].fot_debuffs = true
 	C["aura"].pet_debuffs = true

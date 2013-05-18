@@ -428,6 +428,8 @@ L_GUI_STATS_EXPERIENCE = "經驗"
 L_GUI_STATS_COORDS = "座標"
 L_GUI_STATS_LOCATION = "位置"
 L_GUI_STATS_BAGS = "袋" -- Goooooooooogle translated
+L_GUI_STATS_CLASS_STATS = "統計類" -- Goooooooooogle translated
+L_GUI_STATS_TALENTS = "人才" -- Goooooooooogle translated
 
 -- Error options
 L_GUI_ERROR = "錯誤收集"

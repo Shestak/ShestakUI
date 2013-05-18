@@ -300,25 +300,25 @@ local function Shared(self, unit)
 			end
 		elseif unit == "player" then
 			self.Name = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.Name:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
+			self.Name:SetPoint("LEFT", self.Health, "LEFT", 4, 0)
 			if C.unitframe.own_color == true then		
 				self:Tag(self.Name, "[GetNameColor][NameLong]")
 			else
 				self:Tag(self.Name, "[NameLong]")
 			end
 			self.Level = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.Level:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
+			self.Level:SetPoint("LEFT", self.Power, "LEFT", 4, 0)
 			self:Tag(self.Level, "[level]")
 		elseif unit == "player" and T.class == "DRUID" then
 			self.Name = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.Name:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
+			self.Name:SetPoint("LEFT", self.Health, "LEFT", 4, 0)
 			if C.unitframe.own_color == true then		
 				self:Tag(self.Name, "[GetNameColor][NameLong]")
 			else
 				self:Tag(self.Name, "[NameLong]")
 			end
 			self.Level = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.Level:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
+			self.Level:SetPoint("LEFT", self.Power, "LEFT", 4, 0)
 			self:Tag(self.Level, "[level]")
 			self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size * 4, C.font.unit_frames_font_style)
 			self.Info:SetPoint("BOTTOM", self.Health, "TOP", 0, -10.5)

@@ -427,6 +427,8 @@ L_GUI_STATS_EXPERIENCE = "Опыт"
 L_GUI_STATS_COORDS = "Координаты"
 L_GUI_STATS_LOCATION = "Зона"
 L_GUI_STATS_BAGS = "Сумки" -- Goooooooooogle translated
+L_GUI_STATS_CLASS_STATS = "Статистика класса" -- Goooooooooogle translated
+L_GUI_STATS_TALENTS = "Таланты" -- Goooooooooogle translated
 
 -- Error options
 L_GUI_ERROR = "Ошибки боя"

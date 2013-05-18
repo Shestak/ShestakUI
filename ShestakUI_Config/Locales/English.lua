@@ -424,6 +424,8 @@ L_GUI_STATS_EXPERIENCE = "Experience"
 L_GUI_STATS_COORDS = "Coords"
 L_GUI_STATS_LOCATION = "Location"
 L_GUI_STATS_BAGS = "Bags"
+L_GUI_STATS_CLASS_STATS = "Class stats"
+L_GUI_STATS_TALENTS = "Talents"
 
 -- Error options
 L_GUI_ERROR = "Errors"

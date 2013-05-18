@@ -425,6 +425,8 @@ L_GUI_STATS_EXPERIENCE = "Experience"
 L_GUI_STATS_COORDS = "Coords"
 L_GUI_STATS_LOCATION = "Location"
 L_GUI_STATS_BAGS = "Bolsas" -- Goooooooooogle translated
+L_GUI_STATS_CLASS_STATS = "Estatísticas da classe" -- Goooooooooogle translated
+L_GUI_STATS_TALENTS = "Talentos" -- Goooooooooogle translated
 
 -- Error options
 L_GUI_ERROR = "Errors"

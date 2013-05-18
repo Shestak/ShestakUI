@@ -425,6 +425,8 @@ L_GUI_STATS_EXPERIENCE = "Experience"
 L_GUI_STATS_COORDS = "Coords"
 L_GUI_STATS_LOCATION = "Location"
 L_GUI_STATS_BAGS = "가방" -- Goooooooooogle translated
+L_GUI_STATS_CLASS_STATS = "클래스의 통계" -- Goooooooooogle translated
+L_GUI_STATS_TALENTS = "특성" -- Goooooooooogle translated
 
 -- Error options
 L_GUI_ERROR = "Errors"

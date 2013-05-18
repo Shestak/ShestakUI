@@ -125,7 +125,7 @@ LPSTAT_CONFIG = {
 	},
 -- Bottomright block 3
 	Stats = {
-		enabled = C.stats.bags,
+		enabled = C.stats.class_stats,
 			-- Available stat tags:
 			--	Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery% [mastery]			Expertise% [expertise]
 			--	Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]		Melee Haste [meleehaste]
@@ -173,7 +173,7 @@ LPSTAT_CONFIG = {
 	},
 -- Bottomright block 2
 	Talents = {
-		enabled = C.stats.bags,
+		enabled = C.stats.talents,
 		anchor_frame = "Bags", anchor_to = "right", anchor_from = "left", tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20,
 		x_off = 0, y_off = 0,
 	},
@@ -227,7 +227,7 @@ LPSTAT_PROFILES = {
 			x_off = 3, y_off = -5, justify_h = "right",
 		},
 		Location = {
-			truncate = 18, -- Max number of letters for location text, set to 0 to disable
+			truncate = 18,
 			x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "Minimap", tip_anchor = "TOPLEFT", tip_x = 135, tip_y = 2
 		}	
 	},
@@ -257,8 +257,8 @@ LPSTAT_PROFILES = {
 	},
 	MONK = {
 		Stats = {
-			spec1fmt = class"  Exp: ".."[expertise]%"..class"  Haste: ".."[meleehaste]%"..class"  Hit: ".."[meleehit]%",
-			spec2fmt = class"SP: ".."[spellpower]"..class"  Crit: ".."[spellcrit]%"..class"Mastery: ".."[mastery]%",
+			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Armor: ".."[armor]"..class"  Avoid: ".."[avoidance]%",
+			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
 		}
 	},
 	PALADIN = {

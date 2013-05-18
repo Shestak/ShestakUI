@@ -468,6 +468,8 @@ local function Local(o)
 	if o == "UIConfigstatscoords" then o = L_GUI_STATS_COORDS end
 	if o == "UIConfigstatslocation" then o = L_GUI_STATS_LOCATION end
 	if o == "UIConfigstatsbags" then o = L_GUI_STATS_BAGS end
+	if o == "UIConfigstatsclass_stats" then o = L_GUI_STATS_CLASS_STATS end
+	if o == "UIConfigstatstalents" then o = L_GUI_STATS_TALENTS end
 
 	-- Error options
 	if o == "UIConfigerror" then o = L_GUI_ERROR end
