@@ -97,7 +97,7 @@ local function Shared(self, unit)
 	elseif unit == "arenatarget" then
 		self.Health.value:Hide()
 	else
-		self.Health.value:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
+		self.Health.value:SetPoint("LEFT", self.Health, "LEFT", 1, 0)
 		self.Health.value:SetJustifyH("LEFT")
 	end
 
@@ -162,7 +162,7 @@ local function Shared(self, unit)
 	elseif unit == "pet" or unit == "focus" or unit == "focustarget" or unit == "targettarget" then
 		self.Power.value:Hide()
 	else
-		self.Power.value:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
+		self.Power.value:SetPoint("LEFT", self.Power, "LEFT", 1, 0)
 		self.Power.value:SetJustifyH("LEFT")
 	end
 
@@ -180,7 +180,7 @@ local function Shared(self, unit)
 				else
 					self:Tag(self.Info, "[NameLong]")
 				end
-				self.Level:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
+				self.Level:SetPoint("RIGHT", self.Power, "RIGHT", -1, 0)
 				self:Tag(self.Level, "[cpoints] [Threat] [DiffColor][level][shortclassification]")
 			elseif unit == "focus" or unit == "pet" then
 				self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
@@ -248,7 +248,7 @@ local function Shared(self, unit)
 				else
 					self:Tag(self.Info, "[NameLong]")
 				end
-				self.Level:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
+				self.Level:SetPoint("RIGHT", self.Power, "RIGHT", -1, 0)
 				self:Tag(self.Level, "[cpoints] [Threat] [DiffColor][level][shortclassification]")
 			elseif unit == "focus" or unit == "pet" then
 				self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
@@ -300,25 +300,25 @@ local function Shared(self, unit)
 			end
 		elseif unit == "player" then
 			self.Name = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.Name:SetPoint("LEFT", self.Health, "LEFT", 4, 0)
+			self.Name:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
 			if C.unitframe.own_color == true then		
 				self:Tag(self.Name, "[GetNameColor][NameLong]")
 			else
 				self:Tag(self.Name, "[NameLong]")
 			end
 			self.Level = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.Level:SetPoint("LEFT", self.Power, "LEFT", 4, 0)
+			self.Level:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
 			self:Tag(self.Level, "[level]")
 		elseif unit == "player" and T.class == "DRUID" then
 			self.Name = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.Name:SetPoint("LEFT", self.Health, "LEFT", 4, 0)
+			self.Name:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
 			if C.unitframe.own_color == true then		
 				self:Tag(self.Name, "[GetNameColor][NameLong]")
 			else
 				self:Tag(self.Name, "[NameLong]")
 			end
 			self.Level = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.Level:SetPoint("LEFT", self.Power, "LEFT", 4, 0)
+			self.Level:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
 			self:Tag(self.Level, "[level]")
 			self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size * 4, C.font.unit_frames_font_style)
 			self.Info:SetPoint("BOTTOM", self.Health, "TOP", 0, -10.5)

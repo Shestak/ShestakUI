@@ -1,5 +1,6 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
 
+if C.skins.tiny_dps ~= true and C.skins.tiny_dps_layout_two ~= true then return end
 if not Minimap then return end
 
 ----------------------------------------------------------------------------------------

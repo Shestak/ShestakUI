@@ -3,6 +3,10 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Prevent users config errors
 ----------------------------------------------------------------------------------------
+if C.skins.tiny_dps_layout_two == true then
+	C.skins.tiny_dps = false
+end
+
 if C.actionbar.rightbars > 3 then
 	C.actionbar.rightbars = 3
 end
@@ -134,3 +138,5 @@ end
 if IsAddOnLoaded("ChatSounds") then
 	C.chat.whisp_sound = false
 end
+
+-- Edit by Oz of shestakdotorg --

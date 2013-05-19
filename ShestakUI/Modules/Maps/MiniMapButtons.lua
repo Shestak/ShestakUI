@@ -6,10 +6,10 @@ if C.minimap.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local switch = CreateFrame("Button", "SwitchLayout", UIParent)
 switch:SetTemplate("ClassColor")
-if C.actionbar.toggle_mode == true then
-	switch:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
-elseif C.skins.tiny_dps_layout_two == true then
+if C.actionbar.toggle_mode == true and C.skins.tiny_dps_layout_two == true or C.skins.tiny_dps_layout_two == true then
 	switch:SetPoint("BOTTOMLEFT", Minimap, "BOTTOMRIGHT", 3, 18)
+elseif C.actionbar.toggle_mode == true then
+	switch:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
 else
 	switch:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 18)
 end
