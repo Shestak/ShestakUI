@@ -392,7 +392,7 @@ L_SLASHCMD_HELP = {
 	"/heal - Bascule vers l'interface 'Heal'.",
 	"/dps - Bascule sur l'interface 'DPS'.",
 	"/frame - Description is not ready.",
-	"/farmmode - Agrandi la taille de la minimap.",
+	"/farmmode - Agrandi la taille de la minimap (si l'option est activée).", -- Goooooooooogle translated
 	"/moveui - Permet de déplacer des éléments de l'interface.",
 	"/resetui - Remet les paramètres généraux à leurs valeurs par défaut.",
 	"/resetuf - Remet les cadres d'unité à leur position par défaut.",

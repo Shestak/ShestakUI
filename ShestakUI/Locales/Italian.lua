@@ -392,7 +392,7 @@ L_SLASHCMD_HELP = {
 	"/heal - Passa alla configurazione 'guaritori'.",
 	"/dps - Passa alla configurazione 'assaltatori'.",
 	"/frame - La descrizione non è pronta.",
-	"/farmmode - Incrementa le dimensioni della minimappa.",
+	"/farmmode - Incrementa le dimensioni della minimappa (se l'opzione è abilitata).",
 	"/moveui - Consenti lo spostamento degli elementi dell'interfaccia.",
 	"/resetui - Ripristina le impostazioni generali iniziali.",
 	"/resetuf - Riporta i riquadri delle unità alla loro posizione originaria.",

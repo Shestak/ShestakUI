@@ -392,7 +392,7 @@ L_SLASHCMD_HELP = {
 	"/heal - Switches to 'Heal' layout.",
 	"/dps - Switches to 'DPS' layout.",
 	"/frame - Description is not ready.",
-	"/farmmode - Increase the size of the minimap.",
+	"/farmmode - Increase the size of the minimap (wenn die Option aktiviert ist).", -- Goooooooooogle translated
 	"/moveui - Allows the movement of interface elements.",
 	"/resetui - Resets general settings to default.",
 	"/resetuf - Resets the unit frames to their default position.",

@@ -8,6 +8,8 @@ local switch = CreateFrame("Button", "SwitchLayout", UIParent)
 switch:SetTemplate("ClassColor")
 if C.actionbar.toggle_mode == true then
 	switch:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, -2)
+elseif C.skins.tiny_dps_layout_two == true then
+	switch:SetPoint("BOTTOMLEFT", Minimap, "BOTTOMRIGHT", 3, 18)
 else
 	switch:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMLEFT", -3, 18)
 end
@@ -69,49 +71,51 @@ end)
 ----------------------------------------------------------------------------------------
 --	Farm mode for minimap(by Elv22)
 ----------------------------------------------------------------------------------------
-local show = false
-SlashCmdList.FARMMODE = function()
-	if show == false then
-		MinimapAnchor:SetSize(C.minimap.size * 1.65, C.minimap.size * 1.65)
-		Minimap:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
-		show = true
-	else
-		MinimapAnchor:SetSize(C.minimap.size, C.minimap.size)
-		Minimap:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
-		show = false
+if C.minimap.farm_mode == true then
+	local show = false
+	SlashCmdList.FARMMODE = function()
+		if show == false then
+			MinimapAnchor:SetSize(C.minimap.size * 1.65, C.minimap.size * 1.65)
+			Minimap:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
+			show = true
+		else
+			MinimapAnchor:SetSize(C.minimap.size, C.minimap.size)
+			Minimap:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
+			show = false
+		end
 	end
-end
-SLASH_FARMMODE1 = "/farmmode"
-SLASH_FARMMODE2 = "/афкььщву"
-SLASH_FARMMODE3 = "/fm"
-SLASH_FARMMODE4 = "/аь"
+	SLASH_FARMMODE1 = "/farmmode"
+	SLASH_FARMMODE2 = "/афкььщву"
+	SLASH_FARMMODE3 = "/fm"
+	SLASH_FARMMODE4 = "/аь"
 
 ----------------------------------------------------------------------------------------
 --	Farm mode mouseover button(by m2jest1c)
 ----------------------------------------------------------------------------------------
-local farm = CreateFrame("Button", "FarmMode", UIParent)
-farm:SetTemplate("ClassColor")
-farm:SetPoint("TOP", switch, "BOTTOM", 0, -3)
-farm:SetSize(19, 19)
-farm:SetAlpha(0)
+	local farm = CreateFrame("Button", "FarmMode", UIParent)
+	farm:SetTemplate("ClassColor")
+	farm:SetPoint("TOP", switch, "BOTTOM", 0, -3)
+	farm:SetSize(19, 19)
+	farm:SetAlpha(0)
 
-farm.t = farm:CreateTexture(nil, "OVERLAY")
-farm.t:SetTexture("Interface\\Icons\\inv_misc_map_01")
-farm.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-farm.t:SetPoint("TOPLEFT", farm, 2, -2)
-farm.t:SetPoint("BOTTOMRIGHT", farm, -2, 2)
+	farm.t = farm:CreateTexture(nil, "OVERLAY")
+	farm.t:SetTexture("Interface\\Icons\\inv_misc_map_01")
+	farm.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	farm.t:SetPoint("TOPLEFT", farm, 2, -2)
+	farm.t:SetPoint("BOTTOMRIGHT", farm, -2, 2)
 
-farm:SetScript("OnClick", function()
-	SlashCmdList.FARMMODE()
-end)
+	farm:SetScript("OnClick", function()
+		SlashCmdList.FARMMODE()
+	end)
 
-farm:SetScript("OnEnter", function()
-	if InCombatLockdown() then return end
-	farm:FadeIn()
-end)
+	farm:SetScript("OnEnter", function()
+		if InCombatLockdown() then return end
+		farm:FadeIn()
+	end)
 
-farm:SetScript("OnLeave", function()
-	farm:FadeOut()
-end)
+	farm:SetScript("OnLeave", function()
+		farm:FadeOut()
+	end)
+end
 
 -- Edit by Oz of shestakdotorg --

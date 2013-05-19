@@ -249,6 +249,7 @@ L_GUI_MINIMAP_ICON = "Tracking icon"
 L_GUI_MINIMAP_SIZE = "Map size"
 L_GUI_MINIMAP_HIDE_COMBAT = "Hide minimap in combat"
 L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu"
+L_GUI_MINIMAP_FARM_MODE = "옵션 /farmmode 사용" -- Goooooooooogle translated
 
 -- Map options
 L_GUI_MAP_ENABLE = "Enable World Map"

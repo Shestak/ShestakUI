@@ -154,3 +154,5 @@ RecountDB["profiles"][T.name.." - "..T.realm]["MainWindowWidth"] = 221
 --RecountDB["profiles"][T.name.." - "..T.realm]["MainWindowHeight"] = 158
 RecountDB["profiles"][T.name.." - "..T.realm]["ClampToScreen"] = true
 RecountDB["profiles"][T.name.." - "..T.realm]["Font"] = "Calibri"
+
+-- Edit by Oz of shestakdotorg --

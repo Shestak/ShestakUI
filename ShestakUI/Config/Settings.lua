@@ -320,6 +320,7 @@ C["minimap"] = {
 	["size"] = 130,								-- Minimap size
 	["hide_combat"] = false,					-- Hide minimap in combat
 	["toggle_menu"] = true,						-- Show toggle menu
+	["farm_mode"] = true,						-- Enable the option /farmmode
 }
 
 ----------------------------------------------------------------------------------------

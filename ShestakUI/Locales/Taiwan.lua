@@ -392,7 +392,7 @@ L_SLASHCMD_HELP = {
 	"/heal - 載入治療模式介面",
 	"/dps - 載入傷害輸出模式介面",
 	"/frame - 在聊天窗口輸出框架名稱",
-	"/farmmode - 打開/關閉 小地圖採集模式",
+	"/farmmode - 打開/關閉 小地圖採集模式 （如果啟用該選項）.", -- Goooooooooogle translated
 	"/moveui - 解鎖/鎖定 介面內所有移動的框體",
 	"/resetui - 重置介面設置到初始狀態",
 	"/resetuf - 重置頭像面板到初始狀態",

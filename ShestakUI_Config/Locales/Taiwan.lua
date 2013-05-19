@@ -251,6 +251,7 @@ L_GUI_MINIMAP_ICON = "追蹤類型圖示"
 L_GUI_MINIMAP_SIZE = "迷你地圖大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "戰鬥中隱藏迷你地圖"
 L_GUI_MINIMAP_TOGGLE_MENU = "小地圖頂部顯示插件開/関菜單"
+L_GUI_MINIMAP_FARM_MODE = "啟用選項/farmmode的" -- Goooooooooogle translated
 
 -- Map options
 L_GUI_MAP_ENABLE = "開啟世界地圖增強"

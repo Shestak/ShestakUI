@@ -392,7 +392,7 @@ L_SLASHCMD_HELP = {
 	"/heal - 载入治疗模式界面.",
 	"/dps - 载入伤害输出模式界面.",
 	"/frame - 在聊天窗口输出当前鼠标下的框体的名字.",
-	"/farmmode - 打开小地图的采集模式(小地图框体放大).",
+	"/farmmode - 打开小地图的采集模式(小地图框体放大) （如果启用该选项）.", -- Goooooooooogle translated
 	"/moveui - 解锁/锁定 界面中所有可以移动的框体.",
 	"/resetui - 恢复界面到原始设定值.",
 	"/resetuf - 恢复头像框体到原始设定值.",

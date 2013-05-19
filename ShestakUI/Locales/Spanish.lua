@@ -392,7 +392,7 @@ L_SLASHCMD_HELP = {
 	"/heal - Cambia a la apariencia de 'Curación'.",
 	"/dps - Cambia a la apariencia de 'Daño'.",
 	"/frame - La descripción aun no está lista.",
-	"/farmmode - Incrementa el tamaño del minimapa.",
+	"/farmmode - Incrementa el tamaño del minimapa (si la opción está activada).", -- Goooooooooogle translated
 	"/moveui - Permite mover los elementos de la interfaz.",
 	"/resetui - Reinicia la configuración general a la por defecto.",
 	"/resetuf - Reinicia los marcos de unidades a su posición por defecto.",

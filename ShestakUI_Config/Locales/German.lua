@@ -251,6 +251,7 @@ L_GUI_MINIMAP_ICON = "Aufspüren-Symbol"
 L_GUI_MINIMAP_SIZE = "Kartengröße"
 L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
 L_GUI_MINIMAP_TOGGLE_MENU = "Zeige Toggle Menü"
+L_GUI_MINIMAP_FARM_MODE = "Aktivieren Sie die Option /farmmode" -- Goooooooooogle translated
 
 -- Map options
 L_GUI_MAP_ENABLE = "Weltkarte aktivieren"

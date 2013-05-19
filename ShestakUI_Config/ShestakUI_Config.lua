@@ -282,6 +282,7 @@ local function Local(o)
 	if o == "UIConfigminimapsize" then o = L_GUI_MINIMAP_SIZE end
 	if o == "UIConfigminimaphide_combat" then o = L_GUI_MINIMAP_HIDE_COMBAT end
 	if o == "UIConfigminimaptoggle_menu" then o = L_GUI_MINIMAP_TOGGLE_MENU end
+	if o == "UIConfigminimapfarm_mode" then o = L_GUI_MINIMAP_FARM_MODE end
 
 	-- Map options
 	if o == "UIConfigmap" then o = WORLD_MAP end
