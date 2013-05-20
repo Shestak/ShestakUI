@@ -67,7 +67,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Stance bar anchor
 ----------------------------------------------------------------------------------------
-if C.actionbar.stancebar_hide ~= true then
+-- if C.actionbar.stancebar_hide ~= true then
 	local shiftanchor = CreateFrame("Frame", "ShapeShiftBarAnchor", oUF_PetBattleFrameHider)
 	shiftanchor:RegisterEvent("PLAYER_LOGIN")
 	shiftanchor:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -87,7 +87,7 @@ if C.actionbar.stancebar_hide ~= true then
 			end
 		end
 	end)
-end
+-- end
 
 ----------------------------------------------------------------------------------------
 --	Chat background
