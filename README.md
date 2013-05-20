@@ -10,4 +10,4 @@ You'll find more details [here](http://www.wowinterface.com/downloads/info21840-
 
 All credits and all rights for all AddOns and for all included modules go out only to the authors, whom I thank for their creativity and their work: I have done just a little bit of editing and nothing more. 
 
-![placeholder img](http://i.imgur.com/iEs3vIs.jpg "Testing some settings...")
+![placeholder img](http://i.imgur.com/hiWqkeO.jpg "Testing some settings...")
