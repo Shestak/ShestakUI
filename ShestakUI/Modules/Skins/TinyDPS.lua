@@ -48,11 +48,16 @@ end)
 
 if C.skins.tiny_dps_layout_two == true then
 	local title = CreateFrame("Frame", "TinyDPSTitle", UIParent)
-	title:CreatePanel("Transparent", Minimap:GetWidth() + 4, 20, "BOTTOMLEFT", Minimap, "BOTTOMLEFT", -139, 112)
-	title:SetFrameLevel(Minimap:GetFrameLevel())
-	title:FontString("Text", C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style, C.font.stylization_font_shadow)
-	title.Text:SetPoint("CENTER")
-	title.Text:SetText("DPS")
+	title:RegisterEvent("PLAYER_ENTERING_WORLD")
+	title:SetScript("OnEvent", function(self, event)
+		if not IsAddOnLoaded("TinyDPS") then return end
+
+		title:CreatePanel("Transparent", Minimap:GetWidth() + 4, 20, "BOTTOMLEFT", Minimap, "BOTTOMLEFT", -139, 112)
+		title:SetFrameLevel(Minimap:GetFrameLevel())
+		title:FontString("Text", C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style, C.font.stylization_font_shadow)
+		title.Text:SetPoint("CENTER")
+		title.Text:SetText("DPS")
+	end)
 end
 
 -- Edit by Oz of shestakdotorg --

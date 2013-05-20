@@ -66,4 +66,25 @@ if T.author == true then
 	end
 end
 
+----------------------------------------------------------------------------------------
+--	Oz@Pozzo dell'Eternità Config
+----------------------------------------------------------------------------------------
+if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
+	add("P_BUFF_ICON", {spellID = 114851, unitID = "player", caster = "player", filter = "BUFF"})	-- Blood Charge
+	add("P_BUFF_ICON", {spellID = 91342, unitID = "pet", caster = "player", filter = "BUFF"})		-- Shadow Infusion
+end
+
+----------------------------------------------------------------------------------------
+--	Medusa@Pozzo dell'Eternità Config
+----------------------------------------------------------------------------------------
+if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
+	add("COOLDOWN", {spellID = 586, filter = "CD"})		-- Fade
+	add("COOLDOWN", {spellID = 6346, filter = "CD"})	-- Fear Ward
+	add("COOLDOWN", {spellID = 123040, filter = "CD"})	-- Mindbender
+	add("COOLDOWN", {spellID = 17, filter = "CD"})		-- Power Word: Barrier
+	add("COOLDOWN", {spellID = 34433, filter = "CD"})	-- Shadowfiend
+	add("COOLDOWN", {spellID = 15286, filter = "CD"})	-- Vampiric Embrace
+	add("COOLDOWN", {spellID = 108968, filter = "CD"})	-- Void Shift
+end
+
 -- Edit by Oz of shestakdotorg --
