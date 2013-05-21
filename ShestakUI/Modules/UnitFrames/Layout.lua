@@ -180,7 +180,7 @@ local function Shared(self, unit)
 				else
 					self:Tag(self.Info, "[NameLong]")
 				end
-				self.Level:SetPoint("RIGHT", self.Power, "RIGHT", -1, 0)
+				self.Level:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
 				self:Tag(self.Level, "[cpoints] [Threat] [DiffColor][level][shortclassification]")
 			elseif unit == "focus" or unit == "pet" then
 				self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
@@ -867,7 +867,7 @@ local function Shared(self, unit)
 			if C.unitframe.plugins_talents == true then
 				self.Talents = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 				self.Talents:SetTextColor(1, 0, 0)
-				self.Talents:SetPoint("BOTTOM", self.Power, "BOTTOM", 0, 0)
+				self.Talents:SetPoint("BOTTOM", self.Power, "BOTTOM", 0, -2)
 			end
 
 			-- Quest icon
@@ -1519,3 +1519,4 @@ do
 end
 
 -- Edit by Oz of shestakdotorg --
+

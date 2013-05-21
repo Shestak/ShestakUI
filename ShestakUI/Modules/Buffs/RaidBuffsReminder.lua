@@ -158,7 +158,7 @@ local function OnAuraChange(self, event, arg1, unit)
 		visible = false
 	elseif flask == true and food == true and stat == true and stamina == true and spell5 == true and spell6 == true then
 		if not visible then
-			RaidBuffReminder:SetAlpha(0)
+			RaidBuffReminder:SetAlpha(C.reminder.raid_buffs_alpha)
 			visible = false
 		end
 		if visible then
@@ -215,3 +215,5 @@ do
 	CreateButton("Spell5Frame", StaminaFrame, false)
 	CreateButton("Spell6Frame", Spell5Frame, false)
 end
+
+-- Edit by Oz of shestakdotorg --

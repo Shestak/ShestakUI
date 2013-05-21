@@ -91,25 +91,25 @@ end
 --	Medusa@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
 if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
+	C["media"].texture = [[Interface\AddOns\TinyDPS\Textures\wglass.tga]]
 	C["position"].minimap = {"BOTTOM", UIParent, "BOTTOM", 200, 52}
 	C["position"].chat = {"BOTTOM", Minimap, "BOTTOM", -338, -26}
-	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 24}
+	C["position"].bn_popup = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 21}
 	C["position"].ghost = {"TOPLEFT", "oUF_Player", "TOPLEFT", -2, 65}
 	C["position"].quest = {"TOPLEFT", UIParent, "TOPLEFT", 21, -21}
 	C["position"].loot = {"TOPLEFT", UIParent, "TOPLEFT", 21, -532}
 	C["position"].group_loot = {"TOPLEFT", UIParent, "TOPLEFT", 241, -211}
-	C["position"].threat_meter = {"BOTTOM", "oUF_Target", "BOTTOM", -176, -14}
+	C["position"].threat_meter = {"BOTTOM", "oUF_Target", "BOTTOM", -175, -14}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -304, -702}
 	C["position"].enemy_cooldown = {"BOTTOMLEFT", "oUF_Target", "BOTTOMRIGHT", 5, -67}
-	C["position"].bg_score = {"BOTTOMLEFT", ActionButton12, "BOTTOMRIGHT", -541, 25}
+	C["position"].bg_score = {"LEFT", UIParent, "BOTTOMLEFT", 21, 11}
 	C["position"].player_buffs_tiny_dps_layout_two = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -21}
 	C["position"].raid_buffs = {"BOTTOMLEFT", Minimap, "BOTTOMLEFT", -2, -25}
 	C["position"].top_panel = {"BOTTOM", Minimap, "BOTTOM", -365, 141}
-	C["position"].raid_utility = {"TOPLEFT", UIParent, "TOPLEFT", 241, -21}
+	C["position"].raid_utility = {"TOPLEFT", UIParent, "TOPLEFT", 244, -25}
 	C["position"].extra_button = {"RIGHT", "oUF_Player", "BOTTOM", -53, -126}
 	C["position"].bottom_bars = {"BOTTOMRIGHT", Minimap, "TOPLEFT", 132, 5}
 	C["position"].right_bars = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 296}
-	C["position"].stance_bar = {"CENTER", ActionButton1, "BOTTOM", 82, 39}
 	C["position"].vehicle_bar = {"BOTTOMRIGHT", ActionButton1, "BOTTOMLEFT", 353, 0}
 	C["position"].unitframes.player = {"BOTTOMRIGHT", Minimap, "TOPLEFT", -408, 276}
 	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -60, 122}
@@ -124,6 +124,7 @@ if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
 	C["skins"].tiny_dps_layout_two = true
 	C["combattext"].scrollable = true
 	C["reminder"].raid_buffs_size = 19.8
+	C["raidcooldown"].width = 186
 	C["threat"].height = 16
 	C["threat"].width = 120
 	C["threat"].bar_rows = 2
@@ -139,7 +140,7 @@ if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
 	C["nameplate"].health_value = true
 	C["actionbar"].button_size = 24.4
 	C["actionbar"].toggle_mode = false
-	C["actionbar"].stancebar_mouseover = true
+	C["actionbar"].stancebar_hide = true
 	C["aura"].player_buff_size = 24.4
 	C["aura"].fot_debuffs = true
 	C["aura"].pet_debuffs = true
