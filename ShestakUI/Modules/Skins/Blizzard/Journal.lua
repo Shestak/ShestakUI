@@ -36,11 +36,16 @@ local function LoadSkin()
 		EncounterJournalEncounterFrameInfoLootTab:ClearAllPoints()
 		EncounterJournalEncounterFrameInfoLootTab:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoBossTab, "LEFT", 20, 0)
 
+		EncounterJournalEncounterFrameInfoModelTab:ClearAllPoints()
+		EncounterJournalEncounterFrameInfoModelTab:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoLootTab, "LEFT", 20, 0)
+
 		EncounterJournalEncounterFrameInfoBossTab:SetFrameStrata("HIGH")
 		EncounterJournalEncounterFrameInfoLootTab:SetFrameStrata("HIGH")
+		EncounterJournalEncounterFrameInfoModelTab:SetFrameStrata("HIGH")
 
 		EncounterJournalEncounterFrameInfoBossTab:SetScale(0.70)
 		EncounterJournalEncounterFrameInfoLootTab:SetScale(0.70)
+		EncounterJournalEncounterFrameInfoModelTab:SetScale(0.70)
 	end)
 
 	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
@@ -56,6 +61,11 @@ local function LoadSkin()
 	EncounterJournalEncounterFrameInfoLootTab:GetPushedTexture():SetTexture(nil)
 	EncounterJournalEncounterFrameInfoLootTab:GetDisabledTexture():SetTexture(nil)
 	EncounterJournalEncounterFrameInfoLootTab:GetHighlightTexture():SetTexture(nil)
+
+	EncounterJournalEncounterFrameInfoModelTab:GetNormalTexture():SetTexture(nil)
+	EncounterJournalEncounterFrameInfoModelTab:GetPushedTexture():SetTexture(nil)
+	EncounterJournalEncounterFrameInfoModelTab:GetDisabledTexture():SetTexture(nil)
+	EncounterJournalEncounterFrameInfoModelTab:GetHighlightTexture():SetTexture(nil)
 end
 
 T.SkinFuncs["Blizzard_EncounterJournal"] = LoadSkin
