@@ -7,6 +7,9 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	if C.map.enable == true or IsAddOnLoaded("Mapster") then return end
 
+	WorldMapPlayerUpper:EnableMouse(false)
+	WorldMapPlayerLower:EnableMouse(false)
+
 	WorldMapFrame:CreateBackdrop("Transparent")
 	WorldMapDetailFrame.backdrop = CreateFrame("Frame", nil, WorldMapFrame)
 	WorldMapDetailFrame.backdrop:SetTemplate("Default")
