@@ -33,8 +33,6 @@ local function LoadSkin()
 	WorldMapLevelDownButton:SetPoint("BOTTOMLEFT", WorldMapLevelDropDown, "BOTTOMRIGHT", -2, 2)
 
 	T.SkinCheckBox(WorldMapTrackQuest)
-	-- T.SkinCheckBox(WorldMapQuestShowObjectives)
-	-- T.SkinCheckBox(WorldMapShowDigSites)
 
 	T.SkinScrollBar(WorldMapQuestScrollFrameScrollBar)
 	T.SkinScrollBar(WorldMapQuestDetailScrollFrameScrollBar)
@@ -160,7 +158,6 @@ local function LoadSkin()
 	WorldMapFrame:RegisterEvent("PLAYER_REGEN_DISABLED")
 	WorldMapFrame:HookScript("OnEvent", function(self, event)
 		local miniWorldMap = GetCVarBool("miniWorldMap")
-		-- local quest = WorldMapQuestShowObjectives:GetChecked()
 
 		if event == "PLAYER_LOGIN" then
 			if not miniWorldMap then
@@ -180,7 +177,6 @@ local function LoadSkin()
 
 				WatchFrame_Update()
 			end
-			WorldMapQuestShowObjectives:Hide()
 		elseif event == "PLAYER_REGEN_ENABLED" then
 			WorldMapFrameSizeDownButton:Enable()
 			WorldMapFrameSizeUpButton:Enable()
@@ -191,19 +187,15 @@ local function LoadSkin()
 				WorldMapBlobFrame:Show()
 
 				WatchFrame_Update()
-			end
-			WorldMapQuestShowObjectives:Show()]]
+			end]]
 		end
 	end)
 
 	local coords = CreateFrame("Frame", "CoordsFrame", WorldMapFrame)
-	-- local fontheight = select(2, WorldMapQuestShowObjectivesText:GetFont()) * 1.1
 	local fontheight = 12 * 1.1
 	coords:SetFrameLevel(90)
 	coords:FontString("PlayerText", C.media.normal_font, fontheight)
 	coords:FontString("MouseText", C.media.normal_font, fontheight)
-	-- coords.PlayerText:SetTextColor(WorldMapQuestShowObjectivesText:GetTextColor())
-	-- coords.MouseText:SetTextColor(WorldMapQuestShowObjectivesText:GetTextColor())
 	coords.PlayerText:SetTextColor(1, 1, 1)
 	coords.MouseText:SetTextColor(1, 1, 1)
 	coords.PlayerText:SetShadowOffset(1, -1)
