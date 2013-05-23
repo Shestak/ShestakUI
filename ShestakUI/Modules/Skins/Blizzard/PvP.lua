@@ -62,9 +62,10 @@ local function LoadSkin()
 	end)
 
 	-- HonorFrame
-	T.SkinDropDownBox(HonorFrameTypeDropDown)
+	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
 
 	HonorFrame.Inset:StripTextures()
+	HonorFrame.RoleInset:StripTextures()
 	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
 	HonorFrameSoloQueueButton:SkinButton(true)
 	HonorFrameGroupQueueButton:SkinButton(true)
@@ -98,10 +99,6 @@ local function LoadSkin()
 		b.SelectedTexture:SetPoint("BOTTOMRIGHT", -4, 5)
 		b.SelectedTexture:SetTexture(0, 1, 0, 0.1)
 	end
-	
-	-- Role buttons (Not ready)
-	HonorFrame.RoleInset:DisableDrawLayer("BACKGROUND")
-	HonorFrame.RoleInset:DisableDrawLayer("BORDER")
 
 	-- ConquestFrame
 	ConquestFrame.Inset:StripTextures()
