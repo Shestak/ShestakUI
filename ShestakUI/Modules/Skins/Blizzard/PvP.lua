@@ -98,6 +98,10 @@ local function LoadSkin()
 		b.SelectedTexture:SetPoint("BOTTOMRIGHT", -4, 5)
 		b.SelectedTexture:SetTexture(0, 1, 0, 0.1)
 	end
+	
+	-- Role buttons (Not ready)
+	HonorFrame.RoleInset:DisableDrawLayer("BACKGROUND")
+	HonorFrame.RoleInset:DisableDrawLayer("BORDER")
 
 	-- ConquestFrame
 	ConquestFrame.Inset:StripTextures()

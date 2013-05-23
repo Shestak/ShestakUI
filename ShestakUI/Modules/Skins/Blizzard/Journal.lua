@@ -35,7 +35,6 @@ local function LoadSkin()
 		EncounterJournalEncounterFrameInfoBossTab:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoResetButton, "LEFT", -400, 0)
 		EncounterJournalEncounterFrameInfoLootTab:ClearAllPoints()
 		EncounterJournalEncounterFrameInfoLootTab:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoBossTab, "LEFT", 20, 0)
-
 		EncounterJournalEncounterFrameInfoModelTab:ClearAllPoints()
 		EncounterJournalEncounterFrameInfoModelTab:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoLootTab, "LEFT", 20, 0)
 
