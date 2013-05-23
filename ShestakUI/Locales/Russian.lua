@@ -15,7 +15,7 @@ L_ANNOUNCE_LA_CHARGES = " зарядов."
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "Нет еды: "
 L_ANNOUNCE_FF_NOFLASK = "Нет настоя: "
-L_ANNOUNCE_FF_ALLBUFFED = "Еда и настой есть у всех. Можно щемить!"
+L_ANNOUNCE_FF_ALLBUFFED = "Все сытые и бухие. Можно ДоМиНиРоВаТь!"
 L_ANNOUNCE_FF_CHECK_BUTTON = "Проверка еды и настоя"
 
 -- Says thanks for some spells
