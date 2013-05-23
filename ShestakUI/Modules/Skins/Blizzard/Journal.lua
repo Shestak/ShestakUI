@@ -35,7 +35,6 @@ local function LoadSkin()
 		EncounterJournalEncounterFrameInfoBossTab:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoResetButton, "LEFT", -400, 0)
 		EncounterJournalEncounterFrameInfoLootTab:ClearAllPoints()
 		EncounterJournalEncounterFrameInfoLootTab:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoBossTab, "LEFT", 20, 0)
-
 		EncounterJournalEncounterFrameInfoModelTab:ClearAllPoints()
 		EncounterJournalEncounterFrameInfoModelTab:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoLootTab, "LEFT", 20, 0)
 
@@ -51,6 +50,7 @@ local function LoadSkin()
 	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoDetailsScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoLootScrollFrameScrollBar)
+	T.SkinScrollBar(EncounterJournalEncounterFrameInfoBossesScrollFrameScrollBar)
 
 	EncounterJournalEncounterFrameInfoBossTab:GetNormalTexture():SetTexture(nil)
 	EncounterJournalEncounterFrameInfoBossTab:GetPushedTexture():SetTexture(nil)
