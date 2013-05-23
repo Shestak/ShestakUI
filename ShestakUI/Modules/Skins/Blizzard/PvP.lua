@@ -100,6 +100,11 @@ local function LoadSkin()
 		b.SelectedTexture:SetTexture(0, 1, 0, 0.1)
 	end
 
+	for _, roleButton in pairs({HonorFrame.RoleInset.HealerIcon, HonorFrame.RoleInset.TankIcon, HonorFrame.RoleInset.DPSIcon}) do
+		roleButton.checkButton:SetFrameLevel(roleButton:GetFrameLevel() + 2)
+		T.SkinCheckBox(roleButton.checkButton)
+	end
+
 	-- ConquestFrame
 	ConquestFrame.Inset:StripTextures()
 	ConquestPointsBarLeft:Kill()
