@@ -65,7 +65,7 @@ local function LoadSkin()
 	local function SkinItemFlyouts()
 		EquipmentFlyoutFrameButtons:StripTextures()
 
-		for i = 1, EQUIPMENTFLYOUT_MAXITEMS do
+		for i = 1, 23 do
 			local button = _G["EquipmentFlyoutFrameButton"..i]
 			local icon = _G["EquipmentFlyoutFrameButton"..i.."IconTexture"]
 			if button then
