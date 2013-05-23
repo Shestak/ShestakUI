@@ -1,13 +1,13 @@
-## Interface: 50200
+## Interface: 50300
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI
 ## Author: Tohveli
-## Version: 4.35
+## Version: 4.36
 ## Credits: Elv22, Fernir, Tukz
 ## RequiredDeps: ShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
-## X-Curse-Packaged-Version: 4.35
+## X-Curse-Packaged-Version: 4.36
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
