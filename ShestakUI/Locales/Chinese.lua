@@ -76,7 +76,7 @@ L_MISC_SCROLL = "附魔卷轴"
 L_RAID_UTIL_DISBAND = "解散团队"
 
 -- Zone name
-L_ZONE_WINTERGRASP = "冬握湖"
+L_ZONE_WINTERGRASP = "冬拥湖"
 L_ZONE_TOLBARAD = "托尔巴拉德"
 L_ZONE_TOLBARADPEN = "托尔巴拉德半岛"
 L_ZONE_ARATHIBASIN = "阿拉希盆地"
@@ -289,7 +289,7 @@ L_POPUP_SETTINGS_ALL = "应用所有的插件设置? (DBM/DXE, Skada and MSBT)"
 L_POPUP_SETTINGS_DBM = "需要改变DBM描点及风格化元素."
 L_POPUP_SETTINGS_DXE = "需要改变DXE描点及风格化元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
-L_POPUP_ARMORY = "军械库"
+L_POPUP_ARMORY = "英雄榜"
 L_POPUP_CURRENCY_CAP = "你拥有的最高级货币为"
 
 -- Welcome message
