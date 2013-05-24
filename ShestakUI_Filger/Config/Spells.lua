@@ -2585,19 +2585,7 @@ C["filger_spells"] = {
 			{spellID = 24844, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Fire Breath (Dragonhawk)
 			{spellID = 34889, unitID = "target", caster = "all", filter = "DEBUFF"},
-		},
-		{
-			Name = "T_DE/BUFF_BAR",
-			Direction = "UP",
-			IconSide = "LEFT",
-			Mode = "BAR",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 186,
-			Position = {unpack(C["filger_position"].target_bar)},
-
-			-- Doom
+		    -- Doom
 			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Agony
 			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
