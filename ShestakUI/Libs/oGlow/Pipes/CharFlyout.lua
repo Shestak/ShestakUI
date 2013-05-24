@@ -2,7 +2,7 @@ local hook
 local _E
 
 local getID = function(loc)
-	local player, bank, bags, slot, bag = EquipmentManager_UnpackLocation(loc)
+	local player, bank, bags, _, slot, bag = EquipmentManager_UnpackLocation(loc)
 	if not player and not bank and not bags then return end
 
 	if not bags then
@@ -22,7 +22,7 @@ local pipe = function(self)
 end
 
 local update = function(self)
-	local buttons = EquipmentFlyoutFrameButtons.buttons
+	local buttons = EquipmentFlyoutFrame.buttons
 	for _, button in next, buttons do
 		pipe(button)
 	end
