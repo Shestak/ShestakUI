@@ -177,9 +177,13 @@ elseif T.class == "PRIEST" then
 		T.aoespam[77489] = true		-- Echo of Light
 		T.aoespam[34861] = true		-- Circle of Healing
 		T.aoespam[33110] = true		-- Prayer of Mending
+		T.aoespam[88686] = true		-- Holy Word: Sanctuary
 		T.aoespam[63544] = true		-- Rapid Renewal
 		T.aoespam[81751] = true		-- Atonement
 		T.aoespam[94472] = 81751	-- Atonement (Crit)
+		T.aoespam[120692] = true	-- Halo
+		T.aoespam[121148] = true	-- Cascade
+		T.aoespam[110745] = true	-- Divine Star
 		-- Damaging spells
 		T.aoespam[47666] = true		-- Penance
 		T.aoespam[132157] = true	-- Holy Nova
@@ -190,6 +194,10 @@ elseif T.class == "PRIEST" then
 		T.aoespam[49821] = true		-- Mind Sear
 		T.aoespam[87532] = true		-- Shadowy Apparition
 		T.aoespam[14914] = true		-- Holy Fire
+		T.aoespam[129250] = true	-- Power Word: Solace
+		T.aoespam[120696] = true	-- Halo
+		T.aoespam[127628] = true	-- Cascade
+		T.aoespam[122128] = true	-- Divine Star
 	end
 	if C.combattext.healing then
 		T.healfilter[127626] = true	-- Devouring Plague
