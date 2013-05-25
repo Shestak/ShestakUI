@@ -12,7 +12,6 @@ local oldRegisterAsWidget = AceGUI.RegisterAsWidget
 AceGUI.RegisterAsWidget = function(self, widget)
 	local TYPE = widget.type
 	if TYPE == "CheckBox" then
-		-- widget.checkbg:Kill()
 		widget.highlight:Kill()
 
 		if not widget.skinnedCheckBG then
