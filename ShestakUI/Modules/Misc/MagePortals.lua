@@ -27,7 +27,11 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 }
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)
-frame:CreatePanel("Invisible", C.minimap.size, (#spells) * 20 + 4, "TOPLEFT", Minimap, "BOTTOMLEFT", -2, -8)
+if C.skins.tiny_dps_layout_two == true then
+	frame:CreatePanel("Invisible", C.minimap.size, (#spells) * 20 + 4, "BOTTOMLEFT", Minimap, "TOPLEFT", -2, 3)
+else
+	frame:CreatePanel("Invisible", C.minimap.size, (#spells) * 20 + 4, "TOPLEFT", Minimap, "BOTTOMLEFT", -2, -8)
+end
 frame:RegisterEvent("UNIT_SPELLCAST_START")
 frame:SetScript("OnEvent", function(self)
 	if self:IsShown() then
@@ -93,3 +97,5 @@ end)
 button:SetScript("OnLeave", function()
 	button:FadeOut()
 end)
+
+-- Edit by Oz of shestakdotorg --
