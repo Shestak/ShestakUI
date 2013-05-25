@@ -2747,6 +2747,8 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
+			-- Raging Blow
+			{spellID = 131116, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bloodsurge
 			{spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sword and Board
@@ -2999,6 +3001,8 @@ C["filger_spells"] = {
 			{spellID = 28880, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Other
+			-- Skull Banner
+			{spellID = 114206, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Protection
 			{spellID = 1022, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Hand of Freedom
