@@ -14,7 +14,6 @@ local function AL_OnShow(self, event, ...)
 	AtlasLootPanelSearch_ClearButton:SetPoint("LEFT", AtlasLootPanelSearch_SelectModuel, "RIGHT", 3, 0)
 	AtlasLootPanelSearch_LastResultButton:SetPoint("LEFT", AtlasLootPanelSearch_ClearButton, "RIGHT", 3, 0)
 	AtlasLoot10Man25ManSwitch:SetPoint("BOTTOM", AtlasLootItemsFrame, "BOTTOM", -130, 4)
-	AtlasLootServerQueryButton:SetPoint("BOTTOM", AtlasLootItemsFrame, "BOTTOM", 130, 4)
 	if AtlasLoot_PanelButton_2 then AtlasLoot_PanelButton_2:SetPoint("LEFT", AtlasLoot_PanelButton_1, "RIGHT", 3, 0) end
 	if AtlasLoot_PanelButton_3 then AtlasLoot_PanelButton_3:SetPoint("LEFT", AtlasLoot_PanelButton_2, "RIGHT", 3, 0) end
 	if AtlasLoot_PanelButton_4 then AtlasLoot_PanelButton_4:SetPoint("LEFT", AtlasLoot_PanelButton_3, "RIGHT", 3, 0) end
@@ -144,7 +143,6 @@ frame:SetScript("OnEvent", function(self, event)
 
 	local buttons = {
 		"AtlasLoot_AtlasInfoFrame_ToggleALButton",
-		"AtlasLootServerQueryButton",
 		"AtlasLootPanelSearch_SearchButton",
 		"AtlasLootDefaultFrame_CompareFrame",
 		"AtlasLootPanelSearch_ClearButton",
@@ -197,7 +195,7 @@ frame:SetScript("OnEvent", function(self, event)
 	AtlasLootDefaultFrame_LockButton:ClearAllPoints()
 	AtlasLootDefaultFrame_LockButton:SetPoint("RIGHT", AtlasLootDefaultFrame_CloseButton, "LEFT", -3, 0)
 	T.SkinCloseButton(AtlasLootCompareFrame_CloseButton)
-	T.SkinCloseButton( AtlasLootCompareFrame_CloseButton_Wishlist)
+	T.SkinCloseButton(AtlasLootCompareFrame_CloseButton_Wishlist)
 
 	T.SkinNextPrevButton(AtlasLootQuickLooksButton)
 	T.SkinNextPrevButton(AtlasLootItemsFrame_NEXT)
@@ -217,6 +215,7 @@ frame:SetScript("OnEvent", function(self, event)
 	T.SkinCheckBox(AtlasLootFilterCheck)
 	T.SkinCheckBox(AtlasLootItemsFrame_Heroic)
 	T.SkinCheckBox(AtlasLootItemsFrame_RaidFinder)
+	T.SkinCheckBox(AtlasLootItemsFrame_Thunderforged)
 	T.SkinCheckBox(AtlasLootCompareFrameSearch_FilterCheck)
 
 	T.SkinScrollBar(AtlasLootCompareFrame_ScrollFrameItemFrameScrollBar)
