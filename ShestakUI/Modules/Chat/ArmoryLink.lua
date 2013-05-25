@@ -9,6 +9,21 @@ local realmName = string.lower(GetRealmName())
 local realmLocal = string.sub(GetCVar("realmList"), 1, 2)
 local link
 
+local function urlencode(obj)
+    local currentIndex = 1;
+    local charArray = {}
+    while currentIndex <= #obj do
+        local char = string.byte(obj, currentIndex);
+        charArray[currentIndex] = char
+        currentIndex = currentIndex + 1
+    end
+    local converchar = "";
+    for _, char in ipairs(charArray) do
+        converchar = converchar..string.format("%%%X", char)
+    end
+    return converchar;
+end
+
 realmName = realmName:gsub("'", "")
 realmName = realmName:gsub(" ", "-")
 
@@ -64,6 +79,15 @@ hooksecurefunc("UnitPopup_OnClick", function(self)
 			return
 		elseif realmLocal == "tw" then
 			linkurl = "http://tw.battle.net/wow/"..link.."/character/"..realmName.."/"..name.."/advanced"
+			inputBox.editBox:SetText(linkurl)
+			inputBox.editBox:HighlightText()
+			return
+		elseif realmLocal == "cn" then
+			local n,r = name:match"(.*)-(.*)"
+			n = n or name
+			r = r or GetRealmName()
+			
+			linkurl = "http://www.battlenet.com.cn/wow/character/"..urlencode(r).."/"..urlencode(n).."/advanced"
 			inputBox.editBox:SetText(linkurl)
 			inputBox.editBox:HighlightText()
 			return
