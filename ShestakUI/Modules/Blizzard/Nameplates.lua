@@ -372,7 +372,7 @@ local function SkinObjects(frame, nameFrame)
 	local oldhp, cb = frame:GetChildren()
 	local threat, hpborder, overlay, oldlevel, bossicon, raidicon, elite = frame:GetRegions()
 	local oldname = nameFrame:GetRegions()
-	local _, cbborder, cbshield, cbicon = cb:GetRegions()
+	local _, cbborder, cbshield, cbicon, cbname, cbshadow = cb:GetRegions()
 
 	-- Health Bar
 	frame.healthOriginal = oldhp
@@ -435,8 +435,11 @@ local function SkinObjects(frame, nameFrame)
 	cb.time:SetTextColor(1, 1, 1)
 
 	-- Create Cast Name Text
+	cbname:ClearAllPoints()
+	cbshadow:ClearAllPoints()
+	cb.name = cbname
 	if C.nameplate.show_castbar_name == true then
-		cb.name = cb:CreateFontString(nil, "ARTWORK")
+		-- cb.name = cb:CreateFontString(nil, "ARTWORK")
 		cb.name:SetPoint("LEFT", cb, "LEFT", 3, 0)
 		cb.name:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
 		cb.name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
