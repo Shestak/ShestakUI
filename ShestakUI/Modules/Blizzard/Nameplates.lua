@@ -191,16 +191,10 @@ local function UpdateCastText(frame, curValue)
 
 	if UnitChannelInfo("target") then
 		frame.time:SetFormattedText("%.1f ", curValue)
-		if C.nameplate.show_castbar_name == true then
-			-- frame.name:SetText(UnitChannelInfo("target"))
-		end
 	end
 
 	if UnitCastingInfo("target") then
 		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
-		if C.nameplate.show_castbar_name == true then
-			-- frame.name:SetText(UnitCastingInfo("target"))
-		end
 	end
 end
 
@@ -217,7 +211,6 @@ local OnSizeChanged = function(self)
 	self.needFix = true
 end
 
---
 local function HealthBar_ValueChanged(frame)
 	frame = frame:GetParent()
 	frame.hp:SetMinMaxValues(frame.healthOriginal:GetMinMaxValues())
@@ -439,7 +432,6 @@ local function SkinObjects(frame, nameFrame)
 	cbname:ClearAllPoints()
 	cb.name = cbname
 	if C.nameplate.show_castbar_name == true then
-		-- cb.name = cb:CreateFontString(nil, "ARTWORK")
 		cb.name:SetPoint("LEFT", cb, "LEFT", 3, 0)
 		cb.name:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
 		cb.name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
