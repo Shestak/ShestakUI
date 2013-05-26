@@ -120,10 +120,10 @@ if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
 	C["misc"].hide_button = false
 	C["automation"].screenshot = true
 	C["automation"].logging_combat = true
-	C["skins"].tiny_dps = false
 	C["skins"].tiny_dps_layout_two = true
 	C["combattext"].scrollable = true
 	C["reminder"].raid_buffs_size = 19.8
+	C["reminder"].raid_buffs_alpha = 0.5
 	C["raidcooldown"].width = 186
 	C["threat"].height = 16
 	C["threat"].width = 120
