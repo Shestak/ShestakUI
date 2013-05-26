@@ -20,6 +20,7 @@ L_GUI_GENERAL_LAG_TOLERANCE = "Allinea automaticamente la tolleranza automatica 
 
 -- Miscellaneous options
 L_GUI_MISC_HIDE_BUTTON = "Pulsante per nascondere chat e minimappa"
+L_GUI_MISC_MAGE_PORTALS = "Attiva un pulsante nascosto sulla minimappa per visualizzare un elenco dei teletrasporti e dei portali (solo per maghi)"
 L_GUI_MISC_MARKING = "Marca il bersaglio quando premi Shift"
 L_GUI_MISC_INVKEYWORD = "Parola chiave per invitare (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Ruota la camera mentre sei assente"

@@ -20,6 +20,7 @@ L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tole
 
 -- Miscellaneous options
 L_GUI_MISC_HIDE_BUTTON = "채팅과 minimap을 숨길 버튼" -- Goooooooooogle translated
+L_GUI_MISC_MAGE_PORTALS = "텔레포트와 포털의 목록 (만 마법사)를 표시하는 미니의 숨겨진 버튼을 사용" -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "Marks target when you push 'shift'"
 L_GUI_MISC_INVKEYWORD = "Short keyword for invite (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Spin camera while afk"

@@ -20,6 +20,7 @@ L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tole
 
 -- Miscellaneous options
 L_GUI_MISC_HIDE_BUTTON = "Botão para ocultar chat e minimap" -- Goooooooooogle translated
+L_GUI_MISC_MAGE_PORTALS = "Habilitar um botão escondido no mini-mapa para mostrar uma lista de teleports e portais (somente para magos)" -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "Marks target when you push 'shift'"
 L_GUI_MISC_INVKEYWORD = "Short keyword for invite (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Spin camera while afk"

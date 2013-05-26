@@ -20,6 +20,7 @@ L_GUI_GENERAL_LAG_TOLERANCE = "Автоматическое обновление
 
 -- Miscellaneous options
 L_GUI_MISC_HIDE_BUTTON = "Кнопка для скрытия чата и миникарты" -- Goooooooooogle translated
+L_GUI_MISC_MAGE_PORTALS = "Включить скрытые кнопки на мини-карте, чтобы показать список телепортов и порталов (только для магов)" -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "Меню с метками при нажатии 'shift'"
 L_GUI_MISC_INVKEYWORD = "Ключевое слово для автоматического приглашения (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Вращать камеру во время афк"

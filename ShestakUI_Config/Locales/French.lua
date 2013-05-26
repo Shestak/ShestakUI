@@ -20,6 +20,7 @@ L_GUI_GENERAL_LAG_TOLERANCE = "Ajuste automatiquement la barre de latence Blizza
 
 -- Miscellaneous options
 L_GUI_MISC_HIDE_BUTTON = "Bouton pour masquer le chat et minicarte" -- Goooooooooogle translated
+L_GUI_MISC_MAGE_PORTALS = "Activer un bouton caché sur la minicarte pour afficher une liste de téléports et de portails (uniquement pour les mages)" -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "Marque la cible quand vous appuyez sur MAJ"
 L_GUI_MISC_INVKEYWORD = "Mot clé pour inviter (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Faire tourner la caméra quand absent"

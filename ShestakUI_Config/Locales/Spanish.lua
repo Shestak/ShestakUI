@@ -20,6 +20,7 @@ L_GUI_GENERAL_LAG_TOLERANCE = "Actualizar automaticamente la opción de Toleranc
 
 -- Miscellaneous options
 L_GUI_MISC_HIDE_BUTTON = "Botón para ocultar el chat y el minimapa" -- Goooooooooogle translated
+L_GUI_MISC_MAGE_PORTALS = "Activar un botón oculto en el minimapa para mostrar una lista de telepuertos y portales (sólo para magos)" -- Goooooooooogle translated
 L_GUI_MISC_MARKING = "Marca el objetivo cuando pulsas 'shift'"
 L_GUI_MISC_INVKEYWORD = "Acrónimo para invitaciones (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"
