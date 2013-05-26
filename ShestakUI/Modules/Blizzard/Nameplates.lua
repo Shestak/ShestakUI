@@ -192,14 +192,14 @@ local function UpdateCastText(frame, curValue)
 	if UnitChannelInfo("target") then
 		frame.time:SetFormattedText("%.1f ", curValue)
 		if C.nameplate.show_castbar_name == true then
-			frame.name:SetText(UnitChannelInfo("target"))
+			-- frame.name:SetText(UnitChannelInfo("target"))
 		end
 	end
 
 	if UnitCastingInfo("target") then
 		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
 		if C.nameplate.show_castbar_name == true then
-			frame.name:SetText(UnitCastingInfo("target"))
+			-- frame.name:SetText(UnitCastingInfo("target"))
 		end
 	end
 end
