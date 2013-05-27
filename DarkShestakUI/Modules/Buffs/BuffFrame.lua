@@ -4,12 +4,7 @@ if C.aura.player_auras ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Style player buff(by Tukz)
 ----------------------------------------------------------------------------------------
-<<<<<<< HEAD:DarkShestakUI/Modules/Buffs/BuffFrame.lua
-local mainhand, _, _, offhand = GetWeaponEnchantInfo()
 local rowbuffs = 14
-=======
-local rowbuffs = 16
->>>>>>> d8f82df5732df1547a15ca6c563b2b1c1da47d08:ShestakUI/Modules/Buffs/BuffFrame.lua
 
 local GetFormattedTime = function(s)
 	if s >= 86400 then

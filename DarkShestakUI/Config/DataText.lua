@@ -216,8 +216,8 @@ LPSTAT_PROFILES = {
 	},
 	MONK = {
 		Stats = {
-			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Armor: ".."[armor]"..class"  Avoid: ".."[avoidance]%",
-			spec2fmt = class"AP: ".."[ap]"..class"  Exp: ".."[expertise]%"..class"  Hit: ".."[meleehit]%",
+			spec1fmt = theme"Mastery: ".."[mastery]%"..theme"  Armor: ".."[armor]"..theme"  Avoid: ".."[avoidance]%",
+			spec2fmt = theme"AP: ".."[ap]"..theme"  Exp: ".."[expertise]%"..theme"  Hit: ".."[meleehit]%",
 		}
 	},
 	PALADIN = {
