@@ -5,7 +5,7 @@ if C.automation.cancel_bad_buffs ~= true then return end
 --	Auto cancel various buffs(by Unknown)
 ----------------------------------------------------------------------------------------
 local function SpellName(id)
-	local name = select(1, GetSpellInfo(id))
+	local name = GetSpellInfo(id)
 	return name
 end
 

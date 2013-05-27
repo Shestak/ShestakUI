@@ -30,8 +30,9 @@ local SmallerMapSkin = function()
 	WorldMapFrame:SetPoint(unpack(C.position.map))
 
 	WorldMapDetailFrame:SetFrameStrata("MEDIUM")
-	WorldMapPlayerUpper:SetFrameStrata("LOW")
 	-- WorldMapPing:SetAlpha(0)
+	WorldMapPlayerUpper:EnableMouse(false)
+	WorldMapPlayerLower:EnableMouse(false)
 
 	WorldMapTitleButton:Show()
 	WorldMapTitleButton:SetFrameStrata("MEDIUM")
@@ -48,20 +49,9 @@ local SmallerMapSkin = function()
 	WorldMapFrameTitle:SetPoint("TOP", WorldMapDetailFrame, 0, -3)
 	WorldMapFrameTitle:SetFont(C.media.normal_font, 17)
 
-	T.SkinCheckBox(WorldMapQuestShowObjectives)
-	WorldMapQuestShowObjectives:ClearAllPoints()
-	WorldMapQuestShowObjectives:SetPoint("BOTTOMRIGHT", WorldMapButton, "BOTTOMRIGHT", -3 - WorldMapQuestShowObjectivesText:GetWidth(), 0)
-
 	T.SkinCheckBox(WorldMapTrackQuest)
 	WorldMapTrackQuest:ClearAllPoints()
 	WorldMapTrackQuest:SetPoint("BOTTOMLEFT", WorldMapButton, "BOTTOMLEFT", 0, 0)
-
-	T.SkinCheckBox(WorldMapShowDigSites)
-	WorldMapShowDigSites:ClearAllPoints()
-	WorldMapShowDigSites:SetPoint("BOTTOM", WorldMapQuestShowObjectives, "TOP", 0, 0)
-
-	WorldMapShowDigSitesText:ClearAllPoints()
-	WorldMapShowDigSitesText:SetPoint("LEFT", WorldMapShowDigSites, "RIGHT", 0, 0)
 
 	WorldMapFrameAreaLabel:SetFont(C.media.normal_font, 40)
 	WorldMapFrameAreaLabel:SetShadowOffset(2, -2)
@@ -86,9 +76,6 @@ local SmallerMapSkin = function()
 	WorldMapShowDropDown:ClearAllPoints()
 	WorldMapShowDropDown:SetPoint("TOPRIGHT", WorldMapButton, "TOPRIGHT", 10, -3)
 	WorldMapShowDropDown:SetFrameStrata("HIGH")
-
-	-- Fix tooltip not hidding after leaving quest # tracker icon
-	hooksecurefunc("WorldMapQuestPOI_OnLeave", function() WorldMapTooltip:Hide() end)
 end
 hooksecurefunc("WorldMap_ToggleSizeDown", function() SmallerMapSkin() end)
 

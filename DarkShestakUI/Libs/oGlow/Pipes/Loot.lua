@@ -1,10 +1,11 @@
 local T, C, L, _ = unpack(select(2, ...))
 if C.loot.lootframe == true then return end
 
+local hook
 local _E
 
-local update = function(self)
-	if LootFrame:IsShown() then
+local update = function()
+	if LootFrame:IsShown() and oGlow:IsPipeEnabled"loot" then
 		for i = 1, LOOTFRAME_NUMBUTTONS or 4 do
 			local slotFrame = _G["LootButton"..i]
 			local slot = slotFrame.slot
@@ -14,13 +15,20 @@ local update = function(self)
 				itemLink = GetLootSlotLink(slot)
 			end
 
-			self:CallFilters("loot", slotFrame, _E and itemLink)
+			oGlow:CallFilters("loot", slotFrame, _E and itemLink)
 		end
 	end
 end
 
 local enable = function(self)
 	_E = true
+
+	if not hook then
+		LootFrameUpButton:HookScript("OnClick", update)
+		LootFrameDownButton:HookScript("OnClick", update)
+
+		hook = true
+	end
 
 	self:RegisterEvent("LOOT_OPENED", update)
 	self:RegisterEvent("LOOT_SLOT_CLEARED", update)

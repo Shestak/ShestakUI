@@ -1,8 +1,8 @@
-## Interface: 50200
+## Interface: 50300
 ## Title: |cff1784d1Dark ShestakUI Config|r
 ## Notes: In-game configuration for Dark ShestakUI
 ## Author: Tohveli
-## Version: 0.70
+## Version: 0.72
 ## Credits: Elv22, Fernir, Tukz
 ## RequiredDeps: DarkShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings

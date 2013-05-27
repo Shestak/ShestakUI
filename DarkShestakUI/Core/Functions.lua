@@ -1204,7 +1204,7 @@ T.PostCreateAura = function(element, button)
 end
 
 T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, duration, timeLeft)
-	local name, _, _, _, dtype, duration, expirationTime, unitCaster, isStealable = UnitAura(unit, index, icon.filter)
+	local _, _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
 
 	local playerUnits = {
 		player = true,

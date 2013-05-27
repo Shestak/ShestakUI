@@ -747,8 +747,8 @@ end
 ----------------------------------------------------------------------------------------
 if ping.enabled then
 	Inject("Ping", {
-		OnLoad = function(self) 
-			self:RegisterEvent("MINIMAP_PING") 
+		OnLoad = function(self)
+			self:RegisterEvent("MINIMAP_PING")
 			self.animGroup = self.text:CreateAnimationGroup()
 			self.anim = self.animGroup:CreateAnimation("Alpha")
 			self.animGroup:SetScript("OnFinished", function() self.text:Hide() end)

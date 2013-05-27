@@ -11,22 +11,30 @@ TaintFix:SetScript("OnUpdate", function(self, elapsed)
 end)
 
 ----------------------------------------------------------------------------------------
+--	Fix DeclensionFrame strata
+----------------------------------------------------------------------------------------
+if T.client == "ruRU" then
+	_G["DeclensionFrame"]:SetFrameStrata("HIGH")
+end
+
+----------------------------------------------------------------------------------------
 --	Fix for unclickable reagents in tradeskill UI (by Phanx)
 ----------------------------------------------------------------------------------------
 do
 	local function FixTradeSkillReagents()
 		local function TradeSkillReagent_OnClick(self)
-			local link, name = GetTradeSkillReagentItemLink(TradeSkillFrame.selectedSkill, self:GetID())
-			if not link then
-				name, link = GameTooltip:GetItem()
-				if name ~= self.name:GetText() then
-					return
+			if IsModifiedClick() then
+				local link, name = GetTradeSkillReagentItemLink(TradeSkillFrame.selectedSkill, self:GetID())
+				if not link then
+					name, link = GameTooltip:GetItem()
+					if name == self.name:GetText() then
+						HandleModifiedItemClick(link)
+					end
 				end
 			end
-			HandleModifiedItemClick(link)
 		end
 		for i = 1, 8 do
-			_G["TradeSkillReagent"..i]:SetScript("OnClick", TradeSkillReagent_OnClick)
+			_G["TradeSkillReagent"..i]:HookScript("OnClick", TradeSkillReagent_OnClick)
 		end
 	end
 	if TradeSkillReagent1 then

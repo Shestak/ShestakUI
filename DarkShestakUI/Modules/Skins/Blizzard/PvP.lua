@@ -62,9 +62,10 @@ local function LoadSkin()
 	end)
 
 	-- HonorFrame
-	T.SkinDropDownBox(HonorFrameTypeDropDown)
+	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
 
 	HonorFrame.Inset:StripTextures()
+	HonorFrame.RoleInset:StripTextures()
 	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
 	HonorFrameSoloQueueButton:SkinButton(true)
 	HonorFrameGroupQueueButton:SkinButton(true)
@@ -97,6 +98,11 @@ local function LoadSkin()
 		b.SelectedTexture:SetPoint("TOPLEFT", 4, -5)
 		b.SelectedTexture:SetPoint("BOTTOMRIGHT", -4, 5)
 		b.SelectedTexture:SetTexture(0, 1, 0, 0.1)
+	end
+
+	for _, roleButton in pairs({HonorFrame.RoleInset.HealerIcon, HonorFrame.RoleInset.TankIcon, HonorFrame.RoleInset.DPSIcon}) do
+		roleButton.checkButton:SetFrameLevel(roleButton:GetFrameLevel() + 2)
+		T.SkinCheckBox(roleButton.checkButton)
 	end
 
 	-- ConquestFrame

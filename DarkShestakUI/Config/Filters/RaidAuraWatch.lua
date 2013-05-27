@@ -75,7 +75,7 @@ T.RaidBuffsIgnore = {
 }
 
 local function SpellName(id)
-	local name = select(1, GetSpellInfo(id))
+	local name = GetSpellInfo(id)
 	return name
 end
 
@@ -127,9 +127,10 @@ T.RaidDebuffs = {
 	[SpellName(133597)] = 3,	-- Dark Parasite (Heroic - Dispel)
 	-- Primordius
 	[SpellName(136050)] = 3,	-- Malformed Blood (Tank stacks)
-	[SpellName(136228)] = 3,	-- Volatile Pathogen (DoT)
+	[SpellName(136228)] = 4,	-- Volatile Pathogen (DoT)
 	-- Dark Animus
 	[SpellName(138569)] = 4,	-- Explosive Slam (Tank stacks)
+	[SpellName(138609)] = 4,	-- Matter Swap (Dispel)
 	[SpellName(138659)] = 3,	-- Touch of the Animus (DoT)
 	-- Iron Qon
 	[SpellName(134691)] = 3,	-- Impale (Tank stacks)
@@ -148,6 +149,9 @@ T.RaidDebuffs = {
 	[SpellName(136295)] = 3,	-- Overcharged
 	[SpellName(139011)] = 3,	-- Helm of Command (Heroic)
 	-- Ra-den
+	[SpellName(138297)] = 3,	-- Unstable Vita
+	[SpellName(138329)] = 3,	-- Unleashed Anima
+	[SpellName(138372)] = 4,	-- Vita Sensitivity
 -- Terrace of Endless Spring
 	-- Protectors of the Endless
 	[SpellName(117519)] = 3,	-- Touch of Sha
@@ -227,9 +231,9 @@ T.RaidDebuffs = {
 	-- Death Knight
 	--[[[SpellName(115001)] = 3,	-- Remorseless Winter
 	[SpellName(108194)] = 3,	-- Asphyxiate
-	[SpellName(47476)] = 3,		-- Strangulate
-	[SpellName(91800)] = 3,		-- Gnaw (Ghoul)
 	[SpellName(91797)] = 3,		-- Monstrous Blow (Mutated Ghoul)
+	[SpellName(91800)] = 3,		-- Gnaw (Ghoul)
+	[SpellName(47476)] = 3,		-- Strangulate
 	-- Druid
 	[SpellName(33786)] = 3,		-- Cyclone
 	[SpellName(2637)] = 3,		-- Hibernate
@@ -237,16 +241,17 @@ T.RaidDebuffs = {
 	[SpellName(78675)] = 3,		-- Solar Beam
 	-- Hunter
 	[SpellName(3355)] = 3,		-- Freezing Trap
+	[SpellName(19386)] = 3,		-- Wyvern Sting
 	[SpellName(117526)] = 3,	-- Binding Shot
+	[SpellName(24394)] = 3,		-- Intimidation
 	[SpellName(1513)] = 3,		-- Scare Beast
 	[SpellName(19503)] = 3,		-- Scatter Shot
 	[SpellName(34490)] = 3,		-- Silence Shot
-	[SpellName(19386)] = 3,		-- Wyvern Sting
 	-- Mage
-	[SpellName(31661)] = 3,		-- Dragon's Breath
+	[SpellName(61305)] = 3,		-- Polymorph
 	[SpellName(82691)] = 3,		-- Ring of Frost
 	[SpellName(44572)] = 3,		-- Deep Freeze
-	[SpellName(61305)] = 3,		-- Polymorph
+	[SpellName(31661)] = 3,		-- Dragon's Breath
 	[SpellName(102051)] = 3,	-- Frostjaw
 	[SpellName(55021)] = 3,		-- Improved Counterspell
 	[SpellName(122)] = 2,		-- Frost Nova

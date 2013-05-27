@@ -17,7 +17,7 @@ local visible, flask, battleelixir, guardianelixir, food, stat, stamina, spell5,
 local function CheckElixir(unit)
 	if battleelixirbuffs and battleelixirbuffs[1] then
 		for i, battleelixirbuffs in pairs(battleelixirbuffs) do
-			local spellname = select(1, GetSpellInfo(battleelixirbuffs))
+			local spellname = GetSpellInfo(battleelixirbuffs)
 			if UnitAura("player", spellname) then
 				FlaskFrame.t:SetTexture(select(3, GetSpellInfo(battleelixirbuffs)))
 				battleelixir = true
@@ -30,7 +30,7 @@ local function CheckElixir(unit)
 
 	if guardianelixirbuffs and guardianelixirbuffs[1] then
 		for i, guardianelixirbuffs in pairs(guardianelixirbuffs) do
-			local spellname = select(1, GetSpellInfo(guardianelixirbuffs))
+			local spellname = GetSpellInfo(guardianelixirbuffs)
 			if UnitAura("player", spellname) then
 				guardianelixir = true
 				if not battleelixir then
@@ -68,7 +68,7 @@ local function OnAuraChange(self, event, arg1, unit)
 	if flaskbuffs and flaskbuffs[1] then
 		FlaskFrame.t:SetTexture(select(3, GetSpellInfo(flaskbuffs[1])))
 		for i, flaskbuffs in pairs(flaskbuffs) do
-			local spellname = select(1, GetSpellInfo(flaskbuffs))
+			local spellname = GetSpellInfo(flaskbuffs)
 			if UnitAura("player", spellname) then
 				FlaskFrame.t:SetTexture(select(3, GetSpellInfo(flaskbuffs)))
 				FlaskFrame:SetAlpha(C.reminder.raid_buffs_alpha)
@@ -83,7 +83,7 @@ local function OnAuraChange(self, event, arg1, unit)
 	if foodbuffs and foodbuffs[1] then
 		FoodFrame.t:SetTexture(select(3, GetSpellInfo(foodbuffs[1])))
 		for i, foodbuffs in pairs(foodbuffs) do
-			local spellname = select(1, GetSpellInfo(foodbuffs))
+			local spellname = GetSpellInfo(foodbuffs)
 			if UnitAura("player", spellname) then
 				FoodFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 				FoodFrame.t:SetTexture(select(3, GetSpellInfo(foodbuffs)))
@@ -97,7 +97,7 @@ local function OnAuraChange(self, event, arg1, unit)
 	end
 
 	for i, statbuffs in pairs(statbuffs) do
-		local spellname = select(1, GetSpellInfo(statbuffs))
+		local spellname = GetSpellInfo(statbuffs)
 		if UnitAura("player", spellname) then
 			StatFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 			StatFrame.t:SetTexture(select(3, GetSpellInfo(statbuffs)))
@@ -111,7 +111,7 @@ local function OnAuraChange(self, event, arg1, unit)
 	end
 
 	for i, staminabuffs in pairs(staminabuffs) do
-		local spellname = select(1, GetSpellInfo(staminabuffs))
+		local spellname = GetSpellInfo(staminabuffs)
 		if UnitAura("player", spellname) then
 			StaminaFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 			StaminaFrame.t:SetTexture(select(3, GetSpellInfo(staminabuffs)))
@@ -125,7 +125,7 @@ local function OnAuraChange(self, event, arg1, unit)
 	end
 
 	for i, Spell5Buff in pairs(Spell5Buff) do
-		local spellname = select(1, GetSpellInfo(Spell5Buff))
+		local spellname = GetSpellInfo(Spell5Buff)
 		if UnitAura("player", spellname) then
 			Spell5Frame:SetAlpha(C.reminder.raid_buffs_alpha)
 			Spell5Frame.t:SetTexture(select(3, GetSpellInfo(Spell5Buff)))
@@ -139,7 +139,7 @@ local function OnAuraChange(self, event, arg1, unit)
 	end
 
 	for i, Spell6Buff in pairs(Spell6Buff) do
-		local spellname = select(1, GetSpellInfo(Spell6Buff))
+		local spellname = GetSpellInfo(Spell6Buff)
 		if UnitAura("player", spellname) then
 			Spell6Frame:SetAlpha(C.reminder.raid_buffs_alpha)
 			Spell6Frame.t:SetTexture(select(3, GetSpellInfo(Spell6Buff)))
