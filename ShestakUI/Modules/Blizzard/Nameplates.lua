@@ -428,7 +428,6 @@ local function SkinObjects(frame, nameFrame)
 	cb.time:SetTextColor(1, 1, 1)
 
 	-- Create Cast Name Text
-	cbshadow:SetTexture('')
 	cbname:ClearAllPoints()
 	cb.name = cbname
 	if C.nameplate.show_castbar_name == true then
@@ -505,6 +504,7 @@ local function SkinObjects(frame, nameFrame)
 	QueueObject(frame, hpborder)
 	QueueObject(frame, cbshield)
 	QueueObject(frame, cbborder)
+	QueueObject(frame, cbshadow)
 	QueueObject(frame, oldname)
 	QueueObject(frame, bossicon)
 	QueueObject(frame, elite)
