@@ -130,6 +130,24 @@ local function LoadSkin()
 		b:SkinButton(true)
 	end
 
+	-- Help Browser
+	T.SkinRotateButton(HelpBrowserNavHome)
+	T.SkinRotateButton(HelpBrowserNavBack)
+	T.SkinRotateButton(HelpBrowserNavForward)
+	T.SkinRotateButton(HelpBrowserNavReload)
+	T.SkinRotateButton(HelpBrowserNavStop)
+	T.SkinRotateButton(HelpBrowserBrowserSettings)
+
+	HelpBrowserNavHome:SetPoint("BOTTOMLEFT", HelpBrowser, "TOPLEFT", 1, 5)
+	HelpBrowserBrowserSettings:SetPoint("TOPRIGHT", HelpFrameCloseButton, "BOTTOMLEFT", -4, -1)
+	LoadingIcon:ClearAllPoints()
+	LoadingIcon:SetPoint("LEFT", HelpBrowserNavStop, "RIGHT")
+
+	BrowserSettingsTooltip:StripTextures()
+	BrowserSettingsTooltip:CreateBackdrop("Transparent")
+	BrowserSettingsTooltip.CacheButton:SkinButton()
+	BrowserSettingsTooltip.CookiesButton:SkinButton()
+
 	-- Misc items
 	HelpFrameKnowledgebaseSearchBox:ClearAllPoints()
 	HelpFrameKnowledgebaseSearchBox:SetPoint("TOPLEFT", HelpFrameMainInset, "TOPLEFT", 13, -10)
