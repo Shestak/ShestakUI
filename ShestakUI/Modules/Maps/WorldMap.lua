@@ -80,31 +80,15 @@ end
 hooksecurefunc("WorldMap_ToggleSizeDown", function() SmallerMapSkin() end)
 
 local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:RegisterEvent("PLAYER_REGEN_ENABLED")
-frame:RegisterEvent("PLAYER_REGEN_DISABLED")
+frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", function(self, event)
-	if event == "PLAYER_ENTERING_WORLD" then
-		BlackoutWorld:Hide()
-		BlackoutWorld.Show = function() end
-		BlackoutWorld.Hide = function() end
+	if event == "PLAYER_LOGIN" then
+		WorldMap_ToggleSizeDown()
 		WorldMapBlobFrame.Show = function() end
 		WorldMapBlobFrame.Hide = function() end
 		WorldMapQuestPOI_OnLeave = function()
 			WorldMapTooltip:Hide()
 		end
-		WorldMap_ToggleSizeDown()
-		if FeedbackUIMapTip then
-			FeedbackUIMapTip:Hide()
-			FeedbackUIMapTip.Show = function() end
-		end
-	elseif event == "PLAYER_REGEN_DISABLED" then
-		WorldMapFrameSizeUpButton:Disable()
-		WorldMap_ToggleSizeDown()
-		WorldMapBlobFrame:DrawBlob(WORLDMAP_SETTINGS.selectedQuestId, false)
-		WorldMapBlobFrame:DrawBlob(WORLDMAP_SETTINGS.selectedQuestId, true)
-	elseif event == "PLAYER_REGEN_ENABLED" then
-		WorldMapFrameSizeUpButton:Enable()
 	end
 end)
 
