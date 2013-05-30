@@ -5,10 +5,12 @@ if C.skins.dxe ~= true or not IsAddOnLoaded("DXE") then return end
 --	DXE skin
 ----------------------------------------------------------------------------------------
 local movers = {
+	"DXEAlertsTopStackAnchor",
 	"DXEAlertsCenterStackAnchor",
 	"DXEAlertsWarningStackAnchor",
-	"DXEDistributorStackAnchor",
-	"DXEAlertsTopStackAnchor",
+	"DXEAlertsDebuffStackAnchor",
+	"DXEAlertsMessageStackAnchor",
+	"DXEAlertsInformStackAnchor",
 	"DXEArrowsAnchor1",
 	"DXEArrowsAnchor2",
 	"DXEArrowsAnchor3",
@@ -47,6 +49,7 @@ end
 local DXE = DXE
 DXE.NotifyBarTextureChanged = T.dummy
 DXE.NotifyBorderChanged = T.dummy
+DXE.NotifyFontChanged = T.dummy
 DXE.NotifyBorderColorChanged = T.dummy
 DXE.NotifyBorderEdgeSizeChanged = T.dummy
 DXE.NotifyBackgroundTextureChanged = T.dummy
@@ -118,6 +121,18 @@ end
 DXE.Alerts.Simple_ = DXE.Alerts.Simple
 DXE.Alerts.Simple = function(self, ...)
 	self:Simple_(...)
+	self:RefreshBars()
+end
+
+DXE.Alerts.DebuffPopup_ = DXE.Alerts.DebuffPopup
+DXE.Alerts.DebuffPopup = function(self, ...)
+	self:DebuffPopup_(...)
+	self:RefreshBars()
+end
+
+DXE.Alerts.Absorb_ = DXE.Alerts.Absorb
+DXE.Alerts.Absorb = function(self, ...)
+	self:Absorb_(...)
 	self:RefreshBars()
 end
 

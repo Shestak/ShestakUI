@@ -259,6 +259,7 @@ local function LoadSkin()
 		T.SkinCheckBox(ReputationDetailMainScreenCheckBox)
 		T.SkinCheckBox(ReputationDetailInactiveCheckBox)
 		T.SkinCheckBox(ReputationDetailAtWarCheckBox)
+		T.SkinCheckBox(ReputationDetailLFGBonusReputationCheckBox)
 	end
 	ReputationFrame:HookScript("OnShow", UpdateFactionSkins)
 	hooksecurefunc("ExpandFactionHeader", UpdateFactionSkins)

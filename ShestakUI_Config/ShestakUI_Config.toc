@@ -2,7 +2,7 @@
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI. Edit 1.2.3 by Oz of Pozzo dell'Eternità
 ## Author: Tohveli
-## Version: 4.36
+## Version: 4.37
 ## Credits: Elv22, Fernir, Tukz
 ## RequiredDeps: ShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
