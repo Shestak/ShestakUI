@@ -78,13 +78,15 @@ end
 --	Medusa@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
 if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
-	add("COOLDOWN", {spellID = 586, filter = "CD"})		-- Fade
-	add("COOLDOWN", {spellID = 6346, filter = "CD"})	-- Fear Ward
-	add("COOLDOWN", {spellID = 123040, filter = "CD"})	-- Mindbender
-	add("COOLDOWN", {spellID = 17, filter = "CD"})		-- Power Word: Barrier
-	add("COOLDOWN", {spellID = 34433, filter = "CD"})	-- Shadowfiend
-	add("COOLDOWN", {spellID = 15286, filter = "CD"})	-- Vampiric Embrace
-	add("COOLDOWN", {spellID = 108968, filter = "CD"})	-- Void Shift
+	add("COOLDOWN", {spellID = 586, filter = "CD"})													-- Fade
+	add("COOLDOWN", {spellID = 6346, filter = "CD"})												-- Fear Ward
+	add("COOLDOWN", {spellID = 123040, filter = "CD"})												-- Mindbender
+	add("COOLDOWN", {spellID = 17, filter = "CD"})													-- Power Word: Shield
+	add("COOLDOWN", {spellID = 34433, filter = "CD"})												-- Shadowfiend
+	add("P_BUFF_ICON", {spellID = 112833, unitID = "player", caster = "player", filter = "BUFF"})	-- Spectral Guise (buff)
+	add("COOLDOWN", {spellID = 112833, filter = "CD"})												-- Spectral Guise (cooldown)
+	add("COOLDOWN", {spellID = 15286, filter = "CD"})												-- Vampiric Embrace
+	add("COOLDOWN", {spellID = 108968, filter = "CD"})												-- Void Shift
 end
 
 -- Edit by Oz of shestakdotorg --
