@@ -57,13 +57,11 @@ local function LoadSkin()
 
 	-- LargeMap
 	local function LargeSkin()
-		if not InCombatLockdown() then
 			WorldMapFrame:SetParent(UIParent)
 			WorldMapFrame:EnableMouse(false)
 			WorldMapFrame:EnableKeyboard(false)
 			SetUIPanelAttribute(WorldMapFrame, "area", "center")
 			SetUIPanelAttribute(WorldMapFrame, "allowOtherPanels", true)
-		end
 
 		WorldMapFrame.backdrop:ClearAllPoints()
 		WorldMapFrame.backdrop:SetPoint("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 66)
@@ -78,13 +76,11 @@ local function LoadSkin()
 	end
 
 	local function QuestSkin()
-		if not InCombatLockdown() then
 			WorldMapFrame:SetParent(UIParent)
 			WorldMapFrame:EnableMouse(false)
 			WorldMapFrame:EnableKeyboard(false)
 			SetUIPanelAttribute(WorldMapFrame, "area", "center")
 			SetUIPanelAttribute(WorldMapFrame, "allowOtherPanels", true)
-		end
 
 		WorldMapFrame.backdrop:ClearAllPoints()
 		WorldMapFrame.backdrop:SetPoint("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -25, 65)
@@ -127,12 +123,10 @@ local function LoadSkin()
 			QuestSkin()
 		end
 
-		if not InCombatLockdown() then
 			WorldMapFrame:SetScale(1)
 			WorldMapFrameSizeDownButton:Show()
 			WorldMapFrame:SetFrameLevel(10)
 			WorldMapFrame:SetFrameStrata("HIGH")
-		end
 
 		WorldMapFrameAreaLabel:SetFont(C.media.normal_font, 50)
 		WorldMapFrameAreaLabel:SetShadowOffset(2, -2)
@@ -154,8 +148,6 @@ local function LoadSkin()
 	hooksecurefunc("WorldMap_ToggleSizeUp", FixSkin)
 
 	WorldMapFrame:RegisterEvent("PLAYER_LOGIN")
-	WorldMapFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
-	WorldMapFrame:RegisterEvent("PLAYER_REGEN_DISABLED")
 	WorldMapFrame:HookScript("OnEvent", function(self, event)
 		local miniWorldMap = GetCVarBool("miniWorldMap")
 
@@ -164,30 +156,6 @@ local function LoadSkin()
 				WorldMapFrame:Show()
 				WorldMapFrame:Hide()
 			end
-		--[[elseif event == "PLAYER_REGEN_DISABLED" then
-			WorldMapFrameSizeDownButton:Disable()
-			WorldMapFrameSizeUpButton:Disable()
-
-			if quest and miniWorldMap then
-				if WorldMapFrame:IsShown() then
-					HideUIPanel(WorldMapFrame)
-				end
-
-				WorldMapBlobFrame.Show = T.dummy
-
-				WatchFrame_Update()
-			end
-		elseif event == "PLAYER_REGEN_ENABLED" then
-			WorldMapFrameSizeDownButton:Enable()
-			WorldMapFrameSizeUpButton:Enable()
-
-			if quest and miniWorldMap then
-				WorldMapBlobFrame.Show = WorldMapBlobFrame:Show()
-
-				WorldMapBlobFrame:Show()
-
-				WatchFrame_Update()
-			end]]
 		end
 	end)
 
