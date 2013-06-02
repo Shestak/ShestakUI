@@ -125,6 +125,16 @@ local function LoadSkin()
 	ConquestFrame.RatedBG.SelectedTexture:SetTexture(0, 1, 0, 0.1)
 	ConquestJoinButton:SkinButton(true)
 
+	-- PvP Ready Dialog
+	PVPReadyDialog:StripTextures()
+	PVPReadyDialog:SetTemplate("Transparent")
+	PVPReadyDialog.SetBackdrop = T.dummy
+	PVPReadyDialog.filigree:SetAlpha(0)
+	PVPReadyDialog.bottomArt:SetAlpha(0)
+	PVPReadyDialogEnterBattleButton:SkinButton()
+	PVPReadyDialogLeaveQueueButton:SkinButton()
+	T.SkinCloseButton(PVPReadyDialogCloseButton, PVPReadyDialog, "-")
+
 	-- WarGamesFrame
 	WarGamesFrame:StripTextures()
 	WarGamesFrame.RightInset:StripTextures()
