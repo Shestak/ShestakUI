@@ -64,6 +64,7 @@ L_GUI_AUTOMATION_RESURRECTION = "Autorésurrection en champ de bataille"
 L_GUI_AUTOMATION_SCREENSHOT = "Prend un screenshot quand un evenement est accomplie"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
 L_GUI_AUTOMATION_CHEFS_HAT = "Auto equip Chef's Hat" -- Needs review
+L_GUI_AUTOMATION_SAFARI_HAT = "Auto equip Safari Hat" -- Needs review
 L_GUI_AUTOMATION_ACCEPT_INVITE = "Accepter automatiquement les invitations"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Décliner les duels automatiquement"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Accepter les quêtes automatiquement"

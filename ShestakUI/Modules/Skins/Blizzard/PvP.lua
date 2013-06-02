@@ -62,10 +62,9 @@ local function LoadSkin()
 	end)
 
 	-- HonorFrame
-	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
-
 	HonorFrame.Inset:StripTextures()
 	HonorFrame.RoleInset:StripTextures()
+	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
 	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
 	HonorFrameSoloQueueButton:SkinButton(true)
 	HonorFrameGroupQueueButton:SkinButton(true)
