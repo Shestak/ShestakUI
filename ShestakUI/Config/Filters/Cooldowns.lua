@@ -23,12 +23,12 @@ if C.enemycooldown.enable == true then
 	T.enemy_spells = {
 		-- Interrupts and Silences
 		[57994] = 12,	-- Wind Shear
-		[6552] = 15,	-- Pummel
-		[1766] = 15,	-- Kick
 		[47528] = 15,	-- Mind Freeze
-		[96231] = 15,	-- Rebuke
 		[80965] = 15,	-- Skull Bash
 		[116705] = 15,	-- Spear Hand Strike
+		[96231] = 15,	-- Rebuke
+		[1766] = 15,	-- Kick
+		[6552] = 15,	-- Pummel
 		[102051] = 20,	-- Frostjaw
 		[34490] = 24,	-- Silencing Shot
 		[2139] = 24,	-- Counterspell
@@ -36,8 +36,8 @@ if C.enemycooldown.enable == true then
 		[115781] = 24,	-- Optical Blast
 		[102060] = 40,	-- Disrupting Shout
 		[15487] = 45,	-- Silence
-		[78675] = 60,	-- Solar Beam
 		[47476] = 60,	-- Strangulate
+		[78675] = 60,	-- Solar Beam
 		-- Crowd Controls
 		[115078] = 15,	-- Paralysis
 		[20066] = 15,	-- Repentance
@@ -50,26 +50,26 @@ if C.enemycooldown.enable == true then
 		[30283] = 30,	-- Shadowfury
 		[107570] = 30,	-- Storm Bolt
 		[5484] = 40,	-- Howl of Terror
+		[19386] = 45,	-- Wyvern Sting
 		[113724] = 45,	-- Ring of Frost
+		[119381] = 45,	-- Leg Sweep
+		[64044] = 45,	-- Psychic Horror
 		[51514] = 45,	-- Hex
 		[6789] = 45,	-- Mortal Coil
-		[64044] = 45,	-- Psychic Horror
-		[119381] = 45,	-- Leg Sweep
-		[19386] = 45,	-- Wyvern Sting
 		[853] = 60,		-- Hammer of Justice
 		[108200] = 60,	-- Remorseless Winter
 		-- Defense abilities
 		[48707] = 45,	-- Anti-Magic Shell
-		[8143] = 60,	-- Tremor Totem
 		[31224] = 60,	-- Cloak of Shadows
+		[8143] = 60,	-- Tremor Totem
 		[46924] = 90,	-- Bladestorm
-		[19263] = 120,	-- Deterrence
-		[47585] = 120,	-- Dispersion
+		[108978] = 90,	-- Alter Time
 		[49039] = 120,	-- Lichborne
-		[1856] = 120,	-- Vanish
+		[19263] = 120,	-- Deterrence
 		[137562] = 120,	-- Nimble Brew
+		[47585] = 120,	-- Dispersion
+		[1856] = 120,	-- Vanish
 		[33206] = 180,	-- Pain Suppression
-		[108978] = 180,	-- Alter Time
 		-- Disarms
 		[51722] = 60,	-- Dismantle
 		[676] = 60,		-- Disarm
