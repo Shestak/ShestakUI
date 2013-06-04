@@ -109,9 +109,9 @@ local zones = {
 }
 
 -- Remove tooltips from Blizzard map controls
-WorldMapQuestShowObjectives:SetScript("OnEnter", nil)
+--WorldMapQuestShowObjectives:SetScript("OnEnter", nil)
 WorldMapTrackQuest:SetScript("OnEnter", nil)
-WorldMapShowDigSites:SetScript("OnEnter", nil)
+--WorldMapShowDigSites:SetScript("OnEnter", nil)
 WorldMapZoneMinimapDropDown:SetScript("OnEnter", nil)
 
 -- Initialise counters
