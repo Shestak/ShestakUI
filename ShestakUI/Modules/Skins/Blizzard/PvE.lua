@@ -266,6 +266,9 @@ local function LoadSkin()
 	RaidFinderQueueFrameSelectionDropDown:SetPoint("RIGHT", -10, 0)
 
 	T.SkinDropDownBox(ScenarioQueueFrameTypeDropDown, 300)
+	ScenarioQueueFrameSpecificScrollFrameScrollBackgroundTopLeft:Hide()
+	ScenarioQueueFrameSpecificScrollFrameScrollBackgroundBottomRight:Hide()
+	ScenarioQueueFrameRandomScrollFrameChildFrame.bonusRepFrame.ChooseButton:SkinButton()
 	ScenarioQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
 
 	T.SkinCloseButton(PVEFrameCloseButton)
