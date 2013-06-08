@@ -186,7 +186,9 @@ filter:SetScript("OnEvent", function(self, event, addon, ...)
 	if addon == "Blizzard_AchievementUI" then
 		if AchievementFrame then
 			old_nocomplete_filter_init()
-			AchievementFrameFilterDropDown:SetWidth(AchievementFrameFilterDropDown:GetWidth() + 20)
+			if C.skins.blizzard_frames == true then
+				AchievementFrameFilterDropDown:SetWidth(AchievementFrameFilterDropDown:GetWidth() + 20)
+			end
 			filter:UnregisterEvent("ADDON_LOADED")
 		end
 	end
