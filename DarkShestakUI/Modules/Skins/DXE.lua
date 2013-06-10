@@ -5,10 +5,12 @@ if C.skins.dxe ~= true or not IsAddOnLoaded("DXE") then return end
 --	DXE skin
 ----------------------------------------------------------------------------------------
 local movers = {
+	"DXEAlertsTopStackAnchor",
 	"DXEAlertsCenterStackAnchor",
 	"DXEAlertsWarningStackAnchor",
-	"DXEDistributorStackAnchor",
-	"DXEAlertsTopStackAnchor",
+	"DXEAlertsDebuffStackAnchor",
+	"DXEAlertsMessageStackAnchor",
+	"DXEAlertsInformStackAnchor",
 	"DXEArrowsAnchor1",
 	"DXEArrowsAnchor2",
 	"DXEArrowsAnchor3",
@@ -47,6 +49,7 @@ end
 local DXE = DXE
 DXE.NotifyBarTextureChanged = T.dummy
 DXE.NotifyBorderChanged = T.dummy
+DXE.NotifyFontChanged = T.dummy
 DXE.NotifyBorderColorChanged = T.dummy
 DXE.NotifyBorderEdgeSizeChanged = T.dummy
 DXE.NotifyBackgroundTextureChanged = T.dummy
@@ -118,6 +121,18 @@ end
 DXE.Alerts.Simple_ = DXE.Alerts.Simple
 DXE.Alerts.Simple = function(self, ...)
 	self:Simple_(...)
+	self:RefreshBars()
+end
+
+DXE.Alerts.DebuffPopup_ = DXE.Alerts.DebuffPopup
+DXE.Alerts.DebuffPopup = function(self, ...)
+	self:DebuffPopup_(...)
+	self:RefreshBars()
+end
+
+DXE.Alerts.Absorb_ = DXE.Alerts.Absorb
+DXE.Alerts.Absorb = function(self, ...)
+	self:Absorb_(...)
 	self:RefreshBars()
 end
 
@@ -224,9 +239,9 @@ DXE_Skin:SetScript("OnEvent", function(self, event)
 		self = nil
 
 		-- DXE doesn't like the pane timer font to listen for some reason
-		DXE.Pane.timer.left:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		DXE.Pane.timer.left:SetFont(C.font.stylization_font, C.font.stylization_font_size * 2, C.font.stylization_font_style)
 		DXE.Pane.timer.left:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
-		DXE.Pane.timer.right:SetFont(C.font.stylization_font, C.font.stylization_font_size * 1.8, C.font.stylization_font_style)
+		DXE.Pane.timer.right:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		DXE.Pane.timer.right:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 		DXEArrow1.label:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		DXEArrow1.label:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)

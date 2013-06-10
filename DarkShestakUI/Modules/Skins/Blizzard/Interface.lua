@@ -53,6 +53,7 @@ local function LoadSkin()
 		"ControlsPanelAutoClearAFK",
 		"ControlsPanelBlockTrades",
 		"ControlsPanelBlockGuildInvites",
+		"ControlsPanelBlockChatChannelInvites",
 		"ControlsPanelLootAtMouse",
 		"ControlsPanelAutoLootCorpse",
 		"ControlsPanelInteractOnLeftClick",

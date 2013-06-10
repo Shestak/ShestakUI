@@ -91,6 +91,7 @@ local function Local(o)
 	if o == "UIConfigautomationscreenshot" then o = L_GUI_AUTOMATION_SCREENSHOT end
 	if o == "UIConfigautomationsolve_artifact" then o = L_GUI_AUTOMATION_SOLVE_ARTIFACT end
 	if o == "UIConfigautomationchefs_hat" then o = L_GUI_AUTOMATION_CHEFS_HAT end
+	if o == "UIConfigautomationsafari_hat" then o = L_GUI_AUTOMATION_SAFARI_HAT end
 	if o == "UIConfigautomationaccept_invite" then o = L_GUI_AUTOMATION_ACCEPT_INVITE end
 	if o == "UIConfigautomationdecline_duel" then o = L_GUI_AUTOMATION_DECLINE_DUEL end
 	if o == "UIConfigautomationaccept_quest" then o = L_GUI_AUTOMATION_ACCEPT_QUEST end

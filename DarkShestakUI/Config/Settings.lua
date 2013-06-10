@@ -94,6 +94,7 @@ C["automation"] = {
 	["screenshot"] = false,						-- Take screenshot when player get achievement
 	["solve_artifact"] = true,					-- Auto popup for solve artifact
 	["chefs_hat"] = true,						-- Auto equip Chef's Hat
+	["safari_hat"] = true,						-- Auto equip Safari Hat
 	["accept_invite"] = false,					-- Auto accept invite
 	["decline_duel"] = true,					-- Auto decline duel
 	["accept_quest"] = false,					-- Auto accept quests(if hold shift or alt, auto accept is disable)

@@ -175,7 +175,7 @@ end
 
 function T.SkinNextPrevButton(btn, horizonal)
 	local normal, pushed, disabled
-	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement"))
+	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back"))
 
 	if btn:GetNormalTexture() then
 		normal = btn:GetNormalTexture():GetTexture()

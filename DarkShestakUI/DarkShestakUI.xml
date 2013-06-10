@@ -113,6 +113,7 @@
 
 	<Script file="Modules\Automation\AchScreens.lua"/>
 	<Script file="Modules\Automation\AutoChefsHat.lua"/>
+	<Script file="Modules\Automation\AutoSafariHat.lua"/>
 	<Script file="Modules\Automation\AutoInvite.lua"/>
 	<Script file="Modules\Automation\AutoRelease.lua"/>
 	<Script file="Modules\Automation\BuffOnScroll.lua"/>

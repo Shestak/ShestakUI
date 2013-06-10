@@ -105,16 +105,25 @@ local function STHookFrame(fname)
 	local prevtab
 	local frametabs = {}
 
+	-- PVP tab
+	frametabs["PVPUIFrame"] = CreateFrame("CheckButton", "PVPSideTab", frame, "SpellBookSkillLineTabTemplate")
+	SkinTab(frametabs["PVPUIFrame"], "Interface\\BattlefieldFrame\\UI-Battlefield-Icon")
+	if IsAddOnLoaded("Aurora") then
+		frametabs["PVPUIFrame"]:SetPoint("TOPLEFT", frame, "TOPRIGHT", 11, -35)
+	elseif C.skins.blizzard_frames == true then
+		frametabs["PVPUIFrame"]:SetPoint("TOPLEFT", frame, "TOPRIGHT", 1, 0)
+	else
+		frametabs["PVPUIFrame"]:SetPoint("TOPLEFT", frame, "TOPRIGHT", 0, -30)
+	end
+	frametabs["PVPUIFrame"].tooltip = PLAYER_V_PLAYER
+	frametabs["PVPUIFrame"].ToggleFrame = "PVPUIFrame"
+	frametabs["PVPUIFrame"]:SetScript("OnClick", Tab_OnClick)
+	prevtab = frametabs["PVPUIFrame"]
+
 	-- PvE tab
 	frametabs["PVEFrame"] = CreateFrame("CheckButton", "LFDSideTab", frame, "SpellBookSkillLineTabTemplate")
 	SkinTab(frametabs["PVEFrame"], "Interface\\Icons\\INV_Helmet_08")
-	if IsAddOnLoaded("Aurora") then
-		frametabs["PVEFrame"]:SetPoint("TOPLEFT", frame, "TOPRIGHT", 11, -35)
-	elseif C.skins.blizzard_frames == true then
-		frametabs["PVEFrame"]:SetPoint("TOPLEFT", frame, "TOPRIGHT", 1, 0)
-	else
-		frametabs["PVEFrame"]:SetPoint("TOPLEFT", frame, "TOPRIGHT", 0, -30)
-	end
+	frametabs["PVEFrame"]:SetPoint("TOPLEFT", prevtab, "BOTTOMLEFT", 0, -15)
 	frametabs["PVEFrame"].tooltip = LOOKING_FOR_DUNGEON
 	frametabs["PVEFrame"].ToggleFrame = "PVEFrame"
 	frametabs["PVEFrame"]:SetScript("OnClick", Tab_OnClick)
@@ -129,17 +138,8 @@ local function STHookFrame(fname)
 	frametabs["RaidBrowserFrame"]:SetScript("OnClick", Tab_OnClick)
 	prevtab = frametabs["RaidBrowserFrame"]
 
-	-- PVP tab
-	frametabs["PVPUIFrame"] = CreateFrame("CheckButton", "PVPSideTab", frame, "SpellBookSkillLineTabTemplate")
-	SkinTab(frametabs["PVPUIFrame"], "Interface\\BattlefieldFrame\\UI-Battlefield-Icon")
-	frametabs["PVPUIFrame"]:SetPoint("TOPLEFT", prevtab, "BOTTOMLEFT", 0, -15)
-	frametabs["PVPUIFrame"].tooltip = PLAYER_V_PLAYER
-	frametabs["PVPUIFrame"].ToggleFrame = "PVPUIFrame"
-	frametabs["PVPUIFrame"]:SetScript("OnClick", Tab_OnClick)
-	prevtab = frametabs["PVPUIFrame"]
-
 	if fname == "RaidBrowserFrame" then
-		LFRParentFrameSideTab1:SetPoint("TOPLEFT", frametabs["PVPUIFrame"], "BOTTOMLEFT", 0, -15)
+		LFRParentFrameSideTab1:SetPoint("TOPLEFT", frametabs["PVEFrame"], "BOTTOMLEFT", 0, -15)
 	end
 
 	TabRefArray[fname] = frametabs

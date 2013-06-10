@@ -31,7 +31,7 @@ frame:SetScript("OnEvent", check)
 RegisterAddonMessagePrefix("DarkShestakUIVer")
 
 ----------------------------------------------------------------------------------------
---	Whisp UI version
+--	Whisper UI version
 ----------------------------------------------------------------------------------------
 local whisp = CreateFrame("Frame")
 whisp:RegisterEvent("CHAT_MSG_WHISPER")
