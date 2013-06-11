@@ -24,6 +24,7 @@ local function LoadSkin()
 
 	LFRBrowseFrame:StripTextures()
 	LFRBrowseFrameRoleInset:StripTextures()
+	LFRQueueFrameSpecificListScrollFrame:StripTextures()
 
 	LFRQueueFrameFindGroupButton:SetPoint("BOTTOMLEFT", RaidBrowserFrame, "BOTTOMLEFT", 9, 4)
 	LFRQueueFrameAcceptCommentButton:SetPoint("BOTTOMRIGHT", RaidBrowserFrame, "BOTTOMRIGHT", -9, 4)
