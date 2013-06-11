@@ -15,7 +15,7 @@ frame:SetScript("OnEvent", function(self, event)
 			for j, baditem in pairs(T.AnnounceBadGear[i]) do
 				if item[i] == baditem then
 					PlaySound("RaidWarning", "master")
-					RaidNotice_AddMessage(RaidWarningFrame, string.format("%s %s", CURRENTLY_EQUIPPED, .."["GetItemInfo(item[i]).."]!!!"), ChatTypeInfo["RAID_WARNING"])
+					RaidNotice_AddMessage(RaidWarningFrame, string.format("%s %s", CURRENTLY_EQUIPPED, GetItemInfo(item[i]).."!!!"), ChatTypeInfo["RAID_WARNING"])
 					print(string.format("|cffffff00%s %s", CURRENTLY_EQUIPPED, GetItemInfo(item[i]).."!!!|r"))
 				end
 			end

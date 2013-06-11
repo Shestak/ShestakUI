@@ -88,6 +88,11 @@ local function LoadSkin()
 		b.SelectedTexture:SetTexture(0, 1, 0, 0.1)
 	end
 
+	for _, b in pairs(HonorFrame.SpecificFrame.buttons) do
+		b:SetHighlightTexture("")
+		b.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+	end
+
 	for _, roleButton in pairs({HonorFrame.RoleInset.HealerIcon, HonorFrame.RoleInset.TankIcon, HonorFrame.RoleInset.DPSIcon}) do
 		roleButton.checkButton:SetFrameLevel(roleButton:GetFrameLevel() + 2)
 		T.SkinCheckBox(roleButton.checkButton)
@@ -132,6 +137,16 @@ local function LoadSkin()
 	WarGamesFrameDescription:SetTextColor(1, 1, 1)
 	WarGamesFrameDescription:SetFont(C.media.normal_font, 13)
 	WarGamesFrameDescription:SetShadowOffset(1, -1)
+
+	for _, btn in pairs(WarGamesFrame.scrollFrame.buttons) do
+		local bu = btn.Entry
+		bu:SetSize(307, 38)
+		bu:SkinButton(true)
+		bu.SelectedTexture:SetDrawLayer("ARTWORK")
+		bu.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		bu.SelectedTexture:SetPoint("TOPLEFT", 0, 0)
+		bu.SelectedTexture:SetPoint("BOTTOMRIGHT", 0, 0)
+	end
 
 	-- ArenaTeamFrame
 	PVPArenaTeamsFrame:StripTextures()
