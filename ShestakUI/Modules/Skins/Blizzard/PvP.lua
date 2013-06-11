@@ -62,42 +62,35 @@ local function LoadSkin()
 	end)
 
 	-- HonorFrame
-	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
-
 	HonorFrame.Inset:StripTextures()
 	HonorFrame.RoleInset:StripTextures()
+	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
 	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
 	HonorFrameSoloQueueButton:SkinButton(true)
 	HonorFrameGroupQueueButton:SkinButton(true)
 	HonorFrame.BonusFrame:StripTextures()
+	HonorFrame.BonusFrame.DiceButton:SkinButton()
 	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
-	HonorFrame.BonusFrame.RandomBGButton:StripTextures()
-	HonorFrame.BonusFrame.RandomBGButton:CreateBackdrop("Overlay")
-	HonorFrame.BonusFrame.RandomBGButton.backdrop:SetPoint("TOPLEFT", 2, -2)
-	HonorFrame.BonusFrame.RandomBGButton.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+	HonorFrame.BonusFrame.RandomBGButton:SkinButton(true)
 	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:ClearAllPoints()
-	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:SetPoint("TOPLEFT", 4, -4)
-	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:SetPoint("BOTTOMRIGHT", -4, 4)
+	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:SetAllPoints()
 	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:SetTexture(0, 1, 0, 0.1)
-	HonorFrame.BonusFrame.CallToArmsButton:StripTextures()
-	HonorFrame.BonusFrame.CallToArmsButton:CreateBackdrop("Overlay")
-	HonorFrame.BonusFrame.CallToArmsButton.backdrop:SetPoint("TOPLEFT", 2, -2)
-	HonorFrame.BonusFrame.CallToArmsButton.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+	HonorFrame.BonusFrame.CallToArmsButton:SkinButton(true)
 	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:ClearAllPoints()
-	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetPoint("TOPLEFT", 4, -4)
-	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetPoint("BOTTOMRIGHT", -4, 4)
+	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetAllPoints()
 	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetTexture(0, 1, 0, 0.1)
 
 	for i = 1, 2 do
 		local b = HonorFrame.BonusFrame["WorldPVP"..i.."Button"]
-		b:StripTextures()
-		b:CreateBackdrop("Overlay")
-		b.backdrop:SetPoint("TOPLEFT", 2, -3)
-		b.backdrop:SetPoint("BOTTOMRIGHT", -2, 3)
+		b:SkinButton(true)
 		b.SelectedTexture:ClearAllPoints()
-		b.SelectedTexture:SetPoint("TOPLEFT", 4, -5)
-		b.SelectedTexture:SetPoint("BOTTOMRIGHT", -4, 5)
+		b.SelectedTexture:SetAllPoints()
 		b.SelectedTexture:SetTexture(0, 1, 0, 0.1)
+	end
+
+	for _, b in pairs(HonorFrame.SpecificFrame.buttons) do
+		b:SetHighlightTexture("")
+		b.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
 	end
 
 	for _, roleButton in pairs({HonorFrame.RoleInset.HealerIcon, HonorFrame.RoleInset.TankIcon, HonorFrame.RoleInset.DPSIcon}) do
@@ -118,12 +111,21 @@ local function LoadSkin()
 	ConquestPointsBar.backdrop:SetPoint("BOTTOMRIGHT", ConquestPointsBar, "BOTTOMRIGHT", 2, 1)
 	ConquestFrame:StripTextures()
 	ConquestFrame.ShadowOverlay:StripTextures()
-	ConquestFrame.RatedBG:StripTextures()
-	ConquestFrame.RatedBG:SkinButton()
+	ConquestFrame.RatedBG:SkinButton(true)
 	ConquestFrame.RatedBG.SelectedTexture:ClearAllPoints()
 	ConquestFrame.RatedBG.SelectedTexture:SetAllPoints()
 	ConquestFrame.RatedBG.SelectedTexture:SetTexture(0, 1, 0, 0.1)
 	ConquestJoinButton:SkinButton(true)
+
+	-- PvP Ready Dialog
+	PVPReadyDialog:StripTextures()
+	PVPReadyDialog:SetTemplate("Transparent")
+	PVPReadyDialog.SetBackdrop = T.dummy
+	PVPReadyDialog.filigree:SetAlpha(0)
+	PVPReadyDialog.bottomArt:SetAlpha(0)
+	PVPReadyDialogEnterBattleButton:SkinButton()
+	PVPReadyDialogLeaveQueueButton:SkinButton()
+	T.SkinCloseButton(PVPReadyDialogCloseButton, PVPReadyDialog, "-")
 
 	-- WarGamesFrame
 	WarGamesFrame:StripTextures()
@@ -135,6 +137,16 @@ local function LoadSkin()
 	WarGamesFrameDescription:SetTextColor(1, 1, 1)
 	WarGamesFrameDescription:SetFont(C.media.normal_font, 13)
 	WarGamesFrameDescription:SetShadowOffset(1, -1)
+
+	for _, btn in pairs(WarGamesFrame.scrollFrame.buttons) do
+		local bu = btn.Entry
+		bu:SetSize(307, 38)
+		bu:SkinButton(true)
+		bu.SelectedTexture:SetDrawLayer("ARTWORK")
+		bu.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		bu.SelectedTexture:SetPoint("TOPLEFT", 0, 0)
+		bu.SelectedTexture:SetPoint("BOTTOMRIGHT", 0, 0)
+	end
 
 	-- ArenaTeamFrame
 	PVPArenaTeamsFrame:StripTextures()
@@ -155,8 +167,7 @@ local function LoadSkin()
 
 	for i = 1, 3 do
 		local b = ARENA_BUTTONS[i]
-		b:StripTextures()
-		b:SkinButton()
+		b:SkinButton(true)
 		b.SelectedTexture:ClearAllPoints()
 		b.SelectedTexture:SetAllPoints()
 		b.SelectedTexture:SetTexture(0, 1, 0, 0.1)

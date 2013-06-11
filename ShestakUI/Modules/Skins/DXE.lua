@@ -239,9 +239,9 @@ DXE_Skin:SetScript("OnEvent", function(self, event)
 		self = nil
 
 		-- DXE doesn't like the pane timer font to listen for some reason
-		DXE.Pane.timer.left:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
+		DXE.Pane.timer.left:SetFont(C.font.stylization_font, C.font.stylization_font_size * 2, C.font.stylization_font_style)
 		DXE.Pane.timer.left:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
-		DXE.Pane.timer.right:SetFont(C.font.stylization_font, C.font.stylization_font_size * 1.8, C.font.stylization_font_style)
+		DXE.Pane.timer.right:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		DXE.Pane.timer.right:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 		DXEArrow1.label:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		DXEArrow1.label:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)

@@ -109,9 +109,7 @@ local zones = {
 }
 
 -- Remove tooltips from Blizzard map controls
-WorldMapQuestShowObjectives:SetScript("OnEnter", nil)
 WorldMapTrackQuest:SetScript("OnEnter", nil)
-WorldMapShowDigSites:SetScript("OnEnter", nil)
 WorldMapZoneMinimapDropDown:SetScript("OnEnter", nil)
 
 -- Initialise counters
@@ -148,7 +146,7 @@ frame:SetScript("OnClick", function()
 	else
 		SavedOptionsPerChar.FogOfWar = false
 		if texcount > 0 then
-			for i = 1, texcount do MapTex[i]:Hide()	end
+			for i = 1, texcount do MapTex[i]:Hide() end
 			texcount = 0
 			if WorldMapFrame:IsShown() then
 				RefreshWorldMap()

@@ -132,11 +132,14 @@ local function LoadSkin()
 
 	-- Help Browser
 	T.SkinRotateButton(HelpBrowserNavHome)
-	T.SkinRotateButton(HelpBrowserNavBack)
-	T.SkinRotateButton(HelpBrowserNavForward)
+	T.SkinNextPrevButton(HelpBrowserNavBack)
+	T.SkinNextPrevButton(HelpBrowserNavForward)
 	T.SkinRotateButton(HelpBrowserNavReload)
 	T.SkinRotateButton(HelpBrowserNavStop)
 	T.SkinRotateButton(HelpBrowserBrowserSettings)
+
+	HelpBrowserNavBack:SetSize(18, 18)
+	HelpBrowserNavForward:SetSize(18, 18)
 
 	HelpBrowserNavHome:SetPoint("BOTTOMLEFT", HelpBrowser, "TOPLEFT", 1, 5)
 	HelpBrowserBrowserSettings:SetPoint("TOPRIGHT", HelpFrameCloseButton, "BOTTOMLEFT", -4, -1)
