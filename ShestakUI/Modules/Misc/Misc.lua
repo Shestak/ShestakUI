@@ -3,7 +3,7 @@
 ----------------------------------------------------------------------------------------
 --	Force readycheck warning
 ----------------------------------------------------------------------------------------
-local ShowReadyCheckHook = function(self, initiator, timeLeft)
+local ShowReadyCheckHook = function(self, initiator)
 	if initiator ~= "player" then
 		PlaySound("ReadyCheck", "Master")
 	end
