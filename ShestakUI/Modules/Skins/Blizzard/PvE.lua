@@ -72,7 +72,6 @@ local function LoadSkin()
 	}
 
 	for _, object in pairs(checkButtons) do
-		_G[object].checkButton:SetFrameLevel(_G[object].checkButton:GetFrameLevel() + 2)
 		T.SkinCheckBox(_G[object].checkButton)
 	end
 
