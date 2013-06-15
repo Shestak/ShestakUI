@@ -16,11 +16,10 @@ local function LoadSkin()
 	EmptyQuestLogFrame:StripTextures()
 	QuestLogScrollFrame:StripTextures(true)
 
-	QuestLogFrameShowMapButton:StripTextures()
-	QuestLogFrameShowMapButton:SkinButton()
+	QuestLogFrameShowMapButton:SkinButton(true)
 	QuestLogFrameShowMapButton.text:ClearAllPoints()
-	QuestLogFrameShowMapButton.text:SetPoint("CENTER", 1, 0)
-	QuestLogFrameShowMapButton:SetSize(QuestLogFrameShowMapButton:GetWidth() - 30, QuestLogFrameShowMapButton:GetHeight(), - 40)
+	QuestLogFrameShowMapButton.text:SetPoint("CENTER", T.mult, 0)
+	QuestLogFrameShowMapButton:SetSize(QuestLogFrameShowMapButton:GetWidth() - 30, QuestLogFrameShowMapButton:GetHeight() - 5)
 
 	local buttons = {
 		"QuestLogFrameAbandonButton",

@@ -204,8 +204,7 @@ local function LoadSkin()
 	for i = 1, #COMBAT_CONFIG_TABS do
 		local tab = _G["CombatConfigTab"..i]
 		if tab then
-			tab:StripTextures()
-			tab:SkinButton()
+			tab:SkinButton(true)
 			tab:SetHeight(tab:GetHeight() - 9)
 			tab:ClearAllPoints()
 			if i == 1 then

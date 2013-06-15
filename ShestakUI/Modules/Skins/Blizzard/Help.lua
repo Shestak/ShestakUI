@@ -93,7 +93,7 @@ local function LoadSkin()
 		local b = _G[buttons[i]]
 		local t = _G[buttons[i].."Selected"]
 
-		b:SkinButton(false)
+		b:SkinButton()
 
 		if b.text then
 			b.text:SetFont(C.media.normal_font, 13)
@@ -111,7 +111,7 @@ local function LoadSkin()
 		local b = _G["HelpFrameButton"..i]
 		local t = _G["HelpFrameButton"..i.."Selected"]
 
-		b:SkinButton(false)
+		b:SkinButton()
 
 		b.text:SetFont(C.media.normal_font, 13)
 

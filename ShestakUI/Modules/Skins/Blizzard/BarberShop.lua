@@ -13,8 +13,7 @@ local function LoadSkin()
 	BarberShopFrameOkayButton:SetPoint("RIGHT", BarberShopFrameSelector4, "BOTTOM", 2, -50)
 
 	for i = 1, #buttons do
-		_G[buttons[i]]:StripTextures()
-		_G[buttons[i]]:SkinButton()
+		_G[buttons[i]]:SkinButton(true)
 	end
 
 	for i = 1, 4 do
