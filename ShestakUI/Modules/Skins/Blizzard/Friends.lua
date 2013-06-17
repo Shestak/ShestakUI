@@ -252,8 +252,7 @@ local function LoadSkin()
 			local button = _G["ChannelButton"..i]
 
 			if button then
-				button:StripTextures()
-				button:SetHighlightTexture("Interface\\PaperDollInfoFrame\\UI-Character-Tab-Highlight")
+				button:SkinButton(true)
 			end
 		end
 	end

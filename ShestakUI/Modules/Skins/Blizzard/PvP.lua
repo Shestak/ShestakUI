@@ -93,8 +93,7 @@ local function LoadSkin()
 		b.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
 	end
 
-	for _, roleButton in pairs({HonorFrame.RoleInset.HealerIcon, HonorFrame.RoleInset.TankIcon, HonorFrame.RoleInset.DPSIcon}) do
-		roleButton.checkButton:SetFrameLevel(roleButton:GetFrameLevel() + 2)
+	for _, roleButton in pairs{HonorFrame.RoleInset.TankIcon, HonorFrame.RoleInset.HealerIcon, HonorFrame.RoleInset.DPSIcon} do
 		T.SkinCheckBox(roleButton.checkButton)
 	end
 

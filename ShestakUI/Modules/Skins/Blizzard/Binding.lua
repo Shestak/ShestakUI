@@ -13,8 +13,7 @@ local function LoadSkin()
 	}
 
 	for _, v in pairs(buttons) do
-		_G[v]:StripTextures()
-		_G[v]:SkinButton()
+		_G[v]:SkinButton(true)
 	end
 
 	T.SkinCheckBox(KeyBindingFrameCharacterButton)

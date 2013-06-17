@@ -49,15 +49,14 @@ local function LoadSkin()
 	end
 
 	for i = 1, #buttons do
-		_G[buttons[i]]:StripTextures()
-		_G[buttons[i]]:SkinButton()
+		_G[buttons[i]]:SkinButton(true)
 	end
 
 	ClassTrainerFrame:CreateBackdrop("Transparent")
 	ClassTrainerFrame.backdrop:SetPoint("TOPLEFT", ClassTrainerFrame, "TOPLEFT")
 	ClassTrainerFrame.backdrop:SetPoint("BOTTOMRIGHT", ClassTrainerFrame, "BOTTOMRIGHT")
 
-	T.SkinDropDownBox(ClassTrainerFrameFilterDropDown, 155)
+	T.SkinDropDownBox(ClassTrainerFrameFilterDropDown)
 	ClassTrainerFrameFilterDropDown:ClearAllPoints()
 	ClassTrainerFrameFilterDropDown:SetPoint("TOPRIGHT", ClassTrainerFrame.backdrop, "TOPRIGHT", 4, -30)
 

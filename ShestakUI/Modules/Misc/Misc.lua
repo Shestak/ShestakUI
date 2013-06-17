@@ -3,12 +3,26 @@
 ----------------------------------------------------------------------------------------
 --	Force readycheck warning
 ----------------------------------------------------------------------------------------
-local ShowReadyCheckHook = function(self, initiator, timeLeft)
+local ShowReadyCheckHook = function(self, initiator)
 	if initiator ~= "player" then
 		PlaySound("ReadyCheck", "Master")
 	end
 end
 hooksecurefunc("ShowReadyCheck", ShowReadyCheckHook)
+
+----------------------------------------------------------------------------------------
+--	Misclicks for some popups
+----------------------------------------------------------------------------------------
+StaticPopupDialogs.RESURRECT.hideOnEscape = nil
+StaticPopupDialogs.PARTY_INVITE.hideOnEscape = nil
+StaticPopupDialogs.PARTY_INVITE_XREALM.hideOnEscape = nil
+StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = nil
+StaticPopupDialogs.ADDON_ACTION_FORBIDDEN.button1 = nil
+StaticPopupDialogs.TOO_MANY_LUA_ERRORS.button1 = nil
+PetBattleQueueReadyFrame.hideOnEscape = nil
+PVPReadyDialog.leaveButton:Hide()
+PVPReadyDialog.enterButton:ClearAllPoints()
+PVPReadyDialog.enterButton:SetPoint("BOTTOM", PVPReadyDialog, "BOTTOM", 0, 25)
 
 ----------------------------------------------------------------------------------------
 --	Spin camera while afk(by Telroth and Eclipse)
@@ -70,6 +84,23 @@ if C.general.custom_lagtolerance == true then
 	customlag:SetScript("OnUpdate", LatencyUpdate)
 	LatencyUpdate(customlag, 10)
 end
+
+----------------------------------------------------------------------------------------
+--	Auto select current event boss from LFD tool(EventBossAutoSelect by Nathanyel)
+----------------------------------------------------------------------------------------
+local firstLFD
+LFDParentFrame:HookScript("OnShow", function()
+	if not firstLFD then
+		firstLFD = 1
+		for i = 1, GetNumRandomDungeons() do
+			local id = GetLFGRandomDungeonInfo(i)
+			local isHoliday = select(15, GetLFGDungeonInfo(id))
+			if isHoliday and not GetLFGDungeonRewards(id) then
+				LFDQueueFrame_SetType(id)
+			end
+		end
+	end
+end)
 
 ----------------------------------------------------------------------------------------
 --	Remove Boss Emote spam during BG(ArathiBasin SpamFix by Partha)
@@ -150,18 +181,6 @@ gtframe:SetScript("OnClick", function()
 		LookingForGuildFrame_Toggle()
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	Misclicks for some popups
-----------------------------------------------------------------------------------------
-StaticPopupDialogs.RESURRECT.hideOnEscape = nil
-StaticPopupDialogs.PARTY_INVITE.hideOnEscape = nil
-StaticPopupDialogs.PARTY_INVITE_XREALM.hideOnEscape = nil
-StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = nil
-StaticPopupDialogs.CONFIRM_BATTLEFIELD_ENTRY.button2 = nil
-StaticPopupDialogs.ADDON_ACTION_FORBIDDEN.button1 = nil
-StaticPopupDialogs.TOO_MANY_LUA_ERRORS.button1 = nil
-PetBattleQueueReadyFrame.hideOnEscape = nil
 
 ----------------------------------------------------------------------------------------
 --	Old achievements filter
