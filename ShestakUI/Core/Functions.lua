@@ -150,7 +150,7 @@ local tabs = {
 	"Right",
 }
 
-function T.SkinTab(tab)
+function T.SkinTab(tab, bg)
 	if not tab then return end
 
 	for _, object in pairs(tabs) do
@@ -167,10 +167,16 @@ function T.SkinTab(tab)
 	end
 
 	tab.backdrop = CreateFrame("Frame", nil, tab)
-	tab.backdrop:SetTemplate("Transparent")
 	tab.backdrop:SetFrameLevel(tab:GetFrameLevel() - 1)
-	tab.backdrop:SetPoint("TOPLEFT", 10, -3)
-	tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 3)
+	if bg then
+		tab.backdrop:SetTemplate("Overlay")
+		tab.backdrop:SetPoint("TOPLEFT", 3, -7)
+		tab.backdrop:SetPoint("BOTTOMRIGHT", -3, 2)
+	else
+		tab.backdrop:SetTemplate("Transparent")
+		tab.backdrop:SetPoint("TOPLEFT", 10, -3)
+		tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 3)
+	end
 end
 
 function T.SkinNextPrevButton(btn, horizonal)
