@@ -156,6 +156,9 @@ local function LoadSkin()
 		end
 	end
 
+	_G["Graphics_Quality"].SetBackdrop = T.dummy
+	_G["Graphics_RightQuality"]:StripTextures()
+
 	LoopbackVUMeter:CreateBackdrop("Overlay")
 	LoopbackVUMeter:SetFrameLevel(LoopbackVUMeter:GetFrameLevel() + 1)
 	LoopbackVUMeter.backdrop:SetPoint("TOPLEFT", -4, 4)
