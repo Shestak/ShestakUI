@@ -774,8 +774,6 @@ C["filger_spells"] = {
 			{spellID = 53351, filter = "CD"},
 			-- Glaive Toss
 			{spellID = 117050, filter = "CD"},
-			-- Blink Strike
-			{spellID = 130392, filter = "CD"},
 			-- Disengage
 			{spellID = 781, filter = "CD"},
 			-- Dire Beast
