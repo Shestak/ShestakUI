@@ -1,9 +1,21 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.map.enable ~= true or IsAddOnLoaded("Aurora") then return end
+
+----------------------------------------------------------------------------------------
+--	Floors scroll
+----------------------------------------------------------------------------------------
+WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
+	local level = GetCurrentMapDungeonLevel() - delta
+	if level >= 1 and level <= GetNumDungeonMapLevels() then
+		SetDungeonMapLevel(level)
+		PlaySound("UChatScrollButton")
+	end
+end)
 
 ----------------------------------------------------------------------------------------
 --	WorldMap style(m_Map by Monolit)
 ----------------------------------------------------------------------------------------
+if C.map.enable ~= true or IsAddOnLoaded("Aurora") then return end
+
 WORLDMAP_WINDOWED_SIZE = C.map.scale
 
 local mapbg = CreateFrame("Frame", nil, WorldMapDetailFrame)
@@ -144,16 +156,5 @@ coords:SetScript("OnUpdate", function(self, elapsed)
 		end
 
 		int = 0
-	end
-end)
-
-----------------------------------------------------------------------------------------
---	Floors scroll
-----------------------------------------------------------------------------------------
-WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
-	local level = GetCurrentMapDungeonLevel() - delta
-	if level >= 1 and level <= GetNumDungeonMapLevels() then
-		SetDungeonMapLevel(level)
-		PlaySound("UChatScrollButton")
 	end
 end)
