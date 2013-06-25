@@ -119,7 +119,8 @@ button2:SetScript("OnEnter", function()
 	if not total_cash then
 		total_cash = 0
 		for index = 0, GetInboxNumItems() do
-			total_cash = total_cash + select(5, GetInboxHeaderInfo(index))
+			local _, _, _, _, money = GetInboxHeaderInfo(index)
+			total_cash = total_cash + money
 		end
 	end
 	GameTooltip:SetOwner(button, "ANCHOR_RIGHT")
