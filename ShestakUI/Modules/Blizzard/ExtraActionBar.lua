@@ -4,9 +4,13 @@ if C.actionbar.enable ~= true then return end
 ------------------------------------------------------------------------------------------
 --	Make ExtraActionBarFrame movable(use macro /click ExtraActionButton1)
 ------------------------------------------------------------------------------------------
-ExtraActionBarFrame:SetParent(UIParent)
+local anchor = CreateFrame("Frame", nil, UIParent)
+anchor:SetPoint(unpack(C.position.extra_button))
+anchor:SetSize(ExtraActionBarFrame:GetSize())
+
+ExtraActionBarFrame:SetParent(anchor)
 ExtraActionBarFrame:ClearAllPoints()
-ExtraActionBarFrame:SetPoint(unpack(C.position.extra_button))
+ExtraActionBarFrame:SetPoint("CENTER", anchor, "CENTER")
 ExtraActionBarFrame:SetMovable(true)
 ExtraActionBarFrame:SetUserPlaced(true)
 ExtraActionBarFrame:SetFrameStrata("MEDIUM")
@@ -22,7 +26,7 @@ ExtraActionBarFrame:SetScript("OnMouseUp", function()
 	ExtraActionBarFrame:StopMovingOrSizing()
 end)
 
-RegisterStateDriver(ExtraActionBarFrame, "visibility", "[petbattle] hide; show")
+RegisterStateDriver(anchor, "visibility", "[petbattle] hide; show")
 ------------------------------------------------------------------------------------------
 --	Skin ExtraActionBarFrame(by Zork)
 ------------------------------------------------------------------------------------------
