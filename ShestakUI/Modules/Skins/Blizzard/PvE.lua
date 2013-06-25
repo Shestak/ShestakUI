@@ -164,7 +164,7 @@ local function LoadSkin()
 		end
 	end)
 
-	for i = 1, 1 do
+	for i = 1, LFD_MAX_REWARDS do
 		local button = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i]
 		local icon = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."IconTexture"]
 		local count = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."Count"]
@@ -197,7 +197,7 @@ local function LoadSkin()
 	end
 
 	hooksecurefunc("ScenarioQueueFrameRandom_UpdateFrame", function()
-		for i = 1, 2 do
+		for i = 1, LFD_MAX_REWARDS do
 			local button = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i]
 			local icon = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i.."IconTexture"]
 			local count = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i.."Count"]
