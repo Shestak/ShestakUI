@@ -10,8 +10,7 @@ local animScale, iconSize, holdTime, threshold = C.pulsecooldown.anim_scale, C.p
 local cooldowns, animating, watching = {}, {}, {}
 
 local anchor = CreateFrame("Frame", "DCPAnchor", UIParent)
-anchor:SetWidth(C.pulsecooldown.size)
-anchor:SetHeight(C.pulsecooldown.size)
+anchor:SetSize(C.pulsecooldown.size, C.pulsecooldown.size)
 anchor:SetPoint(unpack(C.position.pulse_cooldown))
 
 local frame = CreateFrame("Frame", "DCPFrame", anchor)
@@ -22,7 +21,7 @@ frame:SetBackdrop({
 })
 frame:SetBackdropBorderColor(unpack(C.media.border_color))
 frame:SetBackdropColor(unpack(C.media.backdrop_color))
-frame:SetPoint("CENTER", anchor, "CENTER", 0, 0)
+frame:SetPoint("CENTER", anchor, "CENTER")
 
 local icon = frame:CreateTexture(nil, "ARTWORK")
 icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

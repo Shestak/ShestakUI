@@ -66,7 +66,7 @@ local function LoadSkin()
 
 	-- Tabs
 	for i = 1, 3 do
-		_G["LookingForGuildFrameTab"..i]:StripTextures()
+		T.SkinTab(_G["LookingForGuildFrameTab"..i], true)
 	end
 end
 

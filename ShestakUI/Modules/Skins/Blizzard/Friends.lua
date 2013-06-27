@@ -244,7 +244,7 @@ local function LoadSkin()
 	end
 
 	for i = 1, 3 do
-		_G["FriendsTabHeaderTab"..i]:StripTextures()
+		T.SkinTab(_G["FriendsTabHeaderTab"..i], true)
 	end
 
 	local function Channel()

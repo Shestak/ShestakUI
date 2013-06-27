@@ -19,16 +19,29 @@ local function LoadSkin()
 		"AudioOptionsSoundPanelPlayback",
 		"AudioOptionsSoundPanelHardware",
 		"AudioOptionsSoundPanelVolume",
-		"AudioOptionsVoicePanel",
-		"AudioOptionsVoicePanelTalking",
-		"AudioOptionsVoicePanelBinding",
-		"AudioOptionsVoicePanelListening"
+		"AudioOptionsVoicePanel"
 	}
 
 	for i = 1, getn(frames) do
 		local frame = _G[frames[i]]
 		if frame then
 			frame:SetTemplate("Overlay")
+		end
+	end
+
+	local voice = {
+		"AudioOptionsVoicePanelTalking",
+		"AudioOptionsVoicePanelBinding",
+		"AudioOptionsVoicePanelListening"
+	}
+
+	for i = 1, getn(voice) do
+		local frame = _G[voice[i]]
+		if frame then
+			frame:StripTextures()
+			frame:CreateBackdrop("Overlay")
+			frame.backdrop:SetPoint("TOPLEFT", -1, 0)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", 0, 1)
 		end
 	end
 
@@ -146,6 +159,11 @@ local function LoadSkin()
 	_G["Graphics_Quality"].SetBackdrop = T.dummy
 	_G["Graphics_RightQuality"]:StripTextures()
 
+	LoopbackVUMeter:CreateBackdrop("Overlay")
+	LoopbackVUMeter:SetFrameLevel(LoopbackVUMeter:GetFrameLevel() + 1)
+	LoopbackVUMeter.backdrop:SetPoint("TOPLEFT", -4, 4)
+	LoopbackVUMeter.backdrop:SetPoint("BOTTOMRIGHT", 4, -4)
+
 	_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
 	_G["VideoOptionsFrameDefaults"]:SetPoint("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
 	_G["VideoOptionsFrameCancel"]:ClearAllPoints()
@@ -158,14 +176,6 @@ local function LoadSkin()
 	_G["AudioOptionsVoicePanelPushToTalkSound"]:SetPoint("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", 0, 0)
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:ClearAllPoints()
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:SetPoint("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
-
-	_G["AudioOptionsSoundPanel"]:SetFrameLevel(1)
-	_G["AudioOptionsVoicePanel"]:SetFrameLevel(1)
-	_G["AudioOptionsSoundPanelPlayback"]:SetFrameLevel(2)
-	_G["AudioOptionsSoundPanelHardware"]:SetFrameLevel(2)
-	_G["AudioOptionsSoundPanelVolume"]:SetFrameLevel(2)
-	_G["AudioOptionsVoicePanelTalking"]:SetFrameLevel(2)
-	_G["AudioOptionsVoicePanelBinding"]:SetFrameLevel(2)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
