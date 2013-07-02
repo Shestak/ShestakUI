@@ -244,7 +244,7 @@ local function LoadSkin()
 	end
 
 	for i = 1, 3 do
-		_G["FriendsTabHeaderTab"..i]:StripTextures()
+		T.SkinTab(_G["FriendsTabHeaderTab"..i], true)
 	end
 
 	local function Channel()
@@ -252,8 +252,7 @@ local function LoadSkin()
 			local button = _G["ChannelButton"..i]
 
 			if button then
-				button:StripTextures()
-				button:SetHighlightTexture("Interface\\PaperDollInfoFrame\\UI-Character-Tab-Highlight")
+				button:SkinButton(true)
 			end
 		end
 	end

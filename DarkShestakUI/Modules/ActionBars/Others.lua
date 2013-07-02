@@ -46,10 +46,9 @@ end
 anchor:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 
 -- Vehicle button
-local vehicle = CreateFrame("Button", "VehicleButton", UIParent, "SecureActionButtonTemplate")
-vehicle:SetWidth(C.actionbar.button_size)
-vehicle:SetHeight(C.actionbar.button_size)
-vehicle:SetPoint("BOTTOMLEFT", anchor, "BOTTOMLEFT", 0, 0)
+local vehicle = CreateFrame("Button", "VehicleButton", UIParent)
+vehicle:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+vehicle:SetPoint("BOTTOMLEFT", anchor, "BOTTOMLEFT")
 vehicle:SetNormalTexture("Interface\\Vehicles\\UI-Vehicles-Button-Exit-Up")
 vehicle:GetNormalTexture():SetTexCoord(0.2, 0.8, 0.2, 0.8)
 vehicle:GetNormalTexture():ClearAllPoints()
@@ -59,4 +58,13 @@ vehicle:SetTemplate("Default")
 vehicle:StyleButton()
 vehicle:RegisterForClicks("AnyUp")
 vehicle:SetScript("OnClick", function() VehicleExit() end)
-RegisterStateDriver(vehicle, "visibility", "[@vehicle,exists] show; hide")
+vehicle:RegisterEvent("UNIT_ENTERED_VEHICLE")
+vehicle:RegisterEvent("UNIT_EXITING_VEHICLE")
+vehicle:RegisterEvent("PLAYER_ENTERING_WORLD")
+vehicle:SetScript("OnEvent", function(self, event)
+	if CanExitVehicle() then
+		vehicle:Show()
+	else
+		vehicle:Hide()
+	end
+end)

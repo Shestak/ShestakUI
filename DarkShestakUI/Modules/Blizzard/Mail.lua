@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if IsAddOnLoaded("QuickAuctions") or IsAddOnLoaded("AuctionProfitMaster") or IsAddOnLoaded("OpenAll") or IsAddOnLoaded("Postal") or IsAddOnLoaded("TradeSkillMaster_Mailing") then return end
+if IsAddOnLoaded("OpenAll") or IsAddOnLoaded("Postal") or IsAddOnLoaded("TradeSkillMaster_Mailing") then return end
 
 ----------------------------------------------------------------------------------------
 --	Grab mail in 1 button(OpenAll by Kemayo)
@@ -119,7 +119,8 @@ button2:SetScript("OnEnter", function()
 	if not total_cash then
 		total_cash = 0
 		for index = 0, GetInboxNumItems() do
-			total_cash = total_cash + select(5, GetInboxHeaderInfo(index))
+			local _, _, _, _, money = GetInboxHeaderInfo(index)
+			total_cash = total_cash + money
 		end
 	end
 	GameTooltip:SetOwner(button, "ANCHOR_RIGHT")
@@ -132,3 +133,15 @@ if C.skins.blizzard_frames == true then
 	OpenAllButton:SkinButton()
 	OpenAllButton2:SkinButton()
 end
+
+----------------------------------------------------------------------------------------
+--	Inbox scroll
+----------------------------------------------------------------------------------------
+MailFrame:EnableMouseWheel(true)
+MailFrame:SetScript("OnMouseWheel", function(self, d)
+	if d > 0 then
+		InboxPrevPageButton:Click()
+	elseif d < 0 then
+		InboxNextPageButton:Click()
+	end
+end)
