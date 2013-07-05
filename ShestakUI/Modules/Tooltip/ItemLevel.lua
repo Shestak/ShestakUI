@@ -8,6 +8,14 @@ if C.tooltip.enable ~= true or C.tooltip.average_lvl ~= true then return end
 local WAITING = CONTINUED
 local PENDING = CONTINUED..CONTINUED
 
+local upgrades = {
+	["0"] = 0, ["1"] = 8, ["373"] = 4, ["374"] = 8, ["375"] = 4, ["376"] = 4,
+	["377"] = 4, ["379"] = 4, ["380"] = 4, ["445"] = 0, ["446"] = 4, ["447"] = 8,
+	["451"] = 0, ["452"] = 8, ["453"] = 0, ["454"] = 4, ["455"] = 8, ["456"] = 0,
+	["457"] = 8, ["458"] = 0, ["459"] = 4, ["460"] = 8, ["461"] = 12, ["462"] = 16,
+	["465"] = 0, ["466"] = 4, ["467"] = 8, ["468"] = 0, ["469"] = 4, ["470"] = 8,
+	["471"] = 12, ["472"] = 16, ["476"] = 0, ["477"] = 4, ["478"] = 8, ["479"] = 0, ["480"] = 8
+}
 -- Output prefix
 local PREFIX = STAT_FORMAT:format(STAT_AVERAGE_ITEM_LEVEL).."|Heqppditmlvl|h |h"..HIGHLIGHT_FONT_COLOR_CODE
 
@@ -100,6 +108,12 @@ do
 		if link then
 			repeat
 				_, _, _, level, _, _, _, _, equipLoc = GetItemInfo(link)
+				if level and level >= 458 then
+					local upgrade = link:match(":(%d+)\124h%[")
+					if (upgrade and upgrades[upgrade]) then
+						level = level + upgrades[upgrade]
+					end
+				end
 			until level and equipLoc
 
 			total = total + level
@@ -107,7 +121,7 @@ do
 
 		-- Two-handed weapon and Titan's Grip
 		if slot == INVSLOT_MAINHAND then
-			twoHanded = equipLoc == "INVTYPE_2HWEAPON" and 1 or not hasItem and 0
+			twoHanded = equipLoc == "INVTYPE_2HWEAPON" and 1 or T.class == "HUNTER" and 1 or not hasItem and 0
 		elseif slot == INVSLOT_OFFHAND then
 			twoHanded = twoHanded == 1 and not hasItem or twoHanded == 0 and equipLoc == "INVTYPE_2HWEAPON"
 		end
