@@ -8,7 +8,7 @@ local _, ns = ...
 local oUF = ns.oUF
 
 oUF.Tags["Threat"] = function(unit)
-	local tanking, status, percent = UnitDetailedThreatSituation("player", "target")
+	local _, status, percent = UnitDetailedThreatSituation("player", "target")
 	if percent and percent > 0 then
 		return ("%s%d%%|r"):format(Hex(GetThreatStatusColor(status)), percent)
 	end
