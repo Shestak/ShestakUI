@@ -878,7 +878,7 @@ if guild.enabled then
 				menuList[3].menuList = {}
 
 				for i = 1, #guildTable do
-					if (guildTable[i][7] or guildTable[i][10]) and guildTable[i][1] ~= select(1, UnitName("player")) then
+					if (guildTable[i][7] or guildTable[i][10]) and guildTable[i][1] ~= T.name then
 						local classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[guildTable[i][9]], GetQuestDifficultyColor(guildTable[i][3])
 						if UnitInParty(guildTable[i][1]) or UnitInRaid(guildTable[i][1]) then
 							grouped = "|cffaaaaaa*|r"
