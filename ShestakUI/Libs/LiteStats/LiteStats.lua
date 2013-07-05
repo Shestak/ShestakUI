@@ -555,7 +555,7 @@ if gold.enabled then
 		if action == "list" then
 			print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_EXCEPTIONS, (#SavedStats.JunkIgnore == 0 and NONE or "")))
 			for i, id in pairs(SavedStats.JunkIgnore) do
-				local link = select(2, GetItemInfo(id))
+				local _, link = GetItemInfo(id)
 				print("- ["..i.."]", link)
 			end
 		elseif action == "clear" then
@@ -563,7 +563,7 @@ if gold.enabled then
 			print("|cff66C6FF"..L_STATS_CLEARED_JUNK)
 		elseif action == "add" or strfind(action, "^del") or strfind(action, "^rem") then
 			for id in s:gmatch("|Hitem:(%d-):") do
-				local link = select(2, GetItemInfo(id))
+				local _, link = GetItemInfo(id)
 				if action == "add" then
 					if select(3, GetItemInfo(id)) == 0 then
 						if not tContains(SavedStats.JunkIgnore,id) then
