@@ -18,13 +18,12 @@ local colors = {
 }
 
 local function SetHyperlink(tooltip, refString)
-	local achievementID, numCriteria, GUID, name, completed, quantity, reqQuantity, month, day, year
 	local output = {[0] = {}, [1] = {}}
 	if select(3, string.find(refString, "(%a-):")) ~= "achievement" then return end
 
-	achievementID = select(3, string.find(refString, ":(%d+):"))
-	numCriteria = GetAchievementNumCriteria(achievementID)
-	GUID = select(3, string.find(refString, ":%d+:(.-):"))
+	local _, _, achievementID = string.find(refString, ":(%d+):")
+	local numCriteria = GetAchievementNumCriteria(achievementID)
+	local _, _, GUID = string.find(refString, ":%d+:(.-):")
 
 	if GUID == string.sub(UnitGUID("player"), 3) then
 		tooltip:Show()
@@ -32,7 +31,7 @@ local function SetHyperlink(tooltip, refString)
 	end
 
 	tooltip:AddLine(" ")
-	_, _, _, completed, month, day, year, _, _, _, _, _, wasEarnedByMe, earnedBy = GetAchievementInfo(achievementID)
+	local _, _, _, completed, month, day, year, _, _, _, _, _, wasEarnedByMe, earnedBy = GetAchievementInfo(achievementID)
 
 	if completed then
 		if year < 10 then year = "0"..year end
@@ -60,7 +59,7 @@ local function SetHyperlink(tooltip, refString)
 				output[a].text = nil
 				output[a].color = nil
 				if i + a <= numCriteria then
-					name, _, completed, quantity, reqQuantity = GetAchievementCriteriaInfo(achievementID, i + a)
+					local name, _, completed, quantity, reqQuantity = GetAchievementCriteriaInfo(achievementID, i + a)
 					if completed then
 						output[a].text = name
 						output[a].color = "GREEN"
