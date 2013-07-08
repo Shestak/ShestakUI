@@ -10,11 +10,11 @@ local function GetLFDRole(unit)
 	if role == "NONE" then
 		return "|cFFB5B5B5"..NO_ROLE.."|r"
 	elseif role == "TANK" then
-		return "|cFFE06D1B"..TANK.."|r"
+		return "|cFF0070DE"..TANK.."|r"
 	elseif role == "HEALER" then
-		return "|cFF1B70E0"..HEALER.."|r"
+		return "|cFF00CC12"..HEALER.."|r"
 	else
-		return "|cFFE01B35"..DAMAGER.."|r"
+		return "|cFFFF3030"..DAMAGER.."|r"
 	end
 end
 
