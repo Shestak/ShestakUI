@@ -92,7 +92,6 @@ hooksecurefunc(mrp, "CreateEditFrames", function()
 	MyRolePlayCharacterFrame_NewProfileButton:SetSize(21, 21)
 	MyRolePlayCharacterFrame_NewProfileButton:ClearAllPoints()
 	MyRolePlayCharacterFrame_NewProfileButton:SetPoint("LEFT", MyRolePlayCharacterFrame_ProfileComboBox.backdrop, "RIGHT", 1, 0)
-
 end)
 
 -- Edit by Oz of shestakdotorg --

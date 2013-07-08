@@ -29,10 +29,10 @@ local function OnEvent(self, event, arg1, arg2)
 	local hasMainHandEnchant, _, _, hasOffHandEnchant = GetWeaponEnchantInfo()
 	if not group.weapon then
 		for _, buff in pairs(group.spells) do
-			local name = GetSpellInfo(buff)
+			local name, _, icon = GetSpellInfo(buff)
 			local usable, nomana = IsUsableSpell(name)
 			if usable or nomana then
-				self.icon:SetTexture(select(3, GetSpellInfo(buff)))
+				self.icon:SetTexture(icon)
 				break
 			end
 		end
@@ -204,8 +204,7 @@ for i = 1, #tab do
 	frame.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	frame.icon:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, -2)
 	frame.icon:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
-	frame.icon:SetWidth(C.reminder.solo_buffs_size)
-	frame.icon:SetHeight(C.reminder.solo_buffs_size)
+	frame.icon:SetSize(C.reminder.solo_buffs_size, C.reminder.solo_buffs_size)
 
 	frame:Hide()
 

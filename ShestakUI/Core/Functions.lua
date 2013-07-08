@@ -66,8 +66,8 @@ local function CheckRole(self, event, unit)
 	elseif role == "HEALER" then
 		T.Role = "Healer"
 	elseif role == "DAMAGER" then
-		local playerint = select(2, UnitStat("player", 4))
-		local playeragi = select(2, UnitStat("player", 2))
+		local _, playerint = UnitStat("player", 4)
+		local _, playeragi = UnitStat("player", 2)
 		local base, posBuff, negBuff = UnitAttackPower("player")
 		local playerap = base + posBuff + negBuff
 

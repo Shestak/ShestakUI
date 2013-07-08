@@ -9,11 +9,11 @@ if C.reminder.raid_buffs_enable == true then
 	-- General buffs
 	T.ReminderBuffs = {
 		Flask = {
-			105694,	-- Flask of the Earth
 			105691,	-- Flask of the Warm Sun
 			105696,	-- Flask of Winter's Bite
 			105693,	-- Flask of Falling Leaves
 			105689,	-- Flask of Spring Blossoms
+			105694,	-- Flask of the Earth
 		},
 		BattleElixir = {
 			105688,	-- Monk's Elixir

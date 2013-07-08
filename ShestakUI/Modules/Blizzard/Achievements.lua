@@ -12,7 +12,7 @@ AchievementAnchor:SetPoint(unpack(C.position.achievement))
 local POSITION, ANCHOR_POINT, YOFFSET = "BOTTOM", "TOP", -9
 
 local function fixAnchors()
-	local point = select(1, AchievementAnchor:GetPoint())
+	local point = AchievementAnchor:GetPoint()
 
 	if string.find(point, "TOP") or point == "CENTER" or point == "LEFT" or point == "RIGHT" then
 		POSITION = "TOP"
