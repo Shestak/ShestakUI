@@ -161,7 +161,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			local min, max = self:GetMinMaxValues()
 			if (value < min) or (value > max) then return end
 			self:SetStatusBarColor(0, 1, 0)
-			local unit = select(2, GameTooltip:GetUnit())
+			local _, unit = GameTooltip:GetUnit()
 			if unit then
 				min, max = UnitHealth(unit), UnitHealthMax(unit)
 				if not self.text then

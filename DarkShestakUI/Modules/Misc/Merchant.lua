@@ -7,8 +7,7 @@ hooksecurefunc("MerchantItemButton_OnModifiedClick", function(self, button)
 	if MerchantFrame.selectedTab == 1 then
 		if IsAltKeyDown() then
 			local id = self:GetID()
-			local quantity = select(4, GetMerchantItemInfo(id))
-			local extracost = select(7, GetMerchantItemInfo(id))
+			local _, _, _, quantity, _, _, extracost = GetMerchantItemInfo(id)
 			if not extracost then
 				local stack
 				if quantity > 1 then
@@ -115,7 +114,7 @@ button:SetScript("OnClick", function()
 		local slots = GetContainerNumSlots(bag)
 		for i = 1, slots do
 			local id = GetContainerItemID(bag, i)
-			local count = select(2, GetContainerItemInfo(bag, i))
+			local _, count = GetContainerItemInfo(bag, i)
 			if id and count then
 				for k, v in pairs(items) do
 					if k == id then groceries[id] = groceries[id] and groceries[id] + count or count end

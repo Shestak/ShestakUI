@@ -20,7 +20,6 @@ if CUSTOM_CLASS_COLORS then
 	update()
 end
 
-local playerName = UnitName("player")
 local classesInRaid = {}
 local players, player_indices = {}, {}
 local randoms = {}
@@ -159,7 +158,7 @@ local function init()
 	end
 	for i = 1, MAX_RAID_MEMBERS do
 		candidate, lclass, className = GetMasterLootCandidate(slot, i)
-		if candidate and candidate == playerName then
+		if candidate and candidate == T.name then
 			info.colorCode = hexColors[className] or hexColors["UNKNOWN"]
 			info.isTitle = nil
 			info.textHeight = 12

@@ -8,7 +8,7 @@ local _, ns = ...
 local oUF = ns.oUF
 
 oUF.Tags["Threat"] = function(unit)
-	local tanking, status, percent = UnitDetailedThreatSituation("player", "target")
+	local _, status, percent = UnitDetailedThreatSituation("player", "target")
 	if percent and percent > 0 then
 		return ("%s%d%%|r"):format(Hex(GetThreatStatusColor(status)), percent)
 	end
@@ -88,12 +88,12 @@ oUF.TagEvents["NameLong"] = "UNIT_NAME_UPDATE"
 
 oUF.Tags["LFD"] = function(unit)
 	local role = UnitGroupRolesAssigned(unit)
-	if role == "HEALER" then
-		return "|cff8AFF30[H]|r"
-	elseif role == "TANK" then
-		return "|cffFFF130[T]|r"
+	if role == "TANK" then
+		return "|cff0070DE[T]|r"
+	elseif role == "HEALER" then
+		return "|cff00CC12[H]|r"
 	elseif role == "DAMAGER" then
-		return "|cffFF6161[D]|r"
+		return "|cffFF3030[D]|r"
 	end
 end
 oUF.TagEvents["LFD"] = "PLAYER_ROLES_ASSIGNED GROUP_ROSTER_UPDATE"

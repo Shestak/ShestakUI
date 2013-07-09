@@ -1106,7 +1106,7 @@ function Stuffing:SortBags()
 				total = free + total
 			end
 		end
-		total = select(1, GetContainerNumFreeSlots(-1)) + total
+		total = GetContainerNumFreeSlots(-1) + total
 	else
 		for i = 0, 4 do
 			free, bagtypeforfree = GetContainerNumFreeSlots(i)

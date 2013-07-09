@@ -190,14 +190,19 @@ end
 
 -- Color the castbar depending on if we can interrupt or not
 local function UpdateCastbar(frame)
-	frame:ClearAllPoints()
-	frame:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
-	frame:SetPoint("TOP", frame:GetParent().hp, "BOTTOM", 0, -8)
 	frame:GetStatusBarTexture():SetHorizTile(true)
 	frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
 	if frame.shield:IsShown() then
 		frame:SetStatusBarColor(0.78, 0.25, 0.25)
 		frame.bg:SetTexture(0.78, 0.25, 0.25, 0.2)
+	end
+end
+
+local function CastUpdate(frame)
+	if floor(self:GetHeight() + 0.5) ~= (C.nameplate.height * noscalemult) then
+		frame:ClearAllPoints()
+		frame:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
+		frame:SetPoint("TOP", frame:GetParent().hp, "BOTTOM", 0, -8)
 	end
 end
 
@@ -212,19 +217,6 @@ local function UpdateCastText(frame, curValue)
 	if UnitCastingInfo("target") then
 		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
 	end
-end
-
--- Sometimes castbar likes to randomly resize
-local OnValueChanged = function(self, curValue)
-	UpdateCastText(self, curValue)
-	if self.needFix then
-		UpdateCastbar(self)
-		self.needFix = nil
-	end
-end
-
-local OnSizeChanged = function(self)
-	self.needFix = true
 end
 
 local function HealthBar_ValueChanged(frame)
@@ -479,8 +471,7 @@ local function SkinObjects(frame, nameFrame)
 
 	cb.shield = cbshield
 	cb:HookScript("OnShow", UpdateCastbar)
-	cb:HookScript("OnSizeChanged", OnSizeChanged)
-	cb:HookScript("OnValueChanged", OnValueChanged)
+	cb:HookScript("OnUpdate", CastUpdate)
 	frame.cb = cb
 
 	-- Aura tracking
