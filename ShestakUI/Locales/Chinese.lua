@@ -296,7 +296,7 @@ L_POPUP_CURRENCY_CAP = "你拥有的最高级货币为"
 L_WELCOME_LINE_1 = "欢迎使用ShestakUI "
 L_WELCOME_LINE_2_1 = "输入/cfg进行插件设置,或者访问http://shestak.org"
 L_WELCOME_LINE_2_2 = "得到更多信息."
-L_WELCOME_LINE_3 = "注： 此版本的ShestakUI (|cff00FFFFOzEdit 1.2.7|r|cffFFFF00)由Pozzo dell'Eternità奥兹编辑。|r" -- Goooooooooogle translated
+L_WELCOME_LINE_3 = "注： 此版本的ShestakUI (|cff00FFFFOzEdit 1.2.8|r|cffFFFF00)由Pozzo dell'Eternità奥兹编辑。|r" -- Goooooooooogle translated
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "最后一击"

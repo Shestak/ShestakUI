@@ -296,7 +296,7 @@ L_POPUP_CURRENCY_CAP = "You get maximum value of"
 L_WELCOME_LINE_1 = "Welcome to ShestakUI "
 L_WELCOME_LINE_2_1 = "Type /cfg to config interface, or visit http://shestak.org"
 L_WELCOME_LINE_2_2 = "for more informations."
-L_WELCOME_LINE_3 = "Nota: esta versão do ShestakUI (|cff00FFFFOzEdit 1.2.7|r|cffFFFF00) é editado por Oz de Pozzo dell'Eternità.|r" -- Goooooooooogle translated
+L_WELCOME_LINE_3 = "Nota: esta versão do ShestakUI (|cff00FFFFOzEdit 1.2.8|r|cffFFFF00) é editado por Oz de Pozzo dell'Eternità.|r" -- Goooooooooogle translated
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Killing Blow"
