@@ -49,7 +49,6 @@ local function timer_Create(parent, interval)
 end
 
 -- Holy Power detection
-local PLAYER_IS_PALADIN = select(2, UnitClass("player")) == "PALADIN"
 local DIVINE_PURPOSE = GetSpellInfo(90174)
 local isHolyPowerAbility
 do
@@ -191,7 +190,7 @@ function tullaRange.UpdateButtonUsable(button)
 		if IsActionInRange(action) == 0 then
 			tullaRange.SetButtonColor(button, "oor")
 		-- Holy Power
-		elseif PLAYER_IS_PALADIN and isHolyPowerAbility(action) and not (UnitPower("player", SPELL_POWER_HOLY_POWER) >= 3 or UnitBuff("player", DIVINE_PURPOSE)) then
+		elseif T.class == "PALADIN" and isHolyPowerAbility(action) and not (UnitPower("player", SPELL_POWER_HOLY_POWER) >= 3 or UnitBuff("player", DIVINE_PURPOSE)) then
 			tullaRange.SetButtonColor(button, "ooh")
 		-- In range
 		else

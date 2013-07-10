@@ -5,8 +5,8 @@
 ----------------------------------------------------------------------------------------
 T.dummy = function() return end
 T.name = UnitName("player")
-T.class = select(2, UnitClass("player"))
-T.race = select(2, UnitRace("player"))
+_, T.class = UnitClass("player")
+_, T.race = UnitRace("player")
 T.level = UnitLevel("player")
 T.client = GetLocale()
 T.realm = GetRealmName()

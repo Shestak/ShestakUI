@@ -7,7 +7,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_reputation_bar ~= true then
 local _, ns = ...
 local oUF = ns.oUF
 
-local function tooltip(self)
+local function Tooltip(self)
 	local name, id, min, max, value = GetWatchedFactionInfo()
 	GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -5)
 	GameTooltip:AddLine(string.format("%s (%s)", name, _G["FACTION_STANDING_LABEL"..id]))
@@ -15,7 +15,7 @@ local function tooltip(self)
 	GameTooltip:Show()
 end
 
-local function update(self, event, unit)
+local function Update(self, event, unit)
 	local bar = self.Reputation
 	if not GetWatchedFactionInfo() then return bar:Hide() end
 
@@ -35,25 +35,25 @@ local function update(self, event, unit)
 	if bar.PostUpdate then bar.PostUpdate(self, event, unit, bar, min, max, value, name, id) end
 end
 
-local function enable(self, unit)
+local function Enable(self, unit)
 	local bar = self.Reputation
 	if bar and unit == "player" then
-		self:RegisterEvent("UPDATE_FACTION", update)
+		self:RegisterEvent("UPDATE_FACTION", Update)
 
 		if bar.Tooltip then
 			bar:EnableMouse()
 			bar:HookScript("OnLeave", GameTooltip_Hide)
-			bar:HookScript("OnEnter", tooltip)
+			bar:HookScript("OnEnter", Tooltip)
 		end
 
 		return true
 	end
 end
 
-local function disable(self)
+local function Disable(self)
 	if self.Reputation then
-		self:UnregisterEvent("UPDATE_FACTION", update)
+		self:UnregisterEvent("UPDATE_FACTION", Update)
 	end
 end
 
-oUF:AddElement("Reputation", update, enable, disable)
+oUF:AddElement("Reputation", Update, Enable, Disable)

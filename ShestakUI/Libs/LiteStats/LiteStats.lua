@@ -563,9 +563,9 @@ if gold.enabled then
 			print("|cff66C6FF"..L_STATS_CLEARED_JUNK)
 		elseif action == "add" or strfind(action, "^del") or strfind(action, "^rem") then
 			for id in s:gmatch("|Hitem:(%d-):") do
-				local _, link = GetItemInfo(id)
+				local _, link, rarity = GetItemInfo(id)
 				if action == "add" then
-					if select(3, GetItemInfo(id)) == 0 then
+					if rarity == 0 then
 						if not tContains(SavedStats.JunkIgnore,id) then
 							tinsert(SavedStats.JunkIgnore, id)
 							print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, link))
