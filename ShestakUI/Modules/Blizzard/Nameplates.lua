@@ -190,7 +190,6 @@ local function CastUpdate(frame)
 	end
 end
 
--- Determine whether or not the cast is Channelled or a Regular cast so we can grab the proper Cast Name
 local function UpdateCastText(frame, curValue)
 	local _, maxValue = frame:GetMinMaxValues()
 
@@ -458,6 +457,7 @@ local function SkinObjects(frame, nameFrame)
 	cb.shield = cbshield
 	cb:HookScript("OnShow", UpdateCastbar)
 	cb:HookScript("OnUpdate", CastUpdate)
+	cb:HookScript("OnValueChanged", UpdateCastText)
 	frame.cb = cb
 
 	-- Aura tracking
