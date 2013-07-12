@@ -173,7 +173,7 @@ local function OnAura(frame, unit)
 end
 
 -- Color the castbar depending on if we can interrupt or not
-local function UpdateCastbar(frame)
+local function ColorCastbar(frame)
 	frame:GetStatusBarTexture():SetHorizTile(true)
 	frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
 	if frame.shield:IsShown() then
@@ -183,7 +183,7 @@ local function UpdateCastbar(frame)
 end
 
 local function CastUpdate(frame)
-	if floor(self:GetHeight() + 0.5) ~= (C.nameplate.height * noscalemult) then
+	if floor(frame:GetHeight() + 0.5) ~= (C.nameplate.height * noscalemult) then
 		frame:ClearAllPoints()
 		frame:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
 		frame:SetPoint("TOP", frame:GetParent().hp, "BOTTOM", 0, -8)
@@ -455,7 +455,7 @@ local function SkinObjects(frame, nameFrame)
 	CreateVirtualFrame(cb, cb.icon)
 
 	cb.shield = cbshield
-	cb:HookScript("OnShow", UpdateCastbar)
+	cb:HookScript("OnShow", ColorCastbar)
 	cb:HookScript("OnUpdate", CastUpdate)
 	cb:HookScript("OnValueChanged", UpdateCastText)
 	frame.cb = cb
@@ -501,7 +501,7 @@ local function SkinObjects(frame, nameFrame)
 	QueueObject(frame, elite)
 
 	UpdateObjects(hp)
-	UpdateCastbar(cb)
+	ColorCastbar(cb)
 
 	frame:HookScript("OnHide", OnHide)
 	frames[frame] = true
