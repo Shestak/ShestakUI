@@ -172,16 +172,6 @@ local function OnAura(frame, unit)
 	for index = i, #frame.icons do frame.icons[index]:Hide() end
 end
 
--- Color the castbar depending on if we can interrupt or not
-local function ColorCastbar(frame)
-	frame:GetStatusBarTexture():SetHorizTile(true)
-	frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
-	if frame.shield:IsShown() then
-		frame:SetStatusBarColor(0.78, 0.25, 0.25)
-		frame.bg:SetTexture(0.78, 0.25, 0.25, 0.2)
-	end
-end
-
 local function CastUpdate(frame)
 	if floor(frame:GetHeight() + 0.5) ~= (C.nameplate.height * noscalemult) then
 		frame:ClearAllPoints()
@@ -190,15 +180,20 @@ local function CastUpdate(frame)
 	end
 end
 
-local function UpdateCastText(frame, curValue)
+local function ColorTextUpdate(frame, curValue)
 	local _, maxValue = frame:GetMinMaxValues()
 
 	if UnitChannelInfo("target") then
 		frame.time:SetFormattedText("%.1f ", curValue)
+	elseif UnitCastingInfo("target") then
+		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
 	end
 
-	if UnitCastingInfo("target") then
-		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
+	frame:GetStatusBarTexture():SetHorizTile(true)
+	frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
+	if frame.shield:IsShown() then
+		frame:SetStatusBarColor(0.78, 0.25, 0.25)
+		frame.bg:SetTexture(0.78, 0.25, 0.25, 0.2)
 	end
 end
 
@@ -455,9 +450,8 @@ local function SkinObjects(frame, nameFrame)
 	CreateVirtualFrame(cb, cb.icon)
 
 	cb.shield = cbshield
-	cb:HookScript("OnShow", ColorCastbar)
 	cb:HookScript("OnUpdate", CastUpdate)
-	cb:HookScript("OnValueChanged", UpdateCastText)
+	cb:HookScript("OnValueChanged", ColorTextUpdate)
 	frame.cb = cb
 
 	-- Aura tracking
@@ -501,7 +495,7 @@ local function SkinObjects(frame, nameFrame)
 	QueueObject(frame, elite)
 
 	UpdateObjects(hp)
-	ColorCastbar(cb)
+	CastUpdate(cb)
 
 	frame:HookScript("OnHide", OnHide)
 	frames[frame] = true
@@ -534,10 +528,6 @@ local function UpdateThreat(frame, elapsed)
 					frame.hp:SetStatusBarColor(goodR, goodG, goodB)
 					frame.hp.bg:SetTexture(goodR, goodG, goodB, 0.2)
 				end
-			-- else
-				-- Set colors to their original, not in combat
-				-- frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
-				-- frame.hp.bg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.2)
 			end
 		else
 			-- Ok we either have threat or we're losing/gaining it
