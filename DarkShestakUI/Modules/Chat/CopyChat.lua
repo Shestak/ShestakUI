@@ -77,7 +77,8 @@ local function GetLines(...)
 end
 
 local function Copy(cf)
-	local _, size = cf:GetFont()
+	local id = cf:GetID()
+	local _, size = FCF_GetChatWindowInfo(id)
 	FCF_SetChatWindowFontSize(cf, cf, 0.01)
 	local lineCt = GetLines(cf:GetRegions())
 	local text = table.concat(lines, "\n", 1, lineCt)
