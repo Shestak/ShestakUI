@@ -288,14 +288,16 @@ end)
 -- Setup temp chat (BN, WHISPER) when needed
 local function SetupTempChat()
 	local frame = FCF_GetCurrentChatFrame()
-	if _G[frame:GetName().."Tab"]:GetText():match(PET_BATTLE_COMBAT_LOG) then
-		FCF_Close(frame)
-		return
-	end
 	if frame.skinned then return end
 	SetChatStyle(frame)
 end
 hooksecurefunc("FCF_OpenTemporaryWindow", SetupTempChat)
+
+-- Disable pet battle tab
+local old = FCFManager_GetNumDedicatedFrames
+function FCFManager_GetNumDedicatedFrames(...)
+	return select(1, ...) ~= "PET_BATTLE_COMBAT_LOG" and old(...) or 1
+end
 
 ----------------------------------------------------------------------------------------
 --	Save slash command typo
