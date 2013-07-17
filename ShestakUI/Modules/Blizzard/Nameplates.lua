@@ -126,7 +126,7 @@ end
 
 -- Update an aura icon
 local function UpdateAuraIcon(button, unit, index, filter)
-	local name, _, icon, count, debuffType, duration, expirationTime, _, _, _, spellID = UnitAura(unit, index, filter)
+	local _, _, icon, count, _, duration, expirationTime, _, _, _, spellID = UnitAura(unit, index, filter)
 
 	button.icon:SetTexture(icon)
 	button.cd:SetCooldown(expirationTime - duration, duration)
@@ -156,7 +156,7 @@ local function OnAura(frame, unit)
 	for index = 1, 40 do
 		if i > C.nameplate.width / C.nameplate.auras_size then return end
 		local match
-		local name, _, _, _, _, duration, _, caster, _, _, spellid = UnitAura(frame.unit, index, "HARMFUL")
+		local name, _, _, _, _, duration, _, caster, _, _ = UnitAura(frame.unit, index, "HARMFUL")
 
 		if T.DebuffWhiteList[name] and caster == "player" then match = true end
 
