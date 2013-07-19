@@ -6,7 +6,7 @@ if C.chat.bubbles ~= true then return end
 ----------------------------------------------------------------------------------------
 local f = CreateFrame("Frame", nil, UIParent)
 local noscalemult = T.mult * C.general.uiscale
-local total = 0
+local total = -2
 local numKids = 0
 
 local function styleBubble(frame)
