@@ -114,8 +114,8 @@ end
 
 local function CheckLoc(self, event)
 	if event == "PLAYER_ENTERING_WORLD" or event == "PLAYER_ENTERING_BATTLEGROUND" then
-		local inInstance, instanceType = IsInInstance()
-		if inInstance and instanceType == "pvp" then
+		local _, instanceType = IsInInstance()
+		if instanceType == "pvp" then
 			t:SetScript("OnUpdate", CheckHealers)
 		else
 			healList = {}

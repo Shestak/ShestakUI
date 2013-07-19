@@ -130,8 +130,8 @@ end
 -- Hide text when not in an bg
 local function OnEvent(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
-		local inInstance, instanceType = IsInInstance()
-		if inInstance and (instanceType == "pvp") then
+		local _, instanceType = IsInInstance()
+		if instanceType == "pvp" then
 			bgframe:Show()
 		else
 			Text1:SetText("")
