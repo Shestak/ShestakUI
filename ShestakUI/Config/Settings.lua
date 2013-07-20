@@ -251,9 +251,9 @@ C["tooltip"] = {
 	["talents"] = false,						-- Show tooltip talents
 	["achievements"] = true,					-- Comparing achievements in tooltip
 	["target"] = true,							-- Target player in tooltip
-	["title"] = false,							-- Player title in tooltip
+	["title"] = false,							-- Player title and realm name in tooltip
 	["rank"] = true,							-- Player guild-rank in tooltip
-	["arena_experience"] = false,				-- Player PVP experience in arena
+	["arena_experience"] = false,				-- Player PvP experience in arena
 	["spell_id"] = false,						-- Id number spells
 	["average_lvl"] = false,					-- Average items level
 	["raid_icon"] = false,						-- Raid icon
@@ -346,7 +346,7 @@ C["nameplate"] = {
 	["health_value"] = false,					-- Numeral health value
 	["show_castbar_name"] = false,				-- Show castbar name
 	["enhance_threat"] = true,					-- If tank good aggro = green, bad = red
-	["class_icons"] = false,					-- Icons by class in pvp
+	["class_icons"] = false,					-- Icons by class in PvP
 	["name_abbrev"] = false,					-- Display the abbreviated names
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
 	["near_color"] = {1, 1, 0},					-- Near threat color
@@ -435,7 +435,7 @@ C["unitframe"] = {
 	["show_arena"] = true,						-- Show arena frames
 	["arena_on_right"] = true,					-- Arena frames on the right
 	-- Icons
-	["icons_pvp"] = false,						-- Mouseover pvp text(not icons) on player and target frames
+	["icons_pvp"] = false,						-- Mouseover PvP text(not icons) on player and target frames
 	["icons_combat"] = true,					-- Combat icon
 	["icons_resting"] = true,					-- Resting icon for low lvl chars
 	-- Portraits
