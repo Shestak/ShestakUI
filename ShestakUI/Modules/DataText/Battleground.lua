@@ -15,6 +15,7 @@ local TBFG = 736
 local AB = 461
 local TOK = 856
 local SSM = 860
+local DG = 935
 
 local classcolor = ("|cff%.2x%.2x%.2x"):format(T.color.r * 255, T.color.g * 255, T.color.b * 255)
 
@@ -39,8 +40,8 @@ bgframe:SetScript("OnEnter", function(self)
 				GameTooltip:AddDoubleLine(HONORABLE_KILLS..":", honorableKills, 1, 1, 1)
 				GameTooltip:AddDoubleLine(DEATHS..":", deaths, 1, 1, 1)
 				GameTooltip:AddDoubleLine(HONOR_GAINED..":", format("%d", honorGained), 1, 1, 1)
-				GameTooltip:AddDoubleLine(SCORE_DAMAGE_DONE..":", damageDone, 1, 1, 1)
-				GameTooltip:AddDoubleLine(SCORE_HEALING_DONE..":", healingDone, 1, 1, 1)
+				GameTooltip:AddDoubleLine(DAMAGE..":", damageDone, 1, 1, 1)
+				GameTooltip:AddDoubleLine(SHOW_COMBAT_HEALING..":", healingDone, 1, 1, 1)
 				-- Add extra statistics to watch based on what BG you are in
 				if curmapid == IOC or curmapid == TBFG or curmapid == AB then
 					GameTooltip:AddDoubleLine(L_DATATEXT_BASESASSAULTED, GetBattlefieldStatData(i, 1), 1, 1, 1)
@@ -58,11 +59,15 @@ bgframe:SetScript("OnEnter", function(self)
 				elseif curmapid == SOTA then
 					GameTooltip:AddDoubleLine(L_DATATEXT_DEMOLISHERSDESTROYED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 					GameTooltip:AddDoubleLine(L_DATATEXT_GATESDESTROYED, GetBattlefieldStatData(i, 2), 1, 1, 1)
-				elseif CurrentMapID == TOK then
+				elseif curmapid == TOK then
 					GameTooltip:AddDoubleLine(L_DATATEXT_ORB_POSSESSIONS, GetBattlefieldStatData(i, 1), 1, 1, 1)
 					GameTooltip:AddDoubleLine(L_DATATEXT_VICTORY_POINTS, GetBattlefieldStatData(i, 2), 1, 1, 1)
-				elseif CurrentMapID == SSM then
+				elseif curmapid == SSM then
 					GameTooltip:AddDoubleLine(L_DATATEXT_CARTS_CONTROLLED, GetBattlefieldStatData(i, 1), 1, 1, 1)
+				elseif curmapid == DG then
+					GameTooltip:AddDoubleLine(L_DATATEXT_CARTS_CONTROLLED, GetBattlefieldStatData(i, 1), 1, 1, 1)
+					GameTooltip:AddDoubleLine(L_DATATEXT_BASESASSAULTED, GetBattlefieldStatData(i, 3), 1, 1, 1)
+					GameTooltip:AddDoubleLine(L_DATATEXT_BASESDEFENDED, GetBattlefieldStatData(i, 4), 1, 1, 1)
 				end
 				GameTooltip:Show()
 			end
@@ -113,7 +118,7 @@ local function Update(self, t)
 			if healingDone > damageDone then
 				dmgtxt = (classcolor..SHOW_COMBAT_HEALING.." :|r "..healingDone)
 			else
-				dmgtxt = (classcolor..COMBATLOG_HIGHLIGHT_DAMAGE.." :|r "..damageDone)
+				dmgtxt = (classcolor..DAMAGE.." :|r "..damageDone)
 			end
 			if name then
 				if name == T.name then
