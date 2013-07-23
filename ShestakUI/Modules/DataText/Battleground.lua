@@ -24,7 +24,7 @@ bgframe:EnableMouse(true)
 bgframe:SetScript("OnEnter", function(self)
 	local numScores = GetNumBattlefieldScores()
 	for i = 1, numScores do
-		local name, killingBlows, honorableKills, deaths, honorGained, faction, race, class, classToken, damageDone, healingDone, bgRating, ratingChange = GetBattlefieldScore(i)
+		local name, killingBlows, honorableKills, deaths, honorGained, _, _, _, _, damageDone, healingDone = GetBattlefieldScore(i)
 		if name then
 			if name == UnitName("player") then
 				local curmapid = GetCurrentMapAreaID()
@@ -109,7 +109,7 @@ local function Update(self, t)
 		RequestBattlefieldScoreData()
 		local numScores = GetNumBattlefieldScores()
 		for i = 1, numScores do
-			local name, killingBlows, honorableKills, deaths, honorGained, faction, race, class, classToken, damageDone, healingDone, bgRating, ratingChange = GetBattlefieldScore(i)
+			local name, killingBlows, _, _, honorGained, _, _, _, _, damageDone, healingDone = GetBattlefieldScore(i)
 			if healingDone > damageDone then
 				dmgtxt = (classcolor..SHOW_COMBAT_HEALING.." :|r "..healingDone)
 			else
@@ -117,8 +117,8 @@ local function Update(self, t)
 			end
 			if name then
 				if name == T.name then
-					Text2:SetText(classcolor..COMBAT_HONOR_GAIN.." :|r "..format("%d", honorGained))
 					Text1:SetText(dmgtxt)
+					Text2:SetText(classcolor..COMBAT_HONOR_GAIN.." :|r "..format("%d", honorGained))
 					Text3:SetText(classcolor..KILLING_BLOWS.." :|r "..killingBlows)
 				end
 			end
