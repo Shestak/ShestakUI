@@ -27,7 +27,7 @@ bgframe:SetScript("OnEnter", function(self)
 	for i = 1, numScores do
 		local name, killingBlows, honorableKills, deaths, honorGained, _, _, _, _, damageDone, healingDone = GetBattlefieldScore(i)
 		if name then
-			if name == UnitName("player") then
+			if name == T.name then
 				local curmapid = GetCurrentMapAreaID()
 				SetMapToCurrentZone()
 				GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT", 0, T.Scale(4))
@@ -36,10 +36,8 @@ bgframe:SetScript("OnEnter", function(self)
 				GameTooltip:ClearLines()
 				GameTooltip:AddDoubleLine(STATISTICS, classcolor..name.."|r")
 				GameTooltip:AddLine(" ")
-				GameTooltip:AddDoubleLine(KILLING_BLOWS..":", killingBlows, 1, 1, 1)
 				GameTooltip:AddDoubleLine(HONORABLE_KILLS..":", honorableKills, 1, 1, 1)
 				GameTooltip:AddDoubleLine(DEATHS..":", deaths, 1, 1, 1)
-				GameTooltip:AddDoubleLine(HONOR_GAINED..":", format("%d", honorGained), 1, 1, 1)
 				GameTooltip:AddDoubleLine(DAMAGE..":", damageDone, 1, 1, 1)
 				GameTooltip:AddDoubleLine(SHOW_COMBAT_HEALING..":", healingDone, 1, 1, 1)
 				-- Add extra statistics to watch based on what BG you are in
