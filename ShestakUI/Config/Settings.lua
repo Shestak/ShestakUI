@@ -265,7 +265,7 @@ C["tooltip"] = {
 	["talents"] = true,							-- Show tooltip talents
 	["achievements"] = false,					-- Comparing achievements in tooltip
 	["target"] = true,							-- Target player in tooltip
-	["title"] = true,							-- Player title in tooltip
+	["title"] = true,							-- Player title and realm name in tooltip
 	["rank"] = true,							-- Player guild-rank in tooltip
 	["arena_experience"] = false,				-- Player PVP experience in arena
 	["spell_id"] = true,						-- Id number spells
@@ -362,7 +362,7 @@ C["nameplate"] = {
 	["health_value"] = false,					-- Numeral health value
 	["show_castbar_name"] = true,				-- Show castbar name
 	["enhance_threat"] = true,					-- If tank good aggro = green, bad = red
-	["class_icons"] = true,						-- Icons by class in pvp
+	["class_icons"] = true,						-- Icons by class in PvP
 	["name_abbrev"] = false,					-- Display the abbreviated names
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
 	["near_color"] = {1, 1, 0},					-- Near threat color
@@ -452,7 +452,7 @@ C["unitframe"] = {
 	["show_arena"] = true,						-- Show arena frames
 	["arena_on_right"] = true,					-- Arena frames on the right
 	-- Icons
-	["icons_pvp"] = true,						-- Mouseover pvp text(not icons) on player and target frames
+	["icons_pvp"] = true,						-- Mouseover PvP text(not icons) on player and target frames
 	["icons_combat"] = true,					-- Combat icon
 	["icons_resting"] = true,					-- Resting icon for low lvl chars
 

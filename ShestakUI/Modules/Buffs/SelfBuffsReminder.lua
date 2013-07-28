@@ -100,7 +100,7 @@ local function OnEvent(self, event, arg1, arg2)
 	local canplaysound = false
 	local rolepass = false
 	local specpass = false
-	local inInstance, instanceType = IsInInstance()
+	local _, instanceType = IsInInstance()
 
 	if role ~= nil then
 		if role == T.Role then

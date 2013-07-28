@@ -146,8 +146,8 @@ local function OnAuraChange(self, event, arg1, unit)
 		end
 	end
 
-	local inInstance, instanceType = IsInInstance()
-	if not (inInstance and (instanceType == "raid")) and C.reminder.raid_buffs_always == false then
+	local _, instanceType = IsInInstance()
+	if instanceType ~= "raid" and C.reminder.raid_buffs_always == false then
 		RaidBuffReminder:SetAlpha(0)
 		visible = false
 	elseif flask == true and food == true and stat == true and stamina == true and spell5 == true and spell6 == true then

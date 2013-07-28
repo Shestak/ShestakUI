@@ -161,8 +161,8 @@ end
 frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 
 function frame:PLAYER_ENTERING_WORLD()
-	local inInstance, instanceType = IsInInstance()
-	if inInstance and instanceType == "arena" then
+	local _, instanceType = IsInInstance()
+	if instanceType == "arena" then
 		self:SetScript("OnUpdate", nil)
 		wipe(cooldowns)
 		wipe(watching)

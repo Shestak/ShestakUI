@@ -129,8 +129,7 @@ coords:SetScript("OnUpdate", function(self, elapsed)
 	int = int + 1
 
 	if int >= 3 then
-		local inInstance, _ = IsInInstance()
-		local x,y = GetPlayerMapPosition("player")
+		local x, y = GetPlayerMapPosition("player")
 		x = math.floor(100 * x)
 		y = math.floor(100 * y)
 		if x ~= 0 and y ~= 0 then
