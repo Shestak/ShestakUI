@@ -114,9 +114,9 @@ local function Update(self, t)
 		for i = 1, numScores do
 			local name, killingBlows, _, _, honorGained, _, _, _, _, damageDone, healingDone = GetBattlefieldScore(i)
 			if healingDone > damageDone then
-				dmgtxt = (classcolor..SHOW_COMBAT_HEALING.." :|r "..healingDone)
+				dmgtxt = (classcolor..SHOW_COMBAT_HEALING.." :|r "..T.ShortValue(healingDone))
 			else
-				dmgtxt = (classcolor..DAMAGE.." :|r "..damageDone)
+				dmgtxt = (classcolor..DAMAGE.." :|r "..T.ShortValue(damageDone))
 			end
 			if name then
 				if name == T.name then
