@@ -24,6 +24,7 @@ local function styleBubble(frame)
 	frame:SetBackdropColor(unpack(C.media.overlay_color))
 	frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	frame:SetClampedToScreen(false)
+	frame:SetFrameStrata("BACKGROUND")
 end
 
 f:SetScript("OnUpdate", function(self, elapsed)
