@@ -76,7 +76,7 @@ function oUF:DisableBlizzard(unit)
 				HandleFrame(('Boss%dTargetFrame'):format(i))
 			end
 		end
-	elseif(unit:match'(party)%d?$' == 'party') and not IsInRaid() then
+	elseif(unit:match'(party)%d?$' == 'party') then
 		local id = unit:match'party(%d)'
 		if(id) then
 			HandleFrame('PartyMemberFrame' .. id)
