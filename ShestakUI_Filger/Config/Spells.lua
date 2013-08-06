@@ -1679,7 +1679,7 @@ C["filger_spells"] = {
 			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Embrace
 			{spellID = 15286, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Glyph of Inner Focus
+			-- Inner Focus
 			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Word: Shield
 			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
@@ -3591,10 +3591,10 @@ C["filger_spells"] = {
 			{spellID = 47585, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pain Suppression
 			{spellID = 33206, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Glyph of Inner Focus
-			{spellID = 96267, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Guardian Spirit
 			{spellID = 47788, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Inner Focus
+			{spellID = 96267, unitID = "target", caster = "all", filter = "BUFF", absID = true},
 			-- Phantasm
 			{spellID = 114239, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Fear Ward
