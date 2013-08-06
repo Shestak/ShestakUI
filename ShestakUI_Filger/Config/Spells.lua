@@ -3501,7 +3501,7 @@ C["filger_spells"] = {
 			-- Bad Manner (Monkey)
 			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Lullaby (Crane)
-			{spellID = 126246, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 126246, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
 			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
 
