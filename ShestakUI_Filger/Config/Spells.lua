@@ -118,10 +118,6 @@ C["filger_spells"] = {
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -675,14 +671,8 @@ C["filger_spells"] = {
 			{spellID = 109085, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -971,14 +961,8 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1277,8 +1261,6 @@ C["filger_spells"] = {
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
@@ -1545,8 +1527,6 @@ C["filger_spells"] = {
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
@@ -1761,10 +1741,6 @@ C["filger_spells"] = {
 			-- Caster Heal
 
 			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
@@ -2041,14 +2017,8 @@ C["filger_spells"] = {
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2310,8 +2280,6 @@ C["filger_spells"] = {
 			-- Caster Heal
 
 			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Sinister Primal Diamond (Caster DPS)
@@ -2548,14 +2516,8 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2822,10 +2784,6 @@ C["filger_spells"] = {
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
