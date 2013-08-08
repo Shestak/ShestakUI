@@ -683,8 +683,6 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].target_debuff_icon)},
 
-			-- Hunter's Mark
-			--OLD{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 1978, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Black Arrow
@@ -700,26 +698,6 @@ C["filger_spells"] = {
 			-- Pin (Crab)
 			{spellID = 50245, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
-		--[[{
-			Name = "T_DE/BUFF_BAR",
-			Direction = "UP",
-			IconSide = "LEFT",
-			Mode = "BAR",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 186,
-			Position = {unpack(C["filger_position"].target_bar)},
-
-			-- Hunter's Mark
-			{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Serpent Sting
-			{spellID = 1978, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Black Arrow
-			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Explosive Shot
-			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
-		},]]
 		{
 			Name = "PVE/PVP_CC",
 			Direction = "DOWN",
@@ -1280,18 +1258,6 @@ C["filger_spells"] = {
 			-- Breath of Fire
 			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
-		--[[{
-			Name = "T_DE/BUFF_BAR",
-			Direction = "UP",
-			IconSide = "LEFT",
-			Mode = "BAR",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 186,
-			Position = {unpack(C["filger_position"].target_bar)},
-
-		},]]
 		{
 			Name = "COOLDOWN",
 			Direction = "RIGHT",
