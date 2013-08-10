@@ -19,13 +19,14 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	if C.unitframe.enable and (SavedOptions and (SavedOptions.RaidLayout == "HEAL" or SavedOptions.RaidLayout == "DPS")) then
 		InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
 		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
-		SetCVar("useCompactPartyFrames", 0)
 		if not InCombatLockdown() then
 			CompactRaidFrameManager:Kill()
 			CompactRaidFrameContainer:Kill()
 		end
-		CompactUnitFrame_UpateVisible = T.dummy
+		ShowPartyFrame = T.dummy
+		HidePartyFrame = T.dummy
 		CompactUnitFrame_UpdateAll = T.dummy
+		CompactUnitFrame_UpateVisible = T.dummy
 		CompactUnitFrameProfiles_ApplyProfile = T.dummy
 	end
 
