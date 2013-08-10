@@ -17,7 +17,7 @@ C["media"] = {
 	["blank"] = [[Interface\AddOns\ShestakUI\Media\Textures\White.tga]],			-- Texture for borders
 	["texture"] = [[Interface\AddOns\ShestakUI\Media\Textures\Texture.tga]],		-- Texture for status bars
 	["highlight"] = [[Interface\AddOns\ShestakUI\Media\Textures\Highlight.tga]],	-- Texture for debuffs highlight
-	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for wispers
+	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for whispers
 	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
 	["proc_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Proc.mp3]],			-- Sound for procs
 	["border_color"] = {0.37, 0.3, 0.3, 1},		-- Color for borders
@@ -33,7 +33,7 @@ C["general"] = {
 	["uiscale"] = 0.96,							-- Your value(between 0.64 and 1) if "auto_scale" is disable
 	["multisampleprotect"] = true,				-- Disable this if you want multisample > 1
 	["welcome_message"] = true,					-- Enable welcome message in chat
-	["custom_lagtolerance"] = false,			-- Custom lag tollerance to your latency
+	["custom_lagtolerance"] = false,			-- Custom lag tolerance to your latency
 }
 
 ----------------------------------------------------------------------------------------
