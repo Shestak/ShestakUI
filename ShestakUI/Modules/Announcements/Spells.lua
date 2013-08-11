@@ -9,32 +9,30 @@ frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 frame:SetScript("OnEvent", function(self, _, ...)
 	local _, event, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID = ...
 	local spells = T.AnnounceSpells
-	local _, instanceType = IsInInstance()
-	if instanceType ~= "raid" or instanceType ~= "party" then return end
+	local _, _, difficultyID = GetInstanceInfo()
+	if difficultyID == 0 or event ~= "SPELL_CAST_SUCCESS" then return end
 
-	if event == "SPELL_CAST_SUCCESS" then
-		if C.announcements.spells_from_all == true and not (sourceGUID == UnitGUID("player") and sourceName == T.name) then
-			if not sourceName then return end
+	if C.announcements.spells_from_all == true and not (sourceGUID == UnitGUID("player") and sourceName == T.name) then
+		if not sourceName then return end
 
-			for i, spells in pairs(spells) do
-				if spellID == spells then
-					if destName == nil then
-						SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID)), T.CheckChat())
-					else
-						SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID).." -> "..destName), T.CheckChat())
-					end
+		for i, spells in pairs(spells) do
+			if spellID == spells then
+				if destName == nil then
+					SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID)), T.CheckChat())
+				else
+					SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID).." -> "..destName), T.CheckChat())
 				end
 			end
-		else
-			if not (sourceGUID == UnitGUID("player") and sourceName == T.name) then return end
+		end
+	else
+		if not (sourceGUID == UnitGUID("player") and sourceName == T.name) then return end
 
-			for i, spells in pairs(spells) do
-				if spellID == spells then
-					if destName == nil then
-						SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID)), T.CheckChat())
-					else
-						SendChatMessage(GetSpellLink(spellID).." -> "..destName, T.CheckChat())
-					end
+		for i, spells in pairs(spells) do
+			if spellID == spells then
+				if destName == nil then
+					SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID)), T.CheckChat())
+				else
+					SendChatMessage(GetSpellLink(spellID).." -> "..destName, T.CheckChat())
 				end
 			end
 		end
