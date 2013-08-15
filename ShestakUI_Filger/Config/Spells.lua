@@ -58,15 +58,13 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortitude of the Zandalari (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
 			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stuff of Nightmares (Dodge, Proc)
@@ -322,15 +320,13 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortitude of the Zandalari (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
 			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stuff of Nightmares (Dodge, Proc)
@@ -631,10 +627,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
@@ -901,10 +897,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Shock-Charger Medallion Figurine (Intellect, Use)
 			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1163,15 +1159,13 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortitude of the Zandalari (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
 			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stuff of Nightmares (Dodge, Proc)
@@ -1415,15 +1409,13 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortitude of the Zandalari (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
 			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stuff of Nightmares (Dodge, Proc)
@@ -1665,10 +1657,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Shock-Charger Medallion Figurine (Intellect, Use)
 			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1945,10 +1937,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2175,10 +2167,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2444,10 +2436,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Shock-Charger Medallion Figurine (Intellect, Use)
 			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2690,15 +2682,13 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortitude of the Zandalari (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
 			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stuff of Nightmares (Dodge, Proc)
