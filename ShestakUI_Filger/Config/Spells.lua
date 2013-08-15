@@ -111,7 +111,7 @@ C["filger_spells"] = {
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
@@ -404,7 +404,7 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
@@ -666,7 +666,7 @@ C["filger_spells"] = {
 			-- Lord Blastington's Scope of Doom (Agility)
 			{spellID = 109085, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 		},
@@ -934,7 +934,7 @@ C["filger_spells"] = {
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 		},
@@ -1228,7 +1228,7 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
@@ -1480,7 +1480,7 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
@@ -1530,7 +1530,7 @@ C["filger_spells"] = {
 			{spellID = 20066, filter = "CD"},
 			-- Hammer of Justice
 			{spellID = 853, filter = "CD"},
-			-- Judgement
+			-- Judgment
 			{spellID = 20271, filter = "CD"},
 			-- Consecration
 			{spellID = 26573, filter = "CD"},
@@ -1698,7 +1698,7 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
@@ -1974,7 +1974,7 @@ C["filger_spells"] = {
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 		},
@@ -2237,7 +2237,7 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Sinister Primal Diamond (Caster DPS)
@@ -2473,7 +2473,7 @@ C["filger_spells"] = {
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 		},
@@ -2735,7 +2735,7 @@ C["filger_spells"] = {
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
