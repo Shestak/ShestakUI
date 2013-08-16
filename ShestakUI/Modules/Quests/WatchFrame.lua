@@ -79,7 +79,7 @@ end)
 hooksecurefunc("WatchFrameLinkButtonTemplate_Highlight", function(self, onEnter)
 	for i = self.startLine, self.lastLine do
 		if not self.lines[i] then return end
-		if self.lines[i].col then
+		if self.lines[i].col and i == self.startLine then
 			if onEnter then
 				self.lines[i].text:SetTextColor(1, 0.8, 0)
 			else
