@@ -66,8 +66,7 @@ end
 
 function frame:PLAYER_ENTERING_WORLD()
 	local _, instanceType = IsInInstance()
-	local difficulty = select(3, GetInstanceInfo())
-	if instanceType == "raid" or difficulty == 1 then
+	if instanceType == "raid" then
 		self:CheckBadges("valor")
 	elseif instanceType == "party" then
 		self:CheckBadges("justice")
