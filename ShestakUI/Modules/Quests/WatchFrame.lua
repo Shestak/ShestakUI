@@ -57,11 +57,10 @@ end)
 --	Difficulty color for WatchFrame lines
 ----------------------------------------------------------------------------------------
 hooksecurefunc("WatchFrame_Update", function()
-	local questIndex
 	local numQuestWatches = GetNumQuestWatches()
 
 	for i = 1, numQuestWatches do
-		questIndex = GetQuestIndexForWatch(i)
+		local questIndex = GetQuestIndexForWatch(i)
 		if questIndex then
 			local title, level = GetQuestLogTitle(questIndex)
 			local col = GetQuestDifficultyColor(level)
@@ -74,21 +73,18 @@ hooksecurefunc("WatchFrame_Update", function()
 			end
 			for k = 1, #WATCHFRAME_ACHIEVEMENTLINES do
 				WATCHFRAME_ACHIEVEMENTLINES[k].col = nil
-			end	
+			end
 		end
 	end
 end)
 
 hooksecurefunc("WatchFrameLinkButtonTemplate_Highlight", function(self, onEnter)
-	for i = self.startLine, self.lastLine do
-		if not self.lines[i] then return end
-		if self.lines[i].col and i == self.startLine then
-			if onEnter then
-				self.lines[i].text:SetTextColor(1, 0.8, 0)
-			else
-				self.lines[i].text:SetTextColor(self.lines[i].col.r, self.lines[i].col.g, self.lines[i].col.b)
-			end
-		end
+	i = self.startLine
+	if not (self.lines[i] and self.lines[i].col) then return end
+	if onEnter then
+		self.lines[i].text:SetTextColor(1, 0.8, 0)
+	else
+		self.lines[i].text:SetTextColor(self.lines[i].col.r, self.lines[i].col.g, self.lines[i].col.b)
 	end
 end)
 
