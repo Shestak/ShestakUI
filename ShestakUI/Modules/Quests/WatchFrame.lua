@@ -72,6 +72,9 @@ hooksecurefunc("WatchFrame_Update", function()
 					WATCHFRAME_QUESTLINES[j].col = col
 				end
 			end
+			for k = 1, #WATCHFRAME_ACHIEVEMENTLINES do
+				WATCHFRAME_ACHIEVEMENTLINES[k].col = nil
+			end	
 		end
 	end
 end)
