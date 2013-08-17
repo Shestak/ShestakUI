@@ -31,7 +31,6 @@ hooksecurefunc("WatchFrameItem_UpdateCooldown", function(self)
 		local icon = _G[self:GetName().."IconTexture"]
 		local border = _G[self:GetName().."NormalTexture"]
 		local count = _G[self:GetName().."Count"]
-		local hotkey = _G[self:GetName().."HotKey"]
 
 		self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		self:SetTemplate("Default")
