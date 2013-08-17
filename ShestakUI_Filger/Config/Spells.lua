@@ -248,8 +248,6 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].player_buff_icon)},
 
-			-- Cenarion Ward
-			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Tree of Life
 			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Chosen of Elunee
@@ -290,6 +288,8 @@ C["filger_spells"] = {
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
 			{spellID = 5229, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cenarion Ward
+			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -315,7 +315,7 @@ C["filger_spells"] = {
 			{spellID = 114108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tooth and Claw
 			{spellID = 135286, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Predator's Swiftness
+			-- Predatory Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
