@@ -195,9 +195,8 @@ load:SetScript("OnEvent", function(self, event)
 	b:SetPoint("TOPRIGHT", "ColorPPPaste", "BOTTOMRIGHT", 0, -7)
 
 	b:SetScript("OnClick", function()
-		local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[T.class]
-		ColorPickerFrame:SetColorRGB(color.r, color.g, color.b)
-		ColorSwatch:SetTexture(color.r, color.g, color.b)
+		ColorPickerFrame:SetColorRGB(T.color.r, T.color.g, T.color.b)
+		ColorSwatch:SetTexture(T.color.r, T.color.g, T.color.b)
 		if ColorPickerFrame.hasOpacity then
 			OpacitySliderFrame:SetValue(0)
 		end

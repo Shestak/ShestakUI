@@ -58,15 +58,13 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortitude of the Zandalari (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
 			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stuff of Nightmares (Dodge, Proc)
@@ -113,15 +111,11 @@ C["filger_spells"] = {
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -254,8 +248,6 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].player_buff_icon)},
 
-			-- Cenarion Ward
-			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Tree of Life
 			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Chosen of Elunee
@@ -296,6 +288,8 @@ C["filger_spells"] = {
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
 			{spellID = 5229, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cenarion Ward
+			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -321,20 +315,18 @@ C["filger_spells"] = {
 			{spellID = 114108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tooth and Claw
 			{spellID = 135286, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Predator's Swiftness
+			-- Predatory Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortitude of the Zandalari (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
 			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stuff of Nightmares (Dodge, Proc)
@@ -412,7 +404,7 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
@@ -635,10 +627,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
@@ -674,15 +666,9 @@ C["filger_spells"] = {
 			-- Lord Blastington's Scope of Doom (Agility)
 			{spellID = 109085, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Legendary Meta Gems
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -693,8 +679,6 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].target_debuff_icon)},
 
-			-- Hunter's Mark
-			--OLD{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 1978, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Black Arrow
@@ -710,26 +694,6 @@ C["filger_spells"] = {
 			-- Pin (Crab)
 			{spellID = 50245, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
-		--[[{
-			Name = "T_DE/BUFF_BAR",
-			Direction = "UP",
-			IconSide = "LEFT",
-			Mode = "BAR",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 186,
-			Position = {unpack(C["filger_position"].target_bar)},
-
-			-- Hunter's Mark
-			{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Serpent Sting
-			{spellID = 1978, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Black Arrow
-			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Explosive Shot
-			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
-		},]]
 		{
 			Name = "PVE/PVP_CC",
 			Direction = "DOWN",
@@ -933,10 +897,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Shock-Charger Medallion Figurine (Intellect, Use)
 			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
@@ -970,15 +934,9 @@ C["filger_spells"] = {
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Legendary Meta Gems
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1201,15 +1159,13 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortitude of the Zandalari (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
 			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stuff of Nightmares (Dodge, Proc)
@@ -1272,13 +1228,11 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
@@ -1298,18 +1252,6 @@ C["filger_spells"] = {
 			-- Breath of Fire
 			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
-		--[[{
-			Name = "T_DE/BUFF_BAR",
-			Direction = "UP",
-			IconSide = "LEFT",
-			Mode = "BAR",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 25,
-			BarWidth = 186,
-			Position = {unpack(C["filger_position"].target_bar)},
-
-		},]]
 		{
 			Name = "COOLDOWN",
 			Direction = "RIGHT",
@@ -1467,15 +1409,13 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortitude of the Zandalari (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
 			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stuff of Nightmares (Dodge, Proc)
@@ -1540,13 +1480,11 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
@@ -1592,7 +1530,7 @@ C["filger_spells"] = {
 			{spellID = 20066, filter = "CD"},
 			-- Hammer of Justice
 			{spellID = 853, filter = "CD"},
-			-- Judgement
+			-- Judgment
 			{spellID = 20271, filter = "CD"},
 			-- Consecration
 			{spellID = 26573, filter = "CD"},
@@ -1679,7 +1617,7 @@ C["filger_spells"] = {
 			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Embrace
 			{spellID = 15286, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Glyph of Inner Focus
+			-- Inner Focus
 			{spellID = 96267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Word: Shield
 			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
@@ -1719,10 +1657,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Shock-Charger Medallion Figurine (Intellect, Use)
 			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1760,11 +1698,7 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
-			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Legendary Meta Gems
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
@@ -2003,10 +1937,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2040,15 +1974,9 @@ C["filger_spells"] = {
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Legendary Meta Gems
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2239,10 +2167,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2309,9 +2237,7 @@ C["filger_spells"] = {
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
-			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Legendary Meta Gems
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Sinister Primal Diamond (Caster DPS)
@@ -2510,10 +2436,10 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster General
 			-- Shock-Charger Medallion Figurine (Intellect, Use)
 			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2547,15 +2473,9 @@ C["filger_spells"] = {
 			-- Lightweave (Intellect)
 			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Legendary meta gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Legendary Meta Gems
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2762,15 +2682,13 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- General
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkmoon Cards (Proc)
 			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
+			-- PvP Trinkets (Health, Use)
+			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortitude of the Zandalari (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
 			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stuff of Nightmares (Dodge, Proc)
@@ -2817,15 +2735,11 @@ C["filger_spells"] = {
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Legendary meta gems
+			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Capacitive Primal Diamond (Physical General)
 			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -3501,7 +3415,7 @@ C["filger_spells"] = {
 			-- Bad Manner (Monkey)
 			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Lullaby (Crane)
-			{spellID = 126246, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 126246, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
 			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3591,10 +3505,10 @@ C["filger_spells"] = {
 			{spellID = 47585, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pain Suppression
 			{spellID = 33206, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Glyph of Inner Focus
-			{spellID = 96267, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Guardian Spirit
 			{spellID = 47788, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Inner Focus
+			{spellID = 96267, unitID = "target", caster = "all", filter = "BUFF", absID = true},
 			-- Phantasm
 			{spellID = 114239, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Fear Ward

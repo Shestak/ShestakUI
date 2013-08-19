@@ -9,8 +9,7 @@ local function addAuraSource(self, func, unit, index, filter)
 	if srcUnit then
 		local src = GetUnitName(srcUnit, true)
 		if srcUnit == "pet" or srcUnit == "vehicle" then
-			local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass("player"))]
-			src = format("%s (|cff%02x%02x%02x%s|r)", src, color.r * 255, color.g * 255, color.b * 255, GetUnitName("player", true))
+			src = format("%s (|cff%02x%02x%02x%s|r)", src, T.color.r * 255, T.color.g * 255, T.color.b * 255, GetUnitName("player", true))
 		else
 			local partypet = srcUnit:match("^partypet(%d+)$")
 			local raidpet = srcUnit:match("^raidpet(%d+)$")

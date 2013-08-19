@@ -20,7 +20,7 @@ C["media"] = {
 	["tank"] = [[Interface\AddOns\DarkShestakUI\Media\Textures\Tank.tga]],				-- Tank role icon
 	["healer"] = [[Interface\AddOns\DarkShestakUI\Media\Textures\Healer.tga]],			-- Healer role icon
 	["dps"] = [[Interface\AddOns\DarkShestakUI\Media\Textures\DPS.tga]],				-- DPS role icon
-	["whisp_sound"] = [[Interface\AddOns\DarkShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for wispers
+	["whisp_sound"] = [[Interface\AddOns\DarkShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for whispers
 	["warning_sound"] = [[Interface\AddOns\DarkShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
 	["proc_sound"] = [[Interface\AddOns\DarkShestakUI\Media\Sounds\Proc.mp3]],			-- Sound for procs
 	["border_color"] = {0.1, 0.1, 0.1, 1},		-- Color for borders
@@ -36,7 +36,7 @@ C["general"] = {
 	["uiscale"] = 0.96,							-- Your value(between 0.64 and 1) if "auto_scale" is disable
 	["multisampleprotect"] = true,				-- Disable this if you want multisample > 1
 	["welcome_message"] = true,					-- Enable welcome message in chat
-	["custom_lagtolerance"] = false,			-- Custom lag tollerance to your latency
+	["custom_lagtolerance"] = false,			-- Custom lag tolerance to your latency
 }
 
 ----------------------------------------------------------------------------------------

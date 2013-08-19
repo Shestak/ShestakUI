@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.automation.resurrection ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Auto resurection
+--	Auto resurrection
 ----------------------------------------------------------------------------------------
 local WINTERGRASP = L_ZONE_WINTERGRASP
 local BARAD = L_ZONE_TOLBARAD

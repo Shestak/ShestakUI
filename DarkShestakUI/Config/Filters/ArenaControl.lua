@@ -134,7 +134,7 @@ T.ArenaControl = {
 	[GetSpellInfo(31821)] = 1,	-- Devotion Aura
 	[GetSpellInfo(54428)] = 1,	-- Divine Plea
 	[GetSpellInfo(33206)] = 1,	-- Pain Suppression
-	[GetSpellInfo(96267)] = 1,	-- Glyph of Inner Focus
+	[GetSpellInfo(96267)] = 1,	-- Inner Focus
 	[GetSpellInfo(8178)] = 1,	-- Grounding Totem
 
 	-- Defense abilities

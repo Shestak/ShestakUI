@@ -278,17 +278,6 @@ end
 
 function lpanels.OnEvent(self, event)
 	if event == "PLAYER_LOGIN" then
-		-- Pre-1.5 layout compatibility
-		if LPanels then
-			for name, profile in pairs(LPanels) do
-				if name == "Default" or name == format("%s - %s", UnitName("player"), GetRealmName()) then
-					lpanels:CreateLayout(name, profile)
-					lpanels:ApplyLayout(name ~= "Default" and "n:"..lpanels.cinfo.n.." r:"..lpanels.cinfo.r, name)
-				end
-				LPanels = nil
-			end
-		end
-		-- Run addon
 		lpanels:Init()
 		lpanels = lpanels:Exit()
 	elseif event == "ADDON_LOADED" and deps then
