@@ -98,6 +98,7 @@ if T.name == "Medusa" or T.name == "Oz" and T.realm == "Pozzo dell'Eternità" th
 	C["minimap"].toggle_menu = false
 	C["minimap"].farm_mode = false
 	C["nameplate"].health_value = true
+	C["actionbar"].hotkey = false
 	C["actionbar"].button_size = 24.4
 	C["actionbar"].toggle_mode = false
 	C["actionbar"].stancebar_hide = true

@@ -231,6 +231,36 @@ LPSTAT_PROFILES = {
 			x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "Minimap", tip_anchor = "TOPLEFT", tip_x = 135, tip_y = 2
 		}	
 	},
+	["Oz - Pozzo dell'Eternità"] = {
+		Helm = {
+			enabled = false
+		},
+		Cloak = {
+			enabled = false
+		},
+		Loot = {
+			enabled = false
+		},
+		Nameplates = {
+			enabled = false
+		},
+		Clock = {
+			enabled = C.stats.clock and C.toppanel.enable,
+			anchor_frame = "TopPanel", anchor_to = "left", anchor_from = "bottomleft",
+		},
+		Durability = {
+			anchor_frame = "FPS", anchor_to = "left", anchor_from = "right",
+			x_off = C.stats.fps and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
+		},
+		Coords = {
+			anchor_frame = "Minimap", anchor_to = "right", anchor_from = "topright",
+			x_off = 3, y_off = -5, justify_h = "right",
+		},
+		Location = {
+			truncate = 18,
+			x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "Minimap", tip_anchor = "TOPLEFT", tip_x = 135, tip_y = 2
+		}	
+	},
 	DEATHKNIGHT = {
 		Stats = {
 			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Armor: ".."[armor]"..class"  Avoid: ".."[avoidance]%",
