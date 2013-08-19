@@ -6,7 +6,7 @@
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, _, _, destName, _, _, spellID, ...)
-	if not (IsInRaid() or IsInGroup()) or InCombatLockdown() or not subEvent or not spellID or not srcName then return end
+	if not IsInGroup() or InCombatLockdown() or not subEvent or not spellID or not srcName then return end
 	if not UnitInRaid(srcName) and not UnitInParty(srcName) then return end
 
 	local srcName = format(srcName:gsub("%-[^|]+", ""))

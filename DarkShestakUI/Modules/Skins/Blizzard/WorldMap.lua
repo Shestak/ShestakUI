@@ -189,7 +189,6 @@ local function LoadSkin()
 		int = int + 1
 
 		if int >= 3 then
-			local inInstance, _ = IsInInstance()
 			local x, y = GetPlayerMapPosition("player")
 			x = math.floor(100 * x)
 			y = math.floor(100 * y)

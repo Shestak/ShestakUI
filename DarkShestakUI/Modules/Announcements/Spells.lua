@@ -9,8 +9,8 @@ frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 frame:SetScript("OnEvent", function(self, _, ...)
 	local _, event, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID = ...
 	local spells = T.AnnounceSpells
-	local inInstance, instanceType = IsInInstance()
-	if not (inInstance and (instanceType == "raid" or instanceType == "party")) then return end
+	local _, instanceType = IsInInstance()
+	if instanceType ~= "raid" or instanceType ~= "party" then return end
 
 	if event == "SPELL_CAST_SUCCESS" then
 		if C.announcements.spells_from_all == true and not (sourceGUID == UnitGUID("player") and sourceName == T.name) then

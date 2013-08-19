@@ -56,12 +56,6 @@ L_TOOLTIP_LOADING = "Загрузка..."
 L_TOOLTIP_ACH_STATUS = "Ваш статус:"
 L_TOOLTIP_ACH_COMPLETE = "Ваш статус: Получено "
 L_TOOLTIP_ACH_INCOMPLETE = "Ваш статус: Не завершено"
-L_TOOLTIP_ACH_NOT_EAT = "Не съедено"
-L_TOOLTIP_ACH_EAT = "Съедено"
-L_TOOLTIP_ACH_NOT_DRINK = "Не выпито"
-L_TOOLTIP_ACH_DRINK = "Выпито"
-L_TOOLTIP_ACH_NOT_EQUIP = "Не одето"
-L_TOOLTIP_ACH_EQUIP = "Одето"
 L_TOOLTIP_SPELL_ID = "Номер заклинания:"
 L_TOOLTIP_ITEM_ID = "Номер предмета:"
 L_TOOLTIP_WHO_TARGET = "Выбран целью"
@@ -388,7 +382,7 @@ L_STATS_TOTAL_MEMORY_USAGE = "Всего использовано памяти:"
 L_STATS_NOT_TO_SELL = "Введите /junk, чтобы настроить какие предметы не продавать."
 L_STATS_WATCH_CURRENCY = "Показывает отображаемую валюту в подсказке."
 L_STATS_WATCH_FACTIONS = "Просмотр фракций из окна репутации."
-L_STATS_TOOLTIP_TIME_PLAYED = "Когда уровень максимальный, подсказка будет показывать время игры персонажей."
+L_STATS_TOOLTIP_TIME_PLAYED = "Когда уровень максимальный, подсказка будет показывать время игры персонажами."
 L_STATS_TOOLTIP_EXPERIENCE = "Когда уровень не максимальный, подсказка будет показывать подробности опыта."
 
 -- Slash commands
@@ -422,7 +416,7 @@ L_SLASHCMD_HELP = {
 	"/threat - Тест списка угрозы.",
 	"/tt - Шепнуть цели.",
 	"/ainv - Включение автоматического приглашения.",
-	"/testuf - Тест юнит фреймов",
+	"/testuf - Тест юнит фреймов.",
 	"/cfg - Открыть настройки интерфейса.",
 }
 

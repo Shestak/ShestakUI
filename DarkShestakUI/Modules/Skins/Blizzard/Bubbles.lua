@@ -6,7 +6,7 @@ if C.chat.bubbles ~= true then return end
 ----------------------------------------------------------------------------------------
 local f = CreateFrame("Frame", nil, UIParent)
 local noscalemult = T.mult * C.general.uiscale
-local total = -2
+local total = 0
 local numKids = 0
 
 local function styleBubble(frame)
@@ -24,12 +24,7 @@ local function styleBubble(frame)
 	frame:SetBackdropColor(unpack(C.media.overlay_color))
 	frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	frame:SetClampedToScreen(false)
-end
-
-local function isChatBubble(frame)
-	if frame:GetName() then return end
-	if not frame:GetRegions() then return end
-	return frame:GetRegions():GetTexture() == [[Interface\Tooltips\ChatBubble-Background]]
+	frame:SetFrameStrata("BACKGROUND")
 end
 
 f:SetScript("OnUpdate", function(self, elapsed)
@@ -40,7 +35,8 @@ f:SetScript("OnUpdate", function(self, elapsed)
 		if newNumKids ~= numKids then
 			for i = numKids + 1, newNumKids do
 				local frame = select(i, WorldFrame:GetChildren())
-				if isChatBubble(frame) then
+				local b = frame:GetBackdrop()
+				if b and b.bgFile == [[Interface\Tooltips\ChatBubble-Background]] then
 					styleBubble(frame)
 				end
 			end
