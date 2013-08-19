@@ -2,7 +2,7 @@
 ## Title: ShestakUI Filger
 ## Notes: Class timers for ShestakUI. Edit 1.2.9 by Oz of Pozzo dell'Eternità
 ## Author: Nils Ruesch
-## Version: 4.40
+## Version: 4.41
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: ShestakUI

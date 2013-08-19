@@ -100,7 +100,7 @@ local function OnEvent(self, event, arg1, arg2)
 	local canplaysound = false
 	local rolepass = false
 	local specpass = false
-	local _, instanceType = IsInInstance()
+	local _, instanceType, difficultyID = GetInstanceInfo()
 
 	if role ~= nil then
 		if role == T.Role then
@@ -129,7 +129,7 @@ local function OnEvent(self, event, arg1, arg2)
 	if (event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_REGEN_DISABLED") and C.reminder.solo_buffs_sound == true then canplaysound = true end
 
 	if not group.weapon then
-		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and
+		if ((combat and UnitAffectingCombat("player")) or (instance and difficultyID ~= 0) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and
 		specpass == true and rolepass == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
 			for _, buff in pairs(group.spells) do
 				local name = GetSpellInfo(buff)
@@ -148,7 +148,7 @@ local function OnEvent(self, event, arg1, arg2)
 			end
 			self:Show()
 			if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
-		elseif ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid"))) and
+		elseif ((combat and UnitAffectingCombat("player")) or (instance and difficultyID ~= 0)) and
 		reversecheck == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
 			if negate_reversecheck and negate_reversecheck == GetSpecialization() then self:Hide() return end
 			for _, buff in pairs(group.spells) do
@@ -164,7 +164,7 @@ local function OnEvent(self, event, arg1, arg2)
 			self:Hide()
 		end
 	else
-		if ((combat and UnitAffectingCombat("player")) or (instance and (instanceType == "party" or instanceType == "raid")) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and
+		if ((combat and UnitAffectingCombat("player")) or (instance and difficultyID ~= 0) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and
 		specpass == true and rolepass == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
 			if hasOffhandWeapon == nil then
 				if hasMainHandEnchant == nil then

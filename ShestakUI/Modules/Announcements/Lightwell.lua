@@ -9,7 +9,7 @@ frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 frame:SetScript("OnEvent", function(self, _, ...)
 	local _, event, _, _, sourceName, _, _, _, destName, _, _, spellID = ...
 
-	if sourceName == UnitName("player") and (IsInRaid() or IsInGroup()) then
+	if sourceName == UnitName("player") and IsInGroup() then
 		if event == "SPELL_AURA_APPLIED" and spellID == 7001 then
 			local santemax = UnitHealthMax(destName)
 			local santecurrent = UnitHealth(destName)

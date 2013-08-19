@@ -11,7 +11,7 @@ local check = function(self, event, prefix, message, channel, sender)
 			self:UnregisterEvent("CHAT_MSG_ADDON")
 		end
 	else
-		if (not IsInGroup(LE_PARTY_CATEGORY_HOME) or not IsInRaid(LE_PARTY_CATEGORY_HOME)) and IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
+		if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
 			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "INSTANCE_CHAT")
 		elseif IsInRaid(LE_PARTY_CATEGORY_HOME) then
 			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "RAID")

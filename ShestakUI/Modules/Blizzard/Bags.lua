@@ -1137,7 +1137,7 @@ function Stuffing:SortBags()
 			self:SlotUpdate(v)
 
 			if v.name then
-				local tex, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
+				local _, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
 				local n, _, q, iL, rL, c1, c2, _, Sl = GetItemInfo(clink)
 				table.insert(st, {srcSlot = v, sslot = v.slot, sbag = v.bag, sort = q..c1..c2..rL..n..iL..Sl..(#self.buttons - i)})
 			end
@@ -1225,7 +1225,7 @@ function Stuffing:Restack()
 
 	for i, v in pairs(self.buttons) do
 		if InBags(v.bag) then
-			local tex, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
+			local _, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
 			if clink then
 				local n, _, _, _, _, _, _, s = GetItemInfo(clink)
 

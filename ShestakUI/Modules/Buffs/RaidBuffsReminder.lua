@@ -13,7 +13,7 @@ local statbuffs = T.ReminderBuffs["Stat"]
 local staminabuffs = T.ReminderBuffs["Stamina"]
 local visible, flask, battleelixir, guardianelixir, food, stat, stamina, spell5, spell6
 
--- We need to check if you have two differant elixirs if your not flasked, before we say your not flasked
+-- We need to check if you have two different elixirs if your not flasked, before we say your not flasked
 local function CheckElixir(unit)
 	if battleelixirbuffs and battleelixirbuffs[1] then
 		for i, battleelixirbuffs in pairs(battleelixirbuffs) do
@@ -57,7 +57,7 @@ end
 local function OnAuraChange(self, event, arg1, unit)
 	if event == "UNIT_AURA" and arg1 ~= "player" then return end
 
-	-- If We're a caster we may want to see differant buffs
+	-- If We're a caster we may want to see different buffs
 	if T.Role == "Caster" or T.Role == "Healer" then
 		T.ReminderCasterBuffs()
 	else
