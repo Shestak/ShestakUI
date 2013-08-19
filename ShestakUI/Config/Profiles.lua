@@ -48,49 +48,9 @@ if T.author == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Oz@Pozzo dell'Eternità Config
+--	Medusa/Oz@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
-if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
-	C["position"].vehicle = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 109, 100}
-	C["position"].ghost = {"TOPLEFT", "oUF_Player", "TOPLEFT", -2, 65}
-	C["position"].loot = {"TOPLEFT", UIParent, "TOPLEFT", 21, -532}
-	C["position"].group_loot = {"TOPLEFT", UIParent, "TOPLEFT", 241, -211}
-	C["position"].threat_meter = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -245, 24}
-	C["position"].enemy_cooldown = {"BOTTOMLEFT", "oUF_Target", "BOTTOMRIGHT", 5, -67}
-	C["position"].raid_utility = {"TOPLEFT", UIParent, "TOPLEFT", 241, -21}
-	C["position"].extra_button = {"RIGHT", "oUF_Player", "BOTTOM", -53, -126}
-	C["position"].unitframes.player = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -558, 407}
-	C["position"].unitframes.target = {"TOPRIGHT", "ActionBarAnchor", "BOTTOMLEFT", 558, 407}
-	C["position"].unitframes.player_castbar = {"BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -203, -194}
-	C["position"].unitframes.target_castbar = {"TOPLEFT", "oUF_Target", "TOPRIGHT", -512, 56}
-	C["position"].unitframes.raid_heal = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -331, 407}
-	C["media"].overlay_color = {0, 0, 0, 0.5}
-	C["general"].welcome_message = false
-	C["misc"].profession_database = true
-	C["automation"].screenshot = true
-	C["automation"].logging_combat = true
-	C["combattext"].scrollable = true
-	C["chat"].background = true
-	C["chat"].background_alpha = 0.5
-	C["minimap"].toggle_menu = false
-	C["actionbar"].hotkey = false
-	C["aura"].fot_debuffs = true
-	C["aura"].pet_debuffs = true
-	C["aura"].tot_debuffs = true
-	C["unitframe"].own_color = true
-	C["unitframe"].color_value = true
-	C["unitframe"].alternative_portraits = true
-	C["raidframe"].raid_tanks_tt = true
-	C["raidframe"].raid_groups = 8
-	C["raidframe"].raid_portraits = true
-	C["raidframe"].plugins_aura_watch_timer = true
-	C["raidframe"].plugins_auto_resurrection = true
-end
-
-----------------------------------------------------------------------------------------
---	Medusa@Pozzo dell'Eternità Config
-----------------------------------------------------------------------------------------
-if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
+if T.name == "Medusa" or T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["media"].texture = [[Interface\AddOns\TinyDPS\Textures\wglass.tga]]
 	C["position"].minimap = {"BOTTOM", UIParent, "BOTTOM", 200, 52}
 	C["position"].chat = {"BOTTOM", Minimap, "BOTTOM", -338, -26}
@@ -159,6 +119,46 @@ if T.name == "Medusa" and T.realm == "Pozzo dell'Eternità" then
 	C["stats"].friend = false
 	C["stats"].bags = false
 	C["stats"].experience = false	
+end
+
+----------------------------------------------------------------------------------------
+--	Ozzolo@Pozzo dell'Eternità Config
+----------------------------------------------------------------------------------------
+if T.name == "Ozzolo" and T.realm == "Pozzo dell'Eternità" then
+	C["position"].vehicle = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 109, 100}
+	C["position"].ghost = {"TOPLEFT", "oUF_Player", "TOPLEFT", -2, 65}
+	C["position"].loot = {"TOPLEFT", UIParent, "TOPLEFT", 21, -532}
+	C["position"].group_loot = {"TOPLEFT", UIParent, "TOPLEFT", 241, -211}
+	C["position"].threat_meter = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -245, 24}
+	C["position"].enemy_cooldown = {"BOTTOMLEFT", "oUF_Target", "BOTTOMRIGHT", 5, -67}
+	C["position"].raid_utility = {"TOPLEFT", UIParent, "TOPLEFT", 241, -21}
+	C["position"].extra_button = {"RIGHT", "oUF_Player", "BOTTOM", -53, -126}
+	C["position"].unitframes.player = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -558, 407}
+	C["position"].unitframes.target = {"TOPRIGHT", "ActionBarAnchor", "BOTTOMLEFT", 558, 407}
+	C["position"].unitframes.player_castbar = {"BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -203, -194}
+	C["position"].unitframes.target_castbar = {"TOPLEFT", "oUF_Target", "TOPRIGHT", -512, 56}
+	C["position"].unitframes.raid_heal = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -331, 407}
+	C["media"].overlay_color = {0, 0, 0, 0.5}
+	C["general"].welcome_message = false
+	C["misc"].profession_database = true
+	C["automation"].screenshot = true
+	C["automation"].logging_combat = true
+	C["combattext"].scrollable = true
+	C["chat"].background = true
+	C["chat"].background_alpha = 0.5
+	C["minimap"].toggle_menu = false
+	C["actionbar"].hotkey = false
+	C["aura"].fot_debuffs = true
+	C["aura"].pet_debuffs = true
+	C["aura"].tot_debuffs = true
+	C["unitframe"].own_color = true
+	C["unitframe"].color_value = true
+	C["unitframe"].alternative_portraits = true
+	C["raidframe"].raid_tanks_tt = true
+	C["raidframe"].raid_groups = 8
+	C["raidframe"].raid_portraits = true
+	C["raidframe"].plugins_aura_watch_timer = true
+	C["raidframe"].plugins_auto_resurrection = true
 end
 
 ----------------------------------------------------------------------------------------
