@@ -174,7 +174,7 @@ local function LoadSkin()
 	coords.MouseText:SetText(L_MAP_CURSOR.."0,0")
 	local int = 0
 
-	WorldMapFrame:HookScript("OnUpdate", function(self, elapsed)
+	WorldMapFrame:HookScript("OnUpdate", function()
 		if WORLDMAP_SETTINGS.size == WORLDMAP_FULLMAP_SIZE then
 			WorldMapFrameSizeUpButton:Hide()
 			WorldMapFrameSizeDownButton:Show()
