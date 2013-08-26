@@ -277,7 +277,7 @@ local addSpell = function(self, button)
 end
 
 SpellBinder.UpdateAll = function()
-	if InCombatLockdown() or UnitAffectingCombat("player") then
+	if InCombatLockdown() then
 		SpellBinder.SheduleUpdate()
 		return
 	end
@@ -287,12 +287,12 @@ end
 
 SpellBinder.SheduleUpdate = function()
 	SpellBinder.updated = false
-	if InCombatLockdown() or UnitAffectingCombat("player") then
-		SpellBinder:RegisterEvent("PLAYER_LEAVE_COMBAT")
+	if InCombatLockdown() then
+		SpellBinder:RegisterEvent("PLAYER_REGEN_ENABLED")
 		SpellBinder:SetScript("OnEvent", function(self)
 			SpellBinder.UpdateAll()
 			if SpellBinder.updated then
-				SpellBinder:UnregisterEvent("PLAYER_LEAVE_COMBAT")
+				SpellBinder:UnregisterEvent("PLAYER_REGEN_ENABLED")
 			end
 		end)
 	else
