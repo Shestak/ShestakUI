@@ -1093,7 +1093,7 @@ local function InBags(x)
 end
 
 function Stuffing:SortBags()
-	if UnitAffectingCombat("player") then return end
+	if InCombatLockdown() then return end
 
 	local free
 	local total = 0
