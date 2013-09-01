@@ -20,6 +20,8 @@ elseif T.class == "HUNTER" then
 	unusable = {{5, 6, 16}, {5, 6}}
 elseif T.class == "MAGE" then
 	unusable = {{1, 2, 3, 4, 5, 6, 7, 9, 11, 14, 15}, {3, 4, 5, 6}, true}
+elseif T.class == "MONK" then
+	unusable = {{2, 3, 4, 6, 9, 13, 14, 15, 16}, {4, 5, 6}}
 elseif T.class == "PALADIN" then
 	unusable = {{3, 4, 10, 11, 13, 14, 15, 16}, {}, true}
 elseif T.class == "PRIEST" then
@@ -32,8 +34,6 @@ elseif T.class == "WARLOCK" then
 	unusable = {{1, 2, 3, 4, 5, 6, 7, 9, 11, 14, 15}, {3, 4, 5, 6}, true}
 elseif T.class == "WARRIOR" then
 	unusable = {{16}, {}}
-elseif T.class == "MONK" then
-	unusable = {{2, 3, 4, 6, 9, 13, 14, 15, 16}, {4, 5, 6}}
 end
 
 for class = 1, 2 do
