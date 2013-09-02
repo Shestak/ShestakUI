@@ -1270,6 +1270,8 @@ C["filger_spells"] = {
 			{spellID = 115078, filter = "CD"},
 			-- Expel Harm
 			{spellID = 115072, filter = "CD"},
+			-- Rising Sun Kick
+			{spellID = 107428, filter = "CD"},
 			-- Provoke
 			{spellID = 115546, filter = "CD"},
 			-- Zen Sphere
