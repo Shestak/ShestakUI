@@ -1270,6 +1270,8 @@ C["filger_spells"] = {
 			{spellID = 115078, filter = "CD"},
 			-- Expel Harm
 			{spellID = 115072, filter = "CD"},
+			-- Rising Sun Kick
+			{spellID = 107428, filter = "CD"},
 			-- Provoke
 			{spellID = 115546, filter = "CD"},
 			-- Zen Sphere
@@ -1302,6 +1304,8 @@ C["filger_spells"] = {
 			{spellID = 137562, filter = "CD"},
 			-- Life Cocoon
 			{spellID = 116849, filter = "CD"},
+			-- Invoke Xuen, the White Tiger
+			{spellID = 123904, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
