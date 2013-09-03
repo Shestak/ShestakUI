@@ -1304,6 +1304,8 @@ C["filger_spells"] = {
 			{spellID = 137562, filter = "CD"},
 			-- Life Cocoon
 			{spellID = 116849, filter = "CD"},
+			-- Invoke Xuen, the White Tiger
+			{spellID = 123904, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
