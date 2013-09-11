@@ -20,7 +20,8 @@ local function LoadSkin()
 		"LFDQueueFrameCooldownFrame",
 		"RaidFinderQueueFrameCooldownFrame",
 		"RaidFinderQueueFramePartyBackfill",
-		"LFDQueueFramePartyBackfill"
+		"LFDQueueFramePartyBackfill",
+		"FlexRaidFrameBottomInset"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -53,7 +54,8 @@ local function LoadSkin()
 		"LFDQueueFramePartyBackfillBackfillButton",
 		"LFDQueueFramePartyBackfillNoBackfillButton",
 		"RaidFinderQueueFramePartyBackfillBackfillButton",
-		"RaidFinderQueueFramePartyBackfillNoBackfillButton"
+		"RaidFinderQueueFramePartyBackfillNoBackfillButton",
+		"FlexRaidFrameStartRaidButton"
 	}
 
 	for i = 1, #buttons do
@@ -79,7 +81,7 @@ local function LoadSkin()
 	GroupFinderFrameGroupButton2.icon:SetTexture("Interface\\Icons\\inv_helmet_06")
 	GroupFinderFrameGroupButton3.icon:SetTexture("Interface\\Icons\\Icon_Scenarios")
 
-	for i = 1, 3 do
+	for i = 1, 4 do
 		local button = GroupFinderFrame["groupButton"..i]
 
 		button.ring:Hide()
@@ -269,6 +271,13 @@ local function LoadSkin()
 	ScenarioQueueFrameSpecificScrollFrameScrollBackgroundBottomRight:Hide()
 	ScenarioQueueFrameRandomScrollFrameChildFrame.bonusRepFrame.ChooseButton:SkinButton()
 	ScenarioQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
+
+	T.SkinDropDownBox(FlexRaidFrameSelectionDropDown)
+	FlexRaidFrameScrollFrameScrollBackground:Hide()
+	FlexRaidFrameScrollFrameBackground:Hide()
+	FlexRaidFrameScrollFrameBackgroundCover:Hide()
+	FlexRaidFrameScrollFrameScrollBackgroundTopLeft:Hide()
+	FlexRaidFrameScrollFrameScrollBackgroundBottomRight:Hide()
 
 	T.SkinCloseButton(PVEFrameCloseButton)
 	T.SkinCloseButton(LFGDungeonReadyStatusCloseButton, nil, "-")
