@@ -42,6 +42,7 @@ if C.enemycooldown.enable == true then
 		-- Crowd Controls
 		[115078] = 15,	-- Paralysis
 		[20066] = 15,	-- Repentance
+		[10326] = 15,	-- Turn Evil
 		[108194] = 30,	-- Asphyxiate
 		[19503] = 30,	-- Scatter Shot
 		[1499] = 30,	-- Freezing Trap
