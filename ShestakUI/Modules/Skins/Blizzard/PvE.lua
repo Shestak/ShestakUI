@@ -20,7 +20,8 @@ local function LoadSkin()
 		"LFDQueueFrameCooldownFrame",
 		"RaidFinderQueueFrameCooldownFrame",
 		"RaidFinderQueueFramePartyBackfill",
-		"LFDQueueFramePartyBackfill"
+		"LFDQueueFramePartyBackfill",
+		"FlexRaidFrameBottomInset"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -53,7 +54,8 @@ local function LoadSkin()
 		"LFDQueueFramePartyBackfillBackfillButton",
 		"LFDQueueFramePartyBackfillNoBackfillButton",
 		"RaidFinderQueueFramePartyBackfillBackfillButton",
-		"RaidFinderQueueFramePartyBackfillNoBackfillButton"
+		"RaidFinderQueueFramePartyBackfillNoBackfillButton",
+		"FlexRaidFrameStartRaidButton"
 	}
 
 	for i = 1, #buttons do
@@ -76,10 +78,10 @@ local function LoadSkin()
 	end
 
 	GroupFinderFrameGroupButton1.icon:SetTexture("Interface\\Icons\\INV_Helmet_08")
-	GroupFinderFrameGroupButton2.icon:SetTexture("Interface\\Icons\\inv_helmet_06")
-	GroupFinderFrameGroupButton3.icon:SetTexture("Interface\\Icons\\Icon_Scenarios")
+	GroupFinderFrameGroupButton2.icon:SetTexture("Interface\\Icons\\Icon_Scenarios")
+	GroupFinderFrameGroupButton3.icon:SetTexture("Interface\\Icons\\inv_helmet_06")
 
-	for i = 1, 3 do
+	for i = 1, 4 do
 		local button = GroupFinderFrame["groupButton"..i]
 
 		button.ring:Hide()
@@ -102,7 +104,7 @@ local function LoadSkin()
 
 	hooksecurefunc("GroupFinderFrame_SelectGroupButton", function(index)
 		local self = GroupFinderFrame
-		for i = 1, 3 do
+		for i = 1, 4 do
 			local button = self["groupButton"..i]
 			if i == index then
 				button.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
@@ -269,6 +271,13 @@ local function LoadSkin()
 	ScenarioQueueFrameSpecificScrollFrameScrollBackgroundBottomRight:Hide()
 	ScenarioQueueFrameRandomScrollFrameChildFrame.bonusRepFrame.ChooseButton:SkinButton()
 	ScenarioQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
+
+	T.SkinDropDownBox(FlexRaidFrameSelectionDropDown)
+	FlexRaidFrameScrollFrameScrollBackground:Hide()
+	FlexRaidFrameScrollFrameBackground:Hide()
+	FlexRaidFrameScrollFrameBackgroundCover:Hide()
+	FlexRaidFrameScrollFrameScrollBackgroundTopLeft:Hide()
+	FlexRaidFrameScrollFrameScrollBackgroundBottomRight:Hide()
 
 	T.SkinCloseButton(PVEFrameCloseButton)
 	T.SkinCloseButton(LFGDungeonReadyStatusCloseButton, nil, "-")

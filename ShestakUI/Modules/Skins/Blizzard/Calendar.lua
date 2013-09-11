@@ -144,9 +144,6 @@ local function LoadSkin()
 
 	T.SkinCloseButton(CalendarMassInviteCloseButton)
 	CalendarMassInviteGuildAcceptButton:SkinButton()
-	CalendarMassInviteArenaButton2:SkinButton()
-	CalendarMassInviteArenaButton3:SkinButton()
-	CalendarMassInviteArenaButton5:SkinButton()
 	T.SkinDropDownBox(CalendarMassInviteGuildRankMenu, 130)
 
 	T.SkinEditBox(CalendarMassInviteGuildMinLevelEdit)

@@ -209,7 +209,7 @@ local micromenu = {
 			if not PVPUIFrame then
 				PVP_LoadUI()
 			end
-			PVPUIFrame_ShowFrame()
+			ToggleFrame(PVPUIFrame)
 		else
 			if C.error.white == false then
 				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL), 1, 0.1, 0.1)
