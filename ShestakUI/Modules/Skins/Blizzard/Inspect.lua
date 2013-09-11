@@ -58,13 +58,7 @@ local function LoadSkin()
 		slot.backdrop:SetAllPoints()
 	end
 
-	InspectPVPFrameBottom:Kill()
 	InspectGuildFrameBG:Kill()
-	InspectPVPFrame:HookScript("OnShow", function() InspectPVPFrameBG:Kill() end)
-
-	for i = 1, 3 do
-		_G["InspectPVPTeam"..i]:StripTextures()
-	end
 
 	SpecializationSpecName:SetFont(C.media.normal_font, 20)
 	InspectTalentFrame:DisableDrawLayer("BACKGROUND")
