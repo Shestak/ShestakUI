@@ -768,8 +768,8 @@ C["filger_spells"] = {
 			-- Self
 			-- Concussive Shot
 			{spellID = 5116, filter = "CD"},
-			-- Silencing Shot
-			{spellID = 34490, filter = "CD"},
+			-- Counter Shot
+			{spellID = 147362, filter = "CD"},
 			-- Scatter Shot
 			{spellID = 19503, filter = "CD"},
 			-- Binding Shot

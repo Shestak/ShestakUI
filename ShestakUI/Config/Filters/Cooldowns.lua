@@ -30,6 +30,7 @@ if C.enemycooldown.enable == true then
 		[1766] = 15,	-- Kick
 		[6552] = 15,	-- Pummel
 		[102051] = 20,	-- Frostjaw
+		[147362] = 24,	-- Counter Shot
 		[34490] = 24,	-- Silencing Shot
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
