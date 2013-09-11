@@ -818,12 +818,10 @@ C["filger_spells"] = {
 			{spellID = 131894, filter = "CD"},
 			-- Exhilaration
 			{spellID = 109304, filter = "CD"},
-			-- Deterrence
-			{spellID = 19263, filter = "CD"},
 			-- Rapid Fire
 			{spellID = 3045, filter = "CD"},
-			-- Readiness
-			{spellID = 23989, filter = "CD"},
+			-- Deterrence
+			{spellID = 19263, filter = "CD"},
 			-- Spirit Mend (Pet)
 			{spellID = 90361, filter = "CD"},
 			-- Web (Pet)
@@ -917,8 +915,6 @@ C["filger_spells"] = {
 			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blazing Speed
-			{spellID = 108843, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Power
 			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -1478,8 +1474,6 @@ C["filger_spells"] = {
 			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Light of the Ancient Kings
-			{spellID = 86678, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Daybreak
 			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
@@ -1599,8 +1593,6 @@ C["filger_spells"] = {
 			{spellID = 31803, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Burden of Guilt
 			{spellID = 110300, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Weakened Blows
-			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF", spec = 2},
 			-- Glyph of Dazing Shield
 			{spellID = 63529, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Seal of Justice
