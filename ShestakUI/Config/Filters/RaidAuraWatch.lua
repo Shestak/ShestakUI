@@ -83,6 +83,61 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Pandaria
 -----------------------------------------------------------------
+-- Siege of Orgrimmar
+	-- Immerseus
+	[SpellName(143436)] = 4,	-- Corrosive Blast (Tank switch)
+	[SpellName(143459)] = 3,	-- Sha Residue
+	-- The Fallen Protectors
+	[SpellName(143198)] = 3,	-- Garrote (DoT)
+	[SpellName(143434)] = 4,	-- Shadow Word: Bane (Dispel)
+	[SpellName(147383)] = 3,	-- Debilitation (Heroic)
+	-- Norushen
+	[SpellName(146124)] = 4,	-- Self Doubt (Tank switch)
+	[SpellName(144514)] = 3,	-- Lingering Corruption (Dispel)
+	-- Sha of Pride
+	[SpellName(144358)] = 4,	-- Wounded Pride (Tank switch)
+	[SpellName(144351)] = 3,	-- Mark of Arrogance (Dispel)
+	[SpellName(146594)] = 3,	-- Gift of the Titans
+	[SpellName(147207)] = 3,	-- Weakened Resolve (Heroic)
+	-- Galakras
+	[SpellName(146765)] = 3,	-- Flame Arrows (DoT)
+	[SpellName(146902)] = 3,	-- Poison-Tipped Blades (Poison stacks)
+	-- Iron Juggernaut
+	[SpellName(144467)] = 4,	-- Ignite Armor (Tank stacks)
+	[SpellName(144459)] = 3,	-- Laser Burn (DoT)
+	-- Kor'kron Dark Shaman
+	[SpellName(144215)] = 3,	-- Froststorm Strike (Tank stacks)
+	[SpellName(144089)] = 3,	-- Toxic Mist (DoT)
+	[SpellName(144330)] = 3,	-- Iron Prison (Heroic)
+	-- General Nazgrim
+	[SpellName(143494)] = 3,	-- Sundering Blow (Tank stacks)
+	[SpellName(143638)] = 3,	-- Bonecracker (DoT)
+	[SpellName(143431)] = 3,	-- Magistrike (Dispel)
+	-- Malkorok
+	[SpellName(142990)] = 3,	-- Fatal Strike (Tank stacks)
+	[SpellName(142913)] = 3,	-- Displaced Energy (Dispel)
+	-- Spoils of Pandaria
+	[SpellName(145218)] = 3,	-- Harden Flesh (Dispel)
+	[SpellName(146235)] = 3,	-- Breath of Fire (Dispel)
+	-- Thok the Bloodthirsty
+	[SpellName(143766)] = 3,	-- Panic (Tank stacks)
+	[SpellName(143780)] = 3,	-- Acid Breath (Tank stacks)
+	[SpellName(143773)] = 3,	-- Freezing Breath (Tank Stacks)
+	[SpellName(143800)] = 3,	-- Icy Blood (Random Stacks)
+	[SpellName(143767)] = 3,	-- Scorching Breath (Tank Stacks)
+	[SpellName(143791)] = 3,	-- Corrosive Blood (Dispel)
+	-- Siegecrafter Blackfuse
+	[SpellName(143385)] = 3,	-- Electrostatic Charge (Tank stacks)
+	[SpellName(144236)] = 3,	-- Pattern Recognition
+	-- Paragons of the Klaxxi
+	[SpellName(142929)] = 3,	-- Tenderizing Strikes (Tank stacks)
+	[SpellName(143275)] = 3,	-- Hewn (Tank stacks)
+	[SpellName(143279)] = 3,	-- Genetic Alteration (Tank stacks)
+	[SpellName(143974)] = 3,	-- Shield Bash (Tank stun)
+	[SpellName(142948)] = 3,	-- Aim
+	-- Garrosh Hellscream
+	[SpellName(145183)] = 3,	-- Gripping Despair (Tank stacks)
+	[SpellName(145195)] = 3,	-- Empowered Gripping Despair (Tank stacks)
 -- Throne of Thunder
 	-- Jin'rokh the Breaker
 	[SpellName(137162)] = 4,	-- Static Burst (Tank switch)
