@@ -38,13 +38,6 @@ local function LoadSkin()
 		button.border.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
 	end
 
-	-- for i = 1, 3 do
-		-- local button = _G["PVPArenaTeamsFrameTeam"..i]
-		-- button:SetTemplate("Overlay")
-		-- button.Background:Kill()
-		-- button:StyleButton()
-	-- end
-
 	hooksecurefunc("PVPQueueFrame_SelectButton", function(index)
 		local self = PVPQueueFrame
 		for i = 1, 3 do
@@ -146,80 +139,6 @@ local function LoadSkin()
 		bu.SelectedTexture:SetPoint("TOPLEFT", 0, 0)
 		bu.SelectedTexture:SetPoint("BOTTOMRIGHT", 0, 0)
 	end
-
-	-- ArenaTeamFrame
-	-- PVPArenaTeamsFrame:StripTextures()
-	-- ArenaTeamFrame.TopInset:StripTextures()
-	-- ArenaTeamFrame.BottomInset:StripTextures()
-	-- ArenaTeamFrame.WeeklyDisplay:StripTextures()
-	-- T.SkinNextPrevButton(ArenaTeamFrame.weeklyToggleRight)
-	-- T.SkinNextPrevButton(ArenaTeamFrame.weeklyToggleLeft)
-	-- ArenaTeamFrame:StripTextures()
-	-- ArenaTeamFrame.TopShadowOverlay:StripTextures()
-
-	-- for i = 1, 4 do
-		-- _G["ArenaTeamFrameHeader"..i.."Left"]:Kill()
-		-- _G["ArenaTeamFrameHeader"..i.."Middle"]:Kill()
-		-- _G["ArenaTeamFrameHeader"..i.."Right"]:Kill()
-		-- _G["ArenaTeamFrameHeader"..i]:SetHighlightTexture(nil)
-	-- end
-
-	-- for i = 1, 3 do
-		-- local b = ARENA_BUTTONS[i]
-		-- b:SkinButton(true)
-		-- b.SelectedTexture:ClearAllPoints()
-		-- b.SelectedTexture:SetAllPoints()
-		-- b.SelectedTexture:SetTexture(0, 1, 0, 0.1)
-	-- end
-
-	-- ArenaTeamFrame.AddMemberButton:SkinButton(true)
-
-	-- PVP Banners
-	-- PVPBannerFrame:StripTextures()
-	-- PVPBannerFramePortrait:SetAlpha(0)
-	-- PVPBannerFrame:SetTemplate("Transparent")
-	-- T.SkinCloseButton(PVPBannerFrameCloseButton)
-	-- PVPBannerFrame.Inset:StripTextures()
-
-	-- PVPBannerFrameAcceptButton:SkinButton(true)
-	-- PVPBannerFrameCancelButton:SkinButton(true)
-
-	-- for i = 1, PVPBannerFrame:GetNumChildren() do
-		-- local child = select(i, PVPBannerFrame:GetChildren())
-		-- if child:GetObjectType() == "Button" then
-			-- local name = child:GetName()
-			-- if name ~= "PVPBannerFrameCloseButton" then child:SkinButton() end
-		-- end
-	-- end
-
-	-- PVPBannerFrameEditBoxLeft:Kill()
-	-- PVPBannerFrameEditBoxRight:Kill()
-	-- PVPBannerFrameEditBoxMiddle:Kill()
-
-	-- PVPBannerFrameEditBox:CreateBackdrop("Overlay")
-	-- PVPBannerFrameEditBox.backdrop:SetPoint("TOPLEFT", PVPBannerFrameEditBox, "TOPLEFT" , -3, -6)
-	-- PVPBannerFrameEditBox.backdrop:SetPoint("BOTTOMRIGHT", PVPBannerFrameEditBox, "BOTTOMRIGHT", 3, 6)
-
-	-- Duplicate button name
-	-- for i = 1, PVPBannerFrame:GetNumChildren() do
-		-- local child = select(i, PVPBannerFrame:GetChildren())
-		-- if child and child:GetObjectType() == "Button" and child:GetWidth() == 80 then
-			-- child:SkinButton(true)
-		-- end
-	-- end
-
-	-- for i = 1, 3 do
-		-- _G["PVPColorPickerButton"..i]:SkinButton(true)
-		-- _G["PVPColorPickerButton"..i]:SetHeight(_G["PVPColorPickerButton"..i]:GetHeight() - 2)
-	-- end
-
-	-- PVPBannerFrameCustomizationFrame:StripTextures()
-
-	-- for i = 1, 2 do
-		-- _G["PVPBannerFrameCustomization"..i]:StripTextures()
-		-- T.SkinNextPrevButton(_G["PVPBannerFrameCustomization"..i.."RightButton"])
-		-- T.SkinNextPrevButton(_G["PVPBannerFrameCustomization"..i.."LeftButton"])
-	-- end
 end
 
 T.SkinFuncs["Blizzard_PVPUI"] = LoadSkin
