@@ -63,6 +63,10 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Rook's Unlucky Talisman (Reduces damage, Use)
+			{spellID = 146343, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Resolve of Niuzao (Dodge, Use)
+			{spellID = 146344, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
@@ -74,6 +78,16 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Assurance of Consequence (Strength, Proc)
+			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thok's Tail Tip (Strength, Proc)
+			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
+			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fusion-Fire Core (Strength, Proc)
+			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Alacrity of Xuen (Haste, Proc)
+			{spellID = 146296, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
 			{spellID = 138702, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fabled Feather of Ji-Kun (Strength, Proc)
@@ -113,9 +127,7 @@ C["filger_spells"] = {
 
 			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -325,6 +337,10 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Rook's Unlucky Talisman (Reduces damage, Use)
+			{spellID = 146343, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Resolve of Niuzao (Dodge, Use)
+			{spellID = 146344, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
@@ -336,6 +352,16 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Assurance of Consequence (Agility, Proc)
+			{spellID = 146308, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Haromm's Talisman (Agility, Proc)
+			{spellID = 148903, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sigil of Rampage (Agility, Proc)
+			{spellID = 148896, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ticking Ebon Detonator (Agility, Proc)
+			{spellID = 146310, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Discipline of Xuen (Crit, Proc)
+			{spellID = 146312, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bad Juju (Agility, Proc)
@@ -368,6 +394,16 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kardris' Toxic Totem (Intellect, Proc)
+			{spellID = 148906, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frenzied Crystal of Rage (Intellect, Proc)
+			{spellID = 148897, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Black Blood of Y'Shaarj (Intellect, Proc)
+			{spellID = 146184, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Yu'lon's Bite (Crit, Proc)
+			{spellID = 146218, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unerring Vision of Lei-Shen (Crit, Proc)
 			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
@@ -383,6 +419,12 @@ C["filger_spells"] = {
 			-- Light of the Cosmos (Intellect, Proc)
 			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+			-- Prismatic Prison of Pride (Intellect, Proc)
+			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nazgrim's Burnished Insignia (Intellect, Proc)
+			{spellID = 148908, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thok's Acid-Grooved Tooth (Intellect, Proc)
+			{spellID = 148911, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Qin-xi's Polarizing Seal (Intellect, Proc)
 			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -406,9 +448,7 @@ C["filger_spells"] = {
 
 			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
@@ -632,6 +672,16 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Assurance of Consequence (Agility, Proc)
+			{spellID = 146308, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Haromm's Talisman (Agility, Proc)
+			{spellID = 148903, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sigil of Rampage (Agility, Proc)
+			{spellID = 148896, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ticking Ebon Detonator (Agility, Proc)
+			{spellID = 146310, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Discipline of Xuen (Crit, Proc)
+			{spellID = 146312, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bad Juju (Agility, Proc)
@@ -665,10 +715,6 @@ C["filger_spells"] = {
 			{spellID = 109092, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lord Blastington's Scope of Doom (Agility)
 			{spellID = 109085, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Legendary Meta Gems
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -722,8 +768,8 @@ C["filger_spells"] = {
 			-- Self
 			-- Concussive Shot
 			{spellID = 5116, filter = "CD"},
-			-- Silencing Shot
-			{spellID = 34490, filter = "CD"},
+			-- Counter Shot
+			{spellID = 147362, filter = "CD"},
 			-- Scatter Shot
 			{spellID = 19503, filter = "CD"},
 			-- Binding Shot
@@ -772,12 +818,10 @@ C["filger_spells"] = {
 			{spellID = 131894, filter = "CD"},
 			-- Exhilaration
 			{spellID = 109304, filter = "CD"},
-			-- Deterrence
-			{spellID = 19263, filter = "CD"},
 			-- Rapid Fire
 			{spellID = 3045, filter = "CD"},
-			-- Readiness
-			{spellID = 23989, filter = "CD"},
+			-- Deterrence
+			{spellID = 19263, filter = "CD"},
 			-- Spirit Mend (Pet)
 			{spellID = 90361, filter = "CD"},
 			-- Web (Pet)
@@ -871,8 +915,6 @@ C["filger_spells"] = {
 			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blazing Speed
-			{spellID = 108843, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Power
 			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -911,6 +953,16 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kardris' Toxic Totem (Intellect, Proc)
+			{spellID = 148906, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frenzied Crystal of Rage (Intellect, Proc)
+			{spellID = 148897, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Black Blood of Y'Shaarj (Intellect, Proc)
+			{spellID = 146184, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Yu'lon's Bite (Crit, Proc)
+			{spellID = 146218, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unerring Vision of Lei-Shen (Crit, Proc)
 			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
@@ -1164,6 +1216,10 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Rook's Unlucky Talisman (Reduces damage, Use)
+			{spellID = 146343, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Resolve of Niuzao (Dodge, Use)
+			{spellID = 146344, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
@@ -1175,6 +1231,16 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Assurance of Consequence (Agility, Proc)
+			{spellID = 146308, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Haromm's Talisman (Agility, Proc)
+			{spellID = 148903, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sigil of Rampage (Agility, Proc)
+			{spellID = 148896, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ticking Ebon Detonator (Agility, Proc)
+			{spellID = 146310, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Discipline of Xuen (Crit, Proc)
+			{spellID = 146312, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bad Juju (Agility, Proc)
@@ -1207,6 +1273,12 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+			-- Prismatic Prison of Pride (Intellect, Proc)
+			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nazgrim's Burnished Insignia (Intellect, Proc)
+			{spellID = 148908, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thok's Acid-Grooved Tooth (Intellect, Proc)
+			{spellID = 148911, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Qin-xi's Polarizing Seal (Intellect, Proc)
 			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1230,9 +1302,7 @@ C["filger_spells"] = {
 
 			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
@@ -1270,6 +1340,8 @@ C["filger_spells"] = {
 			{spellID = 115078, filter = "CD"},
 			-- Expel Harm
 			{spellID = 115072, filter = "CD"},
+			-- Rising Sun Kick
+			{spellID = 107428, filter = "CD"},
 			-- Provoke
 			{spellID = 115546, filter = "CD"},
 			-- Zen Sphere
@@ -1302,6 +1374,8 @@ C["filger_spells"] = {
 			{spellID = 137562, filter = "CD"},
 			-- Life Cocoon
 			{spellID = 116849, filter = "CD"},
+			-- Invoke Xuen, the White Tiger
+			{spellID = 123904, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -1400,8 +1474,6 @@ C["filger_spells"] = {
 			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Light of the Ancient Kings
-			{spellID = 86678, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Daybreak
 			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
@@ -1414,6 +1486,10 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Rook's Unlucky Talisman (Reduces damage, Use)
+			{spellID = 146343, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Resolve of Niuzao (Dodge, Use)
+			{spellID = 146344, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
@@ -1425,6 +1501,16 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Assurance of Consequence (Strength, Proc)
+			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thok's Tail Tip (Strength, Proc)
+			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
+			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fusion-Fire Core (Strength, Proc)
+			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Alacrity of Xuen (Haste, Proc)
+			{spellID = 146296, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
 			{spellID = 138702, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fabled Feather of Ji-Kun (Strength, Proc)
@@ -1459,6 +1545,12 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+			-- Prismatic Prison of Pride (Intellect, Proc)
+			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nazgrim's Burnished Insignia (Intellect, Proc)
+			{spellID = 148908, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thok's Acid-Grooved Tooth (Intellect, Proc)
+			{spellID = 148911, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Qin-xi's Polarizing Seal (Intellect, Proc)
 			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1482,9 +1574,7 @@ C["filger_spells"] = {
 
 			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
 		},
@@ -1501,10 +1591,6 @@ C["filger_spells"] = {
 			{spellID = 25771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Censure
 			{spellID = 31803, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Burden of Guilt
-			{spellID = 110300, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Weakened Blows
-			{spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF", spec = 2},
 			-- Glyph of Dazing Shield
 			{spellID = 63529, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Seal of Justice
@@ -1528,6 +1614,8 @@ C["filger_spells"] = {
 			{spellID = 96231, filter = "CD"},
 			-- Repentance
 			{spellID = 20066, filter = "CD"},
+			-- Turn Evil
+			{spellID = 10326, filter = "CD"},
 			-- Hammer of Justice
 			{spellID = 853, filter = "CD"},
 			-- Judgment
@@ -1671,6 +1759,16 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kardris' Toxic Totem (Intellect, Proc)
+			{spellID = 148906, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frenzied Crystal of Rage (Intellect, Proc)
+			{spellID = 148897, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Black Blood of Y'Shaarj (Intellect, Proc)
+			{spellID = 146184, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Yu'lon's Bite (Crit, Proc)
+			{spellID = 146218, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unerring Vision of Lei-Shen (Crit, Proc)
 			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
@@ -1686,6 +1784,12 @@ C["filger_spells"] = {
 			-- Light of the Cosmos (Intellect, Proc)
 			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+			-- Prismatic Prison of Pride (Intellect, Proc)
+			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nazgrim's Burnished Insignia (Intellect, Proc)
+			{spellID = 148908, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thok's Acid-Grooved Tooth (Intellect, Proc)
+			{spellID = 148911, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Qin-xi's Polarizing Seal (Intellect, Proc)
 			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1942,6 +2046,16 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Assurance of Consequence (Agility, Proc)
+			{spellID = 146308, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Haromm's Talisman (Agility, Proc)
+			{spellID = 148903, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sigil of Rampage (Agility, Proc)
+			{spellID = 148896, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ticking Ebon Detonator (Agility, Proc)
+			{spellID = 146310, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Discipline of Xuen (Crit, Proc)
+			{spellID = 146312, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bad Juju (Agility, Proc)
@@ -1973,10 +2087,6 @@ C["filger_spells"] = {
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendary Meta Gems
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2172,6 +2282,16 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Agility DPS
+			-- Assurance of Consequence (Agility, Proc)
+			{spellID = 146308, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Haromm's Talisman (Agility, Proc)
+			{spellID = 148903, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sigil of Rampage (Agility, Proc)
+			{spellID = 148896, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ticking Ebon Detonator (Agility, Proc)
+			{spellID = 146310, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Discipline of Xuen (Crit, Proc)
+			{spellID = 146312, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
 			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bad Juju (Agility, Proc)
@@ -2204,6 +2324,16 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kardris' Toxic Totem (Intellect, Proc)
+			{spellID = 148906, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frenzied Crystal of Rage (Intellect, Proc)
+			{spellID = 148897, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Black Blood of Y'Shaarj (Intellect, Proc)
+			{spellID = 146184, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Yu'lon's Bite (Crit, Proc)
+			{spellID = 146218, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unerring Vision of Lei-Shen (Crit, Proc)
 			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
@@ -2219,6 +2349,12 @@ C["filger_spells"] = {
 			-- Light of the Cosmos (Intellect, Proc)
 			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
+			-- Prismatic Prison of Pride (Intellect, Proc)
+			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nazgrim's Burnished Insignia (Intellect, Proc)
+			{spellID = 148908, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thok's Acid-Grooved Tooth (Intellect, Proc)
+			{spellID = 148911, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Qin-xi's Polarizing Seal (Intellect, Proc)
 			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -2238,8 +2374,6 @@ C["filger_spells"] = {
 			-- Caster Heal
 
 			-- Legendary Meta Gems
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Sinister Primal Diamond (Caster DPS)
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
@@ -2450,6 +2584,16 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Spell Power, Proc)
 			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kardris' Toxic Totem (Intellect, Proc)
+			{spellID = 148906, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frenzied Crystal of Rage (Intellect, Proc)
+			{spellID = 148897, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Black Blood of Y'Shaarj (Intellect, Proc)
+			{spellID = 146184, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Yu'lon's Bite (Crit, Proc)
+			{spellID = 146218, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unerring Vision of Lei-Shen (Crit, Proc)
 			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
@@ -2687,6 +2831,10 @@ C["filger_spells"] = {
 			-- PvP Trinkets (Health, Use)
 			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tank
+			-- Rook's Unlucky Talisman (Reduces damage, Use)
+			{spellID = 146343, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Resolve of Niuzao (Dodge, Use)
+			{spellID = 146344, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
 			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
@@ -2698,6 +2846,16 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
+			-- Assurance of Consequence (Strength, Proc)
+			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thok's Tail Tip (Strength, Proc)
+			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
+			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fusion-Fire Core (Strength, Proc)
+			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Alacrity of Xuen (Haste, Proc)
+			{spellID = 146296, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
 			{spellID = 138702, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fabled Feather of Ji-Kun (Strength, Proc)
@@ -2737,9 +2895,7 @@ C["filger_spells"] = {
 
 			-- Legendary Meta Gems
 			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Capacitive Primal Diamond (Physical General)
-			{spellID = 137596, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -3138,6 +3294,8 @@ C["filger_spells"] = {
 			{spellID = 105593, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Repentance
 			{spellID = 20066, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Turn Evil
+			{spellID = 10326, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Blinding Light
 			{spellID = 105421, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
@@ -3146,8 +3304,6 @@ C["filger_spells"] = {
 			{spellID = 63529, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seal of Justice
 			{spellID = 20170, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Burden of Guilt
-			{spellID = 110300, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Denounce
 			{spellID = 2812, unitID = "player", caster = "all", filter = "DEBUFF"},
 
@@ -3495,6 +3651,8 @@ C["filger_spells"] = {
 			{spellID = 105593, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Repentance
 			{spellID = 20066, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Turn Evil
+			{spellID = 10326, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Blinding Light
 			{spellID = 105421, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield

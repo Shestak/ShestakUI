@@ -228,7 +228,6 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[61295] = true		-- Riptide
 		T.aoespam[98021] = true		-- Spirit Link
 		T.aoespam[114911] = true	-- Ancestral Guidance
-		T.aoespam[118800] = true	-- Conductivity
 		T.aoespam[114942] = true	-- Healing Tide
 		-- Damaging spells
 		T.aoespam[421] = true		-- Chain Lightning

@@ -20,7 +20,7 @@ else
 	numf = 3
 end
 
--- Detect vechile
+-- Detect vehicle
 local function SetUnit()
 	if UnitHasVehicleUI("player") then
 		ct.unit = "vehicle"
@@ -674,7 +674,7 @@ if C.combattext.damage then
 	local misstypes = {ABSORB = ABSORB, BLOCK = BLOCK, DEFLECT = DEFLECT, DODGE = DODGE, EVADE = EVADE, IMMUNE = IMMUNE, MISS = MISS, MISFIRE = MISS, PARRY = PARRY, REFLECT = REFLECT, RESIST = RESIST}
 	local dmg = function(self, event, ...)
 		local msg, icon
-		local timestamp, eventType, hideCaster, sourceGUID, sourceName, sourceFlags, srcFlags2, destGUID, destName, destFlags, destFlags2 = select(1, ...)
+		local eventType, _, sourceGUID, _, sourceFlags, _, destGUID = select(2, ...)
 		if (sourceGUID == ct.pguid and destGUID ~= ct.pguid) or (sourceGUID == UnitGUID("pet") and C.combattext.pet_damage) or (sourceFlags == gflags) then
 			if eventType == "SWING_DAMAGE" then
 				local amount, _, _, _, _, _, critical = select(12, ...)
@@ -748,7 +748,7 @@ if C.combattext.damage then
 					xCT4:AddMessage(amount..""..msg, unpack(color))
 				end
 			elseif eventType == "SWING_MISSED" then
-				local missType, _ = select(12, ...)
+				local missType = select(12, ...)
 				if C.combattext.icons then
 					if sourceGUID == UnitGUID("pet") or sourceFlags == gflags then
 						icon = PET_ATTACK_TEXTURE
@@ -761,7 +761,7 @@ if C.combattext.damage then
 				end
 				xCT4:AddMessage(missType)
 			elseif eventType == "SPELL_MISSED" or eventType == "RANGE_MISSED" then
-				local spellId, _, _, missType, _ = select(12, ...)
+				local spellId, _, _, missType = select(12, ...)
 				if C.combattext.icons then
 					icon = GetSpellTexture(spellId)
 					missType = misstypes[missType].." \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
@@ -770,7 +770,7 @@ if C.combattext.damage then
 				end
 				xCT4:AddMessage(missType)
 			elseif eventType == "SPELL_DISPEL" and C.combattext.dispel then
-				local target, _, _, id, effect, _, etype = select(12, ...)
+				local id, effect, _, etype = select(15, ...)
 				local color
 				if C.combattext.icons then
 					icon = GetSpellTexture(id)
@@ -789,7 +789,7 @@ if C.combattext.damage then
 				end
 				xCT3:AddMessage(ACTION_SPELL_DISPEL..": "..effect..msg, unpack(color))
 			elseif eventType == "SPELL_STOLEN" and C.combattext.dispel then
-				local target, _, _, id, effect = select(12, ...)
+				local id, effect = select(15, ...)
 				local color = {1, 0.5, 0}
 				if C.combattext.icons then
 					icon = GetSpellTexture(id)
@@ -803,7 +803,7 @@ if C.combattext.damage then
 				end
 				xCT3:AddMessage(ACTION_SPELL_STOLEN..": "..effect..msg, unpack(color))
 			elseif eventType == "SPELL_INTERRUPT" and C.combattext.interrupt then
-				local target, _, _, id, effect = select(12, ...)
+				local id, effect = select(15, ...)
 				local color = {1, 0.5, 0}
 				if C.combattext.icons then
 					icon = GetSpellTexture(id)
@@ -836,11 +836,11 @@ if C.combattext.healing then
 	end
 	local heal = function(self, event, ...)
 		local msg, icon
-		local timestamp, eventType, hideCaster, sourceGUID, sourceName, sourceFlags, sourceFlags2, destGUID, destName, destFlags, destFlags2 = select(1, ...)
+		local eventType, _, sourceGUID, _, sourceFlags = select(2, ...)
 		if sourceGUID == ct.pguid or sourceFlags == gflags then
 			if eventType == "SPELL_HEAL" or (eventType == "SPELL_PERIODIC_HEAL" and C.combattext.show_hots) then
 				if C.combattext.healing then
-					local spellId, spellName, spellSchool, amount, overhealing, absorbed, critical = select(12, ...)
+					local spellId, _, _, amount, overhealing, _, critical = select(12, ...)
 					if T.healfilter[spellId] then
 						return
 					end

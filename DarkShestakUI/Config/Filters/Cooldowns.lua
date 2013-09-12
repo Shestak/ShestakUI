@@ -30,6 +30,7 @@ if C.enemycooldown.enable == true then
 		[1766] = 15,	-- Kick
 		[6552] = 15,	-- Pummel
 		[102051] = 20,	-- Frostjaw
+		[147362] = 24,	-- Counter Shot
 		[34490] = 24,	-- Silencing Shot
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
@@ -41,6 +42,7 @@ if C.enemycooldown.enable == true then
 		-- Crowd Controls
 		[115078] = 15,	-- Paralysis
 		[20066] = 15,	-- Repentance
+		[10326] = 15,	-- Turn Evil
 		[108194] = 30,	-- Asphyxiate
 		[19503] = 30,	-- Scatter Shot
 		[1499] = 30,	-- Freezing Trap
