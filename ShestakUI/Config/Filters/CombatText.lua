@@ -14,6 +14,10 @@ end
 -- General merge outgoing damage
 if C.combattext.merge_aoe_spam then
 	T.aoespam = {}
+	T.aoespam[148008] = true		-- Essence of Yu'lon
+	T.aoespam[148009] = true		-- Spirit of Chi-Ji
+	T.aoespam[149276] = true		-- Flurry of Xuen
+	T.aoespam[147891] = true		-- Flurry of Xuen
 	T.aoespam[120687] = true		-- Stormlash
 end
 
