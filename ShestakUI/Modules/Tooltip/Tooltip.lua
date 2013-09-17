@@ -42,6 +42,10 @@ anchor:SetPoint(unpack(C.position.tooltip))
 -- Hide PVP text
 PVP_ENABLED = ""
 
+-- Hide 5.4 realm tooltip
+COALESCED_REALM_TOOLTIP = ""
+INTERACTIVE_REALM_TOOLTIP = ""
+
 -- Statusbar
 GameTooltipStatusBar:SetStatusBarTexture(C.media.texture)
 GameTooltipStatusBar:SetHeight(4)
