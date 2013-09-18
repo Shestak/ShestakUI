@@ -88,8 +88,9 @@ T.RaidDebuffs = {
 	[SpellName(143436)] = 4,	-- Corrosive Blast (Tank switch)
 	[SpellName(143459)] = 3,	-- Sha Residue
 	-- The Fallen Protectors
-	[SpellName(143198)] = 3,	-- Garrote (DoT)
 	[SpellName(143434)] = 4,	-- Shadow Word: Bane (Dispel)
+	[SpellName(143198)] = 3,	-- Garrote (DoT)
+	[SpellName(143842)] = 3,	-- Mark of Anguish
 	[SpellName(147383)] = 3,	-- Debilitation (Heroic)
 	-- Norushen
 	[SpellName(146124)] = 4,	-- Self Doubt (Tank switch)
