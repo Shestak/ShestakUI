@@ -115,6 +115,8 @@ T.RaidDebuffs = {
 	[SpellName(143431)] = 3,	-- Magistrike (Dispel)
 	-- Malkorok
 	[SpellName(142990)] = 3,	-- Fatal Strike (Tank stacks)
+	[SpellName(142864)] = 3,	-- Ancient Barrier
+	[SpellName(142865)] = 3,	-- Strong Ancient Barrier
 	[SpellName(142913)] = 3,	-- Displaced Energy (Dispel)
 	-- Spoils of Pandaria
 	[SpellName(145218)] = 3,	-- Harden Flesh (Dispel)
@@ -352,5 +354,6 @@ T.RaidDebuffsReverse = {
 }
 
 T.RaidDebuffsIgnore = {
+	[142862] = true,			-- Ancient Barrier
 	[138309] = true,			-- Slimed
 }
