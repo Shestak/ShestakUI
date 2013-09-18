@@ -81,7 +81,7 @@ C["filger_spells"] = {
 			-- Assurance of Consequence (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
-			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
 			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fusion-Fire Core (Strength, Proc)
@@ -1504,7 +1504,7 @@ C["filger_spells"] = {
 			-- Assurance of Consequence (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
-			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
 			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fusion-Fire Core (Strength, Proc)
@@ -2849,7 +2849,7 @@ C["filger_spells"] = {
 			-- Assurance of Consequence (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
-			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
 			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fusion-Fire Core (Strength, Proc)
