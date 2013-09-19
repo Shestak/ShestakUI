@@ -77,7 +77,6 @@ local function LoadSkin()
 		"AudioOptionsSoundPanelReverb",
 		"AudioOptionsSoundPanelHRTF",
 		"AudioOptionsSoundPanelEnableDSPs",
-		"AudioOptionsSoundPanelUseHardware",
 		"AudioOptionsSoundPanelPetBattleMusic",
 		"AudioOptionsVoicePanelEnableVoice",
 		"AudioOptionsVoicePanelEnableMicrophone",
