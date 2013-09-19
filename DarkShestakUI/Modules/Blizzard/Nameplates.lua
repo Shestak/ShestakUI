@@ -578,7 +578,7 @@ end
 
 -- Force the name text of a nameplate to be behind other nameplates unless it is our target
 local function AdjustNameLevel(frame, ...)
-	if UnitName("target") == frame.hp.name:GetText() and frame:GetParent():GetAlpha() == 1 then
+	if GetUnitName("target") == frame.hp.name:GetText() and frame:GetParent():GetAlpha() == 1 then
 		frame.hp.name:SetDrawLayer("OVERLAY")
 	else
 		frame.hp.name:SetDrawLayer("BORDER")
@@ -612,7 +612,7 @@ local function ShowHealth(frame, ...)
 		SetVirtualBorder(frame.hp, unpack(C.media.border_color))
 	end
 
-	if UnitName("target") and frame:GetParent():GetAlpha() == 1 then
+	if GetUnitName("target") and frame:GetParent():GetAlpha() == 1 then
 		frame.hp:SetSize((C.nameplate.width + C.nameplate.ad_width) * noscalemult, (C.nameplate.height + C.nameplate.ad_height) * noscalemult)
 		frame.cb:SetSize((C.nameplate.width + C.nameplate.ad_width) * noscalemult, (C.nameplate.height + C.nameplate.ad_height) * noscalemult)
 		frame.cb.icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2) + 8)
@@ -625,11 +625,11 @@ end
 
 -- Scan all visible nameplate for a known unit
 local function CheckUnit_Guid(frame, ...)
-	if UnitExists("target") and frame:GetParent():GetAlpha() == 1 and UnitName("target") == frame.hp.name:GetText() then
+	if UnitExists("target") and frame:GetParent():GetAlpha() == 1 and GetUnitName("target") == frame.hp.name:GetText() then
 		frame.guid = UnitGUID("target")
 		frame.unit = "target"
 		OnAura(frame, "target")
-	elseif frame.overlay:IsShown() and UnitExists("mouseover") and UnitName("mouseover") == frame.hp.name:GetText() then
+	elseif frame.overlay:IsShown() and UnitExists("mouseover") and GetUnitName("mouseover") == frame.hp.name:GetText() then
 		frame.guid = UnitGUID("mouseover")
 		frame.unit = "mouseover"
 		OnAura(frame, "mouseover")

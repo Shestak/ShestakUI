@@ -133,9 +133,9 @@ function frame:ADDON_LOADED(addon)
 end
 frame:RegisterEvent("ADDON_LOADED")
 
-function frame:UNIT_SPELLCAST_SUCCEEDED(unit, spell)
+function frame:UNIT_SPELLCAST_SUCCEEDED(unit, spell, _, _, spellID)
 	if unit == "player" then
-		watching[spell] = {GetTime(), "spell", spell}
+		watching[spell] = {GetTime(), "spell", spellID}
 		self:SetScript("OnUpdate", OnUpdate)
 	end
 end
@@ -150,7 +150,7 @@ function frame:COMBAT_LOG_EVENT_UNFILTERED(...)
 			if index and not select(7, GetPetActionInfo(index)) then
 				watching[name] = {GetTime(), "pet", index}
 			elseif not index and name then
-				watching[name] = {GetTime(), "spell", name}
+				watching[name] = {GetTime(), "spell", spellID}
 			else
 				return
 			end

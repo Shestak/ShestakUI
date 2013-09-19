@@ -95,6 +95,16 @@ local function OnEvent(self, event, subevent, ...)
 				if arg3 >= C.combattext.heal_treshold then
 					xCT2:AddMessage("+"..arg3, 0.1, 0.5, 0.1)
 				end
+			elseif subevent == "ABSORB_ADDED" and GetCVar("CombatHealingAbsorbSelf") == "1" then
+				if arg3 >= C.combattext.heal_treshold then
+					if arg2 then
+						if COMBAT_TEXT_SHOW_FRIENDLY_NAMES == "1" then
+							xCT2:AddMessage(arg2.." +"..arg3, 0.6, 0.65, 0.1)
+						else
+							xCT2:AddMessage("+"..arg3, 0.6, 0.65, 0.1)
+						end
+					end
+				end
 			elseif subevent == "SPELL_CAST" then
 				xCT3:AddMessage(arg2, 1, 0.82, 0)
 			elseif subevent == "MISS" and COMBAT_TEXT_SHOW_DODGE_PARRY_MISS == "1" then

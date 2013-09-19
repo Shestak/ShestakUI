@@ -646,7 +646,7 @@ if clock.enabled then
 					local tr, tg, tb, diff
 					if not oneraid then
 						GameTooltip:AddLine(" ")
-						GameTooltip:AddLine(RAID_INFO, ttsubh.r, ttsubh.g, ttsubh.b)
+						GameTooltip:AddLine(CALENDAR_FILTER_RAID_LOCKOUTS, ttsubh.r, ttsubh.g, ttsubh.b)
 						oneraid = true
 					end
 					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
@@ -661,6 +661,18 @@ if clock.enabled then
 					else
 						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s]", name, maxPlayers, diff or ""), fmttime(reset), 1, 1, 1, tr, tg, tb)
 					end
+				end
+			end
+			local addedLine
+			for i = 1, GetNumSavedWorldBosses() do
+				local name, _, reset = GetSavedWorldBossInfo(i)
+				if reset then
+					if not addedLine then
+						GameTooltip:AddLine(" ")
+						GameTooltip:AddLine(RAID_INFO_WORLD_BOSS, ttsubh.r, ttsubh.g, ttsubh.b)
+						addedLine = true
+					end
+					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
 				end
 			end
 			GameTooltip:Show()

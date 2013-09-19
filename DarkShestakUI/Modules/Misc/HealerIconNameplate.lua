@@ -16,11 +16,13 @@ exClass.WARLOCK = true
 exClass.ROGUE = true
 
 local function UpdatePlate(self)
+	local name = gsub(self.HPName:GetText(), '%s%(%*%)','')
+
 	if testing then
 		self.HPHeal:Show()
 	else
-		if healList[self.HPName:GetText()] then
-			if exClass[healList[self.HPName:GetText()]] then
+		if healList[name] then
+			if exClass[healList[name]] then
 				self.HPHeal:Hide()
 			else
 				self.HPHeal:Show()
