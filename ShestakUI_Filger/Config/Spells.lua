@@ -330,6 +330,10 @@ C["filger_spells"] = {
 			-- Predatory Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
+			-- Item sets
+			-- Sage Mender (T16)
+			{spellID = 144871, unitID = "player", caster = "player", filter = "BUFF"},
+
 			-- Trinkets
 			-- General
 			-- Darkmoon Cards (Proc)
