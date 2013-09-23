@@ -42,6 +42,10 @@ anchor:SetPoint(unpack(C.position.tooltip))
 -- Hide PVP text
 PVP_ENABLED = ""
 
+-- Hide 5.4 realm tooltip
+COALESCED_REALM_TOOLTIP = ""
+INTERACTIVE_REALM_TOOLTIP = ""
+
 -- Statusbar
 GameTooltipStatusBar:SetStatusBarTexture(C.media.texture)
 GameTooltipStatusBar:SetHeight(4)
@@ -232,7 +236,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			local n = GetGuildInfo(unit) and 3 or 2
 			-- thx TipTac for the fix above with color blind enabled
 			if GetCVar("colorblindMode") == "1" then n = n + 1 end
-			_G["GameTooltipTextLeft"..n]:SetFormattedText("|cff%02x%02x%02x%s|r %s", levelColor.r * 255, levelColor.g * 255, levelColor.b * 255, level, race)
+			_G["GameTooltipTextLeft"..n]:SetFormattedText("|cff%02x%02x%02x%s|r %s", levelColor.r * 255, levelColor.g * 255, levelColor.b * 255, level, race or UNKNOWN)
 
 			for i = 2, lines do
 				local line = _G["GameTooltipTextLeft"..i]
@@ -259,9 +263,9 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 			local text = ""
 
 			if UnitIsEnemy("player", unit.."target") then
-				r, g, b = 0.85, 0.27, 0.27
+				r, g, b = unpack(T.oUF_colors.reaction[1])
 			elseif not UnitIsFriend("player", unit.."target") then
-				r, g, b = 1, 1, 0
+				r, g, b = unpack(T.oUF_colors.reaction[4])
 			end
 
 			if UnitName(unit.."target") == UnitName("player") then

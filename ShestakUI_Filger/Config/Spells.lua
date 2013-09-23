@@ -81,7 +81,7 @@ C["filger_spells"] = {
 			-- Assurance of Consequence (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
-			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
 			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fusion-Fire Core (Strength, Proc)
@@ -330,6 +330,10 @@ C["filger_spells"] = {
 			-- Predatory Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
+			-- Item sets
+			-- Sage Mender (T16)
+			{spellID = 144871, unitID = "player", caster = "player", filter = "BUFF"},
+
 			-- Trinkets
 			-- General
 			-- Darkmoon Cards (Proc)
@@ -538,8 +542,6 @@ C["filger_spells"] = {
 			{spellID = 2782, filter = "CD"},
 			-- Skull Bash
 			{spellID = 106839, filter = "CD"},
-			-- Cyclone
-			{spellID = 33786, filter = "CD"},
 			-- Mangle
 			{spellID = 33878, filter = "CD"},
 			-- Wild Growth
@@ -1086,12 +1088,12 @@ C["filger_spells"] = {
 			{spellID = 120, filter = "CD"},
 			-- Freeze (Pet)
 			{spellID = 33395, filter = "CD"},
+			-- Ice Floes
+			{spellID = 108839, filter = "CD"},
 			-- Combustion
 			{spellID = 11129, filter = "CD"},
 			-- Frozen Orb
 			{spellID = 84714, filter = "CD"},
-			-- Ice Floes
-			{spellID = 108839, filter = "CD"},
 			-- Arcane Power
 			{spellID = 12042, filter = "CD"},
 			-- Presence of Mind
@@ -1504,7 +1506,7 @@ C["filger_spells"] = {
 			-- Assurance of Consequence (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
-			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
 			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fusion-Fire Core (Strength, Proc)
@@ -2475,6 +2477,8 @@ C["filger_spells"] = {
 			{spellID = 30823, filter = "CD"},
 			-- Stone Bulwark Totem
 			{spellID = 108270, filter = "CD"},
+			-- Astral Shift
+			{spellID = 108271, filter = "CD"},
 			-- Ancestral Swiftness
 			{spellID = 16188, filter = "CD"},
 			-- Feral Spirit
@@ -2483,8 +2487,6 @@ C["filger_spells"] = {
 			{spellID = 79206, filter = "CD"},
 			-- Ancestral Guidance
 			{spellID = 108281, filter = "CD"},
-			-- Astral Shift
-			{spellID = 108271, filter = "CD"},
 			-- Ascendance
 			{spellID = 114049, filter = "CD"},
 
@@ -2716,12 +2718,12 @@ C["filger_spells"] = {
 			{spellID = 7812, filter = "CD"},
 			-- Hand of Gul'dan
 			{spellID = 105174, filter = "CD"},
+			-- Demonic Circle: Teleport
+			{spellID = 48020, filter = "CD"},
 			-- Felstorm
 			{spellID = 89751, filter = "CD"},
 			-- Soulburn
 			{spellID = 74434, filter = "CD"},
-			-- Demonic Circle: Teleport
-			{spellID = 48020, filter = "CD"},
 			-- Grimoire of Service
 			{spellID = 108501, filter = "CD"},
 
@@ -2849,7 +2851,7 @@ C["filger_spells"] = {
 			-- Assurance of Consequence (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
-			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
 			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fusion-Fire Core (Strength, Proc)
@@ -3408,14 +3410,14 @@ C["filger_spells"] = {
 			{spellID = 132169, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Shockwave
 			{spellID = 132168, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Warbringer
-			{spellID = 105771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
 			{spellID = 20511, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Disarm
 			{spellID = 676, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Staggering Shout
 			{spellID = 107566, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Warbringer
+			{spellID = 105771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hamstring
 			{spellID = 1715, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Piercing Howl
