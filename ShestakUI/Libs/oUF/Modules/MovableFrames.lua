@@ -403,7 +403,7 @@ StaticPopupDialogs.RESET_UF = {
 	text = L_POPUP_RESETUI,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-	OnAccept = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") else SavedOptionsPerChar.UFPos = {} ReloadUI() end end,
+	OnAccept = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") else SavedOptionsPerChar.UFPos = {} ReloadUI() end end,
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
@@ -414,7 +414,7 @@ SlashCmdList.RESETUF = function() StaticPopup_Show("RESET_UF") end
 SLASH_RESETUF1 = "/resetuf"
 
 T.MoveUnitFrames = function(inp)
-	if InCombatLockdown() then return print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") end
+	if InCombatLockdown() then return print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") end
 
 	if not _LOCK then
 		for k, obj in next, oUF.objects do

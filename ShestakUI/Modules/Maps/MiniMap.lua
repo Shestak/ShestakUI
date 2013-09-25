@@ -162,7 +162,7 @@ local micromenu = {
 	end},
 	{text = SPELLBOOK_ABILITIES_BUTTON, notCheckable = 1, func = function()
 		if InCombatLockdown() then
-			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
+			print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return
 		end
 		ToggleFrame(SpellBookFrame)
 	end},
@@ -234,7 +234,7 @@ local micromenu = {
 	end},
 	{text = MOUNTS_AND_PETS, notCheckable = 1, func = function()
 		if InCombatLockdown() then
-			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
+			print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return
 		end
 		TogglePetJournal()
 	end},

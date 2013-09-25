@@ -1302,7 +1302,7 @@ function Stuffing.Menu(self, level)
 	info.notCheckable = 1
 	info.func = function()
 		if InCombatLockdown() then
-			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
+			print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return
 		end
 		Stuffing:SetBagsForSorting("d")
 		Stuffing:Restack()
@@ -1314,7 +1314,7 @@ function Stuffing.Menu(self, level)
 	info.notCheckable = 1
 	info.func = function()
 		if InCombatLockdown() then
-			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
+			print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return
 		end
 		Stuffing:SetBagsForSorting("c/p")
 		Stuffing:Restack()
