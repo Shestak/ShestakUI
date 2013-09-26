@@ -62,7 +62,7 @@ bar:SetScript("OnEnter", function(self)
 	local name = select(10, UnitAlternatePowerInfo("player"))
 	local tooltip = select(11, UnitAlternatePowerInfo("player"))
 
-	GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
+	GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -5)
 	GameTooltip:AddLine(name, 1, 1, 1)
 	GameTooltip:AddLine(tooltip, nil, nil, nil, true)
 
