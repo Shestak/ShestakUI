@@ -5,22 +5,10 @@ if T.author ~= true then return end
 --	Force other warning
 ----------------------------------------------------------------------------------------
 local ForceWarning = CreateFrame("Frame")
-ForceWarning:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
-ForceWarning:RegisterEvent("LFG_PROPOSAL_SHOW")
 ForceWarning:RegisterEvent("PARTY_INVITE_REQUEST")
 ForceWarning:RegisterEvent("CONFIRM_SUMMON")
-ForceWarning:RegisterEvent("PET_BATTLE_QUEUE_PROPOSE_MATCH")
 ForceWarning:SetScript("OnEvent", function(self, event)
-	if event == "UPDATE_BATTLEFIELD_STATUS" then
-		for i = 1, GetMaxBattlefieldID() do
-			local status = GetBattlefieldStatus(i)
-			if status == "confirm" then
-				PlaySound("ReadyCheck", "Master")
-				break
-			end
-			i = i + 1
-		end
-	elseif event == "LFG_PROPOSAL_SHOW" or event == "PARTY_INVITE_REQUEST" or event == "CONFIRM_SUMMON" or event == "PET_BATTLE_QUEUE_PROPOSE_MATCH" then
+	if event == "PARTY_INVITE_REQUEST" or event == "CONFIRM_SUMMON" then
 		PlaySound("ReadyCheck", "Master")
 	end
 end)
