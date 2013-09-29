@@ -94,6 +94,25 @@ local function LoadSkin()
 	T.SkinNextPrevButton(ArchaeologyFrameCompletedPagePrevPageButton)
 
 	ArchaeologyFrameInfoButton:SetPoint("TOPLEFT", ArchaeologyFrame, 4, -4)
+
+	-- Archaeology progress bar (by Haleth)
+	local frame = ArcheologyDigsiteProgressBar
+	local bar = frame.FillBar
+
+	frame.Shadow:Hide()
+	frame.BarBackground:Hide()
+	frame.BarBorderAndOverlay:Hide()
+
+	frame.BarTitle:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+	frame.BarTitle:SetPoint("CENTER", 0, 13)
+
+	bar:SetWidth(150)
+	frame.Flash:SetWidth(172)
+
+	bar:SetStatusBarTexture(C.media.texture)
+	bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+
+	bar:CreateBackdrop()
 end
 
 T.SkinFuncs["Blizzard_ArchaeologyUI"] = LoadSkin
