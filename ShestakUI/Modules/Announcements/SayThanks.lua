@@ -32,7 +32,7 @@ frame:SetScript("OnEvent", function(_, event, _, applied, _, _, buffer, _, _, _,
 	for key, value in pairs(spells) do
 		if spell == key and value == true and player == T.name and buffer ~= T.name and (applied == "SPELL_AURA_APPLIED" or applied == "SPELL_CAST_SUCCESS") then
 			SendChatMessage(L_ANNOUNCE_SS_THANKS..GetSpellLink(spell)..", "..buffer, "WHISPER", nil, buffer)
-			DEFAULT_CHAT_FRAME:AddMessage(GetSpellLink(spell)..L_ANNOUNCE_SS_RECEIVED..buffer)
+			print(GetSpellLink(spell)..L_ANNOUNCE_SS_RECEIVED..buffer)
 		end
 	end
 end)

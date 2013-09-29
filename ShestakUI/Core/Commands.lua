@@ -42,7 +42,7 @@ SLASH_CLEARCOMBAT2 = "/сдс"
 --	Description of the slash commands
 ----------------------------------------------------------------------------------------
 SlashCmdList.UIHELP = function()
-	for i, v in ipairs(L_SLASHCMD_HELP) do DEFAULT_CHAT_FRAME:AddMessage(("%s"):format(tostring(v)), 1, 1, 0) end
+	for i, v in ipairs(L_SLASHCMD_HELP) do print("|cffffff00"..("%s"):format(tostring(v)).."|r") end
 end
 SLASH_UIHELP1 = "/uihelp"
 SLASH_UIHELP2 = "/helpui"
