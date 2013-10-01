@@ -173,27 +173,26 @@ local function OnAura(frame, unit)
 end
 
 local function CastUpdate(frame)
-	if floor(frame:GetHeight() + 0.5) ~= (C.nameplate.height * noscalemult) then
+	if frame:GetHeight() > (C.nameplate.height * noscalemult) then
 		frame:ClearAllPoints()
-		frame:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
 		frame:SetPoint("TOP", frame:GetParent().hp, "BOTTOM", 0, -8)
+		frame:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
+		frame:GetStatusBarTexture():SetHorizTile(true)
+		frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
+		if frame.shield:IsShown() then
+			frame:SetStatusBarColor(0.78, 0.25, 0.25)
+			frame.bg:SetTexture(0.78, 0.25, 0.25, 0.2)
+		end
 	end
 end
 
-local function ColorTextUpdate(frame, curValue)
+local function CastTextUpdate(frame, curValue)
 	local _, maxValue = frame:GetMinMaxValues()
 
 	if UnitChannelInfo("target") then
 		frame.time:SetFormattedText("%.1f ", curValue)
 	elseif UnitCastingInfo("target") then
 		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
-	end
-
-	frame:GetStatusBarTexture():SetHorizTile(true)
-	frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
-	if frame.shield:IsShown() then
-		frame:SetStatusBarColor(0.78, 0.25, 0.25)
-		frame.bg:SetTexture(0.78, 0.25, 0.25, 0.2)
 	end
 end
 
@@ -451,7 +450,7 @@ local function SkinObjects(frame, nameFrame)
 
 	cb.shield = cbshield
 	cb:HookScript("OnUpdate", CastUpdate)
-	cb:HookScript("OnValueChanged", ColorTextUpdate)
+	cb:HookScript("OnValueChanged", CastTextUpdate)
 	frame.cb = cb
 
 	-- Aura tracking
