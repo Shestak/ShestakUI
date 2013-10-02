@@ -172,20 +172,6 @@ local function OnAura(frame, unit)
 	for index = i, #frame.icons do frame.icons[index]:Hide() end
 end
 
-local function CastUpdate(frame)
-	if frame:GetHeight() > (C.nameplate.height * noscalemult) then
-		frame:ClearAllPoints()
-		frame:SetPoint("TOP", frame:GetParent().hp, "BOTTOM", 0, -8)
-		frame:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
-		frame:GetStatusBarTexture():SetHorizTile(true)
-		frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
-		if frame.shield:IsShown() then
-			frame:SetStatusBarColor(0.78, 0.25, 0.25)
-			frame.bg:SetTexture(0.78, 0.25, 0.25, 0.2)
-		end
-	end
-end
-
 local function CastTextUpdate(frame, curValue)
 	local _, maxValue = frame:GetMinMaxValues()
 
@@ -193,6 +179,13 @@ local function CastTextUpdate(frame, curValue)
 		frame.time:SetFormattedText("%.1f ", curValue)
 	elseif UnitCastingInfo("target") then
 		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
+	end
+
+	if frame.shield:IsShown() then
+		frame:SetStatusBarColor(0.78, 0.25, 0.25)
+		frame.bg:SetTexture(0.78, 0.25, 0.25, 0.2)
+	else
+		frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
 	end
 end
 
@@ -305,7 +298,6 @@ local function UpdateObjects(frame)
 	frame.hp:ClearAllPoints()
 	frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
 	frame.hp:SetPoint("TOP", frame, "TOP", 0, -15)
-	frame.hp:GetStatusBarTexture():SetHorizTile(true)
 
 	-- Match values
 	HealthBar_ValueChanged(frame.hp)
@@ -398,6 +390,9 @@ local function SkinObjects(frame, nameFrame)
 	end
 
 	-- Create Cast Bar
+	cb:ClearAllPoints()
+	cb:SetPoint("TOPRIGHT", hp, "BOTTOMRIGHT", 0, -8)
+	cb:SetPoint("BOTTOMLEFT", hp, "BOTTOMLEFT", 0, -8-(C.nameplate.height * noscalemult))
 	cb:SetStatusBarTexture(C.media.texture)
 	CreateVirtualFrame(cb)
 
@@ -449,7 +444,6 @@ local function SkinObjects(frame, nameFrame)
 	CreateVirtualFrame(cb, cb.icon)
 
 	cb.shield = cbshield
-	cb:HookScript("OnUpdate", CastUpdate)
 	cb:HookScript("OnValueChanged", CastTextUpdate)
 	frame.cb = cb
 
@@ -494,7 +488,6 @@ local function SkinObjects(frame, nameFrame)
 	QueueObject(frame, elite)
 
 	UpdateObjects(hp)
-	CastUpdate(cb)
 
 	frame:HookScript("OnHide", OnHide)
 	frames[frame] = true
