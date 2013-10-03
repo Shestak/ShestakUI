@@ -174,12 +174,11 @@ end
 
 local function CastTextUpdate(frame, curValue)
 	local _, maxValue = frame:GetMinMaxValues()
+	local last = frame.last and frame.last or 0
+	local finish = (curValue > last) and (maxValue - curValue) or curValue
 
-	if UnitChannelInfo("target") then
-		frame.time:SetFormattedText("%.1f ", curValue)
-	else
-		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
-	end
+	frame.time:SetFormattedText("%.1f ", finish)
+	frame.last = curValue
 
 	if frame.shield:IsShown() then
 		frame:SetStatusBarColor(0.78, 0.25, 0.25)
