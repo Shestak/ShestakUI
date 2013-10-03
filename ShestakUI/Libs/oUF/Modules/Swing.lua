@@ -7,39 +7,21 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_swing ~= true then return e
 local _, ns = ...
 local oUF = ns.oUF
 
-local OnDurationUpdate
-do
-	local elapsed = 0
-	local slamelapsed = 0
-	local slam = GetSpellInfo(1464)
-	function OnDurationUpdate(self, elapsed)
+local function OnDurationUpdate(self)
+	self:SetMinMaxValues(self.min, self.max)
 
-		local spell = UnitCastingInfo("player")
+	local swingelapsed = GetTime()
+	if swingelapsed > self.max then
+		self:Hide()
+		self:SetScript("OnUpdate", nil)
+	else
+		self:SetValue(self.min + (swingelapsed - self.min))
 
-		if slam == spell then
-			slamelapsed = slamelapsed + elapsed
-		else
-			if slamelapsed ~= 0 then
-				self.min = self.min + slamelapsed
-				self.max = self.max + slamelapsed
-				self:SetMinMaxValues(self.min, self.max)
-				slamelapsed = 0
-			end
-
-			swingelapsed = GetTime()
-			if swingelapsed > self.max then
-				self:Hide()
-				self:SetScript("OnUpdate", nil)
+		if self.Text then
+			if self.OverrideText then
+				self:OverrideText(swingelapsed)
 			else
-				self:SetValue(self.min + (swingelapsed - self.min))
-
-				if self.Text then
-					if self.OverrideText then
-						self:OverrideText(swingelapsed)
-					else
-						self.Text:SetFormattedText("%.1f", self.max - swingelapsed)
-					end
-				end
+				self.Text:SetFormattedText("%.1f", self.max - swingelapsed)
 			end
 		end
 	end
