@@ -56,36 +56,27 @@ local function Melee(self, _, _, event, _, GUID, _, _, _, tarGUID, _, _, _, miss
 			end
 		end
 	elseif UnitGUID(self.unit) == GUID then
-		local swordprocc = false
-		if event == "SPELL_EXTRA_ATTACKS" and (spellName == GetSpellInfo(12815) or spellName == GetSpellInfo(13964)) then
-			swordprocc = true
-		end
-
 		if not string.find(event, "SWING") then return end
 
-		if swordprocc == true then
-			swordprocc = false
-		else
-			bar.min = GetTime()
-			bar.max = bar.min + UnitAttackSpeed(self.unit)
-			local itemId = GetInventoryItemID("player", 17)
+		bar.min = GetTime()
+		bar.max = bar.min + UnitAttackSpeed(self.unit)
+		local itemId = GetInventoryItemID("player", 17)
 
-			if itemId ~= nil then
-				local _, _, _, _, _, itemType = GetItemInfo(itemId)
-				local _, _, _, _, _, weaponType = GetItemInfo(25)
-				if itemType ~= weaponType then -- Worn Shortsword, little "hack" for language support
-					bar:Show()
-					bar:SetMinMaxValues(bar.min, bar.max)
-					bar:SetScript("OnUpdate", OnDurationUpdate)
-				else
-					bar:Hide()
-					bar:SetScript("OnUpdate", nil)
-				end
-			else
+		if itemId ~= nil then
+			local _, _, _, _, _, itemType = GetItemInfo(itemId)
+			local _, _, _, _, _, weaponType = GetItemInfo(25)
+			if itemType ~= weaponType then -- Worn Shortsword, little "hack" for language support
 				bar:Show()
 				bar:SetMinMaxValues(bar.min, bar.max)
 				bar:SetScript("OnUpdate", OnDurationUpdate)
+			else
+				bar:Hide()
+				bar:SetScript("OnUpdate", nil)
 			end
+		else
+			bar:Show()
+			bar:SetMinMaxValues(bar.min, bar.max)
+			bar:SetScript("OnUpdate", OnDurationUpdate)
 		end
 	end
 end
