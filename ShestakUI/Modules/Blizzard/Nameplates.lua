@@ -177,7 +177,7 @@ local function CastTextUpdate(frame, curValue)
 
 	if UnitChannelInfo("target") then
 		frame.time:SetFormattedText("%.1f ", curValue)
-	elseif UnitCastingInfo("target") then
+	else
 		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
 	end
 
@@ -592,11 +592,11 @@ local function ShowHealth(frame, ...)
 
 	if GetUnitName("target") and frame:GetParent():GetAlpha() == 1 then
 		frame.hp:SetSize((C.nameplate.width + C.nameplate.ad_width) * noscalemult, (C.nameplate.height + C.nameplate.ad_height) * noscalemult)
-		frame.cb:SetSize((C.nameplate.width + C.nameplate.ad_width) * noscalemult, (C.nameplate.height + C.nameplate.ad_height) * noscalemult)
+		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-((C.nameplate.height + C.nameplate.ad_height) * noscalemult))
 		frame.cb.icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2) + 8)
 	else
 		frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
-		frame.cb:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
+		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-(C.nameplate.height * noscalemult))
 		frame.cb.icon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)
 	end
 end
