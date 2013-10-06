@@ -94,7 +94,7 @@ Stuffing:SetScript("OnEvent", function(this, event, ...)
 end)
 
 local function Print(x)
-	DEFAULT_CHAT_FRAME:AddMessage("|cffffff00"..x)
+	print("|cffffff00"..x)
 end
 
 local function Stuffing_Sort(args)
@@ -1302,7 +1302,7 @@ function Stuffing.Menu(self, level)
 	info.notCheckable = 1
 	info.func = function()
 		if InCombatLockdown() then
-			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
+			Print(ERR_NOT_IN_COMBAT) return
 		end
 		Stuffing:SetBagsForSorting("d")
 		Stuffing:Restack()
@@ -1314,7 +1314,7 @@ function Stuffing.Menu(self, level)
 	info.notCheckable = 1
 	info.func = function()
 		if InCombatLockdown() then
-			print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return
+			Print(ERR_NOT_IN_COMBAT) return
 		end
 		Stuffing:SetBagsForSorting("c/p")
 		Stuffing:Restack()

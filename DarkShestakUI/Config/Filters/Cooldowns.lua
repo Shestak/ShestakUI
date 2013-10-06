@@ -64,13 +64,13 @@ if C.enemycooldown.enable == true then
 		[48707] = 45,	-- Anti-Magic Shell
 		[31224] = 60,	-- Cloak of Shadows
 		[8143] = 60,	-- Tremor Totem
-		[46924] = 90,	-- Bladestorm
+		[46924] = 60,	-- Bladestorm
 		[108978] = 90,	-- Alter Time
 		[49039] = 120,	-- Lichborne
-		[19263] = 120,	-- Deterrence
 		[137562] = 120,	-- Nimble Brew
 		[47585] = 120,	-- Dispersion
 		[1856] = 120,	-- Vanish
+		[19263] = 180,	-- Deterrence
 		[33206] = 180,	-- Pain Suppression
 		-- Disarms
 		[51722] = 60,	-- Dismantle

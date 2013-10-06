@@ -21,8 +21,6 @@ end
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_TALENT_UPDATE")
 frame:RegisterEvent("GROUP_ROSTER_UPDATE")
-frame:RegisterEvent("PLAYER_ENTERING_BATTLEGROUND")
-
 frame:SetScript("OnEvent", SetRole)
 
-RolePollPopup:SetScript("OnShow", function() StaticPopupSpecial_Hide(RolePollPopup) end)
+RolePollPopup:UnregisterEvent("ROLE_POLL_BEGIN")

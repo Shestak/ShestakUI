@@ -251,7 +251,6 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[27285] = true		-- Seed of Corruption (AoE)
 		T.aoespam[87385] = true		-- Seed of Corruption (Soulburn)
 		T.aoespam[172] = true		-- Corruption
-		T.aoespam[87389] = true		-- Corruption (Soulburn: Seed of Corruption)
 		T.aoespam[30108] = true		-- Unstable Affliction
 		T.aoespam[348] = true		-- Immolate
 		T.aoespam[980] = true		-- Agony
@@ -269,14 +268,10 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[30213] = true		-- Legion Strike (Felguard)
 		T.aoespam[89753] = true		-- Felstorm (Felguard)
 		T.aoespam[20153] = true		-- Immolation (Infrenal)
-		T.aoespam[108371] = true	-- Harvest Life
-		T.aoespam[115707] = true	-- Harvest Life (Soulburn)
 	end
 	if C.combattext.healing then
 		T.healfilter[63106] = true	-- Siphon Life
 		T.healfilter[89653] = true	-- Drain Life
-		T.healfilter[125314] = true	-- Harvest Life
-		T.healfilter[108366] = true	-- Soul Leech
 		T.healfilter[108359] = true	-- Dark Regeneration
 	end
 elseif T.class == "WARRIOR" then

@@ -188,28 +188,19 @@ local function OnAura(frame, unit)
 	for index = i, #frame.icons do frame.icons[index]:Hide() end
 end
 
-local function CastUpdate(frame)
-	if floor(frame:GetHeight() + 0.5) ~= (C.nameplate.height * noscalemult) then
-		frame:ClearAllPoints()
-		frame:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
-		frame:SetPoint("TOP", frame:GetParent().hp, "BOTTOM", 0, -8)
-	end
-end
-
-local function ColorTextUpdate(frame, curValue)
+local function CastTextUpdate(frame, curValue)
 	local _, maxValue = frame:GetMinMaxValues()
+	local last = frame.last and frame.last or 0
+	local finish = (curValue > last) and (maxValue - curValue) or curValue
 
-	if UnitChannelInfo("target") then
-		frame.time:SetFormattedText("%.1f ", curValue)
-	elseif UnitCastingInfo("target") then
-		frame.time:SetFormattedText("%.1f ", maxValue - curValue)
-	end
+	frame.time:SetFormattedText("%.1f ", finish)
+	frame.last = curValue
 
-	frame:GetStatusBarTexture():SetHorizTile(true)
-	frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
 	if frame.shield:IsShown() then
 		frame:SetStatusBarColor(0.78, 0.25, 0.25)
 		frame.bg:SetTexture(0.78, 0.25, 0.25, 0.2)
+	else
+		frame.bg:SetTexture(0.75, 0.75, 0.25, 0.2)
 	end
 end
 
@@ -322,7 +313,6 @@ local function UpdateObjects(frame)
 	frame.hp:ClearAllPoints()
 	frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
 	frame.hp:SetPoint("TOP", frame, "TOP", 0, -15)
-	frame.hp:GetStatusBarTexture():SetHorizTile(true)
 
 	-- Match values
 	HealthBar_ValueChanged(frame.hp)
@@ -413,6 +403,9 @@ local function SkinObjects(frame, nameFrame)
 	end
 
 	-- Create Cast Bar
+	cb:ClearAllPoints()
+	cb:SetPoint("TOPRIGHT", hp, "BOTTOMRIGHT", 0, -8)
+	cb:SetPoint("BOTTOMLEFT", hp, "BOTTOMLEFT", 0, -8-(C.nameplate.height * noscalemult))
 	cb:SetStatusBarTexture(C.media.texture)
 	CreateVirtualFrame(cb)
 
@@ -464,8 +457,7 @@ local function SkinObjects(frame, nameFrame)
 	CreateVirtualFrame(cb, cb.icon)
 
 	cb.shield = cbshield
-	cb:HookScript("OnUpdate", CastUpdate)
-	cb:HookScript("OnValueChanged", ColorTextUpdate)
+	cb:HookScript("OnValueChanged", CastTextUpdate)
 	frame.cb = cb
 
 	-- Aura tracking
@@ -509,7 +501,6 @@ local function SkinObjects(frame, nameFrame)
 	QueueObject(frame, elite)
 
 	UpdateObjects(hp)
-	CastUpdate(cb)
 
 	frame:HookScript("OnHide", OnHide)
 	frames[frame] = true
@@ -614,11 +605,11 @@ local function ShowHealth(frame, ...)
 
 	if GetUnitName("target") and frame:GetParent():GetAlpha() == 1 then
 		frame.hp:SetSize((C.nameplate.width + C.nameplate.ad_width) * noscalemult, (C.nameplate.height + C.nameplate.ad_height) * noscalemult)
-		frame.cb:SetSize((C.nameplate.width + C.nameplate.ad_width) * noscalemult, (C.nameplate.height + C.nameplate.ad_height) * noscalemult)
+		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-((C.nameplate.height + C.nameplate.ad_height) * noscalemult))
 		frame.cb.icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2) + 8)
 	else
 		frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
-		frame.cb:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
+		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-(C.nameplate.height * noscalemult))
 		frame.cb.icon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)
 	end
 end

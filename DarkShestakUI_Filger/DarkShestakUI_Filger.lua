@@ -219,9 +219,11 @@ function Filger:DisplayActives()
 	end
 
 	local activeCount = 1
+	local limit = (C.actionbar.button_size * 12)/self.IconSize
 	for n in pairs(self.actives) do
 		self.sortedIndex[activeCount] = n
 		activeCount = activeCount + 1
+		if activeCount > limit then activeCount = limit end
 	end
 	table.sort(self.sortedIndex)
 

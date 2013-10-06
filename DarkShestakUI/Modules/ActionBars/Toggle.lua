@@ -288,7 +288,7 @@ for i = 1, 5 do
 		ToggleBarText(i, "- - -", false, true)
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
-			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
+			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 			SavedOptionsPerChar.BottomBars = SavedOptionsPerChar.BottomBars + 1
 
 			if C.actionbar.rightbars > 2 then
@@ -321,7 +321,7 @@ for i = 1, 5 do
 		ToggleBarText(i, "> > >", false, true)
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
-			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
+			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 			SavedOptionsPerChar.RightBars = SavedOptionsPerChar.RightBars - 1
 
 			if C.actionbar.rightbars > 2 then
@@ -376,7 +376,7 @@ for i = 1, 5 do
 
 	if i == 3 or i == 4 then
 		ToggleBar[i]:SetScript("OnMouseDown", function()
-			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT..".|r") return end
+			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 
 			if SavedOptionsPerChar.SplitBars == false then
 				SavedOptionsPerChar.SplitBars = true

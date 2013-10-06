@@ -41,7 +41,6 @@ T.DiminishingSpells = {
 	[89766] = {"ctrlstun"},		-- Axe Toss (Felguard)
 	[132168] = {"ctrlstun"},	-- Shockwave
 	[132169] = {"ctrlstun"},	-- Storm Bolt
-	[105771] = {"ctrlstun"},	-- Warbringer
 	[20549] = {"ctrlstun"},		-- War Stomp
 
 	-- Control Roots
@@ -61,6 +60,7 @@ T.DiminishingSpells = {
 	[64695] = {"ctrlroot"},		-- Earthgrab
 	[63685] = {"ctrlroot"},		-- Freeze
 	[107566] = {"ctrlroot"},	-- Staggering Shout
+	[105771] = {"ctrlroot"},	-- Warbringer
 
 	-- Disarms
 	[50541] = {"disarm"},		-- Clench (Scorpid)
