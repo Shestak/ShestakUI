@@ -87,6 +87,7 @@ for i, unit in pairs(units) do
 	unit.PetType:ClearAllPoints()
 	unit.PetType:SetAllPoints(unit.PetTypeFrame)
 	unit.PetType:SetAlpha(1)
+	unit.PetType.ActiveStatus:Kill()
 
 	unit.HealthText:ClearAllPoints()
 	unit.HealthText:SetPoint("CENTER", unit.HealthBarBackdrop, "CENTER")
