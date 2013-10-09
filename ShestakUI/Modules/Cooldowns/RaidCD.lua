@@ -172,17 +172,17 @@ local OnEvent = function(self, event, ...)
 		if band(sourceFlags, filter) == 0 then return end
 		if eventType == "SPELL_RESURRECT" or eventType == "SPELL_CAST_SUCCESS" or eventType == "SPELL_AURA_APPLIED" then
 			local spellId = select(12, ...)
-			if T.raid_spells[spellId] and show[select(2, IsInInstance())] then
+			if T.raid_spells[spellId] and show[select(2, IsInInstance())] and sourceName ~= T.name then
 				StartTimer(sourceName, spellId)
 			end
 		end
 	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) ~= "raid" and UnitIsGhost("player") then
 		for k, v in pairs(bars) do
-			StopTimer(v)
+			v.endTime = 0
 		end
-	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) == "arena" then
+	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) == "arena" or not IsInGroup() then
 		for k, v in pairs(bars) do
-			StopTimer(v)
+			v.endTime = 0
 		end
 	end
 end
