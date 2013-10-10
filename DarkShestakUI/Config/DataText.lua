@@ -184,17 +184,10 @@ LPSTAT_CONFIG = {
 	Gold = {
 		enabled = true,
 		style = 1, -- Display styles: [1] 55g 21s 11c [2] 8829.4g [3] 823.55.94
-<<<<<<< HEAD:DarkShestakUI/Config/DataText.lua
 		anchor_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "FPS",
-		anchor_to = "right", anchor_from = cBN and "bottomright" or C.bag.enable and "topright" or "left",
-		x_off = cBN and 0 or C.bag.enable and -25 or -3,
-		y_off = cBN and 6 or C.bag.enable and -13 or 0,
-=======
-		anchor_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "Location",
 		anchor_to = "right", anchor_from = cBN and "bottom" or C.bag.enable and "topright" or "left",
 		x_off = cBN and 15 or C.bag.enable and -25 or -3,
 		y_off = cBN and 8 or C.bag.enable and -13 or 0,
->>>>>>> ea96fa47af65a97b5148584b2c0eef0be11fd5cd:ShestakUI/Config/DataText.lua
 		tip_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "UIParent",
 		tip_anchor = cBN and "TOPRIGHT" or C.bag.enable and "TOPRIGHT" or "BOTTOMRIGHT",
 		tip_x = cBN and 0 or C.bag.enable and -50 or -21,
