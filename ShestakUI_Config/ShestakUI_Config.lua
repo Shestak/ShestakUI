@@ -648,7 +648,6 @@ function CreateUIConfig()
 	if IsAddOnLoaded("Aurora") then
 		local F = unpack(Aurora)
 		F.CreateBD(UIConfigMain)
-		F.CreateSD(UIConfigMain)
 	else
 		UIConfigMain:SetTemplate("Transparent")
 	end
