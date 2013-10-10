@@ -206,7 +206,7 @@ for frame, target in pairs(framelist) do
 end
 
 local function tdr()
-	if InCombatLockdown() then print(ERR_NOT_IN_COMBAT) return end
+	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 
 	local testlist = {"fear", "disorient", "ctrlroot"}
 

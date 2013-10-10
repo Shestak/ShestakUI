@@ -44,7 +44,6 @@ T.ABItems = {
 	93806,	-- Resonance Siphon
 	93761,	-- Arcane Emancipator
 	-- Seaforium
-	39213,	-- Massive Seaforium Charge
 	46847,	-- Seaforium Bombs
 	47030,	-- Huge Seaforium Bombs
 	-- Other

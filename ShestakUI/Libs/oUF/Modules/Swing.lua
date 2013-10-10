@@ -7,39 +7,21 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_swing ~= true then return e
 local _, ns = ...
 local oUF = ns.oUF
 
-local OnDurationUpdate
-do
-	local elapsed = 0
-	local slamelapsed = 0
-	local slam = GetSpellInfo(1464)
-	function OnDurationUpdate(self, elapsed)
+local function OnDurationUpdate(self)
+	self:SetMinMaxValues(self.min, self.max)
 
-		local spell = UnitCastingInfo("player")
+	local swingelapsed = GetTime()
+	if swingelapsed > self.max then
+		self:Hide()
+		self:SetScript("OnUpdate", nil)
+	else
+		self:SetValue(self.min + (swingelapsed - self.min))
 
-		if slam == spell then
-			slamelapsed = slamelapsed + elapsed
-		else
-			if slamelapsed ~= 0 then
-				self.min = self.min + slamelapsed
-				self.max = self.max + slamelapsed
-				self:SetMinMaxValues(self.min, self.max)
-				slamelapsed = 0
-			end
-
-			swingelapsed = GetTime()
-			if swingelapsed > self.max then
-				self:Hide()
-				self:SetScript("OnUpdate", nil)
+		if self.Text then
+			if self.OverrideText then
+				self:OverrideText(swingelapsed)
 			else
-				self:SetValue(self.min + (swingelapsed - self.min))
-
-				if self.Text then
-					if self.OverrideText then
-						self:OverrideText(swingelapsed)
-					else
-						self.Text:SetFormattedText("%.1f", self.max - swingelapsed)
-					end
-				end
+				self.Text:SetFormattedText("%.1f", self.max - swingelapsed)
 			end
 		end
 	end
@@ -56,36 +38,27 @@ local function Melee(self, _, _, event, _, GUID, _, _, _, tarGUID, _, _, _, miss
 			end
 		end
 	elseif UnitGUID(self.unit) == GUID then
-		local swordprocc = false
-		if event == "SPELL_EXTRA_ATTACKS" and (spellName == GetSpellInfo(12815) or spellName == GetSpellInfo(13964)) then
-			swordprocc = true
-		end
-
 		if not string.find(event, "SWING") then return end
 
-		if swordprocc == true then
-			swordprocc = false
-		else
-			bar.min = GetTime()
-			bar.max = bar.min + UnitAttackSpeed(self.unit)
-			local itemId = GetInventoryItemID("player", 17)
+		bar.min = GetTime()
+		bar.max = bar.min + UnitAttackSpeed(self.unit)
+		local itemId = GetInventoryItemID("player", 17)
 
-			if itemId ~= nil then
-				local _, _, _, _, _, itemType = GetItemInfo(itemId)
-				local _, _, _, _, _, weaponType = GetItemInfo(25)
-				if itemType ~= weaponType then -- Worn Shortsword, little "hack" for language support
-					bar:Show()
-					bar:SetMinMaxValues(bar.min, bar.max)
-					bar:SetScript("OnUpdate", OnDurationUpdate)
-				else
-					bar:Hide()
-					bar:SetScript("OnUpdate", nil)
-				end
-			else
+		if itemId ~= nil then
+			local _, _, _, _, _, itemType = GetItemInfo(itemId)
+			local _, _, _, _, _, weaponType = GetItemInfo(25)
+			if itemType ~= weaponType then -- Worn Shortsword, little "hack" for language support
 				bar:Show()
 				bar:SetMinMaxValues(bar.min, bar.max)
 				bar:SetScript("OnUpdate", OnDurationUpdate)
+			else
+				bar:Hide()
+				bar:SetScript("OnUpdate", nil)
 			end
+		else
+			bar:Show()
+			bar:SetMinMaxValues(bar.min, bar.max)
+			bar:SetScript("OnUpdate", OnDurationUpdate)
 		end
 	end
 end

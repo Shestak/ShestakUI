@@ -175,7 +175,7 @@ Butsu:SetScript("OnHide", function(self)
 end)
 
 Butsu:SetMovable(true)
-Butsu:RegisterForClicks("anyup")
+Butsu:RegisterForClicks("AnyUp")
 Butsu:SetParent(UIParent)
 Butsu:SetUserPlaced(true)
 Butsu:SetPoint(unpack(C.position.loot))

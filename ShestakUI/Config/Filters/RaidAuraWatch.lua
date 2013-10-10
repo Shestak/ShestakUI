@@ -86,12 +86,11 @@ T.RaidDebuffs = {
 -- Siege of Orgrimmar
 	-- Immerseus
 	[SpellName(143436)] = 4,	-- Corrosive Blast (Tank switch)
-	[SpellName(143459)] = 3,	-- Sha Residue
 	-- The Fallen Protectors
 	[SpellName(143434)] = 4,	-- Shadow Word: Bane (Dispel)
 	[SpellName(143198)] = 3,	-- Garrote (DoT)
-	[SpellName(143842)] = 3,	-- Mark of Anguish
-	[SpellName(147383)] = 3,	-- Debilitation (Heroic)
+	[SpellName(143842)] = 5,	-- Mark of Anguish
+	[SpellName(147383)] = 3,	-- Debilitation
 	-- Norushen
 	[SpellName(146124)] = 4,	-- Self Doubt (Tank switch)
 	[SpellName(144514)] = 3,	-- Lingering Corruption (Dispel)
@@ -101,6 +100,7 @@ T.RaidDebuffs = {
 	[SpellName(146594)] = 3,	-- Gift of the Titans
 	[SpellName(147207)] = 3,	-- Weakened Resolve (Heroic)
 	-- Galakras
+	[SpellName(147029)] = 3,	-- Flames of Galakrond (DoT)
 	[SpellName(146765)] = 3,	-- Flame Arrows (DoT)
 	[SpellName(146902)] = 3,	-- Poison-Tipped Blades (Poison stacks)
 	-- Iron Juggernaut

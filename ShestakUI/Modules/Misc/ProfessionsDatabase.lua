@@ -86,5 +86,4 @@ end
 button:SetNormalTexture("Interface\\GossipFrame\\DailyActiveQuestIcon")
 button:SetPushedTexture("Interface\\GossipFrame\\DailyActiveQuestIcon")
 button:SetHighlightTexture("Interface\\GossipFrame\\DailyActiveQuestIcon", "ADD")
-button:RegisterForClicks("LeftButtonUp")
 button:SetScript("OnClick", DropDown_Show)

@@ -13,6 +13,7 @@ local direction = C.enemycooldown.direction
 local icons = {}
 local band = bit.band
 local pos = C.position.enemy_cooldown
+local limit = (C.actionbar.button_size * 12)/C.enemycooldown.size
 
 local EnemyCDAnchor = CreateFrame("Frame", "EnemyCDAnchor", UIParent)
 if C.unitframe.enable ~= true then
@@ -35,7 +36,7 @@ local UpdatePositions = function()
 		icons[i]:ClearAllPoints()
 		if i == 1 then
 			icons[i]:SetPoint("BOTTOMLEFT", EnemyCDAnchor, "BOTTOMLEFT", 0, 0)
-		else
+		elseif i < limit then
 			if direction == "UP" then
 				icons[i]:SetPoint("BOTTOM", icons[i-1], "TOP", 0, 3)
 			elseif direction == "DOWN" then
@@ -97,7 +98,7 @@ local OnEvent = function(self, event, ...)
 		local _, eventType, _, _, sourceName, sourceFlags, _, _, _, _, _, spellID = ...
 
 		if eventType == "SPELL_CAST_SUCCESS" and band(sourceFlags, COMBATLOG_OBJECT_REACTION_HOSTILE) == COMBATLOG_OBJECT_REACTION_HOSTILE then
-			if sourceName ~= UnitName("player") then
+			if sourceName ~= T.name then
 				if T.enemy_spells[spellID] and show[select(2, IsInInstance())] then
 					StartTimer(spellID)
 				end
