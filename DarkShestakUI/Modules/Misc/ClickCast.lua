@@ -354,9 +354,7 @@ if IsAddOnLoaded("Aurora") then
 	SpellBinder.OpenButton:GetHighlightTexture():SetAllPoints(SpellBinder.OpenButton:GetNormalTexture())
 
 	F.CreateBG(SpellBinder.OpenButton)
-	F.CreateSD(SpellBinder.OpenButton, 5, 0, 0, 0, 1, 1)
 	F.CreateBD(SpellBinder)
-	F.CreateSD(SpellBinder)
 	F.ReskinClose(SpellBinderCloseButton)
 	F.ReskinScroll(SpellBinderScrollFrameSpellListScrollBar)
 elseif C.skins.blizzard_frames == true then

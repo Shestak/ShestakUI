@@ -41,7 +41,6 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 		local frame = _G[frames[i]]
 		if frame then
 			F.CreateBD(frame)
-			F.CreateSD(frame)
 		end
 	end
 

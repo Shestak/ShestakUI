@@ -44,10 +44,7 @@ for i, unit in pairs(units) do
 	unit.Name:ClearAllPoints()
 
 	unit.PetTypeFrame = CreateFrame("Frame", nil, unit)
-	unit.PetTypeFrame:SetSize(100, 23)
-	unit.PetTypeFrame:FontString("text", C.media.normal_font, 12)
-	unit.PetTypeFrame.text:SetShadowOffset(1, -1)
-	unit.PetTypeFrame.text:SetText("")
+	unit.PetTypeFrame:SetSize(23, 23)
 
 	unit.SpeedIcon:SetAlpha(0)
 	unit.SpeedUnderlay:SetAlpha(0)
@@ -66,8 +63,7 @@ for i, unit in pairs(units) do
 		unit.ActualHealthBar:SetPoint("BOTTOMLEFT", unit.Icon, "BOTTOMRIGHT", 10, 0)
 		unit.Name:SetPoint("BOTTOMLEFT", unit.ActualHealthBar, "TOPLEFT", 0, 10)
 
-		unit.PetTypeFrame:SetPoint("BOTTOMRIGHT", unit.HealthBarBackdrop, "TOPRIGHT", 4, 4)
-		unit.PetTypeFrame.text:SetPoint("RIGHT", -3, 0)
+		unit.PetTypeFrame:SetPoint("BOTTOMRIGHT", unit.HealthBarBackdrop, "TOPRIGHT", 0, 7)
 
 		unit.FirstAttack:SetPoint("LEFT", unit.HealthBarBackdrop, "RIGHT", 5, 0)
 		unit.FirstAttack:SetTexCoord(unit.SpeedIcon:GetTexCoord())
@@ -81,8 +77,7 @@ for i, unit in pairs(units) do
 		unit.ActualHealthBar:SetPoint("BOTTOMRIGHT", unit.Icon, "BOTTOMLEFT", -10, 0)
 		unit.Name:SetPoint("BOTTOMRIGHT", unit.ActualHealthBar, "TOPRIGHT", 0, 10)
 
-		unit.PetTypeFrame:SetPoint("BOTTOMLEFT", unit.HealthBarBackdrop, "TOPLEFT", -2, 4)
-		unit.PetTypeFrame.text:SetPoint("LEFT", 3, 0)
+		unit.PetTypeFrame:SetPoint("BOTTOMLEFT", unit.HealthBarBackdrop, "TOPLEFT", 0, 7)
 
 		unit.FirstAttack:SetPoint("RIGHT", unit.HealthBarBackdrop, "LEFT", -5, 0)
 		unit.FirstAttack:SetTexCoord(0.5, 0, 0.5, 1)
@@ -91,8 +86,8 @@ for i, unit in pairs(units) do
 
 	unit.PetType:ClearAllPoints()
 	unit.PetType:SetAllPoints(unit.PetTypeFrame)
-	unit.PetType:SetFrameLevel(unit.PetTypeFrame:GetFrameLevel() + 2)
-	unit.PetType:SetAlpha(0)
+	unit.PetType:SetAlpha(1)
+	unit.PetType.ActiveStatus:Kill()
 
 	unit.HealthText:ClearAllPoints()
 	unit.HealthText:SetPoint("CENTER", unit.HealthBarBackdrop, "CENTER")
@@ -119,30 +114,6 @@ hooksecurefunc("PetBattleFrame_UpdateSpeedIndicators", function(self)
 			unit.FirstAttack:SetVertexColor(0, 1, 0, 1)
 		else
 			unit.FirstAttack:SetVertexColor(0.8, 0, 0.3, 1)
-		end
-	end
-end)
-
--- Localized pets type
-local pet_type = {
-	[1] = BATTLE_PET_DAMAGE_NAME_1,
-	[2] = BATTLE_PET_DAMAGE_NAME_2,
-	[3] = BATTLE_PET_DAMAGE_NAME_3,
-	[4] = BATTLE_PET_DAMAGE_NAME_4,
-	[5] = BATTLE_PET_DAMAGE_NAME_5,
-	[6] = BATTLE_PET_DAMAGE_NAME_6,
-	[7] = BATTLE_PET_DAMAGE_NAME_7,
-	[8] = BATTLE_PET_DAMAGE_NAME_8,
-	[9] = BATTLE_PET_DAMAGE_NAME_9,
-	[10] = BATTLE_PET_DAMAGE_NAME_10,
-}
-
--- Pets unitframes pet type update
-hooksecurefunc("PetBattleUnitFrame_UpdatePetType", function(self)
-	if self.PetType then
-		local petType = C_PetBattles.GetPetType(self.petOwner, self.petIndex)
-		if self.PetTypeFrame then
-			self.PetTypeFrame.text:SetText(pet_type[petType])
 		end
 	end
 end)

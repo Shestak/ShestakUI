@@ -79,7 +79,6 @@ local function UpdateTab(object, name, rank, texture)
 		tab:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
 		tab:GetHighlightTexture():SetAllPoints(tab:GetNormalTexture())
 		F.CreateBG(tab)
-		F.CreateSD(tab, 5, 0, 0, 0, 1, 1)
 	elseif C.skins.blizzard_frames == true then
 		tab:SetPoint("TOPLEFT", object, "TOPRIGHT", 1, (-44 * index) + 44)
 

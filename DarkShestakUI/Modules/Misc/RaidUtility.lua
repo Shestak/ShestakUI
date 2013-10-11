@@ -154,5 +154,4 @@ if IsAddOnLoaded("Aurora") then
 	RaidUtilityPanelInnerBorder:SetBackdropBorderColor(0, 0, 0, 0)
 	RaidUtilityPanelOuterBorder:SetBackdropBorderColor(0, 0, 0, 0)
 	F.CreateBD(RaidUtilityPanel)
-	F.CreateSD(RaidUtilityPanel)
 end

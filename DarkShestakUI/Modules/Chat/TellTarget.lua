@@ -10,20 +10,15 @@ for i = 1, NUM_CHAT_WINDOWS do
 		local text = self:GetText()
 		if text:len() < 7 then
 			if text:sub(1, 4) == "/tt " or text:sub(1, 6) == "/ее " then
-				local unitname, realm = UnitName("target")
-				if unitname then
-					if unitname then unitname = gsub(unitname, " ", "") end
-					if unitname and not UnitIsSameServer("player", "target") then
-						unitname = unitname.."-"..gsub(realm, " ", "")
-					end
-					ChatFrame_SendTell((unitname), ChatFrame1)
+				if UnitCanCooperate("player", "target") then
+					ChatFrame_SendTell((GetUnitName("target", true)), ChatFrame1)
 				end
 			end
 		end
 	end)
 end
 
--- Slash command for macro's
+-- Slash command
 SlashCmdList.TELLTARGET = function(msg)
 	SendChatMessage(msg, "WHISPER")
 end

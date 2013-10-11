@@ -77,7 +77,6 @@ local function SkinTab(f, t)
 		local F, C = unpack(Aurora)
 		f:SetCheckedTexture(C.media.checked)
 		F.CreateBG(f)
-		F.CreateSD(f, 5, 0, 0, 0, 1, 1)
 		f:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
 		f:GetHighlightTexture():SetAllPoints(f:GetNormalTexture())
 	elseif C.skins.blizzard_frames == true then
