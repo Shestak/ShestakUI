@@ -244,6 +244,9 @@ local micromenu = {
 		end
 		ToggleEncounterJournal()
 	end},
+	{text = BLIZZARD_STORE, notCheckable = 1, func = function()
+		StoreMicroButton:Click()
+	end},
 	{text = HELP_BUTTON, notCheckable = 1, func = function()
 		ToggleHelpFrame()
 	end},
