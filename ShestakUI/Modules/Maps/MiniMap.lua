@@ -262,6 +262,9 @@ local micromenu = {
 	{text = LOOT_ROLLS, notCheckable = true, func = function()
 		ToggleFrame(LootHistoryFrame)
 	end},
+	{text = BLIZZARD_STORE, notCheckable = 1, func = function()
+		StoreMicroButton:Click()
+	end},
 }
 
 Minimap:SetScript("OnMouseUp", function(self, button)
