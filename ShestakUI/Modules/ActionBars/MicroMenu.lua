@@ -16,7 +16,8 @@ local microbuttons = {
 	"CompanionsMicroButton",
 	"EJMicroButton",
 	"MainMenuMicroButton",
-	"HelpMicroButton"
+	"HelpMicroButton",
+	"StoreMicroButton",
 }
 
 local frame = CreateFrame("Frame", "MicroAnchor", oUF_PetBattleFrameHider)
