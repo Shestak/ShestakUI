@@ -3613,6 +3613,8 @@ C["filger_spells"] = {
 			{spellID = 116844, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "target", caster = "target", filter = "BUFF"},
+			-- Dematerialize
+			{spellID = 122465, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Debuffs
 			-- Paralysis
 			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
