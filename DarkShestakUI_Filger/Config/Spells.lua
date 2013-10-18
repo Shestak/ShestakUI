@@ -85,7 +85,7 @@ C["filger_spells"] = {
 			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
 			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fusion-Fire Core (Strength, Proc)
-			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Alacrity of Xuen (Haste, Proc)
 			{spellID = 146296, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
@@ -1510,7 +1510,7 @@ C["filger_spells"] = {
 			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
 			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fusion-Fire Core (Strength, Proc)
-			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Alacrity of Xuen (Haste, Proc)
 			{spellID = 146296, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
@@ -2855,7 +2855,7 @@ C["filger_spells"] = {
 			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
 			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fusion-Fire Core (Strength, Proc)
-			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Alacrity of Xuen (Haste, Proc)
 			{spellID = 146296, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
@@ -3613,6 +3613,8 @@ C["filger_spells"] = {
 			{spellID = 116844, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "target", caster = "target", filter = "BUFF"},
+			-- Dematerialize
+			{spellID = 122465, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Debuffs
 			-- Paralysis
 			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},

@@ -207,7 +207,7 @@ aTooltip:SetScript("OnEvent", function(self, event, addon)
 		elseif classification == "elite" then classification = "+"
 		else classification = "" end
 
-		if not C.tooltip.title then _G["GameTooltipTextLeft1"]:SetText(name) end
+		if not C.tooltip.title and name then _G["GameTooltipTextLeft1"]:SetText(name) end
 
 		if UnitIsPlayer(unit) then
 			if UnitIsAFK(unit) then
