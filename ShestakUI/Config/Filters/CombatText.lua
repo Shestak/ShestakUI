@@ -73,6 +73,9 @@ elseif T.class == "DRUID" then
 		T.aoespam[1079] = true		-- Rip
 		T.aoespam[124991] = true	-- Nature's Vigil
 	end
+	if C.combattext.healing then
+		T.healfilter[145109] = true	-- Ysera's Gift
+	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[2643] = true		-- Multi-Shot
