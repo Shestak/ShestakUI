@@ -28,7 +28,6 @@ T.CastBarTicks = {
 	[GetSpellInfo(129197)] = 3,	-- Mind Flay (Insanity)
 	-- Warlock
 	[GetSpellInfo(689)] = 6,	-- Drain Life
-	[GetSpellInfo(108371)] = 6, -- Harvest Life
 	[GetSpellInfo(1120)] = 6,	-- Drain Soul
 	[GetSpellInfo(755)] = 6,	-- Health Funnel
 	[GetSpellInfo(1949)] = 15,	-- Hellfire
