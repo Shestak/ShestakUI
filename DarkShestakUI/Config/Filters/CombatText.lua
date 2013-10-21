@@ -49,9 +49,11 @@ elseif T.class == "DRUID" then
 		T.aoespam[8936] = true		-- Regrowth
 		T.aoespam[33763] = true		-- Lifebloom
 		T.aoespam[44203] = true		-- Tranquility
-		T.aoespam[81269] = true		-- Swiftmend
+		T.aoespam[81269] = true		-- Efflorescence
+		T.aoespam[142424] = true	-- Efflorescence (Force of Nature)
 		T.aoespam[102792] = true	-- Wild Mushroom: Bloom
 		T.aoespam[124988] = true	-- Nature's Vigil
+		T.aoespam[144876] = true	-- Spark of Life (T16)
 		-- Damaging spells
 		T.aoespam[8921] = true		-- Moonfire
 		T.aoespam[93402] = true		-- Sunfire
@@ -70,6 +72,9 @@ elseif T.class == "DRUID" then
 		T.aoespam[106830] = true	-- Thrash (Cat Form)
 		T.aoespam[1079] = true		-- Rip
 		T.aoespam[124991] = true	-- Nature's Vigil
+	end
+	if C.combattext.healing then
+		T.healfilter[145109] = true	-- Ysera's Gift
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
@@ -107,6 +112,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[113092] = true	-- Frost Bomb
 		T.aoespam[44425] = true		-- Arcane Barrage
 		T.aoespam[84721] = true		-- Frozen Orb
+		T.aoespam[148022] = true	-- Icicle (Mastery)
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then

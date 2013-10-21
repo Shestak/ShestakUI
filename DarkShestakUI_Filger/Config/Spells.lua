@@ -592,6 +592,8 @@ C["filger_spells"] = {
 			{spellID = 16689, filter = "CD"},
 			-- Incarnation
 			{spellID = 106731, filter = "CD"},
+			-- Berserk
+			{spellID = 106952, filter = "CD"},
 
 			-- Racial
 			-- Shadowmeld (Night Elf)

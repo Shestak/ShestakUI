@@ -34,6 +34,10 @@ local FormatTime = function(time)
 	end
 end
 
+local function sortByExpiration(a, b)
+	return a.endTime > b.endTime
+end
+
 local CreateFS = function(frame, fsize, fstyle)
 	local fstring = frame:CreateFontString(nil, "OVERLAY")
 	fstring:SetFont(C.font.raid_cooldowns_font, C.font.raid_cooldowns_font_size, C.font.raid_cooldowns_font_style)
@@ -163,6 +167,7 @@ local StartTimer = function(name, spellId)
 	bar:SetScript("OnLeave", OnLeave)
 	bar:SetScript("OnMouseDown", OnMouseDown)
 	tinsert(bars, bar)
+	table.sort(bars, sortByExpiration)
 	UpdatePositions()
 end
 
