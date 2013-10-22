@@ -30,7 +30,7 @@ if T.class == "DEATHKNIGHT" then
 		T.aoespam[52212] = true		-- Death and Decay
 		T.aoespam[55050] = true		-- Heart Strike
 		T.aoespam[50401] = true		-- Razor Frost
-		T.aoespam[119980] = true	-- Conversion
+		T.aoespam[91776] = true		-- Claw (Ghoul)
 		-- Merging mh/oh strikes(by Bozo)
 		T.aoespam[49020] = true		-- Obliterate MH
 		T.aoespam[66198] = 49020	-- Obliterate OH
@@ -40,6 +40,9 @@ if T.class == "DEATHKNIGHT" then
 		T.aoespam[66216] = 45462	-- Plague Strike OH
 		T.aoespam[49143] = true		-- Frost Strike MH
 		T.aoespam[66196] = 49143	-- Frost Strike OH
+	end
+	if C.combattext.healing then
+		T.healfilter[119980] = true	-- Conversion
 	end
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
