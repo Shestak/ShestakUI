@@ -59,12 +59,12 @@ elseif T.class == "DRUID" then
 		T.aoespam[106998] = 3		-- Astral Storm
 		T.aoespam[50288] = 3		-- Starfall
 		T.aoespam[78777] = 3		-- Wild Mushroom: Detonate
-		T.aoespam[61391] = 3		-- Typhoon
+		T.aoespam[61391] = 0		-- Typhoon
 		T.aoespam[1822] = 3			-- Rake
-		T.aoespam[33876] = 3		-- Mangle (Cat Form)
-		T.aoespam[33878] = 3		-- Mangle (Bear Form)
-		T.aoespam[62078] = 3		-- Swipe (Cat Form)
-		T.aoespam[779] = 3			-- Swipe (Bear Form)
+		T.aoespam[33876] = 0		-- Mangle (Cat Form)
+		T.aoespam[33878] = 0		-- Mangle (Bear Form)
+		T.aoespam[62078] = 0		-- Swipe (Cat Form)
+		T.aoespam[779] = 0			-- Swipe (Bear Form)
 		T.aoespam[33745] = 3		-- Lacerate
 		T.aoespam[77758] = 3		-- Thrash (Bear Form)
 		T.aoespam[106830] = 3		-- Thrash (Cat Form)
@@ -76,8 +76,8 @@ elseif T.class == "DRUID" then
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[2643] = 3			-- Multi-Shot
-		T.aoespam[83077] = 3		-- Improved Serpent Sting
+		T.aoespam[2643] = 0			-- Multi-Shot
+		T.aoespam[83077] = 0		-- Improved Serpent Sting
 		T.aoespam[118253] = 3		-- Serpent Sting
 		T.aoespam[13812] = 3		-- Explosive Trap
 		T.aoespam[53301] = 3		-- Explosive Shot
@@ -97,18 +97,18 @@ elseif T.class == "MAGE" then
 		T.aoespam[2120] = 3			-- Flamestrike
 		T.aoespam[12654] = 3		-- Ignite
 		T.aoespam[11366] = 3		-- Pyroblast
-		T.aoespam[31661] = 3		-- Dragon's Breath
+		T.aoespam[31661] = 0		-- Dragon's Breath
 		T.aoespam[42208] = 3		-- Blizzard
-		T.aoespam[122] = 3			-- Frost Nova
-		T.aoespam[1449] = 3			-- Arcane Explosion
+		T.aoespam[122] = 0			-- Frost Nova
+		T.aoespam[1449] = 0			-- Arcane Explosion
 		T.aoespam[83853] = 3		-- Combustion
 		T.aoespam[11113] = 3		-- Blast Wave
-		T.aoespam[120] = 3			-- Cone of Cold
+		T.aoespam[120] = 0			-- Cone of Cold
 		T.aoespam[114923] = 3		-- Nether Tempest
 		T.aoespam[114954] = 3		-- Nether Tempest (AoE)
 		T.aoespam[7268] = 3			-- Arcane Missiles
-		T.aoespam[113092] = 3		-- Frost Bomb
-		T.aoespam[44425] = 3		-- Arcane Barrage
+		T.aoespam[113092] = 0		-- Frost Bomb
+		T.aoespam[44425] = 0		-- Arcane Barrage
 		T.aoespam[84721] = 3		-- Frozen Orb
 		T.aoespam[148022] = 3		-- Icicle (Mastery)
 	end
@@ -125,14 +125,14 @@ elseif T.class == "MONK" then
 		T.aoespam[130654] = 3		-- Chi Burst
 		T.aoespam[124081] = 3		-- Zen Sphere
 		T.aoespam[124101] = 3		-- Zen Sphere: Detonate
-		T.aoespam[116670] = 3		-- Uplift
+		T.aoespam[116670] = 0		-- Uplift
 		-- Damaging spells
 		T.aoespam[117952] = 3		-- Crackling Jade Lightning
 		T.aoespam[117418] = 3		-- Fists of Fury
 		T.aoespam[120274] = 3		-- Tiger Strikes
 		T.aoespam[128531] = 3		-- Blackout Kick (DoT)
-		T.aoespam[121253] = 3		-- Keg Smash
-		T.aoespam[115181] = 3		-- Breath of Fire
+		T.aoespam[121253] = 0		-- Keg Smash
+		T.aoespam[115181] = 0		-- Breath of Fire
 		T.aoespam[123725] = 3		-- Breath of Fire (DoT)
 		T.aoespam[107270] = 3		-- Spinning Crane Kick
 		T.aoespam[123586] = 3		-- Flying Serpent Kick
@@ -213,8 +213,8 @@ elseif T.class == "PRIEST" then
 	end
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[51723] = 3		-- Fan of Knives
-		T.aoespam[121411] = 3		-- Crimson Tempest
+		T.aoespam[51723] = 0		-- Fan of Knives
+		T.aoespam[121411] = 0		-- Crimson Tempest
 		T.aoespam[122233] = 3		-- Crimson Tempest (DoT)
 		T.aoespam[2818] = 3			-- Deadly Poison
 		T.aoespam[8680] = 3			-- Wound Poison
