@@ -64,12 +64,21 @@ local function CreatCopyFrame()
 	isf = true
 end
 
+local function RemoveIcon(text)
+	for i = 1, 8 do
+		text = gsub(text, "|TInterface\\TargetingFrame\\UI%-RaidTargetingIcon_"..i..":0|t", "{"..strlower(_G["RAID_TARGET_"..i]).."}")
+	end
+	text = gsub(text, "\124T.-\124t", "")
+	return text
+end
+
 local function GetLines(...)
 	local ct = 1
 	for i = select("#", ...), 1, -1 do
 		local region = select(i, ...)
 		if region:GetObjectType() == "FontString" then
-			lines[ct] = tostring(region:GetText())
+			local line = tostring(region:GetText())
+			lines[ct] = RemoveIcon(line)
 			ct = ct + 1
 		end
 	end
@@ -90,7 +99,7 @@ local function Copy(cf)
 	if not isf then CreatCopyFrame() end
 	if frame:IsShown() then frame:Hide() return end
 	frame:Show()
-	editBox:SetText(text:gsub("|[Tt]Interface\\TargetingFrame\\UI%-RaidTargetingIcon_(%d):0|[Tt]", "{rt%1}"))
+	editBox:SetText(text)
 end
 
 for i = 1, NUM_CHAT_WINDOWS do
