@@ -104,7 +104,6 @@ elseif T.class == "MAGE" then
 		T.aoespam[122] = 0			-- Frost Nova
 		T.aoespam[1449] = 0			-- Arcane Explosion
 		T.aoespam[83853] = 3		-- Combustion
-		T.aoespam[11113] = 3		-- Blast Wave
 		T.aoespam[120] = 0			-- Cone of Cold
 		T.aoespam[114923] = 3		-- Nether Tempest
 		T.aoespam[114954] = 3		-- Nether Tempest (AoE)
@@ -180,13 +179,13 @@ elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		T.aoespam[47750] = 3		-- Penance
-		T.aoespam[23455] = 3		-- Holy Nova
+		T.aoespam[23455] = 0		-- Holy Nova
 		T.aoespam[139] = 3			-- Renew
-		T.aoespam[596] = 3			-- Prayer of Healing
+		T.aoespam[596] = 0			-- Prayer of Healing
 		T.aoespam[64844] = 3		-- Divine Hymn
 		T.aoespam[32546] = 3		-- Binding Heal
 		T.aoespam[77489] = 3		-- Echo of Light
-		T.aoespam[34861] = 3		-- Circle of Healing
+		T.aoespam[34861] = 0		-- Circle of Healing
 		T.aoespam[33110] = 3		-- Prayer of Mending
 		T.aoespam[88686] = 3		-- Holy Word: Sanctuary
 		T.aoespam[63544] = 3		-- Rapid Renewal
@@ -196,13 +195,12 @@ elseif T.class == "PRIEST" then
 		T.aoespam[110745] = 3		-- Divine Star
 		-- Damaging spells
 		T.aoespam[47666] = 3		-- Penance
-		T.aoespam[132157] = 3		-- Holy Nova
+		T.aoespam[132157] = 0		-- Holy Nova
 		T.aoespam[589] = 3			-- Shadow Word: Pain
 		T.aoespam[34914] = 3		-- Vampiric Touch
 		T.aoespam[2944] = 3			-- Devouring Plague
 		T.aoespam[15407] = 3		-- Mind Flay
 		T.aoespam[49821] = 3		-- Mind Sear
-		T.aoespam[87532] = 3		-- Shadowy Apparition
 		T.aoespam[14914] = 3		-- Holy Fire
 		T.aoespam[129250] = 3		-- Power Word: Solace
 		T.aoespam[120696] = 3		-- Halo
@@ -238,12 +236,12 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[114911] = 3		-- Ancestral Guidance
 		T.aoespam[114942] = 3		-- Healing Tide
 		-- Damaging spells
-		T.aoespam[421] = 3			-- Chain Lightning
+		T.aoespam[421] = 1			-- Chain Lightning
 		T.aoespam[45297] = 3		-- Chain Lightning (Mastery)
 		T.aoespam[114738] = 3		-- Lava Beam (Mastery)
-		T.aoespam[8349] = 3			-- Fire Nova
+		T.aoespam[8349] = 0			-- Fire Nova
 		T.aoespam[77478] = 3		-- Earhquake
-		T.aoespam[51490] = 3		-- Thunderstorm
+		T.aoespam[51490] = 0		-- Thunderstorm
 		T.aoespam[8187] = 3			-- Magma Totem
 		T.aoespam[8050] = 3			-- Flame Shock
 		T.aoespam[25504] = 3		-- Windfury
