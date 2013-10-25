@@ -136,7 +136,8 @@ T.RaidDebuffs = {
 	[SpellName(142929)] = 3,	-- Tenderizing Strikes (Tank stacks)
 	[SpellName(143275)] = 3,	-- Hewn (Tank stacks)
 	[SpellName(143279)] = 3,	-- Genetic Alteration (Tank stacks)
-	[SpellName(143974)] = 3,	-- Shield Bash (Tank stun)
+	[SpellName(143974)] = 4,	-- Shield Bash (Tank stun)
+	[SpellName(142315)] = 4,	-- Caustic Blood (Tank stacks)
 	[SpellName(142948)] = 3,	-- Aim
 	-- Garrosh Hellscream
 	[SpellName(145183)] = 3,	-- Gripping Despair (Tank stacks)
