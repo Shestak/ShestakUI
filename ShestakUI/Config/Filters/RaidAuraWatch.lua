@@ -3,7 +3,7 @@ if C.raidframe.plugins_aura_watch ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Weakened Soul -> http://www.wowhead.com/spell=6788
+--	Example: Renew -> http://www.wowhead.com/spell=139
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 T.RaidBuffs = {

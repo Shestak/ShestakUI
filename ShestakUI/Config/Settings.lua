@@ -533,7 +533,7 @@ C["stats"] = {
 }
 
 ----------------------------------------------------------------------------------------
---	Error options (All errors on www.wowwiki.com/WoW_Constants/Errors)
+--	Error options
 ----------------------------------------------------------------------------------------
 C["error"] = {
 	["black"] = true,							-- Hide errors from black list
