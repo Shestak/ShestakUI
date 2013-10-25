@@ -72,7 +72,9 @@ elseif T.class == "DRUID" then
 		T.aoespam[124991] = 3		-- Nature's Vigil
 	end
 	if C.combattext.healing then
-		T.healfilter[145109] = true	-- Ysera's Gift
+		T.healfilter[145109] = true	-- Ysera's Gift (Self)
+		T.healfilter[145110] = true	-- Ysera's Gift
+		T.healfilter[34299] = true	-- Leader of the Pack
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
