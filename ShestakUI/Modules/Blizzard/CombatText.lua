@@ -743,7 +743,7 @@ if C.combattext.damage then
 					end
 					if spellId == 66198 then spellId = 49020 elseif spellId == 66196 then spellId = 49143
 					elseif spellId == 66216 then spellId = 45462 elseif spellId == 66188 then spellId = 49998
-					elseif spellId == 27576 then spellId = 5374 elseif spellId == 44949 then spellId = 1680 
+					elseif spellId == 27576 then spellId = 5374 elseif spellId == 44949 then spellId = 1680
 					elseif spellId == 85384 then spellId = 96103 elseif spellId == 95738 then spellId = 50622
 					elseif spellId == 53595 then spellId = 88263 end
 					if C.combattext.merge_aoe_spam and T.aoespam[spellId] then
@@ -876,7 +876,7 @@ if C.combattext.healing then
 						end
 						if icon then
 							msg = " \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
-						elseif(C.combattext.icons)then
+						elseif C.combattext.icons then
 							msg=" \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 						end
 						if spellId == 94472 then spellId = 81751 end
