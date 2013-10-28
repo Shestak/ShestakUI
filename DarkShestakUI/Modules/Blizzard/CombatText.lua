@@ -617,9 +617,6 @@ SLASH_XCT2 = "/чсе"
 local SQ
 if C.combattext.merge_aoe_spam then
 	if C.combattext.damage or C.combattext.healing then
-		if not C.combattext.merge_aoe_spam_time or C.combattext.merge_aoe_spam_time < 1 then
-			C.combattext.merge_aoe_spam_time = 1
-		end
 		local pairs = pairs
 		SQ = {}
 		for k, v in pairs(T.aoespam) do
@@ -644,7 +641,7 @@ if C.combattext.merge_aoe_spam then
 				tslu = 0
 				local utime = time()
 				for k, v in pairs(SQ) do
-					if not SQ[k]["locked"] and SQ[k]["queue"] > 0 and SQ[k]["utime"] + C.combattext.merge_aoe_spam_time <= utime then
+					if not SQ[k]["locked"] and SQ[k]["queue"] > 0 and SQ[k]["utime"] <= utime then
 						if SQ[k]["count"] > 1 then
 							count = " |cffFFFFFF x "..SQ[k]["count"].."|r"
 						else
@@ -744,6 +741,11 @@ if C.combattext.damage then
 					else
 						msg = ""
 					end
+					if spellId == 66198 then spellId = 49020 elseif spellId == 66196 then spellId = 49143
+					elseif spellId == 66216 then spellId = 45462 elseif spellId == 66188 then spellId = 49998
+					elseif spellId == 27576 then spellId = 5374 elseif spellId == 44949 then spellId = 1680
+					elseif spellId == 85384 then spellId = 96103 elseif spellId == 95738 then spellId = 50622
+					elseif spellId == 53595 then spellId = 88263 end
 					if C.combattext.merge_aoe_spam and T.aoespam[spellId] then
 						SQ[spellId]["locked"] = true
 						SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
@@ -751,7 +753,7 @@ if C.combattext.damage then
 						SQ[spellId]["color"] = color
 						SQ[spellId]["count"] = SQ[spellId]["count"] + 1
 						if SQ[spellId]["count"] == 1 then
-							SQ[spellId]["utime"] = time()
+							SQ[spellId]["utime"] = time() + T.aoespam[spellId]
 						end
 						SQ[spellId]["locked"] = false
 						return
@@ -874,9 +876,10 @@ if C.combattext.healing then
 						end
 						if icon then
 							msg = " \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
-						elseif(C.combattext.icons)then
+						elseif C.combattext.icons then
 							msg=" \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 						end
+						if spellId == 94472 then spellId = 81751 end
 						if C.combattext.merge_aoe_spam and T.aoespam[spellId] then
 							SQ[spellId]["locked"] = true
 							SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
@@ -884,7 +887,7 @@ if C.combattext.healing then
 							SQ[spellId]["color"] = color
 							SQ[spellId]["count"] = SQ[spellId]["count"] + 1
 							if SQ[spellId]["count"] == 1 then
-								SQ[spellId]["utime"] = time()
+								SQ[spellId]["utime"] = time() + T.aoespam[spellId]
 							end
 							SQ[spellId]["locked"] = false
 							return

@@ -136,7 +136,6 @@ L_GUI_COMBATTEXT_TIME_VISIBLE = "Tiempo (segundos) en que un mensaje es visible"
 L_GUI_COMBATTEXT_DK_RUNES = "Mostrar recarga de runas de los Caballeros de la Muerte"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Mostrar tus golpes de gracia"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unir el spam de daño de area en un solo mensaje"
-L_GUI_COMBATTEXT_MERGE_AOE_SPAM_TIME = "Tiempo en segundos que se unirá en un solo mensaje de daño de area"
 L_GUI_COMBATTEXT_DISPEL = "Mostrar tus disipaciones"
 L_GUI_COMBATTEXT_INTERRUPT = "Mostrar tus interrupciones"
 L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))" -- Needs review
