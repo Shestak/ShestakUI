@@ -101,7 +101,6 @@ T.RaidDebuffs = {
 	[SpellName(147207)] = 3,	-- Weakened Resolve (Heroic)
 	-- Galakras
 	[SpellName(147029)] = 3,	-- Flames of Galakrond (DoT)
-	[SpellName(146765)] = 3,	-- Flame Arrows (DoT)
 	[SpellName(146902)] = 3,	-- Poison-Tipped Blades (Poison stacks)
 	-- Iron Juggernaut
 	[SpellName(144467)] = 4,	-- Ignite Armor (Tank stacks)
