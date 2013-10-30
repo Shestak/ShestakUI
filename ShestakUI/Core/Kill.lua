@@ -37,7 +37,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	TalentMicroButtonAlert:Kill()
 	CompanionsMicroButtonAlert:Kill()
 
-	SetCVar("raidFramesDisplayIncomingHeals", 1) -- 5.4 bug
 
 	if C.chat.enable then
 		InterfaceOptionsSocialPanelChatStyle:Kill()
