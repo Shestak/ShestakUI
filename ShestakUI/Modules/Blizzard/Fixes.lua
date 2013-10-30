@@ -125,5 +125,8 @@ ParentalControls:SetScript("OnEvent", function(self, event, addon)
 	if addon == "Blizzard_AchievementUI" then
 		setfenv(AchievementFrame_OnShow, setmetatable({UpdateMicroButtons = function() end}, {__index = _G}))
 		setfenv(AchievementFrame_OnHide, setmetatable({UpdateMicroButtons = function() end}, {__index = _G}))
+	elseif addon == "Blizzard_TalentUI" then
+		setfenv(PlayerTalentFrame_OnShow, setmetatable({UpdateMicroButtons = function() end}, {__index = _G}))
+		setfenv(PlayerTalentFrame_OnHide, setmetatable({UpdateMicroButtons = function() end}, {__index = _G}))
 	end
 end)
