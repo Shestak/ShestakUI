@@ -244,9 +244,6 @@ local micromenu = {
 		end
 		ToggleEncounterJournal()
 	end},
-	{text = BLIZZARD_STORE, notCheckable = 1, func = function()
-		StoreMicroButton:Click()
-	end},
 	{text = HELP_BUTTON, notCheckable = 1, func = function()
 		ToggleHelpFrame()
 	end},
@@ -263,6 +260,10 @@ local micromenu = {
 		ToggleFrame(LootHistoryFrame)
 	end},
 }
+
+if C_StorePublic.IsEnabled() then
+	tinsert(micromenu, {text = BLIZZARD_STORE, notCheckable = 1, func = function() StoreMicroButton:Click() end})
+end
 
 Minimap:SetScript("OnMouseUp", function(self, button)
 	local position = MinimapAnchor:GetPoint()

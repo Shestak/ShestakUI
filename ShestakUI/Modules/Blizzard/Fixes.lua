@@ -114,5 +114,6 @@ TradeSkillClearButton:SetScript("OnEvent", OnEvent)
 ----------------------------------------------------------------------------------------
 --	Fix IsDisabledByParentalControls() taint
 ----------------------------------------------------------------------------------------
-_G["StoreMicroButton"]:SetScript("OnClick", nil)
-C_StorePublic.IsDisabledByParentalControls = function() return true end
+if not C_StorePublic.IsEnabled() then
+	C_StorePublic.IsDisabledByParentalControls = function() return true end
+end
