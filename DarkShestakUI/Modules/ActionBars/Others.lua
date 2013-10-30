@@ -58,13 +58,4 @@ vehicle:SetTemplate("Default")
 vehicle:StyleButton()
 vehicle:RegisterForClicks("AnyUp")
 vehicle:SetScript("OnClick", function() VehicleExit() end)
-vehicle:RegisterEvent("UNIT_ENTERED_VEHICLE")
-vehicle:RegisterEvent("UNIT_EXITING_VEHICLE")
-vehicle:RegisterEvent("PLAYER_ENTERING_WORLD")
-vehicle:SetScript("OnEvent", function(self, event)
-	if CanExitVehicle() then
-		vehicle:Show()
-	else
-		vehicle:Hide()
-	end
-end)
+RegisterStateDriver(vehicle, "visibility", "[canexitvehicle] show; hide")
