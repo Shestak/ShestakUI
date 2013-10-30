@@ -110,3 +110,8 @@ end
 
 TradeSkillClearButton:RegisterEvent("ADDON_LOADED")
 TradeSkillClearButton:SetScript("OnEvent", OnEvent)
+
+----------------------------------------------------------------------------------------
+--	5.4.1 Map taint error(by Haleth)
+----------------------------------------------------------------------------------------
+setfenv(WorldMapFrame_OnShow, setmetatable({ UpdateMicroButtons = function() end }, { __index = _G }))
