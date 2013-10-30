@@ -18,7 +18,7 @@ if T.client == "ruRU" then
 end
 
 ----------------------------------------------------------------------------------------
---	Blocks the Release Spirit popup if you are alive (by Haleth)
+--	Blocks the Release Spirit popup if you are alive(by Haleth)
 ----------------------------------------------------------------------------------------
 hooksecurefunc("StaticPopup_Show", function(arg)
 	if arg == "DEATH" and not UnitIsDead("PLAYER") then
@@ -110,3 +110,10 @@ end
 
 TradeSkillClearButton:RegisterEvent("ADDON_LOADED")
 TradeSkillClearButton:SetScript("OnEvent", OnEvent)
+
+----------------------------------------------------------------------------------------
+--	Fix IsDisabledByParentalControls() taint
+----------------------------------------------------------------------------------------
+if not C_StorePublic.IsEnabled() then
+	C_StorePublic.IsDisabledByParentalControls = function() return true end
+end

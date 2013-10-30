@@ -1,7 +1,7 @@
 local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Kill all shit stuff on default UI that we don't need
+--	Kill all stuff on default UI that we don't need
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
@@ -36,8 +36,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	HelpOpenTicketButtonTutorial:Kill()
 	TalentMicroButtonAlert:Kill()
 	CompanionsMicroButtonAlert:Kill()
-
-	SetCVar("raidFramesDisplayIncomingHeals", 1) -- 5.4 bug
 
 	if C.chat.enable then
 		InterfaceOptionsSocialPanelChatStyle:Kill()
