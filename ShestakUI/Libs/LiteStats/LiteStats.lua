@@ -1340,9 +1340,9 @@ if talents.enabled then
 					end
 				end
 				GameTooltip:Show()
-				if C.toppanel.enable == true and C.toppanel.mouseover == true then
-					TopPanel:SetAlpha(1)
-				end
+			end
+			if C.toppanel.enable == true and C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(1)
 			end
 		end,
 		OnLeave = function(self)
