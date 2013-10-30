@@ -86,12 +86,6 @@ local function SkinTab(f, t)
 		f:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
 		f:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 		f:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		if f:GetCheckedTexture() then
-			f:GetCheckedTexture():SetTexture(0, 1, 0, 0.3)
-			f:GetCheckedTexture():SetAllPoints(f:GetNormalTexture())
-		end
-		f:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
-		f:GetHighlightTexture():SetAllPoints(f:GetNormalTexture())
 		f:SetTemplate("Default")
 		f:StyleButton()
 	else
