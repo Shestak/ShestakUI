@@ -1,8 +1,8 @@
 ﻿----------------------------------------------------------------------------------------
 --	GUI for ShestakUI(by Fernir, Tukz and Tohveli)
 ----------------------------------------------------------------------------------------
-local myPlayerRealm = GetRealmName()
-local myPlayerName = UnitName("player")
+local realm = GetRealmName()
+local name = UnitName("player")
 
 local ALLOWED_GROUPS = {
 	["general"] = 1,
@@ -501,9 +501,9 @@ StaticPopupDialogs.PERCHAR = {
 	text = L_GUI_PER_CHAR,
 	OnAccept = function()
 		if UIConfigAllCharacters:GetChecked() then
-			GUIConfigAll[myPlayerRealm][myPlayerName] = true
+			GUIConfigAll[realm][name] = true
 		else
-			GUIConfigAll[myPlayerRealm][myPlayerName] = false
+			GUIConfigAll[realm][name] = false
 		end
 		ReloadUI()
 	end,
@@ -559,7 +559,7 @@ local function SetValue(group, option, value)
 		mergesettings = false
 	end
 
-	if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
+	if GUIConfigAll[realm][name] == true then
 		if not GUIConfig then GUIConfig = {} end
 		if not GUIConfig[group] then GUIConfig[group] = {} end
 		GUIConfig[group][option] = value
@@ -917,7 +917,7 @@ function CreateUIConfig()
 	reset:SetPoint("TOPLEFT", UIConfig, "BOTTOMLEFT", -10, -25)
 	reset:SetScript("OnClick", function(self)
 		UIConfigCover:Show()
-		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
+		if GUIConfigAll[realm][name] == true then
 			StaticPopup_Show("RESET_PERCHAR")
 		else
 			StaticPopup_Show("RESET_ALL")
@@ -938,8 +938,8 @@ function CreateUIConfig()
 	totalreset:SetScript("OnClick", function(self)
 		StaticPopup_Show("RESET_UI")
 		GUIConfig = {}
-		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
-			GUIConfigAll[myPlayerRealm][myPlayerName] = {}
+		if GUIConfigAll[realm][name] == true then
+			GUIConfigAll[realm][name] = {}
 		end
 		GUIConfigSettings = {}
 	end)
@@ -960,7 +960,7 @@ function CreateUIConfig()
 		label:SetText(L_GUI_SET_SAVED_SETTTINGS)
 		label:SetPoint("RIGHT", button, "LEFT")
 
-		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
+		if GUIConfigAll[realm][name] == true then
 			button:SetChecked(true)
 		else
 			button:SetChecked(false)
@@ -998,7 +998,7 @@ do
 	function SlashCmdList.RESETCONFIG()
 		if UIConfigMain and UIConfigMain:IsShown() then UIConfigCover:Show() end
 
-		if GUIConfigAll[myPlayerRealm][myPlayerName] == true then
+		if GUIConfigAll[realm][name] == true then
 			StaticPopup_Show("RESET_PERCHAR")
 		else
 			StaticPopup_Show("RESET_ALL")
