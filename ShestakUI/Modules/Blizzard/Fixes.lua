@@ -18,7 +18,7 @@ if T.client == "ruRU" then
 end
 
 ----------------------------------------------------------------------------------------
---	Blocks the Release Spirit popup if you are alive (by Haleth)
+--	Blocks the Release Spirit popup if you are alive(by Haleth)
 ----------------------------------------------------------------------------------------
 hooksecurefunc("StaticPopup_Show", function(arg)
 	if arg == "DEATH" and not UnitIsDead("PLAYER") then
@@ -112,6 +112,7 @@ TradeSkillClearButton:RegisterEvent("ADDON_LOADED")
 TradeSkillClearButton:SetScript("OnEvent", OnEvent)
 
 ----------------------------------------------------------------------------------------
---	5.4.1 Map taint error(by Haleth)
+--	Fix IsDisabledByParentalControls() taint
 ----------------------------------------------------------------------------------------
-setfenv(WorldMapFrame_OnShow, setmetatable({ UpdateMicroButtons = function() end }, { __index = _G }))
+_G["StoreMicroButton"]:SetScript("OnClick", nil)
+C_StorePublic.IsDisabledByParentalControls = function() return true end
