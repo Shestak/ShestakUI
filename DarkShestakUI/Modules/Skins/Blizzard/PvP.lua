@@ -122,12 +122,6 @@ local function LoadSkin()
 	ConquestJoinButton:SkinButton(true)
 
 	ConquestTooltip:SetTemplate("Transparent")
-	ConquestTooltip:HookScript("OnShow", function(self)
-		self:SetScale(UIParent:GetScale())
-
-		local p1, anchor, p2 = self:GetPoint()
-		self:SetPoint(p1, anchor, p2, 3, 0)
-	end)
 
 	-- PvP Ready Dialog
 	PVPReadyDialog:StripTextures()
