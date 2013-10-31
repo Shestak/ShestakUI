@@ -202,7 +202,7 @@ local micromenu = {
 		end
 	end},
 	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
-		ToggleFriendsFrame(1)
+		ToggleFriendsFrame()
 	end},
 	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
 		if T.level >= SHOW_PVP_LEVEL then
@@ -230,7 +230,7 @@ local micromenu = {
 		end
 	end},
 	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
-		ToggleRaidFrame(3)
+		ToggleRaidFrame()
 	end},
 	{text = MOUNTS_AND_PETS, notCheckable = 1, func = function()
 		if InCombatLockdown() then
