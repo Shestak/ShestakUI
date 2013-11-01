@@ -195,21 +195,8 @@ local n = FriendsFrame.numTabs + 1
 local gtframe = CreateFrame("Button", "FriendsFrameTab"..n, FriendsFrame, "FriendsFrameTabTemplate")
 gtframe:SetText(GUILD)
 gtframe:SetPoint("LEFT", _G["FriendsFrameTab"..n - 1], "RIGHT", -15, 0)
-gtframe:SetScript("OnClick", function()
-	if IsInGuild() then
-		if not GuildFrame then
-			LoadAddOn("Blizzard_GuildUI")
-		end
-		ToggleGuildFrame()
-		GuildFrame_TabClicked(GuildFrameTab2)
-	else
-		if not LookingForGuildFrame then
-			LoadAddOn("Blizzard_LookingForGuildUI")
-		end
-		if not LookingForGuildFrame then return end
-		LookingForGuildFrame_Toggle()
-	end
-end)
+PanelTemplates_DeselectTab(gtframe)
+gtframe:SetScript("OnClick", function() ToggleGuildFrame() end)
 
 ----------------------------------------------------------------------------------------
 --	Old achievements filter
