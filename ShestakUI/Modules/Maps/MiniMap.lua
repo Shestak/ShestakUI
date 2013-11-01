@@ -183,22 +183,7 @@ local micromenu = {
 		ToggleFrame(QuestLogFrame)
 	end},
 	{text = guildText, notCheckable = 1, func = function()
-		if IsTrialAccount() then
-			UIErrorsFrame:AddMessage(ERR_RESTRICTED_ACCOUNT, 1, 0.1, 0.1)
-			return
-		end
-		if IsInGuild() then
-			if not GuildFrame then
-				LoadAddOn("Blizzard_GuildUI")
-			end
-			ToggleGuildFrame()
-		else
-			if not LookingForGuildFrame then
-				LoadAddOn("Blizzard_LookingForGuildUI")
-			end
-			if not LookingForGuildFrame then return end
-			LookingForGuildFrame_Toggle()
-		end
+		ToggleGuildFrame()
 	end},
 	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
 		ToggleFriendsFrame()
