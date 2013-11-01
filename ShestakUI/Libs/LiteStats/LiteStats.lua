@@ -870,7 +870,6 @@ if guild.enabled then
 				if IsInGuild() then
 					if not GuildFrame then LoadAddOn("Blizzard_GuildUI") end
 					ToggleGuildFrame()
-					GuildFrame_TabClicked(GuildFrameTab2)
 				else
 					if not LookingForGuildFrame then LoadAddOn("Blizzard_LookingForGuildUI") end
 					if LookingForGuildFrame then LookingForGuildFrame_Toggle() end
