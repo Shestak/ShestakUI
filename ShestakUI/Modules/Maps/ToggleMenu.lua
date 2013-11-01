@@ -202,6 +202,7 @@ end
 SLASH_UITOGGLEMENU1 = "/ttm"
 SlashCmdList.UITOGGLEMENU = ToggleMenu_Toggle
 
+local Text
 local mainmenusize
 local lastMainMenuEntryID
 local totalmainmenusize
