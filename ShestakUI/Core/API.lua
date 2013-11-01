@@ -222,6 +222,7 @@ local function SkinButton(f, strip)
 	if f.Middle then f.Middle:SetAlpha(0) end
 	if f.LeftSeparator then f.LeftSeparator:SetAlpha(0) end
 	if f.RightSeparator then f.RightSeparator:SetAlpha(0) end
+	if f.Flash then f.Flash:SetAlpha(0) end
 
 	f:SetTemplate("Overlay")
 	f:HookScript("OnEnter", T.SetModifiedBackdrop)
