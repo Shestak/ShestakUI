@@ -32,6 +32,7 @@
 	<Script file="Config\Filters\Announcements.lua"/>
 	<Script file="Config\Filters\ArenaControl.lua"/>
 	<Script file="Config\Filters\AutoButton.lua"/>
+	<Script file="Config\Filters\BadBuffs.lua"/>
 	<Script file="Config\Filters\ChannelingTicks.lua"/>
 	<Script file="Config\Filters\ChatSpam.lua"/>
 	<Script file="Config\Filters\CombatText.lua"/>

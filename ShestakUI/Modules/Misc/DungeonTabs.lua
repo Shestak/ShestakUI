@@ -24,34 +24,6 @@ local function SetTabCheckedState(fname, isChecked)
 	end
 end
 
-local function SetTabEnabledState(fname, isEnabled)
-	for k, v in pairs(TabRefArray) do
-		if v then
-			if isEnabled then
-				TabRefArray[k][fname]:Enable()
-				SetDesaturation(TabRefArray[k][fname]:GetNormalTexture(), false)
-				TabRefArray[k][fname]:SetAlpha(1)
-			else
-				TabRefArray[k][fname]:Disable()
-				TabRefArray[k][fname]:SetAlpha(0.5)
-				SetDesaturation(TabRefArray[k][fname]:GetNormalTexture(), true)
-			end
-		end
-	end
-end
-
-local function SetTabVisibleState(fname, isVisible)
-	for k, v in pairs(TabRefArray) do
-		if v then
-			if isVisible then
-				TabRefArray[k][fname]:Show()
-			else
-				TabRefArray[k][fname]:Hide()
-			end
-		end
-	end
-end
-
 local function Tab_OnClick(self)
 	if self.ToggleFrame == "PVPUIFrame" then
 		PVP_LoadUI()
@@ -77,7 +49,6 @@ local function SkinTab(f, t)
 		local F, C = unpack(Aurora)
 		f:SetCheckedTexture(C.media.checked)
 		F.CreateBG(f)
-		F.CreateSD(f, 5, 0, 0, 0, 1, 1)
 		f:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
 		f:GetHighlightTexture():SetAllPoints(f:GetNormalTexture())
 	elseif C.skins.blizzard_frames == true then
@@ -87,12 +58,6 @@ local function SkinTab(f, t)
 		f:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
 		f:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 		f:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		if f:GetCheckedTexture() then
-			f:GetCheckedTexture():SetTexture(0, 1, 0, 0.3)
-			f:GetCheckedTexture():SetAllPoints(f:GetNormalTexture())
-		end
-		f:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
-		f:GetHighlightTexture():SetAllPoints(f:GetNormalTexture())
 		f:SetTemplate("Default")
 		f:StyleButton()
 	else

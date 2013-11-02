@@ -15,6 +15,7 @@ local band = bit.band
 local sformat = string.format
 local floor = math.floor
 local timer = 0
+local inEncounter
 local bars = {}
 
 local RaidCDAnchor = CreateFrame("Frame", "RaidCDAnchor", UIParent)
@@ -31,6 +32,10 @@ local FormatTime = function(time)
 	else
 		return sformat("%.2d", time)
 	end
+end
+
+local function sortByExpiration(a, b)
+	return a.endTime > b.endTime
 end
 
 local CreateFS = function(frame, fsize, fstyle)
@@ -163,6 +168,7 @@ local StartTimer = function(name, spellId)
 	bar:SetScript("OnLeave", OnLeave)
 	bar:SetScript("OnMouseDown", OnMouseDown)
 	tinsert(bars, bar)
+	table.sort(bars, sortByExpiration)
 	UpdatePositions()
 end
 
@@ -176,11 +182,15 @@ local OnEvent = function(self, event, ...)
 				StartTimer(sourceName, spellId)
 			end
 		end
-	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) ~= "raid" and UnitIsGhost("player") then
+	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) == "arena" or not IsInGroup() then
 		for k, v in pairs(bars) do
 			v.endTime = 0
 		end
-	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) == "arena" or not IsInGroup() then
+	end
+	if not inEncounter and IsEncounterInProgress() then
+		inEncounter = true
+	elseif inEncounter and not IsEncounterInProgress() then
+		inEncounter = nil
 		for k, v in pairs(bars) do
 			v.endTime = 0
 		end

@@ -11,7 +11,6 @@ frame:SetScript("OnEvent", function(self, event)
 	SetActionBarToggles(1, 1, 1, 1, 0)
 	SetCVar("alwaysShowActionBars", 0)
 	if C.actionbar.show_grid == true then
-		ActionButton_HideGrid = T.dummy
 		for i = 1, 12 do
 			local button = _G[format("ActionButton%d", i)]
 			button:SetAttribute("showgrid", 1)
@@ -54,13 +53,4 @@ vehicle:SetTemplate("Default")
 vehicle:StyleButton()
 vehicle:RegisterForClicks("AnyUp")
 vehicle:SetScript("OnClick", function() VehicleExit() end)
-vehicle:RegisterEvent("UNIT_ENTERED_VEHICLE")
-vehicle:RegisterEvent("UNIT_EXITING_VEHICLE")
-vehicle:RegisterEvent("PLAYER_ENTERING_WORLD")
-vehicle:SetScript("OnEvent", function(self, event)
-	if CanExitVehicle() then
-		vehicle:Show()
-	else
-		vehicle:Hide()
-	end
-end)
+RegisterStateDriver(vehicle, "visibility", "[canexitvehicle] show; hide")

@@ -3,7 +3,7 @@ if C.raidframe.plugins_aura_watch ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Weakened Soul -> http://www.wowhead.com/spell=6788
+--	Example: Renew -> http://www.wowhead.com/spell=139
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 T.RaidBuffs = {
@@ -85,7 +85,7 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Siege of Orgrimmar
 	-- Immerseus
-	[SpellName(143436)] = 4,	-- Corrosive Blast (Tank switch)
+	[SpellName(143436)] = 3,	-- Corrosive Blast (Tank switch)
 	-- The Fallen Protectors
 	[SpellName(143434)] = 4,	-- Shadow Word: Bane (Dispel)
 	[SpellName(143198)] = 3,	-- Garrote (DoT)
@@ -101,7 +101,6 @@ T.RaidDebuffs = {
 	[SpellName(147207)] = 3,	-- Weakened Resolve (Heroic)
 	-- Galakras
 	[SpellName(147029)] = 3,	-- Flames of Galakrond (DoT)
-	[SpellName(146765)] = 3,	-- Flame Arrows (DoT)
 	[SpellName(146902)] = 3,	-- Poison-Tipped Blades (Poison stacks)
 	-- Iron Juggernaut
 	[SpellName(144467)] = 4,	-- Ignite Armor (Tank stacks)
@@ -115,10 +114,10 @@ T.RaidDebuffs = {
 	[SpellName(143638)] = 3,	-- Bonecracker (DoT)
 	[SpellName(143431)] = 3,	-- Magistrike (Dispel)
 	-- Malkorok
-	[SpellName(142990)] = 3,	-- Fatal Strike (Tank stacks)
+	[SpellName(142990)] = 4,	-- Fatal Strike (Tank stacks)
 	[SpellName(142864)] = 3,	-- Ancient Barrier
 	[SpellName(142865)] = 3,	-- Strong Ancient Barrier
-	[SpellName(142913)] = 3,	-- Displaced Energy (Dispel)
+	[SpellName(142913)] = 4,	-- Displaced Energy (Dispel)
 	-- Spoils of Pandaria
 	[SpellName(145218)] = 3,	-- Harden Flesh (Dispel)
 	[SpellName(146235)] = 3,	-- Breath of Fire (Dispel)
@@ -133,10 +132,9 @@ T.RaidDebuffs = {
 	[SpellName(143385)] = 3,	-- Electrostatic Charge (Tank stacks)
 	[SpellName(144236)] = 3,	-- Pattern Recognition
 	-- Paragons of the Klaxxi
-	[SpellName(142929)] = 3,	-- Tenderizing Strikes (Tank stacks)
-	[SpellName(143275)] = 3,	-- Hewn (Tank stacks)
-	[SpellName(143279)] = 3,	-- Genetic Alteration (Tank stacks)
-	[SpellName(143974)] = 3,	-- Shield Bash (Tank stun)
+	[SpellName(143974)] = 4,	-- Shield Bash (Tank stun)
+	[SpellName(142315)] = 4,	-- Caustic Blood (Tank stacks)
+	[SpellName(143701)] = 3,	-- Whirling (DoT)
 	[SpellName(142948)] = 3,	-- Aim
 	-- Garrosh Hellscream
 	[SpellName(145183)] = 3,	-- Gripping Despair (Tank stacks)

@@ -31,6 +31,10 @@ else
 	EnemyCDAnchor:SetSize((C.enemycooldown.size * 5) + 12, C.enemycooldown.size)
 end
 
+local function sortByExpiration(a, b)
+	return a.endTime < b.endTime
+end
+
 local UpdatePositions = function()
 	for i = 1, #icons do
 		icons[i]:ClearAllPoints()
@@ -90,6 +94,7 @@ local StartTimer = function(sID)
 	icon:SetScript("OnUpdate", IconUpdate)
 	CooldownFrame_SetTimer(icon.Cooldown, GetTime(), T.enemy_spells[sID], 1)
 	tinsert(icons, icon)
+	table.sort(icons, sortByExpiration)
 	UpdatePositions()
 end
 
@@ -106,7 +111,7 @@ local OnEvent = function(self, event, ...)
 		end
 	elseif event == "ZONE_CHANGED_NEW_AREA" then
 		for k, v in pairs(icons) do
-			StopTimer(v)
+			v.endTime = 0
 		end
 	end
 end

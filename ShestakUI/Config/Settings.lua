@@ -169,7 +169,6 @@ C["combattext"] = {
 	["dk_runes"] = true,						-- Show deathknight rune recharge
 	["killingblow"] = true,						-- Tells you about your killingblows
 	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
-	["merge_aoe_spam_time"] = 3,				-- Time in seconds aoe spell will be merged into single message(works only with ["damage"] = true)
 	["dispel"] = true,							-- Tells you about your dispels(works only with ["damage"] = true)
 	["interrupt"] = true,						-- Tells you about your interrupts(works only with ["damage"] = true)
 	["direction"] = "bottom",					-- Scrolling Direction("top"(goes down) or "bottom"(goes up))
@@ -561,7 +560,7 @@ C["stats"] = {
 }
 
 ----------------------------------------------------------------------------------------
---	Error options (All errors on www.wowwiki.com/WoW_Constants/Errors)
+--	Error options
 ----------------------------------------------------------------------------------------
 C["error"] = {
 	["black"] = true,							-- Hide errors from black list

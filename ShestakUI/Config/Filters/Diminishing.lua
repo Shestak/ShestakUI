@@ -17,12 +17,14 @@ T.DiminishingSpells = {
 	[5211] = {"ctrlstun"},		-- Mighty Bash
 	[102795] = {"ctrlstun"},	-- Bear Hug
 	[19577] = {"ctrlstun"},		-- Intimidation
+	[117526] = {"ctrlstun"},	-- Binding Shot
 	[90337] = {"ctrlstun"},		-- Bad Manner (Monkey)
 	[50519] = {"ctrlstun"},		-- Sonic Blast (Bat)
-	--[56626] = {"ctrlstun"},		-- Sting (Wasp)
-	--[126355] = {"ctrlstun"},		-- Paralyzing Quill (Porcupine)
-	--[96201] = {"ctrlstun"},		-- Web Wrap (Shale Spider)
-	[117526] = {"ctrlstun"},	-- Binding Shot
+	[56626] = {"ctrlstun"},		-- Sting (Wasp)
+	[126246] = {"ctrlstun"},	-- Lullaby (Crane)
+	[96201] = {"ctrlstun"},		-- Web Wrap (Shale Spider)
+	[126423] = {"ctrlstun"},	-- Petrifying Gaze (Basilisk)
+	[126355] = {"ctrlstun"},	-- Paralyzing Quill (Porcupine)
 	[44572] = {"ctrlstun"},		-- Deep Freeze
 	[118271] = {"ctrlstun"},	-- Combustion Impact
 	[119392] = {"ctrlstun"},	-- Charging Ox Wave
@@ -33,15 +35,15 @@ T.DiminishingSpells = {
 	[105593] = {"ctrlstun"},	-- Fist of Justice
 	[115752] = {"ctrlstun"},	-- Blinding Light
 	[119072] = {"ctrlstun"},	-- Holy Wrath
-	--[88625] = {"ctrlstun"},		-- Holy Word: Chastise
 	[1833] = {"ctrlstun"},		-- Cheap Shot
 	[408] = {"ctrlstun"},		-- Kidney Shot
 	[118905] = {"ctrlstun"},	-- Static Charge
+	[118345] = {"ctrlstun"},	-- Pulverize (Primal Earth Elemental)
 	[30283] = {"ctrlstun"},		-- Shadowfury
 	[89766] = {"ctrlstun"},		-- Axe Toss (Felguard)
 	[132168] = {"ctrlstun"},	-- Shockwave
 	[132169] = {"ctrlstun"},	-- Storm Bolt
-	[20549] = {"ctrlstun"},		-- War Stomp
+	[20549] = {"ctrlstun"},		-- War Stomp (Racial)
 
 	-- Control Roots
 	[96294] = {"ctrlroot"},		-- Chains of Ice
@@ -57,7 +59,6 @@ T.DiminishingSpells = {
 	[33395] = {"ctrlroot"},		-- Freeze (Water Elemental)
 	[116706] = {"ctrlroot"},	-- Disable
 	[114404] = {"ctrlroot"},	-- Void Tendril's Grasp
-	[64695] = {"ctrlroot"},		-- Earthgrab
 	[63685] = {"ctrlroot"},		-- Freeze
 	[107566] = {"ctrlroot"},	-- Staggering Shout
 	[105771] = {"ctrlroot"},	-- Warbringer
@@ -73,7 +74,6 @@ T.DiminishingSpells = {
 
 	-- Disorients
 	[2637] = {"disorient"},		-- Hibernate
-	[99] = {"disorient"},		-- Disorienting Roar
 	[3355] = {"disorient"},		-- Freezing Trap
 	[19386] = {"disorient"},	-- Wyvern Sting
 	[118] = {"disorient"},		-- Polymorph
@@ -90,9 +90,7 @@ T.DiminishingSpells = {
 	[1776] = {"disorient"},		-- Gouge
 	[6770] = {"disorient"},		-- Sap
 	[51514] = {"disorient"},	-- Hex
-	[6358] = {"disorient"},		-- Seduction (Succubus)
-	[115268] = {"disorient"},	-- Mesmerize (Shivarra)
-	[107079] = {"disorient"},	-- Quaking Palm
+	[107079] = {"disorient"},	-- Quaking Palm (Racial)
 
 	-- Fears
 	[1513] = {"fear"},			-- Scare Beast
@@ -103,6 +101,8 @@ T.DiminishingSpells = {
 	[2094] = {"fear"},			-- Blind
 	[118699] = {"fear"},		-- Fear
 	[5484] = {"fear"},			-- Howl of Terror
+	[6358] = {"fear"},			-- Seduction (Succubus)
+	[115268] = {"fear"},		-- Mesmerize (Shivarra)
 	[5246] = {"fear"},			-- Intimidating Shout (Main target)
 	[20511] = {"fear"},			-- Intimidating Shout (Secondary targets)
 
@@ -115,6 +115,18 @@ T.DiminishingSpells = {
 	[113953] = {"rndstun"},		-- Paralysis (Poison)
 	[77505] = {"rndstun"},		-- Earthquake
 	[118895] = {"rndstun"},		-- Dragon Roar
+	[7922] = {"rndstun"},		-- Charge Stun
+
+	-- Random Roots
+	[19185] = {"rndroot"},		-- Entrapment
+	[111340] = {"rndroot"},		-- Ice Ward
+	[64695] = {"rndroot"},		-- Earthgrab
+
+	-- Random Disorients
+	[99] = {"rnddis"},			-- Disorienting Roar
+	[19503] = {"rnddis"},		-- Scatter Shot
+	[31661] = {"rnddis"},		-- Dragon's Breath
+	[88625] = {"rnddis"},		-- Holy Word: Chastise
 
 	-- Silences
 	[47476] = {"silence"},		-- Strangulate
@@ -137,9 +149,6 @@ T.DiminishingSpells = {
 
 	-- Misc
 	[33786] = {"cyclone"},		-- Cyclone
-	[19185] = {"entrapment"},	-- Entrapment
-	[31661] = {"ds"},			-- Dragon's Breath
-	[19503] = {"ds"},			-- Scatter Shot
 	[605] = {"mind"},			-- Dominate Mind
 }
 
@@ -153,12 +162,11 @@ T.DiminishingIcons = {
 	["ctrlroot"] = GetIcon(122),
 	["cyclone"] = GetIcon(33786),
 	["disarm"] = GetIcon(676),
-	["disorient"] = GetIcon(118),
-	["ds"] = GetIcon(31661),
-	["entrapment"] = GetIcon(19185),
 	["fear"] = GetIcon(8122),
 	["horror"] = GetIcon(64044),
 	["mind"] = GetIcon(605),
 	["rndstun"] = GetIcon(118895),
+	["rndroot"] = GetIcon(19185),
+	["rnddis"] = GetIcon(31661),
 	["silence"] = GetIcon(55021),
 }

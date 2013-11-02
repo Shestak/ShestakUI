@@ -128,7 +128,6 @@ end
 
 if IsAddOnLoaded("PhoenixStyle") then
 	C.announcements.toys = false
-	C.announcements.pull_countdown = false
 end
 
 if IsAddOnLoaded("Overachiever") then
@@ -137,6 +136,11 @@ end
 
 if IsAddOnLoaded("ChatSounds") then
 	C.chat.whisp_sound = false
+end
+
+=======
+if IsAddOnLoaded("Aurora") then
+	C.skins.blizzard_frames = false
 end
 
 -- Edit by Oz of shestakdotorg --

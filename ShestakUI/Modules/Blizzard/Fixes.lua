@@ -1,14 +1,11 @@
 local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Fix SearchLFGLeave() taint
+--	Fix IsDisabledByParentalControls() taint
 ----------------------------------------------------------------------------------------
-local TaintFix = CreateFrame("Frame")
-TaintFix:SetScript("OnUpdate", function(self, elapsed)
-	if LFRBrowseFrame.timeToClear then
-		LFRBrowseFrame.timeToClear = nil
-	end
-end)
+setfenv(WorldMapFrame_OnShow, setmetatable({UpdateMicroButtons = function() end}, {__index = _G}))
+setfenv(FriendsFrame_OnShow, setmetatable({UpdateMicroButtons = function() end}, {__index = _G}))
+FCF_StartAlertFlash = T.dummy
 
 ----------------------------------------------------------------------------------------
 --	Fix DeclensionFrame strata
@@ -18,11 +15,12 @@ if T.client == "ruRU" then
 end
 
 ----------------------------------------------------------------------------------------
---	Blocks the Release Spirit popup if you are alive (by Haleth)
+--	Fix SearchLFGLeave() taint
 ----------------------------------------------------------------------------------------
-hooksecurefunc("StaticPopup_Show", function(arg)
-	if arg == "DEATH" and not UnitIsDead("PLAYER") then
-		StaticPopup_Hide("DEATH")
+local TaintFix = CreateFrame("Frame")
+TaintFix:SetScript("OnUpdate", function(self, elapsed)
+	if LFRBrowseFrame.timeToClear then
+		LFRBrowseFrame.timeToClear = nil
 	end
 end)
 
