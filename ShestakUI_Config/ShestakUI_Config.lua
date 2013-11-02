@@ -685,7 +685,7 @@ function CreateUIConfig()
 
 	local TitleBoxVerText = TitleBoxVer:CreateFontString("UIConfigTitleVer", "OVERLAY", "GameFontNormal")
 	TitleBoxVerText:SetPoint("CENTER")
-	TitleBoxVerText:SetText("ShestakUI "..T.version.." (OzEdit 1.3.4)")
+	TitleBoxVerText:SetText("ShestakUI "..T.version.." (OzEdit 1.3.5)")
 
 	-- Main Frame Title
 	local TitleBox = CreateFrame("Frame", "TitleBox", UIConfigMain)
