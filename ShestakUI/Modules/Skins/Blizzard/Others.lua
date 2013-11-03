@@ -84,7 +84,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 
 		-- Cinematic popup
 		_G["CinematicFrameCloseDialog"]:SetTemplate("Transparent")
-		_G["CinematicFrameCloseDialog"]:SetScale(C.general.uiscale)
 		_G["CinematicFrameCloseDialogConfirmButton"]:SkinButton()
 		_G["CinematicFrameCloseDialogResumeButton"]:SkinButton()
 
