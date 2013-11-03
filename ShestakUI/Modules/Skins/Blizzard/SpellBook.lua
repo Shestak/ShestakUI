@@ -216,10 +216,8 @@ local function LoadSkin()
 		for i = 1, 4 do
 			local tab = SpellBookCoreAbilitiesFrame.SpecTabs[i]
 			if tab and tab.isSkinned ~= true then
-				local id, name, description, icon = GetSpecializationInfo(i)
 
-				tab:StripTextures()
-				tab:SetNormalTexture(icon)
+				tab:GetRegions():Hide()
 				tab:GetNormalTexture():ClearAllPoints()
 				tab:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
 				tab:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
