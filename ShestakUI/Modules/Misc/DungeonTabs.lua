@@ -59,7 +59,7 @@ local function SkinTab(f, t)
 		f:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 		f:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		f:SetTemplate("Default")
-		f:StyleButton()
+		f:StyleButton(true)
 	else
 		f:SetNormalTexture(t)
 	end

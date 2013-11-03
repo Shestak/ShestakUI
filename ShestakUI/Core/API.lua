@@ -157,7 +157,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Style ActionBars/Bags buttons function(by Chiril & Karudon)
 ----------------------------------------------------------------------------------------
-local function StyleButton(button)
+local function StyleButton(button, t)
 	if button.SetHighlightTexture and not button.hover then
 		local hover = button:CreateTexture(nil, nil, self)
 		hover:SetTexture(1, 1, 1, 0.3)
@@ -167,7 +167,7 @@ local function StyleButton(button)
 		button:SetHighlightTexture(hover)
 	end
 
-	if button.SetPushedTexture and not button.pushed then
+	if not t and button.SetPushedTexture and not button.pushed then
 		local pushed = button:CreateTexture(nil, nil, self)
 		pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
 		pushed:SetPoint("TOPLEFT", button, 2, -2)
