@@ -281,6 +281,9 @@ T.RaidDebuffs = {
 	[SpellName(116525)] = 3,	-- Focused Assault
 -- Sha of Anger
 	[SpellName(119626)] = 3,	-- Aggressive Behavior
+-- Other
+	[SpellName(87023)] = 4,		-- Cauterize
+	[SpellName(94794)] = 4,		-- Rocket Fuel Leak
 -----------------------------------------------------------------
 -- PvP
 -----------------------------------------------------------------
