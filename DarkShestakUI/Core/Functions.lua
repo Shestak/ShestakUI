@@ -9,7 +9,9 @@ T.Round = function(number, decimals)
 end
 
 T.ShortValue = function(value)
-	if value >= 1e7 then
+	if value >= 1e8 then
+		return ("%.0fm"):format(value / 1e6):gsub("%.?0+([km])$", "%1")
+	elseif value >= 1e7 then
 		return ("%.1fm"):format(value / 1e6):gsub("%.?0+([km])$", "%1")
 	elseif value >= 1e6 then
 		return ("%.2fm"):format(value / 1e6):gsub("%.?0+([km])$", "%1")
