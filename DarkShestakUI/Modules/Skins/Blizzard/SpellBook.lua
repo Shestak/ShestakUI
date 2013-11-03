@@ -100,7 +100,7 @@ local function LoadSkin()
 
 			tab:CreateBackdrop("Default")
 			tab.backdrop:SetAllPoints()
-			tab:StyleButton()
+			tab:StyleButton(true)
 
 			local point, relatedTo, point2, x, y = tab:GetPoint()
 			tab:SetPoint(point, relatedTo, point2, 16, -1)
@@ -216,10 +216,8 @@ local function LoadSkin()
 		for i = 1, 4 do
 			local tab = SpellBookCoreAbilitiesFrame.SpecTabs[i]
 			if tab and tab.isSkinned ~= true then
-				local id, name, description, icon = GetSpecializationInfo(i)
 
-				tab:StripTextures()
-				tab:SetNormalTexture(icon)
+				tab:GetRegions():Hide()
 				tab:GetNormalTexture():ClearAllPoints()
 				tab:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
 				tab:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
@@ -228,7 +226,7 @@ local function LoadSkin()
 				tab:CreateBackdrop("Default")
 				tab.backdrop:SetAllPoints()
 
-				tab:StyleButton()
+				tab:StyleButton(true)
 
 				if i == 1 then
 					tab:SetPoint("TOPLEFT", SpellBookFrame.backdrop, "TOPRIGHT", 1, 0)

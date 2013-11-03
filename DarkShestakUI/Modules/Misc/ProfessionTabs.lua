@@ -91,7 +91,7 @@ local function UpdateTab(object, name, rank, texture)
 
 		tab:CreateBackdrop("Default")
 		tab.backdrop:SetAllPoints()
-		tab:StyleButton()
+		tab:StyleButton(true)
 	else
 		tab:SetPoint("TOPLEFT", object, "TOPRIGHT", 0, (-44 * index) + 18)
 		tab:SetNormalTexture(texture)

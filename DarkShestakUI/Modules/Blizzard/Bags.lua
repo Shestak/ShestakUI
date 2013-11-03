@@ -323,7 +323,7 @@ function Stuffing:SlotNew(bag, slot)
 end
 
 -- From OneBag
-local BAGTYPE_PROFESSION = 0x0008 + 0x0010 + 0x0020 + 0x0040 + 0x0080 + 0x0200 + 0x0400
+local BAGTYPE_PROFESSION = 0x0008 + 0x0010 + 0x0020 + 0x0040 + 0x0080 + 0x0200 + 0x0400 + 0x10000
 local BAGTYPE_FISHING = 32768
 
 function Stuffing:BagType(bag)
@@ -745,6 +745,8 @@ function Stuffing:Layout(isBank)
 						b.frame:SetBackdropBorderColor(0, 0.7, 0.8)
 					elseif specialType == 0x0400 then		-- Mining
 						b.frame:SetBackdropBorderColor(0.4, 0.3, 0.1)
+					elseif specialType == 0x10000 then		-- Cooking
+						b.frame:SetBackdropBorderColor(0.9, 0, 0.1)
 					end
 					b.frame.lock = true
 				end

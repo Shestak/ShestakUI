@@ -249,7 +249,7 @@ local function LoadSkin()
 
 		tab:CreateBackdrop("Default")
 		tab.backdrop:SetAllPoints()
-		tab:StyleButton()
+		tab:StyleButton(true)
 	end
 
 	-- Reposition tabs
