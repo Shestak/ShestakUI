@@ -161,12 +161,13 @@ end
 local defaultframelevel = 0
 
 local function updateTextures(button, checkable)
-	button:StyleButton(checkable)
 	if checkable then
-		button:GetCheckedTexture():SetTexture(1, 1, 1, 0.3)
+		local texture = button:CreateTexture(nil, nil, self)
+		texture:SetTexture(1, 1, 1, 0.3)
+		texture:SetPoint("TOPLEFT", button, 2, -2)
+		texture:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		button:SetCheckedTexture(texture)
 	end
-	button:GetHighlightTexture():SetTexture(0, 0, 0, 0)
-	button:GetPushedTexture():SetTexture(0, 0, 0, 0)
 	button:HookScript("OnEnter", T.SetModifiedBackdrop)
 	button:HookScript("OnLeave", T.SetOriginalBackdrop)
 end
