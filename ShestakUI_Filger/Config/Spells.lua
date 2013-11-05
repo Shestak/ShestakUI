@@ -3809,6 +3809,8 @@ C["filger_spells"] = {
 			{spellID = 23335, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Netherstorm Flag
 			{spellID = 34976, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Orb of Power
+			{spellID = 121175, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Seaforium
 			{spellID = 52418, unitID = "target", caster = "all", filter = "BUFF"},
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
