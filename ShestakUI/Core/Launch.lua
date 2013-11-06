@@ -32,54 +32,6 @@ local function InstallUI()
 	SetCVar("autoOpenLootHistory", 0)
 	SetCVar("lossOfControl", 0)
 
-	if T.author == true then
-		SetCVar("scriptErrors", 1)
-		SetCVar("interactOnLeftClick", 0)
-		SetCVar("timeMgrUseLocalTime", 1)
-		SetCVar("profanityFilter", 0)
-		SetCVar("Sound_EnableErrorSpeech", 0)
-		SetCVar("Sound_EnableEmoteSounds", 0)
-		SetCVar("Sound_EnablePetSounds", 0)
-		SetCVar("Sound_EnableMusic", 0)
-		SetCVar("Sound_EnableSoundWhenGameIsInBG", 1)
-		SetCVar("showToastWindow", 0)
-		SetCVar("cameraSmoothStyle", 1)
-		SetCVar("displaySpellActivationOverlays", 0)
-		SetCVar("ConsolidateBuffs", 1)
-		SetCVar("autoDismountFlying", 1)
-		SetCVar("autoSelfCast", 1)
-		SetCVar("guildMemberNotify", 1)
-		SetCVar("UnitNameOwn", 0)
-		SetCVar("UnitNameNPC", 0)
-		SetCVar("UnitNameNonCombatCreatureName", 0)
-		SetCVar("UnitNamePlayerGuild", 1)
-		SetCVar("UnitNamePlayerPVPTitle", 0)
-		SetCVar("UnitNameFriendlyPlayerName", 1)
-		SetCVar("UnitNameFriendlyPetName", 0)
-		SetCVar("UnitNameFriendlyGuardianName", 0)
-		SetCVar("UnitNameFriendlyTotemName", 0)
-		SetCVar("UnitNameEnemyPlayerName", 1)
-		SetCVar("UnitNameEnemyPetName", 0)
-		SetCVar("UnitNameEnemyGuardianName", 0)
-		SetCVar("UnitNameEnemyTotemName", 1)
-		SetCVar("nameplateShowFriends", 0)
-		SetCVar("nameplateShowFriendlyPets", 0)
-		SetCVar("nameplateShowFriendlyGuardians", 0)
-		SetCVar("nameplateShowFriendlyTotems", 0)
-		SetCVar("nameplateShowEnemies", 1)
-		SetCVar("nameplateShowEnemyPets", 0)
-		SetCVar("nameplateShowEnemyGuardians", 0)
-		SetCVar("nameplateShowEnemyTotems", 0)
-		SetCVar("shadowMode", 0)
-		SetCVar("ffxDeath", 0)
-		SetCVar("ffxNetherWorld", 0)
-		SetCVar("fctLowManaHealth", 0)
-		SetCVar("fctReactives", 0)
-		SetAutoDeclineGuildInvites(1)
-		ShowAccountAchievements(1)
-		SetAllowLowLevelRaid(1)
-	end
-
 	-- Setting chat frames
 	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
 		for i = 1, NUM_CHAT_WINDOWS do
@@ -110,47 +62,6 @@ local function InstallUI()
 
 			-- Lock them if unlocked
 			if not frame.isLocked then FCF_SetLocked(frame, 1) end
-		end
-
-		if T.author == true then
-			FCF_ResetChatWindows()
-			FCF_OpenNewWindow(GUILD)
-			FCF_SetLocked(ChatFrame3, 1)
-			FCF_DockFrame(ChatFrame3)
-			FCF_OpenNewWindow(LOOT)
-			FCF_SetLocked(ChatFrame4, 1)
-			FCF_DockFrame(ChatFrame4)
-
-			-- Setup main tab
-			ChatFrame_RemoveMessageGroup(ChatFrame1, "LOOT")
-			ChatFrame_RemoveMessageGroup(ChatFrame1, "CURRENCY")
-			ChatFrame_RemoveMessageGroup(ChatFrame1, "MONEY")
-
-			-- Setup guild tab
-			ChatFrame_RemoveAllMessageGroups(ChatFrame3)
-			ChatFrame_AddMessageGroup(ChatFrame3, "GUILD")
-			ChatFrame_AddMessageGroup(ChatFrame3, "OFFICER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "WHISPER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "PARTY")
-			ChatFrame_AddMessageGroup(ChatFrame3, "PARTY_LEADER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "RAID")
-			ChatFrame_AddMessageGroup(ChatFrame3, "RAID_LEADER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "RAID_WARNING")
-			ChatFrame_AddMessageGroup(ChatFrame3, "INSTANCE_CHAT")
-			ChatFrame_AddMessageGroup(ChatFrame3, "INSTANCE_CHAT_LEADER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "BN_WHISPER")
-			ChatFrame_AddMessageGroup(ChatFrame3, "BN_CONVERSATION")
-
-			-- Setup loot tab
-			ChatFrame_RemoveAllMessageGroups(ChatFrame4)
-			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_XP_GAIN")
-			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_GUILD_XP_GAIN")
-			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_HONOR_GAIN")
-			ChatFrame_AddMessageGroup(ChatFrame4, "COMBAT_FACTION_CHANGE")
-			ChatFrame_AddMessageGroup(ChatFrame4, "LOOT")
-			ChatFrame_AddMessageGroup(ChatFrame4, "CURRENCY")
-			ChatFrame_AddMessageGroup(ChatFrame4, "MONEY")
-			ChatFrame_AddMessageGroup(ChatFrame4, "SKILL")
 		end
 
 		-- Enable classcolor automatically on login and on each character without doing /configure each time

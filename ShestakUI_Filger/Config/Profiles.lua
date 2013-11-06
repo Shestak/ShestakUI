@@ -54,18 +54,6 @@ if T.level ~= MAX_PLAYER_LEVEL then
 end
 
 ----------------------------------------------------------------------------------------
---	Shestak Config
-----------------------------------------------------------------------------------------
-if T.author == true then
-	if T.class == "DRUID" then
-		add("P_BUFF_ICON", {spellID = 100977, unitID = "player", caster = "player", filter = "BUFF"})
-		add("P_BUFF_ICON", {spellID = 33763, unitID = "player", caster = "player", filter = "BUFF"})
-		add("P_BUFF_ICON", {spellID = 774, unitID = "player", caster = "player", filter = "BUFF"})
-		add("P_BUFF_ICON", {spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"})
-	end
-end
-
-----------------------------------------------------------------------------------------
 --	Oz@Pozzo dell'Eternità Config
 ----------------------------------------------------------------------------------------
 if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then

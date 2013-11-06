@@ -83,10 +83,6 @@ local function LoadSkin()
 	InspectModelFrameBackgroundTopRight:SetPoint("TOPRIGHT", InspectModelFrame.backdrop, "TOPRIGHT", -2, -2)
 	InspectModelFrameBackgroundBotLeft:SetPoint("BOTTOMLEFT", InspectModelFrame.backdrop, "BOTTOMLEFT", 2, -50)
 	InspectModelFrameBackgroundBotRight:SetPoint("BOTTOMRIGHT", InspectModelFrame.backdrop, "BOTTOMRIGHT", -2, -50)
-
-	if T.author == true then
-		InspectModelFrameControlFrame:HookScript("OnShow", function(self) self:Hide() end)
-	end
 end
 
 T.SkinFuncs["Blizzard_InspectUI"] = LoadSkin

@@ -25,10 +25,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	NAMEPLATE_FONT = NORMAL
 	STANDARD_TEXT_FONT = NORMAL
 
-	if T.author == true then
-		DAMAGE_TEXT_FONT = BLANK
-	end
-
 	-- Base fonts
 	SetFont(AchievementFont_Small, NORMAL, 11, nil, nil, nil, nil, 0, 0, 0, 1, -1)
 	SetFont(InvoiceFont_Med, NORMAL, 13, nil, 0.15, 0.09, 0.04)
