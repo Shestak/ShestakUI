@@ -4,20 +4,19 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Based on oUF_PVPSpecIcons
 ----------------------------------------------------------------------------------------
-
 local _, ns = ...
 local oUF = ns.oUF or oUF
 
 local Update = function(self, event, unit)
-	if event == 'ARENA_OPPONENT_UPDATE' and unit ~= self.unit then return; end
+	if event == "ARENA_OPPONENT_UPDATE" and unit ~= self.unit then return; end
 	local specIcon = self.FactionIcon
 
 	local _, instanceType = IsInInstance();
 	specIcon.instanceType = instanceType
 
-	if(specIcon.PreUpdate) then specIcon:PreUpdate(event) end
+	if specIcon.PreUpdate then specIcon:PreUpdate(event) end
 
-	if instanceType == 'pvp' then
+	if instanceType == "pvp" then
 		local faction = UnitFactionGroup(self.unit)
 		if faction == "Horde" then
 			specIcon.Icon:SetTexture([[Interface\Icons\INV_BannerPVP_01]])
@@ -28,7 +27,7 @@ local Update = function(self, event, unit)
 		end
 	end
 
-	if(specIcon.PostUpdate) then specIcon:PostUpdate(event) end
+	if specIcon.PostUpdate then specIcon:PostUpdate(event) end
 end
 
 local Enable = function(self)
@@ -57,4 +56,4 @@ local Disable = function(self)
 	end
 end
 
-oUF:AddElement('FactionIcon', Update, Enable, Disable)
+oUF:AddElement("FactionIcon", Update, Enable, Disable)

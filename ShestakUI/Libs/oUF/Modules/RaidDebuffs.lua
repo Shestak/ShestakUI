@@ -42,7 +42,7 @@ do
 			["Magic"] = false,
 			["Curse"] = true,
 			["Poison"] = true,
-			['Disease'] = false,
+			["Disease"] = false,
 		},
 		["MAGE"] = {
 			["Curse"] = true,

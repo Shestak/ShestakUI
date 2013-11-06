@@ -35,7 +35,7 @@ local function Update(self, event, unit)
 
 	local experience = self.Experience
 
-	if UnitLevel(unit) == MAX_PLAYER_LEVEL or UnitHasVehicleUI('player') then
+	if UnitLevel(unit) == MAX_PLAYER_LEVEL or UnitHasVehicleUI("player") then
 		experience:Hide()
 	else
 		experience:Show()
