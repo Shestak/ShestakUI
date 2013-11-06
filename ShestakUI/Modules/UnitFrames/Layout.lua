@@ -950,12 +950,19 @@ local function Shared(self, unit)
 	if C.unitframe.show_arena and unit == "arena" then
 		self.Trinket = CreateFrame("Frame", self:GetName().."_Trinket", self)
 		self.Trinket:SetSize(31, 31)
+
+		self.FactionIcon = CreateFrame("Frame", nil, self)
+		self.FactionIcon:SetSize(31, 31)
+
 		if C.unitframe.arena_on_right == true then
 			self.Trinket:SetPoint("TOPRIGHT", self, "TOPLEFT", -5, 2)
+			self.FactionIcon:SetPoint("TOPRIGHT", self, "TOPLEFT", -5, 2)
 		else
 			self.Trinket:SetPoint("TOPLEFT", self, "TOPRIGHT", 5, 2)
+			self.FactionIcon:SetPoint("TOPLEFT", self, "TOPRIGHT", 5, 2)
 		end
 		self.Trinket:SetTemplate("Default")
+		self.FactionIcon:SetTemplate("Default")
 
 		self.AuraTracker = CreateFrame("Frame", nil, self)
 		self.AuraTracker:SetWidth(self.Trinket:GetWidth())
