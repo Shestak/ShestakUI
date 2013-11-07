@@ -619,6 +619,8 @@ C["filger_spells"] = {
 			-- Internal
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["HUNTER"] = {
@@ -1157,6 +1159,8 @@ C["filger_spells"] = {
 			-- Internal
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["MONK"] = {
@@ -1973,6 +1977,8 @@ C["filger_spells"] = {
 			-- Internal
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["ROGUE"] = {
@@ -2522,6 +2528,8 @@ C["filger_spells"] = {
 			-- Internal
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["WARLOCK"] = {
@@ -2765,6 +2773,8 @@ C["filger_spells"] = {
 			-- Internal
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["WARRIOR"] = {
