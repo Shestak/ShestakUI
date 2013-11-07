@@ -3045,6 +3045,8 @@ C["filger_spells"] = {
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Ancient Hysteria
 			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Drums of Rage
+			{spellID = 146555, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
 			-- Synapse Springs
