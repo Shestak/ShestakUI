@@ -3824,7 +3824,6 @@ C["filger_spells"] = {
 			-- Orb of Power
 			{spellID = 121175, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Seaforium
-			{spellID = 52418, unitID = "target", caster = "all", filter = "BUFF"},
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Drink
 			{spellID = 80167, unitID = "target", caster = "all", filter = "BUFF"},
