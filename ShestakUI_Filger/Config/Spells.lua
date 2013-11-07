@@ -457,6 +457,10 @@ C["filger_spells"] = {
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary Cloak
+			-- Spirit of Chi-Ji
+			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1313,6 +1317,10 @@ C["filger_spells"] = {
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary Cloak
+			-- Spirit of Chi-Ji
+			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1585,6 +1593,10 @@ C["filger_spells"] = {
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary Cloak
+			-- Spirit of Chi-Ji
+			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1815,6 +1827,10 @@ C["filger_spells"] = {
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary Cloak
+			-- Spirit of Chi-Ji
+			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2388,6 +2404,10 @@ C["filger_spells"] = {
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary Cloak
+			-- Spirit of Chi-Ji
+			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
