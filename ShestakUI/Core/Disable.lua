@@ -137,3 +137,7 @@ end
 if IsAddOnLoaded("Aurora") then
 	C.skins.blizzard_frames = false
 end
+
+if IsAddOnLoaded("BigWigs") then
+	C.automation.auto_role = false
+end
