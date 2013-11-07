@@ -6,7 +6,7 @@ if C.announcements.drinking ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
-frame:SetScript("OnEvent", function(...)
+frame:SetScript("OnEvent", function(self, event, ...)
 	if not (event == "UNIT_SPELLCAST_SUCCEEDED" and GetZonePVPInfo() == "arena") then return end
 
 	local unit, _, _, _, spellID = ...
