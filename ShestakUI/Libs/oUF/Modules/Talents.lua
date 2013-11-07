@@ -111,8 +111,8 @@ local buffs = { -- Credits: Proditor, Rinu
 
 local function Update(object, event, unit)
 	if object.unit ~= unit or unit == "player" or unit:find("pet") then return end
-	if UnitIsFriend("player", unit) or not UnitIsPlayer(unit) then return end
 	object.Talents:SetText("")
+	if UnitIsFriend("player", unit) or not UnitIsPlayer(unit) then return end
 	for index = 1, 40 do
 		local name, _, _, _, _, _, _, unitCaster = UnitAura(unit, index, "HELPFUL")
 		if name ~= nil and unitCaster == unit then
