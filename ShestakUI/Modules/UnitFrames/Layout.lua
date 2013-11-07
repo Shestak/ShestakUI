@@ -1258,14 +1258,16 @@ if C.unitframe.show_arena == true then
 							local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
 							if C.unitframe.own_color == true then
 								f.Health:SetStatusBarColor(unpack(C.unitframe.uf_color))
+								f.Spec:SetText(spec)
+								f.Spec:SetTextColor(color.r, color.g, color.b)
 							else
 								if color then
 									f.Health:SetStatusBarColor(color.r, color.g, color.b)
 								else
 									f.Health:SetStatusBarColor(unpack(C.unitframe.uf_color))
 								end
+								f.Spec:SetText(spec)
 							end
-							f.Spec:SetText(spec.."  -  "..LOCALIZED_CLASS_NAMES_MALE[class])
 							f:Show()
 						end
 					else
