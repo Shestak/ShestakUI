@@ -457,6 +457,10 @@ C["filger_spells"] = {
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary Cloak
+			-- Spirit of Chi-Ji
+			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -619,6 +623,8 @@ C["filger_spells"] = {
 			-- Internal
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["HUNTER"] = {
@@ -1157,6 +1163,8 @@ C["filger_spells"] = {
 			-- Internal
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["MONK"] = {
@@ -1309,6 +1317,10 @@ C["filger_spells"] = {
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary Cloak
+			-- Spirit of Chi-Ji
+			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1581,6 +1593,10 @@ C["filger_spells"] = {
 			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary Cloak
+			-- Spirit of Chi-Ji
+			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1811,6 +1827,10 @@ C["filger_spells"] = {
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary Cloak
+			-- Spirit of Chi-Ji
+			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1973,6 +1993,8 @@ C["filger_spells"] = {
 			-- Internal
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["ROGUE"] = {
@@ -2382,6 +2404,10 @@ C["filger_spells"] = {
 			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Courageous Primal Diamond (Caster Heal)
 			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Legendary Cloak
+			-- Spirit of Chi-Ji
+			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2522,6 +2548,8 @@ C["filger_spells"] = {
 			-- Internal
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["WARLOCK"] = {
@@ -2765,6 +2793,8 @@ C["filger_spells"] = {
 			-- Internal
 			-- Lightweave
 			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
+			-- Purified Bindings of Immerseus (Intellect, Proc)
+			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["WARRIOR"] = {
@@ -3045,6 +3075,8 @@ C["filger_spells"] = {
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Ancient Hysteria
 			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Drums of Rage
+			{spellID = 146555, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
 			-- Synapse Springs
@@ -3809,8 +3841,9 @@ C["filger_spells"] = {
 			{spellID = 23335, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Netherstorm Flag
 			{spellID = 34976, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Orb of Power
+			{spellID = 121175, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Seaforium
-			{spellID = 52418, unitID = "target", caster = "all", filter = "BUFF"},
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Drink
 			{spellID = 80167, unitID = "target", caster = "all", filter = "BUFF"},

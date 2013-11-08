@@ -15,7 +15,6 @@ local spells = {
 	-- DRUID
 	[GetSpellInfo(78674)] = L_PLANNER_DRUID_1,			-- Starsurge
 	[GetSpellInfo(5221)] = L_PLANNER_DRUID_2,			-- Shred
-	[GetSpellInfo(102795)] = L_PLANNER_DRUID_3,			-- Bear Hug
 	[GetSpellInfo(8936)] = L_PLANNER_DRUID_4,			-- Regrowth
 	-- HUNTER
 	[GetSpellInfo(34026)] = L_PLANNER_HUNTER_1,			-- Kill Command
@@ -28,6 +27,7 @@ local spells = {
 	[GetSpellInfo(116)] = L_PLANNER_MAGE_3,				-- Frostbolt
 	-- MONK
 	[GetSpellInfo(121253)] = L_PLANNER_MONK_1,			-- Keg Smash
+	[GetSpellInfo(115181)] = L_PLANNER_MONK_1,			-- Breath of Fire
 	[GetSpellInfo(115175)] = L_PLANNER_MONK_2,			-- Soothing Mist
 	[GetSpellInfo(107428)] = L_PLANNER_MONK_3,			-- Rising Sun Kick
 	-- PALADIN
@@ -60,14 +60,14 @@ local spells = {
 
 local buffs = { -- Credits: Proditor, Rinu
 	-- DEATHKNIGHT
-	[GetSpellInfo(49222)] = L_PLANNER_DEATHKNIGHT_1,	-- Bone Shield
 	[GetSpellInfo(50421)] = L_PLANNER_DEATHKNIGHT_1,	-- Scent of Blood
 	[GetSpellInfo(55610)] = L_PLANNER_DEATHKNIGHT_2,	-- Improved Icy Talons
 	[GetSpellInfo(81340)] = L_PLANNER_DEATHKNIGHT_3,	-- Sudden Doom
 	-- DRUID
 	[GetSpellInfo(24858)] = L_PLANNER_DRUID_1,			-- Moonkin Form
 	[GetSpellInfo(52610)] = L_PLANNER_DRUID_2,			-- Savage Roar
-	[GetSpellInfo(132402)] = L_PLANNER_DRUID_3,			-- Savage Defense
+	[GetSpellInfo(5229)] = L_PLANNER_DRUID_3,			-- Enrage
+	[GetSpellInfo(135286)] = L_PLANNER_DRUID_3,			-- Tooth and Claw
 	[GetSpellInfo(33763)] = L_PLANNER_DRUID_4,			-- Lifebloom
 	[GetSpellInfo(48438)] = L_PLANNER_DRUID_4,			-- Wild Growth
 	-- HUNTER
@@ -79,8 +79,9 @@ local buffs = { -- Credits: Proditor, Rinu
 	[GetSpellInfo(48107)] = L_PLANNER_MAGE_2,			-- Heating Up
 	[GetSpellInfo(44544)] = L_PLANNER_MAGE_3,			-- Fingers of Frost
 	-- MONK
-	[GetSpellInfo(128939)] = L_PLANNER_MONK_1,			-- Elusive Brew
+	[GetSpellInfo(115295)] = L_PLANNER_MONK_1,			-- Guard
 	[GetSpellInfo(115867)] = L_PLANNER_MONK_2,			-- Mana Tea
+	[GetSpellInfo(119611)] = L_PLANNER_MONK_2,			-- Renewing Mist
 	[GetSpellInfo(125359)] = L_PLANNER_MONK_3,			-- Tiger Power
 	-- PALADIN
 	[GetSpellInfo(53563)] = L_PLANNER_PALADIN_1,		-- Beacon of Light
@@ -110,8 +111,8 @@ local buffs = { -- Credits: Proditor, Rinu
 
 local function Update(object, event, unit)
 	if object.unit ~= unit or unit == "player" or unit:find("pet") then return end
-	if UnitIsFriend("player", unit) or not UnitIsPlayer(unit) then return end
 	object.Talents:SetText("")
+	if UnitIsFriend("player", unit) or not UnitIsPlayer(unit) then return end
 	for index = 1, 40 do
 		local name, _, _, _, _, _, _, unitCaster = UnitAura(unit, index, "HELPFUL")
 		if name ~= nil and unitCaster == unit then

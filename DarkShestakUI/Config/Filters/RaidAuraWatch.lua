@@ -113,6 +113,7 @@ T.RaidDebuffs = {
 	[SpellName(143494)] = 3,	-- Sundering Blow (Tank stacks)
 	[SpellName(143638)] = 3,	-- Bonecracker (DoT)
 	[SpellName(143431)] = 3,	-- Magistrike (Dispel)
+	[SpellName(143480)] = 3,	-- Assassin's Mark (Fixate)
 	-- Malkorok
 	[SpellName(142990)] = 4,	-- Fatal Strike (Tank stacks)
 	[SpellName(142864)] = 3,	-- Ancient Barrier
@@ -139,6 +140,8 @@ T.RaidDebuffs = {
 	-- Garrosh Hellscream
 	[SpellName(145183)] = 3,	-- Gripping Despair (Tank stacks)
 	[SpellName(145195)] = 3,	-- Empowered Gripping Despair (Tank stacks)
+	[SpellName(145065)] = 3,	-- Touch of Y'Shaarj
+	[SpellName(145171)] = 3,	-- Empowered Touch of Y'Shaarj
 -- Throne of Thunder
 	-- Jin'rokh the Breaker
 	[SpellName(137162)] = 4,	-- Static Burst (Tank switch)
@@ -284,6 +287,7 @@ T.RaidDebuffs = {
 -- Other
 	[SpellName(87023)] = 4,		-- Cauterize
 	[SpellName(94794)] = 4,		-- Rocket Fuel Leak
+	[SpellName(121175)] = 2,	-- Orb of Power
 -----------------------------------------------------------------
 -- PvP
 -----------------------------------------------------------------

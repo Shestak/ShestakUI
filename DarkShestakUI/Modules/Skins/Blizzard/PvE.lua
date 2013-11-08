@@ -166,37 +166,51 @@ local function LoadSkin()
 		end
 	end)
 
-	for i = 1, LFD_MAX_REWARDS do
-		local button = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i]
-		local icon = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."IconTexture"]
-		local count = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."Count"]
+	hooksecurefunc("RaidFinderQueueFrameRewards_UpdateFrame", function()
+		for i = 1, LFD_MAX_REWARDS do
+			local button = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i]
+			local icon = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."IconTexture"]
+			local count = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."Count"]
+			local role1 = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."RoleIcon1"]
+			local role2 = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."RoleIcon2"]
+			local role3 = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."RoleIcon3"]
 
-		if button then
-			local texture = _G[button:GetName().."IconTexture"]:GetTexture()
+			if button then
+				local texture = _G[button:GetName().."IconTexture"]:GetTexture()
 
-			button:StripTextures()
+				button:StripTextures()
 
-			icon:SetTexture(texture)
-			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			icon:SetPoint("TOPLEFT", 2, -2)
-			icon:SetDrawLayer("OVERLAY")
+				icon:SetTexture(texture)
+				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				icon:SetPoint("TOPLEFT", 2, -2)
+				icon:SetDrawLayer("OVERLAY")
 
-			count:SetDrawLayer("OVERLAY")
+				count:SetDrawLayer("OVERLAY")
 
-			if not button.backdrop then
-				button:CreateBackdrop("Default")
-				button.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
-				button.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+				if not button.backdrop then
+					button:CreateBackdrop("Default")
+					button.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+					button.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 
-				icon:SetParent(button.backdrop)
-				icon.SetPoint = T.dummy
+					icon:SetParent(button.backdrop)
+					icon.SetPoint = T.dummy
 
-				if count then
-					count:SetParent(button.backdrop)
+					if count then
+						count:SetParent(button.backdrop)
+					end
+					if role1 then
+						role1:SetParent(button.backdrop)
+					end
+					if role2 then
+						role2:SetParent(button.backdrop)
+					end
+					if role3 then
+						role3:SetParent(button.backdrop)
+					end
 				end
 			end
 		end
-	end
+	end)
 
 	hooksecurefunc("ScenarioQueueFrameRandom_UpdateFrame", function()
 		for i = 1, LFD_MAX_REWARDS do

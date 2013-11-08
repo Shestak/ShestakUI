@@ -1,4 +1,4 @@
-local T, C, L, _ = unpack(ShestakUI)
+﻿local T, C, L, _ = unpack(ShestakUI)
 if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -14,6 +14,21 @@ if C.unitframe.enable ~= true then return end
 --		add("T_DEBUFF_ICON", {spellID = 115767, unitID = "target", caster = "player", filter = "DEBUFF"})
 -- end
 ----------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------
+--	Function for insert spell
+----------------------------------------------------------------------------------------
+local add = function(place, spell)
+	for class, _ in pairs(C["filger_spells"]) do
+		if class == T.class then
+			for i = 1, #C["filger_spells"][class], 1 do
+				if C["filger_spells"][class][i]["Name"] == place then
+					table.insert(C["filger_spells"][class][i], spell)
+				end
+			end
+		end
+	end
+end
 
 ----------------------------------------------------------------------------------------
 --	Per Class Config (overwrite general)
@@ -36,35 +51,6 @@ end
 ----------------------------------------------------------------------------------------
 if T.level ~= MAX_PLAYER_LEVEL then
 
-end
-
-----------------------------------------------------------------------------------------
---	Function for insert spell
-----------------------------------------------------------------------------------------
-local add = function(place, spell)
-	for class, _ in pairs(C["filger_spells"]) do
-		if class == T.class then
-			for i = 1, #C["filger_spells"][class], 1 do
-				if C["filger_spells"][class][i]["Name"] == place then
-					table.insert(C["filger_spells"][class][i], spell)
-				end
-			end
-		end
-	end
-end
-
-----------------------------------------------------------------------------------------
---	Shestak Config
-----------------------------------------------------------------------------------------
-if (T.name == "Вершок" or T.name == "Вещмешок" or T.name == "Гребешок" or T.name == "Кулешок" or T.name == "Лапушок"  	
-or T.name == "Обушок" or T.name == "Ремешок" or T.name == "Торгашок" or T.name == "Черешок"
-or T.name == "Женишок" or T.name == "Шестак" or T.name == "Дефляция") then
-	if T.class == "DRUID" then
-		add("P_BUFF_ICON", {spellID = 100977, unitID = "player", caster = "player", filter = "BUFF"})
-		add("P_BUFF_ICON", {spellID = 33763, unitID = "player", caster = "player", filter = "BUFF"})
-		add("P_BUFF_ICON", {spellID = 774, unitID = "player", caster = "player", filter = "BUFF"})
-		add("P_BUFF_ICON", {spellID = 8936, unitID = "player", caster = "player", filter = "BUFF"})
-	end
 end
 
 ----------------------------------------------------------------------------------------
