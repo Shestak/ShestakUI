@@ -270,8 +270,6 @@ local OnTooltipSetUnit = function(self)
 				break
 			end
 		end
-
-
 	else
 		for i = 2, lines do
 			local line = _G["GameTooltipTextLeft"..i]
@@ -517,24 +515,20 @@ ItemRefTooltip:HookScript("OnTooltipSetItem", FixFont)
 local COALESCED_REALM_TOOLTIP1 = string.split(FOREIGN_SERVER_LABEL, COALESCED_REALM_TOOLTIP)
 local INTERACTIVE_REALM_TOOLTIP1 = string.split(INTERACTIVE_SERVER_LABEL, INTERACTIVE_REALM_TOOLTIP)
 
-local function hideLines(self)
+local function HideLines(self)
 	for i = 3, self:NumLines() do
 		local line = _G["GameTooltipTextLeft"..i]
+		local blank = _G["GameTooltipTextLeft"..i - 1]
 		local text = line:GetText()
 
 		if text then
 			if text:find(COALESCED_REALM_TOOLTIP1) or text:find(INTERACTIVE_REALM_TOOLTIP1) then
-				line:SetText()
 				line:Hide()
-
-				local pretiptext = _G["GameTooltipTextLeft"..i - 1]
-				pretiptext:SetText()
-				pretiptext:Hide()
-
+				blank:Hide()
 				self:Show()
 			end
 		end
 	end
 end
 
-GameTooltip:HookScript("OnUpdate", hideLines)
+GameTooltip:HookScript("OnUpdate", HideLines)
