@@ -720,7 +720,7 @@ T.PostUpdatePower = function(power, unit, min, max)
 
 	if not UnitIsConnected(unit) then
 		power.value:SetText()
-	elseif UnitIsDead(unit) or UnitIsGhost(unit) then
+	elseif UnitIsDead(unit) or UnitIsGhost(unit) or max == 0 then
 		power.value:SetText()
 	else
 		if min ~= max then
