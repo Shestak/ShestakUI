@@ -42,10 +42,6 @@ anchor:SetPoint(unpack(C.position.tooltip))
 -- Hide PVP text
 PVP_ENABLED = ""
 
--- Hide 5.4 realm tooltip
-COALESCED_REALM_TOOLTIP = ""
-INTERACTIVE_REALM_TOOLTIP = ""
-
 -- Statusbar
 GameTooltipStatusBar:SetStatusBarTexture(C.media.texture)
 GameTooltipStatusBar:SetHeight(4)
@@ -204,7 +200,7 @@ local OnTooltipSetUnit = function(self)
 
 	if not unit then return end
 
-	local name = self:GetUnit()
+	local name, realm = UnitName(unit)
 	local race, englishRace = UnitRace(unit)
 	local level = UnitLevel(unit)
 	local levelColor = GetQuestDifficultyColor(level)
@@ -212,6 +208,7 @@ local OnTooltipSetUnit = function(self)
 	local creatureType = UnitCreatureType(unit)
 	local _, faction = UnitFactionGroup(unit)
 	local _, playerFaction = UnitFactionGroup("player")
+	local relationship = UnitRealmRelationship(unit)
 
 	if level and level == -1 then
 		if classification == "worldboss" then
@@ -225,6 +222,14 @@ local OnTooltipSetUnit = function(self)
 	elseif classification == "rare" then classification = " R"
 	elseif classification == "elite" then classification = "+"
 	else classification = "" end
+
+	if realm and realm ~= "" then
+		if relationship == LE_REALM_RELATION_COALESCED then
+			name = name..FOREIGN_SERVER_LABEL
+		elseif relationship == LE_REALM_RELATION_VIRTUAL then
+			name = name..INTERACTIVE_SERVER_LABEL
+		end
+	end
 
 	if not C.tooltip.title and name then _G["GameTooltipTextLeft1"]:SetText(name) end
 
@@ -265,6 +270,8 @@ local OnTooltipSetUnit = function(self)
 				break
 			end
 		end
+
+
 	else
 		for i = 2, lines do
 			local line = _G["GameTooltipTextLeft"..i]
@@ -503,3 +510,31 @@ end
 
 GameTooltip:HookScript("OnTooltipSetItem", FixFont)
 ItemRefTooltip:HookScript("OnTooltipSetItem", FixFont)
+
+----------------------------------------------------------------------------------------
+--	Hide 5.4 realm tooltip
+----------------------------------------------------------------------------------------
+local COALESCED_REALM_TOOLTIP1 = string.split(FOREIGN_SERVER_LABEL, COALESCED_REALM_TOOLTIP)
+local INTERACTIVE_REALM_TOOLTIP1 = string.split(INTERACTIVE_SERVER_LABEL, INTERACTIVE_REALM_TOOLTIP)
+
+local function hideLines(self)
+	for i = 3, self:NumLines() do
+		local line = _G["GameTooltipTextLeft"..i]
+		local text = line:GetText()
+
+		if text then
+			if text:find(COALESCED_REALM_TOOLTIP1) or text:find(INTERACTIVE_REALM_TOOLTIP1) then
+				line:SetText()
+				line:Hide()
+
+				local pretiptext = _G["GameTooltipTextLeft"..i - 1]
+				pretiptext:SetText()
+				pretiptext:Hide()
+
+				self:Show()
+			end
+		end
+	end
+end
+
+GameTooltip:HookScript("OnUpdate", hideLines)
