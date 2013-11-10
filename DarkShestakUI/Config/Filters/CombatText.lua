@@ -112,6 +112,9 @@ elseif T.class == "MAGE" then
 		T.aoespam[44425] = 0		-- Arcane Barrage
 		T.aoespam[84721] = 3		-- Frozen Orb
 		T.aoespam[148022] = 3		-- Icicle (Mastery)
+		T.aoespam[31707] = 3		-- Waterbolt
+		T.aoespam[30455] = 0		-- Ice Lance
+		T.aoespam[115611] = 6		-- Temporal Ripples
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then

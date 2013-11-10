@@ -14,6 +14,7 @@ T.oUF_colors = setmetatable({
 		["RAGE"] = {0.69, 0.31, 0.31},
 		["FOCUS"] = {0.71, 0.43, 0.27},
 		["ENERGY"] = {0.65, 0.63, 0.35},
+		["POWER_TYPE_FEL_ENERGY"] = {0.65, 0.63, 0.35},
 		["RUNES"] = {0.55, 0.57, 0.61},
 		["RUNIC_POWER"] = {0, 0.82, 1},
 		["AMMOSLOT"] = {0.8, 0.6, 0},
