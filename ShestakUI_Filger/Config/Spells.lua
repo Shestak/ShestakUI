@@ -1495,6 +1495,10 @@ C["filger_spells"] = {
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
 
+			-- Item sets
+			-- Divine Crusader (T16)
+			{spellID = 144595, unitID = "player", caster = "player", filter = "BUFF"},
+
 			-- Trinkets
 			-- General
 			-- Darkmoon Cards (Proc)
