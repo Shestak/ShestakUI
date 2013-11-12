@@ -78,7 +78,7 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
-			-- Assurance of Consequence (Strength, Proc)
+			-- Evil Eye of Galakras (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
 			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
@@ -1521,7 +1521,7 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
-			-- Assurance of Consequence (Strength, Proc)
+			-- Evil Eye of Galakras (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
 			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
@@ -2884,7 +2884,7 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
-			-- Assurance of Consequence (Strength, Proc)
+			-- Evil Eye of Galakras (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
 			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
