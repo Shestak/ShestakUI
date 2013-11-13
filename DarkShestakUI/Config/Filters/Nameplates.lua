@@ -54,6 +54,7 @@ T.DebuffWhiteList = {
 	[SpellName(10326)] = true,	-- Turn Evil
 	[SpellName(853)] = true,	-- Hammer of Justice
 	[SpellName(105593)] = true,	-- Fist of Justice
+	[SpellName(31803)] = true,	-- Censure
 	-- Priest
 	[SpellName(9484)] = true,	-- Shackle Undead
 	[SpellName(8122)] = true,	-- Psychic Scream

@@ -78,7 +78,7 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
-			-- Assurance of Consequence (Strength, Proc)
+			-- Evil Eye of Galakras (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
 			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
@@ -1495,6 +1495,10 @@ C["filger_spells"] = {
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
 
+			-- Item sets
+			-- Divine Crusader (T16)
+			{spellID = 144595, unitID = "player", caster = "player", filter = "BUFF"},
+
 			-- Trinkets
 			-- General
 			-- Darkmoon Cards (Proc)
@@ -1517,7 +1521,7 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
-			-- Assurance of Consequence (Strength, Proc)
+			-- Evil Eye of Galakras (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
 			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
@@ -2880,7 +2884,7 @@ C["filger_spells"] = {
 			-- Jade Warlord Figurine (Mastery, Use)
 			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Strength DPS
-			-- Assurance of Consequence (Strength, Proc)
+			-- Evil Eye of Galakras (Strength, Proc)
 			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thok's Tail Tip (Strength, Proc)
 			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
