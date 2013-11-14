@@ -51,7 +51,7 @@ local function OnUpdate(_, update)
 	elapsed = elapsed + update
 	if elapsed > 0.05 then
 		for i, v in pairs(watching) do
-			if GetTime() >= v[1] + 0.5 + threshold then
+			if GetTime() >= v[1] + 0.5 then
 				if T.pulse_ignored_spells[i] then
 					watching[i] = nil
 				else
@@ -68,7 +68,7 @@ local function OnUpdate(_, update)
 						isPet = true
 					end
 					if enabled ~= 0 then
-						if duration and duration > 2.0 and texture then
+						if duration and duration > threshold and texture then
 							cooldowns[i] = {start, duration, texture, isPet}
 						end
 					end
