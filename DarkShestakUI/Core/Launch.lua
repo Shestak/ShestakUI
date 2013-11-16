@@ -189,7 +189,6 @@ local function InstallUI()
 	SavedPositions = {}
 	SavedOptionsPerChar = {}
 	
-	SavedOptions.Version = "0.60"
 	SavedOptionsPerChar.FogOfWar = false
 	SavedOptionsPerChar.AutoInvite = false
 	SavedOptionsPerChar.Archaeology = false
@@ -548,6 +547,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if SavedPositions == nil then SavedPositions = {} end
 	if SavedAddonProfiles == nil then SavedAddonProfiles = {} end
 	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
+	if SavedOptions.RaidLayout == nil then SavedOptions.RaidLayout = "UNKNOWN" end
 	if SavedOptionsPerChar.FogOfWar == nil then SavedOptionsPerChar.FogOfWar = false end
 	if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
 	if SavedOptionsPerChar.Archaeology == nil then SavedOptionsPerChar.Archaeology = false end
@@ -571,7 +571,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		SetCVar("uiScale", C.general.uiscale)
 
 		-- Install default if we never ran ShestakUI on this character
-		if not SavedOptionsPerChar.Install or SavedOptions.Version == nil then
+		if not SavedOptionsPerChar.Install then
 			Setup()
 		end
 		
