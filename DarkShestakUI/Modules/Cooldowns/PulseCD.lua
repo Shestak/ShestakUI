@@ -68,7 +68,7 @@ local function OnUpdate(_, update)
 						isPet = true
 					end
 					if enabled ~= 0 then
-						if duration and duration > 2.0 and texture then
+						if duration and duration > threshold and texture then
 							cooldowns[i] = {start, duration, texture, isPet}
 						end
 					end
