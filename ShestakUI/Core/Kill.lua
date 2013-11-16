@@ -26,8 +26,9 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		ShowPartyFrame = T.dummy
 		HidePartyFrame = T.dummy
 		CompactUnitFrame_UpdateAll = T.dummy
-		CompactUnitFrame_UpateVisible = T.dummy
 		CompactUnitFrameProfiles_ApplyProfile = T.dummy
+		CompactRaidFrameManager_UpdateShown = T.dummy
+		CompactRaidFrameManager_UpdateOptionsFlowContainer = T.dummy
 	end
 
 	Advanced_UseUIScale:Kill()
