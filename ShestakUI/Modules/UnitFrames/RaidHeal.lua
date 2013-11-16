@@ -288,7 +288,7 @@ oUF:Factory(function(self)
 	oUF:SetActiveStyle("ShestakHeal")
 	if C.raidframe.show_party == true then
 		-- Party
-		local party = self:SpawnHeader("oUF_Party", nil, "custom [@raid6,exists][petbattle] hide;show",
+		local party = self:SpawnHeader("oUF_Party", nil, "custom [@raid6,exists] hide;show",
 			"oUF-initialConfigFunction", [[
 				local header = self:GetParent()
 				self:SetWidth(header:GetAttribute("initial-width"))
@@ -310,7 +310,7 @@ oUF:Factory(function(self)
 		end
 
 		-- Party targets
-		local partytarget = self:SpawnHeader("oUF_PartyTarget", nil, "custom [@raid6,exists][petbattle] hide;show",
+		local partytarget = self:SpawnHeader("oUF_PartyTarget", nil, "custom [@raid6,exists] hide;show",
 			"oUF-initialConfigFunction", [[
 				local header = self:GetParent()
 				self:SetWidth(header:GetAttribute("initial-width"))
@@ -329,7 +329,7 @@ oUF:Factory(function(self)
 		partytarget:SetPoint("TOPLEFT", party, "BOTTOMLEFT", 0, -7)
 
 		-- Party pets
-		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists][petbattle] hide;show",
+		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists] hide;show",
 			"oUF-initialConfigFunction", [[
 				local header = self:GetParent()
 				self:SetWidth(header:GetAttribute("initial-width"))
@@ -375,7 +375,7 @@ oUF:Factory(function(self)
 			-- Raid vertical
 			local raid = {}
 			for i = 1, C.raidframe.raid_groups do
-				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists][petbattle] show;hide",
+				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
 					"oUF-initialConfigFunction", [[
 						local header = self:GetParent()
 						self:SetWidth(header:GetAttribute("initial-width"))
@@ -403,7 +403,7 @@ oUF:Factory(function(self)
 			-- Raid horizontal
 			local raid = {}
 			for i = 1, C.raidframe.raid_groups do
-				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists][petbattle] show;hide",
+				local raidgroup = self:SpawnHeader("oUF_RaidHeal"..i, nil, "custom [@raid6,exists] show;hide",
 					"oUF-initialConfigFunction", [[
 						local header = self:GetParent()
 						self:SetWidth(header:GetAttribute("initial-width"))
