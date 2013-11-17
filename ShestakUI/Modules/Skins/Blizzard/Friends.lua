@@ -214,6 +214,10 @@ local function LoadSkin()
 	T.SkinEditBox(RecruitAFriendNameEditBox)
 	T.SkinEditBox(RecruitAFriendNoteFrame)
 
+	RecruitAFriendSentFrame:SetTemplate("Transparent")
+	RecruitAFriendSentFrame.OKButton:SkinButton()
+	T.SkinCloseButton(RecruitAFriendSentFrameCloseButton)
+
 	FriendsTabHeaderSoRButton:SetTemplate("Default")
 	FriendsTabHeaderSoRButton:StyleButton()
 	FriendsTabHeaderSoRButton.icon:SetDrawLayer("OVERLAY")
