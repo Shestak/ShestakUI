@@ -523,6 +523,7 @@ local function HideLines(self)
 
 		if text then
 			if text:find(COALESCED_REALM_TOOLTIP1) or text:find(INTERACTIVE_REALM_TOOLTIP1) then
+				line:SetText()
 				line:Hide()
 				blank:Hide()
 				self:Show()
