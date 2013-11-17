@@ -45,7 +45,8 @@ local function LoadSkin()
 		"FriendsFrameBattlenetFrame",
 		"BattleTagInviteFrame",
 		"BNetReportFrame",
-		"BNetReportFrameComment"
+		"BNetReportFrameComment",
+		"RecruitAFriendNoteFrame"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -102,7 +103,8 @@ local function LoadSkin()
 		"ScrollOfResurrectionFrameCancelButton",
 		"PendingListInfoFrameContinueButton",
 		"BNetReportFrameReportButton",
-		"BNetReportFrameCancelButton"
+		"BNetReportFrameCancelButton",
+		"RecruitAFriendFrameSendButton"
 	}
 
 	for _, button in pairs(buttons) do
@@ -207,6 +209,11 @@ local function LoadSkin()
 	T.SkinEditBox(ScrollOfResurrectionFrameTargetEditBox)
 	ScrollOfResurrectionFrameTargetEditBox:SetHeight(ScrollOfResurrectionFrameTargetEditBox:GetHeight() - 5)
 
+	RecruitAFriendFrame:SetTemplate("Transparent")
+	T.SkinCloseButton(RecruitAFriendFrameCloseButton)
+	T.SkinEditBox(RecruitAFriendNameEditBox)
+	T.SkinEditBox(RecruitAFriendNoteFrame)
+
 	FriendsTabHeaderSoRButton:SetTemplate("Default")
 	FriendsTabHeaderSoRButton:StyleButton()
 	FriendsTabHeaderSoRButton.icon:SetDrawLayer("OVERLAY")
@@ -214,6 +221,14 @@ local function LoadSkin()
 	FriendsTabHeaderSoRButton.icon:ClearAllPoints()
 	FriendsTabHeaderSoRButton.icon:SetPoint("TOPLEFT", 2, -2)
 	FriendsTabHeaderSoRButton.icon:SetPoint("BOTTOMRIGHT", -2, 2)
+
+	FriendsTabHeaderRecruitAFriendButton:SetTemplate("Default")
+	FriendsTabHeaderRecruitAFriendButton:StyleButton()
+	FriendsTabHeaderRecruitAFriendButtonIcon:SetDrawLayer("OVERLAY")
+	FriendsTabHeaderRecruitAFriendButtonIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	FriendsTabHeaderRecruitAFriendButtonIcon:ClearAllPoints()
+	FriendsTabHeaderRecruitAFriendButtonIcon:SetPoint("TOPLEFT", 2, -2)
+	FriendsTabHeaderRecruitAFriendButtonIcon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 	FriendsFrameIgnoreScrollFrame:SetHeight(294)
 	FriendsFrameIgnoreScrollFrameScrollBar:SetPoint("TOPLEFT", FriendsFrameIgnoreScrollFrame, "TOPRIGHT", 39, -3)
