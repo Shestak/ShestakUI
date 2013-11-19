@@ -168,7 +168,9 @@ local StartTimer = function(name, spellId)
 	bar:SetScript("OnLeave", OnLeave)
 	bar:SetScript("OnMouseDown", OnMouseDown)
 	tinsert(bars, bar)
-	table.sort(bars, sortByExpiration)
+	if C.raidcooldown.expiration == true then
+		table.sort(bars, sortByExpiration)
+	end
 	UpdatePositions()
 end
 
@@ -178,8 +180,10 @@ local OnEvent = function(self, event, ...)
 		if band(sourceFlags, filter) == 0 then return end
 		if eventType == "SPELL_RESURRECT" or eventType == "SPELL_CAST_SUCCESS" or eventType == "SPELL_AURA_APPLIED" then
 			local spellId = select(12, ...)
-			if T.raid_spells[spellId] and show[select(2, IsInInstance())] and sourceName ~= T.name then
-				StartTimer(sourceName, spellId)
+			if T.raid_spells[spellId] and show[select(2, IsInInstance())]  then
+				if (sourceName == T.name and C.raidcooldown.show_my == true) or sourceName ~= T.name then
+					StartTimer(sourceName, spellId)
+				end
 			end
 		end
 	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) == "arena" or not IsInGroup() then
