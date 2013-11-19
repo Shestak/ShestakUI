@@ -26,11 +26,11 @@ end
 
 local truncate = function(value)
 	if value >= 1e6 then
-		return string.format("%.2fm", value / 1e6)
-	elseif value >= 1e4 then
-		return string.format("%.1fk", value / 1e3)
+		return string.format("%.2fb", value / 1e6)
+	elseif value >= 1e3 then
+		return string.format("%.2fm", value / 1e3)
 	else
-		return string.format("%.0f", value)
+		return string.format("%.0fk", value)
 	end
 end
 
@@ -109,7 +109,7 @@ local UpdateBars = function()
 		bar[i]:SetStatusBarColor(color.r, color.g, color.b)
 		bar[i].bg:SetVertexColor(color.r, color.g, color.b, 0.2)
 		bar[i].left:SetText(cur.name)
-		bar[i].right:SetText(string.format("%s [%d%%]", truncate(cur.val / 100), cur.pct))
+		bar[i].right:SetText(string.format("%s [%d%%]", truncate(cur.val / 1000), cur.pct))
 		bar[i]:Show()
 	end
 end
