@@ -677,7 +677,7 @@ T.PostUpdatePower = function(power, unit, min, max)
 		power.value:SetText()
 	else
 		if min ~= max then
-			if pType == 0 then
+			if pType == 0 and pToken ~= "POWER_TYPE_DINO_SONIC" then
 				if unit == "target" then
 					if C.unitframe.show_total_value == true then
 						if C.unitframe.color_value == true then

@@ -11,8 +11,8 @@ local function Update(self, event, unit)
 	local allIncomingHeal = UnitGetIncomingHeals(unit) or 0
 	local health, maxHealth = UnitHealth(unit), UnitHealthMax(unit)
 
-	if(health + allIncomingHeal > maxHealth * hp.maxOverflow) then
-		allIncomingHeal = maxHealth * hp.maxOverflow - health
+	if(health + allIncomingHeal > maxHealth) then
+		allIncomingHeal = maxHealth - health
 	end
 
 	if(allIncomingHeal < myIncomingHeal) then
@@ -56,10 +56,6 @@ local function Enable(self)
 		self:RegisterEvent('UNIT_HEAL_PREDICTION', Path)
 		self:RegisterEvent('UNIT_MAXHEALTH', Path)
 		self:RegisterEvent('UNIT_HEALTH_FREQUENT', Path)
-
-		if(not hp.maxOverflow) then
-			hp.maxOverflow = 1.05
-		end
 
 		return true
 	end
