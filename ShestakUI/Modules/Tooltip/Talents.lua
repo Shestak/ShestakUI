@@ -34,6 +34,7 @@ local function GatherTalents(mouseover)
 		current.tree = currentSpecName
 	else
 		local currentSpec = GetSpecialization()
+		if not currentSpec then return nil end
 		local _, name = GetSpecializationInfo(currentSpec)
 		local currentSpecName = currentSpec and name or L_TOOLTIP_NO_TALENT
 		current.tree = currentSpecName
