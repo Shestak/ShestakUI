@@ -22,7 +22,7 @@ frame:SetScript("OnEvent", function(self, event)
 			end
 		end
 	elseif event == "PET_BATTLE_CLOSE" or (event == "PLAYER_TARGET_CHANGED" and not C_PetBattles.IsInBattle()) then
-		if hat then
+		if hat and not InCombatLockdown() then
 			EquipItemByName(hat)
 			ShowHelm(show)
 			hat = nil
