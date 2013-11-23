@@ -323,16 +323,11 @@ local function LoadSkin()
 				frame.IconBorder:Kill()
 				frame.glow:Kill()
 				frame.shine:Kill()
-				--frame.SpecRing:Kill()
 
 				-- Icon
 				frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				frame.Icon:ClearAllPoints()
 				frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
-				
-				-- Spec icon
-				--frame.SpecIcon:ClearAllPoints()
-				--frame.SpecIcon:SetPoint("LEFT", frame.backdrop, 100500, 100500)
 
 				-- Icon border
 				if not frame.Icon.b then
