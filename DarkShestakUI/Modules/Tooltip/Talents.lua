@@ -29,13 +29,11 @@ ttt:Hide()
 local function GatherTalents(mouseover)
 	if mouseover == 1 then
 		local id = GetInspectSpecialization("mouseover")
-		local _, name = GetSpecializationInfoByID(id)
-		local currentSpecName = id and name or L_TOOLTIP_LOADING
+		local currentSpecName = id and select(2, GetSpecializationInfoByID(id)) or L_TOOLTIP_LOADING
 		current.tree = currentSpecName
 	else
 		local currentSpec = GetSpecialization()
-		local _, name = GetSpecializationInfo(currentSpec)
-		local currentSpecName = currentSpec and name or L_TOOLTIP_NO_TALENT
+		local currentSpecName = currentSpec and select(2, GetSpecializationInfo(currentSpec)) or L_TOOLTIP_NO_TALENT
 		current.tree = currentSpecName
 	end
 

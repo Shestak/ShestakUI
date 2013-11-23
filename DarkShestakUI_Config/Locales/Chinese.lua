@@ -2,7 +2,7 @@
 
 ----------------------------------------------------------------------------------------
 --	Localization for zhCN client
---	Translation: Mania, Tat2dawn
+--	Translation: Mania, Tat2dawn, Sakaras
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "重载插件"
 L_GUI_SET_SAVED_SETTTINGS = "为每个角色分别保存设定"
@@ -32,7 +32,7 @@ L_GUI_MISC_HIDE_BG_SPAM = "在战场内移除 Boss 表情信息"
 L_GUI_MISC_ITEM_LEVEL = "在人物介面显示装备的物品等级"
 L_GUI_MISC_GEM_COUNTER = "在人物介面显示装备的珠宝数量"
 L_GUI_MISC_ALREADY_KNOWN = "彩色显示已学会的食谱/坐骑/宠物"
-L_GUI_MISC_DISENCHANTING = "一键研磨/选矿/分解"
+L_GUI_MISC_DISENCHANTING = "快捷研磨/选矿/分解(ALT+左键)"
 L_GUI_MISC_SUM_BUYOUTS = "总结目前所有的拍卖"
 L_GUI_MISC_CLICK_CAST = "简单的点击施法绑定"
 L_GUI_MISC_MOVE_BLIZZARD = "移动暴雪默认介面框架"
@@ -156,8 +156,8 @@ L_GUI_COOLDOWN_RAID_ENABLE = "开启团队技能冷却"
 L_GUI_COOLDOWN_RAID_HEIGHT = "团队技能冷却栏高度"
 L_GUI_COOLDOWN_RAID_WIDTH = "团队技能冷却栏宽度"
 L_GUI_COOLDOWN_RAID_SORT = "团队技能冷却栏向上延伸"
-L_GUI_COOLDOWN_RAID_EXPIRATION = "Sort by expiration time" -- Needs review
-L_GUI_COOLDOWN_RAID_SHOW_MY = "Show my cooldowns" -- Needs review
+L_GUI_COOLDOWN_RAID_EXPIRATION = "按冷却时间排序"
+L_GUI_COOLDOWN_RAID_SHOW_MY = "也显示自己的团队技能"
 L_GUI_COOLDOWN_RAID_ICONS = "团队技能冷却栏图示"
 L_GUI_COOLDOWN_RAID_IN_RAID = "在团队中显示团队技能冷却"
 L_GUI_COOLDOWN_RAID_IN_PARTY = "在队伍中显示团队技能冷却"
@@ -324,7 +324,7 @@ L_GUI_AURA_CAST_BY = "在鼠标提示中显示是谁施放了这个 增益/減�
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "开启单位框架"
-L_GUI_UF_UF_COLOR = "血量条的颜色 (如果已使用自定义颜色)" -- Need review
+L_GUI_UF_UF_COLOR = "血量条的颜色 (如果已使用自定义颜色)"
 L_GUI_UF_TOTAL_VALUE = "在玩家与目标框体显示详细的文字变化"
 L_GUI_UF_COLOR_VALUE = "生命值与魔法值以职业颜色着色"
 L_GUI_UF_BAR_COLOR_VALUE = "血量条的颜色以目前剩余血量着色"
@@ -360,13 +360,13 @@ L_GUI_UF_PLUGINS_CLASS_BAR = "职业栏"
 L_GUI_UF_PLUGINS_COMBO_BAR = "潜行者|德鲁伊连击点图示"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "开启牧师暗影宝珠栏"
 L_GUI_UF_PLUGINS_CHI_BAR = "开启武僧真气栏"
-L_GUI_UF_PLUGINS_VENGEANCE_BAR = "开启仇恨栏"
+L_GUI_UF_PLUGINS_VENGEANCE_BAR = "开启复仇条"
 L_GUI_UF_PLUGINS_ECLIPSE_BAR = "开启日蚀/月蚀栏"
 L_GUI_UF_PLUGINS_HOLY_BAR = "开启圣光能量栏"
 L_GUI_UF_PLUGINS_SHARD_BAR = "开启灵魂碎片栏"
 L_GUI_UF_PLUGINS_RUNE_BAR = "符文条"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "图腾栏"
-L_GUI_UF_PLUGINS_RANGE_BAR = "开启距离条"
+L_GUI_UF_PLUGINS_RANGE_BAR = "开启距离条(仅牧师)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "仇恨边框"

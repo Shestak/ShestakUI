@@ -181,9 +181,9 @@ function T.SkinTab(tab, bg)
 	end
 end
 
-function T.SkinNextPrevButton(btn, horizonal)
+function T.SkinNextPrevButton(btn, horizonal, left)
 	local normal, pushed, disabled
-	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back"))
+	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back")) or left
 
 	if btn:GetNormalTexture() then
 		normal = btn:GetNormalTexture():GetTexture()
