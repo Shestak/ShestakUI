@@ -56,7 +56,7 @@ local function LoadSkin()
 	end
 
 	EquipmentFlyoutFrame.NavigationFrame:StripTextures()
-	T.SkinNextPrevButton(EquipmentFlyoutFrame.NavigationFrame.PrevButton)
+	T.SkinNextPrevButton(EquipmentFlyoutFrame.NavigationFrame.PrevButton, nil, true)
 	T.SkinNextPrevButton(EquipmentFlyoutFrame.NavigationFrame.NextButton)
 
 	-- Transmogrify popup
