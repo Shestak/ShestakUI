@@ -27,11 +27,12 @@ local tooltips = {
 
 for _, tt in pairs(tooltips) do
 	if not IsAddOnLoaded("Aurora") then
-		tt:SetTemplate("Transparent")
-		tt:HookScript("OnShow", function(self)
-			self:SetBackdropColor(unpack(C.media.overlay_color))
-			self:SetBackdropBorderColor(unpack(C.media.border_color))
-		end)
+		tt:SetBackdrop(nil)
+		local bg = CreateFrame("Frame", nil, tt)
+		bg:SetPoint("TOPLEFT")
+		bg:SetPoint("BOTTOMRIGHT")
+		bg:SetFrameLevel(tt:GetFrameLevel() -1)
+		bg:SetTemplate("Transparent")
 	end
 end
 
@@ -133,8 +134,6 @@ if C.tooltip.shift_modifer == true then
 	local ShiftShow = function()
 		if IsShiftKeyDown() then
 			GameTooltip:Show()
-			GameTooltip:SetBackdropColor(unpack(C.media.overlay_color))
-			GameTooltip:SetBackdropBorderColor(unpack(C.media.border_color))
 		else
 			if not HoverBind.enabled then
 				GameTooltip:Hide()
@@ -145,8 +144,6 @@ if C.tooltip.shift_modifer == true then
 	local EventShow = function()
 		if arg1 == "LSHIFT" and arg2 == 1 then
 			GameTooltip:Show()
-			GameTooltip:SetBackdropColor(unpack(C.media.overlay_color))
-			GameTooltip:SetBackdropBorderColor(unpack(C.media.border_color))
 		elseif arg1 == "LSHIFT" and arg2 == 0 then
 			GameTooltip:Hide()
 		end
@@ -468,19 +465,6 @@ hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 		end
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	Proper color for world objects tooltip
-----------------------------------------------------------------------------------------
-local function BackdropFix(self)
-	if self:GetAnchorType() == "ANCHOR_CURSOR" and self:IsOwned(UIParent) and not self:GetUnit() then
-		self:SetBackdropColor(unpack(C.media.overlay_color))
-	end
-end
-
-if C.tooltip.cursor ~= true and C.tooltip.shift_modifer ~= true then
-	GameTooltip:HookScript("OnUpdate", BackdropFix)
-end
 
 ----------------------------------------------------------------------------------------
 --	Fix GameTooltipMoneyFrame font size
