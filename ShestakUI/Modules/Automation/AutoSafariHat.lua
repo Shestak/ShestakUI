@@ -27,6 +27,11 @@ frame:SetScript("OnEvent", function(self, event)
 		if UnitExists("target") and not InCombatLockdown() then
 			for i = 1, #tamerlist do
 				if tonumber(UnitGUID("target"):sub(6, 10), 16) == tamerlist[i] then
+					if ShowingHelm() then
+						show = true
+					else
+						show = false
+					end
 					if GetItemCount(92738) > 0 then
 						hat = GetInventoryItemLink("player", 1)
 						EquipItemByName(92738)
