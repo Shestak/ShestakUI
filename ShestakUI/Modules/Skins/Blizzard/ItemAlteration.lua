@@ -55,6 +55,10 @@ local function LoadSkin()
 		end
 	end
 
+	EquipmentFlyoutFrame.NavigationFrame:StripTextures()
+	T.SkinNextPrevButton(EquipmentFlyoutFrame.NavigationFrame.PrevButton)
+	T.SkinNextPrevButton(EquipmentFlyoutFrame.NavigationFrame.NextButton)
+
 	-- Transmogrify popup
 	TransmogrifyConfirmationPopup:SetTemplate("Transparent")
 	TransmogrifyConfirmationPopup.Button1:SkinButton()
