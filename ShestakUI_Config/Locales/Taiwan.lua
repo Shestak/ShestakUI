@@ -2,7 +2,7 @@
 
 ----------------------------------------------------------------------------------------
 --	Localization for zhTW client
---	Translation: Leg883, Mania, Tat2dawn, Tibles
+--	Translation: Leg883, Mania, Tat2dawn, Tibles, Sakaras
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "重載UI"
 L_GUI_SET_SAVED_SETTTINGS = "為每個角色分別保存設定"
@@ -32,7 +32,7 @@ L_GUI_MISC_HIDE_BG_SPAM = "在戰場内移除Boss表情信息"
 L_GUI_MISC_ITEM_LEVEL = "在人物介面顯示裝備的物品等級"
 L_GUI_MISC_GEM_COUNTER = "在人物介面顯示已鑲嵌的珠寶數量"
 L_GUI_MISC_ALREADY_KNOWN = "彩色顯示已學會的食譜/坐騎/寵物"
-L_GUI_MISC_DISENCHANTING = "一鍵研磨/選礦/分解(Alt+點擊)"
+L_GUI_MISC_DISENCHANTING = "快捷研磨/選礦/分解(ALT+左鍵)"
 L_GUI_MISC_SUM_BUYOUTS = "結算拍賣物品的總金額"
 L_GUI_MISC_CLICK_CAST = "簡單的點擊施法綁定"
 L_GUI_MISC_MOVE_BLIZZARD = "移動暴雪默認介面框架"
@@ -153,8 +153,8 @@ L_GUI_COOLDOWN_RAID_ENABLE = "開啟團隊技能冷卻"
 L_GUI_COOLDOWN_RAID_HEIGHT = "團隊技能冷卻欄高度"
 L_GUI_COOLDOWN_RAID_WIDTH = "團隊技能冷卻欄寬度"
 L_GUI_COOLDOWN_RAID_SORT = "團隊技能冷卻欄向上延伸"
-L_GUI_COOLDOWN_RAID_EXPIRATION = "Sort by expiration time" -- Needs review
-L_GUI_COOLDOWN_RAID_SHOW_MY = "Show my cooldowns" -- Needs review
+L_GUI_COOLDOWN_RAID_EXPIRATION = "按冷卻時間排序"
+L_GUI_COOLDOWN_RAID_SHOW_MY = "也顯示自己的團隊技能"
 L_GUI_COOLDOWN_RAID_ICONS = "團隊技能冷卻欄圖示"
 L_GUI_COOLDOWN_RAID_IN_RAID = "在團隊中顯示團隊技能冷卻"
 L_GUI_COOLDOWN_RAID_IN_PARTY = "在隊伍中顯示團隊技能冷卻"
@@ -320,7 +320,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "為自己的BUFF圖標邊框也開啟職業邊�
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "開啟單位框架"
-L_GUI_UF_OWN_COLOR = "在預測治療中顯示你的治療量"
+L_GUI_UF_OWN_COLOR = "啟用自定義顏色"
 L_GUI_UF_UF_COLOR = "治療條職業著色"
 L_GUI_UF_ENEMY_HEALTH_COLOR = "敵對目標生命條以紅色著色"
 L_GUI_UF_TOTAL_VALUE = "在玩家與目標框體顯示詳細的文字變化"
@@ -361,13 +361,13 @@ L_GUI_UF_PLUGINS_CLASS_BAR = "職業欄"
 L_GUI_UF_PLUGINS_COMBO_BAR = "盜賊/德魯伊連擊點圖示"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "開啟暗影寶珠欄"
 L_GUI_UF_PLUGINS_CHI_BAR = "開啟武僧真氣欄"
-L_GUI_UF_PLUGINS_VENGEANCE_BAR = "開啟仇恨欄"
+L_GUI_UF_PLUGINS_VENGEANCE_BAR = "開啟復仇欄"
 L_GUI_UF_PLUGINS_ECLIPSE_BAR = "開啟日蝕/月蝕欄"
 L_GUI_UF_PLUGINS_HOLY_BAR = "開啟聖光能量欄"
 L_GUI_UF_PLUGINS_SHARD_BAR = "開啟靈魂碎片欄"
 L_GUI_UF_PLUGINS_RUNE_BAR = "符文條"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "圖騰欄"
-L_GUI_UF_PLUGINS_RANGE_BAR = "開啟牧師輝環距離提示"
+L_GUI_UF_PLUGINS_RANGE_BAR = "開啟距離欄(僅牧師)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "仇恨邊框"
