@@ -17,6 +17,9 @@ local replace = {
 	["синего цвета"] = "|cff6060ffсинего цвета|r",
 	["желтого цвета"] = "|cffffff40желтого цвета|r",
 	["Требуется хотя бы"] = "Требуется",
+}
+
+local replaceclass = {
 	["Воин"] = "|cffC79C6EВоин|r",
 	["Друид"] = "|cffFF7D0AДруид|r",
 	["Жрец"] = "|cffFFFFFFЖрец|r",
@@ -39,12 +42,23 @@ local function Translate(text)
 	end
 end
 
+local function TranslateClass(text)
+	if text then
+		for rus, replaceclass in next, replaceclass do
+			text = text:gsub(rus, replaceclass)
+		end
+		return text
+	end
+end
+
 local function UpdateTooltip(self)
 	if not self:GetItem() then return end
 	local tname = self:GetName()
 	for i = 3, self:NumLines() do
 		ttext = _G[tname.."TextLeft"..i]
+		local class = ttext:GetText() and (string.find(ttext:GetText(), "Класс") or string.find(ttext:GetText(), "Требуется"))
 		if ttext then ttext:SetText(Translate(ttext:GetText())) end
+		if ttext and class then ttext:SetText(TranslateClass(ttext:GetText())) end
 		ttext = _G[tname.."TextRight"..i]
 		if ttext then ttext:SetText(Translate(ttext:GetText())) end
 	end
