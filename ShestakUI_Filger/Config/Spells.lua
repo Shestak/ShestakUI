@@ -14,7 +14,7 @@ C["filger_spells"] = {
 
 			-- Bone Shield
 			{spellID = 49222, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bone Wall
+			-- Bone Wall (T16)
 			{spellID = 144948, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Blood
 			{spellID = 55233, unitID = "player", caster = "player", filter = "BUFF"},
