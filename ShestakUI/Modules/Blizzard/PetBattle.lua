@@ -370,9 +370,9 @@ end
 table.insert(UISpecialFrames, "FloatingBattlePetTooltip")
 
 -- Tooltip position
-hooksecurefunc("PetBattleAbilityTooltip_Show", function()
-	PetBattlePrimaryAbilityTooltip:ClearAllPoints()
-	PetBattlePrimaryAbilityTooltip:SetPoint(unpack(C.position.tooltip))
+hooksecurefunc("PetBattleAbilityButton_OnEnter", function()
+	PetBattleAbilityTooltip_Show(unpack(C.position.tooltip))
+	PetBattlePrimaryAbilityTooltip:SetFrameLevel(5)
 end)
 
 ----------------------------------------------------------------------------------------
