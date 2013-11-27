@@ -12,4 +12,4 @@ local function LoadSkin()
 	ProductChoiceFrame.Inset.ClaimButton:SkinButton()
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)
