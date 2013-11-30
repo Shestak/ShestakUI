@@ -833,7 +833,7 @@ if C.combattext.damage then
 			elseif eventType == "PARTY_KILL" and C.combattext.killingblow then
 				local destGUID, tname = select(8, ...)
 				local classIndex = select(2, GetPlayerInfoByGUID(destGUID))
-				local color = classIndex and RAID_CLASS_COLORS[classIndex] or {r = 0.9, g = 0, b = 0.2}
+				local color = classIndex and RAID_CLASS_COLORS[classIndex] or {r = 0.2, g = 1, b = 0.2}
 				xCT3:AddMessage("|cff33FF33"..ACTION_PARTY_KILL..": |r"..tname, color.r, color.g, color.b)
 			end
 		end
