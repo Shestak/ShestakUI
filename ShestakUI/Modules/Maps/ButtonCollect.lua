@@ -45,8 +45,7 @@ local collect = CreateFrame("Frame")
 collect:RegisterEvent("PLAYER_ENTERING_WORLD")
 collect:SetScript("OnEvent", function(self)
 	for i, child in ipairs({Minimap:GetChildren()}) do
-		local Handy = child:GetName() and (string.find(child:GetName(), "HandyNotesPin"))
-		if not BlackList[child:GetName()] and not Handy then
+		if not BlackList[child:GetName()] then
 			if child:GetObjectType() == "Button" and child:GetNumRegions() >= 3 and child:IsShown() then
 				child:SetParent(button)
 				tinsert(buttons, child)
