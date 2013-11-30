@@ -9,7 +9,8 @@ local buttons = {
 	"MiniMapTrackingButton",
 	"MiniMapMailFrame",
 	"HelpOpenTicketButton",
-	"GatherMatePin"
+	"GatherMatePin",
+	"HandyNotesPin"
 }
 
 local function SkinButton(f)
