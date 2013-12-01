@@ -408,10 +408,10 @@ if durability.enabled then
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(modules.Durability.tip_anchor, modules.Durability.tip_frame, modules.Durability.tip_x, modules.Durability.tip_y)
 			GameTooltip:ClearLines()
-			local avgItemLevel, avgItemLevelEquipped = GetAverageItemLevel()
-			avgItemLevel = floor(avgItemLevel)
-			avgItemLevelEquipped = floor(avgItemLevelEquipped)
 			if C.tooltip.average_lvl == true then
+				local avgItemLevel, avgItemLevelEquipped = GetAverageItemLevel()
+				avgItemLevel = floor(avgItemLevel)
+				avgItemLevelEquipped = floor(avgItemLevelEquipped)
 				GameTooltip:AddDoubleLine(DURABILITY, STAT_AVERAGE_ITEM_LEVEL..": "..avgItemLevelEquipped.." / "..avgItemLevel, tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 			else
 				GameTooltip:AddLine(DURABILITY, tthead.r, tthead.g, tthead.b)
@@ -453,7 +453,7 @@ if durability.enabled then
 				else
 					for i = 1, GetNumEquipmentSets() do
 						local name, icon = GetEquipmentSetInfo(i)
-						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon, name), notCheckable = 1, func = function() UseEquipmentSet(name) end})
+						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon, name), notCheckable = 1, func = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end UseEquipmentSet(name) end})
 					end
 				end
 				EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU")

@@ -287,6 +287,7 @@ T.RaidDebuffs = {
 -- Other
 	[SpellName(87023)] = 4,		-- Cauterize
 	[SpellName(94794)] = 4,		-- Rocket Fuel Leak
+	[SpellName(116888)] = 4,	-- Shroud of Purgatory
 	[SpellName(121175)] = 2,	-- Orb of Power
 -----------------------------------------------------------------
 -- PvP

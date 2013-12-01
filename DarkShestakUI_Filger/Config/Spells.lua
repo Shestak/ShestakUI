@@ -3168,6 +3168,8 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].pve_debuff)},
 
 			-- Death Knight
+			-- Shroud of Purgatory
+			{spellID = 116888, unitID = "player", caster = "player", filter = "DEBUFF"},
 			-- Gnaw (Ghoul)
 			{spellID = 91800, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Monstrous Blow (Mutated Ghoul)

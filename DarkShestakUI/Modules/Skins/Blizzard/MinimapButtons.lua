@@ -9,7 +9,8 @@ local buttons = {
 	"MiniMapTrackingButton",
 	"MiniMapMailFrame",
 	"HelpOpenTicketButton",
-	"GatherMatePin"
+	"GatherMatePin",
+	"HandyNotesPin"
 }
 
 local function SkinButton(f)
@@ -54,6 +55,7 @@ frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", function(self, event)
 	for i = 1, Minimap:GetNumChildren() do
 		SkinButton(select(i, Minimap:GetChildren()))
+		SkinButton(WIM3MinimapButton)
 	end
 
 	self = nil
