@@ -36,7 +36,7 @@ frame:SetScript("OnEvent", function(self, event, ...)
 		if ... then
 			frame:UnregisterEvent("ADDON_LOADED")
 			tooltip:HookScript("OnTooltipSetUnit", function()
-				if InCombatLockdown() and InCombatLockdown() == 1 then return end
+				if InCombatLockdown() then return end
 				if AchievementFrame and AchievementFrame:IsShown() then return end
 
 				self.unit = select(2, tooltip:GetUnit())
