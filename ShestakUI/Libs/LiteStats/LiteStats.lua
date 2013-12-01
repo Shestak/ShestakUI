@@ -453,7 +453,7 @@ if durability.enabled then
 				else
 					for i = 1, GetNumEquipmentSets() do
 						local name, icon = GetEquipmentSetInfo(i)
-						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon, name), notCheckable = 1, func = function() UseEquipmentSet(name) end})
+						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon, name), notCheckable = 1, func = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end UseEquipmentSet(name) end})
 					end
 				end
 				EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU")
