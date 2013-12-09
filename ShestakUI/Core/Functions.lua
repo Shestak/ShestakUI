@@ -350,7 +350,7 @@ function T.SkinCheckBox(frame)
 	end
 
 	frame:HookScript("OnDisable", function(self)
-		if not self.SetDisabledTexture then return; end
+		if not self.SetDisabledTexture then return end
 		if self:GetChecked() then
 			self:SetDisabledTexture(disabled)
 		else
