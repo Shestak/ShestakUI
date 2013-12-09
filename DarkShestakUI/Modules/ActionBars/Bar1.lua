@@ -7,6 +7,19 @@ if C.actionbar.enable ~= true then return end
 local bar = CreateFrame("Frame", "Bar1Holder", ActionBarAnchor, "SecureHandlerStateTemplate")
 bar:SetAllPoints(ActionBarAnchor)
 
+for i = 1, 12 do
+	local button = _G["ActionButton"..i]
+	button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+	button:ClearAllPoints()
+	button:SetParent(Bar1Holder)
+	if i == 1 then
+		button:SetPoint("BOTTOMLEFT", Bar1Holder, 0, 0)
+	else
+		local previous = _G["ActionButton"..i-1]
+		button:SetPoint("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
+	end
+end
+
 local Page = {
 	["DRUID"] = "[bonusbar:1,nostealth] 7; [bonusbar:1,stealth] 8; [bonusbar:2] 8; [bonusbar:3] 9; [bonusbar:4] 10;",
 	["PRIEST"] = "[bonusbar:1] 7;",
@@ -28,7 +41,6 @@ local function GetBar()
 end
 
 bar:RegisterEvent("PLAYER_LOGIN")
-bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 bar:RegisterEvent("KNOWN_CURRENCY_TYPES_UPDATE")
 bar:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
 bar:RegisterEvent("BAG_UPDATE")
@@ -54,19 +66,6 @@ bar:SetScript("OnEvent", function(self, event, ...)
 		]])
 
 		RegisterStateDriver(self, "page", GetBar())
-	elseif event == "PLAYER_ENTERING_WORLD" then
-		for i = 1, 12 do
-			local button = _G["ActionButton"..i]
-			button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
-			button:ClearAllPoints()
-			button:SetParent(Bar1Holder)
-			if i == 1 then
-				button:SetPoint("BOTTOMLEFT", Bar1Holder, 0, 0)
-			else
-				local previous = _G["ActionButton"..i-1]
-				button:SetPoint("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
-			end
-		end
 	else
 		MainMenuBar_OnEvent(self, event, ...)
 	end

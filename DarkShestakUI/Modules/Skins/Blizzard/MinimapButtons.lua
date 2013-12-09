@@ -14,7 +14,7 @@ local buttons = {
 }
 
 local function SkinButton(f)
-	if f:GetObjectType() ~= "Button" then return end
+	if not f or f:GetObjectType() ~= "Button" then return end
 
 	for i, buttons in pairs(buttons) do
 		if f:GetName() ~= nil then
