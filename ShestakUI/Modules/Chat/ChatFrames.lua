@@ -285,6 +285,14 @@ function FCFManager_GetNumDedicatedFrames(...)
 	return select(1, ...) ~= "PET_BATTLE_COMBAT_LOG" and old(...) or 1
 end
 
+-- Remove player's realm name
+local function RemoveRealmName(self, event, msg, author, ...)
+	if msg:find("-" .. T.realm) then
+		return false, gsub(msg, "%-"..T.realm, ""), author, ...
+	end
+end
+ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", RemoveRealmName)
+
 ----------------------------------------------------------------------------------------
 --	Save slash command typo
 ----------------------------------------------------------------------------------------
