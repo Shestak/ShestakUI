@@ -214,8 +214,7 @@ local function update()
 				end
 			else
 				local name, rank, rankIndex, level, _, zone, _, _, _, isAway, classFileName, _, _, isMobile = GetGuildRosterInfo(button.guildIndex)
-				local shortName, realm = string.split("-", name)
-				name = shortName
+				name = string.gsub(name, "-.*", "")
 				local displayedName = classColor[classFileName]..name
 				if isMobile then
 					if isAway == 1 then
