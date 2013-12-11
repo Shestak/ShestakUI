@@ -3,8 +3,6 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Fix IsDisabledByParentalControls() taint
 ----------------------------------------------------------------------------------------
-setfenv(WorldMapFrame_OnShow, setmetatable({UpdateMicroButtons = function() end}, {__index = _G}))
-setfenv(FriendsFrame_OnShow, setmetatable({UpdateMicroButtons = function() end}, {__index = _G}))
 FCF_StartAlertFlash = T.dummy
 
 ----------------------------------------------------------------------------------------
