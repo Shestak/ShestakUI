@@ -866,6 +866,7 @@ if guild.enabled then
 		OnClick = function(self, b)
 			if b == "LeftButton" then
 				ToggleGuildFrame()
+				GuildFrame_TabClicked(GuildFrameTab2)
 			elseif b == "MiddleButton" and IsInGuild() then
 				local s = CURRENT_GUILD_SORTING
 				SortGuildRoster(IsShiftKeyDown() and s or (IsAltKeyDown() and (s == "rank" and "note" or "rank") or s == "class" and "name" or s == "name" and "level" or s == "level" and "zone" or "class"))
