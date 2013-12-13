@@ -78,7 +78,7 @@
 	</Frame>
 
 	<!-- MT/MTT/MTTT Template -->
-	<Button name="oUF_MainTank" inherits="SecureUnitButtonTemplate" hidden="true" virtual="true">
+	<Button name="oUF_MainTank" inherits="SecureUnitButtonTemplate" virtual="true">
 		<Frames>
 			<Button name="$parentTarget" inherits="SecureUnitButtonTemplate">
 				<Anchors>
@@ -97,7 +97,7 @@
 			</Button>
 		</Frames>
 	</Button>
-	<Button name="oUF_MainTankTT" inherits="SecureUnitButtonTemplate" hidden="true" virtual="true">
+	<Button name="oUF_MainTankTT" inherits="SecureUnitButtonTemplate" virtual="true">
 		<Frames>
 			<Button name="$parentTarget" inherits="SecureUnitButtonTemplate">
 				<Anchors>

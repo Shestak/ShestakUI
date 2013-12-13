@@ -2,7 +2,7 @@
 ## Title: |cff1784d1Dark ShestakUI Filger|r
 ## Notes: Class timers for ShestakUI
 ## Author: Nils Ruesch
-## Version: 0.84
+## Version: 0.85
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: DarkShestakUI
