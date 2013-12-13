@@ -186,15 +186,9 @@ Butsu:SetToplevel(true)
 Butsu:SetFrameLevel(10)
 
 local close = CreateFrame("Button", "LootCloseButton", Butsu, "UIPanelCloseButton")
-if C.skins.blizzard_frames == true then
-	T.SkinCloseButton(close, nil, nil, true)
-	close:SetWidth(14)
-	close:SetHeight(14)
-else
-	close:SetWidth(25)
-	close:SetHeight(25)
-	close:SetPoint("TOPRIGHT", 0, 1)
-end
+T.SkinCloseButton(close, nil, nil, true)
+close:SetWidth(14)
+close:SetHeight(14)
 close:SetScript("OnClick", function() CloseLoot() end)
 
 ----------------------------------------------------------------------------------------
@@ -263,14 +257,9 @@ local function LDD_Initialize()
 	info = nil
 end
 
-if C.skins.blizzard_frames == true then
-	T.SkinCloseButton(lb, LootCloseButton, "-", true)
-	lb:SetWidth(14)
-	lb:SetHeight(14)
-else
-	lb:SetWidth(15)
-	lb:SetHeight(13)
-end
+T.SkinCloseButton(lb, LootCloseButton, "-", true)
+lb:SetWidth(14)
+lb:SetHeight(14)
 lb:ClearAllPoints()
 lb:SetPoint("BOTTOMRIGHT", Butsu, "TOPRIGHT", -21, -18)
 lb:SetFrameStrata("DIALOG")
