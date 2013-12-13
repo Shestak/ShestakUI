@@ -10,18 +10,18 @@ local realmLocal = string.sub(GetCVar("realmList"), 1, 2)
 local link
 
 local function urlencode(obj)
-	local currentIndex = 1;
+	local currentIndex = 1
 	local charArray = {}
 	while currentIndex <= #obj do
-		local char = string.byte(obj, currentIndex);
+		local char = string.byte(obj, currentIndex)
 		charArray[currentIndex] = char
 		currentIndex = currentIndex + 1
 	end
-	local converchar = "";
+	local converchar = ""
 	for _, char in ipairs(charArray) do
 		converchar = converchar..string.format("%%%X", char)
 	end
-	return converchar;
+	return converchar
 end
 
 realmName = realmName:gsub("'", "")

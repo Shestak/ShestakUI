@@ -202,7 +202,7 @@ local function update()
 	for i, button in ipairs(buttons) do
 		if button:IsShown() and button.online and button.guildIndex then
 			if _VIEW == "tradeskill" then
-				local _, _, _, headerName, _, _, _, playerName, _, _, zone, _, classFileName, isMobile = GetGuildTradeSkillInfo(button.guildIndex)
+				local _, _, _, headerName, _, _, playerName, _, _, _, zone, _, classFileName, isMobile = GetGuildTradeSkillInfo(button.guildIndex)
 				if not headerName and playerName then
 					local c = classColorRaw[classFileName]
 					button.string1:SetTextColor(c.r, c.g, c.b)
@@ -214,6 +214,7 @@ local function update()
 				end
 			else
 				local name, rank, rankIndex, level, _, zone, _, _, _, isAway, classFileName, _, _, isMobile = GetGuildRosterInfo(button.guildIndex)
+				name = string.gsub(name, "-.*", "")
 				local displayedName = classColor[classFileName]..name
 				if isMobile then
 					if isAway == 1 then

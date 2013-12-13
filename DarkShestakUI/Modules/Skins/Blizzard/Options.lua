@@ -65,6 +65,7 @@ local function LoadSkin()
 	local checkboxes = {
 		"Advanced_MaxFPSCheckBox",
 		"Advanced_MaxFPSBKCheckBox",
+		"Advanced_DesktopGamma",
 		"AudioOptionsSoundPanelEnableSound",
 		"AudioOptionsSoundPanelSoundEffects",
 		"AudioOptionsSoundPanelErrorSpeech",
@@ -83,7 +84,7 @@ local function LoadSkin()
 		"AudioOptionsVoicePanelPushToTalkSound",
 		"NetworkOptionsPanelOptimizeSpeed",
 		"NetworkOptionsPanelUseIPv6",
-		"Advanced_DesktopGamma"
+		"NetworkOptionsPanelAdvancedCombatLogging"
 	}
 
 	for i = 1, getn(checkboxes) do

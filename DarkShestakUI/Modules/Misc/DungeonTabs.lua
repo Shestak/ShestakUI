@@ -70,7 +70,7 @@ local function STHookFrame(fname)
 	local prevtab
 	local frametabs = {}
 
-	-- PVP tab
+	-- PvP tab
 	frametabs["PVPUIFrame"] = CreateFrame("CheckButton", "PVPSideTab", frame, "SpellBookSkillLineTabTemplate")
 	SkinTab(frametabs["PVPUIFrame"], "Interface\\BattlefieldFrame\\UI-Battlefield-Icon")
 	if IsAddOnLoaded("Aurora") then
