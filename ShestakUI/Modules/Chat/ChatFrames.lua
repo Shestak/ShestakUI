@@ -287,8 +287,9 @@ end
 
 -- Remove player's realm name
 local function RemoveRealmName(self, event, msg, author, ...)
-	if msg:find("-" .. T.realm) then
-		return false, gsub(msg, "%-"..T.realm, ""), author, ...
+	local realm = string.gsub(T.realm, " ", "")
+	if msg:find("-" .. realm) then
+		return false, gsub(msg, "%-"..realm, ""), author, ...
 	end
 end
 ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", RemoveRealmName)
