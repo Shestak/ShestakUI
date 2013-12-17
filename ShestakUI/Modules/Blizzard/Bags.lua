@@ -1235,7 +1235,7 @@ function Stuffing:Restack()
 			if clink then
 				local n, _, _, _, _, _, _, s = GetItemInfo(clink)
 
-				if cnt ~= s then
+				if n and cnt ~= s then
 					if not st[n] then
 						st[n] = {{item = v, size = cnt, max = s}}
 					else
