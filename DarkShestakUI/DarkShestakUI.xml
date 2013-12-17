@@ -217,6 +217,7 @@
 	<Script file="Modules\Skins\DXE.lua"/>
 	<Script file="Modules\Skins\FaceShooter.lua"/>
 	<Script file="Modules\Skins\FlyoutButtonCustom.lua"/>
+	<Script file="Modules\Skins\Gnosis.lua"/>
 	<Script file="Modules\Skins\MageNuggets.lua"/>
 	<Script file="Modules\Skins\MyRolePlay.lua"/>
 	<Script file="Modules\Skins\NPCScan.lua"/>
