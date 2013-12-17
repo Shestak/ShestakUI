@@ -144,6 +144,7 @@ C["skins"] = {
 	["weak_auras"] = false,						-- WeakAuras skin
 	["skada"] = false,							-- Skada skin
 	["my_role_play"] = false,					-- MyRolePlay skin
+	["gnosis"] = false,							-- Gnosis skin
 }
 
 ----------------------------------------------------------------------------------------
