@@ -10,7 +10,7 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 	if not UnitInRaid(srcName) and not UnitInParty(srcName) then return end
 
 	local srcName = format(srcName:gsub("%-[^|]+", ""))
-	if subEvent == "SPELL_CAST_START" then
+	if subEvent == "SPELL_CAST_SUCCESS" then
 		-- Feasts
 		if C.announcements.feasts and (spellID == 126492 or spellID == 126494) then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_STAT, srcName, GetSpellLink(spellID), SPELL_STAT1_NAME), T.CheckChat(true))
@@ -27,6 +27,12 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 		-- Refreshment Table
 		elseif C.announcements.feasts and spellID == 43987 then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PRE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
+		-- Ritual of Summoning
+		elseif C.announcements.portals and spellID == 698 then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_CLICK, srcName, GetSpellLink(spellID)), T.CheckChat(true))
+		-- Piccolo of the Flaming Fire
+		elseif C.announcements.toys and spellID == 18400 then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_USE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
 		end
 	elseif subEvent == "SPELL_SUMMON" then
 		-- Repair Bots
@@ -43,15 +49,6 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 		-- Portals
 		elseif C.announcements.portals and T.AnnouncePortals[spellID] then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_CAST, srcName, GetSpellLink(spellID)), T.CheckChat(true))
-		end
-	elseif subEvent == "SPELL_CAST_SUCCESS" then
-		-- Ritual of Summoning
-		if C.announcements.portals and spellID == 698 then
-			SendChatMessage(string.format(L_ANNOUNCE_FP_CLICK, srcName, GetSpellLink(spellID)), T.CheckChat(true))
-		end
-		-- Piccolo of the Flaming Fire
-		if C.announcements.toys and spellID == 18400 then
-			SendChatMessage(string.format(L_ANNOUNCE_FP_USE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
 		end
 	elseif subEvent == "SPELL_AURA_APPLIED" then
 		-- Turkey Feathers and Party G.R.E.N.A.D.E.
