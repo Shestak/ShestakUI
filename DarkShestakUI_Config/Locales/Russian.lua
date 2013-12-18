@@ -111,6 +111,7 @@ L_GUI_SKINS_VANASKOS = "Стилизация VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "Стилизация WeakAuras"
 L_GUI_SKINS_SKADA = "Стилизация Skada"
 L_GUI_SKINS_MY_ROLE_PLAY = "Стилизация MyRolePlay"
+L_GUI_SKINS_GNOSIS = "Стилизация Gnosis"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"

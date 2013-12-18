@@ -111,6 +111,7 @@ L_GUI_SKINS_VANASKOS = "開啟VanasKoS樣式增強"
 L_GUI_SKINS_WEAK_AURAS = "開啟WeakAuras樣式增強"
 L_GUI_SKINS_SKADA = "開啟Skada樣式增強"
 L_GUI_SKINS_MY_ROLE_PLAY = "開啟MyRolePlay樣式增強"
+L_GUI_SKINS_GNOSIS = "Enable styling Gnosis" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"

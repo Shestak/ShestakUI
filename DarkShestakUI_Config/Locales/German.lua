@@ -111,6 +111,7 @@ L_GUI_SKINS_VANASKOS = "VanasKoS Design aktivieren"
 L_GUI_SKINS_WEAK_AURAS = "WeakAuras Design aktivieren"
 L_GUI_SKINS_SKADA = "Skada Design aktivieren"
 L_GUI_SKINS_MY_ROLE_PLAY = "MyRolePlay Design aktivieren"
+L_GUI_SKINS_GNOSIS = "Enable styling Gnosis" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Kampftext"

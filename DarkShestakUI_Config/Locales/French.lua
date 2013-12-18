@@ -111,6 +111,7 @@ L_GUI_SKINS_VANASKOS = "Activer la personnalisation pour VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "Activer la personnalisation pour WeakAuras"
 L_GUI_SKINS_SKADA = "Activer la personnalisation pour Skada"
 L_GUI_SKINS_MY_ROLE_PLAY = "Activer la personnalisation pour MyRolePlay"
+L_GUI_SKINS_GNOSIS = "Enable styling Gnosis" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"

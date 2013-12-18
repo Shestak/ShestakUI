@@ -111,6 +111,7 @@ L_GUI_SKINS_VANASKOS = "Attiva il restyling di VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "Attiva il restyling di WeakAuras"
 L_GUI_SKINS_SKADA = "Attiva il restyling di Skada"
 L_GUI_SKINS_MY_ROLE_PLAY = "Attiva il restyling di MyRolePlay"
+L_GUI_SKINS_GNOSIS = "Enable styling Gnosis" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"

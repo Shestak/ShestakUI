@@ -300,6 +300,7 @@ L_POPUP_SETTINGS_DXE = "需要改变DXE描点及风格化元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs描点及风格化元素."
 L_POPUP_ARMORY = "英雄榜"
 L_POPUP_CURRENCY_CAP = "你拥有的最高级货币为"
+L_POPUP_SETTINGS_GNOSIS = "Need to change the position of elements Gnosis." -- Need review
 
 -- Welcome message
 L_WELCOME_LINE_1 = "欢迎使用Dark ShestakUI "

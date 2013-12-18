@@ -296,6 +296,7 @@ L_POPUP_SETTINGS_DXE = "Need to change the position of elements DXE."
 L_POPUP_SETTINGS_BW = "Need to change the position of elements BigWigs."
 L_POPUP_ARMORY = "Armory"
 L_POPUP_CURRENCY_CAP = "You get maximum value of"
+L_POPUP_SETTINGS_GNOSIS = "Need to change the position of elements Gnosis."
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Welcome to Dark ShestakUI "
