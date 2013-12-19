@@ -141,6 +141,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		local BlizzardButtons = {
 			"GameMenuButtonOptions",
 			"GameMenuButtonHelp",
+			"GameMenuButtonStore",
 			"GameMenuButtonUIOptions",
 			"GameMenuButtonKeybindings",
 			"GameMenuButtonMacros",
