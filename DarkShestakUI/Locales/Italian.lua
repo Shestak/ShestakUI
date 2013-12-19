@@ -20,6 +20,13 @@ L_INSTALL_STEP3_CLASS = "Colore della classe" -- Need review
 L_INSTALL_STEP4 = "Congratulazione!\nL'installazione è stata completata con successo: devi ricaricare la UI." -- Need review
 L_INSTALL_STEP4_RELOAD = "Ricarica" -- Need review
 
+-- Chat channels
+L_CHAT_GENERAL = "Generale"
+L_CHAT_TRADE = "Commercio"
+L_CHAT_DEFENSE = "DifesaLocale"
+L_CHAT_RECRUTMENT = "CercaGilda"
+L_CHAT_LFG = "CercaGruppo"
+
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " ha usato il mio Pozzo di Luce. "
 L_ANNOUNCE_LA_CHARGE = " carica (cariche)"

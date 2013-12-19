@@ -16,6 +16,13 @@ L_INSTALL_STEP3_CLASS = "Classcolor"
 L_INSTALL_STEP4 = "Congratulations!\nInstallation completed successfully, you must reload UI."
 L_INSTALL_STEP4_RELOAD = "Reload"
 
+-- Chat channels
+L_CHAT_GENERAL = "General"
+L_CHAT_TRADE = "Trade"
+L_CHAT_DEFENSE = "LocalDefense"
+L_CHAT_RECRUTMENT = "GuildRecruitment"
+L_CHAT_LFG = "LookingForGroup"
+
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " used my lightwell. "
 L_ANNOUNCE_LA_CHARGE = " charge(s))"

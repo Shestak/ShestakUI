@@ -20,6 +20,13 @@ L_INSTALL_STEP3_CLASS = "Цвет класса"
 L_INSTALL_STEP4 = "Поздравляю!\nУстановка успешно завершена, необходимо перезагрузить интерфейс."
 L_INSTALL_STEP4_RELOAD = "Перезагрузить"
 
+-- Chat channels
+L_CHAT_GENERAL = "Общий"
+L_CHAT_TRADE = "Торговля"
+L_CHAT_DEFENSE = "ОборонаЛокальный"
+L_CHAT_RECRUTMENT = "Гильдии"
+L_CHAT_LFG = "ПоискСпутников"
+
 -- Announce your Lightwell
 L_ANNOUNCE_LA_USE = " выпил из моего колодца. "
 L_ANNOUNCE_LA_CHARGE = " заряд(ов))"
