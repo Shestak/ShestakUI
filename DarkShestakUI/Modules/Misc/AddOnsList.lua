@@ -481,12 +481,15 @@ SLASH_ADDONMANAGER2 = "/фдщфв"
 local gmbAddOns = CreateFrame("Button", "GameMenuButtonAddonManager", GameMenuFrame, "GameMenuButtonTemplate")
 gmbAddOns:SetText(ADDONS)
 gmbAddOns:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -1)
-GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + gmbAddOns:GetHeight())
-if IsMacClient() then
-	GameMenuButtonMacOptions:SetPoint("TOP", gmbAddOns, "BOTTOM", 0, -1)
-else
-	GameMenuButtonUIOptions:SetPoint("TOP", gmbAddOns, "BOTTOM", 0, -1)
-end
+
+GameMenuFrame:HookScript("OnShow", function()
+	GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + gmbAddOns:GetHeight())
+	if IsMacClient() then
+		GameMenuButtonMacOptions:SetPoint("TOP", gmbAddOns, "BOTTOM", 0, -1)
+	else
+		GameMenuButtonUIOptions:SetPoint("TOP", gmbAddOns, "BOTTOM", 0, -1)
+	end
+end)
 
 gmbAddOns:SetScript("OnClick", function()
 	PlaySound("igMainMenuOption")
@@ -499,12 +502,14 @@ local guib = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "G
 guib:SetText("Dark ShestakUI")
 guib:SetPoint("TOP", "GameMenuButtonOptions", "BOTTOM", 0, -23)
 
-GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + guib:GetHeight())
-if IsMacClient() then
-	GameMenuButtonMacOptions:SetPoint("TOP", guib, "BOTTOM", 0, -1)
-else
-	GameMenuButtonUIOptions:SetPoint("TOP", guib, "BOTTOM", 0, -1)
-end
+GameMenuFrame:HookScript("OnShow", function()
+	GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + guib:GetHeight())
+	if IsMacClient() then
+		GameMenuButtonMacOptions:SetPoint("TOP", guib, "BOTTOM", 0, -1)
+	else
+		GameMenuButtonUIOptions:SetPoint("TOP", guib, "BOTTOM", 0, -1)
+	end
+end)
 
 guib:SetScript("OnClick", function()
 	PlaySound("igMainMenuOption")
