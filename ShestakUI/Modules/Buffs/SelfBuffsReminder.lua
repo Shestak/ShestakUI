@@ -130,7 +130,7 @@ local function OnEvent(self, event, arg1, arg2)
 
 	if not group.weapon then
 		if ((combat and UnitAffectingCombat("player")) or (instance and difficultyID ~= 0) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and
-		specpass == true and rolepass == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
+		specpass == true and rolepass == true and not UnitInVehicle("player") then
 			for _, buff in pairs(group.spells) do
 				local name = GetSpellInfo(buff)
 				local _, _, icon, _, _, _, _, unitCaster = UnitBuff("player", name)
@@ -149,7 +149,7 @@ local function OnEvent(self, event, arg1, arg2)
 			self:Show()
 			if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
 		elseif ((combat and UnitAffectingCombat("player")) or (instance and difficultyID ~= 0)) and
-		reversecheck == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
+		reversecheck == true and not UnitInVehicle("player") then
 			if negate_reversecheck and negate_reversecheck == GetSpecialization() then self:Hide() return end
 			for _, buff in pairs(group.spells) do
 				local name = GetSpellInfo(buff)
@@ -165,7 +165,7 @@ local function OnEvent(self, event, arg1, arg2)
 		end
 	else
 		if ((combat and UnitAffectingCombat("player")) or (instance and difficultyID ~= 0) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and
-		specpass == true and rolepass == true and not (UnitInVehicle("player") and self.icon:GetTexture()) then
+		specpass == true and rolepass == true and not UnitInVehicle("player") then
 			if hasOffhandWeapon == nil then
 				if hasMainHandEnchant == nil then
 					self:Show()
