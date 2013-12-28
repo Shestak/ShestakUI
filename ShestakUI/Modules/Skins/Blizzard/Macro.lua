@@ -76,7 +76,7 @@ local function LoadSkin()
 
 	-- Big icon
 	MacroFrameSelectedMacroButton:StripTextures()
-	MacroFrameSelectedMacroButton:StyleButton()
+	MacroFrameSelectedMacroButton:StyleButton(true)
 	MacroFrameSelectedMacroButton:GetNormalTexture():SetTexture(nil)
 	MacroFrameSelectedMacroButton:SetTemplate("Default")
 	MacroFrameSelectedMacroButtonIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -97,7 +97,7 @@ local function LoadSkin()
 
 		if b then
 			b:StripTextures()
-			b:StyleButton()
+			b:StyleButton(true)
 			b:SetTemplate("Default")
 		end
 
@@ -110,7 +110,7 @@ local function LoadSkin()
 
 		if pb then
 			pb:StripTextures()
-			pb:StyleButton()
+			pb:StyleButton(true)
 			pb:SetTemplate("Default")
 		end
 
