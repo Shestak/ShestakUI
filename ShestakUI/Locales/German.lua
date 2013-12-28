@@ -276,7 +276,7 @@ L_INFO_SKIN_DISABLED2 = " ist ausgeschaltet."
 L_POPUP_INSTALLUI = "Dies ist Ihre erste Benutzung von ShestakUI mit diesem Charakter. Um das Interface zu konfigurieren, wird das UI nun neugeladen."
 L_POPUP_RESETUI = "Sind Sie sich sicher, dass Sie die Einstellungen von ShestakUI zurückgesetzen wollen?"
 L_POPUP_RESETSTATS = "Bist du sicher das du die Gold und verbrachte Zeit Statistik zurücksetzen möchtest?"
-L_POPUP_SWITCH_RAID = "Select Raid layout." -- Needs review
+L_POPUP_SWITCH_RAID = "Wähle Raid Layout."
 L_POPUP_DISBAND_RAID = "Bist du dir sicher, dass du die Gruppe auflösen möchtest?"
 L_POPUP_DISABLEUI = "ShestakUI funktioniert nicht mit deiner Auflösung, möchtest du ShestakUI ausschalten? (Drücke Abbrechen, falls du eine andere Auflösung testen willst)"
 L_POPUP_SETTINGS_ALL = "Einstellungen für alle AddOns übernehmen? (DBM/DXE, Skada und MSBT)"
@@ -317,7 +317,7 @@ L_STATS_CLEARED_JUNK = "Junk-Ausnahmeliste gelöscht."
 L_STATS_CLEAR_EXCEPTIONS = "Ausnahmenliste löschen."
 L_STATS_WORLD_MAP = "Klicken, zum Öffnen der World-Map."
 L_STATS_CURRENT_XP = "Aktuell/Max XP"
-L_STATS_MEMORY_USAGE = "Blizzard UI Memory Usage:" -- Needs review
+L_STATS_MEMORY_USAGE = "Blizzard UI Speicher Auslastung:"
 L_STATS_GARBAGE_COLLECTED = "Abfall zusammengefasst"
 L_STATS_CHANGE_SORTING = "[Gilde] Rechts-Klick, zum Ändern der Sortierung und Umschalt-Rechts-Klick zum Umkehren der Reihenfolge."
 L_STATS_HIDDEN = "Versteckt"
@@ -373,36 +373,36 @@ L_STATS_TOOLTIP_EXPERIENCE = "Wenn unter dem max. Level, wird ein Tooltip mit we
 -- Slash commands
 L_SLASHCMD_HELP = {
 	"Available slash commands:",
-	"/rl - Reload interface.",
-	"/rc - Activates a ready check.",
-	"/gm - Opens GM frame.",
-	"/dis ADDON_NAME - Disable Addon.",
-	"/en ADDON_NAME - Enable Addon.",
-	"/rd - Disband party or raid.",
-	"/toraid - Convert to party or raid.",
-	"/teleport - Teleportation from random dungeon.",
-	"/spec, /ss - Switches between talent spec's.",
-	"/heal - Switches to 'Heal' layout.",
-	"/dps - Switches to 'DPS' layout.",
-	"/frame - Description is not ready.",
-	"/farmmode - Increase the size of the minimap.",
-	"/moveui - Allows the movement of interface elements.",
-	"/resetui - Resets general settings to default.",
-	"/resetuf - Resets the unit frames to their default position.",
-	"/resetconfig - Resets ShestakUI_Config settings.",
-	"/resetstats - Resets the statistics of gold and time spent.",
-	"/settings ADDON_NAME - Applies settings to msbt, dbm, skada, or all addons.",
-	"/ls, /litestats - Help for LiteStats.",
-	"/bags - Managing for bags.",
-	"/xct - Manage the combat text.",
-	"/raidcd - Raid cooldown test.",
-	"/enemycd - Enemy cooldown test.",
-	"/pulsecd - Self cooldown pulse test.",
-	"/threat - Threat meter test.",
-	"/tt - Whisper target.",
-	"/ainv - Enables automatic invitation.",
-	"/testuf - Unit frame test.",
-	"/cfg - Opens interface settings.",
+	"/rl - Interface neu laden.",
+	"/rc - Starte Bereitschaftscheck.",
+	"/gm - Öffne das Game Master Fenster.",
+	"/dis ADDON_NAME - Deaktiviere Addon.",
+	"/en ADDON_NAME - Aktiviere Addon.",
+	"/rd - Gruppe oder Schlachtzug auflösen.",
+	"/toraid - In Gruppe oder Schlachtzug umwandeln.",
+	"/teleport - Teleportation from random dungeon.", -- Needs review
+	"/spec, /ss - Zwischen den Talenten wechseln.",
+	"/heal - Zum Heiler Layout wechseln.",
+	"/dps - Zum DPS Layout wechseln.",
+	"/frame - Beschreibung nicht verfügbar.",
+	"/farmmode - Erhöht die Größe der Minimap.",
+	"/moveui - Ermöglicht das Bewegen der Interface Elemente.",
+	"/resetui - Zurücksetzen der allgemeinen Einstellungen auf die Standardwerte.",
+	"/resetuf - Zurücksetzen der Einheitenfenster auf die Standardposition.",
+	"/resetconfig - Zurücksetzen der ShestakUI_Config Einstellungen.",
+	"/resetstats - Gold Statistik und gespielte Zeit zurücksetzen.",
+	"/settings ADDON_NAME - Einstellungen für msbt, dbm, skada, oder alle Addons anwenden.",
+	"/ls, /litestats - Hilfe für LiteStats.",
+	"/bags - Taschen verwalten.",
+	"/xct - Kampflogtext verwalten.",
+	"/raidcd - Abklingzeiten für Schlachtzüge testen.",
+	"/enemycd - Gegnerische Abklingzeiten testen.",
+	"/pulsecd - Pulsierende Abklingzeiten testen.",
+	"/threat - Bedrohungsmeter testen.",
+	"/tt - Ziehl anflüstern.",
+	"/ainv - Automatisches Einladen aktivieren.",
+	"/testuf - Einheitenfenster testen.",
+	"/cfg - Interface Einstellungen öffnen.",
 }
 
 -- ExploreMap
