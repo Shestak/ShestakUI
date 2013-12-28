@@ -94,9 +94,6 @@ L_UF_GHOST = "Geist"
 L_UF_DEAD = "Tod"
 L_UF_OFFLINE = "Offline"
 L_UF_MANA = "Niedriges Mana"
-L_UF_TRINKET_READY = "Schmuckstück bereit: "
-L_UF_TRINKET_USED = "Schmuckstück benutzt: "
-L_UF_WOTF_USED = "WdV benutzt: "
 
 -- Map
 L_MAP_CURSOR = "Mauszeiger: "

@@ -94,9 +94,6 @@ L_UF_GHOST = "Fantôme"
 L_UF_DEAD = "Mort"
 L_UF_OFFLINE = "Hors ligne"
 L_UF_MANA = "Peu de mana"
-L_UF_TRINKET_READY = "Bijou Prêt : "
-L_UF_TRINKET_USED = "Bijou Utilisé : "
-L_UF_WOTF_USED = "Volonté des Réprouvés utilisé : "
 
 -- Map
 L_MAP_CURSOR = "Curseur : "

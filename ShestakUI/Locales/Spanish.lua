@@ -94,9 +94,6 @@ L_UF_GHOST = "Fantasma"
 L_UF_DEAD = "Muerto"
 L_UF_OFFLINE = "Desconectado"
 L_UF_MANA = "Mana bajo"
-L_UF_TRINKET_READY = "Abalorio listo: "
-L_UF_TRINKET_USED = "Abalorio usado: "
-L_UF_WOTF_USED = "WotF usado: "
 
 -- Map
 L_MAP_CURSOR = "Cursor: "

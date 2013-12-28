@@ -90,9 +90,6 @@ L_UF_GHOST = "Ghost"
 L_UF_DEAD = "Dead"
 L_UF_OFFLINE = "Offline"
 L_UF_MANA = "Low mana"
-L_UF_TRINKET_READY = "Trinket ready: "
-L_UF_TRINKET_USED = "Trinket used: "
-L_UF_WOTF_USED = "WotF used: "
 
 -- Map
 L_MAP_CURSOR = "Cursor: "

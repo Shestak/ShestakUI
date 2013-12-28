@@ -94,9 +94,6 @@ L_UF_GHOST = "靈魂"
 L_UF_DEAD = "死亡"
 L_UF_OFFLINE = "離線"
 L_UF_MANA = "低法力"
-L_UF_TRINKET_READY = "PVP飾品準備就緒: "
-L_UF_TRINKET_USED = "PVP飾品已使用: "
-L_UF_WOTF_USED = "亡靈意志已使用: "
 
 -- Map
 L_MAP_CURSOR = "鼠標: "

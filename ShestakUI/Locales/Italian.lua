@@ -94,9 +94,6 @@ L_UF_GHOST = "Spirito"
 L_UF_DEAD = "Morto"
 L_UF_OFFLINE = "Disconnesso"
 L_UF_MANA = "Poco mana"
-L_UF_TRINKET_READY = "Monile pronto all'uso: "
-L_UF_TRINKET_USED = "Monile utilizzato: "
-L_UF_WOTF_USED = "Volontà dei Reietti utilizzata: "
 
 -- Map
 L_MAP_CURSOR = "Cursore: "
