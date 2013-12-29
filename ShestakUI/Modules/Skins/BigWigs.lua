@@ -149,8 +149,8 @@ local function registerStyle()
 			GetStyleName = function() return "ShestakUI" end,
 		})
 	end
-	if prox and BigWigs.pluginCore.modules.Bars.db.profile.barStyle == "ShestakUI" then
-		hooksecurefunc(BigWigs.pluginCore.modules.Proximity, "RestyleWindow", function()
+	if prox and bars.db.profile.barStyle == "ShestakUI" then
+		hooksecurefunc(prox, "RestyleWindow", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
 		end)
 	end
@@ -163,7 +163,7 @@ f:SetScript("OnEvent", function(self, event, addon)
 			if BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.InstalledBars ~= C.actionbar.bottombars then
 				StaticPopup_Show("BW_TEST")
 			end
-			BigWigs.pluginCore.modules.Bars.db.profile.barStyle = "ShestakUI"
+			BigWigs:GetPlugin("Bars").db.profile.barStyle = "ShestakUI"
 			registerStyle()
 			f:UnregisterEvent("ADDON_LOADED")
 		end
@@ -179,27 +179,37 @@ StaticPopupDialogs.BW_TEST = {
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = function()
-		BigWigs.pluginCore.modules.Bars.db.profile.barStyle = "ShestakUI"
-		BigWigs.pluginCore.modules.Bars.db.profile.font = C.font.stylization_font
-		BigWigs.pluginCore.modules.Messages.db.profile.font = C.media.normal_font
-		BigWigs.pluginCore.modules.Messages.db.profile.outline = "OUTLINE"
-		BigWigs.pluginCore.modules.Proximity.db.profile.font = C.media.normal_font
-		BigWigs.pluginCore.modules.Proximity.db.profile.objects.ability = false
-		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_width = 185
-		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_x = 49
-		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsEmphasizeAnchor_width = 185
-		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsEmphasizeAnchor_x = 541
-		BigWigs.pluginCore.modules.Bars.db.profile.BigWigsEmphasizeAnchor_y = 493
-		BigWigs.pluginCore.modules.Messages.db.profile.fontSize = 30
-		BigWigs3IconDB.hide = true
-		if C.actionbar.bottombars == 1 then
-			BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_y = 150
-		elseif C.actionbar.bottombars == 2 then
-			BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_y = 177
-		elseif C.actionbar.bottombars == 3 then
-			BigWigs.pluginCore.modules.Bars.db.profile.BigWigsAnchor_y = 203
+		local bars = BigWigs and BigWigs:GetPlugin("Bars")
+		if bars then
+			bars.db.profile.barStyle = "ShestakUI"
+			bars.db.profile.font = C.font.stylization_font
+			bars.db.profile.BigWigsAnchor_width = 185
+			bars.db.profile.BigWigsAnchor_x = 49
+			bars.db.profile.BigWigsEmphasizeAnchor_width = 185
+			bars.db.profile.BigWigsEmphasizeAnchor_x = 541
+			bars.db.profile.BigWigsEmphasizeAnchor_y = 493
+			bars.db.profile.InstalledBars = C.actionbar.bottombars
+			if C.actionbar.bottombars == 1 then
+				bars.db.profile.BigWigsAnchor_y = 150
+			elseif C.actionbar.bottombars == 2 then
+				bars.db.profile.BigWigsAnchor_y = 177
+			elseif C.actionbar.bottombars == 3 then
+				bars.db.profile.BigWigsAnchor_y = 203
+			end
 		end
-		BigWigs.pluginCore.modules.Bars.db.profile.InstalledBars = C.actionbar.bottombars
+
+		local mess = BigWigs and BigWigs:GetPlugin("Messages")
+		if mess then
+			mess.db.profile.font = C.media.normal_font
+			mess.db.profile.outline = "OUTLINE"
+			mess.db.profile.fontSize = 30
+		end
+		local prox = BigWigs and BigWigs:GetPlugin("Proximity")
+		if prox then
+			prox.db.profile.font = C.media.normal_font
+			prox.db.profile.objects.ability = false
+		end
+		BigWigs3IconDB.hide = true
 		if InCombatLockdown() then
 			pr("|cffffff00"..ERR_NOT_IN_COMBAT.."|r")
 			pr("|cffffff00Reload your UI to apply skin.|r")
@@ -220,7 +230,7 @@ SlashCmdList.BWTEST = function(msg)
 		StaticPopup_Show("BW_TEST")
 	elseif msg == "test" then
 		SlashCmdList["BigWigs"]()
-		BigWigs.pluginCore.modules.Proximity.Test(BigWigs.pluginCore.modules.Proximity)
+		BigWigs:GetPlugin("Proximity").Test(BigWigs:GetPlugin("Proximity"))
 		HideUIPanel(InterfaceOptionsFrame)
 		BigWigs:Test()
 		BigWigs:Test()
