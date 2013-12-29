@@ -13,8 +13,8 @@ local function LoadSkin()
 
 	T.SkinCloseButton(TimeManagerFrameCloseButton, TimeManagerFrame.backdrop)
 
-	T.SkinDropDownBox(TimeManagerAlarmHourDropDown, 70)
-	T.SkinDropDownBox(TimeManagerAlarmMinuteDropDown, 70)
+	T.SkinDropDownBox(TimeManagerAlarmHourDropDown, 79)
+	T.SkinDropDownBox(TimeManagerAlarmMinuteDropDown, 79)
 	T.SkinDropDownBox(TimeManagerAlarmAMPMDropDown, 70)
 
 	T.SkinEditBox(TimeManagerAlarmMessageEditBox)
