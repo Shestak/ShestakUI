@@ -25,7 +25,7 @@ local function LoadSkin()
 	T.SkinCheckBox(TimeManagerLocalTimeCheck)
 
 	TimeManagerStopwatchFrame:StripTextures()
-	TimeManagerStopwatchCheck:StyleButton()
+	TimeManagerStopwatchCheck:StyleButton(true)
 	TimeManagerStopwatchCheck:SetTemplate("Default")
 	TimeManagerStopwatchCheck:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	TimeManagerStopwatchCheck:GetNormalTexture():ClearAllPoints()

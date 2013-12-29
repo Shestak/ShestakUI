@@ -601,11 +601,13 @@ if clock.enabled then
 		OnEvent = function(self) if self.hovered then self:GetScript("OnEnter")(self) end end,
 		OnEnter = function(self)
 			if not self.hovered then RequestRaidInfo() self.hovered = true end
+			local weekday = select(date"%w"+1,CalendarGetWeekdayNames())
+			local month = select(date"%m",CalendarGetMonthNames())
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(date"%A, %B %d %Y", tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(format("%s, %s %s", weekday, month, date"%d %Y"), tthead.r, tthead.g, tthead.b)
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME, ":", ""), zsub(GameTime_GetLocalTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME, ":", ""), zsub(GameTime_GetGameTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
