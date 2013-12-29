@@ -133,8 +133,6 @@ local applystyle = function(bar)
 	bar.candyBarIconFrame:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 end
 
-local f = CreateFrame("Frame")
-
 local function registerStyle()
 	if not BigWigs then return end
 	local bars = BigWigs:GetPlugin("Bars", true)
@@ -156,6 +154,7 @@ local function registerStyle()
 	end
 end
 
+local f = CreateFrame("Frame")
 f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(self, event, addon)
 	if event == "ADDON_LOADED" then
@@ -170,10 +169,6 @@ f:SetScript("OnEvent", function(self, event, addon)
 	end
 end)
 
-local pr = function(msg)
-	print(tostring(msg))
-end
-
 StaticPopupDialogs.BW_TEST = {
 	text = L_POPUP_SETTINGS_BW,
 	button1 = ACCEPT,
@@ -184,25 +179,29 @@ StaticPopupDialogs.BW_TEST = {
 			bars.db.profile.barStyle = "ShestakUI"
 			bars.db.profile.font = C.font.stylization_font
 			bars.db.profile.BigWigsAnchor_width = 185
-			bars.db.profile.BigWigsAnchor_x = 49
+			bars.db.profile.BigWigsAnchor_x = 38
 			bars.db.profile.BigWigsEmphasizeAnchor_width = 185
-			bars.db.profile.BigWigsEmphasizeAnchor_x = 541
-			bars.db.profile.BigWigsEmphasizeAnchor_y = 493
+			bars.db.profile.BigWigsEmphasizeAnchor_x = 420
+			bars.db.profile.BigWigsEmphasizeAnchor_y = 248
 			bars.db.profile.InstalledBars = C.actionbar.bottombars
 			if C.actionbar.bottombars == 1 then
-				bars.db.profile.BigWigsAnchor_y = 150
+				bars.db.profile.BigWigsAnchor_y = 116
 			elseif C.actionbar.bottombars == 2 then
-				bars.db.profile.BigWigsAnchor_y = 177
+				bars.db.profile.BigWigsAnchor_y = 138
 			elseif C.actionbar.bottombars == 3 then
-				bars.db.profile.BigWigsAnchor_y = 203
+				bars.db.profile.BigWigsAnchor_y = 159
 			end
 		end
-
 		local mess = BigWigs and BigWigs:GetPlugin("Messages")
 		if mess then
 			mess.db.profile.font = C.media.normal_font
-			mess.db.profile.outline = "OUTLINE"
-			mess.db.profile.fontSize = 30
+			mess.db.profile.fontSize = 20
+			mess.db.profile.BWMessageAnchor_x = 415
+			mess.db.profile.BWMessageAnchor_y = 320
+			mess.db.profile.BWEmphasizeMessageAnchor_x = 415
+			mess.db.profile.BWEmphasizeMessageAnchor_y = 335
+			mess.db.profile.BWEmphasizeCountdownMessageAnchor_x = 465
+			mess.db.profile.BWEmphasizeCountdownMessageAnchor_y = 370
 		end
 		local prox = BigWigs and BigWigs:GetPlugin("Proximity")
 		if prox then
@@ -211,8 +210,8 @@ StaticPopupDialogs.BW_TEST = {
 		end
 		BigWigs3IconDB.hide = true
 		if InCombatLockdown() then
-			pr("|cffffff00"..ERR_NOT_IN_COMBAT.."|r")
-			pr("|cffffff00Reload your UI to apply skin.|r")
+			print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r")
+			print("|cffffff00Reload your UI to apply skin.|r")
 		else
 			ReloadUI()
 		end
@@ -238,8 +237,8 @@ SlashCmdList.BWTEST = function(msg)
 		BigWigs:Test()
 		BigWigs:Test()
 	else
-		pr("|cffffff00Type /bwtest apply to apply BigWigs settings.|r")
-		pr("|cffffff00Type /bwtest test to launch BigWigs testmode.|r")
+		print("|cffffff00Type /bwtest apply to apply BigWigs settings.|r")
+		print("|cffffff00Type /bwtest test to launch BigWigs testmode.|r")
 	end
 end
 SLASH_BWTEST1 = "/bwtest"
