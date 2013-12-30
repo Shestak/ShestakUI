@@ -31,7 +31,7 @@ local function OnEvent(self, event, arg1, arg2)
 		for _, buff in pairs(group.spells) do
 			local name, _, icon = GetSpellInfo(buff)
 			local usable, nomana = IsUsableSpell(name)
-			if usable or nomana then
+			if usable or nomana or group.level then
 				self.icon:SetTexture(icon)
 				break
 			end
