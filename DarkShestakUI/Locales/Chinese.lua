@@ -116,9 +116,6 @@ L_UF_GHOST = "灵魂"
 L_UF_DEAD = "死亡"
 L_UF_OFFLINE = "离线"
 L_UF_MANA = "低法力值"
-L_UF_TRINKET_READY = "饰品准备: "
-L_UF_TRINKET_USED = "饰品使用: "
-L_UF_WOTF_USED = "被遗忘者的意志使用: "
 
 -- Map
 L_MAP_CURSOR = "指针: "

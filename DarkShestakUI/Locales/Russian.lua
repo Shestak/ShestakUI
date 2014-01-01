@@ -116,9 +116,6 @@ L_UF_GHOST = "Призрак"
 L_UF_DEAD = "Мёртв"
 L_UF_OFFLINE = "Не в сети"
 L_UF_MANA = "Мало маны"
-L_UF_TRINKET_READY = "Аксессуар готов: "
-L_UF_TRINKET_USED = "Аксессуар задействован: "
-L_UF_WOTF_USED = "WotF задействован: "
 
 -- Map
 L_MAP_CURSOR = "Курсор: "

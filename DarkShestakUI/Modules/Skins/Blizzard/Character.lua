@@ -169,7 +169,7 @@ local function LoadSkin()
 
 			if button then
 				button:StripTextures()
-				button:StyleButton()
+				button:StyleButton(true)
 
 				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				_G["GearManagerDialogPopupButton"..i.."Icon"]:SetTexture(nil)

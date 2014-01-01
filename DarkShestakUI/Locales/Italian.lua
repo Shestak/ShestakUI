@@ -6,19 +6,19 @@ if T.client ~= "itIT" then return end
 --	Translation: Oz
 ----------------------------------------------------------------------------------------
 -- Installation
-L_INSTALL_WELCOME = "Benvenuto/a al Dark ShestakUI Setup Wizard: procederemo con alcuni imporatanti passaggi d'installazione. Premi " -- Need review
-L_INSTALL_CONFIG = "Per un'installazione completa si consiglia di caricare Dark ShestakUI Config.\nIn caso contrario, alcuni passaggi dell'installazione saranno saltati." -- Need review
-L_INSTALL_STEP1 = "Salvatggio impostazioni per:" -- Need review
-L_INSTALL_STEP1_ACC = "Account" -- Need review
-L_INSTALL_STEP1_CHAR = "Personaggio" -- Need review
-L_INSTALL_STEP2 = "Selezione la disposione per le incursioni." -- Need review
-L_INSTALL_STEP3 = "Seleziona il colore del tema." -- Need review
-L_INSTALL_STEP3_RED = "|cffE63333Rosso|r" -- Need review
-L_INSTALL_STEP3_GREEN = "|cff4DE64DVerde|r" -- Need review
-L_INSTALL_STEP3_BLUE = "|cff1A80E6Blue|r" -- Need review
-L_INSTALL_STEP3_CLASS = "Colore della classe" -- Need review
-L_INSTALL_STEP4 = "Congratulazione!\nL'installazione è stata completata con successo: devi ricaricare la UI." -- Need review
-L_INSTALL_STEP4_RELOAD = "Ricarica" -- Need review
+L_INSTALL_WELCOME = "Benvenuto/a al Dark ShestakUI Setup Wizard: procederemo con alcuni imporatanti passaggi d'installazione. Premi "
+L_INSTALL_CONFIG = "Per un'installazione completa si consiglia di caricare Dark ShestakUI Config.\nIn caso contrario, alcuni passaggi dell'installazione saranno saltati."
+L_INSTALL_STEP1 = "Salvatggio impostazioni per:"
+L_INSTALL_STEP1_ACC = "Account"
+L_INSTALL_STEP1_CHAR = "Personaggio"
+L_INSTALL_STEP2 = "Selezione la disposione per le incursioni."
+L_INSTALL_STEP3 = "Seleziona il colore del tema."
+L_INSTALL_STEP3_RED = "|cffE63333Rosso|r"
+L_INSTALL_STEP3_GREEN = "|cff4DE64DVerde|r"
+L_INSTALL_STEP3_BLUE = "|cff1A80E6Blue|r"
+L_INSTALL_STEP3_CLASS = "Colore della classe"
+L_INSTALL_STEP4 = "Congratulazione!\nL'installazione è stata completata con successo: devi ricaricare la UI."
+L_INSTALL_STEP4_RELOAD = "Ricarica"
 
 -- Chat channels
 L_CHAT_GENERAL = "Generale"
@@ -116,9 +116,6 @@ L_UF_GHOST = "Spirito"
 L_UF_DEAD = "Morto"
 L_UF_OFFLINE = "Disconnesso"
 L_UF_MANA = "Poco mana"
-L_UF_TRINKET_READY = "Monile pronto all'uso: "
-L_UF_TRINKET_USED = "Monile utilizzato: "
-L_UF_WOTF_USED = "Volontà dei Reietti utilizzata: "
 
 -- Map
 L_MAP_CURSOR = "Cursore: "

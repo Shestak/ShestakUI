@@ -13,8 +13,8 @@ local function LoadSkin()
 
 	T.SkinCloseButton(TimeManagerFrameCloseButton, TimeManagerFrame.backdrop)
 
-	T.SkinDropDownBox(TimeManagerAlarmHourDropDown, 70)
-	T.SkinDropDownBox(TimeManagerAlarmMinuteDropDown, 70)
+	T.SkinDropDownBox(TimeManagerAlarmHourDropDown, 79)
+	T.SkinDropDownBox(TimeManagerAlarmMinuteDropDown, 79)
 	T.SkinDropDownBox(TimeManagerAlarmAMPMDropDown, 70)
 
 	T.SkinEditBox(TimeManagerAlarmMessageEditBox)
@@ -25,7 +25,7 @@ local function LoadSkin()
 	T.SkinCheckBox(TimeManagerLocalTimeCheck)
 
 	TimeManagerStopwatchFrame:StripTextures()
-	TimeManagerStopwatchCheck:StyleButton()
+	TimeManagerStopwatchCheck:StyleButton(true)
 	TimeManagerStopwatchCheck:SetTemplate("Default")
 	TimeManagerStopwatchCheck:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	TimeManagerStopwatchCheck:GetNormalTexture():ClearAllPoints()
