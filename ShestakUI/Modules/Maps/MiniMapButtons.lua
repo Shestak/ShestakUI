@@ -35,7 +35,6 @@ switch:SetScript("OnClick", function(self, button)
 end)
 
 switch:SetScript("OnEnter", function()
-	if InCombatLockdown() then return end
 	switch:FadeIn()
 	GameTooltip:SetOwner(switch, "ANCHOR_LEFT")
 	GameTooltip:AddLine(RAID_FRAMES_LABEL)
@@ -106,7 +105,6 @@ farm:SetScript("OnClick", function()
 end)
 
 farm:SetScript("OnEnter", function()
-	if InCombatLockdown() then return end
 	farm:FadeIn()
 end)
 

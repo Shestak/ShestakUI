@@ -32,7 +32,6 @@ local function PositionAndStyle()
 		buttons[i].SetPoint = T.dummy
 		buttons[i]:SetAlpha(0)
 		buttons[i]:HookScript("OnEnter", function()
-			if InCombatLockdown() then return end
 			buttons[i]:FadeIn()
 		end)
 		buttons[i]:HookScript("OnLeave", function()
