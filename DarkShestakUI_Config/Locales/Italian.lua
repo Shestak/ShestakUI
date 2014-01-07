@@ -64,7 +64,7 @@ L_GUI_AUTOMATION_RESURRECTION = "'Auto-risorgi' nei Campi di Battaglia"
 L_GUI_AUTOMATION_SCREENSHOT = "Cattura una schermata quando completi un'impresa"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Popup automatico restauro manufatto"
 L_GUI_AUTOMATION_CHEFS_HAT = "'Auto-indossa' il cappello da cuoco"
-L_GUI_AUTOMATION_SAFARI_HAT = "Auto equip Safari Hat" -- Needs review
+L_GUI_AUTOMATION_SAFARI_HAT = "Auto-indossa il Cappello da Safari"
 L_GUI_AUTOMATION_ACCEPT_INVITE = "'Auto-accetta' gli inviti"
 L_GUI_AUTOMATION_DECLINE_DUEL = "'Auto-declina' i duelli"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "'Auto-accetta' le missioni"
@@ -79,11 +79,11 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Lancia benefici con la rotellina del mouse"
 
 -- Skins options
 L_GUI_SKINS = "Restyling"
-L_GUI_SKINS_COLOR_THEME = "Coloro del tema" -- Need review
+L_GUI_SKINS_COLOR_THEME = "Coloro del tema"
 L_GUI_SKINS_BLIZZARD = "Attiva il restyling dei riquadri Blizzard"
-L_GUI_SKINS_SHADOW = "Ombre sui riquadri" -- Need review
+L_GUI_SKINS_SHADOW = "Ombre sui riquadri"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Attiva il restyling dei pulsanti delle AddOns sulla minimappa"
-L_GUI_SKINS_MINIMAP_BUTTONS_MOUSEOVER = "Icone delle AddOns al passaggio del mouse" -- Need review
+L_GUI_SKINS_MINIMAP_BUTTONS_MOUSEOVER = "Icone delle AddOns al passaggio del mouse"
 L_GUI_SKINS_CLCR = "Attiva il restyling di CLCRet"
 L_GUI_SKINS_CLCP = "Attiva il restyling di CLCProt"
 L_GUI_SKINS_COMBUSTION_HELPER = "Attiva il restyling di CombustionHelper"
@@ -157,8 +157,8 @@ L_GUI_COOLDOWN_RAID_ENABLE = "Visualizza i recuperi d'incursione"
 L_GUI_COOLDOWN_RAID_HEIGHT = "Altezza delle barre dei recuperi d'incursione"
 L_GUI_COOLDOWN_RAID_WIDTH = "Larghezza barre recuperi d'incursione (se l'icona è attiva, larghezza + 28)"
 L_GUI_COOLDOWN_RAID_SORT = "Disposizione verso l'alto delle barre dei recuperi d'incursione"
-L_GUI_COOLDOWN_RAID_EXPIRATION = "Sort by expiration time" -- Needs review
-L_GUI_COOLDOWN_RAID_SHOW_MY = "Show my cooldowns" -- Needs review
+L_GUI_COOLDOWN_RAID_EXPIRATION = "Ordina in base al tempo di scadenza"
+L_GUI_COOLDOWN_RAID_SHOW_MY = "Mostra i miei recuperi"
 L_GUI_COOLDOWN_RAID_ICONS = "Icone dei recuperi d'incursione"
 L_GUI_COOLDOWN_RAID_IN_RAID = "Mostra i recuperi d'incursione nelle aree da incursione"
 L_GUI_COOLDOWN_RAID_IN_PARTY = "Mostra i recuperi d'incursione nelle aree da gruppo"
@@ -231,8 +231,8 @@ L_GUI_CHAT_CL_TAB = "Mostra la linguetta del Registro di combattimento"
 L_GUI_CHAT_TABS_MOUSEOVER = "Linguette delle chats al passaggio del mouse"
 L_GUI_CHAT_STICKY = "Ricorda l'ultimo canale"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Riunisce lo spam di un contatore dei danni in un singolo link"
-L_GUI_CHAT_TOOL_BAR = "'Barra strumenti' per passare dal riquadro del bottino al contatore dei danni" -- Needs review
-L_GUI_CHAT_TOOL_BAR_MOUSEOVER =  "'Barra strumenti' al passaggio del mouse" -- Needs review
+L_GUI_CHAT_TOOL_BAR = "'Barra strumenti' per passare dal riquadro del bottino al contatore dei danni"
+L_GUI_CHAT_TOOL_BAR_MOUSEOVER =  "'Barra strumenti' al passaggio del mouse"
 
 -- Bag options
 L_GUI_BAGS = "Sacche"
@@ -306,7 +306,7 @@ L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Nascondi barra postura"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Rendi orizzontale la barra postura"
 L_GUI_ACTIONBAR_MICROMENU = "Attiva il micromenu"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenu al passaggio del mouse"
-L_GUI_ACTIONBAR_PANELS = "Pannelli sotto le barre" -- Need review
+L_GUI_ACTIONBAR_PANELS = "Pannelli sotto le barre"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Dimensione benefici giocatore"
@@ -325,7 +325,7 @@ L_GUI_AURA_CAST_BY = "Mostra chi ha lanciato un beneficio o una penalità nei su
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Abilita i riquadri delle unità"
-L_GUI_UF_UF_COLOR = "Colore barre salute (se è attivo il colore per la tua barra della salute)" -- Need review
+L_GUI_UF_UF_COLOR = "Colore barre salute (se è attivo il colore per la tua barra della salute)"
 L_GUI_UF_TOTAL_VALUE = "Visualizza un testo sui riquadri di giocatore e bersaglio con i valori XXXX/Totale"
 L_GUI_UF_COLOR_VALUE = "Valori di salute e mana colorati"
 L_GUI_UF_BAR_COLOR_VALUE = "Barra della salute colorata in base alla salute restante"

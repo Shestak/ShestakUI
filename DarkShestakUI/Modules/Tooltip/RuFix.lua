@@ -11,6 +11,10 @@ EMPTY_SOCKET_YELLOW = "|cffffff40"..EMPTY_SOCKET_YELLOW.."|r"
 EMPTY_SOCKET_BLUE = "|cff6060ff"..EMPTY_SOCKET_BLUE.."|r"
 
 if T.client ~= "ruRU" then return end
+
+LFG_TOOLTIP_ROLES = "Роли: "
+BOSSES = "Боссы: "
+
 local ttext
 local replace = {
 	["красного цвета"] = "|cffFF4040красного цвета|r",

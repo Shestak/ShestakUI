@@ -41,7 +41,7 @@ local function LoadSkin()
 
 	T.SkinCloseButton(StopwatchCloseButton)
 	T.SkinNextPrevButton(StopwatchPlayPauseButton)
-	T.SkinNextPrevButton(StopwatchResetButton)
+	T.SkinNextPrevButton(StopwatchResetButton, true)
 	StopwatchPlayPauseButton:SetPoint("RIGHT", StopwatchResetButton, "LEFT", -4, 0)
 	StopwatchResetButton:SetPoint("BOTTOMRIGHT", StopwatchFrame, "BOTTOMRIGHT", -7, 7)
 	StopwatchCloseButton:ClearAllPoints()

@@ -46,14 +46,14 @@ local function LoadSkin()
 			local icon = _G["SpellButton"..i.."IconTexture"]
 
 			if first then
-				for i = 1, button:GetNumRegions() do
-					local region = select(i, button:GetRegions())
-					if region:GetObjectType() == "Texture" then
-						if region ~= button.FlyoutArrow then
-							region:SetTexture(nil)
-						end
-					end
-				end
+				_G["SpellButton"..i.."SlotFrame"]:SetAlpha(0)
+
+				button.EmptySlot:SetAlpha(0)
+				button.TextBackground:Hide()
+				button.TextBackground2:Hide()
+				button.UnlearnedFrame:SetAlpha(0)
+				button:SetCheckedTexture("")
+				button:SetPushedTexture("")
 			end
 
 			if _G["SpellButton"..i.."Highlight"] then
