@@ -2,8 +2,8 @@ local hook
 local _E
 
 local getID = function(loc)
-	local player, bank, bags, _, slot, bag = EquipmentManager_UnpackLocation(loc)
-	if not player and not bank and not bags then return end
+	local player, bank, bags, voidStorage, slot, bag = EquipmentManager_UnpackLocation(loc)
+	if not player and not bank and not bags and not voidStorage then return end
 
 	if not bags then
 		return GetInventoryItemID("player", slot)
