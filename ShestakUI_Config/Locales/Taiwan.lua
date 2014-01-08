@@ -35,6 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "彩色顯示已學會的食譜/坐騎/寵物"
 L_GUI_MISC_DISENCHANTING = "快捷研磨/選礦/分解(ALT+左鍵)"
 L_GUI_MISC_SUM_BUYOUTS = "結算拍賣物品的總金額"
 L_GUI_MISC_CLICK_CAST = "簡單的點擊施法綁定"
+L_GUI_MISC_CLICK_CAST_FILTER = "Ignore Player and Target frames for click2cast"  -- Needs review
 L_GUI_MISC_MOVE_BLIZZARD = "移動暴雪默認介面框架"
 L_GUI_MISC_COLOR_PICKER = "改進型顏色選擇器"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "在附魔介面顯示擁有的附魔卷軸數量"

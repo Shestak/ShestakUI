@@ -35,6 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "彩色显示已学会的食谱/坐骑/宠物"
 L_GUI_MISC_DISENCHANTING = "快捷研磨/选矿/分解(ALT+左键)"
 L_GUI_MISC_SUM_BUYOUTS = "总结目前所有的拍卖"
 L_GUI_MISC_CLICK_CAST = "简单的点击施法绑定"
+L_GUI_MISC_CLICK_CAST_FILTER = "Ignore Player and Target frames for click2cast"  -- Needs review
 L_GUI_MISC_MOVE_BLIZZARD = "移动暴雪默认介面框架"
 L_GUI_MISC_COLOR_PICKER = "改进型颜色选择器"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "商业技能窗口上显示附魔卷轴"

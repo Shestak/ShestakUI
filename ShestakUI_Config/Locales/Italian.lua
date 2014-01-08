@@ -35,6 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "Colora ricette/cavalcature/mascottes possedute"
 L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo click"
 L_GUI_MISC_SUM_BUYOUTS = "Somma assieme tutte le aste correnti"
 L_GUI_MISC_CLICK_CAST = "Scorciatoie da mouse (Click2Cast)"
+L_GUI_MISC_CLICK_CAST_FILTER = "Ignore Player and Target frames for click2cast"  -- Needs review
 L_GUI_MISC_MOVE_BLIZZARD = "Consenti di muovere alcuni riquadri dell'interfaccia Blizzard"
 L_GUI_MISC_COLOR_PICKER = "Selezionatore colore migliorato"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Pergamena Incantamento sul riquadro sul riquadro abilità di commercio"
