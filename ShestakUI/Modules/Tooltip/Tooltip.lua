@@ -26,9 +26,8 @@ local tooltips = {
 }
 
 local backdrop = {
-	bgFile = C.media.blank,
-	edgeFile = C.media.blank,
-	edgeSize = T.mult,
+	bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.mult,
+	insets = {left = -T.mult, right = -T.mult, top = -T.mult, bottom = -T.mult}
 }
 
 for _, tt in pairs(tooltips) do
