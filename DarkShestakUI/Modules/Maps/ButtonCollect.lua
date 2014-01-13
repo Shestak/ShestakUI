@@ -32,7 +32,6 @@ local function PositionAndStyle()
 		if C.skins.minimap_buttons_mouseover == true then
 			buttons[i]:SetAlpha(0)
 			buttons[i]:HookScript("OnEnter", function()
-				if InCombatLockdown() then return end
 				buttons[i]:FadeIn()
 			end)
 			buttons[i]:HookScript("OnLeave", function()

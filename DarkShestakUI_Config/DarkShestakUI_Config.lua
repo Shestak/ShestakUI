@@ -61,6 +61,7 @@ local function Local(o)
 	if o == "UIConfigmiscdisenchanting" then o = L_GUI_MISC_DISENCHANTING end
 	if o == "UIConfigmiscsum_buyouts" then o = L_GUI_MISC_SUM_BUYOUTS end
 	if o == "UIConfigmiscclick_cast" then o = L_GUI_MISC_CLICK_CAST end
+	if o == "UIConfigmiscclick_cast_filter" then o = L_GUI_MISC_CLICK_CAST_FILTER end
 	if o == "UIConfigmiscmove_blizzard" then o = L_GUI_MISC_MOVE_BLIZZARD end
 	if o == "UIConfigmisccolor_picker" then o = L_GUI_MISC_COLOR_PICKER end
 	if o == "UIConfigmiscenchantment_scroll" then o = L_GUI_MISC_ENCHANTMENT_SCROLL end

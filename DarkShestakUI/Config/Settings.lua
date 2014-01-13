@@ -59,6 +59,7 @@ C["misc"] = {
 	["disenchanting"] = false,					-- One-click Milling, Prospecting and Disenchanting
 	["sum_buyouts"] = false,					-- Sum up all current auctions
 	["click_cast"] = false,						-- Simple click2cast spell binder
+	["click_cast_filter"] = false,				-- Ignore Player and Target frames for click2cast
 	["move_blizzard"] = false,					-- Move some Blizzard frames
 	["color_picker"] = false,					-- Improved ColorPicker
 	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame

@@ -77,7 +77,6 @@ local function LoadSkin()
 				icon:ClearAllPoints()
 				icon:SetPoint("TOPLEFT", 2, -2)
 				icon:SetPoint("BOTTOMRIGHT", -2, 2)
-				button:SetFrameLevel(button:GetFrameLevel() + 2)
 				button:SetFrameStrata("DIALOG")
 				if not button.backdrop then
 					button:CreateBackdrop("Default")

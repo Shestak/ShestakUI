@@ -35,6 +35,7 @@ L_GUI_MISC_ALREADY_KNOWN = "Bekannte Rezepte/Reittiere/Begleiter farblich hervor
 L_GUI_MISC_DISENCHANTING = "Sondieren, Mahlen and Entzaubern mit einem Klick"
 L_GUI_MISC_SUM_BUYOUTS = "Alle Auktionen aufsummieren"
 L_GUI_MISC_CLICK_CAST = "Simpler 'click2cast' spell binder"
+L_GUI_MISC_CLICK_CAST_FILTER = "Ignoriere Spieler- und Zielfenster für click2cast"
 L_GUI_MISC_MOVE_BLIZZARD = "Einige Blizzardfenster frei bewegbar machen"
 L_GUI_MISC_COLOR_PICKER = "Verbesserte Farbauswahl"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Verzauberung auf Rolle im Beruffenster"

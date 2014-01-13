@@ -25,6 +25,11 @@ local tooltips = {
 	SymbiosisTip
 }
 
+local backdrop = {
+	bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.mult,
+	insets = {left = -T.mult, right = -T.mult, top = -T.mult, bottom = -T.mult}
+}
+
 for _, tt in pairs(tooltips) do
 	if not IsAddOnLoaded("Aurora") then
 		tt:SetBackdrop(nil)
@@ -33,6 +38,10 @@ for _, tt in pairs(tooltips) do
 		bg:SetPoint("BOTTOMRIGHT")
 		bg:SetFrameLevel(tt:GetFrameLevel() -1)
 		bg:SetTemplate("Transparent")
+
+		tt.GetBackdrop = function() return backdrop end
+		tt.GetBackdropColor = function() return unpack(C.media.overlay_color) end
+		tt.GetBackdropBorderColor = function() return unpack(C.media.border_color) end
 	end
 end
 

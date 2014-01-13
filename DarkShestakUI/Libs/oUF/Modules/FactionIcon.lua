@@ -27,7 +27,7 @@ local Update = function(self, event, unit)
 	elseif faction == "Alliance" then
 		specIcon.Icon:SetTexture([[Interface\Icons\INV_BannerPVP_02]])
 	else
-		specIcon.Icon:SetTexture([[INTERFACE\ICONS\INV_MISC_QUESTIONMARK]])
+		specIcon:Hide()
 	end
 
 	if specIcon.PostUpdate then specIcon:PostUpdate(event) end
