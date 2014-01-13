@@ -9,11 +9,11 @@ local lastUpdate, lastCheck = 0, 0
 local testing = false
 local texture = false
 
-exClass.WARRIOR = true
 exClass.DEATHKNIGHT = true
 exClass.MAGE = true
-exClass.WARLOCK = true
 exClass.ROGUE = true
+exClass.WARLOCK = true
+exClass.WARRIOR = true
 
 local function UpdatePlate(self)
 	local name = gsub(self.HPName:GetText(), '%s%(%*%)','')
@@ -93,10 +93,10 @@ t.factions = {
 	["Alliance"] = 0,
 }
 t.healers = {
-	[L_PLANNER_PALADIN_1] = true,
-	[L_PLANNER_PRIEST_1] = true,
 	[L_PLANNER_DRUID_4] = true,
 	[L_PLANNER_MONK_2] = true,
+	[L_PLANNER_PALADIN_1] = true,
+	[L_PLANNER_PRIEST_1] = true,
 }
 
 local function CheckHealers(self, elapsed)
