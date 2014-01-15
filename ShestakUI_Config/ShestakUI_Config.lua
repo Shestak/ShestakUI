@@ -722,7 +722,7 @@ function CreateUIConfig()
 		for n in pairs(t) do table.insert(a, n) end
 		table.sort(a, sortMyTable)
 		local i = 0
-		local iter = function ()
+		local iter = function()
 			i = i + 1
 			if a[i] == nil then return nil
 			else return a[i], t[a[i]]
