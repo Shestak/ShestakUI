@@ -10,10 +10,9 @@ frame:SetScript("OnUpdate", function(self, elapsed)
 
 	if self.elapsed and self.elapsed > 0.1 then
 		if FrameStackTooltip then
-			local noscalemult = T.mult * C.general.uiscale
 			FrameStackTooltip:SetBackdrop({
-				bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = noscalemult,
-				insets = {left = -noscalemult, right = -noscalemult, top = -noscalemult, bottom = -noscalemult}
+				bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.noscalemult,
+				insets = {left = -T.noscalemult, right = -T.noscalemult, top = -T.noscalemult, bottom = -T.noscalemult}
 			})
 			FrameStackTooltip:SetBackdropColor(unpack(C.media.overlay_color))
 			FrameStackTooltip:SetBackdropBorderColor(unpack(C.media.border_color))

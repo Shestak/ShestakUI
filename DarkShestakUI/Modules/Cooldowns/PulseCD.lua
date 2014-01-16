@@ -4,7 +4,7 @@ if C.pulsecooldown.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Based on Doom Cooldown Pulse(by Woffle of Dark Iron, editor Affli)
 ----------------------------------------------------------------------------------------
-local noscalemult, GetTime = T.mult * C.general.uiscale, GetTime
+local GetTime = GetTime
 local fadeInTime, fadeOutTime, maxAlpha, elapsed, runtimer = 0.5, 0.7, 1, 0, 0
 local animScale, iconSize, holdTime, threshold = C.pulsecooldown.anim_scale, C.pulsecooldown.size, C.pulsecooldown.hold_time, C.pulsecooldown.threshold
 local cooldowns, animating, watching = {}, {}, {}
@@ -16,8 +16,8 @@ anchor:SetPoint(unpack(C.position.pulse_cooldown))
 local frame = CreateFrame("Frame", "DCPFrame", anchor)
 frame:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
 frame:SetBackdrop({
-	bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = noscalemult,
-	insets = {left = -noscalemult, right = -noscalemult, top = -noscalemult, bottom = -noscalemult}
+	bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.noscalemult,
+	insets = {left = -T.noscalemult, right = -T.noscalemult, top = -T.noscalemult, bottom = -T.noscalemult}
 })
 frame:SetBackdropBorderColor(unpack(C.media.border_color))
 frame:SetBackdropColor(unpack(C.media.backdrop_color))
@@ -25,8 +25,8 @@ frame:SetPoint("CENTER", anchor, "CENTER")
 
 local icon = frame:CreateTexture(nil, "ARTWORK")
 icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-icon:SetPoint("TOPLEFT", frame, "TOPLEFT", noscalemult * 2, -noscalemult * 2)
-icon:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -noscalemult * 2, noscalemult * 2)
+icon:SetPoint("TOPLEFT", frame, "TOPLEFT", T.noscalemult * 2, -T.noscalemult * 2)
+icon:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -T.noscalemult * 2, T.noscalemult * 2)
 
 -- Utility Functions
 local function tcount(tab)

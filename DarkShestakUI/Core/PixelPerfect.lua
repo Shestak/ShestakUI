@@ -23,6 +23,7 @@ end
 
 T.Scale = function(x) return Scale(x) end
 T.mult = mult
+T.noscalemult = T.mult * C.general.uiscale
 
 ----------------------------------------------------------------------------------------
 --	Pixel perfect fonts function

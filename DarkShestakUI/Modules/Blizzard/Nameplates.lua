@@ -5,7 +5,6 @@ if C.nameplate.enable ~= true then return end
 --	Based on dNameplates(by Dawn, editor Elv22)
 ----------------------------------------------------------------------------------------
 local frames, numChildren, select = {}, -1, select
-local noscalemult = T.mult * C.general.uiscale
 local goodR, goodG, goodB = unpack(C.nameplate.good_color)
 local badR, badG, badB = unpack(C.nameplate.bad_color)
 local transitionR, transitionG, transitionB = unpack(C.nameplate.near_color)
@@ -47,8 +46,8 @@ local function CreateVirtualFrame(frame, point)
 
 	frame.backdrop = frame:CreateTexture(nil, "BORDER")
 	frame.backdrop:SetDrawLayer("BORDER", -8)
-	frame.backdrop:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult * 3, noscalemult * 3)
-	frame.backdrop:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", noscalemult * 3, -noscalemult * 3)
+	frame.backdrop:SetPoint("TOPLEFT", point, "TOPLEFT", -T.noscalemult * 3, T.noscalemult * 3)
+	frame.backdrop:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", T.noscalemult * 3, -T.noscalemult * 3)
 	frame.backdrop:SetTexture(unpack(C.media.backdrop_color))
 	
 	if C.skins.shadow == true then
@@ -68,30 +67,30 @@ local function CreateVirtualFrame(frame, point)
 	end
 
 	frame.bordertop = frame:CreateTexture(nil, "BORDER")
-	frame.bordertop:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult * 2, noscalemult * 2)
-	frame.bordertop:SetPoint("TOPRIGHT", point, "TOPRIGHT", noscalemult * 2, noscalemult * 2)
-	frame.bordertop:SetHeight(noscalemult)
+	frame.bordertop:SetPoint("TOPLEFT", point, "TOPLEFT", -T.noscalemult * 2, T.noscalemult * 2)
+	frame.bordertop:SetPoint("TOPRIGHT", point, "TOPRIGHT", T.noscalemult * 2, T.noscalemult * 2)
+	frame.bordertop:SetHeight(T.noscalemult)
 	frame.bordertop:SetTexture(unpack(C.media.border_color))
 	frame.bordertop:SetDrawLayer("BORDER", -7)
 
 	frame.borderbottom = frame:CreateTexture(nil, "BORDER")
-	frame.borderbottom:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", -noscalemult * 2, -noscalemult * 2)
-	frame.borderbottom:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", noscalemult * 2, -noscalemult * 2)
-	frame.borderbottom:SetHeight(noscalemult)
+	frame.borderbottom:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", -T.noscalemult * 2, -T.noscalemult * 2)
+	frame.borderbottom:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", T.noscalemult * 2, -T.noscalemult * 2)
+	frame.borderbottom:SetHeight(T.noscalemult)
 	frame.borderbottom:SetTexture(unpack(C.media.border_color))
 	frame.borderbottom:SetDrawLayer("BORDER", -7)
 
 	frame.borderleft = frame:CreateTexture(nil, "BORDER")
-	frame.borderleft:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult * 2, noscalemult * 2)
-	frame.borderleft:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", noscalemult * 2, -noscalemult * 2)
-	frame.borderleft:SetWidth(noscalemult)
+	frame.borderleft:SetPoint("TOPLEFT", point, "TOPLEFT", -T.noscalemult * 2, T.noscalemult * 2)
+	frame.borderleft:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", T.noscalemult * 2, -T.noscalemult * 2)
+	frame.borderleft:SetWidth(T.noscalemult)
 	frame.borderleft:SetTexture(unpack(C.media.border_color))
 	frame.borderleft:SetDrawLayer("BORDER", -7)
 
 	frame.borderright = frame:CreateTexture(nil, "BORDER")
-	frame.borderright:SetPoint("TOPRIGHT", point, "TOPRIGHT", noscalemult * 2, noscalemult * 2)
-	frame.borderright:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", -noscalemult * 2, -noscalemult * 2)
-	frame.borderright:SetWidth(noscalemult)
+	frame.borderright:SetPoint("TOPRIGHT", point, "TOPRIGHT", T.noscalemult * 2, T.noscalemult * 2)
+	frame.borderright:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", -T.noscalemult * 2, -T.noscalemult * 2)
+	frame.borderright:SetWidth(T.noscalemult)
 	frame.borderright:SetTexture(unpack(C.media.border_color))
 	frame.borderright:SetDrawLayer("BORDER", -7)
 end
@@ -115,17 +114,17 @@ local function CreateAuraIcon(frame)
 
 	button.bord = button:CreateTexture(nil, "BORDER")
 	button.bord:SetTexture(unpack(C.media.border_color))
-	button.bord:SetPoint("TOPLEFT", button, "TOPLEFT", noscalemult, -noscalemult)
-	button.bord:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -noscalemult, noscalemult)
+	button.bord:SetPoint("TOPLEFT", button, "TOPLEFT", T.noscalemult, -T.noscalemult)
+	button.bord:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -T.noscalemult, T.noscalemult)
 
 	button.bg2 = button:CreateTexture(nil, "ARTWORK")
 	button.bg2:SetTexture(unpack(C.media.backdrop_color))
-	button.bg2:SetPoint("TOPLEFT", button, "TOPLEFT", noscalemult * 2, -noscalemult * 2)
-	button.bg2:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -noscalemult * 2, noscalemult * 2)
+	button.bg2:SetPoint("TOPLEFT", button, "TOPLEFT", T.noscalemult * 2, -T.noscalemult * 2)
+	button.bg2:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -T.noscalemult * 2, T.noscalemult * 2)
 
 	button.icon = button:CreateTexture(nil, "OVERLAY")
-	button.icon:SetPoint("TOPLEFT", button, "TOPLEFT", noscalemult * 3, -noscalemult * 3)
-	button.icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -noscalemult * 3, noscalemult * 3)
+	button.icon:SetPoint("TOPLEFT", button, "TOPLEFT", T.noscalemult * 3, -T.noscalemult * 3)
+	button.icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -T.noscalemult * 3, T.noscalemult * 3)
 	button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	button.cd = CreateFrame("Cooldown", nil, button)
@@ -133,7 +132,7 @@ local function CreateAuraIcon(frame)
 	button.cd:SetReverse(true)
 
 	button.count = button:CreateFontString(nil, "OVERLAY")
-	button.count:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
+	button.count:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * T.noscalemult, C.font.nameplates_font_style)
 	button.count:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 	button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 0, 0)
 
@@ -159,7 +158,7 @@ local function UpdateAuraIcon(button, unit, index, filter)
 			self:SetScript("OnUpdate", nil)
 			return
 		end
-		button.cd.timer.text:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
+		button.cd.timer.text:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * T.noscalemult, C.font.nameplates_font_style)
 		button.cd.timer.text:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 	end)
 	button:Show()
@@ -311,7 +310,7 @@ local function UpdateObjects(frame)
 
 	-- Have to reposition this here so it doesnt resize after being hidden
 	frame.hp:ClearAllPoints()
-	frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
+	frame.hp:SetSize(C.nameplate.width * T.noscalemult, C.nameplate.height * T.noscalemult)
 	frame.hp:SetPoint("TOP", frame, "TOP", 0, -15)
 
 	-- Match values
@@ -367,7 +366,7 @@ local function SkinObjects(frame, nameFrame)
 
 	-- Create Level
 	hp.level = hp:CreateFontString(nil, "OVERLAY")
-	hp.level:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
+	hp.level:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * T.noscalemult, C.font.nameplates_font_style)
 	hp.level:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 	hp.level:SetTextColor(1, 1, 1)
 	hp.oldlevel = oldlevel
@@ -377,7 +376,7 @@ local function SkinObjects(frame, nameFrame)
 	-- Create Health Text
 	if C.nameplate.health_value == true then
 		hp.value = hp:CreateFontString(nil, "OVERLAY")
-		hp.value:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
+		hp.value:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * T.noscalemult, C.font.nameplates_font_style)
 		hp.value:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 		hp.value:SetPoint("RIGHT", hp, "RIGHT", 0, 0)
 		hp.value:SetTextColor(1, 1, 1)
@@ -387,7 +386,7 @@ local function SkinObjects(frame, nameFrame)
 	hp.name = hp:CreateFontString(nil, "OVERLAY")
 	hp.name:SetPoint("BOTTOMLEFT", hp, "TOPLEFT", -3, 4)
 	hp.name:SetPoint("BOTTOMRIGHT", hp, "TOPRIGHT", 3, 4)
-	hp.name:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
+	hp.name:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * T.noscalemult, C.font.nameplates_font_style)
 	hp.name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 	hp.oldname = oldname
 
@@ -405,7 +404,7 @@ local function SkinObjects(frame, nameFrame)
 	-- Create Cast Bar
 	cb:ClearAllPoints()
 	cb:SetPoint("TOPRIGHT", hp, "BOTTOMRIGHT", 0, -8)
-	cb:SetPoint("BOTTOMLEFT", hp, "BOTTOMLEFT", 0, -8-(C.nameplate.height * noscalemult))
+	cb:SetPoint("BOTTOMLEFT", hp, "BOTTOMLEFT", 0, -8-(C.nameplate.height * T.noscalemult))
 	cb:SetStatusBarTexture(C.media.texture)
 	CreateVirtualFrame(cb)
 
@@ -416,7 +415,7 @@ local function SkinObjects(frame, nameFrame)
 	-- Create Cast Time Text
 	cb.time = cb:CreateFontString(nil, "ARTWORK")
 	cb.time:SetPoint("RIGHT", cb, "RIGHT", 3, 0)
-	cb.time:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
+	cb.time:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * T.noscalemult, C.font.nameplates_font_style)
 	cb.time:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 	cb.time:SetTextColor(1, 1, 1)
 
@@ -425,7 +424,7 @@ local function SkinObjects(frame, nameFrame)
 	cb.name = cbname
 	if C.nameplate.show_castbar_name == true then
 		cb.name:SetPoint("LEFT", cb, "LEFT", 3, 0)
-		cb.name:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * noscalemult, C.font.nameplates_font_style)
+		cb.name:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * T.noscalemult, C.font.nameplates_font_style)
 		cb.name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 		cb.name:SetTextColor(1, 1, 1)
 	end
@@ -440,7 +439,7 @@ local function SkinObjects(frame, nameFrame)
 
 		frame.class.Glow = CreateFrame("Frame", nil, frame)
 		frame.class.Glow:SetTemplate("Transparent")
-		frame.class.Glow:SetScale(noscalemult)
+		frame.class.Glow:SetScale(T.noscalemult)
 		frame.class.Glow:SetPoint("TOPLEFT", frame.class, "TOPLEFT", 0, 0)
 		frame.class.Glow:SetPoint("BOTTOMRIGHT", frame.class, "BOTTOMRIGHT", 0, 0)
 		frame.class.Glow:SetFrameLevel(hp:GetFrameLevel() -1 > 0 and hp:GetFrameLevel() -1 or 0)
@@ -604,12 +603,12 @@ local function ShowHealth(frame, ...)
 	end
 
 	if GetUnitName("target") and frame:GetParent():GetAlpha() == 1 then
-		frame.hp:SetSize((C.nameplate.width + C.nameplate.ad_width) * noscalemult, (C.nameplate.height + C.nameplate.ad_height) * noscalemult)
-		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-((C.nameplate.height + C.nameplate.ad_height) * noscalemult))
+		frame.hp:SetSize((C.nameplate.width + C.nameplate.ad_width) * T.noscalemult, (C.nameplate.height + C.nameplate.ad_height) * T.noscalemult)
+		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-((C.nameplate.height + C.nameplate.ad_height) * T.noscalemult))
 		frame.cb.icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2) + 8)
 	else
-		frame.hp:SetSize(C.nameplate.width * noscalemult, C.nameplate.height * noscalemult)
-		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-(C.nameplate.height * noscalemult))
+		frame.hp:SetSize(C.nameplate.width * T.noscalemult, C.nameplate.height * T.noscalemult)
+		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-(C.nameplate.height * T.noscalemult))
 		frame.cb.icon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)
 	end
 end
