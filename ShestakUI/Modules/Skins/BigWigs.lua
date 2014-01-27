@@ -183,6 +183,7 @@ StaticPopupDialogs.BW_TEST = {
 			bars.db.profile.BigWigsEmphasizeAnchor_width = 185
 			bars.db.profile.BigWigsEmphasizeAnchor_x = 420
 			bars.db.profile.BigWigsEmphasizeAnchor_y = 248
+			bars.db.profile.emphasizeGrowup = true
 			bars.db.profile.InstalledBars = C.actionbar.bottombars
 			if C.actionbar.bottombars == 1 then
 				bars.db.profile.BigWigsAnchor_y = 116
@@ -194,7 +195,7 @@ StaticPopupDialogs.BW_TEST = {
 		end
 		local mess = BigWigs and BigWigs:GetPlugin("Messages")
 		if mess then
-			mess.db.profile.font = C.media.normal_font
+			mess.db.profile.font = "Calibri"
 			mess.db.profile.fontSize = 20
 			mess.db.profile.BWMessageAnchor_x = 415
 			mess.db.profile.BWMessageAnchor_y = 320
@@ -205,10 +206,12 @@ StaticPopupDialogs.BW_TEST = {
 		end
 		local prox = BigWigs and BigWigs:GetPlugin("Proximity")
 		if prox then
-			prox.db.profile.font = C.media.normal_font
+			prox.db.profile.font = "Calibri"
 			prox.db.profile.objects.ability = false
 		end
 		BigWigs3IconDB.hide = true
+		BigWigs:GetPlugin("Super Emphasize").db.profile.font = "Calibri"
+		BigWigs:GetPlugin("Alt Power").db.profile.font = "Calibri"
 		if InCombatLockdown() then
 			print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r")
 			print("|cffffff00Reload your UI to apply skin.|r")
