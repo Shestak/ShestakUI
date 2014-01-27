@@ -147,6 +147,7 @@ local function registerStyle()
 			GetStyleName = function() return "ShestakUI" end,
 		})
 	end
+	bars.db.profile.barStyle = "ShestakUI"
 	if prox and bars.db.profile.barStyle == "ShestakUI" then
 		hooksecurefunc(prox, "RestyleWindow", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
@@ -162,7 +163,6 @@ f:SetScript("OnEvent", function(self, event, addon)
 			if BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.InstalledBars ~= C.actionbar.bottombars then
 				StaticPopup_Show("BW_TEST")
 			end
-			BigWigs:GetPlugin("Bars").db.profile.barStyle = "ShestakUI"
 			registerStyle()
 			f:UnregisterEvent("ADDON_LOADED")
 		end
