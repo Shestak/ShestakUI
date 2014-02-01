@@ -38,8 +38,8 @@ local function freestyle(bar)
 	bar.candyBarIconFrame.SetWidth = bar.candyBarIconFrame.OldSetWidth
 	bar.SetScale = bar.OldSetScale
 
-	--Reset Positions
-	--Icon
+	-- Reset Positions
+	-- Icon
 	bar.candyBarIconFrame:ClearAllPoints()
 	bar.candyBarIconFrame:SetPoint("TOPLEFT")
 	bar.candyBarIconFrame:SetPoint("BOTTOMLEFT")
