@@ -21,10 +21,8 @@ oUF.colors.power[9] = oUF.colors.power["HOLY_POWER"]
 
 local GetDisplayPower = function(power, unit)
 	local _, _, _, _, _, _, showOnRaid = UnitAlternatePowerInfo(unit)
-	if(power.displayAltPower and showOnRaid) then
+	if(showOnRaid) then
 		return ALTERNATE_POWER_INDEX
-	else
-		return (UnitPowerType(unit))
 	end
 end
 
@@ -34,7 +32,7 @@ local Update = function(self, event, unit)
 
 	if(power.PreUpdate) then power:PreUpdate(unit) end
 
-	local displayType = GetDisplayPower(power, unit)
+	local displayType = power.displayAltPower and GetDisplayPower(power, unit)
 	local min, max = UnitPower(unit, displayType), UnitPowerMax(unit, displayType)
 	local disconnected = not UnitIsConnected(unit)
 	power:SetMinMaxValues(0, max)

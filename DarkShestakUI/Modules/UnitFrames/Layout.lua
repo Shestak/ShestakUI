@@ -857,7 +857,7 @@ local function Shared(self, unit)
 			end
 
 			if unit == "player" and C.unitframe.castbar_latency == true then
-				self.Castbar.SafeZone = self.Castbar:CreateTexture(nil, "BORDER")
+				self.Castbar.SafeZone = self.Castbar:CreateTexture(nil, "BORDER", nil, 1)
 				self.Castbar.SafeZone:SetTexture(C.media.texture)
 				self.Castbar.SafeZone:SetVertexColor(0.85, 0.27, 0.27)
 

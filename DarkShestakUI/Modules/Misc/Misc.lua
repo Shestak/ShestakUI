@@ -99,13 +99,13 @@ if C.general.custom_lagtolerance == true then
 
 	local customlag = CreateFrame("Frame")
 	local int = 5
-	local _, _, latencyHome = GetNetStats()
+	local _, _, _, lag = GetNetStats()
 	local LatencyUpdate = function(self, elapsed)
 		int = int - elapsed
 		if int < 0 then
 			if GetCVar("reducedLagTolerance") ~= tostring(1) then SetCVar("reducedLagTolerance", tostring(1)) end
-			if latencyHome ~= 0 and latencyHome <= 400 then
-				SetCVar("maxSpellStartRecoveryOffset", tostring(latencyHome))
+			if lag ~= 0 and lag <= 400 then
+				SetCVar("maxSpellStartRecoveryOffset", tostring(lag))
 			end
 			int = 5
 		end
