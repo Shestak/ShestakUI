@@ -80,8 +80,8 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "滚动鼠标滚轮自动上buff"
 
 -- Skins options
 L_GUI_SKINS = "介面样式"
-L_GUI_SKINS_BLIZZARD = "开启暴风默认界面风格增强"
-L_GUI_SKINS_MINIMAP_BUTTONS = "开启小地图插件图标风格增强"
+L_GUI_SKINS_BLIZZARD = "开启暴雪默认界面样式"
+L_GUI_SKINS_MINIMAP_BUTTONS = "开启小地图插件图标样式增强"
 L_GUI_SKINS_CLCR = "开启CLCRet样式增强"
 L_GUI_SKINS_CLCP = "开启CLCProt样式增强"
 L_GUI_SKINS_COMBUSTION_HELPER = "开启CombustionHelper样式增强"
