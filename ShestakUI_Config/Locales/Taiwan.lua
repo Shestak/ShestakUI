@@ -80,8 +80,8 @@ L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用鼠標滾輪施放Buff"
 
 -- Skins options
 L_GUI_SKINS = "介面樣式"
-L_GUI_SKINS_BLIZZARD = "開啟暴雪默認介面風格增強"
-L_GUI_SKINS_MINIMAP_BUTTONS = "開啟小地圖插件圖標風格增強"
+L_GUI_SKINS_BLIZZARD = "開啟暴雪默認介面樣式"
+L_GUI_SKINS_MINIMAP_BUTTONS = "開啟小地圖插件圖標樣式增強"
 L_GUI_SKINS_CLCR = "開啟CLCRet樣式增強"
 L_GUI_SKINS_CLCP = "開啟CLCProt樣式增強"
 L_GUI_SKINS_COMBUSTION_HELPER = "開啟CombustionHelper樣式增強"
