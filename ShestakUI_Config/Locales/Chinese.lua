@@ -358,17 +358,17 @@ L_GUI_UF_PLUGINS_FADER = "头像框体渐隐"
 L_GUI_UF_PLUGINS_DIMINISHING = "在竞技场框体显示技能递减"
 
 -- Unit Frames Class bar options
-L_GUI_UF_PLUGINS_CLASS_BAR = "职业栏"
-L_GUI_UF_PLUGINS_COMBO_BAR = "潜行者|德鲁伊连击点图示"
+L_GUI_UF_PLUGINS_CLASS_BAR = "开启职业栏"
+L_GUI_UF_PLUGINS_COMBO_BAR = "开启潜行者/德鲁伊连击点图示"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "开启牧师暗影宝珠栏"
 L_GUI_UF_PLUGINS_CHI_BAR = "开启武僧真气栏"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "开启复仇条"
 L_GUI_UF_PLUGINS_ECLIPSE_BAR = "开启日蚀/月蚀栏"
 L_GUI_UF_PLUGINS_HOLY_BAR = "开启圣光能量栏"
 L_GUI_UF_PLUGINS_SHARD_BAR = "开启灵魂碎片栏"
-L_GUI_UF_PLUGINS_RUNE_BAR = "符文条"
-L_GUI_UF_PLUGINS_TOTEM_BAR = "图腾栏"
-L_GUI_UF_PLUGINS_RANGE_BAR = "开启距离条(仅牧师)"
+L_GUI_UF_PLUGINS_RUNE_BAR = "开启符文栏"
+L_GUI_UF_PLUGINS_TOTEM_BAR = "开启图腾栏"
+L_GUI_UF_PLUGINS_RANGE_BAR = "开启距离栏(仅牧师)"
 
 -- Raid Frames options
 L_GUI_UF_AGGRO_BORDER = "仇恨边框"
