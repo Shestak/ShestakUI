@@ -89,8 +89,6 @@ function WorldMapFrame_SetMapName()
 end
 
 local function XLM_UD()
-	if not (WorldMapButton:IsMouseOver() and WorldMapFrame:IsShown()) then return end
-
 	local x, y = GetCursorPosition()
 	x = x / WorldMapButton:GetEffectiveScale()
 	y = y / WorldMapButton:GetEffectiveScale()
@@ -134,5 +132,7 @@ ExpLoreMasterFrame:SetScript("OnUpdate", function(event)
 	if event == "ZONE_CHANGED_NEW_AREA" then
 		SetMapToCurrentZone()
 	end
-	XLM_UD()
+	if WorldMapFrame:IsShown() and WorldMapButton:IsMouseOver() then
+		XLM_UD()
+	end
 end)
