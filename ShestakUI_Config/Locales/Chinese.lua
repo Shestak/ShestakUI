@@ -134,6 +134,7 @@ L_GUI_COMBATTEXT_TIME_VISIBLE = "信息保留时间(秒)"
 L_GUI_COMBATTEXT_DK_RUNES = "显示死亡骑士符文恢复"
 L_GUI_COMBATTEXT_KILLINGBLOW = "显示击杀信息"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "将AOE伤害合并为一条信息"
+L_GUI_COMBATTEXT_MERGE_MELEE = "Merges multiple auto attack damage spam" -- Needs review
 L_GUI_COMBATTEXT_DISPEL = "当你驱散成功的时候提示"
 L_GUI_COMBATTEXT_INTERRUPT = "当你打断成功的时候提示"
 L_GUI_COMBATTEXT_DIRECTION = "滚动方向('top'(向上) or 'bottom'(向下))"
