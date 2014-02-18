@@ -279,6 +279,34 @@ local function Colorize(frame)
 	frame.hp.name:SetTextColor(r, g, b)
 end
 
+-- Health Text, also border coloring for certain plates depending on health
+local function HealthChange(frame)
+	-- Match values
+	HealthBar_ValueChanged(frame.hp)
+
+	-- Show current health value
+	local _, maxHealth = frame.healthOriginal:GetMinMaxValues()
+	local valueHealth = frame.healthOriginal:GetValue()
+	local d = (valueHealth / maxHealth) * 100
+
+	if C.nameplate.health_value == true then
+		frame.hp.value:SetText(T.ShortValue(valueHealth).." - "..(string.format("%d%%", math.floor((valueHealth / maxHealth) * 100))))
+	end
+
+	-- Change border color depending on health or aggro
+	if frame.isClass == true or frame.isFriendly == true then
+		if d <= 50 and d >= 20 then
+			SetVirtualBorder(frame.hp, 1, 1, 0)
+		elseif d < 20 then
+			SetVirtualBorder(frame.hp, 1, 0, 0)
+		else
+			SetVirtualBorder(frame.hp, unpack(C.media.border_color))
+		end
+	elseif (frame.isClass ~= true and frame.isFriendly ~= true) and C.nameplate.enhance_threat == true then
+		SetVirtualBorder(frame.hp, unpack(C.media.border_color))
+	end
+end
+
 -- HealthBar OnShow, use this to set variables for the nameplate
 local function UpdateObjects(frame)
 	frame = frame:GetParent()
@@ -381,6 +409,7 @@ local function SkinObjects(frame, nameFrame)
 	hp.bg:SetTexture(1, 1, 1, 0.2)
 
 	hp:HookScript("OnShow", UpdateObjects)
+	hp:HookScript("OnValueChanged", HealthChange)
 	frame.hp = hp
 
 	if not frame.threat then
@@ -561,33 +590,7 @@ local function AdjustNameLevel(frame, ...)
 	end
 end
 
--- Health Text, also border coloring for certain plates depending on health
 local function ShowHealth(frame, ...)
-	-- Match values
-	HealthBar_ValueChanged(frame.hp)
-
-	-- Show current health value
-	local _, maxHealth = frame.healthOriginal:GetMinMaxValues()
-	local valueHealth = frame.healthOriginal:GetValue()
-	local d = (valueHealth / maxHealth) * 100
-
-	if C.nameplate.health_value == true then
-		frame.hp.value:SetText(T.ShortValue(valueHealth).." - "..(string.format("%d%%", math.floor((valueHealth / maxHealth) * 100))))
-	end
-
-	-- Setup frame shadow to change depending on enemy players health, also setup targetted unit to have white shadow
-	if frame.isClass == true or frame.isFriendly == true then
-		if d <= 50 and d >= 20 then
-			SetVirtualBorder(frame.hp, 1, 1, 0)
-		elseif d < 20 then
-			SetVirtualBorder(frame.hp, 1, 0, 0)
-		else
-			SetVirtualBorder(frame.hp, unpack(C.media.border_color))
-		end
-	elseif (frame.isClass ~= true and frame.isFriendly ~= true) and C.nameplate.enhance_threat == true then
-		SetVirtualBorder(frame.hp, unpack(C.media.border_color))
-	end
-
 	if GetUnitName("target") and frame:GetParent():GetAlpha() == 1 then
 		frame.hp:SetSize((C.nameplate.width + C.nameplate.ad_width) * T.noscalemult, (C.nameplate.height + C.nameplate.ad_height) * T.noscalemult)
 		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-((C.nameplate.height + C.nameplate.ad_height) * T.noscalemult))
@@ -627,7 +630,7 @@ local function MatchGUID(frame, destGUID, spellID)
 	end
 end
 
--- Run a function for all visible nameplates, we use this for the blacklist, to check unitguid, and to hide drunken text
+-- Run a function for all visible nameplates, we use this for the blacklist, to check unitguid
 local function ForEachPlate(functionToRun, ...)
 	for frame in pairs(frames) do
 		if frame and frame:GetParent():IsShown() then
