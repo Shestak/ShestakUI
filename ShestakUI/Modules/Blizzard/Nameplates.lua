@@ -666,7 +666,9 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 
 	ForEachPlate(ShowHealth)
 	ForEachPlate(CheckBlacklist)
-	ForEachPlate(CheckUnit_Guid)
+	if C.nameplate.track_auras then
+		ForEachPlate(CheckUnit_Guid)
+	end
 end)
 
 function NamePlates:COMBAT_LOG_EVENT_UNFILTERED(_, event, ...)
