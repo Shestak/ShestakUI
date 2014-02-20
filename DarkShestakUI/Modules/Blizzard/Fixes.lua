@@ -23,16 +23,6 @@ TaintFix:SetScript("OnUpdate", function(self, elapsed)
 end)
 
 ----------------------------------------------------------------------------------------
---	Fix LFRBrowseFrameList/LFRQueueFrameSpecificList scroll frames
-----------------------------------------------------------------------------------------
-LFRBrowseFrameListScrollFrame:ClearAllPoints()
-LFRBrowseFrameListScrollFrame:SetPoint("TOPLEFT", LFRBrowseFrameListButton1, "TOPLEFT", 0, 0)
-LFRBrowseFrameListScrollFrame:SetPoint("BOTTOMRIGHT", LFRBrowseFrameListButton19, "BOTTOMRIGHT", 17, -30)
-LFRQueueFrameSpecificListScrollFrame:ClearAllPoints()
-LFRQueueFrameSpecificListScrollFrame:SetPoint("TOPLEFT", LFRQueueFrameSpecificListButton1, "TOPLEFT", 0, 0)
-LFRQueueFrameSpecificListScrollFrame:SetPoint("BOTTOMRIGHT", LFRQueueFrameSpecificListButton14, "BOTTOMRIGHT", 0, -2)
-
-----------------------------------------------------------------------------------------
 --	Collect garbage
 ----------------------------------------------------------------------------------------
 local eventcount = 0

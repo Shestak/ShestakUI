@@ -138,6 +138,7 @@ L_GUI_COMBATTEXT_TIME_VISIBLE = "Temps en seconde durant lequel un message est a
 L_GUI_COMBATTEXT_DK_RUNES = "Afficher le rechargement des runes du chevalier de la mort"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Afficher les coups fatals"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Rassembler tous les dégâts d'un aoe en un seul message"
+L_GUI_COMBATTEXT_MERGE_MELEE = "Merges multiple auto attack damage spam" -- Needs review
 L_GUI_COMBATTEXT_DISPEL = "Informe vous êtes dispel" -- à vérifier en jeu (Puree's note)
 L_GUI_COMBATTEXT_INTERRUPT = "Informe si vous êtes interrompu" -- à vérifier en jeu (Puree's note)
 L_GUI_COMBATTEXT_DIRECTION = "Sens de défilement('haut'(vers le bas) ou 'bas'(vers le haut))"

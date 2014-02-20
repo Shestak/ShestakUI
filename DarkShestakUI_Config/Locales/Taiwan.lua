@@ -76,14 +76,14 @@ L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "自動取消無用的buffs"
 L_GUI_AUTOMATION_TAB_BINDER = "Tab只選定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "團隊副本時自動開啟戰鬥記錄"
 L_GUI_AUTOMATION_CURRENCY_CAP = "自動彈出貨幣提示框"
-L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用鼠標滾輪施放Buff"
+L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用滑鼠滾輪施放Buff"
 
 -- Skins options
 L_GUI_SKINS = "介面樣式"
 L_GUI_SKINS_COLOR_THEME = "Color theme" -- Need review
-L_GUI_SKINS_BLIZZARD = "開啟暴雪默認介面風格增強"
+L_GUI_SKINS_BLIZZARD = "開啟暴雪默認介面樣式"
 L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
-L_GUI_SKINS_MINIMAP_BUTTONS = "開啟小地圖插件圖標風格增強"
+L_GUI_SKINS_MINIMAP_BUTTONS = "開啟小地圖插件圖標樣式增強"
 L_GUI_SKINS_MINIMAP_BUTTONS_MOUSEOVER = "Addons icons on mouseover" -- Need review
 L_GUI_SKINS_CLCR = "開啟CLCRet樣式增強"
 L_GUI_SKINS_CLCP = "開啟CLCProt樣式增強"
@@ -116,8 +116,8 @@ L_GUI_SKINS_GNOSIS = "Enable styling Gnosis" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"
-L_GUI_COMBATTEXT_ENABLE = "啟用戰鬥信息"
-L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "使用暴雪默認傷害/治療模式（模型頂部/玩家頭像）"
+L_GUI_COMBATTEXT_ENABLE = "啟用xCT戰鬥信息"
+L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS = "啟用暴雪默認傷害/治療模式(需關閉xCT戰鬥信息)"
 L_GUI_COMBATTEXT_DAMAGE_STYLE = "改變模型頂部/玩家頭像的傷害/治療字體"
 L_GUI_COMBATTEXT_DAMAGE = "獨立顯示傷害輸出"
 L_GUI_COMBATTEXT_HEALING = "獨立顯示治療輸出"
@@ -138,6 +138,7 @@ L_GUI_COMBATTEXT_TIME_VISIBLE = "信息保留時間(秒)"
 L_GUI_COMBATTEXT_DK_RUNES = "顯示死亡騎士符文恢復"
 L_GUI_COMBATTEXT_KILLINGBLOW = "顯示擊殺信息"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "將AOE傷害合併為一條信息"
+L_GUI_COMBATTEXT_MERGE_MELEE = "將多個自動攻擊傷害合併為一條信息"
 L_GUI_COMBATTEXT_DISPEL = "當你驅散成功的時候提示"
 L_GUI_COMBATTEXT_INTERRUPT = "當你打斷成功的時候提示"
 L_GUI_COMBATTEXT_DIRECTION = "滾動方向('top'(向上) or 'bottom'(向下))"
@@ -198,7 +199,7 @@ L_GUI_TOOLTIP_SHIFT = "按下shift時顯示提示資訊"
 L_GUI_TOOLTIP_CURSOR = "提示資訊跟隨滑鼠"
 L_GUI_TOOLTIP_ICON = "在提示資訊中顯示物品圖示"
 L_GUI_TOOLTIP_HEALTH = "顯示百分比生命值"
-L_GUI_TOOLTIP_HIDE = "隱藏動作條的提示提示資訊."
+L_GUI_TOOLTIP_HIDE = "隱藏動作條的提示資訊"
 L_GUI_TOOLTIP_HIDE_COMBAT = "戰鬥中隱藏滑鼠提示"
 L_GUI_TOOLTIP_TALENTS = "在提示資訊中顯示天賦"
 L_GUI_TOOLTIP_ACHIEVEMENTS = "在提示資訊中顯示成就比較"
@@ -224,12 +225,12 @@ L_GUI_CHAT_GOLD = "屏蔽某些玩家的垃圾信息"
 L_GUI_CHAT_WIDTH = "框體寬度"
 L_GUI_CHAT_HEIGHT = "框體高度"
 L_GUI_CHAT_BAR = "開啟聊天頻道快捷鍵"
-L_GUI_CHAT_BAR_MOUSEOVER = "鼠標懸停顯示聊天頻道快捷鍵"
-L_GUI_CHAT_TIMESTAMP = "時間標籤顏色"
+L_GUI_CHAT_BAR_MOUSEOVER = "滑鼠懸停顯示聊天頻道快捷鍵"
+L_GUI_CHAT_TIMESTAMP = "時間標簽顏色"
 L_GUI_CHAT_WHISP = "接受密語時聲音提示"
 L_GUI_CHAT_SKIN_BUBBLE = "美化默認聊天泡泡"
 L_GUI_CHAT_CL_TAB = "顯示戰鬥記錄標簽"
-L_GUI_CHAT_TABS_MOUSEOVER = "鼠標懸停顯示頻道標籤"
+L_GUI_CHAT_TABS_MOUSEOVER = "滑鼠懸停顯示頻道標簽"
 L_GUI_CHAT_STICKY = "記住上一次使用的頻道"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "在鏈接中合併垃圾郵件"
 L_GUI_CHAT_TOOL_BAR = "Lite Button Bar for switch Loot and DamageMeter frames" -- Needs review
@@ -248,7 +249,7 @@ L_GUI_MINIMAP_ENABLE = "開啟迷你地圖增強"
 L_GUI_MINIMAP_ICON = "追蹤類型圖示"
 L_GUI_MINIMAP_SIZE = "迷你地圖大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "戰鬥中隱藏迷你地圖"
-L_GUI_MINIMAP_TOGGLE_MENU = "小地圖頂部顯示插件開/関菜單"
+L_GUI_MINIMAP_TOGGLE_MENU = "小地圖頂部顯示插件開/關菜單"
 
 -- Map options
 L_GUI_MAP_ENABLE = "開啟世界地圖增強"
@@ -306,7 +307,7 @@ L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠劃過顯示變身/姿態/圖騰快
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隱藏變身/姿態/圖騰快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "橫向顯示變身/姿態快捷列"
 L_GUI_ACTIONBAR_MICROMENU = "開啟微型菜單"
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠標懸停顯示微型菜單"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "滑鼠懸停顯示微型菜單"
 L_GUI_ACTIONBAR_PANELS = "Panels under bars" -- Need review
 
 -- Auras/Buffs/Debuffs
@@ -326,7 +327,7 @@ L_GUI_AURA_CAST_BY = "提示是誰施放了這個Buff/DeBuff"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "開啟單位框架"
-L_GUI_UF_UF_COLOR = "治療條職業著色"
+L_GUI_UF_UF_COLOR = "生命條顏色(如果啟用自定義顏色)"
 L_GUI_UF_TOTAL_VALUE = "在玩家與目標框體顯示詳細的文字變化"
 L_GUI_UF_COLOR_VALUE = "生命值與魔法值以職業顏色著色"
 L_GUI_UF_BAR_COLOR_VALUE = "生命值以現在剩餘生命著色"

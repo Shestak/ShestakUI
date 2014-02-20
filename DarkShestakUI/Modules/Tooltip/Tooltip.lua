@@ -501,28 +501,3 @@ end
 
 GameTooltip:HookScript("OnTooltipSetItem", FixFont)
 ItemRefTooltip:HookScript("OnTooltipSetItem", FixFont)
-
-----------------------------------------------------------------------------------------
---	Hide 5.4 realm tooltip
-----------------------------------------------------------------------------------------
-local COALESCED_REALM_TOOLTIP1 = string.split(FOREIGN_SERVER_LABEL, COALESCED_REALM_TOOLTIP)
-local INTERACTIVE_REALM_TOOLTIP1 = string.split(INTERACTIVE_SERVER_LABEL, INTERACTIVE_REALM_TOOLTIP)
-
-local function HideLines(self)
-	for i = 3, self:NumLines() do
-		local line = _G["GameTooltipTextLeft"..i]
-		local blank = _G["GameTooltipTextLeft"..i - 1]
-		local text = line:GetText()
-
-		if text then
-			if text:find(COALESCED_REALM_TOOLTIP1) or text:find(INTERACTIVE_REALM_TOOLTIP1) then
-				line:SetText()
-				line:Hide()
-				blank:Hide()
-				self:Show()
-			end
-		end
-	end
-end
-
-GameTooltip:HookScript("OnUpdate", HideLines)

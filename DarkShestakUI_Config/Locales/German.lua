@@ -138,6 +138,7 @@ L_GUI_COMBATTEXT_TIME_VISIBLE = "Zeit(Sekunden) wielange eine einzelne Nachricht
 L_GUI_COMBATTEXT_DK_RUNES = "Zeige Runenaufladung vom Todesritter"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Teilt dir mit ob du den Todesstoß bei einer Kreatur/einem Spieler hattest"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Vereint mehrfachen Flächenschaden in eine einzige Nachricht"
+L_GUI_COMBATTEXT_MERGE_MELEE = "Merges multiple auto attack damage spam" -- Needs review
 L_GUI_COMBATTEXT_DISPEL = "Informiert dich über deine Bannungen"
 L_GUI_COMBATTEXT_INTERRUPT = "Informiert dich über deine Unterbrechungen"
 L_GUI_COMBATTEXT_DIRECTION = "Bildlaufrichtung('top'(geht hoch) or 'bottom'(goes runter))"

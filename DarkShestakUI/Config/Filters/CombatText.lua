@@ -14,6 +14,7 @@ end
 -- General merge outgoing damage
 if C.combattext.merge_aoe_spam then
 	T.aoespam = {}
+	T.aoespam[6603] = 3				-- Auto Attack
 	T.aoespam[148008] = 3			-- Essence of Yu'lon
 	T.aoespam[148009] = 3			-- Spirit of Chi-Ji
 	T.aoespam[149276] = 3			-- Flurry of Xuen

@@ -174,6 +174,7 @@ C["combattext"] = {
 	["dk_runes"] = true,						-- Show deathknight rune recharge
 	["killingblow"] = false,					-- Tells you about your killingblows
 	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
+	["merge_melee"] = true,						-- Merges multiple auto attack damage spam
 	["dispel"] = true,							-- Tells you about your dispels(works only with ["damage"] = true)
 	["interrupt"] = true,						-- Tells you about your interrupts(works only with ["damage"] = true)
 	["direction"] = "bottom",					-- Scrolling Direction("top"(goes down) or "bottom"(goes up))

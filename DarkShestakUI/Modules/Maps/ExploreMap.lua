@@ -7,7 +7,7 @@ if C.map.enable ~= true or C.map.explore_map ~= true then return end
 FACTION = UnitFactionGroup("player")
 local questCompletion, exploreCompletion, adjustedX, adjustedY
 
-function GetInfo(mapName)
+local function GetInfo(mapName)
 	if L_EXTRA_ZONEACHID[mapName] == nil then
 		return nil, nil
 	end
@@ -88,7 +88,7 @@ function WorldMapFrame_SetMapName()
 	WorldMapFrameTitle:SetText(mapName)
 end
 
-function XLM_UD(self, elapsed)
+local function XLM_UD()
 	local x, y = GetCursorPosition()
 	x = x / WorldMapButton:GetEffectiveScale()
 	y = y / WorldMapButton:GetEffectiveScale()
@@ -99,61 +99,40 @@ function XLM_UD(self, elapsed)
 	adjustedY = (centerY + (height / 2) - y) / height
 	adjustedX = (x - (centerX - (width / 2))) / width
 
-	local name, fileName
-	if WorldMapButton:IsMouseOver() and WorldMapFrame:IsShown() then
-		name, fileName = UpdateMapHighlight(adjustedX, adjustedY)
-		if name ~= nil then
-			local w, h
-			w, h = GameTooltip:GetSize()
-			GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
-			GameTooltip:ClearAllPoints()
-			local x, y = GetCursorPosition()
-			x = x / UIParent:GetEffectiveScale()
-			y = y / UIParent:GetEffectiveScale()
-			GameTooltip:SetPoint("TOPLEFT", "UIParent", "BOTTOMLEFT", x + 20 , y - 20)
-			GameTooltip:SetText(name)
-			line1, line2 = GetInfo(name)
-			GameTooltip:AddLine(line1)
-			GameTooltip:AddLine(line2)
-			GameTooltip:Show()
-		else
-			GameTooltip:Hide()
-		end
-		GameTooltip:FadeOut()
+	local name = UpdateMapHighlight(adjustedX, adjustedY)
+	if name ~= nil then
+		local w, h = GameTooltip:GetSize()
+		GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
+		GameTooltip:ClearAllPoints()
+		local x, y = GetCursorPosition()
+		x = x / UIParent:GetEffectiveScale()
+		y = y / UIParent:GetEffectiveScale()
+		GameTooltip:SetPoint("TOPLEFT", "UIParent", "BOTTOMLEFT", x + 20 , y - 20)
+		GameTooltip:SetText(name)
+		line1, line2 = GetInfo(name)
+		GameTooltip:AddLine(line1)
+		GameTooltip:AddLine(line2)
+		GameTooltip:Show()
+	else
+		GameTooltip:Hide()
 	end
+	GameTooltip:FadeOut()
 
 	if C.tooltip.shift_modifer ~= true then
-		WorldMapFrame:SetScript("OnHide", function(self)
+		WorldMapFrame:SetScript("OnHide", function()
 			GameTooltip:Hide()
 			CancelEmote()
 		end)
-	end
-
-	if fileName then
-		WorldMapHighlight:SetDesaturated(true)
-		if line1 ~= nil then
-			loc = tonumber(string.sub(line1, 10, (string.find(line1, "%%") - 1)))
-			if loc == nil then return end
-			if loc == 100 then
-				WorldMapHighlight:SetVertexColor(0, 1, 0, 1)
-			elseif loc == 0 then
-				WorldMapHighlight:SetVertexColor(1, 0, 0, 1)
-			else
-				WorldMapHighlight:SetVertexColor(1, 1, 0, 1)
-			end
-		else
-			WorldMapHighlight:SetVertexColor(1, 1, 1)
-		end
-	else
-		WorldMapHighlight:Hide()
 	end
 end
 
 local ExpLoreMasterFrame = CreateFrame("Frame")
 ExpLoreMasterFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-ExpLoreMasterFrame:SetScript("OnUpdate", function(self, event, elapsed)
+ExpLoreMasterFrame:SetScript("OnUpdate", function(event)
 	if event == "ZONE_CHANGED_NEW_AREA" then
 		SetMapToCurrentZone()
 	end
-	XLM_UD(self, elapsed)
+	if WorldMapFrame:IsShown() and WorldMapButton:IsMouseOver() then
+		XLM_UD()
+	end
 end)

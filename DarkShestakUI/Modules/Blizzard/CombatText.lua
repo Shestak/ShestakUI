@@ -687,9 +687,9 @@ if C.combattext.damage then
 			if eventType == "SWING_DAMAGE" then
 				local amount, _, _, _, _, _, critical = select(12, ...)
 				if amount >= C.combattext.treshold then
-					msg = amount
+					local rawamount = amount
 					if critical then
-						msg = "|cffFF0000"..C.combattext.crit_prefix.."|r"..msg.."|cffFF0000"..C.combattext.crit_postfix.."|r"
+						amount = "|cffFF0000"..C.combattext.crit_prefix.."|r"..amount.."|cffFF0000"..C.combattext.crit_postfix.."|r"
 					end
 					if C.combattext.icons then
 						if (sourceGUID == UnitGUID("pet")) or (sourceFlags == gflags) then
@@ -697,9 +697,23 @@ if C.combattext.damage then
 						else
 							icon = GetSpellTexture(6603)
 						end
-						msg = msg.." \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+						msg = " \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 					end
-					xCT4:AddMessage(msg)
+					local spellId = 6603
+					local color = {1, 1, 1}
+					if C.combattext.merge_melee then
+						SQ[spellId]["locked"] = true
+						SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
+						SQ[spellId]["msg"] = msg
+						SQ[spellId]["color"] = color
+						SQ[spellId]["count"] = SQ[spellId]["count"] + 1
+						if SQ[spellId]["count"] == 1 then
+							SQ[spellId]["utime"] = time() + T.aoespam[spellId]
+						end
+						SQ[spellId]["locked"] = false
+						return
+					end
+					xCT4:AddMessage(amount..""..msg, unpack(color))
 				end
 			elseif eventType == "RANGE_DAMAGE" then
 				local spellId, _, _, amount, _, _, _, _, _, critical = select(12, ...)

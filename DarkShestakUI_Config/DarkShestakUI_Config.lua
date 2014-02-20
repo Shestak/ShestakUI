@@ -165,6 +165,7 @@ local function Local(o)
 	if o == "UIConfigcombattextdk_runes" then o = L_GUI_COMBATTEXT_DK_RUNES end
 	if o == "UIConfigcombattextkillingblow" then o = L_GUI_COMBATTEXT_KILLINGBLOW end
 	if o == "UIConfigcombattextmerge_aoe_spam" then o = L_GUI_COMBATTEXT_MERGE_AOE_SPAM end
+	if o == "UIConfigcombattextmerge_melee" then o = L_GUI_COMBATTEXT_MERGE_MELEE end
 	if o == "UIConfigcombattextdispel" then o = L_GUI_COMBATTEXT_DISPEL end
 	if o == "UIConfigcombattextinterrupt" then o = L_GUI_COMBATTEXT_INTERRUPT end
 	if o == "UIConfigcombattextdirection" then o = L_GUI_COMBATTEXT_DIRECTION end
