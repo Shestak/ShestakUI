@@ -599,11 +599,11 @@ frame:SetScript("OnEvent", function(self, event)
 
 	-- MageNugLB_Frame
 	MageNugLB_Frame:SetTemplate("Default")
+	MageNugLB_Frame:SetSize(20, 20)
 
-	MageNugLB_FrameTexture:SetDrawLayer("ARTWORK")
-	MageNugLB_FrameTexture:ClearAllPoints()
-	MageNugLB_FrameTexture:SetPoint("TOPLEFT", 2, -2)
-	MageNugLB_FrameTexture:SetPoint("BOTTOMRIGHT", -2, 2)
+	MageNugLB_FrameTexture:SetTexture()
+	MageNugLB_FrameTextureBorder:SetTexture()
+	MageNugLB_FrameTextureTitle:SetTexture()
 
 	MageNugLB_Frame_Text:SetFont(C.font.stylization_font, C.font.stylization_font_size * 2, C.font.stylization_font_style)
 	MageNugLB_Frame_Text:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
