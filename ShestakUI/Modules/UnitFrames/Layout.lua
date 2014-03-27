@@ -27,7 +27,7 @@ local function Shared(self, unit)
 	if (unit == "arena" and C.unitframe.show_arena == true and unit ~= "arenatarget") or (unit == "boss" and C.unitframe.show_boss == true) then
 		self:SetAttribute("type2", "focus")
 	else
-		self:SetAttribute("*type2", "menu")
+		self:SetAttribute("*type2", "togglemenu")
 	end
 
 	-- Backdrop for every units
