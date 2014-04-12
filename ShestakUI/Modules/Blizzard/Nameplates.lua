@@ -380,6 +380,13 @@ local function SkinObjects(frame, nameFrame)
 	hp.bg:SetAllPoints(hp)
 	hp.bg:SetTexture(1, 1, 1, 0.2)
 
+	hp.target_ind = hp:CreateTexture(nil, 'OVERLAY')
+	hp.target_ind:SetSize(10, 10)
+	hp.target_ind:SetPoint("LEFT", hp, "TOPLEFT")
+	hp.target_ind:SetTexture("Interface\\PetBattles\\PetBattleHud")
+	hp.target_ind:SetTexCoord(0.11328125,0.16210938,0.02246094,0.04687500)
+	hp.target_ind:Hide()
+
 	hp:HookScript("OnShow", UpdateObjects)
 	frame.hp = hp
 
@@ -627,6 +634,14 @@ local function MatchGUID(frame, destGUID, spellID)
 	end
 end
 
+local function ShowTargetInd(frame)
+	if UnitExists("target") and frame:GetParent():GetAlpha() == 1 and UnitName("target") == frame.hp.name:GetText() then
+		frame.hp.target_ind:Show()
+	else
+		frame.hp.target_ind:Hide()
+	end
+end
+
 -- Run a function for all visible nameplates, we use this for the blacklist, to check unitguid, and to hide drunken text
 local function ForEachPlate(functionToRun, ...)
 	for frame in pairs(frames) do
@@ -666,6 +681,7 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 
 	ForEachPlate(ShowHealth)
 	ForEachPlate(CheckBlacklist)
+	ForEachPlate(ShowTargetInd)
 	if C.nameplate.track_auras then
 		ForEachPlate(CheckUnit_Guid)
 	end
