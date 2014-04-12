@@ -381,9 +381,9 @@ local function SkinObjects(frame, nameFrame)
 	hp.bg:SetTexture(1, 1, 1, 0.2)
 
 	hp.target_ind = hp:CreateTexture(nil, 'OVERLAY')
-	hp.target_ind:SetSize(10, 10)
+	hp.target_ind:SetSize(15, 15)
 	hp.target_ind:SetPoint("LEFT", hp, "TOPLEFT")
-	hp.target_ind:SetTexture("Interface\\PetBattles\\PetBattleHud")
+	hp.target_ind:SetTexture("Interface\\PetBattles\\PetJournal")
 	hp.target_ind:SetTexCoord(0.11328125,0.16210938,0.02246094,0.04687500)
 	hp.target_ind:Hide()
 
