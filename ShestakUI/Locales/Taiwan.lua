@@ -20,7 +20,7 @@ L_ANNOUNCE_FF_CHECK_BUTTON = "檢查食物和精煉"
 
 -- Says thanks for some spells
 L_ANNOUNCE_SS_THANKS = "謝謝你的 "
-L_ANNOUNCE_SS_RECEIVED = " 收到來自于 "
+L_ANNOUNCE_SS_RECEIVED = " ！ @"
 
 -- Pull countdown announce
 L_ANNOUNCE_PC_GO = "開始！"
