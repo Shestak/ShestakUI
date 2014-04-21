@@ -2,11 +2,11 @@
 ## Title: ShestakUI Filger
 ## Notes: Class timers for ShestakUI
 ## Author: Nils Ruesch
-## Version: 4.57
+## Version: 4.58
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 4.57
+## X-Curse-Packaged-Version: 4.58
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org

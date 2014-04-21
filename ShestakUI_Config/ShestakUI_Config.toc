@@ -2,12 +2,12 @@
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI
 ## Author: Tohveli
-## Version: 4.57
+## Version: 4.58
 ## Credits: Elv22, Fernir, Tukz
 ## RequiredDeps: ShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
-## X-Curse-Packaged-Version: 4.57
+## X-Curse-Packaged-Version: 4.58
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## Website: http://shestak.org
