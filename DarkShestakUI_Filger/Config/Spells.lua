@@ -2586,6 +2586,8 @@ C["filger_spells"] = {
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burning Rush
 			{spellID = 111400, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fire and Brimstone
+			{spellID = 108683, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2605,6 +2607,10 @@ C["filger_spells"] = {
 			{spellID = 34936, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demonic Rebirth
 			{spellID = 108559, unitID = "player", caster = "player", filter = "BUFF"},
+
+			-- Item sets
+			-- Ember Master (T16)
+			{spellID = 145164, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -3067,6 +3073,8 @@ C["filger_spells"] = {
 			{spellID = 105706, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Potion of the Jade Serpent
 			{spellID = 105702, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kafa Press
+			{spellID = 125282, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Speed (Potion)
 			{spellID = 2379, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Speed (BG)

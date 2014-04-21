@@ -45,6 +45,8 @@ bar:RegisterEvent("KNOWN_CURRENCY_TYPES_UPDATE")
 bar:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
 bar:RegisterEvent("BAG_UPDATE")
 bar:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
+bar:RegisterEvent("UPDATE_VEHICLE_ACTIONBAR")
+bar:RegisterEvent("UPDATE_OVERRIDE_ACTIONBAR")
 bar:SetScript("OnEvent", function(self, event, ...)
 	if event == "PLAYER_LOGIN" or event == "ACTIVE_TALENT_GROUP_CHANGED" then
 		for i = 1, NUM_ACTIONBAR_BUTTONS do
@@ -66,6 +68,13 @@ bar:SetScript("OnEvent", function(self, event, ...)
 		]])
 
 		RegisterStateDriver(self, "page", GetBar())
+	elseif event == "UPDATE_VEHICLE_ACTIONBAR" or event == "UPDATE_OVERRIDE_ACTIONBAR" then
+		if not InCombatLockdown() and (HasVehicleActionBar() or HasOverrideActionBar()) then
+			for i = 1, NUM_ACTIONBAR_BUTTONS do
+				local button = _G["ActionButton"..i]
+				ActionButton_Update(button)
+			end
+		end
 	else
 		MainMenuBar_OnEvent(self, event, ...)
 	end

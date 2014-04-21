@@ -55,7 +55,7 @@ frame:SetScript("OnEvent", function(self, event)
 		"MageNugManaGem_FrameTexture",
 		"MageNugAB_FrameTexture",
 		"MageNugIgnite_FrameTexture",
-		"MageNugLB_FrameTexture",
+		"MageNugLB_FrameTextureIcon",
 		"MageNugMoonkin_Frame_Texture",
 		"MNmoonFire_FrameTexture",
 		"MNinsectSwarm_FrameTexture",
@@ -125,12 +125,14 @@ frame:SetScript("OnEvent", function(self, event)
 		"MageNugSoundOptionFrame_BrainFreezeCheckButton",
 		"MageNugSoundOptionFrame_CauterizeCheckButton",
 		"MageNugSoundOptionFrame_TimeWarpCheckButton",
+		"MageNugSoundOptionFrame_ABCheckButton",
 		"MageNugOption2Frame_MinimapCheckButton",
 		"MageNugOption2Frame_CameraCheckButton",
 		"MageNugOption2Frame_ConsoleTextCheckButton",
 		"MageNugOption2Frame_LockFramesCheckButton",
 		"MageNugOption2Frame_CheckButtonTT",
 		"MageNugOption2Frame_ClickThruCheckButton",
+		"MageNugOption2Frame_SimpleUICheckButton",
 		"MageNugCooldownFrame_apButton",
 		"MageNugCooldownFrame_cdButton",
 		"MageNugCooldownFrame_bwButton",
@@ -146,6 +148,7 @@ frame:SetScript("OnEvent", function(self, event)
 		"MageNugCooldownFrame_evoButton",
 		"MageNugCooldownFrame_treantButton",
 		"MageNugCooldownFrame_ivButton",
+		"MageNugCooldownFrame_blinkButton",
 		"MageNugCooldownFrame_miButton"
 	}
 
@@ -204,6 +207,7 @@ frame:SetScript("OnEvent", function(self, event)
 		"MageNugSoundOptionFrame_FoFSoundEditBox",
 		"MageNugSoundOptionFrame_BrainFreezeSoundEditBox",
 		"MageNugSoundOptionFrame_CauterizeSoundEditBox",
+		"MageNugSoundOptionFrame_ABSoundEditBox",
 		"MageNugSoundOptionFrame_TimeWarpSoundEditBox"
 	}
 
@@ -599,11 +603,11 @@ frame:SetScript("OnEvent", function(self, event)
 
 	-- MageNugLB_Frame
 	MageNugLB_Frame:SetTemplate("Default")
+	MageNugLB_Frame:SetSize(21, 21)
 
-	MageNugLB_FrameTexture:SetDrawLayer("ARTWORK")
-	MageNugLB_FrameTexture:ClearAllPoints()
-	MageNugLB_FrameTexture:SetPoint("TOPLEFT", 2, -2)
-	MageNugLB_FrameTexture:SetPoint("BOTTOMRIGHT", -2, 2)
+	MageNugLB_FrameTexture:SetTexture()
+	MageNugLB_FrameTextureBorder:SetTexture()
+	MageNugLB_FrameTextureTitle:SetTexture()
 
 	MageNugLB_Frame_Text:SetFont(C.font.stylization_font, C.font.stylization_font_size * 2, C.font.stylization_font_style)
 	MageNugLB_Frame_Text:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
@@ -836,4 +840,5 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugMoonkinOptionFrame_Button:SkinButton()
 	MageNugOption2FrameButton1:SkinButton()
 	MageNugOption2FrameButton2:SkinButton()
+	MageNugOption2FrameButton3:SkinButton()
 end)
