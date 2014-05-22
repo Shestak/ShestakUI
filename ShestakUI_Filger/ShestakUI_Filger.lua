@@ -338,7 +338,7 @@ function Filger:OnEvent(event, unit)
 						start, duration = GetInventoryItemCooldown("player", data.slotID)
 					end
 				end
-				if name and (duration or 0) > 1.5 then
+				if name and (T.class ~= "DEATHKNIGHT" and (duration or 0) > 1.5) or (duration or 0) > 10 then
 					found = true
 				end
 			elseif data.filter == "ICD" and (not data.spec or data.spec == ptt) then
