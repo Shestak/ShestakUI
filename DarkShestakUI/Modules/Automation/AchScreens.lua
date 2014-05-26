@@ -28,7 +28,7 @@ local function TakeScreen(delay, func, ...)
 end
 
 local function OnEvent(...)
-	TakeScreen(1, Screenshot)
+	TakeScreen(1, TakeScreenshot)
 end
 
 local frame = CreateFrame("Frame")
