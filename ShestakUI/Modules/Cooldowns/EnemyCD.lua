@@ -63,6 +63,12 @@ local UpdatePositions = function()
 			else
 				icons[i]:SetPoint("LEFT", icons[i-1], "RIGHT", 3, 0)
 			end
+
+		end
+		if i < limit then
+			icons[i]:SetAlpha(1)
+		else
+			icons[i]:SetAlpha(0)
 		end
 		icons[i].id = i
 	end
