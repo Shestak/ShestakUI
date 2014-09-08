@@ -208,7 +208,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	else
 		SetCVar("useUiScale", 1)
 		if C.general.multisampleprotect == true and GetCVar("gxMultisample") ~= "1" then
-			SetMultisampleFormat(1)
+			--WoD SetMultisampleFormat(1)
 		end
 		if C.general.uiscale > 1.28 then C.general.uiscale = 1.28 end
 		if C.general.uiscale < 0.64 then C.general.uiscale = 0.64 end
