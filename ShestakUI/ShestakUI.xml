@@ -55,7 +55,7 @@
 
 	<Script file="Modules\UnitFrames\Tags.lua"/>
 	<Script file="Modules\UnitFrames\Layout.lua"/>
-	<Script file="Modules\UnitFrames\RaidDPS.lua"/>
+	<!-- <Script file="Modules\UnitFrames\RaidDPS.lua"/>
 	<Script file="Modules\UnitFrames\RaidHeal.lua"/>
 
 	<Script file="Modules\Misc\AddOnsList.lua"/>
@@ -82,7 +82,7 @@
 	<Script file="Modules\Misc\SlotItemLevel.lua"/>
 	<Script file="Modules\Misc\SumAucBuyouts.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
-	<Script file="Modules\Misc\TrainAll.lua"/>
+	<Script file="Modules\Misc\TrainAll.lua"/> -->
 
 	<Script file="Modules\ActionBars\Functions.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>
@@ -101,7 +101,7 @@
 	<Script file="Modules\ActionBars\Cooldowns.lua"/>
 	<Script file="Modules\ActionBars\MicroMenu.lua"/>
 
-	<Script file="Modules\Announcements\BadGear.lua"/>
+	<!-- <Script file="Modules\Announcements\BadGear.lua"/>
 	<Script file="Modules\Announcements\Drinking.lua"/>
 	<Script file="Modules\Announcements\FeastsAndPortals.lua"/>
 	<Script file="Modules\Announcements\FlaskAndFood.lua"/>
@@ -148,15 +148,15 @@
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
 	<Script file="Modules\Blizzard\Vehicle.lua"/>
 
-	<Script file="Modules\Buffs\AuraSource.lua"/>
+	<Script file="Modules\Buffs\AuraSource.lua"/> -->
 	<Script file="Modules\Buffs\BuffFrame.lua"/>
 	<Script file="Modules\Buffs\ConsolidatedBuffs.lua"/>
-	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
-	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
+	<!-- <Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
+	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/> -->
 
 	<Script file="Modules\Chat\ChatFrames.lua"/>
 	<Script file="Modules\Chat\ChatTabs.lua"/>
-	<Script file="Modules\Chat\CopyUrl.lua"/>
+	<!-- <Script file="Modules\Chat\CopyUrl.lua"/>
 	<Script file="Modules\Chat\CopyChat.lua"/>
 	<Script file="Modules\Chat\ChatBars.lua"/>
 	<Script file="Modules\Chat\Filters.lua"/>
@@ -186,9 +186,9 @@
 	<Script file="Modules\Maps\ButtonCollect.lua"/>
 	<Script file="Modules\Maps\ExploreMap.lua"/>
 	<Script file="Modules\Maps\FogOfWar.lua"/>
-	<Script file="Modules\Maps\MapBossCount.lua"/>
+	<Script file="Modules\Maps\MapBossCount.lua"/> -->
 	<Script file="Modules\Maps\MiniMap.lua"/>
-	<Script file="Modules\Maps\MiniMapButtons.lua"/>
+	<!-- <Script file="Modules\Maps\MiniMapButtons.lua"/>
 	<Script file="Modules\Maps\ToggleMenu.lua"/>
 	<Script file="Modules\Maps\WorldMap.lua"/>
 
@@ -227,10 +227,10 @@
 	<Script file="Modules\Skins\Skada.lua"/>
 	<Script file="Modules\Skins\TinyDPS.lua"/>
 	<Script file="Modules\Skins\VanasKoS.lua"/>
-	<Script file="Modules\Skins\WeakAuras.lua"/>
+	<Script file="Modules\Skins\WeakAuras.lua"/> -->
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
-	<Script file="Modules\Tooltip\HyperLink.lua"/>
+	<!-- <Script file="Modules\Tooltip\HyperLink.lua"/>
 	<Script file="Modules\Tooltip\Achievement.lua"/>
 	<Script file="Modules\Tooltip\Talents.lua"/>
 	<Script file="Modules\Tooltip\ItemIcons.lua"/>
@@ -245,5 +245,5 @@
 	<Script file="Modules\Tooltip\CheckItemTransmogrify.lua"/>
 	<Script file="Modules\Tooltip\InstanceLockCompare.lua"/>
 
-	<Script file="Core\Movers.lua"/>
+	<Script file="Core\Movers.lua"/> -->
 </Ui>
