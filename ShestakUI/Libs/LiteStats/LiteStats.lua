@@ -791,7 +791,6 @@ end
 --	Guild
 ----------------------------------------------------------------------------------------
 if guild.enabled then
-	local guildXP = {}
 	local guildTable = {}
 	local function BuildGuildTable()
 		wipe(guildTable)
@@ -805,13 +804,6 @@ if guild.enabled then
 				return a[1] < b[1]
 			end
 		end)
-	end
-	local function UpdateGuildXP()
-		local currentXP, remainingXP = UnitGetGuildXP("player")
-		local nextLevelXP = currentXP + remainingXP
-		if nextLevelXP == 0 then return end
-		local percentTotal = tostring(math.ceil((currentXP / nextLevelXP) * 100))
-		guildXP[0] = {currentXP, nextLevelXP, percentTotal}
 	end
 	local function ShortValueXP(v)
 		if v >= 1e6 then
@@ -834,7 +826,6 @@ if guild.enabled then
 		},
 		OnLoad = function(self)
 			GuildRoster()
-			UpdateGuildXP()
 			SortGuildRoster(guild.sorting == "note" and "rank" or "note")
 			SortGuildRoster(guild.sorting)
 			self:RegisterEvent("GROUP_ROSTER_UPDATE")
@@ -845,17 +836,9 @@ if guild.enabled then
 			if self.hovered then
 				self:GetScript("OnEnter")(self)
 			end
-			if event == "GUILD_XP_UPDATE" then
-				UpdateGuildXP()
-			end
-			if IsInGuild() then
-				BuildGuildTable()
-			end
 		end,
 		OnUpdate = function(self, u)
 			if IsInGuild() then
-				if not GuildFrame and not InCombatLockdown() then LoadAddOn("Blizzard_GuildUI") UpdateGuildXP() end
-				if u == "GUILD_XP_UPDATE" then UpdateGuildXP() end
 				AltUpdate(self)
 				if not self.gmotd then
 					if self.elapsed > 1 then GuildRoster(); self.elapsed = 0 end
@@ -936,19 +919,6 @@ if guild.enabled then
 				GameTooltip:ClearLines()
 				GameTooltip:AddDoubleLine(GetGuildInfo(P),format("%s: %d/%d", GUILD_ONLINE_LABEL, online, total), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 				if gmotd ~= "" then GameTooltip:AddLine(format("%s |cffaaaaaa- |cffffffff%s", GUILD_MOTD, gmotd), ttsubh.r, ttsubh.g, ttsubh.b, 1) end
-				if guild.show_xp then
-					if GetGuildLevel() ~= 25 then
-						local currentXP, nextLevelXP, percentTotal = unpack(guildXP[0])
-						GameTooltip:AddLine(string.format(col..GUILD_EXPERIENCE_CURRENT, "|r |cFFFFFFFF"..ShortValueXP(currentXP), ShortValueXP(nextLevelXP), percentTotal))
-					end
-					if standingID ~= 8 then -- Not Max Rep
-						GameTooltip:AddLine(" ")
-						barMax = barMax - barMin
-						barValue = barValue - barMin
-						barMin = 0
-						GameTooltip:AddLine(string.format("%s:|r |cFFFFFFFF%s/%s (%s%%)", col..COMBAT_FACTION_CHANGE, ShortValueXP(barValue), ShortValueXP(barMax), math.ceil((barValue / barMax) * 100)))
-					end
-				end
 				if guild.maxguild ~= 0 and online >= 1 then
 					GameTooltip:AddLine(" ")
 					for i = 1, total do
