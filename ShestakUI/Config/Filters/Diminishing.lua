@@ -18,11 +18,11 @@ T.DiminishingSpells = {
 	[102795] = {"ctrlstun"},	-- Bear Hug
 	[19577] = {"ctrlstun"},		-- Intimidation
 	[117526] = {"ctrlstun"},	-- Binding Shot
-	[90337] = {"ctrlstun"},		-- Bad Manner (Monkey)
+	--WoD [90337] = {"ctrlstun"},		-- Bad Manner (Monkey)
 	[50519] = {"ctrlstun"},		-- Sonic Blast (Bat)
-	[56626] = {"ctrlstun"},		-- Sting (Wasp)
-	[126246] = {"ctrlstun"},	-- Lullaby (Crane)
-	[96201] = {"ctrlstun"},		-- Web Wrap (Shale Spider)
+	--WoD [56626] = {"ctrlstun"},		-- Sting (Wasp)
+	--WoD [126246] = {"ctrlstun"},	-- Lullaby (Crane)
+	--WoD [96201] = {"ctrlstun"},		-- Web Wrap (Shale Spider)
 	[126423] = {"ctrlstun"},	-- Petrifying Gaze (Basilisk)
 	[126355] = {"ctrlstun"},	-- Paralyzing Quill (Porcupine)
 	[44572] = {"ctrlstun"},		-- Deep Freeze
@@ -50,9 +50,9 @@ T.DiminishingSpells = {
 	[339] = {"ctrlroot"},		-- Entangling Roots
 	[19975] = {"ctrlroot"},		-- Nature's Grasp
 	[102359] = {"ctrlroot"},	-- Mass Entanglement
-	[50245] = {"ctrlroot"},		-- Pin (Crab)
-	[4167] = {"ctrlroot"},		-- Web (Spider)
-	[54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
+	--WoD [50245] = {"ctrlroot"},		-- Pin (Crab)
+	--WoD [4167] = {"ctrlroot"},		-- Web (Spider)
+	--WoD [54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
 	[90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
 	[136634] = {"ctrlroot"},	-- Narrow Escape
 	[122] = {"ctrlroot"},		-- Frost Nova
@@ -64,7 +64,7 @@ T.DiminishingSpells = {
 	[105771] = {"ctrlroot"},	-- Warbringer
 
 	-- Disarms
-	[50541] = {"disarm"},		-- Clench (Scorpid)
+	--WoD [50541] = {"disarm"},		-- Clench (Scorpid)
 	[91644] = {"disarm"},		-- Snatch (Bird of Prey)
 	[117368] = {"disarm"},		-- Grapple Weapon
 	[64058] = {"disarm"},		-- Psychic Horror
@@ -121,7 +121,7 @@ T.DiminishingSpells = {
 	[7922] = {"rndstun"},		-- Charge Stun
 
 	-- Random Roots
-	[19185] = {"rndroot"},		-- Entrapment
+	--WoD [19185] = {"rndroot"},		-- Entrapment
 	[111340] = {"rndroot"},		-- Ice Ward
 	[64695] = {"rndroot"},		-- Earthgrab
 
@@ -134,7 +134,7 @@ T.DiminishingSpells = {
 	-- Silences
 	[47476] = {"silence"},		-- Strangulate
 	[81261] = {"silence"},		-- Solar Beam
-	[34490] = {"silence"},		-- Silencing Shot
+	--WoD [34490] = {"silence"},		-- Silencing Shot
 	[50479] = {"silence"},		-- Nether Shock (Nether Ray)
 	[55021] = {"silence"},		-- Improved Counterspell
 	[102051] = {"silence"},		-- Frostjaw
@@ -170,7 +170,7 @@ T.DiminishingIcons = {
 	["horror"] = GetIcon(64044),
 	["mind"] = GetIcon(605),
 	["rndstun"] = GetIcon(118895),
-	["rndroot"] = GetIcon(19185),
+	["rndroot"] = GetIcon(64695),
 	["rnddis"] = GetIcon(31661),
 	["silence"] = GetIcon(55021),
 }

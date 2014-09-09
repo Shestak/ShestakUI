@@ -45,7 +45,7 @@ T.RaidBuffs = {
 		{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},				-- Earthliving
 	},
 	DEATHKNIGHT = {
-		{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},				-- Unholy Frenzy
+		--WoD {49016, "TOPRIGHT", {0.89, 0.89, 0.1}},				-- Unholy Frenzy
 	},
 	HUNTER = {
 		{35079, "TOPRIGHT", {0.2, 0.2, 1}},					-- Misdirection
@@ -310,7 +310,7 @@ T.RaidDebuffs = {
 	[SpellName(24394)] = 3,		-- Intimidation
 	[SpellName(1513)] = 3,		-- Scare Beast
 	[SpellName(19503)] = 3,		-- Scatter Shot
-	[SpellName(34490)] = 3,		-- Silence Shot
+	--WoD [SpellName(34490)] = 3,		-- Silence Shot
 	-- Mage
 	[SpellName(61305)] = 3,		-- Polymorph
 	[SpellName(82691)] = 3,		-- Ring of Frost

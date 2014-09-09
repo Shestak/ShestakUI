@@ -122,7 +122,7 @@ C["filger_spells"] = {
 			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
-			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -204,7 +204,7 @@ C["filger_spells"] = {
 			-- Icebound Fortitude
 			{spellID = 48792, filter = "CD"},
 			-- Unholy Frenzy
-			{spellID = 49016, filter = "CD"},
+			--WoD {spellID = 49016, filter = "CD"},
 			-- Summon Gargoyle
 			{spellID = 49206, filter = "CD"},
 
@@ -441,7 +441,7 @@ C["filger_spells"] = {
 			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
-			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -721,7 +721,7 @@ C["filger_spells"] = {
 			-- General
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
-			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Ranged
 			-- Mirror Scope (Crit)
 			{spellID = 109092, unitID = "player", caster = "player", filter = "BUFF"},
@@ -746,11 +746,11 @@ C["filger_spells"] = {
 			-- Narrow Escape
 			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Web (Spider)
-			{spellID = 4167, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--WoD {spellID = 4167, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Venom Web Spray (Silithid)
-			{spellID = 54706, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--WoD {spellID = 54706, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pin (Crab)
-			{spellID = 50245, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--WoD {spellID = 50245, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -766,7 +766,7 @@ C["filger_spells"] = {
 			-- Wyvern Sting
 			{spellID = 19386, unitID = "focus", caster = "player", filter = "DEBUFF"},
 			-- Silencing Shot
-			{spellID = 34490, unitID = "focus", caster = "player", filter = "DEBUFF"},
+			--WoD {spellID = 34490, unitID = "focus", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -837,15 +837,15 @@ C["filger_spells"] = {
 			-- Spirit Mend (Pet)
 			{spellID = 90361, filter = "CD"},
 			-- Web (Pet)
-			{spellID = 4167, filter = "CD"},
+			--WoD {spellID = 4167, filter = "CD"},
 			-- Venom Web Spray (Pet)
-			{spellID = 54706, filter = "CD"},
+			--WoD {spellID = 54706, filter = "CD"},
 			-- Web Wrap (Pet)
-			{spellID = 96201, filter = "CD"},
+			--WoD {spellID = 96201, filter = "CD"},
 			-- Bad Manner (Pet)
-			{spellID = 90337, filter = "CD"},
+			--WoD {spellID = 90337, filter = "CD"},
 			-- Lullaby (Pet)
-			{spellID = 126246, filter = "CD"},
+			--WoD {spellID = 126246, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -1190,7 +1190,7 @@ C["filger_spells"] = {
 			-- Touch of Karma
 			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Avert Harm
-			{spellID = 115213, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 115213, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
@@ -1215,7 +1215,7 @@ C["filger_spells"] = {
 			-- Combo Breaker: Tiger Palm
 			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Guard
-			{spellID = 118636, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 118636, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shuffle
 			{spellID = 115307, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vital Mists
@@ -1303,7 +1303,7 @@ C["filger_spells"] = {
 			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
-			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -1375,7 +1375,7 @@ C["filger_spells"] = {
 			-- Charging Ox Wave
 			{spellID = 119392, filter = "CD"},
 			-- Clash
-			{spellID = 122057, filter = "CD"},
+			--WoD {spellID = 122057, filter = "CD"},
 			-- Ring of Peace
 			{spellID = 116844, filter = "CD"},
 			-- Dampen Harm
@@ -1583,7 +1583,7 @@ C["filger_spells"] = {
 			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
-			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2115,7 +2115,7 @@ C["filger_spells"] = {
 			-- General
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
-			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2394,7 +2394,7 @@ C["filger_spells"] = {
 			-- General
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
-			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2934,7 +2934,7 @@ C["filger_spells"] = {
 			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
 			-- Swordguard Embroidery (Attack Power)
-			{spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -3096,13 +3096,13 @@ C["filger_spells"] = {
 			-- Synapse Springs
 			{spellID = 126734, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Phase Fingers
-			{spellID = 108788, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 108788, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nitro Boosts
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Parachute
 			{spellID = 55001, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lifeblood
-			{spellID = 74497, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 74497, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -3140,7 +3140,7 @@ C["filger_spells"] = {
 			-- Rallying Cry
 			{spellID = 97463, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
-			{spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
+			--WoD {spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
@@ -3243,35 +3243,35 @@ C["filger_spells"] = {
 			-- Wyvern Sting
 			{spellID = 19386, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
-			{spellID = 34490, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 34490, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Narrow Escape
 			{spellID = 136634, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entrapment
-			{spellID = 19185, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 19185, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Shot
 			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Barrage
-			{spellID = 35101, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 35101, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Glyph of Freezing Trap
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Trap
-			{spellID = 135382, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 135382, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)
-			{spellID = 90337, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WOD {spellID = 90337, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Lullaby (Crane)
-			{spellID = 126246, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 126246, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Web Wrap (Shale Spider)
-			{spellID = 96201, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 96201, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Venom Web Spray (Silithid)
-			{spellID = 54706, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 54706, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Web (Spider)
-			{spellID = 4167, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 4167, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Pin (Crab)
-			{spellID = 50245, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 50245, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
 			{spellID = 44957, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Clench (Scorpid)
-			{spellID = 50541, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 50541, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Breath (Chimaera)
 			{spellID = 54644, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
@@ -3279,7 +3279,7 @@ C["filger_spells"] = {
 			-- Time Warp (Warp Stalker)
 			{spellID = 35346, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Sting (Wasp)
-			{spellID = 56626, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 56626, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Sonic Blast (Bat)
 			{spellID = 50519, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Paralyzing Quill (Porcupine)
@@ -3540,7 +3540,7 @@ C["filger_spells"] = {
 			-- Pillar of Frost
 			{spellID = 51271, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Unholy Frenzy
-			{spellID = 49016, unitID = "target", caster = "all", filter = "BUFF"},
+			--WoD {spellID = 49016, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Death's Advance
 			{spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
@@ -3619,11 +3619,11 @@ C["filger_spells"] = {
 			-- Scatter Shot
 			{spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silencing Shot
-			{spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)
-			{spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Lullaby (Crane)
-			{spellID = 126246, unitID = "target", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 126246, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Nether Shock (Nether Ray)
 			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
 
