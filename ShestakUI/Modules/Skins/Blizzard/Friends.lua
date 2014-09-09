@@ -58,12 +58,12 @@ local function LoadSkin()
 		"FriendsFrameBroadcastInputLeft",
 		"FriendsFrameBroadcastInputRight",
 		"FriendsFrameBroadcastInputMiddle",
-		"ChannelFrameDaughterFrameChannelNameLeft",
-		"ChannelFrameDaughterFrameChannelNameRight",
-		"ChannelFrameDaughterFrameChannelNameMiddle",
-		"ChannelFrameDaughterFrameChannelPasswordLeft",
-		"ChannelFrameDaughterFrameChannelPasswordRight",
-		"ChannelFrameDaughterFrameChannelPasswordMiddle"
+		--WoD "ChannelFrameDaughterFrameChannelNameLeft",
+		--WoD "ChannelFrameDaughterFrameChannelNameRight",
+		--WoD "ChannelFrameDaughterFrameChannelNameMiddle",
+		--WoD "ChannelFrameDaughterFrameChannelPasswordLeft",
+		--WoD "ChannelFrameDaughterFrameChannelPasswordRight",
+		--WoD "ChannelFrameDaughterFrameChannelPasswordMiddle"
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -189,7 +189,7 @@ local function LoadSkin()
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.UpdateButton:SkinButton()
 
 	BattleTagInviteFrame:SetTemplate("Transparent")
-	T.SkinEditBox(BattleTagInviteFrameScrollFrame)
+	--WoD T.SkinEditBox(BattleTagInviteFrameScrollFrame)
 	for i = 1, BattleTagInviteFrame:GetNumChildren() do
 		local child = select(i, BattleTagInviteFrame:GetChildren())
 		if child:GetObjectType() == "Button" then
