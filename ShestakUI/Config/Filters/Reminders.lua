@@ -32,7 +32,7 @@ if C.reminder.raid_buffs_enable == true then
 		},
 		Stat = {
 			20217,	-- Blessing of Kings
-			117666,	-- Legacy of the Emperor
+			--WoD 117666,	-- Legacy of the Emperor
 			90363,	-- Embrace of the Shale Spider
 			1126,	-- Mark of the Wild
 		},
@@ -48,7 +48,7 @@ if C.reminder.raid_buffs_enable == true then
 	-- Caster buffs
 	function T.ReminderCasterBuffs()
 		Spell5Buff = {	-- Spell Power
-			77747,	-- Burning Wrath
+			--WoD 77747,	-- Burning Wrath
 			109773,	-- Dark Intent
 			126309,	-- Still Water
 			61316,	-- Dalaran Brilliance
@@ -58,7 +58,7 @@ if C.reminder.raid_buffs_enable == true then
 			24907,	-- Moonkin Aura
 			49868,	-- Mind Quickening
 			135678,	-- Energizing Spores
-			51470,	-- Elemental Oath
+			--WoD 51470,	-- Elemental Oath
 		}
 	end
 
@@ -70,7 +70,7 @@ if C.reminder.raid_buffs_enable == true then
 			57330,	-- Horn of Winter
 		}
 		Spell6Buff = {	-- Melee and Ranged Haste
-			30809,	-- Unleashed Rage
+			--WoD 30809,	-- Unleashed Rage
 			113742,	-- Swiftblade's Cunning
 			128432,	-- Cackling Howl
 			128433,	-- Serpent's Swiftness
@@ -134,7 +134,7 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					20217,	-- Blessing of Kings
-					117666,	-- Legacy of the Emperor
+					--WoD 117666,	-- Legacy of the Emperor
 					90363,	-- Embrace of the Shale Spider
 				},
 				["combat"] = true,
@@ -176,7 +176,7 @@ if C.reminder.solo_buffs_enable == true then
 		MONK = {
 			[1] = {	-- Legacy of the Emperor group
 				["spells"] = {
-					117666,	-- Legacy of the Emperor
+					--WoD 117666,	-- Legacy of the Emperor
 				},
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
@@ -219,7 +219,7 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
-					117666,	-- Legacy of the Emperor
+					--WoD 117666,	-- Legacy of the Emperor
 					90363,	-- Embrace of the Shale Spider
 					19740,	-- Blessing of Might
 				},
@@ -302,7 +302,7 @@ if C.reminder.solo_buffs_enable == true then
 				["negate_spells"] = {
 					1459,	-- Arcane Brilliance
 					61316,	-- Dalaran Brilliance
-					77747,	-- Burning Wrath
+					--WoD 77747,	-- Burning Wrath
 				},
 				["combat"] = true,
 				["instance"] = true,
