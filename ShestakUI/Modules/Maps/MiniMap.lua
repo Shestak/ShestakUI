@@ -179,9 +179,9 @@ local micromenu = {
 	{text = ACHIEVEMENT_BUTTON, notCheckable = 1, func = function()
 		ToggleAchievementFrame()
 	end},
-	{text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
-		ToggleFrame(QuestLogFrame)
-	end},
+	-- {text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
+		-- ToggleFrame(QuestLogFrame)
+	-- end},
 	{text = guildText, notCheckable = 1, func = function()
 		ToggleGuildFrame()
 		if IsInGuild() then
@@ -191,20 +191,20 @@ local micromenu = {
 	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
 		ToggleFriendsFrame()
 	end},
-	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
-		if T.level >= SHOW_PVP_LEVEL then
-			if not PVPUIFrame then
-				PVP_LoadUI()
-			end
-			ToggleFrame(PVPUIFrame)
-		else
-			if C.error.white == false then
-				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL), 1, 0.1, 0.1)
-			else
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
-			end
-		end
-	end},
+	-- {text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
+		-- if T.level >= SHOW_PVP_LEVEL then
+			-- if not PVPUIFrame then
+				-- PVP_LoadUI()
+			-- end
+			-- ToggleFrame(PVPUIFrame)
+		-- else
+			-- if C.error.white == false then
+				-- UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL), 1, 0.1, 0.1)
+			-- else
+				-- print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
+			-- end
+		-- end
+	-- end},
 	{text = DUNGEONS_BUTTON, notCheckable = 1, func = function()
 		if T.level >= SHOW_LFD_LEVEL then
 			PVEFrame_ToggleFrame()
