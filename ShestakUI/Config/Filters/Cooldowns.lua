@@ -13,7 +13,7 @@ if C.raidcooldown.enable == true then
 		[20707] = 600,	-- Soulstone
 		[126393] = 600,	-- Eternal Guardian
 		[64901] = 360,	-- Hymn of Hope
-		[29166] = 180,	-- Innervate
+		--WoD [29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem
 		[108280] = 180,	-- Healing Tide Totem
 	}
@@ -44,7 +44,7 @@ if C.enemycooldown.enable == true then
 		[20066] = 15,	-- Repentance
 		[10326] = 15,	-- Turn Evil
 		[108194] = 30,	-- Asphyxiate
-		[19503] = 30,	-- Scatter Shot
+		--WoD [19503] = 30,	-- Scatter Shot
 		[1499] = 30,	-- Freezing Trap
 		[44572] = 30,	-- Deep Freeze
 		[105593] = 30,	-- Fist of Justice
@@ -73,11 +73,11 @@ if C.enemycooldown.enable == true then
 		[19263] = 180,	-- Deterrence
 		[33206] = 180,	-- Pain Suppression
 		-- Disarms
-		[51722] = 60,	-- Dismantle
-		[676] = 60,		-- Disarm
+		--WoD [51722] = 60,	-- Dismantle
+		--WoD [676] = 60,		-- Disarm
 		-- Mana regen
 		[54428] = 120,	-- Divine Plea
-		[29166] = 180,	-- Innervate
+		--WoD [29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem
 	}
 end

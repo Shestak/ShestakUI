@@ -300,7 +300,7 @@ T.RaidDebuffs = {
 	[SpellName(47476)] = 3,		-- Strangulate
 	-- Druid
 	[SpellName(33786)] = 3,		-- Cyclone
-	[SpellName(2637)] = 3,		-- Hibernate
+	--WoD [SpellName(2637)] = 3,		-- Hibernate
 	[SpellName(339)] = 2,		-- Entangling Roots
 	[SpellName(78675)] = 3,		-- Solar Beam
 	-- Hunter
@@ -308,8 +308,8 @@ T.RaidDebuffs = {
 	[SpellName(19386)] = 3,		-- Wyvern Sting
 	[SpellName(117526)] = 3,	-- Binding Shot
 	[SpellName(24394)] = 3,		-- Intimidation
-	[SpellName(1513)] = 3,		-- Scare Beast
-	[SpellName(19503)] = 3,		-- Scatter Shot
+	--WoD [SpellName(1513)] = 3,		-- Scare Beast
+	--WoD [SpellName(19503)] = 3,		-- Scatter Shot
 	--WoD [SpellName(34490)] = 3,		-- Silence Shot
 	-- Mage
 	[SpellName(61305)] = 3,		-- Polymorph
@@ -317,7 +317,7 @@ T.RaidDebuffs = {
 	[SpellName(44572)] = 3,		-- Deep Freeze
 	[SpellName(31661)] = 3,		-- Dragon's Breath
 	[SpellName(102051)] = 3,	-- Frostjaw
-	[SpellName(55021)] = 3,		-- Improved Counterspell
+	--WoD [SpellName(55021)] = 3,		-- Improved Counterspell
 	[SpellName(122)] = 2,		-- Frost Nova
 	[SpellName(111340)] = 2,	-- Ice Ward
 	-- Monk
@@ -331,7 +331,7 @@ T.RaidDebuffs = {
 	-- Priest
 	[SpellName(605)] = 3,		-- Dominate Mind
 	[SpellName(8122)] = 3,		-- Psychic Scream
-	[SpellName(113792)] = 3,	-- Psychic Terror
+	--WoD [SpellName(113792)] = 3,	-- Psychic Terror
 	[SpellName(64044)] = 3,		-- Psychic Horror
 	[SpellName(15487)] = 3,		-- Silence
 	-- Rogue
@@ -344,7 +344,7 @@ T.RaidDebuffs = {
 	[SpellName(63685)] = 2,		-- Freeze
 	-- Warlock
 	[SpellName(118699)] = 3,	-- Fear
-	[SpellName(104045)] = 3,	-- Sleep
+	--WoD [SpellName(104045)] = 3,	-- Sleep
 	[SpellName(6789)] = 3,		-- Mortal Coil
 	[SpellName(5484)] = 3,		-- Howl of Terror
 	[SpellName(6358)] = 3,		-- Seduction (Succubus)
@@ -353,7 +353,7 @@ T.RaidDebuffs = {
 	-- Warrior
 	[SpellName(46968)] = 3,		-- Shockwave
 	[SpellName(132169)] = 3,	-- Storm Bolt
-	[SpellName(20511)] = 3,		-- Intimidating Shout]]
+	--WoD [SpellName(20511)] = 3,		-- Intimidating Shout]]
 }
 
 T.RaidDebuffsReverse = {

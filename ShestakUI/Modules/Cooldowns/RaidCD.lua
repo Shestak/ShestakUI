@@ -209,7 +209,7 @@ addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 SlashCmdList.RaidCD = function()
 	StartTimer(UnitName("player"), 20484)	-- Rebirth
 	StartTimer(UnitName("player"), 20707)	-- Soulstone
-	StartTimer(UnitName("player"), 29166)	-- Innervate
+	--WoD StartTimer(UnitName("player"), 29166)	-- Innervate
 end
 SLASH_RaidCD1 = "/raidcd"
 SLASH_RaidCD2 = "/кфшвсв"

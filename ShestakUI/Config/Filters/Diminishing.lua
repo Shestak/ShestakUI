@@ -13,9 +13,9 @@ T.DiminishingSpells = {
 	[91797] = {"ctrlstun"},		-- Monstrous Blow (Mutated Ghoul)
 	[115001] = {"ctrlstun"},	-- Remorseless Winter
 	[22570] = {"ctrlstun"},		-- Maim
-	[9005] = {"ctrlstun"},		-- Pounce
+	--WoD [9005] = {"ctrlstun"},		-- Pounce
 	[5211] = {"ctrlstun"},		-- Mighty Bash
-	[102795] = {"ctrlstun"},	-- Bear Hug
+	--WoD [102795] = {"ctrlstun"},	-- Bear Hug
 	[19577] = {"ctrlstun"},		-- Intimidation
 	[117526] = {"ctrlstun"},	-- Binding Shot
 	--WoD [90337] = {"ctrlstun"},		-- Bad Manner (Monkey)
@@ -23,13 +23,13 @@ T.DiminishingSpells = {
 	--WoD [56626] = {"ctrlstun"},		-- Sting (Wasp)
 	--WoD [126246] = {"ctrlstun"},	-- Lullaby (Crane)
 	--WoD [96201] = {"ctrlstun"},		-- Web Wrap (Shale Spider)
-	[126423] = {"ctrlstun"},	-- Petrifying Gaze (Basilisk)
-	[126355] = {"ctrlstun"},	-- Paralyzing Quill (Porcupine)
+	--WoD [126423] = {"ctrlstun"},	-- Petrifying Gaze (Basilisk)
+	--WoD [126355] = {"ctrlstun"},	-- Paralyzing Quill (Porcupine)
 	[44572] = {"ctrlstun"},		-- Deep Freeze
-	[118271] = {"ctrlstun"},	-- Combustion Impact
+	--WoD [118271] = {"ctrlstun"},	-- Combustion Impact
 	[119392] = {"ctrlstun"},	-- Charging Ox Wave
 	[119381] = {"ctrlstun"},	-- Leg Sweep
-	[122242] = {"ctrlstun"},	-- Clash
+	--WoD [122242] = {"ctrlstun"},	-- Clash
 	[120086] = {"ctrlstun"},	-- Fists of Fury
 	[853] = {"ctrlstun"},		-- Hammer of Justice
 	[105593] = {"ctrlstun"},	-- Fist of Justice
@@ -66,14 +66,14 @@ T.DiminishingSpells = {
 	-- Disarms
 	--WoD [50541] = {"disarm"},		-- Clench (Scorpid)
 	[91644] = {"disarm"},		-- Snatch (Bird of Prey)
-	[117368] = {"disarm"},		-- Grapple Weapon
+	--WoD [117368] = {"disarm"},		-- Grapple Weapon
 	[64058] = {"disarm"},		-- Psychic Horror
-	[51722] = {"disarm"},		-- Dismantle
+	--WoD [51722] = {"disarm"},		-- Dismantle
 	[118093] = {"disarm"},		-- Disarm (Voidwalker/Voidlord)
-	[676] = {"disarm"},			-- Disarm
+	--WoD [676] = {"disarm"},			-- Disarm
 
 	-- Disorients
-	[2637] = {"disorient"},		-- Hibernate
+	--WoD [2637] = {"disorient"},		-- Hibernate
 	[3355] = {"disorient"},		-- Freezing Trap
 	[19386] = {"disorient"},	-- Wyvern Sting
 	[118] = {"disorient"},		-- Polymorph
@@ -93,21 +93,21 @@ T.DiminishingSpells = {
 	[107079] = {"disorient"},	-- Quaking Palm (Racial)
 
 	-- Fears
-	[113004] = {"fear"},		-- Intimidating Roar (Symbiosis)
+	--WoD [113004] = {"fear"},		-- Intimidating Roar (Symbiosis)
 	[113056] = {"fear"},		-- Intimidating Roar (Symbiosis)
-	[1513] = {"fear"},			-- Scare Beast
+	--WoD [1513] = {"fear"},			-- Scare Beast
 	[105421] = {"fear"},		-- Blinding Light
 	[10326] = {"fear"},			-- Turn Evil
 	[145067] = {"fear"},		-- Turn Evil (Talent)
 	[8122] = {"fear"},			-- Psychic Scream
-	[113792] = {"fear"},		-- Psychic Terror
+	--WoD [113792] = {"fear"},		-- Psychic Terror
 	[2094] = {"fear"},			-- Blind
 	[118699] = {"fear"},		-- Fear
 	[5484] = {"fear"},			-- Howl of Terror
 	[6358] = {"fear"},			-- Seduction (Succubus)
 	[115268] = {"fear"},		-- Mesmerize (Shivarra)
 	[5246] = {"fear"},			-- Intimidating Shout (Main target)
-	[20511] = {"fear"},			-- Intimidating Shout (Secondary targets)
+	--WoD [20511] = {"fear"},			-- Intimidating Shout (Secondary targets)
 
 	-- Horrors
 	[64044] = {"horror"},		-- Psychic Horror
@@ -127,7 +127,7 @@ T.DiminishingSpells = {
 
 	-- Random Disorients
 	[99] = {"rnddis"},			-- Disorienting Roar
-	[19503] = {"rnddis"},		-- Scatter Shot
+	--WoD [19503] = {"rnddis"},		-- Scatter Shot
 	[31661] = {"rnddis"},		-- Dragon's Breath
 	[88625] = {"rnddis"},		-- Holy Word: Chastise
 
@@ -136,14 +136,14 @@ T.DiminishingSpells = {
 	[81261] = {"silence"},		-- Solar Beam
 	--WoD [34490] = {"silence"},		-- Silencing Shot
 	[50479] = {"silence"},		-- Nether Shock (Nether Ray)
-	[55021] = {"silence"},		-- Improved Counterspell
+	--WoD [55021] = {"silence"},		-- Improved Counterspell
 	[102051] = {"silence"},		-- Frostjaw
-	[116709] = {"silence"},		-- Spear Hand Strike
+	--WoD [116709] = {"silence"},		-- Spear Hand Strike
 	[31935] = {"silence"},		-- Avenger's Shield
 	[15487] = {"silence"},		-- Silence
 	[1330] = {"silence"},		-- Garrote
-	[24259] = {"silence"},		-- Spell Lock (Felhunter)
-	[115782] = {"silence"},		-- Optical Blast (Observer)
+	--WoD [24259] = {"silence"},		-- Spell Lock (Felhunter)
+	--WoD [115782] = {"silence"},		-- Optical Blast (Observer)
 	[25046] = {"silence"},		-- Arcane Torrent (Energy version)
 	[28730] = {"silence"},		-- Arcane Torrent (Mana version)
 	[50613] = {"silence"},		-- Arcane Torrent (Runic power version)
@@ -165,12 +165,12 @@ T.DiminishingIcons = {
 	["ctrlstun"] = GetIcon(408),
 	["ctrlroot"] = GetIcon(122),
 	["cyclone"] = GetIcon(33786),
-	["disarm"] = GetIcon(676),
+	--WoD ["disarm"] = GetIcon(676),
 	["fear"] = GetIcon(8122),
 	["horror"] = GetIcon(64044),
 	["mind"] = GetIcon(605),
 	["rndstun"] = GetIcon(118895),
 	["rndroot"] = GetIcon(64695),
 	["rnddis"] = GetIcon(31661),
-	["silence"] = GetIcon(55021),
+	["silence"] = GetIcon(15487),
 }
