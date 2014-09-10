@@ -42,7 +42,7 @@ T.RaidBuffs = {
 	SHAMAN = {
 		{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Riptide
 		{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},			-- Earth Shield
-		{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},				-- Earthliving
+		--WoD {51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},				-- Earthliving
 	},
 	DEATHKNIGHT = {
 		--WoD {49016, "TOPRIGHT", {0.89, 0.89, 0.1}},				-- Unholy Frenzy

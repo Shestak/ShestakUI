@@ -76,7 +76,7 @@ if C.enemycooldown.enable == true then
 		--WoD [51722] = 60,	-- Dismantle
 		--WoD [676] = 60,		-- Disarm
 		-- Mana regen
-		[54428] = 120,	-- Divine Plea
+		--WoD [54428] = 120,	-- Divine Plea
 		--WoD [29166] = 180,	-- Innervate
 		[16190] = 180,	-- Mana Tide Totem
 	}

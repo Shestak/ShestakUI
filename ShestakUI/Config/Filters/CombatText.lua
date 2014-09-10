@@ -63,7 +63,7 @@ elseif T.class == "DRUID" then
 		T.aoespam[61391] = 0		-- Typhoon
 		T.aoespam[1822] = 3			-- Rake
 		T.aoespam[33876] = 0		-- Mangle (Cat Form)
-		T.aoespam[33878] = 0		-- Mangle (Bear Form)
+		--WoD T.aoespam[33878] = 0		-- Mangle (Bear Form)
 		T.aoespam[62078] = 0		-- Swipe (Cat Form)
 		T.aoespam[779] = 0			-- Swipe (Bear Form)
 		T.aoespam[33745] = 3		-- Lacerate
@@ -234,7 +234,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[73921] = 3		-- Healing Rain
 		T.aoespam[52042] = 3		-- Healing Stream Totem
 		T.aoespam[1064] = 3			-- Chain Heal
-		T.aoespam[51945] = 3		-- Earthliving
+		--WoD T.aoespam[51945] = 3		-- Earthliving
 		T.aoespam[61295] = 3		-- Riptide
 		T.aoespam[98021] = 3		-- Spirit Link
 		T.aoespam[114911] = 3		-- Ancestral Guidance
