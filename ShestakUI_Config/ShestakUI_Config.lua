@@ -314,7 +314,7 @@ local function Local(o)
 	if o == "UIConfignameplatehealer_icon" then o = L_GUI_NAMEPLATE_HEALER_ICON end
 
 	-- ActionBar options
-	if o == "UIConfigactionbar" then o = ACTIONBARS_LABEL end
+	if o == "UIConfigactionbar" then o = ACTIONBAR_LABEL end
 	if o == "UIConfigactionbarenable" then o = L_GUI_ACTIONBAR_ENABLE end
 	if o == "UIConfigactionbarhotkey" then o = L_GUI_ACTIONBAR_HOTKEY end
 	if o == "UIConfigactionbarmacro" then o = L_GUI_ACTIONBAR_MACRO end
