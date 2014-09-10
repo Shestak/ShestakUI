@@ -257,6 +257,7 @@ end
 hooksecurefunc("ActionButton_Update", StyleNormalButton)
 hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
 if C.actionbar.hotkey == true then
+	hooksecurefunc("ActionButton_OnEvent", function(self, event, ...) if event == "PLAYER_ENTERING_WORLD" then ActionButton_UpdateHotkeys(self, self.buttonType) end end)
 	hooksecurefunc("ActionButton_UpdateHotkeys", UpdateHotkey)
 end
 if C.actionbar.hide_highlight == true then
