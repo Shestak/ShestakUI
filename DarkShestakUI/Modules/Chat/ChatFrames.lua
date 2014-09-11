@@ -239,12 +239,11 @@ local function SetupChatPosAndFont(self)
 			end
 			FCF_SavePositionAndDimensions(chat)
 		elseif i == 2 then
-			if C.chat.combatlog == true then
+			if C.chat.combatlog ~= true then
 				FCF_DockFrame(chat)
-			else
-				FCF_UnDockFrame(chat)
-				chat:ClearAllPoints()
-				chat:SetPoint("TOPRIGHT", UIParent, "BOTTOMLEFT", -200, -200)
+				ChatFrame2Tab:EnableMouse(false)
+				ChatFrame2Tab:SetText("")
+				ChatFrame2Tab:SetScale(0.001)
 			end
 		elseif i == 3 then
 			FCF_UnDockFrame(chat)

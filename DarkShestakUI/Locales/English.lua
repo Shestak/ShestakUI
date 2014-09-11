@@ -275,7 +275,7 @@ L_POPUP_SETTINGS_GNOSIS = "Need to change the position of elements Gnosis."
 -- Welcome message
 L_WELCOME_LINE_1 = "Welcome to Dark ShestakUI "
 L_WELCOME_LINE_2_1 = "Type /cfg to config interface, or visit http://shestak.org"
-L_WELCOME_LINE_2_2 = "for more informations."
+L_WELCOME_LINE_2_2 = "for more information."
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Killing Blow"

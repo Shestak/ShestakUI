@@ -362,7 +362,7 @@ L_STATS_TOOLTIP_EXPERIENCE = "未达最高等级时,提示将显示经验值讯�
 
 -- Slash commands
 L_SLASHCMD_HELP = {
-	"Available slash commands:",
+	"Available slash commands:", -- Needs review
 	"/rl - 重载界面.",
 	"/rc - 就位确认.",
 	"/gm - 打开GM面板.",

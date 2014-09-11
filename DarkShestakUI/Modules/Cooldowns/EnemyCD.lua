@@ -31,6 +31,17 @@ else
 	EnemyCDAnchor:SetSize((C.enemycooldown.size * 5) + 12, C.enemycooldown.size)
 end
 
+local OnEnter = function(self)
+	if IsShiftKeyDown() then
+		GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+		GameTooltip:SetSpellByID(self.sID)
+		GameTooltip:SetClampedToScreen(true)
+		GameTooltip:AddLine(" ")
+		GameTooltip:AddLine(DONE_BY.." "..self.name)
+		GameTooltip:Show()
+	end
+end
+
 local function sortByExpiration(a, b)
 	return a.endTime < b.endTime
 end
@@ -52,6 +63,12 @@ local UpdatePositions = function()
 			else
 				icons[i]:SetPoint("LEFT", icons[i-1], "RIGHT", 3, 0)
 			end
+
+		end
+		if i < limit then
+			icons[i]:SetAlpha(1)
+		else
+			icons[i]:SetAlpha(0)
 		end
 		icons[i].id = i
 	end
@@ -84,14 +101,22 @@ local CreateIcon = function()
 	return icon
 end
 
-local StartTimer = function(sID)
+local StartTimer = function(name, sID)
 	local _, _, texture = GetSpellInfo(sID)
 	local icon = CreateIcon()
 	icon.Texture:SetTexture(texture)
 	icon.Texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	icon.endTime = GetTime() + T.enemy_spells[sID]
+	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(name))]
+	if color then
+		name = format("|cff%02x%02x%02x%s|r", color.r * 255, color.g * 255, color.b * 255, name)
+	end
+	icon.name = name
+	icon.sID = sID
 	icon:Show()
 	icon:SetScript("OnUpdate", IconUpdate)
+	icon:SetScript("OnEnter", OnEnter)
+	icon:SetScript("OnLeave", GameTooltip_Hide)
 	CooldownFrame_SetTimer(icon.Cooldown, GetTime(), T.enemy_spells[sID], 1)
 	tinsert(icons, icon)
 	table.sort(icons, sortByExpiration)
@@ -105,7 +130,7 @@ local OnEvent = function(self, event, ...)
 		if eventType == "SPELL_CAST_SUCCESS" and band(sourceFlags, COMBATLOG_OBJECT_REACTION_HOSTILE) == COMBATLOG_OBJECT_REACTION_HOSTILE then
 			if sourceName ~= T.name then
 				if T.enemy_spells[spellID] and show[select(2, IsInInstance())] then
-					StartTimer(spellID)
+					StartTimer(sourceName, spellID)
 				end
 			end
 		end
@@ -122,10 +147,10 @@ addon:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 
 SlashCmdList.EnemyCD = function()
-	StartTimer(47528)
-	StartTimer(19647)
-	StartTimer(47476)
-	StartTimer(51514)
+	StartTimer(T.name, 47528)
+	StartTimer(T.name, 19647)
+	StartTimer(T.name, 47476)
+	StartTimer(T.name, 51514)
 end
 SLASH_EnemyCD1 = "/enemycd"
 SLASH_EnemyCD2 = "/утуьнсв"

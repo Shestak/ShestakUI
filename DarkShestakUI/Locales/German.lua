@@ -292,7 +292,7 @@ L_COMBATTEXT_TEST_USE_LOCK = "Gib '/xct' ein um den Kampftext Testmodus zu sperr
 L_COMBATTEXT_TEST_USE_TEST = "Gib '/xct' ein um den Kampftext Testmodus zu aktivieren."
 L_COMBATTEXT_POPUP = "Um die Kampftext Fensterpositionen zu sichern muss das Interface neu geladen werden."
 L_COMBATTEXT_UNSAVED = "Kampftext Fensterpositionen nicht gespeichert, vergiss nicht das Interface neu zu laden."
-L_COMBATTEXT_UNLOCKED = "Kmpftext freigegeben."
+L_COMBATTEXT_UNLOCKED = "Kampftext freigegeben."
 
 -- LiteStats
 L_STATS_ACC_PLAYED = "Gesamtspielzeit"
