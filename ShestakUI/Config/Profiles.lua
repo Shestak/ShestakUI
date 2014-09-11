@@ -87,7 +87,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["combattext"].dk_runes= false
 	C["combattext"].killingblow = true
 	C["reminder"].raid_buffs_size = 16.8
-	C["enemycooldown"].show_inpvp = true
 	C["threat"].width = 125
 	C["threat"].bar_rows = 2
 	C["tooltip"].item_icon = true
