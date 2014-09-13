@@ -26,36 +26,34 @@ end)
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame item buttons
 ----------------------------------------------------------------------------------------
---WoD hooksecurefunc("WatchFrameItem_UpdateCooldown", function(self)
-	-- if not self.skinned and not InCombatLockdown() then
-		-- local icon = _G[self:GetName().."IconTexture"]
-		-- local border = _G[self:GetName().."NormalTexture"]
-		-- local count = _G[self:GetName().."Count"]
+hooksecurefunc(QUEST_TRACKER_MODULE, "SetBlockHeader", function(_, block)
+	local item = block.itemButton
 
-		-- self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
-		-- self:SetTemplate("Default")
+	if item and not item.skinned then
+		item:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+		item:SetTemplate("Default")
+		item:StyleButton()
 
-		-- icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		-- icon:SetPoint("TOPLEFT", self, 2, -2)
-		-- icon:SetPoint("BOTTOMRIGHT", self, -2, 2)
+		item:SetNormalTexture(nil)
+		item:SetPushedTexture(nil)
 
-		-- count:ClearAllPoints()
-		-- count:SetPoint("BOTTOMRIGHT", 0, 2)
-		-- count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-		-- count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		item.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		item.icon:SetPoint("TOPLEFT", item, 2, -2)
+		item.icon:SetPoint("BOTTOMRIGHT", item, -2, 2)
 
-		-- border:SetTexture(nil)
+		item.HotKey:ClearAllPoints()
+		item.HotKey:SetPoint("BOTTOMRIGHT", 0, 2)
+		item.HotKey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		item.HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 
-		-- self:StyleButton()
-
-		-- self.skinned = true
-	-- end
--- end)
+		item.skinned = true
+	end
+end)
 
 ----------------------------------------------------------------------------------------
 --	Difficulty color for ObjectiveTrackerFrame lines
 ----------------------------------------------------------------------------------------
---WoD hooksecurefunc("WatchFrame_Update", function()
+--WoD hooksecurefunc("ObjectiveTracker_Update", function()
 	-- local numQuestWatches = GetNumQuestWatches()
 
 	-- for i = 1, numQuestWatches do
