@@ -10,6 +10,8 @@ local function LoadSkin()
 	ProductChoiceFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(ProductChoiceFrameCloseButton)
 	ProductChoiceFrame.Inset.ClaimButton:SkinButton()
+	T.SkinNextPrevButton(ProductChoiceFrame.Inset.NextPageButton)
+	T.SkinNextPrevButton(ProductChoiceFrame.Inset.PrevPageButton)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
