@@ -829,12 +829,14 @@ if guild.enabled then
 			SortGuildRoster(guild.sorting == "note" and "rank" or "note")
 			SortGuildRoster(guild.sorting)
 			self:RegisterEvent("GROUP_ROSTER_UPDATE")
-			self:RegisterEvent("GUILD_XP_UPDATE")
 			self:RegisterEvent("GUILD_ROSTER_UPDATE")
 		end,
 		OnEvent = function(self, event)
 			if self.hovered then
 				self:GetScript("OnEnter")(self)
+			end
+			if IsInGuild() then
+				BuildGuildTable()
 			end
 		end,
 		OnUpdate = function(self, u)
