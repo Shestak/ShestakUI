@@ -7,17 +7,17 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	GuildFrame:StripTextures(true)
 	GuildFrame:SetTemplate("Transparent")
-	GuildLevelFrame:Kill()
+	--WoD GuildLevelFrame:Kill()
 
 	T.SkinCloseButton(GuildMemberDetailCloseButton)
 	T.SkinCloseButton(GuildFrameCloseButton)
 
 	local striptextures = {
-		"GuildPerksToggleButton",
-		"GuildNewPerksFrame",
+		--"GuildPerksToggleButton",
+		--"GuildNewPerksFrame",
 		"GuildFrameInset",
 		"GuildFrameBottomInset",
-		"GuildAllPerksFrame",
+		-- "GuildAllPerksFrame",
 		"GuildMemberDetailFrame",
 		"GuildMemberNoteBackground",
 		"GuildInfoFrameInfo",
@@ -52,7 +52,7 @@ local function LoadSkin()
 	GuildNewsBossModel:SetPoint("TOPLEFT", GuildFrame, "TOPRIGHT", 5, -2)
 
 	local buttons = {
-		"GuildPerksToggleButton",
+		--WoD "GuildPerksToggleButton",
 		"GuildMemberRemoveButton",
 		"GuildMemberGroupInviteButton",
 		"GuildAddMemberButton",
@@ -97,8 +97,8 @@ local function LoadSkin()
 	for i = 1, 5 do
 		T.SkinTab(_G["GuildFrameTab"..i])
 	end
-	GuildXPFrame:ClearAllPoints()
-	GuildXPFrame:SetPoint("TOP", GuildFrame, "TOP", 0, -40)
+	--WoD GuildXPFrame:ClearAllPoints()
+	--WoD GuildXPFrame:SetPoint("TOP", GuildFrame, "TOP", 0, -40)
 
 	T.SkinScrollBar(GuildPerksContainerScrollBar)
 
@@ -108,52 +108,52 @@ local function LoadSkin()
 	GuildFactionBar.backdrop:SetPoint("TOPLEFT", GuildFactionBar.progress, "TOPLEFT", -2, 2)
 	GuildFactionBar.backdrop:SetPoint("BOTTOMRIGHT", GuildFactionBar, "BOTTOMRIGHT", 0, 0)
 
-	GuildXPBarLeft:Kill()
-	GuildXPBarRight:Kill()
-	GuildXPBarMiddle:Kill()
-	GuildXPBarBG:Kill()
-	GuildXPBarShadow:Kill()
-	GuildXPBarCap:Kill()
-	GuildXPBar.progress:SetTexture(C.media.texture)
-	GuildXPBar:CreateBackdrop("Overlay")
-	GuildXPBar.backdrop:SetPoint("TOPLEFT", GuildXPBar.progress, "TOPLEFT", -2, 2)
-	GuildXPBar.backdrop:SetPoint("BOTTOMRIGHT", GuildXPBar, "BOTTOMRIGHT", 0, 0)
+	--WoD GuildXPBarLeft:Kill()
+	-- GuildXPBarRight:Kill()
+	-- GuildXPBarMiddle:Kill()
+	-- GuildXPBarBG:Kill()
+	-- GuildXPBarShadow:Kill()
+	-- GuildXPBarCap:Kill()
+	-- GuildXPBar.progress:SetTexture(C.media.texture)
+	-- GuildXPBar:CreateBackdrop("Overlay")
+	-- GuildXPBar.backdrop:SetPoint("TOPLEFT", GuildXPBar.progress, "TOPLEFT", -2, 2)
+	-- GuildXPBar.backdrop:SetPoint("BOTTOMRIGHT", GuildXPBar, "BOTTOMRIGHT", 0, 0)
 
-	GuildLatestPerkButton:StripTextures()
-	GuildLatestPerkButtonIconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	GuildLatestPerkButtonIconTexture:ClearAllPoints()
-	GuildLatestPerkButtonIconTexture:SetPoint("TOPLEFT", 2, -2)
-	GuildLatestPerkButton:CreateBackdrop("Default")
-	GuildLatestPerkButton.backdrop:SetPoint("TOPLEFT", GuildLatestPerkButtonIconTexture, "TOPLEFT", -2, 2)
-	GuildLatestPerkButton.backdrop:SetPoint("BOTTOMRIGHT", GuildLatestPerkButtonIconTexture, "BOTTOMRIGHT", 2, -2)
+	--WoD GuildLatestPerkButton:StripTextures()
+	-- GuildLatestPerkButtonIconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- GuildLatestPerkButtonIconTexture:ClearAllPoints()
+	-- GuildLatestPerkButtonIconTexture:SetPoint("TOPLEFT", 2, -2)
+	-- GuildLatestPerkButton:CreateBackdrop("Default")
+	-- GuildLatestPerkButton.backdrop:SetPoint("TOPLEFT", GuildLatestPerkButtonIconTexture, "TOPLEFT", -2, 2)
+	-- GuildLatestPerkButton.backdrop:SetPoint("BOTTOMRIGHT", GuildLatestPerkButtonIconTexture, "BOTTOMRIGHT", 2, -2)
 
-	GuildNextPerkButton:StripTextures()
-	GuildNextPerkButtonIconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	GuildNextPerkButtonIconTexture:ClearAllPoints()
-	GuildNextPerkButtonIconTexture:SetPoint("TOPLEFT", 2, -2)
-	GuildNextPerkButton:CreateBackdrop("Default")
-	GuildNextPerkButton.backdrop:SetPoint("TOPLEFT", GuildNextPerkButtonIconTexture, "TOPLEFT", -2, 2)
-	GuildNextPerkButton.backdrop:SetPoint("BOTTOMRIGHT", GuildNextPerkButtonIconTexture, "BOTTOMRIGHT", 2, -2)
-	GuildNextPerkButtonLockTexture:SetTexture("Interface\\GuildFrame\\GuildFrame")
+	--Wod GuildNextPerkButton:StripTextures()
+	-- GuildNextPerkButtonIconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- GuildNextPerkButtonIconTexture:ClearAllPoints()
+	-- GuildNextPerkButtonIconTexture:SetPoint("TOPLEFT", 2, -2)
+	-- GuildNextPerkButton:CreateBackdrop("Default")
+	-- GuildNextPerkButton.backdrop:SetPoint("TOPLEFT", GuildNextPerkButtonIconTexture, "TOPLEFT", -2, 2)
+	-- GuildNextPerkButton.backdrop:SetPoint("BOTTOMRIGHT", GuildNextPerkButtonIconTexture, "BOTTOMRIGHT", 2, -2)
+	-- GuildNextPerkButtonLockTexture:SetTexture("Interface\\GuildFrame\\GuildFrame")
 
 	-- Guild Perk buttons list
-	for i = 1, 8 do
-		local button = _G["GuildPerksContainerButton"..i]
+	--WoD for i = 1, 8 do
+		-- local button = _G["GuildPerksContainerButton"..i]
 
-		button:StripTextures()
+		-- button:StripTextures()
 
-		if button.icon then
-			button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			button.icon:ClearAllPoints()
-			button.icon:SetPoint("TOPLEFT", 2, -2)
-			button:CreateBackdrop("Default")
-			button.backdrop:SetPoint("TOPLEFT", button.icon, "TOPLEFT", -2, 2)
-			button.backdrop:SetPoint("BOTTOMRIGHT", button.icon, "BOTTOMRIGHT", 2, -2)
-			button.icon:SetParent(button.backdrop)
-			button.lock:SetTexture("Interface\\GuildFrame\\GuildFrame")
-			button.lock:SetParent(button.backdrop)
-		end
-	end
+		-- if button.icon then
+			-- button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			-- button.icon:ClearAllPoints()
+			-- button.icon:SetPoint("TOPLEFT", 2, -2)
+			-- button:CreateBackdrop("Default")
+			-- button.backdrop:SetPoint("TOPLEFT", button.icon, "TOPLEFT", -2, 2)
+			-- button.backdrop:SetPoint("BOTTOMRIGHT", button.icon, "BOTTOMRIGHT", 2, -2)
+			-- button.icon:SetParent(button.backdrop)
+			-- button.lock:SetTexture("Interface\\GuildFrame\\GuildFrame")
+			-- button.lock:SetParent(button.backdrop)
+		-- end
+	-- end
 
 	-- Roster
 	T.SkinScrollBar(GuildRosterContainerScrollBar)
@@ -191,7 +191,7 @@ local function LoadSkin()
 	GuildNewsFiltersFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(GuildNewsFiltersFrameCloseButton)
 
-	for i = 1, 7 do
+	for i = 1, 6 do
 		T.SkinCheckBox(_G["GuildNewsFilterButton"..i])
 	end
 
