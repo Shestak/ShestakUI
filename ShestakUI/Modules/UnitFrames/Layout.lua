@@ -1077,6 +1077,8 @@ local function Shared(self, unit)
 			mhpb:SetWidth(217)
 		elseif unit == "pet" or unit == "focus" or unit == "focustarget" or unit == "targettarget" then
 			mhpb:SetWidth(105)
+		elseif unit == "arenatarget" then
+			mhpb:SetWidth(30)
 		else
 			mhpb:SetWidth(150)
 		end
