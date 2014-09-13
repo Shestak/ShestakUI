@@ -202,7 +202,7 @@ local function update()
 	for i, button in ipairs(buttons) do
 		if button:IsShown() and button.online and button.guildIndex then
 			if _VIEW == "tradeskill" then
-				local _, _, _, headerName, _, _, playerName, _, _, _, zone, _, classFileName, isMobile = GetGuildTradeSkillInfo(button.guildIndex)
+				local _, _, _, headerName, _, _, _, playerName, _, _, _, zone, _, classFileName, isMobile = GetGuildTradeSkillInfo(button.guildIndex)
 				if not headerName and playerName then
 					local c = classColorRaw[classFileName]
 					button.string1:SetTextColor(c.r, c.g, c.b)
@@ -251,7 +251,7 @@ local function update()
 					if classFileName and name then
 						button.string2:SetText(displayedName)
 					end
-				elseif _VIEW == "weeklyxp" or _VIEW == "totalxp" then
+				elseif _VIEW == "reputation" then
 					button.string1:SetText(diffColor[level]..level)
 					button.string2:SetText(displayedName)
 				end
@@ -292,7 +292,7 @@ local function friendsFrame()
 				local name, level, class, area, connected = GetFriendInfo(button.id)
 				if connected then
 					nameText = classColor[class]..name.."|r, "..format(FRIENDS_LEVEL_TEMPLATE, diffColor[level]..level.."|r", class)
-					if areaName == playerArea then
+					if area == playerArea then
 						infoText = format("|cff00ff00%s|r", area)
 					end
 				end
