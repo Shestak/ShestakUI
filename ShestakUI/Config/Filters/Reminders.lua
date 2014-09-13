@@ -145,7 +145,7 @@ if C.reminder.solo_buffs_enable == true then
 		HUNTER = {
 			[1] = {	-- Aspects group
 				["spells"] = {
-					13165,	-- Aspect of the Hawk
+					--WoD 13165,	-- Aspect of the Hawk
 					109260,	-- Aspect of the Iron Hawk
 				},
 				["instance"] = true,
@@ -242,17 +242,17 @@ if C.reminder.solo_buffs_enable == true then
 				["pvp"] = true,
 			},
 		},
-		PRIEST = {
-			[1] = {	-- Inner Fire/Will group
-				["spells"] = {
-					588,	-- Inner Fire
-					73413,	-- Inner Will
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true
-			},
-		},
+		--WoD PRIEST = {
+			-- [1] = {	-- Inner Fire/Will group
+				-- ["spells"] = {
+					-- 588,	-- Inner Fire
+					-- 73413,	-- Inner Will
+				-- },
+				-- ["combat"] = true,
+				-- ["instance"] = true,
+				-- ["pvp"] = true
+			-- },
+		-- },
 		ROGUE = {
 			[1] = {	-- Lethal Poisons group
 				["spells"] = {
@@ -265,10 +265,10 @@ if C.reminder.solo_buffs_enable == true then
 			},
 			[2] = {	--  Non-Lethal Poisons group
 				["spells"] = {
-					5761,	-- Mind-numbing Poison
-				--WoD	3408,	-- Crippling Poison
+					--WoD 5761,	-- Mind-numbing Poison
+				-- WoD	3408,	-- Crippling Poison
 					108211,	-- Leeching Poison
-					108215,	-- Paralytic Poison
+					--WoD 108215,	-- Paralytic Poison
 				},
 				["combat"] = true,
 				["instance"] = true,
