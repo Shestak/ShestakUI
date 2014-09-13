@@ -191,7 +191,7 @@ local function LoadSkin()
 		end
 	end
 
-	for i = 1, 7 do
+	for i = 1, MAX_TALENT_TIERS do
 		local row = _G["PlayerTalentFrameTalentsTalentRow"..i]
 		_G["PlayerTalentFrameTalentsTalentRow"..i.."Bg"]:Hide()
 		row:DisableDrawLayer("BORDER")
@@ -221,7 +221,7 @@ local function LoadSkin()
 	end
 
 	hooksecurefunc("TalentFrame_Update", function()
-		for i = 1, 7 do
+		for i = 1, MAX_TALENT_TIERS do
 			for j = 1, NUM_TALENT_COLUMNS do
 				local bu = _G["PlayerTalentFrameTalentsTalentRow"..i.."Talent"..j]
 				if bu.knownSelection:IsShown() then
