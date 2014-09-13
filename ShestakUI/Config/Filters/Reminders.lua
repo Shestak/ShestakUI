@@ -266,7 +266,7 @@ if C.reminder.solo_buffs_enable == true then
 			[2] = {	--  Non-Lethal Poisons group
 				["spells"] = {
 					5761,	-- Mind-numbing Poison
-					3408,	-- Crippling Poison
+				--WoD	3408,	-- Crippling Poison
 					108211,	-- Leeching Poison
 					108215,	-- Paralytic Poison
 				},
