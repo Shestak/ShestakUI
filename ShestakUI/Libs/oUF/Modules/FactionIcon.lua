@@ -23,9 +23,9 @@ local Update = function(self, event, unit)
 
 	local faction = UnitFactionGroup(self.unit)
 	if faction == "Horde" then
-		specIcon.Icon:SetTexture([[Interface\Icons\INV_BannerPVP_01]])
+		specIcon.Icon:SetTexture([[Interface\Icons\inv_misc_tournaments_banner_orc]])
 	elseif faction == "Alliance" then
-		specIcon.Icon:SetTexture([[Interface\Icons\INV_BannerPVP_02]])
+		specIcon.Icon:SetTexture([[Interface\Icons\inv_misc_tournaments_banner_human]])
 	else
 		specIcon:Hide()
 	end
