@@ -304,10 +304,6 @@ function Stuffing:SlotNew(bag, slot)
 		c:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		c:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
 		c:SetPoint("BOTTOMRIGHT", 1, 1)
-
-		if  _G[ret.frame:GetName().."NewItemTexture"] then
-			_G[ret.frame:GetName().."NewItemTexture"]:SetAlpha(0)
-		end
 	end
 
 	ret.bag = bag

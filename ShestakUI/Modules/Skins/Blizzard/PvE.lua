@@ -21,7 +21,7 @@ local function LoadSkin()
 		"RaidFinderQueueFrameCooldownFrame",
 		"RaidFinderQueueFramePartyBackfill",
 		"LFDQueueFramePartyBackfill",
-		"FlexRaidFrameBottomInset"
+		--WoD "FlexRaidFrameBottomInset"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -55,7 +55,7 @@ local function LoadSkin()
 		"LFDQueueFramePartyBackfillNoBackfillButton",
 		"RaidFinderQueueFramePartyBackfillBackfillButton",
 		"RaidFinderQueueFramePartyBackfillNoBackfillButton",
-		"FlexRaidFrameStartRaidButton"
+		--WoD "FlexRaidFrameStartRaidButton"
 	}
 
 	for i = 1, #buttons do
@@ -129,6 +129,28 @@ local function LoadSkin()
 			local role1 = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i.."RoleIcon1"]
 			local role2 = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i.."RoleIcon2"]
 			local role3 = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i.."RoleIcon3"]
+			local money = _G["LFDQueueFrameRandomScrollFrameChildFrameMoneyReward"]
+			local moneyicon = _G["LFDQueueFrameRandomScrollFrameChildFrameMoneyRewardIconTexture"]
+
+			if money then
+				local texture = moneyicon:GetTexture()
+
+				money:StripTextures()
+
+				moneyicon:SetTexture(texture)
+				moneyicon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				moneyicon:SetPoint("TOPLEFT", 2, -2)
+				moneyicon:SetDrawLayer("OVERLAY")
+
+				if not money.backdrop then
+					money:CreateBackdrop("Default")
+					money.backdrop:SetPoint("TOPLEFT", moneyicon, "TOPLEFT", -2, 2)
+					money.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, "BOTTOMRIGHT", 2, -2)
+
+					moneyicon:SetParent(money.backdrop)
+					moneyicon.SetPoint = T.dummy
+				end
+			end
 
 			if button then
 				local texture = _G[button:GetName().."IconTexture"]:GetTexture()
@@ -174,6 +196,28 @@ local function LoadSkin()
 			local role1 = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."RoleIcon1"]
 			local role2 = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."RoleIcon2"]
 			local role3 = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."RoleIcon3"]
+			local money = _G["RaidFinderQueueFrameScrollFrameChildFrameMoneyReward"]
+			local moneyicon = _G["RaidFinderQueueFrameScrollFrameChildFrameMoneyRewardIconTexture"]
+
+			if money then
+				local texture = moneyicon:GetTexture()
+
+				money:StripTextures()
+
+				moneyicon:SetTexture(texture)
+				moneyicon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				moneyicon:SetPoint("TOPLEFT", 2, -2)
+				moneyicon:SetDrawLayer("OVERLAY")
+
+				if not money.backdrop then
+					money:CreateBackdrop("Default")
+					money.backdrop:SetPoint("TOPLEFT", moneyicon, "TOPLEFT", -2, 2)
+					money.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, "BOTTOMRIGHT", 2, -2)
+
+					moneyicon:SetParent(money.backdrop)
+					moneyicon.SetPoint = T.dummy
+				end
+			end
 
 			if button then
 				local texture = _G[button:GetName().."IconTexture"]:GetTexture()
@@ -217,6 +261,28 @@ local function LoadSkin()
 			local button = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i]
 			local icon = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i.."IconTexture"]
 			local count = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i.."Count"]
+			local money = _G["ScenarioQueueFrameRandomScrollFrameChildFrameMoneyReward"]
+			local moneyicon = _G["ScenarioQueueFrameRandomScrollFrameChildFrameMoneyRewardIconTexture"]
+
+			if money then
+				local texture = moneyicon:GetTexture()
+
+				money:StripTextures()
+
+				moneyicon:SetTexture(texture)
+				moneyicon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				moneyicon:SetPoint("TOPLEFT", 2, -2)
+				moneyicon:SetDrawLayer("OVERLAY")
+
+				if not money.backdrop then
+					money:CreateBackdrop("Default")
+					money.backdrop:SetPoint("TOPLEFT", moneyicon, "TOPLEFT", -2, 2)
+					money.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, "BOTTOMRIGHT", 2, -2)
+
+					moneyicon:SetParent(money.backdrop)
+					moneyicon.SetPoint = T.dummy
+				end
+			end
 
 			if button then
 				button:StripTextures()
@@ -245,7 +311,7 @@ local function LoadSkin()
 		T.SkinCheckBox(button.enableButton)
 	end)
 
-	for i = 1, 2 do
+	for i = 1, 3 do
 		T.SkinTab(_G["PVEFrameTab"..i])
 	end
 
@@ -286,12 +352,12 @@ local function LoadSkin()
 	ScenarioQueueFrameRandomScrollFrameChildFrame.bonusRepFrame.ChooseButton:SkinButton()
 	ScenarioQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
 
-	T.SkinDropDownBox(FlexRaidFrameSelectionDropDown)
-	FlexRaidFrameScrollFrameScrollBackground:Hide()
-	FlexRaidFrameScrollFrameBackground:Hide()
-	FlexRaidFrameScrollFrameBackgroundCover:Hide()
-	FlexRaidFrameScrollFrameScrollBackgroundTopLeft:Hide()
-	FlexRaidFrameScrollFrameScrollBackgroundBottomRight:Hide()
+	--WoD T.SkinDropDownBox(FlexRaidFrameSelectionDropDown)
+	-- FlexRaidFrameScrollFrameScrollBackground:Hide()
+	-- FlexRaidFrameScrollFrameBackground:Hide()
+	-- FlexRaidFrameScrollFrameBackgroundCover:Hide()
+	-- FlexRaidFrameScrollFrameScrollBackgroundTopLeft:Hide()
+	-- FlexRaidFrameScrollFrameScrollBackgroundBottomRight:Hide()
 
 	T.SkinCloseButton(PVEFrameCloseButton)
 	T.SkinCloseButton(LFGDungeonReadyStatusCloseButton, nil, "-")
@@ -328,7 +394,7 @@ local function LoadSecondarySkin()
 
 	ChallengesFrameLeaderboard:SkinButton(true)
 
-	for i = 1, 9 do
+	for i = 1, 8 do
 		local bu = ChallengesFrame["button"..i]
 		bu:SkinButton()
 		bu:StyleButton()

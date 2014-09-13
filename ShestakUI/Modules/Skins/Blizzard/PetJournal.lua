@@ -40,6 +40,7 @@ local function LoadSkin()
 	PetJournalParentPortrait:Hide()
 	T.SkinTab(PetJournalParentTab1)
 	T.SkinTab(PetJournalParentTab2)
+	T.SkinTab(PetJournalParentTab3)
 	T.SkinCloseButton(PetJournalParentCloseButton)
 
 	-- MountJournal

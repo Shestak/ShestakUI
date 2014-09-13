@@ -278,18 +278,18 @@ local function LoadSkin()
 	end)
 
 	-- What Has Changed Tab
-	hooksecurefunc("SpellBook_UpdateWhatHasChangedTab", function()
-		for i = 1, #SpellBookWhatHasChanged.ChangedItems do
-			local button = SpellBook_GetWhatChangedItem(i)
-			button.Ring:Hide()
-			select(2, button:GetRegions()):Hide()
-			button:SetTextColor(0.8, 0.8, 0.8)
-			button.Title:SetTextColor(1, 0.82, 0)
-			button:SetShadowColor(0, 0, 0)
-			button:SetShadowOffset(1, -1)
-			button.Title:SetShadowOffset(1, -1)
-		end
-	end)
+	--WoD hooksecurefunc("SpellBook_UpdateWhatHasChangedTab", function()
+		-- for i = 1, #SpellBookWhatHasChanged.ChangedItems do
+			-- local button = SpellBook_GetWhatChangedItem(i)
+			-- button.Ring:Hide()
+			-- select(2, button:GetRegions()):Hide()
+			-- button:SetTextColor(0.8, 0.8, 0.8)
+			-- button.Title:SetTextColor(1, 0.82, 0)
+			-- button:SetShadowColor(0, 0, 0)
+			-- button:SetShadowOffset(1, -1)
+			-- button.Title:SetShadowOffset(1, -1)
+		-- end
+	-- end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

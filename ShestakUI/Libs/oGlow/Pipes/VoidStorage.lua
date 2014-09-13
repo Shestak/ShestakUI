@@ -36,6 +36,7 @@ local enable = function(self)
 
 	self:RegisterEvent("VOID_STORAGE_CONTENTS_UPDATE", updateContents)
 	self:RegisterEvent("VOID_STORAGE_DEPOSIT_UPDATE", updateDeposit)
+	self:RegisterEvent("VOID_STORAGE_UPDATE", update)
 	self:RegisterEvent("VOID_TRANSFER_DONE", update)
 	self:RegisterEvent("VOID_STORAGE_OPEN", update)
 end
@@ -45,6 +46,7 @@ local disable = function(self)
 
 	self:UnregisterEvent("VOID_STORAGE_CONTENTS_UPDATE", updateContents)
 	self:UnregisterEvent("VOID_STORAGE_DEPOSIT_UPDATE", updateDeposit)
+	self:UnregisterEvent("VOID_STORAGE_UPDATE", update)
 	self:UnregisterEvent("VOID_TRANSFER_DONE", update)
 	self:UnregisterEvent("VOID_STORAGE_OPEN", update)
 end
