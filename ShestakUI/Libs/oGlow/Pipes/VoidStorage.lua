@@ -5,7 +5,7 @@ local updateContents = function(self)
 
 	for slot = 1, VOID_WITHDRAW_MAX or 80 do
 		local slotFrame = _G["VoidStorageStorageButton"..slot]
-		self:CallFilters("voidstore", slotFrame, _E and GetVoidItemInfo(slot))
+		self:CallFilters("voidstore", slotFrame, _E and GetVoidItemInfo(VoidStorageFrame.page, slot))
 	end
 
 	for slot = 1, VOID_WITHDRAW_MAX or 9 do
