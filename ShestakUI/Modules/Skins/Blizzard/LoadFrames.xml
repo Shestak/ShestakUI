@@ -12,7 +12,7 @@
 	<Script file="Calendar.lua"/>
 	<Script file="Character.lua"/>
 	<Script file="ChatConfig.lua"/>
-	<!-- <Script file="Container.lua"/> -->
+	<Script file="Container.lua"/>
 	<Script file="DebugTools.lua"/>
 	<Script file="DressUp.lua"/>
 	<Script file="FrameStack.lua"/>

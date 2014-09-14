@@ -16,6 +16,7 @@ local function LoadSkin()
 	for i = 1, NUM_CONTAINER_FRAMES do
 		local frame = _G["ContainerFrame"..i]
 		local close = _G["ContainerFrame"..i.."CloseButton"]
+
 		frame:StripTextures(true)
 		frame:CreateBackdrop("Transparent")
 		frame.backdrop:SetPoint("TOPLEFT", 4, -2)
@@ -27,7 +28,8 @@ local function LoadSkin()
 			local item = _G["ContainerFrame"..i.."Item"..j]
 			local icon = _G["ContainerFrame"..i.."Item"..j.."IconTexture"]
 			local quest = _G["ContainerFrame"..i.."Item"..j.."IconQuestTexture"]
-			item:SetNormalTexture(nil)
+
+			item:StripTextures()
 			item:StyleButton()
 			item:SetTemplate("Default")
 
@@ -68,10 +70,11 @@ local function LoadSkin()
 	T.SkinCloseButton(BankFrameCloseButton, BankFrame.backdrop)
 
 	for i = 1, 28 do
-		local item = _G["BankFrame".."Item"..i]
-		local icon = _G["BankFrame".."Item"..i.."IconTexture"]
-		local quest = _G["BankFrame".."Item"..i.."IconQuestTexture"]
-		item:SetNormalTexture(nil)
+		local item = _G["BankFrameItem"..i]
+		local icon = _G["BankFrameItem"..i.."IconTexture"]
+		local quest = _G["BankFrameItem"..i.."IconQuestTexture"]
+
+		item:StripTextures()
 		item:StyleButton()
 		item:SetTemplate("Default")
 
@@ -80,15 +83,17 @@ local function LoadSkin()
 		icon:SetPoint("TOPLEFT", 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
-		quest:SetAlpha(0)
+		if quest then 
+			quest:SetAlpha(0)
+		end
 	end
 
 	for i = 1, 7 do
-		local bag = _G["BankFrameBag"..i]
-		local icon = _G["BankFrameBag"..i.."IconTexture"]
-		local highlight = _G["BankFrameBag"..i.."HighlightFrameTexture"]
+		local bag = BankSlotsFrame["Bag"..i];
+		local icon = bag.icon
+		local highlight = bag.HighlightFrame.HighlightTexture;
 
-		bag:SetNormalTexture(nil)
+		bag:StripTextures()
 		bag:StyleButton()
 		bag:SetTemplate("Default")
 
@@ -107,6 +112,44 @@ local function LoadSkin()
 		end
 	end
 
+	-- Tabs
+	for i = 1, 2 do
+		T.SkinTab(_G["BankFrameTab"..i])
+	end
+
+	-- ReagentBank
+	ReagentBankFrameUnlockInfo:StripTextures()
+	ReagentBankFrameUnlockInfo:SetTemplate("Overlay")
+
+	ReagentBankFrameUnlockInfoPurchaseButton:SkinButton()
+	ReagentBankFrameUnlockInfoPurchaseButton:SetFrameLevel(ReagentBankFrameUnlockInfo:GetFrameLevel() + 3)
+	ReagentBankFrame.DespositButton:SkinButton()
+
+	for i = 1, 98 do
+		local item = _G["ReagentBankFrameItem"..i];
+		--local icon = ReagentBankFrame["Item"..i.."IconTexture"];
+		--local icon = item.icon
+		--local highlight = _G["BankFrameBag"..i.."HighlightFrameTexture"]
+
+		--item:StripTextures()
+		--item:StyleButton()
+		--item:SetTemplate("Default")
+
+		--icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		--icon:ClearAllPoints()
+		--icon:SetPoint("TOPLEFT", 2, -2)
+		--icon:SetPoint("BOTTOMRIGHT", -2, 2)
+
+		-- if highlight and not highlight.skinned then
+			-- highlight:SetTexture(1, 1, 1, 0.3)
+			-- highlight.SetTexture = T.dummy
+			-- highlight:ClearAllPoints()
+			-- highlight:SetPoint("TOPLEFT", 2, -2)
+			-- highlight:SetPoint("BOTTOMRIGHT", -2, 2)
+			-- highlight.skinned = true
+		-- end
+	end
+	
 	-- Color QuestItem
 	hooksecurefunc("ContainerFrame_Update", function(frame)
 		local name = frame:GetName()
@@ -121,15 +164,15 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc("BankFrameItemButton_Update", function(item)
-		if not item.isBag then
-			if _G[item:GetName().."IconQuestTexture"]:IsShown() then
-				item:SetBackdropBorderColor(1, 1, 0)
-			else
-				item:SetBackdropBorderColor(unpack(C.media.border_color))
-			end
-		end
-	end)
+	-- hooksecurefunc("BankFrameItemButton_Update", function(item)
+		-- if not item.isBag then
+			-- if _G[item:GetName().."IconQuestTexture"]:IsShown() then
+				-- item:SetBackdropBorderColor(1, 1, 0)
+			-- else
+				-- item:SetBackdropBorderColor(unpack(C.media.border_color))
+			-- end
+		-- end
+	-- end)
 
 	-- Frame Anchors
 	hooksecurefunc("UpdateContainerFrameAnchors", function()
