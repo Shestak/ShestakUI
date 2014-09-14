@@ -106,11 +106,22 @@ local zones = {
 	["TownlongWastes"] = {"NiuzaoTemple:296:359:213:241", "ShanzeDao:300:246:125:0", "TheSumprushes:271:205:545:369", "Sikvess:261:235:306:433", "GaoRanBlockade:353:200:546:468", "MingChiCrossroads:247:221:417:447", "palewindVillage:282:306:692:362", "OsulMesa:238:296:560:185", "ShadoPanGarrison:213:170:413:385", "KriVess:255:269:420:209", "SriVess:294:283:92:192",},
 	["ValeofEternalBlossoms"] = {"GuoLaiRuins:337:349:87:3", "WhiteMoonShrine:298:262:482:10", "MistfallVillage:310:305:200:363", "SettingSunTraining:350:429:0:234", "TuShenBurialGround:267:308:349:316", "TheStairsAscent:446:359:556:267", "WinterboughGlade:361:333:4:107", "TheGoldenStair:242:254:328:16", "WhitepetalLake:267:281:278:170", "TheTwinMonoliths:272:522:444:97", "MoguShanPalace:373:385:629:22",},
 	["ValleyoftheFourWinds"] = {"ThunderfootFields:380:317:622:0", "PoolsofPurity:213:246:513:58", "RumblingTerrace:277:245:582:301", "PaoquanHollow:273:246:12:105", "StormsoutBrewery:257:288:227:380", "DustbackGorge:209:308:0:343", "CliffsofDispair:510:264:215:404", "Theheartland:286:392:253:75", "SilkenFields:254:259:530:253", "HarvestHome:260:251:5:239", "GildedFan:208:292:438:41", "GrandGranery:314:212:334:325", "SingingMarshes:175:291:170:130", "ZhusDecent:303:323:699:114", "Halfhill:206:245:438:177", "NesingwarySafari:249:342:104:326", "MudmugsPlace:230:217:561:161", "KuzenVillage:199:304:224:74",},
+
+	-- Warlords of Draenor
+	["FrostfireRidge"] = {"BladespireFortress:356:303:38:117", "BloodmaulStronghold:258:217:311:4", "BonesOfAgurak:273:349:729:319", "DaggermawRavine:255:191:284:91", "FrostwindDunes:274:214:121:0", "GrimfrostHill:178:203:597:210", "Grombolash:217:239:483:33", "Gromgar:282:341:505:323", "HordeGarrison:267:257:336:327", "IronSiegeworks:329:294:673:156", "IronwayStation:199:335:641:304", "Magnarok:213:278:609:33", "NoGarrison:267:257:336:327", "StonefangOutpost:251:191:306:281", "TheBoneSlag:256:210:290:192", "TheCracklingPlains:266:293:439:137", "Worgol:317:233:72:292",},
+	["Gorgrond"] = {"BastionRise:324:161:283:507", "BeastWatch:166:161:383:371", "EasternRuin:210:193:525:260", "Evermorn:297:181:281:444", "Foundry:211:221:455:74", "FoundrySouth:217:180:454:183", "GronnCanyon:279:241:258:213", "HighlandPass:285:323:547:73", "HighPass:209:225:411:250", "IronDocks:315:180:350:0", "Mushrooms:253:198:444:323", "StonemaulArena:217:178:259:335", "StonemaulSouth:208:142:275:416", "Stripmine:250:232:312:77", "Tangleheart:262:221:451:372",},
+	["NagrandDraenor"] = {"Ancestral:234:191:239:259", "BrokenPrecipice:305:227:256:12", "Elementals:286:274:588:0", "Grommashar:256:301:600:367", "Hallvalor:236:372:766:118", "Highmaul:471:437:0:0", "IronfistHarbor:236:242:283:354", "Lokrath:316:221:382:187", "Margoks:249:288:753:380", "Mushrooms:250:287:746:25", "Oshugun:262:266:366:323", "RingOfBlood:263:287:430:0", "RingOfTrials:354:315:523:159", "SunspringWatch:274:254:312:98", "Telaar:296:272:461:353",},
+	["ShadowmoonValleyDR"] = {"AnguishFortress:309:264:140:160", "DarktideRoost:282:201:468:467", "Elodor:291:266:426:0", "Embaari:346:252:270:158", "Garrison:223:279:194:0", "Gloomshade:229:240:319:5", "Gulvar:260:309:26:0", "Karabor:393:318:537:150", "NoGarrison:223:279:194:0", "Shazgul:282:225:259:315", "ShimmeringMoor:288:261:453:306", "Socrethar:202:201:383:411", "Swisland:173:160:309:460",},
+	["SpiresOfArak"] = {"BloodbladeRedoubt:209:154:334:210", "BloodmaneValley:229:246:410:350", "CenterRavenNest:188:190:444:255", "Clutchpop:217:224:533:382", "EastMushrooms:182:244:649:155", "EmptyGarrison:190:187:282:261", "HowlingCrag:302:273:459:0", "NwCorner:314:304:102:0", "SethekkHollow:238:295:520:127", "Skettis:371:174:289:0", "SoloSpireNorth:196:284:429:84", "SoloSpireSouth:169:178:374:276", "Southport:197:179:310:328", "Veilakraz:252:230:281:83", "Veilzekk:198:232:521:268", "VentureCove:226:193:465:475", "WrithingMire:229:213:197:198",},
+	["Talador"] = {"Aruuna:389:234:597:178", "Auchindoun:309:262:338:356", "CenterIsles:252:280:546:228", "CourtOfSouls:307:229:150:264", "FortWrynn:292:235:567:42", "GordalFortress:423:290:548:378", "Gulrok:278:270:165:364", "Northgate:398:149:571:0", "OrunaiCoast:279:267:427:0", "SeEntrance:308:276:685:298", "Shattrath:406:367:173:22", "Telmor:497:157:207:511", "TombOfLights:326:212:352:271", "Tuurem:225:224:472:148", "Zangarra:287:277:713:35",},
 }
 
 -- Remove tooltips from Blizzard map controls
-WorldMapTrackQuest:SetScript("OnEnter", nil)
-WorldMapZoneMinimapDropDown:SetScript("OnEnter", nil)
+--WoD WorldMapTrackQuest:SetScript("OnEnter", nil)
+--WoD WorldMapZoneMinimapDropDown:SetScript("OnEnter", nil)
+-- Make character location pointer non-interactive (else the name tooltip gets in the way)
+--WoD WorldMapPlayerUpper:EnableMouse(false)
+--WoD WorldMapPlayerLower:EnableMouse(false)
 
 -- Initialise counters
 local createdtex = 0
@@ -120,8 +131,8 @@ local texcount = 0
 local MapTex = {}
 
 -- Create checkbox
-local frame = CreateFrame("CheckButton", nil, WorldMapPositioningGuide, "OptionsCheckButtonTemplate")
-frame:SetPoint("BOTTOM", WorldMapTrackQuest, "TOP", 0, 0)
+local frame = CreateFrame("CheckButton", nil, WorldMapFrame, "OptionsCheckButtonTemplate")
+frame:SetPoint("BOTTOM", WorldMapFrame, "TOP", 0, 0)
 frame:SetHitRectInsets(0, -46, 0, 0)
 frame:SetSize(24, 24)
 frame:SetFrameStrata("TOOLTIP")
