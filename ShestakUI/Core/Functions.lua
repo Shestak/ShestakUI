@@ -281,6 +281,11 @@ function T.SkinEditBox(frame)
 	if _G[frame:GetName().."Middle"] then _G[frame:GetName().."Middle"]:Kill() end
 	if _G[frame:GetName().."Right"] then _G[frame:GetName().."Right"]:Kill() end
 	if _G[frame:GetName().."Mid"] then _G[frame:GetName().."Mid"]:Kill() end
+
+	if frame.Left then frame.Left:Kill() end
+	if frame.Right then frame.Right:Kill() end
+	if frame.Middle then frame.Middle:Kill() end
+
 	frame:CreateBackdrop("Overlay")
 
 	if frame:GetName() and (frame:GetName():find("Gold") or frame:GetName():find("Silver") or frame:GetName():find("Copper")) then
@@ -292,6 +297,7 @@ function T.SkinEditBox(frame)
 			frame.backdrop:SetPoint("BOTTOMRIGHT", -13, 0)
 		end
 	end
+
 end
 
 function T.SkinDropDownBox(frame, width)
