@@ -27,6 +27,7 @@ local function urlencode(obj)
 end
 
 realmName = realmName:gsub("'", "")
+realmName = realmName:gsub("-", "")
 realmName = realmName:gsub(" ", "-")
 local myserver = realmName:gsub("-", "")
 
@@ -69,7 +70,7 @@ hooksecurefunc("UnitPopup_OnClick", function(self)
 	local name = dropdownFrame.name
 	local server = dropdownFrame.server
 	if not server then
-		server = realmName
+		server = myserver
 	else
 		server = string.lower(server:gsub("'", ""))
 		server = server:gsub(" ", "-")
