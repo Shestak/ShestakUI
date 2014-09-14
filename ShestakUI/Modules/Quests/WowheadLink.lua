@@ -37,33 +37,38 @@ StaticPopupDialogs.WATCHFRAME_URL = {
 	preferredIndex = 5,
 }
 
-local tblDropDown = {}
-hooksecurefunc("WatchFrameDropDown_Initialize", function(self)
-	if self.type == "QUEST" then
-		tblDropDown = {
-			text = L_WATCH_WOWHEAD_LINK, notCheckable = true, arg1 = self.index,
-			func = function(_, watchId)
-				local logId = GetQuestIndexForWatch(watchId)
-				local _, _, _, _, _, _, _, _, questId = GetQuestLogTitle(logId)
-				local inputBox = StaticPopup_Show("WATCHFRAME_URL")
-				inputBox.editBox:SetText(linkQuest:format(questId))
-				inputBox.editBox:HighlightText()
-			end
-		}
-		UIDropDownMenu_AddButton(tblDropDown, UIDROPDOWN_MENU_LEVEL)
-	elseif self.type == "ACHIEVEMENT" then
-		tblDropDown = {
-			text = L_WATCH_WOWHEAD_LINK, notCheckable = true, arg1 = self.index,
-			func = function(_, id)
-				local inputBox = StaticPopup_Show("WATCHFRAME_URL")
-				inputBox.editBox:SetText(linkAchievement:format(id))
-				inputBox.editBox:HighlightText()
-			end
-		}
-		UIDropDownMenu_AddButton(tblDropDown, UIDROPDOWN_MENU_LEVEL)
+hooksecurefunc("QuestObjectiveTracker_OnOpenDropDown", function(self)
+	local _, b, i, info, questID
+	b = self.activeFrame
+	i = b.questLogIndex
+	_, _, _, _, _, _, _, questID = GetQuestLogTitle(i)
+	info = UIDropDownMenu_CreateInfo()
+	info.text = L_WATCH_WOWHEAD_LINK
+	info.func = function(id)
+		local inputBox = StaticPopup_Show("WATCHFRAME_URL")
+		inputBox.editBox:SetText(linkQuest:format(questID))
+		inputBox.editBox:HighlightText()
 	end
+	info.arg1 = questID
+	info.notCheckable = true
+	UIDropDownMenu_AddButton(info, UIDROPDOWN_MENU_LEVEL)
 end)
-UIDropDownMenu_Initialize(WatchFrameDropDown, WatchFrameDropDown_Initialize, "MENU")
+	
+hooksecurefunc("AchievementObjectiveTracker_OnOpenDropDown", function(self)
+	local _, b, i, info
+	b = self.activeFrame
+	i = b.id
+	info = UIDropDownMenu_CreateInfo()
+	info.text = L_WATCH_WOWHEAD_LINK
+	info.func = function(_, i)
+		local inputBox = StaticPopup_Show("WATCHFRAME_URL")
+		inputBox.editBox:SetText(linkAchievement:format(i))
+		inputBox.editBox:HighlightText()
+	end
+	info.arg1 = i
+	info.notCheckable = true
+	UIDropDownMenu_AddButton(info, UIDROPDOWN_MENU_LEVEL)
+end)
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
