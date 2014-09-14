@@ -29,8 +29,8 @@
 	<Script file="Inspect.lua"/>
 	<Script file="Interface.lua"/>
 	<Script file="ItemAlteration.lua"/>
-	<!-- <Script file="ItemSocketing.lua"/>
-	<Script file="ItemText.lua"/>
+	<Script file="ItemSocketing.lua"/>
+	<!-- <Script file="ItemText.lua"/>
 	<Script file="ItemUpgrade.lua"/>
 	<Script file="Journal.lua"/> -->
 	<Script file="LFG.lua"/>
