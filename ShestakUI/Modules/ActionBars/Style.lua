@@ -196,7 +196,7 @@ local function SetupFlyoutButton()
 			_G["SpellFlyoutButton"..i]:StyleButton()
 
 			if _G["SpellFlyoutButton"..i]:GetChecked() then
-				_G["SpellFlyoutButton"..i]:SetChecked(nil)
+				_G["SpellFlyoutButton"..i]:SetChecked(false)
 			end
 
 			if C.actionbar.rightbars_mouseover == true then
