@@ -33,6 +33,7 @@ local function LoadSkin()
 		local icon = _G["Character"..slot.."IconTexture"]
 		local slot = _G["Character"..slot]
 
+		slot:StripTextures()
 		slot:StyleButton()
 		slot:SetNormalTexture("")
 		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
@@ -70,6 +71,7 @@ local function LoadSkin()
 			local icon = _G["EquipmentFlyoutFrameButton"..i.."IconTexture"]
 			if button then
 				button:StyleButton()
+				button.IconBorder:Hide()
 
 				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				button:GetNormalTexture():SetTexture(nil)
