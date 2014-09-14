@@ -152,7 +152,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"GameMenuButtonContinue",
 			"GameMenuButtonMacOptions",
 			"GameMenuButtonOptionHouse",
-			"GameMenuButtonAddonManager",
 			"GameMenuButtonSettingsUI",
 			"GameMenuButtonAddons",
 			"GameMenuButtonWhatsNew",

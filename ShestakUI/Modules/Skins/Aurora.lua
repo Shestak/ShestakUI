@@ -10,7 +10,6 @@ AuroraSkin:SetScript("OnEvent", function(self, event, addon)
 	local F = unpack(Aurora)
 
 	local buttons = {
-		"GameMenuButtonAddonManager",
 		"GameMenuButtonSettingsUI",
 		"BaudErrorFrameClearButton",
 		"BaudErrorFrameCloseButton",

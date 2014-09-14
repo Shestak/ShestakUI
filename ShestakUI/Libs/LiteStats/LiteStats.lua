@@ -353,7 +353,12 @@ if memory.enabled then
 				self.timer, self.text.elapsed = nil, 5
 				self:GetScript("OnEnter")(self)
 			elseif button == "LeftButton" then
-				SlashCmdList.ADDONMANAGER()
+				if AddonList:IsShown() then
+					AddonList_OnCancel()
+				else
+					PlaySound("igMainMenuOption")
+					ShowUIPanel(AddonList)
+				end
 			end
 		end
 	})

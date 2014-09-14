@@ -58,7 +58,6 @@
 	<Script file="Modules\UnitFrames\RaidDPS.lua"/>
 	<Script file="Modules\UnitFrames\RaidHeal.lua"/>
 
-	<Script file="Modules\Misc\AddOnsList.lua"/>
 	<Script file="Modules\Misc\AlreadyKnown.lua"/>
 	<Script file="Modules\Misc\Archaeology.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
