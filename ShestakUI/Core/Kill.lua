@@ -13,7 +13,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if addon == "Blizzard_PetJournal" then
-		MountJournalSearchBox:Kill()
+		--WoD MountJournalSearchBox:Kill()
 	end
 
 	if C.unitframe.enable and (SavedOptions and (SavedOptions.RaidLayout == "HEAL" or SavedOptions.RaidLayout == "DPS")) then
@@ -37,6 +37,9 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	HelpOpenTicketButtonTutorial:Kill()
 	TalentMicroButtonAlert:Kill()
 	CompanionsMicroButtonAlert:Kill()
+	ReagentBankHelpBox:Kill()
+	BagHelpBox:Kill()
+	PremadeGroupsPvETutorialAlert:Kill()
 
 	if C.chat.enable then
 		InterfaceOptionsSocialPanelChatStyle:Kill()
