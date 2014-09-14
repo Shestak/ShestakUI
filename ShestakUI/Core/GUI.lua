@@ -50,3 +50,29 @@ else
 		end
 	end
 end
+
+----------------------------------------------------------------------------------------
+--	Button in GameMenuButton frame
+----------------------------------------------------------------------------------------
+local button = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "GameMenuButtonTemplate")
+button:SetText("ShestakUI")
+button:SetPoint("TOP", "GameMenuButtonAddons", "BOTTOM", 0, -1)
+
+GameMenuFrame:HookScript("OnShow", function()
+	GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + button:GetHeight())
+	if IsMacClient() then
+		GameMenuButtonMacOptions:SetPoint("TOP", button, "BOTTOM", 0, -16)
+	else
+		GameMenuButtonLogout:SetPoint("TOP", button, "BOTTOM", 0, -16)
+	end
+end)
+
+button:SetScript("OnClick", function()
+	PlaySound("igMainMenuOption")
+	HideUIPanel(GameMenuFrame)
+	if not UIConfigMain or not UIConfigMain:IsShown() then
+		CreateUIConfig()
+	else
+		UIConfigMain:Hide()
+	end
+end)
