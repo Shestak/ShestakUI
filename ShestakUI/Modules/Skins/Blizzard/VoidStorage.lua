@@ -51,9 +51,11 @@ local function LoadSkin()
 
 		button_d:StyleButton()
 		button_d:SetTemplate("Default")
+		button_d.IconBorder:Kill()
 
 		button_w:StyleButton()
 		button_w:SetTemplate("Default")
+		button_w.IconBorder:Kill()
 
 		icon_d:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon_d:ClearAllPoints()
@@ -74,6 +76,7 @@ local function LoadSkin()
 
 		button:StyleButton()
 		button:SetTemplate("Default")
+		button.IconBorder:Kill()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
