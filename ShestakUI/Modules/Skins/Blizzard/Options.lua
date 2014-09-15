@@ -19,7 +19,10 @@ local function LoadSkin()
 		"AudioOptionsSoundPanelPlayback",
 		"AudioOptionsSoundPanelHardware",
 		"AudioOptionsSoundPanelVolume",
-		"AudioOptionsVoicePanel"
+		"AudioOptionsVoicePanel",
+		"Display_",
+		"Graphics_",
+		"RaidGraphics_"
 	}
 
 	for i = 1, getn(frames) do
@@ -88,7 +91,9 @@ local function LoadSkin()
 		"AudioOptionsVoicePanelPushToTalkSound",
 		"NetworkOptionsPanelOptimizeSpeed",
 		"NetworkOptionsPanelUseIPv6",
-		"NetworkOptionsPanelAdvancedCombatLogging"
+		"NetworkOptionsPanelAdvancedCombatLogging",
+		"Advanced_ShowHDModels",
+		"Display_RaidSettingsEnabledCheckBox"
 	}
 
 	for i = 1, getn(checkboxes) do
@@ -99,12 +104,12 @@ local function LoadSkin()
 	end
 
 	local dropdown = {
-		"Graphics_DisplayModeDropDown",
-		"Graphics_ResolutionDropDown",
-		"Graphics_RefreshDropDown",
-		"Graphics_PrimaryMonitorDropDown",
-		"Graphics_MultiSampleDropDown",
-		"Graphics_VerticalSyncDropDown",
+		"Display_DisplayModeDropDown",
+		"Display_ResolutionDropDown",
+		"Display_RefreshDropDown",
+		"Display_PrimaryMonitorDropDown",
+		"Display_AntiAliasingDropDown",
+		"Display_VerticalSyncDropDown",
 		"Graphics_TextureResolutionDropDown",
 		"Graphics_FilteringDropDown",
 		"Graphics_ProjectedTexturesDropDown",
@@ -124,7 +129,21 @@ local function LoadSkin()
 		"AudioOptionsVoicePanelInputDeviceDropDown",
 		"AudioOptionsVoicePanelChatModeDropDown",
 		"AudioOptionsVoicePanelOutputDeviceDropDown",
-		"Graphics_SSAODropDown"
+		"Graphics_SSAODropDown",
+		"InterfaceOptionsLanguagesPanelAudioLocaleDropDown",
+		"Graphics_RefractionDropDown",
+		"RaidGraphics_TextureResolutionDropDown",
+		"RaidGraphics_FilteringDropDown",
+		"RaidGraphics_ProjectedTexturesDropDown",
+		"RaidGraphics_ViewDistanceDropDown",
+		"RaidGraphics_EnvironmentalDetailDropDown",
+		"RaidGraphics_GroundClutterDropDown",
+		"RaidGraphics_ShadowsDropDown",
+		"RaidGraphics_LiquidDetailDropDown",
+		"RaidGraphics_SunshaftsDropDown",
+		"RaidGraphics_ParticleDensityDropDown",
+		"RaidGraphics_RefractionDropDown",
+		"RaidGraphics_SSAODropDown"
 	}
 
 	for i = 1, getn(dropdown) do
@@ -149,7 +168,9 @@ local function LoadSkin()
 		"AudioOptionsVoicePanelSpeakerVolume",
 		"AudioOptionsVoicePanelSoundFade",
 		"AudioOptionsVoicePanelMusicFade",
-		"AudioOptionsVoicePanelAmbienceFade"
+		"AudioOptionsVoicePanelAmbienceFade",
+		"AudioOptionsSoundPanelDialogVolume",
+		"RaidGraphics_Quality"
 	}
 
 	for i = 1, getn(sliders) do
@@ -161,7 +182,9 @@ local function LoadSkin()
 	end
 
 	_G["Graphics_Quality"].SetBackdrop = T.dummy
+	_G["RaidGraphics_Quality"].SetBackdrop = T.dummy
 	_G["Graphics_RightQuality"]:StripTextures()
+	_G["RaidGraphics_RightQuality"]:StripTextures()
 
 	LoopbackVUMeter:CreateBackdrop("Overlay")
 	LoopbackVUMeter:SetFrameLevel(LoopbackVUMeter:GetFrameLevel() + 1)
@@ -180,6 +203,9 @@ local function LoadSkin()
 	_G["AudioOptionsVoicePanelPushToTalkSound"]:SetPoint("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", 0, 0)
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:ClearAllPoints()
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:SetPoint("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
+
+	GraphicsButton:StripTextures()
+	RaidButton:StripTextures()
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
