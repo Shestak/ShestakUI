@@ -124,7 +124,7 @@ function Filger:DisplayActives()
 				else
 					bar.cooldown = CreateFrame("Cooldown", "$parentCD", bar, "CooldownFrameTemplate")
 					bar.cooldown:SetAllPoints(bar.icon)
-					bar.cooldown:SetReverse()
+					bar.cooldown:SetReverse(true)
 					bar.cooldown:SetFrameLevel(3)
 				end
 

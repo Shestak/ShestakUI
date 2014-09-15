@@ -1292,7 +1292,7 @@ T.PostCreateAura = function(element, button)
 
 	if C.aura.show_spiral == true then
 		element.disableCooldown = false
-		button.cd:SetReverse()
+		button.cd:SetReverse(true)
 		button.cd:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
 		button.cd:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
 		button.parent = CreateFrame("Frame", nil, button)
@@ -1380,7 +1380,7 @@ T.CreateAuraWatchIcon = function(self, icon)
 	icon.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	icon.icon:SetDrawLayer("ARTWORK")
 	if icon.cd then
-		icon.cd:SetReverse()
+		icon.cd:SetReverse(true)
 	end
 	icon.overlay:SetTexture()
 end
