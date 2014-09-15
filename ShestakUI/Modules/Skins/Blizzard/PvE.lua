@@ -359,6 +359,25 @@ local function LoadSkin()
 	-- FlexRaidFrameScrollFrameScrollBackgroundTopLeft:Hide()
 	-- FlexRaidFrameScrollFrameScrollBackgroundBottomRight:Hide()
 
+	LFGListFrame.CategorySelection.Inset.Bg:Hide()
+	select(10, LFGListFrame.CategorySelection.Inset:GetRegions()):Hide()
+	LFGListFrame.CategorySelection.Inset:DisableDrawLayer("BORDER")
+	LFGListFrame.SearchPanel.ResultsInset.Bg:Hide()
+	LFGListFrame.SearchPanel.ResultsInset:DisableDrawLayer("BORDER")
+
+	LFGListFrame.CategorySelection.FindGroupButton:SkinButton()
+	LFGListFrame.CategorySelection.StartGroupButton:SkinButton()
+	LFGListFrame.SearchPanel.RefreshButton:SkinButton()
+	LFGListFrame.SearchPanel.BackButton:SkinButton()
+	LFGListFrame.SearchPanel.SignUpButton:SkinButton()
+	LFGListFrame.SearchPanel.ScrollFrame.StartGroupButton:SkinButton()
+
+	LFGListFrame.SearchPanel.RefreshButton:SetSize(24, 24)
+	LFGListFrame.SearchPanel.RefreshButton.Icon:SetPoint("CENTER")
+
+	--T.SkinEditBox(LFGListFrame.SearchPanel.SearchBox)
+	T.SkinScrollBar(LFGListFrame.SearchPanel.ScrollFrame.scrollBar)
+
 	T.SkinCloseButton(PVEFrameCloseButton)
 	T.SkinCloseButton(LFGDungeonReadyStatusCloseButton, nil, "-")
 	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
