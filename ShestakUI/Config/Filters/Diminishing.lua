@@ -93,8 +93,6 @@ T.DiminishingSpells = {
 	[107079] = {"disorient"},	-- Quaking Palm (Racial)
 
 	-- Fears
-	--WoD [113004] = {"fear"},		-- Intimidating Roar (Symbiosis)
-	[113056] = {"fear"},		-- Intimidating Roar (Symbiosis)
 	--WoD [1513] = {"fear"},			-- Scare Beast
 	[105421] = {"fear"},		-- Blinding Light
 	[10326] = {"fear"},			-- Turn Evil
@@ -152,7 +150,6 @@ T.DiminishingSpells = {
 
 	-- Misc
 	[33786] = {"cyclone"},		-- Cyclone
-	[113506] = {"cyclone"},		-- Cyclone (Symbiosis)
 	[605] = {"mind"},			-- Dominate Mind
 }
 

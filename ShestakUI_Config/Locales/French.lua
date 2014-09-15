@@ -208,7 +208,6 @@ L_GUI_TOOLTIP_RAID_ICON = "Icone de raid"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Affiche qui cible actuellement l'unité qui est dans votre groupe/raid"
 L_GUI_TOOLTIP_ITEM_COUNT = "Afficher le nombre d'objets possédés"
 L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
-L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
 L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
 

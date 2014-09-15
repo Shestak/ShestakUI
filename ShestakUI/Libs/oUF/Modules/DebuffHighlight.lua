@@ -16,7 +16,6 @@ local CanDispel = {
 	SHAMAN = {Magic = false, Curse = true}
 }
 
-local SymbiosisName = GetSpellInfo(110309)
 local CleanseName = GetSpellInfo(4987)
 local dispellist = CanDispel[T.class] or {}
 local origColors = {}
@@ -72,14 +71,6 @@ local function CheckSpec(self, event)
 	end
 end
 
-local function CheckSymbiosis()
-	if GetSpellInfo(SymbiosisName) == CleanseName then
-		dispellist.Disease = true
-	else
-		dispellist.Disease = false
-	end
-end
-
 local function Update(object, event, unit)
 	if object.unit ~= unit then return end
 	local debuffType, texture = GetDebuffType(unit, object.DebuffHighlightFilter)
@@ -131,9 +122,6 @@ local function Enable(object)
 	object:RegisterEvent("UNIT_AURA", Update)
 	object:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
 	CheckSpec(object)
-	if T.class == "DRUID" then
-		object:RegisterEvent("SPELLS_CHANGED", CheckSymbiosis)
-	end
 
 	if object.DebuffHighlightBackdrop or object.DebuffHighlightBackdropBorder then
 		local r, g, b, a = object:GetBackdropColor()
@@ -152,9 +140,6 @@ local function Disable(object)
 	if object.DebuffHighlightBackdrop or object.DebuffHighlightBackdropBorder or object.DebuffHighlight then
 		object:UnregisterEvent("UNIT_AURA", Update)
 		object:UnregisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
-		if T.class == "DRUID" then
-			object:UnregisterEvent("SPELLS_CHANGED", CheckSymbiosis)
-		end
 	end
 end
 

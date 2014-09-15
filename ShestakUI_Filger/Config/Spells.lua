@@ -3202,8 +3202,6 @@ C["filger_spells"] = {
 			{spellID = 33786, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hibernate
 			--WoD {spellID = 2637, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Intimidating Roar (Symbiosis)
-			--WoD {spellID = 113004, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Bear Hug
@@ -3577,8 +3575,6 @@ C["filger_spells"] = {
 			{spellID = 33786, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Hibernate
 			--WoD {spellID = 2637, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Intimidating Roar (Symbiosis)
-			--WoD {spellID = 113004, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bear Hug

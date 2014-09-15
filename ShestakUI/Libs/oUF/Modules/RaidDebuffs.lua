@@ -7,9 +7,7 @@ if C.unitframe.enable ~= true or C.raidframe.plugins_aura_watch ~= true then ret
 local _, ns = ...
 local oUF = ns.oUF
 
-local SymbiosisName = GetSpellInfo(110309)
 local CleanseName = GetSpellInfo(4987)
-
 local bossDebuffPrio = 9999999
 local invalidPrio = -1
 local auraFilters = {
@@ -103,14 +101,6 @@ local function CheckSpec(self, event)
 		else
 			DispellFilter.Magic = false
 		end
-	end
-end
-
-local function CheckSymbiosis()
-	if GetSpellInfo(SymbiosisName) == CleanseName then
-		DispellFilter.Disease = true
-	else
-		DispellFilter.Disease = false
 	end
 end
 
@@ -277,9 +267,6 @@ local Enable = function(self)
 		return true
 	end
 	self:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
-	if T.class == "DRUID" then
-		self:RegisterEvent("SPELLS_CHANGED", CheckSymbiosis)
-	end
 end
 
 local Disable = function(self)
@@ -289,9 +276,6 @@ local Disable = function(self)
 		self.RaidDebuffs.__owner = nil
 	end
 	self:UnregisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
-	if T.class == "DRUID" then
-		self:UnregisterEvent("SPELLS_CHANGED", CheckSymbiosis)
-	end
 end
 
 oUF:AddElement("RaidDebuffs", Update, Enable, Disable)

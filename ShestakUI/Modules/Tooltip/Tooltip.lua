@@ -19,8 +19,7 @@ local tooltips = {
 	ItemRefShoppingTooltip2,
 	AtlasLootTooltip,
 	QuestHelperTooltip,
-	QuestGuru_QuestWatchTooltip,
-	SymbiosisTip
+	QuestGuru_QuestWatchTooltip
 }
 
 local backdrop = {

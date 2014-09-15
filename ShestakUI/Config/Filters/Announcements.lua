@@ -12,7 +12,6 @@ if C.announcements.spells == true then
 		57934,	-- Tricks of the Trade
 		633,	-- Lay on Hands
 		20484,	-- Rebirth
-		113269,	-- Rebirth (Symbiosis)
 		61999,	-- Raise Ally
 		20707,	-- Soulstone
 		2908,	-- Soothe
