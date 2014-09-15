@@ -27,12 +27,10 @@ local function LoadSkin()
 		"PetJournalSummonButton",
 		"PetJournalFindBattle",
 		"PetJournalFilterButton",
+		"MountJournalFilterButton"
 	}
 
 	for i = 1, #buttons do
-		if i == 4 then
-			_G[buttons[i]]:StripTextures(true)
-		end
 		_G[buttons[i]]:SkinButton()
 	end
 
@@ -50,9 +48,12 @@ local function LoadSkin()
 	MountJournal.MountDisplay.ShadowOverlay:StripTextures()
 	MountJournal.MountCount:StripTextures()
 
+	T.SkinEditBox(MountJournalSearchBox, nil, 18)
 	T.SkinScrollBar(MountJournalListScrollFrameScrollBar)
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelFrame.RotateLeftButton)
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelFrame.RotateRightButton)
+
+	MountJournalFilterButton:SetPoint("TOPLEFT", MountJournalSearchBox, "TOPRIGHT", 5, 2)
 
 	for i = 1, #MountJournal.ListScrollFrame.buttons do
 		local button = _G["MountJournalListScrollFrameButton"..i]
@@ -110,8 +111,7 @@ local function LoadSkin()
 	PetJournalTutorialButton:SetPoint("TOPLEFT", PetJournal, "TOPLEFT", -5, 10)
 
 	PetJournal.PetCount:StripTextures()
-	T.SkinEditBox(PetJournalSearchBox)
-	PetJournalSearchBox:SetHeight(18)
+	T.SkinEditBox(PetJournalSearchBox, nil, 18)
 
 	PetJournalFilterButton:SetPoint("TOPLEFT", PetJournalSearchBox, "TOPRIGHT", 5, 2)
 

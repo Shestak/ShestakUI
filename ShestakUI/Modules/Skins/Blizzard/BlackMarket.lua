@@ -11,8 +11,7 @@ local function LoadSkin()
 
 	T.SkinScrollBar(BlackMarketScrollFrameScrollBar)
 	BlackMarketFrame.MoneyFrameBorder:StripTextures()
-	T.SkinEditBox(BlackMarketBidPriceGold)
-	BlackMarketBidPriceGold:SetHeight(18)
+	T.SkinEditBox(BlackMarketBidPriceGold, nil, 18)
 
 	BlackMarketFrame.BidButton:SkinButton()
 	BlackMarketFrame.BidButton:SetHeight(20)

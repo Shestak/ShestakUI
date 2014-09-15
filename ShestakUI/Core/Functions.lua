@@ -181,7 +181,7 @@ function T.SkinTab(tab, bg)
 	end
 end
 
-function T.SkinNextPrevButton(btn, horizonal, left)
+function T.SkinNextPrevButton(btn, horizontal, left)
 	local normal, pushed, disabled
 	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back")) or left
 
@@ -225,7 +225,7 @@ function T.SkinNextPrevButton(btn, horizonal, left)
 	btn:SetSize(btn:GetWidth() - 7, btn:GetHeight() - 7)
 
 	if normal and pushed and disabled then
-		if horizonal then
+		if horizontal then
 			btn:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up")
 			btn:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down")
 			btn:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Disabled")
@@ -276,7 +276,7 @@ function T.SkinRotateButton(btn)
 	btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
 end
 
-function T.SkinEditBox(frame)
+function T.SkinEditBox(frame, width, height)
 	if _G[frame:GetName().."Left"] then _G[frame:GetName().."Left"]:Kill() end
 	if _G[frame:GetName().."Middle"] then _G[frame:GetName().."Middle"]:Kill() end
 	if _G[frame:GetName().."Right"] then _G[frame:GetName().."Right"]:Kill() end
@@ -298,6 +298,8 @@ function T.SkinEditBox(frame)
 		end
 	end
 
+	if width then frame:SetWidth(width) end
+	if height then frame:SetHeight(height) end
 end
 
 function T.SkinDropDownBox(frame, width)

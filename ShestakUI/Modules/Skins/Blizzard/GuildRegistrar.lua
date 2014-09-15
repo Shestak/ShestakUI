@@ -24,8 +24,7 @@ local function LoadSkin()
 	T.SkinCloseButton(GuildRegistrarFrameCloseButton, GuildRegistrarFrame.backdrop)
 
 	GuildRegistrarFrameEditBox:StripTextures(true)
-	T.SkinEditBox(GuildRegistrarFrameEditBox)
-	GuildRegistrarFrameEditBox:SetHeight(GuildRegistrarFrameEditBox:GetHeight() - 15)
+	T.SkinEditBox(GuildRegistrarFrameEditBox, nil, GuildRegistrarFrameEditBox:GetHeight() - 15)
 
 	for i = 1, 2 do
 		_G["GuildRegistrarButton"..i]:GetFontString():SetTextColor(1, 1, 1)
