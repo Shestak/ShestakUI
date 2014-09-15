@@ -65,6 +65,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].unitframes.target_castbar = {"BOTTOM", "oUF_Target", "BOTTOM", -272, -4}
 	C["position"].unitframes.raid_heal = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -331, 335}
 	C["media"].border_color = {0.1, 0.1, 0.1, 1}
+	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].profession_database = true
 	C["misc"].item_level = true
