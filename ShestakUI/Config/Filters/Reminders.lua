@@ -286,13 +286,13 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 			},
-			[2] = {	-- Weapons enchants group
-				["weapon"] = true,
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-				["level"] = 10,
-			},
+			--WoD [2] = {	-- Weapons enchants group
+				-- ["weapon"] = true,
+				-- ["combat"] = true,
+				-- ["instance"] = true,
+				-- ["pvp"] = true,
+				-- ["level"] = 10,
+			-- },
 		},
 		WARLOCK = {
 			[1] = {	-- Dark Intent group
