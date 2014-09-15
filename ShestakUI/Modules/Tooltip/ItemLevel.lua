@@ -149,6 +149,7 @@ do
 
 	local function update(unit, guid)
 		local level, incomplete = UnitItemLevel(unit)
+		if not level then return end
 		local myLevel = level - UnitItemLevel("player")
 
 		if incomplete then
