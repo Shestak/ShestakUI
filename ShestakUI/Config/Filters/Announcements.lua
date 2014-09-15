@@ -15,10 +15,10 @@ if C.announcements.spells == true then
 		61999,	-- Raise Ally
 		20707,	-- Soulstone
 		2908,	-- Soothe
-		120668,	-- Stormlash Totem
-		16190,	-- Mana Tide Totem
-		64901,	-- Hymn of Hope
-		108968,	-- Void Shift
+		--WoD 120668,	-- Stormlash Totem
+		--WoD 16190,	-- Mana Tide Totem
+		--WoD 64901,	-- Hymn of Hope
+		--WoD 108968,	-- Void Shift
 	}
 end
 
