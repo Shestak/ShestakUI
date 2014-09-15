@@ -240,7 +240,7 @@
 	<Script file="Modules\Tooltip\SpellID.lua"/>
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
-	<Script file="Modules\Tooltip\Symbiosis.lua"/>
+	<!-- <Script file="Modules\Tooltip\Symbiosis.lua"/> -->
 	<Script file="Modules\Tooltip\CheckItemTransmogrify.lua"/>
 	<Script file="Modules\Tooltip\InstanceLockCompare.lua"/>
 
