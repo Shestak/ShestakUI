@@ -1305,7 +1305,7 @@ T.PostCreateAura = function(element, button)
 end
 
 T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, duration, timeLeft)
-	local _, _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
+	local _, _, _, _, dtype, duration, expirationTime = UnitAura(unit, index, icon.filter)
 
 	local playerUnits = {
 		player = true,
@@ -1331,11 +1331,8 @@ T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, 
 			end
 		end
 	else
-		if (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and dtype == "Magic")) and not UnitIsFriend("player", unit) then
-			icon:SetBackdropBorderColor(1, 0.85, 0)
-		else
-			icon:SetBackdropBorderColor(unpack(C.media.border_color))
-		end
+		icon:SetBackdropBorderColor(unpack(C.media.border_color))
+		icon.icon:SetDesaturated(false)
 	end
 
 	if duration and duration > 0 and C.aura.show_timer == true then
