@@ -157,12 +157,13 @@ end
 ----------------------------------------------------------------------------------------
 --	Style ActionBars/Bags buttons function(by Chiril & Karudon)
 ----------------------------------------------------------------------------------------
-local function StyleButton(button, t)
+local function StyleButton(button, t, size)
+	if not size then size = 2 end
 	if button.SetHighlightTexture and not button.hover then
 		local hover = button:CreateTexture(nil, nil, self)
 		hover:SetTexture(1, 1, 1, 0.3)
-		hover:SetPoint("TOPLEFT", button, 2, -2)
-		hover:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		hover:SetPoint("TOPLEFT", button, size, -size)
+		hover:SetPoint("BOTTOMRIGHT", button, -size, size)
 		button.hover = hover
 		button:SetHighlightTexture(hover)
 	end
@@ -170,8 +171,8 @@ local function StyleButton(button, t)
 	if not t and button.SetPushedTexture and not button.pushed then
 		local pushed = button:CreateTexture(nil, nil, self)
 		pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
-		pushed:SetPoint("TOPLEFT", button, 2, -2)
-		pushed:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		pushed:SetPoint("TOPLEFT", button, size, -size)
+		pushed:SetPoint("BOTTOMRIGHT", button, -size, size)
 		button.pushed = pushed
 		button:SetPushedTexture(pushed)
 	end
@@ -179,8 +180,8 @@ local function StyleButton(button, t)
 	if button.SetCheckedTexture and not button.checked then
 		local checked = button:CreateTexture(nil, nil, self)
 		checked:SetTexture(0, 1, 0, 0.3)
-		checked:SetPoint("TOPLEFT", button, 2, -2)
-		checked:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		checked:SetPoint("TOPLEFT", button, size, -size)
+		checked:SetPoint("BOTTOMRIGHT", button, -size, size)
 		button.checked = checked
 		button:SetCheckedTexture(checked)
 	end
@@ -188,8 +189,8 @@ local function StyleButton(button, t)
 	local cooldown = button:GetName() and _G[button:GetName().."Cooldown"]
 	if cooldown then
 		cooldown:ClearAllPoints()
-		cooldown:SetPoint("TOPLEFT", button, 2, -2)
-		cooldown:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		cooldown:SetPoint("TOPLEFT", button, size, -size)
+		cooldown:SetPoint("BOTTOMRIGHT", button, -size, size)
 	end
 end
 
