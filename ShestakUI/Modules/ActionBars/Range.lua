@@ -187,7 +187,7 @@ function tullaRange.UpdateButtonUsable(button)
 	-- Usable
 	if isUsable then
 		-- Out of range
-		if IsActionInRange(action) == 0 then
+		if IsActionInRange(action) == false then
 			tullaRange.SetButtonColor(button, "oor")
 		-- Holy Power
 		elseif T.class == "PALADIN" and isHolyPowerAbility(action) and not (UnitPower("player", SPELL_POWER_HOLY_POWER) >= 3 or UnitBuff("player", DIVINE_PURPOSE)) then
