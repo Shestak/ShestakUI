@@ -179,9 +179,9 @@ local micromenu = {
 	{text = ACHIEVEMENT_BUTTON, notCheckable = 1, func = function()
 		ToggleAchievementFrame()
 	end},
-	-- {text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
-		-- ToggleFrame(QuestLogFrame)
-	-- end},
+	{text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
+		ToggleQuestLog()
+	end},
 	{text = guildText, notCheckable = 1, func = function()
 		ToggleGuildFrame()
 		if IsInGuild() then
