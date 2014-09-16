@@ -14,7 +14,6 @@ local function LoadSkin()
 		"PetJournalPetCardInset",
 		"PetJournalLoadoutBorder",
 		"PetJournalSpellSelect",
-		"PetJournalHealPetButton",
 		"PetJournalPetCardXPBar"
 	}
 
@@ -48,6 +47,10 @@ local function LoadSkin()
 	MountJournal.MountDisplay.ShadowOverlay:StripTextures()
 	MountJournal.MountCount:StripTextures()
 
+	MountJournal.MountDisplay:CreateBackdrop("Overlay")
+	MountJournal.MountDisplay.backdrop:SetPoint("TOPLEFT", 2, -2)
+	MountJournal.MountDisplay.backdrop:SetPoint("BOTTOMRIGHT", 1, 2)
+	
 	T.SkinEditBox(MountJournalSearchBox, nil, 18)
 	T.SkinScrollBar(MountJournalListScrollFrameScrollBar)
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelFrame.RotateLeftButton)
@@ -106,6 +109,24 @@ local function LoadSkin()
 	MountJournalListScrollFrame:HookScript("OnVerticalScroll", ColorSelectedMount)
 	MountJournalListScrollFrame:HookScript("OnMouseWheel", ColorSelectedMount)
 
+	MountJournalSummonRandomFavoriteButton:CreateBackdrop("Default")
+	MountJournalSummonRandomFavoriteButton.backdrop:SetAllPoints()
+	MountJournalSummonRandomFavoriteButton:StyleButton()
+	MountJournalSummonRandomFavoriteButtonBorder:Hide()
+	MountJournalSummonRandomFavoriteButton.texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	MountJournalSummonRandomFavoriteButton.texture:ClearAllPoints()
+	MountJournalSummonRandomFavoriteButton.texture:SetPoint("TOPLEFT", 2, -2)
+	MountJournalSummonRandomFavoriteButton.texture:SetPoint("BOTTOMRIGHT", -2, 2)
+
+	do
+		local button = MountJournal.MountDisplay.InfoButton
+		local icon = MountJournal.MountDisplay.InfoButton.Icon
+		button:CreateBackdrop("Default")
+		button.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
+		button.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	end
+
 	-- PetJournal
 	PetJournalTutorialButton.Ring:Hide()
 	PetJournalTutorialButton:SetPoint("TOPLEFT", PetJournal, "TOPLEFT", -5, 10)
@@ -126,18 +147,23 @@ local function LoadSkin()
 		local level = _G["PetJournalListScrollFrameButton"..i.."Level"]
 
 		if not button.isSkinned then
-			_G["PetJournalListScrollFrameButton"..i.."LevelBG"]:SetAlpha(0)
+			--_G["PetJournalListScrollFrameButton"..i.."LevelBG"]:SetAlpha(0)
 
-			button:DisableDrawLayer("BACKGROUND")
+			button:StripTextures()
 			button:CreateBackdrop("Overlay")
 			button.backdrop:SetPoint("TOPLEFT", 2, -2)
 			button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+			button:StyleButton(nil, 4)
 
 			button.dragButton:CreateBackdrop("Default")
 			button.dragButton.backdrop:SetPoint("TOPLEFT", -1, 1)
 			button.dragButton.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
-
+			button.dragButton:StyleButton(nil, 1)
+			button.dragButton.ActiveTexture:SetTexture(0, 1, 0, 0.3)
+			button.dragButton.ActiveTexture:SetPoint("TOPLEFT", 1, -1)
+			button.dragButton.ActiveTexture:SetPoint("BOTTOMRIGHT", -1, 1)
 			button.dragButton.favorite:SetParent(button.dragButton.backdrop)
+
 			button.petTypeIcon:SetParent(button.backdrop)
 			button.petTypeIcon:SetDrawLayer("OVERLAY")
 			button.isDead:SetParent(button.dragButton.backdrop)
@@ -192,8 +218,7 @@ local function LoadSkin()
 	PetJournalHealPetButton:CreateBackdrop("Default")
 	PetJournalHealPetButton.backdrop:SetAllPoints()
 	PetJournalHealPetButton:StyleButton()
-
-	PetJournalHealPetButton.texture:SetTexture("Interface\\Icons\\spell_misc_petheal")
+	PetJournalHealPetButtonBorder:Hide()
 	PetJournalHealPetButton.texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	PetJournalHealPetButton.texture:ClearAllPoints()
 	PetJournalHealPetButton.texture:SetPoint("TOPLEFT", 2, -2)
