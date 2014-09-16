@@ -53,7 +53,6 @@ local function Local(o)
 	if o == "UIConfigmiscraid_tools" then o = L_GUI_MISC_RAID_TOOLS end
 	if o == "UIConfigmiscprofession_tabs" then o = L_GUI_MISC_PROFESSION_TABS end
 	if o == "UIConfigmiscprofession_database" then o = L_GUI_MISC_PROFESSION_DATABASE end
-	if o == "UIConfigmiscdungeon_tabs" then o = L_GUI_MISC_DUNGEON_TABS end
 	if o == "UIConfigmischide_bg_spam" then o = L_GUI_MISC_HIDE_BG_SPAM end
 	if o == "UIConfigmiscitem_level" then o = L_GUI_MISC_ITEM_LEVEL end
 	if o == "UIConfigmiscgem_counter" then o = L_GUI_MISC_GEM_COUNTER end

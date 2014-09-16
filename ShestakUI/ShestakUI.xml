@@ -62,7 +62,6 @@
 	<Script file="Modules\Misc\Archaeology.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
-	<!-- <Script file="Modules\Misc\DungeonTabs.lua"/> -->
 	<Script file="Modules\Misc\GemCounter.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\HealerIconNameplate.lua"/>
