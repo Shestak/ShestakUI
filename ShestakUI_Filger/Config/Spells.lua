@@ -275,7 +275,7 @@ C["filger_spells"] = {
 			-- Survival Instincts
 			{spellID = 61336, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Might of Ursoc
-			{spellID = 106922, unitID = "player", caster = "player", filter = "BUFF"},
+			--WoD {spellID = 106922, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Defense
@@ -593,7 +593,7 @@ C["filger_spells"] = {
 			-- Nature's Vigil
 			{spellID = 124974, filter = "CD"},
 			-- Might of Ursoc
-			{spellID = 106922, filter = "CD"},
+			--WoD {spellID = 106922, filter = "CD"},
 			-- Nature's Grasp
 			--WoD {spellID = 16689, filter = "CD"},
 			-- Incarnation
