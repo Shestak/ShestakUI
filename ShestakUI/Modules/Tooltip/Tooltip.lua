@@ -4,6 +4,7 @@ if C.tooltip.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Based on aTooltip(by ALZA)
 ----------------------------------------------------------------------------------------
+local StoryTooltip = QuestScrollFrame.StoryTooltip
 local tooltips = {
 	GameTooltip,
 	ItemRefTooltip,
@@ -12,14 +13,14 @@ local tooltips = {
 	WorldMapTooltip,
 	WorldMapCompareTooltip1,
 	WorldMapCompareTooltip2,
-	WorldMapCompareTooltip3,
 	FriendsTooltip,
 	ConsolidatedBuffsTooltip,
 	ItemRefShoppingTooltip1,
 	ItemRefShoppingTooltip2,
 	AtlasLootTooltip,
 	QuestHelperTooltip,
-	QuestGuru_QuestWatchTooltip
+	QuestGuru_QuestWatchTooltip,
+	StoryTooltip
 }
 
 local backdrop = {
