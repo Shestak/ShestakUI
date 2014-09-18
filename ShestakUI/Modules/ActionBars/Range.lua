@@ -201,7 +201,7 @@ function tullaRange.UpdateButtonUsable(button)
 		tullaRange.SetButtonColor(button, "oom")
 	-- Unusable
 	else
-		tullaRange:SetButtonColor(button, "unusable")
+		button.tullaRangeColor = "unusuable"
 	end
 end
 
@@ -244,8 +244,7 @@ function tullaRange:LoadDefaults()
 		normal = {1, 1, 1},
 		oor = {1, 0.1, 0.1},
 		oom = {0.1, 0.3, 1},
-		ooh = {0.45, 0.45, 1},
-		unusable = {0.4, 0.4, 0.4}
+		ooh = {0.45, 0.45, 1}
 	}
 end
 
