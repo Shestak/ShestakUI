@@ -131,8 +131,8 @@ local texcount = 0
 local MapTex = {}
 
 -- Create checkbox
-local frame = CreateFrame("CheckButton", nil, WorldMapFrame, "OptionsCheckButtonTemplate")
-frame:SetPoint("BOTTOM", WorldMapFrame, "TOP", 0, 0)
+local frame = CreateFrame("CheckButton", nil, WorldMapFrame.BorderFrame, "OptionsCheckButtonTemplate")
+frame:SetPoint("TOPRIGHT", -155, 0)
 frame:SetHitRectInsets(0, -46, 0, 0)
 frame:SetSize(24, 24)
 frame:SetFrameStrata("TOOLTIP")
@@ -147,7 +147,7 @@ frame.f:Show()
 
 -- Handle clicks
 frame:SetScript("OnClick", function()
-	if frame:GetChecked() == 1 then
+	if frame:GetChecked() == true then
 		SavedOptionsPerChar.FogOfWar = true
 		if WorldMapFrame:IsShown() then
 			local futuremap = GetCurrentMapAreaID()
