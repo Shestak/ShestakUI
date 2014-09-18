@@ -19,7 +19,7 @@ T.DiminishingSpells = {
 	[19577] = {"ctrlstun"},		-- Intimidation
 	[117526] = {"ctrlstun"},	-- Binding Shot
 	--WoD [90337] = {"ctrlstun"},		-- Bad Manner (Monkey)
-	[50519] = {"ctrlstun"},		-- Sonic Blast (Bat)
+	--WoD [50519] = {"ctrlstun"},		-- Sonic Blast (Bat)
 	--WoD [56626] = {"ctrlstun"},		-- Sting (Wasp)
 	--WoD [126246] = {"ctrlstun"},	-- Lullaby (Crane)
 	--WoD [96201] = {"ctrlstun"},		-- Web Wrap (Shale Spider)
@@ -33,7 +33,7 @@ T.DiminishingSpells = {
 	[120086] = {"ctrlstun"},	-- Fists of Fury
 	[853] = {"ctrlstun"},		-- Hammer of Justice
 	[105593] = {"ctrlstun"},	-- Fist of Justice
-	[115752] = {"ctrlstun"},	-- Blinding Light
+	--WoD [115752] = {"ctrlstun"},	-- Blinding Light
 	[119072] = {"ctrlstun"},	-- Holy Wrath
 	[1833] = {"ctrlstun"},		-- Cheap Shot
 	[408] = {"ctrlstun"},		-- Kidney Shot
@@ -48,12 +48,12 @@ T.DiminishingSpells = {
 	-- Control Roots
 	[96294] = {"ctrlroot"},		-- Chains of Ice
 	[339] = {"ctrlroot"},		-- Entangling Roots
-	[19975] = {"ctrlroot"},		-- Nature's Grasp
+	--WoD [19975] = {"ctrlroot"},		-- Nature's Grasp
 	[102359] = {"ctrlroot"},	-- Mass Entanglement
 	--WoD [50245] = {"ctrlroot"},		-- Pin (Crab)
 	--WoD [4167] = {"ctrlroot"},		-- Web (Spider)
 	--WoD [54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
-	[90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
+	--WoD [90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
 	[136634] = {"ctrlroot"},	-- Narrow Escape
 	[122] = {"ctrlroot"},		-- Frost Nova
 	[33395] = {"ctrlroot"},		-- Freeze (Water Elemental)
@@ -65,11 +65,11 @@ T.DiminishingSpells = {
 
 	-- Disarms
 	--WoD [50541] = {"disarm"},		-- Clench (Scorpid)
-	[91644] = {"disarm"},		-- Snatch (Bird of Prey)
+	--WoD [91644] = {"disarm"},		-- Snatch (Bird of Prey)
 	--WoD [117368] = {"disarm"},		-- Grapple Weapon
-	[64058] = {"disarm"},		-- Psychic Horror
+	--WoD [64058] = {"disarm"},		-- Psychic Horror
 	--WoD [51722] = {"disarm"},		-- Dismantle
-	[118093] = {"disarm"},		-- Disarm (Voidwalker/Voidlord)
+	--WoD [118093] = {"disarm"},		-- Disarm (Voidwalker/Voidlord)
 	--WoD [676] = {"disarm"},			-- Disarm
 
 	-- Disorients
@@ -113,7 +113,7 @@ T.DiminishingSpells = {
 	[6789] = {"horror"},		-- Mortal Coil
 
 	-- Random Stuns
-	[113953] = {"rndstun"},		-- Paralysis (Poison)
+	--WoD [113953] = {"rndstun"},		-- Paralysis (Poison)
 	[77505] = {"rndstun"},		-- Earthquake
 	[118895] = {"rndstun"},		-- Dragon Roar
 	[7922] = {"rndstun"},		-- Charge Stun
@@ -133,7 +133,7 @@ T.DiminishingSpells = {
 	[47476] = {"silence"},		-- Strangulate
 	[81261] = {"silence"},		-- Solar Beam
 	--WoD [34490] = {"silence"},		-- Silencing Shot
-	[50479] = {"silence"},		-- Nether Shock (Nether Ray)
+	--WoD [50479] = {"silence"},		-- Nether Shock (Nether Ray)
 	--WoD [55021] = {"silence"},		-- Improved Counterspell
 	[102051] = {"silence"},		-- Frostjaw
 	--WoD [116709] = {"silence"},		-- Spear Hand Strike

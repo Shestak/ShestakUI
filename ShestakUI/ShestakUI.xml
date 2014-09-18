@@ -167,7 +167,7 @@
 	<Script file="Modules\Chat\SpamageMeters.lua"/>
 	<Script file="Modules\Chat\ChatBind.lua"/>
 
-	<!-- <Script file="Modules\Cooldowns\DiminishingCD.lua"/> -->
+	<Script file="Modules\Cooldowns\DiminishingCD.lua"/>
 	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
 	<Script file="Modules\Cooldowns\PulseCD.lua"/>
 	<Script file="Modules\Cooldowns\RaidCD.lua"/>

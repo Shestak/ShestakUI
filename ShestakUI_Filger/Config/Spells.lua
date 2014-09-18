@@ -3279,7 +3279,7 @@ C["filger_spells"] = {
 			-- Sting (Wasp)
 			--WoD {spellID = 56626, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Sonic Blast (Bat)
-			{spellID = 50519, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--WoD {spellID = 50519, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Paralyzing Quill (Porcupine)
 			--WoD {spellID = 126355, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Petrifying Gaze (Basilisk)
