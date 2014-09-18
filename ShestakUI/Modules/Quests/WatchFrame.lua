@@ -6,11 +6,7 @@ local T, C, L, _ = unpack(select(2, ...))
 local frame = CreateFrame("Frame", "WatchFrameAnchor", UIParent)
 frame:SetPoint(unpack(C.position.quest))
 frame:SetHeight(150)
-if GetCVar("watchFrameWidth") == "1" then
-	frame:SetWidth(326)
-else
-	frame:SetWidth(224)
-end
+frame:SetWidth(224)
 
 ObjectiveTrackerFrame:ClearAllPoints()
 ObjectiveTrackerFrame:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, 0)
