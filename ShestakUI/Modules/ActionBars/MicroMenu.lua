@@ -9,7 +9,7 @@ local microbuttons = {
 	"SpellbookMicroButton",
 	"TalentMicroButton",
 	"AchievementMicroButton",
-	--WoD "QuestLogMicroButton",
+	"QuestLogMicroButton",
 	"GuildMicroButton",
 	--WoD "PVPMicroButton",
 	"LFDMicroButton",
