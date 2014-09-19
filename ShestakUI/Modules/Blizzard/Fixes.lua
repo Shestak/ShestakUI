@@ -6,8 +6,13 @@ local T, C, L, _ = unpack(select(2, ...))
 local FixTooltip = CreateFrame("Frame")
 FixTooltip:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 FixTooltip:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
-FixTooltip:SetScript("OnEvent", function(self, event)
-	GameTooltip:Hide()
+FixTooltip:SetScript("OnEvent", function()
+	for i = 1, 12 do
+		local button = _G["ActionButton" .. i]
+		if GameTooltip:GetOwner() == button then
+			GameTooltip:Hide()
+		end
+	end
 end)
 
 ----------------------------------------------------------------------------------------
