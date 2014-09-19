@@ -3,7 +3,10 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Fix blank tooltip
 ----------------------------------------------------------------------------------------
-GameTooltip:HookScript("OnTooltipCleared", function(self)
+local FixTooltip = CreateFrame("Frame")
+FixTooltip:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
+FixTooltip:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
+FixTooltip:SetScript("OnEvent", function(self, event)
 	GameTooltip:Hide()
 end)
 
