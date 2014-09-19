@@ -72,7 +72,7 @@ AutoButton.c:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", 1, -2)
 AutoButton.c:SetJustifyH("CENTER")
 
 -- Cooldown
-AutoButton.cd = CreateFrame("Cooldown", nil, AutoButton)
+AutoButton.cd = CreateFrame("Cooldown", nil, AutoButton, "CooldownFrameTemplate")
 AutoButton.cd:SetPoint("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
 AutoButton.cd:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
 
