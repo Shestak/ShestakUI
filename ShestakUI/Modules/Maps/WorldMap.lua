@@ -209,6 +209,9 @@ function WorldMap:Skin()
 
 	WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 30)
 	WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
+
+	WorldMapPlayerUpper:EnableMouse(false)
+	WorldMapPlayerLower:EnableMouse(false)
 end
 
 ----------------------------------------------------------------------------------------
