@@ -29,6 +29,7 @@ local createAuraIcon = function(icons, index)
 
 	local cd = CreateFrame("Cooldown", nil, button, "CooldownFrameTemplate")
 	cd:SetAllPoints(button)
+	cd:SetDrawEdge(false)
 
 	local icon = button:CreateTexture(nil, "BORDER")
 	icon:SetAllPoints(button)
@@ -97,7 +98,6 @@ local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visibl
 			local cd = icon.cd
 			if(cd and not icons.disableCooldown) then
 				if(duration and duration > 0) then
-					cd:SetDrawEdge(false)
 					cd:SetCooldown(timeLeft - duration, duration)
 					cd:Show()
 				else
