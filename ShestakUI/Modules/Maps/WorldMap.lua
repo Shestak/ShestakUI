@@ -137,6 +137,8 @@ function WorldMap:Skin()
 	AbandonButton:ClearAllPoints()
 	AbandonButton:SetPoint("BOTTOMLEFT", QuestScroll.backdrop, "BOTTOMLEFT", 3, 3)
 
+	select(6, ShareButton:GetRegions()):Hide()
+	select(7, ShareButton:GetRegions()):Hide()
 	ShareButton:SkinButton()
 	TrackButton:SkinButton()
 
@@ -218,7 +220,7 @@ function WorldMap:Coords()
 	local coords = CreateFrame("Frame", "CoordsFrame", WorldMapFrame)
 	coords:SetFrameLevel(90)
 	coords.PlayerText = coords:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-	coords.PlayerText:SetPoint("BOTTOMLEFT", WorldMapDetailFrame, "BOTTOMLEFT", 5, 5)
+	coords.PlayerText:SetPoint("BOTTOMLEFT", WorldMapFrame.UIElementsFrame, "BOTTOMLEFT", 5, 5)
 	coords.PlayerText:SetJustifyH("LEFT")
 	coords.PlayerText:SetText(UnitName("player")..": 0,0")
 
