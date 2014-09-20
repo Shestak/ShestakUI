@@ -119,14 +119,18 @@ QuestMapFrame.DetailsFrame.ShareButton:SetPoint("RIGHT", QuestMapFrame.DetailsFr
 
 QuestNPCModel:StripTextures()
 QuestNPCModel:CreateBackdrop("Transparent")
-QuestNPCModel:ClearAllPoints()
-QuestNPCModel:SetPoint("TOPLEFT", QuestMapFrame.DetailsFrame.BackButton, "TOPRIGHT", 3, 0)
 QuestNPCModelTextFrame:StripTextures()
 QuestNPCModelTextFrame:CreateBackdrop("Overlay")
-QuestNPCModelTextFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModel.backdrop, "BOTTOMLEFT", 0, -3)
-hooksecurefunc("QuestFrame_ShowQuestPortrait", function(parentFrame, portrait, text, name, x, y)
+QuestNPCModelTextFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModel.backdrop, "BOTTOMLEFT", 0, -1)
+hooksecurefunc("QuestFrame_ShowQuestPortrait", function(parentFrame, _, _, _, x, y)
+	if parentFrame == QuestLogPopupDetailFrame or parentFrame == QuestFrame then
+		x = x + 8
+		y = y + 40
+	elseif parentFrame == QuestFrame then
+		x = x + 3
+	end
 	QuestNPCModel:ClearAllPoints()
-	QuestNPCModel:SetPoint("TOPLEFT", parentFrame, "TOPRIGHT", x + 8, y + 40)
+	QuestNPCModel:SetPoint("TOPLEFT", parentFrame, "TOPRIGHT", x, y)
 end)
 
 -- Quests Buttons
@@ -191,7 +195,6 @@ WorldMapFrameAreaPetLevels:SetShadowOffset(2, -2)
 
 WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 30)
 WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
---end
 
 ----------------------------------------------------------------------------------------
 --	Creating coords
