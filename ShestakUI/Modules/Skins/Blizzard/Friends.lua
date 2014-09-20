@@ -57,13 +57,7 @@ local function LoadSkin()
 		"FriendsFrameIcon",
 		"FriendsFrameBroadcastInputLeft",
 		"FriendsFrameBroadcastInputRight",
-		"FriendsFrameBroadcastInputMiddle",
-		--WoD "ChannelFrameDaughterFrameChannelNameLeft",
-		--WoD "ChannelFrameDaughterFrameChannelNameRight",
-		--WoD "ChannelFrameDaughterFrameChannelNameMiddle",
-		--WoD "ChannelFrameDaughterFrameChannelPasswordLeft",
-		--WoD "ChannelFrameDaughterFrameChannelPasswordRight",
-		--WoD "ChannelFrameDaughterFrameChannelPasswordMiddle"
+		"FriendsFrameBroadcastInputMiddle"
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -163,8 +157,8 @@ local function LoadSkin()
 	FriendsFrameBroadcastInput.backdrop:SetPoint("BOTTOMRIGHT", 0, 1)
 
 	ChannelFrameDaughterFrame:SetTemplate("Transparent")
-	ChannelFrameDaughterFrameChannelName:CreateBackdrop("Overlay")
-	ChannelFrameDaughterFrameChannelPassword:CreateBackdrop("Overlay")
+	T.SkinEditBox(ChannelFrameDaughterFrameChannelName)
+	T.SkinEditBox(ChannelFrameDaughterFrameChannelPassword)
 
 	BNConversationInviteDialog:SetTemplate("Transparent")
 	BNConversationInviteDialogList:SetTemplate("Overlay")
