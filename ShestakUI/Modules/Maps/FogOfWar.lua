@@ -119,9 +119,6 @@ local zones = {
 -- Remove tooltips from Blizzard map controls
 --WoD WorldMapTrackQuest:SetScript("OnEnter", nil)
 --WoD WorldMapZoneMinimapDropDown:SetScript("OnEnter", nil)
--- Make character location pointer non-interactive (else the name tooltip gets in the way)
---WoD WorldMapPlayerUpper:EnableMouse(false)
---WoD WorldMapPlayerLower:EnableMouse(false)
 
 -- Initialise counters
 local createdtex = 0

@@ -16,6 +16,12 @@ FixTooltip:SetScript("OnEvent", function()
 end)
 
 ----------------------------------------------------------------------------------------
+--	Disable tooltip for player arrow on map
+----------------------------------------------------------------------------------------
+WorldMapPlayerUpper:EnableMouse(false)
+WorldMapPlayerLower:EnableMouse(false)
+
+----------------------------------------------------------------------------------------
 --	Fix RemoveTalent() taint
 ----------------------------------------------------------------------------------------
 FCF_StartAlertFlash = T.dummy

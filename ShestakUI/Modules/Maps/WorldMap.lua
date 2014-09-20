@@ -3,13 +3,13 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Floors scroll
 ----------------------------------------------------------------------------------------
-WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
-	local level = GetCurrentMapDungeonLevel() - delta
-	if level >= 1 and level <= GetNumDungeonMapLevels() then
-		SetDungeonMapLevel(level)
-		PlaySound("UChatScrollButton")
-	end
-end)
+--WoD WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
+	-- local level = GetCurrentMapDungeonLevel() - delta
+	-- if level >= 1 and level <= GetNumDungeonMapLevels() then
+		-- SetDungeonMapLevel(level)
+		-- PlaySound("UChatScrollButton")
+	-- end
+-- end)
 
 ----------------------------------------------------------------------------------------
 --	WorldMap style(m_Map by Monolit)
@@ -209,9 +209,6 @@ function WorldMap:Skin()
 
 	WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 30)
 	WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
-
-	WorldMapPlayerUpper:EnableMouse(false)
-	WorldMapPlayerLower:EnableMouse(false)
 end
 
 ----------------------------------------------------------------------------------------
