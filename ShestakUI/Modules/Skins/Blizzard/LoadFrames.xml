@@ -31,7 +31,7 @@
 	<Script file="Interface.lua"/>
 	<Script file="ItemAlteration.lua"/>
 	<Script file="ItemSocketing.lua"/>
-	<!-- <Script file="ItemText.lua"/> -->
+	<Script file="ItemText.lua"/>
 	<Script file="ItemUpgrade.lua"/>
 	<!--<Script file="Journal.lua"/> -->
 	<Script file="LFG.lua"/>
@@ -50,9 +50,9 @@
 	<Script file="PetStable.lua"/>
 	<Script file="ProductChoice.lua"/>
 	<Script file="PvE.lua"/>
-	<!-- <Script file="PvP.lua"/>
+	<!-- <Script file="PvP.lua"/> -->
 	<Script file="Quest.lua"/>
-	<Script file="QuestLog.lua"/> -->
+	<Script file="QuestLog.lua"/>
 	<Script file="Raid.lua"/>
 	<Script file="RaidInfo.lua"/>
 	<Script file="SpellBook.lua"/>

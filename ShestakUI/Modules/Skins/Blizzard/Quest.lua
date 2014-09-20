@@ -56,33 +56,6 @@ local function LoadSkin()
 		QuestProgressRequiredItemsText:SetShadowColor(0, 0, 0)
 		QuestProgressRequiredMoneyText:SetTextColor(1, 0.8, 0)
 	end)
-
-	QuestNPCModel:StripTextures()
-	QuestNPCModel:CreateBackdrop("Transparent")
-	QuestNPCModelTextFrame:StripTextures()
-	QuestNPCModelTextFrame:CreateBackdrop("Overlay")
-	QuestNPCModelTextFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModel.backdrop, "BOTTOMLEFT", 0, -1)
-
-	QuestLogDetailFrame:StripTextures()
-	QuestLogDetailFrame:CreateBackdrop("Transparent")
-	QuestLogDetailFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
-	QuestLogDetailFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
-	QuestLogDetailScrollFrame:StripTextures()
-	QuestLogDetailFrameInset:StripTextures()
-	T.SkinCloseButton(QuestLogDetailFrameCloseButton, QuestLogDetailFrame.backdrop)
-
-	hooksecurefunc("QuestFrame_ShowQuestPortrait", function(parentFrame, portrait, text, name, x, y)
-		QuestNPCModel:ClearAllPoints()
-		QuestNPCModel:SetPoint("TOPLEFT", parentFrame, "TOPRIGHT", x + 10, y + 40)
-	end)
-
-	QuestLogDetailFrame:HookScript("OnShow", function()
-		QuestLogFrameAbandonButton:ClearAllPoints()
-		QuestLogFrameAbandonButton:SetPoint("BOTTOMLEFT", QuestLogDetailFrame.backdrop, "BOTTOMLEFT", 4, 4)
-		QuestLogFramePushQuestButton:SetPoint("LEFT", QuestLogFrameAbandonButton, "RIGHT", 3, 0)
-		QuestLogFramePushQuestButton:SetPoint("RIGHT", QuestLogFrameTrackButton, "LEFT", -3, 0)
-		QuestLogFrameTrackButton:SetPoint("BOTTOMRIGHT", QuestLogDetailFrame.backdrop, "BOTTOMRIGHT", -4, 4)
-	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
