@@ -120,13 +120,13 @@ QuestMapFrame.DetailsFrame.ShareButton:SetPoint("RIGHT", QuestMapFrame.DetailsFr
 QuestNPCModel:StripTextures()
 QuestNPCModel:CreateBackdrop("Transparent")
 QuestNPCModel:ClearAllPoints()
-QuestNPCModel:SetPoint("TOPLEFT", QuestMapFrame.DetailsFrame.BackButton, "TOPRIGHT", 2, -2)
+QuestNPCModel:SetPoint("TOPLEFT", QuestMapFrame.DetailsFrame.BackButton, "TOPRIGHT", 3, 0)
 QuestNPCModelTextFrame:StripTextures()
-QuestNPCModelTextFrame:CreateBackdrop("Default")
-QuestNPCModelTextFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModel.backdrop, "BOTTOMLEFT", 0, -2)
+QuestNPCModelTextFrame:CreateBackdrop("Overlay")
+QuestNPCModelTextFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModel.backdrop, "BOTTOMLEFT", 0, -3)
 hooksecurefunc("QuestFrame_ShowQuestPortrait", function(parentFrame, portrait, text, name, x, y)
 	QuestNPCModel:ClearAllPoints()
-	QuestNPCModel:SetPoint("TOPLEFT", parentFrame, "TOPRIGHT", x + 16, y)
+	QuestNPCModel:SetPoint("TOPLEFT", parentFrame, "TOPRIGHT", x + 8, y + 40)
 end)
 
 -- Quests Buttons
