@@ -128,8 +128,8 @@ local texcount = 0
 local MapTex = {}
 
 -- Create checkbox
-local frame = CreateFrame("CheckButton", nil, WorldMapFrame.BorderFrame, "OptionsCheckButtonTemplate")
-frame:SetPoint("TOPRIGHT", -155, 0)
+local frame = CreateFrame("CheckButton", nil, WorldMapFrame.Header, "OptionsCheckButtonTemplate")
+frame:SetPoint("LEFT", WorldMapTitleButton, "LEFT", 0, 0)
 frame:SetHitRectInsets(0, -46, 0, 0)
 frame:SetSize(24, 24)
 frame:SetFrameStrata("TOOLTIP")
