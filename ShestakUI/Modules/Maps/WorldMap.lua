@@ -26,22 +26,6 @@ if not SmallerMap then
 	ToggleWorldMap()
 end
 
-local QuestTexts = {
-	QuestInfoTitleHeader,
-	QuestInfoDescriptionHeader,
-	QuestInfoObjectivesHeader,
-	QuestInfoRewardsFrame.Header,
-	QuestInfoDescriptionText,
-	QuestInfoObjectivesText,
-	QuestInfoGroupSize,
-	QuestInfoRewardText,
-	QuestInfoRewardsFrame.ItemChooseText,
-	QuestInfoRewardsFrame.ItemReceiveText,
-	QuestInfoRewardsFrame.SpellLearnText,
-	QuestInfoRewardsFrame.PlayerTitleText,
-	QuestInfoRewardsFrame.XPFrame.ReceiveText,
-}
-
 local function SkinReward(frame, index)
 	local Reward = _G[frame:GetName().."QuestInfoItem"..index]
 	local Texture = Reward.Icon:GetTexture()
@@ -89,7 +73,7 @@ T.SkinScrollBar(QuestScrollFrameScrollBar)
 QuestMapDetailsScrollFrame:CreateBackdrop("Overlay")
 QuestMapDetailsScrollFrame.backdrop:SetAllPoints(QuestScrollFrame.backdrop)
 QuestMapDetailsScrollFrame.backdrop:ClearAllPoints()
-QuestMapDetailsScrollFrame.backdrop:SetSize(284, 470)
+QuestMapDetailsScrollFrame.backdrop:SetSize(284, 468)
 QuestMapDetailsScrollFrame.backdrop:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 2, 0)
 T.SkinScrollBar(QuestMapDetailsScrollFrameScrollBar)
 
@@ -182,6 +166,13 @@ MapQuestInfoRewardsFrame.XPFrame.backdrop:ClearAllPoints()
 MapQuestInfoRewardsFrame.XPFrame.backdrop:SetPoint("TOPLEFT", MapQuestInfoRewardsFrame.XPFrame.Icon, -2, 2)
 MapQuestInfoRewardsFrame.XPFrame.backdrop:SetPoint("BOTTOMRIGHT", MapQuestInfoRewardsFrame.XPFrame.Icon, 2, -2)
 
+QuestInfoSpellObjectiveFrame:StripTextures()
+QuestInfoSpellObjectiveFrame:CreateBackdrop("Default")
+QuestInfoSpellObjectiveFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+QuestInfoSpellObjectiveFrame.backdrop:ClearAllPoints()
+QuestInfoSpellObjectiveFrame.backdrop:SetPoint("TOPLEFT", QuestInfoSpellObjectiveFrame.Icon, -2, 2)
+QuestInfoSpellObjectiveFrame.backdrop:SetPoint("BOTTOMRIGHT", QuestInfoSpellObjectiveFrame.Icon, 2, -2)
+
 T.SkinDropDownBox(WorldMapLevelDropDown)
 WorldMapLevelDropDown:ClearAllPoints()
 WorldMapLevelDropDown:SetPoint("TOPLEFT", -18, -2)
@@ -197,7 +188,7 @@ WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 30)
 WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
 
 ----------------------------------------------------------------------------------------
---	Creating coords
+--	Creating coordinate
 ----------------------------------------------------------------------------------------
 local coords = CreateFrame("Frame", "CoordsFrame", WorldMapFrame)
 coords:SetFrameLevel(90)
