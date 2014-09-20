@@ -61,7 +61,8 @@ local function LoadSkin()
 		QuestInfoObjectivesText:SetTextColor(1, 1, 1)
 		QuestInfoObjectivesText:SetShadowOffset(1, -1)
 		QuestInfoGroupSize:SetTextColor(1, 0, 1)
-		QuestInfoRewardText:SetTextColor(1, 0, 1)
+		QuestInfoRewardText:SetTextColor(1, 1, 1)
+		QuestInfoRewardText:SetShadowOffset(1, -1)
 		QuestInfoSpellObjectiveLearnLabel:SetTextColor(1, 0, 1)
 
 		-- Reward frame text
@@ -79,25 +80,16 @@ local function LoadSkin()
 		QuestObjectiveText()
 	end)
 
-	-- hooksecurefunc("QuestInfo_ShowRequiredMoney", function()
-		-- local requiredMoney = GetQuestLogRequiredMoney()
-		-- if requiredMoney > 0 then
-			-- if requiredMoney > GetMoney() then
-				-- QuestInfoRequiredMoneyText:SetTextColor(0.6, 0.6, 0.6)
-			-- else
-				-- QuestInfoRequiredMoneyText:SetTextColor(1, 0.8, 0)
-			-- end
-		-- end
-	-- end)
-
-	-- QuestLogFrame:HookScript("OnShow", function()
-		-- QuestLogFrameAbandonButton:ClearAllPoints()
-		-- QuestLogFrameAbandonButton:SetPoint("BOTTOMLEFT", QuestLogFrame.backdrop, "BOTTOMLEFT", 4, 4)
-		-- QuestLogFramePushQuestButton:SetPoint("LEFT", QuestLogFrameAbandonButton, "RIGHT", 3, 0)
-		-- QuestLogFramePushQuestButton:SetPoint("RIGHT", QuestLogFrameTrackButton, "LEFT", -3, 0)
-		-- QuestLogFrameCancelButton:SetPoint("BOTTOMRIGHT", QuestLogFrame.backdrop, "BOTTOMRIGHT", -4, 4)
-		-- QuestLogFrameTrackButton:SetPoint("BOTTOMRIGHT", QuestLogFrame.backdrop, "BOTTOMRIGHT", -4, 4)
-	-- end)
+	hooksecurefunc("QuestInfo_ShowRequiredMoney", function()
+		local requiredMoney = GetQuestLogRequiredMoney()
+		if requiredMoney > 0 then
+			if requiredMoney > GetMoney() then
+				QuestInfoRequiredMoneyText:SetTextColor(0.6, 0.6, 0.6)
+			else
+				QuestInfoRequiredMoneyText:SetTextColor(1, 0.8, 0)
+			end
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
