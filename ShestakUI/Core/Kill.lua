@@ -41,6 +41,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	BagHelpBox:Kill()
 	PremadeGroupsPvETutorialAlert:Kill()
 
+	InterfaceOptionsActionBarsPanelCountdownCooldowns:Kill()
+
 	if C.chat.enable then
 		InterfaceOptionsSocialPanelChatStyle:Kill()
 		InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()

@@ -31,6 +31,7 @@ local function InstallUI()
 	SetCVar("enableCombatText", 1)
 	SetCVar("autoOpenLootHistory", 0)
 	SetCVar("lossOfControl", 0)
+	SetCVar("countdownForCooldowns", 0)
 
 	-- Setting chat frames
 	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
