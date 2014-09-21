@@ -226,7 +226,7 @@ L_DATATEXT_CARTS_CONTROLLED = "Kontrollierte Loren:"
 
 -- Info text
 L_INFO_ERRORS = "Noch keine Fehler."
-L_INFO_INVITE = "Gruppeneinladung akzeptiert von: "
+L_INFO_INVITE = "Gruppeneinladung akzeptiert von "
 L_INFO_DUEL = "Duellanfrage Ignoriert von "
 L_INFO_PET_DUEL = "Haustier Duellanfrage Ignoriert von "
 L_INFO_DISBAND = "Löse Gruppe auf..."

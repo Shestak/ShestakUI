@@ -226,7 +226,7 @@ L_DATATEXT_CARTS_CONTROLLED = "Захваты вагонеток:"
 
 -- Info text
 L_INFO_ERRORS = "Ошибок не обнаружено."
-L_INFO_INVITE = "Приглашение принято от: "
+L_INFO_INVITE = "Приглашение принято от "
 L_INFO_DUEL = "Дуэль отклонена от "
 L_INFO_PET_DUEL = "Битва питомцев отклонена от "
 L_INFO_DISBAND = "Роспуск группы..."

@@ -226,7 +226,7 @@ L_DATATEXT_CARTS_CONTROLLED = "Carrelli controllati:"
 
 -- Info text
 L_INFO_ERRORS = "Nessun errore ancora."
-L_INFO_INVITE = "Accettato l'invito di: "
+L_INFO_INVITE = "Accettato l'invito di "
 L_INFO_DUEL = "Declinata la richiesta di duello di "
 L_INFO_PET_DUEL = "Declinata la richiesta di duello tra mascottes di "
 L_INFO_DISBAND = "Scioglimento gruppo..."

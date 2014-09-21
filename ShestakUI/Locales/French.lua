@@ -226,7 +226,7 @@ L_DATATEXT_CARTS_CONTROLLED = "Chariots contrôlée :"
 
 -- Info text
 L_INFO_ERRORS = "Pas d'erreur pour le moment."
-L_INFO_INVITE = "Invitation acceptée par : "
+L_INFO_INVITE = "Invitation acceptée par "
 L_INFO_DUEL = "Duel rejetée par "
 L_INFO_PET_DUEL = "Duel de familier décliné par "
 L_INFO_DISBAND = "Groupe dissous..."

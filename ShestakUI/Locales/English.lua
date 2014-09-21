@@ -222,7 +222,7 @@ L_DATATEXT_CARTS_CONTROLLED = "Carts Controlled:"
 
 -- Info text
 L_INFO_ERRORS = "No error yet."
-L_INFO_INVITE = "Accepted invite from: "
+L_INFO_INVITE = "Accepted invite from "
 L_INFO_DUEL = "Declined duel request from "
 L_INFO_PET_DUEL = "Declined pet duel request from "
 L_INFO_DISBAND = "Disbanding group..."
