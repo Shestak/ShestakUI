@@ -5,9 +5,11 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
 	local level = GetCurrentMapDungeonLevel() - delta
-	if level >= 1 then
+	if level >= 1 and (IsShiftKeyDown() or IsAltKeyDown() or IsControlKeyDown()) then
 		SetDungeonMapLevel(level)
 		PlaySound("UChatScrollButton")
+	else
+		WorldMapScrollFrame_OnMouseWheel(self, delta)
 	end
 end)
 
