@@ -129,7 +129,6 @@ local MapTex = {}
 
 -- Create checkbox
 local frame = CreateFrame("CheckButton", nil, WorldMapTitleButton, "OptionsCheckButtonTemplate")
-frame:SetHitRectInsets(0, -46, 0, 0)
 frame:SetSize(23, 23)
 if C.skins.blizzard_frames == true then
 	frame:SetPoint("LEFT", WorldMapTitleButton, "LEFT", 0, 0)
@@ -139,7 +138,7 @@ else
 end
 
 frame.f = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-frame.f:SetPoint("LEFT", frame, "RIGHT", 0, 1)
+frame.f:SetPoint("LEFT", frame, "RIGHT", 0, 0)
 frame.f:SetText(L_MAP_FOG)
 frame.f:Show()
 
