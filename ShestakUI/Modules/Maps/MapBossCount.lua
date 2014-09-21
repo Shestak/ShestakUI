@@ -36,7 +36,7 @@ frame:SetScript("OnEvent", function(self, event)
 		local button = _G["EJMapButton"..i]
 		while button and button:IsShown() do
 			if not button.label then
-				button.label = button:CreateFontString(nil, "OVERLAY", "MailFont_Large")
+				button.label = button:CreateFontString(nil, "OVERLAY", "QuestFont_Super_Huge")
 				button.label:SetText(i)
 				button.label:SetPoint("CENTER")
 			end
