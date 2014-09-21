@@ -78,6 +78,7 @@ local function LoadSkin()
 		QuestInfoRewardsFrame.XPFrame.ReceiveText:SetShadowOffset(1, -1)
 		QuestInfoRewardsFrame.PlayerTitleText:SetTextColor(1, 1, 1)
 		QuestInfoRewardsFrame.PlayerTitleText:SetShadowOffset(1, -1)
+		MapQuestInfoRewardsFrameQuestInfoItem1.Count:SetFontObject(NumberFontNormal)
 
 		QuestObjectiveText()
 	end)

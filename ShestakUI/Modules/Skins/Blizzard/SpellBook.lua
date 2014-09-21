@@ -169,6 +169,10 @@ local function LoadSkin()
 			rank:SetTextColor(1, 1, 1)
 		end
 
+		button:GetCheckedTexture():SetTexture(0, 1, 0, 0.3)
+		button:GetCheckedTexture():SetPoint("TOPLEFT", button, 4, -4)
+		button:GetCheckedTexture():SetPoint("BOTTOMRIGHT", button, -4, 4)
+
 		if icon then
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:ClearAllPoints()
