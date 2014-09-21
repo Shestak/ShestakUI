@@ -244,8 +244,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "战斗中隐藏小地图"
 L_GUI_MINIMAP_TOGGLE_MENU = "显示可开/关的菜单"
 
 -- Map options
-L_GUI_MAP_ENABLE = "开启世界地图增强"
-L_GUI_MAP_SCALE = "世界地图缩放"
 L_GUI_MAP_BG_STYLIZATION = "战场地图风格"
 L_GUI_MAP_BOSS_COUNT = "在世界地图显示boss数据"
 L_GUI_MAP_EXPLORE = "追踪世界探索者/博学者成就"

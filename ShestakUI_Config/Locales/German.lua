@@ -244,8 +244,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
 L_GUI_MINIMAP_TOGGLE_MENU = "Zeige Toggle Menü"
 
 -- Map options
-L_GUI_MAP_ENABLE = "Weltkarte aktivieren"
-L_GUI_MAP_SCALE = "Skalierung der Weltkarte"
 L_GUI_MAP_BG_STYLIZATION = "Schlachtfeldkarte Aussehn"
 L_GUI_MAP_BOSS_COUNT = "Zeige BossCount in der Weltkarte"
 L_GUI_MAP_EXPLORE = "Tracking Explorer und Meister der Lehren Achievement in World Map"

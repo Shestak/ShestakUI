@@ -314,8 +314,6 @@ C["minimap"] = {
 --	Map options
 ----------------------------------------------------------------------------------------
 C["map"] = {
-	["enable"] = true,							-- Enable World Map
-	["scale"] = 0.8,							-- World Map scale
 	["bg_map_stylization"] = true,				-- BG map stylization
 	["map_boss_count"] = false,					-- Show boss count in World Map
 	["explore_map"] = false,					-- Tracking Explorer and Lore Master achievements in World Map

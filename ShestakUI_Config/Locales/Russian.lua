@@ -244,8 +244,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "Скрыть миникарту в бою"
 L_GUI_MINIMAP_TOGGLE_MENU = "Отображать меню над миникартой"
 
 -- Map options
-L_GUI_MAP_ENABLE = "Включить карту"
-L_GUI_MAP_SCALE = "Масштаб карты"
 L_GUI_MAP_BG_STYLIZATION = "Стилизация карты полей боя"
 L_GUI_MAP_BOSS_COUNT = "Отображать номера боссов на карте"
 L_GUI_MAP_EXPLORE = "Отслеживать на карте 'Первооткрыватель' и 'Хранитель мудрости'"

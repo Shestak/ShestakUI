@@ -274,8 +274,6 @@ local function Local(o)
 
 	-- Map options
 	if o == "UIConfigmap" then o = WORLD_MAP end
-	if o == "UIConfigmapenable" then o = L_GUI_MAP_ENABLE end
-	if o == "UIConfigmapscale" then o = L_GUI_MAP_SCALE end
 	if o == "UIConfigmapbg_map_stylization" then o = L_GUI_MAP_BG_STYLIZATION end
 	if o == "UIConfigmapmap_boss_count" then o = L_GUI_MAP_BOSS_COUNT end
 	if o == "UIConfigmapexplore_map" then o = L_GUI_MAP_EXPLORE end

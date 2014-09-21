@@ -244,8 +244,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "Nascondi la minimappa in combattimento"
 L_GUI_MINIMAP_TOGGLE_MENU = "Mostra il menu a scomparsa"
 
 -- Map options
-L_GUI_MAP_ENABLE = "Attiva la mappa del mondo"
-L_GUI_MAP_SCALE = "Scala della mappa del mondo"
 L_GUI_MAP_BG_STYLIZATION = "Restyling della mappa dei Campi di Battaglia"
 L_GUI_MAP_BOSS_COUNT = "Mostra il conteggio dei bosses sulla mappa del mondo"
 L_GUI_MAP_EXPLORE = "Traccia le imprese Esploratore mondiale e Storico sulla mappa del mondo"

@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.map.enable ~= true or C.map.map_boss_count ~= true then return end
+if C.map.map_boss_count ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Show boss count in WorldMap(BetterMapPortraits by Magdain)
