@@ -65,6 +65,6 @@
 	<Script file="Trainer.lua"/>
 	<Script file="Tutorial.lua"/>
 	<Script file="VoidStorage.lua"/>
-	<!--<Script file="WorldMap.lua"/> -->
+	<Script file="WorldMap.lua"/>
 	<Script file="WorldState.lua"/>
 </Ui>
