@@ -31,7 +31,6 @@ hooksecurefunc(QUEST_TRACKER_MODULE, "SetBlockHeader", function(_, block)
 		item:StyleButton()
 
 		item:SetNormalTexture(nil)
-		item:SetPushedTexture(nil)
 
 		item.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		item.icon:SetPoint("TOPLEFT", item, 2, -2)
