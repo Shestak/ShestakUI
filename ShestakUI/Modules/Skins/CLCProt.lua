@@ -35,7 +35,7 @@ function clcprot:CreateButton(name, size, point, parent, pointParent, offsetx, o
 	button.border = button:CreateTexture(nil, "BORDER")
 	button.border:Kill()
 
-	button.cooldown = CreateFrame("Cooldown", "$parentCooldown", button)
+	button.cooldown = CreateFrame("Cooldown", "$parentCooldown", button, "CooldownFrameTemplate")
 	button.cooldown:SetPoint("TOPLEFT", 2, -2)
 	button.cooldown:SetPoint("BOTTOMRIGHT", -2, 2)
 
