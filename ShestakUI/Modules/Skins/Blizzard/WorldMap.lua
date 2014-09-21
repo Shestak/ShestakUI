@@ -5,7 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	WorldMap skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	if C.map.enable == true or IsAddOnLoaded("Mapster") then return end
+	if IsAddOnLoaded("Mapster") then return end
 
 	hooksecurefunc("WorldMap_ToggleSizeDown", function()
 		WorldMapFrame:ClearAllPoints()
