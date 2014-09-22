@@ -5,19 +5,19 @@ if C.skins.blizzard_frames ~= true then return end
 --	PvP skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	PVPUIFrame:StripTextures()
-	PVPUIFrame:SetTemplate("Transparent")
-	PVPUIFrame.LeftInset:StripTextures()
-	PVPUIFrame.Shadows:StripTextures()
+	--WoD PVPUIFrame:StripTextures()
+	-- PVPUIFrame:SetTemplate("Transparent")
+	-- PVPUIFrame.LeftInset:StripTextures()
+	-- PVPUIFrame.Shadows:StripTextures()
 
-	T.SkinCloseButton(PVPUIFrameCloseButton)
+	-- T.SkinCloseButton(PVPUIFrameCloseButton)
 
 	-- Bottom Tabs
 	for i = 1, 2 do
 		T.SkinTab(_G["PVPUIFrameTab"..i])
 	end
 
-	for i = 1, 3 do
+	for i = 1, 4 do
 		local button = _G["PVPQueueFrameCategoryButton"..i]
 
 		button.Ring:Kill()
@@ -68,13 +68,13 @@ local function LoadSkin()
 	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:ClearAllPoints()
 	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:SetAllPoints()
 	HonorFrame.BonusFrame.RandomBGButton.SelectedTexture:SetTexture(0, 1, 0, 0.1)
-	HonorFrame.BonusFrame.CallToArmsButton:SkinButton(true)
-	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:ClearAllPoints()
-	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetAllPoints()
-	HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetTexture(0, 1, 0, 0.1)
+	--WoD HonorFrame.BonusFrame.CallToArmsButton:SkinButton(true)
+	-- HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:ClearAllPoints()
+	-- HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetAllPoints()
+	-- HonorFrame.BonusFrame.CallToArmsButton.SelectedTexture:SetTexture(0, 1, 0, 0.1)
 
 	for i = 1, 2 do
-		local b = HonorFrame.BonusFrame["WorldPVP"..i.."Button"]
+		local b = HonorFrame.BonusFrame["Arena"..i.."Button"]
 		b:SkinButton(true)
 		b.SelectedTexture:ClearAllPoints()
 		b.SelectedTexture:SetAllPoints()
@@ -143,6 +143,7 @@ local function LoadSkin()
 	WarGamesFrameDescription:SetTextColor(1, 1, 1)
 	WarGamesFrameDescription:SetFont(C.media.normal_font, 13)
 	WarGamesFrameDescription:SetShadowOffset(1, -1)
+	T.SkinCheckBox(WarGameTournamentModeCheckButton)
 
 	for _, btn in pairs(WarGamesFrame.scrollFrame.buttons) do
 		local bu = btn.Entry

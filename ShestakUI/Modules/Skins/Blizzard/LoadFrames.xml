@@ -6,9 +6,9 @@
 	<Script file="Archeology.lua"/>
 	<Script file="Auction.lua"/>
 	<Script file="BarberShop.lua"/>
-	<!-- <Script file="Binding.lua"/>
-	<Script file="BlackMarket.lua"/>
-	<Script file="BonusRoll.lua"/>-->
+	<Script file="Binding.lua"/>
+	<!-- <Script file="BlackMarket.lua"/>
+	<Script file="BonusRoll.lua"/> -->
 	<Script file="Bubbles.lua"/>
 	<Script file="Calendar.lua"/>
 	<Script file="Character.lua"/>
@@ -50,7 +50,7 @@
 	<Script file="PetStable.lua"/>
 	<Script file="ProductChoice.lua"/>
 	<Script file="PvE.lua"/>
-	<!-- <Script file="PvP.lua"/> -->
+	<Script file="PvP.lua"/>
 	<Script file="Quest.lua"/>
 	<Script file="QuestLog.lua"/>
 	<Script file="Raid.lua"/>
