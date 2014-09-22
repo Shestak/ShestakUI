@@ -5,6 +5,27 @@ if C.skins.blizzard_frames ~= true then return end
 --	Garrison skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
+	local Tooltips = {
+		FloatingGarrisonFollowerTooltip,
+		FloatingGarrisonFollowerAbilityTooltip,
+		GarrisonFollowerAbilityTooltip,
+		GarrisonBuildingFrame.BuildingLevelTooltip,
+	}
+	for i, tt in pairs(Tooltips) do
+		tt.Background:SetTexture(nil)
+		tt.BorderTop:SetTexture(nil)
+		tt.BorderTopLeft:SetTexture(nil)
+		tt.BorderTopRight:SetTexture(nil)
+		tt.BorderLeft:SetTexture(nil)
+		tt.BorderRight:SetTexture(nil)
+		tt.BorderBottom:SetTexture(nil)
+		tt.BorderBottomRight:SetTexture(nil)
+		tt.BorderBottomLeft:SetTexture(nil)
+		tt:SetTemplate("Transparent")
+
+		if tt.Portrait then tt.Portrait:StripTextures() end
+	end
+
 	GarrisonLandingPage:StripTextures()
 	GarrisonLandingPage:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonLandingPage.CloseButton)
