@@ -91,14 +91,10 @@ local function LoadSkin()
 	end
 
 	-- ConquestFrame
+	ConquestPointsBar:StripTextures()
 	ConquestFrame.Inset:StripTextures()
-	ConquestPointsBarLeft:Kill()
-	ConquestPointsBarRight:Kill()
-	ConquestPointsBarMiddle:Kill()
-	ConquestPointsBarBG:Kill()
-	ConquestPointsBarShadow:Kill()
 	ConquestPointsBar.progress:SetTexture(C.media.texture)
-	ConquestPointsBar:CreateBackdrop("Default")
+	ConquestPointsBar:CreateBackdrop("Overlay")
 	ConquestPointsBar.backdrop:SetPoint("TOPLEFT", ConquestPointsBar, "TOPLEFT", -2, -1)
 	ConquestPointsBar.backdrop:SetPoint("BOTTOMRIGHT", ConquestPointsBar, "BOTTOMRIGHT", 2, 1)
 	ConquestFrame:StripTextures()
