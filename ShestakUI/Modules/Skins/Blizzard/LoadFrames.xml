@@ -18,6 +18,7 @@
 	<Script file="DressUp.lua"/>
 	<Script file="FrameStack.lua"/>
 	<Script file="Friends.lua"/>
+	<Script file="Garrison.lua"/>
 	<Script file="Glyph.lua"/>
 	<!-- <Script file="GMSurvey.lua"/> -->
 	<Script file="Gossip.lua"/>
