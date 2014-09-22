@@ -14,7 +14,8 @@ local function LoadSkin()
 		"PetJournalPetCardInset",
 		"PetJournalLoadoutBorder",
 		"PetJournalSpellSelect",
-		"PetJournalPetCardXPBar"
+		"PetJournalPetCardXPBar",
+		"ToyBoxProgressBar"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -26,7 +27,8 @@ local function LoadSkin()
 		"PetJournalSummonButton",
 		"PetJournalFindBattle",
 		"PetJournalFilterButton",
-		"MountJournalFilterButton"
+		"MountJournalFilterButton",
+		"ToyBoxFilterButton"
 	}
 
 	for i = 1, #buttons do
@@ -315,8 +317,8 @@ local function LoadSkin()
 	for i = 1, 6 do
 		local button = _G["PetJournalPetCardSpell"..i]
 
-		button:SetTemplate("Default")
 		button:StyleButton()
+		button:SetTemplate("Default")
 
 		button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		button.icon:ClearAllPoints()
@@ -361,6 +363,50 @@ local function LoadSkin()
 	PetJournalPetCardXPBar:SetStatusBarTexture(C.media.texture)
 	PetJournalPetCardXPBar:SetPoint("BOTTOM", PetJournalPetCard.backdrop, "BOTTOM", 0, 6)
 	PetJournalPetCardXPBar:SetFrameLevel(PetJournalPetCardXPBar:GetFrameLevel() + 2)
+
+	-- ToyBox
+	ToyBoxIconsFrame:StripTextures()
+	T.SkinEditBox(ToyBox.searchBox, nil, 18)
+	T.SkinNextPrevButton(ToyBoxPrevPageButton)
+	T.SkinNextPrevButton(ToyBoxNextPageButton)
+	ToyBoxFilterButton:SetPoint("TOPLEFT", ToyBox.searchBox, "TOPRIGHT", 5, 2)
+	ToyBoxProgressBarBar:SetTexture(C.media.texture)
+	ToyBoxProgressBar:CreateBackdrop("Overlay")
+	ToyBoxProgressBar:SetFrameLevel(ToyBoxProgressBar:GetFrameLevel() + 2)
+
+	for i = 1, 18 do
+		_G["ToySpellButton"..i.."SlotFrameCollected"]:SetTexture("")
+		_G["ToySpellButton"..i.."SlotFrameUncollected"]:SetTexture("")
+		local button = _G["ToySpellButton"..i]
+		local icon = _G["ToySpellButton"..i.."IconTexture"]
+
+		button:StyleButton(nil, 4)
+		button:CreateBackdrop("Default")
+		button.backdrop:SetPoint("TOPLEFT", 2, 0)
+		button.backdrop:SetPoint("BOTTOMRIGHT", -2, 5)
+
+		button.hover:SetPoint("TOPLEFT", 4, -2)
+		button.hover:SetPoint("BOTTOMRIGHT", -4, 7)
+		button.pushed:SetPoint("TOPLEFT", 4, -2)
+		button.pushed:SetPoint("BOTTOMRIGHT", -4, 7)
+
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	end
+	
+	hooksecurefunc("ToySpellButton_UpdateButton", function(self)
+		local toyString = _G[self:GetName().."ToyName"]
+
+		if PlayerHasToy(self.itemID) then
+			local _, _, quality = GetItemInfo(self.itemID)
+			if quality then
+				toyString:SetTextColor(GetItemQualityColor(quality))
+			else
+				toyString:SetTextColor(1, 1, 1)
+			end
+		else
+			toyString:SetTextColor(0.5, 0.5, 0.5)
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_PetJournal"] = LoadSkin
