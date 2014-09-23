@@ -153,17 +153,7 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		MAGE = {
-			[1] = {	-- Armors group
-				["spells"] = {
-					30482,	-- Molten Armor
-					7302,	-- Frost Armor
-					6117,	-- Mage Armor
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[2] = {	-- Brilliance group
+			[1] = {	-- Brilliance group
 				["spells"] = {
 					1459,	-- Arcane Brilliance
 					61316,	-- Dalaran Brilliance
