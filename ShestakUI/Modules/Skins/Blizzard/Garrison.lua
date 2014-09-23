@@ -1,31 +1,43 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Garrison skin
 ----------------------------------------------------------------------------------------
-local function LoadSkin()
-	local Tooltips = {
-		FloatingGarrisonFollowerTooltip,
-		FloatingGarrisonFollowerAbilityTooltip,
-		GarrisonFollowerAbilityTooltip,
-		GarrisonBuildingFrame.BuildingLevelTooltip,
-	}
-	for i, tt in pairs(Tooltips) do
-		tt.Background:SetTexture(nil)
-		tt.BorderTop:SetTexture(nil)
-		tt.BorderTopLeft:SetTexture(nil)
-		tt.BorderTopRight:SetTexture(nil)
-		tt.BorderLeft:SetTexture(nil)
-		tt.BorderRight:SetTexture(nil)
-		tt.BorderBottom:SetTexture(nil)
-		tt.BorderBottomRight:SetTexture(nil)
-		tt.BorderBottomLeft:SetTexture(nil)
-		tt:SetTemplate("Transparent")
-
-		if tt.Portrait then tt.Portrait:StripTextures() end
+local LoadTootlipSkin = CreateFrame("Frame")
+LoadTootlipSkin:RegisterEvent("ADDON_LOADED")
+LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
+	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") or not C.tooltip.enable then
+		self:UnregisterEvent("ADDON_LOADED")
+		return
 	end
 
+	if addon == "Blizzard_GarrisonUI" then
+		local Tooltips = {
+			FloatingGarrisonFollowerTooltip,
+			FloatingGarrisonFollowerAbilityTooltip,
+			GarrisonFollowerAbilityTooltip,
+			GarrisonBuildingFrame.BuildingLevelTooltip,
+		}
+		for i, tt in pairs(Tooltips) do
+			tt.Background:SetTexture(nil)
+			tt.BorderTop:SetTexture(nil)
+			tt.BorderTopLeft:SetTexture(nil)
+			tt.BorderTopRight:SetTexture(nil)
+			tt.BorderLeft:SetTexture(nil)
+			tt.BorderRight:SetTexture(nil)
+			tt.BorderBottom:SetTexture(nil)
+			tt.BorderBottomRight:SetTexture(nil)
+			tt.BorderBottomLeft:SetTexture(nil)
+			tt:SetTemplate("Transparent")
+
+			if tt.Portrait then tt.Portrait:StripTextures() end
+		end
+	end
+end)
+
+if C.skins.blizzard_frames ~= true then return end
+
+local function LoadSkin()
 	GarrisonLandingPage:StripTextures()
 	GarrisonLandingPage:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonLandingPage.CloseButton)

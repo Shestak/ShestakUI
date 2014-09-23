@@ -1,9 +1,34 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	PetJournal skin
 ----------------------------------------------------------------------------------------
+local LoadTootlipSkin = CreateFrame("Frame")
+LoadTootlipSkin:RegisterEvent("ADDON_LOADED")
+LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
+	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") or not C.tooltip.enable then
+		self:UnregisterEvent("ADDON_LOADED")
+		return
+	end
+
+	if addon == "Blizzard_PetJournal" then
+		PetJournalPrimaryAbilityTooltip.Background:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip.Delimiter1:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip.Delimiter2:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip.BorderTop:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip.BorderTopLeft:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip.BorderTopRight:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip.BorderLeft:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip.BorderRight:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip.BorderBottom:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip.BorderBottomRight:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip.BorderBottomLeft:SetTexture(nil)
+		PetJournalPrimaryAbilityTooltip:SetTemplate("Transparent")
+	end
+end)
+
+if C.skins.blizzard_frames ~= true then return end
+
 local function LoadSkin()
 	local StripAllTextures = {
 		"MountJournal",
@@ -342,19 +367,6 @@ local function LoadSkin()
 
 	PetJournalPetCardPetInfoQualityBorder:SetTexture(nil)
 
-	PetJournalPrimaryAbilityTooltip.Background:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip.Delimiter1:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip.Delimiter2:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip.BorderTop:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip.BorderTopLeft:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip.BorderTopRight:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip.BorderLeft:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip.BorderRight:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip.BorderBottom:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip.BorderBottomRight:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip.BorderBottomLeft:SetTexture(nil)
-	PetJournalPrimaryAbilityTooltip:SetTemplate("Transparent")
-
 	PetJournalPetCardHealthFrame.healthBar:StripTextures()
 	PetJournalPetCardHealthFrame.healthBar:CreateBackdrop("Overlay")
 	PetJournalPetCardHealthFrame.healthBar:SetStatusBarTexture(C.media.texture)
@@ -392,7 +404,7 @@ local function LoadSkin()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
-	
+
 	hooksecurefunc("ToySpellButton_UpdateButton", function(self)
 		local toyString = _G[self:GetName().."ToyName"]
 
