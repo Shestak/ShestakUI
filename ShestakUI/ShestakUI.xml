@@ -109,7 +109,6 @@
 	<Script file="Modules\Announcements\SayThanks.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>
 
-	<Script file="Modules\Automation\AchScreens.lua"/>
 	<Script file="Modules\Automation\AutoChefsHat.lua"/>
 	<Script file="Modules\Automation\AutoSafariHat.lua"/>
 	<Script file="Modules\Automation\AutoInvite.lua"/>
@@ -119,6 +118,7 @@
 	<Script file="Modules\Automation\CurrencyCap.lua"/>
 	<Script file="Modules\Automation\DeclineDuel.lua"/>
 	<Script file="Modules\Automation\LoggingCombat.lua"/>
+	<Script file="Modules\Automation\Screenshots.lua"/>
 	<Script file="Modules\Automation\SetRole.lua"/>
 	<Script file="Modules\Automation\SkipCinematic.lua"/>
 	<Script file="Modules\Automation\SolveArtifact.lua"/>
@@ -174,7 +174,7 @@
 
 	<Script file="Modules\DataText\Battleground.lua"/>
 
-	<Script file="Modules\Loot\AutoDisenchant.lua"/>
+	<Script file="Modules\Loot\AutoConfirm.lua"/>
 	<Script file="Modules\Loot\AutoGreed.lua"/>
 	<Script file="Modules\Loot\GroupLoot.lua"/>
 	<Script file="Modules\Loot\Loot.lua"/>
