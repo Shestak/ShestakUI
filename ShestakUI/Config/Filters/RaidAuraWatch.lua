@@ -81,6 +81,35 @@ end
 
 T.RaidDebuffs = {
 -----------------------------------------------------------------
+-- Draenor
+-----------------------------------------------------------------
+-- Blackrock Foundry
+	-- Beastlord Darmac
+	-- Flamebender Ka'graz
+	-- Gruul the Subjugated
+	-- Blast Furnace
+	-- Hans'gar and Franzok
+	-- Iron Maidens
+	-- Kromog
+	-- Operator Thogar
+	-- Oregorger
+	-- Warlord Blackhand
+-- Highmaul
+	-- The Butcher
+	[SpellName(156152)] = 3,	-- Gushing Wounds
+	-- Kargath Bladefist
+	[SpellName(159178)] = 3,	-- Open Wounds (Tank switch)
+	[SpellName(159113)] = 3,	-- Impale (DoT)
+	-- Twin Ogron
+	[SpellName(155569)] = 3,	-- Injured (DoT)
+	[SpellName(167200)] = 3,	-- Arcane Wound (DoT)
+	-- Ko'ragh
+	[SpellName(161242)] = 3,	-- Caustic Energy (DoT)
+	-- Tectus
+	-- Brackenspore
+	-- Imperator Mar'gok
+	[SpellName(158605)] = 3,	-- Mark of Chaos
+-----------------------------------------------------------------
 -- Pandaria
 -----------------------------------------------------------------
 -- Siege of Orgrimmar
