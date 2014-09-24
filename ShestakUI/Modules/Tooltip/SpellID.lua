@@ -7,10 +7,10 @@ if C.tooltip.enable ~= true or C.tooltip.spell_id ~= true then return end
 local types = {
 	spell		= L_TOOLTIP_SPELL_ID,
 	item		= L_TOOLTIP_ITEM_ID,
-	glyph		= "GlyphID:",
+	glyph		= "Glyph ID:",
 	unit		= "NPC ID:",
 	quest		= "Quest ID:",
-	talent		= "Talent ID:",
+	talent		= L_TOOLTIP_SPELL_ID,
 	achievment	= "Achievement ID:"
 }
 
