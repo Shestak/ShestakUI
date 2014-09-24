@@ -10,6 +10,7 @@
 ## X-Curse-Packaged-Version: 5.00
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
+## X-RelSite-WoWI: 19033
 ## Website: http://shestak.org
 
 Locales\English.lua
