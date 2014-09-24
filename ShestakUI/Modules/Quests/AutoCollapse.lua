@@ -8,8 +8,8 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function(self, event)
 	if IsInInstance() then
-		ObjectiveTrackerFrame.HeaderMenu.MinimizeButton:Click()
+		ObjectiveTracker_Collapse()
 	elseif ObjectiveTrackerFrame.collapsed and not InCombatLockdown() then
-		ObjectiveTrackerFrame.HeaderMenu.MinimizeButton:Click()
+		ObjectiveTracker_Expand()
 	end
 end)
