@@ -173,14 +173,7 @@ local function LoadSkin()
 			end
 
 			-- Background
-			for i = 1, frame:GetNumRegions() do
-				local region = select(i, frame:GetRegions())
-				if region:GetObjectType() == "Texture" then
-					if region:GetTexture() == "Interface\\Challenges\\challenges-main" then
-						region:Kill()
-					end
-				end
-			end
+			frame:GetRegions():Hide()
 
 			_G["ChallengeModeAlertFrame1Shine"]:Kill()
 			_G["ChallengeModeAlertFrame1GlowFrame"]:Kill()
@@ -222,14 +215,8 @@ local function LoadSkin()
 			end
 
 			-- Background
-			for i = 1, frame:GetNumRegions() do
-				local region = select(i, frame:GetRegions())
-				if region:GetObjectType() == "Texture" then
-					if region:GetTexture() == "Interface\\Scenarios\\ScenariosParts" then
-						region:Kill()
-					end
-				end
-			end
+			frame:GetRegions():Hide()
+			select(3, frame:GetRegions()):Hide()
 
 			_G["ScenarioAlertFrame1Shine"]:Kill()
 			_G["ScenarioAlertFrame1GlowFrame"]:Kill()
@@ -378,6 +365,38 @@ local function LoadSkin()
 		end
 	end
 	hooksecurefunc("AlertFrame_SetMoneyWonAnchors", SkinMoneyWonPopUp)
+
+	local function DigsiteCompleteToastPopUp()
+		local frame = _G["DigsiteCompleteToastFrame"]
+
+		if frame then
+			frame:SetAlpha(1)
+			frame.SetAlpha = T.dummy
+
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -6)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -7, 6)
+
+				frame:HookScript("OnEnter", FixBg)
+				frame:HookScript("OnShow", FixBg)
+				frame.animIn:HookScript("OnFinished", FixBg)
+			end
+
+			-- Background
+			frame:GetRegions():Hide()
+
+			_G["DigsiteCompleteToastFrameGlow"]:Kill()
+			_G["DigsiteCompleteToastFrameShine"]:Kill()
+		end
+	end
+	hooksecurefunc("AlertFrame_SetDigsiteCompleteToastFrameAnchors", DigsiteCompleteToastPopUp)
+
+	-- alertAnchor = AlertFrame_SetStorePurchaseAnchors(alertAnchor)
+	-- alertAnchor = AlertFrame_SetLootUpgradeFrameAnchors(alertAnchor)
+	-- alertAnchor = AlertFrame_SetGarrisonBuildingAlertFrameAnchors(alertAnchor)
+	-- alertAnchor = AlertFrame_SetGarrisonMissionAlertFrameAnchors(alertAnchor)
+	-- alertAnchor = AlertFrame_SetGarrisonFollowerAlertFrameAnchors(alertAnchor)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
