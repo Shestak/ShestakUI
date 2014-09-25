@@ -90,15 +90,16 @@ for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"
 end
 
 ----------------------------------------------------------------------------------------
---	Skin WatchFrameCollapseExpandButton
+--	Skin ObjectiveTrackerFrame.HeaderMenu.MinimizeButton
 ----------------------------------------------------------------------------------------
 if C.skins.blizzard_frames == true then
 	T.SkinCloseButton(ObjectiveTrackerFrame.HeaderMenu.MinimizeButton, nil, "-", true)
-	ObjectiveTrackerFrame.HeaderMenu.MinimizeButton:HookScript("OnClick", function(self)
-		if ObjectiveTrackerFrame.collapsed then
-			self.text:SetText("+")
-		else
-			self.text:SetText("-")
-		end
+
+	hooksecurefunc("ObjectiveTracker_Collapse", function()
+		ObjectiveTrackerFrame.HeaderMenu.MinimizeButton.text:SetText("+")
+	end)
+
+	hooksecurefunc("ObjectiveTracker_Expand", function()
+		ObjectiveTrackerFrame.HeaderMenu.MinimizeButton.text:SetText("-")
 	end)
 end
