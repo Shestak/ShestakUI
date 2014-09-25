@@ -392,11 +392,196 @@ local function LoadSkin()
 	end
 	hooksecurefunc("AlertFrame_SetDigsiteCompleteToastFrameAnchors", DigsiteCompleteToastPopUp)
 
-	-- alertAnchor = AlertFrame_SetStorePurchaseAnchors(alertAnchor)
-	-- alertAnchor = AlertFrame_SetLootUpgradeFrameAnchors(alertAnchor)
-	-- alertAnchor = AlertFrame_SetGarrisonBuildingAlertFrameAnchors(alertAnchor)
-	-- alertAnchor = AlertFrame_SetGarrisonMissionAlertFrameAnchors(alertAnchor)
-	-- alertAnchor = AlertFrame_SetGarrisonFollowerAlertFrameAnchors(alertAnchor)
+	local function SkinStorePurchasePopUp()
+		local frame = _G["StorePurchaseAlertFrame"]
+
+		if frame then
+			frame:SetAlpha(1)
+			frame.SetAlpha = T.dummy
+
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -5, -6)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 1, 6)
+
+				frame:HookScript("OnEnter", FixBg)
+				frame:HookScript("OnShow", FixBg)
+				frame.animIn:HookScript("OnFinished", FixBg)
+			end
+
+			-- Background
+			frame.Background:Kill()
+			frame.glow:Kill()
+			frame.shine:Kill()
+
+			-- Icon
+			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			-- Icon border
+			if not frame.Icon.b then
+				frame.Icon.b = CreateFrame("Frame", nil, frame)
+				frame.Icon.b:SetFrameLevel(0)
+				frame.Icon.b:SetTemplate("Default")
+				frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+				frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+			end
+		end
+	end
+	hooksecurefunc("AlertFrame_SetStorePurchaseAnchors", SkinStorePurchasePopUp)
+
+	local function SkinLootUpgradePopUp()
+		for i = 1, #LOOT_UPGRADE_ALERT_FRAMES do
+			local frame = LOOT_UPGRADE_ALERT_FRAMES[i]
+			if frame then
+				frame:SetAlpha(1)
+				frame.SetAlpha = T.dummy
+
+				if not frame.backdrop then
+					frame:CreateBackdrop("Transparent")
+					frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -14, -6)
+					frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 10, 6)
+
+					frame:HookScript("OnEnter", FixBg)
+					frame:HookScript("OnShow", FixBg)
+					frame.animIn:HookScript("OnFinished", FixBg)
+				end
+
+				-- Background
+				frame.Background:Kill()
+				frame.BaseQualityBorder:Kill()
+				frame.UpgradeQualityBorder:Kill()
+				frame.BorderGlow:Kill()
+				frame.Sheen:Kill()
+				for i = 1, frame.numArrows do
+					frame["Arrow"..i]:Kill()
+				end
+
+				-- Icon
+				frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+				-- Icon border
+				if not frame.Icon.b then
+					frame.Icon.b = CreateFrame("Frame", nil, frame)
+					frame.Icon.b:SetFrameLevel(0)
+					frame.Icon.b:SetTemplate("Default")
+					frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+					frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+				end
+			end
+		end
+	end
+	hooksecurefunc("AlertFrame_SetLootUpgradeFrameAnchors", SkinLootUpgradePopUp)
+
+	local function SkinGarrisonBuildingPopUp()
+		local frame = _G["GarrisonBuildingAlertFrame"]
+
+		if frame then
+			frame:SetAlpha(1)
+			frame.SetAlpha = T.dummy
+
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
+
+				frame:HookScript("OnEnter", FixBg)
+				frame:HookScript("OnShow", FixBg)
+				frame.animIn:HookScript("OnFinished", FixBg)
+			end
+
+			-- Background
+			frame:GetRegions():Hide()
+			frame.glow:Kill()
+			frame.shine:Kill()
+
+			-- Icon
+			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			-- Icon border
+			if not frame.Icon.b then
+				frame.Icon.b = CreateFrame("Frame", nil, frame)
+				frame.Icon.b:SetFrameLevel(0)
+				frame.Icon.b:SetTemplate("Default")
+				frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+				frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+			end
+		end
+	end
+	hooksecurefunc("AlertFrame_SetGarrisonBuildingAlertFrameAnchors", SkinGarrisonBuildingPopUp)
+
+	local function SkinGarrisonMissionPopUp()
+		local frame = _G["GarrisonMissionAlertFrame"]
+
+		if frame then
+			frame:SetAlpha(1)
+			frame.SetAlpha = T.dummy
+
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
+
+				frame:HookScript("OnEnter", FixBg)
+				frame:HookScript("OnShow", FixBg)
+				frame.animIn:HookScript("OnFinished", FixBg)
+			end
+
+			-- Background
+			frame:GetRegions():Hide()
+			frame.glow:Kill()
+			frame.shine:Kill()
+
+			-- Icon
+			--frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			-- Icon border
+			-- if not frame.Icon.b then
+				-- frame.Icon.b = CreateFrame("Frame", nil, frame)
+				-- frame.Icon.b:SetFrameLevel(0)
+				-- frame.Icon.b:SetTemplate("Default")
+				-- frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+				-- frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+			-- end
+		end
+	end
+	hooksecurefunc("AlertFrame_SetGarrisonMissionAlertFrameAnchors", SkinGarrisonMissionPopUp)
+	
+	local function SkinGarrisonFollowerPopUp()
+		local frame = _G["GarrisonFollowerAlertFrame"]
+
+		if frame then
+			frame:SetAlpha(1)
+			frame.SetAlpha = T.dummy
+
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
+
+				frame:HookScript("OnEnter", FixBg)
+				frame:HookScript("OnShow", FixBg)
+				frame.animIn:HookScript("OnFinished", FixBg)
+			end
+
+			-- Background
+			frame:GetRegions():Hide()
+			frame.glow:Kill()
+			frame.shine:Kill()
+
+			-- Icon
+			--frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			-- Icon border
+			-- if not frame.Icon.b then
+				-- frame.Icon.b = CreateFrame("Frame", nil, frame)
+				-- frame.Icon.b:SetFrameLevel(0)
+				-- frame.Icon.b:SetTemplate("Default")
+				-- frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+				-- frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+			-- end
+		end
+	end
+	hooksecurefunc("AlertFrame_SetGarrisonFollowerAlertFrameAnchors", SkinGarrisonFollowerPopUp)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
