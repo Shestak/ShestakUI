@@ -208,9 +208,9 @@
 	<Script file="Modules\Skins\CLCRet.lua"/>
 	<Script file="Modules\Skins\Clique.lua"/>
 	<Script file="Modules\Skins\CombustionHelper.lua"/>
-	<Script file="Modules\Skins\CoolLine.lua"/>
+	<Script file="Modules\Skins\CoolLine.lua"/> -->
 	<Script file="Modules\Skins\DBM.lua"/>
-	<Script file="Modules\Skins\Dominos.lua"/>
+	<!-- <Script file="Modules\Skins\Dominos.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>
 	<Script file="Modules\Skins\FaceShooter.lua"/>
 	<Script file="Modules\Skins\FlyoutButtonCustom.lua"/>
