@@ -147,8 +147,8 @@ local function registerStyle()
 			GetStyleName = function() return "ShestakUI" end,
 		})
 	end
-	bars.db.profile.barStyle = "ShestakUI"
-	if prox and bars.db.profile.barStyle == "ShestakUI" then
+	bars.defaultDB.barStyle = "ShestakUI"
+	if prox and bars.defaultDB.barStyle == "ShestakUI" then
 		hooksecurefunc(prox, "RestyleWindow", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
 		end)
