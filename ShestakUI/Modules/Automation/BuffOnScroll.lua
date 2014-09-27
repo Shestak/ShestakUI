@@ -39,15 +39,15 @@ DRUID4 = {
 }
 
 HUNTER1 = {
-	13165,	-- Aspect of the Hawk
+	--WoD 13165,	-- Aspect of the Hawk
 }
 
 HUNTER2 = {
-	13165,	-- Aspect of the Hawk
+	--WoD 13165,	-- Aspect of the Hawk
 }
 
 HUNTER3 = {
-	13165,	-- Aspect of the Hawk
+	--WoD 13165,	-- Aspect of the Hawk
 }
 
 MAGE1 = {
@@ -63,15 +63,14 @@ MAGE3 = {
 }
 
 MONK1 = {
-	117666,	-- Legacy of the Emperor
+	116781,	-- Legacy of the White Tiger
 }
 
 MONK2 = {
-	117666,	-- Legacy of the Emperor
+	115921,	-- Legacy of the Emperor
 }
 
 MONK3 = {
-	117666,	-- Legacy of the Emperor
 	116781,	-- Legacy of the White Tiger
 }
 
@@ -89,17 +88,17 @@ PALADIN3 = {
 
 PRIEST1 = {
 	21562,	-- Power Word: Fortitude
-	73413,	-- Inner Will
+	--WoD 73413,	-- Inner Will
 }
 
 PRIEST2 = {
 	21562,	-- Power Word: Fortitude
-	73413,	-- Inner Will
+	--WoD 73413,	-- Inner Will
 }
 
 PRIEST3 = {
 	21562,	-- Power Word: Fortitude
-	73413,	-- Inner Will
+	--WoD 73413,	-- Inner Will
 }
 
 ROGUE1 = {}
