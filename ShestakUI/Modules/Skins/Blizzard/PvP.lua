@@ -123,6 +123,20 @@ local function LoadSkin()
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
+	
+	
 end
 
 T.SkinFuncs["Blizzard_PVPUI"] = LoadSkin
+
+local function LoadSecondarySkin()
+	-- PvP Ready Dialog
+	PVPReadyDialog:StripTextures()
+	PVPReadyDialog:SetTemplate("Transparent")
+	PVPReadyDialogBackground:SetAlpha(0)
+	PVPReadyDialogEnterBattleButton:SkinButton()
+	PVPReadyDialogLeaveQueueButton:SkinButton()
+	T.SkinCloseButton(PVPReadyDialogCloseButton, PVPReadyDialog, "-")
+end
+
+tinsert(T.SkinFuncs["ShestakUI"], LoadSecondarySkin)
