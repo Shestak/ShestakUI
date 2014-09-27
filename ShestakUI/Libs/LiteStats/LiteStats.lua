@@ -1442,10 +1442,12 @@ if experience.enabled then
 	local function short(num, tt)
 		if short or tt then
 			num = tonumber(num)
-			if num >= 1000000 then
-				return gsub(format("%.1f%s", num / 1000000, experience.million or "m"), "%.0", "")
-			elseif num >= 1000 then
-				return gsub(format("%.1f%s", num / 1000, experience.thousand or "k"), "%.0", "")
+			if num >= 1e6 then
+				return gsub(format("%.2f%s", num / 1e6, experience.million or "m"), "%.0", "")
+			elseif num >= 1e5 then
+				return gsub(format("%.0f%s", num / 1e3, experience.thousand or "k"), "%.0", "")
+			elseif num >= 1e3 then
+				return gsub(format("%.1f%s", num / 1e3, experience.thousand or "k"), "%.0", "")
 			end
 		end
 		return floor(tonumber(num))
