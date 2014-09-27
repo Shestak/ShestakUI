@@ -1684,10 +1684,10 @@ if helm.enabled then
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if ShowingHelm() then
-					ShowHelm(0)
+					ShowHelm(false)
 					self.text:SetText(format(helm.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else
-					ShowHelm(1)
+					ShowHelm(true)
 					self.text:SetText(format(helm.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
@@ -1727,10 +1727,10 @@ if cloak.enabled then
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if ShowingCloak() then
-					ShowCloak(0)
+					ShowCloak(false)
 					self.text:SetText(format(cloak.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else
-					ShowCloak(1)
+					ShowCloak(true)
 					self.text:SetText(format(cloak.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
