@@ -34,8 +34,8 @@ local function LoadSkin()
 
 	GuildItemSearchBox:StripTextures(true)
 	GuildItemSearchBox:CreateBackdrop("Overlay")
-	GuildItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, -2)
-	GuildItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -5, 2)
+	GuildItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, 0)
+	GuildItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -5, 0)
 
 	for i = 1, NUM_GUILDBANK_COLUMNS do
 		_G["GuildBankColumn"..i]:StripTextures()
