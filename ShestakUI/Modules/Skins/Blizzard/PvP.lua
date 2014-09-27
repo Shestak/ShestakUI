@@ -123,8 +123,6 @@ local function LoadSkin()
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
-	
-	
 end
 
 T.SkinFuncs["Blizzard_PVPUI"] = LoadSkin
