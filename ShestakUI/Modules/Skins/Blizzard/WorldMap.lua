@@ -85,7 +85,7 @@ local function LoadSkin()
 	QuestMapFrame.DetailsFrame.AbandonButton:SetPoint("BOTTOMLEFT", QuestScrollFrame.backdrop, "BOTTOMLEFT", 4, 4)
 
 	QuestMapFrame.DetailsFrame.TrackButton:SkinButton()
-	QuestMapFrame.DetailsFrame.TrackButton:SetSize(75, 22)
+	QuestMapFrame.DetailsFrame.TrackButton:SetSize(90, 22)
 	QuestMapFrame.DetailsFrame.TrackButton:ClearAllPoints()
 	QuestMapFrame.DetailsFrame.TrackButton:SetPoint("BOTTOMRIGHT", QuestScrollFrame.backdrop, "BOTTOMRIGHT", -4, 4)
 
