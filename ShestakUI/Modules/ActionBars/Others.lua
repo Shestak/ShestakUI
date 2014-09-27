@@ -9,8 +9,8 @@ frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	SetActionBarToggles(1, 1, 1, 1, 0)
-	SetCVar("alwaysShowActionBars", 0)
 	if C.actionbar.show_grid == true then
+		SetCVar("alwaysShowActionBars", 1)
 		for i = 1, 12 do
 			local button = _G[format("ActionButton%d", i)]
 			button:SetAttribute("showgrid", 1)
@@ -32,6 +32,8 @@ frame:SetScript("OnEvent", function(self, event)
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button)
 		end
+	else
+		SetCVar("alwaysShowActionBars", 0)
 	end
 end)
 
