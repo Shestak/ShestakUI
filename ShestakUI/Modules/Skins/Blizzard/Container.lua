@@ -10,8 +10,8 @@ local function LoadSkin()
 	-- Container Frame
 	BagItemSearchBox:StripTextures(true)
 	BagItemSearchBox:CreateBackdrop("Overlay")
-	BagItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, -2)
-	BagItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+	BagItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, 0)
+	BagItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
 
 	for i = 1, NUM_CONTAINER_FRAMES do
 		local frame = _G["ContainerFrame"..i]
@@ -60,8 +60,8 @@ local function LoadSkin()
 
 	BankItemSearchBox:StripTextures(true)
 	BankItemSearchBox:CreateBackdrop("Overlay")
-	BankItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, -2)
-	BankItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+	BankItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, 0)
+	BankItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
 
 	BankFrameMoneyFrameInset:StripTextures()
 	BankFrameMoneyFrameBorder:StripTextures()
