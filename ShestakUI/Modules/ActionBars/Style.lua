@@ -93,12 +93,26 @@ end
 
 local function StyleSmallButton(normal, button, icon, name, pet)
 	local flash = _G[name.."Flash"]
+	local hotkey = _G[name.."HotKey"]
+
 	button:SetNormalTexture("")
 	button.SetNormalTexture = T.dummy
 
 	flash:SetTexture(0.8, 0.8, 0.8, 0.5)
 	flash:SetPoint("TOPLEFT", button, 2, -2)
 	flash:SetPoint("BOTTOMRIGHT", button, -2, 2)
+
+	if C.actionbar.hotkey == true then
+		hotkey:ClearAllPoints()
+		hotkey:SetPoint("TOPRIGHT", 0, 0)
+		hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		hotkey:SetWidth(C.actionbar.button_size - 1)
+		hotkey.ClearAllPoints = T.dummy
+		hotkey.SetPoint = T.dummy
+	else
+		hotkey:Kill()
+	end
 
 	if not button.isSkinned then
 		button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
