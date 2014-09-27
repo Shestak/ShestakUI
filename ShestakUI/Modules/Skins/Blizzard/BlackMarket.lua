@@ -15,6 +15,8 @@ local function LoadSkin()
 
 	BlackMarketFrame.BidButton:SkinButton()
 	BlackMarketFrame.BidButton:SetHeight(20)
+	BlackMarketFrame.BidButton:SetPoint("BOTTOMRIGHT", -255, 4)
+	BlackMarketBidPrice:SetPoint("BOTTOMRIGHT", BlackMarketFrame.BidButton, "BOTTOMLEFT", 0, -2)
 
 	BlackMarketFrame.HotDeal:StripTextures()
 	BlackMarketFrame.HotDeal.Item.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
