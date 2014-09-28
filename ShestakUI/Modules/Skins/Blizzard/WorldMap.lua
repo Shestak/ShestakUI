@@ -19,21 +19,6 @@ local function LoadSkin()
 		ToggleWorldMap()
 	end
 
-	local function SkinReward(frame, index)
-		local Reward = _G[frame:GetName().."QuestInfoItem"..index]
-		local Texture = Reward.Icon:GetTexture()
-
-		Reward:StripTextures()
-		Reward:CreateBackdrop("Default")
-		Reward.Icon:SetTexture(Texture)
-		Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		Reward.backdrop:ClearAllPoints()
-		Reward.backdrop:SetPoint("TOPLEFT", Reward.Icon, -2, 2)
-		Reward.backdrop:SetPoint("BOTTOMRIGHT", Reward.Icon, 2, -2)
-	end
-
-	hooksecurefunc("QuestInfo_GetRewardButton", SkinReward)
-
 	WorldMapFrame:StripTextures()
 	WorldMapFrame:CreateBackdrop("Default")
 	WorldMapFrame.backdrop:ClearAllPoints()
@@ -113,7 +98,7 @@ local function LoadSkin()
 	-- Quests Buttons
 	for i = 1, 2 do
 		local button = i == 1 and WorldMapFrame.UIElementsFrame.OpenQuestPanelButton or WorldMapFrame.UIElementsFrame.CloseQuestPanelButton
-		local texture = (i == 1 and "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up") or ("Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up")
+		local texture = i == 1 and "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up" or "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up"
 
 		button:ClearAllPoints()
 		button:SetPoint("BOTTOMRIGHT", -2, 2)
@@ -143,28 +128,32 @@ local function LoadSkin()
 
 	WorldMapFrameSizeUpButton:Kill()
 
-	MapQuestInfoRewardsFrame.MoneyFrame:StripTextures()
-	MapQuestInfoRewardsFrame.MoneyFrame:CreateBackdrop("Default")
-	MapQuestInfoRewardsFrame.MoneyFrame.Icon:SetTexture("Interface\\Icons\\inv_misc_coin_01")
-	MapQuestInfoRewardsFrame.MoneyFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	MapQuestInfoRewardsFrame.MoneyFrame.backdrop:ClearAllPoints()
-	MapQuestInfoRewardsFrame.MoneyFrame.backdrop:SetPoint("TOPLEFT", MapQuestInfoRewardsFrame.MoneyFrame.Icon, -2, 2)
-	MapQuestInfoRewardsFrame.MoneyFrame.backdrop:SetPoint("BOTTOMRIGHT", MapQuestInfoRewardsFrame.MoneyFrame.Icon, 2, -2)
+	local function SkinReward(button)
+		if button.NameFrame then button.NameFrame:Hide() end
+		if button.CircleBackground then button.CircleBackground:Hide() end
+		if button.CircleBackgroundGlow then button.CircleBackgroundGlow:Hide() end
+		if button.ValueText then button.ValueText:SetPoint("BOTTOMRIGHT", button.Icon, 0, 0) end
+		button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button:CreateBackdrop("Default")
+		button.backdrop:ClearAllPoints()
+		button.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
+		button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
+	end
 
-	MapQuestInfoRewardsFrame.XPFrame:StripTextures()
-	MapQuestInfoRewardsFrame.XPFrame:CreateBackdrop("Default")
-	MapQuestInfoRewardsFrame.XPFrame.Icon:SetTexture("Interface\\Icons\\XP_Icon")
-	MapQuestInfoRewardsFrame.XPFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	MapQuestInfoRewardsFrame.XPFrame.backdrop:ClearAllPoints()
-	MapQuestInfoRewardsFrame.XPFrame.backdrop:SetPoint("TOPLEFT", MapQuestInfoRewardsFrame.XPFrame.Icon, -2, 2)
-	MapQuestInfoRewardsFrame.XPFrame.backdrop:SetPoint("BOTTOMRIGHT", MapQuestInfoRewardsFrame.XPFrame.Icon, 2, -2)
+	hooksecurefunc("QuestInfo_GetRewardButton", function(frame, index)
+		local button = frame.RewardButtons[index]
+		if not button.restyled then
+			SkinReward(button)
+			button.restyled = true
+		end
+	end)
 
-	QuestInfoSpellObjectiveFrame:StripTextures()
-	QuestInfoSpellObjectiveFrame:CreateBackdrop("Default")
-	QuestInfoSpellObjectiveFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	QuestInfoSpellObjectiveFrame.backdrop:ClearAllPoints()
-	QuestInfoSpellObjectiveFrame.backdrop:SetPoint("TOPLEFT", QuestInfoSpellObjectiveFrame.Icon, -2, 2)
-	QuestInfoSpellObjectiveFrame.backdrop:SetPoint("BOTTOMRIGHT", QuestInfoSpellObjectiveFrame.Icon, 2, -2)
+	SkinReward(QuestInfoSkillPointFrame)
+	SkinReward(QuestInfoSpellObjectiveFrame)
+	SkinReward(MapQuestInfoRewardsFrame.SpellFrame)
+	SkinReward(MapQuestInfoRewardsFrame.XPFrame)
+	SkinReward(MapQuestInfoRewardsFrame.MoneyFrame)
+	SkinReward(MapQuestInfoRewardsFrame.SkillPointFrame)
 
 	T.SkinDropDownBox(WorldMapLevelDropDown)
 	WorldMapLevelDropDown:ClearAllPoints()
