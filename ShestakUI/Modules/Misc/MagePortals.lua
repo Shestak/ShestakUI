@@ -27,7 +27,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 }
 
 if IsSpellKnown(120145) then
-	tinsert(spells, {120145,120146}) -- Ancient Teleport: Dalaran
+	tinsert(spells, {120145,120146}) -- Ancient Dalaran
 end
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)
