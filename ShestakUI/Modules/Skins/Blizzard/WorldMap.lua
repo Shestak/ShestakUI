@@ -144,6 +144,11 @@ local function LoadSkin()
 		local button = frame.RewardButtons[index]
 		if not button.restyled then
 			SkinReward(button)
+			if button == frame.RewardButtons[3] then
+				button:ClearAllPoints()
+				button:SetPoint("TOPLEFT", frame.RewardButtons[1], "BOTTOMLEFT", 0, -3)
+				button.SetPoint = T.dummy
+			end
 			button.restyled = true
 		end
 	end)
