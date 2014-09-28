@@ -1453,8 +1453,6 @@ C["filger_spells"] = {
 			{spellID = 105809, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Avenging Wrath
 			{spellID = 31884, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Favor
-			{spellID = 31842, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Argent Defender
 			{spellID = 31850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Protection
