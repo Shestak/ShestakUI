@@ -6,7 +6,7 @@ if C.tooltip.enable ~= true or C.tooltip.spell_id ~= true then return end
 ----------------------------------------------------------------------------------------
 local function addLine(self, id, isItem)
 	for i = 1, self:NumLines() do
-		local line = _G["GameTooltipTextLeft"..i]
+		local line = _G[self:GetName().."TextLeft"..i]
 		if not line then break end
 		local text = line:GetText()
 		if text and (text:match(L_TOOLTIP_ITEM_ID) or text:match(L_TOOLTIP_SPELL_ID)) then return end
@@ -36,10 +36,6 @@ end)
 
 hooksecurefunc(GameTooltip, "SetGlyph", function(self, ...)
 	local id = select(4, GetGlyphSocketInfo(...))
-	if id then addLine(self, id) end
-end)
-
-hooksecurefunc(GameTooltip, "SetGlyphByID", function(self, id)
 	if id then addLine(self, id) end
 end)
 
