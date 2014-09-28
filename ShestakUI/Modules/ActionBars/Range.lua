@@ -53,7 +53,6 @@ local DIVINE_PURPOSE = GetSpellInfo(90174)
 local isHolyPowerAbility
 do
 	local HOLY_POWER_SPELLS = {
-		--WoD [84963] = GetSpellInfo(84963),		-- Inquisition
 		[85673] = GetSpellInfo(85673),		-- Word of Glory
 		[114163] = GetSpellInfo(114163),	-- Eternal Flame
 	}

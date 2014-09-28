@@ -1447,10 +1447,8 @@ C["filger_spells"] = {
 
 			-- Divine Shield
 			{spellID = 642, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Inquisition
-			--WoD {spellID = 84963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Guardian of Ancient Kings
-			--WoD {spellID = 86698, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 86659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Holy Avenger
 			{spellID = 105809, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Avenging Wrath
@@ -1482,8 +1480,6 @@ C["filger_spells"] = {
 			-- Buffs
 			-- Infusion of Light
 			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ancient Power
-			--WoD {spellID = 86700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bastion of Glory
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
@@ -3693,7 +3689,7 @@ C["filger_spells"] = {
 			-- Divine Protection
 			{spellID = 498, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Guardian of Ancient Kings
-			--WoD {spellID = 86698, unitID = "target", caster = "all", filter = "BUFF"},
+			{spellID = 86659, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Hammer of Justice
 			{spellID = 853, unitID = "target", caster = "all", filter = "DEBUFF"},
