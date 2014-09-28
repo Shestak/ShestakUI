@@ -86,7 +86,6 @@ local function LoadSkin()
 	}
 
 	for i = 1, getn(checkboxes) do
-		local checkbox = _G[checkboxes[i]]
 		T.SkinCheckBox(_G[checkboxes[i]])
 	end
 
