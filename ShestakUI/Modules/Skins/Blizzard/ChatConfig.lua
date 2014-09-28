@@ -82,85 +82,129 @@ local function LoadSkin()
 		"CombatConfigSettingsShowQuickButton",
 		"CombatConfigSettingsSolo",
 		"CombatConfigSettingsParty",
-		"CombatConfigSettingsRaid"
+		"CombatConfigSettingsRaid",
+		"CombatConfigColorsColorizeEntireLineBySource",
+		"CombatConfigColorsColorizeEntireLineByTarget"
 	}
 
 	for i = 1, getn(checkboxes) do
 		T.SkinCheckBox(_G[checkboxes[i]])
 	end
 
-	ChatConfigChannelSettingsLeft:SetScript("OnShow", function(self)
-		for i = 1, #ChatConfigChannelSettingsLeft.checkBoxTable do
-			_G["ChatConfigChannelSettingsLeftCheckBox"..i]:StripTextures()
-			_G["ChatConfigChannelSettingsLeftCheckBox"..i]:SetHeight(ChatConfigOtherSettingsCombatCheckBox1:GetHeight())
-			T.SkinCheckBox(_G["ChatConfigChannelSettingsLeftCheckBox"..i.."Check"])
-			T.SkinCheckBox(_G["ChatConfigChannelSettingsLeftCheckBox"..i.."ColorClasses"])
-			_G["ChatConfigChannelSettingsLeftCheckBox"..i.."ColorClasses"]:SetHeight(ChatConfigChatSettingsLeftCheckBox1Check:GetHeight())
+	local ReskinColourSwatch = function(f)
+		local name = f:GetName()
+
+		local bg = _G[name.."SwatchBg"]
+		f:StripTextures()
+		f:CreateBackdrop("Overlay")
+		f:SetFrameLevel(f:GetFrameLevel() + 2)
+		f.backdrop:SetPoint("TOPLEFT", 1, 0)
+		f.backdrop:SetPoint("BOTTOMRIGHT", 1, 1)
+
+		f:SetNormalTexture(C.media.texture)
+		local nt = f:GetNormalTexture()
+
+		nt:SetPoint("TOPLEFT", 3, -2)
+		nt:SetPoint("BOTTOMRIGHT", -1, 3)
+	end
+
+	hooksecurefunc("ChatConfig_CreateCheckboxes", function(frame, checkBoxTable, checkBoxTemplate)
+			if frame.styled then return end
+
+			local checkBoxNameString = frame:GetName().."CheckBox"
+
+			if checkBoxTemplate == "ChatConfigCheckBoxTemplate" then
+				for index, value in ipairs(checkBoxTable) do
+					local checkBoxName = checkBoxNameString..index
+					local checkbox = _G[checkBoxName]
+
+					checkbox:StripTextures()
+					checkbox:CreateBackdrop("Overlay")
+					checkbox.backdrop:SetPoint("TOPLEFT", 3, -1)
+					checkbox.backdrop:SetPoint("BOTTOMRIGHT", -3, 1)
+					checkbox.backdrop:SetFrameLevel(4)
+
+					T.SkinCheckBox(_G[checkBoxName.."Check"])
+				end
+			elseif checkBoxTemplate == "ChatConfigCheckBoxWithSwatchTemplate" or checkBoxTemplate == "ChatConfigCheckBoxWithSwatchAndClassColorTemplate" then
+				for index, value in ipairs(checkBoxTable) do
+					local checkBoxName = checkBoxNameString..index
+					local checkbox = _G[checkBoxName]
+
+					checkbox:SetBackdrop(nil)
+
+					local bg = CreateFrame("Frame", nil, checkbox)
+					bg:SetPoint("TOPLEFT", 2, 0)
+					bg:SetPoint("BOTTOMRIGHT", -2, 0)
+					bg:SetFrameLevel(checkbox:GetFrameLevel() - 1)
+					bg:CreateBorder(true)
+					bg.iborder:SetBackdropBorderColor(unpack(C.media.border_color))
+
+					local bg2 = CreateFrame("Frame", nil, bg)
+					bg2:SetPoint("TOPLEFT", 1, -1)
+					bg2:SetPoint("BOTTOMRIGHT", -1, 1)
+					bg2:SetFrameLevel(checkbox:GetFrameLevel() - 1)
+					bg2:CreateBorder(true)
+					bg2.iborder:SetBackdropBorderColor(0, 0, 0)
+
+					local bg3 = CreateFrame("Frame", nil, bg)
+					bg3:SetPoint("TOPLEFT", -1, 1)
+					bg3:SetPoint("BOTTOMRIGHT", 1, -1)
+					bg3:SetFrameLevel(checkbox:GetFrameLevel() - 1)
+					bg3:CreateBorder(true)
+					bg3.iborder:SetBackdropBorderColor(0, 0, 0)
+
+					ReskinColourSwatch(_G[checkBoxName.."ColorSwatch"])
+
+					T.SkinCheckBox(_G[checkBoxName.."Check"])
+
+					if checkBoxTemplate == "ChatConfigCheckBoxWithSwatchAndClassColorTemplate" then
+						T.SkinCheckBox(_G[checkBoxName.."ColorClasses"])
+					end
+				end
+			end
+
+			frame.styled = true
+		end)
+
+	hooksecurefunc("ChatConfig_CreateColorSwatches", function(frame, swatchTable, swatchTemplate)
+		if frame.styled then return end
+
+		local nameString = frame:GetName().."Swatch"
+
+		for index, value in ipairs(swatchTable) do
+			local swatchName = nameString..index
+			local swatch = _G[swatchName]
+
+			-- swatch:StripTextures()
+			local bg = CreateFrame("Frame", nil, swatch)
+			bg:SetPoint("TOPLEFT", 0, 0)
+			bg:SetPoint("BOTTOMRIGHT", 0, 0)
+			bg:SetFrameLevel(swatch:GetFrameLevel() - 1)
+			bg:CreateBorder(true)
+			bg.iborder:SetBackdropBorderColor(unpack(C.media.border_color))
+
+			local bg2 = CreateFrame("Frame", nil, bg)
+			bg2:SetPoint("TOPLEFT", 1, -1)
+			bg2:SetPoint("BOTTOMRIGHT", -1, 1)
+			bg2:SetFrameLevel(swatch:GetFrameLevel() - 1)
+			bg2:CreateBorder(true)
+			bg2.iborder:SetBackdropBorderColor(0, 0, 0)
+
+			local bg3 = CreateFrame("Frame", nil, bg)
+			bg3:SetPoint("TOPLEFT", -1, 1)
+			bg3:SetPoint("BOTTOMRIGHT", 1, -1)
+			bg3:SetFrameLevel(swatch:GetFrameLevel() - 1)
+			bg3:CreateBorder(true)
+			bg3.iborder:SetBackdropBorderColor(0, 0, 0)
+
+			ReskinColourSwatch(_G[swatchName.."ColorSwatch"])
 		end
+
+		frame.styled = true
 	end)
 
-	CreateChatChannelList(self, GetChannelList())
-	ChatConfig_CreateCheckboxes(ChatConfigChannelSettingsLeft, CHAT_CONFIG_CHANNEL_LIST, "ChatConfigCheckBoxWithSwatchAndClassColorTemplate", CHANNELS)
-	ChatConfig_UpdateCheckboxes(ChatConfigChannelSettingsLeft)
-
 	ChatConfigBackgroundFrame:SetScript("OnShow", function(self)
-		for i = 1, #CHAT_CONFIG_CHAT_LEFT do
-			_G["ChatConfigChatSettingsLeftCheckBox"..i]:StripTextures()
-			_G["ChatConfigChatSettingsLeftCheckBox"..i]:CreateBackdrop("Overlay")
-			_G["ChatConfigChatSettingsLeftCheckBox"..i].backdrop:SetPoint("TOPLEFT", 3, -1)
-			_G["ChatConfigChatSettingsLeftCheckBox"..i].backdrop:SetPoint("BOTTOMRIGHT", -3, 1)
-			_G["ChatConfigChatSettingsLeftCheckBox"..i].backdrop:SetFrameLevel(4)
-			_G["ChatConfigChatSettingsLeftCheckBox"..i]:SetHeight(ChatConfigOtherSettingsCombatCheckBox1:GetHeight())
-			T.SkinCheckBox(_G["ChatConfigChatSettingsLeftCheckBox"..i.."Check"])
-			T.SkinCheckBox(_G["ChatConfigChatSettingsLeftCheckBox"..i.."ColorClasses"])
-			_G["ChatConfigChatSettingsLeftCheckBox"..i.."ColorClasses"]:SetHeight(ChatConfigChatSettingsLeftCheckBox1Check:GetHeight())
-		end
-
-		for i = 1, #CHAT_CONFIG_OTHER_COMBAT do
-			_G["ChatConfigOtherSettingsCombatCheckBox"..i]:StripTextures()
-			_G["ChatConfigOtherSettingsCombatCheckBox"..i]:CreateBackdrop("Overlay")
-			_G["ChatConfigOtherSettingsCombatCheckBox"..i].backdrop:SetPoint("TOPLEFT", 3, -1)
-			_G["ChatConfigOtherSettingsCombatCheckBox"..i].backdrop:SetPoint("BOTTOMRIGHT", -3, 1)
-			_G["ChatConfigOtherSettingsCombatCheckBox"..i].backdrop:SetFrameLevel(4)
-			T.SkinCheckBox(_G["ChatConfigOtherSettingsCombatCheckBox"..i.."Check"])
-		end
-
-		for i = 1, #CHAT_CONFIG_OTHER_PVP do
-			_G["ChatConfigOtherSettingsPVPCheckBox"..i]:StripTextures()
-			_G["ChatConfigOtherSettingsPVPCheckBox"..i]:CreateBackdrop("Overlay")
-			_G["ChatConfigOtherSettingsPVPCheckBox"..i].backdrop:SetPoint("TOPLEFT", 3, -1)
-			_G["ChatConfigOtherSettingsPVPCheckBox"..i].backdrop:SetPoint("BOTTOMRIGHT", -3, 1)
-			_G["ChatConfigOtherSettingsPVPCheckBox"..i].backdrop:SetFrameLevel(4)
-			T.SkinCheckBox(_G["ChatConfigOtherSettingsPVPCheckBox"..i.."Check"])
-		end
-
-		for i = 1, #CHAT_CONFIG_OTHER_SYSTEM do
-			_G["ChatConfigOtherSettingsSystemCheckBox"..i]:StripTextures()
-			_G["ChatConfigOtherSettingsSystemCheckBox"..i]:CreateBackdrop("Overlay")
-			_G["ChatConfigOtherSettingsSystemCheckBox"..i].backdrop:SetPoint("TOPLEFT", 3, -1)
-			_G["ChatConfigOtherSettingsSystemCheckBox"..i].backdrop:SetPoint("BOTTOMRIGHT", -3, 1)
-			_G["ChatConfigOtherSettingsSystemCheckBox"..i].backdrop:SetFrameLevel(4)
-			T.SkinCheckBox(_G["ChatConfigOtherSettingsSystemCheckBox"..i.."Check"])
-		end
-
-		for i = 1, #CHAT_CONFIG_CHANNEL_LIST do
-			_G["ChatConfigChannelSettingsLeftCheckBox"..i]:StripTextures()
-			_G["ChatConfigChannelSettingsLeftCheckBox"..i]:CreateBackdrop("Overlay")
-			_G["ChatConfigChannelSettingsLeftCheckBox"..i].backdrop:SetPoint("TOPLEFT", 3, -1)
-			_G["ChatConfigChannelSettingsLeftCheckBox"..i].backdrop:SetPoint("BOTTOMRIGHT", -3, 1)
-			_G["ChatConfigChannelSettingsLeftCheckBox"..i].backdrop:SetFrameLevel(4)
-			T.SkinCheckBox(_G["ChatConfigChannelSettingsLeftCheckBox"..i.."Check"])
-		end
-
-		for i = 1, #CHAT_CONFIG_CHAT_CREATURE_LEFT do
-			_G["ChatConfigOtherSettingsCreatureCheckBox"..i]:StripTextures()
-			_G["ChatConfigOtherSettingsCreatureCheckBox"..i]:CreateBackdrop("Overlay")
-			_G["ChatConfigOtherSettingsCreatureCheckBox"..i].backdrop:SetPoint("TOPLEFT", 3, -1)
-			_G["ChatConfigOtherSettingsCreatureCheckBox"..i].backdrop:SetPoint("BOTTOMRIGHT", -3, 1)
-			_G["ChatConfigOtherSettingsCreatureCheckBox"..i].backdrop:SetFrameLevel(4)
-			T.SkinCheckBox(_G["ChatConfigOtherSettingsCreatureCheckBox"..i.."Check"])
-		end
-
 		for i = 1, #COMBAT_CONFIG_MESSAGESOURCES_BY do
 			_G["CombatConfigMessageSourcesDoneByCheckBox"..i]:StripTextures()
 			_G["CombatConfigMessageSourcesDoneByCheckBox"..i]:CreateBackdrop("Overlay")
@@ -181,7 +225,11 @@ local function LoadSkin()
 
 		for i = 1, #COMBAT_CONFIG_UNIT_COLORS do
 			_G["CombatConfigColorsUnitColorsSwatch"..i]:StripTextures()
+			-- ReskinColourSwatch(_G["CombatConfigColorsUnitColorsSwatch"..i.."ColorSwatch"])
 		end
+
+		ReskinColourSwatch(CombatConfigColorsColorizeSpellNamesColorSwatch)
+		ReskinColourSwatch(CombatConfigColorsColorizeDamageNumberColorSwatch)
 
 		for i = 1, 4 do
 			for j = 1, 4 do
