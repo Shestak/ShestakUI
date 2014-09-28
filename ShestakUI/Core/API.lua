@@ -212,11 +212,12 @@ T.SetOriginalBackdrop = function(self)
 end
 
 local function SkinButton(f, strip)
+	if strip then f:StripTextures() end
+
 	if f.SetNormalTexture then f:SetNormalTexture("") end
 	if f.SetHighlightTexture then f:SetHighlightTexture("") end
 	if f.SetPushedTexture then f:SetPushedTexture("") end
 	if f.SetDisabledTexture then f:SetDisabledTexture("") end
-	if strip then f:StripTextures() end
 
 	if f.Left then f.Left:SetAlpha(0) end
 	if f.Right then f.Right:SetAlpha(0) end
@@ -224,6 +225,15 @@ local function SkinButton(f, strip)
 	if f.LeftSeparator then f.LeftSeparator:SetAlpha(0) end
 	if f.RightSeparator then f.RightSeparator:SetAlpha(0) end
 	if f.Flash then f.Flash:SetAlpha(0) end
+
+	if f.TopRight then f.TopRight:Hide() end
+	if f.BottomLeft then f.BottomLeft:Hide() end
+	if f.BottomRight then f.BottomRight:Hide() end
+	if f.TopMiddle then f.TopMiddle:Hide() end
+	if f.MiddleLeft then f.MiddleLeft:Hide() end
+	if f.MiddleRight then f.MiddleRight:Hide() end
+	if f.BottomMiddle then f.BottomMiddle:Hide() end
+	if f.MiddleMiddle then f.MiddleMiddle:Hide() end
 
 	f:SetTemplate("Overlay")
 	f:HookScript("OnEnter", T.SetModifiedBackdrop)
