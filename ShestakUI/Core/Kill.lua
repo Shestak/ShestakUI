@@ -97,4 +97,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			InterfaceOptionsCombatTextPanelHealingAbsorbTarget:Kill()
 		end
 	end
+
+	SetCVar("countdownForCooldowns", 0)
 end)
