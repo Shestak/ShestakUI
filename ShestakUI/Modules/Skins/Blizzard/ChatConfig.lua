@@ -225,7 +225,6 @@ local function LoadSkin()
 
 		for i = 1, #COMBAT_CONFIG_UNIT_COLORS do
 			_G["CombatConfigColorsUnitColorsSwatch"..i]:StripTextures()
-			-- ReskinColourSwatch(_G["CombatConfigColorsUnitColorsSwatch"..i.."ColorSwatch"])
 		end
 
 		ReskinColourSwatch(CombatConfigColorsColorizeSpellNamesColorSwatch)
