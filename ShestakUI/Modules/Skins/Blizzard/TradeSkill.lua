@@ -85,7 +85,6 @@ local function LoadSkin()
 		icon:SetPoint("TOPLEFT", icon.backdrop, "TOPLEFT", 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", icon.backdrop, "BOTTOMRIGHT", -2, 2)
 
-		count:SetParent(icon.backdrop)
 		count:SetFont(C.media.normal_font, 12, "OUTLINE")
 		count:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 		count:SetDrawLayer("OVERLAY")
