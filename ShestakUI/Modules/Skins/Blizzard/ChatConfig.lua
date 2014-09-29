@@ -27,7 +27,17 @@ local function LoadSkin()
 		"CombatConfigMessageSourcesDoneBy",
 		"CombatConfigMessageSourcesDoneTo",
 		"CombatConfigColorsUnitColors",
-		"CombatConfigColorsHighlighting",
+		"CombatConfigColorsHighlighting"
+	}
+
+	for i = 1, getn(frames) do
+		local frame = _G[frames[i]]
+		if frame then
+			frame:SetTemplate("Overlay")
+		end
+	end
+
+	local colorize = {
 		"CombatConfigColorsColorizeUnitName",
 		"CombatConfigColorsColorizeSpellNames",
 		"CombatConfigColorsColorizeDamageNumber",
@@ -35,10 +45,13 @@ local function LoadSkin()
 		"CombatConfigColorsColorizeEntireLine"
 	}
 
-	for i = 1, getn(frames) do
-		local frame = _G[frames[i]]
+	for i = 1, getn(colorize) do
+		local frame = _G[colorize[i]]
 		if frame then
-			frame:SetTemplate("Overlay")
+			local bg = CreateFrame("Frame", nil, frame)
+			bg:SetPoint("TOPLEFT", 0, 0)
+			bg:SetPoint("BOTTOMRIGHT", 0, 2)
+			bg:SetTemplate("Overlay")
 		end
 	end
 
@@ -92,9 +105,6 @@ local function LoadSkin()
 	end
 
 	local ReskinColourSwatch = function(f)
-		local name = f:GetName()
-
-		local bg = _G[name.."SwatchBg"]
 		f:StripTextures()
 		f:CreateBackdrop("Overlay")
 		f:SetFrameLevel(f:GetFrameLevel() + 2)
@@ -118,11 +128,10 @@ local function LoadSkin()
 					local checkBoxName = checkBoxNameString..index
 					local checkbox = _G[checkBoxName]
 
-					checkbox:StripTextures()
-					checkbox:CreateBackdrop("Overlay")
-					checkbox.backdrop:SetPoint("TOPLEFT", 3, -1)
-					checkbox.backdrop:SetPoint("BOTTOMRIGHT", -3, 1)
-					checkbox.backdrop:SetFrameLevel(4)
+					local bg = CreateFrame("Frame", nil, checkbox)
+					bg:SetPoint("TOPLEFT", 2, -1)
+					bg:SetPoint("BOTTOMRIGHT", -2, 1)
+					bg:SetTemplate("Overlay")
 
 					T.SkinCheckBox(_G[checkBoxName.."Check"])
 				end
@@ -131,28 +140,10 @@ local function LoadSkin()
 					local checkBoxName = checkBoxNameString..index
 					local checkbox = _G[checkBoxName]
 
-					checkbox:SetBackdrop(nil)
-
 					local bg = CreateFrame("Frame", nil, checkbox)
-					bg:SetPoint("TOPLEFT", 2, 0)
-					bg:SetPoint("BOTTOMRIGHT", -2, 0)
-					bg:SetFrameLevel(checkbox:GetFrameLevel() - 1)
-					bg:CreateBorder(true)
-					bg.iborder:SetBackdropBorderColor(unpack(C.media.border_color))
-
-					local bg2 = CreateFrame("Frame", nil, bg)
-					bg2:SetPoint("TOPLEFT", 1, -1)
-					bg2:SetPoint("BOTTOMRIGHT", -1, 1)
-					bg2:SetFrameLevel(checkbox:GetFrameLevel() - 1)
-					bg2:CreateBorder(true)
-					bg2.iborder:SetBackdropBorderColor(0, 0, 0)
-
-					local bg3 = CreateFrame("Frame", nil, bg)
-					bg3:SetPoint("TOPLEFT", -1, 1)
-					bg3:SetPoint("BOTTOMRIGHT", 1, -1)
-					bg3:SetFrameLevel(checkbox:GetFrameLevel() - 1)
-					bg3:CreateBorder(true)
-					bg3.iborder:SetBackdropBorderColor(0, 0, 0)
+					bg:SetPoint("TOPLEFT", 2, -1)
+					bg:SetPoint("BOTTOMRIGHT", -2, 1)
+					bg:SetTemplate("Overlay")
 
 					ReskinColourSwatch(_G[checkBoxName.."ColorSwatch"])
 
@@ -176,7 +167,8 @@ local function LoadSkin()
 			local swatchName = nameString..index
 			local swatch = _G[swatchName]
 
-			-- swatch:StripTextures()
+			swatch:SetBackdrop(nil)
+
 			local bg = CreateFrame("Frame", nil, swatch)
 			bg:SetPoint("TOPLEFT", 0, 0)
 			bg:SetPoint("BOTTOMRIGHT", 0, 0)
@@ -187,16 +179,7 @@ local function LoadSkin()
 			local bg2 = CreateFrame("Frame", nil, bg)
 			bg2:SetPoint("TOPLEFT", 1, -1)
 			bg2:SetPoint("BOTTOMRIGHT", -1, 1)
-			bg2:SetFrameLevel(swatch:GetFrameLevel() - 1)
-			bg2:CreateBorder(true)
-			bg2.iborder:SetBackdropBorderColor(0, 0, 0)
-
-			local bg3 = CreateFrame("Frame", nil, bg)
-			bg3:SetPoint("TOPLEFT", -1, 1)
-			bg3:SetPoint("BOTTOMRIGHT", 1, -1)
-			bg3:SetFrameLevel(swatch:GetFrameLevel() - 1)
-			bg3:CreateBorder(true)
-			bg3.iborder:SetBackdropBorderColor(0, 0, 0)
+			bg2:CreateBorder(true, true)
 
 			ReskinColourSwatch(_G[swatchName.."ColorSwatch"])
 		end
@@ -205,28 +188,6 @@ local function LoadSkin()
 	end)
 
 	ChatConfigBackgroundFrame:SetScript("OnShow", function(self)
-		for i = 1, #COMBAT_CONFIG_MESSAGESOURCES_BY do
-			_G["CombatConfigMessageSourcesDoneByCheckBox"..i]:StripTextures()
-			_G["CombatConfigMessageSourcesDoneByCheckBox"..i]:CreateBackdrop("Overlay")
-			_G["CombatConfigMessageSourcesDoneByCheckBox"..i].backdrop:SetPoint("TOPLEFT", 3, -1)
-			_G["CombatConfigMessageSourcesDoneByCheckBox"..i].backdrop:SetPoint("BOTTOMRIGHT", -3, 1)
-			_G["CombatConfigMessageSourcesDoneByCheckBox"..i].backdrop:SetFrameLevel(5)
-			T.SkinCheckBox(_G["CombatConfigMessageSourcesDoneByCheckBox"..i.."Check"])
-		end
-
-		for i = 1, #COMBAT_CONFIG_MESSAGESOURCES_TO do
-			_G["CombatConfigMessageSourcesDoneToCheckBox"..i]:StripTextures()
-			_G["CombatConfigMessageSourcesDoneToCheckBox"..i]:CreateBackdrop("Overlay")
-			_G["CombatConfigMessageSourcesDoneToCheckBox"..i].backdrop:SetPoint("TOPLEFT", 3, -1)
-			_G["CombatConfigMessageSourcesDoneToCheckBox"..i].backdrop:SetPoint("BOTTOMRIGHT", -3, 1)
-			_G["CombatConfigMessageSourcesDoneToCheckBox"..i].backdrop:SetFrameLevel(5)
-			T.SkinCheckBox(_G["CombatConfigMessageSourcesDoneToCheckBox"..i.."Check"])
-		end
-
-		for i = 1, #COMBAT_CONFIG_UNIT_COLORS do
-			_G["CombatConfigColorsUnitColorsSwatch"..i]:StripTextures()
-		end
-
 		ReskinColourSwatch(CombatConfigColorsColorizeSpellNamesColorSwatch)
 		ReskinColourSwatch(CombatConfigColorsColorizeDamageNumberColorSwatch)
 
