@@ -198,6 +198,7 @@ end
 --	Style buttons function
 ----------------------------------------------------------------------------------------
 T.SetModifiedBackdrop = function(self)
+	if self:GetButtonState() == "DISABLED" then return end
 	self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 	if self.overlay then
 		self.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
