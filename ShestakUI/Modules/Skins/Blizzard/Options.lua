@@ -204,8 +204,9 @@ local function LoadSkin()
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:ClearAllPoints()
 	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:SetPoint("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
 
-	GraphicsButton:StripTextures()
-	RaidButton:StripTextures()
+	GraphicsButton:SetPoint("BOTTOMLEFT", "Graphics_", "TOPLEFT", 0, 3)
+	GraphicsButton:SkinButton(true)
+	RaidButton:SkinButton(true)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
