@@ -52,11 +52,14 @@ end
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function(self, event)
-	for i = 1, Minimap:GetNumChildren() do
-		SkinButton(select(i, Minimap:GetChildren()))
-		SkinButton(WIM3MinimapButton)
+	if event == "PLAYER_LOGIN" then
+		for i = 1, Minimap:GetNumChildren() do
+			SkinButton(select(i, Minimap:GetChildren()))
+		end
 	end
 
+	SkinButton(WIM3MinimapButton)
 	self = nil
 end)
