@@ -122,7 +122,7 @@ HelpOpenTicketButton:SetSize(16, 16)
 -- Garrison icon
 GarrisonLandingPageMinimapButton:ClearAllPoints()
 GarrisonLandingPageMinimapButton:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 3, 2)
-GarrisonLandingPageMinimapButton:SetScale(0.75)
+GarrisonLandingPageMinimapButton:SetScale(0.6)
 
 -- GhostFrame
 GhostFrame:StripTextures()
