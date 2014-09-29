@@ -23,18 +23,11 @@ local function LoadSkin()
 
 	for _, Buttons in pairs(Buttons) do
 		Buttons:SkinButton()
+		Buttons:SetHeight(Buttons:GetHeight() - 3)
 	end
 
 	AddonList:SetTemplate("Transparent")
 	AddonListInset:SetTemplate("Overlay")
-
-	T.SkinCheckBox(AddonListForceLoad)
-	AddonListForceLoad:SetSize(25, 25)
-	T.SkinDropDownBox(AddonCharacterDropDown)
-	AddonListEnableAllButton:SetHeight(AddonListEnableAllButton:GetHeight() - 3)
-	AddonListDisableAllButton:SetHeight(AddonListDisableAllButton:GetHeight() - 3)
-	AddonListCancelButton:SetHeight(AddonListCancelButton:GetHeight() - 3)
-	AddonListOkayButton:SetHeight(AddonListOkayButton:GetHeight() - 3)
 
 	for i = 1, MAX_ADDONS_DISPLAYED do
 		T.SkinCheckBox(_G["AddonListEntry" .. i .. "Enabled"])
@@ -42,6 +35,9 @@ local function LoadSkin()
 
 	T.SkinScrollBar(AddonListScrollFrameScrollBar)
 	T.SkinCloseButton(AddonListCloseButton)
+	T.SkinDropDownBox(AddonCharacterDropDown)
+	T.SkinCheckBox(AddonListForceLoad)
+	AddonListForceLoad:SetSize(25, 25)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
