@@ -790,6 +790,8 @@ function CreateUIConfig()
 				if IsAddOnLoaded("Aurora") then
 					local F = unpack(Aurora)
 					F.ReskinCheck(button)
+				else
+					T.SkinCheckBox(button)
 				end
 				local o = "UIConfig"..i..j
 				Local(o)
