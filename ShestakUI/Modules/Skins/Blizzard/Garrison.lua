@@ -38,6 +38,12 @@ end)
 if C.skins.blizzard_frames ~= true then return end
 
 local function LoadSkin()
+	GarrisonBuildingFrame:StripTextures()
+	GarrisonBuildingFrame:SetTemplate("Transparent")
+	T.SkinCloseButton(GarrisonBuildingFrame.CloseButton)
+	GarrisonBuildingFrame.TownHallBox.UpgradeButton:SkinButton()
+	GarrisonBuildingFrame.InfoBox.UpgradeButton:SkinButton()
+	
 	GarrisonLandingPage:StripTextures()
 	GarrisonLandingPage:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonLandingPage.CloseButton)
@@ -53,7 +59,8 @@ local function LoadSkin()
 
 	GarrisonLandingPage.FollowerList:StripTextures()
 	GarrisonLandingPage.FollowerList:SetTemplate("Transparent")
-	--WoD T.SkinEditBox(GarrisonLandingPage.FollowerList.SearchBox)
+	GarrisonLandingPage.FollowerList.SearchBox:SetPoint("TOPLEFT", 2, 25)
+	T.SkinEditBox(GarrisonLandingPage.FollowerList.SearchBox)
 end
 
 T.SkinFuncs["Blizzard_GarrisonUI"] = LoadSkin
