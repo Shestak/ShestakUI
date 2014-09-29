@@ -206,6 +206,7 @@ T.SetModifiedBackdrop = function(self)
 end
 
 T.SetOriginalBackdrop = function(self)
+	if self:GetButtonState() == "DISABLED" then return end
 	self:SetBackdropBorderColor(unpack(C.media.border_color))
 	if self.overlay then
 		self.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
