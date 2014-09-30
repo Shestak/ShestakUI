@@ -21,6 +21,9 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[147891] = 3			-- Flurry of Xuen
 end
 
+T.damagemerge = {}
+T.healmerge = {}
+
 -- Class config
 if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
@@ -40,6 +43,10 @@ if T.class == "DEATHKNIGHT" then
 	if C.combattext.healing then
 		T.healfilter[119980] = true	-- Conversion
 	end
+	T.damagemerge[66198] = 49020	-- Obliterate Off-Hand
+	T.damagemerge[66196] = 49143	-- Frost Strike Off-Hand
+	T.damagemerge[66216] = 45462	-- Plague Strike Off-Hand
+	T.damagemerge[66188] = 49998	-- Death Strike Off-Hand
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
@@ -179,6 +186,7 @@ elseif T.class == "PALADIN" then
 	if C.combattext.healing then
 		T.healfilter[115547] = true	-- Glyph of Avenging Wrath
 	end
+	T.damagemerge[53595] = 88263	-- Hammer of the Righteous
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
@@ -215,6 +223,7 @@ elseif T.class == "PRIEST" then
 		T.healfilter[127626] = true	-- Devouring Plague
 		T.healfilter[15290] = true	-- Vampiric Embrace
 	end
+	T.healmerge[94472] = 81751		-- Atonement
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[51723] = 0		-- Fan of Knives
@@ -228,6 +237,7 @@ elseif T.class == "ROGUE" then
 	if C.combattext.healing then
 		T.healfilter[112974] = true	-- Leeching Poison
 	end
+	T.damagemerge[27576] = 5374		-- Mutilate Off-Hand
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
@@ -299,4 +309,7 @@ elseif T.class == "WARRIOR" then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
 		T.healfilter[55694] = true	-- Enraged Regeneration
 	end
+	T.damagemerge[44949] = 1680		-- Whirlwind Off-Hand
+	T.damagemerge[85384] = 96103	-- Raging Blow Off-Hand
+	T.damagemerge[95738] = 50622	-- Bladestorm Off-Hand
 end
