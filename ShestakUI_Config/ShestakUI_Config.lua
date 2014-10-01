@@ -630,7 +630,9 @@ local function ShowGroup(group, button)
 	end
 end
 
+local loaded
 function CreateUIConfig()
+	if InCombatLockdown() and not loaded then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 	local T, C, L = unpack(ShestakUI)
 
 	if UIConfigMain then
@@ -997,6 +999,7 @@ function CreateUIConfig()
 	end
 
 	ShowGroup("general")
+	loaded = true
 end
 
 do
