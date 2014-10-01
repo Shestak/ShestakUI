@@ -101,7 +101,11 @@ local function InstallUI()
 	SavedOptionsPerChar.RightBars = C.actionbar.rightbars
 	SavedOptionsPerChar.BottomBars = C.actionbar.bottombars
 
-	ReloadUI()
+	if SavedOptions.RaidLayout ~= "UNKNOWN" then
+		ReloadUI()
+	else
+		StaticPopup_Show("SWITCH_RAID")
+	end
 end
 
 local function DisableUI()
@@ -117,7 +121,8 @@ StaticPopupDialogs.INSTALL_UI = {
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = InstallUI,
-	OnCancel = function() SavedOptionsPerChar.Install = false end,
+	OnCancel = function() SavedOptionsPerChar.Install = false
+	if SavedOptions.RaidLayout == "UNKNOWN" then StaticPopup_Show("SWITCH_RAID") end end,
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
@@ -223,7 +228,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		end
 	end
 
-	if SavedOptions.RaidLayout == "UNKNOWN" then
+	if SavedOptions.RaidLayout == "UNKNOWN" and SavedOptionsPerChar.Install then
 		StaticPopup_Show("SWITCH_RAID")
 	end
 
