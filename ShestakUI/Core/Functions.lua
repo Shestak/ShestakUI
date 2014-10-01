@@ -898,6 +898,45 @@ T.UpdatePvPStatus = function(self, elapsed)
 	end
 end
 
+T.UpdateShadowOrb = function(self, event, unit, powerType)
+	if self.unit ~= unit or (powerType and powerType ~= "SHADOW_ORBS") then return end
+	local num = UnitPower(unit, SPELL_POWER_SHADOW_ORBS)
+	local numMax = UnitPowerMax("player", SPELL_POWER_SHADOW_ORBS)
+	local barWidth = self.ShadowOrbsBar:GetWidth()
+	local spacing = select(4, self.ShadowOrbsBar[4]:GetPoint())
+	local lastBar = 0
+
+	if numMax ~= self.ShadowOrbsBar.maxPower then
+		if numMax == 3 then
+			self.ShadowOrbsBar[4]:Hide()
+			self.ShadowOrbsBar[5]:Hide()
+			for i = 1, 3 do
+				if i ~= 3 then
+					self.ShadowOrbsBar[i]:SetWidth(barWidth / 3)
+					lastBar = lastBar + (barWidth / 3 + spacing)
+				else
+					self.ShadowOrbsBar[i]:SetWidth(barWidth - lastBar)
+				end
+			end
+		else
+			self.ShadowOrbsBar[4]:Show()
+			self.ShadowOrbsBar[5]:Show()
+			for i = 1, 5 do
+				self.ShadowOrbsBar[i]:SetWidth(self.ShadowOrbsBar[i].width)
+			end
+		end
+		self.ShadowOrbsBar.maxPower = numMax
+	end
+
+	for i = 1, 5 do
+		if i <= num then
+			self.ShadowOrbsBar[i]:SetAlpha(1)
+		else
+			self.ShadowOrbsBar[i]:SetAlpha(0.2)
+		end
+	end
+end
+
 T.UpdateHoly = function(self, event, unit, powerType)
 	if self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER") then return end
 	local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)

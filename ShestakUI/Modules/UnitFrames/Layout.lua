@@ -316,9 +316,9 @@ local function Shared(self, unit)
 			self.ShadowOrbsBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.ShadowOrbsBar:SetSize(217, 7)
 
-			for i = 1, 3 do
+			for i = 1, 5 do
 				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", nil, self.ShadowOrbsBar)
-				self.ShadowOrbsBar[i]:SetSize(215 / 3, 7)
+				self.ShadowOrbsBar[i]:SetSize(215 / 5, 7)
 				if i == 1 then
 					self.ShadowOrbsBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
@@ -331,7 +331,11 @@ local function Shared(self, unit)
 				self.ShadowOrbsBar[i].bg:SetAllPoints()
 				self.ShadowOrbsBar[i].bg:SetTexture(C.media.texture)
 				self.ShadowOrbsBar[i].bg:SetVertexColor(0.70, 0.32, 0.75, 0.2)
+
+				self.ShadowOrbsBar[i].width = self.ShadowOrbsBar[i]:GetWidth()
 			end
+
+			self.ShadowOrbsBar.Override = T.UpdateShadowOrb
 		end
 
 		-- Holy Power bar
