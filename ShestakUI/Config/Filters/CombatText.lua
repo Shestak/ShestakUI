@@ -217,6 +217,7 @@ elseif T.class == "PRIEST" then
 		T.aoespam[127628] = 3		-- Cascade
 		T.aoespam[122128] = 3		-- Divine Star
 		T.merge[94472] = 81751		-- Atonement
+		T.merge[158831] = 2944		-- Devouring Plague
 	end
 	if C.combattext.healing then
 		T.healfilter[127626] = true	-- Devouring Plague
