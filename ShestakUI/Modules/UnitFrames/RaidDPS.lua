@@ -148,7 +148,11 @@ local function Shared(self, unit)
 	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:SetSize(12, 12)
-		self.LFDRole:SetPoint("TOPRIGHT", self.Health, 2, 5)
+		if unit ~= "tank" then
+			self.LFDRole:SetPoint("TOPRIGHT", self.Health, 2, 5)
+		else
+			self.LFDRole:SetPoint("BOTTOMRIGHT", self.Health, 2, -5)
+		end
 	end
 
 	-- Leader/Assistant/ML icons
