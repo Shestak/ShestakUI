@@ -699,9 +699,9 @@ if C.combattext.damage then
 						end
 						msg = " \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 					end
-					local spellId = 6603
 					local color = {1, 1, 1}
 					if C.combattext.merge_aoe_spam and C.combattext.merge_melee then
+						local spellId = 6603
 						SQ[spellId]["locked"] = true
 						SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
 						SQ[spellId]["msg"] = msg
@@ -755,20 +755,20 @@ if C.combattext.damage then
 					else
 						msg = ""
 					end
-					for exact, merge in pairs(T.damagemerge) do
-						if spellId == exact then spellId = merge end
-					end
-					if C.combattext.merge_aoe_spam and T.aoespam[spellId] then
-						SQ[spellId]["locked"] = true
-						SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
-						SQ[spellId]["msg"] = msg
-						SQ[spellId]["color"] = color
-						SQ[spellId]["count"] = SQ[spellId]["count"] + 1
-						if SQ[spellId]["count"] == 1 then
-							SQ[spellId]["utime"] = time() + T.aoespam[spellId]
+					if C.combattext.merge_aoe_spam then
+						spellId = T.merge[spellId] or spellId
+						if T.aoespam[spellId] then
+							SQ[spellId]["locked"] = true
+							SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
+							SQ[spellId]["msg"] = msg
+							SQ[spellId]["color"] = color
+							SQ[spellId]["count"] = SQ[spellId]["count"] + 1
+							if SQ[spellId]["count"] == 1 then
+								SQ[spellId]["utime"] = time() + T.aoespam[spellId]
+							end
+							SQ[spellId]["locked"] = false
+							return
 						end
-						SQ[spellId]["locked"] = false
-						return
 					end
 					xCT4:AddMessage(amount..""..msg, unpack(color))
 				end
@@ -894,20 +894,20 @@ if C.combattext.healing then
 						elseif C.combattext.icons then
 							msg=" \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 						end
-						for exact, merge in pairs(T.damagemerge) do
-							if spellId == exact then spellId = merge end
-						end
-						if C.combattext.merge_aoe_spam and T.aoespam[spellId] then
-							SQ[spellId]["locked"] = true
-							SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
-							SQ[spellId]["msg"] = msg
-							SQ[spellId]["color"] = color
-							SQ[spellId]["count"] = SQ[spellId]["count"] + 1
-							if SQ[spellId]["count"] == 1 then
-								SQ[spellId]["utime"] = time() + T.aoespam[spellId]
+						if C.combattext.merge_aoe_spam then
+							spellId = T.merge[spellId] or spellId
+							if T.aoespam[spellId] then
+								SQ[spellId]["locked"] = true
+								SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
+								SQ[spellId]["msg"] = msg
+								SQ[spellId]["color"] = color
+								SQ[spellId]["count"] = SQ[spellId]["count"] + 1
+								if SQ[spellId]["count"] == 1 then
+									SQ[spellId]["utime"] = time() + T.aoespam[spellId]
+								end
+								SQ[spellId]["locked"] = false
+								return
 							end
-							SQ[spellId]["locked"] = false
-							return
 						end
 						xCT4:AddMessage(amount..""..msg, unpack(color))
 					end
