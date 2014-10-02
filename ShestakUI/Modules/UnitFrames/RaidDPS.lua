@@ -148,11 +148,7 @@ local function Shared(self, unit)
 	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:SetSize(12, 12)
-		if unit ~= "tank" then
-			self.LFDRole:SetPoint("TOPRIGHT", self.Health, 2, 5)
-		else
-			self.LFDRole:SetPoint("BOTTOMRIGHT", self.Health, 2, -5)
-		end
+		self.LFDRole:SetPoint("TOPRIGHT", self.Health, 2, 5)
 	end
 
 	-- Leader/Assistant/ML icons
@@ -170,7 +166,7 @@ local function Shared(self, unit)
 		-- Master looter
 		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
 		self.MasterLooter:SetSize(12, 12)
-		self.MasterLooter:SetPoint("TOPRIGHT", self.Health, 3, 8)
+		self.MasterLooter:SetPoint("BOTTOMLEFT", self.Health, -3, -8)
 	end
 
 	-- Agro border
