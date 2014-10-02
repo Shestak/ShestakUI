@@ -168,7 +168,7 @@ local function OnAuraChange(self, event, arg1, unit)
 end
 
 -- Create Anchor
-local RaidBuffsAnchor = CreateFrame("Button", "RaidBuffsAnchor", UIParent)
+local RaidBuffsAnchor = CreateFrame("Frame", "RaidBuffsAnchor", UIParent)
 RaidBuffsAnchor:SetWidth((C.reminder.raid_buffs_size * 6) + 15)
 RaidBuffsAnchor:SetHeight(C.reminder.raid_buffs_size)
 RaidBuffsAnchor:SetPoint(unpack(C.position.raid_buffs))
