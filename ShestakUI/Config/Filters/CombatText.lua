@@ -3,7 +3,7 @@ if C.combattext.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Cleave -> http://www.wowhead.com/spell=845
+--	Example: Blizzard -> http://www.wowhead.com/spell=42208
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 -- General filter outgoing healing
@@ -291,7 +291,7 @@ elseif T.class == "WARLOCK" then
 	end
 elseif T.class == "WARRIOR" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[845] = 0			-- Cleave
+		--WoD T.aoespam[845] = 0			-- Cleave
 		T.aoespam[46968] = 0		-- Shockwave
 		T.aoespam[6343] = 0			-- Thunder Clap
 		T.aoespam[1680] = 0			-- Whirlwind
@@ -303,9 +303,11 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[113344] = 3		-- Bloodbath
 		T.aoespam[96103] = 0		-- Raging Blow
 		T.aoespam[6572] = 0			-- Revenge
+		T.aoespam[5308] = 0			-- Execute
 		T.merge[44949] = 1680		-- Whirlwind Off-Hand
 		T.merge[85384] = 96103		-- Raging Blow Off-Hand
 		T.merge[95738] = 50622		-- Bladestorm Off-Hand
+		T.merge[163558] = 5308		-- Execute Off-Hand
 	end
 	if C.combattext.healing then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
