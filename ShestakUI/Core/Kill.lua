@@ -41,6 +41,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	BagHelpBox:Kill()
 	PremadeGroupsPvETutorialAlert:Kill()
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_WORLD_MAP_FRAME, true)
+	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_PET_JOURNAL, true)
 
 	InterfaceOptionsActionBarsPanelCountdownCooldowns:Kill()
 
