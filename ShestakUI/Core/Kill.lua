@@ -40,6 +40,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	ReagentBankHelpBox:Kill()
 	BagHelpBox:Kill()
 	PremadeGroupsPvETutorialAlert:Kill()
+	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_WORLD_MAP_FRAME, true)
 
 	InterfaceOptionsActionBarsPanelCountdownCooldowns:Kill()
 
