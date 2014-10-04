@@ -28,12 +28,14 @@ local function LoadSkin()
 		"SecondaryHandSlot"
 	}
 
+	select(11, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
+	select(11, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
+
 	for _, slot in pairs(slots) do
 		_G["Character"..slot.."Frame"]:Hide()
 		local icon = _G["Character"..slot.."IconTexture"]
 		local slot = _G["Character"..slot]
 
-		slot:StripTextures()
 		slot:StyleButton()
 		slot:SetNormalTexture("")
 		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
@@ -44,9 +46,6 @@ local function LoadSkin()
 		icon:SetPoint("TOPLEFT", 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
-
-	select(8, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
-	select(8, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
 
 	-- Strip Textures
 	local charframe = {
