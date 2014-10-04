@@ -41,11 +41,7 @@ T.RaidBuffs = {
 	},
 	SHAMAN = {
 		{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Riptide
-		{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},			-- Earth Shield
-		--WoD {51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},				-- Earthliving
-	},
-	DEATHKNIGHT = {
-		--WoD {49016, "TOPRIGHT", {0.89, 0.89, 0.1}},				-- Unholy Frenzy
+		{974, "BOTTOMRIGHT", {0.2, 0.7, 0.2}, true},		-- Earth Shield
 	},
 	HUNTER = {
 		{35079, "TOPRIGHT", {0.2, 0.2, 1}},					-- Misdirection

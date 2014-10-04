@@ -121,8 +121,6 @@ C["filger_spells"] = {
 			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
-			-- Swordguard Embroidery (Attack Power)
-			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -203,8 +201,6 @@ C["filger_spells"] = {
 			{spellID = 51052, filter = "CD"},
 			-- Icebound Fortitude
 			{spellID = 48792, filter = "CD"},
-			-- Unholy Frenzy
-			--WoD {spellID = 49016, filter = "CD"},
 			-- Summon Gargoyle
 			{spellID = 49206, filter = "CD"},
 
@@ -440,8 +436,6 @@ C["filger_spells"] = {
 			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
-			-- Swordguard Embroidery (Attack Power)
-			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -720,8 +714,6 @@ C["filger_spells"] = {
 			-- Enchants
 			-- General
 			-- Physical General
-			-- Swordguard Embroidery (Attack Power)
-			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Ranged
 			-- Mirror Scope (Crit)
 			{spellID = 109092, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1302,8 +1294,6 @@ C["filger_spells"] = {
 			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
-			-- Swordguard Embroidery (Attack Power)
-			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -1576,8 +1566,6 @@ C["filger_spells"] = {
 			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
-			-- Swordguard Embroidery (Attack Power)
-			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2108,8 +2096,6 @@ C["filger_spells"] = {
 			-- Enchants
 			-- General
 			-- Physical General
-			-- Swordguard Embroidery (Attack Power)
-			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2387,8 +2373,6 @@ C["filger_spells"] = {
 			-- Enchants
 			-- General
 			-- Physical General
-			-- Swordguard Embroidery (Attack Power)
-			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Agility)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2444,8 +2428,6 @@ C["filger_spells"] = {
 			{spellID = 974, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Riptide
 			{spellID = 61295, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Earthliving
-			--WoD {spellID = 51945, unitID = "target", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2927,8 +2909,6 @@ C["filger_spells"] = {
 			-- River's Song (Dodge)
 			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Physical General
-			-- Swordguard Embroidery (Attack Power)
-			--WoD {spellID = 125489, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Physical Melee
 			-- Dancing Steel (Strength)
 			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
@@ -3127,14 +3107,14 @@ C["filger_spells"] = {
 			{spellID = 47788, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Pain Suppression
 			{spellID = 33206, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Vigilance
+			{spellID = 114030, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Ironbark
 			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Devotion Aura
 			{spellID = 31821, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Rallying Cry
 			{spellID = 97463, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Unholy Frenzy
-			--WoD {spellID = 49016, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
@@ -3531,8 +3511,6 @@ C["filger_spells"] = {
 			{spellID = 48792, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pillar of Frost
 			{spellID = 51271, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Unholy Frenzy
-			--WoD {spellID = 49016, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Death's Advance
 			{spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs

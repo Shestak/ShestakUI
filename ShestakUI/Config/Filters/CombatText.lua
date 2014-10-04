@@ -242,7 +242,6 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[73921] = 3		-- Healing Rain
 		T.aoespam[52042] = 3		-- Healing Stream Totem
 		T.aoespam[1064] = 3			-- Chain Heal
-		--WoD T.aoespam[51945] = 3		-- Earthliving
 		T.aoespam[61295] = 3		-- Riptide
 		T.aoespam[98021] = 3		-- Spirit Link
 		T.aoespam[114911] = 3		-- Ancestral Guidance
