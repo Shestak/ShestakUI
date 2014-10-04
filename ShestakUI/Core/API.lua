@@ -228,6 +228,7 @@ local function SkinButton(f, strip)
 	if f.RightSeparator then f.RightSeparator:SetAlpha(0) end
 	if f.Flash then f.Flash:SetAlpha(0) end
 
+	if f.TopLeft then f.TopLeft:Hide() end
 	if f.TopRight then f.TopRight:Hide() end
 	if f.BottomLeft then f.BottomLeft:Hide() end
 	if f.BottomRight then f.BottomRight:Hide() end
