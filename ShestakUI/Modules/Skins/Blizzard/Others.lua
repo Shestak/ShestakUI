@@ -83,9 +83,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		end
 
 		-- Cinematic popup
+		_G["CinematicFrameCloseDialog"]:SetScale(C.general.uiscale)
 		_G["CinematicFrameCloseDialog"]:SetTemplate("Transparent")
 		_G["CinematicFrameCloseDialogConfirmButton"]:SkinButton()
 		_G["CinematicFrameCloseDialogResumeButton"]:SkinButton()
+		_G["CinematicFrameCloseDialogResumeButton"]:SetPoint("LEFT", _G["CinematicFrameCloseDialogConfirmButton"], "RIGHT", 15, 0)
 
 		-- PetBattle popup
 		_G["PetBattleQueueReadyFrame"]:SetTemplate("Transparent")
