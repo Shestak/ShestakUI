@@ -3119,8 +3119,6 @@ C["filger_spells"] = {
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
 			{spellID = 77764, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Innervate
-			--WoD {spellID = 29166, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mass Spell Reflection
 			{spellID = 114028, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Grounding Totem
@@ -3532,8 +3530,6 @@ C["filger_spells"] = {
 			{spellID = 22812, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Ironbark
 			{spellID = 102342, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Innervate
-			--WoD {spellID = 29166, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Nature's Grasp
 			--WoD {spellID = 16689, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar

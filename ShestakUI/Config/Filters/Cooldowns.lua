@@ -12,7 +12,6 @@ if C.raidcooldown.enable == true then
 		[20707] = 600,	-- Soulstone
 		[126393] = 600,	-- Eternal Guardian
 		--WoD [64901] = 360,	-- Hymn of Hope
-		--WoD [29166] = 180,	-- Innervate
 		--WoD [16190] = 180,	-- Mana Tide Totem
 		[108280] = 180,	-- Healing Tide Totem
 	}
@@ -76,7 +75,6 @@ if C.enemycooldown.enable == true then
 		--WoD [676] = 60,		-- Disarm
 		-- Mana regen
 		--WoD [54428] = 120,	-- Divine Plea
-		--WoD [29166] = 180,	-- Innervate
 		--WoD [16190] = 180,	-- Mana Tide Totem
 	}
 end

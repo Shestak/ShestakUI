@@ -11,18 +11,9 @@ local MyUnits = {player = true, vehicle = true, pet = true}
 function Filger:TooltipOnEnter()
 	if self.spellID > 20 then
 		local str = "spell:%s"
-		local BadTotems = {
-			[8076] = 8075,
-			[8972] = 8071,
-			[5677] = 5675,
-		}
 		GameTooltip:ClearLines()
 		GameTooltip:SetOwner(self, "ANCHOR_TOPRIGHT", 0, 3)
-		if BadTotems[self.spell] then
-			GameTooltip:SetHyperlink(format(str, BadTotems[self.spellID]))
-		else
-			GameTooltip:SetHyperlink(format(str, self.spellID))
-		end
+		GameTooltip:SetHyperlink(format(str, self.spellID))
 		GameTooltip:Show()
 	end
 end

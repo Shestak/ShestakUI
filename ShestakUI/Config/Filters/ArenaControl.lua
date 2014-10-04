@@ -126,7 +126,6 @@ T.ArenaControl = {
 	--WoD [GetSpellInfo(676)] = 1,	-- Disarm
 
 	-- Buffs
-	--WoD [GetSpellInfo(29166)] = 1,	-- Innervate
 	[GetSpellInfo(1022)] = 1,	-- Hand of Protection
 	[GetSpellInfo(6940)] = 1,	-- Hand of Sacrifice
 	[GetSpellInfo(1044)] = 1,	-- Hand of Freedom
