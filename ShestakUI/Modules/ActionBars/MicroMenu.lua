@@ -11,13 +11,11 @@ local microbuttons = {
 	"AchievementMicroButton",
 	"QuestLogMicroButton",
 	"GuildMicroButton",
-	--WoD "PVPMicroButton",
 	"LFDMicroButton",
 	"CompanionsMicroButton",
 	"EJMicroButton",
-	"MainMenuMicroButton",
-	"HelpMicroButton",
-	"StoreMicroButton"
+	"StoreMicroButton",
+	"MainMenuMicroButton"
 }
 
 local frame = CreateFrame("Frame", "MicroAnchor", oUF_PetBattleFrameHider)
