@@ -10,10 +10,11 @@ frame:SetScript("OnEvent", function()
 	local curframe
 	local title = "ConsolidatedBuffsTooltipBuff"
 	for i = 1, NUM_LE_RAID_BUFF_TYPES do
-		curframe = CreateFrame("Cooldown", title..i.."Duration", _G[title..i])
+		curframe = CreateFrame("Cooldown", title..i.."Duration", _G[title..i], "CooldownFrameTemplate")
 
 		curframe:SetAllPoints(_G[title..i].icon)
 		curframe:SetReverse(true)
+		curframe:SetDrawEdge(false)
 
 		_G[title..i]:HookScript("OnShow", function()
 			local _, _, _, WholeDur, EndTime = GetRaidBuffTrayAuraInfo(i)
