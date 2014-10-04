@@ -143,9 +143,9 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].target_bar)},
 
 			-- Blood Plague
-			--WoD {spellID = 59879, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 55078, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Fever
-			--WoD {spellID = 59921, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 55095, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",

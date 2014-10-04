@@ -27,10 +27,9 @@ if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[55095] = 3		-- Frost Fever
 		T.aoespam[55078] = 3		-- Blood Plague
-		T.aoespam[48721] = 0		-- Blood Boil
+		T.aoespam[50842] = 0		-- Blood Boil
 		T.aoespam[49184] = 0		-- Howling Blast
 		T.aoespam[52212] = 3		-- Death and Decay
-		T.aoespam[55050] = 0		-- Heart Strike
 		T.aoespam[50401] = 3		-- Razor Frost
 		T.aoespam[91776] = 3		-- Claw (Ghoul)
 		T.aoespam[49020] = 0		-- Obliterate
