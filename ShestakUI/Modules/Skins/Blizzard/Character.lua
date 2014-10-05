@@ -35,8 +35,10 @@ local function LoadSkin()
 		_G["Character"..i.."Frame"]:Hide()
 		local icon = _G["Character"..i.."IconTexture"]
 		local slot = _G["Character"..i]
+		local border = _G["Character"..i].IconBorder
 
-		slot:StripTextures()
+		border:Kill()
+
 		slot:StyleButton()
 		slot:SetNormalTexture("")
 		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
