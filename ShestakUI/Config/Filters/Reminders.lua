@@ -85,14 +85,13 @@ end
 
 	Type of Check:
 		spells - List of spells in a group, if you have anyone of these spells the icon will hide.
-		weapon - Run a weapon enchant check instead of a spell check
 
 	Spells only Requirements:
 		negate_spells - List of spells in a group, if you have anyone of these spells the icon will immediately hide and stop running the spell check (these should be other peoples spells)
-		reversecheck - only works if you provide a role or a spec, instead of hiding the frame when you have the buff, it shows the frame when you have the buff, doesn't work with weapons
-		negate_reversecheck - if reversecheck is set you can set a spec to not follow the reverse check, doesn't work with weapons
+		reversecheck - only works if you provide a role or a spec, instead of hiding the frame when you have the buff, it shows the frame when you have the buff
+		negate_reversecheck - if reversecheck is set you can set a spec to not follow the reverse check
 
-	Requirements: (These work for both spell and weapon checks)
+	Requirements:
 		role - you must be a certain role for it to display (Tank, Melee, Caster)
 		spec - you must be active in a specific spec for it to display (1, 2, 3) note: spec order can be viewed from top to bottom when you open your talent pane
 		level - the minimum level you must be (most of the time we don't need to use this because it will register the spell learned event if you don't know the spell, but in the case of weapon enchants this is useful)
@@ -276,13 +275,6 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 			},
-			--WoD [2] = {	-- Weapons enchants group
-				-- ["weapon"] = true,
-				-- ["combat"] = true,
-				-- ["instance"] = true,
-				-- ["pvp"] = true,
-				-- ["level"] = 10,
-			-- },
 		},
 		WARLOCK = {
 			[1] = {	-- Dark Intent group
