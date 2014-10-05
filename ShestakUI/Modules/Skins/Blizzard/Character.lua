@@ -31,11 +31,12 @@ local function LoadSkin()
 	select(11, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
 	select(11, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
 
-	for _, slot in pairs(slots) do
-		_G["Character"..slot.."Frame"]:Hide()
-		local icon = _G["Character"..slot.."IconTexture"]
-		local slot = _G["Character"..slot]
+	for _, i in pairs(slots) do
+		_G["Character"..i.."Frame"]:Hide()
+		local icon = _G["Character"..i.."IconTexture"]
+		local slot = _G["Character"..i]
 
+		slot:StripTextures()
 		slot:StyleButton()
 		slot:SetNormalTexture("")
 		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
