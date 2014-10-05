@@ -231,7 +231,7 @@ if C.reminder.solo_buffs_enable == true then
 				["pvp"] = true,
 			},
 		},
-		--WoD PRIEST = {
+		PRIEST = {
 			-- [1] = {	-- Inner Fire/Will group
 				-- ["spells"] = {
 					-- 588,	-- Inner Fire
@@ -241,7 +241,19 @@ if C.reminder.solo_buffs_enable == true then
 				-- ["instance"] = true,
 				-- ["pvp"] = true
 			-- },
-		-- },
+			[1] = {	-- Stamina group
+				["spells"] = {
+					21562,	-- Power Word: Fortitude
+				},
+				["negate_spells"] = {
+					469,	-- Commanding Shout
+					90364,	-- Qiraji Fortitude
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true
+			},
+		},
 		ROGUE = {
 			[1] = {	-- Lethal Poisons group
 				["spells"] = {
