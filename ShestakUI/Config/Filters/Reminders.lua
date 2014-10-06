@@ -32,12 +32,12 @@ if C.reminder.raid_buffs_enable == true then
 		},
 		Stat = {
 			20217,	-- Blessing of Kings
-			--WoD 117666,	-- Legacy of the Emperor
+			115921,	-- Legacy of the Emperor
+			116781,	-- Legacy of the White Tiger
 			90363,	-- Embrace of the Shale Spider
 			1126,	-- Mark of the Wild
 		},
 		Stamina = {
-			109773,	-- Dark Intent
 			469,	-- Commanding Shout
 			90364,	-- Qiraji Fortitude
 			111922,	-- Runescroll of Fortitude III
@@ -48,17 +48,11 @@ if C.reminder.raid_buffs_enable == true then
 	-- Caster buffs
 	function T.ReminderCasterBuffs()
 		Spell5Buff = {	-- Spell Power
-			--WoD 77747,	-- Burning Wrath
 			109773,	-- Dark Intent
 			126309,	-- Still Water
+			128433,	-- Serpent's Swiftness
 			61316,	-- Dalaran Brilliance
 			1459,	-- Arcane Brilliance
-		}
-		Spell6Buff = {	-- Spell Haste
-			24907,	-- Moonkin Aura
-			49868,	-- Mind Quickening
-			135678,	-- Energizing Spores
-			--WoD 51470,	-- Elemental Oath
 		}
 	end
 
@@ -69,14 +63,16 @@ if C.reminder.raid_buffs_enable == true then
 			19506,	-- Trueshot Aura
 			57330,	-- Horn of Winter
 		}
-		Spell6Buff = {	-- Melee and Ranged Haste
-			--WoD 30809,	-- Unleashed Rage
-			113742,	-- Swiftblade's Cunning
-			128432,	-- Cackling Howl
-			128433,	-- Serpent's Swiftness
-			55610,	-- Unholy Aura
-		}
 	end
+
+	Spell6Buff = {	-- Haste
+		49868,	-- Mind Quickening
+		135678,	-- Energizing Spores
+		113742,	-- Swiftblade's Cunning
+		128432,	-- Cackling Howl
+		55610,	-- Unholy Aura
+		116956,	-- Grace of Air
+	}
 end
 
 ----------------------------------------------------------------------------------------
@@ -131,24 +127,9 @@ if C.reminder.solo_buffs_enable == true then
 				["spells"] = {
 					1126,	-- Mark of the Wild
 				},
-				["negate_spells"] = {
-					20217,	-- Blessing of Kings
-					--WoD 117666,	-- Legacy of the Emperor
-					90363,	-- Embrace of the Shale Spider
-				},
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
-			},
-		},
-		HUNTER = {
-			[1] = {	-- Aspects group
-				["spells"] = {
-					--WoD 13165,	-- Aspect of the Hawk
-					109260,	-- Aspect of the Iron Hawk
-				},
-				["instance"] = true,
-				["personal"] = true,
 			},
 		},
 		MAGE = {
@@ -165,12 +146,13 @@ if C.reminder.solo_buffs_enable == true then
 		MONK = {
 			[1] = {	-- Legacy of the Emperor group
 				["spells"] = {
-					--WoD 117666,	-- Legacy of the Emperor
+					115921,	-- Legacy of the Emperor
 				},
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
 					20217,	-- Blessing of Kings
 					90363,	-- Embrace of the Shale Spider
+					116781,	-- Legacy of the White Tiger
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -181,11 +163,7 @@ if C.reminder.solo_buffs_enable == true then
 					116781,	-- Legacy of the White Tiger
 				},
 				["negate_spells"] = {
-					1459,	-- Arcane Brilliance
-					61316,	-- Dalaran Brilliance
-					24932,	-- Leader of the Pack
-					90309,	-- Terrifying Roar
-					24604,	-- Furious Howl
+					90363,	-- Embrace of the Shale Spider
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -208,7 +186,8 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
-					--WoD 117666,	-- Legacy of the Emperor
+					115921,	-- Legacy of the Emperor
+					116781,	-- Legacy of the White Tiger
 					90363,	-- Embrace of the Shale Spider
 					19740,	-- Blessing of Might
 				},
@@ -223,7 +202,7 @@ if C.reminder.solo_buffs_enable == true then
 				["negate_spells"] = {
 					116956,	-- Grace of Air
 					93435,	-- Roar of Courage
-					127830,	-- Spirit Beast Blessing
+					128997,	-- Spirit Beast Blessing
 					20217,	-- Blessing of Kings
 				},
 				["combat"] = true,
@@ -232,15 +211,6 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		PRIEST = {
-			-- [1] = {	-- Inner Fire/Will group
-				-- ["spells"] = {
-					-- 588,	-- Inner Fire
-					-- 73413,	-- Inner Will
-				-- },
-				-- ["combat"] = true,
-				-- ["instance"] = true,
-				-- ["pvp"] = true
-			-- },
 			[1] = {	-- Stamina group
 				["spells"] = {
 					21562,	-- Power Word: Fortitude
@@ -293,11 +263,6 @@ if C.reminder.solo_buffs_enable == true then
 				["spells"] = {
 					109773,	-- Dark Intent
 				},
-				["negate_spells"] = {
-					1459,	-- Arcane Brilliance
-					61316,	-- Dalaran Brilliance
-					--WoD 77747,	-- Burning Wrath
-				},
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
@@ -310,7 +275,6 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					21562,	-- Power Word: Fortitude
-					109773,	-- Dark Intent
 					90364,	-- Qiraji Fortitude
 					6673,	-- Battle Shout
 				},
