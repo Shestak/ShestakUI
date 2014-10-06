@@ -133,7 +133,7 @@ end
 for i = 1, #tab do
 	local frame = CreateFrame("Frame", "ReminderFrame"..i, UIParent)
 	frame:CreatePanel("Default", C.reminder.solo_buffs_size, C.reminder.solo_buffs_size, unpack(C.position.self_buffs))
-	frame:SetFrameLevel(1)
+	frame:SetFrameLevel(6)
 	frame.id = i
 
 	frame.icon = frame:CreateTexture(nil, "OVERLAY")
