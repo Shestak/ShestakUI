@@ -84,6 +84,7 @@ end
 
 	Spells only Requirements:
 		negate_spells - List of spells in a group, if you have anyone of these spells the icon will immediately hide and stop running the spell check (these should be other peoples spells)
+		personal - like a negate_spells but only for your spells
 		reversecheck - only works if you provide a role or a spec, instead of hiding the frame when you have the buff, it shows the frame when you have the buff
 		negate_reversecheck - if reversecheck is set you can set a spec to not follow the reverse check
 
@@ -91,7 +92,6 @@ end
 		role - you must be a certain role for it to display (Tank, Melee, Caster)
 		spec - you must be active in a specific spec for it to display (1, 2, 3) note: spec order can be viewed from top to bottom when you open your talent pane
 		level - the minimum level you must be (most of the time we don't need to use this because it will register the spell learned event if you don't know the spell, but in the case of weapon enchants this is useful)
-		personal - aura must come from the player
 
 	Additional Checks: (Note we always run a check when gaining/losing an aura)
 		instance - check when entering a party/raid instance
@@ -189,6 +189,8 @@ if C.reminder.solo_buffs_enable == true then
 					115921,	-- Legacy of the Emperor
 					116781,	-- Legacy of the White Tiger
 					90363,	-- Embrace of the Shale Spider
+				},
+				["personal"] = {
 					19740,	-- Blessing of Might
 				},
 				["combat"] = true,
@@ -203,6 +205,8 @@ if C.reminder.solo_buffs_enable == true then
 					116956,	-- Grace of Air
 					93435,	-- Roar of Courage
 					128997,	-- Spirit Beast Blessing
+				},
+				["personal"] = {
 					20217,	-- Blessing of Kings
 				},
 				["combat"] = true,
@@ -236,10 +240,8 @@ if C.reminder.solo_buffs_enable == true then
 			},
 			[2] = {	--  Non-Lethal Poisons group
 				["spells"] = {
-					--WoD 5761,	-- Mind-numbing Poison
 					3408,	-- Crippling Poison
 					108211,	-- Leeching Poison
-					--WoD 108215,	-- Paralytic Poison
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -276,6 +278,8 @@ if C.reminder.solo_buffs_enable == true then
 				["negate_spells"] = {
 					21562,	-- Power Word: Fortitude
 					90364,	-- Qiraji Fortitude
+				},
+				["personal"] = {
 					6673,	-- Battle Shout
 				},
 				["combat"] = true,
@@ -288,6 +292,8 @@ if C.reminder.solo_buffs_enable == true then
 				["negate_spells"] = {
 					19506,	-- Trueshot Aura
 					57330,	-- Horn of Winter
+				},
+				["personal"] = {
 					469,	-- Commanding Shout
 				},
 				["combat"] = true,

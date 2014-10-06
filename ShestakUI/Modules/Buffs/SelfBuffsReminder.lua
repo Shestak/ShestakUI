@@ -25,6 +25,16 @@ local function OnEvent(self, event, arg1, arg2)
 		end
 	end
 
+	if group.personal then
+		for _, buff in pairs(group.personal) do
+			local name = GetSpellInfo(buff)
+			local _, _, _, _, _, _, _, unitCaster = UnitBuff("player", name)
+			if name and unitCaster == "player" then
+				return
+			end
+		end
+	end
+
 	for _, buff in pairs(group.spells) do
 		local name, _, icon = GetSpellInfo(buff)
 		local usable, nomana = IsUsableSpell(name)
@@ -58,7 +68,6 @@ local function OnEvent(self, event, arg1, arg2)
 	local role = group.role
 	local spec = group.spec
 	local combat = group.combat
-	local personal = group.personal
 	local instance = group.instance
 	local pvp = group.pvp
 	local reversecheck = group.reversecheck
@@ -98,17 +107,10 @@ local function OnEvent(self, event, arg1, arg2)
 	specpass == true and rolepass == true and not UnitInVehicle("player") then
 		for _, buff in pairs(group.spells) do
 			local name = GetSpellInfo(buff)
-			local _, _, icon, _, _, _, _, unitCaster = UnitBuff("player", name)
-			if personal and personal == true then
-				if name and icon and unitCaster == "player" then
-					self:Hide()
-					return
-				end
-			else
-				if name and icon then
-					self:Hide()
-					return
-				end
+			local _, _, icon = UnitBuff("player", name)
+			if name and icon then
+				self:Hide()
+				return
 			end
 		end
 		self:Show()
