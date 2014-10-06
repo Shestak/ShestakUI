@@ -113,7 +113,6 @@ T.DiminishingSpells = {
 	[6789] = {"horror"},		-- Mortal Coil
 
 	-- Random Stuns
-	--WoD [113953] = {"rndstun"},		-- Paralysis (Poison)
 	[77505] = {"rndstun"},		-- Earthquake
 	[118895] = {"rndstun"},		-- Dragon Roar
 	[7922] = {"rndstun"},		-- Charge Stun

@@ -91,7 +91,7 @@ end
 	Requirements:
 		role - you must be a certain role for it to display (Tank, Melee, Caster)
 		spec - you must be active in a specific spec for it to display (1, 2, 3) note: spec order can be viewed from top to bottom when you open your talent pane
-		level - the minimum level you must be (most of the time we don't need to use this because it will register the spell learned event if you don't know the spell, but in the case of weapon enchants this is useful)
+		level - the minimum level you must be (most of the time we don't need to use this because it will register the spell learned event if you don't know the spell, but in some cases it may be useful)
 
 	Additional Checks: (Note we always run a check when gaining/losing an aura)
 		instance - check when entering a party/raid instance

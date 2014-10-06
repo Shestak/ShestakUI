@@ -2129,8 +2129,6 @@ C["filger_spells"] = {
 			{spellID = 91021, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Deadly Poison
 			{spellID = 2818, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Mind-numbing Poison
-			--WoD {spellID = 5760, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Crippling Poison
 			{spellID = 3409, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Wound Poison
@@ -3370,8 +3368,6 @@ C["filger_spells"] = {
 			{spellID = 26679, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Crippling Poison
 			{spellID = 3409, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mind-numbing Poison
-			--WoD {spellID = 5760, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Shaman
 			-- Hex
