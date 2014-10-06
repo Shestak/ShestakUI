@@ -130,7 +130,6 @@ T.ArenaControl = {
 	[GetSpellInfo(6940)] = 1,	-- Hand of Sacrifice
 	[GetSpellInfo(1044)] = 1,	-- Hand of Freedom
 	[GetSpellInfo(31821)] = 1,	-- Devotion Aura
-	--WoD [GetSpellInfo(54428)] = 1,	-- Divine Plea
 	[GetSpellInfo(33206)] = 1,	-- Pain Suppression
 	--WoD [GetSpellInfo(96267)] = 1,	-- Inner Focus
 	[GetSpellInfo(8178)] = 1,	-- Grounding Totem

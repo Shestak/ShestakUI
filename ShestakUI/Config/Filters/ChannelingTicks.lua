@@ -23,7 +23,6 @@ T.CastBarTicks = {
 	[GetSpellInfo(15407)] = 3,	-- Mind Flay
 	[GetSpellInfo(48045)] = 5,	-- Mind Sear
 	[GetSpellInfo(47540)] = 2,	-- Penance
-	--WoD [GetSpellInfo(64901)] = 4,	-- Hymn of Hope
 	[GetSpellInfo(64843)] = 4,	-- Divine Hymn
 	[GetSpellInfo(129197)] = 3,	-- Mind Flay (Insanity)
 	-- Warlock

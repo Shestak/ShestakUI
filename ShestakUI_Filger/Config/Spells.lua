@@ -1447,8 +1447,6 @@ C["filger_spells"] = {
 			{spellID = 31850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Protection
 			{spellID = 498, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Plea
-			--WoD {spellID = 54428, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Speed of Light
 			{spellID = 85499, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Eternal Flame
@@ -1658,8 +1656,6 @@ C["filger_spells"] = {
 			{spellID = 31821, filter = "CD"},
 			-- Hand of Sacrifice
 			{spellID = 6940, filter = "CD"},
-			-- Divine Plea
-			--WoD {spellID = 54428, filter = "CD"},
 			-- Avenging Wrath
 			{spellID = 31884, filter = "CD"},
 			-- Ardent Defender
