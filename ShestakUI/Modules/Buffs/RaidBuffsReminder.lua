@@ -68,7 +68,9 @@ local function OnAuraChange(self, event, arg1, unit)
 	if flaskbuffs and flaskbuffs[1] then
 		for i, flaskbuffs in pairs(flaskbuffs) do
 			local name, _, icon = GetSpellInfo(flaskbuffs)
-			FlaskFrame.t:SetTexture(icon)
+			if event == "PLAYER_ENTERING_WORLD" then
+				FlaskFrame.t:SetTexture(icon)
+			end
 			if UnitAura("player", name) then
 				FlaskFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 				flask = true
@@ -82,7 +84,9 @@ local function OnAuraChange(self, event, arg1, unit)
 	if foodbuffs and foodbuffs[1] then
 		for i, foodbuffs in pairs(foodbuffs) do
 			local name, _, icon = GetSpellInfo(foodbuffs)
-			FoodFrame.t:SetTexture(icon)
+			if event == "PLAYER_ENTERING_WORLD" then
+				FoodFrame.t:SetTexture(icon)
+			end
 			if UnitAura("player", name) then
 				FoodFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 				food = true
@@ -96,7 +100,9 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	for i, statbuffs in pairs(statbuffs) do
 		local name, _, icon = GetSpellInfo(statbuffs)
-		StatFrame.t:SetTexture(icon)
+		if event == "PLAYER_ENTERING_WORLD" then
+			StatFrame.t:SetTexture(icon)
+		end
 		if UnitAura("player", name) then
 			StatFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 			stat = true
@@ -109,7 +115,9 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	for i, staminabuffs in pairs(staminabuffs) do
 		local name, _, icon = GetSpellInfo(staminabuffs)
-		StaminaFrame.t:SetTexture(icon)
+		if event == "PLAYER_ENTERING_WORLD" then
+			StaminaFrame.t:SetTexture(icon)
+		end
 		if UnitAura("player", name) then
 			StaminaFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 			stamina = true
@@ -122,7 +130,9 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	for i, Spell5Buff in pairs(Spell5Buff) do
 		local name, _, icon = GetSpellInfo(Spell5Buff)
-		Spell5Frame.t:SetTexture(icon)
+		if event == "PLAYER_ENTERING_WORLD" then
+			Spell5Frame.t:SetTexture(icon)
+		end
 		if UnitAura("player", name) then
 			Spell5Frame:SetAlpha(C.reminder.raid_buffs_alpha)
 			spell5 = true
@@ -135,7 +145,9 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	for i, Spell6Buff in pairs(Spell6Buff) do
 		local name, _, icon = GetSpellInfo(Spell6Buff)
-		Spell6Frame.t:SetTexture(icon)
+		if event == "PLAYER_ENTERING_WORLD" then
+			Spell6Frame.t:SetTexture(icon)
+		end
 		if UnitAura("player", name) then
 			Spell6Frame:SetAlpha(C.reminder.raid_buffs_alpha)
 			spell6 = true
