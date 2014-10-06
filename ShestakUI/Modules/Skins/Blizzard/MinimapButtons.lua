@@ -52,7 +52,7 @@ end
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
-frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 frame:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_LOGIN" then
 		for i = 1, Minimap:GetNumChildren() do
@@ -60,6 +60,9 @@ frame:SetScript("OnEvent", function(self, event)
 		end
 	end
 
-	SkinButton(WIM3MinimapButton)
+	if WIM3MinimapButton and WIM3MinimapButton:GetNumRegions() <= 9 then
+		SkinButton(WIM3MinimapButton)
+		SkinButton(WIM3MinimapButton)
+	end
 	self = nil
 end)
