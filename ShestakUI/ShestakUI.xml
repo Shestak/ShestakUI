@@ -199,8 +199,8 @@
 
 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
 	<!-- <Script file="Modules\Skins\Ace3.lua"/>
-	<Script file="Modules\Skins\AtlasLoot.lua"/>
-	<Script file="Modules\Skins\Aurora.lua"/> -->
+	<Script file="Modules\Skins\AtlasLoot.lua"/> -->
+	<Script file="Modules\Skins\Aurora.lua"/>
 	<Script file="Modules\Skins\BigWigs.lua"/>
 	<!-- <Script file="Modules\Skins\BloodShieldTracker.lua"/>
 	<Script file="Modules\Skins\Capping.lua"/>
