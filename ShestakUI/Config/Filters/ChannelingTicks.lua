@@ -8,7 +8,7 @@ if C.unitframe.enable ~= true or C.unitframe.castbar_ticks ~= true then return e
 ----------------------------------------------------------------------------------------
 T.CastBarTicks = {
 	-- Druid
-	--WoD [GetSpellInfo(44203)] = 4,	-- Tranquility
+	[GetSpellInfo(740)] = 4,	-- Tranquility
 	[GetSpellInfo(16914)] = 10,	-- Hurricane
 	[GetSpellInfo(106996)] = 10,-- Astral Storm
 	-- Mage
@@ -27,9 +27,8 @@ T.CastBarTicks = {
 	[GetSpellInfo(129197)] = 3,	-- Mind Flay (Insanity)
 	-- Warlock
 	[GetSpellInfo(689)] = 6,	-- Drain Life
-	--WoD [GetSpellInfo(1120)] = 6,	-- Drain Soul
+	[GetSpellInfo(103103)] = 3,	-- Drain Soul
 	[GetSpellInfo(755)] = 6,	-- Health Funnel
 	[GetSpellInfo(1949)] = 15,	-- Hellfire
 	[GetSpellInfo(5740)] = 4,	-- Rain of Fire
-	[GetSpellInfo(103103)] = 3,	-- Malefic Grasp
 }

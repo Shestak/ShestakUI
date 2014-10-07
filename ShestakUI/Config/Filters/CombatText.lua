@@ -51,7 +51,7 @@ elseif T.class == "DRUID" then
 		T.aoespam[48438] = 3		-- Wild Growth
 		T.aoespam[8936] = 3			-- Regrowth
 		T.aoespam[33763] = 3		-- Lifebloom
-		T.aoespam[44203] = 3		-- Tranquility
+		T.aoespam[157982] = 3		-- Tranquility
 		T.aoespam[81269] = 3		-- Efflorescence
 		T.aoespam[142424] = 3		-- Efflorescence (Force of Nature)
 		T.aoespam[102792] = 3		-- Wild Mushroom: Bloom
@@ -274,7 +274,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[89420] = 3		-- Drain Life (Soulburn)
 		T.aoespam[5857] = 3			-- Hellfire
 		T.aoespam[129476] = 3		-- Immolation Aura
-		T.aoespam[103103] = 3		-- Malefic Grasp
+		T.aoespam[103103] = 3		-- Drain Soul
 		T.aoespam[86040] = 3		-- Hand of Gul'dan
 		T.aoespam[124915] = 3		-- Chaos Wave
 		T.aoespam[47960] = 3		-- Shadowflame
