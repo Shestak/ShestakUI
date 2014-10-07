@@ -52,25 +52,22 @@ elseif T.class == "DRUID" then
 		T.aoespam[8936] = 3			-- Regrowth
 		T.aoespam[33763] = 3		-- Lifebloom
 		T.aoespam[157982] = 3		-- Tranquility
-		T.aoespam[81269] = 3		-- Efflorescence
-		--WoD T.aoespam[142424] = 3		-- Efflorescence (Force of Nature)
-		--WoD T.aoespam[102792] = 3		-- Wild Mushroom: Bloom
+		T.aoespam[81269] = 3		-- Wild Mushroom
 		T.aoespam[124988] = 3		-- Nature's Vigil
 		T.aoespam[162359] = 3		-- Genesis
 		T.aoespam[144876] = 3		-- Spark of Life (T16)
 		-- Damaging spells
-		T.aoespam[8921] = 3			-- Moonfire
-		T.aoespam[93402] = 3		-- Sunfire
+		T.aoespam[164812] = 3		-- Moonfire
+		T.aoespam[164815] = 3		-- Sunfire
 		T.aoespam[42231] = 3		-- Hurricane
 		T.aoespam[106998] = 3		-- Astral Storm
 		T.aoespam[50288] = 3		-- Starfall
-		T.aoespam[78777] = 3		-- Wild Mushroom: Detonate
 		T.aoespam[61391] = 0		-- Typhoon
 		T.aoespam[1822] = 3			-- Rake
-		T.aoespam[33876] = 0		-- Mangle (Cat Form)
+		--WoD T.aoespam[33876] = 0		-- Mangle (Cat Form)
 		--WoD T.aoespam[33878] = 0		-- Mangle (Bear Form)
-		T.aoespam[62078] = 0		-- Swipe (Cat Form)
-		T.aoespam[779] = 0			-- Swipe (Bear Form)
+		--WoD T.aoespam[62078] = 0		-- Swipe (Cat Form)
+		--WoD T.aoespam[779] = 0			-- Swipe (Bear Form)
 		T.aoespam[33745] = 3		-- Lacerate
 		T.aoespam[77758] = 3		-- Thrash (Bear Form)
 		T.aoespam[106830] = 3		-- Thrash (Cat Form)
@@ -80,7 +77,7 @@ elseif T.class == "DRUID" then
 	if C.combattext.healing then
 		T.healfilter[145109] = true	-- Ysera's Gift (Self)
 		T.healfilter[145110] = true	-- Ysera's Gift
-		T.healfilter[34299] = true	-- Leader of the Pack
+		--WoD T.healfilter[34299] = true	-- Leader of the Pack
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then

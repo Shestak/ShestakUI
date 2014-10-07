@@ -468,9 +468,9 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].target_debuff_icon)},
 
 			-- Moonfire
-			{spellID = 8921, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 164812, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Sunfire
-			{spellID = 93402, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 164815, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 1822, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rip
