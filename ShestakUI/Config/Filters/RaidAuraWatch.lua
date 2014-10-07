@@ -335,7 +335,6 @@ T.RaidDebuffs = {
 	[SpellName(24394)] = 3,		-- Intimidation
 	--WoD [SpellName(1513)] = 3,		-- Scare Beast
 	--WoD [SpellName(19503)] = 3,		-- Scatter Shot
-	--WoD [SpellName(34490)] = 3,		-- Silence Shot
 	-- Mage
 	[SpellName(61305)] = 3,		-- Polymorph
 	[SpellName(82691)] = 3,		-- Ring of Frost

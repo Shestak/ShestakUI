@@ -79,7 +79,6 @@ T.ArenaControl = {
 	-- Silences
 	[GetSpellInfo(47476)] = 4,	-- Strangulate
 	[GetSpellInfo(81261)] = 4,	-- Solar Beam
-	--WoD [GetSpellInfo(34490)] = 4,	-- Silencing Shot
 	[GetSpellInfo(44957)] = 4,	-- Nether Shock (Nether Ray)
 	[GetSpellInfo(102051)] = 4,	-- Frostjaw
 	--WoD [GetSpellInfo(55021)] = 4,	-- Improved Counterspell

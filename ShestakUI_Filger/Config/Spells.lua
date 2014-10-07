@@ -757,8 +757,6 @@ C["filger_spells"] = {
 
 			-- Wyvern Sting
 			{spellID = 19386, unitID = "focus", caster = "player", filter = "DEBUFF"},
-			-- Silencing Shot
-			--WoD {spellID = 34490, unitID = "focus", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -3206,8 +3204,6 @@ C["filger_spells"] = {
 			--WoD {spellID = 19503, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Wyvern Sting
 			{spellID = 19386, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Silencing Shot
-			--WoD {spellID = 34490, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Narrow Escape
 			{spellID = 136634, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entrapment
@@ -3574,8 +3570,6 @@ C["filger_spells"] = {
 			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Scatter Shot
 			--WoD {spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Silencing Shot
-			--WoD {spellID = 34490, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bad Manner (Monkey)
 			--WoD {spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Lullaby (Crane)

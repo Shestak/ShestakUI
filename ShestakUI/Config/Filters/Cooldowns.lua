@@ -27,7 +27,6 @@ if C.enemycooldown.enable == true then
 		[6552] = 15,	-- Pummel
 		[102051] = 20,	-- Frostjaw
 		[147362] = 24,	-- Counter Shot
-		--WoD [34490] = 24,	-- Silencing Shot
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
 		[115781] = 24,	-- Optical Blast

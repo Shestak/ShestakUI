@@ -16,8 +16,8 @@ T.DebuffWhiteList = {
 	[SpellName(115001)] = true,	-- Remorseless Winter
 	[SpellName(108194)] = true,	-- Asphyxiate
 	[SpellName(47476)] = true,	-- Strangulate
-	--WoD [SpellName(59879)] = true,	-- Blood Plague
-	--WoD [SpellName(59921)] = true,	-- Frost Fever
+	[SpellName(55078)] = true,	-- Blood Plague
+	[SpellName(55095)] = true,	-- Frost Fever
 	-- Druid
 	[SpellName(33786)] = true,	-- Cyclone
 	--WoD [SpellName(2637)] = true,	-- Hibernate
@@ -33,7 +33,6 @@ T.DebuffWhiteList = {
 	[SpellName(3355)] = true,	-- Freezing Trap
 	--WoD [SpellName(1513)] = true,	-- Scare Beast
 	--WoD [SpellName(19503)] = true,	-- Scatter Shot
-	--WoD [SpellName(34490)] = true,	-- Silencing Shot
 	-- Mage
 	[SpellName(118)] = true,	-- Polymorph
 	[SpellName(31661)] = true,	-- Dragon's Breath

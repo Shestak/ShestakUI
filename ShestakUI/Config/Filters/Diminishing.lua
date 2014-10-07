@@ -131,7 +131,6 @@ T.DiminishingSpells = {
 	-- Silences
 	[47476] = {"silence"},		-- Strangulate
 	[81261] = {"silence"},		-- Solar Beam
-	--WoD [34490] = {"silence"},		-- Silencing Shot
 	--WoD [50479] = {"silence"},		-- Nether Shock (Nether Ray)
 	--WoD [55021] = {"silence"},		-- Improved Counterspell
 	[102051] = {"silence"},		-- Frostjaw
