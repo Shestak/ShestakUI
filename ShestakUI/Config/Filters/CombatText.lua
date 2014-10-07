@@ -53,9 +53,10 @@ elseif T.class == "DRUID" then
 		T.aoespam[33763] = 3		-- Lifebloom
 		T.aoespam[157982] = 3		-- Tranquility
 		T.aoespam[81269] = 3		-- Efflorescence
-		T.aoespam[142424] = 3		-- Efflorescence (Force of Nature)
-		T.aoespam[102792] = 3		-- Wild Mushroom: Bloom
+		--WoD T.aoespam[142424] = 3		-- Efflorescence (Force of Nature)
+		--WoD T.aoespam[102792] = 3		-- Wild Mushroom: Bloom
 		T.aoespam[124988] = 3		-- Nature's Vigil
+		T.aoespam[162359] = 3		-- Genesis
 		T.aoespam[144876] = 3		-- Spark of Life (T16)
 		-- Damaging spells
 		T.aoespam[8921] = 3			-- Moonfire
