@@ -2093,8 +2093,6 @@ C["filger_spells"] = {
 			{spellID = 703, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Gouge
 			{spellID = 1776, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Weakened Armor
-			--WoD {spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Revealing Strike
 			{spellID = 84617, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vendetta
@@ -2807,8 +2805,6 @@ C["filger_spells"] = {
 			{spellID = 50227, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ultimatum
 			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Taste for Blood
-			--WoD {spellID = 60503, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
@@ -2902,10 +2898,6 @@ C["filger_spells"] = {
 			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Demoralizing Shout
 			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Weakened Armor
-			--WoD {spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Weakened Blows
-			--WoD {spellID = 115798, unitID = "target", caster = "all", filter = "DEBUFF", spec = 3},
 		},
 		{
 			Name = "COOLDOWN",
@@ -3357,7 +3349,7 @@ C["filger_spells"] = {
 			-- Shockwave
 			{spellID = 132168, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
-			--WoD {spellID = 20511, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 5246, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Staggering Shout
 			{spellID = 107566, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Warbringer
@@ -3707,7 +3699,7 @@ C["filger_spells"] = {
 			-- Shockwave
 			{spellID = 132168, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
-			--WoD {spellID = 20511, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 5246, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silenced (Gag Order)
 			{spellID = 18498, unitID = "target", caster = "all", filter = "DEBUFF"},
 

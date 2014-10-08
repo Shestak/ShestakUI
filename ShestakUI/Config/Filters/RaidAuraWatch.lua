@@ -375,7 +375,7 @@ T.RaidDebuffs = {
 	-- Warrior
 	[SpellName(46968)] = 3,		-- Shockwave
 	[SpellName(132169)] = 3,	-- Storm Bolt
-	--WoD [SpellName(20511)] = 3,		-- Intimidating Shout]]
+	[SpellName(5246)] = 3,		-- Intimidating Shout]]
 }
 
 T.RaidDebuffsReverse = {

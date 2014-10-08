@@ -83,8 +83,7 @@ T.DiminishingSpells = {
 	[5484] = {"fear"},			-- Howl of Terror
 	[6358] = {"fear"},			-- Seduction (Succubus)
 	[115268] = {"fear"},		-- Mesmerize (Shivarra)
-	[5246] = {"fear"},			-- Intimidating Shout (Main target)
-	--WoD [20511] = {"fear"},			-- Intimidating Shout (Secondary targets)
+	[5246] = {"fear"},			-- Intimidating Shout
 
 	-- Horrors
 	[64044] = {"horror"},		-- Psychic Horror

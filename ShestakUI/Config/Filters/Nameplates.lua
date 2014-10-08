@@ -83,10 +83,9 @@ T.DebuffWhiteList = {
 	[SpellName(348)] = true,	-- Immolate
 	[SpellName(30108)] = true,	-- Unstable Affliction
 	-- Warrior
-	--WoD [SpellName(20511)] = true,	-- Intimidating Shout
+	[SpellName(5246)] = true,	-- Intimidating Shout
 	[SpellName(132168)] = true,	-- Shockwave
 	[SpellName(115767)] = true,	-- Deep Wounds
-	--WoD [SpellName(113746)] = true,	-- Weakened Armor
 	-- Racial
 	[SpellName(25046)] = true,	-- Arcane Torrent
 	[SpellName(20549)] = true,	-- War Stomp

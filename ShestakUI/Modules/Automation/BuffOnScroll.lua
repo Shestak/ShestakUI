@@ -38,17 +38,11 @@ DRUID4 = {
 	1126,	-- Mark of the Wild
 }
 
-HUNTER1 = {
-	--WoD 13165,	-- Aspect of the Hawk
-}
+HUNTER1 = {}
 
-HUNTER2 = {
-	--WoD 13165,	-- Aspect of the Hawk
-}
+HUNTER2 = {}
 
-HUNTER3 = {
-	--WoD 13165,	-- Aspect of the Hawk
-}
+HUNTER3 = {}
 
 MAGE1 = {
 	1459,	-- Arcane Brilliance
@@ -88,17 +82,14 @@ PALADIN3 = {
 
 PRIEST1 = {
 	21562,	-- Power Word: Fortitude
-	--WoD 73413,	-- Inner Will
 }
 
 PRIEST2 = {
 	21562,	-- Power Word: Fortitude
-	--WoD 73413,	-- Inner Will
 }
 
 PRIEST3 = {
 	21562,	-- Power Word: Fortitude
-	--WoD 73413,	-- Inner Will
 }
 
 ROGUE1 = {}
@@ -107,9 +98,13 @@ ROGUE2 = {}
 
 ROGUE3 = {}
 
-SHAMAN1 = {}
+SHAMAN1 = {
+	324,	-- Lightning Shield
+}
 
-SHAMAN2 = {}
+SHAMAN2 = {
+	324,	-- Lightning Shield
+}
 
 SHAMAN3 = {}
 
