@@ -735,10 +735,6 @@ C["filger_spells"] = {
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Narrow Escape
 			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Web (Spider)
-			--WoD {spellID = 4167, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Pin (Crab)
-			--WoD {spellID = 50245, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2629,8 +2625,6 @@ C["filger_spells"] = {
 			-- Self
 			-- Curse of the Elements
 			--WoD {spellID = 1490, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of Exhaustion
-			--WoD {spellID = 18223, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Curse of Enfeeblement
 			--WoD {spellID = 109466, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Enslave Demon
@@ -3194,10 +3188,6 @@ C["filger_spells"] = {
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Trap
 			--WoD {spellID = 135382, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Web (Spider)
-			--WoD {spellID = 4167, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Pin (Crab)
-			--WoD {spellID = 50245, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Breath (Chimaera)
 			{spellID = 54644, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
@@ -3356,12 +3346,6 @@ C["filger_spells"] = {
 			{spellID = 115268, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Spell Lock (Felhunter)
-			--WoD {spellID = 24259, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Optical Blast (Observer)
-			--WoD {spellID = 115782, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Curse of Exhaustion
-			--WoD {spellID = 18223, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Conflagrate
 			{spellID = 17962, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shadowflame
@@ -3701,10 +3685,6 @@ C["filger_spells"] = {
 			{spellID = 115268, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
-			-- Spell Lock (Felhunter)
-			--WoD {spellID = 24259, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Optical Blast (Observer)
-			--WoD {spellID = 115782, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warrior
 			-- Spell Reflection

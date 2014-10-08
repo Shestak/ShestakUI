@@ -80,8 +80,6 @@ T.ArenaControl = {
 	[GetSpellInfo(31935)] = 4,	-- Avenger's Shield
 	[GetSpellInfo(15487)] = 4,	-- Silence
 	[GetSpellInfo(1330)] = 4,	-- Garrote - Silence
-	--WoD [GetSpellInfo(24259)] = 4,	-- Spell Lock (Felhunter)
-	--WoD [GetSpellInfo(115782)] = 4,	-- Optical Blast (Observer)
 
 	-- Roots
 	[GetSpellInfo(96294)] = 3,	-- Chains of Ice
@@ -90,9 +88,6 @@ T.ArenaControl = {
 	[GetSpellInfo(45334)] = 3,	-- Immobilized
 	--WoD [GetSpellInfo(19185)] = 3,	-- Entrapment
 	[GetSpellInfo(136634)] = 3,	-- Narrow Escape
-	--WoD [GetSpellInfo(50245)] = 3,	-- Pin (Crab)
-	--WoD [GetSpellInfo(4167)] = 3,	-- Web (Spider)
-	--WoD [GetSpellInfo(90327)] = 3,	-- Lock Jaw (Dog)
 	[GetSpellInfo(122)] = 3,	-- Frost Nova
 	[GetSpellInfo(33395)] = 3,	-- Freeze (Pet)
 	[GetSpellInfo(111340)] = 3,	-- Ice Ward

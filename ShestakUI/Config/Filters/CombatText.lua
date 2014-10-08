@@ -282,6 +282,10 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[30213] = 3		-- Legion Strike (Felguard)
 		T.aoespam[89753] = 3		-- Felstorm (Felguard)
 		T.aoespam[20153] = 3		-- Immolation (Infrenal)
+		T.aoespam[114654] = 0		-- Incinerate
+		T.aoespam[108685] = 0		-- Conflagrate
+		T.merge[157736] = 348		-- Immolate
+		T.merge[108686] = 348		-- Immolate
 	end
 	if C.combattext.healing then
 		T.healfilter[63106] = true	-- Siphon Life
@@ -290,7 +294,6 @@ elseif T.class == "WARLOCK" then
 	end
 elseif T.class == "WARRIOR" then
 	if C.combattext.merge_aoe_spam then
-		--WoD T.aoespam[845] = 0			-- Cleave
 		T.aoespam[46968] = 0		-- Shockwave
 		T.aoespam[6343] = 0			-- Thunder Clap
 		T.aoespam[1680] = 0			-- Whirlwind
