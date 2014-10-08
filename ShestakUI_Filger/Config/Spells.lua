@@ -276,8 +276,6 @@ C["filger_spells"] = {
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Defense
 			{spellID = 132402, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Glyph of Frenzied Regeneration
-			--WoD {spellID = 124769, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Roar
 			{spellID = 52610, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Berserk
@@ -292,8 +290,6 @@ C["filger_spells"] = {
 			{spellID = 48505, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Grasp
 			--WoD {spellID = 16689, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Owlkin Frenzy
-			--WoD {spellID = 48391, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dash
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
@@ -3352,15 +3348,13 @@ C["filger_spells"] = {
 			{spellID = 5246, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Staggering Shout
 			{spellID = 107566, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Warbringer
-			{spellID = 105771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hamstring
 			{spellID = 1715, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Piercing Howl
 			{spellID = 12323, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Colossus Smash
 			{spellID = 86346, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Charge Stun
+			-- Warbringer
 			{spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Racial

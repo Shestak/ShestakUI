@@ -50,7 +50,6 @@ T.DiminishingSpells = {
 	[114404] = {"ctrlroot"},	-- Void Tendril's Grasp
 	[63685] = {"ctrlroot"},		-- Freeze
 	[107566] = {"ctrlroot"},	-- Staggering Shout
-	[105771] = {"ctrlroot"},	-- Warbringer
 
 	-- Disorients
 	[3355] = {"disorient"},		-- Freezing Trap
@@ -93,7 +92,7 @@ T.DiminishingSpells = {
 	-- Random Stuns
 	[77505] = {"rndstun"},		-- Earthquake
 	[118895] = {"rndstun"},		-- Dragon Roar
-	[7922] = {"rndstun"},		-- Charge Stun
+	[7922] = {"rndstun"},		-- Warbringer
 
 	-- Random Roots
 	--WoD [19185] = {"rndroot"},		-- Entrapment
