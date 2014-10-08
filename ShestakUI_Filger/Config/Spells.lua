@@ -875,14 +875,10 @@ C["filger_spells"] = {
 			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Greater Invisibility
 			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Invoker's Energy
-			--WoD {spellID = 116257, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Icy Veins
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Power
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Incanter's Absorption
-			{spellID = 116267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Ward
@@ -891,7 +887,7 @@ C["filger_spells"] = {
 			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Floes
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Incanter's Ward
+			-- Incanter's Flow
 			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Alter Time
 			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
