@@ -18,13 +18,6 @@ T.DiminishingSpells = {
 	--WoD [102795] = {"ctrlstun"},	-- Bear Hug
 	[19577] = {"ctrlstun"},		-- Intimidation
 	[117526] = {"ctrlstun"},	-- Binding Shot
-	--WoD [90337] = {"ctrlstun"},		-- Bad Manner (Monkey)
-	--WoD [50519] = {"ctrlstun"},		-- Sonic Blast (Bat)
-	--WoD [56626] = {"ctrlstun"},		-- Sting (Wasp)
-	--WoD [126246] = {"ctrlstun"},	-- Lullaby (Crane)
-	--WoD [96201] = {"ctrlstun"},		-- Web Wrap (Shale Spider)
-	--WoD [126423] = {"ctrlstun"},	-- Petrifying Gaze (Basilisk)
-	--WoD [126355] = {"ctrlstun"},	-- Paralyzing Quill (Porcupine)
 	[44572] = {"ctrlstun"},		-- Deep Freeze
 	--WoD [118271] = {"ctrlstun"},	-- Combustion Impact
 	[119392] = {"ctrlstun"},	-- Charging Ox Wave
@@ -52,7 +45,6 @@ T.DiminishingSpells = {
 	[102359] = {"ctrlroot"},	-- Mass Entanglement
 	--WoD [50245] = {"ctrlroot"},		-- Pin (Crab)
 	--WoD [4167] = {"ctrlroot"},		-- Web (Spider)
-	--WoD [54706] = {"ctrlroot"},		-- Venom Web Spray (Silithid)
 	--WoD [90327] = {"ctrlroot"},		-- Lock Jaw (Dog)
 	[136634] = {"ctrlroot"},	-- Narrow Escape
 	[122] = {"ctrlroot"},		-- Frost Nova
@@ -63,17 +55,7 @@ T.DiminishingSpells = {
 	[107566] = {"ctrlroot"},	-- Staggering Shout
 	[105771] = {"ctrlroot"},	-- Warbringer
 
-	-- Disarms
-	--WoD [50541] = {"disarm"},		-- Clench (Scorpid)
-	--WoD [91644] = {"disarm"},		-- Snatch (Bird of Prey)
-	--WoD [117368] = {"disarm"},		-- Grapple Weapon
-	--WoD [64058] = {"disarm"},		-- Psychic Horror
-	--WoD [51722] = {"disarm"},		-- Dismantle
-	--WoD [118093] = {"disarm"},		-- Disarm (Voidwalker/Voidlord)
-	--WoD [676] = {"disarm"},			-- Disarm
-
 	-- Disorients
-	--WoD [2637] = {"disorient"},		-- Hibernate
 	[3355] = {"disorient"},		-- Freezing Trap
 	[19386] = {"disorient"},	-- Wyvern Sting
 	[118] = {"disorient"},		-- Polymorph
@@ -93,7 +75,7 @@ T.DiminishingSpells = {
 	[107079] = {"disorient"},	-- Quaking Palm (Racial)
 
 	-- Fears
-	--WoD [1513] = {"fear"},			-- Scare Beast
+	[33786] = {"fear"},			-- Cyclone
 	[105421] = {"fear"},		-- Blinding Light
 	[10326] = {"fear"},			-- Turn Evil
 	[145067] = {"fear"},		-- Turn Evil (Talent)
@@ -131,7 +113,6 @@ T.DiminishingSpells = {
 	-- Silences
 	[47476] = {"silence"},		-- Strangulate
 	[81261] = {"silence"},		-- Solar Beam
-	--WoD [50479] = {"silence"},		-- Nether Shock (Nether Ray)
 	--WoD [55021] = {"silence"},		-- Improved Counterspell
 	[102051] = {"silence"},		-- Frostjaw
 	--WoD [116709] = {"silence"},		-- Spear Hand Strike
@@ -147,7 +128,6 @@ T.DiminishingSpells = {
 	[80483] = {"silence"},		-- Arcane Torrent (Focus version)
 
 	-- Misc
-	[33786] = {"cyclone"},		-- Cyclone
 	[605] = {"mind"},			-- Dominate Mind
 }
 
@@ -159,8 +139,6 @@ end
 T.DiminishingIcons = {
 	["ctrlstun"] = GetIcon(408),
 	["ctrlroot"] = GetIcon(122),
-	["cyclone"] = GetIcon(33786),
-	--WoD ["disarm"] = GetIcon(676),
 	["fear"] = GetIcon(8122),
 	["horror"] = GetIcon(64044),
 	["mind"] = GetIcon(605),

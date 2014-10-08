@@ -20,7 +20,6 @@ T.DebuffWhiteList = {
 	[SpellName(55095)] = true,	-- Frost Fever
 	-- Druid
 	[SpellName(33786)] = true,	-- Cyclone
-	--WoD [SpellName(2637)] = true,	-- Hibernate
 	[SpellName(339)] = true,	-- Entangling Roots
 	--WoD [SpellName(80964)] = true,	-- Skull Bash
 	[SpellName(164812)] = true,	-- Moonfire
@@ -31,7 +30,6 @@ T.DebuffWhiteList = {
 	[SpellName(1079)] = true,	-- Rip
 	-- Hunter
 	[SpellName(3355)] = true,	-- Freezing Trap
-	--WoD [SpellName(1513)] = true,	-- Scare Beast
 	--WoD [SpellName(19503)] = true,	-- Scatter Shot
 	-- Mage
 	[SpellName(118)] = true,	-- Polymorph

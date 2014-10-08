@@ -325,7 +325,6 @@ T.RaidDebuffs = {
 	[SpellName(47476)] = 3,		-- Strangulate
 	-- Druid
 	[SpellName(33786)] = 3,		-- Cyclone
-	--WoD [SpellName(2637)] = 3,		-- Hibernate
 	[SpellName(339)] = 2,		-- Entangling Roots
 	[SpellName(78675)] = 3,		-- Solar Beam
 	-- Hunter
@@ -333,7 +332,6 @@ T.RaidDebuffs = {
 	[SpellName(19386)] = 3,		-- Wyvern Sting
 	[SpellName(117526)] = 3,	-- Binding Shot
 	[SpellName(24394)] = 3,		-- Intimidation
-	--WoD [SpellName(1513)] = 3,		-- Scare Beast
 	--WoD [SpellName(19503)] = 3,		-- Scatter Shot
 	-- Mage
 	[SpellName(61305)] = 3,		-- Polymorph

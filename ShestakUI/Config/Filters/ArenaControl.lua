@@ -15,7 +15,6 @@ T.ArenaControl = {
 	[GetSpellInfo(115001)] = 4,	-- Remorseless Winter
 	-- Druid
 	[GetSpellInfo(33786)] = 4,	-- Cyclone
-	--WoD [GetSpellInfo(2637)] = 4,	-- Hibernate
 	[GetSpellInfo(5211)] = 4,	-- Mighty Bash
 	--WoD [GetSpellInfo(102795)] = 4,	-- Bear Hug
 	[GetSpellInfo(22570)] = 4,	-- Maim
@@ -28,9 +27,6 @@ T.ArenaControl = {
 	[GetSpellInfo(117526)] = 4,	-- Binding Shot
 	[GetSpellInfo(24394)] = 4,	-- Intimidation
 	--WoD [GetSpellInfo(19503)] = 4,	-- Scatter Shot
-	--WoD [GetSpellInfo(90337)] = 4,	-- Bad Manner (Monkey)
-	--WoD [GetSpellInfo(126246)] = 4,	-- Lullaby (Crane)
-	--WoD [GetSpellInfo(96201)] = 4,	-- Web Wrap (Shale Spider)
 	-- Mage
 	[GetSpellInfo(118)] = 4,	-- Polymorph
 	[GetSpellInfo(44572)] = 4,	-- Deep Freeze
@@ -79,7 +75,6 @@ T.ArenaControl = {
 	-- Silences
 	[GetSpellInfo(47476)] = 4,	-- Strangulate
 	[GetSpellInfo(81261)] = 4,	-- Solar Beam
-	[GetSpellInfo(44957)] = 4,	-- Nether Shock (Nether Ray)
 	[GetSpellInfo(102051)] = 4,	-- Frostjaw
 	--WoD [GetSpellInfo(55021)] = 4,	-- Improved Counterspell
 	[GetSpellInfo(31935)] = 4,	-- Avenger's Shield
@@ -97,7 +92,6 @@ T.ArenaControl = {
 	[GetSpellInfo(136634)] = 3,	-- Narrow Escape
 	--WoD [GetSpellInfo(50245)] = 3,	-- Pin (Crab)
 	--WoD [GetSpellInfo(4167)] = 3,	-- Web (Spider)
-	--WoD [GetSpellInfo(54706)] = 3,	-- Venom Web Spray (Silithid)
 	--WoD [GetSpellInfo(90327)] = 3,	-- Lock Jaw (Dog)
 	[GetSpellInfo(122)] = 3,	-- Frost Nova
 	[GetSpellInfo(33395)] = 3,	-- Freeze (Pet)
@@ -115,14 +109,6 @@ T.ArenaControl = {
 	[GetSpellInfo(642)] = 2,	-- Divine Shield
 	[GetSpellInfo(46924)] = 2,	-- Bladestorm
 	[GetSpellInfo(118038)] = 2,	-- Die by the Sword
-
-	-- Disarms
-	--WoD [GetSpellInfo(50541)] = 1,	-- Clench (Scorpid)
-	--WoD [GetSpellInfo(91644)] = 1,	-- Snatch (Bird of Prey)
-	--WoD [GetSpellInfo(117368)] = 1,	-- Grapple Weapon
-	--WoD [GetSpellInfo(64058)] = 1,	-- Psychic Horror
-	--WoD [GetSpellInfo(51722)] = 1,	-- Dismantle
-	--WoD [GetSpellInfo(676)] = 1,	-- Disarm
 
 	-- Buffs
 	[GetSpellInfo(1022)] = 1,	-- Hand of Protection

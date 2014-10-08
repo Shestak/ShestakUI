@@ -521,8 +521,6 @@ C["filger_spells"] = {
 
 			-- Cyclone
 			{spellID = 33786, unitID = "focus", caster = "all", filter = "DEBUFF"},
-			-- Hibernate
-			--WoD {spellID = 2637, unitID = "focus", caster = "all", filter = "DEBUFF"},
 			-- Entangling Roots
 			{spellID = 339, unitID = "focus", caster = "all", filter = "DEBUFF"},
 		},
@@ -739,8 +737,6 @@ C["filger_spells"] = {
 			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Web (Spider)
 			--WoD {spellID = 4167, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Venom Web Spray (Silithid)
-			--WoD {spellID = 54706, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pin (Crab)
 			--WoD {spellID = 50245, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
@@ -828,14 +824,6 @@ C["filger_spells"] = {
 			{spellID = 90361, filter = "CD"},
 			-- Web (Pet)
 			--WoD {spellID = 4167, filter = "CD"},
-			-- Venom Web Spray (Pet)
-			--WoD {spellID = 54706, filter = "CD"},
-			-- Web Wrap (Pet)
-			--WoD {spellID = 96201, filter = "CD"},
-			-- Bad Manner (Pet)
-			--WoD {spellID = 90337, filter = "CD"},
-			-- Lullaby (Pet)
-			--WoD {spellID = 126246, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -2111,8 +2099,6 @@ C["filger_spells"] = {
 			{spellID = 1776, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Weakened Armor
 			--WoD {spellID = 113746, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Dismantle
-			--WoD {spellID = 51722, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Revealing Strike
 			{spellID = 84617, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vendetta
@@ -2166,8 +2152,6 @@ C["filger_spells"] = {
 			{spellID = 14183, filter = "CD"},
 			-- Redirect
 			--WoD {spellID = 73981, filter = "CD"},
-			-- Dismantle
-			--WoD {spellID = 51722, filter = "CD"},
 			-- Sprint
 			{spellID = 2983, filter = "CD"},
 			-- Killing Spree
@@ -2965,8 +2949,6 @@ C["filger_spells"] = {
 			{spellID = 6544, filter = "CD"},
 			-- Demoralizing Shout
 			{spellID = 1160, filter = "CD"},
-			-- Disarm
-			--WoD {spellID = 676, filter = "CD"},
 			-- Enraged Regeneration
 			{spellID = 55694, filter = "CD"},
 			-- Commanding Shout
@@ -3164,8 +3146,6 @@ C["filger_spells"] = {
 			-- Druid
 			-- Cyclone
 			{spellID = 33786, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Hibernate
-			--WoD {spellID = 2637, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Bear Hug
@@ -3198,8 +3178,6 @@ C["filger_spells"] = {
 			{spellID = 117526, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap
 			{spellID = 3355, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Scare Beast
-			--WoD {spellID = 1513, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Scatter Shot
 			--WoD {spellID = 19503, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Wyvern Sting
@@ -3216,36 +3194,16 @@ C["filger_spells"] = {
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Trap
 			--WoD {spellID = 135382, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Bad Manner (Monkey)
-			--WOD {spellID = 90337, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Lullaby (Crane)
-			--WoD {spellID = 126246, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Web Wrap (Shale Spider)
-			--WoD {spellID = 96201, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Venom Web Spray (Silithid)
-			--WoD {spellID = 54706, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Web (Spider)
 			--WoD {spellID = 4167, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Pin (Crab)
 			--WoD {spellID = 50245, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Nether Shock (Nether Ray)
-			{spellID = 44957, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Clench (Scorpid)
-			--WoD {spellID = 50541, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Breath (Chimaera)
 			{spellID = 54644, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
 			{spellID = 50433, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Time Warp (Warp Stalker)
 			{spellID = 35346, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Sting (Wasp)
-			--WoD {spellID = 56626, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Sonic Blast (Bat)
-			--WoD {spellID = 50519, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Paralyzing Quill (Porcupine)
-			--WoD {spellID = 126355, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Petrifying Gaze (Basilisk)
-			--WoD {spellID = 126423, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Mage
 			-- Cauterize
@@ -3296,8 +3254,6 @@ C["filger_spells"] = {
 			{spellID = 116706, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Spear Hand Strike
 			--WoD {spellID = 116709, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Grapple Weapon
-			--WoD {spellID = 117368, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Hammer of Justice
@@ -3352,8 +3308,6 @@ C["filger_spells"] = {
 			{spellID = 1776, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Garrote - Silence
 			{spellID = 1330, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Dismantle
-			--WoD {spellID = 51722, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Smoke Bomb
 			{spellID = 76577, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Deadly Throw
@@ -3420,8 +3374,6 @@ C["filger_spells"] = {
 			{spellID = 132168, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Intimidating Shout
 			--WoD {spellID = 20511, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Disarm
-			--WoD {spellID = 676, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Staggering Shout
 			{spellID = 107566, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Warbringer
@@ -3529,8 +3481,6 @@ C["filger_spells"] = {
 			-- Debuffs
 			-- Cyclone
 			{spellID = 33786, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Hibernate
-			--WoD {spellID = 2637, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Bear Hug
@@ -3562,20 +3512,12 @@ C["filger_spells"] = {
 			{spellID = 3355, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Wyvern Sting
 			{spellID = 19386, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Scare Beast
-			--WoD {spellID = 1513, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Binding Shot
 			{spellID = 117526, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Intimidation
 			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Scatter Shot
 			--WoD {spellID = 19503, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Bad Manner (Monkey)
-			--WoD {spellID = 90337, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Lullaby (Crane)
-			--WoD {spellID = 126246, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Nether Shock (Nether Ray)
-			{spellID = 44957, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Mage
 			-- Ice Block

@@ -67,9 +67,6 @@ if C.enemycooldown.enable == true then
 		[1856] = 120,	-- Vanish
 		[19263] = 180,	-- Deterrence
 		[33206] = 180,	-- Pain Suppression
-		-- Disarms
-		--WoD [51722] = 60,	-- Dismantle
-		--WoD [676] = 60,		-- Disarm
 	}
 end
 
