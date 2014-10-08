@@ -246,8 +246,6 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[114942] = 3		-- Healing Tide
 		-- Damaging spells
 		T.aoespam[421] = 1			-- Chain Lightning
-		T.aoespam[45297] = 3		-- Chain Lightning (Mastery)
-		T.aoespam[114738] = 3		-- Lava Beam (Mastery)
 		T.aoespam[8349] = 0			-- Fire Nova
 		T.aoespam[77478] = 3		-- Earhquake
 		T.aoespam[51490] = 0		-- Thunderstorm
@@ -256,6 +254,10 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[25504] = 3		-- Windfury Attack
 		T.aoespam[10444] = 3		-- Flametongue Attack
 		T.aoespam[3606] = 3			-- Searing Bolt
+		T.aoespam[170379] = 3		-- Molten Earth
+		T.aoespam[114074] = 1		-- Lava Beam
+		T.merge[168477] = 421		-- Chain Lightning (Multi)
+		T.merge[168489] = 114074	-- Lava Beam (Multi)
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
