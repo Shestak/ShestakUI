@@ -391,18 +391,18 @@ local function LoadSkin()
 		_G["ToySpellButton"..i.."SlotFrameUncollected"]:SetTexture("")
 		local button = _G["ToySpellButton"..i]
 		local icon = _G["ToySpellButton"..i.."IconTexture"]
+		local uicon = _G["ToySpellButton"..i.."IconTextureUncollected"]
 
-		button:StyleButton(nil, 4)
+		button:StyleButton(nil, 0)
 		button:CreateBackdrop("Default")
-		button.backdrop:SetPoint("TOPLEFT", 2, 0)
-		button.backdrop:SetPoint("BOTTOMRIGHT", -2, 5)
 
-		button.hover:SetPoint("TOPLEFT", 4, -2)
-		button.hover:SetPoint("BOTTOMRIGHT", -4, 7)
-		button.pushed:SetPoint("TOPLEFT", 4, -2)
-		button.pushed:SetPoint("BOTTOMRIGHT", -4, 7)
-
+		icon:SetPoint("TOPLEFT")
+		icon:SetPoint("BOTTOMRIGHT")
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		uicon:SetPoint("TOPLEFT")
+		uicon:SetPoint("BOTTOMRIGHT")
+		uicon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
 	hooksecurefunc("ToySpellButton_UpdateButton", function(self)
