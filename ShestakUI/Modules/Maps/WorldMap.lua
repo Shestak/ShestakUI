@@ -9,11 +9,24 @@ WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
 		if level >= 1 then
 			SetDungeonMapLevel(level)
 			PlaySound("UChatScrollButton")
-		end	
+		end
 	else
 		WorldMapScrollFrame_OnMouseWheel(self, delta)
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Font replacement
+----------------------------------------------------------------------------------------
+WorldMapFrameAreaLabel:SetFont(C.media.normal_font, 30)
+WorldMapFrameAreaLabel:SetShadowOffset(2, -2)
+WorldMapFrameAreaLabel:SetTextColor(0.9, 0.83, 0.64)
+
+WorldMapFrameAreaPetLevels:SetFont(C.media.normal_font, 30)
+WorldMapFrameAreaPetLevels:SetShadowOffset(2, -2)
+
+WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 30)
+WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
 
 ----------------------------------------------------------------------------------------
 --	Creating coordinate

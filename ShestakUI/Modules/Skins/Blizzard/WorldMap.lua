@@ -163,16 +163,6 @@ local function LoadSkin()
 	T.SkinDropDownBox(WorldMapLevelDropDown)
 	WorldMapLevelDropDown:ClearAllPoints()
 	WorldMapLevelDropDown:SetPoint("TOPLEFT", -18, -2)
-
-	WorldMapFrameAreaLabel:SetFont(C.media.normal_font, 30)
-	WorldMapFrameAreaLabel:SetShadowOffset(2, -2)
-	WorldMapFrameAreaLabel:SetTextColor(0.9, 0.83, 0.64)
-
-	WorldMapFrameAreaPetLevels:SetFont(C.media.normal_font, 30)
-	WorldMapFrameAreaPetLevels:SetShadowOffset(2, -2)
-
-	WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 30)
-	WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
