@@ -403,6 +403,7 @@ local function Local(o)
 
 	-- Raid Frames options
 	if o == "UIConfigraidframe" then o = RAID_FRAMES_LABEL end
+	if o == "UIConfigraidframeby_role" then o = L_GUI_UF_BY_ROLE end
 	if o == "UIConfigraidframeaggro_border" then o = L_GUI_UF_AGGRO_BORDER end
 	if o == "UIConfigraidframedeficit_health" then o = L_GUI_UF_DEFICIT_HEALTH end
 	if o == "UIConfigraidframeshow_party" then o = L_GUI_UF_SHOW_PARTY end

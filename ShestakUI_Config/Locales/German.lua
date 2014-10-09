@@ -367,6 +367,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "Totemleiste"
 L_GUI_UF_PLUGINS_RANGE_BAR = "Aktiviere Abstandsleiste"
 
 -- Raid Frames options
+L_GUI_UF_BY_ROLE = "Sorting players in group by role" -- Needs review
 L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"
 L_GUI_UF_DEFICIT_HEALTH = "Fehlendes Leben im Raid"
 L_GUI_UF_SHOW_PARTY = "Zeige Gruppenfenster"

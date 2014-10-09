@@ -476,6 +476,7 @@ C["unitframe_class_bar"] = {
 ----------------------------------------------------------------------------------------
 C["raidframe"] = {
 	-- Main
+	["by_role"] = true,							-- Sorting players in group by role
 	["aggro_border"] = true,					-- Aggro border
 	["deficit_health"] = false,					-- Raid deficit health
 	["vertical_health"] = false,				-- Vertical orientation of health

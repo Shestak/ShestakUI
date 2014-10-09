@@ -367,6 +367,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "Индикатор тотемов"
 L_GUI_UF_PLUGINS_RANGE_BAR = "Индикатор досягаемости (для жрецов)"
 
 -- Raid Frames options
+L_GUI_UF_BY_ROLE = "Сортировка игроков в группе по роли"
 L_GUI_UF_AGGRO_BORDER = "Отображение угрозы"
 L_GUI_UF_DEFICIT_HEALTH = "Значение здоровья по дефициту"
 L_GUI_UF_SHOW_PARTY = "Отображать рамки группы"

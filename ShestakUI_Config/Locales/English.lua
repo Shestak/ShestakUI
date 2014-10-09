@@ -364,6 +364,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "Enable Totem bar"
 L_GUI_UF_PLUGINS_RANGE_BAR = "Enable Range bar (for Priest)"
 
 -- Raid Frames options
+L_GUI_UF_BY_ROLE = "Sorting players in group by role"
 L_GUI_UF_AGGRO_BORDER = "Aggro border"
 L_GUI_UF_DEFICIT_HEALTH = "Raid deficit health"
 L_GUI_UF_SHOW_PARTY = "Show party frames"

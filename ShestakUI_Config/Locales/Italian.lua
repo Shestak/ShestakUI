@@ -367,6 +367,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "Attiva la barra dei totems dello sciamano"
 L_GUI_UF_PLUGINS_RANGE_BAR = "Attiva la barra della distanza per i sacerdoti"
 
 -- Raid Frames options
+L_GUI_UF_BY_ROLE = "Sorting players in group by role" -- Needs review
 L_GUI_UF_AGGRO_BORDER = "Cambio di colore dei bordi in base al grado di aggressione"
 L_GUI_UF_DEFICIT_HEALTH = "Deficit salute in incursione"
 L_GUI_UF_SHOW_PARTY = "Mostra i riquadri del gruppo"

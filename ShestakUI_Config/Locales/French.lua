@@ -367,6 +367,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "Barre de totem"
 L_GUI_UF_PLUGINS_RANGE_BAR = "Enable Range bar" -- Needs review
 
 -- Raid Frames options
+L_GUI_UF_BY_ROLE = "Sorting players in group by role" -- Needs review
 L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"
 L_GUI_UF_DEFICIT_HEALTH = "Déficit en vie du raid"
 L_GUI_UF_SHOW_PARTY = "Afficher les barres du groupe"

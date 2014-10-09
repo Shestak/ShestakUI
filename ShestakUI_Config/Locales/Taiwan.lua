@@ -367,6 +367,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "圖騰欄"
 L_GUI_UF_PLUGINS_RANGE_BAR = "開啟距離欄(僅牧師)"
 
 -- Raid Frames options
+L_GUI_UF_BY_ROLE = "Sorting players in group by role" -- Needs review
 L_GUI_UF_AGGRO_BORDER = "仇恨邊框"
 L_GUI_UF_DEFICIT_HEALTH = "團隊生命值虧減模式"
 L_GUI_UF_SHOW_PARTY = "顯示隊伍框體"
