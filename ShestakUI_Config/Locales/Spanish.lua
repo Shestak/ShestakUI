@@ -344,7 +344,6 @@ L_GUI_UF_PORTRAIT_HEIGHT = "Altura del retrato"
 L_GUI_UF_PORTRAIT_WIDTH = "Anchura del retrato"
 L_GUI_UF_PLUGINS_GCD = "Brillo de tiempo de reutilización global"
 L_GUI_UF_PLUGINS_SWING = "Activar barra de oscilación"
-L_GUI_UF_PLUGINS_NECRO_STRIKE = "Activar barra para Golpe Necrótico"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Activar barra de reputación"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Activar barra de experiencia"
 L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Friendship bar" -- Needs review

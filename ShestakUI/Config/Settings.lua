@@ -445,7 +445,6 @@ C["unitframe"] = {
 	-- Plugins
 	["plugins_gcd"] = false,					-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar
-	["plugins_necro_strike"] = false,			-- Necrotic Strike bar
 	["plugins_reputation_bar"] = false,			-- Reputation bar
 	["plugins_experience_bar"] = false,			-- Experience bar
 	["plugins_friendship_bar"] = false,			-- Friendship bar

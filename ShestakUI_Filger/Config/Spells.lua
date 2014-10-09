@@ -3114,8 +3114,6 @@ C["filger_spells"] = {
 			{spellID = 47476, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dark Simulacrum
 			{spellID = 77606, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Necrotic Strike
-			--WoD {spellID = 73975, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Chains of Ice
 			{spellID = 45524, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Chilblains

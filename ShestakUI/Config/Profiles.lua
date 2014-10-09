@@ -128,7 +128,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["unitframe"].castbar_icon = true
 	C["unitframe"].icons_pvp = true
 	C["unitframe"].plugins_gcd = true
-	C["unitframe"].plugins_necro_strike = true
 	C["unitframe"].plugins_reputation_bar = true
 	C["unitframe"].plugins_experience_bar = true
 	C["unitframe"].plugins_friendship_bar = true

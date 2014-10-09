@@ -344,7 +344,6 @@ L_GUI_UF_PORTRAIT_HEIGHT = "Hauteur des portraits"
 L_GUI_UF_PORTRAIT_WIDTH = "Largeur des portraits"
 L_GUI_UF_PLUGINS_GCD = "Scintillement du GCD"
 L_GUI_UF_PLUGINS_SWING = "Barre d'attaque automatique / tir automatique"
-L_GUI_UF_PLUGINS_NECRO_STRIKE = "Active une barre pour la Frappe nécrotique"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Barre de réputation"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Barre d'expérience"
 L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Friendship bar" -- Needs review

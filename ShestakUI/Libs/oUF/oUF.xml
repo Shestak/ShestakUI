@@ -49,7 +49,6 @@
 	<Script file="Modules\Friendship.lua"/>
 	<Script file="Modules\GCD.lua"/>
 	<Script file="Modules\MovableFrames.lua"/>
-	<Script file="Modules\NecroticStrike.lua"/>
 	<Script file="Modules\RaidDebuffs.lua"/>
 	<Script file="Modules\RangeBar.lua"/>
 	<Script file="Modules\Reputation.lua"/>
