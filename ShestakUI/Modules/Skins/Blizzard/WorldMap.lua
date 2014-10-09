@@ -109,10 +109,10 @@ local function LoadSkin()
 
 		button.icon = button:CreateTexture(nil, "BORDER")
 		button.icon:SetTexture(texture)
-		button.icon:SetTexCoord(0.3, 0.29, 0.3, 0.81, 0.65, 0.29, 0.65, 0.81)
+		button.icon:SetTexCoord(0.3, 0.29, 0.3, 0.79, 0.65, 0.29, 0.65, 0.79)
 		button.icon:ClearAllPoints()
 		button.icon:SetPoint("TOPLEFT", 2, -2)
-		button.icon:SetPoint("BOTTOMRIGHT", -2, -1)
+		button.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
 
 	WorldMapFrameNavBar:Hide()
