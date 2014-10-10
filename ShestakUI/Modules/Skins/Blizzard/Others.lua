@@ -82,6 +82,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			T.SkinCloseButton(_G["StaticPopup"..i.."CloseButton"])
 		end
 
+		-- What's new frame
+		SplashFrame:CreateBackdrop("Transparent")
+		SplashFrame.BottomCloseButton:SkinButton()
+		T.SkinCloseButton(SplashFrame.TopCloseButton)
+
 		-- Cinematic popup
 		_G["CinematicFrameCloseDialog"]:SetScale(C.general.uiscale)
 		_G["CinematicFrameCloseDialog"]:SetTemplate("Transparent")
