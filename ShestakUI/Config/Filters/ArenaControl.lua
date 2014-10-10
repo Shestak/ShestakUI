@@ -59,7 +59,6 @@ T.ArenaControl = {
 	[GetSpellInfo(118699)] = 4,	-- Fear
 	[GetSpellInfo(30283)] = 4,	-- Shadowfury
 	[GetSpellInfo(89766)] = 4,	-- Axe Toss (Felguard)
-	--WoD [GetSpellInfo(104045)] = 4,	-- Sleep
 	[GetSpellInfo(5484)] = 4,	-- Howl of Terror
 	[GetSpellInfo(6789)] = 4,	-- Mortal Coil
 	[GetSpellInfo(6358)] = 4,	-- Seduction (Succubus)

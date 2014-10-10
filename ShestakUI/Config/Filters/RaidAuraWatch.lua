@@ -364,7 +364,6 @@ T.RaidDebuffs = {
 	[SpellName(63685)] = 2,		-- Freeze
 	-- Warlock
 	[SpellName(118699)] = 3,	-- Fear
-	--WoD [SpellName(104045)] = 3,	-- Sleep
 	[SpellName(6789)] = 3,		-- Mortal Coil
 	[SpellName(5484)] = 3,		-- Howl of Terror
 	[SpellName(6358)] = 3,		-- Seduction (Succubus)

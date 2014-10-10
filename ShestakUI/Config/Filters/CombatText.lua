@@ -262,7 +262,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[27243] = 3		-- Seed of Corruption
 		T.aoespam[27285] = 3		-- Seed of Corruption (AoE)
 		T.aoespam[87385] = 3		-- Seed of Corruption (Soulburn)
-		T.aoespam[172] = 3			-- Corruption
+		T.aoespam[146739] = 3		-- Corruption
 		T.aoespam[30108] = 3		-- Unstable Affliction
 		T.aoespam[348] = 3			-- Immolate
 		T.aoespam[980] = 3			-- Agony

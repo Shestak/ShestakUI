@@ -2394,8 +2394,6 @@ C["filger_spells"] = {
 
 			-- Hex
 			{spellID = 51514, unitID = "focus", caster = "player", filter = "DEBUFF"},
-			-- Bind Elemental
-			--WoD {spellID = 76780, unitID = "focus", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -2634,7 +2632,7 @@ C["filger_spells"] = {
 			-- Agony
 			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Corruption
-			{spellID = 172, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 146739, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Seed of Corruption
 			{spellID = 27243, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Immolate
@@ -3300,8 +3298,6 @@ C["filger_spells"] = {
 			{spellID = 137143, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
 			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Sleep
-			--WoD {spellID = 104045, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mesmerize (Shivarra)
@@ -3596,8 +3592,6 @@ C["filger_spells"] = {
 			-- Debuffs
 			-- Hex
 			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Bind Elemental
-			--WoD {spellID = 76780, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Static Charge
 			{spellID = 118905, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Pulverize (Earth Elemental)
@@ -3625,8 +3619,6 @@ C["filger_spells"] = {
 			{spellID = 137143, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
 			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Sleep
-			--WoD {spellID = 104045, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mesmerize (Shivarra)
