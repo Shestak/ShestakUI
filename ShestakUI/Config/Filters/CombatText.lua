@@ -63,11 +63,9 @@ elseif T.class == "DRUID" then
 		T.aoespam[106998] = 3		-- Astral Storm
 		T.aoespam[50288] = 3		-- Starfall
 		T.aoespam[61391] = 0		-- Typhoon
-		T.aoespam[1822] = 3			-- Rake
-		--WoD T.aoespam[33876] = 0		-- Mangle (Cat Form)
-		--WoD T.aoespam[33878] = 0		-- Mangle (Bear Form)
-		--WoD T.aoespam[62078] = 0		-- Swipe (Cat Form)
-		--WoD T.aoespam[779] = 0			-- Swipe (Bear Form)
+		T.aoespam[155722] = 3		-- Rake
+		T.aoespam[33917] = 0		-- Mangle
+		T.aoespam[106785] = 0		-- Swipe
 		T.aoespam[33745] = 3		-- Lacerate
 		T.aoespam[77758] = 3		-- Thrash (Bear Form)
 		T.aoespam[106830] = 3		-- Thrash (Cat Form)
@@ -77,7 +75,7 @@ elseif T.class == "DRUID" then
 	if C.combattext.healing then
 		T.healfilter[145109] = true	-- Ysera's Gift (Self)
 		T.healfilter[145110] = true	-- Ysera's Gift
-		--WoD T.healfilter[34299] = true	-- Leader of the Pack
+		T.healfilter[68285] = true	-- Leader of the Pack
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then

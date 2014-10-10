@@ -21,12 +21,11 @@ T.DebuffWhiteList = {
 	-- Druid
 	[SpellName(33786)] = true,	-- Cyclone
 	[SpellName(339)] = true,	-- Entangling Roots
-	--WoD [SpellName(80964)] = true,	-- Skull Bash
 	[SpellName(164812)] = true,	-- Moonfire
 	[SpellName(164815)] = true,	-- Sunfire
 	[SpellName(58180)] = true,	-- Infected Wounds
 	[SpellName(33745)] = true,	-- Lacerate
-	[SpellName(1822)] = true,	-- Rake
+	[SpellName(155722)] = true,	-- Rake
 	[SpellName(1079)] = true,	-- Rip
 	-- Hunter
 	[SpellName(3355)] = true,	-- Freezing Trap

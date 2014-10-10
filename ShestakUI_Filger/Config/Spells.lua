@@ -468,7 +468,7 @@ C["filger_spells"] = {
 			-- Sunfire
 			{spellID = 164815, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rake
-			{spellID = 1822, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 155722, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rip
 			{spellID = 1079, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pounce Bleed
@@ -477,8 +477,6 @@ C["filger_spells"] = {
 			{spellID = 33745, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Thrash
 			{spellID = 77758, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Skull Bash
-			--WoD {spellID = 82365, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Immobilized
 			{spellID = 45334, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
@@ -537,7 +535,7 @@ C["filger_spells"] = {
 			-- Skull Bash
 			{spellID = 106839, filter = "CD"},
 			-- Mangle
-			--WoD {spellID = 33878, filter = "CD"},
+			{spellID = 33917, filter = "CD"},
 			-- Wild Growth
 			{spellID = 48438, filter = "CD"},
 			-- Swiftmend
@@ -3224,8 +3222,6 @@ C["filger_spells"] = {
 			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Disable
 			{spellID = 116706, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Spear Hand Strike
-			--WoD {spellID = 116709, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Hammer of Justice
@@ -3532,8 +3528,6 @@ C["filger_spells"] = {
 			--WoD {spellID = 122242, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Charging Ox Wave
 			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Spear Hand Strike
-			--WoD {spellID = 116709, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Divine Shield

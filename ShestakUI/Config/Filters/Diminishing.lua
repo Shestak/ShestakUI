@@ -110,7 +110,6 @@ T.DiminishingSpells = {
 	[81261] = {"silence"},		-- Solar Beam
 	--WoD [55021] = {"silence"},		-- Improved Counterspell
 	[102051] = {"silence"},		-- Frostjaw
-	--WoD [116709] = {"silence"},		-- Spear Hand Strike
 	[31935] = {"silence"},		-- Avenger's Shield
 	[15487] = {"silence"},		-- Silence
 	[1330] = {"silence"},		-- Garrote
