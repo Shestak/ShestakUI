@@ -4,6 +4,7 @@ if C.tooltip.enable ~= true or C.tooltip.spell_id ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Spell/Item IDs(idTip by Silverwind)
 ----------------------------------------------------------------------------------------
+local debuginfo = false
 local function addLine(self, id, isItem)
 	for i = 1, self:NumLines() do
 		local line = _G[self:GetName().."TextLeft"..i]
@@ -27,6 +28,7 @@ end)
 hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
 	local id = select(11, UnitAura(...))
 	if id then addLine(self, id) end
+	if debuginfo == true and id and IsModifierKeyDown() then print(UnitAura(...)..": "..id) end
 end)
 
 hooksecurefunc("SetItemRef", function(link, ...)
@@ -52,3 +54,15 @@ ItemRefShoppingTooltip1:HookScript("OnTooltipSetItem", attachItemTooltip)
 ItemRefShoppingTooltip2:HookScript("OnTooltipSetItem", attachItemTooltip)
 ShoppingTooltip1:HookScript("OnTooltipSetItem", attachItemTooltip)
 ShoppingTooltip2:HookScript("OnTooltipSetItem", attachItemTooltip)
+
+SlashCmdList.SHOWSPELLID = function()
+	if not debuginfo then
+		debuginfo = true
+	else
+		debuginfo = false
+	end
+end
+
+SLASH_SHOWSPELLID1 = "/showid"
+SLASH_SHOWSPELLID2 = "/si"
+SLASH_SHOWSPELLID3 = "/ыш"

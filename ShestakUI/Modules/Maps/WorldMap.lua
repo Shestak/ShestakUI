@@ -4,7 +4,7 @@ local T, C, L, _ = unpack(select(2, ...))
 --	Floors scroll
 ----------------------------------------------------------------------------------------
 WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
-	if IsShiftKeyDown() or IsAltKeyDown() or IsControlKeyDown() then
+	if IsModifierKeyDown() then
 		local level = GetCurrentMapDungeonLevel() - delta
 		if level >= 1 then
 			SetDungeonMapLevel(level)
