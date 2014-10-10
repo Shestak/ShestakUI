@@ -26,18 +26,15 @@ T.ArenaControl = {
 	[GetSpellInfo(19386)] = 4,	-- Wyvern Sting
 	[GetSpellInfo(117526)] = 4,	-- Binding Shot
 	[GetSpellInfo(24394)] = 4,	-- Intimidation
-	--WoD [GetSpellInfo(19503)] = 4,	-- Scatter Shot
 	-- Mage
 	[GetSpellInfo(118)] = 4,	-- Polymorph
 	[GetSpellInfo(44572)] = 4,	-- Deep Freeze
 	[GetSpellInfo(82691)] = 4,	-- Ring of Frost
 	[GetSpellInfo(31661)] = 4,	-- Dragon's Breath
-	--WoD [GetSpellInfo(118271)] = 4,	-- Combustion Impact
 	-- Monk
 	[GetSpellInfo(115078)] = 4,	-- Paralysis
 	[GetSpellInfo(119381)] = 4,	-- Leg Sweep
 	[GetSpellInfo(120086)] = 4,	-- Fists of Fury
-	--WoD [GetSpellInfo(122242)] = 4,	-- Clash
 	[GetSpellInfo(119392)] = 4,	-- Charging Ox Wave
 	-- Paladin
 	[GetSpellInfo(853)] = 4,	-- Hammer of Justice
@@ -76,7 +73,6 @@ T.ArenaControl = {
 	[GetSpellInfo(47476)] = 4,	-- Strangulate
 	[GetSpellInfo(81261)] = 4,	-- Solar Beam
 	[GetSpellInfo(102051)] = 4,	-- Frostjaw
-	--WoD [GetSpellInfo(55021)] = 4,	-- Improved Counterspell
 	[GetSpellInfo(31935)] = 4,	-- Avenger's Shield
 	[GetSpellInfo(15487)] = 4,	-- Silence
 	[GetSpellInfo(1330)] = 4,	-- Garrote - Silence
@@ -111,7 +107,6 @@ T.ArenaControl = {
 	[GetSpellInfo(1044)] = 1,	-- Hand of Freedom
 	[GetSpellInfo(31821)] = 1,	-- Devotion Aura
 	[GetSpellInfo(33206)] = 1,	-- Pain Suppression
-	--WoD [GetSpellInfo(96267)] = 1,	-- Inner Focus
 	[GetSpellInfo(8178)] = 1,	-- Grounding Totem
 
 	-- Defense abilities

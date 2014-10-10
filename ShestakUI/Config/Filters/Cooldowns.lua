@@ -39,7 +39,6 @@ if C.enemycooldown.enable == true then
 		[20066] = 15,	-- Repentance
 		[10326] = 15,	-- Turn Evil
 		[108194] = 30,	-- Asphyxiate
-		--WoD [19503] = 30,	-- Scatter Shot
 		[1499] = 30,	-- Freezing Trap
 		[44572] = 30,	-- Deep Freeze
 		[105593] = 30,	-- Fist of Justice

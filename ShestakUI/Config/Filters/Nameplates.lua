@@ -29,11 +29,9 @@ T.DebuffWhiteList = {
 	[SpellName(1079)] = true,	-- Rip
 	-- Hunter
 	[SpellName(3355)] = true,	-- Freezing Trap
-	--WoD [SpellName(19503)] = true,	-- Scatter Shot
 	-- Mage
 	[SpellName(118)] = true,	-- Polymorph
 	[SpellName(31661)] = true,	-- Dragon's Breath
-	--WoD [SpellName(55021)] = true,	-- Improved Counterspell
 	[SpellName(122)] = true,	-- Frost Nova
 	[SpellName(111340)] = true,	-- Ice Ward
 	[SpellName(44457)] = true,	-- Living Bomb

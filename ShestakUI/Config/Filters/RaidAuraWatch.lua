@@ -332,14 +332,12 @@ T.RaidDebuffs = {
 	[SpellName(19386)] = 3,		-- Wyvern Sting
 	[SpellName(117526)] = 3,	-- Binding Shot
 	[SpellName(24394)] = 3,		-- Intimidation
-	--WoD [SpellName(19503)] = 3,		-- Scatter Shot
 	-- Mage
 	[SpellName(61305)] = 3,		-- Polymorph
 	[SpellName(82691)] = 3,		-- Ring of Frost
 	[SpellName(44572)] = 3,		-- Deep Freeze
 	[SpellName(31661)] = 3,		-- Dragon's Breath
 	[SpellName(102051)] = 3,	-- Frostjaw
-	--WoD [SpellName(55021)] = 3,		-- Improved Counterspell
 	[SpellName(122)] = 2,		-- Frost Nova
 	[SpellName(111340)] = 2,	-- Ice Ward
 	-- Monk

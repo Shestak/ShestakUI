@@ -19,10 +19,8 @@ T.DiminishingSpells = {
 	[19577] = {"ctrlstun"},		-- Intimidation
 	[117526] = {"ctrlstun"},	-- Binding Shot
 	[44572] = {"ctrlstun"},		-- Deep Freeze
-	--WoD [118271] = {"ctrlstun"},	-- Combustion Impact
 	[119392] = {"ctrlstun"},	-- Charging Ox Wave
 	[119381] = {"ctrlstun"},	-- Leg Sweep
-	--WoD [122242] = {"ctrlstun"},	-- Clash
 	[120086] = {"ctrlstun"},	-- Fists of Fury
 	[853] = {"ctrlstun"},		-- Hammer of Justice
 	[105593] = {"ctrlstun"},	-- Fist of Justice
@@ -101,14 +99,12 @@ T.DiminishingSpells = {
 
 	-- Random Disorients
 	[99] = {"rnddis"},			-- Disorienting Roar
-	--WoD [19503] = {"rnddis"},		-- Scatter Shot
 	[31661] = {"rnddis"},		-- Dragon's Breath
 	[88625] = {"rnddis"},		-- Holy Word: Chastise
 
 	-- Silences
 	[47476] = {"silence"},		-- Strangulate
 	[81261] = {"silence"},		-- Solar Beam
-	--WoD [55021] = {"silence"},		-- Improved Counterspell
 	[102051] = {"silence"},		-- Frostjaw
 	[31935] = {"silence"},		-- Avenger's Shield
 	[15487] = {"silence"},		-- Silence
