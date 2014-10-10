@@ -16,11 +16,8 @@ T.ArenaControl = {
 	-- Druid
 	[GetSpellInfo(33786)] = 4,	-- Cyclone
 	[GetSpellInfo(5211)] = 4,	-- Mighty Bash
-	--WoD [GetSpellInfo(102795)] = 4,	-- Bear Hug
 	[GetSpellInfo(22570)] = 4,	-- Maim
-	--WoD [GetSpellInfo(9005)] = 4,	-- Pounce
 	[GetSpellInfo(99)] = 4,		-- Disorienting Roar
-	--WoD [GetSpellInfo(113004)] = 4,	-- Intimidating Roar
 	-- Hunter
 	[GetSpellInfo(3355)] = 4,	-- Freezing Trap
 	[GetSpellInfo(19386)] = 4,	-- Wyvern Sting
@@ -44,7 +41,6 @@ T.ArenaControl = {
 	-- Priest
 	[GetSpellInfo(605)] = 4,	-- Dominate Mind
 	[GetSpellInfo(8122)] = 4,	-- Psychic Scream
-	--WoD [GetSpellInfo(113792)] = 4,	-- Psychic Terror
 	[GetSpellInfo(64044)] = 4,	-- Psychic Horror
 	-- Rogue
 	[GetSpellInfo(6770)] = 4,	-- Sap

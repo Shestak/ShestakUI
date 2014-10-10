@@ -351,7 +351,6 @@ T.RaidDebuffs = {
 	-- Priest
 	[SpellName(605)] = 3,		-- Dominate Mind
 	[SpellName(8122)] = 3,		-- Psychic Scream
-	--WoD [SpellName(113792)] = 3,	-- Psychic Terror
 	[SpellName(64044)] = 3,		-- Psychic Horror
 	[SpellName(15487)] = 3,		-- Silence
 	-- Rogue

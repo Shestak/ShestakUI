@@ -468,11 +468,9 @@ C["filger_spells"] = {
 			-- Sunfire
 			{spellID = 164815, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rake
-			{spellID = 155722, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 155722, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
 			-- Rip
 			{spellID = 1079, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Pounce Bleed
-			--WoD {spellID = 9007, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Lacerate
 			{spellID = 33745, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Thrash
@@ -560,8 +558,6 @@ C["filger_spells"] = {
 			{spellID = 132469, filter = "CD"},
 			-- Mighty Bash
 			{spellID = 5211, filter = "CD"},
-			-- Bear Hug
-			--WoD {spellID = 102795, filter = "CD"},
 			-- Solar Beam
 			{spellID = 78675, filter = "CD"},
 			-- Barkskin
@@ -3112,12 +3108,10 @@ C["filger_spells"] = {
 			{spellID = 33786, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Bear Hug
-			--WoD {spellID = 102795, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Maim
 			{spellID = 22570, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Pounce
-			--WoD {spellID = 9005, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Rake
+			{spellID = 163505, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Disorienting Roar
 			{spellID = 99, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
@@ -3230,8 +3224,6 @@ C["filger_spells"] = {
 			{spellID = 605, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Psychic Scream
 			{spellID = 8122, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Psychic Terror
-			--WoD {spellID = 113792, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Psychic Horror
 			{spellID = 64044, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Sin and Punishment
@@ -3423,12 +3415,10 @@ C["filger_spells"] = {
 			{spellID = 33786, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Bear Hug
-			--WoD {spellID = 102795, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Maim
 			{spellID = 22570, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Pounce
-			--WoD {spellID = 9005, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Rake
+			{spellID = 163505, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Disorienting Roar
 			{spellID = 99, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
@@ -3550,8 +3540,6 @@ C["filger_spells"] = {
 			{spellID = 605, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Psychic Scream
 			{spellID = 8122, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Psychic Terror
-			--WoD {spellID = 113792, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Psychic Horror
 			{spellID = 64044, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silence
