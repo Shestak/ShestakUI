@@ -2595,20 +2595,8 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].target_debuff_icon)},
 
 			-- Self
-			-- Curse of the Elements
-			--WoD {spellID = 1490, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Curse of Enfeeblement
-			--WoD {spellID = 109466, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Enslave Demon
 			{spellID = 1098, unitID = "target", caster = "player", filter = "DEBUFF"},
-
-			-- CoE group
-			-- Master Poisoner (Rogue)
-			--WoD {spellID = 93068, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Lightning Breath (Wind Serpent)
-			{spellID = 24844, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Fire Breath (Dragonhawk)
-			{spellID = 34889, unitID = "target", caster = "all", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -3139,7 +3127,7 @@ C["filger_spells"] = {
 			-- Narrow Escape
 			{spellID = 136634, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entrapment
-			--WoD {spellID = 19185, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 135373, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Shot
 			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Barrage
@@ -3147,12 +3135,12 @@ C["filger_spells"] = {
 			-- Glyph of Freezing Trap
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Trap
-			--WoD {spellID = 135382, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 135299, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Breath (Chimaera)
 			{spellID = 54644, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
 			{spellID = 50433, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Time Warp (Warp Stalker)
+			-- Warp Time (Warp Stalker)
 			{spellID = 35346, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Mage

@@ -23,7 +23,6 @@ T.DiminishingSpells = {
 	[120086] = {"ctrlstun"},	-- Fists of Fury
 	[853] = {"ctrlstun"},		-- Hammer of Justice
 	[105593] = {"ctrlstun"},	-- Fist of Justice
-	--WoD [115752] = {"ctrlstun"},	-- Blinding Light
 	[119072] = {"ctrlstun"},	-- Holy Wrath
 	[1833] = {"ctrlstun"},		-- Cheap Shot
 	[408] = {"ctrlstun"},		-- Kidney Shot
@@ -91,7 +90,7 @@ T.DiminishingSpells = {
 	[7922] = {"rndstun"},		-- Warbringer
 
 	-- Random Roots
-	--WoD [19185] = {"rndroot"},		-- Entrapment
+	[135373] = {"rndroot"},		-- Entrapment
 	[111340] = {"rndroot"},		-- Ice Ward
 	[64695] = {"rndroot"},		-- Earthgrab
 
