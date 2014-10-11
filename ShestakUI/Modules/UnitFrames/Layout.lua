@@ -582,6 +582,32 @@ local function Shared(self, unit)
 			self.GCD.Height = T.Scale(3)
 			self.GCD.Width = T.Scale(4)
 		end
+
+		-- Counter bar
+		self.CounterBar = CreateFrame("StatusBar", self:GetName().."_CounterBar", self)
+		self.CounterBar:CreateBackdrop("Default")
+		self.CounterBar:SetWidth(215)
+		self.CounterBar:SetHeight(20)
+		self.CounterBar:SetStatusBarTexture(C.media.texture)
+		self.CounterBar:SetPoint("TOP", UIParent, "TOP", 0, -100)
+
+		self.CounterBar.bg = self.CounterBar:CreateTexture(nil, "BORDER")
+		self.CounterBar.bg:SetAllPoints()
+		self.CounterBar.bg:SetTexture(C.media.texture)
+
+		self.CounterBar.Text = T.SetFontString(self.CounterBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+		self.CounterBar.Text:SetPoint("CENTER")
+
+		local r, g, b
+		local max
+
+		self.CounterBar:SetScript("OnValueChanged", function(_, value)
+			_, max = self.CounterBar:GetMinMaxValues()
+			r, g, b = oUF.ColorGradient(value, max, 1, 0, 0, 1, 1, 0, 0, 1, 0)
+			self.CounterBar:SetStatusBarColor(r, g, b)
+			self.CounterBar.bg:SetVertexColor(r, g, b, 0.2)
+			self.CounterBar.Text:SetText(floor(value))
+		end)
 	end
 
 	if unit == "pet" or unit == "targettarget" or unit == "focus" or unit == "focustarget" then
