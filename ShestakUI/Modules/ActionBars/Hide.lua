@@ -133,7 +133,7 @@ do
 		RightActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 		if C.actionbar.petbar_horizontal == false then
 			PetActionBarAnchor:SetAlpha(0)
-			PetActionBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
+			PetActionBarAnchor:SetScript("OnEnter", function() if PetHolder:IsShown() then RightBarMouseOver(1) end end)
 			PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 		end
 		if C.actionbar.stancebar_horizontal == false and C.actionbar.stancebar_hide == false then
