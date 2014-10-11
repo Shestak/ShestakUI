@@ -238,7 +238,7 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 			},
-			[2] = {	--  Non-Lethal Poisons group
+			[2] = {	-- Non-Lethal Poisons group
 				["spells"] = {
 					3408,	-- Crippling Poison
 					108211,	-- Leeching Poison
