@@ -164,7 +164,7 @@ local function LoadSkin()
 		end
 	end)
 
-	-- hooksecurefunc("BankFrameItemButton_Update", function(item)
+	--WoD hooksecurefunc("BankFrameItemButton_Update", function(item)
 		-- if not item.isBag then
 			-- if _G[item:GetName().."IconQuestTexture"]:IsShown() then
 				-- item:SetBackdropBorderColor(1, 1, 0)
