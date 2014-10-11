@@ -289,7 +289,7 @@ C["filger_spells"] = {
 			-- Starfall
 			{spellID = 48505, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Grasp
-			--WoD {spellID = 16689, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 170856, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dash
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
@@ -576,8 +576,6 @@ C["filger_spells"] = {
 			{spellID = 124974, filter = "CD"},
 			-- Might of Ursoc
 			--WoD {spellID = 106922, filter = "CD"},
-			-- Nature's Grasp
-			--WoD {spellID = 16689, filter = "CD"},
 			-- Incarnation
 			--WoD {spellID = 106731, filter = "CD"},
 			-- Berserk
@@ -3403,7 +3401,7 @@ C["filger_spells"] = {
 			-- Ironbark
 			{spellID = 102342, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Nature's Grasp
-			--WoD {spellID = 16689, unitID = "target", caster = "all", filter = "BUFF"},
+			{spellID = 170856, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
 			{spellID = 77764, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Incarnation: Tree of Life

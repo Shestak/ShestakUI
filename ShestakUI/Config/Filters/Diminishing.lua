@@ -38,7 +38,7 @@ T.DiminishingSpells = {
 	-- Control Roots
 	[96294] = {"ctrlroot"},		-- Chains of Ice
 	[339] = {"ctrlroot"},		-- Entangling Roots
-	--WoD [19975] = {"ctrlroot"},		-- Nature's Grasp
+	[170855] = {"ctrlroot"},	-- Entangling Roots (Nature's Grasp)
 	[102359] = {"ctrlroot"},	-- Mass Entanglement
 	[136634] = {"ctrlroot"},	-- Narrow Escape
 	[122] = {"ctrlroot"},		-- Frost Nova
