@@ -40,6 +40,7 @@ if C.reminder.raid_buffs_enable == true then
 		Stamina = {
 			469,	-- Commanding Shout
 			90364,	-- Qiraji Fortitude
+			166928,	-- Blood Pact
 			111922,	-- Runescroll of Fortitude III
 			21562,	-- Power Word: Fortitude
 		}
@@ -222,6 +223,7 @@ if C.reminder.solo_buffs_enable == true then
 				["negate_spells"] = {
 					469,	-- Commanding Shout
 					90364,	-- Qiraji Fortitude
+					166928,	-- Blood Pact
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -278,6 +280,7 @@ if C.reminder.solo_buffs_enable == true then
 				["negate_spells"] = {
 					21562,	-- Power Word: Fortitude
 					90364,	-- Qiraji Fortitude
+					166928,	-- Blood Pact
 				},
 				["personal"] = {
 					6673,	-- Battle Shout
