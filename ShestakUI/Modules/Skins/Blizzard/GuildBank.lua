@@ -40,10 +40,12 @@ local function LoadSkin()
 	for i = 1, NUM_GUILDBANK_COLUMNS do
 		_G["GuildBankColumn"..i]:StripTextures()
 
-		for x = 1, NUM_SLOTS_PER_GUILDBANK_GROUP do
-			local button = _G["GuildBankColumn"..i.."Button"..x]
-			local icon = _G["GuildBankColumn"..i.."Button"..x.."IconTexture"]
+		for j = 1, NUM_SLOTS_PER_GUILDBANK_GROUP do
+			local button = _G["GuildBankColumn"..i.."Button"..j]
+			local icon = _G["GuildBankColumn"..i.."Button"..j.."IconTexture"]
+			local border = _G["GuildBankColumn"..i.."Button"..j].IconBorder
 
+			border:Kill()
 			button:SetNormalTexture(nil)
 			button:StyleButton()
 			button:SetTemplate("Default")
