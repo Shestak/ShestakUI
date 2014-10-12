@@ -11,17 +11,17 @@ local starttime, duration, usingspell, spellid
 local GetTime = GetTime
 
 local spells = {
-	["DEATHKNIGHT"] = 45902,
-	["DRUID"] = 1126,
+	["DEATHKNIGHT"] = 48266,
+	["DRUID"] = 5176,
 	["HUNTER"] = 3044,
-	["MAGE"] = 133,
+	["MAGE"] = 44614,
 	["MONK"] = 100780,
-	["PALADIN"] = 635,
-	["PRIEST"] = 21562,
+	["PALADIN"] = 105361,
+	["PRIEST"] = 585,
 	["ROGUE"] = 1752,
-	["SHAMAN"] = 331,
+	["SHAMAN"] = 403,
 	["WARLOCK"] = 686,
-	["WARRIOR"] = 7386,
+	["WARRIOR"] = 34428,
 }
 
 local Enable = function(self)
