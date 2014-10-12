@@ -62,9 +62,21 @@ local function LoadSkin()
 		button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
 	end
 
-	for _, button in pairs(HonorFrame.SpecificFrame.buttons) do
-		button:SetHighlightTexture("")
+	for i = 1, #HonorFrame.SpecificFrame.buttons do
+		local button = HonorFrame.SpecificFrame.buttons[i]
+		button:SetSize(304, 38)
+		button:StripTextures()
+		button:SetTemplate("Overlay")
+		button:StyleButton()
+		button.SelectedTexture:SetDrawLayer("ARTWORK")
 		button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
+		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
+		if i == 1 then
+			button:SetPoint("TOPLEFT", HonorFrameSpecificFrameScrollChild, "TOPLEFT", 0, -1)
+		else
+			button:SetPoint("TOPLEFT", HonorFrame.SpecificFrame.buttons[i-1], "BOTTOMLEFT", 0, -2)
+		end
 	end
 
 	for _, button in pairs{HonorFrame.RoleInset.TankIcon, HonorFrame.RoleInset.HealerIcon, HonorFrame.RoleInset.DPSIcon} do
