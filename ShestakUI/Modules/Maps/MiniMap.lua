@@ -218,9 +218,6 @@ local micromenu = {
 			end
 		end
 	end},
-	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
-		ToggleFrame(RaidBrowserFrame)
-	end},
 	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
 		ToggleEncounterJournal()
 	end},
