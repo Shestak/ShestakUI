@@ -1797,8 +1797,6 @@ C["filger_spells"] = {
 			{spellID = 47788, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Pain Suppression
 			{spellID = 33206, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Grace
-			--WoD {spellID = 77613, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Shadow Word: Pain
 			{spellID = 589, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vampiric Touch
@@ -1943,8 +1941,6 @@ C["filger_spells"] = {
 			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Adrenaline Rush
 			{spellID = 13750, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Blades
-			--WoD {spellID = 121471, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evasion
 			{spellID = 5277, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Envenom
@@ -2108,16 +2104,12 @@ C["filger_spells"] = {
 			{spellID = 408, filter = "CD"},
 			-- Premiditation
 			{spellID = 14183, filter = "CD"},
-			-- Redirect
-			--WoD {spellID = 73981, filter = "CD"},
 			-- Sprint
 			{spellID = 2983, filter = "CD"},
 			-- Killing Spree
 			{spellID = 51690, filter = "CD"},
 			-- Adrenaline Rush
 			{spellID = 13750, filter = "CD"},
-			-- Shadow Blades
-			--WoD {spellID = 121471, filter = "CD"},
 			-- Vendetta
 			{spellID = 79140, filter = "CD"},
 			-- Shadow Dance
