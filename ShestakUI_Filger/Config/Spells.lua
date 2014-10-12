@@ -270,8 +270,6 @@ C["filger_spells"] = {
 			{spellID = 124974, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Survival Instincts
 			{spellID = 61336, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Might of Ursoc
-			--WoD {spellID = 106922, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Defense
@@ -292,8 +290,6 @@ C["filger_spells"] = {
 			{spellID = 170856, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dash
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enrage
-			--WoD {spellID = 5229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cenarion Ward
 			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -546,6 +542,8 @@ C["filger_spells"] = {
 			{spellID = 78674, filter = "CD"},
 			-- Wild Charge
 			{spellID = 102401, filter = "CD"},
+			-- Force of Nature
+			{spellID = 102693, filter = "CD"},
 			-- Faerie Fire
 			{spellID = 770, filter = "CD"},
 			-- Tiger's Fury
@@ -568,16 +566,10 @@ C["filger_spells"] = {
 			{spellID = 132158, filter = "CD"},
 			-- Ursol's Vortex
 			{spellID = 102793, filter = "CD"},
-			-- Enrage
-			--WoD {spellID = 5229, filter = "CD"},
-			-- Force of Nature
-			--WoD {spellID = 106737, filter = "CD"},
 			-- Nature's Vigil
 			{spellID = 124974, filter = "CD"},
-			-- Might of Ursoc
-			--WoD {spellID = 106922, filter = "CD"},
 			-- Incarnation
-			--WoD {spellID = 106731, filter = "CD"},
+			--WoD {spellID = 102558, filter = "CD"},
 			-- Berserk
 			{spellID = 106952, filter = "CD"},
 
@@ -715,8 +707,6 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].target_debuff_icon)},
 
-			-- Serpent Sting
-			--WoD {spellID = 1978, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Black Arrow
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
@@ -804,8 +794,6 @@ C["filger_spells"] = {
 			{spellID = 19263, filter = "CD"},
 			-- Spirit Mend (Pet)
 			{spellID = 90361, filter = "CD"},
-			-- Web (Pet)
-			--WoD {spellID = 4167, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)

@@ -80,7 +80,6 @@ elseif T.class == "DRUID" then
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[2643] = 0			-- Multi-Shot
-		T.aoespam[83077] = 0		-- Improved Serpent Sting
 		T.aoespam[118253] = 3		-- Serpent Sting
 		T.aoespam[13812] = 3		-- Explosive Trap
 		T.aoespam[53301] = 3		-- Explosive Shot
