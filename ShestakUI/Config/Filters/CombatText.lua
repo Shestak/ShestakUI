@@ -83,7 +83,7 @@ elseif T.class == "HUNTER" then
 		T.aoespam[118253] = 3		-- Serpent Sting
 		T.aoespam[13812] = 3		-- Explosive Trap
 		T.aoespam[53301] = 3		-- Explosive Shot
-		T.aoespam[63468] = 3		-- Piercing Shots
+		--WoD T.aoespam[63468] = 3		-- Piercing Shots
 		T.aoespam[118459] = 3		-- Beast Cleave
 		T.aoespam[120699] = 3		-- Lynx Rush
 		T.aoespam[120361] = 3		-- Barrage
@@ -133,7 +133,7 @@ elseif T.class == "MONK" then
 		-- Damaging spells
 		T.aoespam[117952] = 3		-- Crackling Jade Lightning
 		T.aoespam[117418] = 3		-- Fists of Fury
-		T.aoespam[120274] = 3		-- Tiger Strikes
+		--WoD T.aoespam[120274] = 3		-- Tiger Strikes
 		T.aoespam[128531] = 3		-- Blackout Kick (DoT)
 		T.aoespam[121253] = 0		-- Keg Smash
 		T.aoespam[115181] = 0		-- Breath of Fire
@@ -141,7 +141,7 @@ elseif T.class == "MONK" then
 		T.aoespam[107270] = 3		-- Spinning Crane Kick
 		T.aoespam[123586] = 3		-- Flying Serpent Kick
 		T.aoespam[132467] = 3		-- Chi Wave
-		T.aoespam[130651] = 3		-- Chi Burst
+		--WoD T.aoespam[130651] = 3		-- Chi Burst
 		T.aoespam[124098] = 3		-- Zen Sphere
 		T.aoespam[125033] = 3		-- Zen Sphere: Detonate
 	end
@@ -192,7 +192,7 @@ elseif T.class == "PRIEST" then
 		T.aoespam[34861] = 0		-- Circle of Healing
 		T.aoespam[33110] = 3		-- Prayer of Mending
 		T.aoespam[88686] = 3		-- Holy Word: Sanctuary
-		T.aoespam[63544] = 3		-- Rapid Renewal
+		--WoD T.aoespam[63544] = 3		-- Rapid Renewal
 		T.aoespam[81751] = 3		-- Atonement
 		T.aoespam[120692] = 3		-- Halo
 		T.aoespam[121148] = 3		-- Cascade
@@ -268,14 +268,14 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[80240] = 3		-- Havoc
 		T.aoespam[42223] = 3		-- Rain of Fire
 		T.aoespam[689] = 3			-- Drain Life
-		T.aoespam[89420] = 3		-- Drain Life (Soulburn)
+		--WoD T.aoespam[89420] = 3		-- Drain Life (Soulburn)
 		T.aoespam[5857] = 3			-- Hellfire
 		T.aoespam[129476] = 3		-- Immolation Aura
 		T.aoespam[103103] = 3		-- Drain Soul
 		T.aoespam[86040] = 3		-- Hand of Gul'dan
 		T.aoespam[124915] = 3		-- Chaos Wave
 		T.aoespam[47960] = 3		-- Shadowflame
-		T.aoespam[50590] = 3		-- Immolation Aura
+		--WoD T.aoespam[50590] = 3		-- Immolation Aura
 		T.aoespam[30213] = 3		-- Legion Strike (Felguard)
 		T.aoespam[89753] = 3		-- Felstorm (Felguard)
 		T.aoespam[20153] = 3		-- Immolation (Infrenal)
