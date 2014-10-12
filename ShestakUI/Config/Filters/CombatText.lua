@@ -277,6 +277,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[114654] = 0		-- Incinerate
 		T.aoespam[108685] = 0		-- Conflagrate
 		T.aoespam[22703] = 0		-- Infernal Awakening
+		T.aoespam[171017] = 0		-- Meteor Strike (Infrenal)
 		T.merge[157736] = 348		-- Immolate
 		T.merge[108686] = 348		-- Immolate
 		T.merge[131737] = 980		-- Agony (Drain Soul)
