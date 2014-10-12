@@ -29,9 +29,6 @@ local function Shared(self, unit)
 	self:SetScript("OnEnter", UnitFrame_OnEnter)
 	self:SetScript("OnLeave", UnitFrame_OnLeave)
 
-	-- Menu
-	self.menu = T.SpawnMenu
-
 	-- Backdrop for every units
 	self:CreateBackdrop("Default")
 
@@ -301,6 +298,9 @@ oUF:Factory(function(self)
 			"initial-height", T.Scale(partytarget_height),
 			"showSolo", C.raidframe.solo_mode,
 			"showPlayer", C.raidframe.player_in_party,
+			"groupBy", C.raidframe.by_role and "ASSIGNEDROLE",
+			"groupingOrder", C.raidframe.by_role and "TANK,HEALER,DAMAGER,NONE",
+			"sortMethod", C.raidframe.by_role and "NAME",
 			"showParty", true,
 			"showRaid", true,
 			"yOffset", T.Scale(28),
@@ -321,33 +321,16 @@ oUF:Factory(function(self)
 			"initial-height", T.Scale(partytarget_height),
 			"showSolo", C.raidframe.solo_mode,
 			"showPlayer", C.raidframe.player_in_party,
+			"groupBy", C.raidframe.by_role and "ASSIGNEDROLE",
+			"groupingOrder", C.raidframe.by_role and "TANK,HEALER,DAMAGER,NONE",
+			"sortMethod", C.raidframe.by_role and "NAME",
 			"showParty", true,
 			"showRaid", true,
 			"yOffset", T.Scale(28),
 			"point", "BOTTOM"
 		)
 
-		local partypetupdate = CreateFrame("Frame")
-		partypetupdate:SetScript("OnEvent", function(...)
-			if InCombatLockdown() then return end
-
-			local lastGroup = 1
-			local numRaidMembers = GetNumGroupMembers()
-			if numRaidMembers > 0 then
-				local playerGroup
-				for member = 1, numRaidMembers do
-					_, _, playerGroup = GetRaidRosterInfo(member)
-					lastGroup = math.max(lastGroup, playerGroup)
-				end
-			end
-
-			partypet:SetPoint("BOTTOMLEFT", party[lastGroup], "BOTTOMRIGHT", 44, 0)
-		end)
-		partypetupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
-		partypetupdate:RegisterEvent("PLAYER_REGEN_ENABLED")
-		partypetupdate:RegisterEvent("GROUP_ROSTER_UPDATE")
-		partypetupdate:RegisterEvent("UNIT_ENTERED_VEHICLE")
-		partypetupdate:RegisterEvent("UNIT_EXITED_VEHICLE")
+		partypet:SetPoint("BOTTOMLEFT", party, "BOTTOMRIGHT", 44, 0)
 	end
 
 	if C.raidframe.show_raid == true then

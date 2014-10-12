@@ -479,22 +479,6 @@ local StopFlash = function(self)
 	end
 end
 
-T.SpawnMenu = function(self)
-	local unit = self.unit:gsub("(.)", string.upper, 1)
-	if unit == "Targettarget" or unit == "focustarget" or unit == "pettarget" then return end
-
-	if _G[unit.."FrameDropDown"] then
-		ToggleDropDownMenu(nil, nil, _G[unit.."FrameDropDown"], "cursor")
-	elseif self.unit:match("party") then
-		ToggleDropDownMenu(nil, nil, _G["PartyMemberFrame"..self.id.."DropDown"], "cursor")
-	else
-		FriendsDropDown.unit = self.unit
-		FriendsDropDown.id = self.id
-		FriendsDropDown.initialize = RaidFrameDropDown_Initialize
-		ToggleDropDownMenu(nil, nil, FriendsDropDown, "cursor")
-	end
-end
-
 T.SetFontString = function(parent, fontName, fontHeight, fontStyle)
 	local fs = parent:CreateFontString(nil, "ARTWORK")
 	fs:SetFont(fontName, fontHeight, fontStyle)

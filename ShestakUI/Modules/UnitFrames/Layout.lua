@@ -22,14 +22,12 @@ local function Shared(self, unit)
 	or (unit and unit:find("boss%d")) and "boss" or unit
 
 	-- Menu
-	self.menu = T.SpawnMenu
-
 	if (unit == "arena" and C.unitframe.show_arena == true and unit ~= "arenatarget") or (unit == "boss" and C.unitframe.show_boss == true) then
 		self:SetAttribute("type2", "focus")
 		self:SetAttribute("type3", "macro")
 		self:SetAttribute("macrotext3", "/clearfocus")
 	else
-		self:SetAttribute("*type2", "menu")
+		self:SetAttribute("*type2", "togglemenu")
 	end
 
 	-- Backdrop for every units
