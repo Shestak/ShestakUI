@@ -13,7 +13,6 @@ L_GUI_MAKE_SELECTION = "Choisir une configuration avant de continuer."
 
 -- General options
 L_GUI_GENERAL_AUTOSCALE = "Mise à l'échelle automatique"
-L_GUI_GENERAL_MULTISAMPLE = "Protection multi échantillonnage (bordure 1px)"
 L_GUI_GENERAL_UISCALE = "Mettre l'interface à l'échelle (si 'Mise à l'échelle automatique' est désactivée)"
 L_GUI_GENERAL_WELCOME_MESSAGE = "Message de bienvenue pour le chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Ajuste automatiquement la barre de latence Blizzard avec votre propre latence"

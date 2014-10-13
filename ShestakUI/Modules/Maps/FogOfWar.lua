@@ -116,10 +116,6 @@ local zones = {
 	["Talador"] = {"Aruuna:389:234:597:178", "Auchindoun:309:262:338:356", "CenterIsles:252:280:546:228", "CourtOfSouls:307:229:150:264", "FortWrynn:292:235:567:42", "GordalFortress:423:290:548:378", "Gulrok:278:270:165:364", "Northgate:398:149:571:0", "OrunaiCoast:279:267:427:0", "SeEntrance:308:276:685:298", "Shattrath:406:367:173:22", "Telmor:497:157:207:511", "TombOfLights:326:212:352:271", "Tuurem:225:224:472:148", "Zangarra:287:277:713:35",},
 }
 
--- Remove tooltips from Blizzard map controls
---WoD WorldMapTrackQuest:SetScript("OnEnter", nil)
---WoD WorldMapZoneMinimapDropDown:SetScript("OnEnter", nil)
-
 -- Initialise counters
 local createdtex = 0
 local texcount = 0

@@ -13,7 +13,6 @@ L_GUI_MAKE_SELECTION = "Devi selezionare un'opzione prima di poter continuare co
 
 -- General options
 L_GUI_GENERAL_AUTOSCALE = "Ridimensionamento automatico dell'interfaccia"
-L_GUI_GENERAL_MULTISAMPLE = "Protezione del multisampling (bordi di 1 pixel)"
 L_GUI_GENERAL_UISCALE = "Scala dell'interfaccia (se il ridimensionamento automatico è disabilitato)"
 L_GUI_GENERAL_WELCOME_MESSAGE = "Messaggio di benvenuto in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Allinea automaticamente la tolleranza automatica lag della Blizzard alla tua latenza"

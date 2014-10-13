@@ -13,7 +13,6 @@ L_GUI_MAKE_SELECTION = "Du musst eine Auswahl treffen bevor du weitere Einstellu
 
 -- General options
 L_GUI_GENERAL_AUTOSCALE = "Automatisch UI skalieren"
-L_GUI_GENERAL_MULTISAMPLE = "Multisample Schutz (Saubere 1px Rahmen)"
 L_GUI_GENERAL_UISCALE = "UI Skalierung (falls automatische Skalierung deaktiviert)"
 L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Automatische Anpassung der Blizzard Custom Lag Toleranz an deine Latenz"

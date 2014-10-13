@@ -38,7 +38,6 @@ local function Local(o)
 	-- General options
 	if o == "UIConfiggeneral" then o = GENERAL_LABEL end
 	if o == "UIConfiggeneralauto_scale" then o = L_GUI_GENERAL_AUTOSCALE end
-	if o == "UIConfiggeneralmultisampleprotect" then o = L_GUI_GENERAL_MULTISAMPLE end
 	if o == "UIConfiggeneraluiscale" then o = L_GUI_GENERAL_UISCALE end
 	if o == "UIConfiggeneralwelcome_message" then o = L_GUI_GENERAL_WELCOME_MESSAGE end
 	if o == "UIConfiggeneralcustom_lagtolerance" then o = L_GUI_GENERAL_LAG_TOLERANCE end

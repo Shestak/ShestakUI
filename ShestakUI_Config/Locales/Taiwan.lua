@@ -13,7 +13,6 @@ L_GUI_MAKE_SELECTION = "在你繼續調整設定前必須選擇一個選項"
 
 -- General options
 L_GUI_GENERAL_AUTOSCALE = "自動UI縮放"
-L_GUI_GENERAL_MULTISAMPLE = "多重採樣保護 (保證1像素邊框)"
 L_GUI_GENERAL_UISCALE = "UI縮放(當自動縮放關閉時)"
 L_GUI_GENERAL_WELCOME_MESSAGE = "顯示歡迎信息"
 L_GUI_GENERAL_LAG_TOLERANCE = "自動更新自訂延遲容許值"

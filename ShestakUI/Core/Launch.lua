@@ -213,9 +213,6 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		StaticPopup_Show("DISABLE_UI")
 	else
 		SetCVar("useUiScale", 1)
-		if C.general.multisampleprotect == true and GetCVar("gxMultisample") ~= "1" then
-			--WoD SetMultisampleFormat(1)
-		end
 		if C.general.uiscale > 1.28 then C.general.uiscale = 1.28 end
 		if C.general.uiscale < 0.64 then C.general.uiscale = 0.64 end
 
