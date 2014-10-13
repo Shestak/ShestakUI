@@ -53,7 +53,7 @@ hooksecurefunc("QuestObjectiveTracker_OnOpenDropDown", function(self)
 	info.notCheckable = true
 	UIDropDownMenu_AddButton(info, UIDROPDOWN_MENU_LEVEL)
 end)
-	
+
 hooksecurefunc("AchievementObjectiveTracker_OnOpenDropDown", function(self)
 	local _, b, i, info
 	b = self.activeFrame
