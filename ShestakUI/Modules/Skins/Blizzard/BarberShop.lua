@@ -26,10 +26,6 @@ local function LoadSkin()
 			f:ClearAllPoints()
 			f:SetPoint("TOP", f2, "BOTTOM", 0, -3)
 		end
-
-		-- if f then
-			-- f:StripTextures()
-		-- end
 	end
 
 	BarberShopFrameSelector1:ClearAllPoints()
@@ -46,7 +42,6 @@ local function LoadSkin()
 	BarberShopFrameMoneyFrame:CreateBackdrop("Overlay")
 	BarberShopFrameMoneyFrame:ClearAllPoints()
 	BarberShopFrameMoneyFrame:SetPoint("BOTTOM", 0, 50)
-	--WoD BarberShopFrameBackground:Kill()
 
 	BarberShopBannerFrameBGTexture:Kill()
 	BarberShopBannerFrame:Kill()
