@@ -235,6 +235,7 @@ if C.reminder.solo_buffs_enable == true then
 				["spells"] = {
 					2823,	-- Deadly Poison
 					8679,	-- Wound Poison
+					157584,	-- Instant Poison
 				},
 				["combat"] = true,
 				["instance"] = true,
