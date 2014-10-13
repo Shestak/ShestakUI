@@ -14,6 +14,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[7] = {53140,53142},	-- Dalaran
 	[8] = {88344,88346},	-- Tol Barad
 	[9] = {132627,132626},	-- Vale of Eternal Blossoms
+	[10] = {176242,176244},	-- Warspear
 } or { -- Alliance
 	[1] = {3561,10059},		-- Stormwind
 	[2] = {3562,11416},		-- Ironforge
@@ -24,6 +25,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[7] = {53140,53142},	-- Dalaran
 	[8] = {88342,88345},	-- Tol Barad
 	[9] = {132621,132620},	-- Vale of Eternal Blossoms
+	[10] = {176248,176246},	-- Stormshield
 }
 
 if IsSpellKnown(120145) then
