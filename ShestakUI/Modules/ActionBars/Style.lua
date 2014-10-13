@@ -96,7 +96,12 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 	local hotkey = _G[name.."HotKey"]
 
 	button:SetNormalTexture("")
-	button.SetNormalTexture = T.dummy
+
+	hooksecurefunc(button, "SetNormalTexture", function(self, texture)
+		if texture and texture ~= "" then
+			self:SetNormalTexture("")
+		end
+	end)
 
 	flash:SetTexture(0.8, 0.8, 0.8, 0.5)
 	flash:SetPoint("TOPLEFT", button, 2, -2)
