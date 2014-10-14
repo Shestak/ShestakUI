@@ -14,7 +14,6 @@ local function OnEvent(self, event, arg1, arg2)
 	if event == "UNIT_AURA" and arg1 ~= "player" then return end
 	if group.level and UnitLevel("player") < group.level then return end
 
-	self.icon:SetTexture(nil)
 	self:Hide()
 	if group.negate_spells then
 		for _, buff in pairs(group.negate_spells) do
@@ -41,6 +40,8 @@ local function OnEvent(self, event, arg1, arg2)
 		if usable or nomana or group.level then
 			self.icon:SetTexture(icon)
 			break
+		else
+			self.icon:SetTexture(nil)
 		end
 	end
 
