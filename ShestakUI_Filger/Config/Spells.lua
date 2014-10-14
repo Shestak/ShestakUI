@@ -3234,8 +3234,6 @@ C["filger_spells"] = {
 			{spellID = 3600, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Shock
 			{spellID = 8056, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Frostbrand Attack
-			--WoD {spellID = 8034, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Thunderstorm
 			{spellID = 51490, unitID = "player", caster = "all", filter = "DEBUFF"},
 
