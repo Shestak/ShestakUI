@@ -11,7 +11,7 @@ local guardianelixirbuffs = T.ReminderBuffs["GuardianElixir"]
 local foodbuffs = T.ReminderBuffs["Food"]
 local statbuffs = T.ReminderBuffs["Stat"]
 local staminabuffs = T.ReminderBuffs["Stamina"]
-local visible, flask, battleelixir, guardianelixir, food, stat, stamina, spell5, spell6
+local visible, flask, battleelixir, guardianelixir, food, stat, stamina, spell5, spell6, once
 
 -- We need to check if you have two different elixirs if your not flasked, before we say your not flasked
 local function CheckElixir(unit)
@@ -21,6 +21,7 @@ local function CheckElixir(unit)
 			if UnitAura("player", name) then
 				FlaskFrame.t:SetTexture(icon)
 				battleelixir = true
+				once = true
 				break
 			else
 				battleelixir = false
@@ -36,6 +37,7 @@ local function CheckElixir(unit)
 				if not battleelixir then
 					FlaskFrame.t:SetTexture(icon)
 				end
+				once = true
 				break
 			else
 				guardianelixir = false
@@ -68,8 +70,9 @@ local function OnAuraChange(self, event, arg1, unit)
 	if flaskbuffs and flaskbuffs[1] then
 		for i, flaskbuffs in pairs(flaskbuffs) do
 			local name, _, icon = GetSpellInfo(flaskbuffs)
-			if event == "PLAYER_ENTERING_WORLD" then
+			if event == "PLAYER_ENTERING_WORLD" or once then
 				FlaskFrame.t:SetTexture(icon)
+				once = false
 			end
 			if UnitAura("player", name) then
 				FlaskFrame:SetAlpha(C.reminder.raid_buffs_alpha)
