@@ -217,13 +217,16 @@ elseif T.class == "PRIEST" then
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[51723] = 0		-- Fan of Knives
-		T.aoespam[121411] = 0		-- Crimson Tempest
 		T.aoespam[122233] = 3		-- Crimson Tempest (DoT)
 		T.aoespam[2818] = 3			-- Deadly Poison
 		T.aoespam[8680] = 3			-- Wound Poison
 		T.aoespam[22482] = 3		-- Blade Flurry
+		T.aoespam[16511] = 3		-- Hemorrhage
 		T.aoespam[5374] = 0			-- Mutilate
 		T.merge[27576] = 5374		-- Mutilate Off-Hand
+		T.merge[113780] = 2818		-- Deadly Poison
+		T.merge[168908] = 16511		-- Hemorrhage
+		T.merge[121411] = 122233	-- Crimson Tempest
 	end
 	if C.combattext.healing then
 		T.healfilter[112974] = true	-- Leeching Poison
