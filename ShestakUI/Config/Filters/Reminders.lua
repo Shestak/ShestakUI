@@ -32,14 +32,15 @@ if C.reminder.raid_buffs_enable == true then
 		},
 		Stat = {
 			20217,	-- Blessing of Kings
-			117666,	-- Legacy of the Emperor
+			115921,	-- Legacy of the Emperor
+			116781,	-- Legacy of the White Tiger
 			90363,	-- Embrace of the Shale Spider
 			1126,	-- Mark of the Wild
 		},
 		Stamina = {
-			109773,	-- Dark Intent
 			469,	-- Commanding Shout
 			90364,	-- Qiraji Fortitude
+			166928,	-- Blood Pact
 			111922,	-- Runescroll of Fortitude III
 			21562,	-- Power Word: Fortitude
 		}
@@ -48,17 +49,11 @@ if C.reminder.raid_buffs_enable == true then
 	-- Caster buffs
 	function T.ReminderCasterBuffs()
 		Spell5Buff = {	-- Spell Power
-			77747,	-- Burning Wrath
 			109773,	-- Dark Intent
 			126309,	-- Still Water
+			128433,	-- Serpent's Swiftness
 			61316,	-- Dalaran Brilliance
 			1459,	-- Arcane Brilliance
-		}
-		Spell6Buff = {	-- Spell Haste
-			24907,	-- Moonkin Aura
-			49868,	-- Mind Quickening
-			135678,	-- Energizing Spores
-			51470,	-- Elemental Oath
 		}
 	end
 
@@ -69,14 +64,16 @@ if C.reminder.raid_buffs_enable == true then
 			19506,	-- Trueshot Aura
 			57330,	-- Horn of Winter
 		}
-		Spell6Buff = {	-- Melee and Ranged Haste
-			30809,	-- Unleashed Rage
-			113742,	-- Swiftblade's Cunning
-			128432,	-- Cackling Howl
-			128433,	-- Serpent's Swiftness
-			55610,	-- Unholy Aura
-		}
 	end
+
+	Spell6Buff = {	-- Haste
+		49868,	-- Mind Quickening
+		135678,	-- Energizing Spores
+		113742,	-- Swiftblade's Cunning
+		128432,	-- Cackling Howl
+		55610,	-- Unholy Aura
+		116956,	-- Grace of Air
+	}
 end
 
 ----------------------------------------------------------------------------------------
@@ -85,18 +82,17 @@ end
 
 	Type of Check:
 		spells - List of spells in a group, if you have anyone of these spells the icon will hide.
-		weapon - Run a weapon enchant check instead of a spell check
 
 	Spells only Requirements:
 		negate_spells - List of spells in a group, if you have anyone of these spells the icon will immediately hide and stop running the spell check (these should be other peoples spells)
-		reversecheck - only works if you provide a role or a spec, instead of hiding the frame when you have the buff, it shows the frame when you have the buff, doesn't work with weapons
-		negate_reversecheck - if reversecheck is set you can set a spec to not follow the reverse check, doesn't work with weapons
+		personal - like a negate_spells but only for your spells
+		reversecheck - only works if you provide a role or a spec, instead of hiding the frame when you have the buff, it shows the frame when you have the buff
+		negate_reversecheck - if reversecheck is set you can set a spec to not follow the reverse check
 
-	Requirements: (These work for both spell and weapon checks)
+	Requirements:
 		role - you must be a certain role for it to display (Tank, Melee, Caster)
 		spec - you must be active in a specific spec for it to display (1, 2, 3) note: spec order can be viewed from top to bottom when you open your talent pane
-		level - the minimum level you must be (most of the time we don't need to use this because it will register the spell learned event if you don't know the spell, but in the case of weapon enchants this is useful)
-		personal - aura must come from the player
+		level - the minimum level you must be (most of the time we don't need to use this because it will register the spell learned event if you don't know the spell, but in some cases it may be useful)
 
 	Additional Checks: (Note we always run a check when gaining/losing an aura)
 		instance - check when entering a party/raid instance
@@ -132,38 +128,13 @@ if C.reminder.solo_buffs_enable == true then
 				["spells"] = {
 					1126,	-- Mark of the Wild
 				},
-				["negate_spells"] = {
-					20217,	-- Blessing of Kings
-					117666,	-- Legacy of the Emperor
-					90363,	-- Embrace of the Shale Spider
-				},
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
-			},
-		},
-		HUNTER = {
-			[1] = {	-- Aspects group
-				["spells"] = {
-					13165,	-- Aspect of the Hawk
-					109260,	-- Aspect of the Iron Hawk
-				},
-				["instance"] = true,
-				["personal"] = true,
 			},
 		},
 		MAGE = {
-			[1] = {	-- Armors group
-				["spells"] = {
-					30482,	-- Molten Armor
-					7302,	-- Frost Armor
-					6117,	-- Mage Armor
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[2] = {	-- Brilliance group
+			[1] = {	-- Brilliance group
 				["spells"] = {
 					1459,	-- Arcane Brilliance
 					61316,	-- Dalaran Brilliance
@@ -176,12 +147,13 @@ if C.reminder.solo_buffs_enable == true then
 		MONK = {
 			[1] = {	-- Legacy of the Emperor group
 				["spells"] = {
-					117666,	-- Legacy of the Emperor
+					115921,	-- Legacy of the Emperor
 				},
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
 					20217,	-- Blessing of Kings
 					90363,	-- Embrace of the Shale Spider
+					116781,	-- Legacy of the White Tiger
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -192,11 +164,7 @@ if C.reminder.solo_buffs_enable == true then
 					116781,	-- Legacy of the White Tiger
 				},
 				["negate_spells"] = {
-					1459,	-- Arcane Brilliance
-					61316,	-- Dalaran Brilliance
-					24932,	-- Leader of the Pack
-					90309,	-- Terrifying Roar
-					24604,	-- Furious Howl
+					90363,	-- Embrace of the Shale Spider
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -219,8 +187,11 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
-					117666,	-- Legacy of the Emperor
+					115921,	-- Legacy of the Emperor
+					116781,	-- Legacy of the White Tiger
 					90363,	-- Embrace of the Shale Spider
+				},
+				["personal"] = {
 					19740,	-- Blessing of Might
 				},
 				["combat"] = true,
@@ -234,7 +205,9 @@ if C.reminder.solo_buffs_enable == true then
 				["negate_spells"] = {
 					116956,	-- Grace of Air
 					93435,	-- Roar of Courage
-					127830,	-- Spirit Beast Blessing
+					128997,	-- Spirit Beast Blessing
+				},
+				["personal"] = {
 					20217,	-- Blessing of Kings
 				},
 				["combat"] = true,
@@ -243,10 +216,14 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		PRIEST = {
-			[1] = {	-- Inner Fire/Will group
+			[1] = {	-- Stamina group
 				["spells"] = {
-					588,	-- Inner Fire
-					73413,	-- Inner Will
+					21562,	-- Power Word: Fortitude
+				},
+				["negate_spells"] = {
+					469,	-- Commanding Shout
+					90364,	-- Qiraji Fortitude
+					166928,	-- Blood Pact
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -258,17 +235,16 @@ if C.reminder.solo_buffs_enable == true then
 				["spells"] = {
 					2823,	-- Deadly Poison
 					8679,	-- Wound Poison
+					157584,	-- Instant Poison
 				},
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
 			},
-			[2] = {	--  Non-Lethal Poisons group
+			[2] = {	-- Non-Lethal Poisons group
 				["spells"] = {
-					5761,	-- Mind-numbing Poison
 					3408,	-- Crippling Poison
 					108211,	-- Leeching Poison
-					108215,	-- Paralytic Poison
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -286,23 +262,11 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 			},
-			[2] = {	-- Weapons enchants group
-				["weapon"] = true,
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-				["level"] = 10,
-			},
 		},
 		WARLOCK = {
 			[1] = {	-- Dark Intent group
 				["spells"] = {
 					109773,	-- Dark Intent
-				},
-				["negate_spells"] = {
-					1459,	-- Arcane Brilliance
-					61316,	-- Dalaran Brilliance
-					77747,	-- Burning Wrath
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -316,8 +280,10 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					21562,	-- Power Word: Fortitude
-					109773,	-- Dark Intent
 					90364,	-- Qiraji Fortitude
+					166928,	-- Blood Pact
+				},
+				["personal"] = {
 					6673,	-- Battle Shout
 				},
 				["combat"] = true,
@@ -330,6 +296,8 @@ if C.reminder.solo_buffs_enable == true then
 				["negate_spells"] = {
 					19506,	-- Trueshot Aura
 					57330,	-- Horn of Winter
+				},
+				["personal"] = {
 					469,	-- Commanding Shout
 				},
 				["combat"] = true,

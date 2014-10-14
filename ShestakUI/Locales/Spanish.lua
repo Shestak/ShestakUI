@@ -226,9 +226,9 @@ L_DATATEXT_CARTS_CONTROLLED = "Vagonetas Controladas:"
 
 -- Info text
 L_INFO_ERRORS = "Ningún error aun."
-L_INFO_INVITE = "Invitación aceptada de: "
-L_INFO_DUEL = "Duelo rechazado de: "
-L_INFO_PET_DUEL = "Declined pet duel request from: " -- Needs review
+L_INFO_INVITE = "Invitación aceptada de "
+L_INFO_DUEL = "Duelo rechazado de "
+L_INFO_PET_DUEL = "Declined pet duel request from " -- Needs review
 L_INFO_DISBAND = "Deshaciendo banda..."
 L_INFO_SETTINGS_DBM = "Escribe /settings dbm, para aplicar las preferencias del DBM."
 L_INFO_SETTINGS_DXE = "Escribe /settings dxe, para aplicar las preferencias del DXE."

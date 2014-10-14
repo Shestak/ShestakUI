@@ -12,6 +12,7 @@ stArch["artifactInfo"] = {}	-- Information to update bars
 local Loaded = false
 
 function stArch:OnLoad(self)
+	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
 	if SavedOptionsPerChar.Archaeology == false then self:Hide() end
 	-- Title Bar
 	stArch["title"] = CreateFrame("Frame", "ArchTitleFrame", self)

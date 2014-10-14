@@ -38,17 +38,11 @@ DRUID4 = {
 	1126,	-- Mark of the Wild
 }
 
-HUNTER1 = {
-	13165,	-- Aspect of the Hawk
-}
+HUNTER1 = {}
 
-HUNTER2 = {
-	13165,	-- Aspect of the Hawk
-}
+HUNTER2 = {}
 
-HUNTER3 = {
-	13165,	-- Aspect of the Hawk
-}
+HUNTER3 = {}
 
 MAGE1 = {
 	1459,	-- Arcane Brilliance
@@ -63,15 +57,14 @@ MAGE3 = {
 }
 
 MONK1 = {
-	117666,	-- Legacy of the Emperor
+	116781,	-- Legacy of the White Tiger
 }
 
 MONK2 = {
-	117666,	-- Legacy of the Emperor
+	115921,	-- Legacy of the Emperor
 }
 
 MONK3 = {
-	117666,	-- Legacy of the Emperor
 	116781,	-- Legacy of the White Tiger
 }
 
@@ -89,17 +82,14 @@ PALADIN3 = {
 
 PRIEST1 = {
 	21562,	-- Power Word: Fortitude
-	73413,	-- Inner Will
 }
 
 PRIEST2 = {
 	21562,	-- Power Word: Fortitude
-	73413,	-- Inner Will
 }
 
 PRIEST3 = {
 	21562,	-- Power Word: Fortitude
-	73413,	-- Inner Will
 }
 
 ROGUE1 = {}
@@ -108,9 +98,13 @@ ROGUE2 = {}
 
 ROGUE3 = {}
 
-SHAMAN1 = {}
+SHAMAN1 = {
+	324,	-- Lightning Shield
+}
 
-SHAMAN2 = {}
+SHAMAN2 = {
+	324,	-- Lightning Shield
+}
 
 SHAMAN3 = {}
 

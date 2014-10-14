@@ -193,7 +193,7 @@ function Stuffing:SlotUpdate(b)
 
 	SetItemButtonTexture(b.frame, texture)
 	SetItemButtonCount(b.frame, count)
-	SetItemButtonDesaturated(b.frame, locked, 0.5, 0.5, 0.5)
+	SetItemButtonDesaturated(b.frame, locked)
 
 	b.frame:Show()
 end
@@ -233,6 +233,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 		end
 	else
 		ret.frame = CreateFrame("CheckButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
+		ret.frame:StripTextures()
 		ret.slot = slot
 		table.insert(self.bagframe_buttons, ret)
 	end
@@ -305,8 +306,9 @@ function Stuffing:SlotNew(bag, slot)
 		c:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
 		c:SetPoint("BOTTOMRIGHT", 1, 1)
 
-		if  _G[ret.frame:GetName().."NewItemTexture"] then
-			_G[ret.frame:GetName().."NewItemTexture"]:SetAlpha(0)
+		local Battlepay = _G[ret.frame:GetName()].BattlepayItemTexture
+		if Battlepay then
+			Battlepay:SetAlpha(0)
 		end
 	end
 
@@ -391,13 +393,13 @@ function Stuffing:SearchUpdate(str)
 				if IsItemUnusable(b.name) or minLevel > T.level then
 					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
 				end
-				SetItemButtonDesaturated(b.frame, 1, 1, 1, 1)
+				SetItemButtonDesaturated(b.frame, true)
 				b.frame:SetAlpha(0.2)
 			else
 				if IsItemUnusable(b.name) or minLevel > T.level then
 					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
 				end
-				SetItemButtonDesaturated(b.frame, 0, 1, 1, 1)
+				SetItemButtonDesaturated(b.frame, false)
 				b.frame:SetAlpha(1)
 			end
 		end
@@ -410,7 +412,7 @@ function Stuffing:SearchReset()
 			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
 		end
 		b.frame:SetAlpha(1)
-		SetItemButtonDesaturated(b.frame, 0, 1, 1, 1)
+		SetItemButtonDesaturated(b.frame, false)
 	end
 end
 

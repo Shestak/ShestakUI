@@ -226,9 +226,9 @@ L_DATATEXT_CARTS_CONTROLLED = "Carrelli controllati:"
 
 -- Info text
 L_INFO_ERRORS = "Nessun errore ancora."
-L_INFO_INVITE = "Accettato l'invito di: "
-L_INFO_DUEL = "Declinata la richiesta di duello di: "
-L_INFO_PET_DUEL = "Declinata la richiesta di duello tra mascottes di: "
+L_INFO_INVITE = "Accettato l'invito di "
+L_INFO_DUEL = "Declinata la richiesta di duello di "
+L_INFO_PET_DUEL = "Declinata la richiesta di duello tra mascottes di "
 L_INFO_DISBAND = "Scioglimento gruppo..."
 L_INFO_SETTINGS_DBM = "Digita /settings dbm per applicare le impostazioni predefinite per DBM."
 L_INFO_SETTINGS_DXE = "Digita /settings dxe per applicare le impostazioni predefinite per DXE."

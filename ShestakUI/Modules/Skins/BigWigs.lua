@@ -1,4 +1,4 @@
-local T, C, L, _ = unpack(select(2, ...))
+Ôªølocal T, C, L, _ = unpack(select(2, ...))
 if C.skins.bigwigs ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -147,8 +147,8 @@ local function registerStyle()
 			GetStyleName = function() return "ShestakUI" end,
 		})
 	end
-	bars.db.profile.barStyle = "ShestakUI"
-	if prox and bars.db.profile.barStyle == "ShestakUI" then
+	bars.defaultDB.barStyle = "ShestakUI"
+	if prox and bars.defaultDB.barStyle == "ShestakUI" then
 		hooksecurefunc(prox, "RestyleWindow", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
 		end)
@@ -245,4 +245,4 @@ SlashCmdList.BWTEST = function(msg)
 	end
 end
 SLASH_BWTEST1 = "/bwtest"
-SLASH_BWTEST2 = "/ËˆÂÛ˚Â"
+SLASH_BWTEST2 = "/–∏—Ü–µ—É—ã–µ"

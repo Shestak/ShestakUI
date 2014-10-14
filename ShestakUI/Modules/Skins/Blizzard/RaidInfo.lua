@@ -22,7 +22,6 @@ local function LoadSkin()
 	local buttons = {
 		"RaidFrameConvertToRaidButton",
 		"RaidFrameRaidInfoButton",
-		"RaidFrameRaidBrowserButton",
 		"RaidInfoExtendButton",
 		"RaidInfoCancelButton"
 	}

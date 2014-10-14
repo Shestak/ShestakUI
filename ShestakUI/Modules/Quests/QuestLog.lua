@@ -13,7 +13,7 @@ local function questlevel()
 		local questIndex = i + scrollOffset
 		local questLogTitle = buttons[i]
 		if questIndex <= numEntries then
-			local title, level, _, _, isHeader = GetQuestLogTitle(questIndex)
+			local title, level, _, isHeader = GetQuestLogTitle(questIndex)
 			if not isHeader then
 				questLogTitle:SetText("["..level.."] "..title)
 				QuestLogTitleButton_Resize(questLogTitle)

@@ -44,7 +44,7 @@ local tagStrings = {
 		end
 	end]],
 
-	["leaderlong"]  = [[function(u)
+	["leaderlong"] = [[function(u)
 		if(UnitIsGroupLeader(u)) then
 			return 'Leader'
 		end

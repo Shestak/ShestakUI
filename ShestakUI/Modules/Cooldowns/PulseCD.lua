@@ -196,6 +196,9 @@ end)
 
 SlashCmdList.PulseCD = function()
 	tinsert(animating, {GetSpellTexture(87214)})
+	if C.pulsecooldown.sound == true then
+		PlaySoundFile(C.media.proc_sound, "Master")
+	end
 	frame:SetScript("OnUpdate", OnUpdate)
 end
 SLASH_PulseCD1 = "/pulsecd"

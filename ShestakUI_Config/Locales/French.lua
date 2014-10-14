@@ -13,7 +13,6 @@ L_GUI_MAKE_SELECTION = "Choisir une configuration avant de continuer."
 
 -- General options
 L_GUI_GENERAL_AUTOSCALE = "Mise à l'échelle automatique"
-L_GUI_GENERAL_MULTISAMPLE = "Protection multi échantillonnage (bordure 1px)"
 L_GUI_GENERAL_UISCALE = "Mettre l'interface à l'échelle (si 'Mise à l'échelle automatique' est désactivée)"
 L_GUI_GENERAL_WELCOME_MESSAGE = "Message de bienvenue pour le chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Ajuste automatiquement la barre de latence Blizzard avec votre propre latence"
@@ -27,15 +26,14 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Accepte les quêtes automatiquement"
 L_GUI_MISC_RAID_TOOLS = "Outils de raid"
 L_GUI_MISC_PROFESSION_TABS = "Onglet des professions sur les fenêtres de métiers et de craft"
 L_GUI_MISC_PROFESSION_DATABASE = "Professions Database on Professions frame" -- Needs review
-L_GUI_MISC_DUNGEON_TABS = "PvP/PvE tabs on own frames" -- Needs review
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
-L_GUI_MISC_DISENCHANTING = "One-click Milling, Prospecting and Disenchanting" -- Needs review
+L_GUI_MISC_DISENCHANTING = "Milling, Prospecting and Disenchanting by 'alt' + click" -- Needs review
 L_GUI_MISC_SUM_BUYOUTS = "Sum up all current auctions" -- Needs review
 L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
-L_GUI_MISC_CLICK_CAST_FILTER = "Ignore Player and Target frames for click2cast"  -- Needs review
+L_GUI_MISC_CLICK_CAST_FILTER = "Ignore Player and Target frames for click2cast" -- Needs review
 L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
 L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame" -- Needs review
@@ -208,7 +206,6 @@ L_GUI_TOOLTIP_RAID_ICON = "Icone de raid"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Affiche qui cible actuellement l'unité qui est dans votre groupe/raid"
 L_GUI_TOOLTIP_ITEM_COUNT = "Afficher le nombre d'objets possédés"
 L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
-L_GUI_TOOLTIP_SYMBIOSIS = "Symbiosis info" -- Needs review
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
 L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified" -- Needs review
 
@@ -246,8 +243,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "Cacher la minimap en combat"
 L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
 
 -- Map options
-L_GUI_MAP_ENABLE = "Activer la carte du monde"
-L_GUI_MAP_SCALE = "Echelle de la carte"
 L_GUI_MAP_BG_STYLIZATION = "Style d'arrière plan de la carte"
 L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
 L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
@@ -348,7 +343,6 @@ L_GUI_UF_PORTRAIT_HEIGHT = "Hauteur des portraits"
 L_GUI_UF_PORTRAIT_WIDTH = "Largeur des portraits"
 L_GUI_UF_PLUGINS_GCD = "Scintillement du GCD"
 L_GUI_UF_PLUGINS_SWING = "Barre d'attaque automatique / tir automatique"
-L_GUI_UF_PLUGINS_NECRO_STRIKE = "Active une barre pour la Frappe nécrotique"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Barre de réputation"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Barre d'expérience"
 L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Friendship bar" -- Needs review
@@ -372,6 +366,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "Barre de totem"
 L_GUI_UF_PLUGINS_RANGE_BAR = "Enable Range bar" -- Needs review
 
 -- Raid Frames options
+L_GUI_UF_BY_ROLE = "Sorting players in group by role" -- Needs review
 L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"
 L_GUI_UF_DEFICIT_HEALTH = "Déficit en vie du raid"
 L_GUI_UF_SHOW_PARTY = "Afficher les barres du groupe"

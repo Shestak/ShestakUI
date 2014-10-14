@@ -6,8 +6,10 @@ if C.chat.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 -- Find the Realm and Local
 local realmName = string.lower(GetRealmName())
-local realmLocal = string.sub(GetCVar("realmList"), 1, 2)
+local realmLocal = string.lower(GetCVar("portal"))
 local link
+
+if realmLocal == "ru" then realmLocal = "eu" end
 
 local function urlencode(obj)
 	local currentIndex = 1

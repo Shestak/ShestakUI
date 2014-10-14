@@ -153,7 +153,6 @@ local function SetChatStyle(frame)
 
 	-- Rename combat log tab
 	if _G[chat] == _G["ChatFrame2"] then
-		FCF_SetWindowName(_G[chat], GUILD_BANK_LOG)
 		CombatLogQuickButtonFrame_Custom:StripTextures()
 		CombatLogQuickButtonFrame_Custom:CreateBackdrop("Transparent")
 		CombatLogQuickButtonFrame_Custom.backdrop:SetPoint("TOPLEFT", 1, -4)

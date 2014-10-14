@@ -157,12 +157,13 @@ end
 ----------------------------------------------------------------------------------------
 --	Style ActionBars/Bags buttons function(by Chiril & Karudon)
 ----------------------------------------------------------------------------------------
-local function StyleButton(button, t)
+local function StyleButton(button, t, size)
+	if not size then size = 2 end
 	if button.SetHighlightTexture and not button.hover then
 		local hover = button:CreateTexture(nil, nil, self)
 		hover:SetTexture(1, 1, 1, 0.3)
-		hover:SetPoint("TOPLEFT", button, 2, -2)
-		hover:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		hover:SetPoint("TOPLEFT", button, size, -size)
+		hover:SetPoint("BOTTOMRIGHT", button, -size, size)
 		button.hover = hover
 		button:SetHighlightTexture(hover)
 	end
@@ -170,8 +171,8 @@ local function StyleButton(button, t)
 	if not t and button.SetPushedTexture and not button.pushed then
 		local pushed = button:CreateTexture(nil, nil, self)
 		pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
-		pushed:SetPoint("TOPLEFT", button, 2, -2)
-		pushed:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		pushed:SetPoint("TOPLEFT", button, size, -size)
+		pushed:SetPoint("BOTTOMRIGHT", button, -size, size)
 		button.pushed = pushed
 		button:SetPushedTexture(pushed)
 	end
@@ -179,8 +180,8 @@ local function StyleButton(button, t)
 	if button.SetCheckedTexture and not button.checked then
 		local checked = button:CreateTexture(nil, nil, self)
 		checked:SetTexture(0, 1, 0, 0.3)
-		checked:SetPoint("TOPLEFT", button, 2, -2)
-		checked:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		checked:SetPoint("TOPLEFT", button, size, -size)
+		checked:SetPoint("BOTTOMRIGHT", button, -size, size)
 		button.checked = checked
 		button:SetCheckedTexture(checked)
 	end
@@ -188,8 +189,8 @@ local function StyleButton(button, t)
 	local cooldown = button:GetName() and _G[button:GetName().."Cooldown"]
 	if cooldown then
 		cooldown:ClearAllPoints()
-		cooldown:SetPoint("TOPLEFT", button, 2, -2)
-		cooldown:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		cooldown:SetPoint("TOPLEFT", button, size, -size)
+		cooldown:SetPoint("BOTTOMRIGHT", button, -size, size)
 	end
 end
 
@@ -197,6 +198,7 @@ end
 --	Style buttons function
 ----------------------------------------------------------------------------------------
 T.SetModifiedBackdrop = function(self)
+	if self:GetButtonState() == "DISABLED" then return end
 	self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 	if self.overlay then
 		self.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
@@ -204,6 +206,7 @@ T.SetModifiedBackdrop = function(self)
 end
 
 T.SetOriginalBackdrop = function(self)
+	if self:GetButtonState() == "DISABLED" then return end
 	self:SetBackdropBorderColor(unpack(C.media.border_color))
 	if self.overlay then
 		self.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
@@ -211,11 +214,12 @@ T.SetOriginalBackdrop = function(self)
 end
 
 local function SkinButton(f, strip)
+	if strip then f:StripTextures() end
+
 	if f.SetNormalTexture then f:SetNormalTexture("") end
 	if f.SetHighlightTexture then f:SetHighlightTexture("") end
 	if f.SetPushedTexture then f:SetPushedTexture("") end
 	if f.SetDisabledTexture then f:SetDisabledTexture("") end
-	if strip then f:StripTextures() end
 
 	if f.Left then f.Left:SetAlpha(0) end
 	if f.Right then f.Right:SetAlpha(0) end
@@ -223,6 +227,16 @@ local function SkinButton(f, strip)
 	if f.LeftSeparator then f.LeftSeparator:SetAlpha(0) end
 	if f.RightSeparator then f.RightSeparator:SetAlpha(0) end
 	if f.Flash then f.Flash:SetAlpha(0) end
+
+	if f.TopLeft then f.TopLeft:Hide() end
+	if f.TopRight then f.TopRight:Hide() end
+	if f.BottomLeft then f.BottomLeft:Hide() end
+	if f.BottomRight then f.BottomRight:Hide() end
+	if f.TopMiddle then f.TopMiddle:Hide() end
+	if f.MiddleLeft then f.MiddleLeft:Hide() end
+	if f.MiddleRight then f.MiddleRight:Hide() end
+	if f.BottomMiddle then f.BottomMiddle:Hide() end
+	if f.MiddleMiddle then f.MiddleMiddle:Hide() end
 
 	f:SetTemplate("Overlay")
 	f:HookScript("OnEnter", T.SetModifiedBackdrop)

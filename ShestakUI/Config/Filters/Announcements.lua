@@ -12,14 +12,9 @@ if C.announcements.spells == true then
 		57934,	-- Tricks of the Trade
 		633,	-- Lay on Hands
 		20484,	-- Rebirth
-		113269,	-- Rebirth (Symbiosis)
 		61999,	-- Raise Ally
 		20707,	-- Soulstone
 		2908,	-- Soothe
-		120668,	-- Stormlash Totem
-		16190,	-- Mana Tide Totem
-		64901,	-- Hymn of Hope
-		108968,	-- Void Shift
 	}
 end
 

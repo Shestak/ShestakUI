@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.map.enable ~= true or C.map.map_boss_count ~= true then return end
+if C.map.map_boss_count ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Show boss count in WorldMap(BetterMapPortraits by Magdain)
@@ -36,7 +36,7 @@ frame:SetScript("OnEvent", function(self, event)
 		local button = _G["EJMapButton"..i]
 		while button and button:IsShown() do
 			if not button.label then
-				button.label = button:CreateFontString(nil, "OVERLAY", "MailFont_Large")
+				button.label = button:CreateFontString(nil, "OVERLAY", "QuestFont_Super_Huge")
 				button.label:SetText(i)
 				button.label:SetPoint("CENTER")
 			end

@@ -8,13 +8,9 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.raidcooldown.enable == true then
 	T.raid_spells = {
 		[20484] = 600,	-- Rebirth
-		[113269] = 600,	-- Rebirth (Symbiosis)
 		[61999] = 600,	-- Raise Ally
 		[20707] = 600,	-- Soulstone
 		[126393] = 600,	-- Eternal Guardian
-		[64901] = 360,	-- Hymn of Hope
-		[29166] = 180,	-- Innervate
-		[16190] = 180,	-- Mana Tide Totem
 		[108280] = 180,	-- Healing Tide Totem
 	}
 end
@@ -31,7 +27,6 @@ if C.enemycooldown.enable == true then
 		[6552] = 15,	-- Pummel
 		[102051] = 20,	-- Frostjaw
 		[147362] = 24,	-- Counter Shot
-		[34490] = 24,	-- Silencing Shot
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
 		[115781] = 24,	-- Optical Blast
@@ -44,7 +39,6 @@ if C.enemycooldown.enable == true then
 		[20066] = 15,	-- Repentance
 		[10326] = 15,	-- Turn Evil
 		[108194] = 30,	-- Asphyxiate
-		[19503] = 30,	-- Scatter Shot
 		[1499] = 30,	-- Freezing Trap
 		[44572] = 30,	-- Deep Freeze
 		[105593] = 30,	-- Fist of Justice
@@ -72,13 +66,6 @@ if C.enemycooldown.enable == true then
 		[1856] = 120,	-- Vanish
 		[19263] = 180,	-- Deterrence
 		[33206] = 180,	-- Pain Suppression
-		-- Disarms
-		[51722] = 60,	-- Dismantle
-		[676] = 60,		-- Disarm
-		-- Mana regen
-		[54428] = 120,	-- Divine Plea
-		[29166] = 180,	-- Innervate
-		[16190] = 180,	-- Mana Tide Totem
 	}
 end
 

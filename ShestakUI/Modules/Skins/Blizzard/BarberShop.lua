@@ -16,19 +16,15 @@ local function LoadSkin()
 		_G[buttons[i]]:SkinButton(true)
 	end
 
-	for i = 1, 4 do
+	for i = 1, 5 do
 		local f = _G["BarberShopFrameSelector"..i]
 		local f2 = _G["BarberShopFrameSelector"..i-1]
 		T.SkinNextPrevButton(_G["BarberShopFrameSelector"..i.."Prev"])
 		T.SkinNextPrevButton(_G["BarberShopFrameSelector"..i.."Next"])
 
-		if i ~= 1 then
+		if i ~= 1 or i ~= 4 then
 			f:ClearAllPoints()
 			f:SetPoint("TOP", f2, "BOTTOM", 0, -3)
-		end
-
-		if f then
-			f:StripTextures()
 		end
 	end
 
@@ -44,7 +40,8 @@ local function LoadSkin()
 
 	BarberShopFrameMoneyFrame:StripTextures()
 	BarberShopFrameMoneyFrame:CreateBackdrop("Overlay")
-	BarberShopFrameBackground:Kill()
+	BarberShopFrameMoneyFrame:ClearAllPoints()
+	BarberShopFrameMoneyFrame:SetPoint("BOTTOM", 0, 50)
 
 	BarberShopBannerFrameBGTexture:Kill()
 	BarberShopBannerFrame:Kill()

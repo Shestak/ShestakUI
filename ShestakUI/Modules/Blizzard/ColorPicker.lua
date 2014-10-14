@@ -29,9 +29,9 @@ end
 
 local function UpdateColorTexts(r, g, b)
 	if not r then r, g, b = ColorPickerFrame:GetColorRGB() end
-	r = r * 255
-	g = g * 255
-	b = b * 255
+	r = math.floor (r * 255 + 0.5)
+	g = math.floor (g * 255 + 0.5)
+	b = math.floor (b * 255 + 0.5)
 	ColorPPBoxR:SetText(string.format("%d", r))
 	ColorPPBoxG:SetText(string.format("%d", g))
 	ColorPPBoxB:SetText(string.format("%d", b))

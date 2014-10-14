@@ -28,10 +28,16 @@ local function LoadSkin()
 		"SecondaryHandSlot"
 	}
 
-	for _, slot in pairs(slots) do
-		_G["Character"..slot.."Frame"]:Hide()
-		local icon = _G["Character"..slot.."IconTexture"]
-		local slot = _G["Character"..slot]
+	select(11, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
+	select(11, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
+
+	for _, i in pairs(slots) do
+		_G["Character"..i.."Frame"]:Hide()
+		local icon = _G["Character"..i.."IconTexture"]
+		local slot = _G["Character"..i]
+		local border = _G["Character"..i].IconBorder
+
+		border:Kill()
 
 		slot:StyleButton()
 		slot:SetNormalTexture("")
@@ -43,9 +49,6 @@ local function LoadSkin()
 		icon:SetPoint("TOPLEFT", 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
-
-	select(8, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
-	select(8, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
 
 	-- Strip Textures
 	local charframe = {
@@ -70,6 +73,7 @@ local function LoadSkin()
 			local icon = _G["EquipmentFlyoutFrameButton"..i.."IconTexture"]
 			if button then
 				button:StyleButton()
+				button.IconBorder:Hide()
 
 				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				button:GetNormalTexture():SetTexture(nil)

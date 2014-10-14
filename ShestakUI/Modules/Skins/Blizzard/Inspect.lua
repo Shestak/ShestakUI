@@ -64,7 +64,7 @@ local function LoadSkin()
 	InspectTalentFrame:DisableDrawLayer("BACKGROUND")
 	InspectTalentFrame:DisableDrawLayer("BORDER")
 
-	for i = 1, 6 do
+	for i = 1, 7 do
 		for j = 1, 3 do
 			local button = _G["TalentsTalentRow"..i.."Talent"..j]
 			local icon = _G["TalentsTalentRow"..i.."Talent"..j.."IconTexture"]

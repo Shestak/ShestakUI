@@ -25,7 +25,9 @@ bar:RegisterEvent("UNIT_FLAGS")
 bar:RegisterEvent("UNIT_AURA")
 bar:SetScript("OnEvent", function(self, event, arg1)
 	if event == "PLAYER_LOGIN" then
-		PetActionBarFrame.showgrid = 1
+		PetActionBar_ShowGrid = T.dummy
+		PetActionBar_HideGrid = T.dummy
+		PetActionBarFrame.showgrid = nil
 		for i = 1, 10 do
 			local button = _G["PetActionButton"..i]
 			button:ClearAllPoints()

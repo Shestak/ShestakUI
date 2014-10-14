@@ -199,8 +199,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		end)
 
 		if C.skins.blizzard_frames == true then
-			T.SkinEditBox(Search)
-			Search:SetHeight(18)
+			T.SkinEditBox(Search, nil, 18)
 			Filter:StripTextures(true)
 			Filter:SkinButton()
 			Filter:SetPoint("TOPLEFT", Search, "TOPRIGHT", 5, 2)

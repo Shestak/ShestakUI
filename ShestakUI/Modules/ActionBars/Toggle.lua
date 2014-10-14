@@ -120,7 +120,7 @@ local RightBars = function()
 		elseif SavedOptionsPerChar.RightBars == 0 then
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
-				PetActionBarAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
+				PetActionBarAnchor:SetPoint("BOTTOMRIGHT", ToggleBar[2], "TOPRIGHT", 3, 3)
 			end
 			ToggleBar[2]:SetWidth(C.actionbar.button_size)
 			ToggleBarText(2, "< < <", true)
@@ -379,6 +379,7 @@ for i = 1, 5 do
 	end)
 
 	ToggleBar[i]:SetScript("OnUpdate", function()
+		if InCombatLockdown() then return end
 		if SavedOptionsPerChar.BarsLocked == true then
 			for i = 1, 4 do
 				ToggleBar[i]:EnableMouse(false)

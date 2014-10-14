@@ -30,7 +30,6 @@ bar:SetAllPoints(ShiftHolder)
 local States = {
 	["DEATHKNIGHT"] = "show",
 	["DRUID"] = "show",
-	["HUNTER"] = "show",
 	["MONK"] = "show",
 	["PALADIN"] = "show",
 	["PRIEST"] = "show",

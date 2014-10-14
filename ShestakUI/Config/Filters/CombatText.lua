@@ -3,7 +3,7 @@ if C.combattext.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Cleave -> http://www.wowhead.com/spell=845
+--	Example: Blizzard -> http://www.wowhead.com/spell=42208
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 -- General filter outgoing healing
@@ -13,6 +13,7 @@ end
 
 -- General merge outgoing damage
 if C.combattext.merge_aoe_spam then
+	T.merge = {}
 	T.aoespam = {}
 	T.aoespam[6603] = 3				-- Auto Attack
 	T.aoespam[148008] = 3			-- Essence of Yu'lon
@@ -26,16 +27,19 @@ if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[55095] = 3		-- Frost Fever
 		T.aoespam[55078] = 3		-- Blood Plague
-		T.aoespam[48721] = 0		-- Blood Boil
+		T.aoespam[50842] = 0		-- Blood Boil
 		T.aoespam[49184] = 0		-- Howling Blast
 		T.aoespam[52212] = 3		-- Death and Decay
-		T.aoespam[55050] = 0		-- Heart Strike
 		T.aoespam[50401] = 3		-- Razor Frost
 		T.aoespam[91776] = 3		-- Claw (Ghoul)
 		T.aoespam[49020] = 0		-- Obliterate
 		T.aoespam[49143] = 0		-- Frost Strike
 		T.aoespam[45462] = 0		-- Plague Strike
 		T.aoespam[49998] = 0		-- Death Strike
+		T.merge[66198] = 49020		-- Obliterate Off-Hand
+		T.merge[66196] = 49143		-- Frost Strike Off-Hand
+		T.merge[66216] = 45462		-- Plague Strike Off-Hand
+		T.merge[66188] = 49998		-- Death Strike Off-Hand
 	end
 	if C.combattext.healing then
 		T.healfilter[119980] = true	-- Conversion
@@ -47,25 +51,21 @@ elseif T.class == "DRUID" then
 		T.aoespam[48438] = 3		-- Wild Growth
 		T.aoespam[8936] = 3			-- Regrowth
 		T.aoespam[33763] = 3		-- Lifebloom
-		T.aoespam[44203] = 3		-- Tranquility
-		T.aoespam[81269] = 3		-- Efflorescence
-		T.aoespam[142424] = 3		-- Efflorescence (Force of Nature)
-		T.aoespam[102792] = 3		-- Wild Mushroom: Bloom
+		T.aoespam[157982] = 3		-- Tranquility
+		T.aoespam[81269] = 3		-- Wild Mushroom
 		T.aoespam[124988] = 3		-- Nature's Vigil
+		T.aoespam[162359] = 3		-- Genesis
 		T.aoespam[144876] = 3		-- Spark of Life (T16)
 		-- Damaging spells
-		T.aoespam[8921] = 3			-- Moonfire
-		T.aoespam[93402] = 3		-- Sunfire
+		T.aoespam[164812] = 3		-- Moonfire
+		T.aoespam[164815] = 3		-- Sunfire
 		T.aoespam[42231] = 3		-- Hurricane
 		T.aoespam[106998] = 3		-- Astral Storm
 		T.aoespam[50288] = 3		-- Starfall
-		T.aoespam[78777] = 3		-- Wild Mushroom: Detonate
 		T.aoespam[61391] = 0		-- Typhoon
-		T.aoespam[1822] = 3			-- Rake
-		T.aoespam[33876] = 0		-- Mangle (Cat Form)
-		T.aoespam[33878] = 0		-- Mangle (Bear Form)
-		T.aoespam[62078] = 0		-- Swipe (Cat Form)
-		T.aoespam[779] = 0			-- Swipe (Bear Form)
+		T.aoespam[155722] = 3		-- Rake
+		T.aoespam[33917] = 0		-- Mangle
+		T.aoespam[106785] = 0		-- Swipe
 		T.aoespam[33745] = 3		-- Lacerate
 		T.aoespam[77758] = 3		-- Thrash (Bear Form)
 		T.aoespam[106830] = 3		-- Thrash (Cat Form)
@@ -75,16 +75,14 @@ elseif T.class == "DRUID" then
 	if C.combattext.healing then
 		T.healfilter[145109] = true	-- Ysera's Gift (Self)
 		T.healfilter[145110] = true	-- Ysera's Gift
-		T.healfilter[34299] = true	-- Leader of the Pack
+		T.healfilter[68285] = true	-- Leader of the Pack
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[2643] = 0			-- Multi-Shot
-		T.aoespam[83077] = 0		-- Improved Serpent Sting
 		T.aoespam[118253] = 3		-- Serpent Sting
 		T.aoespam[13812] = 3		-- Explosive Trap
 		T.aoespam[53301] = 3		-- Explosive Shot
-		T.aoespam[63468] = 3		-- Piercing Shots
 		T.aoespam[118459] = 3		-- Beast Cleave
 		T.aoespam[120699] = 3		-- Lynx Rush
 		T.aoespam[120361] = 3		-- Barrage
@@ -134,7 +132,6 @@ elseif T.class == "MONK" then
 		-- Damaging spells
 		T.aoespam[117952] = 3		-- Crackling Jade Lightning
 		T.aoespam[117418] = 3		-- Fists of Fury
-		T.aoespam[120274] = 3		-- Tiger Strikes
 		T.aoespam[128531] = 3		-- Blackout Kick (DoT)
 		T.aoespam[121253] = 0		-- Keg Smash
 		T.aoespam[115181] = 0		-- Breath of Fire
@@ -142,7 +139,7 @@ elseif T.class == "MONK" then
 		T.aoespam[107270] = 3		-- Spinning Crane Kick
 		T.aoespam[123586] = 3		-- Flying Serpent Kick
 		T.aoespam[132467] = 3		-- Chi Wave
-		T.aoespam[130651] = 3		-- Chi Burst
+		T.aoespam[148135] = 3		-- Chi Burst
 		T.aoespam[124098] = 3		-- Zen Sphere
 		T.aoespam[125033] = 3		-- Zen Sphere: Detonate
 	end
@@ -175,6 +172,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[114919] = 3		-- Arcing Light
 		T.aoespam[114916] = 3		-- Execution Sentence
 		T.aoespam[86704] = 0		-- Ancient Fury
+		T.merge[53595] = 88263		-- Hammer of the Righteous
 	end
 	if C.combattext.healing then
 		T.healfilter[115547] = true	-- Glyph of Avenging Wrath
@@ -192,7 +190,6 @@ elseif T.class == "PRIEST" then
 		T.aoespam[34861] = 0		-- Circle of Healing
 		T.aoespam[33110] = 3		-- Prayer of Mending
 		T.aoespam[88686] = 3		-- Holy Word: Sanctuary
-		T.aoespam[63544] = 3		-- Rapid Renewal
 		T.aoespam[81751] = 3		-- Atonement
 		T.aoespam[120692] = 3		-- Halo
 		T.aoespam[121148] = 3		-- Cascade
@@ -210,6 +207,8 @@ elseif T.class == "PRIEST" then
 		T.aoespam[120696] = 3		-- Halo
 		T.aoespam[127628] = 3		-- Cascade
 		T.aoespam[122128] = 3		-- Divine Star
+		T.merge[94472] = 81751		-- Atonement
+		T.merge[158831] = 2944		-- Devouring Plague
 	end
 	if C.combattext.healing then
 		T.healfilter[127626] = true	-- Devouring Plague
@@ -218,12 +217,16 @@ elseif T.class == "PRIEST" then
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[51723] = 0		-- Fan of Knives
-		T.aoespam[121411] = 0		-- Crimson Tempest
 		T.aoespam[122233] = 3		-- Crimson Tempest (DoT)
 		T.aoespam[2818] = 3			-- Deadly Poison
 		T.aoespam[8680] = 3			-- Wound Poison
 		T.aoespam[22482] = 3		-- Blade Flurry
+		T.aoespam[16511] = 3		-- Hemorrhage
 		T.aoespam[5374] = 0			-- Mutilate
+		T.merge[27576] = 5374		-- Mutilate Off-Hand
+		T.merge[113780] = 2818		-- Deadly Poison
+		T.merge[168908] = 16511		-- Hemorrhage
+		T.merge[121411] = 122233	-- Crimson Tempest
 	end
 	if C.combattext.healing then
 		T.healfilter[112974] = true	-- Leeching Poison
@@ -234,46 +237,55 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[73921] = 3		-- Healing Rain
 		T.aoespam[52042] = 3		-- Healing Stream Totem
 		T.aoespam[1064] = 3			-- Chain Heal
-		T.aoespam[51945] = 3		-- Earthliving
 		T.aoespam[61295] = 3		-- Riptide
 		T.aoespam[98021] = 3		-- Spirit Link
 		T.aoespam[114911] = 3		-- Ancestral Guidance
 		T.aoespam[114942] = 3		-- Healing Tide
 		-- Damaging spells
 		T.aoespam[421] = 1			-- Chain Lightning
-		T.aoespam[45297] = 3		-- Chain Lightning (Mastery)
-		T.aoespam[114738] = 3		-- Lava Beam (Mastery)
 		T.aoespam[8349] = 0			-- Fire Nova
 		T.aoespam[77478] = 3		-- Earhquake
 		T.aoespam[51490] = 0		-- Thunderstorm
 		T.aoespam[8187] = 3			-- Magma Totem
 		T.aoespam[8050] = 3			-- Flame Shock
-		T.aoespam[25504] = 3		-- Windfury
+		T.aoespam[25504] = 3		-- Windfury Attack
+		T.aoespam[10444] = 3		-- Flametongue Attack
 		T.aoespam[3606] = 3			-- Searing Bolt
+		T.aoespam[170379] = 3		-- Molten Earth
+		T.aoespam[114074] = 1		-- Lava Beam
+		T.merge[168477] = 421		-- Chain Lightning (Multi)
+		T.merge[168489] = 114074	-- Lava Beam (Multi)
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[27243] = 3		-- Seed of Corruption
 		T.aoespam[27285] = 3		-- Seed of Corruption (AoE)
 		T.aoespam[87385] = 3		-- Seed of Corruption (Soulburn)
-		T.aoespam[172] = 3			-- Corruption
+		T.aoespam[146739] = 3		-- Corruption
 		T.aoespam[30108] = 3		-- Unstable Affliction
 		T.aoespam[348] = 3			-- Immolate
 		T.aoespam[980] = 3			-- Agony
 		T.aoespam[80240] = 3		-- Havoc
 		T.aoespam[42223] = 3		-- Rain of Fire
 		T.aoespam[689] = 3			-- Drain Life
-		T.aoespam[89420] = 3		-- Drain Life (Soulburn)
 		T.aoespam[5857] = 3			-- Hellfire
 		T.aoespam[129476] = 3		-- Immolation Aura
-		T.aoespam[103103] = 3		-- Malefic Grasp
+		T.aoespam[103103] = 3		-- Drain Soul
 		T.aoespam[86040] = 3		-- Hand of Gul'dan
 		T.aoespam[124915] = 3		-- Chaos Wave
 		T.aoespam[47960] = 3		-- Shadowflame
-		T.aoespam[50590] = 3		-- Immolation Aura
 		T.aoespam[30213] = 3		-- Legion Strike (Felguard)
 		T.aoespam[89753] = 3		-- Felstorm (Felguard)
 		T.aoespam[20153] = 3		-- Immolation (Infrenal)
+		T.aoespam[114654] = 0		-- Incinerate
+		T.aoespam[108685] = 0		-- Conflagrate
+		T.aoespam[22703] = 0		-- Infernal Awakening
+		T.aoespam[171017] = 0		-- Meteor Strike (Infrenal)
+		T.merge[157736] = 348		-- Immolate
+		T.merge[108686] = 348		-- Immolate
+		T.merge[131737] = 980		-- Agony (Drain Soul)
+		T.merge[131740] = 146739	-- Corruption (Drain Soul)
+		T.merge[131736] = 30108		-- Unstable Affliction (Drain Soul)
 	end
 	if C.combattext.healing then
 		T.healfilter[63106] = true	-- Siphon Life
@@ -282,7 +294,6 @@ elseif T.class == "WARLOCK" then
 	end
 elseif T.class == "WARRIOR" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[845] = 0			-- Cleave
 		T.aoespam[46968] = 0		-- Shockwave
 		T.aoespam[6343] = 0			-- Thunder Clap
 		T.aoespam[1680] = 0			-- Whirlwind
@@ -294,6 +305,11 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[113344] = 3		-- Bloodbath
 		T.aoespam[96103] = 0		-- Raging Blow
 		T.aoespam[6572] = 0			-- Revenge
+		T.aoespam[5308] = 0			-- Execute
+		T.merge[44949] = 1680		-- Whirlwind Off-Hand
+		T.merge[85384] = 96103		-- Raging Blow Off-Hand
+		T.merge[95738] = 50622		-- Bladestorm Off-Hand
+		T.merge[163558] = 5308		-- Execute Off-Hand
 	end
 	if C.combattext.healing then
 		T.healfilter[117313] = true	-- Bloodthirst Heal

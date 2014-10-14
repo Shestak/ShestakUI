@@ -10,7 +10,7 @@ T.RaidBuffs = {
 	DRUID = {
 		{774, "TOPRIGHT", {0.8, 0.4, 0.8}},					-- Rejuvenation
 		{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},				-- Regrowth
-		{94447, "TOPLEFT", {0.4, 0.8, 0.2}},				-- Lifebloom
+		{33763, "TOPLEFT", {0.4, 0.8, 0.2}},				-- Lifebloom
 		{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},				-- Wild Growth
 		{102342, "LEFT", {0.45, 0.3, 0.2}, true},			-- Ironbark
 		{102351, "RIGHT", {0.4, 0.9, 0.4}},					-- Cenarion Ward
@@ -41,11 +41,7 @@ T.RaidBuffs = {
 	},
 	SHAMAN = {
 		{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Riptide
-		{974, "BOTTOMLEFT", {0.2, 0.7, 0.2}, true},			-- Earth Shield
-		{51945, "BOTTOMRIGHT", {0.7, 0.4, 0}},				-- Earthliving
-	},
-	DEATHKNIGHT = {
-		{49016, "TOPRIGHT", {0.89, 0.89, 0.1}},				-- Unholy Frenzy
+		{974, "BOTTOMRIGHT", {0.2, 0.7, 0.2}, true},		-- Earth Shield
 	},
 	HUNTER = {
 		{35079, "TOPRIGHT", {0.2, 0.2, 1}},					-- Misdirection
@@ -80,6 +76,35 @@ local function SpellName(id)
 end
 
 T.RaidDebuffs = {
+-----------------------------------------------------------------
+-- Draenor
+-----------------------------------------------------------------
+-- Blackrock Foundry
+	-- Beastlord Darmac
+	-- Flamebender Ka'graz
+	-- Gruul the Subjugated
+	-- Blast Furnace
+	-- Hans'gar and Franzok
+	-- Iron Maidens
+	-- Kromog
+	-- Operator Thogar
+	-- Oregorger
+	-- Warlord Blackhand
+-- Highmaul
+	-- The Butcher
+	[SpellName(156152)] = 3,	-- Gushing Wounds
+	-- Kargath Bladefist
+	[SpellName(159178)] = 3,	-- Open Wounds (Tank switch)
+	[SpellName(159113)] = 3,	-- Impale (DoT)
+	-- Twin Ogron
+	[SpellName(155569)] = 3,	-- Injured (DoT)
+	[SpellName(167200)] = 3,	-- Arcane Wound (DoT)
+	-- Ko'ragh
+	[SpellName(161242)] = 3,	-- Caustic Energy (DoT)
+	-- Tectus
+	-- Brackenspore
+	-- Imperator Mar'gok
+	[SpellName(158605)] = 3,	-- Mark of Chaos
 -----------------------------------------------------------------
 -- Pandaria
 -----------------------------------------------------------------
@@ -300,7 +325,6 @@ T.RaidDebuffs = {
 	[SpellName(47476)] = 3,		-- Strangulate
 	-- Druid
 	[SpellName(33786)] = 3,		-- Cyclone
-	[SpellName(2637)] = 3,		-- Hibernate
 	[SpellName(339)] = 2,		-- Entangling Roots
 	[SpellName(78675)] = 3,		-- Solar Beam
 	-- Hunter
@@ -308,16 +332,12 @@ T.RaidDebuffs = {
 	[SpellName(19386)] = 3,		-- Wyvern Sting
 	[SpellName(117526)] = 3,	-- Binding Shot
 	[SpellName(24394)] = 3,		-- Intimidation
-	[SpellName(1513)] = 3,		-- Scare Beast
-	[SpellName(19503)] = 3,		-- Scatter Shot
-	[SpellName(34490)] = 3,		-- Silence Shot
 	-- Mage
 	[SpellName(61305)] = 3,		-- Polymorph
 	[SpellName(82691)] = 3,		-- Ring of Frost
 	[SpellName(44572)] = 3,		-- Deep Freeze
 	[SpellName(31661)] = 3,		-- Dragon's Breath
 	[SpellName(102051)] = 3,	-- Frostjaw
-	[SpellName(55021)] = 3,		-- Improved Counterspell
 	[SpellName(122)] = 2,		-- Frost Nova
 	[SpellName(111340)] = 2,	-- Ice Ward
 	-- Monk
@@ -331,7 +351,6 @@ T.RaidDebuffs = {
 	-- Priest
 	[SpellName(605)] = 3,		-- Dominate Mind
 	[SpellName(8122)] = 3,		-- Psychic Scream
-	[SpellName(113792)] = 3,	-- Psychic Terror
 	[SpellName(64044)] = 3,		-- Psychic Horror
 	[SpellName(15487)] = 3,		-- Silence
 	-- Rogue
@@ -344,7 +363,6 @@ T.RaidDebuffs = {
 	[SpellName(63685)] = 2,		-- Freeze
 	-- Warlock
 	[SpellName(118699)] = 3,	-- Fear
-	[SpellName(104045)] = 3,	-- Sleep
 	[SpellName(6789)] = 3,		-- Mortal Coil
 	[SpellName(5484)] = 3,		-- Howl of Terror
 	[SpellName(6358)] = 3,		-- Seduction (Succubus)
@@ -353,7 +371,7 @@ T.RaidDebuffs = {
 	-- Warrior
 	[SpellName(46968)] = 3,		-- Shockwave
 	[SpellName(132169)] = 3,	-- Storm Bolt
-	[SpellName(20511)] = 3,		-- Intimidating Shout]]
+	[SpellName(5246)] = 3,		-- Intimidating Shout]]
 }
 
 T.RaidDebuffsReverse = {

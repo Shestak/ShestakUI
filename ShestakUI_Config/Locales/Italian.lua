@@ -13,7 +13,6 @@ L_GUI_MAKE_SELECTION = "Devi selezionare un'opzione prima di poter continuare co
 
 -- General options
 L_GUI_GENERAL_AUTOSCALE = "Ridimensionamento automatico dell'interfaccia"
-L_GUI_GENERAL_MULTISAMPLE = "Protezione del multisampling (bordi di 1 pixel)"
 L_GUI_GENERAL_UISCALE = "Scala dell'interfaccia (se il ridimensionamento automatico è disabilitato)"
 L_GUI_GENERAL_WELCOME_MESSAGE = "Messaggio di benvenuto in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Allinea automaticamente la tolleranza automatica lag della Blizzard alla tua latenza"
@@ -27,7 +26,6 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Pulsante automatico missione/oggetto"
 L_GUI_MISC_RAID_TOOLS = "Strumenti per le incursioni"
 L_GUI_MISC_PROFESSION_TABS = "Visualizza la linguetta delle professioni sul riquadro abilità di commercio/commercio"
 L_GUI_MISC_PROFESSION_DATABASE = "Database delle Professioni sul riquadro Professioni"
-L_GUI_MISC_DUNGEON_TABS = "Linguette PvA/PvP sui relativi riquadri"
 L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei bosses durante i Campi di Battaglia"
 L_GUI_MISC_ITEM_LEVEL = "Livello oggetto sugli scomparti della schermata Personaggio"
 L_GUI_MISC_GEM_COUNTER = "Mostra quante gemme rosse/blu/gialle possiedi"
@@ -208,7 +206,6 @@ L_GUI_TOOLTIP_RAID_ICON = "Visualizza i marchi d'incursione nei suggerimenti"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Visualizza chi ha in bersaglio l'unità che è nel tuo gruppo/incursione"
 L_GUI_TOOLTIP_ITEM_COUNT = "Conteggio oggetti"
 L_GUI_TOOLTIP_UNIT_ROLE = "Ruolo dell'unità"
-L_GUI_TOOLTIP_SYMBIOSIS = "Informazioni di Simbiosi"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Info incursione nei suggerimenti"
 L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Mostra gli oggetti che non possono essere transmogrifati"
 
@@ -246,8 +243,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "Nascondi la minimappa in combattimento"
 L_GUI_MINIMAP_TOGGLE_MENU = "Mostra il menu a scomparsa"
 
 -- Map options
-L_GUI_MAP_ENABLE = "Attiva la mappa del mondo"
-L_GUI_MAP_SCALE = "Scala della mappa del mondo"
 L_GUI_MAP_BG_STYLIZATION = "Restyling della mappa dei Campi di Battaglia"
 L_GUI_MAP_BOSS_COUNT = "Mostra il conteggio dei bosses sulla mappa del mondo"
 L_GUI_MAP_EXPLORE = "Traccia le imprese Esploratore mondiale e Storico sulla mappa del mondo"
@@ -348,7 +343,6 @@ L_GUI_UF_PORTRAIT_HEIGHT = "Altezza del ritratto"
 L_GUI_UF_PORTRAIT_WIDTH = "Larghezza del ritratto"
 L_GUI_UF_PLUGINS_GCD = "Scintilla del recupero globale"
 L_GUI_UF_PLUGINS_SWING = "Attiva la barra dei fendenti"
-L_GUI_UF_PLUGINS_NECRO_STRIKE = "Attiva la barra per l'Assalto Necrotico"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Attiva la barra reputazioni"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Attiva la barra esperienza"
 L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Attiva la barra amicizia sul bersaglio"
@@ -372,6 +366,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "Attiva la barra dei totems dello sciamano"
 L_GUI_UF_PLUGINS_RANGE_BAR = "Attiva la barra della distanza per i sacerdoti"
 
 -- Raid Frames options
+L_GUI_UF_BY_ROLE = "Sorting players in group by role" -- Needs review
 L_GUI_UF_AGGRO_BORDER = "Cambio di colore dei bordi in base al grado di aggressione"
 L_GUI_UF_DEFICIT_HEALTH = "Deficit salute in incursione"
 L_GUI_UF_SHOW_PARTY = "Mostra i riquadri del gruppo"

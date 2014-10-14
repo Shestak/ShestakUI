@@ -95,6 +95,7 @@ do
 
 	local function scan(unit, slot, total, count, twoHanded, incomplete)
 		if slot > INVSLOT_LAST_EQUIPPED then
+			if count == 0 then return end --WoD Fix division by zero
 			return formatString:format(total / (twoHanded and count - 1 or count)), incomplete
 		end
 
@@ -148,6 +149,7 @@ do
 
 	local function update(unit, guid)
 		local level, incomplete = UnitItemLevel(unit)
+		if not level then return end
 		local myLevel = level - UnitItemLevel("player")
 
 		if incomplete then

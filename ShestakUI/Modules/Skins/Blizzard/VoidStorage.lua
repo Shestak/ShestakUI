@@ -51,9 +51,11 @@ local function LoadSkin()
 
 		button_d:StyleButton()
 		button_d:SetTemplate("Default")
+		button_d.IconBorder:Kill()
 
 		button_w:StyleButton()
 		button_w:SetTemplate("Default")
+		button_w.IconBorder:Kill()
 
 		icon_d:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon_d:ClearAllPoints()
@@ -74,11 +76,31 @@ local function LoadSkin()
 
 		button:StyleButton()
 		button:SetTemplate("Default")
+		button.IconBorder:Kill()
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
 		icon:SetPoint("TOPLEFT", 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", -2, 2)
+	end
+
+	for i = 1, 2 do
+		local tab = VoidStorageFrame["Page"..i]
+
+		tab:GetRegions():Hide()
+		tab:GetNormalTexture():ClearAllPoints()
+		tab:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+		tab:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
+		tab:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		tab:CreateBackdrop("Default")
+		tab.backdrop:SetAllPoints()
+
+		tab:StyleButton(true)
+
+		if i == 1 then
+			tab:SetPoint("TOPLEFT", VoidStorageFrame, "TOPRIGHT", 1, 0)
+		end
 	end
 end
 

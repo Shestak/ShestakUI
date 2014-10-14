@@ -17,9 +17,9 @@ C["media"] = {
 	["blank"] = [[Interface\AddOns\ShestakUI\Media\Textures\White.tga]],			-- Texture for borders
 	["texture"] = [[Interface\AddOns\ShestakUI\Media\Textures\Texture.tga]],		-- Texture for status bars
 	["highlight"] = [[Interface\AddOns\ShestakUI\Media\Textures\Highlight.tga]],	-- Texture for debuffs highlight
-	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.mp3]],		-- Sound for whispers
-	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.mp3]],	-- Sound for warning
-	["proc_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Proc.mp3]],			-- Sound for procs
+	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.ogg]],		-- Sound for whispers
+	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.ogg]],	-- Sound for warning
+	["proc_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Proc.ogg]],			-- Sound for procs
 	["border_color"] = {0.37, 0.3, 0.3, 1},		-- Color for borders
 	["backdrop_color"] = {0, 0, 0, 1},			-- Color for borders backdrop
 	["overlay_color"] = {0, 0, 0, 0.7},			-- Color for action bars overlay
@@ -31,7 +31,6 @@ C["media"] = {
 C["general"] = {
 	["auto_scale"] = true,						-- Autoscale
 	["uiscale"] = 0.96,							-- Your value(between 0.64 and 1) if "auto_scale" is disable
-	["multisampleprotect"] = true,				-- Disable this if you want multisample > 1
 	["welcome_message"] = true,					-- Enable welcome message in chat
 	["custom_lagtolerance"] = false,			-- Custom lag tolerance to your latency
 }
@@ -48,12 +47,11 @@ C["misc"] = {
 	["raid_tools"] = true,						-- Raid tools
 	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
 	["profession_database"] = false,			-- Professions Database on Professions frame
-	["dungeon_tabs"] = true,					-- PvP/PvE tabs on own frames
 	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
-	["item_level"] = false,						-- Item level on character slot buttons
+	["item_level"] = true,						-- Item level on character slot buttons
 	["gem_counter"] = false,					-- Displays how many red/blue/yellow gems you have
-	["already_known"] = false,					-- Colorizes recipes/mounts/pets that is already known
-	["disenchanting"] = false,					-- One-click Milling, Prospecting and Disenchanting
+	["already_known"] = true,					-- Colorizes recipes/mounts/pets that is already known
+	["disenchanting"] = false,					-- Milling, Prospecting and Disenchanting by 'alt' + click
 	["sum_buyouts"] = false,					-- Sum up all current auctions
 	["click_cast"] = false,						-- Simple click2cast spell binder
 	["click_cast_filter"] = false,				-- Ignore Player and Target frames for click2cast
@@ -263,7 +261,6 @@ C["tooltip"] = {
 	["who_targetting"] = false,					-- Show who is targetting the unit(in raid or party)
 	["item_count"] = false,						-- Item count in tooltip
 	["unit_role"] = false,						-- Unit role in tooltip
-	["symbiosis"] = false,						-- Symbiosis info
 	["instance_lock"] = false,					-- Your instance lock status in tooltip
 	["item_transmogrify"] = false,				-- Displays items can not be transmogrified
 }
@@ -316,8 +313,6 @@ C["minimap"] = {
 --	Map options
 ----------------------------------------------------------------------------------------
 C["map"] = {
-	["enable"] = true,							-- Enable World Map
-	["scale"] = 0.8,							-- World Map scale
 	["bg_map_stylization"] = true,				-- BG map stylization
 	["map_boss_count"] = false,					-- Show boss count in World Map
 	["explore_map"] = false,					-- Tracking Explorer and Lore Master achievements in World Map
@@ -449,7 +444,6 @@ C["unitframe"] = {
 	-- Plugins
 	["plugins_gcd"] = false,					-- Global cooldown spark
 	["plugins_swing"] = false,					-- Swing bar
-	["plugins_necro_strike"] = false,			-- Necrotic Strike bar
 	["plugins_reputation_bar"] = false,			-- Reputation bar
 	["plugins_experience_bar"] = false,			-- Experience bar
 	["plugins_friendship_bar"] = false,			-- Friendship bar
@@ -481,6 +475,7 @@ C["unitframe_class_bar"] = {
 ----------------------------------------------------------------------------------------
 C["raidframe"] = {
 	-- Main
+	["by_role"] = true,							-- Sorting players in group by role
 	["aggro_border"] = true,					-- Aggro border
 	["deficit_health"] = false,					-- Raid deficit health
 	["vertical_health"] = false,				-- Vertical orientation of health

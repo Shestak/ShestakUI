@@ -4,7 +4,7 @@
 --	LiteStats configuration file
 --	BACKUP THIS FILE BEFORE UPDATING!
 ----------------------------------------------------------------------------------------
-local _, _, _, cBN = GetAddOnInfo("cargBags_Nivaya")
+local cBN = IsAddOnLoaded("cargBags_Nivaya")
 local ctab = CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS
 local function class(string)
 	local color = ctab[T.class]

@@ -13,7 +13,6 @@ L_GUI_MAKE_SELECTION = "Du musst eine Auswahl treffen bevor du weitere Einstellu
 
 -- General options
 L_GUI_GENERAL_AUTOSCALE = "Automatisch UI skalieren"
-L_GUI_GENERAL_MULTISAMPLE = "Multisample Schutz (Saubere 1px Rahmen)"
 L_GUI_GENERAL_UISCALE = "UI Skalierung (falls automatische Skalierung deaktiviert)"
 L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Automatische Anpassung der Blizzard Custom Lag Toleranz an deine Latenz"
@@ -27,7 +26,6 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/Gegenstand auto Taste"
 L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
 L_GUI_MISC_PROFESSION_TABS = "Berufereiter an Handelsfähigkeiten und Handelsfenstern anzeigen"
 L_GUI_MISC_PROFESSION_DATABASE = "Berufsdatenbank an Berufsfenster"
-L_GUI_MISC_DUNGEON_TABS = "PvP/PvE Tabs an eigenen Fenster"
 L_GUI_MISC_HIDE_BG_SPAM = "In Schlachtfeldern Bossemotes im Chat unterbinden"
 L_GUI_MISC_ITEM_LEVEL = "Item level im Karakterfenster auf Items anzeigen"
 L_GUI_MISC_GEM_COUNTER = "Anzeigen wieviele rote/blaue/gelbe Edelsteine man hat"
@@ -208,7 +206,6 @@ L_GUI_TOOLTIP_RAID_ICON = "Raidsymbol"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Zeige an, wer die Eihneit, die in deiner Gruppe/Raid ist, ins Ziel nimmt"
 L_GUI_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe"
 L_GUI_TOOLTIP_UNIT_ROLE = "Klassenrolle"
-L_GUI_TOOLTIP_SYMBIOSIS = "Symbiose informationen"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Deine abgeschlossenen Instanzen im Tooltip"
 L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Zeige an wenn Gegenstände nicht Transmorgifiziert werden können"
 
@@ -246,8 +243,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
 L_GUI_MINIMAP_TOGGLE_MENU = "Zeige Toggle Menü"
 
 -- Map options
-L_GUI_MAP_ENABLE = "Weltkarte aktivieren"
-L_GUI_MAP_SCALE = "Skalierung der Weltkarte"
 L_GUI_MAP_BG_STYLIZATION = "Schlachtfeldkarte Aussehn"
 L_GUI_MAP_BOSS_COUNT = "Zeige BossCount in der Weltkarte"
 L_GUI_MAP_EXPLORE = "Tracking Explorer und Meister der Lehren Achievement in World Map"
@@ -348,7 +343,6 @@ L_GUI_UF_PORTRAIT_HEIGHT = "Portraithöhe"
 L_GUI_UF_PORTRAIT_WIDTH = "Portraitbreite"
 L_GUI_UF_PLUGINS_GCD = "Blitz für globalen Cooldown"
 L_GUI_UF_PLUGINS_SWING = "Swingleiste"
-L_GUI_UF_PLUGINS_NECRO_STRIKE = "Aktiviere Leiste für Nekrotischer Stoß"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Rufleiste"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Erfahrungsleiste"
 L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Freundschaftsleiste"
@@ -372,6 +366,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "Totemleiste"
 L_GUI_UF_PLUGINS_RANGE_BAR = "Aktiviere Abstandsleiste"
 
 -- Raid Frames options
+L_GUI_UF_BY_ROLE = "Sorting players in group by role" -- Needs review
 L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"
 L_GUI_UF_DEFICIT_HEALTH = "Fehlendes Leben im Raid"
 L_GUI_UF_SHOW_PARTY = "Zeige Gruppenfenster"

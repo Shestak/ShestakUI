@@ -353,7 +353,12 @@ if memory.enabled then
 				self.timer, self.text.elapsed = nil, 5
 				self:GetScript("OnEnter")(self)
 			elseif button == "LeftButton" then
-				SlashCmdList.ADDONMANAGER()
+				if AddonList:IsShown() then
+					AddonList_OnCancel()
+				else
+					PlaySound("igMainMenuOption")
+					ShowUIPanel(AddonList)
+				end
 			end
 		end
 	})
@@ -791,7 +796,6 @@ end
 --	Guild
 ----------------------------------------------------------------------------------------
 if guild.enabled then
-	local guildXP = {}
 	local guildTable = {}
 	local function BuildGuildTable()
 		wipe(guildTable)
@@ -805,13 +809,6 @@ if guild.enabled then
 				return a[1] < b[1]
 			end
 		end)
-	end
-	local function UpdateGuildXP()
-		local currentXP, remainingXP = UnitGetGuildXP("player")
-		local nextLevelXP = currentXP + remainingXP
-		if nextLevelXP == 0 then return end
-		local percentTotal = tostring(math.ceil((currentXP / nextLevelXP) * 100))
-		guildXP[0] = {currentXP, nextLevelXP, percentTotal}
 	end
 	local function ShortValueXP(v)
 		if v >= 1e6 then
@@ -834,19 +831,14 @@ if guild.enabled then
 		},
 		OnLoad = function(self)
 			GuildRoster()
-			UpdateGuildXP()
 			SortGuildRoster(guild.sorting == "note" and "rank" or "note")
 			SortGuildRoster(guild.sorting)
 			self:RegisterEvent("GROUP_ROSTER_UPDATE")
-			self:RegisterEvent("GUILD_XP_UPDATE")
 			self:RegisterEvent("GUILD_ROSTER_UPDATE")
 		end,
 		OnEvent = function(self, event)
 			if self.hovered then
 				self:GetScript("OnEnter")(self)
-			end
-			if event == "GUILD_XP_UPDATE" then
-				UpdateGuildXP()
 			end
 			if IsInGuild() then
 				BuildGuildTable()
@@ -854,8 +846,6 @@ if guild.enabled then
 		end,
 		OnUpdate = function(self, u)
 			if IsInGuild() then
-				if not GuildFrame and not InCombatLockdown() then LoadAddOn("Blizzard_GuildUI") UpdateGuildXP() end
-				if u == "GUILD_XP_UPDATE" then UpdateGuildXP() end
 				AltUpdate(self)
 				if not self.gmotd then
 					if self.elapsed > 1 then GuildRoster(); self.elapsed = 0 end
@@ -936,19 +926,6 @@ if guild.enabled then
 				GameTooltip:ClearLines()
 				GameTooltip:AddDoubleLine(GetGuildInfo(P),format("%s: %d/%d", GUILD_ONLINE_LABEL, online, total), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 				if gmotd ~= "" then GameTooltip:AddLine(format("%s |cffaaaaaa- |cffffffff%s", GUILD_MOTD, gmotd), ttsubh.r, ttsubh.g, ttsubh.b, 1) end
-				if guild.show_xp then
-					if GetGuildLevel() ~= 25 then
-						local currentXP, nextLevelXP, percentTotal = unpack(guildXP[0])
-						GameTooltip:AddLine(string.format(col..GUILD_EXPERIENCE_CURRENT, "|r |cFFFFFFFF"..ShortValueXP(currentXP), ShortValueXP(nextLevelXP), percentTotal))
-					end
-					if standingID ~= 8 then -- Not Max Rep
-						GameTooltip:AddLine(" ")
-						barMax = barMax - barMin
-						barValue = barValue - barMin
-						barMin = 0
-						GameTooltip:AddLine(string.format("%s:|r |cFFFFFFFF%s/%s (%s%%)", col..COMBAT_FACTION_CHANGE, ShortValueXP(barValue), ShortValueXP(barMax), math.ceil((barValue / barMax) * 100)))
-					end
-				end
 				if guild.maxguild ~= 0 and online >= 1 then
 					GameTooltip:AddLine(" ")
 					for i = 1, total do
@@ -1465,10 +1442,12 @@ if experience.enabled then
 	local function short(num, tt)
 		if short or tt then
 			num = tonumber(num)
-			if num >= 1000000 then
-				return gsub(format("%.1f%s", num / 1000000, experience.million or "m"), "%.0", "")
-			elseif num >= 1000 then
-				return gsub(format("%.1f%s", num / 1000, experience.thousand or "k"), "%.0", "")
+			if num >= 1e6 then
+				return gsub(format("%.2f%s", num / 1e6, experience.million or "m"), "%.0", "")
+			elseif num >= 1e5 then
+				return gsub(format("%.0f%s", num / 1e3, experience.thousand or "k"), "%.0", "")
+			elseif num >= 1e3 then
+				return gsub(format("%.1f%s", num / 1e3, experience.thousand or "k"), "%.0", "")
 			end
 		end
 		return floor(tonumber(num))
@@ -1705,10 +1684,10 @@ if helm.enabled then
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if ShowingHelm() then
-					ShowHelm(0)
+					ShowHelm(false)
 					self.text:SetText(format(helm.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else
-					ShowHelm(1)
+					ShowHelm(true)
 					self.text:SetText(format(helm.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end
@@ -1748,10 +1727,10 @@ if cloak.enabled then
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if ShowingCloak() then
-					ShowCloak(0)
+					ShowCloak(false)
 					self.text:SetText(format(cloak.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else
-					ShowCloak(1)
+					ShowCloak(true)
 					self.text:SetText(format(cloak.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
 				end
 			end

@@ -5,7 +5,6 @@ if C.announcements.says_thanks ~= true then return end
 --	Says thanks for some spells(SaySapped by Bitbyte, modified by m2jest1c)
 ----------------------------------------------------------------------------------------
 local spells = {
-	[29166] = true,		-- Innervate
 	[20484] = true,		-- Rebirth
 	[61999] = true,		-- Raise Ally
 	[20707] = true,		-- Soulstone
@@ -14,16 +13,6 @@ local spells = {
 	[7328] = true,		-- Redemption
 	[2008] = true,		-- Ancestral Spirit
 	[115178] = true,	-- Resuscitate
-	[110478] = true,	-- Symbiosis (Death Knight)
-	[110479] = true,	-- Symbiosis (Hunter)
-	[110482] = true,	-- Symbiosis (Mage)
-	[110483] = true,	-- Symbiosis (Monk)
-	[110484] = true,	-- Symbiosis (Paladin)
-	[110485] = true,	-- Symbiosis (Priest)
-	[110486] = true,	-- Symbiosis (Rogue)
-	[110488] = true,	-- Symbiosis (Shaman)
-	[110490] = true,	-- Symbiosis (Warlock)
-	[110491] = true,	-- Symbiosis (Warrior)
 }
 
 local frame = CreateFrame("Frame")

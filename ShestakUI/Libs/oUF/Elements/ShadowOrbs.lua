@@ -3,7 +3,6 @@ if(select(2, UnitClass('player')) ~= 'PRIEST') then return end
 local parent, ns = ...
 local oUF = ns.oUF
 
-local PRIEST_BAR_NUM_ORBS = PRIEST_BAR_NUM_ORBS
 local SPELL_POWER_SHADOW_ORBS = SPELL_POWER_SHADOW_ORBS
 
 local function Update(self, event, unit, powerType)
@@ -16,8 +15,9 @@ local function Update(self, event, unit, powerType)
 	end
 
 	local numOrbs = UnitPower('player', SPELL_POWER_SHADOW_ORBS)
+	local totalOrbs = UnitPowerMax("player", SPELL_POWER_SHADOW_ORBS)
 
-	for i = 1, PRIEST_BAR_NUM_ORBS do
+	for i = 1, totalOrbs do
 		if i <= numOrbs then
 			sb[i]:SetAlpha(1)
 		else
