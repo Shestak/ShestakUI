@@ -5,7 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	Bank/Container skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	if C.bag.enable == true or (IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor")) then return end
+	if C.bag.enable == true or (IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") or IsAddOnLoaded("TBag") or IsAddOnLoaded("BaudBag")) then return end
 
 	-- Container Frame
 	BagItemSearchBox:StripTextures(true)
