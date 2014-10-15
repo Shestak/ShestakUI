@@ -61,13 +61,16 @@ local function LoadSkin()
 		for i = 1, numTabs do
 			local tab = _G["GuildControlBankTab"..i.."Owned"]
 			local icon = tab.tabIcon
-			local editbox = tab.editBox
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
+			T.SkinCheckBox(_G["GuildControlBankTab"..i.."OwnedViewCheck"])
+			T.SkinCheckBox(_G["GuildControlBankTab"..i.."OwnedDepositCheck"])
+			T.SkinCheckBox(_G["GuildControlBankTab"..i.."OwnedUpdateInfoCheck"])
+
 			if once == false then
 				_G["GuildControlBankTab"..i.."BuyPurchaseButton"]:SkinButton()
-				_G["GuildControlBankTab"..i.."OwnedStackBox"]:StripTextures()
+				T.SkinEditBox(_G["GuildControlBankTab"..i.."OwnedStackBox"])
 			end
 		end
 		once = true
