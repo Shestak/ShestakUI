@@ -16,7 +16,7 @@ exClass.WARLOCK = true
 exClass.WARRIOR = true
 
 local function UpdatePlate(self)
-	local name = gsub(self.HPName:GetText(), '%s%(%*%)','')
+	local name = gsub(self.HPName:GetText(), "%s%(%*%)", "")
 
 	if testing then
 		self.HPHeal:Show()

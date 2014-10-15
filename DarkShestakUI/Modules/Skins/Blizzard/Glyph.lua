@@ -47,6 +47,9 @@ local function LoadSkin()
 	GlyphFrameClearInfoFrameIcon:SetPoint("TOPLEFT", 2, -2)
 	GlyphFrameClearInfoFrameIcon:SetPoint("BOTTOMRIGHT", -2, 2)
 
+	GlyphFrameClearInfoFrameCount:SetFont(C.media.normal_font, 11, "OUTLINE")
+	GlyphFrameClearInfoFrameCount:SetPoint("BOTTOMRIGHT", 2, 0)
+
 	GlyphFrameLevelOverlay1:SetParent(GlyphFrame.backdrop)
 	GlyphFrameLevelOverlayText1:SetParent(GlyphFrame.backdrop)
 	GlyphFrameLevelOverlay2:SetParent(GlyphFrame.backdrop)

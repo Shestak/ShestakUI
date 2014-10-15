@@ -57,13 +57,7 @@ local function LoadSkin()
 		"FriendsFrameIcon",
 		"FriendsFrameBroadcastInputLeft",
 		"FriendsFrameBroadcastInputRight",
-		"FriendsFrameBroadcastInputMiddle",
-		"ChannelFrameDaughterFrameChannelNameLeft",
-		"ChannelFrameDaughterFrameChannelNameRight",
-		"ChannelFrameDaughterFrameChannelNameMiddle",
-		"ChannelFrameDaughterFrameChannelPasswordLeft",
-		"ChannelFrameDaughterFrameChannelPasswordRight",
-		"ChannelFrameDaughterFrameChannelPasswordMiddle"
+		"FriendsFrameBroadcastInputMiddle"
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -127,9 +121,7 @@ local function LoadSkin()
 	WhoFrameWhoButton:SetSize(WhoFrameWhoButton:GetWidth() + 7, WhoFrameWhoButton:GetHeight())
 	WhoFrameAddFriendButton:SetSize(WhoFrameAddFriendButton:GetWidth() - 4, WhoFrameAddFriendButton:GetHeight())
 	WhoFrameGroupInviteButton:SetSize(WhoFrameGroupInviteButton:GetWidth() - 4, WhoFrameGroupInviteButton:GetHeight())
-	T.SkinEditBox(WhoFrameEditBox)
-	WhoFrameEditBox:SetHeight(WhoFrameEditBox:GetHeight() - 15)
-	WhoFrameEditBox:SetWidth(WhoFrameEditBox:GetWidth() + 30)
+	T.SkinEditBox(WhoFrameEditBox, WhoFrameEditBox:GetWidth() + 30, WhoFrameEditBox:GetHeight() - 15)
 	WhoFrameEditBox:SetPoint("BOTTOM", WhoFrame, "BOTTOM", 0, 31)
 
 	T.SkinEditBox(AddFriendNameEditBox)
@@ -165,8 +157,8 @@ local function LoadSkin()
 	FriendsFrameBroadcastInput.backdrop:SetPoint("BOTTOMRIGHT", 0, 1)
 
 	ChannelFrameDaughterFrame:SetTemplate("Transparent")
-	ChannelFrameDaughterFrameChannelName:CreateBackdrop("Overlay")
-	ChannelFrameDaughterFrameChannelPassword:CreateBackdrop("Overlay")
+	T.SkinEditBox(ChannelFrameDaughterFrameChannelName)
+	T.SkinEditBox(ChannelFrameDaughterFrameChannelPassword)
 
 	BNConversationInviteDialog:SetTemplate("Transparent")
 	BNConversationInviteDialogList:SetTemplate("Overlay")
@@ -189,7 +181,7 @@ local function LoadSkin()
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.UpdateButton:SkinButton()
 
 	BattleTagInviteFrame:SetTemplate("Transparent")
-	T.SkinEditBox(BattleTagInviteFrameScrollFrame)
+	--WoD T.SkinEditBox(BattleTagInviteFrameScrollFrame)
 	for i = 1, BattleTagInviteFrame:GetNumChildren() do
 		local child = select(i, BattleTagInviteFrame:GetChildren())
 		if child:GetObjectType() == "Button" then
@@ -201,13 +193,11 @@ local function LoadSkin()
 
 	ScrollOfResurrectionSelectionFrame:SetTemplate("Transparent")
 	ScrollOfResurrectionSelectionFrameList:SetTemplate("Overlay")
-	T.SkinEditBox(ScrollOfResurrectionSelectionFrameTargetEditBox)
-	ScrollOfResurrectionFrameTargetEditBox:SetHeight(ScrollOfResurrectionSelectionFrameTargetEditBox:GetHeight() - 5)
+	T.SkinEditBox(ScrollOfResurrectionSelectionFrameTargetEditBox, nil, ScrollOfResurrectionSelectionFrameTargetEditBox:GetHeight() - 5)
 
 	ScrollOfResurrectionFrame:SetTemplate("Transparent")
 	ScrollOfResurrectionFrameNoteFrame:SetTemplate("Overlay")
-	T.SkinEditBox(ScrollOfResurrectionFrameTargetEditBox)
-	ScrollOfResurrectionFrameTargetEditBox:SetHeight(ScrollOfResurrectionFrameTargetEditBox:GetHeight() - 5)
+	T.SkinEditBox(ScrollOfResurrectionFrameTargetEditBox, nil, ScrollOfResurrectionFrameTargetEditBox:GetHeight() - 5)
 
 	RecruitAFriendFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(RecruitAFriendFrameCloseButton)

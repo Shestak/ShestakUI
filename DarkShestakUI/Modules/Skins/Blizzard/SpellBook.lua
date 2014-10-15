@@ -169,6 +169,10 @@ local function LoadSkin()
 			rank:SetTextColor(1, 1, 1)
 		end
 
+		button:GetCheckedTexture():SetTexture(0, 1, 0, 0.3)
+		button:GetCheckedTexture():SetPoint("TOPLEFT", button, 4, -4)
+		button:GetCheckedTexture():SetPoint("BOTTOMRIGHT", button, -4, 4)
+
 		if icon then
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:ClearAllPoints()
@@ -275,20 +279,6 @@ local function LoadSkin()
 			end
 		end
 		SkinCoreTabs()
-	end)
-
-	-- What Has Changed Tab
-	hooksecurefunc("SpellBook_UpdateWhatHasChangedTab", function()
-		for i = 1, #SpellBookWhatHasChanged.ChangedItems do
-			local button = SpellBook_GetWhatChangedItem(i)
-			button.Ring:Hide()
-			select(2, button:GetRegions()):Hide()
-			button:SetTextColor(0.8, 0.8, 0.8)
-			button.Title:SetTextColor(1, 0.82, 0)
-			button:SetShadowColor(0, 0, 0)
-			button:SetShadowOffset(1, -1)
-			button.Title:SetShadowOffset(1, -1)
-		end
 	end)
 end
 

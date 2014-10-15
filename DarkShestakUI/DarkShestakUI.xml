@@ -58,12 +58,10 @@
 	<Script file="Modules\UnitFrames\RaidDPS.lua"/>
 	<Script file="Modules\UnitFrames\RaidHeal.lua"/>
 
-	<Script file="Modules\Misc\AddOnsList.lua"/>
 	<Script file="Modules\Misc\AlreadyKnown.lua"/>
 	<Script file="Modules\Misc\Archaeology.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
-	<Script file="Modules\Misc\DungeonTabs.lua"/>
 	<Script file="Modules\Misc\GemCounter.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\HealerIconNameplate.lua"/>
@@ -112,7 +110,6 @@
 	<Script file="Modules\Announcements\SayThanks.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>
 
-	<Script file="Modules\Automation\AchScreens.lua"/>
 	<Script file="Modules\Automation\AutoChefsHat.lua"/>
 	<Script file="Modules\Automation\AutoSafariHat.lua"/>
 	<Script file="Modules\Automation\AutoInvite.lua"/>
@@ -122,6 +119,7 @@
 	<Script file="Modules\Automation\CurrencyCap.lua"/>
 	<Script file="Modules\Automation\DeclineDuel.lua"/>
 	<Script file="Modules\Automation\LoggingCombat.lua"/>
+	<Script file="Modules\Automation\Screenshots.lua"/>
 	<Script file="Modules\Automation\SetRole.lua"/>
 	<Script file="Modules\Automation\SkipCinematic.lua"/>
 	<Script file="Modules\Automation\SolveArtifact.lua"/>
@@ -144,7 +142,7 @@
 	<Script file="Modules\Blizzard\MoveBlizzFrames.lua"/>
 	<Script file="Modules\Blizzard\Nameplates.lua"/>
 	<Script file="Modules\Blizzard\PetBattle.lua"/>
-	<Script file="Modules\Blizzard\SearchMounts.lua"/>
+	<!-- <Script file="Modules\Blizzard\SearchMounts.lua"/> -->
 	<Script file="Modules\Blizzard\ShiftMark.lua"/>
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
 	<Script file="Modules\Blizzard\Vehicle.lua"/>
@@ -177,7 +175,7 @@
 
 	<Script file="Modules\DataText\Battleground.lua"/>
 
-	<Script file="Modules\Loot\AutoDisenchant.lua"/>
+	<Script file="Modules\Loot\AutoConfirm.lua"/>
 	<Script file="Modules\Loot\AutoGreed.lua"/>
 	<Script file="Modules\Loot\GroupLoot.lua"/>
 	<Script file="Modules\Loot\Loot.lua"/>
@@ -196,24 +194,24 @@
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoButton.lua"/>
 	<Script file="Modules\Quests\AutoCollapse.lua"/>
-	<Script file="Modules\Quests\QuestLog.lua"/>
-	<Script file="Modules\Quests\WatchFrame.lua"/>
+	<Script file="Modules\Quests\ObjectiveTracker.lua"/>
+	<!-- <Script file="Modules\Quests\QuestLog.lua"/> -->
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
-	<Script file="Modules\Skins\Ace3.lua"/>
-	<Script file="Modules\Skins\AtlasLoot.lua"/>
+	<!-- <Script file="Modules\Skins\Ace3.lua"/>
+	<Script file="Modules\Skins\AtlasLoot.lua"/> -->
 	<Script file="Modules\Skins\Aurora.lua"/>
 	<Script file="Modules\Skins\BigWigs.lua"/>
-	<Script file="Modules\Skins\BloodShieldTracker.lua"/>
+	<!-- <Script file="Modules\Skins\BloodShieldTracker.lua"/>
 	<Script file="Modules\Skins\Capping.lua"/>
 	<Script file="Modules\Skins\CLCProt.lua"/>
 	<Script file="Modules\Skins\CLCRet.lua"/>
 	<Script file="Modules\Skins\Clique.lua"/>
 	<Script file="Modules\Skins\CombustionHelper.lua"/>
-	<Script file="Modules\Skins\CoolLine.lua"/>
+	<Script file="Modules\Skins\CoolLine.lua"/> -->
 	<Script file="Modules\Skins\DBM.lua"/>
-	<Script file="Modules\Skins\Dominos.lua"/>
+	<!-- <Script file="Modules\Skins\Dominos.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>
 	<Script file="Modules\Skins\FaceShooter.lua"/>
 	<Script file="Modules\Skins\FlyoutButtonCustom.lua"/>
@@ -224,12 +222,12 @@
 	<Script file="Modules\Skins\NugRunning.lua"/>
 	<Script file="Modules\Skins\Omen.lua"/>
 	<Script file="Modules\Skins\Ovale.lua"/>
-	<Script file="Modules\Skins\PallyPower.lua"/>
+	<Script file="Modules\Skins\PallyPower.lua"/> -->
 	<Script file="Modules\Skins\Recount.lua"/>
 	<Script file="Modules\Skins\Skada.lua"/>
 	<Script file="Modules\Skins\TinyDPS.lua"/>
-	<Script file="Modules\Skins\VanasKoS.lua"/>
-	<Script file="Modules\Skins\WeakAuras.lua"/>
+	<!-- <Script file="Modules\Skins\VanasKoS.lua"/>
+	<Script file="Modules\Skins\WeakAuras.lua"/> -->
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
@@ -243,7 +241,6 @@
 	<Script file="Modules\Tooltip\SpellID.lua"/>
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
-	<Script file="Modules\Tooltip\Symbiosis.lua"/>
 	<Script file="Modules\Tooltip\CheckItemTransmogrify.lua"/>
 	<Script file="Modules\Tooltip\InstanceLockCompare.lua"/>
 

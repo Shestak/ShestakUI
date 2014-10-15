@@ -65,6 +65,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["position"].unitframes.target_castbar = {"BOTTOM", "oUF_Target", "BOTTOM", -272, -4}
 	C["position"].unitframes.raid_heal = {"TOPLEFT", "ActionBarAnchor", "BOTTOMRIGHT", -331, 335}
 	C["media"].border_color = {0.1, 0.1, 0.1, 1}
+	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].profession_database = true
 	C["misc"].item_level = true
@@ -87,7 +88,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["combattext"].dk_runes= false
 	C["combattext"].killingblow = true
 	C["reminder"].raid_buffs_size = 16.8
-	C["enemycooldown"].show_inpvp = true
 	C["threat"].width = 125
 	C["threat"].bar_rows = 2
 	C["tooltip"].item_icon = true
@@ -98,7 +98,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["tooltip"].average_lvl = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].who_targetting = true
-	C["tooltip"].symbiosis = true
 	C["tooltip"].item_transmogrify = true
 	C["chat"].background = true
 	C["chat"].filter = false
@@ -129,7 +128,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["unitframe"].castbar_icon = true
 	C["unitframe"].icons_pvp = true
 	C["unitframe"].plugins_gcd = true
-	C["unitframe"].plugins_necro_strike = true
 	C["unitframe"].plugins_reputation_bar = true
 	C["unitframe"].plugins_experience_bar = true
 	C["unitframe"].plugins_friendship_bar = true

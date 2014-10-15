@@ -214,8 +214,7 @@ frame:SetScript("OnEvent", function(self, event)
 	for i = 1, getn(editboxs) do
 		local editbox = _G[editboxs[i]]
 		if editbox then
-			T.SkinEditBox(editbox)
-			editbox:SetHeight(14)
+			T.SkinEditBox(editbox, nil, 14)
 		end
 	end
 

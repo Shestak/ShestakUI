@@ -1,4 +1,4 @@
-if (select(4, GetAddOnInfo("Fizzle"))) then return end
+if IsAddOnLoaded("Fizzle") then return end
 
 local _E
 local hook

@@ -28,9 +28,9 @@ T.ShiftBarUpdate = function()
 
 			if isActive then
 				StanceBarFrame.lastSelected = button:GetID()
-				button:SetChecked(1)
+				button:SetChecked(true)
 			else
-				button:SetChecked(0)
+				button:SetChecked(false)
 			end
 
 			if isCastable then
@@ -64,12 +64,12 @@ T.PetBarUpdate = function(self, event)
 		petActionButton.tooltipSubtext = subtext
 
 		if isActive and name ~= "PET_ACTION_FOLLOW" then
-			petActionButton:SetChecked(1)
+			petActionButton:SetChecked(true)
 			if IsPetAttackAction(i) then
 				PetActionButton_StartFlash(petActionButton)
 			end
 		else
-			petActionButton:SetChecked(0)
+			petActionButton:SetChecked(false)
 			if IsPetAttackAction(i) then
 				PetActionButton_StopFlash(petActionButton)
 			end
@@ -111,7 +111,7 @@ T.PetBarUpdate = function(self, event)
 		if not PetHasActionBar() and texture and name ~= "PET_ACTION_FOLLOW" then
 			PetActionButton_StopFlash(petActionButton)
 			SetDesaturation(petActionIcon, 1)
-			petActionButton:SetChecked(0)
+			petActionButton:SetChecked(false)
 		end
 	end
 end

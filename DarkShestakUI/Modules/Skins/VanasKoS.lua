@@ -36,8 +36,7 @@ frame:SetScript("OnEvent", function(self, event)
 	T.SkinDropDownBox(VanasKoSPvPStatsCharacterDropDown, 90)
 	T.SkinDropDownBox(VanasKoSPvPStatsTimeSpanDropDown, 90)
 	T.SkinDropDownBox(VanasKoSFrameChooseListDropDown)
-	T.SkinEditBox(VanasKoSListFrameSearchBox)
-	VanasKoSListFrameSearchBox:SetHeight(18)
+	T.SkinEditBox(VanasKoSListFrameSearchBox, nil, 18)
 
 	for i = 1, 2 do
 		T.SkinTab(_G["VanasKoSFrameTab"..i])

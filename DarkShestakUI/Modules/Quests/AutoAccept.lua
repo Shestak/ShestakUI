@@ -56,22 +56,11 @@ local function IsGossipQuestTrivial(index)
 	return not not select(((index * 6) - 6) + 3, GetGossipAvailableQuests())
 end
 
-local function GetNumGossipCompletedQuests()
-	local completed = 0
-	local active = GetNumGossipActiveQuests()
-	if active > 0 then
-		for index = 1, active do
-			if select(index + 3, (GetGossipActiveQuests())) then
-				completed = completed + 1
-			end
-		end
-	end
-
-	return completed
-end
-
 local function GetCreatureID()
-	return tonumber(string.sub(UnitGUID("npc") or "", -12, -9), 16)
+	local type, _, _, _, _, id = string.split(":", UnitGUID("npc") or "")
+	if type == "Creature" and id and tonumber(id) then
+		return tonumber(id)
+	end
 end
 
 Monomyth:Register("GOSSIP_SHOW", function()
@@ -131,14 +120,8 @@ end)
 Monomyth:Register("QUEST_ACCEPT_CONFIRM", AcceptQuest)
 
 Monomyth:Register("QUEST_ACCEPTED", function(id)
-	if GossipFrame:IsShown() and GetNumGossipAvailableQuests() == 0 and GetNumGossipCompletedQuests() == 0 then
-		CloseGossip()
-	elseif QuestFrame:IsShown() then
-		HideUIPanel(QuestFrame)
-	end
-	if not GetCVarBool("autoQuestWatch") then return end
-	if not IsQuestWatched(id) and GetNumQuestWatches() < MAX_WATCHABLE_QUESTS then
-		AddQuestWatch(id)
+	if QuestFrame:IsShown() and QuestGetAutoAccept() then
+		CloseQuest()
 	end
 end)
 
@@ -184,16 +167,14 @@ Monomyth:Register("QUEST_COMPLETE", function()
 		end
 
 		if bestIndex then
-			choiceFinished = true
-			_G["QuestInfoItem"..bestIndex]:Click()
+			QuestInfoRewardsFrame.RewardButtons[bestIndex]:Click()
 		end
 	end
 end)
 
 Monomyth:Register("QUEST_FINISHED", function()
-	if choiceFinished then
-		choiceQueue = false
-	end
+	choiceQueue = nil
+	autoCompleteIndex = nil
 end)
 
 Monomyth:Register("QUEST_AUTOCOMPLETE", function(id)
@@ -201,6 +182,14 @@ Monomyth:Register("QUEST_AUTOCOMPLETE", function(id)
 	if GetQuestLogIsAutoComplete(index) then
 		-- The quest might not be considered complete, investigate later
 		ShowQuestComplete(index)
+		autoCompleteIndex = index
+	end
+end)
+
+Monomyth:Register("BAG_UPDATE_DELAYED", function()
+	if autoCompleteIndex then
+		ShowQuestComplete(autoCompleteIndex)
+		autoCompleteIndex = nil
 	end
 end)
 

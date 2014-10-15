@@ -119,6 +119,11 @@ HelpOpenTicketButton:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 HelpOpenTicketButton:GetPushedTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 HelpOpenTicketButton:SetSize(16, 16)
 
+-- Garrison icon
+GarrisonLandingPageMinimapButton:ClearAllPoints()
+GarrisonLandingPageMinimapButton:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 3, 2)
+GarrisonLandingPageMinimapButton:SetSize(32, 32)
+
 -- GhostFrame
 GhostFrame:StripTextures()
 GhostFrame:SetTemplate("Overlay")
@@ -180,7 +185,7 @@ local micromenu = {
 		ToggleAchievementFrame()
 	end},
 	{text = QUESTLOG_BUTTON, notCheckable = 1, func = function()
-		ToggleFrame(QuestLogFrame)
+		ToggleQuestLog()
 	end},
 	{text = guildText, notCheckable = 1, func = function()
 		ToggleGuildFrame()
@@ -193,10 +198,7 @@ local micromenu = {
 	end},
 	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
 		if T.level >= SHOW_PVP_LEVEL then
-			if not PVPUIFrame then
-				PVP_LoadUI()
-			end
-			ToggleFrame(PVPUIFrame)
+			TogglePVPUI()
 		else
 			if C.error.white == false then
 				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL), 1, 0.1, 0.1)
@@ -216,9 +218,6 @@ local micromenu = {
 			end
 		end
 	end},
-	{text = LOOKING_FOR_RAID, notCheckable = 1, func = function()
-		ToggleFrame(RaidBrowserFrame)
-	end},
 	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
 		ToggleEncounterJournal()
 	end},
@@ -231,19 +230,20 @@ local micromenu = {
 	{text = HELP_BUTTON, notCheckable = 1, func = function()
 		ToggleHelpFrame()
 	end},
-	{text = BLIZZARD_STORE, notCheckable = true, func = function()
-		StoreMicroButton:Click()
-	end},
 	{text = L_MINIMAP_CALENDAR, notCheckable = 1, func = function()
 		ToggleCalendar()
 	end},
-	{text = BATTLEFIELD_MINIMAP, notCheckable = true, func = function()
+	{text = BATTLEFIELD_MINIMAP, notCheckable = 1, func = function()
 		ToggleBattlefieldMinimap()
 	end},
-	{text = LOOT_ROLLS, notCheckable = true, func = function()
+	{text = LOOT_ROLLS, notCheckable = 1, func = function()
 		ToggleFrame(LootHistoryFrame)
 	end},
 }
+
+if not IsTrialAccount() and not C_StorePublic.IsDisabledByParentalControls() then
+	tinsert(micromenu, {text = BLIZZARD_STORE, notCheckable = 1, func = function() StoreMicroButton:Click() end})
+end
 
 Minimap:SetScript("OnMouseUp", function(self, button)
 	local position = MinimapAnchor:GetPoint()

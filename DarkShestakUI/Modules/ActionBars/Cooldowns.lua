@@ -131,16 +131,14 @@ end
 
 local function cooldown_ShouldUpdateTimer(self, start, duration, charges, maxCharges)
 	local timer = self.timer
-	if not timer then
-		return true
-	end
-	return not(timer.start == start or timer.charges == charges or timer.maxCharges == maxCharges)
+	return not(timer and timer.start == start and timer.duration == duration and timer.charges == charges and timer.maxCharges == maxCharges)
 end
 
 local function cooldown_Update(self)
 	local button = self:GetParent()
-	local start, duration, enable = GetActionCooldown(button.action)
-	local charges, maxCharges, chargeStart, chargeDuration = GetActionCharges(button.action)
+	local action = button.action
+	local start, duration, enable = GetActionCooldown(action)
+	local charges, maxCharges, chargeStart, chargeDuration = GetActionCharges(action)
 
 	if cooldown_ShouldUpdateTimer(self, start, duration, charges, maxCharges) then
 		Timer_Start(self, start, duration, charges, maxCharges)

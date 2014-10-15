@@ -20,6 +20,7 @@ local function LoadSkin()
 
 	T.SkinCheckBox(IsUsableCheckButton)
 	T.SkinCheckBox(ShowOnPlayerCheckButton)
+	T.SkinCheckBox(ExactMatchCheckButton)
 
 	-- Dress Up Frame
 	AuctionFrame:HookScript("OnShow", function()
@@ -88,8 +89,10 @@ local function LoadSkin()
 	BrowseCloseButton:SetPoint("BOTTOMRIGHT", AuctionFrameBrowse, "BOTTOMRIGHT", 66, 10)
 	BrowseBuyoutButton:SetPoint("RIGHT", BrowseCloseButton, "LEFT", -4, 0)
 	BrowseBidButton:SetPoint("RIGHT", BrowseBuyoutButton, "LEFT", -4, 0)
-	BrowseResetButton:SetPoint("TOPLEFT", AuctionFrameBrowse, "TOPLEFT", 81, -74)
 	BrowseSearchButton:SetPoint("TOPRIGHT", AuctionFrameBrowse, "TOPRIGHT", 25, -34)
+	BrowseResetButton:ClearAllPoints()
+	BrowseResetButton:SetPoint("BOTTOMLEFT", BrowseSearchButton, "TOPLEFT", 0, 3)
+	BrowseResetButton:SetWidth(80)
 
 	AuctionsItemButton:StripTextures()
 	AuctionsItemButton:StyleButton()
@@ -262,7 +265,7 @@ local function LoadSkin()
 	AuctionFrameBid.bg = CreateFrame("Frame", nil, AuctionFrameBid)
 	AuctionFrameBid.bg:SetTemplate("Overlay")
 	AuctionFrameBid.bg:SetPoint("TOPLEFT", 22, -72)
-	AuctionFrameBid.bg:SetPoint("BOTTOMRIGHT", 66, 39)
+	AuctionFrameBid.bg:SetPoint("BOTTOMRIGHT", 66, 40)
 	AuctionFrameBid.bg:SetFrameLevel(AuctionFrameBid.bg:GetFrameLevel() - 2)
 	BidScrollFrame:SetHeight(332)
 

@@ -22,12 +22,12 @@ local function Shared(self, unit)
 	or (unit and unit:find("boss%d")) and "boss" or unit
 
 	-- Menu
-	self.menu = T.SpawnMenu
-
 	if (unit == "arena" and C.unitframe.show_arena == true and unit ~= "arenatarget") or (unit == "boss" and C.unitframe.show_boss == true) then
 		self:SetAttribute("type2", "focus")
+		self:SetAttribute("type3", "macro")
+		self:SetAttribute("macrotext3", "/clearfocus")
 	else
-		self:SetAttribute("*type2", "menu")
+		self:SetAttribute("*type2", "togglemenu")
 	end
 
 	-- Backdrop for every units
@@ -311,9 +311,9 @@ local function Shared(self, unit)
 			self.ShadowOrbsBar:SetSize(180, 7)
 			self.ShadowOrbsBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
-			for i = 1, 3 do
+			for i = 1, 5 do
 				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", nil, self.ShadowOrbsBar)
-				self.ShadowOrbsBar[i]:SetSize(178 / 3, 7)
+				self.ShadowOrbsBar[i]:SetSize(178 / 5, 7)
 				if i == 1 then
 					self.ShadowOrbsBar[i]:SetPoint("LEFT", self.ShadowOrbsBar, "LEFT", 0, 0)
 				else
@@ -326,7 +326,11 @@ local function Shared(self, unit)
 				self.ShadowOrbsBar[i].bg:SetAllPoints()
 				self.ShadowOrbsBar[i].bg:SetTexture(C.media.texture)
 				self.ShadowOrbsBar[i].bg:SetVertexColor(0.70, 0.32, 0.75, 0.2)
+
+				self.ShadowOrbsBar[i].width = self.ShadowOrbsBar[i]:GetWidth()
 			end
+
+			self.ShadowOrbsBar.Override = T.UpdateShadowOrb
 		end
 
 		-- Holy Power bar
@@ -419,6 +423,8 @@ local function Shared(self, unit)
 				self.TotemBar[i].bg:SetAllPoints()
 				self.TotemBar[i].bg:SetTexture(C.media.texture)
 				self.TotemBar[i].bg.multiplier = 0.2
+
+				_G["TotemFrameTotem"..i.."Icon"]:Hide()
 			end
 		end
 
@@ -549,6 +555,32 @@ local function Shared(self, unit)
 			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.ClassMana:SetTextColor(0.0, 1, 0.59)
 		end
+
+		-- Counter bar
+		self.CounterBar = CreateFrame("StatusBar", self:GetName().."_CounterBar", self)
+		self.CounterBar:CreateBackdrop("Default")
+		self.CounterBar:SetWidth(215)
+		self.CounterBar:SetHeight(20)
+		self.CounterBar:SetStatusBarTexture(C.media.texture)
+		self.CounterBar:SetPoint("TOP", UIParent, "TOP", 0, -100)
+
+		self.CounterBar.bg = self.CounterBar:CreateTexture(nil, "BORDER")
+		self.CounterBar.bg:SetAllPoints()
+		self.CounterBar.bg:SetTexture(C.media.texture)
+
+		self.CounterBar.Text = T.SetFontString(self.CounterBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+		self.CounterBar.Text:SetPoint("CENTER")
+
+		local r, g, b
+		local max
+
+		self.CounterBar:SetScript("OnValueChanged", function(_, value)
+			_, max = self.CounterBar:GetMinMaxValues()
+			r, g, b = oUF.ColorGradient(value, max, 1, 0, 0, 1, 1, 0, 0, 1, 0)
+			self.CounterBar:SetStatusBarColor(r, g, b)
+			self.CounterBar.bg:SetVertexColor(r, g, b, 0.2)
+			self.CounterBar.Text:SetText(floor(value))
+		end)
 	end
 
 	if unit == "pet" or unit == "targettarget" or unit == "focus" or unit == "focustarget" then
@@ -1045,6 +1077,8 @@ local function Shared(self, unit)
 			mhpb:SetWidth(217)
 		elseif unit == "pet" or unit == "focus" or unit == "focustarget" or unit == "targettarget" then
 			mhpb:SetWidth(105)
+		elseif unit == "arenatarget" then
+			mhpb:SetWidth(30)
 		else
 			mhpb:SetWidth(150)
 		end
@@ -1318,24 +1352,10 @@ SLASH_TEST_UF4 = "/еуыега"
 ----------------------------------------------------------------------------------------
 --	Delete some lines from unit dropdown menu
 ----------------------------------------------------------------------------------------
-do
-	local PET_DISMISS = "PET_DISMISS"
-	if T.class == "HUNTER" then
-		PET_DISMISS = nil
+for _, menu in pairs(UnitPopupMenus) do
+	for index = #menu, 1, -1 do
+		if menu[index] == "SET_FOCUS" or menu[index] == "CLEAR_FOCUS" or menu[index] == "MOVE_PLAYER_FRAME" or menu[index] == "MOVE_TARGET_FRAME" or menu[index] == "LARGE_FOCUS" or menu[index] == "MOVE_FOCUS_FRAME" then
+			table.remove(menu, index)
+		end
 	end
-
-	UnitPopupMenus["SELF"] = {"PVP_FLAG", "LOOT_METHOD", "LOOT_THRESHOLD", "OPT_OUT_LOOT_TITLE", "LOOT_PROMOTE", "SELECT_LOOT_SPECIALIZATION", "CONVERT_TO_RAID", "CONVERT_TO_PARTY", "DUNGEON_DIFFICULTY", "RAID_DIFFICULTY", "RESET_INSTANCES", "RESET_CHALLENGE_MODE", "RAID_TARGET_ICON", "SELECT_ROLE", "INSTANCE_LEAVE", "LEAVE", "CANCEL"}
-	UnitPopupMenus["PET"] = {"PET_PAPERDOLL", "PET_RENAME", "PET_ABANDON", PET_DISMISS, "CANCEL"}
-	UnitPopupMenus["OTHERPET"] = {"RAID_TARGET_ICON", "REPORT_PET", "CANCEL"}
-	UnitPopupMenus["BATTLEPET"] = {"RAID_TARGET_ICON", "PET_SHOW_IN_JOURNAL", "CANCEL"}
-	UnitPopupMenus["OTHERBATTLEPET"] = {"RAID_TARGET_ICON", "PET_SHOW_IN_JOURNAL", "REPORT_BATTLE_PET", "CANCEL"}
-	UnitPopupMenus["PARTY"] = {"ADD_FRIEND", "ADD_FRIEND_MENU", "MUTE", "UNMUTE", "PARTY_SILENCE", "PARTY_UNSILENCE", "RAID_SILENCE", "RAID_UNSILENCE", "BATTLEGROUND_SILENCE", "BATTLEGROUND_UNSILENCE", "WHISPER", "PROMOTE", "PROMOTE_GUIDE", "LOOT_PROMOTE", "VOTE_TO_KICK", "UNINVITE", "INSPECT", "ACHIEVEMENTS", "TRADE", "FOLLOW", "DUEL", "PET_BATTLE_PVP_DUEL", "RAID_TARGET_ICON", "SELECT_ROLE", "PVP_REPORT_AFK", "RAF_SUMMON", "RAF_GRANT_LEVEL", "REPORT_PLAYER", "CANCEL"}
-	UnitPopupMenus["PLAYER"] = {"ADD_FRIEND", "ADD_FRIEND_MENU", "WHISPER", "INSPECT", "ACHIEVEMENTS", "INVITE", "TRADE", "FOLLOW", "DUEL", "PET_BATTLE_PVP_DUEL", "RAID_TARGET_ICON", "RAF_SUMMON", "RAF_GRANT_LEVEL", "REPORT_PLAYER", "CANCEL"}
-	UnitPopupMenus["RAID_PLAYER"] = {"ADD_FRIEND", "ADD_FRIEND_MENU", "MUTE", "UNMUTE", "RAID_SILENCE", "RAID_UNSILENCE", "BATTLEGROUND_SILENCE", "BATTLEGROUND_UNSILENCE", "WHISPER", "INSPECT", "ACHIEVEMENTS", "TRADE", "FOLLOW", "DUEL", "PET_BATTLE_PVP_DUEL", "RAID_TARGET_ICON", "SELECT_ROLE", "RAID_LEADER", "RAID_PROMOTE", "RAID_DEMOTE", "LOOT_PROMOTE", "VOTE_TO_KICK", "RAID_REMOVE", "PVP_REPORT_AFK", "RAF_SUMMON", "RAF_GRANT_LEVEL", "REPORT_PLAYER", "CANCEL"}
-	UnitPopupMenus["RAID"] = {"MUTE", "UNMUTE", "RAID_SILENCE", "RAID_UNSILENCE", "BATTLEGROUND_SILENCE", "BATTLEGROUND_UNSILENCE", "RAID_LEADER", "RAID_PROMOTE", "RAID_MAINTANK", "RAID_MAINASSIST", "LOOT_PROMOTE", "RAID_DEMOTE", "VOTE_TO_KICK", "RAID_REMOVE", "PVP_REPORT_AFK", "REPORT_PLAYER", "CANCEL"}
-	UnitPopupMenus["VEHICLE"] = {"RAID_TARGET_ICON", "VEHICLE_LEAVE", "CANCEL"}
-	UnitPopupMenus["TARGET"] = {"ADD_FRIEND", "ADD_FRIEND_MENU", "RAID_TARGET_ICON", "CANCEL"}
-	UnitPopupMenus["ARENAENEMY"] = {"CANCEL"}
-	UnitPopupMenus["FOCUS"] = {"RAID_TARGET_ICON", "CANCEL"}
-	UnitPopupMenus["BOSS"] = {"RAID_TARGET_ICON", "CANCEL"}
 end

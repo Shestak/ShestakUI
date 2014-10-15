@@ -11,7 +11,7 @@ local guardianelixirbuffs = T.ReminderBuffs["GuardianElixir"]
 local foodbuffs = T.ReminderBuffs["Food"]
 local statbuffs = T.ReminderBuffs["Stat"]
 local staminabuffs = T.ReminderBuffs["Stamina"]
-local visible, flask, battleelixir, guardianelixir, food, stat, stamina, spell5, spell6
+local visible, flask, battleelixir, guardianelixir, food, stat, stamina, spell5, spell6, once
 
 -- We need to check if you have two different elixirs if your not flasked, before we say your not flasked
 local function CheckElixir(unit)
@@ -21,6 +21,7 @@ local function CheckElixir(unit)
 			if UnitAura("player", name) then
 				FlaskFrame.t:SetTexture(icon)
 				battleelixir = true
+				once = true
 				break
 			else
 				battleelixir = false
@@ -36,6 +37,7 @@ local function CheckElixir(unit)
 				if not battleelixir then
 					FlaskFrame.t:SetTexture(icon)
 				end
+				once = true
 				break
 			else
 				guardianelixir = false
@@ -68,7 +70,10 @@ local function OnAuraChange(self, event, arg1, unit)
 	if flaskbuffs and flaskbuffs[1] then
 		for i, flaskbuffs in pairs(flaskbuffs) do
 			local name, _, icon = GetSpellInfo(flaskbuffs)
-			FlaskFrame.t:SetTexture(icon)
+			if event == "PLAYER_ENTERING_WORLD" or once then
+				FlaskFrame.t:SetTexture(icon)
+				once = false
+			end
 			if UnitAura("player", name) then
 				FlaskFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 				flask = true
@@ -82,7 +87,9 @@ local function OnAuraChange(self, event, arg1, unit)
 	if foodbuffs and foodbuffs[1] then
 		for i, foodbuffs in pairs(foodbuffs) do
 			local name, _, icon = GetSpellInfo(foodbuffs)
-			FoodFrame.t:SetTexture(icon)
+			if event == "PLAYER_ENTERING_WORLD" then
+				FoodFrame.t:SetTexture(icon)
+			end
 			if UnitAura("player", name) then
 				FoodFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 				food = true
@@ -96,7 +103,9 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	for i, statbuffs in pairs(statbuffs) do
 		local name, _, icon = GetSpellInfo(statbuffs)
-		StatFrame.t:SetTexture(icon)
+		if event == "PLAYER_ENTERING_WORLD" then
+			StatFrame.t:SetTexture(icon)
+		end
 		if UnitAura("player", name) then
 			StatFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 			stat = true
@@ -109,7 +118,9 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	for i, staminabuffs in pairs(staminabuffs) do
 		local name, _, icon = GetSpellInfo(staminabuffs)
-		StaminaFrame.t:SetTexture(icon)
+		if event == "PLAYER_ENTERING_WORLD" then
+			StaminaFrame.t:SetTexture(icon)
+		end
 		if UnitAura("player", name) then
 			StaminaFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 			stamina = true
@@ -122,7 +133,9 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	for i, Spell5Buff in pairs(Spell5Buff) do
 		local name, _, icon = GetSpellInfo(Spell5Buff)
-		Spell5Frame.t:SetTexture(icon)
+		if event == "PLAYER_ENTERING_WORLD" then
+			Spell5Frame.t:SetTexture(icon)
+		end
 		if UnitAura("player", name) then
 			Spell5Frame:SetAlpha(C.reminder.raid_buffs_alpha)
 			spell5 = true
@@ -135,7 +148,9 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	for i, Spell6Buff in pairs(Spell6Buff) do
 		local name, _, icon = GetSpellInfo(Spell6Buff)
-		Spell6Frame.t:SetTexture(icon)
+		if event == "PLAYER_ENTERING_WORLD" then
+			Spell6Frame.t:SetTexture(icon)
+		end
 		if UnitAura("player", name) then
 			Spell6Frame:SetAlpha(C.reminder.raid_buffs_alpha)
 			spell6 = true
@@ -168,7 +183,7 @@ local function OnAuraChange(self, event, arg1, unit)
 end
 
 -- Create Anchor
-local RaidBuffsAnchor = CreateFrame("Button", "RaidBuffsAnchor", UIParent)
+local RaidBuffsAnchor = CreateFrame("Frame", "RaidBuffsAnchor", UIParent)
 RaidBuffsAnchor:SetWidth((C.reminder.raid_buffs_size * 6) + 15)
 RaidBuffsAnchor:SetHeight(C.reminder.raid_buffs_size)
 RaidBuffsAnchor:SetPoint(unpack(C.position.raid_buffs))

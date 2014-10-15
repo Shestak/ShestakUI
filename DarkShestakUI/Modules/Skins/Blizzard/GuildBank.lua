@@ -34,16 +34,18 @@ local function LoadSkin()
 
 	GuildItemSearchBox:StripTextures(true)
 	GuildItemSearchBox:CreateBackdrop("Overlay")
-	GuildItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, -2)
-	GuildItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -5, 2)
+	GuildItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, 0)
+	GuildItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -5, 0)
 
 	for i = 1, NUM_GUILDBANK_COLUMNS do
 		_G["GuildBankColumn"..i]:StripTextures()
 
-		for x = 1, NUM_SLOTS_PER_GUILDBANK_GROUP do
-			local button = _G["GuildBankColumn"..i.."Button"..x]
-			local icon = _G["GuildBankColumn"..i.."Button"..x.."IconTexture"]
+		for j = 1, NUM_SLOTS_PER_GUILDBANK_GROUP do
+			local button = _G["GuildBankColumn"..i.."Button"..j]
+			local icon = _G["GuildBankColumn"..i.."Button"..j.."IconTexture"]
+			local border = _G["GuildBankColumn"..i.."Button"..j].IconBorder
 
+			border:Kill()
 			button:SetNormalTexture(nil)
 			button:StyleButton()
 			button:SetTemplate("Default")
@@ -98,8 +100,7 @@ local function LoadSkin()
 	GuildBankPopupOkayButton:SkinButton(true)
 	GuildBankPopupScrollFrame:StripTextures()
 	GuildBankPopupEditBox:StripTextures(true)
-	T.SkinEditBox(GuildBankPopupEditBox)
-	GuildBankPopupEditBox:SetHeight(GuildBankPopupEditBox:GetHeight() - 5)
+	T.SkinEditBox(GuildBankPopupEditBox, nil, GuildBankPopupEditBox:GetHeight() - 5)
 
 	for i = 1, 16 do
 		local button = _G["GuildBankPopupButton"..i]

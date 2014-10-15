@@ -90,12 +90,31 @@ end
 
 local function StyleSmallButton(normal, button, icon, name, pet)
 	local flash = _G[name.."Flash"]
+	local hotkey = _G[name.."HotKey"]
+
 	button:SetNormalTexture("")
-	button.SetNormalTexture = T.dummy
+
+	hooksecurefunc(button, "SetNormalTexture", function(self, texture)
+		if texture and texture ~= "" then
+			self:SetNormalTexture("")
+		end
+	end)
 
 	flash:SetTexture(0.8, 0.8, 0.8, 0.5)
 	flash:SetPoint("TOPLEFT", button, 2, -2)
 	flash:SetPoint("BOTTOMRIGHT", button, -2, 2)
+
+	if C.actionbar.hotkey == true then
+		hotkey:ClearAllPoints()
+		hotkey:SetPoint("TOPRIGHT", 0, 0)
+		hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		hotkey:SetWidth(C.actionbar.button_size - 1)
+		hotkey.ClearAllPoints = T.dummy
+		hotkey.SetPoint = T.dummy
+	else
+		hotkey:Kill()
+	end
 
 	if not button.isSkinned then
 		button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
@@ -190,7 +209,7 @@ local function SetupFlyoutButton()
 			_G["SpellFlyoutButton"..i]:StyleButton()
 
 			if _G["SpellFlyoutButton"..i]:GetChecked() then
-				_G["SpellFlyoutButton"..i]:SetChecked(nil)
+				_G["SpellFlyoutButton"..i]:SetChecked(false)
 			end
 
 			if C.actionbar.rightbars_mouseover == true then
@@ -251,6 +270,7 @@ end
 hooksecurefunc("ActionButton_Update", StyleNormalButton)
 hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
 if C.actionbar.hotkey == true then
+	hooksecurefunc("ActionButton_OnEvent", function(self, event, ...) if event == "PLAYER_ENTERING_WORLD" then ActionButton_UpdateHotkeys(self, self.buttonType) end end)
 	hooksecurefunc("ActionButton_UpdateHotkeys", UpdateHotkey)
 end
 if C.actionbar.hide_highlight == true then

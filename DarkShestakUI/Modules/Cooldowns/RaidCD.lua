@@ -189,13 +189,9 @@ local OnEvent = function(self, event, ...)
 		for k, v in pairs(bars) do
 			v.endTime = 0
 		end
-	end
-	if not inEncounter and IsEncounterInProgress() then
-		inEncounter = true
-	elseif inEncounter and not IsEncounterInProgress() then
-		inEncounter = nil
+	elseif event == "ENCOUNTER_END" and IsInRaid() then
 		for k, v in pairs(bars) do
-			v.endTime = 0
+			if v.endTime - v.startTime >= 300 then v.endTime = 0 end
 		end
 	end
 end
@@ -204,11 +200,12 @@ local addon = CreateFrame("Frame")
 addon:SetScript("OnEvent", OnEvent)
 addon:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+addon:RegisterEvent("ENCOUNTER_END")
 
 SlashCmdList.RaidCD = function()
 	StartTimer(UnitName("player"), 20484)	-- Rebirth
 	StartTimer(UnitName("player"), 20707)	-- Soulstone
-	StartTimer(UnitName("player"), 29166)	-- Innervate
+	StartTimer(UnitName("player"), 108280)	-- Healing Tide Totem
 end
 SLASH_RaidCD1 = "/raidcd"
 SLASH_RaidCD2 = "/кфшвсв"

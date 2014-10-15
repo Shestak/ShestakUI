@@ -41,7 +41,7 @@ local function Enable(self, unit)
 		self:RegisterEvent("UPDATE_FACTION", Update)
 
 		if bar.Tooltip then
-			bar:EnableMouse()
+			bar:EnableMouse(true)
 			bar:HookScript("OnLeave", GameTooltip_Hide)
 			bar:HookScript("OnEnter", Tooltip)
 		end

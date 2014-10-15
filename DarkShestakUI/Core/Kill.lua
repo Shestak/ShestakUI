@@ -13,7 +13,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if addon == "Blizzard_PetJournal" then
-		MountJournalSearchBox:Kill()
+		--WoD MountJournalSearchBox:Kill()
 	end
 
 	if C.unitframe.enable and ((SavedOptions and SavedOptions.PerChar == false and (SavedOptions.RaidLayout == "HEAL" or SavedOptions.RaidLayout == "DPS")) or (SavedOptionsPerChar and SavedOptions.PerChar == true and (SavedOptionsPerChar.RaidLayout == "HEAL" or SavedOptionsPerChar.RaidLayout == "DPS"))) then
@@ -37,6 +37,14 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	HelpOpenTicketButtonTutorial:Kill()
 	TalentMicroButtonAlert:Kill()
 	CompanionsMicroButtonAlert:Kill()
+	ReagentBankHelpBox:Kill()
+	BagHelpBox:Kill()
+	PremadeGroupsPvETutorialAlert:Kill()
+	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_WORLD_MAP_FRAME, true)
+	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_PET_JOURNAL, true)
+	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_GARRISON_BUILDING, true)
+
+	InterfaceOptionsActionBarsPanelCountdownCooldowns:Kill()
 
 	if C.chat.enable then
 		InterfaceOptionsSocialPanelChatStyle:Kill()
@@ -92,4 +100,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			InterfaceOptionsCombatTextPanelHealingAbsorbTarget:Kill()
 		end
 	end
+
+	SetCVar("countdownForCooldowns", 0)
 end)

@@ -4,7 +4,7 @@
 --	LiteStats configuration file
 --	BACKUP THIS FILE BEFORE UPDATING!
 ----------------------------------------------------------------------------------------
-local _, _, _, cBN = GetAddOnInfo("cargBags_Nivaya")
+local cBN = IsAddOnLoaded("cargBags_Nivaya")
 local r, g, b = unpack(C.skins.color_theme)
 local function theme(string)
 	return format("|cff%02x%02x%02x%s|r", 255 * r, 255 * g, 255 * b, string or "")

@@ -7,8 +7,7 @@ if C.unitframe.enable ~= true or C.unitframe_class_bar.vengeance ~= true then re
 local _, ns = ...
 local oUF = ns.oUF
 
-local VENGEANCE_ID = 132365
-local tooltip = CreateFrame("GameTooltip", "VengeanceTooltip", UIParent, "GameTooltipTemplate")
+local VENGEANCE_ID = GetSpellInfo(158300)
 
 local Update = function(self, event, unit)
 	if self.unit ~= unit then return end
@@ -17,37 +16,16 @@ local Update = function(self, event, unit)
 
 	if vb.PreUpdate then vb:PreUpdate(unit) end
 
-	local hasAura = false
-	local i = 1
-	repeat
-		local _, _, _, _, _, _, _, _, _, _, spellID = UnitAura(self.unit, i)
+	local _, _, _, _, _, _, _, _, _, _, _, _, _, _, vengeanceValue = UnitBuff("player", VENGEANCE_ID)
 
-		if spellID == VENGEANCE_ID then
-			hasAura = true
-			break
-		end
-
-		i = i + 1
-	until not spellID
-
-	if hasAura then
-		tooltip:SetOwner(UIParent, "ANCHOR_NONE")
-		tooltip:SetUnitAura(self.unit, i, "HELPFUL")
-		local text = VengeanceTooltipTextLeft2:GetText()
-		tooltip:Hide()
-
-		local _, maxHealth = self.Health:GetMinMaxValues()
-		vb.Bar:SetMinMaxValues(0, maxHealth / 4)
-
-		local textValue = text:match("%d+")
+	if vengeanceValue and vengeanceValue > 0 then
+		vb.Bar:SetMinMaxValues(0, 200)
 
 		if vb.Text then
-			vb.Text:SetText(textValue)
+			vb.Text:SetText(vengeanceValue)
 		end
 
-		local value = tonumber(textValue)
-		vb.Bar:SetValue(value and value or 0)
-
+		vb.Bar:SetValue(vengeanceValue)
 		vb:Show()
 
 		if self.Debuffs then

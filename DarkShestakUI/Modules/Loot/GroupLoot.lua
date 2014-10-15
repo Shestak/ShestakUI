@@ -44,7 +44,6 @@ local function ItemOnUpdate(frame)
 		else
 			ShoppingTooltip1:Hide()
 			ShoppingTooltip2:Hide()
-			ShoppingTooltip3:Hide()
 		end
 
 		if IsControlKeyDown() then

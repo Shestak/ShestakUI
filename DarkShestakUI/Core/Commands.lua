@@ -280,6 +280,11 @@ SlashCmdList.TEST_ACHIEVEMENT = function()
 	LootWonAlertFrame_ShowAlert(GetItemInfo(6948), -1, 1, 100)
 	ChallengeModeAlertFrame_ShowAlert()
 	AlertFrame_AnimateIn(ScenarioAlertFrame1)
+	--StorePurchaseAlertFrame_ShowAlert(select(10, GetItemInfo(6948)), GetItemInfo(6948), 6948)
+	--LootUpgradeFrame_ShowAlert(GetItemInfo(6948))
+	--GarrisonBuildingAlertFrame_ShowAlert(T.name)
+	--GarrisonMissionAlertFrame_ShowAlert(missionID)
+	--GarrisonFollowerAlertFrame_ShowAlert(followerID, name, displayID, level, quality, isUpgraded)
 	AlertFrame_FixAnchors()
 end
 SLASH_TEST_ACHIEVEMENT1 = "/tach"

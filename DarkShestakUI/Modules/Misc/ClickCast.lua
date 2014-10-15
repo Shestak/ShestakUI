@@ -322,17 +322,13 @@ SpellBinder:SetScript("OnEvent", function(self, event, ...)
 
 		for i = 1, SPELLS_PER_PAGE do
 			local parent = _G["SpellButton"..i]
-			local button = CreateFrame("Button", "SpellBinderFakeButton"..i, parent)
+			local button = CreateFrame("Button", "SpellBinderFakeButton"..i, parent, "AutoCastShineTemplate")
 			button:SetID(parent:GetID())
 			button:RegisterForClicks("AnyDown")
 			button:SetAllPoints(parent)
 			button:SetScript("OnClick", addSpell)
 
-			button.shine = SpellBook_GetAutoCastShine()
-			button.shine:Show()
-			button.shine:SetParent(button)
-			button.shine:SetAllPoints()
-			AutoCastShine_AutoCastStart(button.shine)
+			AutoCastShine_AutoCastStart(button)
 
 			button:Hide()
 			SpellBinder.spellbuttons[i] = button

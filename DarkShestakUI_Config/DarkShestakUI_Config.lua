@@ -38,7 +38,6 @@ local function Local(o)
 	-- General options
 	if o == "UIConfiggeneral" then o = GENERAL_LABEL end
 	if o == "UIConfiggeneralauto_scale" then o = L_GUI_GENERAL_AUTOSCALE end
-	if o == "UIConfiggeneralmultisampleprotect" then o = L_GUI_GENERAL_MULTISAMPLE end
 	if o == "UIConfiggeneraluiscale" then o = L_GUI_GENERAL_UISCALE end
 	if o == "UIConfiggeneralwelcome_message" then o = L_GUI_GENERAL_WELCOME_MESSAGE end
 	if o == "UIConfiggeneralcustom_lagtolerance" then o = L_GUI_GENERAL_LAG_TOLERANCE end
@@ -53,7 +52,6 @@ local function Local(o)
 	if o == "UIConfigmiscraid_tools" then o = L_GUI_MISC_RAID_TOOLS end
 	if o == "UIConfigmiscprofession_tabs" then o = L_GUI_MISC_PROFESSION_TABS end
 	if o == "UIConfigmiscprofession_database" then o = L_GUI_MISC_PROFESSION_DATABASE end
-	if o == "UIConfigmiscdungeon_tabs" then o = L_GUI_MISC_DUNGEON_TABS end
 	if o == "UIConfigmischide_bg_spam" then o = L_GUI_MISC_HIDE_BG_SPAM end
 	if o == "UIConfigmiscitem_level" then o = L_GUI_MISC_ITEM_LEVEL end
 	if o == "UIConfigmiscgem_counter" then o = L_GUI_MISC_GEM_COUNTER end
@@ -240,7 +238,6 @@ local function Local(o)
 	if o == "UIConfigtooltipwho_targetting" then o = L_GUI_TOOLTIP_WHO_TARGETTING end
 	if o == "UIConfigtooltipitem_count" then o = L_GUI_TOOLTIP_ITEM_COUNT end
 	if o == "UIConfigtooltipunit_role" then o = L_GUI_TOOLTIP_UNIT_ROLE end
-	if o == "UIConfigtooltipsymbiosis" then o = L_GUI_TOOLTIP_SYMBIOSIS end
 	if o == "UIConfigtooltipinstance_lock" then o = L_GUI_TOOLTIP_INSTANCE_LOCK end
 	if o == "UIConfigtooltipitem_transmogrify" then o = L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY end
 
@@ -283,8 +280,6 @@ local function Local(o)
 
 	-- Map options
 	if o == "UIConfigmap" then o = WORLD_MAP end
-	if o == "UIConfigmapenable" then o = L_GUI_MAP_ENABLE end
-	if o == "UIConfigmapscale" then o = L_GUI_MAP_SCALE end
 	if o == "UIConfigmapbg_map_stylization" then o = L_GUI_MAP_BG_STYLIZATION end
 	if o == "UIConfigmapmap_boss_count" then o = L_GUI_MAP_BOSS_COUNT end
 	if o == "UIConfigmapexplore_map" then o = L_GUI_MAP_EXPLORE end
@@ -321,7 +316,7 @@ local function Local(o)
 	if o == "UIConfignameplatehealer_icon" then o = L_GUI_NAMEPLATE_HEALER_ICON end
 
 	-- ActionBar options
-	if o == "UIConfigactionbar" then o = ACTIONBARS_LABEL end
+	if o == "UIConfigactionbar" then o = ACTIONBAR_LABEL end
 	if o == "UIConfigactionbarenable" then o = L_GUI_ACTIONBAR_ENABLE end
 	if o == "UIConfigactionbarhotkey" then o = L_GUI_ACTIONBAR_HOTKEY end
 	if o == "UIConfigactionbarmacro" then o = L_GUI_ACTIONBAR_MACRO end
@@ -384,7 +379,6 @@ local function Local(o)
 	if o == "UIConfigunitframeportrait_enable" then o = L_GUI_UF_PORTRAIT_ENABLE end
 	if o == "UIConfigunitframeplugins_gcd" then o = L_GUI_UF_PLUGINS_GCD end
 	if o == "UIConfigunitframeplugins_swing" then o = L_GUI_UF_PLUGINS_SWING end
-	if o == "UIConfigunitframeplugins_necro_strike" then o = L_GUI_UF_PLUGINS_NECRO_STRIKE end
 	if o == "UIConfigunitframeplugins_reputation_bar" then o = L_GUI_UF_PLUGINS_REPUTATION_BAR end
 	if o == "UIConfigunitframeplugins_experience_bar" then o = L_GUI_UF_PLUGINS_EXPERIENCE_BAR end
 	if o == "UIConfigunitframeplugins_friendship_bar" then o = L_GUI_UF_PLUGINS_FRIENDSHIP_BAR end
@@ -409,6 +403,7 @@ local function Local(o)
 
 	-- Raid Frames options
 	if o == "UIConfigraidframe" then o = RAID_FRAMES_LABEL end
+	if o == "UIConfigraidframeby_role" then o = L_GUI_UF_BY_ROLE end
 	if o == "UIConfigraidframeaggro_border" then o = L_GUI_UF_AGGRO_BORDER end
 	if o == "UIConfigraidframedeficit_health" then o = L_GUI_UF_DEFICIT_HEALTH end
 	if o == "UIConfigraidframeshow_party" then o = L_GUI_UF_SHOW_PARTY end
@@ -639,7 +634,9 @@ local function ShowGroup(group, button)
 	end
 end
 
+local loaded
 function CreateUIConfig()
+	if InCombatLockdown() and not loaded then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 	local T, C, L = unpack(ShestakUI)
 
 	if UIConfigMain then
@@ -799,6 +796,8 @@ function CreateUIConfig()
 				if IsAddOnLoaded("Aurora") then
 					local F = unpack(Aurora)
 					F.ReskinCheck(button)
+				else
+					T.SkinCheckBox(button)
 				end
 				local o = "UIConfig"..i..j
 				Local(o)
@@ -1004,6 +1003,7 @@ function CreateUIConfig()
 	end
 
 	ShowGroup("general")
+	loaded = true
 end
 
 do
@@ -1059,7 +1059,7 @@ do
 		subtitle2:SetWidth(580)
 		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
 		subtitle2:SetJustifyH("LEFT")
-		subtitle2:SetText("AcidWeb, Aezay, Affli, Ailae, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Camealion, Chiril, CrusaderHeimdall, Cybey, Dawn, Don Kaban, Dridzt, Duffed, Durcyn, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, gi2k15, Gorlasch, Gsuz, Haleth, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Jaslm, Karl_w_w, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, Leatrix, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, Phanx, pvtschlag, Rahanprout, Renstrom, RustamIrzaev, Safturento, Sara.Festung, SDPhantom, Shestak, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Wetxius, Woffle of Dark Iron, Wrug, Xuerian, Yleaf, Zork.")
+		subtitle2:SetText("AcidWeb, Aezay, Affli, Ailae, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Camealion, Chiril, CrusaderHeimdall, Cybey, Dawn, Don Kaban, Dridzt, Duffed, Durcyn, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, gi2k15, Gorlasch, Gsuz, Haleth, Haste, Hoochie, Hungtar, HyPeRnIcS, Hydra, Ildyria, iSpawnAtHome, Jaslm, Karl_w_w, Karudon, Katae, Kemayo, Killakhan, Kraftman, Kunda, Leatrix, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, Phanx, pvtschlag, Renstrom, RustamIrzaev, Safturento, Sara.Festung, SDPhantom, Shestak, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Vladinator, Wetxius, Woffle of Dark Iron, Wrug, Xuerian, Yleaf, Zork.")
 
 		local title3 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)
@@ -1090,3 +1090,30 @@ do
 
 	InterfaceOptions_AddCategory(frame)
 end
+
+
+----------------------------------------------------------------------------------------
+--	Button in GameMenuButton frame
+----------------------------------------------------------------------------------------
+local button = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "GameMenuButtonTemplate")
+button:SetText("ShestakUI")
+button:SetPoint("TOP", "GameMenuButtonAddons", "BOTTOM", 0, -1)
+
+GameMenuFrame:HookScript("OnShow", function()
+	GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + button:GetHeight())
+	if IsMacClient() then
+		GameMenuButtonMacOptions:SetPoint("TOP", button, "BOTTOM", 0, -16)
+	else
+		GameMenuButtonLogout:SetPoint("TOP", button, "BOTTOM", 0, -16)
+	end
+end)
+
+button:SetScript("OnClick", function()
+	PlaySound("igMainMenuOption")
+	HideUIPanel(GameMenuFrame)
+	if not UIConfigMain or not UIConfigMain:IsShown() then
+		CreateUIConfig()
+	else
+		UIConfigMain:Hide()
+	end
+end)

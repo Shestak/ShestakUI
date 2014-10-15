@@ -245,9 +245,9 @@ L_DATATEXT_CARTS_CONTROLLED = "Carts Controlled:"
 
 -- Info text
 L_INFO_ERRORS = "No error yet."
-L_INFO_INVITE = "Accepted invite from: "
-L_INFO_DUEL = "Declined duel request from: "
-L_INFO_PET_DUEL = "Declined pet duel request from: "
+L_INFO_INVITE = "Accepted invite from "
+L_INFO_DUEL = "Declined duel request from "
+L_INFO_PET_DUEL = "Declined pet duel request from "
 L_INFO_DISBAND = "Disbanding group..."
 L_INFO_SETTINGS_DBM = "Type /settings dbm, to apply the settings DBM."
 L_INFO_SETTINGS_DXE = "Type /settings dxe, to apply the settings DXE."

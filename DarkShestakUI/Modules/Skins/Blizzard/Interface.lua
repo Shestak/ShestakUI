@@ -58,6 +58,8 @@ local function LoadSkin()
 		"ControlsPanelAutoLootCorpse",
 		"ControlsPanelInteractOnLeftClick",
 		"ControlsPanelAutoOpenLootHistory",
+		"ControlsPanelReverseCleanUpBags",
+		"ControlsPanelReverseNewLoot",
 		-- Combat
 		"CombatPanelAutoSelfCast",
 		"CombatPanelAttackOnAssist",
@@ -82,6 +84,7 @@ local function LoadSkin()
 		"ObjectivesPanelAutoQuestTracking",
 		"ObjectivesPanelMapQuestDifficulty",
 		"ObjectivesPanelWatchFrameWidth",
+		"ObjectivesPanelMapFade",
 		-- Social
 		"SocialPanelProfanityFilter",
 		"SocialPanelSpamFilter",
@@ -99,6 +102,7 @@ local function LoadSkin()
 		"ActionBarsPanelAlwaysShowActionBars",
 		"ActionBarsPanelLockActionBars",
 		"ActionBarsPanelSecureAbilityToggle",
+		"ActionBarsPanelCountdownCooldowns",
 		-- Names
 		"NamesPanelMyName",
 		"NamesPanelFriendlyPlayerNames",
@@ -122,6 +126,8 @@ local function LoadSkin()
 		"NamesPanelUnitNameplatesEnemyGuardians",
 		"NamesPanelUnitNameplatesEnemyTotems",
 		"NamesPanelUnitNameplatesNameplateClassColors",
+		"NamesPanelMinus",
+		"NamesPanelUnitNameplatesEnemyMinus",
 		-- Floating Combat Text
 		"CombatTextPanelTargetDamage",
 		"CombatTextPanelPeriodicDamage",
@@ -144,6 +150,7 @@ local function LoadSkin()
 		"CombatTextPanelPeriodicEnergyGains",
 		"CombatTextPanelHonorGains",
 		"CombatTextPanelAuras",
+		"CombatTextPanelPetBattle",
 		-- Status Text
 		"StatusTextPanelPlayer",
 		"StatusTextPanelPet",
@@ -179,6 +186,7 @@ local function LoadSkin()
 		"MousePanelInvertMouse",
 		"MousePanelClickToMove",
 		"MousePanelWoWMouse",
+		"MousePanelEnableMouseSpeed",
 		-- Help
 		"HelpPanelShowTutorials",
 		"HelpPanelEnhancedTooltips",
@@ -246,9 +254,12 @@ local function LoadSkin()
 		"NamesPanelNPCNamesDropDown",
 		"NamesPanelUnitNameplatesMotionDropDown",
 		"CombatTextPanelFCTDropDown",
+		"CombatTextPanelTargetModeDropDown",
 		"CameraPanelStyleDropDown",
 		"MousePanelClickMoveStyleDropDown",
-		"LanguagesPanelLocaleDropDown"
+		"LanguagesPanelLocaleDropDown",
+		"ObjectivesPanelQuestSorting",
+		"DisplayPanelOutlineDropDown"
 	}
 
 	for i = 1, getn(dropdown) do

@@ -173,40 +173,13 @@ local function LoadSkin()
 	HelpFrameCharacterStuckHearthstone.IconTexture:SetPoint("TOPLEFT", 2, -2)
 	HelpFrameCharacterStuckHearthstone.IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 	HelpFrameCharacterStuckHearthstone.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	HelpFrameCharacterStuckHearthstone.SetHighlightTexture = T.dummy
 
 	-- Report frames
 	ReportPlayerNameDialog:StripTextures()
 	ReportPlayerNameDialog:CreateBackdrop("Transparent")
 	ReportCheatingDialog:StripTextures()
 	ReportCheatingDialog:CreateBackdrop("Transparent")
-
-	local function navButtonFrameLevel(self)
-		for i = 1, #self.navList do
-			local navButton = self.navList[i]
-			local lastNav = self.navList[i-1]
-
-			if navButton and lastNav then
-				navButton:SetFrameLevel(lastNav:GetFrameLevel() - 2)
-				navButton:ClearAllPoints()
-				navButton:SetPoint("LEFT", lastNav, "RIGHT", 3, 0)
-			end
-		end
-	end
-
-	hooksecurefunc("NavBar_AddButton", function(self, buttonData)
-		local navButton = self.navList[#self.navList]
-
-		if not navButton.skinned then
-			navButton:SkinButton(true)
-			navButton.skinned = true
-
-			navButton:HookScript("OnClick", function()
-				navButtonFrameLevel(self)
-			end)
-		end
-
-		navButtonFrameLevel(self)
-	end)
 
 	for i = 1, HelpFrameGM_Response:GetNumChildren() do
 		local child = select(i, HelpFrameGM_Response:GetChildren())

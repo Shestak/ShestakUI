@@ -28,11 +28,11 @@ end
 local function HideObjects(frame)
 	for object in pairs(frame.queue) do
 		if object:GetObjectType() == "Texture" then
-			object:SetTexture('')
+			object:SetTexture("")
 		elseif object:GetObjectType() == "FontString" then
 			object:SetWidth(0.001)
 		elseif object:GetObjectType() == "StatusBar" then
-			object:SetStatusBarTexture('')
+			object:SetStatusBarTexture("")
 		else
 			object:Hide()
 		end

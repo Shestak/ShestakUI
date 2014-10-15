@@ -6,8 +6,10 @@ if C.chat.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 -- Find the Realm and Local
 local realmName = string.lower(GetRealmName())
-local realmLocal = string.sub(GetCVar("realmList"), 1, 2)
+local realmLocal = string.lower(GetCVar("portal"))
 local link
+
+if realmLocal == "ru" then realmLocal = "eu" end
 
 local function urlencode(obj)
 	local currentIndex = 1
@@ -25,7 +27,9 @@ local function urlencode(obj)
 end
 
 realmName = realmName:gsub("'", "")
+realmName = realmName:gsub("-", "")
 realmName = realmName:gsub(" ", "-")
+local myserver = realmName:gsub("-", "")
 
 if T.client == "ruRU" then
 	link = "ru"
@@ -64,16 +68,27 @@ StaticPopupDialogs.LINK_COPY_DIALOG = {
 hooksecurefunc("UnitPopup_OnClick", function(self)
 	local dropdownFrame = UIDROPDOWNMENU_INIT_MENU
 	local name = dropdownFrame.name
+	local server = dropdownFrame.server
+	if not server then
+		server = myserver
+	else
+		server = string.lower(server:gsub("'", ""))
+		server = server:gsub(" ", "-")
+	end
 
 	if name and self.value == "ARMORYLINK" then
 		local inputBox = StaticPopup_Show("LINK_COPY_DIALOG")
 		if realmLocal == "us" or realmLocal == "eu" or realmLocal == "tw" or realmLocal == "kr" then
-			linkurl = "http://"..realmLocal..".battle.net/wow/"..link.."/character/"..realmName.."/"..name.."/advanced"
+			if server == myserver then
+				linkurl = "http://"..realmLocal..".battle.net/wow/"..link.."/character/"..realmName.."/"..name.."/advanced"
+			else
+				linkurl = "http://"..realmLocal..".battle.net/wow/"..link.."/search?q="..name.."&f=wowcharacter"
+			end
 			inputBox.editBox:SetText(linkurl)
 			inputBox.editBox:HighlightText()
 			return
 		elseif realmLocal == "cn" then
-			local n,r = name:match"(.*)-(.*)"
+			local n, r = name:match"(.*)-(.*)"
 			n = n or name
 			r = r or GetRealmName()
 

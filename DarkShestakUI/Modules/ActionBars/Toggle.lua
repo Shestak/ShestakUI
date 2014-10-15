@@ -443,6 +443,7 @@ for i = 1, 5 do
 	end)
 
 	ToggleBar[i]:SetScript("OnUpdate", function()
+		if InCombatLockdown() then return end
 		if SavedOptionsPerChar.BarsLocked == true then
 			for i = 1, 4 do
 				ToggleBar[i]:EnableMouse(false)

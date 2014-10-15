@@ -60,7 +60,7 @@ function DisplayDrActives(self)
 
 			aura.cooldown = CreateFrame("Cooldown", "$parentCD", aura, "CooldownFrameTemplate")
 			aura.cooldown:SetAllPoints(aura.icon)
-			aura.cooldown:SetReverse()
+			aura.cooldown:SetReverse(true)
 
 			aura.count = aura:CreateFontString("$parentCount", "OVERLAY")
 			aura.count:SetFont(C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)

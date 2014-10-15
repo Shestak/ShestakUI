@@ -11,18 +11,9 @@ local MyUnits = {player = true, vehicle = true, pet = true}
 function Filger:TooltipOnEnter()
 	if self.spellID > 20 then
 		local str = "spell:%s"
-		local BadTotems = {
-			[8076] = 8075,
-			[8972] = 8071,
-			[5677] = 5675,
-		}
 		GameTooltip:ClearLines()
 		GameTooltip:SetOwner(self, "ANCHOR_TOPRIGHT", 0, 3)
-		if BadTotems[self.spell] then
-			GameTooltip:SetHyperlink(format(str, BadTotems[self.spellID]))
-		else
-			GameTooltip:SetHyperlink(format(str, self.spellID))
-		end
+		GameTooltip:SetHyperlink(format(str, self.spellID))
 		GameTooltip:Show()
 	end
 end
@@ -124,7 +115,7 @@ function Filger:DisplayActives()
 				else
 					bar.cooldown = CreateFrame("Cooldown", "$parentCD", bar, "CooldownFrameTemplate")
 					bar.cooldown:SetAllPoints(bar.icon)
-					bar.cooldown:SetReverse()
+					bar.cooldown:SetReverse(true)
 					bar.cooldown:SetFrameLevel(3)
 				end
 
@@ -310,8 +301,10 @@ function Filger:OnEvent(event, unit)
 				spn, _, _ = GetSpellInfo(data.spellID)
 				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
 				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
-					start = expirationTime - duration
-					found = true
+					if not data.count or count > data.count then
+						start = expirationTime - duration
+						found = true
+					end
 				end
 			elseif data.filter == "DEBUFF" and (not data.spec or data.spec == ptt) then
 				local caster, spn, expirationTime

@@ -58,7 +58,7 @@ local Enable = function(self)
 		self:RegisterEvent("PLAYER_ENTERING_WORLD", Update)
 
 		if not self.Trinket.cooldownFrame then
-			self.Trinket.cooldownFrame = CreateFrame("Cooldown", nil, self.Trinket)
+			self.Trinket.cooldownFrame = CreateFrame("Cooldown", nil, self.Trinket, "CooldownFrameTemplate")
 			self.Trinket.cooldownFrame:SetPoint("TOPLEFT", self.Trinket, 2, -2)
 			self.Trinket.cooldownFrame:SetPoint("BOTTOMRIGHT", self.Trinket, -2, 2)
 		end

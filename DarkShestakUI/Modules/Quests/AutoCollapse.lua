@@ -2,14 +2,14 @@
 if C.automation.auto_collapse ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Auto collapse WatchFrame in instance
+--	Auto collapse ObjectiveTrackerFrame in instance
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function(self, event)
 	if IsInInstance() then
-		WatchFrameCollapseExpandButton:Click()
-	elseif WatchFrame.collapsed and not InCombatLockdown() then
-		WatchFrameCollapseExpandButton:Click()
+		ObjectiveTracker_Collapse()
+	elseif ObjectiveTrackerFrame.collapsed and not InCombatLockdown() then
+		ObjectiveTracker_Expand()
 	end
 end)

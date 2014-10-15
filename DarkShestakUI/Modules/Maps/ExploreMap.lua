@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.map.enable ~= true or C.map.explore_map ~= true then return end
+if C.map.explore_map ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Tracking Explorer and Lore Master achievements in World Map(ExpLoreMaster by CrusaderHeimdall)

@@ -78,8 +78,10 @@ hooksecurefunc(GameTooltip, "SetCurrencyByID", function(tooltip, id)
 end)
 
 hooksecurefunc(GameTooltip, "SetCurrencyToken", function(tooltip, i)
-	local name, isHeader, isExpanded, isUnused, isWatched, count, icon = GetCurrencyListInfo(i)
-	AddTooltipInfo(GameTooltip, nameToID[name], not TokenFrame:IsMouseOver())
+	local name = GetCurrencyListInfo(i)
+	if name then
+		AddTooltipInfo(GameTooltip, nameToID[name], not TokenFrame:IsMouseOver())
+	end
 end)
 
 hooksecurefunc(GameTooltip, "SetHyperlink", function(tooltip, link)
@@ -89,10 +91,68 @@ hooksecurefunc(GameTooltip, "SetHyperlink", function(tooltip, link)
 	end
 end)
 
-hooksecurefunc(GameTooltip, "SetMerchantCostItem", function(tooltip, item, currency)
-	local icon, _, _, name = GetMerchantItemCostItem(item, currency)
-	AddTooltipInfo(tooltip, nameToID[name], true)
+hooksecurefunc(ItemRefTooltip, "SetHyperlink", function(tooltip, link)
+	local id = strmatch(link, "currency:(%d+)")
+	if id then
+		AddTooltipInfo(tooltip, tonumber(id), true)
+	end
 end)
+
+hooksecurefunc(GameTooltip, "SetMerchantCostItem", function(tooltip, item, currency)
+	local _, _, _, name = GetMerchantItemCostItem(item, currency)
+	if name then
+		AddTooltipInfo(tooltip, nameToID[name], true)
+	end
+end)
+
+hooksecurefunc(GameTooltip, "SetLFGDungeonReward", function(tooltip, dungeonID, rewardIndex)
+	local name = GetLFGDungeonRewardInfo(dungeonID, rewardIndex)
+	if name then
+		AddTooltipInfo(tooltip, nameToID[name], true)
+	end
+end)
+
+hooksecurefunc(GameTooltip, "SetLFGDungeonShortageReward", function(tooltip, dungeonID, shortageIndex, rewardIndex)
+	local name = GetLFGDungeonShortageRewardInfo(dungeonID, shortageIndex, rewardIndex)
+	if name then
+		AddTooltipInfo(tooltip, nameToID[name], true)
+	end
+end)
+
+hooksecurefunc(GameTooltip, "SetQuestCurrency", function(tooltip, type, id)
+	local name = GetQuestCurrencyInfo(type, id)
+	if name then
+		AddTooltipInfo(tooltip, nameToID[name], true)
+	end
+end)
+
+hooksecurefunc(GameTooltip, "SetQuestLogCurrency", function(tooltip, type, id)
+	local name = GetQuestLogRewardCurrencyInfo(id)
+	if name then
+		AddTooltipInfo(tooltip, nameToID[name], true)
+	end
+end)
+
+if xMerchantFrame then
+	local function xMerchantTooltip(self)
+		if self.pointType == "Beta" then
+			local id = nameToID[self.itemLink]
+			if id then
+				self.UpdateTooltip = nil
+				return GameTooltip:SetCurrencyByID(id)
+			end
+		end
+		self.UpdateTooltip = self.origUpdateTooltip
+	end
+
+	for i = 1, 10 do
+		for j = 1, MAX_ITEM_COST do
+			local item = _G["xMerchantFrame"..i.."Item"..j]
+			item:HookScript("OnEnter", xMerchantTooltip)
+			item.origUpdateTooltip = item.UpdateTooltip
+		end
+	end
+end
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")

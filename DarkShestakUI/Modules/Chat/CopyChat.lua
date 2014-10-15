@@ -19,7 +19,7 @@ local sizes = {
 local function CreatCopyFrame()
 	frame = CreateFrame("Frame", "CopyFrame", UIParent)
 	frame:SetTemplate("Transparent")
-	frame:SetWidth(535)
+	frame:SetWidth(540)
 	frame:SetHeight(300)
 	frame:SetPoint("CENTER", UIParent, "CENTER", 0, 100)
 	frame:SetFrameStrata("DIALOG")

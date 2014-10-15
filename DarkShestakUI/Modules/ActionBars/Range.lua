@@ -53,7 +53,6 @@ local DIVINE_PURPOSE = GetSpellInfo(90174)
 local isHolyPowerAbility
 do
 	local HOLY_POWER_SPELLS = {
-		[84963] = GetSpellInfo(84963),		-- Inquisition
 		[85673] = GetSpellInfo(85673),		-- Word of Glory
 		[114163] = GetSpellInfo(114163),	-- Eternal Flame
 	}
@@ -187,7 +186,7 @@ function tullaRange.UpdateButtonUsable(button)
 	-- Usable
 	if isUsable then
 		-- Out of range
-		if IsActionInRange(action) == 0 then
+		if IsActionInRange(action) == false then
 			tullaRange.SetButtonColor(button, "oor")
 		-- Holy Power
 		elseif T.class == "PALADIN" and isHolyPowerAbility(action) and not (UnitPower("player", SPELL_POWER_HOLY_POWER) >= 3 or UnitBuff("player", DIVINE_PURPOSE)) then
@@ -244,7 +243,7 @@ function tullaRange:LoadDefaults()
 		normal = {1, 1, 1},
 		oor = {1, 0.1, 0.1},
 		oom = {0.1, 0.3, 1},
-		ooh = {0.45, 0.45, 1},
+		ooh = {0.45, 0.45, 1}
 	}
 end
 

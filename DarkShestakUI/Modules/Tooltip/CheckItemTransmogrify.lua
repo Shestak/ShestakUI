@@ -27,15 +27,6 @@ local locs = {
 	["INVTYPE_RANGEDRIGHT"] = 1,
 }
 
--- White items that are a source for Transmogrify
-local wx = {
-	[41746] = 1,
-	[43600] = 1,
-	[43601] = 1,
-	[78340] = 1,
-	[78341] = 1,
-}
-
 local WIMtooltip = function(tooltip)
 	local _, link = tooltip:GetItem()
 	if not link then return end
@@ -43,21 +34,25 @@ local WIMtooltip = function(tooltip)
 	GetItemInfo(link)
 	local _, _, quality, _, _, itemType, subType, _, slot = GetItemInfo(link)
 	-- No weapon or armor, or misc 'weapon', or invalid slot
-	if not itemType or (quality < 2 and not wx[tonumber(link:match("item:(%d+):"))]) or not (itemType == ARMOR or itemType == ENCHSLOT_WEAPON) or (subType == MISCELLANEOUS and not slot == "INVTYPE_HOLDABLE") or not locs[slot] then return end
+	if not itemType or not (itemType == ARMOR or itemType == ENCHSLOT_WEAPON) or (subType == MISCELLANEOUS and (itemType == ENCHSLOT_WEAPON or slot == "INVTYPE_CLOAK")) or not locs[slot] then return end
 	local canBeChanged, noChangeReason, canBeSource, noSourceReason = GetItemTransmogrifyInfo(link)
 
-	if not (canBeChanged or canBeSource) then return end
+	if (quality < 2 or subType == MISCELLANEOUS) and not (canBeChanged or canBeSource) then return end
 
 	if noChangeReason or noSourceReason then
 		GameTooltip:AddLine(" ")
 	end
 
+	if subType == MISCELLANEOUS and itemType ~= "INVTYPE_HOLDABLE" then
+		tooltip:AddLine("|cffff0000"..ERR_TRANSMOGRIFY_INVALID_ITEM_TYPE.."|r", nil, nil, nil, true)
+	end
+
 	if noChangeReason then
-		tooltip:AddLine(gsub("|cffff0000"..(_G["ERR_TRANSMOGRIFY_"..noChangeReason] or noChangeReason), "%%s", ""), nil, nil, nil, true)
+		tooltip:AddLine(gsub("|cffff0000"..(_G["ERR_TRANSMOGRIFY_"..noChangeReason] or ERR_TRANSMOGRIFY_INVALID_SOURCE), "%%s", ""), nil, nil, nil, true)
 	end
 
 	if noSourceReason and noSourceReason ~= noChangeReason then
-		tooltip:AddLine(gsub("|cffff0000"..(_G["ERR_TRANSMOGRIFY_"..noSourceReason] or noSourceReason), "%%s", ""), nil, nil, nil, true)
+		tooltip:AddLine(gsub("|cffff0000"..(_G["ERR_TRANSMOGRIFY_"..noSourceReason] or ERR_TRANSMOGRIFY_MISMATCH), "%%s", ""), nil, nil, nil, true)
 	end
 
 	tooltip:Show()

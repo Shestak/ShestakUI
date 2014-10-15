@@ -6,27 +6,36 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local buttons = {
-		"KeyBindingFrameDefaultButton",
-		"KeyBindingFrameUnbindButton",
-		"KeyBindingFrameOkayButton",
-		"KeyBindingFrameCancelButton"
+		"defaultsButton",
+		"unbindButton",
+		"okayButton",
+		"cancelButton",
 	}
 
 	for _, v in pairs(buttons) do
-		_G[v]:SkinButton(true)
+		KeyBindingFrame[v]:SkinButton(true)
 	end
 
-	T.SkinCheckBox(KeyBindingFrameCharacterButton)
-	KeyBindingFrameHeaderText:ClearAllPoints()
-	KeyBindingFrameHeaderText:SetPoint("TOP", KeyBindingFrame, "TOP", 0, -4)
 	KeyBindingFrame:StripTextures()
-	KeyBindingFrame:CreateBackdrop("Transparent", "Shadow")
-	KeyBindingFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
-	KeyBindingFrame.backdrop:SetPoint("BOTTOMRIGHT", -40, 10)
+	KeyBindingFrame:SetTemplate("Transparent", "Shadow")
+
+	KeyBindingFrame.header:StripTextures()
+	KeyBindingFrame.header:ClearAllPoints()
+	KeyBindingFrame.header:SetPoint("TOP", KeyBindingFrame, "TOP", 0, -4)
+
+	KeyBindingFrame.bindingsContainer:StripTextures()
+	KeyBindingFrame.bindingsContainer:SetTemplate("Overlay")
+	KeyBindingFrame.bindingsContainer:SetFrameLevel(1)
+
+	KeyBindingFrameCategoryList:StripTextures()
+	KeyBindingFrameCategoryList:SetTemplate("Overlay")
+
+	T.SkinCheckBox(KeyBindingFrame.characterSpecificButton)
+	--WoD T.SkinScrollBar(KeyBindingFrameScrollFrameScrollBar)
 
 	for i = 1, KEY_BINDINGS_DISPLAYED do
-		local button1 = _G["KeyBindingFrameBinding"..i.."Key1Button"]
-		local button2 = _G["KeyBindingFrameBinding"..i.."Key2Button"]
+		local button1 = _G["KeyBindingFrameKeyBinding"..i.."Key1Button"]
+		local button2 = _G["KeyBindingFrameKeyBinding"..i.."Key2Button"]
 
 		button1:StripTextures(true)
 		button1:StyleButton()
@@ -37,9 +46,6 @@ local function LoadSkin()
 		button2:SetTemplate("Overlay")
 		button2:SetPoint("LEFT", button1, "RIGHT", 1, 0)
 	end
-
-	KeyBindingFrameUnbindButton:SetPoint("RIGHT", KeyBindingFrameOkayButton, "LEFT", -3, 0)
-	KeyBindingFrameOkayButton:SetPoint("RIGHT", KeyBindingFrameCancelButton, "LEFT", -3, 0)
 end
 
 T.SkinFuncs["Blizzard_BindingUI"] = LoadSkin

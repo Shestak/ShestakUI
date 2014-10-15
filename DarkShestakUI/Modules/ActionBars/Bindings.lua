@@ -4,8 +4,7 @@ if IsAddOnLoaded("ncHoverBind") then return end
 ----------------------------------------------------------------------------------------
 --	Binding buttons(ncHoverBind by Nightcracker)
 ----------------------------------------------------------------------------------------
-local bind = CreateFrame("Frame", "HoverBind", UIParent)
-local oneBind = true
+local bind, oneBind, localmacros = CreateFrame("Frame", "HoverBind", UIParent), true, 0
 
 SlashCmdList.MOUSEOVERBIND = function()
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
@@ -84,7 +83,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 			elseif spellmacro == "MACRO" then
 				self.button.id = self.button:GetID()
 
-				if floor(0.5 + select(2, MacroFrameTab1Text:GetTextColor()) * 10) / 10 == 0.8 then self.button.id = self.button.id + 36 end
+				if localmacros == 1 then self.button.id = self.button.id + 36 end
 
 				self.button.name = GetMacroInfo(self.button.id)
 
@@ -286,7 +285,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 		-- Registering
 		local stance = StanceButton1:GetScript("OnClick")
 		local pet = PetActionButton1:GetScript("OnClick")
-		local button = SecureActionButton_OnClick
+		local button = ActionButton1:GetScript("OnClick")
 
 		local function register(val)
 			if val.IsProtected and val.GetObjectType and val.GetScript and val:GetObjectType() == "CheckButton" and val:IsProtected() then
@@ -317,6 +316,8 @@ SlashCmdList.MOUSEOVERBIND = function()
 				local b = _G["MacroButton"..i]
 				b:HookScript("OnEnter", function(self) bind:Update(self, "MACRO") end)
 			end
+			MacroFrameTab1:HookScript("OnMouseUp", function() localmacros = 0 end)
+			MacroFrameTab2:HookScript("OnMouseUp", function() localmacros = 1 end)
 		end
 
 		if not IsAddOnLoaded("Blizzard_MacroUI") then
@@ -333,20 +334,6 @@ SlashCmdList.MOUSEOVERBIND = function()
 	if not bind.enabled then
 		bind:Activate()
 		StaticPopup_Show("KEYBIND_MODE")
-		local stance = StanceButton1:GetScript("OnClick")
-		local pet = PetActionButton1:GetScript("OnClick")
-		local button = SecureActionButton_OnClick
-		local focus = GetMouseFocus()
-		if focus.IsProtected and focus.GetObjectType and focus.GetScript and focus:GetObjectType() == "CheckButton" and focus:IsProtected() then
-			local script = focus:GetScript("OnClick")
-			if script == button then
-				bind:Update(focus)
-			elseif script == stance then
-				bind:Update(focus, "STANCE")
-			elseif script == pet then
-				bind:Update(focus, "PET")
-			end
-		end
 	end
 end
 
