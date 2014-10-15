@@ -26,7 +26,7 @@
 	<Script file="Greeting.lua"/>
 	<Script file="Guild.lua"/>
 	<Script file="GuildBank.lua"/>
-	<!-- <Script file="GuildControl.lua"/> -->
+	<Script file="GuildControl.lua"/>
 	<Script file="GuildRegistrar.lua"/>
 	<Script file="Help.lua"/>
 	<Script file="Inspect.lua"/>
