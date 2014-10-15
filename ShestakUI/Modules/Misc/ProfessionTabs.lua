@@ -33,7 +33,7 @@ local defaults = {
 	[197] = {true, false},	-- Tailoring
 
 	-- Secondary Professions
-	[794] = {true, false},	-- Archaeology
+	[794] = {false, false},	-- Archaeology
 	[185] = {true, true},	-- Cooking
 	[129] = {true, false},	-- First Aid
 	[356] = {false, false},	-- Fishing
@@ -112,7 +112,7 @@ local function GetProfessionRank(currentSkill)
 	if currentSkill <= 74 then
 		return APPRENTICE
 	end
-	
+
 	for index = #ranks, 1, -1 do
 		local requiredSkill, title = ranks[index][1], ranks[index][2]
 
