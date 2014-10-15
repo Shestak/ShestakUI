@@ -167,7 +167,7 @@ local function LoadSkin()
 	T.SkinScrollBar(GuildInfoFrameApplicantsContainerScrollBar)
 
 	for i = 1, 3 do
-		_G["GuildInfoFrameTab"..i]:StripTextures()
+		T.SkinTab(_G["GuildInfoFrameTab"..i], true)
 	end
 
 	local backdrop1 = CreateFrame("Frame", nil, GuildInfoFrameInfo)
