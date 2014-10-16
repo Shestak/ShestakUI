@@ -366,7 +366,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "开启图腾栏"
 L_GUI_UF_PLUGINS_RANGE_BAR = "开启距离栏(仅牧师)"
 
 -- Raid Frames options
-L_GUI_UF_BY_ROLE = "Sorting players in group by role" -- Needs review
+L_GUI_UF_BY_ROLE = "按职责排序"
 L_GUI_UF_AGGRO_BORDER = "仇恨边框"
 L_GUI_UF_DEFICIT_HEALTH = "团队生命值亏减模式"
 L_GUI_UF_SHOW_PARTY = "显示队伍框体"
