@@ -256,14 +256,21 @@ local function LoadSkin()
 		T.SkinTab(_G["FriendsTabHeaderTab"..i], true)
 	end
 
+	local once = false
 	local function Channel()
-		for i = 2, MAX_DISPLAY_CHANNEL_BUTTONS do
+		for i = 1, MAX_DISPLAY_CHANNEL_BUTTONS do
 			local button = _G["ChannelButton"..i]
 
 			if button then
-				button:SetPoint("TOPLEFT", _G["ChannelButton"..(i-1)], "BOTTOMLEFT", 0, -3)
-				_G["ChannelButton1"]:SkinButton()
-				button:SkinButton()
+				if i > 1 then
+					button:SetPoint("TOPLEFT", _G["ChannelButton"..i-1], "BOTTOMLEFT", 0, -3)
+				end
+				if i == 2 and once == false then
+					button:SkinButton()
+					once = true
+				elseif i ~= 2 then
+					button:SkinButton()
+				end
 			end
 		end
 	end

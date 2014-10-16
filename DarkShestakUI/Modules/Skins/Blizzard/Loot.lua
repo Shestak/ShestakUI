@@ -5,7 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	Loot skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	if C.loot.lootframe == true or (IsAddOnLoaded("cargBags") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("Bagnon")) then return end
+	if C.loot.lootframe == true or (IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") or IsAddOnLoaded("TBag") or IsAddOnLoaded("BaudBag")) then return end
 
 	LootFrame:StripTextures(true)
 	LootFrameInset:StripTextures()

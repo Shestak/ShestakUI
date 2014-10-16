@@ -89,7 +89,7 @@ Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
 Stuffing:RegisterEvent("PLAYER_ENTERING_WORLD")
 Stuffing:SetScript("OnEvent", function(this, event, ...)
-	if IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") or IsAddOnLoaded("TBag") then return end
+	if IsAddOnLoaded("AdiBags") or IsAddOnLoaded("ArkInventory") or IsAddOnLoaded("cargBags_Nivaya") or IsAddOnLoaded("cargBags") or IsAddOnLoaded("Bagnon") or IsAddOnLoaded("Combuctor") or IsAddOnLoaded("TBag") or IsAddOnLoaded("BaudBag") then return end
 	Stuffing[event](this, ...)
 end)
 
@@ -446,8 +446,8 @@ function Stuffing:CreateBagFrame(w)
 		f:SetPoint(unpack(C.position.bag))
 	end
 
-	-- Buy button
 	if w == "Bank" then
+		-- Buy button
 		f.b_purchase = CreateFrame("Button", "Stuffing_PurchaseButton"..w, f)
 		f.b_purchase:SetSize(80, 20)
 		f.b_purchase:SetPoint("TOPLEFT", 10, -4)
@@ -465,6 +465,20 @@ function Stuffing:CreateBagFrame(w)
 		f.b_purchase.text:SetPoint("CENTER")
 		f.b_purchase.text:SetText(BANKSLOTPURCHASE)
 		f.b_purchase:SetFontString(f.b_purchase.text)
+
+		-- Reagent button
+		f.b_reagent = CreateFrame("Button", "Stuffing_ReagentButton"..w, f)
+		f.b_reagent:SetSize(80, 20)
+		f.b_reagent:SetPoint("TOPLEFT", f.b_purchase, "TOPRIGHT", 3, 0)
+		f.b_reagent:RegisterForClicks("AnyUp")
+		f.b_reagent:SkinButton()
+		f.b_reagent:SetScript("OnClick", function()
+			BankFrame_ShowPanel(BANK_PANELS[2].name)
+		end)
+		f.b_reagent:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+		f.b_reagent.text:SetPoint("CENTER")
+		f.b_reagent.text:SetText(REAGENT_BANK)
+		f.b_reagent:SetFontString(f.b_reagent.text)
 	end
 
 	-- Close button

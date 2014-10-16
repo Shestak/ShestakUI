@@ -199,19 +199,19 @@
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
-	<!-- <Script file="Modules\Skins\Ace3.lua"/>
-	<Script file="Modules\Skins\AtlasLoot.lua"/> -->
+	<Script file="Modules\Skins\Ace3.lua"/>
+	<Script file="Modules\Skins\AtlasLoot.lua"/>
 	<Script file="Modules\Skins\Aurora.lua"/>
 	<Script file="Modules\Skins\BigWigs.lua"/>
-	<!-- <Script file="Modules\Skins\BloodShieldTracker.lua"/>
+	<Script file="Modules\Skins\BloodShieldTracker.lua"/>
 	<Script file="Modules\Skins\Capping.lua"/>
 	<Script file="Modules\Skins\CLCProt.lua"/>
 	<Script file="Modules\Skins\CLCRet.lua"/>
 	<Script file="Modules\Skins\Clique.lua"/>
 	<Script file="Modules\Skins\CombustionHelper.lua"/>
-	<Script file="Modules\Skins\CoolLine.lua"/> -->
+	<Script file="Modules\Skins\CoolLine.lua"/>
 	<Script file="Modules\Skins\DBM.lua"/>
-	<!-- <Script file="Modules\Skins\Dominos.lua"/>
+	<Script file="Modules\Skins\Dominos.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>
 	<Script file="Modules\Skins\FaceShooter.lua"/>
 	<Script file="Modules\Skins\FlyoutButtonCustom.lua"/>
@@ -222,12 +222,12 @@
 	<Script file="Modules\Skins\NugRunning.lua"/>
 	<Script file="Modules\Skins\Omen.lua"/>
 	<Script file="Modules\Skins\Ovale.lua"/>
-	<Script file="Modules\Skins\PallyPower.lua"/> -->
+	<Script file="Modules\Skins\PallyPower.lua"/>
 	<Script file="Modules\Skins\Recount.lua"/>
 	<Script file="Modules\Skins\Skada.lua"/>
 	<Script file="Modules\Skins\TinyDPS.lua"/>
-	<!-- <Script file="Modules\Skins\VanasKoS.lua"/>
-	<Script file="Modules\Skins\WeakAuras.lua"/> -->
+	<Script file="Modules\Skins\VanasKoS.lua"/>
+	<Script file="Modules\Skins\WeakAuras.lua"/>
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>

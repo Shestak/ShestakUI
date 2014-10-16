@@ -43,7 +43,7 @@ local function LoadSkin()
 	local TrackingOptions = WorldMapFrame.UIElementsFrame.TrackingOptionsButton
 	TrackingOptions.Button:SetAlpha(0)
 	TrackingOptions.Background:SetAlpha(0)
-	TrackingOptions.IconOverlay:SetAllPoints("")
+	TrackingOptions.IconOverlay:SetTexture("")
 
 	QuestScrollFrame:CreateBackdrop("Overlay")
 	QuestScrollFrame.backdrop:ClearAllPoints()
