@@ -67,6 +67,8 @@ function RightBarMouseOver(alpha)
 		for i = 1, 12 do
 			local pb = _G["MultiBarLeftButton"..i]
 			pb:SetAlpha(alpha)
+			local f = _G["MultiBarLeftButton"..i.."Cooldown"]
+			T.HideSpiral(f, alpha)
 		end
 		MultiBarLeft:SetAlpha(alpha)
 	end
@@ -76,6 +78,8 @@ function RightBarMouseOver(alpha)
 			for i = 1, 12 do
 				local pb = _G["MultiBarBottomRightButton"..i]
 				pb:SetAlpha(alpha)
+				local d = _G["MultiBarBottomRightButton"..i.."Cooldown"]
+				T.HideSpiral(d, alpha)
 			end
 			MultiBarBottomRight:SetAlpha(alpha)
 		end
@@ -85,6 +89,8 @@ function RightBarMouseOver(alpha)
 		for i = 1, 12 do
 			local pb = _G["MultiBarRightButton"..i]
 			pb:SetAlpha(alpha)
+			local g = _G["MultiBarRightButton"..i.."Cooldown"]
+			T.HideSpiral(g, alpha)
 		end
 		MultiBarRight:SetAlpha(alpha)
 	end
@@ -114,6 +120,8 @@ function StanceBarMouseOver(alpha)
 	for i = 1, NUM_STANCE_SLOTS do
 		local pb = _G["StanceButton"..i]
 		pb:SetAlpha(alpha)
+		local f = _G["StanceButton"..i.."Cooldown"]
+		T.HideSpiral(f, alpha)
 	end
 	ShapeShiftBarAnchor:SetAlpha(alpha)
 end
@@ -122,8 +130,46 @@ function PetBarMouseOver(alpha)
 	for i = 1, NUM_PET_ACTION_SLOTS do
 		local pb = _G["PetActionButton"..i]
 		pb:SetAlpha(alpha)
+		local f = _G["PetActionButton"..i.."Cooldown"]
+		T.HideSpiral(f, alpha)
 	end
 	PetHolder:SetAlpha(alpha)
+end
+
+-- Fix cooldown spiral alpha (WoD bug)
+function T.HideSpiral(f, alpha)
+	f:SetSwipeTexture(1, 1, 1)
+	f:SetSwipeColor(0, 0, 0, alpha * 0.8)
+	f:SetBlingTexture('', 0, 0, 0, 0)
+end
+
+if C.actionbar.stancebar_mouseover == true then
+	for i = 1, NUM_STANCE_SLOTS do
+		local f = _G["StanceButton"..i.."Cooldown"]
+		T.HideSpiral(f, 0)
+	end
+end
+
+if C.actionbar.petbar_mouseover == true then
+	for i = 1, NUM_PET_ACTION_SLOTS do
+		local f = _G["PetActionButton"..i.."Cooldown"]
+		T.HideSpiral(f, 0)
+	end
+end
+
+if C.actionbar.rightbars_mouseover == true then
+	for i = 1, 12 do
+		local f = _G["MultiBarLeftButton"..i.."Cooldown"]
+		T.HideSpiral(f, 0)
+
+		local g = _G["MultiBarRightButton"..i.."Cooldown"]
+		T.HideSpiral(g, 0)
+
+		if C.actionbar.rightbars > 2 then
+			local d = _G["MultiBarBottomRightButton"..i.."Cooldown"]
+			T.HideSpiral(d, 0)
+		end
+	end
 end
 
 do
