@@ -1096,7 +1096,7 @@ end
 --	Button in GameMenuButton frame
 ----------------------------------------------------------------------------------------
 local button = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "GameMenuButtonTemplate")
-button:SetText("ShestakUI")
+button:SetText("Dark ShestakUI")
 button:SetPoint("TOP", "GameMenuButtonAddons", "BOTTOM", 0, -1)
 
 GameMenuFrame:HookScript("OnShow", function()

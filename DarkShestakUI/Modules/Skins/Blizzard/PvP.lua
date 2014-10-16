@@ -149,4 +149,4 @@ local function LoadSecondarySkin()
 	T.SkinCloseButton(PVPReadyDialogCloseButton, PVPReadyDialog, "-")
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadSecondarySkin)
+tinsert(T.SkinFuncs["DarkShestakUI"], LoadSecondarySkin)
