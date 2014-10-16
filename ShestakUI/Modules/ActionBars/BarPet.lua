@@ -14,7 +14,6 @@ bar:SetAllPoints(PetActionBarAnchor)
 bar:RegisterEvent("PLAYER_LOGIN")
 bar:RegisterEvent("PLAYER_CONTROL_LOST")
 bar:RegisterEvent("PLAYER_CONTROL_GAINED")
-bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 bar:RegisterEvent("PLAYER_FARSIGHT_FOCUS_CHANGED")
 bar:RegisterEvent("PET_BAR_UPDATE")
 bar:RegisterEvent("PET_BAR_UPDATE_USABLE")
@@ -25,6 +24,7 @@ bar:RegisterEvent("UNIT_FLAGS")
 bar:RegisterEvent("UNIT_AURA")
 bar:SetScript("OnEvent", function(self, event, arg1)
 	if event == "PLAYER_LOGIN" then
+		T.StylePet()
 		PetActionBar_ShowGrid = T.dummy
 		PetActionBar_HideGrid = T.dummy
 		PetActionBarFrame.showgrid = nil
@@ -56,8 +56,6 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 		T.PetBarUpdate()
 	elseif event == "PET_BAR_UPDATE_COOLDOWN" then
 		PetActionBar_UpdateCooldowns()
-	else
-		T.StylePet()
 	end
 end)
 
