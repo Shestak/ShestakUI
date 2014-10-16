@@ -48,6 +48,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	InterfaceOptionsActionBarsPanelCountdownCooldowns:Kill()
 
 	if C.chat.enable then
+		SetCVar("chatStyle", "im")
 		InterfaceOptionsSocialPanelChatStyle:Kill()
 		InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
 	end
