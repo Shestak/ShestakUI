@@ -60,7 +60,7 @@ frame:SetScript("OnEvent", function(self, event)
 		end
 	end
 
-	if WIM3MinimapButton and WIM3MinimapButton:GetNumRegions() <= 9 then
+	if WIM3MinimapButton and WIM3MinimapButton:GetNumRegions() < 9 then
 		SkinButton(WIM3MinimapButton)
 		SkinButton(WIM3MinimapButton)
 	end
