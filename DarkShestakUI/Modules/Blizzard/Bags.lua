@@ -222,7 +222,8 @@ function Stuffing:BagFrameSlotNew(p, slot)
 		ret.slot = slot
 		slot = slot - 4
 		ret.frame = CreateFrame("CheckButton", "StuffingBBag"..slot, p, "BankItemButtonBagTemplate")
-		ret.frame:SetID(slot + 4)
+		ret.frame:StripTextures()
+		ret.frame:SetID(slot)
 		table.insert(self.bagframe_buttons, ret)
 
 		BankFrameItemButton_Update(ret.frame)
@@ -468,7 +469,7 @@ function Stuffing:CreateBagFrame(w)
 
 		-- Reagent button
 		f.b_reagent = CreateFrame("Button", "Stuffing_ReagentButton"..w, f)
-		f.b_reagent:SetSize(80, 20)
+		f.b_reagent:SetSize(105, 20)
 		f.b_reagent:SetPoint("TOPLEFT", f.b_purchase, "TOPRIGHT", 3, 0)
 		f.b_reagent:RegisterForClicks("AnyUp")
 		f.b_reagent:SkinButton()

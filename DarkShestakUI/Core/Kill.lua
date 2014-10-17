@@ -44,9 +44,11 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_PET_JOURNAL, true)
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_GARRISON_BUILDING, true)
 
+	SetCVar("countdownForCooldowns", 0)
 	InterfaceOptionsActionBarsPanelCountdownCooldowns:Kill()
 
 	if C.chat.enable then
+		SetCVar("chatStyle", "im")
 		InterfaceOptionsSocialPanelChatStyle:Kill()
 		InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
 	end
@@ -100,6 +102,4 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			InterfaceOptionsCombatTextPanelHealingAbsorbTarget:Kill()
 		end
 	end
-
-	SetCVar("countdownForCooldowns", 0)
 end)

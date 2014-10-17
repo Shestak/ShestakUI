@@ -52,7 +52,6 @@ local function LoadSkin()
 	GuildControlUIRankBankFrameInset:StripTextures()
 	GuildControlUIRankBankFrameInsetScrollFrame:StripTextures()
 
-	local once = false
 	hooksecurefunc("GuildControlUI_BankTabPermissions_Update", function()
 		local numTabs = GetNumGuildBankTabs()
 		if numTabs < MAX_BUY_GUILDBANK_TABS then
@@ -60,20 +59,21 @@ local function LoadSkin()
 		end
 		for i = 1, numTabs do
 			local tab = _G["GuildControlBankTab"..i.."Owned"]
+			local purchase = _G["GuildControlBankTab"..i.."BuyPurchaseButton"]
 			local icon = tab.tabIcon
+			local editbox = tab.editBox
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 			T.SkinCheckBox(_G["GuildControlBankTab"..i.."OwnedViewCheck"])
 			T.SkinCheckBox(_G["GuildControlBankTab"..i.."OwnedDepositCheck"])
 			T.SkinCheckBox(_G["GuildControlBankTab"..i.."OwnedUpdateInfoCheck"])
+			T.SkinEditBox(editbox)
 
-			if once == false then
-				_G["GuildControlBankTab"..i.."BuyPurchaseButton"]:SkinButton()
-				T.SkinEditBox(_G["GuildControlBankTab"..i.."OwnedStackBox"])
+			if purchase:GetNumRegions() < 9 then
+				purchase:SkinButton()
 			end
 		end
-		once = true
 	end)
 
 	T.SkinDropDownBox(GuildControlUIRankBankFrameRankDropDown, 180)
