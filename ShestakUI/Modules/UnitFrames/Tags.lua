@@ -51,7 +51,7 @@ oUF.Tags["GetNameColor"] = function(unit)
 		local c = T.oUF_colors.reaction[reaction]
 		return string.format("|cff%02x%02x%02x", c[1] * 255, c[2] * 255, c[3] * 255)
 	else
-		r, g, b = 0.84, 0.75, 0.65
+		r, g, b = 0.33, 0.59, 0.33
 		return string.format("|cff%02x%02x%02x", r * 255, g * 255, b * 255)
 	end
 end
