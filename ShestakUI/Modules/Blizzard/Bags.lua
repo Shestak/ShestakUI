@@ -69,6 +69,16 @@ Stuffing:SetScript("OnEvent", function(this, event, ...)
 	Stuffing[event](this, ...)
 end)
 
+-- Drop down menu stuff from Postal
+local Stuffing_DDMenu = CreateFrame("Frame", "Stuffing_DropDownMenu")
+Stuffing_DDMenu.displayMode = "MENU"
+Stuffing_DDMenu.info = {}
+Stuffing_DDMenu.HideMenu = function()
+	if UIDROPDOWNMENU_OPEN_MENU == Stuffing_DDMenu then
+		CloseDropDownMenus()
+	end
+end
+
 local function Stuffing_OnShow()
 	Stuffing:PLAYERBANKSLOTS_CHANGED(29)
 
@@ -225,7 +235,18 @@ function CreateReagentContainer()
 	T.SkinCloseButton(Close, nil, nil, true)
 	Close:SetSize(15, 15)
 	Close:RegisterForClicks("AnyUp")
-	Close:SetScript("OnClick", function(self) StuffingBank_OnHide() end)
+	Close:SetScript("OnClick", function(self, btn)
+		if btn == "RightButton" then
+			if Stuffing_DDMenu.initialize ~= Stuffing.Menu then
+				CloseDropDownMenus()
+				Stuffing_DDMenu.initialize = Stuffing.Menu
+			end
+			ToggleDropDownMenu(nil, nil, Stuffing_DDMenu, self:GetName(), 0, 0)
+			return
+		else
+			StuffingBank_OnHide()
+		end
+	end)
 
 	for i = 1, 98 do
 		local button = _G["ReagentBankFrameItem" .. i]
@@ -485,16 +506,6 @@ function Stuffing:SearchReset()
 	end
 end
 
--- Drop down menu stuff from Postal
-local Stuffing_DDMenu = CreateFrame("Frame", "Stuffing_DropDownMenu")
-Stuffing_DDMenu.displayMode = "MENU"
-Stuffing_DDMenu.info = {}
-Stuffing_DDMenu.HideMenu = function()
-	if UIDROPDOWNMENU_OPEN_MENU == Stuffing_DDMenu then
-		CloseDropDownMenus()
-	end
-end
-
 function Stuffing:CreateBagFrame(w)
 	local n = "StuffingFrame"..w
 	local f = CreateFrame("Frame", n, UIParent)
@@ -560,8 +571,9 @@ function Stuffing:CreateBagFrame(w)
 	f.b_close = CreateFrame("Button", "Stuffing_CloseButton"..w, f, "UIPanelCloseButton")
 	T.SkinCloseButton(f.b_close, nil, nil, true)
 	f.b_close:SetSize(15, 15)
+	f.b_close:RegisterForClicks("AnyUp")
 	f.b_close:SetScript("OnClick", function(self, btn)
-		if self:GetParent():GetName() == "StuffingFrameBags" and btn == "RightButton" then
+		if btn == "RightButton" then
 			if Stuffing_DDMenu.initialize ~= Stuffing.Menu then
 				CloseDropDownMenus()
 				Stuffing_DDMenu.initialize = Stuffing.Menu
@@ -571,7 +583,6 @@ function Stuffing:CreateBagFrame(w)
 		end
 		self:GetParent():Hide()
 	end)
-	f.b_close:RegisterForClicks("AnyUp")
 
 	-- Create the bags frame
 	local fb = CreateFrame("Frame", n.."BagsFrame", f)
