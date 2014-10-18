@@ -1350,46 +1350,38 @@ end
 if stats.enabled then
 	local function tags(sub)
 		local percent, string = true
-		if sub == "ap" then
-			local base, pos, neg = UnitAttackPower(P)
-			string, percent = base + neg + pos
-		elseif sub == "rangedap" then
-			local base, pos, neg = UnitRangedAttackPower(P)
-			string, percent = base + neg + pos
+		if sub == "power" then
+			local value, power
+			local Base, PosBuff, NegBuff = UnitAttackPower("player")
+			local Effective = Base + PosBuff + NegBuff
+			local RangedBase, RangedPosBuff, RangedNegBuff = UnitRangedAttackPower("player")
+			local range = RangedBase + RangedPosBuff + RangedNegBuff
+			heal = GetSpellBonusHealing()
+			spell = GetSpellBonusDamage(7)
+			attack = Effective
+			if heal > spell then
+				power = heal
+			else
+				power = spell
+			end
+			if attack > power and T.class ~= "HUNTER" then
+				value = attack
+			elseif T.class == "HUNTER" then
+				value = range
+			else
+				value = power
+			end
+			string = value
 		elseif sub == "mastery" then
 			string = GetMasteryEffect()
 		elseif sub == "expertise" then
 			string = GetExpertise()
-		elseif strmatch(sub, "hit$") then
-			local var = _G["CR_HIT_"..(strupper(strmatch(sub, "(%w-)hit$")) or "")]
-			if T.race == "Draenei" then
-				string, percent = var and GetCombatRatingBonus(var) + 1 or format("[%s]", sub), var
-			else
-				string, percent = var and GetCombatRatingBonus(var) or format("[%s]", sub), var
-			end
-		elseif strmatch(sub, "haste$") then
-			local var = _G["CR_HASTE_"..(strupper(strmatch(sub, "(%w-)haste$")) or "")]
-			if T.race == "Goblin" then
-				string, percent = var and GetCombatRatingBonus(var) + 1 or format("[%s]", sub), var
-			else
-				string, percent = var and GetCombatRatingBonus(var) or format("[%s]", sub), var
-			end
+		elseif sub == "haste" then
+			string = GetHaste()
 		elseif sub == "resilience" then
 			string, percent = GetCombatRating(16)
-		elseif sub == "meleecrit" then
+		elseif sub == "crit" then
 			string = GetCritChance()
-		elseif sub == "rangedcrit" then
-			string = GetRangedCritChance()
-		elseif sub == "spellcrit" then
-			local rate = 0
-			for i = 1, 7 do rate = max(rate, GetSpellCritChance(i)) end
-			string = rate
-		elseif sub == "spellpower" then
-			local power = 0
-			for i = 1, 7 do power = max(power, GetSpellBonusDamage(i)) end
-			string, percent = power
-		elseif sub == "healing" then
-			string, percent = GetSpellBonusHealing()
 		elseif sub == "dodge" then
 			string = GetDodgeChance()
 		elseif sub == "parry" then
@@ -1399,9 +1391,8 @@ if stats.enabled then
 		elseif sub == "avoidance" then
 			string = GetDodgeChance() + GetParryChance()
 		elseif sub == "manaregen" then
-			local _, class = UnitClass(P)
 			local I5SR = true
-			if class == "ROGUE" or class == "WARRIOR" or class == "DEATHKNIGHT" then
+			if T.class == "ROGUE" or T.class == "WARRIOR" or T.class == "DEATHKNIGHT" then
 				string, percent = "??"
 			else
 				local base, cast = GetManaRegen()
@@ -1410,6 +1401,12 @@ if stats.enabled then
 		elseif sub == "armor" then
 			local _, eff = UnitArmor(P)
 			string, percent = eff
+		elseif sub == "strike" then
+			string = GetMultistrike()
+		elseif sub == "versatility" then
+			string = GetCombatRating(29)
+		elseif sub == "leech" then
+			string = GetCombatRating(17)
 		else
 			string, percent = format("[%s]", sub)
 		end
