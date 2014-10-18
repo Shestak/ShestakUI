@@ -29,6 +29,14 @@ WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 30)
 WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
 
 ----------------------------------------------------------------------------------------
+--	Change position
+----------------------------------------------------------------------------------------
+hooksecurefunc("WorldMap_ToggleSizeDown", function()
+	WorldMapFrame:ClearAllPoints()
+	WorldMapFrame:SetPoint(unpack(C.position.map))
+end)
+
+----------------------------------------------------------------------------------------
 --	Creating coordinate
 ----------------------------------------------------------------------------------------
 local coords = CreateFrame("Frame", "CoordsFrame", WorldMapFrame)
