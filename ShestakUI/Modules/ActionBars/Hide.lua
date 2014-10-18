@@ -143,34 +143,38 @@ function T.HideSpiral(f, alpha)
 	f:SetBlingTexture('', 0, 0, 0, 0)
 end
 
-if C.actionbar.stancebar_mouseover == true then
-	for i = 1, NUM_STANCE_SLOTS do
-		local f = _G["StanceButton"..i.."Cooldown"]
-		T.HideSpiral(f, 0)
-	end
-end
-
-if C.actionbar.petbar_mouseover == true then
-	for i = 1, NUM_PET_ACTION_SLOTS do
-		local f = _G["PetActionButton"..i.."Cooldown"]
-		T.HideSpiral(f, 0)
-	end
-end
-
-if C.actionbar.rightbars_mouseover == true then
-	for i = 1, 12 do
-		local f = _G["MultiBarLeftButton"..i.."Cooldown"]
-		T.HideSpiral(f, 0)
-
-		local g = _G["MultiBarRightButton"..i.."Cooldown"]
-		T.HideSpiral(g, 0)
-
-		if C.actionbar.rightbars > 2 then
-			local d = _G["MultiBarBottomRightButton"..i.."Cooldown"]
-			T.HideSpiral(d, 0)
+local EventSpiral = CreateFrame("Frame")
+EventSpiral:RegisterEvent("PLAYER_ENTERING_WORLD")
+EventSpiral:SetScript("OnEvent", function()
+	if C.actionbar.stancebar_mouseover == true then
+		for i = 1, NUM_STANCE_SLOTS do
+			local f = _G["StanceButton"..i.."Cooldown"]
+			T.HideSpiral(f, 0)
 		end
 	end
-end
+
+	if C.actionbar.petbar_mouseover == true then
+		for i = 1, NUM_PET_ACTION_SLOTS do
+			local f = _G["PetActionButton"..i.."Cooldown"]
+			T.HideSpiral(f, 0)
+		end
+	end
+
+	if C.actionbar.rightbars_mouseover == true then
+		for i = 1, 12 do
+			local f = _G["MultiBarLeftButton"..i.."Cooldown"]
+			T.HideSpiral(f, 0)
+
+			local g = _G["MultiBarRightButton"..i.."Cooldown"]
+			T.HideSpiral(g, 0)
+
+			if C.actionbar.rightbars > 2 then
+				local d = _G["MultiBarBottomRightButton"..i.."Cooldown"]
+				T.HideSpiral(d, 0)
+			end
+		end
+	end
+end)
 
 do
 	if C.actionbar.rightbars_mouseover == true then
