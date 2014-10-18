@@ -197,6 +197,111 @@ function Stuffing:BagSlotUpdate(bag)
 	end
 end
 
+function CreateReagentContainer()
+	ReagentBankFrame:StripTextures()
+
+	local Reagent = CreateFrame("Frame", "StuffingFrameReagent", UIParent)
+	local SwitchBankButton = CreateFrame("Button", nil, Reagent)
+	local NumButtons = ReagentBankFrame.size
+	local NumRows, LastRowButton, NumButtons, LastButton = 0, ReagentBankFrameItem1, 1, ReagentBankFrameItem1
+	local Deposit = ReagentBankFrame.DespositButton
+
+	Reagent:SetWidth(((C.bag.button_size + C.bag.button_space) * C.bag.bank_columns) + 17)
+	Reagent:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+	Reagent:SetTemplate("Transparent")
+	Reagent:SetFrameStrata(_G["StuffingFrameBank"]:GetFrameStrata())
+	Reagent:SetFrameLevel(_G["StuffingFrameBank"]:GetFrameLevel())
+	Reagent:EnableMouse(true)
+	Reagent:SetMovable(true)
+	Reagent:SetScript("OnMouseDown", function(self, button)
+		if IsShiftKeyDown() and button == "LeftButton" then
+			self:StartMoving()
+		end
+	end)
+	Reagent:SetScript("OnMouseUp", Reagent.StopMovingOrSizing)
+
+	SwitchBankButton:SetSize(80, 20)
+	SwitchBankButton:SkinButton()
+	SwitchBankButton:SetPoint("TOPLEFT", 10, -4)
+	SwitchBankButton:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+	SwitchBankButton.text:SetPoint("CENTER")
+	SwitchBankButton.text:SetText(BANK)
+	SwitchBankButton:SetScript("OnClick", function()
+		Reagent:Hide()
+		_G["StuffingFrameBank"]:Show()
+		BankFrame_ShowPanel(BANK_PANELS[1].name)
+		PlaySound("igMainMenuOpen")
+	end)
+
+	Deposit:SetParent(Reagent)
+	Deposit:ClearAllPoints()
+	Deposit:SetSize(170, 20)
+	Deposit:SetPoint("TOPLEFT", SwitchBankButton, "TOPRIGHT", 3, 0)
+	Deposit:SkinButton()
+	Deposit:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+	Deposit.text:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
+	Deposit.text:SetTextColor(1, 1, 1)
+	Deposit.text:SetText(REAGENTBANK_DEPOSIT)
+	Deposit:SetFontString(Deposit.text)
+
+	-- Close button
+	local Close = CreateFrame("Button", "Stuffing_CloseButtonReagent", Reagent, "UIPanelCloseButton")
+	T.SkinCloseButton(Close, nil, nil, true)
+	Close:SetSize(15, 15)
+	Close:RegisterForClicks("AnyUp")
+	Close:SetScript("OnClick", function(self) StuffingBank_OnHide() end)
+
+	for i = 1, 98 do
+		local button = _G["ReagentBankFrameItem" .. i]
+		local icon = _G[button:GetName() .. "IconTexture"]
+		local count = _G[button:GetName().."Count"]
+
+		ReagentBankFrame:SetParent(Reagent)
+		ReagentBankFrame:ClearAllPoints()
+		ReagentBankFrame:SetAllPoints()
+
+		button:StyleButton()
+		button:SetTemplate("Default")
+		button:SetNormalTexture(nil)
+		button.IconBorder:SetAlpha(0)
+
+		button:ClearAllPoints()
+		button:SetSize(C.bag.button_size, C.bag.button_size)
+
+		if i == 1 then
+			button:SetPoint("TOPLEFT", Reagent, "TOPLEFT", 10, -27)
+			LastRowButton = button
+			LastButton = button
+		elseif NumButtons == C.bag.bank_columns then
+			button:SetPoint("TOPRIGHT", LastRowButton, "TOPRIGHT", 0, -(C.bag.button_space + C.bag.button_size))
+			button:SetPoint("BOTTOMLEFT", LastRowButton, "BOTTOMLEFT", 0, -(C.bag.button_space + C.bag.button_size))
+			LastRowButton = button
+			NumRows = NumRows + 1
+			NumButtons = 1
+		else
+			button:SetPoint("TOPRIGHT", LastButton, "TOPRIGHT", (C.bag.button_space + C.bag.button_size), 0)
+			button:SetPoint("BOTTOMLEFT", LastButton, "BOTTOMLEFT", (C.bag.button_space + C.bag.button_size), 0)
+			NumButtons = NumButtons + 1
+		end
+
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:SetPoint("TOPLEFT", 2, -2)
+		icon:SetPoint("BOTTOMRIGHT", -2, 2)
+
+		count:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+		count:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
+		count:SetPoint("BOTTOMRIGHT", 1, 1)
+
+		LastButton = button
+	end
+	Reagent:SetHeight(((C.bag.button_size + C.bag.button_space) * (NumRows + 1) + 40) - C.bag.button_space)
+
+	ReagentBankFrameUnlockInfo:StripTextures()
+	ReagentBankFrameUnlockInfo:SetAllPoints(Reagent)
+	ReagentBankFrameUnlockInfo:SetTemplate("Overlay")
+	ReagentBankFrameUnlockInfoPurchaseButton:SkinButton()
+end
+
 function Stuffing:BagFrameSlotNew(p, slot)
 	for _, v in ipairs(self.bagframe_buttons) do
 		if v.slot == slot then
@@ -208,7 +313,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	if slot > 3 then
 		ret.slot = slot
 		slot = slot - 4
-		ret.frame = CreateFrame("CheckButton", "StuffingBBag"..slot, p, "BankItemButtonBagTemplate")
+		ret.frame = CreateFrame("CheckButton", "StuffingBBag"..slot.."Slot", p, "BankItemButtonBagTemplate")
 		ret.frame:StripTextures()
 		ret.frame:SetID(slot)
 		table.insert(self.bagframe_buttons, ret)
@@ -462,6 +567,12 @@ function Stuffing:CreateBagFrame(w)
 		f.b_reagent:SkinButton()
 		f.b_reagent:SetScript("OnClick", function()
 			BankFrame_ShowPanel(BANK_PANELS[2].name)
+			if not ReagentBankFrame.isMade then
+				CreateReagentContainer()
+				ReagentBankFrame.isMade = true
+			else
+				_G["StuffingFrameReagent"]:Show()
+			end
 		end)
 		f.b_reagent:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		f.b_reagent.text:SetPoint("CENTER")
@@ -553,19 +664,15 @@ function Stuffing:InitBags()
 	detail:SetText("|cff9999ff"..SEARCH.."|r")
 	editbox:SetAllPoints(detail)
 
-	local OpenEditbox = function(self)
-		self:GetParent().detail:Hide()
-		self:GetParent().editbox:Show()
-		self:GetParent().editbox:HighlightText()
-	end
-
 	local button = CreateFrame("Button", nil, f)
 	button:EnableMouse(true)
 	button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 	button:SetAllPoints(detail)
 	button:SetScript("OnClick", function(self, btn)
 		if btn == "RightButton" then
-			OpenEditbox(self)
+			self:GetParent().detail:Hide()
+			self:GetParent().editbox:Show()
+			self:GetParent().editbox:HighlightText()
 		else
 			if self:GetParent().editbox:IsShown() then
 				self:GetParent().editbox:Hide()
@@ -773,10 +880,12 @@ function Stuffing:ADDON_LOADED(addon)
 	self:RegisterEvent("PLAYERBANKSLOTS_CHANGED")
 	self:RegisterEvent("BAG_CLOSED")
 	self:RegisterEvent("BAG_UPDATE_COOLDOWN")
+	self:RegisterEvent("REAGENTBANK_UPDATE")
 
 	self:InitBags()
 
 	tinsert(UISpecialFrames, "StuffingFrameBags")
+	tinsert(UISpecialFrames, "StuffingFrameReagent")
 
 	ToggleBackpack = Stuffing_Toggle
 	ToggleBag = Stuffing_Toggle
@@ -786,7 +895,10 @@ function Stuffing:ADDON_LOADED(addon)
 	CloseAllBags = Stuffing_Close
 	CloseBackpack = Stuffing_Close
 
-	BankFrame:UnregisterAllEvents()
+	--BankFrame:UnregisterAllEvents()
+	BankFrame:SetScale(0.00001)
+	BankFrame:SetAlpha(0)
+	BankFrame:SetPoint("TOPLEFT")
 end
 
 function Stuffing:PLAYER_ENTERING_WORLD()
@@ -844,8 +956,12 @@ function Stuffing:BANKFRAME_OPENED()
 end
 
 function Stuffing:BANKFRAME_CLOSED()
-	if not self.bankFrame then return end
-	self.bankFrame:Hide()
+	if StuffingFrameReagent then
+		StuffingFrameReagent:Hide()
+	end
+	if self.bankFrame then
+		self.bankFrame:Hide()
+	end
 end
 
 function Stuffing:GUILDBANKFRAME_OPENED()
