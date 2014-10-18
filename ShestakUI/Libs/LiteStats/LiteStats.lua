@@ -1374,8 +1374,6 @@ if stats.enabled then
 			string = value
 		elseif sub == "mastery" then
 			string = GetMasteryEffect()
-		elseif sub == "expertise" then
-			string = GetExpertise()
 		elseif sub == "haste" then
 			string = GetHaste()
 		elseif sub == "resilience" then

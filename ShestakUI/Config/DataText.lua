@@ -127,10 +127,10 @@ LPSTAT_CONFIG = {
 	Stats = {
 		enabled = C.toppanel.enable,
 			-- Available stat tags:
-			--	Power [power]	MP5 [manaregen]%		Expertise [expertise]%	Multistrike [strike]%
+			--	Power [power]	MP5 [manaregen]%		Multistrike [strike]%	Block [block]
 			--	Haste [haste]%	Crit [crit]%			Mastery [mastery]		Versatility [versatility]%
-			--	Armor [armor]	Dodge [dodge]			Parry [parry]			Block [block]
-			--	Leech [leech]%	Avoidance [avoidance]	Resilience [resilience]
+			--	Armor [armor]	Dodge [dodge]			Parry [parry]			Resilience [resilience]
+			--	Leech [leech]%	Avoidance [avoidance]
 		spec1fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%", -- Spec #1 string
 		spec2fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%", -- Spec #2 string
 		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
@@ -198,25 +198,25 @@ LPSTAT_PROFILES = {
 	DEATHKNIGHT = {
 		Stats = {
 			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Armor: ".."[armor]"..class"  Avoid: ".."[avoidance]%",
-			spec2fmt = class"Power: ".."[power]"..class"  Exp: ".."[expertise]%"..class"  Crit: ".."[crit]%",
+			spec2fmt = class"Power: ".."[power]"..class"  Mastery: ".."[mastery]%"..class"  Crit: ".."[crit]%",
 		}
 	},
 	MONK = {
 		Stats = {
 			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Armor: ".."[armor]"..class"  Avoid: ".."[avoidance]%",
-			spec2fmt = class"Power: ".."[power]"..class"  Exp: ".."[expertise]%"..class"  Crit: ".."[crit]%",
+			spec2fmt = class"Power: ".."[power]"..class"  Mastery: ".."[mastery]%"..class"  Crit: ".."[crit]%",
 		}
 	},
 	PALADIN = {
 		Stats = {
 			spec1fmt = class"Mastery: ".."[mastery]%"..class"  Block: ".."[block]%"..class"  Avoid: ".."[avoidance]%",
-			spec2fmt = class"Power: ".."[power]"..class"  Exp: ".."[expertise]%"..class"  Crit: ".."[crit]%",
+			spec2fmt = class"Power: ".."[power]"..class"  Mastery: ".."[mastery]%"..class"  Crit: ".."[crit]%",
 		}
 	},
 	ROGUE = {
 		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class"  Exp: ".."[expertise]%"..class"  Crit: ".."[crit]%",
-			spec2fmt = class"Power: ".."[power]"..class"  Exp: ".."[expertise]%"..class"  Crit: ".."[crit]%",
+			spec1fmt = class"Power: ".."[power]"..class"  Mastery: ".."[mastery]%"..class"  Crit: ".."[crit]%",
+			spec2fmt = class"Power: ".."[power]"..class"  Mastery: ".."[mastery]%"..class"  Crit: ".."[crit]%",
 		}
 	},
 	WARRIOR = {
