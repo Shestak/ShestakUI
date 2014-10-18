@@ -54,5 +54,13 @@ vehicle:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 vehicle:SetTemplate("Default")
 vehicle:StyleButton(true)
 vehicle:RegisterForClicks("AnyUp")
-vehicle:SetScript("OnClick", function() VehicleExit() end)
-RegisterStateDriver(vehicle, "visibility", "[canexitvehicle] show; hide")
+vehicle:SetScript("OnClick", function()
+	for i = 1, NUM_POSSESS_SLOTS do
+		local _, name, enabled = GetPossessInfo(i)
+		if enabled then
+			CancelUnitBuff("player", name)
+		end
+	end
+	VehicleExit()
+end)
+RegisterStateDriver(vehicle, "visibility", "[canexitvehicle][possessbar] show; hide")
