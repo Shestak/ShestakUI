@@ -88,7 +88,7 @@ C["filger_spells"] = {
 			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fusion-Fire Core (Strength, Proc)
 			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Alacrity of Xuen (Haste, Proc)
+			-- Celestial Celerity (Haste, Proc) [Alacrity of Xuen]
 			{spellID = 146296, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
 			{spellID = 138702, unitID = "player", caster = "player", filter = "BUFF"},
@@ -615,8 +615,8 @@ C["filger_spells"] = {
 			{spellID = 19263, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rapid Fire
 			{spellID = 3045, unitID = "player", caster = "player", filter = "BUFF"},
-			-- The Beast Within
-			--WoD {spellID = 34471, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bestial Wrath
+			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Focus Fire
 			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spirit Mend
@@ -641,7 +641,7 @@ C["filger_spells"] = {
 			-- Steady Focus
 			--WoD {spellID = 53220, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lock and Load
-			--WoD {spellID = 56453, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 168980, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thrill of the Hunt
 			{spellID = 34720, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Frenzy
@@ -3023,6 +3023,8 @@ C["filger_spells"] = {
 			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightwell Renew
 			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Aspect of the Fox
+			{spellID = 172106, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Slow Fall
 			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Levitate
@@ -3108,7 +3110,7 @@ C["filger_spells"] = {
 			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Barrage
 			--WoD {spellID = 35101, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Glyph of Freezing Trap
+			-- Frozen Wake (Glyph of Freezing Trap)
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Trap
 			{spellID = 135299, unitID = "player", caster = "all", filter = "DEBUFF"},
