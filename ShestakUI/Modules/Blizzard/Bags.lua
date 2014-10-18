@@ -70,7 +70,7 @@ Stuffing:SetScript("OnEvent", function(this, event, ...)
 end)
 
 -- Drop down menu stuff from Postal
-local Stuffing_DDMenu = CreateFrame("Frame", "Stuffing_DropDownMenu")
+local Stuffing_DDMenu = CreateFrame("Frame", "StuffingDropDownMenu")
 Stuffing_DDMenu.displayMode = "MENU"
 Stuffing_DDMenu.info = {}
 Stuffing_DDMenu.HideMenu = function()
@@ -231,7 +231,7 @@ function CreateReagentContainer()
 	Deposit:SetFontString(Deposit.text)
 
 	-- Close button
-	local Close = CreateFrame("Button", "Stuffing_CloseButtonReagent", Reagent, "UIPanelCloseButton")
+	local Close = CreateFrame("Button", "StuffingCloseButtonReagent", Reagent, "UIPanelCloseButton")
 	T.SkinCloseButton(Close, nil, nil, true)
 	Close:SetSize(15, 15)
 	Close:RegisterForClicks("AnyUp")
@@ -528,7 +528,7 @@ function Stuffing:CreateBagFrame(w)
 
 	if w == "Bank" then
 		-- Reagent button
-		f.b_reagent = CreateFrame("Button", "Stuffing_ReagentButton"..w, f)
+		f.b_reagent = CreateFrame("Button", "StuffingReagentButton"..w, f)
 		f.b_reagent:SetSize(105, 20)
 		f.b_reagent:SetPoint("TOPLEFT", 10, -4)
 		f.b_reagent:RegisterForClicks("AnyUp")
@@ -549,7 +549,7 @@ function Stuffing:CreateBagFrame(w)
 		f.b_reagent:SetFontString(f.b_reagent.text)
 
 		-- Buy button
-		f.b_purchase = CreateFrame("Button", "Stuffing_PurchaseButton"..w, f)
+		f.b_purchase = CreateFrame("Button", "StuffingPurchaseButton"..w, f)
 		f.b_purchase:SetSize(80, 20)
 		f.b_purchase:SetPoint("TOPLEFT", f.b_reagent, "TOPRIGHT", 3, 0)
 		f.b_purchase:RegisterForClicks("AnyUp")
@@ -568,7 +568,7 @@ function Stuffing:CreateBagFrame(w)
 	end
 
 	-- Close button
-	f.b_close = CreateFrame("Button", "Stuffing_CloseButton"..w, f, "UIPanelCloseButton")
+	f.b_close = CreateFrame("Button", "StuffingCloseButton"..w, f, "UIPanelCloseButton")
 	T.SkinCloseButton(f.b_close, nil, nil, true)
 	f.b_close:SetSize(15, 15)
 	f.b_close:RegisterForClicks("AnyUp")
@@ -1000,9 +1000,9 @@ end
 function Stuffing:PLAYERBANKBAGSLOTS_CHANGED()
 	local _, full = GetNumBankSlots()
 	if full then
-		Stuffing_PurchaseButtonBank:Hide()
+		StuffingPurchaseButtonBank:Hide()
 	else
-		Stuffing_PurchaseButtonBank:Show()
+		StuffingPurchaseButtonBank:Show()
 	end
 end
 
