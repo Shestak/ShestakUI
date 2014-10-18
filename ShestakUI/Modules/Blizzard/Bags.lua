@@ -998,6 +998,7 @@ function Stuffing:BAG_UPDATE_COOLDOWN()
 end
 
 function Stuffing:PLAYERBANKBAGSLOTS_CHANGED()
+	if not StuffingPurchaseButtonBank then end
 	local _, full = GetNumBankSlots()
 	if full then
 		StuffingPurchaseButtonBank:Hide()
