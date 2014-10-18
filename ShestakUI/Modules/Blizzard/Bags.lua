@@ -58,30 +58,6 @@ local function IsItemUnusable(...)
 	end
 end
 
-StaticPopupDialogs.BUY_BANK_SLOT = {
-	text = CONFIRM_BUY_BANK_SLOT,
-	button1 = YES,
-	button2 = NO,
-	OnAccept = function(self)
-		PurchaseSlot()
-	end,
-	OnShow = function(self)
-		MoneyFrame_Update(self.moneyFrame, GetBankSlotCost())
-	end,
-	hasMoneyFrame = 1,
-	timeout = 0,
-	hideOnEscape = 1,
-	preferredIndex = 5,
-}
-
-StaticPopupDialogs.CANNOT_BUY_BANK_SLOT = {
-	text = L_BAG_NO_SLOTS,
-	button1 = ACCEPT,
-	timeout = 0,
-	whileDead = 1,
-	preferredIndex = 5,
-}
-
 -- Hide bags options in default interface
 InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 
@@ -540,33 +516,15 @@ function Stuffing:CreateBagFrame(w)
 	end
 
 	if w == "Bank" then
-		-- Buy button
-		f.b_purchase = CreateFrame("Button", "Stuffing_PurchaseButton"..w, f)
-		f.b_purchase:SetSize(80, 20)
-		f.b_purchase:SetPoint("TOPLEFT", 10, -4)
-		f.b_purchase:RegisterForClicks("AnyUp")
-		f.b_purchase:SkinButton()
-		f.b_purchase:SetScript("OnClick", function(self, btn)
-			local _, full = GetNumBankSlots()
-			if not full then
-				StaticPopup_Show("BUY_BANK_SLOT")
-			else
-				StaticPopup_Show("CANNOT_BUY_BANK_SLOT")
-			end
-		end)
-		f.b_purchase:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
-		f.b_purchase.text:SetPoint("CENTER")
-		f.b_purchase.text:SetText(BANKSLOTPURCHASE)
-		f.b_purchase:SetFontString(f.b_purchase.text)
-
 		-- Reagent button
 		f.b_reagent = CreateFrame("Button", "Stuffing_ReagentButton"..w, f)
 		f.b_reagent:SetSize(105, 20)
-		f.b_reagent:SetPoint("TOPLEFT", f.b_purchase, "TOPRIGHT", 3, 0)
+		f.b_reagent:SetPoint("TOPLEFT", 10, -4)
 		f.b_reagent:RegisterForClicks("AnyUp")
 		f.b_reagent:SkinButton()
 		f.b_reagent:SetScript("OnClick", function()
 			BankFrame_ShowPanel(BANK_PANELS[2].name)
+			PlaySound("igBackPackOpen")
 			if not ReagentBankFrame.isMade then
 				CreateReagentContainer()
 				ReagentBankFrame.isMade = true
@@ -578,6 +536,24 @@ function Stuffing:CreateBagFrame(w)
 		f.b_reagent.text:SetPoint("CENTER")
 		f.b_reagent.text:SetText(REAGENT_BANK)
 		f.b_reagent:SetFontString(f.b_reagent.text)
+
+		-- Buy button
+		f.b_purchase = CreateFrame("Button", "Stuffing_PurchaseButton"..w, f)
+		f.b_purchase:SetSize(80, 20)
+		f.b_purchase:SetPoint("TOPLEFT", f.b_reagent, "TOPRIGHT", 3, 0)
+		f.b_purchase:RegisterForClicks("AnyUp")
+		f.b_purchase:SkinButton()
+		f.b_purchase:SetScript("OnClick", function(self) StaticPopup_Show("CONFIRM_BUY_BANK_SLOT") end)
+		f.b_purchase:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+		f.b_purchase.text:SetPoint("CENTER")
+		f.b_purchase.text:SetText(BANKSLOTPURCHASE)
+		f.b_purchase:SetFontString(f.b_purchase.text)
+		local _, full = GetNumBankSlots()
+		if full then
+			f.b_purchase:Hide()
+		else
+			f.b_purchase:Show()
+		end
 	end
 
 	-- Close button
@@ -878,6 +854,7 @@ function Stuffing:ADDON_LOADED(addon)
 	self:RegisterEvent("GUILDBANKFRAME_OPENED")
 	self:RegisterEvent("GUILDBANKFRAME_CLOSED")
 	self:RegisterEvent("PLAYERBANKSLOTS_CHANGED")
+	self:RegisterEvent("PLAYERBANKBAGSLOTS_CHANGED")
 	self:RegisterEvent("BAG_CLOSED")
 	self:RegisterEvent("BAG_UPDATE_COOLDOWN")
 	self:RegisterEvent("REAGENTBANK_UPDATE")
@@ -1005,6 +982,15 @@ end
 function Stuffing:BAG_UPDATE_COOLDOWN()
 	for i, v in pairs(self.buttons) do
 		self:SlotUpdate(v)
+	end
+end
+
+function Stuffing:PLAYERBANKBAGSLOTS_CHANGED()
+	local _, full = GetNumBankSlots()
+	if full then
+		Stuffing_PurchaseButtonBank:Hide()
+	else
+		Stuffing_PurchaseButtonBank:Show()
 	end
 end
 

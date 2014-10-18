@@ -145,7 +145,6 @@ L_ERRORFRAME_L = "Clic gauche pour afficher les erreurs."
 
 -- Bags
 L_BAG_BANK = "Banque"
-L_BAG_NO_SLOTS = "Vous ne pouvez pas acheter plus d'emplacement !"
 L_BAG_COSTS = "Prix: %.2f or"
 L_BAG_BUY_SLOTS = "Acheter un nouvel emplacement avec /bags"
 L_BAG_OPEN_BANK = "Vous devez d'abord ouvrir votre banque."

@@ -141,7 +141,6 @@ L_ERRORFRAME_L = "Click to view errors."
 
 -- Bags
 L_BAG_BANK = "Bank"
-L_BAG_NO_SLOTS = "Can't buy anymore slots!"
 L_BAG_COSTS = "Cost: %.2f gold"
 L_BAG_BUY_SLOTS = "Buy new slot with /bags purchase yes"
 L_BAG_OPEN_BANK = "You need to open your bank first."
