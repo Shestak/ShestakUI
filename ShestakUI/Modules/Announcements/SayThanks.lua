@@ -20,7 +20,7 @@ frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 frame:SetScript("OnEvent", function(_, event, _, subEvent, _, _, buffer, _, _, _, player, _, _, spell, ...)
 	for key, value in pairs(spells) do
 		if spell == key and value == true and player == T.name and buffer ~= T.name and subEvent == "SPELL_CAST_SUCCESS" then
-			SendChatMessage(L_ANNOUNCE_SS_THANKS..GetSpellLink(spell)..", "..format(buffer:gsub("%-[^|]+", "")), "WHISPER", nil, buffer)
+			SendChatMessage(L_ANNOUNCE_SS_THANKS..GetSpellLink(spell)..", "..buffer:gsub("%-[^|]+", ""), "WHISPER", nil, buffer)
 			print(GetSpellLink(spell)..L_ANNOUNCE_SS_RECEIVED..buffer)
 		end
 	end

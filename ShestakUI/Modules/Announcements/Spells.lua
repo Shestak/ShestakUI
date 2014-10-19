@@ -12,6 +12,8 @@ frame:SetScript("OnEvent", function(self, _, ...)
 	local _, _, difficultyID = GetInstanceInfo()
 	if difficultyID == 0 or event ~= "SPELL_CAST_SUCCESS" then return end
 
+	if sourceName then sourceName = sourceName:gsub("%-[^|]+", "") end
+	if destName then destName = destName:gsub("%-[^|]+", "") end
 	if C.announcements.spells_from_all == true and not (sourceGUID == UnitGUID("player") and sourceName == T.name) then
 		if not sourceName then return end
 

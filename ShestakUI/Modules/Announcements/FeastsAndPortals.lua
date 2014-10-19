@@ -9,7 +9,7 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 	if not IsInGroup() or InCombatLockdown() or not subEvent or not spellID or not srcName then return end
 	if not UnitInRaid(srcName) and not UnitInParty(srcName) then return end
 
-	local srcName = format(srcName:gsub("%-[^|]+", ""))
+	local srcName = srcName:gsub("%-[^|]+", "")
 	if subEvent == "SPELL_CAST_SUCCESS" then
 		-- Feasts
 		if C.announcements.feasts and (spellID == 126492 or spellID == 126494) then
