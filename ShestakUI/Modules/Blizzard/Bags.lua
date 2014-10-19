@@ -167,7 +167,6 @@ function Stuffing:SlotUpdate(b)
 	SetItemButtonCount(b.frame, count)
 	SetItemButtonDesaturated(b.frame, locked)
 
-	GameTooltip:Hide()
 	b.frame:Show()
 end
 

@@ -15,6 +15,12 @@ FixTooltip:SetScript("OnEvent", function()
 	end
 end)
 
+local FixTooltipBags = CreateFrame("Frame")
+FixTooltipBags:RegisterEvent("BAG_UPDATE_DELAYED")
+FixTooltipBags:SetScript("OnEvent", function()
+	GameTooltip:Hide()
+end)
+
 ----------------------------------------------------------------------------------------
 --	Disable tooltip for player arrow on map
 ----------------------------------------------------------------------------------------
