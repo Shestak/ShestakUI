@@ -30,12 +30,20 @@ local locs = {
 local WIMtooltip = function(tooltip)
 	local _, link = tooltip:GetItem()
 	if not link then return end
+	local itemID = link:match("item:(%d+)")
+	if not itemID then return end
 
-	GetItemInfo(link)
-	local _, _, quality, _, _, itemType, subType, _, slot = GetItemInfo(link)
+	local rndench = link:match("item:[^:]+:[^:]+:[^:]+:[^:]+:[^:]+:[^:]+:([^:]+):")
+	GetItemInfo(itemID)
+	local _, _, quality, _, _, itemType, subType, _, slot = GetItemInfo(itemID)
 	-- No weapon or armor, or misc 'weapon', or invalid slot
 	if not itemType or not (itemType == ARMOR or itemType == ENCHSLOT_WEAPON) or (subType == MISCELLANEOUS and (itemType == ENCHSLOT_WEAPON or slot == "INVTYPE_CLOAK")) or not locs[slot] then return end
-	local canBeChanged, noChangeReason, canBeSource, noSourceReason = GetItemTransmogrifyInfo(link)
+	local canBeChanged, noChangeReason, canBeSource, noSourceReason = GetItemTransmogrifyInfo(itemID)
+
+	if rndench and rndench ~= "0" and noSourceReason == "NO_STATS" then
+		canBeChanged = true
+		canBeSource = true
+	end
 
 	if (quality < 2 or subType == MISCELLANEOUS) and not (canBeChanged or canBeSource) then return end
 
