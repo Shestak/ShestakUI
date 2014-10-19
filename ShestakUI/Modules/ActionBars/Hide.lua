@@ -100,6 +100,8 @@ function RightBarMouseOver(alpha)
 			for i = 1, NUM_PET_ACTION_SLOTS do
 				local pb = _G["PetActionButton"..i]
 				pb:SetAlpha(alpha)
+				local f = _G["PetActionButton"..i.."Cooldown"]
+				T.HideSpiral(f, alpha)
 			end
 			PetHolder:SetAlpha(alpha)
 		end
@@ -110,6 +112,8 @@ function RightBarMouseOver(alpha)
 			for i = 1, NUM_STANCE_SLOTS do
 				local pb = _G["StanceButton"..i]
 				pb:SetAlpha(alpha)
+				local f = _G["StanceButton"..i.."Cooldown"]
+				T.HideSpiral(f, alpha)
 			end
 			ShiftHolder:SetAlpha(alpha)
 		end
@@ -146,33 +150,16 @@ end
 local EventSpiral = CreateFrame("Frame")
 EventSpiral:RegisterEvent("PLAYER_ENTERING_WORLD")
 EventSpiral:SetScript("OnEvent", function()
-	if C.actionbar.stancebar_mouseover == true then
-		for i = 1, NUM_STANCE_SLOTS do
-			local f = _G["StanceButton"..i.."Cooldown"]
-			T.HideSpiral(f, 0)
-		end
-	end
-
-	if C.actionbar.petbar_mouseover == true then
-		for i = 1, NUM_PET_ACTION_SLOTS do
-			local f = _G["PetActionButton"..i.."Cooldown"]
-			T.HideSpiral(f, 0)
-		end
-	end
-
 	if C.actionbar.rightbars_mouseover == true then
-		for i = 1, 12 do
-			local f = _G["MultiBarLeftButton"..i.."Cooldown"]
-			T.HideSpiral(f, 0)
+		RightBarMouseOver(0)
+	end
 
-			local g = _G["MultiBarRightButton"..i.."Cooldown"]
-			T.HideSpiral(g, 0)
+	if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
+		PetBarMouseOver(0)
+	end
 
-			if C.actionbar.rightbars > 2 then
-				local d = _G["MultiBarBottomRightButton"..i.."Cooldown"]
-				T.HideSpiral(d, 0)
-			end
-		end
+	if C.actionbar.stancebar_mouseover == true and C.actionbar.stancebar_horizontal == true then
+		StanceBarMouseOver(0)
 	end
 end)
 
