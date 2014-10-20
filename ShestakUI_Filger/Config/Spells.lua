@@ -2969,16 +2969,10 @@ C["filger_spells"] = {
 			{spellID = 146555, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
-			-- Synapse Springs
-			{spellID = 126734, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Phase Fingers
-			--WoD {spellID = 108788, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nitro Boosts
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Parachute
 			{spellID = 55001, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lifeblood
-			--WoD {spellID = 74497, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -3017,6 +3011,8 @@ C["filger_spells"] = {
 			{spellID = 31821, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Rallying Cry
 			{spellID = 97463, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Amplify Magic
+			{spellID = 159916, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
