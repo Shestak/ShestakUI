@@ -126,14 +126,12 @@ LPSTAT_CONFIG = {
 	Stats = {
 		enabled = C.toppanel.enable,
 			-- Available stat tags:
-			--	Attack Power [ap]				Ranged Attack Power [rangedap]	Mastery% [mastery]			Expertise% [expertise]
-			--	Melee Hit% [meleehit]			Ranged Hit% [rangedhit]			Spell Hit% [spellhit]		Melee Haste [meleehaste]
-			--	Ranged Haste% [rangedhaste]		Spell Haste% [spellhaste]		Melee Crit% [meleecrit]		Ranged Crit% [rangedcrit]
-			--	Spell Crit% [spellcrit]			Spellpower [spellpower]			Healing [healing]			MP5 [manaregen]
-			--	Dodge% [dodge]					Parry% [parry]					Block% [block]				Avoidance% [avoidance]
-			--	Armor Value [armor]				Resilience [resilience]
-		spec1fmt = theme"SP: ".."[healing]"..theme"  Crit: ".."[spellcrit]%"..theme"  Haste: ".."[spellhaste]%", -- Spec #1 string
-		spec2fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%", -- Spec #2 string
+			--	Power [power]	MP5 [manaregen]%		Multistrike [strike]%	Block [block]
+			--	Haste [haste]%	Crit [crit]%			Mastery [mastery]		Versatility [versatility]%
+			--	Armor [armor]	Dodge [dodge]			Parry [parry]			Resilience [resilience]
+			--	Leech [leech]%	Avoidance [avoidance]
+		spec1fmt = theme"Power: ".."[power]"..theme"  Crit: ".."[crit]%"..theme"  Haste: ".."[haste]%", -- Spec #1 string
+		spec2fmt = theme"Power: ".."[power]"..theme"  Crit: ".."[crit]%"..theme"  Haste: ".."[haste]%", -- Spec #2 string
 		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
 		x_off = -20, y_off = 6,
 	},
@@ -199,55 +197,31 @@ LPSTAT_PROFILES = {
 	DEATHKNIGHT = {
 		Stats = {
 			spec1fmt = theme"Mastery: ".."[mastery]%"..theme"  Armor: ".."[armor]"..theme"  Avoid: ".."[avoidance]%",
-			spec2fmt = theme"AP: ".."[ap]"..theme"  Exp: ".."[expertise]%"..theme"  Hit: ".."[meleehit]%",
-		}
-	},
-	HUNTER = {
-		Stats = {
-			spec1fmt = theme"AP: ".."[rangedap]"..theme"  Crit: ".."[rangedcrit]%"..theme"  Hit: ".."[rangedhit]%",
-			spec2fmt = theme"AP: ".."[rangedap]"..theme"  Crit: ".."[rangedcrit]%"..theme"  Hit: ".."[rangedhit]%",
-		}
-	},
-	MAGE = {
-		Stats = {
-			spec1fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
-			spec2fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
+			spec2fmt = theme"Power: ".."[power]"..theme"  Mastery: ".."[mastery]%"..theme"  Crit: ".."[crit]%",
 		}
 	},
 	MONK = {
 		Stats = {
 			spec1fmt = theme"Mastery: ".."[mastery]%"..theme"  Armor: ".."[armor]"..theme"  Avoid: ".."[avoidance]%",
-			spec2fmt = theme"AP: ".."[ap]"..theme"  Exp: ".."[expertise]%"..theme"  Hit: ".."[meleehit]%",
+			spec2fmt = theme"Power: ".."[power]"..theme"  Mastery: ".."[mastery]%"..theme"  Crit: ".."[crit]%",
 		}
 	},
 	PALADIN = {
 		Stats = {
 			spec1fmt = theme"Mastery: ".."[mastery]%"..theme"  Block: ".."[block]%"..theme"  Avoid: ".."[avoidance]%",
-			spec2fmt = theme"AP: ".."[ap]"..theme"  Exp: ".."[expertise]%"..theme"  Hit: ".."[meleehit]%",
-		}
-	},
-	PRIEST = {
-		Stats = {
-			spec1fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
-			spec2fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
+			spec2fmt = theme"Power: ".."[power]"..theme"  Mastery: ".."[mastery]%"..theme"  Crit: ".."[crit]%",
 		}
 	},
 	ROGUE = {
 		Stats = {
-			spec1fmt = theme"AP: ".."[ap]"..theme"  Exp: ".."[expertise]%"..theme"  Hit: ".."[meleehit]%",
-			spec2fmt = theme"AP: ".."[ap]"..theme"  Exp: ".."[expertise]%"..theme"  Hit: ".."[meleehit]%",
-		}
-	},
-	WARLOCK = {
-		Stats = {
-			spec1fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
-			spec2fmt = theme"SP: ".."[spellpower]"..theme"  Crit: ".."[spellcrit]%"..theme"  Hit: ".."[spellhit]%",
+			spec1fmt = theme"Power: ".."[power]"..theme"  Mastery: ".."[mastery]%"..theme"  Crit: ".."[crit]%",
+			spec2fmt = theme"Power: ".."[power]"..theme"  Mastery: ".."[mastery]%"..theme"  Crit: ".."[crit]%",
 		}
 	},
 	WARRIOR = {
 		Stats = {
 			spec1fmt = theme"Armor: ".."[armor]"..theme"  Block: ".."[block]%"..theme"  Avoid: ".."[avoidance]%",
-			spec2fmt = theme"AP: ".."[ap]"..theme"  Crit: ".."[meleecrit]%"..theme"  Hit: ".."[meleehit]%",
+			spec2fmt = theme"Power: ".."[power]"..theme"  Crit: ".."[crit]%"..theme"  Crit: ".."[crit]%",
 		}
 	},
 }

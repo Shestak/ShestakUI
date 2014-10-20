@@ -1,33 +1,26 @@
 local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Quest level(yQuestLevel by Yleaf)
+--	Quest level
 ----------------------------------------------------------------------------------------
-local function questlevel()
-	local buttons = QuestLogScrollFrame.buttons
-	local numButtons = #buttons
-	local scrollOffset = HybridScrollFrame_GetOffset(QuestLogScrollFrame)
-	local numEntries = GetNumQuestLogEntries()
-
-	for i = 1, numButtons do
-		local questIndex = i + scrollOffset
-		local questLogTitle = buttons[i]
-		if questIndex <= numEntries then
-			local title, level, _, isHeader = GetQuestLogTitle(questIndex)
-			if not isHeader then
-				questLogTitle:SetText("["..level.."] "..title)
-				QuestLogTitleButton_Resize(questLogTitle)
+hooksecurefunc("QuestLogQuests_Update", function()
+	for i, button in pairs(QuestMapFrame.QuestsFrame.Contents.Titles) do
+		if button:IsShown() then
+			local level = strmatch(GetQuestLink(button.questLogIndex), "quest:%d+:(%d+)")
+			if level then
+				local height = button.Text:GetHeight()
+				button.Text:SetFormattedText("[%d] %s", level, button.Text:GetText())
+				button.Check:SetPoint("LEFT", button.Text, button.Text:GetWrappedWidth() + 2, 0)
+				button:SetHeight(button:GetHeight() - height + button.Text:GetHeight())
 			end
 		end
 	end
-end
-hooksecurefunc("QuestLog_Update", questlevel)
-QuestLogScrollFrameScrollBar:HookScript("OnValueChanged", questlevel)
+end)
 
 ----------------------------------------------------------------------------------------
 --	CTRL+Click to abandon a quest or ALT+Click to share a quest(by Suicidal Katt)
 ----------------------------------------------------------------------------------------
-hooksecurefunc("QuestLogTitleButton_OnClick", function(self, button)
+--[[WoD hooksecurefunc("QuestLogTitleButton_OnClick", function(self, button)
 	local questIndex = self:GetID()
 	if IsModifiedClick() then
 		if self.isHeader then return end
@@ -43,12 +36,12 @@ hooksecurefunc("QuestLogTitleButton_OnClick", function(self, button)
 			end
 		end
 	end
-end)
+end)]]
 
 ----------------------------------------------------------------------------------------
 --	Count of daily quests(DailyQuestCounter by Karl_w_w)
 ----------------------------------------------------------------------------------------
-hooksecurefunc("QuestLog_UpdateQuestCount", function()
+--[[WoD hooksecurefunc("QuestLog_UpdateQuestCount", function()
 	local dailyQuestsComplete = GetDailyQuestsCompleted()
 	local parent = QuestLogCount:GetParent()
 	local width = QuestLogQuestCount:GetWidth()
@@ -82,4 +75,4 @@ hooksecurefunc("QuestLog_UpdateQuestCount", function()
 		QuestLogCount:SetPoint("TOPLEFT", parent, "TOPLEFT", 70, -33)
 	end
 	QuestLogCount:SetWidth(width + 15)
-end)
+end)]]

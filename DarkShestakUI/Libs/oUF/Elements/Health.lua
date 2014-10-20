@@ -31,8 +31,8 @@ local Update = function(self, event, unit)
 		(health.colorClassPet and UnitPlayerControlled(unit) and not UnitIsPlayer(unit)) then
 		local _, class = UnitClass(unit)
 		t = self.colors.class[class]
-	elseif(health.colorReaction and UnitReaction(unit, 'player')) then
-		t = self.colors.reaction[UnitReaction(unit, "player")]
+	elseif(health.colorReaction) then
+		t = self.colors.reaction[UnitReaction(unit, "player") or 5]
 	elseif(health.colorSmooth) then
 		r, g, b = self.ColorGradient(min, max, unpack(health.smoothGradient or self.colors.smooth))
 	elseif(health.colorHealth) then

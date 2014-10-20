@@ -87,9 +87,15 @@ elseif T.class == "HUNTER" then
 		T.aoespam[120699] = 3		-- Lynx Rush
 		T.aoespam[120361] = 3		-- Barrage
 		T.aoespam[131900] = 3		-- A Murder of Crows
+		T.aoespam[3674] = 3			-- Black Arrow
+		T.aoespam[121414] = 3		-- Glaive Toss
 		T.aoespam[34655] = 3		-- Deadly Poison (Trap)
 		T.aoespam[93433] = 3		-- Burrow Attack (Worm)
 		T.aoespam[92380] = 3		-- Froststorm Breath (Chimaera)
+		T.merge[120761] = 121414	-- Glaive Toss
+	end
+	if C.combattext.healing then
+		T.healfilter[51753] = true	-- Camouflage
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then

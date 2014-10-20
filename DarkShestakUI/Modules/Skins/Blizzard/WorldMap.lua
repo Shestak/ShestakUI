@@ -7,11 +7,6 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	if IsAddOnLoaded("Mapster") then return end
 
-	hooksecurefunc("WorldMap_ToggleSizeDown", function()
-		WorldMapFrame:ClearAllPoints()
-		WorldMapFrame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
-	end)
-
 	local SmallerMap = GetCVarBool("miniWorldMap")
 	if not SmallerMap then
 		ToggleWorldMap()

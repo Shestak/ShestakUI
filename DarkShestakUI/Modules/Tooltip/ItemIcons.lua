@@ -42,7 +42,7 @@ local hookSpell = newTooltipHooker("OnTooltipSetSpell", function(self, ...)
 	end
 end)
 
-for _, tooltip in pairs{GameTooltip, ItemRefTooltip} do
+for _, tooltip in pairs{GameTooltip, ItemRefTooltip, ItemRefShoppingTooltip1, ItemRefShoppingTooltip2, ShoppingTooltip1, ShoppingTooltip2} do
 	hookItem(tooltip)
 	hookSpell(tooltip)
 end

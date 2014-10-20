@@ -168,7 +168,6 @@ L_ERRORFRAME_L = "点击查看错误."
 
 -- Bags
 L_BAG_BANK = "银行"
-L_BAG_NO_SLOTS = "不能再购买更多的背包栏位!"
 L_BAG_COSTS = "花费: %.2f 金"
 L_BAG_BUY_SLOTS = "输入 /bags purchase yes 以购买银行背包栏位"
 L_BAG_OPEN_BANK = "您需要先造访您的银行"

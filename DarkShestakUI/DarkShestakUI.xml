@@ -195,7 +195,7 @@
 	<Script file="Modules\Quests\AutoButton.lua"/>
 	<Script file="Modules\Quests\AutoCollapse.lua"/>
 	<Script file="Modules\Quests\ObjectiveTracker.lua"/>
-	<!-- <Script file="Modules\Quests\QuestLog.lua"/> -->
+	<Script file="Modules\Quests\QuestLog.lua"/>
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>

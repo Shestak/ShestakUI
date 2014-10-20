@@ -168,7 +168,6 @@ L_ERRORFRAME_L = "Щелкните, чтобы посмотреть ошибки
 
 -- Bags
 L_BAG_BANK = "Банк"
-L_BAG_NO_SLOTS = "Невозможно купить еще ячеек!"
 L_BAG_COSTS = "Цена: %.2f золотых"
 L_BAG_BUY_SLOTS = "Купить новую ячейку командой /bags purchase yes"
 L_BAG_OPEN_BANK = "Сначала откройте банк."

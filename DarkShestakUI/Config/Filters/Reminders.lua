@@ -206,6 +206,7 @@ if C.reminder.solo_buffs_enable == true then
 					116956,	-- Grace of Air
 					93435,	-- Roar of Courage
 					128997,	-- Spirit Beast Blessing
+					155522,	-- Power of the Grave
 				},
 				["personal"] = {
 					20217,	-- Blessing of Kings

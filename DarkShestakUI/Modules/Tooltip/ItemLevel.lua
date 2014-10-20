@@ -111,7 +111,7 @@ do
 			repeat
 				_, _, _, level, _, _, _, _, equipLoc = GetItemInfo(link)
 				if level and level >= 458 then
-					local upgrade = link:match(":(%d+)\124h%[")
+					local upgrade = link:match("item:%d+:%d+:%d+:%d+:%d+:%d+:%-?%d+:%-?%d+:%d+:(%d+)")
 					if (upgrade and upgrades[upgrade]) then
 						level = level + upgrades[upgrade]
 					end

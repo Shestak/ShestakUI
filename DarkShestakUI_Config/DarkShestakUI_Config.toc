@@ -2,11 +2,15 @@
 ## Title: |cff1784d1Dark ShestakUI Config|r
 ## Notes: In-game configuration for Dark ShestakUI
 ## Author: Tohveli
-## Version: 1.01
+## Version: 1.02
 ## Credits: Elv22, Fernir, Tukz
 ## RequiredDeps: DarkShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
+## X-Curse-Packaged-Version: 1.02
+## X-Curse-Project-Name: Dark ShestakUI
+## X-Curse-Project-ID: darkshestakui
+## X-WoWI-ID: 21824
 ## Website: http://shestak.org
 
 Locales\English.lua

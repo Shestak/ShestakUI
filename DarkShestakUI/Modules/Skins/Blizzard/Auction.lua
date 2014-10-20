@@ -181,9 +181,8 @@ local function LoadSkin()
 		end
 
 		if icon then
+			icon:StripTextures()
 			icon:StyleButton()
-			icon:HookScript("OnUpdate", function() icon:GetNormalTexture():Kill() end)
-
 			icon:CreateBackdrop("Default")
 			icon.backdrop:SetAllPoints()
 		end
@@ -204,14 +203,12 @@ local function LoadSkin()
 		local icon = _G["AuctionsButton"..i.."Item"]
 
 		_G["AuctionsButton"..i.."ItemIconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		_G["AuctionsButton"..i.."ItemIconTexture"].SetTexCoord = T.dummy
 		_G["AuctionsButton"..i.."ItemIconTexture"]:ClearAllPoints()
 		_G["AuctionsButton"..i.."ItemIconTexture"]:SetPoint("TOPLEFT", 2, -2)
 		_G["AuctionsButton"..i.."ItemIconTexture"]:SetPoint("BOTTOMRIGHT", -2, 2)
 
+		icon:StripTextures()
 		icon:StyleButton()
-		icon:HookScript("OnUpdate", function() icon:GetNormalTexture():Kill() end)
-
 		icon:CreateBackdrop("Default")
 		icon.backdrop:SetAllPoints()
 
@@ -233,9 +230,8 @@ local function LoadSkin()
 		_G["BidButton"..i.."ItemIconTexture"]:SetPoint("TOPLEFT", 2, -2)
 		_G["BidButton"..i.."ItemIconTexture"]:SetPoint("BOTTOMRIGHT", -2, 2)
 
+		icon:StripTextures()
 		icon:StyleButton()
-		icon:HookScript("OnUpdate", function() icon:GetNormalTexture():Kill() end)
-
 		icon:CreateBackdrop("Default")
 		icon.backdrop:SetAllPoints()
 
