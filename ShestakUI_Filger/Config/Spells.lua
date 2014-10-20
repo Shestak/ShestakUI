@@ -303,12 +303,10 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
 			-- Buffs
-			-- Shooting Stars
-			{spellID = 93400, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lunar Shower
-			--WoD {spellID = 81192, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nature's Grace
-			--WoD {spellID = 16886, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lunar Peak
+			{spellID = 171743, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Solar Peak
+			{spellID = 171744, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Rejuvenation
 			{spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
@@ -568,10 +566,16 @@ C["filger_spells"] = {
 			{spellID = 102793, filter = "CD"},
 			-- Nature's Vigil
 			{spellID = 124974, filter = "CD"},
-			-- Incarnation
-			--WoD {spellID = 102558, filter = "CD"},
 			-- Berserk
 			{spellID = 106952, filter = "CD"},
+			-- Incarnation: Son of Ursoc
+			{spellID = 102558, filter = "CD"},
+			-- Incarnation: Tree of Life
+			{spellID = 33891, filter = "CD"},
+			-- Incarnation: Chosen of Elunee
+			{spellID = 102560, filter = "CD"},
+			-- Incarnation: King of the Jungle
+			{spellID = 102543, filter = "CD"},
 
 			-- Racial
 			-- Shadowmeld (Night Elf)
