@@ -1137,8 +1137,6 @@ C["filger_spells"] = {
 			{spellID = 116740, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Touch of Karma
 			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Avert Harm
-			--WoD {spellID = 115213, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
@@ -1162,8 +1160,6 @@ C["filger_spells"] = {
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Breaker: Tiger Palm
 			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power Guard
-			--WoD {spellID = 118636, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shuffle
 			{spellID = 115307, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vital Mists
