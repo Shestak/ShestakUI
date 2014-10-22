@@ -18,7 +18,9 @@ end)
 local FixTooltipBags = CreateFrame("Frame")
 FixTooltipBags:RegisterEvent("BAG_UPDATE_DELAYED")
 FixTooltipBags:SetScript("OnEvent", function()
-	GameTooltip:Hide()
+	if StuffingFrameBags and StuffingFrameBags:IsShown() then
+		GameTooltip:Hide()
+	end
 end)
 
 ----------------------------------------------------------------------------------------

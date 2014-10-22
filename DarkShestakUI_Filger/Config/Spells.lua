@@ -303,12 +303,10 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
 			-- Buffs
-			-- Shooting Stars
-			{spellID = 93400, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lunar Shower
-			--WoD {spellID = 81192, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nature's Grace
-			--WoD {spellID = 16886, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lunar Peak
+			{spellID = 171743, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Solar Peak
+			{spellID = 171744, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glyph of Rejuvenation
 			{spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
@@ -568,10 +566,16 @@ C["filger_spells"] = {
 			{spellID = 102793, filter = "CD"},
 			-- Nature's Vigil
 			{spellID = 124974, filter = "CD"},
-			-- Incarnation
-			--WoD {spellID = 102558, filter = "CD"},
 			-- Berserk
 			{spellID = 106952, filter = "CD"},
+			-- Incarnation: Son of Ursoc
+			{spellID = 102558, filter = "CD"},
+			-- Incarnation: Tree of Life
+			{spellID = 33891, filter = "CD"},
+			-- Incarnation: Chosen of Elunee
+			{spellID = 102560, filter = "CD"},
+			-- Incarnation: King of the Jungle
+			{spellID = 102543, filter = "CD"},
 
 			-- Racial
 			-- Shadowmeld (Night Elf)
@@ -634,12 +638,8 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
 			-- Buffs
-			-- Ready, Set, Aim...
-			--WoD {spellID = 82925, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fire!
-			--WoD {spellID = 82926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Steady Focus
-			--WoD {spellID = 53220, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 177668, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lock and Load
 			{spellID = 168980, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thrill of the Hunt
@@ -1133,8 +1133,6 @@ C["filger_spells"] = {
 			{spellID = 116740, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Touch of Karma
 			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Avert Harm
-			--WoD {spellID = 115213, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
@@ -1158,8 +1156,6 @@ C["filger_spells"] = {
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Breaker: Tiger Palm
 			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power Guard
-			--WoD {spellID = 118636, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shuffle
 			{spellID = 115307, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vital Mists
@@ -1965,8 +1961,6 @@ C["filger_spells"] = {
 			{spellID = 2983, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Feint
 			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Walk
-			--WoD {spellID = 114842, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Subterfuge
 			{spellID = 115192, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -2204,8 +2198,6 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
 			-- Buffs
-			-- Clearcasting
-			--WoD {spellID = 16246, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lava Surge
 			{spellID = 77762, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental Blast
@@ -2334,8 +2326,6 @@ C["filger_spells"] = {
 			{spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Flame Shock
 			{spellID = 8050, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Searing Flames
-			--WoD {spellID = 77661, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Earthgrab
 			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
@@ -2501,10 +2491,8 @@ C["filger_spells"] = {
 			{spellID = 122355, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Backdraft
 			{spellID = 117828, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Backlash
-			--WoD {spellID = 34936, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demonic Rebirth
-			--WoD {spellID = 108559, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Demonic Synergy
+			{spellID = 171982, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Item sets
 			-- Ember Master (T16)
@@ -2965,16 +2953,10 @@ C["filger_spells"] = {
 			{spellID = 146555, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
-			-- Synapse Springs
-			{spellID = 126734, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Phase Fingers
-			--WoD {spellID = 108788, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nitro Boosts
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Parachute
 			{spellID = 55001, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lifeblood
-			--WoD {spellID = 74497, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -3013,6 +2995,8 @@ C["filger_spells"] = {
 			{spellID = 31821, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Rallying Cry
 			{spellID = 97463, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Amplify Magic
+			{spellID = 159916, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
@@ -3108,8 +3092,6 @@ C["filger_spells"] = {
 			{spellID = 135373, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Shot
 			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Concussive Barrage
-			--WoD {spellID = 35101, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frozen Wake (Glyph of Freezing Trap)
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Trap

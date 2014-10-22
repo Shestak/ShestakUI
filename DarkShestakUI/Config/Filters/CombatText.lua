@@ -259,8 +259,14 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[3606] = 3			-- Searing Bolt
 		T.aoespam[170379] = 3		-- Molten Earth
 		T.aoespam[114074] = 1		-- Lava Beam
+		T.aoespam[32175] = 0		-- Stormstrike
+		T.aoespam[114089] = 3		-- Windlash
+		T.aoespam[115357] = 0		-- Windstrike
 		T.merge[168477] = 421		-- Chain Lightning (Multi)
 		T.merge[168489] = 114074	-- Lava Beam (Multi)
+		T.merge[32176] = 32175		-- Stormstrike Off-Hand
+		T.merge[114093] = 114089	-- Windlash Off-Hand
+		T.merge[115360] = 115357	-- Windstrike Off-Hand
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
@@ -287,6 +293,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[108685] = 0		-- Conflagrate
 		T.aoespam[22703] = 0		-- Infernal Awakening
 		T.aoespam[171017] = 0		-- Meteor Strike (Infrenal)
+		T.aoespam[104318] = 3		-- Fel Firebolt
 		T.merge[157736] = 348		-- Immolate
 		T.merge[108686] = 348		-- Immolate
 		T.merge[131737] = 980		-- Agony (Drain Soul)

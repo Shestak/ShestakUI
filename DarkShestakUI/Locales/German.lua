@@ -124,9 +124,9 @@ L_MAP_FOG = "Nebel des Krieges"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Kalender"
-L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
-L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
-L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
+L_MINIMAP_HEAL_LAYOUT = "Links-Klick - Heiler Layout"
+L_MINIMAP_DPS_LAYOUT = "Rechts-Klick - DPS Layout"
+L_MINIMAP_BLIZZ_LAYOUT = "Mittel-Klick - Blizzard Layout"
 L_MINIMAP_THEME = "Color theme:" -- Need review
 
 -- Addons list
@@ -156,8 +156,8 @@ L_CHAT_PARTY_LEADER = "PL"
 L_CHAT_RAID = "R"
 L_CHAT_RAID_LEADER = "RL"
 L_CHAT_RAID_WARNING = "RW"
-L_CHAT_INSTANCE_CHAT = "I" -- Needs review
-L_CHAT_INSTANCE_CHAT_LEADER = "IL" -- Needs review
+L_CHAT_INSTANCE_CHAT = "I"
+L_CHAT_INSTANCE_CHAT_LEADER = "IL"
 L_CHAT_OFFICER = "O"
 L_CHAT_PET_BATTLE = "PB"
 L_CHAT_COME_ONLINE = "ist jetzt |cff298F00online|r."

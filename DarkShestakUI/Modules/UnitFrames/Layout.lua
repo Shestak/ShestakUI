@@ -829,10 +829,21 @@ local function Shared(self, unit)
 
 			self.Castbar.Time = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
 			self.Castbar.Time:SetParent(self.Castbar.Button)
-			self.Castbar.Time:SetPoint("CENTER", self.Castbar.Icon, "CENTER", 0, 0)
+			self.Castbar.Time:SetPoint("CENTER", self.Castbar.Icon, "CENTER", 0, 10)
 			self.Castbar.Time:SetTextColor(1, 1, 1)
-			self.Castbar.CustomTimeText = T.CustomCastTimeText
-			self.Castbar.CustomDelayText = T.CustomCastDelayText
+
+			self.Castbar.Time2 = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
+			self.Castbar.Time2:SetParent(self.Castbar.Button)
+			self.Castbar.Time2:SetPoint("CENTER", self.Castbar.Icon, "CENTER", 0, -10)
+			self.Castbar.Time2:SetTextColor(1, 1, 1)
+
+			self.Castbar.CustomTimeText = function(self, duration)
+				self.Time:SetText(("%.1f"):format(self.max))
+				self.Time2:SetText(("%.1f"):format(self.channeling and duration or self.max - duration))
+			end
+			self.Castbar.CustomDelayText = function(self)
+				self.Time:SetText(("|cffaf5050%s %.1f|r"):format(self.channeling and "-" or "+", abs(self.delay)))
+			end
 		end
 
 		if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
