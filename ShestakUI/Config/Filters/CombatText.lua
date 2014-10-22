@@ -89,6 +89,8 @@ elseif T.class == "HUNTER" then
 		T.aoespam[131900] = 3		-- A Murder of Crows
 		T.aoespam[3674] = 3			-- Black Arrow
 		T.aoespam[121414] = 3		-- Glaive Toss
+		T.aoespam[162543] = 3		-- Poisoned Ammo
+		T.aoespam[162541] = 3		-- Incendiary Ammo
 		T.aoespam[34655] = 3		-- Deadly Poison (Trap)
 		T.aoespam[93433] = 3		-- Burrow Attack (Worm)
 		T.aoespam[92380] = 3		-- Froststorm Breath (Chimaera)
@@ -247,6 +249,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[98021] = 3		-- Spirit Link
 		T.aoespam[114911] = 3		-- Ancestral Guidance
 		T.aoespam[114942] = 3		-- Healing Tide
+		T.aoespam[114083] = 3		-- Restorative Mists
 		-- Damaging spells
 		T.aoespam[421] = 1			-- Chain Lightning
 		T.aoespam[8349] = 0			-- Fire Nova
