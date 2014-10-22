@@ -266,7 +266,6 @@ L_POPUP_RESETUI = "Etes-vous sûr de vouloir réinitialiser Dark ShestakUI ?"
 L_POPUP_RESETSTATS = "Réinitialiser les statistiques pour le temps passé dans le jeu ?"
 L_POPUP_DISBAND_RAID = "Etes-vous sûr de vouloir dissoudre le groupe ?"
 L_POPUP_DISABLEUI = "Dark ShestakUI ne fonctionne pas avec cette résolution, voulez-vous désactiver Dark ShestakUI ? (Annuler si vous souhaitez essayer une autre résolution)"
-L_POPUP_DISABLE_OLD_ADDONS = "You must disable our old raid frames addons to use Dark ShestakUI now." -- Need review
 L_POPUP_SETTINGS_ALL = "Voulez-vous appliquer les modifications pour tout ? (DBM/DXE, Skada et MSBT)"
 L_POPUP_SETTINGS_DBM = "La position des éléments de DBM doit être changée."
 L_POPUP_SETTINGS_DXE = "La position des éléments de DXE doit être changée."

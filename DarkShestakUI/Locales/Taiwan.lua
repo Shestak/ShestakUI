@@ -267,7 +267,6 @@ L_POPUP_RESETSTATS = "你確定要重置本次遊戲時間和金幣收益統計�
 L_POPUP_SWITCH_RAID = "選擇團隊佈局."
 L_POPUP_DISBAND_RAID = "你確定要解散團隊?"
 L_POPUP_DISABLEUI = "Dark ShestakUI並不支援此解析度, 你想要停用Dark ShestakUI嗎? (若果您想要嘗試其他解析度, 請按取消)"
-L_POPUP_DISABLE_OLD_ADDONS = "You must disable our old raid frames addons to use Dark ShestakUI now." -- Need review
 L_POPUP_SETTINGS_ALL = "應用所有的UI設置(DBM/DXE, Skada and MSBT)?"
 L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素."
 L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素."

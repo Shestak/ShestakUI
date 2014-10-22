@@ -266,7 +266,6 @@ L_POPUP_RESETUI = "Vuoi davvero ripristinare tutte le impostazioni iniziali dell
 L_POPUP_RESETSTATS = "Vuoi davvero riazzerare tutte le statistiche relative a tempo trascorso in gioco e oro?"
 L_POPUP_DISBAND_RAID = "Vuoi davvero sciogliere il gruppo?"
 L_POPUP_DISABLEUI = "A questa risoluzione la Dark ShestakUI non funziona correttamente, vuoi disabilitare l'AddOn (clicca 'Cancella' se vuoi provare con un'altra risoluzione)?"
-L_POPUP_DISABLE_OLD_ADDONS = "Devi disabilitare le tue vecchie AddOns per i riquadri d'incursione se vuoi utilizzare adesso la Dark ShestakUI." -- Need review
 L_POPUP_SETTINGS_ALL = "Applica le impostazioni per tutte le AddOns (DBM/DXE, Skada e MSBT)?"
 L_POPUP_SETTINGS_DBM = "È necessario cambiare la posizione degli elementi di DBM."
 L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DXE."
