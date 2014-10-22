@@ -16,9 +16,9 @@ local Update = function(self, event, unit)
 
 	if vb.PreUpdate then vb:PreUpdate(unit) end
 
-	local _, _, _, _, _, _, _, _, _, _, _, _, _, _, vengeanceValue = UnitBuff("player", VENGEANCE_ID)
+	local _, _, _, _, _, _, _, _, _, _, spellid, _, _, _, vengeanceValue = UnitBuff("player", VENGEANCE_ID)
 
-	if vengeanceValue and vengeanceValue > 0 then
+	if spellid == 158300 and vengeanceValue and vengeanceValue > 0 then
 		vb.Bar:SetMinMaxValues(0, 200)
 
 		if vb.Text then
