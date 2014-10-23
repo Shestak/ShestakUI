@@ -49,7 +49,7 @@ for i, spell in pairs(spells) do
 	b:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 	b:SetFrameStrata("HIGH")
 
-	local l = b:CreateFontString(nil, "OVERLAY")
+	local l = b:CreateFontString("TeleportMenuName"..i, "OVERLAY")
 	l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	l:SetText(string.sub(teleport, string.find(teleport, ":") + 1))
 	b:SetFontString(l)
@@ -60,6 +60,19 @@ for i, spell in pairs(spells) do
 	b:SetAttribute("type2", "spell")
 	b:SetAttribute("spell2", GetSpellInfo(spell[2]))
 end
+
+local learnSpell = CreateFrame("Frame")
+learnSpell:RegisterEvent("PLAYER_LOGIN")
+learnSpell:RegisterEvent("LEARNED_SPELL_IN_TAB")
+learnSpell:SetScript("OnEvent", function()
+	for i, spell in pairs(spells) do
+		if not IsSpellKnown(spell[1]) then
+			_G["TeleportMenuName"..i]:SetTextColor(0.4, 0.4, 0.4)
+		else
+			_G["TeleportMenuName"..i]:SetTextColor(1, 1, 1)
+		end
+	end
+end)
 
 local button = CreateFrame("Button", nil, UIParent)
 button:SetTemplate("ClassColor")
