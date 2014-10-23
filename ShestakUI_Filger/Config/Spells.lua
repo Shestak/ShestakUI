@@ -1014,8 +1014,6 @@ C["filger_spells"] = {
 			{spellID = 1953, filter = "CD"},
 			-- Blazing Speed
 			{spellID = 108843, filter = "CD"},
-			-- Dragon's Breath
-			{spellID = 31661, filter = "CD"},
 			-- Deep Freeze
 			{spellID = 44572, filter = "CD"},
 			-- Frost Nova
