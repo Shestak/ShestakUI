@@ -123,6 +123,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[30455] = 0		-- Ice Lance
 		T.aoespam[115611] = 6		-- Temporal Ripples
 		T.aoespam[157981] = 1		-- Blast Wave
+		T.aoespam[157997] = 1		-- Ice Nova
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
