@@ -119,11 +119,13 @@ elseif T.class == "MAGE" then
 		T.aoespam[44425] = 0		-- Arcane Barrage
 		T.aoespam[84721] = 3		-- Frozen Orb
 		T.aoespam[148022] = 3		-- Icicle (Mastery)
-		T.aoespam[31707] = 3		-- Waterbolt
+		T.aoespam[31707] = 3		-- Waterbolt (Pet)
 		T.aoespam[30455] = 0		-- Ice Lance
 		T.aoespam[115611] = 6		-- Temporal Ripples
 		T.aoespam[157981] = 1		-- Blast Wave
 		T.aoespam[157997] = 1		-- Ice Nova
+		T.aoespam[157980] = 1		-- Supernova
+		T.aoespam[135029] = 3		-- Water Jet (Pet)
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
@@ -299,6 +301,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[22703] = 0		-- Infernal Awakening
 		T.aoespam[171017] = 0		-- Meteor Strike (Infrenal)
 		T.aoespam[104318] = 3		-- Fel Firebolt
+		T.aoespam[3110] = 3			-- Firebolt (Imp)
 		T.merge[157736] = 348		-- Immolate
 		T.merge[108686] = 348		-- Immolate
 		T.merge[131737] = 980		-- Agony (Drain Soul)
