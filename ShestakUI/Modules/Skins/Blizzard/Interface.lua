@@ -257,7 +257,6 @@ local function LoadSkin()
 		"CombatTextPanelTargetModeDropDown",
 		"CameraPanelStyleDropDown",
 		"MousePanelClickMoveStyleDropDown",
-		"LanguagesPanelLocaleDropDown",
 		"ObjectivesPanelQuestSorting",
 		"DisplayPanelOutlineDropDown"
 	}
