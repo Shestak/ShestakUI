@@ -61,7 +61,7 @@ local conditions = setmetatable({
 		end
 	end,
 	Arena = function(obj, unit) return unit and GetZonePVPInfo() == "arena" end,
-	Instance = function(obj, unit) return unit and IsInInstance() ~= nil end,
+	Instance = function(obj, unit) return unit and IsInInstance() == true end,
 }, {__index = function(t, k)
 	local cond = strmatch(k, "not(.+)")
 	assert(rawget(t, cond), format("Missing condition %s", k))
