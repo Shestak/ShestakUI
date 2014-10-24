@@ -26,7 +26,7 @@ frame:SetScript("OnEvent", function(self, event)
 	elseif event == "GOSSIP_CONFIRM" then
 		if UnitExists("target") and not InCombatLockdown() then
 			for i = 1, #tamerlist do
-				if tonumber(UnitGUID("target"):sub(6, 10), 16) == tamerlist[i] then
+				if tonumber(({('-'):split(UnitGUID("target"))})[6]) == tamerlist[i] then
 					if ShowingHelm() then
 						show = true
 					else
