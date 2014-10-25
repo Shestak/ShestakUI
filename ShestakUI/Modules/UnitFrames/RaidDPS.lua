@@ -49,6 +49,12 @@ local function Shared(self, unit)
 	end
 	self.Health:SetStatusBarTexture(C.media.texture)
 
+	self.Health.PostUpdate = function(health, unit)
+		if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
+			health:SetValue(0)
+		end
+	end
+
 	self.Health.frequentUpdates = true
 	self.Health.colorTapping = true
 	self.Health.colorDisconnected = true
