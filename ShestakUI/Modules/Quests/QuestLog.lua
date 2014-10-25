@@ -40,6 +40,16 @@ hooksecurefunc("QuestMapLogTitleButton_OnClick", function(self, button)
 	end
 end)
 
+hooksecurefunc(QUEST_TRACKER_MODULE, "OnBlockHeaderClick", function(_, block)
+	if IsModifiedClick() then
+		if IsControlKeyDown() then
+			AbandonQuest()
+		elseif IsAltKeyDown() then
+			QuestObjectiveTracker_ShareQuest(_, block.questLogIndex)
+		end
+	end
+end)
+
 ----------------------------------------------------------------------------------------
 --	Count of daily quests(DailyQuestCounter by Karl_w_w)
 ----------------------------------------------------------------------------------------
