@@ -95,7 +95,7 @@ do
 
 	local function scan(unit, slot, total, count, twoHanded, incomplete)
 		if slot > INVSLOT_LAST_EQUIPPED then
-			if count == 0 then return end --WoD Fix division by zero
+			if count == 0 then return end
 			return formatString:format(total / (twoHanded and count - 1 or count)), incomplete
 		end
 

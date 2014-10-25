@@ -18,7 +18,6 @@ local friendships = {
 	[GetFactionInfoByID(1281)] = 1281,
 	[GetFactionInfoByID(1282)] = 1282,
 	[GetFactionInfoByID(1283)] = 1283,
-	--WoD [GetFactionInfoByID(1357)] = 1357,
 	[GetFactionInfoByID(1358)] = 1358,
 }
 
