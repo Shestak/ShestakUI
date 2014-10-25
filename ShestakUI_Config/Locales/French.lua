@@ -25,7 +25,6 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Fenêtre de véhicule en mouseover"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Accepte les quêtes automatiquement"
 L_GUI_MISC_RAID_TOOLS = "Outils de raid"
 L_GUI_MISC_PROFESSION_TABS = "Onglet des professions sur les fenêtres de métiers et de craft"
-L_GUI_MISC_PROFESSION_DATABASE = "Professions Database on Professions frame" -- Needs review
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review

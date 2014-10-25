@@ -46,7 +46,6 @@ C["misc"] = {
 	["quest_auto_button"] = false,				-- Quest auto button
 	["raid_tools"] = true,						-- Raid tools
 	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
-	["profession_database"] = false,			-- Professions Database on Professions frame
 	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
 	["item_level"] = true,						-- Item level on character slot buttons
 	["gem_counter"] = false,					-- Displays how many red/blue/yellow gems you have
