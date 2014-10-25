@@ -108,18 +108,6 @@ L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
 
 -- Addons list
 L_ALOAD_RL = "Recargar UI"
-L_ALOAD_DEP = "Dependencias: "
-L_ALOAD_OP_DEP = "Optional Dependencies: " -- Needs review
-L_ALOAD_AUTHOR = "Author: " -- Needs review
-L_ALOAD_PROFILES = "Profiles" -- Needs review
-L_ALOAD_ENABLE_ALL = "Enable All" -- Needs review
-L_ALOAD_DISABLE_ALL = "Disable All" -- Needs review
-L_ALOAD_PROFILE_NAME = "Profile Name" -- Needs review
-L_ALOAD_SET_TO = "Set To.." -- Needs review
-L_ALOAD_ADD_TO = "Add To.." -- Needs review
-L_ALOAD_REMOVE_FROM = "Remove From.." -- Needs review
-L_ALOAD_DELETE_PROFILE = "Delete Profile.." -- Needs review
-L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are." -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "De"
@@ -144,22 +132,8 @@ L_CHAT_GONE_OFFLINE = "se ha |cffff0000desconectado|r."
 L_ERRORFRAME_L = "Click para ver errores."
 
 -- Bags
-L_BAG_BANK = "Banco"
-L_BAG_COSTS = "Costo: %.2f oro"
-L_BAG_BUY_SLOTS = "Compra un nuevo espacio mediante /bags purchase yes"
-L_BAG_OPEN_BANK = "Necesitas abrir primero el banco."
-L_BAG_SORT = "Ordena tu bolsa, o tu banco si está abierto."
-L_BAG_STACK = "Llena los montones incompletos en tu bolsa, o en tu banco si está abierto."
-L_BAG_BUY_BANKS_SLOT = "Compra un espacio en el banco (Necesitas tener el banco abierto)."
 L_BAG_SORT_MENU = "Ordenar"
-L_BAG_SORT_SPECIAL = "Orden Especial"
-L_BAG_STACK_MENU = "Amontonar"
-L_BAG_STACK_SPECIAL = "Montón Especial"
 L_BAG_SHOW_BAGS = "Mostrar Bolsas"
-L_BAG_SORTING_BAGS = "Se ha acabado de ordenar."
-L_BAG_NOTHING_SORT = "No hay nada que ordenar."
-L_BAG_BAGS_BIDS = "Usando las bolsas: "
-L_BAG_STACK_END = "Se ha acabado de amontonar."
 L_BAG_RIGHT_CLICK_SEARCH = "Click derecho para buscar"
 
 -- Grab mail

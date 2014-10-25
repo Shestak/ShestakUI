@@ -108,18 +108,6 @@ L_MINIMAP_BLIZZ_LAYOUT = "Click-Centrale - Disposizione Blizzard"
 
 -- Addons list
 L_ALOAD_RL = "Ricarica l'interfaccia"
-L_ALOAD_DEP = "Dipendenze: "
-L_ALOAD_OP_DEP = "Dipendenze opzionali: "
-L_ALOAD_AUTHOR = "Autore/Autrice: "
-L_ALOAD_PROFILES = "Profili"
-L_ALOAD_ENABLE_ALL = "Attiva tutti"
-L_ALOAD_DISABLE_ALL = "Disatt. tutti"
-L_ALOAD_PROFILE_NAME = "Nome del profilo"
-L_ALOAD_SET_TO = "Imposta su.."
-L_ALOAD_ADD_TO = "Aggiungi a.."
-L_ALOAD_REMOVE_FROM = "Rimuovi da.."
-L_ALOAD_DELETE_PROFILE = "Cancella il profilo.."
-L_ALOAD_CONFIRM_DELETE = "Vuoi davvero cancellare questo profilo? Allora tieni premuto Shift e clicca di nuovo."
 
 -- Chat
 L_CHAT_WHISPER = "Da"
@@ -144,22 +132,8 @@ L_CHAT_GONE_OFFLINE = "si è |cffff0000disconnesso/a|r."
 L_ERRORFRAME_L = "Clicca per vedere gli errori."
 
 -- Bags
-L_BAG_BANK = "Banca"
-L_BAG_COSTS = "Costo in oro: %.2f"
-L_BAG_BUY_SLOTS = "Compra nuovi spazi con /bags purchase yes"
-L_BAG_OPEN_BANK = "Devi prima aprire la tua banca."
-L_BAG_SORT = "Riordina le tue sacche o la tua banca, se aperta."
-L_BAG_STACK = "Completa le pile parziali di oggetti identici nelle tue sacche o nella tua banca, se è aperta."
-L_BAG_BUY_BANKS_SLOT = "Compra uno spazio in banca (devi avere la tua banca aperta)."
 L_BAG_SORT_MENU = "Riordina"
-L_BAG_SORT_SPECIAL = "Riordino speciale"
-L_BAG_STACK_MENU = "Impila oggetti identici"
-L_BAG_STACK_SPECIAL = "Impilamento speciale oggetti identici"
 L_BAG_SHOW_BAGS = "Mostra le sacche"
-L_BAG_SORTING_BAGS = "Riordino terminato."
-L_BAG_NOTHING_SORT = "Niente da riordinare."
-L_BAG_BAGS_BIDS = "Sacche utilizzate: "
-L_BAG_STACK_END = "Impilamento terminato."
 L_BAG_RIGHT_CLICK_SEARCH = "Clicca col destro per cercare"
 
 -- Grab mail

@@ -104,18 +104,6 @@ L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout"
 
 -- Addons list
 L_ALOAD_RL = "Reload UI"
-L_ALOAD_DEP = "Dependencies: "
-L_ALOAD_OP_DEP = "Optional Dependencies: "
-L_ALOAD_AUTHOR = "Author: "
-L_ALOAD_PROFILES = "Profiles"
-L_ALOAD_ENABLE_ALL = "Enable All"
-L_ALOAD_DISABLE_ALL = "Disable All"
-L_ALOAD_PROFILE_NAME = "Profile Name"
-L_ALOAD_SET_TO = "Set To.."
-L_ALOAD_ADD_TO = "Add To.."
-L_ALOAD_REMOVE_FROM = "Remove From.."
-L_ALOAD_DELETE_PROFILE = "Delete Profile.."
-L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are."
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -140,22 +128,8 @@ L_CHAT_GONE_OFFLINE = "has gone |cffff0000offline|r."
 L_ERRORFRAME_L = "Click to view errors."
 
 -- Bags
-L_BAG_BANK = "Bank"
-L_BAG_COSTS = "Cost: %.2f gold"
-L_BAG_BUY_SLOTS = "Buy new slot with /bags purchase yes"
-L_BAG_OPEN_BANK = "You need to open your bank first."
-L_BAG_SORT = "Sort your bags or your bank, if open."
-L_BAG_STACK = "Fill up partial stacks in your bags or bank, if open."
-L_BAG_BUY_BANKS_SLOT = "Buy bank slot (need to have bank open)."
 L_BAG_SORT_MENU = "Sort"
-L_BAG_SORT_SPECIAL = "Sort Special"
-L_BAG_STACK_MENU = "Stack"
-L_BAG_STACK_SPECIAL = "Stack Special"
 L_BAG_SHOW_BAGS = "Show Bags"
-L_BAG_SORTING_BAGS = "Sorting finished."
-L_BAG_NOTHING_SORT = "Nothing to sort."
-L_BAG_BAGS_BIDS = "Using bags: "
-L_BAG_STACK_END = "Restacking finished."
 L_BAG_RIGHT_CLICK_SEARCH = "Right-click to search"
 
 -- Grab mail

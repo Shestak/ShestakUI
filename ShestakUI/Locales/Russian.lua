@@ -108,18 +108,6 @@ L_MINIMAP_BLIZZ_LAYOUT = "Средний клик - Blizzard"
 
 -- Addons list
 L_ALOAD_RL = "Перезагрузить"
-L_ALOAD_DEP = "Зависимые ресурсы: "
-L_ALOAD_OP_DEP = "Доп. зависимости: "
-L_ALOAD_AUTHOR = "Автор: "
-L_ALOAD_PROFILES = "Профили"
-L_ALOAD_ENABLE_ALL = "Вкл. все"
-L_ALOAD_DISABLE_ALL = "Выкл. все"
-L_ALOAD_PROFILE_NAME = "Имя профиля"
-L_ALOAD_SET_TO = "Выбрать профиль.."
-L_ALOAD_ADD_TO = "Добавить в профиль.."
-L_ALOAD_REMOVE_FROM = "Очистить профиль.."
-L_ALOAD_DELETE_PROFILE = "Удалить профиль.."
-L_ALOAD_CONFIRM_DELETE = "Вы уверены, что хотите удалить этот профиль? Если да, удерживая shift, нажмите еще раз."
 
 -- Chat
 L_CHAT_WHISPER = "От"
@@ -144,22 +132,8 @@ L_CHAT_GONE_OFFLINE = "|cffff0000выходит|r из игрового мира
 L_ERRORFRAME_L = "Щелкните, чтобы посмотреть ошибки."
 
 -- Bags
-L_BAG_BANK = "Банк"
-L_BAG_COSTS = "Цена: %.2f золотых"
-L_BAG_BUY_SLOTS = "Купить новую ячейку командой /bags purchase yes"
-L_BAG_OPEN_BANK = "Сначала откройте банк."
-L_BAG_SORT = "Сортировать предметы в сумке или банке, если они открыты."
-L_BAG_STACK = "Заполнить неполные стопки в сумках или банке, если они открыты."
-L_BAG_BUY_BANKS_SLOT = "Купить банковскую ячейку (банк должен быть открыт)."
 L_BAG_SORT_MENU = "Сортировать"
-L_BAG_SORT_SPECIAL = "Сортировать в спецсумках"
-L_BAG_STACK_MENU = "Сложить"
-L_BAG_STACK_SPECIAL = "Сложить в спецсумках"
 L_BAG_SHOW_BAGS = "Показать сумки"
-L_BAG_SORTING_BAGS = "Сортировка завершена."
-L_BAG_NOTHING_SORT = "Нечего сортировать."
-L_BAG_BAGS_BIDS = "Использование сумок: "
-L_BAG_STACK_END = "Заполнение завершено."
 L_BAG_RIGHT_CLICK_SEARCH = "ПКМ для поиска"
 
 -- Grab mail

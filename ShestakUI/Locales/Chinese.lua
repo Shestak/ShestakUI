@@ -108,18 +108,6 @@ L_MINIMAP_BLIZZ_LAYOUT = "鼠标中键 - 默认暴雪模式团队框架"
 
 -- Addons list
 L_ALOAD_RL = "重新加载UI"
-L_ALOAD_DEP = "依赖关系: "
-L_ALOAD_OP_DEP = "可选依赖: "
-L_ALOAD_AUTHOR = "作者: "
-L_ALOAD_PROFILES = "配置文件"
-L_ALOAD_ENABLE_ALL = "全部启用"
-L_ALOAD_DISABLE_ALL = "全部禁用"
-L_ALOAD_PROFILE_NAME = "配置文件名称"
-L_ALOAD_SET_TO = "发送至.."
-L_ALOAD_ADD_TO = "添加至.."
-L_ALOAD_REMOVE_FROM = "移除自.."
-L_ALOAD_DELETE_PROFILE = "删除配置文件"
-L_ALOAD_CONFIRM_DELETE = "确定删除该配置文件？请按住shift再次点击确认删除。"
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -144,22 +132,8 @@ L_CHAT_GONE_OFFLINE = "|cffff0000下线了|r。"
 L_ERRORFRAME_L = "点击查看错误."
 
 -- Bags
-L_BAG_BANK = "银行"
-L_BAG_COSTS = "花费: %.2f 金"
-L_BAG_BUY_SLOTS = "输入 /bags purchase yes 以购买银行背包栏位"
-L_BAG_OPEN_BANK = "您需要先造访您的银行"
-L_BAG_SORT = "将背包或银行内的物品分类及排序"
-L_BAG_STACK = "将背包或银行内的不完整的物品堆叠重新堆叠"
-L_BAG_BUY_BANKS_SLOT = "购买银行背包栏位. (需要造访银行)"
 L_BAG_SORT_MENU = "分类及排序"
-L_BAG_SORT_SPECIAL = "分类及排序特殊物品"
-L_BAG_STACK_MENU = "堆叠"
-L_BAG_STACK_SPECIAL = "堆叠特殊物品"
 L_BAG_SHOW_BAGS = "显示背包"
-L_BAG_SORTING_BAGS = "分类及排序完成"
-L_BAG_NOTHING_SORT = "不需要分类"
-L_BAG_BAGS_BIDS = "使用背包: "
-L_BAG_STACK_END = "重新堆叠完成"
 L_BAG_RIGHT_CLICK_SEARCH = "点击右键以搜寻物品"
 
 -- Grab mail

@@ -108,18 +108,6 @@ L_MINIMAP_BLIZZ_LAYOUT = "Mittel-Klick - Blizzard Layout"
 
 -- Addons list
 L_ALOAD_RL = "Interface Neuladen"
-L_ALOAD_DEP = "Abhängigkeiten: "
-L_ALOAD_OP_DEP = "Optionale Abhängigkeit: "
-L_ALOAD_AUTHOR = "Autor: "
-L_ALOAD_PROFILES = "Profile"
-L_ALOAD_ENABLE_ALL = "Alle aktivieren"
-L_ALOAD_DISABLE_ALL = "Alle deaktivieren"
-L_ALOAD_PROFILE_NAME = "Profil Name"
-L_ALOAD_SET_TO = "Setzen auf.."
-L_ALOAD_ADD_TO = "Hinzufügen zu.."
-L_ALOAD_REMOVE_FROM = "Entfernen von.."
-L_ALOAD_DELETE_PROFILE = "Profil entfernen.."
-L_ALOAD_CONFIRM_DELETE = "Möchtest du dieses Profil wirklich entfernen? Wenn du dir sicher bist, halte Shift gedrückt und klicke erneut."
 
 -- Chat
 L_CHAT_WHISPER = "Von"
@@ -144,22 +132,8 @@ L_CHAT_GONE_OFFLINE = "ist jetzt |cffff0000offline|r."
 L_ERRORFRAME_L = "Klick um Fehler anzuzeigen."
 
 -- Bags
-L_BAG_BANK = "Bank"
-L_BAG_COSTS = "Kosten: %.2f Gold"
-L_BAG_BUY_SLOTS = "Kaufe neuen Platz mit /bags purchase yes"
-L_BAG_OPEN_BANK = "Du musst erst das Bankfach öffnen."
-L_BAG_SORT = "Sortiert deine Taschen oder die Bank, falls geöffnet."
-L_BAG_STACK = "Stapelt Items neu in deinen Taschen und der Bank, falls geöffnet."
-L_BAG_BUY_BANKS_SLOT = "Kaufe Bankplatz (Bank muss geöffnet sein)."
 L_BAG_SORT_MENU = "Sortieren"
-L_BAG_SORT_SPECIAL = "Sortieren Spezialtasche"
-L_BAG_STACK_MENU = "Stapeln"
-L_BAG_STACK_SPECIAL = "Stapeln Spezialtasche"
 L_BAG_SHOW_BAGS = "Zeige Taschen"
-L_BAG_SORTING_BAGS = "Sortieren abgeschlossen."
-L_BAG_NOTHING_SORT = "Nichts zu sortieren."
-L_BAG_BAGS_BIDS = "Benutze Taschen: "
-L_BAG_STACK_END = "Neu stapeln abgeschlossen."
 L_BAG_RIGHT_CLICK_SEARCH = "Rechtsklick um zu suchen"
 
 -- Grab mail

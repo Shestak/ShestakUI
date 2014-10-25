@@ -108,18 +108,6 @@ L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
 
 -- Addons list
 L_ALOAD_RL = "Recharger l'interface"
-L_ALOAD_DEP = "Dépendances: "
-L_ALOAD_OP_DEP = "Dépendances Optionnelles: "
-L_ALOAD_AUTHOR = "Author: " -- Needs review
-L_ALOAD_PROFILES = "Profils"
-L_ALOAD_ENABLE_ALL = "Tout activer"
-L_ALOAD_DISABLE_ALL = "Tout désactiver"
-L_ALOAD_PROFILE_NAME = "Nom du profil"
-L_ALOAD_SET_TO = "Définir à.."
-L_ALOAD_ADD_TO = "Ajouter à.."
-L_ALOAD_REMOVE_FROM = "Supprimer de.."
-L_ALOAD_DELETE_PROFILE = "Supprimer Profil.."
-L_ALOAD_CONFIRM_DELETE = "Voulez-vous vraiment supprimer ce profil ? Si oui, cliquez à nouveau en maintenant la touche Maj."
 
 -- Chat
 L_CHAT_WHISPER = "De"
@@ -144,22 +132,8 @@ L_CHAT_GONE_OFFLINE = "vient de se |cffff0000déconnecter|r."
 L_ERRORFRAME_L = "Clic gauche pour afficher les erreurs."
 
 -- Bags
-L_BAG_BANK = "Banque"
-L_BAG_COSTS = "Prix: %.2f or"
-L_BAG_BUY_SLOTS = "Acheter un nouvel emplacement avec /bags"
-L_BAG_OPEN_BANK = "Vous devez d'abord ouvrir votre banque."
-L_BAG_SORT = "Trier vos sacs ou votre banque, si elle est ouverte."
-L_BAG_STACK = "Empile vos objets dans votre sac ou en banque, si elle est ouverte."
-L_BAG_BUY_BANKS_SLOT = "Acheter une place à la banque (nécessite d'avoir votre banque ouverte)."
 L_BAG_SORT_MENU = "Trier"
-L_BAG_SORT_SPECIAL = "Tri personnalisé"
-L_BAG_STACK_MENU = "Empiler"
-L_BAG_STACK_SPECIAL = "Empilage personnalisé"
 L_BAG_SHOW_BAGS = "Montrer les sacs"
-L_BAG_SORTING_BAGS = "Tri terminé."
-L_BAG_NOTHING_SORT = "Rien à trier."
-L_BAG_BAGS_BIDS = "Emplacements utilisés: "
-L_BAG_STACK_END = "Empilage terminé."
 L_BAG_RIGHT_CLICK_SEARCH = "Clic droit pour rechercher"
 
 -- Grab mail
