@@ -292,6 +292,7 @@ function CreateReagentContainer()
 	end
 	Reagent:SetHeight(((C.bag.button_size + C.bag.button_space) * (NumRows + 1) + 40) - C.bag.button_space)
 
+	MoneyFrame_Update(ReagentBankFrame.UnlockInfo.CostMoneyFrame, GetReagentBankCost())
 	ReagentBankFrameUnlockInfo:StripTextures()
 	ReagentBankFrameUnlockInfo:SetAllPoints(Reagent)
 	ReagentBankFrameUnlockInfo:SetTemplate("Overlay")
