@@ -119,5 +119,5 @@ hooksecurefunc("UpdateMicroButtons", function()
 	GuildMicroButtonTabard:ClearAllPoints()
 	GuildMicroButtonTabard:SetPoint("TOP", GuildMicroButton.frame, "TOP", 0, 25)
 
-	MainMenuBarPerformanceBar:SetPoint("TOPLEFT", MainMenuMicroButton, "TOPLEFT", 9, -36)
+	MainMenuBarPerformanceBar:SetPoint("BOTTOM", MainMenuMicroButton, "BOTTOM", 0, 0)
 end)
