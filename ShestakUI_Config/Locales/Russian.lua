@@ -56,6 +56,7 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Сообщать в рейдовый ка
 L_GUI_ANNOUNCEMENTS_FEASTS = "Сообщать, когда ставят пир/почту/ремонт"
 L_GUI_ANNOUNCEMENTS_PORTALS = "Сообщать, когда создают порталы/ритуал призыва"
 L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Проверять 'плохое' снаряжение в подземельях"
+L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Проверять Шляпу для сафари"
 
 -- Automation options
 L_GUI_AUTOMATION = "Автоматизация"
@@ -63,7 +64,6 @@ L_GUI_AUTOMATION_RESURRECTION = "Воскрешение на полях боя"
 L_GUI_AUTOMATION_SCREENSHOT = "Сохранять скриншот, если получено достижение"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Окно сборки артефактов"
 L_GUI_AUTOMATION_CHEFS_HAT = "Надевать Поварской колпак при готовке"
-L_GUI_AUTOMATION_SAFARI_HAT = "Надевать Шляпу для сафари"
 L_GUI_AUTOMATION_ACCEPT_INVITE = "Принятие приглашений от друзей и гильдии"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Отмена дуэлей"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Принятие заданий (если зажат shift или alt - не работает)"

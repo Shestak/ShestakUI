@@ -80,6 +80,7 @@ C["announcements"] = {
 	["feasts"] = false,							-- Announce Feasts/Souls/Repair Bots cast
 	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
 	["bad_gear"] = false,						-- Check bad gear in instance
+	["safari_hat"] = true,						-- Check Safari Hat
 }
 
 ----------------------------------------------------------------------------------------
@@ -90,7 +91,6 @@ C["automation"] = {
 	["screenshot"] = false,						-- Take screenshot when player get achievement
 	["solve_artifact"] = true,					-- Auto popup for solve artifact
 	["chefs_hat"] = true,						-- Auto equip Chef's Hat
-	["safari_hat"] = true,						-- Auto equip Safari Hat
 	["accept_invite"] = false,					-- Auto accept invite
 	["decline_duel"] = true,					-- Auto decline duel
 	["accept_quest"] = false,					-- Auto accept quests(if hold shift or alt, auto accept is disable)

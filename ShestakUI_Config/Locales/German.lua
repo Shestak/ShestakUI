@@ -56,6 +56,7 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Benachrichtigung an den Raid Channel"
 L_GUI_ANNOUNCEMENTS_FEASTS = "Benachrichtigung wenn Festmahl/Kessel/Seelensteine/Reparatur Bots aufgestellt wurden"
 L_GUI_ANNOUNCEMENTS_PORTALS = "Benachrichtigung über Portale/Ritual der Beschwörung"
 L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Überprüfe auf schlechte Ausrüstung in Instanzen"
+L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Check Safari Hat" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatisierung"
@@ -63,7 +64,6 @@ L_GUI_AUTOMATION_RESURRECTION = "Automatisch im Schlachtfeld wiederbeleben"
 L_GUI_AUTOMATION_SCREENSHOT = "Speicher einen Screenshot wenn ein Achivment errungen wird"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto Popup für gelöste Artefakte"
 L_GUI_AUTOMATION_CHEFS_HAT = "Automatisch Kochmütze anlegen"
-L_GUI_AUTOMATION_SAFARI_HAT = "Auto equip Safari Hat" -- Needs review
 L_GUI_AUTOMATION_ACCEPT_INVITE = "Einladungen automatisch annehmen"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Duell automatisch ablehnen"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Quests automatisch annehmen"
