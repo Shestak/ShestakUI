@@ -94,6 +94,8 @@ local function LoadSkin()
 	BankFramePurchaseButton:SkinButton()
 	T.SkinCloseButton(BankFrameCloseButton, BankFrame.backdrop)
 
+	BankSlotsFrame:StripTextures()
+
 	for i = 1, 28 do
 		local item = _G["BankFrameItem"..i]
 		local icon = _G["BankFrameItem"..i.."IconTexture"]
