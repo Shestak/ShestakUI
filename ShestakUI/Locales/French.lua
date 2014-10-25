@@ -57,10 +57,6 @@ L_MISC_ONECLICK_CANCEL = "Maj-Clic-Droit pour annuler l'objet sélectionné sans
 L_MISC_UI_OUTDATED = "Une version plus récente de ShestakUI est disponible. Vous pouvez la télécharger www.shestak.org"
 L_MISC_HEADER_MARK = "Icône de raid au passage de la souris"
 L_MISC_BINDER_OPEN = "Assignations des boutons de la souris"
-L_MISC_MOUNTS_GROUND = "Terrestre"
-L_MISC_MOUNTS_FLYING = "Volante"
-L_MISC_MOUNTS_FLYINGGROUND = "Volante & Terrestre"
-L_MISC_MOUNTS_SWIMMING = "Aquatique"
 L_MISC_GROCERY_BUY = "Buy" -- Needs review
 L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
 L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
@@ -106,9 +102,6 @@ L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout" -- Needs review
 L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout" -- Needs review
 L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout" -- Needs review
 
--- Addons list
-L_ALOAD_RL = "Recharger l'interface"
-
 -- Chat
 L_CHAT_WHISPER = "De"
 L_CHAT_BN_WHISPER = "De"
@@ -132,7 +125,6 @@ L_CHAT_GONE_OFFLINE = "vient de se |cffff0000déconnecter|r."
 L_ERRORFRAME_L = "Clic gauche pour afficher les erreurs."
 
 -- Bags
-L_BAG_SORT_MENU = "Trier"
 L_BAG_SHOW_BAGS = "Montrer les sacs"
 L_BAG_RIGHT_CLICK_SEARCH = "Clic droit pour rechercher"
 

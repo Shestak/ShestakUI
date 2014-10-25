@@ -39,7 +39,7 @@ C["togglemainmenu"] = {
 		end
 	},
 	{
-		["text"] = L_ALOAD_RL,
+		["text"] = RELOADUI,
 		["function"] = function()
 			ReloadUI()
 		end

@@ -1017,7 +1017,7 @@ function Stuffing.Menu(self, level)
 	if level ~= 1 then return end
 
 	wipe(info)
-	info.text = L_BAG_SORT_MENU
+	info.text = BAG_FILTER_CLEANUP
 	info.notCheckable = 1
 	info.func = function()
 		SortBags()

@@ -57,10 +57,6 @@ L_MISC_ONECLICK_CANCEL = "Shift+右鍵,不彈出確認窗口直接取消選擇�
 L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
 L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"
-L_MISC_MOUNTS_GROUND = "地面坐騎"
-L_MISC_MOUNTS_FLYING = "飛行坐騎"
-L_MISC_MOUNTS_FLYINGGROUND = "飛行/地面坐騎"
-L_MISC_MOUNTS_SWIMMING = "水中坐騎"
 L_MISC_GROCERY_BUY = "購買"
 L_MISC_GROCERY_DESC = "雜貨商自動購買"
 L_MISC_GROCERY_ERROR = "沒有足夠的物品."
@@ -106,9 +102,6 @@ L_MINIMAP_HEAL_LAYOUT = "左鍵 - HPS 佈局"
 L_MINIMAP_DPS_LAYOUT = "右鍵 - DPS 佈局"
 L_MINIMAP_BLIZZ_LAYOUT = "中鍵 - 默認 佈局"
 
--- Addons list
-L_ALOAD_RL = "重新加載UI"
-
 -- Chat
 L_CHAT_WHISPER = "From"
 L_CHAT_BN_WHISPER = "From"
@@ -132,7 +125,6 @@ L_CHAT_GONE_OFFLINE = "|cffff0000下線了|r."
 L_ERRORFRAME_L = "點擊查看錯誤"
 
 -- Bags
-L_BAG_SORT_MENU = "分類及排序"
 L_BAG_SHOW_BAGS = "顯示背包"
 L_BAG_RIGHT_CLICK_SEARCH = "點擊右鍵以搜尋物品"
 

@@ -57,10 +57,6 @@ L_MISC_ONECLICK_CANCEL = "Shift+右键,不弹出确认框体直接取消选择�
 L_MISC_UI_OUTDATED = "ShestakUI 版本已过期，请至 www.shestak.org 下载最新版"
 L_MISC_HEADER_MARK = "鼠标悬停显示团队图标"
 L_MISC_BINDER_OPEN = "鼠标绑定"
-L_MISC_MOUNTS_GROUND = "地面坐骑"
-L_MISC_MOUNTS_FLYING = "飞行坐骑"
-L_MISC_MOUNTS_FLYINGGROUND = "飞行/地面坐骑"
-L_MISC_MOUNTS_SWIMMING = "水中坐骑"
 L_MISC_GROCERY_BUY = "购买"
 L_MISC_GROCERY_DESC = "自动购买杂货包"
 L_MISC_GROCERY_ERROR = "物品不夠."
@@ -106,9 +102,6 @@ L_MINIMAP_HEAL_LAYOUT = "左鍵单击 - 治疗模式团队框架"
 L_MINIMAP_DPS_LAYOUT = "右键单击 - 输出模式团队框架"
 L_MINIMAP_BLIZZ_LAYOUT = "鼠标中键 - 默认暴雪模式团队框架"
 
--- Addons list
-L_ALOAD_RL = "重新加载UI"
-
 -- Chat
 L_CHAT_WHISPER = "From"
 L_CHAT_BN_WHISPER = "From"
@@ -132,7 +125,6 @@ L_CHAT_GONE_OFFLINE = "|cffff0000下线了|r。"
 L_ERRORFRAME_L = "点击查看错误."
 
 -- Bags
-L_BAG_SORT_MENU = "分类及排序"
 L_BAG_SHOW_BAGS = "显示背包"
 L_BAG_RIGHT_CLICK_SEARCH = "点击右键以搜寻物品"
 

@@ -53,10 +53,6 @@ L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item witho
 L_MISC_UI_OUTDATED = "Your version of ShestakUI is out of date. You can download the latest version from www.shestak.org"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons"
 L_MISC_BINDER_OPEN = "Mouse Bindings"
-L_MISC_MOUNTS_GROUND = "Ground"
-L_MISC_MOUNTS_FLYING = "Flying"
-L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground"
-L_MISC_MOUNTS_SWIMMING = "Swimming"
 L_MISC_GROCERY_BUY = "Buy"
 L_MISC_GROCERY_DESC = "Automatically buy grocery bags"
 L_MISC_GROCERY_ERROR = "Not enough items."
@@ -102,9 +98,6 @@ L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout"
 L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout"
 L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout"
 
--- Addons list
-L_ALOAD_RL = "Reload UI"
-
 -- Chat
 L_CHAT_WHISPER = "From"
 L_CHAT_BN_WHISPER = "From"
@@ -128,7 +121,6 @@ L_CHAT_GONE_OFFLINE = "has gone |cffff0000offline|r."
 L_ERRORFRAME_L = "Click to view errors."
 
 -- Bags
-L_BAG_SORT_MENU = "Sort"
 L_BAG_SHOW_BAGS = "Show Bags"
 L_BAG_RIGHT_CLICK_SEARCH = "Right-click to search"
 
