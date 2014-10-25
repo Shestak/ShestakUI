@@ -20,23 +20,25 @@ end)
 ----------------------------------------------------------------------------------------
 --	CTRL+Click to abandon a quest or ALT+Click to share a quest(by Suicidal Katt)
 ----------------------------------------------------------------------------------------
---[[WoD hooksecurefunc("QuestLogTitleButton_OnClick", function(self, button)
-	local questIndex = self:GetID()
+hooksecurefunc("QuestMapLogTitleButton_OnClick", function(self, button)
 	if IsModifiedClick() then
-		if self.isHeader then return end
 		if IsControlKeyDown() then
-			QuestLog_SetSelection(questIndex)
+			QuestMapQuestOptions_AbandonQuest(self.questID)
 			AbandonQuest()
-			QuestLog_Update()
-			QuestLog_SetSelection(questIndex)
+			if QuestLogPopupDetailFrame:IsShown() then
+				HideUIPanel(QuestLogPopupDetailFrame)
+			end
+			for i = 1, STATICPOPUP_NUMDIALOGS do
+				local frame = _G["StaticPopup"..i]
+				if (frame.which == "ABANDON_QUEST" or frame.which == "ABANDON_QUEST_WITH_ITEMS") and frame:IsVisible() then StaticPopup_OnClick(frame, 1) end
+			end
 		elseif IsAltKeyDown() then
-			QuestLog_SetSelection(questIndex)
 			if GetQuestLogPushable() then
-				QuestLogPushQuest()
+				QuestMapQuestOptions_ShareQuest(self.questID)
 			end
 		end
 	end
-end)]]
+end)
 
 ----------------------------------------------------------------------------------------
 --	Count of daily quests(DailyQuestCounter by Karl_w_w)
