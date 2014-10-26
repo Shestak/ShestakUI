@@ -8,7 +8,7 @@ GameTooltip:HookScript("OnTooltipCleared", function(self) self.UIItemTooltip = n
 GameTooltip:HookScript("OnTooltipSetItem", function(self)
 	if UIItemTooltip and not self.UIItemTooltip and UIItemTooltip.count then
 		local item, link = self:GetItem()
-		local num = GetItemCount(link)
+		local num = GetItemCount(link, true)
 		local item_count = ""
 
 		if UIItemTooltip.count and num > 1 then
