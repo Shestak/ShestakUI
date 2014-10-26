@@ -225,5 +225,6 @@ local function tdr()
 	end
 end
 
-SLASH_MOVINGDRTRACKER1 = "/tdr"
-SlashCmdList.MOVINGDRTRACKER = tdr
+SlashCmdList.DIMINISHINGCD = tdr
+SLASH_DIMINISHINGCD1 = "/tdr"
+SLASH_DIMINISHINGCD2 = "/евк"
