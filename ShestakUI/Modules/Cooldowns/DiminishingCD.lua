@@ -31,9 +31,9 @@ function UpdateDRTracker(self)
 	end
 end
 
-function DisplayDrActives(self)
+function DisplayDrActives(self, test)
 	local _, instanceType = IsInInstance()
-	if instanceType ~= "arena" then return end
+	if instanceType ~= "arena" and not test then return end
 
 	if not self.actives then return end
 	if not self.auras then self.auras = {} end
@@ -221,7 +221,7 @@ local function tdr()
 			self.actives[cat].icon = icon[cat]
 			dr = dr * 2
 		end
-		DisplayDrActives(self)
+		DisplayDrActives(self, true)
 	end
 end
 
