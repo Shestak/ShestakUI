@@ -29,7 +29,7 @@ L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
-L_GUI_MISC_DISENCHANTING = "Milling, Prospecting and Disenchanting by 'alt' + click" -- Needs review
+L_GUI_MISC_DISENCHANTING = "Milling, Prospecting and Disenchanting by Alt + click" -- Needs review
 L_GUI_MISC_SUM_BUYOUTS = "Sum up all current auctions" -- Needs review
 L_GUI_MISC_CLICK_CAST = "Simple click2cast spell binder" -- Needs review
 L_GUI_MISC_CLICK_CAST_FILTER = "Ignore Player and Target frames for click2cast" -- Needs review
@@ -67,7 +67,7 @@ L_GUI_AUTOMATION_ACCEPT_INVITE = "Accepter automatiquement les invitations"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Décliner les duels automatiquement"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Accepter les quêtes automatiquement"
 L_GUI_AUTOMATION_AUTO_COLLAPSE = "Auto collapse WatchFrame in instance" -- Needs review
-L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies" -- Needs review
+L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto skip cinematics/movies (disabled if hold Ctrl)" -- Needs review
 L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
 L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
@@ -362,7 +362,7 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Activer la barre de puissance sacrée"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Activier la barre de fragment d'âme"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Barre de rune"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Barre de totem"
-L_GUI_UF_PLUGINS_RANGE_BAR = "Enable Range bar" -- Needs review
+L_GUI_UF_PLUGINS_RANGE_BAR = "Enable Range bar (for Priest)" -- Needs review
 
 -- Raid Frames options
 L_GUI_UF_BY_ROLE = "Sorting players in group by role" -- Needs review
