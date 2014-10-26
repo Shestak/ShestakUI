@@ -325,7 +325,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - Riazzera le statistiche su oro e tempo di gioco.",
 	"/settings ADDON_NAME - Applica le impostazioni a MSBT, DBM, Skada o a tutte le AddOns.",
 	"/ls, /litestats - Comandi d'aiuto per LiteStats.",
-	"/bags - Gestione sacche.",
 	"/xct - Gestione testo di combattimento.",
 	"/raidcd - Prova i recuperi d'incursione.",
 	"/enemycd - Prova i recuperi del nemico.",

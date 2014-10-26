@@ -247,7 +247,7 @@ L_STATS_WORLD_MAP = "Clicking opens world map."
 L_STATS_CURRENT_XP = "Current/Max XP"
 L_STATS_MEMORY_USAGE = "Blizzard UI Memory Usage:"
 L_STATS_GARBAGE_COLLECTED = "Garbage collected"
-L_STATS_CHANGE_SORTING = "[Guild] Right-Click to invite and whisper, Middle-Click to change the sorting, shift-middle-click to reverse order."
+L_STATS_CHANGE_SORTING = "[Guild] Right-Click to invite and whisper, Middle-Click to change the sorting, Shift-Middle-Click to reverse order."
 L_STATS_HIDDEN = "Hidden"
 L_STATS_VIEW_NOTES = "Hold alt key to view ranks, notes and officer notes."
 L_STATS_HR = "hr"
@@ -321,7 +321,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - Resets the statistics of gold and time spent.",
 	"/settings ADDON_NAME - Applies settings to msbt, dbm, skada, or all addons.",
 	"/ls, /litestats - Help for LiteStats.",
-	"/bags - Managing for bags.",
 	"/xct - Manage the combat text.",
 	"/raidcd - Raid cooldown test.",
 	"/enemycd - Enemy cooldown test.",

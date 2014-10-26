@@ -18,7 +18,7 @@ hooksecurefunc("QuestLogQuests_Update", function()
 end)
 
 ----------------------------------------------------------------------------------------
---	CTRL+Click to abandon a quest or ALT+Click to share a quest(by Suicidal Katt)
+--	Ctrl+Click to abandon a quest or Alt+Click to share a quest(by Suicidal Katt)
 ----------------------------------------------------------------------------------------
 hooksecurefunc("QuestMapLogTitleButton_OnClick", function(self, button)
 	if IsModifiedClick() then

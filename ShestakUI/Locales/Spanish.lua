@@ -251,7 +251,7 @@ L_STATS_WORLD_MAP = "Clickeando abres el Mapa del Mundo."
 L_STATS_CURRENT_XP = "Actual/Max EXP"
 L_STATS_MEMORY_USAGE = "Blizzard UI Memory Usage:" -- Needs review
 L_STATS_GARBAGE_COLLECTED = "Basura recogida"
-L_STATS_CHANGE_SORTING = "[Hermandad] Click-Derecho para cambiar la clasificacion, shift-click-derecho para invertir el orden."
+L_STATS_CHANGE_SORTING = "[Hermandad] Click-Derecho para cambiar la clasificacion, Shift-Click-Derecho para invertir el orden."
 L_STATS_HIDDEN = "Oculto"
 L_STATS_VIEW_NOTES = "Manten pulsada la tecla Alt para ver rangos, notas y notas de oficiales."
 L_STATS_HR = "hr"
@@ -325,7 +325,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - Reinicia las estadísticas de oro y tiempo empleado.",
 	"/settings ADDON_NAME - Aplica la configuración a msbt, dbm, skada, o a todos los addons (con 'all').",
 	"/ls, /litestats - Ayuda para LiteStats.",
-	"/bags - Gestiona las bolsas.",
 	"/xct - Gestiona el texto de combate.",
 	"/raidcd - Prueba de los enfriamientos de la banda.",
 	"/enemycd - Prueba de los enfriamientos del enemigo.",

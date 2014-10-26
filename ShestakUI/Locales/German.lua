@@ -253,7 +253,7 @@ L_STATS_MEMORY_USAGE = "Blizzard UI Speicher Auslastung:"
 L_STATS_GARBAGE_COLLECTED = "Abfall zusammengefasst"
 L_STATS_CHANGE_SORTING = "[Gilde] Rechts-Klick, zum Ändern der Sortierung und Umschalt-Rechts-Klick zum Umkehren der Reihenfolge."
 L_STATS_HIDDEN = "Versteckt"
-L_STATS_VIEW_NOTES = "Halte die ALT-Taste gedrückt, zum Anzeigen der Ränge, Notizen und Offizier Notizen."
+L_STATS_VIEW_NOTES = "Halte die Alt-Taste gedrückt, zum Anzeigen der Ränge, Notizen und Offizier Notizen."
 L_STATS_HR = "std"
 L_STATS_INF = "unend"
 L_STATS_ALREADY_EXCEPTIONS = "ist bereits in der Ausnahmeliste."
@@ -325,7 +325,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - Gold Statistik und gespielte Zeit zurücksetzen.",
 	"/settings ADDON_NAME - Einstellungen für msbt, dbm, skada, oder alle Addons anwenden.",
 	"/ls, /litestats - Hilfe für LiteStats.",
-	"/bags - Taschen verwalten.",
 	"/xct - Kampflogtext verwalten.",
 	"/raidcd - Abklingzeiten für Schlachtzüge testen.",
 	"/enemycd - Gegnerische Abklingzeiten testen.",

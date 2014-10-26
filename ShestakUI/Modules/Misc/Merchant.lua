@@ -1,7 +1,7 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	ALT+Click to buy a stack
+--	Alt+Click to buy a stack
 ----------------------------------------------------------------------------------------
 hooksecurefunc("MerchantItemButton_OnModifiedClick", function(self, button)
 	if MerchantFrame.selectedTab == 1 then

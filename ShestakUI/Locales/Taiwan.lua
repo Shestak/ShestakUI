@@ -251,7 +251,7 @@ L_STATS_WORLD_MAP = "點擊開啟世界地圖"
 L_STATS_CURRENT_XP = "目前/升級所需 經驗值"
 L_STATS_MEMORY_USAGE = "插件資源佔用:"
 L_STATS_GARBAGE_COLLECTED = "垃圾資源清除"
-L_STATS_CHANGE_SORTING = "[公會]右鍵更改排列方式,SHIFT+右鍵反轉排列方式"
+L_STATS_CHANGE_SORTING = "[公會]右鍵更改排列方式,Shift+右鍵反轉排列方式"
 L_STATS_HIDDEN = "隱藏"
 L_STATS_VIEW_NOTES = "按住Alt鍵檢視公會成員階級/註記/幹部註記"
 L_STATS_HR = "小時"
@@ -325,7 +325,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - 重置人物屬性狀態面板",
 	"/settings ADDON_NAME - 設置插件",
 	"/ls - 載入設置",
-	"/bags - 背包選項",
 	"/xct - 戰鬥信息選項",
 	"/raidcd - 團隊技能冷卻監視條選項",
 	"/enemycd - 敵對技能冷卻監視選項",

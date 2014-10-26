@@ -325,7 +325,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - Remet à zéro les statitisques or et temps passé en jeu.",
 	"/settings ADDON_NAME - Applique les paramètres pour msbt, dbm, skada, ou à tous les addons.",
 	"/ls, /litestats - Menu d'aide pour LiteStats.",
-	"/bags - Menu d'aide pour les sacs.",
 	"/xct - Menu d'aide pour le texte de combat.",
 	"/raidcd - Lance un test du temps de recharge Raid.",
 	"/enemycd - Lance un test du temps de recharge Ennemi.",

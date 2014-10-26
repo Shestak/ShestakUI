@@ -251,9 +251,9 @@ L_STATS_WORLD_MAP = "点击开启世界地图"
 L_STATS_CURRENT_XP = "目前/升级所需经验值"
 L_STATS_MEMORY_USAGE = "暴雪插件内存占用量:"
 L_STATS_GARBAGE_COLLECTED = "垃圾资源清除"
-L_STATS_CHANGE_SORTING = "[公会]右键更改排列方式,SHIFT+右键反转排列方式"
+L_STATS_CHANGE_SORTING = "[公会]右键更改排列方式,Shift+右键反转排列方式"
 L_STATS_HIDDEN = "隐藏"
-L_STATS_VIEW_NOTES = "按住ALT键检视公会成员会阶.注记.干部注记"
+L_STATS_VIEW_NOTES = "按住Alt键检视公会成员会阶.注记.干部注记"
 L_STATS_HR = "小时"
 L_STATS_INF = "无限"
 L_STATS_ALREADY_EXCEPTIONS = "物品已在例外名单列表"
@@ -291,7 +291,7 @@ L_STATS_RC_TALENT = "右键切换天赋"
 L_STATS_SERVER_GOLD = "帐号总现金"
 L_STATS_SESSION_GAIN = "此次上线时段所得/损失现金"
 L_STATS_SESSION_XP = "此次上线时段所得经验值"
-L_STATS_INSERTS_COORDS = "SHIFT+点击地名或座标可在对话视窗发布你所在座标"
+L_STATS_INSERTS_COORDS = "Shift+点击地名或座标可在对话视窗发布你所在座标"
 L_STATS_EQUIPMENT_CHANGER = "左键或中键开启装备管理员"
 L_STATS_SORTING_BY = "依...排列"
 L_STATS_TIPS = "提示:"
@@ -325,7 +325,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - 恢复人物属性面板设置到原始设定值.",
 	"/settings ADDON_NAME - 设置 插件名.",
 	"/ls - 载入设置.",
-	"/bags - 背包选项.",
 	"/xct - 战斗文字选项.",
 	"/raidcd - 团队技能冷却监视条.",
 	"/enemycd - 敌对技能冷却监视.",
