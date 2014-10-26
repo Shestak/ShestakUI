@@ -192,10 +192,10 @@ function CreateReagentContainer()
 	local Deposit = ReagentBankFrame.DespositButton
 
 	Reagent:SetWidth(((C.bag.button_size + C.bag.button_space) * C.bag.bank_columns) + 17)
-	Reagent:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+	Reagent:SetPoint("TOPLEFT", _G["StuffingFrameBank"], "TOPLEFT", 0, 0)
 	Reagent:SetTemplate("Transparent")
 	Reagent:SetFrameStrata(_G["StuffingFrameBank"]:GetFrameStrata())
-	Reagent:SetFrameLevel(_G["StuffingFrameBank"]:GetFrameLevel())
+	Reagent:SetFrameLevel(_G["StuffingFrameBank"]:GetFrameLevel() + 5)
 	Reagent:EnableMouse(true)
 	Reagent:SetMovable(true)
 	Reagent:SetScript("OnMouseDown", function(self, button)
@@ -214,8 +214,9 @@ function CreateReagentContainer()
 	SwitchBankButton:SetScript("OnClick", function()
 		Reagent:Hide()
 		_G["StuffingFrameBank"]:Show()
+		_G["StuffingFrameBank"]:SetAlpha(1)
 		BankFrame_ShowPanel(BANK_PANELS[1].name)
-		PlaySound("igMainMenuOpen")
+		PlaySound("igBackPackOpen")
 	end)
 
 	Deposit:SetParent(Reagent)
@@ -542,6 +543,7 @@ function Stuffing:CreateBagFrame(w)
 			else
 				_G["StuffingFrameReagent"]:Show()
 			end
+			_G["StuffingFrameBank"]:SetAlpha(0)
 		end)
 		f.b_reagent:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		f.b_reagent.text:SetPoint("CENTER")
@@ -700,6 +702,7 @@ function Stuffing:Layout(isBank)
 		bs = BAGS_BANK
 		cols = C.bag.bank_columns
 		f = self.bankFrame
+		f:SetAlpha(1)
 	else
 		bs = BAGS_BACKPACK
 		cols = C.bag.bag_columns
