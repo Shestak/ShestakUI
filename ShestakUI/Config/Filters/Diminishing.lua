@@ -124,6 +124,7 @@ end
 T.DiminishingIcons = {
 	["ctrlstun"] = GetIcon(408),
 	["ctrlroot"] = GetIcon(122),
+	["disorient"] = GetIcon(118),
 	["fear"] = GetIcon(8122),
 	["horror"] = GetIcon(64044),
 	["mind"] = GetIcon(605),
