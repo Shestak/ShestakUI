@@ -7,7 +7,6 @@ if C.unitframe.enable ~= true or C.raidframe.plugins_aura_watch ~= true then ret
 local _, ns = ...
 local oUF = ns.oUF
 
-local CleanseName = GetSpellInfo(4987)
 local bossDebuffPrio = 9999999
 local invalidPrio = -1
 local auraFilters = {
@@ -40,7 +39,6 @@ do
 			["Magic"] = false,
 			["Curse"] = true,
 			["Poison"] = true,
-			["Disease"] = false,
 		},
 		["MAGE"] = {
 			["Curse"] = true,
@@ -68,7 +66,7 @@ do
 	DispellFilter = dispellClasses[T.class] or {}
 end
 
-local function CheckSpec(self, event)
+local function CheckSpec()
 	if T.class == "DRUID" then
 		if T.CheckSpec(4) then
 			DispellFilter.Magic = true
@@ -267,6 +265,7 @@ local Enable = function(self)
 		return true
 	end
 	self:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
+	CheckSpec()
 end
 
 local Disable = function(self)
