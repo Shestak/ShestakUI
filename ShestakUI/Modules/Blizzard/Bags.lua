@@ -139,9 +139,9 @@ function Stuffing:SlotUpdate(b)
 		b.frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
 
-	if b.Cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
+	if b.cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
 		local start, duration, enable = GetContainerItemCooldown(b.bag, b.slot)
-		CooldownFrame_SetTimer(b.Cooldown, start, duration, enable)
+		CooldownFrame_SetTimer(b.cooldown, start, duration, enable)
 	end
 
 	if clink then
@@ -308,6 +308,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	end
 
 	local ret = {}
+
 	if slot > 3 then
 		ret.slot = slot
 		slot = slot - 4
@@ -334,10 +335,10 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	ret.frame:SetNormalTexture("")
 	ret.frame:SetCheckedTexture("")
 
-	local t = _G[ret.frame:GetName().."IconTexture"]
-	t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	t:SetPoint("TOPLEFT", ret.frame, 2, -2)
-	t:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
+	ret.icon = _G[ret.frame:GetName().."IconTexture"]
+	ret.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	ret.icon:SetPoint("TOPLEFT", ret.frame, 2, -2)
+	ret.icon:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
 
 	return ret
 end
@@ -387,15 +388,15 @@ function Stuffing:SlotNew(bag, slot)
 		ret.frame:SetTemplate("Default")
 		ret.frame:SetNormalTexture(nil)
 
-		local t = _G[ret.frame:GetName().."IconTexture"]
-		t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		t:SetPoint("TOPLEFT", ret.frame, 2, -2)
-		t:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
+		ret.icon = _G[ret.frame:GetName().."IconTexture"]
+		ret.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		ret.icon:SetPoint("TOPLEFT", ret.frame, 2, -2)
+		ret.icon:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
 
-		local c = _G[ret.frame:GetName().."Count"]
-		c:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
-		c:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
-		c:SetPoint("BOTTOMRIGHT", 1, 1)
+		ret.count = _G[ret.frame:GetName().."Count"]
+		ret.count:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+		ret.count:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
+		ret.count:SetPoint("BOTTOMRIGHT", 1, 1)
 
 		local Battlepay = _G[ret.frame:GetName()].BattlepayItemTexture
 		if Battlepay then
@@ -407,8 +408,8 @@ function Stuffing:SlotNew(bag, slot)
 	ret.slot = slot
 	ret.frame:SetID(slot)
 
-	ret.Cooldown = _G[ret.frame:GetName().."Cooldown"]
-	ret.Cooldown:Show()
+	ret.cooldown = _G[ret.frame:GetName().."Cooldown"]
+	ret.cooldown:Show()
 
 	self:SlotUpdate(ret)
 
