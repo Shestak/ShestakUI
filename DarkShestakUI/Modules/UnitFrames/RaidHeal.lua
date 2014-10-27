@@ -52,6 +52,11 @@ local function Shared(self, unit)
 	end
 
 	self.Health.frequentUpdates = true
+	self.Health.colorDisconnected = false
+	self.Health.colorReaction = false
+	self.Health.colorClass = false
+	self.Health:SetStatusBarColor(unpack(C.unitframe.uf_color))
+	
 	-- Health bar background
 	self.Health.bg = self.Health:CreateTexture(nil, "BORDER")
 	self.Health.bg:SetAllPoints(self.Health)
