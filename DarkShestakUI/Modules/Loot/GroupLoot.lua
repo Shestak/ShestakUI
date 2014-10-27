@@ -311,10 +311,10 @@ end)
 
 SlashCmdList.TESTROLL = function()
 	local f = GetFrame()
+	local items = {32837, 34196, 33820, 84004}
 	if f:IsShown() then
 		f:Hide()
 	else
-		local items = {32837, 34196, 33820, 84004}
 		local item = items[math.random(1, #items)]
 		local _, _, quality, _, _, _, _, _, _, texture = GetItemInfo(item)
 		local r, g, b = GetItemQualityColor(quality or 1)

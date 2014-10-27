@@ -12,10 +12,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		end
 	end
 
-	if addon == "Blizzard_PetJournal" then
-		--WoD MountJournalSearchBox:Kill()
-	end
-
 	if C.unitframe.enable and ((SavedOptions and SavedOptions.PerChar == false and (SavedOptions.RaidLayout == "HEAL" or SavedOptions.RaidLayout == "DPS")) or (SavedOptionsPerChar and SavedOptions.PerChar == true and (SavedOptionsPerChar.RaidLayout == "HEAL" or SavedOptionsPerChar.RaidLayout == "DPS"))) then
 		InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
 		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)

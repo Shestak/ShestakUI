@@ -25,7 +25,6 @@ L_GUI_MISC_VEHICLE_MOUSEOVER = "Fahrzeugfenster bei mouseover anzeigen"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/Gegenstand auto Taste"
 L_GUI_MISC_RAID_TOOLS = "Raid Hilfsmittel"
 L_GUI_MISC_PROFESSION_TABS = "Berufereiter an Handelsfähigkeiten und Handelsfenstern anzeigen"
-L_GUI_MISC_PROFESSION_DATABASE = "Berufsdatenbank an Berufsfenster"
 L_GUI_MISC_HIDE_BG_SPAM = "In Schlachtfeldern Bossemotes im Chat unterbinden"
 L_GUI_MISC_ITEM_LEVEL = "Item level im Karakterfenster auf Items anzeigen"
 L_GUI_MISC_GEM_COUNTER = "Anzeigen wieviele rote/blaue/gelbe Edelsteine man hat"
@@ -56,6 +55,7 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Benachrichtigung an den Raid Channel"
 L_GUI_ANNOUNCEMENTS_FEASTS = "Benachrichtigung wenn Festmahl/Kessel/Seelensteine/Reparatur Bots aufgestellt wurden"
 L_GUI_ANNOUNCEMENTS_PORTALS = "Benachrichtigung über Portale/Ritual der Beschwörung"
 L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Überprüfe auf schlechte Ausrüstung in Instanzen"
+L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Check Safari Hat" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatisierung"
@@ -63,7 +63,6 @@ L_GUI_AUTOMATION_RESURRECTION = "Automatisch im Schlachtfeld wiederbeleben"
 L_GUI_AUTOMATION_SCREENSHOT = "Speicher einen Screenshot wenn ein Achivment errungen wird"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto Popup für gelöste Artefakte"
 L_GUI_AUTOMATION_CHEFS_HAT = "Automatisch Kochmütze anlegen"
-L_GUI_AUTOMATION_SAFARI_HAT = "Auto equip Safari Hat" -- Needs review
 L_GUI_AUTOMATION_ACCEPT_INVITE = "Einladungen automatisch annehmen"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Duell automatisch ablehnen"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Quests automatisch annehmen"

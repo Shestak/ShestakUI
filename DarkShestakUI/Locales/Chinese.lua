@@ -79,10 +79,6 @@ L_MISC_ONECLICK_CANCEL = "Shift+右键,不弹出确认框体直接取消选择�
 L_MISC_UI_OUTDATED = "Dark ShestakUI 版本已过期，请至 www.wowinterface.com 下载最新版"
 L_MISC_HEADER_MARK = "鼠标悬停显示团队图标"
 L_MISC_BINDER_OPEN = "鼠标绑定"
-L_MISC_MOUNTS_GROUND = "地面坐骑"
-L_MISC_MOUNTS_FLYING = "飞行坐骑"
-L_MISC_MOUNTS_FLYINGGROUND = "飞行/地面坐骑"
-L_MISC_MOUNTS_SWIMMING = "水中坐骑"
 L_MISC_GROCERY_BUY = "购买"
 L_MISC_GROCERY_DESC = "自动购买杂货包"
 L_MISC_GROCERY_ERROR = "物品不夠."
@@ -129,21 +125,6 @@ L_MINIMAP_DPS_LAYOUT = "右键单击 - 输出模式团队框架"
 L_MINIMAP_BLIZZ_LAYOUT = "鼠标中键 - 默认暴雪模式团队框架"
 L_MINIMAP_THEME = "Color theme:" -- Need review
 
--- Addons list
-L_ALOAD_RL = "重新加载UI"
-L_ALOAD_DEP = "依赖关系: "
-L_ALOAD_OP_DEP = "可选依赖: "
-L_ALOAD_AUTHOR = "作者: "
-L_ALOAD_PROFILES = "配置文件"
-L_ALOAD_ENABLE_ALL = "全部启用"
-L_ALOAD_DISABLE_ALL = "全部禁用"
-L_ALOAD_PROFILE_NAME = "配置文件名称"
-L_ALOAD_SET_TO = "发送至.."
-L_ALOAD_ADD_TO = "添加至.."
-L_ALOAD_REMOVE_FROM = "移除自.."
-L_ALOAD_DELETE_PROFILE = "删除配置文件"
-L_ALOAD_CONFIRM_DELETE = "确定删除该配置文件？请按住shift再次点击确认删除。"
-
 -- Chat
 L_CHAT_WHISPER = "From"
 L_CHAT_BN_WHISPER = "From"
@@ -167,22 +148,7 @@ L_CHAT_GONE_OFFLINE = "|cffff0000下线了|r。"
 L_ERRORFRAME_L = "点击查看错误."
 
 -- Bags
-L_BAG_BANK = "银行"
-L_BAG_COSTS = "花费: %.2f 金"
-L_BAG_BUY_SLOTS = "输入 /bags purchase yes 以购买银行背包栏位"
-L_BAG_OPEN_BANK = "您需要先造访您的银行"
-L_BAG_SORT = "将背包或银行内的物品分类及排序"
-L_BAG_STACK = "将背包或银行内的不完整的物品堆叠重新堆叠"
-L_BAG_BUY_BANKS_SLOT = "购买银行背包栏位. (需要造访银行)"
-L_BAG_SORT_MENU = "分类及排序"
-L_BAG_SORT_SPECIAL = "分类及排序特殊物品"
-L_BAG_STACK_MENU = "堆叠"
-L_BAG_STACK_SPECIAL = "堆叠特殊物品"
 L_BAG_SHOW_BAGS = "显示背包"
-L_BAG_SORTING_BAGS = "分类及排序完成"
-L_BAG_NOTHING_SORT = "不需要分类"
-L_BAG_BAGS_BIDS = "使用背包: "
-L_BAG_STACK_END = "重新堆叠完成"
 L_BAG_RIGHT_CLICK_SEARCH = "点击右键以搜寻物品"
 
 -- Grab mail
@@ -307,9 +273,9 @@ L_STATS_WORLD_MAP = "点击开启世界地图"
 L_STATS_CURRENT_XP = "目前/升级所需经验值"
 L_STATS_MEMORY_USAGE = "暴雪插件内存占用量:"
 L_STATS_GARBAGE_COLLECTED = "垃圾资源清除"
-L_STATS_CHANGE_SORTING = "[公会]右键更改排列方式,SHIFT+右键反转排列方式"
+L_STATS_CHANGE_SORTING = "[公会]右键更改排列方式,Shift+右键反转排列方式"
 L_STATS_HIDDEN = "隐藏"
-L_STATS_VIEW_NOTES = "按住ALT键检视公会成员会阶.注记.干部注记"
+L_STATS_VIEW_NOTES = "按住Alt键检视公会成员会阶.注记.干部注记"
 L_STATS_HR = "小时"
 L_STATS_INF = "无限"
 L_STATS_ALREADY_EXCEPTIONS = "物品已在例外名单列表"
@@ -347,7 +313,7 @@ L_STATS_RC_TALENT = "右键切换天赋"
 L_STATS_SERVER_GOLD = "帐号总现金"
 L_STATS_SESSION_GAIN = "此次上线时段所得/损失现金"
 L_STATS_SESSION_XP = "此次上线时段所得经验值"
-L_STATS_INSERTS_COORDS = "SHIFT+点击地名或座标可在对话视窗发布你所在座标"
+L_STATS_INSERTS_COORDS = "Shift+点击地名或座标可在对话视窗发布你所在座标"
 L_STATS_EQUIPMENT_CHANGER = "左键或中键开启装备管理员"
 L_STATS_SORTING_BY = "依...排列"
 L_STATS_TIPS = "提示:"
@@ -381,7 +347,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - 恢复人物属性面板设置到原始设定值.",
 	"/settings ADDON_NAME - 设置 插件名.",
 	"/ls - 载入设置.",
-	"/bags - 背包选项.",
 	"/xct - 战斗文字选项.",
 	"/raidcd - 团队技能冷却监视条.",
 	"/enemycd - 敌对技能冷却监视.",

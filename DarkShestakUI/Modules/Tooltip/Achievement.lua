@@ -25,7 +25,7 @@ local function SetHyperlink(tooltip, refString)
 	local numCriteria = GetAchievementNumCriteria(achievementID)
 	local _, _, GUID = string.find(refString, ":%d+:(.-):")
 
-	if GUID == string.sub(UnitGUID("player"), 3) then
+	if GUID == UnitGUID("player") then
 		tooltip:Show()
 		return
 	end
@@ -43,7 +43,9 @@ local function SetHyperlink(tooltip, refString)
 		end
 
 		if earnedBy then
-			tooltip:AddLine(format(ACHIEVEMENT_EARNED_BY, earnedBy))
+			if earnedBy ~= "" then
+				tooltip:AddLine(format(ACHIEVEMENT_EARNED_BY, earnedBy))
+			end
 			if not wasEarnedByMe then
 				tooltip:AddLine(format(ACHIEVEMENT_NOT_COMPLETED_BY, T.name))
 			elseif T.name ~= earnedBy then

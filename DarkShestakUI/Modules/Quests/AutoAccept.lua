@@ -12,7 +12,7 @@ local atBank, atMail, atMerchant
 function Monomyth:Register(event, func)
 	self:RegisterEvent(event)
 	self[event] = function(...)
-		if not IsShiftKeyDown() then
+		if not (IsShiftKeyDown() or IsAltKeyDown()) then
 			func(...)
 		end
 	end

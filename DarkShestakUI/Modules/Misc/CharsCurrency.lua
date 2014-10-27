@@ -174,6 +174,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		local now = time()
 
 		realmDB = SavedCurrency[T.realm][faction]
+		if not realmDB then return end
 		charDB = realmDB[T.name]
 
 		charDB.class = select(2, UnitClass("player"))

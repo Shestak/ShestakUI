@@ -1,4 +1,4 @@
-local T, C, L, _ = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true or C.unitframe.plugins_diminishing ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -31,9 +31,9 @@ function UpdateDRTracker(self)
 	end
 end
 
-function DisplayDrActives(self)
+function DisplayDrActives(self, test)
 	local _, instanceType = IsInInstance()
-	if instanceType ~= "arena" then return end
+	if instanceType ~= "arena" and not test then return end
 
 	if not self.actives then return end
 	if not self.auras then self.auras = {} end
@@ -221,9 +221,10 @@ local function tdr()
 			self.actives[cat].icon = icon[cat]
 			dr = dr * 2
 		end
-		DisplayDrActives(self)
+		DisplayDrActives(self, true)
 	end
 end
 
-SLASH_MOVINGDRTRACKER1 = "/tdr"
-SlashCmdList.MOVINGDRTRACKER = tdr
+SlashCmdList.DIMINISHINGCD = tdr
+SLASH_DIMINISHINGCD1 = "/tdr"
+SLASH_DIMINISHINGCD2 = "/евк"

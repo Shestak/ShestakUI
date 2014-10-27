@@ -79,10 +79,6 @@ L_MISC_ONECLICK_CANCEL = "Shift-Right-Click um den ausgewählten Gegenstand ohne
 L_MISC_UI_OUTDATED = "Deine Version von Dark ShestakUI ist veraltet. Du kannst die aktuelle Version von www.wowinterface.com laden"
 L_MISC_HEADER_MARK = "Mausdrüber Raid Icon"
 L_MISC_BINDER_OPEN = "Maus gebunden"
-L_MISC_MOUNTS_GROUND = "Boden"
-L_MISC_MOUNTS_FLYING = "Fliegen"
-L_MISC_MOUNTS_FLYINGGROUND = "Fliegen&Boden"
-L_MISC_MOUNTS_SWIMMING = "Schwimmen"
 L_MISC_GROCERY_BUY = "Kaufen"
 L_MISC_GROCERY_DESC = "Kaufe Lebensmittelaschen automatisch"
 L_MISC_GROCERY_ERROR = "Nicht genügend Gegenstände vorhanden."
@@ -129,21 +125,6 @@ L_MINIMAP_DPS_LAYOUT = "Rechts-Klick - DPS Layout"
 L_MINIMAP_BLIZZ_LAYOUT = "Mittel-Klick - Blizzard Layout"
 L_MINIMAP_THEME = "Color theme:" -- Need review
 
--- Addons list
-L_ALOAD_RL = "Interface Neuladen"
-L_ALOAD_DEP = "Abhängigkeiten: "
-L_ALOAD_OP_DEP = "Optionale Abhängigkeit: "
-L_ALOAD_AUTHOR = "Autor: "
-L_ALOAD_PROFILES = "Profile"
-L_ALOAD_ENABLE_ALL = "Alle aktivieren"
-L_ALOAD_DISABLE_ALL = "Alle deaktivieren"
-L_ALOAD_PROFILE_NAME = "Profil Name"
-L_ALOAD_SET_TO = "Setzen auf.."
-L_ALOAD_ADD_TO = "Hinzufügen zu.."
-L_ALOAD_REMOVE_FROM = "Entfernen von.."
-L_ALOAD_DELETE_PROFILE = "Profil entfernen.."
-L_ALOAD_CONFIRM_DELETE = "Möchtest du dieses Profil wirklich entfernen? Wenn du dir sicher bist, halte Shift gedrückt und klicke erneut."
-
 -- Chat
 L_CHAT_WHISPER = "Von"
 L_CHAT_BN_WHISPER = "Von"
@@ -167,22 +148,7 @@ L_CHAT_GONE_OFFLINE = "ist jetzt |cffff0000offline|r."
 L_ERRORFRAME_L = "Klick um Fehler anzuzeigen."
 
 -- Bags
-L_BAG_BANK = "Bank"
-L_BAG_COSTS = "Kosten: %.2f Gold"
-L_BAG_BUY_SLOTS = "Kaufe neuen Platz mit /bags purchase yes"
-L_BAG_OPEN_BANK = "Du musst erst das Bankfach öffnen."
-L_BAG_SORT = "Sortiert deine Taschen oder die Bank, falls geöffnet."
-L_BAG_STACK = "Stapelt Items neu in deinen Taschen und der Bank, falls geöffnet."
-L_BAG_BUY_BANKS_SLOT = "Kaufe Bankplatz (Bank muss geöffnet sein)."
-L_BAG_SORT_MENU = "Sortieren"
-L_BAG_SORT_SPECIAL = "Sortieren Spezialtasche"
-L_BAG_STACK_MENU = "Stapeln"
-L_BAG_STACK_SPECIAL = "Stapeln Spezialtasche"
 L_BAG_SHOW_BAGS = "Zeige Taschen"
-L_BAG_SORTING_BAGS = "Sortieren abgeschlossen."
-L_BAG_NOTHING_SORT = "Nichts zu sortieren."
-L_BAG_BAGS_BIDS = "Benutze Taschen: "
-L_BAG_STACK_END = "Neu stapeln abgeschlossen."
 L_BAG_RIGHT_CLICK_SEARCH = "Rechtsklick um zu suchen"
 
 -- Grab mail
@@ -309,7 +275,7 @@ L_STATS_MEMORY_USAGE = "Blizzard UI Speicher Auslastung:"
 L_STATS_GARBAGE_COLLECTED = "Abfall zusammengefasst"
 L_STATS_CHANGE_SORTING = "[Gilde] Rechts-Klick, zum Ändern der Sortierung und Umschalt-Rechts-Klick zum Umkehren der Reihenfolge."
 L_STATS_HIDDEN = "Versteckt"
-L_STATS_VIEW_NOTES = "Halte die ALT-Taste gedrückt, zum Anzeigen der Ränge, Notizen und Offizier Notizen."
+L_STATS_VIEW_NOTES = "Halte die Alt-Taste gedrückt, zum Anzeigen der Ränge, Notizen und Offizier Notizen."
 L_STATS_HR = "std"
 L_STATS_INF = "unend"
 L_STATS_ALREADY_EXCEPTIONS = "ist bereits in der Ausnahmeliste."
@@ -381,7 +347,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - Gold Statistik und gespielte Zeit zurücksetzen.",
 	"/settings ADDON_NAME - Einstellungen für msbt, dbm, skada, oder alle Addons anwenden.",
 	"/ls, /litestats - Hilfe für LiteStats.",
-	"/bags - Taschen verwalten.",
 	"/xct - Kampflogtext verwalten.",
 	"/raidcd - Abklingzeiten für Schlachtzüge testen.",
 	"/enemycd - Gegnerische Abklingzeiten testen.",

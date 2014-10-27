@@ -39,7 +39,7 @@ C["togglemainmenu"] = {
 		end
 	},
 	{
-		["text"] = L_ALOAD_RL,
+		["text"] = RELOADUI,
 		["function"] = function()
 			ReloadUI()
 		end
@@ -48,6 +48,36 @@ C["togglemainmenu"] = {
 		["text"] = "Move UI",
 		["function"] = function()
 			SlashCmdList.MOVING()
+		end
+	},
+	{
+		["text"] = "Test UI",
+		["function"] = function()
+			if C.raidcooldown.enable == true then
+				SlashCmdList.RaidCD()
+			end
+			if C.enemycooldown.enable == true then
+				SlashCmdList.EnemyCD()
+			end
+			if C.pulsecooldown.enable == true then
+				SlashCmdList.PulseCD()
+			end
+			if C.unitframe.enable == true then
+				SlashCmdList.TEST_UF()
+			end
+			if C.announcements.pull_countdown == true then
+				SlashCmdList.PULLCOUNTDOWN()
+			end
+			if C.loot.rolllootframe == true then
+				SlashCmdList.TESTROLL()
+			end
+			if C.threat.enable == true then
+				SlashCmdList.alThreat()
+			end
+			SlashCmdList.DBMTEST()
+			SlashCmdList.TEST_EXTRABUTTON()
+			SlashCmdList.TEST_ACHIEVEMENT()
+			--SlashCmdList.GRIDONSCREEN()
 		end
 	},
 }

@@ -181,7 +181,6 @@ local function LoadSkin()
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.UpdateButton:SkinButton()
 
 	BattleTagInviteFrame:SetTemplate("Transparent")
-	--WoD T.SkinEditBox(BattleTagInviteFrameScrollFrame)
 	for i = 1, BattleTagInviteFrame:GetNumChildren() do
 		local child = select(i, BattleTagInviteFrame:GetChildren())
 		if child:GetObjectType() == "Button" then

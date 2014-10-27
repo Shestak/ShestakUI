@@ -42,19 +42,18 @@ C["general"] = {
 --	Miscellaneous options
 ----------------------------------------------------------------------------------------
 C["misc"] = {
-	["shift_marking"] = true,					-- Marks target when you push "shift"
+	["shift_marking"] = true,					-- Marks target when you push Shift
 	["invite_keyword"] = "invite",				-- Short keyword for invite(for enable - in game type /ainv)
 	["afk_spin_camera"] = false,				-- Spin camera while afk
 	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
 	["quest_auto_button"] = false,				-- Quest auto button
 	["raid_tools"] = true,						-- Raid tools
 	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
-	["profession_database"] = false,			-- Professions Database on Professions frame
 	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
 	["item_level"] = true,						-- Item level on character slot buttons
 	["gem_counter"] = false,					-- Displays how many red/blue/yellow gems you have
 	["already_known"] = true,					-- Colorizes recipes/mounts/pets that is already known
-	["disenchanting"] = false,					-- Milling, Prospecting and Disenchanting by 'alt' + click
+	["disenchanting"] = false,					-- Milling, Prospecting and Disenchanting by Alt + click
 	["sum_buyouts"] = false,					-- Sum up all current auctions
 	["click_cast"] = false,						-- Simple click2cast spell binder
 	["click_cast_filter"] = false,				-- Ignore Player and Target frames for click2cast
@@ -83,6 +82,7 @@ C["announcements"] = {
 	["feasts"] = false,							-- Announce Feasts/Souls/Repair Bots cast
 	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
 	["bad_gear"] = false,						-- Check bad gear in instance
+	["safari_hat"] = true,						-- Check Safari Hat
 }
 
 ----------------------------------------------------------------------------------------
@@ -93,12 +93,11 @@ C["automation"] = {
 	["screenshot"] = false,						-- Take screenshot when player get achievement
 	["solve_artifact"] = true,					-- Auto popup for solve artifact
 	["chefs_hat"] = true,						-- Auto equip Chef's Hat
-	["safari_hat"] = true,						-- Auto equip Safari Hat
 	["accept_invite"] = false,					-- Auto accept invite
 	["decline_duel"] = true,					-- Auto decline duel
-	["accept_quest"] = false,					-- Auto accept quests(if hold shift or alt, auto accept is disable)
+	["accept_quest"] = false,					-- Auto accept quests (disabled if hold Shift or Alt)
 	["auto_collapse"] = false,					-- Auto collapse WatchFrame in instance
-	["skip_cinematic"] = false,					-- Auto skip cinematics/movies
+	["skip_cinematic"] = false,					-- Auto skip cinematics/movies (disabled if hold Ctrl)
 	["auto_role"] = false,						-- Auto set your role
 	["cancel_bad_buffs"] = false,				-- Auto cancel various buffs
 	["tab_binder"] = false,						-- Auto change Tab key to only target enemy players
@@ -249,7 +248,7 @@ C["threat"] = {
 ----------------------------------------------------------------------------------------
 C["tooltip"] = {
 	["enable"] = true,							-- Enable tooltip
-	["shift_modifer"] = false,					-- Show tooltip when "shift" is pushed
+	["shift_modifer"] = false,					-- Show tooltip when Shift is pushed
 	["cursor"] = false,							-- Tooltip above cursor
 	["item_icon"] = false,						-- Item icon in tooltip
 	["health_value"] = false,					-- Numeral health value
@@ -465,7 +464,7 @@ C["unitframe_class_bar"] = {
 	["combo"] = true,							-- Rogue/Druid Combo bar
 	["shadow"] = true,							-- Shadow Orbs bar
 	["chi"] = true,								-- Chi bar
-	["vengeance"] = true,						-- Vengeance bar
+	["vengeance"] = true,						-- Vengeance bar (for Tanks)
 	["eclipse"] = true,							-- Eclipse bar
 	["holy"] = true,							-- Holy Power bar
 	["shard"] = true,							-- Shard/Burning bar

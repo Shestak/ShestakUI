@@ -75,10 +75,6 @@ L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item witho
 L_MISC_UI_OUTDATED = "Your version of Dark ShestakUI is out of date. You can download the latest version from www.wowinterface.com"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons"
 L_MISC_BINDER_OPEN = "Mouse Bindings"
-L_MISC_MOUNTS_GROUND = "Ground"
-L_MISC_MOUNTS_FLYING = "Flying"
-L_MISC_MOUNTS_FLYINGGROUND = "Flying & Ground"
-L_MISC_MOUNTS_SWIMMING = "Swimming"
 L_MISC_GROCERY_BUY = "Buy"
 L_MISC_GROCERY_DESC = "Automatically buy grocery bags"
 L_MISC_GROCERY_ERROR = "Not enough items."
@@ -125,21 +121,6 @@ L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout"
 L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout"
 L_MINIMAP_THEME = "Color theme:"
 
--- Addons list
-L_ALOAD_RL = "Reload UI"
-L_ALOAD_DEP = "Dependencies: "
-L_ALOAD_OP_DEP = "Optional Dependencies: "
-L_ALOAD_AUTHOR = "Author: "
-L_ALOAD_PROFILES = "Profiles"
-L_ALOAD_ENABLE_ALL = "Enable All"
-L_ALOAD_DISABLE_ALL = "Disable All"
-L_ALOAD_PROFILE_NAME = "Profile Name"
-L_ALOAD_SET_TO = "Set To.."
-L_ALOAD_ADD_TO = "Add To.."
-L_ALOAD_REMOVE_FROM = "Remove From.."
-L_ALOAD_DELETE_PROFILE = "Delete Profile.."
-L_ALOAD_CONFIRM_DELETE = "Are you sure you want to delete this profile? Hold down shift and click again if you are."
-
 -- Chat
 L_CHAT_WHISPER = "From"
 L_CHAT_BN_WHISPER = "From"
@@ -163,22 +144,7 @@ L_CHAT_GONE_OFFLINE = "has gone |cffff0000offline|r."
 L_ERRORFRAME_L = "Click to view errors."
 
 -- Bags
-L_BAG_BANK = "Bank"
-L_BAG_COSTS = "Cost: %.2f gold"
-L_BAG_BUY_SLOTS = "Buy new slot with /bags purchase yes"
-L_BAG_OPEN_BANK = "You need to open your bank first."
-L_BAG_SORT = "Sort your bags or your bank, if open."
-L_BAG_STACK = "Fill up partial stacks in your bags or bank, if open."
-L_BAG_BUY_BANKS_SLOT = "Buy bank slot (need to have bank open)."
-L_BAG_SORT_MENU = "Sort"
-L_BAG_SORT_SPECIAL = "Sort Special"
-L_BAG_STACK_MENU = "Stack"
-L_BAG_STACK_SPECIAL = "Stack Special"
 L_BAG_SHOW_BAGS = "Show Bags"
-L_BAG_SORTING_BAGS = "Sorting finished."
-L_BAG_NOTHING_SORT = "Nothing to sort."
-L_BAG_BAGS_BIDS = "Using bags: "
-L_BAG_STACK_END = "Restacking finished."
 L_BAG_RIGHT_CLICK_SEARCH = "Right-click to search"
 
 -- Grab mail
@@ -303,7 +269,7 @@ L_STATS_WORLD_MAP = "Clicking opens world map."
 L_STATS_CURRENT_XP = "Current/Max XP"
 L_STATS_MEMORY_USAGE = "Blizzard UI Memory Usage:"
 L_STATS_GARBAGE_COLLECTED = "Garbage collected"
-L_STATS_CHANGE_SORTING = "[Guild] Right-Click to invite and whisper, Middle-Click to change the sorting, shift-middle-click to reverse order."
+L_STATS_CHANGE_SORTING = "[Guild] Right-Click to invite and whisper, Middle-Click to change the sorting, Shift-Middle-Click to reverse order."
 L_STATS_HIDDEN = "Hidden"
 L_STATS_VIEW_NOTES = "Hold alt key to view ranks, notes and officer notes."
 L_STATS_HR = "hr"
@@ -377,7 +343,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - Resets the statistics of gold and time spent.",
 	"/settings ADDON_NAME - Applies settings to msbt, dbm, skada, or all addons.",
 	"/ls, /litestats - Help for LiteStats.",
-	"/bags - Managing for bags.",
 	"/xct - Manage the combat text.",
 	"/raidcd - Raid cooldown test.",
 	"/enemycd - Enemy cooldown test.",

@@ -139,9 +139,9 @@ function Stuffing:SlotUpdate(b)
 		b.frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
 
-	if b.Cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
+	if b.cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
 		local start, duration, enable = GetContainerItemCooldown(b.bag, b.slot)
-		CooldownFrame_SetTimer(b.Cooldown, start, duration, enable)
+		CooldownFrame_SetTimer(b.cooldown, start, duration, enable)
 	end
 
 	if clink then
@@ -192,10 +192,10 @@ function CreateReagentContainer()
 	local Deposit = ReagentBankFrame.DespositButton
 
 	Reagent:SetWidth(((C.bag.button_size + C.bag.button_space) * C.bag.bank_columns) + 17)
-	Reagent:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+	Reagent:SetPoint("TOPLEFT", _G["StuffingFrameBank"], "TOPLEFT", 0, 0)
 	Reagent:SetTemplate("Transparent")
 	Reagent:SetFrameStrata(_G["StuffingFrameBank"]:GetFrameStrata())
-	Reagent:SetFrameLevel(_G["StuffingFrameBank"]:GetFrameLevel())
+	Reagent:SetFrameLevel(_G["StuffingFrameBank"]:GetFrameLevel() + 5)
 	Reagent:EnableMouse(true)
 	Reagent:SetMovable(true)
 	Reagent:SetScript("OnMouseDown", function(self, button)
@@ -214,8 +214,9 @@ function CreateReagentContainer()
 	SwitchBankButton:SetScript("OnClick", function()
 		Reagent:Hide()
 		_G["StuffingFrameBank"]:Show()
+		_G["StuffingFrameBank"]:SetAlpha(1)
 		BankFrame_ShowPanel(BANK_PANELS[1].name)
-		PlaySound("igMainMenuOpen")
+		PlaySound("igBackPackOpen")
 	end)
 
 	Deposit:SetParent(Reagent)
@@ -292,6 +293,7 @@ function CreateReagentContainer()
 	end
 	Reagent:SetHeight(((C.bag.button_size + C.bag.button_space) * (NumRows + 1) + 40) - C.bag.button_space)
 
+	MoneyFrame_Update(ReagentBankFrame.UnlockInfo.CostMoneyFrame, GetReagentBankCost())
 	ReagentBankFrameUnlockInfo:StripTextures()
 	ReagentBankFrameUnlockInfo:SetAllPoints(Reagent)
 	ReagentBankFrameUnlockInfo:SetTemplate("Overlay")
@@ -306,6 +308,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	end
 
 	local ret = {}
+
 	if slot > 3 then
 		ret.slot = slot
 		slot = slot - 4
@@ -332,10 +335,10 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	ret.frame:SetNormalTexture("")
 	ret.frame:SetCheckedTexture("")
 
-	local t = _G[ret.frame:GetName().."IconTexture"]
-	t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	t:SetPoint("TOPLEFT", ret.frame, 2, -2)
-	t:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
+	ret.icon = _G[ret.frame:GetName().."IconTexture"]
+	ret.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	ret.icon:SetPoint("TOPLEFT", ret.frame, 2, -2)
+	ret.icon:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
 
 	return ret
 end
@@ -385,15 +388,15 @@ function Stuffing:SlotNew(bag, slot)
 		ret.frame:SetTemplate("Default")
 		ret.frame:SetNormalTexture(nil)
 
-		local t = _G[ret.frame:GetName().."IconTexture"]
-		t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		t:SetPoint("TOPLEFT", ret.frame, 2, -2)
-		t:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
+		ret.icon = _G[ret.frame:GetName().."IconTexture"]
+		ret.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		ret.icon:SetPoint("TOPLEFT", ret.frame, 2, -2)
+		ret.icon:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
 
-		local c = _G[ret.frame:GetName().."Count"]
-		c:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
-		c:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
-		c:SetPoint("BOTTOMRIGHT", 1, 1)
+		ret.count = _G[ret.frame:GetName().."Count"]
+		ret.count:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+		ret.count:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
+		ret.count:SetPoint("BOTTOMRIGHT", 1, 1)
 
 		local Battlepay = _G[ret.frame:GetName()].BattlepayItemTexture
 		if Battlepay then
@@ -405,8 +408,8 @@ function Stuffing:SlotNew(bag, slot)
 	ret.slot = slot
 	ret.frame:SetID(slot)
 
-	ret.Cooldown = _G[ret.frame:GetName().."Cooldown"]
-	ret.Cooldown:Show()
+	ret.cooldown = _G[ret.frame:GetName().."Cooldown"]
+	ret.cooldown:Show()
 
 	self:SlotUpdate(ret)
 
@@ -541,6 +544,7 @@ function Stuffing:CreateBagFrame(w)
 			else
 				_G["StuffingFrameReagent"]:Show()
 			end
+			_G["StuffingFrameBank"]:SetAlpha(0)
 		end)
 		f.b_reagent:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		f.b_reagent.text:SetPoint("CENTER")
@@ -699,6 +703,7 @@ function Stuffing:Layout(isBank)
 		bs = BAGS_BANK
 		cols = C.bag.bank_columns
 		f = self.bankFrame
+		f:SetAlpha(1)
 	else
 		bs = BAGS_BACKPACK
 		cols = C.bag.bag_columns
@@ -1016,7 +1021,7 @@ function Stuffing.Menu(self, level)
 	if level ~= 1 then return end
 
 	wipe(info)
-	info.text = L_BAG_SORT_MENU
+	info.text = BAG_FILTER_CLEANUP
 	info.notCheckable = 1
 	info.func = function()
 		SortBags()

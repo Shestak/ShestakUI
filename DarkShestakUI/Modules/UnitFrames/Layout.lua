@@ -1340,7 +1340,7 @@ SlashCmdList.TEST_UF = function(msg)
 				end
 
 				if C.unitframe.plugins_diminishing == true then
-					SlashCmdList.MOVINGDRTRACKER()
+					SlashCmdList.DIMINISHINGCD()
 				end
 			end
 		end

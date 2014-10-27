@@ -65,7 +65,7 @@ L_TOOLTIP_ACH_COMPLETE = "你的狀態: 完成 "
 L_TOOLTIP_ACH_INCOMPLETE = "你的狀態: 未完成"
 L_TOOLTIP_SPELL_ID = "法術ID:"
 L_TOOLTIP_ITEM_ID = "物品ID:"
-L_TOOLTIP_WHO_TARGET = "以其為目標的"
+L_TOOLTIP_WHO_TARGET = "關注"
 L_TOOLTIP_ITEM_COUNT = "物品數量:"
 L_TOOLTIP_INSPECT_OPEN = "檢查框體已打開"
 
@@ -79,10 +79,6 @@ L_MISC_ONECLICK_CANCEL = "Shift+右鍵,不彈出確認窗口直接取消選擇�
 L_MISC_UI_OUTDATED = "Dark ShestakUI 版本已過期，請至 www.wowinterface.com 下載最新版"
 L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"
-L_MISC_MOUNTS_GROUND = "地面坐騎"
-L_MISC_MOUNTS_FLYING = "飛行坐騎"
-L_MISC_MOUNTS_FLYINGGROUND = "飛行/地面坐騎"
-L_MISC_MOUNTS_SWIMMING = "水中坐騎"
 L_MISC_GROCERY_BUY = "購買"
 L_MISC_GROCERY_DESC = "雜貨商自動購買"
 L_MISC_GROCERY_ERROR = "沒有足夠的物品."
@@ -129,21 +125,6 @@ L_MINIMAP_DPS_LAYOUT = "右鍵 - DPS 佈局"
 L_MINIMAP_BLIZZ_LAYOUT = "中鍵 - 默認 佈局"
 L_MINIMAP_THEME = "Color theme:" -- Need review
 
--- Addons list
-L_ALOAD_RL = "重新加載UI"
-L_ALOAD_DEP = "依賴關係: "
-L_ALOAD_OP_DEP = "可選依賴: "
-L_ALOAD_AUTHOR = "作者: "
-L_ALOAD_PROFILES = "設定檔"
-L_ALOAD_ENABLE_ALL = "全部啟用"
-L_ALOAD_DISABLE_ALL = "全部禁用"
-L_ALOAD_PROFILE_NAME = "配置文件名稱"
-L_ALOAD_SET_TO = "發送至.."
-L_ALOAD_ADD_TO = "添加至.."
-L_ALOAD_REMOVE_FROM = "移除自.."
-L_ALOAD_DELETE_PROFILE = "刪除設定檔.."
-L_ALOAD_CONFIRM_DELETE = "確定刪除該設定檔？請按住shift再次點擊確認刪除。"
-
 -- Chat
 L_CHAT_WHISPER = "From"
 L_CHAT_BN_WHISPER = "From"
@@ -167,22 +148,7 @@ L_CHAT_GONE_OFFLINE = "|cffff0000下線了|r."
 L_ERRORFRAME_L = "點擊查看錯誤"
 
 -- Bags
-L_BAG_BANK = "銀行"
-L_BAG_COSTS = "花費: %.2f 金"
-L_BAG_BUY_SLOTS = "輸入 /bags purchase yes 以購買銀行背包欄位"
-L_BAG_OPEN_BANK = "您需要先造訪您的銀行"
-L_BAG_SORT = "將背包或銀行內的物品分類及排序"
-L_BAG_STACK = "將背包或銀行內的不完整的物品堆疊重新堆疊"
-L_BAG_BUY_BANKS_SLOT = "購買銀行背包欄位. (需要造訪銀行)"
-L_BAG_SORT_MENU = "分類及排序"
-L_BAG_SORT_SPECIAL = "分類及排序特殊物品"
-L_BAG_STACK_MENU = "堆疊"
-L_BAG_STACK_SPECIAL = "堆疊特殊物品"
 L_BAG_SHOW_BAGS = "顯示背包"
-L_BAG_SORTING_BAGS = "分類及排序完成"
-L_BAG_NOTHING_SORT = "不需要分類"
-L_BAG_BAGS_BIDS = "使用背包: "
-L_BAG_STACK_END = "重新堆疊完成"
 L_BAG_RIGHT_CLICK_SEARCH = "點擊右鍵以搜尋物品"
 
 -- Grab mail
@@ -308,7 +274,7 @@ L_STATS_WORLD_MAP = "點擊開啟世界地圖"
 L_STATS_CURRENT_XP = "目前/升級所需 經驗值"
 L_STATS_MEMORY_USAGE = "插件資源佔用:"
 L_STATS_GARBAGE_COLLECTED = "垃圾資源清除"
-L_STATS_CHANGE_SORTING = "[公會]右鍵更改排列方式,SHIFT+右鍵反轉排列方式"
+L_STATS_CHANGE_SORTING = "[公會]右鍵更改排列方式,Shift+右鍵反轉排列方式"
 L_STATS_HIDDEN = "隱藏"
 L_STATS_VIEW_NOTES = "按住Alt鍵檢視公會成員階級/註記/幹部註記"
 L_STATS_HR = "小時"
@@ -382,7 +348,6 @@ L_SLASHCMD_HELP = {
 	"/resetstats - 重置人物屬性狀態面板",
 	"/settings ADDON_NAME - 設置插件",
 	"/ls - 載入設置",
-	"/bags - 背包選項",
 	"/xct - 戰鬥信息選項",
 	"/raidcd - 團隊技能冷卻監視條選項",
 	"/enemycd - 敵對技能冷卻監視選項",

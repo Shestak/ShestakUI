@@ -13,8 +13,9 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[6] = {35715,35717},	-- Shattrath
 	[7] = {53140,53142},	-- Dalaran
 	[8] = {88344,88346},	-- Tol Barad
-	[9] = {132627,132626},	-- Vale of Eternal Blossoms
-	[10] = {176242,176244},	-- Warspear
+	[9] = {120145,120146},	-- Ancient Dalaran
+	[10] = {132627,132626},	-- Vale of Eternal Blossoms
+	[11] = {176242,176244},	-- Warspear
 } or { -- Alliance
 	[1] = {3561,10059},		-- Stormwind
 	[2] = {3562,11416},		-- Ironforge
@@ -24,8 +25,9 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[6] = {33690,33691},	-- Shattrath
 	[7] = {53140,53142},	-- Dalaran
 	[8] = {88342,88345},	-- Tol Barad
-	[9] = {132621,132620},	-- Vale of Eternal Blossoms
-	[10] = {176248,176246},	-- Stormshield
+	[9] = {120145,120146},	-- Ancient Dalaran
+	[10] = {132621,132620},	-- Vale of Eternal Blossoms
+	[11] = {176248,176246},	-- Stormshield
 }
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)
@@ -39,40 +41,36 @@ end)
 frame:Hide()
 tinsert(UISpecialFrames, "TeleportMenu")
 
-local once
+for i, spell in pairs(spells) do
+	local teleport = GetSpellInfo(spell[1])
+
+	local b = CreateFrame("Button", nil, frame, "SecureActionButtonTemplate")
+	b:CreatePanel("Transparent", C.minimap.size, 20, "BOTTOMLEFT", frame, "BOTTOMLEFT", 0, ((i - 1) * 21))
+	b:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	b:SetFrameStrata("HIGH")
+
+	local l = b:CreateFontString("TeleportMenuName"..i, "OVERLAY")
+	l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+	l:SetText(string.sub(teleport, string.find(teleport, ":") + 1))
+	b:SetFontString(l)
+
+	b:RegisterForClicks("LeftButtonDown", "RightButtonDown")
+	b:SetAttribute("type1", "spell")
+	b:SetAttribute("spell1", teleport)
+	b:SetAttribute("type2", "spell")
+	b:SetAttribute("spell2", GetSpellInfo(spell[2]))
+end
+
 local learnSpell = CreateFrame("Frame")
 learnSpell:RegisterEvent("PLAYER_LOGIN")
 learnSpell:RegisterEvent("LEARNED_SPELL_IN_TAB")
 learnSpell:SetScript("OnEvent", function()
-	if IsSpellKnown(120145) and not once then
-		tinsert(spells, {120145,120146}) -- Ancient Dalaran
-		once = true
-	end
-
 	for i, spell in pairs(spells) do
-		local teleport = GetSpellInfo(spell[1])
-
-	
-		local b = CreateFrame("Button", nil, frame, "SecureActionButtonTemplate")
-		b:CreatePanel("Overlay", C.minimap.size, 20, "BOTTOMLEFT", frame, "BOTTOMLEFT", 0, ((i - 1) * 21))
-		b:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-		b:SetFrameStrata("HIGH")
-		b:HookScript("OnEnter", T.SetModifiedBackdrop)
-		b:HookScript("OnLeave", T.SetOriginalBackdrop)
-
-		local l = b:CreateFontString(nil, "OVERLAY")
-		l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-		l:SetText(string.sub(teleport, string.find(teleport, ":") + 1))
-		if not GetSpellInfo(teleport) then
-			l:SetTextColor(0.4, 0.4, 0.4)
+		if not IsSpellKnown(spell[1]) then
+			_G["TeleportMenuName"..i]:SetTextColor(0.4, 0.4, 0.4)
+		else
+			_G["TeleportMenuName"..i]:SetTextColor(1, 1, 1)
 		end
-		b:SetFontString(l)
-
-		b:RegisterForClicks("LeftButtonDown", "RightButtonDown")
-		b:SetAttribute("type1", "spell")
-		b:SetAttribute("spell1", teleport)
-		b:SetAttribute("type2", "spell")
-		b:SetAttribute("spell2", GetSpellInfo(spell[2]))
 	end
 end)
 

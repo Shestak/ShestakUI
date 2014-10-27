@@ -742,8 +742,6 @@ C["filger_spells"] = {
 			{spellID = 5116, filter = "CD"},
 			-- Counter Shot
 			{spellID = 147362, filter = "CD"},
-			-- Binding Shot
-			{spellID = 117526, filter = "CD"},
 			-- Kill Command
 			{spellID = 34026, filter = "CD"},
 			-- Explosive Shot
@@ -754,24 +752,24 @@ C["filger_spells"] = {
 			{spellID = 53351, filter = "CD"},
 			-- Glaive Toss
 			{spellID = 117050, filter = "CD"},
+			-- Barrage
+			{spellID = 120360, filter = "CD"},
 			-- Disengage
 			{spellID = 781, filter = "CD"},
 			-- Dire Beast
 			{spellID = 120679, filter = "CD"},
 			-- Fervor
 			{spellID = 82726, filter = "CD"},
-			-- Barrage
-			{spellID = 120360, filter = "CD"},
 			-- Misdirection
 			{spellID = 34477, filter = "CD"},
 			-- Feign Death
 			{spellID = 5384, filter = "CD"},
-			-- Snake Trap
-			{spellID = 34600, filter = "CD"},
 			-- Explosive Trap
 			{spellID = 13813, filter = "CD"},
 			-- Ice Trap
 			{spellID = 13809, filter = "CD"},
+			-- Binding Shot
+			{spellID = 117526, filter = "CD"},
 			-- Master's Call
 			{spellID = 53271, filter = "CD"},
 			-- Powershot
@@ -782,10 +780,10 @@ C["filger_spells"] = {
 			{spellID = 19577, filter = "CD"},
 			-- Bestial Wrath
 			{spellID = 19574, filter = "CD"},
-			-- Lynx Rush
-			{spellID = 120697, filter = "CD"},
 			-- A Murder of Crows
 			{spellID = 131894, filter = "CD"},
+			-- Lynx Rush
+			{spellID = 120697, filter = "CD"},
 			-- Exhilaration
 			{spellID = 109304, filter = "CD"},
 			-- Rapid Fire
@@ -1016,8 +1014,6 @@ C["filger_spells"] = {
 			{spellID = 1953, filter = "CD"},
 			-- Blazing Speed
 			{spellID = 108843, filter = "CD"},
-			-- Dragon's Breath
-			{spellID = 31661, filter = "CD"},
 			-- Deep Freeze
 			{spellID = 44572, filter = "CD"},
 			-- Frost Nova

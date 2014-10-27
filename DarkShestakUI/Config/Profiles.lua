@@ -67,7 +67,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["media"].border_color = {0.1, 0.1, 0.1, 1}
 	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
-	C["misc"].profession_database = true
 	C["misc"].item_level = true
 	C["misc"].gem_counter = true
 	C["misc"].already_known = true

@@ -8,7 +8,7 @@ local _, ns = ...
 local oUF = ns.oUF
 
 local CanDispel = {
-	DRUID = {Magic = false, Curse = true, Poison = true, Disease = false},
+	DRUID = {Magic = false, Curse = true, Poison = true},
 	MAGE = {Curse = true},
 	MONK = {Magic = false, Poison = true, Disease = true},
 	PALADIN = {Magic = false, Poison = true, Disease = true},
@@ -16,7 +16,6 @@ local CanDispel = {
 	SHAMAN = {Magic = false, Curse = true}
 }
 
-local CleanseName = GetSpellInfo(4987)
 local dispellist = CanDispel[T.class] or {}
 local origColors = {}
 local origBorderColors = {}
@@ -35,7 +34,7 @@ local function GetDebuffType(unit, filter)
 	end
 end
 
-local function CheckSpec(self, event)
+local function CheckSpec()
 	if T.class == "DRUID" then
 		if T.CheckSpec(4) then
 			dispellist.Magic = true
@@ -121,7 +120,7 @@ local function Enable(object)
 	-- Make sure aura scanning is active for this object
 	object:RegisterEvent("UNIT_AURA", Update)
 	object:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
-	CheckSpec(object)
+	CheckSpec()
 
 	if object.DebuffHighlightBackdrop or object.DebuffHighlightBackdropBorder then
 		local r, g, b, a = object:GetBackdropColor()

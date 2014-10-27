@@ -130,7 +130,6 @@ local function LoadSkin()
 		"AudioOptionsVoicePanelChatModeDropDown",
 		"AudioOptionsVoicePanelOutputDeviceDropDown",
 		"Graphics_SSAODropDown",
-		"InterfaceOptionsLanguagesPanelAudioLocaleDropDown",
 		"Graphics_RefractionDropDown",
 		"RaidGraphics_TextureResolutionDropDown",
 		"RaidGraphics_FilteringDropDown",
@@ -207,6 +206,9 @@ local function LoadSkin()
 	GraphicsButton:SetPoint("BOTTOMLEFT", "Graphics_", "TOPLEFT", 0, 3)
 	GraphicsButton:SkinButton(true)
 	RaidButton:SkinButton(true)
+
+	T.SkinDropDownBox(InterfaceOptionsLanguagesPanelAudioLocaleDropDown, 250)
+	T.SkinDropDownBox(InterfaceOptionsLanguagesPanelLocaleDropDown, 250)
 end
 
 tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)
