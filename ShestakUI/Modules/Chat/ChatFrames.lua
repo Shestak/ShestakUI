@@ -242,6 +242,7 @@ local function SetupChatPosAndFont(self)
 				FCF_DockFrame(chat)
 				ChatFrame2Tab:EnableMouse(false)
 				ChatFrame2Tab:SetText("")
+				ChatFrame2Tab.SetText = T.dummy
 				ChatFrame2Tab:SetScale(0.001)
 			end
 		end
