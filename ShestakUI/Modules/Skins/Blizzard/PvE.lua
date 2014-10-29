@@ -362,7 +362,7 @@ local function LoadSkin()
 	LFGListFrame.SearchPanel.RefreshButton:SetSize(24, 24)
 	LFGListFrame.SearchPanel.RefreshButton.Icon:SetPoint("CENTER")
 
-	-- T.SkinEditBox(LFGListFrame.SearchPanel.SearchBox)
+	T.SkinEditBox(LFGListFrame.SearchPanel.SearchBox)
 	T.SkinScrollBar(LFGListFrame.SearchPanel.ScrollFrame.scrollBar)
 
 	T.SkinCloseButton(PVEFrameCloseButton)
@@ -383,7 +383,6 @@ local function LoadSkin()
 
 	LFGListFrame.CategorySelection.CategoryButtons[1]:SetNormalFontObject(GameFontNormal)
 	hooksecurefunc("LFGListCategorySelection_AddButton", function(self, index)
-		--T.SkinEditBox(LFGListFrame.SearchPanel.SearchBox)
 		local button = self.CategoryButtons[index]
 		if button and not button.styled then
 			button.Cover:Hide()
