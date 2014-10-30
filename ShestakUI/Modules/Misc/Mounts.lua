@@ -4,7 +4,7 @@
 ----------------------------------------------------------------------------------------
 function Mountz(groundmount, flyingmount, underwatermount)
 	local flyablex, swimablex, vjswim, InVj, nofly
-	local num = GetNumCompanions("MOUNT")
+	local num = C_MountJournal.GetNumMounts()
 	if not num or IsMounted() then
 		Dismount()
 		return
