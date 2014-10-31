@@ -48,12 +48,12 @@ local function UpdateButtonsText(frame)
 			text:SetText("")
 		elseif item then
 			local oldilevel = text:GetText()
-			local _, _, heirloom, ilevel = GetItemInfo(item)
+			local _, _, _, ilevel = GetItemInfo(item)
 			local upgrade = item:match("item:%d+:%d+:%d+:%d+:%d+:%d+:%-?%d+:%-?%d+:%d+:(%d+)")
 
 			if ilevel then
 				if ilevel ~= oldilevel then
-					if heirloom == 7 then
+					if ilevel == 1 then
 						text:SetText("")
 					else
 						if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
