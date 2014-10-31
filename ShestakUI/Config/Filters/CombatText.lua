@@ -141,6 +141,7 @@ elseif T.class == "MONK" then
 		T.aoespam[124081] = 3		-- Zen Sphere
 		T.aoespam[124101] = 3		-- Zen Sphere: Detonate
 		T.aoespam[116670] = 0		-- Uplift
+		T.merge[159621] = 126890	-- Eminence
 		-- Damaging spells
 		T.aoespam[117952] = 3		-- Crackling Jade Lightning
 		T.aoespam[117418] = 3		-- Fists of Fury
@@ -206,6 +207,7 @@ elseif T.class == "PRIEST" then
 		T.aoespam[120692] = 3		-- Halo
 		T.aoespam[121148] = 3		-- Cascade
 		T.aoespam[110745] = 3		-- Divine Star
+		T.merge[94472] = 81751		-- Atonement
 		-- Damaging spells
 		T.aoespam[47666] = 3		-- Penance
 		T.aoespam[132157] = 0		-- Holy Nova
@@ -219,7 +221,6 @@ elseif T.class == "PRIEST" then
 		T.aoespam[120696] = 3		-- Halo
 		T.aoespam[127628] = 3		-- Cascade
 		T.aoespam[122128] = 3		-- Divine Star
-		T.merge[94472] = 81751		-- Atonement
 		T.merge[158831] = 2944		-- Devouring Plague
 	end
 	if C.combattext.healing then
