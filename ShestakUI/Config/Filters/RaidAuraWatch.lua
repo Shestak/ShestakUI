@@ -360,7 +360,7 @@ T.RaidDebuffs = {
 	-- Shaman
 	[SpellName(51514)] = 3,		-- Hex
 	[SpellName(118905)] = 3,	-- Static Charge
-	[SpellName(63685)] = 2,		-- Freeze
+	[SpellName(63685)] = 2,		-- Frozen Power
 	-- Warlock
 	[SpellName(118699)] = 3,	-- Fear
 	[SpellName(6789)] = 3,		-- Mortal Coil

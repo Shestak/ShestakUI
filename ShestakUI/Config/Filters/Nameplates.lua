@@ -65,7 +65,7 @@ T.DebuffWhiteList = {
 	[SpellName(3600)] = true,	-- Earthbind
 	[SpellName(8056)] = true,	-- Frost Shock
 	[SpellName(8050)] = true,	-- Flame Shock
-	[SpellName(63685)] = true,	-- Freeze
+	[SpellName(63685)] = true,	-- Frozen Power
 	-- Warlock
 	[SpellName(710)] = true,	-- Banish
 	[SpellName(6789)] = true,	-- Mortal Coil

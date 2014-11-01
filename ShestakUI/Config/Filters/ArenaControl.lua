@@ -85,7 +85,7 @@ T.ArenaControl = {
 	[GetSpellInfo(116706)] = 3,	-- Disable
 	[GetSpellInfo(87194)] = 3,	-- Glyph of Mind Blast
 	[GetSpellInfo(114404)] = 3,	-- Void Tendril's Grasp
-	[GetSpellInfo(63685)] = 3,	-- Freeze (Frozen Power)
+	[GetSpellInfo(63685)] = 3,	-- Frozen Power
 	[GetSpellInfo(64695)] = 3,	-- Earthgrab
 	[GetSpellInfo(107566)] = 3,	-- Staggering Shout
 

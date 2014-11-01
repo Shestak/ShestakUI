@@ -44,7 +44,7 @@ T.DiminishingSpells = {
 	[33395] = {"ctrlroot"},		-- Freeze (Water Elemental)
 	[116706] = {"ctrlroot"},	-- Disable
 	[114404] = {"ctrlroot"},	-- Void Tendril's Grasp
-	[63685] = {"ctrlroot"},		-- Freeze
+	[63685] = {"ctrlroot"},		-- Frozen Power
 	[107566] = {"ctrlroot"},	-- Staggering Shout
 
 	-- Disorients
@@ -54,9 +54,13 @@ T.DiminishingSpells = {
 	[28272] = {"disorient"},	-- Polymorph (Pig)
 	[28271] = {"disorient"},	-- Polymorph (Turtle)
 	[61305] = {"disorient"},	-- Polymorph (Black Cat)
-	[61025] = {"disorient"},	-- Polymorph (Serpent)
 	[61721] = {"disorient"},	-- Polymorph (Rabbit)
 	[61780] = {"disorient"},	-- Polymorph (Turkey)
+	[161355] = {"disorient"},	-- Polymorph (Penguin)
+	[161354] = {"disorient"},	-- Polymorph (Monkey)
+	[126819] = {"disorient"},	-- Polymorph (Porcupine)
+	[161353] = {"disorient"},	-- Polymorph (Polar Bear Cub)
+	[161372] = {"disorient"},	-- Polymorph (Peacock)
 	[82691] = {"disorient"},	-- Ring of Frost
 	[115078] = {"disorient"},	-- Paralysis
 	[20066] = {"disorient"},	-- Repentance
@@ -106,11 +110,13 @@ T.DiminishingSpells = {
 	[31935] = {"silence"},		-- Avenger's Shield
 	[15487] = {"silence"},		-- Silence
 	[1330] = {"silence"},		-- Garrote
-	[25046] = {"silence"},		-- Arcane Torrent (Energy version)
-	[28730] = {"silence"},		-- Arcane Torrent (Mana version)
-	[50613] = {"silence"},		-- Arcane Torrent (Runic power version)
-	[69179] = {"silence"},		-- Arcane Torrent (Rage version)
-	[80483] = {"silence"},		-- Arcane Torrent (Focus version)
+	[25046] = {"silence"},		-- Arcane Torrent (Energy)
+	[28730] = {"silence"},		-- Arcane Torrent (Mana)
+	[50613] = {"silence"},		-- Arcane Torrent (Runic Power)
+	[69179] = {"silence"},		-- Arcane Torrent (Rage)
+	[80483] = {"silence"},		-- Arcane Torrent (Focus)
+	[129597] = {"silence"},		-- Arcane Torrent (Chi)
+	[155145] = {"silence"},		-- Arcane Torrent (Holy Power)
 
 	-- Misc
 	[605] = {"mind"},			-- Dominate Mind
