@@ -32,6 +32,7 @@ if C.announcements.feasts == true then
 		[54711] = true,		-- Scrapbot
 		[67826] = true,		-- Jeeves
 		[126459] = true,	-- Blingtron 4000
+		[161414] = true,	-- Blingtron 5000
 	}
 end
 
@@ -46,6 +47,7 @@ if C.announcements.portals == true then
 		[33691] = true,		-- Shattrath
 		[88345] = true,		-- Tol Barad
 		[132620] = true,	-- Vale of Eternal Blossoms
+		[176246] = true,	-- Stormshield
 		-- Horde
 		[11417] = true,		-- Orgrimmar
 		[11420] = true,		-- Thunder Bluff
@@ -55,8 +57,10 @@ if C.announcements.portals == true then
 		[35717] = true,		-- Shattrath
 		[88346] = true,		-- Tol Barad
 		[132626] = true,	-- Vale of Eternal Blossoms
+		[176244] = true,	-- Warspear
 		-- Alliance/Horde
 		[53142] = true,		-- Dalaran
+		[120146] = true,	-- Ancient Dalaran
 	}
 end
 
