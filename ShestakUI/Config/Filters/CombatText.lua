@@ -221,6 +221,8 @@ elseif T.class == "PRIEST" then
 		T.aoespam[120696] = 3		-- Halo
 		T.aoespam[127628] = 3		-- Cascade
 		T.aoespam[122128] = 3		-- Divine Star
+		T.aoespam[129197] = 3		-- Insanity
+		T.aoespam[148859] = 3		-- Shadowy Apparition
 		T.merge[158831] = 2944		-- Devouring Plague
 	end
 	if C.combattext.healing then
