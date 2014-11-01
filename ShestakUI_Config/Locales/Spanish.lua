@@ -18,7 +18,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Mensaje de bienvenida en el chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Actualizar automaticamente la opción de Tolerancia al Lag Personalizada de Blizzard a tu latencia"
 
 -- Miscellaneous options
-L_GUI_MISC_MARKING = "Marca el objetivo cuando pulsas 'shift'"
+L_GUI_MISC_MARKING = "Marca el objetivo cuando pulsas Shift"
 L_GUI_MISC_INVKEYWORD = "Acrónimo para invitaciones (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encima"
@@ -188,7 +188,7 @@ L_GUI_THREAT_HIDE_SOLO = "Mostrar solo en grupo/raid"
 -- Tooltip options
 L_GUI_TOOLTIP = "Descripciones"
 L_GUI_TOOLTIP_ENABLE = "Activar descripciones"
-L_GUI_TOOLTIP_SHIFT = "Mostrar descripción mientras 'shift' está pulsado"
+L_GUI_TOOLTIP_SHIFT = "Mostrar descripción mientras Shift está pulsado"
 L_GUI_TOOLTIP_CURSOR = "Descripción bajo el cursos"
 L_GUI_TOOLTIP_ICON = "Icono del objeto en la descripción"
 L_GUI_TOOLTIP_HEALTH = "Valor de la vida en números"

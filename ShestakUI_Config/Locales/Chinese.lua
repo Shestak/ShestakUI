@@ -18,7 +18,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "显示欢迎信息"
 L_GUI_GENERAL_LAG_TOLERANCE = "自动更新自定延迟容许值"
 
 -- Miscellaneous options
-L_GUI_MISC_MARKING = "点击shift显示团队标记图示菜单"
+L_GUI_MISC_MARKING = "点击Shift显示团队标记图示菜单"
 L_GUI_MISC_INVKEYWORD = "自动邀请关键字(/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "afk时旋转镜头"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框体解锁"

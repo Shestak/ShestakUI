@@ -15,7 +15,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tolerance option to your latency"
 
 -- Miscellaneous options
-L_GUI_MISC_MARKING = "Marks target when you push 'shift'"
+L_GUI_MISC_MARKING = "Marks target when you push Shift"
 L_GUI_MISC_INVKEYWORD = "Short keyword for invite (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Spin camera while afk"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Vehicle frame on mouseover"
@@ -185,7 +185,7 @@ L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid"
 -- Tooltip options
 L_GUI_TOOLTIP = "Tooltip"
 L_GUI_TOOLTIP_ENABLE = "Enable tooltip"
-L_GUI_TOOLTIP_SHIFT = "Show tooltip when 'shift' is pushed"
+L_GUI_TOOLTIP_SHIFT = "Show tooltip when Shift is pushed"
 L_GUI_TOOLTIP_CURSOR = "Tooltip above cursor"
 L_GUI_TOOLTIP_ICON = "Item icon in tooltip"
 L_GUI_TOOLTIP_HEALTH = "Numeral health value"
