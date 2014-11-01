@@ -146,6 +146,7 @@ local function LoadSkin()
 				button:ClearAllPoints()
 				button:SetPoint("TOPLEFT", frame.RewardButtons[1], "BOTTOMLEFT", 0, -3)
 				button.SetPoint = T.dummy
+				button:Hide()
 			end
 			button.restyled = true
 		end
