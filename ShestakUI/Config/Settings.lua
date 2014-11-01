@@ -315,7 +315,7 @@ C["map"] = {
 	["bg_map_stylization"] = true,				-- BG map stylization
 	["map_boss_count"] = false,					-- Show boss count in World Map
 	["explore_map"] = false,					-- Tracking Explorer and Lore Master achievements in World Map
-	["fog_of_war"] = false,						-- Fog of war on World Map
+	["fog_of_war"] = false,						-- Remove fog of war on World Map
 }
 
 ----------------------------------------------------------------------------------------
@@ -326,7 +326,7 @@ C["loot"] = {
 	["rolllootframe"] = true,					-- Enable group roll frame
 	["icon_size"] = 22,							-- Icon size
 	["width"] = 221,							-- Loot window width
-	["auto_greed"] = true,						-- Push "greed" or "disenchant" button when an item roll
+	["auto_greed"] = true,						-- Push "greed" or "disenchant" button when an item roll at max level
 	["auto_confirm_de"] = true,					-- Auto confirm disenchant
 }
 
@@ -344,11 +344,11 @@ C["nameplate"] = {
 	["show_castbar_name"] = false,				-- Show castbar name
 	["enhance_threat"] = true,					-- If tank good aggro = green, bad = red
 	["class_icons"] = false,					-- Icons by class in PvP
-	["name_abbrev"] = false,					-- Display the abbreviated names
+	["name_abbrev"] = false,					-- Display abbreviated names (show debuffs must be turned off)
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
 	["near_color"] = {1, 1, 0},					-- Near threat color
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
-	["track_auras"] = false,					-- Show debuffs
+	["track_auras"] = false,					-- Show debuffs (from the list)
 	["auras_size"] = 22,						-- Debuffs size
 	["healer_icon"] = false,					-- Show icon above enemy healers nameplate in battlegrounds
 }
@@ -369,9 +369,9 @@ C["actionbar"] = {
 	["toggle_mode"] = true,						-- Enable toggle mode
 	["hide_highlight"] = false,					-- Hide proc highlight
 	-- Bottom bars
-	["bottombars"] = 2,							-- Number of action bars on the bottom
+	["bottombars"] = 2,							-- Number of action bars on the bottom (1, 2 or 3)
 	-- Right bars
-	["rightbars"] = 3,							-- Number of action bars on right
+	["rightbars"] = 3,							-- Number of action bars on right (0, 1, 2 or 3)
 	["rightbars_mouseover"] = true,				-- Right bars on mouseover
 	-- Pet bar
 	["petbar_mouseover"] = false,				-- Pet bar on mouseover(only for horizontal pet bar)

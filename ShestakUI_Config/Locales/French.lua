@@ -245,7 +245,7 @@ L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
 L_GUI_MAP_BG_STYLIZATION = "Style d'arrière plan de la carte"
 L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
 L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
-L_GUI_MAP_FOG_OF_WAR = "Fog of war on World Map" -- Needs review
+L_GUI_MAP_FOG_OF_WAR = "Remove fog of war on World Map" -- Needs review
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Activer la fenêtre de butin"
