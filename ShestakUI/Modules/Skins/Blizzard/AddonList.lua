@@ -23,11 +23,12 @@ local function LoadSkin()
 
 	for _, Buttons in pairs(Buttons) do
 		Buttons:SkinButton()
-		Buttons:SetHeight(Buttons:GetHeight() - 3)
 	end
 
 	AddonList:SetTemplate("Transparent")
+	AddonList:SetHeight(AddonList:GetHeight() + 3)
 	AddonListInset:SetTemplate("Overlay")
+	AddonListInset:SetPoint("BOTTOMRIGHT", -6, 29)
 
 	for i = 1, MAX_ADDONS_DISPLAYED do
 		T.SkinCheckBox(_G["AddonListEntry" .. i .. "Enabled"])
