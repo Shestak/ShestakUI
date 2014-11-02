@@ -35,6 +35,9 @@ L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review
 L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!" -- Needs review
 L_ANNOUNCE_FP_USE = "%s used a %s." -- Needs review
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = INTERRUPTED
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "No tienes talentos"
 L_TOOLTIP_LOADING = "Cargando..."

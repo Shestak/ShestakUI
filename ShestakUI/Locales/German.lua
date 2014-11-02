@@ -35,6 +35,9 @@ L_ANNOUNCE_FP_CAST = "%s zaubert ein %s."
 L_ANNOUNCE_FP_CLICK = "%s zaubert ein %s. Klick!"
 L_ANNOUNCE_FP_USE = "%s nahm %s."
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = INTERRUPTED
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
 L_TOOLTIP_LOADING = "Lade..."

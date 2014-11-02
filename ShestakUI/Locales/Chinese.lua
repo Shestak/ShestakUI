@@ -35,6 +35,9 @@ L_ANNOUNCE_FP_CAST = "%s 开启了 %s"
 L_ANNOUNCE_FP_CLICK = "%s 正在开启 %s... 请点击！"
 L_ANNOUNCE_FP_USE = "%s 使用了一个 %s."
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = "已打断"
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "没有天赋"
 L_TOOLTIP_LOADING = "读取中..."

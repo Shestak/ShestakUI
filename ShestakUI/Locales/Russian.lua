@@ -35,6 +35,9 @@ L_ANNOUNCE_FP_CAST = "%s создает %s."
 L_ANNOUNCE_FP_CLICK = "%s создает %s. Кликаем!"
 L_ANNOUNCE_FP_USE = "%s использует %s."
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = INTERRUPTED
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Нет талантов"
 L_TOOLTIP_LOADING = "Загрузка..."

@@ -35,6 +35,9 @@ L_ANNOUNCE_FP_CAST = "%s sta lanciando %s."
 L_ANNOUNCE_FP_CLICK = "%s sta lanciando %s. Cliccate!"
 L_ANNOUNCE_FP_USE = "%s ha utilizzato un/una %s."
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = INTERRUPTED
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Nessun talento"
 L_TOOLTIP_LOADING = "Caricamento..."
