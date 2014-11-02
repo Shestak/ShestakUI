@@ -295,7 +295,7 @@ if memory.enabled then
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(modules.Memory.tip_anchor, modules.Memory.tip_frame, modules.Memory.tip_x, modules.Memory.tip_y)
 			GameTooltip:ClearLines()
-			local lat, r = select(3, GetNetStats()), 750
+			local lat, r = select(4, GetNetStats()), 750
 			GameTooltip:AddDoubleLine(
 				format("|cffffffff%s|r %s, %s%s|r %s", floor(GetFramerate()), FPS_ABBR, gradient(1 - lat / r), lat,MILLISECONDS_ABBR),
 				format("%s: |cffffffff%s", ADDONS, formatmem(self.text.total)), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g,tthead.b)
