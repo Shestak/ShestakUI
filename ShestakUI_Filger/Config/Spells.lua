@@ -163,28 +163,32 @@ C["filger_spells"] = {
 			{spellID = 47481, filter = "CD"},
 			-- Remorseless Winter
 			{spellID = 108200, filter = "CD"},
+			-- Dark Simulacrum
+			{spellID = 77606, filter = "CD"},
 			-- Soul Reaper
 			{spellID = 130736, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Plague Leech
 			{spellID = 123693, filter = "CD"},
-			-- Rune Tap
-			{spellID = 48982, filter = "CD"},
 			-- Death and Decay
 			{spellID = 43265, filter = "CD"},
 			-- Death's Advance
 			{spellID = 96268, filter = "CD"},
+			-- Rune Tap
+			{spellID = 48982, filter = "CD"},
 			-- Anti-Magic Shell
 			{spellID = 48707, filter = "CD"},
 			-- Vampiric Blood
 			{spellID = 55233, filter = "CD"},
-			-- Outbreak
-			{spellID = 77575, filter = "CD"},
 			-- Pillar of Frost
 			{spellID = 51271, filter = "CD"},
+			-- Outbreak
+			{spellID = 77575, filter = "CD"},
 			-- Gorefiend's Grasp
 			{spellID = 108199, filter = "CD"},
+			-- Raise Dead
+			{spellID = 46584, filter = "CD"},
 			-- Dancing Rune Weapon
 			{spellID = 49028, filter = "CD"},
 			-- Unholy Blight
@@ -195,8 +199,6 @@ C["filger_spells"] = {
 			{spellID = 108201, filter = "CD"},
 			-- Death Pact
 			{spellID = 48743, filter = "CD"},
-			-- Raise Dead
-			{spellID = 46584, filter = "CD"},
 			-- Anti-Magic Zone
 			{spellID = 51052, filter = "CD"},
 			-- Icebound Fortitude
