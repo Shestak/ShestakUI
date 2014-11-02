@@ -163,6 +163,8 @@ C["filger_spells"] = {
 			{spellID = 47481, filter = "CD"},
 			-- Remorseless Winter
 			{spellID = 108200, filter = "CD"},
+			-- Soul Reaper
+			{spellID = 130736, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Plague Leech

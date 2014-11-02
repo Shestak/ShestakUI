@@ -331,7 +331,7 @@ function Filger:OnEvent(event, unit)
 						start, duration = GetInventoryItemCooldown("player", data.slotID)
 					end
 				end
-				if name and (T.class ~= "DEATHKNIGHT" and (duration or 0) > 1.5) or (duration or 0) > 10 then
+				if name and (duration or 0) > 1.5 then
 					found = true
 				end
 			elseif data.filter == "ICD" and (not data.spec or data.spec == ptt) then
@@ -360,6 +360,9 @@ function Filger:OnEvent(event, unit)
 				if not self.actives[i] then
 					self.actives[i] = {data = data, name = name, icon = icon, count = count, start = start, duration = duration, spid = spid}
 					needUpdate = true
+					if T.class == "DEATHKNIGHT" and self.actives[i].duration == 10 then
+						self.actives[i] = nil
+					end
 				else
 					if data.filter ~= "ICD" and (self.actives[i].count ~= count or self.actives[i].start ~= start or self.actives[i].duration ~= duration) then
 						self.actives[i].count = count
