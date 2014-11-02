@@ -57,6 +57,10 @@ C["filger_spells"] = {
 			{spellID = 53365, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Transformation
 			{spellID = 63560, unitID = "pet", caster = "player", filter = "BUFF"},
+			-- Shadow Infusion
+			{spellID = 91342, unitID = "pet", caster = "player", filter = "BUFF", count = 5},
+			-- Blood Charge
+			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF", count = 10},
 
 			-- Trinkets
 			-- General
@@ -2166,7 +2170,7 @@ C["filger_spells"] = {
 			-- Maelstorm Weapon
 			{spellID = 53817, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightning Shield
-			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF", spec = 1, count = 5},
+			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF", spec = 1, count = 6},
 			-- Shamanistic Rage
 			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental Mastery
