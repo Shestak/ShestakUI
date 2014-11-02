@@ -99,7 +99,7 @@ T.DiminishingSpells = {
 	[64695] = {"rndroot"},		-- Earthgrab
 
 	-- Random Disorients
-	[99] = {"rnddis"},			-- Disorienting Roar
+	[99] = {"rnddis"},			-- Incapacitating Roar
 	[31661] = {"rnddis"},		-- Dragon's Breath
 	[88625] = {"rnddis"},		-- Holy Word: Chastise
 

@@ -548,7 +548,7 @@ C["filger_spells"] = {
 			{spellID = 770, filter = "CD"},
 			-- Tiger's Fury
 			{spellID = 5217, filter = "CD"},
-			-- Disorienting Roar
+			-- Incapacitating Roar
 			{spellID = 99, filter = "CD"},
 			-- Mass Entanglement
 			{spellID = 102359, filter = "CD"},
@@ -3060,7 +3060,7 @@ C["filger_spells"] = {
 			{spellID = 22570, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 163505, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Disorienting Roar
+			-- Incapacitating Roar
 			{spellID = 99, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
 			{spellID = 78675, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -3363,7 +3363,7 @@ C["filger_spells"] = {
 			{spellID = 22570, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 163505, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
-			-- Disorienting Roar
+			-- Incapacitating Roar
 			{spellID = 99, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
 			{spellID = 78675, unitID = "target", caster = "all", filter = "DEBUFF"},

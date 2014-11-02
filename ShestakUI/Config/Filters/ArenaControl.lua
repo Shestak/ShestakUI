@@ -17,7 +17,7 @@ T.ArenaControl = {
 	[GetSpellInfo(33786)] = 4,	-- Cyclone
 	[GetSpellInfo(5211)] = 4,	-- Mighty Bash
 	[GetSpellInfo(22570)] = 4,	-- Maim
-	[GetSpellInfo(99)] = 4,		-- Disorienting Roar
+	[GetSpellInfo(99)] = 4,		-- Incapacitating Roar
 	-- Hunter
 	[GetSpellInfo(3355)] = 4,	-- Freezing Trap
 	[GetSpellInfo(19386)] = 4,	-- Wyvern Sting
