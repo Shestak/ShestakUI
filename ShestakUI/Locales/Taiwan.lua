@@ -36,7 +36,7 @@ L_ANNOUNCE_FP_CLICK = "%s 正在開啟 %s... 請點擊！"
 L_ANNOUNCE_FP_USE = "%s 使用了 %s."
 
 -- Announce your interrupts
-L_ANNOUNCE_INTERRUPTED = INTERRUPTED -- Needs review
+L_ANNOUNCE_INTERRUPTED = "已打斷 "
 
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "沒有天賦"
