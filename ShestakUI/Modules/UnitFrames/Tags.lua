@@ -112,19 +112,6 @@ oUF.Tags["IncHeal"] = function(unit)
 end
 oUF.TagEvents["IncHeal"] = "UNIT_HEAL_PREDICTION"
 
-if T.class == "DRUID" then
-	for i = 1, 3 do
-		oUF.Tags["WM"..i] = function(unit)
-			local _, _, _, dur = GetTotemInfo(i)
-			if dur > 0 then
-				return "|cffFF2222_|r"
-			end
-		end
-		oUF.TagEvents["WM"..i] = "PLAYER_TOTEM_UPDATE"
-		oUF.UnitlessTagEvents.PLAYER_TOTEM_UPDATE = true
-	end
-end
-
 if T.class == "WARLOCK" then
 	oUF.Tags["DemonicFury"] = function(unit)
 		local min = UnitPower("player", SPELL_POWER_DEMONIC_FURY)

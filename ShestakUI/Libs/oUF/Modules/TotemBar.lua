@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.unitframe.enable ~= true or C.unitframe_class_bar.totem ~= true or T.class ~= "SHAMAN" then return end
+if C.unitframe.enable ~= true or C.unitframe_class_bar.totem ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on oUF_TotemBar(by Soeters)
@@ -61,14 +61,20 @@ local function UpdateSlot(self, slot)
 			totem[slot]:SetScript("OnUpdate", nil)
 			totem[slot]:SetValue(0)
 		end
+		if T.class ~= "SHAMAN" then
+			totem:Show()
+		end
 	else
 		totem[slot]:SetValue(0)
+		if T.class ~= "SHAMAN" then
+			totem:Hide()
+		end
 	end
 end
 
 local function Update(self, unit)
 	-- Update every slot on login, still have issues with it
-	for i = 1, 4 do
+	for i = 1, MAX_TOTEMS do
 		UpdateSlot(self, i)
 	end
 end
@@ -87,7 +93,7 @@ local function Enable(self, unit)
 		totem.colors = setmetatable(totem.colors or {}, {__index = colors})
 		delay = totem.delay or delay
 		if totem.Destroy then
-			for i = 1, 4 do
+			for i = 1, MAX_TOTEMS do
 				if totem[i] then
 					local t = _G["TotemFrameTotem"..i]
 					t:ClearAllPoints()
