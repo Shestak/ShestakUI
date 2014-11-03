@@ -74,11 +74,11 @@ L_GUI_AUTOMATION_TAB_BINDER = "Tab只選定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "團隊副本時自動開啟戰鬥記錄"
 L_GUI_AUTOMATION_CURRENCY_CAP = "自動彈出貨幣提示框"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用滑鼠滾輪施放Buff"
-L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag" -- Needs review
+L_GUI_AUTOMATION_OPEN_ITEMS = "自動打開背包中的封裝物品"
 
 -- Skins options
-L_GUI_SKINS = "介面樣式"
-L_GUI_SKINS_BLIZZARD = "開啟暴雪介面樣式增強"
+L_GUI_SKINS = "介面樣式增強"
+L_GUI_SKINS_BLIZZARD = "暴雪默認介面"
 L_GUI_SKINS_MINIMAP_BUTTONS = "小地圖插件圖示"
 L_GUI_SKINS_CLCR = "CLCRet"
 L_GUI_SKINS_CLCP = "CLCProt"
