@@ -23,8 +23,13 @@ local function Update(self, event, unit, powerType)
 	if hb.maxChi ~= maxChi then
 		if maxChi == 4 then
 			hb[5]:Hide()
+			hb[6]:Hide()
+		elseif maxChi == 5 then
+			hb[5]:Show()
+			hb[6]:Hide()
 		else
 			hb[5]:Show()
+			hb[6]:Show()
 		end
 
 		for i = 1, maxChi do

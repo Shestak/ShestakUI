@@ -288,9 +288,9 @@ local function Shared(self, unit)
 				self.HarmonyBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.HarmonyBar:SetSize(217, 7)
 
-				for i = 1, 5 do
+				for i = 1, 6 do
 					self.HarmonyBar[i] = CreateFrame("StatusBar", nil, self.HarmonyBar)
-					self.HarmonyBar[i]:SetSize(213 / 5, 7)
+					self.HarmonyBar[i]:SetSize(213 / 6, 7)
 					if i == 1 then
 						self.HarmonyBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 					else
