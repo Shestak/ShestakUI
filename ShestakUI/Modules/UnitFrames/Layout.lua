@@ -326,8 +326,6 @@ local function Shared(self, unit)
 					self.TotemBar[i].bg:SetAllPoints()
 					self.TotemBar[i].bg:SetTexture(C.media.texture)
 					self.TotemBar[i].bg.multiplier = 0.2
-
-					_G["TotemFrameTotem"..i.."Icon"]:Hide()
 				end
 			end
 		end
@@ -448,8 +446,6 @@ local function Shared(self, unit)
 				self.TotemBar[i].bg:SetAllPoints()
 				self.TotemBar[i].bg:SetTexture(C.media.texture)
 				self.TotemBar[i].bg.multiplier = 0.2
-
-				_G["TotemFrameTotem"..i.."Icon"]:Hide()
 			end
 		end
 
@@ -515,8 +511,6 @@ local function Shared(self, unit)
 					self.TotemBar[i].bg:SetAllPoints()
 					self.TotemBar[i].bg:SetTexture(C.media.texture)
 					self.TotemBar[i].bg.multiplier = 0.2
-
-					_G["TotemFrameTotem"..i.."Icon"]:Hide()
 				end
 			end
 		end
@@ -542,8 +536,6 @@ local function Shared(self, unit)
 					self.TotemBar[i].bg:SetAllPoints()
 					self.TotemBar[i].bg:SetTexture(C.media.texture)
 					self.TotemBar[i].bg.multiplier = 0.2
-
-					_G["TotemFrameTotem"..i.."Icon"]:Hide()
 				end
 			end
 		end
@@ -572,8 +564,6 @@ local function Shared(self, unit)
 				self.TotemBar[i].bg:SetAllPoints()
 				self.TotemBar[i].bg:SetTexture(C.media.texture)
 				self.TotemBar[i].bg.multiplier = 0.2
-
-				_G["TotemFrameTotem"..i.."Icon"]:Hide()
 			end
 		end
 

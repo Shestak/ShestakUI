@@ -102,6 +102,7 @@ local function Enable(self, unit)
 					t:SetFrameLevel(totem[i]:GetFrameLevel() + 1)
 					t:SetFrameStrata(totem[i]:GetFrameStrata())
 					t:SetAlpha(0)
+					_G["TotemFrameTotem"..i.."Icon"]:Hide()
 				end
 			end
 			hooksecurefunc("TotemFrame_Update", function()
