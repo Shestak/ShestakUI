@@ -74,6 +74,7 @@ L_GUI_AUTOMATION_TAB_BINDER = "Клавиша 'Tab' выбирает враже�
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Включать запись журнала боя в рейде"
 L_GUI_AUTOMATION_CURRENCY_CAP = "Окно лимита валюты (Доблесть/Честь)"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Накладывать эффекты прокруткой колеса мыши"
+L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

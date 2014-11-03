@@ -39,6 +39,7 @@
 	<Script file="Config\Filters\Errors.lua"/>
 	<Script file="Config\Filters\Nameplates.lua"/>
 	<Script file="Config\Filters\NeedItems.lua"/>
+	<Script file="Config\Filters\OpenItems.lua"/>
 	<Script file="Config\Filters\RaidAuraWatch.lua"/>
 	<Script file="Config\Filters\Reminders.lua"/>
 
@@ -113,6 +114,7 @@
 
 	<Script file="Modules\Automation\AutoChefsHat.lua"/>
 	<Script file="Modules\Automation\AutoInvite.lua"/>
+	<Script file="Modules\Automation\AutoOpens.lua"/>
 	<Script file="Modules\Automation\AutoRelease.lua"/>
 	<Script file="Modules\Automation\BuffOnScroll.lua"/>
 	<Script file="Modules\Automation\CancelBadBuffs.lua"/>

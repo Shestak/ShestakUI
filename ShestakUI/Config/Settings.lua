@@ -101,6 +101,7 @@ C["automation"] = {
 	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
 	["currency_cap"] = false,					-- Auto popup for currency cap
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll
+	["open_items"] = false,						-- Auto opening of items in bag
 }
 
 ----------------------------------------------------------------------------------------

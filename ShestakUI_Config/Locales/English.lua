@@ -71,6 +71,7 @@ L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances"
 L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll"
+L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag"
 
 -- Skins options
 L_GUI_SKINS = "Stylization"
