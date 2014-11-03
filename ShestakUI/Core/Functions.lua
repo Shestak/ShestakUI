@@ -59,32 +59,33 @@ T.CheckSpec = function(tree)
 	end
 end
 
+local isCaster = {
+     DRUID = {true}, -- Balance
+     MAGE = {true, true, true}, -- All specs
+     PRIEST = {nil, nil, true}, -- Shadow
+     SHAMAN = {true}, -- Elemental
+     WARLOCK = {true, true, true} -- All specs
+}
+
 local function CheckRole(self, event, unit)
 	local tree = GetSpecialization()
-	local role = tree and select(6, GetSpecializationInfo(tree))
+	local role = tree and GetSpecializationRole(tree)
 
 	if role == "TANK" then
 		T.Role = "Tank"
 	elseif role == "HEALER" then
 		T.Role = "Healer"
 	elseif role == "DAMAGER" then
-		local _, playerint = UnitStat("player", 4)
-		local _, playeragi = UnitStat("player", 2)
-		local base, posBuff, negBuff = UnitAttackPower("player")
-		local playerap = base + posBuff + negBuff
-
-		if (playerap > playerint) or (playeragi > playerint) then
-			T.Role = "Melee"
-		else
+		if isCaster[T.class][spec] then
 			T.Role = "Caster"
+		else
+			T.Role = "Melee"
 		end
 	end
 end
 local RoleUpdater = CreateFrame("Frame")
 RoleUpdater:RegisterEvent("PLAYER_ENTERING_WORLD")
 RoleUpdater:RegisterEvent("PLAYER_TALENT_UPDATE")
-RoleUpdater:RegisterEvent("UNIT_INVENTORY_CHANGED")
-RoleUpdater:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 RoleUpdater:SetScript("OnEvent", CheckRole)
 
 ----------------------------------------------------------------------------------------

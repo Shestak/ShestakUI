@@ -133,7 +133,7 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	for i, Spell5Buff in pairs(Spell5Buff) do
 		local name, _, icon = GetSpellInfo(Spell5Buff)
-		if event == "PLAYER_ENTERING_WORLD" then
+		if event == "PLAYER_ENTERING_WORLD" or event == "ACTIVE_TALENT_GROUP_CHANGED" then
 			Spell5Frame.t:SetTexture(icon)
 		end
 		if UnitAura("player", name) then
@@ -194,8 +194,6 @@ raidbuff_reminder:CreatePanel("Invisible", (C.reminder.raid_buffs_size * 6) + 15
 raidbuff_reminder:RegisterEvent("UNIT_AURA")
 raidbuff_reminder:RegisterEvent("PLAYER_ENTERING_WORLD")
 raidbuff_reminder:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
-raidbuff_reminder:RegisterEvent("UNIT_INVENTORY_CHANGED")
-raidbuff_reminder:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 raidbuff_reminder:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 raidbuff_reminder:SetScript("OnEvent", OnAuraChange)
 

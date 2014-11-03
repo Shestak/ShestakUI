@@ -149,7 +149,6 @@ for i = 1, #tab do
 
 	frame:RegisterEvent("UNIT_AURA")
 	frame:RegisterEvent("PLAYER_LOGIN")
-	frame:RegisterEvent("UNIT_INVENTORY_CHANGED")
 	frame:RegisterEvent("PLAYER_REGEN_ENABLED")
 	frame:RegisterEvent("PLAYER_REGEN_DISABLED")
 	frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
