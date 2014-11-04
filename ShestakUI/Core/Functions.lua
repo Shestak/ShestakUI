@@ -52,10 +52,10 @@ end
 ----------------------------------------------------------------------------------------
 --	Player's Role and Specialization check
 ----------------------------------------------------------------------------------------
-T.CheckSpec = function(tree)
+T.CheckSpec = function(spec)
 	local activeGroup = GetActiveSpecGroup()
 	if activeGroup and GetSpecialization(false, false, activeGroup) then
-		return tree == GetSpecialization(false, false, activeGroup)
+		return spec == GetSpecialization(false, false, activeGroup)
 	end
 end
 
@@ -68,8 +68,8 @@ local isCaster = {
 }
 
 local function CheckRole(self, event, unit)
-	local tree = GetSpecialization()
-	local role = tree and GetSpecializationRole(tree)
+	local spec = GetSpecialization()
+	local role = spec and GetSpecializationRole(spec)
 
 	if role == "TANK" then
 		T.Role = "Tank"
