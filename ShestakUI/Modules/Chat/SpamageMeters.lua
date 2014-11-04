@@ -29,7 +29,6 @@ local firstLines = {
 local nextLines = {
 	"^(%d+)\. (.*)$",										-- Recount, Details! and Skada
 	"^(.*)   (.*)$",										-- Additional Skada
-	"^Numeration: (.*)$",									-- Numeration
 	"^[+-]%d+.%d",											-- Numeration deathlog details
 	"^(%d+). (.*):(.*)(%d+)(.*)(%d+)%%(.*)%((%d+)%)$"		-- TinyDPS
 }
