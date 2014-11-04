@@ -61,6 +61,7 @@
 
 	<Script file="Modules\Misc\AlreadyKnown.lua"/>
 	<Script file="Modules\Misc\Archaeology.lua"/>
+	<Script file="Modules\Misc\ArmoryLink.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
 	<Script file="Modules\Misc\GemCounter.lua"/>
@@ -165,7 +166,6 @@
 	<Script file="Modules\Chat\Sounds.lua"/>
 	<Script file="Modules\Chat\TellTarget.lua"/>
 	<Script file="Modules\Chat\RealLinks.lua"/>
-	<Script file="Modules\Chat\ArmoryLink.lua"/>
 	<Script file="Modules\Chat\SpamageMeters.lua"/>
 	<Script file="Modules\Chat\ChatBind.lua"/>
 
