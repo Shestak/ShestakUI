@@ -9,70 +9,70 @@ if C.reminder.raid_buffs_enable == true then
 	-- General buffs
 	T.ReminderBuffs = {
 		Flask = {
+			105694,	-- Flask of the Earth
 			105691,	-- Flask of the Warm Sun
 			105696,	-- Flask of Winter's Bite
 			105693,	-- Flask of Falling Leaves
 			105689,	-- Flask of Spring Blossoms
-			105694,	-- Flask of the Earth
 		},
 		BattleElixir = {
+			105686,	-- Elixir of Perfection
 			105688,	-- Monk's Elixir
 			105685,	-- Elixir of Peace
 			105682,	-- Mad Hozen Elixir
 			105683,	-- Elixir of Weaponry
 			105684,	-- Elixir of the Rapids
-			105686,	-- Elixir of Perfection
 		},
 		GuardianElixir = {
-			105681,	-- Mantid Elixir
 			105687,	-- Elixir of Mirrors
+			105681,	-- Mantid Elixir
 		},
 		Food = {
 			104280,	-- Well Fed
 		},
 		Stat = {
+			1126,	-- Mark of the Wild
 			20217,	-- Blessing of Kings
 			115921,	-- Legacy of the Emperor
 			116781,	-- Legacy of the White Tiger
 			90363,	-- Embrace of the Shale Spider
-			1126,	-- Mark of the Wild
 		},
 		Stamina = {
+			21562,	-- Power Word: Fortitude
 			469,	-- Commanding Shout
 			90364,	-- Qiraji Fortitude
 			166928,	-- Blood Pact
 			111922,	-- Runescroll of Fortitude III
-			21562,	-- Power Word: Fortitude
 		}
 	}
 
 	-- Caster buffs
 	function T.ReminderCasterBuffs()
 		Spell5Buff = {	-- Spell Power
+			1459,	-- Arcane Brilliance
+			61316,	-- Dalaran Brilliance
 			109773,	-- Dark Intent
 			126309,	-- Still Water
 			128433,	-- Serpent's Swiftness
-			61316,	-- Dalaran Brilliance
-			1459,	-- Arcane Brilliance
 		}
 	end
 
 	-- Physical buffs
 	function T.ReminderPhysicalBuffs()
 		Spell5Buff = {	-- Attack Power
+			57330,	-- Horn of Winter
 			6673,	-- Battle Shout
 			19506,	-- Trueshot Aura
-			57330,	-- Horn of Winter
 		}
 	end
 
 	Spell6Buff = {	-- Haste
+		116956,	-- Grace of Air
 		49868,	-- Mind Quickening
 		135678,	-- Energizing Spores
 		113742,	-- Swiftblade's Cunning
 		128432,	-- Cackling Howl
 		55610,	-- Unholy Aura
-		116956,	-- Grace of Air
 	}
 end
 
