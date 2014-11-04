@@ -60,11 +60,17 @@ T.CheckSpec = function(spec)
 end
 
 local isCaster = {
-     DRUID = {true}, -- Balance
-     MAGE = {true, true, true}, -- All specs
-     PRIEST = {nil, nil, true}, -- Shadow
-     SHAMAN = {true}, -- Elemental
-     WARLOCK = {true, true, true} -- All specs
+	DEATHKNIGHT = {nil, nil, nil},
+	DRUID = {true}, -- Balance
+	HUNTER = {nil, nil, nil},
+	MAGE = {true, true, true},
+	MONK = {nil, nil, nil},
+	PALADIN = {nil, nil, nil},
+	PRIEST = {nil, nil, true}, -- Shadow
+	ROGUE = {nil, nil, nil},
+	SHAMAN = {true}, -- Elemental
+	WARLOCK = {true, true, true},
+	WARRIOR = {true, true, true}
 }
 
 local function CheckRole(self, event, unit)
