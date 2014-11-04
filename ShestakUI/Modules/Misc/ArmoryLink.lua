@@ -1,8 +1,8 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.chat.enable ~= true or C.misc.armory_link ~= true then return end
+if C.misc.armory_link ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Armory link on right click player name in chat
+--	Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)
 ----------------------------------------------------------------------------------------
 -- Find the Realm and Local
 local realmName = string.lower(GetRealmName())
