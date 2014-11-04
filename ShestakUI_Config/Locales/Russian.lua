@@ -38,7 +38,7 @@ L_GUI_MISC_COLOR_PICKER = "Улучшенный подбор цвета"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Свиток наложения чар в окне профессии"
 L_GUI_MISC_ARCHAEOLOGY = "Археологические артефакты и перезарядка"
 L_GUI_MISC_CHARS_CURRENCY = "Отслеживать валюту на других персонажах"
-L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)" -- Needs review
+L_GUI_MISC_ARMORY_LINK = "Добавить пункт 'Оружейная' в меню (сломаются некоторые пункты)"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"
@@ -75,7 +75,7 @@ L_GUI_AUTOMATION_TAB_BINDER = "Клавиша 'Tab' выбирает враже�
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Включать запись журнала боя в рейде"
 L_GUI_AUTOMATION_CURRENCY_CAP = "Окно лимита валюты (Доблесть/Честь)"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Накладывать эффекты прокруткой колеса мыши"
-L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag" -- Needs review
+L_GUI_AUTOMATION_OPEN_ITEMS = "Открывать сундуки, ящики и т.д"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"
