@@ -38,6 +38,7 @@ L_GUI_MISC_COLOR_PICKER = "改進型顏色選擇器"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "附魔介面顯示附魔卷軸數量"
 L_GUI_MISC_ARCHAEOLOGY = "提示考古學文物辨識及冷卻"
 L_GUI_MISC_CHARS_CURRENCY = "追蹤所有角色金錢信息"
+L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"

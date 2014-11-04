@@ -38,6 +38,7 @@ L_GUI_MISC_COLOR_PICKER = "Selezionatore colore migliorato"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Pergamena Incantamento sul riquadro sul riquadro abilità di commercio"
 L_GUI_MISC_ARCHAEOLOGY = "Archeologia: reliquie e recuperi"
 L_GUI_MISC_CHARS_CURRENCY = "Traccia la valuta complessiva posseduta dai tuoi personaggi"
+L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"

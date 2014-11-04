@@ -35,6 +35,7 @@ L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame"
 L_GUI_MISC_ARCHAEOLOGY = "Archaeology artifacts and cooldown"
 L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple characters"
+L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Announcements"

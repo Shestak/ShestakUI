@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.chat.enable ~= true then return end
+if C.chat.enable ~= true or C.misc.armory_link ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Armory link on right click player name in chat
@@ -109,3 +109,14 @@ tinsert(UnitPopupMenus["FRIEND"], #UnitPopupMenus["FRIEND"] - 1, "ARMORYLINK")
 tinsert(UnitPopupMenus["PARTY"], #UnitPopupMenus["PARTY"] - 1, "ARMORYLINK")
 tinsert(UnitPopupMenus["RAID"], #UnitPopupMenus["RAID"] - 1, "ARMORYLINK")
 tinsert(UnitPopupMenus["PLAYER"], #UnitPopupMenus["PLAYER"] - 1, "ARMORYLINK")
+
+----------------------------------------------------------------------------------------
+--	Delete some lines from unit dropdown menu (Broke some line)
+----------------------------------------------------------------------------------------
+for _, menu in pairs(UnitPopupMenus) do
+	for index = #menu, 1, -1 do
+		if menu[index] == "SET_FOCUS" or menu[index] == "CLEAR_FOCUS" or menu[index] == "MOVE_PLAYER_FRAME" or menu[index] == "MOVE_TARGET_FRAME" or menu[index] == "LARGE_FOCUS" or menu[index] == "MOVE_FOCUS_FRAME" or (menu[index] == "PET_DISMISS" and T.class == "HUNTER") then
+			table.remove(menu, index)
+		end
+	end
+end

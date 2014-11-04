@@ -38,6 +38,7 @@ L_GUI_MISC_COLOR_PICKER = "Улучшенный подбор цвета"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Свиток наложения чар в окне профессии"
 L_GUI_MISC_ARCHAEOLOGY = "Археологические артефакты и перезарядка"
 L_GUI_MISC_CHARS_CURRENCY = "Отслеживать валюту на других персонажах"
+L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"
