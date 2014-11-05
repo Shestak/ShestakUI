@@ -70,7 +70,6 @@ local function OnAuraChange(self, event, arg1, unit)
 			local name, _, icon = GetSpellInfo(flaskbuffs)
 			if i == 1 then
 				FlaskFrame.t:SetTexture(icon)
-				once = false
 			end
 			if UnitAura("player", name) then
 				FlaskFrame:SetAlpha(C.reminder.raid_buffs_alpha)
