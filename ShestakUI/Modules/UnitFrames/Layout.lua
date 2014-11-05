@@ -678,14 +678,16 @@ local function Shared(self, unit)
 			self.GCD.Height = T.Scale(3)
 			self.GCD.Width = T.Scale(4)
 		end
+	end
 
-		-- Counter bar
+	-- Counter bar
+	if unit == "player" or unit == "pet" then
 		self.CounterBar = CreateFrame("StatusBar", self:GetName().."_CounterBar", self)
 		self.CounterBar:CreateBackdrop("Default")
-		self.CounterBar:SetWidth(215)
+		self.CounterBar:SetWidth(217)
 		self.CounterBar:SetHeight(20)
 		self.CounterBar:SetStatusBarTexture(C.media.texture)
-		self.CounterBar:SetPoint("TOP", UIParent, "TOP", 0, -100)
+		self.CounterBar:SetPoint("TOP", UIParent, "TOP", 0, -102)
 
 		self.CounterBar.bg = self.CounterBar:CreateTexture(nil, "BORDER")
 		self.CounterBar.bg:SetAllPoints()
