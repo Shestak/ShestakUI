@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.skins.face_shooter ~= true or T.class ~= "HUNTER" or T.level < 80 then return end
+if C.skins.face_shooter ~= true or T.class ~= "HUNTER" or T.level < 90 then return end
 
 ----------------------------------------------------------------------------------------
 --	FaceShooter skin
