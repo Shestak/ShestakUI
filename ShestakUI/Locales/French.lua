@@ -62,7 +62,6 @@ L_MISC_HEADER_MARK = "Icône de raid au passage de la souris"
 L_MISC_BINDER_OPEN = "Assignations des boutons de la souris"
 L_MISC_GROCERY_BUY = "Buy" -- Needs review
 L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
-L_MISC_GROCERY_ERROR = "Not enough items." -- Needs review
 L_MISC_SCROLL = "Parchemin"
 
 -- Raid Utility

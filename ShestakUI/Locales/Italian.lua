@@ -62,7 +62,6 @@ L_MISC_HEADER_MARK = "Marchi d'incursione al passaggio del mouse"
 L_MISC_BINDER_OPEN = "Assegnazione pulsanti mouse"
 L_MISC_GROCERY_BUY = "Compra"
 L_MISC_GROCERY_DESC = "Compra automaticamente i sacchetti di alimenti"
-L_MISC_GROCERY_ERROR = "Oggetti non sufficienti."
 L_MISC_SCROLL = "Pergamena"
 
 -- Raid Utility
