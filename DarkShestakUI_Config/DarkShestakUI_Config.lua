@@ -496,16 +496,16 @@ local NormalButton = function(text, parent)
 	return result
 end
 
-StaticPopupDialogs.PERCHAR = {
+StaticPopupDialogs.FORCHAR = {
 	text = L_GUI_PER_CHAR,
 	OnAccept = function()
 		if UIConfigAllCharacters:GetChecked() then
 			GUIConfigAll[realm][name] = true
-			SavedOptions.PerChar = true
+			SavedOptions.ForChar = true
 			SavedOptionsPerChar.RaidLayout = SavedOptions.RaidLayout
 		else
 			GUIConfigAll[realm][name] = false
-			SavedOptions.PerChar = false
+			SavedOptions.ForChar = false
 			SavedOptions.RaidLayout = SavedOptionsPerChar.RaidLayout
 		end
 		ReloadUI()
@@ -525,7 +525,7 @@ StaticPopupDialogs.PERCHAR = {
 	preferredIndex = 5,
 }
 
-StaticPopupDialogs.RESET_PERCHAR = {
+StaticPopupDialogs.RESET_FORCHAR = {
 	text = L_GUI_RESET_CHAR,
 	OnAccept = function()
 		GUIConfig = GUIConfigSettings
@@ -942,7 +942,7 @@ function CreateUIConfig()
 	reset:SetScript("OnClick", function(self)
 		UIConfigCover:Show()
 		if GUIConfigAll[realm][name] == true then
-			StaticPopup_Show("RESET_PERCHAR")
+			StaticPopup_Show("RESET_FORCHAR")
 		else
 			StaticPopup_Show("RESET_ALL")
 		end
@@ -970,7 +970,7 @@ function CreateUIConfig()
 
 	if GUIConfigAll then
 		local button = CreateFrame("CheckButton", "UIConfigAllCharacters", TitleBox, "InterfaceOptionsCheckButtonTemplate")
-		button:SetScript("OnClick", function(self) StaticPopup_Show("PERCHAR") UIConfigCover:Show() end)
+		button:SetScript("OnClick", function(self) StaticPopup_Show("FORCHAR") UIConfigCover:Show() end)
 		button:SetPoint("RIGHT", TitleBox, "RIGHT", -3, 0)
 		button:SetHitRectInsets(0, 0, 0, 0)
 		if IsAddOnLoaded("Aurora") then
@@ -1024,7 +1024,7 @@ do
 		if UIConfigMain and UIConfigMain:IsShown() then UIConfigCover:Show() end
 
 		if GUIConfigAll[realm][name] == true then
-			StaticPopup_Show("RESET_PERCHAR")
+			StaticPopup_Show("RESET_FORCHAR")
 		else
 			StaticPopup_Show("RESET_ALL")
 		end

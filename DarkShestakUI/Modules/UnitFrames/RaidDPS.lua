@@ -264,7 +264,7 @@ end
 --	Default position of ShestakUI unitframes
 ----------------------------------------------------------------------------------------
 oUF:Factory(function(self)
-	if SavedOptions == nil or SavedOptions.PerChar == nil or (SavedOptions.PerChar == false and SavedOptions.RaidLayout ~= "DPS") or (SavedOptions.PerChar == true and SavedOptionsPerChar.RaidLayout ~= "DPS") then return end
+	if T.CheckLayout() ~= "DPS" then return end
 
 	oUF:RegisterStyle("DarkShestakDPS", Shared)
 	oUF:SetActiveStyle("DarkShestakDPS")

@@ -1399,3 +1399,28 @@ T.CreateAuraWatch = function(self, unit)
 
 	self.AuraWatch = auras
 end
+
+T.CheckLayout = function()
+	if SavedOptions then
+		if SavedOptions.ForChar == false and SavedOptions.RaidLayout == "DPS" then
+			return "DPS"
+		end
+		if SavedOptions.ForChar == false and SavedOptions.RaidLayout == "HEAL" then
+			return "HEAL"
+		end
+		if SavedOptions.ForChar == false and SavedOptions.RaidLayout == "NONE" then
+			return "NONE"
+		end
+	end
+	if SavedOptionsPerChar and (SavedOptions and SavedOptions.ForChar) then
+		if SavedOptions.ForChar == true and SavedOptionsPerChar.RaidLayout == "DPS" then
+			return "DPS"
+		end
+		if SavedOptions.ForChar == true and SavedOptionsPerChar.RaidLayout == "HEAL" then
+			return "HEAL"
+		end
+		if SavedOptions.ForChar == true and SavedOptionsPerChar.RaidLayout == "NONE" then
+			return "NONE"
+		end
+	end
+end

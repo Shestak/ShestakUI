@@ -147,7 +147,7 @@ local function DisableUI()
 	ReloadUI()
 end
 
-local function PerChar(v)
+local function ForChar(v)
 	if GUIConfigAll then
 		for realm, name in pairs(GUIConfigAll) do
 			for name, value in pairs(GUIConfigAll[realm]) do
@@ -158,7 +158,7 @@ local function PerChar(v)
 end
 
 local function SwitchLayout(layout)
-	if SavedOptions.PerChar == true then
+	if SavedOptions.ForChar == true then
 		SavedOptionsPerChar.RaidLayout = layout
 	else
 		SavedOptions.RaidLayout = layout
@@ -352,13 +352,13 @@ local step1 = function()
 	option2.Text:SetText(L_INSTALL_STEP1_CHAR)
 
 	option1:SetScript("OnClick", function()
-		SavedOptions.PerChar = false
-		PerChar(false)
+		SavedOptions.ForChar = false
+		ForChar(false)
 		step2()
 	end)
 	option2:SetScript("OnClick", function()
-		SavedOptions.PerChar = true
-		PerChar(true)
+		SavedOptions.ForChar = true
+		ForChar(true)
 		step2()
 	end)
 end
@@ -379,13 +379,13 @@ local config = function()
 		ReloadUI()
 	end)
 	option2:SetScript("OnClick", function()
-		if SavedOptions.PerChar == nil then
+		if SavedOptions.ForChar == nil then
 			step1()
-		elseif SavedOptions.PerChar == true then
-			PerChar(true)
+		elseif SavedOptions.ForChar == true then
+			ForChar(true)
 			step2()
 		else
-			PerChar(false)
+			ForChar(false)
 			step4()
 		end
 	end)
@@ -406,13 +406,13 @@ local function Setup()
 		InstallUI()
 		if not IsAddOnLoaded("DarkShestakUI_Config") then
 			config()
-		elseif SavedOptions.PerChar == nil then
+		elseif SavedOptions.ForChar == nil then
 			step1()
-		elseif SavedOptions.PerChar == true then
-			PerChar(true)
+		elseif SavedOptions.ForChar == true then
+			ForChar(true)
 			step2()
 		else
-			PerChar(false)
+			ForChar(false)
 			step4()
 		end
 	end)
@@ -438,7 +438,7 @@ StaticPopupDialogs.RESET_UI = {
 	text = L_POPUP_RESETUI,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-	OnAccept = function() SavedOptionsPerChar.Install = false SavedOptions.PerChar = nil Setup() end,
+	OnAccept = function() SavedOptionsPerChar.Install = false SavedOptions.ForChar = nil Setup() end,
 	OnCancel = function() SavedOptionsPerChar.Install = true end,
 	showAlert = true,
 	timeout = 0,

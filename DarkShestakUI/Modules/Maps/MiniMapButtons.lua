@@ -23,21 +23,21 @@ switch:EnableMouse(true)
 switch:RegisterForClicks("AnyUp")
 switch:SetScript("OnClick", function(self, button)
 	if button == "LeftButton" then
-		if SavedOptions.PerChar == true then
+		if SavedOptions.ForChar == true then
 			SavedOptionsPerChar.RaidLayout = "HEAL"
 		else
 			SavedOptions.RaidLayout = "HEAL"
 		end
 		ReloadUI()
 	elseif button == "RightButton" then
-		if SavedOptions.PerChar == true then
+		if SavedOptions.ForChar == true then
 			SavedOptionsPerChar.RaidLayout = "DPS"
 		else
 			SavedOptions.RaidLayout = "DPS"
 		end
 		ReloadUI()
 	elseif button == "MiddleButton" then
-		if SavedOptions.PerChar == true then
+		if SavedOptions.ForChar == true then
 			SavedOptionsPerChar.RaidLayout = "NONE"
 		else
 			SavedOptions.RaidLayout = "NONE"
@@ -65,21 +65,21 @@ end)
 
 switch:RegisterEvent("PLAYER_LOGIN")
 switch:SetScript("OnEvent", function(self)
-	if (SavedOptions and SavedOptions.PerChar == false and SavedOptions.RaidLayout == "DPS") or (SavedOptionsPerChar and SavedOptions.PerChar == true and SavedOptionsPerChar.RaidLayout == "DPS") then
+	if T.CheckLayout() == "DPS" then
 		if C.media.dps then
 			switch.t:SetTexture(C.media.dps)
 			switch.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		else
 			switch.t:SetTexCoord(0.25, 0.5, 0, 1)
 		end
-	elseif (SavedOptions and SavedOptions.PerChar == false and SavedOptions.RaidLayout == "HEAL") or (SavedOptionsPerChar and SavedOptions.PerChar == true and SavedOptionsPerChar.RaidLayout == "HEAL") then
+	elseif T.CheckLayout() == "HEAL" then
 		if C.media.healer then
 			switch.t:SetTexture(C.media.healer)
 			switch.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		else
 			switch.t:SetTexCoord(0.75, 1, 0, 1)
 		end
-	elseif (SavedOptions and SavedOptions.PerChar == false and SavedOptions.RaidLayout == "NONE") or (SavedOptionsPerChar and SavedOptions.PerChar == true and SavedOptionsPerChar.RaidLayout == "NONE") then
+	elseif T.CheckLayout() == "NONE" then
 		switch.t:SetTexture("Interface\\ChatFrame\\UI-ChatIcon-Blizz")
 		switch.t:SetTexCoord(0.2, 0.8, -0.1, 1.1)
 	else
