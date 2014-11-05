@@ -281,7 +281,7 @@ local function Shared(self, unit)
 				self.HarmonyBar:SetPoint("BOTTOM", self, "TOP", 0, -1)
 				self.HarmonyBar:SetSize(180, 7)
 				self.HarmonyBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-.
+
 				for i = 1, 6 do
 					self.HarmonyBar[i] = CreateFrame("StatusBar", nil, self.HarmonyBar)
 					self.HarmonyBar[i]:SetSize(176 / 6, 7)
