@@ -487,6 +487,9 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if SavedOptionsPerChar.RightBars == nil then SavedOptionsPerChar.RightBars = C.actionbar.rightbars end
 	if SavedOptionsPerChar.BottomBars == nil then SavedOptionsPerChar.BottomBars = C.actionbar.bottombars end
 
+	-- Dummy for update from 1.03 and older
+	if SavedOptions.ForChar == nil and SavedOptions.PerChar ~= nil then SavedOptions.ForChar = SavedOptions.PerChar end
+
 	if T.getscreenwidth < 1024 and GetCVar("gxMonitor") == "0" then
 		SetCVar("useUiScale", 0)
 		StaticPopup_Show("DISABLE_UI")
