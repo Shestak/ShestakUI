@@ -2729,6 +2729,10 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
+			-- Sudden Death
+			{spellID = 52437, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Raging Blow!
+			{spellID = 131116, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bloodsurge
 			{spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sword and Board
@@ -2822,6 +2826,8 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].target_debuff_icon)},
 
+			-- Rend
+			{spellID = 772, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Colossus Smash
 			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hamstring
