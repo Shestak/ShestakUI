@@ -340,5 +340,6 @@ elseif T.class == "WARRIOR" then
 	if C.combattext.healing then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
 		T.healfilter[55694] = true	-- Enraged Regeneration
+		T.healfilter[159363] = true	-- Blood Craze
 	end
 end
