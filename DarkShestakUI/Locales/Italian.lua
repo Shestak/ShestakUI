@@ -57,6 +57,9 @@ L_ANNOUNCE_FP_CAST = "%s sta lanciando %s."
 L_ANNOUNCE_FP_CLICK = "%s sta lanciando %s. Cliccate!"
 L_ANNOUNCE_FP_USE = "%s ha utilizzato un/una %s."
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = INTERRUPTED
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Nessun talento"
 L_TOOLTIP_LOADING = "Caricamento..."
@@ -162,8 +165,6 @@ L_MAIL_MESSAGES = "messaggi"
 L_LOOT_RANDOM = "Giocatore casuale"
 L_LOOT_SELF = "Bottino personale"
 L_LOOT_FISH = "Bottino pescato"
-L_LOOT_MONSTER = ">> Bottino da"
-L_LOOT_CHEST = ">> Bottino nella cassa"
 L_LOOT_ANNOUNCE = "Annuncia a"
 L_LOOT_TO_RAID = "  incursione"
 L_LOOT_TO_PARTY = "  gruppo"

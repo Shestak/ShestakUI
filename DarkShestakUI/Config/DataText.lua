@@ -126,10 +126,10 @@ LPSTAT_CONFIG = {
 	Stats = {
 		enabled = C.toppanel.enable,
 			-- Available stat tags:
-			--	Power [power]	MP5 [manaregen]%		Multistrike [strike]%	Block [block]
-			--	Haste [haste]%	Crit [crit]%			Mastery [mastery]		Versatility [versatility]%
-			--	Armor [armor]	Dodge [dodge]			Parry [parry]			Resilience [resilience]
-			--	Leech [leech]%	Avoidance [avoidance]
+			--	Power [power]	MP5 [manaregen]			Multistrike [strike]%	Block [block]%
+			--	Haste [haste]%	Crit [crit]%			Mastery [mastery]%		Versatility [versatility]%
+			--	Armor [armor]	Dodge [dodge]%			Parry [parry]%			Resilience [resilience]%
+			--	Leech [leech]%	Avoidance [avoidance]%
 		spec1fmt = theme"Power: ".."[power]"..theme"  Crit: ".."[crit]%"..theme"  Haste: ".."[haste]%", -- Spec #1 string
 		spec2fmt = theme"Power: ".."[power]"..theme"  Crit: ".."[crit]%"..theme"  Haste: ".."[haste]%", -- Spec #2 string
 		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",

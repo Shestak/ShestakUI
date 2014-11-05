@@ -53,6 +53,9 @@ L_ANNOUNCE_FP_CAST = "%s is casting %s."
 L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!"
 L_ANNOUNCE_FP_USE = "%s used a %s."
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = INTERRUPTED
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "No Talents"
 L_TOOLTIP_LOADING = "Loading..."
@@ -158,8 +161,6 @@ L_MAIL_MESSAGES = "messages"
 L_LOOT_RANDOM = "Random Player"
 L_LOOT_SELF = "Self Loot"
 L_LOOT_FISH = "Fishing loot"
-L_LOOT_MONSTER = ">> Loot from "
-L_LOOT_CHEST = ">> Loot from chest"
 L_LOOT_ANNOUNCE = "Announce to"
 L_LOOT_TO_RAID = "  raid"
 L_LOOT_TO_PARTY = "  party"

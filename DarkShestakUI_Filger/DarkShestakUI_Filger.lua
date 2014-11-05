@@ -301,7 +301,7 @@ function Filger:OnEvent(event, unit)
 				spn, _, _ = GetSpellInfo(data.spellID)
 				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
 				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
-					if not data.count or count > data.count then
+					if not data.count or count >= data.count then
 						start = expirationTime - duration
 						found = true
 					end
@@ -331,7 +331,7 @@ function Filger:OnEvent(event, unit)
 						start, duration = GetInventoryItemCooldown("player", data.slotID)
 					end
 				end
-				if name and (T.class ~= "DEATHKNIGHT" and (duration or 0) > 1.5) or (duration or 0) > 10 then
+				if name and (duration or 0) > 1.5 then
 					found = true
 				end
 			elseif data.filter == "ICD" and (not data.spec or data.spec == ptt) then
@@ -360,6 +360,9 @@ function Filger:OnEvent(event, unit)
 				if not self.actives[i] then
 					self.actives[i] = {data = data, name = name, icon = icon, count = count, start = start, duration = duration, spid = spid}
 					needUpdate = true
+					if T.class == "DEATHKNIGHT" and self.actives[i].duration == 10 then
+						self.actives[i] = nil
+					end
 				else
 					if data.filter ~= "ICD" and (self.actives[i].count ~= count or self.actives[i].start ~= start or self.actives[i].duration ~= duration) then
 						self.actives[i].count = count

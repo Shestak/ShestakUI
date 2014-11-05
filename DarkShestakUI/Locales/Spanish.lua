@@ -57,6 +57,9 @@ L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review
 L_ANNOUNCE_FP_CLICK = "%s is casting %s. Click!" -- Needs review
 L_ANNOUNCE_FP_USE = "%s used a %s." -- Needs review
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = INTERRUPTED
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "No tienes talentos"
 L_TOOLTIP_LOADING = "Cargando..."
@@ -162,8 +165,6 @@ L_MAIL_MESSAGES = "mensajes"
 L_LOOT_RANDOM = "Jugador aleatorio"
 L_LOOT_SELF = "Despojar automáticamente"
 L_LOOT_FISH = "Despojar pescado"
-L_LOOT_MONSTER = ">> Botín de "
-L_LOOT_CHEST = ">> Botín del cofre"
 L_LOOT_ANNOUNCE = "Anunciar a"
 L_LOOT_TO_RAID = "  banda"
 L_LOOT_TO_PARTY = "  grupo"

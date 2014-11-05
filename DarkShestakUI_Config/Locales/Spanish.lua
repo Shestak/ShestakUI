@@ -18,7 +18,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "Mensaje de bienvenida en el chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Actualizar automaticamente la opción de Tolerancia al Lag Personalizada de Blizzard a tu latencia"
 
 -- Miscellaneous options
-L_GUI_MISC_MARKING = "Marca el objetivo cuando pulsas 'shift'"
+L_GUI_MISC_MARKING = "Marca el objetivo cuando pulsas Shift"
 L_GUI_MISC_INVKEYWORD = "Acrónimo para invitaciones (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encima"
@@ -38,6 +38,7 @@ L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame" -- Needs review
 L_GUI_MISC_ARCHAEOLOGY = "Archaeology artifacts and cooldown" -- Needs review
 L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple characters" -- Needs review
+L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Anuncios"
@@ -74,6 +75,7 @@ L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
 L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll" -- Needs review
+L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Estilización"
@@ -192,7 +194,7 @@ L_GUI_THREAT_HIDE_SOLO = "Mostrar solo en grupo/raid"
 -- Tooltip options
 L_GUI_TOOLTIP = "Descripciones"
 L_GUI_TOOLTIP_ENABLE = "Activar descripciones"
-L_GUI_TOOLTIP_SHIFT = "Mostrar descripción mientras 'shift' está pulsado"
+L_GUI_TOOLTIP_SHIFT = "Mostrar descripción mientras Shift está pulsado"
 L_GUI_TOOLTIP_CURSOR = "Descripción bajo el cursos"
 L_GUI_TOOLTIP_ICON = "Icono del objeto en la descripción"
 L_GUI_TOOLTIP_HEALTH = "Valor de la vida en números"
@@ -251,7 +253,7 @@ L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
 L_GUI_MAP_BG_STYLIZATION = "Estilizado del mapa de CB"
 L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
 L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
-L_GUI_MAP_FOG_OF_WAR = "Fog of war on World Map" -- Needs review
+L_GUI_MAP_FOG_OF_WAR = "Remove fog of war on World Map" -- Needs review
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Activar el marco de botín"

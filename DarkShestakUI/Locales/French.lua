@@ -57,6 +57,9 @@ L_ANNOUNCE_FP_CAST = "%s lance le sort %s."
 L_ANNOUNCE_FP_CLICK = "%s invoque %s. Click!"
 L_ANNOUNCE_FP_USE = "%s used a %s." -- Needs review
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = INTERRUPTED
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Aucun talent"
 L_TOOLTIP_LOADING = "Chargement..."
@@ -162,8 +165,6 @@ L_MAIL_MESSAGES = "messages"
 L_LOOT_RANDOM = "Joueur aléatoire"
 L_LOOT_SELF = "Procurez-vous un"
 L_LOOT_FISH = "Pêche"
-L_LOOT_MONSTER = ">> Extraction avec "
-L_LOOT_CHEST = ">> Extraction du tronc"
 L_LOOT_ANNOUNCE = "Déclarer"
 L_LOOT_TO_RAID = "  raid"
 L_LOOT_TO_PARTY = "  groupe"

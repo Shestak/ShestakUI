@@ -152,11 +152,11 @@ btn:SetAttribute("unit", "player")
 
 -- Main function for changing keybinding to mousewheel when a buff is needed
 function CheckBuffs()
-	local tree = GetSpecialization() or 1
+	local spec = GetSpecialization() or 1
 	if IsFlying() or IsMounted() or UnitIsDeadOrGhost("Player") or InCombatLockdown() then return end
 	ClearOverrideBindings(btn)
 	btn:SetAttribute("spell", nil)
-	for i, v in pairs(_G[T.class..tree]) do
+	for i, v in pairs(_G[T.class..spec]) do
 		local name = GetSpellInfo(v)
 		if not UnitAura("player", name) then
 			if GetSpellCooldown(name) == 0 then

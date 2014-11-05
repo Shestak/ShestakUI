@@ -57,6 +57,9 @@ L_ANNOUNCE_FP_CAST = "%s 開啟了 %s"
 L_ANNOUNCE_FP_CLICK = "%s 正在開啟 %s... 請點擊！"
 L_ANNOUNCE_FP_USE = "%s 使用了 %s."
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = "已打斷"
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "沒有天賦"
 L_TOOLTIP_LOADING = "讀取中..."
@@ -162,8 +165,6 @@ L_MAIL_MESSAGES = "新郵件"
 L_LOOT_RANDOM = "隨機玩家"
 L_LOOT_SELF = "自己拾取"
 L_LOOT_FISH = "釣魚拾取"
-L_LOOT_MONSTER = ">> 撿取自 "
-L_LOOT_CHEST = ">> 撿取自寶箱"
 L_LOOT_ANNOUNCE = "向頻道通告"
 L_LOOT_TO_RAID = " 團隊"
 L_LOOT_TO_PARTY = " 隊伍"

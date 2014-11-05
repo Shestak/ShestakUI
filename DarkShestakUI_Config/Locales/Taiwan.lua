@@ -38,6 +38,7 @@ L_GUI_MISC_COLOR_PICKER = "改進型顏色選擇器"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "附魔介面顯示附魔卷軸數量"
 L_GUI_MISC_ARCHAEOLOGY = "提示考古學文物辨識及冷卻"
 L_GUI_MISC_CHARS_CURRENCY = "追蹤所有角色金錢信息"
+L_GUI_MISC_ARMORY_LINK = "頭像菜單增加英雄榜鏈接"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
@@ -74,11 +75,12 @@ L_GUI_AUTOMATION_TAB_BINDER = "Tab只選定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "團隊副本時自動開啟戰鬥記錄"
 L_GUI_AUTOMATION_CURRENCY_CAP = "自動彈出貨幣提示框"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用滑鼠滾輪施放Buff"
+L_GUI_AUTOMATION_OPEN_ITEMS = "自動打開背包中的封裝物品"
 
 -- Skins options
-L_GUI_SKINS = "介面樣式"
+L_GUI_SKINS = "介面樣式增強"
 L_GUI_SKINS_COLOR_THEME = "Color theme" -- Need review
-L_GUI_SKINS_BLIZZARD = "開啟暴雪介面樣式增強"
+L_GUI_SKINS_BLIZZARD = "暴雪默認介面"
 L_GUI_SKINS_SHADOW = "Shadow on frames" -- Need review
 L_GUI_SKINS_MINIMAP_BUTTONS = "小地圖插件圖示"
 L_GUI_SKINS_MINIMAP_BUTTONS_MOUSEOVER = "Addons icons on mouseover" -- Need review
@@ -272,7 +274,7 @@ L_GUI_NAMEPLATE_AD_HEIGHT = "目標的單位名條額外高度"
 L_GUI_NAMEPLATE_AD_WIDTH = "目標的單位名條額外寬度"
 L_GUI_NAMEPLATE_CASTBAR_NAME = "法術名稱"
 L_GUI_NAMEPLATE_THREAT = "仇恨情況"
-L_GUI_NAMEPLATE_CLASS_ICON = "PVP時顯示職業圖示"
+L_GUI_NAMEPLATE_CLASS_ICON = "PvP時顯示職業圖示"
 L_GUI_NAMEPLATE_NAME_ABBREV = "名字縮寫"
 L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨顏色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "臨界仇恨顏色"

@@ -38,6 +38,7 @@ L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker" -- Needs review
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame" -- Needs review
 L_GUI_MISC_ARCHAEOLOGY = "Archaeology artifacts and cooldown" -- Needs review
 L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple characters" -- Needs review
+L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
@@ -74,6 +75,7 @@ L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
 L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll" -- Needs review
+L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Personnalisation d'addon"
@@ -251,7 +253,7 @@ L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
 L_GUI_MAP_BG_STYLIZATION = "Style d'arrière plan de la carte"
 L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map" -- Needs review
 L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map" -- Needs review
-L_GUI_MAP_FOG_OF_WAR = "Fog of war on World Map" -- Needs review
+L_GUI_MAP_FOG_OF_WAR = "Remove fog of war on World Map" -- Needs review
 
 -- Loot options
 L_GUI_LOOT_ENABLE = "Activer la fenêtre de butin"

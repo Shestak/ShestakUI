@@ -57,6 +57,9 @@ L_ANNOUNCE_FP_CAST = "%s 开启了 %s"
 L_ANNOUNCE_FP_CLICK = "%s 正在开启 %s... 请点击！"
 L_ANNOUNCE_FP_USE = "%s 使用了一个 %s."
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = "已打断"
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "没有天赋"
 L_TOOLTIP_LOADING = "读取中..."
@@ -162,8 +165,6 @@ L_MAIL_MESSAGES = "新邮件"
 L_LOOT_RANDOM = "随机拾取"
 L_LOOT_SELF = "自由拾取"
 L_LOOT_FISH = "钓鱼拾取"
-L_LOOT_MONSTER = ">> 拾取自 "
-L_LOOT_CHEST = ">> 拾取自宝箱"
 L_LOOT_ANNOUNCE = "向频道通告"
 L_LOOT_TO_RAID = "  团队"
 L_LOOT_TO_PARTY = "  队伍"

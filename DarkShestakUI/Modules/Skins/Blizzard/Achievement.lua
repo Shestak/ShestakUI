@@ -128,6 +128,11 @@ local function LoadSkin()
 				frame.isSkinned = true
 			end
 		end
+		if IsAddOnLoaded("Overachiever_Tabs") then
+			for i = 4, 6 do
+				T.SkinTab(_G["AchievementFrameTab"..i])
+			end
+		end
 	end)
 
 	hooksecurefunc("AchievementButton_DisplayAchievement", function(frame, category, achievement)

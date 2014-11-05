@@ -57,6 +57,10 @@ C["filger_spells"] = {
 			{spellID = 53365, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Transformation
 			{spellID = 63560, unitID = "pet", caster = "player", filter = "BUFF"},
+			-- Shadow Infusion
+			{spellID = 91342, unitID = "pet", caster = "player", filter = "BUFF", count = 5},
+			-- Blood Charge
+			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF", count = 10},
 
 			-- Trinkets
 			-- General
@@ -163,28 +167,32 @@ C["filger_spells"] = {
 			{spellID = 47481, filter = "CD"},
 			-- Remorseless Winter
 			{spellID = 108200, filter = "CD"},
+			-- Dark Simulacrum
+			{spellID = 77606, filter = "CD"},
 			-- Soul Reaper
 			{spellID = 130736, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Plague Leech
 			{spellID = 123693, filter = "CD"},
-			-- Rune Tap
-			{spellID = 48982, filter = "CD"},
 			-- Death and Decay
 			{spellID = 43265, filter = "CD"},
 			-- Death's Advance
 			{spellID = 96268, filter = "CD"},
+			-- Rune Tap
+			{spellID = 48982, filter = "CD"},
 			-- Anti-Magic Shell
 			{spellID = 48707, filter = "CD"},
 			-- Vampiric Blood
 			{spellID = 55233, filter = "CD"},
-			-- Outbreak
-			{spellID = 77575, filter = "CD"},
 			-- Pillar of Frost
 			{spellID = 51271, filter = "CD"},
+			-- Outbreak
+			{spellID = 77575, filter = "CD"},
 			-- Gorefiend's Grasp
 			{spellID = 108199, filter = "CD"},
+			-- Raise Dead
+			{spellID = 46584, filter = "CD"},
 			-- Dancing Rune Weapon
 			{spellID = 49028, filter = "CD"},
 			-- Unholy Blight
@@ -195,8 +203,6 @@ C["filger_spells"] = {
 			{spellID = 108201, filter = "CD"},
 			-- Death Pact
 			{spellID = 48743, filter = "CD"},
-			-- Raise Dead
-			{spellID = 46584, filter = "CD"},
 			-- Anti-Magic Zone
 			{spellID = 51052, filter = "CD"},
 			-- Icebound Fortitude
@@ -546,7 +552,7 @@ C["filger_spells"] = {
 			{spellID = 770, filter = "CD"},
 			-- Tiger's Fury
 			{spellID = 5217, filter = "CD"},
-			-- Disorienting Roar
+			-- Incapacitating Roar
 			{spellID = 99, filter = "CD"},
 			-- Mass Entanglement
 			{spellID = 102359, filter = "CD"},
@@ -1686,6 +1692,8 @@ C["filger_spells"] = {
 			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evangelism
 			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Word: Insanity
+			{spellID = 132573, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -2162,7 +2170,7 @@ C["filger_spells"] = {
 			-- Maelstorm Weapon
 			{spellID = 53817, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightning Shield
-			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF", spec = 1, count = 5},
+			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF", spec = 1, count = 6},
 			-- Shamanistic Rage
 			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental Mastery
@@ -3056,7 +3064,7 @@ C["filger_spells"] = {
 			{spellID = 22570, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 163505, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Disorienting Roar
+			-- Incapacitating Roar
 			{spellID = 99, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
 			{spellID = 78675, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -3359,7 +3367,7 @@ C["filger_spells"] = {
 			{spellID = 22570, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 163505, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
-			-- Disorienting Roar
+			-- Incapacitating Roar
 			{spellID = 99, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
 			{spellID = 78675, unitID = "target", caster = "all", filter = "DEBUFF"},

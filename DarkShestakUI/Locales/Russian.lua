@@ -57,6 +57,9 @@ L_ANNOUNCE_FP_CAST = "%s создает %s."
 L_ANNOUNCE_FP_CLICK = "%s создает %s. Кликаем!"
 L_ANNOUNCE_FP_USE = "%s использует %s."
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = INTERRUPTED
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Нет талантов"
 L_TOOLTIP_LOADING = "Загрузка..."
@@ -162,8 +165,6 @@ L_MAIL_MESSAGES = "сообщений"
 L_LOOT_RANDOM = "Случайному игроку"
 L_LOOT_SELF = "Забрать себе"
 L_LOOT_FISH = "Рыбалка"
-L_LOOT_MONSTER = ">> Добыча с "
-L_LOOT_CHEST = ">> Добыча из сундука"
 L_LOOT_ANNOUNCE = "Объявить"
 L_LOOT_TO_RAID = "  рейду"
 L_LOOT_TO_PARTY = "  группе"

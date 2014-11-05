@@ -205,10 +205,6 @@ local function Shared(self, unit)
 			self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		end
-	elseif unit == "player" and T.class == "DRUID" then
-		self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size * 4, C.font.unit_frames_font_style)
-		self.Info:SetPoint("BOTTOM", self.Health, "TOP", 0, -10.5)
-		self:Tag(self.Info, "[WM1][WM2][WM3]")
 	end
 
 	if unit == "player" then
@@ -277,29 +273,54 @@ local function Shared(self, unit)
 			end
 		end
 
-		-- Chi bar
-		if C.unitframe_class_bar.chi == true and T.class == "MONK" then
-			self.HarmonyBar = CreateFrame("Frame", self:GetName().."_HarmonyBar", self)
-			self.HarmonyBar:CreateBackdrop("Default", "Shadow")
-			self.HarmonyBar:SetPoint("BOTTOM", self, "TOP", 0, -1)
-			self.HarmonyBar:SetSize(180, 7)
-			self.HarmonyBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+		if T.class == "MONK" then
+			-- Chi bar
+			if C.unitframe_class_bar.chi == true then
+				self.HarmonyBar = CreateFrame("Frame", self:GetName().."_HarmonyBar", self)
+				self.HarmonyBar:CreateBackdrop("Default", "Shadow")
+				self.HarmonyBar:SetPoint("BOTTOM", self, "TOP", 0, -1)
+				self.HarmonyBar:SetSize(180, 7)
+				self.HarmonyBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+.
+				for i = 1, 6 do
+					self.HarmonyBar[i] = CreateFrame("StatusBar", nil, self.HarmonyBar)
+					self.HarmonyBar[i]:SetSize(176 / 6, 7)
+					if i == 1 then
+						self.HarmonyBar[i]:SetPoint("LEFT", self.HarmonyBar, "LEFT", 0, 0)
+					else
+						self.HarmonyBar[i]:SetPoint("TOPLEFT", self.HarmonyBar[i-1], "TOPRIGHT", 1, 0)
+					end
+					self.HarmonyBar[i]:SetStatusBarTexture(C.media.texture)
+					self.HarmonyBar[i]:SetStatusBarColor(0.33, 0.63, 0.33)
 
-			for i = 1, 5 do
-				self.HarmonyBar[i] = CreateFrame("StatusBar", nil, self.HarmonyBar)
-				self.HarmonyBar[i]:SetSize(176 / 5, 7)
-				if i == 1 then
-					self.HarmonyBar[i]:SetPoint("LEFT", self.HarmonyBar, "LEFT", 0, 0)
-				else
-					self.HarmonyBar[i]:SetPoint("TOPLEFT", self.HarmonyBar[i-1], "TOPRIGHT", 1, 0)
+					self.HarmonyBar[i].bg = self.HarmonyBar[i]:CreateTexture(nil, "BORDER")
+					self.HarmonyBar[i].bg:SetAllPoints()
+					self.HarmonyBar[i].bg:SetTexture(C.media.texture)
+					self.HarmonyBar[i].bg:SetVertexColor(0.33, 0.63, 0.33, 0.2)
 				end
-				self.HarmonyBar[i]:SetStatusBarTexture(C.media.texture)
-				self.HarmonyBar[i]:SetStatusBarColor(0.33, 0.63, 0.33)
+			end
 
-				self.HarmonyBar[i].bg = self.HarmonyBar[i]:CreateTexture(nil, "BORDER")
-				self.HarmonyBar[i].bg:SetAllPoints()
-				self.HarmonyBar[i].bg:SetTexture(C.media.texture)
-				self.HarmonyBar[i].bg:SetVertexColor(0.33, 0.63, 0.33, 0.2)
+			-- Statue bar
+			if C.unitframe_class_bar.totem == true then
+				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+				self.TotemBar:CreateBorder(false, true)
+				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+				self.TotemBar:SetSize(53, 7)
+				self.TotemBar.Destroy = true
+
+				for i = 1, 1 do
+					self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+					self.TotemBar[i]:SetSize(53, 7)
+					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
+					self.TotemBar[i]:SetMinMaxValues(0, 1)
+
+					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
+					self.TotemBar[i].bg:SetAllPoints()
+					self.TotemBar[i].bg:SetTexture(C.media.texture)
+					self.TotemBar[i].bg.multiplier = 0.2
+				end
 			end
 		end
 
@@ -423,8 +444,6 @@ local function Shared(self, unit)
 				self.TotemBar[i].bg:SetAllPoints()
 				self.TotemBar[i].bg:SetTexture(C.media.texture)
 				self.TotemBar[i].bg.multiplier = 0.2
-
-				_G["TotemFrameTotem"..i.."Icon"]:Hide()
 			end
 		end
 
@@ -465,6 +484,85 @@ local function Shared(self, unit)
 				self.EclipseBar:SetScript("OnUpdate", function() T.UpdateEclipse(self, true) end)
 				self.EclipseBar:SetScript("OnHide", function() T.UpdateEclipse(self, false) end)
 				self.EclipseBar.PostUpdatePower = T.EclipseDirection
+			end
+
+			-- Mushroom bar
+			if C.unitframe_class_bar.totem == true then
+				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+				self.TotemBar:CreateBorder(false, true)
+				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+				self.TotemBar:SetSize(108, 7)
+				self.TotemBar.Destroy = true
+
+				for i = 1, 3 do
+					self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+					self.TotemBar[i]:SetSize(108 / 3, 7)
+					if i == 1 then
+						self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+					else
+						self.TotemBar[i]:SetPoint("TOPLEFT", self.TotemBar[i-1], "TOPRIGHT", 0, 0)
+					end
+					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
+					self.TotemBar[i]:SetMinMaxValues(0, 1)
+
+					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
+					self.TotemBar[i].bg:SetAllPoints()
+					self.TotemBar[i].bg:SetTexture(C.media.texture)
+					self.TotemBar[i].bg.multiplier = 0.2
+				end
+			end
+		end
+
+		-- Mocking Banner bar
+		if C.unitframe_class_bar.totem == true and T.class == "WARRIOR" then
+			if C.unitframe_class_bar.totem == true then
+				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+				self.TotemBar:CreateBorder(false, true)
+				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+				self.TotemBar:SetSize(53, 7)
+				self.TotemBar.Destroy = true
+
+				for i = 1, 1 do
+					self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+					self.TotemBar[i]:SetSize(53, 7)
+					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
+					self.TotemBar[i]:SetMinMaxValues(0, 1)
+
+					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
+					self.TotemBar[i].bg:SetAllPoints()
+					self.TotemBar[i].bg:SetTexture(C.media.texture)
+					self.TotemBar[i].bg.multiplier = 0.2
+				end
+			end
+		end
+
+		-- Rune of Power bar
+		if C.unitframe_class_bar.totem == true and T.class == "MAGE" then
+			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+			self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+			self.TotemBar:CreateBorder(false, true)
+			self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+			self.TotemBar:SetSize(108, 7)
+			self.TotemBar.Destroy = true
+
+			for i = 1, 2 do
+				self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+				self.TotemBar[i]:SetSize(108 / 2, 7)
+				if i == 1 then
+					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+				else
+					self.TotemBar[i]:SetPoint("TOPLEFT", self.TotemBar[i-1], "TOPRIGHT", 0, 0)
+				end
+				self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
+				self.TotemBar[i]:SetMinMaxValues(0, 1)
+
+				self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
+				self.TotemBar[i].bg:SetAllPoints()
+				self.TotemBar[i].bg:SetTexture(C.media.texture)
+				self.TotemBar[i].bg.multiplier = 0.2
 			end
 		end
 
@@ -1359,14 +1457,3 @@ SLASH_TEST_UF1 = "/testui"
 SLASH_TEST_UF2 = "/еуыегш"
 SLASH_TEST_UF3 = "/testuf"
 SLASH_TEST_UF4 = "/еуыега"
-
-----------------------------------------------------------------------------------------
---	Delete some lines from unit dropdown menu
-----------------------------------------------------------------------------------------
-for _, menu in pairs(UnitPopupMenus) do
-	for index = #menu, 1, -1 do
-		if menu[index] == "SET_FOCUS" or menu[index] == "CLEAR_FOCUS" or menu[index] == "MOVE_PLAYER_FRAME" or menu[index] == "MOVE_TARGET_FRAME" or menu[index] == "LARGE_FOCUS" or menu[index] == "MOVE_FOCUS_FRAME" or (menu[index] == "PET_DISMISS" and T.class == "HUNTER") then
-			table.remove(menu, index)
-		end
-	end
-end

@@ -6,16 +6,15 @@ if C.chat.enable ~= true or C.chat.damage_meter_spam ~= true then return end
 ----------------------------------------------------------------------------------------
 local firstLines = {
 	"^Recount - (.*)$", 									-- Recount
-	"^Skada: (.*) for (.*), (.*) - (.*):$",					-- Skada
-	"^Skada report on (.*) for (.*), (.*) to (.*):$",		-- Skada enUS (Not Checked)
-	"^Skada: Bericht für (.*) gegen (.*), (.*) bis (.*):$",	-- Skada deDE (Not Checked)
-	"^Skada: (.*) für (.*), (.*) - (.*):$",					-- Skada deDE
-	"^Skada : (.*) pour (.*), de (.*) à (.*) :$",			-- Skada frFR
-	"Отчёт Skada: (.*) - (.*), с (.*) до (.*):$",			-- Skada ruRU
-	"^Skada: (.*) por (.*) - (.*):$",						-- Skada esES
-	"^(.*) - (.*)의 Skada 보고, (.*) ~ (.*):$",				-- Skada koKR
-	"^Skada战斗报告：(.*)的(.*), (.*)到(.*):$",				-- Skada zhCN
-	"^Skada:(.*)來自(.*)，(.*) - (.*):$",					-- Skada zhTW
+	"^Skada: (.*) for (.*):$",								-- Skada enUS
+	"^Skada: (.*) für (.*):$",								-- Skada deDE
+	"^Skada: (.*) pour (.*):$",								-- Skada frFR
+	"^Отчёт Skada: (.*), с (.*):$",							-- Skada ruRU
+	"^Skada: (.*) por (.*):$",								-- Skada esES/ptBR
+	"^Skada: (.*) per (.*):$",								-- Skada itIT
+	"^(.*) 의 Skada 보고 (.*):$",							-- Skada koKR
+	"^Skada报告(.*)的(.*):$",								-- Skada zhCN
+	"^Skada:(.*)來自(.*):$",								-- Skada zhTW
 	"^(.*) Done for (.*)$",									-- TinyDPS enUS
 	"^(.*) für (.*)$",										-- TinyDPS deDE
 	"데미지량 -(.*)$",										-- TinyDPS koKR
@@ -24,14 +23,14 @@ local firstLines = {
 	"Исцеление:(.*)$",										-- TinyDPS ruRU
 	"^Numeration: (.*) - (.*)$",							-- Numeration
 	"alDamageMeter : (.*)$",								-- alDamageMeter
+	"^Details! Report for (.*)$"							-- Details!
 }
 
 local nextLines = {
-	"^(%d+). (.*)$",										-- Recount and Skada
-	"^ (%d+). (.*)$", 										-- Skada, Numeration
-	"^.*%%%)$", 											-- Skada player details
+	"^(%d+)\. (.*)$",										-- Recount, Details! and Skada
+	"^(.*)   (.*)$",										-- Additional Skada
 	"^[+-]%d+.%d",											-- Numeration deathlog details
-	"^(%d+). (.*):(.*)(%d+)(.*)(%d+)%%(.*)%((%d+)%)$",		-- TinyDPS
+	"^(%d+). (.*):(.*)(%d+)(.*)(%d+)%%(.*)%((%d+)%)$"		-- TinyDPS
 }
 
 local meters = {}

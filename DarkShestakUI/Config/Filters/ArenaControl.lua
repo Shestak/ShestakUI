@@ -17,7 +17,7 @@ T.ArenaControl = {
 	[GetSpellInfo(33786)] = 4,	-- Cyclone
 	[GetSpellInfo(5211)] = 4,	-- Mighty Bash
 	[GetSpellInfo(22570)] = 4,	-- Maim
-	[GetSpellInfo(99)] = 4,		-- Disorienting Roar
+	[GetSpellInfo(99)] = 4,		-- Incapacitating Roar
 	-- Hunter
 	[GetSpellInfo(3355)] = 4,	-- Freezing Trap
 	[GetSpellInfo(19386)] = 4,	-- Wyvern Sting
@@ -85,7 +85,7 @@ T.ArenaControl = {
 	[GetSpellInfo(116706)] = 3,	-- Disable
 	[GetSpellInfo(87194)] = 3,	-- Glyph of Mind Blast
 	[GetSpellInfo(114404)] = 3,	-- Void Tendril's Grasp
-	[GetSpellInfo(63685)] = 3,	-- Freeze (Frozen Power)
+	[GetSpellInfo(63685)] = 3,	-- Frozen Power
 	[GetSpellInfo(64695)] = 3,	-- Earthgrab
 	[GetSpellInfo(107566)] = 3,	-- Staggering Shout
 

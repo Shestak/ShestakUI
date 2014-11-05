@@ -52,39 +52,46 @@ end
 ----------------------------------------------------------------------------------------
 --	Player's Role and Specialization check
 ----------------------------------------------------------------------------------------
-T.CheckSpec = function(tree)
+T.CheckSpec = function(spec)
 	local activeGroup = GetActiveSpecGroup()
 	if activeGroup and GetSpecialization(false, false, activeGroup) then
-		return tree == GetSpecialization(false, false, activeGroup)
+		return spec == GetSpecialization(false, false, activeGroup)
 	end
 end
 
+local isCaster = {
+	DEATHKNIGHT = {nil, nil, nil},
+	DRUID = {true}, -- Balance
+	HUNTER = {nil, nil, nil},
+	MAGE = {true, true, true},
+	MONK = {nil, nil, nil},
+	PALADIN = {nil, nil, nil},
+	PRIEST = {nil, nil, true}, -- Shadow
+	ROGUE = {nil, nil, nil},
+	SHAMAN = {true}, -- Elemental
+	WARLOCK = {true, true, true},
+	WARRIOR = {nil, nil, nil}
+}
+
 local function CheckRole(self, event, unit)
-	local tree = GetSpecialization()
-	local role = tree and select(6, GetSpecializationInfo(tree))
+	local spec = GetSpecialization()
+	local role = spec and GetSpecializationRole(spec)
 
 	if role == "TANK" then
 		T.Role = "Tank"
 	elseif role == "HEALER" then
 		T.Role = "Healer"
 	elseif role == "DAMAGER" then
-		local _, playerint = UnitStat("player", 4)
-		local _, playeragi = UnitStat("player", 2)
-		local base, posBuff, negBuff = UnitAttackPower("player")
-		local playerap = base + posBuff + negBuff
-
-		if (playerap > playerint) or (playeragi > playerint) then
-			T.Role = "Melee"
-		else
+		if isCaster[T.class][spec] then
 			T.Role = "Caster"
+		else
+			T.Role = "Melee"
 		end
 	end
 end
 local RoleUpdater = CreateFrame("Frame")
 RoleUpdater:RegisterEvent("PLAYER_ENTERING_WORLD")
 RoleUpdater:RegisterEvent("PLAYER_TALENT_UPDATE")
-RoleUpdater:RegisterEvent("UNIT_INVENTORY_CHANGED")
-RoleUpdater:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 RoleUpdater:SetScript("OnEvent", CheckRole)
 
 ----------------------------------------------------------------------------------------

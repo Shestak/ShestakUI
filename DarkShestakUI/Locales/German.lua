@@ -57,6 +57,9 @@ L_ANNOUNCE_FP_CAST = "%s zaubert ein %s."
 L_ANNOUNCE_FP_CLICK = "%s zaubert ein %s. Klick!"
 L_ANNOUNCE_FP_USE = "%s nahm %s."
 
+-- Announce your interrupts
+L_ANNOUNCE_INTERRUPTED = INTERRUPTED
+
 -- Tooltip
 L_TOOLTIP_NO_TALENT = "Keine Talente"
 L_TOOLTIP_LOADING = "Lade..."
@@ -162,8 +165,6 @@ L_MAIL_MESSAGES = "nachrichten"
 L_LOOT_RANDOM = "Zufälliger Spieler"
 L_LOOT_SELF = "Selbst nehmen"
 L_LOOT_FISH = "Angeln"
-L_LOOT_MONSTER = ">> Beute von "
-L_LOOT_CHEST = ">> Beute aus Kiste"
 L_LOOT_ANNOUNCE = "Ansagen"
 L_LOOT_TO_RAID = "  schlachtzug"
 L_LOOT_TO_PARTY = "  gruppe"

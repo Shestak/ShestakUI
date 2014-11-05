@@ -18,7 +18,7 @@ L_GUI_GENERAL_WELCOME_MESSAGE = "显示欢迎信息"
 L_GUI_GENERAL_LAG_TOLERANCE = "自动更新自定延迟容许值"
 
 -- Miscellaneous options
-L_GUI_MISC_MARKING = "点击shift显示团队标记图示菜单"
+L_GUI_MISC_MARKING = "点击Shift显示团队标记图示菜单"
 L_GUI_MISC_INVKEYWORD = "自动邀请关键字(/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "afk时旋转镜头"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框体解锁"
@@ -38,6 +38,7 @@ L_GUI_MISC_COLOR_PICKER = "改进型颜色选择器"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "商业技能窗口上显示附魔卷轴"
 L_GUI_MISC_ARCHAEOLOGY = "考古学的物品和冷却时间"
 L_GUI_MISC_CHARS_CURRENCY = "记录你其他人物下的金钱信息"
+L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)" -- Needs review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
@@ -74,6 +75,7 @@ L_GUI_AUTOMATION_TAB_BINDER = "Tab只选定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "团队副本时自动开启战斗记录"
 L_GUI_AUTOMATION_CURRENCY_CAP = "自动弹出货币提示框"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "滚动鼠标滚轮自动上buff"
+L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "介面样式"

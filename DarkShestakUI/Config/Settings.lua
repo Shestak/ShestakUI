@@ -46,7 +46,7 @@ C["misc"] = {
 	["invite_keyword"] = "invite",				-- Short keyword for invite(for enable - in game type /ainv)
 	["afk_spin_camera"] = false,				-- Spin camera while afk
 	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
-	["quest_auto_button"] = false,				-- Quest auto button
+	["quest_auto_button"] = false,				-- Quest/item auto button (from the list)
 	["raid_tools"] = true,						-- Raid tools
 	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
 	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
@@ -62,6 +62,7 @@ C["misc"] = {
 	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
 	["archaeology"] = false,					-- Archaeology artifacts and cooldown
 	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
+	["armory_link"] = false,					-- Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)
 }
 
 ----------------------------------------------------------------------------------------
@@ -104,6 +105,7 @@ C["automation"] = {
 	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
 	["currency_cap"] = false,					-- Auto popup for currency cap
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll
+	["open_items"] = false,						-- Auto opening of items in bag
 }
 
 ----------------------------------------------------------------------------------------
@@ -324,7 +326,7 @@ C["map"] = {
 	["bg_map_stylization"] = true,				-- BG map stylization
 	["map_boss_count"] = false,					-- Show boss count in World Map
 	["explore_map"] = false,					-- Tracking Explorer and Lore Master achievements in World Map
-	["fog_of_war"] = false,						-- Fog of war on World Map
+	["fog_of_war"] = false,						-- Remove fog of war on World Map
 }
 
 ----------------------------------------------------------------------------------------
@@ -335,7 +337,7 @@ C["loot"] = {
 	["rolllootframe"] = true,					-- Enable group roll frame
 	["icon_size"] = 22,							-- Icon size
 	["width"] = 221,							-- Loot window width
-	["auto_greed"] = true,						-- Push "greed" or "disenchant" button when an item roll
+	["auto_greed"] = true,						-- Push "greed" or "disenchant" button when an item roll at max level
 	["auto_confirm_de"] = true,					-- Auto confirm disenchant
 }
 
@@ -353,11 +355,11 @@ C["nameplate"] = {
 	["show_castbar_name"] = false,				-- Show castbar name
 	["enhance_threat"] = true,					-- If tank good aggro = green, bad = red
 	["class_icons"] = false,					-- Icons by class in PvP
-	["name_abbrev"] = false,					-- Display the abbreviated names
+	["name_abbrev"] = false,					-- Display abbreviated names (show debuffs must be turned off)
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
 	["near_color"] = {1, 1, 0},					-- Near threat color
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
-	["track_auras"] = false,					-- Show debuffs
+	["track_auras"] = false,					-- Show debuffs (from the list)
 	["auras_size"] = 22,						-- Debuffs size
 	["healer_icon"] = false,					-- Show icon above enemy healers nameplate in battlegrounds
 }
@@ -377,9 +379,9 @@ C["actionbar"] = {
 	["toggle_mode"] = true,						-- Enable toggle mode
 	["hide_highlight"] = false,					-- Hide proc highlight
 	-- Bottom bars
-	["bottombars"] = 3,							-- Number of action bars on the bottom
+	["bottombars"] = 3,							-- Number of action bars on the bottom (1, 2 or 3)
 	-- Right bars
-	["rightbars"] = 2,							-- Number of action bars on right
+	["rightbars"] = 2,							-- Number of action bars on right (0, 1, 2 or 3)
 	["rightbars_mouseover"] = true,				-- Right bars on mouseover
 	-- Pet bar
 	["petbar_mouseover"] = false,				-- Pet bar on mouseover(only for horizontal pet bar)
