@@ -745,7 +745,7 @@ function CreateUIConfig()
 	end
 	child:SetWidth(125)
 	child:SetHeight(offset)
-	slider:SetMinMaxValues(0, (offset == 0 and 1 or offset - 12 * 32))
+	slider:SetMinMaxValues(0, (offset == 0 and 1 or offset - 12 * 33))
 	slider:SetValue(1)
 	groups:SetScrollChild(child)
 
