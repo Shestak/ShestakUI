@@ -1677,6 +1677,8 @@ C["filger_spells"] = {
 
 			-- Buffs
 			-- Divine Insight
+			{spellID = 123267, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadowy Insight
 			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Light
 			{spellID = 114255, unitID = "player", caster = "player", filter = "BUFF"},
