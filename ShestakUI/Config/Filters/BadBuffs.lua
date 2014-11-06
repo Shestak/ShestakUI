@@ -2,8 +2,8 @@
 if C.automation.cancel_bad_buffs ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	The best way to add or delete item is to go at www.wowhead.com, search for a item.
---	Example: Mohawked! -> http://www.wowhead.com/item=58493
+--	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
+--	Example: Mohawked! -> http://www.wowhead.com/spell=58493
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 T.BadBuffs = {
