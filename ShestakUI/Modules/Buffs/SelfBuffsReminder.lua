@@ -52,6 +52,7 @@ local function OnEvent(self, event, arg1, arg2)
 	elseif self.icon:GetTexture() and event == "LEARNED_SPELL_IN_TAB" then
 		self:UnregisterAllEvents()
 		self:RegisterEvent("UNIT_AURA")
+
 		if group.combat and group.combat == true then
 			self:RegisterEvent("PLAYER_REGEN_ENABLED")
 			self:RegisterEvent("PLAYER_REGEN_DISABLED")
@@ -59,10 +60,6 @@ local function OnEvent(self, event, arg1, arg2)
 
 		if (group.instance and group.instance == true) or (group.pvp and group.pvp == true) then
 			self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-		end
-
-		if group.role and group.role == true then
-			self:RegisterEvent("UNIT_INVENTORY_CHANGED")
 		end
 	end
 
@@ -103,6 +100,7 @@ local function OnEvent(self, event, arg1, arg2)
 
 	-- Only time we allow it to play a sound
 	if (event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_REGEN_DISABLED") and C.reminder.solo_buffs_sound == true then canplaysound = true end
+	if event == "PLAYER_LOGIN" then return end
 
 	if ((combat and UnitAffectingCombat("player")) or (instance and difficultyID ~= 0) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and
 	specpass == true and rolepass == true and not UnitInVehicle("player") then
