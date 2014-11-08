@@ -1097,11 +1097,7 @@ button:SetPoint("TOP", "GameMenuButtonAddons", "BOTTOM", 0, -1)
 
 GameMenuFrame:HookScript("OnShow", function()
 	GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + button:GetHeight())
-	if IsMacClient() then
-		GameMenuButtonMacOptions:SetPoint("TOP", button, "BOTTOM", 0, -16)
-	else
-		GameMenuButtonLogout:SetPoint("TOP", button, "BOTTOM", 0, -16)
-	end
+	GameMenuButtonLogout:SetPoint("TOP", button, "BOTTOM", 0, -16)
 end)
 
 button:SetScript("OnClick", function()
