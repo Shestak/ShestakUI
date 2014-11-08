@@ -74,6 +74,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	SetFont(PVPArenaTextString, NORMAL, 22, "THINOUTLINE")
 	SetFont(CoreAbilityFont, NORMAL, 32, nil, 1, 0.82, 0, 0, 0, 0, 1, -1)
 	SetFont(ChatBubbleFont, NORMAL, 14)
+	SetFont(WhiteNormalNumberFont, NORMAL, 11)
 
 	-- Derived fonts
 	SetFont(BossEmoteNormalHuge, NORMAL, 27, "THICKOUTLINE")
