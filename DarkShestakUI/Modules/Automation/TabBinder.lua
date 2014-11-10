@@ -5,12 +5,12 @@ if C.automation.tab_binder ~= true then return end
 --	Auto change Tab key to only target enemy players(RE/TabBinder by Veev/AcidWeb)
 ----------------------------------------------------------------------------------------
 local TabBinder = CreateFrame("Frame")
+TabBinder:RegisterEvent("PLAYER_ENTERING_WORLD")
 TabBinder:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 TabBinder:RegisterEvent("PLAYER_REGEN_ENABLED")
 TabBinder:RegisterEvent("DUEL_REQUESTED")
 TabBinder:RegisterEvent("DUEL_FINISHED")
 TabBinder:RegisterEvent("CHAT_MSG_SYSTEM")
-TabBinder:RegisterEvent("ADDON_LOADED")
 
 local RTB_Fail, RTB_DefaultKey, RTB_LastTargetKey, RTB_TargetKey, RTB_CurrentBind, RTB_Success = false, true
 
@@ -20,7 +20,7 @@ TabBinder:SetScript("OnEvent", function(self, event, ...)
 		if RTBChatMessage == ERR_DUEL_REQUESTED then
 			event = "DUEL_REQUESTED"
 		end
-	elseif event == "ZONE_CHANGED_NEW_AREA" or (event == "PLAYER_REGEN_ENABLED" and RTB_Fail) or event == "DUEL_REQUESTED" or event == "DUEL_FINISHED" then
+	elseif event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_ENTERING_WORLD" or (event == "PLAYER_REGEN_ENABLED" and RTB_Fail) or event == "DUEL_REQUESTED" or event == "DUEL_FINISHED" then
 		local RTB_BindSet = GetCurrentBindingSet()
 		local RTB_PVPType = GetZonePVPInfo()
 		local _, RTB_ZoneType = IsInInstance()

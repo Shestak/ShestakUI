@@ -750,7 +750,7 @@ function CreateUIConfig()
 	end
 	child:SetWidth(125)
 	child:SetHeight(offset)
-	slider:SetMinMaxValues(0, (offset == 0 and 1 or offset - 12 * 32))
+	slider:SetMinMaxValues(0, (offset == 0 and 1 or offset - 12 * 33))
 	slider:SetValue(1)
 	groups:SetScrollChild(child)
 
@@ -1102,11 +1102,7 @@ button:SetPoint("TOP", "GameMenuButtonAddons", "BOTTOM", 0, -1)
 
 GameMenuFrame:HookScript("OnShow", function()
 	GameMenuFrame:SetHeight(GameMenuFrame:GetHeight() + button:GetHeight())
-	if IsMacClient() then
-		GameMenuButtonMacOptions:SetPoint("TOP", button, "BOTTOM", 0, -16)
-	else
-		GameMenuButtonLogout:SetPoint("TOP", button, "BOTTOM", 0, -16)
-	end
+	GameMenuButtonLogout:SetPoint("TOP", button, "BOTTOM", 0, -16)
 end)
 
 button:SetScript("OnClick", function()

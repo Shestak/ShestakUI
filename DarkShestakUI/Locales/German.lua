@@ -84,7 +84,6 @@ L_MISC_HEADER_MARK = "Mausdrüber Raid Icon"
 L_MISC_BINDER_OPEN = "Maus gebunden"
 L_MISC_GROCERY_BUY = "Kaufen"
 L_MISC_GROCERY_DESC = "Kaufe Lebensmittelaschen automatisch"
-L_MISC_GROCERY_ERROR = "Nicht genügend Gegenstände vorhanden."
 L_MISC_SCROLL = "Rolle"
 
 -- Raid Utility

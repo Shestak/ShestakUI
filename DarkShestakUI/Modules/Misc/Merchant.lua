@@ -131,8 +131,6 @@ button:SetScript("OnClick", function()
 				local need = floor(count / data.count)
 				local have = havebags[data.bag] or 0
 				shopping[data.bag] = need - have
-			--else
-			--	return print("|cffffff00"..L_MISC_GROCERY_ERROR.."|r")
 			end
 		end
 	end
@@ -154,7 +152,6 @@ button:SetScript("OnClick", function()
 		end
 	end
 	throttle = true
-	frame:RegisterEvent("BAG_UPDATE")
 end)
 
 function frame:MERCHANT_SHOW()
@@ -164,9 +161,5 @@ end
 
 function frame:MERCHANT_CLOSED()
 	button:Hide()
-end
-
-function frame:BAG_UPDATE()
-	frame:UnregisterEvent("BAG_UPDATE")
 	throttle = false
 end

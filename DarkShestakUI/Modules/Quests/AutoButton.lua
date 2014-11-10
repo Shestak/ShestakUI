@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.misc.quest_auto_button ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	AutoButton for used items(by Elv22)
+--	AutoButton for used items(by Elv22) (use macro /click AutoButton)
 ----------------------------------------------------------------------------------------
 local Items = T.ABItems
 local EquipedItems = T.ABEquipedItems

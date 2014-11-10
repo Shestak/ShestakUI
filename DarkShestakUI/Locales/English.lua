@@ -80,7 +80,6 @@ L_MISC_HEADER_MARK = "Mouseover Raid Icons"
 L_MISC_BINDER_OPEN = "Mouse Bindings"
 L_MISC_GROCERY_BUY = "Buy"
 L_MISC_GROCERY_DESC = "Automatically buy grocery bags"
-L_MISC_GROCERY_ERROR = "Not enough items."
 L_MISC_SCROLL = "Scroll"
 
 -- Raid Utility

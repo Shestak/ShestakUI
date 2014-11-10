@@ -417,6 +417,25 @@ local function LoadSkin()
 	T.SkinCheckBox(LFGListFrame.EntryCreation.ItemLevel.CheckButton)
 	LFGListFrame.EntryCreation.ListGroupButton:SkinButton()
 	LFGListFrame.EntryCreation.CancelButton:SkinButton()
+
+	LFGListFrame.ApplicationViewer.InfoBackground:Hide()
+	LFGListFrame.ApplicationViewer.Inset.Bg:Hide()
+	LFGListFrame.ApplicationViewer.Inset:DisableDrawLayer("BORDER")
+
+	LFGListFrame.ApplicationViewer.NameColumnHeader:SkinButton(true)
+	LFGListFrame.ApplicationViewer.RoleColumnHeader:SkinButton(true)
+	LFGListFrame.ApplicationViewer.ItemLevelColumnHeader:SkinButton(true)
+
+	LFGListFrame.ApplicationViewer.RoleColumnHeader:SetPoint("LEFT", LFGListFrame.ApplicationViewer.NameColumnHeader, "RIGHT", 3, 0)
+	LFGListFrame.ApplicationViewer.ItemLevelColumnHeader:SetPoint("LEFT", LFGListFrame.ApplicationViewer.RoleColumnHeader, "RIGHT", 3, 0)
+
+	LFGListFrame.ApplicationViewer.RefreshButton:SkinButton()
+	LFGListFrame.ApplicationViewer.RefreshButton:SetSize(24, 24)
+	LFGListFrame.ApplicationViewer.RefreshButton.Icon:SetPoint("CENTER")
+
+	LFGListFrame.ApplicationViewer.RemoveEntryButton:SkinButton()
+	LFGListFrame.ApplicationViewer.EditButton:SkinButton()
+	T.SkinScrollBar(LFGListApplicationViewerScrollFrameScrollBar)
 end
 
 tinsert(T.SkinFuncs["DarkShestakUI"], LoadSkin)

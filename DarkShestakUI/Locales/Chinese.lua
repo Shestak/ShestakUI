@@ -84,7 +84,6 @@ L_MISC_HEADER_MARK = "鼠标悬停显示团队图标"
 L_MISC_BINDER_OPEN = "鼠标绑定"
 L_MISC_GROCERY_BUY = "购买"
 L_MISC_GROCERY_DESC = "自动购买杂货包"
-L_MISC_GROCERY_ERROR = "物品不夠."
 L_MISC_SCROLL = "附魔卷轴"
 
 -- Raid Utility
