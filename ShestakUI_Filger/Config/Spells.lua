@@ -2875,8 +2875,6 @@ C["filger_spells"] = {
 			{spellID = 1160, filter = "CD"},
 			-- Enraged Regeneration
 			{spellID = 55694, filter = "CD"},
-			-- Commanding Shout
-			{spellID = 469, filter = "CD"},
 			-- Shield Wall
 			{spellID = 871, filter = "CD"},
 			-- Last Stand
