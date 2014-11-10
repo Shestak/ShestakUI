@@ -12,10 +12,10 @@ local function ILockCompare(frame, link, ...)
 	local linkType = string.match(link, "(instancelock):")
 	if linkType == "instancelock" then
 		local mylink, templink
-		local myguid = string.sub((UnitGUID("player")), 3)
+		local myguid = UnitGUID("player")
 		local guid = string.match(link, "instancelock:([^:]+)")
 
-		if not string.find(myguid, guid) then
+		if guid ~= myguid then
 			local instanceguid = string.match(link, "instancelock:[^:]+:(%d+):")
 			local numsaved = GetNumSavedInstances()
 			if numsaved > 0 then
