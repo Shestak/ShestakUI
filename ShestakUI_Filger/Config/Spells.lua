@@ -250,8 +250,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Shroud of Purgatory
-			{spellID = 116888, filter = "ICD", trigger = "BUFF", duration = 180},
 		},
 	},
 	["DRUID"] = {
