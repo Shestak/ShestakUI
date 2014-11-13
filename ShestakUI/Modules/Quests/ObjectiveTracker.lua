@@ -86,7 +86,7 @@ end)
 -- end)
 
 for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"}) do
-	local header = ObjectiveTrackerFrame.BlocksFrame[headerName].Background:Hide()
+	ObjectiveTrackerFrame.BlocksFrame[headerName].Background:Hide()
 end
 
 ----------------------------------------------------------------------------------------
