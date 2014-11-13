@@ -9,6 +9,14 @@ if C.reminder.raid_buffs_enable == true then
 	-- General buffs
 	T.ReminderBuffs = {
 		Flask = {
+			156071,	-- Draenic Strength Flask
+			156077,	-- Draenic Stamina Flask
+			156070,	-- Draenic Intellect Flask
+			156073,	-- Draenic Agility Flask
+			156080,	-- Greater Draenic Strength Flask
+			156064,	-- Greater Draenic Agility Flask
+			156084,	-- Greater Draenic Stamina Flask
+			156079,	-- Greater Draenic Intellect Flask
 			105694,	-- Flask of the Earth
 			105691,	-- Flask of the Warm Sun
 			105696,	-- Flask of Winter's Bite

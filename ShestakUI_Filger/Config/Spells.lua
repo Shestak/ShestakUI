@@ -2935,6 +2935,14 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].special_proc_icon)},
 
 			-- Potions
+			-- Draenic Agility Potion
+			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Draenic Intellect Potion
+			{spellID = 156426, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Draenic Strength Potion
+			{spellID = 156428, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Draenic Armor Potion
+			{spellID = 156430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Virmen's Bite
 			{spellID = 105697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Potion of Mogu Power
