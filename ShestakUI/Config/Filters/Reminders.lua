@@ -40,16 +40,21 @@ if C.reminder.raid_buffs_enable == true then
 		},
 		Stat = {
 			1126,	-- Mark of the Wild
-			20217,	-- Blessing of Kings
+			159988,	-- Bark of the Wild (Dog)
+			160017,	-- Blessing of Kongs (Gorilla)
+			90363,	-- Embrace of the Shale Spider
+			160017,	-- Strength of the Earth (Worm)
 			115921,	-- Legacy of the Emperor
 			116781,	-- Legacy of the White Tiger
-			90363,	-- Embrace of the Shale Spider
+			20217,	-- Blessing of Kings
 		},
 		Stamina = {
 			21562,	-- Power Word: Fortitude
-			469,	-- Commanding Shout
-			90364,	-- Qiraji Fortitude
+			90364,	-- Qiraji Fortitude (Silithid)
+			160003,	-- Savage Vigor (Rylak)
+			160014,	-- Sturdiness (Goat)
 			166928,	-- Blood Pact
+			469,	-- Commanding Shout
 			111922,	-- Runescroll of Fortitude III
 		}
 	}
@@ -59,9 +64,10 @@ if C.reminder.raid_buffs_enable == true then
 		Spell5Buff = {	-- Spell Power
 			1459,	-- Arcane Brilliance
 			61316,	-- Dalaran Brilliance
+			126309,	-- Still Water (Water Strider)
+			128433,	-- Serpent's Cunning (Serpent)
+			90364,	-- Qiraji Fortitude (Silithid)
 			109773,	-- Dark Intent
-			126309,	-- Still Water
-			128433,	-- Serpent's Swiftness
 		}
 	end
 
@@ -69,18 +75,19 @@ if C.reminder.raid_buffs_enable == true then
 	function T.ReminderPhysicalBuffs()
 		Spell5Buff = {	-- Attack Power
 			57330,	-- Horn of Winter
-			6673,	-- Battle Shout
 			19506,	-- Trueshot Aura
+			6673,	-- Battle Shout
 		}
 	end
 
 	Spell6Buff = {	-- Haste
 		116956,	-- Grace of Air
-		49868,	-- Mind Quickening
-		135678,	-- Energizing Spores
-		113742,	-- Swiftblade's Cunning
-		128432,	-- Cackling Howl
 		55610,	-- Unholy Aura
+		128432,	-- Cackling Howl (Hyena)
+		135678,	-- Energizing Spores (Sporebat)
+		160003,	-- Savage Vigor (Rylak)
+		49868,	-- Mind Quickening
+		113742,	-- Swiftblade's Cunning
 	}
 end
 
@@ -159,9 +166,11 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
-					20217,	-- Blessing of Kings
+					160017,	-- Blessing of Kongs (Gorilla)
 					90363,	-- Embrace of the Shale Spider
+					160017,	-- Strength of the Earth (Worm)
 					116781,	-- Legacy of the White Tiger
+					20217,	-- Blessing of Kings
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -195,9 +204,11 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
+					160017,	-- Blessing of Kongs (Gorilla)
+					90363,	-- Embrace of the Shale Spider
+					160017,	-- Strength of the Earth (Worm)
 					115921,	-- Legacy of the Emperor
 					116781,	-- Legacy of the White Tiger
-					90363,	-- Embrace of the Shale Spider
 				},
 				["personal"] = {
 					19740,	-- Blessing of Might
