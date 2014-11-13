@@ -10,7 +10,9 @@ if C.raidcooldown.enable == true then
 		[20484] = 600,	-- Rebirth
 		[61999] = 600,	-- Raise Ally
 		[20707] = 600,	-- Soulstone
-		[126393] = 600,	-- Eternal Guardian
+		[126393] = 600,	-- Eternal Guardian (Quilen)
+		[159956] = 600,	-- Dust of Life (Moth)
+		[159931] = 600,	-- Gift of Chi-Ji (Crane)
 		[108280] = 180,	-- Healing Tide Totem
 	}
 end
