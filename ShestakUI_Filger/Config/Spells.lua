@@ -436,8 +436,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Legendary Meta Gems
@@ -603,8 +601,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Purified Bindings of Immerseus (Intellect, Proc)
 			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
@@ -941,8 +937,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Legendary Meta Gems
 			-- Sinister Primal Diamond (Caster DPS)
@@ -1107,8 +1101,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Purified Bindings of Immerseus (Intellect, Proc)
 			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
@@ -1248,8 +1240,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Legendary Meta Gems
@@ -1516,8 +1506,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Legendary Meta Gems
@@ -1750,8 +1738,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Legendary Meta Gems
@@ -1919,8 +1905,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Purified Bindings of Immerseus (Intellect, Proc)
 			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
@@ -2301,8 +2285,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Legendary Meta Gems
@@ -2446,8 +2428,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Purified Bindings of Immerseus (Intellect, Proc)
 			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
@@ -2548,8 +2528,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Legendary Meta Gems
 			-- Sinister Primal Diamond (Caster DPS)
@@ -2677,8 +2655,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Purified Bindings of Immerseus (Intellect, Proc)
 			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
