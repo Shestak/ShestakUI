@@ -93,13 +93,30 @@ end
 --	Skin ObjectiveTrackerFrame.HeaderMenu.MinimizeButton
 ----------------------------------------------------------------------------------------
 if C.skins.blizzard_frames == true then
-	T.SkinCloseButton(ObjectiveTrackerFrame.HeaderMenu.MinimizeButton, nil, "-", true)
+	local button = ObjectiveTrackerFrame.HeaderMenu.MinimizeButton
+	button:SetSize(17, 17)
+	button:StripTextures()
+	button:SetTemplate("Overlay")
 
+	button.minus = button:CreateTexture(nil, "OVERLAY")
+	button.minus:SetSize(5, 1)
+	button.minus:SetPoint("CENTER")
+	button.minus:SetTexture(C.media.blank)
+
+	button.plus = button:CreateTexture(nil, "OVERLAY")
+	button.plus:SetSize(1, 5)
+	button.plus:SetPoint("CENTER")
+	button.plus:SetTexture(C.media.blank)
+
+	button:HookScript("OnEnter", T.SetModifiedBackdrop)
+	button:HookScript("OnLeave", T.SetOriginalBackdrop)
+
+	button.plus:Hide()
 	hooksecurefunc("ObjectiveTracker_Collapse", function()
-		ObjectiveTrackerFrame.HeaderMenu.MinimizeButton.text:SetText("+")
+		button.plus:Show()
 	end)
 
 	hooksecurefunc("ObjectiveTracker_Expand", function()
-		ObjectiveTrackerFrame.HeaderMenu.MinimizeButton.text:SetText("-")
+		button.plus:Hide()
 	end)
 end
