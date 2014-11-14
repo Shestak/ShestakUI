@@ -43,7 +43,7 @@ if C.reminder.raid_buffs_enable == true then
 			159988,	-- Bark of the Wild (Dog)
 			160017,	-- Blessing of Kongs (Gorilla)
 			90363,	-- Embrace of the Shale Spider
-			160017,	-- Strength of the Earth (Worm)
+			160077,	-- Strength of the Earth (Worm)
 			115921,	-- Legacy of the Emperor
 			116781,	-- Legacy of the White Tiger
 			20217,	-- Blessing of Kings
@@ -168,7 +168,7 @@ if C.reminder.solo_buffs_enable == true then
 					1126,	-- Mark of the Wild
 					160017,	-- Blessing of Kongs (Gorilla)
 					90363,	-- Embrace of the Shale Spider
-					160017,	-- Strength of the Earth (Worm)
+					160077,	-- Strength of the Earth (Worm)
 					116781,	-- Legacy of the White Tiger
 					20217,	-- Blessing of Kings
 				},
@@ -206,7 +206,7 @@ if C.reminder.solo_buffs_enable == true then
 					1126,	-- Mark of the Wild
 					160017,	-- Blessing of Kongs (Gorilla)
 					90363,	-- Embrace of the Shale Spider
-					160017,	-- Strength of the Earth (Worm)
+					160077,	-- Strength of the Earth (Worm)
 					115921,	-- Legacy of the Emperor
 					116781,	-- Legacy of the White Tiger
 				},
@@ -241,9 +241,11 @@ if C.reminder.solo_buffs_enable == true then
 					21562,	-- Power Word: Fortitude
 				},
 				["negate_spells"] = {
-					469,	-- Commanding Shout
-					90364,	-- Qiraji Fortitude
+					90364,	-- Qiraji Fortitude (Silithid)
+					160003,	-- Savage Vigor (Rylak)
+					160014,	-- Sturdiness (Goat)
 					166928,	-- Blood Pact
+					469,	-- Commanding Shout
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -299,15 +301,18 @@ if C.reminder.solo_buffs_enable == true then
 					469,	-- Commanding Shout
 				},
 				["negate_spells"] = {
+					90364,	-- Qiraji Fortitude (Silithid)
+					160003,	-- Savage Vigor (Rylak)
+					160014,	-- Sturdiness (Goat)
 					21562,	-- Power Word: Fortitude
-					90364,	-- Qiraji Fortitude
 					166928,	-- Blood Pact
 				},
 				["personal"] = {
 					6673,	-- Battle Shout
 				},
 				["combat"] = true,
-				["role"] = "Tank",
+				["instance"] = true,
+				["pvp"] = true,
 			},
 			[2] = {	-- Battle Shout group
 				["spells"] = {
@@ -321,7 +326,8 @@ if C.reminder.solo_buffs_enable == true then
 					469,	-- Commanding Shout
 				},
 				["combat"] = true,
-				["role"] = "Melee",
+				["instance"] = true,
+				["pvp"] = true,
 			},
 		},
 	}
