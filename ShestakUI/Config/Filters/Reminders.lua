@@ -128,6 +128,8 @@ if C.reminder.solo_buffs_enable == true then
 					19506,	-- Trueshot Aura
 				},
 				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
 			},
 			[2] = {	-- Blood Presence group
 				["spells"] = {
