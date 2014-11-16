@@ -2668,7 +2668,9 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].player_buff_icon)},
-
+				
+			-- Shield charge
+			{spellID = 169667, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shield Wall
 			{spellID = 871, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Last Stand
@@ -2705,6 +2707,8 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
+			-- Unyielding Strikes(protection)
+			{spellID = 169686, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sudden Death
 			{spellID = 52437, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Raging Blow!
