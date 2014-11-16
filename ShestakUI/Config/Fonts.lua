@@ -191,9 +191,84 @@ if T.client == "zhTW" then
 	C["font"].bags_font_size = 11
 	C["font"].bags_font_style = "OUTLINE"
 	C["font"].bags_font_shadow = true
+	
 elseif T.client == "zhCN" then
 	C["media"].normal_font = "Fonts\\ARKai_T.ttf"
-	C["media"].pixel_font = "Fonts\\ARKai_T.ttf"
+	C["media"].pixel_font = "Fonts\\ARKai_C.ttf"
 	C["media"].pixel_font_style = "OUTLINE"
 	C["media"].pixel_font_size = 11
+
+	C["font"].stats_font = "Fonts\\ARKai_T.ttf"
+	C["font"].stats_font_size = 12
+	C["font"].stats_font_style = "OUTLINE"
+	C["font"].stats_font_shadow = true
+
+	C["font"].combat_text_font = "Fonts\\ARKai_T.ttf"
+	C["font"].combat_text_font_size = 16
+	C["font"].combat_text_font_style = ""
+	C["font"].combat_text_font_shadow = true
+
+	C["font"].chat_font = "Fonts\\ARKai_T.ttf"
+	C["font"].chat_font_style = ""
+	C["font"].chat_font_shadow = true
+
+	C["font"].chat_tabs_font = "Fonts\\ARKai_T.ttf"
+	C["font"].chat_tabs_font_size = 12
+	C["font"].chat_tabs_font_style = "OUTLINE"
+	C["font"].chat_tabs_font_shadow = true
+
+	C["font"].action_bars_font = "Fonts\\ARKai_T.ttf"
+	C["font"].action_bars_font_size = 12
+	C["font"].action_bars_font_style = "OUTLINE"
+	C["font"].action_bars_font_shadow = true
+
+	C["font"].threat_meter_font = "Fonts\\ARKai_T.ttf"
+	C["font"].threat_meter_font_size = 12
+	C["font"].threat_meter_font_style = "OUTLINE"
+	C["font"].threat_meter_font_shadow = true
+
+	C["font"].raid_cooldowns_font = "Fonts\\ARKai_T.ttf"
+	C["font"].raid_cooldowns_font_size = 12
+	C["font"].raid_cooldowns_font_style = "OUTLINE"
+	C["font"].raid_cooldowns_font_shadow = true
+
+	C["font"].cooldown_timers_font = "Fonts\\ARKai_T.ttf"
+	C["font"].cooldown_timers_font_size = 13
+	C["font"].cooldown_timers_font_style = "OUTLINE"
+	C["font"].cooldown_timers_font_shadow = true
+
+	C["font"].loot_font = "Fonts\\ARKai_T.ttf"
+	C["font"].loot_font_size = 13
+	C["font"].loot_font_style = "OUTLINE"
+	C["font"].loot_font_shadow = true
+
+	C["font"].nameplates_font = "Fonts\\ARKai_T.ttf"
+	C["font"].nameplates_font_size = 13
+	C["font"].nameplates_font_style = "OUTLINE"
+	C["font"].nameplates_font_shadow = true
+
+	C["font"].unit_frames_font = "Fonts\\ARKai_T.ttf"
+	C["font"].unit_frames_font_size = 12
+	C["font"].unit_frames_font_style = "OUTLINE"
+	C["font"].unit_frames_font_shadow = true
+
+	C["font"].auras_font = "Fonts\\ARKai_T.ttf"
+	C["font"].auras_font_size = 11
+	C["font"].auras_font_style = "OUTLINE"
+	C["font"].auras_font_shadow = true
+
+	C["font"].filger_font = "Fonts\\ARKai_T.ttf"
+	C["font"].filger_font_size = 14
+	C["font"].filger_font_style = "OUTLINE"
+	C["font"].filger_font_shadow = true
+
+	C["font"].stylization_font = "Fonts\\ARKai_T.ttf"
+	C["font"].stylization_font_size = 12
+	C["font"].stylization_font_style = ""
+	C["font"].stylization_font_shadow = true
+
+	C["font"].bags_font = "Fonts\\ARKai_T.ttf"
+	C["font"].bags_font_size = 11
+	C["font"].bags_font_style = "OUTLINE"
+	C["font"].bags_font_shadow = true
 end
