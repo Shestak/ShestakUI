@@ -1129,6 +1129,8 @@ C["filger_spells"] = {
 			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
 			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thunder Focus Tea
+			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Momentum
 			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -1142,6 +1144,12 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
 			-- Buffs
+			-- Elusive Brew
+			{spellID = 128939, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 12},
+			-- Mana Tea
+			{spellID = 115867, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 18},
+			-- Tigereye Brew
+			{spellID = 125195, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 10},
 			-- Tiger Power
 			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Breaker: Blackout Kick
@@ -1154,6 +1162,8 @@ C["filger_spells"] = {
 			{spellID = 118674, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Serpent's Zeal
 			{spellID = 127722, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tiger Strikes
+			{spellID = 120273, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -1304,6 +1314,8 @@ C["filger_spells"] = {
 			{spellID = 119392, filter = "CD"},
 			-- Ring of Peace
 			{spellID = 116844, filter = "CD"},
+			-- Thunder Focus Tea
+			{spellID = 116680, filter = "CD"},
 			-- Dampen Harm
 			{spellID = 122278, filter = "CD"},
 			-- Flying Serpent Kick
@@ -3597,7 +3609,7 @@ C["filger_spells"] = {
 			{spellID = 34976, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Orb of Power
 			{spellID = 121175, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Seaforium
+			-- Carrying Seaforium
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Drink
 			{spellID = 80167, unitID = "target", caster = "all", filter = "BUFF"},
