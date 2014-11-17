@@ -13,7 +13,7 @@ T.RaidBuffs = {
 		{33763, "TOPLEFT", {0.4, 0.8, 0.2}},				-- Lifebloom
 		{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},				-- Wild Growth
 		{102342, "LEFT", {0.45, 0.3, 0.2}, true},			-- Ironbark
-		{102351, "RIGHT", {0.4, 0.9, 0.4}},					-- Cenarion Ward
+		{155777, "RIGHT", {0.4, 0.9, 0.4}},					-- Rejuvenation (Germination)
 	},
 	MONK = {
 		{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},				-- Renewing Mist
