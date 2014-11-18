@@ -308,6 +308,7 @@ local function LoadSkin()
 				-- Background
 				frame.Background:Kill()
 				frame.BGAtlas:Kill()
+				frame.PvPBackground:Kill()
 				frame.IconBorder:Kill()
 				frame.glow:Kill()
 				frame.shine:Kill()
